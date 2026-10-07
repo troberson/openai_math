@@ -168,9 +168,38 @@ def parse_traces():
     return by_fam, sorted(on_disk - listed)
 
 
+ASSUME = re.compile(
+    r"\bassuming\b|\bwe assume\b|\bprovided that\b|\bconditioned on\b|\bconditional\b"
+    r"|under the [^.]{0,60}?(?:hypothes|conjecture|assumption)")
+NEG_BEFORE = re.compile(r"(?:without|no)\s*$")
+TECH_AFTER = re.compile(
+    r"^[^.]{0,60}?(?:expectation|law|laws|probability|probabilities|measure|distribution|density)")
+
+
+def conditional_hits(low):
+    """Assumption phrases only.
+
+    Drops two false-positive families found by reading all nine flagged abstracts:
+    "conditional expectation/law" (a technical term) and "without assuming" (a negation
+    that is often the point of the result). "unconditionally" never matches, since
+    \\bconditional\\b has no word boundary inside it.
+    """
+    hits = []
+    for m in ASSUME.finditer(low):
+        if m.group() == "conditional" and TECH_AFTER.match(low[m.end():m.end() + 60]):
+            continue
+        if NEG_BEFORE.search(low[max(0, m.start() - 12):m.start()]):
+            continue
+        hits.append(m.group())
+    return hits
+
+
 def shapes_of(abstract):
     low = abstract.lower()
-    return [name for name, pat in SHAPES.items() if re.search(pat, low)]
+    out = [n for n, pat in SHAPES.items() if n != "conditional" and re.search(pat, low)]
+    if conditional_hits(low):
+        out.append("conditional")
+    return out
 
 
 def versions_of(paths):

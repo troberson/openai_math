@@ -54,7 +54,7 @@ T2 is not a failure — those challenges are companion statements, still linked 
 ## Claim shapes (`shapes` column)
 
 Multi-label tags matched against the family abstract in `overview.tex`. **Not a partition** —
-67 families match ≥3 shapes and 57 match none, so `shapes` is a pipe-joined list, not a class.
+66 families match ≥3 shapes and 57 match none, so `shapes` is a pipe-joined list, not a class.
 
 | Shape | Pattern gist | Families |
 |---|---|---|
@@ -65,11 +65,12 @@ Multi-label tags matched against the family abstract in `overview.tex`. **Not a 
 | partial | at most, restricted, in coranks, for fixed, unramified part | 42 |
 | classification | if and only if, classified, characterization | 34 |
 | density | density | 20 |
-| conditional | assuming, we assume, under the … hypothesis, provided that | 9 |
+| conditional | assuming, we assume, under the … hypothesis, provided that | 5 |
 | undecidability | no algorithm, undecidable, unsolvable, negative answer | 4 |
 
-`conditional` families: **014, 023, 125, 133, 224, 240, 244, 290, 328.** The regex only flags
-them; what each one actually assumes has to be read by hand (open task, below).
+`conditional` families: **014, 125, 240, 244, 282.** The regex only flags them; what each one
+actually assumes is read by hand and recorded in **`notes/conditional.md`**, which also lists the
+five flags that reading removed. Read that file before calling a family conditional.
 
 ## Columns
 
@@ -139,14 +140,23 @@ the community will scrutinize.
 - **`solution_module` is an import shim.** A config's file can be a single `import` line; the
   proof lives in the transitive import closure. Any `sorry`/axiom scan over a shim is meaningless.
 - **`rg -f` with patterns ending in `\n`** fails ("the literal `\n` is not allowed in a regex").
+- **Keyword tags are not claims.** The `conditional` tag flagged 9 families; reading the abstracts
+  showed 5 were not assumptions — "unconditionally" (word boundary), "conditional expectation" and
+  "conditional laws" (technical nouns), and "without assuming uniform convexity" (a negation that
+  is the theorem's point). Any shape tag needs a reading pass before it is quoted as a property of
+  a family. See `notes/conditional.md`.
 
 ## Open tasks
 
-- [ ] Manual pass on the 9 conditional families — record exactly what each assumes, in a
-      `notes/conditional.md` (regex flags them; only reading names the hypothesis).
+- [x] Manual pass on the conditional families — done in `notes/conditional.md`: 5 genuine
+      (014, 125, 240, 244, 282), 5 flags dropped as false positives.
 - [ ] Read the 2 `verification/COVERAGE.md` limits files and record what each arithmetic check
       does *not* cover.
 - [ ] Triage the 137 T0 families by claim shape — that is where the taxonomy earns its keep,
       since coverage signals are absent there.
 - [ ] Cross-check the 44 counterexample families against `main_results`: a counterexample is the
       claim type most likely to be checkable cheaply and hardest to argue about.
+- [ ] Read the 3 conditional families at T3 in Lean source (125, 240, 244) and confirm the
+      hypothesis appears in the formalized statement — 240 is the sharp case: the formalized
+      config `CHObstruction` assumes CH, while the family's unconditional ZFC theorem is not
+      formalized.
