@@ -13,7 +13,7 @@ description: >-
 compatibility: "python3 (stdlib only); no Lean toolchain, no network"
 metadata:
   author: tamara
-  version: "1.1"
+  version: "1.2"
 ---
 
 # Proof triage
@@ -41,9 +41,12 @@ behaviour and rules only.
 4. **Absence of formalization is not a red flag.** 560 of 722 manuscripts are unformalized.
 5. **Claim shape is multi-label.** 66 families match ≥3 shapes, 57 match none. Never present the
    taxonomy as a partition; report the tag set.
-6. **A tag is not a claim.** Keyword tags need a reading pass before you call a family by them:
-   the `conditional` tag flagged 9 families, 5 of which were not assumptions. `notes/conditional.md`
-   is the model — name the hypothesis, say where it sits, record the flags you dropped.
+6. **A tag is not a claim, and tags omit as well as mislabel.** Keyword tags need a reading pass
+   before you call a family by them: the `conditional` tag flagged 9 families, 5 of which were not
+   assumptions. In the other direction, 74 families use counterexample language and only 44 carry
+   the `counterexample` tag — 30 of the 31 untagged flags are genuine. Quote shape counts as
+   floors. `notes/conditional.md` is the model — name the hypothesis, say where it sits, record the
+   flags you dropped.
 
 ## Workflow
 
@@ -56,7 +59,9 @@ behaviour and rules only.
    manuscript abstract in `CONTENTS.md`. Quote exclusions; they are the load-bearing part.
 4. **Triage the silent families** — T0 (137 families, 255 manuscripts, 0 formalized) has no
    coverage signal at all. Run `notes/scripts/triage_t0.py` for the buckets and read
-   `notes/t0-triage.md` before adding to the pass; `shapes` is the only discriminator there.
+   `notes/t0-triage.md` before adding to the pass; `shapes` is the only discriminator there. Two
+   reading passes cover all 137 families at abstract level, so new T0 work is checking claims, not
+   reading titles — start with the 21 counterexample-shaped families the file lists.
 5. **Record manual findings in the repo**, not in chat: append to `notes/` as a tracked file
    (e.g. `notes/conditional.md`), one row per family, stating exactly what each assumes.
 6. **State the ceiling** — end coverage answers with what has *not* been checked.
@@ -69,7 +74,7 @@ behaviour and rules only.
 | `notes/README.md` | Column definitions, tier defs, shape yields, discipline table, traps | Before quoting any number |
 | `notes/scripts/build_catalog.py` | Generator (stdlib only, ~300 lines) | Regenerating, or adding a column |
 | `notes/scripts/triage_t0.py` | Buckets the 137 T0 families by claim shape (reads the ledger, writes nothing) | Any T0 count, bucket, or priority question |
-| `notes/t0-triage.md` | T0 buckets, the 44-family reading pass, scope qualifiers found in abstracts | Before triaging or discussing T0 families |
+| `notes/t0-triage.md` | T0 buckets, two reading passes covering all 137 families, scope qualifiers found in abstracts | Before triaging or discussing T0 families |
 | `notes/conditional.md` | Manual pass: what each conditional family assumes, and dropped flags | Before calling any family conditional |
 | `lean/docs/<NNN>.md` | Family scope note: what the formalization covers and excludes | Any claim about a formalized result |
 | `lean/ComparatorChallenges/*.json` | Statement/solution pairs, `permitted_axioms` | Checking what a challenge permits |
@@ -90,6 +95,10 @@ behaviour and rules only.
   "conditional laws", "without assuming X", and "unconditionally" (no word boundary inside it) all
   matched the naive pattern. Guard with `ASSUME`/`NEG_BEFORE`/`TECH_AFTER` in the generator, then
   read the flagged abstracts.
+- Tags omit as well as mislabel. The `counterexample` tag matches 44 families while 74 use
+  counterexample language; reading the 31 untagged flags found 30 genuine, the false positive being
+  348, matched through "nonnegatively". A tag count is a floor: check the untagged set before
+  quoting a shape count as a census.
 
 ## Related skills
 

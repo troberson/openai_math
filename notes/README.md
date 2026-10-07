@@ -52,7 +52,8 @@ Assigned from the scope note's comparator links (`../ComparatorChallenges/X.lean
 T1 is empty in this catalog: every one of the 235 scope notes links at least one challenge file.
 T2 is not a failure — those challenges are companion statements, still linked from a family note.
 **All 137 T0 families have zero formalized manuscripts**, so T0 is triaged by claim shape alone:
-see `notes/t0-triage.md`.
+see `notes/t0-triage.md`, where two reading passes now cover all 137 families at abstract level
+(44 families / 134 manuscripts, then 93 families / 121 manuscripts).
 
 ## Claim shapes (`shapes` column)
 
@@ -74,6 +75,12 @@ Multi-label tags matched against the family abstract in `overview.tex`. **Not a 
 `conditional` families: **014, 125, 240, 244, 282.** The regex only flags them; what each one
 actually assumes is read by hand and recorded in **`notes/conditional.md`**, which also lists the
 five flags that reading removed. Read that file before calling a family conditional.
+
+Tags omit as well as mislabel. Measured on 2026-10-06 while reading the T0 abstracts: 74 of 372
+families use counterexample language in title or abstract ("counterexample", "disprov", "answers …
+negatively") and only 44 carry the `counterexample` tag; of the 31 untagged flags, 30 are genuine
+counterexamples in kind (the false positive is 348, matched through "nonnegatively"). Treat every
+shape count in the table as a floor, not a census.
 
 ## Columns
 
@@ -156,11 +163,18 @@ the community will scrutinize.
 - [ ] Read the 2 `verification/COVERAGE.md` limits files and record what each arithmetic check
       does *not* cover.
 - [x] Triage the 137 T0 families by claim shape — done in `notes/t0-triage.md`: buckets C 16,
-      R 50, B 29, K 8, U 12, O 2, N 20 (255 manuscripts, 0 formalized), with a reading pass over
-      the 44 highest-priority families (134 manuscripts).
+      R 50, B 29, K 8, U 12, O 2, N 20 (255 manuscripts, 0 formalized), with reading passes over
+      **all 137 families** — 44 families / 134 manuscripts first, then the remaining 93 families /
+      121 manuscripts.
 - [ ] Cross-check the 44 counterexample families against `main_results`: a counterexample is the
       claim type most likely to be checkable cheaply and hardest to argue about. 16 of the 44 are
-      T0 and are entered in `notes/t0-triage.md` with the object each one names.
+      T0 and are entered in `notes/t0-triage.md` with the object each one names. Add the 5 T0
+      families that are counterexamples in kind but untagged (048, 195, 201, 259, 284): the T0
+      check set is 21 families, not 16.
+- [ ] Decide whether to widen the tagging rules in `notes/scripts/build_catalog.py`. The
+      `counterexample` tag omits 30 genuine families repo-wide and `resolution` is missing on 9 of
+      the 15 untagged T0 families read in the second pass. Measure the yield the way
+      `notes/conditional.md` records it before changing any tag.
 - [ ] Read the 3 conditional families at T3 in Lean source (125, 240, 244) and confirm the
       hypothesis appears in the formalized statement — 240 is the sharp case: the formalized
       config `CHObstruction` assumes CH, while the family's unconditional ZFC theorem is not
