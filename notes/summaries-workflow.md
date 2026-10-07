@@ -8,6 +8,10 @@ carrier, so it states what to do and what not to re-derive.
 One parent agent, sequential. **No subagents** — the box is a single GPU and switching context
 per subagent turn costs more than the parallelism buys.
 
+**No cron job.** This run is one-time, so continuation is human-driven: the next batch starts when
+the user says so. The reason this file exists is context compaction, not unattended cadence — a
+timer that fires mid-page is the failure mode, not the fix.
+
 A batch is one bd issue. Per page, in this order:
 
 1. `bd update <id> --claim` (once per batch).
@@ -34,6 +38,16 @@ Reconciliation lines that must not move: 372 families, 722 manuscripts, 162 form
 405 challenges, 185 `main_results` entries over 178 configs, 235 scope notes, and both
 `overview.tex` ↔ `CONTENTS.md` cross-checks reading 0. The discipline table must sum to
 372 / 235 / 722 / 162.
+
+## Commit and push boundaries
+
+Commit when a batch's gates pass: explicit paths, one purpose per commit, never `--no-verify`, never
+`git add -A`. The beads store travels in the commit whose work it records (the pre-commit hook
+re-exports and stages it), so stage it with the code it describes.
+
+**Push to `origin` (the fork) about once per hour**, not on every commit — authorized for this run on
+2026-10-07. `upstream` is read-only; confirm the destination with `git push --dry-run` when a push
+boundary lands on a batch you did not expect to publish.
 
 ## Stop and escalate
 
@@ -82,3 +96,7 @@ a bd issue.
   starts producing circular sources tables.
 - **Dated re-issues** (`versions > 0`). One page per family; the Sources table lists the
   manuscript tree, not each dated copy. Revisit if a re-issued manuscript differs in content.
+- **Cadence.** No cron job and no self-paced loop: the user drives continuation, because this is a
+  one-time run and the stated concern is losing context to compaction, not stalling. Revisit if the
+  run outgrows a sitting — then arm a prompt-only `/loop` whose prompt points here and stops when
+  `bd ready` has no P4 issue.
