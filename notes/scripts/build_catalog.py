@@ -202,6 +202,26 @@ def shapes_of(abstract):
     return out
 
 
+# Named-target resolution, measured in notes/resolution-tag.md. Deliberately NOT a SHAPES entry:
+# triage_t0.py assigns T0 buckets by first match over `shapes`, so widening `resolution` there
+# would move families out of the counterexample/bound/classification/undecidability/density
+# buckets. As a separate column it discriminates without touching that partition.
+TARGET_NOUN = re.compile(r"conjectur|\bquestion|\bproblem")
+RESOLVE_VERB = re.compile(
+    r"\bprov(?:e|es|ed|ing)\b|\bdisprov|\brefut|\bresolv|\banswer|\bsettl|\bestablis"
+    r"|\bconfirm|\bfail|\bviolat|\bcounterexample")
+
+
+def resolves_named(abstract):
+    """1 when the abstract names a conjecture/question/problem and uses a resolution verb.
+
+    `\bprov(?:e|es|ed|ing)\b` needs both boundaries: without the leading one, "improved"
+    matches through the "proved" inside it.
+    """
+    low = abstract.lower()
+    return 1 if TARGET_NOUN.search(low) and RESOLVE_VERB.search(low) else 0
+
+
 def versions_of(paths):
     """Manuscripts whose date-stripped directory slug repeats (same paper, new date)."""
     c = Counter(DATE_SUFFIX.sub("", Path(p).parts[-2]) for p in paths)
@@ -225,7 +245,7 @@ def main():
     cols = [
         "fam", "discipline", "title", "paps", "paps_form", "tier", "chal", "mainres",
         "scope_note", "scope_chars", "verification", "inputs", "covmd", "trace",
-        "shapes", "conditional", "companions", "companion_word", "versions",
+        "shapes", "conditional", "resolves_named", "companions", "companion_word", "versions",
     ]
     rows = []
     for fam in sorted(fams):
@@ -264,6 +284,7 @@ def main():
             "trace": "|".join(sorted(trace_by_fam.get(fam, []))),
             "shapes": "|".join(shapes),
             "conditional": 1 if "conditional" in shapes else 0,
+            "resolves_named": resolves_named(info["abstract"]),
             "companions": "|".join(refs),
             "companion_word": 1 if re.search(r"\bcompanion", info["abstract"], re.I) else 0,
             "versions": versions_of(all_paths),
@@ -295,6 +316,15 @@ def main():
     plain = sum(1 for r in rows if not r["shapes"])
     print(f"                    {multi} families match >=3 shapes, {plain} match none")
     print(f"conditional         {[r['fam'] for r in rows if r['conditional']]}")
+    rn = {r["fam"] for r in rows if r["resolves_named"]}
+    res = {r["fam"] for r in rows if "resolution" in r["shapes"].split("|")}
+    print(f"resolves_named      {len(rn)} families   `resolution` tag {len(res)}   "
+          f"union {len(rn | res)}")
+    print(f"                    {len(rn & res)} both, {len(res - rn)} tag-only "
+          f"{sorted(res - rn)}, {len(rn - res)} column-only")
+    print("                    " + "  ".join(
+        f"{t}={sum(1 for r in rows if r['tier'] == t and r['resolves_named'])}"
+        for t in ("T3", "T2", "T1", "T0")))
     print(f"versions>0          {sum(1 for r in rows if r['versions'])} families, "
           f"{sum(r['versions'] for r in rows)} dated re-issues")
     print(f"companion word      {sum(r['companion_word'] for r in rows)} families")
