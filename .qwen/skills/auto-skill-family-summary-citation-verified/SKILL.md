@@ -318,6 +318,22 @@ both are flagged while the real page is clean. A green pass you have never seen 
   documented for markdown files, and permalink snippets do not work in markdown files — all verified
   against the GitHub docs before writing the Sources section.
 
+- **Never quote a span that contains LaTeX math.** The checker normalizes `\(`/`\)` and braces into
+  separate tokens, so the file's `\((u,v)\)` reads as `( u,v )` and a page writing `(u,v)` can never
+  match it; `\(\alpha_{\mathrm{GW}},1\)` reads as `α GW,1`, `$P\ne NP$` reads as `$P NP$`, and
+  `H{\aa}stad` reads as `H aa stad`. Quote the prose around the math, state the math in your own
+  words, and put the marker on the prose. A quote that ends mid-LaTeX-command fails the same way:
+  `\cite[Theorem~1]{KKMO07}` is not stripped (the bracket form survives), so stop before it.
+- **Do not name a manuscript root in backticks in the Sources prose when the table is repo-relative.**
+  The checker's root list is the manuscript root named by the first backticked `preprints/…` string
+  anywhere in the page, then the repo root. A row cell written `README.md` then resolves under both,
+  the manuscript wins, and the release README's line 30 reports `OUT OF RANGE … file has 18 lines`
+  while every relative href in the table reports `DEAD LINK`. Say the root in the cells, not the prose.
+- **A quoted sentence that wraps in the source needs the full span.** Prose in these manuscripts wraps
+  mid-sentence, so a one-line anchor is usually short by a line: "…had required a stronger complexity
+  assumption." spans 31–33, not 32–33, and citing 32–34 lands on a blank line (`BLANK S19:34`). Grep
+  the sentence, read the region with `grep -n "" | sed -n 'A,Bp'`, and set both ends from what you saw.
+
 ## 7. Report
 
 State the verification tally (positions checked, misses), the corrections the loop forced, and then
