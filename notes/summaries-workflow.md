@@ -8,20 +8,36 @@ carrier, so it states what to do and what not to re-derive.
 - **Batch:** `math-ckd.1`, claimed — the 10 trace families (007, 017, 087, 102, 159, 197, 221, 271,
   287, 362), 22 manuscripts. Close it with `bd close math-ckd.1 --reason "<outcome>"` when the tenth
   page is committed.
-- **Pages done:** 102 (`notes/summaries/theoretical-computer-science/`), 001, 032, 007
-  (`notes/summaries/number-theory/`). The ledger's `summary` column is 1 for those four; the
-  generator reports "summary pages 4 of 372 families, 15 manuscripts behind them".
-- **Next page:** family **017**. Steps 2–9 above, in order.
+- **Pages done:** 102 (`notes/summaries/theoretical-computer-science/`), 001, 032, 007, 017
+  (`notes/summaries/number-theory/`). The ledger's `summary` column is 1 for those five; the
+  generator reports "summary pages 5 of 372 families, 16 manuscripts behind them".
+- **Next page:** family **087**. Steps 2–9 above, in order.
 - **Last gate run (2026-10-07):** regeneration byte-identical; 372 families, 722 manuscripts, 162
   formalized, 405 challenges, 185 `main_results` over 178 configs, 235 scope notes, both cross-checks
-  0, discipline table summing 372 / 235 / 722 / 162; `verify_summaries.py --mutant` over 4 pages →
-  775 marker positions, 153 quoted spans, 0 problems, 0 undetected mutants.
+  0, discipline table summing 372 / 235 / 722 / 162; `verify_summaries.py --mutant` over 5 pages →
+  964 marker positions, 174 quoted spans, 0 problems, 0 undetected mutants.
 - **Push state:** `origin/notes` at 496b3aa69 (pushed 2026-10-07 04:41); local `notes` HEAD is
-  eaa2b12ec. Push when an hour has passed since the last push, not per commit.
+  d2a2cc310. Push when an hour has passed since the last push, not per commit.
 - **007 finding, for reuse:** the ledger's `paps_form`/`mainres` counts are 0 for a family that
   ships 854 Lean files with zero `sorry`, because `formalization.yaml` has no entry for the
   manuscript. Counts are YAML bibliography entries, not Lean source — never read them as "not
-  formalized".
+  formalized". 017 is the same shape: 0 and 0 beside 869 files and 94,948 lines.
+- **017 findings, for reuse:**
+  - A `[Sxx]` marker for a binary source (a trace PDF) inside a unit that carries a quotation makes
+    Pass C read that PDF as text and crash on `UnicodeDecodeError`. Pass C tries the cited sources in
+    marker order and stops at the first hit, so a PDF row is safe only in a unit with no quotation,
+    or listed after a text source that can match. Cite trace rows in the closing note.
+  - A quotation containing `<` is a hazard twice over: the raw-HTML scan matches `<...>`, and
+    `norm()` deletes the same span, so the quote compares as mangled text. Put a space after `<`, or
+    paraphrase.
+  - Quotes from `lean/docs/<NNN>.md` must keep that file's `$...$` delimiters. `norm()` leaves `$` and
+    `\(`/`\)` intact, so rewriting one form as the other never matches.
+  - A footnote quotation can end on the line that closes it (`}`), so the cited range must include
+    that line.
+  - A scope note's exclusion is about the comparator's *selected statement*, not the tree: 017's note
+    excludes the Flint–Hills consequence, and `Main.lean` proves `flint_hills_summable` separately.
+    Read the Lean tree before repeating an exclusion as a coverage gap — and check it the other way
+    too; 017's generalized `a > max{1,b}` criterion really is absent.
 
 ## Loop shape
 
