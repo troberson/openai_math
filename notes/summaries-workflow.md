@@ -10,16 +10,16 @@ carrier, so it states what to do and what not to re-derive.
   page is committed.
 - **Pages done:** 102 (`notes/summaries/theoretical-computer-science/`), 001, 007, 017
   (`notes/summaries/number-theory/`), 032 (`notes/summaries/algebraic-and-complex-geometry/`), 087
-  (`notes/summaries/convex-and-metric-geometry/`), 159 (`notes/summaries/combinatorics/`). The
-  ledger's `summary` column is 1 for those seven; the generator reports "summary pages 7 of 372
-  families, 20 manuscripts behind them".
-- **Next page:** family **197**. Steps 2–9 above, in order.
+  (`notes/summaries/convex-and-metric-geometry/`), 159 (`notes/summaries/combinatorics/`), 197
+  (`notes/summaries/algebra/`). The ledger's `summary` column is 1 for those eight; the generator
+  reports "summary pages 8 of 372 families, 24 manuscripts behind them".
+- **Next page:** family **221**. Steps 2–9 above, in order.
 - **Last gate run (2026-10-07):** regeneration byte-identical on two runs; 372 families, 722
   manuscripts, 162 formalized, 405 challenges, 185 `main_results` over 178 configs, 235 scope notes,
   both cross-checks 0, discipline table summing 372 / 235 / 722 / 162; `verify_summaries.py --mutant`
-  over 7 pages → 1331 marker positions, 232 quoted spans, 0 problems, 0 undetected mutants.
-- **Push state:** `origin/notes` at da5eb8a35 (pushed 2026-10-07 05:36); local `notes` HEAD is
-  c5be572dc. Push when an hour has passed since the last push, not per commit.
+  over 8 pages → 1512 marker positions, 289 quoted spans, 0 problems, 0 undetected mutants.
+- **Push state:** `origin/notes` at 6fb6d9fd2 (pushed 2026-10-07 06:22); local `notes` HEAD is
+  4f5798c13. Push when an hour has passed since the last push, not per commit.
 - **007 finding, for reuse:** the ledger's `paps_form`/`mainres` counts are 0 for a family that
   ships 854 Lean files with zero `sorry`, because `formalization.yaml` has no entry for the
   manuscript. Counts are YAML bibliography entries, not Lean source — never read them as "not
@@ -77,6 +77,32 @@ carrier, so it states what to do and what not to re-derive.
   - Both companion columns come from the CONTENTS.md blurb alone (`build_catalog.py:274,295`), so a
     manuscript that names its companion in its introduction and bibliography can still have
     `companions` empty in the ledger. Say which layer the fact lives in.
+- **197 findings, for reuse:**
+  - **A marker written at the end of a block-quote line is invisible.** Attribution scans only
+    `start_line-2 … start_line-4`, so the marker belongs on the intro line above the blank line;
+    inside the quote it yields `NO CITATION in unit at doc line N`. Three of this page's three block
+    quotes were written that way and all three needed the same fix — check marker placement before
+    the first checker run, not after.
+  - **Declare every path in a Sources row as a full repo-relative path, PDFs included.** A bare
+    `paper.pdf` cell resolves only under the declared manuscript root, so trees 2–4 printed
+    `FILE NOT ON DISK S22 -> paper.pdf`. The same trap covers `README.md` (`AMBIGUOUS`) and
+    `build/main.tex` (collides across trees).
+  - **Check the last line of every cited range is non-blank.** `[S4:73–81]` failed as
+    `BLANK S4:81` because the paragraph ends at line 80 and line 81 is the blank separator.
+  - A trace row is safe only in a unit with no quotation. Paraphrase the trace prompt (do not quote
+    it) and put `[S36]` in that quote-free paragraph; the same paragraph can carry the file name as
+    prose.
+  - **The strongest coverage claim is a grep, not a scope-note restatement.** 197's scope note
+    excludes the nonsofic conclusion; grepping `lean/OAI/RingTheory/DirectFiniteness/` for `sofic`,
+    `surjunct` and `cellular` returns nothing, which turns the exclusion into a measured absence.
+    Do the grep both ways: the odd-characteristic tree does prove its cellular-automaton claim, so
+    of the family's two Gottschalk counterexamples exactly one is formalized.
+  - When `mainres` < `chal`, find the mechanical cause before describing it: `KaplanskyDirectFiniteness`
+    appears nowhere in `formalization.yaml`, which is why 4 challenges yield 3 `main_results` entries.
+    Grep the YAML for the challenge config name.
+  - Cost: 4 manuscripts → 36 sources, 181 markers, 57 quoted spans, green on the second checker run.
+    A four-tree family with three Lean trees costs about the same as a one-manuscript family with a
+    huge tree (159: 25 sources, 99 markers, 47 spans).
 
 ## Loop shape
 
