@@ -13,7 +13,7 @@ description: >-
 compatibility: "python3 (stdlib only); no Lean toolchain, no network"
 metadata:
   author: tamara
-  version: "1.5"
+  version: "1.6"
 ---
 
 # Proof triage
@@ -56,6 +56,12 @@ behaviour and rules only.
    Widening `counterexample` would move 6 T0 families into bucket C, where first match currently
    leaves them. Quote both counts as floors; see `notes/resolution-tag.md` and
    `notes/counterexample-tag.md`.
+8. **A prior is not a measurement.** `notes/conjecture-standing.tsv` records what the assistant's
+   training data says about a conjecture's standing at an early-2025 cutoff, self-rated by
+   `prior_confidence`. Quote it as the prior it is, pair every row with its confidence, and never
+   present a surprise tier as a property of the result. No row may assert consequence: only 14 of 372
+   family titles appear in the corpus's `.bib` files, so consequence is external by construction.
+   Run `notes/scripts/verify_conjecture_standing.py` before quoting rows.
 
 ## Workflow
 
@@ -91,6 +97,9 @@ behaviour and rules only.
 | `notes/conditional.md` | Manual pass: what each conditional family assumes, and dropped flags | Before calling any family conditional |
 | `notes/resolution-tag.md` | Named-target rule: yield, the 94-family reading verdict, the `resolves_named` decision | Before quoting a resolution count or changing a tag |
 | `notes/counterexample-tag.md` | Counterexample phrase rule: yield, the 30-family reading verdict, the `counterex_broad` decision | Before quoting a counterexample count, or checking a family the tag misses |
+| `notes/conjecture-standing.tsv` | 139 rows: named conjecture, **training-data prior** on its standing as of early 2025, `prior_confidence`, the release claim, the gap, surprise tier, `overview.tex` anchor | Any "how surprising is this" or conjecture-standing question |
+| `notes/conjecture-standing.md` | The tier scheme, the 139-vs-233 selection, the counts, the 145 conflict row, what the table cannot say | Before quoting a standing row as evidence |
+| `notes/scripts/verify_conjecture_standing.py` | Proves the standing table: fam set, ledger discipline/tier, anchors against `\resultentry`, confidence vocabulary, abstract-name fidelity, no consequence language | Before quoting any standing row |
 | `lean/docs/<NNN>.md` | Family scope note: what the formalization covers and excludes | Any claim about a formalized result |
 | `lean/ComparatorChallenges/*.json` | Statement/solution pairs, `permitted_axioms` | Checking what a challenge permits |
 | `lean/formalization.yaml` | `sources`, `status.main_results`, `automation`, `review` | Coverage and verification-ceiling claims |

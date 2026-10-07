@@ -55,8 +55,13 @@ Named-conjecture resolution is the useful claim set: `resolves_named` set **and*
 shape → 139 of 372 families. Cross-tab it against the formalization tier before ranking:
 
 ```
-T3 88   T2 57   T0 51        (tier totals: T3 127, T2 108, T1 0, T0 137)
+139-set:  T3 52   T2 36   T0 51     (tier totals: T3 127, T2 108, T1 0, T0 137)
+233-set:  T3 88   T2 57   T0 88     (resolves_named alone)
 ```
+
+Quote the set with its rule: `T3 88 T2 57 T0 51` is not a row of either — it splices the 233-set's
+T3/T2 counts onto the 139-set's T0 count and sums to 196. Measured 2026-10-07 from
+`notes/catalog.tsv`; the 139 rows in `notes/conjecture-standing.tsv` carry the 139-set split.
 
 **Tier and named-resolution are uncorrelated.** 51 families that resolve a named conjecture have zero
 formalization signal. Lead with that: the corpus's boldest claims are its least-certified ones. It is
@@ -100,6 +105,17 @@ Rank by distance from the prior, not by fame:
 Ship it as a table with a **`prior_confidence`** column. The frontier is exactly where training data is
 thinnest and stalest, and Tier 3 is what a low-confidence prior looks like when checked. Confidence is
 in the *prior*, not in the result.
+
+Shipped 2026-10-07 as **`notes/conjecture-standing.tsv`** — 139 rows, 10 columns
+(`fam discipline tier conjecture standing_prior_2025 prior_confidence release_claim gap
+surprise_tier abstract_line`), with `notes/conjecture-standing.md` for the scheme and
+`notes/scripts/verify_conjecture_standing.py` as its checker. Measured yields: surprise tier
+1:60, 2:64, 3:11, 4:4; confidence high 42, medium 84, low 13; all 139 anchors resolve to their own
+`\resultentry` line. Two things the shipped table does that the scheme above only asks for: the
+standing column is **named** `standing_prior_2025`, so the labelling is structural and cannot be read
+as a fact; and the `abstract_line` column makes every row checkable against the line it reads, which
+is what caught three rows naming a conjecture the abstract does not name (266, 310, 326) and one
+mis-cited anchor (187).
 
 ## 5. Name and topic queries have three layers, and they disagree
 

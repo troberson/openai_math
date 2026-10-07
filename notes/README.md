@@ -10,6 +10,7 @@ python3 notes/scripts/build_catalog.py      # writes notes/catalog.tsv and print
 python3 notes/scripts/triage_t0.py          # buckets the 137 T0 families by claim shape
 python3 notes/scripts/verify_summaries.py   # checks every citation in notes/summaries/ against the files it names
 python3 notes/scripts/verify_summaries.py --mutant  # same, plus the injected-fault self-test
+python3 notes/scripts/verify_conjecture_standing.py  # checks notes/conjecture-standing.tsv against the ledger and overview.tex
 ```
 
 `notes/summaries-workflow.md` is the resume protocol for the summary-page batches: per-page steps,
@@ -107,6 +108,19 @@ assigns by first match. The two signals are complementary, not nested: 139 famil
 both, 94 only by the column, and 5 only by the tag (003, 010, 082, 103, 261 — targets named as a
 *hypothesis/case/estimate/contrast*), for a union of 238. Both are floors. Method, the 94-family
 reading verdict, and the decision are in **`notes/resolution-tag.md`**.
+
+**`notes/conjecture-standing.tsv` records a prior, not a fact.** The 139 families flagged by both
+`resolves_named` and the `resolution` shape each get a row: the conjecture as the abstract names it,
+what the assistant's training data says about its standing as of early 2025, a self-reported
+`prior_confidence` (high 42 / medium 84 / low 13), the release's claim, the gap between the two, a
+surprise tier (1 not-yet-possible 60, 2 famous-unachieved 64, 3 prior deflates the headline 11, 4 the
+prior cannot judge 4), and the `overview.tex` line the row reads. The column is named
+`standing_prior_2025` because the number is the prior's account, never the conjecture's status: no
+literature was consulted and no manuscript was read. 11 rows are tier-3 deflations — the prior already
+holds 174, 175, 184, 188, 204 as theorems — and **145** is the one row where the prior's record
+published counterexamples to what the abstract proves. Scheme, counts, and what the table cannot say
+are in **`notes/conjecture-standing.md`**; `notes/scripts/verify_conjecture_standing.py` proves every
+anchor and rejects any row that asserts consequence.
 
 ## Columns
 

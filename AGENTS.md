@@ -16,7 +16,8 @@ lives in this file and nowhere else.
 - `notes/` is the reading ledger: `catalog.tsv` (372 rows, 22 columns), `README.md`,
   `t0-triage.md`, `conditional.md`, `resolution-tag.md`, `counterexample-tag.md`,
   `verification-dirs.md`, `summaries-workflow.md` (the resume protocol for the summary batches),
-  `summaries/<discipline>/<NNN>-<name>.md`, `notes/scripts/`.
+  `conjecture-standing.tsv` (139 rows, 10 columns — a labeled training-data prior, not a fact) with
+  `conjecture-standing.md` beside it, `summaries/<discipline>/<NNN>-<name>.md`, `notes/scripts/`.
 - `.beads/issues.jsonl` is the tracked issue store, in bd no-db mode; see the beads section below.
 
 ## Dev environment tips
@@ -45,6 +46,11 @@ lives in this file and nowhere else.
 - Bucket the T0 families with `python3 notes/scripts/triage_t0.py` — it reads `notes/catalog.tsv`,
   writes nothing, and reconciles 137 families over 255 manuscripts. Findings live in
   `notes/t0-triage.md`.
+- Quote `notes/conjecture-standing.tsv` as a prior, never as a literature fact. Its
+  `standing_prior_2025` column is the assistant's training-data memory at an early-2025 cutoff,
+  self-rated by `prior_confidence`; the repo supplies only `release_claim` and `abstract_line`.
+  No row may assert consequence — consequence is external here: only 14 of 372 family titles appear
+  in the corpus's own `.bib` files, so intra-corpus consequence is unmeasurable.
 - Project skills live in `.qwen/skills/` — `proof-triage` routes ledger work,
   `auto-skill-lean-formalization-coverage-audit` carries the measurement method.
 
@@ -64,6 +70,11 @@ lives in this file and nowhere else.
 - Check every `notes/summaries/` page with `python3 notes/scripts/verify_summaries.py --mutant`
   before reporting it green — it resolves every `[Sn:line]` marker against the shipped file, checks
   every quotation against the lines it cites, and writes nothing.
+- Check `notes/conjecture-standing.tsv` with `python3 notes/scripts/verify_conjecture_standing.py`
+  before quoting any row — it proves the 139-row fam set against the ledger, resolves every
+  `overview.tex:<n>` anchor to that family's own `\resultentry`, requires `prior_confidence` in
+  vocabulary, rejects conjecture names the cited abstract does not use, and rejects consequence
+  language.
 
 ## PR instructions
 
