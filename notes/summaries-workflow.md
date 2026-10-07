@@ -5,26 +5,26 @@ carrier, so it states what to do and what not to re-derive.
 
 ## Current state (rewritten at every batch boundary)
 
-- **Batch:** `math-ckd.1`, claimed — the 10 trace families (007, 017, 087, 102, 159, 197, 221, 271,
-  287, 362), 22 manuscripts. Close it with `bd close math-ckd.1 --reason "<outcome>"` when the tenth
-  page is committed.
-- **Pages done:** 102 (`notes/summaries/theoretical-computer-science/`), 001, 007, 017
+- **Batch:** `math-ckd.1` is **complete** — all 10 trace families (007, 017, 087, 102, 159, 197, 221,
+  271, 287, 362) have committed pages. Close it with
+  `bd close math-ckd.1 --reason "<outcome>"` (not yet closed as of this rewrite).
+- **Pages done (12):** 102 (`notes/summaries/theoretical-computer-science/`), 001, 007, 017
   (`notes/summaries/number-theory/`), 032 (`notes/summaries/algebraic-and-complex-geometry/`), 087
   (`notes/summaries/convex-and-metric-geometry/`), 159 (`notes/summaries/combinatorics/`), 197
   (`notes/summaries/algebra/`), 221 (`notes/summaries/probability-and-statistical-mechanics/`), 271
-  (`notes/summaries/mathematical-physics/`), 287 (`notes/summaries/operator-algebras/`). The ledger's
-  `summary` column is 1 for those eleven; the generator reports "summary pages 11 of 372 families, 30
-  manuscripts behind them".
-- **Next page:** family **362** — the last in `math-ckd.1`. Steps 2–9 above, in order, then
-  `bd close math-ckd.1 --reason "<outcome>"`.
+  (`notes/summaries/mathematical-physics/`), 287 (`notes/summaries/operator-algebras/`), 362
+  (`notes/summaries/partial-differential-equations/`). The ledger's `summary` column is 1 for those
+  twelve; the generator reports "summary pages 12 of 372 families, 31 manuscripts behind them".
+- **Next batch:** `math-ckd.2` — the 9 headline T0 families (002, 004, 006, 010, 011, 014, 016, 018,
+  019), 29 manuscripts. `bd update math-ckd.2 --claim`, then steps 2–9 below per page. Check
+  `bd ready` first: summaries are P4 and any ready P1/P2 issue outranks this batch.
 - **Last gate run (2026-10-07):** regeneration byte-identical on two runs, one intended change (fam
-  287 `summary` 0 → 1); 372 families, 722 manuscripts, 162 formalized, 405 challenges, 185
+  362 `summary` 0 → 1); 372 families, 722 manuscripts, 162 formalized, 405 challenges, 185
   `main_results` over 178 configs, 235 scope notes, both cross-checks 0, discipline table summing
-  372 / 235 / 722 / 162; `verify_summaries.py` on the 287 page → 160 marker positions, 25 quoted
-  spans, 0 problems; `--mutant` flags the fabricated quotation and skips mutant A (see the 287
-  findings).
+  372 / 235 / 722 / 162; `verify_summaries.py` on the 362 page → 109 marker positions, 38 quoted
+  spans, 0 problems; `--mutant` flags **both** mutants (0 undetected — see the 362 findings).
 - **Push state:** `origin/notes` at 29169d579 (pushed 2026-10-07 07:48); local `notes` HEAD is
-  62032d480. Push when an hour has passed since the last push, not per commit.
+  f4d02417b. Push when an hour has passed since the last push, not per commit.
 - **007 finding, for reuse:** the ledger's `paps_form`/`mainres` counts are 0 for a family that
   ships 854 Lean files with zero `sorry`, because `formalization.yaml` has no entry for the
   manuscript. Counts are YAML bibliography entries, not Lean source — never read them as "not
@@ -204,6 +204,42 @@ carrier, so it states what to do and what not to re-derive.
   - Cost: 1 manuscript (12 files, 17-entry bibliography, zero `OAI:` self-citations), 1 trace (PDF
     only, 11 pages), 1 Lean tree → 42 sources, 160 markers, 25 quoted spans, green on the second
     checker run. One manuscript is the cheapest shape in the batch.
+- **362 findings, for reuse:**
+  - **The comparator is the tree's own file with the proof deleted.**
+    `lean/ComparatorChallenges/VlasovMaxwell.lean:10–101` is a verbatim copy of `Model.lean:13–104`,
+    then the statement at 103–105 with `sorry` at 106. `Main.lean:44–48` proves that same statement in
+    two lines, so 362's challenge gap is a copy, not a missing argument. Diff the comparator against
+    the tree before describing a challenge as open.
+  - **362 is the positive control for the evidence-column trap.** `formalization.yaml` *does* index
+    it — bibliography entry at 392–395, `main_results` at 1642–1644 — which is why the ledger reads
+    `paps_form 1` / `mainres 1`. Contrast 007, 017, 159, 271 and 287, all 0/0 beside large trees with
+    zero `sorry`. A 1 in those columns means the YAML has a block, nothing more.
+  - The analytic crux is a **sign**: the absolute force bound loses a factor √*w* (`dir:absolute`,
+    `direct.tex:26–29`; the loss is named at `introduction.tex:174–177`), while a signed
+    integration-by-parts identity (`can:weighted-formula`, `cancellation.tex:278–306`) plus direction
+    control (`ang:direction`, `direction.tex:22–37`) recovers *w*^{-1/2} (`selection.tex:481`), so the
+    weighted bound closes with no √*w* (`sel:bulk`, `selection.tex:449–452`).
+  - The continuation argument is a **divergent sum of log-sized steps**: the signed increment
+    |*V*(*t*₂) − *V*(*t*₁)| ≤ *MP*√Δ*t* + *A* Δ*t* *P*²*L*/*w* (`prop:increment`, `setup.tex:35–47`)
+    makes the doubling gaps Δ*n* ≥ *c*/log(2 + 1024·2ⁿ) (`setup.tex:95–102`), whose sum diverges, so
+    momentum cannot blow up at a finite time.
+  - Concurrent work is explicitly disclaimed in the manuscript: Wang's July 2026 cylindrically
+    symmetric pair is cited and then separated — "Thus the two data classes should not be
+    identified." (`introduction.tex:134–136`). Quote it; do not merge the two results.
+  - **A range marker must not end on a file's trailing blank line.** `[S2:1–18]` failed as
+    `BLANK S2:18` because the manuscript `README.md` has 18 lines and line 18 is blank; the marker
+    became `[S2:1–17]`. This is the same trap as 197's `[S4:73–81]`, one layer further out.
+  - **A repo-level Sources row needs a full repo-relative File cell.** The trace row's short cell
+    `relativistic-vlasov-maxwell.pdf` printed `FILE NOT ON DISK` — the checker resolves cells under
+    the manuscript root and the repo root only. Applies to trace PDFs, `lean/…`, `notes/…` and
+    `CONTENTS.md`; only files under the manuscript root may use a short cell.
+  - **Mutant A is not skipped by block quotes alone.** It scans the raw page text for a straight-`"`
+    span ≥ 12 chars, so 362's JSON block quote (`"challenge_module"`) gives it a target and the page
+    reports `0 undetected mutants`. 287's note holds only for a page with zero straight `"`; the gate
+    is the no-mutant run at `0 problems` with mutant B flagged.
+  - Cost: 1 manuscript (16 files), 1 trace (PDF only, 6 pages, so not quotable), 1 Lean tree (207
+    files / 89,993 lines) → 23 sources, 109 markers, 38 quoted spans, green on the second checker
+    run. A one-manuscript family with a mid-size tree is the cheapest shape measured so far.
 
 ## Loop shape
 
