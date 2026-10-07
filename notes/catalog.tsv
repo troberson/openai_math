@@ -82,7 +82,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 084	Real and complex analysis	The geometric case of the Erd\H{o}s similarity conjecture	2	0	T2	1	0	1	375	0	0	0		resolution|uniform	0	1		0	0	0
 085	Real and complex analysis	Endpoint regularity of the planar centered maximal function	1	1	T3	2	1	1	611	0	0	0		resolution|uniform	0	1		0	0	0
 086	Real and complex analysis	An $L^3$ bound for the trilinear Hilbert transform	1	0	T0	0	0	0	0	0	0	0		resolution|bound	0	1		0	0	0
-087	Convex and metric geometry	The Mahler conjectures and symplectic width	3	2	T3	4	3	1	1277	1	0	0	symmetric-and-general-mahler-conjectures	resolution|bound|classification	0	1		0	0	0
+087	Convex and metric geometry	The Mahler conjectures and symplectic width	3	2	T3	4	3	1	1277	1	0	0	symmetric-and-general-mahler-conjectures	resolution|bound|classification	0	1		0	0	1
 088	Convex and metric geometry	Petty's projection-volume conjecture and simplex counterexamples	2	2	T3	3	3	1	921	0	0	0		bound	0	1		0	0	0
 089	Convex and metric geometry	Bounded-distortion $L_1$ embeddings of planar and bounded-treewidth graphs	2	2	T3	2	2	1	944	0	0	0		resolution|bound|uniform	0	1		0	0	0
 090	Convex and metric geometry	Universal optimality of the triangular lattice	4	0	T2	4	0	1	1216	4	0	0		resolution|density|uniform	0	1		0	0	0
