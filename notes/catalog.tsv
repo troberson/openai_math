@@ -190,7 +190,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 194	Algebra	Lech's multiplicity conjecture	1	0	T2	1	0	1	598	0	0	0		resolution|classification|uniform	0	1		0	0	0
 195	Algebra	A counterexample to the small Cohen--Macaulay module conjecture	1	0	T0	0	0	0	0	0	0	0			0	1		0	0	0
 196	Algebra	A counterexample to Kaplansky's zero-divisor conjecture	1	1	T3	1	1	1	378	0	0	0			0	1		0	0	0
-197	Algebra	Nonsofic groups and group-ring counterexamples	4	3	T3	4	3	1	2249	0	0	0	kaplansky-direct-finiteness-characteristic-two	counterexample	0	1		1	0	0
+197	Algebra	Nonsofic groups and group-ring counterexamples	4	3	T3	4	3	1	2249	0	0	0	kaplansky-direct-finiteness-characteristic-two	counterexample	0	1		1	0	1
 198	Algebra	A counterexample to the little finitistic-dimension conjecture	1	1	T3	2	2	1	634	0	0	0		resolution|counterexample	0	1		0	0	0
 199	Algebra	Counterexamples to conjectures of Auslander--Reiten, Tachikawa, and Nakayama	2	2	T3	2	2	1	1108	0	0	0		resolution|counterexample|classification	0	1		0	0	0
 200	Algebra	Eisenbud--Green--Harris and lex-plus-powers in characteristic zero	2	0	T0	0	0	0	0	0	0	0		resolution|classification|uniform	0	1		0	0	0
