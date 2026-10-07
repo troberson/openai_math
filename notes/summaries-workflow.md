@@ -11,15 +11,16 @@ carrier, so it states what to do and what not to re-derive.
 - **Pages done:** 102 (`notes/summaries/theoretical-computer-science/`), 001, 007, 017
   (`notes/summaries/number-theory/`), 032 (`notes/summaries/algebraic-and-complex-geometry/`), 087
   (`notes/summaries/convex-and-metric-geometry/`), 159 (`notes/summaries/combinatorics/`), 197
-  (`notes/summaries/algebra/`). The ledger's `summary` column is 1 for those eight; the generator
-  reports "summary pages 8 of 372 families, 24 manuscripts behind them".
-- **Next page:** family **221**. Steps 2–9 above, in order.
+  (`notes/summaries/algebra/`), 221 (`notes/summaries/probability-and-statistical-mechanics/`). The
+  ledger's `summary` column is 1 for those nine; the generator reports "summary pages 9 of 372
+  families, 25 manuscripts behind them".
+- **Next page:** family **271**. Steps 2–9 above, in order.
 - **Last gate run (2026-10-07):** regeneration byte-identical on two runs; 372 families, 722
   manuscripts, 162 formalized, 405 challenges, 185 `main_results` over 178 configs, 235 scope notes,
   both cross-checks 0, discipline table summing 372 / 235 / 722 / 162; `verify_summaries.py --mutant`
-  over 8 pages → 1512 marker positions, 289 quoted spans, 0 problems, 0 undetected mutants.
+  over 9 pages → 1645 marker positions, 325 quoted spans, 0 problems, 0 undetected mutants.
 - **Push state:** `origin/notes` at 6fb6d9fd2 (pushed 2026-10-07 06:22); local `notes` HEAD is
-  4f5798c13. Push when an hour has passed since the last push, not per commit.
+  d5d1a0a95. Push when an hour has passed since the last push, not per commit.
 - **007 finding, for reuse:** the ledger's `paps_form`/`mainres` counts are 0 for a family that
   ships 854 Lean files with zero `sorry`, because `formalization.yaml` has no entry for the
   manuscript. Counts are YAML bibliography entries, not Lean source — never read them as "not
@@ -103,6 +104,35 @@ carrier, so it states what to do and what not to re-derive.
   - Cost: 4 manuscripts → 36 sources, 181 markers, 57 quoted spans, green on the second checker run.
     A four-tree family with three Lean trees costs about the same as a one-manuscript family with a
     huge tree (159: 25 sources, 99 markers, 47 spans).
+- **221 findings, for reuse:**
+  - **A block-quote intro line carries exactly one marker.** `pass_c` loops over *every* candidate
+    marker on the attributed line for *each* span, with no consuming pointer, so extra markers on the
+    intro line are tried first and produce a false `NOT VERBATIM`. Split the paragraph so the intro
+    line cites only the quoted range.
+  - **`norm()` does not strip `$`.** A quotation from LaTeX source must carry the source's `$…$`
+    delimiters verbatim; "the $b(S)$ branching depths" only matches with the dollars present.
+  - Two of this page's six defects were **invented text** — the abstract and the trial-functional
+    display. Print the shipped lines (`grep -n "" file | sed -n 'A,Bp'`) before writing a quotation; a
+    paraphrase held in memory is not a quotation. Two more were off-by-one range starts, because these
+    sources wrap sentences mid-line: derive every range from the shipped file.
+  - **`AMBIGUOUS` is printed, not counted, and the manuscript copy wins** (`self.table[sid] =
+    hits[0]`, roots ordered `[manuscript, repo]`). No path form disambiguates a repo-root file that
+    also exists in the manuscript root — `Path("./README.md")` normalizes to `README.md`. The release
+    `README.md` therefore cannot be a declared source row; delete it and cite the trace files.
+  - The scope note for 221 states **no exclusions** (15 lines, contrast 197), so its coverage claims
+    come from the tree. Grep the tree for the manuscript's corollary vocabulary: `Viana`, `Bray`,
+    `SAT`, `soft`, `temperature`, `ground` return 0 files in `lean/OAI/Probability/DilutedSpin/`, so
+    the formula is formalized and its three named corollaries are not.
+  - Dependency direction is measurable and runs **from 221 to its companion 235**: 23 files of
+    `lean/OAI/Probability/SATComputability/` import 17 distinct `DilutedSpin` modules, and
+    `mezard_parisi` is imported nowhere in `OAI/`. That mirrors the manuscript's closing remark, which
+    cites the companion's Theorem 8.4 for random 3-SAT.
+  - 221's trace is the release's **only trace shipped as LaTeX**, so its reasoning is quotable text
+    (211 lines; prompts 86–155, five sections). Its working bibliography — Barbier–Panchenko, Mourrat,
+    Mourrat–Panchenko — appears nowhere in the manuscript's `references.bib`: a source-level fact about
+    the trace, not about the published manuscript.
+  - Cost: 1 manuscript (11 sections under `build/sections/`), 1 trace in two formats, 3 Lean trees →
+    30 sources, 133 markers, 36 quoted spans, green on the third checker run.
 
 ## Loop shape
 
