@@ -7,6 +7,7 @@ Regenerate the ledger (a few seconds, no Lean):
 
 ```sh
 python3 notes/scripts/build_catalog.py      # writes notes/catalog.tsv and prints the report
+python3 notes/scripts/triage_t0.py          # buckets the 137 T0 families by claim shape
 ```
 
 ## Standing rules
@@ -50,6 +51,8 @@ Assigned from the scope note's comparator links (`../ComparatorChallenges/X.lean
 
 T1 is empty in this catalog: every one of the 235 scope notes links at least one challenge file.
 T2 is not a failure — those challenges are companion statements, still linked from a family note.
+**All 137 T0 families have zero formalized manuscripts**, so T0 is triaged by claim shape alone:
+see `notes/t0-triage.md`.
 
 ## Claim shapes (`shapes` column)
 
@@ -152,10 +155,12 @@ the community will scrutinize.
       (014, 125, 240, 244, 282), 5 flags dropped as false positives.
 - [ ] Read the 2 `verification/COVERAGE.md` limits files and record what each arithmetic check
       does *not* cover.
-- [ ] Triage the 137 T0 families by claim shape — that is where the taxonomy earns its keep,
-      since coverage signals are absent there.
+- [x] Triage the 137 T0 families by claim shape — done in `notes/t0-triage.md`: buckets C 16,
+      R 50, B 29, K 8, U 12, O 2, N 20 (255 manuscripts, 0 formalized), with a reading pass over
+      the 44 highest-priority families (134 manuscripts).
 - [ ] Cross-check the 44 counterexample families against `main_results`: a counterexample is the
-      claim type most likely to be checkable cheaply and hardest to argue about.
+      claim type most likely to be checkable cheaply and hardest to argue about. 16 of the 44 are
+      T0 and are entered in `notes/t0-triage.md` with the object each one names.
 - [ ] Read the 3 conditional families at T3 in Lean source (125, 240, 244) and confirm the
       hypothesis appears in the formalized statement — 240 is the sharp case: the formalized
       config `CHObstruction` assumes CH, while the family's unconditional ZFC theorem is not
