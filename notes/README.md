@@ -20,6 +20,8 @@ python3 notes/scripts/verify_subfindings.py --mutant  # checks notes/subfindings
 python3 notes/scripts/extract_subfinding_pairs.py  # lays out the pairing population; report-only, writes nothing
 python3 notes/scripts/verify_subfinding_pairs.py --mutant  # checks notes/subfinding-pairs.md against overview.tex
 python3 notes/scripts/verify_conditional.py --mutant  # checks notes/conditional.md against the Lean source it cites
+python3 notes/scripts/extract_verification_348.py  # measures the two family-348 verification bundles; report-only, writes nothing
+python3 notes/scripts/verify_verification_dirs.py --mutant  # checks the 348 section of notes/verification-dirs.md against the bundle files
 ```
 
 `notes/summaries-workflow.md` is the resume protocol for the summary-page batches: per-page steps,
@@ -254,7 +256,7 @@ quotes, and writes nothing.
 | `mainres` | of those, count listed in `main_results` | |
 | `scope_note` | file exists | 235 total |
 | `scope_chars` | length of the `## Scope` section | Rough weight of the exclusions text |
-| `verification` | manuscript dirs with a `verification/` subdir | 30 dirs over 22 families |
+| `verification` | manuscript dirs with a `verification/` subdir | 30 dirs over 22 families; family 348's 2 are one bundle shipped twice |
 | `inputs` | manuscript dirs with `INPUTS.md` | 4 dirs over 4 families (057, 157, 251, 259) |
 | `covmd` | dirs with `verification/COVERAGE.md` | 2 files, both in family 348 — these bound what a check covers |
 | `trace` | `README.md` reasoning-trace table | 10 families; read from the release table, not guessed from filenames |

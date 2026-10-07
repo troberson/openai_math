@@ -162,6 +162,14 @@ lives in this file and nowhere else.
   `name → file:line` citation against the shipped file, and flags five injected mutants. It reports
   **15 unanchored prose quotations** — the pre-existing abstract and scope-note quotes in the
   per-family sections, which carry no line anchors and are therefore not verified. It writes nothing.
+- Measure the family-348 verification bundles with `python3 notes/scripts/extract_verification_348.py`
+  and run it twice and diff: the report must be identical. It reads the bundles as text and runs
+  nothing. Check the section it feeds with
+  `python3 notes/scripts/verify_verification_dirs.py --mutant` before quoting it — it re-derives every
+  bold count from the bundle on disk, resolves every `file:line` anchor, matches each fenced block line,
+  checks each quotation against the anchored lines, re-checks the ledger's `verification`/`inputs`/`covmd`
+  claims from `notes/catalog.tsv`, and flags eight injected mutants including an abbreviated anchor. It
+  writes nothing.
 - Check `notes/conjecture-standing.tsv` with `python3 notes/scripts/verify_conjecture_standing.py`
   before quoting any row — it proves the 139-row fam set against the ledger, resolves every
   `overview.tex:<n>` anchor to that family's own `\resultentry`, requires `prior_confidence` in
