@@ -42,12 +42,30 @@ allbib = " ".join(open(b, encoding='utf8', errors='replace').read().lower()
 hits = [r['fam'] for r in rows if " ".join(re.split(r'\s+', r['title'].lower())[:6]) in allbib]
 ```
 
-Catalog result: **14 of 372.** These manuscripts do not cite each other.
+Catalog result: **14 of 372.**
 
-That measurement changes the plan, so report it as a course change, not as a footnote: internal
-consequence is unmeasurable here, so every consequence ranking is **prior-based and must be labelled
-as such**. Do not build a consequence score on intra-corpus edges. (The bibliography layer supplies a
-`cited-in-bib` *topic* edge, not influence.)
+That count reproduces, and its conclusion does not. Measured 2026-10-07 by
+`python3 notes/scripts/extract_links.py`, which prints this proxy as a report line:
+
+- The snippet scans `preprints/*/*.bib` + `preprints/*/*/*.bib` = **417 of the 501** `.bib` files; the
+  77 at depth 4 are outside it. Over all 501 the same title rule gives **18**.
+- It concatenates every bibliography, so a family matched in **its own** `.bib` counts. With an
+  ownership test: **10** cross-family over 417 files, **12** over 501.
+- The corpus is lowercased, not normalized. Normalizing it (punctuation stripped, every `the` dropped)
+  and using the full title gives **23** any / **12** cross-family — the rule shipped in
+  `notes/links.tsv`. Corpus normalization is the dominant knob: it moves 5 to 23.
+
+Meanwhile the release's own citation edges are in those same bibliographies as URLs: **397**
+release-labelled `.bib` entries resolve to **396** manuscript→manuscript edges over **158 of 372**
+families, **105** crossing a family boundary, plus **213** body hrefs (`notes/links.tsv`). The
+manuscripts *do* cite each other; a title phrase is simply not how the release writes a citation.
+
+So the course change is narrower than "consequence is unmeasurable". What is unmeasurable is the
+**type** of each edge — the release records no builds-on / contrasts-with / refutes relation — so a
+consequence ranking stays **prior-based and must be labelled as such**, and you may quote the 396
+edges as evidence that a result was cited, never as evidence that it mattered. Do not build a
+consequence score on intra-corpus edges, and do not report the title-phrase count as a citation count.
+See `notes/links.md` for the full rule grid.
 
 ## 2. Get the claim set from the ledger, then check the correlation
 

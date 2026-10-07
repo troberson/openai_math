@@ -75,11 +75,14 @@ Body text adds a second, smaller layer: **213** `\href{…/preprints/…}` occur
 Most-cited target families (bib href edges): **034** (19), **260** (18), **068** (14), **033** (12),
 **227** (11), **238** (10), **376** (9), **331** (7), **215** (6), **090** (6).
 
-This is the measurement that makes intra-release consequence measurable. `notes/conjecture-standing.md`
-and the `AGENTS.md` dev tip both say intra-corpus consequence is unmeasurable because "only 14 of 372
-family titles appear in the corpus's `.bib` files". That claim is falsified by the row above: the
-title-phrase rule is a weak proxy for an edge layer that reaches 158 families. Both documents are
-corrected in the same pass as this record.
+This is the measurement that makes intra-release consequence measurable. `notes/conjecture-standing.md`,
+the `AGENTS.md` dev tip, and the `auto-skill-corpus-finding-surprise-ranking` skill all conclude from
+"only 14 of 372 family titles appear in the corpus's `.bib` files" that the manuscripts do not cite
+each other, so intra-corpus consequence is unmeasurable. The **count** reproduces (see the section
+below); the **conclusion** does not follow. The same corpus carries 396 resolved manuscript→manuscript
+citation edges reaching 158 families, because the release cites by URL and a title phrase is not how a
+citation is written. What is unmeasurable is the *type* of each edge, not its existence. All three
+documents are corrected in the same pass as this record.
 
 ## The three name relations are three rows
 
@@ -103,25 +106,47 @@ reference; the **4** that do not — **094, 176, 194, 299** — are the ones to 
 and 6 of the 12 `cited-in-bib` families (001, 038, 066, 166, 231, 312) are cited in a bibliography
 without the title phrase appearing in any body text.
 
-### The recorded "14" is not reproduced
+### The recorded "14" is reproduced, by a rule with two scope defects
 
-The repo records "14 of 372 family titles appear in the corpus's `.bib` files" with no rule written
-down. No variant reproduces 14. Families matched, measured 2026-10-07:
+The repo records "14 of 372 family titles appear in the corpus's `.bib` files". The rule behind it was
+written down — in the `auto-skill-corpus-finding-surprise-ranking` skill — and it reproduces exactly:
+a **6-token lowercased title prefix** searched in the concatenation of `preprints/*/*.bib` +
+`preprints/*/*/*.bib`, with the corpus **lowercased, not normalized**, and own-family bibliographies
+**included**. `notes/scripts/extract_links.py` now computes it and prints it as a report line, so 14 is
+reproducible by the same command as every other number here.
 
-| Rule | Any `.bib` | Cross-family |
-|---|---|---|
-| normalized full title (the rule shipped here) | 23 | **12** |
-| title-core (normalized, trailing noun dropped) | 29 | 16 |
-| verbatim, case-sensitive | 12 | 9 |
-| verbatim, case-insensitive | 15 | 11 |
-| verbatim ci, `the` stripped | 16 | 11 |
-| normalized, `the` kept | 21 | 11 |
-| bib `title={}` field only, verbatim ci | 16 | — |
-| bib `title={}` field only, normalized | 5 | — |
+The count is a measurement of a rule, and the rule has two defects that the prose did not record:
 
-Per `notes/counterexample-tag.md`, the rule is written into code and the count it yields is quoted;
-14 is recorded as **not reproduced**, not averaged into a nearby figure. The shipped rule is the
-normalized full title, cross-family: **12**.
+- **Scope.** The two globs reach **417 of the 501** `.bib` files; the 77 at depth 4
+  (`preprints/*/*/*/*.bib`) are outside it.
+- **No ownership test.** It counts a title appearing in *any* bibliography, including the owning
+  family's own. Under the same title rule over all 501 files: **18** families, **12** cross-family.
+
+Measured 2026-10-07, all three knobs at once (title rule × corpus text × file scope):
+
+| Title rule | Corpus text | `.bib` scope | Any family | Cross-family |
+|---|---|---|---|---|
+| 6-token prefix | lowercased | 417 (depth ≤3) | **14** ← the recorded figure | 10 |
+| 6-token prefix | lowercased | 501 (all) | 18 | 12 |
+| 6-token prefix | normalized | 417 | 2 | 1 |
+| 6-token prefix | normalized | 501 | 2 | 1 |
+| normalized full title | lowercased | 417 | 4 | 3 |
+| normalized full title | lowercased | 501 | 5 | 4 |
+| normalized full title | normalized | 417 | 20 | 10 |
+| normalized full title | normalized | 501 | **23** | **12** ← shipped `cited-in-bib` |
+
+The last row is the rule shipped in `notes/links.tsv`; the first row is the recorded 14. Normalizing
+the corpus is the dominant knob — it is what turns punctuation-bearing titles into matchable phrases,
+taking 5 to 23 — which is why a stem-style variant is not interchangeable with a normalized one.
+Other variants measured over all 501 files with a lowercased corpus: title-core (trailing noun
+dropped) 29 / 16; verbatim case-sensitive 12 / 9; verbatim case-insensitive 15 / 11; verbatim ci with
+`the` stripped 16 / 11; normalized with `the` kept 21 / 11; `title={}` field only, verbatim ci 16;
+`title={}` field only, normalized 5.
+
+So the recorded figure is not a phantom, and the conclusion drawn from it is unchanged: the
+title-phrase layer reaches 12 cross-family families while the href layer reaches 105, so the proxy
+under-counts citations by an order of magnitude. What changes is the reason to give. Quote 14 with its
+rule and its 417-file scope, and quote 12 with the normalized rule and the 501-file scope.
 
 ## Negatives, stated as measurements
 

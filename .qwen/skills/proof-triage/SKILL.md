@@ -13,7 +13,7 @@ description: >-
 compatibility: "python3 (stdlib only); no Lean toolchain, no network"
 metadata:
   author: tamara
-  version: "1.7"
+  version: "1.8"
 ---
 
 # Proof triage
@@ -59,14 +59,24 @@ behaviour and rules only.
 8. **A prior is not a measurement.** `notes/conjecture-standing.tsv` records what the assistant's
    training data says about a conjecture's standing at an early-2025 cutoff, self-rated by
    `prior_confidence`. Quote it as the prior it is, pair every row with its confidence, and never
-   present a surprise tier as a property of the result. No row may assert consequence: only 14 of 372
-   family titles appear in the corpus's `.bib` files, so consequence is external by construction.
-   Run `notes/scripts/verify_conjecture_standing.py` before quoting rows.
+   present a surprise tier as a property of the result. No row may assert consequence. The reason is
+   not that the corpus lacks citation structure — it has 396 measured manuscript→manuscript edges
+   (`notes/links.tsv`) — it is that the edges are **untyped**, so they record a citation choice, not
+   a dependence. Run `notes/scripts/verify_conjecture_standing.py` before quoting rows.
 9. **A declared pin is not a build.** `notes/formalization-deps.tsv` records what the declaration
    layers say. No `lake` run means no pin is verified buildable and no patch is verified applicable.
    Import counts are direct statements over `lean/OAI/**/*.lean` only — quote the scope with the
    number, and never present them as the transitive closure. `lean/lake-manifest.json` is generated,
    so it is evidence of a resolution event, not of a build in this repo.
+10. **Quote an edge with the rule that yields its count.** `notes/links.tsv` is the typed-edge
+    inventory: 22 rows, 7 fields, every count from `python3 notes/scripts/extract_links.py`.
+    415 is scope-note link **occurrences** and 405 is **distinct configs** (the ledger's `chal`
+    column is the deduped 405); `mainres` sums to 178 unique configs while the yaml carries 185
+    entries. Manuscript ownership is the path component after `preprints`, never `parts[-2]`. The
+    title-phrase rule is **not** the citation layer — the release cites by URL, so a title-phrase
+    count (12 cross-family) systematically under-counts the href layer (105). Report a negative as a
+    measurement: 0 MSC codes and 0 bib `keywords` fields mean no topic vocabulary exists to read,
+    not that topics are absent.
 
 ## Workflow
 
@@ -108,6 +118,9 @@ behaviour and rules only.
 | `notes/formalization-deps.tsv` | 31 rows: 30 declared upstream libraries with pinned commits, yaml relationship, direct import counts, patch file and line count, plus BernoulliRegular as `lakefile_declared=n` | Any dependency, pin, or upstream-library question |
 | `notes/formalization-deps.md` | The import rule and its scope, the `.git` join trap, the yaml ordering claim with its 5 violations, the 19 zero-import rows, the manifest reconciliation, the BernoulliRegular finding, what was not checked | Before quoting a dependency count, or claiming a pin is buildable |
 | `notes/scripts/extract_formalization_deps.py` | Writes the deps table and prints its reconciliation; reads 121,734 files, refuses to write when a join breaks | Regenerating, or extending the deps table |
+| `notes/links.tsv` | 22-row typed-edge inventory: every relation type in the release with source, pattern, count, detail, the command that computes it, and what the edge does **not** mean | Any "what connects X to Y" question, and the index-schema decision |
+| `notes/links.md` | The 415-vs-405 and 185/178/127 reconciliations, the href citation layer, the three name relations as three rows, the unreproduced "14", the negatives, what was not checked | Before quoting any edge count |
+| `notes/scripts/extract_links.py` | Writes `notes/links.tsv` and prints the per-edge report; 20 seconds, deterministic | Regenerating, or adding an edge type |
 | `lean/docs/<NNN>.md` | Family scope note: what the formalization covers and excludes | Any claim about a formalized result |
 | `lean/ComparatorChallenges/*.json` | Statement/solution pairs, `permitted_axioms` | Checking what a challenge permits |
 | `lean/formalization.yaml` | `sources`, `status.main_results`, `automation`, `review` | Coverage and verification-ceiling claims |
@@ -144,6 +157,11 @@ behaviour and rules only.
   certificate bundle, `BUILDING.md`, and `SUPPORT-COVERAGE.json`; none exist on disk or in git. When
   a family ships a coverage statement, check that the artifacts it names are present before
   describing the family as having support.
+- Manuscript ownership is not `parts[-2]`. The owner of `preprints/<dir>/…/file.pdf` is the component
+  **after** `preprints`; `parts[-2]` files manuscripts under `build/` and `sections/` (8 pseudo-dirs)
+  and every cross-family exclusion then silently matches nothing.
+- A bare `\bMSC\b` scan is not the MSC rule: it returns 14 prose hits ("MSc thesis", "2-primary class
+  groups") where the shipped rule returns 0. A negative needs the same rule discipline as a positive.
 
 ## Related skills
 

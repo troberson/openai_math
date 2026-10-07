@@ -12,6 +12,7 @@ python3 notes/scripts/verify_summaries.py   # checks every citation in notes/sum
 python3 notes/scripts/verify_summaries.py --mutant  # same, plus the injected-fault self-test
 python3 notes/scripts/verify_conjecture_standing.py  # checks notes/conjecture-standing.tsv against the ledger and overview.tex
 python3 notes/scripts/extract_formalization_deps.py  # writes notes/formalization-deps.tsv and prints the reconciliation
+python3 notes/scripts/extract_links.py      # writes notes/links.tsv and prints the per-edge report
 ```
 
 `notes/summaries-workflow.md` is the resume protocol for the summary-page batches: per-page steps,
@@ -137,6 +138,32 @@ since the whole tree yields OAI 277,501 / Mathlib 56,715. Rules, the `.git` join
 reconciliation (42 packages = 30 declared + 12 transitive, revs matching every pin), and what was not
 checked are in **`notes/formalization-deps.md`**.
 
+**`notes/links.tsv` is the typed-edge inventory: 22 rows, 7 fields**, every count computed by one
+command in 20 seconds. It is the input the index-schema decision needs, so the rows are edge *types*,
+not a link list. Three of its numbers reconcile against the ledger and must be quoted with the rule
+that yields them: scope notes contain **415** comparator-statement link **occurrences** over **405**
+distinct configs (the 10-gap is one config linked twice inside each of 7 docs — `071, 100, 115, 134,
+274, 275, 293` — and **0** configs are shared between families, so the ledger's deduped `chal` column
+is correctly 405); `formalization.yaml` carries **185** `main_results` entries over **178** unique
+configs in **127** families, which is what `mainres` sums to. The bead spec's "168 families with
+`mainres>0`" is **not reproduced**; the measured figure is 127.
+
+Two findings in it are load-bearing. **The `main_results` set equals the formalized set** — 127
+families each way, 0 in either difference — so declaring a main result and formalizing a manuscript
+are one signal, not two, and a coverage answer quoting both is quoting one. And the real
+manuscript→manuscript layer is the **href, not the title**: **397** release-labelled `.bib` entries
+resolve to **396** edges over **158 of 372** families, **105** crossing a family boundary, plus 213
+body hrefs. The title-phrase proxy that the repo previously used reaches 12 cross-family families, so
+it systematically misses citations; the "only 14 of 372 family titles appear in the `.bib` files"
+figure **is** reproduced — by a 6-token lowercased title prefix over the 417 `.bib` files at glob
+depth ≤3, counting own-family bibliographies — and the extractor prints it as a report line, but its
+scope is 417 of 501 files and it has no ownership test, so it is not the same measurement as the 12.
+The edges are **untyped** —
+the release records no builds-on / contrasts-with relation — so an edge is a citation choice, not
+consequence. Negatives are rows too: **0** MSC codes over 8,231 files, **0** `keywords` fields in
+12,928 bibliography entries, `\keywords` in **12** of 722 manuscript directories, **2** companion
+edges (`001→032`, `002→006`). Rules and what was not checked are in **`notes/links.md`**.
+
 ## Columns
 
 | Column | Source | Notes |
@@ -225,6 +252,16 @@ the community will scrutinize.
   silently zero is indistinguishable from a column that is genuinely empty unless the generator
   prints the repo-wide sum — which it now does. Fixed 2026-10-06 by keying the reference sets on
   `.name`; the sums are 30 / 4 / 2, and no basename collision exists (30/30, 4/4, 2/2 unique).
+- **Manuscript ownership is not `parts[-2]`.** A manuscript path is
+  `preprints/<dir>/…/file.pdf`, and the owner is the component **after** `preprints`. Keying by
+  `parts[-2]` files manuscripts under `build/` and `sections/` — 8 pseudo-directories — and every
+  cross-family exclusion then matches nothing, silently. Measured 2026-10-07 in
+  `notes/scripts/extract_links.py`; the same rule is why the ledger's `verification`/`inputs`/`covmd`
+  sums are keyed on `.name`.
+- **A bare `\bMSC\b` scan is not the MSC rule.** It returns 14 hits over 13 files, all prose:
+  `type = {MSc thesis}`, "2-primary class groups", "primary classical construction". The shipped rule
+  (`MSC 20xx | \msc | mscclass | "Mathematics Subject Classification" | Primary nnXxx`, over 8,231
+  files) returns **0**, which is the finding: the release ships no classification vocabulary.
 - **A coverage file is not coverage.** Family 318 ships `SUPPORT-COVERAGE.md`, which names
   `support/r-ce/ce_certificate.py`, its `.json`/`.txt` transcripts, `BUILDING.md`, and
   `SUPPORT-COVERAGE.json`. None of those paths exist on disk or in git. The ledger has no column for

@@ -18,7 +18,8 @@ lives in this file and nowhere else.
   `verification-dirs.md`, `summaries-workflow.md` (the resume protocol for the summary batches),
   `conjecture-standing.tsv` (139 rows, 10 columns — a labeled training-data prior, not a fact) with
   `conjecture-standing.md` beside it, `formalization-deps.tsv` (31 rows, 8 columns — the upstream
-  library graph) with `formalization-deps.md` beside it,
+  library graph) with `formalization-deps.md` beside it, `links.tsv` (22 rows, 7 columns — the
+  typed-edge inventory) with `links.md` beside it,
   `summaries/<discipline>/<NNN>-<name>.md`, `notes/scripts/`.
 - `.beads/issues.jsonl` is the tracked issue store, in bd no-db mode; see the beads section below.
 
@@ -51,13 +52,28 @@ lives in this file and nowhere else.
 - Quote `notes/conjecture-standing.tsv` as a prior, never as a literature fact. Its
   `standing_prior_2025` column is the assistant's training-data memory at an early-2025 cutoff,
   self-rated by `prior_confidence`; the repo supplies only `release_claim` and `abstract_line`.
-  No row may assert consequence — consequence is external here: only 14 of 372 family titles appear
-  in the corpus's own `.bib` files, so intra-corpus consequence is unmeasurable.
+  No row may assert consequence. Intra-corpus citation edges exist and are measured — 397
+  release-labelled `.bib` entries resolve to 396 manuscript→manuscript edges over 158 of 372
+  families, 105 crossing a family boundary (`notes/links.tsv`) — but the edges are **untyped**: the
+  release records no builds-on / contrasts-with relation, so an edge is a citation choice, not
+  consequence. The "only 14 of 372 family titles appear in the corpus's `.bib` files" figure this tip
+  used to carry **is** reproduced — by a 6-token lowercased title prefix over the 417 `.bib` files at
+  glob depth ≤3, counting own-family bibliographies — but its conclusion ("these manuscripts do not
+  cite each other") does not follow; see `notes/links.md`.
 - Extract the upstream library graph with `python3 notes/scripts/extract_formalization_deps.py`. It
   reads all 121,734 `lean/OAI/**/*.lean` files, so it takes minutes, not seconds, and it refuses to
   write the TSV when a join breaks. Import counts are over `lean/OAI/**/*.lean` — the whole tree
   yields OAI 277,501 / Mathlib 56,715, not the 276,599 / 56,196 the table records, so quote the scope
   with the number. `lean/lake-manifest.json` is read for the report only, never for a column.
+- Extract the typed-edge inventory with `python3 notes/scripts/extract_links.py` — 20 seconds, writes
+  `notes/links.tsv`, prints the report every count in it comes from. Quote an edge with its rule:
+  415 is scope-note link **occurrences** and 405 is **distinct configs** (the 10-gap is one config
+  linked twice inside each of 7 docs; the ledger `chal` column is the deduped 405), and the ledger
+  `mainres` column sums to 178 unique configs while the yaml carries 185 entries. Manuscript
+  ownership is the path component after `preprints`, never `parts[-2]` — keying by `parts[-2]` files
+  manuscripts under `build/` and `sections/` and silently makes every cross-family exclusion match
+  nothing. The report also reproduces the legacy title proxy (14 over 417 `.bib` files at depth ≤3) so
+  the figure the older docs quote is checkable against a command, not just against prose.
 - Project skills live in `.qwen/skills/` — `proof-triage` routes ledger work,
   `auto-skill-lean-formalization-coverage-audit` carries the measurement method.
 
@@ -86,6 +102,12 @@ lives in this file and nowhere else.
   byte-identical. Its report reconciles 31 rows = 30 declared + 1 undeclared, 30 lakefile requires
   pinned to 40-char commits, 30 yaml entries, 23 patches over 160,187 lines, 42 manifest packages
   = 30 declared + 12 transitive, 19 declared with zero direct imports, and 5 yaml ordering violations.
+- Run `python3 notes/scripts/extract_links.py` twice and diff: the TSV must be byte-identical and the
+  report identical. Its report reconciles 22 rows, 415 link occurrences over 405 distinct configs,
+  185 `main_results` entries over 178 unique configs in 127 families, 397 release-labelled bib
+  entries over 396 resolved edges reaching 158 families, the legacy title proxy at 14 over 417
+  `.bib` files (18 any / 12 cross over all 501), 0 MSC hits, 0 bib `keywords` fields, and 12
+  `\keywords` directories.
 
 ## PR instructions
 
