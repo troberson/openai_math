@@ -216,9 +216,11 @@ def main():
     docs = parse_docs()
     trace_by_fam, trace_unlisted = parse_traces()
 
-    ver_dirs = {p.parent for p in (ROOT / "preprints").glob("*/verification")}
-    inputs_dirs = {p.parent for p in (ROOT / "preprints").glob("*/INPUTS.md")}
-    covmd_dirs = {p.parent.parent for p in (ROOT / "preprints").glob("*/verification/COVERAGE.md")}
+    # Keyed by directory basename: `dirs` below holds names, not paths, and a
+    # Path-vs-str membership test silently yields zero for every family.
+    ver_dirs = {p.parent.name for p in (ROOT / "preprints").glob("*/verification")}
+    inputs_dirs = {p.parent.name for p in (ROOT / "preprints").glob("*/INPUTS.md")}
+    covmd_dirs = {p.parent.parent.name for p in (ROOT / "preprints").glob("*/verification/COVERAGE.md")}
 
     cols = [
         "fam", "discipline", "title", "paps", "paps_form", "tier", "chal", "mainres",
