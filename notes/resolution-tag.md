@@ -2,7 +2,8 @@
 
 Measured 2026-10-06 by static reading of the 372 family abstracts in `overview.tex`. No `lake`,
 `lean`, or comparator run. This is the yield check the open task in `notes/README.md` asks for
-before any tag rule in `notes/scripts/build_catalog.py` is widened. **No tag was changed here.**
+before any tag rule in `notes/scripts/build_catalog.py` is widened. **No tag was changed.** The
+measurement ended in a separate column, recorded under "Decision" below.
 
 Method is the one `notes/conditional.md` records: propose a rule, count what it flags, read every
 flagged abstract, and record the flags that reading drops.
@@ -168,6 +169,73 @@ undecidability, density, conditional, partial, uniform — 29 of the 94 flags ar
 families out of C, B, K, U, N into R. The 137/255 T0 totals and every coverage layer are unaffected;
 `conditional` is unaffected.
 
+## Decision (2026-10-07): a separate column, not a widened tag
+
+`notes/scripts/build_catalog.py` now writes a 20th column, **`resolves_named`**, carrying the
+candidate rule. The `resolution` entry in `SHAPES` is unchanged, so the shape table stays at 144 and
+the first-match buckets in `triage_t0.py` are untouched — re-run after the change, the buckets are
+C 16, R 50, B 29, K 8, U 12, O 2, N 20 over 137 families / 255 manuscripts / 0 formalized, identical
+to the record in `notes/t0-triage.md`.
+
+```python
+TARGET_NOUN  = r"conjectur|\bquestion|\bproblem"
+RESOLVE_VERB = (r"\bprov(?:e|es|ed|ing)\b|\bdisprov|\brefut|\bresolv|\banswer|\bsettl|\bestablis"
+                r"|\bconfirm|\bfail|\bviolat|\bcounterexample")
+```
+
+`\bprov(?:e|es|ed|ing)\b` needs both boundaries: without the leading one, "improved" matches through
+the "proved" inside it, which is the `bound` tag's own territory.
+
+Fresh generator report: **`resolves_named` 233 families, `resolution` tag 144, union 238.** By tier
+T3 88, T2 57, T1 0, T0 88. The column is **not a superset** of the tag:
+
+| | Families |
+|---|---|
+| flagged by both | 139 |
+| tag-only (tag yes, column no) | 5: 003, 010, 082, 103, 261 |
+| column-only (column yes, tag no) | 94 — the set read in this file |
+
+The 5 tag-only families are resolutions the noun list cannot see, because their target is named as a
+*hypothesis / case / estimate / contrast*, not as a conjecture, question, or problem:
+
+| Fam | Target as written in the abstract |
+|---|---|
+| 003 | "resolving the quasi-Riemann **hypothesis**" |
+| 010 | "resolving the dyadic Fontaine--Mazur **case**" |
+| 082 | "settles the triangular Hilbert transform **estimate**" |
+| 103 | "resolving derandomization for bounded-error logarithmic-space computation" |
+| 261 | "Resolves the predicted spectral **contrast**" |
+
+So the two signals are complementary, not nested: 238 families are named-target resolutions by at
+least one of them, and a family can be tagged and uncolumned. Quote them as two floors.
+
+`hypothes` is **not** in `TARGET_NOUN`, and adding it is a new measurement, not a tweak — it would
+also catch "under the hypothesis" phrasing that the `conditional` tag already owns. Not done.
+
+### What the column adds inside T0
+
+T0 has no coverage signal, so `shapes` was its only discriminator. The column is a second one: **88 of
+the 137 T0 families are flagged, 49 are not.** Cross-tabbed against the first-match buckets
+(`triage_t0.py`, bucket: column=1 / column=0):
+
+| Bucket | 1 / 0 | Reading |
+|---|---|---|
+| C counterexample | 12 / 4 | disprove-form resolutions, already the cheapest T0 checks |
+| R resolution | 48 / 2 | the 2 column-negatives are 010 and 103, both tag-only |
+| B bound | 7 / 22 | |
+| K classification | 4 / 4 | |
+| U uniform | 3 / 9 | |
+| O other | 2 / 0 | |
+| N untagged | 12 / 8 | **the payoff** |
+
+40 flagged T0 families (56 manuscripts) sit outside bucket R — first match assigns them elsewhere, so
+the bucket table alone never shows them as named-target resolutions.
+
+The N bucket is described in `notes/t0-triage.md` as "no shape tag at all — title is the only signal".
+Half of it is now not title-only; all 12 are named-conjecture families: 019, 031, 043, 051, 060, 164,
+195, 258, 306, 316, 338, 341. Those are the T0 families where the abstract names a conjecture and the
+`resolution` pattern matched none of its verbs, which is exactly the miss this file measures.
+
 ## Not checked
 
 - Every judgment here is from the release's own abstract. No manuscript was read, so "resolves
@@ -176,5 +244,9 @@ families out of C, B, K, U, N into R. The 137/255 T0 totals and every coverage l
   claim (no Lean run).
 - The rule is measured on abstracts only. Titles were not used, and `CONTENTS.md` abstracts were not
   cross-checked against `overview.tex` for this measurement.
+- The `resolves_named` column inherits every ceiling above: it is computed from the abstract, it is
+  not a claim, and the 5 tag-only families were read only as the abstract fragment around
+  `resolv`/`settl` — their full abstracts were not read, so a target noun could exist outside the
+  matched window.
 - Precision was measured on the flags the candidate rule raises. What it would *continue* to miss
   (a resolution stated with no target noun and no listed verb) was not measured.
