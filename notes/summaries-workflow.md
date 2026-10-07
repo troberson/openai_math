@@ -12,15 +12,19 @@ carrier, so it states what to do and what not to re-derive.
   (`notes/summaries/number-theory/`), 032 (`notes/summaries/algebraic-and-complex-geometry/`), 087
   (`notes/summaries/convex-and-metric-geometry/`), 159 (`notes/summaries/combinatorics/`), 197
   (`notes/summaries/algebra/`), 221 (`notes/summaries/probability-and-statistical-mechanics/`), 271
-  (`notes/summaries/mathematical-physics/`). The ledger's `summary` column is 1 for those ten; the
-  generator reports "summary pages 10 of 372 families, 29 manuscripts behind them".
-- **Next page:** family **287**. Steps 2–9 above, in order.
-- **Last gate run (2026-10-07):** regeneration byte-identical on two runs; 372 families, 722
-  manuscripts, 162 formalized, 405 challenges, 185 `main_results` over 178 configs, 235 scope notes,
-  both cross-checks 0, discipline table summing 372 / 235 / 722 / 162; `verify_summaries.py --mutant`
-  over 10 pages → 1850 marker positions, 378 quoted spans, 0 problems, 0 undetected mutants.
+  (`notes/summaries/mathematical-physics/`), 287 (`notes/summaries/operator-algebras/`). The ledger's
+  `summary` column is 1 for those eleven; the generator reports "summary pages 11 of 372 families, 30
+  manuscripts behind them".
+- **Next page:** family **362** — the last in `math-ckd.1`. Steps 2–9 above, in order, then
+  `bd close math-ckd.1 --reason "<outcome>"`.
+- **Last gate run (2026-10-07):** regeneration byte-identical on two runs, one intended change (fam
+  287 `summary` 0 → 1); 372 families, 722 manuscripts, 162 formalized, 405 challenges, 185
+  `main_results` over 178 configs, 235 scope notes, both cross-checks 0, discipline table summing
+  372 / 235 / 722 / 162; `verify_summaries.py` on the 287 page → 160 marker positions, 25 quoted
+  spans, 0 problems; `--mutant` flags the fabricated quotation and skips mutant A (see the 287
+  findings).
 - **Push state:** `origin/notes` at 29169d579 (pushed 2026-10-07 07:48); local `notes` HEAD is
-  f3c5293d8. Push when an hour has passed since the last push, not per commit.
+  62032d480. Push when an hour has passed since the last push, not per commit.
 - **007 finding, for reuse:** the ledger's `paps_form`/`mainres` counts are 0 for a family that
   ships 854 Lean files with zero `sorry`, because `formalization.yaml` has no entry for the
   manuscript. Counts are YAML bibliography entries, not Lean source — never read them as "not
@@ -163,6 +167,43 @@ carrier, so it states what to do and what not to re-derive.
   - Cost: 4 manuscripts, 1 trace (PDF only), 1 Lean tree → 63 sources, 205 markers, 53 quoted spans,
     green on the third checker run. Four trees is the most expensive shape so far; a family with one
     manuscript costs about half the source rows.
+- **287 findings, for reuse:**
+  - **The adjacent-block-quote rule bites twice in one page.** Every block quote needs its own intro
+    line carrying a marker that covers its whole range, because `pass_c` reads markers only from
+    `start_line-2 … start_line-4`. 271's note says to merge; when the two quotes cite different
+    sources, do not merge — insert an intro line two lines above the second quote
+    (`The rank-three-to-infinite identification, from the formalization's own main file [S19:56–58]:`)
+    and keep the quotes separate. Two sites, two intro lines, one checker run.
+  - **A formalization can prove a strictly stronger rank step than the paper it mirrors.** The
+    manuscript's Theorem 1.1 is the rank step for *n* ≥ 3 [S3:64–71] and reaches rank two only by
+    amplifying at *t* = √2 with Dykema's formula *N_s^t* ≅ *N*_{1+(*s*−1)*t*⁻²} [S8:28–36]. The
+    formalization proves `rank_step_ge_two` for *n* ≥ 2 (`FiniteRank.lean:143–145`, via
+    `generating_haar_tuple_ge_two` at 122), so `rankTwo : L(𝔽₂) ≅ L(𝔽₃)` (147–148) is a direct
+    instance and the amplification route is not needed for the headline. Check which route each side
+    takes before describing the formalization as a transcription.
+  - A scope note's exclusion is again about the *selected statement*: 287's note calls the
+    fundamental-group conclusion "a further consequence rather than a separate selected statement"
+    (`lean/docs/287.md:9`) while `allInterpolatedFundamentalGroups` (`Interpolation.lean:114–115`)
+    proves `fundamentalGroup r = Set.Ioi 0`. Third family with this shape after 017 and 221.
+  - **Vocabulary absence is the way to see an unformalized corollary.** Across 77 files / 26,804
+    lines: `cocycle` 187, `semicircular` 114, and zero hits for `microstate`, `freeentropy`,
+    `fisher`, `voiculescu`, `Catalan`, `entropy`. The free-entropy corollary — the part of the paper
+    with independent content — is not formalized. Report the counts, not a conclusion about intent.
+  - `formalization.yaml` (1,668 lines) has no entry naming the manuscript: the mechanical cause of
+    `paps_form 0` / `mainres 0` beside 77 Lean files, 26,804 lines, zero `sorry`, 1,196 top-level
+    `theorem`/`lemma` (395 + 801, counted with an anchored regex — a loose `\b(theorem|lemma)\b`
+    overcounts by pulling prose).
+  - The comparator challenge carries its own model: `InterpolatedFactors.lean` defines `Model.Algebra`,
+    `Model.trace`, `Model.topology`, `parameterModel` (186–210) and `InterpolatedFactor` (212–214)
+    before the challenge `allInterpolatedIsomorphic` (216–219), whose `sorry` sits in the challenge
+    file. Count the challenge `sorry` separately from the tree's zero.
+  - **A page with no inline quotation skips mutant A.** 287 has zero straight `"` — every quotation is
+    a block quote — so `--mutant` prints `mutant A corrupts a real quotation: MISSED (no quotable
+    span on one line)` and the TOTAL line shows `(1 undetected mutants)`. That is a property of the
+    page, not a defect: the gate is the no-mutant run reporting `0 problems` with mutant B flagged.
+  - Cost: 1 manuscript (12 files, 17-entry bibliography, zero `OAI:` self-citations), 1 trace (PDF
+    only, 11 pages), 1 Lean tree → 42 sources, 160 markers, 25 quoted spans, green on the second
+    checker run. One manuscript is the cheapest shape in the batch.
 
 ## Loop shape
 
