@@ -8,15 +8,20 @@ carrier, so it states what to do and what not to re-derive.
 - **Batch:** `math-ckd.1`, claimed — the 10 trace families (007, 017, 087, 102, 159, 197, 221, 271,
   287, 362), 22 manuscripts. Close it with `bd close math-ckd.1 --reason "<outcome>"` when the tenth
   page is committed.
-- **Pages done:** 102 (`notes/summaries/theoretical-computer-science/`), 001, 032. The ledger's
-  `summary` column is 1 for those three.
-- **Next page:** family **007**. Steps 2–9 above, in order.
+- **Pages done:** 102 (`notes/summaries/theoretical-computer-science/`), 001, 032, 007
+  (`notes/summaries/number-theory/`). The ledger's `summary` column is 1 for those four; the
+  generator reports "summary pages 4 of 372 families, 15 manuscripts behind them".
+- **Next page:** family **017**. Steps 2–9 above, in order.
 - **Last gate run (2026-10-07):** regeneration byte-identical; 372 families, 722 manuscripts, 162
   formalized, 405 challenges, 185 `main_results` over 178 configs, 235 scope notes, both cross-checks
-  0, discipline table summing 372 / 235 / 722 / 162; `verify_summaries.py --mutant` → 0 problems,
-  0 undetected mutants.
-- **Push state:** `origin/notes` at 496b3aa69; the page commit is d8cd4f922. Push when an hour has
-  passed since the last push, not per commit.
+  0, discipline table summing 372 / 235 / 722 / 162; `verify_summaries.py --mutant` over 4 pages →
+  775 marker positions, 153 quoted spans, 0 problems, 0 undetected mutants.
+- **Push state:** `origin/notes` at 496b3aa69 (pushed 2026-10-07 04:41); local `notes` HEAD is
+  eaa2b12ec. Push when an hour has passed since the last push, not per commit.
+- **007 finding, for reuse:** the ledger's `paps_form`/`mainres` counts are 0 for a family that
+  ships 854 Lean files with zero `sorry`, because `formalization.yaml` has no entry for the
+  manuscript. Counts are YAML bibliography entries, not Lean source — never read them as "not
+  formalized".
 
 ## Loop shape
 
