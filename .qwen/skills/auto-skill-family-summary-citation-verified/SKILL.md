@@ -27,6 +27,9 @@ Read the row before writing a sentence: `paps`, `paps_form`, `tier`, `chal`, `ma
 - **T0 (`paps_form=0`)**: no Lean, no scope note, no challenge, no trace. The manuscript LaTeX under
   `build/` is the *only* source. State it where the reader meets it — in the graduate section's
   formalization-status paragraph: "Nothing about this family is machine-checked." Not in a preamble.
+  **Enumerate the manuscript root with `ls` before writing what it ships.** The 001 page's first draft
+  said "the manuscript's LaTeX under `build/` is the only artifact"; the root also ships `README.md`
+  and `paper.pdf`. "Only" is a claim about a directory, and `ls` settles it in one command.
 - **Formalized**: read `lean/docs/<NNN>.md` first — its `## Scope` section states the exclusions,
   which are load-bearing — then the manuscript.
 - Manuscripts ship LaTeX, so **PDF extraction is never needed**. Read `build/main.tex`,
@@ -199,7 +202,10 @@ for line in doc_lines:
 roots = ([PRE] if PRE and PRE.is_dir() else []) + [ROOT]
 # Flag: unknown source, file not on disk, out of range, blank line, reversed range.
 # Then check the table's own claims: declared "Lines" vs len(path.read_text().splitlines()).
-# Report declared-but-never-cited sources as information, not as a problem.
+# Report declared-but-never-cited sources as information, not as a problem — then fix them in the same
+# pass as the problems. Cite the row where it belongs (the ledger row and the PDF belong in the
+# formalization-status paragraph; a manuscript README belongs in the Sources prose), or delete it.
+# Deleting a middle row renumbers every later marker, so prefer citing.
 # Scan raw HTML: ENTITY = re.compile(r"&(#[0-9]+|[a-zA-Z][a-zA-Z0-9]*);"), TAG = re.compile(r"<[a-zA-Z/][^>]*>").
 # Require **zero hits anywhere in the page, block quotes included** — the release's inline HTML is
 # rendered as markdown when the quote is pasted (see the markup trap below), so a surviving tag or
