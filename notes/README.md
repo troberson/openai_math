@@ -17,6 +17,8 @@ python3 notes/scripts/extract_scope_notes.py  # re-measures the 235 `## Scope` s
 python3 notes/scripts/verify_scope_exclusions.py --mutant  # checks notes/scope-exclusions.md against lean/docs/
 python3 notes/scripts/extract_subfindings.py  # writes notes/subfindings.tsv and prints the reconciliation
 python3 notes/scripts/verify_subfindings.py --mutant  # checks notes/subfindings.tsv against overview.tex and lean/docs/
+python3 notes/scripts/extract_subfinding_pairs.py  # lays out the pairing population; report-only, writes nothing
+python3 notes/scripts/verify_subfinding_pairs.py --mutant  # checks notes/subfinding-pairs.md against overview.tex
 ```
 
 `notes/summaries-workflow.md` is the resume protocol for the summary-page batches: per-page steps,
@@ -202,10 +204,27 @@ release's own structural encoding of sub-findings: family 102 ships five hrefs t
 theorem*, *Optimal Max-Cut hardness*, *Factor-two Vertex Cover hardness*, *Constant-factor Min-UnCut
 hardness*, *Directed feedback vertex set hardness*, and its abstract carries exactly those five
 claims (read 2026-10-07: the UGC proof plus Max-Cut / Vertex Cover / Min-UnCut / directed FVS
-hardness). That matching is checked for 102 only — the other 717 titles are recorded, not paired.
+hardness). That matching has now been read for **49 families over 206 manuscripts** in
+`notes/subfinding-pairs.md`: **111** of those titles are claimed by an abstract clause, **95** are
+claimed by none, and **18** clauses state a sub-finding no title names. The other 516 titles are
+recorded, not paired.
 `notes/scripts/verify_subfindings.py` re-derives every row from `overview.tex`,
 `formalization.yaml`, `lean/docs/`, and the ledger, requires each path and each `.lean` file to exist
 on disk, and flags all seven injected mutants including a same-family row swap.
+
+**`notes/subfinding-pairs.md` is the pairing itself: 49 blocks, one per family, each quoting the
+abstract clause and the display title it names, both with the `overview.tex` line they were verified
+on.** Population = (abstract contains one of the release's four multi-claim phrases **and** ships ≥2
+manuscripts) ∪ the ten densest families the task names = **49 families, 206 manuscripts**; the task
+states 51 for that intersection and the number does not reproduce (the union over the 167
+multi-manuscript families is **40**), which the page records with the rules tried and rejected.
+Measured on the page: **64** accepted clause pairs, **47** accepted headline pairs, **18** clauses
+recorded unmatched, **111** titles claimed, **95** unclaimed, **41** families with at least one
+accepted pair, **17** with at least one unmatched clause, **7** pairing a sub-finding with no probe
+hit. `notes/scripts/verify_subfinding_pairs.py --mutant` re-checks every quotation against the shipped
+line, re-derives every count from the parsed blocks, and flags all seven injected mutants;
+`notes/scripts/extract_subfinding_pairs.py` prints the population and the vocabulary counts the page
+quotes, and writes nothing.
 
 ## Columns
 
@@ -328,9 +347,38 @@ the community will scrutinize.
   per-family `set()` over a comparator table drops those 10 rows and reports 405 rows, which is not
   what the notes contain.
 - **A display title is not a claim about the abstract.** The 722 titles are what the release writes
-  as link text; nothing in the repo states that a title corresponds to a clause of the abstract, and
-  the pairing has been read for one family (102). `math-el4.4` is the pairing task; until it lands,
-  a title is a label, not a sub-result.
+  as link text; nothing in the repo states that a title corresponds to a clause of the abstract. The
+  pairing has now been read for 49 families (`notes/subfinding-pairs.md`) and it is a reading call,
+  not a release encoding: 95 of the 206 titles in that population are claimed by no clause, and 18
+  clauses name a result no title names. Outside that population a title is still a label, not a
+  sub-result.
+- **A display title is not the manuscript's title.** The `preprints/` directory name carries the full
+  manuscript title; the `\href` display text in `overview.tex` is a short label the release chose, and
+  they diverge — "Maximum number of bases" sits in
+  `The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026`, and
+  "Correspondence coloring graphs with a forbidden clique" drops the "clique-free" its directory name
+  carries. Pairing must use the display text, and a title quoted from a directory name will not
+  validate.
+- **Shipped display titles are not consistently encoded.** En dash vs source dashes, capitalised vs
+  lowercase, accent normalised vs raw, all inside one family: 262:1 and 262:2 read `Lieb--Thirring`
+  while 262:3 reads `Lieb–Thirring`; 291:1 capitalises "Stability" and 291:3 does not. A normalised
+  title string is not verbatim on the line, so a quotation has to copy the shipped bytes.
+- **The abstract keeps raw LaTeX, the display titles do not.** `K\"ahler`, `Bogomolov--Pop`,
+  `\'etale`, `\textquotesingle`, `Szab\'o` appear in the abstract while the same family's titles carry
+  `Kähler` and en dashes. A clause quote and a title quote on the same line follow different
+  conventions; normalize neither.
+- **A quoted family count can have no reproducible rule.** The pairing task states 51 families for
+  "≥2 manuscripts and multi-claim language"; all four of its phrase counts reproduce (25 / 35 / 5 / 1,
+  the second needing the stem `independ`) and the intersection over the 167 multi-manuscript families
+  is **40**, not 51. Nine of the ten densest families it names are outside its own probe set. Same
+  shape as the counterexample 74 / 30 gap in `notes/counterexample-tag.md`: quote the rule with the
+  number.
+- **`independ` is not a multi-claim marker.** 13 of the 40 probe-hit families hit on a technical use —
+  "independent traces", "independence number", "independent set", "independent entries", "independent
+  of matrix size", "independent uniform site potentials", "independent harmonic functions" — and 7
+  families pair sub-findings with **no** probe hit, because their language is "Companion results
+  prove", "also gives", "The family also proves", "A further result resolves". A probe over the
+  release's four phrases is a population floor, and a pass that probes only it finds nothing.
 
 ## Open tasks
 

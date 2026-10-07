@@ -21,7 +21,8 @@ lives in this file and nowhere else.
   library graph) with `formalization-deps.md` beside it, `links.tsv` (22 rows, 7 columns — the
   typed-edge inventory) with `links.md` beside it, `scope-exclusions.md` (235 rows — what each scope
   note says its formalization leaves out), `subfindings.tsv` (1137 rows — 722 manuscript rows and 415
-  comparator rows, typed by a `kind` column),
+  comparator rows, typed by a `kind` column) with `subfinding-pairs.md` (49 families, 206 manuscripts —
+  the reading pass that pairs abstract clauses with display titles) beside it,
   `summaries/<discipline>/<NNN>-<name>.md`, `notes/scripts/`.
 - `.beads/issues.jsonl` is the tracked issue store, in bd no-db mode; see the beads section below.
 
@@ -87,8 +88,23 @@ lives in this file and nowhere else.
   the field is a run of `\href{…}{…}` and a group split mis-slices as soon as a display title carries
   a brace. Quote 415 as comparator-table **rows** and 405 as **distinct configs** — the 10-gap is the
   same 7 docs `links.tsv` records (071, 100, 115, 134, 274, 275, 293), so a per-family `set()` over a
-  table reports 405 rows and is wrong. A display title is link text, not a sub-result: the
-  title↔abstract pairing has been read for family 102 only, and `math-el4.4` is the pairing task.
+  table reports 405 rows and is wrong. A display title is link text, not a sub-result, and it is not
+  the manuscript's own title — the `preprints/` directory name is. Pairing has been read for 49
+  families (206 manuscripts) in `notes/subfinding-pairs.md`: 64 sub-finding clause pairs and 47 headline
+  clause pairs accepted, 18 clauses recorded unmatched, 111 of 206 titles claimed by a clause and 95 by
+  none. Quote the display text verbatim — the release is inconsistent about capitalization
+  (`Correspondence coloring graphs…` vs `Equivariant Jiang--Su Stability…`) and about dashes
+  (`Lieb--Thirring` vs `Lieb–Thirring`), so a normalized title is not verbatim.
+- Extract the pairing population with `python3 notes/scripts/extract_subfinding_pairs.py` — report-only,
+  writes nothing. Its population rule is (probe phrases `also prove`, `independ`, `also establish`,
+  `as a consequence`) AND ≥2 manuscripts, union the ten named densest targets: 49 families, 206
+  manuscripts. **The bead's "51 of them also use multi-claim language" does not reproduce.** The four
+  per-phrase counts (25 / 35 / 5 / 1) reproduce exactly over all 372 abstracts only when the second is
+  read as the stem `independ` (`independent` gives 34), and their union over the 167 multi-manuscript
+  families is 40, not 51 — nine of the bead's ten named densest targets sit outside its own 40. Rules
+  tried and rejected: `also` (56), `both ` (48), `companion` (10), `together` (8), ≥2 prove-verbs (33),
+  ≥2 sentences with a prove-verb (32), ≥3 sentences (73). Same shape as the counterexample 74 / 30 case;
+  see `notes/counterexample-tag.md` and the population section of `notes/subfinding-pairs.md`.
 - Project skills live in `.qwen/skills/` — `proof-triage` routes ledger work,
   `auto-skill-lean-formalization-coverage-audit` carries the measurement method.
 
@@ -124,6 +140,15 @@ lives in this file and nowhere else.
   ledger's `paps`, requires `seq` to run 1..n per family and kind, rejects a field a kind never fills,
   and flags seven injected mutants including a same-family row swap. Run
   `python3 notes/scripts/extract_subfindings.py` twice and diff: the TSV must be byte-identical.
+- Run `python3 notes/scripts/extract_subfinding_pairs.py` twice and diff: the report must be identical.
+- Check `notes/subfinding-pairs.md` with `python3 notes/scripts/verify_subfinding_pairs.py --mutant`
+  before quoting any count from it — it requires exactly one block per population family and none
+  outside, resolves each block's `overview.tex` anchor to that family's `\resultentry` line, checks
+  `n` against `subfindings.tsv` and the tier against the ledger, requires every quoted clause and
+  every quoted title to be verbatim on that line, requires each `[fam:seq]` to resolve to a manuscript
+  row of the block's own family, requires `claimed` and `unclaimed` to be disjoint and to cover the
+  family's full `1..n` exactly once, re-measures the ten Summary-table numbers from the parsed lines,
+  and flags seven injected mutants including a paraphrase dressed as a quote. It writes nothing.
 - Check `notes/conjecture-standing.tsv` with `python3 notes/scripts/verify_conjecture_standing.py`
   before quoting any row — it proves the 139-row fam set against the ledger, resolves every
   `overview.tex:<n>` anchor to that family's own `\resultentry`, requires `prior_confidence` in
