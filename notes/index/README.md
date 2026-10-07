@@ -125,6 +125,55 @@ Topics are a curated keyword vocabulary in [`notes/topics.tsv`](../topics.tsv) (
 | [machine-learning](topics/machine-learning.md) | 0 | 0 | 0 | 0 | 0 |
 | [tropical-geometry](topics/tropical-geometry.md) | 0 | 0 | 0 | 0 | 0 |
 
+## Names
+
+Names are measured over six layers by [`notes/scripts/measure_names.py`](../scripts/measure_names.py) and recorded in [`notes/names.md`](../names.md): four title layers (family titles, manuscript directory names, the optional titles of statement environments, the `main_results` declaration names) and two body layers (manuscript prose with the bibliography stripped, and the author fields of the shipped `.bib` files). A name is a **subject** when a title layer or a declaration carries it and a **citation** when only prose or a bibliography does, so only subject names get a page: 552 pages in [`names/`](names/) over 5859 measured names. The other 5307 are bibliography surnames that never reach a title layer — rows in [`names.tsv`](names.tsv) with `role = citation`, not pages. 9883 family-name edges cover 372 of 372 families; 0 names resolve to no family. Each page states, per source, which layer produced the hit: a name in a body paragraph is a citation, not a subject.
+
+| Name | Families | F | M | E | D | b | B |
+|---|---|---|---|---|---|---|---|
+| [cauchy](names/cauchy.md) | 233 | 0 | 0 | 7 | 0 | 233 | 0 |
+| [euclidean](names/euclidean.md) | 194 | 3 | 5 | 10 | 3 | 194 | 0 |
+| [schwarz](names/schwarz.md) | 193 | 0 | 0 | 1 | 0 | 193 | 1 |
+| [lipschitz](names/lipschitz.md) | 178 | 4 | 6 | 10 | 1 | 178 | 0 |
+| [hilbert](names/hilbert.md) | 171 | 6 | 5 | 15 | 2 | 171 | 3 |
+| [taylor](names/taylor.md) | 165 | 0 | 0 | 12 | 0 | 164 | 21 |
+| [fourier](names/fourier.md) | 160 | 3 | 6 | 26 | 1 | 160 | 0 |
+| [borel](names/borel.md) | 140 | 1 | 0 | 4 | 0 | 137 | 10 |
+| [jacobian](names/jacobian.md) | 136 | 0 | 0 | 5 | 0 | 136 | 0 |
+| [markov](names/markov.md) | 134 | 2 | 2 | 1 | 1 | 133 | 1 |
+| [gaussian](names/gaussian.md) | 130 | 5 | 5 | 39 | 2 | 130 | 0 |
+| [lebesgue](names/lebesgue.md) | 125 | 1 | 1 | 0 | 0 | 125 | 0 |
+| [euler](names/euler.md) | 122 | 0 | 0 | 10 | 0 | 122 | 1 |
+| [holder](names/holder.md) | 115 | 0 | 1 | 4 | 1 | 115 | 0 |
+| [riemann](names/riemann.md) | 110 | 1 | 1 | 2 | 0 | 110 | 0 |
+| [gram](names/gram.md) | 108 | 0 | 0 | 12 | 0 | 108 | 0 |
+| [poincare](names/poincare.md) | 101 | 0 | 0 | 3 | 0 | 101 | 0 |
+| [hausdorff](names/hausdorff.md) | 94 | 1 | 2 | 2 | 0 | 94 | 1 |
+| [schur](names/schur.md) | 88 | 0 | 0 | 8 | 0 | 88 | 0 |
+| [hessian](names/hessian.md) | 87 | 0 | 1 | 8 | 1 | 87 | 0 |
+| [frobenius](names/frobenius.md) | 85 | 0 | 1 | 14 | 0 | 85 | 0 |
+| [hermitian](names/hermitian.md) | 85 | 0 | 0 | 1 | 0 | 85 | 0 |
+| [dirichlet](names/dirichlet.md) | 84 | 0 | 1 | 8 | 1 | 84 | 0 |
+| [laurent](names/laurent.md) | 84 | 0 | 0 | 6 | 0 | 83 | 3 |
+| [neumann](names/neumann.md) | 80 | 1 | 1 | 4 | 0 | 80 | 2 |
+| [minkowski](names/minkowski.md) | 78 | 1 | 1 | 3 | 1 | 78 | 0 |
+| [sobolev](names/sobolev.md) | 77 | 2 | 1 | 13 | 0 | 77 | 0 |
+| [wang](names/wang.md) | 74 | 0 | 0 | 2 | 0 | 65 | 53 |
+| [bernoulli](names/bernoulli.md) | 72 | 2 | 3 | 0 | 0 | 72 | 0 |
+| [poisson](names/poisson.md) | 72 | 0 | 2 | 10 | 0 | 72 | 1 |
+| [banach](names/banach.md) | 71 | 2 | 2 | 2 | 1 | 71 | 0 |
+| [schmidt](names/schmidt.md) | 71 | 0 | 0 | 1 | 0 | 66 | 16 |
+| [zhang](names/zhang.md) | 69 | 0 | 0 | 1 | 0 | 55 | 55 |
+| [boolean](names/boolean.md) | 65 | 1 | 3 | 8 | 0 | 65 | 0 |
+| [green](names/green.md) | 65 | 1 | 1 | 12 | 0 | 61 | 17 |
+| [young](names/young.md) | 62 | 0 | 0 | 3 | 0 | 60 | 5 |
+| [laplacian](names/laplacian.md) | 61 | 0 | 0 | 4 | 0 | 61 | 0 |
+| [gauss](names/gauss.md) | 60 | 1 | 1 | 6 | 0 | 60 | 0 |
+| [haar](names/haar.md) | 60 | 0 | 0 | 12 | 0 | 60 | 0 |
+| [serre](names/serre.md) | 57 | 1 | 0 | 0 | 0 | 54 | 20 |
+
+The 40 subject names that reach the most families; [`names.tsv`](names.tsv) carries all 5859. Column letters are the layers of the name pages: `F` family title, `M` manuscript directory, `E` theorem-environment title, `D` declaration, `b` prose, `B` bib author.
+
 ## Tables
 
 | Table | Rows | Key | What it carries |
@@ -136,6 +185,7 @@ Topics are a curated keyword vocabulary in [`notes/topics.tsv`](../topics.tsv) (
 | `scope-notes.tsv` | 235 | `fam` | One row per scope note: configs linked, manuscripts linked, `## Scope` length. |
 | `traces.tsv` | 10 | trace stem | One row per published reasoning trace and the family README.md attributes it to. |
 | `topics.tsv` | 92 | term | One row per curated vocabulary term: its pattern, its yield, its yield by layer, and its page. The patterns live in `notes/topics.tsv`; this table is the measured copy. |
+| `names.tsv` | 5859 | name | One row per measured name — subject or citation-only — with its layer counts, prose counts, surface spellings, and its page (empty for a citation-only name). |
 | `edges/family-manuscript.tsv` | 722 | `fam` + dir | The release's own family→manuscript links. |
 | `edges/family-config.tsv` | 405 | `fam` + config | Scope-note links keyed per family as a set: 405, not the 415 link occurrences. |
 | `edges/config-declaration.tsv` | 185 | config + declaration | The `main_results` triples, with the family that links each config. |
@@ -143,6 +193,7 @@ Topics are a curated keyword vocabulary in [`notes/topics.tsv`](../topics.tsv) (
 | `edges/citation.tsv` | 396 | citing dir + target dir | manuscript→corpus manuscript from release-marked `.bib` hrefs; untyped. |
 | `edges/family-trace.tsv` | 10 | `fam` + stem | Family→trace attribution as README.md tabulates it. |
 | `edges/family-topic.tsv` | 971 | `fam` + topic | Family→topic assignments from the curated vocabulary, with the layers that hit (T/A/S/P). Multi-label: a family appears once per topic it carries. |
+| `edges/family-name.tsv` | 9883 | `fam` + name | Family→subject-name edges, with the layers that hit (F/M/E/D/b/B). Subject names only: a citation-only name has no family edge, only a `names.tsv` row. |
 
 ## Reconciliation
 
@@ -160,6 +211,11 @@ Topics are a curated keyword vocabulary in [`notes/topics.tsv`](../topics.tsv) (
 | topic pages | 92 | 92 |
 | topic assignments | 971 | 971 |
 | families with a topic | 372 | 372 |
+| name pages | 552 | 552 |
+| names measured | 5859 | 5859 |
+| name→family edges | 9883 | 9883 |
+| families with a name hit | 372 | 372 |
+| trace families with a subject name | 10 | 10 |
 
 ## Not checked
 
@@ -170,4 +226,8 @@ Topics are a curated keyword vocabulary in [`notes/topics.tsv`](../topics.tsv) (
 - Claim shapes are keyword floors carried from `notes/catalog.tsv`, not a census: families match three or more shapes and others match none.
 - Topics are a curated keyword floor, not a classification: a family is listed under a term because the term's pattern hit its title, abstract, scope note, or derived Lean paths. `notes/topics.md` records the incidental matches each term was measured to carry, and the path layer is derived, not shipped.
 - Link targets were checked for existence at render time, not for content: a link resolving to a file says the file is there, not that it says what the page claims.
+- Names are a keyword floor, not a census. The name-vs-word test is corpus-internal (mid-sentence capitalization counts measured in this corpus); no external name dictionary was consulted, so a surname that never reaches a title layer is invisible as a subject.
+- A `b`/`B` hit is a citation, not a subject: prose hits are counted with the bibliography and the cite/cross-reference braces stripped, and a name page lists them as evidence of where the name is cited, never as the scope of a result.
+- Citation-only names carry no page, so a name search that finds no page is not evidence the corpus never mentions the name — check `names.tsv` for the `role = citation` rows.
+- Family pages do not link name pages: the average family carries 27 subject names, which is a table, not a header row. The name→family direction is the one the index carries.
 

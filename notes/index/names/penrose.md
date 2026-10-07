@@ -1,0 +1,98 @@
+# Name: penrose
+
+14 families · subject name · 1 carried by a title or a declaration · 13 by prose · 7 by bibliography author
+
+A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../names.tsv) with `role = citation`.
+
+Prose counts: 193 capitalized occurrences, 151 of them mid-sentence, 28 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
+
+## Provenance by source
+
+| Source | Layer | Families | What a hit means here |
+|---|---|---|---|
+| `F` — Family title | title | 1 | The release named the family after it — the strongest subject evidence there is. |
+| `M` — Manuscript title | title | 1 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
+| `E` — Theorem title | title | 1 | A statement environment carries it in its optional title, so a theorem is named for it. |
+| `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
+| `b` — Body prose | body | 13 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `B` — Bib author | body | 7 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
+
+## Families
+
+| Family | Title | F | M | E | D | b | B |
+|---|---|---|---|---|---|---|---|
+| [062](../algebraic-and-complex-geometry/062-lebrun-salamon-conjecture-and-projective-contact-classification.md) | The LeBrun--Salamon conjecture and projective contact classification | — | — | — | — | yes | — |
+| [095](../convex-and-metric-geometry/095-hyperbolicity-cones-without-semidefinite-lifts.md) | Hyperbolicity cones without semidefinite lifts | — | — | — | — | yes | — |
+| [188](../combinatorics/188-sharp-constant-in-random-triangle-removal.md) | The sharp constant in random triangle removal | — | — | — | — | yes | yes |
+| [215](../probability-and-statistical-mechanics/215-massive-continuum-limits-and-exact-mass-asymptotics-for-planar-o-n-models.md) | Massive continuum limits and exact mass asymptotics for planar $O(n)$ models | — | — | — | — | yes | — |
+| [218](../probability-and-statistical-mechanics/218-conformal-universality-for-weakly-interacting-and-disordered-ising-models.md) | Conformal universality for weakly interacting and disordered Ising models | — | — | — | — | yes | — |
+| [224](../probability-and-statistical-mechanics/224-critical-and-near-critical-universality-for-voronoi-percolation.md) | Critical and near-critical universality for Voronoi percolation | — | — | — | — | yes | — |
+| [228](../probability-and-statistical-mechanics/228-continuum-phase-transitions-for-radial-pair-potentials.md) | Continuum phase transitions for radial pair potentials | — | — | — | — | yes | yes |
+| [237](../probability-and-statistical-mechanics/237-three-quarter-diameter-exponent-for-honeycomb-walks.md) | The three-quarter diameter exponent for honeycomb walks | — | — | — | — | yes | — |
+| [253](../group-theory/253-an-infinite-finitely-presented-simple-amenable-group.md) | An infinite finitely presented simple amenable group | — | — | — | — | yes | — |
+| [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | Spacetime Penrose inequalities and rigidity | yes | yes | yes | — | yes | yes |
+| [264](../mathematical-physics/264-strong-cosmic-censorship-near-two-ended-kerr-data.md) | Strong cosmic censorship near two-ended Kerr data | — | — | — | — | yes | yes |
+| [267](../mathematical-physics/267-positive-temperature-bose-einstein-condensation-and-quantum-depletion.md) | Positive-temperature Bose--Einstein condensation and quantum depletion | — | — | — | — | yes | yes |
+| [271](../mathematical-physics/271-blochs-law-and-spontaneous-ferromagnetic-order.md) | Bloch's law and spontaneous ferromagnetic order | — | — | — | — | — | yes |
+| [364](../partial-differential-equations/364-kinetic-limits-and-fluctuations-over-the-boltzmann-lifespan.md) | Kinetic limits and fluctuations over the Boltzmann lifespan | — | — | — | — | yes | yes |
+
+## Manuscripts
+
+| Dir | Family | Where the name appears | PDF |
+|---|---|---|---|
+| [`A-Charged-Reduction-of-the-Spacetime-Penrose-Inequality-in-Spatial-Dimensions-at-Least-Four-October-5-2026`](../../../preprints/A-Charged-Reduction-of-the-Spacetime-Penrose-Inequality-in-Spatial-Dimensions-at-Least-Four-October-5-2026/) | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | prose + title | [paper.pdf](../../../preprints/A-Charged-Reduction-of-the-Spacetime-Penrose-Inequality-in-Spatial-Dimensions-at-Least-Four-October-5-2026/paper.pdf) |
+| [`A-Pivotal-Amplitude-for-Voronoi-Percolation-from-Cardys-Formula-October-5-2026`](../../../preprints/A-Pivotal-Amplitude-for-Voronoi-Percolation-from-Cardys-Formula-October-5-2026/) | [224](../probability-and-statistical-mechanics/224-critical-and-near-critical-universality-for-voronoi-percolation.md) | prose | [voronoi-pivotal-amplitude.pdf](../../../preprints/A-Pivotal-Amplitude-for-Voronoi-Percolation-from-Cardys-Formula-October-5-2026/voronoi-pivotal-amplitude.pdf) |
+| [`A-continuum-temperature-singularity-for-a-radial-pair-potential-September-24-2026`](../../../preprints/A-continuum-temperature-singularity-for-a-radial-pair-potential-September-24-2026/) | [228](../probability-and-statistical-mechanics/228-continuum-phase-transitions-for-radial-pair-potentials.md) | prose | [paper.pdf](../../../preprints/A-continuum-temperature-singularity-for-a-radial-pair-potential-September-24-2026/paper.pdf) |
+| [`A-density-uniform-condensate-bound-for-dilute-Bose-gases-September-27-2026`](../../../preprints/A-density-uniform-condensate-bound-for-dilute-Bose-gases-September-27-2026/) | [267](../mathematical-physics/267-positive-temperature-bose-einstein-condensation-and-quantum-depletion.md) | prose | [paper.pdf](../../../preprints/A-density-uniform-condensate-bound-for-dilute-Bose-gases-September-27-2026/paper.pdf) |
+| [`A-local-Penrose-inequality-for-conformal-perturbations-of-Schwarzschild-anti-de-Sitter-data-October-5-2026`](../../../preprints/A-local-Penrose-inequality-for-conformal-perturbations-of-Schwarzschild-anti-de-Sitter-data-October-5-2026/) | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | prose + title | [paper.pdf](../../../preprints/A-local-Penrose-inequality-for-conformal-perturbations-of-Schwarzschild-anti-de-Sitter-data-October-5-2026/paper.pdf) |
+| [`A-radial-continuum-phase-transition-with-algebraic-decay-September-24-2026`](../../../preprints/A-radial-continuum-phase-transition-with-algebraic-decay-September-24-2026/) | [228](../probability-and-statistical-mechanics/228-continuum-phase-transitions-for-radial-pair-potentials.md) | prose | [paper.pdf](../../../preprints/A-radial-continuum-phase-transition-with-algebraic-decay-September-24-2026/paper.pdf) |
+| [`An-Infinite-Finitely-Presented-Simple-Amenable-Group-September-23-2026`](../../../preprints/An-Infinite-Finitely-Presented-Simple-Amenable-Group-September-23-2026/) | [253](../group-theory/253-an-infinite-finitely-presented-simple-amenable-group.md) | prose | [paper.pdf](../../../preprints/An-Infinite-Finitely-Presented-Simple-Amenable-Group-September-23-2026/paper.pdf) |
+| [`Area-controlled-end-replacement-and-the-Bondi-Penrose-inequality-in-the-CKS-class-September-27-2026`](../../../preprints/Area-controlled-end-replacement-and-the-Bondi-Penrose-inequality-in-the-CKS-class-September-27-2026/) | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | prose + title | [paper.pdf](../../../preprints/Area-controlled-end-replacement-and-the-Bondi-Penrose-inequality-in-the-CKS-class-September-27-2026/paper.pdf) |
+| [`Bose-Einstein-condensation-at-positive-temperature-in-the-dilute-hard-sphere-gas-October-5-2026`](../../../preprints/Bose-Einstein-condensation-at-positive-temperature-in-the-dilute-hard-sphere-gas-October-5-2026/) | [267](../mathematical-physics/267-positive-temperature-bose-einstein-condensation-and-quantum-depletion.md) | prose | [positive-temperature-hard-spheres.pdf](../../../preprints/Bose-Einstein-condensation-at-positive-temperature-in-the-dilute-hard-sphere-gas-October-5-2026/positive-temperature-hard-spheres.pdf) |
+| [`Boundary-graph-deformations-for-the-spacetime-Penrose-inequality-September-27-2026`](../../../preprints/Boundary-graph-deformations-for-the-spacetime-Penrose-inequality-September-27-2026/) | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | prose + title | [paper.pdf](../../../preprints/Boundary-graph-deformations-for-the-spacetime-Penrose-inequality-September-27-2026/paper.pdf) |
+| [`Cap-selected-amplitudes-and-triangle-chords-for-honeycomb-walks-September-26-2026`](../../../preprints/Cap-selected-amplitudes-and-triangle-chords-for-honeycomb-walks-September-26-2026/) | [237](../probability-and-statistical-mechanics/237-three-quarter-diameter-exponent-for-honeycomb-walks.md) | prose | [main.pdf](../../../preprints/Cap-selected-amplitudes-and-triangle-chords-for-honeycomb-walks-September-26-2026/main.pdf) |
+| [`Conformal-flow-and-the-Riemannian-Penrose-inequality-with-minimizing-frontiers-September-27-2026`](../../../preprints/Conformal-flow-and-the-Riemannian-Penrose-inequality-with-minimizing-frontiers-September-27-2026/) | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | prose + title | [paper.pdf](../../../preprints/Conformal-flow-and-the-Riemannian-Penrose-inequality-with-minimizing-frontiers-September-27-2026/paper.pdf) |
+| [`Conformal-universality-of-bulk-Ising-correlations-under-weak-interactions-September-23-2026`](../../../preprints/Conformal-universality-of-bulk-Ising-correlations-under-weak-interactions-September-23-2026/) | [218](../probability-and-statistical-mechanics/218-conformal-universality-for-weakly-interacting-and-disordered-ising-models.md) | prose | [paper.pdf](../../../preprints/Conformal-universality-of-bulk-Ising-correlations-under-weak-interactions-September-23-2026/paper.pdf) |
+| [`Contact-Fano-manifolds-and-the-LeBrun-Salamon-conjecture-September-23-2026`](../../../preprints/Contact-Fano-manifolds-and-the-LeBrun-Salamon-conjecture-September-23-2026/) | [062](../algebraic-and-complex-geometry/062-lebrun-salamon-conjecture-and-projective-contact-classification.md) | prose | [paper.pdf](../../../preprints/Contact-Fano-manifolds-and-the-LeBrun-Salamon-conjecture-September-23-2026/paper.pdf) |
+| [`Electromagnetic-tails-and-the-Kerr-Newman-Penrose-inequality-October-5-2026`](../../../preprints/Electromagnetic-tails-and-the-Kerr-Newman-Penrose-inequality-October-5-2026/) | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | prose + title | [paper.pdf](../../../preprints/Electromagnetic-tails-and-the-Kerr-Newman-Penrose-inequality-October-5-2026/paper.pdf) |
+| [`Equality-and-rigidity-in-the-spacetime-Penrose-inequality-September-27-2026`](../../../preprints/Equality-and-rigidity-in-the-spacetime-Penrose-inequality-September-27-2026/) | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | prose + title | [paper.pdf](../../../preprints/Equality-and-rigidity-in-the-spacetime-Penrose-inequality-September-27-2026/paper.pdf) |
+| [`Generic-C1-Future-Inextendibility-Near-Rotating-Subextremal-Kerr-Spacetimes-September-23-2026`](../../../preprints/Generic-C1-Future-Inextendibility-Near-Rotating-Subextremal-Kerr-Spacetimes-September-23-2026/) | [264](../mathematical-physics/264-strong-cosmic-censorship-near-two-ended-kerr-data.md) | prose | [paper.pdf](../../../preprints/Generic-C1-Future-Inextendibility-Near-Rotating-Subextremal-Kerr-Spacetimes-September-23-2026/paper.pdf) |
+| [`Generic-Future-Inextendibility-with-Square-Integrable-Connection-Near-a-Fixed-Kerr-Spacetime-September-23-2026`](../../../preprints/Generic-Future-Inextendibility-with-Square-Integrable-Connection-Near-a-Fixed-Kerr-Spacetime-September-23-2026/) | [264](../mathematical-physics/264-strong-cosmic-censorship-near-two-ended-kerr-data.md) | prose | [paper.pdf](../../../preprints/Generic-Future-Inextendibility-with-Square-Integrable-Connection-Near-a-Fixed-Kerr-Spacetime-September-23-2026/paper.pdf) |
+| [`Ground-state-condensation-in-the-dilute-hard-sphere-gas-September-24-2026`](../../../preprints/Ground-state-condensation-in-the-dilute-hard-sphere-gas-September-24-2026/) | [267](../mathematical-physics/267-positive-temperature-bose-einstein-condensation-and-quantum-depletion.md) | prose | [paper.pdf](../../../preprints/Ground-state-condensation-in-the-dilute-hard-sphere-gas-September-24-2026/paper.pdf) |
+| [`Hard-sphere-fluctuations-on-the-regular-Boltzmann-lifespan-September-23-2026`](../../../preprints/Hard-sphere-fluctuations-on-the-regular-Boltzmann-lifespan-September-23-2026/) | [364](../partial-differential-equations/364-kinetic-limits-and-fluctuations-over-the-boltzmann-lifespan.md) | prose | [paper.pdf](../../../preprints/Hard-sphere-fluctuations-on-the-regular-Boltzmann-lifespan-September-23-2026/paper.pdf) |
+| [`Hyperbolicity-Cones-Without-Semidefinite-Lifts-October-5-2026`](../../../preprints/Hyperbolicity-Cones-Without-Semidefinite-Lifts-October-5-2026/) | [095](../convex-and-metric-geometry/095-hyperbolicity-cones-without-semidefinite-lifts.md) | prose | [nonliftable-hyperbolicity.pdf](../../../preprints/Hyperbolicity-Cones-Without-Semidefinite-Lifts-October-5-2026/nonliftable-hyperbolicity.pdf) |
+| [`Quantitative-Near-Kerr-Evolution-and-Generic-C2-Future-Inextendibility-September-23-2026`](../../../preprints/Quantitative-Near-Kerr-Evolution-and-Generic-C2-Future-Inextendibility-September-23-2026/) | [264](../mathematical-physics/264-strong-cosmic-censorship-near-two-ended-kerr-data.md) | prose | [paper.pdf](../../../preprints/Quantitative-Near-Kerr-Evolution-and-Generic-C2-Future-Inextendibility-September-23-2026/paper.pdf) |
+| [`Spacetime-Penrose-inequalities-enclosing-area-charge-and-rigidity-October-5-2026`](../../../preprints/Spacetime-Penrose-inequalities-enclosing-area-charge-and-rigidity-October-5-2026/) | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | prose + title | [paper.pdf](../../../preprints/Spacetime-Penrose-inequalities-enclosing-area-charge-and-rigidity-October-5-2026/paper.pdf) |
+| [`The-Kerr-Newman-Penrose-Inequality-for-Axisymmetric-Electrovacuum-Exteriors-October-5-2026`](../../../preprints/The-Kerr-Newman-Penrose-Inequality-for-Axisymmetric-Electrovacuum-Exteriors-October-5-2026/) | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | prose + title | [paper.pdf](../../../preprints/The-Kerr-Newman-Penrose-Inequality-for-Axisymmetric-Electrovacuum-Exteriors-October-5-2026/paper.pdf) |
+| [`The-Penrose-inequality-for-maximal-asymptotically-hyperbolic-initial-data-October-5-2026`](../../../preprints/The-Penrose-inequality-for-maximal-asymptotically-hyperbolic-initial-data-October-5-2026/) | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | prose + title | [paper.pdf](../../../preprints/The-Penrose-inequality-for-maximal-asymptotically-hyperbolic-initial-data-October-5-2026/paper.pdf) |
+| [`The-Sharp-Terminal-Leave-in-Random-Triangle-Removal-September-25-2026`](../../../preprints/The-Sharp-Terminal-Leave-in-Random-Triangle-Removal-September-25-2026/) | [188](../combinatorics/188-sharp-constant-in-random-triangle-removal.md) | prose | [The-Sharp-Terminal-Leave-in-Random-Triangle-Removal-September-25-2026.pdf](../../../preprints/The-Sharp-Terminal-Leave-in-Random-Triangle-Removal-September-25-2026/The-Sharp-Terminal-Leave-in-Random-Triangle-Removal-September-25-2026.pdf) |
+| [`The-canonical-massive-continuum-limit-of-the-two-dimensional-O3-model-October-4-2026`](../../../preprints/The-canonical-massive-continuum-limit-of-the-two-dimensional-O3-model-October-4-2026/) | [215](../probability-and-statistical-mechanics/215-massive-continuum-limits-and-exact-mass-asymptotics-for-planar-o-n-models.md) | prose | [massive-continuum-o3.pdf](../../../preprints/The-canonical-massive-continuum-limit-of-the-two-dimensional-O3-model-October-4-2026/massive-continuum-o3.pdf) |
+| [`The-nonmaximal-anti-de-Sitter-Penrose-Inequality-and-original-data-rigidity-October-5-2026`](../../../preprints/The-nonmaximal-anti-de-Sitter-Penrose-Inequality-and-original-data-rigidity-October-5-2026/) | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | prose + title | [paper.pdf](../../../preprints/The-nonmaximal-anti-de-Sitter-Penrose-Inequality-and-original-data-rigidity-October-5-2026/paper.pdf) |
+| [`The-spacetime-Penrose-inequality-and-enclosing-area-September-27-2026`](../../../preprints/The-spacetime-Penrose-inequality-and-enclosing-area-September-27-2026/) | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | prose + title | [paper.pdf](../../../preprints/The-spacetime-Penrose-inequality-and-enclosing-area-September-27-2026/paper.pdf) |
+| [`The-spacetime-Penrose-inequality-with-charge-and-original-data-rigidity-October-5-2026`](../../../preprints/The-spacetime-Penrose-inequality-with-charge-and-original-data-rigidity-October-5-2026/) | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | prose + title | [paper.pdf](../../../preprints/The-spacetime-Penrose-inequality-with-charge-and-original-data-rigidity-October-5-2026/paper.pdf) |
+
+`title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.
+
+## Lean declarations
+
+No `main_results` declaration name contains this name.
+
+## Theorem-environment titles
+
+Up to 8 of the statement-environment titles that carry the name, verbatim with accents folded.
+
+| Family | Environment title |
+|---|---|
+| [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | Penrose inequality and nondegenerate rigidity |
+| [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | Purely electric spacetime Penrose inequality |
+| [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | Riemannian Penrose inequality with minimizing frontiers |
+| [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | Spacetime Penrose inequality for complete initial data |
+| [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | Global maximal AH Penrose inequality |
+| [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | AF Riemannian Penrose inequality |
+| [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | Nonmaximal anti-de Sitter Penrose Inequality |
+| [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | The enclosing-area Penrose inequality |
+
+## Spelling variants
+
+Every form below normalizes to the key `penrose`: accents folded, dash variants unified, possessives stripped, case lowered. `Penrose` · `Penrose's`
+
