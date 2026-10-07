@@ -355,7 +355,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 359	Differential geometry	Negative K\"ahler curvature without bounded holomorphic coordinates	2	1	T3	1	1	1	474	0	0	0		bound|partial	0	0		0	0	0
 360	Differential geometry	Villani’s convexity conjecture and regular optimal transport	2	2	T3	2	2	1	1118	0	0	0		resolution|bound	0	1		0	0	0
 361	Differential geometry	Counterexamples to Yau's harmonic dimension bound	2	1	T3	1	1	1	575	1	0	0		counterexample|bound|partial|uniform	0	0		0	0	0
-362	Partial differential equations	Global smoothness for relativistic Vlasov--Maxwell	1	1	T3	1	1	1	519	0	0	0	relativistic-vlasov-maxwell	bound|density|uniform	0	0		0	0	0
+362	Partial differential equations	Global smoothness for relativistic Vlasov--Maxwell	1	1	T3	1	1	1	519	0	0	0	relativistic-vlasov-maxwell	bound|density|uniform	0	0		0	0	1
 363	Partial differential equations	Boltzmann nonuniqueness with exact local conservation	2	0	T2	1	0	1	654	0	0	0		bound|density	0	0		0	0	0
 364	Partial differential equations	Kinetic limits and fluctuations over the Boltzmann lifespan	2	0	T0	0	0	0	0	0	0	0		bound|density|uniform	0	0		1	0	0
 365	Partial differential equations	Joint metric and connection recovery from one boundary patch	3	1	T3	1	1	1	444	0	0	0		bound|uniform	0	0		0	0	0
