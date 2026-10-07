@@ -20,7 +20,10 @@ notes. Reading tool, not a verification tool.
 - Read `lean/docs/<NNN>.md` before claiming what a family proves; its `## Scope` section states
   the exclusions, which are the load-bearing part.
 - Attribute reasoning traces from the table in `README.md`, never by guessing from filenames.
-- Project skills live in `.agents/skills/` — `proof-triage` routes ledger work,
+- Bucket the T0 families with `python3 notes/scripts/triage_t0.py` — it reads `notes/catalog.tsv`,
+  writes nothing, and reconciles 137 families over 255 manuscripts. Findings live in
+  `notes/t0-triage.md`.
+- Project skills live in `.qwen/skills/` — `proof-triage` routes ledger work,
   `auto-skill-lean-formalization-coverage-audit` carries the measurement method.
 
 ## Testing instructions
@@ -41,7 +44,8 @@ notes. Reading tool, not a verification tool.
 - Work on the `notes` branch. Keep `main` mirroring `upstream/main`.
 - Push only to `origin` — `github.com/troberson/openai_math`, the fork. `upstream` is
   `github.com/openai/math` and is read-only. Confirm the destination with `git push --dry-run`.
-- Never commit tool state: `.agents/`, `.qwen/`, and `__pycache__/` stay untracked.
+- Track `.qwen/skills/` as repo content. Keep volatile tool state untracked: the rest of `.qwen/`
+  (`pending-skills/`, `worktrees/`, `tmp/`) and `__pycache__/`.
 - Match the existing message style: short imperative subject, blank line, body that explains why.
 - Record manual reading findings as tracked files under `notes/`, one entry per family, stating
   exactly what each assumes and where the assumption sits.

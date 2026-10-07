@@ -1,0 +1,6 @@
+# Agent tool state: track the project skills, ignore the rest
+.qwen/*
+!.qwen/skills/
+
+# Python bytecode from the notes scripts
+__pycache__/
