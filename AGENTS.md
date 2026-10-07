@@ -92,7 +92,10 @@ lives in this file and nowhere else.
   `{}` and `\` is what stops a phantom 723rd manuscript.
 - Check every `notes/summaries/` page with `python3 notes/scripts/verify_summaries.py --mutant`
   before reporting it green — it resolves every `[Sn:line]` marker against the shipped file, checks
-  every quotation against the lines it cites, and writes nothing.
+  every quotation against the lines it cites, counts a File cell that resolves under both roots as a
+  problem, and writes nothing. `--mutant` corrupts one real quotation in each form the page uses
+  (inline, inline wrapped across lines, block quote) and invents one, so quote the report by its form
+  names: a page with no quotation marks at all is proven only by the block-quote mutant.
 - Check `notes/conjecture-standing.tsv` with `python3 notes/scripts/verify_conjecture_standing.py`
   before quoting any row — it proves the 139-row fam set against the ledger, resolves every
   `overview.tex:<n>` anchor to that family's own `\resultentry`, requires `prior_confidence` in

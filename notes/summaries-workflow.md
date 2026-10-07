@@ -18,18 +18,19 @@ carrier, so it states what to do and what not to re-derive.
 - **Next batch:** `math-ckd.2` — the 9 headline T0 families (002, 004, 006, 010, 011, 014, 016, 018,
   019), 29 manuscripts. `bd update math-ckd.2 --claim`, then steps 2–9 below per page. Check
   `bd ready` first: summaries are P4 and any ready P1/P2 issue outranks this batch.
-- **Last gate run (2026-10-07):** regeneration byte-identical on two runs, one intended change (fam
-  362 `summary` 0 → 1); 372 families, 722 manuscripts, 162 formalized, 405 challenges, 185
-  `main_results` over 178 configs, 235 scope notes, both cross-checks 0, discipline table summing
-  372 / 235 / 722 / 162; `verify_summaries.py` on the 362 page → 109 marker positions, 38 quoted
-  spans, 0 problems; `--mutant` flags **both** mutants (0 undetected — see the 362 findings).
-- **Push state:** `origin/notes` at 3a78dc665 (pushed 2026-10-07 08:36) — the batch boundary, so
-  `origin` holds the completed `math-ckd.1`. Push when an hour has passed since the last push, not
-  per commit.
-- **Queue check (2026-10-07, after closing `math-ckd.1`):** `bd ready` lists four **P1** issues —
-  `math-el4.6`, `math-el4.1`, `math-el4.2`, `math-7ej` — and several P2. Under "Stop the run" below,
-  the P4 summary loop does not continue past this boundary until the user picks: a P1 issue, or an
-  explicit override to run `math-ckd.2` anyway.
+- **Last gate run (2026-10-07, after `math-j0k.1`):** regeneration byte-identical on two runs with no
+  intended change; 372 families, 722 manuscripts, 162 formalized, 405 challenges, 185 `main_results`
+  over 178 configs, 235 scope notes, both cross-checks 0, discipline table summing 372 / 235 / 722 /
+  162; `verify_summaries.py --mutant` over all 12 pages → 2119 marker positions, 441 quoted spans,
+  **0 problems, 0 undetected mutants** — 9 inline, 4 wrapped-inline, 12 block-quote and 12 fabricated
+  mutants, every one FLAGGED.
+- **Push state:** `origin/notes` at 1bfd5c459 (pushed 2026-10-07 09:15); 5 commits unpushed at 09:47.
+  Push when an hour has passed since the last push, not per commit.
+- **Queue check (2026-10-07, after closing `math-el4.2`):** `bd ready` lists 24 issues and **no P1**.
+  The P2 line is `math-el4.7`, `math-el4.3`, `math-el4`, `math-u41.1`, `math-u41`, `math-b91`,
+  `math-hqd.1`, `math-hqd`, `math-185`, `math-5sn`, `math-j0k`; then P3, then the P4 `math-ckd`
+  batch. Summaries rank below all of them, so the loop does not continue past this boundary until the
+  higher queue is drained or the user overrides.
 - **007 finding, for reuse:** the ledger's `paps_form`/`mainres` counts are 0 for a family that
   ships 854 Lean files with zero `sorry`, because `formalization.yaml` has no entry for the
   manuscript. Counts are YAML bibliography entries, not Lean source — never read them as "not
@@ -38,12 +39,14 @@ carrier, so it states what to do and what not to re-derive.
   at scale: 0 and 0 beside 4,774 files and 1,122,983 lines.
 - **017 findings, for reuse:**
   - A `[Sxx]` marker for a binary source (a trace PDF, a manuscript `paper.pdf`) inside a unit that
-    carries a quotation makes Pass C read that file as text and crash on `UnicodeDecodeError`. Pass C
-    tries the cited sources in marker order and stops at the first hit, so a PDF row is safe only in
-    a unit with no quotation, or listed after a text source that can match. Cite trace rows in the
-    closing note. **A block quote inherits the markers of the line above it**, so a paragraph that
-    cites a PDF and ends with the intro line for a block quote puts that PDF in the block quote's
-    candidate list and crashes: keep the PDF citation in its own paragraph.
+    carries a quotation makes Pass C read that file as text, and its non-text bytes decode to
+    replacement characters, so the quotation reports `NOT VERBATIM` against a source whose text is not
+    extractable. Pass C tries the cited sources in marker order and stops at the first hit, so a PDF
+    row is safe only in a unit with no quotation, or listed after a text source that can match. Cite
+    trace rows in the closing note. **A block quote inherits the markers of the line above it**, so a
+    paragraph that cites a PDF and ends with the intro line for a block quote puts that PDF in the
+    block quote's candidate list and reports `NOT VERBATIM`: keep the PDF citation in its own
+    paragraph. Before `math-j0k.1` this same shape aborted the run with `UnicodeDecodeError`.
   - A quotation containing `<` is a hazard twice over: the raw-HTML scan matches `<...>`, and
     `norm()` deletes the same span, so the quote compares as mangled text. Put a space after `<`, or
     paraphrase. Check the source line for a `>` before quoting an inequality. Never write `<sub>`,
@@ -124,10 +127,12 @@ carrier, so it states what to do and what not to re-derive.
     display. Print the shipped lines (`grep -n "" file | sed -n 'A,Bp'`) before writing a quotation; a
     paraphrase held in memory is not a quotation. Two more were off-by-one range starts, because these
     sources wrap sentences mid-line: derive every range from the shipped file.
-  - **`AMBIGUOUS` is printed, not counted, and the manuscript copy wins** (`self.table[sid] =
-    hits[0]`, roots ordered `[manuscript, repo]`). No path form disambiguates a repo-root file that
-    also exists in the manuscript root — `Path("./README.md")` normalizes to `README.md`. The release
-    `README.md` therefore cannot be a declared source row; delete it and cite the trace files.
+  - **A File cell that resolves under both roots is a counted problem** (`AMBIGUOUS S2 (README.md)
+    resolves under 2 roots`), and the manuscript copy is the one used (`self.table[sid] = hits[0]`,
+    roots ordered `[manuscript, repo]`). No path form disambiguates a repo-root file that also exists
+    in the manuscript root — `Path("./README.md")` normalizes to `README.md` — so 221's release
+    `README.md` row stays deleted and its trace files carry the citation. Before `math-j0k.1` the
+    line printed without being counted, so a page could report green with it.
   - The scope note for 221 states **no exclusions** (15 lines, contrast 197), so its coverage claims
     come from the tree. Grep the tree for the manuscript's corollary vocabulary: `Viana`, `Bray`,
     `SAT`, `soft`, `temperature`, `ground` return 0 files in `lean/OAI/Probability/DilutedSpin/`, so
@@ -151,9 +156,11 @@ carrier, so it states what to do and what not to re-derive.
     and zero `OAI:` self-citations; A, B and C each cite D by its `OAI:` href. Grep the `OAI:` hrefs
     across the family's trees: the manuscript nobody in the family cites is the root, and the dated
     directory names confirm it.
-  - **A line-range marker on a binary source crashes the checker** — `UnicodeDecodeError` in
-    `lines_of`. A PDF row is legal only with whole-file markers `[Sn]`, and only in units that carry
-    no quotation. 271's trace ships as PDF alone (no `.tex`), so its reasoning is not quotable at all.
+  - **A line-range marker on a binary source is legal; a quotation on it is not.** `lines_of` reads
+    with `errors="replace"`, so the PDF's bytes become replacement characters and any quotation cited
+    there reports `NOT VERBATIM`; a PDF row is safe only with whole-file markers `[Sn]`, in units that
+    carry no quotation. 271's trace ships as PDF alone (no `.tex`), so its reasoning is not quotable at
+    all. Before `math-j0k.1` this shape crashed the run inside `lines_of`.
   - **Two adjacent block quotes leave the second with no citation.** `pass_c` attributes a block quote
     from the lines at `start_line-2 … start_line-4`; a blank line plus the first quote fills that
     window, so the second quote reports `NO CITATION`. Merge them into one contiguous block quote and
@@ -202,10 +209,13 @@ carrier, so it states what to do and what not to re-derive.
     `Model.trace`, `Model.topology`, `parameterModel` (186–210) and `InterpolatedFactor` (212–214)
     before the challenge `allInterpolatedIsomorphic` (216–219), whose `sorry` sits in the challenge
     file. Count the challenge `sorry` separately from the tree's zero.
-  - **A page with no inline quotation skips mutant A.** 287 has zero straight `"` — every quotation is
-    a block quote — so `--mutant` prints `mutant A corrupts a real quotation: MISSED (no quotable
-    span on one line)` and the TOTAL line shows `(1 undetected mutants)`. That is a property of the
-    page, not a defect: the gate is the no-mutant run reporting `0 problems` with mutant B flagged.
+  - **A page with no quotation marks is proven by the block-quote mutant.** 287 carries zero `“ ” " ‘ ’`
+    — all 25 of its Pass C spans are block quotes — which is why it is the page that exposed the gap.
+    Mutant A scanned inline quotations only, so it printed `MISSED (no quotable span on one line)` and
+    the TOTAL line read `(1 undetected mutants)`; that looked like a property of the page. `math-j0k.1`
+    added A3 (corrupt a block-quote attribution) and A2 (a span wrapped across lines), so 287 reports
+    `A3 corrupts a block-quote attribution: FLAGGED` with 0 undetected mutants. The gate is every
+    present form FLAGGED, not "inline-only mutants are fine".
   - Cost: 1 manuscript (12 files, 17-entry bibliography, zero `OAI:` self-citations), 1 trace (PDF
     only, 11 pages), 1 Lean tree → 42 sources, 160 markers, 25 quoted spans, green on the second
     checker run. One manuscript is the cheapest shape in the batch.
@@ -237,11 +247,14 @@ carrier, so it states what to do and what not to re-derive.
   - **A repo-level Sources row needs a full repo-relative File cell.** The trace row's short cell
     `relativistic-vlasov-maxwell.pdf` printed `FILE NOT ON DISK` — the checker resolves cells under
     the manuscript root and the repo root only. Applies to trace PDFs, `lean/…`, `notes/…` and
-    `CONTENTS.md`; only files under the manuscript root may use a short cell.
-  - **Mutant A is not skipped by block quotes alone.** It scans the raw page text for a straight-`"`
-    span ≥ 12 chars, so 362's JSON block quote (`"challenge_module"`) gives it a target and the page
-    reports `0 undetected mutants`. 287's note holds only for a page with zero straight `"`; the gate
-    is the no-mutant run at `0 problems` with mutant B flagged.
+    `CONTENTS.md`; only files under the manuscript root may use a short cell. `README.md` is the same
+    trap at the other root: bare `README.md` resolves under the manuscript root (18 lines) *and* the
+    repo root (50), and `math-j0k.1` turned that collision into a counted problem, so the cell is now
+    `preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/README.md`.
+  - **A JSON string inside a block quote is an inline mutant target.** Mutant A1 scans the raw page
+    text for a `"` span ≥ 12 characters, so 362's JSON block quote (`"challenge_module"`) gives it a
+    target and this page has reported 0 undetected mutants all along — which is why the bead that found
+    the gap named 362. Running 362 alone shows A1 FLAGGED; the missed mutant was never on this page.
   - Cost: 1 manuscript (16 files), 1 trace (PDF only, 6 pages, so not quotable), 1 Lean tree (207
     files / 89,993 lines) → 23 sources, 109 markers, 38 quoted spans, green on the second checker
     run. A one-manuscript family with a mid-size tree is the cheapest shape measured so far.
@@ -262,7 +275,8 @@ A batch is one bd issue. Per page, in this order:
 3. Read the manuscript, the scope note, the YAML block, the challenge JSON, the trace if any.
 4. Write the page in the format fixed by the `family-summary` skill.
 5. Self-verify: every quotation against the lines it cites, every count against the file.
-6. `python3 notes/scripts/verify_summaries.py --mutant` — green, zero problems.
+6. `python3 notes/scripts/verify_summaries.py --mutant` — zero problems, and every mutant form the
+   page's quotation style can exercise printed FLAGGED.
 7. Declare every Sources row, or delete it.
 8. Regenerate the ledger; the `summary` column must flip to 1 for this family.
 9. Commit.
@@ -274,7 +288,7 @@ A batch is one bd issue. Per page, in this order:
 python3 notes/scripts/build_catalog.py > /tmp/r1.txt && cp notes/catalog.tsv /tmp/c1.tsv
 python3 notes/scripts/build_catalog.py > /tmp/r2.txt && cp notes/catalog.tsv /tmp/c2.tsv
 diff /tmp/c1.tsv /tmp/c2.tsv && diff /tmp/r1.txt /tmp/r2.txt     # must be byte-identical
-python3 notes/scripts/verify_summaries.py --mutant                # zero problems
+python3 notes/scripts/verify_summaries.py --mutant                # zero problems, zero undetected mutants
 ```
 
 Reconciliation lines that must not move: 372 families, 722 manuscripts, 162 formalized,

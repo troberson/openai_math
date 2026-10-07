@@ -69,7 +69,7 @@ A gate is not "check it looks right". Write the commands and the expected reconc
 python3 notes/scripts/build_catalog.py > /tmp/r1.txt && cp notes/catalog.tsv /tmp/c1.tsv
 python3 notes/scripts/build_catalog.py > /tmp/r2.txt && cp notes/catalog.tsv /tmp/c2.tsv
 diff /tmp/c1.tsv /tmp/c2.tsv && diff /tmp/r1.txt /tmp/r2.txt     # must be byte-identical
-python3 notes/scripts/verify_summaries.py --mutant               # zero problems
+python3 notes/scripts/verify_summaries.py --mutant               # zero problems, zero undetected mutants
 ```
 
 Reconciliation lines that must not move: 372 families, 722 manuscripts, 162 formalized, 405

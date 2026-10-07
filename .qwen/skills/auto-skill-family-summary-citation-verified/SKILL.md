@@ -257,9 +257,10 @@ QUOTE = re.compile(r"“([^”]{6,})”|\"([^\"]{6,})\"")
   blank line, quote). A marker sitting further up is used only when nothing is nearer, which is how a
   quote ends up attributed to the wrong range.
 - That attribution line's markers *are* the block quote's candidate list, so **a paragraph citing a
-  binary source must not be the line above a block quote** — pass C tries the PDF as text and dies on
-  `UnicodeDecodeError`. Give a trace-PDF or `paper.pdf` citation its own paragraph, away from any block
-  quote, and keep quotations out of that paragraph.
+  binary source must not be the line above a block quote** — pass C tries the PDF as text, and bytes
+  that are not text decode to replacement characters, so the quotation reports `NOT VERBATIM` against
+  a source whose text is not extractable. Give a trace-PDF or `paper.pdf` citation its own paragraph,
+  away from any block quote, and keep quotations out of that paragraph.
 - Quote a displayed formula with the delimiters the source uses. `norm()` turns `\begin{equation}` into
   `equation`, so a page that writes `\[ … \]` never matches a source pair carrying an environment:
   quote the environment and cite the range covering `\begin{…}` through `\end{…}`.
@@ -274,9 +275,12 @@ leaves `prime-to- p`, which fails against `prime-to-p`. Strip leading `../` sequ
 links relatively (`../../../CONTENTS.md`) while the release spells the same target as a repo-relative
 path, so a quoted link must compare equal to the line it cites.
 
-**Prove the pass discriminates before trusting it.** Mutate the finished page twice — paraphrase one
-block quote and invent one inline quote at a real citation — run pass C on the mutants, and confirm
-both are flagged while the real page is clean. A green pass you have never seen go red is not a check.
+**Prove the pass discriminates before trusting it.** `--mutant` corrupts one real quotation in each
+form the page actually uses — inline, inline wrapped across lines, block quote — and invents one
+fabricated quotation at a real citation; confirm every present form is FLAGGED while the real page is
+silent. A form the page does not use adds no result, so the report names the form it corrupted: a page
+with no quotation marks at all is proven only by the block-quote mutant. A green pass you have never
+seen go red is not a check.
 
 ## 6. Traps (each one fired in this session)
 
@@ -285,8 +289,10 @@ both are flagged while the real page is clean. A green pass you have never seen 
   arbitrary paper and every range check goes red at once (`S10:222 -> references.tex (file has 216
   lines)` when the real file has 274). Resolve through the manuscript root the Sources section names.
 - **A bare relative name is ambiguous between the two roots.** `README.md` is 18 lines in the preprint
-  and 50 at the repo root. Resolve manuscript-first, and print a loud note when a name exists under
-  both roots — a silent pick here reads as a line-count error in the table.
+  and 50 at the repo root. The checker resolves manuscript-first and **counts** the collision as a
+  problem (`AMBIGUOUS S2 (README.md) resolves under 2 roots`), so the page cannot report green with
+  it. No path form disambiguates a name that exists under both roots — `Path("./README.md")`
+  normalizes to `README.md` — which is why every File cell is the full repository-relative path.
 - **A hand-written range can split into three markers.** `` `05_reduction.tex:361`, `:443`–`:448` ``
   numbered as `[S9:361], [S9:443]–[S9:448]` because the comma closed the marker and the tail
   self-closed. One range per marker (`[S9:443–448]`), then grep the finished body for a `–` outside a
