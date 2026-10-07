@@ -23,8 +23,13 @@ carrier, so it states what to do and what not to re-derive.
   `main_results` over 178 configs, 235 scope notes, both cross-checks 0, discipline table summing
   372 / 235 / 722 / 162; `verify_summaries.py` on the 362 page → 109 marker positions, 38 quoted
   spans, 0 problems; `--mutant` flags **both** mutants (0 undetected — see the 362 findings).
-- **Push state:** `origin/notes` at 29169d579 (pushed 2026-10-07 07:48); local `notes` HEAD is
-  f4d02417b. Push when an hour has passed since the last push, not per commit.
+- **Push state:** `origin/notes` at 3a78dc665 (pushed 2026-10-07 08:36) — the batch boundary, so
+  `origin` holds the completed `math-ckd.1`. Push when an hour has passed since the last push, not
+  per commit.
+- **Queue check (2026-10-07, after closing `math-ckd.1`):** `bd ready` lists four **P1** issues —
+  `math-el4.6`, `math-el4.1`, `math-el4.2`, `math-7ej` — and several P2. Under "Stop the run" below,
+  the P4 summary loop does not continue past this boundary until the user picks: a P1 issue, or an
+  explicit override to run `math-ckd.2` anyway.
 - **007 finding, for reuse:** the ledger's `paps_form`/`mainres` counts are 0 for a family that
   ships 854 Lean files with zero `sorry`, because `formalization.yaml` has no entry for the
   manuscript. Counts are YAML bibliography entries, not Lean source — never read them as "not
