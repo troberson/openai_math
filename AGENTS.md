@@ -1,7 +1,21 @@
 # AGENTS.md
 
 Companion to `README.md`: context and rules for agents working on the OpenAI Research Catalog
-notes. Reading tool, not a verification tool.
+notes. Reading tool, not a verification tool. `CLAUDE.md` is a pointer here — every agent rule
+lives in this file and nowhere else.
+
+## Repository map
+
+- `overview.tex` lists the 372 families as `\resultentry{NNN}` entries inside 17
+  `\cataloguesection`s — the release's own claims, not ours.
+- `preprints/` holds the 722 manuscripts, one directory each.
+- `lean/` holds the formalization: `OAI/` source, `docs/<NNN>.md` scope notes,
+  `ComparatorChallenges/*.json`, and `formalization.yaml`.
+- `reasoning_traces/` holds 10 published traces in 11 files — the Mézard–Parisi trace ships as
+  both `.pdf` and `.tex`.
+- `notes/` is the reading ledger: `catalog.tsv` (372 rows, 20 columns), `README.md`,
+  `t0-triage.md`, `conditional.md`, `resolution-tag.md`, `verification-dirs.md`, `notes/scripts/`.
+- `.beads/issues.jsonl` is the tracked issue store, in bd no-db mode; see the beads section below.
 
 ## Dev environment tips
 
@@ -16,6 +30,9 @@ notes. Reading tool, not a verification tool.
   Zero `sorry` in source is not a comparator pass, and it does not mean the library elaborates.
 - Report coverage as four layers, never one percentage: 162/722 manuscripts, 235/372 scope notes,
   405 comparator challenges, 185 `main_results` entries over 178 unique configs.
+- Treat claim shape as multi-label — 66 families match ≥3 shapes, 57 match none — so a tag is a
+  floor, not a census. Keep `resolves_named` a ledger column, not a shape: that is what leaves the
+  first-match T0 buckets in `triage_t0.py` untouched.
 - Absence of formalization is not a red flag — 560 of 722 manuscripts are unformalized.
 - Read `lean/docs/<NNN>.md` before claiming what a family proves; its `## Scope` section states
   the exclusions, which are the load-bearing part.
@@ -28,9 +45,11 @@ notes. Reading tool, not a verification tool.
 
 ## Testing instructions
 
+- Nothing here builds and there is no test suite; the generator report is the test.
 - Run the generator twice and diff the output: `notes/catalog.tsv` must be byte-identical.
 - Check the report's reconciliation lines after every change: 372 families, 722 manuscripts,
-  162 formalized, and both `overview.tex` ↔ `CONTENTS.md` cross-checks reading 0.
+  162 formalized, 235 scope notes, 405 challenges, 185 `main_results` entries over 178 configs,
+  and both `overview.tex` ↔ `CONTENTS.md` cross-checks reading 0.
 - Confirm the discipline table sums to 372 / 235 / 722 / 162.
 - Quote a count only from a fresh generator report, never from a previous run's output.
 - Confirm a new tag discriminates before quoting it: the `conditional` tag flagged 9 families and
@@ -50,3 +69,28 @@ notes. Reading tool, not a verification tool.
 - Record manual reading findings as tracked files under `notes/`, one entry per family, stating
   exactly what each assumes and where the assumption sits.
 - End coverage answers with what has not been checked.
+
+<!-- BEGIN BEADS INTEGRATION v:1 profile:minimal hash:7510c1e2 -->
+## Beads Issue Tracker
+
+This project tracks issues with **bd (beads)** in **no-db mode**: `.beads/issues.jsonl` is the
+issue store and it is tracked in git. There is no Dolt remote and no `bd dolt push` — the queue
+travels with the `notes` branch like any other tracked file. Prefix is `math`.
+
+- Find available work with `bd ready`, inspect with `bd show <id>`, claim with
+  `bd update <id> --claim`, finish with `bd close <id>`; `bd prime` prints the workflow context.
+- `bd ready` is the live queue. `notes/README.md` records findings, not task state — the task list
+  lives only in bd, so nothing is tracked twice.
+- The beads git hooks are active (`core.hooksPath` = `.beads/hooks`); the pre-commit hook re-exports
+  `.beads/issues.jsonl` and stages it, so the tracked store is current in the commit whose work it
+  records. By hand: `bd export -o .beads/issues.jsonl`.
+- Findings belong in tracked files under `notes/`, not in bd memories — `bd remember` is not the
+  record of record here.
+- Repo rules outrank this section: commit only when asked, push only to `origin` (the fork) and
+  only when asked, and never run `lake`, `lean`, `comparator`, or `bd dolt push`.
+- `.claude/settings.json` runs `.beads/prime.sh` at SessionStart and PreCompact — `bd prime`
+  followed by these same overrides, because stock `bd prime` demands a session-end `git push`,
+  a Dolt remote, and `bd remember`, none of which apply here.
+- `CLAUDE.md` is a pointer to this file, so beads rules live here only. A future `bd init` may
+  re-insert its own block into `CLAUDE.md`; delete it.
+<!-- END BEADS INTEGRATION -->
