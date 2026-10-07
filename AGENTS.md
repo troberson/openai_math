@@ -20,7 +20,8 @@ lives in this file and nowhere else.
   `conjecture-standing.md` beside it, `formalization-deps.tsv` (31 rows, 8 columns — the upstream
   library graph) with `formalization-deps.md` beside it, `links.tsv` (22 rows, 7 columns — the
   typed-edge inventory) with `links.md` beside it, `scope-exclusions.md` (235 rows — what each scope
-  note says its formalization leaves out),
+  note says its formalization leaves out), `subfindings.tsv` (1137 rows — 722 manuscript rows and 415
+  comparator rows, typed by a `kind` column),
   `summaries/<discipline>/<NNN>-<name>.md`, `notes/scripts/`.
 - `.beads/issues.jsonl` is the tracked issue store, in bd no-db mode; see the beads section below.
 
@@ -80,6 +81,14 @@ lives in this file and nowhere else.
   manuscripts under `build/` and `sections/` and silently makes every cross-family exclusion match
   nothing. The report also reproduces the legacy title proxy (14 over 417 `.bib` files at depth ≤3) so
   the figure the older docs quote is checkable against a command, not just against prose.
+- Extract the per-manuscript table with `python3 notes/scripts/extract_subfindings.py` — writes
+  `notes/subfindings.tsv` (722 manuscript rows + 415 comparator rows) and prints the reconciliation.
+  Read the 4th `\resultentry` field with `build_catalog.read_args`, never with a regex group split:
+  the field is a run of `\href{…}{…}` and a group split mis-slices as soon as a display title carries
+  a brace. Quote 415 as comparator-table **rows** and 405 as **distinct configs** — the 10-gap is the
+  same 7 docs `links.tsv` records (071, 100, 115, 134, 274, 275, 293), so a per-family `set()` over a
+  table reports 405 rows and is wrong. A display title is link text, not a sub-result: the
+  title↔abstract pairing has been read for family 102 only, and `math-el4.4` is the pairing task.
 - Project skills live in `.qwen/skills/` — `proof-triage` routes ledger work,
   `auto-skill-lean-formalization-coverage-audit` carries the measurement method.
 
@@ -108,6 +117,13 @@ lives in this file and nowhere else.
   verbatim on the line it cites, re-measures all seven Measurements-table numbers from the files, and
   flags six injected mutants including a paraphrase dressed as a quote. `extract_scope_notes.py` is
   report-only: it writes nothing and is where the page's counts come from.
+- Check `notes/subfindings.tsv` with `python3 notes/scripts/verify_subfindings.py --mutant` before
+  quoting a row — it re-derives every manuscript row from `overview.tex` (path, display title,
+  formalized flag, tier) and every comparator row from its scope note's table **in order**, requires
+  each path and each `.lean` file to exist on disk, requires each family's row count to equal the
+  ledger's `paps`, requires `seq` to run 1..n per family and kind, rejects a field a kind never fills,
+  and flags seven injected mutants including a same-family row swap. Run
+  `python3 notes/scripts/extract_subfindings.py` twice and diff: the TSV must be byte-identical.
 - Check `notes/conjecture-standing.tsv` with `python3 notes/scripts/verify_conjecture_standing.py`
   before quoting any row — it proves the 139-row fam set against the ledger, resolves every
   `overview.tex:<n>` anchor to that family's own `\resultentry`, requires `prior_confidence` in

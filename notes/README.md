@@ -15,6 +15,8 @@ python3 notes/scripts/extract_formalization_deps.py  # writes notes/formalizatio
 python3 notes/scripts/extract_links.py      # writes notes/links.tsv and prints the per-edge report
 python3 notes/scripts/extract_scope_notes.py  # re-measures the 235 `## Scope` sections; report-only, writes nothing
 python3 notes/scripts/verify_scope_exclusions.py --mutant  # checks notes/scope-exclusions.md against lean/docs/
+python3 notes/scripts/extract_subfindings.py  # writes notes/subfindings.tsv and prints the reconciliation
+python3 notes/scripts/verify_subfindings.py --mutant  # checks notes/subfindings.tsv against overview.tex and lean/docs/
 ```
 
 `notes/summaries-workflow.md` is the resume protocol for the summary-page batches: per-page steps,
@@ -183,6 +185,28 @@ imposed* widens the formalized claim rather than bounding it, so it is not an en
 resolves every citation, requires each quotation verbatim on the line it cites **inside the `## Scope`
 span**, re-measures all seven table numbers from disk, and flags all six injected mutants.
 
+**`notes/subfindings.tsv` is the per-manuscript table: 1137 rows = 722 manuscript rows + 415
+comparator rows, typed by a `kind` column.** Extraction only — every field is copied from a file,
+nothing is inferred. `kind=manuscript` rows come from the `\href`s in the **4th field of
+`\resultentry`**: family, order within the family, the href's **display title**, the manuscript path,
+whether `formalization.yaml` lists that manuscript, and the family's tier. `kind=comparator-link`
+rows come from each scope note's `## Comparator links` table: family, order in the table, the named
+statement, and the `.lean` file. Fields a kind does not use are empty, so the file stays one
+rectangular TSV. The report (fresh run): **722 manuscript rows over 372 families**, **415 comparator
+rows over 235 families over 405 distinct `.lean` files**, **0 mismatches** between the ledger's `paps`
+and the href count over all 372 families, **162** formalized manuscripts, manuscript-row tiers
+**T3=250 T2=217 T1=0 T0=255** (the ledger has **no** T1 family: every family with a scope note links
+at least one config), **722 distinct display titles over 722 rows** with **0** titles used by more
+than one row, and **167 multi-manuscript families carrying 517 rows**. The display titles are the
+release's own structural encoding of sub-findings: family 102 ships five hrefs titled *Unique Games
+theorem*, *Optimal Max-Cut hardness*, *Factor-two Vertex Cover hardness*, *Constant-factor Min-UnCut
+hardness*, *Directed feedback vertex set hardness*, and its abstract carries exactly those five
+claims (read 2026-10-07: the UGC proof plus Max-Cut / Vertex Cover / Min-UnCut / directed FVS
+hardness). That matching is checked for 102 only — the other 717 titles are recorded, not paired.
+`notes/scripts/verify_subfindings.py` re-derives every row from `overview.tex`,
+`formalization.yaml`, `lean/docs/`, and the ledger, requires each path and each `.lean` file to exist
+on disk, and flags all seven injected mutants including a same-family row swap.
+
 ## Columns
 
 | Column | Source | Notes |
@@ -293,6 +317,20 @@ the community will scrutinize.
 - **A keyword floor is not the exclusions count.** The 5-phrase list hits 5 of 235 sections and the
   24-phrase list hits 44; reading all 235 finds exclusions in 115. Quote the floor with its phrase
   list, never as the number of families with exclusions.
+- **The 4th `\resultentry` field is not group-splittable.** It is a run of `\href{…}{…}` separated by
+  `\enspace\textperiodcentered\enspace`, and a regex that splits on brace groups silently mis-slices
+  once a display title contains a brace. Walk the braces with an escape-parity count
+  (`build_catalog.read_args`): an odd number of leading backslashes means the brace is escaped and
+  does not open or close a group. `extract_subfindings.py` uses that reader for both fields.
+- **415 comparator rows and 405 configs are both correct.** Seven scope notes (071, 100, 115, 134,
+  274, 275, 293) link the same `.lean` file twice inside their own table, so the table has 10
+  occurrences more than the deduped config set — the same 10-gap `notes/links.tsv` records. A
+  per-family `set()` over a comparator table drops those 10 rows and reports 405 rows, which is not
+  what the notes contain.
+- **A display title is not a claim about the abstract.** The 722 titles are what the release writes
+  as link text; nothing in the repo states that a title corresponds to a clause of the abstract, and
+  the pairing has been read for one family (102). `math-el4.4` is the pairing task; until it lands,
+  a title is a label, not a sub-result.
 
 ## Open tasks
 
