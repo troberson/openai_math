@@ -137,9 +137,11 @@ generic fiber, does not assert uniqueness modulo rational equivalence, and makes
 between different reduction places.
 
 **Formalization status.** None. No `lean/OAI/` file, no `lean/docs/001.md`, no comparator challenge,
-no `main_results` entry. The manuscript's LaTeX under `build/` is the only artifact, and the release
-ships no reasoning trace for this family. Nothing about this family is machine-checked: "proves" in
-the abstract is the release's claim, and everything above is read from that LaTeX.
+no `main_results` entry — the ledger row `fam=001` records tier T0 with zero challenges, zero main
+results, zero formalized manuscripts, and no reasoning trace [S14]. The manuscript ships its LaTeX
+under `build/`, a typeset PDF at its root [S15], and the README named below [S12]; the release ships
+nothing for this family beyond those three files. Nothing about this family is machine-checked:
+"proves" in the abstract is the release's claim, and everything above is read from that LaTeX.
 
 ## History of the conjecture
 
@@ -252,26 +254,28 @@ Body markers name a source and, where given, the lines it cites: `[S4:29–56]` 
 appear once, here.
 
 Manuscript root — `preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/`
-(author OpenAI, dated September 23, 2026; 3,065 lines of LaTeX across `build/`). S3–S12 are paths
-inside it; S1–S2 are at the repository root.
+(its README carries the title as a link to that PDF, the author, the date, and a bibtex stub [S12];
+3,065 lines of LaTeX across `build/`). Every File cell below is the repository-relative path, in
+backticks — that is the text the checker resolves — and the hrefs stay relative to this page. S3–S12
+and S15 sit under the manuscript root, S1–S2 at the repository root, S13–S14 under `notes/`.
 
 | # | File | Lines | Role |
 |---|---|---|---|
 | S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,169 | the release's catalog — family entry [S1:16], manuscript entry [S1:23], abstract [S1:25]; companion 032 at [S1:755] and its CM Hodge manuscript at [S1:780]. Quoted word-for-word; the release's inline HTML is rendered as markdown (its italic `p` tags became `*p*`, its leading em-space entity was dropped) and its relative PDF link was rewritten to resolve from this page |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 001 at [S2:78] |
-| S3 | [`build/main.tex`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/main.tex) | 73 | root (`\documentclass`); abstract at [S3:58]; section includes |
-| S4 | [`build/sections/00_intro.tex`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/sections/00_intro.tex) | 280 | main theorem [S4:29–56]; origins [S4:64–112]; antecedents [S4:114–184]; proof overview [S4:186–265] |
-| S5 | [`build/sections/01_preliminaries.tex`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/sections/01_preliminaries.tex) | 227 | comparisons and rational Lefschetz classes; Hodge-tensor comparison [S5:48]; common rational Lefschetz space [S5:84]; `lem:lift-hom` [S5:158] |
-| S6 | [`build/sections/02_transport.tex`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/sections/02_transport.tex) | 814 | `prop:transport` [S6:35]; auxiliary Hodge datum [S6:116]; admissible realization [S6:330]; `cor:cm-transport` [S6:777] |
-| S7 | [`build/sections/03_filtration.tex`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/sections/03_filtration.tex) | 482 | `thm:filtration` [S7:38]; bounded-degree avoidance [S7:87]; Lagrangian intersections [S7:130]; divisor filtration condition [S7:450] |
-| S8 | [`build/sections/04_weil.tex`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/sections/04_weil.tex) | 439 | `def:weil-space` [S8:18]; `prop:weil` [S8:55]; orthogonality [S8:70]; divisor span [S8:205]; `lem:weil-group` [S8:280] |
-| S9 | [`build/sections/05_reduction.tex`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/sections/05_reduction.tex) | 448 | CM reduction [S9:18]; main proof [S9:225]; specialization [S9:281]; algebraicity [S9:375]; disclaimers [S9:361–362], [S9:443–448] |
-| S10 | [`build/references.tex`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/references.tex) | 274 | 35 `\bibitem`s; Milne 1999/2000/2009/2025 at [S10:151]/[S10:159]/[S10:187]/[S10:222]; Markman [S10:133]; Kisin–Zhou [S10:124]; 032 at [S10:238] |
-| S11 | [`build/figures/two-transports.tex`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/figures/two-transports.tex) | 28 | figure source — panels at [S11:8], [S11:17] |
-| S12 | [`README.md`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/README.md) | 18 | title, author, date, bibtex citation stub |
+| S3 | [`preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/main.tex`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/main.tex) | 73 | root (`\documentclass`); abstract at [S3:58]; section includes |
+| S4 | [`preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/sections/00_intro.tex`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/sections/00_intro.tex) | 280 | main theorem [S4:29–56]; origins [S4:64–112]; antecedents [S4:114–184]; proof overview [S4:186–265] |
+| S5 | [`preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/sections/01_preliminaries.tex`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/sections/01_preliminaries.tex) | 227 | comparisons and rational Lefschetz classes; Hodge-tensor comparison [S5:48]; common rational Lefschetz space [S5:84]; `lem:lift-hom` [S5:158] |
+| S6 | [`preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/sections/02_transport.tex`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/sections/02_transport.tex) | 814 | `prop:transport` [S6:35]; auxiliary Hodge datum [S6:116]; admissible realization [S6:330]; `cor:cm-transport` [S6:777] |
+| S7 | [`preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/sections/03_filtration.tex`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/sections/03_filtration.tex) | 482 | `thm:filtration` [S7:38]; bounded-degree avoidance [S7:87]; Lagrangian intersections [S7:130]; divisor filtration condition [S7:450] |
+| S8 | [`preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/sections/04_weil.tex`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/sections/04_weil.tex) | 439 | `def:weil-space` [S8:18]; `prop:weil` [S8:55]; orthogonality [S8:70]; divisor span [S8:205]; `lem:weil-group` [S8:280] |
+| S9 | [`preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/sections/05_reduction.tex`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/sections/05_reduction.tex) | 448 | CM reduction [S9:18]; main proof [S9:225]; specialization [S9:281]; algebraicity [S9:375]; disclaimers [S9:361–362], [S9:443–448] |
+| S10 | [`preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/references.tex`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/references.tex) | 274 | 35 `\bibitem`s; Milne 1999/2000/2009/2025 at [S10:151]/[S10:159]/[S10:187]/[S10:222]; Markman [S10:133]; Kisin–Zhou [S10:124]; 032 at [S10:238] |
+| S11 | [`preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/figures/two-transports.tex`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/figures/two-transports.tex) | 28 | figure source — panels at [S11:8], [S11:17] |
+| S12 | [`preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/README.md`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/README.md) | 18 | title, author, date, bibtex citation stub |
 | S13 | [`notes/t0-triage.md`](../../t0-triage.md) | 879 | 001 in the T0 **classification** bucket (K), not the resolution bucket, at [S13:102]; the 001 + 032 chain at [S13:496]. Ours, not in the release |
 | S14 | [`notes/catalog.tsv`](../../catalog.tsv) | 373 | the ledger row `fam=001`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
-| S15 | [`paper.pdf`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/paper.pdf) | — | the manuscript as shipped |
+| S15 | [`preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/paper.pdf`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/paper.pdf) | — | the manuscript as shipped |
 
 Links are relative to this page: `../../../` is the repository root and `../../` is `notes/`, so every
 row resolves in a local checkout and in GitHub's rendering of this file. A relative link carries no
