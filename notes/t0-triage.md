@@ -606,15 +606,229 @@ revision of that argument."
 files each), so checking any of these objects against its proof needs no `lake`, `lean`, or
 comparator run.
 
+## The open parameters: 7 families read in manuscript source
+
+Done 2026-10-06. This closes reading-priority item 1. **Fifteen manuscripts across seven families**
+were read in their shipped LaTeX (`build/`), which every one of them ships — 15 of the 34 manuscripts
+in the 21-family counterexample check. All seven are counterexample-tagged: 318 alone, 278 with
+`density`, 054 and 319 with `uniform`, 351 with `bound` and `uniform`, and 285 and 340 with
+`resolution`. No `lake`, `lean`, or comparator run; no PDF read; no proof checked.
+
+Every `file:line` citation below was resolved against the shipped file by script after writing, and
+four citations that did not land on the quoted text were corrected.
+
+**Answer in one line each:** five of the seven parameters are *ineffective by design* and the source
+says so; one (278) is not a threshold at all but a specific integer defined by a formula the source
+calls nonnumerical; and 318's ranges are per-manuscript hypotheses, not one range.
+
+| Fam | Parameter the abstract leaves open | What the source states | Effective? |
+|---|---|---|---|
+| 054 | Hassett threshold | "There is an integer \(d_0\) such that, for every admissible \(d>d_0\)…" (`introduction.tex:77`) | **No** — "The threshold \(d_0\) is ineffective" (`introduction.tex:87`) |
+| 278 | nuclear charge | \(Z=2+\lceil\sup_{0<t\le1} t^{-1}\mathbf 1_{\mathcal B}(t)\rceil\) (`06-parameters.tex:268`) | **Defined, not evaluated** — "no evaluated decimal value or effective numerical upper bound for this integer is asserted" (`06-parameters.tex:7`) |
+| 285 | surjectivity witness | \(G_{\mathrm{sur}}=V\rtimes\Gamma\), \(V=\F_p^{(\Gamma)}/W_0\), projection \(b_0\) with \(\tau(b_0)=\sum_{i\ge1}p^{-k_i}\notin\Q\) | **Named** — and not asserted torsion-free |
+| 318 | prime range | Five manuscripts, five ranges: \(p\ge5\); \(p\ge5\) / \(p\ge7\); \(p>n+1\); \(p\ge5\); \(p=n=3\) | **Stated per claim**, sharpness declined |
+| 319 | Hahn–Wilson threshold | \(M\ge81,\ p>16M^2,\ 2\lfloor M/8\rfloor>p^{1/3}\) (`operator.tex:262`) | **No** — "No particular numerical lower bound for \(p\) will be needed" |
+| 340 | even \(N\) | "For some sufficiently large even integer \(N\)" (`introduction.tex:25`), \(N=2m\), \(m\ge20\) | **No** — bound on \(m\), never on \(N\) |
+| 351 | flow dimension | \(q\ge10\) on \(\Sp^2\times\Sp^{q+1}\) (`01-introduction.tex:69`); source states the dimension only as \(q+3\ge4\) (`06-barriers.tex:279`) | **No** — threshold is an inequality, no minimal \(n\) |
+
+### 054 — irrational cubic fourfolds with geometric K3 categories
+
+The theorem is generic existence with an ineffective threshold. `cub:criterion` (`cubics.tex:12`)
+proves irrationality from lattice data (\(\operatorname{rank}T_X=21\), \(d=|\det T_X|>d_0\),
+\(\operatorname{End}_{\mathrm{Hdg}}(T_X\otimes\Q)=\Q\)); `cub:generic` (`cubics.tex:95`) shows that
+data holds at a very general point of each \(\mathcal C_d\), outside a countable union of proper
+closed algebraic subsets. Admissible discriminants are arithmetic
+(`introduction.tex:50`: \(d>6\), \(d\equiv0,2\pmod6\), \(4\nmid d\), \(9\nmid d\), and
+\(p\nmid d\) for every odd prime \(p\equiv2\pmod3\)), not a list.
+
+\(d_0\) is chosen "at least as large as the uniform bound in Theorem sf:vanishing"
+(`cubics.tex:29`), that bound is existential (`subfields.tex:514`), and it bottoms out at
+"There is an integer \(b\), depending only on these families and on \(N\)" (`bounds.tex:166`). The
+only numeric constraints in the source are \(d_0>2\) and admissibility \(d>6\). Since Russo–Staglianò
+proved rationality throughout \(\mathcal C_{26}\), \(\mathcal C_{38}\) and \(\mathcal C_{42}\)
+(`introduction.tex:87`), any valid \(d_0\) exceeds 42 — the source does not draw that conclusion.
+Named positive subfamilies: \(d=2\cdot7^j\) and the Hilbert-square family \(d=2n^2+2n+2>d_0\).
+
+Load-bearing caveat, verbatim (`introduction.tex:93`): "Here ``very general'' means outside a
+countable union of proper closed algebraic subsets separately in each divisor \(\mathcal C_d\). This
+qualification matters: Yang and Yu construct rational subloci of codimension two in the full moduli
+space inside every Hassett divisor." Also: no stable-rationality assertion
+(`introduction.tex:288`); the categorical, Hodge-associated, and Hilbert-square K3 surfaces "need not
+be identified" (`introduction.tex:252`); Fay's quaternion obstruction vanishes throughout the range
+(`introduction.tex:331`).
+
+### 278 — a Coulomb ground state without Kohn–Sham ensemble representation
+
+The abstract's "nuclear charge" is not a threshold. The main theorem fixes \(D=10^{200}\) and asserts
+one integer \(Z\) "specified by eq:explicit-charge" (`main.tex:134`), defined at
+`06-parameters.tex:268` as \(Z=2+\lceil\sup_{0<t\le1} t^{-1}\mathbf 1_{\mathcal B}(t)\rceil\) over a
+set \(\mathcal B\) of bad couplings; finiteness is `lem:explicit-charge-finite` and the only derived
+bound is \(Z>C_{\mathcal B}\). The source states the gap itself, twice: "The definition is
+nonnumerical: no evaluated decimal value or effective numerical upper bound for this integer is
+asserted" (`06-parameters.tex:7`) and "It is a nonnumerical specification, and no effective numerical
+bound for the charge is asserted" (`main.tex:156`).
+
+Mode is a **single fixed finite system**, not a family: two nuclei of charge \(Z\) at
+\((0,0,\pm D/Z)\), three electrons, \(Z\) selected by the scaling \(\lambda=1/Z\)
+(`01-coulomb-setup.tex:52`). The threshold form the abstract suggests exists only in a separate,
+weaker theorem — "For every sufficiently large fixed \(D\), there is an integer \(Z_0(D)\) such
+that, for every integer \(Z\ge Z_0(D)\)…" (`05-plane-obstruction.tex:457`), scoped to "a single real,
+spin-independent noninteracting potential in \(L^{3/2}+L^\infty\)". Caveats: no restriction on
+degeneracy of a putative representing ground space; "no assertion about larger classes of
+distributional potentials, spin-dependent potentials, or nonlocal one-particle operators"
+(`main.tex:163`). No mention of finite temperature anywhere in the source.
+
+### 285 — the surjectivity witness is named, and it is not torsion-free
+
+Three manuscripts, three separate counterexamples; the family abstract's "torsion-free" qualifier
+attaches to two of them, not to the surjectivity result.
+
+| Manuscript | Object | Broken claim |
+|---|---|---|
+| `A-Torsion-Free-Counterexample-to-Reduced-Baum-Connes-Injectivity` | \(G_{\mathrm{inj}}\): f.g. torsion-free, extracted by a finite-witness argument from a Heisenberg-voltage graphical small-cancellation group, containing \(\Z^2\) | **injectivity** only: \(h=(Bi)_*[D_{T^2}]\) has infinite order in \(K_0(BG_{\mathrm{inj}})\) while its reduced analytic assembly image is zero |
+| `A-Torsion-Free-Counterexample-to-the-Kadison-Kaplansky-Projection-Conjecture` | \(G_{\mathrm{proj}}=G_{\mathrm{base}}*\F_N\), projection \(e\) with \(0<\tau(e)<\tfrac12\) | Kadison–Kaplansky: a projection other than 0 and 1 in a reduced group C\*-algebra |
+| `An-Irrational-Trace-Counterexample-to-Reduced-Baum-Connes` | **\(G_{\mathrm{sur}}=V\rtimes\Gamma\)**, \(V=\F_p^{(\Gamma)}/W_0\), \(\Gamma\) from Osajda-labelled expanders coned off; \(b_0=\mathbf 1_{\{0\}}(T)\), the spectral projection at zero of the enabled-graph operator | **surjectivity**: \([b_0]\notin\mu_0^{G_{\mathrm{sur}}}(K_0^{G_{\mathrm{sur}}}(\underline E\,G_{\mathrm{sur}}))\) |
+
+The mechanism is a trace obstruction. Lück's theorem gives
+\(\tau_G(\mu_0^G(K_0^G(\underline EG)))\subseteq\Q\) for every countable discrete group
+(`introduction.tex:71`), and \(\tau_{G_{\mathrm{sur}}}(b_0)=\sum_{i\ge1}p^{-k_i}\notin\Q\)
+(`trace.tex:9`); the class survives rationalization (`trace.tex:61`), so this is a surjectivity
+failure, not a torsion artifact.
+
+**The qualifier to carry:** M3's theorem says "a finitely generated discrete group", not
+torsion-free; the string "torsion" does not occur anywhere in its sources, and its own definition of
+\(V\) as an \(\F_p\)-vector space yields elements of order \(p\). No manuscript in the family states a
+surjectivity failure for a torsion-free group as a theorem. M1's surjectivity content is hypothetical
+only — "a nontrivial projection in the scalar algebra \(C_r^*(G_{\mathrm{inj}})\) would obstruct
+surjectivity … Such a projection alone does not identify an assembly kernel class"
+(`00_introduction.tex:129`) — and M2's is a corollary cited to BGW2016 Prop. 10.3, not derived
+in-file, for \(\Gamma_{\mathrm{proj}}\) and a matrix class \([p_0]\), not for \(G_{\mathrm{proj}}\).
+M1 also states it disproves the reduced formulation only ("maximal assembly detects the same class
+\(h\)"), and asserts finite generation, not finite presentation or exactness.
+
+### 318 — five manuscripts, five prime ranges, and a support bundle that is not there
+
+| Manuscript | Range | Height |
+|---|---|---|
+| `A-rational-obstruction-to-strong-chromatic-splitting-at-height-three` | \(p\ge5\) | 3 |
+| `Counterexamples-to-weak-chromatic-splitting…` | \(p\ge5\) (height \(p\)); \(p\ge7\) (height \(p+1\)); \(p\ge5\) for the descent-exponent theorem | \(p\), \(p+1\), \(p\) |
+| `Filtered-chromatic-splitting-at-generic-primes` | \(n\ge1\), \(p>n+1\) | \(n\) |
+| `The-height-three-chromatic-overlap…` | \(p\ge5\) — "the height-three case of … whose range \(p>n+1\) becomes \(p\ge5\) here" | 3 |
+| `Failure-of-finite-assembly-for-a-chromatic-overlap-at-the-prime-three` | \(p=n=3\), "Its scope is the specified prime and height" | 3 |
+
+The bounds are hypotheses consumed in-proof, not afterthoughts: no \(p\)-torsion gives the
+cohomological bound at `07-detection.tex:84` ("Since \(p-1>n\) for \(n=2,3\) and \(p\ge5\), this is
+impossible"), and the weak-splitting ranges come from displayed numerical margins
+\(p^2-4p+1>0\) for \(p\ge5\) and \(p(p-6)>0\) for \(p\ge7\) (`08-upper-kernels.tex:188`). Sharpness is
+explicitly declined: "We make no sharpness claim for the prime bound"
+(`Filtered-chromatic-splitting/01-introduction.tex:83`). No manuscript claims the height-\(p+1\) case
+at \(p=5\); the source simply omits it. The general question — \(L_{n-1}L_{K(n)}S\in
+\Thick\{L_0S,L_1S,L_2S\}\) for every prime and \(n\ge1\) — is posed and left open at
+`Failure-of-finite-assembly/01-introduction.tex:31`.
+
+**Support bundle: confirmed absent.** `SUPPORT-COVERAGE.md` is tracked; the artifacts it names
+(`SUPPORT-COVERAGE.json`, `BUILDING.md`, `support/`, `support/r-ce/`,
+`support/r-ce/ce_certificate.py|.json|.txt`, `support/historical/r-ce`) are missing on disk **and**
+in `git ls-files` (18 files in that directory, the only match for `support|BUILDING|COVERAGE` being
+the `.md`), with `git status --porcelain` clean — so nothing is deleted-pending or untracked. The
+bundle was never in this release.
+
+### 319 — Hahn–Wilson at height two, at primes the source refuses to bound
+
+"For every sufficiently large prime \(p\), there is a connective \(p\)-complete spectrum \(X\) of
+exact fp-type two such that … \(X\notin\Thick(\BP\langle2\rangle_p^\wedge)\). The same spectrum
+satisfies \(L_2^fX\simeq L_2X\), \(L_{T(2)}X\simeq L_{K(2)}X\)" (`main.tex:114`). No prime is
+exhibited anywhere in the manuscript. The operative quantitative condition is
+`op:parameters` (`operator.tex:262`): \(M\ge81\), \(p>16M^2\), \(2\lfloor M/8\rfloor>p^{1/3}\),
+satisfiable by taking \(M\sim p^{2/5}\), followed by "They are compatible with every earlier
+large-prime hypothesis. **No particular numerical lower bound for \(p\) will be needed.**" Component
+sections carry their own thresholds (\(p>5\), \(p>8\), \(p>n^2+n+2\), \(D=2(p-1)>12\)); \(M\ge81\) is
+an auxiliary odd integer, not a prime.
+
+Mode is by properties, built in the algebraic category and transferred: a cone
+\(m=\cofib(a:\widehat T'\to\widehat T')\), \(Y=\bigoplus_{r=0}^{D-1}m[r]\), a homotopy pullback
+\(U=Y\times_{LY}V\) in \(\mathbf D(\mathcal N)\) with \(U\notin\Thick_{\mathbf D(\mathcal N)}(T')\),
+then `transfer:criterion` giving \(X_{\mathrm{sp}}=\tau_{\ge0}Z_{\mathrm{sp}}\). No attaching map, no
+named finite complex. Exact fp-type two is **proved**, not assumed (`consequences.tex:31`).
+
+Caveats that bound the claim: "This gives the asserted failure at sufficiently large primes,
+**without a claim at the remaining primes**" (`consequences.tex:187`); height one is not refuted —
+the height-one theorem of Lee–Pstrągowski would put \(X_{\mathrm{sp}}\) in
+\(\Thick(\BP\langle1\rangle_p^\wedge)\) (`consequences.tex:37`); the Burklund–Hahn–Levy–Schlank
+counterexamples "disproved the unrestricted telescope conjecture at every prime and every height at
+least two … Thus those counterexamples do not supply the fp counterexample studied here"
+(`main.tex:152`); and the telescope comparisons "are properties of this example; they neither assume
+nor settle the general restricted telescope conjecture for fp-spectra" (`consequences.tex:188`). The
+local Hovey–Strickland classification is untouched — it is "established unconditionally for every
+prime and every height \(n\ge1\)" (`consequences.tex:409`).
+
+### 340 — the nearby Lagrangian counterexample, and the \(N\) nobody fixes
+
+"For some sufficiently large even integer \(N\), the manifold \(Q=S^9\times S^{N-1}\) admits a closed
+exact smoothly embedded Lagrangian \(L\subset T^*Q\) such that \(L\) is diffeomorphic to \(Q\) and no
+compactly supported Hamiltonian isotopy carries the zero section to \(L\)" (`introduction.tex:25`).
+\(N=2m\) (`embedding.tex:30`); the only numeric bound in the source is on \(m\) — "for arbitrarily
+large \(m\ge20\)" (`tubes.tex:203`) — so \(N\ge40\) is derivable and never stated.
+
+Mode is an explicit **Morse family**, not a 1-form graph and not a named Weinstein model:
+\(F(b,v,w)=G_b(w)-R(b)\beta(\lVert w\rVert/T)\langle v,w\rangle\) with \(R(b)=\Lambda e^{K\theta(b)}\)
+(`embedding.tex:51`), whose critical locus is diffeomorphic to \(Q\) and whose Euler identity supplies
+the global primitive \(F|_{\Crit(F)}=-g_b(w)\). The ambient is exactly \(T^*(S^9\times S^{N-1})\); the
+exponent 9 never varies, and it is tied to the kernel class \(0\ne a\in\pi_9\T\) with \(\gamma_*a=0\)
+(`tubes.tex:156`).
+
+The obstruction is **not** Floer cohomology, a spectral invariant, or \(\pi_1\): it is the stable
+smooth tube class in Waldhausen's tube fibration, contradicted by the one-critical-point proposition
+(`morse.tex:5`, closed at `transport.tex:537`). Scope, verbatim (`introduction.tex:32`): "The theorem
+resolves the unrestricted nearby Lagrangian conjecture negatively. Both the base and the Lagrangian in
+this example are connected and simply connected." The source never defines "unrestricted" and never
+lists which restricted forms it leaves untouched; predecessors it cites carry extra hypotheses
+(base topology, Maslov class, spin structures) or live in \(J^1Q\).
+
+### 351 — the dimension is an inequality, and the family is a pair of results
+
+Manuscript A: "There are an integer \(q\ge10\), a time \(T>0\), and a smooth Ricci flow \(g(t)\) … on
+the closed connected manifold \(M=\Sp^2\times\Sp^{q+1}\), with smooth initial metric, such that
+\(\sup_{M\times[0,T)}|R_{g(t)}|<\infty\), \(\lim_{t\uparrow T}\max_M|\Rm_{g(t)}|=\infty\)"
+(`01-introduction.tex:68`). Dimension is derived, not named: \(m=p+q\) with \(p=2\), "The dimension of
+the manifold is \(m+1\)" (`02-construction.tex:21`), and the proof closes by noting the product "is
+closed, connected, and has dimension \(q+3\ge4\), as required" (`06-barriers.tex:279`) — the source
+writes the lower bound as 4 there, so \(\dim M\ge13\) is a consequence of the theorem's \(q\ge10\),
+not a stated dimension. The operative threshold is an inequality — "choose \(q\) large enough that
+\(2<d<a\), all universal thresholds above hold, and \(\mathfrak m:=(a-2)(q-1)-C\sqrt q-2a^2-1>0\)"
+with \(a=5/2\) (`06-barriers.tex:23`) — and no minimal \(n\) is stated. Prose says "sufficiently high
+dimension"; the caveat is explicit: "The example is in sufficiently high dimension; no dimension-four
+conclusion is asserted" (`01-introduction.tex:83`).
+
+Mode is an explicit doubly warped ansatz \(g=ds^2+\phi(s,t)^2g_{\Sp^2}+r(s,t)^2g_{\Sp^q}\) whose
+existence is imported: "Stolarski's construction supplies a smooth Ricci flow up to a finite time
+\(T\)…" (`02-construction.tex:26`, citing Lemma 3.12 and the proof of Theorem 1.1 of Stolarski 2019),
+with the paper's own contribution being the scalar bound and the cap estimate — "We do not import a
+scalar-curvature upper bound, a full-curvature bound at the cap scale, or convergence to a particular
+complete cap metric" (`02-construction.tex:150`). Bounded: scalar curvature. Unbounded: the full
+curvature tensor, with two-sided rate \(c(T-t)^{-2k/d_q}\le\max_M|\Rm|\le C(T-t)^{-2k/d_q}\).
+
+The family's other two manuscripts are the positive half: B proves scalar-curvature extension on
+closed **four**-manifolds ("If \(\sup_{M\times[0,T)}|R(g(t))|<\infty\), then there are
+\(\varepsilon>0\) and a smooth Ricci flow \(\widetilde g(t)\) … on \(M\), \(0\le t<T+\varepsilon\)"),
+with the corollary that a finite-time singularity on a closed smooth four-manifold forces
+\(\limsup R=+\infty\); C is B's static input ("Path selection …" is cited in B as
+`StaticTrees`, Theorem 2.2) and is **not** cited by A. So 351 is a dimension-split pair: positive in
+dimension four, negative at \(q+3\ge13\), with the gap between 4 and 13 unaddressed by the family.
+
 ## Reading priority for the next passes
+
 
 The first two passes cover all 137 T0 families at abstract level, so priority is now about what to
 check, not what to read.
 
-1. The counterexample check is recorded above for all 21 families, so its follow-up is narrow: find
-   the parameter the abstracts leave open in 054 (Hassett threshold), 278 (nuclear charge), 318
-   (prime range), 319 (threshold), 340 (even N), 351 (flow dimension); name the witness of the
-   Baum–Connes surjectivity failure in 285; and ask 318 where its `support/r-ce/` bundle went.
+1. ~~Find the parameter the abstracts leave open in 054, 278, 318, 319, 340, 351; name the witness of
+   the Baum–Connes surjectivity failure in 285; ask 318 where its `support/r-ce/` bundle went.~~
+   **Done 2026-10-06** — recorded in "The open parameters: 7 families read in manuscript source"
+   above. Follow-ups that the answers opened: 054's threshold must exceed 42 and the source does not
+   say so; 319 makes no claim at small primes and 318 declines sharpness, so neither has a checked
+   boundary; 351 leaves dimensions 5–12 open; 285's surjectivity witness is not asserted torsion-free,
+   so the family abstract's qualifier does not cover it.
 2. The 45 second-pass families whose titles name a conjecture — check the named conjecture against
    the stated statement, starting with the sharp-bound claims (038, 078, 079, 101, 202, 344, 346,
    375) where an off-by-one in the exponent is the whole result.
@@ -628,18 +842,24 @@ check, not what to read.
 
 ## Not checked
 
-- No manuscript PDF was read. Every claim above is quoted from the release's own abstracts in
-  `overview.tex`, which are source-level assertions.
+- No manuscript PDF was read. The abstract-level passes quote the release's own abstracts in
+  `overview.tex`, which are source-level assertions. Fifteen manuscripts across seven families (054,
+  278, 285, 318, 319, 340, 351) were additionally read in the LaTeX source shipped in their
+  directories, and those entries quote theorem statements and body text with file:line, every citation
+  resolved against the file by script. **No proof in those fifteen was checked** — the reads establish
+  what each statement says, not that its proof is correct.
 - No Lean, `lake`, or comparator run. Zero `sorry` in a source tree is not a comparator pass, and T0
   families have no comparator challenge to begin with.
 - Bucket assignment is keyword-driven off the `shapes` column. A reading pass can move a family, as
   the `conditional` audit did (9 tagged, 5 genuine), and finding 9 shows it should.
 - Whether a counterexample family's object is constructed explicitly or only proved to exist is now
-  recorded for the 21 checked families (mode column above), from abstract wording only. It is still
-  unrecorded for the counterexample-shaped families outside T0.
+  recorded for the 21 checked families (mode column above), from abstract wording only, and confirmed
+  in shipped source for 054, 278, 285, 319, 340, 351. It is still unrecorded for the
+  counterexample-shaped families outside T0.
 - The counterexample table records the release's own naming of each broken conjecture. None of the 21
-  objects was checked against the conjecture as stated in the literature, and no manuscript proof was
-  read, so "breaks X" is the release's claim.
+  objects was checked against the conjecture as stated in the literature, so "breaks X" is the
+  release's claim. For the seven source-read families the stated claim, its quantifier range, and its
+  caveats are recorded from the manuscript body; the proofs behind them were not checked.
 - The 059 and 352 scripts were run here and their assertions hold on this machine. That is a replay
   of shipped arithmetic, not a review: both files say so in their own scope lines.
 - 318's `SUPPORT-COVERAGE.md` was read and the bundle it names was searched for on disk and in git.
