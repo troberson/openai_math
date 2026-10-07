@@ -13,7 +13,7 @@ description: >-
 compatibility: "python3 (stdlib only); no Lean toolchain, no network"
 metadata:
   author: tamara
-  version: "1.3"
+  version: "1.4"
 ---
 
 # Proof triage
@@ -47,19 +47,26 @@ behaviour and rules only.
    the `counterexample` tag — 30 of the 31 untagged flags are genuine. Quote shape counts as
    floors. `notes/conditional.md` is the model — name the hypothesis, say where it sits, record the
    flags you dropped.
+7. **A broad rule goes in a column, not a shape.** Named-target resolution (target noun
+   *conjecture/question/problem* + resolution verb) flags 233 families against the `resolution`
+   shape's 144, so it ships as the `resolves_named` column. Do not move it into `SHAPES`:
+   `triage_t0.py` assigns T0 buckets by **first match**, so widening a shape moves families between
+   buckets. The two are complementary, not nested — 139 in both, 94 column-only, 5 tag-only
+   (003, 010, 082, 103, 261) — union 238. Quote both as floors; see `notes/resolution-tag.md`.
 
 ## Workflow
 
 1. **Refresh** — run the generator; read its report. Every number quoted in `notes/README.md`
    comes from that report, so re-run before quoting counts.
-2. **Look up** — filter `notes/catalog.tsv` by `fam`, `tier`, `shapes`, `discipline`, `trace`.
-   Parse with `csv.DictReader(..., delimiter='\t')`, not `split(',')`.
+2. **Look up** — filter `notes/catalog.tsv` by `fam`, `tier`, `shapes`, `resolves_named`,
+   `discipline`, `trace`. Parse with `csv.DictReader(..., delimiter='\t')`, not `split(',')`.
 3. **Read the primary text** — the ledger is an index, not the evidence. For any claim about what
    a result *says*, open `lean/docs/<NNN>.md` (its `## Scope` section states exclusions) and the
    manuscript abstract in `CONTENTS.md`. Quote exclusions; they are the load-bearing part.
 4. **Triage the silent families** — T0 (137 families, 255 manuscripts, 0 formalized) has no
    coverage signal at all. Run `notes/scripts/triage_t0.py` for the buckets and read
-   `notes/t0-triage.md` before adding to the pass; `shapes` is the only discriminator there. Two
+   `notes/t0-triage.md` before adding to the pass; `shapes` drives the buckets and
+   `resolves_named` (88 of 137) is the second discriminator. Two
    reading passes cover all 137 families at abstract level, and the 21 counterexample-shaped ones are
    recorded there with object, broken conjecture, and construction mode — new T0 work is checking
    those claims against manuscript source, not reading titles.
@@ -71,12 +78,13 @@ behaviour and rules only.
 
 | Path | What it is | Read when |
 |---|---|---|
-| `notes/catalog.tsv` | 372-row ledger, 19 columns, one row per family | Any lookup, filter, or count |
+| `notes/catalog.tsv` | 372-row ledger, 20 columns, one row per family | Any lookup, filter, or count |
 | `notes/README.md` | Column definitions, tier defs, shape yields, discipline table, traps | Before quoting any number |
 | `notes/scripts/build_catalog.py` | Generator (stdlib only, ~300 lines) | Regenerating, or adding a column |
 | `notes/scripts/triage_t0.py` | Buckets the 137 T0 families by claim shape (reads the ledger, writes nothing) | Any T0 count, bucket, or priority question |
 | `notes/t0-triage.md` | T0 buckets, two reading passes covering all 137 families, the 21-family counterexample record, scope qualifiers found in abstracts | Before triaging or discussing T0 families |
 | `notes/conditional.md` | Manual pass: what each conditional family assumes, and dropped flags | Before calling any family conditional |
+| `notes/resolution-tag.md` | Named-target rule: yield, the 94-family reading verdict, the `resolves_named` decision | Before quoting a resolution count or changing a tag |
 | `lean/docs/<NNN>.md` | Family scope note: what the formalization covers and excludes | Any claim about a formalized result |
 | `lean/ComparatorChallenges/*.json` | Statement/solution pairs, `permitted_axioms` | Checking what a challenge permits |
 | `lean/formalization.yaml` | `sources`, `status.main_results`, `automation`, `review` | Coverage and verification-ceiling claims |

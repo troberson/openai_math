@@ -51,9 +51,11 @@ Assigned from the scope note's comparator links (`../ComparatorChallenges/X.lean
 
 T1 is empty in this catalog: every one of the 235 scope notes links at least one challenge file.
 T2 is not a failure — those challenges are companion statements, still linked from a family note.
-**All 137 T0 families have zero formalized manuscripts**, so T0 is triaged by claim shape alone:
-see `notes/t0-triage.md`, where two reading passes now cover all 137 families at abstract level
-(44 families / 134 manuscripts, then 93 families / 121 manuscripts).
+**All 137 T0 families have zero formalized manuscripts**, so T0 is triaged by claim shape: see
+`notes/t0-triage.md`, where two reading passes now cover all 137 families at abstract level
+(44 families / 134 manuscripts, then 93 families / 121 manuscripts). `resolves_named` is a second
+discriminator there — 88 of the 137 are flagged, including 12 of the 20 families with no shape tag at
+all.
 
 ## Claim shapes (`shapes` column)
 
@@ -82,6 +84,15 @@ negatively") and only 44 carry the `counterexample` tag; of the 31 untagged flag
 counterexamples in kind (the false positive is 348, matched through "nonnegatively"). Treat every
 shape count in the table as a floor, not a census.
 
+**`resolves_named` is a column, not a shape.** The broad named-target rule (a target noun
+*conjecture/question/problem* plus a resolution verb) flags 233 families, so it is carried in its own
+column and the `resolution` shape stays at 144. Widening the shape instead would move families out of
+the counterexample/bound/classification/undecidability/density buckets in `triage_t0.py`, which
+assigns by first match. The two signals are complementary, not nested: 139 families are flagged by
+both, 94 only by the column, and 5 only by the tag (003, 010, 082, 103, 261 — targets named as a
+*hypothesis/case/estimate/contrast*), for a union of 238. Both are floors. Method, the 94-family
+reading verdict, and the decision are in **`notes/resolution-tag.md`**.
+
 ## Columns
 
 | Column | Source | Notes |
@@ -102,6 +113,7 @@ shape count in the table as a floor, not a census.
 | `trace` | `README.md` reasoning-trace table | 10 families; read from the release table, not guessed from filenames |
 | `shapes` | abstract keyword match | Multi-label |
 | `conditional` | 1 if `conditional` ∈ `shapes` | |
+| `resolves_named` | abstract names a conjecture/question/problem **and** uses a resolution verb | 233 families; separate from the `resolution` shape (144) so the T0 buckets stay put |
 | `companions` | `result NNN` cross-refs in the abstract | |
 | `companion_word` | abstract says "companion" | 10 families |
 | `versions` | manuscripts sharing a date-stripped dir slug | 2 families, 4 dated re-issues (003, 056) |
@@ -182,10 +194,12 @@ the community will scrutinize.
       have zero coverage signal; only 059 and 352 ship executable checks, and both were run here and
       pass within their stated scope. The remaining 28 tagged counterexample families are T3 (18) and
       T2 (10) and have not been cross-checked against `main_results`.
-- [ ] Decide whether to widen the tagging rules in `notes/scripts/build_catalog.py`. The
-      `counterexample` tag omits 30 genuine families repo-wide and `resolution` is missing on 9 of
-      the 15 untagged T0 families read in the second pass. Measure the yield the way
-      `notes/conditional.md` records it before changing any tag.
+- [x] Decide whether to widen the tagging rules in `notes/scripts/build_catalog.py` — **decided for
+      `resolution` on 2026-10-07**: measured in `notes/resolution-tag.md` (144 → 233, all 94 new
+      flags read, 94 genuine in kind), and implemented as the separate `resolves_named` column rather
+      than a widened shape, so the first-match T0 buckets in `triage_t0.py` are unchanged. The
+      `counterexample` side is **still open**: that tag omits 30 genuine families repo-wide, and no
+      column has been proposed for them.
 - [ ] Read the 3 conditional families at T3 in Lean source (125, 240, 244) and confirm the
       hypothesis appears in the formalized statement — 240 is the sharp case: the formalized
       config `CHObstruction` assumes CH, while the family's unconditional ZFC theorem is not

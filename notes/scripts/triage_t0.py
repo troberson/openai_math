@@ -2,8 +2,9 @@
 """Triage the T0 families (no scope note, no challenge, no main result) by claim shape.
 
 Reads notes/catalog.tsv; writes nothing. T0 is the tier with no coverage signal, so the
-`shapes` column is the only discriminator available. Buckets are first-match and therefore a
-partition *for triage ordering only* - the underlying `shapes` tags stay multi-label.
+`shapes` column drives the buckets. `resolves_named` is a second T0 discriminator (88 of 137) and is
+deliberately not read here: buckets are first-match, so a broader signal added to the first-match
+chain would move families between buckets. The underlying `shapes` tags stay multi-label.
 
 Usage: python3 notes/scripts/triage_t0.py [--tsv notes/catalog.tsv]
 """
