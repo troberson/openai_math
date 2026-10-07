@@ -180,27 +180,8 @@ the community will scrutinize.
 
 ## Open tasks
 
-- [x] Manual pass on the conditional families — done in `notes/conditional.md`: 5 genuine
-      (014, 125, 240, 244, 282), 5 flags dropped as false positives.
-- [ ] Read the 2 `verification/COVERAGE.md` limits files and record what each arithmetic check
-      does *not* cover.
-- [x] Triage the 137 T0 families by claim shape — done in `notes/t0-triage.md`: buckets C 16,
-      R 50, B 29, K 8, U 12, O 2, N 20 (255 manuscripts, 0 formalized), with reading passes over
-      **all 137 families** — 44 families / 134 manuscripts first, then the remaining 93 families /
-      121 manuscripts.
-- [x] Cross-check the counterexample families — the 21 T0 counterexample-shaped families (16 tagged
-      in the C bucket plus 048, 195, 201, 259, 284) are recorded in `notes/t0-triage.md`: object,
-      conjecture broken, and construction mode (14 explicit, 6 parameter-indexed, 1 mixed). All 21
-      have zero coverage signal; only 059 and 352 ship executable checks, and both were run here and
-      pass within their stated scope. The remaining 28 tagged counterexample families are T3 (18) and
-      T2 (10) and have not been cross-checked against `main_results`.
-- [x] Decide whether to widen the tagging rules in `notes/scripts/build_catalog.py` — **decided for
-      `resolution` on 2026-10-07**: measured in `notes/resolution-tag.md` (144 → 233, all 94 new
-      flags read, 94 genuine in kind), and implemented as the separate `resolves_named` column rather
-      than a widened shape, so the first-match T0 buckets in `triage_t0.py` are unchanged. The
-      `counterexample` side is **still open**: that tag omits 30 genuine families repo-wide, and no
-      column has been proposed for them.
-- [ ] Read the 3 conditional families at T3 in Lean source (125, 240, 244) and confirm the
-      hypothesis appears in the formalized statement — 240 is the sharp case: the formalized
-      config `CHObstruction` assumes CH, while the family's unconditional ZFC theorem is not
-      formalized.
+Tracked in bd, not in this file: `bd ready` is the live queue, `bd list --status=open` every open
+issue, `bd list --status=closed` the completed ones. The checkbox list that used to sit here was a
+second copy of the queue and it has been deleted; each completed item is a closed issue whose close
+reason carries the outcome, and the detail lives in `notes/conditional.md`, `notes/t0-triage.md`,
+and `notes/resolution-tag.md`.
