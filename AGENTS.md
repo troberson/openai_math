@@ -168,8 +168,8 @@ lives in this file and nowhere else.
   `python3 notes/scripts/verify_verification_dirs.py --mutant` before quoting it — it re-derives every
   bold count from the bundle on disk, resolves every `file:line` anchor, matches each fenced block line,
   checks each quotation against the anchored lines, re-checks the ledger's `verification`/`inputs`/`covmd`
-  claims from `notes/catalog.tsv`, and flags eight injected mutants including an abbreviated anchor. It
-  writes nothing.
+  claims from `notes/catalog.tsv`, re-checks that every artifact `COVERAGE.md` names is on disk, and
+  flags nine injected mutants including an abbreviated anchor. It writes nothing.
 - Check `notes/conjecture-standing.tsv` with `python3 notes/scripts/verify_conjecture_standing.py`
   before quoting any row — it proves the 139-row fam set against the ledger, resolves every
   `overview.tex:<n>` anchor to that family's own `\resultentry`, requires `prior_confidence` in

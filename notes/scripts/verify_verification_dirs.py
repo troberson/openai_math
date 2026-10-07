@@ -76,7 +76,16 @@ def measure():
     src = (VPOS / "verify.py").read_text(encoding="utf-8").split("\n")
     port = json.loads((VPOS / "portability-results.json").read_text(encoding="utf-8"))
     cs = port["checks"]
+    cov = (VPOS / "COVERAGE.md").read_text(encoding="utf-8")
+    # COVERAGE.md names artifacts both as code spans (`verify.py`) and as markdown links ([README.md](...)).
+    named = re.findall(r"`([\w.]+\.(?:py|json|md))`", cov) + \
+        re.findall(r"\[([\w.]+\.(?:py|json|md))\]\(", cov)
+    seen: set = set()
+    named = [n for n in named if n not in seen and not seen.add(n)]
+    present = [n for n in named if (VPOS / n).exists() and (VZERO / n).exists()]
     return {
+        "cov_named": len(named),
+        "cov_present": len(present),
         "shared": len(shared),
         "identical": len(same),
         "differ": len(shared) - len(same),
@@ -127,7 +136,13 @@ def count_phrases(v):
          "portability check counts"),
         (f"tests naming a rejection: **{v['ends_rejected']}** whose names end in `rejected`",
          "negative-test name counts"),
+        (f"`COVERAGE.md` points at `results.json`, `verify.py`, `polynomial.py`, and `README.md`; "
+         f"all {WORDS[v['cov_present']]} are present in both directories",
+         "coverage-file artifact presence"),
     ]
+
+
+WORDS = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six"}
 
 
 def ledger_claims(rows):
@@ -297,6 +312,8 @@ MUTANTS = {
     "abbreviated anchor": lambda t: t.replace(
         "`preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/verification/verify.py:477`",
         "`.../verification/verify.py:477`", 1),
+    "coverage artifact presence overstated": lambda t: t.replace(
+        "all four are present in both directories", "all five are present in both directories", 1),
 }
 
 

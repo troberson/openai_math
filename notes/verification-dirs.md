@@ -111,6 +111,11 @@ manifest omits `check_scalar_certificates.py` — the only file unique to that d
 imports `sympy` while `dependencies.json` declares `"third_party_dependencies": []`, so the one
 undeclared third-party import in family 348 is in the one file the manifest does not list.
 
+**The coverage file names only shipped artifacts.** `COVERAGE.md` points at `results.json`, `verify.py`,
+`polynomial.py`, and `README.md`; all four are present in both directories. The family-318 pattern — a
+coverage document naming files that do not exist — does not fire here, which is what makes 348's scope
+statement safe to quote.
+
 **The method is sufficient, not necessary.** An interval certificate requires every Bernstein
 coefficient of the polynomial, on each subinterval, to be at or above a stated floor; a triangle
 certificate additionally requires the exact zero pattern to match (`actual_zeros == expected_zeros`).
