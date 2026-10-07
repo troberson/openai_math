@@ -22,7 +22,12 @@ step 5.
 ## 0. Pick the source layer from the ledger row first
 
 Read the row before writing a sentence: `paps`, `paps_form`, `tier`, `chal`, `mainres`, `scope_note`,
-`verification`, `trace`, `shapes`, `resolves_named`, `companions`.
+`verification`, `trace`, `shapes`, `resolves_named`, `companions`, `summary`.
+
+`summary=1` means a page already exists for this family — check it before writing, and never write a
+second page for the same family under a different discipline dir. The ledger keys the column on the
+`<NNN>` prefix precisely so a misfiled page still shows up. For batch work, the per-page steps, the
+batch gates, and the decision ledger live in `notes/summaries-workflow.md`.
 
 - **T0 (`paps_form=0`)**: no Lean, no scope note, no challenge, no trace. The manuscript LaTeX under
   `build/` is the *only* source. State it where the reader meets it — in the graduate section's
