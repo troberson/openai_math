@@ -96,9 +96,9 @@ shape count in the table as a floor, not a census.
 | `mainres` | of those, count listed in `main_results` | |
 | `scope_note` | file exists | 235 total |
 | `scope_chars` | length of the `## Scope` section | Rough weight of the exclusions text |
-| `verification` | manuscript dirs with a `verification/` subdir | 30 repo-wide |
-| `inputs` | manuscript dirs with `INPUTS.md` | 4 repo-wide |
-| `covmd` | dirs with `verification/COVERAGE.md` | 2 repo-wide — these bound what a check covers |
+| `verification` | manuscript dirs with a `verification/` subdir | 30 dirs over 22 families |
+| `inputs` | manuscript dirs with `INPUTS.md` | 4 dirs over 4 families (057, 157, 251, 259) |
+| `covmd` | dirs with `verification/COVERAGE.md` | 2 files, both in family 348 — these bound what a check covers |
 | `trace` | `README.md` reasoning-trace table | 10 families; read from the release table, not guessed from filenames |
 | `shapes` | abstract keyword match | Multi-label |
 | `conditional` | 1 if `conditional` ∈ `shapes` | |
@@ -155,6 +155,16 @@ the community will scrutinize.
   "conditional laws" (technical nouns), and "without assuming uniform convexity" (a negation that
   is the theorem's point). Any shape tag needs a reading pass before it is quoted as a property of
   a family. See `notes/conditional.md`.
+- **`Path` vs `str` in a membership test.** `verification`, `inputs`, and `covmd` read 0 for all 372
+  rows: the reference sets held `Path` objects (`p.parent`) while the tested values were strings
+  (`Path(p).parts[-2]`), and `str in {Path(...)}` is false for every family. A column that is
+  silently zero is indistinguishable from a column that is genuinely empty unless the generator
+  prints the repo-wide sum — which it now does. Fixed 2026-10-06 by keying the reference sets on
+  `.name`; the sums are 30 / 4 / 2, and no basename collision exists (30/30, 4/4, 2/2 unique).
+- **A coverage file is not coverage.** Family 318 ships `SUPPORT-COVERAGE.md`, which names
+  `support/r-ce/ce_certificate.py`, its `.json`/`.txt` transcripts, `BUILDING.md`, and
+  `SUPPORT-COVERAGE.json`. None of those paths exist on disk or in git. The ledger has no column for
+  `SUPPORT-COVERAGE.md` (1 file repo-wide) and no way to express "named, not shipped".
 
 ## Open tasks
 
@@ -166,11 +176,12 @@ the community will scrutinize.
       R 50, B 29, K 8, U 12, O 2, N 20 (255 manuscripts, 0 formalized), with reading passes over
       **all 137 families** — 44 families / 134 manuscripts first, then the remaining 93 families /
       121 manuscripts.
-- [ ] Cross-check the 44 counterexample families against `main_results`: a counterexample is the
-      claim type most likely to be checkable cheaply and hardest to argue about. 16 of the 44 are
-      T0 and are entered in `notes/t0-triage.md` with the object each one names. Add the 5 T0
-      families that are counterexamples in kind but untagged (048, 195, 201, 259, 284): the T0
-      check set is 21 families, not 16.
+- [x] Cross-check the counterexample families — the 21 T0 counterexample-shaped families (16 tagged
+      in the C bucket plus 048, 195, 201, 259, 284) are recorded in `notes/t0-triage.md`: object,
+      conjecture broken, and construction mode (14 explicit, 6 parameter-indexed, 1 mixed). All 21
+      have zero coverage signal; only 059 and 352 ship executable checks, and both were run here and
+      pass within their stated scope. The remaining 28 tagged counterexample families are T3 (18) and
+      T2 (10) and have not been cross-checked against `main_results`.
 - [ ] Decide whether to widen the tagging rules in `notes/scripts/build_catalog.py`. The
       `counterexample` tag omits 30 genuine families repo-wide and `resolution` is missing on 9 of
       the 15 untagged T0 families read in the second pass. Measure the yield the way

@@ -533,13 +533,88 @@ Reading the titles settles most of them, which is what reading-priority item 4 a
     field-reconstruction hypotheses"), with the conclusion explicitly limited to local Ward
     identities. Across T0 the tag is genuine on 014 and 282.
 
+## The counterexample check: 21 families, 34 manuscripts
+
+Priority item 1, done at abstract level. The set is the 16 tagged C-bucket families plus the 5 that
+break a named conjecture and carry no `counterexample` tag: **048, 195, 201, 259, 284**. All 21 have
+**no scope note, no comparator challenge, no `main_results` entry, and no reasoning trace** — the
+abstract in `overview.tex` is the whole body of evidence the release ships for them.
+
+Mode: **E** = the abstract names a constructed object; **X** = the object is indexed by a parameter
+the abstract leaves unspecified ("sufficiently large", "higher-dimensional", "nonnumerically").
+
+| Fam | Object | Conjecture it breaks | Mode |
+|---|---|---|---|
+| 046 | Smooth projective complex fourfold with large π₁ whose universal cover has no positive-dimensional compact analytic subvariety and is neither Stein nor holomorphically convex; a second manuscript settles the surface case | Shafarevich holomorphic convexity, unrestricted | E |
+| 048 | Singular normal affine complex surface with free rank-2 tangent sheaf | Lipman–Zariski conjecture in characteristic zero | E |
+| 053 | Tautological relation on the moduli of stable pointed curves that vanishes in rational Chow, hence in cohomology, yet lies outside Pixton's span | Pixton's original completeness conjecture (Chow and rational-cohomological forms) | E |
+| 054 | Very general smooth cubic fourfold that is irrational while carrying both an untwisted geometric K3 category and an integral Hodge-theoretic K3 association, for every sufficiently large admissible Hassett discriminant | Kuznetsov's rationality conjecture; sufficiency of the associated-K3 criterion | X — "the discriminant threshold is ineffective" |
+| 059 | Reduced holomorphic hypersurface germs in C⁴ with isolated critical points, ambiently homeomorphic, of multiplicities 4 and 5 | Zariski's multiplicity conjecture | E |
+| 109 | One fixed finite-alphabet TM with finitely many 1-D tapes multiplying n-bit integers exactly at every length in O(n(log n)^{1−κ}), κ = 2^{−182} | Schönhage–Strassen n log n optimality in the ordinary multitape bit model | E — κ is astronomically small |
+| 195 | 3-dimensional complete Noetherian normal local domain over ℂ with no nonzero finitely generated maximal Cohen–Macaulay module, plus an example essentially of finite type over ℂ | Small Cohen–Macaulay module conjecture, domain form | E |
+| 201 | Countable characteristic-zero division ring, algebraic over its center, 2-generated over the center, infinite-dimensional over it | Kurosh's division-ring problem (local finiteness) | E |
+| 209 | Two explicit 2-dimensional ramified regular local rings of mixed characteristic (0,5) with nonzero integral K-theory classes vanishing over the fraction fields | Integral Gersten injectivity, unrestricted, in degrees 3 and 5 | E |
+| 259 | Finitely generated group (rank-100 amalgam) with two essentially free pmp actions of different costs: Bernoulli action cost bounded away from 1, finite-height extensions with costs tending to 1 | Gaboriau's general fixed-price problem | E — answered negatively |
+| 278 | Three-electron Coulomb molecule with two equal positive-integer-charge nuclei whose absolute ground-state density has no noninteracting ensemble representation by one real spin-independent local potential in L^{3/2}+L^∞ | Kohn–Sham ensemble representability for that potential class | X — "the required nuclear charge is specified nonnumerically" |
+| 284 | Family of total Boolean functions showing R(f) = O((1+Q(f))^4) is sharp in its exponent, ruling out every smaller power | Conjectured cubic randomized–quantum query separation | X — an asymptotic family, not one function |
+| 285 | Finitely generated torsion-free group witnessing failure of rational injectivity for coefficient-free reduced Baum–Connes; a separate failure of surjectivity of assembly; a torsion-free group with a nontrivial projection in its reduced group C\*-algebra | Coefficient-free reduced Baum–Connes; Kadison–Kaplansky | Mixed — E for the two named witnesses, the surjectivity witness is not named |
+| 305 | Framed algebraic dual spheres that do not yield disjoint locally flat spanning disks (F₂ is not good, Freedman–Quinn); finitely presented integral PD⁴ group with finite classifying space and no closed aspherical topological 4-manifold realizing it | 4-dimensional disk-embedding conjecture, unrestricted; Wall's manifold conjecture | E |
+| 318 | Strong chromatic splitting fails at height 3 for p≥5; weak splitting fails at heights p (p≥5) and p+1 (p≥7); positively, for n≥1 and p>n+1 the overlap L_{n−1}L_{K(n)}S_p^∧ admits a 2ⁿ-stage filtration | Strong and weak chromatic splitting | X — prime-indexed; at height 3 and prime 3 even finite assembly fails in E(2)-local modules |
+| 319 | For every sufficiently large prime p, a connective p-complete spectrum of exact fp-type 2 not buildable from completed BP⟨2⟩ by finitely many sums, shifts, cones, and retracts, while satisfying the finite and telescopic localization comparisons | Hahn–Wilson conjecture at height 2 | E per prime, threshold unspecified |
+| 320 | Closed connected aspherical topological 4-manifolds, homotopy equivalent and not homeomorphic, with common word-hyperbolic π₁ | Borel conjecture, homeomorphism-existence form, in dimension 4 | E |
+| 321 | Finite connected 3-dimensional CW complex whose universal cover has no integral homology above degree 2 and whose H³ vanishes for every local coefficient module, with no finite 2-dimensional homotopy model; π₁ infinite | Wall's finite D(2) conjecture | E |
+| 340 | Closed exact embedded Lagrangian in T\*(S⁹×S^{N−1}) diffeomorphic to the base, not Hamiltonian isotopic to the zero section, for some sufficiently large even N | Nearby Lagrangian conjecture, unrestricted | X — N unspecified |
+| 351 | Positively, a smooth Ricci flow on a closed 4-manifold extends past any finite time with uniformly bounded scalar curvature; a higher-dimensional flow has bounded scalar curvature and unbounded full curvature at its finite maximal time | Scalar-curvature extension conjecture, unrestricted | X — counterexample dimension unspecified |
+| 352 | Smooth U(10)-invariant Kähler metric on ℂP¹⁰ in the Fubini–Study class whose Calabi flow develops a finite-time singularity | Chen's smooth long-time existence conjecture for Calabi flow | E |
+
+**Mode split: 14 E, 6 X, 1 mixed.** The X families are the ones whose abstract does not name an
+object at all — 054, 319, 340 quantify over "sufficiently large", 351 leaves the dimension open, 278
+leaves the nuclear charge nonnumeric, 284 is a family of functions. For those six, the abstract
+records a *shape* of counterexample and the reading pass has to find the parameter.
+
+**Only 2 of the 21 ship executable support, and both state their own limit.** 059 and 352 carry
+`verification/` scripts; I ran them from temp copies, stdlib only, assertions enabled. 059:
+`support/supplied_finite_rank.py` exits silently 0 and `validation/explicit_relation.py` reports
+`"verification_passed": true`. 352: `certificate.py` exits 0, `arithmetic_allowances.py` prints
+`"all_exact_rational_checks_pass": true`, and `tail-check.py` prints "All root, projection,
+convolution, coefficient, derivative, residual, and contraction checks passed exactly." Neither
+certifies its theorem — 059's report scope line: "it does not certify the topological or
+lattice-theoretic parts of the proof"; 352's README: "Successful execution means the programs'
+assertions hold; it does not independently verify their analytic interpretation or the full
+theorem."
+
+**059's "explicit" counterexample is explicit in form only.** Its certificate reports the
+construction's ambient dimension as `4*s0+16`, where
+`s0 = 4*sum_abs_e + 2*sum_e + common_tail_variable_count_per_side + 2`; the reported s0 is
+1.1439…×10¹⁴³, so the ambient dimension is 4.5758…×10¹⁴³ variables. Nothing about the object is
+checkable by inspection; the shipped check is the finite integer relation behind it.
+
+**318 ships a coverage statement for support that is not in the repo.** Its
+`SUPPORT-COVERAGE.md` names `support/r-ce/ce_certificate.py`, the matching `.json` and `.txt`
+transcripts, `BUILDING.md`, `SUPPORT-COVERAGE.json`, and a `support/historical/r-ce/` archive. None
+of those paths exist on disk or in `git ls-files`; the manuscript directory holds only `README.md`,
+`SUPPORT-COVERAGE.md`, `build/`, and `paper.pdf`. The same file states "No Lean source or Lean
+verification is supplied for this article." So 318 has a *documented* support bundle with zero
+shipped artifacts — the only family in this set where the release's own coverage text overstates
+what is present.
+
+**259's INPUTS.md is a provenance caveat, not an input list**: "The manuscript was developed from an
+intermediate source argument. The available source record does not establish that it was the final
+revision of that argument."
+
+**Depth is available offline.** All 34 manuscripts ship full LaTeX source (`build/`, 2–17 `.tex`
+files each), so checking any of these objects against its proof needs no `lake`, `lean`, or
+comparator run.
+
 ## Reading priority for the next passes
 
 The first two passes cover all 137 T0 families at abstract level, so priority is now about what to
 check, not what to read.
 
-1. The 21 counterexample-shaped T0 families: the 16 tagged in the C bucket plus 048, 195, 201, 259,
-   284. One object each; record the object and the conjecture it breaks.
+1. The counterexample check is recorded above for all 21 families, so its follow-up is narrow: find
+   the parameter the abstracts leave open in 054 (Hassett threshold), 278 (nuclear charge), 318
+   (prime range), 319 (threshold), 340 (even N), 351 (flow dimension); name the witness of the
+   Baum–Connes surjectivity failure in 285; and ask 318 where its `support/r-ce/` bundle went.
 2. The 45 second-pass families whose titles name a conjecture — check the named conjecture against
    the stated statement, starting with the sharp-bound claims (038, 078, 079, 101, 202, 344, 346,
    375) where an off-by-one in the exponent is the whole result.
@@ -559,9 +634,17 @@ check, not what to read.
   families have no comparator challenge to begin with.
 - Bucket assignment is keyword-driven off the `shapes` column. A reading pass can move a family, as
   the `conditional` audit did (9 tagged, 5 genuine), and finding 9 shows it should.
-- Whether a counterexample family's object is constructed explicitly or only proved to exist is not
-  recorded in the ledger; 340 and 054 are existence claims, and the rest were not checked for that
-  distinction.
+- Whether a counterexample family's object is constructed explicitly or only proved to exist is now
+  recorded for the 21 checked families (mode column above), from abstract wording only. It is still
+  unrecorded for the counterexample-shaped families outside T0.
+- The counterexample table records the release's own naming of each broken conjecture. None of the 21
+  objects was checked against the conjecture as stated in the literature, and no manuscript proof was
+  read, so "breaks X" is the release's claim.
+- The 059 and 352 scripts were run here and their assertions hold on this machine. That is a replay
+  of shipped arithmetic, not a review: both files say so in their own scope lines.
+- 318's `SUPPORT-COVERAGE.md` was read and the bundle it names was searched for on disk and in git.
+  No other manuscript in the release ships a `SUPPORT-COVERAGE.md`, so that finding is about one
+  manuscript, not a pattern.
 - The second pass read abstracts, not proofs. "Proves the X conjecture" was not checked against the
   conjecture as stated in the literature, so the 45 named-conjecture families are recorded as claims.
 - The 30 untagged counterexample-shaped families outside T0 were classified from abstract snippets,
