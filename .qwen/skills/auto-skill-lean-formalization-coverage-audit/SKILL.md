@@ -187,11 +187,14 @@ formalized" from being read as a finding.
   tag needs a reading pass before it is quoted as a property of a family, and a reading pass is
   allowed to move a family out of a bucket.
 - **Tags omit as well as mislabel — measure both directions.** The `counterexample` tag matches 44
-  families while 74 use counterexample language in title or abstract; of the 31 untagged flags, 30
-  were genuine on reading (the false positive matched only through "nonnegatively"). Report tag
-  counts as floors, and search for the shape's language outside the tagged set before treating a
-  bucket as a census. Widening a rule is a generator change: measure its yield the way the
-  `conditional` audit recorded it, and do not silently retag.
+  families while 74 use counterexample language in title or abstract; all 30 untagged flags were
+  genuine on reading. The phrase rule that reproduces 74 excludes three false positives by requiring a
+  phrase, not a stem: 348 ("nonnegatively"), 339 ("strictly negative sectional curvature"), 355 ("at
+  every negative time"). Report tag counts as floors, and search for the shape's language outside the
+  tagged set before treating a bucket as a census. Widening a rule is a generator change: measure its
+  yield the way the `conditional` audit recorded it, and do not silently retag — a first-match
+  consumer of the tags re-buckets families when you widen one, so a broad rule may belong in its own
+  column. See `notes/counterexample-tag.md`.
 - **Expect the taxonomy to be silent.** 20 of 137 T0 families carry no shape tag at all, including
   marquee-grade results. Say that plainly rather than forcing them into a bucket. Reading the
   untagged set settled most of them: 9 of 15 resolve a conjecture named in the title, 1 is a

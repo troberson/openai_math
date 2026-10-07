@@ -13,9 +13,9 @@ lives in this file and nowhere else.
   `ComparatorChallenges/*.json`, and `formalization.yaml`.
 - `reasoning_traces/` holds 10 published traces in 11 files — the Mézard–Parisi trace ships as
   both `.pdf` and `.tex`.
-- `notes/` is the reading ledger: `catalog.tsv` (372 rows, 21 columns), `README.md`,
-  `t0-triage.md`, `conditional.md`, `resolution-tag.md`, `verification-dirs.md`,
-  `summaries-workflow.md` (the resume protocol for the summary batches),
+- `notes/` is the reading ledger: `catalog.tsv` (372 rows, 22 columns), `README.md`,
+  `t0-triage.md`, `conditional.md`, `resolution-tag.md`, `counterexample-tag.md`,
+  `verification-dirs.md`, `summaries-workflow.md` (the resume protocol for the summary batches),
   `summaries/<discipline>/<NNN>-<name>.md`, `notes/scripts/`.
 - `.beads/issues.jsonl` is the tracked issue store, in bd no-db mode; see the beads section below.
 
@@ -33,8 +33,11 @@ lives in this file and nowhere else.
 - Report coverage as four layers, never one percentage: 162/722 manuscripts, 235/372 scope notes,
   405 comparator challenges, 185 `main_results` entries over 178 unique configs.
 - Treat claim shape as multi-label — 66 families match ≥3 shapes, 57 match none — so a tag is a
-  floor, not a census. Keep `resolves_named` a ledger column, not a shape: that is what leaves the
-  first-match T0 buckets in `triage_t0.py` untouched.
+  floor, not a census. Keep `resolves_named` and `counterex_broad` ledger columns, not shapes: that
+  is what leaves the first-match T0 buckets in `triage_t0.py` untouched.
+- Quote a count only with the rule that yields it. The counterexample figures were quoted from a
+  reading pass for a day before `COUNTEREX_PHRASE` was written into the generator; no stem variant of
+  the quoted vocabulary reproduces 74 / 30. See `notes/counterexample-tag.md`.
 - Absence of formalization is not a red flag — 560 of 722 manuscripts are unformalized.
 - Read `lean/docs/<NNN>.md` before claiming what a family proves; its `## Scope` section states
   the exclusions, which are the load-bearing part.

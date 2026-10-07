@@ -83,11 +83,21 @@ Multi-label tags matched against the family abstract in `overview.tex`. **Not a 
 actually assumes is read by hand and recorded in **`notes/conditional.md`**, which also lists the
 five flags that reading removed. Read that file before calling a family conditional.
 
-Tags omit as well as mislabel. Measured on 2026-10-06 while reading the T0 abstracts: 74 of 372
-families use counterexample language in title or abstract ("counterexample", "disprov", "answers …
-negatively") and only 44 carry the `counterexample` tag; of the 31 untagged flags, 30 are genuine
-counterexamples in kind (the false positive is 348, matched through "nonnegatively"). Treat every
-shape count in the table as a floor, not a census.
+Tags omit as well as mislabel. Measured 2026-10-06 while reading the T0 abstracts, and written down as
+a rule on 2026-10-07: **74 of 372** families use counterexample language in title or abstract and only
+**44** carry the `counterexample` tag; all 30 untagged flags are genuine counterexamples in kind.
+Treat every shape count in the table as a floor, not a census. The rule, the 30-family reading, and
+the three false positives it excludes (348, 339, 355) are in **`notes/counterexample-tag.md`** — the
+2026-10-06 counts were a reading result whose regex was never recorded, and no variant of the
+vocabulary quoted in this file reproduces them.
+
+**`counterex_broad` is a column, not a shape.** The phrase rule flags 74 families from title +
+abstract, so it is carried in its own column and the `counterexample` shape stays at 44. Widening the
+shape instead would move 30 families (6 of them in T0) between the first-match buckets in
+`triage_t0.py`; measured, **0 of the 30 flag-only families sit in bucket C**, so first match hides
+every one of them. Unlike `resolves_named`, this column is a **strict superset** of its tag (tag-only
+0), so 44 and 74 are directly comparable floors. Method, the per-family verdicts, and the decision are
+in **`notes/counterexample-tag.md`**.
 
 **`resolves_named` is a column, not a shape.** The broad named-target rule (a target noun
 *conjecture/question/problem* plus a resolution verb) flags 233 families, so it is carried in its own
@@ -119,10 +129,11 @@ reading verdict, and the decision are in **`notes/resolution-tag.md`**.
 | `shapes` | abstract keyword match | Multi-label |
 | `conditional` | 1 if `conditional` ∈ `shapes` | |
 | `resolves_named` | abstract names a conjecture/question/problem **and** uses a resolution verb | 233 families; separate from the `resolution` shape (144) so the T0 buckets stay put |
+| `counterex_broad` | title **or** abstract matches the counterexample phrase rule | 74 families; a strict superset of the `counterexample` shape (44), kept out of `shapes` so the T0 buckets stay put |
 | `companions` | `result NNN` cross-refs in the abstract | |
 | `companion_word` | abstract says "companion" | 10 families |
 | `versions` | manuscripts sharing a date-stripped dir slug | 2 families, 4 dated re-issues (003, 056) |
-| `summary` | a page exists at `notes/summaries/<discipline>/<NNN>-*.md` | Filesystem fact, not a derived claim; 2 of 372 families, 9 manuscripts behind them |
+| `summary` | a page exists at `notes/summaries/<discipline>/<NNN>-*.md` | Filesystem fact, not a derived claim; 12 of 372 families, 31 manuscripts behind them |
 
 ## Coverage tracks exposure, not importance
 
@@ -173,6 +184,12 @@ the community will scrutinize.
   "conditional laws" (technical nouns), and "without assuming uniform convexity" (a negation that
   is the theorem's point). Any shape tag needs a reading pass before it is quoted as a property of
   a family. See `notes/conditional.md`.
+- **A quoted count with no rule behind it.** The counterexample numbers this file printed for a day
+  (74 / 44 / 31 / 30) came from a reading pass whose regex was never written down, and no variant of
+  the vocabulary the prose quoted reproduces them (unbounded `negativ` → 90; `\bnegativ` → 75;
+  abstract-only phrase rule → 72). A count is only a measurement once the rule that yields it is in
+  code. Fixed 2026-10-07 by writing `COUNTEREX_PHRASE` in the generator, which reproduces 74 / 30
+  and excludes the three named false positives. See `notes/counterexample-tag.md`.
 - **`Path` vs `str` in a membership test.** `verification`, `inputs`, and `covmd` read 0 for all 372
   rows: the reference sets held `Path` objects (`p.parent`) while the tested values were strings
   (`Path(p).parts[-2]`), and `str in {Path(...)}` is false for every family. A column that is

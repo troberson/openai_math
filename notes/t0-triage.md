@@ -30,6 +30,11 @@ second T0 discriminator: it flags **88 of these 137**, including 12 of the 20 in
 051, 060, 164, 195, 258, 306, 316, 338, 341, all named-conjecture families — so N is no longer
 title-only for half its families. Cross-tab and method: `notes/resolution-tag.md`.
 
+`counterex_broad` (74 families repo-wide) is a third: it flags **22 of these 137**, of which 16 are
+the C bucket and **6 are not** — 004 (R), 048 and 201 (K), 195 (N), 259 and 284 (B). First match
+never shows them as counterexamples, which is why the signal is a column and not a widened tag.
+Cross-tab and method: `notes/counterexample-tag.md`.
+
 Bucket concentration by discipline (families with ≥2): C is Topology 5, A&CG 4, differential
 geometry 3. R is A&CG 9, number theory 8, real/complex analysis 6, algebra 5, topology 5. B is
 probability 5, A&CG 4, mathematical physics 4, TCS 3. N (untagged) is A&CG 5, differential geometry
@@ -515,12 +520,17 @@ Reading the titles settles most of them, which is what reading-priority item 4 a
    first pass, so the first pass took the whole cheap-check set the ledger can see. 45 of the 93
    titles name a conjecture, problem, or question, which pins the claim even where no evidence ships.
 9. **The `counterexample` tag under-covers, and the gap is bigger than the `conditional` gap.**
-   Repo-wide, 74 of 372 families use counterexample language in title or abstract
-   ("counterexample", "disprov", "answers … negatively"); 44 carry the tag, 31 do not. Reading those
-   31, 30 are genuine — the only false positive is 348, matched through "nonnegatively". In T0 the
-   untagged ones are 048, 195, 201, 259, 284 (004 is a negative *resolution*, not an object). So the
-   object-level check set in T0 is **21 families, not 16**, and the ledger's C bucket is a floor, not
-   a census. `conditional` mislabels (9 tagged, 5 genuine); `counterexample` omits.
+   Repo-wide, **74 of 372** families use counterexample language in title or abstract and **44** carry
+   the tag, so **30** are flagged without being tagged; all 30 are counterexamples in kind. The rule
+   that reproduces those counts is now written down — `COUNTEREX_PHRASE` in
+   `notes/scripts/build_catalog.py`, a phrase rule rather than a stem rule — and the per-family reading
+   is in **`notes/counterexample-tag.md`**. It excludes three false positives found by reading the
+   matched sentence: 348 ("answers … nonnegatively"), 339 ("strictly negative sectional curvature"),
+   355 ("at every negative time"). In T0 the flag-only families are **004, 048, 195, 201, 259, 284**;
+   004 is a negative *resolution* of Hilbert's tenth problem over **Q**, not an exhibited object. So
+   the object-level check set in T0 is **21 families, not 16**, and the ledger's C bucket is a floor,
+   not a census. `conditional` mislabels (9 tagged, 5 genuine); `counterexample` omits. The signal now
+   ships as the `counterex_broad` column, so the C bucket keeps the reading order readers expect.
 10. **Reading the untagged families mostly resolves them.** Of the 15 untagged in the second pass, 9
     resolve a conjecture named in the title (043, 051, 060, 164, 258, 306, 316, 338, 341), 1 is a
     counterexample (195), 2 are shaped but untagged (357 uniform, 042 classification), and only 3
@@ -544,6 +554,10 @@ Priority item 1, done at abstract level. The set is the 16 tagged C-bucket famil
 break a named conjecture and carry no `counterexample` tag: **048, 195, 201, 259, 284**. All 21 have
 **no scope note, no comparator challenge, no `main_results` entry, and no reasoning trace** — the
 abstract in `overview.tex` is the whole body of evidence the release ships for them.
+
+The `counterex_broad` column flags **6** T0 families that the tag misses: the five above plus **004**,
+which is a negative *resolution* (Hilbert's tenth over **Q**) with no counterexample object exhibited,
+so it stays out of this object-level set. See `notes/counterexample-tag.md`.
 
 Mode: **E** = the abstract names a constructed object; **X** = the object is indexed by a parameter
 the abstract leaves unspecified ("sufficiently large", "higher-dimensional", "nonnumerically").

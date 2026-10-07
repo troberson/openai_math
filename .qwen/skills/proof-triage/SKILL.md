@@ -13,7 +13,7 @@ description: >-
 compatibility: "python3 (stdlib only); no Lean toolchain, no network"
 metadata:
   author: tamara
-  version: "1.4"
+  version: "1.5"
 ---
 
 # Proof triage
@@ -44,29 +44,34 @@ behaviour and rules only.
 6. **A tag is not a claim, and tags omit as well as mislabel.** Keyword tags need a reading pass
    before you call a family by them: the `conditional` tag flagged 9 families, 5 of which were not
    assumptions. In the other direction, 74 families use counterexample language and only 44 carry
-   the `counterexample` tag — 30 of the 31 untagged flags are genuine. Quote shape counts as
+   the `counterexample` tag — all 30 untagged flags are genuine on reading. Quote shape counts as
    floors. `notes/conditional.md` is the model — name the hypothesis, say where it sits, record the
    flags you dropped.
-7. **A broad rule goes in a column, not a shape.** Named-target resolution (target noun
-   *conjecture/question/problem* + resolution verb) flags 233 families against the `resolution`
-   shape's 144, so it ships as the `resolves_named` column. Do not move it into `SHAPES`:
-   `triage_t0.py` assigns T0 buckets by **first match**, so widening a shape moves families between
-   buckets. The two are complementary, not nested — 139 in both, 94 column-only, 5 tag-only
-   (003, 010, 082, 103, 261) — union 238. Quote both as floors; see `notes/resolution-tag.md`.
+7. **A broad rule goes in a column, not a shape.** `triage_t0.py` assigns T0 buckets by **first
+   match**, so widening a shape moves families between buckets and re-cuts the reading order. Both
+   broad rules therefore ship as columns: named-target resolution as `resolves_named` (233 families
+   against the `resolution` shape's 144 — complementary, not nested: 139 in both, 94 column-only, 5
+   tag-only 003, 010, 082, 103, 261, union 238), and the counterexample phrase rule as
+   `counterex_broad` (74 against the `counterexample` shape's 44 — a **strict superset**, tag-only 0).
+   Widening `counterexample` would move 6 T0 families into bucket C, where first match currently
+   leaves them. Quote both counts as floors; see `notes/resolution-tag.md` and
+   `notes/counterexample-tag.md`.
 
 ## Workflow
 
 1. **Refresh** — run the generator; read its report. Every number quoted in `notes/README.md`
    comes from that report, so re-run before quoting counts.
 2. **Look up** — filter `notes/catalog.tsv` by `fam`, `tier`, `shapes`, `resolves_named`,
-   `discipline`, `trace`. Parse with `csv.DictReader(..., delimiter='\t')`, not `split(',')`.
+   `counterex_broad`, `discipline`, `trace`. Parse with `csv.DictReader(..., delimiter='\t')`, not
+   `split(',')`.
 3. **Read the primary text** — the ledger is an index, not the evidence. For any claim about what
    a result *says*, open `lean/docs/<NNN>.md` (its `## Scope` section states exclusions) and the
    manuscript abstract in `CONTENTS.md`. Quote exclusions; they are the load-bearing part.
 4. **Triage the silent families** — T0 (137 families, 255 manuscripts, 0 formalized) has no
    coverage signal at all. Run `notes/scripts/triage_t0.py` for the buckets and read
-   `notes/t0-triage.md` before adding to the pass; `shapes` drives the buckets and
-   `resolves_named` (88 of 137) is the second discriminator. Two
+   `notes/t0-triage.md` before adding to the pass; `shapes` drives the buckets,
+   `resolves_named` (88 of 137) is the second discriminator and `counterex_broad` (22 of 137) the
+   third — 6 of those 22 sit outside bucket C, which is why the column exists. Two
    reading passes cover all 137 families at abstract level, and the 21 counterexample-shaped ones are
    recorded there with object, broken conjecture, and construction mode — new T0 work is checking
    those claims against manuscript source, not reading titles.
@@ -78,13 +83,14 @@ behaviour and rules only.
 
 | Path | What it is | Read when |
 |---|---|---|
-| `notes/catalog.tsv` | 372-row ledger, 20 columns, one row per family | Any lookup, filter, or count |
+| `notes/catalog.tsv` | 372-row ledger, 22 columns, one row per family | Any lookup, filter, or count |
 | `notes/README.md` | Column definitions, tier defs, shape yields, discipline table, traps | Before quoting any number |
 | `notes/scripts/build_catalog.py` | Generator (stdlib only, ~300 lines) | Regenerating, or adding a column |
 | `notes/scripts/triage_t0.py` | Buckets the 137 T0 families by claim shape (reads the ledger, writes nothing) | Any T0 count, bucket, or priority question |
 | `notes/t0-triage.md` | T0 buckets, two reading passes covering all 137 families, the 21-family counterexample record, scope qualifiers found in abstracts | Before triaging or discussing T0 families |
 | `notes/conditional.md` | Manual pass: what each conditional family assumes, and dropped flags | Before calling any family conditional |
 | `notes/resolution-tag.md` | Named-target rule: yield, the 94-family reading verdict, the `resolves_named` decision | Before quoting a resolution count or changing a tag |
+| `notes/counterexample-tag.md` | Counterexample phrase rule: yield, the 30-family reading verdict, the `counterex_broad` decision | Before quoting a counterexample count, or checking a family the tag misses |
 | `lean/docs/<NNN>.md` | Family scope note: what the formalization covers and excludes | Any claim about a formalized result |
 | `lean/ComparatorChallenges/*.json` | Statement/solution pairs, `permitted_axioms` | Checking what a challenge permits |
 | `lean/formalization.yaml` | `sources`, `status.main_results`, `automation`, `review` | Coverage and verification-ceiling claims |
@@ -105,9 +111,14 @@ behaviour and rules only.
   matched the naive pattern. Guard with `ASSUME`/`NEG_BEFORE`/`TECH_AFTER` in the generator, then
   read the flagged abstracts.
 - Tags omit as well as mislabel. The `counterexample` tag matches 44 families while 74 use
-  counterexample language; reading the 31 untagged flags found 30 genuine, the false positive being
-  348, matched through "nonnegatively". A tag count is a floor: check the untagged set before
-  quoting a shape count as a census.
+  counterexample language; reading the 30 untagged flags found all 30 genuine. The phrase rule that
+  reproduces 74 excludes three false positives by requiring a phrase, not a stem: 348
+  ("nonnegatively"), 339 ("strictly negative sectional curvature"), 355 ("at every negative time"). A
+  tag count is a floor: check the untagged set before quoting a shape count as a census.
+- A quoted count with no rule behind it. The 74 / 44 / 31 / 30 figures this repo quoted for a day came
+  from a reading pass whose regex was never written down, and no variant of the vocabulary the prose
+  quoted reproduces them (unbounded `negativ` → 90, `\bnegativ` → 75, abstract-only phrase rule → 72).
+  Write the rule in code before quoting the count; see `notes/counterexample-tag.md`.
 - `Path` vs `str` in a membership test. `verification`, `inputs`, and `covmd` read 0 for all 372
   rows because the reference sets held `Path` objects while the tested values were strings — a
   silently empty column, indistinguishable from a genuinely empty one. Key such sets on `.name`, and

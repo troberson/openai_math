@@ -15,6 +15,19 @@ scripts that consume it. Worked out on the OpenAI Research Catalog
 (372 rows), consumed by `notes/scripts/triage_t0.py` and described in `notes/README.md`,
 `notes/t0-triage.md`, and a project skill.
 
+## 0. If the docs quote counts no code reproduces, reconstruct the rule first
+
+Analysis docs often quote counts from a **reading pass** whose regex was never written down. On the
+counterexample round, `notes/README.md` quoted "74 flagged / 44 tagged / 31 untagged / 30 genuine" and
+no variant of the vocabulary the doc quotes reproduced it (unbounded `negativ` → 90; `\bnegativ` →
+75/32; abstract-only phrase rule → 72/28). The numbers were a reading result, not a measurement.
+
+Do not build a column on top of such a number, and do not re-quote it. Recover the rule first —
+enumerate candidate rules, score each against the recorded counts **and** against the false positives
+the doc names, then write the recovered rule into code and replace the prose counts with it. Full
+procedure: `reconstruct-unwritten-classification-rule` skill. The recovered rule here (title +
+abstract, phrase-based) reproduces 74 / 30 exactly and excludes all three known false positives.
+
 ## 1. Measure overlap with the existing signal before writing code
 
 **Never assume the new rule is a superset of the old one.** Compute the intersection first, on the
@@ -38,6 +51,19 @@ improvement.
 
 Report the split (both / A-only / B-only / union) as the headline, not the two totals.
 
+### Whether nesting is required depends on what the column is for
+
+- **Column = "the tag under-covers"** → demand a superset (`tag-only == 0`). The 2026-10-07
+  counterexample round: the broad phrase rule flags 74 with `tag-only = 0` (strict superset of the 44),
+  so it is comparable to the tag. The tempting named-target rule (target noun + counterexample verb)
+  flags 56 with **`tag-only = 12`** — twelve tagged families name no conjecture/question/problem in
+  the abstract — so it is not a superset and cannot carry that job.
+- **Column = "an orthogonal second discriminator"** → non-nested is fine, and the tag-only set is
+  itself the finding (the 5 `resolution`-tag-only families above).
+
+Say which of the two the column is, in the comment at the rule. The same candidate is a good column
+for one job and unusable for the other.
+
 ## 2. Placement: separate column vs. a new entry in the multi-label set
 
 Grep every consumer of the multi-label field for **first-match / first-wins** logic before adding to
@@ -48,6 +74,12 @@ a taxonomy change disguised as a tag tweak.
 A separate column is additive: the shape table stays at 144, the buckets stay put, and the broad rule
 is available to readers. Say the reason in a comment at the rule, so the next person does not
 "tidy" it into the shared set.
+
+**Quantify the migration; do not assert it.** Print the before/after bucket table for the widening,
+and print how many of the new-signal families already sit in the target bucket. On the counterexample
+round (widening 44 → 74): C 16→22, B 29→27, K 8→6, N 20→14, O 2→0, R 50→48, with 30 families moving
+(6 of them in T0) — and **0 of the 30 flag-only families sit in bucket C**, so first match hides every
+one of them. That table is what settles the fork; prose about "taxonomy churn" does not.
 
 ### Not every column is a derived claim
 
@@ -123,7 +155,8 @@ The change is not done when the generator runs. Grep for the phrases it invalida
 table, the shape/tag section, the downstream script's docstring, the triage record, and the project
 skill (a standing rule, the resource map, the lookup step, the column count, and its `version:`
 field). Mark the open task decided for the part you decided and explicitly open for the part you
-did not (`counterexample`: 30 genuine untagged families, no column proposed).
+did not — on the `resolves_named` change that was "`counterexample`: 30 genuine untagged families,
+no column proposed", which closed on 2026-10-07 as `counterex_broad`.
 
 Grep the column count as a **number**, not only as a phrase — the same stale integer appears in prose
 that does not read like schema documentation. On the 20 → 21 change (2026-10-07) two docs were stale
@@ -132,7 +165,8 @@ at once: the column table in `notes/README.md` and the repository map in `AGENTS
 fresh session reads first, and a map that omits a new directory means the next agent never finds it.
 When the change adds a directory, the map line and the README command block both need the new path,
 and the README gains the checker invocation in its exact flag form (`--mutant`), not just the bare
-command.
+command. The 21 → 22 change found the same two docs stale, plus three skill files quoting the old
+reading-pass counts — grep the *counts*, not just the column count.
 
 ## 7. Commit and push
 

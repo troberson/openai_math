@@ -47,8 +47,8 @@ Three need qualifiers:
 
 Precision of the candidate rule on this corpus is therefore 94/94 on "resolution in kind", with 1
 accidental match and 2 partials. That is a much better yield than `conditional` (9 flagged, 5
-genuine) and the same shape as `counterexample` (31 untagged flags, 30 genuine): the tag omits far
-more than it mislabels.
+genuine) and the same shape as `counterexample` (30 untagged flags, 30 genuine —
+`notes/counterexample-tag.md`): the tag omits far more than it mislabels.
 
 ## Why the current rule misses each one
 
