@@ -10,28 +10,34 @@ carrier, so it states what to do and what not to re-derive.
   page is committed.
 - **Pages done:** 102 (`notes/summaries/theoretical-computer-science/`), 001, 007, 017
   (`notes/summaries/number-theory/`), 032 (`notes/summaries/algebraic-and-complex-geometry/`), 087
-  (`notes/summaries/convex-and-metric-geometry/`). The ledger's `summary` column is 1 for those six;
-  the generator reports "summary pages 6 of 372 families, 19 manuscripts behind them".
-- **Next page:** family **159**. Steps 2–9 above, in order.
-- **Last gate run (2026-10-07):** regeneration byte-identical; 372 families, 722 manuscripts, 162
-  formalized, 405 challenges, 185 `main_results` over 178 configs, 235 scope notes, both cross-checks
-  0, discipline table summing 372 / 235 / 722 / 162; `verify_summaries.py --mutant` over 6 pages →
-  1232 marker positions, 185 quoted spans, 0 problems, 0 undetected mutants.
-- **Push state:** `origin/notes` at 496b3aa69 (pushed 2026-10-07 04:41); local `notes` HEAD is
-  aa8add611. Push when an hour has passed since the last push, not per commit.
+  (`notes/summaries/convex-and-metric-geometry/`), 159 (`notes/summaries/combinatorics/`). The
+  ledger's `summary` column is 1 for those seven; the generator reports "summary pages 7 of 372
+  families, 20 manuscripts behind them".
+- **Next page:** family **197**. Steps 2–9 above, in order.
+- **Last gate run (2026-10-07):** regeneration byte-identical on two runs; 372 families, 722
+  manuscripts, 162 formalized, 405 challenges, 185 `main_results` over 178 configs, 235 scope notes,
+  both cross-checks 0, discipline table summing 372 / 235 / 722 / 162; `verify_summaries.py --mutant`
+  over 7 pages → 1331 marker positions, 232 quoted spans, 0 problems, 0 undetected mutants.
+- **Push state:** `origin/notes` at da5eb8a35 (pushed 2026-10-07 05:36); local `notes` HEAD is
+  c5be572dc. Push when an hour has passed since the last push, not per commit.
 - **007 finding, for reuse:** the ledger's `paps_form`/`mainres` counts are 0 for a family that
   ships 854 Lean files with zero `sorry`, because `formalization.yaml` has no entry for the
   manuscript. Counts are YAML bibliography entries, not Lean source — never read them as "not
   formalized". 017 is the same shape: 0 and 0 beside 869 files and 94,948 lines. 087 is the same
-  shape at partial scale: 2 of 3 and 3 of 4 beside 591 files and 81,233 lines.
+  shape at partial scale: 2 of 3 and 3 of 4 beside 591 files and 81,233 lines. 159 is the same shape
+  at scale: 0 and 0 beside 4,774 files and 1,122,983 lines.
 - **017 findings, for reuse:**
-  - A `[Sxx]` marker for a binary source (a trace PDF) inside a unit that carries a quotation makes
-    Pass C read that PDF as text and crash on `UnicodeDecodeError`. Pass C tries the cited sources in
-    marker order and stops at the first hit, so a PDF row is safe only in a unit with no quotation,
-    or listed after a text source that can match. Cite trace rows in the closing note.
+  - A `[Sxx]` marker for a binary source (a trace PDF, a manuscript `paper.pdf`) inside a unit that
+    carries a quotation makes Pass C read that file as text and crash on `UnicodeDecodeError`. Pass C
+    tries the cited sources in marker order and stops at the first hit, so a PDF row is safe only in
+    a unit with no quotation, or listed after a text source that can match. Cite trace rows in the
+    closing note. **A block quote inherits the markers of the line above it**, so a paragraph that
+    cites a PDF and ends with the intro line for a block quote puts that PDF in the block quote's
+    candidate list and crashes: keep the PDF citation in its own paragraph.
   - A quotation containing `<` is a hazard twice over: the raw-HTML scan matches `<...>`, and
     `norm()` deletes the same span, so the quote compares as mangled text. Put a space after `<`, or
-    paraphrase. Check the source line for a `>` before quoting an inequality.
+    paraphrase. Check the source line for a `>` before quoting an inequality. Never write `<sub>`,
+    `<sup>` or `<i>` in a page: render *r_k(N)* and (log *N*)^*ε_k* as plain markdown.
   - Quotes from `lean/docs/<NNN>.md` must keep that file's `$...$` delimiters. `norm()` leaves `$` and
     `\(`/`\)` intact, so rewriting one form as the other never matches.
   - A footnote quotation can end on the line that closes it (`}`), so the cited range must include
@@ -51,6 +57,26 @@ carrier, so it states what to do and what not to re-derive.
     published bundle and say the bundle was not run; do not execute it.
   - Where a manuscript ships a proof with zero `sorry` and the release's YAML records no entry for it,
     write it as the index being behind, not as a coverage gap, and give both counts.
+- **159 findings, for reuse:**
+  - **A block quote is compared with its own delimiters included** (`pass_c` sets `spans = [unit]` for
+    a block quote, and `norm()` does not strip `"`), so a block quote must be the raw source text with
+    **no quote marks around it**. Inline quotes are fine — the `QUOTE` capture excludes delimiters.
+  - **A block quote's citation belongs on the line exactly two above it** (intro line, blank line,
+    quote). Attribution scans `start_line-2 … start_line-4` and takes the first line with usable
+    markers; a marker on the wrong line attributes the quote to the wrong range.
+  - **Quote a displayed formula with the delimiters the source uses.** `norm()` turns `\begin{equation}`
+    into `equation` and `\begin{displaymath}` into `displaymath`, so `\[ … \]` never matches a source
+    line pair that carries an `\begin{…}` — quote the environment, and cite the range that covers it.
+  - Manuscript trees here put sections at `build/sections/…` and appendices at `build/foundations/…`;
+    `README.md` exists at both the manuscript root and the repo root, so declare it with its full
+    `preprints/…/README.md` path or the checker prints `AMBIGUOUS`.
+  - The formalized quantitative statement can be **weaker** than the published one and still derive
+    the headline conclusion: `Model.lean` states a saving in log log *N* with exponent 1 + *η*, where
+    the manuscript's Theorem `ap:main` states a saving in (log *N*)^*ε_k*. Read the formalized `Prop`
+    before repeating the manuscript's exponent as the formalized one.
+  - Both companion columns come from the CONTENTS.md blurb alone (`build_catalog.py:274,295`), so a
+    manuscript that names its companion in its introduction and bibliography can still have
+    `companions` empty in the ledger. Say which layer the fact lives in.
 
 ## Loop shape
 
@@ -129,6 +155,10 @@ T0 is 137 families and 255 manuscripts, so tier C is 271 families: 137 − 11 + 
   (8 manuscripts → 32 sources, 272 markers, 52 quoted spans). Sources ≈ 4 per manuscript.
   087 (3 manuscripts → 43 sources, 268 markers, 11 quoted spans): a three-tree family with a
   verification bundle and four challenges doubles the source count at the same manuscript count.
+  159 (1 manuscript → 25 sources, 99 markers, 47 quoted spans): a single-manuscript family with a
+  4,774-file Lean tree and a two-part trace costs as much as a multi-manuscript family, because the
+  sources are the tree's entry points, not extra manuscripts. Block-quote-heavy pages raise the
+  quoted-span count without raising the source count.
 - `bd ready` is the only task tracker; nothing here is a task list.
 - Never run `lake`, `lean`, `lake exe cache get`, or `comparator`.
 
