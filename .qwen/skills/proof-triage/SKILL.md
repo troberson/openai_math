@@ -13,7 +13,7 @@ description: >-
 compatibility: "python3 (stdlib only); no Lean toolchain, no network"
 metadata:
   author: tamara
-  version: "1.2"
+  version: "1.3"
 ---
 
 # Proof triage
@@ -60,8 +60,9 @@ behaviour and rules only.
 4. **Triage the silent families** — T0 (137 families, 255 manuscripts, 0 formalized) has no
    coverage signal at all. Run `notes/scripts/triage_t0.py` for the buckets and read
    `notes/t0-triage.md` before adding to the pass; `shapes` is the only discriminator there. Two
-   reading passes cover all 137 families at abstract level, so new T0 work is checking claims, not
-   reading titles — start with the 21 counterexample-shaped families the file lists.
+   reading passes cover all 137 families at abstract level, and the 21 counterexample-shaped ones are
+   recorded there with object, broken conjecture, and construction mode — new T0 work is checking
+   those claims against manuscript source, not reading titles.
 5. **Record manual findings in the repo**, not in chat: append to `notes/` as a tracked file
    (e.g. `notes/conditional.md`), one row per family, stating exactly what each assumes.
 6. **State the ceiling** — end coverage answers with what has *not* been checked.
@@ -74,7 +75,7 @@ behaviour and rules only.
 | `notes/README.md` | Column definitions, tier defs, shape yields, discipline table, traps | Before quoting any number |
 | `notes/scripts/build_catalog.py` | Generator (stdlib only, ~300 lines) | Regenerating, or adding a column |
 | `notes/scripts/triage_t0.py` | Buckets the 137 T0 families by claim shape (reads the ledger, writes nothing) | Any T0 count, bucket, or priority question |
-| `notes/t0-triage.md` | T0 buckets, two reading passes covering all 137 families, scope qualifiers found in abstracts | Before triaging or discussing T0 families |
+| `notes/t0-triage.md` | T0 buckets, two reading passes covering all 137 families, the 21-family counterexample record, scope qualifiers found in abstracts | Before triaging or discussing T0 families |
 | `notes/conditional.md` | Manual pass: what each conditional family assumes, and dropped flags | Before calling any family conditional |
 | `lean/docs/<NNN>.md` | Family scope note: what the formalization covers and excludes | Any claim about a formalized result |
 | `lean/ComparatorChallenges/*.json` | Statement/solution pairs, `permitted_axioms` | Checking what a challenge permits |
@@ -99,6 +100,14 @@ behaviour and rules only.
   counterexample language; reading the 31 untagged flags found 30 genuine, the false positive being
   348, matched through "nonnegatively". A tag count is a floor: check the untagged set before
   quoting a shape count as a census.
+- `Path` vs `str` in a membership test. `verification`, `inputs`, and `covmd` read 0 for all 372
+  rows because the reference sets held `Path` objects while the tested values were strings — a
+  silently empty column, indistinguishable from a genuinely empty one. Key such sets on `.name`, and
+  quote the repo-wide sum the generator prints (30 dirs / 22 families, 4, 2) rather than a row count.
+- A coverage document is not coverage. Family 318's `SUPPORT-COVERAGE.md` names a `support/r-ce/`
+  certificate bundle, `BUILDING.md`, and `SUPPORT-COVERAGE.json`; none exist on disk or in git. When
+  a family ships a coverage statement, check that the artifacts it names are present before
+  describing the family as having support.
 
 ## Related skills
 
