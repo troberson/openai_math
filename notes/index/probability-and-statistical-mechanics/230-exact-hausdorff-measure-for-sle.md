@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 2 in · 2 out |
 | Claim shapes | resolution, bound |
+| Topics | [mathematical-physics](../topics/mathematical-physics.md) · [conformal-universality](../topics/conformal-universality.md) · [fractal-geometry](../topics/fractal-geometry.md) |
 | Companion families | — |
 | Summary page | — |
 

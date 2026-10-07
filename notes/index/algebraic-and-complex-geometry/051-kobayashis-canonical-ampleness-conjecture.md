@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 2 out |
 | Claim shapes | — |
+| Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [manifolds](../topics/manifolds.md) · [complex-geometry](../topics/complex-geometry.md) · [curves](../topics/curves.md) |
 | Companion families | — |
 | Summary page | — |
 

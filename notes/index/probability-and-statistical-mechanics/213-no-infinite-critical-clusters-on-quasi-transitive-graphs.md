@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution |
+| Topics | [graph-theory](../topics/graph-theory.md) · [planar-maps-and-lattice-models](../topics/planar-maps-and-lattice-models.md) · [percolation](../topics/percolation.md) |
 | Companion families | — |
 | Summary page | — |
 

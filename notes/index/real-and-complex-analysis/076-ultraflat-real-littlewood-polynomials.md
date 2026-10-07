@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 3 in · 4 out |
 | Claim shapes | bound, uniform |
+| Topics | [algorithms](../topics/algorithms.md) · [harmonic-analysis](../topics/harmonic-analysis.md) |
 | Companion families | — |
 | Summary page | — |
 

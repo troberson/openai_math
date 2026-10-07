@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 2 in · 2 out |
 | Claim shapes | counterexample, bound |
+| Topics | [convex-geometry](../topics/convex-geometry.md) · [discrete-geometry](../topics/discrete-geometry.md) |
 | Companion families | — |
 | Summary page | — |
 

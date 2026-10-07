@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | — |
+| Topics | [algebraic-topology](../topics/algebraic-topology.md) · [group-theory](../topics/group-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

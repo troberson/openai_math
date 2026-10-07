@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 2 in · 4 out |
 | Claim shapes | bound |
+| Topics | [ergodic-theory](../topics/ergodic-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

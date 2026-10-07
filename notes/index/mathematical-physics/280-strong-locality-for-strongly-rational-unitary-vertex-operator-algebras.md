@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution |
+| Topics | [operator-algebras](../topics/operator-algebras.md) · [mathematical-physics](../topics/mathematical-physics.md) · [category-theory](../topics/category-theory.md) · [general-relativity](../topics/general-relativity.md) |
 | Companion families | — |
 | Summary page | — |
 

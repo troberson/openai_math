@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 3 in · 3 out |
 | Claim shapes | — |
+| Topics | [mathematical-physics](../topics/mathematical-physics.md) · [statistical-mechanics](../topics/statistical-mechanics.md) · [planar-maps-and-lattice-models](../topics/planar-maps-and-lattice-models.md) · [conformal-universality](../topics/conformal-universality.md) · [dynamical-systems](../topics/dynamical-systems.md) · [probability](../topics/probability.md) |
 | Companion families | — |
 | Summary page | — |
 

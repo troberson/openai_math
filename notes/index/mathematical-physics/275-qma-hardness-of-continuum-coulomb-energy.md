@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 2 out |
 | Claim shapes | — |
+| Topics | [mathematical-physics](../topics/mathematical-physics.md) · [quantum-computing](../topics/quantum-computing.md) |
 | Companion families | — |
 | Summary page | — |
 

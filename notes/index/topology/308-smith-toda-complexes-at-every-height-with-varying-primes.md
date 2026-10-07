@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | uniform |
+| Topics | [algebraic-topology](../topics/algebraic-topology.md) · [primes](../topics/primes.md) · [stable-homotopy](../topics/stable-homotopy.md) |
 | Companion families | — |
 | Summary page | — |
 

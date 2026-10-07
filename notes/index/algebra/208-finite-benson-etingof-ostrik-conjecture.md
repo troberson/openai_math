@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution, classification |
+| Topics | [category-theory](../topics/category-theory.md) · [modular-representation](../topics/modular-representation.md) · [formal-languages](../topics/formal-languages.md) |
 | Companion families | — |
 | Summary page | — |
 

@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution |
+| Topics | [graph-theory](../topics/graph-theory.md) · [symplectic-geometry](../topics/symplectic-geometry.md) |
 | Companion families | — |
 | Summary page | — |
 

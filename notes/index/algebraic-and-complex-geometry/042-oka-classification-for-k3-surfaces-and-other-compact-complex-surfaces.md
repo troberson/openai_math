@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 1 out |
 | Claim shapes | — |
+| Topics | [complex-geometry](../topics/complex-geometry.md) · [surfaces](../topics/surfaces.md) · [abelian-varieties](../topics/abelian-varieties.md) |
 | Companion families | — |
 | Summary page | — |
 

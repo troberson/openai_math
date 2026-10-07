@@ -11,6 +11,7 @@
 | Verification bundles | 1 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | resolution, uniform |
+| Topics | [representation-theory](../topics/representation-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

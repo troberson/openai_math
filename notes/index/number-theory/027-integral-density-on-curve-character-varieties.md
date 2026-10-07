@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution, bound, density, uniform |
+| Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [curves](../topics/curves.md) · [arithmetic-geometry](../topics/arithmetic-geometry.md) · [number-fields](../topics/number-fields.md) |
 | Companion families | — |
 | Summary page | — |
 

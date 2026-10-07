@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 1 out |
 | Claim shapes | bound, uniform |
+| Topics | [graph-theory](../topics/graph-theory.md) · [algebraic-topology](../topics/algebraic-topology.md) · [metric-geometry](../topics/metric-geometry.md) · [geometric-topology](../topics/geometric-topology.md) |
 | Companion families | — |
 | Summary page | — |
 

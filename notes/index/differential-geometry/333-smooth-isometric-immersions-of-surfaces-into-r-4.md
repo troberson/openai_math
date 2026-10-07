@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 1 out |
 | Claim shapes | resolution, uniform |
+| Topics | [riemannian-geometry](../topics/riemannian-geometry.md) · [surfaces](../topics/surfaces.md) · [differential-geometry](../topics/differential-geometry.md) |
 | Companion families | — |
 | Summary page | — |
 

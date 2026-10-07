@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | bound, uniform |
+| Topics | [convex-geometry](../topics/convex-geometry.md) · [measure-theory](../topics/measure-theory.md) · [sampling-and-counting](../topics/sampling-and-counting.md) |
 | Companion families | — |
 | Summary page | — |
 

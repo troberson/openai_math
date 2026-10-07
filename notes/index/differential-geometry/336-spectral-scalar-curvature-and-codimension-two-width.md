@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 2 out |
 | Claim shapes | bound, partial, uniform |
+| Topics | [manifolds](../topics/manifolds.md) · [riemannian-geometry](../topics/riemannian-geometry.md) · [metric-geometry](../topics/metric-geometry.md) · [spectral-theory](../topics/spectral-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

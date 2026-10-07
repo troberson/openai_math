@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | partial, uniform |
+| Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [complexity-theory](../topics/complexity-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

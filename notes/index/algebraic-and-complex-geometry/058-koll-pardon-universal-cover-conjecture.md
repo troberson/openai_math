@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 2 in · 2 out |
 | Claim shapes | resolution, bound |
+| Topics | [abelian-varieties](../topics/abelian-varieties.md) |
 | Companion families | — |
 | Summary page | — |
 

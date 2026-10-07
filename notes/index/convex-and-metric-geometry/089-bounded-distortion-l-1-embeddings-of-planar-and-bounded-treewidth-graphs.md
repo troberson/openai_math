@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | resolution, bound, uniform |
+| Topics | [graph-theory](../topics/graph-theory.md) · [metric-geometry](../topics/metric-geometry.md) |
 | Companion families | — |
 | Summary page | — |
 

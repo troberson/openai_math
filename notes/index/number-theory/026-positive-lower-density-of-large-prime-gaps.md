@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | density, uniform |
+| Topics | [primes](../topics/primes.md) |
 | Companion families | — |
 | Summary page | — |
 

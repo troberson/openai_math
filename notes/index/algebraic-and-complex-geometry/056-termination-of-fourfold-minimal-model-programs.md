@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 2 in · 4 out |
 | Claim shapes | bound, classification, uniform |
+| Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [complex-geometry](../topics/complex-geometry.md) |
 | Companion families | — |
 | Summary page | — |
 

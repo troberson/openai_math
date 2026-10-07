@@ -11,6 +11,7 @@
 | Verification bundles | 1 |
 | Cited by / cites | 1 in · 2 out |
 | Claim shapes | counterexample |
+| Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [commutative-algebra](../topics/commutative-algebra.md) |
 | Companion families | — |
 | Summary page | — |
 

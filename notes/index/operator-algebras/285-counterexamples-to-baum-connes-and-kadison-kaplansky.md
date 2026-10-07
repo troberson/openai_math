@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 2 in · 2 out |
 | Claim shapes | resolution, counterexample |
+| Topics | [group-theory](../topics/group-theory.md) · [operator-algebras](../topics/operator-algebras.md) |
 | Companion families | — |
 | Summary page | — |
 

@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 2 out |
 | Claim shapes | bound |
+| Topics | [statistical-mechanics](../topics/statistical-mechanics.md) · [planar-maps-and-lattice-models](../topics/planar-maps-and-lattice-models.md) · [conformal-universality](../topics/conformal-universality.md) |
 | Companion families | — |
 | Summary page | — |
 

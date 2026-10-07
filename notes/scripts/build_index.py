@@ -26,6 +26,9 @@ Rules this generator encodes, all of them stated in notes/index-design.md:
   178 configs, so the two differ for 7 configs and the page renders declarations separately.
 - **Page filenames are a mechanical slug of the title**, not the hand-shortened names used under
   notes/summaries/. Index pages pair with summary pages by family number, never by filename.
+- **Topics come from the curated vocabulary at `notes/topics.tsv`**, measured by
+  measure_topics.py, never derived here. A topic is multi-label — a family carries zero or more —
+  so it is an added label, not a partition: the 17 catalog disciplines stay the partition.
 
 Slug rule: NFKD-normalize and drop combining marks; rewrite a one- or two-letter accent macro
 `\\H{o}` as its argument; drop `$`, apostrophes, and any remaining command name; lowercase; replace
@@ -41,6 +44,7 @@ import unicodedata
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import build_catalog as B  # noqa: E402
+import measure_topics as MT  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PRE = ROOT / "preprints"
@@ -64,7 +68,7 @@ FAMILY_COLS = ["fam", "discipline", "disc_slug", "title", "slug", "page", "tier"
                "paps_form", "chal", "mainres", "decl_count", "scope_note", "scope_chars",
                "verification", "inputs", "covmd", "trace", "shapes", "conditional",
                "resolves_named", "counterex_broad", "companions", "summary", "lean_files",
-               "cite_out", "cite_in"]
+               "cite_out", "cite_in", "topics"]
 MANUSCRIPT_COLS = ["dir", "fam", "pdf", "formalized", "main_tex", "build", "readme",
                    "verification", "inputs", "covmd", "tex", "bib", "proofs", "thms", "page"]
 CONFIG_COLS = ["config", "fam", "json", "lean", "theorems", "definitions", "nanoda",
@@ -72,6 +76,7 @@ CONFIG_COLS = ["config", "fam", "json", "lean", "theorems", "definitions", "nano
 LEANDIR_COLS = ["dir", "discipline", "module", "lean_files", "named_by_yaml", "declarations"]
 SCOPE_COLS = ["fam", "configs", "paps", "scope_chars", "path", "page"]
 TRACE_COLS = ["stem", "fam", "files", "page"]
+TOPIC_COLS = ["term", "pattern", "fams", "title", "abstract", "scope", "path", "status", "page"]
 EDGE_TABLES = [
     ("edges/family-manuscript.tsv", ["fam", "dir", "pdf", "formalized"]),
     ("edges/family-config.tsv", ["fam", "config"]),
@@ -79,6 +84,7 @@ EDGE_TABLES = [
     ("edges/family-lean.tsv", ["fam", "config", "declaration", "file"]),
     ("edges/citation.tsv", ["citing_dir", "citing_fam", "target_dir", "target_fam", "cross"]),
     ("edges/family-trace.tsv", ["fam", "stem", "files"]),
+    ("edges/family-topic.tsv", ["fam", "topic", "layers"]),
 ]
 
 
@@ -157,7 +163,7 @@ def row(cells):
 
 
 def family_page(r, mans, cfgs, decls, tfiles, challenges, main_results, summary_href,
-                summary_label, companions, abstract):
+                summary_label, companions, abstract, topics):
     L = [f"# {r['fam']} — {r['title']}", ""]
     L.append(row(["", ""]))
     L.append("|---|---|")
@@ -175,6 +181,8 @@ def family_page(r, mans, cfgs, decls, tfiles, challenges, main_results, summary_
     L.append(row(["Verification bundles", r["verification"]]))
     L.append(row(["Cited by / cites", f"{r['cite_in']} in · {r['cite_out']} out"]))
     L.append(row(["Claim shapes", r["shapes"].replace("|", ", ") or "—"]))
+    L.append(row(["Topics", " · ".join(f"[{t}](../topics/{t}.md)" for t in topics)
+                  if topics else "—"]))
     L.append(row(["Companion families", " · ".join(companions) if companions else "—"]))
     L.append(row(["Summary page",
                   f"[{summary_label}]({UP}{summary_href})" if summary_href else "—"]))
@@ -277,6 +285,33 @@ def discipline_page(discipline, rows):
     return "\n".join(L) + "\n"
 
 
+def topic_page(term, rec, fams, page_of):
+    """One page per vocabulary term: the pattern, its yield by layer, and its families."""
+    L = [f"# Topic: {term}", ""]
+    L.append(f"{len(rec['families'])} families · pattern `{rec['pattern']}` · hits by layer: "
+             f"title {len(rec['title'])} · abstract {len(rec['abstract'])} · "
+             f"scope {len(rec['scope'])} · path {len(rec['path'])}")
+    L.append("")
+    if not rec["families"]:
+        L.append("No family matches this pattern. That is a measured statement about the corpus, "
+                 "not a defect: the term was proposed, matched, and returned nothing.")
+        L.append("")
+        return "\n".join(L) + "\n"
+    L.append("A family is listed when the pattern hits its title, its abstract, its scope note, "
+             "or the Lean file paths reached from its comparator configs. The match is a keyword "
+             "floor, not a judgement: read the family page before treating a listing as a claim "
+             "about what the result is about.")
+    L.append("")
+    L.append(row(["Family", "Title", "T", "A", "S", "P"]))
+    L.append("|---|---|---|---|---|---|")
+    for f in sorted(rec["families"]):
+        L.append(row([f"[{f}](../{page_of[f]})", fams[f]["title"],
+                      *["yes" if f in rec[k] else "—" for k in ("title", "abstract",
+                                                                 "scope", "path")]]))
+    L.append("")
+    return "\n".join(L) + "\n"
+
+
 def main():
     order, fams = B.parse_overview()
     fam_paps = B.parse_contents()
@@ -333,6 +368,9 @@ def main():
         mod_decls[posixpath.dirname(f)].add(d)
 
     page_of = {f: f"{disc_slug(v['discipline'])}/{f}-{slug(v['title'])}.md" for f, v in fams.items()}
+    topic_rows = MT.measure()[0]
+    topic_by_term = {r["term"]: r for r in topic_rows}
+    fam2topics = {f: [r["term"] for r in topic_rows if f in r["families"]] for f in fams}
     pages, links = [], []
     family_rows, manuscript_rows, config_rows, lean_dir_rows, scope_rows, trace_rows = [], [], [], [], [], []
     edges = {name: [] for name, _ in EDGE_TABLES}
@@ -401,11 +439,15 @@ def main():
             "summary": "1" if sp else "0",
             "lean_files": len(lean_files_by_fam.get(fam, ())),
             "cite_out": cites_out[fam], "cite_in": cites_in[fam],
+            "topics": len(fam2topics[fam]),
         })
         write(page, family_page(
             family_rows[-1], mans, cfgs, decls, tfiles, challenges, main_results,
-            summary_href, sp.name if sp else "", companions, info["abstract"]))
+            summary_href, sp.name if sp else "", companions, info["abstract"],
+            fam2topics[fam]))
         links.append((page, f"../disciplines/{ds}.md"))
+        for t in fam2topics[fam]:
+            links.append((page, f"../topics/{t}.md"))
         for m in mans:
             links += [(page, f"{UP}{m['pdf']}"),
                       (page, f"{UP}preprints/{m['dir']}/build/"),
@@ -477,12 +519,34 @@ def main():
         for r in by_disc[discipline]:
             links.append((f"disciplines/{ds}.md", f"../{r['page']}"))
 
+    topic_pages = []
+    topic_table_rows = []
+    for r in sorted(topic_rows, key=lambda r: r["term"]):
+        page = f"topics/{r['term']}.md"
+        write(page, topic_page(r["term"], r, fams, page_of))
+        topic_pages.append(page)
+        for f in sorted(r["families"]):
+            links.append((page, f"../{page_of[f]}"))
+        topic_table_rows.append({
+            "term": r["term"], "pattern": r["pattern"], "fams": len(r["families"]),
+            "title": len(r["title"]), "abstract": len(r["abstract"]),
+            "scope": len(r["scope"]), "path": len(r["path"]),
+            "status": "assigned" if r["families"] else "negative", "page": page})
+    for fam in sorted(fams):
+        for t in fam2topics[fam]:
+            r = topic_by_term[t]
+            edges["edges/family-topic.tsv"].append(
+                {"fam": fam, "topic": t, "layers": "".join(
+                    c for c, k in (("T", "title"), ("A", "abstract"), ("S", "scope"),
+                                   ("P", "path")) if fam in r[k])})
+
     write_tsv("families.tsv", FAMILY_COLS, family_rows)
     write_tsv("manuscripts.tsv", MANUSCRIPT_COLS, manuscript_rows)
     write_tsv("configs.tsv", CONFIG_COLS, config_rows)
     write_tsv("lean-dirs.tsv", LEANDIR_COLS, lean_dir_rows)
     write_tsv("scope-notes.tsv", SCOPE_COLS, scope_rows)
     write_tsv("traces.tsv", TRACE_COLS, trace_rows)
+    write_tsv("topics.tsv", TOPIC_COLS, topic_table_rows)
     for name, cols in EDGE_TABLES:
         write_tsv(name, cols, edges[name])
 
@@ -499,13 +563,13 @@ def main():
     }
     L = ["# The family index", ""]
     L.append(f"Generated by `python3 notes/scripts/build_index.py` — {len(pages)} family pages, "
-             f"{len(disc_pages)} discipline pages, this entry point, and the node and edge tables "
-             f"the pages are rendered from. Nothing here is hand-written: regenerate and diff.")
+             f"{len(disc_pages)} discipline pages, {len(topic_pages)} topic pages, this entry "
+             f"point, and the node and edge tables the pages are rendered from. Nothing here is "
+             f"hand-written: regenerate and diff.")
     L.append("")
     L.append("The schema is decided in [notes/index-design.md](../index-design.md): generated "
              "markdown plus TSV in git, family pages with no manuscript pages, `notes/index/` as "
-             "the location, and a curated topic file as the vocabulary. The topic table is "
-             "`math-u41.3` and is not rendered here.")
+             "the location, and the curated vocabulary at `notes/topics.tsv` as the topic source.")
     L.append("")
     L.append("## Disciplines")
     L.append("")
@@ -519,6 +583,23 @@ def main():
                       sum(1 for r in rows if r["scope_note"] == "1"),
                       sum(r["chal"] for r in rows), sum(1 for r in rows if r["trace"]),
                       sum(r["verification"] for r in rows)]))
+    L.append("")
+    L.append("## Topics")
+    L.append("")
+    L.append(f"Topics are a curated keyword vocabulary in [`notes/topics.tsv`](../topics.tsv) "
+             f"(the hand-written source of truth, with the reading verdict for each term in "
+             f"[`notes/topics.md`](../topics.md)), measured over four texts per family: title, "
+             f"abstract, scope note, and the derived Lean file paths. A family carries zero or "
+             f"more topics, so this is a label on top of the discipline partition, not a "
+             f"replacement for it. {len(topic_pages)} terms, "
+             f"{len(edges['edges/family-topic.tsv'])} assignments, "
+             f"{len([r for r in topic_rows if not r['families']])} terms with no hit.")
+    L.append("")
+    L.append(row(["Topic", "Families", "Title", "Abstract", "Scope", "Path"]))
+    L.append("|---|---|---|---|---|---|")
+    for r in sorted(topic_rows, key=lambda r: (-len(r["families"]), r["term"])):
+        L.append(row([f"[{r['term']}](topics/{r['term']}.md)", len(r["families"]),
+                      len(r["title"]), len(r["abstract"]), len(r["scope"]), len(r["path"])]))
     L.append("")
     L.append("## Tables")
     L.append("")
@@ -537,6 +618,9 @@ def main():
          "One row per scope note: configs linked, manuscripts linked, `## Scope` length."),
         ("`traces.tsv`", trace_rows, "trace stem",
          "One row per published reasoning trace and the family README.md attributes it to."),
+        ("`topics.tsv`", topic_table_rows, "term",
+         "One row per curated vocabulary term: its pattern, its yield, its yield by layer, and "
+         "its page. The patterns live in `notes/topics.tsv`; this table is the measured copy."),
         ("`edges/family-manuscript.tsv`", edges["edges/family-manuscript.tsv"], "`fam` + dir",
          "The release's own family→manuscript links."),
         ("`edges/family-config.tsv`", edges["edges/family-config.tsv"], "`fam` + config",
@@ -550,6 +634,9 @@ def main():
          "manuscript→corpus manuscript from release-marked `.bib` hrefs; untyped."),
         ("`edges/family-trace.tsv`", edges["edges/family-trace.tsv"], "`fam` + stem",
          "Family→trace attribution as README.md tabulates it."),
+        ("`edges/family-topic.tsv`", edges["edges/family-topic.tsv"], "`fam` + topic",
+         "Family→topic assignments from the curated vocabulary, with the layers that hit "
+         "(T/A/S/P). Multi-label: a family appears once per topic it carries."),
     ):
         L.append(row([name, len(rows_), key, what]))
     L.append("")
@@ -562,6 +649,11 @@ def main():
         L.append(row([k.replace("_", " "), canon[k], rendered[k]]))
     L.append(row(["family pages", canon["families"], len(pages)]))
     L.append(row(["discipline pages", len(by_disc), len(disc_pages)]))
+    L.append(row(["topic pages", len(topic_rows), len(topic_pages)]))
+    L.append(row(["topic assignments", sum(len(r["families"]) for r in topic_rows),
+                  len(edges["edges/family-topic.tsv"])]))
+    L.append(row(["families with a topic", len({f for r in topic_rows for f in r["families"]}),
+                  sum(1 for r in family_rows if r["topics"])]))
     L.append("")
     L.append("## Not checked")
     L.append("")
@@ -576,7 +668,10 @@ def main():
              "linked to a Lean file.")
     L.append("- Claim shapes are keyword floors carried from `notes/catalog.tsv`, not a census: "
              "families match three or more shapes and others match none.")
-    L.append("- No topic assignment is rendered; `notes/index/topics.tsv` is `math-u41.3`.")
+    L.append("- Topics are a curated keyword floor, not a classification: a family is listed under "
+             "a term because the term's pattern hit its title, abstract, scope note, or derived "
+             "Lean paths. `notes/topics.md` records the incidental matches each term was measured "
+             "to carry, and the path layer is derived, not shipped.")
     L.append("- Link targets were checked for existence at render time, not for content: a link "
              "resolving to a file says the file is there, not that it says what the page claims.")
     L.append("")
@@ -590,10 +685,11 @@ def main():
     chal_diff = sum(1 for r in family_rows if r["chal"] != int(ledger[r["fam"]]["chal"]))
     paps_diff = sum(1 for r in family_rows if r["paps"] != int(ledger[r["fam"]]["paps"]))
     form_diff = sum(1 for r in family_rows if r["paps_form"] != int(ledger[r["fam"]]["paps_form"]))
-    print(f"pages               family {len(pages)}  discipline {len(disc_pages)}  entry 1")
+    print(f"pages               family {len(pages)}  discipline {len(disc_pages)}  "
+          f"topic {len(topic_pages)}  entry 1")
     print(f"node tables         families {len(family_rows)}  manuscripts {len(manuscript_rows)}  "
           f"configs {len(config_rows)}  lean-dirs {len(lean_dir_rows)}  "
-          f"scope-notes {len(scope_rows)}  traces {len(trace_rows)}")
+          f"scope-notes {len(scope_rows)}  traces {len(trace_rows)}  topics {len(topic_table_rows)}")
     print(f"edge tables         " + "  ".join(
         f"{name.split('/')[-1][:-4]} {len(edges[name])}" for name, _ in EDGE_TABLES))
     print(f"links checked       {len(links)}  broken {len(broken)}")
@@ -619,6 +715,18 @@ def main():
     print(f"family-lean         {len(fl)} rows over {len({r['fam'] for r in fl})} families  "
           f"{len({r['file'] for r in fl})} files  "
           f"{len({posixpath.dirname(r['file']) for r in fl})} module dirs")
+    rec = {r["term"]: r for r in tsv(MT.TSV)}
+    drift = [r["term"] for r in topic_table_rows
+             if r["term"] not in rec
+             or any(int(rec[r["term"]][c]) != r[c] for c in
+                    ("fams", "title", "abstract", "scope", "path"))]
+    print(f"topics              {len(topic_rows)} terms  "
+          f"{len(edges['edges/family-topic.tsv'])} assignments over "
+          f"{len({r['fam'] for r in edges['edges/family-topic.tsv']})} families  "
+          f"negative {len([r for r in topic_rows if not r['families']])}  "
+          f"max {max(topic_rows, key=lambda r: len(r['families']))['term']} "
+          f"{max(len(r['families']) for r in topic_rows)}  "
+          f"drift vs notes/topics.tsv {len(drift)} {drift[:5]}")
     print(f"configs             {len(config_rows)}  json {sum(1 for r in config_rows if r['json'] == '1')}  "
           f"lean {sum(1 for r in config_rows if r['lean'] == '1')}  "
           f"with a declaration {sum(1 for r in config_rows if r['decl_count'] > 0)}  "
@@ -638,8 +746,8 @@ def main():
     print(f"manuscript links    main file {sum(1 for r in manuscript_rows if r['main_tex'])} of "
           f"{len(manuscript_rows)}  build/ {sum(1 for r in manuscript_rows if r['build'] == '1')}  "
           f"README.md {sum(1 for r in manuscript_rows if r['readme'] == '1')}")
-    print(f"written             {len(pages) + len(disc_pages) + 1} pages + "
-          f"{6 + len(EDGE_TABLES)} tables -> {IDX.relative_to(ROOT)}/")
+    print(f"written             {len(pages) + len(disc_pages) + len(topic_pages) + 1} pages + "
+          f"{7 + len(EDGE_TABLES)} tables -> {IDX.relative_to(ROOT)}/")
 
 
 main()

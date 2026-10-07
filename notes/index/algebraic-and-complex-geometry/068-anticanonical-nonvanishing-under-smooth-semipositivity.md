@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 14 in · 14 out |
 | Claim shapes | — |
+| Topics | [algebraic-geometry](../topics/algebraic-geometry.md) |
 | Companion families | — |
 | Summary page | — |
 

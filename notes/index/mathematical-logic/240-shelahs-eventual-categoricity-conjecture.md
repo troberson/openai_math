@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | bound, uniform, conditional |
+| Topics | [algebraic-topology](../topics/algebraic-topology.md) · [logic](../topics/logic.md) |
 | Companion families | — |
 | Summary page | — |
 

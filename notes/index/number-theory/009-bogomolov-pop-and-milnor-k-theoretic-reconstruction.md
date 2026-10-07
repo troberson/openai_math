@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | classification |
+| Topics | [arithmetic-geometry](../topics/arithmetic-geometry.md) · [number-fields](../topics/number-fields.md) · [galois-theory](../topics/galois-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

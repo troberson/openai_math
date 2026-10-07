@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | bound |
+| Topics | [operator-algebras](../topics/operator-algebras.md) · [quantum-information](../topics/quantum-information.md) |
 | Companion families | — |
 | Summary page | — |
 

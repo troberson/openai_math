@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | density, partial |
+| Topics | [convex-geometry](../topics/convex-geometry.md) · [discrete-geometry](../topics/discrete-geometry.md) |
 | Companion families | — |
 | Summary page | — |
 

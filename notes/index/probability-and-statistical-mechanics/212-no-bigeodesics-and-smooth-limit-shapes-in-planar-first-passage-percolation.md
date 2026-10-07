@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | bound, uniform |
+| Topics | [riemannian-geometry](../topics/riemannian-geometry.md) · [planar-maps-and-lattice-models](../topics/planar-maps-and-lattice-models.md) · [probability](../topics/probability.md) · [percolation](../topics/percolation.md) |
 | Companion families | — |
 | Summary page | — |
 

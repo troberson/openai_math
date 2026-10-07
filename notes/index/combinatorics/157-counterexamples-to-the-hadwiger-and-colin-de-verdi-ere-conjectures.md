@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 4 in · 4 out |
 | Claim shapes | counterexample, bound, partial |
+| Topics | [graph-theory](../topics/graph-theory.md) · [graph-coloring](../topics/graph-coloring.md) |
 | Companion families | — |
 | Summary page | — |
 

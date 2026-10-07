@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | counterexample, uniform |
+| Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [abelian-varieties](../topics/abelian-varieties.md) · [category-theory](../topics/category-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

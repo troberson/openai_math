@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 2 in · 2 out |
 | Claim shapes | bound, density |
+| Topics | [statistical-mechanics](../topics/statistical-mechanics.md) · [disordered-systems](../topics/disordered-systems.md) |
 | Companion families | — |
 | Summary page | — |
 

@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 2 out |
 | Claim shapes | resolution |
+| Topics | [group-theory](../topics/group-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

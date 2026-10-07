@@ -11,6 +11,7 @@
 | Verification bundles | 1 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | counterexample |
+| Topics | [complex-geometry](../topics/complex-geometry.md) · [symplectic-geometry](../topics/symplectic-geometry.md) |
 | Companion families | — |
 | Summary page | — |
 

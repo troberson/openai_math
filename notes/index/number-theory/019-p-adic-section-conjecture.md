@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 1 out |
 | Claim shapes | — |
+| Topics | [algebraic-topology](../topics/algebraic-topology.md) · [curves](../topics/curves.md) · [diophantine-equations](../topics/diophantine-equations.md) · [arithmetic-geometry](../topics/arithmetic-geometry.md) · [elliptic-curves](../topics/elliptic-curves.md) · [galois-theory](../topics/galois-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

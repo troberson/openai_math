@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 5 in · 5 out |
 | Claim shapes | bound, density |
+| Topics | [mathematical-physics](../topics/mathematical-physics.md) · [statistical-mechanics](../topics/statistical-mechanics.md) · [quantum-theory](../topics/quantum-theory.md) · [condensed-matter](../topics/condensed-matter.md) · [quantum-information](../topics/quantum-information.md) |
 | Companion families | — |
 | Summary page | — |
 

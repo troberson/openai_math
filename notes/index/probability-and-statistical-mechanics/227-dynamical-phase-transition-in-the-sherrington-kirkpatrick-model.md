@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 11 in · 11 out |
 | Claim shapes | partial |
+| Topics | [algebraic-topology](../topics/algebraic-topology.md) · [statistical-mechanics](../topics/statistical-mechanics.md) · [disordered-systems](../topics/disordered-systems.md) · [spectral-theory](../topics/spectral-theory.md) · [expanders-and-spectral-graphs](../topics/expanders-and-spectral-graphs.md) · [spin-glasses](../topics/spin-glasses.md) |
 | Companion families | — |
 | Summary page | — |
 

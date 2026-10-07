@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | bound, uniform |
+| Topics | [graph-theory](../topics/graph-theory.md) · [expanders-and-spectral-graphs](../topics/expanders-and-spectral-graphs.md) |
 | Companion families | — |
 | Summary page | — |
 

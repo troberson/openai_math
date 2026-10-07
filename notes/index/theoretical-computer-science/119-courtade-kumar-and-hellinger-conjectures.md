@@ -11,6 +11,7 @@
 | Verification bundles | 1 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution, uniform |
+| Topics | [quantum-information](../topics/quantum-information.md) · [information-theory](../topics/information-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

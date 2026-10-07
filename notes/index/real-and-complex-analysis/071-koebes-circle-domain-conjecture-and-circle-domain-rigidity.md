@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | resolution, bound |
+| Topics | [complex-analysis](../topics/complex-analysis.md) |
 | Companion families | — |
 | Summary page | — |
 

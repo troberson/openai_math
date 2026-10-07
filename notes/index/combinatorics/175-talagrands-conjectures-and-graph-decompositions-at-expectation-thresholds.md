@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | resolution, bound, partial |
+| Topics | [graph-theory](../topics/graph-theory.md) · [probabilistic-combinatorics](../topics/probabilistic-combinatorics.md) |
 | Companion families | — |
 | Summary page | — |
 

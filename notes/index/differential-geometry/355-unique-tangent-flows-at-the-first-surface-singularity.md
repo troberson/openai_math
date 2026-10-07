@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | bound |
+| Topics | [surfaces](../topics/surfaces.md) · [minimal-surfaces](../topics/minimal-surfaces.md) |
 | Companion families | — |
 | Summary page | — |
 

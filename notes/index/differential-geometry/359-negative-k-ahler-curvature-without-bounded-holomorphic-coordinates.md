@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 2 in · 2 out |
 | Claim shapes | bound, partial |
+| Topics | [riemannian-geometry](../topics/riemannian-geometry.md) · [complex-geometry](../topics/complex-geometry.md) · [complex-analysis](../topics/complex-analysis.md) |
 | Companion families | — |
 | Summary page | — |
 

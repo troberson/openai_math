@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | bound, density |
+| Topics | [statistical-mechanics](../topics/statistical-mechanics.md) · [measure-theory](../topics/measure-theory.md) · [disordered-systems](../topics/disordered-systems.md) · [condensed-matter](../topics/condensed-matter.md) |
 | Companion families | — |
 | Summary page | — |
 

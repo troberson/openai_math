@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | — |
+| Topics | [manifolds](../topics/manifolds.md) · [geometric-topology](../topics/geometric-topology.md) · [knot-theory](../topics/knot-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

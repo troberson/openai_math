@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 4 in · 5 out |
 | Claim shapes | resolution, classification, uniform |
+| Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [surfaces](../topics/surfaces.md) · [abelian-varieties](../topics/abelian-varieties.md) |
 | Companion families | — |
 | Summary page | [032-hodge-and-kuga-satake-results-for-projective-k3-surfaces.md](../../../notes/summaries/algebraic-and-complex-geometry/032-hodge-and-kuga-satake-results-for-projective-k3-surfaces.md) |
 

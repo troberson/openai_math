@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 0 out |
 | Claim shapes | partial |
+| Topics | [complexity-theory](../topics/complexity-theory.md) · [additive-combinatorics](../topics/additive-combinatorics.md) |
 | Companion families | — |
 | Summary page | [159-quasipolynomial-bounds-for-arithmetic-progressions.md](../../../notes/summaries/combinatorics/159-quasipolynomial-bounds-for-arithmetic-progressions.md) |
 

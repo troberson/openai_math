@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 2 in · 2 out |
 | Claim shapes | resolution, bound, uniform |
+| Topics | [partial-differential-equations](../topics/partial-differential-equations.md) |
 | Companion families | — |
 | Summary page | — |
 

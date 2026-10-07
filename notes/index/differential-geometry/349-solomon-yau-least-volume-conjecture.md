@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 0 out |
 | Claim shapes | resolution, uniform |
+| Topics | [riemannian-geometry](../topics/riemannian-geometry.md) · [minimal-surfaces](../topics/minimal-surfaces.md) |
 | Companion families | — |
 | Summary page | — |
 

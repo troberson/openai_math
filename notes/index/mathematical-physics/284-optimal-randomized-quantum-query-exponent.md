@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | bound, partial |
+| Topics | [quantum-theory](../topics/quantum-theory.md) · [quantum-computing](../topics/quantum-computing.md) |
 | Companion families | — |
 | Summary page | — |
 

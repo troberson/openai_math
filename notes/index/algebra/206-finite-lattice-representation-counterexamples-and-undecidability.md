@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | undecidability |
+| Topics | [graph-theory](../topics/graph-theory.md) · [group-theory](../topics/group-theory.md) · [algorithms](../topics/algorithms.md) · [computability](../topics/computability.md) · [noncommutative-algebra](../topics/noncommutative-algebra.md) |
 | Companion families | — |
 | Summary page | — |
 

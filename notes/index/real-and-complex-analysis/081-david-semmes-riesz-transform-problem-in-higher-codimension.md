@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution, bound, uniform |
+| Topics | [harmonic-analysis](../topics/harmonic-analysis.md) · [measure-theory](../topics/measure-theory.md) · [geometric-measure-theory](../topics/geometric-measure-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

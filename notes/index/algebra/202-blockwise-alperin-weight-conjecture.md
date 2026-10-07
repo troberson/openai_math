@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 0 out |
 | Claim shapes | resolution, uniform |
+| Topics | [group-theory](../topics/group-theory.md) · [modular-representation](../topics/modular-representation.md) |
 | Companion families | — |
 | Summary page | — |
 

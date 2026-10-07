@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 3 in · 3 out |
 | Claim shapes | bound |
+| Topics | [graph-theory](../topics/graph-theory.md) · [complexity-theory](../topics/complexity-theory.md) · [metric-geometry](../topics/metric-geometry.md) · [algorithms](../topics/algorithms.md) · [computability](../topics/computability.md) · [spectral-theory](../topics/spectral-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

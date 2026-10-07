@@ -11,6 +11,7 @@
 | Verification bundles | 4 |
 | Cited by / cites | 6 in · 6 out |
 | Claim shapes | resolution, density, uniform |
+| Topics | [mathematical-physics](../topics/mathematical-physics.md) · [harmonic-analysis](../topics/harmonic-analysis.md) · [discrete-geometry](../topics/discrete-geometry.md) · [potential-theory](../topics/potential-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

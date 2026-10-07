@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution, uniform |
+| Topics | [graph-theory](../topics/graph-theory.md) · [algorithms](../topics/algorithms.md) · [combinatorial-optimization](../topics/combinatorial-optimization.md) |
 | Companion families | — |
 | Summary page | — |
 

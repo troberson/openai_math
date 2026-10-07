@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 4 in · 4 out |
 | Claim shapes | — |
+| Topics | [complexity-theory](../topics/complexity-theory.md) · [algorithms](../topics/algorithms.md) · [computability](../topics/computability.md) · [game-theory](../topics/game-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

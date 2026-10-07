@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 0 out |
 | Claim shapes | — |
+| Topics | [algebraic-topology](../topics/algebraic-topology.md) · [surfaces](../topics/surfaces.md) · [differential-geometry](../topics/differential-geometry.md) |
 | Companion families | — |
 | Summary page | — |
 

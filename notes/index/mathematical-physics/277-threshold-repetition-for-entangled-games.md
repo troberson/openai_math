@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | uniform |
+| Topics | [quantum-information](../topics/quantum-information.md) · [game-theory](../topics/game-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

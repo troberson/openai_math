@@ -11,6 +11,7 @@
 | Verification bundles | 2 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution, bound, uniform |
+| Topics | [mathematical-physics](../topics/mathematical-physics.md) · [statistical-mechanics](../topics/statistical-mechanics.md) · [disordered-systems](../topics/disordered-systems.md) · [spectral-theory](../topics/spectral-theory.md) · [condensed-matter](../topics/condensed-matter.md) · [expanders-and-spectral-graphs](../topics/expanders-and-spectral-graphs.md) |
 | Companion families | — |
 | Summary page | — |
 

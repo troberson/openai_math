@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution, bound |
+| Topics | [partial-differential-equations](../topics/partial-differential-equations.md) · [calculus-of-variations](../topics/calculus-of-variations.md) |
 | Companion families | — |
 | Summary page | — |
 

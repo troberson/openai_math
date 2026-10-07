@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution |
+| Topics | [graph-theory](../topics/graph-theory.md) · [dynamical-systems](../topics/dynamical-systems.md) · [lie-theory](../topics/lie-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

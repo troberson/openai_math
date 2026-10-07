@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 3 in · 4 out |
 | Claim shapes | bound, uniform |
+| Topics | [conformal-universality](../topics/conformal-universality.md) · [probability](../topics/probability.md) |
 | Companion families | — |
 | Summary page | — |
 

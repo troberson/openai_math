@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | bound, uniform |
+| Topics | [complexity-theory](../topics/complexity-theory.md) · [quantum-theory](../topics/quantum-theory.md) · [quantum-information](../topics/quantum-information.md) · [quantum-computing](../topics/quantum-computing.md) |
 | Companion families | — |
 | Summary page | — |
 

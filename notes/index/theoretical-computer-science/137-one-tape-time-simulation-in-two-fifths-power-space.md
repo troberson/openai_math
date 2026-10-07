@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | bound, partial |
+| Topics | [computability](../topics/computability.md) |
 | Companion families | — |
 | Summary page | — |
 

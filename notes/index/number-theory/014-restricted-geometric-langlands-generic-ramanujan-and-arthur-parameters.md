@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 2 in · 2 out |
 | Claim shapes | classification, partial, uniform, conditional |
+| Topics | [group-theory](../topics/group-theory.md) · [curves](../topics/curves.md) · [expanders-and-spectral-graphs](../topics/expanders-and-spectral-graphs.md) · [number-fields](../topics/number-fields.md) · [lie-theory](../topics/lie-theory.md) · [modularity](../topics/modularity.md) |
 | Companion families | — |
 | Summary page | — |
 

@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 2 out |
 | Claim shapes | bound, classification, uniform |
+| Topics | [group-theory](../topics/group-theory.md) · [number-fields](../topics/number-fields.md) · [modular-representation](../topics/modular-representation.md) |
 | Companion families | — |
 | Summary page | — |
 

@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution |
+| Topics | [curves](../topics/curves.md) · [modularity](../topics/modularity.md) · [elliptic-curves](../topics/elliptic-curves.md) |
 | Companion families | — |
 | Summary page | — |
 

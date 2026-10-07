@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 2 in · 2 out |
 | Claim shapes | resolution |
+| Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [manifolds](../topics/manifolds.md) · [complex-geometry](../topics/complex-geometry.md) · [convex-geometry](../topics/convex-geometry.md) · [symplectic-geometry](../topics/symplectic-geometry.md) |
 | Companion families | — |
 | Summary page | — |
 

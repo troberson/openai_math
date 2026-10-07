@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 4 in · 4 out |
 | Claim shapes | bound, classification, uniform |
+| Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [curves](../topics/curves.md) · [partial-differential-equations](../topics/partial-differential-equations.md) · [surfaces](../topics/surfaces.md) · [abelian-varieties](../topics/abelian-varieties.md) |
 | Companion families | — |
 | Summary page | — |
 

@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 0 out |
 | Claim shapes | counterexample |
+| Topics | [algebraic-topology](../topics/algebraic-topology.md) · [manifolds](../topics/manifolds.md) · [riemannian-geometry](../topics/riemannian-geometry.md) · [group-theory](../topics/group-theory.md) · [geometric-topology](../topics/geometric-topology.md) |
 | Companion families | — |
 | Summary page | — |
 

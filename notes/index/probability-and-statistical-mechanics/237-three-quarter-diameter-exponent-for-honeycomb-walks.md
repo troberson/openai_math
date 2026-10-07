@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | uniform |
+| Topics | [statistical-mechanics](../topics/statistical-mechanics.md) · [planar-maps-and-lattice-models](../topics/planar-maps-and-lattice-models.md) · [enumerative-combinatorics](../topics/enumerative-combinatorics.md) |
 | Companion families | — |
 | Summary page | — |
 

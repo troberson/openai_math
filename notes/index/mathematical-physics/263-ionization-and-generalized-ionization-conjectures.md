@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 4 in · 3 out |
 | Claim shapes | bound, partial |
+| Topics | [mathematical-physics](../topics/mathematical-physics.md) |
 | Companion families | — |
 | Summary page | — |
 

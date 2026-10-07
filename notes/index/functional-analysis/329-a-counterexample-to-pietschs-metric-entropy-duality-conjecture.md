@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | counterexample |
+| Topics | [convex-geometry](../topics/convex-geometry.md) · [banach-spaces](../topics/banach-spaces.md) · [information-theory](../topics/information-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

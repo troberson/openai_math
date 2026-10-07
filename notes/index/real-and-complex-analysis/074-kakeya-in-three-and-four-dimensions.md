@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 3 in · 2 out |
 | Claim shapes | resolution, uniform |
+| Topics | [harmonic-analysis](../topics/harmonic-analysis.md) · [fractal-geometry](../topics/fractal-geometry.md) |
 | Companion families | — |
 | Summary page | — |
 

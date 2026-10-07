@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | counterexample, bound, density |
+| Topics | [metric-geometry](../topics/metric-geometry.md) · [extremal-combinatorics](../topics/extremal-combinatorics.md) |
 | Companion families | — |
 | Summary page | — |
 

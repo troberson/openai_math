@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | counterexample, bound |
+| Topics | [algebraic-topology](../topics/algebraic-topology.md) · [manifolds](../topics/manifolds.md) · [spectral-theory](../topics/spectral-theory.md) · [dynamical-systems](../topics/dynamical-systems.md) |
 | Companion families | — |
 | Summary page | — |
 

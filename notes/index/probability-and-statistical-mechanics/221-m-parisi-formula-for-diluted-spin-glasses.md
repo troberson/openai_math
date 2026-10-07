@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | — |
+| Topics | [statistical-mechanics](../topics/statistical-mechanics.md) · [disordered-systems](../topics/disordered-systems.md) · [probabilistic-combinatorics](../topics/probabilistic-combinatorics.md) · [spin-glasses](../topics/spin-glasses.md) |
 | Companion families | — |
 | Summary page | [221-mezard-parisi-formula-for-diluted-spin-glasses.md](../../../notes/summaries/probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md) |
 

@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution, bound, uniform |
+| Topics | [dynamical-systems](../topics/dynamical-systems.md) · [hilbert-problems](../topics/hilbert-problems.md) |
 | Companion families | — |
 | Summary page | — |
 

@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | resolution, bound, uniform |
+| Topics | [algebraic-topology](../topics/algebraic-topology.md) · [complexity-theory](../topics/complexity-theory.md) · [disordered-systems](../topics/disordered-systems.md) · [quantum-theory](../topics/quantum-theory.md) · [quantum-information](../topics/quantum-information.md) · [quantum-computing](../topics/quantum-computing.md) |
 | Companion families | — |
 | Summary page | — |
 

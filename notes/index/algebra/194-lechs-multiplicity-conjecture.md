@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution, classification, uniform |
+| Topics | [algebraic-topology](../topics/algebraic-topology.md) · [commutative-algebra](../topics/commutative-algebra.md) |
 | Companion families | — |
 | Summary page | — |
 

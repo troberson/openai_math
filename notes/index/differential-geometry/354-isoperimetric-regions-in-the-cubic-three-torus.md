@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | — |
+| Topics | [riemannian-geometry](../topics/riemannian-geometry.md) · [geometric-measure-theory](../topics/geometric-measure-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | — |
+| Topics | [statistical-mechanics](../topics/statistical-mechanics.md) · [disordered-systems](../topics/disordered-systems.md) · [spectral-theory](../topics/spectral-theory.md) · [probability](../topics/probability.md) · [spin-glasses](../topics/spin-glasses.md) · [optimal-transport](../topics/optimal-transport.md) |
 | Companion families | — |
 | Summary page | — |
 

@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution, bound |
+| Topics | [manifolds](../topics/manifolds.md) · [fractal-geometry](../topics/fractal-geometry.md) · [geometric-topology](../topics/geometric-topology.md) · [lie-theory](../topics/lie-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

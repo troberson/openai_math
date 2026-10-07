@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 1 out |
 | Claim shapes | resolution, uniform |
+| Topics | [operator-algebras](../topics/operator-algebras.md) · [functional-analysis](../topics/functional-analysis.md) |
 | Companion families | — |
 | Summary page | — |
 

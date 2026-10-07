@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution, density, partial, uniform |
+| Topics | [graph-theory](../topics/graph-theory.md) · [probabilistic-combinatorics](../topics/probabilistic-combinatorics.md) · [random-graphs](../topics/random-graphs.md) |
 | Companion families | — |
 | Summary page | — |
 

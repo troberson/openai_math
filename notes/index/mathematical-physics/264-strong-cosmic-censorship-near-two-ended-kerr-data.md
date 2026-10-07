@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 6 in · 6 out |
 | Claim shapes | — |
+| Topics | [mathematical-physics](../topics/mathematical-physics.md) · [extremal-combinatorics](../topics/extremal-combinatorics.md) · [general-relativity](../topics/general-relativity.md) |
 | Companion families | — |
 | Summary page | — |
 

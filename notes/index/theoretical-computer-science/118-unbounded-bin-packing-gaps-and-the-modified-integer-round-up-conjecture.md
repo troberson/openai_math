@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution, counterexample, partial |
+| Topics | [algorithms](../topics/algorithms.md) · [computability](../topics/computability.md) · [discrete-geometry](../topics/discrete-geometry.md) · [combinatorial-optimization](../topics/combinatorial-optimization.md) |
 | Companion families | — |
 | Summary page | — |
 

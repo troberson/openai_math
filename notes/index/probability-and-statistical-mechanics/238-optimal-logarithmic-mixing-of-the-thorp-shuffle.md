@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 10 in · 10 out |
 | Claim shapes | — |
+| Topics | [complexity-theory](../topics/complexity-theory.md) · [harmonic-analysis](../topics/harmonic-analysis.md) · [symplectic-geometry](../topics/symplectic-geometry.md) · [representation-theory](../topics/representation-theory.md) · [combinatorial-optimization](../topics/combinatorial-optimization.md) |
 | Companion families | — |
 | Summary page | — |
 

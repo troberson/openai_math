@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | bound |
+| Topics | [graph-theory](../topics/graph-theory.md) · [algebraic-topology](../topics/algebraic-topology.md) · [manifolds](../topics/manifolds.md) · [riemannian-geometry](../topics/riemannian-geometry.md) · [group-theory](../topics/group-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

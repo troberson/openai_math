@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | counterexample |
+| Topics | [algebraic-topology](../topics/algebraic-topology.md) · [algebraic-geometry](../topics/algebraic-geometry.md) · [curves](../topics/curves.md) |
 | Companion families | — |
 | Summary page | — |
 

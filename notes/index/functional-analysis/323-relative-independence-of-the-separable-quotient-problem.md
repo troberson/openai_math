@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | counterexample |
+| Topics | [measure-theory](../topics/measure-theory.md) · [banach-spaces](../topics/banach-spaces.md) · [logic](../topics/logic.md) |
 | Companion families | — |
 | Summary page | — |
 

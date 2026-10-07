@@ -11,6 +11,7 @@
 | Verification bundles | 1 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | — |
+| Topics | [partial-differential-equations](../topics/partial-differential-equations.md) · [quantum-theory](../topics/quantum-theory.md) · [fractal-geometry](../topics/fractal-geometry.md) |
 | Companion families | — |
 | Summary page | — |
 

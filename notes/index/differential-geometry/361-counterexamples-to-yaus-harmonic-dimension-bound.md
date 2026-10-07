@@ -11,6 +11,7 @@
 | Verification bundles | 1 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | counterexample, bound, partial, uniform |
+| Topics | [manifolds](../topics/manifolds.md) · [riemannian-geometry](../topics/riemannian-geometry.md) |
 | Companion families | — |
 | Summary page | — |
 

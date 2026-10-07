@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution, bound, uniform |
+| Topics | [algebraic-topology](../topics/algebraic-topology.md) · [metric-geometry](../topics/metric-geometry.md) · [functional-analysis](../topics/functional-analysis.md) · [banach-spaces](../topics/banach-spaces.md) |
 | Companion families | — |
 | Summary page | — |
 

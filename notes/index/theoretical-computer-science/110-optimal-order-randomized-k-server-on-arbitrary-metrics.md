@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | bound, uniform |
+| Topics | [metric-geometry](../topics/metric-geometry.md) · [algorithms](../topics/algorithms.md) · [combinatorial-optimization](../topics/combinatorial-optimization.md) |
 | Companion families | — |
 | Summary page | — |
 

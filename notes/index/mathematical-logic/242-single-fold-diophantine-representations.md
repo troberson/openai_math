@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution, undecidability |
+| Topics | [computability](../topics/computability.md) · [diophantine-equations](../topics/diophantine-equations.md) |
 | Companion families | — |
 | Summary page | — |
 

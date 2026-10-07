@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution, uniform |
+| Topics | [harmonic-analysis](../topics/harmonic-analysis.md) · [analytic-number-theory](../topics/analytic-number-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

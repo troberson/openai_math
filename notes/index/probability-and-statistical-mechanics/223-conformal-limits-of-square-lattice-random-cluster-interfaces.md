@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 4 in · 5 out |
 | Claim shapes | bound |
+| Topics | [planar-maps-and-lattice-models](../topics/planar-maps-and-lattice-models.md) · [conformal-universality](../topics/conformal-universality.md) |
 | Companion families | — |
 | Summary page | — |
 

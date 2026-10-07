@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 3 in · 1 out |
 | Claim shapes | density, uniform |
+| Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [curves](../topics/curves.md) · [arithmetic-geometry](../topics/arithmetic-geometry.md) · [elliptic-curves](../topics/elliptic-curves.md) |
 | Companion families | [006](../number-theory/006-goldfelds-conjecture.md) |
 | Summary page | — |
 

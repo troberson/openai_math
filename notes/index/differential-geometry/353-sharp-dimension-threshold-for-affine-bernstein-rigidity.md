@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | bound, classification, uniform |
+| Topics | [graph-theory](../topics/graph-theory.md) · [riemannian-geometry](../topics/riemannian-geometry.md) |
 | Companion families | — |
 | Summary page | — |
 

@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution, uniform |
+| Topics | [representation-theory](../topics/representation-theory.md) · [enumerative-combinatorics](../topics/enumerative-combinatorics.md) |
 | Companion families | — |
 | Summary page | — |
 

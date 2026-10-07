@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution, bound, partial, uniform |
+| Topics | [graph-theory](../topics/graph-theory.md) · [discrete-geometry](../topics/discrete-geometry.md) · [primes](../topics/primes.md) |
 | Companion families | — |
 | Summary page | — |
 

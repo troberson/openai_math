@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | bound |
+| Topics | [graph-theory](../topics/graph-theory.md) · [algorithms](../topics/algorithms.md) |
 | Companion families | — |
 | Summary page | — |
 

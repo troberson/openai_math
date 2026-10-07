@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 18 in · 18 out |
 | Claim shapes | bound |
+| Topics | [mathematical-physics](../topics/mathematical-physics.md) · [general-relativity](../topics/general-relativity.md) |
 | Companion families | — |
 | Summary page | — |
 

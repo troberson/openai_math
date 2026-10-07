@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 12 in · 9 out |
 | Claim shapes | bound |
+| Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [manifolds](../topics/manifolds.md) · [operator-algebras](../topics/operator-algebras.md) · [complex-geometry](../topics/complex-geometry.md) |
 | Companion families | — |
 | Summary page | — |
 

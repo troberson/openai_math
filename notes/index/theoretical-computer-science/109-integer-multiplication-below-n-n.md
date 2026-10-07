@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | resolution, counterexample |
+| Topics | [algorithms](../topics/algorithms.md) · [computability](../topics/computability.md) |
 | Companion families | — |
 | Summary page | — |
 

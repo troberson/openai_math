@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | counterexample |
+| Topics | [logic](../topics/logic.md) · [arithmetic-geometry](../topics/arithmetic-geometry.md) · [game-theory](../topics/game-theory.md) · [matroids](../topics/matroids.md) |
 | Companion families | — |
 | Summary page | — |
 

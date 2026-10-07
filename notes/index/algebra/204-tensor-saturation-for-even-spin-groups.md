@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution |
+| Topics | [representation-theory](../topics/representation-theory.md) · [lie-theory](../topics/lie-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | bound, uniform |
+| Topics | [partial-differential-equations](../topics/partial-differential-equations.md) · [potential-theory](../topics/potential-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

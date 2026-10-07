@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | resolution, bound, uniform |
+| Topics | [dynamical-systems](../topics/dynamical-systems.md) · [probabilistic-combinatorics](../topics/probabilistic-combinatorics.md) |
 | Companion families | — |
 | Summary page | — |
 

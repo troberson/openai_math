@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | uniform |
+| Topics | [diophantine-equations](../topics/diophantine-equations.md) |
 | Companion families | — |
 | Summary page | [017-the-irrationality-exponent-of-pi-is-2.md](../../../notes/summaries/number-theory/017-the-irrationality-exponent-of-pi-is-2.md) |
 

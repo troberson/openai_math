@@ -11,6 +11,7 @@
 | Verification bundles | 1 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution |
+| Topics | [combinatorial-games](../topics/combinatorial-games.md) |
 | Companion families | — |
 | Summary page | — |
 

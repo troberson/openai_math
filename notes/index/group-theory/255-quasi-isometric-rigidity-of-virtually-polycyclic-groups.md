@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution, uniform |
+| Topics | [group-theory](../topics/group-theory.md) · [metric-geometry](../topics/metric-geometry.md) · [lie-theory](../topics/lie-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

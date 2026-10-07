@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | density, uniform |
+| Topics | [measure-theory](../topics/measure-theory.md) · [ergodic-theory](../topics/ergodic-theory.md) · [optimal-transport](../topics/optimal-transport.md) |
 | Companion families | — |
 | Summary page | — |
 

@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | counterexample, classification |
+| Topics | [operator-algebras](../topics/operator-algebras.md) · [functional-analysis](../topics/functional-analysis.md) · [logic](../topics/logic.md) · [representation-theory](../topics/representation-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

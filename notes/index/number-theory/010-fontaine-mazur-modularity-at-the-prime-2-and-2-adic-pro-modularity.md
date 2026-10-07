@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 3 in · 3 out |
 | Claim shapes | resolution |
+| Topics | [primes](../topics/primes.md) · [representation-theory](../topics/representation-theory.md) · [modularity](../topics/modularity.md) |
 | Companion families | — |
 | Summary page | — |
 

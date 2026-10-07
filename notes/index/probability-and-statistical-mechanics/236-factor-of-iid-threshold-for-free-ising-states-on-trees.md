@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | resolution |
+| Topics | [statistical-mechanics](../topics/statistical-mechanics.md) · [condensed-matter](../topics/condensed-matter.md) · [probability](../topics/probability.md) |
 | Companion families | — |
 | Summary page | — |
 

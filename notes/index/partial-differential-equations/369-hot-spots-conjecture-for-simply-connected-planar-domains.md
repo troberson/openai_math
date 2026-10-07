@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | bound |
+| Topics | [partial-differential-equations](../topics/partial-differential-equations.md) · [spectral-theory](../topics/spectral-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | uniform |
+| Topics | [graph-theory](../topics/graph-theory.md) · [computability](../topics/computability.md) · [graph-coloring](../topics/graph-coloring.md) |
 | Companion families | — |
 | Summary page | — |
 

@@ -11,6 +11,7 @@
 | Verification bundles | 2 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | — |
+| Topics | [statistical-mechanics](../topics/statistical-mechanics.md) · [condensed-matter](../topics/condensed-matter.md) · [potential-theory](../topics/potential-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

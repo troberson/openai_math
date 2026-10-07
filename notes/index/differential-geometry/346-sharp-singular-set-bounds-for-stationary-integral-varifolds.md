@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 2 out |
 | Claim shapes | bound, partial |
+| Topics | [partial-differential-equations](../topics/partial-differential-equations.md) · [fractal-geometry](../topics/fractal-geometry.md) · [geometric-measure-theory](../topics/geometric-measure-theory.md) · [minimal-surfaces](../topics/minimal-surfaces.md) |
 | Companion families | — |
 | Summary page | — |
 

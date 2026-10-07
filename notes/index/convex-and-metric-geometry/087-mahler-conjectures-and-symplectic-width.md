@@ -11,6 +11,7 @@
 | Verification bundles | 1 |
 | Cited by / cites | 3 in · 4 out |
 | Claim shapes | resolution, bound, classification |
+| Topics | [metric-geometry](../topics/metric-geometry.md) · [complex-geometry](../topics/complex-geometry.md) · [convex-geometry](../topics/convex-geometry.md) · [symplectic-geometry](../topics/symplectic-geometry.md) · [potential-theory](../topics/potential-theory.md) |
 | Companion families | — |
 | Summary page | [087-the-mahler-conjectures-and-symplectic-width.md](../../../notes/summaries/convex-and-metric-geometry/087-the-mahler-conjectures-and-symplectic-width.md) |
 

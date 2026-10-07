@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | classification |
+| Topics | [riemannian-geometry](../topics/riemannian-geometry.md) · [differential-geometry](../topics/differential-geometry.md) |
 | Companion families | — |
 | Summary page | — |
 

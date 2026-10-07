@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 0 out |
 | Claim shapes | resolution, uniform |
+| Topics | [symplectic-geometry](../topics/symplectic-geometry.md) · [potential-theory](../topics/potential-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

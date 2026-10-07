@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | — |
+| Topics | [algebraic-topology](../topics/algebraic-topology.md) · [manifolds](../topics/manifolds.md) · [riemannian-geometry](../topics/riemannian-geometry.md) · [complex-geometry](../topics/complex-geometry.md) · [symplectic-geometry](../topics/symplectic-geometry.md) |
 | Companion families | — |
 | Summary page | — |
 

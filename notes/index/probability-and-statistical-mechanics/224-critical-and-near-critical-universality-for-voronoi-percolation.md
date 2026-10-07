@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | bound |
+| Topics | [discrete-geometry](../topics/discrete-geometry.md) · [conformal-universality](../topics/conformal-universality.md) · [percolation](../topics/percolation.md) |
 | Companion families | — |
 | Summary page | — |
 

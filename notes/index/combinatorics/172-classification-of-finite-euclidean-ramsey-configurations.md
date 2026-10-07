@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution, counterexample, classification |
+| Topics | [algebraic-topology](../topics/algebraic-topology.md) · [graph-coloring](../topics/graph-coloring.md) · [ramsey-theory](../topics/ramsey-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

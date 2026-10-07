@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | bound, partial, uniform |
+| Topics | [manifolds](../topics/manifolds.md) · [riemannian-geometry](../topics/riemannian-geometry.md) · [metric-geometry](../topics/metric-geometry.md) · [differential-geometry](../topics/differential-geometry.md) · [enumerative-combinatorics](../topics/enumerative-combinatorics.md) · [geometric-measure-theory](../topics/geometric-measure-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

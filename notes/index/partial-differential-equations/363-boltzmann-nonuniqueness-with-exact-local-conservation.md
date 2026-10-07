@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | bound, density |
+| Topics | [mathematical-physics](../topics/mathematical-physics.md) · [partial-differential-equations](../topics/partial-differential-equations.md) · [kinetic-theory](../topics/kinetic-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

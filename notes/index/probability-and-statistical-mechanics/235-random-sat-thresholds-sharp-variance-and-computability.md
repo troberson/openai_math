@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 6 in · 6 out |
 | Claim shapes | resolution, bound, uniform |
+| Topics | [computability](../topics/computability.md) · [disordered-systems](../topics/disordered-systems.md) |
 | Companion families | — |
 | Summary page | — |
 

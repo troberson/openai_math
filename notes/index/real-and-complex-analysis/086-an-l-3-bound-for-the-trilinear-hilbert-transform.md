@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 0 out |
 | Claim shapes | resolution, bound |
+| Topics | [harmonic-analysis](../topics/harmonic-analysis.md) |
 | Companion families | — |
 | Summary page | — |
 

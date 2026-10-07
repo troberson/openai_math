@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 2 in · 1 out |
 | Claim shapes | resolution, classification, uniform |
+| Topics | [group-theory](../topics/group-theory.md) · [noncommutative-algebra](../topics/noncommutative-algebra.md) |
 | Companion families | — |
 | Summary page | — |
 

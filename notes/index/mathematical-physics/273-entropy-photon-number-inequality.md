@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | bound, uniform |
+| Topics | [operator-algebras](../topics/operator-algebras.md) · [quantum-theory](../topics/quantum-theory.md) · [quantum-information](../topics/quantum-information.md) · [information-theory](../topics/information-theory.md) · [potential-theory](../topics/potential-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

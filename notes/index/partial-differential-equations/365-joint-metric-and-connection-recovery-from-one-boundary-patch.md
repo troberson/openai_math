@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 2 in · 2 out |
 | Claim shapes | bound, uniform |
+| Topics | [manifolds](../topics/manifolds.md) · [mathematical-physics](../topics/mathematical-physics.md) · [partial-differential-equations](../topics/partial-differential-equations.md) · [measure-theory](../topics/measure-theory.md) · [differential-geometry](../topics/differential-geometry.md) |
 | Companion families | — |
 | Summary page | — |
 

@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 1 out |
 | Claim shapes | resolution |
+| Topics | [fractal-geometry](../topics/fractal-geometry.md) |
 | Companion families | — |
 | Summary page | — |
 

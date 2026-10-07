@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | counterexample, bound, uniform |
+| Topics | [manifolds](../topics/manifolds.md) · [riemannian-geometry](../topics/riemannian-geometry.md) · [ricci-flow](../topics/ricci-flow.md) |
 | Companion families | — |
 | Summary page | — |
 

@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 2 in · 1 out |
 | Claim shapes | partial, uniform |
+| Topics | [complexity-theory](../topics/complexity-theory.md) · [computability](../topics/computability.md) |
 | Companion families | — |
 | Summary page | — |
 

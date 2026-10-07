@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 2 in · 2 out |
 | Claim shapes | — |
+| Topics | [mathematical-physics](../topics/mathematical-physics.md) · [statistical-mechanics](../topics/statistical-mechanics.md) · [convex-geometry](../topics/convex-geometry.md) · [quantum-theory](../topics/quantum-theory.md) · [condensed-matter](../topics/condensed-matter.md) · [probability](../topics/probability.md) |
 | Companion families | — |
 | Summary page | [271-blochs-law-and-spontaneous-ferromagnetic-order.md](../../../notes/summaries/mathematical-physics/271-blochs-law-and-spontaneous-ferromagnetic-order.md) |
 

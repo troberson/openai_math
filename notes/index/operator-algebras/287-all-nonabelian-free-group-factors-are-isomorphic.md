@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 2 in · 0 out |
 | Claim shapes | resolution |
+| Topics | [algebraic-topology](../topics/algebraic-topology.md) · [group-theory](../topics/group-theory.md) · [operator-algebras](../topics/operator-algebras.md) |
 | Companion families | — |
 | Summary page | [287-all-nonabelian-free-group-factors-are-isomorphic.md](../../../notes/summaries/operator-algebras/287-all-nonabelian-free-group-factors-are-isomorphic.md) |
 

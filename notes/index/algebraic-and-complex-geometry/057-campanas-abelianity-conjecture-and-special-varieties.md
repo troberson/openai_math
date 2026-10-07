@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 4 in · 4 out |
 | Claim shapes | partial |
+| Topics | [algebraic-topology](../topics/algebraic-topology.md) · [algebraic-geometry](../topics/algebraic-geometry.md) · [manifolds](../topics/manifolds.md) · [complex-geometry](../topics/complex-geometry.md) |
 | Companion families | — |
 | Summary page | — |
 

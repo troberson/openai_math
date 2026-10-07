@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 2 in · 2 out |
 | Claim shapes | bound, partial, uniform |
+| Topics | [graph-theory](../topics/graph-theory.md) · [statistical-mechanics](../topics/statistical-mechanics.md) · [spectral-theory](../topics/spectral-theory.md) · [planar-maps-and-lattice-models](../topics/planar-maps-and-lattice-models.md) · [symplectic-geometry](../topics/symplectic-geometry.md) · [condensed-matter](../topics/condensed-matter.md) · [expanders-and-spectral-graphs](../topics/expanders-and-spectral-graphs.md) |
 | Companion families | — |
 | Summary page | — |
 

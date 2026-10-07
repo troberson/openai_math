@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 0 out |
 | Claim shapes | bound, partial |
+| Topics | [complexity-theory](../topics/complexity-theory.md) · [computability](../topics/computability.md) · [convex-geometry](../topics/convex-geometry.md) · [measure-theory](../topics/measure-theory.md) · [convex-optimization](../topics/convex-optimization.md) |
 | Companion families | — |
 | Summary page | — |
 

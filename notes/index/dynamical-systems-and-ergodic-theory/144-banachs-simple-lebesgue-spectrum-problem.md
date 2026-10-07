@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | resolution |
+| Topics | [riemannian-geometry](../topics/riemannian-geometry.md) · [banach-spaces](../topics/banach-spaces.md) · [ergodic-theory](../topics/ergodic-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

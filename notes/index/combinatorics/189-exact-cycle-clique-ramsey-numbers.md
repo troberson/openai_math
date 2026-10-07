@@ -11,6 +11,7 @@
 | Verification bundles | 1 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution, uniform |
+| Topics | [graph-theory](../topics/graph-theory.md) · [logic](../topics/logic.md) · [graph-coloring](../topics/graph-coloring.md) · [ramsey-theory](../topics/ramsey-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | bound, density, uniform |
+| Topics | [partial-differential-equations](../topics/partial-differential-equations.md) · [kinetic-theory](../topics/kinetic-theory.md) |
 | Companion families | — |
 | Summary page | [362-global-smoothness-for-relativistic-vlasov-maxwell.md](../../../notes/summaries/partial-differential-equations/362-global-smoothness-for-relativistic-vlasov-maxwell.md) |
 

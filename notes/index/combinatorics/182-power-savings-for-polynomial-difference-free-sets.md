@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 3 in · 4 out |
 | Claim shapes | uniform |
+| Topics | [additive-combinatorics](../topics/additive-combinatorics.md) |
 | Companion families | — |
 | Summary page | — |
 

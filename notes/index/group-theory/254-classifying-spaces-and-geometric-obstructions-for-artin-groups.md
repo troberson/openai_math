@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | uniform |
+| Topics | [algebraic-topology](../topics/algebraic-topology.md) · [group-theory](../topics/group-theory.md) · [metric-geometry](../topics/metric-geometry.md) · [arithmetic-geometry](../topics/arithmetic-geometry.md) |
 | Companion families | — |
 | Summary page | — |
 

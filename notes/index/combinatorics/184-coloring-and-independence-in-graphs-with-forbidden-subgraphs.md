@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 2 out |
 | Claim shapes | resolution, partial |
+| Topics | [graph-theory](../topics/graph-theory.md) · [graph-coloring](../topics/graph-coloring.md) · [extremal-combinatorics](../topics/extremal-combinatorics.md) |
 | Companion families | — |
 | Summary page | — |
 

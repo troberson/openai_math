@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | partial |
+| Topics | [primes](../topics/primes.md) · [analytic-number-theory](../topics/analytic-number-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

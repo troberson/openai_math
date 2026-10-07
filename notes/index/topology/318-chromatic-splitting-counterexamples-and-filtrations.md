@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 4 in · 4 out |
 | Claim shapes | counterexample |
+| Topics | [primes](../topics/primes.md) · [stable-homotopy](../topics/stable-homotopy.md) · [category-theory](../topics/category-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

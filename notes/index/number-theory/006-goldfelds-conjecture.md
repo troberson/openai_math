@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 4 in · 3 out |
 | Claim shapes | density |
+| Topics | [curves](../topics/curves.md) · [analytic-number-theory](../topics/analytic-number-theory.md) · [elliptic-curves](../topics/elliptic-curves.md) |
 | Companion families | — |
 | Summary page | — |
 

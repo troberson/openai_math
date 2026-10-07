@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 2 in · 4 out |
 | Claim shapes | resolution, undecidability, uniform |
+| Topics | [algorithms](../topics/algorithms.md) · [diophantine-equations](../topics/diophantine-equations.md) · [hilbert-problems](../topics/hilbert-problems.md) |
 | Companion families | — |
 | Summary page | — |
 

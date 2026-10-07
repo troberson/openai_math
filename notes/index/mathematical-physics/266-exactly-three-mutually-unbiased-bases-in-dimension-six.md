@@ -11,6 +11,7 @@
 | Verification bundles | 1 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | resolution |
+| Topics | [quantum-theory](../topics/quantum-theory.md) · [enumerative-combinatorics](../topics/enumerative-combinatorics.md) |
 | Companion families | — |
 | Summary page | — |
 

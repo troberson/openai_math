@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | partial, uniform |
+| Topics | [algorithms](../topics/algorithms.md) · [computability](../topics/computability.md) · [combinatorial-optimization](../topics/combinatorial-optimization.md) · [coding-theory](../topics/coding-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

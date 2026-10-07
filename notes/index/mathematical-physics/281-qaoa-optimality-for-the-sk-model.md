@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | uniform |
+| Topics | [graph-theory](../topics/graph-theory.md) · [complexity-theory](../topics/complexity-theory.md) · [disordered-systems](../topics/disordered-systems.md) · [condensed-matter](../topics/condensed-matter.md) · [probability](../topics/probability.md) · [quantum-computing](../topics/quantum-computing.md) · [random-graphs](../topics/random-graphs.md) · [spin-glasses](../topics/spin-glasses.md) |
 | Companion families | — |
 | Summary page | — |
 

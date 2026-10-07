@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | uniform |
+| Topics | [curves](../topics/curves.md) · [quantum-theory](../topics/quantum-theory.md) · [lie-theory](../topics/lie-theory.md) · [modularity](../topics/modularity.md) |
 | Companion families | — |
 | Summary page | — |
 

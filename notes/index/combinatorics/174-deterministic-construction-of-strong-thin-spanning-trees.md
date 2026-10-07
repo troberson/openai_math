@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 2 in · 2 out |
 | Claim shapes | resolution, partial |
+| Topics | [graph-theory](../topics/graph-theory.md) · [algorithms](../topics/algorithms.md) · [expanders-and-spectral-graphs](../topics/expanders-and-spectral-graphs.md) |
 | Companion families | — |
 | Summary page | — |
 

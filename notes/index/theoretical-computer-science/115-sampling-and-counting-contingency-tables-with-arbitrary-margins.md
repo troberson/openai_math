@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 2 in · 2 out |
 | Claim shapes | bound, uniform |
+| Topics | [algorithms](../topics/algorithms.md) · [sampling-and-counting](../topics/sampling-and-counting.md) |
 | Companion families | — |
 | Summary page | — |
 

@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 0 out |
 | Claim shapes | classification, uniform |
+| Topics | [algebraic-topology](../topics/algebraic-topology.md) · [representation-theory](../topics/representation-theory.md) · [abelian-varieties](../topics/abelian-varieties.md) |
 | Companion families | [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties-and-products-of-k3-surfaces.md) |
 | Summary page | [001-milnes-rationality-conjecture.md](../../../notes/summaries/number-theory/001-milnes-rationality-conjecture.md) |
 

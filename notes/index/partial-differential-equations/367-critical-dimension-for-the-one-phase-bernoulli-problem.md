@@ -11,6 +11,7 @@
 | Verification bundles | 1 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | bound, partial |
+| Topics | [partial-differential-equations](../topics/partial-differential-equations.md) · [geometric-measure-theory](../topics/geometric-measure-theory.md) · [calculus-of-variations](../topics/calculus-of-variations.md) |
 | Companion families | — |
 | Summary page | — |
 

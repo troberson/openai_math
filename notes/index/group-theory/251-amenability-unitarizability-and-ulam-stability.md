@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 2 in · 1 out |
 | Claim shapes | resolution, bound, uniform |
+| Topics | [group-theory](../topics/group-theory.md) · [functional-analysis](../topics/functional-analysis.md) |
 | Companion families | — |
 | Summary page | — |
 

@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution |
+| Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [manifolds](../topics/manifolds.md) · [curves](../topics/curves.md) · [abelian-varieties](../topics/abelian-varieties.md) |
 | Companion families | — |
 | Summary page | — |
 

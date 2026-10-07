@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | counterexample, bound, partial |
+| Topics | [riemannian-geometry](../topics/riemannian-geometry.md) · [curves](../topics/curves.md) · [spectral-theory](../topics/spectral-theory.md) · [surfaces](../topics/surfaces.md) · [fractal-geometry](../topics/fractal-geometry.md) |
 | Companion families | — |
 | Summary page | — |
 

@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | bound, uniform |
+| Topics | [complexity-theory](../topics/complexity-theory.md) · [convex-geometry](../topics/convex-geometry.md) · [convex-optimization](../topics/convex-optimization.md) |
 | Companion families | — |
 | Summary page | — |
 

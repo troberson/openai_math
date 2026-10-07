@@ -11,6 +11,7 @@
 | Verification bundles | 2 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | — |
+| Topics | [manifolds](../topics/manifolds.md) · [riemannian-geometry](../topics/riemannian-geometry.md) |
 | Companion families | — |
 | Summary page | — |
 

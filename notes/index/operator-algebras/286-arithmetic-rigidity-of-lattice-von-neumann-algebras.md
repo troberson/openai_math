@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 2 in · 3 out |
 | Claim shapes | classification, uniform |
+| Topics | [operator-algebras](../topics/operator-algebras.md) · [statistical-mechanics](../topics/statistical-mechanics.md) · [number-fields](../topics/number-fields.md) · [additive-combinatorics](../topics/additive-combinatorics.md) |
 | Companion families | — |
 | Summary page | — |
 

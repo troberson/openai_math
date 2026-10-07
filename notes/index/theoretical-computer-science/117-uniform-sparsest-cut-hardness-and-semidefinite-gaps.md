@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | bound, uniform |
+| Topics | [computability](../topics/computability.md) · [harmonic-analysis](../topics/harmonic-analysis.md) · [calculus-of-variations](../topics/calculus-of-variations.md) · [convex-optimization](../topics/convex-optimization.md) |
 | Companion families | — |
 | Summary page | — |
 

@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 1 out |
 | Claim shapes | — |
+| Topics | [geometric-measure-theory](../topics/geometric-measure-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

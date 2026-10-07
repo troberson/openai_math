@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 4 in · 4 out |
 | Claim shapes | resolution, bound, partial, uniform |
+| Topics | [complexity-theory](../topics/complexity-theory.md) · [formal-languages](../topics/formal-languages.md) |
 | Companion families | — |
 | Summary page | — |
 

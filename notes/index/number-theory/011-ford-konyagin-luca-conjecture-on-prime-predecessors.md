@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 3 in · 2 out |
 | Claim shapes | resolution, uniform |
+| Topics | [primes](../topics/primes.md) · [diophantine-equations](../topics/diophantine-equations.md) · [analytic-number-theory](../topics/analytic-number-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution, bound |
+| Topics | [algebraic-topology](../topics/algebraic-topology.md) · [operator-algebras](../topics/operator-algebras.md) |
 | Companion families | — |
 | Summary page | — |
 

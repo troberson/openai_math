@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 0 out |
 | Claim shapes | bound, partial, uniform |
+| Topics | [algebraic-topology](../topics/algebraic-topology.md) · [metric-geometry](../topics/metric-geometry.md) · [banach-spaces](../topics/banach-spaces.md) · [coding-theory](../topics/coding-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

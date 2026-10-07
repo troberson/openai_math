@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 4 in · 6 out |
 | Claim shapes | counterexample |
+| Topics | [group-theory](../topics/group-theory.md) · [operator-algebras](../topics/operator-algebras.md) · [noncommutative-algebra](../topics/noncommutative-algebra.md) |
 | Companion families | — |
 | Summary page | [197-nonsofic-groups-and-group-ring-counterexamples.md](../../../notes/summaries/algebra/197-nonsofic-groups-and-group-ring-counterexamples.md) |
 

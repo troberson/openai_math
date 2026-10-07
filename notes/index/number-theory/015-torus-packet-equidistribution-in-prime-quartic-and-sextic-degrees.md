@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 3 in · 3 out |
 | Claim shapes | uniform |
+| Topics | [number-fields](../topics/number-fields.md) |
 | Companion families | — |
 | Summary page | — |
 

@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | counterexample, uniform |
+| Topics | [disordered-systems](../topics/disordered-systems.md) |
 | Companion families | — |
 | Summary page | — |
 

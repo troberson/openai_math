@@ -11,6 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | classification |
+| Topics | [noncommutative-algebra](../topics/noncommutative-algebra.md) |
 | Companion families | — |
 | Summary page | — |
 
