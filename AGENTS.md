@@ -23,6 +23,8 @@ lives in this file and nowhere else.
   note says its formalization leaves out), `subfindings.tsv` (1137 rows — 722 manuscript rows and 415
   comparator rows, typed by a `kind` column) with `subfinding-pairs.md` (49 families, 206 manuscripts —
   the reading pass that pairs abstract clauses with display titles) beside it,
+  `index-design.md` (the index schema decision — store, location, granularity, topic vocabulary — with
+  the measured node and edge population that justifies it),
   `summaries/<discipline>/<NNN>-<name>.md`, `notes/scripts/`.
 - `.beads/issues.jsonl` is the tracked issue store, in bd no-db mode; see the beads section below.
 
@@ -34,6 +36,9 @@ lives in this file and nowhere else.
 - Never run `lake`, `lean`, `lake exe cache get`, or `comparator`. `lean/OAI/` is 121,734 files
   and 25.9M lines; a build is hours on a desktop and buys nothing for categorization.
 - Parse `notes/catalog.tsv` with `csv.DictReader(..., delimiter='\t')`, never `split(',')`.
+- Count `\cataloguesection` and `\resultentry` by the command at line start: **17** and **372**.
+  `overview.tex:28` and `overview.tex:35` define both with `\newcommand`, so a substring count of the
+  command name reads 18 and 373.
 - Label source-level facts as source-level. `lean/formalization.yaml` states
   `scope: "Partial progress."`, `automation: methods: [agent]`, `review: status: unchecked`.
   Zero `sorry` in source is not a comparator pass, and it does not mean the library elaborates.
@@ -148,6 +153,13 @@ lives in this file and nowhere else.
   and flags seven injected mutants including a same-family row swap. Run
   `python3 notes/scripts/extract_subfindings.py` twice and diff: the TSV must be byte-identical.
 - Run `python3 notes/scripts/extract_subfinding_pairs.py` twice and diff: the report must be identical.
+- Run `python3 notes/scripts/measure_index_sizes.py` twice and diff: the report must be identical. It
+  writes nothing, and every count in `notes/index-design.md` comes from it.
+- Check `notes/index-design.md` with `python3 notes/scripts/verify_index_design.py --mutant` before
+  quoting the schema — it resolves every backticked `path:line` anchor of any extension (a mistyped
+  extension fails, it is not skipped), matches each fenced block against the nearest preceding anchor,
+  re-derives all 73 count and byte phrases from `measure_index_sizes.population()`, and flags nine
+  injected mutations. It writes nothing.
 - Check `notes/subfinding-pairs.md` with `python3 notes/scripts/verify_subfinding_pairs.py --mutant`
   before quoting any count from it — it requires exactly one block per population family and none
   outside, resolves each block's `overview.tex` anchor to that family's `\resultentry` line, checks

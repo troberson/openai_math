@@ -22,6 +22,8 @@ python3 notes/scripts/verify_subfinding_pairs.py --mutant  # checks notes/subfin
 python3 notes/scripts/verify_conditional.py --mutant  # checks notes/conditional.md against the Lean source it cites
 python3 notes/scripts/extract_verification_348.py  # measures the two family-348 verification bundles; report-only, writes nothing
 python3 notes/scripts/verify_verification_dirs.py --mutant  # checks the 348 section of notes/verification-dirs.md against the bundle files
+python3 notes/scripts/measure_index_sizes.py  # the node/edge population behind notes/index-design.md; report-only, writes nothing
+python3 notes/scripts/verify_index_design.py --mutant  # checks notes/index-design.md: anchors, every count, the measured byte sizes
 ```
 
 `notes/summaries-workflow.md` is the resume protocol for the summary-page batches: per-page steps,
@@ -303,6 +305,10 @@ the community will scrutinize.
 
 ## Reading traps (all of these have produced false numbers here once)
 
+- **`\newcommand` definitions count in a substring.** `overview.tex:28` defines `\cataloguesection`
+  and `overview.tex:35` defines `\resultentry`, so a substring count of the command name reads 18 and
+  373. Require the command at line start: **17** and **372**. The brace-qualified substring
+  (`\resultentry{`) reads 372 only because each definition writes `}[n]{` after the name.
 - **Parenthesized paths.** `preprints/Sharp-integral-fillings-in-CAT(0)-spaces-…/paper.pdf`.
   Use `preprints/(?:[^\s(){}\\]|\([0-9]+\))*\.pdf`. Excluding `{}` and `\` matters too: a greedy
   match in `overview.tex` otherwise swallows the `}\enspace\textperiodcentered\enspace\href{`
