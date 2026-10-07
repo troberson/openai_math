@@ -1,0 +1,406 @@
+config	fam	json	lean	theorems	definitions	nanoda	decl_count	declarations	files	page
+AbhyankarSathaye	049	1	1	1	0	0	1	OAI.AbhyankarSathaye.exists_noncoordinate_polynomial	OAI/AlgebraicGeometry/AbhyankarSathaye/Counterexample.lean	algebraic-and-complex-geometry/049-a-stable-coordinate-counterexample-in-four-variables.md
+AffineBernstein	353	1	1	1	0	0	0			differential-geometry/353-sharp-dimension-threshold-for-affine-bernstein-rigidity.md
+AlgorithmicThinTrees	174	1	1	1	0	0	0			combinatorics/174-deterministic-construction-of-strong-thin-spanning-trees.md
+AmplitudeDamping	276	1	1	1	0	0	1	OAI.GAD.main	OAI/InformationTheory/AmplitudeDamping/Main.lean	mathematical-physics/276-classical-capacity-of-generalized-amplitude-damping.md
+ArnoldCounterexample	347	1	1	1	0	0	1	OAI.ArnoldCounterexample.main	OAI/Geometry/Arnold/Main.lean	differential-geometry/347-counterexamples-to-strong-forms-of-arnolds-fixed-point-conjecture.md
+ArtinCAT0	254	1	1	1	0	0	1	OAI.ArtinCAT0.main	OAI/GroupTheory/ArtinCAT0/Main.lean	group-theory/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md
+ArtinParabolicIntersections	254	1	1	4	0	1	0			group-theory/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md
+AsymptoticallyMinimalLittlewood	076	1	1	1	0	0	1	OAI.AsymptoticallyMinimalLittlewood.main	OAI/Analysis/Littlewood/Main.lean	real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
+AtomicGaussian	090	1	1	1	0	0	0			convex-and-metric-geometry/090-universal-optimality-of-the-triangular-lattice.md
+AuslanderReiten	199	1	1	1	0	0	1	OAI.ArExplicit.Statement.main	OAI/Algebra/AuslanderReiten/All.lean	algebra/199-counterexamples-to-conjectures-of-auslander-reiten-tachikawa-and-nakayama.md
+BackwardIntertwiners	293	1	1	1	0	0	1	OAI.BackwardIntertwiners.direct_algebra_corollary	OAI/Analysis/BackwardIntertwiners/AlgebraCorollary.lean	operator-algebras/293-a-counterexample-to-the-hyperinvariant-subspace-problem.md
+BalancedBoxRouting	376	1	1	1	0	0	0			partial-differential-equations/376-universal-computation-in-forced-navier-stokes-flows.md
+BalancedRyser	162	1	1	1	0	0	0			combinatorics/162-counterexamples-to-rysers-covering-and-gy-tree-cover-conjectures.md
+BalancedThreeStack	376	1	1	1	0	0	0			partial-differential-equations/376-universal-computation-in-forced-navier-stokes-flows.md
+BallPacking	343	1	1	1	0	0	0			differential-geometry/343-sharp-symplectic-ball-packing-criteria-in-higher-dimensions.md
+BallPackingNecessity	343	1	1	1	0	0	0			differential-geometry/343-sharp-symplectic-ball-packing-criteria-in-higher-dimensions.md
+BarnetteHamiltonian	180	1	1	1	0	0	0			combinatorics/180-barnettes-hamiltonian-cycle-conjecture.md
+BassTorsionFree	207	1	1	1	0	0	0			algebra/207-1-bass-and-complex-bass-trace-conjectures.md
+BassTrace	207	1	1	1	0	0	1	OAI.BassTrace.RightProjective.bassTraceModules_vanishing_and_support	OAI/RingTheory/BassTrace/Main.lean	algebra/207-1-bass-and-complex-bass-trace-conjectures.md
+BenjaminiSchramm	214	1	1	3	0	0	0			probability-and-statistical-mechanics/214-benjamini-schramm-nonuniqueness-conjecture.md
+BernoulliNonflatInSeven	367	1	1	1	0	0	0			partial-differential-equations/367-critical-dimension-for-the-one-phase-bernoulli-problem.md
+BiholderTransport	360	1	1	1	0	0	1	OAI.WeakMTWTransport.uniform_biHolder_transport	OAI/Analysis/BiholderTransport/Main.lean	differential-geometry/360-villanis-convexity-conjecture-and-regular-optimal-transport.md
+BinPackingGap	118	1	1	1	0	0	1	OAI.BinPackingGap.main_results	OAI/Computability/BinPacking/Main.lean	theoretical-computer-science/118-unbounded-bin-packing-gaps-and-the-modified-integer-round-up-conjecture.md
+BinaryEditLower	099	1	1	1	0	0	0			convex-and-metric-geometry/099-sharp-distortion-of-edit-distance-into-1.md
+BinaryMatching	113	1	1	1	0	0	1	OAI.BinaryMatching.deterministic_approximate_counting	OAI/Computability/MatchingCount/BinarySolve.lean	theoretical-computer-science/113-approximate-counting-and-the-perfect-matching-entropy-conjecture.md
+BinarySweep	238	1	1	1	0	0	1	OAI.binary_sweep_contraction_and_mixing	OAI/Probability/BinarySweep/Main.lean	probability-and-statistical-mechanics/238-optimal-logarithmic-mixing-of-the-thorp-shuffle.md
+BipartiteCrossing	165	1	1	1	0	0	1	OAI.Zarankiewicz.mainTarget_proof	OAI/Combinatorics/Crossing/Main.lean	combinatorics/165-exact-crossing-numbers-of-complete-and-complete-bipartite-graphs.md
+BogomolovPopInjectivity	009	1	1	1	0	0	0			number-theory/009-bogomolov-pop-and-milnor-k-theoretic-reconstruction.md
+BoltzmannNonuniqueness	363	1	1	1	0	0	0			partial-differential-equations/363-boltzmann-nonuniqueness-with-exact-local-conservation.md
+BooneHigman	250	1	1	1	0	0	0			group-theory/250-boone-higman-conjecture-and-higher-finiteness.md
+BorsukNine	156	1	1	1	0	0	1	OAI.BorsukNine.main_theorem	OAI/Geometry/Borsuk/Counterexample.lean	combinatorics/156-borsuks-conjecture-fails-in-dimension-nine.md
+BoundedRecovery	290	1	1	1	0	0	1	OAI.BoundedRecovery.bounded_recovery	OAI/Analysis/ModularRecovery/Recovery.lean	operator-algebras/290-connes-bicentralizer-conjecture-and-relative-bicentralizers.md
+BoundedTreePotentials	331	1	1	1	0	0	1	OAI.BoundedTreePotentials.TreeCalculus.main_counterexample	OAI/Analysis/TreePotential/Main.lean	functional-analysis/331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md
+BoundedTreewidthL1	089	1	1	1	0	0	1	OAI.BoundedTreewidthL1.main_theorem	OAI/Combinatorics/TreewidthL1/Main.lean	convex-and-metric-geometry/089-bounded-distortion-l-1-embeddings-of-planar-and-bounded-treewidth-graphs.md
+Brenier	374	1	1	2	12	0	0			partial-differential-equations/374-sharp-one-third-stability-of-optimal-transport-maps.md
+Brennan	072	1	1	1	0	0	1	OAI.Brennan.main_theorem	OAI/Analysis/IntegralMeans/Main.lean	real-and-complex-analysis/072-brennans-conjecture-and-a-counterexample-to-kraetzers-prediction.md
+BrennanSharp	072	1	1	1	0	0	1	OAI.Brennan.Sharp.sharp_endpoints	OAI/Analysis/IntegralMeans/SharpEndpoints.lean	real-and-complex-analysis/072-brennans-conjecture-and-a-counterexample-to-kraetzers-prediction.md
+BufferedIsing	218	1	1	1	0	0	0			probability-and-statistical-mechanics/218-conformal-universality-for-weakly-interacting-and-disordered-ising-models.md
+C0Absorption	324	1	1	1	0	0	1	OAI.C0Absorption.main_result	OAI/Analysis/C0Absorption/Main.lean	functional-analysis/324-lipschitz-equivalence-without-linear-isomorphism.md
+C1EntropyCounterexample	151	1	1	1	0	0	0			dynamical-systems-and-ergodic-theory/151-a-c-1-counterexample-to-shubs-entropy-conjecture.md
+CHObstruction	240	1	1	1	0	0	1	OAI.CHObstruction.main	OAI/ModelTheory/Categoricity/Main.lean	mathematical-logic/240-shelahs-eventual-categoricity-conjecture.md
+CKSBondiPenrose	260	1	1	2	0	0	0			mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md
+CannonGeometricAction	246	1	1	1	0	0	0			group-theory/246-cannons-conjecture.md
+Catalan	005	1	1	1	0	0	0			number-theory/005-irrationality-of-catalans-constant.md
+CayleyPercolation	214	1	1	1	0	0	0			probability-and-statistical-mechanics/214-benjamini-schramm-nonuniqueness-conjecture.md
+CharacterCriterion	299	1	1	1	0	0	1	OAI.KirchbergRordam.character_criterion	OAI/Analysis/CharacterCriterion/Main.lean	operator-algebras/299-kirchberg-r-rdam-character-criterion.md
+ChoicelessPolynomialTime	243	1	1	1	0	0	1	OAI.CPTSeparation.main	OAI/ModelTheory/Choiceless/Separation.lean	mathematical-logic/243-choiceless-counting-does-not-capture-polynomial-time.md
+CirculantHadamard	179	1	1	1	0	0	1	OAI.CirculantHadamard.exists_iff_order_one_or_four	OAI/LinearAlgebra/CirculantHadamard/Main.lean	combinatorics/179-circulant-hadamard-conjecture.md
+ClassicalON	215	1	1	1	0	0	1	OAI.ClassicalON.main	OAI/Probability/ClassicalON/Main.lean	probability-and-statistical-mechanics/215-massive-continuum-limits-and-exact-mass-asymptotics-for-planar-o-n-models.md
+CliqueFreeLog	184	1	1	1	0	0	1	OAI.CliqueFreeLog.logarithmic_independence_bound	OAI/Combinatorics/CliqueFree/Main.lean	combinatorics/184-coloring-and-independence-in-graphs-with-forbidden-subgraphs.md
+CoarseAssembly	307	1	1	1	0	0	0			topology/307-failure-of-rational-injectivity-for-maximal-coarse-assembly.md
+CoboundaryExpanders	177	1	1	1	0	0	0			combinatorics/177-bounded-degree-coboundary-expanders-in-every-dimension.md
+CommonBasesFPRAS	114	1	1	1	0	0	1	OAI.common_bases_fpras	OAI/Combinatorics/MatroidCounting/CommonBases.lean	theoretical-computer-science/114-approximate-counting-of-common-integer-polymatroid-bases.md
+CommutingDerivations	049	1	1	1	0	0	1	OAI.AbhyankarSathaye.CommutingDerivations.commuting_derivations_with_ordinary_extras	OAI/AlgebraicGeometry/CommutingDerivations/OrdinaryExtraMain.lean	algebraic-and-complex-geometry/049-a-stable-coordinate-counterexample-in-four-variables.md
+CompactBanach	098	1	1	1	0	0	1	OAI.CompactBanach.main	OAI/Geometry/DoublingHilbert/CompactBanach.lean	convex-and-metric-geometry/098-a-negative-answer-to-the-lang-plaut-problem.md
+CompleteCrossing	165	1	1	1	0	0	1	OAI.Paper170.complete_graph_crossing_number	OAI/Combinatorics/CompleteCrossing/Main.lean	combinatorics/165-exact-crossing-numbers-of-complete-and-complete-bipartite-graphs.md
+CompleteCrouzeix	325	1	1	1	0	0	1	OAI.CompleteCrouzeix.main	OAI/Analysis/NumericalRange/Main.lean	functional-analysis/325-complete-crouzeix-conjecture.md
+ComplexCancellation	047	1	1	1	0	0	1	OAI.ComplexCancellation.main	OAI/Algebra/AffineCancellation/Main.lean	algebraic-and-complex-geometry/047-complex-counterexamples-to-cancellation-and-affine-fibrations.md
+Conductivity	365	1	1	1	0	0	1	OAI.ScalarConductivity.main_nonuniqueness	OAI/Analysis/Conductivity/Main.lean	partial-differential-equations/365-joint-metric-and-connection-recovery-from-one-boundary-patch.md
+ConjugatePoints	358	1	1	1	0	0	1	OAI.ThreeManifold.main_theorem	OAI/Geometry/ConjugatePoints/ThreeManifold.lean	differential-geometry/358-a-three-manifold-with-no-conjugate-points-and-no-nonpositively-curved-metric.md
+ContingencyTables	115	1	1	3	0	0	0			theoretical-computer-science/115-sampling-and-counting-contingency-tables-with-arbitrary-margins.md
+ContinuousCircleWeight	293	1	1	1	0	0	0			operator-algebras/293-a-counterexample-to-the-hyperinvariant-subspace-problem.md
+ContinuumCoulombHardness	275	1	1	2	0	0	0			mathematical-physics/275-qma-hardness-of-continuum-coulomb-energy.md
+ContinuumTransition	228	1	1	1	0	0	1	OAI.ContinuumTemperature.main_theorem	OAI/Probability/ContinuumTransition/Main.lean	probability-and-statistical-mechanics/228-continuum-phase-transitions-for-radial-pair-potentials.md
+CoordinateSweeps	238	1	1	2	0	0	1	OAI.CoordinateSweeps.conditional_main	OAI/Probability/CoordinateSweeps/Main.lean	probability-and-statistical-mechanics/238-optimal-logarithmic-mixing-of-the-thorp-shuffle.md
+CoordinateTrace	238	1	1	1	0	0	0			probability-and-statistical-mechanics/238-optimal-logarithmic-mixing-of-the-thorp-shuffle.md
+Cotype	326	1	1	1	0	0	1	OAI.Cotype.mainTarget_proved	OAI/Analysis/Cotype/Main.lean	functional-analysis/326-cotype-cotype-conjecture-under-the-approximation-property.md
+CoulombCounterexample	373	1	1	1	0	0	0			partial-differential-equations/373-nonattainment-in-three-marginal-coulomb-transport.md
+CoulombIonization	263	1	1	1	0	0	1	OAI.CoulombAtom.generalized_ionization	OAI/Analysis/CoulombIonization/Main.lean	mathematical-physics/263-ionization-and-generalized-ionization-conjectures.md
+CoulombRadii	263	1	1	1	0	0	0			mathematical-physics/263-ionization-and-generalized-ionization-conjectures.md
+CourtadeKumar	119	1	1	1	0	0	1	OAI.LeanBlast.CourtadeKumar.courtadeKumarAndAttainment	OAI/InformationTheory/BooleanNoise/Main.lean	theoretical-computer-science/119-courtade-kumar-and-hellinger-conjectures.md
+CoveringDensity	092	1	1	1	0	0	0			convex-and-metric-geometry/092-optimal-order-of-convex-body-covering-density.md
+CriticalPercolation	213	1	1	1	0	0	0			probability-and-statistical-mechanics/213-no-infinite-critical-clusters-on-quasi-transitive-graphs.md
+CriticalSK	227	1	1	3	0	0	1	OAI.CriticalSK.covariance_and_linear_tests	OAI/MathematicalPhysics/CriticalSK/Rayleigh.lean	probability-and-statistical-mechanics/227-dynamical-phase-transition-in-the-sherrington-kirkpatrick-model.md
+CriticalSKMixing	227	1	1	1	0	0	1	OAI.CriticalSK.critical_mixing_bounds	OAI/MathematicalPhysics/CriticalMixing/Main.lean	probability-and-statistical-mechanics/227-dynamical-phase-transition-in-the-sherrington-kirkpatrick-model.md
+CriticalStripMass	237	1	1	1	0	0	0			probability-and-statistical-mechanics/237-three-quarter-diameter-exponent-for-honeycomb-walks.md
+CriticalZ3	213	1	1	1	0	0	1	OAI.CriticalZ3.critical_no_infinite	OAI/Probability/CriticalZ3/Main.lean	probability-and-statistical-mechanics/213-no-infinite-critical-clusters-on-quasi-transitive-graphs.md
+CrouzeixHilbert	325	1	1	1	0	0	0			functional-analysis/325-complete-crouzeix-conjecture.md
+CubicTorus	354	1	1	1	0	0	0			differential-geometry/354-isoperimetric-regions-in-the-cubic-three-torus.md
+CycleCliqueRamsey	189	1	1	1	0	0	0			combinatorics/189-exact-cycle-clique-ramsey-numbers.md
+CycleDecomposition	181	1	1	1	0	0	1	OAI.ErdosGallai.erdos_gallai	OAI/Combinatorics/CycleDecomposition/Main.lean	combinatorics/181-erdos-gallai-cycle-decomposition-conjecture.md
+CylinderCovering	100	1	1	1	0	0	0			convex-and-metric-geometry/100-a-counterexample-to-bangs-cylinder-covering-bound.md
+DaugavetModuli	331	1	1	3	0	0	1	OAI.ExactModuli.exact_example	OAI/Analysis/Daugavet/Main.lean	functional-analysis/331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md
+DefocusingNLS	371	1	1	3	3	0	0			partial-differential-equations/371-stable-blowup-for-a-defocusing-schr-odinger-equation.md
+DegreeRigidity	241	1	1	1	0	0	1	OAI.TuringRigidity.ManuscriptMain.rigidity	OAI/Computability/DegreeRigidity/Main.lean	mathematical-logic/241-rigidity-of-the-turing-degrees.md
+DeligneDrinfeld	008	1	1	1	0	0	1	OAI.DeligneDrinfeld.main	OAI/Algebra/Drinfeld/Completion.lean	number-theory/008-deligne-drinfeld-conjecture.md
+DepthFive	135	1	1	1	0	0	0			theoretical-computer-science/135-sharp-homogeneous-depth-five-complexity-of-matrix-products.md
+DepthThree	112	1	1	1	0	0	1	OAI.DepthThreeLowerBound.exists_polynomial_time_language_depth_three_lower_bound	OAI/Computability/DepthThree/Main.lean	theoretical-computer-science/112-beyond-the-square-root-exponent-for-depth-three-circuits.md
+DiamondDistortion	331	1	1	1	0	0	1	OAI.DiamondDistortion.headline_all_pairs	OAI/Analysis/DiamondDistortion/Descent.lean	functional-analysis/331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md
+DilutedSpin	221	1	1	1	0	0	0			probability-and-statistical-mechanics/221-m-parisi-formula-for-diluted-spin-glasses.md
+DimensionTenChannel	272	1	1	1	0	0	0			mathematical-physics/272-entanglement-without-secret-key-and-the-ppt-square-conjecture.md
+DimensionTenPair	272	1	1	1	0	0	0			mathematical-physics/272-entanglement-without-secret-key-and-the-ppt-square-conjecture.md
+DirectCrouzeix	325	1	1	2	0	0	1	OAI.DirectCrouzeix.complete_crouzeix	OAI/Analysis/DirectCrouzeix/CompleteBound.lean	functional-analysis/325-complete-crouzeix-conjecture.md
+DirectedFeedback	102	1	1	1	0	0	0			theoretical-computer-science/102-unique-games-conjecture-and-optimal-approximation-thresholds.md
+DirectionalBallisticity	220	1	1	1	0	0	1	OAI.DirectionalTransience.directional_transience_implies_ballisticity	OAI/Probability/Ballisticity/Main.lean	probability-and-statistical-mechanics/220-directional-zero-one-laws-and-ballisticity-in-random-environments.md
+DirectionalWalk	220	1	1	1	0	0	0			probability-and-statistical-mechanics/220-directional-zero-one-laws-and-ballisticity-in-random-environments.md
+DirichletSevenEighths	003	1	1	1	0	0	1	OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re	OAI/NumberTheory/DirichletL/Nonvanishing.lean	number-theory/003-quasi-riemann-hypothesis.md
+DiscreteLipschitzFree	330	1	1	1	0	0	0			functional-analysis/330-a-negative-answer-to-kaltons-lipschitz-free-approximation-question.md
+DiskMaximal	085	1	1	1	0	0	0			real-and-complex-analysis/085-endpoint-regularity-of-the-planar-centered-maximal-function.md
+Dixmier	251	1	1	1	0	0	0			group-theory/251-amenability-unitarizability-and-ulam-stability.md
+DixmierAllDiscrete	251	1	1	1	0	0	1	OAI.Dixmier.current_main_theorem	OAI/Analysis/Unitarizability/AllDiscrete.lean	group-theory/251-amenability-unitarizability-and-ulam-stability.md
+DoublingHilbert	098	1	1	1	0	0	1	OAI.DoublingHilbert.main	OAI/Geometry/DoublingHilbert/Main.lean	convex-and-metric-geometry/098-a-negative-answer-to-the-lang-plaut-problem.md
+DukePrimeDegree	015	1	1	2	0	0	0			number-theory/015-torus-packet-equidistribution-in-prime-quartic-and-sextic-degrees.md
+DuttaDomain	194	1	1	1	0	0	0			algebra/194-lechs-multiplicity-conjecture.md
+DyadicAvoidance	084	1	1	1	0	0	0			real-and-complex-analysis/084-geometric-case-of-the-erdos-similarity-conjecture.md
+EditApproximation	121	1	1	1	0	0	0			theoretical-computer-science/121-almost-linear-expected-time-approximation-of-edit-distance.md
+EditDistance	099	1	1	1	0	0	0			convex-and-metric-geometry/099-sharp-distortion-of-edit-distance-into-1.md
+EgyptianFractions	025	1	1	9	0	0	3	OAI.Problem337.counting_double_log_order|OAI.Problem337.main_double_log_order|OAI.Problem337.prescribed_denominator_corollary	OAI/NumberTheory/EgyptianFractions/Main.lean|OAI/NumberTheory/EgyptianFractions/Main.lean|OAI/NumberTheory/EgyptianFractions/Main.lean	number-theory/025-erdoss-short-egyptian-fraction-conjecture.md
+EilenbergGanea	249	1	1	1	0	0	0			group-theory/249-a-finitely-generated-counterexample-to-eilenberg-ganea.md
+EinsteinFour	348	1	1	3	0	0	0			differential-geometry/348-nonnegatively-curved-einstein-four-manifolds-and-a-topological-gap.md
+ElasticityUniqueness	372	1	1	1	0	0	0			partial-differential-equations/372-global-uniqueness-in-smooth-isotropic-elasticity.md
+ElementaryPositivity	169	1	1	0	1	0	0			combinatorics/169-shareshian-wachs-e-positivity-conjecture.md
+EntangledGames	277	1	1	1	0	0	1	OAI.ThresholdParallelRepetition.threshold_parallel_repetition	OAI/Probability/EntangledGames/Main.lean	mathematical-physics/277-threshold-repetition-for-entangled-games.md
+EntropyPhotonNumber	273	1	1	1	0	0	0			mathematical-physics/273-entropy-photon-number-inequality.md
+ErdosReciprocal	159	1	1	1	0	0	0			combinatorics/159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemer-bounds.md
+EuclideanFiveColor	158	1	1	1	1	0	1	OAI.EuclideanFiveColor.no_proper_five_coloring	OAI/Geometry/PlaneColoring/Five.lean	combinatorics/158-euclidean-plane-cannot-be-colored-with-five-colors.md
+EuclideanRamsey	172	1	1	1	0	0	1	OAI.EuclideanRamsey.classification	OAI/Combinatorics/EuclideanRamsey/Main.lean	combinatorics/172-classification-of-finite-euclidean-ramsey-configurations.md
+EuclideanRamseyCircle	172	1	1	1	0	0	0			combinatorics/172-classification-of-finite-euclidean-ramsey-configurations.md
+EuclideanRamseyNine	172	1	1	1	0	0	0			combinatorics/172-classification-of-finite-euclidean-ramsey-configurations.md
+EuclideanRamseyQuadratic	172	1	1	1	0	0	0			combinatorics/172-classification-of-finite-euclidean-ramsey-configurations.md
+EuclideanRamseySpherical	172	1	1	1	0	0	0			combinatorics/172-classification-of-finite-euclidean-ramsey-configurations.md
+EuclideanRamseyTransitive	172	1	1	1	0	0	0			combinatorics/172-classification-of-finite-euclidean-ramsey-configurations.md
+EvenBarker	179	1	1	1	0	0	0			combinatorics/179-circulant-hadamard-conjecture.md
+ExactFourier	130	1	1	1	0	0	1	OAI.ExactFourier.main_theorem	OAI/Computability/FourierCircuit/Main.lean	theoretical-computer-science/130-fourier-transforms-below-n-n.md
+ExactInfiniteness	303	1	1	2	0	0	0			operator-algebras/303-from-ordinary-to-strong-pure-infiniteness.md
+ExactQuantumFactoring	279	1	1	1	0	0	0			mathematical-physics/279-exact-quantum-factoring-over-a-fixed-finite-gate-set.md
+FKCRT	211	1	1	1	0	0	0			probability-and-statistical-mechanics/211-geometry-diffusion-and-spectra-of-random-planar-maps.md
+FactorGeneration	296	1	1	1	0	0	1	OAI.Generator.single_generation_of_II1_separable_predual	OAI/Analysis/FactorGeneration/Main.lean	operator-algebras/296-generator-problem-for-finite-factors.md
+FalconerAllDimensions	073	1	1	1	0	0	0			real-and-complex-analysis/073-falconer-distance-conjecture.md
+FillingCoefficient	337	1	1	1	0	0	0			differential-geometry/337-cartan-hadamard-isoperimetry-and-cat-0-fillings.md
+FiniteCircle	099	1	1	1	0	0	0			convex-and-metric-geometry/099-sharp-distortion-of-edit-distance-into-1.md
+FiniteCongruenceGraph	206	1	1	1	0	0	0			algebra/206-finite-lattice-representation-counterexamples-and-undecidability.md
+FiniteEntropySeparation	298	1	1	1	0	0	0			operator-algebras/298-a-counterexample-to-voiculescus-free-entropy-equality-conjecture.md
+FiniteFactor	293	1	1	1	0	0	0			operator-algebras/293-a-counterexample-to-the-hyperinvariant-subspace-problem.md
+FinitisticAsymmetry	198	1	1	1	0	0	1	OAI.LittleFinitistic.extreme_left_right_asymmetry	OAI/Algebra/FinitisticAsymmetry/Main.lean	algebra/198-a-counterexample-to-the-little-finitistic-dimension-conjecture.md
+FixedClauseThreshold	235	1	1	1	0	0	0			probability-and-statistical-mechanics/235-random-sat-thresholds-sharp-variance-and-computability.md
+ForcedNavierStokesComputation	376	1	1	1	0	0	0			partial-differential-equations/376-universal-computation-in-forced-navier-stokes-flows.md
+ForestSpace	331	1	1	1	0	0	1	OAI.ForestSpace.main_theorem	OAI/Analysis/ForestSpace/Main.lean	functional-analysis/331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md
+FormulaHitting	116	1	1	1	0	0	0			theoretical-computer-science/116-uniform-identity-testing-for-noncommutative-formulas.md
+FoulkesHowe	210	1	1	1	0	0	1	OAI.Problem346.canonical_foulkes_howe_surjective	OAI/RepresentationTheory/FoulkesHowe/Stabilization.lean	algebra/210-foulkes-conjecture-for-sixth-powers-and-quadratic-stabilization.md
+FourRowPermanent	238	1	1	1	0	0	0			probability-and-statistical-mechanics/238-optimal-logarithmic-mixing-of-the-thorp-shuffle.md
+FreeIsing	236	1	1	1	0	0	1	OAI.Problem367.free_ising_factor_iff_threshold	OAI/Probability/FreeIsing/Main.lean	probability-and-statistical-mechanics/236-factor-of-iid-threshold-for-free-ising-states-on-trees.md
+FreeUniformSpanningForest	231	1	1	1	0	0	0			probability-and-statistical-mechanics/231-free-uniform-spanning-forest-is-a-factor-of-iid.md
+GammaPassage	212	1	1	1	0	0	0			probability-and-statistical-mechanics/212-no-bigeodesics-and-smooth-limit-shapes-in-planar-first-passage-percolation.md
+GaussianFiniteEntropy	140	1	1	1	0	0	0			theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md
+GaussianInformation	140	1	1	4	0	0	0			theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md
+GaussianMoat	028	1	1	1	0	0	1	OAI.GaussianMoat.fullMain	OAI/NumberTheory/GaussianMoat/Main.lean	number-theory/028-gaussian-moat-conjecture.md
+GaussianPropeller	096	1	1	1	0	0	1	OAI.GaussianPropeller.all_partitions	OAI/Probability/GaussianPropeller/Main.lean	convex-and-metric-geometry/096-gaussian-propeller-conjecture.md
+GaussianReplacement	140	1	1	11	0	0	2	OAI.CurrentProjection.fiberBlockMain|OAI.CurrentProjection.hybridBlockMain	OAI/Probability/GaussianReplacement/FiberBlock.lean|OAI/Probability/GaussianReplacement/Hybrid.lean	theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md
+GeneralMahler	087	1	1	1	0	0	0			convex-and-metric-geometry/087-mahler-conjectures-and-symplectic-width.md
+GeneralizedStarHeight	134	1	1	1	0	0	0			theoretical-computer-science/134-generalized-star-height-at-most-three.md
+GotsmanLinial	127	1	1	1	0	0	1	OAI.LeanBlast.GotsmanLinial.gotsmanLinialStatement	OAI/Combinatorics/GotsmanLinial/Main.lean	theoretical-computer-science/127-asymptotic-gotsman-linial-conjecture.md
+GrahamSpherical	172	1	1	1	0	0	1	OAI.GrahamSpherical.full_main	OAI/Combinatorics/SphericalRamsey/Main.lean	combinatorics/172-classification-of-finite-euclidean-ramsey-configurations.md
+GrothendieckElementaryExpansion	312	1	1	1	0	0	1	OAI.Grothendieck.elementary_expansion	OAI/CategoryTheory/Globular/ElementaryExpansion.lean	topology/312-grothendieck-homotopy-hypothesis.md
+GroupRingDeterminant	197	1	1	1	0	0	1	OAI.GroupRingDeterminant.main	OAI/Analysis/GroupDeterminants/Main.lean	algebra/197-nonsofic-groups-and-group-ring-counterexamples.md
+HadamardCubeFiber	266	1	1	1	0	0	0			mathematical-physics/266-exactly-three-mutually-unbiased-bases-in-dimension-six.md
+HalvingLines	183	1	1	1	0	0	0			combinatorics/183-power-savings-for-planar-halving-lines-and-k-sets.md
+HardSphere	267	1	1	1	0	0	0			mathematical-physics/267-positive-temperature-bose-einstein-condensation-and-quantum-depletion.md
+HarmonicArtin	254	1	1	1	0	0	1	OAI.HarmonicArtin.salvetti_cover_contractible	OAI/Topology/ArtinGroups/Realizations/SalvettiCoverContractible.lean	group-theory/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md
+HarmonicGrowth	361	1	1	1	0	0	1	OAI.HarmonicCounterexample.main	OAI/Geometry/HarmonicGrowth/Main.lean	differential-geometry/361-counterexamples-to-yaus-harmonic-dimension-bound.md
+HeckeSevenEighths	003	1	1	1	0	0	1	OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_seven_eighths_lt_re	OAI/NumberTheory/DirichletL/Hecke/Nonvanishing.lean	number-theory/003-quasi-riemann-hypothesis.md
+HeilbronnTriangle	191	1	1	2	0	0	0			combinatorics/191-a-power-improvement-in-the-heilbronn-triangle-problem.md
+Heisenberg	271	1	1	1	0	0	0			mathematical-physics/271-blochs-law-and-spontaneous-ferromagnetic-order.md
+HenonEmden	370	1	1	1	0	0	1	OAI.HenonLaneEmden.main_nonexistence	OAI/Analysis/HenonEmden/Main.lean	partial-differential-equations/370-subcritical-lane-emden-and-h-lane-emden-conjectures.md
+HilbertCrouzeix	325	1	1	4	0	0	0			functional-analysis/325-complete-crouzeix-conjecture.md
+HoneycombBridgeFiniteness	237	1	1	1	0	0	0			probability-and-statistical-mechanics/237-three-quarter-diameter-exponent-for-honeycomb-walks.md
+HoneycombFreeEnergy	237	1	1	1	0	0	0			probability-and-statistical-mechanics/237-three-quarter-diameter-exponent-for-honeycomb-walks.md
+HotSpots	369	1	1	1	0	0	0			partial-differential-equations/369-hot-spots-conjecture-for-simply-connected-planar-domains.md
+HyperbolicCones	095	1	1	1	0	0	1	OAI.Paper256.main_result	OAI/Analysis/HyperbolicCones/Main.lean	convex-and-metric-geometry/095-hyperbolicity-cones-without-semidefinite-lifts.md
+HyperbolicObstruction	257	1	1	1	0	0	1	OAI.HyperbolicObstruction.main	OAI/Geometry/HyperbolicGroups/Main.lean	group-theory/257-a-hyperbolic-group-with-no-geometric-cat-0-action.md
+HyperinvariantSubspaces	293	1	1	1	0	0	0			operator-algebras/293-a-counterexample-to-the-hyperinvariant-subspace-problem.md
+IndependentProducts	331	1	1	4	0	0	2	OAI.IndependentProducts.main_exponential|OAI.IndependentProducts.main_general	OAI/Analysis/ProductSpaces/Main.lean|OAI/Analysis/ProductSpaces/WeakNullity.lean	functional-analysis/331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md
+IndependentSets	106	1	1	1	0	0	1	OAI.LargeIndependentSets.mainTheoremReal	OAI/Combinatorics/IndependentSets/Main.lean	theoretical-computer-science/106-hardness-of-coloring-three-colorable-graphs.md
+IndividualStrongInfiniteness	303	1	1	1	0	0	0			operator-algebras/303-from-ordinary-to-strong-pure-infiniteness.md
+InfiniteMatroid	185	1	1	1	0	0	1	OAI.InfiniteMatroidCounterexample.main	OAI/Combinatorics/InfiniteMatroid/Main.lean	combinatorics/185-counterexamples-to-infinite-matroid-intersection-and-packing-covering.md
+InfiniteMatroidCorollaries	185	1	1	2	0	0	0			combinatorics/185-counterexamples-to-infinite-matroid-intersection-and-packing-covering.md
+InterpolatedFactors	287	1	1	1	0	0	0			operator-algebras/287-all-nonabelian-free-group-factors-are-isomorphic.md
+InvariantIsing	234	1	1	11	0	0	0			probability-and-statistical-mechanics/234-all-temperature-pressure-for-orthogonally-invariant-ising-spin-glasses.md
+IrrationalRotation	293	1	1	2	0	0	0			operator-algebras/293-a-counterexample-to-the-hyperinvariant-subspace-problem.md
+IrrationalTriangleBilliard	150	1	1	1	0	0	0			dynamical-systems-and-ergodic-theory/150-weak-mixing-of-irrational-triangular-billiards.md
+IsingFiniteness	222	1	1	1	0	0	0			probability-and-statistical-mechanics/222-perceptron-free-energies-and-microscopic-jamming.md
+IsometricImmersion	334	1	1	1	0	0	1	OAI.SmoothLocal.Geometry.exists_local_metric_without_local_immersion	OAI/Geometry/IsometricImmersion/Main.lean	differential-geometry/334-a-smooth-surface-metric-with-no-local-immersion-in-r-3.md
+Jacobsthal	021	1	1	1	0	0	1	OAI.Erdos970.Erdos970Final.erdos_970_quadratic	OAI/NumberTheory/Jacobsthal/Conclusions/QuadraticBound.lean	number-theory/021-a-quadratic-bound-for-jacobsthals-function.md
+JacobsthalImproved	021	1	1	1	0	0	0			number-theory/021-a-quadratic-bound-for-jacobsthals-function.md
+JointDickman	012	1	1	3	0	0	0			number-theory/012-independent-largest-prime-factors-of-consecutive-integers.md
+KLInvariance	168	1	1	1	0	0	0			combinatorics/168-combinatorial-invariance-of-kazhdan-lusztig-polynomials.md
+KMedianRecovery	125	1	1	1	0	0	1	OAI.MetricKMedianRecovery.global_application	OAI/Combinatorics/KMedianRecovery/Main.lean	theoretical-computer-science/125-approximation-threshold-for-metric-k-median.md
+KMedianRefinedRecovery	125	1	1	1	0	0	0			theoretical-computer-science/125-approximation-threshold-for-metric-k-median.md
+KMedianThreshold	125	1	1	1	0	0	0			theoretical-computer-science/125-approximation-threshold-for-metric-k-median.md
+KServer	110	1	1	1	9	0	0			theoretical-computer-science/110-optimal-order-randomized-k-server-on-arbitrary-metrics.md
+KadisonRingrose	295	1	1	1	0	0	0			operator-algebras/295-kadison-ringrose-cohomology-conjecture.md
+KadisonSimilarity	288	1	1	3	0	0	0			operator-algebras/288-kadisons-similarity-conjecture.md
+KahlerSplitting	052	1	1	1	0	0	1	OAI.UniversalCoverSplitting.main	OAI/Geometry/KahlerSplitting/Main.lean	algebraic-and-complex-geometry/052-tangent-bundle-splittings-and-universal-covers.md
+KaplanskyDirectFiniteness	197	1	1	1	0	0	0			algebra/197-nonsofic-groups-and-group-ring-counterexamples.md
+KaplanskyFinitelyPresented	197	1	1	1	0	0	1	OAI.KaplanskyCounterexample.finitelyPresented_counterexample	OAI/RingTheory/DirectFiniteness/FinitelyPresented.lean	algebra/197-nonsofic-groups-and-group-ring-counterexamples.md
+KaplanskyQuasitrace	294	1	1	1	0	0	1	OAI.Kaplansky.kaplansky_quasitrace_counterexample	OAI/Analysis/Kaplansky/Main.lean	operator-algebras/294-a-counterexample-to-kaplanskys-quasitrace-conjecture.md
+KaplanskyStableFiniteness	294	1	1	1	0	0	0			operator-algebras/294-a-counterexample-to-kaplanskys-quasitrace-conjecture.md
+Kervaire	256	1	1	1	0	0	0			group-theory/256-howies-conjecture-on-equations-over-groups.md
+KoebeCircleDomains	071	1	1	2	0	0	0			real-and-complex-analysis/071-koebes-circle-domain-conjecture-and-circle-domain-rigidity.md
+Laughlin	269	1	1	1	0	0	1	OAI.Laughlin.mainTarget_proved	OAI/Analysis/Laughlin/Main.lean	mathematical-physics/269-laughlin-gap-and-stability-under-scalar-disorder.md
+LaughlinFock	269	1	1	1	0	0	0			mathematical-physics/269-laughlin-gap-and-stability-under-scalar-disorder.md
+LaughlinGap	269	1	1	1	0	0	0			mathematical-physics/269-laughlin-gap-and-stability-under-scalar-disorder.md
+LaughlinPlanar	269	1	1	1	0	0	0			mathematical-physics/269-laughlin-gap-and-stability-under-scalar-disorder.md
+LiebThirring	262	1	1	1	0	0	1	OAI.SharpLiebThirring.sharp_lieb_thirring	OAI/Analysis/LiebThirring/Main.lean	mathematical-physics/262-sharp-one-dimensional-lieb-thirring-inequalities.md
+LipschitzEquivalence	324	1	1	1	0	0	1	OAI.LipschitzCounterexample.main	OAI/Analysis/LipschitzEquivalence/Main.lean	functional-analysis/324-lipschitz-equivalence-without-linear-isomorphism.md
+LipschitzHilbert	083	1	1	2	0	0	0			real-and-complex-analysis/083-steins-conjecture-for-hilbert-transforms-along-lipschitz-directions.md
+ListHadwiger	157	1	1	1	0	0	0			combinatorics/157-counterexamples-to-the-hadwiger-and-colin-de-verdi-ere-conjectures.md
+LittleFinitistic	198	1	1	1	0	0	1	OAI.LittleFinitistic.Main.exists_counterexample	OAI/Algebra/Finitistic/Main.lean	algebra/198-a-counterexample-to-the-little-finitistic-dimension-conjecture.md
+LittlewoodFiniteFlatness	076	1	1	1	0	0	0			real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md
+LogBrunnMinkowski	091	1	1	1	0	0	1	OAI.LogBrunnMinkowski.main	OAI/Geometry/LogVolume/BrunnMinkowski.lean	convex-and-metric-geometry/091-logarithmic-brunn-minkowski-conjecture.md
+LogConcaveQuery	139	1	1	1	0	0	1	OAI.LogConcaveSampling.exact_source_main	OAI/Probability/LogConcave/Main.lean	theoretical-computer-science/139-subpolynomial-queries-for-log-concave-sampling.md
+LogKodairaFiberNegative	033	1	1	1	0	0	0			algebraic-and-complex-geometry/033-campanas-orbifold-iitaka-conjecture-and-logarithmic-subadditivity.md
+MUBSix	266	1	1	1	0	0	0			mathematical-physics/266-exactly-three-mutually-unbiased-bases-in-dimension-six.md
+MahlerConjecture	087	1	1	1	0	0	1	OAI.SymmetricMahler.symmetric_mahler	OAI/Analysis/Mahler/MainTheorem.lean	convex-and-metric-geometry/087-mahler-conjectures-and-symplectic-width.md
+MarkovType	327	1	1	1	0	0	1	OAI.MarkovSuperreflexivity.hasNontrivialMarkovType_iff_hasEquivalentUCNorm	OAI/Analysis/MarkovType/Main.lean	functional-analysis/327-markov-type-characterizes-superreflexivity.md
+MassAction	149	1	1	1	0	0	0			dynamical-systems-and-ergodic-theory/149-permanence-for-weakly-reversible-reaction-networks.md
+MatchingAffineLift	126	1	1	1	0	0	0			theoretical-computer-science/126-exponential-semidefinite-complexity-of-perfect-matching.md
+MatchingEntropy	113	1	1	1	0	0	1	OAI.MatchingEntropy.entropy_main	OAI/Combinatorics/PerfectMatching/Main.lean	theoretical-computer-science/113-approximate-counting-and-the-perfect-matching-entropy-conjecture.md
+MatchingEntropyBounds	113	1	1	1	0	0	0			theoretical-computer-science/113-approximate-counting-and-the-perfect-matching-entropy-conjecture.md
+MatchingFPRAS	113	1	1	1	0	0	0			theoretical-computer-science/113-approximate-counting-and-the-perfect-matching-entropy-conjecture.md
+MatchingPSD	126	1	1	1	0	0	0			theoretical-computer-science/126-exponential-semidefinite-complexity-of-perfect-matching.md
+MatrixFields	107	1	1	1	0	0	1	OAI.MatrixAllFields.MatrixMultiplication.AllFieldMain.omega_lt_source_constant	OAI/LinearAlgebra/MatrixFields/Conclusions/AllFieldsBound.lean	theoretical-computer-science/107-matrix-multiplication-with-exponent-at-most-9-4.md
+MatrixMultiplication	107	1	1	3	0	0	3	OAI.MatrixMultiplication.complex_alpha_gt_93_div_200|OAI.MatrixMultiplication.complex_omega_le_nine_quarters|OAI.MatrixMultiplication.complex_rectangular_omega_lt_523_div_250	OAI/LinearAlgebra/MatrixMultiplication/Main.lean|OAI/LinearAlgebra/MatrixMultiplication/Main.lean|OAI/LinearAlgebra/MatrixMultiplication/Main.lean	theoretical-computer-science/107-matrix-multiplication-with-exponent-at-most-9-4.md
+MatrixRemoval	190	1	1	1	0	0	1	OAI.Problem348.no_polynomial_removal_bound	OAI/Combinatorics/MatrixRemoval/Main.lean	combinatorics/190-polynomial-removal-fails-for-ordered-binary-matrices.md
+MatroidProphet	111	1	1	1	0	0	0			theoretical-computer-science/111-one-sample-matroid-prophet-inequalities-against-an-almighty-adversary.md
+MatroidSecretary	111	1	1	3	0	0	0			theoretical-computer-science/111-one-sample-matroid-prophet-inequalities-against-an-almighty-adversary.md
+MaximalSeshadriConstants	039	1	1	1	0	0	1	OAI.MaximalSeshadri.Geometry.maximalSeshadriConstants	OAI/AlgebraicGeometry/Seshadri/Main.lean	algebraic-and-complex-geometry/039-nagatas-conjecture-and-maximal-seshadri-constants.md
+MemoryPrecision	140	1	1	1	0	0	1	OAI.MemoryPrecision.main	OAI/Probability/MemoryPrecision/Main.lean	theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md
+MetricEntropyDuality	329	1	1	1	0	0	1	OAI.MetricEntropyDuality.exists_entropy_duality_counterexample_with_covers	OAI/Analysis/MetricEntropy/Main.lean	functional-analysis/329-a-counterexample-to-pietschs-metric-entropy-duality-conjecture.md
+MetricKMedian	125	1	1	1	0	0	0			theoretical-computer-science/125-approximation-threshold-for-metric-k-median.md
+MidpointLenses	331	1	1	1	0	0	1	OAI.SegmentLenses.midpoint_lens_main	OAI/Analysis/SegmentLenses/Main.lean	functional-analysis/331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md
+MinUncut	102	1	1	1	0	0	0			theoretical-computer-science/102-unique-games-conjecture-and-optimal-approximation-thresholds.md
+Nagata	039	1	1	3	0	0	1	OAI.Nagata.nagata_conjecture	OAI/AlgebraicGeometry/PlaneCurves/Nagata.lean	algebraic-and-complex-geometry/039-nagatas-conjecture-and-maximal-seshadri-constants.md
+Naimark	297	1	1	1	7	0	0			operator-algebras/297-a-zfc-counterexample-to-naimarks-problem.md
+NavierStokesAlternating	376	1	1	1	0	0	0			partial-differential-equations/376-universal-computation-in-forced-navier-stokes-flows.md
+NavierStokesVelocity	376	1	1	1	0	0	0			partial-differential-equations/376-universal-computation-in-forced-navier-stokes-flows.md
+NodalLength	350	1	1	1	0	0	0			differential-geometry/350-yaus-nodal-conjecture-surfaces-and-counterexamples.md
+NoiselessRegression	140	1	1	1	0	0	0			theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md
+NuclearUltrapower	292	1	1	1	0	0	0			operator-algebras/292-a-counterexample-to-kirchbergs-norm-ultrapower-embedding-problem.md
+OccupiedOverlap	238	1	1	2	5	0	0			probability-and-statistical-mechanics/238-optimal-logarithmic-mixing-of-the-thorp-shuffle.md
+OddKaplansky	197	1	1	1	0	0	1	OAI.OddKaplansky.main_theorem	OAI/Algebra/OddKaplansky/Main.lean	algebra/197-nonsofic-groups-and-group-ring-counterexamples.md
+OneWayLiveness	129	1	1	1	0	0	1	OAI.OneWayLiveness.main_theorem	OAI/Combinatorics/Automata/Main.lean	theoretical-computer-science/129-exponential-state-costs-for-two-way-automata.md
+OptimalMaxCut	102	1	1	1	0	0	1	OAI.OptimalMaxCut.main	OAI/Computability/MaxCut/Main.lean	theoretical-computer-science/102-unique-games-conjecture-and-optimal-approximation-thresholds.md
+OrdinaryElliott	007	1	1	1	0	0	0			number-theory/007-two-point-chowla-and-the-corrected-binary-elliott-conjecture.md
+OrdinaryTwoPointCorrelations	007	1	1	3	0	0	0			number-theory/007-two-point-chowla-and-the-corrected-binary-elliott-conjecture.md
+OstmannComplete	013	1	1	2	0	0	0			number-theory/013-ostmanns-inverse-goldbach-conjecture.md
+OstmannPrimes	013	1	1	1	0	0	0			number-theory/013-ostmanns-inverse-goldbach-conjecture.md
+ParityLifts	133	1	1	1	0	0	0			theoretical-computer-science/133-complexity-of-weisfeiler-leman-refinement.md
+PartialPermutation	238	1	1	1	0	0	0			probability-and-statistical-mechanics/238-optimal-logarithmic-mixing-of-the-thorp-shuffle.md
+PartitionConsistency	244	1	1	1	0	0	0			mathematical-logic/244-partition-principle-does-not-imply-choice.md
+PartitionPrinciple	244	1	1	1	0	0	1	OAI.PartitionPilot.Forcing.TransitiveGround.exists_model_partitionPrinciple_without_choice	OAI/SetTheory/PartitionPrinciple/Models/Separation.lean	mathematical-logic/244-partition-principle-does-not-imply-choice.md
+PattersonFirstMoment	023	1	1	3	0	0	0			number-theory/023-pattersons-first-moment-for-cubic-gauss-sums.md
+PerceptronFreeEnergy	222	1	1	1	0	0	0			probability-and-statistical-mechanics/222-perceptron-free-energies-and-microscopic-jamming.md
+PerfectCompleteness	105	1	1	1	0	0	1	OAI.PerfectCompleteness.Theorem11.exists_reduction	OAI/Computability/PerfectCompleteness/Theorem11.lean	theoretical-computer-science/105-2-to-1-games-conjecture-with-perfect-completeness.md
+PeriodicGroup	247	1	1	1	0	0	0			group-theory/247-an-infinite-finitely-presented-residually-finite-2-group.md
+PeriodicTilingThree	155	1	1	1	0	0	1	OAI.PeriodicTilingThree.periodic_tiling_counterexample_and_minimality	OAI/Geometry/PeriodicTiling/Counterexample.lean	combinatorics/155-a-counterexample-to-periodic-tiling-in-dimension-three.md
+PermanentCubic	108	1	1	1	0	0	0			theoretical-computer-science/108-a-cubic-permanent-determinant-lower-bound.md
+PettyProjectionVolume	088	1	1	1	0	0	1	OAI.PettyProjection.petty_projection_volume	OAI/Geometry/ProjectionBodies/Main.lean	convex-and-metric-geometry/088-pettys-projection-volume-conjecture-and-simplex-counterexamples.md
+PiExponent	017	1	1	1	0	0	0			number-theory/017-irrationality-exponent-of-is-2.md
+PinchedKahler	359	1	1	3	0	0	1	OAI.PinchedHartogs.main_theorem	OAI/Geometry/Kahler/Main.lean	differential-geometry/359-negative-k-ahler-curvature-without-bounded-holomorphic-coordinates.md
+PinnedDistances	167	1	1	1	0	0	1	OAI.WeakPinned.main	OAI/Geometry/PinnedDistances/Main.lean	combinatorics/167-pinned-distances-and-a-power-saving-for-planar-unit-distances.md
+PlanarAndersonSpectrum	261	1	1	1	0	0	0			mathematical-physics/261-localization-and-delocalization-in-the-anderson-model.md
+PlanarFalconer	073	1	1	1	0	0	1	OAI.PlanarFalconer.mainTarget_proved	OAI/MeasureTheory/Falconer/Main.lean	real-and-complex-analysis/073-falconer-distance-conjecture.md
+PlanarFirstPassage	212	1	1	1	0	0	1	OAI.PlanarFPP.manuscriptMain	OAI/Probability/FirstPassage/BoundaryCurve.lean	probability-and-statistical-mechanics/212-no-bigeodesics-and-smooth-limit-shapes-in-planar-first-passage-percolation.md
+PlanarL1	089	1	1	1	0	0	1	OAI.PlanarL1.planar_graph_metrics_embed_L1	OAI/Combinatorics/PlanarL1/Embedding.lean	convex-and-metric-geometry/089-bounded-distortion-l-1-embeddings-of-planar-and-bounded-treewidth-graphs.md
+PlanarPacking	090	1	1	1	0	0	0			convex-and-metric-geometry/090-universal-optimality-of-the-triangular-lattice.md
+PlanarUnitDistances	167	1	1	1	0	0	0			combinatorics/167-pinned-distances-and-a-power-saving-for-planar-unit-distances.md
+PlaneColoring	158	1	1	1	0	0	1	OAI.Problem160.properColoring_seven	OAI/Geometry/PlaneColoring/Seven.lean	combinatorics/158-euclidean-plane-cannot-be-colored-with-five-colors.md
+PolycyclicRecognition	255	1	1	3	0	0	0			group-theory/255-quasi-isometric-rigidity-of-virtually-polycyclic-groups.md
+PosteriorReplicas	140	1	1	1	0	0	1	OAI.PosteriorReplicas.source_main	OAI/Probability/PosteriorReplicas/Main.lean	theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md
+PowerFreeValues	020	1	1	1	0	0	1	OAI.QuarticPowerFree.allDegrees	OAI/NumberTheory/PowerFree/Main.lean	number-theory/020-squarefree-quartics-and-power-free-polynomial-values.md
+PrimeGaps	026	1	1	1	0	0	0			number-theory/026-positive-lower-density-of-large-prime-gaps.md
+ProductBrown	293	1	1	1	0	0	0			operator-algebras/293-a-counterexample-to-the-hyperinvariant-subspace-problem.md
+ProjectionCounterexample	088	1	1	1	0	0	1	OAI.ProjectionCounterexample.universal_simplex_upper_bound_false	OAI/Geometry/ProjectionBody/Counterexample.lean	convex-and-metric-geometry/088-pettys-projection-volume-conjecture-and-simplex-counterexamples.md
+ProjectionMoments	140	1	1	1	0	0	1	OAI.ProjectionMoments.main	OAI/Probability/ProjectionMoments/Main.lean	theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md
+ProjectionVolume	088	1	1	1	0	0	1	OAI.Paper092.product_counterexample	OAI/Geometry/ProjectionVolume/ProductCounterexample.lean	convex-and-metric-geometry/088-pettys-projection-volume-conjecture-and-simplex-counterexamples.md
+QACParity	274	1	1	1	0	0	1	OAI.QAC.parity_lower_bound	OAI/InformationTheory/QuantumCircuit/Parity.lean	mathematical-physics/274-moores-parity-conjecture-for-qac-0.md
+QuadricBundles	050	1	1	1	0	0	1	OAI.QuadricCounterexample.main_theorem	OAI/Geometry/QuadricBundles/Main.lean	algebraic-and-complex-geometry/050-a-counterexample-to-griffiths-positivity-conjecture.md
+QuantitativeVanDerWaerden	160	1	1	1	0	0	1	OAI.QuantitativeVanDerWaerden.uniform_lower_bound	OAI/Combinatorics/ProgressionColoring/Main.lean	combinatorics/160-superexponential-van-der-waerden-numbers.md
+QuasiRiemannHypothesis	003	1	1	1	0	0	1	OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re	OAI/NumberTheory/DirichletL/Nonvanishing.lean	number-theory/003-quasi-riemann-hypothesis.md
+QuinticLienard	143	1	1	1	0	0	1	OAI.QuinticLienard.main	OAI/Analysis/LienardCycles/Main.lean	dynamical-systems-and-ergodic-theory/143-uniform-limit-cycle-bounds-in-hilberts-sixteenth-problem.md
+RadialDensityInterval	228	1	1	1	0	0	0			probability-and-statistical-mechanics/228-continuum-phase-transitions-for-radial-pair-potentials.md
+RadialTransition	228	1	1	1	0	0	1	OAI.RadialTransition.main	OAI/Probability/RadialTransition/Main.lean	probability-and-statistical-mechanics/228-continuum-phase-transitions-for-radial-pair-potentials.md
+RamseyFive	170	1	1	1	0	0	0			combinatorics/170-sharp-logarithmic-exponents-for-off-diagonal-ramsey-numbers.md
+RandomizedMeanPayoff	104	1	1	1	0	0	1	OAI.randomized_quasipolynomial_mean_payoff	OAI/Computability/RandomMean/Main.lean	theoretical-computer-science/104-quasipolynomial-algorithms-for-mean-payoff-stochastic-and-parity-games.md
+RationalHitting	116	1	1	1	0	0	1	OAI.RationalHitting.main	OAI/Computability/RationalHitting/Main.lean	theoretical-computer-science/116-uniform-identity-testing-for-noncommutative-formulas.md
+RealL1Renorming	330	1	1	1	0	0	0			functional-analysis/330-a-negative-answer-to-kaltons-lipschitz-free-approximation-question.md
+RecursivePotentials	331	1	1	1	0	0	1	OAI.ComparatorModel.RecursivePotentials.main	OAI/Analysis/RecursivePotentials/Challenge.lean	functional-analysis/331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md
+ReflexiveFixedPoints	328	1	1	1	0	0	1	OAI.ReflexiveFixedPoints.exists_fixedPoint_of_canonicallyReflexive	OAI/Analysis/Nonexpansive/Main.lean	functional-analysis/328-fixed-points-of-nonexpansive-maps-in-reflexive-banach-spaces.md
+RegularParity	274	1	1	1	0	0	1	OAI.QAC.parity_lower_bound_polynomial_size	OAI/InformationTheory/QuantumCircuit/Main.lean	mathematical-physics/274-moores-parity-conjecture-for-qac-0.md
+RelativeGeneration	296	1	1	1	0	0	0			operator-algebras/296-generator-problem-for-finite-factors.md
+RieszQuantitative	081	1	1	1	0	0	1	OAI.RieszRectifiability.quantitative_higher_codimension_riesz_rectifiability	OAI/Analysis/RieszRectifiability/Uniformity/Rectifiability.lean	real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md
+Rokhlin	145	1	1	1	4	0	0			dynamical-systems-and-ergodic-theory/145-rokhlins-multiple-mixing-problem.md
+RuledCovering	100	1	1	1	0	0	0			convex-and-metric-geometry/100-a-counterexample-to-bangs-cylinder-covering-bound.md
+RyserCovering	162	1	1	1	0	0	1	OAI.RyserCoveringCounterexample.exists_prime_eventually_counterexampleRank	OAI/Combinatorics/Ryser/Construction/Main.lean	combinatorics/162-counterexamples-to-rysers-covering-and-gy-tree-cover-conjectures.md
+RyserOddExtensions	162	1	1	1	0	0	1	OAI.RyserOdd.eventualOddFailures_and_infinite	OAI/Combinatorics/Ryser/OddExtensions.lean	combinatorics/162-counterexamples-to-rysers-covering-and-gy-tree-cover-conjectures.md
+SATComputability	235	1	1	1	0	0	0			probability-and-statistical-mechanics/235-random-sat-thresholds-sharp-variance-and-computability.md
+SATSharpness	235	1	1	1	0	0	0			probability-and-statistical-mechanics/235-random-sat-thresholds-sharp-variance-and-computability.md
+SATVariance	235	1	1	1	0	0	0			probability-and-statistical-mechanics/235-random-sat-thresholds-sharp-variance-and-computability.md
+SKBarriers	227	1	1	1	0	0	0			probability-and-statistical-mechanics/227-dynamical-phase-transition-in-the-sherrington-kirkpatrick-model.md
+SKFullSupport	281	1	1	1	0	0	0			mathematical-physics/281-qaoa-optimality-for-the-sk-model.md
+SKHighTemperature	227	1	1	1	0	0	0			probability-and-statistical-mechanics/227-dynamical-phase-transition-in-the-sherrington-kirkpatrick-model.md
+SKRatio	227	1	1	1	0	0	0			probability-and-statistical-mechanics/227-dynamical-phase-transition-in-the-sherrington-kirkpatrick-model.md
+SKValue	281	1	1	1	0	0	0			mathematical-physics/281-qaoa-optimality-for-the-sk-model.md
+SLELowerPositivity	230	1	1	1	0	0	0			probability-and-statistical-mechanics/230-exact-hausdorff-measure-for-sle.md
+Saxl	205	1	1	1	0	0	1	OAI.Saxl.saxl_conjecture	OAI/RepresentationTheory/Saxl/Main.lean	algebra/205-saxls-conjecture-and-universal-tensor-squares.md
+SecondKahnKalai	176	1	1	1	0	0	1	OAI.LeanBlast.SecondKahnKalai.secondKahnKalaiBounds	OAI/Combinatorics/GraphThreshold/Main.lean	combinatorics/176-second-kahn-kalai-conjecture.md
+SelfSimilar	148	1	1	1	0	0	1	OAI.EntropyRateDimension.entropy_rate_dimension	OAI/MeasureTheory/SelfSimilar/Main.lean	dynamical-systems-and-ergodic-theory/148-dimension-formula-for-self-similar-measures-on-the-line.md
+SelfSimilarCorollaries	148	1	1	2	0	0	0			dynamical-systems-and-ergodic-theory/148-dimension-formula-for-self-similar-measures-on-the-line.md
+SensitivitySeparation	132	1	1	1	0	0	1	OAI.Paper320.quantitative_separation	OAI/Combinatorics/Sensitivity/Separation.lean	theoretical-computer-science/132-a-counterexample-to-the-quadratic-sensitivity-conjecture.md
+SeparableQuotientNegative	323	1	1	1	0	0	0			functional-analysis/323-relative-independence-of-the-separable-quotient-problem.md
+SeymourSecondNeighborhood	173	1	1	1	0	0	1	OAI.SeymourSecondNeighborhood.exists_goodVertex	OAI/Combinatorics/SecondNeighborhood/Main.lean	combinatorics/173-seymours-second-neighborhood-conjecture.md
+SharpCAT0Filling	337	1	1	1	0	0	0			differential-geometry/337-cartan-hadamard-isoperimetry-and-cat-0-fillings.md
+SharpLogRamsey	170	1	1	1	0	0	0			combinatorics/170-sharp-logarithmic-exponents-for-off-diagonal-ramsey-numbers.md
+SharpThreshold	186	1	1	1	0	0	0			combinatorics/186-friedgut-kalai-graph-and-hypergraph-threshold-conjectures.md
+ShortEgyptianFractions	025	1	1	1	0	0	0			number-theory/025-erdoss-short-egyptian-fraction-conjecture.md
+SidorenkoCounterexample	161	1	1	1	0	0	0			combinatorics/161-counterexamples-to-sidorenkos-conjecture-and-the-forcing-conjecture.md
+SiegelZeros	003	1	1	2	0	0	1	OAI.SiegelZeros.WeightedTorusJets.exists_absolute_real_zero_gap	OAI/NumberTheory/SiegelZeros/Conclusions/Theorem.lean	number-theory/003-quasi-riemann-hypothesis.md
+SignedFiniteBand	085	1	1	1	0	0	1	OAI.SignedDisk.CenteredDiskEndpoint.main_signed_finite_band	OAI/Analysis/SignedDisk/Main.lean	real-and-complex-analysis/085-endpoint-regularity-of-the-planar-centered-maximal-function.md
+SignedSweepMoment	238	1	1	1	0	0	0			probability-and-statistical-mechanics/238-optimal-logarithmic-mixing-of-the-thorp-shuffle.md
+SimpleAmenable	253	1	1	1	0	0	1	OAI.SimpleAmenable.main	OAI/GroupTheory/SimpleAmenable/Main.lean	group-theory/253-an-infinite-finitely-presented-simple-amenable-group.md
+SimpleOvergroups	250	1	1	1	0	0	0			group-theory/250-boone-higman-conjecture-and-higher-finiteness.md
+SingleFold	242	1	1	1	0	0	1	OAI.SingleFold.main	OAI/NumberTheory/SingleFold/Main.lean	mathematical-logic/242-single-fold-diophantine-representations.md
+SingleLatticeCovering	092	1	1	1	0	0	1	OAI.SingleLatticeCovering.single_lattice_covering	OAI/Geometry/LatticeCovering/Main.lean	convex-and-metric-geometry/092-optimal-order-of-convex-body-covering-density.md
+SingletonLoopMatching	113	1	1	1	0	0	1	OAI.LoopMatching.fullEndpoint	OAI/Computability/LoopMatching/Main.lean	theoretical-computer-science/113-approximate-counting-and-the-perfect-matching-entropy-conjecture.md
+SmoothInitialForm	108	1	1	1	0	0	0			theoretical-computer-science/108-a-cubic-permanent-determinant-lower-bound.md
+SmoothObstruction	152	1	1	1	0	0	0			dynamical-systems-and-ergodic-theory/152-zero-entropy-does-not-guarantee-a-smooth-positive-volume-model.md
+SmoothYau	350	1	1	2	0	0	2	OAI.YauCounterexamples.sphere_three|OAI.YauCounterexamples.sphere_two_torus_two	OAI/Geometry/SmoothYau/SphereMetric/ThreeSphere.lean|OAI/Geometry/SmoothYau/ProductMetric/SphereProduct.lean	differential-geometry/350-yaus-nodal-conjecture-surfaces-and-counterexamples.md
+SnakyCertificate	187	1	1	1	0	0	0			combinatorics/187-snaky-in-21-maker-moves.md
+SnakyConditional	187	1	1	1	0	0	0			combinatorics/187-snaky-in-21-maker-moves.md
+SnakyTwentyOne	187	1	1	1	0	0	0			combinatorics/187-snaky-in-21-maker-moves.md
+SoftChannel204	119	1	1	1	0	0	0			theoretical-computer-science/119-courtade-kumar-and-hellinger-conjectures.md
+SolenoidalSheetPrograms	376	1	1	1	0	0	0			partial-differential-equations/376-universal-computation-in-forced-navier-stokes-flows.md
+SphericalField	222	1	1	1	0	0	0			probability-and-statistical-mechanics/222-perceptron-free-energies-and-microscopic-jamming.md
+SpinAngle	238	1	1	1	3	0	0			probability-and-statistical-mechanics/238-optimal-logarithmic-mixing-of-the-thorp-shuffle.md
+SplitTangentIntegrability	052	1	1	1	0	0	0			algebraic-and-complex-geometry/052-tangent-bundle-splittings-and-universal-covers.md
+SquareDifference	182	1	1	1	0	0	0			combinatorics/182-power-savings-for-polynomial-difference-free-sets.md
+SquareRootDegree	192	1	1	1	0	0	0			combinatorics/192-a-counterexample-to-the-gopalan-servedio-conjecture.md
+StandardMapComponents	146	1	1	1	0	0	0			dynamical-systems-and-ergodic-theory/146-sinais-positive-entropy-conjecture-for-the-standard-map.md
+StandardMapEntropy	146	1	1	1	0	0	0			dynamical-systems-and-ergodic-theory/146-sinais-positive-entropy-conjecture-for-the-standard-map.md
+StandardMapLyapunov	146	1	1	1	0	0	0			dynamical-systems-and-ergodic-theory/146-sinais-positive-entropy-conjecture-for-the-standard-map.md
+SteinitzBergstrom	097	1	1	1	0	0	1	OAI.EuclideanSteinitzBergstrom.main	OAI/Analysis/Steinitz/Main.lean	convex-and-metric-geometry/097-euclidean-steinitz-bergstr-om-conjecture.md
+StrictMeans	072	1	1	1	0	0	1	OAI.StrictInverseFirstPower.main	OAI/Analysis/StrictMeans/Main.lean	real-and-complex-analysis/072-brennans-conjecture-and-a-counterexample-to-kraetzers-prediction.md
+StrongKadisonKastler	289	1	1	1	0	0	0			operator-algebras/289-strong-kadison-kastler-conjecture.md
+StrongThinTree	174	1	1	1	0	0	1	OAI.StrongThinTree.strongThinTree	OAI/Combinatorics/ThinTrees/Main.lean	combinatorics/174-deterministic-construction-of-strong-thin-spanning-trees.md
+StronglyRayleighDPP	231	1	1	6	0	0	0			probability-and-statistical-mechanics/231-free-uniform-spanning-forest-is-a-factor-of-iid.md
+StructuralCrouzeix	325	1	1	1	0	0	1	OAI.StructuralCrouzeixReference.challenge	OAI/Analysis/StructuralCrouzeix/Endpoint.lean	functional-analysis/325-complete-crouzeix-conjecture.md
+SubpolynomialLp	094	1	1	1	0	0	1	OAI.SubpolynomialLp.source_main	OAI/Analysis/LpDimension/Main.lean	convex-and-metric-geometry/094-subpolynomial-dimension-reduction-in-l-p.md
+SubsphereCurrent	140	1	1	1	0	0	1	OAI.SubsphereCurrent.full_current_main_scope	OAI/Probability/Subsphere/Main.lean	theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md
+Superstring	128	1	1	1	0	0	1	OAI.Superstring.main	OAI/Computability/Superstring/Main.lean	theoretical-computer-science/128-a-factor-two-approximation-for-shortest-common-superstring.md
+SurfaceImmersion	333	1	1	1	0	0	0			differential-geometry/333-smooth-isometric-immersions-of-surfaces-into-r-4.md
+SwitchChain	131	1	1	3	0	0	0			theoretical-computer-science/131-polynomial-mixing-of-graph-switches-with-prescribed-degrees.md
+SymmetricDomains	058	1	1	1	0	0	1	OAI.Release061.main	OAI/Analysis/SymmetricDomains/Main.lean	algebraic-and-complex-geometry/058-koll-pardon-universal-cover-conjecture.md
+SymmetricMahlerEquality	087	1	1	1	0	0	1	OAI.SymmetricMahler.symmetric_mahler_equality	OAI/Analysis/Mahler/Classification.lean	convex-and-metric-geometry/087-mahler-conjectures-and-symplectic-width.md
+SymmetricPolar	087	1	1	1	0	0	1	OAI.SymmetricPolar.symmetric_polar_main	OAI/Geometry/PolarProducts/Main.lean	convex-and-metric-geometry/087-mahler-conjectures-and-symplectic-width.md
+Tachikawa	199	1	1	1	0	0	1	OAI.Tachikawa.main_theorem	OAI/RingTheory/Tachikawa/Counterexample.lean	algebra/199-counterexamples-to-conjectures-of-auslander-reiten-tachikawa-and-nakayama.md
+TalagrandDiscreteConvexity	175	1	1	1	0	0	1	OAI.TalagrandDiscreteConvexity.talagrand_discrete_convexity	OAI/Combinatorics/DiscreteConvexity/Main.lean	combinatorics/175-talagrands-conjectures-and-graph-decompositions-at-expectation-thresholds.md
+TalagrandExpectationThreshold	175	1	1	1	0	0	1	OAI.TalagrandThreshold.talagrand_expectation_threshold_equivalence	OAI/Combinatorics/ExpectationThreshold/Main.lean	combinatorics/175-talagrands-conjectures-and-graph-decompositions-at-expectation-thresholds.md
+TamingCompatibility	342	1	1	1	0	0	1	OAI.TamingCompatibility.taming_implies_compatibility	OAI/Geometry/TamingCompatibility/Main.lean	differential-geometry/342-donaldsons-tamed-to-compatible-conjecture.md
+ThomasonModelStructures	317	1	1	2	0	0	0			topology/317-thomason-model-structures-in-every-strict-higher-dimension.md
+ThompsonNonamenability	248	1	1	1	0	0	1	OAI.ThompsonNonamenability.thompson_F_nonamenable_composition	OAI/GroupTheory/Thompson/Main.lean	group-theory/248-thompsons-group-f-is-nonamenable.md
+ThorpFirstReciprocal	238	1	1	1	0	0	0			probability-and-statistical-mechanics/238-optimal-logarithmic-mixing-of-the-thorp-shuffle.md
+ThorpRemaining	238	1	1	1	0	0	0			probability-and-statistical-mechanics/238-optimal-logarithmic-mixing-of-the-thorp-shuffle.md
+ThorpRouting	238	1	1	1	0	0	1	OAI.ThorpNine.main	OAI/Probability/ThorpRouting/Main.lean	probability-and-statistical-mechanics/238-optimal-logarithmic-mixing-of-the-thorp-shuffle.md
+ThorpWeightedCompatibility	238	1	1	1	0	0	1	OAI.ThorpCompatibility.weightedCompatibility_main	OAI/Probability/ThorpCompatibility/Main.lean	probability-and-statistical-mechanics/238-optimal-logarithmic-mixing-of-the-thorp-shuffle.md
+ThreeMachine	124	1	1	1	0	0	0			theoretical-computer-science/124-polynomial-time-scheduling-on-three-identical-machines.md
+ThreeStateSupercritical	229	1	1	2	0	0	0			probability-and-statistical-mechanics/229-sharp-three-and-four-state-reconstruction-thresholds.md
+ThreeStateTreeClauses	229	1	1	2	0	0	0			probability-and-statistical-mechanics/229-sharp-three-and-four-state-reconstruction-thresholds.md
+ThreeTorus	144	1	1	1	0	0	0			dynamical-systems-and-ergodic-theory/144-banachs-simple-lebesgue-spectrum-problem.md
+TingleySphereIsometry	322	1	1	1	0	0	1	OAI.Tingley.tingley_sphere_isometry_full	OAI/Analysis/SphereIsometry/Extension.lean	functional-analysis/322-tingleys-sphere-isometry-problem.md
+TorsionFreeHyperbolic	252	1	1	1	0	0	1	OAI.Release075.main	OAI/GroupTheory/Hyperbolic/Main.lean	group-theory/252-a-non-residually-finite-torsion-free-hyperbolic-group.md
+TorsionFreeZeroDivisors	196	1	1	1	0	0	1	OAI.TorsionFreeZeroDivisors.main	OAI/Algebra/GroupRing/Main.lean	algebra/196-a-counterexample-to-kaplanskys-zero-divisor-conjecture.md
+TotientAsymptotic	024	1	1	4	0	0	0			number-theory/024-an-asymptotic-formula-for-the-number-of-totients.md
+TotientCompanionZero	024	1	1	1	0	0	0			number-theory/024-an-asymptotic-formula-for-the-number-of-totients.md
+TraceReconstruction	122	1	1	3	0	0	0			theoretical-computer-science/122-superpolynomial-lower-bounds-and-quasipolynomial-reconstruction-from-deletion-traces.md
+TreeEdit	099	1	1	1	0	0	0			convex-and-metric-geometry/099-sharp-distortion-of-edit-distance-into-1.md
+TriangleFace	113	1	1	1	0	0	0			theoretical-computer-science/113-approximate-counting-and-the-perfect-matching-entropy-conjecture.md
+TriangleRemoval	188	1	1	1	0	0	0			combinatorics/188-sharp-constant-in-random-triangle-removal.md
+TriangularCovering	100	1	1	1	0	0	0			convex-and-metric-geometry/100-a-counterexample-to-bangs-cylinder-covering-bound.md
+TriangularEnergy	090	1	1	1	0	0	0			convex-and-metric-geometry/090-universal-optimality-of-the-triangular-lattice.md
+TriangularGaussian	090	1	1	1	0	0	0			convex-and-metric-geometry/090-universal-optimality-of-the-triangular-lattice.md
+TriangularHilbert	082	1	1	1	0	0	1	OAI.TriangularHilbert.main_estimate	OAI/Analysis/TriangularHilbert/Main.lean	real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md
+TruffetCounterexample	104	1	1	1	0	0	0			theoretical-computer-science/104-quasipolynomial-algorithms-for-mean-payoff-stochastic-and-parity-games.md
+TwoWayComplementation	129	1	1	1	0	0	1	OAI.TwoWayComplementation.complementation_lower_bound_finite	OAI/Combinatorics/TwoWayAutomata/Main.lean	theoretical-computer-science/129-exponential-state-costs-for-two-way-automata.md
+TwoWayDeterminization	129	1	1	1	0	0	1	OAI.TwoWayComplementation.explicit_family_main	OAI/Combinatorics/TwoWayAutomata/ExplicitFamily.lean	theoretical-computer-science/129-exponential-state-costs-for-two-way-automata.md
+TypeSystemNormalization	245	1	1	1	0	0	0			mathematical-logic/245-barendregt-geuvers-klop-conjecture.md
+UniformCommutator	288	1	1	1	0	0	0			operator-algebras/288-kadisons-similarity-conjecture.md
+UniformGamma	291	1	1	1	0	0	1	OAI.ComparatorModel.CurrentMain.main	OAI/Analysis/TracialSplitting/Challenge.lean	operator-algebras/291-toms-winter-and-equivariant-jiang-su-stability.md
+UniformKServer	110	1	1	1	0	0	0			theoretical-computer-science/110-optimal-order-randomized-k-server-on-arbitrary-metrics.md
+UniformSparsestCut	117	1	1	1	0	0	1	OAI.UniformSparsestCut.mainGap	OAI/Combinatorics/SparsestCut/Main.lean	theoretical-computer-science/117-uniform-sparsest-cut-hardness-and-semidefinite-gaps.md
+UniqueGamesTheorem	102	1	1	1	0	0	1	OAI.UniqueGamesTheorem.theorem11	OAI/Computability/UniqueGames/Theorem.lean	theoretical-computer-science/102-unique-games-conjecture-and-optimal-approximation-thresholds.md
+UniversalFInfinity	250	1	1	1	0	0	1	OAI.UniversalFInfinity.universal_group_of_type_FInfinity	OAI/GroupTheory/UniversalGroup/Main.lean	group-theory/250-boone-higman-conjecture-and-higher-finiteness.md
+UniversalTensorSquares	205	1	1	1	0	0	0			algebra/205-saxls-conjecture-and-universal-tensor-squares.md
+VariableWL	133	1	1	1	0	0	0			theoretical-computer-science/133-complexity-of-weisfeiler-leman-refinement.md
+VelocityHemisphere	220	1	1	1	0	0	0			probability-and-statistical-mechanics/220-directional-zero-one-laws-and-ballisticity-in-random-environments.md
+VertexAlgebraNet	280	1	1	1	0	0	0			mathematical-physics/280-strong-locality-for-strongly-rational-unitary-vertex-operator-algebras.md
+VertexCover	102	1	1	2	0	0	1	OAI.VertexCover.every_fixed_factor_below_two	OAI/Computability/VertexCover/Main.lean	theoretical-computer-science/102-unique-games-conjecture-and-optimal-approximation-thresholds.md
+VlasovMaxwell	362	1	1	1	0	0	1	OAI.RVM.global_classical_solution	OAI/Analysis/VlasovMaxwell/Main.lean	partial-differential-equations/362-global-smoothness-for-relativistic-vlasov-maxwell.md
+WLIdentification	133	1	1	1	0	0	0			theoretical-computer-science/133-complexity-of-weisfeiler-leman-refinement.md
+WeakHessian	356	1	1	1	0	0	1	OAI.WeakHessian.every_geodesic	OAI/Geometry/WeakHessian/Main.lean	differential-geometry/356-giglis-characterization-of-alexandrov-curvature.md
+WeakMTWGlobalSupport	360	1	1	1	0	0	1	OAI.WeakMTWGlobalSupport.current_main_convexity	OAI/Geometry/WeakMTW/Convexity.lean	differential-geometry/360-villanis-convexity-conjecture-and-regular-optimal-transport.md
+WeightedSweepMoments	238	1	1	1	0	0	0			probability-and-statistical-mechanics/238-optimal-logarithmic-mixing-of-the-thorp-shuffle.md
+WeisfeilerLeman	133	1	1	1	0	0	0			theoretical-computer-science/133-complexity-of-weisfeiler-leman-refinement.md
+WitnessedChoice	243	1	1	1	0	0	0			mathematical-logic/243-choiceless-counting-does-not-capture-polynomial-time.md
+YauCounterexample	350	1	1	1	0	0	1	OAI.Yau.Target.yau_nodal_set_upper_bound_counterexample	OAI/Geometry/NodalSets/Main.lean	differential-geometry/350-yaus-nodal-conjecture-surfaces-and-counterexamples.md

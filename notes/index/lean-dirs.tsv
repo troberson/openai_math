@@ -1,0 +1,555 @@
+dir	discipline	module	lean_files	named_by_yaml	declarations
+OAI/Algebra/AffineCancellation	Algebra	AffineCancellation	55	1	OAI.ComplexCancellation.main
+OAI/Algebra/AlgebraicObstruction	Algebra	AlgebraicObstruction	40	0	
+OAI/Algebra/AuslanderReiten	Algebra	AuslanderReiten	732	1	OAI.ArExplicit.Statement.main
+OAI/Algebra/BogomolovPop	Algebra	BogomolovPop	5	0	
+OAI/Algebra/Cohomology	Algebra	Cohomology	1	0	
+OAI/Algebra/DepthFive	Algebra	DepthFive	199	0	
+OAI/Algebra/Determinantal	Algebra	Determinantal	57	0	
+OAI/Algebra/Divisor	Algebra	Divisor	2	0	
+OAI/Algebra/Drinfeld	Algebra	Drinfeld	21	1	OAI.DeligneDrinfeld.main
+OAI/Algebra/FiniteTensor	Algebra	FiniteTensor	52	0	
+OAI/Algebra/Finitistic	Algebra	Finitistic	546	1	OAI.LittleFinitistic.Main.exists_counterexample
+OAI/Algebra/FinitisticAsymmetry	Algebra	FinitisticAsymmetry	42	1	OAI.LittleFinitistic.extreme_left_right_asymmetry
+OAI/Algebra/FormalGroup	Algebra	FormalGroup	29	0	
+OAI/Algebra/FormulaHitting	Algebra	FormulaHitting	39	0	
+OAI/Algebra/FrobeniusObstruction	Algebra	FrobeniusObstruction	35	0	
+OAI/Algebra/GroupRing	Algebra	GroupRing	124	1	OAI.TorsionFreeZeroDivisors.main
+OAI/Algebra/MarkedTensor	Algebra	MarkedTensor	7	0	
+OAI/Algebra/Module	Algebra	Module	1	0	
+OAI/Algebra/OddKaplansky	Algebra	OddKaplansky	87	1	OAI.OddKaplansky.main_theorem
+OAI/Algebra/OrderedStates	Algebra	OrderedStates	2	0	
+OAI/Algebra/PolynomialChains	Algebra	PolynomialChains	1	0	
+OAI/Algebra/Universal	Algebra	Universal	4	0	
+OAI/AlgebraicGeometry/AbhyankarSathaye	AlgebraicGeometry	AbhyankarSathaye	15	1	OAI.AbhyankarSathaye.exists_noncoordinate_polynomial
+OAI/AlgebraicGeometry/CartierSections	AlgebraicGeometry	CartierSections	22	0	
+OAI/AlgebraicGeometry/CharacterVarieties	AlgebraicGeometry	CharacterVarieties	90	0	
+OAI/AlgebraicGeometry/CommutingDerivations	AlgebraicGeometry	CommutingDerivations	21	1	OAI.AbhyankarSathaye.CommutingDerivations.commuting_derivations_with_ordinary_extras
+OAI/AlgebraicGeometry/LogKodaira	AlgebraicGeometry	LogKodaira	17	0	
+OAI/AlgebraicGeometry/NumericalDimension	AlgebraicGeometry	NumericalDimension	51	0	
+OAI/AlgebraicGeometry/PlaneCurves	AlgebraicGeometry	PlaneCurves	117	1	OAI.Nagata.nagata_conjecture
+OAI/AlgebraicGeometry/RelativeTriviality	AlgebraicGeometry	RelativeTriviality	17	0	
+OAI/AlgebraicGeometry/SectionFields	AlgebraicGeometry	SectionFields	16	0	
+OAI/AlgebraicGeometry/Seshadri	AlgebraicGeometry	Seshadri	421	1	OAI.MaximalSeshadri.Geometry.maximalSeshadriConstants
+OAI/AlgebraicGeometry/Stability	AlgebraicGeometry	Stability	1	0	
+OAI/AlgebraicGeometry/SurfaceCones	AlgebraicGeometry	SurfaceCones	66	0	
+OAI/AlgebraicTopology/CWComplex	AlgebraicTopology	CWComplex	5	0	
+OAI/AlgebraicTopology/Cubical	AlgebraicTopology	Cubical	7	0	
+OAI/AlgebraicTopology/Integral	AlgebraicTopology	Integral	1	0	
+OAI/AlgebraicTopology/IntegralHomology	AlgebraicTopology	IntegralHomology	31	0	
+OAI/AlgebraicTopology/Simplicial	AlgebraicTopology	Simplicial	1	0	
+OAI/Analysis/AffineBernstein	Analysis	AffineBernstein	326	0	
+OAI/Analysis/AllenCahn	Analysis	AllenCahn	53	0	
+OAI/Analysis/AncientFlat	Analysis	AncientFlat	333	0	
+OAI/Analysis/BackwardIntertwiners	Analysis	BackwardIntertwiners	23	1	OAI.BackwardIntertwiners.direct_algebra_corollary
+OAI/Analysis/BernoulliCone	Analysis	BernoulliCone	91	0	
+OAI/Analysis/BiholderTransport	Analysis	BiholderTransport	645	1	OAI.WeakMTWTransport.uniform_biHolder_transport
+OAI/Analysis/BoundedHochschild	Analysis	BoundedHochschild	358	0	
+OAI/Analysis/BoxTransport	Analysis	BoxTransport	7	0	
+OAI/Analysis/Brenier	Analysis	Brenier	89	0	
+OAI/Analysis/BrownMeasure	Analysis	BrownMeasure	21	0	
+OAI/Analysis/C0Absorption	Analysis	C0Absorption	34	1	OAI.C0Absorption.main_result
+OAI/Analysis/CStarAlgebra	Analysis	CStarAlgebra	25	0	
+OAI/Analysis/CardinalInterpolation	Analysis	CardinalInterpolation	1	0	
+OAI/Analysis/CharacterCriterion	Analysis	CharacterCriterion	62	1	OAI.KirchbergRordam.character_criterion
+OAI/Analysis/CircleDomains	Analysis	CircleDomains	2639	0	
+OAI/Analysis/Commutator	Analysis	Commutator	656	0	
+OAI/Analysis/Conductivity	Analysis	Conductivity	595	1	OAI.ScalarConductivity.main_nonuniqueness
+OAI/Analysis/Cotype	Analysis	Cotype	125	1	OAI.Cotype.mainTarget_proved
+OAI/Analysis/CoulombIonization	Analysis	CoulombIonization	607	1	OAI.CoulombAtom.generalized_ionization
+OAI/Analysis/CoulombRadii	Analysis	CoulombRadii	428	0	
+OAI/Analysis/CoulombTransport	Analysis	CoulombTransport	97	0	
+OAI/Analysis/Crouzeix	Analysis	Crouzeix	90	0	
+OAI/Analysis/Cuntz	Analysis	Cuntz	15	0	
+OAI/Analysis/Daugavet	Analysis	Daugavet	28	1	OAI.ExactModuli.exact_example
+OAI/Analysis/DiamondDistortion	Analysis	DiamondDistortion	38	1	OAI.DiamondDistortion.headline_all_pairs
+OAI/Analysis/DirectCrouzeix	Analysis	DirectCrouzeix	42	1	OAI.DirectCrouzeix.complete_crouzeix
+OAI/Analysis/DiskMaximal	Analysis	DiskMaximal	30	0	
+OAI/Analysis/FactorGeneration	Analysis	FactorGeneration	85	1	OAI.Generator.single_generation_of_II1_separable_predual
+OAI/Analysis/FiniteFactor	Analysis	FiniteFactor	271	0	
+OAI/Analysis/ForestSpace	Analysis	ForestSpace	20	1	OAI.ForestSpace.main_theorem
+OAI/Analysis/Fourier	Analysis	Fourier	2	0	
+OAI/Analysis/FourierExtension	Analysis	FourierExtension	14	0	
+OAI/Analysis/FreeEntropy	Analysis	FreeEntropy	153	0	
+OAI/Analysis/FreeGroupFactor	Analysis	FreeGroupFactor	27	0	
+OAI/Analysis/FreeWords	Analysis	FreeWords	267	0	
+OAI/Analysis/Graph	Analysis	Graph	1	0	
+OAI/Analysis/GroupDeterminants	Analysis	GroupDeterminants	34	1	OAI.GroupRingDeterminant.main
+OAI/Analysis/HardSphere	Analysis	HardSphere	466	0	
+OAI/Analysis/HenonEmden	Analysis	HenonEmden	96	1	OAI.HenonLaneEmden.main_nonexistence
+OAI/Analysis/HilbertCrouzeix	Analysis	HilbertCrouzeix	7	0	
+OAI/Analysis/HotSpots	Analysis	HotSpots	31	0	
+OAI/Analysis/HyperbolicCones	Analysis	HyperbolicCones	101	1	OAI.Paper256.main_result
+OAI/Analysis/Hyperinvariant	Analysis	Hyperinvariant	7	0	
+OAI/Analysis/IncompressibleFlow	Analysis	IncompressibleFlow	1	0	
+OAI/Analysis/InnerProductSpace	Analysis	InnerProductSpace	1	0	
+OAI/Analysis/IntegralMeans	Analysis	IntegralMeans	47	2	OAI.Brennan.Sharp.sharp_endpoints|OAI.Brennan.main_theorem
+OAI/Analysis/InterpolatedFactors	Analysis	InterpolatedFactors	50	0	
+OAI/Analysis/IrrationalRotation	Analysis	IrrationalRotation	933	0	
+OAI/Analysis/JiangSu	Analysis	JiangSu	348	0	
+OAI/Analysis/KLS	Analysis	KLS	21	0	
+OAI/Analysis/KadisonKastler	Analysis	KadisonKastler	1831	0	
+OAI/Analysis/KadisonSimilarity	Analysis	KadisonSimilarity	539	0	
+OAI/Analysis/Kakeya	Analysis	Kakeya	1	0	
+OAI/Analysis/Kaplansky	Analysis	Kaplansky	72	1	OAI.Kaplansky.kaplansky_quasitrace_counterexample
+OAI/Analysis/Laughlin	Analysis	Laughlin	1279	1	OAI.Laughlin.mainTarget_proved
+OAI/Analysis/LaughlinFock	Analysis	LaughlinFock	293	0	
+OAI/Analysis/LaughlinGap	Analysis	LaughlinGap	104	0	
+OAI/Analysis/LiebThirring	Analysis	LiebThirring	62	1	OAI.SharpLiebThirring.sharp_lieb_thirring
+OAI/Analysis/LienardCycles	Analysis	LienardCycles	146	1	OAI.QuinticLienard.main
+OAI/Analysis/Lipschitz	Analysis	Lipschitz	1	0	
+OAI/Analysis/LipschitzEquivalence	Analysis	LipschitzEquivalence	60	1	OAI.LipschitzCounterexample.main
+OAI/Analysis/LipschitzFree	Analysis	LipschitzFree	34	0	
+OAI/Analysis/LipschitzHilbert	Analysis	LipschitzHilbert	1910	0	
+OAI/Analysis/Littlewood	Analysis	Littlewood	27	1	OAI.AsymptoticallyMinimalLittlewood.main
+OAI/Analysis/LpDimension	Analysis	LpDimension	45	1	OAI.SubpolynomialLp.source_main
+OAI/Analysis/Mahler	Analysis	Mahler	243	2	OAI.SymmetricMahler.symmetric_mahler|OAI.SymmetricMahler.symmetric_mahler_equality
+OAI/Analysis/MarkovType	Analysis	MarkovType	212	1	OAI.MarkovSuperreflexivity.hasNontrivialMarkovType_iff_hasEquivalentUCNorm
+OAI/Analysis/MassAction	Analysis	MassAction	71	0	
+OAI/Analysis/Matrix	Analysis	Matrix	3	0	
+OAI/Analysis/MatrixScaling	Analysis	MatrixScaling	10	0	
+OAI/Analysis/MatrixSigning	Analysis	MatrixSigning	553	0	
+OAI/Analysis/MetricEntropy	Analysis	MetricEntropy	52	1	OAI.MetricEntropyDuality.exists_entropy_duality_counterexample_with_covers
+OAI/Analysis/ModularRecovery	Analysis	ModularRecovery	27	1	OAI.BoundedRecovery.bounded_recovery
+OAI/Analysis/ModularTheory	Analysis	ModularTheory	88	0	
+OAI/Analysis/MumfordShah	Analysis	MumfordShah	24	0	
+OAI/Analysis/MutuallyUnbiased	Analysis	MutuallyUnbiased	3386	0	
+OAI/Analysis/Naimark	Analysis	Naimark	16	0	
+OAI/Analysis/NavierStokes	Analysis	NavierStokes	1	0	
+OAI/Analysis/NefAdjoint	Analysis	NefAdjoint	2	0	
+OAI/Analysis/NodalLength	Analysis	NodalLength	59	0	
+OAI/Analysis/Nonexpansive	Analysis	Nonexpansive	86	1	OAI.ReflexiveFixedPoints.exists_fixedPoint_of_canonicallyReflexive
+OAI/Analysis/NuclearUltrapower	Analysis	NuclearUltrapower	39	0	
+OAI/Analysis/Nuclearity	Analysis	Nuclearity	109	0	
+OAI/Analysis/NumericalRange	Analysis	NumericalRange	48	1	OAI.CompleteCrouzeix.main
+OAI/Analysis/OInfinity	Analysis	OInfinity	129	0	
+OAI/Analysis/OperatorAlgebra	Analysis	OperatorAlgebra	112	0	
+OAI/Analysis/PathSelection	Analysis	PathSelection	58	0	
+OAI/Analysis/PeriodicLattice	Analysis	PeriodicLattice	32	0	
+OAI/Analysis/PlanarEndpoint	Analysis	PlanarEndpoint	55	0	
+OAI/Analysis/PlanarPacking	Analysis	PlanarPacking	562	0	
+OAI/Analysis/PlaneSpectrum	Analysis	PlaneSpectrum	19	0	
+OAI/Analysis/Polynomial	Analysis	Polynomial	1	0	
+OAI/Analysis/PrefixRadix	Analysis	PrefixRadix	4	0	
+OAI/Analysis/ProductSpaces	Analysis	ProductSpaces	22	2	OAI.IndependentProducts.main_exponential|OAI.IndependentProducts.main_general
+OAI/Analysis/PureInfiniteness	Analysis	PureInfiniteness	110	0	
+OAI/Analysis/Pureness	Analysis	Pureness	581	0	
+OAI/Analysis/Quantum	Analysis	Quantum	136	0	
+OAI/Analysis/QuantumTrace	Analysis	QuantumTrace	1	0	
+OAI/Analysis/Quasitrace	Analysis	Quasitrace	7	0	
+OAI/Analysis/RCDHeat	Analysis	RCDHeat	78	0	
+OAI/Analysis/RecorderRadix	Analysis	RecorderRadix	4	0	
+OAI/Analysis/RecursivePotentials	Analysis	RecursivePotentials	12	1	OAI.ComparatorModel.RecursivePotentials.main
+OAI/Analysis/RelativeGeneration	Analysis	RelativeGeneration	9	0	
+OAI/Analysis/RieszRectifiability	Analysis	RieszRectifiability	824	0	
+OAI/Analysis/RotationWeights	Analysis	RotationWeights	51	0	
+OAI/Analysis/SegmentLenses	Analysis	SegmentLenses	35	1	OAI.SegmentLenses.midpoint_lens_main
+OAI/Analysis/SeparableQuotients	Analysis	SeparableQuotients	76	0	
+OAI/Analysis/SignedDisk	Analysis	SignedDisk	39	1	OAI.SignedDisk.CenteredDiskEndpoint.main_signed_finite_band
+OAI/Analysis/SolenoidalShears	Analysis	SolenoidalShears	1	0	
+OAI/Analysis/SphereIsometry	Analysis	SphereIsometry	67	1	OAI.Tingley.tingley_sphere_isometry_full
+OAI/Analysis/Steinitz	Analysis	Steinitz	29	1	OAI.EuclideanSteinitzBergstrom.main
+OAI/Analysis/StrictMeans	Analysis	StrictMeans	94	1	OAI.StrictInverseFirstPower.main
+OAI/Analysis/StructuralCrouzeix	Analysis	StructuralCrouzeix	12	1	OAI.StructuralCrouzeixReference.challenge
+OAI/Analysis/SymmetricDomains	Analysis	SymmetricDomains	351	1	OAI.Release061.main
+OAI/Analysis/TemperedDistribution	Analysis	TemperedDistribution	1	0	
+OAI/Analysis/TraceCone	Analysis	TraceCone	11	0	
+OAI/Analysis/TracialCohomology	Analysis	TracialCohomology	44	0	
+OAI/Analysis/TracialSplitting	Analysis	TracialSplitting	51	1	OAI.ComparatorModel.CurrentMain.main
+OAI/Analysis/TreePotential	Analysis	TreePotential	46	1	OAI.BoundedTreePotentials.TreeCalculus.main_counterexample
+OAI/Analysis/Triangular	Analysis	Triangular	276	0	
+OAI/Analysis/TriangularHilbert	Analysis	TriangularHilbert	105	1	OAI.TriangularHilbert.main_estimate
+OAI/Analysis/Unitarizability	Analysis	Unitarizability	39	1	OAI.Dixmier.current_main_theorem
+OAI/Analysis/VlasovMaxwell	Analysis	VlasovMaxwell	207	1	OAI.RVM.global_classical_solution
+OAI/Analysis/WeakInfiniteness	Analysis	WeakInfiniteness	240	0	
+OAI/CategoryTheory/Globular	CategoryTheory	Globular	58	1	OAI.Grothendieck.elementary_expansion
+OAI/CategoryTheory/Limits	CategoryTheory	Limits	1	0	
+OAI/CategoryTheory/ThickClosure	CategoryTheory	ThickClosure	28	0	
+OAI/CategoryTheory/Thomason	CategoryTheory	Thomason	225	0	
+OAI/Combinatorics/Automata	Combinatorics	Automata	16	1	OAI.OneWayLiveness.main_theorem
+OAI/Combinatorics/BalancedRyser	Combinatorics	BalancedRyser	698	0	
+OAI/Combinatorics/BinaryEdit	Combinatorics	BinaryEdit	82	0	
+OAI/Combinatorics/BooleanFunctions	Combinatorics	BooleanFunctions	21	0	
+OAI/Combinatorics/Chromatic	Combinatorics	Chromatic	549	0	
+OAI/Combinatorics/CliqueFree	Combinatorics	CliqueFree	31	1	OAI.CliqueFreeLog.logarithmic_independence_bound
+OAI/Combinatorics/Coboundary	Combinatorics	Coboundary	15	0	
+OAI/Combinatorics/CompleteCrossing	Combinatorics	CompleteCrossing	46	1	OAI.Paper170.complete_graph_crossing_number
+OAI/Combinatorics/ContingencyTables	Combinatorics	ContingencyTables	1117	0	
+OAI/Combinatorics/Crossing	Combinatorics	Crossing	339	1	OAI.Zarankiewicz.mainTarget_proof
+OAI/Combinatorics/CycleDecomposition	Combinatorics	CycleDecomposition	34	1	OAI.ErdosGallai.erdos_gallai
+OAI/Combinatorics/DiscreteConvexity	Combinatorics	DiscreteConvexity	36	1	OAI.TalagrandDiscreteConvexity.talagrand_discrete_convexity
+OAI/Combinatorics/Distances	Combinatorics	Distances	1	0	
+OAI/Combinatorics/EditApproximation	Combinatorics	EditApproximation	1025	0	
+OAI/Combinatorics/EditDistance	Combinatorics	EditDistance	45	0	
+OAI/Combinatorics/EuclideanRamsey	Combinatorics	EuclideanRamsey	47	1	OAI.EuclideanRamsey.classification
+OAI/Combinatorics/ExpectationThreshold	Combinatorics	ExpectationThreshold	47	1	OAI.TalagrandThreshold.talagrand_expectation_threshold_equivalence
+OAI/Combinatorics/FiniteCircle	Combinatorics	FiniteCircle	36	0	
+OAI/Combinatorics/GotsmanLinial	Combinatorics	GotsmanLinial	22	1	OAI.LeanBlast.GotsmanLinial.gotsmanLinialStatement
+OAI/Combinatorics/GraphSpectrum	Combinatorics	GraphSpectrum	1	0	
+OAI/Combinatorics/GraphThreshold	Combinatorics	GraphThreshold	37	1	OAI.LeanBlast.SecondKahnKalai.secondKahnKalaiBounds
+OAI/Combinatorics/Graphs	Combinatorics	Graphs	1	0	
+OAI/Combinatorics/HadwigerMatching	Combinatorics	HadwigerMatching	10	0	
+OAI/Combinatorics/HalvingLines	Combinatorics	HalvingLines	47	0	
+OAI/Combinatorics/Hamiltonian	Combinatorics	Hamiltonian	31	0	
+OAI/Combinatorics/Honeycomb	Combinatorics	Honeycomb	2	0	
+OAI/Combinatorics/HoneycombBridges	Combinatorics	HoneycombBridges	6	0	
+OAI/Combinatorics/HoneycombChords	Combinatorics	HoneycombChords	100	0	
+OAI/Combinatorics/HoneycombCorridor	Combinatorics	HoneycombCorridor	44	0	
+OAI/Combinatorics/IndependentSets	Combinatorics	IndependentSets	454	1	OAI.LargeIndependentSets.mainTheoremReal
+OAI/Combinatorics/InfiniteMatroid	Combinatorics	InfiniteMatroid	33	1	OAI.InfiniteMatroidCounterexample.main
+OAI/Combinatorics/KMedian	Combinatorics	KMedian	765	0	
+OAI/Combinatorics/KMedianRecovery	Combinatorics	KMedianRecovery	522	1	OAI.MetricKMedianRecovery.global_application
+OAI/Combinatorics/KServer	Combinatorics	KServer	37	0	
+OAI/Combinatorics/ListHadwiger	Combinatorics	ListHadwiger	53	0	
+OAI/Combinatorics/LowSpaceSubsetSum	Combinatorics	LowSpaceSubsetSum	615	0	
+OAI/Combinatorics/MatchingCount	Combinatorics	MatchingCount	415	0	
+OAI/Combinatorics/MatchingEntropy	Combinatorics	MatchingEntropy	35	0	
+OAI/Combinatorics/MatchingPSD	Combinatorics	MatchingPSD	66	0	
+OAI/Combinatorics/MatrixRemoval	Combinatorics	MatrixRemoval	61	1	OAI.Problem348.no_polynomial_removal_bound
+OAI/Combinatorics/MatroidCounting	Combinatorics	MatroidCounting	1	1	OAI.common_bases_fpras
+OAI/Combinatorics/Order	Combinatorics	Order	2	0	
+OAI/Combinatorics/ParityLifts	Combinatorics	ParityLifts	117	0	
+OAI/Combinatorics/PerfectMatching	Combinatorics	PerfectMatching	39	1	OAI.MatchingEntropy.entropy_main
+OAI/Combinatorics/Permanent	Combinatorics	Permanent	5	0	
+OAI/Combinatorics/PlanarL1	Combinatorics	PlanarL1	63	1	OAI.PlanarL1.planar_graph_metrics_embed_L1
+OAI/Combinatorics/PolynomialVacuum	Combinatorics	PolynomialVacuum	294	0	
+OAI/Combinatorics/PortMatching	Combinatorics	PortMatching	5	0	
+OAI/Combinatorics/ProgressionColoring	Combinatorics	ProgressionColoring	115	1	OAI.QuantitativeVanDerWaerden.uniform_lower_bound
+OAI/Combinatorics/Progressions	Combinatorics	Progressions	4774	0	
+OAI/Combinatorics/Ramsey	Combinatorics	Ramsey	444	0	
+OAI/Combinatorics/RamseyFive	Combinatorics	RamseyFive	450	0	
+OAI/Combinatorics/Ryser	Combinatorics	Ryser	221	1	OAI.RyserOdd.eventualOddFailures_and_infinite
+OAI/Combinatorics/SecondNeighborhood	Combinatorics	SecondNeighborhood	43	1	OAI.SeymourSecondNeighborhood.exists_goodVertex
+OAI/Combinatorics/Sensitivity	Combinatorics	Sensitivity	51	1	OAI.Paper320.quantitative_separation
+OAI/Combinatorics/SharpRamsey	Combinatorics	SharpRamsey	408	0	
+OAI/Combinatorics/SharpThreshold	Combinatorics	SharpThreshold	78	0	
+OAI/Combinatorics/Sidorenko	Combinatorics	Sidorenko	35	0	
+OAI/Combinatorics/SnakyCertificate	Combinatorics	SnakyCertificate	51	0	
+OAI/Combinatorics/SparsestCut	Combinatorics	SparsestCut	62	1	OAI.UniformSparsestCut.mainGap
+OAI/Combinatorics/SphericalRamsey	Combinatorics	SphericalRamsey	19	1	OAI.GrahamSpherical.full_main
+OAI/Combinatorics/SquareDifference	Combinatorics	SquareDifference	81	0	
+OAI/Combinatorics/StableGraphs	Combinatorics	StableGraphs	1	0	
+OAI/Combinatorics/StripMass	Combinatorics	StripMass	130	0	
+OAI/Combinatorics/SumProduct	Combinatorics	SumProduct	259	0	
+OAI/Combinatorics/ThinTrees	Combinatorics	ThinTrees	183	1	OAI.StrongThinTree.strongThinTree
+OAI/Combinatorics/TreeEdit	Combinatorics	TreeEdit	30	0	
+OAI/Combinatorics/TreewidthL1	Combinatorics	TreewidthL1	33	1	OAI.BoundedTreewidthL1.main_theorem
+OAI/Combinatorics/TriangleFace	Combinatorics	TriangleFace	6	0	
+OAI/Combinatorics/TriangleRemoval	Combinatorics	TriangleRemoval	287	0	
+OAI/Combinatorics/TwoWayAutomata	Combinatorics	TwoWayAutomata	26	2	OAI.TwoWayComplementation.complementation_lower_bound_finite|OAI.TwoWayComplementation.explicit_family_main
+OAI/Combinatorics/UniformKServer	Combinatorics	UniformKServer	410	0	
+OAI/Combinatorics/VariableWL	Combinatorics	VariableWL	61	0	
+OAI/Combinatorics/YoungDiagram	Combinatorics	YoungDiagram	7	0	
+OAI/Computability/BinPacking	Computability	BinPacking	284	1	OAI.BinPackingGap.main_results
+OAI/Computability/DegreeRigidity	Computability	DegreeRigidity	975	1	OAI.TuringRigidity.ManuscriptMain.rigidity
+OAI/Computability/DepthThree	Computability	DepthThree	179	1	OAI.DepthThreeLowerBound.exists_polynomial_time_language_depth_three_lower_bound
+OAI/Computability/DeterministicSum	Computability	DeterministicSum	30	0	
+OAI/Computability/DirectedFeedback	Computability	DirectedFeedback	224	0	
+OAI/Computability/FiniteCompiler	Computability	FiniteCompiler	17	0	
+OAI/Computability/FourierCircuit	Computability	FourierCircuit	51	1	OAI.ExactFourier.main_theorem
+OAI/Computability/GeneralizedCircuits	Computability	GeneralizedCircuits	1	0	
+OAI/Computability/Interspersed	Computability	Interspersed	7	0	
+OAI/Computability/Logspace	Computability	Logspace	1	0	
+OAI/Computability/LoopMatching	Computability	LoopMatching	24	1	OAI.LoopMatching.fullEndpoint
+OAI/Computability/MatchingCount	Computability	MatchingCount	74	1	OAI.BinaryMatching.deterministic_approximate_counting
+OAI/Computability/MaxCut	Computability	MaxCut	372	1	OAI.OptimalMaxCut.main
+OAI/Computability/MeanPayoff	Computability	MeanPayoff	72	0	
+OAI/Computability/MinUncut	Computability	MinUncut	375	0	
+OAI/Computability/PerfectCompleteness	Computability	PerfectCompleteness	581	1	OAI.PerfectCompleteness.Theorem11.exists_reduction
+OAI/Computability/QuantumFactoring	Computability	QuantumFactoring	552	0	
+OAI/Computability/RandomMean	Computability	RandomMean	17	1	OAI.randomized_quasipolynomial_mean_payoff
+OAI/Computability/RationalHitting	Computability	RationalHitting	53	1	OAI.RationalHitting.main
+OAI/Computability/Scheduling	Computability	Scheduling	53	0	
+OAI/Computability/SolenoidalRecorder	Computability	SolenoidalRecorder	5	0	
+OAI/Computability/StarHeight	Computability	StarHeight	37	0	
+OAI/Computability/Superstring	Computability	Superstring	51	1	OAI.Superstring.main
+OAI/Computability/TypeSystem	Computability	TypeSystem	33	0	
+OAI/Computability/UniqueGames	Computability	UniqueGames	478	1	OAI.UniqueGamesTheorem.theorem11
+OAI/Computability/VertexCover	Computability	VertexCover	354	1	OAI.VertexCover.every_fixed_factor_below_two
+OAI/Computability/WLIdentification	Computability	WLIdentification	67	0	
+OAI/Computability/WeisfeilerLeman	Computability	WeisfeilerLeman	43	0	
+OAI/Computability/WitnessedChoice	Computability	WitnessedChoice	27	0	
+OAI/Dynamics/ConditionalShuffle	Dynamics	ConditionalShuffle	63	0	
+OAI/Dynamics/EntropyCounterexample	Dynamics	EntropyCounterexample	184	0	
+OAI/Dynamics/MultipleMixing	Dynamics	MultipleMixing	13	0	
+OAI/Dynamics/SmoothObstruction	Dynamics	SmoothObstruction	53	0	
+OAI/Dynamics/StandardMap	Dynamics	StandardMap	274	0	
+OAI/Dynamics/ThreeTorus	Dynamics	ThreeTorus	37	0	
+OAI/Dynamics/TriangleBilliards	Dynamics	TriangleBilliards	39	0	
+OAI/GameTheory/SnakyConditional	GameTheory	SnakyConditional	209	0	
+OAI/GameTheory/SnakyTwentyOne	GameTheory	SnakyTwentyOne	94	0	
+OAI/Geometry/Anticanonical	Geometry	Anticanonical	10	0	
+OAI/Geometry/Arnold	Geometry	Arnold	36	1	OAI.ArnoldCounterexample.main
+OAI/Geometry/BallPacking	Geometry	BallPacking	207	0	
+OAI/Geometry/Borsuk	Geometry	Borsuk	269	1	OAI.BorsukNine.main_theorem
+OAI/Geometry/BundleTests	Geometry	BundleTests	12	0	
+OAI/Geometry/CAT0Fillings	Geometry	CAT0Fillings	330	0	
+OAI/Geometry/Cannon	Geometry	Cannon	299	0	
+OAI/Geometry/Coboundary	Geometry	Coboundary	8	0	
+OAI/Geometry/ComplexBundle	Geometry	ComplexBundle	32	0	
+OAI/Geometry/ConjugatePoints	Geometry	ConjugatePoints	19	1	OAI.ThreeManifold.main_theorem
+OAI/Geometry/Convex	Geometry	Convex	303	0	
+OAI/Geometry/CoveringDensity	Geometry	CoveringDensity	3	0	
+OAI/Geometry/CubicTorus	Geometry	CubicTorus	162	0	
+OAI/Geometry/CylinderCovering	Geometry	CylinderCovering	602	0	
+OAI/Geometry/DoublingHilbert	Geometry	DoublingHilbert	28	2	OAI.CompactBanach.main|OAI.DoublingHilbert.main
+OAI/Geometry/EinsteinFour	Geometry	EinsteinFour	407	0	
+OAI/Geometry/HarmonicGrowth	Geometry	HarmonicGrowth	36	1	OAI.HarmonicCounterexample.main
+OAI/Geometry/HeilbronnTriangle	Geometry	HeilbronnTriangle	242	0	
+OAI/Geometry/HyperbolicGroups	Geometry	HyperbolicGroups	422	1	OAI.HyperbolicObstruction.main
+OAI/Geometry/HypersurfaceGerms	Geometry	HypersurfaceGerms	16	0	
+OAI/Geometry/Immersion	Geometry	Immersion	97	0	
+OAI/Geometry/IntegralFillings	Geometry	IntegralFillings	112	0	
+OAI/Geometry/IsometricImmersion	Geometry	IsometricImmersion	447	1	OAI.SmoothLocal.Geometry.exists_local_metric_without_local_immersion
+OAI/Geometry/Kahler	Geometry	Kahler	119	1	OAI.PinchedHartogs.main_theorem
+OAI/Geometry/KahlerSplitting	Geometry	KahlerSplitting	46	1	OAI.UniversalCoverSplitting.main
+OAI/Geometry/LatticeCovering	Geometry	LatticeCovering	41	1	OAI.SingleLatticeCovering.single_lattice_covering
+OAI/Geometry/LogVolume	Geometry	LogVolume	1	1	OAI.LogBrunnMinkowski.main
+OAI/Geometry/Manifold	Geometry	Manifold	1	0	
+OAI/Geometry/NearbyLagrangian	Geometry	NearbyLagrangian	93	0	
+OAI/Geometry/NegativeCurvature	Geometry	NegativeCurvature	1	0	
+OAI/Geometry/NilpotentCharts	Geometry	NilpotentCharts	25	0	
+OAI/Geometry/NodalSets	Geometry	NodalSets	1068	1	OAI.Yau.Target.yau_nodal_set_upper_bound_counterexample
+OAI/Geometry/Perimeter	Geometry	Perimeter	176	0	
+OAI/Geometry/PeriodicTiling	Geometry	PeriodicTiling	122	1	OAI.PeriodicTilingThree.periodic_tiling_counterexample_and_minimality
+OAI/Geometry/PinnedDistances	Geometry	PinnedDistances	48	1	OAI.WeakPinned.main
+OAI/Geometry/PlaneColoring	Geometry	PlaneColoring	46	2	OAI.EuclideanFiveColor.no_proper_five_coloring|OAI.Problem160.properColoring_seven
+OAI/Geometry/PolarProducts	Geometry	PolarProducts	46	1	OAI.SymmetricPolar.symmetric_polar_main
+OAI/Geometry/PrescribedPotential	Geometry	PrescribedPotential	259	0	
+OAI/Geometry/PrescribedRicci	Geometry	PrescribedRicci	161	0	
+OAI/Geometry/ProjectionBodies	Geometry	ProjectionBodies	33	1	OAI.PettyProjection.petty_projection_volume
+OAI/Geometry/ProjectionBody	Geometry	ProjectionBody	32	1	OAI.ProjectionCounterexample.universal_simplex_upper_bound_false
+OAI/Geometry/ProjectionVolume	Geometry	ProjectionVolume	81	1	OAI.Paper092.product_counterexample
+OAI/Geometry/QuadricBundles	Geometry	QuadricBundles	34	1	OAI.QuadricCounterexample.main_theorem
+OAI/Geometry/RCD	Geometry	RCD	2889	0	
+OAI/Geometry/RecorderBoxes	Geometry	RecorderBoxes	9	0	
+OAI/Geometry/Relativity	Geometry	Relativity	336	0	
+OAI/Geometry/Riemannian	Geometry	Riemannian	52	0	
+OAI/Geometry/RuledCovering	Geometry	RuledCovering	30	0	
+OAI/Geometry/SingularHomology	Geometry	SingularHomology	81	0	
+OAI/Geometry/SmoothYau	Geometry	SmoothYau	436	0	
+OAI/Geometry/SplitTangent	Geometry	SplitTangent	110	0	
+OAI/Geometry/StableBernstein	Geometry	StableBernstein	3	0	
+OAI/Geometry/SurfaceImmersion	Geometry	SurfaceImmersion	2050	0	
+OAI/Geometry/Symplectic	Geometry	Symplectic	30	0	
+OAI/Geometry/TamingCompatibility	Geometry	TamingCompatibility	582	1	OAI.TamingCompatibility.taming_implies_compatibility
+OAI/Geometry/TranslativeCovering	Geometry	TranslativeCovering	100	0	
+OAI/Geometry/TriangularCovering	Geometry	TriangularCovering	9	0	
+OAI/Geometry/UnitDistances	Geometry	UnitDistances	40	0	
+OAI/Geometry/Varifold	Geometry	Varifold	1	0	
+OAI/Geometry/WeakHessian	Geometry	WeakHessian	542	1	OAI.WeakHessian.every_geodesic
+OAI/Geometry/WeakMTW	Geometry	WeakMTW	210	1	OAI.WeakMTWGlobalSupport.current_main_convexity
+OAI/Geometry/Zonotope	Geometry	Zonotope	11	0	
+OAI/GroupTheory/ArithmeticGerms	GroupTheory	ArithmeticGerms	2	0	
+OAI/GroupTheory/ArtinCAT0	GroupTheory	ArtinCAT0	20	1	OAI.ArtinCAT0.main
+OAI/GroupTheory/BooneHigman	GroupTheory	BooneHigman	30	0	
+OAI/GroupTheory/Congruence	GroupTheory	Congruence	13	0	
+OAI/GroupTheory/CyclicSeries	GroupTheory	CyclicSeries	1	0	
+OAI/GroupTheory/FiniteIndex	GroupTheory	FiniteIndex	5	0	
+OAI/GroupTheory/FiniteKernel	GroupTheory	FiniteKernel	1	0	
+OAI/GroupTheory/FiniteLattice	GroupTheory	FiniteLattice	14	0	
+OAI/GroupTheory/FiniteType	GroupTheory	FiniteType	136	0	
+OAI/GroupTheory/GroupCohomology	GroupTheory	GroupCohomology	2	0	
+OAI/GroupTheory/Heisenberg	GroupTheory	Heisenberg	1	0	
+OAI/GroupTheory/Hyperbolic	GroupTheory	Hyperbolic	29	1	OAI.Release075.main
+OAI/GroupTheory/Kervaire	GroupTheory	Kervaire	47	0	
+OAI/GroupTheory/PChains	GroupTheory	PChains	4	0	
+OAI/GroupTheory/PeriodicGroups	GroupTheory	PeriodicGroups	63	0	
+OAI/GroupTheory/PolycyclicRecognition	GroupTheory	PolycyclicRecognition	3090	0	
+OAI/GroupTheory/Presentation	GroupTheory	Presentation	1	0	
+OAI/GroupTheory/RightAngledArtin	GroupTheory	RightAngledArtin	4	0	
+OAI/GroupTheory/SimpleAmenable	GroupTheory	SimpleAmenable	550	1	OAI.SimpleAmenable.main
+OAI/GroupTheory/SimpleOvergroups	GroupTheory	SimpleOvergroups	60	0	
+OAI/GroupTheory/Thompson	GroupTheory	Thompson	68	1	OAI.ThompsonNonamenability.thompson_F_nonamenable_composition
+OAI/GroupTheory/UniversalGroup	GroupTheory	UniversalGroup	50	1	OAI.UniversalFInfinity.universal_group_of_type_FInfinity
+OAI/InformationTheory/AmplitudeDamping	InformationTheory	AmplitudeDamping	35	1	OAI.GAD.main
+OAI/InformationTheory/BooleanNoise	InformationTheory	BooleanNoise	41	1	OAI.LeanBlast.CourtadeKumar.courtadeKumarAndAttainment
+OAI/InformationTheory/DimensionTen	InformationTheory	DimensionTen	4	0	
+OAI/InformationTheory/Entanglement	InformationTheory	Entanglement	151	0	
+OAI/InformationTheory/PhotonNumber	InformationTheory	PhotonNumber	20	0	
+OAI/InformationTheory/QuantumCircuit	InformationTheory	QuantumCircuit	45	2	OAI.QAC.parity_lower_bound|OAI.QAC.parity_lower_bound_polynomial_size
+OAI/InformationTheory/SecretKey	InformationTheory	SecretKey	15	0	
+OAI/InformationTheory/SoftChannel	InformationTheory	SoftChannel	28	0	
+OAI/LinearAlgebra/Barker	LinearAlgebra	Barker	5	0	
+OAI/LinearAlgebra/CirculantHadamard	LinearAlgebra	CirculantHadamard	68	1	OAI.CirculantHadamard.exists_iff_order_one_or_four
+OAI/LinearAlgebra/CliffordAlgebra	LinearAlgebra	CliffordAlgebra	1	0	
+OAI/LinearAlgebra/Descent	LinearAlgebra	Descent	1	0	
+OAI/LinearAlgebra/Hadamard	LinearAlgebra	Hadamard	9	0	
+OAI/LinearAlgebra/MatrixFields	LinearAlgebra	MatrixFields	354	0	
+OAI/LinearAlgebra/MatrixMultiplication	LinearAlgebra	MatrixMultiplication	509	3	OAI.MatrixMultiplication.complex_alpha_gt_93_div_200|OAI.MatrixMultiplication.complex_omega_le_nine_quarters|OAI.MatrixMultiplication.complex_rectangular_omega_lt_523_div_250
+OAI/LinearAlgebra/MatrixState	LinearAlgebra	MatrixState	4	0	
+OAI/LinearAlgebra/RankMatching	LinearAlgebra	RankMatching	1	0	
+OAI/LinearAlgebra/TensorProduct	LinearAlgebra	TensorProduct	1	0	
+OAI/MathematicalPhysics/AlternatingFlow	MathematicalPhysics	AlternatingFlow	41	0	
+OAI/MathematicalPhysics/Anderson	MathematicalPhysics	Anderson	1	0	
+OAI/MathematicalPhysics/BFSS	MathematicalPhysics	BFSS	74	0	
+OAI/MathematicalPhysics/Boltzmann	MathematicalPhysics	Boltzmann	530	0	
+OAI/MathematicalPhysics/ContinuumCoulomb	MathematicalPhysics	ContinuumCoulomb	1783	0	
+OAI/MathematicalPhysics/Coulomb	MathematicalPhysics	Coulomb	1	0	
+OAI/MathematicalPhysics/CriticalMixing	MathematicalPhysics	CriticalMixing	2	1	OAI.CriticalSK.critical_mixing_bounds
+OAI/MathematicalPhysics/CriticalSK	MathematicalPhysics	CriticalSK	43	1	OAI.CriticalSK.covariance_and_linear_tests
+OAI/MathematicalPhysics/DefocusingNLS	MathematicalPhysics	DefocusingNLS	2578	0	
+OAI/MathematicalPhysics/Elasticity	MathematicalPhysics	Elasticity	42	0	
+OAI/MathematicalPhysics/Fock	MathematicalPhysics	Fock	2	0	
+OAI/MathematicalPhysics/HardSphere	MathematicalPhysics	HardSphere	1	0	
+OAI/MathematicalPhysics/Heisenberg	MathematicalPhysics	Heisenberg	128	0	
+OAI/MathematicalPhysics/NavierStokes	MathematicalPhysics	NavierStokes	843	0	
+OAI/MathematicalPhysics/PEPSFilters	MathematicalPhysics	PEPSFilters	25	0	
+OAI/MathematicalPhysics/PEPSMove	MathematicalPhysics	PEPSMove	33	0	
+OAI/MathematicalPhysics/PEPSSubvolume	MathematicalPhysics	PEPSSubvolume	50	0	
+OAI/MathematicalPhysics/PlanarAnderson	MathematicalPhysics	PlanarAnderson	1	0	
+OAI/MathematicalPhysics/PrefixFlows	MathematicalPhysics	PrefixFlows	4	0	
+OAI/MathematicalPhysics/RapidForcing	MathematicalPhysics	RapidForcing	55	0	
+OAI/MathematicalPhysics/RecorderFlows	MathematicalPhysics	RecorderFlows	5	0	
+OAI/MathematicalPhysics/SheetFlows	MathematicalPhysics	SheetFlows	26	0	
+OAI/MathematicalPhysics/TensorNetwork	MathematicalPhysics	TensorNetwork	1	0	
+OAI/MathematicalPhysics/Transonic	MathematicalPhysics	Transonic	465	0	
+OAI/MeasureTheory/CompactFactors	MeasureTheory	CompactFactors	14	0	
+OAI/MeasureTheory/DyadicAvoidance	MeasureTheory	DyadicAvoidance	75	0	
+OAI/MeasureTheory/Falconer	MeasureTheory	Falconer	2461	1	OAI.PlanarFalconer.mainTarget_proved
+OAI/MeasureTheory/FalconerCompletion	MeasureTheory	FalconerCompletion	335	0	
+OAI/MeasureTheory/Integral	MeasureTheory	Integral	1	0	
+OAI/MeasureTheory/SelfSimilar	MeasureTheory	SelfSimilar	64	1	OAI.EntropyRateDimension.entropy_rate_dimension
+OAI/ModelTheory/AbstractElementary	ModelTheory	AbstractElementary	1	0	
+OAI/ModelTheory/Categoricity	ModelTheory	Categoricity	15	1	OAI.CHObstruction.main
+OAI/ModelTheory/Choiceless	ModelTheory	Choiceless	26	1	OAI.CPTSeparation.main
+OAI/NumberTheory/Catalan	NumberTheory	Catalan	981	0	
+OAI/NumberTheory/Chromatic	NumberTheory	Chromatic	1	0	
+OAI/NumberTheory/CubicGauss	NumberTheory	CubicGauss	30	0	
+OAI/NumberTheory/CubicGram	NumberTheory	CubicGram	45	0	
+OAI/NumberTheory/CubicMoment	NumberTheory	CubicMoment	3549	0	
+OAI/NumberTheory/DirichletL	NumberTheory	DirichletL	2926	2	OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re|OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re
+OAI/NumberTheory/DuffinSchaeffer	NumberTheory	DuffinSchaeffer	1	0	
+OAI/NumberTheory/DukePrimeDegree	NumberTheory	DukePrimeDegree	886	0	
+OAI/NumberTheory/EgyptianFractions	NumberTheory	EgyptianFractions	366	3	OAI.Problem337.counting_double_log_order|OAI.Problem337.main_double_log_order|OAI.Problem337.prescribed_denominator_corollary
+OAI/NumberTheory/GaussianMoat	NumberTheory	GaussianMoat	41	1	OAI.GaussianMoat.fullMain
+OAI/NumberTheory/Jacobsthal	NumberTheory	Jacobsthal	819	0	
+OAI/NumberTheory/JointDickman	NumberTheory	JointDickman	1502	0	
+OAI/NumberTheory/NumberField	NumberTheory	NumberField	1	0	
+OAI/NumberTheory/OrdinaryCorrelations	NumberTheory	OrdinaryCorrelations	637	0	
+OAI/NumberTheory/Ostmann	NumberTheory	Ostmann	7716	0	
+OAI/NumberTheory/PiExponent	NumberTheory	PiExponent	869	0	
+OAI/NumberTheory/PowerFree	NumberTheory	PowerFree	63	1	OAI.QuarticPowerFree.allDegrees
+OAI/NumberTheory/PrimeGaps	NumberTheory	PrimeGaps	56	0	
+OAI/NumberTheory/PrimePackets	NumberTheory	PrimePackets	143	0	
+OAI/NumberTheory/QuadraticForms	NumberTheory	QuadraticForms	4	0	
+OAI/NumberTheory/ShortEgyptian	NumberTheory	ShortEgyptian	58	0	
+OAI/NumberTheory/SiegelZeros	NumberTheory	SiegelZeros	306	0	
+OAI/NumberTheory/SingleFold	NumberTheory	SingleFold	28	1	OAI.SingleFold.main
+OAI/NumberTheory/TotientAsymptotic	NumberTheory	TotientAsymptotic	810	0	
+OAI/NumberTheory/TotientFibers	NumberTheory	TotientFibers	1	0	
+OAI/NumberTheory/TwoPoint	NumberTheory	TwoPoint	1465	0	
+OAI/NumberTheory/TwoPointCorrelations	NumberTheory	TwoPointCorrelations	217	0	
+OAI/NumberTheory/ZetaFive	NumberTheory	ZetaFive	7	0	
+OAI/Optimization/Tropical	Optimization	Tropical	2	0	
+OAI/Probability/Ballisticity	Probability	Ballisticity	516	1	OAI.DirectionalTransience.directional_transience_implies_ballisticity
+OAI/Probability/BenjaminiSchramm	Probability	BenjaminiSchramm	291	0	
+OAI/Probability/BinarySweep	Probability	BinarySweep	192	1	OAI.binary_sweep_contraction_and_mixing
+OAI/Probability/ClassicalON	Probability	ClassicalON	117	1	OAI.ClassicalON.main
+OAI/Probability/Contingency	Probability	Contingency	39	0	
+OAI/Probability/ContinuumTransition	Probability	ContinuumTransition	161	1	OAI.ContinuumTemperature.main_theorem
+OAI/Probability/CoordinateSweeps	Probability	CoordinateSweeps	16	1	OAI.CoordinateSweeps.conditional_main
+OAI/Probability/CriticalPercolation	Probability	CriticalPercolation	627	0	
+OAI/Probability/CriticalZ3	Probability	CriticalZ3	34	1	OAI.CriticalZ3.critical_no_infinite
+OAI/Probability/CubeShuffle	Probability	CubeShuffle	26	0	
+OAI/Probability/DilutedSpin	Probability	DilutedSpin	405	0	
+OAI/Probability/DirectionalWalk	Probability	DirectionalWalk	69	0	
+OAI/Probability/EntangledGames	Probability	EntangledGames	30	1	OAI.ThresholdParallelRepetition.threshold_parallel_repetition
+OAI/Probability/FKMaps	Probability	FKMaps	61	0	
+OAI/Probability/FKPressure	Probability	FKPressure	7	0	
+OAI/Probability/FirstPassage	Probability	FirstPassage	141	1	OAI.PlanarFPP.manuscriptMain
+OAI/Probability/FreeIsing	Probability	FreeIsing	891	1	OAI.Problem367.free_ising_factor_iff_threshold
+OAI/Probability/GammaPassage	Probability	GammaPassage	183	0	
+OAI/Probability/GaussianInformation	Probability	GaussianInformation	108	0	
+OAI/Probability/GaussianPropeller	Probability	GaussianPropeller	47	1	OAI.GaussianPropeller.all_partitions
+OAI/Probability/GaussianRegression	Probability	GaussianRegression	21	0	
+OAI/Probability/GaussianReplacement	Probability	GaussianReplacement	50	2	OAI.CurrentProjection.fiberBlockMain|OAI.CurrentProjection.hybridBlockMain
+OAI/Probability/Honeycomb	Probability	Honeycomb	2	0	
+OAI/Probability/InvariantIsing	Probability	InvariantIsing	2191	0	
+OAI/Probability/Ising	Probability	Ising	15	0	
+OAI/Probability/IsingPerceptron	Probability	IsingPerceptron	53	0	
+OAI/Probability/JammingConcavity	Probability	JammingConcavity	59	0	
+OAI/Probability/LatticePassage	Probability	LatticePassage	55	0	
+OAI/Probability/LatticeSurface	Probability	LatticeSurface	243	0	
+OAI/Probability/Localization	Probability	Localization	15	0	
+OAI/Probability/LogConcave	Probability	LogConcave	326	1	OAI.LogConcaveSampling.exact_source_main
+OAI/Probability/MatroidProphet	Probability	MatroidProphet	125	0	
+OAI/Probability/MatroidSecretary	Probability	MatroidSecretary	118	0	
+OAI/Probability/MemoryPrecision	Probability	MemoryPrecision	50	1	OAI.MemoryPrecision.main
+OAI/Probability/Moments	Probability	Moments	1	0	
+OAI/Probability/ParisiFinite	Probability	ParisiFinite	114	0	
+OAI/Probability/Perceptron	Probability	Perceptron	411	0	
+OAI/Probability/PosteriorReplicas	Probability	PosteriorReplicas	136	1	OAI.PosteriorReplicas.source_main
+OAI/Probability/ProbabilityMeasure	Probability	ProbabilityMeasure	1	0	
+OAI/Probability/ProjectionMoments	Probability	ProjectionMoments	25	1	OAI.ProjectionMoments.main
+OAI/Probability/RadialTransition	Probability	RadialTransition	104	1	OAI.RadialTransition.main
+OAI/Probability/RandomSAT	Probability	RandomSAT	15	0	
+OAI/Probability/Renewal	Probability	Renewal	20	0	
+OAI/Probability/SATComputability	Probability	SATComputability	106	0	
+OAI/Probability/SATVariance	Probability	SATVariance	35	0	
+OAI/Probability/SKBarriers	Probability	SKBarriers	574	0	
+OAI/Probability/SKCutoff	Probability	SKCutoff	1	0	
+OAI/Probability/SKFluctuations	Probability	SKFluctuations	151	0	
+OAI/Probability/SKGap	Probability	SKGap	556	0	
+OAI/Probability/SKRatio	Probability	SKRatio	260	0	
+OAI/Probability/SKSupport	Probability	SKSupport	135	0	
+OAI/Probability/SKValue	Probability	SKValue	212	0	
+OAI/Probability/SLE	Probability	SLE	1302	0	
+OAI/Probability/SLEGauge	Probability	SLEGauge	104	0	
+OAI/Probability/SLELocalization	Probability	SLELocalization	42	0	
+OAI/Probability/SignedSweeps	Probability	SignedSweeps	174	0	
+OAI/Probability/SpanningForest	Probability	SpanningForest	231	0	
+OAI/Probability/SphericalField	Probability	SphericalField	142	0	
+OAI/Probability/SphericalPerceptron	Probability	SphericalPerceptron	1	0	
+OAI/Probability/StrongRayleigh	Probability	StrongRayleigh	133	0	
+OAI/Probability/Subsphere	Probability	Subsphere	25	1	OAI.SubsphereCurrent.full_current_main_scope
+OAI/Probability/SwitchChain	Probability	SwitchChain	222	0	
+OAI/Probability/ThorpCompatibility	Probability	ThorpCompatibility	34	1	OAI.ThorpCompatibility.weightedCompatibility_main
+OAI/Probability/ThorpResults	Probability	ThorpResults	7	0	
+OAI/Probability/ThorpRouting	Probability	ThorpRouting	174	1	OAI.ThorpNine.main
+OAI/Probability/ThorpShuffle	Probability	ThorpShuffle	61	0	
+OAI/Probability/ThreeState	Probability	ThreeState	27	0	
+OAI/Probability/ThreeStateClauses	Probability	ThreeStateClauses	31	0	
+OAI/Probability/TraceReconstruction	Probability	TraceReconstruction	30	0	
+OAI/Probability/UnimodularPercolation	Probability	UnimodularPercolation	83	0	
+OAI/Probability/Voronoi	Probability	Voronoi	1	0	
+OAI/RepresentationTheory/AlperinWeights	RepresentationTheory	AlperinWeights	1	0	
+OAI/RepresentationTheory/Block	RepresentationTheory	Block	1	0	
+OAI/RepresentationTheory/FiniteUnitary	RepresentationTheory	FiniteUnitary	11	0	
+OAI/RepresentationTheory/FoulkesHowe	RepresentationTheory	FoulkesHowe	77	1	OAI.Problem346.canonical_foulkes_howe_surjective
+OAI/RepresentationTheory/FoulkesSixth	RepresentationTheory	FoulkesSixth	41	0	
+OAI/RepresentationTheory/GraphModels	RepresentationTheory	GraphModels	3	0	
+OAI/RepresentationTheory/KazhdanLusztig	RepresentationTheory	KazhdanLusztig	34	0	
+OAI/RepresentationTheory/PartialPermutation	RepresentationTheory	PartialPermutation	62	0	
+OAI/RepresentationTheory/Placement	RepresentationTheory	Placement	2	0	
+OAI/RepresentationTheory/ProjectiveInduction	RepresentationTheory	ProjectiveInduction	1	0	
+OAI/RepresentationTheory/RestrictedTilting	RepresentationTheory	RestrictedTilting	116	0	
+OAI/RepresentationTheory/RowColumn	RepresentationTheory	RowColumn	14	0	
+OAI/RepresentationTheory/Saxl	RepresentationTheory	Saxl	38	1	OAI.Saxl.saxl_conjecture
+OAI/RepresentationTheory/SignedTensor	RepresentationTheory	SignedTensor	5	0	
+OAI/RepresentationTheory/SpinAngle	RepresentationTheory	SpinAngle	3	0	
+OAI/RepresentationTheory/Tensor	RepresentationTheory	Tensor	1	0	
+OAI/RepresentationTheory/TensorSquares	RepresentationTheory	TensorSquares	5	0	
+OAI/RepresentationTheory/Torus	RepresentationTheory	Torus	1	0	
+OAI/RepresentationTheory/Unitary	RepresentationTheory	Unitary	2	0	
+OAI/RepresentationTheory/UniversalSquare	RepresentationTheory	UniversalSquare	538	0	
+OAI/RepresentationTheory/VertexAlgebra	RepresentationTheory	VertexAlgebra	143	0	
+OAI/RepresentationTheory/Young	RepresentationTheory	Young	3	0	
+OAI/RepresentationTheory/YoungSymmetry	RepresentationTheory	YoungSymmetry	5	0	
+OAI/RingTheory/BassTrace	RingTheory	BassTrace	73	1	OAI.BassTrace.RightProjective.bassTraceModules_vanishing_and_support
+OAI/RingTheory/DirectFiniteness	RingTheory	DirectFiniteness	126	1	OAI.KaplanskyCounterexample.finitelyPresented_counterexample
+OAI/RingTheory/DivisionRing	RingTheory	DivisionRing	1	0	
+OAI/RingTheory/FormalGroup	RingTheory	FormalGroup	5	0	
+OAI/RingTheory/GroupAction	RingTheory	GroupAction	1	0	
+OAI/RingTheory/Interpolation	RingTheory	Interpolation	1	0	
+OAI/RingTheory/Kurosh	RingTheory	Kurosh	20	0	
+OAI/RingTheory/Multiplicity	RingTheory	Multiplicity	278	0	
+OAI/RingTheory/Tachikawa	RingTheory	Tachikawa	31	1	OAI.Tachikawa.main_theorem
+OAI/SetTheory/PartitionConsistency	SetTheory	PartitionConsistency	75	0	
+OAI/SetTheory/PartitionPrinciple	SetTheory	PartitionPrinciple	943	0	
+OAI/Topology/ArtinGroups	Topology	ArtinGroups	881	0	
+OAI/Topology/CoarseAssembly	Topology	CoarseAssembly	334	0	
+OAI/Topology/EilenbergGanea	Topology	EilenbergGanea	21	0	
+OAI/Topology/HahnSeries	Topology	HahnSeries	1	0	
+OAI/Topology/Homotopy	Topology	Homotopy	10	0	
+OAI/Topology/TorusCompression	Topology	TorusCompression	1	0	
