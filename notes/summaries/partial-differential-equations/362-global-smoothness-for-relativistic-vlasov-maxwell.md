@@ -536,7 +536,7 @@ Section map, read from the manuscript's own include list [S3:49–58]:
 | ID | File | Lines | Role |
 | --- | --- | --- | --- |
 | S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,169 | Release blurb, manuscript link, abstract |
-| S2 | [`README.md`](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/README.md) | 18 | Manuscript README and bibtex key |
+| S2 | [`preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/README.md`](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/README.md) | 18 | Manuscript README and bibtex key |
 | S3 | [`build/main.tex`](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/main.tex) | 61 | Title, abstract, section include list |
 | S4 | [`build/sections/introduction.tex`](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/introduction.tex) | 227 | Model, theorem, history, strategy |
 | S5 | [`build/sections/setup.tex`](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/setup.tex) | 140 | Bootstrap and momentum doubling |
