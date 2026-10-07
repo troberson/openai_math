@@ -127,6 +127,40 @@ def bib_entries():
     return out
 
 
+def prefix6(title):
+    """The title rule the surprise-ranking skill used: first 6 whitespace tokens, lowercased."""
+    return " ".join(re.split(r"\s+", title.lower())[:6])
+
+
+def legacy_title_proxy(titles, fam_dirs):
+    """Reproduce the recorded "14 of 372 family titles appear in the corpus's .bib files".
+
+    The rule is the one written in the corpus-finding-surprise-ranking skill: a 6-token lowercased
+    title prefix searched in the concatenation of `preprints/*/*.bib` + `preprints/*/*/*.bib`, with
+    the corpus lowercased (not normalized) and own-family bibliographies included. It scans 417 of
+    the 501 .bib files, so the 77 at depth 4 are outside its scope.
+    """
+    shallow = sorted(p for p in PREPRINTS.glob("**/*.bib")
+                     if len(p.relative_to(PREPRINTS).parts) <= 3)
+    deep = sorted(PREPRINTS.glob("**/*.bib"))
+    out = {}
+    for label, paths in (("depth<=3", shallow), ("all", deep)):
+        per = {}
+        for p in paths:
+            d = owner(p)
+            per[d] = per.get(d, "") + " " + p.read_text(encoding="utf-8", errors="replace").lower()
+        anyf, cross = [], []
+        for fam, title in sorted(titles.items()):
+            ph = prefix6(title)
+            hits = {d for d, txt in per.items() if ph in txt}
+            if hits:
+                anyf.append(fam)
+            if hits - fam_dirs.get(fam, set()):
+                cross.append(fam)
+        out[label] = (len(paths), len(anyf), len(cross), anyf)
+    return out
+
+
 def main():
     rows = ledger_rows()
     fam_paps = bc.parse_contents()
@@ -430,6 +464,7 @@ def main():
     )
 
     # --- negatives ---------------------------------------------------------
+    legacy = legacy_title_proxy(titles, fam_dirs)
     msc_hits = 0
     for p in tex_files + bib_files + [REPO / "overview.tex"]:
         msc_hits += len(MSC.findall(p.read_text(encoding="utf-8", errors="replace")))
@@ -500,6 +535,12 @@ def main():
     print(f"cited∩mentioned: {sorted(set(cited) & set(body))}  "
           f"mentioned-only: {sorted(set(body) - set(cited))}  cited-only: {sorted(set(cited) - set(body))}")
     print(f"named list: {named}")
+    s_n, s_any, s_cross, s_list = legacy["depth<=3"]
+    d_n, d_any, d_cross, _ = legacy["all"]
+    print(f"legacy title proxy (6-token prefix, lowercased corpus, .bib at depth<=3): "
+          f"files={s_n} any={s_any} cross={s_cross}  <- the recorded '14 of 372'")
+    print(f"legacy proxy list: {s_list}")
+    print(f"same title rule over all .bib: files={d_n} any={d_any} cross={d_cross}")
     print(f"corpus citation edges: {len(edges)}  target families: {len(target_fams)}  citing dirs: {len(citing_dirs)}")
     print(f"top bib target families: {target_fam_counts.most_common(10)}")
     print(f"mainres families: {len(mainres_fams)}  formalized families: {len(form_fams)}  "
