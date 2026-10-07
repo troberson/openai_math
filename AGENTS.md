@@ -17,7 +17,9 @@ lives in this file and nowhere else.
   `t0-triage.md`, `conditional.md`, `resolution-tag.md`, `counterexample-tag.md`,
   `verification-dirs.md`, `summaries-workflow.md` (the resume protocol for the summary batches),
   `conjecture-standing.tsv` (139 rows, 10 columns — a labeled training-data prior, not a fact) with
-  `conjecture-standing.md` beside it, `summaries/<discipline>/<NNN>-<name>.md`, `notes/scripts/`.
+  `conjecture-standing.md` beside it, `formalization-deps.tsv` (31 rows, 8 columns — the upstream
+  library graph) with `formalization-deps.md` beside it,
+  `summaries/<discipline>/<NNN>-<name>.md`, `notes/scripts/`.
 - `.beads/issues.jsonl` is the tracked issue store, in bd no-db mode; see the beads section below.
 
 ## Dev environment tips
@@ -51,6 +53,11 @@ lives in this file and nowhere else.
   self-rated by `prior_confidence`; the repo supplies only `release_claim` and `abstract_line`.
   No row may assert consequence — consequence is external here: only 14 of 372 family titles appear
   in the corpus's own `.bib` files, so intra-corpus consequence is unmeasurable.
+- Extract the upstream library graph with `python3 notes/scripts/extract_formalization_deps.py`. It
+  reads all 121,734 `lean/OAI/**/*.lean` files, so it takes minutes, not seconds, and it refuses to
+  write the TSV when a join breaks. Import counts are over `lean/OAI/**/*.lean` — the whole tree
+  yields OAI 277,501 / Mathlib 56,715, not the 276,599 / 56,196 the table records, so quote the scope
+  with the number. `lean/lake-manifest.json` is read for the report only, never for a column.
 - Project skills live in `.qwen/skills/` — `proof-triage` routes ledger work,
   `auto-skill-lean-formalization-coverage-audit` carries the measurement method.
 
@@ -75,6 +82,10 @@ lives in this file and nowhere else.
   `overview.tex:<n>` anchor to that family's own `\resultentry`, requires `prior_confidence` in
   vocabulary, rejects conjecture names the cited abstract does not use, and rejects consequence
   language.
+- Run `python3 notes/scripts/extract_formalization_deps.py` twice and diff: the TSV must be
+  byte-identical. Its report reconciles 31 rows = 30 declared + 1 undeclared, 30 lakefile requires
+  pinned to 40-char commits, 30 yaml entries, 23 patches over 160,187 lines, 42 manifest packages
+  = 30 declared + 12 transitive, 19 declared with zero direct imports, and 5 yaml ordering violations.
 
 ## PR instructions
 

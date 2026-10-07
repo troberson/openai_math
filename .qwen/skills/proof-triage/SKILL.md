@@ -13,7 +13,7 @@ description: >-
 compatibility: "python3 (stdlib only); no Lean toolchain, no network"
 metadata:
   author: tamara
-  version: "1.6"
+  version: "1.7"
 ---
 
 # Proof triage
@@ -62,6 +62,11 @@ behaviour and rules only.
    present a surprise tier as a property of the result. No row may assert consequence: only 14 of 372
    family titles appear in the corpus's `.bib` files, so consequence is external by construction.
    Run `notes/scripts/verify_conjecture_standing.py` before quoting rows.
+9. **A declared pin is not a build.** `notes/formalization-deps.tsv` records what the declaration
+   layers say. No `lake` run means no pin is verified buildable and no patch is verified applicable.
+   Import counts are direct statements over `lean/OAI/**/*.lean` only — quote the scope with the
+   number, and never present them as the transitive closure. `lean/lake-manifest.json` is generated,
+   so it is evidence of a resolution event, not of a build in this repo.
 
 ## Workflow
 
@@ -100,6 +105,9 @@ behaviour and rules only.
 | `notes/conjecture-standing.tsv` | 139 rows: named conjecture, **training-data prior** on its standing as of early 2025, `prior_confidence`, the release claim, the gap, surprise tier, `overview.tex` anchor | Any "how surprising is this" or conjecture-standing question |
 | `notes/conjecture-standing.md` | The tier scheme, the 139-vs-233 selection, the counts, the 145 conflict row, what the table cannot say | Before quoting a standing row as evidence |
 | `notes/scripts/verify_conjecture_standing.py` | Proves the standing table: fam set, ledger discipline/tier, anchors against `\resultentry`, confidence vocabulary, abstract-name fidelity, no consequence language | Before quoting any standing row |
+| `notes/formalization-deps.tsv` | 31 rows: 30 declared upstream libraries with pinned commits, yaml relationship, direct import counts, patch file and line count, plus BernoulliRegular as `lakefile_declared=n` | Any dependency, pin, or upstream-library question |
+| `notes/formalization-deps.md` | The import rule and its scope, the `.git` join trap, the yaml ordering claim with its 5 violations, the 19 zero-import rows, the manifest reconciliation, the BernoulliRegular finding, what was not checked | Before quoting a dependency count, or claiming a pin is buildable |
+| `notes/scripts/extract_formalization_deps.py` | Writes the deps table and prints its reconciliation; reads 121,734 files, refuses to write when a join breaks | Regenerating, or extending the deps table |
 | `lean/docs/<NNN>.md` | Family scope note: what the formalization covers and excludes | Any claim about a formalized result |
 | `lean/ComparatorChallenges/*.json` | Statement/solution pairs, `permitted_axioms` | Checking what a challenge permits |
 | `lean/formalization.yaml` | `sources`, `status.main_results`, `automation`, `review` | Coverage and verification-ceiling claims |

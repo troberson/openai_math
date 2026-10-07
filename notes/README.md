@@ -11,6 +11,7 @@ python3 notes/scripts/triage_t0.py          # buckets the 137 T0 families by cla
 python3 notes/scripts/verify_summaries.py   # checks every citation in notes/summaries/ against the files it names
 python3 notes/scripts/verify_summaries.py --mutant  # same, plus the injected-fault self-test
 python3 notes/scripts/verify_conjecture_standing.py  # checks notes/conjecture-standing.tsv against the ledger and overview.tex
+python3 notes/scripts/extract_formalization_deps.py  # writes notes/formalization-deps.tsv and prints the reconciliation
 ```
 
 `notes/summaries-workflow.md` is the resume protocol for the summary-page batches: per-page steps,
@@ -121,6 +122,20 @@ holds 174, 175, 184, 188, 204 as theorems — and **145** is the one row where t
 published counterexamples to what the abstract proves. Scheme, counts, and what the table cannot say
 are in **`notes/conjecture-standing.md`**; `notes/scripts/verify_conjecture_standing.py` proves every
 anchor and rejects any row that asserts consequence.
+
+**`notes/formalization-deps.tsv` is the upstream library graph: 31 rows, 8 fields.** 30 libraries are
+declared in `lean/lakefile.lean`, each pinned to a 40-char commit and matched by a
+`formalization.yaml` entry; **BernoulliRegular** is the 31st, imported by
+`lean/OAI/NumberTheory/Ostmann/Quadratic/QuadraticGaussSign.lean:2` and declared in neither layer, so
+it is the one library in the release with no pin of its own — the AINTLIB patch shows it ships inside
+the AINTLIB repo as `projects/FltRegularBernoulli/BernoulliRegular/`. Only 12 of the 31 have any
+direct import, and mathlib carries 56,196 of the 56,482 external import statements. Two claims the
+release states do not hold as written: `formalization.yaml` says its list is "ordered by direct import
+count" and violates that at 5 positions, and 19 declared libraries import nothing directly. Import
+counts are **direct statements only**, over `lean/OAI/**/*.lean` — quote the scope with the number,
+since the whole tree yields OAI 277,501 / Mathlib 56,715. Rules, the `.git` join trap, the manifest
+reconciliation (42 packages = 30 declared + 12 transitive, revs matching every pin), and what was not
+checked are in **`notes/formalization-deps.md`**.
 
 ## Columns
 
