@@ -24,7 +24,9 @@ lives in this file and nowhere else.
   comparator rows, typed by a `kind` column) with `subfinding-pairs.md` (49 families, 206 manuscripts —
   the reading pass that pairs abstract clauses with display titles) beside it,
   `index-design.md` (the index schema decision — store, location, granularity, topic vocabulary — with
-  the measured node and edge population that justifies it),
+  the measured node and edge population that justifies it), `index/` (the rendered index, all of it
+  generated: 372 family pages in 17 discipline dirs, 17 discipline pages, one entry point, 6 node
+  tables and 6 edge tables),
   `sources.tsv` (722 rows, 14 columns — the LaTeX source surface of each manuscript: root count,
   resolved main file, section/proof/statement-environment counts, `.bib` count, `.tex` bytes) with
   `sources.md` beside it,
@@ -36,6 +38,17 @@ lives in this file and nowhere else.
 - Regenerate the ledger with `python3 notes/scripts/build_catalog.py` — stdlib only, runs in
   seconds, writes `notes/catalog.tsv` and prints the report that every number in
   `notes/README.md` comes from.
+- Render the index with `python3 notes/scripts/build_index.py` — it imports the joins from
+  `build_catalog.py`, writes `notes/index/` (390 pages + 12 tables, 2.7M), and prints the report every
+  count in it comes from. There is **no manuscript→Lean edge in the release**: `formalization.yaml`
+  carries `sources:` (manuscripts) and `main_results:` (config/declaration/file triples) as two flat
+  lists with nothing linking them, so the index renders the chain the yaml does support — family →
+  config (scope-note links) → declaration → file, 185 declarations over 178 configs reaching 127 of
+  372 families — and keeps formalization a per-manuscript flag. A family whose scope note links configs
+  that no `main_results` entry names renders as *absent*, never as unformalized. Page slugs are
+  mechanical (NFKD, strip combining marks, drop `$`/apostrophes/`\command`, lowercase, non-alphanumerics
+  → `-`, leading `the-` dropped): 0 collisions, max length 93. Index↔summary pairing is by family
+  number only — 12 of 372 families have a summary page.
 - Never run `lake`, `lean`, `lake exe cache get`, or `comparator`. `lean/OAI/` is 121,734 files
   and 25.9M lines; a build is hours on a desktop and buys nothing for categorization.
 - Parse `notes/catalog.tsv` with `csv.DictReader(..., delimiter='\t')`, never `split(',')`.
@@ -229,6 +242,17 @@ lives in this file and nowhere else.
   entries over 396 resolved edges reaching 158 families, the legacy title proxy at 14 over 417
   `.bib` files (18 any / 12 cross over all 501), 0 MSC hits, 0 bib `keywords` fields, and 12
   `\keywords` directories.
+- Run `python3 notes/scripts/build_index.py` twice and diff: `notes/index/` must be byte-identical and
+  the report identical. Its report reconciles 372 family pages + 17 discipline pages + 1 entry point
+  (390 pages, 12 tables), 5101 relative links with 0 broken, canonical == rendered on families 372 /
+  manuscripts 722 / formalized 162 / scope notes 235 / challenges 405 / traces 10 / verification dirs
+  30, `vs ledger` diffs of 0 on tier, `mainres`, `chal`, `paps` and `paps_form`, ledger↔overview family
+  sets equal with 372 pages and 0 pages absent on disk, 11 trace files over 10 attributed stems, 396
+  citation edges, 185 family-lean rows over 127 families, 405 configs (json 405, lean 405, 178 with a
+  declaration, 0 linked by more than one family), 554 module dirs, 12 of 372 summary pairings, 0 page
+  collisions, and manuscript links resolving for 722 of 722 on main file, `build/` and `README.md`.
+  Quote an index count with the report line it came from; the index is generated, so edit the generator
+  and re-render rather than editing a page.
 
 ## PR instructions
 
