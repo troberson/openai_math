@@ -264,7 +264,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 268	Mathematical physics	The spin-one Haldane gap	2	0	T0	0	0	0	0	2	0	0		resolution|bound|uniform	0	1		1	0	0
 269	Mathematical physics	The Laughlin gap and stability under scalar disorder	2	1	T3	4	1	1	1241	2	0	0		resolution|bound|uniform	0	1		0	0	0
 270	Mathematical physics	Threshold and positive-energy bound states of the BFSS model	2	0	T0	0	0	0	0	0	0	0		resolution|bound|uniform	0	1		1	0	0
-271	Mathematical physics	Bloch's law and spontaneous ferromagnetic order	4	0	T2	1	0	1	523	0	0	0	spontaneous-magnetization-quantum-heisenberg-ferromagnet		0	0		0	0	0
+271	Mathematical physics	Bloch's law and spontaneous ferromagnetic order	4	0	T2	1	0	1	523	0	0	0	spontaneous-magnetization-quantum-heisenberg-ferromagnet		0	0		0	0	1
 272	Mathematical physics	Entanglement without secret key and the PPT-square conjecture	1	0	T2	2	0	1	569	1	0	0		counterexample	0	1		0	0	0
 273	Mathematical physics	The entropy photon-number inequality	1	0	T2	1	0	1	614	0	0	0		bound|uniform	0	0		0	0	0
 274	Mathematical physics	Moore's parity conjecture for $\mathrm{QAC}^0$	2	2	T3	2	2	1	1108	0	0	0		resolution|bound|uniform	0	1		0	0	0
