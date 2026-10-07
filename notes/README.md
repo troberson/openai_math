@@ -8,6 +8,7 @@ Regenerate the ledger (a few seconds, no Lean):
 ```sh
 python3 notes/scripts/build_catalog.py      # writes notes/catalog.tsv and prints the report
 python3 notes/scripts/triage_t0.py          # buckets the 137 T0 families by claim shape
+python3 notes/scripts/verify_summaries.py   # checks every citation in notes/summaries/ against the files it names
 ```
 
 ## Standing rules

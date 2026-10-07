@@ -56,6 +56,9 @@ lives in this file and nowhere else.
   5 were not assumptions. `notes/conditional.md` is the model for a reading pass.
 - Parenthesized manuscript paths need `preprints/(?:[^\s(){}\\]|\([0-9]+\))*\.pdf`; excluding
   `{}` and `\` is what stops a phantom 723rd manuscript.
+- Check every `notes/summaries/` page with `python3 notes/scripts/verify_summaries.py --mutant`
+  before reporting it green — it resolves every `[Sn:line]` marker against the shipped file, checks
+  every quotation against the lines it cites, and writes nothing.
 
 ## PR instructions
 
