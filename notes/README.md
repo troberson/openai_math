@@ -24,6 +24,8 @@ python3 notes/scripts/extract_verification_348.py  # measures the two family-348
 python3 notes/scripts/verify_verification_dirs.py --mutant  # checks the 348 section of notes/verification-dirs.md against the bundle files
 python3 notes/scripts/measure_index_sizes.py  # the node/edge population behind notes/index-design.md; report-only, writes nothing
 python3 notes/scripts/verify_index_design.py --mutant  # checks notes/index-design.md: anchors, every count, the measured byte sizes
+python3 notes/scripts/build_sources.py      # writes notes/sources.tsv (the LaTeX surface of all 722 manuscripts) and prints the reconciliation
+python3 notes/scripts/verify_sources.py --mutant  # checks notes/sources.md against preprints/: every count, every anchor, every directory name
 ```
 
 `notes/summaries-workflow.md` is the resume protocol for the summary-page batches: per-page steps,
@@ -243,6 +245,23 @@ hit. `notes/scripts/verify_subfinding_pairs.py --mutant` re-checks every quotati
 line, re-derives every count from the parsed blocks, and flags all seven injected mutants;
 `notes/scripts/extract_subfinding_pairs.py` prints the population and the vocabulary counts the page
 quotes, and writes nothing.
+
+**`notes/sources.tsv` is the LaTeX source surface of all 722 manuscripts — 14 columns, one row per
+manuscript — and `notes/sources.md` states the rules behind them.** A root is a `.tex` declaring
+`\documentclass` **at line start**: **727** roots over **722** dirs, so **718** dirs have exactly one
+and **4** have more; a substring count of the command name reads 717 and 5, and the rules differ in one
+named directory whose second "root" is a bundled PGF documentation macro. Main-file resolution
+(`main.tex` → `paper.tex` → the single root, flag never guess) lands on **main.tex 495, paper.tex 210,
+single-root 17, flagged 0**, and picks the same file for all 722 dirs under either root rule. **Every
+one of the 722 resolved main files sits under a `build/` directory** — `preprints/` ships build trees,
+no top-level LaTeX root. Corpus totals: **7,729** `.tex`, **501** `.bib` (**227** dirs carry none),
+**6,047** sections, **16,411** subsections, **314** subsubsections, **20,449** `\begin{proof}` (**1**
+dir carries none), **21,402** statement environments, **127,982,216** `.tex` bytes. The theorem figure
+is rule-dependent: declared-by-`\newtheorem`-in-dir minus non-statement names is **21,402**, the
+six-name list theorem/lemma/proposition/corollary/claim/conjecture is **21,317**, and the 85 gap is
+`assumption` 22, `foundation` 13, `auxproposition` 8, `hypothesis` 8, `auxlemma` 7 and 10 names at ≤5.
+`notes/scripts/verify_sources.py --mutant` re-derives all 30 quoted phrases from a fresh recount,
+requires every backticked directory name to exist, and flags all nine injected mutants.
 
 ## Columns
 

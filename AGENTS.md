@@ -25,6 +25,9 @@ lives in this file and nowhere else.
   the reading pass that pairs abstract clauses with display titles) beside it,
   `index-design.md` (the index schema decision — store, location, granularity, topic vocabulary — with
   the measured node and edge population that justifies it),
+  `sources.tsv` (722 rows, 14 columns — the LaTeX source surface of each manuscript: root count,
+  resolved main file, section/proof/statement-environment counts, `.bib` count, `.tex` bytes) with
+  `sources.md` beside it,
   `summaries/<discipline>/<NNN>-<name>.md`, `notes/scripts/`.
 - `.beads/issues.jsonl` is the tracked issue store, in bd no-db mode; see the beads section below.
 
@@ -39,6 +42,20 @@ lives in this file and nowhere else.
 - Count `\cataloguesection` and `\resultentry` by the command at line start: **17** and **372**.
   `overview.tex:28` and `overview.tex:35` define both with `\newcommand`, so a substring count of the
   command name reads 18 and 373.
+- Same trap in `preprints/`: a manuscript's root is the `.tex` with `\documentclass` **at line start**
+  — **718** dirs have exactly one, **4** have two. A substring count of the command name reads 717 and
+  5; the one differing dir (`Uniform-Stability-of-the-Spherical-Laughlin-Gap-October-5-2026`) ships a
+  bundled PGF documentation macro that defines a macro *mentioning* the command. Main-file resolution
+  (prefer a root named `main.tex`, then `paper.tex`, then the single root; flag, never guess, a
+  multi-root dir with neither) answers the same file for all 722 dirs under either rule. **Every one of
+  the 722 resolved main files sits under a `build/` directory** — there is no top-level LaTeX root
+  anywhere in `preprints/`, so a `parts[-2]`-style path read is not a manuscript location here.
+- Quote a theorem count with its rule. `\begin{X}` for X declared by `\newtheorem` in the same dir,
+  minus the non-statement names (`definition`, `remark`, `example`, `notation`, `convention`,
+  `procedure`, `construction`, `scope`, `abstract`), is **21,402**; the six-name list
+  theorem/lemma/proposition/corollary/claim/conjecture is **21,317**. The 85 gap is `assumption` 22,
+  `foundation` 13, `auxproposition` 8, `hypothesis` 8, `auxlemma` 7 and 10 names at ≤5.
+  `notes/sources.tsv` carries the declared-rule figure.
 - Label source-level facts as source-level. `lean/formalization.yaml` states
   `scope: "Partial progress."`, `automation: methods: [agent]`, `review: status: unchecked`.
   Zero `sorry` in source is not a comparator pass, and it does not mean the library elaborates.
@@ -160,6 +177,21 @@ lives in this file and nowhere else.
   extension fails, it is not skipped), matches each fenced block against the nearest preceding anchor,
   re-derives all 73 count and byte phrases from `measure_index_sizes.population()`, and flags nine
   injected mutations. It writes nothing.
+- Run `python3 notes/scripts/build_sources.py` twice and diff: `notes/sources.tsv` must be
+  byte-identical and the report identical. Its report reconciles 722 rows over 722 preprint dirs, 0
+  dirs with no `subfindings.tsv` manuscript row, 0 subfindings slugs absent from disk, 0 empty or
+  missing PDFs, 0 families outside the ledger, 0 per-family row-count differences against the ledger's
+  `paps`, and 0 manuscript-path differences between `overview.tex` and `sources.tsv` in either
+  direction — the last three being the independent check, since they re-parse `overview.tex` with
+  `build_catalog.parse_overview()` instead of trusting the table's own source.
+- Check `notes/sources.md` with `python3 notes/scripts/verify_sources.py --mutant` before quoting any
+  figure — it re-derives all 30 count phrases from a fresh recount over `preprints/` (root
+  distribution, main-file outcomes, single-root names, column sums, the six-name environment total and
+  its per-name gap), requires every backticked manuscript directory name on the page to exist,
+  resolves every `path:line` anchor of any extension, matches each fenced block against the nearest
+  preceding anchor, and requires every `pdf` on disk non-empty, every `main_tex` present and declaring
+  `\documentclass` at line start, every `fam` in the ledger, and every family's row count equal to
+  `paps`. It flags nine injected mutants and writes nothing.
 - Check `notes/subfinding-pairs.md` with `python3 notes/scripts/verify_subfinding_pairs.py --mutant`
   before quoting any count from it — it requires exactly one block per population family and none
   outside, resolves each block's `overview.tex` anchor to that family's `\resultentry` line, checks
