@@ -242,10 +242,16 @@ def main():
     inputs_dirs = {p.parent.name for p in (ROOT / "preprints").glob("*/INPUTS.md")}
     covmd_dirs = {p.parent.parent.name for p in (ROOT / "preprints").glob("*/verification/COVERAGE.md")}
 
+    # Page presence is a filesystem fact, not a derived claim: the directory name is the
+    # discipline lowercased with spaces hyphenated, so the glob is the whole test.
+    summary_fams = {p.name[:3] for p in (ROOT / "notes" / "summaries").glob("*/*.md")
+                    if re.match(r"^\d{3}-", p.name)}
+
     cols = [
         "fam", "discipline", "title", "paps", "paps_form", "tier", "chal", "mainres",
         "scope_note", "scope_chars", "verification", "inputs", "covmd", "trace",
         "shapes", "conditional", "resolves_named", "companions", "companion_word", "versions",
+        "summary",
     ]
     rows = []
     for fam in sorted(fams):
@@ -288,6 +294,7 @@ def main():
             "companions": "|".join(refs),
             "companion_word": 1 if re.search(r"\bcompanion", info["abstract"], re.I) else 0,
             "versions": versions_of(all_paths),
+            "summary": 1 if fam in summary_fams else 0,
         })
 
     with OUT.open("w", encoding="utf-8") as fh:
@@ -328,6 +335,8 @@ def main():
     print(f"versions>0          {sum(1 for r in rows if r['versions'])} families, "
           f"{sum(r['versions'] for r in rows)} dated re-issues")
     print(f"companion word      {sum(r['companion_word'] for r in rows)} families")
+    print(f"summary pages       {sum(1 for r in rows if r['summary'])} of {len(rows)} families, "
+          f"{sum(int(r['paps']) for r in rows if r['summary'])} manuscripts behind them")
 
     print("\n# discipline  fams  scope_notes  paps  paps_form")
     disc = defaultdict(lambda: [0, 0, 0, 0])
