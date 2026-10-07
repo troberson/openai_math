@@ -49,6 +49,32 @@ A separate column is additive: the shape table stays at 144, the buckets stay pu
 is available to readers. Say the reason in a comment at the rule, so the next person does not
 "tidy" it into the shared set.
 
+### Not every column is a derived claim
+
+Some columns are **filesystem facts**, and those skip steps 1–3 and 5 entirely: no overlap
+measurement, no keyword hygiene, no cross-tab. Presence of a page is the canonical one:
+
+```python
+# Page presence is a filesystem fact, not a derived claim: the directory name is the
+# discipline lowercased with spaces hyphenated, so the glob is the whole test.
+summary_fams = {p.name[:3] for p in (ROOT / "notes" / "summaries").glob("*/*.md")
+                if re.match(r"^\d{3}-", p.name)}
+```
+
+Key it by the `<NNN>` prefix, not by the directory, so a page misfiled under the wrong discipline
+still counts against the right family. Say in the comment why the glob is the whole test.
+
+Give the column a **report line**, not just a value — a column nobody prints is a column nobody
+audits, and the line is what a long production loop reads at each batch boundary:
+
+```python
+print(f"summary pages       {sum(1 for r in rows if r['summary'])} of {len(rows)} families, "
+      f"{sum(int(r['paps']) for r in rows if r['summary'])} manuscripts behind them")
+```
+
+Print the second number too (here: manuscripts behind the 2 pages). A count with a denominator
+catches a column that flips for the wrong rows; a bare count does not.
+
 ## 3. Regex hygiene for keyword rules
 
 Bound both ends of a verb stem. `\bprov(?:e|es|ed|ing)\b` — without the leading boundary,
@@ -98,6 +124,15 @@ table, the shape/tag section, the downstream script's docstring, the triage reco
 skill (a standing rule, the resource map, the lookup step, the column count, and its `version:`
 field). Mark the open task decided for the part you decided and explicitly open for the part you
 did not (`counterexample`: 30 genuine untagged families, no column proposed).
+
+Grep the column count as a **number**, not only as a phrase — the same stale integer appears in prose
+that does not read like schema documentation. On the 20 → 21 change (2026-10-07) two docs were stale
+at once: the column table in `notes/README.md` and the repository map in `AGENTS.md`
+("`catalog.tsv` (372 rows, 20 columns)"). Sweep the agent-instructions file too: it is the only doc a
+fresh session reads first, and a map that omits a new directory means the next agent never finds it.
+When the change adds a directory, the map line and the README command block both need the new path,
+and the README gains the checker invocation in its exact flag form (`--mutant`), not just the bare
+command.
 
 ## 7. Commit and push
 
