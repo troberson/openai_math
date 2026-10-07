@@ -1,6 +1,8 @@
 ---
 name: lean-formalization-coverage-audit
-description: Measure how much of a manuscript collection is actually formalized in an accompanying Lean library, and report the gap without overstating what it proves.
+description: Measure how much of a manuscript collection is actually formalized in an accompanying
+  Lean library, check the non-Lean evidence its manuscripts ship (verification scripts, coverage
+  documents, provenance notes), and report the gap without overstating what it proves.
 source: auto-skill
 extracted_at: '2026-10-07T05:29:45.327Z'
 ---
@@ -98,6 +100,15 @@ is not.
   ```
 
   Assert the parse count equals the family count (372) before using any abstract.
+- **`Path` vs `str` in a membership test.** A generator that builds a reference set of directories
+  (`{p.parent for p in root.glob("*/verification")}`) and then tests membership per row using a
+  *string* row value makes every test false: `str in {Path(...)}` never matches. The column reads 0
+  for every row, which is indistinguishable from a genuinely empty column — three evidence columns
+  here were quoted as empty for a whole project before anyone noticed. Key the reference set on the
+  same type as the tested value (`p.parent.name`), and make the generator print the repo-wide sum so
+  a zero column is visibly wrong. Then check for basename collisions before trusting name-keying
+  (here: 30/30, 4/4, 2/2 unique, so it is safe). Repaired values: 30 verification dirs over 22
+  families, 4 `INPUTS.md`, 2 `COVERAGE.md`.
 
 ## 4. Say what a zero-`sorry` result does and does not mean
 
@@ -190,3 +201,43 @@ formalized" from being read as a finding.
   stated in the literature, and no Lean was run. State the remaining gap in families and
   manuscripts; after the second pass this catalog's zero-signal tier is fully read at abstract
   level (44 families / 134 manuscripts, then 93 / 121), so the gap is depth, not coverage.
+
+## 9. Check the evidence that ships with a result
+
+A family with no Lean coverage can still ship executable support. Checking it is cheap and it is
+where a coverage audit finds its most actionable facts. Worked on the 21 counterexample-shaped
+families of the zero-signal tier (34 manuscripts): all 21 had no scope note, no challenge, no main
+result and no trace, so the abstract was the whole evidence.
+
+- **Record one object and one broken conjecture per counterexample family, plus its construction
+  mode.** Mode = **E** when the abstract names a constructed object, **X** when the object is
+  indexed by an unspecified parameter, plus a mixed case. Catalog: 14 E / 6 X / 1 mixed. The X rows
+  are the ones to read first — the claim is stated with a free parameter, so the object is not
+  pinned. This is a cheap, checkable classification and it survives a change of taxonomy.
+- **Run the shipped scripts, in a temp copy, with assertions on.** `python3` from stdlib only; copy
+  out of the repo so nothing writes into it. Report the scripts' own success strings, not your
+  interpretation. Only 2 of 21 families shipped runnable checks, and both passed inside limits they
+  state themselves: "it does not certify the topological or lattice-theoretic parts of the proof",
+  "Successful execution means the programs' assertions hold; it does not independently verify their
+  analytic interpretation or the full theorem." **Execution is replay, not review** — say which one
+  you performed.
+- **A coverage document is not coverage.** When a family ships a `SUPPORT-COVERAGE.md`, check that
+  every artifact it names exists on disk and in `git ls-files`. Family 318 names
+  `support/r-ce/ce_certificate.py`, its `.json`/`.txt` transcripts, `BUILDING.md` and
+  `SUPPORT-COVERAGE.json`; none exist. The same file also says "No Lean source or Lean verification
+  is supplied for this article." Never describe a family as having support from the existence of a
+  document *about* support. A ledger with a boolean column for such a file cannot express "named, not
+  shipped" — record it as a finding, not a count.
+- **Read `INPUTS.md` before treating it as an input list.** Family 259's is a provenance caveat:
+  "The available source record does not establish that it was the final revision of that argument."
+  That is a statement about the evidence chain, and it belongs in the family's record.
+- **"Explicit" can be explicit in form only.** Follow a certificate's own formula to a number.
+  Family 059's certificate reports ambient dimension `4*s0+16` with
+  `s0 = 4*sum_abs_e + 2*sum_e + common_tail_variable_count_per_side + 2`; at the supplied instance
+  s0 = 1.1439…×10¹⁴³, i.e. ~4.58×10¹⁴³ variables. The construction is named, and unusable as a
+  concrete object. Quote the formula, not a rounded exponent — mis-transcribing an exponent is how
+  this finding nearly became wrong.
+- **Depth is usually available offline.** Check `preprints/<dir>/build/*.tex` before proposing a
+  toolchain: all 34 manuscripts here ship LaTeX (2–17 `.tex` each), so reading a proof needs no
+  Lean, no build, and no network.
+
