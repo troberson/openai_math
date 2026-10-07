@@ -247,6 +247,23 @@ QUOTE = re.compile(r"“([^”]{6,})”|\"([^\"]{6,})\"")
 # wider haystack).
 ```
 
+**Four mechanics of pass C decide how the page is written** (all four fired on family 159):
+
+- A block quote is compared **with its own delimiters included**: `pass_c` sets `spans = [unit]` for a
+  block quote, and `norm()` does not strip `"`. Write a block quote as the raw source text with **no
+  quote marks around it**. Inline quotes are safe — the `QUOTE` capture excludes the delimiters.
+- A block quote is attributed by scanning `start_line-2 … start_line-4` for the first line carrying
+  usable markers, so its citation belongs on the **intro line exactly two lines above** (intro line,
+  blank line, quote). A marker sitting further up is used only when nothing is nearer, which is how a
+  quote ends up attributed to the wrong range.
+- That attribution line's markers *are* the block quote's candidate list, so **a paragraph citing a
+  binary source must not be the line above a block quote** — pass C tries the PDF as text and dies on
+  `UnicodeDecodeError`. Give a trace-PDF or `paper.pdf` citation its own paragraph, away from any block
+  quote, and keep quotations out of that paragraph.
+- Quote a displayed formula with the delimiters the source uses. `norm()` turns `\begin{equation}` into
+  `equation`, so a page that writes `\[ … \]` never matches a source pair carrying an environment:
+  quote the environment and cite the range covering `\begin{…}` through `\end{…}`.
+
 Normalize both sides before comparing, and make the normalization markup-aware as well as
 LaTeX-aware: the source writes `Theorem~\ref{thm:main}` and the page renders "Theorem 1", so strip
 `\ref{}`-family commands, strip LaTeX macros and `~`, strip the number the page substituted after a
@@ -311,6 +328,12 @@ both are flagged while the real page is clean. A green pass you have never seen 
   rewrite it with `os.path.relpath(target, page_dir)` and keep the link text unchanged. Pass C must
   then normalize tags to *nothing*, not to a space — `prime-to-<i>p</i>` has to match `prime-to-p` —
   and strip leading `../` so the rewritten link still matches the release's repo-relative path.
+- **Zero HTML means zero HTML, including markup you wrote yourself.** Family 159 shipped `<sub>` and
+  `<sup>` for *r_k(N)* and (log *N*)^*ε_k* and got flagged on the first run: the scan matches any tag,
+  and `norm()` deletes the matched span, so the quote compares as mangled text. Write `*r_k(N)*` and
+  `(log *N*)^*ε_k*` in plain markdown. The same scan fires on a bare `<` in an inequality when the line
+  also carries a `>` later (`$0<a<c_k$` with `$W_r(k)>\exp(\dots)$` on one line) — put them on separate
+  lines.
 - **Never write an anchor you have not seen.** `grep` the target file for the anchor before linking to
   it. The page linked `(#fam-001)`; `CONTENTS.md` contains no anchors at all, and repo-wide `](#`
   matches only TikZ source. An anchor you invented resolves to nothing and looks fine in a preview.
