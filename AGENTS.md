@@ -25,10 +25,12 @@ lives in this file and nowhere else.
   the reading pass that pairs abstract clauses with display titles) beside it,
   `index-design.md` (the index schema decision — store, location, granularity, topic vocabulary — with
   the measured node and edge population that justifies it), `index/` (the rendered index, all of it
-  generated: 372 family pages in 17 discipline dirs, 17 discipline pages, 92 topic pages, one entry
-  point, 7 node tables and 7 edge tables),
+  generated: 372 family pages in 17 discipline dirs, 17 discipline pages, 92 topic pages, 552 name
+  pages, one entry point, 8 node tables and 8 edge tables),
   `topics.tsv` (92 rows, 9 columns — the curated topic vocabulary: term, pattern, family yield, the
   four per-layer counts, status, page) with `topics.md` beside it,
+  `names.md` (the name layer — six sources, the subject/citation rule, the rejection ladder, the
+  family-title escape, the recorded decisions) with `index/names.tsv` (5,859 rows) beside it,
   `sources.tsv` (722 rows, 14 columns — the LaTeX source surface of each manuscript: root count,
   resolved main file, section/proof/statement-environment counts, `.bib` count, `.tex` bytes) with
   `sources.md` beside it,
@@ -41,8 +43,9 @@ lives in this file and nowhere else.
   seconds, writes `notes/catalog.tsv` and prints the report that every number in
   `notes/README.md` comes from.
 - Render the index with `python3 notes/scripts/build_index.py` — it imports the joins from
-  `build_catalog.py`, writes `notes/index/` (482 pages + 14 tables, 3.2M), and prints the report every
-  count in it comes from. There is **no manuscript→Lean edge in the release**: `formalization.yaml`
+  `build_catalog.py` and the name measurement from `measure_names.py`, writes `notes/index/`
+  (1,034 pages + 16 tables, 15M), and prints the report every count in it comes from. There is
+  **no manuscript→Lean edge in the release**: `formalization.yaml`
   carries `sources:` (manuscripts) and `main_results:` (config/declaration/file triples) as two flat
   lists with nothing linking them, so the index renders the chain the yaml does support — family →
   config (scope-note links) → declaration → file, 185 declarations over 178 configs reaching 127 of
@@ -51,6 +54,17 @@ lives in this file and nowhere else.
   mechanical (NFKD, strip combining marks, drop `$`/apostrophes/`\command`, lowercase, non-alphanumerics
   → `-`, leading `the-` dropped): 0 collisions, max length 93. Index↔summary pairing is by family
   number only — 12 of 372 families have a summary page.
+- Names are a measured layer, not a curated one: `python3 notes/scripts/measure_names.py` (report-only,
+  ~42 s; `--json` dumps the rows) reads six layers — family titles, manuscript directory names, the
+  optional titles of 15,755 statement environments, `main_results` declaration names, capitalized prose
+  tokens, and `.bib` author surnames. **A title or declaration hit is a subject; a prose or
+  bibliography hit is a citation, and only subjects get a page** — 552 pages over 5,859 measured keys,
+  5,307 citation-only rows. Quote the split with the rule, never as one count. The mid-sentence
+  capitalization test is the name-versus-word gate (`mid >= 3 and low <= max(1, mid // 2)`), and the
+  acronym and LaTeX-macro tests are judged on the **dominant surface form over all six layers**: a
+  `\cite{OpenAIWidth}` that leaks into a theorem-environment title never appears as prose, so a
+  prose-only view cannot see it. `cauchy` reaches 233 families and has **zero** declaration hits — none
+  of the 185 declaration names contains it, which is a fact about the release, not an extractor gap.
 - Topics come from the hand-authored vocabulary at `notes/topics.tsv`, never from derivation, and
   measure it with `python3 notes/scripts/measure_topics.py` (`--check` re-measures all 92 rows and
   exits 1 when a recorded count has drifted). Keep that file **outside** `notes/index/`: the index
@@ -260,15 +274,23 @@ lives in this file and nowhere else.
   `\keywords` directories.
 - Run `python3 notes/scripts/build_index.py` twice and diff: `notes/index/` must be byte-identical and
   the report identical. Its report reconciles 372 family pages + 17 discipline pages + 92 topic pages
-  + 1 entry point (482 pages, 14 tables), 7043 relative links with 0 broken, canonical == rendered on
-  families 372 / manuscripts 722 / formalized 162 / scope notes 235 / challenges 405 / traces 10 /
+  + 552 name pages + 1 entry point (1,034 pages, 16 tables), 47354 relative links with 0 broken,
+  canonical == rendered on families 372 / manuscripts 722 / formalized 162 / scope notes 235 /
+  challenges 405 / traces 10 /
   verification dirs 30, `vs ledger` diffs of 0 on tier, `mainres`, `chal`, `paps` and `paps_form`,
   ledger↔overview family sets equal with 372 pages and 0 pages absent on disk, 11 trace files over 10
   attributed stems, 396 citation edges, 185 family-lean rows over 127 families, 405 configs (json 405,
   lean 405, 178 with a declaration, 0 linked by more than one family), 554 module dirs, 12 of 372
   summary pairings, 0 page collisions, manuscript links resolving for 722 of 722 on main file, `build/`
-  and `README.md`, and `drift vs notes/topics.tsv 0`. Quote an index count with the report line it came
-  from; the index is generated, so edit the generator and re-render rather than editing a page.
+  and `README.md`, `drift vs notes/topics.tsv 0`, and the names line — 5,859 measured, 552 subject
+  (552 pages), 5,307 citation-only, 9,883 edges over 372 families, 0 names with no family, 67
+  singletons, max (233, `cauchy`), 329 with >1 prose spelling, trace families 10 of 10. Quote an index
+  count with the report line it came from; the index is generated, so edit the generator and re-render
+  rather than editing a page.
+- Run `python3 notes/scripts/measure_names.py` before quoting a name count: it re-derives every figure
+  in `notes/names.md` from the corpus (6,975 `.tex` files, 15,755 titled statement environments,
+  12,707 `.bib` entries over 5,831 author keys, 3,404 title candidates, 2,847 rejections by bucket).
+  It writes nothing, so the pages are not its test — `notes/names.md` is the document it checks.
 - Run `python3 notes/scripts/measure_topics.py --check` before quoting any topic count: it re-measures
   all 92 rows of `notes/topics.tsv` and exits 1 when a recorded per-layer count has drifted. Its
   report yields 92 terms over 372 families, 4 unassigned terms, 372 of 372 families covered, 971

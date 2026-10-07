@@ -137,6 +137,7 @@ Node tables, one row per node, in `notes/index/`:
 | `scope-notes.tsv` | **235** | `fam` |
 | `traces.tsv` | **10** | trace stem |
 | `topics.tsv` | **92** | term |
+| `names.tsv` | **5,859** | folded name key |
 
 Edge tables, in `notes/index/edges/`:
 
@@ -149,16 +150,20 @@ Edge tables, in `notes/index/edges/`:
 | `citation.tsv` | **396** | manuscript → corpus manuscript, **105** cross-family |
 | `family-trace.tsv` | **10** | family → reasoning trace |
 | `family-topic.tsv` | **971** | family → topic, **zero or more** per family |
+| `family-name.tsv` | **9,883** | family → subject name, with the layer flags that produced it |
 
 Pages: `notes/index/<discipline>/<NNN>-<name>.md`, **372** of them, each rendering the rows above
 that name its family; `notes/index/topics/<term>.md`, **92** of them, one per vocabulary term
-including the **4** with no hit; **17** discipline pages; and `notes/index/README.md` as the entry
-point. **482** pages and **14** tables in total.
+including the **4** with no hit; `notes/index/names/<name>.md`, **552** of them, one per subject
+name; **17** discipline pages; and `notes/index/README.md` as the entry
+point. **1,034** pages and **16** tables in total.
 
 Rejected: a raw bibliography edge table. **12,928** rows at the measured **150** B/row is
 **1,893** KiB of generated text for the release's own reference lists, while the resolved
 manuscript→manuscript subset is **396** rows (**58** KiB) and `notes/links.tsv` already states its
-rule. The raw entries stay where they are.
+rule. The raw entries stay where they are. What the name layer adds is the **aggregated** view:
+`names.tsv` has one row per folded name key (**5,859**), not per entry, and only the **552** keys
+with a title-or-declaration hit get a page. The **5,307** citation-only keys are rows, not pages.
 
 ## Two edges the bead assumed that the release does not ship
 
@@ -189,9 +194,10 @@ manuscript-level flag.
 ## Not checked
 
 - The **150** B/row byte figures are projections from measured TSVs, not measurements of index files.
-  The index itself is rendered — **482** pages, **14** tables, `links checked 7043 broken 0`, and a
-  two-run determinism check with 0 tree diff and 0 report diff — but no page was read for prose
-  quality, and the byte cost of the rendered tree was not measured.
+  The index itself is rendered — **1,034** pages, **16** tables, `links checked 47354 broken 0`, and a
+  two-run determinism check in which all **1,050** generated files were byte-identical with an
+  identical report — but no page was read for prose quality, and the byte cost of the rendered tree
+  was not measured.
 - The **12,928** bib entries are counted by `^\s*@\w+\s*{`; commented-out entries are included and
   none was checked to parse as a BibTeX entry.
 - The **127**-family Lean reach is computed from scope-note links and yaml triples. No `.lean` file
@@ -201,4 +207,10 @@ manuscript-level flag.
 - Whether the **23** Lean discipline dirs align with the **17** catalog disciplines is not measured
   beyond the two counts.
 - The bead's sizing estimate (~2,700 nodes, ~17,000 edges) is superseded by the measured **2,529**
-  and **16,307**.
+  and **16,307**. That population predates the name layer: `measure_index_sizes.py` does not count the
+  **5,859** name nodes or the **9,883** family-name edges, so quote it as the pre-name sizing estimate
+  and the rendered report (**1,034** pages, **16** tables, **47,354** links) as the shipped state.
+- Name pages are keyed by folded name, so a hyphenated double surname is one node
+  (`baumslag-solitar`-style forms stay as single keys) and no name-to-name edge is built. The
+  prose (`b`) and bib-author (`B`) columns are citations; the page states that, and no per-occurrence
+  context is stored. `notes/names.md` carries the ladder, the escape rule, and the rest of the tail.
