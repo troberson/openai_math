@@ -11,16 +11,16 @@ carrier, so it states what to do and what not to re-derive.
 - **Pages done:** 102 (`notes/summaries/theoretical-computer-science/`), 001, 007, 017
   (`notes/summaries/number-theory/`), 032 (`notes/summaries/algebraic-and-complex-geometry/`), 087
   (`notes/summaries/convex-and-metric-geometry/`), 159 (`notes/summaries/combinatorics/`), 197
-  (`notes/summaries/algebra/`), 221 (`notes/summaries/probability-and-statistical-mechanics/`). The
-  ledger's `summary` column is 1 for those nine; the generator reports "summary pages 9 of 372
-  families, 25 manuscripts behind them".
-- **Next page:** family **271**. Steps 2–9 above, in order.
+  (`notes/summaries/algebra/`), 221 (`notes/summaries/probability-and-statistical-mechanics/`), 271
+  (`notes/summaries/mathematical-physics/`). The ledger's `summary` column is 1 for those ten; the
+  generator reports "summary pages 10 of 372 families, 29 manuscripts behind them".
+- **Next page:** family **287**. Steps 2–9 above, in order.
 - **Last gate run (2026-10-07):** regeneration byte-identical on two runs; 372 families, 722
   manuscripts, 162 formalized, 405 challenges, 185 `main_results` over 178 configs, 235 scope notes,
   both cross-checks 0, discipline table summing 372 / 235 / 722 / 162; `verify_summaries.py --mutant`
-  over 9 pages → 1645 marker positions, 325 quoted spans, 0 problems, 0 undetected mutants.
-- **Push state:** `origin/notes` at 6fb6d9fd2 (pushed 2026-10-07 06:22); local `notes` HEAD is
-  d5d1a0a95. Push when an hour has passed since the last push, not per commit.
+  over 10 pages → 1850 marker positions, 378 quoted spans, 0 problems, 0 undetected mutants.
+- **Push state:** `origin/notes` at 29169d579 (pushed 2026-10-07 07:48); local `notes` HEAD is
+  f3c5293d8. Push when an hour has passed since the last push, not per commit.
 - **007 finding, for reuse:** the ledger's `paps_form`/`mainres` counts are 0 for a family that
   ships 854 Lean files with zero `sorry`, because `formalization.yaml` has no entry for the
   manuscript. Counts are YAML bibliography entries, not Lean source — never read them as "not
@@ -133,6 +133,36 @@ carrier, so it states what to do and what not to re-derive.
     the trace, not about the published manuscript.
   - Cost: 1 manuscript (11 sections under `build/sections/`), 1 trace in two formats, 3 Lean trees →
     30 sources, 133 markers, 36 quoted spans, green on the third checker run.
+- **271 findings, for reuse:**
+  - **A formalized bound can be the manuscript's bound in disguise.** `Main.lean` states `(ℓ:ℝ)/8`
+    where the manuscript states *S*/4; `Model.lean:55` is `abbrev Level (ℓ : ℕ) := Fin (ℓ + 1)`, so
+    the site carries ℓ = 2*S* slots and ℓ/8 **is** *S*/4. Read the type encoding before calling a
+    formal statement weaker than the paper's.
+  - **The root manuscript is measurable from the bibliographies.** D's `references.bib` has 36 entries
+    and zero `OAI:` self-citations; A, B and C each cite D by its `OAI:` href. Grep the `OAI:` hrefs
+    across the family's trees: the manuscript nobody in the family cites is the root, and the dated
+    directory names confirm it.
+  - **A line-range marker on a binary source crashes the checker** — `UnicodeDecodeError` in
+    `lines_of`. A PDF row is legal only with whole-file markers `[Sn]`, and only in units that carry
+    no quotation. 271's trace ships as PDF alone (no `.tex`), so its reasoning is not quotable at all.
+  - **Two adjacent block quotes leave the second with no citation.** `pass_c` attributes a block quote
+    from the lines at `start_line-2 … start_line-4`; a blank line plus the first quote fills that
+    window, so the second quote reports `NO CITATION`. Merge them into one contiguous block quote and
+    put one marker covering the whole joined range on the intro line — blank source lines collapse
+    under `norm()`, so a joined two-paragraph quote verifies against a joined range.
+  - `resolves_named` is 0 for 271 while manuscript D explicitly resolves **Lieb's 1999 Problem A**
+    and says which formulation it resolves and which it does not. The ledger column is a keyword
+    floor; read the manuscript before repeating it as a fact about the result.
+  - `formalization.yaml` contains no `heisenberg` string, which is the mechanical cause of 271's
+    `paps_form 0` / `mainres 0` beside 128 Lean files, 25,400 lines, zero `sorry`, 323 theorems.
+  - Section-directory layout is not uniform: D keeps its sections under `build/source/sections/`,
+    A/B/C under `build/sections/`. Confirm with `find` before writing a Sources path.
+  - 271's trace cites six works absent from D's bibliography (Aizenman–Nachtergaele,
+    Benjamini–Pemantle–Peres, Caputo–Liggett–Richthammer, Elboim–Sly, McBryan–Spencer, Ueltschi 2013)
+    — a source-level fact about the trace, not about the published manuscript.
+  - Cost: 4 manuscripts, 1 trace (PDF only), 1 Lean tree → 63 sources, 205 markers, 53 quoted spans,
+    green on the third checker run. Four trees is the most expensive shape so far; a family with one
+    manuscript costs about half the source rows.
 
 ## Loop shape
 
