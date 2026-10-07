@@ -8,20 +8,22 @@ carrier, so it states what to do and what not to re-derive.
 - **Batch:** `math-ckd.1`, claimed — the 10 trace families (007, 017, 087, 102, 159, 197, 221, 271,
   287, 362), 22 manuscripts. Close it with `bd close math-ckd.1 --reason "<outcome>"` when the tenth
   page is committed.
-- **Pages done:** 102 (`notes/summaries/theoretical-computer-science/`), 001, 032, 007, 017
-  (`notes/summaries/number-theory/`). The ledger's `summary` column is 1 for those five; the
-  generator reports "summary pages 5 of 372 families, 16 manuscripts behind them".
-- **Next page:** family **087**. Steps 2–9 above, in order.
+- **Pages done:** 102 (`notes/summaries/theoretical-computer-science/`), 001, 007, 017
+  (`notes/summaries/number-theory/`), 032 (`notes/summaries/algebraic-and-complex-geometry/`), 087
+  (`notes/summaries/convex-and-metric-geometry/`). The ledger's `summary` column is 1 for those six;
+  the generator reports "summary pages 6 of 372 families, 19 manuscripts behind them".
+- **Next page:** family **159**. Steps 2–9 above, in order.
 - **Last gate run (2026-10-07):** regeneration byte-identical; 372 families, 722 manuscripts, 162
   formalized, 405 challenges, 185 `main_results` over 178 configs, 235 scope notes, both cross-checks
-  0, discipline table summing 372 / 235 / 722 / 162; `verify_summaries.py --mutant` over 5 pages →
-  964 marker positions, 174 quoted spans, 0 problems, 0 undetected mutants.
+  0, discipline table summing 372 / 235 / 722 / 162; `verify_summaries.py --mutant` over 6 pages →
+  1232 marker positions, 185 quoted spans, 0 problems, 0 undetected mutants.
 - **Push state:** `origin/notes` at 496b3aa69 (pushed 2026-10-07 04:41); local `notes` HEAD is
-  d2a2cc310. Push when an hour has passed since the last push, not per commit.
+  aa8add611. Push when an hour has passed since the last push, not per commit.
 - **007 finding, for reuse:** the ledger's `paps_form`/`mainres` counts are 0 for a family that
   ships 854 Lean files with zero `sorry`, because `formalization.yaml` has no entry for the
   manuscript. Counts are YAML bibliography entries, not Lean source — never read them as "not
-  formalized". 017 is the same shape: 0 and 0 beside 869 files and 94,948 lines.
+  formalized". 017 is the same shape: 0 and 0 beside 869 files and 94,948 lines. 087 is the same
+  shape at partial scale: 2 of 3 and 3 of 4 beside 591 files and 81,233 lines.
 - **017 findings, for reuse:**
   - A `[Sxx]` marker for a binary source (a trace PDF) inside a unit that carries a quotation makes
     Pass C read that PDF as text and crash on `UnicodeDecodeError`. Pass C tries the cited sources in
@@ -29,7 +31,7 @@ carrier, so it states what to do and what not to re-derive.
     or listed after a text source that can match. Cite trace rows in the closing note.
   - A quotation containing `<` is a hazard twice over: the raw-HTML scan matches `<...>`, and
     `norm()` deletes the same span, so the quote compares as mangled text. Put a space after `<`, or
-    paraphrase.
+    paraphrase. Check the source line for a `>` before quoting an inequality.
   - Quotes from `lean/docs/<NNN>.md` must keep that file's `$...$` delimiters. `norm()` leaves `$` and
     `\(`/`\)` intact, so rewriting one form as the other never matches.
   - A footnote quotation can end on the line that closes it (`}`), so the cited range must include
@@ -38,6 +40,17 @@ carrier, so it states what to do and what not to re-derive.
     excludes the Flint–Hills consequence, and `Main.lean` proves `flint_hills_summable` separately.
     Read the Lean tree before repeating an exclusion as a coverage gap — and check it the other way
     too; 017's generalized `a > max{1,b}` criterion really is absent.
+- **087 findings, for reuse:**
+  - A marker-only citation satisfies declare-or-cite, so a source whose content is paraphrased needs
+    no quotation. 087 shipped 43 sources and 11 quoted spans (six block quotes, five inline) and
+    passed Pass C on the first run.
+  - In a unit with several markers, Pass C tries them in order and stops at the first match, so a
+    quotation placed after an unrelated marker still verifies against the marker that can match it.
+  - A verification bundle can name a file its driver reads that the release does not ship
+    (`SOURCE-MANIFEST.json`, read at `reproduce.py:72`). State that as a source-level fact about the
+    published bundle and say the bundle was not run; do not execute it.
+  - Where a manuscript ships a proof with zero `sorry` and the release's YAML records no entry for it,
+    write it as the index being behind, not as a coverage gap, and give both counts.
 
 ## Loop shape
 
@@ -114,6 +127,8 @@ T0 is 137 families and 255 manuscripts, so tier C is 271 families: 137 − 11 + 
   PDF/quote rule: `.qwen/skills/auto-skill-family-summary-citation-verified/SKILL.md`.
 - Cost model: 001 (1 manuscript → 15 sources, 173 markers, 9 quoted spans) and 032
   (8 manuscripts → 32 sources, 272 markers, 52 quoted spans). Sources ≈ 4 per manuscript.
+  087 (3 manuscripts → 43 sources, 268 markers, 11 quoted spans): a three-tree family with a
+  verification bundle and four challenges doubles the source count at the same manuscript count.
 - `bd ready` is the only task tracker; nothing here is a task list.
 - Never run `lake`, `lean`, `lake exe cache get`, or `comparator`.
 
