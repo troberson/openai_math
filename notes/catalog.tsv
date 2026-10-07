@@ -214,7 +214,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 218	Probability and statistical mechanics	Conformal universality for weakly interacting and disordered Ising models	6	0	T2	1	0	1	585	0	0	0		bound	0	0		0	0	0
 219	Probability and statistical mechanics	GOE universality for random regular graphs with weak disorder	2	0	T0	0	0	0	0	0	0	0		uniform	0	0		0	0	0
 220	Probability and statistical mechanics	Directional zero--one laws and ballisticity in random environments	3	1	T3	3	1	1	1277	0	0	0		resolution|uniform	0	1		0	0	0
-221	Probability and statistical mechanics	The M\'ezard--Parisi formula for diluted spin glasses	1	0	T2	1	0	1	439	0	0	0	mezard-parisi-formula		0	0		0	0	0
+221	Probability and statistical mechanics	The M\'ezard--Parisi formula for diluted spin glasses	1	0	T2	1	0	1	439	0	0	0	mezard-parisi-formula		0	0		0	0	1
 222	Probability and statistical mechanics	Perceptron free energies and microscopic jamming	4	0	T2	3	0	1	1064	0	0	0		bound|density	0	0		0	0	0
 223	Probability and statistical mechanics	Conformal limits of square-lattice random-cluster interfaces	6	0	T0	0	0	0	0	0	0	0		bound	0	0		0	0	0
 224	Probability and statistical mechanics	Critical and near-critical universality for Voronoi percolation	3	0	T0	0	0	0	0	0	0	0		bound	0	0		0	0	0
