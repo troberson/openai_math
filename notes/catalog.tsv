@@ -97,7 +97,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 099	Convex and metric geometry	The sharp distortion of edit distance into $\ell_1$	3	0	T2	4	0	1	1653	0	0	0		bound|partial|uniform	0	0		0	0	0
 100	Convex and metric geometry	A counterexample to Bang's cylinder-covering bound	4	0	T2	3	0	1	2568	0	0	0		counterexample|bound	0	1		0	0	0
 101	Convex and metric geometry	The sharp simplex conjecture for isotropic constants	1	0	T0	0	0	0	0	1	0	0		resolution|bound	0	1		0	0	0
-102	Theoretical computer science	The Unique Games Conjecture and optimal approximation thresholds	5	3	T3	5	3	1	2465	0	0	0	basic-semidefinite-threshold-np-hardness		0	1		0	0	0
+102	Theoretical computer science	The Unique Games Conjecture and optimal approximation thresholds	5	3	T3	5	3	1	2465	0	0	0	basic-semidefinite-threshold-np-hardness		0	1		0	0	1
 103	Theoretical computer science	Derandomization of logarithmic space: $\mathsf L=\mathsf{RL}=\mathsf{BPL}$	1	0	T0	0	0	0	0	0	0	0		resolution|bound	0	0		0	0	0
 104	Theoretical computer science	Quasipolynomial algorithms for mean-payoff, stochastic and parity games	4	1	T3	2	1	1	602	0	0	0			0	0		0	0	0
 105	Theoretical computer science	The 2-to-1 Games Conjecture with perfect completeness	1	1	T3	1	1	1	481	0	0	0		partial|uniform	0	1		0	0	0
