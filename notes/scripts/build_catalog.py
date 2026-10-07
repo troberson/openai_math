@@ -222,6 +222,40 @@ def resolves_named(abstract):
     return 1 if TARGET_NOUN.search(low) and RESOLVE_VERB.search(low) else 0
 
 
+# Counterexample language, measured in notes/counterexample-tag.md. Deliberately NOT a SHAPES
+# entry: triage_t0.py assigns T0 buckets by first match over `shapes`, so widening
+# `counterexample` from 44 to 74 moves 30 families (6 of them in T0) out of the bound,
+# classification, density, undecidability and resolution buckets -- a taxonomy change disguised as
+# a tag tweak. As a separate column it is a strict superset of the tag (tag-only = 0), so the two
+# counts stay comparable, and every flag-only family stays in the bucket readers expect.
+#
+# Phrase rule, not stem rule: an unbounded `negativ` stem flags 90 families, most of them
+# adjectival. Requiring a phrase excludes the three false positives found by reading the matched
+# sentence -- 348 ("answers ... nonnegatively"), 339 ("strictly negative sectional curvature"),
+# 355 ("at every negative time"). `negative (?:answer|resolution)` is what catches 004, whose
+# result is a negative resolution with no counterexample object exhibited.
+#
+# Input scope is title + abstract, stated because it changes the count: abstract only yields 72,
+# and the two title-only additions (088, 293) are families whose titles literally say
+# "counterexamples".
+COUNTEREX_PHRASE = re.compile(
+    r"\bcounterexample|\bdisprov|\brefut|\bviolat|\bfails?\b"
+    r"|negative (?:answer|resolution)"
+    r"|(?:answer|resolv|settl|conclud|establish)[a-z]*[^.]{0,80}negatively"
+    r"|negatively[^.]{0,40}(?:answer|resolv|settl)"
+    r"|does not (?:imply|hold|satisfy)")
+
+
+def counterex_broad(title, abstract):
+    """1 when the title or abstract uses counterexample language, judged by phrase.
+
+    A keyword floor: it says the family *uses* the language, not that the manuscript contains a
+    counterexample. The 30 families this flags beyond the `counterexample` tag were each read at
+    the matched sentence and recorded in notes/counterexample-tag.md.
+    """
+    return 1 if COUNTEREX_PHRASE.search((title + " " + abstract).lower()) else 0
+
+
 def versions_of(paths):
     """Manuscripts whose date-stripped directory slug repeats (same paper, new date)."""
     c = Counter(DATE_SUFFIX.sub("", Path(p).parts[-2]) for p in paths)
@@ -250,8 +284,8 @@ def main():
     cols = [
         "fam", "discipline", "title", "paps", "paps_form", "tier", "chal", "mainres",
         "scope_note", "scope_chars", "verification", "inputs", "covmd", "trace",
-        "shapes", "conditional", "resolves_named", "companions", "companion_word", "versions",
-        "summary",
+        "shapes", "conditional", "resolves_named", "counterex_broad", "companions",
+        "companion_word", "versions", "summary",
     ]
     rows = []
     for fam in sorted(fams):
@@ -291,6 +325,7 @@ def main():
             "shapes": "|".join(shapes),
             "conditional": 1 if "conditional" in shapes else 0,
             "resolves_named": resolves_named(info["abstract"]),
+            "counterex_broad": counterex_broad(info["title"], info["abstract"]),
             "companions": "|".join(refs),
             "companion_word": 1 if re.search(r"\bcompanion", info["abstract"], re.I) else 0,
             "versions": versions_of(all_paths),
@@ -332,6 +367,14 @@ def main():
     print("                    " + "  ".join(
         f"{t}={sum(1 for r in rows if r['tier'] == t and r['resolves_named'])}"
         for t in ("T3", "T2", "T1", "T0")))
+    cb = {r["fam"] for r in rows if r["counterex_broad"]}
+    ct = {r["fam"] for r in rows if "counterexample" in r["shapes"].split("|")}
+    print(f"counterex_broad     {len(cb)} of {len(rows)} families flagged (title+abstract)   "
+          f"`counterexample` tag {len(ct)}   tag-only {len(ct - cb)}   flag-only {len(cb - ct)}")
+    print("                    " + "  ".join(
+        f"{t}={sum(1 for r in rows if r['tier'] == t and r['counterex_broad'])}"
+        for t in ("T3", "T2", "T1", "T0"))
+        + f"   {sum(int(r['paps']) for r in rows if r['counterex_broad'])} manuscripts behind them")
     print(f"versions>0          {sum(1 for r in rows if r['versions'])} families, "
           f"{sum(r['versions'] for r in rows)} dated re-issues")
     print(f"companion word      {sum(r['companion_word'] for r in rows)} families")
