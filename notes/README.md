@@ -19,6 +19,7 @@ python3 notes/scripts/extract_subfindings.py  # writes notes/subfindings.tsv and
 python3 notes/scripts/verify_subfindings.py --mutant  # checks notes/subfindings.tsv against overview.tex and lean/docs/
 python3 notes/scripts/extract_subfinding_pairs.py  # lays out the pairing population; report-only, writes nothing
 python3 notes/scripts/verify_subfinding_pairs.py --mutant  # checks notes/subfinding-pairs.md against overview.tex
+python3 notes/scripts/verify_conditional.py --mutant  # checks notes/conditional.md against the Lean source it cites
 ```
 
 `notes/summaries-workflow.md` is the resume protocol for the summary-page batches: per-page steps,
@@ -91,6 +92,19 @@ Multi-label tags matched against the family abstract in `overview.tex`. **Not a 
 `conditional` families: **014, 125, 240, 244, 282.** The regex only flags them; what each one
 actually assumes is read by hand and recorded in **`notes/conditional.md`**, which also lists the
 five flags that reading removed. Read that file before calling a family conditional.
+
+Reading the Lean source for the 3 T3 families (2026-10-07) narrows what "the assumption is inside
+the formalization" buys. The hypothesis sits in the declaration `main_results` names for **240**
+only; **125**'s linked declaration is the unconditional `(2 - σ)` recovery claim and its proved
+`P ≠ NP`-conditional threshold theorem lives in a sibling tree the yaml does not link; **244**'s
+linked declaration assumes a countable transitive ZFC ground model with an internal strongly
+inaccessible cardinal, which is strictly more than the `Con(ZF)` its abstract states. So the claim
+is about the **tree**, not the linked declaration, and the family→config join (by title, not by
+number) is where the two diverge. `lean/ComparatorChallenges/*.lean` are challenge **stubs**, not
+proofs — 405 files carrying 509 `sorry` occurrences, 404 of them at least one, the zero-`sorry`
+exception being `HarmonicGrowth.lean` — while **zero** of the 121,734 files under
+`lean/OAI/**/*.lean` contain `sorry`. A comparator file states the target the release set itself;
+reading it and concluding "the hypothesis is in the formalized statement" is reading the stub.
 
 Tags omit as well as mislabel. Measured 2026-10-06 while reading the T0 abstracts, and written down as
 a rule on 2026-10-07: **74 of 372** families use counterexample language in title or abstract and only
@@ -296,6 +310,15 @@ the community will scrutinize.
 - **`axiom` in prose.** `^\s*axiom\s` hits doc-comment English, not real axioms.
 - **`solution_module` is an import shim.** A config's file can be a single `import` line; the
   proof lives in the transitive import closure. Any `sorry`/axiom scan over a shim is meaningless.
+- **A comparator file is a stub, not a proof.** `lean/ComparatorChallenges/*.lean` carry 509
+  `sorry` occurrences over 405 files (404 with at least one; the exception is `HarmonicGrowth.lean`),
+  while zero of the 121,734 files under `lean/OAI/**/*.lean` contain `sorry`. Reading a comparator
+  file to ask "what does the formalization assume?" reads the target the release set itself, not the
+  proved statement. Ask which declaration `main_results` names, then read that file.
+- **A declaration name is a yaml fact, not a string in the Lean file.** `OAI.CHObstruction.main`
+  is assembled from namespaces; it does not occur verbatim in `Main.lean`. Anchor such a citation to
+  its `lean/formalization.yaml` line (the file has exactly one `main_results:` key, at line 917,
+  carrying 185 entries over 178 distinct configs) and cite the Lean file separately for the statement.
 - **`rg -f` with patterns ending in `\n`** fails ("the literal `\n` is not allowed in a regex").
 - **Keyword tags are not claims.** The `conditional` tag flagged 9 families; reading the abstracts
   showed 5 were not assumptions — "unconditionally" (word boundary), "conditional expectation" and

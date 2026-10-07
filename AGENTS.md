@@ -53,6 +53,13 @@ lives in this file and nowhere else.
   `python3 notes/scripts/extract_scope_notes.py` (report-only) — the 5-phrase list hits 5 of 235 and
   the 24-phrase list hits 44, while reading finds exclusions in 115. Quote a floor with its phrase
   list, never as the number of families with exclusions.
+- A `lean/ComparatorChallenges/*.lean` file is a challenge **stub**, not a proof: 405 files carrying
+  509 `sorry` occurrences, 404 of them at least one (the zero-`sorry` exception is
+  `HarmonicGrowth.lean`), while **zero** of the 121,734 files under `lean/OAI/**/*.lean` contain
+  `sorry`. A comparator file states the target the release set itself; the proved version, where it
+  exists, lives under `lean/OAI/`. To ask what a formalization assumes, resolve the declaration
+  `main_results` names in `lean/formalization.yaml` and read that file — a fully-qualified name like
+  `OAI.CHObstruction.main` is a yaml fact and does not occur verbatim in the Lean source.
 - Attribute reasoning traces from the table in `README.md`, never by guessing from filenames.
 - Bucket the T0 families with `python3 notes/scripts/triage_t0.py` — it reads `notes/catalog.tsv`,
   writes nothing, and reconciles 137 families over 255 manuscripts. Findings live in
@@ -149,6 +156,12 @@ lives in this file and nowhere else.
   row of the block's own family, requires `claimed` and `unclaimed` to be disjoint and to cover the
   family's full `1..n` exactly once, re-measures the ten Summary-table numbers from the parsed lines,
   and flags seven injected mutants including a paraphrase dressed as a quote. It writes nothing.
+- Check `notes/conditional.md` with `python3 notes/scripts/verify_conditional.py --mutant` before
+  quoting the source check — it attributes each fenced block to the nearest preceding `file:line`
+  anchor and matches every block line, resolves each `*"…"*` prose quotation and each inline
+  `name → file:line` citation against the shipped file, and flags five injected mutants. It reports
+  **15 unanchored prose quotations** — the pre-existing abstract and scope-note quotes in the
+  per-family sections, which carry no line anchors and are therefore not verified. It writes nothing.
 - Check `notes/conjecture-standing.tsv` with `python3 notes/scripts/verify_conjecture_standing.py`
   before quoting any row — it proves the 139-row fam set against the ledger, resolves every
   `overview.tex:<n>` anchor to that family's own `\resultentry`, requires `prior_confidence` in
