@@ -25,8 +25,10 @@ lives in this file and nowhere else.
   the reading pass that pairs abstract clauses with display titles) beside it,
   `index-design.md` (the index schema decision — store, location, granularity, topic vocabulary — with
   the measured node and edge population that justifies it), `index/` (the rendered index, all of it
-  generated: 372 family pages in 17 discipline dirs, 17 discipline pages, one entry point, 6 node
-  tables and 6 edge tables),
+  generated: 372 family pages in 17 discipline dirs, 17 discipline pages, 92 topic pages, one entry
+  point, 7 node tables and 7 edge tables),
+  `topics.tsv` (92 rows, 9 columns — the curated topic vocabulary: term, pattern, family yield, the
+  four per-layer counts, status, page) with `topics.md` beside it,
   `sources.tsv` (722 rows, 14 columns — the LaTeX source surface of each manuscript: root count,
   resolved main file, section/proof/statement-environment counts, `.bib` count, `.tex` bytes) with
   `sources.md` beside it,
@@ -39,7 +41,7 @@ lives in this file and nowhere else.
   seconds, writes `notes/catalog.tsv` and prints the report that every number in
   `notes/README.md` comes from.
 - Render the index with `python3 notes/scripts/build_index.py` — it imports the joins from
-  `build_catalog.py`, writes `notes/index/` (390 pages + 12 tables, 2.7M), and prints the report every
+  `build_catalog.py`, writes `notes/index/` (482 pages + 14 tables, 3.2M), and prints the report every
   count in it comes from. There is **no manuscript→Lean edge in the release**: `formalization.yaml`
   carries `sources:` (manuscripts) and `main_results:` (config/declaration/file triples) as two flat
   lists with nothing linking them, so the index renders the chain the yaml does support — family →
@@ -49,6 +51,20 @@ lives in this file and nowhere else.
   mechanical (NFKD, strip combining marks, drop `$`/apostrophes/`\command`, lowercase, non-alphanumerics
   → `-`, leading `the-` dropped): 0 collisions, max length 93. Index↔summary pairing is by family
   number only — 12 of 372 families have a summary page.
+- Topics come from the hand-authored vocabulary at `notes/topics.tsv`, never from derivation, and
+  measure it with `python3 notes/scripts/measure_topics.py` (`--check` re-measures all 92 rows and
+  exits 1 when a recorded count has drifted). Keep that file **outside** `notes/index/`: the index
+  tree is fully generated and a hand-edited file inside it is overwritten by the next build. A family
+  carries **zero or more** topics (median 2, mean 2.61 over 971 assignments) — topics are a label on
+  top of the 17 disciplines, which stay the partition — and a term with no hit is kept as a measured
+  negative (4 of 92), not deleted. A listing is a keyword floor over four texts (title, abstract,
+  scope note, derived Lean paths); quote per-layer counts, never just the yield.
+- Match an accented name on the letters **after** the accent escape: `hler` reaches both `K\"ahler`
+  and `Kähler`, `erd` reaches every spelling of Erdős. `overview.tex` apostrophes are inconsistent
+  (76 titles ASCII `'`, 8 U+2019), so the text layer folds U+2019 → ASCII before matching. Probe a
+  narrowing with the **shipped** pattern: `\balgorithm` reaches 24 families, the shipped
+  `algorithm\b` reaches 23, and a probe with the looser stem manufactures an exclusion that the
+  shipped pattern does not produce.
 - Never run `lake`, `lean`, `lake exe cache get`, or `comparator`. `lean/OAI/` is 121,734 files
   and 25.9M lines; a build is hours on a desktop and buys nothing for categorization.
 - Parse `notes/catalog.tsv` with `csv.DictReader(..., delimiter='\t')`, never `split(',')`.
@@ -243,16 +259,22 @@ lives in this file and nowhere else.
   `.bib` files (18 any / 12 cross over all 501), 0 MSC hits, 0 bib `keywords` fields, and 12
   `\keywords` directories.
 - Run `python3 notes/scripts/build_index.py` twice and diff: `notes/index/` must be byte-identical and
-  the report identical. Its report reconciles 372 family pages + 17 discipline pages + 1 entry point
-  (390 pages, 12 tables), 5101 relative links with 0 broken, canonical == rendered on families 372 /
-  manuscripts 722 / formalized 162 / scope notes 235 / challenges 405 / traces 10 / verification dirs
-  30, `vs ledger` diffs of 0 on tier, `mainres`, `chal`, `paps` and `paps_form`, ledger↔overview family
-  sets equal with 372 pages and 0 pages absent on disk, 11 trace files over 10 attributed stems, 396
-  citation edges, 185 family-lean rows over 127 families, 405 configs (json 405, lean 405, 178 with a
-  declaration, 0 linked by more than one family), 554 module dirs, 12 of 372 summary pairings, 0 page
-  collisions, and manuscript links resolving for 722 of 722 on main file, `build/` and `README.md`.
-  Quote an index count with the report line it came from; the index is generated, so edit the generator
-  and re-render rather than editing a page.
+  the report identical. Its report reconciles 372 family pages + 17 discipline pages + 92 topic pages
+  + 1 entry point (482 pages, 14 tables), 7043 relative links with 0 broken, canonical == rendered on
+  families 372 / manuscripts 722 / formalized 162 / scope notes 235 / challenges 405 / traces 10 /
+  verification dirs 30, `vs ledger` diffs of 0 on tier, `mainres`, `chal`, `paps` and `paps_form`,
+  ledger↔overview family sets equal with 372 pages and 0 pages absent on disk, 11 trace files over 10
+  attributed stems, 396 citation edges, 185 family-lean rows over 127 families, 405 configs (json 405,
+  lean 405, 178 with a declaration, 0 linked by more than one family), 554 module dirs, 12 of 372
+  summary pairings, 0 page collisions, manuscript links resolving for 722 of 722 on main file, `build/`
+  and `README.md`, and `drift vs notes/topics.tsv 0`. Quote an index count with the report line it came
+  from; the index is generated, so edit the generator and re-render rather than editing a page.
+- Run `python3 notes/scripts/measure_topics.py --check` before quoting any topic count: it re-measures
+  all 92 rows of `notes/topics.tsv` and exits 1 when a recorded per-layer count has drifted. Its
+  report yields 92 terms over 372 families, 4 unassigned terms, 372 of 372 families covered, 971
+  assignments, and the per-family topic histogram `1:97 2:100 3:86 4:53 5:19 6:13 7:2 8:1 9:1`. Quote a
+  term with its per-layer counts, not its yield alone — a yield of 24 can be 2 titles and 16 scope
+  notes.
 
 ## PR instructions
 

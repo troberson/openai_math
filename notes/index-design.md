@@ -107,10 +107,22 @@ namespace equals the file's module dir in only **46** of **185** entries:
 (`lean/formalization.yaml:928`). A name-based guess is wrong **139** times out of **185**, which is
 why the index carries the edge instead of deriving it.
 
-Decision: a curated `notes/index/topics.tsv`, validated by the generator — every family assigned
-exactly once, every topic non-empty, an unknown topic a build failure. Auto-derived terms are
-rejected: with **0** MSC codes and **0** `keywords` fields there is nothing to validate a derived
-term against.
+Decision, as shipped: the vocabulary is a hand-authored file at `notes/topics.tsv` — **92** terms,
+one row per term with its pattern, its per-layer counts, a status, and the reading verdict — kept
+*outside* `notes/index/` because that tree is fully generated and a hand-edited file inside it would
+be overwritten by the next build. `notes/scripts/measure_topics.py` loads it, re-measures it, and
+`--check` exits non-zero when a recorded count drifts, so the generator fails on a stale row.
+Auto-derived terms are rejected: with **0** MSC codes and **0** `keywords` fields there is nothing to
+validate a derived term against.
+
+The two constraints the plan assumed are **not** enforced, because measurement rejected both. A
+family carries **zero or more** topics, not exactly one — the median is **2** and the mean **2.61**,
+so a single-topic assignment would have to throw away labels the corpus supports. And an empty topic
+is kept, not a build failure: **4** terms (**automorphic-forms**, **cluster-algebras**,
+**machine-learning**, **tropical-geometry**) match nothing in this corpus, and that is a measured
+statement about the corpus. What the generator does enforce is that every rendered page matches the
+measured vocabulary — the build prints `drift vs notes/topics.tsv 0` and refuses to be silent about
+a mismatch.
 
 ## Schema
 
@@ -124,6 +136,7 @@ Node tables, one row per node, in `notes/index/`:
 | `lean-dirs.tsv` | **554** | `OAI/<discipline>/<module>` |
 | `scope-notes.tsv` | **235** | `fam` |
 | `traces.tsv` | **10** | trace stem |
+| `topics.tsv` | **92** | term |
 
 Edge tables, in `notes/index/edges/`:
 
@@ -132,13 +145,15 @@ Edge tables, in `notes/index/edges/`:
 | `family-manuscript.tsv` | **722** | family → manuscript |
 | `family-config.tsv` | **405** | family → comparator config |
 | `config-declaration.tsv` | **185** | config → declaration + `file:` |
-| `family-lean.tsv` | **127** | family → Lean file, derived |
+| `family-lean.tsv` | **185** | family → Lean file, derived; **180** files over **127** families |
 | `citation.tsv` | **396** | manuscript → corpus manuscript, **105** cross-family |
 | `family-trace.tsv` | **10** | family → reasoning trace |
-| `family-topic.tsv` | **372** | family → curated topic |
+| `family-topic.tsv` | **971** | family → topic, **zero or more** per family |
 
 Pages: `notes/index/<discipline>/<NNN>-<name>.md`, **372** of them, each rendering the rows above
-that name its family.
+that name its family; `notes/index/topics/<term>.md`, **92** of them, one per vocabulary term
+including the **4** with no hit; **17** discipline pages; and `notes/index/README.md` as the entry
+point. **482** pages and **14** tables in total.
 
 Rejected: a raw bibliography edge table. **12,928** rows at the measured **150** B/row is
 **1,893** KiB of generated text for the release's own reference lists, while the resolved
@@ -173,8 +188,10 @@ manuscript-level flag.
 
 ## Not checked
 
-- No page, table, or topic file has been rendered. The byte figures are projections at **150** B/row
-  from measured TSVs, not measurements of index files.
+- The **150** B/row byte figures are projections from measured TSVs, not measurements of index files.
+  The index itself is rendered — **482** pages, **14** tables, `links checked 7043 broken 0`, and a
+  two-run determinism check with 0 tree diff and 0 report diff — but no page was read for prose
+  quality, and the byte cost of the rendered tree was not measured.
 - The **12,928** bib entries are counted by `^\s*@\w+\s*{`; commented-out entries are included and
   none was checked to parse as a BibTeX entry.
 - The **127**-family Lean reach is computed from scope-note links and yaml triples. No `.lean` file
