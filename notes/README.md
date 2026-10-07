@@ -13,6 +13,8 @@ python3 notes/scripts/verify_summaries.py --mutant  # same, plus the injected-fa
 python3 notes/scripts/verify_conjecture_standing.py  # checks notes/conjecture-standing.tsv against the ledger and overview.tex
 python3 notes/scripts/extract_formalization_deps.py  # writes notes/formalization-deps.tsv and prints the reconciliation
 python3 notes/scripts/extract_links.py      # writes notes/links.tsv and prints the per-edge report
+python3 notes/scripts/extract_scope_notes.py  # re-measures the 235 `## Scope` sections; report-only, writes nothing
+python3 notes/scripts/verify_scope_exclusions.py --mutant  # checks notes/scope-exclusions.md against lean/docs/
 ```
 
 `notes/summaries-workflow.md` is the resume protocol for the summary-page batches: per-page steps,
@@ -164,6 +166,23 @@ consequence. Negatives are rows too: **0** MSC codes over 8,231 files, **0** `ke
 12,928 bibliography entries, `\keywords` in **12** of 722 manuscript directories, **2** companion
 edges (`001→032`, `002→006`). Rules and what was not checked are in **`notes/links.md`**.
 
+**`notes/scope-exclusions.md` is the exclusions reading record: 235 rows, one per scope note.** Every
+`lean/docs/<NNN>.md` has exactly two `## ` sections — `## Scope` and `## Comparator links` (235 of 235)
+— so the section boundaries are unambiguous, and every citation in the page points inside `## Scope`.
+**115 of 235 sections state at least one exclusion, carrying 137 exclusion statements; 120 state
+none.** The vocabulary floors, re-measured by `notes/scripts/extract_scope_notes.py` (report-only): the
+5-phrase list an earlier pass recorded (`not formalized`, `excluded`, `out of scope`, `does not cover`,
+`not covered`) hits **5 of 235** — families 003, 020, 049, 173, 360, per-phrase 0 / 3 / 0 / 1 / 1 — and
+the 24-phrase broad list hits **44 of 235**. Quote 44 with that list; an earlier note recorded 42 under
+a narrower 24-phrase list, so the number is the rule's, not the corpus's. The load-bearing finding is
+the 120: **a scope note is not an exclusions list** — half the notes describe only what was selected,
+so "read the scope note to learn what the formalization omits" works for 115 families and not for the
+rest. The gap between 5 (keyword) and 115 (reading) is why this page is a reading record and not a
+ledger tag. The exclusion rule is recorded with the page: a clause saying an assumption is *not
+imposed* widens the formalized claim rather than bounding it, so it is not an entry. `notes/scripts/verify_scope_exclusions.py`
+resolves every citation, requires each quotation verbatim on the line it cites **inside the `## Scope`
+span**, re-measures all seven table numbers from disk, and flags all six injected mutants.
+
 ## Columns
 
 | Column | Source | Notes |
@@ -266,6 +285,14 @@ the community will scrutinize.
   `support/r-ce/ce_certificate.py`, its `.json`/`.txt` transcripts, `BUILDING.md`, and
   `SUPPORT-COVERAGE.json`. None of those paths exist on disk or in git. The ledger has no column for
   `SUPPORT-COVERAGE.md` (1 file repo-wide) and no way to express "named, not shipped".
+- **"No hypothesis is imposed" is not an exclusion.** Scope sections say things like "No nuclearity,
+  simplicity, trace, or comparison hypothesis is imposed" and "No measurability hypothesis is needed".
+  Those widen the formalized claim; they bound nothing. A reader who tags them as exclusions inflates
+  the count of what the formalization leaves out. Recorded 2026-10-07 in the reading pass behind
+  `notes/scope-exclusions.md`, where such clauses are not entries.
+- **A keyword floor is not the exclusions count.** The 5-phrase list hits 5 of 235 sections and the
+  24-phrase list hits 44; reading all 235 finds exclusions in 115. Quote the floor with its phrase
+  list, never as the number of families with exclusions.
 
 ## Open tasks
 

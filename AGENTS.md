@@ -19,7 +19,8 @@ lives in this file and nowhere else.
   `conjecture-standing.tsv` (139 rows, 10 columns — a labeled training-data prior, not a fact) with
   `conjecture-standing.md` beside it, `formalization-deps.tsv` (31 rows, 8 columns — the upstream
   library graph) with `formalization-deps.md` beside it, `links.tsv` (22 rows, 7 columns — the
-  typed-edge inventory) with `links.md` beside it,
+  typed-edge inventory) with `links.md` beside it, `scope-exclusions.md` (235 rows — what each scope
+  note says its formalization leaves out),
   `summaries/<discipline>/<NNN>-<name>.md`, `notes/scripts/`.
 - `.beads/issues.jsonl` is the tracked issue store, in bd no-db mode; see the beads section below.
 
@@ -43,8 +44,13 @@ lives in this file and nowhere else.
   reading pass for a day before `COUNTEREX_PHRASE` was written into the generator; no stem variant of
   the quoted vocabulary reproduces 74 / 30. See `notes/counterexample-tag.md`.
 - Absence of formalization is not a red flag — 560 of 722 manuscripts are unformalized.
-- Read `lean/docs/<NNN>.md` before claiming what a family proves; its `## Scope` section states
-  the exclusions, which are the load-bearing part.
+- Read `lean/docs/<NNN>.md` before claiming what a family proves; its `## Scope` section is the
+  load-bearing part. It is not an exclusions list, though: **120 of 235 sections state no exclusion
+  at all**, and a clause saying an assumption is *not imposed* widens the formalized claim rather
+  than bounding it. The read record is `notes/scope-exclusions.md`; re-measure its floors with
+  `python3 notes/scripts/extract_scope_notes.py` (report-only) — the 5-phrase list hits 5 of 235 and
+  the 24-phrase list hits 44, while reading finds exclusions in 115. Quote a floor with its phrase
+  list, never as the number of families with exclusions.
 - Attribute reasoning traces from the table in `README.md`, never by guessing from filenames.
 - Bucket the T0 families with `python3 notes/scripts/triage_t0.py` — it reads `notes/catalog.tsv`,
   writes nothing, and reconciles 137 families over 255 manuscripts. Findings live in
@@ -96,6 +102,12 @@ lives in this file and nowhere else.
   problem, and writes nothing. `--mutant` corrupts one real quotation in each form the page uses
   (inline, inline wrapped across lines, block quote) and invents one, so quote the report by its form
   names: a page with no quotation marks at all is proven only by the block-quote mutant.
+- Check `notes/scope-exclusions.md` with `python3 notes/scripts/verify_scope_exclusions.py --mutant`
+  before quoting any entry — it requires exactly one row per scope note on disk, checks every
+  `lean/docs/NNN.md:<line>` anchor falls inside that file's `## Scope` span, requires each quotation
+  verbatim on the line it cites, re-measures all seven Measurements-table numbers from the files, and
+  flags six injected mutants including a paraphrase dressed as a quote. `extract_scope_notes.py` is
+  report-only: it writes nothing and is where the page's counts come from.
 - Check `notes/conjecture-standing.tsv` with `python3 notes/scripts/verify_conjecture_standing.py`
   before quoting any row — it proves the 139-row fam set against the ledger, resolves every
   `overview.tex:<n>` anchor to that family's own `\resultentry`, requires `prior_confidence` in
