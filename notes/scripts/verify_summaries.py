@@ -15,8 +15,10 @@ S# to a file. Two passes read the same table:
 Pass A (the needle check: does the page contain the specific strings the reading pass recorded) is
 written per page against that page's own findings, so it is not promoted here.
 
---mutant proves the checker discriminates: it corrupts one real quotation and invents one fabricated
-quotation, both carrying a citation, and asserts Pass C flags each while the real page stays silent.
+--mutant proves the checker discriminates: it corrupts a real quotation in every quotation form the
+page actually uses (inline, inline wrapped across lines, block quote), invents one fabricated
+quotation, and asserts Pass C flags each while the real page stays silent. A form the page does not
+use is not tested, so the report names the form it corrupted.
 
 Usage: python3 notes/scripts/verify_summaries.py                 # every page under notes/summaries
        python3 notes/scripts/verify_summaries.py <page.md> ...   # named pages only
@@ -48,6 +50,7 @@ class Page:
         self.cache = {}
         self.table = {}
         self.rows = []
+        self.ambiguous = []
         # Relative paths in the table are relative to the manuscript root the Sources prose names
         # first; the repository root is the fallback. Globbing preprints/* is deliberately not a
         # rule: build/main.tex, references.tex and README.md exist in many manuscript trees.
@@ -73,15 +76,19 @@ class Page:
             rel = path_cell.group(1)
             hits = [r / rel for r in self.roots if (r / rel).is_file()]
             if len(hits) > 1:
-                print(f"AMBIGUOUS {sid} ({rel}) resolves under {len(hits)} roots: "
-                      f"{', '.join(str(h) for h in hits)}")
+                # Not pinned to one file: pass B counts this as a problem, so a page whose cell
+                # resolves under both the manuscript root and the repo root cannot report green.
+                self.ambiguous.append((sid, rel, hits))
             self.table[sid] = (rel, hits[0] if hits else None)
             self.rows.append((sid, rel, declared, n))
 
     def lines_of(self, sid):
         rel, path = self.table[sid]
         if rel not in self.cache:
-            self.cache[rel] = path.read_text(encoding="utf-8").splitlines()
+            # A page may declare a compiled PDF as a source. Reading it must not abort the run:
+            # bytes that are not text decode to replacement characters, so a quotation cited to a
+            # PDF fails the verbatim test, which is the honest result - its text is not extractable.
+            self.cache[rel] = path.read_text(encoding="utf-8", errors="replace").splitlines()
         return self.cache[rel]
 
 
@@ -157,7 +164,10 @@ def label(sid, a, b):
 
 
 def pass_b(page):
-    """Markers, links, declared line counts, raw HTML. Returns (positions, sources, links, problems)."""
+    """Markers, links, declared line counts, ambiguous File cells, raw HTML.
+
+    Returns (positions, sources, links, problems).
+    """
     problems = 0
     checked = 0
     used = set()
@@ -181,6 +191,11 @@ def pass_b(page):
             elif not target.is_relative_to(ROOT):
                 problems += 1
                 print(f"LINK LEAVES THE REPO [doc line {n}]: {href} -> {target}")
+
+    for sid, rel, hits in page.ambiguous:
+        problems += 1
+        print(f"AMBIGUOUS {sid} ({rel}) resolves under {len(hits)} roots: "
+              f"{', '.join(str(h) for h in hits)} — the File cell is not the repository-relative path")
 
     for n, line in enumerate(page.lines, 1):
         for m in MARKER.finditer(line):
@@ -224,7 +239,7 @@ def pass_b(page):
         path = page.table[sid][1]
         if path is None:
             continue
-        got = len(path.read_text(encoding="utf-8").splitlines())
+        got = len(page.lines_of(sid))
         if got != want:
             problems += 1
             print(f"LINE COUNT {sid} ({rel}) says {declared}, file has {got} [doc line {n}]")
@@ -294,28 +309,73 @@ def pass_c(page):
 FABRICATED = "the formalization is complete and machine-checked"
 
 
+def _inject(text, start, end, span):
+    """Splice the marker token into the middle of a quotation, at a word boundary."""
+    cut = span.rfind(" ", 0, len(span) // 2) + 1
+    if cut <= 0:
+        cut = span.find(" ", len(span) // 2) + 1
+    if cut <= 0:
+        return None
+    return text[:start] + span[:cut] + "XYZZY " + span[cut:] + text[end:]
+
+
+def inline_targets(text):
+    """Inline quotations Pass C can see, split by whether the span is wrapped across lines."""
+    single, wrapped = [], []
+    for m in QUOTE.finditer(text):
+        span = m.group(1) or m.group(2)
+        if len(span) < 12 or "Prior (my training data" in span:
+            continue
+        (wrapped if "\n" in span else single).append(m)
+    return single, wrapped
+
+
+def blockquote_targets(page):
+    """Block-quote units Pass C checks, i.e. those with a citation on a line above them."""
+    out = []
+    for start_line, unit, is_blockquote in units(page.lines):
+        if not is_blockquote or len(unit) < 12:
+            continue
+        resolved = []
+        for back in range(start_line - 2, max(start_line - 5, -1), -1):
+            resolved = usable(page, markers(page.lines[back]))
+            if resolved:
+                break
+        if resolved:
+            out.append((start_line, unit))
+    return out
+
+
 def mutants(page):
-    """Corrupt one real quotation and invent one, both cited; assert Pass C flags each."""
+    """Corrupt a real quotation in every form the page uses, invent one, assert Pass C flags each."""
     text = "\n".join(page.lines)
     results = []
 
-    # Mutant A: a real quotation, one token deeper than the source.
-    target = None
-    for m in QUOTE.finditer(text):
-        span = m.group(1) or m.group(2)
-        if len(span) >= 12 and "\n" not in span and "Prior (my training data" not in span:
-            target = m
-            break
-    if target is None:
-        results.append(("A corrupts a real quotation", False, "no quotable span on one line"))
-    else:
-        span = target.group(1) or target.group(2)
-        cut = len(span) // 2
-        cut = span.rfind(" ", 0, cut) + 1
-        bad = text[:target.start(1) if target.group(1) else target.start(2)] + \
-            span[:cut] + "XYZZY " + span[cut:] + text[target.end(1) if target.group(1) else target.end(2):]
+    # Mutant A: a real quotation, one token deeper than the source. Pages quote in three forms and
+    # a page can carry only one of them, so each present form is tested and named.
+    single, wrapped = inline_targets(text)
+    for name, group in (("A1 corrupts an inline quotation", single),
+                        ("A2 corrupts a wrapped inline quotation", wrapped)):
+        if not group:
+            continue
+        m = group[0]
+        g = 1 if m.group(1) else 2
+        bad = _inject(text, m.start(g), m.end(g), m.group(g))
+        if bad is None:
+            continue
         _, misses = pass_c(Page(page.path, bad.splitlines()))
-        results.append(("A corrupts a real quotation", misses > 0, f"{misses} flagged"))
+        results.append((name, misses > 0, f"{misses} flagged"))
+
+    for start_line, unit in blockquote_targets(page)[:1]:
+        line = page.lines[start_line - 1]
+        bad_line = _inject(line, 0, len(line), line)
+        if bad_line is None:
+            continue
+        lines = list(page.lines)
+        lines[start_line - 1] = bad_line
+        _, misses = pass_c(Page(page.path, lines))
+        results.append(("A3 corrupts a block-quote attribution", misses > 0,
+                        f"{misses} flagged (block quote at doc line {start_line})"))
 
     # Mutant B: a fabricated quotation attached to a line that already carries a citation.
     lines = list(page.lines)
