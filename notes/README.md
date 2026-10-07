@@ -9,7 +9,11 @@ Regenerate the ledger (a few seconds, no Lean):
 python3 notes/scripts/build_catalog.py      # writes notes/catalog.tsv and prints the report
 python3 notes/scripts/triage_t0.py          # buckets the 137 T0 families by claim shape
 python3 notes/scripts/verify_summaries.py   # checks every citation in notes/summaries/ against the files it names
+python3 notes/scripts/verify_summaries.py --mutant  # same, plus the injected-fault self-test
 ```
+
+`notes/summaries-workflow.md` is the resume protocol for the summary-page batches: per-page steps,
+the batch-boundary gates, stop and escalate rules, and the append-only decision-point record.
 
 ## Standing rules
 
@@ -118,6 +122,7 @@ reading verdict, and the decision are in **`notes/resolution-tag.md`**.
 | `companions` | `result NNN` cross-refs in the abstract | |
 | `companion_word` | abstract says "companion" | 10 families |
 | `versions` | manuscripts sharing a date-stripped dir slug | 2 families, 4 dated re-issues (003, 056) |
+| `summary` | a page exists at `notes/summaries/<discipline>/<NNN>-*.md` | Filesystem fact, not a derived claim; 2 of 372 families, 9 manuscripts behind them |
 
 ## Coverage tracks exposure, not importance
 

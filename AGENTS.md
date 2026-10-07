@@ -13,8 +13,10 @@ lives in this file and nowhere else.
   `ComparatorChallenges/*.json`, and `formalization.yaml`.
 - `reasoning_traces/` holds 10 published traces in 11 files — the Mézard–Parisi trace ships as
   both `.pdf` and `.tex`.
-- `notes/` is the reading ledger: `catalog.tsv` (372 rows, 20 columns), `README.md`,
-  `t0-triage.md`, `conditional.md`, `resolution-tag.md`, `verification-dirs.md`, `notes/scripts/`.
+- `notes/` is the reading ledger: `catalog.tsv` (372 rows, 21 columns), `README.md`,
+  `t0-triage.md`, `conditional.md`, `resolution-tag.md`, `verification-dirs.md`,
+  `summaries-workflow.md` (the resume protocol for the summary batches),
+  `summaries/<discipline>/<NNN>-<name>.md`, `notes/scripts/`.
 - `.beads/issues.jsonl` is the tracked issue store, in bd no-db mode; see the beads section below.
 
 ## Dev environment tips
