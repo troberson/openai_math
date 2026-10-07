@@ -153,7 +153,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 156	Combinatorics	Borsuk's conjecture fails in dimension nine	1	1	T3	1	1	1	435	0	0	0			0	0		0	0	0
 157	Combinatorics	Counterexamples to the Hadwiger and Colin de Verdi\`ere conjectures	3	0	T2	1	0	1	375	0	1	0		counterexample|bound|partial	0	1		0	0	0
 158	Combinatorics	The Euclidean plane cannot be colored with five colors	1	1	T3	2	2	1	396	0	0	0			0	1		0	0	0
-159	Combinatorics	Erd\H{o}s's reciprocal-sum conjecture and quasipolynomial Szemer\'edi bounds	1	0	T2	1	0	1	481	0	0	0	quasipolynomial-arithmetic-progressions	partial	0	1		0	0	0
+159	Combinatorics	Erd\H{o}s's reciprocal-sum conjecture and quasipolynomial Szemer\'edi bounds	1	0	T2	1	0	1	481	0	0	0	quasipolynomial-arithmetic-progressions	partial	0	1		0	0	1
 160	Combinatorics	Superexponential van der Waerden numbers	1	1	T3	1	1	1	459	0	0	0		resolution|uniform	0	1		0	0	0
 161	Combinatorics	Counterexamples to Sidorenko's conjecture and the forcing conjecture	1	0	T2	1	0	1	415	0	0	0		resolution|counterexample|density	0	1		0	0	0
 162	Combinatorics	Counterexamples to Ryser's covering and Gy\'arf\'as's tree-cover conjectures	2	1	T3	3	2	1	1084	0	0	0		counterexample|bound|uniform	0	1		0	0	0
