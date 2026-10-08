@@ -33,6 +33,10 @@ python3 notes/scripts/measure_names.py --json  # dumps the 5,859 measured rows p
 python3 notes/scripts/build_index.py        # writes notes/index/ (1,034 pages + 16 tables) and prints the reconciliation
 python3 notes/scripts/check_index_links.py  # checks every link in notes/index/ and CONTENTS.md against the shipped files; report-only
 python3 notes/scripts/check_index_links.py --mutant  # self-test: 20 injected broken hrefs (one per category) must all be caught, 7 real hrefs must resolve
+python3 notes/scripts/compare_abstracts.py  # compares each manuscript abstract with its family's overview abstract; report-only
+python3 notes/scripts/compare_abstracts.py --tsv  # writes notes/abstracts.tsv (372 rows: best-match ratio, relation, both shape sets)
+python3 notes/scripts/compare_abstracts.py --mutant  # self-test: 7 injected corruptions must all be caught, 3 controls and 5 synthetic cases must stay right
+python3 notes/scripts/verify_abstracts.py --mutant  # checks notes/abstracts.md: every [S#] marker resolves, every quotation is verbatim in the file it names
 ```
 
 `notes/summaries-workflow.md` is the resume protocol for the summary-page batches: per-page steps,
@@ -89,6 +93,14 @@ all.
 
 Multi-label tags matched against the family abstract in `overview.tex`. **Not a partition** —
 66 families match ≥3 shapes and 57 match none, so `shapes` is a pipe-joined list, not a class.
+
+**The tagged text is the overview abstract, which is a paraphrase of the manuscripts, not their
+text.** Over all 722 manuscript comparisons: 0 identical, 0 abridged, 722 divergent; over the 372
+family best matches: 0 identical, 0 abridged, 372 divergent (median ratio 0.236). 282 of 372
+families disagree with their overview on at least one shape. The overview under-flags every shape
+except `resolution`, which it over-flags (144 of 372 families vs 153 of 722 manuscripts). Read
+**`notes/abstracts.md`** before treating a shape tag as a claim about a manuscript; the per-family
+record is `notes/abstracts.tsv`.
 
 | Shape | Pattern gist | Families |
 |---|---|---|
@@ -409,6 +421,16 @@ the community will scrutinize.
   "conditional laws" (technical nouns), and "without assuming uniform convexity" (a negation that
   is the theorem's point). Any shape tag needs a reading pass before it is quoted as a property of
   a family. See `notes/conditional.md`.
+- **The overview abstract is not the manuscript abstract.** Every shape tag is matched against the
+  `overview.tex` text, which is a third-person rewrite: `We prove X` becomes `Proves X`. Measured
+  2026-10-07 over all 722 manuscript abstracts: **0 identical, 0 abridged, 722 divergent**, median
+  character ratio 0.126 (family best match: median 0.236). A tag is therefore a claim about the
+  catalog's summary of a family, not about any manuscript — 282 of 372 families disagree with their
+  overview on at least one shape. See `notes/abstracts.md`.
+- **`notes/sources.tsv`'s `abstract` column is a flag, not a count.** It records whether a manuscript
+  directory ships an `abstract` environment (722 of 722 do). The corpus contains **725** environments
+  over those 722 directories — 057, 039 and 056 each ship two — so a gate written as
+  `environments == 722` fails on correct data.
 - **A quoted count with no rule behind it.** The counterexample numbers this file printed for a day
   (74 / 44 / 31 / 30) came from a reading pass whose regex was never written down, and no variant of
   the vocabulary the prose quoted reproduces them (unbounded `negativ` → 90; `\bnegativ` → 75;

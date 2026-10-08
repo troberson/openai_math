@@ -177,6 +177,19 @@ lives in this file and nowhere else.
   tried and rejected: `also` (56), `both ` (48), `companion` (10), `together` (8), ≥2 prove-verbs (33),
   ≥2 sentences with a prove-verb (32), ≥3 sentences (73). Same shape as the counterexample 74 / 30 case;
   see `notes/counterexample-tag.md` and the population section of `notes/subfinding-pairs.md`.
+- Compare the two abstracts a family ships with `python3 notes/scripts/compare_abstracts.py` — report
+  only, `--tsv` writes `notes/abstracts.tsv`. **The `overview.tex` abstract is a rewritten paraphrase,
+  not the manuscript abstract: 0 of 722 manuscript comparisons and 0 of 372 family best matches read
+  identical or abridged.** The claim-shape tags are keyed to that paraphrase, so a tag is a claim about
+  the summary, not about the manuscript. Median family best match is 0.236; 282 of 372 families
+  disagree with the overview on at least one shape. The overview under-flags every shape except
+  `resolution`, which it over-flags (144 of 372 families vs 153 of 722 manuscripts). For a
+  multi-manuscript family a low per-manuscript ratio is expected — the overview is a synthesis of
+  several manuscripts (368 merges $p\le2$ with $p>2$; 240 merges a ZFC theorem with a CH obstruction),
+  so quote the unit with the number. See `notes/abstracts.md`.
+- `notes/sources.tsv`'s `abstract` column is a per-directory **flag**, not an occurrence count: the
+  corpus ships 725 `abstract` environments over 722 manuscript directories (057, 039 and 056 each ship
+  two), and every one of the 722 directories has at least one.
 - Project skills live in `.qwen/skills/` — `proof-triage` routes ledger work,
   `auto-skill-lean-formalization-coverage-audit` carries the measurement method.
 
@@ -199,6 +212,14 @@ lives in this file and nowhere else.
   problem, and writes nothing. `--mutant` corrupts one real quotation in each form the page uses
   (inline, inline wrapped across lines, block quote) and invents one, so quote the report by its form
   names: a page with no quotation marks at all is proven only by the block-quote mutant.
+- Check `notes/abstracts.md` with `python3 notes/scripts/verify_abstracts.py --mutant` before quoting
+  any of its counts — it resolves every `[S#]` marker to a Sources-table row, requires every row cited
+  at least once and every table path to exist, and checks every quotation verbatim-modulo-whitespace
+  against the text its marker's file carries. Read `overview.tex` through
+  `build_catalog.parse_overview()`, never with a `\resultentry` regex: the abstracts contain braces, so
+  a `[^{}]*` group silently drops the math-heavy families, which are the ones being quoted.
+  `python3 notes/scripts/compare_abstracts.py --tsv` writes `notes/abstracts.tsv`; run it twice and
+  diff — 372 rows byte-identical — and `--mutant` must catch all 7 injected corruptions.
 - Check `notes/scope-exclusions.md` with `python3 notes/scripts/verify_scope_exclusions.py --mutant`
   before quoting any entry — it requires exactly one row per scope note on disk, checks every
   `lean/docs/NNN.md:<line>` anchor falls inside that file's `## Scope` span, requires each quotation
