@@ -14,7 +14,7 @@ lives in this file and nowhere else.
 - `reasoning_traces/` holds 10 published traces in 11 files — the Mézard–Parisi trace ships as
   both `.pdf` and `.tex`.
 - `notes/` is the reading ledger: `catalog.tsv` (372 rows, 22 columns), `README.md`,
-  `t0-triage.md`, `conditional.md`, `resolution-tag.md`, `counterexample-tag.md`,
+  `t0-triage.md`, `conditional.md`, `resolution-tag.md`, `counterexample-tag.md`, `proof-density.md`,
   `verification-dirs.md`, `summaries-workflow.md` (the resume protocol for the summary batches),
   `conjecture-standing.tsv` (139 rows, 10 columns — a labeled training-data prior, not a fact) with
   `conjecture-standing.md` beside it, `formalization-deps.tsv` (31 rows, 8 columns — the upstream
@@ -190,6 +190,16 @@ lives in this file and nowhere else.
 - `notes/sources.tsv`'s `abstract` column is a per-directory **flag**, not an occurrence count: the
   corpus ships 725 `abstract` environments over 722 manuscript directories (057, 039 and 056 each ship
   two), and every one of the 722 directories has at least one.
+- A proof **count** is a document-length proxy, not a density. Tested 2026-10-08 with the decision bar
+  written into the script header before the data was read (AUC ≥ 0.65 **and** p < 0.01, plus a tex-KB
+  size control at the matching scale): raw proofs and statements per family clear T0 > T3 (0.676 /
+  0.678) only, and are within 0.03 of the size control there (0.784); proofs per manuscript clears
+  T0 > T2 (0.697) and T0 > T3 (0.782) and is size-explained on both (control 0.691 / 0.784); the two
+  genuine density measures are NULL on every tier pair — proofs per statement 0.491 / 0.456 / 0.466,
+  proofs per KB 0.503 / 0.453 / 0.457, the ratio being ≈0.97 corpus-wide and tier-independent — and no
+  claim shape clears the bar. Direction is opposite the naive reading: T0, the least-formalized tier,
+  carries the most proofs per manuscript (median 30.0) because its manuscripts are the largest (168.9
+  KB vs 86.0 in T3). **No ledger column was added.** Findings in `notes/proof-density.md`.
 - Project skills live in `.qwen/skills/` — `proof-triage` routes ledger work,
   `auto-skill-lean-formalization-coverage-audit` carries the measurement method.
 
@@ -220,6 +230,15 @@ lives in this file and nowhere else.
   a `[^{}]*` group silently drops the math-heavy families, which are the ones being quoted.
   `python3 notes/scripts/compare_abstracts.py --tsv` writes `notes/abstracts.tsv`; run it twice and
   diff — 372 rows byte-identical — and `--mutant` must catch all 7 injected corruptions.
+- Run `python3 notes/scripts/measure_proof_density.py --mutant` before quoting a proof-density figure —
+  it re-derives every AUC and p from `notes/sources.tsv` joined to `notes/catalog.tsv` by family
+  number, gates on the population (722 rows, 722 distinct dirs, 372 families on both sides, per-family
+  source rows == ledger `paps`, 20,449 proofs, 21,402 statements, tier counts 127/108/0/137, positive
+  `tex_bytes`, every source dir present under `preprints/`), self-tests the statistic against 5
+  hand-computed AUCs, and flags 8 injected corruptions. It writes nothing; run it twice and diff — the
+  report must be identical. Ties score 0.5, so `([1,2,3],[0,1,2])` is **7/9**, not 6/9, and the ranks
+  must be assigned over the **jointly sorted** pooled sample — sorting each group and concatenating
+  gives every AUC as 0.000 with absurd p-values.
 - Check `notes/scope-exclusions.md` with `python3 notes/scripts/verify_scope_exclusions.py --mutant`
   before quoting any entry — it requires exactly one row per scope note on disk, checks every
   `lean/docs/NNN.md:<line>` anchor falls inside that file's `## Scope` span, requires each quotation
