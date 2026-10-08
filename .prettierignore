@@ -1,0 +1,17 @@
+# Generated tree: edit notes/scripts/build_index.py and re-render, never format a page.
+notes/index/
+
+# Release mirror - this fork mirrors the release byte-for-byte.
+/preprints/
+/lean/
+/reasoning_traces/
+/README.md
+/CONTENTS.md
+/overview.tex
+/overview.pdf
+
+# Tool and queue state.
+/.beads/
+/.qwen/
+/node_modules/
+/package-lock.json
