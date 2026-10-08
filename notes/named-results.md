@@ -3,11 +3,11 @@
 ## Population
 
 The ledger's `resolves_named` column is a title-and-abstract heuristic: `notes/scripts/build_catalog.py:215`
-returns 1 when a family's **overview abstract** matches both `TARGET_NOUN`
+returns 1 when a family's **overview title + abstract**, lowered, matches both `TARGET_NOUN`
 (`conjectur|\bquestion|\bproblem`) and `RESOLVE_VERB`
 (`\bprov(?:e|es|ed|ing)\b|\bdisprov|\brefut|\bresolv|\banswer|\bsettl|\bestablis|\bconfirm|\bfail|\bviolat|\bcounterexample`).
-It reads **233** of **372** families. This page measures the manuscript side of the same claim and
-compares the two.
+It reads **248** of **372** families; the abstract-only scope it replaced read **233**. This page
+measures the manuscript side of the same claim and compares the two.
 
 Regenerate with `python3 notes/scripts/extract_named_results.py` — report-only, it writes nothing and
 runs nothing; `lake`, `lean`, `lake exe cache get`, and `comparator` are never invoked here, so nothing
@@ -19,7 +19,7 @@ anchored file, and flags twelve injected mutations. It writes nothing.
 
 Population, from the report's POPULATION section: **372** ledger rows, **372** families in
 `overview.tex`, **722** manuscript directories, **7,401** `.tex` files at glob depths 1–4 under
-`preprints/`, and `resolves_named = 1` on **233** families.
+`preprints/`, and `resolves_named = 1` on **248** families.
 
 Manuscript ownership is the path component after `preprints`, never `parts[-2]` — every resolved main
 file sits under a `build/` directory, so a `parts[-2]` read files manuscripts under `build/` and
@@ -73,7 +73,7 @@ Over **1,498** titled headline statements, **17** titles name a conjecture, ques
 | 205 | T3 | 1 | `preprints/A-Cyclic-Polytabloid-Proof-of-Saxls-Conjecture-September-24-2026/build/sections/introduction.tex:18` | *"Saxl's conjecture"* |
 | 245 | T2 | 1 | `preprints/Weak-and-strong-normalization-in-pure-type-systems-September-25-2026/build/sections/introduction.tex:116` | *"The $\beta$-Barendregt--Geuvers--Klop conjecture"* |
 | 246 | T2 | 1 | `preprints/A-Modulus-Proof-of-Cannons-Conjecture-September-23-2026/build/main.tex:94` | *"Cannon's conjecture"* |
-| 263 | T3 | 0 | `preprints/Generalized-outer-electron-radii-of-neutral-Coulomb-atoms-September-24-2026/build/sections/01-introduction.tex:38` | *"Generalized ionization conjecture: radii"* |
+| 263 | T3 | 1 | `preprints/Generalized-outer-electron-radii-of-neutral-Coulomb-atoms-September-24-2026/build/sections/01-introduction.tex:38` | *"Generalized ionization conjecture: radii"* |
 | 275 | T2 | 0 | `preprints/Continuum-Coulomb-hardness-with-binary-nuclear-charges-September-24-2026/build/sections/01-finite-models.tex:19` | *"Source problem"* |
 | 304 | T0 | 1 | `preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/build/sections/01-introduction.tex:9` | *"The Hilbert--Smith conjecture"* |
 | 311 | T0 | 1 | `preprints/Stabilizer-Orbits-and-Thick-Tensor-Ideals-of-Dualizable-Kn-Local-Spectra-September-24-2026/build/sections/01-introduction.tex:74` | *"Hovey--Strickland conjecture"* |
@@ -81,8 +81,8 @@ Over **1,498** titled headline statements, **17** titles name a conjecture, ques
 **The load-bearing negative: 0 of these 17 titles pairs a target noun with a resolve verb.** A
 theorem title names *content* — "General Mahler conjecture", "Source problem" — never the act of
 resolving it. So the statement layer cannot, by itself, back a column whose rule is
-target-noun **and** resolve-verb. Two of the 17 (263, 275) sit in families the column reads 0; the
-other 15 sit in families it reads 1.
+target-noun **and** resolve-verb. One of the 17 (275) sits in a family the column reads 0; the
+other 16 sit in families it reads 1.
 
 ## Subject-named headline statements: 208 over 112 families
 
@@ -90,11 +90,11 @@ Rule: a titled headline statement whose title contains a **name-layer subject** 
 subject names measured by `notes/scripts/measure_names.py` (subjects, not citations; the rule and the
 subject/citation split are in `notes/names.md`).
 
-**208** statements over **112** families. **68** of those families are `rn = 1`; **44** are not:
-002 009 010 014 015 022 023 036 069 096 097 099 114 115 116 125 140 211 212 216 218 222 223 224 227
-231 232 238 239 260 261 271 275 282 286 289 297 318 331 337 347 353 376 377.
+**208** statements over **112** families. **74** of those families are `rn = 1`; **38** are not:
+002 009 010 014 015 023 036 069 099 114 115 116 125 140 211 212 216 218 222 223 224 227 231 232 238
+239 260 261 271 275 282 286 318 331 337 353 376 377.
 
-This is the layer that shows the column is not a *name* detector: 44 families name a person, theorem,
+This is the layer that shows the column is not a *name* detector: 38 families name a person, theorem,
 or object in a headline theorem title while the column reads 0, and it names them in the theorem's own
 name, not as a resolved conjecture.
 
@@ -102,13 +102,13 @@ name, not as a resolved conjecture.
 
 | Comparison | Count |
 |---|---|
-| headline-target ∩ `rn` | 15 |
-| headline-target, `rn = 0` | 2 → 263 275 |
-| `rn = 1`, no target-named headline statement | 218 |
-| `rn = 1` with **no titled headline theorem at all** | 71 (T3 35, T2 23, T1 0, T0 13) |
-| `rn = 0` with titled headline theorems | 109 |
+| headline-target ∩ `rn` | 16 |
+| headline-target, `rn = 0` | 1 → 275 |
+| `rn = 1`, no target-named headline statement | 232 |
+| `rn = 1` with **no titled headline theorem at all** | 76 (T3 36, T2 25, T1 0, T0 15) |
+| `rn = 0` with titled headline theorems | 99 |
 
-The 71 is the number that decides the bead's framing: **71 of the 233 flagged families ship no titled
+The 76 is the number that decides the bead's framing: **76 of the 248 flagged families ship no titled
 headline theorem**, so for those families there is no statement-level text in which a named-result
 claim could be recorded at all. The column's evidence is not statement-level anywhere near them.
 
@@ -116,20 +116,20 @@ claim could be recorded at all. The column's evidence is not statement-level any
 
 Rule: the directory name after `preprints` matches the target noun, case-insensitively.
 
-**76** families over **89** directories. **67** are `rn = 1`. **9** are not: 022 039 044 151 209 297
-354 365 372. **166** `rn = 1` families have no directory name naming a target.
+**76** families over **89** directories. **73** are `rn = 1`. **3** are not: 354 365 372. **175**
+`rn = 1` families have no directory name naming a target.
 
 ## Layer 2 — the manuscript's own abstract names a target with a resolve verb
 
 Rule: inside the manuscript's own `\begin{abstract}`…`\end{abstract}` (bibliography and `\cite` braces
 stripped), one sentence matching the target noun **and** the column's resolve verb.
 
-**275** families over **398** sentences. **212** are `rn = 1`. **63** are not, and **21** `rn = 1`
+**275** families over **398** sentences. **227** are `rn = 1`. **48** are not, and **21** `rn = 1`
 families have no such sentence: 020 027 085 094 124 126 129 134 144 155 158 160 187 191 277 280 299
 309 322 323 342.
 
-The 63 is the widest candidate set on the page and it is **unadjudicated**: it includes families whose
-manuscript abstract uses "problem" for its own technical sub-problem. Taken raw it would read 233 + 63
+The 48 is the widest candidate set on the page and it is **unadjudicated**: it includes families whose
+manuscript abstract uses "problem" for its own technical sub-problem. Taken raw it would read 248 + 48
 = **296**; the page does not endorse that number.
 
 ## Layer 3 — manuscript prose
@@ -138,8 +138,8 @@ Rule: prose text with bibliography and `\cite`/`\xref` braces stripped, two scop
 
 | Scope | Hits | Families | ∩`rn` | prose-not-`rn` | `rn`-not-prose |
 |---|---|---|---|---|---|
-| window ±80 characters | 1,674 | 337 | 225 | 112 | 8 → 085 094 126 144 187 299 323 333 |
-| one sentence | 1,291 | 332 | 223 | 109 | 10 → 020 085 094 144 158 187 280 299 322 323 |
+| window ±80 characters | 1,674 | 337 | 240 | 97 | 8 → 085 094 126 144 187 299 323 333 |
+| one sentence | 1,291 | 332 | 238 | 94 | 10 → 020 085 094 144 158 187 280 299 322 323 |
 
 **6** families are `rn = 1` and name no target anywhere in their manuscript prose under **both** rules:
 085 094 144 187 299 323.
@@ -173,19 +173,20 @@ carry — `solve/solves/solved`, `resolution`, `answer/answers`, `settled`, `set
 So the verb gap is real for 2 families and is a self-framed sub-problem for 3. Widening
 `RESOLVE_VERB` on the strength of this list would add 3 false flags for 2 true ones.
 
-## The title-scope candidate: 233 → 247
+## The title-scope swap: 233 → 248
 
 Rule: target noun in the family's **overview title**, resolve verb in its overview abstract. The
-column reads the abstract only; this is the same generator's precedent — `counterex_broad` is
-documented at `notes/scripts/build_catalog.py:238` as
+column read the abstract only; this is the same generator's precedent — `counterex_broad` is
+documented at `notes/scripts/build_catalog.py:244` as
 *"Input scope is title + abstract, stated because it changes the count"*.
 
-**14** additions: 022 039 044 096 097 151 156 192 209 263 289 297 347 367. **Removals 0** — a union
-keeps every current flag, so the union column reads **247**. A strict title+abstract *replacement*
-would read 149 (98 removals), which is why the candidate is a union and not a scope swap.
+**15** additions: 022 039 044 096 097 151 156 192 209 263 289 293 297 347 367. **Removals 0** — a union
+keeps every flag the abstract-only scope had, so the column reads **248**. A strict title+abstract
+*replacement* would read 149 (99 removals), which is why the applied rule is a union and not a
+replacement.
 
-All **14** are corroborated by a manuscript-abstract naming sentence (layer 2, count ≥ 1). **8** of the
-14 are not directory-named: 096 097 156 192 263 289 347 367. Their manuscript abstracts:
+All **15** are corroborated by a manuscript-abstract naming sentence (layer 2, count ≥ 1). **9** of the
+15 are not directory-named: 096 097 156 192 263 289 293 347 367. Their manuscript abstracts:
 
 - 096 — *"We prove the Gaussian propeller conjecture:"*
   (`preprints/The-Gaussian-Propeller-Bound-in-Every-Dimension-September-24-2026/build/main.tex:36`)
@@ -202,6 +203,10 @@ All **14** are corroborated by a manuscript-abstract naming sentence (layer 2, c
   *"We give a negative answer to the unrestricted small-spatial-embedding problem for one-sided near
   inclusions of von Neumann algebras."*
   (`preprints/Near-Inclusions-of-von-Neumann-Algebras-Without-Small-Spatial-Embeddings-October-5-2026/build/main.tex:39`)
+- 293 — *"We give a negative answer to the hyperinvariant-subspace problem by constructing, on every
+  infinite-dimensional separable complex Hilbert space, a nonzero bounded norm-quasinilpotent operator
+  with no nonzero proper closed hyperinvariant subspace."*
+  (`preprints/Backward-intertwiners-and-a-transitive-commutant-September-27-2026/build/paper.tex:33`)
 - 347 — *"Thus the example disproves the unrestricted critical-number and rational cup-length forms of the Arnold conjecture."*
   (`preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/build/main.tex:36`),
   *"This disproves the Morse-number form of the Arnold conjecture."*
@@ -210,15 +215,17 @@ All **14** are corroborated by a manuscript-abstract naming sentence (layer 2, c
   (`preprints/The-critical-dimension-for-one-phase-Bernoulli-minimizers-September-24-2026/build/paper.tex:44`)
 
 **The union does not cover everything the source names.** 354, 365 and 372 are directory-named and
-manuscript-abstract-named but **not** title-named, so they sit outside the 14. The manuscript-abstract
-layer alone (63 families) would cover them and reach 296, and that layer is unadjudicated.
+manuscript-abstract-named but **not** title-named, so they sit outside the 15. The manuscript-abstract
+layer alone (48 families) would cover them and reach 296, and that layer is unadjudicated.
 
 ## Direction A — the source names a target, the column reads 0
 
-**11** families. Ten are real; one is the rule's false positive.
+**11** families. Ten are real; one is the rule's false positive. After the title-scope swap is applied,
+**7 of the 10 real misses are flagged** — 022 039 044 151 209 297 263 read `rn = 1` — and **354 365 372
+remain unflagged**; 275 remains the false positive.
 
 Seven are named in the **overview title** while the overview abstract carries only a prove-verb, so the
-abstract-only rule cannot see them: 022 (`overview.tex:120`), 039 (`:156`), 044 (`:166`), 151
+abstract-only rule could not see them: 022 (`overview.tex:120`), 039 (`:156`), 044 (`:166`), 151
 (`:381`), 209 (`:499`), 297 (`:686`), 263 (`:615`). Three are named by **manuscript name plus
 manuscript abstract only**: 354 (`overview.tex:806`), 365 (`:830`), 372 (`:846`).
 
@@ -304,12 +311,13 @@ alone**:
 **The manuscript statement layer is not where the release names conjectures.** Over 1,498 titled
 headline statements, 17 titles name a target and **0** of them pair a target noun with a resolve verb.
 The naming sits in the manuscript's **name, abstract, and prose**, and in the overview **title** —
-which the column does not read.
+which the column now reads, having read the abstract only when this measurement began.
 
 So `resolves_named` becomes evidence-backed by the record, not by theorem titles:
 
-- **10 real misses** (Direction A) and **14 title-scope additions**, overlapping in 022 039 044 151 209
-  263 297; the union of the two is the documented candidate at **247**, removals 0.
+- **10 real misses** (Direction A) and **15 title-scope additions**, overlapping in 022 039 044 151 209
+  263 297; the swap is applied, so the column reads **248** with removals 0 and **7 of the 10 real
+  misses are now flagged** — 354 365 372 are not.
 - **5 of the 8 Direction-B families** rest on the overview paraphrase alone, which is what the column
   is: a reading of the release's summary, not of the manuscript.
 - The column stays a **column**, not a shape: it is a flag on the ledger, and the claim-shape tags are
@@ -317,11 +325,11 @@ So `resolves_named` becomes evidence-backed by the record, not by theorem titles
 
 ## What has not been checked
 
-- The 63-family layer-2 set is **unadjudicated**. It is the widest candidate (296) and includes
+- The 48-family layer-2 set is **unadjudicated**. It is the widest candidate (296) and includes
   manuscripts using "problem" for their own sub-problems; no family in it has been read.
-- The 112-family `prose-not-rn` set (window scope) has not been read, so the 112 are counts, not
+- The 97-family `prose-not-rn` set (window scope) has not been read, so the 97 are counts, not
   verdicts.
-- The 44 subject-named-not-`rn` families were not read; the name layer is a measured layer, and a
+- The 38 subject-named-not-`rn` families were not read; the name layer is a measured layer, and a
   subject in a theorem title is not a resolved conjecture.
 - Headline statements were read as **titles only**. The body of a theorem statement — where a paper
   says "we prove Conjecture X" inside the statement — was not parsed.
@@ -331,6 +339,8 @@ So `resolves_named` becomes evidence-backed by the record, not by theorem titles
   invoked, and zero of the 121,734 files under `lean/OAI/**/*.lean` contain `sorry` while the 405
   comparator files carry 509 `sorry` occurrences — a comparator file states a target, it does not
   prove it.
-- The 14 title-scope additions have not been applied to the ledger. Changing the column means
-  re-measuring every page that quotes 233, including the `resolves_named` AUC row in
-  `notes/proof-density.md`; that sweep is tracked as a bd issue, not done here.
+- The swap's 15 additions were corroborated at the **manuscript-abstract layer only** — a sentence
+  naming a target with a resolve verb. No Direction-B-style read was done on them, so none was checked
+  for the self-framed-sub-problem failure that Direction B found in 126.
+- The 3 Direction-A families the swap does not reach — 354 365 372 — are still flagged 0 with
+  manuscript evidence, and the 48-family layer-2 set is where the next candidate sits.

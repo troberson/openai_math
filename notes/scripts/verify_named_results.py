@@ -42,6 +42,8 @@ ROW = re.compile(r'^\| (\d{3}) \| (T\d) \| (\d) \| `([^`]+):(\d+)` \| \*"([^"]*)
 SPAN = 12
 # The page spells its mutation count as a word, so the phrase check needs the spelling.
 WORDS = {12: "twelve"}
+# The target-split sentence spells its leading count as a word and agrees with it.
+NUMWORDS = {1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five", 6: "Six"}
 
 
 def norm(s: str) -> str:
@@ -209,9 +211,9 @@ def count_phrases(p) -> list:
     dn, an, pw, ps = p["dn"], p["an"], p["pw"], p["ps"]
     have_t, no_head, tiers = p["have_t"], p["no_head"], p["tiers"]
     core, eo, add = p["core"], p["eo"], p["add"]
+    abstract_only = p["abstract_only"]
     files, begins, titled, titled_all = p["files"], p["begins"], p["titled"], p["titled_all"]
     env, split, generic = p["env_begins"], p["titled_split"], p["generic"]
-    nadd = len(rn) + len(add)
     strict = {f for f in order if en.TARGET_I.search(fams[f]["title"])
               and en.RESOLVE.search(fams[f]["abstract"].lower())}
     notdir = [f for f in add if f not in dn]
@@ -220,6 +222,7 @@ def count_phrases(p) -> list:
     nchal, nsorry, noai = corpus_facts()
     return [
         (f"It reads **{len(rn)}** of **{len(order)}** families", "rn share"),
+        (f"the abstract-only scope it replaced read **{len(abstract_only)}**", "abstract-only figure"),
         (f"re-derives every count from the ledger and the {files:,} `.tex` files on disk", "tex files (intro)"),
         (f"**{len(ledger)}** ledger rows", "ledger rows"),
         (f"**{len(order)}** families in `overview.tex`", "overview families"),
@@ -244,8 +247,10 @@ def count_phrases(p) -> list:
         (f"Over **{titled:,}** titled headline statements, **{len(tgt)}** titles name a conjecture, "
          f"question, or problem, in **{len(tgt_fams)}** families", "target counts"),
         (f"negative: {len(p['verb_in_title'])} of these {len(tgt)} titles", "verb-in-title"),
-        (f"Two of the {len(tgt)} ({', '.join(sorted(tgt_fams - rn))}) sit in families the column "
-         f"reads 0; the other {len(tgt_fams & rn)} sit in families it reads 1", "target split"),
+        (f"{NUMWORDS[len(tgt_fams - rn)]} of the {len(tgt)} ({', '.join(sorted(tgt_fams - rn))}) "
+         f"{'sits' if len(tgt_fams - rn) == 1 else 'sit'} in "
+         f"{'a family' if len(tgt_fams - rn) == 1 else 'families'} the column reads 0; the other "
+         f"{len(tgt_fams & rn)} sit in families it reads 1", "target split"),
         (f"## Subject-named headline statements: {len(subj_hits)} over {len(subj_fams)} families",
          "subject heading"),
         (f"one of the {len(p['subject'])} subject names", "subject vocabulary"),
@@ -280,9 +285,9 @@ def count_phrases(p) -> list:
          f"prose under **both** rules: {' '.join(core)}", "layer 3 core"),
         (f"**{len(eo)}** families: {' '.join(sorted(eo))}, of which **{len(eo & rn)}** are `rn = 1`",
          "verb gap"),
-        (f"## The title-scope candidate: {len(rn)} → {nadd}", "title-scope heading"),
+        (f"## The title-scope swap: {len(abstract_only)} → {len(rn)}", "title-scope heading"),
         (f"**{len(add)}** additions: {' '.join(add)}", "additions"),
-        (f"the union column reads **{nadd}**", "union figure"),
+        (f"so the column reads **{len(rn)}**", "union figure"),
         (f"would read {len(strict)} ({len(rn - strict)} removals)", "strict replacement"),
         (f"All **{len(add)}** are corroborated", "additions corroborated"),
         (f"**{len(notdir)}** of the {len(add)} are not directory-named: {' '.join(notdir)}",
@@ -293,6 +298,8 @@ def count_phrases(p) -> list:
          f"{len(rn) + len(an - rn)}", "abstract layer reach"),
         (f"**{len(en.A_FAMS)}** families. Ten are real; one is the rule's false positive",
          "direction A count"),
+        (f"**{len(set(real_a) & set(add))} of the {len(real_a)} real misses are flagged**",
+         "direction A applied"),
         (f"reads **{len(real_a)} real misses and 1 false positive**", "direction A verdict"),
         (f"**{len(en.B_FAMS)}** families, all `rn = 1`", "direction B count"),
         (f"the {len(en.B_FAMS)} split **3 corroborated / 5 resting on the overview paraphrase alone**",
@@ -304,7 +311,7 @@ def count_phrases(p) -> list:
          "load-bearing negative"),
         (f"**{len(real_a)} real misses** (Direction A) and **{len(add)} title-scope additions**, "
          f"overlapping in {' '.join(sorted(set(add) & set(real_a)))}", "overlap"),
-        (f"the union of the two is the documented candidate at **{nadd}**, removals 0", "union verdict"),
+        (f"the swap is applied, so the column reads **{len(rn)}** with removals 0", "union verdict"),
         (f"**5 of the {len(en.B_FAMS)} Direction-B families**", "direction B verdict"),
         (f"The {len(an - rn)}-family layer-2 set is **unadjudicated**. It is the widest candidate "
          f"({len(rn) + len(an - rn)})", "not checked layer 2"),
@@ -343,14 +350,14 @@ def check(text: str, p, problems: list) -> dict:
 
 
 MUTANTS = {
-    "count: rn share 233 -> 234":
-        lambda t: t.replace("It reads **233** of **372** families",
-                            "It reads **234** of **372** families"),
+    "count: rn share 248 -> 249":
+        lambda t: t.replace("It reads **248** of **372** families",
+                            "It reads **249** of **372** families"),
     "count: titled per-line 1,498 -> 1,508":
         lambda t: t.replace("| titled headline begins | 1,498 |",
                             "| titled headline begins | 1,508 |"),
     "family list: layer-1 dir-not-rn drops 372":
-        lambda t: t.replace("022 039 044 151 209 297\n354 365 372.", "022 039 044 151 209 297\n354 365."),
+        lambda t: t.replace("are not: 354 365 372.", "are not: 354 365."),
     "inline quotation: resolution -> solution":
         lambda t: t.replace("This gives a positive resolution of the planar",
                             "This gives a positive solution of the planar"),
@@ -368,8 +375,8 @@ MUTANTS = {
                             "Centered-Disk-Maximal-Operator-September-26-2026/build/mainn.tex"),
     "table tier: 006 T0 -> T3":
         lambda t: t.replace("| 006 | T0 | 1 |", "| 006 | T3 | 1 |"),
-    "count: union 247 -> 246":
-        lambda t: t.replace("the union column reads **247**", "the union column reads **246**"),
+    "count: column 248 -> 247":
+        lambda t: t.replace("so the column reads **248**", "so the column reads **247**"),
     "bare anchor: 039 :156 -> :157":
         lambda t: t.replace("039 (`:156`)", "039 (`:157`)"),
     "paraphrase dressed as a quotation":

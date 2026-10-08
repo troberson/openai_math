@@ -194,8 +194,11 @@ def population():
     ps = {f for f in order if prose_sentence[f]}
     core = sorted((rn - pw) & (rn - ps))
     eo = {f for f in order if extra_only[f] and not prose_sentence[f]}
-    add = [f for f in order if ledger[f]["resolves_named"] == "0"
-           and TARGET_I.search(fams[f]["title"]) and RESOLVE.search(fams[f]["abstract"].lower())]
+    # The scope the column had before the title+abstract swap: abstract text only, same two
+    # regexes. `add` is therefore the applied delta of the swap, not a candidate.
+    abstract_only = {f for f in order if TARGET.search(fams[f]["abstract"].lower())
+                     and RESOLVE.search(fams[f]["abstract"].lower())}
+    add = sorted(rn - abstract_only)
     return {
         "order": order, "fams": fams, "ledger": ledger, "rn": rn, "famline": famline,
         "famdirs": famdirs, "ndirs": len(dir2fam), "files": files, "begins": begins,
@@ -207,6 +210,7 @@ def population():
         "subj_fams": subj_fams, "tgt_fams": tgt_fams, "have_b": have_b, "have_t": have_t,
         "no_head": no_head, "tiers": tiers, "dir_named": dir_named, "dn": dn, "an": an,
         "pw": pw, "ps": ps, "core": core, "eo": eo, "add": add,
+        "abstract_only": abstract_only,
     }
 
 
@@ -215,14 +219,15 @@ def report(p):
     (order, fams, ledger, rn, famdirs, tgt, verb_in_title, subject, subj_hits, subj_fams,
      tgt_fams, have_b, have_t, no_head, tiers, dir_named, dn, an, pw, ps, core, eo, add,
      head_titled, abstract_named, prose_window, prose_sentence, extra_only,
-     files, begins, titled, titled_all, titled_split, generic, env_begins) = (
+     files, begins, titled, titled_all, titled_split, generic, env_begins,
+     abstract_only) = (
         p["order"], p["fams"], p["ledger"], p["rn"], p["famdirs"], p["tgt"],
         p["verb_in_title"], p["subject"], p["subj_hits"], p["subj_fams"], p["tgt_fams"],
         p["have_b"], p["have_t"], p["no_head"], p["tiers"], p["dir_named"], p["dn"], p["an"],
         p["pw"], p["ps"], p["core"], p["eo"], p["add"], p["head_titled"],
         p["abstract_named"], p["prose_window"], p["prose_sentence"], p["extra_only"],
         p["files"], p["begins"], p["titled"], p["titled_all"], p["titled_split"],
-        p["generic"], p["env_begins"])
+        p["generic"], p["env_begins"], p["abstract_only"])
     famline = p["famline"]
 
     print("POPULATION")
@@ -231,7 +236,7 @@ def report(p):
     print(f"  .tex files at depths 1-4 under preprints/ {files}")
     print(f"  headline begins {begins}  titled (whole-text scan) {titled_all}  of which the "
           f"match spans a newline {titled_split}")
-    print(f"  resolves_named = 1: {len(rn)} families")
+    print(f"  resolves_named = 1: {len(rn)} families  (abstract-only scope: {len(abstract_only)})")
 
     print("\nHEADLINE INVENTORY (rule: theorem/maintheorem/thm begins and titled begins)")
     print(f"  headline begins {begins}  titled headline begins (per-line scan) {titled}")
@@ -287,12 +292,13 @@ def report(p):
     print("\nVERB VOCABULARY GAP (target noun with an EXTRA verb, no column verb, in prose)")
     print(f"  families {len(eo)} -> {' '.join(sorted(eo))}  of these rn=1: {len(eo & rn)}")
 
-    print("\nTITLE-SCOPE CANDIDATE (target noun in the overview title, verb in its abstract)")
+    print("\nTITLE-SCOPE SWAP (applied: target noun in the overview title, verb in its abstract)")
     print(f"  additions {len(add)} -> {' '.join(add)}")
-    print(f"  union column would read {len(rn) + len(add)} (current {len(rn)}); "
-          f"removals 0 - the union keeps every current flag")
+    print(f"  column reads {len(rn)}; abstract-only scope reads {len(abstract_only)}; "
+          f"removals 0 - the union keeps every flag the abstract-only scope had")
 
-    print("\nDIRECTION A - source names a target, column reads 0 (reading material, anchored)")
+    print("\nDIRECTION A - manuscript names a target the abstract-only scope missed")
+    print("  (reading material, anchored)")
     for f in A_FAMS:
         print(f"--- {f} tier={ledger[f]['tier']} rn={ledger[f]['resolves_named']} "
               f"paps={ledger[f]['paps']} shapes={ledger[f]['shapes']}")
