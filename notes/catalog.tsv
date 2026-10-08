@@ -1,23 +1,23 @@
 fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	verification	inputs	covmd	trace	shapes	conditional	resolves_named	counterex_broad	companions	companion_word	versions	summary
 001	Number theory	Milne's rationality conjecture	1	0	T0	0	0	0	0	0	0	0		classification|uniform	0	1	0	032	0	0	1
-002	Number theory	The full Birch--Swinnerton-Dyer formula in Selmer coranks zero and one	3	0	T0	0	0	0	0	0	0	0		density|uniform	0	0	0	006	0	0	0
+002	Number theory	The full Birch--Swinnerton-Dyer formula in Selmer coranks zero and one	3	0	T0	0	0	0	0	0	0	0		density|uniform	0	0	0	006	0	0	1
 003	Number theory	The quasi-Riemann hypothesis	3	2	T3	4	4	1	964	0	0	0		resolution|uniform	0	0	0		1	2	0
-004	Number theory	Hilbert's tenth problem over $\mathbb Q$	2	0	T0	0	0	0	0	0	0	0		resolution|undecidability|uniform	0	1	1		0	0	0
+004	Number theory	Hilbert's tenth problem over $\mathbb Q$	2	0	T0	0	0	0	0	0	0	0		resolution|undecidability|uniform	0	1	1		0	0	1
 005	Number theory	Irrationality of Catalan's constant	1	0	T2	1	0	1	159	0	0	0			0	0	0		0	0	0
-006	Number theory	Goldfeld's conjecture	2	0	T0	0	0	0	0	0	0	0		density	0	1	0		0	0	0
+006	Number theory	Goldfeld's conjecture	2	0	T0	0	0	0	0	0	0	0		density	0	1	0		0	0	1
 007	Number theory	Two-point Chowla and the corrected binary Elliott conjecture	1	0	T2	2	0	1	599	0	0	0	ordinary-two-point-correlations	resolution|bound|uniform	0	1	0		0	0	1
 008	Number theory	The Deligne--Drinfeld conjecture	1	1	T3	1	1	1	498	0	0	0		resolution	0	1	0		0	0	0
 009	Number theory	Bogomolov--Pop and Milnor $K$-theoretic reconstruction	3	0	T2	1	0	1	687	0	0	0		classification	0	0	0		0	0	0
-010	Number theory	Fontaine--Mazur modularity at the prime $2$ and $2$-adic pro-modularity	3	0	T0	0	0	0	0	0	0	0		resolution	0	0	0		0	0	0
-011	Number theory	The Ford--Konyagin--Luca conjecture on prime predecessors	3	0	T0	0	0	0	0	0	0	0		resolution|uniform	0	1	0		0	0	0
+010	Number theory	Fontaine--Mazur modularity at the prime $2$ and $2$-adic pro-modularity	3	0	T0	0	0	0	0	0	0	0		resolution	0	0	0		0	0	1
+011	Number theory	The Ford--Konyagin--Luca conjecture on prime predecessors	3	0	T0	0	0	0	0	0	0	0		resolution|uniform	0	1	0		0	0	1
 012	Number theory	Independent largest prime factors of consecutive integers	1	0	T2	1	0	1	397	0	0	0		resolution|density	0	1	0		0	0	0
 013	Number theory	Ostmann's inverse Goldbach conjecture	1	0	T2	2	0	1	424	0	0	0		resolution	0	1	0		0	0	0
-014	Number theory	Restricted geometric Langlands, generic Ramanujan and Arthur parameters	8	0	T0	0	0	0	0	0	0	0		classification|partial|uniform|conditional	1	0	0		0	0	0
+014	Number theory	Restricted geometric Langlands, generic Ramanujan and Arthur parameters	8	0	T0	0	0	0	0	0	0	0		classification|partial|uniform|conditional	1	0	0		0	0	1
 015	Number theory	Torus-packet equidistribution in prime, quartic, and sextic degrees	3	0	T2	1	0	1	435	0	0	0		uniform	0	0	0		0	0	0
-016	Number theory	Zilber--Pink in abelian varieties and the Siegel threefold	4	0	T0	0	0	0	0	0	0	0		resolution|bound	0	1	0		0	0	0
+016	Number theory	Zilber--Pink in abelian varieties and the Siegel threefold	4	0	T0	0	0	0	0	0	0	0		resolution|bound	0	1	0		0	0	1
 017	Number theory	The irrationality exponent of $\pi$ is $2$	1	0	T2	1	0	1	412	0	0	0	irrationality-exponent-of-pi	uniform	0	0	0		0	0	1
-018	Number theory	The Margulis--Platonov conjecture over global fields	2	0	T0	0	0	0	0	0	0	0		resolution|classification	0	1	0		0	0	0
-019	Number theory	The $p$-adic section conjecture	2	0	T0	0	0	0	0	0	0	0			0	1	0		0	0	0
+018	Number theory	The Margulis--Platonov conjecture over global fields	2	0	T0	0	0	0	0	0	0	0		resolution|classification	0	1	0		0	0	1
+019	Number theory	The $p$-adic section conjecture	2	0	T0	0	0	0	0	0	0	0			0	1	0		0	0	1
 020	Number theory	Squarefree quartics and power-free polynomial values	1	1	T3	1	1	1	489	0	0	0		resolution|density	0	1	0		0	0	0
 021	Number theory	A quadratic bound for Jacobsthal's function	1	1	T3	2	1	1	451	0	0	0		resolution|bound|partial|uniform	0	1	0		0	0	0
 022	Number theory	The weak inhomogeneous Duffin--Schaeffer conjecture	1	0	T0	0	0	0	0	0	0	0		uniform	0	1	0		0	0	0
