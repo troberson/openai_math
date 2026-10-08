@@ -15,6 +15,8 @@ lives in this file and nowhere else.
   both `.pdf` and `.tex`.
 - `notes/` is the reading ledger: `catalog.tsv` (372 rows, 22 columns), `README.md`,
   `t0-triage.md`, `conditional.md`, `resolution-tag.md`, `counterexample-tag.md`, `proof-density.md`,
+  `counterexample-crosscheck.md` (the 28 counterexample-shaped families outside T0, each claim paired
+  with the `main_results` declaration that corresponds to it),
   `verification-dirs.md` (the 30 bundles, each one's own entry point, and the family-348 reading),
   `summaries-workflow.md` (the resume protocol for the summary batches),
   `conjecture-standing.tsv` (139 rows, 10 columns — a labeled training-data prior, not a fact) with
@@ -128,6 +130,29 @@ lives in this file and nowhere else.
   exists, lives under `lean/OAI/`. To ask what a formalization assumes, resolve the declaration
   `main_results` names in `lean/formalization.yaml` and read that file — a fully-qualified name like
   `OAI.CHObstruction.main` is a yaml fact and does not occur verbatim in the Lean source.
+- Cross-check a claim shape against the formalization with
+  `python3 notes/scripts/extract_counterexample_crosscheck.py` — report-only, 0.25 s. Its population
+  rule is `counterexample` in the ledger `shapes` column **AND** `tier != T0`: **28** families,
+  **18 at T3 and 10 at T2**. The shape fires on **44** families corpus-wide, **16** of them at T0 —
+  the bead prose's "21 T0 counterexample-shaped families" is a reading-pass count, not this rule's,
+  and both numbers are recorded in the page. `counterex_broad` is a **'0'/'1' ledger column** (74 ones:
+  22 T0, 33 T3, 19 T2); a truthiness test over `csv.DictReader` rows counts all 372, so compare with
+  `== "1"`.
+- Pair a claim with a declaration through the **scope note**, never through the yaml:
+  `formalization.yaml` carries no family key, so family→config comes only from the
+  `\.\./ComparatorChallenges/(X)\.lean` links inside `lean/docs/<NNN>.md`. Of the **51** configs the 28
+  scope notes link, **27** carry a `main_results` entry and **24** carry none — **11** of those gaps sit
+  in **7** T3 families, **13** across the 10 T2 families. A T2 family with zero entries is a structural
+  absence; a T3 family whose entry is a *positive* classification while the disproven conjecture's
+  config has no entry (family 172) is a claim-level gap, and that distinction is the page's finding.
+- `theorem main : MainStatement :=` is opaque. The content lives in a `def <Carrier> : Prop :=` reached
+  through the declaration file's **import closure** (BFS over `import OAI.*`), not through the directory
+  layout — **11** of the 27 declarations are carrier-typed, and a verdict that quotes only the `main`
+  line quotes nothing.
+- `sorry` in a comparator stub has two rules: **53** over the 51 distinct config files behind the
+  population, **56** over scope-note link **occurrences** (the 3-gap is family 100's four links to
+  `CylinderCovering`). Quote the figure with the rule; the extractor prints the per-link number and the
+  checker counts distinct files.
 - A `preprints/<slug>/verification/` bundle is a finite-arithmetic **certificate**, not a proof, and the
   ledger's `verification` column is a count, not a pointer. Measure the entry point with
   `python3 notes/scripts/extract_verification_dirs.py`: over the 30 bundles, **12** ship a top-level
@@ -314,6 +339,22 @@ lives in this file and nowhere else.
   `name → file:line` citation against the shipped file, and flags five injected mutants. It reports
   **15 unanchored prose quotations** — the pre-existing abstract and scope-note quotes in the
   per-family sections, which carry no line anchors and are therefore not verified. It writes nothing.
+- Check `notes/counterexample-crosscheck.md` with
+  `python3 notes/scripts/verify_counterexample_crosscheck.py --mutant` before quoting any of its counts
+  — it recomputes the population, tier split, ledger sums, per-family config/entry/gap counts, the
+  carrier-typed count, and the stub and `sorry` totals from `notes/catalog.tsv`, `overview.tex`,
+  `lean/formalization.yaml`, `lean/docs/`, and `lean/ComparatorChallenges/`, and matches all 19 count
+  phrases against that recomputation. Layout is enforced, not cosmetic: a fenced block is attributed to
+  the **nearest preceding** anchor (so an anchor line goes *before* its block), and each `*"…"*`
+  quotation is pinned to the anchor in its **own line** (so a claim quote's anchor sits at the start of
+  the quote, not at its end). Verbatim means the bytes on the cited line — a de-LaTeXed `Gyárfás's`
+  fails against `overview.tex:405`, which ships `Gy\'arf\'as's`. It requires the 28-row summary table,
+  the 11-row T3 gap table, and the 10-row T2 table to equal the recomputation, and requires each of the
+  27 entries to cite its yaml block at the `- comparator_config:` line — the extractor's yaml anchor is
+  the `file:` line, so a 3-line entry block starts at `file-line − 2` — its statement anchor at the line
+  where the declaration opens, and the carrier's definition anchor. It flags thirteen injected mutants
+  and writes nothing. Run `python3 notes/scripts/extract_counterexample_crosscheck.py` twice and diff:
+  the report must be identical.
 - Measure the verification bundles with `python3 notes/scripts/extract_verification_dirs.py` (the 30
   bundles, which README section names them, and each bundle's entry point) and
   `python3 notes/scripts/extract_verification_348.py` (the family-348 pair); run each twice and diff:

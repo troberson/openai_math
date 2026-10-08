@@ -41,6 +41,8 @@ python3 notes/scripts/compare_abstracts.py --mutant  # self-test: 7 injected cor
 python3 notes/scripts/verify_abstracts.py --mutant  # checks notes/abstracts.md: every [S#] marker resolves, every quotation is verbatim in the file it names
 python3 notes/scripts/measure_proof_density.py  # tests proofs-per-family against tiers and claim shapes; report-only, writes nothing
 python3 notes/scripts/measure_proof_density.py --mutant  # self-test: 8 injected corruptions must all be caught, plus a 5-case check of the statistic itself
+python3 notes/scripts/extract_counterexample_crosscheck.py  # pairs the 28 counterexample families outside T0 with their main_results declarations and carriers; report-only
+python3 notes/scripts/verify_counterexample_crosscheck.py --mutant  # checks notes/counterexample-crosscheck.md: anchors, fenced blocks, quotations, three tables, all 19 counts
 ```
 
 `notes/summaries-workflow.md` is the resume protocol for the summary-page batches: per-page steps,
@@ -150,6 +152,18 @@ shape instead would move 30 families (6 of them in T0) between the first-match b
 every one of them. Unlike `resolves_named`, this column is a **strict superset** of its tag (tag-only
 0), so 44 and 74 are directly comparable floors. Method, the per-family verdicts, and the decision are
 in **`notes/counterexample-tag.md`**.
+
+**The counterexample families outside T0 are cross-checked claim by claim.** Population rule:
+`counterexample` in `shapes` **and** `tier != T0` — **28** families, **18 at T3 and 10 at T2**. The 18
+T3 families carry **27** `main_results` declarations; all 27 resolve, **11** are written against a
+carrier `def … : Prop :=` and all 11 carriers resolve through the declaration file's import closure.
+The 10 T2 families carry **none**, which is the tier's structural absence rather than a per-family
+finding. Of the **51** configs their scope notes link, **24** have no entry: **11** in **7** T3
+families, **13** across the 10 T2 families. Pairing a claim with a declaration is a reading step, not a
+join — see the traps below. Verdicts for all 27, each resting on a verbatim carrier or statement quote
+at its `file:line`, are in **`notes/counterexample-crosscheck.md`**, which also records the bead
+prose's "21 T0 counterexample-shaped families" beside the shape rule's **16** without resolving the
+gap between them.
 
 **`resolves_named` is a column, not a shape.** The broad named-target rule (a target noun
 *conjecture/question/problem* plus a resolution verb) flags 233 families, so it is carried in its own
@@ -486,6 +500,22 @@ the community will scrutinize.
   abstract-only phrase rule → 72). A count is only a measurement once the rule that yields it is in
   code. Fixed 2026-10-07 by writing `COUNTEREX_PHRASE` in the generator, which reproduces 74 / 30
   and excludes the three named false positives. See `notes/counterexample-tag.md`.
+- **"Has a formalized main result" is not "has a formalized counterpart for the refutation".** All 18
+  T3 counterexample families outside T0 carry `main_results` declarations and all 27 resolve, yet in
+  family 172 the entries state a positive classification (`Ramsey a ↔ FieldCriterion a`) and a 12-point
+  spherical witness while the config carrying the disproven transitive-Ramsey claim has no entry;
+  family 197's formalized group carries a prime-order torsion hypothesis that the blurb's "torsion-free"
+  adjective does not; family 347 states a degenerate fixed-point instance, not the nondegenerate
+  22-dimensional claim. Recorded 2026-10-07 in `notes/counterexample-crosscheck.md`, with every carrier
+  body quoted at its `file:line`.
+- **`counterex_broad` is a `'0'`/`'1'` column, so truthiness is a tier census.**
+  `if r["counterex_broad"]:` is true for all 372 rows — `'0'` is a non-empty string — and reports 372
+  families / 127 T3 / 108 T2, which are the tier counts, not the flag counts. Compare with `== "1"`:
+  **74** families, **22 T0 / 33 T3 / 19 T2**. Caught in the crosscheck checker on the first run.
+- **`sorry` has two counting rules over the same files.** Over the 51 comparator configs behind the
+  28-family population: **53** occurrences counting each distinct config file once, **56** counting
+  scope-note link occurrences — family 100 links `CylinderCovering` four times. A per-family `set()`
+  and a per-link scan disagree by 3 on correct data, so quote the number with the rule.
 - **`Path` vs `str` in a membership test.** `verification`, `inputs`, and `covmd` read 0 for all 372
   rows: the reference sets held `Path` objects (`p.parent`) while the tested values were strings
   (`Path(p).parts[-2]`), and `str in {Path(...)}` is false for every family. A column that is
