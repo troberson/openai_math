@@ -1,22 +1,30 @@
 #!/usr/bin/env python3
-"""Verify the family-348 section of notes/verification-dirs.md against the shipped files.
+"""Verify notes/verification-dirs.md against the shipped files.
 
-Report-only; writes nothing. Three passes over the section headed
-"## What the 348 bundle checks, and what it omits":
+Report-only; writes nothing. Two sections are checked, each for anchors, quotations, fenced blocks, and
+count phrases:
 
-1. Ledger claims. The section's counts of verification dirs, `covmd`, and `inputs` are
-   recomputed from notes/catalog.tsv, and family 348's `verification` value is read from the ledger.
+A. "## Every bundle and its own entry point" — the 30-bundle population, the README-section
+   reconciliation, the entry-point class counts, the per-bundle table, and the ledger join.
+B. "## What the 348 bundle checks, and what it omits" — the family-348 reading.
+
+1. Ledger claims. The page's counts of verification dirs, `covmd`, `inputs`, and family 348's
+   `verification` value are recomputed from notes/catalog.tsv.
 2. Citations. Every `path:line` anchor must resolve. A fenced block is attributed to the nearest
-   preceding anchor and every block line must match that file at consecutive line numbers. A prose
-   quotation in *"..."* form is attributed to the nearest anchor that follows it (within 4 lines) and
-   must occur near the anchored line. Whitespace runs are collapsed on both sides: line-wrapping in
-   the page is markup, not part of the quote. A plain `"..."` quote introduced by "`FILE` says" is
-   checked against that file.
-3. Counts. Each bold count in the section is compared with an independent recomputation from the
-   bundle on disk, by matching the exact phrase the page must contain.
+   preceding anchor and every block line must match that file at consecutive line numbers. A quotation
+   in *"..."* form is attributed to an anchor on the same line when one follows it (a table row: the
+   quote must occur exactly at the anchored line, so a shifted anchor is caught); otherwise it is
+   attributed to the nearest anchor that follows within 4 lines and must occur near that line.
+   Whitespace runs are collapsed on both sides: line-wrapping in the page is markup, not part of the
+   quote, so a quote spanning two source lines resolves against the join. A plain `"..."` quote
+   introduced by "`FILE` says" is checked against the family-348 bundle.
+3. Counts. Each bold count is compared with an independent recomputation from the files on disk, by
+   matching the exact phrase the page must contain. The entry-point table is additionally checked
+   structurally: one row per bundle, in slug order, with the family the slug belongs to.
 
-Line counts follow len(text.split("\n")), the same rule the extract_verification_348.py report uses,
-so the page and that report agree.
+Line counts in the family-348 section follow len(text.split("\n")), the rule the
+extract_verification_348.py report uses; the entry-point section's file line count follows
+splitlines(), the rule the extract_verification_dirs.py report uses. The page matches each.
 
 --mutant runs the built-in mutations and fails if any goes uncaught.
 """
@@ -27,6 +35,10 @@ import pathlib
 import re
 import sys
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import build_catalog  # noqa: E402
+import extract_verification_dirs as evd  # noqa: E402
+
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PAGE = ROOT / "notes" / "verification-dirs.md"
 LEDGER = ROOT / "notes" / "catalog.tsv"
@@ -34,8 +46,11 @@ POS = ROOT / "preprints/Positively-curved-Einstein-four-manifolds-September-23-2
 ZERO = ROOT / "preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026"
 VPOS, VZERO = POS / "verification", ZERO / "verification"
 SECTION = "## What the 348 bundle checks, and what it omits"
+ENTRY = "## Every bundle and its own entry point"
+FOCK = ROOT / "preprints/A-Fock-space-inequality-and-the-Laughlin-spectral-gap-September-24-2026"
+UNIF = ROOT / "preprints/Uniform-Stability-of-the-Spherical-Laughlin-Gap-October-5-2026"
 
-ANCHOR = re.compile(r"`([\w./+-]+?\.(?:py|md|tex|json)):(\d+)`")
+ANCHOR = re.compile(r"`([\w./+-]+?\.(?:py|md|tex|json|txt)):(\d+)`")
 QUOTE = re.compile(r'\*"([^"]{12,})"\*')
 SAYS = re.compile(r"`([A-Za-z0-9_.-]+\.(?:md|json|py|tex))`\s+\w+\s*(?:the\s+)?[\w, ]*?\"([^\"]{12,})\"")
 
@@ -48,10 +63,14 @@ def sha(p):
     return hashlib.sha256(p.read_bytes()).hexdigest()
 
 
-def section_text(text):
-    start = text.index(SECTION)
-    nxt = text.find("\n## ", start + len(SECTION))
-    return text[start:nxt if nxt != -1 else len(text)], start
+def section_bodies(text):
+    """The two checked sections as (label, body), entry-point section first."""
+    out = []
+    for label in (ENTRY, SECTION):
+        start = text.index(label)
+        nxt = text.find("\n## ", start + len(label))
+        out.append((label, text[start:nxt if nxt != -1 else len(text)]))
+    return out
 
 
 def ledger_rows():
@@ -110,6 +129,80 @@ def measure():
         "negative": len([c for c in cs if "rejected" in c["name"]]),
         "ends_rejected": len([c for c in cs if c["name"].endswith("rejected")]),
     }
+
+
+def entry_measure():
+    """Independent recomputation of the entry-point section's population and classes.
+
+    The population is the 30 bundles, not the 722 preprint dirs: a README section is read as naming a
+    bundle only for a dir that ships one.
+    """
+    fam_by_slug, _order, _fams = evd.families_by_slug()
+    dirs = sorted(p for p in evd.PRE.iterdir() if p.is_dir())
+    bundles = [p for p in dirs if (p / "verification").is_dir()]
+    named, runsec, unnamed = [], [], []
+    for p in bundles:
+        heads = evd.headings(p / "README.md")[1]
+        if any("Verification" in h for _, h in heads):
+            named.append(p.name)
+        elif any("Run the verification code" in h for _, h in heads):
+            runsec.append(p.name)
+        else:
+            unnamed.append(p.name)
+    classes, no_entry, declaring = {}, [], []
+    for p in bundles:
+        bundle = p / "verification"
+        _, rule, _ = evd.entry_point(bundle)
+        classes[rule] = classes.get(rule, 0) + 1
+        if rule == "none":
+            no_entry.append(p)
+        if evd.main_command(bundle)[0] is not None:
+            declaring.append(p)
+    a, b = FOCK / "verification/rows.txt", UNIF / "verification/rows.txt"
+    ta = a.read_text(encoding="utf-8", errors="replace")
+    return {
+        "dirs": len(bundles),
+        "fams": len({fam_by_slug.get(p.name) for p in bundles}),
+        "named": len(named) + len(runsec),
+        "ver": len(named),
+        "run": len(runsec),
+        "unnamed": sorted(unnamed),
+        "classes": classes,
+        "no_entry": len(no_entry),
+        "no_entry_fams": [fam_by_slug.get(p.name) for p in no_entry
+                          if fam_by_slug.get(p.name) != "269"],
+        "rule4": sum(v for k, v in classes.items() if k.startswith("manifest")),
+        "declaring": len(declaring),
+        "rows_lines": len(ta.splitlines()),
+        "rows_bytes": a.stat().st_size,
+        "rows_identical": a.read_bytes() == b.read_bytes(),
+        "rows_pair": a.exists() and b.exists(),
+        "table": [fam_by_slug.get(p.name) for p in bundles],
+    }
+
+
+def entry_phrases(v):
+    """Exact phrases the entry-point section must contain for its counts to be honest."""
+    c = v["classes"]
+    return [
+        (f"A README section names **{v['named']}** of the **{v['dirs']}** bundles", "named/dir counts"),
+        (f"**{v['ver']}** carry `## Verification` and **{v['run']}** carries", "README heading counts"),
+        (f"**{len(v['unnamed'])}** bundles ship a `verification/` tree their README never mentions",
+         "unnamed bundle count"),
+        (f"Each is {v['rows_lines']} lines and {v['rows_bytes']} bytes, and the two files are "
+         "**byte-identical**", "rows.txt size and identity"),
+        (f"**{c.get('top-level README.md', 0)}** top-level `README.md`, "
+         f"**{c.get('subdirectory README.md', 0)}** a subdirectory `README.md`, "
+         f"**{c.get('top-level script by name', 0)}** a top-level script by name, "
+         f"**{c.get('subdirectory README.txt', 0)}** a subdirectory `README.txt`, "
+         f"**{v['no_entry']}** with **no entry point**", "entry-point class counts"),
+        (f"Rule 4 fires for **{v['rule4']}** bundles", "rule 4 firing count"),
+        (f"the {WORDS[v['declaring']]} family-348 dirs that declare `main_command` are claimed by "
+         "rule 1 first", "manifest main_command count"),
+        (f"The {v['no_entry']} with no entry point are the two 269 dirs above plus "
+         f"{', '.join(v['no_entry_fams'][:-1])} and {v['no_entry_fams'][-1]}",
+         "no-entry-point family list"),
+    ]
 
 
 def count_phrases(v):
@@ -179,98 +272,112 @@ def ledger_phrases(v):
 
 def check(text, full_page):
     problems = []
-    body, offset = section_text(text)
-    lines = body.split("\n")
-    n_anchor = n_block_lines = n_prose = n_says = 0
+    n_anchor = n_block_lines = n_prose = n_row_quotes = n_says = 0
 
-    for m in ANCHOR.finditer(body):
-        rel, at = m.group(1), int(m.group(2))
-        f = ROOT / rel
-        if not f.exists():
-            problems.append(f"anchor file {rel} does not exist")
-            continue
-        src = f.read_text(encoding="utf-8", errors="replace").split("\n")
-        n_anchor += 1
-        if not 1 <= at <= len(src):
-            problems.append(f"anchor {rel}:{at} is outside the file ({len(src)} lines)")
+    for label, body in section_bodies(text):
+        lines = body.split("\n")
 
-    # fenced blocks -> nearest preceding anchor
-    i = 0
-    while i < len(lines):
-        if lines[i].lstrip().startswith("```"):
-            indent = lines[i][: len(lines[i]) - len(lines[i].lstrip())]
-            j = i + 1
-            blk = []
-            while j < len(lines) and not lines[j].lstrip().startswith("```"):
-                ln = lines[j]
-                blk.append(ln[len(indent):] if ln.startswith(indent) and ln.strip() else ln)
-                j += 1
-            anchor = None
-            for k in range(i - 1, max(i - 9, -1), -1):
-                found = ANCHOR.findall(lines[k])
-                if found:
-                    anchor = (found[-1][0], int(found[-1][1]))
-                    break
-            if anchor is None:
-                problems.append(f"section line {i + 1}: fenced block has no preceding file:line anchor")
-            elif not (ROOT / anchor[0]).exists():
-                problems.append(f"section line {i + 1}: anchor file {anchor[0]} does not exist")
+        for m in ANCHOR.finditer(body):
+            rel, at = m.group(1), int(m.group(2))
+            f = ROOT / rel
+            if not f.exists():
+                problems.append(f"anchor file {rel} does not exist")
+                continue
+            src = f.read_text(encoding="utf-8", errors="replace").split("\n")
+            n_anchor += 1
+            if not 1 <= at <= len(src):
+                problems.append(f"anchor {rel}:{at} is outside the file ({len(src)} lines)")
+
+        # fenced blocks -> nearest preceding anchor
+        i = 0
+        while i < len(lines):
+            if lines[i].lstrip().startswith("```"):
+                indent = lines[i][: len(lines[i]) - len(lines[i].lstrip())]
+                j = i + 1
+                blk = []
+                while j < len(lines) and not lines[j].lstrip().startswith("```"):
+                    ln = lines[j]
+                    blk.append(ln[len(indent):] if ln.startswith(indent) and ln.strip() else ln)
+                    j += 1
+                anchor = None
+                for k in range(i - 1, max(i - 9, -1), -1):
+                    found = ANCHOR.findall(lines[k])
+                    if found:
+                        anchor = (found[-1][0], int(found[-1][1]))
+                        break
+                if anchor is None:
+                    problems.append(f"section line {i + 1}: fenced block has no preceding file:line anchor")
+                elif not (ROOT / anchor[0]).exists():
+                    problems.append(f"section line {i + 1}: anchor file {anchor[0]} does not exist")
+                else:
+                    rel, at = anchor
+                    src = (ROOT / rel).read_text(encoding="utf-8", errors="replace").split("\n")
+                    for n, want in enumerate(blk):
+                        got = src[at - 1 + n] if at - 1 + n < len(src) else "<past end of file>"
+                        n_block_lines += 1
+                        if got != want:
+                            problems.append(
+                                f"section line {i + 2}: block line {n} != {rel}:{at + n}\n"
+                                f"    want {want!r}\n    got  {got!r}")
+                i = j + 1
             else:
-                rel, at = anchor
-                src = (ROOT / rel).read_text(encoding="utf-8", errors="replace").split("\n")
-                for n, want in enumerate(blk):
-                    got = src[at - 1 + n] if at - 1 + n < len(src) else "<past end of file>"
-                    n_block_lines += 1
-                    if got != want:
-                        problems.append(
-                            f"section line {i + 2}: block line {n} != {rel}:{at + n}\n"
-                            f"    want {want!r}\n    got  {got!r}")
-            i = j + 1
-        else:
-            i += 1
+                i += 1
 
-    # prose quotes -> nearest anchor that follows within 4 lines
-    for m in QUOTE.finditer(body):
-        quote = norm(m.group(1))
-        upto = body[: m.start()].split("\n")
-        after = body[m.end():].split("\n")[:4]
-        anchor = None
-        for k, ln in enumerate(after):
-            found = ANCHOR.findall(ln)
-            if found:
-                anchor = (found[0][0], int(found[0][1]))
-                break
-        if anchor is None:
-            problems.append(f"prose quote has no anchor within 4 lines after it: {quote[:60]!r}")
-            continue
-        rel, at = anchor
-        if not (ROOT / rel).exists():
-            problems.append(f"prose anchor file {rel} does not exist")
-            continue
-        src = (ROOT / rel).read_text(encoding="utf-8", errors="replace").split("\n")
-        n_prose += 1
-        hits = [k + 1 for k, ln in enumerate(src) if quote in norm(ln)]
-        if not hits:
-            # multi-line quote: join consecutive lines
-            joined = norm("\n".join(src))
-            hits = [k + 1 for k in range(len(src) - 1)
-                    if quote in norm(src[k] + " " + src[k + 1])]
-        if not hits:
-            problems.append(f"prose quote not found in {rel}: {quote[:60]!r}")
-        elif not any(abs(h - at) <= 4 for h in hits):
-            problems.append(f"prose quote anchored at {rel}:{at} occurs only at lines {hits}")
-        del upto
+        # quotations: an anchor in the quote's own line (a table row) pins it to that line exactly;
+        # otherwise the nearest anchor that follows within 4 lines, with the old proximity rule.
+        for m in QUOTE.finditer(body):
+            quote = norm(m.group(1))
+            row = lines[body[: m.start()].count("\n")]
+            span = row.find(m.group(0))
+            same = []
+            if span != -1:
+                same = ANCHOR.findall(row[span + len(m.group(0)):])[:1] \
+                    or ANCHOR.findall(row[:span])[-1:]
+            anchor = None
+            if same:
+                anchor = (same[0][0], int(same[0][1]))
+            else:
+                for ln in body[m.end():].split("\n")[:4]:
+                    found = ANCHOR.findall(ln)
+                    if found:
+                        anchor = (found[0][0], int(found[0][1]))
+                        break
+            if anchor is None:
+                problems.append(f"quote has no anchor in its line or within 4 lines after it: {quote[:60]!r}")
+                continue
+            rel, at = anchor
+            if not (ROOT / rel).exists():
+                problems.append(f"quote anchor file {rel} does not exist")
+                continue
+            src = (ROOT / rel).read_text(encoding="utf-8", errors="replace").split("\n")
+            hits = [k + 1 for k, ln in enumerate(src) if quote in norm(ln)]
+            if not hits:
+                # multi-line quote: join consecutive lines
+                hits = [k + 1 for k in range(len(src) - 1)
+                        if quote in norm(src[k] + " " + src[k + 1])]
+            if not hits:
+                problems.append(f"quote not found in {rel}: {quote[:60]!r}")
+            elif same:
+                n_row_quotes += 1
+                if at not in hits:
+                    problems.append(f"row quote anchored at {rel}:{at} occurs only at lines {hits}")
+            elif not any(abs(h - at) <= 4 for h in hits):
+                problems.append(f"prose quote anchored at {rel}:{at} occurs only at lines {hits}")
+            else:
+                n_prose += 1
 
-    for m in SAYS.finditer(body):
-        rel, quote = m.group(1), norm(m.group(2))
-        cands = [VPOS / rel, VZERO / rel]
-        f = next((c for c in cands if c.exists()), None)
-        if f is None:
-            problems.append(f"`{rel} says` anchor file does not exist")
+    for label, body in section_bodies(text):
+        if label != SECTION:
             continue
-        n_says += 1
-        if quote not in norm(f.read_text(encoding="utf-8", errors="replace")):
-            problems.append(f"quoted text not found in {rel}: {quote[:60]!r}")
+        for m in SAYS.finditer(body):
+            rel, quote = m.group(1), norm(m.group(2))
+            f = next((c for c in (VPOS / rel, VZERO / rel) if c.exists()), None)
+            if f is None:
+                problems.append(f"`{rel} says` anchor file does not exist")
+                continue
+            n_says += 1
+            if quote not in norm(f.read_text(encoding="utf-8", errors="replace")):
+                problems.append(f"quoted text not found in {rel}: {quote[:60]!r}")
 
     # Phrase matching collapses whitespace: line-wrapping in the page is markup.
     flat = norm(full_page)
@@ -285,8 +392,36 @@ def check(text, full_page):
         if norm(phrase) not in flat:
             problems.append(f"ledger claim mismatch ({label}): page does not contain {phrase!r}")
 
-    counts = (n_anchor, n_block_lines, n_prose, n_says,
-              len(count_phrases(v)), len(ledger_phrases(lv)))
+    e = entry_measure()
+    for phrase, label in entry_phrases(e):
+        if norm(phrase) not in flat:
+            problems.append(f"entry-point count mismatch ({label}): page does not contain {phrase!r}")
+    for phrase, label in [(f"sums to {lv['dirs']} dirs over {lv['fams']} families",
+                           "entry-section ledger join")]:
+        if norm(phrase) not in flat:
+            problems.append(f"entry-point count mismatch ({label}): page does not contain {phrase!r}")
+
+    entry_body = section_bodies(text)[0][1]
+    rows = re.findall(r"^\| (\d{3}) \|", entry_body, re.M)
+    if len(rows) != e["dirs"]:
+        problems.append(f"entry-point table has {len(rows)} rows, the bundle count is {e['dirs']}")
+    elif rows != e["table"]:
+        bad = [f"{i + 1}: {r} != {t}" for i, (r, t) in enumerate(zip(rows, e["table"])) if r != t]
+        problems.append(f"entry-point table family order: {'; '.join(bad)}")
+    bullets = re.findall(r"^- `preprints/([^`]+)`", entry_body, re.M)
+    if len(bullets) != len(e["unnamed"]):
+        problems.append(f"unnamed-bundle list has {len(bullets)} bullets, the count is {len(e['unnamed'])}")
+    for slug in bullets:
+        if not (ROOT / "preprints" / slug).exists():
+            problems.append(f"unnamed bundle preprints/{slug} does not exist")
+    if not e["rows_pair"]:
+        problems.append("the two family-269 rows.txt files are not both present")
+    if not e["rows_identical"]:
+        problems.append("the two family-269 rows.txt files are not byte-identical")
+
+    counts = (n_anchor, n_block_lines, n_prose, n_row_quotes, n_says,
+              len(count_phrases(v)), len(ledger_phrases(lv)), len(entry_phrases(e)) + 1,
+              len(rows))
     return problems, counts
 
 
@@ -314,6 +449,23 @@ MUTANTS = {
         "`.../verification/verify.py:477`", 1),
     "coverage artifact presence overstated": lambda t: t.replace(
         "all four are present in both directories", "all five are present in both directories", 1),
+    "entry class count altered": lambda t: t.replace(
+        "**12** top-level `README.md`", "**13** top-level `README.md`", 1),
+    "unnamed bundle count altered": lambda t: t.replace(
+        "**2** bundles ship a `verification/` tree", "**3** bundles ship a `verification/` tree", 1),
+    "entry-section quote altered": lambda t: t.replace(
+        "*\"They verify finite scalar, thermal, and trial calculations, not the analytic proof.\"*",
+        "*\"They verify finite scalar, thermal, and trial calculations, not the analytic argument.\"*", 1),
+    "entry-section anchor shifted": lambda t: t.replace(
+        "chain-September-24-2026/verification/README.md:54`",
+        "chain-September-24-2026/verification/README.md:53`", 1),
+    "rows.txt size altered": lambda t: t.replace("20 lines and 1436 bytes", "20 lines and 1437 bytes", 1),
+    "table row family altered": lambda t: t.replace("| 371 | `Stable-Self-Similar", "| 372 | `Stable-Self-Similar", 1),
+    "rule 4 firing count altered": lambda t: t.replace("Rule 4 fires for **0** bundles",
+                                                       "Rule 4 fires for **1** bundles", 1),
+    "entry-section ledger sum altered": lambda t: t.replace("sums to 30 dirs over 22 families",
+                                                            "sums to 31 dirs over 22 families", 1),
+    "table row deleted": lambda t: re.sub(r"^\| 371 \| .*$\n", "", t, count=1, flags=re.M),
 }
 
 
@@ -336,11 +488,13 @@ def main():
         print(f"mutants not caught {len(uncaught)} of {len(MUTANTS)}")
         raise SystemExit(1 if uncaught else 0)
 
-    problems, (n_anchor, n_block_lines, n_prose, n_says, n_counts, n_ledger) = check(text, text)
+    problems, (n_anchor, n_block_lines, n_prose, n_row, n_says, n_counts, n_ledger,
+               n_entry, n_rows) = check(text, text)
     for p in problems:
         print(f"PROBLEM {p}")
     print(f"\nanchors {n_anchor}  block lines {n_block_lines}  prose quotes {n_prose}"
-          f"  says-quotes {n_says}  count phrases {n_counts}  ledger phrases {n_ledger}"
+          f"  row quotes {n_row}  says-quotes {n_says}  count phrases {n_counts}"
+          f"  ledger phrases {n_ledger}  entry phrases {n_entry}  table rows {n_rows}"
           f"  problems {len(problems)}")
     raise SystemExit(1 if problems else 0)
 
