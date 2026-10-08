@@ -114,13 +114,25 @@ A "take all recommendations" answer can authorize commits for the whole plan. Th
 exactly that: commit each batch when its gates pass, explicit paths, one purpose per commit, never
 `--no-verify`. It does not extend past the plan. In a beads repo the pre-commit hook re-exports and
 stages the issue store, so the store travels in the commit whose work it records — stage it
-explicitly with the code it describes.
+explicitly with the code it describes. Two things that came out the other way in practice: a
+**pathspec** commit (`git commit -q -F - -- <paths>`) excludes other staged paths, so a staged issue
+store survives into a later commit instead of riding along; and the hook's auto-export can fail with
+`.git/index.lock` because it races the commit process itself — harmless, export by hand
+(`bd export -o .beads/issues.jsonl`) and commit the store on its own.
 
 Push is a **separate grant** and it is cadence-scaled, not per-commit. The user set it for this run
 (2026-10-07): "you can push periodically during the loop but lets keep it to about once per hour."
 So: push at roughly hourly boundaries, to the fork only, never on every commit. Record the cadence in
 the handoff file — a post-compaction session that reads "push only on its own instruction" will
 otherwise stall the backup, and one that reads the grant too loosely will push on every batch.
+
+**A cadence is a batching rule, not a timer.** Clarified by the user on 2026-10-08: *"we shouldn't
+sleep just to meet the cadence. my primary concern was that sometimes we do several commits in a row,
+within a couple minutes and I didn't want to push every time."* So the interval is the **minimum
+spacing between pushes**, never a reason to idle, sleep, or manufacture work to fill a window: push
+when a batch of commits has accumulated and the interval has elapsed, and say in the report how many
+commits the push carried. Idling to hit an interval converts a batch cadence into a polling loop and
+buys nothing.
 
 ## 9. Pre-flight, before the first wakeup
 

@@ -22,6 +22,14 @@ checker defect, not a page defect.
 - **The report line is the test.** Print the same figure the page quotes, with the rule attached
   (`main_results 185 entries over 178 configs`, not `178 over 178`). A report line that prints a
   different number from the page it is checking hides the disagreement.
+- **Measure a figure the page takes from a report; do not write it into the checker.** A literal in a
+  checker is a second copy of the number, and a corpus change makes it a third place the value has to
+  be edited. `verify_findings.py` carried the disk link scan as literals in three spots (page needle,
+  report-line needle, record list) and failed 3 problems the moment the page was swept; the fix was
+  `disk_links = int(re.search(r"links extracted\s+(\d+)", run("check_index_links.py")).group(1))` and
+  a derived needle. Keep a literal only where it pins a **format** contract with the report script —
+  that copy is what tells you the report format changed. Full procedure:
+  `sweep-superseded-counts` §3.
 - **Run twice, diff, byte-identical.** Exit non-zero on problems **and** on undetected mutants.
 - Fast extractors the page quotes are re-run as **subprocesses with `cwd=notes/scripts`** so sibling
   imports resolve (0.02–1 s each). Extractors that take 40–52 s are never imported into a checker.
