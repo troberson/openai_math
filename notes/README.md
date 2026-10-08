@@ -37,6 +37,8 @@ python3 notes/scripts/compare_abstracts.py  # compares each manuscript abstract 
 python3 notes/scripts/compare_abstracts.py --tsv  # writes notes/abstracts.tsv (372 rows: best-match ratio, relation, both shape sets)
 python3 notes/scripts/compare_abstracts.py --mutant  # self-test: 7 injected corruptions must all be caught, 3 controls and 5 synthetic cases must stay right
 python3 notes/scripts/verify_abstracts.py --mutant  # checks notes/abstracts.md: every [S#] marker resolves, every quotation is verbatim in the file it names
+python3 notes/scripts/measure_proof_density.py  # tests proofs-per-family against tiers and claim shapes; report-only, writes nothing
+python3 notes/scripts/measure_proof_density.py --mutant  # self-test: 8 injected corruptions must all be caught, plus a 5-case check of the statistic itself
 ```
 
 `notes/summaries-workflow.md` is the resume protocol for the summary-page batches: per-page steps,
@@ -155,6 +157,23 @@ assigns by first match. The two signals are complementary, not nested: 139 famil
 both, 94 only by the column, and 5 only by the tag (003, 010, 082, 103, 261 — targets named as a
 *hypothesis/case/estimate/contrast*), for a union of 238. Both are floors. Method, the 94-family
 reading verdict, and the decision are in **`notes/resolution-tag.md`**.
+
+**Proof density was tested as a signal and rejected — no column.** `notes/sources.tsv` counts
+**20,449** `\begin{proof}` over 722 manuscripts, so proofs-per-family is one command away, and it was
+measured against the tiers and the shapes with the decision bar written into the script header before
+the data was read (AUC ≥ 0.65 **and** p < 0.01, plus a tex-KB size control at the matching scale). Raw
+proof and statement counts clear the bar only on T0 > T3 (0.676 / 0.678) and sit within 0.03 of the
+size control there (0.784); proofs per manuscript clears T0 > T2 (0.697) and T0 > T3 (0.782) and is
+size-explained on both (control 0.691 / 0.784); the two genuine density measures separate nothing —
+0.491 / 0.456 / 0.466 per statement and 0.503 / 0.453 / 0.457 per KB, the proof-to-statement ratio
+being ≈0.97 corpus-wide, tier-independent. No claim shape clears the bar; the largest effects are the
+n=5 and n=4 groups. The strongest result in the measurement is **inverse**: `counterex_broad` families
+have markedly *fewer* proofs per manuscript (0.356, p 1.3e-04). Direction runs opposite the naive
+reading — the least-formalized tier (T0) carries the most proofs per manuscript because its
+manuscripts are the physically largest (median 168.9 KB vs 86.0 in T3). The null, the pre-registered
+rule, and what was not checked are in **`notes/proof-density.md`**;
+`notes/scripts/measure_proof_density.py` re-measures it (report-only, writes nothing; gates 0
+problems, statistic self-test 5/5, injected mutants caught 8/8).
 
 **`notes/conjecture-standing.tsv` records a prior, not a fact.** The 139 families flagged by both
 `resolves_named` and the `resolution` shape each get a row: the conjecture as the abstract names it,
