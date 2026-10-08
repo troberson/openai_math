@@ -8,20 +8,25 @@ notes/index/
 # so none of it is configurable. Format only the four pages no checker parses, listed below.
 # notes/scripts/README.md is excluded for the same reason: its checker's needles match unpadded
 # table cells and `**N**` counts verbatim, and its mutant set asserts those needles fire.
+# upstream_history/ pages carry the same two byte-forms: `*"…"` quotations pinned to `path:line`
+# anchors, and unpadded cells in their change tables.
 notes/*.md
 notes/scripts/**/*.md
 notes/summaries/**/*.md
+upstream_history/*.md
 !notes/conjecture-standing.md
 !notes/links.md
 !notes/proof-density.md
 !notes/summaries-workflow.md
 
 # Release mirror - this fork mirrors the release byte-for-byte.
+# history.md is the release's own changelog, added by upstream 3014888.
 /preprints/
 /lean/
 /reasoning_traces/
 /README.md
 /CONTENTS.md
+/history.md
 /overview.tex
 /overview.pdf
 

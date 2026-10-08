@@ -11,7 +11,7 @@ is per file, and the checker exits 1 on a file no rule owns.
 The writer set is derived from the scripts' own source, not from this page: a script is a writer when
 a path constant rooted at `notes/` appears on the left of `.open(..., "w")` or `.write_text(...)`, plus
 the tree case — a `notes/index` constant reached through the module's own `write()` helper. That rule
-finds **7** writers over **38** scripts.
+finds **7** writers over **39** scripts.
 
 ### Writers
 
@@ -38,7 +38,7 @@ rows in six artifacts.
 
 ### Report-only
 
-The other **31** scripts write nothing. **14** of them print the report a page's counts come from:
+The other **32** scripts write nothing. **14** of them print the report a page's counts come from:
 
 | Script | Report feeds |
 |---|---|
@@ -63,7 +63,7 @@ page's text.
 
 ### Checkers
 
-The remaining **17** scripts verify a page or a table. Each exits non-zero when what it checks has
+The remaining **18** scripts verify a page or a table. Each exits non-zero when what it checks has
 drifted; each takes `--mutant`, which injects faults and asserts they are caught.
 
 | Checker | Checks |
@@ -84,10 +84,11 @@ drifted; each takes `--mutant`, which injects faults and asserts they are caught
 | `verify_subfindings.py` | `notes/subfindings.tsv` |
 | `verify_summaries.py` | `notes/summaries/` |
 | `verify_t0_chains.py` | `notes/t0-chains.md` |
+| `verify_upstream_history.py` | `upstream_history/` — the three pages, outside `notes/` |
 | `verify_verification_dirs.py` | `notes/verification-dirs.md` |
 
 `verify_script_ownership.py` — this page's own checker — is not in the table: a checker cannot list
-itself as its input. It is the 18th checker and the 39th script the run counts.
+itself as its input. It is the 19th checker and the 40th script the run counts.
 
 ## The file census
 
@@ -136,14 +137,16 @@ excludes the checker-verified pages, allowing formatting only on the pages no ch
 
 ## Naming coverage
 
-`notes/README.md`'s command block named **34** of the 38 scripts before this pass. Four were named
-nowhere in the repo — not in `notes/README.md` and not in `AGENTS.md`: `extract_citations.py`,
-`verify_citations.py`, `verify_findings.py`, `verify_named_conjectures.py`. They are the tooling behind
+`notes/README.md`'s command block named **38** of the 39 scripts before this pass. One is named
+nowhere in the repo at the pinned baseline: `verify_upstream_history.py`. They are the tooling behind
+`upstream_history/`, the pages that record each upstream merge, which sit outside `notes/` and so
+outside this page's census. All 39 are named here and in the command block. Four scripts were named
+nowhere when this page was written — `extract_citations.py`, `verify_citations.py`,
+`verify_findings.py` and `verify_named_conjectures.py` — and they are the tooling behind
 `notes/citations.md`, `notes/findings.md` and `notes/named-conjectures.md`, so three pages carried
-measurements whose generating command no document named. All 38 are named here and in the command
-block. "Before this pass" is pinned to the commit that created this page, read at its parent, not to
-`HEAD`: the moment this naming landed, a check keyed to `HEAD` would read the gap as empty and the
-sentence would stop being checkable.
+measurements whose generating command no document named. "Before this pass" is pinned to the commit
+that most recently touched this page, read at its parent, not to `HEAD`: the moment a naming lands, a
+check keyed to `HEAD` reads the gap as empty and the sentence stops being checkable.
 
 ## Not checked
 

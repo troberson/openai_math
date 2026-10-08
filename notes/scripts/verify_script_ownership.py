@@ -130,8 +130,8 @@ def check(text):
             f"writer split sentence does not read '**{len(derived)}** writers over "
             f"**{len(names)}** scripts'"
         )
-    if len(names) != 38:
-        p.append(f"scripts on disk (excluding {SELF}): {len(names)}, page says 38")
+    if len(names) != 39:
+        p.append(f"scripts on disk (excluding {SELF}): {len(names)}, page says 39")
     if len(derived) != 7:
         p.append(f"derived writers: {len(derived)}, page says 7")
 
@@ -144,8 +144,8 @@ def check(text):
         missing = sorted(set(non_writers) - set(listed))
         extra = sorted(set(listed) - set(non_writers))
         p.append(f"report-only+checkers != the {len(non_writers)} non-writers (missing {missing}, extra {extra})")
-    if len(ro) != 14 or len(ck) != 17:
-        p.append(f"report-only rows {len(ro)} (page says 14), checker rows {len(ck)} (page says 17)")
+    if len(ro) != 14 or len(ck) != 18:
+        p.append(f"report-only rows {len(ro)} (page says 14), checker rows {len(ck)} (page says 18)")
     if f"**{len(non_writers)}** scripts write nothing" not in text:
         p.append(f"report-only sentence does not read '**{len(non_writers)}** scripts write nothing'")
     if f"**{len(ro)}** of them" not in text:
@@ -282,7 +282,7 @@ def mutants():
         ("writer target altered", original.replace("| `build_catalog.py` | `notes/catalog.tsv` |", "| `build_catalog.py` | `notes/catalog-x.tsv` |"), "page says 'notes/catalog-x.tsv'"),
         ("writer row deleted", original.replace("| `extract_links.py` | `notes/links.tsv` | run twice, byte-identical | `notes/links.md` |\n", ""), "writer extract_links.py: page says None"),
         ("hand-authored TSV claimed as generated", original.replace("**6** generated, **2** hand-authored", "**7** generated, **1** hand-authored"), "tsv census cell"),
-        ("writer count altered", original.replace("**7** writers over **38** scripts", "**8** writers over **38** scripts"), "writer split sentence"),
+        ("writer count altered", original.replace("**7** writers over **39** scripts", "**8** writers over **39** scripts"), "writer split sentence"),
         ("index file count altered", original.replace("| `notes/index/` | **1,050** |", "| `notes/index/` | **1,049** |"), "census row notes/index/"),
         ("collision name altered", original.replace("**1** shared basename — `README.md`", "**2** shared basenames — `README.md` and `topics.tsv`"), "collision sentence"),
         ("checker name altered", original.replace("| `verify_sources.py` |", "| `verify_sources2.py` |"), "non-writers"),
