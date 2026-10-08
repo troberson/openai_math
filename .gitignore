@@ -5,6 +5,9 @@
 # Python bytecode from the notes scripts
 __pycache__/
 
+# Prettier install; the manifest above is tracked, the tree is not
+node_modules/
+
 # Beads / Dolt files (added by bd init)
 .dolt/
 *.db
