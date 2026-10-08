@@ -909,7 +909,7 @@ def main():
     L.append("- Link targets were checked for existence at render time, not for content: a link "
              "resolving to a file says the file is there, not that it says what the page claims. "
              "`notes/scripts/check_index_links.py` re-derives the check from disk over every "
-             "rendered page — 65690 links, 0 broken, 16818 of them resolving to a directory — "
+             "rendered page — 65699 links, 0 broken, 16818 of them resolving to a directory — "
              "and `notes/index-links.md` records what it checked and what it did not.")
     L.append("- Names are a keyword floor, not a census. The name-vs-word test is corpus-internal "
              "(mid-sentence capitalization counts measured in this corpus); no external name "

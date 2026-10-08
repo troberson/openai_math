@@ -1,4 +1,4 @@
-# Index link integrity — 65,690 links checked against the shipped files, 0 broken
+# Index link integrity — 65,699 links checked against the shipped files, 0 broken
 
 Built 2026-10-07 by `notes/scripts/check_index_links.py` (report-only: it writes nothing and
 exits non-zero if any link is broken). Every count below is from a fresh run of that script, of
@@ -7,8 +7,8 @@ exits non-zero if any link is broken). Every count below is from a fresh run of 
 `lake exe cache get`, or comparator run.
 
 **Headline, with the rule that yields it:** all 1,034 rendered index pages read from disk →
-65,690 markdown links extracted with a paren-balanced target scanner, each resolved against its
-page's directory → **0 broken**. Of those links, **16,818 resolve to a directory and 48,872 to a
+65,699 markdown links extracted with a paren-balanced target scanner, each resolved against its
+page's directory → **0 broken**. Of those links, **16,818 resolve to a directory and 48,881 to a
 file**. Every shipped-file category reconciles with a fresh `build_catalog.py` parse: 722
 manuscript PDFs, 722 manuscript dirs, 722 `build/` trees, 722 `README.md` stubs, 235 scope notes,
 405 comparator configs (JSON and Lean side by side), 180 Lean files named by
@@ -36,7 +36,7 @@ demonstrated rather than documented.
 
 ## A link to a directory is not a link to a file
 
-16,818 of the 65,690 links resolve to a directory. They are deliberate: the index links a
+16,818 of the 65,699 links resolve to a directory. They are deliberate: the index links a
 manuscript's LaTeX tree, a verification bundle, and a Lean module directory because those are
 trees, not documents, and the index's job is to get a reader to the tree. The report separates
 them per category and names them:
@@ -49,14 +49,14 @@ them per category and names them:
 | `verification-dir` | 60 | 30 | `preprints/<dir>/verification/` — certificate bundles |
 | `index-dir` | 1 | 1 | `notes/index/names/`, linked from the entry point |
 
-The remaining 48,872 links resolve to files. `verification-dir` counts 60 links over 30 dirs
+The remaining 48,881 links resolve to files. `verification-dir` counts 60 links over 30 dirs
 because each bundle is linked twice on family pages — once in the Manuscripts table, once in the
 verification section — and the registry appends one of the two; `lean-dir` counts 185 links over
 172 dirs because 11 dirs host more than one `main_results` file (max 3).
 
 ## Category table, reconciled with a fresh parse
 
-From `python3 notes/scripts/check_index_links.py` (1,034 pages, 65,690 links, 0 broken, 1.1 s):
+From `python3 notes/scripts/check_index_links.py` (1,034 pages, 65,699 links, 0 broken, 1.1 s):
 
 | Category | Links | Targets | file | dir | canonical |
 |---|---|---|---|---|---|
@@ -67,7 +67,7 @@ From `python3 notes/scripts/check_index_links.py` (1,034 pages, 65,690 links, 0 
 | `latex-source` | 722 | 722 | 722 | 0 | — |
 | `manuscript-readme` | 722 | 722 | 722 | 0 | 722 = canonical |
 | `config-json` | 676 | 405 | 676 | 0 | 405 = canonical |
-| `notes-doc` | 569 | 17 | 569 | 0 | — |
+| `notes-doc` | 578 | 26 | 578 | 0 | — |
 | `index-table` | 554 | 1 | 554 | 0 | — |
 | `config-lean` | 405 | 405 | 405 | 0 | 405 = canonical |
 | `lean-file` | 271 | 180 | 271 | 0 | 180 = canonical |
@@ -83,8 +83,8 @@ canonical column are index-internal. `index-page` 521 targets = 372 family pages
 pages + 17 discipline pages + 40 name pages, and the 40 name pages are linked only from the entry
 point — family pages link no name page, the direction recorded in `notes/names.md`.
 `latex-source` 722 = the `main_tex` of each of the 722 manuscripts, all 722 present in
-`notes/sources.tsv`. `notes-doc` 17 targets = `notes/names.md` (linked by all 552 name pages),
-the 12 `notes/summaries/` pages family pages link, and the 5 notes docs the entry point links
+`notes/sources.tsv`. `notes-doc` 26 targets = `notes/names.md` (linked by all 552 name pages),
+the 21 `notes/summaries/` pages family pages link, and the 5 notes docs the entry point links
 (`index-design.md`, `names.md`, `topics.md`, `topics.tsv`, `scripts/measure_names.py`).
 `index-table` 1 target = `notes/index/names.tsv`.
 
@@ -95,8 +95,8 @@ unlinked. `CONTENTS.md`'s 723 `.pdf` links are the 722 manuscript PDFs plus `ove
 
 ## Coverage: the disk scan is a superset of the render-time check
 
-`build_index.py` checks its own links as it renders and reports **47,354 links checked, 0
-broken** (fresh run). The disk scan finds **65,690 links, 0 broken**. The 18,336-link difference
+`build_index.py` checks its own links as it renders and reports **47,363 links checked, 0
+broken** (fresh run). The disk scan finds **65,699 links, 0 broken**. The 18,336-link difference
 is not a discrepancy about existence — both report zero — it is the render-time registry
 under-covering the pages it writes. The registry appends one href per registered relationship
 (an edge, a canonical file); the rendered bodies emit the same target again in other tables, and
@@ -106,7 +106,7 @@ they carry navigation links the registry never appends. Attributed two ways, eac
 | Page group | Scanned | Registered | Gap |
 |---|---|---|---|
 | name pages | 57,553 | 40,311 | 17,242 |
-| family pages | 6,637 | 5,700 | 937 |
+| family pages | 6,646 | 5,709 | 937 |
 | topic pages | 971 | 971 | 0 |
 | discipline pages | 372 | 372 | 0 |
 | entry point (`notes/index/README.md`) | 157 | 0 | 157 |
@@ -115,7 +115,7 @@ they carry navigation links the registry never appends. Attributed two ways, eac
 |---|---|---|---|---|
 | `index-page` | 28,858 | 12,571 | 16,287 | name pages link a family page in four tables (Families 9,883, the Manuscripts table's Family column 15,128, declaration and environment-title rows 1,010); the registry appends only the Families-table links, which are the 9,883 `family-name` edges. Family pages' 1,345 discipline/topic/companion links are all registered. |
 | `manuscript-dir` | 15,850 | 15,128 | 722 | the Manuscripts table on each family page links the manuscript directory; the registry registers the PDF, `build/`, `README.md`, and `main_tex` for that manuscript, not the directory row. |
-| `notes-doc` | 569 | 12 | 557 | each of the 552 name pages links `notes/names.md`; the entry point links 5 notes docs. |
+| `notes-doc` | 578 | 21 | 557 | each of the 552 name pages links `notes/names.md`; the entry point links 5 notes docs. |
 | `index-table` | 554 | 0 | 554 | each of the 552 name pages links `notes/index/names.tsv`; the entry point links 2 tables. |
 | `config-json` | 676 | 491 | 185 | family pages link a config in the Configs table (405) and again in the `main_results` table (185); the registry appends the 405. |
 | `verification-dir` | 60 | 30 | 30 | each bundle is linked twice in the bodies, registered once. |

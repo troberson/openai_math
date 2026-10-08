@@ -13,7 +13,7 @@
 | Claim shapes | resolution, undecidability, uniform |
 | Topics | [algorithms](../topics/algorithms.md) · [diophantine-equations](../topics/diophantine-equations.md) · [hilbert-problems](../topics/hilbert-problems.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [004-hilberts-tenth-problem-over-q.md](../../../notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md) |
 
 ## Manuscripts
 

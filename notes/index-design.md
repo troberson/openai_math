@@ -67,7 +67,7 @@ The five tracked TSVs, measured on disk:
 
 Those five named files are the ledger set the **296,283** B figure covers. `notes/sources.tsv`
 (**222551** B over **722** rows) and `notes/topics.tsv` (**22629** B over **92** rows) are tracked
-TSVs too, and every `notes/*.tsv` together totals **541463** B — quote the set with the figure, since
+TSVs too, and every `notes/*.tsv` together totals **630987** B — quote the set with the figure, since
 the two sums answer different questions.
 
 ## 2. Location — `notes/index/`
@@ -200,11 +200,11 @@ manuscript-level flag.
 ## Not checked
 
 - The **150** B/row byte figures are projections from measured TSVs, not measurements of index files.
-  The index itself is rendered — **1,034** pages, **16** tables, `links checked 47354 broken 0`, and a
+  The index itself is rendered — **1,034** pages, **16** tables, `links checked 47363 broken 0`, and a
   two-run determinism check in which all **1,050** generated files were byte-identical with an
   identical report — but no page was read for prose quality, and the byte cost of the rendered tree
   was not measured. The render-time figure is the registry's own subset: the disk check
-  (`notes/scripts/check_index_links.py`) covers **65,690** links over the same 1,034 pages, also with
+  (`notes/scripts/check_index_links.py`) covers **65,699** links over the same 1,034 pages, also with
   **0** broken, and **16,818** of them resolve to a directory. `notes/index-links.md` carries that
   measurement; the prose-quality and byte-cost exclusions above are unchanged by it.
 - The **12,928** bib entries are counted by `^\s*@\w+\s*{`; commented-out entries are included and
@@ -218,7 +218,7 @@ manuscript-level flag.
 - The bead's sizing estimate (~2,700 nodes, ~17,000 edges) is superseded by the measured **2,529**
   and **16,307**. That population predates the name layer: `measure_index_sizes.py` does not count the
   **5,859** name nodes or the **9,883** family-name edges, so quote it as the pre-name sizing estimate
-  and the rendered report (**1,034** pages, **16** tables, **47,354** links) as the shipped state.
+  and the rendered report (**1,034** pages, **16** tables, **47,363** links) as the shipped state.
 - Name pages are keyed by folded name, so a hyphenated double surname is one node
   (`baumslag-solitar`-style forms stay as single keys) and no name-to-name edge is built. The
   prose (`b`) and bib-author (`B`) columns are citations; the page states that, and no per-occurrence

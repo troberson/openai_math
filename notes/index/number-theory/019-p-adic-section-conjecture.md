@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [curves](../topics/curves.md) · [diophantine-equations](../topics/diophantine-equations.md) · [arithmetic-geometry](../topics/arithmetic-geometry.md) · [elliptic-curves](../topics/elliptic-curves.md) · [galois-theory](../topics/galois-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [019-p-adic-section-conjecture.md](../../../notes/summaries/number-theory/019-p-adic-section-conjecture.md) |
 
 ## Manuscripts
 

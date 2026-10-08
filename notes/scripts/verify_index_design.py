@@ -284,11 +284,11 @@ MUTANTS = {
     "rendered row count altered": lambda t: t.replace("`family-topic.tsv` | **971**",
                                                        "`family-topic.tsv` | **970**", 1),
     "ledger set widened to all TSVs": lambda t: t.replace("the whole ledger set is **296,283** B",
-                                                          "the whole ledger set is **541,463** B",
+                                                          "the whole ledger set is **630,987** B",
                                                           1),
-    "all-TSV total altered": lambda t: t.replace("together totals **541463** B",
+    "all-TSV total altered": lambda t: t.replace("together totals **630987** B",
                                                  "together totals **296283** B", 1),
-    "disk link count altered": lambda t: t.replace("covers **65,690** links",
+    "disk link count altered": lambda t: t.replace("covers **65,699** links",
                                                    "covers **65,700** links", 1),
 }
 

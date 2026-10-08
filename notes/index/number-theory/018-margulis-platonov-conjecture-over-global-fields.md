@@ -13,7 +13,7 @@
 | Claim shapes | resolution, classification |
 | Topics | [convex-geometry](../topics/convex-geometry.md) · [arithmetic-geometry](../topics/arithmetic-geometry.md) · [number-fields](../topics/number-fields.md) · [lie-theory](../topics/lie-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [018-margulis-platonov-conjecture-over-global-fields.md](../../../notes/summaries/number-theory/018-margulis-platonov-conjecture-over-global-fields.md) |
 
 ## Manuscripts
 

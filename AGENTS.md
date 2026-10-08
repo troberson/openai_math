@@ -64,7 +64,7 @@ lives in this file and nowhere else.
   that no `main_results` entry names renders as *absent*, never as unformalized. Page slugs are
   mechanical (NFKD, strip combining marks, drop `$`/apostrophes/`\command`, lowercase, non-alphanumerics
   → `-`, leading `the-` dropped): 0 collisions, max length 93. Index↔summary pairing is by family
-  number only — 12 of 372 families have a summary page.
+  number only — 21 of 372 families have a summary page.
 - Names are a measured layer, not a curated one: `python3 notes/scripts/measure_names.py` (report-only,
   ~42 s; `--json` dumps the rows) reads six layers — family titles, manuscript directory names, the
   optional titles of 15,755 statement environments, `main_results` declaration names, capitalized prose
@@ -339,7 +339,7 @@ lives in this file and nowhere else.
 - Run `python3 notes/scripts/measure_index_sizes.py` twice and diff: the report must be identical. It
   writes nothing, and every count in `notes/index-design.md` comes from it. It prints two byte sums
   that are not interchangeable — `ledger set bytes (5 named TSVs)` **296283** and
-  `all notes/*.tsv bytes` **541463** — and an INDEX section whose table row counts are read from the
+  `all notes/*.tsv bytes` **630987** — and an INDEX section whose table row counts are read from the
   generated files under `notes/index/`, not derived from the upstream counts they were built from.
 - Check `notes/index-design.md` with `python3 notes/scripts/verify_index_design.py --mutant` before
   quoting the schema — it resolves every backticked `path:line` anchor of any extension (a mistyped
@@ -446,13 +446,13 @@ lives in this file and nowhere else.
   `\keywords` directories.
 - Run `python3 notes/scripts/build_index.py` twice and diff: `notes/index/` must be byte-identical and
   the report identical. Its report reconciles 372 family pages + 17 discipline pages + 92 topic pages
-  + 552 name pages + 1 entry point (1,034 pages, 16 tables), 47354 relative links with 0 broken,
+  + 552 name pages + 1 entry point (1,034 pages, 16 tables), 47363 relative links with 0 broken,
   canonical == rendered on families 372 / manuscripts 722 / formalized 162 / scope notes 235 /
   challenges 405 / traces 10 /
   verification dirs 30, `vs ledger` diffs of 0 on tier, `mainres`, `chal`, `paps` and `paps_form`,
   ledger↔overview family sets equal with 372 pages and 0 pages absent on disk, 11 trace files over 10
   attributed stems, 396 citation edges, 185 family-lean rows over 127 families, 405 configs (json 405,
-  lean 405, 178 with a declaration, 0 linked by more than one family), 554 module dirs, 12 of 372
+  lean 405, 178 with a declaration, 0 linked by more than one family), 554 module dirs, 21 of 372
   summary pairings, 0 page collisions, manuscript links resolving for 722 of 722 on main file, `build/`
   and `README.md`, `drift vs notes/topics.tsv 0`, and the names line — 5,859 measured, 552 subject
   (552 pages), 5,307 citation-only, 9,883 edges over 372 families, 0 names with no family, 67
@@ -461,10 +461,10 @@ lives in this file and nowhere else.
   rather than editing a page.
 - Check the rendered index against the shipped files with
   `python3 notes/scripts/check_index_links.py` — report-only, ~1 s, exits non-zero on a broken link.
-  It re-derives the check from disk: 1,034 pages, 65,690 links, 0 broken, of which 16,818 resolve to a
+  It re-derives the check from disk: 1,034 pages, 65,699 links, 0 broken, of which 16,818 resolve to a
   directory (`manuscript-dir`, `latex-build-tree`, `lean-dir`, `verification-dir`, `index-dir`) and
-  48,872 to a file, every shipped-file category equal to a fresh `build_catalog.py` count. The render
-  report's 47,354 links are the registry's subset; the 18,336-link difference is registry
+  48,881 to a file, every shipped-file category equal to a fresh `build_catalog.py` count. The render
+  report's 47,363 links are the registry's subset; the 18,336-link difference is registry
   under-coverage, not a disagreement about existence — both report 0 broken. Link scanning must be
   paren-balanced: `[^)]*` truncates
   `preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/paper.pdf` and invents a broken

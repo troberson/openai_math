@@ -32,7 +32,7 @@ and quote a number with the rule that yields it.
 | bibliography entry→keywords field | **0** | Negative: bibliographies carry no topic vocabulary |
 | manuscript→`\keywords` macro | **12** of 722 | 98% of manuscripts define no keyword list |
 | manuscript→verification bundle | **30** | A certificate bundle, not a theorem check |
-| family→notes summary page | **12** | Our artifact, not part of the release |
+| family→notes summary page | **21** | Our artifact, not part of the release |
 
 ## 415 vs 405: link occurrences, not missing files
 

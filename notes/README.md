@@ -389,14 +389,14 @@ and `main_results:` (config/declaration/file triples) as two flat lists with not
 the family→Lean reach the index shows is *derived* — family → config (the scope note's comparator
 links) → declaration → file — 185 declarations over 178 configs reaching **127 of 372** families, and
 formalization stays a per-manuscript flag. The 108 T2 families, whose scope notes link configs that no
-`main_results` entry names, render as *absent*, never as unformalized. Fresh report: **47354** relative
+`main_results` entry names, render as *absent*, never as unformalized. Fresh report: **47363** relative
 links with **0** broken — that is the render-time registry, and `notes/scripts/check_index_links.py`
-re-derives the check from disk over every rendered page: **65,690** links, **0** broken, **16,818** of
-them resolving to a directory and 48,872 to a file, the 18,336-link difference being registry
+re-derives the check from disk over every rendered page: **65,699** links, **0** broken, **16,818** of
+them resolving to a directory and 48,881 to a file, the 18,336-link difference being registry
 under-coverage rather than a disagreement about existence (`notes/index-links.md`); canonical == rendered on all seven coverage counts (372 / 722 / 162 / 235 /
 405 / 10 / 30); `vs ledger` diffs of 0 on tier, `mainres`, `chal`, `paps`, `paps_form`; ledger and
 overview family sets equal with **372 pages and 0 absent on disk**; 11 trace files over 10 attributed
-stems; **0** configs linked by more than one family; **0** page collisions (max slug length 93); 12 of
+stems; **0** configs linked by more than one family; **0** page collisions (max slug length 93); 21 of
 372 summary pairings; manuscript links resolving 722 of 722 for main file, `build/` and `README.md`;
 **drift vs `notes/topics.tsv` 0**; names 5,859 measured / 552 subject pages / 5,307 citation-only /
 9,883 edges over 372 families / **0** names with no family / **10 of 10** trace families covered by a
@@ -449,7 +449,7 @@ no name-to-name edge is built.
 | `companions` | `result NNN` cross-refs in the abstract | |
 | `companion_word` | abstract says "companion" | 10 families |
 | `versions` | manuscripts sharing a date-stripped dir slug | 2 families, 4 dated re-issues (003, 056) |
-| `summary` | a page exists at `notes/summaries/<discipline>/<NNN>-*.md` | Filesystem fact, not a derived claim; 12 of 372 families, 31 manuscripts behind them |
+| `summary` | a page exists at `notes/summaries/<discipline>/<NNN>-*.md` | Filesystem fact, not a derived claim; 21 of 372 families, 60 manuscripts behind them |
 
 ## Coverage tracks exposure, not importance
 

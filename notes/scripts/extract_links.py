@@ -509,13 +509,13 @@ def main():
         "A certificate bundle the manuscript ships. It is not a theorem check, and "
         "family 318's SUPPORT-COVERAGE.md names artifacts that do not exist on disk.",
     )
-    summary_fams = sum(1 for r in rows if r["summary"].strip() == "1")
+    summary_rows = [r for r in rows if r["summary"].strip() == "1"]
     row(
         "family->notes summary page",
         "notes/summaries/<discipline>/<NNN>-*.md",
         "file exists",
-        summary_fams,
-        "of 372 families; 31 manuscripts behind them",
+        len(summary_rows),
+        f"of 372 families; {sum(int(r['paps']) for r in summary_rows)} manuscripts behind them",
         "Our own reading artifact. It is not part of the release and carries no "
         "authority about the result.",
     )

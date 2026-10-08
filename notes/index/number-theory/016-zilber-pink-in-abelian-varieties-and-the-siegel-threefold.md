@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [curves](../topics/curves.md) · [abelian-varieties](../topics/abelian-varieties.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [016-zilber-pink-in-abelian-varieties-and-the-siegel-threefold.md](../../../notes/summaries/number-theory/016-zilber-pink-in-abelian-varieties-and-the-siegel-threefold.md) |
 
 ## Manuscripts
 

@@ -13,7 +13,7 @@
 | Claim shapes | density |
 | Topics | [curves](../topics/curves.md) · [analytic-number-theory](../topics/analytic-number-theory.md) · [elliptic-curves](../topics/elliptic-curves.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [006-goldfelds-conjecture.md](../../../notes/summaries/number-theory/006-goldfelds-conjecture.md) |
 
 ## Manuscripts
 

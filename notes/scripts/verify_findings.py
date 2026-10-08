@@ -77,7 +77,7 @@ RECORD = {
     "S24": ["92", "971"],
     "S25": ["111", "95", "64", "47", "18", "51", "49", "206", "40"],
     "S26": ["727", "722", "718", "20,449", "21,402", "21,317", "717", "5"],
-    "S27": ["1,034", "65,690"],
+    "S27": ["1,034", "65,699"],
     "S28": ["160,187", "734", "v4.34.1", "1.3"],
     "S29": ["276,599", "56,196", "277,501", "56,715"],
     "S31": ["139", "60", "64", "11", "42", "84", "13", "145",
@@ -102,7 +102,7 @@ REPORTS = [
     ("extract_citations.py",
      "manuscripts with no .bib: 227, of which 227 carry an inline thebibliography and 0 carry neither",
      "blind to **227** of 722 manuscripts"),
-    ("check_index_links.py", "links extracted        65690", "**65,690** links with **0** broken"),
+    ("check_index_links.py", "links extracted        65699", "**65,699** links with **0** broken"),
 ]
 
 
@@ -197,6 +197,12 @@ def measured():
     bundles = sorted(d for d in (ROOT / "preprints").glob("*/verification"))
     topic_edges = tsv("notes/index/edges/family-topic.tsv")
 
+    # The disk link scan is the source of the page's index-link figure, so it is measured here
+    # rather than written as a literal the page has to stay in step with by hand.
+    ci = run("check_index_links.py")
+    disk_links = int(re.search(r"links extracted\s+(\d+)", ci).group(1))
+    disk_broken = int(re.search(r"broken links\s+(\d+)", ci).group(1))
+
     return {
         "fams": fams,
         "cols": len(tsv("notes/catalog.tsv")[0]),
@@ -262,6 +268,8 @@ def measured():
         "vcov": vcov,
         "trace_files": len([p for p in TRACES.iterdir() if p.is_file()]),
         "index_pages": len(list(INDEX.rglob("*.md"))),
+        "disk_links": disk_links,
+        "disk_broken": disk_broken,
     }
 
 
@@ -309,7 +317,8 @@ def needles(m):
         f"carries **{m['standing']}** rows",
         (f"**{m['pins']}** declared library pins, **{m['patches']}** patches over "
          f"**{m['patch_lines']:,}** lines"),
-        f"**{m['index_pages']:,}** pages carry **65,690** links with **0** broken",
+        f"**{m['index_pages']:,}** pages carry **{m['disk_links']:,}** links with "
+        f"**{m['disk_broken']}** broken",
         f"the 10-gap against **{m['scope_configs']}**",
         (f"**{m['bib_edges']}** manuscript→manuscript edges over **{m['bib_fams']}** of "
          f"{m['fams']} families, **105** crossing"),
