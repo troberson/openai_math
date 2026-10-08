@@ -322,12 +322,22 @@ boundary lands on a batch you did not expect to publish.
 | Tier | Families | Manuscripts | Definition |
 |---|---|---|---|
 | A | 21 | 60 | 10 trace families, 9 headline T0 from `t0-triage.md`, plus 001 and 032 (done) |
-| B | 80 | 120 | remaining T0 families with `resolves_named = 1` |
-| C | 271 | 542 | everything else, split into 132 families / 273 manuscripts (five largest disciplines: algebraic and complex geometry, number theory, combinatorics, topology, differential geometry) and 139 families / 269 manuscripts (the remaining twelve) |
+| B | 83 | 124 | remaining T0 families with `resolves_named = 1` (80 / 120 under the abstract-only scope) |
+| C | 268 | 538 | everything else, split into 131 families / 272 manuscripts (combinatorics, differential geometry, number theory, probability and statistical mechanics, theoretical computer science) and 137 families / 266 manuscripts (the remaining twelve) |
 
 Trace families: 007, 017, 087, 102, 159, 197, 221, 271, 287, 362 (22 manuscripts).
 Headline T0: 002, 004, 006, 010, 011, 014, 016, 018, 019 (29 manuscripts).
-T0 is 137 families and 255 manuscripts, so tier C is 271 families: 137 − 11 + 127 + 108 − 10.
+T0 is 137 families and 255 manuscripts, so tier C is 268 families: 137 − 11 (tier-A T0) − 83 (tier B)
++ 127 (T3) + 108 (T2) − 10 (trace families, all of them T2 or T3).
+
+Tier B moved when `resolves_named` took the overview title into its input: the three T0 additions are
+022 (number theory), 044 (algebraic and complex geometry) and 209 (algebra), which left tier C, so B is
+83 / 124 and C is 268 / 538. The five-discipline split is named by the set that reproduces the
+manuscript counts, not by size rank: the five largest C disciplines **by families** are theoretical
+computer science 37, combinatorics 33, probability 27, mathematical physics 21, differential geometry
+20, and that set is 138 families, not 131. The named five are the grouping the plan reads in, and the
+list this page carried before (algebraic and complex geometry, number theory, combinatorics, topology,
+differential geometry) reproduces neither the old 132 / 273 nor the new 131 / 272 — it is 89 / 156.
 
 ## What not to re-derive
 

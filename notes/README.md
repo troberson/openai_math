@@ -46,7 +46,7 @@ python3 notes/scripts/verify_counterexample_crosscheck.py --mutant  # checks not
 python3 notes/scripts/extract_t0_chains.py  # the 2 release-recorded cross-family edges, the 311 literature chain, and the 28 two-manuscript second-pass T0 families; report-only
 python3 notes/scripts/verify_t0_chains.py --mutant  # checks notes/t0-chains.md: anchors, fenced blocks, quotations, two tables, 28 blocks with 56 titles and paths, all 12 counts and 4 named lists
 python3 notes/scripts/extract_named_results.py  # the headline-statement inventory the manuscript sources carry, cross-tabbed against resolves_named; report-only, writes nothing
-python3 notes/scripts/verify_named_results.py --mutant  # checks notes/named-results.md: 60 anchors, 15 bare overview anchors, the 17-row target table, 60 quotations, all 64 counts
+python3 notes/scripts/verify_named_results.py --mutant  # checks notes/named-results.md: 61 anchors, 15 bare overview anchors, the 17-row target table, 61 quotations, all 66 counts
 ```
 
 `notes/summaries-workflow.md` is the resume protocol for the summary-page batches: per-page steps,
@@ -96,7 +96,7 @@ T2 is not a failure — those challenges are companion statements, still linked 
 **All 137 T0 families have zero formalized manuscripts**, so T0 is triaged by claim shape: see
 `notes/t0-triage.md`, where two reading passes now cover all 137 families at abstract level
 (44 families / 134 manuscripts, then 93 families / 121 manuscripts). `resolves_named` is a second
-discriminator there — 88 of the 137 are flagged, including 12 of the 20 families with no shape tag at
+discriminator there — 91 of the 137 are flagged, including 12 of the 20 families with no shape tag at
 all.
 
 ## Claim shapes (`shapes` column)
@@ -181,28 +181,31 @@ layer measuring **16** of 28 citing their sibling (**9** mutual, **7** one-way, 
 **3** of those shipping no `.bib` file at all) — are in **`notes/t0-chains.md`**.
 
 **`resolves_named` is a column, not a shape.** The broad named-target rule (a target noun
-*conjecture/question/problem* plus a resolution verb) flags 233 families, so it is carried in its own
+*conjecture/question/problem* plus a resolution verb, read over the overview **title and abstract**
+lowered together) flags 248 families, so it is carried in its own
 column and the `resolution` shape stays at 144. Widening the shape instead would move families out of
 the counterexample/bound/classification/undecidability/density buckets in `triage_t0.py`, which
 assigns by first match. The two signals are complementary, not nested: 139 families are flagged by
-both, 94 only by the column, and 5 only by the tag (003, 010, 082, 103, 261 — targets named as a
-*hypothesis/case/estimate/contrast*), for a union of 238. Both are floors. Method, the 94-family
-reading verdict, and the decision are in **`notes/resolution-tag.md`**.
+both, 109 only by the column, and 5 only by the tag (003, 010, 082, 103, 261 — targets named as a
+*hypothesis/case/estimate/contrast*), for a union of 253. Both are floors. Method, the 94-family
+reading verdict (the column-only set as it stood under the abstract-only scope; the set is 109 now
+and the extra 15 are corroborated at the manuscript-abstract layer, not read), and the decision are in
+**`notes/resolution-tag.md`**.
 
 **The manuscript statements are not where the release names its conjectures.** That is the finding of
 **`notes/named-results.md`**, the check that turns the column from a title heuristic into an
 evidence-backed one. Over the 7,401 manuscript `.tex` files the headline statements
 (`theorem`/`maintheorem`/`thm`) read **2,270** begins, **1,498** of them titled, and **17** of those
-titles name a target noun — 17 statements over 17 families, 15 with `rn = 1`. **Zero of the 17 pair a
-target noun with a resolve verb in the same title**, and **71 of the 233** flagged families ship no
+titles name a target noun — 17 statements over 17 families, 16 with `rn = 1`. **Zero of the 17 pair a
+target noun with a resolve verb in the same title**, and **76 of the 248** flagged families ship no
 titled headline theorem at all, so statement captions carry almost none of the signal. Naming sits in
 the manuscript's **name** (76 families), its **own abstract** (275), its **prose** (337 under a
-±80-character window), and in the overview **title** — which supplies **14** families the
-abstract-only rule misses. The documented candidate is the title ∪ abstract **union at 247, removals
-0**; a strict title+abstract *replacement* reads 149 (98 removals) and is rejected. **The column is
-unchanged at 233** — the scope swap is tracked as a bd issue because 25 doc matches quote the current
-figure. `notes/scripts/extract_named_results.py` prints every count (report-only) and
-`notes/scripts/verify_named_results.py --mutant` checks the page (12/12 mutants caught).
+±80-character window), and in the overview **title** — which supplies **15** families the
+abstract-only rule misses. **The swap is applied: the column is the title ∪ abstract union at 248,
+removals 0** (the abstract-only scope it replaced read 233); a strict title+abstract *replacement*
+reads 149 (99 removals) and is rejected. `notes/scripts/extract_named_results.py` prints every count
+(report-only) and `notes/scripts/verify_named_results.py --mutant` checks the page (12/12 mutants
+caught).
 
 **Proof density was tested as a signal and rejected — no column.** `notes/sources.tsv` counts
 **20,449** `\begin{proof}` over 722 manuscripts, so proofs-per-family is one command away, and it was
@@ -441,7 +444,7 @@ no name-to-name edge is built.
 | `trace` | `README.md` reasoning-trace table | 10 families; read from the release table, not guessed from filenames |
 | `shapes` | abstract keyword match | Multi-label |
 | `conditional` | 1 if `conditional` ∈ `shapes` | |
-| `resolves_named` | abstract names a conjecture/question/problem **and** uses a resolution verb | 233 families; separate from the `resolution` shape (144) so the T0 buckets stay put |
+| `resolves_named` | title **or** abstract (lowered together) names a conjecture/question/problem **and** uses a resolution verb | 248 families, the abstract-only scope having read 233; separate from the `resolution` shape (144) so the T0 buckets stay put |
 | `counterex_broad` | title **or** abstract matches the counterexample phrase rule | 74 families; a strict superset of the `counterexample` shape (44), kept out of `shapes` so the T0 buckets stay put |
 | `companions` | `result NNN` cross-refs in the abstract | |
 | `companion_word` | abstract says "companion" | 10 families |

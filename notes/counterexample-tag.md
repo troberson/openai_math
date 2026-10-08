@@ -178,7 +178,8 @@ It is a narrower, differently-shaped signal; not adopted.
 
 ### What the column adds
 
-25 of the 30 flag-only families also carry `resolves_named = 1`, and 41 manuscripts sit behind them.
+27 of the 30 flag-only families also carry `resolves_named = 1` — 25 under the abstract-only scope the
+`resolves_named` swap replaced — and 37 of the 41 manuscripts behind them sit in those 27.
 By tier the flag-only set is T0 6, T2 9, T3 15; by bucket N 14, B 10, R 2, K 2, O 2. Inside T0 the
 column flags 22 of 137 families, of which 16 are in bucket C and 6 are not — the six are exactly the
 families the widening would have moved, which is the argument for the column: the signal is available

@@ -7,16 +7,18 @@ standing. Nothing in that column was read from this repo, and nothing in it has 
 the literature. The repo supplies only the claim (`release_claim`) and the citation
 (`abstract_line`). No `lake`, `lean`, or comparator run.
 
-## The selection: 139, not 233
+## The selection: 139, not 248
 
-`resolves_named = 1` marks **233** families (T0 88, T2 57, T3 88). Intersecting it with the
-`resolution` shape tag leaves **139** (T0 51, T2 36, T3 52), and the table carries exactly those 139.
+`resolves_named = 1` marks **248** families (T0 91, T2 62, T3 95); the abstract-only scope it
+replaced marked 233 (T0 88, T2 57, T3 88). Intersecting it with the
+`resolution` shape tag leaves **139** (T0 51, T2 36, T3 52), and the table carries exactly those 139 —
+none of the 15 title-scope additions carries the `resolution` shape, so the intersection did not move.
 
 Recorded ambiguity, with the provisional choice and its revisit condition: `math-el4.6`'s spec quotes
 the 233-family tier split (88/57/88) while naming 139 rows. Provisional choice: build the
 intersection, because the intersection is the set whose abstracts both name a target and claim a
 resolution — a "standing" row for a family whose headline is a bound, not a resolution, would compare
-the prior against a claim the abstract does not make. Revisit condition: if the 94
+the prior against a claim the abstract does not make. Revisit condition: if the 109
 `resolves_named`-only families are wanted, the table extends by adding rows whose `release_claim`
 comes from a bound/classification headline; that is a second table with a different `gap` semantics,
 not a widening of this one.

@@ -25,8 +25,8 @@ multi-label. Ordered by how cheaply the claim can be checked, not by importance.
 | N | 20 | 35 | no shape tag at all — title is the only signal |
 | **Total** | **137** | **255** | reconciles with the T0 row count |
 
-Buckets come from `shapes` alone. The ledger's `resolves_named` column (233 families repo-wide) is a
-second T0 discriminator: it flags **88 of these 137**, including 12 of the 20 in N — 019, 031, 043,
+Buckets come from `shapes` alone. The ledger's `resolves_named` column (248 families repo-wide) is a
+second T0 discriminator: it flags **91 of these 137**, including 12 of the 20 in N — 019, 031, 043,
 051, 060, 164, 195, 258, 306, 316, 338, 341, all named-conjecture families — so N is no longer
 title-only for half its families. Cross-tab and method: `notes/resolution-tag.md`.
 

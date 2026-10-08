@@ -42,8 +42,8 @@ lives in this file and nowhere else.
   resolved main file, section/proof/statement-environment counts, `.bib` count, `.tex` bytes) with
   `sources.md` beside it,
   `named-results.md` (the named-result inventory the manuscript **statements** carry — 17 target-named
-  headline statements over 17 families, the three-layer naming record, and the documented 233 → 247
-  `resolves_named` scope candidate) with `named-results.tsv` **absent** beside it — the page is
+  headline statements over 17 families, the three-layer naming record, and the applied 233 → 248
+  `resolves_named` scope swap) with `named-results.tsv` **absent** beside it — the page is
   report-fed, not table-fed,
   `summaries/<discipline>/<NNN>-<name>.md`, `notes/scripts/`.
 - `.beads/issues.jsonl` is the tracked issue store, in bd no-db mode; see the beads section below.
@@ -257,9 +257,11 @@ lives in this file and nowhere else.
   in statement captions, so `resolves_named` is evidence-backed by the record rather than by theorem
   text. Match `build_catalog.TARGET_NOUN` **case-insensitively** on directory names, theorem titles and
   overview titles: the ledger rule sees lowercase abstracts, and a case-sensitive match on those
-  capitalized surfaces undercounts. The documented scope candidate is a **union** (title ∪ abstract,
-  233 → 247, removals 0); a strict title+abstract *replacement* reads 149 (98 removals) — quote which
-  one you mean. Findings: `notes/named-results.md`.
+  capitalized surfaces undercounts. The applied scope is a **union** — title ∪ abstract, both lowered
+  together, 233 → 248 with removals 0; the 15 additions are 022 039 044 096 097 151 156 192 209 263
+  289 293 297 347 367. A strict title+abstract *replacement* reads 149 (99 removals) and a
+  case-sensitive raw-title read yields 147 (100 removals) — quote which scope you mean.
+  Findings: `notes/named-results.md`.
 - `notes/sources.tsv`'s `abstract` column is a per-directory **flag**, not an occurrence count: the
   corpus ships 725 `abstract` environments over 722 manuscript directories (057, 039 and 056 each ship
   two), and every one of the 722 directories has at least one.

@@ -31,6 +31,12 @@ Measured on all 372 abstracts: **233 families flagged, 94 of them untagged today
 +65%). By tier: T0 37, T3 36, T2 21. By discipline the flags spread over all 17 (max algebraic and
 complex geometry 16, group theory 9, differential geometry 9, combinatorics 8, topology 8).
 
+The column as applied reads the overview **title and abstract lowered together** and flags **248**
+(T0 91, T2 62, T3 95), so the column-only set is **109**, not 94. The 15 title-scope additions are
+corroborated at the manuscript-abstract layer in `notes/named-results.md`; they were **not read
+here**, so the precision figure below is measured on the 94 abstract-only flags and says nothing
+about the extra 15.
+
 ## Reading verdict on the 94 flags
 
 All 94 abstracts were read. **94 are resolutions in kind** — the abstract claims a named
@@ -162,7 +168,8 @@ genuine) and the same shape as `counterexample` (30 untagged flags, 30 genuine �
 ## What widening would change
 
 `shapes` is a pipe-joined multi-label column, so widening `resolution` changes: the shape table in
-`notes/README.md` (144 → 233); the T0 bucket counts in `notes/scripts/triage_t0.py`, which assign
+`notes/README.md` (144 → 248 under the applied scope, 144 → 233 under the abstract-only scope this
+file measured); the T0 bucket counts in `notes/scripts/triage_t0.py`, which assign
 buckets by **first match** in the order resolution, counterexample, bound, classification,
 undecidability, density, conditional, partial, uniform — 29 of the 94 flags are counterexample-form
 ("disproves X's conjecture"), and those families are already in the C bucket, so widening moves
@@ -186,14 +193,15 @@ RESOLVE_VERB = (r"\bprov(?:e|es|ed|ing)\b|\bdisprov|\brefut|\bresolv|\banswer|\b
 `\bprov(?:e|es|ed|ing)\b` needs both boundaries: without the leading one, "improved" matches through
 the "proved" inside it, which is the `bound` tag's own territory.
 
-Fresh generator report: **`resolves_named` 233 families, `resolution` tag 144, union 238.** By tier
-T3 88, T2 57, T1 0, T0 88. The column is **not a superset** of the tag:
+Fresh generator report: **`resolves_named` 248 families, `resolution` tag 144, union 253.** By tier
+T3 95, T2 62, T1 0, T0 91. Under the abstract-only scope the same report read 233 families, union
+238, by tier T3 88, T2 57, T1 0, T0 88. The column is **not a superset** of the tag:
 
 | | Families |
 |---|---|
 | flagged by both | 139 |
 | tag-only (tag yes, column no) | 5: 003, 010, 082, 103, 261 |
-| column-only (column yes, tag no) | 94 — the set read in this file |
+| column-only (column yes, tag no) | 109 — of which the 94 abstract-only flags are the set read in this file |
 
 The 5 tag-only families are resolutions the noun list cannot see, because their target is named as a
 *hypothesis / case / estimate / contrast*, not as a conjecture, question, or problem:
@@ -206,7 +214,7 @@ The 5 tag-only families are resolutions the noun list cannot see, because their 
 | 103 | "resolving derandomization for bounded-error logarithmic-space computation" |
 | 261 | "Resolves the predicted spectral **contrast**" |
 
-So the two signals are complementary, not nested: 238 families are named-target resolutions by at
+So the two signals are complementary, not nested: 253 families are named-target resolutions by at
 least one of them, and a family can be tagged and uncolumned. Quote them as two floors.
 
 `hypothes` is **not** in `TARGET_NOUN`, and adding it is a new measurement, not a tweak — it would
@@ -214,21 +222,21 @@ also catch "under the hypothesis" phrasing that the `conditional` tag already ow
 
 ### What the column adds inside T0
 
-T0 has no coverage signal, so `shapes` was its only discriminator. The column is a second one: **88 of
-the 137 T0 families are flagged, 49 are not.** Cross-tabbed against the first-match buckets
-(`triage_t0.py`, bucket: column=1 / column=0):
+T0 has no coverage signal, so `shapes` was its only discriminator. The column is a second one: **91 of
+the 137 T0 families are flagged, 46 are not** (88 / 49 under the abstract-only scope). Cross-tabbed
+against the first-match buckets (`triage_t0.py`, bucket: column=1 / column=0):
 
 | Bucket | 1 / 0 | Reading |
 |---|---|---|
-| C counterexample | 12 / 4 | disprove-form resolutions, already the cheapest T0 checks |
+| C counterexample | 13 / 3 | disprove-form resolutions, already the cheapest T0 checks |
 | R resolution | 48 / 2 | the 2 column-negatives are 010 and 103, both tag-only |
 | B bound | 7 / 22 | |
 | K classification | 4 / 4 | |
-| U uniform | 3 / 9 | |
+| U uniform | 5 / 7 | |
 | O other | 2 / 0 | |
 | N untagged | 12 / 8 | **the payoff** |
 
-40 flagged T0 families (56 manuscripts) sit outside bucket R — first match assigns them elsewhere, so
+43 flagged T0 families (60 manuscripts) sit outside bucket R — first match assigns them elsewhere, so
 the bucket table alone never shows them as named-target resolutions.
 
 The N bucket is described in `notes/t0-triage.md` as "no shape tag at all — title is the only signal".
@@ -242,9 +250,11 @@ Half of it is now not title-only; all 12 are named-conjecture families: 019, 031
   conjecture X" remains the release's claim, not a checked fact.
 - No conjecture was identified in the literature, and no formalized statement was compared with the
   claim (no Lean run).
-- The rule is measured on abstracts only. Titles were not used, and `CONTENTS.md` abstracts were not
-  cross-checked against `overview.tex` for this measurement.
-- The `resolves_named` column inherits every ceiling above: it is computed from the abstract, it is
+- The reading in this file is measured on abstracts only. Titles were not read, and `CONTENTS.md`
+  abstracts were not cross-checked against `overview.tex` for this measurement. The applied column
+  does read the title, so the 15 title-scope additions sit outside every verdict recorded here.
+- The `resolves_named` column inherits every ceiling above: it is computed from the overview title
+  and abstract, it is
   not a claim, and the 5 tag-only families were read only as the abstract fragment around
   `resolv`/`settl` — their full abstracts were not read, so a target noun could exist outside the
   matched window.

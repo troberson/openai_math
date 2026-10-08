@@ -67,7 +67,7 @@ writeups, not about proof density.
 | Flag | proofs/man | proofs/statement | proofs/KB |
 |---|---|---|---|
 | `conditional` (n=5) | 0.726 / 0.083 | 0.426 / 0.57 | 0.436 / 0.62 |
-| `resolves_named` (n=233) | 0.465 / 0.27 | 0.513 / 0.66 | 0.565 / 0.037 |
+| `resolves_named` (n=248) | 0.442 / 0.067 | 0.511 / 0.72 | **0.585 / 0.0075** |
 | `counterex_broad` (n=74) | **0.356 / 1.3e-04** | 0.489 / 0.77 | 0.571 / 0.059 |
 
 `counterex_broad` is the strongest result in the whole measurement and it is inverse: families that use
@@ -76,6 +76,13 @@ proofs than a counterexample family) = 0.356). The pre-registered bar is one-sid
 first group to be higher), so under the rule as written this is not a separation. Recording it as an
 inverse association is fair; adding it as a ledger column is not — the ledger already carries
 `counterex_broad`, and a column that says "these manuscripts are shorter" restates `tex_bytes`.
+
+`resolves_named` per KB carries the smallest p in the measurement — 0.585 / 0.0075 — and it is the one
+flag number that moved when the column's scope changed: under the abstract-only scope (n=233) the same
+contrast read 0.565 / 0.037. It is an association, not a separation. 0.585 sits 0.065 below the AUC bar,
+the flag contrast is not size-controlled, and the bar was written before the data was read, so a p that
+clears 0.01 while the AUC does not clear 0.65 is recorded as a null with a direction: flagged families
+carry somewhat more proofs per KB than the rest, by less than the measurement asked to call an effect.
 
 ## Decision
 
