@@ -25,9 +25,11 @@ carrier, so it states what to do and what not to re-derive.
   moved is "summary pages 21 of 372 families, 60 manuscripts behind them" (was 12 / 31).
   `verify_summaries.py --mutant` over the 9 batch pages → **1470 marker positions, 499 quoted spans,
   0 problems (0 undetected mutants)**, 27 mutant FLAGGED lines (A1 inline, A3 block-quote attribution,
-  B fabricated — three per page), no `UNUSED SOURCES`, no `AMBIGUOUS`.
-- **Push state:** `origin/notes` at `e20006eb0`; **1 commit unpushed** (`5d87d8bda`). Push at the next
-  batch boundary, dry-run first.
+  B fabricated — three per page), no `UNUSED SOURCES`, no `AMBIGUOUS`. Re-run over all 21 pages at the
+  boundary: **3589 marker positions, 940 quoted spans, 0 problems (0 undetected mutants)** — 21 pass-B
+  and 21 pass-C lines all reading 0, 64 mutant FLAGGED, 0 MISSED.
+- **Push state:** `origin/notes` at `3bf866361` (pushed 2026-10-08, the `math-ckd.2` batch: pages +
+  regenerated ledger + this state carrier). Nothing unpushed.
 - **Queue check (2026-10-08, after closing `math-ckd.2`):** `bd ready` lists 9 issues and **no P1**.
   P2: `math-el4.9` (el4.5 reading-band work — not started, user directive), `math-el4` (its parent),
   `math-u41` (blocked by the deferred `math-u41.6`), `math-7ur` (needs a go-ahead). P4: `math-ckd.5`,
