@@ -7,7 +7,7 @@ Passes:
      and flag any file no rule owns.
   C. Re-measure the census and match every count in the page's tables.
   D. Require every script to be named in the page and in the notes/README.md command block,
-     and re-derive the "named before this pass" gap from git HEAD.
+     and re-derive the "named before this pass" gap from the commit that created this page.
   E. Recompute the shared-basename sets and match the page.
   F. Layout: no preamble, a "## Not checked" section, and no self-reference in the checker table.
 
@@ -228,11 +228,17 @@ def check(text):
     for n in names:
         if n not in readme:
             p.append(f"script not named in notes/README.md: {n}")
+    # "Before this pass" is pinned to the commit that created this page, not to HEAD: HEAD moves
+    # every time the command block is edited, and a check keyed to it stops being a record.
+    base = subprocess.run(
+        ["git", "log", "--format=%H", "--reverse", "--", "notes/scripts/README.md"],
+        cwd=ROOT, capture_output=True, text=True).stdout.split()
+    ref = f"{base[-1]}^" if base else "HEAD"
     head_readme = subprocess.run(
-        ["git", "show", "HEAD:notes/README.md"], cwd=ROOT, capture_output=True, text=True
+        ["git", "show", f"{ref}:notes/README.md"], cwd=ROOT, capture_output=True, text=True
     ).stdout
     head_agents = subprocess.run(
-        ["git", "show", "HEAD:AGENTS.md"], cwd=ROOT, capture_output=True, text=True
+        ["git", "show", f"{ref}:AGENTS.md"], cwd=ROOT, capture_output=True, text=True
     ).stdout
     gaps = sorted(n for n in names if n not in head_readme and n not in head_agents)
     named_before = len(names) - len(gaps)
@@ -250,10 +256,12 @@ def check(text):
     top_names = {f.name for f in top}
     idx_names = {f.name for f in index}
     shared = sorted(top_names & idx_names)
-    if shared != ["README.md", "topics.tsv"]:
-        p.append(f"top-level ∩ index basenames: {shared}, page says README.md and topics.tsv")
-    if "**2** shared basenames — `README.md` and `topics.tsv`" not in text:
-        p.append("collision sentence does not read '**2** shared basenames — `README.md` and `topics.tsv`'")
+    want = (f"**{len(shared)}** shared basename — `{shared[0]}`" if len(shared) == 1 else
+            f"**{len(shared)}** shared basenames — {' and '.join(f'`{n}`' for n in shared)}")
+    if shared != ["README.md"]:
+        p.append(f"top-level ∩ index basenames: {shared}, page says README.md alone")
+    if want not in text:
+        p.append(f"collision sentence does not read '{want}'")
     slug = len(idx_names & {f.name for f in summaries})
     if f"share **{slug}** page slugs" not in text:
         p.append(f"slug sentence does not read 'share **{slug}** page slugs'")
@@ -276,7 +284,7 @@ def mutants():
         ("hand-authored TSV claimed as generated", original.replace("**6** generated, **2** hand-authored", "**7** generated, **1** hand-authored"), "tsv census cell"),
         ("writer count altered", original.replace("**7** writers over **38** scripts", "**8** writers over **38** scripts"), "writer split sentence"),
         ("index file count altered", original.replace("| `notes/index/` | **1,050** |", "| `notes/index/` | **1,049** |"), "census row notes/index/"),
-        ("collision name altered", original.replace("**2** shared basenames — `README.md` and `topics.tsv`", "**2** shared basenames — `README.md` and `links.tsv`"), "collision sentence"),
+        ("collision name altered", original.replace("**1** shared basename — `README.md`", "**2** shared basenames — `README.md` and `topics.tsv`"), "collision sentence"),
         ("checker name altered", original.replace("| `verify_sources.py` |", "| `verify_sources2.py` |"), "non-writers"),
         ("unchecked page claimed as checked", original.replace("| `verify_abstracts.py` | `notes/abstracts.md` |", "| `verify_abstracts.py` | `notes/abstracts.md`, `notes/links.md` |"), "md census cell"),
         ("Not checked section deleted", original.replace("## Not checked", "## Checked"), "no '## Not checked' section"),

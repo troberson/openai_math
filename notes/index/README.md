@@ -184,7 +184,7 @@ The 40 subject names that reach the most families; [`names.tsv`](names.tsv) carr
 | `lean-dirs.tsv` | 554 | `OAI/<discipline>/<module>` | One row per Lean module dir, with its `.lean` count and the declarations named there. |
 | `scope-notes.tsv` | 235 | `fam` | One row per scope note: configs linked, manuscripts linked, `## Scope` length. |
 | `traces.tsv` | 10 | trace stem | One row per published reasoning trace and the family README.md attributes it to. |
-| `topics.tsv` | 92 | term | One row per curated vocabulary term: its pattern, its yield, its yield by layer, and its page. The patterns live in `notes/topics.tsv`; this table is the measured copy. |
+| `topics-rendered.tsv` | 92 | term | One row per curated vocabulary term: its pattern, its yield, its yield by layer, and its page. The patterns live in `notes/topics.tsv`; this table is the measured copy. |
 | `names.tsv` | 5859 | name | One row per measured name — subject or citation-only — with its layer counts, prose counts, surface spellings, and its page (empty for a citation-only name). |
 | `edges/family-manuscript.tsv` | 722 | `fam` + dir | The release's own family→manuscript links. |
 | `edges/family-config.tsv` | 405 | `fam` + config | Scope-note links keyed per family as a set: 405, not the 415 link occurrences. |

@@ -284,10 +284,11 @@ lives in this file and nowhere else.
   `notes/*.tsv`, **6** are generator output and **2** are hand-authored — `notes/topics.tsv` (the
   curated vocabulary `build_index.py` reads) and `notes/conjecture-standing.tsv` (the training-data
   prior) — and regenerating either destroys the file. `notes/index/` is generated wholesale: edit
-  `build_index.py` and re-render, never format or hand-edit a page. Two basenames are shared
-  between `notes/` and `notes/index/` (`README.md`, `topics.tsv`), so a table reference without its
-  directory is ambiguous — `notes/topics.tsv` is the vocabulary and `notes/index/topics.tsv` is the
-  render, whose header ends `status  page` where the vocabulary's ends `status  note`.
+  `build_index.py` and re-render, never format or hand-edit a page. The only basename shared between
+  `notes/` and `notes/index/` is `README.md` — the ledger readme and the index entry point. The
+  rendered topic table is `notes/index/topics-rendered.tsv`, renamed from `topics.tsv` because the
+  vocabulary's header ends `status  note` where the render's ends `status  page`, which made a
+  reference to `topics.tsv` without its directory ambiguous.
 - Project skills live in `.qwen/skills/` — `proof-triage` routes ledger work,
   `auto-skill-lean-formalization-coverage-audit` carries the measurement method.
 
@@ -499,8 +500,12 @@ lives in this file and nowhere else.
   tree case), classifies every file under `notes/` with the scripts excluded and flags a file no rule
   owns, re-derives every census count, requires every script named in the page **and** in the
   `notes/README.md` command block, re-derives the four-scripts-named-nowhere gap from
-  `git show HEAD:notes/README.md` and `HEAD:AGENTS.md`, and recomputes the shared-basename sets
-  (**2** top-level ∩ index: `README.md`, `topics.tsv`; **13** index ∩ summaries slugs). It excludes
+  `git show <manifest-commit>^:notes/README.md` and `<manifest-commit>^:AGENTS.md`, where
+  `<manifest-commit>` is the oldest commit touching `notes/scripts/README.md`
+  (`git log --format=%H --reverse -- notes/scripts/README.md`) — **not** from `HEAD`, which moves
+  every time the command block is edited and would read the gap as empty the moment the naming
+  lands — and recomputes the shared-basename sets
+  (**1** top-level ∩ index: `README.md`; **13** index ∩ summaries slugs). It excludes
   itself from the population, so the page's **38** scripts and **17** checkers are the run's 39 and
   18. It flags ten injected mutants, each asserted against the check it targets, and writes nothing.
   Run it twice and diff — the report is identical.

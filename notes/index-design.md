@@ -142,7 +142,7 @@ Node tables, one row per node, in `notes/index/`:
 | `lean-dirs.tsv` | **554** | `OAI/<discipline>/<module>` |
 | `scope-notes.tsv` | **235** | `fam` |
 | `traces.tsv` | **10** | trace stem |
-| `topics.tsv` | **92** | term |
+| `topics-rendered.tsv` | **92** | term |
 | `names.tsv` | **5,859** | folded name key |
 
 Edge tables, in `notes/index/edges/`:

@@ -733,7 +733,7 @@ def main():
     write_tsv("lean-dirs.tsv", LEANDIR_COLS, lean_dir_rows)
     write_tsv("scope-notes.tsv", SCOPE_COLS, scope_rows)
     write_tsv("traces.tsv", TRACE_COLS, trace_rows)
-    write_tsv("topics.tsv", TOPIC_COLS, topic_table_rows)
+    write_tsv("topics-rendered.tsv", TOPIC_COLS, topic_table_rows)
     write_tsv("names.tsv", NAME_COLS, name_table_rows)
     for name, cols in EDGE_TABLES:
         write_tsv(name, cols, edges[name])
@@ -839,7 +839,7 @@ def main():
          "One row per scope note: configs linked, manuscripts linked, `## Scope` length."),
         ("`traces.tsv`", trace_rows, "trace stem",
          "One row per published reasoning trace and the family README.md attributes it to."),
-        ("`topics.tsv`", topic_table_rows, "term",
+        ("`topics-rendered.tsv`", topic_table_rows, "term",
          "One row per curated vocabulary term: its pattern, its yield, its yield by layer, and "
          "its page. The patterns live in `notes/topics.tsv`; this table is the measured copy."),
         ("`names.tsv`", name_table_rows, "name",

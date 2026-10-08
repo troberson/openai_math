@@ -103,7 +103,7 @@ The generated TSVs are the six writer targets. The two hand-authored tables are:
 
 | Table | Why it is hand-authored |
 |---|---|
-| `notes/topics.tsv` | The curated topic vocabulary. `measure_topics.py --check` re-measures its 92 rows and exits 1 when a recorded count drifts; `build_index.py` reads it and renders `notes/index/topics.tsv`. A generated file inside `notes/index/` is overwritten by the next render, which is why the vocabulary lives above that tree. |
+| `notes/topics.tsv` | The curated topic vocabulary. `measure_topics.py --check` re-measures its 92 rows and exits 1 when a recorded count drifts; `build_index.py` reads it and renders `notes/index/topics-rendered.tsv`. A generated file inside `notes/index/` is overwritten by the next render, which is why the vocabulary lives above that tree. |
 | `notes/conjecture-standing.tsv` | The training-data prior. Its `standing_prior_2025` column is the assistant's memory at an early-2025 cutoff, self-rated by `prior_confidence`; no script can derive a memory, and `verify_conjecture_standing.py` checks the rows against the ledger and `overview.tex` rather than regenerating them. |
 
 The 11 pages with no checker are `notes/README.md`, `notes/conjecture-standing.md`,
@@ -112,18 +112,20 @@ The 11 pages with no checker are `notes/README.md`, `notes/conjecture-standing.m
 `notes/t0-triage.md` and `notes/topics.md`. Their counts are reproduced by the report-only scripts
 above; nothing verifies them against the page.
 
-## Two basenames are shared
+## One basename is shared
 
-Measured over the top level and the index tree: **2** shared basenames — `README.md` and `topics.tsv`.
+Measured over the top level and the index tree: **1** shared basename — `README.md`.
 `notes/README.md` is the ledger readme and `notes/index/README.md` is the index entry point, so that
-pair is harmless. The TSV pair is the load-bearing one: `notes/topics.tsv` is the hand-authored
-vocabulary and `notes/index/topics.tsv` is generated from it, and the schemas are adjacent —
-`term pattern fams title abstract scope path status` in both, then `note` in the hand-authored file and
-`page` in the rendered one — so a reference to `topics.tsv` without its directory is ambiguous, and a
-`notes/**/topics.tsv` glob reads both. `measure_topics.py` reads the top-level file; `build_index.py`
-reads the top-level file and writes the rendered one. Renaming the rendered file to
-`topics-rendered.tsv` removes the ambiguity without touching the vocabulary, whose path
-`measure_topics.py` and `AGENTS.md` both name.
+pair is harmless.
+
+The tree used to carry a second, load-bearing collision. `notes/topics.tsv` is the hand-authored
+vocabulary and `notes/index/topics.tsv` was generated from it, with adjacent schemas —
+`term pattern fams title abstract scope path status` in both, then `note` in the hand-authored file
+and `page` in the rendered one — so a reference to `topics.tsv` without its directory was ambiguous,
+and a `notes/**/topics.tsv` glob read both. The rendered table is now
+`notes/index/topics-rendered.tsv`, which says which layer it measures; the vocabulary's path is
+unchanged, and `measure_topics.py` and `AGENTS.md` both name it. `build_index.py` reads the top-level
+file and writes the rendered one.
 
 The index tree and the summaries tree share **13** page slugs — the families that carry both a rendered
 page and a reading summary, which is the pairing the index reports.
@@ -139,7 +141,9 @@ nowhere in the repo — not in `notes/README.md` and not in `AGENTS.md`: `extrac
 `verify_citations.py`, `verify_findings.py`, `verify_named_conjectures.py`. They are the tooling behind
 `notes/citations.md`, `notes/findings.md` and `notes/named-conjectures.md`, so three pages carried
 measurements whose generating command no document named. All 38 are named here and in the command
-block.
+block. "Before this pass" is pinned to the commit that created this page, read at its parent, not to
+`HEAD`: the moment this naming landed, a check keyed to `HEAD` would read the gap as empty and the
+sentence would stop being checkable.
 
 ## Not checked
 
@@ -148,8 +152,9 @@ block.
   generator twice, diff, and diff against `HEAD`. A hand-edit to a rendered page survives until a
   checker's needle happens to break.
 - `build_index.py` never deletes: it `mkdir`s and writes, with no `unlink`. A changed page slug leaves
-  the old page on disk. Measured consistent now — **1,034** `.md` on disk against the **1,034** the
-  render report claims — so this is latent, not realized.
+  the old page on disk. Renaming the rendered topic table is the realized case — `notes/index/topics.tsv`
+  survived the rename and was deleted by hand; nothing in the tooling would have caught it. Page slugs
+  are measured consistent: **1,034** `.md` on disk against the **1,034** the render report claims.
 - The writer rule reads path constants and write calls. A write built from a computed path (a variable
   assembled at runtime) would not be found by it.
 - The report-only table records which page a report feeds as stated in that page and in `AGENTS.md`.
