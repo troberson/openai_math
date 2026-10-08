@@ -20,7 +20,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 019	Number theory	The $p$-adic section conjecture	2	0	T0	0	0	0	0	0	0	0			0	1	0		0	0	0
 020	Number theory	Squarefree quartics and power-free polynomial values	1	1	T3	1	1	1	489	0	0	0		resolution|density	0	1	0		0	0	0
 021	Number theory	A quadratic bound for Jacobsthal's function	1	1	T3	2	1	1	451	0	0	0		resolution|bound|partial|uniform	0	1	0		0	0	0
-022	Number theory	The weak inhomogeneous Duffin--Schaeffer conjecture	1	0	T0	0	0	0	0	0	0	0		uniform	0	0	0		0	0	0
+022	Number theory	The weak inhomogeneous Duffin--Schaeffer conjecture	1	0	T0	0	0	0	0	0	0	0		uniform	0	1	0		0	0	0
 023	Number theory	Patterson’s first moment for cubic Gauss sums	1	0	T2	1	0	1	496	0	0	0		partial	0	0	0		0	0	0
 024	Number theory	An asymptotic formula for the number of totients	1	0	T2	2	0	1	700	0	0	0		bound|uniform	0	1	0		0	0	0
 025	Number theory	Erd\H{o}s’s short Egyptian-fraction conjecture	1	1	T3	2	1	1	805	0	0	0		resolution	0	1	0		0	0	0
@@ -37,12 +37,12 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 036	Algebraic and complex geometry	Numerical semiampleness and generalized minimal models	4	0	T0	0	0	0	0	0	0	0		classification	0	0	0		0	0	0
 037	Algebraic and complex geometry	The sharp ordinary-double-point volume gap	2	0	T0	0	0	0	0	0	0	0		resolution|bound|partial	0	1	0		0	0	0
 038	Algebraic and complex geometry	Fujita's freeness conjecture	1	0	T0	0	0	0	0	0	0	0		bound|uniform	0	1	0		0	0	0
-039	Algebraic and complex geometry	Nagata's conjecture and maximal Seshadri constants	4	2	T3	2	2	1	1231	0	0	0		bound|classification|uniform	0	0	0		0	0	0
+039	Algebraic and complex geometry	Nagata's conjecture and maximal Seshadri constants	4	2	T3	2	2	1	1231	0	0	0		bound|classification|uniform	0	1	0		0	0	0
 040	Algebraic and complex geometry	Bloch's conjecture for complex surfaces	1	0	T0	0	0	0	0	0	0	0		uniform	0	1	0		0	0	0
 041	Algebraic and complex geometry	Hyperk\"ahler SYZ and projective-space bases	2	0	T0	0	0	0	0	0	0	0		resolution	0	1	0		0	0	0
 042	Algebraic and complex geometry	Oka classification for K3 surfaces and other compact complex surfaces	1	0	T0	0	0	0	0	0	0	0			0	0	0		0	0	0
 043	Algebraic and complex geometry	$P=W$ for fixed-determinant moduli spaces	1	0	T0	0	0	0	0	0	0	0			0	1	0		0	0	0
-044	Algebraic and complex geometry	The equivariant cohomological Hikita conjecture for quivers	1	0	T0	0	0	0	0	0	0	0		uniform	0	0	0		0	0	0
+044	Algebraic and complex geometry	The equivariant cohomological Hikita conjecture for quivers	1	0	T0	0	0	0	0	0	0	0		uniform	0	1	0		0	0	0
 046	Algebraic and complex geometry	Counterexamples to Shafarevich holomorphic convexity	2	0	T0	0	0	0	0	0	0	0		counterexample	0	0	1		0	0	0
 047	Algebraic and complex geometry	Complex counterexamples to cancellation and affine fibrations	1	1	T3	1	1	1	450	0	0	0		resolution|counterexample	0	1	1		0	0	0
 048	Algebraic and complex geometry	A characteristic-zero counterexample to Lipman--Zariski	1	0	T0	0	0	0	0	0	0	0		classification	0	1	1		0	0	0
@@ -91,8 +91,8 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 093	Convex and metric geometry	Dimension-free logarithmic Sobolev inequality for subgaussian log-concave measures	1	0	T0	0	0	0	0	0	0	0		bound|uniform	0	0	0		0	0	0
 094	Convex and metric geometry	Subpolynomial dimension reduction in $L_p$	1	1	T3	1	1	1	563	0	0	0		partial|uniform	0	1	0		0	0	0
 095	Convex and metric geometry	Hyperbolicity cones without semidefinite lifts	3	1	T3	1	1	1	384	0	0	0		resolution|counterexample	0	1	1		0	0	0
-096	Convex and metric geometry	The Gaussian propeller conjecture	1	1	T3	1	1	1	515	0	0	0		bound|partial	0	0	0		0	0	0
-097	Convex and metric geometry	The Euclidean Steinitz--Bergstr\"om conjecture	1	1	T3	1	1	1	464	0	0	0		bound|partial	0	0	0		0	0	0
+096	Convex and metric geometry	The Gaussian propeller conjecture	1	1	T3	1	1	1	515	0	0	0		bound|partial	0	1	0		0	0	0
+097	Convex and metric geometry	The Euclidean Steinitz--Bergstr\"om conjecture	1	1	T3	1	1	1	464	0	0	0		bound|partial	0	1	0		0	0	0
 098	Convex and metric geometry	A negative answer to the Lang--Plaut problem	1	1	T3	2	2	1	424	0	0	0			0	1	1		0	0	0
 099	Convex and metric geometry	The sharp distortion of edit distance into $\ell_1$	3	0	T2	4	0	1	1653	0	0	0		bound|partial|uniform	0	0	0		0	0	0
 100	Convex and metric geometry	A counterexample to Bang's cylinder-covering bound	4	0	T2	3	0	1	2568	0	0	0		counterexample|bound	0	1	1		0	0	0
@@ -145,12 +145,12 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 148	Dynamical systems and ergodic theory	The dimension formula for self-similar measures on the line	1	1	T3	2	1	1	751	0	0	0		resolution|uniform	0	1	0		0	0	0
 149	Dynamical systems and ergodic theory	Permanence for weakly reversible reaction networks	2	0	T2	1	0	1	564	0	0	0		resolution|bound|uniform	0	1	0		0	0	0
 150	Dynamical systems and ergodic theory	Weak mixing of irrational triangular billiards	2	0	T2	1	0	1	481	0	0	0		uniform	0	0	0		0	0	0
-151	Dynamical systems and ergodic theory	A $C^1$ counterexample to Shub’s entropy conjecture	1	0	T2	1	0	1	508	0	0	0		counterexample|bound	0	0	1		0	0	0
+151	Dynamical systems and ergodic theory	A $C^1$ counterexample to Shub’s entropy conjecture	1	0	T2	1	0	1	508	0	0	0		counterexample|bound	0	1	1		0	0	0
 152	Dynamical systems and ergodic theory	Zero entropy does not guarantee a smooth positive-volume model	1	0	T2	1	0	1	583	0	0	0		density	0	0	0		0	0	0
 153	Dynamical systems and ergodic theory	Arithmetic classification of Bernoulli convolutions	1	0	T0	0	0	0	0	1	0	0		uniform	0	0	0		0	0	0
 154	Dynamical systems and ergodic theory	Pointwise multiple ergodic averages for mixing transformations	4	0	T0	0	0	0	0	0	0	0		bound	0	0	0		0	0	0
 155	Combinatorics	A counterexample to periodic tiling in dimension three	1	1	T3	1	1	1	502	0	0	0		counterexample|uniform	0	1	1		0	0	0
-156	Combinatorics	Borsuk's conjecture fails in dimension nine	1	1	T3	1	1	1	435	0	0	0			0	0	1		0	0	0
+156	Combinatorics	Borsuk's conjecture fails in dimension nine	1	1	T3	1	1	1	435	0	0	0			0	1	1		0	0	0
 157	Combinatorics	Counterexamples to the Hadwiger and Colin de Verdi\`ere conjectures	3	0	T2	1	0	1	375	0	1	0		counterexample|bound|partial	0	1	1		0	0	0
 158	Combinatorics	The Euclidean plane cannot be colored with five colors	1	1	T3	2	2	1	396	0	0	0			0	1	0		0	0	0
 159	Combinatorics	Erd\H{o}s's reciprocal-sum conjecture and quasipolynomial Szemer\'edi bounds	1	0	T2	1	0	1	481	0	0	0	quasipolynomial-arithmetic-progressions	partial	0	1	0		0	0	1
@@ -185,7 +185,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 189	Combinatorics	Exact cycle--clique Ramsey numbers	1	0	T2	1	0	1	345	1	0	0		resolution|uniform	0	1	0		0	0	0
 190	Combinatorics	Polynomial removal fails for ordered binary matrices	1	1	T3	1	1	1	498	0	0	0		counterexample|bound|density	0	0	1		0	0	0
 191	Combinatorics	A power improvement in the Heilbronn triangle problem	1	0	T2	1	0	1	514	0	0	0		resolution|counterexample|bound|uniform	0	1	1		0	0	0
-192	Combinatorics	A counterexample to the Gopalan--Servedio conjecture	1	0	T2	1	0	1	467	0	0	0		counterexample|bound|uniform	0	0	1		0	0	0
+192	Combinatorics	A counterexample to the Gopalan--Servedio conjecture	1	0	T2	1	0	1	467	0	0	0		counterexample|bound|uniform	0	1	1		0	0	0
 193	Algebra	Serre's intersection-multiplicity conjecture	1	0	T0	0	0	0	0	0	0	0		resolution|classification	0	1	0		0	0	0
 194	Algebra	Lech's multiplicity conjecture	1	0	T2	1	0	1	598	0	0	0		resolution|classification|uniform	0	1	0		0	0	0
 195	Algebra	A counterexample to the small Cohen--Macaulay module conjecture	1	0	T0	0	0	0	0	0	0	0			0	1	1		0	0	0
@@ -202,7 +202,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 206	Algebra	Finite lattice representation: counterexamples and undecidability	2	0	T2	1	0	1	510	0	0	0		undecidability	0	1	1		0	0	0
 207	Algebra	The $\ell^1$-Bass and complex Bass trace conjectures	2	1	T3	2	1	1	594	0	0	0		resolution|classification|uniform	0	1	0		1	0	0
 208	Algebra	The finite Benson--Etingof--Ostrik conjecture	1	0	T0	0	0	0	0	0	0	0		resolution|classification	0	1	0		0	0	0
-209	Algebra	Integral counterexamples to Gersten’s conjecture	2	0	T0	0	0	0	0	0	0	0		counterexample|classification	0	0	1		0	0	0
+209	Algebra	Integral counterexamples to Gersten’s conjecture	2	0	T0	0	0	0	0	0	0	0		counterexample|classification	0	1	1		0	0	0
 210	Algebra	Foulkes’ conjecture for sixth powers and quadratic stabilization	2	1	T3	1	1	1	493	1	0	0		resolution|uniform	0	1	0		0	0	0
 211	Probability and statistical mechanics	Geometry, diffusion, and spectra of random planar maps	7	0	T2	1	0	1	466	0	0	0			0	0	0		0	0	0
 212	Probability and statistical mechanics	No bigeodesics and smooth limit shapes in planar first-passage percolation	2	1	T3	2	1	1	524	0	0	0		bound|uniform	0	0	0		0	0	0
@@ -256,7 +256,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 260	Mathematical physics	Spacetime Penrose inequalities and rigidity	13	0	T2	1	0	1	871	0	0	0		bound	0	0	0		0	0	0
 261	Mathematical physics	Localization and delocalization in the Anderson model	2	0	T2	1	0	1	474	0	0	0		resolution|uniform	0	0	0		0	0	0
 262	Mathematical physics	Sharp one-dimensional Lieb--Thirring inequalities	3	1	T3	1	1	1	423	0	0	0		bound|uniform	0	0	0		0	0	0
-263	Mathematical physics	The ionization and generalized ionization conjectures	3	1	T3	2	1	1	1144	0	0	0		bound|partial	0	0	0		0	0	0
+263	Mathematical physics	The ionization and generalized ionization conjectures	3	1	T3	2	1	1	1144	0	0	0		bound|partial	0	1	0		0	0	0
 264	Mathematical physics	Strong cosmic censorship near two-ended Kerr data	3	0	T0	0	0	0	0	0	0	0			0	0	0		0	0	0
 265	Mathematical physics	The two-dimensional gapped area law	2	0	T0	0	0	0	0	0	0	0		bound|partial|uniform	0	0	0		0	0	0
 266	Mathematical physics	Exactly three mutually unbiased bases in dimension six	2	0	T2	2	0	1	1063	1	0	0		resolution	0	1	0		1	0	0
@@ -282,15 +282,15 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 286	Operator algebras	Arithmetic rigidity of lattice von Neumann algebras	2	0	T0	0	0	0	0	0	0	0		classification|uniform	0	0	0		0	0	0
 287	Operator algebras	All nonabelian free group factors are isomorphic	1	0	T2	1	0	1	400	0	0	0	free-group-factor-isomorphism	resolution	0	1	0		0	0	1
 288	Operator algebras	Kadison's similarity conjecture	1	0	T2	2	0	1	574	0	0	0		bound	0	1	0		0	0	0
-289	Operator algebras	The strong Kadison--Kastler conjecture	3	0	T2	1	0	1	433	0	0	0		counterexample	0	0	1		0	0	0
+289	Operator algebras	The strong Kadison--Kastler conjecture	3	0	T2	1	0	1	433	0	0	0		counterexample	0	1	1		0	0	0
 290	Operator algebras	Connes' bicentralizer conjecture and relative bicentralizers	2	1	T3	1	1	1	559	0	0	0		resolution|uniform	0	1	0		0	0	0
 291	Operator algebras	Toms--Winter and equivariant Jiang--Su stability	4	1	T3	1	1	1	732	0	0	0		resolution|uniform	0	1	0		0	0	0
 292	Operator algebras	A counterexample to Kirchberg's norm-ultrapower embedding problem	1	0	T2	1	0	1	457	0	0	0			0	1	1		0	0	0
-293	Operator algebras	A counterexample to the hyperinvariant-subspace problem	2	1	T3	6	1	1	1526	0	0	0			0	0	1		0	0	0
+293	Operator algebras	A counterexample to the hyperinvariant-subspace problem	2	1	T3	6	1	1	1526	0	0	0			0	1	1		0	0	0
 294	Operator algebras	A counterexample to Kaplansky's quasitrace conjecture	1	1	T3	2	1	1	674	0	0	0		counterexample	0	1	1		0	0	0
 295	Operator algebras	The Kadison--Ringrose cohomology conjecture	1	0	T2	1	0	1	416	0	0	0		resolution|bound	0	1	0		0	0	0
 296	Operator algebras	The generator problem for finite factors	1	1	T3	2	1	1	685	0	0	0		resolution|uniform	0	1	0		0	0	0
-297	Operator algebras	A ZFC counterexample to Naimark's problem	1	0	T2	1	0	1	474	0	0	0		counterexample|classification	0	0	1		0	0	0
+297	Operator algebras	A ZFC counterexample to Naimark's problem	1	0	T2	1	0	1	474	0	0	0		counterexample|classification	0	1	1		0	0	0
 298	Operator algebras	A counterexample to Voiculescu’s free-entropy equality conjecture	1	0	T2	1	0	1	516	0	0	0		bound	0	1	1		0	0	0
 299	Operator algebras	The Kirchberg--R\o rdam character criterion	1	1	T3	1	1	1	423	0	0	0		uniform	0	1	0		0	0	0
 300	Operator algebras	The Popa--Vaes quadratic strong-operator paving conjecture	2	0	T0	0	0	0	0	0	0	0		resolution|bound	0	1	0		0	0	0
@@ -340,7 +340,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 344	Differential geometry	The metric Blaschke conjecture	1	0	T0	0	0	0	0	0	0	0		resolution	0	1	0		0	0	0
 345	Differential geometry	Infinitely many closed geodesics on spheres and three-manifolds	1	0	T0	0	0	0	0	0	0	0			0	0	0		0	0	0
 346	Differential geometry	Sharp singular-set bounds for stationary integral varifolds	2	0	T0	0	0	0	0	0	0	0		bound|partial	0	0	0		0	0	0
-347	Differential geometry	Counterexamples to strong forms of Arnold's fixed-point conjecture	5	1	T3	1	1	1	479	0	0	0		counterexample|bound	0	0	1		0	0	0
+347	Differential geometry	Counterexamples to strong forms of Arnold's fixed-point conjecture	5	1	T3	1	1	1	479	0	0	0		counterexample|bound	0	1	1		0	0	0
 348	Differential geometry	Nonnegatively curved Einstein four-manifolds and a topological gap	3	0	T2	1	0	1	414	2	0	2			0	0	0		0	0	0
 349	Differential geometry	The Solomon--Yau least-volume conjecture	1	0	T0	0	0	0	0	0	0	0		resolution|uniform	0	1	0		0	0	0
 350	Differential geometry	Yau's nodal conjecture: surfaces and counterexamples	3	2	T3	3	2	1	1402	0	0	0		counterexample|bound|partial	0	1	1		0	0	0
@@ -360,7 +360,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 364	Partial differential equations	Kinetic limits and fluctuations over the Boltzmann lifespan	2	0	T0	0	0	0	0	0	0	0		bound|density|uniform	0	0	0		1	0	0
 365	Partial differential equations	Joint metric and connection recovery from one boundary patch	3	1	T3	1	1	1	444	0	0	0		bound|uniform	0	0	0		0	0	0
 366	Partial differential equations	The planar Mumford--Shah regularity conjecture	1	0	T0	0	0	0	0	0	0	0		resolution|bound	0	1	0		0	0	0
-367	Partial differential equations	The critical dimension for the one-phase Bernoulli problem	1	0	T2	1	0	1	437	1	0	0		bound|partial	0	0	0		0	0	0
+367	Partial differential equations	The critical dimension for the one-phase Bernoulli problem	1	0	T2	1	0	1	437	1	0	0		bound|partial	0	1	0		0	0	0
 368	Partial differential equations	The three-dimensional Ball--Evans approximation problem	2	0	T0	0	0	0	0	0	0	0		resolution|bound|uniform	0	1	0		0	0	0
 369	Partial differential equations	The hot spots conjecture for simply connected planar domains	1	0	T2	1	0	1	514	0	0	0		bound	0	1	0		0	0	0
 370	Partial differential equations	The subcritical Lane--Emden and H\'enon--Lane--Emden conjectures	1	1	T3	1	1	1	453	0	0	0		resolution	0	1	0		0	0	0

@@ -212,13 +212,19 @@ RESOLVE_VERB = re.compile(
     r"|\bconfirm|\bfail|\bviolat|\bcounterexample")
 
 
-def resolves_named(abstract):
-    """1 when the abstract names a conjecture/question/problem and uses a resolution verb.
+def resolves_named(title, abstract):
+    """1 when the title or abstract names a conjecture/question/problem and uses a resolution verb.
 
     `\bprov(?:e|es|ed|ing)\b` needs both boundaries: without the leading one, "improved"
     matches through the "proved" inside it.
+
+    Input scope is title + abstract, stated because it changes the count: abstract only yields
+    233, the union yields 248, and the union is a strict superset -- 0 removals. The 15 additions
+    are recorded in notes/named-results.md. Lowering the whole input is what makes the union a
+    superset: a case-sensitive title read drops 100 of the 233 (capitalised "Conjecture" at title
+    start) and yields 147, which is why the scope is stated with the case rule.
     """
-    low = abstract.lower()
+    low = (title + " " + abstract).lower()
     return 1 if TARGET_NOUN.search(low) and RESOLVE_VERB.search(low) else 0
 
 
@@ -324,7 +330,7 @@ def main():
             "trace": "|".join(sorted(trace_by_fam.get(fam, []))),
             "shapes": "|".join(shapes),
             "conditional": 1 if "conditional" in shapes else 0,
-            "resolves_named": resolves_named(info["abstract"]),
+            "resolves_named": resolves_named(info["title"], info["abstract"]),
             "counterex_broad": counterex_broad(info["title"], info["abstract"]),
             "companions": "|".join(refs),
             "companion_word": 1 if re.search(r"\bcompanion", info["abstract"], re.I) else 0,

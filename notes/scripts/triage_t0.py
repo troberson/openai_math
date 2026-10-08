@@ -2,7 +2,7 @@
 """Triage the T0 families (no scope note, no challenge, no main result) by claim shape.
 
 Reads notes/catalog.tsv; writes nothing. T0 is the tier with no coverage signal, so the
-`shapes` column drives the buckets. `resolves_named` (88 of 137) and `counterex_broad` (22 of 137)
+`shapes` column drives the buckets. `resolves_named` (91 of 137) and `counterex_broad` (22 of 137)
 are second and third T0 discriminators and are deliberately not read here: buckets are first-match,
 so a broader signal added to the first-match chain would move families between buckets -- widening
 `counterexample` alone would move 6 T0 families into C. The underlying `shapes` tags stay multi-label.
