@@ -18,7 +18,9 @@ lives in this file and nowhere else.
   `verification-dirs.md`, `summaries-workflow.md` (the resume protocol for the summary batches),
   `conjecture-standing.tsv` (139 rows, 10 columns — a labeled training-data prior, not a fact) with
   `conjecture-standing.md` beside it, `formalization-deps.tsv` (31 rows, 8 columns — the upstream
-  library graph) with `formalization-deps.md` beside it, `links.tsv` (22 rows, 7 columns — the
+  library graph) with `formalization-deps.md` beside it and `dependency-drift.md` (what that record
+  implies, read off the pins, the 23 patches, and the lakefile mechanics) beside both,
+  `links.tsv` (22 rows, 7 columns — the
   typed-edge inventory) with `links.md` beside it, `scope-exclusions.md` (235 rows — what each scope
   note says its formalization leaves out), `subfindings.tsv` (1137 rows — 722 manuscript rows and 415
   comparator rows, typed by a `kind` column) with `subfinding-pairs.md` (49 families, 206 manuscripts —
@@ -145,6 +147,13 @@ lives in this file and nowhere else.
   write the TSV when a join breaks. Import counts are over `lean/OAI/**/*.lean` — the whole tree
   yields OAI 277,501 / Mathlib 56,715, not the 276,599 / 56,196 the table records, so quote the scope
   with the number. `lean/lake-manifest.json` is read for the report only, never for a column.
+- Read `lean/lakefile.lean` (335 lines) with two delimiters in mind. Package labels are wrapped in
+  guillemets — `«doc-gen4»`, `«iut»`, `«schoenflies-lean»` — while the deps table keys them plain, so
+  any join between the two must strip them first. The two patch-phase arrays list names with **one**
+  leading backtick and no closing delimiter, so `` `([^`]+)` `` finds **0** of the 11 pre-resolution
+  and 12 `post_update` names; parse with `` re.findall(r"`([^\s`,\]]+)", array_text) ``. Patch
+  filenames are built by code (`lean/lakefile.lean:193`), not hand-named, so the `-lean4341` suffix is
+  a fact about the toolchain, not a convention.
 - Extract the typed-edge inventory with `python3 notes/scripts/extract_links.py` — 20 seconds, writes
   `notes/links.tsv`, prints the report every count in it comes from. Quote an edge with its rule:
   415 is scope-note link **occurrences** and 405 is **distinct configs** (the 10-gap is one config
@@ -311,6 +320,17 @@ lives in this file and nowhere else.
   byte-identical. Its report reconciles 31 rows = 30 declared + 1 undeclared, 30 lakefile requires
   pinned to 40-char commits, 30 yaml entries, 23 patches over 160,187 lines, 42 manifest packages
   = 30 declared + 12 transitive, 19 declared with zero direct imports, and 5 yaml ordering violations.
+- Check `notes/dependency-drift.md` with `python3 notes/scripts/verify_dependency_drift.py --mutant`
+  before quoting any dependency figure — it resolves all 52 `path:line` anchors (bare `:NNN` anchors
+  against the nearest explicit file), matches all 7 blockquotes and every checked code span verbatim
+  against `lean/lakefile.lean`, `lean/formalization.yaml`, the deps TSV, and the patch files, requires
+  the 23-row patch table to equal the TSV row by row in descending order, requires each named library
+  list to equal the measured set, and flags nine injected mutants. Its report reconciles the three
+  surfaces independently: TSV patch lines == on-disk line sum == 160,187; the 11-library
+  pre-resolution array == the 11 `lana-agents` URLs, disjoint from the 12-library `post_update` array,
+  union == the 23 patched libraries; 19 zero-import with 14 patched and 5 not; medians 2,575 (any
+  import) vs 408 (none). Run it twice and diff — the report must be identical. It writes nothing and
+  never scans `lean/OAI/**/*.lean`; import counts come from the TSV.
 - Run `python3 notes/scripts/extract_links.py` twice and diff: the TSV must be byte-identical and the
   report identical. Its report reconciles 22 rows, 415 link occurrences over 405 distinct configs,
   185 `main_results` entries over 178 unique configs in 127 families, 397 release-labelled bib

@@ -12,6 +12,7 @@ python3 notes/scripts/verify_summaries.py   # checks every citation in notes/sum
 python3 notes/scripts/verify_summaries.py --mutant  # same, plus the injected-fault self-test
 python3 notes/scripts/verify_conjecture_standing.py  # checks notes/conjecture-standing.tsv against the ledger and overview.tex
 python3 notes/scripts/extract_formalization_deps.py  # writes notes/formalization-deps.tsv and prints the reconciliation
+python3 notes/scripts/verify_dependency_drift.py --mutant  # checks notes/dependency-drift.md: anchors, blockquotes, code spans, the patch table, every count
 python3 notes/scripts/extract_links.py      # writes notes/links.tsv and prints the per-edge report
 python3 notes/scripts/extract_scope_notes.py  # re-measures the 235 `## Scope` sections; report-only, writes nothing
 python3 notes/scripts/verify_scope_exclusions.py --mutant  # checks notes/scope-exclusions.md against lean/docs/
@@ -201,6 +202,20 @@ counts are **direct statements only**, over `lean/OAI/**/*.lean` — quote the s
 since the whole tree yields OAI 277,501 / Mathlib 56,715. Rules, the `.git` join trap, the manifest
 reconciliation (42 packages = 30 declared + 12 transitive, revs matching every pin), and what was not
 checked are in **`notes/formalization-deps.md`**.
+
+**`notes/dependency-drift.md` is what that record implies about automated formalization**, written
+from three sources only: the deps table, `lean/lakefile.lean` (335 lines), and `lean/patches/`. Its
+load-bearing numbers, each with the rule that yields it: **23** patches carrying **160,187** lines in
+**734** `diff --git` hunks, **22 of 23** rewriting the dependency's `lean-toolchain` and migrating
+**8** distinct versions onto `v4.34.1`; **7** declared libraries with no patch; the pre-resolution
+array (**11** libraries, 6,658 lines) being exactly the 11 `lana-agents` URLs and disjoint from the
+12-library `post_update` array (153,529 lines), their union being exactly the 23 patched libraries;
+**19 of 30** declared libraries with `direct_imports = 0`, **14** of them patched; median patch lines
+**2,575** for libraries with any direct import versus **408** for libraries with none. The yaml
+ordering claim is reported as a claim with its **5** violations, and transitive imports are marked
+unmeasurable without `lake` rather than estimated. **No build was attempted** — pins are declared pins
+and patches are asserted-applicable, not verified. `notes/scripts/verify_dependency_drift.py --mutant`
+re-checks all 52 anchors, 7 blockquotes, 9 code spans, the 23-row patch table, and every count.
 
 **`notes/links.tsv` is the typed-edge inventory: 22 rows, 7 fields**, every count computed by one
 command in 20 seconds. It is the input the index-schema decision needs, so the rows are edge *types*,
