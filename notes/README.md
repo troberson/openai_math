@@ -47,6 +47,12 @@ python3 notes/scripts/extract_t0_chains.py  # the 2 release-recorded cross-famil
 python3 notes/scripts/verify_t0_chains.py --mutant  # checks notes/t0-chains.md: anchors, fenced blocks, quotations, two tables, 28 blocks with 56 titles and paths, all 12 counts and 4 named lists
 python3 notes/scripts/extract_named_results.py  # the headline-statement inventory the manuscript sources carry, cross-tabbed against resolves_named; report-only, writes nothing
 python3 notes/scripts/verify_named_results.py --mutant  # checks notes/named-results.md: 61 anchors, 15 bare overview anchors, the 17-row target table, 61 quotations, all 66 counts
+python3 notes/scripts/extract_citations.py  # the shared-bibliography graph over the .bib files under preprints/; report-only, writes nothing
+python3 notes/scripts/verify_citations.py --mutant  # checks notes/citations.md: work-table rows, anchors, fenced blocks, quotations, every count, against the .bib entries it names
+python3 notes/scripts/verify_findings.py --mutant  # checks notes/findings.md: every [Sn:line] marker, every quotation, every quoted count, against the reports it cites
+python3 notes/scripts/verify_named_conjectures.py --mutant  # checks notes/named-conjectures.md: statement anchors, quotations, prose citations, the entry set, every Measurements number
+python3 notes/scripts/verify_script_ownership.py  # checks notes/scripts/README.md: the derived writer set, the file census, naming coverage, shared basenames; report-only, writes nothing
+python3 notes/scripts/verify_script_ownership.py --mutant  # self-test: 10 injected faults (one per check form) must each be caught by the check it targets
 ```
 
 `notes/summaries-workflow.md` is the resume protocol for the summary-page batches: per-page steps,

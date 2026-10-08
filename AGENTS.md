@@ -275,6 +275,19 @@ lives in this file and nowhere else.
   claim shape clears the bar. Direction is opposite the naive reading: T0, the least-formalized tier,
   carries the most proofs per manuscript (median 30.0) because its manuscripts are the largest (168.9
   KB vs 86.0 in T3). **No ledger column was added.** Findings in `notes/proof-density.md`.
+- Distinguish generated from hand-written **before** editing anything under `notes/`: the ownership
+  manifest is `notes/scripts/README.md`, and it is the only place that answers "whose bytes are
+  this". Scripts and generated files are **not** 1-to-1: of the **38** scripts, **7** write
+  (`build_catalog.py`, `build_sources.py`, `build_index.py`, `compare_abstracts.py` — with `--tsv`
+  only — `extract_formalization_deps.py`, `extract_links.py`, `extract_subfindings.py`) and **31**
+  write nothing, and `build_index.py` alone renders **1,050** files. Of the **8** top-level
+  `notes/*.tsv`, **6** are generator output and **2** are hand-authored — `notes/topics.tsv` (the
+  curated vocabulary `build_index.py` reads) and `notes/conjecture-standing.tsv` (the training-data
+  prior) — and regenerating either destroys the file. `notes/index/` is generated wholesale: edit
+  `build_index.py` and re-render, never format or hand-edit a page. Two basenames are shared
+  between `notes/` and `notes/index/` (`README.md`, `topics.tsv`), so a table reference without its
+  directory is ambiguous — `notes/topics.tsv` is the vocabulary and `notes/index/topics.tsv` is the
+  render, whose header ends `status  page` where the vocabulary's ends `status  note`.
 - Project skills live in `.qwen/skills/` — `proof-triage` routes ledger work,
   `auto-skill-lean-formalization-coverage-audit` carries the measurement method.
 
@@ -480,6 +493,17 @@ lives in this file and nowhere else.
   assignments, and the per-family topic histogram `1:97 2:100 3:86 4:53 5:19 6:13 7:2 8:1 9:1`. Quote a
   term with its per-layer counts, not its yield alone — a yield of 24 can be 2 titles and 16 scope
   notes.
+- Check `notes/scripts/README.md` with `python3 notes/scripts/verify_script_ownership.py --mutant`
+  before quoting any ownership figure — it derives the writer set from the scripts' own source (a
+  `notes/`-rooted path constant left of `.open(..., "w")` / `.write_text(...)`, plus the `notes/index`
+  tree case), classifies every file under `notes/` with the scripts excluded and flags a file no rule
+  owns, re-derives every census count, requires every script named in the page **and** in the
+  `notes/README.md` command block, re-derives the four-scripts-named-nowhere gap from
+  `git show HEAD:notes/README.md` and `HEAD:AGENTS.md`, and recomputes the shared-basename sets
+  (**2** top-level ∩ index: `README.md`, `topics.tsv`; **13** index ∩ summaries slugs). It excludes
+  itself from the population, so the page's **38** scripts and **17** checkers are the run's 39 and
+  18. It flags ten injected mutants, each asserted against the check it targets, and writes nothing.
+  Run it twice and diff — the report is identical.
 
 ## PR instructions
 

@@ -6,7 +6,10 @@ notes/index/
 # positions. Prettier 3.9.9 rewrites all three (720 `*x*` -> `_x_`, 244 `*"…"` -> `_"…"`, 2,043
 # padded table lines over notes/) and its markdown printer exposes only proseWrap and singleQuote,
 # so none of it is configurable. Format only the four pages no checker parses, listed below.
+# notes/scripts/README.md is excluded for the same reason: its checker's needles match unpadded
+# table cells and `**N**` counts verbatim, and its mutant set asserts those needles fire.
 notes/*.md
+notes/scripts/**/*.md
 notes/summaries/**/*.md
 !notes/conjecture-standing.md
 !notes/links.md
