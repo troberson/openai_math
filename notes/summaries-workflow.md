@@ -5,32 +5,62 @@ carrier, so it states what to do and what not to re-derive.
 
 ## Current state (rewritten at every batch boundary)
 
-- **Batch:** `math-ckd.1` is **complete** — all 10 trace families (007, 017, 087, 102, 159, 197, 221,
-  271, 287, 362) have committed pages. Close it with
-  `bd close math-ckd.1 --reason "<outcome>"` (not yet closed as of this rewrite).
-- **Pages done (12):** 102 (`notes/summaries/theoretical-computer-science/`), 001, 007, 017
-  (`notes/summaries/number-theory/`), 032 (`notes/summaries/algebraic-and-complex-geometry/`), 087
-  (`notes/summaries/convex-and-metric-geometry/`), 159 (`notes/summaries/combinatorics/`), 197
-  (`notes/summaries/algebra/`), 221 (`notes/summaries/probability-and-statistical-mechanics/`), 271
+- **Batch:** `math-ckd.2` is **complete and closed** (2026-10-08, commit `5d87d8bda`) — the 9 headline
+  T0 families (002, 004, 006, 010, 011, 014, 016, 018, 019), 29 manuscripts, all in
+  `notes/summaries/number-theory/`. `math-ckd.1` (the 10 trace families) closed the same day.
+- **Pages done (21):** 102 (`notes/summaries/theoretical-computer-science/`), 001, 002, 004, 006, 007,
+  010, 011, 014, 016, 017, 018, 019 (`notes/summaries/number-theory/`), 032
+  (`notes/summaries/algebraic-and-complex-geometry/`), 087 (`notes/summaries/convex-and-metric-geometry/`),
+  159 (`notes/summaries/combinatorics/`), 197 (`notes/summaries/algebra/`),
+  221 (`notes/summaries/probability-and-statistical-mechanics/`), 271
   (`notes/summaries/mathematical-physics/`), 287 (`notes/summaries/operator-algebras/`), 362
   (`notes/summaries/partial-differential-equations/`). The ledger's `summary` column is 1 for those
-  twelve; the generator reports "summary pages 12 of 372 families, 31 manuscripts behind them".
-- **Next batch:** `math-ckd.2` — the 9 headline T0 families (002, 004, 006, 010, 011, 014, 016, 018,
-  019), 29 manuscripts. `bd update math-ckd.2 --claim`, then steps 2–9 below per page. Check
-  `bd ready` first: summaries are P4 and any ready P1/P2 issue outranks this batch.
-- **Last gate run (2026-10-07, after `math-j0k.1`):** regeneration byte-identical on two runs with no
-  intended change; 372 families, 722 manuscripts, 162 formalized, 405 challenges, 185 `main_results`
-  over 178 configs, 235 scope notes, both cross-checks 0, discipline table summing 372 / 235 / 722 /
-  162; `verify_summaries.py --mutant` over all 12 pages → 2119 marker positions, 441 quoted spans,
-  **0 problems, 0 undetected mutants** — 9 inline, 4 wrapped-inline, 12 block-quote and 12 fabricated
-  mutants, every one FLAGGED.
-- **Push state:** `origin/notes` at 1bfd5c459 (pushed 2026-10-07 09:15); 5 commits unpushed at 09:47.
-  Push when an hour has passed since the last push, not per commit.
-- **Queue check (2026-10-07, after closing `math-el4.2`):** `bd ready` lists 24 issues and **no P1**.
-  The P2 line is `math-el4.7`, `math-el4.3`, `math-el4`, `math-u41.1`, `math-u41`, `math-b91`,
-  `math-hqd.1`, `math-hqd`, `math-185`, `math-5sn`, `math-j0k`; then P3, then the P4 `math-ckd`
-  batch. Summaries rank below all of them, so the loop does not continue past this boundary until the
-  higher queue is drained or the user overrides.
+  twenty-one; the generator reports "summary pages 21 of 372 families, 60 manuscripts behind them".
+- **Next batch:** `math-ckd.3` — tier B, the 83 remaining T0 families with `resolves_named = 1`
+  (124 manuscripts). `bd update math-ckd.3 --claim`, then steps 2–9 below per page. Check `bd ready`
+  first: summaries are P4 and any ready P1/P2 issue outranks this batch.
+- **Last gate run (2026-10-08, closing `math-ckd.2`):** regeneration byte-identical on two runs; 372
+  families, 722 manuscripts, 162 formalized, 405 challenges, 185 `main_results` over 178 configs, 235
+  scope notes, both cross-checks 0, discipline table summing 372 / 235 / 722 / 162 — the only line that
+  moved is "summary pages 21 of 372 families, 60 manuscripts behind them" (was 12 / 31).
+  `verify_summaries.py --mutant` over the 9 batch pages → **1470 marker positions, 499 quoted spans,
+  0 problems (0 undetected mutants)**, 27 mutant FLAGGED lines (A1 inline, A3 block-quote attribution,
+  B fabricated — three per page), no `UNUSED SOURCES`, no `AMBIGUOUS`.
+- **Push state:** `origin/notes` at `e20006eb0`; **1 commit unpushed** (`5d87d8bda`). Push at the next
+  batch boundary, dry-run first.
+- **Queue check (2026-10-08, after closing `math-ckd.2`):** `bd ready` lists 9 issues and **no P1**.
+  P2: `math-el4.9` (el4.5 reading-band work — not started, user directive), `math-el4` (its parent),
+  `math-u41` (blocked by the deferred `math-u41.6`), `math-7ur` (needs a go-ahead). P4: `math-ckd.5`,
+  `math-ckd.6`, `math-ckd.3`, `math-ckd.4`, `math-ckd`. With the P2 line blocked by directives, the
+  loop's next bead is `math-ckd.3`.
+- **Batch findings (`math-ckd.2`), for reuse:**
+  - **The dominant quotation failure is off-by-one at a range endpoint, because LaTeX source wraps
+    sentences mid-line.** All 13 Pass-C failures on the 014 page were that shape: a quote whose last
+    words sit on the line *below* the range end, or whose first words sit on the line *above* the range
+    start. A range's haystack is the joined cited lines only, so both ends must be derived from the
+    shipped file, never from a paragraph boundary you remember.
+  - **A quotation needs a marker of its own.** Two quotes in one paragraph where only the second
+    carries a marker leaves the first matched against the second's range, and it fails.
+  - **`\cite[Theorem~1.1]{X}` is not stripped — copy it verbatim.** `norm()` deletes only
+    `\cite{…}`; the bracket form survives, and the `Theorem~1.1` tilde blocks the
+    "Theorem + number" strip rule, so writing `[Theorem] CT` can never match. Same for
+    `\cite[Corollary~1.2]{X}`, `\cite[Sections~3--7]{X}`, `\cite[\S14.4.1]{X}`.
+  - **Pass B checks only the two endpoints of a range for `BLANK`.** Sweep interiors yourself
+    (`awk -v a=.. -v b=.. 'NR>=a && NR<=b && $0 ~ /^[[:space:]]*$/ {printf "%d ", NR}' file`); on this
+    batch the interior hit was MS8 `introduction.tex:53` inside `[S39:36–69]`, which became
+    `[S39:36–52]`.
+  - **A manuscript that ships one self-contained driver with an inline `thebibliography` needs a
+    driver row and a PDF row only** — no section rows, no separate bibliography row (family 014 MS 1,
+    family 016 MS B). Record the convention rather than re-deriving it per page.
+  - **Precomposed accents never match the LaTeX macro.** `Erdős` fails against source `Erd\H{o}s`;
+    same for `Radziwi\l\l{}`, `Matom\"aki`, `Pa\v{s}k\=unas`, `F{\ae}rgeman`, `R\'emond`, `K\"uhne`.
+    `CONTENTS.md` prose uses the precomposed form, the manuscript LaTeX uses the macro — quote each
+    from its own source, verbatim.
+  - **A `CONTENTS.md` blurb quoted as a block quote must be copied from the line, never
+    reconstructed.** The 016 MS D blurb was written from memory as a paraphrase dressed as a quote;
+    the symptom is `NO CITATION in unit`, and the only fix is to print the line and copy it.
+  - PDF byte counts come from `find -printf '%s\t%p\n'`; `wc -l` on a PDF is meaningless. One figure
+    in the 014 Sources table was stale by 2 bytes (MS5 `paper.pdf` is 574,527).
 - **007 finding, for reuse:** the ledger's `paps_form`/`mainres` counts are 0 for a family that
   ships 854 Lean files with zero `sorry`, because `formalization.yaml` has no entry for the
   manuscript. Counts are YAML bibliography entries, not Lean source — never read them as "not
@@ -302,9 +332,10 @@ Commit when a batch's gates pass: explicit paths, one purpose per commit, never 
 `git add -A`. The beads store travels in the commit whose work it records (the pre-commit hook
 re-exports and stages it), so stage it with the code it describes.
 
-**Push to `origin` (the fork) about once per hour**, not on every commit — authorized for this run on
-2026-10-07. `upstream` is read-only; confirm the destination with `git push --dry-run` when a push
-boundary lands on a batch you did not expect to publish.
+**Push to `origin` (the fork) at a batch boundary, not on every commit** — authorized for this run on
+2026-10-07. The cadence is a way of batching commits, not a timer: never idle or sleep to reach an
+interval, and never push each commit as it lands. `upstream` is read-only; confirm the destination with
+`git push --dry-run` when a push boundary lands on a batch you did not expect to publish.
 
 ## Stop and escalate
 
