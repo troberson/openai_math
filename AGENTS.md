@@ -17,6 +17,8 @@ lives in this file and nowhere else.
   `t0-triage.md`, `conditional.md`, `resolution-tag.md`, `counterexample-tag.md`, `proof-density.md`,
   `counterexample-crosscheck.md` (the 28 counterexample-shaped families outside T0, each claim paired
   with the `main_results` declaration that corresponds to it),
+  `t0-chains.md` (the 2 cross-family edges the release records, the literature chain behind 311, and
+  the 28 two-manuscript second-pass families with their intra-family citation layer),
   `verification-dirs.md` (the 30 bundles, each one's own entry point, and the family-348 reading),
   `summaries-workflow.md` (the resume protocol for the summary batches),
   `conjecture-standing.tsv` (139 rows, 10 columns — a labeled training-data prior, not a fact) with
@@ -167,6 +169,16 @@ lives in this file and nowhere else.
 - Bucket the T0 families with `python3 notes/scripts/triage_t0.py` — it reads `notes/catalog.tsv`,
   writes nothing, and reconciles 137 families over 255 manuscripts. Findings live in
   `notes/t0-triage.md`.
+- Measure the chains and the 28 with `python3 notes/scripts/extract_t0_chains.py` — report-only, writes
+  nothing. Reproducing the bead's 28 needs **three** conditions at once: `tier == T0`, `paps == 2`, and
+  the family id appearing between `## Second pass: the remaining 93 families` and `## What the triage
+  shows` in `notes/t0-triage.md`. Repo-wide there are **96** families with exactly 2 manuscripts
+  (`T0:36`, `T2:20`, `T3:40`) and **36** of them are T0, 8 read in the first pass — so 28 is a
+  reading-pass subset, never a census, and "no coverage signal" holds for **27** of them (268 carries
+  `verification = 2`). The release records a cross-family link only as a `result (NNN)` clause in the
+  overview abstract, which is what the ledger's `companions` column parses: **2** edges over 372
+  families. `companion_word` (`\bcompanion` in the same abstract) fires on **10** families and **0** of
+  them carry a `companions` edge — the word is not a link. Findings live in `notes/t0-chains.md`.
 - Quote `notes/conjecture-standing.tsv` as a prior, never as a literature fact. Its
   `standing_prior_2025` column is the assistant's training-data memory at an early-2025 cutoff,
   self-rated by `prior_confidence`; the repo supplies only `release_claim` and `abstract_line`.
@@ -355,6 +367,18 @@ lives in this file and nowhere else.
   where the declaration opens, and the carrier's definition anchor. It flags thirteen injected mutants
   and writes nothing. Run `python3 notes/scripts/extract_counterexample_crosscheck.py` twice and diff:
   the report must be identical.
+- Check `notes/t0-chains.md` with `python3 notes/scripts/verify_t0_chains.py --mutant` before quoting
+  any of its counts — it resolves every `file:line` anchor (`.bib` files included), matches each fenced
+  block against the **nearest preceding** anchor as joined text against the same number of source lines
+  (so a one-line overview abstract re-wrapped across page lines still matches), pins each `*"…"*`
+  quotation to the anchor in its own line or in the contiguous lines above it, re-derives the 12 count
+  phrases and the 4 named family lists, requires the 28-row summary table and the 5-row chain table to
+  equal the ledger, and requires each of the 28 blocks to carry exactly 2 manuscript bullets whose title
+  is verbatim on the family's `\resultentry` line and whose path exists on disk. It flags twelve
+  injected mutants and writes nothing. Run `python3 notes/scripts/extract_t0_chains.py` twice and diff:
+  the report must be identical — 28 families over 56 manuscripts, 27 with zero coverage signal, 2 chain
+  edges over 372 families, 10 `companion_word` families carrying 0 edges, 16 families citing their
+  sibling (9 mutual, 7 one-way), and 8 reconciliation lines reading True.
 - Measure the verification bundles with `python3 notes/scripts/extract_verification_dirs.py` (the 30
   bundles, which README section names them, and each bundle's entry point) and
   `python3 notes/scripts/extract_verification_348.py` (the family-348 pair); run each twice and diff:

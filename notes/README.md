@@ -43,6 +43,8 @@ python3 notes/scripts/measure_proof_density.py  # tests proofs-per-family agains
 python3 notes/scripts/measure_proof_density.py --mutant  # self-test: 8 injected corruptions must all be caught, plus a 5-case check of the statistic itself
 python3 notes/scripts/extract_counterexample_crosscheck.py  # pairs the 28 counterexample families outside T0 with their main_results declarations and carriers; report-only
 python3 notes/scripts/verify_counterexample_crosscheck.py --mutant  # checks notes/counterexample-crosscheck.md: anchors, fenced blocks, quotations, three tables, all 19 counts
+python3 notes/scripts/extract_t0_chains.py  # the 2 release-recorded cross-family edges, the 311 literature chain, and the 28 two-manuscript second-pass T0 families; report-only
+python3 notes/scripts/verify_t0_chains.py --mutant  # checks notes/t0-chains.md: anchors, fenced blocks, quotations, two tables, 28 blocks with 56 titles and paths, all 12 counts and 4 named lists
 ```
 
 `notes/summaries-workflow.md` is the resume protocol for the summary-page batches: per-page steps,
@@ -164,6 +166,17 @@ join — see the traps below. Verdicts for all 27, each resting on a verbatim ca
 at its `file:line`, are in **`notes/counterexample-crosscheck.md`**, which also records the bead
 prose's "21 T0 counterexample-shaped families" beside the shape rule's **16** without resolving the
 gap between them.
+
+**The release records 2 cross-family links, not a graph.** The ledger's `companions` column parses
+`result (NNN)` clauses inside the overview abstract, and over 372 families that yields **2** edges:
+001 → 032 and 002 → 006. The `companion_word` column (`\bcompanion` in the same abstract) fires on
+**10** families and **0** of them carry an edge, so the word gestures at a companion without recording
+one. All five families in the three bead-named chains sit at T0 with every coverage column at zero, so
+"only as strong as its weakest unformalized link" reads here as *every* link; the third chain,
+311 ⇒ Hovey–Strickland, is a literature chain and has no corpus edge at all. The 28 two-manuscript
+second-pass families — population rule, per-family pairing judgement, and the intra-family citation
+layer measuring **16** of 28 citing their sibling (**9** mutual, **7** one-way, **12** citing none,
+**3** of those shipping no `.bib` file at all) — are in **`notes/t0-chains.md`**.
 
 **`resolves_named` is a column, not a shape.** The broad named-target rule (a target noun
 *conjecture/question/problem* plus a resolution verb) flags 233 families, so it is carried in its own
@@ -528,6 +541,13 @@ the community will scrutinize.
   cross-family exclusion then matches nothing, silently. Measured 2026-10-07 in
   `notes/scripts/extract_links.py`; the same rule is why the ledger's `verification`/`inputs`/`covmd`
   sums are keyed on `.name`.
+- **A bead's family count is a reading-pass subset, not a population.** "The 28 two-manuscript
+  families with no coverage signal" reproduces only under three conditions at once: `tier == T0`,
+  `paps == 2`, and the family id appearing between `## Second pass: the remaining 93 families` and
+  `## What the triage shows` in `notes/t0-triage.md`. `paps == 2` alone reads **96** families
+  (`T0:36`, `T2:20`, `T3:40`); T0 ∩ `paps == 2` reads **36**, 8 of them already read in the first
+  pass. "No coverage signal" then holds for **27** of the 28 — 268 carries `verification = 2`. Quote
+  28 with all three conditions, never as a census of two-manuscript families.
 - **A bare `\bMSC\b` scan is not the MSC rule.** It returns 14 hits over 13 files, all prose:
   `type = {MSc thesis}`, "2-primary class groups", "primary classical construction". The shipped rule
   (`MSC 20xx | \msc | mscclass | "Mathematics Subject Classification" | Primary nnXxx`, over 8,231
