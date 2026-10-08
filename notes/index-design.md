@@ -4,8 +4,9 @@ Decided 2026-10-07 for `math-u41.1`. Every count here comes from
 `python3 notes/scripts/measure_index_sizes.py`, which reads the tree as text, runs nothing, writes
 nothing, and prints the same report on two consecutive runs.
 `python3 notes/scripts/verify_index_design.py --mutant` re-derives those counts, resolves every
-anchor on this page, and flags nine injected mutations. Rendering is `math-u41.2`; nothing here has
-been rendered.
+anchor on this page, and flags thirteen injected mutations. Rendering has since shipped —
+`notes/index/` carries **1,034** pages and **16** tables, and the schema tables' row counts below are
+read from those generated files.
 
 ## The population
 
@@ -63,6 +64,11 @@ The five tracked TSVs, measured on disk:
 | `formalization-deps.tsv` | **4405** | **31** |
 | `links.tsv` | **7177** | **22** |
 | `subfindings.tsv` | **168540** | **1137** |
+
+Those five named files are the ledger set the **296,283** B figure covers. `notes/sources.tsv`
+(**222551** B over **722** rows) and `notes/topics.tsv` (**22629** B over **92** rows) are tracked
+TSVs too, and every `notes/*.tsv` together totals **541463** B — quote the set with the figure, since
+the two sums answer different questions.
 
 ## 2. Location — `notes/index/`
 
@@ -197,7 +203,10 @@ manuscript-level flag.
   The index itself is rendered — **1,034** pages, **16** tables, `links checked 47354 broken 0`, and a
   two-run determinism check in which all **1,050** generated files were byte-identical with an
   identical report — but no page was read for prose quality, and the byte cost of the rendered tree
-  was not measured.
+  was not measured. The render-time figure is the registry's own subset: the disk check
+  (`notes/scripts/check_index_links.py`) covers **65,690** links over the same 1,034 pages, also with
+  **0** broken, and **16,818** of them resolve to a directory. `notes/index-links.md` carries that
+  measurement; the prose-quality and byte-cost exclusions above are unchanged by it.
 - The **12,928** bib entries are counted by `^\s*@\w+\s*{`; commented-out entries are included and
   none was checked to parse as a BibTeX entry.
 - The **127**-family Lean reach is computed from scope-note links and yaml triples. No `.lean` file

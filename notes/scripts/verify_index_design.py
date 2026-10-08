@@ -10,9 +10,12 @@ Report-only; writes nothing. Three passes over the page:
    consecutive line numbers.
 2. Counts. Every bold count on the page is checked by matching the exact phrase the page must
    contain, built from notes/scripts/measure_index_sizes.population(). A count the page states in
-   prose, not in a phrase listed here, is not verified by this script.
-3. Byte sizes. The five measured TSV sizes are re-read from disk and compared with the values the
-   page's SIZES-derived phrases quote.
+   prose, not in a phrase listed here, is not verified by this script. The schema tables' row counts
+   are read from the generated files under `notes/index/`, so a rendered table that drops rows is a
+   mismatch rather than a phrase built from the upstream count it was derived from.
+3. Byte sizes. The five TSV sizes the page tabulates are re-read from disk and compared with the
+   values the page's byte phrases quote. The scope is the five named files, not every `notes/*.tsv`:
+   the sum over all of them is a different quantity (see `LEDGER_SET`).
 
 Whitespace runs are collapsed on both sides of every comparison: line-wrapping in the page is
 markup, not part of the text (see the ruling recorded for the summaries pages).
@@ -45,6 +48,11 @@ def count_phrases(p):
     sf, tex = f"{p['sf_rows']:,}", f"{p['tex_files']:,}"
     setb, rawkib = f"{p['ledger_set_bytes']:,}", f"{p['rawbib_kib']:,}"
     fam, man, disc = p["families"], p["manuscripts"], p["disciplines"]
+
+    def ir(name):
+        """A rendered table's row count, read from the generated file."""
+        return f"{p['index_rows'][name]:,}"
+
     return [
         # node table
         (f"| Families | **{fam}** |", "families node count"),
@@ -87,6 +95,12 @@ def count_phrases(p):
         (f"The measured population is **{n}** nodes and **{e}** edges", "store-section totals"),
         (f"carries **{sf}** rows at **{p['sf_bpr']:.1f}** B/row", "subfindings bytes per row"),
         (f"the whole ledger set is **{setb}** B", "ledger set byte total"),
+        (f"the ledger set the **{setb}** B figure covers", "ledger set scope sentence"),
+        (f"every `notes/*.tsv` together totals **{p['all_tsv_bytes']}** B", "all-TSV byte total"),
+        (f"`notes/sources.tsv` (**{p['sizes']['sources.tsv'][0]}** B over "
+         f"**{p['sizes']['sources.tsv'][1]}** rows) and `notes/topics.tsv` "
+         f"(**{p['sizes']['topics.tsv'][0]}** B over **{p['sizes']['topics.tsv'][1]}** rows)",
+         "added TSV byte figures"),
         (f"(**{p['builds_on']}** `builds-on` declarations at `lean/formalization.yaml:822`)",
          "builds-on declaration count"),
         # granularity
@@ -113,21 +127,32 @@ def count_phrases(p):
          f"**{p['mr_entries']}**", "namespace disagreement count"),
         (f"with **{p['msc_hits']}** MSC codes and **{p['bib_kw']}** `keywords` fields",
          "derived-vocabulary rejection basis"),
-        # schema tables
-        (f"`families.tsv` | **{fam}**", "families.tsv rows"),
-        (f"`manuscripts.tsv` | **{man}**", "manuscripts.tsv rows"),
-        (f"`configs.tsv` | **{p['chal_json']}**", "configs.tsv rows"),
-        (f"`lean-dirs.tsv` | **{p['lean_mods']}**", "lean-dirs.tsv rows"),
-        (f"`scope-notes.tsv` | **{p['scope_notes']}**", "scope-notes.tsv rows"),
-        (f"`traces.tsv` | **{p['traces']}**", "traces.tsv rows"),
-        (f"`family-manuscript.tsv` | **{man}**", "family-manuscript.tsv rows"),
-        (f"`family-config.tsv` | **{p['chal_json']}**", "family-config.tsv rows"),
-        (f"`config-declaration.tsv` | **{p['mr_entries']}**", "config-declaration.tsv rows"),
-        (f"`family-lean.tsv` | **{p['reach']}**", "family-lean.tsv rows"),
-        (f"`citation.tsv` | **{p['resolved']}** | manuscript → corpus manuscript, "
+        # schema tables — every row count here is read from the generated table itself
+        # (measure_index_sizes.index_rows), not derived from the upstream count it was built from.
+        (f"`families.tsv` | **{ir('families.tsv')}**", "families.tsv rows"),
+        (f"`manuscripts.tsv` | **{ir('manuscripts.tsv')}**", "manuscripts.tsv rows"),
+        (f"`configs.tsv` | **{ir('configs.tsv')}**", "configs.tsv rows"),
+        (f"`lean-dirs.tsv` | **{ir('lean-dirs.tsv')}**", "lean-dirs.tsv rows"),
+        (f"`scope-notes.tsv` | **{ir('scope-notes.tsv')}**", "scope-notes.tsv rows"),
+        (f"`traces.tsv` | **{ir('traces.tsv')}**", "traces.tsv rows"),
+        (f"`topics.tsv` | **{ir('topics.tsv')}** | term", "topics.tsv rows"),
+        (f"`names.tsv` | **{ir('names.tsv')}**", "names.tsv rows"),
+        (f"`family-manuscript.tsv` | **{ir('family-manuscript.tsv')}**",
+         "family-manuscript.tsv rows"),
+        (f"`family-config.tsv` | **{ir('family-config.tsv')}**", "family-config.tsv rows"),
+        (f"`config-declaration.tsv` | **{ir('config-declaration.tsv')}**",
+         "config-declaration.tsv rows"),
+        (f"`family-lean.tsv` | **{ir('family-lean.tsv')}** | family → Lean file, derived; "
+         f"**{p['mr_files']}** files over **{p['reach']}** families", "family-lean.tsv rows"),
+        (f"`citation.tsv` | **{ir('citation.tsv')}** | manuscript → corpus manuscript, "
          f"**{p['cross']}** cross-family", "citation.tsv rows"),
-        (f"`family-trace.tsv` | **{p['traces']}**", "family-trace.tsv rows"),
-        (f"`family-topic.tsv` | **{fam}**", "family-topic.tsv rows"),
+        (f"`family-trace.tsv` | **{ir('family-trace.tsv')}**", "family-trace.tsv rows"),
+        (f"`family-topic.tsv` | **{ir('family-topic.tsv')}** | family → topic, "
+         f"**zero or more** per family", "family-topic.tsv rows"),
+        (f"`family-name.tsv` | **{ir('family-name.tsv')}**", "family-name.tsv rows"),
+        (f"**{p['index_pages']:,}** pages and **{p['index_tables']}** tables in total",
+         "rendered page/table totals"),
+        (f"has one row per folded name key (**{ir('names.tsv')}**)", "names.tsv key count"),
         (f"Pages: `notes/index/<discipline>/<NNN>-<name>.md`, **{fam}** of them", "page count"),
         (f"**{be}** rows at the measured **150** B/row is **{rawkib}** KiB",
          "raw-bib projection"),
@@ -151,7 +176,7 @@ def count_phrases(p):
         (f"**{p['sf_comp']}** scope-note link occurrences against **{p['chal_json']}** distinct "
          f"configs: {p['dup_docs']} scope notes link one config twice", "link occurrence gap"),
         # not checked
-        (f"projections at **150** B/row", "projection basis"),
+        (f"The **150** B/row byte figures are projections", "projection basis"),
         (f"The **{be}** bib entries are counted", "bib entry caveat"),
         (f"The **{p['reach']}**-family Lean reach", "lean reach caveat"),
         (f"The **{p['ns_agree']}** of **{p['mr_entries']}** namespace agreement",
@@ -159,13 +184,22 @@ def count_phrases(p):
         (f"Whether the **{p['lean_disc']}** Lean discipline dirs align with the **{disc}** catalog "
          f"disciplines", "grouping caveat"),
         (f"superseded by the measured **{n}** and **{rb}**", "superseded estimate"),
+        (f"covers **{p['disk_links']:,}** links over the same 1,034 pages, also with "
+         f"**{p['disk_broken']}** broken, and **{p['disk_dirs']:,}** of them resolve to a "
+         f"directory", "disk link check"),
     ]
 
 
 def size_phrases(p):
-    """The measured TSV sizes the page's byte figures are projections from."""
+    """The measured TSV sizes the page's byte figures are projections from.
+
+    Scoped to the five files the page tabulates as "the whole ledger set"
+    (measure_index_sizes.LEDGER_SET). `sources.tsv` and `topics.tsv` are tracked TSVs too, but the
+    page's byte table never claims them, so requiring a row for each invents a broken phrase.
+    """
     out = []
-    for name, (size, rows) in p["sizes"].items():
+    for name in M.LEDGER_SET:
+        size, rows = p["sizes"][name]
         out.append((f"| `{name}` | **{size}** | **{rows}** |", f"{name} measured size"))
     return out
 
@@ -247,6 +281,15 @@ MUTANTS = {
     "substring-rule count altered": lambda t: t.replace("of the command name reads 18 and",
                                                         "of the command name reads 17 and", 1),
     "projected size altered": lambda t: t.replace("**1,893** KiB", "**1,800** KiB", 1),
+    "rendered row count altered": lambda t: t.replace("`family-topic.tsv` | **971**",
+                                                       "`family-topic.tsv` | **970**", 1),
+    "ledger set widened to all TSVs": lambda t: t.replace("the whole ledger set is **296,283** B",
+                                                          "the whole ledger set is **541,463** B",
+                                                          1),
+    "all-TSV total altered": lambda t: t.replace("together totals **541463** B",
+                                                 "together totals **296283** B", 1),
+    "disk link count altered": lambda t: t.replace("covers **65,690** links",
+                                                   "covers **65,700** links", 1),
 }
 
 

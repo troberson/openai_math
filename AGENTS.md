@@ -214,12 +214,17 @@ lives in this file and nowhere else.
   `python3 notes/scripts/extract_subfindings.py` twice and diff: the TSV must be byte-identical.
 - Run `python3 notes/scripts/extract_subfinding_pairs.py` twice and diff: the report must be identical.
 - Run `python3 notes/scripts/measure_index_sizes.py` twice and diff: the report must be identical. It
-  writes nothing, and every count in `notes/index-design.md` comes from it.
+  writes nothing, and every count in `notes/index-design.md` comes from it. It prints two byte sums
+  that are not interchangeable — `ledger set bytes (5 named TSVs)` **296283** and
+  `all notes/*.tsv bytes` **541463** — and an INDEX section whose table row counts are read from the
+  generated files under `notes/index/`, not derived from the upstream counts they were built from.
 - Check `notes/index-design.md` with `python3 notes/scripts/verify_index_design.py --mutant` before
   quoting the schema — it resolves every backticked `path:line` anchor of any extension (a mistyped
   extension fails, it is not skipped), matches each fenced block against the nearest preceding anchor,
-  re-derives all 73 count and byte phrases from `measure_index_sizes.population()`, and flags nine
-  injected mutations. It writes nothing.
+  re-derives all 82 count and byte phrases from `measure_index_sizes.population()` (schema-table row
+  counts from the rendered TSVs themselves; byte phrases scoped to the five TSVs the page tabulates,
+  so `sources.tsv` and `topics.tsv` are not demanded), and flags thirteen injected mutations. It
+  writes nothing.
 - Run `python3 notes/scripts/build_sources.py` twice and diff: `notes/sources.tsv` must be
   byte-identical and the report identical. Its report reconciles 722 rows over 722 preprint dirs, 0
   dirs with no `subfindings.tsv` manuscript row, 0 subfindings slugs absent from disk, 0 empty or
@@ -287,6 +292,17 @@ lives in this file and nowhere else.
   singletons, max (233, `cauchy`), 329 with >1 prose spelling, trace families 10 of 10. Quote an index
   count with the report line it came from; the index is generated, so edit the generator and re-render
   rather than editing a page.
+- Check the rendered index against the shipped files with
+  `python3 notes/scripts/check_index_links.py` — report-only, ~1 s, exits non-zero on a broken link.
+  It re-derives the check from disk: 1,034 pages, 65,690 links, 0 broken, of which 16,818 resolve to a
+  directory (`manuscript-dir`, `latex-build-tree`, `lean-dir`, `verification-dir`, `index-dir`) and
+  48,872 to a file, every shipped-file category equal to a fresh `build_catalog.py` count. The render
+  report's 47,354 links are the registry's subset; the 18,336-link difference is registry
+  under-coverage, not a disagreement about existence — both report 0 broken. Link scanning must be
+  paren-balanced: `[^)]*` truncates
+  `preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/paper.pdf` and invents a broken
+  link, so the baseline is 0 broken links, not 1. `--mutant` runs the self-test (20 injected hrefs, one
+  per category, all caught; 7 real hrefs, all resolving). Findings: `notes/index-links.md`.
 - Run `python3 notes/scripts/measure_names.py` before quoting a name count: it re-derives every figure
   in `notes/names.md` from the corpus (6,975 `.tex` files, 15,755 titled statement environments,
   12,707 `.bib` entries over 5,831 author keys, 3,404 title candidates, 2,847 rejections by bucket).

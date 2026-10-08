@@ -15,6 +15,12 @@ Rules stated where they matter:
 - Family→config is counted per family as a set, which is why it reads 405 here and 415 in
   notes/links.tsv, where 7 scope notes link one config twice.
 - Manuscript ownership is the path component after `preprints`, never `parts[-2]`.
+- "The whole ledger set" is the five tracked TSVs notes/index-design.md tabulates, named in
+  LEDGER_SET below. The sum over *every* notes/*.tsv is reported separately as `all_tsv_bytes`: it
+  grew from 296,283 B to 541,463 B when `sources.tsv` and `topics.tsv` were added, so quoting it as
+  the ledger set would move a number the page states under a narrower rule.
+- Index table row counts are read from the generated files under `notes/index/`, not derived from
+  the upstream counts they were built from, so a build that drops rows shows as a mismatch.
 """
 import collections
 import csv
@@ -30,6 +36,11 @@ YAML = ROOT / "lean" / "formalization.yaml"
 LEDGER = ROOT / "notes" / "catalog.tsv"
 LINKS = ROOT / "notes" / "links.tsv"
 SUBF = ROOT / "notes" / "subfindings.tsv"
+IDX = ROOT / "notes" / "index"
+
+# The five TSVs notes/index-design.md tabulates as "the whole ledger set".
+LEDGER_SET = ("catalog.tsv", "conjecture-standing.tsv", "formalization-deps.tsv", "links.tsv",
+              "subfindings.tsv")
 
 
 def tsv(path):
@@ -93,6 +104,19 @@ def population():
     for p in sorted((ROOT / "notes").glob("*.tsv")):
         n = len([l for l in p.read_text(encoding="utf-8").split("\n") if l.strip()]) - 1
         sizes[p.name] = (p.stat().st_size, n)
+
+    def rows_of(p):
+        return len([l for l in p.read_text(encoding="utf-8").split("\n") if l.strip()]) - 1
+
+    index_rows = {p.name: rows_of(p) for p in sorted(IDX.rglob("*.tsv"))}
+    index_pages = len(list(IDX.rglob("*.md")))
+
+    # The disk link check notes/index-design.md quotes, re-derived here so the page's
+    # figures are checked against a scan and not against prose.
+    import check_index_links as CL
+    dlinks = CL.check_index()
+    disk_broken = sum(1 for _, _, rel in dlinks if not (ROOT / rel).exists())
+    disk_dirs = sum(1 for _, _, rel in dlinks if (ROOT / rel).is_dir())
 
     nodes = (len(rows) + sum(paps) + len(disc_dirs) + len(mod_dirs) + len(list(CHAL.glob("*.json")))
              + len(cfgs) + len(list(DOCS.glob("*.md"))) + len({p.stem for p in trace_files})
@@ -158,7 +182,11 @@ def population():
         "brace_res": ov.count("\\resultentry{"),
         "builds_on": len(re.findall(r"relationship:\s*builds-on", yml)),
         "sf_bpr": sizes["subfindings.tsv"][0] / sizes["subfindings.tsv"][1],
-        "ledger_set_bytes": sum(s for s, _ in sizes.values()),
+        "ledger_set_bytes": sum(sizes[n][0] for n in LEDGER_SET),
+        "all_tsv_bytes": sum(s for s, _ in sizes.values()),
+        "index_rows": index_rows,
+        "index_pages": index_pages,
+        "index_tables": len(index_rows),
         "rawbib_kib": bib_entries * 150 // 1024,
         "res_kib": resolved * 150 // 1024,
         "kw_pct": 100.0 * kw_dirs / sum(paps),
@@ -166,6 +194,9 @@ def population():
         "nodes": nodes,
         "edges_resolved": edges,
         "edges_rawbib": edges + bib_entries,
+        "disk_links": len(dlinks),
+        "disk_broken": disk_broken,
+        "disk_dirs": disk_dirs,
         "sizes": sizes,
     }
 
@@ -193,12 +224,22 @@ def main():
     print(f"  scope notes linking a config twice {p['dup_docs']}")
     print(f"  yaml builds-on declarations       {p['builds_on']}")
     print(f"  subfindings B/row                 {p['sf_bpr']:.1f}")
-    print(f"  notes/*.tsv total bytes           {p['ledger_set_bytes']}")
+    print(f"  ledger set bytes (5 named TSVs)   {p['ledger_set_bytes']}")
+    print(f"  all notes/*.tsv bytes             {p['all_tsv_bytes']}")
     print(f"  \\keywords share of manuscripts    {p['kw_pct']:.1f}%")
     print("TOTALS")
     print(f"  nodes (excl. {p['lean_files']} .lean files) {p['nodes']}")
     print(f"  edges (resolved citations)        {p['edges_resolved']}")
     print(f"  edges (incl. raw bib)             {p['edges_rawbib']}")
+    print("INDEX (generated files under notes/index/, row counts read from the files)")
+    print(f"  pages (.md)                       {p['index_pages']}")
+    print(f"  tables (.tsv)                     {p['index_tables']}")
+    for name, n in sorted(p["index_rows"].items()):
+        print(f"  {name:28} {n:6} rows")
+    print("DISK LINK CHECK (notes/scripts/check_index_links.py over notes/index/**/*.md)")
+    print(f"  links scanned                     {p['disk_links']}")
+    print(f"  broken                            {p['disk_broken']}")
+    print(f"  resolving to a directory          {p['disk_dirs']}")
     print("SIZES")
     for name, (size, n) in p["sizes"].items():
         print(f"  {name:28} {size:7} B over {n:5} rows  {size / max(n, 1):5.1f} B/row")

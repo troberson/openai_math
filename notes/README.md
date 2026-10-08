@@ -22,8 +22,8 @@ python3 notes/scripts/verify_subfinding_pairs.py --mutant  # checks notes/subfin
 python3 notes/scripts/verify_conditional.py --mutant  # checks notes/conditional.md against the Lean source it cites
 python3 notes/scripts/extract_verification_348.py  # measures the two family-348 verification bundles; report-only, writes nothing
 python3 notes/scripts/verify_verification_dirs.py --mutant  # checks the 348 section of notes/verification-dirs.md against the bundle files
-python3 notes/scripts/measure_index_sizes.py  # the node/edge population behind notes/index-design.md; report-only, writes nothing
-python3 notes/scripts/verify_index_design.py --mutant  # checks notes/index-design.md: anchors, every count, the measured byte sizes
+python3 notes/scripts/measure_index_sizes.py  # the population behind notes/index-design.md, the rendered tables' row counts, and the disk link check; report-only
+python3 notes/scripts/verify_index_design.py --mutant  # checks notes/index-design.md: anchors, every count (schema rows read from notes/index/*.tsv), the five tabulated byte sizes
 python3 notes/scripts/build_sources.py      # writes notes/sources.tsv (the LaTeX surface of all 722 manuscripts) and prints the reconciliation
 python3 notes/scripts/verify_sources.py --mutant  # checks notes/sources.md against preprints/: every count, every anchor, every directory name
 python3 notes/scripts/measure_topics.py     # measures notes/topics.tsv over the four text layers; report-only, writes nothing
@@ -31,6 +31,8 @@ python3 notes/scripts/measure_topics.py --check  # re-measures all 92 rows and e
 python3 notes/scripts/measure_names.py      # the six name layers behind notes/names.md; report-only, writes nothing
 python3 notes/scripts/measure_names.py --json  # dumps the 5,859 measured rows plus metadata as JSON
 python3 notes/scripts/build_index.py        # writes notes/index/ (1,034 pages + 16 tables) and prints the reconciliation
+python3 notes/scripts/check_index_links.py  # checks every link in notes/index/ and CONTENTS.md against the shipped files; report-only
+python3 notes/scripts/check_index_links.py --mutant  # self-test: 20 injected broken hrefs (one per category) must all be caught, 7 real hrefs must resolve
 ```
 
 `notes/summaries-workflow.md` is the resume protocol for the summary-page batches: per-page steps,
@@ -280,7 +282,10 @@ the family→Lean reach the index shows is *derived* — family → config (the 
 links) → declaration → file — 185 declarations over 178 configs reaching **127 of 372** families, and
 formalization stays a per-manuscript flag. The 108 T2 families, whose scope notes link configs that no
 `main_results` entry names, render as *absent*, never as unformalized. Fresh report: **47354** relative
-links with **0** broken; canonical == rendered on all seven coverage counts (372 / 722 / 162 / 235 /
+links with **0** broken — that is the render-time registry, and `notes/scripts/check_index_links.py`
+re-derives the check from disk over every rendered page: **65,690** links, **0** broken, **16,818** of
+them resolving to a directory and 48,872 to a file, the 18,336-link difference being registry
+under-coverage rather than a disagreement about existence (`notes/index-links.md`); canonical == rendered on all seven coverage counts (372 / 722 / 162 / 235 /
 405 / 10 / 30); `vs ledger` diffs of 0 on tier, `mainres`, `chal`, `paps`, `paps_form`; ledger and
 overview family sets equal with **372 pages and 0 absent on disk**; 11 trace files over 10 attributed
 stems; **0** configs linked by more than one family; **0** page collisions (max slug length 93); 12 of
@@ -380,6 +385,10 @@ the community will scrutinize.
   Use `preprints/(?:[^\s(){}\\]|\([0-9]+\))*\.pdf`. Excluding `{}` and `\` matters too: a greedy
   match in `overview.tex` otherwise swallows the `}\enspace\textperiodcentered\enspace\href{`
   separator and invents a 723rd manuscript.
+- **`[^)]*` is not a markdown link scanner.** The same `CAT(0)` directory breaks a link-target regex:
+  `\]\(([^)]*)\)` truncates the href at `(0)`, the truncated target does not exist, and a link checker
+  reports a broken link the release does not ship. Walk forward from `](` tracking paren depth
+  (`check_index_links.md_links`), and take **0 broken links** as the baseline, not 1.
 - **Namespace-qualified declarations.** `theorem RowColumn.occupied_overlap` inside
   `namespace OAI` is `OAI.RowColumn.occupied_overlap`. Match the qualified tail against file text.
 - **`axiom` in prose.** `^\s*axiom\s` hits doc-comment English, not real axioms.
