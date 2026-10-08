@@ -1,6 +1,18 @@
 # Generated tree: edit notes/scripts/build_index.py and re-render, never format a page.
 notes/index/
 
+# Checker-verified pages are byte-exact by contract: the scripts in notes/scripts/ regex on
+# `*"…"` quotation markers, on `| n |` table cells with no cell padding, and on block-quote line
+# positions. Prettier 3.9.9 rewrites all three (720 `*x*` -> `_x_`, 244 `*"…"` -> `_"…"`, 2,043
+# padded table lines over notes/) and its markdown printer exposes only proseWrap and singleQuote,
+# so none of it is configurable. Format only the four pages no checker parses, listed below.
+notes/*.md
+notes/summaries/**/*.md
+!notes/conjecture-standing.md
+!notes/links.md
+!notes/proof-density.md
+!notes/summaries-workflow.md
+
 # Release mirror - this fork mirrors the release byte-for-byte.
 /preprints/
 /lean/
