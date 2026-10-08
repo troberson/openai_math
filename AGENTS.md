@@ -15,7 +15,8 @@ lives in this file and nowhere else.
   both `.pdf` and `.tex`.
 - `notes/` is the reading ledger: `catalog.tsv` (372 rows, 22 columns), `README.md`,
   `t0-triage.md`, `conditional.md`, `resolution-tag.md`, `counterexample-tag.md`, `proof-density.md`,
-  `verification-dirs.md`, `summaries-workflow.md` (the resume protocol for the summary batches),
+  `verification-dirs.md` (the 30 bundles, each one's own entry point, and the family-348 reading),
+  `summaries-workflow.md` (the resume protocol for the summary batches),
   `conjecture-standing.tsv` (139 rows, 10 columns — a labeled training-data prior, not a fact) with
   `conjecture-standing.md` beside it, `formalization-deps.tsv` (31 rows, 8 columns — the upstream
   library graph) with `formalization-deps.md` beside it and `dependency-drift.md` (what that record
@@ -127,6 +128,16 @@ lives in this file and nowhere else.
   exists, lives under `lean/OAI/`. To ask what a formalization assumes, resolve the declaration
   `main_results` names in `lean/formalization.yaml` and read that file — a fully-qualified name like
   `OAI.CHObstruction.main` is a yaml fact and does not occur verbatim in the Lean source.
+- A `preprints/<slug>/verification/` bundle is a finite-arithmetic **certificate**, not a proof, and the
+  ledger's `verification` column is a count, not a pointer. Measure the entry point with
+  `python3 notes/scripts/extract_verification_dirs.py`: over the 30 bundles, **12** ship a top-level
+  `verification/README.md`, **6** a subdirectory one, **5** a top-level script whose name begins
+  `verify`/`reproduce`/`run`/`check`, **1** a `README.txt`, and **6 have none** — for 4 of those the run
+  command lives in the manuscript README, and for the **2** bundles no README section names at all (both
+  family 269) there is no command anywhere: each ships one `verification/rows.txt`, byte-identical
+  between them and typeset into the manuscript by `\lstinputlisting`, so the ledger column is the only
+  machine-readable pointer. A README section names 28 of the 30 (27 `## Verification`, 1
+  `## Run the verification code`). Quote the class counts with the extractor's rule, never as coverage.
 - Attribute reasoning traces from the table in `README.md`, never by guessing from filenames.
 - Bucket the T0 families with `python3 notes/scripts/triage_t0.py` — it reads `notes/catalog.tsv`,
   writes nothing, and reconciles 137 families over 255 manuscripts. Findings live in
@@ -303,14 +314,19 @@ lives in this file and nowhere else.
   `name → file:line` citation against the shipped file, and flags five injected mutants. It reports
   **15 unanchored prose quotations** — the pre-existing abstract and scope-note quotes in the
   per-family sections, which carry no line anchors and are therefore not verified. It writes nothing.
-- Measure the family-348 verification bundles with `python3 notes/scripts/extract_verification_348.py`
-  and run it twice and diff: the report must be identical. It reads the bundles as text and runs
-  nothing. Check the section it feeds with
-  `python3 notes/scripts/verify_verification_dirs.py --mutant` before quoting it — it re-derives every
-  bold count from the bundle on disk, resolves every `file:line` anchor, matches each fenced block line,
-  checks each quotation against the anchored lines, re-checks the ledger's `verification`/`inputs`/`covmd`
-  claims from `notes/catalog.tsv`, re-checks that every artifact `COVERAGE.md` names is on disk, and
-  flags nine injected mutants including an abbreviated anchor. It writes nothing.
+- Measure the verification bundles with `python3 notes/scripts/extract_verification_dirs.py` (the 30
+  bundles, which README section names them, and each bundle's entry point) and
+  `python3 notes/scripts/extract_verification_348.py` (the family-348 pair); run each twice and diff:
+  the report must be identical. Both read the bundles as text and run nothing. Check
+  `notes/verification-dirs.md` with `python3 notes/scripts/verify_verification_dirs.py --mutant` before
+  quoting either of its sections — it re-derives every bold count from the files on disk, resolves every
+  `file:line` anchor, matches each fenced block line, checks each quotation against the anchored lines
+  (a quotation with an anchor in its own table row must match at the anchored line exactly, so a shifted
+  anchor is caught), re-checks the ledger's `verification`/`inputs`/`covmd` claims from
+  `notes/catalog.tsv`, requires the entry-point table to carry one row per bundle in slug order with the
+  family that slug belongs to, requires the two family-269 `rows.txt` files to be byte-identical,
+  re-checks that every artifact `COVERAGE.md` names is on disk, and flags eighteen injected mutants
+  including an abbreviated anchor and a deleted table row. It writes nothing.
 - Check `notes/conjecture-standing.tsv` with `python3 notes/scripts/verify_conjecture_standing.py`
   before quoting any row — it proves the 139-row fam set against the ledger, resolves every
   `overview.tex:<n>` anchor to that family's own `\resultentry`, requires `prior_confidence` in
