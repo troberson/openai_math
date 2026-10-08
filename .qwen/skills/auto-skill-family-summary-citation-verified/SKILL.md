@@ -282,6 +282,15 @@ silent. A form the page does not use adds no result, so the report names the for
 with no quotation marks at all is proven only by the block-quote mutant. A green pass you have never
 seen go red is not a check.
 
+Three mutant-mechanics defects fired on the sibling checker (`notes/scripts/verify_findings.py`) and are
+worth knowing here: a mutant whose target string a later page rewrite removed is a **silent no-op** that
+reports `UNDETECTED (0 problems)` and still exits 0 — assert `fn(page) != page`, and re-audit every
+mutant target after any page rewrite; a mutant must be judged against the **expected message**, not
+against "any problem", because an unrelated guard can catch it and leave the intended pass unproven; and
+a mutation that inserts a closing quote mark breaks the quote scanner, so the mutant is caught by the
+count guard instead of the verbatim check. Undetected mutants must fail the exit code. See
+`notes-page-checker-traps` for the full checker-authoring list.
+
 ## 6. Traps (each one fired in this session)
 
 - **Never glob `preprints/*` to resolve a manuscript path.** `build/main.tex`, `05_reduction.tex`,

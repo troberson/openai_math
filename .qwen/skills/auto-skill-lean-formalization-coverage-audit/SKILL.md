@@ -244,3 +244,76 @@ result and no trace, so the abstract was the whole evidence.
   toolchain: all 34 manuscripts here ship LaTeX (2–17 `.tex` each), so reading a proof needs no
   Lean, no build, and no network.
 
+## 10. Claim-level correspondence: does the declaration state the claim?
+
+Coverage counts say a family has a formalized main result. They do not say the result is the one the
+blurb claims. Worked on the 28 counterexample-shaped families outside the zero-signal tier
+(18 at the top tier, 10 at the scope-note-only tier).
+
+- **Pair the claim sentence with the config, not the family with the count.** Split the release
+  abstract into sentences (`re.split(r"(?<=[.!?])\s+", abstract)`) and keep the ones matching the
+  counterexample phrase rule; quote those verbatim with their `overview.tex:<line>` anchor. Then
+  resolve, per config the scope note links, whether `main_results` names a declaration. Family-level
+  "has a formalized counterpart" is the wrong unit: catalog family 172's entry
+  (`OAI.EuclideanRamsey.classification`, `theorem classification … : Ramsey a ↔ FieldCriterion a`) is
+  a positive classification, while the config carrying its refuted Leader–Russell–Walters conjecture
+  (`EuclideanRamseyTransitive`) has no entry at all. 8 of the configs the 18 covered families link
+  carry no entry — a covered family can have no counterpart for the claim being audited.
+- **Open the carrier.** 11 of the 27 declarations are written `theorem main : MainStatement :=` — the
+  statement is a type name, and the counterexample content lives in the carrier definition. Detect the
+  carrier on the head line (`:\s*([A-Z][A-Za-z0-9_.]*)(?:\.\{[^}]*\})?\s*:=`), then find its definition
+  in the declaration's own file first and that file's tree second; the body is the indented run under
+  the `def`:
+
+  ```python
+  CARRIER_DEF = re.compile(
+      r"^\s*(?:private\s+|protected\s+)?(?:def|abbrev|structure)\s+([A-Za-z0-9_.]+)\s*:\s*(?:Prop\s*)?[:=]")
+
+  def carrier(name, rel):
+      own = LEAN_ROOT / rel
+      for p in [own] + sorted(q for q in own.parent.rglob("*.lean") if q != own):
+          lines = p.read_text(encoding="utf-8", errors="replace").splitlines()
+          for i, ln in enumerate(lines, start=1):
+              m = CARRIER_DEF.match(ln)
+              if m and m.group(1).split(".")[-1] == name:
+                  body = [ln.strip()]
+                  for nxt in lines[i:]:
+                      if not nxt.strip() or not nxt.startswith((" ", "\t")):
+                          break
+                      body.append(nxt.strip())
+                  return p.relative_to(LEAN_ROOT), i, body
+      return None, None, []
+  ```
+
+  Opening it is what makes a verdict checkable. `lean/OAI/Algebra/AffineCancellation/Model.lean:20`:
+
+  ```
+  def MainStatement : Prop :=
+    Algebra.FiniteType ℂ A ∧ IsDomain A ∧ ringKrullDim A = 4 ∧
+    Nonempty (Polynomial A ≃ₐ[ℂ] MvPolynomial (Fin 5) ℂ) ∧
+    ¬ Nonempty (A ≃ₐ[ℂ] MvPolynomial (Fin 4) ℂ)
+  ```
+
+  — the `¬ Nonempty (A ≃ₐ[ℂ] MvPolynomial (Fin 4) ℂ)` clause *is* the counterexample. Quote the carrier
+  body with its anchor; a verdict resting on `theorem main : MainStatement :=` alone is not a verdict.
+  Carrier names recur across families (`MainStatement`, `MainTarget`, `MainClaim`, `Counterexample`,
+  `FullStatement`), so always resolve the name in the declaration's own tree, never corpus-wide.
+- **Collect the signature to the `:=`.** A fixed 6-line window truncates multi-binder theorems
+  (`OAI/SetTheory/PartitionPrinciple/Models/Separation.lean:34` carries six binder lines before its
+  type), so the type — the only part that carries the verdict — never appears in the extract. Run the
+  window to `:=` with a generous cap.
+- **Structural absence is not a finding.** In a tier defined as "scope note links configs that no
+  `main_results` entry names", every family in it has 0 entries and 0 formalized manuscripts by
+  construction — all 10 here have `mainres 0` and `paps_form 0`. Say the absence is definitional, then
+  record the challenge configs the scope note *does* link: those are the release's own statement of the
+  target, and the stubs carry the `sorry` (51 linked stubs, 56 occurrences).
+- **Base-dir trap.** `formalization.yaml`'s `file:` values already carry the `OAI/` prefix
+  (`file: OAI/Analysis/Kaplansky/Main.lean`), so the base is `ROOT/lean`. Joining them onto
+  `ROOT/lean/OAI` yields `lean/OAI/OAI/...` and every declaration reports "not found" — 27 of 27,
+  indistinguishable from a library that genuinely lacks them. Assert a nonzero resolved count in the
+  report.
+- **Record a prose/rule discrepancy with both numbers.** The task brief named "the 21 T0
+  counterexample-shaped families"; the shape tag yields 16 (21 is the reading record under the broader
+  phrase rule). Quote both numbers with the rule behind each rather than picking one, and say which
+  record each comes from.
+
