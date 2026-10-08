@@ -224,7 +224,8 @@ def measure():
         },
         "recomputed": {
             "conditional": sum(1 for f in fams if "conditional" in B.shapes_of(fams[f]["abstract"])),
-            "resolves_named": sum(1 for f in fams if B.resolves_named(fams[f]["abstract"])),
+            "resolves_named": sum(1 for f in fams
+                                  if B.resolves_named(fams[f]["title"], fams[f]["abstract"])),
             "counterex_broad": sum(1 for f in fams if B.counterex_broad(fams[f]["title"],
                                                                         fams[f]["abstract"])),
             "rows": len(fams),
