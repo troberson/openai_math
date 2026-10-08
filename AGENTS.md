@@ -41,6 +41,10 @@ lives in this file and nowhere else.
   `sources.tsv` (722 rows, 14 columns — the LaTeX source surface of each manuscript: root count,
   resolved main file, section/proof/statement-environment counts, `.bib` count, `.tex` bytes) with
   `sources.md` beside it,
+  `named-results.md` (the named-result inventory the manuscript **statements** carry — 17 target-named
+  headline statements over 17 families, the three-layer naming record, and the documented 233 → 247
+  `resolves_named` scope candidate) with `named-results.tsv` **absent** beside it — the page is
+  report-fed, not table-fed,
   `summaries/<discipline>/<NNN>-<name>.md`, `notes/scripts/`.
 - `.beads/issues.jsonl` is the tracked issue store, in bd no-db mode; see the beads section below.
 
@@ -244,6 +248,18 @@ lives in this file and nowhere else.
   multi-manuscript family a low per-manuscript ratio is expected — the overview is a synthesis of
   several manuscripts (368 merges $p\le2$ with $p>2$; 240 merges a ZFC theorem with a CH obstruction),
   so quote the unit with the number. See `notes/abstracts.md`.
+- Extract the named-result inventory the manuscript **statements** carry with
+  `python3 notes/scripts/extract_named_results.py` — report-only, writes nothing; run it twice and diff,
+  the 185-line report is byte-identical. Headline statements are `theorem`/`maintheorem`/`thm` begins:
+  2,270 begins, **1,498 titled per line** (a whole-text scan reads 1,508 because 10 titles span a
+  newline). **Zero of the 17 target-named headline titles pair a target noun with a resolve verb** — the
+  release names conjectures in manuscript names, abstracts and prose, and in the overview **title**, not
+  in statement captions, so `resolves_named` is evidence-backed by the record rather than by theorem
+  text. Match `build_catalog.TARGET_NOUN` **case-insensitively** on directory names, theorem titles and
+  overview titles: the ledger rule sees lowercase abstracts, and a case-sensitive match on those
+  capitalized surfaces undercounts. The documented scope candidate is a **union** (title ∪ abstract,
+  233 → 247, removals 0); a strict title+abstract *replacement* reads 149 (98 removals) — quote which
+  one you mean. Findings: `notes/named-results.md`.
 - `notes/sources.tsv`'s `abstract` column is a per-directory **flag**, not an occurrence count: the
   corpus ships 725 `abstract` environments over 722 manuscript directories (057, 039 and 056 each ship
   two), and every one of the 722 directories has at least one.
@@ -287,6 +303,14 @@ lives in this file and nowhere else.
   a `[^{}]*` group silently drops the math-heavy families, which are the ones being quoted.
   `python3 notes/scripts/compare_abstracts.py --tsv` writes `notes/abstracts.tsv`; run it twice and
   diff — 372 rows byte-identical — and `--mutant` must catch all 7 injected corruptions.
+- Check `notes/named-results.md` with `python3 notes/scripts/verify_named_results.py --mutant` before
+  quoting any of its counts — it resolves every `path:line` anchor and every bare `:NNN` overview anchor
+  against `famline`, re-derives all 64 count phrases from `extract_named_results.population()`, checks
+  the 17-row target table against that population and the ledger, matches every `*"…"*` quotation against
+  the file its pinned anchor names, and flags twelve injected mutations. It writes nothing; run it twice
+  and diff — the report is identical. Quote a quotation's anchor as the checker pins it: a manuscript
+  sentence wraps across 1–4 source lines, so the anchor is the **prose-coordinate** line the extractor
+  reports, not the line the sentence ends on.
 - Run `python3 notes/scripts/measure_proof_density.py --mutant` before quoting a proof-density figure —
   it re-derives every AUC and p from `notes/sources.tsv` joined to `notes/catalog.tsv` by family
   number, gates on the population (722 rows, 722 distinct dirs, 372 families on both sides, per-family

@@ -45,6 +45,8 @@ python3 notes/scripts/extract_counterexample_crosscheck.py  # pairs the 28 count
 python3 notes/scripts/verify_counterexample_crosscheck.py --mutant  # checks notes/counterexample-crosscheck.md: anchors, fenced blocks, quotations, three tables, all 19 counts
 python3 notes/scripts/extract_t0_chains.py  # the 2 release-recorded cross-family edges, the 311 literature chain, and the 28 two-manuscript second-pass T0 families; report-only
 python3 notes/scripts/verify_t0_chains.py --mutant  # checks notes/t0-chains.md: anchors, fenced blocks, quotations, two tables, 28 blocks with 56 titles and paths, all 12 counts and 4 named lists
+python3 notes/scripts/extract_named_results.py  # the headline-statement inventory the manuscript sources carry, cross-tabbed against resolves_named; report-only, writes nothing
+python3 notes/scripts/verify_named_results.py --mutant  # checks notes/named-results.md: 60 anchors, 15 bare overview anchors, the 17-row target table, 60 quotations, all 64 counts
 ```
 
 `notes/summaries-workflow.md` is the resume protocol for the summary-page batches: per-page steps,
@@ -186,6 +188,21 @@ assigns by first match. The two signals are complementary, not nested: 139 famil
 both, 94 only by the column, and 5 only by the tag (003, 010, 082, 103, 261 — targets named as a
 *hypothesis/case/estimate/contrast*), for a union of 238. Both are floors. Method, the 94-family
 reading verdict, and the decision are in **`notes/resolution-tag.md`**.
+
+**The manuscript statements are not where the release names its conjectures.** That is the finding of
+**`notes/named-results.md`**, the check that turns the column from a title heuristic into an
+evidence-backed one. Over the 7,401 manuscript `.tex` files the headline statements
+(`theorem`/`maintheorem`/`thm`) read **2,270** begins, **1,498** of them titled, and **17** of those
+titles name a target noun — 17 statements over 17 families, 15 with `rn = 1`. **Zero of the 17 pair a
+target noun with a resolve verb in the same title**, and **71 of the 233** flagged families ship no
+titled headline theorem at all, so statement captions carry almost none of the signal. Naming sits in
+the manuscript's **name** (76 families), its **own abstract** (275), its **prose** (337 under a
+±80-character window), and in the overview **title** — which supplies **14** families the
+abstract-only rule misses. The documented candidate is the title ∪ abstract **union at 247, removals
+0**; a strict title+abstract *replacement* reads 149 (98 removals) and is rejected. **The column is
+unchanged at 233** — the scope swap is tracked as a bd issue because 25 doc matches quote the current
+figure. `notes/scripts/extract_named_results.py` prints every count (report-only) and
+`notes/scripts/verify_named_results.py --mutant` checks the page (12/12 mutants caught).
 
 **Proof density was tested as a signal and rejected — no column.** `notes/sources.tsv` counts
 **20,449** `\begin{proof}` over 722 manuscripts, so proofs-per-family is one command away, and it was
