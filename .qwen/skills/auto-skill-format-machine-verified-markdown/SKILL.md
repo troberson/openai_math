@@ -134,10 +134,75 @@ Present as plain text with a recommendation, never as a dialog:
 - **D. Downgrade the formatter** to a version exposing the option. Not recommended: the pin is in
   `package.json` and the other rewrites usually stay.
 
-After any format pass, re-run **every** checker (with `--mutant` where supported) before reporting
-green, and commit the config file separately from the formatting.
+After any format pass, re-run **every** checker before reporting green, and commit the config file
+separately from the formatting. Run each one **twice** — plain, then `--mutant` — because the two runs
+answer different questions (§7).
 
-## 7. Report
+Recommendation rule: when the rewrite is **unconfigurable** (the option registry is measured, §5) and
+the tree is byte-clean at a named commit, recommend **restore** and name the command
+(`git checkout -- notes/`). Adaptation is only worth proposing when the user wants the formatter in the
+workflow permanently — it converts every future notes page into a page that must be written in the
+formatter's output form.
+
+## 7. Post-pass: measure damage in two runs, and lead with the gate loss
+
+The plain run and the mutant run are **not** the same measurement, and the mutant run's problem lines
+are not real failures. A mutant that is *caught* prints exactly the text you would mistake for damage:
+`verify_t0_chains` printed `count phrase missing (population): '**28** families carrying **56**
+manuscripts'` in the `--mutant` run — that was the `pop-count` mutant being detected; the same checker's
+plain run reported 0 missing phrases. Capture both runs to files and read the authoritative line of each
+(`===== TOTAL … N problems (M undetected mutants)`, `problems N`, `mutants not caught N of M`).
+
+**Lead the report with mutant-injection failure, not with checker failures.** After a format pass the
+dominant class is mutants that can no longer be injected, because the mutation code keys on byte-exact
+page text the formatter rewrote:
+
+```
+NOT INJECTED (page text changed — fix the mutant)
+NOT INJECTED (target text absent)
+NOT INJECTED (phrase absent from the page)
+mutants not caught 3 of 9        mutants caught 8/12        26 undetected mutants
+```
+
+A checker whose mutants cannot be injected silently verifies nothing, so this is the primary cost of the
+pass. Measured run: 47 files formatted (2927+/2878−) → **7** checkers fail the plain run (79 real
+problems: 41 `verify_summaries`, 30 `verify_t0_chains`, 4 `verify_named_conjectures`, 1 each
+`verify_abstracts` / `verify_index_design` / `verify_named_results`, 1 pre-existing `verify_findings`)
+while **12** fail the mutant run. Separate the pre-existing failure from the new ones and say so.
+
+Quantify the byte rewrites from the diff — that is what sizes the adaptation work and what the user
+decides on:
+
+```python
+add = [l[1:] for l in open('/tmp/fmt.diff') if l.startswith('+') and not l.startswith('+++')]
+rem = [l[1:] for l in open('/tmp/fmt.diff') if l.startswith('-') and not l.startswith('---')]
+us  = sum(len(re.findall(r'(?<![A-Za-z0-9_])_[^_\n]+_(?![A-Za-z0-9])', l)) for l in add)
+q   = sum(l.count('_"') for l in add) - sum(l.count('_"') for l in rem)
+pad = sum(1 for l in add if re.match(r'^\|.*\s\|\s+$', l))
+```
+
+Measured: 720 `_x_` spans introduced, 244 `*"…"` quote markers → `_"…"` (5 survivors, all inside code
+spans), 2,043 padded table lines.
+
+**A derived expectation can move with the page's byte form.** Some checkers derive their expected
+numbers from the page's own tables (byte totals "scoped to the TSVs the page tabulates"). When padding
+breaks the row regex, the derivation widens and the checker prints a count mismatch that reads like a
+data drift in the corpus — `verify_index_design` demanded `630987` where the page states `541463`, and
+`630987` was the sum of a wider glob, not a changed file. Reproduce the derivation in-process before
+quoting any drift:
+
+```python
+import sys; sys.path.insert(0, 'notes/scripts')
+import verify_t0_chains as v
+m = v.measured(); flat = v.norm(v.PAGE.read_text())
+print([p for p, l in v.count_phrases(m) if v.norm(p) not in flat])
+```
+
+Report shape: two tables (checker → real problems → the byte-form mechanism from §2; checker → mutants
+not caught), the byte-rewrite counts, the restore command with the commit the tree is byte-clean at,
+then what was **not** checked (generators and build scripts re-run? pages eyeballed in a renderer?).
+
+## 8. Report
 
 Quote probe output verbatim (the `[warn] Ignored unknown option` lines, the diff lines), state counts
 with the rule that yields them (`49 files, 853 *emphasis* spans, 26 quotations containing emphasis in
