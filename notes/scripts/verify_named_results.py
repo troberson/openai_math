@@ -36,6 +36,9 @@ sys.path.insert(0, str(ROOT / "notes" / "scripts"))
 import extract_named_results as en  # noqa: E402
 import measure_names as M  # noqa: E402
 
+from catlib import yaml as Y  # noqa: E402
+from catlib.paths import COMPARATOR_DIR  # noqa: E402
+
 PAGE = ROOT / "notes" / "named-results.md"
 ANCHOR = re.compile(r"`([\w./+-]+?\.(?:py|md|tex|json|txt|lean|yaml|bib)):(\d+)`")
 BARE = re.compile(r"(\d{3})\s+\(`:(\d+)`\)")
@@ -198,11 +201,10 @@ def check_quotes(text: str, cache: dict, problems: list) -> int:
 
 
 def corpus_facts():
-    chal = sorted((ROOT / "lean" / "ComparatorChallenges").glob("*.lean"))
+    chal = sorted(COMPARATOR_DIR.glob("*.lean"))
     sorry = sum(len(re.findall(r"\bsorry\b",
                                q.read_text(encoding="utf-8", errors="replace"))) for q in chal)
-    oai = sum(1 for _ in (ROOT / "lean" / "OAI").rglob("*.lean"))
-    return len(chal), sorry, oai
+    return len(chal), sorry, Y.oai_lean_count()
 
 
 def count_phrases(p) -> list:

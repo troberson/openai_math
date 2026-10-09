@@ -30,9 +30,12 @@ from collections import Counter
 
 import build_catalog as bc
 
+sys.path.insert(0, str(bc.ROOT / "notes" / "scripts"))
+
+from catlib import yaml as Y
+
 ROOT = bc.ROOT
 OUT = ROOT / "notes" / "subfindings.tsv"
-DOCS = ROOT / "lean" / "docs"
 LEDGER = ROOT / "notes" / "catalog.tsv"
 
 COLS = ["kind", "fam", "seq", "title", "path", "formalized", "tier", "statement", "lean_file"]
@@ -99,7 +102,7 @@ def manuscript_rows(tiers, sources):
 def comparator_rows():
     """One row per link row of each scope note's `## Comparator links` table, in table order."""
     rows = []
-    for doc in sorted(DOCS.glob("*.md")):
+    for doc in Y.doc_files():
         fam = doc.stem
         lines = doc.read_text(encoding="utf-8", errors="replace").splitlines()
         in_section = False

@@ -22,12 +22,13 @@ import sys
 import collections
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from catlib import yaml as Y
+from catlib.paths import LAKEFILE, LAKE_MANIFEST as MANIFEST, OAI_DIR as SOURCE
+
 REPO = Path(__file__).resolve().parents[2]
-LAKEFILE = REPO / "lean" / "lakefile.lean"
-YAML = REPO / "lean" / "formalization.yaml"
-SOURCE = REPO / "lean" / "OAI"
 PATCHES = REPO / "lean" / "patches"
-MANIFEST = REPO / "lean" / "lake-manifest.json"
 OUT = REPO / "notes" / "formalization-deps.tsv"
 
 FIELDS = [
@@ -99,7 +100,7 @@ def lakefile_rows():
 
 
 def yaml_rows():
-    lines = YAML.read_text(encoding="utf-8").splitlines()
+    lines = Y.yaml_lines()
     start = lines.index("related_formalizations:")
     rows, cur = [], None
     for ln in lines[start + 1 :]:

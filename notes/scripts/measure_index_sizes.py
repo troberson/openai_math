@@ -26,16 +26,21 @@ import collections
 import csv
 import pathlib
 import re
+import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+
+from catlib import yaml as Y
+from catlib.paths import (
+    COMPARATOR_DIR as CHAL,
+    LEDGER_TSV,
+    LINKS_TSV,
+    OAI_DIR,
+    PREPRINTS,
+    SUBFINDINGS_TSV,
+)
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-PRE = ROOT / "preprints"
-OAI = ROOT / "lean" / "OAI"
-CHAL = ROOT / "lean" / "ComparatorChallenges"
-DOCS = ROOT / "lean" / "docs"
-YAML = ROOT / "lean" / "formalization.yaml"
-LEDGER = ROOT / "notes" / "catalog.tsv"
-LINKS = ROOT / "notes" / "links.tsv"
-SUBF = ROOT / "notes" / "subfindings.tsv"
 IDX = ROOT / "notes" / "index"
 
 # The five TSVs notes/index-design.md tabulates as "the whole ledger set".
@@ -54,14 +59,14 @@ def count_lines(text, command):
 
 
 def population():
-    rows = tsv(LEDGER)
+    rows = tsv(LEDGER_TSV)
     paps = [int(r["paps"]) for r in rows]
     ov = (ROOT / "overview.tex").read_text(encoding="utf-8")
-    yml = YAML.read_text(encoding="utf-8")
+    yml = "\n".join(Y.yaml_lines())
 
-    disc_dirs = [p for p in OAI.iterdir() if p.is_dir()]
+    disc_dirs = [p for p in OAI_DIR.iterdir() if p.is_dir()]
     mod_dirs = [p for d in disc_dirs for p in d.iterdir() if p.is_dir()]
-    lean_files = sum(1 for _ in OAI.rglob("*.lean"))
+    lean_files = Y.oai_lean_count()
 
     ent = re.findall(
         r"comparator_config:\s*ComparatorChallenges/([A-Za-z0-9_]+)\.json\s*\n"
@@ -73,7 +78,7 @@ def population():
 
     cfg_by_fam = {}
     dup_docs = 0
-    for p in sorted(DOCS.glob("*.md")):
+    for p in Y.doc_files():
         found = re.findall(r"\.\./ComparatorChallenges/([A-Za-z0-9_]+)\.lean",
                            p.read_text(encoding="utf-8"))
         dup_docs += 1 if len(found) > len(set(found)) else 0
@@ -83,7 +88,7 @@ def population():
     cfg2file = {c: f for c, _, f in ent}
     reach = len({f for f, cs in cfg_by_fam.items() if cs & set(cfg2file)})
 
-    bib = list(PRE.rglob("*.bib"))
+    bib = list(PREPRINTS.rglob("*.bib"))
     bib_entries = 0
     for b in bib:
         txt = b.read_text(encoding="utf-8", errors="replace")
@@ -91,9 +96,9 @@ def population():
 
     trace_files = [p for p in sorted((ROOT / "reasoning_traces").rglob("*")) if p.is_file()]
     ver = [r for r in rows if int(r["verification"]) > 0]
-    sf = tsv(SUBF)
+    sf = tsv(SUBFINDINGS_TSV)
     kc = collections.Counter(r["kind"] for r in sf)
-    links = {r["edge"]: r for r in tsv(LINKS)}
+    links = {r["edge"]: r for r in tsv(LINKS_TSV)}
     bibrow = links["manuscript->corpus manuscript (bib href)"]
     resolved = int(re.search(r"(\d+) resolved edges", bibrow["detail"]).group(1))
     cross = int(re.search(r"(\d+) cross-family", bibrow["detail"]).group(1))
@@ -119,7 +124,7 @@ def population():
     disk_dirs = sum(1 for _, _, rel in dlinks if (ROOT / rel).is_dir())
 
     nodes = (len(rows) + sum(paps) + len(disc_dirs) + len(mod_dirs) + len(list(CHAL.glob("*.json")))
-             + len(cfgs) + len(list(DOCS.glob("*.md"))) + len({p.stem for p in trace_files})
+             + len(cfgs) + len(Y.doc_files()) + len({p.stem for p in trace_files})
              + sum(int(r["verification"]) for r in rows))
     edges = (sum(paps) + len(rows) + sum(int(r["paps_form"]) for r in rows) + occ + len(ent)
              + resolved + len(sf))
@@ -130,8 +135,8 @@ def population():
         "manuscripts": sum(paps),
         "disciplines": count_lines(ov, "cataloguesection{"),
         "resultentries": count_lines(ov, "resultentry{"),
-        "preprint_dirs": len([p for p in PRE.iterdir() if p.is_dir()]),
-        "tex_files": len(list(PRE.rglob("*.tex"))),
+        "preprint_dirs": len([p for p in PREPRINTS.iterdir() if p.is_dir()]),
+        "tex_files": len(list(PREPRINTS.rglob("*.tex"))),
         "bib_files": len(bib),
         "bib_entries": bib_entries,
         "lean_disc": len(disc_dirs),
@@ -139,7 +144,7 @@ def population():
         "lean_files": lean_files,
         "chal_json": len(list(CHAL.glob("*.json"))),
         "chal_lean": len(list(CHAL.glob("*.lean"))),
-        "scope_notes": len(list(DOCS.glob("*.md"))),
+        "scope_notes": len(Y.doc_files()),
         "mr_entries": len(ent),
         "mr_configs": len(cfgs),
         "mr_files": len(files),

@@ -64,13 +64,13 @@ ROOT = pathlib.Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "notes" / "scripts"))
 import build_catalog as B  # noqa: E402
 
+from catlib import yaml as Y  # noqa: E402
+from catlib.paths import PREPRINTS as PRE  # noqa: E402
+
 LEDGER = {}
 with open(ROOT / "notes" / "catalog.tsv", newline="", encoding="utf-8") as _fh:
     for _r in csv.DictReader(_fh, delimiter="\t"):
         LEDGER[_r["fam"]] = _r
-
-PRE = ROOT / "preprints"
-YAML = ROOT / "lean" / "formalization.yaml"
 
 # Statement environments whose optional argument is a name the release chose.
 STATEMENT_ENV = ("theorem", "lemma", "proposition", "corollary", "conjecture",
@@ -268,12 +268,11 @@ def measure():
                 low[k] += 1
 
     decl = collections.defaultdict(list)
-    for m in re.finditer(r"comparator_config:\s*(\S+)\s*\n\s*declaration:\s*(\S+)\s*\n\s*file:\s*(\S+)",
-                         YAML.read_text()):
-        stem = pathlib.PurePosixPath(m.group(1)).stem
-        for seg in m.group(2).split("."):
+    for e in Y.main_results_entries():
+        stem = e["config"]
+        for seg in e["declaration"].split("."):
             for tk in re.findall(r"[A-Z][a-z0-9]+", seg):
-                decl[key(tk)].append((stem, m.group(2), m.group(3)))
+                decl[key(tk)].append((stem, e["declaration"], e["file"]))
                 surfaces[key(tk)][tk] += 1
 
     bib = collections.defaultdict(set)

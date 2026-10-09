@@ -27,14 +27,16 @@ import statistics
 import sys
 import collections
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+
+from catlib import yaml as Y
+from catlib.paths import LAKEFILE, LAKE_MANIFEST as MANIFEST
+
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PAGE = ROOT / "notes" / "dependency-drift.md"
-LAKEFILE = ROOT / "lean" / "lakefile.lean"
-YAML = ROOT / "lean" / "formalization.yaml"
 TSV = ROOT / "notes" / "formalization-deps.tsv"
 PATCHDIR = ROOT / "lean" / "patches"
 TOOLCHAIN = ROOT / "lean" / "lean-toolchain"
-MANIFEST = ROOT / "lean" / "lake-manifest.json"
 DEPSMD = ROOT / "notes" / "formalization-deps.md"
 
 SUFFIX = "-lean4341.patch"
@@ -143,7 +145,7 @@ def yaml_order_violations(imports_by_key):
     count; a violation is an entry whose measured count exceeds the entry above it. Same
     rule as extract_formalization_deps.yaml_order_violations, fed from the TSV.
     """
-    lines = read(YAML).splitlines()
+    lines = Y.yaml_lines(tolerant=True)
     start = lines.index("related_formalizations:")
     urls = []
     for ln in lines[start + 1:]:
@@ -323,7 +325,7 @@ def check(text):
                 continue
             if corpus is None:
                 corpus = norm(
-                    read(LAKEFILE) + "\n" + read(YAML) + "\n" + read(TSV)
+                    read(LAKEFILE) + "\n" + "\n".join(Y.yaml_lines(tolerant=True)) + "\n" + read(TSV)
                     + "".join("\n" + read(p) for p in sorted(PATCHDIR.glob("*.patch"))))
             n_span += 1
             if norm(span) not in corpus:

@@ -55,12 +55,17 @@ import measure_topics as MT
 import measure_names as MN
 import check_index_links as CL  # report-only: the checker runs nothing at import
 
+from catlib import yaml as Y
+from catlib.paths import (
+    COMPARATOR_DIR as CHAL,
+    FORMALIZATION_YAML,
+    OAI_DIR as OAI,
+    PREPRINTS as PRE,
+    REASONING_TRACES as TRACES,
+    read_text,
+)
+
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-PRE = ROOT / "preprints"
-OAI = ROOT / "lean" / "OAI"
-CHAL = ROOT / "lean" / "ComparatorChallenges"
-DOCS = ROOT / "lean" / "docs"
-TRACES = ROOT / "reasoning_traces"
 IDX = ROOT / "notes" / "index"
 LEDGER = ROOT / "notes" / "catalog.tsv"
 SRC = ROOT / "notes" / "sources.tsv"
@@ -480,7 +485,7 @@ def main():
         if re.match(r"^\d{3}-", p.name):
             summary_by_fam.setdefault(p.name[:3], p)
 
-    triples = sorted(TRIPLE.findall((ROOT / "lean" / "formalization.yaml").read_text(encoding="utf-8")))
+    triples = sorted(TRIPLE.findall(read_text(FORMALIZATION_YAML)))
     cfg2decls = collections.defaultdict(list)
     for c, d, f in triples:
         cfg2decls[c].append((d, f))
@@ -508,7 +513,7 @@ def main():
                       for d in (p for p in OAI.iterdir() if p.is_dir())
                       for m in (p for p in d.iterdir() if p.is_dir()))
     mod_lean = collections.Counter()
-    for p in OAI.rglob("*.lean"):
+    for p in Y.oai_lean_files():
         rel = p.relative_to(OAI).parts
         if len(rel) >= 2:
             mod_lean[f"OAI/{rel[0]}/{rel[1]}"] += 1
@@ -1021,7 +1026,7 @@ def main():
           f"{sum(1 for r in lean_dir_rows if r['named_by_yaml'] > 0)} of {named} named dirs "
           f"(`{named - sum(1 for r in lean_dir_rows if r['named_by_yaml'] > 0)}` deeper than depth 2)  "
           f"`.lean` files inside them {sum(r['lean_files'] for r in lean_dir_rows)} of "
-          f"{len(list(OAI.rglob('*.lean')))}")
+          f"{Y.oai_lean_count()}")
     print(f"summary pairing     {sum(1 for r in family_rows if r['summary'] == '1')} of "
           f"{len(family_rows)} families have a notes/summaries page")
     dupes = collections.Counter(r["page"] for r in family_rows)

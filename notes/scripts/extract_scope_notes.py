@@ -15,10 +15,12 @@ Definitions, stated so the counts are reproducible:
 Usage: python3 notes/scripts/extract_scope_notes.py
 """
 import statistics
+import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
-DOCS = ROOT / "lean" / "docs"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from catlib import yaml as Y
 
 # The five phrases the earlier reading pass recorded, verbatim.
 NARROW = ["not formalized", "excluded", "out of scope", "does not cover", "not covered"]
@@ -33,22 +35,12 @@ BROAD = [
 ]
 
 
-def scope_section(lines):
-    """(first, last) 1-based line numbers of the `## Scope` section, or None."""
-    start = next((i for i, ln in enumerate(lines) if ln.strip() == "## Scope"), None)
-    if start is None:
-        return None
-    end = next((i for i in range(start + 1, len(lines))
-                if lines[i].startswith("## ")), len(lines))
-    return start + 1, end
-
-
 def main():
-    docs = sorted(DOCS.glob("*.md"))
+    docs = Y.doc_files()
     sections = {}
     for path in docs:
         lines = path.read_text(encoding="utf-8", errors="replace").splitlines()
-        span = scope_section(lines)
+        span = Y.scope_span_lines(lines)
         if span is None:
             print(f"{path.name}: no `## Scope` heading")
             continue

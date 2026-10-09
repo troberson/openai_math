@@ -236,7 +236,7 @@ not survive a re-run.
 | S14 | [`notes/verification-dirs.md`](verification-dirs.md) | 253 | The 30 verification bundles and what each ships |
 | S15 | [`README.md`](../README.md) | 51 | The release's own trace attributions |
 | S16 | [`notes/counterexample-crosscheck.md`](counterexample-crosscheck.md) | 1062 | The counterexample families' evidence cross-check |
-| S17 | [`notes/scripts/extract_scope_notes.py`](scripts/extract_scope_notes.py) | 90 | The phrase-list floors behind the 5 and 44 counts |
+| S17 | [`notes/scripts/extract_scope_notes.py`](scripts/extract_scope_notes.py) | 82 | The phrase-list floors behind the 5 and 44 counts |
 | S18 | [`notes/proof-density.md`](proof-density.md) | 113 | The proof-density test, its bar, and its nulls |
 | S19 | [`notes/scripts/measure_proof_density.py`](scripts/measure_proof_density.py) | 333 | The AUC and p re-derivation for every density figure |
 | S20 | [`notes/named-results.md`](named-results.md) | 346 | Headline environments read for named targets |

@@ -24,12 +24,15 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import build_catalog
 import extract_subfinding_pairs as ep
 
+from catlib import yaml as Y
+from catlib.paths import (
+    COMPARATOR_DIR as CHALLENGES,
+    DOCS_DIR as DOCS,
+    LEAN as LEAN_ROOT,
+    LEDGER_TSV as LEDGER,
+)
+
 ROOT = build_catalog.ROOT
-DOCS = ROOT / "lean" / "docs"
-YAML = ROOT / "lean" / "formalization.yaml"
-LEDGER = ROOT / "notes" / "catalog.tsv"
-LEAN_ROOT = ROOT / "lean"
-CHALLENGES = ROOT / "lean" / "ComparatorChallenges"
 
 
 def ledger_rows():
@@ -38,27 +41,19 @@ def ledger_rows():
 
 
 def main_results():
-    """config stem -> (declaration, file, yaml line), read from the single main_results block."""
-    lines = YAML.read_text(encoding="utf-8", errors="replace").splitlines()
-    i = next(k for k, ln in enumerate(lines) if ln.strip() == "main_results:")
-    out, entries = {}, []
-    stem = decl = None
-    for n, ln in enumerate(lines[i + 1 :], start=i + 2):
-        if ln and not ln.startswith("    "):
-            break
-        m = re.match(r"\s+-\s+comparator_config:\s*(\S+)", ln)
-        if m:
-            stem = m.group(1).split("/")[-1].removesuffix(".json")
-            continue
-        d = re.match(r"\s+declaration:\s*(\S+)\s*$", ln)
-        f = re.match(r"\s+file:\s*(\S+)\s*$", ln)
-        if stem and d:
-            decl = d.group(1)
-        if stem and decl and f:
-            out[stem] = (decl, f.group(1), n)
-            entries.append(stem)
-            stem = decl = None
-    return out, entries
+    """config stem -> (declaration, file, yaml file-line), from the package's yaml reader.
+
+    Measured equivalent to the rule this file used to carry: 200 entries, 189 distinct configs,
+    and every (declaration, file, file-line) triple identical. The yaml anchor the report prints
+    is the entry's `file:` line; a 3-line entry block starts two lines above it.
+    """
+    ents = Y.main_results_entries()
+
+    def stem(e):
+        return e["config"].split("/")[-1].removesuffix(".json")
+
+    return ({stem(e): (e["declaration"], e["file"], e["file_line"]) for e in ents},
+            [stem(e) for e in ents])
 
 
 def scope_note(fam):

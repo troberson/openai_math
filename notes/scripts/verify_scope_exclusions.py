@@ -28,9 +28,13 @@ from pathlib import Path
 import extract_scope_notes as ex
 from verify_summaries import norm
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from catlib import yaml as Y
+from catlib.paths import DOCS_DIR
+
 ROOT = Path(__file__).resolve().parents[2]
 PAGE = ROOT / "notes" / "scope-exclusions.md"
-DOCS = ROOT / "lean" / "docs"
 
 ROW = re.compile(r"^\|\s*(\d{3})\s*\|\s*(.+?)\s*\|\s*$")
 PAIR = re.compile(r"^“(.+)”\s*`lean/docs/(\d{3})\.md:(\d+)`$")
@@ -39,15 +43,6 @@ TAG = re.compile(r"<[a-zA-Z/][^>]*>")
 ENTITY = re.compile(r"&#[0-9]+;|&[a-zA-Z][a-zA-Z0-9]*;")
 COUNTS = re.compile(r"(\d+) of (\d+) sections state at least one exclusion, carrying (\d+) exclusion")
 NONE_LINE = re.compile(r"(\d+) state none\.")
-
-
-def scope_span(lines):
-    """(first, last) 1-based line numbers of the `## Scope` section, or None."""
-    start = next((i for i, ln in enumerate(lines) if ln.strip() == "## Scope"), None)
-    if start is None:
-        return None
-    end = next((i for i in range(start + 1, len(lines)) if lines[i].startswith("## ")), len(lines))
-    return start + 1, end
 
 
 def entry_rows(lines):
@@ -68,8 +63,8 @@ def measured():
     import statistics
 
     texts = {p: p.read_text(encoding="utf-8", errors="replace").splitlines()
-             for p in sorted(DOCS.glob("*.md"))}
-    spans = {p: scope_span(t) for p, t in texts.items()}
+             for p in Y.doc_files()}
+    spans = {p: Y.scope_span_lines(t) for p, t in texts.items()}
     counts = [last - first + 1 for first, last in spans.values() if first]
 
     def hits(phrases):
@@ -101,7 +96,7 @@ def check(lines):
             problems.append(f"doc line {n}: raw HTML markup")
 
     rows = entry_rows(lines)
-    on_disk = {p.stem for p in DOCS.glob("*.md")}
+    on_disk = {p.stem for p in Y.doc_files()}
     seen = [f for f, _, _ in rows]
     if len(seen) != len(set(seen)):
         dupes = sorted({f for f in seen if seen.count(f) > 1})
@@ -131,12 +126,12 @@ def check(lines):
             quotes += 1
             if cited_fam != fam:
                 problems.append(f"{fam} row at doc line {n}: cites {cited_fam}.md")
-            path = DOCS / f"{cited_fam}.md"
+            path = DOCS_DIR / f"{cited_fam}.md"
             if not path.is_file():
                 problems.append(f"{fam} row at doc line {n}: {path.name} does not exist")
                 continue
             src = path.read_text(encoding="utf-8", errors="replace").splitlines()
-            span = scope_span(src)
+            span = Y.scope_span_lines(src)
             if span is None:
                 problems.append(f"{fam} row at doc line {n}: {path.name} has no `## Scope` section")
                 continue
@@ -194,8 +189,8 @@ def main():
     fam, cell = m.group(1), m.group(2)
     q = re.search(r"“([^”]+)”", cell).group(1)
     cite = re.search(r"`lean/docs/(\d{3})\.md:(\d+)`", cell)
-    src = (DOCS / f"{fam}.md").read_text(encoding="utf-8", errors="replace").splitlines()
-    _first, last = scope_span(src)
+    src = (DOCS_DIR / f"{fam}.md").read_text(encoding="utf-8", errors="replace").splitlines()
+    _first, last = Y.scope_span_lines(src)
     outside = next(n for n in range(last + 1, len(src) + 1) if src[n - 1].strip())
 
     cases = [

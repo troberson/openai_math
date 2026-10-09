@@ -33,6 +33,10 @@ from collections import Counter
 import build_catalog as bc
 import extract_subfindings as ex
 
+sys.path.insert(0, str(bc.ROOT / "notes" / "scripts"))
+
+from catlib import yaml as Y
+
 ROOT = bc.ROOT
 TSV = ROOT / "notes" / "subfindings.tsv"
 LEDGER = ROOT / "notes" / "catalog.tsv"
@@ -59,7 +63,7 @@ def truth():
     ledger = {r["fam"]: r for r in csv.DictReader(
         LEDGER.read_text(encoding="utf-8").splitlines(), delimiter="\t")}
     tables = {}
-    for doc in sorted(ex.DOCS.glob("*.md")):
+    for doc in Y.doc_files():
         rows, in_section = [], False
         for line in doc.read_text(encoding="utf-8", errors="replace").splitlines():
             s = line.strip()

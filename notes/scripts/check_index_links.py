@@ -45,12 +45,12 @@ ROOT = pathlib.Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "notes" / "scripts"))
 import build_catalog as B  # noqa: E402
 
+from catlib import yaml as Y  # noqa: E402
+
 IDX = ROOT / "notes" / "index"
 SCHEME = re.compile(r"^[a-zA-Z][a-zA-Z0-9+.-]*:")
-# The main_results triples, same pattern build_index.py uses. build_index.py calls main()
-# at module scope, so importing it would run the build; the pattern is carried here.
-TRIPLE = re.compile(r"comparator_config:\s*ComparatorChallenges/([A-Za-z0-9_]+)\.json\s*\n"
-                    r"\s*declaration:\s*(\S+)\s*\n\s*file:\s*(\S+)")
+# The main_results triples come from the package reader; build_index.py calls main() at module
+# scope, so importing it would run the build.
 
 
 def md_links(text):
@@ -330,8 +330,8 @@ def main(argv):
     docs = B.parse_docs()
     traces_by_fam, trace_unlisted = B.parse_traces()
     chal = B.parse_challenges()
-    triples = sorted(TRIPLE.findall(
-        (ROOT / "lean" / "formalization.yaml").read_text(encoding="utf-8", errors="replace")))
+    triples = sorted((e["config"], e["declaration"], e["file"])
+                     for e in Y.main_results_entries())
     import csv
     ledger = {}
     with open(ROOT / "notes" / "catalog.tsv", newline="", encoding="utf-8") as fh:

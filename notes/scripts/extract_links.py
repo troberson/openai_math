@@ -40,15 +40,17 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_catalog as bc
 
+from catlib import yaml as Y
+from catlib.paths import (
+    COMPARATOR_DIR as CHALLENGES,
+    LAKEFILE,
+    LEDGER_TSV as LEDGER,
+    OAI_DIR as SOURCE,
+    PREPRINTS,
+    README_MD as README,
+)
+
 REPO = Path(__file__).resolve().parents[2]
-LEDGER = REPO / "notes" / "catalog.tsv"
-PREPRINTS = REPO / "preprints"
-DOCS = REPO / "lean" / "docs"
-CHALLENGES = REPO / "lean" / "ComparatorChallenges"
-YAML = REPO / "lean" / "formalization.yaml"
-LAKEFILE = REPO / "lean" / "lakefile.lean"
-README = REPO / "README.md"
-SOURCE = REPO / "lean" / "OAI"
 OUT = REPO / "notes" / "links.tsv"
 
 FIELDS = ["edge", "source", "pattern", "count", "detail", "command", "not_meaning"]
@@ -189,7 +191,7 @@ def main():
     listed = set(dir2fam)
     n_manuscripts = len(listed)
     n_families = len(rows)
-    n_docs = len(list(DOCS.glob("*.md")))
+    n_docs = len(Y.doc_files())
 
     # Scope: the listed manuscripts only. A superseded edition on disk is not a manuscript row, and
     # its bibliography would count the same edges a second time.
@@ -260,7 +262,7 @@ def main():
     docs_with_links = 0
     raw_links = 0
     docs_with_intra_dupes = []
-    for p in sorted(DOCS.glob("*.md")):
+    for p in Y.doc_files():
         hits = re.findall(r"\.\./ComparatorChallenges/([A-Za-z0-9_]+)\.lean", p.read_text(encoding="utf-8"))
         if hits:
             docs_with_links += 1
@@ -292,7 +294,7 @@ def main():
         f"{len(lean_files)} .lean files; {len(json_files) - len(set(link_files))} never linked from a doc",
         "A statement/solution pair on disk. Nothing here says the comparator was run.",
     )
-    yaml_lines = YAML.read_text(encoding="utf-8").splitlines()
+    yaml_lines = Y.yaml_lines()
     i = next(k for k, ln in enumerate(yaml_lines) if ln.strip() == "main_results:")
     cfgs = []
     for ln in yaml_lines[i + 1 :]:

@@ -29,9 +29,10 @@ import sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import measure_index_sizes as M
 
+from catlib import yaml as Y
+
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PAGE = ROOT / "notes" / "index-design.md"
-YAML = ROOT / "lean" / "formalization.yaml"
 
 ANCHOR = re.compile(r"`([\w./+-]+?\.(?:py|md|tex|json|tsv|yaml)):(\d+)`")
 # Any backticked path:line shape, so a mistyped extension is a failure and not a skip.
@@ -48,7 +49,7 @@ def builds_on_anchor():
     Derived, not literal: the yaml grows between releases and a hard-coded line number turns a
     corpus change into a checker edit.
     """
-    lines = YAML.read_text(encoding="utf-8", errors="replace").splitlines()
+    lines = Y.yaml_lines(tolerant=True)
     for i, ln in enumerate(lines, start=1):
         if "relationship: builds-on" in ln:
             return i
