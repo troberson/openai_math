@@ -1,6 +1,6 @@
 # Named-conjecture families: statement-level check
 
-The 45 second-pass T0 families whose titles name a conjecture, problem, or question, each read
+The 43 second-pass T0 families whose titles name a conjecture, problem, or question, each read
 against the theorem its manuscript actually states. Follow-up 2 in the priority list at the end of
 `notes/t0-triage.md`; tracked as bead `math-0h2`. The record it follows states these are claims,
 not checked facts: no conjecture had been identified in the literature and no formalized statement
@@ -12,19 +12,27 @@ conjecture in the literature, and it does not compare against a formalized state
 
 Derived from `notes/catalog.tsv` and `notes/scripts/triage_t0.py`, not copied:
 
-- T0 rows: 137 families, 255 manuscripts.
-- First pass (read in `notes/t0-triage.md`): bucket C ∪ `fam <= '031'` ∪ `paps >= 3` = 44 families,
-  134 manuscripts.
-- Second pass (remaining): 93 families, 121 manuscripts.
+- T0 rows: 130 families, 244 manuscripts.
+- First pass (read in `notes/t0-triage.md`): bucket C ∪ `fam <= '031'` ∪ `paps >= 3` = 43 families,
+  130 manuscripts.
+- Second pass (remaining): 87 families, 114 manuscripts.
 - Title-named: `re.search(r"conjectur|\bquestion|\bproblem", title)` over the second pass,
-  case-insensitive — 45 families, 52 manuscripts. Case-sensitive gives the same 45.
-- Manuscripts per family: 38 families with 1, 7 families with 2 (055, 080, 147, 203, 258, 300, 368).
-- Buckets over the 45: R 25, N 9, B 5, U 4, K 2.
+  case-insensitive — 43 families, 50 manuscripts. Case-sensitive gives the same 43.
+- Manuscripts per family: 36 families with 1, 7 families with 2 (055, 080, 147, 203, 258, 300, 368).
+- Buckets over the 43: R 24, N 8, B 5, U 4, K 2.
+
+The population is keyed to the ledger's `tier` column, so it moves when upstream formalizes a family.
+**075** and **195** were read in this pass as second-pass T0 families; the 2026-10-07 upstream merge
+gave each a `main_results` entry, a scope note and a comparator challenge, which retiered both to T3,
+so the rule above no longer includes them. Their reading records are kept, verbatim, under "Promoted
+out of the population" — the statement comparison was done against the manuscript, and a retiering
+does not undo it. The counts above exclude both; the entry counts below include them.
 
 The bead's priority set is "the sharp-bound claims 038, 078, 079, 101, 202, 344, 346, 375". Seven of
-those eight are in the 45. **346 is not**: its title is "Sharp singular-set bounds for stationary
+those eight are in the 43. **346 is not**: its title is "Sharp singular-set bounds for stationary
 integral varifolds", which contains no `conjectur`/`question`/`problem` token, so the title rule
-excludes it. It is read here as a ninth entry because the bead names it. Entries in this page: 46.
+excludes it. It is read here as a ninth entry because the bead names it. Entries in this page: 44
+population entries plus 2 promoted.
 
 ## Conventions
 
@@ -222,7 +230,7 @@ eight.**
   transition width $\sqrt2$ is the standard Allen–Cahn heteroclinic scale ($\tanh(x/\sqrt2)$ solves
   $u''=u^3-u$), so the exponent-like constant is consistent. No off-by-one in the dimensions.
 
-## The other 37 families
+## The other 36 families
 
 ### 040 - Bloch's conjecture for complex surfaces
 
@@ -391,20 +399,6 @@ eight.**
   dimension six with nef tangent bundle is rational homogeneous. \end{theorem}"
 - **Reading**: `match`. Dimension six is the only dimension claimed, as the blurb says.
 
-### 075 - The $L\log L$ Fourier-convergence conjecture
-
-- **Bucket**: R | **Manuscripts**: 1 | **Discipline**: Real and complex analysis
-- **Blurb**: Proves that the ordinary symmetric Fourier partial sums of every complex-valued function
-  in $L\log L(\mathbb T)$ converge almost everywhere along the full sequence. This resolves the
-  classical sufficiency conjecture at the $L\log L$ scale.
-- **Statement**: [`preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/build/sections/01-introduction.tex:17-26`]
-  "\begin{theorem}[Almost-everywhere convergence in $L\log L$] \label{thm:main} For every
-  complex-valued $f\in L\log L(\mathbb T)$, there is a measurable set $N_f$ of measure zero such that
-  \[ \lim_{N\to\infty}S_Nf(x)=f(x) \qquad (x\in\mathbb T\setminus N_f). \] The limit is along the
-  full sequence $N=0,1,2,\ldots$. \end{theorem}"
-- **Reading**: `match`. Space, a.e. convergence, and the explicit "full sequence" clause are the
-  blurb's three claims.
-
 ### 080 - The Sobolev endpoint in Carleson's Schr\"odinger convergence problem
 
 - **Bucket**: B | **Manuscripts**: 2 | **Discipline**: Real and complex analysis
@@ -543,22 +537,6 @@ eight.**
   characteristic" is a scope claim about the ring class, not a clause of the theorem: the theorem
   quantifies over all regular local rings, so the blurb's clause is a consequence of that
   quantifier, not a separate statement.
-
-### 195 - A counterexample to the small Cohen--Macaulay module conjecture
-
-- **Bucket**: N | **Manuscripts**: 1 | **Discipline**: Algebra
-- **Blurb**: Constructs a three-dimensional complete Noetherian normal local domain over
-  $\mathbb C$ with no nonzero finitely generated maximal Cohen--Macaulay module. A
-  three-dimensional local domain essentially of finite type over $\mathbb C$ has the same property,
-  disproving the domain form of the small Cohen--Macaulay module conjecture.
-- **Statement**: [`preprints/A-Complete-Local-Domain-Without-a-Small-Cohen-Macaulay-Module-September-23-2026/build/paper.tex:54-58`]
-  "\begin{theorem}\label{thm:main} There exists a three-dimensional complete Noetherian normal local
-  domain $R$ containing $\C$, with residue field $\C$, such that no nonzero finitely generated
-  $R$-module has depth three. \end{theorem}"
-- **Reading**: `match`. "No nonzero finitely generated module has depth three" is the domain form of
-  "no maximal Cohen–Macaulay module" for a 3-dimensional local ring. The blurb's second clause (the
-  essentially-of-finite-type example) is stated at `build/paper.tex:646-656` as `cor:affine-local`;
-  the numerical obstruction its proof uses is `thm:obstruction` at `build/paper.tex:119-126`.
 
 ### 201 - A counterexample to Kurosh's division-ring problem
 
@@ -923,6 +901,48 @@ eight.**
   manuscripts: the first says "nonempty bounded connected open sets", the second says "bounded
   domains". The blurb's "arbitrary bounded domains" follows the second manuscript's wording.
 
+## Promoted out of the population
+
+Both were read in this pass as second-pass T0 families. The 2026-10-07 upstream merge gave each a
+`main_results` entry, a scope note and a comparator challenge, which retiered both to T3, so the
+title-named-second-pass-T0 rule no longer includes them. The entries below are the reading records as
+written, with the manuscript text unchanged; a retiering does not undo a statement comparison. Their
+anchors and quotations are checked exactly like the population entries. The checker requires each of
+them to be title-named, outside the population, and no longer T0, and reports the count as
+`promoted`.
+
+#### 075 - The $L\log L$ Fourier-convergence conjecture
+
+- **Bucket**: R | **Manuscripts**: 1 | **Discipline**: Real and complex analysis
+- **Tier now**: T3, with a `main_results` entry, a scope note and a comparator challenge.
+- **Blurb**: Proves that the ordinary symmetric Fourier partial sums of every complex-valued function
+  in $L\log L(\mathbb T)$ converge almost everywhere along the full sequence. This resolves the
+  classical sufficiency conjecture at the $L\log L$ scale.
+- **Statement**: [`preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/build/sections/01-introduction.tex:17-26`]
+  "\begin{theorem}[Almost-everywhere convergence in $L\log L$] \label{thm:main} For every
+  complex-valued $f\in L\log L(\mathbb T)$, there is a measurable set $N_f$ of measure zero such that
+  \[ \lim_{N\to\infty}S_Nf(x)=f(x) \qquad (x\in\mathbb T\setminus N_f). \] The limit is along the
+  full sequence $N=0,1,2,\ldots$. \end{theorem}"
+- **Reading**: `match`. Space, a.e. convergence, and the explicit "full sequence" clause are the
+  blurb's three claims.
+
+#### 195 - A counterexample to the small Cohen--Macaulay module conjecture
+
+- **Bucket**: N | **Manuscripts**: 1 | **Discipline**: Algebra
+- **Tier now**: T3, with a `main_results` entry, a scope note and a comparator challenge.
+- **Blurb**: Constructs a three-dimensional complete Noetherian normal local domain over
+  $\mathbb C$ with no nonzero finitely generated maximal Cohen--Macaulay module. A
+  three-dimensional local domain essentially of finite type over $\mathbb C$ has the same property,
+  disproving the domain form of the small Cohen--Macaulay module conjecture.
+- **Statement**: [`preprints/A-Complete-Local-Domain-Without-a-Small-Cohen-Macaulay-Module-September-23-2026/build/paper.tex:54-58`]
+  "\begin{theorem}\label{thm:main} There exists a three-dimensional complete Noetherian normal local
+  domain $R$ containing $\C$, with residue field $\C$, such that no nonzero finitely generated
+  $R$-module has depth three. \end{theorem}"
+- **Reading**: `match`. "No nonzero finitely generated module has depth three" is the domain form of
+  "no maximal Cohen–Macaulay module" for a 3-dimensional local ring. The blurb's second clause (the
+  essentially-of-finite-type example) is stated at `build/paper.tex:646-656` as `cor:affine-local`;
+  the numerical obstruction its proof uses is `thm:obstruction` at `build/paper.tex:119-126`.
+
 ## Discrepancies
 
 Four things this pass found. All are blurb-versus-manuscript scope statements, not mathematical
@@ -939,7 +959,7 @@ errors in the manuscript.
    record the exponent with its manuscript.
 3. **038 — the blurb drops two hypotheses.** The manuscript requires $X$ **connected** and
    $n\geq 1$; the blurb says "a smooth projective complex variety $X$ of dimension $n$".
-4. **346 is in the bead's priority list and not in the 45.** Its title names no conjecture, problem,
+4. **346 is in the bead's priority list and not in the 43.** Its title names no conjecture, problem,
    or question, so the title rule that defines this population excludes it. A title-based named-
    conjecture screen misses results whose titles name a *theorem* instead of a conjecture — 346's
    overview merges two manuscripts and makes a sharp dimensional claim, exactly the shape the
@@ -951,19 +971,21 @@ errors in the manuscript.
   compared with the release's own blurb. Whether the manuscript's theorem is the conjecture the title
   names — and whether the named conjecture is stated as the manuscript states it — is not checked,
   and this repo cannot check it.
-- **No formalized statement was compared with any claim.** All 45 families are T0: 0 of 45 have a
+- **No formalized statement was compared with any claim.** All 43 population families are T0: 0 of 43 have a
   `main_results` entry, 0 have a scope note, 0 have a comparator challenge. There is no Lean
-  statement in this release to compare against.
+  statement in this release to compare against. The two promoted families are the exception and are
+  not covered by this bullet: each now carries all three, and their formalized statements were not
+  read.
 - **No manuscript was built, elaborated, or run.** Nothing here verifies the proofs; the pass reads
   statement text only.
 - **Only the main-labelled statement of each manuscript was compared**, plus the specific companion
   statements quoted. Secondary theorems, hypotheses inside definitions, and the rest of each
   manuscript were not read.
-- **The 48 remaining second-pass families** (93 − 45) have titles that name no conjecture, problem,
+- **The 44 remaining second-pass families** (87 − 43) have titles that name no conjecture, problem,
   or question and were not read in this pass.
 - **Blurb wording was not compared with manuscript abstracts** — that comparison is
   `notes/abstracts.md`, which finds 0 of 722 identical.
-- **The 44 first-pass families** were read in `notes/t0-triage.md` at claim-shape level, not at
+- **The 43 first-pass families** were read in `notes/t0-triage.md` at claim-shape level, not at
   statement level.
 
 ## Measurements
@@ -972,15 +994,16 @@ Re-derived by `python3 notes/scripts/verify_named_conjectures.py` (report-only; 
 number below from `notes/catalog.tsv`, `notes/scripts/triage_t0.py`, and this page, and exits 1 on a
 mismatch):
 
-- `entries` 46
-- `pop_families` 45
-- `pop_manuscripts` 52
-- `second_families` 93
-- `second_manuscripts` 121
-- `first_families` 44
-- `first_manuscripts` 134
-- `t0_families` 137
-- `t0_manuscripts` 255
+- `entries` 44
+- `promoted` 2
+- `pop_families` 43
+- `pop_manuscripts` 50
+- `second_families` 87
+- `second_manuscripts` 114
+- `first_families` 43
+- `first_manuscripts` 130
+- `t0_families` 130
+- `t0_manuscripts` 244
 - `two_pap_families` 7
 - `verdict_match` 36
 - `verdict_merge` 8
@@ -990,9 +1013,9 @@ mismatch):
 - `priority_outside_pop` 1
 - `anchors` 59
 - `citations` 10
-- `bucket_R` 25
-- `bucket_N` 9
+- `bucket_R` 24
+- `bucket_N` 8
 - `bucket_B` 5
 - `bucket_U` 4
 - `bucket_K` 2
-- `disciplines` Algebraic and complex geometry=10, Topology=8, Algebra=6, Differential geometry=5, Real and complex analysis=4, Combinatorics=3, Partial differential equations=3, Convex and metric geometry=1, Dynamical systems and ergodic theory=1, Group theory=1, Operator algebras=1, Probability and statistical mechanics=1, Theoretical computer science=1
+- `disciplines` Algebraic and complex geometry=10, Topology=8, Algebra=5, Differential geometry=5, Combinatorics=3, Partial differential equations=3, Real and complex analysis=3, Convex and metric geometry=1, Dynamical systems and ergodic theory=1, Group theory=1, Operator algebras=1, Probability and statistical mechanics=1, Theoretical computer science=1

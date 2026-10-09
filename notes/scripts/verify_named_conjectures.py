@@ -8,7 +8,12 @@ the entry) and requires a citation that opens a statement environment to end on 
 the entry set against the derived population, and re-measures every number in the page's
 Measurements section. Exits 1 on any mismatch.
 
---mutant corrupts the page in memory (never on disk) in eleven ways and reports how many the checks
+The page carries two entry levels: `### NNN - ` is a population entry and `#### NNN - ` is a promoted
+entry — a family this pass read while it was T0 that upstream has since formalized, so the population
+rule no longer includes it. Both levels get the anchor and quotation checks; only `###` is compared
+with the population, and each `####` family must be title-named, non-T0, and outside the population.
+
+--mutant corrupts the page in memory (never on disk) in twelve ways and reports how many the checks
 catch.
 
 Usage:
@@ -36,6 +41,7 @@ STATEMENT_ENV = (
 )
 BEGIN = re.compile(r"\\begin\{(%s)\*?\}" % "|".join(STATEMENT_ENV))
 HEADING = re.compile(r"^### (\d{3}) - ")
+SUBHEADING = re.compile(r"^#### (\d{3}) - ")
 ANCHOR = re.compile(r"\[`([^`\]]+):(\d+)-(\d+)`\]")
 CITE = re.compile(r"`([^`\]]*):(\d+)(?:-(\d+))?`")
 PREPRINT_DIR = re.compile(r"(?<![\w-])([A-Z][A-Za-z0-9]*(?:-[A-Za-z0-9]+)+)")
@@ -91,18 +97,33 @@ def measure(rows):
     return out, pop
 
 
-def entries(page_lines):
-    """fam -> (heading_line_index, body_lines)."""
-    heads = [(i, m.group(1)) for i, l in enumerate(page_lines) if (m := HEADING.match(l))]
+def blocks(page_lines):
+    """fam -> (heading_line_index, body_lines, level) over both entry levels.
+
+    A body runs to the next entry heading of either level, and a level-2 heading closes it, so the
+    promoted entries under their own section are not swallowed by the last population entry.
+    """
+    heads = []
+    for i, l in enumerate(page_lines):
+        for lvl, rx in ((3, HEADING), (4, SUBHEADING)):
+            m = rx.match(l)
+            if m:
+                heads.append((i, m.group(1), lvl))
+                break
     out = {}
-    for n, (i, fam) in enumerate(heads):
+    for n, (i, fam, lvl) in enumerate(heads):
         end = heads[n + 1][0] if n + 1 < len(heads) else len(page_lines)
         body = page_lines[i:end]
         stop = [j for j, l in enumerate(body) if l.startswith("## ")]
         if stop:
             body = body[: stop[0]]
-        out[fam] = (i, body)
+        out[fam] = (i, body, lvl)
     return out
+
+
+def entries(page_lines):
+    """fam -> (heading_line_index, body_lines) for the population level only."""
+    return {f: (i, b) for f, (i, b, lvl) in blocks(page_lines).items() if lvl == 3}
 
 
 def quotes_in(body):
@@ -143,10 +164,10 @@ def verdict_of(body):
 
 
 def check_quotes(page_lines, problems):
-    ents = entries(page_lines)
+    ents = blocks(page_lines)
     anchors = 0
     verdicts = Counter()
-    for fam, (_, body) in sorted(ents.items()):
+    for fam, (_, body, _) in sorted(ents.items()):
         v = verdict_of(body)
         if v is None:
             problems.append("family %s: no `- **Reading**:` verdict in %s vocabulary" % (fam, VERDICTS))
@@ -232,9 +253,9 @@ def env_end(lines, a, env):
 
 
 def check_citations(page_lines, problems):
-    ents = entries(page_lines)
+    ents = blocks(page_lines)
     owner = {}
-    for fam, (h, body) in ents.items():
+    for fam, (h, body, _) in ents.items():
         for j in range(h, h + len(body)):
             owner[j] = (fam, body, j - h)
     count = 0
@@ -273,6 +294,7 @@ def check_measurements(page_lines, expected, anchors, verdicts, cites, problems)
             keys[m.group(1)] = m.group(2).strip()
     want = {k: str(v) for k, v in expected.items()}
     want["entries"] = str(len(entries(page_lines)))
+    want["promoted"] = str(sum(1 for b in blocks(page_lines).values() if b[2] == 4))
     want["anchors"] = str(anchors)
     want["citations"] = str(cites)
     for v in VERDICTS:
@@ -288,8 +310,10 @@ def check_measurements(page_lines, expected, anchors, verdicts, cites, problems)
     return want
 
 
-def check_entry_set(page_lines, pop, problems):
-    fams = sorted(entries(page_lines))
+def check_entry_set(page_lines, pop, rows, problems):
+    """`###` entries == population ∪ {346}; each `####` entry is a family the rule dropped."""
+    bl = blocks(page_lines)
+    fams = sorted(f for f, (_, _, lvl) in bl.items() if lvl == 3)
     allowed = sorted({r["fam"] for r in pop} | {"346"})
     if fams != allowed:
         missing = sorted(set(allowed) - set(fams))
@@ -297,16 +321,30 @@ def check_entry_set(page_lines, pop, problems):
         if missing:
             problems.append("entries: population families with no entry: %s" % " ".join(missing))
         if extra:
-            problems.append("entries: entries outside the population (45 + 346): %s" % " ".join(extra))
+            problems.append("entries: entries outside the population (%d + 346): %s"
+                            % (len(pop), " ".join(extra)))
+    by = {r["fam"]: r for r in rows}
+    inpop = {r["fam"] for r in pop}
+    for fam in sorted(f for f, (_, _, lvl) in bl.items() if lvl == 4):
+        r = by.get(fam)
+        if r is None:
+            problems.append("promoted: family %s is not a ledger row" % fam)
+            continue
+        if fam in inpop:
+            problems.append("promoted: family %s is in the population, so it is not promoted" % fam)
+        if r["tier"] == "T0":
+            problems.append("promoted: family %s is still T0, so the population rule did not drop it" % fam)
+        if not NAME_TOKEN.search(r["title"]):
+            problems.append("promoted: family %s names no conjecture/problem/question in its title" % fam)
 
 
 def check_formalization_claim(page_lines, rows, problems):
-    """The page claims 0 of the 45 have main_results, a scope note, or a comparator challenge."""
-    claim = "0 of 45 have a\n  `main_results` entry, 0 have a scope note, 0 have a comparator challenge"
+    """The page claims 0 of the population have main_results, a scope note, or a comparator challenge."""
+    _, _, _, pop = population(rows)
+    claim = ("0 of %d have a\n  `main_results` entry, 0 have a scope note, 0 have a comparator challenge"
+             % len(pop))
     if claim not in "\n".join(page_lines):
         return
-    by = {r["fam"]: r for r in rows}
-    _, _, _, pop = population(rows)
     for r in pop:
         if r["mainres"] not in ("", "0"):
             problems.append("family %s: ledger mainres=%s, page claims 0" % (r["fam"], r["mainres"]))
@@ -332,20 +370,20 @@ def quote_blocks(lines):
 
 
 def mutants(page_lines):
-    """Eleven in-memory corruptions, one per check the page relies on."""
+    """Twelve in-memory corruptions, one per check the page relies on."""
     out = []
-    blocks = quote_blocks(page_lines)
+    qb = quote_blocks(page_lines)
 
     # 1. inline quotation: corrupt the opening line of a quotation
     lines = list(page_lines)
-    a = blocks[0][1]
+    a = qb[0][1]
     lines[a] = lines[a].replace("\\begin{theorem", "\\begin{theorm", 1)
     if lines[a] != page_lines[a]:
         out.append(("inline quotation corrupted", lines))
 
     # 2. quotation wrapped across lines: corrupt a continuation line of a multi-line quotation
     lines = list(page_lines)
-    for _, a, b in blocks:
+    for _, a, b in qb:
         if b - a < 2:
             continue
         mid = (a + b) // 2
@@ -356,7 +394,7 @@ def mutants(page_lines):
 
     # 3. invented quotation
     lines = list(page_lines)
-    lines[blocks[0][1]] = '  "This sentence is not in the shipped manuscript."'
+    lines[qb[0][1]] = '  "This sentence is not in the shipped manuscript."'
     out.append(("invented quotation", lines))
 
     # 4. anchor line range shifted
@@ -430,6 +468,13 @@ def mutants(page_lines):
                     out.append(("prose citation path absent", lines))
                     break
             break
+    # 12. a population entry demoted to the promoted level
+    lines = list(page_lines)
+    for i, l in enumerate(lines):
+        if HEADING.match(l) and l.startswith("### 316"):
+            lines[i] = "####" + l[3:]
+            out.append(("population entry demoted to promoted", lines))
+            break
     return out
 
 
@@ -443,7 +488,7 @@ def main():
     problems = []
     anchors, verdicts = check_quotes(base, problems)
     cites = check_citations(base, problems)
-    check_entry_set(base, pop, problems)
+    check_entry_set(base, pop, rows, problems)
     check_measurements(base, expected, anchors, verdicts, cites, problems)
     check_formalization_claim(base, rows, problems)
 
@@ -451,7 +496,11 @@ def main():
           % (expected["pop_families"], expected["pop_manuscripts"], expected["second_families"],
              expected["second_manuscripts"], expected["first_families"], expected["first_manuscripts"],
              expected["t0_families"], expected["t0_manuscripts"]))
-    print("entries: %d (population %d + 346)" % (len(entries(base)), expected["pop_families"]))
+    bl = blocks(base)
+    print("entries: %d population (population %d + 346) + %d promoted: %s"
+          % (len(entries(base)), expected["pop_families"],
+             sum(1 for b in bl.values() if b[2] == 4),
+             " ".join(sorted(f for f, (_, _, lvl) in bl.items() if lvl == 4))))
     print("anchors: %d, all resolved against the shipped LaTeX" % anchors)
     print("prose citations: %d, all resolved, every one covering a whole statement environment" % cites)
     print("verdicts: " + " ".join("%s %d" % (v, verdicts.get(v, 0)) for v in VERDICTS))
@@ -468,7 +517,7 @@ def main():
             inner = []
             a2, v2 = check_quotes(lines, inner)
             c2 = check_citations(lines, inner)
-            check_entry_set(lines, pop, inner)
+            check_entry_set(lines, pop, rows, inner)
             check_measurements(lines, expected, a2, v2, c2, inner)
             check_formalization_claim(lines, rows, inner)
             status = "caught" if inner else "MISSED"
