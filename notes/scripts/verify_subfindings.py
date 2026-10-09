@@ -46,7 +46,7 @@ def shipped():
 
 def truth():
     """Everything the table claims, re-derived from overview.tex, CONTENTS.md, yaml, and the docs."""
-    order, fams = bc.parse_overview()
+    _order, fams = bc.parse_overview()
     sources, main_results = bc.parse_yaml()
     docs = bc.parse_docs()
     tiers = {}
@@ -138,7 +138,7 @@ def check(header, rows):
         if len(got) != len(want):
             problems.append(f"{fam}: {len(got)} comparator rows, scope note has {len(want)}")
             continue
-        for g, (stmt, lean) in zip(sorted(got, key=lambda x: int(x["seq"])), want):
+        for g, (stmt, lean) in zip(sorted(got, key=lambda x: int(x["seq"])), want, strict=False):
             if g["statement"] != stmt:
                 problems.append(f"{fam}:{g['seq']} statement is {g['statement']!r}, note says {stmt!r}")
             if g["lean_file"] != lean:
@@ -196,15 +196,15 @@ def main():
     comp_fam = comp_fields[1]
     cases = [
         ("renamed display title", man_idx, man_fam,
-         "\t".join(man_fields[:3] + [man_fields[3] + " (renamed)"] + man_fields[4:])),
+         "\t".join([*man_fields[:3], man_fields[3] + " (renamed)", *man_fields[4:]])),
         ("manuscript path that does not exist", man_idx, man_fam,
-         "\t".join(man_fields[:4] + [man_fields[4].replace("paper.pdf", "nosuch.pdf")] + man_fields[5:])),
+         "\t".join([*man_fields[:4], man_fields[4].replace("paper.pdf", "nosuch.pdf"), *man_fields[5:]])),
         ("flipped formalized flag", man_idx, man_fam,
-         "\t".join(man_fields[:5] + [("1" if man_fields[5] == "0" else "0")] + man_fields[6:])),
+         "\t".join([*man_fields[:5], "1" if man_fields[5] == "0" else "0", *man_fields[6:]])),
         ("flipped tier", man_idx, man_fam,
-         "\t".join(man_fields[:6] + [("T0" if man_fields[6] == "T3" else "T3")] + man_fields[7:])),
+         "\t".join([*man_fields[:6], "T0" if man_fields[6] == "T3" else "T3", *man_fields[7:]])),
         ("renamed comparator statement", comp_idx, comp_fam,
-         "\t".join(comp_fields[:7] + [comp_fields[7] + " (invented)"] + comp_fields[8:])),
+         "\t".join([*comp_fields[:7], comp_fields[7] + " (invented)", *comp_fields[8:]])),
         ("comparator row deleted", comp_idx, comp_fam, None),
     ]
     undetected = 0

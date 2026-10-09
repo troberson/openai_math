@@ -114,7 +114,7 @@ def tsv(rel):
 def run(script):
     """One extractor's stdout. cwd is notes/scripts so its sibling imports resolve."""
     r = subprocess.run([sys.executable, str(SCRIPTS / script)], cwd=SCRIPTS,
-                       capture_output=True, text=True, timeout=300)
+                       capture_output=True, text=True, timeout=300, check=False)  # nonzero exits are the finding
     return r.stdout
 
 
@@ -125,7 +125,7 @@ def ledger():
     copy of it, so a page count is checked against the generator's own rules, not against a
     paraphrase of them.
     """
-    order, fams = B.parse_overview()
+    _order, fams = B.parse_overview()
     fam_paps = B.parse_contents()
     sources, main_results = B.parse_yaml()
     docs = B.parse_docs()
@@ -171,7 +171,7 @@ def ledger():
 
 def measured():
     """Every number the page states that this repo can re-measure right now."""
-    (rows, trace_count, configs, ver_dirs, vinputs, vcov, trace_extra,
+    (rows, trace_count, configs, ver_dirs, vinputs, vcov, _trace_extra,
      mainres_entries, mainres_configs) = ledger()
     fams = len(rows)
     tier = Counter(r["tier"] for r in rows.values())
@@ -181,7 +181,8 @@ def measured():
     res = {f for f, r in rows.items() if "resolution" in r["shapes"]}
     cx = {f for f, r in rows.items() if r["cxbroad"]}
     cxtag = {f for f, r in rows.items() if "counterexample" in r["shapes"]}
-    by_tier = lambda s: Counter(rows[f]["tier"] for f in s)
+    def by_tier(s):
+        return Counter(rows[f]["tier"] for f in s)
 
     sub = tsv("notes/subfindings.tsv")
     mss_rows = [r for r in sub if r["kind"] == "manuscript"]

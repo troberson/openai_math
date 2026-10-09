@@ -86,7 +86,7 @@ def population():
     """
     order, fams = B.parse_overview()
     ledger = {}
-    with open(LEDGER, newline="") as fh:
+    with open(LEDGER, newline="", encoding="utf-8") as fh:
         for r in csv.DictReader(fh, delimiter="\t"):
             ledger[r["fam"]] = r
     rn = {f for f in order if ledger[f]["resolves_named"] == "1"}
@@ -143,7 +143,7 @@ def population():
                 atext = M.prose(am.group(1))
                 for off, seg in sentences(atext):
                     low = seg.lower()
-                    for m in TARGET.finditer(low):
+                    for _m in TARGET.finditer(low):
                         ln = raw[:raw.find(am.group(1)) + off].count("\n") + 1
                         rec = (flat(seg), rel, ln)
                         if RESOLVE.search(low):
@@ -155,7 +155,7 @@ def population():
             t = M.prose(raw)
             for off, seg in sentences(t):
                 low = seg.lower()
-                for m in TARGET.finditer(low):
+                for _m in TARGET.finditer(low):
                     ln = t[:off].count("\n") + 1
                     rec = (flat(seg), rel, ln)
                     if RESOLVE.search(low):
@@ -173,7 +173,7 @@ def population():
 
     tgt = [(f, t, q, ln) for f in order for (t, q, ln) in head_titled[f] if TARGET_I.search(t)]
     verb_in_title = [(f, t, q, ln) for f, t, q, ln in tgt if RESOLVE.search(t.lower())]
-    rows, meta = M.measure()
+    rows, _meta = M.measure()
     subject = {r["name"] for r in rows if r["role"] == "subject"}
     subj_hits = []
     for f in order:

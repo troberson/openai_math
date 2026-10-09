@@ -38,7 +38,7 @@ import re
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-import build_catalog as B  # noqa: E402  # for the paren-aware manuscript-path regex
+import build_catalog as B  # for the paren-aware manuscript-path regex
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PRE = ROOT / "preprints"

@@ -195,7 +195,7 @@ def main():
     q = re.search(r"“([^”]+)”", cell).group(1)
     cite = re.search(r"`lean/docs/(\d{3})\.md:(\d+)`", cell)
     src = (DOCS / f"{fam}.md").read_text(encoding="utf-8", errors="replace").splitlines()
-    first, last = scope_span(src)
+    _first, last = scope_span(src)
     outside = next(n for n in range(last + 1, len(src) + 1) if src[n - 1].strip())
 
     cases = [

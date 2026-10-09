@@ -33,9 +33,9 @@ import re
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-import build_catalog  # noqa: E402
-import extract_counterexample_crosscheck as cx  # noqa: E402
-import extract_subfinding_pairs as ep  # noqa: E402
+import build_catalog
+import extract_counterexample_crosscheck as cx
+import extract_subfinding_pairs as ep
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PAGE = ROOT / "notes" / "counterexample-crosscheck.md"
@@ -59,7 +59,7 @@ def population():
     mr, entries = cx.main_results()
     per = {}
     for f in pop:
-        doc, links = cx.scope_note(f)
+        _doc, links = cx.scope_note(f)
         cfgs = sorted({c for _, c in links})
         per[f] = {
             "tier": rows[f]["tier"],
@@ -125,7 +125,7 @@ def count_phrases(v):
         (f"**{v['t2_gaps']}** configs in all **{v['t2']}** families", "T2 gaps"),
         (f"carrying **{v['sorries']}** `sorry` occurrences", "stub sorries"),
         (f"fires on **{v['t0']}** T0 families", "bead T0 shape"),
-        (f"The **21** is the count", "bead prose 21"),
+        ("The **21** is the count", "bead prose 21"),
         (f"{v['broad']} families corpus-wide: {v['broad_t0']} T0, {v['broad_t3']} T3, {v['broad_t2']} T2",
          "broad rule"),
     ]
@@ -214,7 +214,7 @@ def check(text):
              len(v["per"][f]["entries"]), len(v["per"][f]["gaps"])) for f in v["pop"]]
     got = [(f, t, int(c), int(e), int(g)) for f, t, c, e, g in rows]
     if got != want:
-        for n, (w, g) in enumerate(zip(want, got + [("<none>",)] * len(want))):
+        for n, (w, g) in enumerate(zip(want, got + [("<none>",)] * len(want), strict=False)):
             if w != g:
                 problems.append(f"summary table row {n + 1}: {g} != {w}")
         if len(got) != len(want):
@@ -289,7 +289,7 @@ def check(text):
     if heads != t3_pop:
         problems.append(f"T3 blocks {heads} != {t3_pop}")
     universe = {p.stem for p in CONFIGS_DIR.glob("*.json")}
-    for n, f in enumerate(heads):
+    for _n, f in enumerate(heads):
         start = text.index(f"### {f} —")
         nxt = re.search(r"^### |^## ", text[start + 5:], re.M)
         body = text[start + 5:start + 5 + (nxt.start() if nxt else len(text))]

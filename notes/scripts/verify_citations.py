@@ -69,7 +69,7 @@ def clusters(pairs, k):
             seen.add(x)
             stack.extend(adj[x] - comp)
         comps.append(comp)
-    comps.sort(key=lambda c: (-len(c), sorted(c)[0]))
+    comps.sort(key=lambda c: (-len(c), min(c)))
     return [c for c in comps if len(c) > 1]
 
 
@@ -131,7 +131,7 @@ def measure(normfn):
 
     keymen = collections.defaultdict(set)
     for p in files:
-        for ty, key, body, line in ec.entries(ec.read(p)):
+        for _ty, key, _body, _line in ec.entries(ec.read(p)):
             keymen[key].add(ec.owner(p))
 
     all_keys = sum(len(v) for v in entry_keys.values())
@@ -255,8 +255,8 @@ def check(page, M, M2):
     if len(rows) != TOP_N:
         fails.append("work table has %d rows, expected %d" % (len(rows), TOP_N))
     seen_nt = set()
-    for cnt, title, path, line in rows:
-        line = int(line)
+    for cnt, title, path, raw_line in rows:
+        line = int(raw_line)
         full = os.path.join(ec.ROOT, path)
         if not os.path.isfile(full):
             fails.append("work anchor absent on disk: %s:%d" % (path, line))
@@ -316,7 +316,7 @@ def check(page, M, M2):
     prows = re.findall(r"^\|\s*(\d+)\s*\|\s*(\d{3}) × (\d{3})\s*\|\s*([^|]+)\|\s*$", page, re.M)
     if len(prows) != len(cross):
         fails.append("cross-discipline table has %d rows, measured %d" % (len(prows), len(cross)))
-    for (fa, fb, v, da, db), (cnt, pa, pb, ds) in zip(cross, prows):
+    for (fa, fb, v, da, db), (cnt, pa, pb, ds) in zip(cross, prows, strict=False):
         if (v, fa, fb) != (int(cnt), pa, pb):
             fails.append("cross row %s x %s at %s, measured %s x %s at %d"
                          % (pa, pb, cnt, fa, fb, v))
@@ -353,7 +353,7 @@ def check(page, M, M2):
         if k == 10:
             need("%d components, largest **%d**" % (len(multi), len(big)), "clusters >=10")
             need("(%s, %s)"
-                 % (" ".join(sorted({M["fam"][m] for m in big})), M["disc"][sorted(big)[0]]),
+                 % (" ".join(sorted({M["fam"][m] for m in big})), M["disc"][min(big)]),
                  "largest >=10 membership")
 
     crows = re.findall(r"^\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*([0-9 ]+)\|\s*([^|]+)\|\s*$",
@@ -361,7 +361,7 @@ def check(page, M, M2):
     multi5 = clusters(M["pairs"], 5)[:12]
     if len(crows) != len(multi5):
         fails.append("cluster table has %d rows, measured top-%d" % (len(crows), len(multi5)))
-    for c, (n, nf, nd, fams, comp) in zip(multi5, crows):
+    for c, (n, nf, nd, fams, comp) in zip(multi5, crows, strict=False):
         cf = sorted({M["fam"][m] for m in c})
         cd = collections.Counter(M["disc"][m] for m in c)
         if int(n) != len(c) or int(nf) != len(cf) or int(nd) != len(cd):
@@ -389,7 +389,7 @@ def check(page, M, M2):
     top_r = sorted(M["rinv"].items(), key=lambda kv: (-len(kv[1]), kv[0]))[:10]
     if len(rrows) != 10:
         fails.append("release-target table has %d rows, expected 10" % len(rrows))
-    for (d, s), (cnt, name) in zip(top_r, rrows):
+    for (d, s), (cnt, name) in zip(top_r, rrows, strict=False):
         if name != d or int(cnt) != len(s):
             fails.append("release row %r at %s, measured %r at %d" % (name, cnt, d, len(s)))
 
@@ -492,9 +492,9 @@ def check(page, M, M2):
     return fails
 
 
-def seen_nt_order(rows, M):
+def seen_nt_order(rows, _M):
     out = []
-    for cnt, title, path, line in rows:
+    for _cnt, title, _path, _line in rows:
         out.append(ec.norm_title(title))
     return out
 

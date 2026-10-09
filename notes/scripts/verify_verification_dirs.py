@@ -36,8 +36,7 @@ import re
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-import build_catalog  # noqa: E402
-import extract_verification_dirs as evd  # noqa: E402
+import extract_verification_dirs as evd
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PAGE = ROOT / "notes" / "verification-dirs.md"
@@ -274,7 +273,7 @@ def check(text, full_page):
     problems = []
     n_anchor = n_block_lines = n_prose = n_row_quotes = n_says = 0
 
-    for label, body in section_bodies(text):
+    for _label, body in section_bodies(text):
         lines = body.split("\n")
 
         for m in ANCHOR.finditer(body):
@@ -406,7 +405,7 @@ def check(text, full_page):
     if len(rows) != e["dirs"]:
         problems.append(f"entry-point table has {len(rows)} rows, the bundle count is {e['dirs']}")
     elif rows != e["table"]:
-        bad = [f"{i + 1}: {r} != {t}" for i, (r, t) in enumerate(zip(rows, e["table"])) if r != t]
+        bad = [f"{i + 1}: {r} != {t}" for i, (r, t) in enumerate(zip(rows, e["table"], strict=False)) if r != t]
         problems.append(f"entry-point table family order: {'; '.join(bad)}")
     bullets = re.findall(r"^- `preprints/([^`]+)`", entry_body, re.M)
     if len(bullets) != len(e["unnamed"]):

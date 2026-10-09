@@ -10,7 +10,6 @@ Never invokes lean, lake, or comparator. Runtime is a few seconds.
 
 import json
 import re
-import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -270,7 +269,7 @@ def versions_of(paths):
 
 
 def main():
-    order, fams = parse_overview()
+    _order, fams = parse_overview()
     fam_paps = parse_contents()
     sources, main_results = parse_yaml()
     challenges = parse_challenges()

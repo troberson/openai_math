@@ -38,9 +38,7 @@ TIERS = {"1", "2", "3", "4"}
 CONSEQUENCE = re.compile(
     r"consequent|opens the door|paves the way|spawns|triggers|reshapes the field"
     r"|now implies|leads to a solution|has implications", re.I)
-STOP = set("""the a an of and or for in on to with by as is are be it its their this that
-these those from at every every all any each fixed nontrivial increasing general case cases
-conjecture conjectures problem problems question questions theorem the""".split())
+STOP = {"the", "a", "an", "of", "and", "or", "for", "in", "on", "to", "with", "by", "as", "is", "are", "be", "it", "its", "their", "this", "that", "these", "those", "from", "at", "every", "all", "any", "each", "fixed", "nontrivial", "increasing", "general", "case", "cases", "conjecture", "conjectures", "problem", "problems", "question", "questions", "theorem"}
 
 
 def resultentry_lines():
@@ -162,7 +160,7 @@ def mutants(text, led, want):
     rows = list(csv.DictReader(text.splitlines(), delimiter="\t"))
     anchored = [r for r in rows if re.fullmatch(r"overview\.tex:\d+", r["abstract_line"])]
     named = [r for r in rows if surname_tokens(r["conjecture"])]
-    outside = sorted(set(led) - want - {r["fam"] for r in rows})[0]
+    outside = min(set(led) - want - {r["fam"] for r in rows})
     anchor_fam, anchor_line = anchored[0]["fam"], int(anchored[0]["abstract_line"].split(":")[1])
     conf_fam, gap_fam, name_fam, wide_fam = rows[0]["fam"], rows[1]["fam"], named[0]["fam"], rows[0]["fam"]
     gap_text = rows[1]["gap"]
@@ -210,8 +208,8 @@ def main():
                    and entries.get(r["fam"], (None,))[0] == int(r["abstract_line"].split(":")[1]))
 
     print(f"rows: {len(rows)}  selected: {len(want)}  fields: 10")
-    print(f"surprise_tier: " + " ".join(f"{k}:{v}" for k, v in sorted(tiers.items())))
-    print(f"prior_confidence: " + " ".join(f"{k}:{v}" for k, v in sorted(conf.items())))
+    print("surprise_tier: " + " ".join(f"{k}:{v}" for k, v in sorted(tiers.items())))
+    print("prior_confidence: " + " ".join(f"{k}:{v}" for k, v in sorted(conf.items())))
     print(f"anchors resolved to \\resultentry lines: {resolved}")
 
     if problems:

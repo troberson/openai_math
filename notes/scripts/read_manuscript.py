@@ -25,7 +25,7 @@ import re
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-import build_sources as S  # noqa: E402
+import build_sources as S
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 SECTION = re.compile(r"\\(section|subsection|subsubsection)\*?\{([^}]*)\}")
@@ -120,7 +120,7 @@ def main():
     print(f"\n== titled statements (declared envs: {', '.join(sorted(declared))}) ==")
     for f, n, kind, title in stmts:
         print(f"  {f.relative_to(ROOT)}:{n}  {kind}  {title}")
-    if not "--all" in flags and limit:
+    if "--all" not in flags and limit:
         print(f"  (first {limit}; --all for every titled statement)")
     return 0
 

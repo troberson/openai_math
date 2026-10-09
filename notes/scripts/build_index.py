@@ -50,10 +50,10 @@ import sys
 import unicodedata
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-import build_catalog as B  # noqa: E402
-import measure_topics as MT  # noqa: E402
-import measure_names as MN  # noqa: E402
-import check_index_links as CL  # noqa: E402  # report-only: the checker runs nothing at import
+import build_catalog as B
+import measure_topics as MT
+import measure_names as MN
+import check_index_links as CL  # report-only: the checker runs nothing at import
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PRE = ROOT / "preprints"
@@ -157,7 +157,7 @@ def citation_edges(dir2fam, report):
     return sorted((a, dir2fam[a], b, dir2fam[b]) for a, b in out)
 
 
-WRITTEN = set()
+WRITTEN: set = set()
 
 
 def write(relpath, text):
@@ -392,7 +392,7 @@ def name_page(r, fams, page_of, dir2fam, dir2pdf, cfg2fams):
     L.append("")
 
     ms = {}
-    for f, d in r["ms_title"]:
+    for _f, d in r["ms_title"]:
         ms.setdefault(d, set()).add("title")
     for d in r["body_ms"]:
         ms.setdefault(d, set()).add("prose")
@@ -462,7 +462,7 @@ def name_page(r, fams, page_of, dir2fam, dir2pdf, cfg2fams):
 
 
 def main():
-    order, fams = B.parse_overview()
+    _order, fams = B.parse_overview()
     fam_paps = B.parse_contents()
     sources, main_results = B.parse_yaml()
     challenges = B.parse_challenges()
@@ -948,8 +948,8 @@ def main():
           f"configs {len(config_rows)}  lean-dirs {len(lean_dir_rows)}  "
           f"scope-notes {len(scope_rows)}  traces {len(trace_rows)}  topics {len(topic_table_rows)}  "
           f"names {len(name_table_rows)}")
-    print(f"edge tables         " + "  ".join(
-        f"{name.split('/')[-1][:-4]} {len(edges[name])}" for name, _ in EDGE_TABLES))
+    print("edge tables         " + "  ".join(
+        f"{name.rsplit('/', 1)[-1][:-4]} {len(edges[name])}" for name, _ in EDGE_TABLES))
     print(f"links checked       {len(links)}  broken {len(broken)}")
     for b in broken[:10]:
         print(f"  BROKEN {b}")
@@ -970,8 +970,8 @@ def main():
     regcat = collections.Counter(CL.category(CL.resolve(p, h)) for p, h in links)
     print("registered by category " + "  ".join(
         f"{c} {regcat[c]}" for c in sorted(regcat, key=lambda k: (-regcat[k], k))))
-    print(f"canonical           " + "  ".join(f"{k} {canon[k]}" for k in canon))
-    print(f"rendered            " + "  ".join(f"{k} {rendered[k]}" for k in rendered))
+    print("canonical           " + "  ".join(f"{k} {canon[k]}" for k in canon))
+    print("rendered            " + "  ".join(f"{k} {rendered[k]}" for k in rendered))
     missing_pages = [f for f in sorted(ledger)
                      if not (IDX / page_of.get(f, "")).is_file()]
     print(f"vs ledger         tier {tier_diff}  mainres {mr_diff}  chal {chal_diff}  "
@@ -1008,7 +1008,7 @@ def main():
           f"edges {len(ne)} over {len({r['fam'] for r in ne})} families  "
           f"no-family names {len([r for r in name_rows if not r['fams']])}  "
           f"singletons {sum(1 for r in subject_rows if len(r['fams']) == 1)}  "
-          f"max {max(((len(r['fams']), r['name']) for r in subject_rows))}  "
+          f"max {max((len(r['fams']), r['name']) for r in subject_rows)}  "
           f"variants {sum(1 for r in subject_rows if len(r['variants']) > 1)}  "
           f"trace families {len(trace_fams & name_covered)} of {len(trace_fams)}")
     print(f"configs             {len(config_rows)}  json {sum(1 for r in config_rows if r['json'] == '1')}  "

@@ -31,9 +31,9 @@ import re
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-import extract_links  # noqa: E402
-import extract_subfinding_pairs as ep  # noqa: E402
-import extract_t0_chains as tc  # noqa: E402
+import extract_links
+import extract_subfinding_pairs as ep
+import extract_t0_chains as tc
 
 ROOT = tc.ROOT
 PAGE = ROOT / "notes" / "t0-chains.md"
@@ -47,8 +47,7 @@ SUM_ROW = re.compile(r"^\| (\d{3}) \| (.+?) \| (.+?) \| (\d+) \| (\d+) \| (\d+) 
 CHAIN_ROW = re.compile(r"^\| (\d{3}) \| (T\d) \| " + r" \| ".join([r"(\d+)"] * 7)
                        + r" \| (.+?) \|$")
 LIST_LINE = "The {} are {}."
-WORDS = ("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen "
-         "fifteen sixteen seventeen eighteen nineteen twenty").split()
+WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty"]
 DISC = {
     "Algebraic and complex geometry": "A&CG",
     "Real and complex analysis": "real&complex",
@@ -308,7 +307,7 @@ def check_family_blocks(lines, m, problems):
             continue
         if len(targets) != 2:
             problems.append(f"{fam}: {len(targets)} manuscript paths, expected 2")
-        for (b, k), want in zip(bullets, m["mss"][fam]):
+        for (b, k), want in zip(bullets, m["mss"][fam], strict=False):
             seq, anchor, title = b.groups()
             if seq != want["seq"]:
                 problems.append(f"{fam}: bullet seq {seq} != subfindings seq {want['seq']}")
@@ -357,7 +356,7 @@ def check_lists(flat, m, problems):
     return len(want) + 1
 
 
-def check_files(m, problems):
+def check_files(_m, problems):
     for rel in VER268:
         if not (ROOT / rel).is_dir():
             problems.append(f"268 verification directory absent: {rel}")

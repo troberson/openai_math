@@ -54,7 +54,7 @@ def load_inputs():
         if r["kind"] == "manuscript":
             titles[(r["fam"], int(r["seq"]))] = r["title"]
     counts = {}
-    for (fam, _), _ in titles.items():
+    for (fam, _) in titles:
         counts[fam] = counts.get(fam, 0) + 1
     ledger = {r["fam"]: r for r in csv.DictReader(
         LEDGER.read_text(encoding="utf-8").splitlines(), delimiter="\t")}

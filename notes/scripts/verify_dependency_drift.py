@@ -240,7 +240,7 @@ def measure():
 def table_rows(text):
     """(name, imports, patch lines) for the patch-size table."""
     rows = []
-    for m in re.finditer(r"^\| ([\w.-]+) \| (\*?\*?)(\d+)\2? \| (\*?\*?)([\d,]+)\2? \|$", text, re.M):
+    for _m in re.finditer(r"^\| ([\w.-]+) \| (\*?\*?)(\d+)\2? \| (\*?\*?)([\d,]+)\2? \|$", text, re.M):
         pass
     for ln in text.split("\n"):
         if not ln.startswith("| ") or ln.startswith("|---"):
@@ -295,7 +295,7 @@ def check(text):
         q = BLOCKQUOTE.match(ln)
         if not q:
             continue
-        rel, at, want = q.group(1), int(q.group(2)), q.group(3)
+        rel, at, want_q = q.group(1), int(q.group(2)), q.group(3)
         f = ROOT / rel
         if not f.exists():
             problems.append(f"page:{i + 1}: blockquote file {rel} does not exist")
@@ -303,10 +303,10 @@ def check(text):
         src = read(f).split("\n")
         n_quote += 1
         got = src[at - 1] if 1 <= at <= len(src) else "<past end of file>"
-        if norm(got) != norm(want):
+        if norm(got) != norm(want_q):
             problems.append(
                 f"page:{i + 1}: blockquote != {rel}:{at}\n"
-                f"    want {want!r}\n    got  {got!r}")
+                f"    want {want_q!r}\n    got  {got!r}")
 
     # 3. code spans
     corpus = None
@@ -369,7 +369,7 @@ def check(text):
     for ver, cnt in sorted(m["froms"].items(), key=lambda kv: -kv[1]):
         want(f"from-version {ver}", f"`{ver}` ×{cnt}" if cnt > 1 else f"`{ver}`")
     if singletons:
-        want("singleton from-versions", f"and one each of")
+        want("singleton from-versions", "and one each of")
     for name, needle in [("largest patch", "PrimeNumberTheoremAnd at 39,904 lines"),
                          ("mathlib imports", "mathlib at 56,416"),
                          ("largest unused patch", "AINTLIB at 23,288 lines"),

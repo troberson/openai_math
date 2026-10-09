@@ -19,7 +19,6 @@ from __future__ import annotations
 import re
 import subprocess
 import sys
-from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -237,13 +236,13 @@ def check(text):
     # the baseline to every later edit of this page, and the naming that pass added reads as absent.
     base = subprocess.run(
         ["git", "log", "--format=%H", "--reverse", "--", "notes/scripts/README.md"],
-        cwd=ROOT, capture_output=True, text=True).stdout.split()
+        cwd=ROOT, capture_output=True, text=True, check=False).stdout.split()
     ref = f"{base[0]}^" if base else "HEAD"
     head_readme = subprocess.run(
-        ["git", "show", f"{ref}:notes/README.md"], cwd=ROOT, capture_output=True, text=True
+        ["git", "show", f"{ref}:notes/README.md"], cwd=ROOT, capture_output=True, text=True, check=False
     ).stdout
     head_agents = subprocess.run(
-        ["git", "show", f"{ref}:AGENTS.md"], cwd=ROOT, capture_output=True, text=True
+        ["git", "show", f"{ref}:AGENTS.md"], cwd=ROOT, capture_output=True, text=True, check=False
     ).stdout
     gaps = sorted(n for n in names if n not in head_readme and n not in head_agents)
     named_before = len(names) - len(gaps)
@@ -309,7 +308,7 @@ def mutants():
         if not any(needle in x for x in found):
             fails.append(f"{label}: NOT caught by {needle!r} (problems: {found[:2]})")
         else:
-            print(f"  caught {label}: {[x for x in found if needle in x][0][:110]}")
+            print(f"  caught {label}: {next(x for x in found if needle in x)[:110]}")
     return fails
 
 

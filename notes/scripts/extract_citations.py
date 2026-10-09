@@ -123,7 +123,7 @@ def entries(text):
     heads = list(ENTRY.finditer(text))
     bounds = [m.start() for m in ATLINE.finditer(text)]
     out = []
-    for i, m in enumerate(heads):
+    for _i, m in enumerate(heads):
         nxt = len(text)
         for b in bounds:
             if b > m.end():
@@ -227,10 +227,10 @@ def main():
           % (len(keys), sum(1 for v in keys.values() if v > 1)))
     keymen = collections.defaultdict(set)
     for p2 in files:
-        for ty, key, body, line in entries(read(p2)):
+        for _ty, key, _body, _line in entries(read(p2)):
             keymen[key].add(owner(p2))
     print("top keys by owning manuscripts:")
-    for k, s2 in ranked({k: len(v) for k, v in keymen.items() if len(v) > 1}, 10):
+    for k, _s2 in ranked({k: len(v) for k, v in keymen.items() if len(v) > 1}, 10):
         print("  %2d  %s" % (len(keymen[k]), k))
 
     # ---- cited, not just listed -------------------------------------------
@@ -274,7 +274,7 @@ def main():
 
     # ---- pairs ------------------------------------------------------------
     pairs = collections.Counter()
-    for nt, s in shared.items():
+    for s in shared.values():
         ms = sorted(s)
         for i in range(len(ms)):
             for j in range(i + 1, len(ms)):
@@ -327,7 +327,7 @@ def main():
                 seen.add(x)
                 stack.extend(adj[x] - comp)
             comps.append(comp)
-        comps.sort(key=lambda c: (-len(c), sorted(c)[0]))
+        comps.sort(key=lambda c: (-len(c), min(c)))
         multi = [c for c in comps if len(c) > 1]
         print("clusters at pair threshold >=%d: %d components, %d with more than one manuscript, "
               "largest %d, spanning >=2 disciplines: %d"
@@ -348,7 +348,7 @@ def main():
         for d in s:
             rinv[d].add(m)
     rpairs = collections.Counter()
-    for d, s in rinv.items():
+    for s in rinv.values():
         ms = sorted(s)
         for i in range(len(ms)):
             for j in range(i + 1, len(ms)):

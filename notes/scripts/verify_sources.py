@@ -29,7 +29,7 @@ import re
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-import build_sources as S  # noqa: E402
+import build_sources as S
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PAGE = ROOT / "notes" / "sources.md"
@@ -49,7 +49,7 @@ def rows():
     with TSV.open(encoding="utf-8") as fh:
         rdr = csv.reader(fh, delimiter="\t")
         header = next(rdr)
-        body = [dict(zip(header, r)) for r in rdr]
+        body = [dict(zip(header, r, strict=False)) for r in rdr]
     return header, body
 
 
@@ -131,7 +131,8 @@ def measure():
 
 
 def count_phrases(m):
-    f = lambda x: f"{x:,}"
+    def f(x):
+        return f"{x:,}"
     s, o, sn = m["sums"], m["outcomes"], m["single_names"]
     rd = m["rootdist"]
     gap = ", ".join(f"`{n}` {c}" for n, c in
@@ -168,7 +169,7 @@ def count_phrases(m):
         (f"and **{m['substring_multi']}** with two or three", "substring multi-root count"),
         (f"reads **{m['rootdist'][1] - 0}** and **{m['listed'] - m['rootdist'][1]}**",
          "line-start root counts"),
-        (f"under either rule (0 differences)", "rule agreement"),
+        ("under either rule (0 differences)", "rule agreement"),
         (f"occurrence — {f(m['decl'])} both ways", "declared-rule agreement"),
         (f"quotes **{f(m['six'])}** for", "six-name count"),
         (f"The {m['decl'] - m['six']} gap is names", "env gap"),

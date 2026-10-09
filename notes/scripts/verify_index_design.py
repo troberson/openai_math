@@ -27,7 +27,7 @@ import re
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-import measure_index_sizes as M  # noqa: E402
+import measure_index_sizes as M
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PAGE = ROOT / "notes" / "index-design.md"
@@ -192,7 +192,7 @@ def count_phrases(p):
         (f"**{p['sf_comp']}** scope-note link occurrences against **{p['chal_json']}** distinct "
          f"configs: {p['dup_docs']} scope notes link one config twice", "link occurrence gap"),
         # not checked
-        (f"The **150** B/row byte figures are projections", "projection basis"),
+        ("The **150** B/row byte figures are projections", "projection basis"),
         (f"The **{be}** bib entries are counted", "bib entry caveat"),
         (f"The **{p['reach']}**-family Lean reach", "lean reach caveat"),
         (f"The **{p['ns_agree']}** of **{p['mr_entries']}** namespace agreement",

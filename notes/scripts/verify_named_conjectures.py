@@ -181,7 +181,7 @@ def check_quotes(page_lines, problems):
                 continue
             with open(full, encoding="utf-8", errors="replace") as fh:
                 lines = fh.read().split("\n")
-            if not (1 <= a <= b <= len(lines)):
+            if not 1 <= a <= b <= len(lines):
                 problems.append(
                     "family %s: anchor %s:%d-%d outside 1..%d lines" % (fam, path, a, b, len(lines))
                 )
@@ -196,7 +196,7 @@ def check_quotes(page_lines, problems):
             if got != want:
                 problems.append(
                     "family %s: quotation does not match %s:%d-%d (first difference at char %d)"
-                    % (fam, path, a, b, next((i for i, (x, y) in enumerate(zip(got, want)) if x != y), min(len(got), len(want))))
+                    % (fam, path, a, b, next((i for i, (x, y) in enumerate(zip(got, want, strict=False)) if x != y), min(len(got), len(want))))
                 )
     return anchors, verdicts
 
@@ -272,7 +272,7 @@ def check_citations(page_lines, problems):
             continue
         with open(os.path.join(ROOT, full), encoding="utf-8", errors="replace") as fh:
             lines = fh.read().split("\n")
-        if not (1 <= a <= b <= len(lines)):
+        if not 1 <= a <= b <= len(lines):
             problems.append("citation line %d: %s:%d-%d outside 1..%d lines"
                             % (i + 1, full, a, b, len(lines)))
             continue
@@ -447,7 +447,7 @@ def mutants(page_lines):
             break
     # 10. a prose citation truncated before its \end
     lines = list(page_lines)
-    for i, path, a, b in prose_citations(page_lines):
+    for _i, path, a, b in prose_citations(page_lines):
         if path and b > a:
             for j, l in enumerate(lines):
                 m = CITE.search(l)
@@ -459,7 +459,7 @@ def mutants(page_lines):
                 break
     # 11. a prose citation whose path is not on disk
     lines = list(page_lines)
-    for i, path, a, b in prose_citations(page_lines):
+    for _i, path, a, b in prose_citations(page_lines):
         if path.startswith("build/"):
             for j, l in enumerate(lines):
                 m = CITE.search(l)

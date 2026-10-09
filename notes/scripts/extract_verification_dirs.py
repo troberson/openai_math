@@ -25,7 +25,7 @@ import re
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-import build_catalog  # noqa: E402
+import build_catalog
 
 ROOT = build_catalog.ROOT
 PRE = ROOT / "preprints"
@@ -81,10 +81,10 @@ def entry_point(bundle):
     subs = [p for p in sorted(bundle.rglob("README.md")) if p != top]
     if subs:
         return subs[0], "subdirectory README.md", len(subs)
-    txt = [p for p in sorted(bundle.rglob("README.txt"))]
+    txt = sorted(bundle.rglob("README.txt"))
     if txt:
         return txt[0], "subdirectory README.txt", len(txt)
-    mp, key, val = main_command(bundle)
+    mp, key, _val = main_command(bundle)
     if mp is not None:
         return mp, f"manifest {key}", 1
     scripts = [p for p in sorted(bundle.iterdir())
@@ -104,7 +104,7 @@ def interesting(path):
             continue
         if re.match(r"^#{1,3}\s", s):
             out.append((i, "heading", s))
-        elif s.startswith("$") or "python3 " in s or s.startswith("g++") or s.startswith("make"):
+        elif s.startswith(("$", "g++", "make")) or "python3 " in s:
             out.append((i, "command", s))
         elif re.search(r"\bnot\b|\bdoes not\b|\bno theorem\b", s) and len(s) > 40:
             out.append((i, "scope", s))
@@ -112,7 +112,7 @@ def interesting(path):
 
 
 def main():
-    fam_by_slug, order, fams = families_by_slug()
+    fam_by_slug, _order, _fams = families_by_slug()
     dirs = sorted(p for p in PRE.iterdir() if p.is_dir())
     bundles = [p for p in dirs if (p / "verification").is_dir()]
     readmes = [p for p in dirs if (p / "README.md").is_file()]
@@ -136,7 +136,7 @@ def main():
           f"unnamed {len(unnamed)}")
     for n in unnamed:
         print(f"   UNNAMED {n}  fam {fam_by_slug.get(n, '?')}")
-    for n, h, ln in runsec:
+    for n, _h, ln in runsec:
         print(f"   run-section bundle {n}  fam {fam_by_slug.get(n, '?')}  heading at "
               f"preprints/{n}/README.md:{ln}")
 

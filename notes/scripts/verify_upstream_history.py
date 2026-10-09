@@ -26,11 +26,11 @@ import io
 import re
 import subprocess
 import sys
-from collections import Counter, defaultdict
+from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import build_catalog as bc  # noqa: E402
+import build_catalog as bc
 
 ROOT = Path(__file__).resolve().parents[2]
 PAGES = [
@@ -55,7 +55,7 @@ VERSION_NOTE = re.compile(r"## Version note\s*\n+(.+)")
 
 
 def git(*args):
-    return subprocess.run(["git", "-C", str(ROOT)] + list(args), capture_output=True,
+    return subprocess.run(["git", "-C", str(ROOT), *list(args)], capture_output=True,
                           text=True, check=True).stdout
 
 
@@ -266,7 +266,7 @@ def resolve_anchor(path, last_explicit, pool, problems, where):
     return rel
 
 
-def check_page(name, text, p, problems):
+def check_page(name, text, _p, problems):
     lines = text.split("\n")
     pool = [f"preprints/{d}/README.md" for d in sorted(x.name for x in (ROOT / "preprints").iterdir() if x.is_dir())]
     pool += [f"lean/docs/{x.name}" for x in (ROOT / "lean/docs").glob("*.md")]
@@ -329,7 +329,7 @@ def check_page(name, text, p, problems):
 
 # ---------------------------------------------------------------- needles
 
-def check_needles(p, problems):
+def check_needles(_p, problems):
     def line(rel, n):
         return (ROOT / rel).read_text(encoding="utf-8").split("\n")[n - 1]
 

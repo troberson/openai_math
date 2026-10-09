@@ -27,7 +27,6 @@ import csv
 import re
 import sys
 from collections import Counter
-from pathlib import Path
 
 import build_catalog as bc
 
@@ -139,7 +138,7 @@ def ledger_paps():
 
 
 def main():
-    order, fams = bc.parse_overview()
+    _order, fams = bc.parse_overview()
     sources, main_results = bc.parse_yaml()
     docs = bc.parse_docs()
     tiers = {}

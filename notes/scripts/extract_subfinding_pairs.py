@@ -26,7 +26,6 @@ import re
 import sys
 
 import build_catalog as bc
-import extract_subfindings as ex
 
 ROOT = bc.ROOT
 TSV = ROOT / "notes" / "subfindings.tsv"
@@ -62,7 +61,7 @@ def main():
         print(f"{LEDGER.name} not found - run notes/scripts/build_catalog.py first")
         return 1
 
-    order, fams = bc.parse_overview()
+    _order, fams = bc.parse_overview()
     rows = list(csv.DictReader(TSV.read_text(encoding="utf-8").splitlines(), delimiter="\t"))
     titles = {}
     paths = {}

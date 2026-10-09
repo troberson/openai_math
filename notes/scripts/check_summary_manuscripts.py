@@ -22,7 +22,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import build_catalog as B  # noqa: E402
+import build_catalog as B
 
 ROOT = B.ROOT
 SUMMARIES = ROOT / "notes" / "summaries"

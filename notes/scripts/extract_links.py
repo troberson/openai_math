@@ -38,7 +38,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import build_catalog as bc  # noqa: E402  (family -> manuscript mapping, PAP regex)
+import build_catalog as bc
 
 REPO = Path(__file__).resolve().parents[2]
 LEDGER = REPO / "notes" / "catalog.tsv"

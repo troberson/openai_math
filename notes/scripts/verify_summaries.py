@@ -41,12 +41,13 @@ Usage: python3 notes/scripts/verify_summaries.py                 # every page un
        python3 notes/scripts/verify_summaries.py --mutant        # discrimination test as well
 """
 import argparse
+import os
 import re
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import build_catalog as B  # noqa: E402
+import build_catalog as B
 
 ROOT = Path(__file__).resolve().parents[2]
 SUMMARIES = ROOT / "notes" / "summaries"
@@ -279,7 +280,7 @@ def pass_b(page):
             problems += 1
             print(f"LINE COUNT {sid} ({rel}) says {declared}, file has {got} [doc line {n}]")
 
-    unused = sorted({s for s in page.table} - used, key=lambda s: int(s[1:]))
+    unused = sorted(set(page.table) - used, key=lambda s: int(s[1:]))
     if unused:
         print(f"UNUSED SOURCES (declared, never cited): {', '.join(unused)}")
 
@@ -520,7 +521,7 @@ def mutants(page):
         _, misses = pass_c(Page(page.path, bad.splitlines()))
         results.append((name, misses > 0, f"{misses} flagged"))
 
-    for start_line, unit in blockquote_targets(page)[:1]:
+    for start_line, _unit in blockquote_targets(page)[:1]:
         line = page.lines[start_line - 1]
         bad_line = _inject(line, 0, len(line), line)
         if bad_line is None:
@@ -613,8 +614,9 @@ def main():
         lines = doc.read_text(encoding="utf-8").splitlines()
         page = Page(doc, lines)
         print(f"===== {doc.relative_to(ROOT)}")
-        sink = open("/dev/null", "w") if args.quiet else io
-        with contextlib.redirect_stdout(sink):
+        with contextlib.ExitStack() as stack:
+            sink = stack.enter_context(open(os.devnull, "w", encoding="utf-8")) if args.quiet else io
+            stack.enter_context(contextlib.redirect_stdout(sink))
             positions, sources, links, problems = pass_b(page)
             spans, misses = pass_c(page)
             dirs, stale = pass_d(page)
@@ -636,8 +638,6 @@ def main():
                     for name, flagged, detail in mutants(page):
                         print(f"--- mutant {name}: {'FLAGGED' if flagged else 'MISSED'} ({detail})")
                         unflagged += 0 if flagged else 1
-        if args.quiet:
-            sink.close()
         total_b += positions
         total_c += spans
         total_problems += problems + misses + stale + outside + unflagged

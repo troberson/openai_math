@@ -43,7 +43,8 @@ def main():
     ap.add_argument("--tsv", default=str(ROOT / "notes" / "catalog.tsv"))
     args = ap.parse_args()
 
-    rows = list(csv.DictReader(open(args.tsv, encoding="utf-8"), delimiter="\t"))
+    with open(args.tsv, encoding="utf-8") as fh:
+        rows = list(csv.DictReader(fh, delimiter="\t"))
     t0 = [r for r in rows if r["tier"] == "T0"]
     for r in t0:
         r["bucket"] = bucket_of(r["shapes"])

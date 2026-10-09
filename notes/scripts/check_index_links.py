@@ -325,7 +325,7 @@ def main(argv):
             kind[(c, "file")] += 1
 
     # Canonical counts, from a fresh parse of the release.
-    order, fams = B.parse_overview()
+    order, _fams = B.parse_overview()
     fam_paps = B.parse_contents()
     docs = B.parse_docs()
     traces_by_fam, trace_unlisted = B.parse_traces()
@@ -334,7 +334,7 @@ def main(argv):
         (ROOT / "lean" / "formalization.yaml").read_text(encoding="utf-8", errors="replace")))
     import csv
     ledger = {}
-    with open(ROOT / "notes" / "catalog.tsv", newline="") as fh:
+    with open(ROOT / "notes" / "catalog.tsv", newline="", encoding="utf-8") as fh:
         for r in csv.DictReader(fh, delimiter="\t"):
             ledger[r["fam"]] = r
     paps = sum(int(r["paps"]) for r in ledger.values())

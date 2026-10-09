@@ -16,7 +16,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import verify_summaries as V  # noqa: E402
+import verify_summaries as V
 
 WINDOWS = range(1, 6)
 
@@ -69,7 +69,7 @@ def scan(path):
                  else " ".join(page.lines_of(sid))) for sid, a, b in candidates):
                 continue
             located = None
-            for sid, a, b in candidates:
+            for sid, _a, _b in candidates:
                 hits = find_in(page.lines_of(sid), span)
                 if hits:
                     located = (sid, hits)

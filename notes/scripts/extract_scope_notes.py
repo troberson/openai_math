@@ -14,7 +14,6 @@ Definitions, stated so the counts are reproducible:
 
 Usage: python3 notes/scripts/extract_scope_notes.py
 """
-import re
 import statistics
 from pathlib import Path
 

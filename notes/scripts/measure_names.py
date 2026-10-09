@@ -52,6 +52,7 @@ Run: python3 notes/scripts/measure_names.py [--json]
 from __future__ import annotations
 
 import collections
+import csv
 import json
 import pathlib
 import re
@@ -59,13 +60,12 @@ import sys
 import unicodedata
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
+
 sys.path.insert(0, str(ROOT / "notes" / "scripts"))
 import build_catalog as B  # noqa: E402
 
-import csv
-
 LEDGER = {}
-with open(ROOT / "notes" / "catalog.tsv", newline="") as _fh:
+with open(ROOT / "notes" / "catalog.tsv", newline="", encoding="utf-8") as _fh:
     for _r in csv.DictReader(_fh, delimiter="\t"):
         LEDGER[_r["fam"]] = _r
 
@@ -181,8 +181,7 @@ def tex_files():
     (theorem-environment titles, body manuscript dirs) are recorded in scan order.
     """
     for depth in (1, 2, 3):
-        for p in sorted(PRE.glob("/".join(["*"] * depth) + "/*.tex")):
-            yield p
+        yield from sorted(PRE.glob("/".join(["*"] * depth) + "/*.tex"))
 
 
 def strip_bibliography(t: str) -> str:
@@ -289,8 +288,8 @@ def measure():
             if not am:
                 continue
             a = re.sub(r"\$[^$]*\$", " ", re.sub(r"\s+", " ", am.group(1)))
-            for part in re.split(r"\s+and\s+", a):
-                part = part.strip().strip("{}\"").strip()
+            for raw_part in re.split(r"\s+and\s+", a):
+                part = raw_part.strip().strip("{}\"").strip()
                 if not part:
                     continue
                 last = part.split(",")[0] if "," in part else part.split()[-1]
@@ -375,7 +374,7 @@ def measure():
     def famset(k):
         s = set(fam_title.get(k, ())) | {f for f, _ in ms_title.get(k, ())}
         s |= set(env_title.get(k, ())) | body.get(k, set()) | bib.get(k, set())
-        for stem, d, fp in decl.get(k, ()):
+        for stem, _d, _fp in decl.get(k, ()):
             s |= {f for f, r in LEDGER.items() if stem in r["chal"].split("|")}
         return {f for f in s if f}
 
@@ -457,7 +456,7 @@ def main(argv):
     print(f"names                    {len(rows)}  subject {len(subject)}  citation-only {len(citation)}")
     print(f"subject edges            {edges} family-name edges over {len(subj_cov)} families")
     print(f"subject singletons       {sum(1 for r in subject if len(r['fams']) == 1)}")
-    print(f"subject max              {max(((len(r['fams']), r['name']) for r in subject))}")
+    print(f"subject max              {max((len(r['fams']), r['name']) for r in subject)}")
     print(f"spelling variants        {len(multi)} subject names with >1 surface form in prose")
     print(f"names with no family     {sum(1 for r in rows if not r['fams'])}")
     print(f"families with a hit      {len(covered)} of {len(order)}  no-hit {len(set(order) - covered)}")

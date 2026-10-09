@@ -34,7 +34,7 @@ import statistics
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-import build_catalog as B  # noqa: E402
+import build_catalog as B
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PRE = ROOT / "preprints"
@@ -61,7 +61,7 @@ def norm(s):
     return re.sub(r"\s+", " ", s).strip()
 
 
-_CACHE = {}
+_CACHE: dict = {}
 
 
 def manuscript_abstract(d):
@@ -126,7 +126,7 @@ def stats(vals):
 
 
 def measure():
-    order, fams = B.parse_overview()
+    _order, fams = B.parse_overview()
     rows = list(csv.DictReader(SOURCES.open(encoding="utf-8"), delimiter="\t"))
     ledger = list(csv.DictReader(LEDGER.open(encoding="utf-8"), delimiter="\t"))
 
@@ -144,7 +144,7 @@ def measure():
         if len(found) > 1:
             multi_dirs.append((r["fam"], r["dir"], len(found)))
         ov = norm(fams[r["fam"]]["abstract"])
-        best = max(found, key=lambda x: ratio(ov, x[1]))
+        best = max(found, key=lambda x, ov=ov: ratio(ov, x[1]))
         man.append({"fam": r["fam"], "dir": r["dir"], "file": best[0],
                     "ratio": ratio(ov, best[1]), "relation": relation(ov, best[1]),
                     "ov": fams[r["fam"]]["abstract"], "ms": best[1]})
@@ -393,7 +393,7 @@ def main():
           f"(recomputed from overview.tex: {m['recomputed']['conditional']} / "
           f"{m['recomputed']['resolves_named']} / {m['recomputed']['counterex_broad']})")
 
-    for unit, n, rel, rat, buck in (
+    for unit, _n, rel, rat, buck in (
             (f"MANUSCRIPT-LEVEL ({m['manuscripts']} comparisons: overview text vs that manuscript)",
              m["manuscripts"], m["man_relation"], m["man_ratio"], m["man_buckets"]),
             ("FAMILY-LEVEL (372 comparisons: overview text vs the best-matching manuscript)",

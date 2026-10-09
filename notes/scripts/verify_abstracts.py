@@ -49,8 +49,8 @@ ABSTRACT = re.compile(r"\\begin\{abstract\}(.*?)\\end\{abstract\}", re.S)
 ELLIPSIS = "…"
 
 sys.path.insert(0, str(ROOT / "notes" / "scripts"))
-import build_catalog as B
-import compare_abstracts as CA
+import build_catalog as B  # noqa: E402
+import compare_abstracts as CA  # noqa: E402
 
 _OVERVIEW = None
 _MEASURED = None
@@ -349,7 +349,8 @@ def main():
         problems.append("no Sources table rows parsed")
     if dupes:
         problems.append(f"table declares a source twice: {dupes}")
-    problems.append("no quotations found") if not QUOTE.search(text) else None
+    if not QUOTE.search(text):
+        problems.append("no quotations found")
 
     counts = measured()
     found, stats = check(text, table, counts)
@@ -369,7 +370,8 @@ def main():
             for name, flagged, detail in mutants(text, table, counts):
                 print(f"--- mutant {name}: {'FLAGGED' if flagged else 'MISSED'} ({detail})")
                 unflagged += 0 if flagged else 1
-            problems.append(f"{unflagged} undetected mutants") if unflagged else None
+            if unflagged:
+                problems.append(f"{unflagged} undetected mutants")
 
     print(f"{'FAIL' if problems else 'OK'}: {len(problems)} problems")
     return 1 if problems else 0

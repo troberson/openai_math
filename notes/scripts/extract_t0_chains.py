@@ -28,9 +28,8 @@ import re
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-import build_catalog  # noqa: E402
-import extract_links  # noqa: E402
-import extract_subfinding_pairs as ep  # noqa: E402
+import extract_links
+import extract_subfinding_pairs as ep
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 LEDGER = ROOT / "notes" / "catalog.tsv"

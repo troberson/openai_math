@@ -189,7 +189,7 @@ def check_quotes(text: str, cache: dict, problems: list) -> int:
                     _, rel, ln, _ = max(above, key=lambda a: a[0])
                     break
         checked += 1
-        if rel is None:
+        if rel is None or ln is None:
             problems.append(f"QUOTE not pinned to an anchor: {quote[:60]!r}")
             continue
         if not quote_found(quote, rel, ln, cache):

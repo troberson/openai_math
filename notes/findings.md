@@ -221,7 +221,7 @@ not survive a re-run.
 | ID | File | Lines | Role |
 |---|---|---|---|
 | S1 | [`notes/catalog.tsv`](catalog.tsv) | 373 | The generated ledger: 372 rows, 22 columns |
-| S2 | [`notes/scripts/build_catalog.py`](scripts/build_catalog.py) | 422 | The generator whose report is the test for every ledger count |
+| S2 | [`notes/scripts/build_catalog.py`](scripts/build_catalog.py) | 421 | The generator whose report is the test for every ledger count |
 | S3 | [`overview.tex`](../overview.tex) | 859 | The release's own 372 `\resultentry` entries and abstracts |
 | S4 | [`lean/formalization.yaml`](../lean/formalization.yaml) | 1783 | Tiers, `main_results`, automation and review statements |
 | S5 | [`notes/scope-exclusions.md`](scope-exclusions.md) | 316 | The 242 scope notes read for exclusions |
@@ -236,7 +236,7 @@ not survive a re-run.
 | S14 | [`notes/verification-dirs.md`](verification-dirs.md) | 253 | The 30 verification bundles and what each ships |
 | S15 | [`README.md`](../README.md) | 51 | The release's own trace attributions |
 | S16 | [`notes/counterexample-crosscheck.md`](counterexample-crosscheck.md) | 1062 | The counterexample families' evidence cross-check |
-| S17 | [`notes/scripts/extract_scope_notes.py`](scripts/extract_scope_notes.py) | 91 | The phrase-list floors behind the 5 and 44 counts |
+| S17 | [`notes/scripts/extract_scope_notes.py`](scripts/extract_scope_notes.py) | 90 | The phrase-list floors behind the 5 and 44 counts |
 | S18 | [`notes/proof-density.md`](proof-density.md) | 113 | The proof-density test, its bar, and its nulls |
 | S19 | [`notes/scripts/measure_proof_density.py`](scripts/measure_proof_density.py) | 333 | The AUC and p re-derivation for every density figure |
 | S20 | [`notes/named-results.md`](named-results.md) | 346 | Headline environments read for named targets |
