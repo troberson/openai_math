@@ -19,10 +19,13 @@ invents a broken link. The scanner walks forward from `](` tracking paren depth 
 honours backslash escapes, so the balanced pair inside the path is consumed. The
 baseline is 0 broken links, not 1.
 
-Coverage is reconciled against a fresh build_catalog.py parse: 722 manuscript PDFs,
-722 build/ trees, 722 README.md stubs, 235 scope notes, 405 comparator configs,
-10 reasoning traces in 11 files, 30 verification dirs, 180 Lean files named by the
-yaml. CONTENTS.md is checked as the shipped-surface baseline in the same pass.
+Coverage is reconciled against a fresh build_catalog.py parse: 719 manuscript PDFs,
+719 build/ trees, 719 README.md stubs, 242 scope notes, 416 comparator configs,
+10 reasoning traces in 11 files, 30 verification dirs, 192 Lean files named by the
+yaml over 183 module dirs. CONTENTS.md is checked as the shipped-surface baseline in
+the same pass. Links are also counted per page group (names, families, topics,
+disciplines, entry point), which is what the coverage gap in notes/index-links.md
+quotes: the render-time registry total minus the scanned total, attributed per group.
 
 Run: python3 notes/scripts/check_index_links.py [--contents]
 --contents adds the CONTENTS.md link check (it is on by default in the report).
@@ -145,6 +148,10 @@ def category(rel):
 DIR_CATEGORIES = {"manuscript-dir", "latex-build-tree", "verification-dir", "lean-dir",
                   "index-dir"}
 
+# Fixed print order for the per-page-group link counts, so the report is stable.
+GROUP_ORDER = ["name pages", "family pages", "topic pages", "discipline pages",
+               "entry point"]
+
 # The path that breaks a `[^)]*` link scan, used by the --mutant self-test.
 CAT_DIR = "preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026"
 CAT_PAGE = "differential-geometry/337-cartan-hadamard-isoperimetry-and-cat-0-fillings.md"
@@ -256,6 +263,19 @@ def check_index():
     return links
 
 
+def page_group(rel_page: str) -> str:
+    """Page group a scanned link sits in, keyed by the top-level path under notes/index/.
+
+    The 17 discipline dirs hold family pages, so anything that is not names/, topics/,
+    disciplines/ or the entry point is a family page.
+    """
+    top = rel_page.split("/")[0]
+    if top == "README.md":
+        return "entry point"
+    return {"names": "name pages", "topics": "topic pages",
+            "disciplines": "discipline pages"}.get(top, "family pages")
+
+
 def contents_links():
     """CONTENTS.md links, checked with the same paren-balanced scanner."""
     text = (ROOT / "CONTENTS.md").read_text(encoding="utf-8", errors="replace")
@@ -289,10 +309,12 @@ def main(argv):
     links = check_index()
     broken, cats = [], collections.Counter()
     kind = collections.Counter()
+    groups = collections.Counter()
     targets = collections.defaultdict(set)
     for page, href, rel in links:
         c = category(rel)
         cats[c] += 1
+        groups[page_group(page)] += 1
         targets[c].add(rel)
         p = ROOT / rel
         if not p.exists():
@@ -349,9 +371,23 @@ def main(argv):
         print(f"{c:22} {cats[c]:>7} {len(targets[c]):>8} {nf:>6} {nd:>5}  "
               f"{'' if cv is None else str(cv) + '  ' + note}")
     print()
+    print(f"{'page group':16} {'pages':>6} {'links':>7}")
+    gp = collections.Counter(page_group(p.relative_to(IDX).as_posix())
+                             for p in IDX.rglob("*.md"))
+    for g in GROUP_ORDER:
+        print(f"{g:16} {gp[g]:>6} {groups[g]:>7}")
+    print(f"{'total':16} {sum(gp.values()):>6} {sum(groups.values()):>7}")
+    print()
     print(f"directory-resolving links  {sum(v for (c, k), v in kind.items() if k == 'dir')} "
           f"over {sorted({c for (c, k) in kind if k == 'dir'})}")
     print(f"file-resolving links       {sum(v for (c, k), v in kind.items() if k == 'file')}")
+    # Manuscript dirs the index links that the release does not list as manuscripts: the name
+    # layer is keyed by on-disk directory names, so it reaches dirs the merge superseded.
+    canon_dirs = {f"preprints/{p.split('/')[1]}" for p in pdf_paths}
+    extra_dirs = sorted(targets["manuscript-dir"] - canon_dirs)
+    print(f"manuscript dirs linked outside the release set  {len(extra_dirs)}  on disk "
+          f"{sum(1 for d in extra_dirs if (ROOT / d).is_dir())}  "
+          f"links {sum(1 for _p, _h, rel in links if rel in set(extra_dirs))}")
     print(f"trace stems attributed     {len(trace_stems)}  on disk "
           f"{len({p.stem for p in (ROOT / 'reasoning_traces').iterdir() if p.is_file()})}  "
           f"unlisted {' '.join(trace_unlisted) if trace_unlisted else 'none'}")

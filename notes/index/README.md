@@ -187,9 +187,9 @@ The 40 subject names that reach the most families; [`names.tsv`](names.tsv) carr
 | `topics-rendered.tsv` | 92 | term | One row per curated vocabulary term: its pattern, its yield, its yield by layer, and its page. The patterns live in `notes/topics.tsv`; this table is the measured copy. |
 | `names.tsv` | 5842 | name | One row per measured name — subject or citation-only — with its layer counts, prose counts, surface spellings, and its page (empty for a citation-only name). |
 | `edges/family-manuscript.tsv` | 719 | `fam` + dir | The release's own family→manuscript links. |
-| `edges/family-config.tsv` | 416 | `fam` + config | Scope-note links keyed per family as a set: 405, not the 415 link occurrences. |
+| `edges/family-config.tsv` | 416 | `fam` + config | Scope-note links keyed per family as a set: 416, not the 426 link occurrences. |
 | `edges/config-declaration.tsv` | 200 | config + declaration | The `main_results` triples, with the family that links each config. |
-| `edges/family-lean.tsv` | 200 | `fam` + config | The derived family→Lean-file reach: 185 declarations over 127 families. There is no manuscript→Lean edge to carry. |
+| `edges/family-lean.tsv` | 200 | `fam` + config | The derived family→Lean-file reach: 200 declarations over 136 families. There is no manuscript→Lean edge to carry. |
 | `edges/citation.tsv` | 391 | citing dir + target dir | manuscript→corpus manuscript from release-marked `.bib` hrefs; untyped. |
 | `edges/family-trace.tsv` | 10 | `fam` + stem | Family→trace attribution as README.md tabulates it. |
 | `edges/family-topic.tsv` | 978 | `fam` + topic | Family→topic assignments from the curated vocabulary, with the layers that hit (T/A/S/P). Multi-label: a family appears once per topic it carries. |
@@ -225,7 +225,7 @@ The 40 subject names that reach the most families; [`names.tsv`](names.tsv) carr
 - The family→Lean reach is derived through scope-note config links. The release ships no manuscript→Lean edge, so the formalized manuscripts are not individually linked to a Lean file.
 - Claim shapes are keyword floors carried from `notes/catalog.tsv`, not a census: families match three or more shapes and others match none.
 - Topics are a curated keyword floor, not a classification: a family is listed under a term because the term's pattern hit its title, abstract, scope note, or derived Lean paths. `notes/topics.md` records the incidental matches each term was measured to carry, and the path layer is derived, not shipped.
-- Link targets were checked for existence at render time, not for content: a link resolving to a file says the file is there, not that it says what the page claims. `notes/scripts/check_index_links.py` re-derives the check from disk over every rendered page — 65699 links, 0 broken, 16818 of them resolving to a directory — and `notes/index-links.md` records what it checked and what it did not.
+- Link targets were checked for existence at render time, not for content: a link resolving to a file says the file is there, not that it says what the page claims. `notes/scripts/check_index_links.py` re-derives the check from disk over every rendered page — 66107 links, 0 broken, 17700 of them resolving to a directory — and `notes/index-links.md` records what it checked and what it did not.
 - Names are a keyword floor, not a census. The name-vs-word test is corpus-internal (mid-sentence capitalization counts measured in this corpus); no external name dictionary was consulted, so a surname that never reaches a title layer is invisible as a subject.
 - A `b`/`B` hit is a citation, not a subject: prose hits are counted with the bibliography and the cite/cross-reference braces stripped, and a name page lists them as evidence of where the name is cited, never as the scope of a result.
 - Citation-only names carry no page, so a name search that finds no page is not evidence the corpus never mentions the name — check `names.tsv` for the `role = citation` rows.

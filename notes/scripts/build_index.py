@@ -15,15 +15,17 @@ Rules this generator encodes, all of them stated in notes/index-design.md:
 
 - **No manuscript -> Lean edge exists.** `sources:` is a flat list of manuscript paths and
   `main_results:` is a flat list of config/declaration/file triples; nothing joins them. The
-  derivable chain is family -> config -> file, which reaches 127 families over 185 triples. The
-  162 formalized manuscripts stay a per-manuscript flag, and a family with configs but no
+  derivable chain is family -> config -> file, which reaches 136 families over 200 triples. The
+  173 formalized manuscripts stay a per-manuscript flag, and a family with configs but no
   `main_results` entry renders as *absent*, not as zero.
-- **405 configs, 415 link occurrences.** The edge table is keyed per family as a set, so it carries
-  405; 7 scope notes link one config twice.
+- **416 configs, 426 link occurrences.** The edge table is keyed per family as a set, so it carries
+  416; 7 scope notes link a config more than once (family 100 links `CylinderCovering` four
+  times), which is the 10-occurrence gap.
 - **10 traces over 11 files.** The Mézard–Parisi trace ships as both `.pdf` and `.tex`.
 - **Manuscript ownership is the path component after `preprints`**, never `parts[-2]`.
-- **`mainres` counts configs, not declarations**, matching the ledger column; 185 declarations over
-  178 configs, so the two differ for 7 configs and the page renders declarations separately.
+- **`mainres` counts configs, not declarations**, matching the ledger column; 200 declarations over
+  189 configs, so 8 configs carry more than one declaration and the page renders declarations
+  separately.
 - **Page filenames are a mechanical slug of the title**, not the hand-shortened names used under
   notes/summaries/. Index pages pair with summary pages by family number, never by filename.
 - **Topics come from the curated vocabulary at `notes/topics.tsv`**, measured by
@@ -51,6 +53,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import build_catalog as B  # noqa: E402
 import measure_topics as MT  # noqa: E402
 import measure_names as MN  # noqa: E402
+import check_index_links as CL  # noqa: E402  # report-only: the checker runs nothing at import
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PRE = ROOT / "preprints"
@@ -852,11 +855,11 @@ def main():
         ("`edges/family-manuscript.tsv`", edges["edges/family-manuscript.tsv"], "`fam` + dir",
          "The release's own family→manuscript links."),
         ("`edges/family-config.tsv`", edges["edges/family-config.tsv"], "`fam` + config",
-         "Scope-note links keyed per family as a set: 405, not the 415 link occurrences."),
+         "Scope-note links keyed per family as a set: 416, not the 426 link occurrences."),
         ("`edges/config-declaration.tsv`", edges["edges/config-declaration.tsv"],
          "config + declaration", "The `main_results` triples, with the family that links each config."),
         ("`edges/family-lean.tsv`", edges["edges/family-lean.tsv"], "`fam` + config",
-         "The derived family→Lean-file reach: 185 declarations over 127 families. There is no "
+         "The derived family→Lean-file reach: 200 declarations over 136 families. There is no "
          "manuscript→Lean edge to carry."),
         ("`edges/citation.tsv`", edges["edges/citation.tsv"], "citing dir + target dir",
          "manuscript→corpus manuscript from release-marked `.bib` hrefs; untyped."),
@@ -913,7 +916,7 @@ def main():
     L.append("- Link targets were checked for existence at render time, not for content: a link "
              "resolving to a file says the file is there, not that it says what the page claims. "
              "`notes/scripts/check_index_links.py` re-derives the check from disk over every "
-             "rendered page — 65699 links, 0 broken, 16818 of them resolving to a directory — "
+             "rendered page — 66107 links, 0 broken, 17700 of them resolving to a directory — "
              "and `notes/index-links.md` records what it checked and what it did not.")
     L.append("- Names are a keyword floor, not a census. The name-vs-word test is corpus-internal "
              "(mid-sentence capitalization counts measured in this corpus); no external name "
@@ -950,6 +953,23 @@ def main():
     print(f"links checked       {len(links)}  broken {len(broken)}")
     for b in broken[:10]:
         print(f"  BROKEN {b}")
+    # Registered links per page group, the same grouping check_index_links.py reports for the
+    # scanned set, so the coverage gap in notes/index-links.md is measurable per group.
+    reg = collections.Counter(
+        {"names": "name pages", "topics": "topic pages",
+         "disciplines": "discipline pages"}.get(p.split("/")[0],
+                                                "entry point" if p == "README.md"
+                                                else "family pages")
+        for p, _ in links)
+    print("registered by group " + "  ".join(
+        f"{g} {reg[g]}" for g in ("name pages", "family pages", "topic pages",
+                                  "discipline pages", "entry point")))
+    # Registered links per category, classified by the checker's own rule (importing it is safe:
+    # check_index_links.py has no module-scope work), so notes/index-links.md can state the
+    # scanned-minus-registered gap per category from two reports rather than from prose.
+    regcat = collections.Counter(CL.category(CL.resolve(p, h)) for p, h in links)
+    print("registered by category " + "  ".join(
+        f"{c} {regcat[c]}" for c in sorted(regcat, key=lambda k: (-regcat[k], k))))
     print(f"canonical           " + "  ".join(f"{k} {canon[k]}" for k in canon))
     print(f"rendered            " + "  ".join(f"{k} {rendered[k]}" for k in rendered))
     missing_pages = [f for f in sorted(ledger)
