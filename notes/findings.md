@@ -130,7 +130,7 @@ claim rather than bounding it, so the exclusion count is a reading result, not a
 
 **Proof count is document length, not density.** "No ledger column. Proof density is (a) a length
 proxy at the tier level, (b) flat at 0.97 proofs per statement, and (c) silent on every claim shape"
-[S18:89-90]. The medians show why: proofs per manuscript **30.0 / 21.2 / 18.0** across T0 / T2 / T3
+[S18:95-96]. The medians show why: proofs per manuscript **30.0 / 21.2 / 18.0** across T0 / T2 / T3
 while tex KB per manuscript is **168.2 / 118.7 / 89.0**, and proofs per statement is
 **0.965 / 0.962 / 0.973** [S19]. The direction is opposite the naive reading — T0, the
 least-formalized tier, has the most proofs per manuscript because its manuscripts are the largest.
@@ -237,8 +237,8 @@ not survive a re-run.
 | S15 | [`README.md`](../README.md) | 51 | The release's own trace attributions |
 | S16 | [`notes/counterexample-crosscheck.md`](counterexample-crosscheck.md) | 1062 | The counterexample families' evidence cross-check |
 | S17 | [`notes/scripts/extract_scope_notes.py`](scripts/extract_scope_notes.py) | 91 | The phrase-list floors behind the 5 and 44 counts |
-| S18 | [`notes/proof-density.md`](proof-density.md) | 107 | The proof-density test, its bar, and its nulls |
-| S19 | [`notes/scripts/measure_proof_density.py`](scripts/measure_proof_density.py) | 331 | The AUC and p re-derivation for every density figure |
+| S18 | [`notes/proof-density.md`](proof-density.md) | 113 | The proof-density test, its bar, and its nulls |
+| S19 | [`notes/scripts/measure_proof_density.py`](scripts/measure_proof_density.py) | 333 | The AUC and p re-derivation for every density figure |
 | S20 | [`notes/named-results.md`](named-results.md) | 346 | Headline environments read for named targets |
 | S21 | [`notes/citations.md`](citations.md) | 328 | Bibliographic overlap by discipline |
 | S22 | [`notes/scripts/extract_citations.py`](scripts/extract_citations.py) | 390 | The citation extractor and its coverage report |

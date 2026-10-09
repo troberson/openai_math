@@ -218,6 +218,8 @@ def report(fams, ledger, sources, quiet=False):
             control[(pair, "manuscript")] = auc_p(
                 [d["kb_per_man"] for d in fams.values() if d["tier"] == pair[0]],
                 [d["kb_per_man"] for d in fams.values() if d["tier"] == pair[1]])[0]
+        print(f"{'tex KB per family (control)':34} " + "  ".join(
+            f"{a}>{b} {control[((a, b), 'family')]:.3f}" for a, b in TIER_PAIRS))
         scale = {"proofs": "family", "thms": "family", "proofs_per_man": "manuscript",
                  "proofs_per_thm": None, "proofs_per_kb": None, "kb_per_man": "manuscript"}
         for key, label in SIGNALS:
