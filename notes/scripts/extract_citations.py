@@ -35,136 +35,33 @@ Usage:
 """
 
 import collections
-import csv
 import os
 import re
 import sys
-import unicodedata
 
-ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-PREPRINTS = os.path.join(ROOT, "preprints")
-LEDGER = os.path.join(ROOT, "notes", "catalog.tsv")
-SUBFINDINGS = os.path.join(ROOT, "notes", "subfindings.tsv")
+from catlib.bib import (
+    CLUSTER_K,
+    RELEASE_HREF,
+    THRESHOLDS,
+    TOP_N,
+    bib_files,
+    cite_keys,
+    clusters,
+    entries,
+    field,
+    manuscript_map,
+    norm_title,
+    pair_counts,
+    ranked,
+    read,
+    tex_tree,
+)
+from catlib.ledger import read_ledger
+from catlib.paths import PREPRINTS, owner, rel
 
-ENTRY = re.compile(r"^\s*@\s*(\w+)\s*\{\s*([^,]*)\s*,", re.M)
-ATLINE = re.compile(r"^\s*@", re.M)
-ACCENT = re.compile(r"\\(?:['`^~=\".](?![a-zA-Z])|c|v|u|H|k|r|d|b|t|o)\{?([a-zA-Z])\}?")
-CITE = re.compile(r"\\cite[a-zA-Z]*\*?(?:\[[^\]]*\])?\{([^}]*)\}")
-RELEASE_HREF = re.compile(r"\\href\{[^}]*/preprints/([^/]+)/[^}]*\.pdf\}")
-THRESHOLDS = (1, 2, 3, 5, 10)
-CLUSTER_K = (1, 5, 10)
-TOP_N = 20
-
-
-def ranked(counter, n=None):
-    """most_common with ties broken by key, so the report is byte-stable."""
-    items = sorted(counter.items(), key=lambda kv: (-kv[1], kv[0]))
-    return items if n is None else items[:n]
-
-
-
-def rel(path):
-    return os.path.relpath(path, ROOT).replace(os.sep, "/")
-
-
-def bib_files():
-    out = []
-    for dirpath, dirs, files in os.walk(PREPRINTS):
-        dirs.sort()
-        for f in sorted(files):
-            if f.endswith(".bib"):
-                out.append(os.path.join(dirpath, f))
-    return sorted(out, key=rel)
-
-
-def owner(path):
-    return rel(path).split("/")[1]
-
-
-def read(path):
-    with open(path, encoding="utf-8", errors="replace") as fh:
-        return fh.read()
-
-
-def field(body, name):
-    """Raw value of `name = {...}` (or `name = "..."`) in an entry body, or None."""
-    m = re.search(r"\b%s\s*=\s*([{\"\"])" % name, body, re.I)
-    if not m:
-        return None
-    j = m.end()
-    depth = 1
-    k = j
-    while k < len(body) and depth:
-        c = body[k]
-        if c == "{":
-            depth += 1
-        elif c == "}":
-            depth -= 1
-            if depth == 0:
-                break
-        k += 1
-    return body[j:k]
-
-
-def norm_title(s):
-    s = ACCENT.sub(r"\1", s)
-    s = s.replace("\\&", "&").replace("\\%", "%").replace("\\_", "_").replace("\\-", "")
-    s = re.sub(r"\\[a-zA-Z]+", " ", s)
-    s = s.replace("{", "").replace("}", "").replace("$", "")
-    s = s.replace("\u2019", "'").replace("\u2018", "'")
-    s = unicodedata.normalize("NFKD", s)
-    s = "".join(c for c in s if not unicodedata.combining(c))
-    s = re.sub(r"[^a-z0-9]+", " ", s.lower()).strip()
-    return re.sub(r"\s+", " ", s)
-
-
-def entries(text):
-    """(type, key, body, start_line) for every @-entry, body cut at the next line-start @."""
-    heads = list(ENTRY.finditer(text))
-    bounds = [m.start() for m in ATLINE.finditer(text)]
-    out = []
-    for _i, m in enumerate(heads):
-        nxt = len(text)
-        for b in bounds:
-            if b > m.end():
-                nxt = b
-                break
-        out.append((m.group(1).lower(), m.group(2).strip(), text[m.end():nxt],
-                    text.count("\n", 0, m.start()) + 1 + m.group(0).count("\n")))
-    return out
-
-
-def ledger_rows():
-    with open(LEDGER, newline="", encoding="utf-8") as fh:
-        return list(csv.DictReader(fh, delimiter="\t"))
-
-
-def manuscript_map():
-    man2fam = {}
-    with open(SUBFINDINGS, newline="", encoding="utf-8") as fh:
-        for r in csv.DictReader(fh, delimiter="\t"):
-            if r.get("kind") == "manuscript":
-                man2fam[r["path"].split("/")[1]] = r["fam"]
-    return man2fam
-
-
-def tex_tree(man):
-    base = os.path.join(PREPRINTS, man)
-    for dirpath, dirs, files in os.walk(base):
-        dirs.sort()
-        for f in sorted(files):
-            if f.endswith(".tex"):
-                yield os.path.join(dirpath, f)
-
-
-def cite_keys(man):
-    out = set()
-    for p in tex_tree(man):
-        for m in CITE.finditer(read(p)):
-            for k in m.group(1).split(","):
-                if k.strip():
-                    out.add(k.strip())
-    return out
+# verify_citations.py imports this module as `ec` and reaches every primitive through it, so the
+# moved names are re-exported here rather than re-defined: the report rows are those primitives' rows.
+ledger_rows = read_ledger
 
 
 def main():
@@ -273,12 +170,7 @@ def main():
         print("  %3d  %s  [%s:%d]" % (len(s), t, path, line))
 
     # ---- pairs ------------------------------------------------------------
-    pairs = collections.Counter()
-    for s in shared.values():
-        ms = sorted(s)
-        for i in range(len(ms)):
-            for j in range(i + 1, len(ms)):
-                pairs[(ms[i], ms[j])] += 1
+    pairs = pair_counts(shared.values())
     disc = {m: led[man2fam[m]]["discipline"] for m in men}
     fam = {m: man2fam[m] for m in men}
     for k in THRESHOLDS:
@@ -307,27 +199,7 @@ def main():
 
     # ---- clusters ---------------------------------------------------------
     for k in CLUSTER_K:
-        adj = collections.defaultdict(set)
-        for (a, b), v in pairs.items():
-            if v >= k:
-                adj[a].add(b)
-                adj[b].add(a)
-        seen = set()
-        comps = []
-        for n0 in sorted(adj):
-            if n0 in seen:
-                continue
-            stack = [n0]
-            comp = set()
-            while stack:
-                x = stack.pop()
-                if x in comp:
-                    continue
-                comp.add(x)
-                seen.add(x)
-                stack.extend(adj[x] - comp)
-            comps.append(comp)
-        comps.sort(key=lambda c: (-len(c), min(c)))
+        comps = clusters(pairs, k)
         multi = [c for c in comps if len(c) > 1]
         print("clusters at pair threshold >=%d: %d components, %d with more than one manuscript, "
               "largest %d, spanning >=2 disciplines: %d"
@@ -347,12 +219,7 @@ def main():
             continue
         for d in s:
             rinv[d].add(m)
-    rpairs = collections.Counter()
-    for s in rinv.values():
-        ms = sorted(s)
-        for i in range(len(ms)):
-            for j in range(i + 1, len(ms)):
-                rpairs[(ms[i], ms[j])] += 1
+    rpairs = pair_counts(rinv.values())
     rel_owned = sum(v for m, v in release_count.items() if m in fam)
     print("release-labelled entries: %d (%d in ledger-listed manuscripts)  "
           "manuscripts citing >=1 release work: %d  "

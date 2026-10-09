@@ -1,7 +1,7 @@
 """Verify notes/citations.md against the shipped .bib files and a fresh measurement.
 
 Report-only: writes nothing. Re-derives the whole shared-bibliography population from
-`preprints/**/*.bib` using the primitives in extract_citations.py, then checks the page against it:
+`preprints/**/*.bib` through `catlib.bib`, then checks the page against it:
 
   - Every work-table row: the manuscript count equals the measured owning set, the quoted title is
     the most frequent verbatim form for its normalized title, and the anchor file exists with an
@@ -25,24 +25,39 @@ import collections
 import os
 import re
 import sys
+import unicodedata
 
-import extract_citations as ec
+from catlib import bib
+from catlib.bib import (
+    CLUSTER_K,
+    RELEASE_HREF,
+    THRESHOLDS,
+    TOP_N,
+    bib_files,
+    cite_keys,
+    entries,
+    field,
+    manuscript_map,
+    norm_title,
+    pair_counts,
+    ranked,
+    read,
+    tex_tree,
+)
+from catlib.ledger import read_ledger
+from catlib.paths import NOTES, PREPRINTS, ROOT, owner, rel
 
-PAGE = os.path.join(ec.ROOT, "notes", "citations.md")
+PAGE = str(NOTES / "citations.md")
 ACCENT_NOGUARD = re.compile(r"\\(?:['`^~=\".]|c|v|u|H|k|r|d|b|t|o)\{?([a-zA-Z])\}?")
-THRESHOLDS = ec.THRESHOLDS
-CLUSTER_K = ec.CLUSTER_K
-TOP_N = ec.TOP_N
 
 
 def norm_noguard(s):
-    """ec.norm_title with the (?![a-zA-Z]) accent guard removed -- the sensitivity variant."""
+    """`catlib.bib.norm_title` with the (?![a-zA-Z]) accent guard removed -- the sensitivity variant."""
     s = ACCENT_NOGUARD.sub(r"\1", s)
     s = s.replace("\\&", "&").replace("\\%", "%").replace("\\_", "_").replace("\\-", "")
     s = re.sub(r"\\[a-zA-Z]+", " ", s)
     s = s.replace("{", "").replace("}", "").replace("$", "")
     s = s.replace("\u2019", "'").replace("\u2018", "'")
-    import unicodedata
     s = unicodedata.normalize("NFKD", s)
     s = "".join(c for c in s if not unicodedata.combining(c))
     s = re.sub(r"[^a-z0-9]+", " ", s.lower()).strip()
@@ -50,34 +65,16 @@ def norm_noguard(s):
 
 
 def clusters(pairs, k):
-    adj = collections.defaultdict(set)
-    for (a, b), v in pairs.items():
-        if v >= k:
-            adj[a].add(b)
-            adj[b].add(a)
-    seen, comps = set(), []
-    for n0 in sorted(adj):
-        if n0 in seen:
-            continue
-        stack, comp = [n0], set()
-        while stack:
-            x = stack.pop()
-            if x in comp:
-                continue
-            comp.add(x)
-            seen.add(x)
-            stack.extend(adj[x] - comp)
-        comps.append(comp)
-    comps.sort(key=lambda c: (-len(c), min(c)))
-    return [c for c in comps if len(c) > 1]
+    """Non-trivial components of the pair graph at threshold k -- the page's cluster tables."""
+    return [c for c in bib.clusters(pairs, k) if len(c) > 1]
 
 
 def measure(normfn):
-    files = ec.bib_files()
-    led = {r["fam"]: r for r in ec.ledger_rows()}
-    man2fam = ec.manuscript_map()
+    files = bib_files()
+    led = {r["fam"]: r for r in read_ledger()}
+    man2fam = manuscript_map()
 
-    owners = collections.Counter(ec.owner(p) for p in files)
+    owners = collections.Counter(owner(p) for p in files)
     types = collections.Counter()
     keys = collections.Counter()
     titles = collections.defaultdict(set)
@@ -89,24 +86,24 @@ def measure(normfn):
     n_entries = release_entries = 0
 
     for p in files:
-        man = ec.owner(p)
-        text = ec.read(p)
-        for ty, key, body, line in ec.entries(text):
+        man = owner(p)
+        text = read(p)
+        for ty, key, body, line in entries(text):
             n_entries += 1
             types[ty] += 1
             keys[key] += 1
             entry_keys[man].add(key)
-            ti = ec.field(body, "title")
+            ti = field(body, "title")
             if ti:
                 nt = normfn(ti)
                 if nt:
                     titles[man].add(nt)
                     verbatim[nt][ti.strip()] += 1
-                    where[nt].setdefault(ti.strip(), (ec.rel(p), line))
+                    where[nt].setdefault(ti.strip(), (rel(p), line))
             if "OpenAI Math Release" in body:
                 release_entries += 1
                 release_count[man] += 1
-                for m in ec.RELEASE_HREF.finditer(body):
+                for m in RELEASE_HREF.finditer(body):
                     release[man].add(m.group(1))
 
     # A .bib can sit in a superseded manuscript dir the ledger does not list; those owners carry no
@@ -121,23 +118,17 @@ def measure(normfn):
             inv[nt].add(m)
     shared = {nt: s for nt, s in inv.items() if len(s) >= 2}
 
-    pairs = collections.Counter()
-    for s in shared.values():
-        ms = sorted(s)
-        for i in range(len(ms)):
-            for j in range(i + 1, len(ms)):
-                pairs[(ms[i], ms[j])] += 1
+    pairs = pair_counts(shared.values())
 
     keymen = collections.defaultdict(set)
     for p in files:
-        for _ty, key, _body, _line in ec.entries(ec.read(p)):
-            keymen[key].add(ec.owner(p))
+        for _ty, key, _body, _line in entries(read(p)):
+            keymen[key].add(owner(p))
 
     all_keys = sum(len(v) for v in entry_keys.values())
-    cited = sum(len(v & ec.cite_keys(m)) for m, v in entry_keys.items())
-    fracs = sorted(len(v & ec.cite_keys(m)) / len(v) for m, v in entry_keys.items() if v)
+    cited = sum(len(v & cite_keys(m)) for m, v in entry_keys.items())
+    fracs = sorted(len(v & cite_keys(m)) / len(v) for m, v in entry_keys.items() if v)
 
-    rpairs = collections.Counter()
     rinv = collections.defaultdict(set)
     for m, s in release.items():
         if m not in fam:
@@ -145,11 +136,7 @@ def measure(normfn):
         for d in s:
             rinv[d].add(m)
     release_listed = sum(v for m, v in release_count.items() if m in fam)
-    for s in rinv.values():
-        ms = sorted(s)
-        for i in range(len(ms)):
-            for j in range(i + 1, len(ms)):
-                rpairs[(ms[i], ms[j])] += 1
+    rpairs = pair_counts(rinv.values())
 
     return {
         "files": files,
@@ -169,7 +156,7 @@ def measure(normfn):
         "keymen": keymen,
         "n_entries": n_entries,
         "types": types,
-        "depth": collections.Counter(len(ec.rel(p).split("/")) for p in files),
+        "depth": collections.Counter(len(rel(p).split("/")) for p in files),
         "fams": len({man2fam[m] for m in men}),
         "discs": len({disc[m] for m in men}),
         "all_keys": all_keys,
@@ -180,14 +167,14 @@ def measure(normfn):
         "release": release,
         "rinv": rinv,
         "rpairs": rpairs,
-        "rep": lambda nt: (ec.ranked(verbatim[nt])[0][0],) + where[nt][ec.ranked(verbatim[nt])[0][0]],
+        "rep": lambda nt: (ranked(verbatim[nt])[0][0],) + where[nt][ranked(verbatim[nt])[0][0]],
     }
 
 
 def entry_at(path, line):
     """(type, key, body, start_line) for the entry starting at `line` in `path`, else None."""
-    text = ec.read(path)
-    for t in ec.entries(text):
+    text = read(path)
+    for t in entries(text):
         if t[3] == line:
             return t
     return None
@@ -218,10 +205,10 @@ def check(page, M, M2):
     need("**%s**" % format(M["n_entries"], ","), "entries")
     need("**%s**" % format(len(M["keys"]), ","), "distinct keys")
     need("**%s**" % format(sum(1 for v in M["keys"].values() if v > 1), ","), "keys >1 manuscript")
-    need(" · ".join("%s %s" % (t, format(n, ",")) for t, n in ec.ranked(M["types"])),
+    need(" · ".join("%s %s" % (t, format(n, ",")) for t, n in ranked(M["types"])),
          "entry types")
     top_keys = ", ".join("`%s` %d" % (k, v) for k, v in
-                         ec.ranked({k: len(v) for k, v in M["keymen"].items() if len(v) > 1}, 10))
+                         ranked({k: len(v) for k, v in M["keymen"].items() if len(v) > 1}, 10))
     need(top_keys, "top keys")
 
     # ---- cited, not just listed -------------------------------------------
@@ -256,7 +243,7 @@ def check(page, M, M2):
     seen_nt = set()
     for cnt, title, path, raw_line in rows:
         line = int(raw_line)
-        full = os.path.join(ec.ROOT, path)
+        full = os.path.join(ROOT, path)
         if not os.path.isfile(full):
             fails.append("work anchor absent on disk: %s:%d" % (path, line))
             continue
@@ -264,12 +251,12 @@ def check(page, M, M2):
         if e is None:
             fails.append("no entry begins at %s:%d" % (path, line))
             continue
-        ti = ec.field(e[2], "title")
+        ti = field(e[2], "title")
         if ti is None or ti.strip() != title:
             fails.append("anchor %s:%d carries title %r, page quotes %r"
                          % (path, line, (ti or "").strip(), title))
             continue
-        nt = ec.norm_title(ti)
+        nt = norm_title(ti)
         best, bpath, bline = M["rep"](nt)
         if best != title:
             fails.append("quoted form %r is not the most frequent form %r for %r"
@@ -345,7 +332,7 @@ def check(page, M, M2):
                  % (len(multi), len(big), len({M["fam"][m] for m in big}),
                     len({M["disc"][m] for m in big})), "clusters >=1")
             ds = collections.Counter(M["disc"][m] for m in big)
-            need(", ".join("%s %d" % (d, n) for d, n in ec.ranked(ds)), "cluster >=1 composition")
+            need(", ".join("%s %d" % (d, n) for d, n in ranked(ds)), "cluster >=1 composition")
         if k == 5:
             need("%d components, all non-trivial, largest %d, **%d** spanning \u22652 disciplines"
                  % (len(multi), len(big), crossing), "clusters >=5")
@@ -368,7 +355,7 @@ def check(page, M, M2):
                          % (fams.strip(), n, nf, nd, len(c), len(cf), len(cd)))
         if fams.strip() != " ".join(cf):
             fails.append("cluster row %r: measured membership %s" % (fams.strip(), " ".join(cf)))
-        want = ", ".join("%s %d" % (d, v) for d, v in ec.ranked(cd))
+        want = ", ".join("%s %d" % (d, v) for d, v in ranked(cd))
         if comp.strip() != want:
             fails.append("cluster row %s: composition %r, measured %r" % (fams.strip(), comp.strip(), want))
 
@@ -394,11 +381,11 @@ def check(page, M, M2):
 
     # ---- coverage caveat --------------------------------------------------
     inline = {}
-    for d in sorted(os.listdir(ec.PREPRINTS)):
-        if not os.path.isdir(os.path.join(ec.PREPRINTS, d)):
+    for d in sorted(os.listdir(PREPRINTS)):
+        if not os.path.isdir(os.path.join(PREPRINTS, d)):
             continue
-        inline[d] = sum(len(re.findall(r"\\begin\{thebibliography\}", ec.read(p)))
-                        for p in ec.tex_tree(d))
+        inline[d] = sum(len(re.findall(r"\\begin\{thebibliography\}", read(p)))
+                        for p in tex_tree(d))
     # Scoped to the ledger's listed manuscripts: a superseded dir with no .bib is not a blind spot
     # in the graph, because the graph never claimed to see it.
     no_bib = [d for d in M["man2fam"] if d not in M["owners"]]
@@ -455,10 +442,10 @@ def check(page, M, M2):
 
     # ---- anchors and fenced blocks ---------------------------------------
     for path, line in re.findall(r"`(preprints/[^`]+?\.bib):(\d+)`", page):
-        full = os.path.join(ec.ROOT, path)
+        full = os.path.join(ROOT, path)
         if not os.path.isfile(full):
             fails.append("anchor file absent: %s" % path)
-        elif int(line) > len(ec.read(full).split("\n")):
+        elif int(line) > len(read(full).split("\n")):
             fails.append("anchor line out of range: %s:%s" % (path, line))
 
     blocks = re.findall(r"```bibtex\n(.*?)```", page, re.S)
@@ -471,11 +458,11 @@ def check(page, M, M2):
             fails.append("a bibtex block has no preceding anchor")
             continue
         path, line = anch[-1]
-        full = os.path.join(ec.ROOT, path)
+        full = os.path.join(ROOT, path)
         if not os.path.isfile(full):
             fails.append("block anchor absent: %s" % path)
             continue
-        flines = ec.read(full).split("\n")
+        flines = read(full).split("\n")
         plines = [l for l in blk.split("\n") if l.strip()]
         start = int(line) - 1
         if start + len(plines) > len(flines):
@@ -494,7 +481,7 @@ def check(page, M, M2):
 def seen_nt_order(rows, _M):
     out = []
     for _cnt, title, _path, _line in rows:
-        out.append(ec.norm_title(title))
+        out.append(norm_title(title))
     return out
 
 
@@ -530,7 +517,7 @@ MUTANTS = [
 def main():
     with open(PAGE, encoding="utf-8") as fh:
         page = fh.read()
-    M = measure(ec.norm_title)
+    M = measure(norm_title)
     M2 = measure(norm_noguard)
     print("measured: %d .bib files, %d owner manuscripts, %d entries, %d distinct works, "
           "%d shared, %d pairs >=1"

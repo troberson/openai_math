@@ -16,22 +16,30 @@ with the population, and each `####` family must be title-named, non-T0, and out
 --mutant corrupts the page in memory (never on disk) in twelve ways and reports how many the checks
 catch.
 
+The anchor grammar is this page's own and stays local: statement anchors are bracketed and
+range-required, prose citations are backticked with an optional range. The shared
+`catlib.anchors.anchor_pattern` is backtick-delimited with no bracket requirement, so measured on
+this page it reads 68 anchors where the page's grammar reads 59 -- it swallows the pathless prose
+citations that `prose_citations` deliberately excludes. Same reason the local `norm` is an alias of
+`catlib.text.collapse_ws` rather than a second implementation.
+
 Usage:
     python3 notes/scripts/verify_named_conjectures.py
     python3 notes/scripts/verify_named_conjectures.py --mutant
 """
 
-import csv
 import os
 import re
 import sys
 from collections import Counter
 
+from catlib.bib import read
+from catlib.ledger import read_ledger
+from catlib.paths import NOTES, ROOT, read_text
+from catlib.text import collapse_ws
 import triage_t0
 
-ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-PAGE = os.path.join(ROOT, "notes", "named-conjectures.md")
-LEDGER = os.path.join(ROOT, "notes", "catalog.tsv")
+PAGE = NOTES / "named-conjectures.md"
 
 PRIORITY = ["038", "078", "079", "101", "202", "344", "346", "375"]
 NAME_TOKEN = re.compile(r"conjectur|\bquestion|\bproblem", re.I)
@@ -48,13 +56,10 @@ PREPRINT_DIR = re.compile(r"(?<![\w-])([A-Z][A-Za-z0-9]*(?:-[A-Za-z0-9]+)+)")
 VERDICTS = ("match", "merge", "narrower", "wider")
 
 
-def norm(s):
-    return re.sub(r"\s+", " ", " ".join(x.strip() for x in s.split("\n"))).strip()
+norm = collapse_ws
 
 
-def ledger_rows():
-    with open(LEDGER, newline="", encoding="utf-8") as fh:
-        return list(csv.DictReader(fh, delimiter="\t"))
+ledger_rows = read_ledger
 
 
 def population(rows):
@@ -179,8 +184,7 @@ def check_quotes(page_lines, problems):
             if not os.path.isfile(full):
                 problems.append("family %s: anchor path not on disk: %s" % (fam, path))
                 continue
-            with open(full, encoding="utf-8", errors="replace") as fh:
-                lines = fh.read().split("\n")
+            lines = read(full).split("\n")
             if not 1 <= a <= b <= len(lines):
                 problems.append(
                     "family %s: anchor %s:%d-%d outside 1..%d lines" % (fam, path, a, b, len(lines))
@@ -270,8 +274,7 @@ def check_citations(page_lines, problems):
         if not os.path.isfile(os.path.join(ROOT, full)):
             problems.append("citation line %d: path not on disk: %s" % (i + 1, full))
             continue
-        with open(os.path.join(ROOT, full), encoding="utf-8", errors="replace") as fh:
-            lines = fh.read().split("\n")
+        lines = read(os.path.join(ROOT, full)).split("\n")
         if not 1 <= a <= b <= len(lines):
             problems.append("citation line %d: %s:%d-%d outside 1..%d lines"
                             % (i + 1, full, a, b, len(lines)))
@@ -482,8 +485,7 @@ def main():
     mutant = "--mutant" in sys.argv
     rows = ledger_rows()
     expected, pop = measure(rows)
-    with open(PAGE, encoding="utf-8") as fh:
-        base = fh.read().split("\n")
+    base = read_text(PAGE).split("\n")
 
     problems = []
     anchors, verdicts = check_quotes(base, problems)
