@@ -21,15 +21,11 @@ each to be reported. The injections are targeted from the parsed rows, so they f
 when a row's anchor or name changes; an injection that finds no target is reported as NOT INJECTED
 and fails the run, so a mutant cannot pass by quietly stopping applying.
 """
-import csv
 import re
 import sys
-from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
-TSV = ROOT / "notes" / "conjecture-standing.tsv"
-LEDGER = ROOT / "notes" / "catalog.tsv"
-TEX = ROOT / "overview.tex"
+from catlib import overview, tsv
+from catlib.paths import LEDGER_TSV, STANDING_TSV
 
 FIELDS = ["fam", "discipline", "tier", "conjecture", "standing_prior_2025",
           "prior_confidence", "release_claim", "gap", "surprise_tier", "abstract_line"]
@@ -39,17 +35,6 @@ CONSEQUENCE = re.compile(
     r"consequent|opens the door|paves the way|spawns|triggers|reshapes the field"
     r"|now implies|leads to a solution|has implications", re.I)
 STOP = {"the", "a", "an", "of", "and", "or", "for", "in", "on", "to", "with", "by", "as", "is", "are", "be", "it", "its", "their", "this", "that", "these", "those", "from", "at", "every", "all", "any", "each", "fixed", "nontrivial", "increasing", "general", "case", "cases", "conjecture", "conjectures", "problem", "problems", "question", "questions", "theorem"}
-
-
-def resultentry_lines():
-    """fam -> 1-based line number of its \\resultentry in overview.tex."""
-    out = {}
-    entry = re.compile(r"\\resultentry\{(\d+)\}")
-    for n, line in enumerate(TEX.read_text(encoding="utf-8").split("\n"), 1):
-        m = entry.match(line.strip())
-        if m:
-            out[m.group(1)] = (n, line)
-    return out
 
 
 def surname_tokens(conj):
@@ -64,11 +49,10 @@ def surname_tokens(conj):
 
 def selection():
     """(ledger rows, selected fams, \\resultentry lines)."""
-    led = {r["fam"]: r for r in csv.DictReader(LEDGER.read_text(encoding="utf-8").splitlines(),
-                                              delimiter="\t")}
+    led = {r["fam"]: r for r in tsv.read_rows(LEDGER_TSV)}
     want = {r["fam"] for r in led.values()
             if r["resolves_named"] == "1" and "resolution" in r["shapes"].split("|")}
-    return led, want, resultentry_lines()
+    return led, want, overview.resultentry_lines()
 
 
 def check(text, led, want, entries):
@@ -87,7 +71,7 @@ def check(text, led, want, entries):
         if len(row.split("\t")) != 10:
             problems.append(f"line {i}: {len(row.split(chr(9)))} fields, expected 10")
 
-    rows = list(csv.DictReader(text.splitlines(), delimiter="\t"))
+    rows = tsv.read_rows_from_text(text)
     got = {r["fam"] for r in rows}
     if want - got:
         problems.append(f"missing families: {sorted(want - got)}")
@@ -157,7 +141,7 @@ def _set_field(text, fam, idx, value):
 
 def mutants(text, led, want):
     """The six defects the page records, targeted from the parsed rows."""
-    rows = list(csv.DictReader(text.splitlines(), delimiter="\t"))
+    rows = tsv.read_rows_from_text(text)
     anchored = [r for r in rows if re.fullmatch(r"overview\.tex:\d+", r["abstract_line"])]
     named = [r for r in rows if surname_tokens(r["conjecture"])]
     outside = min(set(led) - want - {r["fam"] for r in rows})
@@ -194,7 +178,7 @@ def _append_field(text, fam):
 def main():
     mutant = "--mutant" in sys.argv[1:]
     led, want, entries = selection()
-    text = TSV.read_text(encoding="utf-8")
+    text = STANDING_TSV.read_text(encoding="utf-8")
     problems, rows = check(text, led, want, entries)
 
     tiers = {}

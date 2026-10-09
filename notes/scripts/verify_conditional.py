@@ -14,47 +14,23 @@ that is not found are problems (exit 1). Prose quotations with no anchor at all 
 counted and reported separately as a known gap, not as a failure — the pre-existing
 per-family sections quote catalog abstracts without line anchors.
 """
-import pathlib
 import re
 import sys
 
-ROOT = pathlib.Path(__file__).resolve().parents[2]
-PAGE = ROOT / "notes" / "conditional.md"
+from catlib import anchors
+from catlib.paths import NOTES, ROOT
+from catlib.text import collapse_ws
 
-ANCHOR = re.compile(r"`([\w./+-]+\.lean|[\w./+-]+\.md|[\w./+-]+\.yaml):(\d+)`")
+PAGE = NOTES / "conditional.md"
+
+ANCHOR = anchors.anchor_pattern(anchors.EXT_LEAN)
 QUOTE = re.compile(r'\*"([^"|]{12,})"\*')
 # `quoted source text` at/(`) `path:line`  — the page's inline citation form
 INLINE = re.compile(
     r"`([^`\n]{12,})`\s*(?:at|in)\s*`([\w./+-]+\.(?:lean|md|yaml)):(\d+)`"
     r"|`([^`\n]{12,})`\s*\(`([\w./+-]+\.(?:lean|md|yaml)):(\d+)`\)")
 
-
-def norm(s):
-    return re.sub(r"\s+", " ", s).strip()
-
-
-def blocks(lines):
-    i = 0
-    while i < len(lines):
-        if lines[i].startswith("```"):
-            j = i + 1
-            body = []
-            while j < len(lines) and not lines[j].startswith("```"):
-                body.append(lines[j])
-                j += 1
-            yield i, body
-            i = j + 1
-        else:
-            i += 1
-
-
-def nearest_anchor(lines, before):
-    for k in range(before - 1, max(before - 9, -1), -1):
-        found = ANCHOR.findall(lines[k])
-        if found:
-            path, line = found[-1]
-            return path, int(line)
-    return None
+norm = collapse_ws
 
 
 def check(text):
@@ -64,12 +40,12 @@ def check(text):
     unanchored = 0
     n_blocks = n_lines = n_prose = n_inline = 0
 
-    for start, body in blocks(lines):
-        anchor = nearest_anchor(lines, start)
-        if anchor is None:
+    for start, body in anchors.fenced_blocks(lines):
+        found = anchors.nearest_anchor(lines, start, ANCHOR)
+        if found is None:
             problems.append(f"page:{start + 1}: fenced block has no preceding file:line anchor")
             continue
-        rel, at = anchor
+        rel, at = found[0], int(found[1])
         f = ROOT / rel
         if not f.exists():
             problems.append(f"page:{start + 1}: anchor file {rel} does not exist")
@@ -87,11 +63,11 @@ def check(text):
     for m in QUOTE.finditer(text):
         quote = norm(m.group(1))
         upto = text[: m.start()].split("\n")
-        anchor = nearest_anchor(upto, len(upto))
-        if anchor is None:
+        found = anchors.nearest_anchor(upto, len(upto), ANCHOR)
+        if found is None:
             unanchored += 1
             continue
-        rel, at = anchor
+        rel, at = found[0], int(found[1])
         f = ROOT / rel
         if not f.exists():
             problems.append(f"prose anchor file {rel} does not exist")

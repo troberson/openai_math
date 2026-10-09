@@ -20,17 +20,15 @@ Checks, in order:
 
 Usage: python3 notes/scripts/verify_subfinding_pairs.py [--mutant]
 """
-import csv
 import re
 import sys
 
 import build_catalog as bc
 import extract_subfinding_pairs as ep
+from catlib import overview, tsv
+from catlib.paths import LEDGER_TSV, NOTES, OVERVIEW_TEX, ROOT, SUBFINDINGS_TSV
 
-ROOT = bc.ROOT
-PAGE = ROOT / "notes" / "subfinding-pairs.md"
-TSV = ROOT / "notes" / "subfindings.tsv"
-LEDGER = ROOT / "notes" / "catalog.tsv"
+PAGE = NOTES / "subfinding-pairs.md"
 
 HEADER = re.compile(r"^## (?P<fam>\d{3}) · `overview\.tex:(?P<line>\d+)` · "
                     r"n=(?P<n>\d+) · (?P<tier>T\d)\s*$")
@@ -47,17 +45,16 @@ FP_COUNT = re.compile(r"(?P<n>\d+) of the (?P<tot>\d+) probe-hit families")
 
 def load_inputs():
     """(overview.tex lines, {fam: resultentry line}, {(fam,seq): title}, {fam: n}, ledger rows)."""
-    tex_lines = (ROOT / "overview.tex").read_text(encoding="utf-8").splitlines()
-    entry_lines = ep.resultentry_lines()
+    tex_lines = OVERVIEW_TEX.read_text(encoding="utf-8").splitlines()
+    entry_lines = overview.overview_lines()
     titles = {}
-    for r in csv.DictReader(TSV.read_text(encoding="utf-8").splitlines(), delimiter="\t"):
+    for r in tsv.read_rows(SUBFINDINGS_TSV):
         if r["kind"] == "manuscript":
             titles[(r["fam"], int(r["seq"]))] = r["title"]
     counts = {}
     for (fam, _) in titles:
         counts[fam] = counts.get(fam, 0) + 1
-    ledger = {r["fam"]: r for r in csv.DictReader(
-        LEDGER.read_text(encoding="utf-8").splitlines(), delimiter="\t")}
+    ledger = {r["fam"]: r for r in tsv.read_rows(LEDGER_TSV)}
     return tex_lines, entry_lines, titles, counts, ledger
 
 
@@ -263,7 +260,7 @@ def check(text, inputs, population, probe, probe_all, multi):
 
 def main():
     mutant = "--mutant" in sys.argv[1:]
-    for p in (PAGE, TSV, LEDGER):
+    for p in (PAGE, SUBFINDINGS_TSV, LEDGER_TSV):
         if not p.is_file():
             print(f"missing: {p.relative_to(ROOT)}")
             return 1

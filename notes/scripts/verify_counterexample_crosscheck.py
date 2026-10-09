@@ -28,26 +28,24 @@ are never invoked here, so no verdict in the page can mean "a proof was checked"
 
 --mutant runs the built-in mutations and fails if any goes uncaught.
 """
-import pathlib
 import re
 import sys
 
 import build_catalog
 import extract_counterexample_crosscheck as cx
-import extract_subfinding_pairs as ep
+from catlib import anchors, overview
+from catlib.paths import COMPARATOR_DIR, FORMALIZATION_YAML, NOTES, ROOT
+from catlib.text import collapse_ws
 
-ROOT = pathlib.Path(__file__).resolve().parents[2]
-PAGE = ROOT / "notes" / "counterexample-crosscheck.md"
-ANCHOR = re.compile(r"`([\w./+-]+?\.(?:py|md|tex|json|txt|lean|yaml)):(\d+)`")
+PAGE = NOTES / "counterexample-crosscheck.md"
+ANCHOR = anchors.anchor_pattern(anchors.EXT_YAML)
 QUOTE = re.compile(r'\*"([^"]{12,})"\*')
 ROW = re.compile(r"^\|\s*(\d{3})\s*\|\s*(T\d)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*\|")
 GAPROW = re.compile(r"^\|\s*`([A-Za-z0-9_]+)`\s*\|\s*(\d{3})\s*\|\s*`([\w./+-]+\.md):(\d+)`\s*\|")
 T2ROW = re.compile(r"^\|\s*(\d{3})\s*\|\s*(.+?)\s*\|\s*`([\w./+-]+\.md):(\d+)`\s*\|")
-CONFIGS_DIR = ROOT / "lean" / "ComparatorChallenges"
+CONFIGS_DIR = COMPARATOR_DIR
 
-
-def norm(s):
-    return re.sub(r"\s+", " ", s).strip()
+norm = collapse_ws
 
 
 def population():
@@ -67,7 +65,7 @@ def population():
             "entries": sorted(c for c in cfgs if c in mr),
             "gaps": sorted(c for c in cfgs if c not in mr),
             "mainres": int(rows[f]["mainres"]),
-            "line": ep.resultentry_lines()[f],
+            "line": overview.overview_lines()[f],
         }
     stubs = {c for f in pop for c in per[f]["configs"]}
     sorries = sum((CONFIGS_DIR / f"{c}.lean").read_text(encoding="utf-8", errors="replace").count("sorry")
@@ -149,38 +147,23 @@ def check(text):
             problems.append(f"anchor {rel}:{at} is outside the file ({len(src)} lines)")
 
     # 2. fenced blocks -> nearest preceding anchor
-    i = 0
-    while i < len(lines):
-        if lines[i].lstrip().startswith("```"):
-            indent = lines[i][: len(lines[i]) - len(lines[i].lstrip())]
-            j, blk = i + 1, []
-            while j < len(lines) and not lines[j].lstrip().startswith("```"):
-                ln = lines[j]
-                blk.append(ln[len(indent):] if ln.startswith(indent) and ln.strip() else ln)
-                j += 1
-            anchor = None
-            for k in range(i - 1, max(i - 9, -1), -1):
-                found = ANCHOR.findall(lines[k])
-                if found:
-                    anchor = (found[-1][0], int(found[-1][1]))
-                    break
-            if anchor is None:
-                problems.append(f"line {i + 1}: fenced block has no preceding file:line anchor")
-            elif not (ROOT / anchor[0]).exists():
-                problems.append(f"line {i + 1}: anchor file {anchor[0]} does not exist")
-            else:
-                rel, at = anchor
-                src = (ROOT / rel).read_text(encoding="utf-8", errors="replace").split("\n")
-                for n, want in enumerate(blk):
-                    got = src[at - 1 + n] if at - 1 + n < len(src) else "<past end of file>"
-                    n_block += 1
-                    if norm(got) != norm(want):
-                        problems.append(
-                            f"line {i + 2}: block line {n} != {rel}:{at + n}\n"
-                            f"    want {want!r}\n    got  {norm(got)!r}")
-            i = j + 1
-        else:
-            i += 1
+    for i, blk in anchors.fenced_blocks(lines, dedent=True):
+        found = anchors.nearest_anchor(lines, i, ANCHOR)
+        if found is None:
+            problems.append(f"line {i + 1}: fenced block has no preceding file:line anchor")
+            continue
+        rel, at = found[0], int(found[1])
+        if not (ROOT / rel).exists():
+            problems.append(f"line {i + 1}: anchor file {rel} does not exist")
+            continue
+        src = (ROOT / rel).read_text(encoding="utf-8", errors="replace").split("\n")
+        for n, want in enumerate(blk):
+            got = src[at - 1 + n] if at - 1 + n < len(src) else "<past end of file>"
+            n_block += 1
+            if norm(got) != norm(want):
+                problems.append(
+                    f"line {i + 2}: block line {n} != {rel}:{at + n}\n"
+                    f"    want {want!r}\n    got  {norm(got)!r}")
 
     # 3. quotations pinned to the anchor in their own line
     for m in QUOTE.finditer(text):
@@ -255,8 +238,7 @@ def check(text):
             if f"`lean/formalization.yaml:{start}`" not in text:
                 problems.append(f"family {f} config {c}: no yaml anchor at "
                                 f"lean/formalization.yaml:{start}")
-            ysrc = (ROOT / "lean" / "formalization.yaml").read_text(
-                encoding="utf-8", errors="replace").split("\n")
+            ysrc = FORMALIZATION_YAML.read_text(encoding="utf-8", errors="replace").split("\n")
             trio = "\n".join(ysrc[start - 1:start + 2])
             if f"ComparatorChallenges/{c}.json" not in trio or decl not in trio or rel not in trio:
                 problems.append(f"family {f} config {c}: yaml:{start} is not its entry")
