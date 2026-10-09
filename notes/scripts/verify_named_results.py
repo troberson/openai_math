@@ -18,9 +18,11 @@ What it checks, and why each check exists:
             because manuscript sentences are hard-wrapped across source lines.
   counts    every count phrase is re-derived from extract_named_results.population(), the same
             measurement the report prints, formatted with thousands separators.
-  corpus    the comparator/OAI figures in the closing section are recounted from disk. The
-            zero-sorry claim over lean/OAI is NOT re-derived here: reading 121,734 files is the
-            job of extract_formalization_deps.py, not of a page checker.
+  corpus    the comparator/OAI figures in the closing section are recounted from disk: the
+            ComparatorChallenges file count, its `sorry` occurrences, and the number of files
+            under lean/OAI. The zero-`sorry` claim over lean/OAI is NOT re-derived here: scanning
+            122,458 files for `sorry` is the job of extract_formalization_deps.py, not of a page
+            checker.
 """
 from __future__ import annotations
 
@@ -353,9 +355,9 @@ MUTANTS = {
     "count: rn share 248 -> 249":
         lambda t: t.replace("It reads **248** of **372** families",
                             "It reads **249** of **372** families"),
-    "count: titled per-line 1,498 -> 1,508":
-        lambda t: t.replace("| titled headline begins | 1,498 |",
-                            "| titled headline begins | 1,508 |"),
+    "count: titled per-line 1,609 -> 1,619":
+        lambda t: t.replace("| titled headline begins | 1,609 |",
+                            "| titled headline begins | 1,619 |"),
     "family list: layer-1 dir-not-rn drops 372":
         lambda t: t.replace("are not: 354 365 372.", "are not: 354 365."),
     "inline quotation: resolution -> solution":

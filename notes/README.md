@@ -206,8 +206,8 @@ and the extra 15 are corroborated at the manuscript-abstract layer, not read), a
 
 **The manuscript statements are not where the release names its conjectures.** That is the finding of
 **`notes/named-results.md`**, the check that turns the column from a title heuristic into an
-evidence-backed one. Over the 7,401 manuscript `.tex` files the headline statements
-(`theorem`/`maintheorem`/`thm`) read **2,270** begins, **1,498** of them titled, and **17** of those
+evidence-backed one. Over the 7,679 manuscript `.tex` files the headline statements
+(`theorem`/`maintheorem`/`thm`) read **2,410** begins, **1,609** of them titled, and **17** of those
 titles name a target noun — 17 statements over 17 families, 16 with `rn = 1`. **Zero of the 17 pair a
 target noun with a resolve verb in the same title**, and **76 of the 248** flagged families ship no
 titled headline theorem at all, so statement captions carry almost none of the signal. Naming sits in

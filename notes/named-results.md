@@ -14,11 +14,11 @@ runs nothing; `lake`, `lean`, `lake exe cache get`, and `comparator` are never i
 on this page means "a proof was checked". Run it twice and diff: the report must be identical. Check
 this page with `python3 notes/scripts/verify_named_results.py --mutant` before quoting any of its
 counts — it imports the extractor's own `population()`, re-derives every count from the ledger and the
-7,401 `.tex` files on disk, resolves every `file:line` anchor, matches every quotation against the
+7,679 `.tex` files on disk, resolves every `file:line` anchor, matches every quotation against the
 anchored file, and flags twelve injected mutations. It writes nothing.
 
 Population, from the report's POPULATION section: **372** ledger rows, **372** families in
-`overview.tex`, **722** manuscript directories, **7,401** `.tex` files at glob depths 1–4 under
+`overview.tex`, **719** manuscript directories, **7,679** `.tex` files at glob depths 1–4 under
 `preprints/`, and `resolves_named = 1` on **248** families.
 
 Manuscript ownership is the path component after `preprints`, never `parts[-2]` — every resolved main
@@ -35,17 +35,17 @@ conjecture environment.
 
 | Measure | Count | Rule |
 |---|---|---|
-| headline begins | 2,270 | `\begin{theorem}` 2,265, `\begin{maintheorem}` 4, `\begin{thm}` 1 |
-| titled headline begins | 1,498 | `\begin{X}[title]`, scanned **per line** |
-| titled headline begins, whole-text scan | 1,508 | same pattern over the whole file |
-| of those, titles whose match spans a newline | 10 | the 1,498 / 1,508 gap |
+| headline begins | 2,410 | `\begin{theorem}` 2,405, `\begin{maintheorem}` 4, `\begin{thm}` 1 |
+| titled headline begins | 1,609 | `\begin{X}[title]`, scanned **per line** |
+| titled headline begins, whole-text scan | 1,619 | same pattern over the whole file |
+| of those, titles whose match spans a newline | 10 | the 1,609 / 1,619 gap |
 | families with ≥1 headline begin | 372 | every family |
 | families with ≥1 titled headline | 271 | |
 | families with no titled headline | 101 | |
 | titles matching `Main…` (content-free) | 0 | no generic headline titles exist |
 
-Quote the titled count with the per-line rule: **1,498** is the per-line scan, **1,508** is the
-whole-text scan, and the 10-title gap is titles written across a line break. A page that quotes 1,508
+Quote the titled count with the per-line rule: **1,609** is the per-line scan, **1,619** is the
+whole-text scan, and the 10-title gap is titles written across a line break. A page that quotes 1,619
 with the per-line rule is quoting the wrong number.
 
 ## Target-named headline statements: 17 over 17 families
@@ -55,12 +55,12 @@ case-insensitivity is stated because it changes the count: the ledger rule sees 
 while titles, directory names, and prose capitalize the same words, so a case-sensitive match on them
 undercounts.
 
-Over **1,498** titled headline statements, **17** titles name a conjecture, question, or problem, in
+Over **1,609** titled headline statements, **17** titles name a conjecture, question, or problem, in
 **17** families:
 
 | Fam | Tier | `rn` | Statement | Title |
 |---|---|---|---|---|
-| 006 | T0 | 1 | `preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-September-23-2026/build/sections/00-introduction.tex:35` | *"Goldfeld's analytic density conjecture"* |
+| 006 | T0 | 1 | `preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/sections/00-introduction.tex:35` | *"Goldfeld's analytic density conjecture"* |
 | 013 | T2 | 1 | `preprints/the-additive-indecomposability-of-the-primes-September-24-2026/build/sections/01-introduction.tex:15` | *"Ostmann's conjecture"* |
 | 060 | T0 | 1 | `preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/paper.tex:102` | *"Global Spherical Shell conjecture"* |
 | 072 | T3 | 1 | `preprints/Brennans-conjecture-and-sharp-inverse-square-integral-means-September-24-2026/build/sections/00-introduction.tex:52` | *"Brennan's conjecture and inverse-square means"* |
@@ -84,13 +84,13 @@ resolving it. So the statement layer cannot, by itself, back a column whose rule
 target-noun **and** resolve-verb. One of the 17 (275) sits in a family the column reads 0; the
 other 16 sit in families it reads 1.
 
-## Subject-named headline statements: 208 over 112 families
+## Subject-named headline statements: 207 over 112 families
 
-Rule: a titled headline statement whose title contains a **name-layer subject** — one of the 552
+Rule: a titled headline statement whose title contains a **name-layer subject** — one of the 551
 subject names measured by `notes/scripts/measure_names.py` (subjects, not citations; the rule and the
 subject/citation split are in `notes/names.md`).
 
-**208** statements over **112** families. **74** of those families are `rn = 1`; **38** are not:
+**207** statements over **112** families. **74** of those families are `rn = 1`; **38** are not:
 002 009 010 014 015 023 036 069 099 114 115 116 125 140 211 212 216 218 222 223 224 227 231 232 238
 239 260 261 271 275 282 286 318 331 337 353 376 377.
 
@@ -105,7 +105,7 @@ name, not as a resolved conjecture.
 | headline-target ∩ `rn` | 16 |
 | headline-target, `rn = 0` | 1 → 275 |
 | `rn = 1`, no target-named headline statement | 232 |
-| `rn = 1` with **no titled headline theorem at all** | 76 (T3 36, T2 25, T1 0, T0 15) |
+| `rn = 1` with **no titled headline theorem at all** | 76 (T3 37, T2 25, T1 0, T0 14) |
 | `rn = 0` with titled headline theorems | 99 |
 
 The 76 is the number that decides the bead's framing: **76 of the 248 flagged families ship no titled
@@ -116,7 +116,7 @@ claim could be recorded at all. The column's evidence is not statement-level any
 
 Rule: the directory name after `preprints` matches the target noun, case-insensitively.
 
-**76** families over **89** directories. **73** are `rn = 1`. **3** are not: 354 365 372. **175**
+**76** families over **88** directories. **73** are `rn = 1`. **3** are not: 354 365 372. **175**
 `rn = 1` families have no directory name naming a target.
 
 ## Layer 2 — the manuscript's own abstract names a target with a resolve verb
@@ -124,7 +124,7 @@ Rule: the directory name after `preprints` matches the target noun, case-insensi
 Rule: inside the manuscript's own `\begin{abstract}`…`\end{abstract}` (bibliography and `\cite` braces
 stripped), one sentence matching the target noun **and** the column's resolve verb.
 
-**275** families over **398** sentences. **227** are `rn = 1`. **48** are not, and **21** `rn = 1`
+**275** families over **397** sentences. **227** are `rn = 1`. **48** are not, and **21** `rn = 1`
 families have no such sentence: 020 027 085 094 124 126 129 134 144 155 158 160 187 191 277 280 299
 309 322 323 342.
 
@@ -138,8 +138,8 @@ Rule: prose text with bibliography and `\cite`/`\xref` braces stripped, two scop
 
 | Scope | Hits | Families | ∩`rn` | prose-not-`rn` | `rn`-not-prose |
 |---|---|---|---|---|---|
-| window ±80 characters | 1,674 | 337 | 240 | 97 | 8 → 085 094 126 144 187 299 323 333 |
-| one sentence | 1,291 | 332 | 238 | 94 | 10 → 020 085 094 144 158 187 280 299 322 323 |
+| window ±80 characters | 1,665 | 337 | 240 | 97 | 8 → 085 094 126 144 187 299 323 333 |
+| one sentence | 1,283 | 332 | 238 | 94 | 10 → 020 085 094 144 158 187 280 299 322 323 |
 
 **6** families are `rn = 1` and name no target anywhere in their manuscript prose under **both** rules:
 085 094 144 187 299 323.
@@ -308,7 +308,7 @@ alone**:
 
 ## What the check shows
 
-**The manuscript statement layer is not where the release names conjectures.** Over 1,498 titled
+**The manuscript statement layer is not where the release names conjectures.** Over 1,609 titled
 headline statements, 17 titles name a target and **0** of them pair a target noun with a resolve verb.
 The naming sits in the manuscript's **name, abstract, and prose**, and in the overview **title** —
 which the column now reads, having read the abstract only when this measurement began.
@@ -336,8 +336,8 @@ So `resolves_named` becomes evidence-backed by the record, not by theorem titles
 - The 101 families with no titled headline theorem have no title-level statement text; nothing here
   says what their `.tex` files state in prose.
 - Nothing here is a proof check. `lake`, `lean`, `lake exe cache get`, and `comparator` were never
-  invoked, and zero of the 121,734 files under `lean/OAI/**/*.lean` contain `sorry` while the 405
-  comparator files carry 509 `sorry` occurrences — a comparator file states a target, it does not
+  invoked, and zero of the 122,458 files under `lean/OAI/**/*.lean` contain `sorry` while the 416
+  comparator files carry 539 `sorry` occurrences — a comparator file states a target, it does not
   prove it.
 - The swap's 15 additions were corroborated at the **manuscript-abstract layer only** — a sentence
   naming a target with a resolve verb. No Direction-B-style read was done on them, so none was checked
