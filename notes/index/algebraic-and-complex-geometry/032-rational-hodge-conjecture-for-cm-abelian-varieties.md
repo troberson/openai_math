@@ -13,7 +13,7 @@
 | Claim shapes | resolution, classification, uniform |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [abelian-varieties](../topics/abelian-varieties.md) |
 | Companion families | — |
-| Summary page | [032-hodge-and-kuga-satake-results-for-projective-k3-surfaces.md](../../../notes/summaries/algebraic-and-complex-geometry/032-hodge-and-kuga-satake-results-for-projective-k3-surfaces.md) |
+| Summary page | [032-the-rational-hodge-conjecture-for-cm-abelian-varieties.md](../../../notes/summaries/algebraic-and-complex-geometry/032-the-rational-hodge-conjecture-for-cm-abelian-varieties.md) |
 
 ## Manuscripts
 
