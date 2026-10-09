@@ -297,7 +297,13 @@ lives in this file and nowhere else.
   was added.** Findings in `notes/proof-density.md`.
 - Distinguish generated from hand-written **before** editing anything under `notes/`: the ownership
   manifest is `notes/scripts/README.md`, and it is the only place that answers "whose bytes are
-  this". Scripts and generated files are **not** 1-to-1: of the **43** scripts, **7** write
+  this". It is also the script inventory: every script under `notes/scripts/` is listed once as
+  writer, report-only or checker, with what it writes and the gate command the gate list runs for it
+  — **7** writers, **18** report-only, **18** checkers, plus the page's own checker as the 19th
+  checker and 44th script — and the fourth class, scratch, is recorded by rule: **scratch lives under
+  `.qwen/tmp/`, a permanent script lives under `notes/scripts/`**, so a probe that a later pass
+  re-runs is promoted and gets a table row before it gets a gate command.
+  Scripts and generated files are **not** 1-to-1: of the **43** scripts, **7** write
   (`build_catalog.py`, `build_sources.py`, `build_index.py`, `compare_abstracts.py` — with `--tsv`
   only — `extract_formalization_deps.py`, `extract_links.py`, `extract_subfindings.py`) and **36**
   write nothing, and `build_index.py` alone renders **1,049** files. Of the **8** top-level
@@ -321,6 +327,14 @@ lives in this file and nowhere else.
 ## Testing instructions
 
 - Nothing here builds and there is no test suite; the generator report is the test.
+- The whole-tree test is the gate list at `.qwen/tmp/gate.sh`: **61** invocations — the 7 writers,
+  the 17 gated report-only rows (including `check_summary_manuscripts.py` and
+  `locate_summary_quotes.py`; `read_manuscript.py` is the one script it does not run), each of the 18
+  checkers plain and with `--mutant` (**36** invocations), plus `verify_conjecture_standing.py` plain
+  only. Run it twice: the two reports must be byte-identical, and `notes/scripts/README.md` carries
+  the gate command for every row. `refresh_summary_line_counts.py` runs first among the checkers
+  because `verify_summaries.py` flags a stale `Lines` cell. One driver at a time, and stop it by
+  process group, never by PID. `math-8ou` promotes the list into `notes/scripts/`.
 - Run the generator twice and diff the output: `notes/catalog.tsv` must be byte-identical.
 - Check the report's reconciliation lines after every change: 372 families, 719 manuscripts,
   172 formalized, 242 scope notes, 416 challenges, 200 `main_results` entries over 189 configs,

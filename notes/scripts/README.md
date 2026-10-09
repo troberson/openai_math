@@ -6,6 +6,12 @@ the **1,105** files under `notes/` (the scripts excluded), which is whose bytes.
 changed by editing its generator and re-rendering; a hand-written file is edited directly. Ownership
 is per file, and the checker exits 1 on a file no rule owns.
 
+It is also the script inventory. Every script under `notes/scripts/` is listed once, in one of three
+classes — writer, report-only, checker — with what it writes and the command the gate runs for it, and
+the fourth class, the scratch a session writes outside the tree, is recorded by rule rather than by
+file. The classes partition the **44** scripts: **7** writers, **18** report-only, **18** checkers,
+and `verify_script_ownership.py` itself, which is the 19th checker and is not listed in its own table.
+
 ## The split: 7 write, 36 write nothing
 
 The writer set is derived from the scripts' own source, not from this page: a script is a writer when
@@ -43,28 +49,40 @@ rows in six artifacts.
 
 ### Report-only
 
-The other **36** scripts write nothing. **18** of them print the report a page's counts come from:
+The other **36** scripts write nothing. **18** of them print the report a page's counts come from.
+The Gate column is the invocation the gate list runs: `.qwen/tmp/gate.sh`, which runs **61**
+invocations — the 7 writers, the 17 gated report-only rows (including `check_summary_manuscripts.py`
+and `locate_summary_quotes.py`), each of the 18 checkers plain and with `--mutant` (**36**
+invocations), plus `verify_conjecture_standing.py` plain only — in class order, not in the order the
+rows sit; it prints one line per invocation with its exit code and writes nothing to the repo.
+`math-8ou` promotes it into `notes/scripts/`. A writer's gate is the twice-run byte-identity diff on
+its target, recorded in the writers table.
 
-| Script | Report feeds |
-|---|---|
-| `check_index_links.py` | `notes/index-links.md` |
-| `check_summary_manuscripts.py` | `notes/summaries/` — which manuscripts each page reads, and whether the release still names them |
-| `extract_citations.py` | `notes/citations.md` |
-| `extract_counterexample_crosscheck.py` | `notes/counterexample-crosscheck.md` |
-| `extract_named_results.py` | `notes/named-results.md` |
-| `extract_scope_notes.py` | `notes/scope-exclusions.md` |
-| `extract_subfinding_pairs.py` | `notes/subfinding-pairs.md` |
-| `extract_t0_chains.py` | `notes/t0-chains.md` |
-| `extract_verification_348.py` | `notes/verification-dirs.md` |
-| `extract_verification_dirs.py` | `notes/verification-dirs.md` |
-| `locate_summary_quotes.py` | `notes/summaries/` — the lines a page should cite when a quotation stops matching |
-| `measure_index_sizes.py` | `notes/index-design.md` |
-| `measure_names.py` | `notes/names.md` |
-| `measure_proof_density.py` | `notes/proof-density.md` |
-| `measure_topics.py` | `notes/topics.md` |
-| `read_manuscript.py` | none — a reading aid; prints a manuscript's abstract, section skeleton and titled statement environments with `file:line` anchors |
-| `refresh_summary_line_counts.py` | `notes/summaries/` — rewrites the `Lines` column of the Sources table in every page |
-| `triage_t0.py` | `notes/t0-triage.md` |
+| Script | Report feeds | Gate |
+|---|---|---|
+| `check_index_links.py` | `notes/index-links.md` | plain |
+| `check_summary_manuscripts.py` | `notes/summaries/` — which manuscripts each page reads, and whether the release still names them | plain |
+| `extract_citations.py` | `notes/citations.md` | plain |
+| `extract_counterexample_crosscheck.py` | `notes/counterexample-crosscheck.md` | plain |
+| `extract_named_results.py` | `notes/named-results.md` | plain |
+| `extract_scope_notes.py` | `notes/scope-exclusions.md` | plain |
+| `extract_subfinding_pairs.py` | `notes/subfinding-pairs.md` | plain |
+| `extract_t0_chains.py` | `notes/t0-chains.md` | plain |
+| `extract_verification_348.py` | `notes/verification-dirs.md` | plain |
+| `extract_verification_dirs.py` | `notes/verification-dirs.md` | plain |
+| `locate_summary_quotes.py` | `notes/summaries/` — the lines a page should cite when a quotation stops matching | plain, no page argument |
+| `measure_index_sizes.py` | `notes/index-design.md` | plain, run twice and diff |
+| `measure_names.py` | `notes/names.md` | plain |
+| `measure_proof_density.py` | `notes/proof-density.md` | `--mutant` |
+| `measure_topics.py` | `notes/topics.md` | `--check` |
+| `read_manuscript.py` | none — a reading aid; prints a manuscript's abstract, section skeleton and titled statement environments with `file:line` anchors | **not gated** |
+| `refresh_summary_line_counts.py` | `notes/summaries/` — rewrites the `Lines` column of the Sources table in every page | plain, **first among the checkers** |
+| `triage_t0.py` | `notes/t0-triage.md` | plain |
+
+`read_manuscript.py` is the only script the gate does not run: it takes a `preprints/` directory
+argument, so a gate run over it would read one manuscript chosen by the list rather than the corpus.
+`refresh_summary_line_counts.py` runs before the checkers because `verify_summaries.py` flags a stale
+`Lines` cell, so the checker must run after the refresh.
 
 `check_index_links.py` is the link checker for `notes/index/` and `CONTENTS.md` — it reads the tree and
 writes nothing, so it sits here rather than in the checker table, which lists scripts that verify a
@@ -73,28 +91,33 @@ page's text.
 ### Checkers
 
 The remaining **18** scripts verify a page or a table. Each exits non-zero when what it checks has
-drifted; each takes `--mutant`, which injects faults and asserts they are caught.
+drifted; each takes `--mutant`, which injects faults and asserts they are caught. The gate runs each
+one plain and then with `--mutant` — 36 of the 61 invocations — with one gap recorded in the table.
 
-| Checker | Checks |
-|---|---|
-| `verify_abstracts.py` | `notes/abstracts.md` |
-| `verify_citations.py` | `notes/citations.md` |
-| `verify_conditional.py` | `notes/conditional.md` |
-| `verify_conjecture_standing.py` | `notes/conjecture-standing.tsv` |
-| `verify_counterexample_crosscheck.py` | `notes/counterexample-crosscheck.md` |
-| `verify_dependency_drift.py` | `notes/dependency-drift.md`, `notes/formalization-deps.md` |
-| `verify_findings.py` | `notes/findings.md` |
-| `verify_index_design.py` | `notes/index-design.md` |
-| `verify_named_conjectures.py` | `notes/named-conjectures.md` |
-| `verify_named_results.py` | `notes/named-results.md` |
-| `verify_scope_exclusions.py` | `notes/scope-exclusions.md` |
-| `verify_sources.py` | `notes/sources.md` |
-| `verify_subfinding_pairs.py` | `notes/subfinding-pairs.md` |
-| `verify_subfindings.py` | `notes/subfindings.tsv` |
-| `verify_summaries.py` | `notes/summaries/` |
-| `verify_t0_chains.py` | `notes/t0-chains.md` |
-| `verify_upstream_history.py` | `upstream_history/` — the three pages, outside `notes/` |
-| `verify_verification_dirs.py` | `notes/verification-dirs.md` |
+| Checker | Checks | Gate |
+|---|---|---|
+| `verify_abstracts.py` | `notes/abstracts.md` | plain + `--mutant` |
+| `verify_citations.py` | `notes/citations.md` | plain + `--mutant` |
+| `verify_conditional.py` | `notes/conditional.md` | plain + `--mutant` |
+| `verify_conjecture_standing.py` | `notes/conjecture-standing.tsv` | **plain only** — gate gap |
+| `verify_counterexample_crosscheck.py` | `notes/counterexample-crosscheck.md` | plain + `--mutant` |
+| `verify_dependency_drift.py` | `notes/dependency-drift.md`, `notes/formalization-deps.md` | plain + `--mutant` |
+| `verify_findings.py` | `notes/findings.md` | plain + `--mutant` |
+| `verify_index_design.py` | `notes/index-design.md` | plain + `--mutant` |
+| `verify_named_conjectures.py` | `notes/named-conjectures.md` | plain + `--mutant` |
+| `verify_named_results.py` | `notes/named-results.md` | plain + `--mutant` |
+| `verify_scope_exclusions.py` | `notes/scope-exclusions.md` | plain + `--mutant` |
+| `verify_sources.py` | `notes/sources.md` | plain + `--mutant` |
+| `verify_subfinding_pairs.py` | `notes/subfinding-pairs.md` | plain + `--mutant` |
+| `verify_subfindings.py` | `notes/subfindings.tsv` | plain + `--mutant` |
+| `verify_summaries.py` | `notes/summaries/` | plain + `--mutant`, no page argument |
+| `verify_t0_chains.py` | `notes/t0-chains.md` | plain + `--mutant` |
+| `verify_upstream_history.py` | `upstream_history/` — the three pages, outside `notes/` | plain + `--mutant` |
+| `verify_verification_dirs.py` | `notes/verification-dirs.md` | plain + `--mutant` |
+
+`verify_conjecture_standing.py` is the gap: the gate list runs it plain only, so its six mutants are
+not run by the gate. Measured 2026-10-09 by hand — `mutants 6  uncaught 0 []`, exit 0 — and adding it
+to the list is part of `math-8ou`.
 
 `verify_script_ownership.py` — this page's own checker — is not in the table: a checker cannot list
 itself as its input. It is the 19th checker and the 44th script the run counts.
@@ -192,6 +215,36 @@ block. "Before this pass" is
 pinned to the commit that created this page, read at its parent, not to `HEAD`: `HEAD` moves every
 time this page is edited, so a check keyed to it re-pins the baseline on each edit, and the naming
 that pass added then reads as already present and the recorded gap vanishes.
+
+## Scratch: the fourth class
+
+The three tables above cover `notes/scripts/*.py`. The fourth class the inventory records is the
+scratch: the probes, drafts, baselines and gate reports that a session writes and that never become
+repo content. The rule is a location rule — **scratch lives under `.qwen/tmp/`, a permanent script
+lives under `notes/scripts/`** — and `.gitignore` keeps `.qwen/` (other than `.qwen/skills/`) out of
+git, so nothing in the scratch tree is tracked and no checker here reads it. A probe that answers one
+question stays where it is and is deleted; a probe that a later bead re-runs is promoted, gets a row
+in the tables above, and only then gets a gate command.
+
+Measured 2026-10-09 over `.qwen/tmp/`: **367** top-level files, **7,116** files including
+subdirectories, **14** subdirectories. By top-level suffix: **220** `.txt`, **70** `.py`, **43** `.md`,
+**19** `.tsv`, **3** `.sh`, and **12** files in the remaining suffixes. The largest trees are gate and
+render snapshots — `reports/` **215**, `idx_pre_sweep/`, `idx_run1/` and `idx_run2/` at **1,052** each,
+`index-run1/` **1,049**, `index_run1/` and `index_run2/` at **1,050** each, `lon2/` **85**, `lon1/`
+**63**, `leanout/` **38**, `msgs/` **34**.
+
+Two of the **3** `.sh` files are the gate list and its driver, `gate.sh` and `gate_driver.sh`, and
+they are the scratch scripts that must be promoted: the gate is the test this tree has, and a test
+that lives in an untracked directory is not a test the next session can run. `math-8ou` promotes both,
+deletes the one-off probes (the **70** top-level `.py` files are probe families — `hqd5_probe*.py` at
+16, `e8k_*.py` at 8, the `001-*` and `probe_*` sets — plus the four `/tmp` trees `stage5/`,
+`portcheck/`, `portcheck2/`, `pprobe/` and the six named `/tmp` one-offs), and records the
+one-driver and group-kill rules the gate runs need.
+
+The scratch tree is not a record. `.qwen/tmp/n5d3-draft.md` is a working draft whose tail is the
+state a compacted session resumes from, and `.qwen/tmp/canonical_counts.md` is the count sheet the
+gate reports are checked against; both are untracked, and the findings they carry are moved into
+tracked files under `notes/` before the bead that produced them closes.
 
 ## Not checked
 
