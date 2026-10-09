@@ -2,7 +2,7 @@
 
 Measured 2026-10-09 by `python3 notes/scripts/verify_script_ownership.py` — report-only, it writes
 nothing, and every count below is re-derived by that run. The page answers one question: for each of
-the **1,104** files under `notes/` (the scripts excluded), which is whose bytes. A generated file is
+the **1,105** files under `notes/` (the scripts excluded), which is whose bytes. A generated file is
 changed by editing its generator and re-rendering; a hand-written file is edited directly. Ownership
 is per file, and the checker exits 1 on a file no rule owns.
 
@@ -106,8 +106,8 @@ itself as its input. It is the 19th checker and the 44th script the run counts.
 | `notes/index/` | **1,049** | generated — `build_index.py` |
 | `notes/summaries/` | **21** | hand-written — the reading record |
 | `notes/*.tsv` | **8** | **6** generated, **2** hand-authored |
-| `notes/*.md` | **26** | hand-written — **15** with a checker, **11** without |
-| `notes/` total, scripts excluded | **1,104** | — |
+| `notes/*.md` | **27** | hand-written — **15** with a checker, **12** without |
+| `notes/` total, scripts excluded | **1,105** | — |
 
 The generated TSVs are the six writer targets. The two hand-authored tables are:
 
@@ -116,11 +116,13 @@ The generated TSVs are the six writer targets. The two hand-authored tables are:
 | `notes/topics.tsv` | The curated topic vocabulary. `measure_topics.py --check` re-measures its 92 rows and exits 1 when a recorded count drifts; `build_index.py` reads it and renders `notes/index/topics-rendered.tsv`. A generated file inside `notes/index/` is overwritten by the next render, which is why the vocabulary lives above that tree. |
 | `notes/conjecture-standing.tsv` | The training-data prior. Its `standing_prior_2025` column is the assistant's memory at an early-2025 cutoff, self-rated by `prior_confidence`; no script can derive a memory, and `verify_conjecture_standing.py` checks the rows against the ledger and `overview.tex` rather than regenerating them. |
 
-The 11 pages with no checker are `notes/README.md`, `notes/conjecture-standing.md`,
-`notes/counterexample-tag.md`, `notes/index-links.md`, `notes/links.md`, `notes/names.md`,
-`notes/proof-density.md`, `notes/resolution-tag.md`, `notes/summaries-workflow.md`,
+The 12 pages with no checker are `notes/README.md`, `notes/conjecture-standing.md`,
+`notes/counterexample-tag.md`, `notes/index-links.md`, `notes/links.md`, `notes/linting.md`,
+`notes/names.md`, `notes/proof-density.md`, `notes/resolution-tag.md`, `notes/summaries-workflow.md`,
 `notes/t0-triage.md` and `notes/topics.md`. Their counts are reproduced by the report-only scripts
-above; nothing verifies them against the page.
+above; nothing verifies them against the page. `notes/linting.md` is the one page in that set whose
+counts come from tools outside this tree — the three linter commands it names, run from the untracked
+`.venv/`.
 
 ## One basename is shared
 

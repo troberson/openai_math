@@ -285,9 +285,9 @@ lives in this file and nowhere else.
   was added.** Findings in `notes/proof-density.md`.
 - Distinguish generated from hand-written **before** editing anything under `notes/`: the ownership
   manifest is `notes/scripts/README.md`, and it is the only place that answers "whose bytes are
-  this". Scripts and generated files are **not** 1-to-1: of the **40** scripts, **7** write
+  this". Scripts and generated files are **not** 1-to-1: of the **43** scripts, **7** write
   (`build_catalog.py`, `build_sources.py`, `build_index.py`, `compare_abstracts.py` — with `--tsv`
-  only — `extract_formalization_deps.py`, `extract_links.py`, `extract_subfindings.py`) and **33**
+  only — `extract_formalization_deps.py`, `extract_links.py`, `extract_subfindings.py`) and **36**
   write nothing, and `build_index.py` alone renders **1,049** files. Of the **8** top-level
   `notes/*.tsv`, **6** are generator output and **2** are hand-authored — `notes/topics.tsv` (the
   curated vocabulary `build_index.py` reads) and `notes/conjecture-standing.tsv` (the training-data
@@ -297,6 +297,12 @@ lives in this file and nowhere else.
   rendered topic table is `notes/index/topics-rendered.tsv`, renamed from `topics.tsv` because the
   vocabulary's header ends `status  note` where the render's ends `status  page`, which made a
   reference to `topics.tsv` without its directory ambiguous.
+- Lint `notes/scripts/` with `.venv/bin/ruff check notes/scripts/`, `.venv/bin/mypy notes/scripts/`
+  and `.venv/bin/pylint notes/scripts/` — all three exit 0. The venv is `.venv/` (uv-managed,
+  untracked, CPython 3.12.13) and the configs are `ruff.toml`, `mypy.ini` and `.pylintrc` at the
+  repository root; `notes/linting.md` records the tool versions, every exemption with the count it
+  covers, and the mypy strict-probe backlog. A linter autofix is a corpus-wide edit: prove it with
+  the twice-run gate, not with the linter's own exit code.
 - Project skills live in `.qwen/skills/` — `proof-triage` routes ledger work,
   `auto-skill-lean-formalization-coverage-audit` carries the measurement method.
 
