@@ -1,0 +1,14 @@
+{%- macro link(text, href) -%}[{{ text }}]({{ href }}){%- endmacro -%}
+# Topic: {{ term }}
+
+{{ rec.families | length }} families · pattern `{{ rec.pattern }}` · hits by layer: title {{ rec.title | length }} · abstract {{ rec.abstract | length }} · scope {{ rec.scope | length }} · path {{ rec.path | length }}
+
+{% if not rec.families %}No family matches this pattern. That is a measured statement about the corpus, not a defect: the term was proposed, matched, and returned nothing.
+{% else %}A family is listed when the pattern hits its title, its abstract, its scope note, or the Lean file paths reached from its comparator configs. The match is a keyword floor, not a judgement: read the family page before treating a listing as a claim about what the result is about.
+
+{{ ["Family", "Title", "T", "A", "S", "P"] | row }}
+|---|---|---|---|---|---|
+{% for f in rec.families | sort %}{{ [link(f, "../" ~ page_of[f]), fams[f].title, "yes" if f in rec.title else "—", "yes" if f in rec.abstract else "—", "yes" if f in rec.scope else "—", "yes" if f in rec.path else "—"] | row }}
+{% endfor %}
+{% endif %}
+

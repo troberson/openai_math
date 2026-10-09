@@ -214,51 +214,15 @@ def family_page(r, mans, cfgs, decls, tfiles, challenges, main_results, summary_
 
 def discipline_page(discipline, rows):
     tier = collections.Counter(r["tier"] for r in rows)
-    L = [f"# {discipline}", ""]
-    L.append(f"{len(rows)} families · {sum(r['paps'] for r in rows)} manuscripts · "
-             f"{sum(r['paps_form'] for r in rows)} formalized at source level · "
-             f"{sum(1 for r in rows if r['scope_note'] == '1')} scope notes · "
-             f"{sum(r['chal'] for r in rows)} comparator configs · "
-             f"{sum(1 for r in rows if r['trace'])} reasoning traces · "
-             f"{sum(r['verification'] for r in rows)} verification bundles")
-    L.append("")
-    L.append("Tier: " + " · ".join(f"{t} {tier.get(t, 0)}" for t in ("T3", "T2", "T1", "T0")))
-    L.append("")
-    L.append(row(["Family", "Title", "Tier", "Mss", "Form.", "Scope", "Configs", "Trace"]))
-    L.append("|---|---|---|---|---|---|---|---|")
-    for r in sorted(rows, key=lambda x: x["fam"]):
-        L.append(row([f"[{r['fam']}](../{r['page']})", r["title"], r["tier"], r["paps"],
-                      r["paps_form"], "yes" if r["scope_note"] == "1" else "—", r["chal"],
-                      "yes" if r["trace"] else "—"]))
-    L.append("")
-    return "\n".join(L) + "\n"
+    return ENV.get_template("discipline.md.j2").render(
+        discipline=discipline, rows=rows, UP=UP,
+        tier_line=" · ".join(f"{t} {tier.get(t, 0)}" for t in ("T3", "T2", "T1", "T0")))
 
 
 def topic_page(term, rec, fams, page_of):
     """One page per vocabulary term: the pattern, its yield by layer, and its families."""
-    L = [f"# Topic: {term}", ""]
-    L.append(f"{len(rec['families'])} families · pattern `{rec['pattern']}` · hits by layer: "
-             f"title {len(rec['title'])} · abstract {len(rec['abstract'])} · "
-             f"scope {len(rec['scope'])} · path {len(rec['path'])}")
-    L.append("")
-    if not rec["families"]:
-        L.append("No family matches this pattern. That is a measured statement about the corpus, "
-                 "not a defect: the term was proposed, matched, and returned nothing.")
-        L.append("")
-        return "\n".join(L) + "\n"
-    L.append("A family is listed when the pattern hits its title, its abstract, its scope note, "
-             "or the Lean file paths reached from its comparator configs. The match is a keyword "
-             "floor, not a judgement: read the family page before treating a listing as a claim "
-             "about what the result is about.")
-    L.append("")
-    L.append(row(["Family", "Title", "T", "A", "S", "P"]))
-    L.append("|---|---|---|---|---|---|")
-    for f in sorted(rec["families"]):
-        L.append(row([f"[{f}](../{page_of[f]})", fams[f]["title"],
-                      *["yes" if f in rec[k] else "—" for k in ("title", "abstract",
-                                                                 "scope", "path")]]))
-    L.append("")
-    return "\n".join(L) + "\n"
+    return ENV.get_template("topic.md.j2").render(term=term, rec=rec, fams=fams,
+                                                  page_of=page_of)
 
 
 # The six layers a name can hit, and the provenance each one carries. The bead's point:
@@ -282,116 +246,36 @@ NAME_SOURCES = [
 
 def name_page(r, fams, page_of, dir2fam, dir2pdf, cfg2fams):
     """One page per subject name: families by layer, manuscripts, declarations, spellings."""
-    name = r["name"]
     ms_fams = {f for f, _ in r["ms_title"]}
     decl_fams = sorted({f for stem, _, _ in r["decl"] for f in cfg2fams.get(stem, ())})
     title_fams = set(r["fam_title_fams"]) | ms_fams | set(r["env_title_fams"]) | set(decl_fams)
     counts = {"F": len(r["fam_title_fams"]), "M": len(ms_fams), "E": len(r["env_title_fams"]),
               "D": len(decl_fams), "b": len(r["body_fams"]), "B": len(r["bib_fams"])}
-    L = [f"# Name: {name}", ""]
-    L.append(f"{len(r['fams'])} families · subject name · {len(title_fams)} carried by a title "
-             f"or a declaration · {len(r['body_fams'])} by prose · {len(r['bib_fams'])} by "
-             f"bibliography author")
-    L.append("")
-    L.append("A name page exists because a **title** layer (a family title in `overview.tex`, a "
-             "manuscript directory name, the optional title of a statement environment) or a "
-             "`main_results` **declaration** name carries this name. Those hits make it a subject. "
-             "The prose and bibliography columns are listed as citation evidence: a body paragraph "
-             "that mentions a name says the manuscript cites it, not that the result is about it. "
-             "A name that never reaches a title layer has no page — it is a row in "
-             "[`../names.tsv`](../names.tsv) with `role = citation`.")
-    L.append("")
-    L.append(f"Prose counts: {r['cap']} capitalized occurrences, {r['mid']} of them mid-sentence, "
-             f"{r['low']} lowercase. The mid-sentence count is what separates a surname from an "
-             f"English word; the rule and its measurements live in "
-             f"[`notes/names.md`](../../names.md).")
-    L.append("")
-    L.append("## Provenance by source")
-    L.append("")
-    L.append(row(["Source", "Layer", "Families", "What a hit means here"]))
-    L.append("|---|---|---|---|")
-    for flag, src, layer, meaning in NAME_SOURCES:
-        L.append(row([f"`{flag}` — {src}", layer, counts[flag], meaning]))
-    L.append("")
-    L.append("## Families")
-    L.append("")
-    L.append(row(["Family", "Title", "F", "M", "E", "D", "b", "B"]))
-    L.append("|---|---|---|---|---|---|---|---|")
-    for f in r["fams"]:
-        flags = (f in r["fam_title_fams"], f in ms_fams, f in r["env_title_fams"],
-                 f in decl_fams, f in r["body_fams"], f in r["bib_fams"])
-        L.append(row([f"[{f}](../{page_of[f]})" if f in page_of else f, fams[f]["title"]]
-                     + ["yes" if c else "—" for c in flags]))
-    L.append("")
-
+    fam_rows = [(f, ["yes" if c else "—" for c in
+                     (f in r["fam_title_fams"], f in ms_fams, f in r["env_title_fams"],
+                      f in decl_fams, f in r["body_fams"], f in r["bib_fams"])])
+                for f in r["fams"]]
     ms = {}
     for _f, d in r["ms_title"]:
         ms.setdefault(d, set()).add("title")
     for d in r["body_ms"]:
         ms.setdefault(d, set()).add("prose")
-    L.append("## Manuscripts")
-    L.append("")
-    if ms:
-        L.append(row(["Dir", "Family", "Where the name appears", "PDF"]))
-        L.append("|---|---|---|---|")
-        for d in sorted(ms):
-            f = dir2fam.get(d, "")
-            L.append(row([f"[`{d}`]({UP}preprints/{d}/)",
-                          f"[{f}](../{page_of[f]})" if f in page_of else "—",
-                          " + ".join(sorted(ms[d])),
-                          f"[{base(dir2pdf[d])}]({UP}{dir2pdf[d]})" if dir2pdf.get(d) else "—"]))
-        L.append("")
-        L.append("`title` means the name is in the manuscript directory name; `prose` means it "
-                 "appears capitalized in that manuscript's body text with its bibliography "
-                 "stripped. A `prose`-only row is a citation.")
-    else:
-        L.append("No manuscript directory name and no manuscript body paragraph carries this "
-                 "name; its hits are the family title, the theorem-environment titles, the "
-                 "declaration names, and the bibliography.")
-    L.append("")
+    ms_rows = [(d, dir2fam.get(d, ""), " + ".join(sorted(ms[d])), dir2pdf.get(d, ""))
+               for d in sorted(ms)]
+    decl_rows = [(stem, d, fp,
+                  " · ".join(f"[{x}](../{page_of[x]})" for x in cfg2fams.get(stem, ())) or "—")
+                 for stem, d, fp in r["decl"]]
+    return ENV.get_template("name.md.j2").render(
+        r=r, fams=fams, page_of=page_of, NAME_SOURCES=NAME_SOURCES, counts=counts,
+        fam_rows=fam_rows, ms_rows=ms_rows, decl_rows=decl_rows, title_fams=title_fams,
+        variants_join=" · ".join(f"`{v}`" for v in r["variants"]), name=r["name"], UP=UP)
 
-    L.append("## Lean declarations")
-    L.append("")
-    if r["decl"]:
-        L.append(row(["Config", "Declaration", "File", "Family"]))
-        L.append("|---|---|---|---|")
-        for stem, d, fp in r["decl"]:
-            L.append(row([f"[{stem}]({UP}lean/ComparatorChallenges/{stem}.json)", f"`{d}`",
-                          f"[{base(fp)}]({UP}lean/{fp})",
-                          " · ".join(f"[{x}](../{page_of[x]})" for x in cfg2fams.get(stem, ()))
-                          or "—"]))
-    else:
-        L.append("No `main_results` declaration name contains this name.")
-    L.append("")
 
-    L.append("## Theorem-environment titles")
-    L.append("")
-    if r["env_hits"]:
-        L.append("Up to 8 of the statement-environment titles that carry the name, verbatim with "
-                 "accents folded.")
-        L.append("")
-        L.append(row(["Family", "Environment title"]))
-        L.append("|---|---|")
-        for f, t in r["env_hits"]:
-            L.append(row([f"[{f}](../{page_of[f]})" if f in page_of else "—", t]))
-    else:
-        L.append("No statement environment carries this name in its optional title.")
-    L.append("")
-
-    L.append("## Spelling variants")
-    L.append("")
-    if len(r["variants"]) > 1:
-        L.append("Every form below normalizes to the key `%s`: accents folded, dash variants "
-                 "unified, possessives stripped, case lowered. " % name
-                 + " · ".join(f"`{v}`" for v in r["variants"]))
-    elif r["variants"]:
-        L.append("One surface form in prose: `%s`. The normalized key is `%s`."
-                 % (r["variants"][0], name))
-    else:
-        L.append("No capitalized prose occurrence; the key `%s` comes from a title, a "
-                 "declaration, or a bibliography author." % name)
-    L.append("")
-    return "\n".join(L) + "\n"
+def index_readme_page(disc_rows, topic_tbl, name_tbl, table_rows, recon_rows, counts):
+    """The entry point: tables arrive as cell lists, every prose count is passed in."""
+    return ENV.get_template("index-readme.md.j2").render(
+        disc_rows=disc_rows, topic_tbl=topic_tbl, name_tbl=name_tbl,
+        table_rows=table_rows, recon_rows=recon_rows, **counts)
 
 
 def main():
@@ -689,84 +573,23 @@ def main():
         "traces": len(trace_rows),
         "ver_dirs": sum(1 for r in manuscript_rows if r["verification"] == "1"),
     }
-    L = ["# The family index", ""]
-    L.append(f"Generated by `python3 notes/scripts/build_index.py` — {len(pages)} family pages, "
-             f"{len(disc_pages)} discipline pages, {len(topic_pages)} topic pages, this entry "
-             f"point, and the node and edge tables the pages are rendered from. Nothing here is "
-             f"hand-written: regenerate and diff.")
-    L.append("")
-    L.append("The schema is decided in [notes/index-design.md](../index-design.md): generated "
-             "markdown plus TSV in git, family pages with no manuscript pages, `notes/index/` as "
-             "the location, and the curated vocabulary at `notes/topics.tsv` as the topic source.")
-    L.append("")
-    L.append("## Disciplines")
-    L.append("")
-    L.append(row(["Discipline", "Families", "Manuscripts", "Formalized", "Scope notes",
-                  "Configs", "Traces", "Verification"]))
-    L.append("|---|---|---|---|---|---|---|---|")
+    disc_rows = []
     for discipline in sorted(by_disc):
         rows = by_disc[discipline]
-        L.append(row([f"[{discipline}](disciplines/{disc_slug(discipline)}.md)", len(rows),
-                      sum(r["paps"] for r in rows), sum(r["paps_form"] for r in rows),
-                      sum(1 for r in rows if r["scope_note"] == "1"),
-                      sum(r["chal"] for r in rows), sum(1 for r in rows if r["trace"]),
-                      sum(r["verification"] for r in rows)]))
-    L.append("")
-    L.append("## Topics")
-    L.append("")
-    L.append(f"Topics are a curated keyword vocabulary in [`notes/topics.tsv`](../topics.tsv) "
-             f"(the hand-written source of truth, with the reading verdict for each term in "
-             f"[`notes/topics.md`](../topics.md)), measured over four texts per family: title, "
-             f"abstract, scope note, and the derived Lean file paths. A family carries zero or "
-             f"more topics, so this is a label on top of the discipline partition, not a "
-             f"replacement for it. {len(topic_pages)} terms, "
-             f"{len(edges['edges/family-topic.tsv'])} assignments, "
-             f"{len([r for r in topic_rows if not r['families']])} terms with no hit.")
-    L.append("")
-    L.append(row(["Topic", "Families", "Title", "Abstract", "Scope", "Path"]))
-    L.append("|---|---|---|---|---|---|")
-    for r in sorted(topic_rows, key=lambda r: (-len(r["families"]), r["term"])):
-        L.append(row([f"[{r['term']}](topics/{r['term']}.md)", len(r["families"]),
-                      len(r["title"]), len(r["abstract"]), len(r["scope"]), len(r["path"])]))
-    L.append("")
-    L.append("## Names")
-    L.append("")
-    L.append(f"Names are measured over six layers by "
-             f"[`notes/scripts/measure_names.py`](../scripts/measure_names.py) and recorded in "
-             f"[`notes/names.md`](../names.md): four title layers (family titles, manuscript "
-             f"directory names, the optional titles of statement environments, the `main_results` "
-             f"declaration names) and two body layers (manuscript prose with the bibliography "
-             f"stripped, and the author fields of the shipped `.bib` files). A name is a "
-             f"**subject** when a title layer or a declaration carries it and a **citation** when "
-             f"only prose or a bibliography does, so only subject names get a page: "
-             f"{len(name_pages)} pages in [`names/`](names/) over {len(name_rows)} measured names. "
-             f"The other {len(citation_rows)} are bibliography surnames that never reach a title "
-             f"layer — rows in [`names.tsv`](names.tsv) with `role = citation`, not pages. "
-             f"{len(edges['edges/family-name.tsv'])} family-name edges cover {len(name_covered)} "
-             f"of {len(ledger)} families; "
-             f"{len(name_rows) - len([r for r in name_rows if r['fams']])} names resolve to no "
-             f"family. Each page states, per source, which layer produced the hit: a name in a "
-             f"body paragraph is a citation, not a subject.")
-    L.append("")
-    L.append(row(["Name", "Families", "F", "M", "E", "D", "b", "B"]))
-    L.append("|---|---|---|---|---|---|---|---|")
-    for r in sorted(subject_rows, key=lambda r: (-len(r["fams"]), r["name"]))[:40]:
-        L.append(row([f"[{r['name']}](names/{r['name']}.md)", len(r["fams"]),
-                      len(r["fam_title_fams"]), len({f for f, _ in r["ms_title"]}),
-                      len(r["env_title_fams"]), len(r["decl"]),
-                      len(r["body_fams"]), len(r["bib_fams"])]))
-    L.append("")
-    L.append("The 40 subject names that reach the most families; "
-             "[`names.tsv`](names.tsv) carries all "
-             f"{len(name_table_rows)}. Column letters are the layers of the name pages: "
-             "`F` family title, `M` manuscript directory, `E` theorem-environment title, "
-             "`D` declaration, `b` prose, `B` bib author.")
-    L.append("")
-    L.append("## Tables")
-    L.append("")
-    L.append(row(["Table", "Rows", "Key", "What it carries"]))
-    L.append("|---|---|---|---|")
-    for name, rows_, key, what in (
+        disc_rows.append([f"[{discipline}](disciplines/{disc_slug(discipline)}.md)", len(rows),
+                          sum(r["paps"] for r in rows), sum(r["paps_form"] for r in rows),
+                          sum(1 for r in rows if r["scope_note"] == "1"),
+                          sum(r["chal"] for r in rows), sum(1 for r in rows if r["trace"]),
+                          sum(r["verification"] for r in rows)])
+    topic_tbl = [[f"[{r['term']}](topics/{r['term']}.md)", len(r["families"]),
+                  len(r["title"]), len(r["abstract"]), len(r["scope"]), len(r["path"])]
+                 for r in sorted(topic_rows, key=lambda r: (-len(r["families"]), r["term"]))]
+    name_tbl = [[f"[{r['name']}](names/{r['name']}.md)", len(r["fams"]),
+                 len(r["fam_title_fams"]), len({f for f, _ in r["ms_title"]}),
+                 len(r["env_title_fams"]), len(r["decl"]),
+                 len(r["body_fams"]), len(r["bib_fams"])]
+                for r in sorted(subject_rows, key=lambda r: (-len(r["fams"]), r["name"]))[:40]]
+    table_rows = [[name, len(rows_), key, what] for name, rows_, key, what in (
         ("`families.tsv`", family_rows, "`fam`",
          "One row per catalogued family, with its page path and claim-shape columns."),
         ("`manuscripts.tsv`", manuscript_rows, "preprint dir slug",
@@ -804,68 +627,42 @@ def main():
         ("`edges/family-name.tsv`", edges["edges/family-name.tsv"], "`fam` + name",
          "Family→subject-name edges, with the layers that hit (F/M/E/D/b/B). Subject names only: "
          "a citation-only name has no family edge, only a `names.tsv` row."),
-    ):
-        L.append(row([name, len(rows_), key, what]))
-    L.append("")
-    L.append("## Reconciliation")
-    L.append("")
-    L.append(row(["Quantity", "Canonical (build_catalog joins)", "Rendered here"]))
-    L.append("|---|---|---|")
-    for k in ("families", "manuscripts", "formalized", "scope_notes", "challenges", "traces",
-              "ver_dirs"):
-        L.append(row([k.replace("_", " "), canon[k], rendered[k]]))
-    L.append(row(["family pages", canon["families"], len(pages)]))
-    L.append(row(["discipline pages", len(by_disc), len(disc_pages)]))
-    L.append(row(["topic pages", len(topic_rows), len(topic_pages)]))
-    L.append(row(["topic assignments", sum(len(r["families"]) for r in topic_rows),
-                  len(edges["edges/family-topic.tsv"])]))
-    L.append(row(["families with a topic", len({f for r in topic_rows for f in r["families"]}),
-                  sum(1 for r in family_rows if r["topics"])]))
-    L.append(row(["name pages", name_meta["subject"], len(name_pages)]))
-    L.append(row(["names measured", len(name_rows), len(name_table_rows)]))
-    L.append(row(["name→family edges", sum(len(r["fams"]) for r in subject_rows),
-                  len(edges["edges/family-name.tsv"])]))
-    L.append(row(["families with a name hit", len(name_covered), len({r["fam"] for r in family_rows})]))
-    L.append(row(["trace families with a subject name", len(trace_fams & name_covered),
-                  len(trace_fams)]))
-    L.append("")
-    L.append("## Not checked")
-    L.append("")
-    L.append("- Nothing here says a proof is correct. `formalized` is the yaml `sources:` flag at "
-             "source level; `review: status: unchecked` and `automation: methods: [agent]` apply.")
-    L.append("- No `.lean` file was opened and nothing was built, so a Lean link says the yaml "
-             "names a file that exists on disk, not that it elaborates.")
-    L.append("- Citation edges are untyped: the release records no builds-on / contrasts-with "
-             "relation, so an edge is a citation choice, not consequence.")
-    L.append("- The family→Lean reach is derived through scope-note config links. The release "
-             "ships no manuscript→Lean edge, so the formalized manuscripts are not individually "
-             "linked to a Lean file.")
-    L.append("- Claim shapes are keyword floors carried from `notes/catalog.tsv`, not a census: "
-             "families match three or more shapes and others match none.")
-    L.append("- Topics are a curated keyword floor, not a classification: a family is listed under "
-             "a term because the term's pattern hit its title, abstract, scope note, or derived "
-             "Lean paths. `notes/topics.md` records the incidental matches each term was measured "
-             "to carry, and the path layer is derived, not shipped.")
-    L.append("- Link targets were checked for existence at render time, not for content: a link "
-             "resolving to a file says the file is there, not that it says what the page claims. "
-             "`notes/scripts/check_index_links.py` re-derives the check from disk over every "
-             "rendered page — 66107 links, 0 broken, 17700 of them resolving to a directory — "
-             "and `notes/index-links.md` records what it checked and what it did not.")
-    L.append("- Names are a keyword floor, not a census. The name-vs-word test is corpus-internal "
-             "(mid-sentence capitalization counts measured in this corpus); no external name "
-             "dictionary was consulted, so a surname that never reaches a title layer is invisible "
-             "as a subject.")
-    L.append("- A `b`/`B` hit is a citation, not a subject: prose hits are counted with the "
-             "bibliography and the cite/cross-reference braces stripped, and a name page lists "
-             "them as evidence of where the name is cited, never as the scope of a result.")
-    L.append("- Citation-only names carry no page, so a name search that finds no page is not "
-             "evidence the corpus never mentions the name — check `names.tsv` for the "
-             "`role = citation` rows.")
-    L.append("- Family pages do not link name pages: the average family carries 27 subject names, "
-             "which is a table, not a header row. The name→family direction is the one the index "
-             "carries.")
-    L.append("")
-    write("README.md", "\n".join(L) + "\n")
+    )]
+    recon_rows = [[k.replace("_", " "), canon[k], rendered[k]]
+                  for k in ("families", "manuscripts", "formalized", "scope_notes", "challenges",
+                            "traces", "ver_dirs")]
+    recon_rows += [
+        ["family pages", canon["families"], len(pages)],
+        ["discipline pages", len(by_disc), len(disc_pages)],
+        ["topic pages", len(topic_rows), len(topic_pages)],
+        ["topic assignments", sum(len(r["families"]) for r in topic_rows),
+         len(edges["edges/family-topic.tsv"])],
+        ["families with a topic", len({f for r in topic_rows for f in r["families"]}),
+         sum(1 for r in family_rows if r["topics"])],
+        ["name pages", name_meta["subject"], len(name_pages)],
+        ["names measured", len(name_rows), len(name_table_rows)],
+        ["name→family edges", sum(len(r["fams"]) for r in subject_rows),
+         len(edges["edges/family-name.tsv"])],
+        ["families with a name hit", len(name_covered), len({r["fam"] for r in family_rows})],
+        ["trace families with a subject name", len(trace_fams & name_covered), len(trace_fams)],
+    ]
+    counts = {
+        "n_pages": len(pages),
+        "n_disc": len(disc_pages),
+        "n_topic": len(topic_pages),
+        "n_assign": len(edges["edges/family-topic.tsv"]),
+        "n_nohit": len([r for r in topic_rows if not r["families"]]),
+        "n_name_pages": len(name_pages),
+        "n_name_rows": len(name_rows),
+        "n_cite": len(citation_rows),
+        "n_name_edges": len(edges["edges/family-name.tsv"]),
+        "n_name_covered": len(name_covered),
+        "n_ledger": len(ledger),
+        "n_nofam": len(name_rows) - len([r for r in name_rows if r["fams"]]),
+        "n_name_table": len(name_table_rows),
+    }
+    write("README.md", index_readme_page(disc_rows, topic_tbl, name_tbl, table_rows,
+                                         recon_rows, counts))
 
     # ---- report: every count the entry point prints, plus the reconciliation ----
     broken = [f"{p} -> {h}" for p, h in links

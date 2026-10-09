@@ -1,0 +1,12 @@
+{%- macro link(text, href) -%}[{{ text }}]({{ href }}){%- endmacro -%}
+# {{ discipline }}
+
+{{ rows | length }} families · {{ rows | sum(attribute="paps") }} manuscripts · {{ rows | sum(attribute="paps_form") }} formalized at source level · {{ rows | selectattr("scope_note", "equalto", "1") | list | length }} scope notes · {{ rows | sum(attribute="chal") }} comparator configs · {{ rows | selectattr("trace") | list | length }} reasoning traces · {{ rows | sum(attribute="verification") }} verification bundles
+
+Tier: {{ tier_line }}
+
+{{ ["Family", "Title", "Tier", "Mss", "Form.", "Scope", "Configs", "Trace"] | row }}
+|---|---|---|---|---|---|---|---|
+{% for r in rows | sort(attribute="fam") %}{{ [link(r.fam, "../" ~ r.page), r.title, r.tier, r.paps, r.paps_form, "yes" if r.scope_note == "1" else "—", r.chal, "yes" if r.trace else "—"] | row }}
+{% endfor %}
+

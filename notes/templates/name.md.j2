@@ -1,0 +1,62 @@
+{%- macro link(text, href) -%}[{{ text }}]({{ href }}){%- endmacro -%}
+{%- macro fl(f, fb) -%}{% if f in page_of %}{{ link(f, "../" ~ page_of[f]) }}{% else %}{{ fb }}{% endif %}{%- endmacro -%}
+# Name: {{ name }}
+
+{{ r.fams | length }} families · subject name · {{ title_fams | length }} carried by a title or a declaration · {{ r.body_fams | length }} by prose · {{ r.bib_fams | length }} by bibliography author
+
+A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../names.tsv) with `role = citation`.
+
+Prose counts: {{ r.cap }} capitalized occurrences, {{ r.mid }} of them mid-sentence, {{ r.low }} lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
+
+## Provenance by source
+
+{{ ["Source", "Layer", "Families", "What a hit means here"] | row }}
+|---|---|---|---|
+{% for flag, src, layer, meaning in NAME_SOURCES %}{{ ["`" ~ flag ~ "` — " ~ src, layer, counts[flag], meaning] | row }}
+{% endfor %}
+
+## Families
+
+{{ ["Family", "Title", "F", "M", "E", "D", "b", "B"] | row }}
+|---|---|---|---|---|---|---|---|
+{% for f, flags in fam_rows %}{{ ([fl(f, f), fams[f].title] + flags) | row }}
+{% endfor %}
+
+## Manuscripts
+
+{% if ms_rows %}{{ ["Dir", "Family", "Where the name appears", "PDF"] | row }}
+|---|---|---|---|
+{% for d, f, where, pdf in ms_rows %}{{ [link("`" ~ d ~ "`", UP ~ "preprints/" ~ d ~ "/"), fl(f, "—"), where, link(pdf | base, UP ~ pdf) if pdf else "—"] | row }}
+{% endfor %}
+
+`title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.
+{% else %}No manuscript directory name and no manuscript body paragraph carries this name; its hits are the family title, the theorem-environment titles, the declaration names, and the bibliography.
+{% endif %}
+
+## Lean declarations
+
+{% if decl_rows %}{{ ["Config", "Declaration", "File", "Family"] | row }}
+|---|---|---|---|
+{% for stem, d, fp, famlinks in decl_rows %}{{ [link(stem, UP ~ "lean/ComparatorChallenges/" ~ stem ~ ".json"), "`" ~ d ~ "`", link(fp | base, UP ~ "lean/" ~ fp), famlinks] | row }}
+{% endfor %}
+{% else %}No `main_results` declaration name contains this name.
+{% endif %}
+
+## Theorem-environment titles
+
+{% if r.env_hits %}Up to 8 of the statement-environment titles that carry the name, verbatim with accents folded.
+
+{{ ["Family", "Environment title"] | row }}
+|---|---|
+{% for f, t in r.env_hits %}{{ [fl(f, "—"), t] | row }}
+{% endfor %}
+{% else %}No statement environment carries this name in its optional title.
+{% endif %}
+
+## Spelling variants
+
+{% if r.variants | length > 1 %}Every form below normalizes to the key `{{ name }}`: accents folded, dash variants unified, possessives stripped, case lowered. {{ variants_join }}
+{% elif r.variants %}One surface form in prose: `{{ r.variants[0] }}`. The normalized key is `{{ name }}`.
+{% else %}No capitalized prose occurrence; the key `{{ name }}` comes from a title, a declaration, or a bibliography author.
+{% endif %}
+
