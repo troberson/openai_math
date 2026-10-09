@@ -8,14 +8,15 @@ those from the LaTeX source, so every sentence a page writes can cite a line.
 Rules, and why they are these:
 - The main file is the one `build_sources.main_tex_of` resolves (a root named `main.tex`,
   then `paper.tex`, then the single root). A root is a `.tex` declaring `\\documentclass`
-  at the start of a line; a substring count of the command reads 717 dirs and 5 roots,
-  because a bundled PGF macro *mentions* the command.
+  at the start of a line; over the 749 manuscript directories on disk a substring count of
+  the command reads 740 dirs with exactly one root and 6 with two, where the line-start rule
+  reads 741 and 4, because a bundled PGF macro *mentions* the command.
 - Statements are `\\begin{X}` for X declared by `\\newtheorem` in the same directory, minus
   the non-statement names (`definition`, `remark`, ...). The corpus-wide figure under this
-  rule is 21,402; the six-name list is 21,317.
+  rule is 21,288; the six-name list is 21,203.
 - A statement's title is its **optional** bracket argument, which most environments leave
-  empty: 1,498 of 2,270 headline `theorem` begins are titled per line. A title that spans a
-  newline is missed by a per-line scan (1,508 over the whole text).
+  empty: 1,609 of 2,410 headline `theorem` begins are titled per line. A title that spans a
+  newline is missed by a per-line scan (1,619 over the whole text).
 - `\\input`/`\\include` targets are printed, not followed: the section skeleton of a
   multi-file manuscript is per file, and following includes silently reorders a paper.
 """
