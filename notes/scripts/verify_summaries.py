@@ -15,10 +15,26 @@ S# to a file. Two passes read the same table:
 Pass A (the needle check: does the page contain the specific strings the reading pass recorded) is
 written per page against that page's own findings, so it is not promoted here.
 
+Passes B and C both prove things about the text at a cited line; neither says the line belongs to
+the family the page is about. An upstream update leaves the manuscripts it replaced on disk, tracked
+in git, with their names unchanged, so a page can stay green through B and C while describing a
+manuscript the release no longer names. Two more passes close that gap:
+
+  Pass D (supersession) - every manuscript directory the page names must be one the catalog's
+                      overview entry currently names, and it must be named by *this* family. A
+                      directory that is on disk and named by no family is a superseded manuscript.
+  Pass E (bare cites) - a citation in a unit that carries no quotation makes a location claim, and
+                      in a file whose blocks are keyed by family number (CONTENTS.md, overview.tex,
+                      README.md, notes/*.md) the only legal location is the family's own block.
+                      Files with no family key — manuscripts, Lean sources, yaml, tsv — are skipped:
+                      the pass makes no claim about them.
+
 --mutant proves the checker discriminates: it corrupts a real quotation in every quotation form the
-page actually uses (inline, inline wrapped across lines, block quote), invents one fabricated
-quotation, and asserts Pass C flags each while the real page stays silent. A form the page does not
-use is not tested, so the report names the form it corrupted.
+page actually uses (inline, inline wrapped across line breaks, block quote), invents one fabricated
+quotation, retargets the page's manuscript to a superseded sibling directory, and moves a bare
+locator citation to the line above the family's own block; it asserts the matching pass flags each
+while the real page stays silent. A form the page does not use is not tested, so the report names
+the form it corrupted.
 
 Usage: python3 notes/scripts/verify_summaries.py                 # every page under notes/summaries
        python3 notes/scripts/verify_summaries.py <page.md> ...   # named pages only
@@ -28,6 +44,9 @@ import argparse
 import re
 import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import build_catalog as B  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 SUMMARIES = ROOT / "notes" / "summaries"
@@ -39,6 +58,20 @@ QUOTE = re.compile(r"“([^”]{6,})”|\"([^\"]{6,})\"")
 LINK = re.compile(r"\]\(([^)\s]+)\)")
 ENTITY = re.compile(r"&(#[0-9]+|[a-zA-Z][a-zA-Z0-9]*);")
 TAG = re.compile(r"<[a-zA-Z/][^>]*>")
+PAPDIR = re.compile(r"preprints/([^/`\s]+)/")
+
+# Pass E applies only to files whose blocks are keyed by the family number, because that is the only
+# case where "the family's own block" is a fact the file itself records. Manuscript and Lean files
+# carry no family key, so the pass makes no claim about them.
+BLOCK_RULES = {
+    "CONTENTS.md": (re.compile(r"^\*\*(\d{1,3})\."), re.compile(r"^\*\*\d{1,3}\.")),
+    "overview.tex": (re.compile(r"^\\resultentry\{(\d{1,3})\}"), re.compile(r"^\\resultentry\{")),
+    "README.md": (re.compile(r"^\|\s*(\d{1,3})\s*\|"), None),
+}
+NOTE_ENTRY = re.compile(r"^- \*\*(\d{1,3})\*\*")
+# The Sources preamble demonstrates the marker syntax ("[S2:31] for one line"). Those tokens are an
+# example of the format, not a citation, so the unit that carries them makes no claim to check.
+FORMAT_EXAMPLE = "cited in the body as"
 
 
 class Page:
@@ -51,6 +84,8 @@ class Page:
         self.table = {}
         self.rows = []
         self.ambiguous = []
+        m = re.match(r"(\d{1,3})-", path.name)
+        self.fam = m.group(1) if m else None
         # Relative paths in the table are relative to the manuscript root the Sources prose names
         # first; the repository root is the fallback. Globbing preprints/* is deliberately not a
         # rule: build/main.tex, references.tex and README.md exist in many manuscript trees.
@@ -346,6 +381,125 @@ def blockquote_targets(page):
     return out
 
 
+_NAMED_CACHE = None
+
+
+def named_dirs():
+    """{manuscript dir name: families whose overview entry names it} — the release's own claim."""
+    global _NAMED_CACHE
+    if _NAMED_CACHE is None:
+        _, fams = B.parse_overview()
+        _NAMED_CACHE = {}
+        for fam, d in fams.items():
+            for p in d["tex_paps"]:
+                _NAMED_CACHE.setdefault(p.split("/")[1], set()).add(fam)
+    return _NAMED_CACHE
+
+
+def superseded_dir():
+    """A manuscript directory that is on disk and named by no family — the shape an update leaves behind."""
+    named = named_dirs()
+    for p in sorted((ROOT / "preprints").iterdir()):
+        if p.is_dir() and p.name not in named:
+            return p.name
+    return None
+
+
+def pass_d(page):
+    """Supersession. Every manuscript the page names must be one the catalog currently names for this family."""
+    named = named_dirs()
+    fam = page.fam
+    seen = {}
+    for n, line in enumerate(page.lines, 1):
+        for d in PAPDIR.findall(line):
+            seen.setdefault(d, n)
+    if fam is None:
+        print(f"NO FAMILY NUMBER in file name {page.path.name} — pass D cannot map the page to the catalog")
+        return len(seen), 1
+    problems = 0
+    for d, n in sorted(seen.items(), key=lambda kv: kv[1]):
+        owners = named.get(d)
+        if owners is None:
+            problems += 1
+            print(f"SUPERSEDED MANUSCRIPT [doc line {n}]: preprints/{d}/ is on disk and tracked, but no "
+                  f"family's overview entry names it — the release has moved on from this manuscript")
+        elif fam not in owners:
+            problems += 1
+            print(f"OFF-FAMILY MANUSCRIPT [doc line {n}]: preprints/{d}/ is named by "
+                  f"{', '.join(sorted(owners))}, not by family {fam}")
+    return len(seen), problems
+
+
+def family_blocks(rel, lines, fam):
+    """Line spans of family `fam`'s own block(s) in a file whose blocks are keyed by family number.
+
+    Returns None when the file carries no family key at all — a statement about the file, not about
+    the citation. A block runs from its start token to the line before the next family's start token.
+    """
+    rule = BLOCK_RULES.get(rel)
+    if rule is None:
+        if rel.startswith("notes/") and rel.endswith(".md"):
+            rule = (NOTE_ENTRY, NOTE_ENTRY)
+        else:
+            return None
+    start, nxt = rule
+    out, cur = [], None
+    for i, line in enumerate(lines, 1):
+        m = start.match(line)
+        if m and int(m.group(1)) == fam:
+            if nxt is None:
+                out.append((i, i))
+                continue
+            cur = i
+        elif nxt is not None and nxt.match(line):
+            if cur:
+                out.append((cur, i - 1))
+                cur = None
+    if cur:
+        out.append((cur, len(lines)))
+    return out
+
+
+def bare_locator_cites(page):
+    """Markers with line numbers, in units carrying no quoted span, into family-keyed files.
+
+    A unit with a quotation is judged by Pass C against the text it quotes. A unit with none makes a
+    location claim, and the only location a summary page may cite in a family-keyed file is that
+    family's own block — a page citing a neighbour's block is citing the wrong family's record.
+    """
+    if page.fam is None:
+        return []
+    fam = int(page.fam)
+    out = []
+    for start_line, unit, is_blockquote in units(page.lines):
+        if is_blockquote or FORMAT_EXAMPLE in unit or "Prior (my training data" in unit:
+            continue
+        if any(len(m.group(1) or m.group(2)) >= 12 for m in QUOTE.finditer(unit)):
+            continue
+        for _, sid, a, b in usable(page, markers(unit)):
+            if a is None:
+                continue
+            rel = page.table[sid][0]
+            bl = family_blocks(rel, page.lines_of(sid), fam)
+            if bl is None:
+                continue
+            out.append((start_line, sid, a, b, rel, bl))
+    return out
+
+
+def pass_e(page):
+    """Bare line citations into family-keyed files must land inside the family's own block."""
+    cites = problems = 0
+    for start_line, sid, a, b, rel, bl in bare_locator_cites(page):
+        cites += 1
+        if not any(s <= b and a <= e for s, e in bl):
+            problems += 1
+            near = ", ".join(f"{s}-{e}" for s, e in bl[:3]) if bl else "no block for this family"
+            print(f"CITE OUTSIDE FAMILY BLOCK [doc line {start_line}] {label(sid, a, b)} -> {rel}: "
+                  f"family {page.fam}'s block is {near}")
+    return cites, problems
+
+
 def mutants(page):
     """Corrupt a real quotation in every form the page uses, invent one, assert Pass C flags each."""
     text = "\n".join(page.lines)
@@ -376,6 +530,51 @@ def mutants(page):
         _, misses = pass_c(Page(page.path, lines))
         results.append(("A3 corrupts a block-quote attribution", misses > 0,
                         f"{misses} flagged (block quote at doc line {start_line})"))
+
+    # Mutant D: retarget the page's declared manuscript root to a superseded sibling — a directory
+    # that is on disk, tracked in git, and named by no family. Pass B stays green on it (the path
+    # resolves, the files exist); only Pass D sees that the release has moved on from it.
+    target = superseded_dir()
+    lines = list(page.lines)
+    for i, line in enumerate(lines):
+        m = PAPDIR.search(line)
+        if m and target:
+            lines[i] = line[:m.start(1)] + target + line[m.end(1):]
+            _, stale = pass_d(Page(page.path, lines))
+            results.append(("D retargets the manuscript to a superseded directory", stale > 0,
+                            f"{stale} flagged (preprints/{target}/ at doc line {i + 1})"))
+            break
+    else:
+        results.append(("D retargets the manuscript to a superseded directory", False,
+                        "no preprints/ path in the page"))
+
+    # Mutant E: move a bare locator citation to the line just above the family's own block. The
+    # marker still resolves, the line is in range and non-blank, and the file is the right file —
+    # Pass B is green and Pass C has nothing to compare, so only Pass E can see the mislocation.
+    locs = bare_locator_cites(page)
+    moved = False
+    for start_line, sid, a, b, rel, bl in locs:
+        if not bl:
+            continue
+        line = page.lines[start_line - 1]
+        new = bl[0][0] - 1
+        for m in MARKER.finditer(line):
+            if m.group(2) and int(m.group(2)) == a and f"S{m.group(1)}" == sid:
+                sep = (line[m.start(3) - 1] if m.group(3) else "")
+                tok = f"[S{m.group(1)}:{new}" + (f"{sep}{new}]" if m.group(3) else "]")
+                lines = list(page.lines)
+                lines[start_line - 1] = line[:m.start()] + tok + line[m.end():]
+                _, outside = pass_e(Page(page.path, lines))
+                results.append(("E moves a bare locator cite out of the family block", outside > 0,
+                                f"{outside} flagged ({label(sid, a, b)} -> {rel} at doc line {start_line}, "
+                                f"block starts {bl[0][0]})"))
+                moved = True
+                break
+        if moved:
+            break
+    if not moved:
+        results.append(("E moves a bare locator cite out of the family block", False,
+                        "no bare locator cite into a family-keyed file"))
 
     # Mutant B: a fabricated quotation attached to a line that already carries a citation.
     lines = list(page.lines)
@@ -418,13 +617,19 @@ def main():
         with contextlib.redirect_stdout(sink):
             positions, sources, links, problems = pass_b(page)
             spans, misses = pass_c(page)
+            dirs, stale = pass_d(page)
+            cites, outside = pass_e(page)
             print(f"--- pass B: {positions} marker positions against {sources} declared sources, "
                   f"{links} markdown links resolved from the page directory, {problems} problems")
             print(f"--- pass C: {spans} quoted spans checked against their cited lines, "
                   f"{misses} not verbatim")
+            print(f"--- pass D: {dirs} manuscript directories named by the page, {stale} superseded "
+                  f"or off-family")
+            print(f"--- pass E: {cites} bare line citations into family-keyed files, {outside} "
+                  f"outside the family's own block")
             unflagged = 0
             if args.mutant:
-                if misses:
+                if misses or problems or stale or outside:
                     print("--- mutants skipped: the real page is not silent")
                     unflagged = 2
                 else:
@@ -435,7 +640,7 @@ def main():
             sink.close()
         total_b += positions
         total_c += spans
-        total_problems += problems + misses + unflagged
+        total_problems += problems + misses + stale + outside + unflagged
         total_mutants += unflagged
     print(f"===== TOTAL {len(docs)} page(s): {total_b} marker positions, {total_c} quoted spans, "
           f"{total_problems} problems" + (f" ({total_mutants} undetected mutants)" if args.mutant else ""))
