@@ -281,6 +281,13 @@ tracked files under `notes/` before the bead that produced them closes.
   (`cech`, `kunneth`) went the same way; the sweep removed 3 files. Renaming the rendered topic table is
   the older case — `notes/index/topics.tsv` survived the rename and was deleted by hand. Page counts are
   measured consistent: **1,033** `.md` on disk against the **1,033** the render report claims.
+- The sweep is probe-verified on both branches (2026-10-09, `math-a0r.1`): a planted
+  `notes/index/names/zzz-sweep-probe.md` prints `stale swept 1 files ['names/zzz-sweep-probe.md']` and
+  is gone after the run; a planted page inside a new directory prints `empty dirs removed 1` and the
+  directory is gone too; both runs leave `git status` clean under `notes/index/`. So `stale swept 0`
+  on a clean tree is a measured negative, not an untested branch — which is what makes the templating
+  epic (`math-a0r`) safe to start: templates render a tree that sweeps, and a tree that cannot shed an
+  old-slug page would freeze that page into the template set.
 - The idempotence gate for `build_index.py` is run 2 against run 3, not run 1 against run 2: the first
   run after a corpus change prints the sweep line with the files it removed, the second prints
   `stale swept 0 files []`. Diffing run 1 against run 2 reports the sweep as drift.
