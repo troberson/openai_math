@@ -1,44 +1,44 @@
 # The shared-bibliography graph
 
-Measured 2026-10-07 by `python3 notes/scripts/extract_citations.py` — report-only, writes nothing,
+Measured 2026-10-08 by `python3 notes/scripts/extract_citations.py` — report-only, writes nothing,
 run three times with byte-identical output. No `lake`, `lean`, `lake exe cache get`, or comparator
 run. Every count below is printed by that report, and a count is quoted with the rule that yields it.
 
 The bead's hypothesis was that a citation cluster crossing discipline boundaries is evidence that the
 release's 17 disciplines are arbitrary. **At the threshold where sharing is a research signal, it is
 not: 6 of 419 pairs at ≥5 shared titles cross a discipline boundary and 0 of 197 at ≥10.** The
-boundaries in `overview.tex` line up with the bibliography clusters. The 2,005 cross-discipline pairs
+boundaries in `overview.tex` line up with the bibliography clusters. The 1,979 cross-discipline pairs
 at ≥1 shared title are a textbook floor, not a signal — see "The discipline crossings".
 
 ## Population
 
 | Layer | Count | Rule |
 |---|---|---|
-| `.bib` files | **501** | every `preprints/**/*.bib` |
-| Owner manuscripts | **495** of 722 | path component after `preprints`, never `parts[-2]` |
-| Owners with >1 file | **5** (max 3) | `references.bib` 461, `refs.bib` 23, `sources.bib` 7, `literature.bib` 3, `bibliography.bib` 2, 7 singletons |
-| Path depth | 4:417 5:77 6:5 9:2 | components of the repo-relative path |
+| `.bib` files | **521** | every `preprints/**/*.bib` |
+| Owner manuscripts | **513** of 719 | path component after `preprints`, never `parts[-2]` |
+| Owners with >1 file | **7** (max 3) | `references.bib` 477, `refs.bib` 24, `sources.bib` 7, `literature.bib` 4, `bibliography.bib` 2, `companions.bib` 2, `projective_references.bib` 2, 3 singletons |
+| Path depth | 4:435 5:79 6:5 9:2 | components of the repo-relative path |
 | Families covered | **299** of 372 | via `notes/subfindings.tsv` manuscript rows |
 | Disciplines covered | **17** of 17 | via the ledger `discipline` column |
-| Entries | **12,928** | `@type{key,` at line start, body to the next line-start `@` |
-| Entry types | article 8,915 · misc 2,157 · book 701 · incollection 654 · inproceedings 414 · techreport 37 · phdthesis 33 · unpublished 12 · mastersthesis 5 | `@` type lowercased |
-| Distinct keys | **9,958** | key string, verbatim |
-| Keys used by >1 manuscript | **1,864** | distinct owning manuscripts ≥2 |
+| Entries | **13,802** | `@type{key,` at line start, body to the next line-start `@` |
+| Entry types | article 9,451 · misc 2,337 · book 776 · incollection 734 · inproceedings 415 · techreport 37 · phdthesis 35 · unpublished 12 · mastersthesis 5 | `@` type lowercased |
+| Distinct keys | **9,910** | key string, verbatim |
+| Keys used by >1 manuscript | **2,393** | distinct owning manuscripts ≥2 |
 
-Top keys by owning manuscripts: `StacksProject` 23, `Hatcher2002` 21, `Stacks` 12, `Penrose1973` 11,
-`Bray2001` 10, `GilbargTrudinger2001` 10, `Yau1978` 10, `FortuinKasteleynGinibre1971` 9,
-`Hoeffding1963` 9, `HuiskenIlmanen2001` 9.
+Top keys by owning manuscripts: `StacksProject` 26, `Hatcher2002` 21, `Stacks` 12,
+`DemaillyPaun2004` 11, `Penrose1973` 11, `SGA1` 11, `Yau1978` 11, `BCHM2010` 10, `Bray2001` 10,
+`Carayol1986` 10.
 
 `StacksProject` and `Stacks` are the same work under two keys, and the work layer counts it once
-(43 manuscripts) while the key layer splits it 23 + 12. Keys are a lexical layer; works are the
+(42 manuscripts) while the key layer splits it 26 + 12. Keys are a lexical layer; works are the
 matching layer.
 
 ## The bibliographies are live, not decorative
 
-**12,277 of 12,923** manuscript-key pairs — a pair is a (manuscript, key) with the key appearing in
-that manuscript's `.bib` files; 12,923 is below 12,928 because 5 keys repeat inside one manuscript —
+**13,058 of 13,797** manuscript-key pairs — a pair is a (manuscript, key) with the key appearing in
+that manuscript's `.bib` files; 13,797 is below 13,802 because 5 keys repeat inside one manuscript —
 appear in a `\cite…{…}` locator somewhere in that manuscript's own `.tex` tree. Per-manuscript cited
-fraction: min **0.333**, median **1.000**, max **1.000**; **0** manuscripts at 0, **433** of 495 at
+fraction: min **0.333**, median **1.000**, max **1.000**; **0** manuscripts at 0, **444** of 494 at
 ≥0.9. A manuscript that lists a work it never cites is the exception, and the corpus has no
 bibliography that is pure decoration.
 
@@ -71,12 +71,12 @@ exists when two manuscripts share ≥*k* titles; a cluster is a connected compon
 
 ## Most-cited works
 
-Manuscripts owning the work, over 495 manuscripts. The title is the most frequent verbatim form
+Manuscripts owning the work, over 494 manuscripts. The title is the most frequent verbatim form
 (ties: lexicographically first); the anchor is the first entry carrying that exact form.
 
 | Mss | Title (verbatim, as written in the `.bib`) | Anchor |
 |---|---|---|
-| 43 | `The {Stacks Project}` | `preprints/A-conditional-abelianity-theorem-for-special-fourfold-pairs-with-a-half-weight-divisor-October-5-2026/build/source/references.bib:106` |
+| 42 | `The {Stacks Project}` | `preprints/A-conditional-abelianity-theorem-for-special-fourfold-pairs-with-a-half-weight-divisor-October-5-2026/build/source/references.bib:106` |
 | 23 | `Algebraic Topology` | `preprints/A-C1-Counterexample-to-the-Entropy-Conjecture-September-25-2026/build/source/references.bib:120` |
 | 20 | `Introduction to Geometric Measure Theory` | `preprints/A-Charged-Reduction-of-the-Spacetime-Penrose-Inequality-in-Spatial-Dimensions-at-Least-Four-October-5-2026/build/references.bib:246` |
 | 17 | `Existence of minimal models for varieties of log general type` | `preprints/Bounded-klt-complements-for-Fano-contractions-September-25-2026/build/references/references.bib:87` |
@@ -97,13 +97,13 @@ Manuscripts owning the work, over 495 manuscripts. The title is the most frequen
 | 9 | `Functions of Bounded Variation and Free Discontinuity Problems` | `preprints/A-Charged-Reduction-of-the-Spacetime-Penrose-Inequality-in-Spatial-Dimensions-at-Least-Four-October-5-2026/build/references.bib:112` |
 | 9 | `Orbifolds, special varieties and classification theory` | `preprints/A-conditional-abelianity-theorem-for-special-fourfold-pairs-with-a-half-weight-divisor-October-5-2026/build/source/references.bib:10` |
 
-The work layer: **8,820** distinct normalized titles, **2,254** owned by ≥2 manuscripts, **865** by
-≥3, **193** by ≥5, **17** by ≥10. **933** of the 2,254 shared works cross a family boundary and
-**335** cross a discipline boundary. **23** of the 495 manuscripts share no title with any other.
+The work layer: **8,775** distinct normalized titles, **2,251** owned by ≥2 manuscripts, **863** by
+≥3, **193** by ≥5, **17** by ≥10. **932** of the 2,251 shared works cross a family boundary and
+**333** cross a discipline boundary. **23** of the 494 manuscripts share no title with any other.
 
 The top of the list is a textbook-and-standard-reference list (Stacks Project, Hatcher, de Giorgi,
 Folland, Marcus–Weiss, Durrett, Gromov, Grothendieck, Kollár–Mori, Kontsevich–Soibelman, Huisken–
-Ilmanen, Bray) plus four release works. A work at 11–43 manuscripts is a shared *toolkit*; a work at
+Ilmanen, Bray) plus four release works. A work at 11–42 manuscripts is a shared *toolkit*; a work at
 17 owned by 17 manuscripts in one discipline is a shared *subfield*.
 
 ## Pair layers
@@ -112,20 +112,20 @@ A pair is an unordered pair of manuscripts; the count is shared titles.
 
 | Shared titles | Pairs | Same-family | Cross-discipline |
 |---|---|---|---|
-| ≥1 | **3,716** | 390 | 2,005 |
-| ≥2 | **1,138** | 365 | 235 |
-| ≥3 | **701** | 348 | 61 |
+| ≥1 | **3,668** | 389 | 1,979 |
+| ≥2 | **1,133** | 364 | 234 |
+| ≥3 | **700** | 347 | 61 |
 | ≥5 | **419** | 296 | **6** |
 | ≥10 | **197** | 173 | **0** |
 
-Max pair overlap: **47** shared titles — the two manuscripts of family 068. **427** of 495
+Max pair overlap: **47** shared titles — the two manuscripts of family 068. **426** of 494
 manuscripts share ≥1 title with a manuscript of another family.
 
 Top pairs by shared titles: 47 `068×068` (same-family), 43 `004×006` (cross-family, both Number
-theory), 38 `264×264`, 37 `034×034`, 36 `223×223`, 34 `260×260`, 34 `267×267`, 33 `267×267`,
-33 `368×368`, 32 `238×238`, 31 `264×264`, 30 `260×260`. Ten of the twelve are same-family pairs —
-the strongest bibliography overlap in the corpus is between sibling manuscripts of one family, which
-is what a companion pair should look like.
+theory), 38 `264×264`, 37 `034×034`, 36 `223×223`, 34 `267×267`, 34 `260×260`,
+33 `267×267`, 33 `368×368`, 32 `238×238`, 31 `264×264`, 30 `260×260`. Ten of the twelve are
+same-family pairs — the strongest bibliography overlap in the corpus is between sibling manuscripts
+of one family, which is what a companion pair should look like.
 
 ## The discipline crossings
 
@@ -148,18 +148,18 @@ the floor, not of a research program (pairs at ≥1 shared title, top 10):
 
 | Pairs | Discipline pair |
 |---|---|
-| 680 | Algebraic and complex geometry × Algebraic and complex geometry |
+| 658 | Algebraic and complex geometry × Algebraic and complex geometry |
 | 312 | Probability and statistical mechanics × Probability and statistical mechanics |
-| 206 | Algebraic and complex geometry × Number theory |
+| 199 | Algebraic and complex geometry × Number theory |
 | 139 | Number theory × Number theory |
-| 134 | Algebra × Algebraic and complex geometry |
-| 118 | Algebraic and complex geometry × Topology |
+| 128 | Algebra × Algebraic and complex geometry |
 | 115 | Mathematical physics × Mathematical physics |
+| 113 | Algebraic and complex geometry × Topology |
 | 106 | Differential geometry × Mathematical physics |
 | 87 | Theoretical computer science × Theoretical computer science |
 | 78 | Algebra × Number theory |
 
-Same-discipline pairs are 1,711 of 3,716 at ≥1, 413 of 419 at ≥5, and 197 of 197 at ≥10. The
+Same-discipline pairs are 1,689 of 3,668 at ≥1, 413 of 419 at ≥5, and 197 of 197 at ≥10. The
 crossing rate falls monotonically as the threshold rises — 54% → 1.4% → 0% — which is the signature
 of a shared-toolkit layer sitting on top of a discipline-structured research layer, not of an
 arbitrary grouping.
@@ -168,9 +168,9 @@ arbitrary grouping.
 
 A cluster is a connected component of the pair graph at a given threshold.
 
-**At ≥1 shared title the graph does not partition the corpus.** 11 components, largest **437
-manuscripts over 261 families and all 17 disciplines** (discipline counts: Algebraic and complex
-geometry 57, Probability and statistical mechanics 57, Theoretical computer science 44, Number theory
+**At ≥1 shared title the graph does not partition the corpus.** 11 components, largest **436
+manuscripts over 261 families and all 17 disciplines** (discipline counts: Probability and statistical
+mechanics 57, Algebraic and complex geometry 56, Theoretical computer science 44, Number theory
 37, Differential geometry 32, Mathematical physics 32, Combinatorics 27, Real and complex analysis
 22, Operator algebras 21, Algebra 20, Topology 18, Partial differential equations 16, Dynamical
 systems and ergodic theory 13, Group theory 13, Convex and metric geometry 12, Functional analysis
@@ -212,9 +212,10 @@ The release cites its own preprints by URL, and that layer has its own cluster s
 entry is release-labelled when its body contains `OpenAI Math Release`; its target is the
 `preprints/<dir>/` component of the `\href{…pdf}` in the body — the rule `notes/links.tsv` records.
 
-**397** release-labelled entries, from **261** manuscripts, pointing at **273** distinct targets;
-**80** targets are cited by ≥2 manuscripts. **203** manuscript pairs share a cited release work,
-**19** pairs share ≥2, and **103** of the 203 pairs cross a family boundary.
+**432** release-labelled entries (393 in ledger-listed manuscripts), from **277** manuscripts,
+pointing at **268** distinct targets; **80** targets are cited by ≥2 manuscripts. **203** manuscript
+pairs share a cited release work, **19** pairs share ≥2, and **103** of the 203 pairs cross a family
+boundary.
 
 | Citing manuscripts | Release target |
 |---|---|
@@ -261,25 +262,25 @@ which results the release itself treats as load-bearing.
 
 The second is the shape of a release-internal citation: author `OpenAI`, a title phrase as the entry
 title, and the target carried by URL. It is why the title-phrase proxy in `notes/links.md` reaches 12
-cross-family families while the href layer reaches 105.
+cross-family families while the href layer reaches 104.
 
 ## Sensitivity of the headline to the normalization rule
 
 The accent guard is a choice, so the choice was tested against the headline. Rebuilt with the guard
-removed (every accent macro folded, artifacts gone), over the same 501 files:
+removed (every accent macro folded, artifacts gone), over the same 521 files:
 
 | Measure | Guarded (shipped) | Guard removed | Δ |
 |---|---|---|---|
-| Distinct works | 8,820 | 8,810 | −10 |
-| Works shared ≥2 | 2,254 | 2,256 | +2 |
-| Pairs ≥1 | 3,716 | 3,725 | +9 |
-| Cross-discipline pairs ≥1 | 2,005 | 2,008 | +3 |
+| Distinct works | 8,775 | 8,765 | -10 |
+| Works shared ≥2 | 2,251 | 2,254 | +3 |
+| Pairs ≥1 | 3,668 | 3,676 | +8 |
+| Cross-discipline pairs ≥1 | 1,979 | 1,981 | +2 |
 | Pairs ≥5 | 419 | 419 | **0** |
 | Cross-discipline pairs ≥5 | 6 | 6 | **0** |
 | Pairs ≥10 | 197 | 197 | **0** |
 | Cross-discipline pairs ≥10 | 0 | 0 | **0** |
 
-The normalization knob moves the weak layer by 9 pairs out of 3,716 (0.24%) and moves the strong layer
+The normalization knob moves the weak layer by 8 pairs out of 3,668 (0.22%) and moves the strong layer
 by nothing. The finding is not an artifact of the accent rule.
 
 ## What the graph does not say
@@ -301,11 +302,11 @@ by nothing. The finding is not an artifact of the accent rule.
 
 ## Not checked
 
-- **227 of 722 manuscripts are invisible to this method.** They ship no `.bib`; all 227 carry an
+- **225 of 719 manuscripts are invisible to this method.** They ship no `.bib`; all 225 carry an
   inline `\begin{thebibliography}` with `\bibitem` entries, and **0** carry neither. **5** manuscripts
-  have both layers. Every count here is over 495 manuscripts, and a discipline-crossing claim that
+  have both layers. Every count here is over 494 manuscripts, and a discipline-crossing claim that
   excludes 31% of the corpus is a claim about the BibTeX layer. The inline layer was not parsed —
-  `\bibitem` titles are not normalized here, so the 227 contribute no titles, no pairs, and no clusters.
+  `\bibitem` titles are not normalized here, so the 225 contribute no titles, no pairs, and no clusters.
 - **Work identity is title-only.** Author, year, and venue are not used, so two editions of one book
   under different titles are two works, and two different works with the same title are one. No entry
   was checked against an external bibliography, and no work was identified in the literature.

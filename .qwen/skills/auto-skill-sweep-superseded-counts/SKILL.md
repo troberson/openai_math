@@ -1,9 +1,10 @@
 ---
 name: sweep-superseded-counts
 description: Sweep every doc, checker and generated artifact that quotes a count a later batch
-  invalidated — enumerate the stale values first, fix generated literals in the generator, make the
-  checker measure the figure instead of carrying it, re-target the mutants, and prove the sweep with
-  a twice-run gate list diffed against HEAD.
+  invalidated — triage a fleet of red checkers first, enumerate the stale values, fix generated
+  literals in the generator, make the checker measure the figure instead of carrying it, print the
+  needles from the checker, re-target the mutants, and prove the sweep with a twice-run gate list
+  diffed against HEAD.
 source: auto-skill
 extracted_at: '2026-10-08T15:40:04.714Z'
 ---
@@ -17,6 +18,11 @@ summary pages and a new TSV landed: the summary pairing (12 families / 31 manusc
 the index link counts (47354 → 47363 registered, 65690 → 65699 scanned, 48872 → 48881
 file-resolving, `notes-doc` 569 links / 12 targets → 578 / 26), and the all-TSV byte total
 (541463 → 630987).
+
+Applied a second time the same day on a much larger scale: an upstream merge moved 15 ledger figures
+at once (manuscripts 722 → 719, scope notes 235 → 242, challenges 405 → 416, `main_results` 185/178 →
+200/189, tiers T3 127 → 136 / T0 137 → 130, `.bib` files 501 → 521, entries 12,928 → 13,802) and
+turned **10 of 19** checkers red. That run is where §4a and §3a came from.
 
 The trigger is usually a checker failing **at HEAD**: the page quotes a number a later batch
 invalidated. Record that as an issue whose description names the failing needle, the page line, and
@@ -87,6 +93,51 @@ one is a **format contract** with the report script, and it is the copy that tel
 format changed. Rule: a page figure derived from a report line should be measured by the checker, not
 written into it; a literal is correct only when it pins a format, not a value.
 
+### 3a. Print the needles; don't hand-compute them
+
+Once the checker measures everything, it **is** the authoritative list of needles. Import it and print
+every needle in the checker's exact format, then sweep the page in one substitution pass against that
+printout. Hand-computing 40 needles from a raw report is where a sweep introduces its own off-by-one.
+
+```python
+# .qwen/tmp/cit_needles.py — scratch, imports the checker's own measure()
+import extract_citations as ec, verify_citations as vc
+M  = vc.measure(ec.norm_title)      # guarded normalization
+M2 = vc.measure(vc.norm_noguard)    # a sensitivity column needs a SECOND measurement
+listed = sum(int(r["paps"]) for r in ec.ledger_rows())
+print("**%d** of %d" % (len(M["owners"]), listed))
+```
+
+Three traps in writing the printer: it must reproduce the checker's **formatting** (`format(n, ",")`
+vs `%d`), its **scope** (`len(multi)` components, not `len(big)`; `M["disc"][sorted(big)[0]]`, not
+`M["disc"][big]` — a set has no order), and it must **not** re-derive a figure the checker already
+exposes. A printer that re-reads 521 `.bib` files to recompute one count turns a 40-second job into 10
+minutes; add the field to the measure dict instead.
+
+### 3b. The exception: a measurement script keeps literal gates
+
+§3 applies to checkers. In a **measurement** script the population gates must stay literal, because
+they are what makes a mutant detectable. `measure_proof_density.py` gates on
+`tier counts == {'T3':136,'T2':106,'T1':0,'T0':130}`; derive that from the ledger and the "flip a tier
+label" mutant becomes a no-op the gate happily accepts. Sweep the literals to fresh values with a
+dated comment, and say in the comment why they are not derived.
+
+### 3c. Scope the denominator to the ledger, not to the raw file set
+
+A `.bib` can sit in a manuscript directory the ledger no longer lists (a superseded release dir). Keying
+a family join on those owners raises `KeyError` at three separate sites, and inflates every
+"of 722" denominator. Split owned/unowned once, near the top of the measurement, and use the ledger's
+own manuscript count as the denominator:
+
+```python
+unowned = [m for m in men if m not in man2fam]      # reported, never joined
+men     = [m for m in men if m in man2fam]
+listed  = sum(int(r["paps"]) for r in rows)         # 719, not the 513 .bib owners
+```
+
+The same scoping applies to a coverage caveat: "manuscripts with no `.bib`" is a blind spot only for
+manuscripts the graph claimed to see.
+
 ## 4. Re-target every mutant whose `replace()` target was the old value
 
 ```python
@@ -98,6 +149,35 @@ Written against the old bytes, the target string is absent after the sweep, the 
 and the mutant gate reports NOT INJECTED — a checker whose mutant cannot be injected verifies nothing
 while exiting 0. Re-target in the **same** pass as the page, and assert `mutated != page` (see
 `notes-page-checker-traps` §1.1).
+
+## 4a. Triage a fleet of red checkers before editing any of them
+
+After a big merge, 10 of 19 checkers went red at once. Do not start on one; run the whole fleet plain,
+capture each report to a file, and classify **before** editing:
+
+```
+for s in notes/scripts/verify_*.py; do n=$(basename "$s" .py); timeout 580 python3 "$s" \
+    > ".qwen/tmp/chk_${n}.txt" 2>&1; echo "$? $n"; done
+for n in <the red ones>; do printf "%-30s %s\n" "$n" \
+    "$(grep -c -E 'PROBLEM|MISSING|COUNT|not verbatim|Traceback' .qwen/tmp/chk_${n}.txt)"; done
+```
+
+Two things this exposes that a single-checker view hides:
+
+- **A zero problem-line count with exit 1 is a crash, not a clean page** (`verify_t0_chains` — a
+  refactor changed a helper's signature; one call site needed the new argument).
+- **The failure is on the page side or the checker side, and the fix is in the other file.** A report
+  reading `page checks: 21 problems` with every line a `FAIL … page does not contain` means the checker
+  is already measured and only the page needs sweeping — finish that one first; it is the shortest path
+  to green and it needs no code change.
+
+Classify each red checker as: stale page literal / shifted `file:line` anchor / checker-side hardcoded
+needle or mutant / genuine code breakage / real reading work (a page whose content must be re-derived,
+e.g. 144 problems across 21 summary pages). Report the fleet as a table with the remaining work per
+checker, order it shortest-path-first, and state what was **not** checked: no `--mutant` run is
+meaningful until the checker exits 0, and a grep census of stale numbers is sizing, not an enumeration.
+
+Re-measure the git state too. A handoff note said 3 commits were queued for push; live it was 5.
 
 ## 5. Run the whole gate list, twice, diffed against HEAD as well as between runs
 

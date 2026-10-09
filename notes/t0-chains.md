@@ -1,15 +1,15 @@
-# T0 cross-family chains and the 28 two-manuscript second-pass families
+# T0 cross-family chains and the 27 two-manuscript second-pass families
 
 ## Population
 
 Rule, all three conditions: the ledger's `tier` is `T0`, the ledger's `paps` is exactly **2**, and the
 family id appears in the second-pass reading sections of `notes/t0-triage.md` (the `## Second pass:
 the remaining 93 families` heading through the line before `## What the triage shows`). That is
-**28** families carrying **56** manuscripts.
+**27** families carrying **54** manuscripts.
 
-Repo-wide there are **96** families with exactly 2 manuscripts, split `T0:36`, `T2:20`, `T3:40`. Of the
-**36** at T0, **8** were read in the first pass (004, 006, 018, 019, 029, 046, 059, 209), so **28**
-remain. The bead's "no coverage signal" framing holds for **27** of the 28 and fails for **1**: 268
+Repo-wide there are **96** families with exactly 2 manuscripts, split `T0:35`, `T2:20`, `T3:41`. Of the
+**35** at T0, **8** were read in the first pass (004, 006, 018, 019, 029, 046, 059, 209), so **27**
+remain. The bead's "no coverage signal" framing holds for **26** of the 27 and fails for **1**: 268
 carries `verification = 2`, a certificate bundle under each of its two manuscripts.
 
 Regenerate with `python3 notes/scripts/extract_t0_chains.py` — report-only, it writes nothing and runs
@@ -52,16 +52,16 @@ strong as its weakest unformalized link" reads here as *every* link:
 | Fam | Tier | Manuscripts | Formalized | Challenges | `main_results` | Scope note | Verification | Trace | Shapes |
 |---|---|---|---|---|---|---|---|---|---|
 | 001 | T0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | classification, uniform |
-| 032 | T0 | 8 | 0 | 0 | 0 | 0 | 0 | 0 | resolution, classification, uniform |
+| 032 | T0 | 5 | 0 | 0 | 0 | 0 | 0 | 0 | resolution, classification, uniform |
 | 002 | T0 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | density, uniform |
 | 006 | T0 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | density |
 | 311 | T0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | resolution |
 
 The triage record states the same finding, and its consequence sentence is the reason this page
-exists (`notes/t0-triage.md:501`) — *"Cross-family chains sit entirely inside T0."* — and
-(`notes/t0-triage.md:504`) — *"Both chains are unformalized"* — with the follow-up phrased at
-(`notes/t0-triage.md:854`) — *"Cross-family chains inside T0: 001↔032, 002↔006, and
-311⇒Hovey–Strickland. A chain is only as"* and (`notes/t0-triage.md:855`) — *"strong as its weakest,
+exists (`notes/t0-triage.md:505`) — *"Cross-family chains sit entirely inside T0."* — and
+(`notes/t0-triage.md:508`) — *"Both chains are unformalized"* — with the follow-up phrased at
+(`notes/t0-triage.md:858`) — *"Cross-family chains inside T0: 001↔032, 002↔006, and
+311⇒Hovey–Strickland. A chain is only as"* and (`notes/t0-triage.md:859`) — *"strong as its weakest,
 unformalized link."*
 
 ## 311 ⇒ Hovey–Strickland is a literature chain, not a release edge
@@ -112,13 +112,13 @@ one — its weak link is outside the release.
 ## The cross-reference layer is two edges wide
 
 The word "companion" is how the release gestures at a second manuscript, and it is not a link. The
-ledger's `companion_word` column (`\bcompanion` in the same overview abstract) fires on **10**
-families — 003, 032, 197, 207, 256, 266, 268, 270, 307, 364 — and **0** of them carry a `companions`
-edge. Of the 28 families here, **3** use the word (268, 270, 364).
+ledger's `companion_word` column (`\bcompanion` in the same overview abstract) fires on **9**
+families — 003, 197, 207, 256, 266, 268, 270, 307, 364 — and **0** of them carry a `companions`
+edge. Of the 27 families here, **3** use the word (268, 270, 364).
 
 So the release's own machine-readable cross-reference layer is 2 edges over 372 families, while the
-companion relation it describes in prose is at least 10 families wide, and the manuscript-level
-citation layer below measures 16 of 28. The `companions` column is not a census of how these results
+companion relation it describes in prose is at least 9 families wide, and the manuscript-level
+citation layer below measures 15 of 27. The `companions` column is not a census of how these results
 relate; it is a record of how many abstracts spell a dependency as `result (NNN)`.
 
 ## Summary table
@@ -135,7 +135,6 @@ line in `overview.tex`.
 | 041 | A&CG | resolution | 2 | 2 | 1 | `overview.tex:160` |
 | 055 | A&CG | uniform | 2 | 0 | 0 | `overview.tex:186` |
 | 065 | A&CG | resolution, uniform | 1 | 0 | 0 | `overview.tex:204` |
-| 066 | A&CG | bound, classification | 2 | 2 | 1 | `overview.tex:206` |
 | 074 | real&complex | resolution, uniform | 2 | 1 | 0 | `overview.tex:222` |
 | 077 | real&complex | resolution, bound, uniform | 2 | 2 | 1 | `overview.tex:228` |
 | 080 | real&complex | bound, uniform | 1 | 1 | 0 | `overview.tex:234` |
@@ -159,9 +158,9 @@ line in `overview.tex`.
 | 364 | PDE | bound, density, uniform | 2 | 0 | 0 | `overview.tex:828` |
 | 368 | PDE | resolution, bound, uniform | 2 | 2 | 1 | `overview.tex:837` |
 
-All 28 are T0, all 56 manuscripts carry `formalized = 0`, and 27 of 28 carry no coverage signal at all.
+All 27 are T0, all 54 manuscripts carry `formalized = 0`, and 26 of 27 carry no coverage signal at all.
 
-## The 28 families
+## The 27 families
 
 Each block names both manuscripts by the display title the release gives them (verbatim, from the
 family's `\resultentry` line) and the PDF path. The pairing line is a **reading judgement** made from
@@ -224,17 +223,6 @@ phase shift $2/5$"*. Citation layer: 2 `.bib` files, 0 intra-family edges, 0 mut
 Pairing: the base case, then the transfer under projectivization. Scope limit (`overview.tex:204`) —
 *"to the projectivization of every algebraic vector bundle of rank at least two"*. Citation layer: 1
 `.bib` files, 0 intra-family edges, 0 mutual pair.
-
-### 066 — Bounded klt complements for Fano contractions
-
-- **1** (`overview.tex:206`) — *"Bounded klt complements"*
-  → `preprints/Bounded-klt-complements-for-Fano-contractions-September-25-2026/Bounded-klt-complements-for-Fano-contractions-September-25-2026.pdf`
-- **2** (`overview.tex:206`) — *"Uniform Cartier sections"*
-  → `preprints/Uniform-Cartier-sections-for-Fano-type-contractions-September-25-2026/Uniform-Cartier-sections-for-Fano-type-contractions-September-25-2026.pdf`
-
-Pairing: the complement theorem and the uniform-sections machinery. Scope limit (`overview.tex:206`) —
-*"with index bounded only by dimension and positive rational $\epsilon$"*. Citation layer: 2 `.bib`
-files, 2 intra-family edges, 1 mutual pair.
 
 ### 074 — Kakeya in three and four dimensions
 
@@ -502,11 +490,11 @@ same family. Manuscript ownership is the path component after `preprints`, never
 component — keying by `parts[-2]` files these manuscripts under `build/` and makes every edge
 disappear.
 
-**16** of the 28 cite their sibling: **9** mutual pairs and **7** one-directional. **12** cite no
+**15** of the 27 cite their sibling: **8** mutual pairs and **7** one-directional. **12** cite no
 sibling, and **3** of those (200, 239, 300) ship no `.bib` file at all, so their absence is
 unmeasurable rather than a negative.
 
-The mutual pairs are 041, 066, 077, 217, 265, 268, 286, 302, 368. The one-directional edges are 037,
+The mutual pairs are 041, 077, 217, 265, 268, 286, 302, 368. The one-directional edges are 037,
 074, 080, 147, 203, 258, 346. Direction is informative in the one-directional cases: 074's
 four-dimensional manuscript cites its three-dimensional sibling, 080's higher-dimensional manuscript
 cites the planar one, 203's integral form cites the field form, 147's caustic-collar mechanism cites
@@ -520,8 +508,8 @@ the two manuscripts share no bibliography edge.
 
 ## The 268 exception to "no coverage signal"
 
-The bead describes the 28 as "the group with two manuscripts and no coverage signal". That is true of
-**27**; 268 carries `verification = 2`. Both of its manuscripts ship a `verification/` directory:
+The bead describes the 27 as "the group with two manuscripts and no coverage signal". That is true of
+**26**; 268 carries `verification = 2`. Both of its manuscripts ship a `verification/` directory:
 `preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/verification/` and
 `preprints/A-boundary-field-gap-for-the-spin-one-Heisenberg-chain-September-24-2026/verification/`.
 The second carries a README, two Python checkers, and four JSON result files.
@@ -536,11 +524,11 @@ recorded outputs. Nothing here says a certificate was run, and nothing here says
 - No Lean, lake, or comparator run. The `formalized = 0` flags are the ledger's read of
   `lean/formalization.yaml`, not evidence about any manuscript.
 - Every abstract quoted here is the release's rewritten paraphrase in `overview.tex`, not the
-  manuscript abstract — 0 of 722 manuscript comparisons read identical or abridged
+  manuscript abstract — 0 of 719 manuscript comparisons read identical or abridged
   (`notes/abstracts.md`), so a scope-limit clause quoted from the overview is a claim about the
   summary.
 - Pairing labels are reading judgements from titles and overview clauses. No manuscript proof,
-  theorem environment, or hypothesis list was read for any of the 28; 311 is the only family on this
+  theorem environment, or hypothesis list was read for any of the 27; 311 is the only family on this
   page read at manuscript level, and only its introduction and bibliography entry were read.
 - No literature check. The Barthel--Heard--Naumann implication is quoted from 311's own prose; the
   published paper was not read, and its `Theorems~4.9 and~4.15` numbering is unverified.

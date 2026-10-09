@@ -7,7 +7,7 @@ and which display title names it. Each pair is quoted with the line it was verif
 that state a sub-finding no title names are recorded as unmatched rather than forced onto the nearest
 title.
 
-Population: **49 families over 206 manuscripts**. The rule is the bead's own two signals unioned with
+Population: **49 families over 203 manuscripts**. The rule is the bead's own two signals unioned with
 its named targets — abstracts containing a multi-claim phrase **and** at least two manuscripts, plus
 the ten densest families it names. The bead states 51 families for the intersection; that number does
 not reproduce, and the gap is the first thing this page records.
@@ -38,11 +38,12 @@ sentences (73). None yields 51, and the same shape of gap — a quoted count wit
 is the counterexample 74 / 30 case recorded in `notes/counterexample-tag.md`.
 
 **Decision, recorded 2026-10-07.** Population = (probe ∩ multi) ∪ the bead's ten named densest
-families = **49 families, 206 manuscripts**. The union is chosen over the intersection because the
-bead's named targets are the point of the task — 034 at n=14 down to 211 at n=7 — and the probe is
-the point of its vocabulary warning. Revisit condition: if a later pass finds a phrase rule that
-yields 51, re-measure the population before extending the page; the rework is a re-run of
-`notes/scripts/extract_subfinding_pairs.py` plus blocks for the families the new rule adds, which is
+families = **49 families, 203 manuscripts** (206 before the 2026-10-07 upstream merge; family 032 lost
+three manuscripts to the withdrawal and stayed in the population). The union is chosen over the
+intersection because the bead's named targets are the point of the task — 034 at n=14 down to 211 at
+n=7 — and the probe is the point of its vocabulary warning. Revisit condition: if a later pass finds a
+phrase rule that yields 51, re-measure the population before extending the page; the rework is a re-run
+of `notes/scripts/extract_subfinding_pairs.py` plus blocks for the families the new rule adds, which is
 cheap, so this bead keeps the task.
 
 Probe-vocabulary false positives: 114, 122, 134, 157, 170, 235, 261, 262, 266, 267, 281, 325, 361. In
@@ -123,17 +124,19 @@ manuscript of family NNN in `notes/subfindings.tsv`, whose `title` column is the
 - note: The $\mathbb Q$ case has no display title. "Prescribed exterior sheet" is an étale-cover
   construction the abstract does not state as a result.
 
-## 032 · `overview.tex:142` · n=8 · T0
+## 032 · `overview.tex:142` · n=5 · T0
 
 - main: "Proves the rational Hodge conjecture for every complex CM abelian variety, in every dimension and codimension." (`overview.tex:142`) -> "The rational Hodge conjecture for CM abelian varieties" (`overview.tex:142`) [032:1]
-- clause: "Companion results prove rational Hodge for arbitrary products of projective complex K3 surfaces" (`overview.tex:142`) -> "The rational Hodge conjecture for products of K3 surfaces" (`overview.tex:142`) [032:2]
-- clause: "and algebraicity of the Kuga--Satake correspondence for every such surface." (`overview.tex:142`) -> "Algebraicity of Kuga–Satake Correspondences for K3 Surfaces" (`overview.tex:142`) [032:3]
 - clause: "Through Milne's theorems, this also gives the Tate conjecture for all abelian varieties over finite fields and the Hodge standard conjecture for abelian varieties in every characteristic." (`overview.tex:142`) -> unmatched
-- claimed: 032:1 032:2 032:3
-- unclaimed: 032:4 032:5 032:6 032:7 032:8
+- claimed: 032:1
+- unclaimed: 032:2 032:3 032:4 032:5
 - note: The unmatched clause states consequences through Milne's theorems, not a result the release
-  ships a manuscript for. Five further manuscripts (K3 quadratic locus, Weil classes on abelian powers,
-  Gale correspondences, split abelian eightfolds, a conditional reduction) carry no clause.
+  ships a manuscript for. Four further manuscripts (K3 quadratic locus, Weil classes on abelian powers,
+  Gale correspondences, a conditional reduction) carry no clause. This family is the withdrawal: the
+  two clauses that paired here before the merge — the products-of-K3 theorem and the Kuga–Satake
+  algebraicity result — were withdrawn on 2026-10-06 and their clauses are gone from the overview
+  abstract, so the family lost two accepted pairs and three manuscripts. See
+  `upstream_history/2026-10-07_3014888.md`.
 
 ## 034 · `overview.tex:146` · n=14 · T0
 
@@ -272,7 +275,7 @@ manuscript of family NNN in `notes/subfindings.tsv`, whose `title` column is the
   "Star height at most four" is the earlier, weaker rung and "Finite-monoid computations" the method;
   neither is stated. Probe hit only: "independent of automaton size".
 
-## 157 · `overview.tex:395` · n=3 · T2
+## 157 · `overview.tex:395` · n=3 · T3
 
 - main: "Disproves Hadwiger's conjecture even for fractional coloring: arbitrarily large finite simple graphs with independence number at most two satisfy $\chi_f(G)>h(G)$, where $h(G)$ is the largest clique-minor order." (`overview.tex:395`) -> "Hadwiger counterexample" (`overview.tex:395`) [157:1]
 - clause: "Also disproves the fractional Colin de Verdi\`ere chromatic bound $\chi_f(G)\le\mu(G)+1$." (`overview.tex:395`) -> "Colin de Verdière counterexample" (`overview.tex:395`) [157:2]
@@ -369,7 +372,7 @@ manuscript of family NNN in `notes/subfindings.tsv`, whose `title` column is the
   not a manuscript in this family; it is the only abstract in the population that cites outside the
   release. Probe hit only: "independent uniformly signed".
 
-## 237 · `overview.tex:557` · n=13 · T2
+## 237 · `overview.tex:557` · n=13 · T3
 
 - main: "Proves the diameter form of Nienhuis's predicted three-quarter exponent: a uniformly chosen $n$-step self-avoiding walk on the honeycomb lattice has diameter $n^{3/4+o(1)}$." (`overview.tex:557`) -> unmatched
 - clause: "Its local mass and covering numbers have exponent $4/3$." (`overview.tex:557`) -> "Mass and covering exponents for fixed-length walks" (`overview.tex:557`) [237:4]
@@ -555,20 +558,20 @@ manuscript of family NNN in `notes/subfindings.tsv`, whose `title` column is the
 | measure | value |
 |---|---|
 | families read | 49 |
-| manuscripts in the population | 206 |
-| sub-finding clause pairs accepted | 64 |
+| manuscripts in the population | 203 |
+| sub-finding clause pairs accepted | 62 |
 | headline clause pairs accepted | 47 |
 | clauses recorded unmatched | 18 |
-| titles claimed by a clause | 111 |
-| titles claimed by no clause | 95 |
-| families with >=1 accepted sub-finding pair | 41 |
+| titles claimed by a clause | 109 |
+| titles claimed by no clause | 94 |
+| families with >=1 accepted sub-finding pair | 40 |
 | families with >=1 clause recorded unmatched | 17 |
-| families with an accepted sub-finding pair and no probe hit | 7 |
+| families with an accepted sub-finding pair and no probe hit | 6 |
 
 ## What the pairing shows
 
-- **Most families pair cleanly.** 41 of 49 families have at least one accepted sub-finding pair, and
-  111 of the 206 titles are claimed by a clause. The catalog's own link text is a usable index of what
+- **Most families pair cleanly.** 40 of 49 families have at least one accepted sub-finding pair, and
+  109 of the 203 titles are claimed by a clause. The catalog's own link text is a usable index of what
   each family proves, for the families where the abstract was written as a list.
 - **The densest families are the worst paired.** 034 states 4 results over 14 manuscripts; 238 states 1
   over 12; 237 states 2 over 13 and its headline is named by no title; 260 states 4 over 13 and nine of
@@ -582,10 +585,14 @@ manuscript of family NNN in `notes/subfindings.tsv`, whose `title` column is the
   119, 238, 239; the Sakoda--Sipser attribution in 129; the star-height uniformity in 134; the MaxCut
   consequence in 281; the Crouzeix sharpness in 325; and the CAT$(0)$ rigidity in 337. Recording them is
   the point of the "do not force a pairing" instruction.
-- **The probe vocabulary is a floor, not a reading.** 7 families pair sub-findings with no probe hit at
-  all (014, 032, 211, 227, 237, 260, 376) — seven of the bead's ten named densest targets — because
-  their multi-claim language is "Companion results prove", "also gives", "The family also proves", "A
-  further result resolves", none of which the bead's four phrases list. 13 of the 40 probe hits are
+- **The probe vocabulary is a floor, not a reading.** 6 families pair sub-findings with no probe hit at
+  all (014, 211, 227, 237, 260, 376) — six of the bead's ten named densest targets — because their
+  multi-claim language is a second bare declarative sentence with no connective at all: "Over global
+  function fields, proves Ramanujan at every place …", "Its local mass and covering numbers have
+  exponent $4/3$.", "Charged upper-area bounds treat dyonic three-dimensional data;", "mixing time
+  $n^{2/3+o(1)}$ at $\beta=1$", "A terminating compiler turns a Turing machine and input into a finite
+  program for the force", and 211's "this also gives", which is the only "also gives" in the set —
+  none of it is a phrase the bead's four probes list. 13 of the 40 probe hits are
   technical uses of the same words. A pass that probes only the bead's second list finds nothing, which
   is how the bead's own first probe of this question produced a false negative.
 - **A display title is not the manuscript's title.** The `preprints/` directory name carries the full
@@ -605,10 +612,10 @@ manuscript of family NNN in `notes/subfindings.tsv`, whose `title` column is the
   confirm that a claimed title's paper contains the clause it is paired to, and an unclaimed title's
   paper may well prove a result the abstract omits — 260 and 238 are the cases that make that likely.
 - The population rule is provisional. The bead's 51 does not reproduce; the recorded rule yields 49
-  families over 206 manuscripts, and the revisit condition is in the population section.
+  families over 203 manuscripts, and the revisit condition is in the population section.
 - 118 families with two or more manuscripts are not read. The page covers 49 of the 167.
-- The 415 comparator-link rows in `notes/subfindings.tsv` are not paired; only the 722 manuscript rows
-  are eligible, and only 206 of those are in this population.
+- The 426 comparator-link rows in `notes/subfindings.tsv` are not paired; only the 719 manuscript rows
+  are eligible, and only 203 of those are in this population.
 - Clause boundaries were chosen by reading, not by a parser: a clause is a sentence, or a sentence
   fragment when one sentence states two results (039, 227, 271). Two clauses are quoted twice because
   each names two manuscripts (102, 267).

@@ -14,8 +14,8 @@ fresh run of that report.
 
 ## The headline
 
-**No manuscript abstract is the overview abstract.** Over all 722 manuscript comparisons:
-**0 identical, 0 abridged, 722 divergent.** Over the 372 family best matches: **0 identical,
+**No manuscript abstract is the overview abstract.** Over all 719 manuscript comparisons:
+**0 identical, 0 abridged, 719 divergent.** Over the 372 family best matches: **0 identical,
 0 abridged, 372 divergent.**
 
 The overview abstract is a rewritten third-person paraphrase in every case. The dominant transform
@@ -35,20 +35,20 @@ the error is systematic, and the `conditional` tag is where it bites.
 
 ## What was compared
 
-- **Units.** Manuscript-level: 722 comparisons (one per manuscript, against its family's overview
+- **Units.** Manuscript-level: 719 comparisons (one per manuscript, against its family's overview
   abstract). Family-level: 372 comparisons (the best-matching manuscript per family). Tag-level:
   the ledger's shape rules [S32] run over the overview abstract, and re-run over the union of the
   family's manuscript abstracts.
-- **Abstract environments: 725 over 722 directories.** Every one of the 722 manuscript directories
+- **Abstract environments: 722 over 719 directories.** Every one of the 719 manuscript directories
   contains at least one abstract; three ship two — family 057
   (`A-conditional-abelianity-theorem-for-special-fourfold-pairs-with-a-half-weight-divisor-October-5-2026`,
   `build/source/main.tex` and `build/source/inertia.tex`), family 039
   (`Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-5-2026`, `build/main.tex` and
   `build/provenance/companion/main.tex`) and family 056
-  (`Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-5-2026`,
+  (`Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026`,
   `build/main.tex` and `build/termination-generalized-lc-kahler-fourfolds.tex`). The `abstract`
   column in `notes/sources.tsv` is a 0/1 **flag** per directory, not an occurrence count, so it
-  reads 722 and cannot show this.
+  reads 719 and cannot show this.
 - **Normalization is lossy, deliberately.** Comments, the abstract environment markers,
   `\label`/`\ref`/`\cite`-family macros, generic `\newcommand`-family macros, math delimiters,
   braces, `~` and `\\` are stripped and whitespace collapsed. This is why the relation classes are
@@ -64,44 +64,65 @@ strings — character-level similarity, not meaning.
 
 | unit | n | min | p10 | median | p90 | max |
 |---|---|---|---|---|---|---|
-| manuscript-level | 722 | 0.007 | 0.029 | **0.126** | 0.448 | 0.989 |
+| manuscript-level | 719 | 0.006 | 0.029 | **0.126** | 0.448 | 0.989 |
 | family-level best match | 372 | 0.011 | 0.074 | **0.236** | 0.610 | 0.989 |
 
 | bucket (<0.30 / 0.30–0.50 / 0.50–0.70 / 0.70–0.90 / ≥0.90) | manuscript-level | family-level |
 |---|---|---|
-| count | 569 / 97 / 32 / 20 / 4 | 227 / 90 / 32 / 19 / 4 |
+| count | 566 / 97 / 32 / 20 / 4 | 227 / 90 / 32 / 19 / 4 |
 
 Four families have a best match at ≥0.90: **005** (0.972), **098** (0.901), **198** (0.989),
 **368** (0.929). Eighteen families have a best match below 0.05: 021, 027, 053, 081, 093, 124, 126,
 128, 174, 206, 214, 231, 234, 261, 264, 275, 361, 373. Label the unit when quoting the floor:
-counting per manuscript instead of per family, 87 of the 722 comparisons fall below 0.05.
+counting per manuscript instead of per family, **149 of the 719** comparisons fall below 0.05,
+spread over **88** families. The manuscript-level minimum 0.006 is family 032's surviving
+`A-Conditional-Reduction-for-Algebraic-Kuga-Satake-…` manuscript.
+
+**The floor moved from the 87 this page recorded before the 2026-10-07 merge, and the merge is not
+the reason.** The shipped rule reproduces 149, not 87, over the *pre-merge* manuscript list too:
+run against `notes/sources.tsv` as of `9b68bc538` (722 rows), the extractor yields 719 comparisons
+with the same distribution — 149 below 0.05, buckets 566 / 97 / 32 / 20 / 4, median 0.126, min 0.006.
+Three of those 722 rows are family 032's withdrawn manuscripts, whose directories now ship a notice
+and an archived PDF and no LaTeX, so they yield no abstract and drop out. The 692 manuscript
+directories that exist in both states are byte-identical, and `overview.tex` changed the abstract of
+exactly one family (032), so the comparison inputs are unchanged; 6 of the 149 low comparisons sit in
+the 27 directories the merge added. The recorded 87 is therefore not reproducible by the rule this
+page names, on the current corpus or on the pre-merge one. Quote 149 with the shipped rule.
+
+The eight-lowest table below carried the same kind of drift. Its ratios for 373, 231, 214, 234, 021,
+027 and 128 read 0.012 / 0.014 / 0.015 / 0.016 / 0.017 / 0.018 / 0.019; the shipped rule gives
+0.019 / 0.019 / 0.022 / 0.022 / 0.023 / 0.026 / 0.029 on the current corpus *and* on the pre-merge
+manuscript list, and no normalization variant (raw overview against normalized abstract, normalized
+overview against raw abstract) reproduces the recorded values either. The table now carries the
+measured figures. The distribution row above — 0.011 / 0.074 / **0.236** / 0.610 / 0.989 over 372 —
+is unchanged by the merge and does reproduce.
 
 ## Tag-level: what the shape rules see in each text
 
 `ovfam` = families whose **overview** abstract fires the shape (this is what the ledger records);
-`msfam` = families whose **union of manuscript abstracts** fires it; `man722` = manuscripts that
+`msfam` = families whose **union of manuscript abstracts** fires it; `man719` = manuscripts that
 fire it, which is the control for union inflation (a 14-manuscript family gets 14 chances to flag a
-shape, so `msfam` ≥ `man722` by construction and the comparison to `ovfam` must be read through
-`man722`).
+shape, so `msfam` ≥ `man719` by construction and the comparison to `ovfam` must be read through
+`man719`).
 
-| shape | ovfam | msfam | man722 | ov-only | ms-only |
+| shape | ovfam | msfam | man719 | ov-only | ms-only |
 |---|---|---|---|---|---|
 | bound | 139 | 162 | 290 | 26 | 49 |
-| classification | 34 | 43 | 71 | 4 | 13 |
+| classification | 34 | 44 | 72 | 4 | 14 |
 | conditional | 5 | 10 | 15 | 3 | 8 |
 | counterexample | 44 | 52 | 69 | 13 | 21 |
 | density | 20 | 32 | 44 | 1 | 13 |
 | partial | 42 | 73 | 102 | 7 | 38 |
 | resolution | 144 | 127 | 153 | 78 | 61 |
 | undecidability | 4 | 21 | 24 | 2 | 19 |
-| uniform | 161 | 209 | 343 | 24 | 72 |
+| uniform | 161 | 209 | 340 | 24 | 72 |
 
-**282 of 372 families have at least one shape disagreement between the two texts; 90 have none.**
-Of the 282, 147 are single-manuscript families and 135 are multi-manuscript families.
+**283 of 372 families have at least one shape disagreement between the two texts; 89 have none.**
+Of the 283, 148 are single-manuscript families and 135 are multi-manuscript families.
 
 The direction is not "the union flags more". Per manuscript, the overview under-flags every shape
 except `resolution`, which it **over**-flags: 144 of 372 families (39%) call a resolution in the
-overview, against 153 of 722 manuscripts (21%). The overview is written to name a solved problem —
+overview, against 153 of 719 manuscripts (21%). The overview is written to name a solved problem —
 it uses `resolves`, `answers`, `settles`, `proves the … conjecture` at roughly twice the manuscript
 rate, and `undecidability` language at a fifth of it (4 families vs 24 manuscripts). The
 `resolution` tag and the `resolves_named` column are keyed to the paraphrase's rhetoric, not to the
@@ -262,13 +283,13 @@ overview describes a different manuscript than the one being compared*, not that
 | fam | ratio | overview [S1] | manuscript |
 |---|---|---|---|
 | 093 | 0.011 | “Proves a dimension-free logarithmic Sobolev inequality for centered log-concave densities with uniformly subgaussian linear marginals, with constant bounded by a universal multiple of the squared linear subgaussian parameter.” [S1] | “We prove that every centered log-concave probability measure with a Lebesgue density on $\mathbb R^n$ and linear subgaussian parameter $a$ satisfies $\operatorname{Ent}_\mu(f^2)\le Ca^2\int|Df|^2\,d\mu$ for compactly supported smooth $f$, with one universal constant $C$.” [S9] |
-| 373 | 0.012 | “An optimal three-particle Coulomb configuration need not be a deterministic function of the first particle, even for smooth identical spatial densities.” [S1] | “We construct a smooth compactly supported probability density on \(\R^3\), with a smooth compactly supported square root, for which the three-marginal Coulomb transport minimum is not attained by any pair of measure-preserving Borel maps.” [S10] |
-| 231 | 0.014 | “On every infinite connected locally finite simple unweighted graph, the free uniform spanning forest is a factor of independent vertex labels, by one isomorphism-equivariant rule using no root.” [S1] | “We prove that the free uniform spanning forest is a factor of IID on every infinite connected locally finite simple unweighted graph. One Borel rule works for all such graphs and uses no root, answering affirmatively the general factor question for unimodular random graphs.” [S11] |
-| 214 | 0.015 | “Proves $p_c<p_u$ for Bernoulli bond percolation on every infinite connected locally finite nonamenable quasi-transitive graph, resolving the Benjamini--Schramm nonuniqueness conjecture.” [S1] | “We prove the bond-percolation nonuniqueness conjecture of Benjamini and Schramm: every infinite connected, locally finite, nonamenable quasi-transitive graph has a nonempty interval of parameters for which Bernoulli bond percolation almost surely has infinitely many infinite clusters.” [S12] |
-| 234 | 0.016 | “Gives an exact variational formula for the limiting pressure of orthogonally invariant Ising spin glasses at every fixed temperature, both almost surely and in expectation.” [S1] | “We determine the limiting pressure of an Ising spin glass with Haar orthogonal eigenvectors, a compact limiting spectral law, and no asymptotic outliers, at every fixed temperature. The pressure converges in expectation and almost surely to a variational formula.” [S13] |
-| 021 | 0.017 | “Answers Jacobsthal's quadratic-bound question: every interval of $Ck^2$ consecutive integers contains an integer coprime to any prescribed positive integer with at most $k$ distinct prime divisors, for an absolute constant $C$.” [S1] | “Let $h(k)$ be the least integer such that every interval of $h(k)$ consecutive integers contains an integer coprime to any prescribed positive integer having at most $k$ distinct prime divisors. We prove $h(k)\ll k^2/(\log\log(3k))^2$, giving an affirmative answer to Jacobsthal's quadratic-bound question.” [S14] |
-| 027 | 0.018 | “Resolves the determinant-one curve case of Litt's integral-density question.” [S1] | “We prove potential Zariski density of integral points on $\SL_r$-character varieties of smooth complex curves in every rank.” [S15] |
-| 128 | 0.019 | “Gives a deterministic polynomial-time algorithm constructing a common superstring of length at most twice the optimum for every finite family of explicitly represented strings.” [S1] | “We give a deterministic algorithm that, for every finite family of explicitly represented ordinary strings, outputs a common superstring of length at most twice the optimum in time polynomial in the total encoded input size, including symbol labels.” [S16] |
+| 373 | 0.019 | “An optimal three-particle Coulomb configuration need not be a deterministic function of the first particle, even for smooth identical spatial densities.” [S1] | “We construct a smooth compactly supported probability density on \(\R^3\), with a smooth compactly supported square root, for which the three-marginal Coulomb transport minimum is not attained by any pair of measure-preserving Borel maps.” [S10] |
+| 231 | 0.019 | “On every infinite connected locally finite simple unweighted graph, the free uniform spanning forest is a factor of independent vertex labels, by one isomorphism-equivariant rule using no root.” [S1] | “We prove that the free uniform spanning forest is a factor of IID on every infinite connected locally finite simple unweighted graph. One Borel rule works for all such graphs and uses no root, answering affirmatively the general factor question for unimodular random graphs.” [S11] |
+| 214 | 0.022 | “Proves $p_c<p_u$ for Bernoulli bond percolation on every infinite connected locally finite nonamenable quasi-transitive graph, resolving the Benjamini--Schramm nonuniqueness conjecture.” [S1] | “We prove the bond-percolation nonuniqueness conjecture of Benjamini and Schramm: every infinite connected, locally finite, nonamenable quasi-transitive graph has a nonempty interval of parameters for which Bernoulli bond percolation almost surely has infinitely many infinite clusters.” [S12] |
+| 234 | 0.022 | “Gives an exact variational formula for the limiting pressure of orthogonally invariant Ising spin glasses at every fixed temperature, both almost surely and in expectation.” [S1] | “We determine the limiting pressure of an Ising spin glass with Haar orthogonal eigenvectors, a compact limiting spectral law, and no asymptotic outliers, at every fixed temperature. The pressure converges in expectation and almost surely to a variational formula.” [S13] |
+| 021 | 0.023 | “Answers Jacobsthal's quadratic-bound question: every interval of $Ck^2$ consecutive integers contains an integer coprime to any prescribed positive integer with at most $k$ distinct prime divisors, for an absolute constant $C$.” [S1] | “Let $h(k)$ be the least integer such that every interval of $h(k)$ consecutive integers contains an integer coprime to any prescribed positive integer having at most $k$ distinct prime divisors. We prove $h(k)\ll k^2/(\log\log(3k))^2$, giving an affirmative answer to Jacobsthal's quadratic-bound question.” [S14] |
+| 027 | 0.026 | “Resolves the determinant-one curve case of Litt's integral-density question.” [S1] | “We prove potential Zariski density of integral points on $\SL_r$-character varieties of smooth complex curves in every rank.” [S15] |
+| 128 | 0.029 | “Gives a deterministic polynomial-time algorithm constructing a common superstring of length at most twice the optimum for every finite family of explicitly represented strings.” [S1] | “We give a deterministic algorithm that, for every finite family of explicitly represented ordinary strings, outputs a common superstring of length at most twice the optimum in time polynomial in the total encoded input size, including symbol labels.” [S16] |
 
 Reading these eight, the pattern is consistent: the overview states the **conclusion in the
 catalog's own vocabulary** (named conjecture, named question, the inequality in display form) and
@@ -282,7 +303,7 @@ shorter statement of the same result, written for a reader choosing which family
 - The claim-shape tags read the overview paraphrase. For a family whose overview drops a manuscript
   (034, 218), the tags cannot see the shapes in the dropped manuscript at all.
 - `resolution` and `resolves_named` are keyed to the paraphrase's rhetoric and over-flag relative to
-  the manuscripts (144 of 372 families vs 153 of 722 manuscripts).
+  the manuscripts (144 of 372 families vs 153 of 719 manuscripts).
 - `conditional` is the tag where paraphrase and rule interact worst: 11 families disagree, and only
   5 of them are real conditionals the overview presents unconditionally.
 - `notes/abstracts.tsv` [S31] is the per-family record — 372 rows with the best-match ratio,
@@ -302,6 +323,14 @@ never read `identical`. The tag-level comparison uses the ledger's rules re-run 
 text; it does not re-run `resolves_named` or `counterex_broad`, whose input scope is title +
 abstract. No family was checked against its Lean formalization in this pass, and nothing was built:
 no `lake`, no `lean`, no comparator.
+
+The pre-merge reproduction quoted above is a **probe, not a shipped command**: it points
+`compare_abstracts.SOURCES` at `git show 9b68bc538:notes/sources.tsv` and calls `measure()`. The
+extractor has no flag for a historical manuscript list, so the 149-over-the-pre-merge-list figure is
+reproducible only by that probe, and `notes/abstracts.tsv` records the current list. The 3 family-032
+withdrawal-notice directories are outside `notes/sources.tsv` and outside every count here; their
+archived PDFs were not read, and a withdrawn manuscript's abstract is not compared with the overview
+that no longer describes it.
 
 `python3 notes/scripts/verify_abstracts.py --mutant` [S37] resolves every `[S#]` marker in this page
 against the shipped files and checks every quotation, verbatim modulo whitespace, against the text

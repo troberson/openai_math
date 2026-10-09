@@ -1,7 +1,7 @@
-# T0 triage: 137 families, 255 manuscripts, zero coverage signal
+# T0 triage: 130 families, 244 manuscripts, zero coverage signal
 
-T0 is the tier with **no scope note, no comparator challenge, and no `main_results` entry** — 137
-families holding 255 manuscripts. By construction every one of those manuscripts is unformalized
+T0 is the tier with **no scope note, no comparator challenge, and no `main_results` entry** — 130
+families holding 244 manuscripts. By construction every one of those manuscripts is unformalized
 (the T3 set is exactly the families with at least one formalized manuscript), so T0 is where claim
 shape has to carry the categorization on its own.
 
@@ -17,34 +17,38 @@ multi-label. Ordered by how cheaply the claim can be checked, not by importance.
 | Bucket | T0 families | Manuscripts | Meaning |
 |---|---|---|---|
 | C | 16 | 29 | counterexample — names an object that breaks a conjecture |
-| R | 50 | 92 | resolution — resolves/proves/settles a named conjecture |
-| B | 29 | 57 | bound — bound, sharpness, power-saving, improvement |
+| R | 46 | 85 | resolution — resolves/proves/settles a named conjecture |
+| B | 27 | 54 | bound — bound, sharpness, power-saving, improvement |
 | K | 8 | 20 | classification — if and only if / classified / characterization |
 | U | 12 | 17 | uniform — uniformity over every object in a class |
 | O | 2 | 5 | density, partial, undecidability — tagged, no bucket above |
-| N | 20 | 35 | no shape tag at all — title is the only signal |
-| **Total** | **137** | **255** | reconciles with the T0 row count |
+| N | 19 | 34 | no shape tag at all — title is the only signal |
+| **Total** | **130** | **244** | reconciles with the T0 row count |
 
 Buckets come from `shapes` alone. The ledger's `resolves_named` column (248 families repo-wide) is a
-second T0 discriminator: it flags **91 of these 137**, including 12 of the 20 in N — 019, 031, 043,
-051, 060, 164, 195, 258, 306, 316, 338, 341, all named-conjecture families — so N is no longer
+second T0 discriminator: it flags **86 of these 130**, including 11 of the 19 in N — 019, 031, 043,
+051, 060, 164, 258, 306, 316, 338, 341, all named-conjecture families — so N is no longer
 title-only for half its families. Cross-tab and method: `notes/resolution-tag.md`.
 
-`counterex_broad` (74 families repo-wide) is a third: it flags **22 of these 137**, of which 16 are
-the C bucket and **6 are not** — 004 (R), 048 and 201 (K), 195 (N), 259 and 284 (B). First match
+`counterex_broad` (74 families repo-wide) is a third: it flags **21 of these 130**, of which 16 are
+the C bucket and **5 are not** — 004 (R), 048 and 201 (K), 259 and 284 (B). First match
 never shows them as counterexamples, which is why the signal is a column and not a widened tag.
 Cross-tab and method: `notes/counterexample-tag.md`.
 
 Bucket concentration by discipline (families with ≥2): C is Topology 5, A&CG 4, differential
-geometry 3. R is A&CG 9, number theory 8, real/complex analysis 6, algebra 5, topology 5. B is
-probability 5, A&CG 4, mathematical physics 4, TCS 3. N (untagged) is A&CG 5, differential geometry
-4, number theory 2, probability 2, topology 2.
+geometry 3. R is A&CG 9, number theory 7, real/complex analysis 5, algebra 5, topology 5, differential
+geometry 3, combinatorics 2, mathematical physics 2, PDE 2. B is probability 5, mathematical physics
+4, A&CG 3, differential geometry 3, PDE 3, TCS 2. K is number theory 2, A&CG 2. U is A&CG 4, number
+theory 2, topology 2. N (untagged) is A&CG 5, differential geometry 4, number theory 2, probability
+2, topology 2.
 
 ## The reading pass: 44 families first
 
-Selection rule: the C bucket (16 families) ∪ the number-theory opening, family ids 001–031 (15) ∪
-families with ≥3 manuscripts (22). Union: **44 families, 134 manuscripts**. The other 93 T0
-families hold 121 manuscripts; they are read in the second pass below.
+Selection rule, measured in the 2026-10-06 run: the C bucket (16 families) ∪ the number-theory
+opening, family ids 001–031 (15) ∪ families with ≥3 manuscripts (22). Union: **44 families,
+134 manuscripts** — the families read below. The other 93 T0 families of that run hold 121
+manuscripts; they are read in the second pass below. The 2026-10-08 re-measure reads the C bucket
+at 16, the opening at 14, and the ≥3-manuscript set at 22; the read set is not re-derived.
 
 ### C — counterexample (16 families, 29 manuscripts)
 
@@ -100,7 +104,7 @@ as described, and does it break the named conjecture?
 - **352** (1p, diff geometry) — Chen's long-time Calabi-flow existence fails: a smooth
   U(10)-invariant Kähler metric on CP¹⁰ in the Fubini–Study class develops a finite-time singularity.
 
-### Number-theory opening (15 of the first 31 families are T0)
+### Number-theory opening (14 of the first 31 families are T0)
 
 The most scrutinized results in the release have the least shipped evidence.
 
@@ -485,17 +489,17 @@ Reading the titles settles most of them, which is what reading-priority item 4 a
 ## What the triage shows
 
 
-1. **T0 is not a weakness signal.** 137 families, 255 manuscripts, zero formalized — that is the
-   absence of a coverage mechanism, not evidence of a defect. 560 of 722 manuscripts are
+1. **T0 is not a weakness signal.** 130 families, 244 manuscripts, zero formalized — that is the
+   absence of a coverage mechanism, not evidence of a defect. 547 of 719 manuscripts are
    unformalized overall.
-2. **The most scrutinized results are the least covered.** 15 of the first 31 family ids are T0,
+2. **The most scrutinized results are the least covered.** 14 of the first 31 family ids are T0,
    including Hilbert's tenth over Q (004), BSD (002), the p-adic section conjecture (019), geometric
    Langlands (014), and modularity over imaginary quadratic fields (030).
 3. **The counterexample bucket is the cheapest place to start.** 16 families, 29 manuscripts,
    concentrated in topology (5), A&CG (4), and differential geometry (3). Each names an object — a
    fourfold, a spectrum, a Lagrangian, a Kähler metric, a CW complex, a local ring — so the check is
    object-level, not proof-level.
-4. **The resolution bucket is the largest claim-to-evidence gap:** 50 families, 92 manuscripts, all
+4. **The resolution bucket is the largest claim-to-evidence gap:** 46 families, 85 manuscripts, all
    asserting that a named conjecture is settled, none with a scope note, challenge, or formalized
    manuscript.
 5. **Cross-family chains sit entirely inside T0.** 001 + 032: Milne rationality plus rational Hodge
@@ -838,7 +842,7 @@ dimension four, negative at \(q+3\ge13\), with the gap between 4 and 13 unaddres
 ## Reading priority for the next passes
 
 
-The first two passes cover all 137 T0 families at abstract level, so priority is now about what to
+The first two passes cover all 130 T0 families at abstract level, so priority is now about what to
 check, not what to read.
 
 1. ~~Find the parameter the abstracts leave open in 054, 278, 318, 319, 340, 351; name the witness of

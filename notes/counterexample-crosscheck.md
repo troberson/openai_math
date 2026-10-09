@@ -3,28 +3,28 @@
 ## Population
 
 Rule: the ledger's `shapes` column contains `counterexample` **and** the tier is not `T0`. That is
-**28** families — **18** at T3 and **10** at T2. The shape rule fires on **44** families overall, so
+**28** families — **19** at T3 and **9** at T2. The shape rule fires on **44** families overall, so
 **16** carry the tag at T0; those are read in `notes/t0-triage.md`, which is why the bead's population
 excludes them. Regenerate with `python3 notes/scripts/extract_counterexample_crosscheck.py` —
 report-only, it writes nothing and runs nothing, and running it twice and diffing must give an
 identical report.
 
-Ledger sums over the 28: **27** `main_results` declarations, **51** comparator configs, **23**
+Ledger sums over the 28: **28** `main_results` declarations, **52** comparator configs, **24**
 formalized manuscripts out of **50**. Every one of the 28 has a scope note.
 
-`lean/formalization.yaml` carries **185** `main_results` entries over **178** unique configs (one
-block, `lean/formalization.yaml:917`). Of the 28 families, **18** have at least one entry and **10**
-have none, and the no-entry tier counter reads `{'T2': 10}`: the absence is structural, not a reading
+`lean/formalization.yaml` carries **200** `main_results` entries over **189** unique configs (one
+block, `lean/formalization.yaml:917`). Of the 28 families, **19** have at least one entry and **9**
+have none, and the no-entry tier counter reads `{'T2': 9}`: the absence is structural, not a reading
 gap — T2 is the tier the release assigns to a family whose scope note links configs that no
 `main_results` entry names.
 
-All **27** declarations resolve to a statement line in the file the entry names. **11** of the 27 are
+All **28** declarations resolve to a statement line in the file the entry names. **11** of the 28 are
 written `theorem main : <Carrier> :=`, so their content is opaque until the carrier is opened; all
 **11** carriers resolve, through the declaration file's import closure rather than its directory tree.
 
-Config accounting: the 28 scope notes link **51** distinct configs, **27** of them carry an entry and
-**24** carry none. Inside T3 the gap is **11** configs in **7** families; inside T2 it is **13**
-configs in all **10** families.
+Config accounting: the 28 scope notes link **52** distinct configs, **28** of them carry an entry and
+**24** carry none. Inside T3 the gap is **12** configs in **8** families; inside T2 it is **12**
+configs in all **9** families.
 
 Source-level facts, stated at source level: `lean/formalization.yaml` records `scope: "Partial
 progress."`, `automation: methods: [agent]`, `review: status: unchecked`. Nothing here says a
@@ -45,7 +45,7 @@ of them. Gaps = configs with no entry.
 | 118 | T3 | 1 | 1 | 0 | entry states the counterexample |
 | 151 | T2 | 1 | 0 | 1 | structural absence |
 | 155 | T3 | 1 | 1 | 0 | entry states the counterexample |
-| 157 | T2 | 1 | 0 | 1 | structural absence |
+| 157 | T3 | 2 | 1 | 1 | entry states the Hadwiger claim; one gap |
 | 161 | T2 | 1 | 0 | 1 | structural absence |
 | 162 | T3 | 3 | 2 | 1 | entries state both claims; one gap |
 | 172 | T3 | 7 | 2 | 5 | classification and spherical witness; five gaps |
@@ -67,7 +67,7 @@ of them. Gaps = configs with no entry.
 | 350 | T3 | 3 | 2 | 1 | entries state two forms; one gap |
 | 361 | T3 | 1 | 1 | 0 | entry states the counterexample |
 
-## The 18 T3 families
+## The 19 T3 families
 
 Each block quotes the abstract sentence that carries the counterexample language, the scope-note link
 that names the config, the `main_results` entry, the Lean statement the entry's declaration opens
@@ -86,7 +86,7 @@ three-space but are not Zariski-locally trivial."*
 
 `ComplexCancellation` — `lean/docs/047.md:17`
 
-`lean/formalization.yaml:1042`
+`lean/formalization.yaml:1105`
 ```yaml
     - comparator_config: ComparatorChallenges/ComplexCancellation.json
       declaration: OAI.ComplexCancellation.main
@@ -117,7 +117,7 @@ prediction at that parameter."*
 
 `Brennan` — `lean/docs/072.md:22`
 
-`lean/formalization.yaml:986`
+`lean/formalization.yaml:1041`
 ```yaml
     - comparator_config: ComparatorChallenges/Brennan.json
       declaration: OAI.Brennan.main_theorem
@@ -148,7 +148,7 @@ def MainStatement : Prop :=
 
 `BrennanSharp` — `lean/docs/072.md:23`
 
-`lean/formalization.yaml:990`
+`lean/formalization.yaml:1045`
 ```yaml
     - comparator_config: ComparatorChallenges/BrennanSharp.json
       declaration: OAI.Brennan.Sharp.sharp_endpoints
@@ -172,7 +172,7 @@ def SharpEndpointStatement : Prop :=
 
 `StrictMeans` — `lean/docs/072.md:24`
 
-`lean/formalization.yaml:1534`
+`lean/formalization.yaml:1625`
 ```yaml
     - comparator_config: ComparatorChallenges/StrictMeans.json
       declaration: OAI.StrictInverseFirstPower.main
@@ -206,7 +206,7 @@ spectrahedral."*
 
 `HyperbolicCones` — `lean/docs/095.md:15`
 
-`lean/formalization.yaml:1226`
+`lean/formalization.yaml:1301`
 ```yaml
     - comparator_config: ComparatorChallenges/HyperbolicCones.json
       declaration: OAI.Paper256.main_result
@@ -237,7 +237,7 @@ additive constant."*
 
 `BinPackingGap` — `lean/docs/118.md:15`
 
-`lean/formalization.yaml:954`
+`lean/formalization.yaml:1009`
 ```yaml
     - comparator_config: ComparatorChallenges/BinPackingGap.json
       declaration: OAI.BinPackingGap.main_results
@@ -271,7 +271,7 @@ arbitrary real translation vectors."*
 
 `PeriodicTilingThree` — `lean/docs/155.md:15`
 
-`lean/formalization.yaml:1370`
+`lean/formalization.yaml:1457`
 ```yaml
     - comparator_config: ComparatorChallenges/PeriodicTilingThree.json
       declaration: OAI.PeriodicTilingThree.periodic_tiling_counterexample_and_minimality
@@ -294,6 +294,37 @@ Verdict: one entry states both claims — the lattice conjuncts are claim 1, the
 conjuncts are claim 2, and `IsLeast … 3` is the minimality the blurb calls "the smallest possible
 lattice dimension".
 
+### 157 — Counterexamples to the Hadwiger and Colin de Verdi\`ere conjectures
+
+Claim 1 (`overview.tex:395`) — *"Disproves Hadwiger's conjecture even for fractional coloring: arbitrarily large finite simple graphs with independence number at most two satisfy $\chi_f(G)>h(G)$, where $h(G)$ is the largest clique-minor order."*
+
+Claim 2 (`overview.tex:395`) — *"Also disproves the fractional Colin de Verdi\`ere chromatic bound $\chi_f(G)\le\mu(G)+1$."*
+
+`ListHadwiger` — `lean/docs/157.md:20` — no `main_results` entry.
+
+`HadwigerCounterexample` — `lean/docs/157.md:21`
+
+`lean/formalization.yaml:1277`
+```yaml
+    - comparator_config: ComparatorChallenges/HadwigerCounterexample.json
+      declaration: OAI.HadwigerCounterexample.not_hadwiger_conjecture
+      file: OAI/Combinatorics/HadwigerCounterexample/Main.lean
+```
+
+`lean/OAI/Combinatorics/HadwigerCounterexample/Main.lean:120`
+```lean
+theorem not_hadwiger_conjecture : ¬ (∀ (m:ℕ)(G:SimpleGraph (Fin m)), G.chromaticNumber ≤ ↑(hadwigerNumber G)) := by
+  intro h; obtain ⟨m,hM,G,h1,h2,h3,h4,h5,h6,he,hC⟩:=exists_counterexamples 0
+  have ht:=h m G; rw [hC] at ht
+  exact h6.not_ge (by exact_mod_cast ht)
+end HadwigerCounterexample
+```
+
+Verdict: the one entry is the Hadwiger target, and its statement is the negation of the ordinary
+integer-chromatic form `χ(G) ≤ h(G)` — the blurb's claim is the *fractional* bound `χ_f(G) > h(G)`,
+which is the weaker statement the integer negation implies. The list-coloring config
+(`ListHadwiger`) and the Colin de Verdi\`ere bound of claim 2 have no entry.
+
 ### 162 — Counterexamples to Ryser's covering and Gyárfás's tree-cover conjectures
 
 Claim 1 (`overview.tex:405`) — *"Disproves Ryser's covering conjecture by constructing intersecting $(q+1)$-partite,
@@ -307,7 +338,7 @@ tree-cover conjecture."*
 
 `RyserCovering` — `lean/docs/162.md:19`
 
-`lean/formalization.yaml:1470`
+`lean/formalization.yaml:1557`
 ```yaml
     - comparator_config: ComparatorChallenges/RyserCovering.json
       declaration: OAI.RyserCoveringCounterexample.exists_prime_eventually_counterexampleRank
@@ -324,7 +355,7 @@ theorem exists_prime_eventually_counterexampleRank :
 
 `RyserOddExtensions` — `lean/docs/162.md:20`
 
-`lean/formalization.yaml:1474`
+`lean/formalization.yaml:1561`
 ```yaml
     - comparator_config: ComparatorChallenges/RyserOddExtensions.json
       declaration: OAI.RyserOdd.eventualOddFailures_and_infinite
@@ -354,7 +385,7 @@ a subset of a finite transitive set."*
 
 `EuclideanRamsey` — `lean/docs/172.md:17`
 
-`lean/formalization.yaml:1150`
+`lean/formalization.yaml:1213`
 ```yaml
     - comparator_config: ComparatorChallenges/EuclideanRamsey.json
       declaration: OAI.EuclideanRamsey.classification
@@ -371,7 +402,7 @@ Ramsey a ↔ FieldCriterion a :=
 
 `GrahamSpherical` — `lean/docs/172.md:18`
 
-`lean/formalization.yaml:1198`
+`lean/formalization.yaml:1265`
 ```yaml
     - comparator_config: ComparatorChallenges/GrahamSpherical.json
       declaration: OAI.GrahamSpherical.full_main
@@ -413,7 +444,7 @@ Claim 2 (`overview.tex:449`) — *"The same examples answer Jo\'o’s partitiona
 
 `InfiniteMatroid` — `lean/docs/185.md:17`
 
-`lean/formalization.yaml:1246`
+`lean/formalization.yaml:1321`
 ```yaml
     - comparator_config: ComparatorChallenges/InfiniteMatroid.json
       declaration: OAI.InfiniteMatroidCounterexample.main
@@ -444,7 +475,7 @@ pattern."*
 
 `MatrixRemoval` — `lean/docs/190.md:15`
 
-`lean/formalization.yaml:1326`
+`lean/formalization.yaml:1405`
 ```yaml
     - comparator_config: ComparatorChallenges/MatrixRemoval.json
       declaration: OAI.Problem348.no_polynomial_removal_bound
@@ -480,7 +511,7 @@ Determinant Conjecture."*
 
 `GroupRingDeterminant` — `lean/docs/197.md:35`
 
-`lean/formalization.yaml:1206`
+`lean/formalization.yaml:1273`
 ```yaml
     - comparator_config: ComparatorChallenges/GroupRingDeterminant.json
       declaration: OAI.GroupRingDeterminant.main
@@ -506,7 +537,7 @@ def MainStatement : Prop :=
 
 `KaplanskyFinitelyPresented` — `lean/docs/197.md:33`
 
-`lean/formalization.yaml:1266`
+`lean/formalization.yaml:1341`
 ```yaml
     - comparator_config: ComparatorChallenges/KaplanskyFinitelyPresented.json
       declaration: OAI.KaplanskyCounterexample.finitelyPresented_counterexample
@@ -524,7 +555,7 @@ theorem finitelyPresented_counterexample :
 
 `OddKaplansky` — `lean/docs/197.md:36`
 
-`lean/formalization.yaml:1350`
+`lean/formalization.yaml:1429`
 ```yaml
     - comparator_config: ComparatorChallenges/OddKaplansky.json
       declaration: OAI.OddKaplansky.main_theorem
@@ -563,7 +594,7 @@ Claim 1 (`overview.tex:477`) — *"This disproves the little finitistic-dimensio
 
 `LittleFinitistic` — `lean/docs/198.md:17`
 
-`lean/formalization.yaml:1286`
+`lean/formalization.yaml:1361`
 ```yaml
     - comparator_config: ComparatorChallenges/LittleFinitistic.json
       declaration: OAI.LittleFinitistic.Main.exists_counterexample
@@ -582,7 +613,7 @@ theorem exists_counterexample :
 
 `FinitisticAsymmetry` — `lean/docs/198.md:18`
 
-`lean/formalization.yaml:1162`
+`lean/formalization.yaml:1225`
 ```yaml
     - comparator_config: ComparatorChallenges/FinitisticAsymmetry.json
       declaration: OAI.LittleFinitistic.extreme_left_right_asymmetry
@@ -616,7 +647,7 @@ Claim 3 (`overview.tex:479`) — *"The counterexamples persist under every exten
 
 `AuslanderReiten` — `lean/docs/199.md:22`
 
-`lean/formalization.yaml:938`
+`lean/formalization.yaml:993`
 ```yaml
     - comparator_config: ComparatorChallenges/AuslanderReiten.json
       declaration: OAI.ArExplicit.Statement.main
@@ -646,7 +677,7 @@ def FullStatement : Prop :=
 
 `Tachikawa` — `lean/docs/199.md:23`
 
-`lean/formalization.yaml:1570`
+`lean/formalization.yaml:1665`
 ```yaml
     - comparator_config: ComparatorChallenges/Tachikawa.json
       declaration: OAI.Tachikawa.main_theorem
@@ -690,7 +721,7 @@ injects into that set, yet the axiom of choice fails."*
 
 `PartitionPrinciple` — `lean/docs/244.md:17`
 
-`lean/formalization.yaml:1362`
+`lean/formalization.yaml:1449`
 ```yaml
     - comparator_config: ComparatorChallenges/PartitionPrinciple.json
       declaration: OAI.PartitionPilot.Forcing.TransitiveGround.exists_model_partitionPrinciple_without_choice
@@ -727,7 +758,7 @@ $C^*$-algebra admitting normalized $2$-quasitraces, all of which are nonadditive
 
 `KaplanskyQuasitrace` — `lean/docs/294.md:17`
 
-`lean/formalization.yaml:1270`
+`lean/formalization.yaml:1345`
 ```yaml
     - comparator_config: ComparatorChallenges/KaplanskyQuasitrace.json
       declaration: OAI.Kaplansky.kaplansky_quasitrace_counterexample
@@ -769,7 +800,7 @@ body is a cube."*
 
 `MetricEntropyDuality` — `lean/docs/329.md:15`
 
-`lean/formalization.yaml:1338`
+`lean/formalization.yaml:1417`
 ```yaml
     - comparator_config: ComparatorChallenges/MetricEntropyDuality.json
       declaration: OAI.MetricEntropyDuality.exists_entropy_duality_counterexample_with_covers
@@ -800,7 +831,7 @@ is unbounded."* (`overview.tex:792`)
 
 `ArnoldCounterexample` — `lean/docs/347.md:15`
 
-`lean/formalization.yaml:926`
+`lean/formalization.yaml:981`
 ```yaml
     - comparator_config: ComparatorChallenges/ArnoldCounterexample.json
       declaration: OAI.ArnoldCounterexample.main
@@ -829,7 +860,7 @@ metrics on $S^3$ arbitrarily close to round."*
 
 `SmoothYau` — `lean/docs/350.md:22`
 
-`lean/formalization.yaml:1526`
+`lean/formalization.yaml:1613`
 ```yaml
     - comparator_config: ComparatorChallenges/SmoothYau.json
       declaration: OAI.YauCounterexamples.sphere_two_torus_two
@@ -845,7 +876,7 @@ theorem sphere_two_torus_two :
 
 `YauCounterexample` — `lean/docs/350.md:23`
 
-`lean/formalization.yaml:1654`
+`lean/formalization.yaml:1769`
 ```yaml
     - comparator_config: ComparatorChallenges/YauCounterexample.json
       declaration: OAI.Yau.Target.yau_nodal_set_upper_bound_counterexample
@@ -884,7 +915,7 @@ growth on manifolds with nonnegative Ricci curvature."*
 
 `HarmonicGrowth` — `lean/docs/361.md:15`
 
-`lean/formalization.yaml:1214`
+`lean/formalization.yaml:1285`
 ```yaml
     - comparator_config: ComparatorChallenges/HarmonicGrowth.json
       declaration: OAI.HarmonicCounterexample.main
@@ -911,10 +942,11 @@ integer growth `k`, one more than the proposed bound.
 
 ## Claim-level gaps inside T3
 
-The 11 configs a T3 scope note links that carry no `main_results` entry, in 7 families:
+The 12 configs a T3 scope note links that carry no `main_results` entry, in 8 families:
 
 | Config | Family | Scope-note anchor | What the family's claim needs from it |
 |---|---|---|---|
+| `ListHadwiger` | 157 | `lean/docs/157.md:20` | no claim sentence names it |
 | `BalancedRyser` | 162 | `lean/docs/162.md:18` | the balanced case of the Ryser covering claim |
 | `EuclideanRamseyCircle` | 172 | `lean/docs/172.md:19` | no claim sentence names it |
 | `EuclideanRamseyNine` | 172 | `lean/docs/172.md:20` | no claim sentence names it |
@@ -936,7 +968,7 @@ Two claims have no linked config at all, so no config-level gap records them: fa
 Dolgachev–Weisfeiler affine-fibration claim and family 199's Nakayama/Auslander–Gorenstein/Wakamatsu
 claim.
 
-## The 10 T2 families: structural absence
+## The 9 T2 families: structural absence
 
 Every T2 family in this population has `mainres` 0 and `paps_form` 0: the release links comparator
 configs for them and names no `main_results` declaration for any of them. The lack of a formalized
@@ -946,7 +978,6 @@ counterpart is a property of the release's own coverage record, not of what was 
 |---|---|---|
 | 100 | `CylinderCovering`, `RuledCovering`, `TriangularCovering` | `lean/docs/100.md:32` |
 | 151 | `C1EntropyCounterexample` | `lean/docs/151.md:15` |
-| 157 | `ListHadwiger` | `lean/docs/157.md:15` |
 | 161 | `SidorenkoCounterexample` | `lean/docs/161.md:15` |
 | 191 | `HeilbronnTriangle` | `lean/docs/191.md:15` |
 | 192 | `SquareRootDegree` | `lean/docs/192.md:17` |
@@ -962,10 +993,6 @@ normalized conjecture in dimension three."*
 
 Claim 151-1 (`overview.tex:381`) — *"This disproves the homological entropy lower bound for general $C^1$ self-maps:
 homological growth need not force positive orbit complexity."*
-
-Claim 157-1 (`overview.tex:395`) — *"Disproves Hadwiger's conjecture even for fractional coloring: arbitrarily large finite
-simple graphs with independence number at most two satisfy $\chi_f(G)>h(G)$, where $h(G)$ is the
-largest clique-minor order."*
 
 Claim 161-1 (`overview.tex:403`) — *"Disproves Sidorenko's conjecture with a connected bipartite pattern on $35$ vertices
 and $66$ edges that occurs less frequently than in a random graph of the same edge density."*
@@ -996,28 +1023,28 @@ Family 100 is the only one whose scope note repeats a config: 6 link occurrences
 
 ## Challenge stubs behind the population
 
-The 28 scope notes link **51** distinct configs, and each has a stub file under
-`lean/ComparatorChallenges/` carrying **53** `sorry` occurrences. Counted per scope-note link
-occurrence instead of per distinct config the same files carry 56, the 3-gap being family 100's four
+The 28 scope notes link **52** distinct configs, and each has a stub file under
+`lean/ComparatorChallenges/` carrying **55** `sorry` occurrences. Counted per scope-note link
+occurrence instead of per distinct config the same files carry 58, the 3-gap being family 100's four
 links to `CylinderCovering`. A stub is the target the release
 set itself, not a proof: it states the claim the release asked a comparator to close. The proved
-version, where one exists, is the `main_results` declaration read above — which is why 27 entries
-over 51 configs is the coverage answer, and the `sorry` count is not a failure of the manuscripts.
+version, where one exists, is the `main_results` declaration read above — which is why 28 entries
+over 52 configs is the coverage answer, and the `sorry` count is not a failure of the manuscripts.
 
 ## The bead's "21" and the shape rule's "16"
 
 The bead says "The 21 T0 counterexample-shaped families are already recorded in
 `notes/t0-triage.md`". The ledger's `counterexample` shape tag fires on **16** T0 families. The
 **21** is the count of counterexample families in the t0-triage reading record, which uses the broader
-phrase rule (the same rule behind the ledger's `counterex_broad` column, 74 families corpus-wide: 22
-T0, 33 T3, 19 T2). Both numbers are recorded here with the rule behind each; they are not resolved
+phrase rule (the same rule behind the ledger's `counterex_broad` column, 74 families corpus-wide: 21
+T0, 35 T3, 18 T2). Both numbers are recorded here with the rule behind each; they are not resolved
 against each other, because they count different things — a keyword tag versus a read verdict.
 
 ## What has not been checked
 
 - No Lean was elaborated, no comparator was run, and no proof was checked. Every verdict is a reading
   of a statement line against an abstract sentence.
-- The 27 declarations were resolved to the statement line the entry's `file:` names. Where a
+- The 28 declarations were resolved to the statement line the entry's `file:` names. Where a
   declaration is proved from lemmas (11 of them are), the proof body was not followed, so this record
   says what the formalized statement *says*, not that it proves the manuscript's theorem.
 - Carrier resolution is bounded: the import walk is capped at 400 files and takes the nearest
@@ -1028,7 +1055,7 @@ against each other, because they count different things — a keyword tag versus
   a recorded edge.
 - The 16 T0 families with the shape tag were not cross-checked here; the T0 reading record is
   `notes/t0-triage.md`.
-- Configs linked by scope notes outside this population, and the 178 − 51 = 127 configs named by
+- Configs linked by scope notes outside this population, and the 189 − 28 = 161 configs named by
   `main_results` that no population scope note links, were not examined.
 - Whether a `main_results` declaration's statement is the manuscript's own theorem, a specialization,
   or a companion result is judged from the statement text only; the manuscripts' theorem environments

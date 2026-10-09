@@ -2,7 +2,7 @@
 
 Measured 2026-10-08 by `python3 notes/scripts/verify_script_ownership.py` — report-only, it writes
 nothing, and every count below is re-derived by that run. The page answers one question: for each of
-the **1,105** files under `notes/` (the scripts excluded), which is whose bytes. A generated file is
+the **1,104** files under `notes/` (the scripts excluded), which is whose bytes. A generated file is
 changed by editing its generator and re-rendering; a hand-written file is edited directly. Ownership
 is per file, and the checker exits 1 on a file no rule owns.
 
@@ -25,8 +25,8 @@ finds **7** writers over **39** scripts.
 | `extract_links.py` | `notes/links.tsv` | run twice, byte-identical | `notes/links.md` |
 | `extract_subfindings.py` | `notes/subfindings.tsv` | run twice, byte-identical | `notes/subfinding-pairs.md` |
 
-Six writers emit one TSV each. `build_index.py` is the one-to-many case: it renders **1,050** files —
-**1,034** `.md` pages and **16** `.tsv` tables. `compare_abstracts.py` is the conditional case: its
+Six writers emit one TSV each. `build_index.py` is the one-to-many case: it renders **1,049** files —
+**1,033** `.md` pages and **16** `.tsv` tables. `compare_abstracts.py` is the conditional case: its
 default run writes nothing and only `--tsv` touches `notes/abstracts.tsv`.
 
 Writers import each other, so a generated file's bytes are not a function of one script.
@@ -94,11 +94,11 @@ itself as its input. It is the 19th checker and the 40th script the run counts.
 
 | Population | Files | Owner |
 |---|---|---|
-| `notes/index/` | **1,050** | generated — `build_index.py` |
+| `notes/index/` | **1,049** | generated — `build_index.py` |
 | `notes/summaries/` | **21** | hand-written — the reading record |
 | `notes/*.tsv` | **8** | **6** generated, **2** hand-authored |
 | `notes/*.md` | **26** | hand-written — **15** with a checker, **11** without |
-| `notes/` total, scripts excluded | **1,105** | — |
+| `notes/` total, scripts excluded | **1,104** | — |
 
 The generated TSVs are the six writer targets. The two hand-authored tables are:
 
@@ -154,10 +154,17 @@ check keyed to `HEAD` reads the gap as empty and the sentence stops being checka
   equals what `build_index.py` currently renders. That proof is the manual discipline — run the
   generator twice, diff, and diff against `HEAD`. A hand-edit to a rendered page survives until a
   checker's needle happens to break.
-- `build_index.py` never deletes: it `mkdir`s and writes, with no `unlink`. A changed page slug leaves
-  the old page on disk. Renaming the rendered topic table is the realized case — `notes/index/topics.tsv`
-  survived the rename and was deleted by hand; nothing in the tooling would have caught it. Page slugs
-  are measured consistent: **1,034** `.md` on disk against the **1,034** the render report claims.
+- `build_index.py` sweeps its own tree: it tracks every path its `write()` helper emits and, at the end
+  of `main()`, unlinks any `notes/index/**.md` or `**.tsv` it did not write, then removes empty
+  directories and prints `stale swept N files [...]`. The realized case is the 2026-10-07 merge: family
+  032's title changed, so its old-slug page survived as an orphan whose manuscript table pointed at the
+  three withdrawn directories — 6 broken links, found only by `check_index_links.py`. Two name pages
+  (`cech`, `kunneth`) went the same way; the sweep removed 3 files. Renaming the rendered topic table is
+  the older case — `notes/index/topics.tsv` survived the rename and was deleted by hand. Page counts are
+  measured consistent: **1,033** `.md` on disk against the **1,033** the render report claims.
+- The idempotence gate for `build_index.py` is run 2 against run 3, not run 1 against run 2: the first
+  run after a corpus change prints the sweep line with the files it removed, the second prints
+  `stale swept 0 files []`. Diffing run 1 against run 2 reports the sweep as drift.
 - The writer rule reads path constants and write calls. A write built from a computed path (a variable
   assembled at runtime) would not be found by it.
 - The report-only table records which page a report feeds as stated in that page and in `AGENTS.md`.

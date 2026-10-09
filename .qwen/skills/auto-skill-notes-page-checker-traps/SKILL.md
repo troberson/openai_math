@@ -30,6 +30,14 @@ checker defect, not a page defect.
   a derived needle. Keep a literal only where it pins a **format** contract with the report script —
   that copy is what tells you the report format changed. Full procedure:
   `sweep-superseded-counts` §3.
+- **The exception: a population gate stays literal.** The rule above is for checkers. In a *measurement*
+  script the gates that define the population must keep their literals, because they are what makes a
+  mutant detectable: derive `tier counts == {'T3':136,'T2':106,'T1':0,'T0':130}` from the ledger and the
+  "flip a tier label" mutant becomes a no-op the gate accepts. Sweep such literals to fresh values with a
+  dated comment saying why they are not derived.
+- **Once a checker measures everything, it is the needle list.** Import its `measure()` in a scratch
+  script and print every needle in the checker's exact format; sweep the page against that printout
+  instead of hand-computing counts from a raw report (`sweep-superseded-counts` §3a).
 - **Run twice, diff, byte-identical.** Exit non-zero on problems **and** on undetected mutants.
 - Fast extractors the page quotes are re-run as **subprocesses with `cwd=notes/scripts`** so sibling
   imports resolve (0.02–1 s each). Extractors that take 40–52 s are never imported into a checker.

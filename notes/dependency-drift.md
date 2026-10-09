@@ -179,7 +179,7 @@ libraries are in the zero-import set, and 3 of the 12 `post_update` libraries ar
 `lean/formalization.yaml` claims the list is ordered by use — the comment above
 `related_formalizations:` reads, verbatim:
 
-> `lean/formalization.yaml:823:  # Imported libraries, ordered by direct import count in project Lean sources.`
+> `lean/formalization.yaml:878:  # Imported libraries, ordered by direct import count in project Lean sources.`
 
 **That claim is recorded, not asserted true, and 5 entries violate it** (measured in
 `notes/formalization-deps.md`: strongpnt 12 above AINTLIB 0; TauCeti 5 above fixed-point-theorems 4;

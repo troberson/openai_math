@@ -10,7 +10,7 @@ drift. Pages are rendered by `python3 notes/scripts/build_index.py` into `notes/
 `lake`, `lean`, `lake exe cache get`, or comparator run.
 
 Headline, with the rule that yields it: **92 patterns matched case-insensitively against the title,
-abstract, scope-note text, and derived Lean file paths of the 372 catalogued families → 971
+abstract, scope-note text, and derived Lean file paths of the 372 catalogued families → 978
 family-topic assignments over 372 families, 0 families uncovered, 4 terms with no hit.**
 
 ## What a topic is, and what it is not
@@ -21,8 +21,8 @@ A family has four searchable texts, and a term hits a family when its pattern ma
 |---|---|---|
 | title | the 2nd argument of the family's `\resultentry` in `overview.tex` | 372 |
 | abstract | the 3rd argument of the same entry | 372 |
-| scope | the text of `lean/docs/<NNN>.md` | 235 |
-| path | Lean file paths reached from the family's comparator configs through `formalization.yaml` `main_results`, plus the Lean module dir names | 127 |
+| scope | the text of `lean/docs/<NNN>.md` | 242 |
+| path | Lean file paths reached from the family's comparator configs through `formalization.yaml` `main_results`, plus the Lean module dir names | 136 |
 
 - **A term's yield is the number of families with at least one hit**, counted once per family
   however many layers hit. Per-layer counts are reported separately because they are not the same
@@ -40,8 +40,8 @@ A family has four searchable texts, and a term hits a family when its pattern ma
 ## Why the vocabulary is curated, not derived
 
 The release ships no topic vocabulary to derive from and nothing to validate a derived term
-against: **0 MSC codes over 8,231 files, 0 `keywords` fields over 12,928 bibliography entries,
-`\keywords` defined in 12 of 722 manuscript directories** (all three measured by
+against: **0 MSC codes over 8,206 files, 0 `keywords` fields over 12,876 bibliography entries,
+`\keywords` defined in 12 of 719 manuscript directories** (all three measured by
 `python3 notes/scripts/extract_links.py`). Word-frequency probing is useless here for a second
 reason: the corpus names results by conjecture and by model, not by generic subject words. Its PDE
 families are "Boltzmann nonuniqueness", "the hot spots conjecture", "De Giorgi's conjecture in
@@ -61,31 +61,31 @@ the 372 families, as printed by `python3 notes/scripts/measure_topics.py`.
 |---|---|---|---|---|---|
 | graph-theory | 43 | 14 | 37 | 34 | 3 |
 | algebraic-topology | 42 | 10 | 29 | 21 | 0 |
-| algebraic-geometry | 35 | 30 | 34 | 5 | 1 |
+| algebraic-geometry | 35 | 30 | 34 | 7 | 1 |
 | manifolds | 31 | 4 | 31 | 8 | 1 |
 | riemannian-geometry | 29 | 10 | 26 | 17 | 0 |
-| complexity-theory | 27 | 17 | 21 | 18 | 3 |
+| complexity-theory | 28 | 17 | 21 | 20 | 3 |
 | group-theory | 27 | 15 | 26 | 16 | 1 |
 | metric-geometry | 25 | 10 | 19 | 21 | 3 |
 | algorithms | 24 | 2 | 10 | 16 | 0 |
-| operator-algebras | 24 | 20 | 21 | 18 | 1 |
-| computability | 22 | 3 | 13 | 9 | 10 |
+| operator-algebras | 24 | 20 | 21 | 19 | 1 |
+| computability | 23 | 3 | 13 | 11 | 12 |
+| complex-geometry | 21 | 7 | 19 | 5 | 3 |
 | mathematical-physics | 21 | 16 | 19 | 8 | 2 |
 | statistical-mechanics | 21 | 15 | 19 | 9 | 2 |
-| complex-geometry | 20 | 7 | 19 | 4 | 3 |
 | convex-geometry | 20 | 12 | 12 | 16 | 3 |
-| curves | 17 | 2 | 17 | 2 | 1 |
-| harmonic-analysis | 17 | 13 | 13 | 10 | 1 |
+| curves | 17 | 2 | 17 | 3 | 1 |
+| harmonic-analysis | 17 | 13 | 13 | 11 | 1 |
+| measure-theory | 17 | 2 | 10 | 10 | 0 |
 | partial-differential-equations | 17 | 14 | 12 | 8 | 0 |
-| functional-analysis | 16 | 5 | 11 | 12 | 1 |
-| measure-theory | 16 | 2 | 10 | 9 | 0 |
-| disordered-systems | 15 | 10 | 11 | 11 | 1 |
+| disordered-systems | 16 | 10 | 11 | 12 | 1 |
+| functional-analysis | 16 | 5 | 11 | 13 | 1 |
+| surfaces | 16 | 8 | 13 | 7 | 1 |
 | spectral-theory | 15 | 2 | 9 | 9 | 0 |
-| surfaces | 15 | 9 | 14 | 5 | 0 |
 | banach-spaces | 13 | 10 | 13 | 11 | 2 |
 | discrete-geometry | 13 | 11 | 10 | 11 | 2 |
 | logic | 13 | 7 | 13 | 10 | 2 |
-| planar-maps-and-lattice-models | 13 | 9 | 13 | 4 | 0 |
+| planar-maps-and-lattice-models | 13 | 9 | 13 | 4 | 1 |
 | quantum-theory | 13 | 6 | 12 | 8 | 1 |
 | symplectic-geometry | 12 | 8 | 10 | 6 | 1 |
 | condensed-matter | 11 | 9 | 10 | 6 | 1 |
@@ -96,17 +96,17 @@ the 372 families, as printed by `python3 notes/scripts/measure_topics.py`.
 | quantum-information | 11 | 6 | 7 | 9 | 0 |
 | diophantine-equations | 10 | 5 | 10 | 6 | 0 |
 | graph-coloring | 10 | 3 | 9 | 7 | 2 |
-| arithmetic-geometry | 9 | 5 | 8 | 2 | 0 |
+| arithmetic-geometry | 9 | 5 | 8 | 3 | 0 |
+| commutative-algebra | 9 | 6 | 6 | 6 | 1 |
 | expanders-and-spectral-graphs | 9 | 5 | 5 | 5 | 0 |
 | fractal-geometry | 9 | 2 | 6 | 6 | 0 |
-| number-fields | 9 | 1 | 8 | 2 | 0 |
+| number-fields | 9 | 1 | 8 | 3 | 0 |
 | representation-theory | 9 | 4 | 6 | 5 | 2 |
 | abelian-varieties | 8 | 3 | 7 | 1 | 0 |
 | analytic-number-theory | 8 | 4 | 8 | 4 | 0 |
-| commutative-algebra | 8 | 6 | 6 | 4 | 1 |
 | ergodic-theory | 8 | 2 | 6 | 5 | 0 |
 | information-theory | 8 | 6 | 4 | 8 | 0 |
-| noncommutative-algebra | 8 | 7 | 7 | 4 | 0 |
+| noncommutative-algebra | 8 | 7 | 7 | 5 | 0 |
 | stable-homotopy | 8 | 8 | 7 | 2 | 0 |
 | category-theory | 7 | 2 | 6 | 3 | 1 |
 | combinatorial-optimization | 7 | 4 | 2 | 7 | 0 |
@@ -117,7 +117,7 @@ the 372 families, as printed by `python3 notes/scripts/measure_topics.py`.
 | potential-theory | 7 | 2 | 4 | 6 | 0 |
 | probabilistic-combinatorics | 7 | 5 | 6 | 7 | 0 |
 | additive-combinatorics | 6 | 4 | 5 | 4 | 0 |
-| geometric-measure-theory | 6 | 2 | 5 | 2 | 0 |
+| geometric-measure-theory | 6 | 2 | 5 | 3 | 0 |
 | quantum-computing | 6 | 6 | 5 | 4 | 0 |
 | random-graphs | 6 | 2 | 3 | 3 | 0 |
 | sampling-and-counting | 6 | 4 | 3 | 6 | 0 |
@@ -169,14 +169,14 @@ the 372 families, as printed by `python3 notes/scripts/measure_topics.py`.
   covering 113 and 115; that is false. 113 ("Approximate counting and the perfect-matching entropy
   conjecture") carries 7 topics and 115 ("Sampling and counting contingency tables with arbitrary
   margins") carries 2, none of them `algebraic-geometry`.
-- **topics per family 1:97 2:100 3:86 4:53 5:19 6:13 7:2 8:1 9:1** — median **2**, mean 2.61, so a
-  family typically sits on the boundary of two of these terms. 97 families carry exactly one topic.
+- **topics per family 1:93 2:103 3:87 4:51 5:21 6:13 7:2 8:1 9:1** — median **2**, mean 2.63, so a
+  family typically sits on the boundary of two of these terms. 93 families carry exactly one topic.
   The 9-topic family is **211** ("Geometry, diffusion, and spectra of random planar maps":
   graph-theory, metric-geometry, statistical-mechanics, spectral-theory, surfaces,
   planar-maps-and-lattice-models, quantum-theory, probability, fractal-geometry) and the 8-topic
   family is **281** ("QAOA optimality for the SK model").
-- **yield histogram 0:4 1:5 2:3 3:5 4:9 5:4 6:5 7:8 8:7 9:5 10:2 11:6 12:1 13:5 15:3 16:2 17:3
-  20:2 21:2 22:1 24:2 25:1 27:2 29:1 31:1 35:1 42:1 43:1.** **17** terms have a yield of 3 or less
+- **yield histogram 0:4 1:5 2:3 3:5 4:9 5:4 6:5 7:8 8:6 9:6 10:2 11:6 12:1 13:5 15:1 16:3 17:4
+  20:1 21:3 23:1 24:2 25:1 27:1 28:1 29:1 31:1 35:1 42:1 43:1.** **17** terms have a yield of 3 or less
   and 9 have a yield of 1 or less; those are thin topics, kept and labelled as thin, not merged
   away.
 
@@ -208,28 +208,28 @@ are regenerated by script, not written from memory (see finding 4 below).
 
 | Term | Bare stem | Reach (measured) | Yield now | Excluded | Why |
 |---|---|---|---|---|---|
-| stable-homotopy | `chromatic` | 6: 157 158 169 314 318 319 | 8 | 157 158 169 | chromatic homotopy is stable homotopy; graph colouring is not. 314 318 319 stay |
+| stable-homotopy | `chromatic` | 10: 157 158 160 162 169 171 172 314 318 319 | 8 | 157 158 160 162 169 171 172 319 | chromatic homotopy is stable homotopy; graph colouring and Euclidean Ramsey are not. 314 318 stay via `chromatic smith` / `chromatic splitting`; 319 no longer hits |
 | stable-homotopy | `kervaire` | 3: 256 309 316 | 8 | 256 | 256 is "Howie's conjecture on equations over groups"; it matched through its companion paper "The Kervaire theorem for groups" → `kervaire invariant` |
 | algebraic-geometry | `moduli` | 5: 003 043 053 331 372 | 35 | 003 331 372 | 372 is elasticity — "moduli of elasticity" → `moduli space`, `moduli of` |
-| graph-coloring | `chromatic` | 6: 157 158 169 314 318 319 | 10 | 314 318 319 | chromatic homotopy, not colouring; 157 158 169 stay via `coloring` / `chromatic number` |
+| graph-coloring | `chromatic` | 10: 157 158 160 162 169 171 172 314 318 319 | 10 | 162 314 318 319 | chromatic homotopy, not colouring; 157 158 160 169 171 172 stay via `coloring` / `chromatic number` / `chromatic polynomial` |
 | analytic-number-theory | `dirichlet`, `chowla`, `m[oö]bius` | 6: 003 007 011 071 227 365 | 8 | 071 227 365 | Dirichlet forms, Chowla-type sums outside the conjecture, Möbius inversion → `dirichlet character/series/l-function/probability`, `chowla conjecture`, `elliott conjecture`, `m[oö]bius function` |
-| commutative-algebra | `gersten's` | 2: 209 258 | 8 | 209 258 | Gersten's conjecture is group cohomology; 209 258 live in noncommutative-algebra |
+| commutative-algebra | `gersten's` | 2: 209 258 | 9 | 209 258 | Gersten's conjecture is group cohomology; 209 258 live in noncommutative-algebra |
 | operator-algebras | `kaplansky` | 5: 196 197 207 285 294 | 24 | 196 207 | Kaplansky's zero-divisor conjecture is noncommutative algebra → `kaplansky's quasitrace` |
 | mathematical-physics | `einstein` | 2: 267 348 | 21 | 348 | 348 is "Nonnegatively curved Einstein four-manifolds" (differential geometry) → `bose--einstein`, which keeps 267 |
 | statistical-mechanics | `bloch's` | 2: 040 271 | 21 | 040 | 040 is "Bloch's conjecture for complex surfaces" → `bloch's law`, which keeps 271 (ferromagnetic order) |
-| complex-geometry | `holomorphic` | 11: 041 046 050 052 058 059 060 064 325 338 359 | 20 | 050 058 059 064 325 | stem dropped; 041 046 359 stay through `hler`, `syz`, `uniformization` |
+| complex-geometry | `holomorphic` | 11: 041 046 050 052 058 059 060 064 325 338 359 | 21 | 050 058 059 064 325 | stem dropped; 041 046 359 stay through `hler`, `syz`, `uniformization` |
 | convex-geometry | `divisor`, `cancellation` | 11: 001 007 020 021 023 047 057 066 196 197 266 | 20 | all 11 | divisor theory and cancellation laws are not convex geometry; both stems dropped |
 | harmonic-analysis | `hilbert` | 18: 004 082 083 086 098 143 194 200 238 251 288 289 293 296 297 304 325 332 | 17 | 14 of 18 | Hilbert *space* is not harmonic analysis → `hilbert transform` |
 | harmonic-analysis | `fourier` | 9: 023 075 077 090 130 192 238 266 371 | 17 | 023 266 371 | bare `fourier` dropped; `fourier transform` and friends kept, so 090 ("Universal optimality of the triangular lattice") stays through its scope note |
 | functional-analysis | `hilbert space` | 9: 098 251 288 289 293 296 297 325 332 | 16 | none | kept deliberately: Hilbert-space geometry *is* functional analysis, so these land here and not in harmonic-analysis |
-| discrete-geometry | `packing`, `covering` | 13: 090 092 100 118 156 162 185 226 228 237 329 343 349 | 13 | 8 (162 185 226 228 237 329 343 349) | Langlands covering groups (162), symplectic ball-packing (343) → `packing density`, `covering density`, `covering bound`, `covering of`, `hadwiger's covering`. `bin-packing` was **kept**, so 118 ("Unbounded bin-packing gaps") stays. The other 8 of the 13 come from named alternatives, not from the stems: 028 (Gaussian moat), 155 (periodic tiling), 165 (crossing numbers), 166 167 (distinct / pinned distances), 183 (halving lines and $k$-sets), 191 (Heilbronn), 224 (Voronoi percolation) |
+| discrete-geometry | `packing`, `covering` | 15: 009 014 090 092 100 118 156 162 185 226 228 237 329 343 349 | 13 | 10 (009 014 162 185 226 228 237 329 343 349) | Langlands covering groups (162), symplectic ball-packing (343) → `packing density`, `covering density`, `covering bound`, `covering of`, `hadwiger's covering`. 009 and 014 enter the reach only because the bare stem is a substring of "re**covering**". `bin-packing` was **kept**, so 118 ("Unbounded bin-packing gaps") stays. The other 8 of the 13 come from named alternatives, not from the stems: 028 (Gaussian moat), 155 (periodic tiling), 165 (crossing numbers), 166 167 (distinct / pinned distances), 183 (halving lines and $k$-sets), 191 (Heilbronn), 224 (Voronoi percolation) |
 | conformal-universality | `conformal` | 6: 071 072 218 223 280 282 | 11 | 071 072 280 282 | conformal field theory → `conformal universality`, `conformal limit`, which keep 218 223 |
 | ergodic-theory | `lebesgue` | 3: 073 091 144 | 8 | 073 091 | Lebesgue measure, not the Lebesgue-spectrum property → `lebesgue spectrum` |
 | noncommutative-algebra | `noncommutative` | 1: 116 | 8 | 116 | a bare adjective → dropped as a stem |
 | category-theory | `adjoint`, `spectral sequence` | 11: 014 034 035 036 038 062 261 296 298 300 309 | 7 | all 11 | algebraic-geometry abstracts and scope notes; both stems dropped |
 | random-graphs | `erd` (LaTeX stem) | 14: 012 024 025 026 084 157 159 160 166 167 171 181 184 189 | 6 | all 14 | attribution is not a topic → Erdős–Rényi spellings only |
 | random-matrices | `spectrum`, `spectra of` | 12: 072 144 211 234 238 261 282 308 311 313 319 361 | 1 | all 12 | every physics spectrum result → dropped |
-| modular-representation | `modular` | 4: 010 019 030 290 | 4 | all 4 | modular forms (modularity) and physics usage → `modular representation` |
+| modular-representation | `modular` | 6: 010 019 030 255 256 290 | 4 | all 6 | modular forms (modularity) and physics usage → `modular representation`. 255 256 entered the reach with the scope notes the merge added, and they match only as a substring of "uni**modular**" |
 | kinetic-theory | `fluid` | 1: 376 | 4 | none | measured: the bare stem reaches exactly one family ("Universal computation in forced Navier–Stokes flows") → kept as a bare stem |
 | spectral-theory | `spectral gap` | 5: 131 227 265 268 269 | 15 | none | kept: a gap statement is a spectral statement |
 | algorithms | `algorithm` | 24 by prefix probe `\balgorithm`; 23 by the shipped `algorithm\b` | 24 | 139 | kept broad. 076 097 372 match only in scope-note exclusion prose ("The result is existential and does not supply an online algorithm"); 004 206 match "no algorithm decides". 139 is reached only by the loose prefix — its scope note says "Algorithms may be measurable, randomized, and adaptive", a sentence about the model, not a result about algorithms. 109 enters through a named alternative, not the stem |
@@ -310,10 +310,10 @@ python3 notes/scripts/build_index.py               # renders notes/index/topics/
 ## Not checked
 
 - **No family was read to decide its topics.** Assignment is a pattern match over four texts. The
-  reading pass read the *flagged families of the terms being narrowed*, not all 971 pairs, so a
+  reading pass read the *flagged families of the terms being narrowed*, not all 978 pairs, so a
   listing is a keyword floor.
-- **The path layer is derived.** It exists for 127 families, through scope-note config links into
-  `formalization.yaml` `main_results`. For the other 245 families the path layer is empty, so a
+- **The path layer is derived.** It exists for 136 families, through scope-note config links into
+  `formalization.yaml` `main_results`. For the other 236 families the path layer is empty, so a
   family can only be reached through prose.
 - **Topic coverage is not topic quality.** 372 of 372 families carry a topic because three pattern
   alternatives (`irrationalit`, `sensitivit`, `anticanonical`) each close coverage for exactly one

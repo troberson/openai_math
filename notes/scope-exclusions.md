@@ -8,7 +8,9 @@ formalization excludes is what the release asserts, not what a build has confirm
 
 ## How this was read
 
-All 235 scope notes were read in full, section by section. Each note has exactly two `## `
+All 242 scope notes on disk were read in full, section by section — the 235 of the original pass
+plus the 7 that the 2026-10-07 upstream merge added (027, 066, 075, 103, 137, 195, 301), read
+2026-10-08. Each note has exactly two `## `
 sections — `## Scope` and `## Comparator links` — so the section boundaries are unambiguous, and every
 citation below points inside the `## Scope` section. An entry records:
 
@@ -22,8 +24,8 @@ comparison hypothesis is imposed” — widen the formalized claim instead of bo
 entries. A family whose section states no exclusion gets an explicit **None stated.** row; that is a
 finding about the notes, not a claim that the formalization covers the whole paper.
 
-115 of 235 sections state at least one exclusion, carrying 137 exclusion
-statements; 120 state none.
+121 of 242 sections state at least one exclusion, carrying 143 exclusion
+statements; 121 state none.
 
 ## Measurements
 
@@ -32,21 +34,21 @@ with the rule that yields it.
 
 | Measure | Value |
 | --- | --- |
-| Scope notes | 235 |
-| Docs with both `## Scope` and `## Comparator links` | 235 |
-| `## Scope` section lines | 1459 |
-| Scope-note lines, all files | 4319 |
+| Scope notes | 242 |
+| Docs with both `## Scope` and `## Comparator links` | 242 |
+| `## Scope` section lines | 1512 |
+| Scope-note lines, all files | 4457 |
 | Lines per section (min / median / max) | 4 / 6 / 32 |
 | Docs hit by the 5-phrase narrow list | 5 |
 | Docs hit by the 24-phrase broad list | 44 |
 
 The narrow list is the five phrases an earlier reading pass recorded: `not formalized`, `excluded`,
-`out of scope`, `does not cover`, `not covered`. It hits 5 of 235 — families 003, 020, 049, 173, 360,
+`out of scope`, `does not cover`, `not covered`. It hits 5 of 242 — families 003, 020, 049, 173, 360,
 with per-phrase hits 0 / 3 / 0 / 1 / 1. The broad list adds `not included`, `not part of`,
 `no explicit`, `omitted`, `not asserted`, `excludes`, `excluded`, `exclusion`, `exclude`,
 `not supplied`, `not treated`, `not addressed`, `not proved`, `not established`, `not discussed`,
 `not modelled`, `not modeled`, `not formalised`, `not formalized`, `not included in the scope`,
-`not in scope`, `out of scope`, `does not cover`, `not covered`; it hits 44 of 235.
+`not in scope`, `out of scope`, `does not cover`, `not covered`; it hits 44 of 242.
 
 So 5 is a floor under a narrow rule, not a census. A keyword filter finds 5 sections; the reading pass
 finds exclusions in 115. The gap is the reason this page is a reading record and not a tag.
@@ -72,17 +74,20 @@ One row per family. A quotation is verbatim from the cited line, markup aside.
 | 024 | **None stated.** |
 | 025 | **None stated.** |
 | 026 | **None stated.** |
+| 027 | “Potential integral density, including the prescribed-boundary and all-component conclusions, remains outside the selected statement.” `lean/docs/027.md:11` |
 | 028 | “No explicit function of $D$ is supplied.” `lean/docs/028.md:9` |
 | 033 | “The finite-dimension and negative-base branches of the paper's additivity theorem are outside this selected statement.” `lean/docs/033.md:11` |
 | 039 | “The threshold is not explicit or uniform over all surfaces.” `lean/docs/039.md:16` |
 | 047 | “The separate stable-coordinate and general line-bundle lifting consequences are not included.” `lean/docs/047.md:11` |
-| 049 | “The three-variable case is not covered.” `lean/docs/049.md:11` |
+| 049 | “The three-variable case is not covered.” `lean/docs/049.md:14` |
 | 050 | “The separate very-ampleness result for all admissible even exponents is not included.” `lean/docs/050.md:11` |
 | 052 | “Automatic integrability and the paper's additional corollaries are not included.” `lean/docs/052.md:12` · “The paper's compatible product decomposition is a separate consequence, outside this selected statement.” `lean/docs/052.md:14` |
 | 058 | **None stated.** |
+| 066 | “Uniform Cartier sections, bounded klt complements, and the paper's real-boundary and companion conclusions are outside this supporting statement.” `lean/docs/066.md:11` |
 | 071 | **None stated.** |
 | 072 | “no numerical value of $\varepsilon$ is specified.” `lean/docs/072.md:16` |
 | 073 | **None stated.** |
+| 075 | **None stated.** |
 | 076 | “The results are existential and do not give an effective convergence rate or a signing algorithm.” `lean/docs/076.md:11` |
 | 081 | “The variation and principal-value corollary is not included.” `lean/docs/081.md:9` |
 | 082 | **None stated.** |
@@ -103,6 +108,7 @@ One row per family. A quotation is verbatim from the cited line, markup aside.
 | 099 | “The selected statements are the binary lower bounds. The paper's constant-distortion binary conversion and the companion upper embedding theorem are outside them.” `lean/docs/099.md:19` |
 | 100 | “The affine extension of the directionwise conclusion to every nondegenerate tetrahedron is outside the selected regular-tetrahedron statements.” `lean/docs/100.md:22` |
 | 102 | **None stated.** |
+| 103 | “The paper's explicit compiler and numerical running-time bounds are not separately stated in this Comparator target.” `lean/docs/103.md:11` |
 | 104 | **None stated.** |
 | 105 | **None stated.** |
 | 106 | **None stated.** |
@@ -126,12 +132,13 @@ One row per family. A quotation is verbatim from the cited line, markup aside.
 | 127 | “This establishes the stated asymptotic bound, rather than the separate conjecture identifying exact extremizers.” `lean/docs/127.md:9` |
 | 128 | **None stated.** |
 | 129 | “The separate results about one-way liveness and the Sakoda–Sipser problem are outside this scope.” `lean/docs/129.md:12` |
-| 130 | “The result is subsequential, with no all-length, bounded-coefficient, conditioning, or bit-complexity claim.” `lean/docs/130.md:9` |
+| 130 | “The result is subsequential, with no all-length, bounded-coefficient, conditioning, or bit-complexity claim.” `lean/docs/130.md:10` |
 | 131 | “The paper's exactly uniform sampling algorithm is outside these selected chain estimates.” `lean/docs/131.md:11` |
 | 132 | **None stated.** |
 | 133 | “The paper's conditional running-time exclusions are outside these selected construction statements.” `lean/docs/133.md:14` |
 | 134 | “The selected statement asserts the uniform expression bound, without separately encoding every construction step of that paper.” `lean/docs/134.md:11` |
 | 135 | **None stated.** |
+| 137 | “General multitape simulation, hierarchy consequences, and bounded-space-halting results are outside these selected statements.” `lean/docs/137.md:11` |
 | 139 | **None stated.** |
 | 140 | “the stronger $3/5$ variant is outside this scope.” `lean/docs/140.md:20` · “with the auxiliary dimension-two case outside this scope.” `lean/docs/140.md:28` · “The separate streaming consequences and several intermediate comparison constructions are outside this selection.” `lean/docs/140.md:32` |
 | 143 | **None stated.** |
@@ -177,6 +184,7 @@ One row per family. A quotation is verbatim from the cited line, markup aside.
 | 191 | “The linked construction is for an unbounded sequence of sizes; the paper's statement for every sufficiently large $n$ is broader.” `lean/docs/191.md:9` |
 | 192 | **None stated.** |
 | 194 | “This selected statement is the complete-domain Dutta comparison. The paper's full flat-local result in arbitrary characteristic is outside it.” `lean/docs/194.md:11` |
+| 195 | “It does not prove that this ring lacks a nonzero finitely generated maximal Cohen–Macaulay module, or the paper's counterexample essentially of finite type.” `lean/docs/195.md:11` |
 | 196 | **None stated.** |
 | 197 | “The further conclusion that the group is nonsofic is outside these statements.” `lean/docs/197.md:13` · “The paper's additional spectral-measure integral conclusion is not included.” `lean/docs/197.md:23` |
 | 198 | **None stated.** |
@@ -202,7 +210,7 @@ One row per family. A quotation is verbatim from the cited line, markup aside.
 | 234 | **None stated.** |
 | 235 | “The statement makes no assertion at the threshold itself.” `lean/docs/235.md:11` · “They do not show that the logarithmic factor in the $k=3$ variance bound is necessary.” `lean/docs/235.md:15` |
 | 236 | “Finitary coding and coding-radius bounds are not included.” `lean/docs/236.md:9` |
-| 237 | “The paper's $h^{4/3+o(1)}$ mean-length law and its central-visit and hexagonal-chord exponents are outside them.” `lean/docs/237.md:13` · “It does not state the paper's small-force exponent, near-critical correlation scale, or the $3/4$ spatial and moment laws.” `lean/docs/237.md:17` |
+| 237 | “The paper's $h^{4/3+o(1)}$ mean-length law and its central-visit and hexagonal-chord exponents are outside them.” `lean/docs/237.md:14` · “It does not state the paper's small-force exponent, near-critical correlation scale, or the $3/4$ spatial and moment laws.” `lean/docs/237.md:18` |
 | 238 | “The paper's asymptotic conclusion about the product of two random permutations is outside this selected finite estimate.” `lean/docs/238.md:24` · “its changed later statements and six other result blocks are outside this scope.” `lean/docs/238.md:30` · “The paper's full physical-mixing conclusion is outside these selected representation estimates.” `lean/docs/238.md:34` · “the full $L^2$ and total-variation mixing conclusion is outside them.” `lean/docs/238.md:42` · “Physical-shuffle law identification is not included.” `lean/docs/238.md:44` · “The Thorp mixing consequence is outside this selected statement.” `lean/docs/238.md:46` |
 | 240 | “The later canonical-point obstruction and the separate eventual-categoricity theorem are not included.” `lean/docs/240.md:11` |
 | 241 | “The additional representation corollaries are not included.” `lean/docs/241.md:9` |
@@ -252,6 +260,7 @@ One row per family. A quotation is verbatim from the cited line, markup aside.
 | 297 | **None stated.** |
 | 298 | **None stated.** |
 | 299 | **None stated.** |
+| 301 | “Spatial classification, existence of the stabilization models, norm uniqueness, and final intertwining are outside this supporting comparison.” `lean/docs/301.md:11` |
 | 303 | **None stated.** |
 | 307 | **None stated.** |
 | 312 | “The later semi-model structure and full comparison with the homotopy theory of spaces are not included.” `lean/docs/312.md:11` |
@@ -299,9 +308,9 @@ One row per family. A quotation is verbatim from the cited line, markup aside.
   the note names is genuinely absent from the source; the notes are prose written by the release's
   agent-generated pipeline with `review: status: unchecked`.
 - Whether a section states an exclusion using none of the measured vocabulary. The reading pass is
-  the only guard against that, and it is a human read of 1459 lines, not a rule.
+  the only guard against that, and it is a human read of 1512 lines, not a rule.
 - The `## Comparator links` sections. They name configs, not exclusions; the config inventory lives
   in `notes/links.tsv`.
-- The 137 families with no scope note at all (372 families, 235 notes): absence of a note is not
+- The 130 families with no scope note at all (372 families, 242 notes): absence of a note is not
   recorded here, because there is no `## Scope` section to read for them.
 
