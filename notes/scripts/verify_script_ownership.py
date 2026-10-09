@@ -41,13 +41,28 @@ def path_constants():
             for n, f in re.findall(r'^(\w+)\s*=\s*NOTES\s*/\s*"([^"]+)"', src, re.M)}
 
 
+def notes_const(src: str, name: str) -> str | None:
+    """The repo-relative path a module-level `NAME = ROOT / "notes" / ...` constant carries.
+
+    Every quoted part is joined: `TPL_DIR = ROOT / "notes" / "templates" / "report"` is
+    `notes/templates/report` — capturing only the last quoted part reads `notes/report`.
+    """
+    m = re.search(rf'^{name}\s*=\s*\w+\s*/\s*((?:"[^"]+"\s*/\s*)+"[^"]+")', src, re.M)
+    if not m:
+        return None
+    parts = re.findall(r'"([^"]+)"', m.group(1))
+    return "/".join(parts) if parts and parts[0] == "notes" else None
+
+
 def writers():
     """A script is a writer when a notes/-rooted path constant is written, plus the tree case.
 
-    Two shapes, because a script may open the file itself or hand a package constant to a package
-    writer (`tsv.write_csv(OUT, COLUMNS, rows)`). The second shape is invisible to a source-text
-    pattern over `open`/`write_text` alone, so a write that moves into the shared package would
-    silently drop its script out of the writer set.
+    Three shapes, because a script may open the file itself (`OUT.open("w")`), hand a package
+    constant to a package writer (`tsv.write_csv(OUT, COLUMNS, rows)`), or build the receiver from
+    a module constant (`out = TPL_DIR / (name)`, then `out.write_text(...)`). The second and third
+    are invisible to a source-text pattern over `open`/`write_text` keyed to the receiver alone, so
+    a write that moves into the shared package, or a writer that names a directory rather than a
+    file, would silently drop its script out of the writer set.
     """
     consts = path_constants()
     out = {}
@@ -55,9 +70,15 @@ def writers():
         src = read_text(SCRIPTS / name)
         targets = set()
         for var in re.findall(r'([A-Za-z_]\w*)\.(?:open\([^)]*"w"[^)]*\)|write_text\()', src):
-            m = re.search(rf'^{var}\s*=\s*\w+\s*/\s*"notes"\s*/\s*"([^"]+)"', src, re.M)
-            if m:
-                targets.add("notes/" + m.group(1))
+            direct = notes_const(src, var)
+            if direct:
+                targets.add(direct)
+                continue
+            hop = re.search(rf"^\s*{var}\s*=\s*([A-Za-z_]\w*)\s*/\s*\(", src, re.M)
+            if hop:
+                base = notes_const(src, hop.group(1))
+                if base:
+                    targets.add(base)
         for const in re.findall(r'\b\w+\.write_\w+\(\s*([A-Za-z_]\w*)\b', src):
             # A script may alias the package constant (`OUT = SOURCES_TSV`), so resolve one hop.
             alias = re.search(rf"^{const}\s*=\s*([A-Za-z_]\w*)\s*$", src, re.M)
@@ -147,10 +168,10 @@ def check(text):
             f"writer split sentence does not read '**{len(derived)}** writers over "
             f"**{len(names)}** scripts'"
         )
-    if len(names) != 43:
-        p.append(f"scripts on disk (excluding {SELF}): {len(names)}, page says 43")
-    if len(derived) != 7:
-        p.append(f"derived writers: {len(derived)}, page says 7")
+    if len(names) != 45:
+        p.append(f"scripts on disk (excluding {SELF}): {len(names)}, page says 45")
+    if len(derived) != 9:
+        p.append(f"derived writers: {len(derived)}, page says 9")
 
     # A2. report-only and checker tables partition the non-writers
     ro = [cell_paths(c[0])[0] for c in table_rows(parts.get("report-only", [])) if cell_paths(c[0])]
@@ -307,14 +328,14 @@ def mutants():
         ("writer target altered", original.replace("| `build_catalog.py` | `notes/catalog.tsv` |", "| `build_catalog.py` | `notes/catalog-x.tsv` |"), "page says 'notes/catalog-x.tsv'"),
         ("writer row deleted", original.replace("| `extract_links.py` | `notes/links.tsv` | run twice, byte-identical | `notes/links.md` |\n", ""), "writer extract_links.py: page says None"),
         ("hand-authored TSV claimed as generated", original.replace("**6** generated, **2** hand-authored", "**7** generated, **1** hand-authored"), "tsv census cell"),
-        ("writer count altered", original.replace("**7** writers over **43** scripts", "**8** writers over **43** scripts"), "writer split sentence"),
+        ("writer count altered", original.replace("**9** writers over **45** scripts", "**10** writers over **45** scripts"), "writer split sentence"),
         ("index file count altered", original.replace("| `notes/index/` | **1,049** |", "| `notes/index/` | **1,050** |"), "census row notes/index/"),
         ("collision name altered", original.replace("**1** shared basename — `README.md`", "**2** shared basenames — `README.md` and `topics.tsv`"), "collision sentence"),
         ("checker name altered", original.replace("| `verify_sources.py` |", "| `verify_sources2.py` |"), "non-writers"),
         ("unchecked page claimed as checked", original.replace("| `verify_abstracts.py` | `notes/abstracts.md` |", "| `verify_abstracts.py` | `notes/abstracts.md`, `notes/links.md` |"), "md census cell"),
         ("Not checked section deleted", original.replace("## Not checked", "## Checked"), "no '## Not checked' section"),
         ("summaries count altered", original.replace("| `notes/summaries/` | **21** |", "| `notes/summaries/` | **22** |"), "census row notes/summaries/"),
-        ("templates count altered", original.replace("| `notes/templates/` | **5** |", "| `notes/templates/` | **3** |"), "census row notes/templates/"),
+        ("templates count altered", original.replace("| `notes/templates/` | **9** |", "| `notes/templates/` | **3** |"), "census row notes/templates/"),
     ]
     fails = []
     for label, mutated, needle in cases:

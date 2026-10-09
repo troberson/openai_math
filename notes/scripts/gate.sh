@@ -28,6 +28,7 @@ run extract_verification_348.py
 run extract_subfinding_pairs.py
 run extract_scope_notes.py
 run extract_citations.py
+run render_reports.py
 # measurement
 run triage_t0.py
 run measure_topics.py --check
