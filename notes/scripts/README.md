@@ -2,22 +2,25 @@
 
 Measured 2026-10-09 by `python3 notes/scripts/verify_script_ownership.py` — report-only, it writes
 nothing, and every count below is re-derived by that run. The page answers one question: for each of
-the **1,105** files under `notes/` (the scripts excluded), which is whose bytes. A generated file is
+the **1,114** files under `notes/` (the scripts excluded), which is whose bytes. A generated file is
 changed by editing its generator and re-rendering; a hand-written file is edited directly. Ownership
 is per file, and the checker exits 1 on a file no rule owns.
 
 It is also the script inventory. Every script under `notes/scripts/` is listed once, in one of three
 classes — writer, report-only, checker — with what it writes and the command the gate runs for it, and
 the fourth class, the scratch a session writes outside the tree, is recorded by rule rather than by
-file. The classes partition the **44** scripts: **7** writers, **18** report-only, **18** checkers,
+file. The classes partition the **46** scripts: **9** writers, **18** report-only, **18** checkers,
 and `verify_script_ownership.py` itself, which is the 19th checker and is not listed in its own table.
 
-## The split: 7 write, 36 write nothing
+## The split: 9 write, 36 write nothing
 
 The writer set is derived from the scripts' own source, not from this page: a script is a writer when
-a path constant rooted at `notes/` appears on the left of `.open(..., "w")` or `.write_text(...)`, plus
-the tree case — a `notes/index` constant reached through the module's own `write()` helper. That rule
-finds **7** writers over **43** scripts.
+a path constant rooted at `notes/` appears on the left of `.open(..., "w")` or `.write_text(...)`,
+plus the tree case — a `notes/index` constant reached through the module's own `write()` helper — and
+plus one hop: a receiver built from a module constant (`out = TPL_DIR / (name)`, then
+`out.write_text(...)`) is owned by that constant's directory, which is how a writer that names a
+directory rather than a file stays visible. That rule
+finds **9** writers over **45** scripts.
 
 ### Writers
 
@@ -30,14 +33,19 @@ finds **7** writers over **43** scripts.
 | `extract_formalization_deps.py` | `notes/formalization-deps.tsv` | run twice, byte-identical | `notes/dependency-drift.md` |
 | `extract_links.py` | `notes/links.tsv` | run twice, byte-identical | `notes/links.md` |
 | `extract_subfindings.py` | `notes/subfindings.tsv` | run twice, byte-identical | `notes/subfinding-pairs.md` |
+| `render_reports.py` | `notes/abstracts.md`, `notes/index-design.md`, `notes/named-results.md`, `notes/sources.md` | run twice, byte-identical | the four report-fed pages |
+| `build_report_templates.py` | `notes/templates/report` | not in `gate.sh` — it reads each page with `git show HEAD:`, so a gate run would rewrite templates from committed bytes; run explicitly with 0 args (all four pages) or 2 (one page) after a writer's slot dict changes | the four page templates |
 
 Six writers emit one TSV each. `build_index.py` is the one-to-many case: it renders **1,049** files —
-**1,033** `.md` pages and **16** `.tsv` tables. `compare_abstracts.py` is the conditional case: its
+**1,033** `.md` pages and **16** `.tsv` tables. `render_reports.py` renders the four report-fed pages
+from the templates `build_report_templates.py` builds from the committed page and the slot dict that
+writer supplies. `compare_abstracts.py` is the conditional case: its
 default run writes nothing and only `--tsv` touches `notes/abstracts.tsv`.
 
 Writers import each other, so a generated file's bytes are not a function of one script.
 `build_index.py` imports `build_catalog`, `measure_topics`, `measure_names`,
-`check_index_links` and `jinja2` (the page text lives in `notes/templates/*.j2`);
+`check_index_links` and `jinja2` (the index page text lives in `notes/templates/*.j2`, the four
+report-fed page skeletons in `notes/templates/report/*.j2`);
 `extract_links.py`, `extract_subfindings.py`, `compare_abstracts.py`,
 `check_index_links.py`, `measure_names.py` and `measure_topics.py` all import `build_catalog`;
 `measure_index_sizes.py` imports `check_index_links` inside its link-check function
@@ -51,8 +59,8 @@ rows in six artifacts.
 ### Report-only
 
 The other **36** scripts write nothing. **18** of them print the report a page's counts come from.
-The Gate column is the invocation the gate list runs: `notes/scripts/gate.sh`, which runs **62**
-invocations — the 7 writers, the 17 gated report-only rows (including `check_summary_manuscripts.py`
+The Gate column is the invocation the gate list runs: `notes/scripts/gate.sh`, which runs **63**
+invocations — the **8** gated writers, the 17 gated report-only rows (including `check_summary_manuscripts.py`
 and `locate_summary_quotes.py`), and **38** checker invocations: each of the 18 checkers plain and
 with `--mutant` (**36**), plus `verify_conjecture_standing.py` plain and with `--mutant` (**2**) — in
 class order, not in the order the rows sit; it prints one line per invocation with its exit code and
@@ -94,7 +102,7 @@ page's text.
 
 The remaining **18** scripts verify a page or a table. Each exits non-zero when what it checks has
 drifted; each takes `--mutant`, which injects faults and asserts they are caught. The gate runs each
-one plain and then with `--mutant` — **38** of the 62 invocations: **36** from the loop over the 18
+one plain and then with `--mutant` — **38** of the 63 invocations: **36** from the loop over the 18
 rows below, **2** more for `verify_conjecture_standing.py`, which the list runs outside the loop.
 
 | Checker | Checks | Gate |
@@ -120,11 +128,11 @@ rows below, **2** more for `verify_conjecture_standing.py`, which the list runs 
 
 `verify_conjecture_standing.py` is the one checker the list kept outside its loop: it ran plain only,
 so its six mutants were never run by the gate. Measured 2026-10-09 by hand — `mutants 6  uncaught
-0 []`, exit 0 — `math-8ou` added the `--mutant` invocation, which is why the count reads 62 and not
-61.
+0 []`, exit 0 — `math-8ou` added the `--mutant` invocation, which is why the count reads 63 and not
+62.
 
 `verify_script_ownership.py` — this page's own checker — is not in the table: a checker cannot list
-itself as its input. It is the 19th checker and the 44th script the run counts.
+itself as its input. It is the 19th checker and the 46th script the run counts.
 
 ## The shared package: `catlib/`
 
@@ -142,8 +150,8 @@ through the page's own code proves nothing) and `__init__.py`. A
 script run as `python3 notes/scripts/foo.py` has `notes/scripts` on `sys.path`, so it imports them as
 `from catlib import ...` with no path boilerplate.
 
-**32** of the **44** scripts call the package: **6** `extract_`, **3** `build_`, **2** `measure_`,
-`check_index_links.py`, `read_manuscript.py`, and **all 19** checkers — `math-lon.2.5` ported the last
+**33** of the **46** scripts call the package: **6** `extract_`, **3** `build_`, **2** `measure_`,
+`check_index_links.py`, `read_manuscript.py`, `render_reports.py`, and **all 19** checkers — `math-lon.2.5` ported the last
 two, `verify_upstream_history.py` and `verify_summaries.py`, and the **22** `duplicate-code` findings
 did not move (measured 2026-10-09 with `--enable=R0801` over 55 files, every cluster reported against
 `catlib/anchors.py`; see `notes/linting.md`). What deliberately stays outside the package is a **read
@@ -155,7 +163,7 @@ shape**, not a parse: `verify_upstream_history.py` reads `lean/formalization.yam
 compiled PDF; and `build_index.py` keeps its own `TRIPLE` regex.
 
 The package is not in the census below: the script population is `notes/scripts/*.py`, and
-`catlib/` is 11 modules under that directory, counted as **55** source files by the lint gate in
+`catlib/` is 11 modules under that directory, counted as **57** source files by the lint gate in
 `notes/linting.md`.
 
 ## The file census
@@ -164,10 +172,10 @@ The package is not in the census below: the script population is `notes/scripts/
 |---|---|---|
 | `notes/index/` | **1,049** | generated — `build_index.py` |
 | `notes/summaries/` | **21** | hand-written — the reading record |
-| `notes/templates/` | **5** | hand-written — the page skeletons `build_index.py` renders |
+| `notes/templates/` | **9** | **5** hand-written index skeletons + **4** report templates built by `build_report_templates.py` |
 | `notes/*.tsv` | **8** | **6** generated, **2** hand-authored |
 | `notes/*.md` | **27** | hand-written — **15** with a checker, **12** without |
-| `notes/` total, scripts excluded | **1,110** | — |
+| `notes/` total, scripts excluded | **1,114** | — |
 
 The generated TSVs are the six writer targets. The two hand-authored tables are:
 
@@ -208,17 +216,20 @@ excludes the checker-verified pages, allowing formatting only on the pages no ch
 
 ## Naming coverage
 
-`notes/README.md`'s command block named **34** of the 43 scripts before this pass. Nine are named
-nowhere in the repo at the pinned baseline: `check_summary_manuscripts.py`, `extract_citations.py`,
-`locate_summary_quotes.py`, `read_manuscript.py`, `refresh_summary_line_counts.py`,
-`verify_citations.py`, `verify_findings.py`, `verify_named_conjectures.py` and
-`verify_upstream_history.py`. The first four are the `notes/summaries/` reading tooling and the
-citation extractor, so the summaries tree and `notes/citations.md` carried measurements whose
-generating command no document named; `verify_citations.py`, `verify_findings.py` and
-`verify_named_conjectures.py` are the checkers for `notes/citations.md`, `notes/findings.md` and
-`notes/named-conjectures.md`, so three pages carried measurements whose checker no document named;
-the last is the tooling behind `upstream_history/`, the pages that record each upstream merge, which
-sit outside `notes/` and so outside this page's census. All 43 are named here and in the command
+`notes/README.md`'s command block named **34** of the 45 scripts before this pass. Eleven are named
+nowhere in the repo at the pinned baseline: `build_report_templates.py`, `check_summary_manuscripts.py`,
+`extract_citations.py`, `locate_summary_quotes.py`, `read_manuscript.py`,
+`refresh_summary_line_counts.py`, `render_reports.py`, `verify_citations.py`, `verify_findings.py`,
+`verify_named_conjectures.py` and `verify_upstream_history.py`. The first four are the report-template
+builder this pass promoted plus the `notes/summaries/` reading tooling and the citation extractor, so
+the summaries tree and `notes/citations.md` carried measurements whose generating command no document
+named; `read_manuscript.py` and `refresh_summary_line_counts.py` are the rest of that reading tooling;
+`verify_citations.py`, `verify_findings.py` and `verify_named_conjectures.py` are the checkers for
+`notes/citations.md`, `notes/findings.md` and `notes/named-conjectures.md`, so three pages carried
+measurements whose checker no document named; `verify_upstream_history.py` is the tooling behind
+`upstream_history/`, the pages that record each upstream merge, which sit outside `notes/` and so
+outside this page's census; and `render_reports.py` is the renderer for the four report-fed pages.
+All 45 are named here and in the command
 block. "Before this pass" is
 pinned to the commit that created this page, read at its parent, not to `HEAD`: `HEAD` moves every
 time this page is edited, so a check keyed to it re-pins the baseline on each edit, and the naming
@@ -234,13 +245,13 @@ git, so nothing in the scratch tree is tracked and no checker here reads it. A p
 question stays where it is and is deleted; a probe that a later bead re-runs is promoted, gets a row
 in the tables above, and only then gets a gate command.
 
-Measured 2026-10-09 over `.qwen/tmp/` **after** the `math-8ou` cleanup: **284** top-level files,
-**7,034** files including subdirectories, **14** subdirectories. By top-level suffix: **221** `.txt`,
+Measured 2026-10-09 over `.qwen/tmp/` **after** the `math-8ou` cleanup: **285** top-level files,
+**7,121** files including subdirectories, **14** subdirectories. By top-level suffix: **222** `.txt`,
 **43** `.md`, **19** `.tsv`, **1** `.py`, and **0** in every other suffix — the tree is now reports,
 drafts, baselines and index snapshots, with one script left in it. The largest trees are gate and
-render snapshots — `reports/` **215**, `idx_pre_sweep/`, `idx_run1/` and `idx_run2/` at **1,052** each,
-`index-run1/` **1,049**, `index_run1/` and `index_run2/` at **1,050** each, `lon2/` **85**, `lon1/`
-**63**, `leanout/` **38**, `msgs/` **35**.
+render snapshots — `reports/` **271**, `idx_pre_sweep/`, `idx_run1/` and `idx_run2/` at **1,052** each,
+`index-run1/` **1,049**, `index_run1/` and `index_run2/` at **1,050** each, `lon2/` **85**, `msgs/`
+**65**, `lon1/` **63**, `leanout/` **38**.
 
 Before the cleanup the same measurement read **367** top-level files, **7,116** total, and a top-level
 suffix histogram of **220** `.txt`, **70** `.py`, **43** `.md`, **19** `.tsv`, **3** `.sh` and **12**

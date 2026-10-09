@@ -54,7 +54,7 @@ lives in this file and nowhere else.
 
 - Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `overview`, `ledger`, `preprints`,
   `text`, `yaml`, `anchors`, `bib`, `measure` (11 modules). Import them (`from catlib import yaml as Y`);
-  do not re-implement a join in an extractor. **32** of the **44** scripts do, including **all 19**
+  do not re-implement a join in an extractor. **33** of the **46** scripts do, including **all 19**
   checkers. `measure.py` is the writer-side measurement API (counts as data, no report formatting) and
   checkers deliberately do **not** import it — a checker that re-derives a count through the page's own
   code proves nothing.
@@ -303,13 +303,14 @@ lives in this file and nowhere else.
   manifest is `notes/scripts/README.md`, and it is the only place that answers "whose bytes are
   this". It is also the script inventory: every script under `notes/scripts/` is listed once as
   writer, report-only or checker, with what it writes and the gate command the gate list runs for it
-  — **7** writers, **18** report-only, **18** checkers, plus the page's own checker as the 19th
-  checker and 44th script — and the fourth class, scratch, is recorded by rule: **scratch lives under
+  — **9** writers, **18** report-only, **18** checkers, plus the page's own checker as the 19th
+  checker and 46th script — and the fourth class, scratch, is recorded by rule: **scratch lives under
   `.qwen/tmp/`, a permanent script lives under `notes/scripts/`**, so a probe that a later pass
   re-runs is promoted and gets a table row before it gets a gate command.
-  Scripts and generated files are **not** 1-to-1: of the **43** scripts, **7** write
+  Scripts and generated files are **not** 1-to-1: of the **45** scripts, **9** write
   (`build_catalog.py`, `build_sources.py`, `build_index.py`, `compare_abstracts.py` — with `--tsv`
-  only — `extract_formalization_deps.py`, `extract_links.py`, `extract_subfindings.py`) and **36**
+  only — `extract_formalization_deps.py`, `extract_links.py`, `extract_subfindings.py`,
+  `render_reports.py`, `build_report_templates.py`) and **36**
   write nothing, and `build_index.py` alone renders **1,049** files. Of the **8** top-level
   `notes/*.tsv`, **6** are generator output and **2** are hand-authored — `notes/topics.tsv` (the
   curated vocabulary `build_index.py` reads) and `notes/conjecture-standing.tsv` (the training-data
@@ -331,7 +332,8 @@ lives in this file and nowhere else.
 ## Testing instructions
 
 - Nothing here builds and there is no test suite; the generator report is the test.
-- The whole-tree test is the gate list at `notes/scripts/gate.sh`: **62** invocations — the 7 writers,
+- The whole-tree test is the gate list at `notes/scripts/gate.sh`: **63** invocations — the **8**
+  gated writers (`build_report_templates.py` is the writer it does not run),
   the 17 gated report-only rows (including `check_summary_manuscripts.py` and
   `locate_summary_quotes.py`; `read_manuscript.py` is the one script it does not run), and **38**
   checker invocations: each of the 18 checkers plain and with `--mutant` (**36**), plus
@@ -371,7 +373,7 @@ lives in this file and nowhere else.
   diff — 372 rows byte-identical — and `--mutant` must catch all 7 injected corruptions.
 - Check `notes/named-results.md` with `python3 notes/scripts/verify_named_results.py --mutant` before
   quoting any of its counts — it resolves every `path:line` anchor and every bare `:NNN` overview anchor
-  against `famline`, re-derives all 64 count phrases from `extract_named_results.population()`, checks
+  against `famline`, re-derives all 66 count phrases from `extract_named_results.population()`, checks
   the 17-row target table against that population and the ledger, matches every `*"…"*` quotation against
   the file its pinned anchor names, and flags twelve injected mutations. It writes nothing; run it twice
   and diff — the report is identical. Quote a quotation's anchor as the checker pins it: a manuscript
@@ -421,7 +423,7 @@ lives in this file and nowhere else.
   `sources.tsv` in either direction — the last three being the independent check, since they re-parse
   `overview.tex` with `build_catalog.parse_overview()` instead of trusting the table's own source.
 - Check `notes/sources.md` with `python3 notes/scripts/verify_sources.py --mutant` before quoting any
-  figure — it re-derives all 30 count phrases from a fresh recount over `preprints/` (root
+  figure — it re-derives all 31 count phrases from a fresh recount over `preprints/` (root
   distribution, main-file outcomes, single-root names, column sums, the six-name environment total and
   its per-name gap), requires every backticked manuscript directory name on the page to exist,
   resolves every `path:line` anchor of any extension, matches each fenced block against the nearest

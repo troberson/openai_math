@@ -43,8 +43,8 @@ as comments; the tables below are the same list with the measured counts.
 | pylint | 1,422 findings over 44 scripts | 142 | **0** (142 → 38 after the ruff autofixes, 38 → 21 by hand, 21 → 0 by the last three exemptions) |
 
 `python -m py_compile notes/scripts/*.py` passes for all 44 under the venv interpreter. The tree is
-**55 source files** today — `catlib/` adds 11 — and every current-state figure below is measured over
-55; the baseline row above is the 44-file tree it was measured on.
+**57 source files** today — **46** scripts plus `catlib/`'s **11** — and every current-state figure
+below is measured over 57; the baseline row above is the 44-file tree it was measured on.
 
 ## Exemptions
 
@@ -62,9 +62,10 @@ is not a defect in this tree.
 | pylint `missing-function-docstring` | 194 | A report function's contract is the report line it prints; the module docstring states what the script measures. |
 | pylint `too-many-*` | 80+37+35+5+3+2 | A generator that reconciles a corpus is wide by design; the metrics describe the report. |
 | pylint `invalid-name` | 12 | Module path constants are UPPER_CASE; extractors use short loop variables. |
-| pylint `duplicate-code` | 24 → 28 → 26 → 26 → 24 → **22** | Measured 2026-10-09 with `--enable=R0801` over 55 files (re-measured after `catlib/measure.py` joined the tree — the count did not move), after **all 19** checkers moved onto the package: **all 22** findings are attributed to `catlib/anchors.py`, whose anchor/fence loops are the reference side of every cluster (pylint reports a cluster under its first module). The 22 clusters pair 44 module entries: `verify_citations` 6, `extract_citations` 5, `verify_index_design` 5, `extract_subfindings` 4, `verify_verification_dirs` 4, `verify_sources` 3, `verify_subfindings` 3, `catlib.overview` 2, `verify_conditional` 2, `verify_counterexample_crosscheck` 2, `verify_dependency_drift` 2, and 6 singletons (`catlib.bib`, `catlib.text`, `extract_formalization_deps`, `locate_summary_quotes`, `verify_scope_exclusions`, `verify_summaries`). Two clusters left and none arrived, so the net is 24 → 22: out go the pair window and the connected-component scan, which were `verify_citations.py:140-146` and `:147-153` against `extract_citations.py` and are now one `catlib.bib.pair_counts` / `catlib.bib.clusters` call in each file. The 6 that remain on that pair are the extractor↔checker measurement loop — the checker re-derives the population from the corpus rather than trusting the report — which stays by design. `math-lon.2` ported the last **2** checkers (`verify_upstream_history.py`, `verify_summaries.py`) and moved no cluster: the 22 that remain are the `catlib/anchors.py` reference side plus the extract-to-verify measurement pairs, both by design. |
+| pylint `duplicate-code` | 24 → 28 → 26 → 26 → 24 → 22 → **29** | Measured 2026-10-09 with `--enable=R0801` over 57 files, after **all 19** checkers moved onto the package: **all 29** findings are attributed to `catlib/anchors.py`, whose anchor/fence loops are the reference side of every cluster (pylint reports a cluster under its first module). The 29 clusters pair 58 module entries: `render_reports` 7, `verify_sources` 6, `verify_index_design` 6, `verify_citations` 6, `extract_citations` 5, `verify_verification_dirs` 4, `extract_subfindings` 4, `verify_subfindings` 3, `verify_named_results` 2, `verify_dependency_drift` 2, `verify_counterexample_crosscheck` 2, `verify_conditional` 2, `catlib.overview` 2, and 7 singletons (`catlib.bib`, `catlib.text`, `extract_formalization_deps`, `locate_summary_quotes`, `verify_abstracts`, `verify_scope_exclusions`, `verify_summaries`). The 22 → 29 rise is `math-a0r.4`: `render_reports.py` arrives with 7 clusters because it re-derives, on the writer side, the anchor and phrase loops its four pages' checkers measure on the checker side — the split is the point of the design, so those clusters are the by-design extract-to-verify pair, not a shared-helper opportunity. `verify_sources` 3 → 6 and `verify_index_design` 5 → 6 are the same pair seen from the checker's side of that split, and `verify_named_results` 0 → 2 plus the `verify_abstracts` singleton are its two remaining anchor loops. Two clusters left and none arrived earlier, so the net is 24 → 22: out go the pair window and the connected-component scan, which were `verify_citations.py:140-146` and `:147-153` against `extract_citations.py` and are now one `catlib.bib.pair_counts` / `catlib.bib.clusters` call in each file. The 6 that remain on that pair are the extractor↔checker measurement loop — the checker re-derives the population from the corpus rather than trusting the report — which stays by design. `math-lon.2` ported the last **2** checkers (`verify_upstream_history.py`, `verify_summaries.py`) and moved no cluster. |
 | pylint `global-statement` | 3 | Report accumulators are module-level by design. |
 | pylint `unsubscriptable-object` | 6 | `prev` is `None`-guarded before the subscript in `verify_dependency_drift.py:169-170` and `extract_formalization_deps.py:161-162`; pylint does not track the narrowing. |
+| pylint `exec-used` (inline, not in `.pylintrc`) | 1 | `build_report_templates.py:89` — the template builder loads its page's checker by `exec` to read its needle list, which the builder reports as **coverage** (how many of the checker's needles the template slots) and never uses as the slot source. The slots come from the writer's own label dict in `render_reports.py`, so a template cannot reference a label the writer does not supply. The file is a builder, not a checker: the page's own checker still re-derives the counts independently. |
 
 Removed in the same pass as the boilerplate: pylint `wrong-import-position` (`C0413`), exempted for
 **40** baseline sites. `pylint --enable=C0413` measures **61** findings on the tree that still had
@@ -73,7 +74,7 @@ gate stays green.
 
 ## mypy per-file status
 
-Under `mypy.ini` the gate command checks **55 files with 0 errors**. `check_untyped_defs = False`,
+Under `mypy.ini` the gate command checks **57 files with 0 errors**. `check_untyped_defs = False`,
 so a function with no annotations is not analyzed — the gate proves the annotated surface, not the
 whole tree. The 3 baseline errors were real and are fixed: `compare_abstracts.py:63`
 (`_CACHE: dict = {}`), `build_index.py:166` (`WRITTEN: set = set()`), and a `None` guard in
@@ -82,15 +83,16 @@ whole tree. The 3 baseline errors were real and are fixed: `compare_abstracts.py
 The per-file figure is the **strict probe**, which is not a gate command:
 
 ```bash
-.venv/bin/mypy --check-untyped-defs notes/scripts/   # 200 errors in 36 files (55 checked)
+.venv/bin/mypy --check-untyped-defs notes/scripts/   # 200 errors in 36 files (57 checked)
 ```
 
 Its 200 findings are an annotation backlog, not defects: `var-annotated` 86 (an empty `dict`/`list`
 accumulator mypy cannot infer), `assignment` 45, `union-attr` 29, `misc` 10, `index` 10, `arg-type` 8,
 `operator` 4, `attr-defined` 2, `str-format` 2, `call-overload` 2, `str-unpack` 1,
-`func-returns-value` 1. **19 of 55 files are clean under the probe** —
-`build_catalog.py`, `extract_verification_348.py`, `locate_summary_quotes.py`, `read_manuscript.py`,
-`triage_t0.py`, `verify_counterexample_crosscheck.py`, `verify_index_design.py`,
+`func-returns-value` 1. **21 of 57 files are clean under the probe** —
+`build_catalog.py`, `build_report_templates.py`, `extract_verification_348.py`,
+`locate_summary_quotes.py`, `read_manuscript.py`, `render_reports.py`, `triage_t0.py`,
+`verify_counterexample_crosscheck.py`, `verify_index_design.py`,
 `verify_named_results.py`, and all 11 files under `catlib/`.
 
 The count rises as checkers move onto the package, and the rise is not a regression: `catlib` is
@@ -160,13 +162,13 @@ must be cumulative over the block, not per line), and re-inserting a blank line 
 
 - **Behaviour.** The linters prove style and typing facts only. The autofix pass ran with
   `--fix --unsafe-fixes` and took ruff from 287 findings to 26; the 26 were fixed by hand. The
-  evidence that none of it changed any output is the gate — 62 invocations run twice with every
+  evidence that none of it changed any output is the gate — 63 invocations run twice with every
   generated artifact md5-snapshotted and diffed (`notes/scripts/README.md`).
 - **No test suite.** The generator report is the test, so a lint fix is verified by report
   equality, not by unit tests.
 - **The strict probe is not scheduled.** The 200-error `--check-untyped-defs` backlog above is a
   work estimate; nothing runs that command as a gate.
-- **`duplicate-code` is off corpus-wide** — **22** findings measured with `--enable=R0801` over 55
+- **`duplicate-code` is off corpus-wide** — **29** findings measured with `--enable=R0801` over 57
   files after **all 19** checkers moved onto the package, and nothing automatic re-enables
   it. `math-lon.1` moved the joins into `catlib/`; `math-lon.2.1` moved the anchor grammar there,
   which is why every cluster is now reported against `catlib/anchors.py`; `math-lon.2.4` moved the
@@ -175,11 +177,13 @@ must be cumulative over the block, not per line), and re-inserting a blank line 
   loops every checker's anchor pass is measured against, and the extract-to-verify measurement pairs
   where the checker re-derives the population from the corpus instead of trusting the extractor's
   report.
-- **jinja2 is used by `build_index.py` alone** — `math-a0r.3` moved the prose of every generated page
-  into `notes/templates/`: `family.md.j2`, `discipline.md.j2`, `topic.md.j2`, `name.md.j2`, and
-  `index-readme.md.j2` (**5** skeletons). It renders through `python3` under the gate (gate.sh runs plain
-  `python3`, not the venv interpreter), so the gate depends on jinja2 being importable by the system
-  interpreter too; both interpreters report **3.1.6** here.
+- **jinja2 is used by `build_index.py` and `render_reports.py`** — `math-a0r.3` moved the prose of
+  every generated index page into `notes/templates/`: `family.md.j2`, `discipline.md.j2`,
+  `topic.md.j2`, `name.md.j2`, and `index-readme.md.j2` (**5** skeletons); `math-a0r.4` added the
+  **4** report templates under `notes/templates/report/`, rendered by `render_reports.py`. Both
+  render through `python3` under the gate (gate.sh runs plain `python3`, not the venv interpreter), so
+  the gate depends on jinja2 being importable by the system interpreter too; both interpreters report
+  **3.1.6** here.
 - **The venv is untracked.** `.venv/` is in `.gitignore`, so the versions in the table above are
   recorded only on this page — nothing in git pins them.
 - **Mutant lists.** The checkers' `--mutant` self-tests run in the gate; a lint fix that moved a
