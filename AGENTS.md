@@ -52,15 +52,14 @@ lives in this file and nowhere else.
 ## Dev environment tips
 
 - Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `overview`, `ledger`, `preprints`,
-  `text`, `yaml`, `anchors` (9 modules). Import them (`from catlib import yaml as Y`); do not
-  re-implement a join in an extractor. **28** of the **44** scripts already do. A script run as
+  `text`, `yaml`, `anchors`, `bib` (10 modules). Import them (`from catlib import yaml as Y`); do not
+  re-implement a join in an extractor. **31** of the **44** scripts already do. A script run as
   `python3 notes/scripts/foo.py` already has `notes/scripts` as `sys.path[0]`, so no `sys.path.insert`
-  is needed and `# noqa: E402` markers are not needed with it (measured 0 of each). The other **3**
-  checkers (`verify_citations.py`, `verify_named_conjectures.py`, `verify_upstream_history.py`) move
-  onto the package in `math-lon.2`; `verify_upstream_history.py`'s `git show <rev>:` yaml
-  read and `build_index.py`'s `TRIPLE` regex stay local by design. A page quotation is compared with
-  `catlib.text.strip_markup` — the rule that folds quotes and strips markup — never with a checker's
-  private copy of it.
+  is needed and `# noqa: E402` markers are not needed with it (measured 0 of each). The last checker,
+  `verify_upstream_history.py`, moves onto the package in `math-lon.2`; `verify_upstream_history.py`'s
+  `git show <rev>:` yaml read and `build_index.py`'s `TRIPLE` regex stay local by design. A page
+  quotation is compared with `catlib.text.strip_markup` — the rule that folds quotes and strips
+  markup — never with a checker's private copy of it.
 - Regenerate the ledger with `python3 notes/scripts/build_catalog.py` — stdlib only, runs in
   seconds, writes `notes/catalog.tsv` and prints the report that every number in
   `notes/README.md` comes from.
@@ -487,7 +486,7 @@ lives in this file and nowhere else.
   never scans `lean/OAI/**/*.lean`; import counts come from the TSV.
 - Check `notes/citations.md` with `python3 notes/scripts/verify_citations.py --mutant` before quoting
   any of its counts — it re-derives the shared-bibliography population from `preprints/**/*.bib`
-  through `extract_citations.py`'s primitives (the fresh run measures 521 `.bib` files, 513 owner
+  through `catlib.bib` (the fresh run measures 521 `.bib` files, 513 owner
   manuscripts, 13,802 entries, 8,775 distinct works, 2,251 shared works, 3,668 pairs with ≥1 shared
   work), requires each work-table row's manuscript count to equal the measured owning set and its
   quoted title to be the most frequent verbatim form for its normalized title at the anchor line,

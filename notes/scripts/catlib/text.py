@@ -14,8 +14,8 @@ ships them under distinct names and a caller says which one it means.
                   (lakefile <-> deps <-> yaml joins)
   url_key         repo URL join key: the lakefile writes '.git', formalization.yaml does not
 
-The LaTeX-prose normalizer in compare_abstracts.py and the accent-stripping bib-title normalizer in
-extract_citations.py are deliberately **not** merged here: they are lossy in ways their own pages
+The LaTeX-prose normalizer in compare_abstracts.py and the accent-stripping bib-title normalizer
+(`catlib.bib.norm_title`) are deliberately **not** merged here: they are lossy in ways their own pages
 document, and a checker's sensitivity variant (verify_citations.norm_noguard) is defined as a
 difference from one of them.
 """

@@ -241,7 +241,7 @@ not survive a re-run.
 | S19 | [`notes/scripts/measure_proof_density.py`](scripts/measure_proof_density.py) | 333 | The AUC and p re-derivation for every density figure |
 | S20 | [`notes/named-results.md`](named-results.md) | 346 | Headline environments read for named targets |
 | S21 | [`notes/citations.md`](citations.md) | 328 | Bibliographic overlap by discipline |
-| S22 | [`notes/scripts/extract_citations.py`](scripts/extract_citations.py) | 390 | The citation extractor and its coverage report |
+| S22 | [`notes/scripts/extract_citations.py`](scripts/extract_citations.py) | 257 | The citation extractor and its coverage report |
 | S23 | [`notes/names.md`](names.md) | 268 | The six-layer name measurement and the subject/citation split |
 | S24 | [`notes/topics.md`](topics.md) | 327 | The curated topic vocabulary and its per-layer counts |
 | S25 | [`notes/subfinding-pairs.md`](subfinding-pairs.md) | 623 | The abstract-clause to display-title pairing, 49 families |

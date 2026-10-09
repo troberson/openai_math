@@ -101,27 +101,27 @@ itself as its input. It is the 19th checker and the 44th script the run counts.
 
 ## The shared package: `catlib/`
 
-`notes/scripts/catlib/` holds the joins the extractors share, so a join is written once. It is 9
+`notes/scripts/catlib/` holds the joins the extractors share, so a join is written once. It is 10
 modules, not scripts: `paths.py` (the repo-root constants, `rel()`, `owner()`, `read_text()`),
 `tsv.py` (the four TSV writer shapes), `overview.py` (the `\resultentry` parse), `ledger.py`
 (`notes/catalog.tsv` and the claim-shape rules), `preprints.py` (the 749 dirs versus the 719 listed
 manuscripts), `text.py` (the six normalizers), `yaml.py` (`main_results_entries()`, the scope-note
 spans, the Lean-tree file list), `anchors.py` (the `path:line` anchor grammar, the fenced-block scan
-and the nearest-preceding-anchor read the page checkers share) and `__init__.py`. A script run as
-`python3 notes/scripts/foo.py` has `notes/scripts` on `sys.path`, so it imports them as
+and the nearest-preceding-anchor read the page checkers share), `bib.py` (the `.bib` entry parse, the
+title normalizer, the citation-key read, the pair window and the component scan) and `__init__.py`. A
+script run as `python3 notes/scripts/foo.py` has `notes/scripts` on `sys.path`, so it imports them as
 `from catlib import ...` with no path boilerplate.
 
-**28** of the **44** scripts call the package: **5** `extract_`, **3** `build_`, **2** `measure_`,
-`check_index_links.py`, `read_manuscript.py`, and **16** of the **19** checkers. The other **3**
-checkers (`verify_citations.py`, `verify_named_conjectures.py`, `verify_upstream_history.py`) are
-ported by `math-lon.2`'s remaining sub-beads, which is also where the **24**
-`duplicate-code` findings go — measured 2026-10-09 with `--enable=R0801` over 53 files, every
+**31** of the **44** scripts call the package: **6** `extract_`, **3** `build_`, **2** `measure_`,
+`check_index_links.py`, `read_manuscript.py`, and **18** of the **19** checkers. The last checker,
+`verify_upstream_history.py`, is ported by `math-lon.2.5`, which is also where the **22**
+`duplicate-code` findings go — measured 2026-10-09 with `--enable=R0801` over 54 files, every
 cluster now reported against `catlib/anchors.py` (see `notes/linting.md`). Two joins deliberately
 stay outside the package: `verify_upstream_history.py` reads `lean/formalization.yaml` through
 `git show <rev>:` (a history read), and `build_index.py` keeps its own `TRIPLE` regex.
 
 The package is not in the census below: the script population is `notes/scripts/*.py`, and
-`catlib/` is 9 modules under that directory, counted as **53** source files by the lint gate in
+`catlib/` is 10 modules under that directory, counted as **54** source files by the lint gate in
 `notes/linting.md`.
 
 ## The file census
