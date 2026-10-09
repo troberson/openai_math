@@ -16,8 +16,13 @@ carrier, so it states what to do and what not to re-derive.
   named by no family, **0** named directories absent. Of the 21 pages, **7 name a manuscript the
   catalog no longer names for their family** — 001, 002, 004, 006, 010, 019, 032 — over **19**
   unnamed directory references, with **0** references named by a *different* family. Those 7 pages are
-  rebuilds, not marker sweeps; **14 pages are current**. `verify_summaries.py` cannot see this failure:
-  every file it checks exists and every quotation is verbatim, because both directories are real.
+  rebuilds, not marker sweeps; **14 pages are current**. `verify_summaries.py` sees this: **pass D**
+  flags every manuscript directory a page names that no family's overview entry names (19 flags over
+  the 7 pages, 0 over the 14 current pages, out of **62** directories the pages name), and **pass E**
+  flags a citation that carries no quotation when it lands outside the family's own block in a
+  family-keyed file (1 flag: page 010's `notes/t0-triage.md:117–120`, whose block is now 121–124).
+  Passes B and C cannot see it — every file they check exists and every quotation is verbatim,
+  because both directories are real.
 - **Pages done (21):** 102 (`notes/summaries/theoretical-computer-science/`), 001, 002, 004, 006, 007,
   010, 011, 014, 016, 017, 018, 019 (`notes/summaries/number-theory/`), 032
   (`notes/summaries/algebraic-and-complex-geometry/`), 087 (`notes/summaries/convex-and-metric-geometry/`),
@@ -34,7 +39,11 @@ carrier, so it states what to do and what not to re-derive.
   719 manuscripts, 173 formalized, 416 challenges, 200 `main_results` entries over 189 configs, 242
   scope notes, both `overview.tex` ↔ `CONTENTS.md` cross-checks 0, "summary pages 21 of 372 families,
   57 manuscripts behind them". `verify_summaries.py` is **not** green fleet-wide at this boundary —
-  see the staleness bullet; the sweep is in progress.
+  see the staleness bullet; the sweep is in progress. Over the **14 current pages**: 2442 marker
+  positions, 660 quoted spans, **0 problems**, and `--mutant` prints **70 FLAGGED / 0 MISSED** (A1,
+  A2, A3, B, and the new D and E on every page). Over all **21 pages**: 3496 positions, 927 spans,
+  **112 problems** — 92 from passes B and C on the superseded pages, 19 from pass D, 1 from pass E.
+  Both reports byte-identical across two runs.
 - **Pre-merge gate history (2026-10-08, closing `math-ckd.2`):** 372 families, 722 manuscripts, 162
   formalized, 405 challenges, 185 `main_results` over 178 configs, 235 scope notes, discipline table
   summing 372 / 235 / 722 / 162 — the line that moved was "summary pages 21 of 372 families, 60
