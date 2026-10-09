@@ -1,0 +1,64 @@
+# Ruff configuration for the ledger scripts under notes/scripts/ (math-e8k).
+#
+# The gate command is `.venv/bin/ruff check notes/scripts/` and it must exit 0.
+# Every rule below that is ignored carries the count it would have produced on 2026-10-09 and the
+# reason the finding is not a defect; notes/linting.md records the same list with the commands.
+
+target-version = "py312"
+
+[lint]
+select = [
+    "E1",
+    "E4",
+    "E7",
+    "E9",
+    "F",
+    "B",
+    "I",
+    "SIM",
+    "PLW",
+    "PERF",
+    "PIE",
+    "RUF",
+    "UP",
+    "ISC",
+    "FURB",
+    "C4",
+    "RET",
+]
+ignore = [
+    # 80 sites. Implicit concatenation inside a list literal is how the mutant tables are written;
+    # adding a comma per element is a formatting change with no effect on behaviour.
+    "ISC004",
+    # 166 sites. The report strings are built with %-formatting on purpose: a report line is a
+    # printf template reused across tiers, and f-stringting each one re-wraps 166 lines of output.
+    "UP031",
+    # 60 sites. `re.M` is the local alias convention for the extractors' regex flags.
+    "FURB167",
+    # 8 sites. `s[1:]` / `s[:-1]` over removeprefix/removesuffix where the prefix is a single char.
+    "FURB188",
+    # 4 sites. The extractors import a sibling module through sys.path.insert, which is the
+    # documented reason for their `# noqa: E402` markers.
+    "I001",
+    # 78 sites. `l` is a line and `I` never appears; the ambiguous-name rule is about readers
+    # mistaking a letter for a digit, and in these scripts the single-letter names are line, row
+    # and counter locals inside a loop that is ten lines long.
+    "E741",
+    # 33 sites. A report-building loop that appends under a condition is the local shape; the
+    # comprehension rewrite hides the condition inside a generator expression.
+    "PERF401",
+    # 25 + 11 sites. The corpus's own bytes are the payload: U+2019 apostrophes, `…` anchor
+    # suffixes and `→` arrows appear in the quotations and needles the checkers match verbatim, so
+    # a "look-alike" character is the point of the string, not a typo.
+    "RUF001",
+    "RUF002",
+    # 3 sites. The report accumulators are module-level by design (see notes/linting.md).
+    "PLW0603",
+    # 1 site. The if/else block is the report's own branch.
+    "SIM108",
+]
+
+[lint.per-file-ignores]
+# E402 stays enabled on purpose: the scripts that import a sibling module through sys.path.insert
+# carry `# noqa: E402` markers, and keeping the rule live is what keeps those markers used
+# (RUF100 flags a noqa that suppresses nothing).
