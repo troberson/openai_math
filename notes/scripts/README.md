@@ -137,16 +137,16 @@ excludes the checker-verified pages, allowing formatting only on the pages no ch
 
 ## Naming coverage
 
-`notes/README.md`'s command block named **38** of the 39 scripts before this pass. One is named
-nowhere in the repo at the pinned baseline: `verify_upstream_history.py`. They are the tooling behind
-`upstream_history/`, the pages that record each upstream merge, which sit outside `notes/` and so
-outside this page's census. All 39 are named here and in the command block. Four scripts were named
-nowhere when this page was written — `extract_citations.py`, `verify_citations.py`,
-`verify_findings.py` and `verify_named_conjectures.py` — and they are the tooling behind
-`notes/citations.md`, `notes/findings.md` and `notes/named-conjectures.md`, so three pages carried
-measurements whose generating command no document named. "Before this pass" is pinned to the commit
-that most recently touched this page, read at its parent, not to `HEAD`: the moment a naming lands, a
-check keyed to `HEAD` reads the gap as empty and the sentence stops being checkable.
+`notes/README.md`'s command block named **34** of the 39 scripts before this pass. Five are named
+nowhere in the repo at the pinned baseline: `extract_citations.py`, `verify_citations.py`,
+`verify_findings.py`, `verify_named_conjectures.py` and `verify_upstream_history.py`. The first four
+are the tooling behind `notes/citations.md`, `notes/findings.md` and `notes/named-conjectures.md`, so
+three pages carried measurements whose generating command no document named; the fifth is the tooling
+behind `upstream_history/`, the pages that record each upstream merge, which sit outside `notes/` and
+so outside this page's census. All 39 are named here and in the command block. "Before this pass" is
+pinned to the commit that created this page, read at its parent, not to `HEAD`: `HEAD` moves every
+time this page is edited, so a check keyed to it re-pins the baseline on each edit, and the naming
+that pass added then reads as already present and the recorded gap vanishes.
 
 ## Not checked
 

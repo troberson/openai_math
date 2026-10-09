@@ -231,10 +231,12 @@ def check(text):
             p.append(f"script not named in notes/README.md: {n}")
     # "Before this pass" is pinned to the commit that created this page, not to HEAD: HEAD moves
     # every time the command block is edited, and a check keyed to it stops being a record.
+    # --reverse lists oldest first, so the creating commit is base[0]; keying to base[-1] re-pins
+    # the baseline to every later edit of this page, and the naming that pass added reads as absent.
     base = subprocess.run(
         ["git", "log", "--format=%H", "--reverse", "--", "notes/scripts/README.md"],
         cwd=ROOT, capture_output=True, text=True).stdout.split()
-    ref = f"{base[-1]}^" if base else "HEAD"
+    ref = f"{base[0]}^" if base else "HEAD"
     head_readme = subprocess.run(
         ["git", "show", f"{ref}:notes/README.md"], cwd=ROOT, capture_output=True, text=True
     ).stdout
@@ -245,7 +247,8 @@ def check(text):
     named_before = len(names) - len(gaps)
     if f"named **{named_before}** of the {len(names)} scripts" not in text:
         p.append(f"naming sentence does not read 'named **{named_before}** of the {len(names)} scripts'")
-    gap_page = re.search(r"nowhere in the repo[^:]*:\s*(.*?)\.\s*They are the tooling", text, re.S)
+    gap_page = re.search(
+        r"named\s+nowhere in the repo at the pinned baseline:\s*(.*?)\.\s*The first four", text, re.S)
     if not gap_page:
         p.append("no sentence naming the scripts named nowhere")
     else:
