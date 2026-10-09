@@ -2,7 +2,7 @@
 
 ## Population
 
-The ledger's `resolves_named` column is a title-and-abstract heuristic: `notes/scripts/build_catalog.py:215`
+The ledger's `resolves_named` column is a title-and-abstract heuristic: `notes/scripts/catlib/ledger.py:98`
 returns 1 when a family's **overview title + abstract**, lowered, matches both `TARGET_NOUN`
 (`conjectur|\bquestion|\bproblem`) and `RESOLVE_VERB`
 (`\bprov(?:e|es|ed|ing)\b|\bdisprov|\brefut|\bresolv|\banswer|\bsettl|\bestablis|\bconfirm|\bfail|\bviolat|\bcounterexample`).
