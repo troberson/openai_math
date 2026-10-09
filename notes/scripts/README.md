@@ -127,21 +127,24 @@ itself as its input. It is the 19th checker and the 44th script the run counts.
 
 ## The shared package: `catlib/`
 
-`notes/scripts/catlib/` holds the joins the extractors share, so a join is written once. It is 10
+`notes/scripts/catlib/` holds the joins the extractors share, so a join is written once. It is 11
 modules, not scripts: `paths.py` (the repo-root constants, `rel()`, `owner()`, `read_text()`),
 `tsv.py` (the four TSV writer shapes), `overview.py` (the `\resultentry` parse), `ledger.py`
 (`notes/catalog.tsv` and the claim-shape rules), `preprints.py` (the 749 dirs versus the 719 listed
 manuscripts), `text.py` (the six normalizers), `yaml.py` (`main_results_entries()`, the scope-note
 spans, the Lean-tree file list), `anchors.py` (the `path:line` anchor grammar, the fenced-block scan
 and the nearest-preceding-anchor read the page checkers share), `bib.py` (the `.bib` entry parse, the
-title normalizer, the citation-key read, the pair window and the component scan) and `__init__.py`. A
+title normalizer, the citation-key read, the pair window and the component scan), `measure.py` (the
+writer-side measurement API — the ledger and release counts as ints, sets and lists, with no report
+formatting; checkers deliberately do **not** import it, because a checker that re-derives a count
+through the page's own code proves nothing) and `__init__.py`. A
 script run as `python3 notes/scripts/foo.py` has `notes/scripts` on `sys.path`, so it imports them as
 `from catlib import ...` with no path boilerplate.
 
 **32** of the **44** scripts call the package: **6** `extract_`, **3** `build_`, **2** `measure_`,
 `check_index_links.py`, `read_manuscript.py`, and **all 19** checkers — `math-lon.2.5` ported the last
 two, `verify_upstream_history.py` and `verify_summaries.py`, and the **22** `duplicate-code` findings
-did not move (measured 2026-10-09 with `--enable=R0801` over 54 files, every cluster reported against
+did not move (measured 2026-10-09 with `--enable=R0801` over 55 files, every cluster reported against
 `catlib/anchors.py`; see `notes/linting.md`). What deliberately stays outside the package is a **read
 shape**, not a parse: `verify_upstream_history.py` reads `lean/formalization.yaml` and
 `notes/catalog.tsv` from a **revision** through `git show <rev>:`, so the package gained
@@ -151,7 +154,7 @@ shape**, not a parse: `verify_upstream_history.py` reads `lean/formalization.yam
 compiled PDF; and `build_index.py` keeps its own `TRIPLE` regex.
 
 The package is not in the census below: the script population is `notes/scripts/*.py`, and
-`catlib/` is 10 modules under that directory, counted as **54** source files by the lint gate in
+`catlib/` is 11 modules under that directory, counted as **55** source files by the lint gate in
 `notes/linting.md`.
 
 ## The file census
