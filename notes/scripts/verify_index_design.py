@@ -31,6 +31,7 @@ import measure_index_sizes as M  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PAGE = ROOT / "notes" / "index-design.md"
+YAML = ROOT / "lean" / "formalization.yaml"
 
 ANCHOR = re.compile(r"`([\w./+-]+?\.(?:py|md|tex|json|tsv|yaml)):(\d+)`")
 # Any backticked path:line shape, so a mistyped extension is a failure and not a skip.
@@ -39,6 +40,19 @@ ANCHOR_SHAPE = re.compile(r"`([\w./+-]+?\.[A-Za-z][A-Za-z0-9]{0,4}):(\d+)`")
 
 def norm(s):
     return re.sub(r"\s+", " ", s).strip()
+
+
+def builds_on_anchor():
+    """Line of the first `relationship: builds-on` in the yaml — the anchor the page cites.
+
+    Derived, not literal: the yaml grows between releases and a hard-coded line number turns a
+    corpus change into a checker edit.
+    """
+    lines = YAML.read_text(encoding="utf-8", errors="replace").splitlines()
+    for i, ln in enumerate(lines, start=1):
+        if "relationship: builds-on" in ln:
+            return i
+    raise SystemExit("no builds-on declaration in lean/formalization.yaml")
 
 
 def count_phrases(p):
@@ -101,7 +115,8 @@ def count_phrases(p):
          f"**{p['sizes']['sources.tsv'][1]}** rows) and `notes/topics.tsv` "
          f"(**{p['sizes']['topics.tsv'][0]}** B over **{p['sizes']['topics.tsv'][1]}** rows)",
          "added TSV byte figures"),
-        (f"(**{p['builds_on']}** `builds-on` declarations at `lean/formalization.yaml:822`)",
+        (f"(**{p['builds_on']}** `builds-on` declarations at "
+         f"`lean/formalization.yaml:{builds_on_anchor()}`)",
          "builds-on declaration count"),
         # granularity
         (f"**{fam}** family pages, and no per-manuscript pages", "page count decision"),
@@ -185,7 +200,7 @@ def count_phrases(p):
         (f"Whether the **{p['lean_disc']}** Lean discipline dirs align with the **{disc}** catalog "
          f"disciplines", "grouping caveat"),
         (f"superseded by the measured **{n}** and **{rb}**", "superseded estimate"),
-        (f"covers **{p['disk_links']:,}** links over the same 1,034 pages, also with "
+        (f"covers **{p['disk_links']:,}** links over the same {p['index_pages']:,} pages, also with "
          f"**{p['disk_broken']}** broken, and **{p['disk_dirs']:,}** of them resolve to a "
          f"directory", "disk link check"),
     ]
@@ -268,29 +283,29 @@ def check(text):
 
 
 MUTANTS = {
-    "anchor line shifted": lambda t: t.replace("`lean/formalization.yaml:922`",
-                                              "`lean/formalization.yaml:921`", 1),
-    "anchor file renamed": lambda t: t.replace("`lean/formalization.yaml:927`",
-                                               "`lean/formalization.yml:927`", 1),
+    "anchor line shifted": lambda t: t.replace("`lean/formalization.yaml:977`",
+                                               "`lean/formalization.yaml:976`", 1),
+    "anchor file renamed": lambda t: t.replace("`lean/formalization.yaml:982`",
+                                               "`lean/formalization.yml:982`", 1),
     "block line altered": lambda t: t.replace("      declaration: OAI.GAD.main",
                                               "      declaration: OAI.AmplitudeDamping.main", 1),
-    "count altered": lambda t: t.replace("**2,529** index nodes", "**2,700** index nodes", 1),
-    "derived count altered": lambda t: t.replace("is wrong **139** times", "is wrong **138** times",
+    "count altered": lambda t: t.replace("**2,560** index nodes", "**2,700** index nodes", 1),
+    "derived count altered": lambda t: t.replace("is wrong **150** times", "is wrong **149** times",
                                                  1),
-    "links value altered": lambda t: t.replace("**396** resolved", "**397** resolved", 1),
+    "links value altered": lambda t: t.replace("**391** resolved", "**392** resolved", 1),
     "abbreviated anchor": lambda t: t.replace("`overview.tex:28`", "`.../overview.tex:28`", 1),
     "substring-rule count altered": lambda t: t.replace("of the command name reads 18 and",
                                                         "of the command name reads 17 and", 1),
-    "projected size altered": lambda t: t.replace("**1,893** KiB", "**1,800** KiB", 1),
-    "rendered row count altered": lambda t: t.replace("`family-topic.tsv` | **971**",
-                                                       "`family-topic.tsv` | **970**", 1),
-    "ledger set widened to all TSVs": lambda t: t.replace("the whole ledger set is **296,283** B",
-                                                          "the whole ledger set is **630,987** B",
+    "projected size altered": lambda t: t.replace("**2,021** KiB", "**2,000** KiB", 1),
+    "rendered row count altered": lambda t: t.replace("`family-topic.tsv` | **978**",
+                                                       "`family-topic.tsv` | **977**", 1),
+    "ledger set widened to all TSVs": lambda t: t.replace("the whole ledger set is **297,036** B",
+                                                          "the whole ledger set is **630,606** B",
                                                           1),
-    "all-TSV total altered": lambda t: t.replace("together totals **630987** B",
-                                                 "together totals **296283** B", 1),
-    "disk link count altered": lambda t: t.replace("covers **65,699** links",
-                                                   "covers **65,700** links", 1),
+    "all-TSV total altered": lambda t: t.replace("together totals **630606** B",
+                                                 "together totals **297036** B", 1),
+    "disk link count altered": lambda t: t.replace("covers **66,107** links",
+                                                   "covers **66,108** links", 1),
 }
 
 
