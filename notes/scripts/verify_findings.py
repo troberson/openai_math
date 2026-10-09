@@ -54,29 +54,29 @@ PRE_GAP, POST_GAP = 2, 12  # adjacency windows around a marker
 
 # Counts the page takes from a record rather than re-measuring. Each must appear in that record.
 RECORD = {
-    "S5": ["115 of 235 sections state at least one exclusion", "137 exclusion", "120 state none"],
+    "S5": ["121 of 242 sections state at least one exclusion", "143 exclusion", "121 state none"],
     "S6": ["233", "94", "144"],
     "S7": ["74", "44", "30", "348", "339", "355", "004"],
-    "S8": ["Five families are genuinely conditional", "121,734"],
-    "S9": ["0.236", "282", "90", "127", "153"],
-    "S11": ["| C | 16 | 29 |", "| R | 50 | 92 |", "| B | 29 | 57 |", "| K | 8 | 20 |",
-            "| U | 12 | 17 |", "| O | 2 | 5 |", "| N | 20 | 35 |", "**137** | **255**",
-            "91 of these 137", "22 of these 137", "560 of 722", "44 families",
+    "S8": ["Five families are genuinely conditional", "122,458"],
+    "S9": ["0.236", "283", "89", "127", "153"],
+    "S11": ["| C | 16 | 29 |", "| R | 46 | 85 |", "| B | 27 | 54 |", "| K | 8 | 20 |",
+            "| U | 12 | 17 |", "| O | 2 | 5 |", "| N | 19 | 34 |", "**130** | **244**",
+            "86 of these 130", "21 of these 130", "547 of 719", "44 families",
             "134 manuscripts", "93 families, 121 manuscripts", "21 families",
             "34 manuscripts", "the whole body of evidence"],
-    "S12": ["**27** of the 28", "`verification = 2`", "**28** families carrying **56** manuscripts"],
-    "S13": ["397", "396", "158", "105", "417", "501", "14", "415", "405", "not** typed"],
+    "S12": ["**26** of the 27", "`verification = 2`", "**27** families carrying **54** manuscripts"],
+    "S13": ["393", "391", "156", "104", "417", "500", "14", "426", "416", "not** typed"],
     "S14": ["**30 dirs over 22 families**", "**12 of 30**", "**18 ship no README**",
             "finite-arithmetic certificate", "counts 4 `INPUTS.md`",
             "counts 2 `verification/COVERAGE.md`"],
-    "S16": ["**28**", "**18**", "**10**"],
+    "S16": ["**28**", "**19**", "**9**"],
     "S18": ["30.0", "168.9", "0.966", "0.974", "No ledger column"],
     "S20": ["2,270", "1,498", "271", "101", "**17**"],
-    "S21": ["6 of 419", "0 of 197", "227"],
+    "S21": ["6 of 419", "0 of 197", "225"],
     "S23": ["5,859", "552", "5,307", "9,883", "233"],
-    "S24": ["92", "971"],
-    "S25": ["111", "95", "64", "47", "18", "51", "49", "206", "40"],
-    "S26": ["727", "722", "718", "20,449", "21,402", "21,317", "717", "5"],
+    "S24": ["92", "978"],
+    "S25": ["109", "94", "62", "47", "18", "51", "49", "203", "10"],
+    "S26": ["724", "719", "749", "20,341", "21,288", "21,203", "717", "5"],
     "S27": ["1,034", "65,699"],
     "S28": ["160,187", "734", "v4.34.1", "1.3"],
     "S29": ["276,599", "56,196", "277,501", "56,715"],
@@ -86,23 +86,23 @@ RECORD = {
 
 # (script, report line the page relies on, the page's rendering of it)
 REPORTS = [
-    ("extract_scope_notes.py", "narrow list: 5 phrases, 5 of 235 docs hit",
-     "the 5-phrase narrow list hits **5** of 235"),
-    ("extract_scope_notes.py", "broad list: 24 phrases, 44 of 235 docs hit",
+    ("extract_scope_notes.py", "narrow list: 5 phrases, 5 of 242 docs hit",
+     "the 5-phrase narrow list hits **5** of 242"),
+    ("extract_scope_notes.py", "broad list: 24 phrases, 44 of 242 docs hit",
      "the 24-phrase broad list hits **44**"),
-    ("extract_subfinding_pairs.py", "POPULATION 49 families, 206 manuscripts",
-     "**49 families over 206 manuscripts**"),
+    ("extract_subfinding_pairs.py", "POPULATION 49 families, 203 manuscripts",
+     "**49 families over 203 manuscripts**"),
     ("measure_proof_density.py",
-     "proofs per manuscript    counterex_broad  n= 74 AUC=0.356 p=1.32e-04",
-     "AUC **0.356**, p **1.32e-04**"),
+     "proofs per manuscript    counterex_broad  n= 74 AUC=0.356 p=1.22e-04",
+     "AUC **0.356**, p **1.22e-04**"),
     ("extract_citations.py", "pairs sharing >=5 titles: 419  same-family 296  cross-discipline 6",
      "6 of 419 pairs at ≥5 shared titles cross a discipline boundary"),
     ("extract_citations.py", "pairs sharing >=10 titles: 197  same-family 173  cross-discipline 0",
      "0 of 197 at ≥10"),
     ("extract_citations.py",
-     "manuscripts with no .bib: 227, of which 227 carry an inline thebibliography and 0 carry neither",
-     "blind to **227** of 722 manuscripts"),
-    ("check_index_links.py", "links extracted        65699", "**65,699** links with **0** broken"),
+     "listed manuscripts with no .bib: 225 of 719, of which 225 carry an inline thebibliography and 0 carry neither",
+     "blind to **225** of 719 manuscripts"),
+    ("check_index_links.py", "links extracted        66107", "**66,107** links with **0** broken"),
 ]
 
 
@@ -203,6 +203,15 @@ def measured():
     disk_links = int(re.search(r"links extracted\s+(\d+)", ci).group(1))
     disk_broken = int(re.search(r"broken links\s+(\d+)", ci).group(1))
 
+    # The yaml `sources:` list is the only place the release names a formalized manuscript, so the
+    # gap between it and the overview's own manuscript list is measured, not quoted.
+    yaml_paths = B.parse_yaml()[0]
+    listed = {p for r in rows.values() for p in r["paths"]}
+    yaml_extra = sorted(p for p in yaml_paths if p not in listed)
+
+    # Cross-family citation count comes from the links table's own detail field.
+    bib_cross = int(re.search(r"(\d+) cross-family", bib).group(1))
+
     return {
         "fams": fams,
         "cols": len(tsv("notes/catalog.tsv")[0]),
@@ -232,6 +241,11 @@ def measured():
         "mainres_entries": mainres_entries,
         "mainres_configs": mainres_configs,
         "form_fams": sum(1 for r in rows.values() if r["paps_form"]),
+        "fam_diff": sorted({f for f, r in rows.items() if r["mainres"]} -
+                           {f for f, r in rows.items() if r["paps_form"]}),
+        "yaml_paths": len(yaml_paths),
+        "yaml_extra": len(yaml_extra),
+        "yaml_extra_name": " ".join(Path(p).parent.name for p in yaml_extra),
         "traces": trace_count,
         "sumfam": sum(1 for r in rows.values() if r["summary"]),
         "summss": sum(r["paps"] for r in rows.values() if r["summary"]),
@@ -258,6 +272,7 @@ def measured():
                                        lk["scope note->comparator statement"]["detail"]).group(1)),
         "bib_edges": int(re.search(r"(\d+) resolved edges", bib).group(1)),
         "bib_fams": int(re.search(r"over (\d+) of \d+ families", bib).group(1)),
+        "bib_cross": bib_cross,
         "chal_files": len(files),
         "sorry_total": sum(sorries),
         "sorry_files": sum(1 for c in sorries if c),
@@ -296,7 +311,11 @@ def needles(m):
          f"**{m['chal']}** comparator challenges, **{m['mainres_entries']}** `main_results` entries over "
          f"**{m['mainres_configs']}** unique configs reaching **{m['mainres_fams']}** families"),
         f"all {m['scope']} scope notes link at least one config",
-        f"{m['mainres_fams']} families in each, 0 in either difference",
+        (f"**{m['form_fams']}** families have a formalized manuscript and **{m['mainres_fams']}** "
+         f"have a `main_results` entry; the difference is **{len(m['fam_diff'])}** family "
+         f"(`{' '.join(m['fam_diff'])}`)"),
+        (f"the yaml `sources:` list carries **{m['yaml_paths']}** paths, **{m['yaml_extra']}** of "
+         f"them not listed by any family (`{m['yaml_extra_name']}`)"),
         f"The {m['t0']} T0 families carry **{m['t0_mss']}** manuscripts",
         f"flags **{m['t0_named']} of {m['t0']}**",
         f"`counterex_broad` **{m['t0_cx']} of {m['t0']}**",
@@ -321,7 +340,7 @@ def needles(m):
         f"**{m['disk_broken']}** broken",
         f"the 10-gap against **{m['scope_configs']}**",
         (f"**{m['bib_edges']}** manuscript→manuscript edges over **{m['bib_fams']}** of "
-         f"{m['fams']} families, **105** crossing"),
+         f"{m['fams']} families, **{m['bib_cross']}** crossing"),
     ]
 
 
@@ -480,14 +499,14 @@ def mutants(page):
         ("quotation cited to the neighbouring line",
          lambda p: p.replace("[S8:7]", "[S8:8]", 1), "no quotation"),
         ("fabricated quotation",
-         lambda p: p.replace('"115 of 235 sections state at', '"115 of 235 scope notes state at'),
+         lambda p: p.replace('"121 of 242 sections state at', '"121 of 242 scope notes state at'),
          "no quotation"),
-        ("changed ledger count", lambda p: p.replace("T3 127 · T2 108", "T3 128 · T2 107", 1),
+        ("changed ledger count", lambda p: p.replace("T3 136 · T2 106", "T3 137 · T2 105", 1),
          "count not stated as measured"),
         ("deleted Sources row",
          lambda p: "\n".join(l for l in p.splitlines() if not l.startswith("| S14 |")),
          "cites no Sources row"),
-        ("aged Sources line count", lambda p: p.replace("| 893 |", "| 892 |", 1), "declares"),
+        ("aged Sources line count", lambda p: p.replace("| 897 |", "| 896 |", 1), "declares"),
     ]
     out, undetected = [], 0
     for name, fn, expect in cases:
