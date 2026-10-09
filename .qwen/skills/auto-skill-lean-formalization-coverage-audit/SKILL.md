@@ -11,7 +11,7 @@ extracted_at: '2026-10-07T05:29:45.327Z'
 
 Use when asked how much of a paper/manuscript collection is formalized, how complete the
 formal proofs are, or what the formalization gap is. Worked out on the OpenAI Research
-Catalog (`/home/tamara/Downloads/_Git/math`): 722 manuscripts, 372 families, a 25.9M-line
+Catalog (`/home/tamara/Downloads/_Git/math`): 719 manuscripts, 372 families, a 26,060,031-line
 `OAI/` Lean library.
 
 ## 1. Report coverage as separate layers — never as one percentage
@@ -21,10 +21,10 @@ picking one and calling it "the coverage", is the main way to get this wrong.
 
 | Layer | Where it lives | Catalog value |
 |---|---|---|
-| Manuscripts with a formalized main result | `formalization.yaml` → `sources:` (`id: ../preprints/<dir>/<file>.pdf`) | 162 / 722 |
-| Families with a scope note | `lean/docs/<NNN>.md` | 235 / 372 |
-| Statement/solution pairs | `lean/ComparatorChallenges/*.json` (+ matching `.lean`) | 405 |
-| Catalogued main results | `formalization.yaml` → `status.main_results` (`comparator_config:` / `declaration:` / `file:`) | 185 entries, 178 unique configs |
+| Manuscripts with a formalized main result | `formalization.yaml` → `sources:` (`id: ../preprints/<dir>/<file>.pdf`) | 173 / 719 |
+| Families with a scope note | `lean/docs/<NNN>.md` | 242 / 372 |
+| Statement/solution pairs | `lean/ComparatorChallenges/*.json` (+ matching `.lean`) | 416 |
+| Catalogued main results | `formalization.yaml` → `status.main_results` (`comparator_config:` / `declaration:` / `file:`) | 200 entries, 189 unique configs |
 
 - Count entries with `grep -c 'comparator_config:'`, then `sort -u` the extracted names —
   some configs appear 2–3× (multiple main declarations per challenge). Entries ≠ unique configs.
@@ -112,7 +112,7 @@ is not.
 
 ## 4. Say what a zero-`sorry` result does and does not mean
 
-Zero `sorry` across 25.9M lines is a **source-level** fact. It does not mean the library
+Zero `sorry` across 26,060,031 lines is a **source-level** fact. It does not mean the library
 elaborates, and it is not verification. State the distinction explicitly, then give the
 command that produces the checked fact:
 
@@ -153,7 +153,7 @@ as a red flag.
 
 - `rg -f patterns.txt` with patterns ending in `\n` fails even with `-U` ("the literal `\n`
   is not allowed in a regex"). For per-file declaration sets, scan in Python.
-- Building the graph over 121,734 files takes ~1 min; pickle it (`/tmp/graph.pkl`) so follow-up
+- Building the graph over 122,458 files takes ~1 min; pickle it (`/tmp/graph.pkl`) so follow-up
   questions don't rescan.
 - `du -sh lean/OAI` ≈ 1.7 GB. Compiling the whole library can fail on low `vm.max_map_count`;
   see `lean/README.md` (`-DMMAP=OFF`, `GLIBC_TUNABLES=glibc.malloc.mmap_max=0:glibc.malloc.arena_max=1`).

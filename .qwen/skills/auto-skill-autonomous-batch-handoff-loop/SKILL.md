@@ -72,8 +72,8 @@ diff /tmp/c1.tsv /tmp/c2.tsv && diff /tmp/r1.txt /tmp/r2.txt     # must be byte-
 python3 notes/scripts/verify_summaries.py --mutant               # zero problems, zero undetected mutants
 ```
 
-Reconciliation lines that must not move: 372 families, 722 manuscripts, 162 formalized, 405
-challenges, 185 `main_results` entries over 178 configs, 235 scope notes, both cross-checks 0.
+Reconciliation lines that must not move: 372 families, 719 manuscripts, 172 formalized, 416
+challenges, 200 `main_results` entries over 189 configs, 242 scope notes, both cross-checks 0.
 
 Quote numbers only from the current run — never from the handoff file's recorded numbers. The file
 records them so you notice when they move, not so you can reuse them.

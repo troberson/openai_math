@@ -196,7 +196,7 @@ change a measurement — the sweep edited `extract_links.py`, and only the vs-HE
 
 Batch the fast checkers in a loop that prints `plain=N mutant=N` per script (17 of them in one loop,
 each run plain **and** `--mutant` — the two runs answer different questions). Run the slow one
-(`extract_formalization_deps.py`, minutes over 121,734 files) as a background shell while the rest
+(`extract_formalization_deps.py`, minutes over 122,458 files) as a background shell while the rest
 run. Quote the reconciliation lines from the fresh runs, never from the handoff file.
 
 ## 6. Commit split: when files overlap across purposes, merge and say so

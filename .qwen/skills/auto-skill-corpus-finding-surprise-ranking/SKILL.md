@@ -11,7 +11,7 @@ extracted_at: '2026-10-07T09:16:58.409Z'
 # Ranking findings by surprise and consequence
 
 Worked out on the OpenAI Research Catalog (`/home/tamara/Downloads/_Git/math`): 372 result families,
-722 manuscripts, September–October 2026. The user's framing: "we'll trust the model that all findings
+719 manuscripts, September–October 2026. The user's framing: "we'll trust the model that all findings
 are correct. we're not looking for inconsistencies. I'm more interested in which findings are the most
 surprising and consequential."
 
@@ -44,25 +44,27 @@ hits = [r['fam'] for r in rows if " ".join(re.split(r'\s+', r['title'].lower())[
 
 Catalog result: **14 of 372.**
 
-That count reproduces, and its conclusion does not. Measured 2026-10-07 by
+That count reproduces, and its conclusion does not. Measured 2026-10-08 by
 `python3 notes/scripts/extract_links.py`, which prints this proxy as a report line:
 
-- The snippet scans `preprints/*/*.bib` + `preprints/*/*/*.bib` = **417 of the 501** `.bib` files; the
-  77 at depth 4 are outside it. Over all 501 the same title rule gives **18**.
+- The snippet's two globs now resolve to **435** files — every `.bib` in the release sits under a
+  subdirectory, so `preprints/*/*.bib` matches 0 — and the report's proxy at depth ≤3 counts **417 of
+  the 500** listed-scope `.bib` files; the 83 deeper ones are outside it. Over all 500 the same title
+  rule gives **17**.
 - It concatenates every bibliography, so a family matched in **its own** `.bib` counts. With an
-  ownership test: **10** cross-family over 417 files, **12** over 501.
+  ownership test: **10** cross-family over 417 files, **12** over 500.
 - The corpus is lowercased, not normalized. Normalizing it (punctuation stripped, every `the` dropped)
   and using the full title gives **23** any / **12** cross-family — the rule shipped in
   `notes/links.tsv`. Corpus normalization is the dominant knob: it moves 5 to 23.
 
-Meanwhile the release's own citation edges are in those same bibliographies as URLs: **397**
-release-labelled `.bib` entries resolve to **396** manuscript→manuscript edges over **158 of 372**
-families, **105** crossing a family boundary, plus **213** body hrefs (`notes/links.tsv`). The
+Meanwhile the release's own citation edges are in those same bibliographies as URLs: **393**
+release-labelled `.bib` entries resolve to **391** manuscript→manuscript edges over **156 of 372**
+families, **104** crossing a family boundary, plus **211** body hrefs (`notes/links.tsv`). The
 manuscripts *do* cite each other; a title phrase is simply not how the release writes a citation.
 
 So the course change is narrower than "consequence is unmeasurable". What is unmeasurable is the
 **type** of each edge — the release records no builds-on / contrasts-with / refutes relation — so a
-consequence ranking stays **prior-based and must be labelled as such**, and you may quote the 396
+consequence ranking stays **prior-based and must be labelled as such**, and you may quote the 391
 edges as evidence that a result was cited, never as evidence that it mattered. Do not build a
 consequence score on intra-corpus edges, and do not report the title-phrase count as a citation count.
 See `notes/links.md` for the full rule grid.
@@ -73,15 +75,15 @@ Named-conjecture resolution is the useful claim set: `resolves_named` set **and*
 shape → 139 of 372 families. Cross-tab it against the formalization tier before ranking:
 
 ```
-139-set:  T3 52   T2 36   T0 51     (tier totals: T3 127, T2 108, T1 0, T0 137)
-233-set:  T3 88   T2 57   T0 88     (resolves_named alone)
+139-set:  T3 55   T2 36   T0 48     (tier totals: T3 136, T2 106, T1 0, T0 130)
+248-set:  T3 101  T2 61   T0 86     (resolves_named alone)
 ```
 
-Quote the set with its rule: `T3 88 T2 57 T0 51` is not a row of either — it splices the 233-set's
-T3/T2 counts onto the 139-set's T0 count and sums to 196. Measured 2026-10-07 from
+Quote the set with its rule: `T3 101 T2 61 T0 48` is not a row of either — it splices the 248-set's
+T3/T2 counts onto the 139-set's T0 count and sums to 210. Measured 2026-10-08 from
 `notes/catalog.tsv`; the 139 rows in `notes/conjecture-standing.tsv` carry the 139-set split.
 
-**Tier and named-resolution are uncorrelated.** 51 families that resolve a named conjecture have zero
+**Tier and named-resolution are uncorrelated.** 48 families that resolve a named conjecture have zero
 formalization signal. Lead with that: the corpus's boldest claims are its least-certified ones. It is
 a structural fact, not a criticism, and it tells you the ranking has to read below the coverage layer.
 
@@ -140,14 +142,19 @@ mis-cited anchor (187).
 For "find all the Cauchy-related / manifold-related proofs", measure all three layers before
 promising an index:
 
-| term | in catalog titles | dirs whose `.bib` cites it | dirs whose `.tex` mentions it |
+| term | in catalog titles | dirs whose `.bib` mentions it | dirs whose `.tex` mentions it |
 |---|---|---|---|
-| Cauchy | **0** | 9 | **432** |
-| manifold | 32 | 127 | 199 |
-| ergodic | 6 | 41 | 55 |
-| Langlands | 2 | 15 | 20 |
+| Cauchy | **0** | 9 | **441** |
+| manifold | 4 | 133 | 205 |
+| ergodic | 1 | 41 | 56 |
+| Langlands | 2 | 18 | 25 |
 
-Full-text keyword search returns 60% of the corpus and answers nothing — Cauchy-Schwarz and Cauchy
+Re-measured 2026-10-08. The title column is a lowercased substring over the 372 catalog titles; the
+text columns count manuscript **directories** whose `.bib` / `.tex` text contains the term, over 521
+`.bib` and 8,007 `.tex` files. (The 2026-10-07 title column read 0 / 32 / 6 / 2; no title-substring
+rule reproduces 32 or 6, so the shipped column is the substring count, not that record.)
+
+Full-text keyword search returns 61% of the corpus and answers nothing — Cauchy-Schwarz and Cauchy
 sequences are tools, not subjects. Title search returns zero. The bibliography layer is the only one
 that means *this work engages Cauchy's*.
 
@@ -160,19 +167,19 @@ Check for a curated vocabulary before designing one, because it may not exist:
 ```sh
 grep -ril 'Mathematics Subject Classification\|\\msc\|MSC[0-9]' --include='*.tex' preprints | wc -l   # 0
 grep -rho '^\s*keywords\s*=' preprints --include='*.bib' | wc -l                                     # 0
-grep -rl '\\keywords\|\\subject' --include='*.tex' preprints | wc -l                                 # 12 of 722
+grep -rl '\\keywords\|\\subject' --include='*.tex' preprints | wc -l                                 # 12 of 719
 ```
 
 Catalog: **no MSC codes, no bib `keywords` fields, author keyword lists in 12 manuscripts.** A topic
 vocabulary is curated by you and validated by the generator; auto-derived terms reproduce the
-432-directory Cauchy noise.
+441-directory Cauchy noise.
 
 ## 6. The corpus as a dataset answers "what do we learn from this"
 
 Answer the meta-question from joint distributions, not from anecdotes:
 
-- **Certification lags production.** 162/722 manuscripts formalized, `automation.methods: [agent]`,
-  `review.status: unchecked`, zero `sorry` at source — and 51 of 139 named-conjecture resolutions at
+- **Certification lags production.** 172/719 manuscripts formalized, `automation.methods: [agent]`,
+  `review.status: unchecked`, zero `sorry` at source — and 48 of 139 named-conjecture resolutions at
   zero formalization signal.
 - **It almost never leans on unproven assumptions.** Genuine conditional families: **5 of 372** (014,
   125, 240, 244, 282) = 1%. The keyword regex flagged 9 and 5 were false.
@@ -180,14 +187,16 @@ Answer the meta-question from joint distributions, not from anecdotes:
   about a fifth of the corpus. Counterexample-hunting is a search problem, and search is what sampling
   is good at. Concentrated in Combinatorics 9, Differential geometry 6, Algebraic/complex geometry 5,
   Topology 5, Algebra 4, Operator algebras 4.
-- **Where it works tracks self-containedness, not importance.** Dense: combinatorics 37/33/50/19,
-  theoretical CS 40/32/73/29, functional analysis 11/10/19/16. Thin: topology 18/3/26/1,
-  algebraic+complex geometry 36/7/89/7, dynamics 12/9/19/2. Automated proving succeeds where arguments
-  are finitary and self-contained; it stalls where a proof needs a large pre-built dependency mass.
-- **The limits are catalogued, not hidden.** 227 of 405 challenge configs are not in `main_results`;
-  154 of them in 108 families with zero main results. That is a release-authored list of what it posed
+- **Where it works tracks self-containedness, not importance.** Dense: combinatorics 37/33/50/20,
+  theoretical CS 40/34/73/32, functional analysis 11/10/19/16. Thin: topology 18/3/26/1,
+  algebraic+complex geometry 36/8/86/9, dynamics 12/9/19/2. Each quadruple is
+  **families / scope notes / manuscripts / formalized manuscripts**, read off the ledger's discipline
+  table. Automated proving succeeds where arguments are finitary and self-contained; it stalls where a
+  proof needs a large pre-built dependency mass.
+- **The limits are catalogued, not hidden.** 227 of 416 challenge configs are not in `main_results`;
+  150 of them in 106 families with zero main results. That is a release-authored list of what it posed
   and did not finish — the most informative dataset about failure modes, and it is dense JSON.
-- **Results ship as clusters.** 722/372 = 1.94 manuscripts per family. Reasoning traces exist for 10 of
+- **Results ship as clusters.** 719/372 = 1.93 manuscripts per family. Reasoning traces exist for 10 of
   372 (2.7%) — the method is almost entirely opaque.
 
 ## 7. Rules

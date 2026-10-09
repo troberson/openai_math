@@ -30,15 +30,15 @@ behaviour and rules only.
 
 ## Standing rules (enforce these in every answer)
 
-1. **Never run Lean.** No `lake`, `lean`, `comparator`, `cache get`. The library is 25.9M lines;
+1. **Never run Lean.** No `lake`, `lean`, `comparator`, `cache get`. The library is 26,060,031 lines;
    a build is hours on a desktop and buys nothing for categorization. Regenerate the ledger with
    `python3 notes/scripts/build_catalog.py` (seconds).
 2. **Source-level ≠ verified.** Quote `formalization.yaml` verbatim when making a verification
    claim: `scope: "Partial progress."`, `automation.methods: [agent]`, `review.status: unchecked`.
    Zero `sorry` in source is a source-level fact, not a comparator pass. Say which one you have.
-3. **Four layers, never one percentage.** Manuscripts 162/722 · families with scope notes 235/372
-   · challenges 405 · main_results 185 entries / 178 unique configs. Do not average them.
-4. **Absence of formalization is not a red flag.** 560 of 722 manuscripts are unformalized.
+3. **Four layers, never one percentage.** Manuscripts 172/719 · families with scope notes 242/372
+   · challenges 416 · main_results 200 entries / 189 unique configs. Do not average them.
+4. **Absence of formalization is not a red flag.** 547 of 719 manuscripts are unformalized.
 5. **Claim shape is multi-label.** 66 families match ≥3 shapes, 57 match none. Never present the
    taxonomy as a partition; report the tag set.
 6. **A tag is not a claim, and tags omit as well as mislabel.** Keyword tags need a reading pass
@@ -49,9 +49,9 @@ behaviour and rules only.
    flags you dropped.
 7. **A broad rule goes in a column, not a shape.** `triage_t0.py` assigns T0 buckets by **first
    match**, so widening a shape moves families between buckets and re-cuts the reading order. Both
-   broad rules therefore ship as columns: named-target resolution as `resolves_named` (233 families
-   against the `resolution` shape's 144 — complementary, not nested: 139 in both, 94 column-only, 5
-   tag-only 003, 010, 082, 103, 261, union 238), and the counterexample phrase rule as
+   broad rules therefore ship as columns: named-target resolution as `resolves_named` (248 families
+   against the `resolution` shape's 144 — complementary, not nested: 139 in both, 109 column-only, 5
+   tag-only 003, 010, 082, 103, 261, union 253), and the counterexample phrase rule as
    `counterex_broad` (74 against the `counterexample` shape's 44 — a **strict superset**, tag-only 0).
    Widening `counterexample` would move 6 T0 families into bucket C, where first match currently
    leaves them. Quote both counts as floors; see `notes/resolution-tag.md` and
@@ -60,7 +60,7 @@ behaviour and rules only.
    training data says about a conjecture's standing at an early-2025 cutoff, self-rated by
    `prior_confidence`. Quote it as the prior it is, pair every row with its confidence, and never
    present a surprise tier as a property of the result. No row may assert consequence. The reason is
-   not that the corpus lacks citation structure — it has 396 measured manuscript→manuscript edges
+   not that the corpus lacks citation structure — it has 391 measured manuscript→manuscript edges
    (`notes/links.tsv`) — it is that the edges are **untyped**, so they record a citation choice, not
    a dependence. Run `notes/scripts/verify_conjecture_standing.py` before quoting rows.
 9. **A declared pin is not a build.** `notes/formalization-deps.tsv` records what the declaration
@@ -70,11 +70,11 @@ behaviour and rules only.
    so it is evidence of a resolution event, not of a build in this repo.
 10. **Quote an edge with the rule that yields its count.** `notes/links.tsv` is the typed-edge
     inventory: 22 rows, 7 fields, every count from `python3 notes/scripts/extract_links.py`.
-    415 is scope-note link **occurrences** and 405 is **distinct configs** (the ledger's `chal`
-    column is the deduped 405); `mainres` sums to 178 unique configs while the yaml carries 185
+    426 is scope-note link **occurrences** and 416 is **distinct configs** (the ledger's `chal`
+    column is the deduped 416); `mainres` sums to 189 unique configs while the yaml carries 200
     entries. Manuscript ownership is the path component after `preprints`, never `parts[-2]`. The
     title-phrase rule is **not** the citation layer — the release cites by URL, so a title-phrase
-    count (12 cross-family) systematically under-counts the href layer (105). Report a negative as a
+    count (12 cross-family) systematically under-counts the href layer (104). Report a negative as a
     measurement: 0 MSC codes and 0 bib `keywords` fields mean no topic vocabulary exists to read,
     not that topics are absent.
 
@@ -88,12 +88,12 @@ behaviour and rules only.
 3. **Read the primary text** — the ledger is an index, not the evidence. For any claim about what
    a result *says*, open `lean/docs/<NNN>.md` (its `## Scope` section states exclusions) and the
    manuscript abstract in `CONTENTS.md`. Quote exclusions; they are the load-bearing part.
-4. **Triage the silent families** — T0 (137 families, 255 manuscripts, 0 formalized) has no
+4. **Triage the silent families** — T0 (130 families, 244 manuscripts, 0 formalized) has no
    coverage signal at all. Run `notes/scripts/triage_t0.py` for the buckets and read
    `notes/t0-triage.md` before adding to the pass; `shapes` drives the buckets,
-   `resolves_named` (88 of 137) is the second discriminator and `counterex_broad` (22 of 137) the
-   third — 6 of those 22 sit outside bucket C, which is why the column exists. Two
-   reading passes cover all 137 families at abstract level, and the 21 counterexample-shaped ones are
+   `resolves_named` (86 of 130) is the second discriminator and `counterex_broad` (21 of 130) the
+   third — 5 of those 21 sit outside bucket C, which is why the column exists. Two
+   reading passes cover all 130 families at abstract level, and the 21 counterexample-shaped ones are
    recorded there with object, broken conjecture, and construction mode — new T0 work is checking
    those claims against manuscript source, not reading titles.
 5. **Record manual findings in the repo**, not in chat: append to `notes/` as a tracked file
@@ -107,8 +107,8 @@ behaviour and rules only.
 | `notes/catalog.tsv` | 372-row ledger, 22 columns, one row per family | Any lookup, filter, or count |
 | `notes/README.md` | Column definitions, tier defs, shape yields, discipline table, traps | Before quoting any number |
 | `notes/scripts/build_catalog.py` | Generator (stdlib only, ~300 lines) | Regenerating, or adding a column |
-| `notes/scripts/triage_t0.py` | Buckets the 137 T0 families by claim shape (reads the ledger, writes nothing) | Any T0 count, bucket, or priority question |
-| `notes/t0-triage.md` | T0 buckets, two reading passes covering all 137 families, the 21-family counterexample record, scope qualifiers found in abstracts | Before triaging or discussing T0 families |
+| `notes/scripts/triage_t0.py` | Buckets the 130 T0 families by claim shape (reads the ledger, writes nothing) | Any T0 count, bucket, or priority question |
+| `notes/t0-triage.md` | T0 buckets, two reading passes covering all 130 families, the 21-family counterexample record, scope qualifiers found in abstracts | Before triaging or discussing T0 families |
 | `notes/conditional.md` | Manual pass: what each conditional family assumes, and dropped flags | Before calling any family conditional |
 | `notes/resolution-tag.md` | Named-target rule: yield, the 94-family reading verdict, the `resolves_named` decision | Before quoting a resolution count or changing a tag |
 | `notes/counterexample-tag.md` | Counterexample phrase rule: yield, the 30-family reading verdict, the `counterex_broad` decision | Before quoting a counterexample count, or checking a family the tag misses |
@@ -117,9 +117,9 @@ behaviour and rules only.
 | `notes/scripts/verify_conjecture_standing.py` | Proves the standing table: fam set, ledger discipline/tier, anchors against `\resultentry`, confidence vocabulary, abstract-name fidelity, no consequence language | Before quoting any standing row |
 | `notes/formalization-deps.tsv` | 31 rows: 30 declared upstream libraries with pinned commits, yaml relationship, direct import counts, patch file and line count, plus BernoulliRegular as `lakefile_declared=n` | Any dependency, pin, or upstream-library question |
 | `notes/formalization-deps.md` | The import rule and its scope, the `.git` join trap, the yaml ordering claim with its 5 violations, the 19 zero-import rows, the manifest reconciliation, the BernoulliRegular finding, what was not checked | Before quoting a dependency count, or claiming a pin is buildable |
-| `notes/scripts/extract_formalization_deps.py` | Writes the deps table and prints its reconciliation; reads 121,734 files, refuses to write when a join breaks | Regenerating, or extending the deps table |
+| `notes/scripts/extract_formalization_deps.py` | Writes the deps table and prints its reconciliation; reads 122,458 files, refuses to write when a join breaks | Regenerating, or extending the deps table |
 | `notes/links.tsv` | 22-row typed-edge inventory: every relation type in the release with source, pattern, count, detail, the command that computes it, and what the edge does **not** mean | Any "what connects X to Y" question, and the index-schema decision |
-| `notes/links.md` | The 415-vs-405 and 185/178/127 reconciliations, the href citation layer, the three name relations as three rows, the unreproduced "14", the negatives, what was not checked | Before quoting any edge count |
+| `notes/links.md` | The 426-vs-416 and 200/189/136 reconciliations, the href citation layer, the three name relations as three rows, the unreproduced "14", the negatives, what was not checked | Before quoting any edge count |
 | `notes/scripts/extract_links.py` | Writes `notes/links.tsv` and prints the per-edge report; 20 seconds, deterministic | Regenerating, or adding an edge type |
 | `lean/docs/<NNN>.md` | Family scope note: what the formalization covers and excludes | Any claim about a formalized result |
 | `lean/ComparatorChallenges/*.json` | Statement/solution pairs, `permitted_axioms` | Checking what a challenge permits |

@@ -132,12 +132,14 @@ Expected: added `['resolves_named']`, removed `[]`, **0 differences in pre-exist
 all 372 rows. Also:
 
 - Regenerate twice and diff — the artifact must be byte-identical, and the report identical.
-- Re-run every downstream consumer and compare to its *recorded* numbers (buckets C 16, R 50, B 29,
-  K 8, U 12, O 2, N 20 over 137 families / 255 manuscripts — unchanged).
-- Confirm the generator's reconciliation lines and cross-checks are unchanged (372 / 722 / 162 / 235,
+- Re-run every downstream consumer and compare to its *recorded* numbers (buckets C 16, R 46, B 27,
+  K 8, U 12, O 2, N 19 over 130 families / 244 manuscripts; the values recorded when this method was
+  written were C 16, R 50, B 29, K 8, U 12, O 2, N 20 over 137 families / 255 manuscripts, and an
+  upstream merge moved them — a moved baseline is exactly what this comparison is for).
+- Confirm the generator's reconciliation lines and cross-checks are unchanged (372 / 719 / 172 / 242,
   both `overview.tex` ↔ `CONTENTS.md` cross-checks 0).
 - Confirm the new column **discriminates** before quoting it: not all-1, not all-0, no blanks, and
-  not a copy of the existing signal (99 families differ from the tag).
+  not a copy of the existing signal (114 families differ from the tag).
 
 ## 5. Find where the column actually pays off
 

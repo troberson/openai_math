@@ -110,7 +110,7 @@ def import_closure(rel, cap=400):
     A carrier named in a statement resolves through imports, not through the directory layout:
     OAI/Analysis/Kaplansky/Main.lean names MainTarget, which is defined in the imported
     OAI/Analysis/Cuntz/Quasitrace.lean, outside Kaplansky/'s own tree. Bounded so a walk over the
-    121,734-file tree cannot run away.
+    122,458-file tree cannot run away.
     """
     seen, order, queue = set(), [], [rel]
     while queue and len(order) < cap:

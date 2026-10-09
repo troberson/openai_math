@@ -11,12 +11,14 @@ extracted_at: '2026-10-08T06:47:59.202Z'
 
 Use when someone asks "can we get one of the proofs to run?", "does this Lean build?", or "is this
 proof checked?" in a repo whose Lean library depends on Mathlib that is **not installed**. Worked out
-on `/home/tamara/Downloads/_Git/math` (`lean/OAI/`: 121,734 modules, 25.9M lines, 30 `require … from
+on `/home/tamara/Downloads/_Git/math` (`lean/OAI/`: 122,458 modules, 26,060,031 lines, 30 `require … from
 git` in `lakefile.lean`, no `.lake`, Mathlib absent, 600 GB free).
 
 The headline result: **you do not need lake, a cache, or Mathlib to elaborate a real subset.** On this
-repo 19 of 121,734 modules elaborate with the toolchain core alone in 15.8 s, and 390 theorems come
-out with zero `sorryAx`. The matching limit is equally worth knowing: **0 of the 180 unique
+repo 19 of 122,458 modules elaborate with the toolchain core alone in 15.8 s, and 390 theorems come
+out with zero `sorryAx` — measured on the pre-merge tree (121,734 modules) and **not re-measured
+since**, because running `lean` is forbidden in this repo; the closure rule below is what to re-run,
+not the timing. The matching limit is equally worth knowing: **0 of the 192 unique
 `main_results` files have a Mathlib-free closure**, so no headline theorem is reachable without
 Mathlib. Measure both numbers; the second is what stops an overclaim.
 
@@ -144,7 +146,7 @@ The interesting question is not "how many files compile" but "does any *named* r
   A regex for `\.json` in `lean/docs/*.md` finds nothing and the whole join silently reads empty.
 - Config names contain dashes and dots: use `[A-Za-z0-9_.\-]+`. `[A-Za-z0-9_]+` lost 4 of 185 entries
   (181 reported) while declarations parsed 185 — reconcile the two counts and the gap is visible.
-- Then intersect: headline files ∩ core-only = **0 of 180**. Report that, plus the reason for the
+- Then intersect: headline files ∩ core-only = **0 of 192**. Report that, plus the reason for the
   specific family the user asked about (family 244's headline
   `OAI.PartitionPilot.Forcing.TransitiveGround.exists_model_partitionPrinciple_without_choice` in
   `Models/Separation.lean` sits behind `Mathlib.SetTheory.ZFC.Rank` ×2 and
@@ -155,5 +157,5 @@ The interesting question is not "how many files compile" but "does any *named* r
 Say: *these 19 modules elaborate on toolchain X; the library does not build; no comparator ran; the
 axiom reports are the kernel's statement about proof terms, not a review of the mathematics.* Name the
 toolchain and the pin. Name the time (15.83 s) and the olean size (11 MB). Close with what was not
-checked — the headline declarations, the 405 challenge stubs, the pinned toolchain, and whether any
+checked — the headline declarations, the 416 challenge stubs, the pinned toolchain, and whether any
 elaborated theorem matches the manuscript's statement.

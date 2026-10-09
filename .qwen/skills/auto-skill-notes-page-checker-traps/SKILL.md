@@ -20,7 +20,7 @@ checker defect, not a page defect.
   `notes/catalog.tsv`), a checker that imports and calls it mutates the repo. **Copy the row builder**
   into the checker and rebuild rows from the shipped files.
 - **The report line is the test.** Print the same figure the page quotes, with the rule attached
-  (`main_results 185 entries over 178 configs`, not `178 over 178`). A report line that prints a
+  (`main_results 200 entries over 189 configs`, not `189 over 189`). A report line that prints a
   different number from the page it is checking hides the disagreement.
 - **Measure a figure the page takes from a report; do not write it into the checker.** A literal in a
   checker is a second copy of the number, and a corpus change makes it a third place the value has to
@@ -132,11 +132,11 @@ Never "fix" both sides. Worked cases, each resolved against a fresh `build_catal
 
 | Disagreement | Resolution |
 |---|---|
-| checker 178 `main_results`, page 185 | both are right and they are different quantities: `sum(main_results.values())` = 185 entries, `len(main_results)` = 178 configs. Print both. |
-| checker 36 T0 families with two manuscripts, page 28 | page imprecise: 36 = T0 ∩ `paps == 2`; 28 = a named reading population carrying 56 manuscripts. Page rewritten to say both. |
+| checker 189 `main_results`, page 200 | both are right and they are different quantities: `sum(main_results.values())` = 200 entries, `len(main_results)` = 189 configs. Print both. |
+| checker 35 T0 families with two manuscripts, page 28 | page imprecise: 35 = T0 ∩ `paps == 2`; 28 = a named reading population carrying 56 manuscripts. Page rewritten to say both. |
 | checker 0 `INPUTS.md`, page 4 | use the generator's glob (`preprints/*/INPUTS.md`), not a narrower one. |
 | checker "30 bundles over 0 families" | map bundle dirs → families **through the ledger rows**; a manuscript dir is not a family dir. |
-| checker 12 summary manuscripts, report 31 | `sum(paps for families with a summary)`, not a count of families. |
+| checker 21 summary families, report 57 | `sum(paps for families with a summary)`, not a count of families. |
 
 ## 5. Renumbering markers by script
 
