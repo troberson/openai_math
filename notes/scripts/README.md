@@ -36,8 +36,9 @@ Six writers emit one TSV each. `build_index.py` is the one-to-many case: it rend
 default run writes nothing and only `--tsv` touches `notes/abstracts.tsv`.
 
 Writers import each other, so a generated file's bytes are not a function of one script.
-`build_index.py` imports `build_catalog`, `measure_topics`, `measure_names` and
-`check_index_links`; `extract_links.py`, `extract_subfindings.py`, `compare_abstracts.py`,
+`build_index.py` imports `build_catalog`, `measure_topics`, `measure_names`,
+`check_index_links` and `jinja2` (the page text lives in `notes/templates/*.j2`);
+`extract_links.py`, `extract_subfindings.py`, `compare_abstracts.py`,
 `check_index_links.py`, `measure_names.py` and `measure_topics.py` all import `build_catalog`;
 `measure_index_sizes.py` imports `check_index_links` inside its link-check function
 (`measure_index_sizes.py:118`), not at module scope. Counted over `notes/scripts/*.py` as a script
@@ -163,9 +164,10 @@ The package is not in the census below: the script population is `notes/scripts/
 |---|---|---|
 | `notes/index/` | **1,049** | generated — `build_index.py` |
 | `notes/summaries/` | **21** | hand-written — the reading record |
+| `notes/templates/` | **1** | hand-written — the page skeletons `build_index.py` renders |
 | `notes/*.tsv` | **8** | **6** generated, **2** hand-authored |
 | `notes/*.md` | **27** | hand-written — **15** with a checker, **12** without |
-| `notes/` total, scripts excluded | **1,105** | — |
+| `notes/` total, scripts excluded | **1,106** | — |
 
 The generated TSVs are the six writer targets. The two hand-authored tables are:
 

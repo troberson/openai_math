@@ -11,7 +11,7 @@ Passes:
   E. Recompute the shared-basename sets and match the page.
   F. Layout: no preamble, a "## Not checked" section, and no self-reference in the checker table.
 
---mutant injects ten faults, one per check form the page uses, and asserts each is caught.
+--mutant injects eleven faults, one per check form the page uses, and asserts each is caught.
 Report-only: writes nothing.
 """
 from __future__ import annotations
@@ -180,9 +180,10 @@ def check(text):
     files = population()
     index = [f for f in files if "index" in f.parts]
     summaries = [f for f in files if "summaries" in f.parts]
+    templates = [f for f in files if "templates" in f.parts]
     top = [f for f in files if f.parent == NOTES]
     for f in files:
-        if f not in index and f not in summaries and f not in top:
+        if f not in index and f not in summaries and f not in templates and f not in top:
             p.append(f"file under notes/ owned by no rule: {f.relative_to(ROOT)}")
     top_tsv = sorted(f.name for f in top if f.suffix == ".tsv")
     gen_tsv = sorted(n for n in top_tsv if f"notes/{n}" in set(derived.values()))
@@ -207,6 +208,7 @@ def check(text):
     expect = {
         "notes/index/": len(index),
         "notes/summaries/": len(summaries),
+        "notes/templates/": len(templates),
         "notes/*.tsv": len(top_tsv),
         "notes/*.md": len(top_md),
         "notes/": len(files),
@@ -312,6 +314,7 @@ def mutants():
         ("unchecked page claimed as checked", original.replace("| `verify_abstracts.py` | `notes/abstracts.md` |", "| `verify_abstracts.py` | `notes/abstracts.md`, `notes/links.md` |"), "md census cell"),
         ("Not checked section deleted", original.replace("## Not checked", "## Checked"), "no '## Not checked' section"),
         ("summaries count altered", original.replace("| `notes/summaries/` | **21** |", "| `notes/summaries/` | **22** |"), "census row notes/summaries/"),
+        ("templates count altered", original.replace("| `notes/templates/` | **1** |", "| `notes/templates/` | **2** |"), "census row notes/templates/"),
     ]
     fails = []
     for label, mutated, needle in cases:
@@ -327,17 +330,17 @@ def mutants():
             fails.append(f"{label}: NOT caught by {needle!r} (problems: {found[:2]})")
         else:
             print(f"  caught {label}: {next(x for x in found if needle in x)[:110]}")
-    return fails
+    return fails, len(cases)
 
 
 def main():
     text = read_text(PAGE)
     if "--mutant" in sys.argv:
         print("=== notes/scripts/README.md mutant self-test ===")
-        fails = mutants()
+        fails, total = mutants()
         for f in fails:
             print(f"MUTANT NOT CAUGHT: {f}")
-        print(f"mutants flagged: {10 - len(fails)} of 10")
+        print(f"mutants flagged: {total - len(fails)} of {total}")
         sys.exit(1 if fails else 0)
 
     print("=== notes/scripts/README.md ownership check ===")
@@ -357,6 +360,7 @@ def main():
         f"{sum(1 for f in index if f.suffix == '.tsv')} tsv)"
     )
     print(f"summaries: {len(summaries)}")
+    print(f"templates: {len([f for f in files if 'templates' in f.parts])}")
     print(f"top-level: {sum(1 for f in top if f.suffix == '.tsv')} tsv + {sum(1 for f in top if f.suffix == '.md')} md")
     print(f"notes/ total (scripts excluded): {len(files)}")
     shared = sorted({f.name for f in top} & {f.name for f in index})
