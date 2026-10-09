@@ -539,9 +539,11 @@ lives in this file and nowhere else.
   `path:line` and `path:a-b` anchors resolve, `…suffix` and bare `:N` anchors resolve against the
   nearest preceding explicit path, every `*"…"*` matches the anchored lines verbatim modulo
   whitespace with the anchor in the same paragraph, every fenced block is matched against its
-  nearest preceding anchor (a block with no preceding anchor is skipped), and the links, both
-  tables, and every count phrase are re-measured. Flags twelve injected mutants. Run it twice and
-  diff — the report must be identical. It writes nothing.
+  nearest preceding anchor (a block with no preceding anchor is skipped), the **14** backticked
+  `preprints/` slugs on `2026-10-07_3014888.md` each exist as a directory, and the links, both
+  tables, and every count phrase are re-measured; the report prints the slug count and a run that
+  matches **0** is reported as a vacuous needle, not as green. Flags thirteen injected mutants.
+  Run it twice and diff — the report must be identical. It writes nothing.
 - The summaries pages carry three tools beyond `verify_summaries.py`: `check_summary_manuscripts.py`
   (which manuscripts each page reads, and whether the release still names them),
   `locate_summary_quotes.py <page.md>` (where a quotation's text actually sits, when

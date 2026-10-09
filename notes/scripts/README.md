@@ -292,10 +292,15 @@ tracked files under `notes/` before the bead that produced them closes.
 - The report-only table records which page a report feeds as stated in that page and in `AGENTS.md`.
   It is not derived from the report text, so a page that stops quoting a report keeps its row here.
 - **A needle can match nothing and the run stays green.** `verify_upstream_history.py`'s `SLUG`
-  pattern requires a trailing `/` inside the backticks; measured 2026-10-09 over the three pages it
-  checks it matches **0** tokens, while `upstream_history/2026-10-07_3014888.md` carries **14**
-  backticked manuscript-slug tokens of that shape written without the slash. The check is vacuous, not
-  failing — the run exits 0 because nothing is asserted, and a slug renamed to one the release does not
-  name is not caught by this needle. `math-lon.2.5` ported the file and left the pattern as it is,
-  because its acceptance is byte-identical gate reports; widening the needle is tracked as `math-cg1`.
+  pattern required a trailing `/` inside the backticks **and** a 3-letter month, while the corpus
+  writes full month names only (`September` 576, `October` 172 over the **749** `preprints/` dirs), so
+  it matched **0** tokens on the three pages it checks — `upstream_history/2026-10-07_3014888.md`
+  carries **14** backticked manuscript-slug tokens of that shape, written without the slash. The run
+  exited 0 because nothing was asserted, and a slug renamed to one the release does not name was not
+  caught. `math-lon.2.5` ported the file and left the pattern as it is, because its acceptance is
+  byte-identical gate reports. `math-cg1` fixed both halves (slash optional, full month names: the
+  needle now matches the **14** tokens and **0** on the other two pages), added the `slug rename`
+  mutant (**12** → **13**, needle `": slug '"` — the table pass reports the same fact as
+  `table: '…' is not a preprints/ directory`, so a shared needle cannot tell the two passes apart),
+  and made the report print the slug count: a run that matches **0** is a problem, not a green result.
 - Nothing in `lean/` is built, so no generated artifact here is a verification of a formalization.

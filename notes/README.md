@@ -55,8 +55,8 @@ python3 notes/scripts/extract_citations.py  # the shared-bibliography graph over
 python3 notes/scripts/verify_citations.py --mutant  # checks notes/citations.md: work-table rows, anchors, fenced blocks, quotations, every count, against the .bib entries it names
 python3 notes/scripts/verify_findings.py --mutant  # checks notes/findings.md: every [Sn:line] marker, every quotation, every quoted count, against the reports it cites
 python3 notes/scripts/verify_named_conjectures.py --mutant  # checks notes/named-conjectures.md: statement anchors, quotations, prose citations, the entry set, every Measurements number
-python3 notes/scripts/verify_upstream_history.py  # re-derives the 3014888 merge census from git and the ledger, then checks the three upstream_history/ pages: anchors, quotations, links, fenced blocks, two tables, every count phrase; report-only, writes nothing
-python3 notes/scripts/verify_upstream_history.py --mutant  # self-test: 12 injected faults (dead anchor, paraphrase, shifted anchor, dead path/link, altered counts) must all be caught
+python3 notes/scripts/verify_upstream_history.py  # re-derives the 3014888 merge census from git and the ledger, then checks the three upstream_history/ pages: anchors, quotations, links, fenced blocks, the 14 backticked preprints/ slugs, two tables, every count phrase; report-only, writes nothing
+python3 notes/scripts/verify_upstream_history.py --mutant  # self-test: 13 injected faults (dead anchor, paraphrase, shifted anchor, dead path/link, renamed slug, altered counts) must all be caught
 python3 notes/scripts/verify_script_ownership.py  # checks notes/scripts/README.md: the derived writer set, the file census, naming coverage, shared basenames; report-only, writes nothing
 python3 notes/scripts/verify_script_ownership.py --mutant  # self-test: 10 injected faults (one per check form) must each be caught by the check it targets
 ```
