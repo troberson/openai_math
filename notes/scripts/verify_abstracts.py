@@ -34,16 +34,16 @@ Usage: python3 notes/scripts/verify_abstracts.py            # check the page
 Writes nothing. Exit 1 when any check fails.
 """
 import argparse
-import csv
 import re
 import sys
-from pathlib import Path
 
 import build_catalog as B
 import compare_abstracts as CA
+from catlib.paths import LEDGER_TSV, NOTES, ROOT
+from catlib.text import collapse_ws
+from catlib.tsv import read_rows
 
-ROOT = Path(__file__).resolve().parents[2]
-PAGE = ROOT / "notes" / "abstracts.md"
+PAGE = NOTES / "abstracts.md"
 
 ROW = re.compile(r"^\|\s*(S\d+)\s*\|\s*`([^`]+)`\s*\|\s*(.*?)\s*\|\s*$")
 MARKER = re.compile(r"\[(S\d+)\]")
@@ -54,9 +54,7 @@ ELLIPSIS = "…"
 _OVERVIEW = None
 _MEASURED = None
 
-
-def flat(text):
-    return re.sub(r"\s+", " ", text).strip()
+flat = collapse_ws
 
 
 def overview_text():
@@ -136,8 +134,7 @@ def count_phrases(m):
     bkey = ("<0.30", "0.30-0.50", "0.50-0.70", "0.70-0.90", ">=0.90")
     low = [x for x in m["man"] if x["ratio"] < 0.05]
     dis = sorted(f for f, sh in m["fam_shapes"].items() if sh["ov"] != sh["ms"])
-    paps = {r["fam"]: int(r["paps"]) for r in csv.DictReader(
-        (ROOT / "notes" / "catalog.tsv").open(encoding="utf-8"), delimiter="\t")}
+    paps = {r["fam"]: int(r["paps"]) for r in read_rows(LEDGER_TSV)}
     single = sum(1 for f in dis if paps[f] == 1)
     res, und = m["tag_tot"]["resolution"], m["tag_tot"]["undecidability"]
     cond = m["tag_dis"].get("conditional", {"ov-only": [], "ms-only": []})

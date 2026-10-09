@@ -19,11 +19,9 @@ from __future__ import annotations
 import re
 import subprocess
 import sys
-from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
-NOTES = ROOT / "notes"
-SCRIPTS = NOTES / "scripts"
+from catlib.paths import NOTES, ROOT, SCRIPTS, read_text
+
 PAGE = SCRIPTS / "README.md"
 SELF = "verify_script_ownership.py"
 README = NOTES / "README.md"
@@ -38,7 +36,7 @@ def script_names():
 
 def path_constants():
     """The notes/-rooted path constants the shared package defines: name -> repo-relative path."""
-    src = (SCRIPTS / "catlib" / "paths.py").read_text(encoding="utf-8")
+    src = read_text(SCRIPTS / "catlib" / "paths.py")
     return {n: f"notes/{f}"
             for n, f in re.findall(r'^(\w+)\s*=\s*NOTES\s*/\s*"([^"]+)"', src, re.M)}
 
@@ -54,7 +52,7 @@ def writers():
     consts = path_constants()
     out = {}
     for name in script_names():
-        src = (SCRIPTS / name).read_text(encoding="utf-8")
+        src = read_text(SCRIPTS / name)
         targets = set()
         for var in re.findall(r'([A-Za-z_]\w*)\.(?:open\([^)]*"w"[^)]*\)|write_text\()', src):
             m = re.search(rf'^{var}\s*=\s*\w+\s*/\s*"notes"\s*/\s*"([^"]+)"', src, re.M)
@@ -246,7 +244,7 @@ def check(text):
     for n in names:
         if n not in text:
             p.append(f"script not named in the page: {n}")
-    readme = README.read_text(encoding="utf-8")
+    readme = read_text(README)
     for n in names:
         if n not in readme:
             p.append(f"script not named in notes/README.md: {n}")
@@ -302,7 +300,7 @@ def check(text):
 
 def mutants():
     """Ten faults, one per check form. Each must be caught by the check it targets."""
-    original = PAGE.read_text(encoding="utf-8")
+    original = read_text(PAGE)
     cases = [
         ("writer target altered", original.replace("| `build_catalog.py` | `notes/catalog.tsv` |", "| `build_catalog.py` | `notes/catalog-x.tsv` |"), "page says 'notes/catalog-x.tsv'"),
         ("writer row deleted", original.replace("| `extract_links.py` | `notes/links.tsv` | run twice, byte-identical | `notes/links.md` |\n", ""), "writer extract_links.py: page says None"),
@@ -333,7 +331,7 @@ def mutants():
 
 
 def main():
-    text = PAGE.read_text(encoding="utf-8")
+    text = read_text(PAGE)
     if "--mutant" in sys.argv:
         print("=== notes/scripts/README.md mutant self-test ===")
         fails = mutants()

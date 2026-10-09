@@ -26,17 +26,16 @@ Checks, in order:
 """
 from __future__ import annotations
 
-import pathlib
 import re
 import sys
 
-import extract_links
-import extract_subfinding_pairs as ep
 import extract_t0_chains as tc
+from catlib import anchors, overview
+from catlib.paths import NOTES, ROOT, owner
+from catlib.text import collapse_ws
 
-ROOT = tc.ROOT
-PAGE = ROOT / "notes" / "t0-chains.md"
-ANCHOR = re.compile(r"`([\w./+-]+?\.(?:py|md|tex|json|txt|lean|yaml|bib)):(\d+)`")
+PAGE = NOTES / "t0-chains.md"
+ANCHOR = anchors.anchor_pattern(anchors.EXT_MAN)
 QUOTE = re.compile(r'\*"([^"]{12,})"\*')
 HEAD = re.compile(r"^### (\d{3}) — ")
 BULLET = re.compile(r'^- \*\*(\d)\*\* \(`overview\.tex:(\d+)`\) — \*"(.+)"\*$')
@@ -69,8 +68,7 @@ VER268 = (
 )
 
 
-def norm(s: str) -> str:
-    return re.sub(r"\s+", " ", s).strip()
+norm = collapse_ws
 
 
 def measured():
@@ -79,8 +77,8 @@ def measured():
     rows, pop = v["rows"], v["pop"]
     mss = tc.manuscripts()
     edges = tc.release_bib_edges()
-    lines = ep.resultentry_lines()
-    dirs = {f: sorted({extract_links.owner(pathlib.Path(m["path"])) for m in mss[f]}) for f in pop}
+    lines = overview.overview_lines()
+    dirs = {f: sorted({owner(m["path"]) for m in mss[f]}) for f in pop}
     fam_edges = {f: tc.intra_edges(dirs[f], edges) for f in pop}
     mutual = {f: sum(1 for a, b in fam_edges[f] if (b, a) in fam_edges[f]) // 2 for f in pop}
     bibs = {f: tc.bib_files(dirs[f]) for f in pop}
@@ -163,40 +161,27 @@ def check_anchors(lines, cache, problems):
 
 def check_blocks(lines, cache, problems):
     """Each fenced block is attributed to the nearest preceding anchor."""
-    n, i = 0, 0
-    while i < len(lines):
-        if not lines[i].startswith("```"):
-            i += 1
-            continue
-        end = next((j for j in range(i + 1, len(lines)) if lines[j].startswith("```")), None)
-        if end is None:
+    n = 0
+    for i, block in anchors.fenced_blocks(lines):
+        if i + 1 + len(block) >= len(lines):
             problems.append(f"unterminated fenced block at page line {i + 1}")
             return n
         n += 1
-        anchor = None
-        for back in range(i - 1, max(i - 10, -1), -1):
-            found = list(ANCHOR.finditer(lines[back]))
-            if found:
-                anchor = found[-1]
-                break
-        if anchor is None:
+        found = anchors.nearest_anchor(lines, i, ANCHOR, window=9)
+        if found is None:
             problems.append(f"fenced block at page line {i + 1} has no preceding anchor")
-            i = end + 1
             continue
-        path, num = anchor.group(1), int(anchor.group(2))
+        path, num = found[0], int(found[1])
         if not (ROOT / path).exists():
-            i = end + 1
             continue
-        body = [l for l in lines[i + 1:end] if l.strip()]
+        body = [l for l in block if l.strip()]
         if not body:
             problems.append(f"empty fenced block at page line {i + 1}")
-            i = end + 1
             continue
         window = " ".join(file_lines(cache, path)[num - 1:num - 1 + len(body)])
         if norm(" ".join(body)) not in norm(window):
             problems.append(f"block at page line {i + 1} does not match {path}:{num} "
                             f"over {len(body)} lines: {body[0][:60]!r}")
-        i = end + 1
     return n
 
 
