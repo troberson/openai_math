@@ -16,11 +16,8 @@ automation methods [agent], review status unchecked. Nothing here says a compara
 """
 import collections
 import csv
-import pathlib
 import re
-import sys
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import build_catalog
 import extract_subfinding_pairs as ep
 

@@ -33,8 +33,6 @@ from collections import Counter
 import build_catalog as bc
 import extract_subfindings as ex
 
-sys.path.insert(0, str(bc.ROOT / "notes" / "scripts"))
-
 from catlib import yaml as Y
 
 ROOT = bc.ROOT

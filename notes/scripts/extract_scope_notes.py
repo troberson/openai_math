@@ -15,10 +15,6 @@ Definitions, stated so the counts are reproducible:
 Usage: python3 notes/scripts/extract_scope_notes.py
 """
 import statistics
-import sys
-from pathlib import Path
-
-sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from catlib import yaml as Y
 

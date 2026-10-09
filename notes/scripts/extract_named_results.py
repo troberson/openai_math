@@ -29,10 +29,10 @@ import pathlib
 import re
 import sys
 
+import build_catalog as B
+import measure_names as M
+
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "notes" / "scripts"))
-import build_catalog as B  # noqa: E402
-import measure_names as M  # noqa: E402
 
 PRE = ROOT / "preprints"
 LEDGER = ROOT / "notes" / "catalog.tsv"

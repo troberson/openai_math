@@ -39,6 +39,9 @@ import re
 import sys
 from pathlib import Path
 
+import build_catalog as B
+import compare_abstracts as CA
+
 ROOT = Path(__file__).resolve().parents[2]
 PAGE = ROOT / "notes" / "abstracts.md"
 
@@ -47,10 +50,6 @@ MARKER = re.compile(r"\[(S\d+)\]")
 QUOTE = re.compile(r"“([^”]+)”")
 ABSTRACT = re.compile(r"\\begin\{abstract\}(.*?)\\end\{abstract\}", re.S)
 ELLIPSIS = "…"
-
-sys.path.insert(0, str(ROOT / "notes" / "scripts"))
-import build_catalog as B  # noqa: E402
-import compare_abstracts as CA  # noqa: E402
 
 _OVERVIEW = None
 _MEASURED = None

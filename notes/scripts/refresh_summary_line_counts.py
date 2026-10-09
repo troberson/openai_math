@@ -16,10 +16,8 @@ Usage: python3 notes/scripts/refresh_summary_line_counts.py            # rewrite
        python3 notes/scripts/refresh_summary_line_counts.py <page.md>  # named pages only
 """
 import argparse
-import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
 import verify_summaries as V
 
 ROOT = V.ROOT

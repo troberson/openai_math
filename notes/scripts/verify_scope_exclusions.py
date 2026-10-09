@@ -28,8 +28,6 @@ from pathlib import Path
 import extract_scope_notes as ex
 from verify_summaries import norm
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-
 from catlib import yaml as Y
 from catlib.paths import DOCS_DIR
 

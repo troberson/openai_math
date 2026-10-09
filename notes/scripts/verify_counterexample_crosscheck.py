@@ -32,7 +32,6 @@ import pathlib
 import re
 import sys
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import build_catalog
 import extract_counterexample_crosscheck as cx
 import extract_subfinding_pairs as ep

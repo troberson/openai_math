@@ -59,13 +59,12 @@ import re
 import sys
 import unicodedata
 
+import build_catalog as B
+
+from catlib import yaml as Y
+from catlib.paths import PREPRINTS as PRE
+
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-
-sys.path.insert(0, str(ROOT / "notes" / "scripts"))
-import build_catalog as B  # noqa: E402
-
-from catlib import yaml as Y  # noqa: E402
-from catlib.paths import PREPRINTS as PRE  # noqa: E402
 
 LEDGER = {}
 with open(ROOT / "notes" / "catalog.tsv", newline="", encoding="utf-8") as _fh:

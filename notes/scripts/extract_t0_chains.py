@@ -25,9 +25,7 @@ where the citing and cited directories belong to the same family.
 import csv
 import pathlib
 import re
-import sys
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import extract_links
 import extract_subfinding_pairs as ep
 

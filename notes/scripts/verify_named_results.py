@@ -31,13 +31,13 @@ import pathlib
 import re
 import sys
 
-ROOT = pathlib.Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "notes" / "scripts"))
-import extract_named_results as en  # noqa: E402
-import measure_names as M  # noqa: E402
+import extract_named_results as en
+import measure_names as M
 
-from catlib import yaml as Y  # noqa: E402
-from catlib.paths import COMPARATOR_DIR  # noqa: E402
+from catlib import yaml as Y
+from catlib.paths import COMPARATOR_DIR
+
+ROOT = pathlib.Path(__file__).resolve().parents[2]
 
 PAGE = ROOT / "notes" / "named-results.md"
 ANCHOR = re.compile(r"`([\w./+-]+?\.(?:py|md|tex|json|txt|lean|yaml|bib)):(\d+)`")

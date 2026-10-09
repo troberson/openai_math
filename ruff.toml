@@ -37,8 +37,10 @@ ignore = [
     "FURB167",
     # 8 sites. `s[1:]` / `s[:-1]` over removeprefix/removesuffix where the prefix is a single char.
     "FURB188",
-    # 4 sites. The extractors import a sibling module through sys.path.insert, which is the
-    # documented reason for their `# noqa: E402` markers.
+    # 4 sites on the baseline, 13 measured 2026-10-09 over 52 files, 14 after the sys.path.insert
+    # boilerplate was dropped. Import blocks are not isort-ordered: each script lists stdlib, then
+    # its sibling extractors, then `catlib`, in the order the reader follows them, and re-sorting
+    # 14 blocks re-wraps the import headers for no behavioural gain.
     "I001",
     # 78 sites. `l` is a line and `I` never appears; the ambiguous-name rule is about readers
     # mistaking a letter for a digit, and in these scripts the single-letter names are line, row
@@ -59,6 +61,7 @@ ignore = [
 ]
 
 [lint.per-file-ignores]
-# E402 stays enabled on purpose: the scripts that import a sibling module through sys.path.insert
-# carry `# noqa: E402` markers, and keeping the rule live is what keeps those markers used
-# (RUF100 flags a noqa that suppresses nothing).
+# Empty, and E402 stays enabled corpus-wide. The scripts used to import a sibling module through
+# sys.path.insert and carried 13 `# noqa: E402` markers for it; a script run as
+# `python3 notes/scripts/foo.py` already has notes/scripts as sys.path[0], so the inserts and the
+# markers are both gone (measured 0 of each) and no file needs an import-position exemption.

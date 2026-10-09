@@ -20,8 +20,6 @@ disable =
     # 160 sites. The report strings are %-formatting templates reused across tiers; this is the
     # same convention ruff's UP031 exemption records.
     C0209,
-    # 40 sites. The sibling-module import pattern puts sys.path.insert above the import.
-    C0413,
     # 1 site. build_index.py renders 1,033 pages in one module.
     C0302,
     # 12 sites. Module-level path constants are UPPER_CASE and the extractors use short loop
@@ -42,8 +40,10 @@ disable =
     R0903,
     R0917,
     R0913,
-    # 24 sites. This is the measured duplication that math-lon.1 removes by extracting the shared
-    # package; the count is recorded in notes/linting.md and the message is re-enabled there.
+    # 24 sites on the baseline, 28 measured 2026-10-09 over 52 files after the shared package
+    # landed: the duplication is checker-to-checker (the anchor/fence loops) and extract-to-verify,
+    # which math-lon.2 removes when the checkers move onto the package. Count recorded in
+    # notes/linting.md.
     R0801,
     # 3 sites. The report accumulators are module-level by design (notes/linting.md).
     W0603,
@@ -51,7 +51,7 @@ disable =
     # the same population.
     W0621,
     # 6 sites: `prev` is None-guarded in the same `and` clause before it is subscripted
-    # (verify_dependency_drift.py:169-170, extract_formalization_deps.py:162-163). pylint does not
+    # (verify_dependency_drift.py:169-170, extract_formalization_deps.py:161-162). pylint does not
     # track the narrowing, so the message is off corpus-wide and the sites are listed in
     # notes/linting.md.
     E1136,

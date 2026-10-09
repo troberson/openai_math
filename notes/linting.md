@@ -42,7 +42,9 @@ as comments; the tables below are the same list with the measured counts.
 | mypy | 3 errors in 3 files (44 checked) | 3 | **0** (3 → 0) |
 | pylint | 1,422 findings over 44 scripts | 142 | **0** (142 → 38 after the ruff autofixes, 38 → 21 by hand, 21 → 0 by the last three exemptions) |
 
-`python -m py_compile notes/scripts/*.py` passes for all 44 under the venv interpreter.
+`python -m py_compile notes/scripts/*.py` passes for all 44 under the venv interpreter. The tree is
+**52 source files** today — `catlib/` adds 8 — and every current-state figure below is measured over
+52; the baseline row above is the 44-file tree it was measured on.
 
 ## Exemptions
 
@@ -55,47 +57,53 @@ is not a defect in this tree.
 | ruff `ISC004` | 80 | Implicit concatenation inside a list literal is how the mutant tables are written. |
 | ruff `FURB167` | 60 | `re.M` is the local alias convention for regex flags. |
 | ruff `FURB188` | 8 | Single-character prefix/slicing where `removeprefix` adds nothing. |
-| ruff `I001` | 4 | The sibling-module import pattern: `sys.path.insert` above the import, marked `# noqa: E402`. |
+| ruff `I001` | 4 → **14** | Import blocks are not isort-ordered: stdlib, then the sibling extractors, then `catlib`, in the order the reader follows them. Measured **13** before and **14** after the `sys.path.insert` boilerplate was dropped — the insert was never what made the block unsorted, so the exemption stays. |
 | pylint `line-too-long` | 351 | Report lines embed manuscript paths and verbatim quotations. |
 | pylint `missing-function-docstring` | 194 | A report function's contract is the report line it prints; the module docstring states what the script measures. |
 | pylint `too-many-*` | 80+37+35+5+3+2 | A generator that reconciles a corpus is wide by design; the metrics describe the report. |
-| pylint `wrong-import-position` | 40 | Same sys.path.insert pattern as ruff `I001`. |
 | pylint `invalid-name` | 12 | Module path constants are UPPER_CASE; extractors use short loop variables. |
-| pylint `duplicate-code` | 24 | The measured duplication that `math-lon.1` removes; re-enabled after the shared package lands. |
+| pylint `duplicate-code` | 24 → **28** | Measured 2026-10-09 over 52 files, after the shared package landed: checker↔checker anchor/fence loops (`verify_index_design` ↔ `verify_sources` ↔ `verify_verification_dirs` ↔ `verify_counterexample_crosscheck`), extract↔verify (`extract_citations` ↔ `verify_citations` ×4, `extract_subfindings` ↔ `verify_subfindings`), and `locate_summary_quotes` ↔ `verify_summaries`. `math-lon.2` ports the 19 checkers onto the package, which is what attacks these pairs. |
 | pylint `global-statement` | 3 | Report accumulators are module-level by design. |
-| pylint `unsubscriptable-object` | 6 | `prev` is `None`-guarded before the subscript in `verify_dependency_drift.py:169-170` and `extract_formalization_deps.py:162-163`; pylint does not track the narrowing. |
+| pylint `unsubscriptable-object` | 6 | `prev` is `None`-guarded before the subscript in `verify_dependency_drift.py:169-170` and `extract_formalization_deps.py:161-162`; pylint does not track the narrowing. |
+
+Removed in the same pass as the boilerplate: pylint `wrong-import-position` (`C0413`), exempted for
+**40** baseline sites. `pylint --enable=C0413` measures **61** findings on the tree that still had
+the inserts and **0** on the tree that does not, so the disable is deleted from `.pylintrc` and the
+gate stays green.
 
 ## mypy per-file status
 
-Under `mypy.ini` the gate command checks **44 files with 0 errors**. `check_untyped_defs = False`,
+Under `mypy.ini` the gate command checks **52 files with 0 errors**. `check_untyped_defs = False`,
 so a function with no annotations is not analyzed — the gate proves the annotated surface, not the
-whole tree. The 3 baseline errors were real and are fixed: `compare_abstracts.py:64`
-(`_CACHE: dict = {}`), `build_index.py:160` (`WRITTEN: set = set()`), and a `None` guard in
+whole tree. The 3 baseline errors were real and are fixed: `compare_abstracts.py:63`
+(`_CACHE: dict = {}`), `build_index.py:163` (`WRITTEN: set = set()`), and a `None` guard in
 `verify_named_results.py` that now narrows `rel`/`ln` before use.
 
 The per-file figure is the **strict probe**, which is not a gate command:
 
 ```bash
-.venv/bin/mypy --check-untyped-defs notes/scripts/   # 168 errors in 37 files (44 checked)
+.venv/bin/mypy --check-untyped-defs notes/scripts/   # 181 errors in 37 files (52 checked)
 ```
 
-Its 168 findings are an annotation backlog, not defects: `var-annotated` 93 (an empty `dict`/`list`
-accumulator mypy cannot infer), `assignment` 41, `union-attr` 25, `index` 3, `attr-defined` 2,
-`operator` 2, `misc` 1, `func-returns-value` 1. **7 of 44 files are clean under the probe** —
+Its 181 findings are an annotation backlog, not defects: `var-annotated` 91 (an empty `dict`/`list`
+accumulator mypy cannot infer), `assignment` 45, `union-attr` 29, `misc` 5, `index` 4, `operator` 3,
+`attr-defined` 2, `arg-type` 1, `func-returns-value` 1. **15 of 52 files are clean under the probe** —
 `extract_verification_348.py`, `locate_summary_quotes.py`, `read_manuscript.py`, `triage_t0.py`,
-`verify_conditional.py`, `verify_index_design.py`, `verify_named_results.py`.
+`verify_conditional.py`, `verify_index_design.py`, `verify_named_results.py`, and all 8 files under
+`catlib/`.
 
 | Errors | File |
 |---|---|
-| 33 | `verify_upstream_history.py` |
-| 11 | `build_index.py` |
+| 35 | `verify_upstream_history.py` |
+| 12 | `build_index.py` |
+| 10 | `verify_scope_exclusions.py`, `measure_names.py` |
 | 9 | `extract_links.py` |
-| 8 | `verify_citations.py`, `measure_names.py` |
+| 8 | `verify_citations.py` |
 | 7 | `extract_citations.py` |
-| 6 | `verify_findings.py`, `verify_scope_exclusions.py`, `verify_counterexample_crosscheck.py` |
-| 5 | `compare_abstracts.py`, `verify_subfinding_pairs.py` |
+| 6 | `verify_findings.py`, `verify_counterexample_crosscheck.py` |
+| 5 | `build_sources.py`, `compare_abstracts.py`, `verify_sources.py`, `verify_subfinding_pairs.py` |
 | 4 | `measure_proof_density.py`, `verify_named_conjectures.py`, `verify_summaries.py`, `verify_t0_chains.py` |
-| 3 | `build_catalog.py`, `build_sources.py`, `check_index_links.py`, `extract_formalization_deps.py`, `extract_named_results.py`, `measure_index_sizes.py`, `measure_topics.py`, `verify_sources.py`, `verify_subfindings.py`, `verify_verification_dirs.py` |
+| 3 | `build_catalog.py`, `check_index_links.py`, `extract_formalization_deps.py`, `extract_named_results.py`, `measure_index_sizes.py`, `measure_topics.py`, `verify_subfindings.py`, `verify_verification_dirs.py` |
 | 2 | `extract_subfinding_pairs.py`, `extract_subfindings.py`, `extract_verification_dirs.py`, `verify_abstracts.py`, `verify_conjecture_standing.py`, `verify_script_ownership.py` |
 | 1 | `check_summary_manuscripts.py`, `extract_counterexample_crosscheck.py`, `extract_scope_notes.py`, `extract_t0_chains.py`, `refresh_summary_line_counts.py`, `verify_dependency_drift.py` |
 
@@ -109,12 +117,12 @@ Fixed, with the site:
 
 | Code | Count | Fix |
 |---|---|---|
-| `W0613` unused-argument | 5 | Parameters renamed to `_`-prefixed dummies — `check_files(_m, problems)` (`verify_t0_chains.py:359`), `lean_paths(_fams, docs)` (`measure_topics.py:92`), `seen_nt_order(rows, _M)` (`verify_citations.py:495`), `check_page(name, text, _p, problems)` and `check_needles(_p, problems)` (`verify_upstream_history.py:269,332`). Pylint's default `dummy-variables-rgx` exempts them; every call site passes the argument positionally, so no caller changed. |
-| `W1514` unspecified-encoding | 4 | `encoding="utf-8"` at `check_index_links.py:337`, `extract_named_results.py:89`, `measure_names.py:68`, and the `os.devnull` sink in `verify_summaries.py`. |
+| `W0613` unused-argument | 5 | Parameters renamed to `_`-prefixed dummies — `check_files(_m, problems)` (`verify_t0_chains.py:358`), `lean_paths(_fams, docs)` (`measure_topics.py:91`), `seen_nt_order(rows, _M)` (`verify_citations.py:494`), `check_page(name, text, _p, problems)` and `check_needles(_p, problems)` (`verify_upstream_history.py:268,331`). Pylint's default `dummy-variables-rgx` exempts them; every call site passes the argument positionally, so no caller changed. |
+| `W1514` unspecified-encoding | 4 | `encoding="utf-8"` at `check_index_links.py:337`, `extract_named_results.py:89`, `measure_names.py:70`, and the `os.devnull` sink in `verify_summaries.py`. |
 | `W0106` expression-not-assigned | 2 | `verify_abstracts.py`: two `x.append(...) if cond else None` expressions became `if` statements. |
-| `W0640` cell-var-from-loop | 1 | `compare_abstracts.py:147` binds the loop value as a default: `key=lambda x, ov=ov: ratio(ov, x[1])`. |
+| `W0640` cell-var-from-loop | 1 | `compare_abstracts.py:146` binds the loop value as a default: `key=lambda x, ov=ov: ratio(ov, x[1])`. |
 | `E0102` function-redefined | 1 | `verify_dependency_drift.py:298` rebound the name `want` (a tuple-unpack) over the function defined at `:333`; the local is now `want_q`. |
-| `C0207` use-maxsplit-arg | 1 | `build_index.py:952` → `name.rsplit('/', 1)[-1][:-4]`. |
+| `C0207` use-maxsplit-arg | 1 | `build_index.py:955` → `name.rsplit('/', 1)[-1][:-4]`. |
 | `C0325` superfluous-parens | 2 | `verify_named_conjectures.py:184,275` → `if not 1 <= a <= b <= len(lines):`. |
 | `C0411` wrong-import-order | 1 | `measure_names.py`: `import csv` moved into the stdlib block. |
 
@@ -126,6 +134,21 @@ Exempted in the same pass — the 21 findings that remained, as three codes:
 | `C0200` consider-using-enumerate | 4 | The pair window `for i in range(len(ms)): for j in range(i + 1, len(ms)):`, which `enumerate` does not express. |
 | `R0902` too-many-instance-attributes | 1 | `verify_summaries.py`'s `Page` class is a parsed-page data holder, not a behaviour class. |
 
+## The import boilerplate pass (math-lon.1)
+
+A script run as `python3 notes/scripts/foo.py` already has `notes/scripts` as `sys.path[0]`, so all
+**31** `sys.path.insert` sites — every one naming that same directory — added nothing. Dropping them
+and hoisting the sibling imports above the first module-level statement removed **31** insert lines,
+the **13** `# noqa: E402` markers they needed, **7** `import sys` that became unused, and **3**
+`import pathlib` that only built the inserted path: **31 files changed**, all 52 byte-compile clean,
+**0** inserts and **0** markers left. `ruff check --select E402` reports nothing and
+`pylint --enable=C0413` reports **0**, which is why the `C0413` disable is gone from `.pylintrc`.
+
+The transform was validated on a copy of the tree first, which is where its bugs were found:
+hoisting above the shebang, above the module docstring (including the `r"""` form), splitting a
+comment from the statement it documents, landing inside a parenthesised import list (the depth check
+must be cumulative over the block, not per line), and re-inserting a blank line inside that list.
+
 ## What has not been checked
 
 - **Behaviour.** The linters prove style and typing facts only. The autofix pass ran with
@@ -134,10 +157,12 @@ Exempted in the same pass — the 21 findings that remained, as three codes:
   generated artifact md5-snapshotted and diffed (`notes/scripts/README.md`).
 - **No test suite.** The generator report is the test, so a lint fix is verified by report
   equality, not by unit tests.
-- **The strict probe is not scheduled.** The 168-error `--check-untyped-defs` backlog above is a
+- **The strict probe is not scheduled.** The 181-error `--check-untyped-defs` backlog above is a
   work estimate; nothing runs that command as a gate.
-- **`duplicate-code` is off corpus-wide** (24 sites) and nothing automatic re-enables it;
-  `math-lon.1` is where the shared package lands and the message is switched back on.
+- **`duplicate-code` is off corpus-wide** — **28** findings measured with `--enable=R0801` over 52
+  files after the shared package landed, and nothing automatic re-enables it. `math-lon.1` moved the
+  joins into `catlib/`; the remaining duplication is checker-to-checker and extract-to-verify, which
+  `math-lon.2` attacks when the 19 checkers move onto the package.
 - **jinja2 is installed and unused** until `math-a0r`.
 - **The venv is untracked.** `.venv/` is in `.gitignore`, so the versions in the table above are
   recorded only on this page — nothing in git pins them.

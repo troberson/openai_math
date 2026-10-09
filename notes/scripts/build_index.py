@@ -46,10 +46,8 @@ import csv
 import pathlib
 import posixpath
 import re
-import sys
 import unicodedata
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import build_catalog as B
 import measure_topics as MT
 import measure_names as MN

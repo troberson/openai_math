@@ -27,8 +27,6 @@ import statistics
 import sys
 import collections
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-
 from catlib import yaml as Y
 from catlib.paths import LAKEFILE, LAKE_MANIFEST as MANIFEST
 

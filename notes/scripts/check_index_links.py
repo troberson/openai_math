@@ -41,11 +41,11 @@ import posixpath
 import re
 import sys
 
-ROOT = pathlib.Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "notes" / "scripts"))
-import build_catalog as B  # noqa: E402
+import build_catalog as B
 
-from catlib import yaml as Y  # noqa: E402
+from catlib import yaml as Y
+
+ROOT = pathlib.Path(__file__).resolve().parents[2]
 
 IDX = ROOT / "notes" / "index"
 SCHEME = re.compile(r"^[a-zA-Z][a-zA-Z0-9+.-]*:")

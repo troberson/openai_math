@@ -22,8 +22,6 @@ import sys
 import collections
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-
 from catlib import yaml as Y
 from catlib.paths import LAKEFILE, LAKE_MANIFEST as MANIFEST, OAI_DIR as SOURCE
 

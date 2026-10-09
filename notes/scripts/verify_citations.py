@@ -26,7 +26,6 @@ import os
 import re
 import sys
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import extract_citations as ec
 
 PAGE = os.path.join(ec.ROOT, "notes", "citations.md")

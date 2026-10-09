@@ -229,14 +229,14 @@ not survive a re-run.
 | S7 | [`notes/counterexample-tag.md`](counterexample-tag.md) | 203 | The `counterex_broad` phrase rule and the 30 flag-only readings |
 | S8 | [`notes/conditional.md`](conditional.md) | 261 | The conditional-tag reading pass and the comparator-`sorry` reading |
 | S9 | [`notes/abstracts.md`](abstracts.md) | 381 | The overview-abstract vs manuscript-abstract comparison |
-| S10 | [`notes/scripts/compare_abstracts.py`](scripts/compare_abstracts.py) | 439 | The generator of that comparison |
+| S10 | [`notes/scripts/compare_abstracts.py`](scripts/compare_abstracts.py) | 438 | The generator of that comparison |
 | S11 | [`notes/t0-triage.md`](t0-triage.md) | 897 | The 130-family T0 reading pass: buckets, counts, unread remainder |
 | S12 | [`notes/t0-chains.md`](t0-chains.md) | 542 | The 27 two-manuscript T0 families and their coverage signal |
 | S13 | [`notes/links.md`](links.md) | 217 | The typed-edge inventory: scope-note links, citation edges |
 | S14 | [`notes/verification-dirs.md`](verification-dirs.md) | 253 | The 30 verification bundles and what each ships |
 | S15 | [`README.md`](../README.md) | 51 | The release's own trace attributions |
 | S16 | [`notes/counterexample-crosscheck.md`](counterexample-crosscheck.md) | 1062 | The counterexample families' evidence cross-check |
-| S17 | [`notes/scripts/extract_scope_notes.py`](scripts/extract_scope_notes.py) | 82 | The phrase-list floors behind the 5 and 44 counts |
+| S17 | [`notes/scripts/extract_scope_notes.py`](scripts/extract_scope_notes.py) | 78 | The phrase-list floors behind the 5 and 44 counts |
 | S18 | [`notes/proof-density.md`](proof-density.md) | 113 | The proof-density test, its bar, and its nulls |
 | S19 | [`notes/scripts/measure_proof_density.py`](scripts/measure_proof_density.py) | 333 | The AUC and p re-derivation for every density figure |
 | S20 | [`notes/named-results.md`](named-results.md) | 346 | Headline environments read for named targets |

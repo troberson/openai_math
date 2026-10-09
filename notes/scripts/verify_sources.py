@@ -28,7 +28,6 @@ import pathlib
 import re
 import sys
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import build_sources as S
 from catlib import overview, preprints, tsv
 from catlib.paths import LEDGER_TSV, PREPRINTS, SUBFINDINGS_TSV
