@@ -27,8 +27,8 @@ REPO = pathlib.Path(__file__).resolve().parents[2]
 SOURCES = REPO / "notes" / "sources.tsv"
 LEDGER = REPO / "notes" / "catalog.tsv"
 
-# Totals recorded in beads math-hqd.3 and in notes/sources.md, re-measured 2026-10-08 after the
-# upstream merge (722 manuscripts / 20,449 proofs / 21,402 statements / tiers 127-108-0-137).
+# Totals recorded in beads math-hqd.3 and in notes/sources.md, re-measured 2026-10-09 after the
+# upstream merge (719 manuscripts / 20,341 proofs / 21,288 statements / tiers 136-106-0-130).
 EXPECTED_ROWS = 719
 EXPECTED_FAMS = 372
 EXPECTED_PROOFS = 20341

@@ -6,9 +6,9 @@ A family has four searchable texts, all shipped by the release:
 
   title    the 2nd argument of its \\resultentry in overview.tex
   abstract the 3rd argument of the same entry
-  scope    the text of lean/docs/<NNN>.md, when a scope note exists (235 families)
+  scope    the text of lean/docs/<NNN>.md, when a scope note exists (242 families)
   path     the Lean file paths reached from the family's comparator configs through
-           formalization.yaml main_results (127 families; the release ships no
+           formalization.yaml main_results (136 families; the release ships no
            manuscript->Lean edge, so this layer is derived, not shipped)
 
 Matching is case-insensitive over those four texts. A term's yield is the number of
@@ -17,8 +17,8 @@ path hit and an abstract hit are not the same kind of evidence — the path laye
 the release's own filing choice, the abstract layer is the release's own prose.
 
 Terms are curated in notes/topics.tsv, not derived: the release ships no topic
-vocabulary (0 MSC codes over 8,231 files, 0 bib keywords fields over 12,928 entries,
-\\keywords in 12 of 722 manuscript dirs), so there is nothing to derive a term from
+vocabulary (0 MSC codes over 8,206 files, 0 bib keywords fields over 12,876 entries,
+\\keywords in 12 of 719 manuscript dirs), so there is nothing to derive a term from
 and nothing to validate a derived term against. The TSV is the source of truth — the
 term, its pattern, the counts it records as evidence, and the reading verdict. Run
 with --check to re-measure every row and fail on drift.

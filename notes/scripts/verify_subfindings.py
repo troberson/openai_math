@@ -14,8 +14,8 @@ The TSV carries two row kinds in one rectangular table. Four passes read the sam
   Pass C (comparators) - per family, the comparator rows equal that scope note's
                        `## Comparator links` table rows, in order, with the same named statement and
                        the same .lean file, and every .lean file exists in lean/ComparatorChallenges/.
-  Pass D (totals)    - the counts the acceptance names (722 manuscript rows, 415 comparator rows,
-                       372 and 235 families, 405 distinct configs, 162 formalized) are re-measured
+  Pass D (totals)    - the counts the acceptance names (719 manuscript rows, 426 comparator rows,
+                       372 and 242 families, 416 distinct configs, 172 formalized) are re-measured
                        from the files and compared with the table.
 
 --mutant proves the checker discriminates: it renames a real title, points a real row at a manuscript

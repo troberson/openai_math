@@ -134,8 +134,8 @@ def measure():
 def entry_measure():
     """Independent recomputation of the entry-point section's population and classes.
 
-    The population is the 30 bundles, not the 722 preprint dirs: a README section is read as naming a
-    bundle only for a dir that ships one.
+    The population is the 30 bundles, not the 749 preprint dirs on disk (719 of them listed in
+    overview.tex): a README section is read as naming a bundle only for a dir that ships one.
     """
     fam_by_slug, _order, _fams = evd.families_by_slug()
     dirs = sorted(p for p in evd.PRE.iterdir() if p.is_dir())

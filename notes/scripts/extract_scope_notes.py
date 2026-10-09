@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Re-measure the Scope sections of the 235 scope notes. Writes nothing; prints the report.
+"""Re-measure the Scope sections of the 242 scope notes. Writes nothing; prints the report.
 
 Every count in notes/scope-exclusions.md comes from this run, so the page's numbers are checkable
 against a command. The point of the two vocabulary lists is the floor: the narrow list reproduces
-the 5-of-235 figure the earlier reading pass recorded, and the broad list shows how much a wider
+the 5-of-242 figure the earlier reading pass recorded, and the broad list shows how much a wider
 rule finds. Both are keyword floors over prose, not censuses - the exclusions themselves are the
-product of reading all 235 sections.
+product of reading all 242 sections.
 
 Definitions, stated so the counts are reproducible:
   scope section  - from the `## Scope` heading line through the line before the next `## ` heading.

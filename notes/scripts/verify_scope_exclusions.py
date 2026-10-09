@@ -4,7 +4,7 @@
 The page carries one table row per family with a scope note. Each row is either **None stated.** or a
 sequence of “quotation” `lean/docs/NNN.md:<line>` pairs. Four passes read the same rows:
 
-  Pass A (coverage)  - exactly 235 rows, one per family that has a `## Scope` section, each id exactly
+  Pass A (coverage)  - exactly 242 rows, one per family that has a `## Scope` section, each id exactly
                        once, matching the files on disk.
   Pass B (anchors)   - every citation names a file that exists, a line that exists, and a line inside
                        that file's `## Scope` section. A citation to the Comparator table is a real
@@ -232,7 +232,7 @@ def main():
             undetected += 1
         print(f"  {name}: {'detected' if hit else 'UNDETECTED'} ({len(got)} problems)")
 
-    # A family row deleted: Pass A must notice the table no longer covers the 235 notes.
+    # A family row deleted: Pass A must notice the table no longer covers the 242 notes.
     cand = [l for i, l in enumerate(lines) if i != first_row - 1]
     got, _, _, _ = check(cand)
     hit = [p for p in got if "no row" in p]

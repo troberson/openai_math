@@ -12,7 +12,7 @@ Rules stated where they matter:
   each definition writes `}[n]{` after the name.
 - Traces are counted as distinct stems over files: the Mézard–Parisi trace ships as both `.pdf` and
   `.tex`, so 11 files carry 10 traces.
-- Family→config is counted per family as a set, which is why it reads 405 here and 415 in
+- Family→config is counted per family as a set, which is why it reads 416 here and 426 in
   notes/links.tsv, where 7 scope notes link one config twice.
 - Manuscript ownership is the path component after `preprints`, never `parts[-2]`.
 - "The whole ledger set" is the five tracked TSVs notes/index-design.md tabulates, named in
