@@ -36,8 +36,22 @@ def script_names():
     return sorted(p.name for p in SCRIPTS.glob("*.py") if p.name != SELF)
 
 
+def path_constants():
+    """The notes/-rooted path constants the shared package defines: name -> repo-relative path."""
+    src = (SCRIPTS / "catlib" / "paths.py").read_text(encoding="utf-8")
+    return {n: f"notes/{f}"
+            for n, f in re.findall(r'^(\w+)\s*=\s*NOTES\s*/\s*"([^"]+)"', src, re.M)}
+
+
 def writers():
-    """A script is a writer when a notes/-rooted path constant is written, plus the tree case."""
+    """A script is a writer when a notes/-rooted path constant is written, plus the tree case.
+
+    Two shapes, because a script may open the file itself or hand a package constant to a package
+    writer (`tsv.write_csv(OUT, COLUMNS, rows)`). The second shape is invisible to a source-text
+    pattern over `open`/`write_text` alone, so a write that moves into the shared package would
+    silently drop its script out of the writer set.
+    """
+    consts = path_constants()
     out = {}
     for name in script_names():
         src = (SCRIPTS / name).read_text(encoding="utf-8")
@@ -46,6 +60,12 @@ def writers():
             m = re.search(rf'^{var}\s*=\s*\w+\s*/\s*"notes"\s*/\s*"([^"]+)"', src, re.M)
             if m:
                 targets.add("notes/" + m.group(1))
+        for const in re.findall(r'\b\w+\.write_\w+\(\s*([A-Za-z_]\w*)\b', src):
+            # A script may alias the package constant (`OUT = SOURCES_TSV`), so resolve one hop.
+            alias = re.search(rf"^{const}\s*=\s*([A-Za-z_]\w*)\s*$", src, re.M)
+            key = alias.group(1) if alias else const
+            if consts.get(key):
+                targets.add(consts[key])
         if re.search(r'^\w+\s*=\s*\w+\s*/\s*"notes"\s*/\s*"index"', src, re.M) and re.search(
             r"^def write\(", src, re.M
         ):

@@ -144,7 +144,7 @@ carrier, so it states what to do and what not to re-derive.
     the headline conclusion: `Model.lean` states a saving in log log *N* with exponent 1 + *η*, where
     the manuscript's Theorem `ap:main` states a saving in (log *N*)^*ε_k*. Read the formalized `Prop`
     before repeating the manuscript's exponent as the formalized one.
-  - Both companion columns come from the CONTENTS.md blurb alone (`build_catalog.py:274,295`), so a
+  - Both companion columns come from the CONTENTS.md blurb alone (`build_catalog.py:110,132`), so a
     manuscript that names its companion in its introduction and bibliography can still have
     `companions` empty in the ledger. Say which layer the fact lives in.
 - **197 findings, for reuse:**

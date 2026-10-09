@@ -445,7 +445,7 @@ def main():
     row(
         "abstract->companion family",
         "overview.tex abstracts",
-        "`result (\\d{3})` (build_catalog.py:308)",
+        "`result (\\d{3})` (build_catalog.py:110)",
         n_ab_edges,
         f"{len(edges_ab)} families: " + ", ".join(f"{a}->{b}" for a, b in edges_ab),
         f"The abstract names a sibling result. It is not a citation, not a dependency, "
@@ -456,7 +456,7 @@ def main():
     row(
         "abstract->'companion' wording",
         "overview.tex abstracts",
-        "`\\bcompanion` (build_catalog.py:330)",
+        "`\\bcompanion` (build_catalog.py:132)",
         len(companion_word_fams),
         f"families; {len(companion_word_fams & companion_edge_fams)} of them carry a "
         f"`result NNN` edge",

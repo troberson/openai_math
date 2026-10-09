@@ -177,7 +177,7 @@ So the verb gap is real for 2 families and is a self-framed sub-problem for 3. W
 
 Rule: target noun in the family's **overview title**, resolve verb in its overview abstract. The
 column read the abstract only; this is the same generator's precedent — `counterex_broad` is
-documented at `notes/scripts/build_catalog.py:244` as
+documented at `notes/scripts/catlib/ledger.py:121` as
 *"Input scope is title + abstract, stated because it changes the count"*.
 
 **15** additions: 022 039 044 096 097 151 156 192 209 263 289 293 297 347 367. **Removals 0** — a union

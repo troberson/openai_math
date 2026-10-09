@@ -185,9 +185,9 @@ rule and its 417-file scope, and quote 12 with the normalized rule and the 500-f
 - **0** `keywords =` fields in 12,876 bibliography entries.
 - `\keywords` in **12** of 719 manuscript directories (1.7%).
 - **2** companion edges: `001→032`, `002→006`. The pattern is
-  `result (\d{3})` at **`notes/scripts/build_catalog.py:308`** — the bead spec cites line 267, which
-  is stale. **9** families use the word "companion" in an abstract and **0** of them carry a
-  `result NNN` edge, so the word and the edge are disjoint signals.
+  `result (\d{3})` at **`notes/scripts/build_catalog.py:110`** — the bead spec cites line 267 and the
+  pre-refactor file carried it at 308, both stale. **9** families use the word "companion" in an
+  abstract and **0** of them carry a `result NNN` edge, so the word and the edge are disjoint signals.
 - **0** one-sided family→manuscript links: `overview.tex`-only links 0, `CONTENTS.md`-only links 0.
 
 ## Not checked
