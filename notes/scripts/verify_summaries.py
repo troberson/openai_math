@@ -39,6 +39,12 @@ the form it corrupted.
 Usage: python3 notes/scripts/verify_summaries.py                 # every page under notes/summaries
        python3 notes/scripts/verify_summaries.py <page.md> ...   # named pages only
        python3 notes/scripts/verify_summaries.py --mutant        # discrimination test as well
+
+What stays in this file, deliberately: the lenient read of a Sources-table file (`errors="replace"`)
+— a page may declare a compiled PDF as a source and the run must not abort — which is not the
+package's strict `read_text`; the page grammar (`ROW`, `CELL`, `MARKER`, `QUOTE`, `LINK`, `ENTITY`,
+`TAG`, `PAPDIR`, `BLOCK_RULES`, `NOTE_ENTRY`, `FORMAT_EXAMPLE`), which is this page's own contract,
+not a corpus-wide one; and Pass A, which is written per page against that page's findings.
 """
 import argparse
 import os
@@ -46,11 +52,11 @@ import re
 import sys
 from pathlib import Path
 
-import build_catalog as B
+from catlib import overview as cov
+from catlib.paths import PREPRINTS, ROOT, SUMMARIES_DIR, read_text
 from catlib.text import strip_markup as norm
 
-ROOT = Path(__file__).resolve().parents[2]
-SUMMARIES = ROOT / "notes" / "summaries"
+SUMMARIES = SUMMARIES_DIR
 
 ROW = re.compile(r"^\|\s*(S\d+)\s*\|\s*(.+?)\s*\|\s*([\d,]+|—)\s*\|\s*(.*?)\s*\|\s*$")
 CELL = re.compile(r"`([^`]+)`")
@@ -365,7 +371,7 @@ def named_dirs():
     """{manuscript dir name: families whose overview entry names it} — the release's own claim."""
     global _NAMED_CACHE
     if _NAMED_CACHE is None:
-        _, fams = B.parse_overview()
+        _, fams = cov.parse_overview()
         _NAMED_CACHE = {}
         for fam, d in fams.items():
             for p in d["tex_paps"]:
@@ -376,7 +382,7 @@ def named_dirs():
 def superseded_dir():
     """A manuscript directory that is on disk and named by no family — the shape an update leaves behind."""
     named = named_dirs()
-    for p in sorted((ROOT / "preprints").iterdir()):
+    for p in sorted(PREPRINTS.iterdir()):
         if p.is_dir() and p.name not in named:
             return p.name
     return None
@@ -587,7 +593,7 @@ def main():
     io = sys.stdout
     total_b = total_c = total_problems = total_mutants = 0
     for doc in docs:
-        lines = doc.read_text(encoding="utf-8").splitlines()
+        lines = read_text(doc).splitlines()
         page = Page(doc, lines)
         print(f"===== {doc.relative_to(ROOT)}")
         with contextlib.ExitStack() as stack:

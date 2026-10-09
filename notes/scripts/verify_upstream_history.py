@@ -19,19 +19,34 @@ What each check measures, and the rule behind it:
   tables       the fixes table and the config table are checked row by row against disk
 
 Run with --mutant to corrupt one real claim per form the page uses and prove each fires.
+
+What stays in this file, deliberately: the git reads (`git show <rev>:notes/catalog.tsv`,
+`:lean/formalization.yaml`, `:overview.tex`, `ls-tree`) — this checker is the only one that
+measures a **revision**, and the package reads disk; the page grammar (ANCHOR, QUOTE, LINK,
+SLUG), which is this page's own contract, not a corpus-wide one; and the needle list, whose
+content is the page's specific claims.
 """
 
-import csv
-import io
 import re
 import subprocess
 import sys
 from collections import Counter
-from pathlib import Path
 
-import build_catalog as bc
+from catlib import overview as cov
+from catlib import yaml as cy
+from catlib.ledger import read_ledger
+from catlib.paths import (
+    DOCS_DIR,
+    FORMALIZATION_YAML,
+    OAI_DIR,
+    OVERVIEW_TEX,
+    PREPRINTS,
+    ROOT,
+    read_text,
+)
+from catlib.text import collapse_ws, fold_apostrophe
+from catlib.tsv import read_rows_from_text
 
-ROOT = Path(__file__).resolve().parents[2]
 PAGES = [
     "upstream_history/README.md",
     "upstream_history/2026-10-07_3014888.md",
@@ -66,44 +81,33 @@ def ws(text):
     typographic quotes are folded to ASCII — the same fold the `overview.tex` text layer
     already applies, since the release ships both `'` and `’`.
     """
-    text = (text.replace("\u2019", "'").replace("\u2018", "'")
-                .replace("\u201c", '"').replace("\u201d", '"'))
+    text = fold_apostrophe(text).replace("\u201c", '"').replace("\u201d", '"')
     text = re.sub(r"\((?:https?|ftp)://[^)]*\)", "(…)", text)
-    return re.sub(r"\s+", " ", text).strip()
+    return collapse_ws(text)
 
 
 def overview_text(text):
-    """bc.parse_overview() over an arbitrary overview.tex string."""
-    start = text.index("\\begin{document}")
-    discipline, fams, order, i = None, {}, [], start
-    while True:
-        ns, nr = text.find("\\cataloguesection{", i), text.find("\\resultentry{", i)
-        if nr == -1:
-            break
-        if ns != -1 and ns < nr:
-            args, i = bc.read_args(text, ns + len("\\cataloguesection"))
-            discipline = args[0]
-            continue
-        args, i = bc.read_args(text, nr + len("\\resultentry"))
-        fams[args[0]] = {"discipline": discipline, "title": args[1].strip(),
-                         "abstract": args[2].strip(), "tex_paps": re.findall(bc.PAP, args[3])}
-        order.append(args[0])
+    """The release's own entries over an arbitrary overview.tex string — catlib's text-level parse."""
+    order, fams = cov.parse_overview_text(text)
+    for entry in fams.values():
+        entry["tex_paps"] = re.findall(cov.PAP, entry.pop("links"))
     return order, fams
 
 
 def ledger(rev=None):
-    text = git("show", f"{rev}:notes/catalog.tsv") if rev else (ROOT / "notes/catalog.tsv").read_text(encoding="utf-8")
-    return list(csv.DictReader(io.StringIO(text), delimiter="\t"))
+    if rev:
+        return read_rows_from_text(git("show", f"{rev}:notes/catalog.tsv"))
+    return read_ledger()
 
 
 def yaml_text(rev=None):
-    return git("show", f"{rev}:lean/formalization.yaml") if rev else (ROOT / "lean/formalization.yaml").read_text(encoding="utf-8")
+    if rev:
+        return git("show", f"{rev}:lean/formalization.yaml")
+    return read_text(FORMALIZATION_YAML)
 
 
 def yaml_parse(text):
-    sources = set(re.findall(r"^\s*id:\s*\.\./(" + bc.PAP + r")", text, re.M))
-    main = Counter(re.findall(r"comparator_config:\s*ComparatorChallenges/([A-Za-z0-9_]+)\.json", text))
-    return sources, main
+    return cy.parse_yaml_text(text)
 
 
 def ls_leaf(rev, prefix, suffix):
@@ -149,18 +153,18 @@ def measure():
     p["new_entries"] = sum(main_post[c] for c in p["new_configs"])
     p["main_post"] = main_post
 
-    contents = bc.parse_contents()
+    contents = cov.parse_contents()
     listed = {q for paths in contents.values() for q in paths}
     p["listed"] = sum(len(v) for v in contents.values())
     p["listed_form"] = len(src_post & listed)
     p["stale_ids"] = sorted(src_post - listed)
 
-    dirs = sorted(d.name for d in (ROOT / "preprints").iterdir() if d.is_dir())
+    dirs = sorted(d.name for d in PREPRINTS.iterdir() if d.is_dir())
     p["dirs"] = len(dirs)
-    p["pdfs"] = sum(1 for _ in (ROOT / "preprints").rglob("*.pdf"))
+    p["pdfs"] = sum(1 for _ in PREPRINTS.rglob("*.pdf"))
     p["notices"] = sorted(d for d in dirs
-                          if (ROOT / "preprints" / d / "README.md").is_file()
-                          and "Withdrawal notice" in (ROOT / "preprints" / d / "README.md").read_text(encoding="utf-8"))
+                          if (PREPRINTS / d / "README.md").is_file()
+                          and "Withdrawal notice" in read_text(PREPRINTS / d / "README.md"))
     owner = {}
     for fam, paths in contents.items():
         for q in paths:
@@ -170,9 +174,9 @@ def measure():
 
     versioned = {}
     for d in dirs:
-        rd = ROOT / "preprints" / d / "README.md"
+        rd = PREPRINTS / d / "README.md"
         if rd.is_file():
-            m = VERSION_NOTE.search(rd.read_text(encoding="utf-8"))
+            m = VERSION_NOTE.search(read_text(rd))
             if m:
                 versioned[d] = m.group(1)
     p["versioned"] = len(versioned)
@@ -184,7 +188,7 @@ def measure():
     p["challenges"] = (sum(1 for f in git("ls-tree", "-r", "--name-only", BASE, "lean/ComparatorChallenges/").split("\n") if f.endswith(".lean")),
                        sum(1 for f in git("ls-tree", "-r", "--name-only", "HEAD", "lean/ComparatorChallenges/").split("\n") if f.endswith(".lean")))
     p["oai_files"] = (sum(1 for f in git("ls-tree", "-r", "--name-only", BASE, "lean/OAI/").split("\n") if f.endswith(".lean")),
-                      sum(1 for _ in (ROOT / "lean/OAI").rglob("*.lean")))
+                      sum(1 for _ in OAI_DIR.rglob("*.lean")))
     p["oai_imports"] = sum(1 for l in git("diff", BASE, UP, "--", "lean/OAI.lean").splitlines() if l.startswith("+import "))
     # Only files the diff *modifies*: the 1135 added paths ship whole new formalization trees whose
     # `noncomputable def` lines are not edits, and counting them reads 170 over 45 files.
@@ -200,7 +204,7 @@ def measure():
     p["noncomputable"] = (hits, sorted(files))
 
     _, fams_pre = overview_text(git("show", f"{BASE}:overview.tex"))
-    _, fams_post = overview_text((ROOT / "overview.tex").read_text(encoding="utf-8"))
+    _, fams_post = overview_text(read_text(OVERVIEW_TEX))
     changed = [f for f in fams_post if fams_pre[f] != fams_post[f]]
     p["resultentry_changed"] = changed
     p["path_only"] = [f for f in changed if fams_pre[f]["title"] == fams_post[f]["title"]
@@ -211,7 +215,7 @@ def measure():
                    "links_pre": len(fams_pre["032"]["tex_paps"]), "links_post": len(fams_post["032"]["tex_paps"])}
 
     p["config_fam"] = {}
-    for fam, d in bc.parse_docs().items():
+    for fam, d in cy.parse_docs().items():
         for cfg in d["configs"]:
             p["config_fam"][cfg] = fam
     p["owner"] = owner
@@ -267,13 +271,13 @@ def resolve_anchor(path, last_explicit, pool, problems, where):
 
 def check_page(name, text, _p, problems):
     lines = text.split("\n")
-    pool = [f"preprints/{d}/README.md" for d in sorted(x.name for x in (ROOT / "preprints").iterdir() if x.is_dir())]
-    pool += [f"lean/docs/{x.name}" for x in (ROOT / "lean/docs").glob("*.md")]
+    pool = [f"preprints/{d}/README.md" for d in sorted(x.name for x in PREPRINTS.iterdir() if x.is_dir())]
+    pool += [f"lean/docs/{x.name}" for x in DOCS_DIR.glob("*.md")]
     last_explicit = None
     anchors = []  # (para_start, relpath, start, end, source_text)
 
     def src(rel, a, b):
-        fl = (ROOT / rel).read_text(encoding="utf-8").split("\n")
+        fl = read_text(ROOT / rel).split("\n")
         return ws(" ".join(fl[a - 1:b])), len(fl)
 
     for kind, a, b in split_blocks(lines):
@@ -321,7 +325,7 @@ def check_page(name, text, _p, problems):
             if ws(" ".join(block)) not in text_src:
                 problems.append(f"{name}:{a + 1}: fenced block does not match {rel}:{start}")
     for m in SLUG.finditer(text):
-        if not (ROOT / "preprints" / m.group(1)).is_dir():
+        if not (PREPRINTS / m.group(1)).is_dir():
             problems.append(f"{name}: slug {m.group(1)!r} is not a preprints/ directory")
     return anchors
 
@@ -330,7 +334,7 @@ def check_page(name, text, _p, problems):
 
 def check_needles(_p, problems):
     def line(rel, n):
-        return (ROOT / rel).read_text(encoding="utf-8").split("\n")[n - 1]
+        return read_text(ROOT / rel).split("\n")[n - 1]
 
     for ln, decl in [(184, "representationEquivalence"), (208, "finiteRepresentationEquivalence")]:
         l = line("lean/OAI/CategoryTheory/Thomason/Representation.lean", ln)
@@ -452,7 +456,7 @@ def check_tables(name, text, p, problems):
     for l in rows:
         cells = [c.strip() for c in l.strip().strip("|").split("|")]
         fam, slug = cells[0], cells[1].strip("`")
-        if not (ROOT / "preprints" / slug).is_dir():
+        if not (PREPRINTS / slug).is_dir():
             problems.append(f"table: {slug!r} is not a preprints/ directory")
         if p["owner"].get(slug) != fam:
             problems.append(f"table: {slug} is listed under {p['owner'].get(slug)}, row says {fam}")
@@ -464,7 +468,7 @@ def check_tables(name, text, p, problems):
         if rel != f"preprints/{slug}/README.md":
             problems.append(f"table: row {fam} anchor path {rel} != its own directory")
             continue
-        note = (ROOT / rel).read_text(encoding="utf-8").split("\n")[int(ln) - 1]
+        note = read_text(ROOT / rel).split("\n")[int(ln) - 1]
         quote = ws(re.search(r'\*"([^"]*?)"\*', cells[2]).group(1))
         if quote not in ws(note):
             problems.append(f"table: row {fam} quotation is not on {rel}:{ln}")
@@ -484,8 +488,8 @@ def check_tables(name, text, p, problems):
 # ---------------------------------------------------------------- mutants
 
 def mutants(p):
-    base = (ROOT / PAGE_301).read_text(encoding="utf-8")
-    fd = (ROOT / PAGE_FD).read_text(encoding="utf-8")
+    base = read_text(ROOT / PAGE_301)
+    fd = read_text(ROOT / PAGE_FD)
     cases = [
         ("diff triple", PAGE_301, base.replace("**1135 files added, 31 deleted, 19 modified**",
                                                "**1134 files added, 31 deleted, 19 modified**"), "phrase absent from page"),
@@ -507,7 +511,7 @@ def mutants(p):
     ]
     fired = 0
     for label, page, text, needle in cases:
-        original = (ROOT / page).read_text(encoding="utf-8")
+        original = read_text(ROOT / page)
         if text == original:
             # A mutation whose search string is absent from the page is a silent no-op: the
             # mutant reports "MISSED" for the same reason a real fault goes unreported.
@@ -528,7 +532,7 @@ def main():
     p = measure()
     problems = []
     for name in PAGES:
-        text = (ROOT / name).read_text(encoding="utf-8")
+        text = read_text(ROOT / name)
         check_page(name, text, p, problems)
         check_counts(name, text, p, problems)
         check_tables(name, text, p, problems)

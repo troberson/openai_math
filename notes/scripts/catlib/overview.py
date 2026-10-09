@@ -53,13 +53,17 @@ def read_args(text: str, i: int) -> tuple[list[str], int]:
     return args, i
 
 
-def parse_overview() -> tuple[list[str], dict[str, dict[str, Any]]]:
-    """-> (families ordered, {fam: {discipline,title,abstract,paps_links}}).
+def parse_overview_text(text: str) -> tuple[list[str], dict[str, dict[str, Any]]]:
+    """-> (families ordered, {fam: {discipline,title,abstract,links}}) for a **string**.
+
+    The text-level core `parse_overview()` delegates to; `links` is the raw 4th brace group.
+    A checker that compares two revisions of the release parses both from a
+    `git show <rev>:overview.tex` string, so the traversal must not be disk-bound; the disk
+    read lives in the wrapper.
 
     Read this, never a `[^{}]*` regex over the entries: the abstracts contain braces, so a
     brace-free group silently drops the math-heavy families.
     """
-    text = read_text(OVERVIEW_TEX)
     start = text.index("\\begin{document}")
     discipline = None
     fams: dict[str, dict[str, Any]] = {}
@@ -80,9 +84,17 @@ def parse_overview() -> tuple[list[str], dict[str, dict[str, Any]]]:
             "discipline": discipline,
             "title": title.strip(),
             "abstract": abstract.strip(),
-            "tex_paps": re.findall(PAP, links),
+            "links": links,
         }
         order.append(fam)
+    return order, fams
+
+
+def parse_overview() -> tuple[list[str], dict[str, dict[str, Any]]]:
+    """-> (families ordered, {fam: {discipline,title,abstract,tex_paps}}) from disk."""
+    order, fams = parse_overview_text(read_text(OVERVIEW_TEX))
+    for entry in fams.values():
+        entry["tex_paps"] = re.findall(PAP, entry.pop("links"))
     return order, fams
 
 

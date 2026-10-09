@@ -37,12 +37,20 @@ SCOPE_SPAN = re.compile(r"^## Scope\n(.*?)(?=^## |\Z)", re.M | re.S)
 TRACE_ROW = re.compile(r"^\|\s*(\d{3})\s*\|\s*\[[^\]]*\]\(reasoning_traces/([^)]+?)\.(?:pdf|tex)\)", re.M)
 
 
-def parse_yaml() -> tuple[set[str], Counter]:
-    """-> (set of formalized manuscript paths, {config stem: count of main_results entries})."""
-    text = read_text(FORMALIZATION_YAML)
+def parse_yaml_text(text: str) -> tuple[set[str], Counter]:
+    """-> (set of formalized manuscript paths, {config stem: entry count}) for a **string**.
+
+    The text-level core `parse_yaml()` delegates to; a checker that compares two revisions of
+    the release reads both from a `git show <rev>:lean/formalization.yaml` string.
+    """
     sources = set(SOURCE_ID.findall(text))
     main = Counter(CONFIG_KEY.findall(text))
     return sources, main
+
+
+def parse_yaml() -> tuple[set[str], Counter]:
+    """-> (set of formalized manuscript paths, {config stem: count of main_results entries})."""
+    return parse_yaml_text(read_text(FORMALIZATION_YAML))
 
 
 def main_results_entries() -> list[dict[str, Any]]:
