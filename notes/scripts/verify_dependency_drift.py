@@ -17,7 +17,7 @@ Report-only; writes nothing. Four passes:
    list the page prints must equal the computed set.
 
 `lean/OAI/**/*.lean` is never scanned here: import counts are read from the TSV, which
-`extract_formalization_deps.py` measured. The 121,734-file figure is reconciled against
+`extract_formalization_deps.py` measured. The 122,458-file figure is reconciled against
 `notes/formalization-deps.md`, which records it.
 """
 import csv
@@ -371,20 +371,27 @@ def check(text):
     if singletons:
         want("singleton from-versions", f"and one each of")
     for name, needle in [("largest patch", "PrimeNumberTheoremAnd at 39,904 lines"),
-                         ("mathlib imports", "mathlib at 56,196"),
+                         ("mathlib imports", "mathlib at 56,416"),
                          ("largest unused patch", "AINTLIB at 23,288 lines"),
-                         ("source files", "121,734-file"),
+                         ("source files", "122,458-file"),
                          ("patch lines per source file", "1.3 lines of patch")]:
         want(name, needle)
 
     # 4b. figures the page takes from the deps record, not from these files
     depsmd = norm(read(DEPSMD))
-    for needle in ["121,734", "56,196"]:
+    for needle in ["122,458", "56,416"]:
         if needle not in depsmd:
             problems.append(f"deps record does not record {needle}")
 
-    # 4c. arithmetic the page asserts
-    ratio = round(m["total_lines"] / 121734, 1)
+    # 4c. arithmetic the page asserts — the denominator is read from the deps record,
+    # so a re-measured source-file count moves the bar instead of desyncing from it.
+    m_src = re.search(r"OAI/\*\*/\*\.lean` \((\d[\d,]*) files\)", depsmd)
+    if not m_src:
+        problems.append("PROBLEM deps record does not state its source-file count")
+        src_files = 0
+    else:
+        src_files = int(m_src.group(1).replace(",", ""))
+    ratio = round(m["total_lines"] / src_files, 1) if src_files else -1
     if f"{ratio} lines of patch" not in flat:
         problems.append(f"patch-per-source ratio is {ratio}, page says otherwise")
 

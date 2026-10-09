@@ -246,9 +246,9 @@ not survive a re-run.
 | S24 | [`notes/topics.md`](topics.md) | 327 | The curated topic vocabulary and its per-layer counts |
 | S25 | [`notes/subfinding-pairs.md`](subfinding-pairs.md) | 623 | The abstract-clause to display-title pairing, 49 families |
 | S26 | [`notes/sources.md`](sources.md) | 144 | The per-manuscript LaTeX surface: roots, main files, environments |
-| S27 | [`notes/index-links.md`](index-links.md) | 179 | The rendered index link check |
+| S27 | [`notes/index-links.md`](index-links.md) | 203 | The rendered index link check |
 | S28 | [`notes/dependency-drift.md`](dependency-drift.md) | 221 | Pinned commits, patches, toolchain normalisation |
-| S29 | [`notes/formalization-deps.md`](formalization-deps.md) | 175 | The upstream library graph and import counts |
+| S29 | [`notes/formalization-deps.md`](formalization-deps.md) | 179 | The upstream library graph and import counts |
 | S30 | [`notes/conjecture-standing.tsv`](conjecture-standing.tsv) | 140 | The 139-row prior as data |
 | S31 | [`notes/conjecture-standing.md`](conjecture-standing.md) | 130 | The prior table, its limits, and the row-145 contradiction |
 

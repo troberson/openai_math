@@ -11,7 +11,7 @@ buildable pin. The generator report is the test; quote a number below with the r
 |---|---|---|
 | `lean/lakefile.lean` | `require … from git "url" @ "commit"` | **30** declarations, every one pinned to a **40-char** commit |
 | `lean/formalization.yaml` | `related_formalizations:` → `id:` + `relationship:` | **30** entries, all `relationship: builds-on` |
-| `lean/OAI/**/*.lean` | `import` statements | **276,599** OAI-rooted, **56,196** Mathlib-rooted, **3** `all`-prefixed |
+| `lean/OAI/**/*.lean` | `import` statements | **277,607** OAI-rooted, **56,416** Mathlib-rooted, **3** `all`-prefixed |
 | `lean/patches/` | `*-lean4341.patch` | **23** patches, **160,187** lines (plus `README.md`) |
 
 The 30 lakefile declarations and the 30 yaml entries cross-match exactly — 30 declared in both
@@ -52,13 +52,17 @@ Root = the first dotted token after `^\s*import\s+`. `import all Mathlib` is roo
 Mathlib, so it contributes 3 to `all` and 0 to Mathlib. Comments are not stripped; stripping `--` and
 `/- -/` changes no count, because no import statement is commented out.
 
-The counts above are over **`lean/OAI/**/*.lean` (121,734 files)**, which is what the acceptance line
-reproduces. Over the whole tree `lean/**/*.lean` (122,141 files) the same rule yields **OAI 277,501 /
-Mathlib 56,715** — the difference is `lean/ComparatorChallenges/`, whose 405 files import Mathlib
-**519** times and import OAI **zero** times. Quote the scope with the number.
+The counts above are over **`lean/OAI/**/*.lean` (122,458 files)**, which is what the acceptance line
+reproduces. Over the whole tree `lean/**/*.lean` (122,876 files) the same rule yields **OAI 278,523 /
+Mathlib 56,944** — the additions are `lean/OAI.lean`, the top-level module file whose 913
+`import OAI.…` statements sit outside the `OAI/` glob, and `lean/ComparatorChallenges/`, whose 416
+files import Mathlib **528** times and import OAI **3** times, those 3 statements sitting in 2 files
+(`CartierChartCompactnessSupport.lean:1-2`, `CharacterVarietiesAllSeamsSupport.lean:1`). The 418-file
+gap between the two scopes is those two trees plus `lean/OAI.lean` and `lean/lakefile.lean`, the
+latter importing `Lake` once. Quote the scope with the number.
 
 Upstream sources are **not vendored** (there is no `lean/.lake`), so import roots are the only
-in-repo evidence that a library is used. There are **12 external import roots** carrying **56,482**
+in-repo evidence that a library is used. There are **12 external import roots** carrying **56,702**
 import statements; 11 are aliased to a declared URL, 1 is not.
 
 ## The join key is a trap
@@ -107,10 +111,10 @@ that OAI pins and never imports.
 `orbicurve-cores`, `pi1`, `tate-curves-theta`, `tempered-fundamental-groups` — recorded with
 `direct_imports=0`, not dropped.
 
-Only **12 of 31** rows have any direct import: mathlib 56,196, then PrimeNumberTheoremAnd 244,
+Only **12 of 31** rows have any direct import: mathlib 56,416, then PrimeNumberTheoremAnd 244,
 StrongPNT 12, rellich-kondrachov 9, TauCeti 5, ClassFieldTheory 4, fixed-point-theorems 4,
 SphereEversion 2, gromov 2, schoenflies-lean 2, AbsorptionCutoff 1, BernoulliRegular 1. Mathlib is
-56,196 of the 56,482 external statements — **99.5%** — so the OAI tree is a Mathlib project with a
+56,416 of the 56,702 external statements — **99.5%** — so the OAI tree is a Mathlib project with a
 thin layer of specialist libraries on top.
 
 **7 declared libraries ship no patch**: mathlib, TauCeti, LeanArchitect, PrimeCert, checkdecls,
@@ -133,8 +137,8 @@ Where it comes from is recoverable from the patches: `lean/patches/AINTLIB-lean4
 `projects/FltRegularBernoulli/BernoulliRegular/BernoulliGeneralized.lean` (patch line 4055),
 `Characters.lean` (4131), `GaussSum/Basic.lean` (4165), and
 `GaussSum/SignInvariant/BlockDeterminant.lean` (4287). So **BernoulliRegular ships inside the AINTLIB
-repo** as one project in a multi-project tree — the same patch touches 158 files, of which
-`projects/HasseWeil` (118), `projects/DedekindResidue` (15), `projects/Chebotarev` (14), and
+repo** as one project in a multi-project tree — the same patch touches 127 files, of which
+`projects/HasseWeil` (89), `projects/Chebotarev` (14), `projects/DedekindResidue` (13), and
 `projects/FltRegularBernoulli` (9), plus `lakefile.toml` and `lean-toolchain`. The patch's
 `lakefile.toml` hunk shows AINTLIB declaring `[[lean_lib]]` blocks with globs such as
 `CebotarevDensity`, which is the mechanism by which a project inside a dependency becomes a top-level

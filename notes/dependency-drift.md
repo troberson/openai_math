@@ -27,7 +27,7 @@ hunks move 8 distinct upstream versions onto the release's own: `v4.32.0` ×13, 
 each of `v4.18.0`, `v4.21.0`, `v4.29.0`, `v4.32.2`, `v4.33.0-rc2`, `v4.34.0-rc2`. The single patch
 with no toolchain hunk is `rellich-kondrachov-lean4341.patch`.
 
-**What that implies.** A 121,734-file agent-generated Lean tree does not sit on the published
+**What that implies.** A 122,458-file agent-generated Lean tree does not sit on the published
 ecosystem. It sits on 30 pinned commits plus 160,187 lines of release-specific edits to 23 of them,
 22 of which have had their toolchain rewritten to match. The compatibility layer is 1.3 lines of patch
 per source file in the tree it supports. Upstream is consumed as a starting point, not as a dependency.
@@ -159,7 +159,7 @@ libraries with a patch, ordered by patch lines.
 
 Median patch lines: **2,575** for declared libraries with any direct import, **408** for declared
 libraries with none. The largest patch in the release, PrimeNumberTheoremAnd at 39,904 lines, sits
-beside the largest import count, mathlib at 56,196 — and mathlib itself ships **no** patch. The
+beside the largest import count, mathlib at 56,416 — and mathlib itself ships **no** patch. The
 largest patch on a library OAI never imports directly is AINTLIB at 23,288 lines.
 
 **What that implies.** Patch volume is a measure of how far a library has drifted from the release's
