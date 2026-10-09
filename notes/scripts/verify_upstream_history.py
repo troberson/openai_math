@@ -61,7 +61,10 @@ PRE = "9b68bc538"  # our last pre-merge commit: the "Before" column of the ledge
 ANCHOR = re.compile(r"`([^`\n]*?)?:([0-9]+)(?:-([0-9]+))?`")
 QUOTE = re.compile(r'\*"([^"]*?)"\*', re.S)
 LINK = re.compile(r"\]\(([^)\s]+)\)")
-SLUG = re.compile(r"`([A-Za-z0-9][A-Za-z0-9-]*-(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)-\d{1,2}-\d{4})/`")
+# Full month names, not abbreviations: the release writes September/October in every slug (576 and
+# 172 of the 749 preprints/ dirs), so an `Oct` alternation matches nothing. The trailing slash is
+# optional because no page writes one.
+SLUG = re.compile(r"`([A-Za-z0-9][A-Za-z0-9-]*-(?:January|February|March|April|May|June|July|August|September|October|November|December)-\d{1,2}-\d{4})/?`")
 # Citation-only = the note says only that citations were updated. The Exact BSD note ("removes an
 # obsolete supporting citation and updates citations…") is a repair: history.md lists it under Fixes.
 CITATION_ONLY = re.compile(r"^This version updates (?:a citation to a revised manuscript|citations to revised manuscripts)")
@@ -502,6 +505,10 @@ def mutants(p):
         ("anchor shift", PAGE_301, base.replace("`history.md:19`", "`history.md:18`"), "not verbatim in its anchored lines"),
         ("dead path", PAGE_301, base.replace("preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/README.md:21",
                                              "preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-8-2026/README.md:21"), "is not a file"),
+        # The needle ": slug '" is the SLUG pass only; the table pass reports the same fact as
+        # "table: '…' is not a preprints/ directory", so a shared needle cannot tell them apart.
+        ("slug rename", PAGE_301, base.replace("`Taming-implies-compatibility-on-four-manifolds-October-6-2026`",
+                                               "`Taming-implies-compatibility-on-four-manifolds-October-5-2026`"), ": slug '"),
         ("tier list", PAGE_301, base.replace("for 027 066 075 103 137 195 301", "for 027 066 075 103 137 301"), "phrase absent from page"),
         ("config name", PAGE_301, base.replace("`FourierLLogL`", "`FourierLLogL2`"), "new configs"),
         ("count phrase", PAGE_301, base.replace("**749** directories", "**748** directories"), "phrase absent from page"),
@@ -531,8 +538,10 @@ def main():
     mutant = "--mutant" in sys.argv
     p = measure()
     problems = []
+    slug_hits = 0
     for name in PAGES:
         text = read_text(ROOT / name)
+        slug_hits += len(SLUG.findall(text))
         check_page(name, text, p, problems)
         check_counts(name, text, p, problems)
         check_tables(name, text, p, problems)
@@ -565,6 +574,11 @@ def main():
     print()
     print("== checks ==")
     print(f"pages checked: {len(PAGES)}")
+    # A needle that matches nothing is vacuous, and a green report is exactly how that stayed hidden:
+    # the SLUG pass reported 0 problems while checking 0 tokens. Say so when the count is 0.
+    print(f"slug tokens checked: {slug_hits}")
+    if slug_hits == 0:
+        problems.append("SLUG matched no token on any page: the needle is vacuous, not passing")
     print(f"problems: {len(problems)}")
     for x in problems:
         print(f"  ! {x}")
