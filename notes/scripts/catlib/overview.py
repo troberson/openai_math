@@ -104,6 +104,22 @@ def parse_contents() -> dict[str, list[str]]:
     return paps
 
 
+def resultentry_lines() -> dict[str, tuple[int, str]]:
+    """{fam: (1-based line, that line's text)} — the anchor plus the text it cites.
+
+    The form a checker needs when it checks a quotation against the cited line, not just the
+    line number. Same rule as overview_lines(): first line containing `\\resultentry{NNN}`,
+    which skips the `\\newcommand` definitions at lines 28 and 35.
+    """
+    out: dict[str, tuple[int, str]] = {}
+    entry = re.compile(r"\\resultentry\{(\d{3})\}")
+    for n, line in enumerate(read_text(OVERVIEW_TEX).splitlines(), 1):
+        m = entry.search(line)
+        if m and m.group(1) not in out:
+            out[m.group(1)] = (n, line)
+    return out
+
+
 def overview_lines() -> dict[str, int]:
     """{fam: 1-based line of its \\resultentry}, the anchor every citation to the release uses.
 
@@ -112,13 +128,7 @@ def overview_lines() -> dict[str, int]:
     lines below it, not against the line it ends on. Rule: first line containing
     `\\resultentry{NNN}`, which skips the `\\newcommand` definitions at lines 28 and 35.
     """
-    out: dict[str, int] = {}
-    entry = re.compile(r"\\resultentry\{(\d{3})\}")
-    for n, line in enumerate(read_text(OVERVIEW_TEX).splitlines(), 1):
-        m = entry.search(line)
-        if m and m.group(1) not in out:
-            out[m.group(1)] = n
-    return out
+    return {fam: n for fam, (n, _) in resultentry_lines().items()}
 
 
 def resultentry_link_fields() -> dict[str, str]:
