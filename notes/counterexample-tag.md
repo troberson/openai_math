@@ -104,7 +104,7 @@ abstract-only scope never reads.
 | 126 | T2 | B | Exponential semidefinite complexity of perfect matching | answering Rothvoss's … negatively | counterexample — every exact semidefinite lift is exponential |
 | 132 | T3 | N | A counterexample to the quadratic sensitivity conjecture | disprov | counterexample — total Boolean functions with $\mathrm{bs}(f)\ge s(f)^\alpha$, $\alpha>2$ |
 | 156 | T3 | N | Borsuk's conjecture fails in dimension nine | disprov | counterexample — compact set in $\mathbb R^9$ needing ten smaller-diameter sets |
-| 195 | T0 | N | A counterexample to the small Cohen--Macaulay module conjecture | disprov | counterexample — 3-dimensional complete local domain over $\mathbb C$ |
+| 195 | T3 | N | A counterexample to the small Cohen--Macaulay module conjecture | disprov | counterexample — 3-dimensional complete local domain over $\mathbb C$ |
 | 196 | T3 | N | A counterexample to Kaplansky's zero-divisor conjecture | disprov | counterexample — torsion-free group with zero divisors in $\mathbb F_2[G]$ |
 | 201 | T0 | K | A counterexample to Kurosh's division-ring problem | answers … negatively | counterexample — countable division ring algebraic over its center |
 | 206 | T2 | O | Finite lattice representation: counterexamples and undecidability | answering … negatively | counterexample in kind, qualified — the family also carries undecidability |
@@ -134,16 +134,16 @@ Widening `SHAPES["counterexample"]` from 44 to 74 moves families between the T0 
 
 | Bucket | now | widened |
 |---|---|---|
-| C counterexample | 16 | 22 |
-| R resolution | 50 | 49 |
-| B bound | 29 | 27 |
+| C counterexample | 16 | 21 |
+| R resolution | 46 | 45 |
+| B bound | 27 | 25 |
 | K classification | 8 | 6 |
 | U uniform | 12 | 12 |
 | O other | 2 | 2 |
-| N untagged | 20 | 19 |
+| N untagged | 19 | 19 |
 
-Six T0 families move, all into C: 004 (from R), 048 (from K), 195 (from N), 201 (from K), 259 (from
-B), 284 (from B). Every recorded bucket count in `notes/t0-triage.md` would stop matching.
+Five T0 families move, all into C: 004 (from R), 048 (from K), 201 (from K), 259 (from B), 284 (from
+B). Every recorded bucket count in `notes/t0-triage.md` would stop matching.
 
 The decisive number: **0 of the 30 flag-only families sit in bucket C** (they are N 14, B 10, R 2,
 K 2, O 2). First match hides every one of them, so the widening is a re-assignment of the reading
@@ -153,20 +153,22 @@ order, not a discovery.
 
 `notes/scripts/build_catalog.py` now writes a 22nd column, **`counterex_broad`**, carrying the phrase
 rule. `SHAPES["counterexample"]` is unchanged, so the shape table stays at 44 and the first-match
-buckets are untouched — re-run after the change, they are C 16, R 50, B 29, K 8, U 12, O 2, N 20 over
-137 families / 255 manuscripts / 0 formalized, identical to the record in `notes/t0-triage.md`.
+buckets are untouched — re-run after the change, they are C 16, R 46, B 27, K 8, U 12, O 2, N 19 over
+130 families / 244 manuscripts / 0 formalized, identical to the record in `notes/t0-triage.md`.
 
 Fresh generator report: **`counterex_broad` 74 of 372 families, `counterexample` tag 44, tag-only 0,
-flag-only 30.** By tier T3 33, T2 19, T1 0, T0 22; 120 manuscripts behind the flagged families.
+flag-only 30.** By tier T3 35, T2 18, T1 0, T0 21; 120 manuscripts behind the flagged families.
 Unlike `resolves_named`, this column **is** a strict superset of its tag (tag-only 0), so the two
 counts are directly comparable: the tag is the floor, the column is the wider floor.
 
 Additivity evidence, all from the run that produced this file: regeneration twice is byte-identical;
 the column-by-column diff against `HEAD` shows added `['counterex_broad']`, removed `[]`, **0
 differences in pre-existing columns** across 372 rows; the reconciliation lines are unchanged (372
-families, 722 manuscripts, 162 formalized, 405 challenges, 185 `main_results` entries over 178
-configs, 235 scope notes, both `overview.tex` ↔ `CONTENTS.md` cross-checks 0); the column
-discriminates (74 ones, 298 zeros, no blanks, differs from the tag in 30 rows).
+families, 719 manuscripts, 173 formalized, 416 challenges, 200 `main_results` entries over 189
+configs, 242 scope notes, both `overview.tex` ↔ `CONTENTS.md` cross-checks 0 — the 2026-10-09 report;
+the 2026-10-07 run read 722 manuscripts, 162 formalized, 405 challenges, 185 entries over 178 configs,
+235 scope notes); the column discriminates (74 ones, 298 zeros, no blanks, differs from the tag in 30
+rows).
 
 ### Rejected: the named-target conjunction
 
@@ -180,8 +182,8 @@ It is a narrower, differently-shaped signal; not adopted.
 
 27 of the 30 flag-only families also carry `resolves_named = 1` — 25 under the abstract-only scope the
 `resolves_named` swap replaced — and 37 of the 41 manuscripts behind them sit in those 27.
-By tier the flag-only set is T0 6, T2 9, T3 15; by bucket N 14, B 10, R 2, K 2, O 2. Inside T0 the
-column flags 22 of 137 families, of which 16 are in bucket C and 6 are not — the six are exactly the
+By tier the flag-only set is T0 5, T2 9, T3 16; by bucket N 14, B 10, R 2, K 2, O 2. Inside T0 the
+column flags 21 of 130 families, of which 16 are in bucket C and 5 are not — the five are exactly the
 families the widening would have moved, which is the argument for the column: the signal is available
 to readers without re-cutting the reading order.
 

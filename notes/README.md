@@ -7,9 +7,13 @@ Regenerate the ledger (a few seconds, no Lean):
 
 ```sh
 python3 notes/scripts/build_catalog.py      # writes notes/catalog.tsv and prints the report
-python3 notes/scripts/triage_t0.py          # buckets the 137 T0 families by claim shape
+python3 notes/scripts/triage_t0.py          # buckets the 130 T0 families by claim shape
 python3 notes/scripts/verify_summaries.py   # checks every citation in notes/summaries/ against the files it names
 python3 notes/scripts/verify_summaries.py --mutant  # same, plus the injected-fault self-test
+python3 notes/scripts/check_summary_manuscripts.py  # which manuscripts each summaries page reads, and whether the release still names them; report-only
+python3 notes/scripts/locate_summary_quotes.py <page.md> [page.md ...]  # where a quotation's text actually sits, when verify_summaries.py reports a miss; report-only
+python3 notes/scripts/refresh_summary_line_counts.py  # rewrites the Lines column of the Sources table in every summaries page
+python3 notes/scripts/read_manuscript.py <preprints-dir>  # prints a manuscript's abstract, section skeleton and titled statement environments with file:line anchors (--limit N, --all, --sections-only)
 python3 notes/scripts/verify_conjecture_standing.py  # checks notes/conjecture-standing.tsv against the ledger and overview.tex
 python3 notes/scripts/extract_formalization_deps.py  # writes notes/formalization-deps.tsv and prints the reconciliation
 python3 notes/scripts/verify_dependency_drift.py --mutant  # checks notes/dependency-drift.md: anchors, blockquotes, code spans, the patch table, every count
@@ -63,7 +67,7 @@ the batch-boundary gates, stop and escalate rules, and the append-only decision-
 ## Standing rules
 
 1. **No Lean execution.** `lake`, `lean`, and `comparator` are not run for these notes — a full
-   build of the 25.9M-line `OAI/` library is hours on a desktop. Everything here comes from
+   build of the 26,060,031-line `OAI/` library is hours on a desktop. Everything here comes from
    static reading of the text metadata that ships in the repo.
 2. **Source-level facts stay labeled source-level.** A ledger column records what a file says,
    not what has been checked. `formalization.yaml` states `review: status: unchecked` and

@@ -28,11 +28,11 @@ Flag a family when its abstract contains **both**
   `establis` | `confirm` | `fail` | `violat` | `counterexample`.
 
 Measured on all 372 abstracts: **233 families flagged, 94 of them untagged today** (144 → 233,
-+65%). By tier: T0 37, T3 36, T2 21. By discipline the flags spread over all 17 (max algebraic and
++65%). By tier: T0 35, T3 39, T2 20. By discipline the flags spread over all 17 (max algebraic and
 complex geometry 16, group theory 9, differential geometry 9, combinatorics 8, topology 8).
 
 The column as applied reads the overview **title and abstract lowered together** and flags **248**
-(T0 91, T2 62, T3 95), so the column-only set is **109**, not 94. The 15 title-scope additions are
+(T0 86, T2 61, T3 101), so the column-only set is **109**, not 94. The 15 title-scope additions are
 corroborated at the manuscript-abstract layer in `notes/named-results.md`; they were **not read
 here**, so the precision figure below is measured on the 94 abstract-only flags and says nothing
 about the extra 15.
@@ -90,7 +90,7 @@ genuine) and the same shape as `counterexample` (30 untagged flags, 30 genuine �
 | 057 | T0 | Campana's abelianity conjecture and special varietie | verb not in pattern | `Prove` | resolution |
 | 059 | T0 | Counterexamples to Zariski's multiplicity conjecture | disproves / disprove-form | `Disprov` | resolution |
 | 060 | T0 | The Global Spherical Shell conjecture | prove-form other than 'proves the' | `proving` | resolution |
-| 066 | T0 | Bounded klt complements for Fano contractions | proves <Name>'s … (no 'the') | `Prove` | resolution |
+| 066 | T3 | Bounded klt complements for Fano contractions | proves <Name>'s … (no 'the') | `Prove` | resolution |
 | 072 | T3 | Brennan's conjecture and a counterexample to Kraetze | disproves / disprove-form | `Prove` | resolution |
 | 076 | T3 | Ultraflat real Littlewood polynomials | disproves / disprove-form | `disprov` | resolution |
 | 080 | T0 | The Sobolev endpoint in Carleson's Schr\"odinger con | proves <Name>'s … (no 'the') | `Prove` | partial — resolves the sharp endpoint case, not the whole problem |
@@ -107,14 +107,14 @@ genuine) and the same shape as `counterexample` (30 untagged flags, 30 genuine �
 | 132 | T3 | A counterexample to the quadratic sensitivity conjec | disproves / disprove-form | `disprov` | resolution |
 | 146 | T2 | Sinai's positive-entropy conjecture for the standard | verb not in pattern | `Prove` | resolution |
 | 155 | T3 | A counterexample to periodic tiling in dimension thr | disproves / disprove-form | `disprov` | resolution |
-| 157 | T2 | Counterexamples to the Hadwiger and Colin de Verdi\` | disproves / disprove-form | `Disprov` | resolution |
+| 157 | T3 | Counterexamples to the Hadwiger and Colin de Verdi\` | disproves / disprove-form | `Disprov` | resolution |
 | 158 | T3 | The Euclidean plane cannot be colored with five colo | proves <Name>'s … (no 'the') | `Prove` | partial — narrows the range (rules out 5), does not settle the chromatic number |
 | 159 | T2 | Erd\H{o}s's reciprocal-sum conjecture and quasipolyn | proves <Name>'s … (no 'the') | `Prove` | resolution |
 | 162 | T3 | Counterexamples to Ryser's covering and Gy\'arf\'as' | disproves / disprove-form | `Disprov` | resolution |
 | 164 | T0 | Hindman's finite sums and products conjecture | proves <Name>'s … (no 'the') | `Prove` | resolution |
 | 173 | T3 | Seymour's second-neighborhood conjecture | proves <Name>'s … (no 'the') | `Prove` | resolution |
 | 185 | T3 | Counterexamples to infinite matroid intersection and | disproves / disprove-form | `Disprov` | resolution |
-| 195 | T0 | A counterexample to the small Cohen--Macaulay module | disproves / disprove-form | `disprov` | resolution |
+| 195 | T3 | A counterexample to the small Cohen--Macaulay module | disproves / disprove-form | `disprov` | resolution |
 | 196 | T3 | A counterexample to Kaplansky's zero-divisor conject | disproves / disprove-form | `disprov` | resolution |
 | 197 | T3 | Nonsofic groups and group-ring counterexamples | disproves / disprove-form | `disprov` | resolution |
 | 201 | T0 | A counterexample to Kurosh's division-ring problem | verb not in pattern | `answer` | resolution |
@@ -173,7 +173,7 @@ file measured); the T0 bucket counts in `notes/scripts/triage_t0.py`, which assi
 buckets by **first match** in the order resolution, counterexample, bound, classification,
 undecidability, density, conditional, partial, uniform — 29 of the 94 flags are counterexample-form
 ("disproves X's conjecture"), and those families are already in the C bucket, so widening moves
-families out of C, B, K, U, N into R. The 137/255 T0 totals and every coverage layer are unaffected;
+families out of C, B, K, U, N into R. The 130/244 T0 totals and every coverage layer are unaffected;
 `conditional` is unaffected.
 
 ## Decision (2026-10-07): a separate column, not a widened tag
@@ -181,7 +181,7 @@ families out of C, B, K, U, N into R. The 137/255 T0 totals and every coverage l
 `notes/scripts/build_catalog.py` now writes a 20th column, **`resolves_named`**, carrying the
 candidate rule. The `resolution` entry in `SHAPES` is unchanged, so the shape table stays at 144 and
 the first-match buckets in `triage_t0.py` are untouched — re-run after the change, the buckets are
-C 16, R 50, B 29, K 8, U 12, O 2, N 20 over 137 families / 255 manuscripts / 0 formalized, identical
+C 16, R 46, B 27, K 8, U 12, O 2, N 19 over 130 families / 244 manuscripts / 0 formalized, identical
 to the record in `notes/t0-triage.md`.
 
 ```python
@@ -194,8 +194,8 @@ RESOLVE_VERB = (r"\bprov(?:e|es|ed|ing)\b|\bdisprov|\brefut|\bresolv|\banswer|\b
 the "proved" inside it, which is the `bound` tag's own territory.
 
 Fresh generator report: **`resolves_named` 248 families, `resolution` tag 144, union 253.** By tier
-T3 95, T2 62, T1 0, T0 91. Under the abstract-only scope the same report read 233 families, union
-238, by tier T3 88, T2 57, T1 0, T0 88. The column is **not a superset** of the tag:
+T3 101, T2 61, T1 0, T0 86. Under the abstract-only scope the same report read 233 families, union
+238, by tier T3 94, T2 56, T1 0, T0 83. The column is **not a superset** of the tag:
 
 | | Families |
 |---|---|
@@ -222,26 +222,26 @@ also catch "under the hypothesis" phrasing that the `conditional` tag already ow
 
 ### What the column adds inside T0
 
-T0 has no coverage signal, so `shapes` was its only discriminator. The column is a second one: **91 of
-the 137 T0 families are flagged, 46 are not** (88 / 49 under the abstract-only scope). Cross-tabbed
+T0 has no coverage signal, so `shapes` was its only discriminator. The column is a second one: **86 of
+the 130 T0 families are flagged, 44 are not** (83 / 47 under the abstract-only scope). Cross-tabbed
 against the first-match buckets (`triage_t0.py`, bucket: column=1 / column=0):
 
 | Bucket | 1 / 0 | Reading |
 |---|---|---|
 | C counterexample | 13 / 3 | disprove-form resolutions, already the cheapest T0 checks |
-| R resolution | 48 / 2 | the 2 column-negatives are 010 and 103, both tag-only |
-| B bound | 7 / 22 | |
+| R resolution | 45 / 1 | the column-negative is 010, a tag-only family |
+| B bound | 6 / 21 | |
 | K classification | 4 / 4 | |
 | U uniform | 5 / 7 | |
 | O other | 2 / 0 | |
-| N untagged | 12 / 8 | **the payoff** |
+| N untagged | 11 / 8 | **the payoff** |
 
-43 flagged T0 families (60 manuscripts) sit outside bucket R — first match assigns them elsewhere, so
+41 flagged T0 families (57 manuscripts) sit outside bucket R — first match assigns them elsewhere, so
 the bucket table alone never shows them as named-target resolutions.
 
 The N bucket is described in `notes/t0-triage.md` as "no shape tag at all — title is the only signal".
-Half of it is now not title-only; all 12 are named-conjecture families: 019, 031, 043, 051, 060, 164,
-195, 258, 306, 316, 338, 341. Those are the T0 families where the abstract names a conjecture and the
+Most of it is now not title-only; all 11 are named-conjecture families: 019, 031, 043, 051, 060, 164,
+258, 306, 316, 338, 341. Those are the T0 families where the abstract names a conjecture and the
 `resolution` pattern matched none of its verbs, which is exactly the miss this file measures.
 
 ## Not checked

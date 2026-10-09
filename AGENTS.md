@@ -256,7 +256,7 @@ lives in this file and nowhere else.
   so quote the unit with the number. See `notes/abstracts.md`.
 - Extract the named-result inventory the manuscript **statements** carry with
   `python3 notes/scripts/extract_named_results.py` — report-only, writes nothing; run it twice and diff,
-  the 185-line report is byte-identical. Headline statements are `theorem`/`maintheorem`/`thm` begins:
+  the 186-line report is byte-identical. Headline statements are `theorem`/`maintheorem`/`thm` begins:
   2,410 begins, **1,609 titled per line** (a whole-text scan reads 1,619 because 10 titles span a
   newline). **Zero of the 17 target-named headline titles pair a target noun with a resolve verb** — the
   release names conjectures in manuscript names, abstracts and prose, and in the overview **title**, not
@@ -265,8 +265,9 @@ lives in this file and nowhere else.
   overview titles: the ledger rule sees lowercase abstracts, and a case-sensitive match on those
   capitalized surfaces undercounts. The applied scope is a **union** — title ∪ abstract, both lowered
   together, 233 → 248 with removals 0; the 15 additions are 022 039 044 096 097 151 156 192 209 263
-  289 293 297 347 367. A strict title+abstract *replacement* reads 149 (99 removals) and a
-  case-sensitive raw-title read yields 147 (100 removals) — quote which scope you mean.
+  289 293 297 347 367. A strict title+abstract *replacement* — both regexes on the raw concatenation —
+  reads 149 (94 removals, 10 additions) and a case-sensitive raw-title read (target noun in the title,
+  verb in the lowered pair) yields 148 (100 removals, 15 additions) — quote which scope you mean.
   Findings: `notes/named-results.md`.
 - `notes/sources.tsv`'s `abstract` column is a per-directory **flag**, not an occurrence count: the
   corpus ships 722 `abstract` environments over 719 manuscript directories (057, 039 and 056 each ship
@@ -468,6 +469,53 @@ lives in this file and nowhere else.
   union == the 23 patched libraries; 19 zero-import with 14 patched and 5 not; medians 2,575 (any
   import) vs 408 (none). Run it twice and diff — the report must be identical. It writes nothing and
   never scans `lean/OAI/**/*.lean`; import counts come from the TSV.
+- Check `notes/citations.md` with `python3 notes/scripts/verify_citations.py --mutant` before quoting
+  any of its counts — it re-derives the shared-bibliography population from `preprints/**/*.bib`
+  through `extract_citations.py`'s primitives (the fresh run measures 521 `.bib` files, 513 owner
+  manuscripts, 13,802 entries, 8,775 distinct works, 2,251 shared works, 3,668 pairs with ≥1 shared
+  work), requires each work-table row's manuscript count to equal the measured owning set and its
+  quoted title to be the most frequent verbatim form for its normalized title at the anchor line,
+  matches every fenced block against its nearest preceding anchor, re-measures the population,
+  cited-key, work-layer, pair-layer, discipline-crossing, cluster, release-layer, coverage and
+  sensitivity numbers, requires the discipline-crossing list, the ≥5 cluster table and the
+  release-target table to be complete in both directions (no measured row missing, no page row
+  unmeasured), and flags nine injected mutants. It writes nothing.
+- Check `notes/findings.md` with `python3 notes/scripts/verify_findings.py --mutant` before quoting
+  any of its counts — five passes: sources (the Sources table names files that exist, declares the
+  line count they have, every row is cited, and the body's `[Sn]` markers are contiguous and in
+  first-use order), quotations (a quotation adjacent to a line anchor must appear, markup aside, on
+  the lines it cites — an anchor proves a line exists, it proves nothing about text), ledger (every
+  row rebuilt by importing `build_catalog`'s parse functions; `main()` is never called because it
+  writes `notes/catalog.tsv`), tables (TSV and on-disk counts re-measured), and reports (the fast
+  extractors run as subprocesses and each report line the page quotes must match). Six injected
+  mutants plus a clean page, all detected. It writes nothing.
+- Check `notes/named-conjectures.md` with `python3 notes/scripts/verify_named_conjectures.py --mutant`
+  before quoting any of its counts — it re-derives the population from `notes/catalog.tsv` and
+  `triage_t0.py`, resolves every statement anchor against the manuscript LaTeX it cites, matches
+  every quotation verbatim, resolves every prose `path:line` citation (including the pathless ones
+  and the ones relative to a manuscript directory named in the entry) and requires a citation that
+  opens a statement environment to end on its `\end`, checks the entry set against the derived
+  population, and re-measures every Measurements number. `### NNN - ` is a population entry and
+  `#### NNN - ` a promoted one — a family the pass read while it was T0 that upstream has since
+  formalized: both levels get the anchor and quotation checks, only `###` is compared with the
+  population, and each `####` family must be title-named, non-T0, and outside the population. Flags
+  twelve injected mutants. It writes nothing.
+- Check the three `upstream_history/` pages with
+  `python3 notes/scripts/verify_upstream_history.py --mutant` before quoting any of their counts —
+  `path:line` and `path:a-b` anchors resolve, `…suffix` and bare `:N` anchors resolve against the
+  nearest preceding explicit path, every `*"…"*` matches the anchored lines verbatim modulo
+  whitespace with the anchor in the same paragraph, every fenced block is matched against its
+  nearest preceding anchor (a block with no preceding anchor is skipped), and the links, both
+  tables, and every count phrase are re-measured. Flags twelve injected mutants. Run it twice and
+  diff — the report must be identical. It writes nothing.
+- The summaries pages carry three tools beyond `verify_summaries.py`: `check_summary_manuscripts.py`
+  (which manuscripts each page reads, and whether the release still names them),
+  `locate_summary_quotes.py <page.md>` (where a quotation's text actually sits, when
+  `verify_summaries.py` reports a miss), and `refresh_summary_line_counts.py` (rewrites the `Lines`
+  column of every page's Sources table after a manuscript changes — the realized case of the
+  computed-path rule above). `read_manuscript.py <preprints-dir>` prints a manuscript's abstract,
+  section skeleton, and titled statement environments with `file:line` anchors, and is the reading
+  entry point for a manuscript. All four write nothing.
 - Run `python3 notes/scripts/extract_links.py` twice and diff: the TSV must be byte-identical and the
   report identical. Its report reconciles 22 rows, 426 link occurrences over 416 distinct configs,
   200 `main_results` entries over 189 unique configs in 136 families, 393 release-labelled bib

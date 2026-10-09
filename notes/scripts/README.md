@@ -1,17 +1,17 @@
 # Scripts and generated files
 
-Measured 2026-10-08 by `python3 notes/scripts/verify_script_ownership.py` — report-only, it writes
+Measured 2026-10-09 by `python3 notes/scripts/verify_script_ownership.py` — report-only, it writes
 nothing, and every count below is re-derived by that run. The page answers one question: for each of
 the **1,104** files under `notes/` (the scripts excluded), which is whose bytes. A generated file is
 changed by editing its generator and re-rendering; a hand-written file is edited directly. Ownership
 is per file, and the checker exits 1 on a file no rule owns.
 
-## The split: 7 write, 31 write nothing
+## The split: 7 write, 36 write nothing
 
 The writer set is derived from the scripts' own source, not from this page: a script is a writer when
 a path constant rooted at `notes/` appears on the left of `.open(..., "w")` or `.write_text(...)`, plus
 the tree case — a `notes/index` constant reached through the module's own `write()` helper. That rule
-finds **7** writers over **39** scripts.
+finds **7** writers over **43** scripts.
 
 ### Writers
 
@@ -33,16 +33,22 @@ Writers import each other, so a generated file's bytes are not a function of one
 `build_index.py` imports `build_catalog`, `measure_topics` and `measure_names`;
 `build_sources.py`, `extract_links.py`, `extract_subfindings.py`, `compare_abstracts.py`,
 `check_index_links.py`, `measure_names.py` and `measure_topics.py` all import `build_catalog`;
-`measure_index_sizes.py` imports `check_index_links`. Editing a join in `build_catalog.py` can move
+`measure_index_sizes.py` imports `check_index_links` inside its link-check function
+(`measure_index_sizes.py:116`), not at module scope. Counted over `notes/scripts/*.py`,
+`build_catalog.py` has **22** importers, `build_sources.py` **2** (`verify_sources.py`,
+`read_manuscript.py`) and `verify_summaries.py` **4** (`verify_findings.py` and
+`verify_scope_exclusions.py` for its `norm()`, `locate_summary_quotes.py` and
+`refresh_summary_line_counts.py`). Editing a join in `build_catalog.py` can move
 rows in six artifacts.
 
 ### Report-only
 
-The other **32** scripts write nothing. **14** of them print the report a page's counts come from:
+The other **36** scripts write nothing. **18** of them print the report a page's counts come from:
 
 | Script | Report feeds |
 |---|---|
 | `check_index_links.py` | `notes/index-links.md` |
+| `check_summary_manuscripts.py` | `notes/summaries/` — which manuscripts each page reads, and whether the release still names them |
 | `extract_citations.py` | `notes/citations.md` |
 | `extract_counterexample_crosscheck.py` | `notes/counterexample-crosscheck.md` |
 | `extract_named_results.py` | `notes/named-results.md` |
@@ -51,10 +57,13 @@ The other **32** scripts write nothing. **14** of them print the report a page's
 | `extract_t0_chains.py` | `notes/t0-chains.md` |
 | `extract_verification_348.py` | `notes/verification-dirs.md` |
 | `extract_verification_dirs.py` | `notes/verification-dirs.md` |
+| `locate_summary_quotes.py` | `notes/summaries/` — the lines a page should cite when a quotation stops matching |
 | `measure_index_sizes.py` | `notes/index-design.md` |
 | `measure_names.py` | `notes/names.md` |
 | `measure_proof_density.py` | `notes/proof-density.md` |
 | `measure_topics.py` | `notes/topics.md` |
+| `read_manuscript.py` | none — a reading aid; prints a manuscript's abstract, section skeleton and titled statement environments with `file:line` anchors |
+| `refresh_summary_line_counts.py` | `notes/summaries/` — rewrites the `Lines` column of the Sources table in every page |
 | `triage_t0.py` | `notes/t0-triage.md` |
 
 `check_index_links.py` is the link checker for `notes/index/` and `CONTENTS.md` — it reads the tree and
@@ -88,7 +97,7 @@ drifted; each takes `--mutant`, which injects faults and asserts they are caught
 | `verify_verification_dirs.py` | `notes/verification-dirs.md` |
 
 `verify_script_ownership.py` — this page's own checker — is not in the table: a checker cannot list
-itself as its input. It is the 19th checker and the 40th script the run counts.
+itself as its input. It is the 19th checker and the 44th script the run counts.
 
 ## The file census
 
@@ -137,13 +146,18 @@ excludes the checker-verified pages, allowing formatting only on the pages no ch
 
 ## Naming coverage
 
-`notes/README.md`'s command block named **34** of the 39 scripts before this pass. Five are named
-nowhere in the repo at the pinned baseline: `extract_citations.py`, `verify_citations.py`,
-`verify_findings.py`, `verify_named_conjectures.py` and `verify_upstream_history.py`. The first four
-are the tooling behind `notes/citations.md`, `notes/findings.md` and `notes/named-conjectures.md`, so
-three pages carried measurements whose generating command no document named; the fifth is the tooling
-behind `upstream_history/`, the pages that record each upstream merge, which sit outside `notes/` and
-so outside this page's census. All 39 are named here and in the command block. "Before this pass" is
+`notes/README.md`'s command block named **34** of the 43 scripts before this pass. Nine are named
+nowhere in the repo at the pinned baseline: `check_summary_manuscripts.py`, `extract_citations.py`,
+`locate_summary_quotes.py`, `read_manuscript.py`, `refresh_summary_line_counts.py`,
+`verify_citations.py`, `verify_findings.py`, `verify_named_conjectures.py` and
+`verify_upstream_history.py`. The first four are the `notes/summaries/` reading tooling and the
+citation extractor, so the summaries tree and `notes/citations.md` carried measurements whose
+generating command no document named; `verify_citations.py`, `verify_findings.py` and
+`verify_named_conjectures.py` are the checkers for `notes/citations.md`, `notes/findings.md` and
+`notes/named-conjectures.md`, so three pages carried measurements whose checker no document named;
+the last is the tooling behind `upstream_history/`, the pages that record each upstream merge, which
+sit outside `notes/` and so outside this page's census. All 43 are named here and in the command
+block. "Before this pass" is
 pinned to the commit that created this page, read at its parent, not to `HEAD`: `HEAD` moves every
 time this page is edited, so a check keyed to it re-pins the baseline on each edit, and the naming
 that pass added then reads as already present and the recorded gap vanishes.
@@ -166,7 +180,10 @@ that pass added then reads as already present and the recorded gap vanishes.
   run after a corpus change prints the sweep line with the files it removed, the second prints
   `stale swept 0 files []`. Diffing run 1 against run 2 reports the sweep as drift.
 - The writer rule reads path constants and write calls. A write built from a computed path (a variable
-  assembled at runtime) would not be found by it.
+  assembled at runtime) is not found by it, and `refresh_summary_line_counts.py` is the realized case:
+  it resolves each page path through `verify_summaries.Page` and rewrites the `Lines` column of every
+  page under `notes/summaries/`, so the rule files it under report-only and the census row calls that
+  tree hand-written. The tree is hand-written in what it says and script-touched in that one column.
 - The report-only table records which page a report feeds as stated in that page and in `AGENTS.md`.
   It is not derived from the report text, so a page that stops quoting a report keeps its row here.
 - Nothing in `lean/` is built, so no generated artifact here is a verification of a formalization.

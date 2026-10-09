@@ -54,7 +54,7 @@ population entries plus 2 promoted.
     manuscript.
   - `narrower` — the blurb states less than the manuscript proves.
   - `wider` — the blurb states more than the manuscript proves.
-- The blurb is the `overview.tex` paraphrase, not the manuscript abstract: 0 of 722 manuscript
+- The blurb is the `overview.tex` paraphrase, not the manuscript abstract: 0 of 719 manuscript
   comparisons read identical (`notes/abstracts.md`), so a verdict compares the blurb's *claim* with
   the manuscript's *theorem*, not their wording.
 
@@ -984,7 +984,7 @@ errors in the manuscript.
 - **The 44 remaining second-pass families** (87 − 43) have titles that name no conjecture, problem,
   or question and were not read in this pass.
 - **Blurb wording was not compared with manuscript abstracts** — that comparison is
-  `notes/abstracts.md`, which finds 0 of 722 identical.
+  `notes/abstracts.md`, which finds 0 of 719 identical.
 - **The 43 first-pass families** were read in `notes/t0-triage.md` at claim-shape level, not at
   statement level.
 

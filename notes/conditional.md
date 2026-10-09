@@ -201,9 +201,9 @@ theorem main_consistency :
 
 (`def Consistent (T : Theory) : Prop := ∀ n, ¬ Derives (T.at n) .bot` at `:107`).
 `PartitionConsistency` appears nowhere in `lean/formalization.yaml` — 0 occurrences — it is a
-comparator link in the scope note (`lean/docs/244.md:18`). The yaml's 185 `main_results` entries
-(178 distinct configs) carry exactly one `Partition*` config: `ComparatorChallenges/PartitionPrinciple.json`
-at `lean/formalization.yaml:1362`, pointing at the `Separation.lean` declaration above. The scope
+comparator link in the scope note (`lean/docs/244.md:18`). The yaml's 200 `main_results` entries
+(189 distinct configs) carry exactly one `Partition*` config: `ComparatorChallenges/PartitionPrinciple.json`
+at `lean/formalization.yaml:1449`, pointing at the `Separation.lean` declaration above. The scope
 note's lead paragraph (`lean/docs/244.md:9`) says *"The formalization proves the
 relative-consistency implication: if ZF is consistent, then so is ZF with the Partition Principle,
 Choice for ordinal-indexed families, and failure of the Axiom of Choice."* — which the linked
