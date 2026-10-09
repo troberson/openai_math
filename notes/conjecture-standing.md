@@ -9,13 +9,14 @@ the literature. The repo supplies only the claim (`release_claim`) and the citat
 
 ## The selection: 139, not 248
 
-`resolves_named = 1` marks **248** families (T0 91, T2 62, T3 95); the abstract-only scope it
-replaced marked 233 (T0 88, T2 57, T3 88). Intersecting it with the
-`resolution` shape tag leaves **139** (T0 51, T2 36, T3 52), and the table carries exactly those 139 —
+`resolves_named = 1` marks **248** families (T0 86, T2 61, T3 101); the abstract-only scope it
+replaced marked 233 (T0 83, T2 56, T3 94). Intersecting it with the
+`resolution` shape tag leaves **139** (T0 48, T2 36, T3 55), and the table carries exactly those 139 —
 none of the 15 title-scope additions carries the `resolution` shape, so the intersection did not move.
 
 Recorded ambiguity, with the provisional choice and its revisit condition: `math-el4.6`'s spec quotes
-the 233-family tier split (88/57/88) while naming 139 rows. Provisional choice: build the
+the 233-family tier split (88/57/88) while naming 139 rows. That split is the spec's own record, not a
+measurement — the same scope measures 83/56/94 on the post-merge ledger. Provisional choice: build the
 intersection, because the intersection is the set whose abstracts both name a target and claim a
 resolution — a "standing" row for a family whose headline is a bound, not a resolution, would compare
 the prior against a claim the abstract does not make. Revisit condition: if the 109
@@ -85,9 +86,13 @@ Current run: `rows: 139 selected: 139 fields: 10`, `surprise_tier: 1:60 2:64 3:1
 `prior_confidence: high:42 low:13 medium:84`, `anchors resolved to \resultentry lines: 139`,
 `problems: 0`.
 
-Six mutants, all detected: anchor shifted by two lines; a blanked `prior_confidence`; a family added
-outside the selection; a consequence assertion written into a `gap` field; a conjecture renamed to a
-name absent from its abstract; a row widened to 11 fields.
+Six mutants, all detected by `python3 notes/scripts/verify_conjecture_standing.py --mutant`, which
+injects them into the table text in memory and fails the run if any goes uncaught: anchor shifted by
+two lines; a blanked `prior_confidence`; a family added outside the selection; a consequence assertion
+written into a `gap` field; a conjecture renamed to a name absent from its abstract; a row widened to
+11 fields. Each injection is targeted from the parsed rows, so it follows the table when a row's
+anchor or conjecture name changes, and an injection that finds no target is reported as NOT INJECTED
+rather than passing as detected.
 
 Three rows were corrected by the checker on its first run: **187** cited line 451, its entry is line
 453; **266**, **310**, **326** carried conjecture names the abstracts do not use, and now read

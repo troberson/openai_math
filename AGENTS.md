@@ -444,11 +444,15 @@ lives in this file and nowhere else.
   family that slug belongs to, requires the two family-269 `rows.txt` files to be byte-identical,
   re-checks that every artifact `COVERAGE.md` names is on disk, and flags eighteen injected mutants
   including an abbreviated anchor and a deleted table row. It writes nothing.
-- Check `notes/conjecture-standing.tsv` with `python3 notes/scripts/verify_conjecture_standing.py`
-  before quoting any row — it proves the 139-row fam set against the ledger, resolves every
-  `overview.tex:<n>` anchor to that family's own `\resultentry`, requires `prior_confidence` in
-  vocabulary, rejects conjecture names the cited abstract does not use, and rejects consequence
-  language.
+- Check `notes/conjecture-standing.tsv` with
+  `python3 notes/scripts/verify_conjecture_standing.py --mutant` before quoting any row — it proves
+  the 139-row fam set against the ledger, resolves every `overview.tex:<n>` anchor to that family's
+  own `\resultentry`, requires `prior_confidence` in vocabulary, rejects conjecture names the cited
+  abstract does not use, rejects consequence language, and flags six injected mutants (a shifted
+  anchor, a blanked `prior_confidence`, a row outside the selection, a consequence assertion in a
+  `gap` field, a renamed conjecture, a row widened to 11 fields). It writes nothing; the injections
+  are targeted from the parsed rows, so an injection that finds no target fails the run as NOT
+  INJECTED rather than passing as detected.
 - Run `python3 notes/scripts/extract_formalization_deps.py` twice and diff: the TSV must be
   byte-identical. Its report reconciles 31 rows = 30 declared + 1 undeclared, 30 lakefile requires
   pinned to 40-char commits, 30 yaml entries, 23 patches over 160,187 lines, 42 manifest packages
