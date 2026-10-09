@@ -24,18 +24,20 @@ is written capitalized mid-sentence and almost never lowercase. Sentence-initial
 capitalization is what makes English words look capitalized, so the counter that
 matters is mid-sentence capitalization: a token is name-like when mid >= 3 and
 low <= max(1, mid // 2), and word-like when low >= 20 and low >= 5 * max(1, mid).
-Measured on the tokens a plain capitalized count cannot separate: `all` mid=1365
-low=41566, `the` mid=22650 low=804002, `games` mid=57 low=100, `lane` mid=17 low=32
-— all word-like; `catalan` mid=33 low=7, `koebe` mid=38 low=14, `saxl` mid=21 low=9,
-`pixton` mid=14 low=6 — all name-like. Cite keys are lowercase name fragments
+Measured on the tokens a plain capitalized count cannot separate: `all` mid=1426
+low=43916, `the` mid=23736 low=856520, `games` mid=57 low=100, `lane` mid=16 low=48
+— all word-like; `catalan` mid=33 low=7, `koebe` mid=39 low=14, `saxl` mid=21 low=9,
+`pixton` mid=14 low=6 — all name-like. The report prints these as its `probe tokens`
+line (PROBE_TOKENS below), because a rejected candidate carries no row in the JSON.
+Cite keys are lowercase name fragments
 (`catalan2012`), so the bibliography and the cite/cross-reference braces are stripped
 before any count.
 
 Family-title escape. A name the release put in a family title is a subject even when
 the manuscripts barely mention it, so a family-title candidate with no prose evidence
 is accepted when it is also an author surname in the bibliography. The bibliography is
-the corpus's own surname gazetteer; the escape adds 15 names: Bochner, Curtis, Elliott,
-Etingof, Green, Jacobsthal, Kraetzer, Mahler, Ostmann, Pop, Riesz, Ryser, Shub,
+the corpus's own surname gazetteer; the escape adds 16 names: Bochner, Campana, Curtis,
+Elliott, Etingof, Green, Jacobsthal, Kraetzer, Mahler, Ostmann, Pop, Riesz, Ryser, Shub,
 Swinnerton-Dyer, Wilson.
 
 Rejection ladder, in the order applied: a key that is not a lowercase word, a
@@ -127,6 +129,12 @@ JUNK_WORDS = {
     "beaver",      # "The Busy Beaver cutoff"
     "stablest",    # "Majority Is Stablest with a degree cutoff"
 }
+
+# The tokens notes/names.md tabulates to show the gate separating names from words.
+# Rejected candidates carry no row in the JSON, so the gate's evidence for them lives
+# only here: the report prints cap/mid/low for each token in this list.
+PROBE_TOKENS = ("the", "all", "games", "lane", "hom", "quot", "cat", "adm",
+               "boolean", "catalan", "koebe", "saxl", "pixton", "wang", "cauchy")
 
 
 def fold(s: str) -> str:
@@ -340,9 +348,15 @@ def measure():
 
     # A plural of an attested subject name is the same name. Measured: hamiltonians,
     # hessians, jacobians, lagrangians, laplacians.
+    merged = []
     for k in sorted(subject):
         if k.endswith("s") and k[:-1] in subject and k not in fam_title:
             subject.discard(k)
+            merged.append(k)
+    # Plural forms the release itself put in a title layer, and how many of them are
+    # name-like enough to reach the merge step above.
+    tl = set(fam_title) | set(ms_title) | set(env_title)
+    plural_title = sorted(k for k in tl if k.endswith("s") and k[:-1] in tl)
 
     citation = {k for k in bib if k not in subject and k not in LABEL_WORDS
                 and k not in JUNK_WORDS
@@ -397,6 +411,13 @@ def measure():
         "subject": len(subject),
         "citation": len(citation),
         "decl_tokens": len(decl),
+        "decl_entries": len({(stem, d) for v in decl.values() for stem, d, _ in v}),
+        "decl_top": sorted(((len({(stem, d) for stem, d, _ in v}), k)
+                            for k, v in decl.items()), key=lambda t: (-t[0], t[1]))[:8],
+        "probe": [(k, cap[k], mid[k], low[k]) for k in PROBE_TOKENS],
+        "merged": merged,
+        "plural_title": len(plural_title),
+        "plural_name_like": sum(1 for k in plural_title if name_like(k)),
         "escape_names": sorted(escape_names),
     }
     return rows, meta
@@ -426,6 +447,13 @@ def main(argv):
     print(f"title candidates         {meta['title_cands']}  rejected {sum(v for _, v in hard)} {hard}")
     print(f"  via family title+bib   {meta['rejected'].get('family-title-via-bib', 0)}  "
           + " ".join(meta["escape_names"]))
+    print(f"declarations             {meta['decl_entries']} entries  {meta['decl_tokens']} tokens  "
+          + " ".join("%s:%d" % (k, n) for n, k in meta["decl_top"]))
+    print("probe tokens             " + " ".join(
+        "%s=%d/%d" % (k, m, l) for k, c, m, l in meta["probe"]))
+    print(f"plural merge             {len(meta['merged'])} merged "
+          f"({' '.join(meta['merged'])})  {meta['plural_title']} plural forms in a title "
+          f"layer, {meta['plural_name_like']} name-like")
     print(f"names                    {len(rows)}  subject {len(subject)}  citation-only {len(citation)}")
     print(f"subject edges            {edges} family-name edges over {len(subj_cov)} families")
     print(f"subject singletons       {sum(1 for r in subject if len(r['fams']) == 1)}")
