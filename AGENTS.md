@@ -53,11 +53,14 @@ lives in this file and nowhere else.
 
 - Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `overview`, `ledger`, `preprints`,
   `text`, `yaml`, `anchors` (9 modules). Import them (`from catlib import yaml as Y`); do not
-  re-implement a join in an extractor. **25** of the **44** scripts already do. A script run as
+  re-implement a join in an extractor. **28** of the **44** scripts already do. A script run as
   `python3 notes/scripts/foo.py` already has `notes/scripts` as `sys.path[0]`, so no `sys.path.insert`
-  is needed and `# noqa: E402` markers are not needed with it (measured 0 of each). The other **6**
-  checkers move onto the package in `math-lon.2`; `verify_upstream_history.py`'s `git show <rev>:` yaml
-  read and `build_index.py`'s `TRIPLE` regex stay local by design.
+  is needed and `# noqa: E402` markers are not needed with it (measured 0 of each). The other **3**
+  checkers (`verify_citations.py`, `verify_named_conjectures.py`, `verify_upstream_history.py`) move
+  onto the package in `math-lon.2`; `verify_upstream_history.py`'s `git show <rev>:` yaml
+  read and `build_index.py`'s `TRIPLE` regex stay local by design. A page quotation is compared with
+  `catlib.text.strip_markup` — the rule that folds quotes and strips markup — never with a checker's
+  private copy of it.
 - Regenerate the ledger with `python3 notes/scripts/build_catalog.py` — stdlib only, runs in
   seconds, writes `notes/catalog.tsv` and prints the report that every number in
   `notes/README.md` comes from.
