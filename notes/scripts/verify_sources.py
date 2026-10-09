@@ -30,6 +30,8 @@ import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import build_sources as S
+from catlib import overview, preprints, tsv
+from catlib.paths import LEDGER_TSV, PREPRINTS, SUBFINDINGS_TSV
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PAGE = ROOT / "notes" / "sources.md"
@@ -38,7 +40,7 @@ TSV = ROOT / "notes" / "sources.tsv"
 ANCHOR = re.compile(r"`([\w./+-]+?\.(?:py|md|tex|json|tsv|yaml)):(\d+)`")
 ANCHOR_SHAPE = re.compile(r"`([\w./+-]+?\.[A-Za-z][A-Za-z0-9]{0,4}):(\d+)`")
 # A backticked manuscript directory slug, as it appears in prose and in the multi-root table.
-SLUG = re.compile(rf"`([A-Za-z0-9][\w.+-]*-(?:{S.B.MONTHS})-\d{{1,2}}-\d{{4}})`")
+SLUG = re.compile(rf"`([A-Za-z0-9][\w.+-]*-(?:{overview.MONTHS})-\d{{1,2}}-\d{{4}})`")
 
 
 def norm(s):
@@ -58,15 +60,16 @@ def measure():
     header, body = rows()
     # The listed manuscripts, not every directory under preprints/: a superseded edition and a
     # withdrawal notice are directories, not manuscript rows.
-    listed = sorted(S.PRE / name for name in
-                    {r["path"].split("/")[1] for r in S.tsv(S.SUBF) if r["kind"] == "manuscript"})
+    listed = sorted(PREPRINTS / name for name in
+                    {r["path"].split("/")[1] for r in tsv.read_rows(SUBFINDINGS_TSV)
+                     if r["kind"] == "manuscript"})
     dirs = listed
-    disk = sorted(p for p in S.PRE.iterdir() if p.is_dir())
+    disk = sorted(p for p in PREPRINTS.iterdir() if p.is_dir())
     unlisted = [p for p in disk if p.name not in {d.name for d in listed}]
     notices = [p for p in unlisted
                if "Withdrawal notice" in (p / "README.md").read_text(encoding="utf-8",
                                                                       errors="replace")]
-    ledger = S.tsv(S.LEDGER)
+    ledger = tsv.read_rows(LEDGER_TSV)
     paps = {r["fam"]: int(r["paps"]) for r in ledger}
 
     rootdist = collections.Counter()
@@ -74,26 +77,27 @@ def measure():
     single_names = collections.Counter()
     main_no_dc = 0
     for d in dirs:
-        roots = S.roots_of(d)
+        roots = preprints.roots_of(d)
         rootdist[len(roots)] += 1
-        main, rule = S.main_tex_of(roots)
+        main, rule = preprints.main_tex_of(roots)
         outcomes["single-root" if rule == "single-root" else
                  "flagged" if rule == "flagged" else main.name] += 1
         if rule == "single-root":
             single_names[main.name] += 1
     main_no_dc = sum(1 for d in dirs for f in d.rglob("main.tex")
-                     if not S.DOCCLASS.search(f.read_text(encoding="utf-8", errors="replace")))
+                     if not preprints.DOCCLASS.search(f.read_text(encoding="utf-8",
+                                                                   errors="replace")))
     substring_multi = sum(
         1 for d in dirs
         if len([f for f in d.rglob("*.tex")
                 if "\\documentclass" in f.read_text(encoding="utf-8", errors="replace")]) > 1)
     six, decl, per_name = S.env_variants(dirs)
-    added = {n: c for n, c in per_name.items() if n not in S.SIX}
+    added = {n: c for n, c in per_name.items() if n not in preprints.SIX}
     n = len(body)
     sums = {c: sum(int(r[c]) for r in body)
             for c in ("roots", "tex", "bib", "sections", "subsections", "subsubsections",
                       "proofs", "thms", "abstract", "tex_bytes")}
-    ov = S.B.parse_overview()[1]
+    ov = overview.parse_overview()[1]
     ov_paths = sorted(p for f in ov for p in ov[f]["tex_paps"])
     pdfs = sorted(r["pdf"] for r in body)
     return {
@@ -118,7 +122,7 @@ def measure():
         "main_missing": sum(1 for r in body
                             if not r["main_tex"] or not (ROOT / "preprints" / r["main_tex"]).exists()),
         "main_not_root": sum(1 for r in body
-                             if r["main_tex"] and not S.DOCCLASS.search(
+                             if r["main_tex"] and not preprints.DOCCLASS.search(
                                  (ROOT / "preprints" / r["main_tex"])
                                  .read_text(encoding="utf-8", errors="replace"))),
         "fam_outside": sum(1 for r in body if r["fam"] not in paps),
@@ -209,7 +213,7 @@ def check(text):
     # invisible to the count checks, which never look at directory names.
     for m in SLUG.finditer(text):
         n_slug += 1
-        if not (S.PRE / m.group(1)).is_dir():
+        if not (PREPRINTS / m.group(1)).is_dir():
             problems.append(f"directory {m.group(1)} is not a preprints/ directory")
 
     i = 0

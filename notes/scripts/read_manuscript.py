@@ -25,7 +25,7 @@ import re
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-import build_sources as S
+from catlib import preprints
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 SECTION = re.compile(r"\\(section|subsection|subsubsection)\*?\{([^}]*)\}")
@@ -35,15 +35,12 @@ INCLUDE = re.compile(r"\\(input|include|subfile)\{([^}]+)\}")
 TITLE_WORDS = re.compile(r"\\title\{([^}]*)\}")
 
 
-def tex_files(d):
-    return sorted(d.rglob("*.tex"))
-
-
 def statements(files, limit):
     declared = set()
     for f in files:
-        declared.update(S.NEWTHEOREM.findall(f.read_text(encoding="utf-8", errors="replace")))
-    declared -= S.NON_STATEMENT
+        declared.update(preprints.NEWTHEOREM.findall(f.read_text(encoding="utf-8",
+                                                                  errors="replace")))
+    declared -= preprints.NON_STATEMENT
     out = []
     for f in files:
         for n, line in enumerate(f.read_text(encoding="utf-8", errors="replace").split("\n"), 1):
@@ -76,9 +73,9 @@ def main():
     if not d.is_dir():
         print(f"NOT A DIRECTORY: preprints/{argv[0]}")
         return 1
-    files = tex_files(d)
-    roots = [f for f in files if S.DOCCLASS.search(f.read_text(encoding="utf-8", errors="replace"))]
-    main_tex, rule = S.main_tex_of(roots)
+    files = preprints.tex_files(d)
+    roots = preprints.roots_of(d)
+    main_tex, rule = preprints.main_tex_of(roots)
     rel = main_tex.relative_to(ROOT) if main_tex else None
     print(f"dir            {argv[0]}")
     print(f"tex files      {len(files)}  roots (line-start documentclass) {len(roots)}")

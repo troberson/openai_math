@@ -30,112 +30,55 @@ Rules stated where they matter:
 - Manuscript ownership is the path component after `preprints`, never `parts[-2]`. Family and PDF
   path come from the manuscript rows of notes/subfindings.tsv, which is itself derived from
   overview.tex.
+
+The LaTeX joins live in catlib/preprints.py; the TSV reader and writer in catlib/tsv.py.
 """
 import collections
-import csv
 import pathlib
-import re
-import sys
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-import build_catalog as B  # for the paren-aware manuscript-path regex
+from catlib import overview, preprints, text, tsv
+from catlib.paths import LEDGER_TSV, PREPRINTS, ROOT, SOURCES_TSV, SUBFINDINGS_TSV, read_text
+from catlib.preprints import DOCCLASS, SIX
 
-ROOT = pathlib.Path(__file__).resolve().parents[2]
-PRE = ROOT / "preprints"
-OUT = ROOT / "notes" / "sources.tsv"
-SUBF = ROOT / "notes" / "subfindings.tsv"
-LEDGER = ROOT / "notes" / "catalog.tsv"
+OUT = SOURCES_TSV
 
 COLUMNS = ["dir", "fam", "pdf", "main_tex", "roots", "tex", "bib", "sections", "subsections",
            "subsubsections", "proofs", "thms", "abstract", "tex_bytes"]
 
-# Environments declared by \newtheorem that state nothing.
-NON_STATEMENT = {"definition", "remark", "example", "notation", "convention", "procedure",
-                 "construction", "scope", "abstract"}
-
-# The six-name list the epic quotes, kept so the report prints the figure the bead's prose uses.
-SIX = {"theorem", "lemma", "proposition", "corollary", "claim", "conjecture"}
-
-DOCCLASS = re.compile(r"^\s*\\documentclass", re.M)
-ABSTRACT = re.compile(r"^\s*\\begin\{abstract\}", re.M)
-BEGIN = re.compile(r"\\begin\{([A-Za-z*]+)\}")
-NEWTHEOREM = re.compile(r"\\newtheorem\*?\{([A-Za-z]+)\}")
-
-
-def tsv(path):
-    with path.open(encoding="utf-8") as fh:
-        return list(csv.DictReader(fh, delimiter="\t"))
-
-
-def fmt(counter):
-    """Counter -> 'name n, name n, ...' sorted by count desc, then name."""
-    return ", ".join(f"{n} {c}" for n, c in sorted(counter.items(), key=lambda kv: (-kv[1], kv[0])))
-
-
-def roots_of(d):
-    """`.tex` files under `d` that declare `\\documentclass` at the start of a line."""
-    out = [f for f in d.rglob("*.tex")
-           if DOCCLASS.search(f.read_text(encoding="utf-8", errors="replace"))]
-    return sorted(out, key=lambda f: (len(f.relative_to(d).parts), str(f.relative_to(d))))
-
-
-def main_tex_of(roots):
-    """Prefer main.tex, then paper.tex, then the single root; flag, never guess, the rest."""
-    for name in ("main.tex", "paper.tex"):
-        hits = [f for f in roots if f.name == name]
-        if hits:
-            return hits[0], "name"
-    if len(roots) == 1:
-        return roots[0], "single-root"
-    return None, "flagged"
-
 
 def row_for(d, fam, pdf):
-    tex_files = sorted(d.rglob("*.tex"))
-    texts = [f.read_text(encoding="utf-8", errors="replace") for f in tex_files]
-    declared = set()
-    for t in texts:
-        declared.update(NEWTHEOREM.findall(t))
-    declared -= NON_STATEMENT
-    thms = proofs = 0
-    sections = subsections = subsub = 0
-    abstract = 0
-    for t in texts:
-        proofs += len(re.findall(r"\\begin\{proof\}", t))
-        thms += len([m for m in BEGIN.findall(t) if m in declared])
-        sections += len(re.findall(r"\\section\*?\{", t))
-        subsections += len(re.findall(r"\\subsection\*?\{", t))
-        subsub += len(re.findall(r"\\subsubsection\*?\{", t))
-        if ABSTRACT.search(t):
-            abstract = 1
-    roots = roots_of(d)
-    main, _ = main_tex_of(roots)
+    tex_files = preprints.tex_files(d)
+    ts = preprints.texts(tex_files)
+    declared = preprints.declared_envs(ts)
+    counts = preprints.env_counts(ts, declared)
+    roots = preprints.roots_of(d)
+    main, _ = preprints.main_tex_of(roots)
     return {
         "dir": d.name,
         "fam": fam,
         "pdf": pdf,
-        "main_tex": "" if main is None else str(main.relative_to(PRE)),
+        "main_tex": "" if main is None else str(main.relative_to(PREPRINTS)),
         "roots": len(roots),
         "tex": len(tex_files),
         "bib": len(list(d.rglob("*.bib"))),
-        "sections": sections,
-        "subsections": subsections,
-        "subsubsections": subsub,
-        "proofs": proofs,
-        "thms": thms,
-        "abstract": abstract,
+        "sections": counts["sections"],
+        "subsections": counts["subsections"],
+        "subsubsections": counts["subsubsections"],
+        "proofs": counts["proofs"],
+        "thms": counts["thms"],
+        "abstract": counts["abstract"],
         "tex_bytes": sum(f.stat().st_size for f in tex_files),
     }
 
 
 def build():
-    subs = [r for r in tsv(SUBF) if r["kind"] == "manuscript"]
+    subs = [r for r in tsv.read_rows(SUBFINDINGS_TSV) if r["kind"] == "manuscript"]
     by_slug = {r["path"].split("/")[1]: r for r in subs}
     # The listed manuscripts, not every directory under preprints/: upstream keeps a superseded
     # edition of a revised manuscript on disk beside its replacement, and a withdrawn manuscript's
     # directory ships only a README and the archived PDF, so a directory walk is not the
     # manuscript list.
-    dirs = sorted(PRE / name for name in by_slug)
+    dirs = sorted(PREPRINTS / name for name in by_slug)
     rows = [row_for(d, by_slug[d.name]["fam"], "preprints/" + d.name + "/" +
                     pathlib.PurePosixPath(by_slug[d.name]["path"]).name)
             for d in dirs]
@@ -147,38 +90,28 @@ def env_variants(dirs):
     six = 0
     per_name = collections.Counter()
     for d in dirs:
-        texts = [f.read_text(encoding="utf-8", errors="replace") for f in d.rglob("*.tex")]
-        declared = set()
-        for t in texts:
-            declared.update(NEWTHEOREM.findall(t))
-        declared -= NON_STATEMENT
-        for t in texts:
-            found = BEGIN.findall(t)
-            six += sum(1 for m in found if m in SIX)
-            per_name.update(m for m in found if m in declared)
+        ts = preprints.texts(preprints.tex_files(d))
+        declared = preprints.declared_envs(ts)
+        six += preprints.six_count(ts)
+        per_name.update(preprints.per_name_counts(ts, declared))
     return six, sum(per_name.values()), per_name
 
 
 def write(rows):
-    with OUT.open("w", encoding="utf-8", newline="") as fh:
-        w = csv.writer(fh, delimiter="\t", lineterminator="\n")
-        w.writerow(COLUMNS)
-        for r in rows:
-            w.writerow([r[c] for c in COLUMNS])
+    tsv.write_csv(OUT, COLUMNS, rows)
 
 
 def report(rows, subs, dirs):
-    ledger = tsv(LEDGER)
+    ledger = tsv.read_rows(LEDGER_TSV)
     fams = {r["fam"] for r in ledger}
     paps = {r["fam"]: int(r["paps"]) for r in ledger}
     slugs = [r["path"].split("/")[1] for r in subs]
 
-    disk = sorted(p for p in PRE.iterdir() if p.is_dir())
+    disk = sorted(p for p in PREPRINTS.iterdir() if p.is_dir())
     listed = {d.name for d in dirs}
     unlisted = [d.name for d in disk if d.name not in listed]
     notices = [n for n in unlisted
-               if "Withdrawal notice" in (PRE / n / "README.md").read_text(encoding="utf-8",
-                                                                           errors="replace")]
+               if "Withdrawal notice" in read_text(PREPRINTS / n / "README.md")]
     extra = [s for s in slugs if s not in {d.name for d in disk}]
     pdf_diff = sum(1 for r in rows
                    if not (ROOT / r["pdf"]).exists()
@@ -191,8 +124,8 @@ def report(rows, subs, dirs):
     single_names = collections.Counter()
     multi = []
     for d in dirs:
-        roots = roots_of(d)
-        main, rule = main_tex_of(roots)
+        roots = preprints.roots_of(d)
+        main, rule = preprints.main_tex_of(roots)
         if rule == "single-root":
             outcomes["single-root"] += 1
             single_names[main.name] += 1
@@ -207,14 +140,15 @@ def report(rows, subs, dirs):
     substring_multi = sum(
         1 for d in dirs
         if len([f for f in d.rglob("*.tex")
-                if "\\documentclass" in f.read_text(encoding="utf-8", errors="replace")]) > 1)
-    main_no_dc = [str(f.relative_to(PRE)) for d in dirs for f in d.rglob("main.tex")
-                  if not DOCCLASS.search(f.read_text(encoding="utf-8", errors="replace"))]
+                if "\\documentclass" in read_text(f)]) > 1)
+    main_no_dc = [str(f.relative_to(PREPRINTS)) for d in dirs for f in d.rglob("main.tex")
+                  if not DOCCLASS.search(read_text(f))]
     pdf_per_dir = {len(list(d.glob("*.pdf"))) for d in dirs}
 
     # Independent check: the release's own manuscript list, parsed from overview.tex with the
-    # paren-aware PAP regex, not from the subfindings rows this table's pdf column is derived from.
-    _, ov_fams = B.parse_overview()
+    # paren-aware manuscript-path rule, not from the subfindings rows this table's pdf column is
+    # derived from.
+    _, ov_fams = overview.parse_overview()
     ov_paths = sorted(p for f in ov_fams for p in ov_fams[f]["tex_paps"])
     mine = sorted(r["pdf"] for r in rows)
     ov_only = sorted(set(ov_paths) - set(mine))
@@ -241,7 +175,7 @@ def report(rows, subs, dirs):
           f"{fam_path_diff[:3]}")
     print(f"main-file rule: main.tex {outcomes['name-main']}  paper.tex {outcomes['name-paper']}"
           f"  single-root {outcomes['single-root']}  flagged {outcomes['flagged']}")
-    print(f"single-root file names  {fmt(single_names)}")
+    print(f"single-root file names  {text.fmt_counter(single_names)}")
     print(f"multi-root dirs (line-start rule) {len(multi)}: {multi}")
     print(f"multi-root dirs (substring rule)  {substring_multi}")
     print(f"main.tex files with no \\documentclass  {len(main_no_dc)}")
@@ -255,7 +189,7 @@ def report(rows, subs, dirs):
           f"{sum(int(r['thms']) for r in rows)}")
     print(f"six-name list (theorem/lemma/proposition/corollary/claim/conjecture) {six}"
           f"  gap {decl - six}")
-    print(f"names the declared rule adds: {fmt(added)}")
+    print(f"names the declared rule adds: {text.fmt_counter(added)}")
     print(f"dirs with main_tex empty         {sum(1 for r in rows if not r['main_tex'])}")
     print(f"dirs with an abstract            {sum(int(r['abstract']) for r in rows)} of {len(rows)}")
 
