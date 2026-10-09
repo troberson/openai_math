@@ -216,6 +216,11 @@ def measure():
         "tag_dis": tag_dis,
         "tag_tot": tag_tot,
         "fam_shapes": fam_shapes,
+        "fam_shape_dis": sorted(f for f in fam_shapes
+                                if set(fam_shapes[f]["ov"]) != set(fam_shapes[f]["ms"])),
+        "fam_shape_dis_ov_more": sum(1 for f in fam_shapes
+                                     if len(set(fam_shapes[f]["ov"]) - set(fam_shapes[f]["ms"])) >
+                                     len(set(fam_shapes[f]["ms"]) - set(fam_shapes[f]["ov"]))),
         "cond_dis": cond_dis,
         "cond_detail": cond_detail,
         "ledger_counts": {
@@ -409,6 +414,9 @@ def main():
         t = m["tag_tot"][s]
         print(f"  {s:16} {t['ov']:5} {t['ms']:5} {t['man']:6}   {len(d['ov-only']):3}     {len(d['ms-only']):3}")
     print(f"  conditional disagreements: {len(m['cond_dis'])} families {m['cond_dis']}")
+    print(f"  families disagreeing with the overview on >=1 shape: {len(m['fam_shape_dis'])} of "
+          f"{m['families']} (overview carries strictly more shapes in "
+          f"{m['fam_shape_dis_ov_more']} of them)")
 
     print("\nLARGEST DIVERGENCES (lowest family-level ratio; texts are the normalized forms)")
     for fam in sorted(m["fam_order"], key=lambda f: m["fam_best"][f]["ratio"])[:8]:
