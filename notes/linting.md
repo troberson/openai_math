@@ -129,7 +129,7 @@ Fixed, with the site:
 | `W0106` expression-not-assigned | 2 | `verify_abstracts.py`: two `x.append(...) if cond else None` expressions became `if` statements. |
 | `W0640` cell-var-from-loop | 1 | `compare_abstracts.py:146` binds the loop value as a default: `key=lambda x, ov=ov: ratio(ov, x[1])`. |
 | `E0102` function-redefined | 1 | `verify_dependency_drift.py:298` rebound the name `want` (a tuple-unpack) over the function defined at `:333`; the local is now `want_q`. |
-| `C0207` use-maxsplit-arg | 1 | `build_index.py:885` → `name.rsplit('/', 1)[-1][:-4]`. |
+| `C0207` use-maxsplit-arg | 1 | `build_index.py:682` → `name.rsplit('/', 1)[-1][:-4]`. |
 | `C0325` superfluous-parens | 2 | `verify_named_conjectures.py:188,278` → `if not 1 <= a <= b <= len(lines):`. |
 | `C0411` wrong-import-order | 1 | `measure_names.py`: `import csv` moved into the stdlib block. |
 
@@ -175,8 +175,9 @@ must be cumulative over the block, not per line), and re-inserting a blank line 
   loops every checker's anchor pass is measured against, and the extract-to-verify measurement pairs
   where the checker re-derives the population from the corpus instead of trusting the extractor's
   report.
-- **jinja2 is used by `build_index.py` alone** — `math-a0r.3` moved the family page's text into
-  `notes/templates/family.md.j2`. It renders through `python3` under the gate (gate.sh runs plain
+- **jinja2 is used by `build_index.py` alone** — `math-a0r.3` moved the prose of every generated page
+  into `notes/templates/`: `family.md.j2`, `discipline.md.j2`, `topic.md.j2`, `name.md.j2`, and
+  `index-readme.md.j2` (**5** skeletons). It renders through `python3` under the gate (gate.sh runs plain
   `python3`, not the venv interpreter), so the gate depends on jinja2 being importable by the system
   interpreter too; both interpreters report **3.1.6** here.
 - **The venv is untracked.** `.venv/` is in `.gitignore`, so the versions in the table above are

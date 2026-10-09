@@ -164,10 +164,10 @@ The package is not in the census below: the script population is `notes/scripts/
 |---|---|---|
 | `notes/index/` | **1,049** | generated — `build_index.py` |
 | `notes/summaries/` | **21** | hand-written — the reading record |
-| `notes/templates/` | **1** | hand-written — the page skeletons `build_index.py` renders |
+| `notes/templates/` | **5** | hand-written — the page skeletons `build_index.py` renders |
 | `notes/*.tsv` | **8** | **6** generated, **2** hand-authored |
 | `notes/*.md` | **27** | hand-written — **15** with a checker, **12** without |
-| `notes/` total, scripts excluded | **1,106** | — |
+| `notes/` total, scripts excluded | **1,110** | — |
 
 The generated TSVs are the six writer targets. The two hand-authored tables are:
 
