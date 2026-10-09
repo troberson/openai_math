@@ -62,7 +62,7 @@ is not a defect in this tree.
 | pylint `missing-function-docstring` | 194 | A report function's contract is the report line it prints; the module docstring states what the script measures. |
 | pylint `too-many-*` | 80+37+35+5+3+2 | A generator that reconciles a corpus is wide by design; the metrics describe the report. |
 | pylint `invalid-name` | 12 | Module path constants are UPPER_CASE; extractors use short loop variables. |
-| pylint `duplicate-code` | 24 → 28 → **26** | Measured 2026-10-09 over 53 files, after the first four checkers moved onto the package: **all 26** findings are now attributed to `catlib/anchors.py`, whose anchor/fence loops are the reference side of every cluster — partners `verify_citations` 8, `extract_citations` 8, `verify_index_design` 6, `verify_verification_dirs` 5, `verify_sources` 4, `extract_subfindings` 4, `verify_subfindings` 3, `verify_dependency_drift` 2, `verify_conditional` 2, and 7 singletons. `math-lon.2` ports the remaining 9 checkers onto the package, which is what attacks these pairs. |
+| pylint `duplicate-code` | 24 → 28 → 26 → **26** | Measured 2026-10-09 with `--enable=R0801` over 53 files, after the first **seven** checkers moved onto the package: **all 26** findings are attributed to `catlib/anchors.py`, whose anchor/fence loops are the reference side of every cluster (pylint reports a cluster under its first module). The 26 clusters pair 52 module entries: `verify_citations` 8, `extract_citations` 8, `verify_index_design` 6, `verify_verification_dirs` 5, `verify_sources` 4, `extract_subfindings` 4, `verify_subfindings` 3, `verify_dependency_drift` 2, `verify_conditional` 2, `catlib.overview` 2, and 8 singletons (`build_catalog`, `catlib.text`, `extract_formalization_deps`, `locate_summary_quotes`, `verify_counterexample_crosscheck`, `verify_findings`, `verify_scope_exclusions`, `verify_summaries`). The count is unchanged from the sweep after the first four ports: the three checkers that moved in `math-lon.2.2` appear in no cluster now, and every cluster that remains pairs two files that are still unported, a checker with its extractor, or a checker with a `catlib` module. `math-lon.2` ports the remaining **6** checkers, which is what attacks these pairs. |
 | pylint `global-statement` | 3 | Report accumulators are module-level by design. |
 | pylint `unsubscriptable-object` | 6 | `prev` is `None`-guarded before the subscript in `verify_dependency_drift.py:169-170` and `extract_formalization_deps.py:161-162`; pylint does not track the narrowing. |
 
@@ -117,7 +117,7 @@ Fixed, with the site:
 
 | Code | Count | Fix |
 |---|---|---|
-| `W0613` unused-argument | 5 | Parameters renamed to `_`-prefixed dummies — `check_files(_m, problems)` (`verify_t0_chains.py:358`), `lean_paths(_fams, docs)` (`measure_topics.py:91`), `seen_nt_order(rows, _M)` (`verify_citations.py:494`), `check_page(name, text, _p, problems)` and `check_needles(_p, problems)` (`verify_upstream_history.py:268,331`). Pylint's default `dummy-variables-rgx` exempts them; every call site passes the argument positionally, so no caller changed. |
+| `W0613` unused-argument | 5 | Parameters renamed to `_`-prefixed dummies — `check_files(_m, problems)` (`verify_t0_chains.py:343`), `lean_paths(_fams, docs)` (`measure_topics.py:91`), `seen_nt_order(rows, _M)` (`verify_citations.py:494`), `check_page(name, text, _p, problems)` and `check_needles(_p, problems)` (`verify_upstream_history.py:268,331`). Pylint's default `dummy-variables-rgx` exempts them; every call site passes the argument positionally, so no caller changed. |
 | `W1514` unspecified-encoding | 4 | `encoding="utf-8"` at `check_index_links.py:337`, `extract_named_results.py:89`, `measure_names.py:70`, and the `os.devnull` sink in `verify_summaries.py`. |
 | `W0106` expression-not-assigned | 2 | `verify_abstracts.py`: two `x.append(...) if cond else None` expressions became `if` statements. |
 | `W0640` cell-var-from-loop | 1 | `compare_abstracts.py:146` binds the loop value as a default: `key=lambda x, ov=ov: ratio(ov, x[1])`. |
@@ -160,10 +160,10 @@ must be cumulative over the block, not per line), and re-inserting a blank line 
 - **The strict probe is not scheduled.** The 176-error `--check-untyped-defs` backlog above is a
   work estimate; nothing runs that command as a gate.
 - **`duplicate-code` is off corpus-wide** — **26** findings measured with `--enable=R0801` over 53
-  files after the first four checkers moved onto the package, and nothing automatic re-enables it.
+  files after the first **seven** checkers moved onto the package, and nothing automatic re-enables it.
   `math-lon.1` moved the joins into `catlib/`; `math-lon.2.1` moved the anchor grammar there, which
   is why every cluster is now reported against `catlib/anchors.py` — the duplication that remains is
-  the 9 unported checkers' copies of the loops the package already has, plus the extract-to-verify
+  the **6** unported checkers' copies of the loops the package already has, plus the extract-to-verify
   pairs, which `math-lon.2` attacks when those checkers move onto the package.
 - **jinja2 is installed and unused** until `math-a0r`.
 - **The venv is untracked.** `.venv/` is in `.gitignore`, so the versions in the table above are

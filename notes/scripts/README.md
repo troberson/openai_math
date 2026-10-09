@@ -30,13 +30,14 @@ Six writers emit one TSV each. `build_index.py` is the one-to-many case: it rend
 default run writes nothing and only `--tsv` touches `notes/abstracts.tsv`.
 
 Writers import each other, so a generated file's bytes are not a function of one script.
-`build_index.py` imports `build_catalog`, `measure_topics` and `measure_names`;
-`build_sources.py`, `extract_links.py`, `extract_subfindings.py`, `compare_abstracts.py`,
+`build_index.py` imports `build_catalog`, `measure_topics`, `measure_names` and
+`check_index_links`; `extract_links.py`, `extract_subfindings.py`, `compare_abstracts.py`,
 `check_index_links.py`, `measure_names.py` and `measure_topics.py` all import `build_catalog`;
 `measure_index_sizes.py` imports `check_index_links` inside its link-check function
-(`measure_index_sizes.py:116`), not at module scope. Counted over `notes/scripts/*.py`,
-`build_catalog.py` has **22** importers, `build_sources.py` **2** (`verify_sources.py`,
-`read_manuscript.py`) and `verify_summaries.py` **4** (`verify_findings.py` and
+(`measure_index_sizes.py:118`), not at module scope. Counted over `notes/scripts/*.py` as a script
+that imports the module (`import X` or `from X`, the module itself excluded), `build_catalog.py` has
+**19** importers, `build_sources.py` **1** (`verify_sources.py`; `read_manuscript.py` names it in a
+docstring, not in an import) and `verify_summaries.py` **4** (`verify_findings.py` and
 `verify_scope_exclusions.py` for its `norm()`, `locate_summary_quotes.py` and
 `refresh_summary_line_counts.py`). Editing a join in `build_catalog.py` can move
 rows in six artifacts.
@@ -111,8 +112,8 @@ and the nearest-preceding-anchor read the page checkers share) and `__init__.py`
 `python3 notes/scripts/foo.py` has `notes/scripts` on `sys.path`, so it imports them as
 `from catlib import ...` with no path boilerplate.
 
-**22** of the **44** scripts call the package: **5** `extract_`, **3** `build_`, **2** `measure_`,
-`check_index_links.py`, `read_manuscript.py`, and **10** of the **19** checkers. The other **9**
+**25** of the **44** scripts call the package: **5** `extract_`, **3** `build_`, **2** `measure_`,
+`check_index_links.py`, `read_manuscript.py`, and **13** of the **19** checkers. The other **6**
 checkers are ported by `math-lon.2`'s remaining sub-beads, which is also where the **26**
 `duplicate-code` findings go — measured 2026-10-09 with `--enable=R0801` over 53 files, every
 cluster now reported against `catlib/anchors.py` (see `notes/linting.md`). Two joins deliberately
