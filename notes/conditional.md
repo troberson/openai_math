@@ -210,9 +210,9 @@ Choice for ordinal-indexed families, and failure of the Axiom of Choice."* — w
 declaration does not state: a scope-note/`main_results` mismatch, not a missing result.
 
 **Why the comparator files mislead here.** `lean/ComparatorChallenges/*.lean` are challenge
-**stubs**, not proofs: 405 files carrying 509 `sorry` occurrences, 404 of them at least one
-(distribution 1:356, 2:22, 3:16, 4:6, 6:1, 9:1, 11:2; the single zero-`sorry` file is
-`HarmonicGrowth.lean`). By contrast, **zero** of the 121,734 files under `lean/OAI/**/*.lean`
+**stubs**, not proofs: 416 files carrying 539 `sorry` occurrences, 415 of them at least one
+(distribution 1:363, 2:25, 3:16, 4:6, 6:1, 9:1, 11:2, 17:1; the single zero-`sorry` file is
+`HarmonicGrowth.lean`). By contrast, **zero** of the 122,458 files under `lean/OAI/**/*.lean`
 contain `sorry`. A comparator file states the target the release set itself; the proved version of
 that statement, where it exists, lives under `lean/OAI/`. Reading a comparator file and concluding
 "the hypothesis is in the formalized statement" is reading the stub.

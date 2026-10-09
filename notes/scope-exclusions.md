@@ -51,7 +51,7 @@ with per-phrase hits 0 / 3 / 0 / 1 / 1. The broad list adds `not included`, `not
 `not in scope`, `out of scope`, `does not cover`, `not covered`; it hits 44 of 242.
 
 So 5 is a floor under a narrow rule, not a census. A keyword filter finds 5 sections; the reading pass
-finds exclusions in 115. The gap is the reason this page is a reading record and not a tag.
+finds exclusions in 121 of the 242. The gap is the reason this page is a reading record and not a tag.
 
 ## Entries
 
