@@ -33,7 +33,7 @@ import sys
 
 import build_catalog
 import extract_counterexample_crosscheck as cx
-from catlib import anchors, overview
+from catlib import anchors, ledger as L, overview
 from catlib.paths import COMPARATOR_DIR, FORMALIZATION_YAML, NOTES, ROOT
 from catlib.text import collapse_ws
 
@@ -49,7 +49,7 @@ norm = collapse_ws
 
 
 def population():
-    rows = {r["fam"]: r for r in cx.ledger_rows()}
+    rows = L.ledger_by_fam()
     order, fams = build_catalog.parse_overview()
     shape = [f for f in order if "counterexample" in build_catalog.shapes_of(fams[f]["abstract"])]
     pop = [f for f in shape if rows[f]["tier"] != "T0"]
@@ -77,7 +77,7 @@ def population():
             at, block = cx.declaration_statement(decl, rel)
             if at and re.search(r":\s*([A-Z][A-Za-z0-9_.]*(?:\.\{[^}]*\})?)\s*:=", " ".join(block)):
                 carriers += 1
-    allrows = list(cx.ledger_rows())
+    allrows = list(L.read_ledger())
     return {
         "rows": rows, "fams": fams, "pop": pop, "per": per, "mr": mr,
         "shape": len(shape), "t0": len(shape) - len(pop),

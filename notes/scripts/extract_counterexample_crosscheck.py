@@ -2,7 +2,7 @@
 """Cross-check the counterexample-shaped families outside T0 against main_results; report-only.
 
 Population rule: `counterexample` in the ledger's `shapes` column AND tier != T0 — 28 families,
-18 at T3 and 10 at T2. The T0 counterexample-shaped families are read in notes/t0-triage.md, so
+19 at T3 and 9 at T2. The T0 counterexample-shaped families are read in notes/t0-triage.md, so
 this report covers the rest. For each family it prints the abstract sentence that carries the
 counterexample language, the comparator configs its scope note links, the main_results entry each
 config carries, and the Lean statement that entry's declaration opens with — every line numbered
@@ -15,26 +15,20 @@ A declaration is a source-level claim: formalization.yaml states scope "Partial 
 automation methods [agent], review status unchecked. Nothing here says a comparator was run.
 """
 import collections
-import csv
 import re
 
 import build_catalog
 import extract_subfinding_pairs as ep
 
+from catlib import ledger as L
 from catlib import yaml as Y
 from catlib.paths import (
     COMPARATOR_DIR as CHALLENGES,
     DOCS_DIR as DOCS,
     LEAN as LEAN_ROOT,
-    LEDGER_TSV as LEDGER,
 )
 
 ROOT = build_catalog.ROOT
-
-
-def ledger_rows():
-    with open(LEDGER, newline="", encoding="utf-8") as fh:
-        return list(csv.DictReader(fh, delimiter="\t"))
 
 
 def main_results():
@@ -143,7 +137,7 @@ def carrier(name, rel):
 
 
 def main():
-    rows = {r["fam"]: r for r in ledger_rows()}
+    rows = L.ledger_by_fam()
     order, fams = build_catalog.parse_overview()
     entry_lines = ep.resultentry_lines()
     shape = [f for f in order if "counterexample" in build_catalog.shapes_of(fams[f]["abstract"])]

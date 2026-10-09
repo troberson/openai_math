@@ -9,10 +9,9 @@ Never invokes lean, lake, or comparator. Runtime is a few seconds.
 """
 
 import re
-from collections import defaultdict
 from pathlib import Path
 
-from catlib import ledger, overview, yaml
+from catlib import ledger, measure, overview, yaml
 from catlib.paths import ROOT
 
 OUT = ROOT / "notes" / "catalog.tsv"
@@ -68,15 +67,12 @@ def main():
     _order, fams = parse_overview()
     fam_paps = parse_contents()
     sources, main_results = parse_yaml()
-    challenges = parse_challenges()
     docs = parse_docs()
-    trace_by_fam, trace_unlisted = parse_traces()
+    trace_by_fam, _trace_unlisted = parse_traces()
 
     # Keyed by directory basename: `dirs` below holds names, not paths, and a
     # Path-vs-str membership test silently yields zero for every family.
-    ver_dirs = {p.parent.name for p in (ROOT / "preprints").glob("*/verification")}
-    inputs_dirs = {p.parent.name for p in (ROOT / "preprints").glob("*/INPUTS.md")}
-    covmd_dirs = {p.parent.parent.name for p in (ROOT / "preprints").glob("*/verification/COVERAGE.md")}
+    ver_dirs, inputs_dirs, covmd_dirs = measure.evidence_dirs()
 
     # Page presence is a filesystem fact, not a derived claim: the directory name is the
     # discipline lowercased with spaces hyphenated, so the glob is the whole test.
@@ -140,65 +136,51 @@ def main():
             fh.write("\t".join(str(r[c]).replace("\t", " ").replace("\n", " ") for c in cols) + "\n")
 
     # ---- report: every number quoted in notes/README.md comes from here ----
+    rel = measure.release()
+    pop = measure.population(rows)
     paps_all = [p for fam in fams for p in set(fam_paps.get(fam, [])) | set(fams[fam]["tex_paps"])]
-    print(f"families            {len(fams)}")
+    print(f"families            {rel['families']}")
     print(f"manuscripts         {len(set(paps_all))}")
-    print(f"formalized (yaml)   {len(sources)}")
-    print(f"challenges          {len(challenges)}")
-    print(f"main_results        {sum(main_results.values())} entries / {len(main_results)} unique configs")
-    print(f"scope notes         {len(docs)}")
-    print(f"verification dirs   {len(ver_dirs)}   INPUTS.md {len(inputs_dirs)}   COVERAGE.md {len(covmd_dirs)}")
-    n_trace = sum(len(v) for v in trace_by_fam.values())
-    print(f"reasoning traces    {n_trace} attributed by README.md, {len(trace_unlisted)} on disk unattributed")
-    if trace_unlisted:
-        print(f"  unattributed      {trace_unlisted}")
-    print("\ntier                " + "  ".join(f"{t}={sum(1 for r in rows if r['tier'] == t)}"
-                                              for t in ("T3", "T2", "T1", "T0")))
-    print("shapes              " + "  ".join(f"{n}={sum(1 for r in rows if n in r['shapes'].split('|'))}"
-                                            for n in SHAPES))
-    multi = sum(1 for r in rows if len([s for s in r["shapes"].split("|") if s]) >= 3)
-    plain = sum(1 for r in rows if not r["shapes"])
-    print(f"                    {multi} families match >=3 shapes, {plain} match none")
-    print(f"conditional         {[r['fam'] for r in rows if r['conditional']]}")
-    rn = {r["fam"] for r in rows if r["resolves_named"]}
-    res = {r["fam"] for r in rows if "resolution" in r["shapes"].split("|")}
+    print(f"formalized (yaml)   {rel['formalized']}")
+    print(f"challenges          {rel['challenges']}")
+    print(f"main_results        {rel['main_results_entries']} entries / "
+          f"{rel['main_results_configs']} unique configs")
+    print(f"scope notes         {rel['scope_notes']}")
+    print(f"verification dirs   {rel['verification_dirs']}   INPUTS.md {rel['inputs_dirs']}   "
+          f"COVERAGE.md {rel['covmd_dirs']}")
+    print(f"reasoning traces    {rel['traces_attributed']} attributed by README.md, "
+          f"{rel['traces_unattributed']} on disk unattributed")
+    if rel["traces_unattributed_names"]:
+        print(f"  unattributed      {rel['traces_unattributed_names']}")
+    print("\ntier                " + "  ".join(f"{t}={pop['tiers'][t]}" for t in ledger.TIERS))
+    print("shapes              " + "  ".join(f"{n}={pop['shapes'][n]}" for n in SHAPES))
+    print(f"                    {pop['shapes_ge3']} families match >=3 shapes, "
+          f"{pop['shapes_none']} match none")
+    print(f"conditional         {pop['conditional']}")
+    rn, res = pop["resolves_named"], pop["resolution_tag"]
     print(f"resolves_named      {len(rn)} families   `resolution` tag {len(res)}   "
-          f"union {len(rn | res)}")
-    print(f"                    {len(rn & res)} both, {len(res - rn)} tag-only "
-          f"{sorted(res - rn)}, {len(rn - res)} column-only")
-    print("                    " + "  ".join(
-        f"{t}={sum(1 for r in rows if r['tier'] == t and r['resolves_named'])}"
-        for t in ("T3", "T2", "T1", "T0")))
-    cb = {r["fam"] for r in rows if r["counterex_broad"]}
-    ct = {r["fam"] for r in rows if "counterexample" in r["shapes"].split("|")}
-    print(f"counterex_broad     {len(cb)} of {len(rows)} families flagged (title+abstract)   "
-          f"`counterexample` tag {len(ct)}   tag-only {len(ct - cb)}   flag-only {len(cb - ct)}")
-    print("                    " + "  ".join(
-        f"{t}={sum(1 for r in rows if r['tier'] == t and r['counterex_broad'])}"
-        for t in ("T3", "T2", "T1", "T0"))
-        + f"   {sum(int(r['paps']) for r in rows if r['counterex_broad'])} manuscripts behind them")
-    print(f"versions>0          {sum(1 for r in rows if r['versions'])} families, "
-          f"{sum(r['versions'] for r in rows)} dated re-issues")
-    print(f"companion word      {sum(r['companion_word'] for r in rows)} families")
-    print(f"summary pages       {sum(1 for r in rows if r['summary'])} of {len(rows)} families, "
-          f"{sum(int(r['paps']) for r in rows if r['summary'])} manuscripts behind them")
+          f"union {pop['rn_union']}")
+    print(f"                    {pop['rn_both']} both, {len(pop['rn_tag_only'])} tag-only "
+          f"{pop['rn_tag_only']}, {len(pop['rn_column_only'])} column-only")
+    print("                    " + "  ".join(f"{t}={pop['resolves_named_by_tier'][t]}"
+                                            for t in ledger.TIERS))
+    print(f"counterex_broad     {pop['counterex_broad']} of {pop['families']} families flagged "
+          f"(title+abstract)   `counterexample` tag {pop['counterex_tag']}   "
+          f"tag-only {pop['counterex_tag_only']}   flag-only {pop['counterex_flag_only']}")
+    print("                    " + "  ".join(f"{t}={pop['counterex_by_tier'][t]}" for t in ledger.TIERS)
+          + f"   {pop['counterex_manuscripts']} manuscripts behind them")
+    print(f"versions>0          {pop['versions_families']} families, "
+          f"{pop['versions_reissues']} dated re-issues")
+    print(f"companion word      {pop['companion_word']} families")
+    print(f"summary pages       {pop['summary_families']} of {pop['families']} families, "
+          f"{pop['summary_manuscripts']} manuscripts behind them")
 
     print("\n# discipline  fams  scope_notes  paps  paps_form")
-    disc = defaultdict(lambda: [0, 0, 0, 0])
-    for r in rows:
-        c = disc[r["discipline"]]
-        c[0] += 1
-        c[1] += r["scope_note"]
-        c[2] += r["paps"]
-        c[3] += r["paps_form"]
-    for name, (f, s, p, pf) in sorted(disc.items(), key=lambda kv: -kv[1][0]):
+    for name, (f, s, p, pf) in sorted(pop["disciplines"].items(), key=lambda kv: -kv[1][0]):
         print(f"{name:38} {f:4} {s:11} {p:5} {pf:9}")
 
     # Cross-check the two independent family -> manuscript mappings.
-    tex_only = [(f, x) for f, x in
-                ((f, sorted(set(fams[f]["tex_paps"]) - set(fam_paps.get(f, [])))) for f in sorted(fams)) if x]
-    md_only = [(f, x) for f, x in
-               ((f, sorted(set(fam_paps.get(f, [])) - set(fams[f]["tex_paps"]))) for f in sorted(fams)) if x]
+    tex_only, md_only = rel["overview_only"], rel["contents_only"]
     print(f"overview.tex links absent from CONTENTS.md: "
           f"{sum(len(x) for _, x in tex_only)} across {len(tex_only)} families")
     for f, x in tex_only:
@@ -207,9 +189,8 @@ def main():
           f"{sum(len(x) for _, x in md_only)} across {len(md_only)} families")
     for f, x in md_only:
         print(f"  fam {f}: {x}")
-    missing = [f for f in sorted(fams) if not fam_paps.get(f)]
-    if missing:
-        print(f"families with no CONTENTS.md manuscript link: {missing}")
+    if rel["no_contents"]:
+        print(f"families with no CONTENTS.md manuscript link: {rel['no_contents']}")
     print(f"rows written        {len(rows)} -> {OUT.relative_to(ROOT)}")
 
 
