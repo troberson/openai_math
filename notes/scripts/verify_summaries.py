@@ -47,6 +47,7 @@ import sys
 from pathlib import Path
 
 import build_catalog as B
+from catlib.text import strip_markup as norm
 
 ROOT = Path(__file__).resolve().parents[2]
 SUMMARIES = ROOT / "notes" / "summaries"
@@ -125,30 +126,6 @@ class Page:
             # PDF fails the verbatim test, which is the honest result - its text is not extractable.
             self.cache[rel] = path.read_text(encoding="utf-8", errors="replace").splitlines()
         return self.cache[rel]
-
-
-def norm(s):
-    """Compare a page quotation with the source line it cites, markup aside."""
-    s = s.replace("’", "'").replace("‘", "'").replace("“", '"').replace("”", '"')
-    s = s.replace("**", "").replace("`", "").replace("*", "")
-    s = s.replace("&emsp;", " ").replace("&thinsp;", " ").replace("&mdash;", "-")
-    # Markup, not words: the release writes <i>p</i> in its blurbs and the page renders *p*. Strip
-    # tags to nothing, not to a space - `prime-to-<i>p</i>` must normalize to `prime-to-p`, and a
-    # space here would break the substring test against the page.
-    s = re.sub(r"</?[a-zA-Z][^>]*>", "", s)
-    # The page links its sources relatively (../../../ from notes/summaries/<discipline>/), while
-    # the release text spells the same target as a repo-relative path.
-    s = re.sub(r"(?:\.\./)+", "", s)
-    # LaTeX-aware: a rendered cross-reference is not a misquote. `\ref{thm:main}` in the source is
-    # "Theorem 1" in the page, so strip the command *and* the number the page substituted for it.
-    s = re.sub(r"\\(?:ref|eqref|label|autoref|Cref|cref|cite[tp]*|citeauthor|citeyear)\{[^}]*\}",
-               "", s)
-    s = re.sub(r"\\[a-zA-Z@]+", " ", s).replace("~", " ").replace("{}", " ")
-    s = re.sub(r"\b(Theorem|Lemma|Corollary|Proposition|Definition|Remark|Item|Axiom|Step)"
-               r"\s+\d+(?:\.\d+)*\b", r"\1", s)
-    s = re.sub(r"[{}]", " ", s)
-    s = re.sub(r"\s+([.,;:!?])", r"\1", s)
-    return re.sub(r"\s+", " ", s).strip()
 
 
 def markers(text):

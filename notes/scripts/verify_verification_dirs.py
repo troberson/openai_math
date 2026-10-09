@@ -28,33 +28,31 @@ splitlines(), the rule the extract_verification_dirs.py report uses. The page ma
 
 --mutant runs the built-in mutations and fails if any goes uncaught.
 """
-import csv
 import hashlib
 import json
-import pathlib
 import re
 import sys
 
 import extract_verification_dirs as evd
+from catlib import anchors
+from catlib.paths import LEDGER_TSV, NOTES, PREPRINTS, ROOT
+from catlib.text import collapse_ws
+from catlib.tsv import read_rows
 
-ROOT = pathlib.Path(__file__).resolve().parents[2]
-PAGE = ROOT / "notes" / "verification-dirs.md"
-LEDGER = ROOT / "notes" / "catalog.tsv"
-POS = ROOT / "preprints/Positively-curved-Einstein-four-manifolds-September-23-2026"
-ZERO = ROOT / "preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026"
+PAGE = NOTES / "verification-dirs.md"
+POS = PREPRINTS / "Positively-curved-Einstein-four-manifolds-September-23-2026"
+ZERO = PREPRINTS / "Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026"
 VPOS, VZERO = POS / "verification", ZERO / "verification"
 SECTION = "## What the 348 bundle checks, and what it omits"
 ENTRY = "## Every bundle and its own entry point"
-FOCK = ROOT / "preprints/A-Fock-space-inequality-and-the-Laughlin-spectral-gap-September-24-2026"
-UNIF = ROOT / "preprints/Uniform-Stability-of-the-Spherical-Laughlin-Gap-October-5-2026"
+FOCK = PREPRINTS / "A-Fock-space-inequality-and-the-Laughlin-spectral-gap-September-24-2026"
+UNIF = PREPRINTS / "Uniform-Stability-of-the-Spherical-Laughlin-Gap-October-5-2026"
 
-ANCHOR = re.compile(r"`([\w./+-]+?\.(?:py|md|tex|json|txt)):(\d+)`")
+ANCHOR = anchors.anchor_pattern(anchors.EXT_MD)
 QUOTE = re.compile(r'\*"([^"]{12,})"\*')
 SAYS = re.compile(r"`([A-Za-z0-9_.-]+\.(?:md|json|py|tex))`\s+\w+\s*(?:the\s+)?[\w, ]*?\"([^\"]{12,})\"")
 
-
-def norm(s):
-    return re.sub(r"\s+", " ", s).strip()
+norm = collapse_ws
 
 
 def sha(p):
@@ -72,8 +70,7 @@ def section_bodies(text):
 
 
 def ledger_rows():
-    with LEDGER.open(encoding="utf-8") as fh:
-        return list(csv.DictReader(fh, delimiter="\t"))
+    return read_rows(LEDGER_TSV)
 
 
 def measure():
@@ -287,39 +284,22 @@ def check(text, full_page):
                 problems.append(f"anchor {rel}:{at} is outside the file ({len(src)} lines)")
 
         # fenced blocks -> nearest preceding anchor
-        i = 0
-        while i < len(lines):
-            if lines[i].lstrip().startswith("```"):
-                indent = lines[i][: len(lines[i]) - len(lines[i].lstrip())]
-                j = i + 1
-                blk = []
-                while j < len(lines) and not lines[j].lstrip().startswith("```"):
-                    ln = lines[j]
-                    blk.append(ln[len(indent):] if ln.startswith(indent) and ln.strip() else ln)
-                    j += 1
-                anchor = None
-                for k in range(i - 1, max(i - 9, -1), -1):
-                    found = ANCHOR.findall(lines[k])
-                    if found:
-                        anchor = (found[-1][0], int(found[-1][1]))
-                        break
-                if anchor is None:
-                    problems.append(f"section line {i + 1}: fenced block has no preceding file:line anchor")
-                elif not (ROOT / anchor[0]).exists():
-                    problems.append(f"section line {i + 1}: anchor file {anchor[0]} does not exist")
-                else:
-                    rel, at = anchor
-                    src = (ROOT / rel).read_text(encoding="utf-8", errors="replace").split("\n")
-                    for n, want in enumerate(blk):
-                        got = src[at - 1 + n] if at - 1 + n < len(src) else "<past end of file>"
-                        n_block_lines += 1
-                        if got != want:
-                            problems.append(
-                                f"section line {i + 2}: block line {n} != {rel}:{at + n}\n"
-                                f"    want {want!r}\n    got  {got!r}")
-                i = j + 1
+        for i, blk in anchors.fenced_blocks(lines, dedent=True):
+            anchor = anchors.nearest_anchor(lines, i, ANCHOR, window=9)
+            if anchor is None:
+                problems.append(f"section line {i + 1}: fenced block has no preceding file:line anchor")
+            elif not (ROOT / anchor[0]).exists():
+                problems.append(f"section line {i + 1}: anchor file {anchor[0]} does not exist")
             else:
-                i += 1
+                rel, at = anchor[0], int(anchor[1])
+                src = (ROOT / rel).read_text(encoding="utf-8", errors="replace").split("\n")
+                for n, want in enumerate(blk):
+                    got = src[at - 1 + n] if at - 1 + n < len(src) else "<past end of file>"
+                    n_block_lines += 1
+                    if got != want:
+                        problems.append(
+                            f"section line {i + 2}: block line {n} != {rel}:{at + n}\n"
+                            f"    want {want!r}\n    got  {got!r}")
 
         # quotations: an anchor in the quote's own line (a table row) pins it to that line exactly;
         # otherwise the nearest anchor that follows within 4 lines, with the old proximity rule.

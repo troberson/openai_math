@@ -4,6 +4,9 @@
 ships them under distinct names and a caller says which one it means.
 
   collapse_ws     verbatim comparison: quotations checked "verbatim modulo whitespace"
+  strip_markup    a page quotation against the source line it cites: emphasis markers, code spans,
+                  HTML entities and tags, LaTeX commands, and the number a page substituted for a
+                  `\\ref` are markup, not words, so they are removed before the substring test
   fold_apostrophe U+2019/U+2018 -> ASCII, because overview.tex is inconsistent (76 titles use
                   ASCII ' and 8 use U+2019), so an ASCII pattern misses a title silently
   title_key       lowercase alphanumerics, leading 'the' and possessives dropped (title joins)
@@ -26,6 +29,34 @@ from collections.abc import Mapping
 def collapse_ws(s: str) -> str:
     """Whitespace collapsed to single spaces and trimmed — the verbatim-comparison form."""
     return re.sub(r"\s+", " ", s).strip()
+
+
+def strip_markup(s: str) -> str:
+    """A page quotation compared against the source line it cites, markup aside.
+
+    Moved verbatim from verify_summaries.py, where it is the checker's quotation rule;
+    locate_summary_quotes.py and verify_findings.py call the same rule, so it lives here.
+    """
+    s = s.replace("’", "'").replace("‘", "'").replace("“", '"').replace("”", '"')
+    s = s.replace("**", "").replace("`", "").replace("*", "")
+    s = s.replace("&emsp;", " ").replace("&thinsp;", " ").replace("&mdash;", "-")
+    # Markup, not words: the release writes <i>p</i> in its blurbs and the page renders *p*. Strip
+    # tags to nothing, not to a space - `prime-to-<i>p</i>` must normalize to `prime-to-p`, and a
+    # space here would break the substring test against the page.
+    s = re.sub(r"</?[a-zA-Z][^>]*>", "", s)
+    # The page links its sources relatively (../../../ from notes/summaries/<discipline>/), while
+    # the release text spells the same target as a repo-relative path.
+    s = re.sub(r"(?:\.\./)+", "", s)
+    # LaTeX-aware: a rendered cross-reference is not a misquote. `\ref{thm:main}` in the source is
+    # "Theorem 1" in the page, so strip the command *and* the number the page substituted for it.
+    s = re.sub(r"\\(?:ref|eqref|label|autoref|Cref|cref|cite[tp]*|citeauthor|citeyear)\{[^}]*\}",
+               "", s)
+    s = re.sub(r"\\[a-zA-Z@]+", " ", s).replace("~", " ").replace("{}", " ")
+    s = re.sub(r"\b(Theorem|Lemma|Corollary|Proposition|Definition|Remark|Item|Axiom|Step)"
+               r"\s+\d+(?:\.\d+)*\b", r"\1", s)
+    s = re.sub(r"[{}]", " ", s)
+    s = re.sub(r"\s+([.,;:!?])", r"\1", s)
+    return collapse_ws(s)
 
 
 def fold_apostrophe(s: str) -> str:

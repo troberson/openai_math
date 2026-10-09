@@ -25,22 +25,23 @@ each is flagged while the real page stays clean.
 Usage: python3 notes/scripts/verify_findings.py
        python3 notes/scripts/verify_findings.py --mutant
 """
-import csv
 import re
 import subprocess
 import sys
 from collections import Counter
 from pathlib import Path
 
-import build_catalog as B
-from verify_summaries import norm
+from catlib import yaml as Y
+from catlib.ledger import counterex_broad, resolves_named, shapes_of, tier_of, versions_of
+from catlib.overview import parse_contents, parse_overview
+from catlib.paths import (COMPARATOR_DIR, INDEX_DIR, NOTES, PREPRINTS, REASONING_TRACES, ROOT,
+                          SCRIPTS, SUMMARIES_DIR)
+from catlib.text import strip_markup
+from catlib.tsv import read_rows
 
-ROOT = Path(__file__).resolve().parents[2]
-PAGE = ROOT / "notes" / "findings.md"
-SCRIPTS = ROOT / "notes" / "scripts"
-CHAL = ROOT / "lean" / "ComparatorChallenges"
-TRACES = ROOT / "reasoning_traces"
-INDEX = ROOT / "notes" / "index"
+PAGE = NOTES / "findings.md"
+TRACES = REASONING_TRACES
+INDEX = INDEX_DIR
 
 SRCROW = re.compile(r"^\|\s*(S\d+)\s*\|\s*\[`([^`]+)`\]\(([^)]+)\)\s*\|\s*(\d+)\s*\|\s*(.+?)\s*\|\s*$")
 MARKER = re.compile(r"\[S(\d+)(?::(\d+)(?:[–-](\d+))?)?\]")
@@ -107,8 +108,7 @@ REPORTS = [
 
 
 def tsv(rel):
-    with (ROOT / rel).open(encoding="utf-8", newline="") as fh:
-        return list(csv.DictReader(fh, delimiter="\t"))
+    return read_rows(ROOT / rel)
 
 
 def run(script):
@@ -123,17 +123,17 @@ def ledger():
 
     main() is never called because it writes notes/catalog.tsv; the row construction below is a
     copy of it, so a page count is checked against the generator's own rules, not against a
-    paraphrase of them.
+    paraphrase of them — the rules being catlib's, which the generator itself uses.
     """
-    _order, fams = B.parse_overview()
-    fam_paps = B.parse_contents()
-    sources, main_results = B.parse_yaml()
-    docs = B.parse_docs()
-    trace_by_fam, trace_unlisted = B.parse_traces()
-    ver_dirs = {p.parent.name for p in (ROOT / "preprints").glob("*/verification")}
-    inputs_dirs = {p.parent.name for p in (ROOT / "preprints").glob("*/INPUTS.md")}
-    covmd_dirs = {p.parent.parent.name for p in (ROOT / "preprints").glob("*/verification/COVERAGE.md")}
-    summary_fams = {p.name[:3] for p in (ROOT / "notes" / "summaries").glob("*/*.md")
+    _order, fams = parse_overview()
+    fam_paps = parse_contents()
+    sources, main_results = Y.parse_yaml()
+    docs = Y.parse_docs()
+    trace_by_fam, trace_unlisted = Y.parse_traces()
+    ver_dirs = {p.parent.name for p in PREPRINTS.glob("*/verification")}
+    inputs_dirs = {p.parent.name for p in PREPRINTS.glob("*/INPUTS.md")}
+    covmd_dirs = {p.parent.parent.name for p in PREPRINTS.glob("*/verification/COVERAGE.md")}
+    summary_fams = {p.name[:3] for p in SUMMARIES_DIR.glob("*/*.md")
                     if re.match(r"^\d{3}-", p.name)}
     rows = {}
     for fam in sorted(fams):
@@ -142,10 +142,10 @@ def ledger():
         d = docs.get(fam)
         cfgs = d["configs"] if d else []
         in_main = [c for c in cfgs if c in main_results]
-        shapes = B.shapes_of(info["abstract"])
+        shapes = shapes_of(info["abstract"])
         dirs = {Path(p).parts[-2] for p in all_paths}
         rows[fam] = {
-            "tier": "T3" if in_main else ("T2" if cfgs else ("T1" if d else "T0")),
+            "tier": tier_of(bool(in_main), bool(cfgs), bool(d)),
             "paps": len(all_paths),
             "paps_form": sum(1 for p in all_paths if p in sources),
             "chal": len(cfgs),
@@ -157,10 +157,10 @@ def ledger():
             "trace": bool(trace_by_fam.get(fam)),
             "shapes": shapes,
             "conditional": 1 if "conditional" in shapes else 0,
-            "named": B.resolves_named(info["title"], info["abstract"]),
-            "cxbroad": B.counterex_broad(info["title"], info["abstract"]),
+            "named": resolves_named(info["title"], info["abstract"]),
+            "cxbroad": counterex_broad(info["title"], info["abstract"]),
             "companion": 1 if re.search(r"\bcompanion", info["abstract"], re.I) else 0,
-            "versions": B.versions_of(all_paths),
+            "versions": versions_of(all_paths),
             "summary": 1 if fam in summary_fams else 0,
             "paths": all_paths,
         }
@@ -193,7 +193,7 @@ def measured():
     lk = {r["edge"]: r for r in links}
     bib = lk["manuscript->corpus manuscript (bib href)"]["detail"]
 
-    files = sorted(CHAL.glob("*.lean"))
+    files = sorted(COMPARATOR_DIR.glob("*.lean"))
     sorries = [p.read_text(encoding="utf-8", errors="replace").count("sorry") for p in files]
     bundles = sorted(d for d in (ROOT / "preprints").glob("*/verification"))
     topic_edges = tsv("notes/index/edges/family-topic.tsv")
@@ -206,7 +206,7 @@ def measured():
 
     # The yaml `sources:` list is the only place the release names a formalized manuscript, so the
     # gap between it and the overview's own manuscript list is measured, not quoted.
-    yaml_paths = B.parse_yaml()[0]
+    yaml_paths = Y.parse_yaml()[0]
     listed = {p for r in rows.values() for p in r["paths"]}
     yaml_extra = sorted(p for p in yaml_paths if p not in listed)
 
@@ -406,7 +406,7 @@ def check(page):
         if a < 1 or b > len(src):
             problems.append(f"{sid}:{a}-{b} is outside {table[sid][0]} ({len(src)} lines)")
             continue
-        target = norm(" ".join(src[a - 1:b]))
+        target = strip_markup(" ".join(src[a - 1:b]))
         cand = []
         window = flat[max(0, m.start() - 400):m.start()]
         for sp in QUOTE.finditer(window):
@@ -419,7 +419,7 @@ def check(page):
         if not cand:
             continue  # a prose citation, not a quotation
         checked += 1
-        if not any(norm(c) in target for c in cand):
+        if not any(strip_markup(c) in target for c in cand):
             problems.append(f"{sid}:{a}-{b} carries no quotation found on those lines: "
                             f"{cand[-1][:60]}")
     if checked < 12:
