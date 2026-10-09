@@ -222,7 +222,8 @@ def resolves_named(title, abstract):
     233, the union yields 248, and the union is a strict superset -- 0 removals. The 15 additions
     are recorded in notes/named-results.md. Lowering the whole input is what makes the union a
     superset: a case-sensitive title read drops 100 of the 233 (capitalised "Conjecture" at title
-    start) and yields 147, which is why the scope is stated with the case rule.
+    start) and yields 148, which is why the scope is stated with the case rule. Both alternates are
+    printed by extract_named_results.py's TITLE-SCOPE SWAP section.
     """
     low = (title + " " + abstract).lower()
     return 1 if TARGET_NOUN.search(low) and RESOLVE_VERB.search(low) else 0

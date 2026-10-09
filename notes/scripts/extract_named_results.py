@@ -199,6 +199,19 @@ def population():
     abstract_only = {f for f in order if TARGET.search(fams[f]["abstract"].lower())
                      and RESOLVE.search(fams[f]["abstract"].lower())}
     add = sorted(rn - abstract_only)
+    # The two scopes the swap was measured against, kept as report figures so the counts quoted
+    # from them are reproducible: both regexes on the raw (unlowered) title+abstract, and the
+    # target noun read case-sensitively in the title with the verb read in the lowered pair.
+    scope_raw = {
+        f for f in order
+        if TARGET.search(fams[f]["title"] + " " + fams[f]["abstract"])
+        and RESOLVE.search(fams[f]["title"] + " " + fams[f]["abstract"])
+    }
+    scope_title_cs = {
+        f for f in order
+        if TARGET.search(fams[f]["title"])
+        and RESOLVE.search((fams[f]["title"] + " " + fams[f]["abstract"]).lower())
+    }
     return {
         "order": order, "fams": fams, "ledger": ledger, "rn": rn, "famline": famline,
         "famdirs": famdirs, "ndirs": len(dir2fam), "files": files, "begins": begins,
@@ -210,7 +223,7 @@ def population():
         "subj_fams": subj_fams, "tgt_fams": tgt_fams, "have_b": have_b, "have_t": have_t,
         "no_head": no_head, "tiers": tiers, "dir_named": dir_named, "dn": dn, "an": an,
         "pw": pw, "ps": ps, "core": core, "eo": eo, "add": add,
-        "abstract_only": abstract_only,
+        "abstract_only": abstract_only, "scope_raw": scope_raw, "scope_title_cs": scope_title_cs,
     }
 
 
@@ -220,14 +233,14 @@ def report(p):
      tgt_fams, have_b, have_t, no_head, tiers, dir_named, dn, an, pw, ps, core, eo, add,
      head_titled, abstract_named, prose_window, prose_sentence, extra_only,
      files, begins, titled, titled_all, titled_split, generic, env_begins,
-     abstract_only) = (
+     abstract_only, scope_raw, scope_title_cs) = (
         p["order"], p["fams"], p["ledger"], p["rn"], p["famdirs"], p["tgt"],
         p["verb_in_title"], p["subject"], p["subj_hits"], p["subj_fams"], p["tgt_fams"],
         p["have_b"], p["have_t"], p["no_head"], p["tiers"], p["dir_named"], p["dn"], p["an"],
         p["pw"], p["ps"], p["core"], p["eo"], p["add"], p["head_titled"],
         p["abstract_named"], p["prose_window"], p["prose_sentence"], p["extra_only"],
         p["files"], p["begins"], p["titled"], p["titled_all"], p["titled_split"],
-        p["generic"], p["env_begins"], p["abstract_only"])
+        p["generic"], p["env_begins"], p["abstract_only"], p["scope_raw"], p["scope_title_cs"])
     famline = p["famline"]
 
     print("POPULATION")
@@ -296,6 +309,11 @@ def report(p):
     print(f"  additions {len(add)} -> {' '.join(add)}")
     print(f"  column reads {len(rn)}; abstract-only scope reads {len(abstract_only)}; "
           f"removals 0 - the union keeps every flag the abstract-only scope had")
+    print(f"  scope alternates: both regexes on the raw title+abstract read {len(scope_raw)} "
+          f"(removals {len(abstract_only - scope_raw)}, additions {len(scope_raw - abstract_only)}); "
+          f"target noun case-sensitive in the title with the verb in the lowered pair read "
+          f"{len(scope_title_cs)} (removals {len(abstract_only - scope_title_cs)}, "
+          f"additions {len(scope_title_cs - abstract_only)})")
 
     print("\nDIRECTION A - manuscript names a target the abstract-only scope missed")
     print("  (reading material, anchored)")
