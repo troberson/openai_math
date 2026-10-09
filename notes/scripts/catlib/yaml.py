@@ -1,0 +1,122 @@
+"""lean/formalization.yaml, ComparatorChallenges/*.json, lean/docs/*.md, README.md traces.
+
+The yaml carries `sources:` (manuscripts) and `status.main_results:` (config/declaration/file
+triples) as two flat lists with **nothing linking them**, and no family key. family -> config
+comes only from the `../ComparatorChallenges/(X).lean` links inside lean/docs/<NNN>.md, so a
+reader that wants the chain walks family -> config (scope note) -> declaration -> file.
+
+Source-level facts are source-level: the yaml states `scope: "Partial progress."`,
+`automation: methods: [agent]`, `review: status: unchecked`. Zero `sorry` in source is not a
+comparator pass, and it does not mean the library elaborates.
+"""
+
+from __future__ import annotations
+
+import json
+import re
+from collections import Counter, defaultdict
+from typing import Any
+
+from catlib.paths import (
+    COMPARATOR_DIR,
+    DOCS_DIR,
+    FORMALIZATION_YAML,
+    README_MD,
+    REASONING_TRACES,
+    read_text,
+)
+
+CONFIG_KEY = re.compile(r"comparator_config:\s*ComparatorChallenges/([A-Za-z0-9_]+)\.json")
+SOURCE_ID = re.compile(r"^\s*id:\s*\.\./(" + r"preprints/(?:[^\s(){}\\]|\([0-9]+\))*\.pdf" + r")", re.M)
+DOC_CONFIG = re.compile(r"\.\./ComparatorChallenges/([A-Za-z0-9_]+)\.lean")
+DOC_PAP = re.compile(r"\]\(\.\./\.\./(preprints/(?:[^\s(){}\\]|\([0-9]+\))*\.pdf)\)")
+SCOPE_SPAN = re.compile(r"^## Scope\n(.*?)(?=^## |\Z)", re.M | re.S)
+TRACE_ROW = re.compile(r"^\|\s*(\d{3})\s*\|\s*\[[^\]]*\]\(reasoning_traces/([^)]+?)\.(?:pdf|tex)\)", re.M)
+
+
+def parse_yaml() -> tuple[set[str], Counter]:
+    """-> (set of formalized manuscript paths, {config stem: count of main_results entries})."""
+    text = read_text(FORMALIZATION_YAML)
+    sources = set(SOURCE_ID.findall(text))
+    main = Counter(CONFIG_KEY.findall(text))
+    return sources, main
+
+
+def main_results_entries() -> list[dict[str, Any]]:
+    """Every main_results entry with its yaml line anchor: {config, declaration, file, line}.
+
+    The anchor is the entry's `file:` line; a checker that quotes a 3-line entry block anchors
+    at `file-line - 2`, which is where the `- comparator_config:` line sits.
+    """
+    lines = read_text(FORMALIZATION_YAML).splitlines()
+    out: list[dict[str, Any]] = []
+    entry: dict[str, Any] = {}
+    for n, line in enumerate(lines, 1):
+        m = CONFIG_KEY.search(line)
+        if m:
+            entry = {"config": m.group(1), "line": n}
+            out.append(entry)
+            continue
+        m = re.search(r"^\s*declaration:\s*(\S+)", line)
+        if m and entry:
+            entry["declaration"] = m.group(1)
+            continue
+        m = re.search(r"^\s*file:\s*(\S+)", line)
+        if m and entry:
+            entry["file"] = m.group(1)
+            entry["file_line"] = n
+            entry = {}
+    return out
+
+
+def parse_challenges() -> dict[str, dict[str, Any]]:
+    """-> {config stem: {theorems, definitions, nanoda}}."""
+    out: dict[str, dict[str, Any]] = {}
+    for p in sorted(COMPARATOR_DIR.glob("*.json")):
+        d = json.loads(read_text(p))
+        out[p.stem] = {
+            "theorems": len(d.get("theorem_names") or []),
+            "definitions": len(d.get("definition_names") or []),
+            "nanoda": bool(d.get("enable_nanoda")),
+        }
+    return out
+
+
+def parse_docs() -> dict[str, dict[str, Any]]:
+    """-> {fam: {configs, paps, scope_chars}}; the only family -> config join the repo supports."""
+    docs: dict[str, dict[str, Any]] = {}
+    for p in sorted(DOCS_DIR.glob("*.md")):
+        fam = p.stem
+        text = read_text(p)
+        cfgs = DOC_CONFIG.findall(text)
+        paps = DOC_PAP.findall(text)
+        m = SCOPE_SPAN.search(text)
+        docs[fam] = {
+            "configs": sorted(set(cfgs)),
+            "paps": sorted(set(paps)),
+            "scope_chars": len(m.group(1).strip()) if m else 0,
+        }
+    return docs
+
+
+def parse_traces() -> tuple[dict[str, list[str]], list[str]]:
+    """-> ({fam: [trace stems]}, stems on disk that README.md does not attribute).
+
+    README.md tabulates every released reasoning trace against its result family, so the mapping
+    is read from the release rather than guessed from filenames.
+    """
+    text = read_text(README_MD)
+    rows = TRACE_ROW.findall(text)
+    by_fam: dict[str, list[str]] = defaultdict(list)
+    for fam, stem in rows:
+        if stem not in by_fam[fam]:
+            by_fam[fam].append(stem)
+    listed = {s for stems in by_fam.values() for s in stems}
+    on_disk = {p.stem for p in REASONING_TRACES.iterdir() if p.is_file()}
+    return by_fam, sorted(on_disk - listed)
+
+
+def scope_span(text: str) -> str:
+    """The `## Scope` section body of a scope note, the load-bearing part of the note."""
+    m = SCOPE_SPAN.search(text)
+    return m.group(1).strip() if m else ""

@@ -221,7 +221,7 @@ not survive a re-run.
 | ID | File | Lines | Role |
 |---|---|---|---|
 | S1 | [`notes/catalog.tsv`](catalog.tsv) | 373 | The generated ledger: 372 rows, 22 columns |
-| S2 | [`notes/scripts/build_catalog.py`](scripts/build_catalog.py) | 421 | The generator whose report is the test for every ledger count |
+| S2 | [`notes/scripts/build_catalog.py`](scripts/build_catalog.py) | 217 | The generator whose report is the test for every ledger count |
 | S3 | [`overview.tex`](../overview.tex) | 859 | The release's own 372 `\resultentry` entries and abstracts |
 | S4 | [`lean/formalization.yaml`](../lean/formalization.yaml) | 1783 | Tiers, `main_results`, automation and review statements |
 | S5 | [`notes/scope-exclusions.md`](scope-exclusions.md) | 316 | The 242 scope notes read for exclusions |

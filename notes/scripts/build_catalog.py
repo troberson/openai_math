@@ -8,264 +8,60 @@ Reads only text metadata that ships in this repo:
 Never invokes lean, lake, or comparator. Runtime is a few seconds.
 """
 
-import json
 import re
-from collections import Counter, defaultdict
+from collections import defaultdict
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
+from catlib import ledger, overview, yaml
+from catlib.paths import ROOT
+
 OUT = ROOT / "notes" / "catalog.tsv"
 
-# Paren-aware: preprints/Sharp-integral-fillings-in-CAT(0)-spaces-.../paper.pdf
-# Braces and backslashes must stay out of the class, or a greedy match in overview.tex
-# swallows the "}\\enspace\\textperiodcentered\\enspace\\href{" separator between links.
-PAP = r"preprints/(?:[^\s(){}\\]|\([0-9]+\))*\.pdf"
-MONTHS = "January|February|March|April|May|June|July|August|September|October|November|December"
-DATE_SUFFIX = re.compile(rf"-(?:{MONTHS})-\d{{1,2}}-\d{{4}}$")
+# Re-exported for the scripts that import this module; the joins live in catlib/.
+PAP = overview.PAP
+MONTHS = overview.MONTHS
+DATE_SUFFIX = overview.DATE_SUFFIX
+SHAPES = ledger.SHAPES
+read_args = overview.read_args
+parse_overview = overview.parse_overview
+parse_contents = overview.parse_contents
+parse_yaml = yaml.parse_yaml
+parse_challenges = yaml.parse_challenges
+parse_docs = yaml.parse_docs
+parse_traces = yaml.parse_traces
+conditional_hits = ledger.conditional_hits
+shapes_of = ledger.shapes_of
+resolves_named = ledger.resolves_named
+counterex_broad = ledger.counterex_broad
+versions_of = ledger.versions_of
+TARGET_NOUN = ledger.TARGET_NOUN
+RESOLVE_VERB = ledger.RESOLVE_VERB
+COUNTEREX_PHRASE = ledger.COUNTEREX_PHRASE
 
-SHAPES = {
-    "resolution": r"resolv|proves the .{0,60}conjecture|answers .{0,30}question|settles",
-    "counterexample": r"counterexample|disprove|refut|fails|violation",
-    "bound": r"\bbound|sharp|power-saving|improv|inequalit",
-    "classification": r"\bif and only if|classified|classification|characteri[sz]",
-    "undecidability": r"no algorithm|undecidable|unsolvable|negative answer",
-    "density": r"density",
-    "conditional": r"[Aa]ssuming|we assume|under the .{0,40}hypothes|provided that|conditional",
-    "partial": r"\bat most\b|\brestricted\b|\bunramified part|\bin coranks|for fixed|partial",
-    "uniform": r"\buniform(ly|ly)?\b|\bfor every\b|\barbitrary\b",
-}
-
-
-def read_args(text, i):
-    """text[i] == '{' -> (list of brace-group bodies, index after the last group)."""
-    args = []
-    while i < len(text) and text[i] == "{":
-        depth, j, buf = 0, i + 1, []
-        while j < len(text):
-            c = text[j]
-            back = 0
-            k = j - 1
-            while k >= 0 and text[k] == "\\":
-                back += 1
-                k -= 1
-            escaped = back % 2 == 1
-            if c == "{" and not escaped:
-                depth += 1
-                buf.append(c)
-            elif c == "}" and not escaped:
-                if depth == 0:
-                    break
-                depth -= 1
-                buf.append(c)
-            else:
-                buf.append(c)
-            j += 1
-        args.append("".join(buf))
-        i = j + 1
-    return args, i
-
-
-def parse_overview():
-    """-> (families ordered, {fam: {discipline,title,abstract,paps_links}})."""
-    text = (ROOT / "overview.tex").read_text(encoding="utf-8")
-    start = text.index("\\begin{document}")
-    discipline = None
-    fams = {}
-    order = []
-    i = start
-    while True:
-        ns = text.find("\\cataloguesection{", i)
-        nr = text.find("\\resultentry{", i)
-        if nr == -1:
-            break
-        if ns != -1 and ns < nr:
-            args, i = read_args(text, ns + len("\\cataloguesection"))
-            discipline = args[0]
-            continue
-        args, i = read_args(text, nr + len("\\resultentry"))
-        fam, title, abstract, links = args[0], args[1], args[2], args[3]
-        fams[fam] = {
-            "discipline": discipline,
-            "title": title.strip(),
-            "abstract": abstract.strip(),
-            "tex_paps": re.findall(PAP, links),
-        }
-        order.append(fam)
-    return order, fams
-
-
-def parse_contents():
-    """-> {fam: [manuscript paths]} in document order."""
-    text = (ROOT / "CONTENTS.md").read_text(encoding="utf-8")
-    fam = None
-    paps = defaultdict(list)
-    header = re.compile(r"^\*\*(\d{3})\.\s", re.M)
-    link = re.compile(r"\]\((" + PAP + r")\)")
-    events = [(m.start(), "fam", m.group(1)) for m in header.finditer(text)]
-    events += [(m.start(), "pap", m.group(1)) for m in link.finditer(text)]
-    events.sort()
-    for _, kind, val in events:
-        if kind == "fam":
-            fam = val
-        elif fam is not None and val not in paps[fam]:
-            paps[fam].append(val)
-    return paps
-
-
-def parse_yaml():
-    """-> (set of formalized manuscript paths, {config stem: count of main_results entries})."""
-    text = (ROOT / "lean" / "formalization.yaml").read_text(encoding="utf-8")
-    sources = set(re.findall(r"^\s*id:\s*\.\./(" + PAP + r")", text, re.M))
-    main = Counter(re.findall(r"comparator_config:\s*ComparatorChallenges/([A-Za-z0-9_]+)\.json", text))
-    return sources, main
-
-
-def parse_challenges():
-    """-> {config stem: {theorems, definitions, nanoda}}."""
-    out = {}
-    for p in sorted((ROOT / "lean" / "ComparatorChallenges").glob("*.json")):
-        d = json.loads(p.read_text(encoding="utf-8"))
-        out[p.stem] = {
-            "theorems": len(d.get("theorem_names") or []),
-            "definitions": len(d.get("definition_names") or []),
-            "nanoda": bool(d.get("enable_nanoda")),
-        }
-    return out
-
-
-def parse_docs():
-    """-> {fam: {configs, paps, scope_chars}}."""
-    docs = {}
-    for p in sorted((ROOT / "lean" / "docs").glob("*.md")):
-        fam = p.stem
-        text = p.read_text(encoding="utf-8")
-        cfgs = re.findall(r"\.\./ComparatorChallenges/([A-Za-z0-9_]+)\.lean", text)
-        paps = re.findall(r"\]\(\.\./\.\./(" + PAP + r")\)", text)
-        m = re.search(r"^## Scope\n(.*?)(?=^## |\Z)", text, re.M | re.S)
-        docs[fam] = {
-            "configs": sorted(set(cfgs)),
-            "paps": sorted(set(paps)),
-            "scope_chars": len(m.group(1).strip()) if m else 0,
-        }
-    return docs
-
-
-def parse_traces():
-    """-> ({fam: [trace stems]}, stems on disk that README.md does not attribute).
-
-    README.md tabulates every released reasoning trace against its result family,
-    so the mapping is read from the release rather than guessed from filenames.
-    """
-    text = (ROOT / "README.md").read_text(encoding="utf-8")
-    rows = re.findall(r"^\|\s*(\d{3})\s*\|\s*\[[^\]]*\]\(reasoning_traces/([^)]+?)\.(?:pdf|tex)\)", text, re.M)
-    by_fam = defaultdict(list)
-    for fam, stem in rows:
-        if stem not in by_fam[fam]:
-            by_fam[fam].append(stem)
-    listed = {s for stems in by_fam.values() for s in stems}
-    on_disk = {p.stem for p in (ROOT / "reasoning_traces").iterdir() if p.is_file()}
-    return by_fam, sorted(on_disk - listed)
-
-
-ASSUME = re.compile(
-    r"\bassuming\b|\bwe assume\b|\bprovided that\b|\bconditioned on\b|\bconditional\b"
-    r"|under the [^.]{0,60}?(?:hypothes|conjecture|assumption)")
-NEG_BEFORE = re.compile(r"(?:without|no)\s*$")
-TECH_AFTER = re.compile(
-    r"^[^.]{0,60}?(?:expectation|law|laws|probability|probabilities|measure|distribution|density)")
-
-
-def conditional_hits(low):
-    """Assumption phrases only.
-
-    Drops two false-positive families found by reading all nine flagged abstracts:
-    "conditional expectation/law" (a technical term) and "without assuming" (a negation
-    that is often the point of the result). "unconditionally" never matches, since
-    \\bconditional\\b has no word boundary inside it.
-    """
-    hits = []
-    for m in ASSUME.finditer(low):
-        if m.group() == "conditional" and TECH_AFTER.match(low[m.end():m.end() + 60]):
-            continue
-        if NEG_BEFORE.search(low[max(0, m.start() - 12):m.start()]):
-            continue
-        hits.append(m.group())
-    return hits
-
-
-def shapes_of(abstract):
-    low = abstract.lower()
-    out = [n for n, pat in SHAPES.items() if n != "conditional" and re.search(pat, low)]
-    if conditional_hits(low):
-        out.append("conditional")
-    return out
-
-
-# Named-target resolution, measured in notes/resolution-tag.md. Deliberately NOT a SHAPES entry:
-# triage_t0.py assigns T0 buckets by first match over `shapes`, so widening `resolution` there
-# would move families out of the counterexample/bound/classification/undecidability/density
-# buckets. As a separate column it discriminates without touching that partition.
-TARGET_NOUN = re.compile(r"conjectur|\bquestion|\bproblem")
-RESOLVE_VERB = re.compile(
-    r"\bprov(?:e|es|ed|ing)\b|\bdisprov|\brefut|\bresolv|\banswer|\bsettl|\bestablis"
-    r"|\bconfirm|\bfail|\bviolat|\bcounterexample")
-
-
-def resolves_named(title, abstract):
-    """1 when the title or abstract names a conjecture/question/problem and uses a resolution verb.
-
-    `\bprov(?:e|es|ed|ing)\b` needs both boundaries: without the leading one, "improved"
-    matches through the "proved" inside it.
-
-    Input scope is title + abstract, stated because it changes the count: abstract only yields
-    233, the union yields 248, and the union is a strict superset -- 0 removals. The 15 additions
-    are recorded in notes/named-results.md. Lowering the whole input is what makes the union a
-    superset: a case-sensitive title read drops 100 of the 233 (capitalised "Conjecture" at title
-    start) and yields 148, which is why the scope is stated with the case rule. Both alternates are
-    printed by extract_named_results.py's TITLE-SCOPE SWAP section.
-    """
-    low = (title + " " + abstract).lower()
-    return 1 if TARGET_NOUN.search(low) and RESOLVE_VERB.search(low) else 0
-
-
-# Counterexample language, measured in notes/counterexample-tag.md. Deliberately NOT a SHAPES
-# entry: triage_t0.py assigns T0 buckets by first match over `shapes`, so widening
-# `counterexample` from 44 to 74 moves 30 families (6 of them in T0) out of the bound,
-# classification, density, undecidability and resolution buckets -- a taxonomy change disguised as
-# a tag tweak. As a separate column it is a strict superset of the tag (tag-only = 0), so the two
-# counts stay comparable, and every flag-only family stays in the bucket readers expect.
-#
-# Phrase rule, not stem rule: an unbounded `negativ` stem flags 90 families, most of them
-# adjectival. Requiring a phrase excludes the three false positives found by reading the matched
-# sentence -- 348 ("answers ... nonnegatively"), 339 ("strictly negative sectional curvature"),
-# 355 ("at every negative time"). `negative (?:answer|resolution)` is what catches 004, whose
-# result is a negative resolution with no counterexample object exhibited.
-#
-# Input scope is title + abstract, stated because it changes the count: abstract only yields 72,
-# and the two title-only additions (088, 293) are families whose titles literally say
-# "counterexamples".
-COUNTEREX_PHRASE = re.compile(
-    r"\bcounterexample|\bdisprov|\brefut|\bviolat|\bfails?\b"
-    r"|negative (?:answer|resolution)"
-    r"|(?:answer|resolv|settl|conclud|establish)[a-z]*[^.]{0,80}negatively"
-    r"|negatively[^.]{0,40}(?:answer|resolv|settl)"
-    r"|does not (?:imply|hold|satisfy)")
-
-
-def counterex_broad(title, abstract):
-    """1 when the title or abstract uses counterexample language, judged by phrase.
-
-    A keyword floor: it says the family *uses* the language, not that the manuscript contains a
-    counterexample. The 30 families this flags beyond the `counterexample` tag were each read at
-    the matched sentence and recorded in notes/counterexample-tag.md.
-    """
-    return 1 if COUNTEREX_PHRASE.search((title + " " + abstract).lower()) else 0
-
-
-def versions_of(paths):
-    """Manuscripts whose date-stripped directory slug repeats (same paper, new date)."""
-    c = Counter(DATE_SUFFIX.sub("", Path(p).parts[-2]) for p in paths)
-    return sum(n for n in c.values() if n > 1)
+__all__ = [
+    "COUNTEREX_PHRASE",
+    "DATE_SUFFIX",
+    "MONTHS",
+    "OUT",
+    "PAP",
+    "RESOLVE_VERB",
+    "ROOT",
+    "SHAPES",
+    "TARGET_NOUN",
+    "conditional_hits",
+    "counterex_broad",
+    "main",
+    "parse_challenges",
+    "parse_contents",
+    "parse_docs",
+    "parse_overview",
+    "parse_traces",
+    "parse_yaml",
+    "read_args",
+    "resolves_named",
+    "shapes_of",
+    "versions_of",
+]
 
 
 def main():
