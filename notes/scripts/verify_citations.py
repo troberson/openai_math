@@ -86,6 +86,7 @@ def measure(normfn):
     where = collections.defaultdict(dict)
     entry_keys = collections.defaultdict(set)
     release = collections.defaultdict(set)
+    release_count = collections.Counter()
     n_entries = release_entries = 0
 
     for p in files:
@@ -105,10 +106,13 @@ def measure(normfn):
                     where[nt].setdefault(ti.strip(), (ec.rel(p), line))
             if "OpenAI Math Release" in body:
                 release_entries += 1
+                release_count[man] += 1
                 for m in ec.RELEASE_HREF.finditer(body):
                     release[man].add(m.group(1))
 
-    men = sorted(titles)
+    # A .bib can sit in a superseded manuscript dir the ledger does not list; those owners carry no
+    # family, so they are excluded from every family/discipline join (the extractor reports them).
+    men = [m for m in sorted(titles) if m in man2fam]
     fam = {m: man2fam[m] for m in men}
     disc = {m: led[man2fam[m]]["discipline"] for m in men}
 
@@ -137,8 +141,11 @@ def measure(normfn):
     rpairs = collections.Counter()
     rinv = collections.defaultdict(set)
     for m, s in release.items():
+        if m not in fam:
+            continue
         for d in s:
             rinv[d].add(m)
+    release_listed = sum(v for m, v in release_count.items() if m in fam)
     for s in rinv.values():
         ms = sorted(s)
         for i in range(len(ms)):
@@ -170,6 +177,7 @@ def measure(normfn):
         "cited": cited,
         "fracs": fracs,
         "release_entries": release_entries,
+        "release_listed": release_listed,
         "release": release,
         "rinv": rinv,
         "rpairs": rpairs,
@@ -195,20 +203,24 @@ def check(page, M, M2):
             fails.append("%s: page does not contain %r" % (label, needle))
 
     # ---- population -------------------------------------------------------
-    need("**501**", "bib files")
-    need("**495** of 722", "owner manuscripts")
-    need("**5** (max 3)", "owners >1")
-    need("4:417 5:77 6:5 9:2", "path depth")
-    need("**299** of 372", "families covered")
-    need("**17** of 17", "disciplines covered")
-    need("**12,928**", "entries")
-    need("**9,958**", "distinct keys")
-    need("**1,864**", "keys >1 manuscript")
+    # Every figure below is built from the fresh measurement; the page carries no count the
+    # checker does not re-derive. `listed` is the ledger's manuscript count, not the .bib owner
+    # count -- owners include superseded dirs the ledger does not list.
+    listed = sum(int(r["paps"]) for r in M["led"].values())
+    n_disc_led = len({r["discipline"] for r in M["led"].values()})
+    need("**%d**" % len(M["files"]), "bib files")
+    need("**%d** of %d" % (len(M["owners"]), listed), "owner manuscripts")
+    need("**%d** (max %d)" % (sum(1 for v in M["owners"].values() if v > 1),
+                              max(M["owners"].values())), "owners >1")
     depth = " ".join("%d:%d" % (d, n) for d, n in sorted(M["depth"].items()))
-    if depth != "4:417 5:77 6:5 9:2":
-        fails.append("path depth re-measured %s, page hard-codes 4:417 5:77 6:5 9:2" % depth)
-    need("article 8,915 · misc 2,157 · book 701 · incollection 654 · inproceedings 414 · "
-         "techreport 37 · phdthesis 33 · unpublished 12 · mastersthesis 5", "entry types")
+    need(depth, "path depth")
+    need("**%d** of %d" % (M["fams"], len(M["led"])), "families covered")
+    need("**%d** of %d" % (M["discs"], n_disc_led), "disciplines covered")
+    need("**%s**" % format(M["n_entries"], ","), "entries")
+    need("**%s**" % format(len(M["keys"]), ","), "distinct keys")
+    need("**%s**" % format(sum(1 for v in M["keys"].values() if v > 1), ","), "keys >1 manuscript")
+    need(" · ".join("%s %s" % (t, format(n, ",")) for t, n in ec.ranked(M["types"])),
+         "entry types")
     top_keys = ", ".join("`%s` %d" % (k, v) for k, v in
                          ec.ranked({k: len(v) for k, v in M["keymen"].items() if len(v) > 1}, 10))
     need(top_keys, "top keys")
@@ -218,8 +230,9 @@ def check(page, M, M2):
     f = M["fracs"]
     need("min **%.3f**, median **%.3f**, max **%.3f**" % (f[0], f[len(f) // 2], f[-1]),
          "cited fraction")
-    need("**0** manuscripts at 0", "manuscripts at 0")
-    need("**%d** of 495 at \u22650.9" % sum(1 for x in f if x >= 0.9), "manuscripts >=0.9")
+    need("**%d** manuscripts at 0" % sum(1 for x in f if x == 0), "manuscripts at 0")
+    need("**%d** of %d at \u22650.9" % (sum(1 for x in f if x >= 0.9), len(M["men"])),
+         "manuscripts >=0.9")
 
     # ---- work layer -------------------------------------------------------
     sh = M["shared"]
@@ -233,8 +246,9 @@ def check(page, M, M2):
             format(len(sh), ","),
             sum(1 for s in sh.values() if len({M["disc"][m] for m in s}) > 1)),
          "shared works boundary crossings")
-    need("**%d** of the 495 manuscripts share no title"
-         % sum(1 for m in M["men"] if not any(m in s for s in sh.values())), "sharing nothing")
+    need("**%d** of the %d manuscripts share no title"
+         % (sum(1 for m in M["men"] if not any(m in s for s in sh.values())), len(M["men"])),
+         "sharing nothing")
 
     # ---- work table: every row, with its anchor ---------------------------
     rows = re.findall(r"^\|\s*(\d+)\s*\|\s*`([^`]+)`\s*\|\s*`([^`]+?):(\d+)`\s*\|\s*$", page, re.M)
@@ -281,8 +295,9 @@ def check(page, M, M2):
                 cb, format(sum(1 for a, b, v in ps if M["disc"][a] != M["disc"][b]), ","), cb),
              "pair layer >=%d" % k)
     need("Max pair overlap: **%d**" % max(M["pairs"].values()), "max overlap")
-    need("**%d** of 495 manuscripts share \u22651 title"
-         % len({m for (a, b) in M["pairs"] if M["fam"][a] != M["fam"][b] for m in (a, b)}),
+    need("**%d** of %d manuscripts share \u22651 title"
+         % (len({m for (a, b) in M["pairs"] if M["fam"][a] != M["fam"][b] for m in (a, b)}),
+            len(M["men"])),
          "manuscripts sharing cross-family")
     for k in (1, 5, 10):
         ps = [(a, b, v) for (a, b), v in M["pairs"].items() if v >= k]
@@ -317,28 +332,29 @@ def check(page, M, M2):
     need("%d of %s at \u226510"
          % (sum(1 for a, b in p10 if M["disc"][a] != M["disc"][b]), format(len(p10), ",")),
          "headline crossing count at >=10")
-    need("**0** of 67 span \u22652 disciplines", "clusters >=10 crossing")
-
     # ---- clusters ---------------------------------------------------------
+    clus = {k: clusters(M["pairs"], k) for k in CLUSTER_K}
+    cross10 = sum(1 for c in clus[10] if len({M["disc"][m] for m in c}) > 1)
+    need("**%d** of %d span \u22652 disciplines" % (cross10, len(clus[10])),
+         "clusters >=10 crossing")
     for k in CLUSTER_K:
-        multi = clusters(M["pairs"], k)
+        multi = clus[k]
         crossing = sum(1 for c in multi if len({M["disc"][m] for m in c}) > 1)
+        big = multi[0]
         if k == 1:
-            big = multi[0]
-            need("11 components, largest **%d manuscripts over %d families and all %d disciplines**"
-                 % (len(big), len({M["fam"][m] for m in big}),
+            need("%d components, largest **%d manuscripts over %d families and all %d disciplines**"
+                 % (len(multi), len(big), len({M["fam"][m] for m in big}),
                     len({M["disc"][m] for m in big})), "clusters >=1")
             ds = collections.Counter(M["disc"][m] for m in big)
             need(", ".join("%s %d" % (d, n) for d, n in ec.ranked(ds)), "cluster >=1 composition")
         if k == 5:
-            need("89 components, all non-trivial, largest %d, **%d** spanning \u22652 disciplines"
-                 % (len(multi[0]), crossing), "clusters >=5")
+            need("%d components, all non-trivial, largest %d, **%d** spanning \u22652 disciplines"
+                 % (len(multi), len(big), crossing), "clusters >=5")
         if k == 10:
-            need("67 components, largest **%d**" % len(multi[0]), "clusters >=10")
-            need("(%s, Algebraic and complex geometry)"
-                 % " ".join(sorted({M["fam"][m] for m in multi[0]})), "largest >=10 membership")
-        if crossing != 4 and k == 5:
-            fails.append("clusters >=5 crossing measured %d, page says 4" % crossing)
+            need("%d components, largest **%d**" % (len(multi), len(big)), "clusters >=10")
+            need("(%s, %s)"
+                 % (" ".join(sorted({M["fam"][m] for m in big})), M["disc"][sorted(big)[0]]),
+                 "largest >=10 membership")
 
     crows = re.findall(r"^\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*([0-9 ]+)\|\s*([^|]+)\|\s*$",
                        page, re.M)
@@ -358,9 +374,10 @@ def check(page, M, M2):
             fails.append("cluster row %s: composition %r, measured %r" % (fams.strip(), comp.strip(), want))
 
     # ---- release layer ----------------------------------------------------
-    need("**%d** release-labelled entries, from **%d** manuscripts, pointing at **%d** distinct "
-         "targets" % (M["release_entries"], sum(1 for s in M["release"].values() if s),
-                      len(M["rinv"])), "release population")
+    need("**%d** release-labelled entries (%d in ledger-listed manuscripts), from **%d** "
+         "manuscripts, pointing at **%d** distinct targets"
+         % (M["release_entries"], M["release_listed"],
+            sum(1 for s in M["release"].values() if s), len(M["rinv"])), "release population")
     need("**%d** targets are cited by \u22652 manuscripts"
          % sum(1 for s in M["rinv"].values() if len(s) >= 2), "release targets >=2")
     need("**%d** manuscript pairs share a cited release work, **%d** pairs share \u22652, and "
@@ -383,8 +400,10 @@ def check(page, M, M2):
             continue
         inline[d] = sum(len(re.findall(r"\\begin\{thebibliography\}", ec.read(p)))
                         for p in ec.tex_tree(d))
-    no_bib = [d for d in inline if d not in M["owners"]]
-    need("**%d of 722 manuscripts are invisible" % len(no_bib), "no-bib count")
+    # Scoped to the ledger's listed manuscripts: a superseded dir with no .bib is not a blind spot
+    # in the graph, because the graph never claimed to see it.
+    no_bib = [d for d in M["man2fam"] if d not in M["owners"]]
+    need("**%d of %d manuscripts are invisible" % (len(no_bib), listed), "no-bib count")
     need("all %d carry an inline" % sum(1 for d in no_bib if inline[d] > 0), "inline coverage")
     need("**%d** carry neither" % sum(1 for d in no_bib if inline[d] == 0), "neither layer")
     need("**%d** manuscripts have both layers"
@@ -499,7 +518,7 @@ MUTANTS = [
      lambda p: p.replace("033 034 035 036 037 046 051 054 056 057 058 065 066 068",
                          "033 034 039 036 037 046 051 054 056 057 058 065 066 068")),
     ("work count drift",
-     lambda p: p.replace("| 43 | `The {Stacks Project}`", "| 44 | `The {Stacks Project}`")),
+     lambda p: p.replace("| 42 | `The {Stacks Project}`", "| 43 | `The {Stacks Project}`")),
     ("cluster discipline composition",
      lambda p: p.replace("Mathematical physics 11, Differential geometry 4",
                          "Mathematical physics 12, Differential geometry 3")),

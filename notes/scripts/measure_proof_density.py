@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Measure proof density over the 722 manuscripts and test whether it discriminates.
+"""Measure proof density over the 719 manuscripts and test whether it discriminates.
 
 Report-only: writes nothing. Every number it prints is derived here, from
 notes/sources.tsv (per-manuscript counts) joined to notes/catalog.tsv (tier and
@@ -27,12 +27,13 @@ REPO = pathlib.Path(__file__).resolve().parents[2]
 SOURCES = REPO / "notes" / "sources.tsv"
 LEDGER = REPO / "notes" / "catalog.tsv"
 
-# Totals recorded in beads math-hqd.3 and in notes/sources.md (2026-10-07).
-EXPECTED_ROWS = 722
+# Totals recorded in beads math-hqd.3 and in notes/sources.md, re-measured 2026-10-08 after the
+# upstream merge (722 manuscripts / 20,449 proofs / 21,402 statements / tiers 127-108-0-137).
+EXPECTED_ROWS = 719
 EXPECTED_FAMS = 372
-EXPECTED_PROOFS = 20449
-EXPECTED_THMS = 21402
-EXPECTED_TIERS = {"T3": 127, "T2": 108, "T1": 0, "T0": 137}
+EXPECTED_PROOFS = 20341
+EXPECTED_THMS = 21288
+EXPECTED_TIERS = {"T3": 136, "T2": 106, "T1": 0, "T0": 130}
 
 AUC_MIN = 0.65
 P_MAX = 0.01

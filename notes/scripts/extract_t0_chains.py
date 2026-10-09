@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
-r"""Report the T0 cross-family chains and the 28 two-manuscript second-pass families.
+r"""Report the T0 cross-family chains and the 27 two-manuscript second-pass families.
 
 Report-only: writes nothing, runs nothing. Lean is never invoked, so nothing here checks a proof.
 
-Population rule (all three conditions are needed to reproduce the 28):
+Population rule (all three conditions are needed to reproduce the 27):
   1. tier == T0 in notes/catalog.tsv,
   2. paps == 2 in notes/catalog.tsv,
   3. the family id appears in the second-pass reading sections of notes/t0-triage.md
      (the "Second pass: the remaining 93 families" heading through the line before
      "What the triage shows").
-Repo-wide there are 96 families with exactly 2 manuscripts; 36 of them are T0; 8 of those 36
-were read in the first pass, so 28 remain. The bead's "no coverage signal" framing holds for 27
-of the 28 — 268 carries verification dirs on both manuscripts.
+Repo-wide there are 96 families with exactly 2 manuscripts; 35 of them are T0; 8 of those 35
+were read in the first pass, so 27 remain. The bead's "no coverage signal" framing holds for 26
+of the 27 — 268 carries verification dirs on both manuscripts.
 
 Chain rule: the release records a cross-family link only as a "result (NNN)" clause inside the
 overview.tex abstract, which is what the ledger's `companions` column parses. That yields 2 edges
 over 372 families. The `companion_word` column (\bcompanion in the same abstract) is a word, not
-an edge: 10 families, none of them carrying a `companions` value.
+an edge: 9 families, none of them carrying a `companions` value.
 
 Intra-family citation edges are manuscript-level: a release-labelled .bib entry (one carrying the
 "OpenAI Math Release" note) whose href target is a preprints/<dir>/<file>.pdf that exists on disk,
@@ -76,9 +76,12 @@ def companion_word_fams(rows):
 
 
 def release_bib_edges():
-    """(citing_dir, cited_dir) for every release-labelled .bib href that resolves on disk."""
+    """(citing_dir, cited_dir) for every release-labelled .bib href that resolves on disk.
+
+    Scope is the listed manuscripts: a superseded edition on disk would count the same edge twice.
+    """
     edges = set()
-    for d, body in extract_links.bib_entries():
+    for d, body in extract_links.bib_entries(extract_links.listed_dirs()):
         if "OpenAI Math Release" not in body:
             continue
         for url in extract_links.HREF.findall(body):
@@ -165,14 +168,14 @@ def main():
               f"mainres={r['mainres']} scope_note={r['scope_note']} verification={r['verification']} "
               f"trace={r['trace'] or '-'} shapes={r['shapes']}")
 
-    print("\n== the 28 families")
+    print(f"\n== the {len(pop)} families")
     for f in pop:
         r = rows[f]
         print(f"{f} {r['discipline']} {r['tier']} paps={r['paps']} shapes={r['shapes'] or '-'} "
               f"ver={r['verification']} cw={r['companion_word']} overview.tex:{lines[f]} "
               f"edges={len(fam_edges[f])} mutual={fam_mutual[f]} bibfiles={len(fam_bibs[f])}")
 
-    print("\n== manuscripts of the 28")
+    print(f"\n== manuscripts of the {len(pop)}")
     for f in pop:
         for m in mss[f]:
             print(f"{f} {m['seq']} form={m['formalized']} {m['title']} | {m['path']}")

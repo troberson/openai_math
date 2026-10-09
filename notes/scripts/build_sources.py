@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
-"""Write notes/sources.tsv: the LaTeX source surface of each of the 722 manuscripts.
+"""Write notes/sources.tsv: the LaTeX source surface of each of the 719 listed manuscripts.
 
-Reads the manuscript trees as text. Runs nothing, parses no PDF, opens no Lean file.
+Reads the manuscript trees as text. Runs nothing, parses no PDF, opens no Lean file. The row set is
+the manuscript list from notes/subfindings.tsv, not a walk of preprints/: upstream keeps superseded
+editions beside their replacements and a withdrawal notice beside its replacement, so a directory
+walk is 749 dirs, not 719 manuscripts.
 
 Rules stated where they matter:
 
 - A root is a `.tex` file with `\\documentclass` **at the start of a line**. The line-start rule
-  gives 718 dirs with exactly one root and 4 with two; a substring count of `\\documentclass`
-  reads 717 and 5, because one dir has a file that mentions the command in prose
+  gives 715 dirs with exactly one root and 4 with two; a substring count of `\\documentclass`
+  reads 714 and 5, because one dir has a file that mentions the command in prose
   (Uniform-Stability-of-the-Spherical-Laughlin-Gap-October-5-2026).
 - Main-file resolution prefers a file named `main.tex` **that declares `\\documentclass`**, then
   `paper.tex`, then the single root. 12 `main.tex` files in the corpus declare no documentclass
@@ -16,14 +19,14 @@ Rules stated where they matter:
 - `thms` counts `\\begin{X}` for X declared by `\\newtheorem` in the same dir, minus the
   non-statement names (definition, remark, example, notation, convention, procedure, construction,
   scope, abstract). Every theorem-like env used in the corpus is locally declared, so this agrees
-  with the union of declared names and a fixed standard list to the occurrence — 21,402 both ways.
+  with the union of declared names and a fixed standard list to the occurrence — 21,288 both ways.
   The six-name list the epic quotes (theorem, lemma, proposition, corollary, claim, conjecture)
-  reads 21,317; the 85 gap is names the declared rule counts that the six omit (assumption 22,
+  reads 21,203; the 85 gap is names the declared rule counts that the six omit (assumption 22,
   foundation 13, hypothesis 8, auxproposition 8, auxlemma 7, standinginput 5, maintheorem 4,
   externalinput 4, companionresults 3, unnumberedproposition 3, verification 2, principle 2,
   maincorollary 2, thm 1, question 1). Quote the count with its rule.
-- `abstract` is a line-start `\\begin{abstract}` anywhere in the dir. All 722 dirs have one, so the
-  column does not discriminate; it is kept because the bead asked for it.
+- `abstract` is a line-start `\\begin{abstract}` anywhere in the dir. All 719 listed dirs have one,
+  so the column does not discriminate; it is kept because the bead asked for it.
 - Manuscript ownership is the path component after `preprints`, never `parts[-2]`. Family and PDF
   path come from the manuscript rows of notes/subfindings.tsv, which is itself derived from
   overview.tex.
@@ -128,7 +131,11 @@ def row_for(d, fam, pdf):
 def build():
     subs = [r for r in tsv(SUBF) if r["kind"] == "manuscript"]
     by_slug = {r["path"].split("/")[1]: r for r in subs}
-    dirs = sorted(p for p in PRE.iterdir() if p.is_dir())
+    # The listed manuscripts, not every directory under preprints/: upstream keeps a superseded
+    # edition of a revised manuscript on disk beside its replacement, and a withdrawn manuscript's
+    # directory ships only a README and the archived PDF, so a directory walk is not the
+    # manuscript list.
+    dirs = sorted(PRE / name for name in by_slug)
     rows = [row_for(d, by_slug[d.name]["fam"], "preprints/" + d.name + "/" +
                     pathlib.PurePosixPath(by_slug[d.name]["path"]).name)
             for d in dirs]
@@ -166,8 +173,13 @@ def report(rows, subs, dirs):
     paps = {r["fam"]: int(r["paps"]) for r in ledger}
     slugs = [r["path"].split("/")[1] for r in subs]
 
-    missing = [d.name for d in dirs if d.name not in set(slugs)]
-    extra = [s for s in slugs if s not in {d.name for d in dirs}]
+    disk = sorted(p for p in PRE.iterdir() if p.is_dir())
+    listed = {d.name for d in dirs}
+    unlisted = [d.name for d in disk if d.name not in listed]
+    notices = [n for n in unlisted
+               if "Withdrawal notice" in (PRE / n / "README.md").read_text(encoding="utf-8",
+                                                                           errors="replace")]
+    extra = [s for s in slugs if s not in {d.name for d in disk}]
     pdf_diff = sum(1 for r in rows
                    if not (ROOT / r["pdf"]).exists()
                    or (ROOT / r["pdf"]).stat().st_size == 0)
@@ -214,8 +226,9 @@ def report(rows, subs, dirs):
                      if ov_fams[f]["tex_paps"] and by_fam.get(f, set()) != set(ov_fams[f]["tex_paps"])]
 
     print(f"rows written                     {len(rows)}")
-    print(f"preprint dirs                    {len(dirs)}")
-    print(f"dirs with no subfindings row     {len(missing)} {missing[:3]}")
+    print(f"listed manuscript dirs           {len(dirs)}")
+    print(f"preprint dirs on disk            {len(disk)}  unlisted {len(unlisted)} = "
+          f"{len(unlisted) - len(notices)} superseded + {len(notices)} withdrawal notices")
     print(f"subfindings slugs not on disk    {len(extra)} {extra[:3]}")
     print(f"empty/missing PDF files          {pdf_diff}")
     print(f"fams outside the ledger          {len(fam_diff)} {fam_diff[:3]}")

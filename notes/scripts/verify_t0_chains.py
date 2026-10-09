@@ -15,8 +15,8 @@ Checks, in order:
      modulo whitespace, on that anchored line;
   4. the count phrases are re-derived from notes/catalog.tsv, notes/subfindings.tsv,
      notes/t0-triage.md and the .bib layer by importing extract_t0_chains;
-  5. the 28-row summary table and the 5-row chain table are re-derived field by field;
-  6. the 28 per-family blocks match the population, each names exactly its own two manuscripts
+  5. the 27-row summary table and the 5-row chain table are re-derived field by field;
+  6. the 27 per-family blocks match the population, each names exactly its own two manuscripts
      with titles that match notes/subfindings.tsv and sit verbatim on the family's anchor line,
      and each Citation layer line matches the recomputed .bib / edge / mutual counts;
   7. the named mutual, one-directional, no-edge and no-.bib lists match the recomputation;
@@ -47,7 +47,8 @@ SUM_ROW = re.compile(r"^\| (\d{3}) \| (.+?) \| (.+?) \| (\d+) \| (\d+) \| (\d+) 
 CHAIN_ROW = re.compile(r"^\| (\d{3}) \| (T\d) \| " + r" \| ".join([r"(\d+)"] * 7)
                        + r" \| (.+?) \|$")
 LIST_LINE = "The {} are {}."
-NOBIB = re.compile(r"Three of them \(((?:\d{3}, )+\d{3})\) ship no")
+WORDS = ("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen "
+         "fifteen sixteen seventeen eighteen nineteen twenty").split()
 DISC = {
     "Algebraic and complex geometry": "A&CG",
     "Real and complex analysis": "real&complex",
@@ -344,14 +345,15 @@ def check_lists(flat, m, problems):
     want = {
         "mutual pairs": m["mutual_fams"],
         "one-directional edges": m["oneway"],
-        "12 with no intra-family edge": m["noedge"],
+        f"{len(m['noedge'])} with no intra-family edge": m["noedge"],
     }
     for kind, ids in want.items():
         if norm(LIST_LINE.format(kind, ", ".join(ids))) not in flat:
             problems.append(f"named list mismatch ({kind}): expected {', '.join(ids)!r}")
-    mm = NOBIB.search(flat)
-    if not mm or mm.group(1) != ", ".join(m["nobib"]):
-        problems.append(f"no-.bib list mismatch: expected {', '.join(m['nobib'])!r}")
+    spelled = WORDS[len(m["nobib"])] if len(m["nobib"]) < len(WORDS) else str(len(m["nobib"]))
+    needle = norm(f"{spelled} of them ({', '.join(m['nobib'])}) ship no")
+    if needle.lower() not in flat.lower():
+        problems.append(f"no-.bib sentence mismatch: expected {needle!r}")
     return len(want) + 1
 
 
@@ -397,9 +399,9 @@ MUTANTS = {
         '*"The unique threshold bound state for the SU(N) BFSS model"*'),
     "title-swap": lambda t: t.replace(
         '*"Boundary-field gap"*', '*"Positive eigenvalues of the relative SU(2) BFSS Hamiltonian"*'),
-    "chain-tier": lambda t: t.replace("| 032 | T0 | 8 |", "| 032 | T2 | 8 |"),
-    "edge-count": lambda t: t.replace("**16** of the 28 cite their sibling",
-                                      "**17** of the 28 cite their sibling"),
+    "chain-tier": lambda t: t.replace("| 032 | T0 | 5 |", "| 032 | T2 | 5 |"),
+    "edge-count": lambda t: t.replace("**15** of the 27 cite their sibling",
+                                      "**16** of the 27 cite their sibling"),
     "anchor-range": lambda t: t.replace("(`overview.tex:716`)", "(`overview.tex:9999`)"),
     "deleted-block": lambda t: t.replace("### 300 — ", "### 301 — "),
     "bib-count": lambda t: t.replace("| 035 | A&CG | bound, classification | 1 | 0 | 0 |",
@@ -409,10 +411,10 @@ MUTANTS = {
         "article.pdf",
         "preprints/Virasoro-Constraints-for-Projective-Complete-Intersections-September-24-2026/"
         "paper.pdf"),
-    "pop-count": lambda t: t.replace("**28** families carrying", "**29** families carrying"),
+    "pop-count": lambda t: t.replace("**27** families carrying", "**28** families carrying"),
     "mutual-list": lambda t: t.replace(
-        "The mutual pairs are 041, 066, 077, 217, 265, 268, 286, 302, 368.",
-        "The mutual pairs are 066, 077, 217, 265, 268, 286, 302, 368."),
+        "The mutual pairs are 041, 077, 217, 265, 268, 286, 302, 368.",
+        "The mutual pairs are 077, 217, 265, 268, 286, 302, 368."),
     "block-line": lambda t: t.replace(
         "  journal = {Selecta Mathematica. New Series},", "  journal = {Selecta Math.},"),
     "citation-layer": lambda t: t.replace(

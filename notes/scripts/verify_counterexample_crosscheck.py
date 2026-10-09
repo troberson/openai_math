@@ -16,10 +16,10 @@ are never invoked here, so no verdict in the page can mean "a proof was checked"
 4. Quotations. Each *"..."* quote is pinned to the anchor in its own line and must occur verbatim at
    that line — so a claim sentence moved to another family's resultentry line is caught.
 5. Tables. The 28-row summary table must have one row per population family, in population order,
-   with tier, configs, entries, and gaps equal to the recomputation. The 11-row gap table must list
+   with tier, configs, entries, and gaps equal to the recomputation. The 12-row gap table must list
    exactly the T3 configs with no entry, each anchored at a scope-note line that names it. The
-   10-row T2 table must list exactly the T2 population with its no-entry configs.
-6. Entries. For each of the 27 entries the page must cite its yaml block at the
+   9-row T2 table must list exactly the T2 population with its no-entry configs.
+6. Entries. For each of the 28 entries the page must cite its yaml block at the
    `- comparator_config:` line, its statement anchor at the line where the declaration opens, and —
    for the 11 carrier-typed statements — the carrier's definition anchor. Each cited line is checked
    against the file.
@@ -312,10 +312,10 @@ MUTANTS = {
     "carrier body word": lambda t: t.replace("ringKrullDim A = 4", "ringKrullDim A = 5", 1),
     "claim quote word": lambda t: t.replace("disproving affine-space cancellation",
                                             "disproving affine-space duality", 1),
-    "yaml anchor shifted": lambda t: t.replace("`lean/formalization.yaml:1042`",
-                                               "`lean/formalization.yaml:1043`", 1),
+    "yaml anchor shifted": lambda t: t.replace("`lean/formalization.yaml:1041`",
+                                               "`lean/formalization.yaml:1042`", 1),
     "gap row family": lambda t: t.replace("| `BalancedRyser` | 162 |", "| `BalancedRyser` | 185 |", 1),
-    "sorry count": lambda t: t.replace("carrying **53** `sorry` occurrences",
+    "sorry count": lambda t: t.replace("carrying **55** `sorry` occurrences",
                                         "carrying **57** `sorry` occurrences", 1),
     "T2 row deleted": lambda t: t.replace("| 151 | `C1EntropyCounterexample` | `lean/docs/151.md:15` |\n", "", 1),
     "T2 config from another family": lambda t: t.replace("`C1EntropyCounterexample` | `lean/docs/151.md:15`",

@@ -2,10 +2,11 @@
 """Triage the T0 families (no scope note, no challenge, no main result) by claim shape.
 
 Reads notes/catalog.tsv; writes nothing. T0 is the tier with no coverage signal, so the
-`shapes` column drives the buckets. `resolves_named` (91 of 137) and `counterex_broad` (22 of 137)
+`shapes` column drives the buckets. The ledger's `resolves_named` and `counterex_broad` columns
 are second and third T0 discriminators and are deliberately not read here: buckets are first-match,
 so a broader signal added to the first-match chain would move families between buckets -- widening
-`counterexample` alone would move 6 T0 families into C. The underlying `shapes` tags stay multi-label.
+`counterexample` to the broad rule moves every T0 family that carries the flag but not the tag into
+C. The underlying `shapes` tags stay multi-label; the T0 counts for both columns are printed below.
 
 Usage: python3 notes/scripts/triage_t0.py [--tsv notes/catalog.tsv]
 """
@@ -79,6 +80,21 @@ def main():
     print("T0 with >=3 shape tags (densest claims):")
     dense = [r for r in t0 if len(r["shapes"].split("|")) >= 3]
     print(f"  {len(dense)} families: {', '.join(r['fam'] for r in dense)}")
+
+    print()
+    print("T0 ledger discriminators (flags, deliberately not read into buckets):")
+    for label, col in [("resolves_named", "resolves_named"), ("counterex_broad", "counterex_broad")]:
+        hits = [r for r in t0 if r[col] == "1"]
+        by = collections.Counter(r["bucket"] for r in hits)
+        order = [f"{c}{by[c]}" for c, _, _ in BUCKETS if by[c]]
+        print(f"  {label}: {len(hits)} of {len(t0)} T0 families; by bucket {' '.join(order)}")
+        if col == "resolves_named":
+            nn = sorted(r["fam"] for r in t0 if r["bucket"] == "N" and r[col] == "1")
+            print(f"    named in N: {len(nn)} of {counts.get('N', 0)}: {' '.join(nn)}")
+        else:
+            out = [f"{r['fam']}({r['bucket']})" for r in sorted(hits, key=lambda r: r["fam"])
+                   if r["bucket"] != "C"]
+            print(f"    flagged outside C: {len(out)}: {' '.join(out)}")
 
     print()
     print("named T0 sets:")

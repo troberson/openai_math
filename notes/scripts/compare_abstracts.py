@@ -7,7 +7,8 @@ what that text is relative to the manuscripts: is it the manuscript abstract, an
 or a rewrite? A plain run writes nothing and exits 1 when a reconciliation gate fails.
 
 Three units, stated because they answer different questions:
-  * manuscript-level: 722 comparisons, one per manuscript dir, overview text vs that manuscript.
+  * manuscript-level: one comparison per manuscript dir listed in `notes/sources.tsv` (719 as of the
+    2026-10-07 upstream merge), overview text vs that manuscript.
   * family-level: 372 comparisons, the best-matching manuscript in the family. A family carries up
     to 14 manuscripts and its overview abstract is a synthesis of them, so a low manuscript-level
     ratio is expected for multi-manuscript families and is not by itself a misstatement.
@@ -67,9 +68,9 @@ def manuscript_abstract(d):
     """-> [(relpath, normalized text)] for one preprint dir.
 
     `notes/sources.tsv`'s `abstract` column is a per-dir flag, not a count, so it reads 1 for all
-    722 dirs while the corpus ships 725 abstract environments — 3 dirs carry two. A dir yielding 0
-    is a reconciliation failure; a dir yielding 2+ is reported, and the manuscript-level pass
-    compares the overview text with that dir's best-matching abstract. Cached because the
+    719 listed dirs while the corpus ships 722 abstract environments — 3 dirs carry two. A dir
+    yielding 0 is a reconciliation failure; a dir yielding 2+ is reported, and the manuscript-level
+    pass compares the overview text with that dir's best-matching abstract. Cached because the
     manuscript-level and tag-level passes both read every dir.
     """
     if d not in _CACHE:
@@ -194,6 +195,7 @@ def measure():
     return {
         "families": len(fams),
         "manuscripts": len(rows),
+        "sources_rows": len(rows),
         "abstract_envs": envs,
         "empty_dirs": empty_dirs,
         "multi_dirs": multi_dirs,
@@ -238,11 +240,11 @@ def check(m):
     problems = []
     if m["families"] != 372:
         problems.append(f"families {m['families']} != 372")
-    if m["manuscripts"] != 722:
-        problems.append(f"manuscripts {m['manuscripts']} != 722")
-    if m["dirs_with_abstract"] != 722:
-        problems.append(f"dirs with an abstract {m['dirs_with_abstract']} != 722 "
-                        f"(notes/sources.tsv flags 1 for every dir)")
+    if m["manuscripts"] != m["sources_rows"]:
+        problems.append(f"manuscripts {m['manuscripts']} != notes/sources.tsv rows {m['sources_rows']}")
+    if m["dirs_with_abstract"] != m["manuscripts"]:
+        problems.append(f"dirs with an abstract {m['dirs_with_abstract']} != manuscripts "
+                        f"{m['manuscripts']} (notes/sources.tsv flags 1 for every dir)")
     if len(m["empty_dirs"]):
         problems.append(f"{len(m['empty_dirs'])} manuscript dirs carry no abstract environment: "
                         f"{m['empty_dirs'][:5]}")
@@ -297,7 +299,7 @@ MUTANTS = {
     "family set widened": lambda m: dict(m, fam_best=dict(m["fam_best"], **{"999": m["man"][0]}),
                                          fam_order=sorted(set(m["fam_order"]) | {"999"})),
     "relation relabelled": lambda m: dict(m, man_relation={"identical": 1, "abridged": 0,
-                                                           "divergent": 721}),
+                                                           "divergent": len(m["man"]) - 1}),
     "bucket counts skewed": lambda m: dict(m, man_buckets={**m["man_buckets"],
                                                            "<0.30": m["man_buckets"]["<0.30"] + 1}),
     "ledger tag count altered": lambda m: dict(m, ledger_counts={**m["ledger_counts"],
@@ -387,7 +389,7 @@ def main():
           f"{m['recomputed']['resolves_named']} / {m['recomputed']['counterex_broad']})")
 
     for unit, n, rel, rat, buck in (
-            ("MANUSCRIPT-LEVEL (722 comparisons: overview text vs that manuscript)",
+            (f"MANUSCRIPT-LEVEL ({m['manuscripts']} comparisons: overview text vs that manuscript)",
              m["manuscripts"], m["man_relation"], m["man_ratio"], m["man_buckets"]),
             ("FAMILY-LEVEL (372 comparisons: overview text vs the best-matching manuscript)",
              m["families"], m["fam_relation"], m["fam_ratio"], m["fam_buckets"])):
@@ -401,7 +403,7 @@ def main():
     print(f"  families with a best match <0.05   {len(m['fam_lo'])}: {m['fam_lo']}")
 
     print("\nTAG-LEVEL (ledger rules: overview text vs the union of the family's manuscript abstracts)")
-    print(f"  {'shape':16}  ovfam msfam man722  ov-only  ms-only")
+    print(f"  {'shape':16}  ovfam msfam man{m['manuscripts']}  ov-only  ms-only")
     for s in sorted(B.SHAPES):
         d = m["tag_dis"].get(s, {"ov-only": [], "ms-only": []})
         t = m["tag_tot"][s]

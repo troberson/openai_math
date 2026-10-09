@@ -15,10 +15,18 @@ path. Two passes read the same table:
 Pass B is the load-bearing pass: Pass A proves a file exists, it proves nothing about the text we
 attribute to it, so a paraphrase dressed as a quote passes Pass A.
 
+Pass C (counts) re-measures the page's numbers from the corpus by calling
+`compare_abstracts.measure()` and requires every count phrase below to appear in the page verbatim.
+Passes A/B are silent about counts, and a page whose counts are prose drifts silently: the 2026-10-07
+upstream merge moved 13 of the phrases on this page and neither pass noticed. Pass C is what makes
+"quote a count only from a fresh report" checkable. The pre-merge reproduction the page quotes is a
+probe, not a shipped measurement, and is deliberately not in the phrase list.
+
 --mutant proves the checker discriminates: it corrupts a real quotation, fabricates one, repoints a
 real quotation at a file that does not contain it, deletes a marker, names a marker absent from the
-table, and points a table row at a path that does not exist -- and requires Pass A/B to flag each
-while the real page stays silent.
+table, points a table row at a path that does not exist, alters a count, skews a tag-table row, moves
+a bucket count, alters a disagreement count, and renames a multi-abstract directory -- and requires
+each pass to flag its mutant while the real page stays silent.
 
 Usage: python3 notes/scripts/verify_abstracts.py            # check the page
        python3 notes/scripts/verify_abstracts.py --mutant   # discrimination test as well
@@ -26,6 +34,7 @@ Usage: python3 notes/scripts/verify_abstracts.py            # check the page
 Writes nothing. Exit 1 when any check fails.
 """
 import argparse
+import csv
 import re
 import sys
 from pathlib import Path
@@ -41,8 +50,10 @@ ELLIPSIS = "…"
 
 sys.path.insert(0, str(ROOT / "notes" / "scripts"))
 import build_catalog as B
+import compare_abstracts as CA
 
 _OVERVIEW = None
+_MEASURED = None
 
 
 def flat(text):
@@ -102,8 +113,98 @@ def parse_table(lines):
     return table, dupes
 
 
-def check(text, table):
-    """-> (problems, stats). Pure: takes the page text so mutants can feed it a modified page."""
+def measured():
+    """One fresh compare_abstracts.measure() per process: Pass C's source of truth."""
+    global _MEASURED
+    if _MEASURED is None:
+        _MEASURED = CA.measure()
+    return _MEASURED
+
+
+def count_phrases(m):
+    """(phrase, label) for every count the page must carry, rebuilt from a fresh measurement.
+
+    Passes A and B check quotations and markers and are silent about numbers, so a page whose counts
+    are prose drifts silently. Each phrase is the exact string the page must contain, compared with
+    whitespace collapsed on both sides. The pre-merge reproduction in the floor paragraph is a probe
+    (it points the extractor at a historical notes/sources.tsv), not a shipped measurement, so its
+    figures are deliberately absent here.
+    """
+    n, fam = len(m["man"]), m["families"]
+    dirs, envs = m["dirs_with_abstract"], m["abstract_envs"]
+    mr, fr = m["man_ratio"], m["fam_ratio"]
+    mb, fb = m["man_buckets"], m["fam_buckets"]
+    bkey = ("<0.30", "0.30-0.50", "0.50-0.70", "0.70-0.90", ">=0.90")
+    low = [x for x in m["man"] if x["ratio"] < 0.05]
+    dis = sorted(f for f, sh in m["fam_shapes"].items() if sh["ov"] != sh["ms"])
+    paps = {r["fam"]: int(r["paps"]) for r in csv.DictReader(
+        (ROOT / "notes" / "catalog.tsv").open(encoding="utf-8"), delimiter="\t")}
+    single = sum(1 for f in dis if paps[f] == 1)
+    res, und = m["tag_tot"]["resolution"], m["tag_tot"]["undecidability"]
+    cond = m["tag_dis"].get("conditional", {"ov-only": [], "ms-only": []})
+    minrow = min(m["man"], key=lambda x: x["ratio"])
+    out = [
+        (f"Over all {n} manuscript comparisons:", "manuscript comparison count"),
+        (f"**0 identical, 0 abridged, {n} divergent.**", "headline relation counts"),
+        (f"Over the {fam} family best matches: **0 identical, 0 abridged, {fam} divergent.**",
+         "family relation counts"),
+        (f"Manuscript-level: {n} comparisons", "units bullet (manuscripts)"),
+        (f"Family-level: {fam} comparisons", "units bullet (families)"),
+        (f"**Abstract environments: {envs} over {dirs} directories.**", "abstract environments"),
+        (f"Every one of the {dirs} manuscript directories", "directories with an abstract"),
+        (f"reads {dirs} and cannot show this.", "sources.tsv flag column"),
+        (f"| manuscript-level | {n} | {mr['min']:.3f} | {mr['p10']:.3f} | **{mr['median']:.3f}** "
+         f"| {mr['p90']:.3f} | {mr['max']:.3f} |", "manuscript ratio row"),
+        (f"| family-level best match | {fam} | {fr['min']:.3f} | {fr['p10']:.3f} "
+         f"| **{fr['median']:.3f}** | {fr['p90']:.3f} | {fr['max']:.3f} |", "family ratio row"),
+        (f"| count | {' / '.join(str(mb[k]) for k in bkey)} "
+         f"| {' / '.join(str(fb[k]) for k in bkey)} |", "bucket row"),
+        (", ".join(f"**{f}** ({m['fam_best'][f]['ratio']:.3f})" for f in m["fam_hi"]),
+         "near-identical families"),
+        (f"below 0.05: {', '.join(m['fam_lo'])}.", "low best-match families"),
+        (f"**{len(low)} of the {n}** comparisons fall below 0.05, spread over "
+         f"**{len({x['fam'] for x in low})}** families.", "manuscript-level floor"),
+        (f"The manuscript-level minimum {minrow['ratio']:.3f} is family {minrow['fam']}'s surviving",
+         "manuscript-level minimum"),
+        (f"man{n}", "tag table header token"),
+    ]
+    for s in sorted(m["tag_tot"]):
+        d = m["tag_dis"].get(s, {"ov-only": [], "ms-only": []})
+        t = m["tag_tot"][s]
+        out.append((f"| {s} | {t['ov']} | {t['ms']} | {t['man']} | {len(d['ov-only'])} "
+                    f"| {len(d['ms-only'])} |", f"tag row {s}"))
+    out += [
+        (f"**{len(dis)} of {fam} families have at least one shape disagreement between the two "
+         f"texts; {fam - len(dis)} have none.**", "shape disagreement count"),
+        (f"Of the {len(dis)}, {single} are single-manuscript families and {len(dis) - single} are "
+         f"multi-manuscript families.", "disagreement manuscript split"),
+        (f"{res['ov']} of {fam} families ({round(100 * res['ov'] / fam)}%) call a resolution in "
+         f"the overview, against {res['man']} of {n} manuscripts "
+         f"({round(100 * res['man'] / n)}%)", "resolution over-flag rate"),
+        (f"({und['ov']} families vs {und['man']} manuscripts)", "undecidability rate"),
+        (f"{len(m['cond_dis'])} families disagree on the `conditional` tag: "
+         f"{len(cond['ov-only'])} flagged by the overview only ({', '.join(cond['ov-only'])}) "
+         f"and {len(cond['ms-only'])}", "conditional disagreements"),
+        (f"({res['ov']} of {fam} families vs {res['man']} of {n} manuscripts)",
+         "consequence bullet resolution counts"),
+        (f"(one row per family, {fam} rows)", "tsv row count (rule paragraph)"),
+        (f"— {fam} rows with the best-match ratio", "tsv row count (consequence bullet)"),
+        (minrow["dir"][:40], "minimum-ratio manuscript directory"),
+    ]
+    for fam_id, d, _k in m["multi_dirs"]:
+        out.append((f"`{d}`", f"multi-abstract directory {fam_id}"))
+    for fam_id in sorted(m["fam_order"], key=lambda f: m["fam_best"][f]["ratio"])[:8]:
+        out.append((f"| {fam_id} | {m['fam_best'][fam_id]['ratio']:.3f} |",
+                    f"lowest-ratio row {fam_id}"))
+    return out
+
+
+def check(text, table, counts=None):
+    """-> (problems, stats). Pure: takes the page text so mutants can feed it a modified page.
+
+    `counts` is a compare_abstracts.measure() result; Pass C runs only when it is supplied, so the
+    quotation/marker mutants do not pay for the corpus scan.
+    """
     problems = []
     for s in sorted(set(MARKER.findall(text))):
         if s not in table:
@@ -136,18 +237,39 @@ def check(text, table):
             problems.append(f"quotation not in {rel}: “{missing[0][:60]}…”")
         else:
             verified += 1
+
+    phrases = 0
+    if counts is not None:
+        page = flat(text)
+        for phrase, label in count_phrases(counts):
+            phrases += 1
+            if flat(phrase) not in page:
+                problems.append(
+                    f"count mismatch ({label}): page does not contain {flat(phrase)!r}")
+
     stats = {"markers": len(set(MARKER.findall(text))), "sources": len(table),
-             "quotes": quotes, "verified": verified}
+             "quotes": quotes, "verified": verified, "phrases": phrases}
     return problems, stats
 
 
-def mutants(text, table):
-    """(name, flagged, detail) for each corruption; flagged means Pass A/B caught it.
+def mutants(text, table, counts):
+    """(name, flagged, detail) for each corruption; flagged means the checker reported a problem.
 
-    Every mutant is built from a real quotation on the real page, so a checker that merely
-    re-reads its own regexes and never touches the shipped text cannot pass this test.
+    Every quotation mutant is built from a real quotation on the real page, and every count mutant is
+    built from a real phrase in the real page, so a checker that merely re-reads its own regexes and
+    never touches the shipped text cannot pass this test. A mutant whose target string is absent from
+    the page is reported as unflagged: a silent no-op is a failed discrimination test, not a pass.
     """
     out = []
+
+    def record(name, mutated, needle, tbl=None):
+        if mutated == text:
+            out.append((name, False, "mutant target absent from the page"))
+            return
+        probs, _ = check(mutated, tbl or table, counts)
+        out.append((name, any(needle in p for p in probs),
+                    f"{len(probs)} problem(s): " + "; ".join(probs)[:120]))
+
     q = next(m for m in QUOTE.finditer(text)
              if len(m.group(1)) > 40 and marker_after(text, m.end())
              and table.get(marker_after(text, m.end()).group(1), "").endswith(".tex")
@@ -158,34 +280,58 @@ def mutants(text, table):
     mark_end = mark_start + len(mk.group(0))
 
     corrupt = text[:q.start()] + "“" + q.group(1).replace("prove", "disprove", 1) + "”" + text[q.end():]
-    probs, st = check(corrupt, table)
-    out.append(("quotation word altered", any("not in" in p for p in probs), f"{len(probs)} problem(s): " + "; ".join(probs)[:120]))
+    record("quotation word altered", corrupt, "not in")
 
     fab = text[:q.start()] + "“the ledger proves every family is formalized in Lean” [S1]\n" + text[q.start():]
-    probs, st = check(fab, table)
-    out.append(("quotation fabricated", any("not in overview.tex" in p for p in probs),
-                f"{len(probs)} problem(s): " + "; ".join(probs)[:120]))
+    record("quotation fabricated", fab, "not in overview.tex")
 
     repoint = text[:mark_start] + "[S31]" + text[mark_end:]
-    probs, st = check(repoint, table)
-    out.append(("quotation repointed at a file that lacks it",
-                any("not in notes/abstracts.tsv" in p for p in probs), f"{len(probs)} problem(s): " + "; ".join(probs)[:120]))
+    record("quotation repointed at a file that lacks it", repoint, "not in notes/abstracts.tsv")
 
     nomark = text[:mark_start] + text[mark_end:]
-    probs, st = check(nomark, table)
-    out.append(("marker deleted", any("no [S#] marker" in p for p in probs), f"{len(probs)} problem(s): " + "; ".join(probs)[:120]))
+    record("marker deleted", nomark, "no [S#] marker")
 
     ghost = text + "\nAn unlisted source [S99] is cited here.\n"
-    probs, st = check(ghost, table)
-    out.append(("marker absent from the table", any("not in the Sources table" in p for p in probs),
-                f"{len(probs)} problem(s): " + "; ".join(probs)[:120]))
+    record("marker absent from the table", ghost, "not in the Sources table")
 
     bad = "\n".join(l for l in text.splitlines() if not l.startswith("| S31 |"))
     tbl, _ = parse_table(bad.splitlines())
     tbl["S31"] = "notes/does-not-exist.tsv"
-    probs, st = check(bad, tbl)
-    out.append(("table path missing on disk", any("does not exist" in p for p in probs),
-                f"{len(probs)} problem(s): " + "; ".join(probs)[:120]))
+    record("table path missing on disk", bad, "does not exist", tbl)
+
+    n = len(counts["man"])
+    record("headline count altered",
+           text.replace(f"**0 identical, 0 abridged, {n} divergent.**",
+                        f"**0 identical, 0 abridged, {n + 3} divergent.**", 1),
+           "count mismatch (headline relation counts)")
+
+    t = counts["tag_tot"]["classification"]
+    d = counts["tag_dis"].get("classification", {"ov-only": [], "ms-only": []})
+    row = (f"| classification | {t['ov']} | {t['ms']} | {t['man']} | {len(d['ov-only'])} "
+           f"| {len(d['ms-only'])} |")
+    record("tag-table row skewed", row.replace(f"| {t['ms']} |", f"| {t['ms'] - 1} |", 1),
+           "count mismatch (tag row classification)")
+
+    bkey = ("<0.30", "0.30-0.50", "0.50-0.70", "0.70-0.90", ">=0.90")
+    mb, fb = counts["man_buckets"], counts["fam_buckets"]
+    brow = (f"| count | {' / '.join(str(mb[k]) for k in bkey)} "
+            f"| {' / '.join(str(fb[k]) for k in bkey)} |")
+    record("bucket count moved", brow.replace(f"{mb['<0.30']} /", f"{mb['<0.30'] + 3} /", 1),
+           "count mismatch (bucket row)")
+
+    dis = sum(1 for f, sh in counts["fam_shapes"].items() if sh["ov"] != sh["ms"])
+    record("disagreement count altered",
+           text.replace(f"**{dis} of {counts['families']} families have at least one shape "
+                        f"disagreement between the two texts;",
+                        f"**{dis - 1} of {counts['families']} families have at least one shape "
+                        f"disagreement between the two texts;", 1),
+           "count mismatch (shape disagreement count)")
+
+    fam_id, mdir, _k = counts["multi_dirs"][-1]
+    date = "-".join(mdir.rsplit("-", 2)[1:])
+    record("multi-abstract directory renamed",
+           text.replace(f"`{mdir}`", f"`{mdir[:-len(date)]}November-1-2026`", 1),
+           f"count mismatch (multi-abstract directory {fam_id})")
     return out
 
 
@@ -205,20 +351,22 @@ def main():
         problems.append(f"table declares a source twice: {dupes}")
     problems.append("no quotations found") if not QUOTE.search(text) else None
 
-    found, stats = check(text, table)
+    counts = measured()
+    found, stats = check(text, table, counts)
     problems += found
 
     for p in problems:
         print(f"PROBLEM {p}")
     print(f"sources {stats['sources']}   markers {stats['markers']}   "
-          f"quotations {stats['quotes']}   verified {stats['verified']}")
+          f"quotations {stats['quotes']}   verified {stats['verified']}   "
+          f"count phrases {stats['phrases']}")
 
     if args.mutant:
         if problems:
             print("--- mutants skipped: the real page is not silent")
         else:
             unflagged = 0
-            for name, flagged, detail in mutants(text, table):
+            for name, flagged, detail in mutants(text, table, counts):
                 print(f"--- mutant {name}: {'FLAGGED' if flagged else 'MISSED'} ({detail})")
                 unflagged += 0 if flagged else 1
             problems.append(f"{unflagged} undetected mutants") if unflagged else None

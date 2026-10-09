@@ -307,7 +307,7 @@ def main():
              lambda t: t.replace("- unclaimed: 034:3 034:5 034:6",
                                  "- unclaimed: 034:5 034:6", 1)),
             ("a stale Summary-table count",
-             lambda t: t.replace("| titles claimed by no clause | 95 |",
+             lambda t: t.replace("| titles claimed by no clause | 94 |",
                                  "| titles claimed by no clause | 60 |", 1)),
             ("a block outside the population",
              lambda t: t.replace("## 009 · `overview.tex:94` · n=3 · T2",

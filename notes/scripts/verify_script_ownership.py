@@ -198,8 +198,9 @@ def check(text):
             p.append(f"census row {key}: page says {got}, disk says {want}")
     md = sum(1 for f in index if f.suffix == ".md")
     tsv = sum(1 for f in index if f.suffix == ".tsv")
-    if (md, tsv) != (1034, 16):
-        p.append(f"index tree: {md} .md + {tsv} .tsv, page says 1,034 + 16")
+    stated = re.search(r"\*\*([\d,]+)\*\* `\.md` pages and \*\*([\d,]+)\*\* `\.tsv` tables", text)
+    if stated and (int(stated.group(1).replace(",", "")), int(stated.group(2).replace(",", ""))) != (md, tsv):
+        p.append(f"index tree: {md} .md + {tsv} .tsv, page says {stated.group(1)} + {stated.group(2)}")
     if f"**{md:,}** `.md` pages and **{tsv}** `.tsv` tables" not in text:
         p.append(
             f"index split sentence does not read '**{md:,}** .md pages and **{tsv}** .tsv tables'"
@@ -283,7 +284,7 @@ def mutants():
         ("writer row deleted", original.replace("| `extract_links.py` | `notes/links.tsv` | run twice, byte-identical | `notes/links.md` |\n", ""), "writer extract_links.py: page says None"),
         ("hand-authored TSV claimed as generated", original.replace("**6** generated, **2** hand-authored", "**7** generated, **1** hand-authored"), "tsv census cell"),
         ("writer count altered", original.replace("**7** writers over **39** scripts", "**8** writers over **39** scripts"), "writer split sentence"),
-        ("index file count altered", original.replace("| `notes/index/` | **1,050** |", "| `notes/index/` | **1,049** |"), "census row notes/index/"),
+        ("index file count altered", original.replace("| `notes/index/` | **1,049** |", "| `notes/index/` | **1,050** |"), "census row notes/index/"),
         ("collision name altered", original.replace("**1** shared basename — `README.md`", "**2** shared basenames — `README.md` and `topics.tsv`"), "collision sentence"),
         ("checker name altered", original.replace("| `verify_sources.py` |", "| `verify_sources2.py` |"), "non-writers"),
         ("unchecked page claimed as checked", original.replace("| `verify_abstracts.py` | `notes/abstracts.md` |", "| `verify_abstracts.py` | `notes/abstracts.md`, `notes/links.md` |"), "md census cell"),

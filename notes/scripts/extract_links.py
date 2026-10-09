@@ -22,6 +22,13 @@ path regex lives in exactly one place.
 The three name relations (named-in-title, cited-in-bib, mentioned-in-body) are three
 separate rows: they measure three different things and the repo has previously quoted
 one number for all three.
+
+Scope: every preprints/ scan is restricted to the manuscript directories the release
+lists (CONTENTS.md), not to every directory under preprints/. Upstream keeps a superseded
+edition of a revised manuscript on disk beside its replacement, and a withdrawn manuscript's
+directory beside its notice, so a directory walk is 749 dirs, not 719 manuscripts, and a
+superseded edition's bibliography would count its edges twice. The whole-tree counts and the
+superseded-target citation counts are printed in the report, not written to the TSV.
 """
 import bisect
 import collections
@@ -80,6 +87,14 @@ def owner(p):
     return parts[parts.index("preprints") + 1]
 
 
+def listed_dirs():
+    """The manuscript directories the release lists, per CONTENTS.md.
+
+    Not a walk of preprints/: upstream keeps superseded editions and withdrawal notices on disk.
+    """
+    return {Path(p).parts[1] for ps in bc.parse_contents().values() for p in ps}
+
+
 def read_group(paths):
     """dir -> normalized text, over a file list."""
     norm_text = {}
@@ -116,10 +131,12 @@ class Blob:
 
 
 
-def bib_entries():
-    """(owning dir, entry body) for every @-entry in every .bib file."""
+def bib_entries(scope):
+    """(owning dir, entry body) for every @-entry in a .bib file owned by a listed manuscript."""
     out = []
     for p in sorted(PREPRINTS.glob("**/*.bib")):
+        if owner(p) not in scope:
+            continue
         txt = p.read_text(encoding="utf-8", errors="replace")
         for m in re.finditer(r"@[A-Za-z]+\s*\{([^,]*),", txt):
             nxt = txt.find("@", m.end())
@@ -132,17 +149,17 @@ def prefix6(title):
     return " ".join(re.split(r"\s+", title.lower())[:6])
 
 
-def legacy_title_proxy(titles, fam_dirs):
+def legacy_title_proxy(titles, fam_dirs, scope):
     """Reproduce the recorded "14 of 372 family titles appear in the corpus's .bib files".
 
     The rule is the one written in the corpus-finding-surprise-ranking skill: a 6-token lowercased
     title prefix searched in the concatenation of `preprints/*/*.bib` + `preprints/*/*/*.bib`, with
     the corpus lowercased (not normalized) and own-family bibliographies included. It scans 417 of
-    the 501 .bib files, so the 77 at depth 4 are outside its scope.
+    the 500 listed-manuscript .bib files, so the 83 at depth 4 are outside its scope.
     """
     shallow = sorted(p for p in PREPRINTS.glob("**/*.bib")
-                     if len(p.relative_to(PREPRINTS).parts) <= 3)
-    deep = sorted(PREPRINTS.glob("**/*.bib"))
+                     if len(p.relative_to(PREPRINTS).parts) <= 3 and owner(p) in scope)
+    deep = sorted(p for p in PREPRINTS.glob("**/*.bib") if owner(p) in scope)
     out = {}
     for label, paths in (("depth<=3", shallow), ("all", deep)):
         per = {}
@@ -169,10 +186,23 @@ def main():
     titles = {r["fam"]: r["title"] for r in rows}
     mainres_fams = {r["fam"] for r in rows if int(r["mainres"]) > 0}
     form_fams = {r["fam"] for r in rows if int(r["paps_form"]) > 0}
+    listed = set(dir2fam)
+    n_manuscripts = len(listed)
+    n_families = len(rows)
+    n_docs = len(list(DOCS.glob("*.md")))
 
-    bib_files = sorted(PREPRINTS.glob("**/*.bib"))
-    tex_files = sorted(PREPRINTS.glob("**/*.tex"))
-    entries = bib_entries()
+    # Scope: the listed manuscripts only. A superseded edition on disk is not a manuscript row, and
+    # its bibliography would count the same edges a second time.
+    bib_files = [p for p in sorted(PREPRINTS.glob("**/*.bib")) if owner(p) in listed]
+    tex_files = [p for p in sorted(PREPRINTS.glob("**/*.tex")) if owner(p) in listed]
+    bib_tree = sorted(PREPRINTS.glob("**/*.bib"))
+    tex_tree = sorted(PREPRINTS.glob("**/*.tex"))
+    disk_dirs = sorted(p for p in PREPRINTS.iterdir() if p.is_dir())
+    unlisted_dirs = [p.name for p in disk_dirs if p.name not in listed]
+    notice_dirs = [n for n in unlisted_dirs
+                   if "Withdrawal notice" in (PREPRINTS / n / "README.md")
+                   .read_text(encoding="utf-8", errors="replace")]
+    entries = bib_entries(listed)
     bib_blob = Blob(read_group(bib_files))
     tex_blob = Blob(read_group(tex_files))
 
@@ -212,7 +242,7 @@ def main():
         "lean/formalization.yaml",
         "`sources:` -> `id: ../<PAP>`",
         sum(int(r["paps_form"]) for r in rows),
-        "of 722 manuscripts; 127 families",
+        f"of {n_manuscripts} manuscripts; {len(form_fams)} families",
         "A source-level declaration. `review: status: unchecked` and "
         "`automation: methods: [agent]` apply, so it is not a checked proof.",
     )
@@ -221,7 +251,7 @@ def main():
         "lean/docs/<NNN>.md",
         "file exists",
         sum(1 for r in rows if r["scope_note"].strip() == "1"),
-        "of 372 families",
+        f"of {n_families} families",
         "A note the release wrote. It states exclusions; it does not certify the proof.",
     )
 
@@ -249,8 +279,8 @@ def main():
         raw_links,
         f"{total_links} distinct configs; {raw_links - total_links} duplicate links inside "
         f"{len(docs_with_intra_dupes)} docs ({', '.join(docs_with_intra_dupes)}); "
-        f"{dupes} configs linked by >1 family; {docs_with_links} of 235 docs",
-        "A link to a statement file. It is not a pass. The 415/405 gap is link "
+        f"{dupes} configs linked by >1 family; {docs_with_links} of {n_docs} docs",
+        f"A link to a statement file. It is not a pass. The {raw_links}/{total_links} gap is link "
         "occurrences vs distinct configs — the same config linked twice in one doc — "
         "not a missing file, and no config is shared between families.",
     )
@@ -283,17 +313,25 @@ def main():
     )
 
     # --- upstream libraries ------------------------------------------------
-    lake = re.findall(
-        r'^require\s+(?:«[^»]+»|[A-Za-z0-9_.\-]+)\s+from\s+git\s*\n\s*"(?P<url>[^"]+)"',
+    lake_pairs = re.findall(
+        r'^require\s+(?:«(?P<name>[^»]+)»|(?P<plain>[A-Za-z0-9_.\-]+))\s+from\s+git\s*\n\s*"(?P<url>[^"]+)"',
         LAKEFILE.read_text(encoding="utf-8"),
         re.M,
     )
+    lake = [u for _n, _p, u in lake_pairs]
+    # A declared library is reached by an import root whose name matches the require name, with
+    # guillemets and hyphens folded out of both sides; `Schoenflies` reaches «schoenflies-lean».
+    declared_slugs = [re.sub(r"[^a-z0-9]", "", (n or p).lower()) for n, p, _u in lake_pairs]
     CORE = {"OAI", "Lean", "Std", "Init", "Lake", "all"}
     imports = collections.Counter()
     for p in sorted(SOURCE.glob("**/*.lean")):
         for root in re.findall(r"^\s*import\s+([A-Za-z_][A-Za-z0-9_.]*)", p.read_text(encoding="utf-8", errors="replace"), re.M):
             imports[root.split(".")[0]] += 1
     external = {r: c for r, c in imports.items() if r not in CORE}
+    reached = {r for r in external if re.sub(r"[^a-z0-9]", "", r.lower()) in declared_slugs
+               or any(r.lower() in s for s in declared_slugs)}
+    undeclared = sorted(set(external) - reached)
+    aliased = {r for r in reached if re.sub(r"[^a-z0-9]", "", r.lower()) not in declared_slugs}
     row(
         "formalization->declared library",
         "lean/lakefile.lean",
@@ -307,7 +345,9 @@ def main():
         "lean/OAI/**/*.lean",
         "`^\\s*import\\s+<root>`",
         len(external),
-        f"{sum(external.values())} statements; 11 aliased to a declared URL, 1 (BernoulliRegular) declared nowhere",
+        f"{sum(external.values())} statements; {len(reached)} reached by a declared URL "
+        f"({len(aliased)} by name-alias, e.g. Mathlib for mathlib), "
+        f"{len(undeclared)} declared nowhere ({', '.join(undeclared)})",
         "A direct import statement over lean/OAI only. Not the transitive closure, and "
         "a zero count is not non-use.",
     )
@@ -319,7 +359,8 @@ def main():
         "preprints/**/*.bib",
         "`^@[A-Za-z]+`",
         ent,
-        f"{len(bib_files)} .bib files in {len({owner(p) for p in bib_files})} of 722 manuscript dirs",
+        f"{len(bib_files)} .bib files in {len({owner(p) for p in bib_files})} of "
+        f"{n_manuscripts} manuscript dirs",
         "An entry the manuscript ships. It is not a checked reference and not a claim "
         "that the cited work exists.",
     )
@@ -330,6 +371,7 @@ def main():
     target_dirs, citing_dirs = set(), set()
     target_fams, citing_fams = set(), set()
     target_fam_counts = collections.Counter()
+    stale_targets, stale_hrefs = set(), 0
     self_family = 0
     unresolved = 0
     for d, btxt in oai_entries:
@@ -339,6 +381,11 @@ def main():
                 unresolved += 1
                 continue
             dd = m.group(1)
+            if dd not in dir2fam:
+                # A citation whose target is a superseded edition: on disk, not a listed manuscript.
+                stale_targets.add(dd)
+                stale_hrefs += 1
+                continue
             edges.add((d, dd))
             target_dirs.add(dd)
             citing_dirs.add(d)
@@ -353,11 +400,23 @@ def main():
         "preprints/**/*.bib",
         "entry contains `OpenAI Math Release` + `\\href{.../preprints/<dir>/<f>.pdf}`",
         len(oai_entries),
-        f"{len(edges)} resolved edges; {len(target_dirs)} target dirs over {len(target_fams)} of 372 families; "
-        f"{len(citing_dirs)} citing dirs; {self_family} same-family; {cross} cross-family; {unresolved} unresolved",
+        f"{len(edges)} resolved edges; {len(target_dirs)} target dirs over {len(target_fams)} of "
+        f"{n_families} families; {len(citing_dirs)} citing dirs; {self_family} same-family; "
+        f"{cross} cross-family; {unresolved} unresolved; {stale_hrefs} hrefs point at "
+        f"{len(stale_targets)} superseded editions",
         "A citation of one release preprint by another. It measures what the release "
         "chose to cite, not importance, and it is not a citation graph of the wider literature.",
     )
+    # Whole-tree census: the same href scan over every .bib on disk, superseded editions included.
+    tree_stale = collections.Counter()
+    tree_hrefs = 0
+    for p in bib_tree:
+        for u in HREF.findall(p.read_text(encoding="utf-8", errors="replace")):
+            m = PREPRINT_URL.search(u)
+            if m and (PREPRINTS / m.group(1) / m.group(2)).exists():
+                tree_hrefs += 1
+                if m.group(1) not in dir2fam:
+                    tree_stale[m.group(1)] += 1
     tex_edges = collections.Counter()
     tex_target, tex_citing = set(), set()
     for p in tex_files:
@@ -373,28 +432,34 @@ def main():
         "preprints/**/*.tex",
         "`\\href{.../preprints/<dir>/<f>.pdf}` in body text",
         sum(tex_edges.values()),
-        f"{len(tex_target)} target dirs over {len({dir2fam[d] for d in tex_target})} families; {len(tex_citing)} citing dirs",
+        f"{len(tex_target)} target dirs over "
+        f"{len({dir2fam[d] for d in tex_target if d in dir2fam})} families; {len(tex_citing)} citing dirs",
         "An in-text link to a release preprint. Not a citation count and not a "
         "dependency; a link can be a courtesy pointer.",
     )
 
     # --- abstract cross-references ----------------------------------------
     edges_ab = [(r["fam"], r["companions"]) for r in rows if r["companions"].strip()]
+    n_ab_edges = sum(len(c.split("|")) for _, c in edges_ab)
+    companion_edge_fams = {a for a, c in edges_ab}
     row(
         "abstract->companion family",
         "overview.tex abstracts",
         "`result (\\d{3})` (build_catalog.py:308)",
-        sum(len(c.split("|")) for _, c in edges_ab),
+        n_ab_edges,
         f"{len(edges_ab)} families: " + ", ".join(f"{a}->{b}" for a, b in edges_ab),
-        "The abstract names a sibling result. It is not a citation, not a dependency, "
-        "and 2 edges over 372 families is the whole intra-catalog cross-reference layer.",
+        f"The abstract names a sibling result. It is not a citation, not a dependency, "
+        f"and {n_ab_edges} edges over {n_families} families is the whole intra-catalog "
+        f"cross-reference layer.",
     )
+    companion_word_fams = {r["fam"] for r in rows if int(r["companion_word"]) > 0}
     row(
         "abstract->'companion' wording",
         "overview.tex abstracts",
         "`\\bcompanion` (build_catalog.py:330)",
-        sum(int(r["companion_word"]) for r in rows),
-        "families; 0 of them carry a `result NNN` edge",
+        len(companion_word_fams),
+        f"families; {len(companion_word_fams & companion_edge_fams)} of them carry a "
+        f"`result NNN` edge",
         "A word in an abstract. It does not create an edge and does not pair families.",
     )
 
@@ -402,12 +467,15 @@ def main():
     tr = re.findall(r"^\|\s*(\d{3})\s*\|\s*\[[^\]]*\]\(reasoning_traces/([^)]+?)\.(?:pdf|tex)\)", README.read_text(encoding="utf-8"), re.M)
     fams_tr = {f for f, _ in tr}
     stems = {s for _, s in tr}
+    trace_files = sorted(p for p in (REPO / "reasoning_traces").rglob("*") if p.is_file())
     row(
         "family->reasoning trace",
         "README.md",
         "trace table row `| NNN | [..](reasoning_traces/<stem>.pdf)`",
         len(fams_tr),
-        f"{len(stems)} distinct stems; 11 files on disk (Mézard–Parisi ships .pdf and .tex)",
+        f"{len(stems)} distinct stems; {len(trace_files)} files on disk "
+        f"({', '.join(sorted(s for s in stems if len([p for p in trace_files if p.stem == s]) > 1))}) "
+        "ships .pdf and .tex",
         "The release published a trace for these families. It is attribution by the "
         "release table, not evidence the trace is the proof.",
     )
@@ -419,7 +487,7 @@ def main():
         "overview.tex `\\resultentry` arg 2 (via notes/catalog.tsv `title`)",
         "title contains conjecture|problem|question|hypothesis",
         len(named),
-        "of 372 families",
+        f"of {n_families} families",
         "The title names a target. It says nothing about resolution, and it is not a "
         "citation — this is a property of the catalog's prose, not of the literature.",
     )
@@ -438,10 +506,10 @@ def main():
         "preprints/**/*.bib",
         "normalized family title (possessives and 'the' dropped) in a .bib owned by a **different** family",
         len(cited),
-        f"of 372 families; {len(any_bib)} families when the family's own .bib files are included",
+        f"of {n_families} families; {len(any_bib)} families when the family's own .bib files are included",
         "A title-phrase match in a bibliography. It is a proxy: the release's real "
-        "citation edges are the href rows above, which reach 158 families. A miss here "
-        "is not evidence of no impact.",
+        f"citation edges are the href rows above, which reach {len(target_fams)} families. "
+        "A miss here is not evidence of no impact.",
     )
     body, any_body = [], []
     for fam, title in sorted(titles.items()):
@@ -458,13 +526,13 @@ def main():
         "preprints/**/*.tex",
         "normalized family title in a .tex owned by a **different** family",
         len(body),
-        f"of 372 families; {len(any_body)} families including own-family text",
+        f"of {n_families} families; {len(any_body)} families including own-family text",
         "A phrase appearing in another manuscript's source. It can be a shared term, "
         "not a reference to this family, and it is not a citation count.",
     )
 
     # --- negatives ---------------------------------------------------------
-    legacy = legacy_title_proxy(titles, fam_dirs)
+    legacy = legacy_title_proxy(titles, fam_dirs, listed)
     msc_hits = 0
     for p in tex_files + bib_files + [REPO / "overview.tex"]:
         msc_hits += len(MSC.findall(p.read_text(encoding="utf-8", errors="replace")))
@@ -494,7 +562,7 @@ def main():
         "preprints/**/*.tex",
         "`\\keywords`",
         len(kw_tex),
-        f"of 722 manuscript dirs ({len(kw_tex) / 722:.1%})",
+        f"of {n_manuscripts} manuscript dirs ({len(kw_tex) / n_manuscripts:.1%})",
         "Negative-weighted: 98% of manuscripts define no keyword list, so a topic query "
         "cannot be answered from manuscript metadata at scale.",
     )
@@ -515,7 +583,7 @@ def main():
         "notes/summaries/<discipline>/<NNN>-*.md",
         "file exists",
         len(summary_rows),
-        f"of 372 families; {sum(int(r['paps']) for r in summary_rows)} manuscripts behind them",
+        f"of {n_families} families; {sum(int(r['paps']) for r in summary_rows)} manuscripts behind them",
         "Our own reading artifact. It is not part of the release and carries no "
         "authority about the result.",
     )
@@ -529,6 +597,14 @@ def main():
         print(line)
     print(f"rows: {len(rows_out)}  fields: {len(FIELDS)}")
     print(f"bib entries: {ent}  bib files: {len(bib_files)}  tex files: {len(tex_files)}")
+    print(f"preprint dirs on disk: {len(disk_dirs)}  listed manuscripts: {n_manuscripts}  unlisted: "
+          f"{len(unlisted_dirs)} = {len(unlisted_dirs) - len(notice_dirs)} superseded editions + "
+          f"{len(notice_dirs)} withdrawal notices")
+    print(f"whole-tree .bib: {len(bib_tree)}  whole-tree .tex: {len(tex_tree)}  "
+          f"(listed-scope: {len(bib_files)} / {len(tex_files)})")
+    print(f"bib hrefs pointing at superseded editions: listed-scope {stale_hrefs} over "
+          f"{len(stale_targets)} dirs; whole-tree {sum(tree_stale.values())} over {len(tree_stale)} "
+          f"of {tree_hrefs} tree hrefs (report only; not counted in the TSV)")
     print(f"cited-in-bib families: {len(cited)}  named-in-title: {len(named)}  mentioned-in-body: {len(body)}")
     print(f"cited list: {cited}")
     print(f"mentioned list: {body}")

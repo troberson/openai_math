@@ -182,6 +182,7 @@ def main():
     where = collections.defaultdict(dict)  # norm title -> {verbatim form: (path, line) first seen}
     entry_keys = collections.defaultdict(set)      # manuscript -> {bib keys}
     release = collections.defaultdict(set)         # manuscript -> {release dirs cited}
+    release_count = collections.Counter()          # manuscript -> release-labelled entry count
     n_entries = 0
     release_entries = 0
     for p in files:
@@ -201,17 +202,25 @@ def main():
                     where[nt].setdefault(ti.strip(), (rel(p), line))
             if "OpenAI Math Release" in body:
                 release_entries += 1
+                release_count[man] += 1
                 for m in RELEASE_HREF.finditer(body):
                     release[man].add(m.group(1))
 
     men = sorted(titles)
-    print("bib files: %d  owner manuscripts: %d  of 722 manuscript dirs" % (len(files), len(owners)))
+    # A .bib can sit in a superseded manuscript dir that the ledger does not list; those owners
+    # carry no family, so they are reported and excluded from every family/discipline join.
+    unowned = [m for m in men if m not in man2fam]
+    men = [m for m in men if m in man2fam]
+    n_man = sum(int(r["paps"]) for r in rows)
+    print("bib files: %d  owner manuscripts: %d  of %d listed manuscript dirs"
+          % (len(files), len(owners), n_man))
     print("owners with >1 .bib: %d (max %d)"
           % (sum(1 for v in owners.values() if v > 1), max(owners.values())))
     depth = collections.Counter(len(rel(p).split("/")) for p in files)
     print("path depth histogram: " + " ".join("%d:%d" % (d, n) for d, n in sorted(depth.items())))
-    print("families covered: %d  disciplines covered: %d"
-          % (len({man2fam[m] for m in men}), len({led[man2fam[m]]["discipline"] for m in men})))
+    print("families covered: %d  disciplines covered: %d  owners outside the ledger: %d"
+          % (len({man2fam[m] for m in men}), len({led[man2fam[m]]["discipline"] for m in men}),
+             len(unowned)))
     print("entries: %d  types: %s"
           % (n_entries, " ".join("%s %d" % (t, n) for t, n in ranked(types))))
     print("distinct keys: %d  keys used by more than one manuscript: %d"
@@ -334,6 +343,8 @@ def main():
     # ---- release-internal layer -------------------------------------------
     rinv = collections.defaultdict(set)
     for m, s in release.items():
+        if m not in fam:
+            continue
         for d in s:
             rinv[d].add(m)
     rpairs = collections.Counter()
@@ -342,9 +353,11 @@ def main():
         for i in range(len(ms)):
             for j in range(i + 1, len(ms)):
                 rpairs[(ms[i], ms[j])] += 1
-    print("release-labelled entries: %d  manuscripts citing >=1 release work: %d  "
+    rel_owned = sum(v for m, v in release_count.items() if m in fam)
+    print("release-labelled entries: %d (%d in ledger-listed manuscripts)  "
+          "manuscripts citing >=1 release work: %d  "
           "distinct release targets: %d  targets cited by >=2 manuscripts: %d"
-          % (release_entries, sum(1 for s in release.values() if s), len(rinv),
+          % (release_entries, rel_owned, sum(1 for s in release.values() if s), len(rinv),
              sum(1 for s in rinv.values() if len(s) >= 2)))
     print("pairs sharing a cited release work: %d  sharing >=2: %d  cross-family: %d"
           % (len(rpairs), sum(1 for v in rpairs.values() if v >= 2),
@@ -362,9 +375,11 @@ def main():
         for p in tex_tree(d):
             n += len(re.findall(r"\\begin\{thebibliography\}", read(p)))
         inline[d] = n
-    no_bib = [d for d in inline if d not in owners]
-    print("manuscripts with no .bib: %d, of which %d carry an inline thebibliography and %d carry neither"
-          % (len(no_bib), sum(1 for d in no_bib if inline[d] > 0),
+    listed = set(man2fam)
+    no_bib = [d for d in listed if d not in owners]
+    print("listed manuscripts with no .bib: %d of %d, of which %d carry an inline thebibliography "
+          "and %d carry neither"
+          % (len(no_bib), len(listed), sum(1 for d in no_bib if inline[d] > 0),
              sum(1 for d in no_bib if inline[d] == 0)))
     print("manuscripts with both a .bib and an inline thebibliography: %d"
           % sum(1 for d in owners if inline.get(d, 0) > 0))

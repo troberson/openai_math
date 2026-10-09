@@ -3,17 +3,19 @@
 
 Report-only; writes nothing and runs nothing. Three passes:
 
-1. TSV integrity. 722 rows, the shipped header, every `pdf` on disk and non-empty, every
+1. TSV integrity. 719 rows, the shipped header, every `pdf` on disk and non-empty, every
    `main_tex` a file that exists and declares `\\documentclass` at line start, every `fam` in
-   notes/catalog.tsv, every family's row count equal to the ledger's `paps`, and the `roots`
-   distribution equal to a fresh line-start recount over preprints/.
+   notes/catalog.tsv, every family's row count equal to the ledger's `paps`, every resolved main
+   file sitting under `build/`, and the `roots` distribution equal to a fresh line-start recount
+   over the **listed** manuscripts. The recount is scoped to the manuscript list, not to every
+   directory under preprints/: upstream keeps superseded editions and withdrawal notices on disk.
 2. Anchors. Every backticked `path:line` shape must name a file that exists and a line inside it
    (a mistyped extension fails, it is not skipped). A fenced block is attributed to the nearest
    preceding anchor (scanning back up to 8 lines) and every block line must match that file at
    consecutive line numbers.
 3. Counts. Every bold count on the page is checked by matching the exact phrase the page must
-   contain, rebuilt from a fresh recount: the column sums, the main-file outcomes, the root
-   distribution, the six-name environment total, and the per-name gap.
+   contain, rebuilt from a fresh recount: the disk census, the column sums, the main-file outcomes,
+   the root distribution, the six-name environment total, and the per-name gap.
 
 Whitespace runs are collapsed on both sides of every comparison: line-wrapping in the page is
 markup, not part of the text.
@@ -54,7 +56,16 @@ def rows():
 def measure():
     """Everything the page quotes, recomputed from disk."""
     header, body = rows()
-    dirs = sorted(p for p in S.PRE.iterdir() if p.is_dir())
+    # The listed manuscripts, not every directory under preprints/: a superseded edition and a
+    # withdrawal notice are directories, not manuscript rows.
+    listed = sorted(S.PRE / name for name in
+                    {r["path"].split("/")[1] for r in S.tsv(S.SUBF) if r["kind"] == "manuscript"})
+    dirs = listed
+    disk = sorted(p for p in S.PRE.iterdir() if p.is_dir())
+    unlisted = [p for p in disk if p.name not in {d.name for d in listed}]
+    notices = [p for p in unlisted
+               if "Withdrawal notice" in (p / "README.md").read_text(encoding="utf-8",
+                                                                      errors="replace")]
     ledger = S.tsv(S.LEDGER)
     paps = {r["fam"]: int(r["paps"]) for r in ledger}
 
@@ -86,7 +97,10 @@ def measure():
     ov_paths = sorted(p for f in ov for p in ov[f]["tex_paps"])
     pdfs = sorted(r["pdf"] for r in body)
     return {
-        "header": header, "rows": n, "cols": len(header), "dirs": len(dirs),
+        "header": header, "rows": n, "cols": len(header), "dirs": len(disk),
+        "listed": len(listed), "superseded": len(unlisted) - len(notices),
+        "notices": len(notices),
+        "formalized": sum(int(r["paps_form"]) for r in ledger),
         "fams": len({r["fam"] for r in body}),
         "rootdist": rootdist, "sums": sums, "outcomes": outcomes,
         "single_names": single_names, "main_no_dc": main_no_dc,
@@ -127,7 +141,7 @@ def count_phrases(m):
         (f"| {m['rows']} distinct |", "dir distinct count"),
         (f"| {m['fams']} distinct |", "fam distinct count"),
         (f"| {m['rows']} filled, **0** empty |", "main_tex filled count"),
-        (f"| **{s['roots']}** over {m['dirs']} dirs: {rd[1]} with 1, {rd[2]} with 2, {rd[3]} with 3 |",
+        (f"| **{s['roots']}** over {m['listed']} dirs: {rd[1]} with 1, {rd[2]} with 2, {rd[3]} with 3 |",
          "roots distribution"),
         (f"| **{f(s['tex'])}** (max {m['max_tex']}, mean {m['mean_tex']:.2f} per dir) |",
          "tex file count"),
@@ -146,20 +160,24 @@ def count_phrases(m):
          f"`common.tex` **{sn['common.tex']}**", "single-root name counts"),
         (f"and **{sum(c for n, c in sn.items()) - sn['preamble.tex'] - sn['manuscript.tex'] - sn['common.tex']}** singletons",
          "single-root singleton count"),
+        (f"`preprints/` holds **{m['dirs']}** directories: the **{m['listed']}** the release lists, "
+         f"**{m['superseded']}** superseded editions upstream keeps beside their replacements, and "
+         f"**{m['notices']}** withdrawal notices", "disk census"),
         (f"**Every one of the {m['rows']} resolved main files sits under a `build/` directory.**",
          "main file under build"),
         (f"and **{m['substring_multi']}** with two or three", "substring multi-root count"),
-        (f"reads **{m['rootdist'][1] - 0}** and **{m['dirs'] - m['rootdist'][1]}**",
+        (f"reads **{m['rootdist'][1] - 0}** and **{m['listed'] - m['rootdist'][1]}**",
          "line-start root counts"),
         (f"under either rule (0 differences)", "rule agreement"),
         (f"occurrence — {f(m['decl'])} both ways", "declared-rule agreement"),
         (f"quotes **{f(m['six'])}** for", "six-name count"),
         (f"The {m['decl'] - m['six']} gap is names", "env gap"),
         (f"{gap}. The TSV column carries the declared-rule figure.", "env gap breakdown"),
-        (f"rows written **{m['rows']}**, preprint dirs **{m['dirs']}**", "report reconciliation"),
+        (f"rows written **{m['rows']}**, listed manuscript dirs **{m['listed']}**, "
+         f"preprint dirs on disk **{m['dirs']}**", "report reconciliation"),
         (f"**{m['pdf_ov_distinct']}** distinct vs `sources.tsv`", "overview path distinct count"),
         (f"`pdf` **{m['pdf_distinct']}** distinct", "pdf distinct count"),
-        (f"at **162** of {m['rows']} manuscripts", "formalized share"),
+        (f"at **{m['formalized']}** of {m['rows']} manuscripts", "formalized share"),
     ]
 
 
@@ -172,8 +190,8 @@ def check(text):
     header, body = rows()
     if header != S.COLUMNS:
         problems.append(f"tsv header {header} != shipped COLUMNS {S.COLUMNS}")
-    if len(body) != 722:
-        problems.append(f"tsv has {len(body)} rows, expected 722")
+    if len(body) != 719:
+        problems.append(f"tsv has {len(body)} rows, expected 719")
 
     for m in ANCHOR_SHAPE.finditer(text):
         rel, at = m.group(1), int(m.group(2))
@@ -232,6 +250,11 @@ def check(text):
                       ("fam_outside", 0), ("paps_diff", 0), ("pdf_ov_diff", 0)):
         if m[key] != want:
             problems.append(f"tsv integrity {key}: {m[key]} differences, expected {want}")
+    if m["main_under_build"] != m["rows"]:
+        problems.append(f"tsv integrity main_under_build: {m['main_under_build']} of {m['rows']} "
+                        f"main files sit under build/")
+    if m["listed"] != m["rows"]:
+        problems.append(f"tsv integrity listed: {m['listed']} manuscript slugs vs {m['rows']} rows")
     for phrase, label in count_phrases(m):
         if norm(phrase) not in flat:
             problems.append(f"count mismatch ({label}): page does not contain {phrase!r}")
@@ -245,17 +268,21 @@ MUTANTS = {
     "anchor file renamed": lambda t: t.replace("build/paper.tex:1", "build/paper.yml:1", 1),
     "block line altered": lambda t: t.replace("\\def\\extractclass#1#2@{%",
                                               "\\def\\extractclass#1#3@{%", 1),
-    "count altered": lambda t: t.replace("**16,411**", "**16,400**", 1),
-    "byte figure altered": lambda t: t.replace("**127,982,216**", "**127,000,000**", 1),
-    "six-name count altered": lambda t: t.replace("quotes **21,317** for",
-                                                  "quotes **21,402** for", 1),
+    "count altered": lambda t: t.replace("**16,297**", "**16,290**", 1),
+    "byte figure altered": lambda t: t.replace("**127,456,942**", "**127,000,000**", 1),
+    "six-name count altered": lambda t: t.replace("quotes **21,203** for",
+                                                  "quotes **21,288** for", 1),
     "gap breakdown altered": lambda t: t.replace("`assumption` 22, `foundation` 13",
                                                  "`assumption` 21, `foundation` 13", 1),
     "directory name altered": lambda t: t.replace(
         "`Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-5-2026`",
         "`Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-6-2026`", 1),
-    "root distribution altered": lambda t: t.replace("718 with 1, 3 with 2, 1 with 3",
-                                                     "719 with 1, 2 with 2, 1 with 3", 1),
+    "root distribution altered": lambda t: t.replace("715 with 1, 3 with 2, 1 with 3",
+                                                     "716 with 1, 2 with 2, 1 with 3", 1),
+    "disk census altered": lambda t: t.replace("the **719** the release lists",
+                                               "the **720** the release lists", 1),
+    "formalized share altered": lambda t: t.replace("at **172** of 719 manuscripts",
+                                                     "at **173** of 719 manuscripts", 1),
 }
 
 
