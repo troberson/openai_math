@@ -51,6 +51,13 @@ lives in this file and nowhere else.
 
 ## Dev environment tips
 
+- Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `overview`, `ledger`, `preprints`,
+  `text`, `yaml` (8 modules). Import them (`from catlib import yaml as Y`); do not re-implement a join
+  in an extractor. **18** of the **44** scripts already do. A script run as
+  `python3 notes/scripts/foo.py` already has `notes/scripts` as `sys.path[0]`, so no `sys.path.insert`
+  is needed and `# noqa: E402` markers are not needed with it (measured 0 of each). The other **13**
+  checkers move onto the package in `math-lon.2`; `verify_upstream_history.py`'s `git show <rev>:` yaml
+  read and `build_index.py`'s `TRIPLE` regex stay local by design.
 - Regenerate the ledger with `python3 notes/scripts/build_catalog.py` — stdlib only, runs in
   seconds, writes `notes/catalog.tsv` and prints the report that every number in
   `notes/README.md` comes from.
