@@ -2,8 +2,9 @@
 """Render notes/index/: the entry point, one page per family, one per discipline, and the node
 and edge tables the pages are rendered from.
 
-Stdlib only. Reads text that ships in this repo plus two generated ledgers; writes only under
-notes/index/; never invokes lean, lake, or comparator.
+Stdlib plus jinja2. Reads text that ships in this repo plus two generated ledgers; writes only
+under notes/index/; never invokes lean, lake, or comparator. Page text lives in
+notes/templates/*.j2, so a page's wording is edited in the template, never in this file.
 
 The joins are imported from build_catalog.py, not re-derived: family -> manuscript from
 parse_contents() (CONTENTS.md) unioned with the overview.tex links, manuscript -> formalized from
@@ -47,6 +48,8 @@ import pathlib
 import posixpath
 import re
 import unicodedata
+
+from jinja2 import Environment, FileSystemLoader
 
 import build_catalog as B
 import measure_topics as MT
@@ -181,105 +184,32 @@ def row(cells):
     return "| " + " | ".join(str(c).replace("|", "\\|") for c in cells) + " |"
 
 
+def dirname(path):
+    return posixpath.dirname(path)
+
+
+def trace_links(stems):
+    return " · ".join(f"[{s}]({UP}reasoning_traces/{s}.pdf)" for s in stems)
+
+
+def topic_links(terms):
+    return " · ".join(f"[{t}](../topics/{t}.md)" for t in terms)
+
+
+TPL = ROOT / "notes" / "templates"
+ENV = Environment(loader=FileSystemLoader(str(TPL)), keep_trailing_newline=True,
+                  trim_blocks=True, lstrip_blocks=True, autoescape=False)
+ENV.filters.update(row=row, base=base, dirname=dirname, trace_links=trace_links,
+                   topic_links=topic_links)
+
+
 def family_page(r, mans, cfgs, decls, tfiles, challenges, main_results, summary_href,
                 summary_label, companions, abstract, topics):
-    L = [f"# {r['fam']} — {r['title']}", ""]
-    L.append(row(["", ""]))
-    L.append("|---|---|")
-    L.append(row(["Discipline", f"[{r['discipline']}](../disciplines/{r['disc_slug']}.md)"]))
-    L.append(row(["Tier", r["tier"]]))
-    L.append(row(["Manuscripts", f"{r['paps']} ({r['paps_form']} formalized at source level)"]))
-    L.append(row(["Scope note",
-                  f"[`lean/docs/{r['fam']}.md`]({UP}lean/docs/{r['fam']}.md)"
-                  if r["scope_note"] == "1" else "—"]))
-    L.append(row(["Comparator configs",
-                  f"{r['chal']} ({r['mainres']} with a `main_results` declaration)"]))
-    L.append(row(["Reasoning trace",
-                  " · ".join(f"[{s}]({UP}reasoning_traces/{s}.pdf)" for s in tfiles)
-                  if tfiles else "—"]))
-    L.append(row(["Verification bundles", r["verification"]]))
-    L.append(row(["Cited by / cites", f"{r['cite_in']} in · {r['cite_out']} out"]))
-    L.append(row(["Claim shapes", r["shapes"].replace("|", ", ") or "—"]))
-    L.append(row(["Topics", " · ".join(f"[{t}](../topics/{t}.md)" for t in topics)
-                  if topics else "—"]))
-    L.append(row(["Companion families", " · ".join(companions) if companions else "—"]))
-    L.append(row(["Summary page",
-                  f"[{summary_label}]({UP}{summary_href})" if summary_href else "—"]))
-    L.append("")
+    return ENV.get_template("family.md.j2").render(
+        r=r, mans=mans, cfgs=cfgs, decls=decls, tfiles=tfiles, challenges=challenges,
+        main_results=main_results, summary_href=summary_href, summary_label=summary_label,
+        companions=companions, abstract=abstract, topics=topics, UP=UP)
 
-    L.append("## Manuscripts")
-    L.append("")
-    L.append(row(["Dir", "PDF", "LaTeX tree", "README", "Formalized", "Main file", "Verification"]))
-    L.append("|---|---|---|---|---|---|---|")
-    for m in mans:
-        L.append(row([
-            f"[`{m['dir']}`]({UP}preprints/{m['dir']}/)",
-            f"[{base(m['pdf'])}]({UP}{m['pdf']})",
-            f"[build/]({UP}preprints/{m['dir']}/build/)",
-            f"[README.md]({UP}preprints/{m['dir']}/README.md)",
-            "yes" if m["formalized"] == "1" else "no",
-            f"[{base(m['main_tex'])}]({UP}preprints/{m['main_tex']})" if m["main_tex"] else "—",
-            f"[verification/]({UP}preprints/{m['dir']}/verification/)"
-            if m["verification"] == "1" else "—",
-        ]))
-    L.append("")
-
-    L.append("## Lean")
-    L.append("")
-    if decls:
-        L.append(row(["Config", "Declaration", "File", "Module dir"]))
-        L.append("|---|---|---|---|")
-        for c, d, f in decls:
-            mod = posixpath.dirname(f)
-            L.append(row([f"[{c}]({UP}lean/ComparatorChallenges/{c}.json)", f"`{d}`",
-                          f"[{base(f)}]({UP}lean/{f})", f"[`{mod}`]({UP}lean/{mod}/)"]))
-        L.append("")
-        L.append("The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` "
-                 "and `main_results:` are two flat lists that nothing joins, so the table above is "
-                 "a family-level link and the formalized count above is a manuscript-level flag.")
-    else:
-        L.append("No `main_results` declaration reaches this family"
-                 + (f": its scope note links {r['chal']} comparator "
-                    f"config{'' if r['chal'] == 1 else 's'}, none of them in `main_results`."
-                    if r["chal"] else ", and no scope note links a comparator config."))
-    L.append("")
-
-    L.append("## Comparator configs")
-    L.append("")
-    if cfgs:
-        L.append(row(["Config", "Statement", "Solution", "Theorems", "Definitions", "nanoda",
-                      "In `main_results`"]))
-        L.append("|---|---|---|---|---|---|---|")
-        for c in cfgs:
-            L.append(row([f"`{c}`", f"[.json]({UP}lean/ComparatorChallenges/{c}.json)",
-                          f"[.lean]({UP}lean/ComparatorChallenges/{c}.lean)",
-                          challenges[c]["theorems"], challenges[c]["definitions"],
-                          "yes" if challenges[c]["nanoda"] else "no",
-                          "yes" if c in main_results else "no"]))
-    else:
-        L.append("No scope note links a comparator config for this family.")
-    L.append("")
-
-    L.append("## Verification bundles")
-    L.append("")
-    if any(m["verification"] == "1" for m in mans):
-        L.append(row(["Dir", "Bundle", "INPUTS.md", "COVERAGE.md"]))
-        L.append("|---|---|---|---|")
-        for m in mans:
-            if m["verification"] == "1":
-                L.append(row([f"`{m['dir']}`",
-                              f"[verification/]({UP}preprints/{m['dir']}/verification/)",
-                              "yes" if m["inputs"] == "1" else "no",
-                              "yes" if m["covmd"] == "1" else "no"]))
-    else:
-        L.append("No `verification/` bundle ships with this family's manuscripts.")
-    L.append("")
-
-    L.append("## Abstract (`overview.tex`, verbatim)")
-    L.append("")
-    L.append(abstract)
-    L.append("")
-    return "\n".join(L) + "\n"
 
 
 def discipline_page(discipline, rows):

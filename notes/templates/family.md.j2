@@ -1,0 +1,60 @@
+{%- macro link(text, href) -%}[{{ text }}]({{ href }}){%- endmacro -%}
+# {{ r.fam }} — {{ r.title }}
+
+{{ ["", ""] | row }}
+|---|---|
+{{ ["Discipline", link(r.discipline, "../disciplines/" ~ r.disc_slug ~ ".md")] | row }}
+{{ ["Tier", r.tier] | row }}
+{{ ["Manuscripts", r.paps ~ " (" ~ r.paps_form ~ " formalized at source level)"] | row }}
+{{ ["Scope note", link("`lean/docs/" ~ r.fam ~ ".md`", UP ~ "lean/docs/" ~ r.fam ~ ".md") if r.scope_note == "1" else "—"] | row }}
+{{ ["Comparator configs", r.chal ~ " (" ~ r.mainres ~ " with a `main_results` declaration)"] | row }}
+{{ ["Reasoning trace", tfiles | trace_links if tfiles else "—"] | row }}
+{{ ["Verification bundles", r.verification] | row }}
+{{ ["Cited by / cites", r.cite_in ~ " in · " ~ r.cite_out ~ " out"] | row }}
+{{ ["Claim shapes", r.shapes.replace("|", ", ") or "—"] | row }}
+{{ ["Topics", topics | topic_links if topics else "—"] | row }}
+{{ ["Companion families", companions | join(" · ") if companions else "—"] | row }}
+{{ ["Summary page", link(summary_label, UP ~ summary_href) if summary_href else "—"] | row }}
+
+## Manuscripts
+
+{{ ["Dir", "PDF", "LaTeX tree", "README", "Formalized", "Main file", "Verification"] | row }}
+|---|---|---|---|---|---|---|
+{% for m in mans %}{{ [link("`" ~ m.dir ~ "`", UP ~ "preprints/" ~ m.dir ~ "/"), link(m.pdf | base, UP ~ m.pdf), link("build/", UP ~ "preprints/" ~ m.dir ~ "/build/"), link("README.md", UP ~ "preprints/" ~ m.dir ~ "/README.md"), "yes" if m.formalized == "1" else "no", link(m.main_tex | base, UP ~ "preprints/" ~ m.main_tex) if m.main_tex else "—", link("verification/", UP ~ "preprints/" ~ m.dir ~ "/verification/") if m.verification == "1" else "—"] | row }}
+{% endfor %}
+
+## Lean
+
+{% if decls %}{{ ["Config", "Declaration", "File", "Module dir"] | row }}
+|---|---|---|---|
+{% for c, d, f in decls %}{{ [link(c, UP ~ "lean/ComparatorChallenges/" ~ c ~ ".json"), "`" ~ d ~ "`", link(f | base, UP ~ "lean/" ~ f), link("`" ~ f | dirname ~ "`", UP ~ "lean/" ~ f | dirname ~ "/")] | row }}
+{% endfor %}
+
+The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+{% else %}No `main_results` declaration reaches this family{% if r.chal %}: its scope note links {{ r.chal }} comparator config{{ "" if r.chal == 1 else "s" }}, none of them in `main_results`.
+{% else %}, and no scope note links a comparator config.
+{% endif %}
+{% endif %}
+
+## Comparator configs
+
+{% if cfgs %}{{ ["Config", "Statement", "Solution", "Theorems", "Definitions", "nanoda", "In `main_results`"] | row }}
+|---|---|---|---|---|---|---|
+{% for c in cfgs %}{{ ["`" ~ c ~ "`", link(".json", UP ~ "lean/ComparatorChallenges/" ~ c ~ ".json"), link(".lean", UP ~ "lean/ComparatorChallenges/" ~ c ~ ".lean"), challenges[c].theorems, challenges[c].definitions, "yes" if challenges[c].nanoda else "no", "yes" if c in main_results else "no"] | row }}
+{% endfor %}
+{% else %}No scope note links a comparator config for this family.
+{% endif %}
+
+## Verification bundles
+
+{% if mans | selectattr("verification", "equalto", "1") | list %}{{ ["Dir", "Bundle", "INPUTS.md", "COVERAGE.md"] | row }}
+|---|---|---|---|
+{% for m in mans %}{% if m.verification == "1" %}{{ ["`" ~ m.dir ~ "`", link("verification/", UP ~ "preprints/" ~ m.dir ~ "/verification/"), "yes" if m.inputs == "1" else "no", "yes" if m.covmd == "1" else "no"] | row }}
+{% endif %}{% endfor %}
+{% else %}No `verification/` bundle ships with this family's manuscripts.
+{% endif %}
+
+## Abstract (`overview.tex`, verbatim)
+
+{{ abstract }}
+
