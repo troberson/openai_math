@@ -297,7 +297,7 @@ The comparator poses the same statement as a challenge with its own model scaffo
 
 The solution module named by the challenge metadata is `OAI.Analysis.InterpolatedFactors.Interpolation`, and the permitted axioms are `propext`, `Quot.sound`, and `Classical.choice`, with Nanoda disabled [S15:1–14].
 
-What the formalization does not cover is the free-entropy corollary. Across both trees the strings `microstate`, `freeentropy`, `fisher`, `Catalan`, and `entropy` do not occur at all, while `semicircular` occurs 114 times and `cocycle` 187 times: the isomorphism machinery is formalized, the generator-dependence result is not. The ledger records `paps_form` 0 and `mainres` 0 for this family [S17:288], and the mechanical cause is that `lean/formalization.yaml` carries no entry naming this manuscript anywhere in its 1,668 lines [S16:1–1668]; read those zeros as an index that is behind, not as an absence of formalization.
+What the formalization does not cover is the free-entropy corollary. Across both trees the strings `microstate`, `freeentropy`, `fisher`, `Catalan`, and `entropy` do not occur at all, while `semicircular` occurs 114 times and `cocycle` 187 times: the isomorphism machinery is formalized, the generator-dependence result is not. The ledger records `paps_form` 0 and `mainres` 0 for this family [S17:288], and the mechanical cause is that `lean/formalization.yaml` carries no entry naming this manuscript anywhere in its 1,783 lines [S16:1–1783]; read those zeros as an index that is behind, not as an absence of formalization.
 
 The published reasoning trace for this family is `reasoning_traces/free-group-factor-isomorphism.pdf`, a summarized chain of thought of 11 pages, attributed to family 287 in the release README. It ships as a PDF with no LaTeX source, so it is cited here as a whole file [S18].
 
@@ -311,7 +311,7 @@ Section map, read from the manuscript's own include list [S3:109–114]. The man
 
 | ID | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9169 | Catalog entry: blurb, manuscript link, abstract |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Catalog entry: blurb, manuscript link, abstract |
 | S2 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/README.md`](../../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/README.md) | 18 | Manuscript README: date and bibtex key |
 | S3 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/main.tex`](../../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/main.tex) | 118 | Manuscript: abstract, introduction, theorems |
 | S4 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/preliminaries.tex`](../../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/preliminaries.tex) | 115 | Free-sum estimate, constant K = 3π |
@@ -326,7 +326,7 @@ Section map, read from the manuscript's own include list [S3:109–114]. The man
 | S13 | [`lean/docs/287.md`](../../../lean/docs/287.md) | 15 | Scope note and comparator links |
 | S14 | [`lean/ComparatorChallenges/InterpolatedFactors.lean`](../../../lean/ComparatorChallenges/InterpolatedFactors.lean) | 225 | Challenge model and statement |
 | S15 | [`lean/ComparatorChallenges/InterpolatedFactors.json`](../../../lean/ComparatorChallenges/InterpolatedFactors.json) | 14 | Challenge metadata: solution module, axioms |
-| S16 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1668 | No entry naming this manuscript |
+| S16 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1,783 | No entry naming this manuscript |
 | S17 | [`notes/catalog.tsv`](../../../notes/catalog.tsv) | 373 | Ledger row for family 287 |
 | S18 | [`reasoning_traces/free-group-factor-isomorphism.pdf`](../../../reasoning_traces/free-group-factor-isomorphism.pdf) | — | Published reasoning trace, 11 pages |
 | S19 | [`lean/OAI/Analysis/FreeGroupFactor/Main.lean`](../../../lean/OAI/Analysis/FreeGroupFactor/Main.lean) | 64 | Rank three to the countable free group |

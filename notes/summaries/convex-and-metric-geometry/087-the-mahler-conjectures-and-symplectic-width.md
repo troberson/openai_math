@@ -2,31 +2,31 @@
 
 ## Original CONTENTS.md summary
 
-The release entry is one paragraph long and names three results at once. Its opening sentence [S1:2154]:
+The release entry is one paragraph long and names three results at once. Its opening sentence [S1:2127]:
 
 > **087. The Mahler conjectures, functional inequalities and polar-product symplectic width.** Resolves the symmetric and nonsymmetric geometric Mahler conjectures in every dimension, with Hanner polytopes and simplices as the respective volume-product minimizers and all equality cases classified. The corresponding sharp functional Mahler inequalities also hold.
 
-The entry then states the symplectic claim. The release marks the dimension variable with inline HTML and spells the inequality with an entity, so only its tag-free tail is quoted here [S1:2154]:
+The entry then states the symplectic claim. The release marks the dimension variable with inline HTML and spells the inequality with an entity, so only its tag-free tail is quoted here [S1:2127]:
 
 > every symmetric polar product $`K\times K^\circ`$ in dimension $`2n`$ has Gromov width 4. ([Lean](../../../lean/docs/087.md))
 
-Three sub-entries follow the three manuscript links. The symmetric one ends [S1:2163]:
+Three sub-entries follow the three manuscript links. The symmetric one ends [S1:2136]:
 
 > has volume product at least $`4^n/n!`$, with equality exactly for invertible linear images of Hanner polytopes.
 
-The general one reads, in full [S1:2172]:
+The general one reads, in full [S1:2145]:
 
 > We resolve the Mahler conjecture for general convex bodies positively.
 
-and ends [S1:2172]:
+and ends [S1:2145]:
 
 > with Santaló point $`s(K)`$, $`|K|\,|(K-s(K))^\circ|\ge (n+1)^{n+1}/(n!)^2`$, with equality exactly for simplices.
 
-The symplectic one ends [S1:2181]:
+The symplectic one ends [S1:2154]:
 
 > and every origin-symmetric convex body $`K\subset\mathbb R^n`$, we prove that the Gromov width of $`\mathop{\mathrm{int}}\nolimits K\times\mathop{\mathrm{int}}\nolimits K^\circ`$ is 4.
 
-The release's own table of contents lists the family under the title recorded in the ledger [S2:250], and the reasoning trace is attributed to the family in the release README [S3:29] as "Symmetric and general Mahler conjectures".
+The release's own table of contents lists the family under the title recorded in the ledger [S2:250], and the reasoning trace is attributed to the family in the release README [S3:30] as "Symmetric and general Mahler conjectures".
 
 ## Undergraduate summary
 
@@ -44,7 +44,7 @@ The moves worth naming are these. The symmetric argument is a measure-transport 
 
 What the release does not say is the most load-bearing part. The functional Mahler inequalities are stated in the manuscripts and in the release blurb, and they are not part of the formalized statement: the scope note excludes them explicitly [S29:13] [S29:17]. The symplectic theorem makes no claim about equality cases [S25:41–44], imposes no smoothness, strict convexity, unconditional symmetry, or product structure [S25:32–34], and asserts no embedding at capacity exactly 4 [S29:21]. The general proof's numerical layer is a finite-arithmetic certificate, not sampling: "Numerical sampling is not used as a substitute for these arguments" [S17:153–154], and the verification bundle states its own scope — "These commands check the specified finite arithmetic. The manuscript supplies the analytic and geometric arguments that use it" [S20:47–48]. The symplectic paper uses neither the volume-product theorem nor the equality classification of its companion [S26:66–67], so the symmetric result is proved twice by independent routes, once by the lens and once by ball embeddings.
 
-Formalization status. The release's scope note covers three statements: the symmetric theorem with its Hanner equality classification [S29:11], the general inequality with simplex equality, noting that the paper's functional inequality is outside the selected statement [S29:15–17], and the symplectic width with its sub-4 embeddings [S29:19]. Four comparator challenges are recorded for the family. The symmetric theorem challenge states its target with a `sorry` placeholder [S31:15–19] and its JSON records the matched solution [S32]. The equality challenge states the equivalence between attaining the constant and being a linear Hanner body [S33:43–47], with the Hanner class built recursively in the same file [S33:36–41], and its JSON is the only one of the four that lists solution imports [S34]. The polar-product challenge states the width claim with a `sorry` placeholder [S37:40–44] and its JSON records the match [S38]. Three of these four have a recorded main result: the symmetric theorem, its equality classification, and the polar-product width [S30:1298–1300] [S30:1562–1564] [S30:1566–1568]. The general Mahler challenge is stated with the Santaló infimum [S35:24–31] and has a solution module named in its JSON [S36], and that module proves the theorem in 39 lines with no `sorry` [S41:17–33], but the release's YAML records no `main_results` entry for it and no bibliography entry for the general manuscript at all [S30:757–760]. The symmetric solution is proved in 28 lines [S39:12–16]; the equality classification runs to 546 lines and defines the decomposition structure the equality proof consumes [S40:14–20]; the width solution occupies 19 lines [S42:7–15]. Source-level counts, from the shipped tree: the symmetric tree holds 243 files and 28,853 lines with zero `sorry`, the polar-product tree 46 files and 12,175 lines with zero `sorry`, and the general-Mahler tree 302 files and 40,205 lines with zero `sorry`. Zero `sorry` is a source-level fact about the source files, not a comparator pass, and the release states that its automation was agent-generated with review status unchecked.
+Formalization status. The release's scope note covers three statements: the symmetric theorem with its Hanner equality classification [S29:11], the general inequality with simplex equality, noting that the paper's functional inequality is outside the selected statement [S29:15–17], and the symplectic width with its sub-4 embeddings [S29:19]. Four comparator challenges are recorded for the family. The symmetric theorem challenge states its target with a `sorry` placeholder [S31:15–19] and its JSON records the matched solution [S32]. The equality challenge states the equivalence between attaining the constant and being a linear Hanner body [S33:43–47], with the Hanner class built recursively in the same file [S33:36–41], and its JSON is the only one of the four that lists solution imports [S34]. The polar-product challenge states the width claim with a `sorry` placeholder [S37:40–44] and its JSON records the match [S38]. Three of these four have a recorded main result: the symmetric theorem, its equality classification, and the polar-product width [S30:1377–1379] [S30:1657–1659] [S30:1661–1663]. The general Mahler challenge is stated with the Santaló infimum [S35:24–31] and has a solution module named in its JSON [S36], and that module proves the theorem in 39 lines with no `sorry` [S41:17–33], but the release's YAML records no `main_results` entry for it and no bibliography entry for the general manuscript at all [S30:802–805]. The symmetric solution is proved in 28 lines [S39:12–16]; the equality classification runs to 546 lines and defines the decomposition structure the equality proof consumes [S40:14–20]; the width solution occupies 19 lines [S42:7–15]. Source-level counts, from the shipped tree: the symmetric tree holds 243 files and 28,853 lines with zero `sorry`, the polar-product tree 46 files and 12,175 lines with zero `sorry`, and the general-Mahler tree 302 files and 40,205 lines with zero `sorry`. Zero `sorry` is a source-level fact about the source files, not a comparator pass, and the release states that its automation was agent-generated with review status unchecked.
 
 ## History of the conjecture
 
@@ -72,9 +72,9 @@ Two gaps follow from the formalization record rather than from the mathematics. 
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9169 | Release entry and sub-entries for family 087 |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Release entry and sub-entries for family 087 |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | Release's own family list |
-| S3 | [`README.md`](../../../README.md) | 50 | Trace attribution |
+| S3 | [`README.md`](../../../README.md) | 51 | Trace attribution |
 | S4 | [`preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/README.md`](../../../preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/README.md) | 18 | Symmetric manuscript root |
 | S5 | [`preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/main.tex`](../../../preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/main.tex) | 59 | Symmetric abstract |
 | S6 | [`preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/introduction.tex`](../../../preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/introduction.tex) | 296 | Symmetric theorem, history, proof chain, functional corollary |
@@ -101,7 +101,7 @@ Two gaps follow from the formalization record rather than from the mathematics. 
 | S27 | [`preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/sections/approximation.tex`](../../../preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/sections/approximation.tex) | 249 | Limit theorem, sharpness, packing corollary |
 | S28 | [`preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/references.bib`](../../../preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/references.bib) | 230 | Symplectic bibliography, including the symmetric companion and the ball-packing family |
 | S29 | [`lean/docs/087.md`](../../../lean/docs/087.md) | 30 | Release scope note and comparator table |
-| S30 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1668 | Release bibliography and `main_results` index |
+| S30 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1,783 | Release bibliography and `main_results` index |
 | S31 | [`lean/ComparatorChallenges/MahlerConjecture.lean`](../../../lean/ComparatorChallenges/MahlerConjecture.lean) | 26 | Symmetric challenge statement |
 | S32 | [`lean/ComparatorChallenges/MahlerConjecture.json`](../../../lean/ComparatorChallenges/MahlerConjecture.json) | 14 | Symmetric challenge record |
 | S33 | [`lean/ComparatorChallenges/SymmetricMahlerEquality.lean`](../../../lean/ComparatorChallenges/SymmetricMahlerEquality.lean) | 54 | Equality challenge statement |

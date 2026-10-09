@@ -480,7 +480,7 @@ The 102 lines of scaffolding above that placeholder are a verbatim copy of the f
 
 > The formalized result gives global existence and uniqueness for the three-dimensional one-species relativistic Vlasov–Maxwell system. The initial particle density is nonnegative, smooth, and compactly supported; the initial fields have bounded derivatives of all orders, finite energy, and satisfy both Gauss constraints. The solution is smooth on every finite time interval, has compact particle phase support there, and is unique among classical solutions. No smallness, symmetry, or neutrality assumption is imposed.
 
-The second consequence is ledger-visible and is the contrast case for the evidence columns. Family 362 is one of the families the release's own index does record: it appears as a bibliography entry [S20:392–395] and as a `main_results` entry [S20:1642–1644]:
+The second consequence is ledger-visible and is the contrast case for the evidence columns. Family 362 is one of the families the release's own index does record: it appears as a bibliography entry [S20:392–395] and as a `main_results` entry [S20:1757–1759]:
 
 >     - comparator_config: ComparatorChallenges/VlasovMaxwell.json
 >       declaration: OAI.RVM.global_classical_solution
@@ -535,7 +535,7 @@ Section map, read from the manuscript's own include list [S3:49–58]:
 
 | ID | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,169 | Release blurb, manuscript link, abstract |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Release blurb, manuscript link, abstract |
 | S2 | [`preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/README.md`](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/README.md) | 18 | Manuscript README and bibtex key |
 | S3 | [`build/main.tex`](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/main.tex) | 61 | Title, abstract, section include list |
 | S4 | [`build/sections/introduction.tex`](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/introduction.tex) | 227 | Model, theorem, history, strategy |
@@ -554,7 +554,7 @@ Section map, read from the manuscript's own include list [S3:49–58]:
 | S17 | [`lean/ComparatorChallenges/VlasovMaxwell.json`](../../../lean/ComparatorChallenges/VlasovMaxwell.json) | 14 | Comparator configuration |
 | S18 | [`lean/OAI/Analysis/VlasovMaxwell/Main.lean`](../../../lean/OAI/Analysis/VlasovMaxwell/Main.lean) | 54 | Formalized main theorem |
 | S19 | [`lean/OAI/Analysis/VlasovMaxwell/Model.lean`](../../../lean/OAI/Analysis/VlasovMaxwell/Model.lean) | 109 | Formalized model scaffolding |
-| S20 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1,668 | Release index of papers and results |
+| S20 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1,783 | Release index of papers and results |
 | S21 | [`notes/catalog.tsv`](../../../notes/catalog.tsv) | 373 | Reading ledger row for family 362 |
 | S22 | [`reasoning_traces/relativistic-vlasov-maxwell.pdf`](../../../reasoning_traces/relativistic-vlasov-maxwell.pdf) | — | Published reasoning trace |
 | S23 | [`paper.pdf`](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/paper.pdf) | — | Manuscript PDF |

@@ -2,7 +2,7 @@
 
 ## Original CONTENTS.md summary
 
-[S1:2529] (the family entry):
+[S1:2502] (the family entry):
 
 > **102. The Unique Games Conjecture and optimal approximation thresholds.** Proves Khot's Unique
 > Games Conjecture. Independent direct reductions also establish NP-hardness, on unweighted graphs,
@@ -13,7 +13,7 @@
 
 The entry names five manuscripts; [S2:282] lists the same five, and the release attributes a
 reasoning trace to this family: "Ordinary NP-hardness at the basic semidefinite threshold"
-([S3:30]).
+([S3:31]).
 
 ## Undergraduate summary
 
@@ -98,12 +98,12 @@ polynomial-time decision algorithm for 3SAT." ([S8:17]) Min-UnCut is recorded as
 hardness for every fixed approximation factor greater than one." ([S8:19]) and directed feedback
 vertex set as "The formalization proves hardness of approximating the minimum such set within any
 fixed constant factor." ([S8:21]) The `main_results` entries name the declarations, e.g.
-"declaration: OAI.UniqueGamesTheorem.theorem11" ([S9:1630–1632]); the Min-UnCut and directed
+"declaration: OAI.UniqueGamesTheorem.theorem11" ([S9:1745–1747]); the Min-UnCut and directed
 feedback vertex set manuscripts are absent from the YAML bibliography entirely, which is consistent
 with the ledger's count of 3 formalized manuscripts. Each of the five results has its own comparator
 challenge configuration naming the module, the theorem and definition names, and permitting only
 propext, Quot.sound and Classical.choice ([S10], [S11], [S12], [S13], [S14]). Every entry in this
-family is agent-generated and unreviewed: the YAML records "status: unchecked" ([S9:1662–1663]).
+family is agent-generated and unreviewed: the YAML records "status: unchecked" ([S9:1777–1778]).
 The manuscript itself ships a short README carrying its title, date, and citation stub ([S4]).
 
 ## History of the conjecture
@@ -189,9 +189,9 @@ What is *not* a consequence: none of these papers identifies the approximation f
 polynomial-time algorithm must achieve as inputs grow, and none improves the known general
 algorithms — the directed feedback vertex set paper says so about itself ([S19:68–71]). The
 release's own blurb records the split correctly: the conjecture is proved, and the four threshold
-results are established by "Independent direct reductions" ([S1:2529]). The release also publishes
+results are established by "Independent direct reductions" ([S1:2502]). The release also publishes
 the derivation behind the main result as a reasoning trace, "Ordinary NP-hardness at the basic
-semidefinite threshold" ([S3:30], [S20]).
+semidefinite threshold" ([S3:31], [S20]).
 
 ## Sources
 
@@ -201,15 +201,15 @@ inline HTML link was rewritten to a relative one so it resolves from this page.
 
 | Src | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,169 | Release blurb, family 102 at line 2529 |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Release blurb, family 102 at line 2502 |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | LaTeX entry `\resultentry{102}`, line 282 |
-| S3 | [`README.md`](../../../README.md) | 50 | Trace attribution, line 30 |
+| S3 | [`README.md`](../../../README.md) | 51 | Trace attribution, line 31 |
 | S4 | [`preprints/The-Unique-Games-Theorem-September-23-2026/README.md`](../../../preprints/The-Unique-Games-Theorem-September-23-2026/README.md) | 18 | Manuscript README (title, date, bibtex stub) |
 | S5 | [`preprints/The-Unique-Games-Theorem-September-23-2026/build/main.tex`](../../../preprints/The-Unique-Games-Theorem-September-23-2026/build/main.tex) | 89 | Main paper: title line 56, abstract 63–66 |
 | S6 | [`preprints/The-Unique-Games-Theorem-September-23-2026/build/sections/00-introduction.tex`](../../../preprints/The-Unique-Games-Theorem-September-23-2026/build/sections/00-introduction.tex) | 323 | Theorem statement, prior work, proof strategy |
 | S7 | [`preprints/The-Unique-Games-Theorem-September-23-2026/build/sections/07-consequences.tex`](../../../preprints/The-Unique-Games-Theorem-September-23-2026/build/sections/07-consequences.tex) | 331 | Consequences of the proved conjecture |
 | S8 | [`lean/docs/102.md`](../../../lean/docs/102.md) | 31 | Scope note: what is formalized, per result |
-| S9 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1,668 | `main_results`, bibliography, automation and review |
+| S9 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1,783 | `main_results`, bibliography, automation and review |
 | S10 | [`lean/ComparatorChallenges/UniqueGamesTheorem.json`](../../../lean/ComparatorChallenges/UniqueGamesTheorem.json) | 14 | Comparator config, main theorem |
 | S11 | [`lean/ComparatorChallenges/OptimalMaxCut.json`](../../../lean/ComparatorChallenges/OptimalMaxCut.json) | 14 | Comparator config, Max-Cut |
 | S12 | [`lean/ComparatorChallenges/VertexCover.json`](../../../lean/ComparatorChallenges/VertexCover.json) | 15 | Comparator config, Vertex Cover |

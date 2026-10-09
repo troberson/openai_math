@@ -127,7 +127,7 @@ The three manuscript roots are `preprints/Unrestricted-pro-modularity-at-the-pri
 
 | ID | File | Lines | Role |
 |---|---|---|---|
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,169 | Family 010 entry at 232; manuscript blurbs at 241, 250 and 259 |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Family 010 entry at 232; manuscript blurbs at 241, 250 and 259 |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 010 `\resultentry` at 96 |
 | S3 | [`preprints/Unrestricted-pro-modularity-at-the-prime-two-October-4-2026/README.md`](../../../preprints/Unrestricted-pro-modularity-at-the-prime-two-October-4-2026/README.md) | 18 | Author at 3, date at 5, citation block at 10–16 |
 | S4 | [`preprints/Unrestricted-pro-modularity-at-the-prime-two-October-4-2026/build/source/main.tex`](../../../preprints/Unrestricted-pro-modularity-at-the-prime-two-October-4-2026/build/source/main.tex) | 75 | Title at 51, date at 53, abstract at 56–64, section inputs at 66–71 |
@@ -155,7 +155,7 @@ The three manuscript roots are `preprints/Unrestricted-pro-modularity-at-the-pri
 | S26 | [`preprints/Fontaine-Mazur-modularity-at-the-prime-2-September-23-2026/build/sections/classicality.tex`](../../../preprints/Fontaine-Mazur-modularity-at-the-prime-2-September-23-2026/build/sections/classicality.tex) | 758 | Classical vectors, polynomial orbit, cyclic descent |
 | S27 | [`preprints/Fontaine-Mazur-modularity-at-the-prime-2-September-23-2026/build/references.bib`](../../../preprints/Fontaine-Mazur-modularity-at-the-prime-2-September-23-2026/build/references.bib) | 753 | Release entry `OpenAIH10Q2026` at 723–730 |
 | S28 | [`preprints/Fontaine-Mazur-modularity-at-the-prime-2-September-23-2026/paper.pdf`](../../../preprints/Fontaine-Mazur-modularity-at-the-prime-2-September-23-2026/paper.pdf) | — | Typeset manuscript, 767,853 bytes |
-| S29 | [`notes/t0-triage.md`](../../t0-triage.md) | 893 | Family 010 entry at 117–120 |
+| S29 | [`notes/t0-triage.md`](../../t0-triage.md) | 897 | Family 010 entry at 117–120 |
 | S30 | [`notes/catalog.tsv`](../../catalog.tsv) | 373 | Ledger row for family 010 at 11 |
 
 The PDF rows are the typeset form of each manuscript; the page quotes the LaTeX source, which is what the release ships alongside them [S12] [S16] [S28]. The three READMEs carry the release citation block for each manuscript [S3] [S13] [S17].

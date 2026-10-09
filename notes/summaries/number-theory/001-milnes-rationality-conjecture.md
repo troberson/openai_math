@@ -261,7 +261,7 @@ and S15 sit under the manuscript root, S1–S2 at the repository root, S13–S14
 
 | # | File | Lines | Role |
 |---|---|---|---|
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,169 | the release's catalog — family entry [S1:16], manuscript entry [S1:23], abstract [S1:25]; companion 032 at [S1:755] and its CM Hodge manuscript at [S1:780]. Quoted word-for-word; the release's inline HTML is rendered as markdown (its italic `p` tags became `*p*`, its leading em-space entity was dropped) and its relative PDF link was rewritten to resolve from this page |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | the release's catalog — family entry [S1:16], manuscript entry [S1:23], abstract [S1:25]; companion 032 at [S1:755] and its CM Hodge manuscript at [S1:780]. Quoted word-for-word; the release's inline HTML is rendered as markdown (its italic `p` tags became `*p*`, its leading em-space entity was dropped) and its relative PDF link was rewritten to resolve from this page |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 001 at [S2:78] |
 | S3 | [`preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/main.tex`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/main.tex) | 73 | root (`\documentclass`); abstract at [S3:58]; section includes |
 | S4 | [`preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/sections/00_intro.tex`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/sections/00_intro.tex) | 280 | main theorem [S4:29–56]; origins [S4:64–112]; antecedents [S4:114–184]; proof overview [S4:186–265] |
@@ -273,7 +273,7 @@ and S15 sit under the manuscript root, S1–S2 at the repository root, S13–S14
 | S10 | [`preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/references.tex`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/references.tex) | 274 | 35 `\bibitem`s; Milne 1999/2000/2009/2025 at [S10:151]/[S10:159]/[S10:187]/[S10:222]; Markman [S10:133]; Kisin–Zhou [S10:124]; 032 at [S10:238] |
 | S11 | [`preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/figures/two-transports.tex`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/figures/two-transports.tex) | 28 | figure source — panels at [S11:8], [S11:17] |
 | S12 | [`preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/README.md`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/README.md) | 18 | title, author, date, bibtex citation stub |
-| S13 | [`notes/t0-triage.md`](../../t0-triage.md) | 893 | 001 in the T0 **classification** bucket (K), not the resolution bucket, at [S13:107]; the 001 + 032 chain at [S13:501]. Ours, not in the release |
+| S13 | [`notes/t0-triage.md`](../../t0-triage.md) | 897 | 001 in the T0 **classification** bucket (K), not the resolution bucket, at [S13:107]; the 001 + 032 chain at [S13:501]. Ours, not in the release |
 | S14 | [`notes/catalog.tsv`](../../catalog.tsv) | 373 | the ledger row `fam=001`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
 | S15 | [`preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/paper.pdf`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/paper.pdf) | — | the manuscript as shipped |
 

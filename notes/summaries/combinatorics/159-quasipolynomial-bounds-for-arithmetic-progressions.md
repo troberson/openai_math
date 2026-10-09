@@ -2,11 +2,11 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb [S1:3811]:
+The release's blurb [S1:3784]:
 
 > **159. Erdős's reciprocal-sum conjecture and quasipolynomial Szemerédi bounds.** Proves Erdős's conjecture that every set of positive integers with divergent reciprocal sum contains arithmetic progressions of every finite length. Quantitatively, for each fixed *k* ≥ 3, every subset of $`\{1,\ldots,N\}`$ with no nonconstant *k*-term progression has size at most $`C_kN\exp[-c_k(\log N)^{\varepsilon_k}]`$, with positive constants depending only on *k*. ([Lean](../../../lean/docs/159.md))
 
-The manuscript's own abstract entry in the same table [S1:3820–3824]:
+The manuscript's own abstract entry in the same table [S1:3793–3797]:
 
 > We prove Erdős's conjecture that every set of positive integers with divergent reciprocal sum contains arithmetic progressions of every finite length. More quantitatively, for every fixed *k* ≥ 3, we show
 > $`\displaystyle r_k(N)\le C_kN\exp\bigl(-c_k(\log N)^{\varepsilon_k}\bigr)`$
@@ -279,7 +279,7 @@ Manuscript root: `preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-S
 
 | ID | File | Lines | Role |
 |---|---|---|---|
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,169 | Release blurb and manuscript sub-entry |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Release blurb and manuscript sub-entry |
 | S2 | [`build/main.tex`](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/main.tex) | 37 | Manuscript source: title, abstract, section order |
 | S3 | [`preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/README.md`](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/README.md) | 18 | Manuscript build notes and release date |
 | S4 | [`build/sections/00-introduction.tex`](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/00-introduction.tex) | 343 | Theorem statement, prior work, proof outline |

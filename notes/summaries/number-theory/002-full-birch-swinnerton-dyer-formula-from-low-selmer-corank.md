@@ -92,10 +92,10 @@ Sources are numbered and cited in the body as [S2:31] for one line or [S2:31–4
 
 | S# | File | Lines | What it is |
 |---|---|---|---|
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,169 | Family entry at 32; manuscript blurbs at 41, 50 and 59; family 006's entry at 141, which names 002 |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Family entry at 32; manuscript blurbs at 41, 50 and 59; family 006's entry at 141, which names 002 |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | The `\resultentry` at 80: the release's abstract for 002 and its three display titles |
 | S3 | [`notes/catalog.tsv`](../../catalog.tsv) | 373 | Row 3 is family 002: tier, manuscript count, claim-shape tags, companion, and the zero evidence columns |
-| S4 | [`notes/t0-triage.md`](../../t0-triage.md) | 893 | Bucket legend at 19–26; the 002 entry at 109–111; the cross-family chain list at 854–855 |
+| S4 | [`notes/t0-triage.md`](../../t0-triage.md) | 897 | Bucket legend at 19–26; the 002 entry at 109–111; the cross-family chain list at 854–855 |
 | S5 | [`preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-3-2026/README.md`](../../../preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-3-2026/README.md) | 18 | Author line at 3, date line at 5, the release's own bibtex entry at 9–17 |
 | S6 | [`preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-3-2026/build/main.tex`](../../../preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-3-2026/build/main.tex) | 82 | Title at 56, date at 58, abstract at 62–68; the ten section inputs |
 | S7 | [`preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-3-2026/build/sections/01-introduction.tex`](../../../preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-3-2026/build/sections/01-introduction.tex) | 281 | Normalizations at 12–44; theorem at 47–62; inputs at 64–71; history at 75–137; discrepancy at 141–167; theta method at 169–267; organization at 269 |

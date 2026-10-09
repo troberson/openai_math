@@ -122,7 +122,7 @@ The three manuscript roots are `preprints/Weighted-Dilation-Graphs-Smooth-Shifte
 
 | ID | File | Lines | Role |
 |---|---|---|---|
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,169 | Family 011 entry at 266; manuscript blurbs at 275, 284 and 293 |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Family 011 entry at 266; manuscript blurbs at 275, 284 and 293 |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 011 `\resultentry` at 98 |
 | S3 | [`preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/README.md`](../../../preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/README.md) | 18 | Author at 3, date at 5, citation block at 10–16 |
 | S4 | [`preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/build/paper.tex`](../../../preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/build/paper.tex) | 27 | Title at 3, date at 5, abstract at 9, section inputs at 11–19 |
@@ -140,7 +140,7 @@ The three manuscript roots are `preprints/Weighted-Dilation-Graphs-Smooth-Shifte
 | S16 | [`preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/build/main.tex`](../../../preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/build/main.tex) | 141 | Title at 33, date at 35, abstract at 41–43, `thm:main` at 53–57, scope at 59–64, relation to earlier work at 66–76, companion link at 78–90, extensions at 92–108 |
 | S17 | [`preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/build/references.tex`](../../../preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/build/references.tex) | 39 | Inline `thebibliography`; release entry `SmoothShifted` at 25–30 |
 | S18 | [`preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf`](../../../preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf) | — | Typeset manuscript, 599,500 bytes |
-| S19 | [`notes/t0-triage.md`](../../t0-triage.md) | 893 | Family 011 entry at 121–122 |
+| S19 | [`notes/t0-triage.md`](../../t0-triage.md) | 897 | Family 011 entry at 121–122 |
 | S20 | [`notes/catalog.tsv`](../../catalog.tsv) | 373 | Ledger row for family 011 at 12 |
 
 The PDF rows are the typeset form of each manuscript; the page quotes the LaTeX source, which is what the release ships alongside them [S8] [S14] [S18]. The three READMEs carry the release citation block for each manuscript [S3] [S9] [S15]. The two abstracts quoted from the driver files are the release's own summary of manuscripts A and B [S4:9] [S10:9], and the family's own entry in the release overview is at 98 [S2:98].

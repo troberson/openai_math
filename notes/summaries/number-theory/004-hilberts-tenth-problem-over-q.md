@@ -116,7 +116,7 @@ On the elliptic-curve side, the 2-converse has its own history, and the companio
 
 | # | File | Lines | Role |
 |---|---|---|---|
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,169 | Release entry for family 004 (100); manuscript blurbs (109, 118) |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Release entry for family 004 (100); manuscript blurbs (109, 118) |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | `\resultentry{004}` — title, abstract, manuscript paths (84) |
 | S3 | [`preprints/Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026/README.md`](../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026/README.md) | 18 | Provenance: author (3), date (5), citation block (9–16) |
 | S4 | [`preprints/Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026/build/main.tex`](../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026/build/main.tex) | 81 | Title (58), date (60), abstract (63–67), section inputs (71–77) |
@@ -129,7 +129,7 @@ On the elliptic-curve side, the 2-converse has its own history, and the companio
 | S11 | [`preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-September-24-2026/build/references.bib`](../../../preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-September-24-2026/build/references.bib) | 355 | `OpenAIGoldfeldTwoConverse2026` — family 006 (349–355) |
 | S12 | [`preprints/Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026/main.pdf`](../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026/main.pdf) | — | Typeset manuscript, 701,416 bytes |
 | S13 | [`preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-September-24-2026/paper.pdf`](../../../preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-September-24-2026/paper.pdf) | — | Typeset manuscript, 893,281 bytes |
-| S14 | [`notes/t0-triage.md`](../../t0-triage.md) | 893 | Bucket entry (113–114); flag-only reading (529–531) |
+| S14 | [`notes/t0-triage.md`](../../t0-triage.md) | 897 | Bucket entry (113–114); flag-only reading (529–531) |
 | S15 | [`notes/catalog.tsv`](../../catalog.tsv) | 373 | Ledger row 5 — tier, counts, claim-shape tags |
 | S16 | [`notes/counterexample-tag.md`](../../counterexample-tag.md) | 201 | Phrase rule (39–44); 004 catch (53–55); 004 verdict (65–67); T0 counts (183–184) |
 

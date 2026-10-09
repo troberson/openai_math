@@ -4,11 +4,11 @@
 
 **221. The Mézard–Parisi formula for diluted spin glasses.** Proves the Mézard–Parisi hierarchical cavity formula for Poisson-diluted even-arity Ising models satisfying the Panchenko–Talagrand factorization and positivity assumptions, with only first-moment integrability. The limiting free energy equals the infimum over finite-depth hierarchical trial laws. This includes the Viana–Bray model, symmetric diluted even-spin models, and weighted soft even-*K* satisfiability. ([Lean](../../../lean/docs/221.md))
 
-The blurb above is reproduced from [S1:5247]; the release sets the clause size in italic markup and this page writes it as *K*.
+The blurb above is reproduced from [S1:5220]; the release sets the clause size in italic markup and this page writes it as *K*.
 
 ## Undergraduate summary
 
-The release abstract states the result in one paragraph [S1:5256]:
+The release abstract states the result in one paragraph [S1:5229]:
 
 > We prove the Mézard–Parisi hierarchical cavity formula for diluted even-arity Ising models in the Panchenko–Talagrand class. This resolves the variational equality conjecture for that class: the limiting pressure equals the infimum of the trial functional over all finite hierarchy depths and trial laws. Only first moments of the interaction and external field are required.
 
@@ -75,7 +75,7 @@ Manuscript root: `preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-S
 
 | ID | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9169 | Release contents listing: blurb and abstract |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Release contents listing: blurb and abstract |
 | S2 | [`preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/README.md`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/README.md) | 18 | Manuscript README: date and citation key |
 | S3 | [`preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/main.tex`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/main.tex) | 75 | Manuscript main file: abstract and section order |
 | S4 | [`preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/glyph-mappings.tex`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/glyph-mappings.tex) | 40 | Build support: PDF glyph mappings |
@@ -100,7 +100,7 @@ Manuscript root: `preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-S
 | S23 | [`lean/OAI/Probability/DilutedSpin/ExactVariationalLower.lean`](../../../lean/OAI/Probability/DilutedSpin/ExactVariationalLower.lean) | 37 | Lower-bound interface |
 | S24 | [`lean/OAI/Probability/DilutedSpin/ProxyRateIncrement.lean`](../../../lean/OAI/Probability/DilutedSpin/ProxyRateIncrement.lean) | 76 | Upper-bound interface |
 | S25 | [`lean/OAI/Probability/DilutedSpin/HistoryGeometry.lean`](../../../lean/OAI/Probability/DilutedSpin/HistoryGeometry.lean) | 1125 | Largest module in the formalized tree |
-| S26 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1668 | Release formalization index |
+| S26 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1,783 | Release formalization index |
 | S27 | [`lean/OAI/Probability/SATComputability/InterpolationUpper.lean`](../../../lean/OAI/Probability/SATComputability/InterpolationUpper.lean) | 1211 | Family 235 module importing DilutedSpin |
 | S28 | [`lean/docs/235.md`](../../../lean/docs/235.md) | 26 | Companion scope note |
 | S29 | [`reasoning_traces/mezard-parisi-formula.pdf`](../../../reasoning_traces/mezard-parisi-formula.pdf) | — | Published reasoning trace |

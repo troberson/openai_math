@@ -122,7 +122,7 @@ version, `pi_irrationalityExponent_eq_two`, the comparator `main`, and separatel
 `flint_hills_summable` [S15:17–32] — so the Flint–Hills consequence *is* formalized, just outside
 the selected statement, via a dyadic spacing lemma and a reduction from a distance sum [S17:142–155],
 [S18:138–156]. Two coverage gaps, measured. First, `lean/formalization.yaml` has no entry naming
-this manuscript [S12:1–1668], which is why the ledger reports `paps_form 0` and `mainres 0` beside
+this manuscript [S12:1–1783], which is why the ledger reports `paps_form 0` and `mainres 0` beside
 those 94,948 lines; the ledger's evidence columns count bibliography entries, not Lean source.
 Second, the generalized criterion *a* > max{1, *b*} is not formalized: the Analysis directory
 formalizes the classical series only [S18:138–156], and a search for `max {` in it returns nothing
@@ -199,9 +199,9 @@ results on logarithms at algebraic arguments are in the same list [S10:70–79].
 
 | ID | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,169 | Release blurb, at line 488 |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Release blurb, at line 488 |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | Catalog entry, at line 110 |
-| S3 | [`README.md`](../../../README.md) | 50 | Trace attribution, at line 28 |
+| S3 | [`README.md`](../../../README.md) | 51 | Trace attribution, at line 28 |
 | S4 | [`preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/README.md`](../../../preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/README.md) | 18 | Manuscript metadata; date at line 5 |
 | S5 | [`preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/main.tex`](../../../preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/main.tex) | 264 | Abstract, theorem statements, history, proof outline |
 | S6 | [`preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/sections/interpolation.tex`](../../../preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/sections/interpolation.tex) | 584 | Uniform interpolation theorem |
@@ -210,7 +210,7 @@ results on logarithms at algebraic arguments are in the same list [S10:70–79].
 | S9 | [`preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/sections/series.tex`](../../../preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/sections/series.tex) | 155 | Flint–Hills convergence and the generalized criterion |
 | S10 | [`preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/references.bib`](../../../preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/references.bib) | 269 | Cited prior work behind the history |
 | S11 | [`lean/docs/017.md`](../../../lean/docs/017.md) | 17 | Scope note: selected statement and exclusion |
-| S12 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1,668 | No entry naming this manuscript |
+| S12 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1,783 | No entry naming this manuscript |
 | S13 | [`lean/ComparatorChallenges/PiExponent.lean`](../../../lean/ComparatorChallenges/PiExponent.lean) | 19 | Comparator challenge, `sorry` at line 15 |
 | S14 | [`lean/ComparatorChallenges/PiExponent.json`](../../../lean/ComparatorChallenges/PiExponent.json) | 14 | Challenge config: target module, axioms, `enable_nanoda` |
 | S15 | [`lean/OAI/NumberTheory/PiExponent/Main.lean`](../../../lean/OAI/NumberTheory/PiExponent/Main.lean) | 36 | Formalized main theorem and Flint–Hills summability |

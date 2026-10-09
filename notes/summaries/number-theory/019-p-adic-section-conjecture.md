@@ -71,7 +71,7 @@ Both manuscript roots: `preprints/Etale-covers-with-a-prescribed-exterior-sheet-
 
 | ID | File | Lines | Role |
 |---|---|---|---|
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,169 | Family 019 entry at 529; manuscript blurbs at 538 and 547 |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Family 019 entry at 529; manuscript blurbs at 538 and 547 |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 019 `\resultentry` at 114 |
 | S3 | [`preprints/Etale-covers-with-a-prescribed-exterior-sheet-September-24-2026/README.md`](../../../preprints/Etale-covers-with-a-prescribed-exterior-sheet-September-24-2026/README.md) | 18 | Author at 3, date at 5, citation block at 10–16 |
 | S4 | [`preprints/Etale-covers-with-a-prescribed-exterior-sheet-September-24-2026/build/main.tex`](../../../preprints/Etale-covers-with-a-prescribed-exterior-sheet-September-24-2026/build/main.tex) | 46 | Title at 19, date at 21, abstract at 28–32, section inputs at 37–40 |
@@ -93,7 +93,7 @@ Both manuscript roots: `preprints/Etale-covers-with-a-prescribed-exterior-sheet-
 | S20 | [`preprints/The-p-adic-section-conjecture-September-24-2026/build/sections/08-global-sections.tex`](../../../preprints/The-p-adic-section-conjecture-September-24-2026/build/sections/08-global-sections.tex) | 276 | `thm:global-descent` at 122–129, corollaries at 162–233, further restrictions at 235–276 |
 | S21 | [`preprints/The-p-adic-section-conjecture-September-24-2026/build/references.bib`](../../../preprints/The-p-adic-section-conjecture-September-24-2026/build/references.bib) | 343 | Thirty-two entries; the release entry `OpenAISelmerConverse2026` at 337–343 |
 | S22 | [`preprints/The-p-adic-section-conjecture-September-24-2026/main.pdf`](../../../preprints/The-p-adic-section-conjecture-September-24-2026/main.pdf) | — | Typeset manuscript, 496,176 bytes |
-| S23 | [`notes/t0-triage.md`](../../t0-triage.md) | 893 | Family 019 entry at 132–134 |
+| S23 | [`notes/t0-triage.md`](../../t0-triage.md) | 897 | Family 019 entry at 132–134 |
 | S24 | [`notes/catalog.tsv`](../../catalog.tsv) | 373 | Ledger row for family 019 at 20 |
 
 The PDF rows are the typeset form of each manuscript; the page quotes the LaTeX source, which is what the release ships alongside them [S10] [S22].

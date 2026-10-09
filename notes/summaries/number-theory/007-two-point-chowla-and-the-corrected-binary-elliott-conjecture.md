@@ -263,9 +263,9 @@ carries no raw HTML.
 
 | Src | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,169 | Release blurb, family 007 at line 166 |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Release blurb, family 007 at line 166 |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | LaTeX entry `\resultentry{007}`, line 90 |
-| S3 | [`README.md`](../../../README.md) | 50 | Trace attribution, line 27 |
+| S3 | [`README.md`](../../../README.md) | 51 | Trace attribution, line 27 |
 | S4 | [`preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/README.md`](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/README.md) | 18 | Manuscript README (title, author, date, bibtex stub) |
 | S5 | [`preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/main.tex`](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/main.tex) | 90 | Title line 40, date line 46, abstract 49–58, three Parts |
 | S6 | [`preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/introduction.tex`](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/introduction.tex) | 278 | Theorems, prior work, main ideas, organization |
@@ -279,7 +279,7 @@ carries no raw HTML.
 | S14 | [`preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/qualitative/localization.tex`](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/qualitative/localization.tex) | 167 | High traces to long integer intervals |
 | S15 | [`preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/qualitative/affine-corollaries.tex`](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/qualitative/affine-corollaries.tex) | 363 | Part III: progressions, affine forms, Liouville |
 | S16 | [`lean/docs/007.md`](../../../lean/docs/007.md) | 18 | Scope note: what the formalization proves |
-| S17 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1,668 | Release index of formalized results; no entry for this manuscript |
+| S17 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1,783 | Release index of formalized results; no entry for this manuscript |
 | S18 | [`lean/ComparatorChallenges/OrdinaryElliott.json`](../../../lean/ComparatorChallenges/OrdinaryElliott.json) | 14 | Comparator config, Elliott challenge |
 | S19 | [`lean/ComparatorChallenges/OrdinaryTwoPointCorrelations.json`](../../../lean/ComparatorChallenges/OrdinaryTwoPointCorrelations.json) | 16 | Comparator config, three two-point theorems |
 | S20 | [`lean/ComparatorChallenges/OrdinaryTwoPointCorrelations.lean`](../../../lean/ComparatorChallenges/OrdinaryTwoPointCorrelations.lean) | 71 | Challenge statements, `sorry` on the challenge side |

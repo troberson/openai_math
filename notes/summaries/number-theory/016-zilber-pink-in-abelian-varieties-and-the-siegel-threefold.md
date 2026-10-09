@@ -146,7 +146,7 @@ The four manuscript roots are `preprints/The-Abelian-Zilber-Pink-Conjecture-Sept
 
 | ID | File | Lines | Role |
 |---|---|---|---|
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,169 | Family 016 entry at 445; manuscript blurbs at 454, 463, 472 and 481 |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Family 016 entry at 445; manuscript blurbs at 454, 463, 472 and 481 |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 016 `\resultentry` at 108 |
 | S3 | [`preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/README.md`](../../../preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/README.md) | 18 | Author at 3, date at 5, citation block at 10–16 |
 | S4 | [`preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/build/paper.tex`](../../../preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/build/paper.tex) | 31 | Title at 3, date at 5, abstract at 9–12, section inputs at 19–28 |
@@ -167,7 +167,7 @@ The four manuscript roots are `preprints/The-Abelian-Zilber-Pink-Conjecture-Sept
 | S19 | [`preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/build/sections/08-finiteness.tex`](../../../preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/build/sections/08-finiteness.tex) | 390 | Companion scope at 6–7, `fin:orbit` at 26–35, `fin:classification` at 270, proof of `intro:zp` at 331–365, `cor:fin:special-closure` at 370–381 |
 | S20 | [`preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/build/references.bib`](../../../preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/build/references.bib) | 360 | Release entries `CompanionECM` at 162–168 and `CompanionQuaternion` at 169–175 |
 | S21 | [`preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/paper.pdf`](../../../preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/paper.pdf) | — | Typeset manuscript, 719,203 bytes |
-| S22 | [`notes/t0-triage.md`](../../t0-triage.md) | 893 | Family 016 entry at 129–130 |
+| S22 | [`notes/t0-triage.md`](../../t0-triage.md) | 897 | Family 016 entry at 129–130 |
 | S23 | [`notes/catalog.tsv`](../../catalog.tsv) | 373 | Ledger row for family 016 at 17 |
 
 The PDF rows are the typeset form of each manuscript; the page quotes the LaTeX source, which is what the release ships alongside them [S7] [S10] [S15] [S21]. The four READMEs carry the release citation block for each manuscript [S3] [S8] [S11] [S16]. The four abstracts quoted from the driver files are the release's own summary of each paper [S4:9–12] [S9:53–56] [S12:20–24] [S17:9–15], and the family's own entry in the release overview is at 108 [S2:108].

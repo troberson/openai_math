@@ -5,9 +5,19 @@ carrier, so it states what to do and what not to re-derive.
 
 ## Current state (rewritten at every batch boundary)
 
-- **Batch:** `math-ckd.2` is **complete and closed** (2026-10-08, commit `5d87d8bda`) — the 9 headline
-  T0 families (002, 004, 006, 010, 011, 014, 016, 018, 019), 29 manuscripts, all in
-  `notes/summaries/number-theory/`. `math-ckd.1` (the 10 trace families) closed the same day.
+- **Batch:** `math-n5d.1` (claimed 2026-10-09) — sweep the summary pages to the post-merge release.
+  `math-ckd.1` (the 10 trace families) and `math-ckd.2` (the 9 headline T0 families: 002, 004, 006,
+  010, 011, 014, 016, 018, 019) closed 2026-10-08 at commit `5d87d8bda`.
+- **Post-merge staleness (measured 2026-10-09, `python3 notes/scripts/check_summary_manuscripts.py`,
+  report-only, run twice and byte-identical):** the upstream update `301488868`
+  ("Update manuscripts and Lean formalizations") supersedes manuscripts by shipping new dated
+  directories and **leaves the superseded directories on disk, git-tracked**. Over `preprints/`:
+  **749** directories on disk, **719** distinct directories named by `overview.tex`, **30** on disk and
+  named by no family, **0** named directories absent. Of the 21 pages, **7 name a manuscript the
+  catalog no longer names for their family** — 001, 002, 004, 006, 010, 019, 032 — over **19**
+  unnamed directory references, with **0** references named by a *different* family. Those 7 pages are
+  rebuilds, not marker sweeps; **14 pages are current**. `verify_summaries.py` cannot see this failure:
+  every file it checks exists and every quotation is verbatim, because both directories are real.
 - **Pages done (21):** 102 (`notes/summaries/theoretical-computer-science/`), 001, 002, 004, 006, 007,
   010, 011, 014, 016, 017, 018, 019 (`notes/summaries/number-theory/`), 032
   (`notes/summaries/algebraic-and-complex-geometry/`), 087 (`notes/summaries/convex-and-metric-geometry/`),
@@ -15,14 +25,20 @@ carrier, so it states what to do and what not to re-derive.
   221 (`notes/summaries/probability-and-statistical-mechanics/`), 271
   (`notes/summaries/mathematical-physics/`), 287 (`notes/summaries/operator-algebras/`), 362
   (`notes/summaries/partial-differential-equations/`). The ledger's `summary` column is 1 for those
-  twenty-one; the generator reports "summary pages 21 of 372 families, 60 manuscripts behind them".
-- **Next batch:** `math-ckd.3` — tier B, the 83 remaining T0 families with `resolves_named = 1`
-  (124 manuscripts). `bd update math-ckd.3 --claim`, then steps 2–9 below per page. Check `bd ready`
-  first: summaries are P4 and any ready P1/P2 issue outranks this batch.
-- **Last gate run (2026-10-08, closing `math-ckd.2`):** regeneration byte-identical on two runs; 372
-  families, 722 manuscripts, 162 formalized, 405 challenges, 185 `main_results` over 178 configs, 235
-  scope notes, both cross-checks 0, discipline table summing 372 / 235 / 722 / 162 — the only line that
-  moved is "summary pages 21 of 372 families, 60 manuscripts behind them" (was 12 / 31).
+  twenty-one; the generator reports "summary pages 21 of 372 families, 57 manuscripts behind them".
+- **Next batch:** `math-ckd.3` — tier B, the 78 remaining T0 families with `resolves_named = 1`
+  (118 manuscripts, measured from the post-merge ledger). `bd update math-ckd.3 --claim`, then steps
+  2–9 below per page. Check `bd ready` first: summaries are P4 and any ready P1/P2 issue outranks
+  this batch.
+- **Last gate run (2026-10-09, `math-n5d.1`):** regeneration byte-identical on two runs; 372 families,
+  719 manuscripts, 173 formalized, 416 challenges, 200 `main_results` entries over 189 configs, 242
+  scope notes, both `overview.tex` ↔ `CONTENTS.md` cross-checks 0, "summary pages 21 of 372 families,
+  57 manuscripts behind them". `verify_summaries.py` is **not** green fleet-wide at this boundary —
+  see the staleness bullet; the sweep is in progress.
+- **Pre-merge gate history (2026-10-08, closing `math-ckd.2`):** 372 families, 722 manuscripts, 162
+  formalized, 405 challenges, 185 `main_results` over 178 configs, 235 scope notes, discipline table
+  summing 372 / 235 / 722 / 162 — the line that moved was "summary pages 21 of 372 families, 60
+  manuscripts behind them" (was 12 / 31).
   `verify_summaries.py --mutant` over the 9 batch pages → **1470 marker positions, 499 quoted spans,
   0 problems (0 undetected mutants)**, 27 mutant FLAGGED lines (A1 inline, A3 block-quote attribution,
   B fabricated — three per page), no `UNUSED SOURCES`, no `AMBIGUOUS`. Re-run over all 21 pages at the
@@ -303,7 +319,9 @@ timer that fires mid-page is the failure mode, not the fix.
 A batch is one bd issue. Per page, in this order:
 
 1. `bd update <id> --claim` (once per batch).
-2. `ls` the manuscript root before the page says what it ships.
+2. `ls` the manuscript root before the page says what it ships, and confirm the release still names
+   it: `python3 notes/scripts/check_summary_manuscripts.py <page.md>`. A superseded directory is on
+   disk, so `ls` alone cannot tell you the family no longer ships it.
 3. Read the manuscript, the scope note, the YAML block, the challenge JSON, the trace if any.
 4. Write the page in the format fixed by the `family-summary` skill.
 5. Self-verify: every quotation against the lines it cites, every count against the file.
@@ -321,12 +339,13 @@ python3 notes/scripts/build_catalog.py > /tmp/r1.txt && cp notes/catalog.tsv /tm
 python3 notes/scripts/build_catalog.py > /tmp/r2.txt && cp notes/catalog.tsv /tmp/c2.tsv
 diff /tmp/c1.tsv /tmp/c2.tsv && diff /tmp/r1.txt /tmp/r2.txt     # must be byte-identical
 python3 notes/scripts/verify_summaries.py --mutant                # zero problems, zero undetected mutants
+python3 notes/scripts/check_summary_manuscripts.py                # 0 pages with an off-family manuscript
 ```
 
-Reconciliation lines that must not move: 372 families, 722 manuscripts, 162 formalized,
-405 challenges, 185 `main_results` entries over 178 configs, 235 scope notes, and both
-`overview.tex` ↔ `CONTENTS.md` cross-checks reading 0. The discipline table must sum to
-372 / 235 / 722 / 162.
+Reconciliation lines that must not move (post-merge, from the 2026-10-09 report): 372 families,
+719 manuscripts, 173 formalized, 416 challenges, 200 `main_results` entries over 189 configs, 242
+scope notes, and both `overview.tex` ↔ `CONTENTS.md` cross-checks reading 0. The discipline table must
+sum to 372 / 242 / 719 / 173.
 
 ## Commit and push boundaries
 
@@ -350,27 +369,27 @@ interval, and never push each commit as it lands. `upstream` is read-only; confi
   a revisit, then keep going. If it is critical, or fixing it later means rewriting pages,
   claim a different bead and come back.
 
-## Tiers (measured from the ledger, 2026-10-07)
+## Tiers (measured from the post-merge ledger, 2026-10-09)
 
 | Tier | Families | Manuscripts | Definition |
 |---|---|---|---|
-| A | 21 | 60 | 10 trace families, 9 headline T0 from `t0-triage.md`, plus 001 and 032 (done) |
-| B | 83 | 124 | remaining T0 families with `resolves_named = 1` (80 / 120 under the abstract-only scope) |
-| C | 268 | 538 | everything else, split into 131 families / 272 manuscripts (combinatorics, differential geometry, number theory, probability and statistical mechanics, theoretical computer science) and 137 families / 266 manuscripts (the remaining twelve) |
+| A | 21 | 57 | 10 trace families, 9 headline T0 from `t0-triage.md`, plus 001 and 032 (done) |
+| B | 78 | 118 | remaining T0 families with `resolves_named = 1` (the union title∪abstract scope) |
+| C | 273 | 544 | everything else, split into 132 families / 273 manuscripts (combinatorics, differential geometry, number theory, probability and statistical mechanics, theoretical computer science) and 141 families / 271 manuscripts (the remaining twelve) |
 
 Trace families: 007, 017, 087, 102, 159, 197, 221, 271, 287, 362 (22 manuscripts).
-Headline T0: 002, 004, 006, 010, 011, 014, 016, 018, 019 (29 manuscripts).
-T0 is 137 families and 255 manuscripts, so tier C is 268 families: 137 − 11 (tier-A T0) − 83 (tier B)
-+ 127 (T3) + 108 (T2) − 10 (trace families, all of them T2 or T3).
+Headline T0: 002, 004, 006, 010, 011, 014, 016, 018, 019 (29 manuscripts). 001 and 032 carry 6.
+T0 is 130 families and 244 manuscripts; T0 with `resolves_named = 1` is 86 families and 139
+manuscripts, of which the 11 tier-A T0 families take 8 / 21, leaving B at 78 / 118. A + B + C =
+372 families and 57 + 118 + 544 = 719 manuscripts.
 
-Tier B moved when `resolves_named` took the overview title into its input: the three T0 additions are
-022 (number theory), 044 (algebraic and complex geometry) and 209 (algebra), which left tier C, so B is
-83 / 124 and C is 268 / 538. The five-discipline split is named by the set that reproduces the
-manuscript counts, not by size rank: the five largest C disciplines **by families** are theoretical
-computer science 37, combinatorics 33, probability 27, mathematical physics 21, differential geometry
-20, and that set is 138 families, not 131. The named five are the grouping the plan reads in, and the
-list this page carried before (algebraic and complex geometry, number theory, combinatorics, topology,
-differential geometry) reproduces neither the old 132 / 273 nor the new 131 / 272 — it is 89 / 156.
+The tier counts moved at the upstream merge: pre-merge this table read A 21 / 60, B 83 / 124,
+C 268 / 538 over a T0 of 137 families and 255 manuscripts. The five-discipline C split is named by
+the set that reproduces the manuscript counts, not by size rank: the five largest C disciplines **by
+families** post-merge are theoretical computer science 37, combinatorics 33, probability 27,
+mathematical physics 21, differential geometry 20 — 138 families, not 132. The named five
+(combinatorics 33 / 46, differential geometry 20 / 37, number theory 15 / 21, probability 27 / 103,
+theoretical computer science 37 / 66) are the grouping the plan reads in.
 
 ## What not to re-derive
 
