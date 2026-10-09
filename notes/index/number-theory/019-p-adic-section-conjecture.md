@@ -20,7 +20,7 @@
 | Dir | PDF | LaTeX tree | README | Formalized | Main file | Verification |
 |---|---|---|---|---|---|---|
 | [`Etale-covers-with-a-prescribed-exterior-sheet-September-24-2026`](../../../preprints/Etale-covers-with-a-prescribed-exterior-sheet-September-24-2026/) | [main.pdf](../../../preprints/Etale-covers-with-a-prescribed-exterior-sheet-September-24-2026/main.pdf) | [build/](../../../preprints/Etale-covers-with-a-prescribed-exterior-sheet-September-24-2026/build/) | [README.md](../../../preprints/Etale-covers-with-a-prescribed-exterior-sheet-September-24-2026/README.md) | no | [main.tex](../../../preprints/Etale-covers-with-a-prescribed-exterior-sheet-September-24-2026/build/main.tex) | — |
-| [`The-p-adic-section-conjecture-September-24-2026`](../../../preprints/The-p-adic-section-conjecture-September-24-2026/) | [main.pdf](../../../preprints/The-p-adic-section-conjecture-September-24-2026/main.pdf) | [build/](../../../preprints/The-p-adic-section-conjecture-September-24-2026/build/) | [README.md](../../../preprints/The-p-adic-section-conjecture-September-24-2026/README.md) | no | [main.tex](../../../preprints/The-p-adic-section-conjecture-September-24-2026/build/main.tex) | — |
+| [`The-p-adic-section-conjecture-October-6-2026`](../../../preprints/The-p-adic-section-conjecture-October-6-2026/) | [main.pdf](../../../preprints/The-p-adic-section-conjecture-October-6-2026/main.pdf) | [build/](../../../preprints/The-p-adic-section-conjecture-October-6-2026/build/) | [README.md](../../../preprints/The-p-adic-section-conjecture-October-6-2026/README.md) | no | [main.tex](../../../preprints/The-p-adic-section-conjecture-October-6-2026/build/main.tex) | — |
 
 ## Lean
 

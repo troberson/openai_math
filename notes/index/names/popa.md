@@ -1,10 +1,10 @@
 # Name: popa
 
-15 families · subject name · 3 carried by a title or a declaration · 12 by prose · 12 by bibliography author
+14 families · subject name · 3 carried by a title or a declaration · 11 by prose · 12 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../names.tsv) with `role = citation`.
 
-Prose counts: 108 capitalized occurrences, 54 of them mid-sentence, 13 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
+Prose counts: 107 capitalized occurrences, 54 of them mid-sentence, 13 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
 
 ## Provenance by source
 
@@ -14,14 +14,13 @@ Prose counts: 108 capitalized occurrences, 54 of them mid-sentence, 13 lowercase
 | `M` — Manuscript title | title | 0 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 2 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 12 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 11 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 12 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
-| [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties-and-products-of-k3-surfaces.md) | The rational Hodge conjecture for CM abelian varieties and products of K3 surfaces | — | — | — | — | yes | — |
 | [033](../algebraic-and-complex-geometry/033-campanas-orbifold-iitaka-conjecture-and-logarithmic-subadditivity.md) | Campana's orbifold Iitaka conjecture and logarithmic subadditivity | — | — | — | — | yes | yes |
 | [034](../algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md) | Log abundance and effective Iitaka fibrations | — | — | — | — | yes | yes |
 | [036](../algebraic-and-complex-geometry/036-numerical-semiampleness-and-generalized-minimal-models.md) | Numerical semiampleness and generalized minimal models | — | — | — | — | — | yes |
@@ -41,7 +40,6 @@ Prose counts: 108 capitalized occurrences, 54 of them mid-sentence, 13 lowercase
 
 | Dir | Family | Where the name appears | PDF |
 |---|---|---|---|
-| [`Algebraicity-of-Weil-classes-on-split-abelian-eightfolds-September-18-2026`](../../../preprints/Algebraicity-of-Weil-classes-on-split-abelian-eightfolds-September-18-2026/) | [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties-and-products-of-k3-surfaces.md) | prose | [paper.pdf](../../../preprints/Algebraicity-of-Weil-classes-on-split-abelian-eightfolds-September-18-2026/paper.pdf) |
 | [`Approximation-Paving-over-Arbitrary-Maximal-Abelian-Subalgebras-September-25-2026`](../../../preprints/Approximation-Paving-over-Arbitrary-Maximal-Abelian-Subalgebras-September-25-2026/) | [300](../operator-algebras/300-popa-vaes-quadratic-strong-operator-paving-conjecture.md) | prose | [Approximation-Paving-over-Arbitrary-Maximal-Abelian-Subalgebras-September-25-2026.pdf](../../../preprints/Approximation-Paving-over-Arbitrary-Maximal-Abelian-Subalgebras-September-25-2026/Approximation-Paving-over-Arbitrary-Maximal-Abelian-Subalgebras-September-25-2026.pdf) |
 | [`Arithmeticity-of-twisted-finite-correspondences-for-lattices-over-local-fields-September-23-2026`](../../../preprints/Arithmeticity-of-twisted-finite-correspondences-for-lattices-over-local-fields-September-23-2026/) | [286](../operator-algebras/286-arithmetic-rigidity-of-lattice-von-neumann-algebras.md) | prose | [paper.pdf](../../../preprints/Arithmeticity-of-twisted-finite-correspondences-for-lattices-over-local-fields-September-23-2026/paper.pdf) |
 | [`Bounded-recovery-for-modular-spectral-averages-September-23-2026`](../../../preprints/Bounded-recovery-for-modular-spectral-averages-September-23-2026/) | [290](../operator-algebras/290-connes-bicentralizer-conjecture-and-relative-bicentralizers.md) | prose | [Bounded-recovery-for-modular-spectral-averages-September-23-2026.pdf](../../../preprints/Bounded-recovery-for-modular-spectral-averages-September-23-2026/Bounded-recovery-for-modular-spectral-averages-September-23-2026.pdf) |

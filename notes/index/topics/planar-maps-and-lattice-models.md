@@ -1,6 +1,6 @@
 # Topic: planar-maps-and-lattice-models
 
-13 families · pattern `planar map|first-passage|benjamini--schramm|limit shape|square-lattice|random-cluster|ashkin--teller|six-vertex|dimer|honeycomb|xy model|o\(n\) model|self-avoiding` · hits by layer: title 9 · abstract 13 · scope 4 · path 0
+13 families · pattern `planar map|first-passage|benjamini--schramm|limit shape|square-lattice|random-cluster|ashkin--teller|six-vertex|dimer|honeycomb|xy model|o\(n\) model|self-avoiding` · hits by layer: title 9 · abstract 13 · scope 4 · path 1
 
 A family is listed when the pattern hits its title, its abstract, its scope note, or the Lean file paths reached from its comparator configs. The match is a keyword floor, not a judgement: read the family page before treating a listing as a claim about what the result is about.
 
@@ -17,6 +17,6 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | [225](../probability-and-statistical-mechanics/225-gaussian-free-field-limits-for-the-balanced-six-vertex-model.md) | Gaussian free field limits for the balanced six-vertex model | yes | yes | — | — |
 | [226](../probability-and-statistical-mechanics/226-double-dimer-cle-4-conjecture-in-the-half-plane.md) | The double-dimer $\mathrm{CLE}_4$ conjecture in the half-plane | yes | yes | — | — |
 | [233](../probability-and-statistical-mechanics/233-joint-critical-ashkin-teller-scaling-limit.md) | The joint critical Ashkin--Teller scaling limit | yes | yes | — | — |
-| [237](../probability-and-statistical-mechanics/237-three-quarter-diameter-exponent-for-honeycomb-walks.md) | The three-quarter diameter exponent for honeycomb walks | yes | yes | yes | — |
+| [237](../probability-and-statistical-mechanics/237-three-quarter-diameter-exponent-for-honeycomb-walks.md) | The three-quarter diameter exponent for honeycomb walks | yes | yes | yes | yes |
 | [265](../mathematical-physics/265-two-dimensional-gapped-area-law.md) | The two-dimensional gapped area law | — | yes | — | — |
 

@@ -4,12 +4,12 @@
 |---|---|
 | Discipline | [Differential geometry](../disciplines/differential-geometry.md) |
 | Tier | T3 |
-| Manuscripts | 1 (1 formalized at source level) |
+| Manuscripts | 1 (0 formalized at source level) |
 | Scope note | [`lean/docs/342.md`](../../../lean/docs/342.md) |
 | Comparator configs | 1 (1 with a `main_results` declaration) |
 | Reasoning trace | — |
 | Verification bundles | 0 |
-| Cited by / cites | 1 in · 1 out |
+| Cited by / cites | 0 in · 1 out |
 | Claim shapes | — |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [manifolds](../topics/manifolds.md) · [riemannian-geometry](../topics/riemannian-geometry.md) · [symplectic-geometry](../topics/symplectic-geometry.md) |
 | Companion families | — |
@@ -19,7 +19,7 @@
 
 | Dir | PDF | LaTeX tree | README | Formalized | Main file | Verification |
 |---|---|---|---|---|---|---|
-| [`Taming-implies-compatibility-on-four-manifolds-September-23-2026`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-September-23-2026/) | [paper.pdf](../../../preprints/Taming-implies-compatibility-on-four-manifolds-September-23-2026/paper.pdf) | [build/](../../../preprints/Taming-implies-compatibility-on-four-manifolds-September-23-2026/build/) | [README.md](../../../preprints/Taming-implies-compatibility-on-four-manifolds-September-23-2026/README.md) | yes | [main.tex](../../../preprints/Taming-implies-compatibility-on-four-manifolds-September-23-2026/build/main.tex) | — |
+| [`Taming-implies-compatibility-on-four-manifolds-October-6-2026`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/) | [paper.pdf](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/paper.pdf) | [build/](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/) | [README.md](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/README.md) | no | [main.tex](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/main.tex) | — |
 
 ## Lean
 

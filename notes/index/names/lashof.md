@@ -1,6 +1,6 @@
 # Name: lashof
 
-2 families · subject name · 1 carried by a title or a declaration · 1 by prose · 1 by bibliography author
+1 families · subject name · 1 carried by a title or a declaration · 1 by prose · 0 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../names.tsv) with `role = citation`.
 
@@ -15,13 +15,12 @@ Prose counts: 10 capitalized occurrences, 9 of them mid-sentence, 0 lowercase. T
 | `E` — Theorem title | title | 1 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
 | `b` — Body prose | body | 1 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
-| `B` — Bib author | body | 1 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
+| `B` — Bib author | body | 0 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
-| [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties-and-products-of-k3-surfaces.md) | The rational Hodge conjecture for CM abelian varieties and products of K3 surfaces | — | — | — | — | — | yes |
 | [316](../topology/316-curtiss-conjecture.md) | Curtis’s conjecture | — | — | yes | — | yes | — |
 
 ## Manuscripts

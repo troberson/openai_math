@@ -1,24 +1,24 @@
 kind	fam	seq	title	path	formalized	tier	statement	lean_file
-manuscript	001	1	Milne's rationality conjecture for abelian varieties	preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/paper.pdf	0	T0		
-manuscript	002	1	Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank	preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-3-2026/exact-bsd-low-selmer-corank.pdf	0	T0		
-manuscript	002	2	The Selmer converse for elliptic curves at every prime	preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-September-24-2026/main.pdf	0	T0		
-manuscript	002	3	The two-primary Birch–Swinnerton-Dyer formula in Selmer corank at most one	preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-September-24-2026/paper.pdf	0	T0		
+manuscript	001	1	Milne's rationality conjecture for abelian varieties	preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/paper.pdf	0	T0		
+manuscript	002	1	Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank	preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/exact-bsd-low-selmer-corank.pdf	0	T0		
+manuscript	002	2	The Selmer converse for elliptic curves at every prime	preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/main.pdf	0	T0		
+manuscript	002	3	The two-primary Birch–Swinnerton-Dyer formula in Selmer corank at most one	preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/paper.pdf	0	T0		
 manuscript	003	1	The Quasi-Riemann Hypothesis: A Zero-Free Half-Plane $\Re s>7/8$	preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/paper.pdf	1	T3		
 manuscript	003	2	The Quasi-Riemann Hypothesis (alternate $11/12$ proof)	preprints/The-Quasi-Riemann-Hypothesis-October-5-2026/paper2.pdf	0	T3		
 manuscript	003	3	Uniform exclusion of Landau--Siegel zeros	preprints/Uniform-exclusion-of-Landau-Siegel-zeros-October-1-2026/paper.pdf	1	T3		
-manuscript	004	1	Hilbert’s tenth over $\mathbb Q$	preprints/Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026/main.pdf	0	T0		
-manuscript	004	2	Pointwise 2-converse with rational two-torsion	preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-September-24-2026/paper.pdf	0	T0		
+manuscript	004	1	Hilbert’s tenth over $\mathbb Q$	preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf	0	T0		
+manuscript	004	2	Pointwise 2-converse with rational two-torsion	preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/paper.pdf	0	T0		
 manuscript	005	1	Catalan's constant is irrational	preprints/Catalans-constant-is-irrational-September-24-2026/paper.pdf	0	T2		
-manuscript	006	1	Analytic density and 2-converse	preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-September-23-2026/paper.pdf	0	T0		
-manuscript	006	2	Mean analytic rank	preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-September-23-2026/paper.pdf	0	T0		
+manuscript	006	1	Analytic density and 2-converse	preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/paper.pdf	0	T0		
+manuscript	006	2	Mean analytic rank	preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/paper.pdf	0	T0		
 manuscript	007	1	Ordinary two-point correlations of multiplicative functions	preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/final.pdf	0	T2		
 manuscript	008	1	The Deligne-Drinfeld conjecture	preprints/The-Deligne-Drinfeld-conjecture-September-23-2026/paper.pdf	1	T3		
 manuscript	009	1	Reconstruction of Function Fields from Mod-$\ell$ Milnor $K$-Theory	preprints/Reconstruction-of-Function-Fields-from-Mod-ell-Milnor-K-Theory-October-5-2026/mod-ell-bogomolov-pop.pdf	0	T2		
 manuscript	009	2	Reconstruction from Milnor $K$-theory modulo the characteristic	preprints/Reconstruction-from-Milnor-K-theory-modulo-the-characteristic-October-5-2026/paper.pdf	0	T2		
 manuscript	009	3	The Bogomolov-Pop reconstruction theorem	preprints/The-Bogomolov-Pop-reconstruction-theorem-September-23-2026/paper.pdf	0	T2		
-manuscript	010	1	Unrestricted pro-modularity	preprints/Unrestricted-pro-modularity-at-the-prime-two-October-4-2026/two-adic-promodularity.pdf	0	T0		
+manuscript	010	1	Unrestricted pro-modularity	preprints/Unrestricted-pro-modularity-at-the-prime-two-October-6-2026/two-adic-promodularity.pdf	0	T0		
 manuscript	010	2	Two-adic Hecke dimension	preprints/The-Dimension-of-the-Two-Adic-Hecke-Algebra-at-Odd-Level-October-5-2026/two-adic-hecke.pdf	0	T0		
-manuscript	010	3	Fontaine–Mazur modularity at the prime 2	preprints/Fontaine-Mazur-modularity-at-the-prime-2-September-23-2026/paper.pdf	0	T0		
+manuscript	010	3	Fontaine–Mazur modularity at the prime 2	preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/paper.pdf	0	T0		
 manuscript	011	1	Weighted dilation graphs, smooth shifted primes and totient fibers	preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf	0	T0		
 manuscript	011	2	The Poisson-Dirichlet law for prime predecessors	preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/paper.pdf	0	T0		
 manuscript	011	3	Prime Predecessors with an Even Number of Prime Factors	preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf	0	T0		
@@ -43,7 +43,7 @@ manuscript	017	1	The irrationality exponent of pi is 2	preprints/The-irrationali
 manuscript	018	1	The Margulis--Platonov conjecture over global function fields	preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/margulis-platonov-global-function-fields.pdf	0	T0		
 manuscript	018	2	The Margulis–Platonov conjecture over number fields	preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/paper.pdf	0	T0		
 manuscript	019	1	Prescribed exterior sheet	preprints/Etale-covers-with-a-prescribed-exterior-sheet-September-24-2026/main.pdf	0	T0		
-manuscript	019	2	p-adic section conjecture	preprints/The-p-adic-section-conjecture-September-24-2026/main.pdf	0	T0		
+manuscript	019	2	p-adic section conjecture	preprints/The-p-adic-section-conjecture-October-6-2026/main.pdf	0	T0		
 manuscript	020	1	Squarefree values of quartics and power-free values of polynomials	preprints/Squarefree-values-of-quartics-and-power-free-values-of-polynomials-September-24-2026/manuscript.pdf	1	T3		
 manuscript	021	1	A quadratic bound for Jacobsthal's function	preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/paper.pdf	1	T3		
 manuscript	022	1	The Weak Inhomogeneous Duffin–Schaeffer Conjecture	preprints/The-weak-inhomogeneous-Duffin-Schaeffer-conjecture-September-25-2026/paper.pdf	0	T0		
@@ -51,28 +51,25 @@ manuscript	023	1	An unconditional first moment for cubic Gauss sums	preprints/An
 manuscript	024	1	An asymptotic formula for the number of totients	preprints/An-asymptotic-formula-for-the-number-of-totients-September-25-2026/An-asymptotic-formula-for-the-number-of-totients-September-25-2026.pdf	0	T2		
 manuscript	025	1	Short Egyptian fractions	preprints/Short-Egyptian-fractions-September-25-2026/Short-Egyptian-fractions-September-25-2026.pdf	1	T3		
 manuscript	026	1	Positive lower density of large prime gaps	preprints/Positive-lower-density-of-large-prime-gaps-September-25-2026/main.pdf	0	T2		
-manuscript	027	1	Integral points on character varieties of curves	preprints/Integral-points-on-character-varieties-of-curves-September-25-2026/paper.pdf	0	T0		
+manuscript	027	1	Integral points on character varieties of curves	preprints/Integral-points-on-character-varieties-of-curves-September-25-2026/paper.pdf	1	T3		
 manuscript	028	1	Bounded-Step Walks on Gaussian Primes	preprints/Bounded-Step-Walks-on-Gaussian-Primes-September-26-2026/paper.pdf	1	T3		
 manuscript	029	1	Primitive roots for every admissible integer base	preprints/Primitive-roots-for-every-admissible-integer-base-October-4-2026/primitive-roots-all-integer-bases.pdf	0	T0		
 manuscript	029	2	Simultaneous primitive roots: a conditional lower bound for prime bases	preprints/Simultaneous-primitive-roots-a-conditional-lower-bound-for-prime-bases-October-4-2026/simultaneous-primitive-roots-conditional-lower-bound-prime-bases.pdf	0	T0		
 manuscript	030	1	Modularity of elliptic curves over imaginary quadratic fields	preprints/Modularity-of-elliptic-curves-over-imaginary-quadratic-fields-October-4-2026/paper.pdf	0	T0		
 manuscript	031	1	Open Homomorphisms of Global Solvably Closed Galois Groups	preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/open-homomorphisms-solvably-closed-galois-groups.pdf	0	T0		
-manuscript	032	1	The rational Hodge conjecture for CM abelian varieties	preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-September-30-2026/paper.pdf	0	T0		
-manuscript	032	2	The rational Hodge conjecture for products of K3 surfaces	preprints/The-rational-Hodge-conjecture-for-products-of-K3-surfaces-October-4-2026/hodge-conjecture-products-k3.pdf	0	T0		
-manuscript	032	3	Algebraicity of Kuga–Satake Correspondences for K3 Surfaces	preprints/Algebraicity-of-Kuga-Satake-Correspondences-for-K3-Surfaces-October-3-2026/manuscript.pdf	0	T0		
-manuscript	032	4	Algebraic Kuga–Satake correspondences and Hodge conjectures on a K3 quadratic locus	preprints/Algebraic-Kuga-Satake-correspondences-and-Hodge-conjectures-on-a-K3-quadratic-locus-September-30-2026/paper.pdf	0	T0		
-manuscript	032	5	Weil classes and Hodge classes on abelian powers	preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-September-30-2026/paper.pdf	0	T0		
-manuscript	032	6	Abelian covers, Gale correspondences, and the Hodge conjecture for powers	preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-September-30-2026/paper.pdf	0	T0		
-manuscript	032	7	Algebraicity of Weil classes on split abelian eightfolds	preprints/Algebraicity-of-Weil-classes-on-split-abelian-eightfolds-September-18-2026/paper.pdf	0	T0		
-manuscript	032	8	A Conditional Reduction for Algebraic Kuga–Satake Correspondences	preprints/A-Conditional-Reduction-for-Algebraic-Kuga-Satake-Correspondences-September-10-2026/paper.pdf	0	T0		
+manuscript	032	1	The rational Hodge conjecture for CM abelian varieties	preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/paper.pdf	0	T0		
+manuscript	032	2	Algebraic Kuga–Satake correspondences and Hodge conjectures on a K3 quadratic locus	preprints/Algebraic-Kuga-Satake-correspondences-and-Hodge-conjectures-on-a-K3-quadratic-locus-September-30-2026/paper.pdf	0	T0		
+manuscript	032	3	Weil classes and Hodge classes on abelian powers	preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/paper.pdf	0	T0		
+manuscript	032	4	Abelian covers, Gale correspondences, and the Hodge conjecture for powers	preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026/paper.pdf	0	T0		
+manuscript	032	5	A Conditional Reduction for Algebraic Kuga–Satake Correspondences	preprints/A-Conditional-Reduction-for-Algebraic-Kuga-Satake-Correspondences-September-10-2026/paper.pdf	0	T0		
 manuscript	033	1	Orbifold and logarithmic subadditivity	preprints/Orbifold-and-logarithmic-Iitaka-subadditivity-September-26-2026/paper.pdf	0	T2		
 manuscript	033	2	Whole-fiber variation	preprints/Logarithmic-Kodaira-dimension-and-whole-fiber-variation-September-26-2026/paper.pdf	0	T2		
 manuscript	033	3	Reverse inequality and additivity	preprints/The-reverse-logarithmic-Kodaira-inequality-and-additivity-September-26-2026/paper.pdf	0	T2		
 manuscript	033	4	Projective Hodge lines	preprints/Projective-Hodge-lines-and-ordinary-Iitaka-subadditivity-September-27-2026/paper.pdf	0	T2		
 manuscript	033	5	Kähler b-semiampleness	preprints/B-semiampleness-for-compact-log-smooth-Kahler-fibrations-September-10-2026/paper.pdf	0	T2		
-manuscript	034	1	Log abundance for compact Kähler spaces	preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-4-2026/main.pdf	0	T0		
+manuscript	034	1	Log abundance for compact Kähler spaces	preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/main.pdf	0	T0		
 manuscript	034	2	Uniform indices for semi-log-canonical log Calabi--Yau pairs	preprints/Uniform-indices-for-semi-log-canonical-log-Calabi-Yau-pairs-October-5-2026/uniform-slc-index.pdf	0	T0		
-manuscript	034	3	Conditional Kähler good minimal models	preprints/Conditional-good-minimal-models-for-compact-Kahler-fourfolds-October-5-2026/paper.pdf	0	T0		
+manuscript	034	3	Conditional Kähler good minimal models	preprints/Conditional-good-minimal-models-for-compact-Kahler-fourfolds-October-6-2026/paper.pdf	0	T0		
 manuscript	034	4	Log abundance in characteristic zero	preprints/Log-abundance-in-characteristic-zero-September-24-2026/paper.pdf	0	T0		
 manuscript	034	5	Minimal metrics and interior injectivity	preprints/Minimal-metrics-and-interior-injectivity-for-nef-adjoints-September-27-2026/paper.pdf	0	T0		
 manuscript	034	6	Fourfold nonvanishing	preprints/Fourfold-nonvanishing-by-minimal-metrics-and-moving-jets-September-27-2026/paper.pdf	0	T0		
@@ -86,7 +83,7 @@ manuscript	034	13	Log Iitaka fibrations for fourfolds	preprints/Uniform-effectiv
 manuscript	034	14	Compact Kähler fourfolds after nonvanishing	preprints/Abundance-after-nonvanishing-for-compact-Kahler-fourfolds-September-27-2026/paper.pdf	0	T0		
 manuscript	035	1	Log abundance in numerical dimension one for threefolds in positive characteristic	preprints/Log-abundance-in-numerical-dimension-one-for-threefolds-in-positive-characteristic-October-5-2026/paper.pdf	0	T0		
 manuscript	035	2	Abundance in numerical dimension one for terminal threefolds in positive characteristic	preprints/Abundance-in-numerical-dimension-one-for-terminal-threefolds-in-positive-characteristic-September-24-2026/paper.pdf	0	T0		
-manuscript	036	1	Compact Kähler numerical semiampleness	preprints/Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-4-2026/numerical-generalized-abundance.pdf	0	T0		
+manuscript	036	1	Compact Kähler numerical semiampleness	preprints/Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-6-2026/numerical-generalized-abundance.pdf	0	T0		
 manuscript	036	2	Projective numerical semiampleness	preprints/Numerical-Semiampleness-of-Nef-Adjoint-Divisors-October-3-2026/paper.pdf	0	T0		
 manuscript	036	3	Generalized log canonical Q-pairs	preprints/Minimal-models-and-Mori-fibre-spaces-for-generalized-log-canonical-Q-pairs-September-24-2026/paper.pdf	0	T0		
 manuscript	036	4	Numerical dimension one	preprints/Minimal-models-in-numerical-dimension-one-September-24-2026/paper.pdf	0	T0		
@@ -107,7 +104,7 @@ manuscript	046	1	A projective fourfold with large fundamental group and non-Stei
 manuscript	046	2	A surface counterexample to Shafarevich holomorphic convexity	preprints/A-surface-counterexample-to-Shafarevich-holomorphic-convexity-September-23-2026/paper.pdf	0	T0		
 manuscript	047	1	An explicit failure of complex affine-space cancellation	preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/paper.pdf	1	T3		
 manuscript	048	1	A singular normal affine surface with free tangent sheaf	preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/paper.pdf	0	T0		
-manuscript	049	1	A stable coordinate that is not a coordinate in four variables	preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/stable-coordinate-four-variables.pdf	0	T3		
+manuscript	049	1	A stable coordinate that is not a coordinate in four variables	preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/stable-coordinate-four-variables.pdf	1	T3		
 manuscript	049	2	An explicit noncoordinate polynomial with affine three-space zero fibre	preprints/An-explicit-noncoordinate-polynomial-with-affine-three-space-zero-fibre-September-24-2026/paper.pdf	1	T3		
 manuscript	050	1	Ample rank-two bundles on the quadric surface without Griffiths-positive metrics	preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/paper.pdf	1	T3		
 manuscript	051	1	Canonical ampleness of compact hyperbolic Kähler manifolds	preprints/Canonical-ampleness-of-compact-hyperbolic-Kahler-manifolds-September-23-2026/canonical-ampleness.pdf	0	T0		
@@ -117,10 +114,10 @@ manuscript	053	1	A high-arity counterexample to Pixton completeness in Chow	prep
 manuscript	054	1	Irrational cubic fourfolds with geometric K3 categories	preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026.pdf	0	T0		
 manuscript	055	1	Gepner stability on quintic threefolds	preprints/A-Gepner-stability-condition-on-every-smooth-quintic-threefold-September-24-2026/paper.pdf	0	T0		
 manuscript	055	2	Prescribed large-volume charges	preprints/Prescribed-large-volume-charges-on-threefolds-with-trivial-canonical-bundle-September-24-2026/paper.pdf	0	T0		
-manuscript	056	1	Termination of generalized log canonical flips on compact Kähler fourfolds	preprints/Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-5-2026/termination-generalized-lc-kahler-fourfolds.pdf	0	T0		
-manuscript	056	2	Termination of generalized-canonical flips on compact Kähler fourfolds	preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-5-2026/termination-generalized-terminal-flips-compact-kahler-fourfolds.pdf	0	T0		
+manuscript	056	1	Termination of generalized log canonical flips on compact Kähler fourfolds	preprints/Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026/termination-generalized-lc-kahler-fourfolds.pdf	0	T0		
+manuscript	056	2	Termination of generalized-canonical flips on compact Kähler fourfolds	preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026/termination-generalized-terminal-flips-compact-kahler-fourfolds.pdf	0	T0		
 manuscript	056	3	Log canonical fourfold termination	preprints/Termination-for-projective-log-canonical-fourfolds-with-rational-boundary-September-24-2026/paper.pdf	0	T0		
-manuscript	056	4	Ordinary Kähler fourfold termination	preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-5-2026/paper.pdf	0	T0		
+manuscript	056	4	Ordinary Kähler fourfold termination	preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-6-2026/paper.pdf	0	T0		
 manuscript	056	5	Finite Kähler fourfold programs	preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-September-24-2026/paper.pdf	0	T0		
 manuscript	057	1	Special compact Kähler abelianity	preprints/The-abelianity-conjecture-for-special-compact-Kahler-manifolds-September-23-2026/paper.pdf	0	T0		
 manuscript	057	2	Two-step monodromy	preprints/Two-step-monodromy-of-special-quasi-projective-varieties-September-24-2026/paper.pdf	0	T0		
@@ -135,8 +132,8 @@ manuscript	063	1	The generalized Mukai conjecture	preprints/The-Generalized-Muka
 manuscript	064	1	Topological triviality of mu-constant families of surface singularities	preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/main.pdf	0	T0		
 manuscript	065	1	Virasoro Constraints under Projectivization	preprints/Virasoro-Constraints-under-Projectivization-October-5-2026/virasoro-constraints-under-projectivization.pdf	0	T0		
 manuscript	065	2	Virasoro Constraints for Projective Complete Intersections	preprints/Virasoro-Constraints-for-Projective-Complete-Intersections-September-24-2026/article.pdf	0	T0		
-manuscript	066	1	Bounded klt complements	preprints/Bounded-klt-complements-for-Fano-contractions-September-25-2026/Bounded-klt-complements-for-Fano-contractions-September-25-2026.pdf	0	T0		
-manuscript	066	2	Uniform Cartier sections	preprints/Uniform-Cartier-sections-for-Fano-type-contractions-September-25-2026/Uniform-Cartier-sections-for-Fano-type-contractions-September-25-2026.pdf	0	T0		
+manuscript	066	1	Bounded klt complements	preprints/Bounded-klt-complements-for-Fano-contractions-September-25-2026/Bounded-klt-complements-for-Fano-contractions-September-25-2026.pdf	0	T3		
+manuscript	066	2	Uniform Cartier sections	preprints/Uniform-Cartier-sections-for-Fano-type-contractions-September-25-2026/Uniform-Cartier-sections-for-Fano-type-contractions-September-25-2026.pdf	1	T3		
 manuscript	067	1	The Campana–Peternell conjecture in dimension six	preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/main.pdf	0	T0		
 manuscript	068	1	Smooth semipositivity	preprints/Anticanonical-nonvanishing-from-smooth-semipositivity-September-26-2026/main.pdf	0	T0		
 manuscript	068	2	Invariant indices and twisted differentials	preprints/Invariant-anticanonical-indices-and-conversion-of-twisted-differentials-September-26-2026/main.pdf	0	T0		
@@ -153,7 +150,7 @@ manuscript	072	2	Strict inverse-first-power bound	preprints/A-strict-inverse-fir
 manuscript	073	1	The Falconer distance conjecture in all dimensions	preprints/The-Falconer-distance-conjecture-in-all-dimensions-September-23-2026/paper.pdf	1	T3		
 manuscript	074	1	3D Kakeya maximal conjecture	preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/paper.pdf	0	T0		
 manuscript	074	2	4D Kakeya Hausdorff dimension	preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/paper.pdf	0	T0		
-manuscript	075	1	Almost-everywhere Fourier convergence in L log L	preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/paper.pdf	0	T0		
+manuscript	075	1	Almost-everywhere Fourier convergence in L log L	preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/paper.pdf	1	T3		
 manuscript	076	1	Ultraflat real Littlewood polynomials	preprints/Ultraflat-real-Littlewood-polynomials-October-5-2026/ultraflat-real-littlewood-polynomials.pdf	0	T3		
 manuscript	076	2	Nearly minimal maxima and positive minima of Littlewood polynomials	preprints/Nearly-minimal-maxima-and-positive-minima-of-Littlewood-polynomials-October-5-2026/littlewood-lower-envelope.pdf	0	T3		
 manuscript	076	3	Asymptotically minimal maxima of real Littlewood polynomials	preprints/Asymptotically-minimal-maxima-of-real-Littlewood-polynomials-September-23-2026/paper.pdf	1	T3		
@@ -207,7 +204,7 @@ manuscript	102	2	Optimal Max-Cut hardness	preprints/A-Direct-Proof-of-Optimal-Ma
 manuscript	102	3	Factor-two Vertex Cover hardness	preprints/The-Factor-Two-Hardness-Threshold-for-Vertex-Cover-September-23-2026/paper.pdf	1	T3		
 manuscript	102	4	Constant-factor Min-UnCut hardness	preprints/Constant-factor-hardness-of-Min-UnCut-September-23-2026/paper.pdf	0	T3		
 manuscript	102	5	Directed feedback vertex set hardness	preprints/Constant-factor-hardness-of-directed-feedback-vertex-set-September-23-2026/paper.pdf	0	T3		
-manuscript	103	1	Exact derandomization of logarithmic space: L = RL = BPL	preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/paper.pdf	0	T0		
+manuscript	103	1	Exact derandomization of logarithmic space: L = RL = BPL	preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/paper.pdf	1	T3		
 manuscript	104	1	Turn-Based Stochastic Mean-Payoff Games in Deterministic Quasipolynomial Time	preprints/Turn-Based-Stochastic-Mean-Payoff-Games-in-Deterministic-Quasipolynomial-Time-October-5-2026/stochastic-mean-payoff-games.pdf	0	T3		
 manuscript	104	2	Mean-payoff parity games in quasipolynomial time	preprints/Mean-payoff-parity-games-in-quasipolynomial-time-October-5-2026/mean-payoff-parity.pdf	0	T3		
 manuscript	104	3	Deterministic algorithm	preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/paper.pdf	0	T3		
@@ -250,7 +247,7 @@ manuscript	127	1	Average sensitivity of polynomial threshold functions	preprints
 manuscript	128	1	A Polynomial-Time 2-Approximation for Shortest Common Superstring	preprints/A-Polynomial-Time-2-Approximation-for-Shortest-Common-Superstring-September-24-2026/paper.pdf	1	T3		
 manuscript	129	1	Nondeterministic complementation lower bound	preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/paper.pdf	1	T3		
 manuscript	129	2	Two-way deterministic state lower bound	preprints/An-exponential-two-way-deterministic-state-lower-bound-for-one-way-liveness-September-25-2026/main.pdf	1	T3		
-manuscript	130	1	Explicit DFT power saving	preprints/An-explicit-power-saving-for-the-exact-discrete-Fourier-transform-September-25-2026/main.pdf	0	T3		
+manuscript	130	1	Explicit DFT power saving	preprints/An-explicit-power-saving-for-the-exact-discrete-Fourier-transform-September-25-2026/main.pdf	1	T3		
 manuscript	130	2	Tensor savings and Fourier circuits	preprints/Finite-tensor-savings-and-exact-Fourier-circuits-September-25-2026/main.pdf	1	T3		
 manuscript	131	1	Polynomial mixing of the switch chain for every graphical degree sequence	preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/main.pdf	0	T2		
 manuscript	132	1	A superquadratic separation between sensitivity and block sensitivity	preprints/A-superquadratic-separation-between-sensitivity-and-block-sensitivity-September-25-2026/paper.pdf	1	T3		
@@ -263,7 +260,7 @@ manuscript	134	2	Star height at most four	preprints/Generalized-Star-Height-at-M
 manuscript	134	3	Star height at most three	preprints/Generalized-Star-Height-at-Most-Three-September-25-2026/article.pdf	0	T2		
 manuscript	135	1	Homogeneous depth-five lower bounds for iterated matrix multiplication	preprints/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026.pdf	0	T2		
 manuscript	136	1	The PCP-for-PPAD conjecture: a quasilinear reduction	preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/paper.pdf	0	T0		
-manuscript	137	1	Simulating One-Tape Time in Two-Fifths-Power Space	preprints/Simulating-One-Tape-Time-in-Two-Fifths-Power-Space-September-25-2026/article.pdf	0	T0		
+manuscript	137	1	Simulating One-Tape Time in Two-Fifths-Power Space	preprints/Simulating-One-Tape-Time-in-Two-Fifths-Power-Space-September-25-2026/article.pdf	1	T3		
 manuscript	138	1	Subset Sum in Time $O(2^{0.49n})$	preprints/Subset-Sum-in-Time-2-power-0-49n-October-4-2026/subset-sum.pdf	0	T0		
 manuscript	138	2	A Low-Space Algorithm for Worst-Case Subset Sum	preprints/A-Low-Space-Algorithm-for-Worst-Case-Subset-Sum-September-26-2026/paper.pdf	0	T0		
 manuscript	139	1	Subpolynomial query complexity for well-conditioned log-concave sampling	preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/article.pdf	1	T3		
@@ -296,9 +293,9 @@ manuscript	154	3	Triple ergodic averages with distinct integer slopes	preprints/
 manuscript	154	4	Pointwise convergence of triple ergodic averages for mixing transformations	preprints/Pointwise-convergence-of-triple-ergodic-averages-for-mixing-transformations-October-4-2026/pointwise-triple-ergodic-averages-mixing-transformations.pdf	0	T0		
 manuscript	155	1	A translational tile with no fully periodic tiling in dimension three	preprints/A-translational-tile-with-no-fully-periodic-tiling-in-dimension-three-September-23-2026/paper.pdf	1	T3		
 manuscript	156	1	A nine-dimensional counterexample to Borsuk's covering assertion	preprints/A-nine-dimensional-counterexample-to-Borsuks-covering-assertion-September-23-2026/paper.pdf	1	T3		
-manuscript	157	1	Hadwiger counterexample	preprints/A-counterexample-to-Hadwigers-conjecture-September-23-2026/paper.pdf	0	T2		
-manuscript	157	2	Colin de Verdière counterexample	preprints/A-counterexample-to-the-Colin-de-Verdiere-chromatic-conjecture-September-23-2026/paper.pdf	0	T2		
-manuscript	157	3	Linear list-coloring bound	preprints/A-linear-list-coloring-bound-in-terms-of-the-Hadwiger-number-September-23-2026/paper.pdf	0	T2		
+manuscript	157	1	Hadwiger counterexample	preprints/A-counterexample-to-Hadwigers-conjecture-September-23-2026/paper.pdf	1	T3		
+manuscript	157	2	Colin de Verdière counterexample	preprints/A-counterexample-to-the-Colin-de-Verdiere-chromatic-conjecture-September-23-2026/paper.pdf	0	T3		
+manuscript	157	3	Linear list-coloring bound	preprints/A-linear-list-coloring-bound-in-terms-of-the-Hadwiger-number-September-23-2026/paper.pdf	0	T3		
 manuscript	158	1	The Euclidean plane is not five-colorable	preprints/The-Euclidean-plane-is-not-five-colorable-September-23-2026/paper.pdf	1	T3		
 manuscript	159	1	Quasipolynomial Bounds for Arithmetic Progressions	preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/paper.pdf	0	T2		
 manuscript	160	1	Quantitative Superexponential Bounds for van der Waerden Numbers	preprints/Quantitative-Superexponential-Bounds-for-van-der-Waerden-Numbers-September-23-2026/paper.pdf	1	T3		
@@ -346,7 +343,7 @@ manuscript	191	1	A power improvement in the Heilbronn triangle lower bound	prepr
 manuscript	192	1	Unbounded Violations of the Square-Root Degree Bound	preprints/Unbounded-Violations-of-the-Square-Root-Degree-Bound-September-26-2026/Unbounded-Violations-of-the-Square-Root-Degree-Bound-September-26-2026.pdf	0	T2		
 manuscript	193	1	Positivity of Serre's Intersection Multiplicity	preprints/Positivity-of-Serres-Intersection-Multiplicity-September-23-2026/paper.pdf	0	T0		
 manuscript	194	1	Lech's multiplicity conjecture	preprints/Lechs-multiplicity-conjecture-September-23-2026/paper.pdf	0	T2		
-manuscript	195	1	A Complete Local Domain without a Small Cohen–Macaulay Module	preprints/A-Complete-Local-Domain-Without-a-Small-Cohen-Macaulay-Module-September-23-2026/paper.pdf	0	T0		
+manuscript	195	1	A Complete Local Domain without a Small Cohen–Macaulay Module	preprints/A-Complete-Local-Domain-Without-a-Small-Cohen-Macaulay-Module-September-23-2026/paper.pdf	1	T3		
 manuscript	196	1	A Torsion-Free Group Algebra with Zero Divisors	preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/paper.pdf	1	T3		
 manuscript	197	1	Torsion-free direct-finiteness counterexample	preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/direct-finiteness.pdf	0	T3		
 manuscript	197	2	Characteristic two	preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Characteristic-Two-September-23-2026/paper.pdf	1	T3		
@@ -441,29 +438,29 @@ manuscript	229	3	The exact reconstruction threshold for the three-state symmetri
 manuscript	230	1	Exact Hausdorff gauge	preprints/An-exact-Hausdorff-gauge-for-SLE-September-25-2026/An-exact-Hausdorff-gauge-for-SLE-September-25-2026.pdf	0	T2		
 manuscript	230	2	Explicit exact Hausdorff gauge	preprints/An-explicit-exact-Hausdorff-gauge-for-SLE-September-26-2026/An-explicit-exact-Hausdorff-gauge-for-SLE-September-26-2026.pdf	0	T2		
 manuscript	231	1	The free uniform spanning forest is a factor of IID	preprints/The-free-uniform-spanning-forest-is-a-factor-of-IID-September-25-2026/The-free-uniform-spanning-forest-is-a-factor-of-IID-September-25-2026.pdf	0	T2		
-manuscript	232	1	Weighted integer heights	preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-September-25-2026/paper.pdf	0	T0		
-manuscript	232	2	Integer heights with two-arc boundary	preprints/The-Gaussian-free-field-limit-of-integer-Lipschitz-heights-with-two-arc-boundary-data-September-25-2026/paper.pdf	0	T0		
-manuscript	232	3	Uniform real Lipschitz surfaces	preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-September-25-2026/paper.pdf	0	T0		
-manuscript	233	1	The joint scaling limit of critical Ashkin-Teller currents	preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026/main.pdf	0	T0		
+manuscript	232	1	Weighted integer heights	preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026/paper.pdf	0	T0		
+manuscript	232	2	Integer heights with two-arc boundary	preprints/The-Gaussian-free-field-limit-of-integer-Lipschitz-heights-with-two-arc-boundary-data-October-6-2026/paper.pdf	0	T0		
+manuscript	232	3	Uniform real Lipschitz surfaces	preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026/paper.pdf	0	T0		
+manuscript	233	1	The joint scaling limit of critical Ashkin-Teller currents	preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026/main.pdf	0	T0		
 manuscript	234	1	All-temperature pressure for orthogonally invariant Ising spin glasses	preprints/All-temperature-pressure-for-orthogonally-invariant-Ising-spin-glasses-September-25-2026/paper.pdf	0	T2		
 manuscript	235	1	Fixed-clause-size limiting threshold	preprints/A-Limiting-Satisfiability-Threshold-for-Every-Fixed-Clause-Size-September-25-2026/article.pdf	0	T2		
 manuscript	235	2	Linear Variance of the Random 3-SAT Hitting Time	preprints/Linear-Variance-of-the-Random-3-SAT-Hitting-Time-October-5-2026/linear-variance-of-the-random-3-sat-hitting-time.pdf	0	T2		
 manuscript	235	3	Random k-SAT hitting-time variance	preprints/Variance-of-the-Random-k-SAT-Hitting-Time-September-27-2026/article.pdf	0	T2		
 manuscript	235	4	Computing the random 3-SAT threshold	preprints/Computing-the-Random-3-SAT-Threshold-September-27-2026/article.pdf	0	T2		
 manuscript	236	1	The sharp factor-of-IID threshold for the free Ising model on regular trees	preprints/The-sharp-factor-of-IID-threshold-for-the-free-Ising-model-on-regular-trees-September-26-2026/article.pdf	1	T3		
-manuscript	237	1	Radial transfer and polygon length laws	preprints/Radial-transfer-estimates-and-polygon-length-laws-for-honeycomb-walks-September-26-2026/main.pdf	0	T2		
-manuscript	237	2	Chords with prescribed boundary endpoints	preprints/Critical-honeycomb-chords-with-prescribed-boundary-endpoints-September-26-2026/main.pdf	0	T2		
-manuscript	237	3	Cylinder loop weights and planar nesting	preprints/Cylinder-loop-weights-and-planar-nesting-September-26-2026/main.pdf	0	T2		
-manuscript	237	4	Mass and covering exponents for fixed-length walks	preprints/Mass-and-covering-exponents-for-fixed-length-honeycomb-walks-September-26-2026/main.pdf	0	T2		
-manuscript	237	5	Signed cylinder propagation	preprints/Signed-cylinder-propagation-and-marked-polygons-on-the-honeycomb-lattice-September-26-2026/main.pdf	0	T2		
-manuscript	237	6	Logarithmic bridge-length windows	preprints/Cylinder-amplitudes-and-logarithmic-bridge-length-windows-on-the-honeycomb-lattice-September-26-2026/main.pdf	0	T2		
-manuscript	237	7	Marked polygons and one-arc bounds	preprints/Marked-polygon-correlations-and-one-arc-bounds-September-26-2026/main.pdf	0	T2		
-manuscript	237	8	Disk transfer and confined bridge mass	preprints/Disk-transfer-representations-and-confined-bridge-mass-September-26-2026/main.pdf	0	T2		
-manuscript	237	9	Polynomial vacuum representations	preprints/Polynomial-vacuum-representations-and-bridge-mass-for-honeycomb-walks-September-26-2026/main.pdf	0	T2		
-manuscript	237	10	Renewal and changes of law	preprints/Renewal-and-changes-of-law-for-critical-honeycomb-walks-September-26-2026/main.pdf	0	T2		
-manuscript	237	11	Critical strip-crossing mass	preprints/Critical-strip-crossing-mass-on-the-honeycomb-lattice-September-26-2026/main.pdf	0	T2		
-manuscript	237	12	Finite bridge moments	preprints/Uniform-marked-polygon-estimates-and-sharp-finite-bridge-moments-September-26-2026/main.pdf	0	T2		
-manuscript	237	13	Cap-selected amplitudes and triangle chords	preprints/Cap-selected-amplitudes-and-triangle-chords-for-honeycomb-walks-September-26-2026/main.pdf	0	T2		
+manuscript	237	1	Radial transfer and polygon length laws	preprints/Radial-transfer-estimates-and-polygon-length-laws-for-honeycomb-walks-September-26-2026/main.pdf	0	T3		
+manuscript	237	2	Chords with prescribed boundary endpoints	preprints/Critical-honeycomb-chords-with-prescribed-boundary-endpoints-September-26-2026/main.pdf	1	T3		
+manuscript	237	3	Cylinder loop weights and planar nesting	preprints/Cylinder-loop-weights-and-planar-nesting-September-26-2026/main.pdf	0	T3		
+manuscript	237	4	Mass and covering exponents for fixed-length walks	preprints/Mass-and-covering-exponents-for-fixed-length-honeycomb-walks-September-26-2026/main.pdf	0	T3		
+manuscript	237	5	Signed cylinder propagation	preprints/Signed-cylinder-propagation-and-marked-polygons-on-the-honeycomb-lattice-September-26-2026/main.pdf	0	T3		
+manuscript	237	6	Logarithmic bridge-length windows	preprints/Cylinder-amplitudes-and-logarithmic-bridge-length-windows-on-the-honeycomb-lattice-September-26-2026/main.pdf	0	T3		
+manuscript	237	7	Marked polygons and one-arc bounds	preprints/Marked-polygon-correlations-and-one-arc-bounds-September-26-2026/main.pdf	0	T3		
+manuscript	237	8	Disk transfer and confined bridge mass	preprints/Disk-transfer-representations-and-confined-bridge-mass-September-26-2026/main.pdf	0	T3		
+manuscript	237	9	Polynomial vacuum representations	preprints/Polynomial-vacuum-representations-and-bridge-mass-for-honeycomb-walks-September-26-2026/main.pdf	0	T3		
+manuscript	237	10	Renewal and changes of law	preprints/Renewal-and-changes-of-law-for-critical-honeycomb-walks-September-26-2026/main.pdf	0	T3		
+manuscript	237	11	Critical strip-crossing mass	preprints/Critical-strip-crossing-mass-on-the-honeycomb-lattice-September-26-2026/main.pdf	0	T3		
+manuscript	237	12	Finite bridge moments	preprints/Uniform-marked-polygon-estimates-and-sharp-finite-bridge-moments-September-26-2026/main.pdf	0	T3		
+manuscript	237	13	Cap-selected amplitudes and triangle chords	preprints/Cap-selected-amplitudes-and-triangle-chords-for-honeycomb-walks-September-26-2026/main.pdf	0	T3		
 manuscript	238	1	Optimal-order mixing of the Thorp shuffle	preprints/Optimal-order-mixing-of-the-Thorp-shuffle-September-26-2026/paper.pdf	0	T3		
 manuscript	238	2	Random coordinate frames	preprints/Random-coordinate-frames-and-partial-permutation-laws-September-26-2026/main.pdf	0	T3		
 manuscript	238	3	Partial-information Fourier bounds	preprints/From-partial-permutation-information-to-Fourier-bounds-September-26-2026/main.pdf	0	T3		
@@ -594,7 +591,7 @@ manuscript	298	1	A finite-entropy separation of microstates and nonmicrostates f
 manuscript	299	1	The Kirchberg–Rørdam character criterion	preprints/The-Kirchberg-Rordam-character-criterion-September-25-2026/paper.pdf	1	T3		
 manuscript	300	1	Approximation paving	preprints/Approximation-Paving-over-Arbitrary-Maximal-Abelian-Subalgebras-September-25-2026/Approximation-Paving-over-Arbitrary-Maximal-Abelian-Subalgebras-September-25-2026.pdf	0	T0		
 manuscript	300	2	Quadratic strong-operator paving	preprints/Quadratic-Strong-Operator-Paving-over-Arbitrary-Maximal-Abelian-Subalgebras-September-25-2026/Quadratic-Strong-Operator-Paving-over-Arbitrary-Maximal-Abelian-Subalgebras-September-25-2026.pdf	0	T0		
-manuscript	301	1	The trace cone classifies Razak–Jacelon stabilizations	preprints/The-trace-cone-classifies-Razak-Jacelon-stabilizations-September-25-2026/The-trace-cone-classifies-Razak-Jacelon-stabilizations-September-25-2026.pdf	0	T0		
+manuscript	301	1	The trace cone classifies Razak–Jacelon stabilizations	preprints/The-trace-cone-classifies-Razak-Jacelon-stabilizations-September-25-2026/The-trace-cone-classifies-Razak-Jacelon-stabilizations-September-25-2026.pdf	1	T3		
 manuscript	302	1	Boundary-preserving cobordism compression	preprints/Filtered-products-and-boundary-preserving-compression-in-complex-cobordism-September-25-2026/paper.pdf	0	T0		
 manuscript	302	2	Radius $=\frac12$ mean dimension	preprints/Radius-of-comparison-equals-half-the-mean-dimension-September-25-2026/paper.pdf	0	T0		
 manuscript	303	1	Weak pure infiniteness and O-infinity absorption	preprints/Weak-pure-infiniteness-and-O-infinity-absorption-September-25-2026/paper.pdf	0	T2		
@@ -655,8 +652,8 @@ manuscript	337	2	Sharp integral fillings in CAT(0) spaces	preprints/Sharp-integr
 manuscript	338	1	Uniformization of complete Kähler manifolds with positive bisectional curvature	preprints/Uniformization-of-complete-Kahler-manifolds-with-positive-bisectional-curvature-September-23-2026/paper.pdf	0	T0		
 manuscript	339	1	Entropy equality and local symmetry in negative curvature	preprints/Entropy-equality-and-local-symmetry-in-negative-curvature-September-23-2026/paper.pdf	0	T0		
 manuscript	340	1	A counterexample to the nearby Lagrangian conjecture	preprints/A-counterexample-to-the-nearby-Lagrangian-conjecture-September-23-2026/paper.pdf	0	T0		
-manuscript	341	1	Deforming hypersymplectic four-manifolds to hyperkähler triples	preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-September-23-2026/paper.pdf	0	T0		
-manuscript	342	1	Taming implies compatibility on four-manifolds	preprints/Taming-implies-compatibility-on-four-manifolds-September-23-2026/paper.pdf	1	T3		
+manuscript	341	1	Deforming hypersymplectic four-manifolds to hyperkähler triples	preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026/paper.pdf	0	T0		
+manuscript	342	1	Taming implies compatibility on four-manifolds	preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/paper.pdf	0	T3		
 manuscript	343	1	Symplectic Ball Packings in Higher Dimensions	preprints/Symplectic-Ball-Packings-in-Higher-Dimensions-September-23-2026/paper.pdf	0	T2		
 manuscript	344	1	The metric Blaschke theorem	preprints/The-metric-Blaschke-theorem-September-23-2026/paper.pdf	0	T0		
 manuscript	345	1	Infinitely many closed geodesic images on every Riemannian sphere	preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/paper.pdf	0	T0		
@@ -719,7 +716,7 @@ manuscript	376	5	Prefix instructions and incompressible flows	preprints/Prefix-I
 manuscript	376	6	Rapidly vanishing forcing	preprints/Computation-under-Rapidly-Vanishing-Navier-Stokes-Forcing-September-27-2026/manuscript.pdf	0	T2		
 manuscript	376	7	Velocity-field detection	preprints/Velocity-Field-Detection-of-Computation-in-Forced-Navier-Stokes-Flows-September-27-2026/manuscript.pdf	0	T2		
 manuscript	376	8	Scalar potentials and slow clocks	preprints/Scalar-Potentials-and-Slow-Clocks-for-Forced-Fluid-Computation-September-27-2026/manuscript.pdf	0	T2		
-manuscript	376	9	Incompressible box transport	preprints/Incompressible-Box-Transport-and-Finite-Computation-September-27-2026/manuscript.pdf	0	T2		
+manuscript	376	9	Incompressible box transport	preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/manuscript.pdf	0	T2		
 manuscript	377	1	Uniform Interior $C^{1,\alpha}$ Estimates for Infinity-Harmonic Functions	preprints/Uniform-Interior-C1alpha-Estimates-for-Infinity-Harmonic-Functions-October-4-2026/interior-c1-infinity-harmonic.pdf	0	T0		
 comparator-link	003	1					Riemann zeta $7/8$ bound	QuasiRiemannHypothesis.lean
 comparator-link	003	2					Dirichlet $L$-function $7/8$ bound	DirichletSevenEighths.lean
@@ -744,6 +741,7 @@ comparator-link	024	2					Exact zero case for the companion totient counts	Totie
 comparator-link	025	1					Short expansions, counting, and prescribed denominators	EgyptianFractions.lean
 comparator-link	025	2					Optimal order of the shortest Egyptian-fraction expansions	ShortEgyptianFractions.lean
 comparator-link	026	1					Positive lower density of prime-ratio increases	PrimeGaps.lean
+comparator-link	027	1					Compatibility of the produced marked solution with every seam equation	CharacterVarietiesAllSeamsSupport.lean
 comparator-link	028	1					Uniform bounds for bounded-step Gaussian-prime walks	GaussianMoat.lean
 comparator-link	033	1					Logarithmic Kodaira additivity in the negative-fiber branch	LogKodairaFiberNegative.lean
 comparator-link	039	1					Nagata's conjecture	Nagata.lean
@@ -751,10 +749,12 @@ comparator-link	039	2					Eventual maximal Seshadri constants	MaximalSeshadriCon
 comparator-link	047	1					Complex affine-space cancellation counterexample	ComplexCancellation.lean
 comparator-link	049	1					Noncoordinate polynomial in every dimension at least four	AbhyankarSathaye.lean
 comparator-link	049	2					Commuting locally nilpotent derivations	CommutingDerivations.lean
+comparator-link	049	3					Degree-five stable noncoordinate with nonrectifiable affine-space fibers	StableCoordinateFour.lean
 comparator-link	050	1					Ample bundles without Griffiths-positive metrics	QuadricBundles.lean
 comparator-link	052	1					Universal-cover product splitting	KahlerSplitting.lean
 comparator-link	052	2					Integrability of both holomorphic tangent summands	SplitTangentIntegrability.lean
 comparator-link	058	1					Symmetry of semialgebraic bounded domains	SymmetricDomains.lean
+comparator-link	066	1					Compactness of normalized chart-field retractions	CartierChartCompactnessSupport.lean
 comparator-link	071	1					Removable-boundary rigidity and the circle-domain theorem	KoebeCircleDomains.lean
 comparator-link	071	2					Koebe's circle-domain theorem and removable-boundary rigidity	KoebeCircleDomains.lean
 comparator-link	072	1					Brennan and inverse-square integral-means bounds	Brennan.lean
@@ -762,6 +762,7 @@ comparator-link	072	2					Sharp endpoint divergence	BrennanSharp.lean
 comparator-link	072	3					Strict inverse-first-power bound and consequences	StrictMeans.lean
 comparator-link	073	1					Planar Falconer distance theorem	PlanarFalconer.lean
 comparator-link	073	2					Falconer distance theorem in every dimension	FalconerAllDimensions.lean
+comparator-link	075	1					Almost-everywhere convergence of full symmetric Fourier partial sums	FourierLLogL.lean
 comparator-link	076	1					Asymptotically minimal Littlewood maximum	AsymptoticallyMinimalLittlewood.lean
 comparator-link	076	2					Finite-exponent flatness of one all-length Littlewood family	LittlewoodFiniteFlatness.lean
 comparator-link	081	1					Quantitative higher-codimension Riesz rectifiability	RieszQuantitative.lean
@@ -807,6 +808,7 @@ comparator-link	102	2					Optimal Max-Cut hardness gap	OptimalMaxCut.lean
 comparator-link	102	3					Vertex Cover gap and factor-two hardness	VertexCover.lean
 comparator-link	102	4					Arbitrary constant-factor hardness of Min-UnCut	MinUncut.lean
 comparator-link	102	5					Constant-factor hardness of directed feedback vertex set	DirectedFeedback.lean
+comparator-link	103	1					Exact equality of deterministic and randomized logarithmic space	LogspaceEquality.lean
 comparator-link	104	1					Finite counterexample to Truffet's optimization procedure	TruffetCounterexample.lean
 comparator-link	104	2					Randomized quasipolynomial mean-payoff algorithm	RandomizedMeanPayoff.lean
 comparator-link	105	1					Perfect-completeness reduction for 2-to-1 games	PerfectCompleteness.lean
@@ -850,6 +852,7 @@ comparator-link	129	1					Two-way nondeterministic complementation lower bound	T
 comparator-link	129	2					Same-family determinization lower bound	TwoWayDeterminization.lean
 comparator-link	129	3					Exponential deterministic state lower bound for liveness	OneWayLiveness.lean
 comparator-link	130	1					Subsequential savings for exact Fourier circuits	ExactFourier.lean
+comparator-link	130	2					Uniform exact DFT and convolution with a power saving	UniformFourier.lean
 comparator-link	131	1					Polynomial mixing and connectivity for every graphical degree sequence	SwitchChain.lean
 comparator-link	132	1					Superquadratic sensitivity separation	SensitivitySeparation.lean
 comparator-link	133	1					Parity-lift characterization of Weisfeiler–Leman equivalence	ParityLifts.lean
@@ -859,6 +862,7 @@ comparator-link	133	4					EXPTIME-completeness of variable-dimension Weisfeiler�
 comparator-link	134	1					Uniform generalized star-height bound of three	GeneralizedStarHeight.lean
 comparator-link	134	2					Generalized star height at most three	GeneralizedStarHeight.lean
 comparator-link	135	1					Homogeneous depth-five bounds for iterated matrix multiplication	DepthFive.lean
+comparator-link	137	1					Time-capped and unknown-time one-tape simulation in two-fifths-power space	OneTapeSpace.lean
 comparator-link	139	1					Subpolynomial query complexity for log-concave sampling	LogConcaveQuery.lean
 comparator-link	140	1					Projection estimates and memory–precision bounds	MemoryPrecision.lean
 comparator-link	140	2					Subquadratic and fixed-quadratic memory–precision lower bounds	NoiselessRegression.lean
@@ -883,6 +887,7 @@ comparator-link	152	1					Finite-entropy system without a smooth positive-volume
 comparator-link	155	1					Aperiodic translational tile in dimension three	PeriodicTilingThree.lean
 comparator-link	156	1					Nine-dimensional Borsuk counterexample	BorsukNine.lean
 comparator-link	157	1					Linear list-coloring bound in the Hadwiger number	ListHadwiger.lean
+comparator-link	157	2					Arbitrarily large counterexamples to Hadwiger's conjecture	HadwigerCounterexample.lean
 comparator-link	158	1					No proper five-coloring	EuclideanFiveColor.lean
 comparator-link	158	2					Proper seven-coloring	PlaneColoring.lean
 comparator-link	159	1					Erdős's reciprocal-sum arithmetic-progression conjecture	ErdosReciprocal.lean
@@ -932,6 +937,7 @@ comparator-link	190	1					Failure of polynomial removal for ordered binary matri
 comparator-link	191	1					Power improvement for the smallest Heilbronn triangle	HeilbronnTriangle.lean
 comparator-link	192	1					Unbounded violations of the square-root Fourier-degree bound	SquareRootDegree.lean
 comparator-link	194	1					Complete-domain Dutta multiplicity comparison	DuttaDomain.lean
+comparator-link	195	1					Ring-theoretic properties of the completed surface-cone candidate	SurfaceConeCandidateSupport.lean
 comparator-link	196	1					Torsion-free group-algebra counterexample	TorsionFreeZeroDivisors.lean
 comparator-link	197	1					Finitely presented characteristic-two counterexample	KaplanskyFinitelyPresented.lean
 comparator-link	197	2					Characteristic-two direct-finiteness counterexample	KaplanskyDirectFiniteness.lean
@@ -985,6 +991,7 @@ comparator-link	236	1					Factor-of-IID threshold for the free Ising model	FreeI
 comparator-link	237	1					Finiteness of critical bridge mass and first length moments	HoneycombBridgeFiniteness.lean
 comparator-link	237	2					Existence of the honeycomb free-energy limit	HoneycombFreeEnergy.lean
 comparator-link	237	3					Critical honeycomb strip mass and displacement moment	CriticalStripMass.lean
+comparator-link	237	4					Strict honeycomb bridge mass of order $(1+h)^{-1/4}$	HoneycombBridgeMassSupport.lean
 comparator-link	238	1					Reciprocal Specht degrees and eight-block Fourier bound	ThorpFirstReciprocal.lean
 comparator-link	238	2					Frame, spectral, and density estimates for Thorp mixing	ThorpRemaining.lean
 comparator-link	238	3					Fourier bounds from complementary coset caps	PartialPermutation.lean
@@ -1073,6 +1080,7 @@ comparator-link	296	2					Dense relative generators for irreducible inclusions o
 comparator-link	297	1					Counterexample to Naimark's problem in ZFC	Naimark.lean
 comparator-link	298	1					Finite separation of microstates and nonmicrostates free entropy	FiniteEntropySeparation.lean
 comparator-link	299	1					Kirchberg–Rørdam character criterion	CharacterCriterion.lean
+comparator-link	301	1					Transport of trace ideals and their additive-idempotent description	TraceIdealTransportSupport.lean
 comparator-link	303	1					Fixed-amplification pure infiniteness for exact algebras	ExactInfiniteness.lean
 comparator-link	303	2					Individual proper infiniteness implies strong pure infiniteness	IndividualStrongInfiniteness.lean
 comparator-link	307	1					Failure of rational injectivity for ordinary coarse assembly	CoarseAssembly.lean

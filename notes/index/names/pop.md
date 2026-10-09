@@ -4,7 +4,7 @@
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../names.tsv) with `role = citation`.
 
-Prose counts: 58 capitalized occurrences, 25 of them mid-sentence, 26 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
+Prose counts: 64 capitalized occurrences, 29 of them mid-sentence, 27 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
 
 ## Provenance by source
 
@@ -39,7 +39,8 @@ Prose counts: 58 capitalized occurrences, 25 of them mid-sentence, 26 lowercase.
 | [`Reconstruction-of-Function-Fields-from-Mod-ell-Milnor-K-Theory-October-5-2026`](../../../preprints/Reconstruction-of-Function-Fields-from-Mod-ell-Milnor-K-Theory-October-5-2026/) | [009](../number-theory/009-bogomolov-pop-and-milnor-k-theoretic-reconstruction.md) | prose | [mod-ell-bogomolov-pop.pdf](../../../preprints/Reconstruction-of-Function-Fields-from-Mod-ell-Milnor-K-Theory-October-5-2026/mod-ell-bogomolov-pop.pdf) |
 | [`Single-fold-Diophantine-representations-September-24-2026`](../../../preprints/Single-fold-Diophantine-representations-September-24-2026/) | [242](../mathematical-logic/242-single-fold-diophantine-representations.md) | prose | [paper.pdf](../../../preprints/Single-fold-Diophantine-representations-September-24-2026/paper.pdf) |
 | [`The-Bogomolov-Pop-reconstruction-theorem-September-23-2026`](../../../preprints/The-Bogomolov-Pop-reconstruction-theorem-September-23-2026/) | [009](../number-theory/009-bogomolov-pop-and-milnor-k-theoretic-reconstruction.md) | prose + title | [paper.pdf](../../../preprints/The-Bogomolov-Pop-reconstruction-theorem-September-23-2026/paper.pdf) |
-| [`The-p-adic-section-conjecture-September-24-2026`](../../../preprints/The-p-adic-section-conjecture-September-24-2026/) | [019](../number-theory/019-p-adic-section-conjecture.md) | prose | [main.pdf](../../../preprints/The-p-adic-section-conjecture-September-24-2026/main.pdf) |
+| [`The-p-adic-section-conjecture-October-6-2026`](../../../preprints/The-p-adic-section-conjecture-October-6-2026/) | [019](../number-theory/019-p-adic-section-conjecture.md) | prose | [main.pdf](../../../preprints/The-p-adic-section-conjecture-October-6-2026/main.pdf) |
+| [`The-p-adic-section-conjecture-September-24-2026`](../../../preprints/The-p-adic-section-conjecture-September-24-2026/) | — | prose | — |
 | [`Vanishing-of-higher-bounded-Hochschild-cohomology-September-23-2026`](../../../preprints/Vanishing-of-higher-bounded-Hochschild-cohomology-September-23-2026/) | [295](../operator-algebras/295-kadison-ringrose-cohomology-conjecture.md) | prose | [paper.pdf](../../../preprints/Vanishing-of-higher-bounded-Hochschild-cohomology-September-23-2026/paper.pdf) |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.

@@ -25,12 +25,12 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 024	Number theory	An asymptotic formula for the number of totients	1	0	T2	2	0	1	700	0	0	0		bound|uniform	0	1	0		0	0	0
 025	Number theory	Erd\H{o}s’s short Egyptian-fraction conjecture	1	1	T3	2	1	1	805	0	0	0		resolution	0	1	0		0	0	0
 026	Number theory	Positive lower density of large prime gaps	1	0	T2	1	0	1	352	0	0	0		density|uniform	0	0	0		0	0	0
-027	Number theory	Integral density on curve character varieties	1	0	T0	0	0	0	0	0	0	0		resolution|bound|density|uniform	0	1	0		0	0	0
+027	Number theory	Integral density on curve character varieties	1	1	T3	1	1	1	740	0	0	0		resolution|bound|density|uniform	0	1	0		0	0	0
 028	Number theory	The Gaussian moat conjecture	1	1	T3	1	1	1	460	0	0	0		resolution|bound|partial|uniform	0	1	0		0	0	0
 029	Number theory	Artin's primitive root conjecture: infinitude for every base	2	0	T0	0	0	0	0	0	0	0		resolution|uniform	0	1	0		0	0	0
 030	Number theory	Modularity over imaginary quadratic fields	1	0	T0	0	0	0	0	0	0	0		resolution	0	1	0		0	0	0
 031	Number theory	Uchida's conjecture for open Galois homomorphisms	1	0	T0	0	0	0	0	0	0	0			0	1	0		0	0	0
-032	Algebraic and complex geometry	The rational Hodge conjecture for CM abelian varieties and products of K3 surfaces	8	0	T0	0	0	0	0	0	0	0		resolution|classification|uniform	0	1	0		1	0	1
+032	Algebraic and complex geometry	The rational Hodge conjecture for CM abelian varieties	5	0	T0	0	0	0	0	0	0	0		resolution|classification|uniform	0	1	0		0	0	1
 033	Algebraic and complex geometry	Campana's orbifold Iitaka conjecture and logarithmic subadditivity	5	0	T2	1	0	1	675	0	0	0		bound	0	1	0		0	0	0
 034	Algebraic and complex geometry	Log abundance and effective Iitaka fibrations	14	0	T0	0	0	0	0	0	0	0		resolution|bound|classification|uniform	0	1	0		0	0	0
 035	Algebraic and complex geometry	Threefold log abundance in numerical dimension one in characteristic $p>3$	2	0	T0	0	0	0	0	0	0	0		bound|classification	0	0	0		0	0	0
@@ -46,7 +46,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 046	Algebraic and complex geometry	Counterexamples to Shafarevich holomorphic convexity	2	0	T0	0	0	0	0	0	0	0		counterexample	0	0	1		0	0	0
 047	Algebraic and complex geometry	Complex counterexamples to cancellation and affine fibrations	1	1	T3	1	1	1	450	0	0	0		resolution|counterexample	0	1	1		0	0	0
 048	Algebraic and complex geometry	A characteristic-zero counterexample to Lipman--Zariski	1	0	T0	0	0	0	0	0	0	0		classification	0	1	1		0	0	0
-049	Algebraic and complex geometry	A stable-coordinate counterexample in four variables	2	1	T3	2	2	1	676	0	0	0			0	1	1		0	0	0
+049	Algebraic and complex geometry	A stable-coordinate counterexample in four variables	2	2	T3	3	3	1	1141	0	0	0			0	1	1		0	0	0
 050	Algebraic and complex geometry	A counterexample to Griffiths' positivity conjecture	1	1	T3	1	1	1	560	0	0	0			0	1	1		0	0	0
 051	Algebraic and complex geometry	Kobayashi's canonical-ampleness conjecture	1	0	T0	0	0	0	0	0	0	0			0	1	0		0	0	0
 052	Algebraic and complex geometry	Tangent-bundle splittings and universal covers	2	1	T3	2	1	1	1131	0	0	0			0	1	0		0	0	0
@@ -62,7 +62,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 063	Algebraic and complex geometry	The generalized Mukai conjecture	1	0	T0	0	0	0	0	0	0	0		resolution	0	1	0		0	0	0
 064	Algebraic and complex geometry	The $\mu$-constant problem for surface singularities	1	0	T0	0	0	0	0	0	0	0		resolution|uniform	0	1	0		0	0	0
 065	Algebraic and complex geometry	Virasoro constraints for complete intersections and projective bundles	2	0	T0	0	0	0	0	0	0	0		resolution|uniform	0	1	0		0	0	0
-066	Algebraic and complex geometry	Bounded klt complements for Fano contractions	2	0	T0	0	0	0	0	0	0	0		bound|classification	0	1	0		0	0	0
+066	Algebraic and complex geometry	Bounded klt complements for Fano contractions	2	1	T3	1	1	1	767	0	0	0		bound|classification	0	1	0		0	0	0
 067	Algebraic and complex geometry	The Campana--Peternell conjecture in dimension six	1	0	T0	0	0	0	0	1	0	0		resolution	0	1	0		0	0	0
 068	Algebraic and complex geometry	Anticanonical nonvanishing under smooth semipositivity	7	0	T0	0	0	0	0	0	0	0			0	0	0		0	0	0
 069	Algebraic and complex geometry	Quantum geometric Langlands at irrational level	1	0	T0	0	0	0	0	0	0	0		uniform	0	0	0		0	0	0
@@ -70,7 +70,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 072	Real and complex analysis	Brennan's conjecture and a counterexample to Kraetzer's prediction	2	2	T3	3	3	1	1077	0	0	0		counterexample|bound|uniform	0	1	1		0	0	0
 073	Real and complex analysis	The Falconer distance conjecture	1	1	T3	2	1	1	349	0	0	0		resolution	0	1	0		0	0	0
 074	Real and complex analysis	Kakeya in three and four dimensions	2	0	T0	0	0	0	0	0	0	0		resolution|uniform	0	1	0		0	0	0
-075	Real and complex analysis	The $L\log L$ Fourier-convergence conjecture	1	0	T0	0	0	0	0	0	0	0		resolution|partial	0	1	0		0	0	0
+075	Real and complex analysis	The $L\log L$ Fourier-convergence conjecture	1	1	T3	1	1	1	438	0	0	0		resolution|partial	0	1	0		0	0	0
 076	Real and complex analysis	Ultraflat real Littlewood polynomials	3	1	T3	2	1	1	575	0	0	0		bound|uniform	0	1	1		0	0	0
 077	Real and complex analysis	Fourier restriction for positively curved surfaces	2	0	T0	0	0	0	0	0	0	0		resolution|bound|uniform	0	1	0		0	0	0
 078	Real and complex analysis	The three-dimensional Bochner--Riesz conjecture	1	0	T0	0	0	0	0	0	0	0		resolution|bound|uniform	0	1	0		0	0	0
@@ -98,7 +98,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 100	Convex and metric geometry	A counterexample to Bang's cylinder-covering bound	4	0	T2	3	0	1	2568	0	0	0		counterexample|bound	0	1	1		0	0	0
 101	Convex and metric geometry	The sharp simplex conjecture for isotropic constants	1	0	T0	0	0	0	0	1	0	0		resolution|bound	0	1	0		0	0	0
 102	Theoretical computer science	The Unique Games Conjecture and optimal approximation thresholds	5	3	T3	5	3	1	2465	0	0	0	basic-semidefinite-threshold-np-hardness		0	1	0		0	0	1
-103	Theoretical computer science	Derandomization of logarithmic space: $\mathsf L=\mathsf{RL}=\mathsf{BPL}$	1	0	T0	0	0	0	0	0	0	0		resolution|bound	0	0	0		0	0	0
+103	Theoretical computer science	Derandomization of logarithmic space: $\mathsf L=\mathsf{RL}=\mathsf{BPL}$	1	1	T3	1	1	1	682	0	0	0		resolution|bound	0	0	0		0	0	0
 104	Theoretical computer science	Quasipolynomial algorithms for mean-payoff, stochastic and parity games	4	1	T3	2	1	1	602	0	0	0			0	0	0		0	0	0
 105	Theoretical computer science	The 2-to-1 Games Conjecture with perfect completeness	1	1	T3	1	1	1	481	0	0	0		partial|uniform	0	1	0		0	0	0
 106	Theoretical computer science	Hardness of coloring three-colorable graphs	1	1	T3	1	1	1	491	0	0	0		uniform	0	0	0		0	0	0
@@ -124,14 +124,14 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 127	Theoretical computer science	The asymptotic Gotsman--Linial conjecture	1	1	T3	1	1	1	359	0	0	0		partial|uniform	0	1	0		0	0	0
 128	Theoretical computer science	A factor-two approximation for shortest common superstring	1	1	T3	1	1	1	442	0	0	0		partial|uniform	0	0	0		0	0	0
 129	Theoretical computer science	Exponential state costs for two-way automata	2	2	T3	3	3	1	1263	0	0	0		resolution|bound	0	1	0		0	0	0
-130	Theoretical computer science	Fourier transforms below $n\log n$	2	1	T3	1	1	1	525	0	0	0		uniform	0	0	0		0	0	0
+130	Theoretical computer science	Fourier transforms below $n\log n$	2	2	T3	2	2	1	1144	0	0	0		uniform	0	0	0		0	0	0
 131	Theoretical computer science	Polynomial mixing of graph switches with prescribed degrees	1	0	T2	1	0	1	587	0	0	0		resolution|uniform	0	1	0		0	0	0
 132	Theoretical computer science	A counterexample to the quadratic sensitivity conjecture	1	1	T3	1	1	1	477	0	0	0			0	1	1		0	0	0
 133	Theoretical computer science	The complexity of Weisfeiler--Leman refinement	4	0	T2	4	0	1	2165	0	0	0		bound	0	0	0		0	0	0
 134	Theoretical computer science	Generalized star height at most three	3	0	T2	1	0	1	1249	0	0	0		resolution|bound|partial|uniform	0	1	0		0	0	0
 135	Theoretical computer science	Sharp homogeneous depth-five complexity of matrix products	1	0	T2	1	0	1	629	0	0	0		bound|classification	0	0	0		0	0	0
 136	Theoretical computer science	The quasilinear PCP-for-PPAD conjecture	1	0	T0	0	0	0	0	0	0	0		resolution	0	1	0		0	0	0
-137	Theoretical computer science	One-tape time simulation in two-fifths-power space	1	0	T0	0	0	0	0	0	0	0		bound|partial	0	0	0		0	0	0
+137	Theoretical computer science	One-tape time simulation in two-fifths-power space	1	1	T3	1	1	1	775	0	0	0		bound|partial	0	0	0		0	0	0
 138	Theoretical computer science	Subset Sum in $O(2^{0.49n})$ time	2	0	T0	0	0	0	0	0	0	0		bound|uniform	0	0	0		0	0	0
 139	Theoretical computer science	Subpolynomial queries for log-concave sampling	1	1	T3	1	1	1	545	0	0	0		bound|uniform	0	0	0		0	0	0
 140	Theoretical computer science	Memory--sample lower bounds for noiseless Gaussian regression	6	5	T3	8	5	1	5397	0	0	0		partial|uniform	0	0	0		0	0	0
@@ -151,7 +151,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 154	Dynamical systems and ergodic theory	Pointwise multiple ergodic averages for mixing transformations	4	0	T0	0	0	0	0	0	0	0		bound	0	0	0		0	0	0
 155	Combinatorics	A counterexample to periodic tiling in dimension three	1	1	T3	1	1	1	502	0	0	0		counterexample|uniform	0	1	1		0	0	0
 156	Combinatorics	Borsuk's conjecture fails in dimension nine	1	1	T3	1	1	1	435	0	0	0			0	1	1		0	0	0
-157	Combinatorics	Counterexamples to the Hadwiger and Colin de Verdi\`ere conjectures	3	0	T2	1	0	1	375	0	1	0		counterexample|bound|partial	0	1	1		0	0	0
+157	Combinatorics	Counterexamples to the Hadwiger and Colin de Verdi\`ere conjectures	3	1	T3	2	1	1	849	0	1	0		counterexample|bound|partial	0	1	1		0	0	0
 158	Combinatorics	The Euclidean plane cannot be colored with five colors	1	1	T3	2	2	1	396	0	0	0			0	1	0		0	0	0
 159	Combinatorics	Erd\H{o}s's reciprocal-sum conjecture and quasipolynomial Szemer\'edi bounds	1	0	T2	1	0	1	481	0	0	0	quasipolynomial-arithmetic-progressions	partial	0	1	0		0	0	1
 160	Combinatorics	Superexponential van der Waerden numbers	1	1	T3	1	1	1	459	0	0	0		resolution|uniform	0	1	0		0	0	0
@@ -188,7 +188,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 192	Combinatorics	A counterexample to the Gopalan--Servedio conjecture	1	0	T2	1	0	1	467	0	0	0		counterexample|bound|uniform	0	1	1		0	0	0
 193	Algebra	Serre's intersection-multiplicity conjecture	1	0	T0	0	0	0	0	0	0	0		resolution|classification	0	1	0		0	0	0
 194	Algebra	Lech's multiplicity conjecture	1	0	T2	1	0	1	598	0	0	0		resolution|classification|uniform	0	1	0		0	0	0
-195	Algebra	A counterexample to the small Cohen--Macaulay module conjecture	1	0	T0	0	0	0	0	0	0	0			0	1	1		0	0	0
+195	Algebra	A counterexample to the small Cohen--Macaulay module conjecture	1	1	T3	1	1	1	511	0	0	0			0	1	1		0	0	0
 196	Algebra	A counterexample to Kaplansky's zero-divisor conjecture	1	1	T3	1	1	1	378	0	0	0			0	1	1		0	0	0
 197	Algebra	Nonsofic groups and group-ring counterexamples	4	3	T3	4	3	1	2249	0	0	0	kaplansky-direct-finiteness-characteristic-two	counterexample	0	1	1		1	0	1
 198	Algebra	A counterexample to the little finitistic-dimension conjecture	1	1	T3	2	2	1	634	0	0	0		resolution|counterexample	0	1	1		0	0	0
@@ -230,7 +230,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 234	Probability and statistical mechanics	All-temperature pressure for orthogonally invariant Ising spin glasses	1	0	T2	1	0	1	775	0	0	0			0	0	0		0	0	0
 235	Probability and statistical mechanics	Random-SAT thresholds, sharp variance and computability	4	0	T2	4	0	1	1663	0	0	0		resolution|bound|uniform	0	1	0		0	0	0
 236	Probability and statistical mechanics	The factor-of-IID threshold for free Ising states on trees	1	1	T3	1	1	1	428	0	0	0		resolution	0	1	0		0	0	0
-237	Probability and statistical mechanics	The three-quarter diameter exponent for honeycomb walks	13	0	T2	3	0	1	1596	0	0	0		uniform	0	0	0		0	0	0
+237	Probability and statistical mechanics	The three-quarter diameter exponent for honeycomb walks	13	1	T3	4	1	1	2118	0	0	0		uniform	0	0	0		0	0	0
 238	Probability and statistical mechanics	Optimal logarithmic mixing of the Thorp shuffle	12	3	T3	13	4	1	6237	0	0	0			0	0	0		0	0	0
 239	Probability and statistical mechanics	Sharp singularity rates for symmetric sign matrices	2	0	T0	0	0	0	0	0	0	0		bound|partial|uniform	0	0	0		0	0	0
 240	Mathematical logic	Shelah's eventual categoricity conjecture	2	1	T3	1	1	1	584	0	0	0		bound|uniform|conditional	1	1	0		0	0	0
@@ -294,7 +294,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 298	Operator algebras	A counterexample to Voiculescu’s free-entropy equality conjecture	1	0	T2	1	0	1	516	0	0	0		bound	0	1	1		0	0	0
 299	Operator algebras	The Kirchberg--R\o rdam character criterion	1	1	T3	1	1	1	423	0	0	0		uniform	0	1	0		0	0	0
 300	Operator algebras	The Popa--Vaes quadratic strong-operator paving conjecture	2	0	T0	0	0	0	0	0	0	0		resolution|bound	0	1	0		0	0	0
-301	Operator algebras	Classification by trace cones after Razak--Jacelon stabilization	1	0	T0	0	0	0	0	0	0	0		resolution|uniform	0	1	0		0	0	0
+301	Operator algebras	Classification by trace cones after Razak--Jacelon stabilization	1	1	T3	1	1	1	817	0	0	0		resolution|uniform	0	1	0		0	0	0
 302	Operator algebras	The Phillips--Toms formula for minimal integer actions	2	0	T0	0	0	0	0	0	0	0		bound|partial|uniform	0	0	0		0	0	0
 303	Operator algebras	From ordinary to strong pure infiniteness	1	0	T2	2	0	1	464	0	0	0		resolution	0	1	0		0	0	0
 304	Topology	The Hilbert--Smith conjecture in every dimension	1	0	T0	0	0	0	0	0	0	0		resolution|bound	0	1	0		0	0	0
@@ -335,7 +335,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 339	Differential geometry	Katok's entropy rigidity conjecture	1	0	T0	0	0	0	0	0	0	0		classification	0	1	0		0	0	0
 340	Differential geometry	A counterexample to the nearby Lagrangian conjecture	1	0	T0	0	0	0	0	0	0	0		resolution|counterexample	0	1	1		0	0	0
 341	Differential geometry	Donaldson's hypersymplectic deformation conjecture	1	0	T0	0	0	0	0	0	0	0			0	1	0		0	0	0
-342	Differential geometry	Donaldson's tamed-to-compatible conjecture	1	1	T3	1	1	1	380	0	0	0			0	1	0		0	0	0
+342	Differential geometry	Donaldson's tamed-to-compatible conjecture	1	0	T3	1	1	1	380	0	0	0			0	1	0		0	0	0
 343	Differential geometry	Sharp symplectic ball-packing criteria in higher dimensions	1	0	T2	2	0	1	545	0	0	0		resolution|uniform	0	1	0		0	0	0
 344	Differential geometry	The metric Blaschke conjecture	1	0	T0	0	0	0	0	0	0	0		resolution	0	1	0		0	0	0
 345	Differential geometry	Infinitely many closed geodesics on spheres and three-manifolds	1	0	T0	0	0	0	0	0	0	0			0	0	0		0	0	0

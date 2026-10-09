@@ -1,6 +1,6 @@
 # Topic: operator-algebras
 
-24 families · pattern `c\*algebra|c\*-algebra|von neumann|operator algebra|tracial|trace cone|quantum group|connes|popa|vaes|kirchberg|kadison|bicentralizer|kaplansky's quasitrace|jiang--su|pure infiniteness|quasitrace|baum--connes|ultrapower|similarity conjecture|generator problem|naimark|voiculescu|ringrose|toms--winter|razak|jacelon|phillips--toms|free group factor` · hits by layer: title 20 · abstract 21 · scope 18 · path 1
+24 families · pattern `c\*algebra|c\*-algebra|von neumann|operator algebra|tracial|trace cone|quantum group|connes|popa|vaes|kirchberg|kadison|bicentralizer|kaplansky's quasitrace|jiang--su|pure infiniteness|quasitrace|baum--connes|ultrapower|similarity conjecture|generator problem|naimark|voiculescu|ringrose|toms--winter|razak|jacelon|phillips--toms|free group factor` · hits by layer: title 20 · abstract 21 · scope 19 · path 1
 
 A family is listed when the pattern hits its title, its abstract, its scope note, or the Lean file paths reached from its comparator configs. The match is a keyword floor, not a judgement: read the family page before treating a listing as a claim about what the result is about.
 
@@ -27,7 +27,7 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | [298](../operator-algebras/298-a-counterexample-to-voiculescus-free-entropy-equality-conjecture.md) | A counterexample to Voiculescu’s free-entropy equality conjecture | yes | yes | yes | — |
 | [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | The Kirchberg--R\o rdam character criterion | yes | yes | yes | — |
 | [300](../operator-algebras/300-popa-vaes-quadratic-strong-operator-paving-conjecture.md) | The Popa--Vaes quadratic strong-operator paving conjecture | yes | yes | — | — |
-| [301](../operator-algebras/301-classification-by-trace-cones-after-razak-jacelon-stabilization.md) | Classification by trace cones after Razak--Jacelon stabilization | yes | yes | — | — |
+| [301](../operator-algebras/301-classification-by-trace-cones-after-razak-jacelon-stabilization.md) | Classification by trace cones after Razak--Jacelon stabilization | yes | yes | yes | — |
 | [302](../operator-algebras/302-phillips-toms-formula-for-minimal-integer-actions.md) | The Phillips--Toms formula for minimal integer actions | yes | yes | — | — |
 | [303](../operator-algebras/303-from-ordinary-to-strong-pure-infiniteness.md) | From ordinary to strong pure infiniteness | yes | yes | yes | — |
 

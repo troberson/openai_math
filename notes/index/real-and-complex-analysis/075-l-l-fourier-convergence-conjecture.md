@@ -3,15 +3,15 @@
 |  |  |
 |---|---|
 | Discipline | [Real and complex analysis](../disciplines/real-and-complex-analysis.md) |
-| Tier | T0 |
-| Manuscripts | 1 (0 formalized at source level) |
-| Scope note | — |
-| Comparator configs | 0 (0 with a `main_results` declaration) |
+| Tier | T3 |
+| Manuscripts | 1 (1 formalized at source level) |
+| Scope note | [`lean/docs/075.md`](../../../lean/docs/075.md) |
+| Comparator configs | 1 (1 with a `main_results` declaration) |
 | Reasoning trace | — |
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution, partial |
-| Topics | [harmonic-analysis](../topics/harmonic-analysis.md) |
+| Topics | [harmonic-analysis](../topics/harmonic-analysis.md) · [measure-theory](../topics/measure-theory.md) |
 | Companion families | — |
 | Summary page | — |
 
@@ -19,15 +19,21 @@
 
 | Dir | PDF | LaTeX tree | README | Formalized | Main file | Verification |
 |---|---|---|---|---|---|---|
-| [`Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026`](../../../preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/) | [paper.pdf](../../../preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/paper.pdf) | [build/](../../../preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/build/) | [README.md](../../../preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/README.md) | no | [main.tex](../../../preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/build/main.tex) | — |
+| [`Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026`](../../../preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/) | [paper.pdf](../../../preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/paper.pdf) | [build/](../../../preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/build/) | [README.md](../../../preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/README.md) | yes | [main.tex](../../../preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/build/main.tex) | — |
 
 ## Lean
 
-No `main_results` declaration reaches this family, and no scope note links a comparator config.
+| Config | Declaration | File | Module dir |
+|---|---|---|---|
+| [FourierLLogL](../../../lean/ComparatorChallenges/FourierLLogL.json) | `OAI.FourierLLogL.paperMain` | [PaperMain.lean](../../../lean/OAI/Analysis/FourierLLogL/PaperMain.lean) | [`OAI/Analysis/FourierLLogL`](../../../lean/OAI/Analysis/FourierLLogL/) |
+
+The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 
-No scope note links a comparator config for this family.
+| Config | Statement | Solution | Theorems | Definitions | nanoda | In `main_results` |
+|---|---|---|---|---|---|---|
+| `FourierLLogL` | [.json](../../../lean/ComparatorChallenges/FourierLLogL.json) | [.lean](../../../lean/ComparatorChallenges/FourierLLogL.lean) | 1 | 0 | no | yes |
 
 ## Verification bundles
 

@@ -1,10 +1,10 @@
 # Name: bessel
 
-27 families · subject name · 4 carried by a title or a declaration · 27 by prose · 0 by bibliography author
+28 families · subject name · 4 carried by a title or a declaration · 28 by prose · 0 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../names.tsv) with `role = citation`.
 
-Prose counts: 194 capitalized occurrences, 153 of them mid-sentence, 51 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
+Prose counts: 195 capitalized occurrences, 154 of them mid-sentence, 51 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
 
 ## Provenance by source
 
@@ -14,7 +14,7 @@ Prose counts: 194 capitalized occurrences, 153 of them mid-sentence, 51 lowercas
 | `M` — Manuscript title | title | 0 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 4 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 27 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 28 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 0 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -41,6 +41,7 @@ Prose counts: 194 capitalized occurrences, 153 of them mid-sentence, 51 lowercas
 | [224](../probability-and-statistical-mechanics/224-critical-and-near-critical-universality-for-voronoi-percolation.md) | Critical and near-critical universality for Voronoi percolation | — | — | — | — | yes | — |
 | [225](../probability-and-statistical-mechanics/225-gaussian-free-field-limits-for-the-balanced-six-vertex-model.md) | Gaussian free field limits for the balanced six-vertex model | — | — | — | — | yes | — |
 | [227](../probability-and-statistical-mechanics/227-dynamical-phase-transition-in-the-sherrington-kirkpatrick-model.md) | The dynamical phase transition in the Sherrington--Kirkpatrick model | — | — | — | — | yes | — |
+| [232](../probability-and-statistical-mechanics/232-gaussian-fields-and-sle-interfaces-for-lipschitz-heights.md) | Gaussian fields and SLE interfaces for Lipschitz heights | — | — | — | — | yes | — |
 | [263](../mathematical-physics/263-ionization-and-generalized-ionization-conjectures.md) | The ionization and generalized ionization conjectures | — | — | — | — | yes | — |
 | [269](../mathematical-physics/269-laughlin-gap-and-stability-under-scalar-disorder.md) | The Laughlin gap and stability under scalar disorder | — | — | — | — | yes | — |
 | [274](../mathematical-physics/274-moores-parity-conjecture-for-qac-0.md) | Moore's parity conjecture for $\mathrm{QAC}^0$ | — | — | — | — | yes | — |
@@ -90,6 +91,7 @@ Prose counts: 194 capitalized occurrences, 153 of them mid-sentence, 51 lowercas
 | [`Triple-ergodic-averages-with-distinct-integer-slopes-October-4-2026`](../../../preprints/Triple-ergodic-averages-with-distinct-integer-slopes-October-4-2026/) | [154](../dynamical-systems-and-ergodic-theory/154-pointwise-multiple-ergodic-averages-for-mixing-transformations.md) | prose | [triple-ergodic-distinct-slopes.pdf](../../../preprints/Triple-ergodic-averages-with-distinct-integer-slopes-October-4-2026/triple-ergodic-distinct-slopes.pdf) |
 | [`Uniform-Stability-of-the-Spherical-Laughlin-Gap-October-5-2026`](../../../preprints/Uniform-Stability-of-the-Spherical-Laughlin-Gap-October-5-2026/) | [269](../mathematical-physics/269-laughlin-gap-and-stability-under-scalar-disorder.md) | prose | [uniform-stability-spherical-laughlin-gap.pdf](../../../preprints/Uniform-Stability-of-the-Spherical-Laughlin-Gap-October-5-2026/uniform-stability-spherical-laughlin-gap.pdf) |
 | [`Uniform-excess-charge-for-Coulomb-molecules-and-the-outer-radius-of-neutral-atoms-September-24-2026`](../../../preprints/Uniform-excess-charge-for-Coulomb-molecules-and-the-outer-radius-of-neutral-atoms-September-24-2026/) | [263](../mathematical-physics/263-ionization-and-generalized-ionization-conjectures.md) | prose | [paper.pdf](../../../preprints/Uniform-excess-charge-for-Coulomb-molecules-and-the-outer-radius-of-neutral-atoms-September-24-2026/paper.pdf) |
+| [`Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026`](../../../preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026/) | [232](../probability-and-statistical-mechanics/232-gaussian-fields-and-sle-interfaces-for-lipschitz-heights.md) | prose | [paper.pdf](../../../preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026/paper.pdf) |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.
 

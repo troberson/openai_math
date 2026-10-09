@@ -22,7 +22,7 @@ OAI/Algebra/OrderedStates	Algebra	OrderedStates	2	0
 OAI/Algebra/PolynomialChains	Algebra	PolynomialChains	1	0	
 OAI/Algebra/Universal	Algebra	Universal	4	0	
 OAI/AlgebraicGeometry/AbhyankarSathaye	AlgebraicGeometry	AbhyankarSathaye	15	1	OAI.AbhyankarSathaye.exists_noncoordinate_polynomial
-OAI/AlgebraicGeometry/CartierSections	AlgebraicGeometry	CartierSections	22	0	
+OAI/AlgebraicGeometry/CartierSections	AlgebraicGeometry	CartierSections	22	1	OAI.CartierSections.isCompact_closedChartFieldRetraction_cone
 OAI/AlgebraicGeometry/CharacterVarieties	AlgebraicGeometry	CharacterVarieties	90	0	
 OAI/AlgebraicGeometry/CommutingDerivations	AlgebraicGeometry	CommutingDerivations	21	1	OAI.AbhyankarSathaye.CommutingDerivations.commuting_derivations_with_ordinary_extras
 OAI/AlgebraicGeometry/LogKodaira	AlgebraicGeometry	LogKodaira	17	0	
@@ -32,7 +32,8 @@ OAI/AlgebraicGeometry/RelativeTriviality	AlgebraicGeometry	RelativeTriviality	17
 OAI/AlgebraicGeometry/SectionFields	AlgebraicGeometry	SectionFields	16	0	
 OAI/AlgebraicGeometry/Seshadri	AlgebraicGeometry	Seshadri	421	1	OAI.MaximalSeshadri.Geometry.maximalSeshadriConstants
 OAI/AlgebraicGeometry/Stability	AlgebraicGeometry	Stability	1	0	
-OAI/AlgebraicGeometry/SurfaceCones	AlgebraicGeometry	SurfaceCones	66	0	
+OAI/AlgebraicGeometry/StableCoordinate	AlgebraicGeometry	StableCoordinate	118	1	OAI.StableCoordinate.principal_package
+OAI/AlgebraicGeometry/SurfaceCones	AlgebraicGeometry	SurfaceCones	66	1	OAI.SmallCM.candidate_ring_properties
 OAI/AlgebraicTopology/CWComplex	AlgebraicTopology	CWComplex	5	0	
 OAI/AlgebraicTopology/Cubical	AlgebraicTopology	Cubical	7	0	
 OAI/AlgebraicTopology/Integral	AlgebraicTopology	Integral	1	0	
@@ -70,6 +71,7 @@ OAI/Analysis/FiniteFactor	Analysis	FiniteFactor	271	0
 OAI/Analysis/ForestSpace	Analysis	ForestSpace	20	1	OAI.ForestSpace.main_theorem
 OAI/Analysis/Fourier	Analysis	Fourier	2	0	
 OAI/Analysis/FourierExtension	Analysis	FourierExtension	14	0	
+OAI/Analysis/FourierLLogL	Analysis	FourierLLogL	155	1	OAI.FourierLLogL.paperMain
 OAI/Analysis/FreeEntropy	Analysis	FreeEntropy	153	0	
 OAI/Analysis/FreeGroupFactor	Analysis	FreeGroupFactor	27	0	
 OAI/Analysis/FreeWords	Analysis	FreeWords	267	0	
@@ -153,7 +155,7 @@ OAI/Analysis/StrictMeans	Analysis	StrictMeans	94	1	OAI.StrictInverseFirstPower.m
 OAI/Analysis/StructuralCrouzeix	Analysis	StructuralCrouzeix	12	1	OAI.StructuralCrouzeixReference.challenge
 OAI/Analysis/SymmetricDomains	Analysis	SymmetricDomains	351	1	OAI.Release061.main
 OAI/Analysis/TemperedDistribution	Analysis	TemperedDistribution	1	0	
-OAI/Analysis/TraceCone	Analysis	TraceCone	11	0	
+OAI/Analysis/TraceCone	Analysis	TraceCone	11	3	OAI.TraceConeClassification.TraceConeEquiv.idealOrderIso_finIdeal|OAI.TraceConeClassification.TraceConeEquiv.idealOrderIso_zeroIdeal|OAI.TraceConeClassification.closed_ideal_weight_exists
 OAI/Analysis/TracialCohomology	Analysis	TracialCohomology	44	0	
 OAI/Analysis/TracialSplitting	Analysis	TracialSplitting	51	1	OAI.ComparatorModel.CurrentMain.main
 OAI/Analysis/TreePotential	Analysis	TreePotential	46	1	OAI.BoundedTreePotentials.TreeCalculus.main_counterexample
@@ -188,12 +190,13 @@ OAI/Combinatorics/GotsmanLinial	Combinatorics	GotsmanLinial	22	1	OAI.LeanBlast.G
 OAI/Combinatorics/GraphSpectrum	Combinatorics	GraphSpectrum	1	0	
 OAI/Combinatorics/GraphThreshold	Combinatorics	GraphThreshold	37	1	OAI.LeanBlast.SecondKahnKalai.secondKahnKalaiBounds
 OAI/Combinatorics/Graphs	Combinatorics	Graphs	1	0	
+OAI/Combinatorics/HadwigerCounterexample	Combinatorics	HadwigerCounterexample	276	1	OAI.HadwigerCounterexample.not_hadwiger_conjecture
 OAI/Combinatorics/HadwigerMatching	Combinatorics	HadwigerMatching	10	0	
 OAI/Combinatorics/HalvingLines	Combinatorics	HalvingLines	47	0	
 OAI/Combinatorics/Hamiltonian	Combinatorics	Hamiltonian	31	0	
 OAI/Combinatorics/Honeycomb	Combinatorics	Honeycomb	2	0	
 OAI/Combinatorics/HoneycombBridges	Combinatorics	HoneycombBridges	6	0	
-OAI/Combinatorics/HoneycombChords	Combinatorics	HoneycombChords	100	0	
+OAI/Combinatorics/HoneycombChords	Combinatorics	HoneycombChords	100	1	OAI.CriticalHoneycomb.finiteBridgeMassEstimate
 OAI/Combinatorics/HoneycombCorridor	Combinatorics	HoneycombCorridor	44	0	
 OAI/Combinatorics/IndependentSets	Combinatorics	IndependentSets	454	1	OAI.LargeIndependentSets.mainTheoremReal
 OAI/Combinatorics/InfiniteMatroid	Combinatorics	InfiniteMatroid	33	1	OAI.InfiniteMatroidCounterexample.main
@@ -247,9 +250,10 @@ OAI/Computability/DeterministicSum	Computability	DeterministicSum	30	0
 OAI/Computability/DirectedFeedback	Computability	DirectedFeedback	224	0	
 OAI/Computability/FiniteCompiler	Computability	FiniteCompiler	17	0	
 OAI/Computability/FourierCircuit	Computability	FourierCircuit	51	1	OAI.ExactFourier.main_theorem
+OAI/Computability/FourierTransform	Computability	FourierTransform	88	2	OAI.PowerSaving.convolution_main|OAI.PowerSaving.transform_main
 OAI/Computability/GeneralizedCircuits	Computability	GeneralizedCircuits	1	0	
 OAI/Computability/Interspersed	Computability	Interspersed	7	0	
-OAI/Computability/Logspace	Computability	Logspace	1	0	
+OAI/Computability/Logspace	Computability	Logspace	39	1	OAI.ExactDerandomization.exact_logarithmic_space_derandomization
 OAI/Computability/LoopMatching	Computability	LoopMatching	24	1	OAI.LoopMatching.fullEndpoint
 OAI/Computability/MatchingCount	Computability	MatchingCount	74	1	OAI.BinaryMatching.deterministic_approximate_counting
 OAI/Computability/MaxCut	Computability	MaxCut	372	1	OAI.OptimalMaxCut.main
@@ -261,6 +265,7 @@ OAI/Computability/RandomMean	Computability	RandomMean	17	1	OAI.randomized_quasip
 OAI/Computability/RationalHitting	Computability	RationalHitting	53	1	OAI.RationalHitting.main
 OAI/Computability/Scheduling	Computability	Scheduling	53	0	
 OAI/Computability/SolenoidalRecorder	Computability	SolenoidalRecorder	5	0	
+OAI/Computability/SpaceSimulation	Computability	SpaceSimulation	49	2	OAI.Fifths.Single.capped|OAI.Fifths.Single.unknown
 OAI/Computability/StarHeight	Computability	StarHeight	37	0	
 OAI/Computability/Superstring	Computability	Superstring	51	1	OAI.Superstring.main
 OAI/Computability/TypeSystem	Computability	TypeSystem	33	0	

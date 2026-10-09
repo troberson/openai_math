@@ -154,10 +154,14 @@ def citation_edges(dir2fam, report):
     return sorted((a, dir2fam[a], b, dir2fam[b]) for a, b in out)
 
 
+WRITTEN = set()
+
+
 def write(relpath, text):
     f = IDX / relpath
     f.parent.mkdir(parents=True, exist_ok=True)
     f.write_text(text, encoding="utf-8")
+    WRITTEN.add(f)
 
 
 def write_tsv(relpath, cols, rows):
@@ -1006,6 +1010,20 @@ def main():
     print(f"manuscript links    main file {sum(1 for r in manuscript_rows if r['main_tex'])} of "
           f"{len(manuscript_rows)}  build/ {sum(1 for r in manuscript_rows if r['build'] == '1')}  "
           f"README.md {sum(1 for r in manuscript_rows if r['readme'] == '1')}")
+    # A page whose family title changed is written under a new slug, so the old page survives on
+    # disk and its manuscript table links the editions the merge superseded. The tree is generated,
+    # so anything this build did not write is stale and is removed.
+    stale = sorted(p for p in IDX.rglob("*")
+                   if p.is_file() and p.suffix in (".md", ".tsv") and p not in WRITTEN)
+    for p in stale:
+        p.unlink()
+    empty_dirs = 0
+    for d in sorted((x for x in IDX.rglob("*") if x.is_dir()), key=lambda x: -len(x.parts)):
+        if not any(d.iterdir()):
+            d.rmdir()
+            empty_dirs += 1
+    print(f"stale swept         {len(stale)} files {sorted(p.relative_to(IDX).as_posix() for p in stale)}  "
+          f"empty dirs removed {empty_dirs}")
     print(f"written             {len(pages) + len(disc_pages) + len(topic_pages) + len(name_pages) + 1} "
           f"pages + {8 + len(EDGE_TABLES)} tables -> {IDX.relative_to(ROOT)}/")
 

@@ -12,14 +12,14 @@
 | Cited by / cites | 1 in · 0 out |
 | Claim shapes | classification, uniform |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [representation-theory](../topics/representation-theory.md) · [abelian-varieties](../topics/abelian-varieties.md) |
-| Companion families | [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties-and-products-of-k3-surfaces.md) |
+| Companion families | [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties.md) |
 | Summary page | [001-milnes-rationality-conjecture.md](../../../notes/summaries/number-theory/001-milnes-rationality-conjecture.md) |
 
 ## Manuscripts
 
 | Dir | PDF | LaTeX tree | README | Formalized | Main file | Verification |
 |---|---|---|---|---|---|---|
-| [`Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/) | [paper.pdf](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/paper.pdf) | [build/](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/) | [README.md](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/README.md) | no | [main.tex](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/build/main.tex) | — |
+| [`Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/) | [paper.pdf](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/paper.pdf) | [build/](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/build/) | [README.md](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/README.md) | no | [main.tex](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/build/main.tex) | — |
 
 ## Lean
 

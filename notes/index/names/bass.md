@@ -4,7 +4,7 @@
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../names.tsv) with `role = citation`.
 
-Prose counts: 62 capitalized occurrences, 46 of them mid-sentence, 10 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
+Prose counts: 64 capitalized occurrences, 47 of them mid-sentence, 10 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
 
 ## Provenance by source
 
@@ -58,7 +58,8 @@ Prose counts: 62 capitalized occurrences, 46 of them mid-sentence, 10 lowercase.
 | [`The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026`](../../../preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/) | [018](../number-theory/018-margulis-platonov-conjecture-over-global-fields.md) | prose | [paper.pdf](../../../preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/paper.pdf) |
 | [`The-Singer-conjecture-in-dimension-four-September-25-2026`](../../../preprints/The-Singer-conjecture-in-dimension-four-September-25-2026/) | [315](../topology/315-four-dimensional-singer-conjecture.md) | prose | [paper.pdf](../../../preprints/The-Singer-conjecture-in-dimension-four-September-25-2026/paper.pdf) |
 | [`The-l1-Bass-Conjecture-for-Discrete-Groups-October-5-2026`](../../../preprints/The-l1-Bass-Conjecture-for-Discrete-Groups-October-5-2026/) | [207](../algebra/207-1-bass-and-complex-bass-trace-conjectures.md) | prose + title | [l1-bass-conjecture.pdf](../../../preprints/The-l1-Bass-Conjecture-for-Discrete-Groups-October-5-2026/l1-bass-conjecture.pdf) |
-| [`Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-September-25-2026`](../../../preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-September-25-2026/) | [232](../probability-and-statistical-mechanics/232-gaussian-fields-and-sle-interfaces-for-lipschitz-heights.md) | prose | [paper.pdf](../../../preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-September-25-2026/paper.pdf) |
+| [`Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026`](../../../preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026/) | [232](../probability-and-statistical-mechanics/232-gaussian-fields-and-sle-interfaces-for-lipschitz-heights.md) | prose | [paper.pdf](../../../preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026/paper.pdf) |
+| [`Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-September-25-2026`](../../../preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-September-25-2026/) | — | prose | — |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.
 

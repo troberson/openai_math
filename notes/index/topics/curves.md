@@ -1,6 +1,6 @@
 # Topic: curves
 
-17 families · pattern `\bcurves?\b|genus [0-9iv]+|nodal|plane cubic` · hits by layer: title 2 · abstract 17 · scope 2 · path 1
+17 families · pattern `\bcurves?\b|genus [0-9iv]+|nodal|plane cubic` · hits by layer: title 2 · abstract 17 · scope 3 · path 1
 
 A family is listed when the pattern hits its title, its abstract, its scope note, or the Lean file paths reached from its comparator configs. The match is a keyword floor, not a judgement: read the family page before treating a listing as a claim about what the result is about.
 
@@ -11,7 +11,7 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | [014](../number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md) | Restricted geometric Langlands, generic Ramanujan and Arthur parameters | — | yes | — | — |
 | [016](../number-theory/016-zilber-pink-in-abelian-varieties-and-the-siegel-threefold.md) | Zilber--Pink in abelian varieties and the Siegel threefold | — | yes | — | — |
 | [019](../number-theory/019-p-adic-section-conjecture.md) | The $p$-adic section conjecture | — | yes | — | — |
-| [027](../number-theory/027-integral-density-on-curve-character-varieties.md) | Integral density on curve character varieties | yes | yes | — | — |
+| [027](../number-theory/027-integral-density-on-curve-character-varieties.md) | Integral density on curve character varieties | yes | yes | yes | — |
 | [030](../number-theory/030-modularity-over-imaginary-quadratic-fields.md) | Modularity over imaginary quadratic fields | — | yes | — | — |
 | [039](../algebraic-and-complex-geometry/039-nagatas-conjecture-and-maximal-seshadri-constants.md) | Nagata's conjecture and maximal Seshadri constants | — | yes | yes | — |
 | [043](../algebraic-and-complex-geometry/043-p-w-for-fixed-determinant-moduli-spaces.md) | $P=W$ for fixed-determinant moduli spaces | — | yes | — | — |

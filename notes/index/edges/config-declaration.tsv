@@ -20,7 +20,9 @@ Brennan	072	OAI.Brennan.main_theorem	OAI/Analysis/IntegralMeans/Main.lean	OAI/An
 BrennanSharp	072	OAI.Brennan.Sharp.sharp_endpoints	OAI/Analysis/IntegralMeans/SharpEndpoints.lean	OAI/Analysis/IntegralMeans
 C0Absorption	324	OAI.C0Absorption.main_result	OAI/Analysis/C0Absorption/Main.lean	OAI/Analysis/C0Absorption
 CHObstruction	240	OAI.CHObstruction.main	OAI/ModelTheory/Categoricity/Main.lean	OAI/ModelTheory/Categoricity
+CartierChartCompactnessSupport	066	OAI.CartierSections.isCompact_closedChartFieldRetraction_cone	OAI/AlgebraicGeometry/CartierSections/ChartCompactness.lean	OAI/AlgebraicGeometry/CartierSections
 CharacterCriterion	299	OAI.KirchbergRordam.character_criterion	OAI/Analysis/CharacterCriterion/Main.lean	OAI/Analysis/CharacterCriterion
+CharacterVarietiesAllSeamsSupport	027	OAI.IntegralCharacterVarieties.SurfacePresentation.Diagram.producedMarkedValues_allSeams	OAI/AlgebraicGeometry/CharacterVarieties/Seams/ProducedSolution.lean	OAI/AlgebraicGeometry/CharacterVarieties/Seams
 ChoicelessPolynomialTime	243	OAI.CPTSeparation.main	OAI/ModelTheory/Choiceless/Separation.lean	OAI/ModelTheory/Choiceless
 CirculantHadamard	179	OAI.CirculantHadamard.exists_iff_order_one_or_four	OAI/LinearAlgebra/CirculantHadamard/Main.lean	OAI/LinearAlgebra/CirculantHadamard
 ClassicalON	215	OAI.ClassicalON.main	OAI/Probability/ClassicalON/Main.lean	OAI/Probability/ClassicalON
@@ -63,6 +65,7 @@ FactorGeneration	296	OAI.Generator.single_generation_of_II1_separable_predual	OA
 FinitisticAsymmetry	198	OAI.LittleFinitistic.extreme_left_right_asymmetry	OAI/Algebra/FinitisticAsymmetry/Main.lean	OAI/Algebra/FinitisticAsymmetry
 ForestSpace	331	OAI.ForestSpace.main_theorem	OAI/Analysis/ForestSpace/Main.lean	OAI/Analysis/ForestSpace
 FoulkesHowe	210	OAI.Problem346.canonical_foulkes_howe_surjective	OAI/RepresentationTheory/FoulkesHowe/Stabilization.lean	OAI/RepresentationTheory/FoulkesHowe
+FourierLLogL	075	OAI.FourierLLogL.paperMain	OAI/Analysis/FourierLLogL/PaperMain.lean	OAI/Analysis/FourierLLogL
 FreeIsing	236	OAI.Problem367.free_ising_factor_iff_threshold	OAI/Probability/FreeIsing/Main.lean	OAI/Probability/FreeIsing
 GaussianMoat	028	OAI.GaussianMoat.fullMain	OAI/NumberTheory/GaussianMoat/Main.lean	OAI/NumberTheory/GaussianMoat
 GaussianPropeller	096	OAI.GaussianPropeller.all_partitions	OAI/Probability/GaussianPropeller/Main.lean	OAI/Probability/GaussianPropeller
@@ -72,10 +75,12 @@ GotsmanLinial	127	OAI.LeanBlast.GotsmanLinial.gotsmanLinialStatement	OAI/Combina
 GrahamSpherical	172	OAI.GrahamSpherical.full_main	OAI/Combinatorics/SphericalRamsey/Main.lean	OAI/Combinatorics/SphericalRamsey
 GrothendieckElementaryExpansion	312	OAI.Grothendieck.elementary_expansion	OAI/CategoryTheory/Globular/ElementaryExpansion.lean	OAI/CategoryTheory/Globular
 GroupRingDeterminant	197	OAI.GroupRingDeterminant.main	OAI/Analysis/GroupDeterminants/Main.lean	OAI/Analysis/GroupDeterminants
+HadwigerCounterexample	157	OAI.HadwigerCounterexample.not_hadwiger_conjecture	OAI/Combinatorics/HadwigerCounterexample/Main.lean	OAI/Combinatorics/HadwigerCounterexample
 HarmonicArtin	254	OAI.HarmonicArtin.salvetti_cover_contractible	OAI/Topology/ArtinGroups/Realizations/SalvettiCoverContractible.lean	OAI/Topology/ArtinGroups/Realizations
 HarmonicGrowth	361	OAI.HarmonicCounterexample.main	OAI/Geometry/HarmonicGrowth/Main.lean	OAI/Geometry/HarmonicGrowth
 HeckeSevenEighths	003	OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_seven_eighths_lt_re	OAI/NumberTheory/DirichletL/Hecke/Nonvanishing.lean	OAI/NumberTheory/DirichletL/Hecke
 HenonEmden	370	OAI.HenonLaneEmden.main_nonexistence	OAI/Analysis/HenonEmden/Main.lean	OAI/Analysis/HenonEmden
+HoneycombBridgeMassSupport	237	OAI.CriticalHoneycomb.finiteBridgeMassEstimate	OAI/Combinatorics/HoneycombChords/BridgeMass.lean	OAI/Combinatorics/HoneycombChords
 HyperbolicCones	095	OAI.Paper256.main_result	OAI/Analysis/HyperbolicCones/Main.lean	OAI/Analysis/HyperbolicCones
 HyperbolicObstruction	257	OAI.HyperbolicObstruction.main	OAI/Geometry/HyperbolicGroups/Main.lean	OAI/Geometry/HyperbolicGroups
 IndependentProducts	331	OAI.IndependentProducts.main_exponential	OAI/Analysis/ProductSpaces/Main.lean	OAI/Analysis/ProductSpaces
@@ -94,6 +99,7 @@ LipschitzEquivalence	324	OAI.LipschitzCounterexample.main	OAI/Analysis/Lipschitz
 LittleFinitistic	198	OAI.LittleFinitistic.Main.exists_counterexample	OAI/Algebra/Finitistic/Main.lean	OAI/Algebra/Finitistic
 LogBrunnMinkowski	091	OAI.LogBrunnMinkowski.main	OAI/Geometry/LogVolume/BrunnMinkowski.lean	OAI/Geometry/LogVolume
 LogConcaveQuery	139	OAI.LogConcaveSampling.exact_source_main	OAI/Probability/LogConcave/Main.lean	OAI/Probability/LogConcave
+LogspaceEquality	103	OAI.ExactDerandomization.exact_logarithmic_space_derandomization	OAI/Computability/Logspace/Equality.lean	OAI/Computability/Logspace
 MahlerConjecture	087	OAI.SymmetricMahler.symmetric_mahler	OAI/Analysis/Mahler/MainTheorem.lean	OAI/Analysis/Mahler
 MarkovType	327	OAI.MarkovSuperreflexivity.hasNontrivialMarkovType_iff_hasEquivalentUCNorm	OAI/Analysis/MarkovType/Main.lean	OAI/Analysis/MarkovType
 MatchingEntropy	113	OAI.MatchingEntropy.entropy_main	OAI/Combinatorics/PerfectMatching/Main.lean	OAI/Combinatorics/PerfectMatching
@@ -108,6 +114,8 @@ MetricEntropyDuality	329	OAI.MetricEntropyDuality.exists_entropy_duality_counter
 MidpointLenses	331	OAI.SegmentLenses.midpoint_lens_main	OAI/Analysis/SegmentLenses/Main.lean	OAI/Analysis/SegmentLenses
 Nagata	039	OAI.Nagata.nagata_conjecture	OAI/AlgebraicGeometry/PlaneCurves/Nagata.lean	OAI/AlgebraicGeometry/PlaneCurves
 OddKaplansky	197	OAI.OddKaplansky.main_theorem	OAI/Algebra/OddKaplansky/Main.lean	OAI/Algebra/OddKaplansky
+OneTapeSpace	137	OAI.Fifths.Single.capped	OAI/Computability/SpaceSimulation/Main.lean	OAI/Computability/SpaceSimulation
+OneTapeSpace	137	OAI.Fifths.Single.unknown	OAI/Computability/SpaceSimulation/Main.lean	OAI/Computability/SpaceSimulation
 OneWayLiveness	129	OAI.OneWayLiveness.main_theorem	OAI/Combinatorics/Automata/Main.lean	OAI/Combinatorics/Automata
 OptimalMaxCut	102	OAI.OptimalMaxCut.main	OAI/Computability/MaxCut/Main.lean	OAI/Computability/MaxCut
 PartitionPrinciple	244	OAI.PartitionPilot.Forcing.TransitiveGround.exists_model_partitionPrinciple_without_choice	OAI/SetTheory/PartitionPrinciple/Models/Separation.lean	OAI/SetTheory/PartitionPrinciple/Models
@@ -152,6 +160,7 @@ SingleLatticeCovering	092	OAI.SingleLatticeCovering.single_lattice_covering	OAI/
 SingletonLoopMatching	113	OAI.LoopMatching.fullEndpoint	OAI/Computability/LoopMatching/Main.lean	OAI/Computability/LoopMatching
 SmoothYau	350	OAI.YauCounterexamples.sphere_three	OAI/Geometry/SmoothYau/SphereMetric/ThreeSphere.lean	OAI/Geometry/SmoothYau/SphereMetric
 SmoothYau	350	OAI.YauCounterexamples.sphere_two_torus_two	OAI/Geometry/SmoothYau/ProductMetric/SphereProduct.lean	OAI/Geometry/SmoothYau/ProductMetric
+StableCoordinateFour	049	OAI.StableCoordinate.principal_package	OAI/AlgebraicGeometry/StableCoordinate/Principal.lean	OAI/AlgebraicGeometry/StableCoordinate
 SteinitzBergstrom	097	OAI.EuclideanSteinitzBergstrom.main	OAI/Analysis/Steinitz/Main.lean	OAI/Analysis/Steinitz
 StrictMeans	072	OAI.StrictInverseFirstPower.main	OAI/Analysis/StrictMeans/Main.lean	OAI/Analysis/StrictMeans
 StrongThinTree	174	OAI.StrongThinTree.strongThinTree	OAI/Combinatorics/ThinTrees/Main.lean	OAI/Combinatorics/ThinTrees
@@ -159,6 +168,7 @@ StructuralCrouzeix	325	OAI.StructuralCrouzeixReference.challenge	OAI/Analysis/St
 SubpolynomialLp	094	OAI.SubpolynomialLp.source_main	OAI/Analysis/LpDimension/Main.lean	OAI/Analysis/LpDimension
 SubsphereCurrent	140	OAI.SubsphereCurrent.full_current_main_scope	OAI/Probability/Subsphere/Main.lean	OAI/Probability/Subsphere
 Superstring	128	OAI.Superstring.main	OAI/Computability/Superstring/Main.lean	OAI/Computability/Superstring
+SurfaceConeCandidateSupport	195	OAI.SmallCM.candidate_ring_properties	OAI/AlgebraicGeometry/SurfaceCones/CandidateRing.lean	OAI/AlgebraicGeometry/SurfaceCones
 SymmetricDomains	058	OAI.Release061.main	OAI/Analysis/SymmetricDomains/Main.lean	OAI/Analysis/SymmetricDomains
 SymmetricMahlerEquality	087	OAI.SymmetricMahler.symmetric_mahler_equality	OAI/Analysis/Mahler/Classification.lean	OAI/Analysis/Mahler
 SymmetricPolar	087	OAI.SymmetricPolar.symmetric_polar_main	OAI/Geometry/PolarProducts/Main.lean	OAI/Geometry/PolarProducts
@@ -172,9 +182,14 @@ ThorpWeightedCompatibility	238	OAI.ThorpCompatibility.weightedCompatibility_main
 TingleySphereIsometry	322	OAI.Tingley.tingley_sphere_isometry_full	OAI/Analysis/SphereIsometry/Extension.lean	OAI/Analysis/SphereIsometry
 TorsionFreeHyperbolic	252	OAI.Release075.main	OAI/GroupTheory/Hyperbolic/Main.lean	OAI/GroupTheory/Hyperbolic
 TorsionFreeZeroDivisors	196	OAI.TorsionFreeZeroDivisors.main	OAI/Algebra/GroupRing/Main.lean	OAI/Algebra/GroupRing
+TraceIdealTransportSupport	301	OAI.TraceConeClassification.TraceConeEquiv.idealOrderIso_finIdeal	OAI/Analysis/TraceCone/IdealTransport.lean	OAI/Analysis/TraceCone
+TraceIdealTransportSupport	301	OAI.TraceConeClassification.TraceConeEquiv.idealOrderIso_zeroIdeal	OAI/Analysis/TraceCone/IdealTransport.lean	OAI/Analysis/TraceCone
+TraceIdealTransportSupport	301	OAI.TraceConeClassification.closed_ideal_weight_exists	OAI/Analysis/TraceCone/FiniteIdeal.lean	OAI/Analysis/TraceCone
 TriangularHilbert	082	OAI.TriangularHilbert.main_estimate	OAI/Analysis/TriangularHilbert/Main.lean	OAI/Analysis/TriangularHilbert
 TwoWayComplementation	129	OAI.TwoWayComplementation.complementation_lower_bound_finite	OAI/Combinatorics/TwoWayAutomata/Main.lean	OAI/Combinatorics/TwoWayAutomata
 TwoWayDeterminization	129	OAI.TwoWayComplementation.explicit_family_main	OAI/Combinatorics/TwoWayAutomata/ExplicitFamily.lean	OAI/Combinatorics/TwoWayAutomata
+UniformFourier	130	OAI.PowerSaving.convolution_main	OAI/Computability/FourierTransform/Main.lean	OAI/Computability/FourierTransform
+UniformFourier	130	OAI.PowerSaving.transform_main	OAI/Computability/FourierTransform/Main.lean	OAI/Computability/FourierTransform
 UniformGamma	291	OAI.ComparatorModel.CurrentMain.main	OAI/Analysis/TracialSplitting/Challenge.lean	OAI/Analysis/TracialSplitting
 UniformSparsestCut	117	OAI.UniformSparsestCut.mainGap	OAI/Combinatorics/SparsestCut/Main.lean	OAI/Combinatorics/SparsestCut
 UniqueGamesTheorem	102	OAI.UniqueGamesTheorem.theorem11	OAI/Computability/UniqueGames/Theorem.lean	OAI/Computability/UniqueGames

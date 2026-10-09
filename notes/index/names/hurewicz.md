@@ -1,10 +1,10 @@
 # Name: hurewicz
 
-20 families · subject name · 1 carried by a title or a declaration · 20 by prose · 0 by bibliography author
+19 families · subject name · 1 carried by a title or a declaration · 19 by prose · 0 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../names.tsv) with `role = citation`.
 
-Prose counts: 111 capitalized occurrences, 97 of them mid-sentence, 4 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
+Prose counts: 107 capitalized occurrences, 93 of them mid-sentence, 4 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
 
 ## Provenance by source
 
@@ -14,14 +14,13 @@ Prose counts: 111 capitalized occurrences, 97 of them mid-sentence, 4 lowercase.
 | `M` — Manuscript title | title | 1 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 1 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 20 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 19 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 0 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
-| [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties-and-products-of-k3-surfaces.md) | The rational Hodge conjecture for CM abelian varieties and products of K3 surfaces | — | — | — | — | yes | — |
 | [057](../algebraic-and-complex-geometry/057-campanas-abelianity-conjecture-and-special-varieties.md) | Campana's abelianity conjecture and special varieties | — | — | — | — | yes | — |
 | [059](../algebraic-and-complex-geometry/059-counterexamples-to-zariskis-multiplicity-conjecture.md) | Counterexamples to Zariski's multiplicity conjecture | — | — | — | — | yes | — |
 | [196](../algebra/196-a-counterexample-to-kaplanskys-zero-divisor-conjecture.md) | A counterexample to Kaplansky's zero-divisor conjecture | — | — | — | — | yes | — |
@@ -53,8 +52,6 @@ Prose counts: 111 capitalized occurrences, 97 of them mid-sentence, 4 lowercase.
 | [`A-finitely-generated-counterexample-to-the-Eilenberg-Ganea-conjecture-September-23-2026`](../../../preprints/A-finitely-generated-counterexample-to-the-Eilenberg-Ganea-conjecture-September-23-2026/) | [249](../group-theory/249-a-finitely-generated-counterexample-to-eilenberg-ganea.md) | prose | [paper.pdf](../../../preprints/A-finitely-generated-counterexample-to-the-Eilenberg-Ganea-conjecture-September-23-2026/paper.pdf) |
 | [`A-hyperbolic-group-with-no-geometric-CAT0-action-September-25-2026`](../../../preprints/A-hyperbolic-group-with-no-geometric-CAT0-action-September-25-2026/) | [257](../group-theory/257-a-hyperbolic-group-with-no-geometric-cat-0-action.md) | prose | [paper.pdf](../../../preprints/A-hyperbolic-group-with-no-geometric-CAT0-action-September-25-2026/paper.pdf) |
 | [`A-universal-group-of-type-F-infinity-September-23-2026`](../../../preprints/A-universal-group-of-type-F-infinity-September-23-2026/) | [250](../group-theory/250-boone-higman-conjecture-and-higher-finiteness.md) | prose | [paper.pdf](../../../preprints/A-universal-group-of-type-F-infinity-September-23-2026/paper.pdf) |
-| [`Algebraicity-of-Kuga-Satake-Correspondences-for-K3-Surfaces-October-3-2026`](../../../preprints/Algebraicity-of-Kuga-Satake-Correspondences-for-K3-Surfaces-October-3-2026/) | [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties-and-products-of-k3-surfaces.md) | prose | [manuscript.pdf](../../../preprints/Algebraicity-of-Kuga-Satake-Correspondences-for-K3-Surfaces-October-3-2026/manuscript.pdf) |
-| [`Algebraicity-of-Weil-classes-on-split-abelian-eightfolds-September-18-2026`](../../../preprints/Algebraicity-of-Weil-classes-on-split-abelian-eightfolds-September-18-2026/) | [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties-and-products-of-k3-surfaces.md) | prose | [paper.pdf](../../../preprints/Algebraicity-of-Weil-classes-on-split-abelian-eightfolds-September-18-2026/paper.pdf) |
 | [`Ambiently-homeomorphic-isolated-hypersurfaces-of-multiplicities-two-and-three-September-24-2026`](../../../preprints/Ambiently-homeomorphic-isolated-hypersurfaces-of-multiplicities-two-and-three-September-24-2026/) | [059](../algebraic-and-complex-geometry/059-counterexamples-to-zariskis-multiplicity-conjecture.md) | prose | [paper.pdf](../../../preprints/Ambiently-homeomorphic-isolated-hypersurfaces-of-multiplicities-two-and-three-September-24-2026/paper.pdf) |
 | [`Commuting-Division-Coefficient-Forms-and-the-Artinian-Eisenbud-Green-Harris-Conjecture-September-23-2026`](../../../preprints/Commuting-Division-Coefficient-Forms-and-the-Artinian-Eisenbud-Green-Harris-Conjecture-September-23-2026/) | [200](../algebra/200-eisenbud-green-harris-and-lex-plus-powers-in-characteristic-zero.md) | prose | [paper.pdf](../../../preprints/Commuting-Division-Coefficient-Forms-and-the-Artinian-Eisenbud-Green-Harris-Conjecture-September-23-2026/paper.pdf) |
 | [`Counterexamples-to-the-Hahn-Wilson-conjecture-at-height-two-September-26-2026`](../../../preprints/Counterexamples-to-the-Hahn-Wilson-conjecture-at-height-two-September-26-2026/) | [319](../topology/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md) | prose | [paper.pdf](../../../preprints/Counterexamples-to-the-Hahn-Wilson-conjecture-at-height-two-September-26-2026/paper.pdf) |

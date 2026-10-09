@@ -3,10 +3,10 @@
 |  |  |
 |---|---|
 | Discipline | [Probability and statistical mechanics](../disciplines/probability-and-statistical-mechanics.md) |
-| Tier | T2 |
-| Manuscripts | 13 (0 formalized at source level) |
+| Tier | T3 |
+| Manuscripts | 13 (1 formalized at source level) |
 | Scope note | [`lean/docs/237.md`](../../../lean/docs/237.md) |
-| Comparator configs | 3 (0 with a `main_results` declaration) |
+| Comparator configs | 4 (1 with a `main_results` declaration) |
 | Reasoning trace | — |
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
@@ -20,7 +20,7 @@
 | Dir | PDF | LaTeX tree | README | Formalized | Main file | Verification |
 |---|---|---|---|---|---|---|
 | [`Cap-selected-amplitudes-and-triangle-chords-for-honeycomb-walks-September-26-2026`](../../../preprints/Cap-selected-amplitudes-and-triangle-chords-for-honeycomb-walks-September-26-2026/) | [main.pdf](../../../preprints/Cap-selected-amplitudes-and-triangle-chords-for-honeycomb-walks-September-26-2026/main.pdf) | [build/](../../../preprints/Cap-selected-amplitudes-and-triangle-chords-for-honeycomb-walks-September-26-2026/build/) | [README.md](../../../preprints/Cap-selected-amplitudes-and-triangle-chords-for-honeycomb-walks-September-26-2026/README.md) | no | [main.tex](../../../preprints/Cap-selected-amplitudes-and-triangle-chords-for-honeycomb-walks-September-26-2026/build/main.tex) | — |
-| [`Critical-honeycomb-chords-with-prescribed-boundary-endpoints-September-26-2026`](../../../preprints/Critical-honeycomb-chords-with-prescribed-boundary-endpoints-September-26-2026/) | [main.pdf](../../../preprints/Critical-honeycomb-chords-with-prescribed-boundary-endpoints-September-26-2026/main.pdf) | [build/](../../../preprints/Critical-honeycomb-chords-with-prescribed-boundary-endpoints-September-26-2026/build/) | [README.md](../../../preprints/Critical-honeycomb-chords-with-prescribed-boundary-endpoints-September-26-2026/README.md) | no | [main.tex](../../../preprints/Critical-honeycomb-chords-with-prescribed-boundary-endpoints-September-26-2026/build/main.tex) | — |
+| [`Critical-honeycomb-chords-with-prescribed-boundary-endpoints-September-26-2026`](../../../preprints/Critical-honeycomb-chords-with-prescribed-boundary-endpoints-September-26-2026/) | [main.pdf](../../../preprints/Critical-honeycomb-chords-with-prescribed-boundary-endpoints-September-26-2026/main.pdf) | [build/](../../../preprints/Critical-honeycomb-chords-with-prescribed-boundary-endpoints-September-26-2026/build/) | [README.md](../../../preprints/Critical-honeycomb-chords-with-prescribed-boundary-endpoints-September-26-2026/README.md) | yes | [main.tex](../../../preprints/Critical-honeycomb-chords-with-prescribed-boundary-endpoints-September-26-2026/build/main.tex) | — |
 | [`Critical-strip-crossing-mass-on-the-honeycomb-lattice-September-26-2026`](../../../preprints/Critical-strip-crossing-mass-on-the-honeycomb-lattice-September-26-2026/) | [main.pdf](../../../preprints/Critical-strip-crossing-mass-on-the-honeycomb-lattice-September-26-2026/main.pdf) | [build/](../../../preprints/Critical-strip-crossing-mass-on-the-honeycomb-lattice-September-26-2026/build/) | [README.md](../../../preprints/Critical-strip-crossing-mass-on-the-honeycomb-lattice-September-26-2026/README.md) | no | [main.tex](../../../preprints/Critical-strip-crossing-mass-on-the-honeycomb-lattice-September-26-2026/build/main.tex) | — |
 | [`Cylinder-amplitudes-and-logarithmic-bridge-length-windows-on-the-honeycomb-lattice-September-26-2026`](../../../preprints/Cylinder-amplitudes-and-logarithmic-bridge-length-windows-on-the-honeycomb-lattice-September-26-2026/) | [main.pdf](../../../preprints/Cylinder-amplitudes-and-logarithmic-bridge-length-windows-on-the-honeycomb-lattice-September-26-2026/main.pdf) | [build/](../../../preprints/Cylinder-amplitudes-and-logarithmic-bridge-length-windows-on-the-honeycomb-lattice-September-26-2026/build/) | [README.md](../../../preprints/Cylinder-amplitudes-and-logarithmic-bridge-length-windows-on-the-honeycomb-lattice-September-26-2026/README.md) | no | [main.tex](../../../preprints/Cylinder-amplitudes-and-logarithmic-bridge-length-windows-on-the-honeycomb-lattice-September-26-2026/build/main.tex) | — |
 | [`Cylinder-loop-weights-and-planar-nesting-September-26-2026`](../../../preprints/Cylinder-loop-weights-and-planar-nesting-September-26-2026/) | [main.pdf](../../../preprints/Cylinder-loop-weights-and-planar-nesting-September-26-2026/main.pdf) | [build/](../../../preprints/Cylinder-loop-weights-and-planar-nesting-September-26-2026/build/) | [README.md](../../../preprints/Cylinder-loop-weights-and-planar-nesting-September-26-2026/README.md) | no | [main.tex](../../../preprints/Cylinder-loop-weights-and-planar-nesting-September-26-2026/build/main.tex) | — |
@@ -35,7 +35,11 @@
 
 ## Lean
 
-No `main_results` declaration reaches this family: its scope note links 3 comparator configs, none of them in `main_results`.
+| Config | Declaration | File | Module dir |
+|---|---|---|---|
+| [HoneycombBridgeMassSupport](../../../lean/ComparatorChallenges/HoneycombBridgeMassSupport.json) | `OAI.CriticalHoneycomb.finiteBridgeMassEstimate` | [BridgeMass.lean](../../../lean/OAI/Combinatorics/HoneycombChords/BridgeMass.lean) | [`OAI/Combinatorics/HoneycombChords`](../../../lean/OAI/Combinatorics/HoneycombChords/) |
+
+The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 
@@ -43,6 +47,7 @@ No `main_results` declaration reaches this family: its scope note links 3 compar
 |---|---|---|---|---|---|---|
 | `CriticalStripMass` | [.json](../../../lean/ComparatorChallenges/CriticalStripMass.json) | [.lean](../../../lean/ComparatorChallenges/CriticalStripMass.lean) | 1 | 0 | no | no |
 | `HoneycombBridgeFiniteness` | [.json](../../../lean/ComparatorChallenges/HoneycombBridgeFiniteness.json) | [.lean](../../../lean/ComparatorChallenges/HoneycombBridgeFiniteness.lean) | 1 | 0 | no | no |
+| `HoneycombBridgeMassSupport` | [.json](../../../lean/ComparatorChallenges/HoneycombBridgeMassSupport.json) | [.lean](../../../lean/ComparatorChallenges/HoneycombBridgeMassSupport.lean) | 1 | 0 | no | yes |
 | `HoneycombFreeEnergy` | [.json](../../../lean/ComparatorChallenges/HoneycombFreeEnergy.json) | [.lean](../../../lean/ComparatorChallenges/HoneycombFreeEnergy.lean) | 1 | 0 | no | no |
 
 ## Verification bundles

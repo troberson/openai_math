@@ -1,8 +1,8 @@
 # Number theory
 
-31 families · 58 manuscripts · 7 formalized at source level · 16 scope notes · 24 comparator configs · 2 reasoning traces · 0 verification bundles
+31 families · 58 manuscripts · 8 formalized at source level · 17 scope notes · 25 comparator configs · 2 reasoning traces · 0 verification bundles
 
-Tier: T3 6 · T2 10 · T1 0 · T0 15
+Tier: T3 7 · T2 10 · T1 0 · T0 14
 
 | Family | Title | Tier | Mss | Form. | Scope | Configs | Trace |
 |---|---|---|---|---|---|---|---|
@@ -32,7 +32,7 @@ Tier: T3 6 · T2 10 · T1 0 · T0 15
 | [024](../number-theory/024-an-asymptotic-formula-for-the-number-of-totients.md) | An asymptotic formula for the number of totients | T2 | 1 | 0 | yes | 2 | — |
 | [025](../number-theory/025-erdoss-short-egyptian-fraction-conjecture.md) | Erd\H{o}s’s short Egyptian-fraction conjecture | T3 | 1 | 1 | yes | 2 | — |
 | [026](../number-theory/026-positive-lower-density-of-large-prime-gaps.md) | Positive lower density of large prime gaps | T2 | 1 | 0 | yes | 1 | — |
-| [027](../number-theory/027-integral-density-on-curve-character-varieties.md) | Integral density on curve character varieties | T0 | 1 | 0 | — | 0 | — |
+| [027](../number-theory/027-integral-density-on-curve-character-varieties.md) | Integral density on curve character varieties | T3 | 1 | 1 | yes | 1 | — |
 | [028](../number-theory/028-gaussian-moat-conjecture.md) | The Gaussian moat conjecture | T3 | 1 | 1 | yes | 1 | — |
 | [029](../number-theory/029-artins-primitive-root-conjecture-infinitude-for-every-base.md) | Artin's primitive root conjecture: infinitude for every base | T0 | 2 | 0 | — | 0 | — |
 | [030](../number-theory/030-modularity-over-imaginary-quadratic-fields.md) | Modularity over imaginary quadratic fields | T0 | 1 | 0 | — | 0 | — |

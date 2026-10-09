@@ -1,14 +1,14 @@
 # Combinatorics
 
-37 families · 50 manuscripts · 19 formalized at source level · 33 scope notes · 51 comparator configs · 1 reasoning traces · 2 verification bundles
+37 families · 50 manuscripts · 20 formalized at source level · 33 scope notes · 52 comparator configs · 1 reasoning traces · 2 verification bundles
 
-Tier: T3 17 · T2 16 · T1 0 · T0 4
+Tier: T3 18 · T2 15 · T1 0 · T0 4
 
 | Family | Title | Tier | Mss | Form. | Scope | Configs | Trace |
 |---|---|---|---|---|---|---|---|
 | [155](../combinatorics/155-a-counterexample-to-periodic-tiling-in-dimension-three.md) | A counterexample to periodic tiling in dimension three | T3 | 1 | 1 | yes | 1 | — |
 | [156](../combinatorics/156-borsuks-conjecture-fails-in-dimension-nine.md) | Borsuk's conjecture fails in dimension nine | T3 | 1 | 1 | yes | 1 | — |
-| [157](../combinatorics/157-counterexamples-to-the-hadwiger-and-colin-de-verdi-ere-conjectures.md) | Counterexamples to the Hadwiger and Colin de Verdi\`ere conjectures | T2 | 3 | 0 | yes | 1 | — |
+| [157](../combinatorics/157-counterexamples-to-the-hadwiger-and-colin-de-verdi-ere-conjectures.md) | Counterexamples to the Hadwiger and Colin de Verdi\`ere conjectures | T3 | 3 | 1 | yes | 2 | — |
 | [158](../combinatorics/158-euclidean-plane-cannot-be-colored-with-five-colors.md) | The Euclidean plane cannot be colored with five colors | T3 | 1 | 1 | yes | 2 | — |
 | [159](../combinatorics/159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemer-bounds.md) | Erd\H{o}s's reciprocal-sum conjecture and quasipolynomial Szemer\'edi bounds | T2 | 1 | 0 | yes | 1 | yes |
 | [160](../combinatorics/160-superexponential-van-der-waerden-numbers.md) | Superexponential van der Waerden numbers | T3 | 1 | 1 | yes | 1 | — |

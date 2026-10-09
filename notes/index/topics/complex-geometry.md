@@ -1,6 +1,6 @@
 # Topic: complex-geometry
 
-20 families · pattern `hler|calabi-yau|compact complex|\boka\b|\bsyz\b|kodaira|canonical-ampleness|uniformization|complex surface` · hits by layer: title 7 · abstract 19 · scope 4 · path 3
+21 families · pattern `hler|calabi-yau|compact complex|\boka\b|\bsyz\b|kodaira|canonical-ampleness|uniformization|complex surface` · hits by layer: title 7 · abstract 19 · scope 5 · path 3
 
 A family is listed when the pattern hits its title, its abstract, its scope note, or the Lean file paths reached from its comparator configs. The match is a keyword floor, not a judgement: read the family page before treating a listing as a claim about what the result is about.
 
@@ -21,6 +21,7 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | [060](../algebraic-and-complex-geometry/060-global-spherical-shell-conjecture.md) | The Global Spherical Shell conjecture | — | yes | — | — |
 | [062](../algebraic-and-complex-geometry/062-lebrun-salamon-conjecture-and-projective-contact-classification.md) | The LeBrun--Salamon conjecture and projective contact classification | — | yes | — | — |
 | [087](../convex-and-metric-geometry/087-mahler-conjectures-and-symplectic-width.md) | The Mahler conjectures and symplectic width | yes | yes | yes | yes |
+| [130](../theoretical-computer-science/130-fourier-transforms-below-n-n.md) | Fourier transforms below $n\log n$ | — | — | yes | — |
 | [338](../differential-geometry/338-yaus-uniformization-conjecture.md) | Yau's uniformization conjecture | yes | yes | — | — |
 | [341](../differential-geometry/341-donaldsons-hypersymplectic-deformation-conjecture.md) | Donaldson's hypersymplectic deformation conjecture | — | yes | — | — |
 | [347](../differential-geometry/347-counterexamples-to-strong-forms-of-arnolds-fixed-point-conjecture.md) | Counterexamples to strong forms of Arnold's fixed-point conjecture | — | yes | — | — |

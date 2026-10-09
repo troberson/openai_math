@@ -1,8 +1,8 @@
 # Real and complex analysis
 
-16 families · 26 manuscripts · 7 formalized at source level · 9 scope notes · 14 comparator configs · 0 reasoning traces · 0 verification bundles
+16 families · 26 manuscripts · 8 formalized at source level · 10 scope notes · 15 comparator configs · 0 reasoning traces · 0 verification bundles
 
-Tier: T3 6 · T2 3 · T1 0 · T0 7
+Tier: T3 7 · T2 3 · T1 0 · T0 6
 
 | Family | Title | Tier | Mss | Form. | Scope | Configs | Trace |
 |---|---|---|---|---|---|---|---|
@@ -10,7 +10,7 @@ Tier: T3 6 · T2 3 · T1 0 · T0 7
 | [072](../real-and-complex-analysis/072-brennans-conjecture-and-a-counterexample-to-kraetzers-prediction.md) | Brennan's conjecture and a counterexample to Kraetzer's prediction | T3 | 2 | 2 | yes | 3 | — |
 | [073](../real-and-complex-analysis/073-falconer-distance-conjecture.md) | The Falconer distance conjecture | T3 | 1 | 1 | yes | 2 | — |
 | [074](../real-and-complex-analysis/074-kakeya-in-three-and-four-dimensions.md) | Kakeya in three and four dimensions | T0 | 2 | 0 | — | 0 | — |
-| [075](../real-and-complex-analysis/075-l-l-fourier-convergence-conjecture.md) | The $L\log L$ Fourier-convergence conjecture | T0 | 1 | 0 | — | 0 | — |
+| [075](../real-and-complex-analysis/075-l-l-fourier-convergence-conjecture.md) | The $L\log L$ Fourier-convergence conjecture | T3 | 1 | 1 | yes | 1 | — |
 | [076](../real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md) | Ultraflat real Littlewood polynomials | T3 | 3 | 1 | yes | 2 | — |
 | [077](../real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md) | Fourier restriction for positively curved surfaces | T0 | 2 | 0 | — | 0 | — |
 | [078](../real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md) | The three-dimensional Bochner--Riesz conjecture | T0 | 1 | 0 | — | 0 | — |

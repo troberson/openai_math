@@ -3,10 +3,10 @@
 |  |  |
 |---|---|
 | Discipline | [Combinatorics](../disciplines/combinatorics.md) |
-| Tier | T2 |
-| Manuscripts | 3 (0 formalized at source level) |
+| Tier | T3 |
+| Manuscripts | 3 (1 formalized at source level) |
 | Scope note | [`lean/docs/157.md`](../../../lean/docs/157.md) |
-| Comparator configs | 1 (0 with a `main_results` declaration) |
+| Comparator configs | 2 (1 with a `main_results` declaration) |
 | Reasoning trace | — |
 | Verification bundles | 0 |
 | Cited by / cites | 4 in · 4 out |
@@ -19,18 +19,23 @@
 
 | Dir | PDF | LaTeX tree | README | Formalized | Main file | Verification |
 |---|---|---|---|---|---|---|
-| [`A-counterexample-to-Hadwigers-conjecture-September-23-2026`](../../../preprints/A-counterexample-to-Hadwigers-conjecture-September-23-2026/) | [paper.pdf](../../../preprints/A-counterexample-to-Hadwigers-conjecture-September-23-2026/paper.pdf) | [build/](../../../preprints/A-counterexample-to-Hadwigers-conjecture-September-23-2026/build/) | [README.md](../../../preprints/A-counterexample-to-Hadwigers-conjecture-September-23-2026/README.md) | no | [main.tex](../../../preprints/A-counterexample-to-Hadwigers-conjecture-September-23-2026/build/main.tex) | — |
+| [`A-counterexample-to-Hadwigers-conjecture-September-23-2026`](../../../preprints/A-counterexample-to-Hadwigers-conjecture-September-23-2026/) | [paper.pdf](../../../preprints/A-counterexample-to-Hadwigers-conjecture-September-23-2026/paper.pdf) | [build/](../../../preprints/A-counterexample-to-Hadwigers-conjecture-September-23-2026/build/) | [README.md](../../../preprints/A-counterexample-to-Hadwigers-conjecture-September-23-2026/README.md) | yes | [main.tex](../../../preprints/A-counterexample-to-Hadwigers-conjecture-September-23-2026/build/main.tex) | — |
 | [`A-counterexample-to-the-Colin-de-Verdiere-chromatic-conjecture-September-23-2026`](../../../preprints/A-counterexample-to-the-Colin-de-Verdiere-chromatic-conjecture-September-23-2026/) | [paper.pdf](../../../preprints/A-counterexample-to-the-Colin-de-Verdiere-chromatic-conjecture-September-23-2026/paper.pdf) | [build/](../../../preprints/A-counterexample-to-the-Colin-de-Verdiere-chromatic-conjecture-September-23-2026/build/) | [README.md](../../../preprints/A-counterexample-to-the-Colin-de-Verdiere-chromatic-conjecture-September-23-2026/README.md) | no | [main.tex](../../../preprints/A-counterexample-to-the-Colin-de-Verdiere-chromatic-conjecture-September-23-2026/build/main.tex) | — |
 | [`A-linear-list-coloring-bound-in-terms-of-the-Hadwiger-number-September-23-2026`](../../../preprints/A-linear-list-coloring-bound-in-terms-of-the-Hadwiger-number-September-23-2026/) | [paper.pdf](../../../preprints/A-linear-list-coloring-bound-in-terms-of-the-Hadwiger-number-September-23-2026/paper.pdf) | [build/](../../../preprints/A-linear-list-coloring-bound-in-terms-of-the-Hadwiger-number-September-23-2026/build/) | [README.md](../../../preprints/A-linear-list-coloring-bound-in-terms-of-the-Hadwiger-number-September-23-2026/README.md) | no | [main.tex](../../../preprints/A-linear-list-coloring-bound-in-terms-of-the-Hadwiger-number-September-23-2026/build/main.tex) | — |
 
 ## Lean
 
-No `main_results` declaration reaches this family: its scope note links 1 comparator config, none of them in `main_results`.
+| Config | Declaration | File | Module dir |
+|---|---|---|---|
+| [HadwigerCounterexample](../../../lean/ComparatorChallenges/HadwigerCounterexample.json) | `OAI.HadwigerCounterexample.not_hadwiger_conjecture` | [Main.lean](../../../lean/OAI/Combinatorics/HadwigerCounterexample/Main.lean) | [`OAI/Combinatorics/HadwigerCounterexample`](../../../lean/OAI/Combinatorics/HadwigerCounterexample/) |
+
+The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 
 | Config | Statement | Solution | Theorems | Definitions | nanoda | In `main_results` |
 |---|---|---|---|---|---|---|
+| `HadwigerCounterexample` | [.json](../../../lean/ComparatorChallenges/HadwigerCounterexample.json) | [.lean](../../../lean/ComparatorChallenges/HadwigerCounterexample.lean) | 2 | 0 | no | yes |
 | `ListHadwiger` | [.json](../../../lean/ComparatorChallenges/ListHadwiger.json) | [.lean](../../../lean/ComparatorChallenges/ListHadwiger.lean) | 1 | 0 | no | no |
 
 ## Verification bundles

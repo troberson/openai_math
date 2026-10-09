@@ -4,7 +4,7 @@
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../names.tsv) with `role = citation`.
 
-Prose counts: 162 capitalized occurrences, 150 of them mid-sentence, 13 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
+Prose counts: 165 capitalized occurrences, 153 of them mid-sentence, 13 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
 
 ## Provenance by source
 
@@ -60,7 +60,8 @@ Prose counts: 162 capitalized occurrences, 150 of them mid-sentence, 13 lowercas
 | [`Thermal-FK-Ising-interfaces-and-massive-SLE-October-5-2026`](../../../preprints/Thermal-FK-Ising-interfaces-and-massive-SLE-October-5-2026/) | [223](../probability-and-statistical-mechanics/223-conformal-limits-of-square-lattice-random-cluster-interfaces.md) | prose | [paper.pdf](../../../preprints/Thermal-FK-Ising-interfaces-and-massive-SLE-October-5-2026/paper.pdf) |
 | [`Uniform-Bi-Holder-Transport-from-Weak-MTW-September-25-2026`](../../../preprints/Uniform-Bi-Holder-Transport-from-Weak-MTW-September-25-2026/) | [360](../differential-geometry/360-villanis-convexity-conjecture-and-regular-optimal-transport.md) | prose | [paper.pdf](../../../preprints/Uniform-Bi-Holder-Transport-from-Weak-MTW-September-25-2026/paper.pdf) |
 | [`Uniform-marked-polygon-estimates-and-sharp-finite-bridge-moments-September-26-2026`](../../../preprints/Uniform-marked-polygon-estimates-and-sharp-finite-bridge-moments-September-26-2026/) | [237](../probability-and-statistical-mechanics/237-three-quarter-diameter-exponent-for-honeycomb-walks.md) | prose | [main.pdf](../../../preprints/Uniform-marked-polygon-estimates-and-sharp-finite-bridge-moments-September-26-2026/main.pdf) |
-| [`Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-September-25-2026`](../../../preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-September-25-2026/) | [232](../probability-and-statistical-mechanics/232-gaussian-fields-and-sle-interfaces-for-lipschitz-heights.md) | prose | [paper.pdf](../../../preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-September-25-2026/paper.pdf) |
+| [`Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026`](../../../preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026/) | [232](../probability-and-statistical-mechanics/232-gaussian-fields-and-sle-interfaces-for-lipschitz-heights.md) | prose | [paper.pdf](../../../preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026/paper.pdf) |
+| [`Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-September-25-2026`](../../../preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-September-25-2026/) | — | prose | — |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.
 

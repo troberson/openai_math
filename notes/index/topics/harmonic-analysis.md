@@ -1,13 +1,13 @@
 # Topic: harmonic-analysis
 
-17 families · pattern `fourier transform|fourier restriction|fourier coefficien|fourier convergen|fourier-convergence|calder[oö]n|singular integral|restriction for|hardy space|oscillatory integral|kakeya|bochner--riesz|local smoothing|littlewood polynomial|maximal function|hilbert transform|riesz transform|carleson|sogge|decoupling|square function|sparsest|l\+log l|convergence problem` · hits by layer: title 13 · abstract 13 · scope 10 · path 1
+17 families · pattern `fourier transform|fourier restriction|fourier coefficien|fourier convergen|fourier-convergence|calder[oö]n|singular integral|restriction for|hardy space|oscillatory integral|kakeya|bochner--riesz|local smoothing|littlewood polynomial|maximal function|hilbert transform|riesz transform|carleson|sogge|decoupling|square function|sparsest|l\+log l|convergence problem` · hits by layer: title 13 · abstract 13 · scope 11 · path 1
 
 A family is listed when the pattern hits its title, its abstract, its scope note, or the Lean file paths reached from its comparator configs. The match is a keyword floor, not a judgement: read the family page before treating a listing as a claim about what the result is about.
 
 | Family | Title | T | A | S | P |
 |---|---|---|---|---|---|
 | [074](../real-and-complex-analysis/074-kakeya-in-three-and-four-dimensions.md) | Kakeya in three and four dimensions | yes | yes | — | — |
-| [075](../real-and-complex-analysis/075-l-l-fourier-convergence-conjecture.md) | The $L\log L$ Fourier-convergence conjecture | yes | — | — | — |
+| [075](../real-and-complex-analysis/075-l-l-fourier-convergence-conjecture.md) | The $L\log L$ Fourier-convergence conjecture | yes | — | yes | — |
 | [076](../real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md) | Ultraflat real Littlewood polynomials | yes | yes | yes | — |
 | [077](../real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md) | Fourier restriction for positively curved surfaces | yes | — | — | — |
 | [078](../real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md) | The three-dimensional Bochner--Riesz conjecture | yes | yes | — | — |

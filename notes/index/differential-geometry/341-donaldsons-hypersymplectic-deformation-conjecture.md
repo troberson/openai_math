@@ -9,7 +9,7 @@
 | Comparator configs | 0 (0 with a `main_results` declaration) |
 | Reasoning trace | — |
 | Verification bundles | 0 |
-| Cited by / cites | 1 in · 1 out |
+| Cited by / cites | 1 in · 0 out |
 | Claim shapes | — |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [manifolds](../topics/manifolds.md) · [riemannian-geometry](../topics/riemannian-geometry.md) · [complex-geometry](../topics/complex-geometry.md) · [symplectic-geometry](../topics/symplectic-geometry.md) |
 | Companion families | — |
@@ -19,7 +19,7 @@
 
 | Dir | PDF | LaTeX tree | README | Formalized | Main file | Verification |
 |---|---|---|---|---|---|---|
-| [`Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-September-23-2026`](../../../preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-September-23-2026/) | [paper.pdf](../../../preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-September-23-2026/paper.pdf) | [build/](../../../preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-September-23-2026/build/) | [README.md](../../../preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-September-23-2026/README.md) | no | [main.tex](../../../preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-September-23-2026/build/main.tex) | — |
+| [`Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026`](../../../preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026/) | [paper.pdf](../../../preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026/paper.pdf) | [build/](../../../preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026/build/) | [README.md](../../../preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026/README.md) | no | [main.tex](../../../preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026/build/main.tex) | — |
 
 ## Lean
 

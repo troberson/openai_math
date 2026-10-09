@@ -1,10 +1,10 @@
 # Name: bianchi
 
-8 families · subject name · 1 carried by a title or a declaration · 8 by prose · 1 by bibliography author
+7 families · subject name · 1 carried by a title or a declaration · 7 by prose · 1 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../names.tsv) with `role = citation`.
 
-Prose counts: 65 capitalized occurrences, 48 of them mid-sentence, 9 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
+Prose counts: 64 capitalized occurrences, 47 of them mid-sentence, 9 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
 
 ## Provenance by source
 
@@ -14,7 +14,7 @@ Prose counts: 65 capitalized occurrences, 48 of them mid-sentence, 9 lowercase. 
 | `M` — Manuscript title | title | 0 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 1 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 8 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 7 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 1 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -22,7 +22,6 @@ Prose counts: 65 capitalized occurrences, 48 of them mid-sentence, 9 lowercase. 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
 | [030](../number-theory/030-modularity-over-imaginary-quadratic-fields.md) | Modularity over imaginary quadratic fields | — | — | — | — | yes | yes |
-| [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties-and-products-of-k3-surfaces.md) | The rational Hodge conjecture for CM abelian varieties and products of K3 surfaces | — | — | — | — | yes | — |
 | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | Spacetime Penrose inequalities and rigidity | — | — | — | — | yes | — |
 | [264](../mathematical-physics/264-strong-cosmic-censorship-near-two-ended-kerr-data.md) | Strong cosmic censorship near two-ended Kerr data | — | — | — | — | yes | — |
 | [305](../topology/305-counterexamples-to-disk-embedding-and-walls-manifold-conjecture.md) | Counterexamples to disk embedding and Wall's manifold conjecture | — | — | — | — | yes | — |
@@ -38,7 +37,6 @@ Prose counts: 65 capitalized occurrences, 48 of them mid-sentence, 9 lowercase. 
 | [`A-boundary-only-obstruction-to-four-dimensional-disk-embedding-September-24-2026`](../../../preprints/A-boundary-only-obstruction-to-four-dimensional-disk-embedding-September-24-2026/) | [305](../topology/305-counterexamples-to-disk-embedding-and-walls-manifold-conjecture.md) | prose | [paper.pdf](../../../preprints/A-boundary-only-obstruction-to-four-dimensional-disk-embedding-September-24-2026/paper.pdf) |
 | [`A-local-Penrose-inequality-for-conformal-perturbations-of-Schwarzschild-anti-de-Sitter-data-October-5-2026`](../../../preprints/A-local-Penrose-inequality-for-conformal-perturbations-of-Schwarzschild-anti-de-Sitter-data-October-5-2026/) | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | prose | [paper.pdf](../../../preprints/A-local-Penrose-inequality-for-conformal-perturbations-of-Schwarzschild-anti-de-Sitter-data-October-5-2026/paper.pdf) |
 | [`A-marked-tensor-obstruction-to-four-dimensional-disk-embedding-September-24-2026`](../../../preprints/A-marked-tensor-obstruction-to-four-dimensional-disk-embedding-September-24-2026/) | [305](../topology/305-counterexamples-to-disk-embedding-and-walls-manifold-conjecture.md) | prose | [paper.pdf](../../../preprints/A-marked-tensor-obstruction-to-four-dimensional-disk-embedding-September-24-2026/paper.pdf) |
-| [`Algebraicity-of-Weil-classes-on-split-abelian-eightfolds-September-18-2026`](../../../preprints/Algebraicity-of-Weil-classes-on-split-abelian-eightfolds-September-18-2026/) | [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties-and-products-of-k3-surfaces.md) | prose | [paper.pdf](../../../preprints/Algebraicity-of-Weil-classes-on-split-abelian-eightfolds-September-18-2026/paper.pdf) |
 | [`An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026`](../../../preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/) | [348](../differential-geometry/348-nonnegatively-curved-einstein-four-manifolds-and-a-topological-gap.md) | prose | [einstein-gap.pdf](../../../preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/einstein-gap.pdf) |
 | [`Bounded-scalar-curvature-and-smooth-extension-of-four-dimensional-Ricci-flow-September-24-2026`](../../../preprints/Bounded-scalar-curvature-and-smooth-extension-of-four-dimensional-Ricci-flow-September-24-2026/) | [351](../differential-geometry/351-scalar-curvature-detects-four-dimensional-ricci-flow-singularities.md) | prose | [paper.pdf](../../../preprints/Bounded-scalar-curvature-and-smooth-extension-of-four-dimensional-Ricci-flow-September-24-2026/paper.pdf) |
 | [`Equality-and-rigidity-in-the-spacetime-Penrose-inequality-September-27-2026`](../../../preprints/Equality-and-rigidity-in-the-spacetime-Penrose-inequality-September-27-2026/) | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | prose | [paper.pdf](../../../preprints/Equality-and-rigidity-in-the-spacetime-Penrose-inequality-September-27-2026/paper.pdf) |

@@ -4,7 +4,7 @@
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../names.tsv) with `role = citation`.
 
-Prose counts: 4 capitalized occurrences, 3 of them mid-sentence, 0 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
+Prose counts: 5 capitalized occurrences, 4 of them mid-sentence, 0 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
 
 ## Provenance by source
 
@@ -30,7 +30,8 @@ Prose counts: 4 capitalized occurrences, 3 of them mid-sentence, 0 lowercase. Th
 |---|---|---|---|
 | [`A-rational-obstruction-to-strong-chromatic-splitting-at-height-three-September-25-2026`](../../../preprints/A-rational-obstruction-to-strong-chromatic-splitting-at-height-three-September-25-2026/) | [318](../topology/318-chromatic-splitting-counterexamples-and-filtrations.md) | prose | [paper.pdf](../../../preprints/A-rational-obstruction-to-strong-chromatic-splitting-at-height-three-September-25-2026/paper.pdf) |
 | [`Filtered-chromatic-splitting-at-generic-primes-September-25-2026`](../../../preprints/Filtered-chromatic-splitting-at-generic-primes-September-25-2026/) | [318](../topology/318-chromatic-splitting-counterexamples-and-filtrations.md) | prose | [paper.pdf](../../../preprints/Filtered-chromatic-splitting-at-generic-primes-September-25-2026/paper.pdf) |
-| [`Fontaine-Mazur-modularity-at-the-prime-2-September-23-2026`](../../../preprints/Fontaine-Mazur-modularity-at-the-prime-2-September-23-2026/) | [010](../number-theory/010-fontaine-mazur-modularity-at-the-prime-2-and-2-adic-pro-modularity.md) | prose | [paper.pdf](../../../preprints/Fontaine-Mazur-modularity-at-the-prime-2-September-23-2026/paper.pdf) |
+| [`Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026`](../../../preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/) | [010](../number-theory/010-fontaine-mazur-modularity-at-the-prime-2-and-2-adic-pro-modularity.md) | prose | [paper.pdf](../../../preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/paper.pdf) |
+| [`Fontaine-Mazur-modularity-at-the-prime-2-September-23-2026`](../../../preprints/Fontaine-Mazur-modularity-at-the-prime-2-September-23-2026/) | — | prose | — |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.
 

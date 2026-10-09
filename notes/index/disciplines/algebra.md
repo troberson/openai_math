@@ -1,14 +1,14 @@
 # Algebra
 
-18 families · 29 manuscripts · 10 formalized at source level · 9 scope notes · 16 comparator configs · 1 reasoning traces · 2 verification bundles
+18 families · 29 manuscripts · 11 formalized at source level · 10 scope notes · 17 comparator configs · 1 reasoning traces · 2 verification bundles
 
-Tier: T3 7 · T2 2 · T1 0 · T0 9
+Tier: T3 8 · T2 2 · T1 0 · T0 8
 
 | Family | Title | Tier | Mss | Form. | Scope | Configs | Trace |
 |---|---|---|---|---|---|---|---|
 | [193](../algebra/193-serres-intersection-multiplicity-conjecture.md) | Serre's intersection-multiplicity conjecture | T0 | 1 | 0 | — | 0 | — |
 | [194](../algebra/194-lechs-multiplicity-conjecture.md) | Lech's multiplicity conjecture | T2 | 1 | 0 | yes | 1 | — |
-| [195](../algebra/195-a-counterexample-to-the-small-cohen-macaulay-module-conjecture.md) | A counterexample to the small Cohen--Macaulay module conjecture | T0 | 1 | 0 | — | 0 | — |
+| [195](../algebra/195-a-counterexample-to-the-small-cohen-macaulay-module-conjecture.md) | A counterexample to the small Cohen--Macaulay module conjecture | T3 | 1 | 1 | yes | 1 | — |
 | [196](../algebra/196-a-counterexample-to-kaplanskys-zero-divisor-conjecture.md) | A counterexample to Kaplansky's zero-divisor conjecture | T3 | 1 | 1 | yes | 1 | — |
 | [197](../algebra/197-nonsofic-groups-and-group-ring-counterexamples.md) | Nonsofic groups and group-ring counterexamples | T3 | 4 | 3 | yes | 4 | yes |
 | [198](../algebra/198-a-counterexample-to-the-little-finitistic-dimension-conjecture.md) | A counterexample to the little finitistic-dimension conjecture | T3 | 1 | 1 | yes | 2 | — |

@@ -1,11 +1,12 @@
 # Topic: measure-theory
 
-16 families · pattern `measure theor|\bmeasurable|radon measure|borel|self-similar measures|measure-preserving` · hits by layer: title 2 · abstract 10 · scope 9 · path 0
+17 families · pattern `measure theor|\bmeasurable|radon measure|borel|self-similar measures|measure-preserving` · hits by layer: title 2 · abstract 10 · scope 10 · path 0
 
 A family is listed when the pattern hits its title, its abstract, its scope note, or the Lean file paths reached from its comparator configs. The match is a keyword floor, not a judgement: read the family page before treating a listing as a claim about what the result is about.
 
 | Family | Title | T | A | S | P |
 |---|---|---|---|---|---|
+| [075](../real-and-complex-analysis/075-l-l-fourier-convergence-conjecture.md) | The $L\log L$ Fourier-convergence conjecture | — | — | yes | — |
 | [081](../real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md) | The David--Semmes Riesz-transform problem in higher codimension | — | yes | — | — |
 | [091](../convex-and-metric-geometry/091-logarithmic-brunn-minkowski-conjecture.md) | The logarithmic Brunn--Minkowski conjecture | — | yes | — | — |
 | [096](../convex-and-metric-geometry/096-gaussian-propeller-conjecture.md) | The Gaussian propeller conjecture | — | yes | — | — |

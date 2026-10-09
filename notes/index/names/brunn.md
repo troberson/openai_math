@@ -4,7 +4,7 @@
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../names.tsv) with `role = citation`.
 
-Prose counts: 26 capitalized occurrences, 20 of them mid-sentence, 0 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
+Prose counts: 29 capitalized occurrences, 23 of them mid-sentence, 0 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
 
 ## Provenance by source
 
@@ -37,7 +37,8 @@ Prose counts: 26 capitalized occurrences, 20 of them mid-sentence, 0 lowercase. 
 | [`Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026`](../../../preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/) | [088](../convex-and-metric-geometry/088-pettys-projection-volume-conjecture-and-simplex-counterexamples.md) | prose | [paper.pdf](../../../preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/paper.pdf) |
 | [`Stretched-exponential-barriers-for-typical-SK-initial-states-September-24-2026`](../../../preprints/Stretched-exponential-barriers-for-typical-SK-initial-states-September-24-2026/) | [227](../probability-and-statistical-mechanics/227-dynamical-phase-transition-in-the-sherrington-kirkpatrick-model.md) | prose | [paper.pdf](../../../preprints/Stretched-exponential-barriers-for-typical-SK-initial-states-September-24-2026/paper.pdf) |
 | [`The-logarithmic-Brunn-Minkowski-conjecture-September-23-2026`](../../../preprints/The-logarithmic-Brunn-Minkowski-conjecture-September-23-2026/) | [091](../convex-and-metric-geometry/091-logarithmic-brunn-minkowski-conjecture.md) | prose + title | [paper.pdf](../../../preprints/The-logarithmic-Brunn-Minkowski-conjecture-September-23-2026/paper.pdf) |
-| [`Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-September-25-2026`](../../../preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-September-25-2026/) | [232](../probability-and-statistical-mechanics/232-gaussian-fields-and-sle-interfaces-for-lipschitz-heights.md) | prose | [paper.pdf](../../../preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-September-25-2026/paper.pdf) |
+| [`Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026`](../../../preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026/) | [232](../probability-and-statistical-mechanics/232-gaussian-fields-and-sle-interfaces-for-lipschitz-heights.md) | prose | [paper.pdf](../../../preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026/paper.pdf) |
+| [`Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-September-25-2026`](../../../preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-September-25-2026/) | — | prose | — |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.
 

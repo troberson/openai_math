@@ -9,19 +9,23 @@ fam	config	declaration	file
 025	EgyptianFractions	OAI.Problem337.counting_double_log_order	OAI/NumberTheory/EgyptianFractions/Main.lean
 025	EgyptianFractions	OAI.Problem337.main_double_log_order	OAI/NumberTheory/EgyptianFractions/Main.lean
 025	EgyptianFractions	OAI.Problem337.prescribed_denominator_corollary	OAI/NumberTheory/EgyptianFractions/Main.lean
+027	CharacterVarietiesAllSeamsSupport	OAI.IntegralCharacterVarieties.SurfacePresentation.Diagram.producedMarkedValues_allSeams	OAI/AlgebraicGeometry/CharacterVarieties/Seams/ProducedSolution.lean
 028	GaussianMoat	OAI.GaussianMoat.fullMain	OAI/NumberTheory/GaussianMoat/Main.lean
 039	MaximalSeshadriConstants	OAI.MaximalSeshadri.Geometry.maximalSeshadriConstants	OAI/AlgebraicGeometry/Seshadri/Main.lean
 039	Nagata	OAI.Nagata.nagata_conjecture	OAI/AlgebraicGeometry/PlaneCurves/Nagata.lean
 047	ComplexCancellation	OAI.ComplexCancellation.main	OAI/Algebra/AffineCancellation/Main.lean
 049	AbhyankarSathaye	OAI.AbhyankarSathaye.exists_noncoordinate_polynomial	OAI/AlgebraicGeometry/AbhyankarSathaye/Counterexample.lean
 049	CommutingDerivations	OAI.AbhyankarSathaye.CommutingDerivations.commuting_derivations_with_ordinary_extras	OAI/AlgebraicGeometry/CommutingDerivations/OrdinaryExtraMain.lean
+049	StableCoordinateFour	OAI.StableCoordinate.principal_package	OAI/AlgebraicGeometry/StableCoordinate/Principal.lean
 050	QuadricBundles	OAI.QuadricCounterexample.main_theorem	OAI/Geometry/QuadricBundles/Main.lean
 052	KahlerSplitting	OAI.UniversalCoverSplitting.main	OAI/Geometry/KahlerSplitting/Main.lean
 058	SymmetricDomains	OAI.Release061.main	OAI/Analysis/SymmetricDomains/Main.lean
+066	CartierChartCompactnessSupport	OAI.CartierSections.isCompact_closedChartFieldRetraction_cone	OAI/AlgebraicGeometry/CartierSections/ChartCompactness.lean
 072	Brennan	OAI.Brennan.main_theorem	OAI/Analysis/IntegralMeans/Main.lean
 072	BrennanSharp	OAI.Brennan.Sharp.sharp_endpoints	OAI/Analysis/IntegralMeans/SharpEndpoints.lean
 072	StrictMeans	OAI.StrictInverseFirstPower.main	OAI/Analysis/StrictMeans/Main.lean
 073	PlanarFalconer	OAI.PlanarFalconer.mainTarget_proved	OAI/MeasureTheory/Falconer/Main.lean
+075	FourierLLogL	OAI.FourierLLogL.paperMain	OAI/Analysis/FourierLLogL/PaperMain.lean
 076	AsymptoticallyMinimalLittlewood	OAI.AsymptoticallyMinimalLittlewood.main	OAI/Analysis/Littlewood/Main.lean
 081	RieszQuantitative	OAI.RieszRectifiability.quantitative_higher_codimension_riesz_rectifiability	OAI/Analysis/RieszRectifiability/Uniformity/Rectifiability.lean
 082	TriangularHilbert	OAI.TriangularHilbert.main_estimate	OAI/Analysis/TriangularHilbert/Main.lean
@@ -45,6 +49,7 @@ fam	config	declaration	file
 102	OptimalMaxCut	OAI.OptimalMaxCut.main	OAI/Computability/MaxCut/Main.lean
 102	UniqueGamesTheorem	OAI.UniqueGamesTheorem.theorem11	OAI/Computability/UniqueGames/Theorem.lean
 102	VertexCover	OAI.VertexCover.every_fixed_factor_below_two	OAI/Computability/VertexCover/Main.lean
+103	LogspaceEquality	OAI.ExactDerandomization.exact_logarithmic_space_derandomization	OAI/Computability/Logspace/Equality.lean
 104	RandomizedMeanPayoff	OAI.randomized_quasipolynomial_mean_payoff	OAI/Computability/RandomMean/Main.lean
 105	PerfectCompleteness	OAI.PerfectCompleteness.Theorem11.exists_reduction	OAI/Computability/PerfectCompleteness/Theorem11.lean
 106	IndependentSets	OAI.LargeIndependentSets.mainTheoremReal	OAI/Combinatorics/IndependentSets/Main.lean
@@ -68,7 +73,11 @@ fam	config	declaration	file
 129	TwoWayComplementation	OAI.TwoWayComplementation.complementation_lower_bound_finite	OAI/Combinatorics/TwoWayAutomata/Main.lean
 129	TwoWayDeterminization	OAI.TwoWayComplementation.explicit_family_main	OAI/Combinatorics/TwoWayAutomata/ExplicitFamily.lean
 130	ExactFourier	OAI.ExactFourier.main_theorem	OAI/Computability/FourierCircuit/Main.lean
+130	UniformFourier	OAI.PowerSaving.convolution_main	OAI/Computability/FourierTransform/Main.lean
+130	UniformFourier	OAI.PowerSaving.transform_main	OAI/Computability/FourierTransform/Main.lean
 132	SensitivitySeparation	OAI.Paper320.quantitative_separation	OAI/Combinatorics/Sensitivity/Separation.lean
+137	OneTapeSpace	OAI.Fifths.Single.capped	OAI/Computability/SpaceSimulation/Main.lean
+137	OneTapeSpace	OAI.Fifths.Single.unknown	OAI/Computability/SpaceSimulation/Main.lean
 139	LogConcaveQuery	OAI.LogConcaveSampling.exact_source_main	OAI/Probability/LogConcave/Main.lean
 140	GaussianReplacement	OAI.CurrentProjection.fiberBlockMain	OAI/Probability/GaussianReplacement/FiberBlock.lean
 140	GaussianReplacement	OAI.CurrentProjection.hybridBlockMain	OAI/Probability/GaussianReplacement/Hybrid.lean
@@ -80,6 +89,7 @@ fam	config	declaration	file
 148	SelfSimilar	OAI.EntropyRateDimension.entropy_rate_dimension	OAI/MeasureTheory/SelfSimilar/Main.lean
 155	PeriodicTilingThree	OAI.PeriodicTilingThree.periodic_tiling_counterexample_and_minimality	OAI/Geometry/PeriodicTiling/Counterexample.lean
 156	BorsukNine	OAI.BorsukNine.main_theorem	OAI/Geometry/Borsuk/Counterexample.lean
+157	HadwigerCounterexample	OAI.HadwigerCounterexample.not_hadwiger_conjecture	OAI/Combinatorics/HadwigerCounterexample/Main.lean
 158	EuclideanFiveColor	OAI.EuclideanFiveColor.no_proper_five_coloring	OAI/Geometry/PlaneColoring/Five.lean
 158	PlaneColoring	OAI.Problem160.properColoring_seven	OAI/Geometry/PlaneColoring/Seven.lean
 160	QuantitativeVanDerWaerden	OAI.QuantitativeVanDerWaerden.uniform_lower_bound	OAI/Combinatorics/ProgressionColoring/Main.lean
@@ -100,6 +110,7 @@ fam	config	declaration	file
 184	CliqueFreeLog	OAI.CliqueFreeLog.logarithmic_independence_bound	OAI/Combinatorics/CliqueFree/Main.lean
 185	InfiniteMatroid	OAI.InfiniteMatroidCounterexample.main	OAI/Combinatorics/InfiniteMatroid/Main.lean
 190	MatrixRemoval	OAI.Problem348.no_polynomial_removal_bound	OAI/Combinatorics/MatrixRemoval/Main.lean
+195	SurfaceConeCandidateSupport	OAI.SmallCM.candidate_ring_properties	OAI/AlgebraicGeometry/SurfaceCones/CandidateRing.lean
 196	TorsionFreeZeroDivisors	OAI.TorsionFreeZeroDivisors.main	OAI/Algebra/GroupRing/Main.lean
 197	GroupRingDeterminant	OAI.GroupRingDeterminant.main	OAI/Analysis/GroupDeterminants/Main.lean
 197	KaplanskyFinitelyPresented	OAI.KaplanskyCounterexample.finitelyPresented_counterexample	OAI/RingTheory/DirectFiniteness/FinitelyPresented.lean
@@ -120,6 +131,7 @@ fam	config	declaration	file
 228	ContinuumTransition	OAI.ContinuumTemperature.main_theorem	OAI/Probability/ContinuumTransition/Main.lean
 228	RadialTransition	OAI.RadialTransition.main	OAI/Probability/RadialTransition/Main.lean
 236	FreeIsing	OAI.Problem367.free_ising_factor_iff_threshold	OAI/Probability/FreeIsing/Main.lean
+237	HoneycombBridgeMassSupport	OAI.CriticalHoneycomb.finiteBridgeMassEstimate	OAI/Combinatorics/HoneycombChords/BridgeMass.lean
 238	BinarySweep	OAI.binary_sweep_contraction_and_mixing	OAI/Probability/BinarySweep/Main.lean
 238	CoordinateSweeps	OAI.CoordinateSweeps.conditional_main	OAI/Probability/CoordinateSweeps/Main.lean
 238	ThorpRouting	OAI.ThorpNine.main	OAI/Probability/ThorpRouting/Main.lean
@@ -150,6 +162,9 @@ fam	config	declaration	file
 294	KaplanskyQuasitrace	OAI.Kaplansky.kaplansky_quasitrace_counterexample	OAI/Analysis/Kaplansky/Main.lean
 296	FactorGeneration	OAI.Generator.single_generation_of_II1_separable_predual	OAI/Analysis/FactorGeneration/Main.lean
 299	CharacterCriterion	OAI.KirchbergRordam.character_criterion	OAI/Analysis/CharacterCriterion/Main.lean
+301	TraceIdealTransportSupport	OAI.TraceConeClassification.TraceConeEquiv.idealOrderIso_finIdeal	OAI/Analysis/TraceCone/IdealTransport.lean
+301	TraceIdealTransportSupport	OAI.TraceConeClassification.TraceConeEquiv.idealOrderIso_zeroIdeal	OAI/Analysis/TraceCone/IdealTransport.lean
+301	TraceIdealTransportSupport	OAI.TraceConeClassification.closed_ideal_weight_exists	OAI/Analysis/TraceCone/FiniteIdeal.lean
 312	GrothendieckElementaryExpansion	OAI.Grothendieck.elementary_expansion	OAI/CategoryTheory/Globular/ElementaryExpansion.lean
 322	TingleySphereIsometry	OAI.Tingley.tingley_sphere_isometry_full	OAI/Analysis/SphereIsometry/Extension.lean
 324	C0Absorption	OAI.C0Absorption.main_result	OAI/Analysis/C0Absorption/Main.lean

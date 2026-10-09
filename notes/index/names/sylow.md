@@ -4,7 +4,7 @@
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../names.tsv) with `role = citation`.
 
-Prose counts: 105 capitalized occurrences, 82 of them mid-sentence, 15 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
+Prose counts: 108 capitalized occurrences, 84 of them mid-sentence, 15 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
 
 ## Provenance by source
 
@@ -46,7 +46,8 @@ Prose counts: 105 capitalized occurrences, 82 of them mid-sentence, 15 lowercase
 | [`Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026`](../../../preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/) | [031](../number-theory/031-uchidas-conjecture-for-open-galois-homomorphisms.md) | prose | [open-homomorphisms-solvably-closed-galois-groups.pdf](../../../preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/open-homomorphisms-solvably-closed-galois-groups.pdf) |
 | [`Rational-homology-and-Quillens-conjecture-September-24-2026`](../../../preprints/Rational-homology-and-Quillens-conjecture-September-24-2026/) | [310](../topology/310-quillens-conjecture-in-rational-homology.md) | prose | [paper.pdf](../../../preprints/Rational-homology-and-Quillens-conjecture-September-24-2026/paper.pdf) |
 | [`The-Blockwise-Alperin-Weight-Conjecture-September-23-2026`](../../../preprints/The-Blockwise-Alperin-Weight-Conjecture-September-23-2026/) | [202](../algebra/202-blockwise-alperin-weight-conjecture.md) | prose | [paper.pdf](../../../preprints/The-Blockwise-Alperin-Weight-Conjecture-September-23-2026/paper.pdf) |
-| [`The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-September-24-2026`](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-September-24-2026/) | [002](../number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md) | prose | [paper.pdf](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-September-24-2026/paper.pdf) |
+| [`The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026`](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/) | [002](../number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md) | prose | [paper.pdf](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/paper.pdf) |
+| [`The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-September-24-2026`](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-September-24-2026/) | — | prose | — |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.
 

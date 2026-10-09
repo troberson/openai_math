@@ -1,10 +1,10 @@
 # Name: eilenberg
 
-16 families · subject name · 1 carried by a title or a declaration · 16 by prose · 4 by bibliography author
+15 families · subject name · 1 carried by a title or a declaration · 15 by prose · 4 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../names.tsv) with `role = citation`.
 
-Prose counts: 33 capitalized occurrences, 27 of them mid-sentence, 0 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
+Prose counts: 32 capitalized occurrences, 26 of them mid-sentence, 0 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
 
 ## Provenance by source
 
@@ -14,7 +14,7 @@ Prose counts: 33 capitalized occurrences, 27 of them mid-sentence, 0 lowercase. 
 | `M` — Manuscript title | title | 1 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 0 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 16 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 15 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 4 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -22,7 +22,6 @@ Prose counts: 33 capitalized occurrences, 27 of them mid-sentence, 0 lowercase. 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
 | [014](../number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md) | Restricted geometric Langlands, generic Ramanujan and Arthur parameters | — | — | — | — | yes | — |
-| [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties-and-products-of-k3-surfaces.md) | The rational Hodge conjecture for CM abelian varieties and products of K3 surfaces | — | — | — | — | yes | — |
 | [069](../algebraic-and-complex-geometry/069-quantum-geometric-langlands-at-irrational-level.md) | Quantum geometric Langlands at irrational level | — | — | — | — | yes | — |
 | [249](../group-theory/249-a-finitely-generated-counterexample-to-eilenberg-ganea.md) | A finitely generated counterexample to Eilenberg--Ganea | yes | yes | — | — | yes | yes |
 | [250](../group-theory/250-boone-higman-conjecture-and-higher-finiteness.md) | The Boone--Higman conjecture and higher finiteness | — | — | — | — | yes | yes |
@@ -47,7 +46,6 @@ Prose counts: 33 capitalized occurrences, 27 of them mid-sentence, 0 lowercase. 
 | [`A-finitely-generated-counterexample-to-the-Eilenberg-Ganea-conjecture-September-23-2026`](../../../preprints/A-finitely-generated-counterexample-to-the-Eilenberg-Ganea-conjecture-September-23-2026/) | [249](../group-theory/249-a-finitely-generated-counterexample-to-eilenberg-ganea.md) | prose + title | [paper.pdf](../../../preprints/A-finitely-generated-counterexample-to-the-Eilenberg-Ganea-conjecture-September-23-2026/paper.pdf) |
 | [`A-rational-obstruction-to-strong-chromatic-splitting-at-height-three-September-25-2026`](../../../preprints/A-rational-obstruction-to-strong-chromatic-splitting-at-height-three-September-25-2026/) | [318](../topology/318-chromatic-splitting-counterexamples-and-filtrations.md) | prose | [paper.pdf](../../../preprints/A-rational-obstruction-to-strong-chromatic-splitting-at-height-three-September-25-2026/paper.pdf) |
 | [`A-universal-group-of-type-F-infinity-September-23-2026`](../../../preprints/A-universal-group-of-type-F-infinity-September-23-2026/) | [250](../group-theory/250-boone-higman-conjecture-and-higher-finiteness.md) | prose | [paper.pdf](../../../preprints/A-universal-group-of-type-F-infinity-September-23-2026/paper.pdf) |
-| [`Algebraicity-of-Kuga-Satake-Correspondences-for-K3-Surfaces-October-3-2026`](../../../preprints/Algebraicity-of-Kuga-Satake-Correspondences-for-K3-Surfaces-October-3-2026/) | [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties-and-products-of-k3-surfaces.md) | prose | [manuscript.pdf](../../../preprints/Algebraicity-of-Kuga-Satake-Correspondences-for-K3-Surfaces-October-3-2026/manuscript.pdf) |
 | [`Counterexamples-to-the-Hahn-Wilson-conjecture-at-height-two-September-26-2026`](../../../preprints/Counterexamples-to-the-Hahn-Wilson-conjecture-at-height-two-September-26-2026/) | [319](../topology/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md) | prose | [paper.pdf](../../../preprints/Counterexamples-to-the-Hahn-Wilson-conjecture-at-height-two-September-26-2026/paper.pdf) |
 | [`Filtered-chromatic-splitting-at-generic-primes-September-25-2026`](../../../preprints/Filtered-chromatic-splitting-at-generic-primes-September-25-2026/) | [318](../topology/318-chromatic-splitting-counterexamples-and-filtrations.md) | prose | [paper.pdf](../../../preprints/Filtered-chromatic-splitting-at-generic-primes-September-25-2026/paper.pdf) |
 | [`Finite-Smith-Toda-Complexes-at-Varying-Primes-September-23-2026`](../../../preprints/Finite-Smith-Toda-Complexes-at-Varying-Primes-September-23-2026/) | [308](../topology/308-smith-toda-complexes-at-every-height-with-varying-primes.md) | prose | [paper.pdf](../../../preprints/Finite-Smith-Toda-Complexes-at-Varying-Primes-September-23-2026/paper.pdf) |

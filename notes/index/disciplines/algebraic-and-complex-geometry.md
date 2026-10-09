@@ -1,12 +1,12 @@
 # Algebraic and complex geometry
 
-36 families · 89 manuscripts · 7 formalized at source level · 7 scope notes · 10 comparator configs · 0 reasoning traces · 2 verification bundles
+36 families · 86 manuscripts · 9 formalized at source level · 8 scope notes · 12 comparator configs · 0 reasoning traces · 2 verification bundles
 
-Tier: T3 6 · T2 1 · T1 0 · T0 29
+Tier: T3 7 · T2 1 · T1 0 · T0 28
 
 | Family | Title | Tier | Mss | Form. | Scope | Configs | Trace |
 |---|---|---|---|---|---|---|---|
-| [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties-and-products-of-k3-surfaces.md) | The rational Hodge conjecture for CM abelian varieties and products of K3 surfaces | T0 | 8 | 0 | — | 0 | — |
+| [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties.md) | The rational Hodge conjecture for CM abelian varieties | T0 | 5 | 0 | — | 0 | — |
 | [033](../algebraic-and-complex-geometry/033-campanas-orbifold-iitaka-conjecture-and-logarithmic-subadditivity.md) | Campana's orbifold Iitaka conjecture and logarithmic subadditivity | T2 | 5 | 0 | yes | 1 | — |
 | [034](../algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md) | Log abundance and effective Iitaka fibrations | T0 | 14 | 0 | — | 0 | — |
 | [035](../algebraic-and-complex-geometry/035-threefold-log-abundance-in-numerical-dimension-one-in-characteristic-p-3.md) | Threefold log abundance in numerical dimension one in characteristic $p>3$ | T0 | 2 | 0 | — | 0 | — |
@@ -22,7 +22,7 @@ Tier: T3 6 · T2 1 · T1 0 · T0 29
 | [046](../algebraic-and-complex-geometry/046-counterexamples-to-shafarevich-holomorphic-convexity.md) | Counterexamples to Shafarevich holomorphic convexity | T0 | 2 | 0 | — | 0 | — |
 | [047](../algebraic-and-complex-geometry/047-complex-counterexamples-to-cancellation-and-affine-fibrations.md) | Complex counterexamples to cancellation and affine fibrations | T3 | 1 | 1 | yes | 1 | — |
 | [048](../algebraic-and-complex-geometry/048-a-characteristic-zero-counterexample-to-lipman-zariski.md) | A characteristic-zero counterexample to Lipman--Zariski | T0 | 1 | 0 | — | 0 | — |
-| [049](../algebraic-and-complex-geometry/049-a-stable-coordinate-counterexample-in-four-variables.md) | A stable-coordinate counterexample in four variables | T3 | 2 | 1 | yes | 2 | — |
+| [049](../algebraic-and-complex-geometry/049-a-stable-coordinate-counterexample-in-four-variables.md) | A stable-coordinate counterexample in four variables | T3 | 2 | 2 | yes | 3 | — |
 | [050](../algebraic-and-complex-geometry/050-a-counterexample-to-griffiths-positivity-conjecture.md) | A counterexample to Griffiths' positivity conjecture | T3 | 1 | 1 | yes | 1 | — |
 | [051](../algebraic-and-complex-geometry/051-kobayashis-canonical-ampleness-conjecture.md) | Kobayashi's canonical-ampleness conjecture | T0 | 1 | 0 | — | 0 | — |
 | [052](../algebraic-and-complex-geometry/052-tangent-bundle-splittings-and-universal-covers.md) | Tangent-bundle splittings and universal covers | T3 | 2 | 1 | yes | 2 | — |
@@ -38,7 +38,7 @@ Tier: T3 6 · T2 1 · T1 0 · T0 29
 | [063](../algebraic-and-complex-geometry/063-generalized-mukai-conjecture.md) | The generalized Mukai conjecture | T0 | 1 | 0 | — | 0 | — |
 | [064](../algebraic-and-complex-geometry/064-constant-problem-for-surface-singularities.md) | The $\mu$-constant problem for surface singularities | T0 | 1 | 0 | — | 0 | — |
 | [065](../algebraic-and-complex-geometry/065-virasoro-constraints-for-complete-intersections-and-projective-bundles.md) | Virasoro constraints for complete intersections and projective bundles | T0 | 2 | 0 | — | 0 | — |
-| [066](../algebraic-and-complex-geometry/066-bounded-klt-complements-for-fano-contractions.md) | Bounded klt complements for Fano contractions | T0 | 2 | 0 | — | 0 | — |
+| [066](../algebraic-and-complex-geometry/066-bounded-klt-complements-for-fano-contractions.md) | Bounded klt complements for Fano contractions | T3 | 2 | 1 | yes | 1 | — |
 | [067](../algebraic-and-complex-geometry/067-campana-peternell-conjecture-in-dimension-six.md) | The Campana--Peternell conjecture in dimension six | T0 | 1 | 0 | — | 0 | — |
 | [068](../algebraic-and-complex-geometry/068-anticanonical-nonvanishing-under-smooth-semipositivity.md) | Anticanonical nonvanishing under smooth semipositivity | T0 | 7 | 0 | — | 0 | — |
 | [069](../algebraic-and-complex-geometry/069-quantum-geometric-langlands-at-irrational-level.md) | Quantum geometric Langlands at irrational level | T0 | 1 | 0 | — | 0 | — |

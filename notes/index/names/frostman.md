@@ -4,7 +4,7 @@
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../names.tsv) with `role = citation`.
 
-Prose counts: 117 capitalized occurrences, 109 of them mid-sentence, 44 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
+Prose counts: 135 capitalized occurrences, 125 of them mid-sentence, 58 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
 
 ## Provenance by source
 
@@ -38,7 +38,8 @@ Prose counts: 117 capitalized occurrences, 109 of them mid-sentence, 44 lowercas
 | [`Projection-moments-positive-cap-domination-and-Riesz-estimates-on-the-sphere-September-27-2026`](../../../preprints/Projection-moments-positive-cap-domination-and-Riesz-estimates-on-the-sphere-September-27-2026/) | [140](../theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md) | prose | [paper.pdf](../../../preprints/Projection-moments-positive-cap-domination-and-Riesz-estimates-on-the-sphere-September-27-2026/paper.pdf) |
 | [`The-Falconer-distance-conjecture-in-all-dimensions-September-23-2026`](../../../preprints/The-Falconer-distance-conjecture-in-all-dimensions-September-23-2026/) | [073](../real-and-complex-analysis/073-falconer-distance-conjecture.md) | prose | [paper.pdf](../../../preprints/The-Falconer-distance-conjecture-in-all-dimensions-September-23-2026/paper.pdf) |
 | [`The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026`](../../../preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/) | [074](../real-and-complex-analysis/074-kakeya-in-three-and-four-dimensions.md) | prose | [paper.pdf](../../../preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/paper.pdf) |
-| [`Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-September-25-2026`](../../../preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-September-25-2026/) | [232](../probability-and-statistical-mechanics/232-gaussian-fields-and-sle-interfaces-for-lipschitz-heights.md) | prose | [paper.pdf](../../../preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-September-25-2026/paper.pdf) |
+| [`Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026`](../../../preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026/) | [232](../probability-and-statistical-mechanics/232-gaussian-fields-and-sle-interfaces-for-lipschitz-heights.md) | prose | [paper.pdf](../../../preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026/paper.pdf) |
+| [`Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-September-25-2026`](../../../preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-September-25-2026/) | — | prose | — |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.
 
@@ -57,6 +58,8 @@ Up to 8 of the statement-environment titles that carry the name, verbatim with a
 | [074](../real-and-complex-analysis/074-kakeya-in-three-and-four-dimensions.md) | Local counts and conditional Frostman laws |
 | [232](../probability-and-statistical-mechanics/232-gaussian-fields-and-sle-interfaces-for-lipschitz-heights.md) | Frostman testing measures |
 | [232](../probability-and-statistical-mechanics/232-gaussian-fields-and-sle-interfaces-for-lipschitz-heights.md) | Poisson uniqueness from Frostman traces |
+| — | Frostman testing measures |
+| — | Poisson uniqueness from Frostman traces |
 
 ## Spelling variants
 

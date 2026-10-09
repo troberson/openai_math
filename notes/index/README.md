@@ -8,57 +8,57 @@ The schema is decided in [notes/index-design.md](../index-design.md): generated 
 
 | Discipline | Families | Manuscripts | Formalized | Scope notes | Configs | Traces | Verification |
 |---|---|---|---|---|---|---|---|
-| [Algebra](disciplines/algebra.md) | 18 | 29 | 10 | 9 | 16 | 1 | 2 |
-| [Algebraic and complex geometry](disciplines/algebraic-and-complex-geometry.md) | 36 | 89 | 7 | 7 | 10 | 0 | 2 |
-| [Combinatorics](disciplines/combinatorics.md) | 37 | 50 | 19 | 33 | 51 | 1 | 2 |
+| [Algebra](disciplines/algebra.md) | 18 | 29 | 11 | 10 | 17 | 1 | 2 |
+| [Algebraic and complex geometry](disciplines/algebraic-and-complex-geometry.md) | 36 | 86 | 9 | 8 | 12 | 0 | 2 |
+| [Combinatorics](disciplines/combinatorics.md) | 37 | 50 | 20 | 33 | 52 | 1 | 2 |
 | [Convex and metric geometry](disciplines/convex-and-metric-geometry.md) | 15 | 30 | 13 | 13 | 29 | 1 | 6 |
-| [Differential geometry](disciplines/differential-geometry.md) | 29 | 49 | 11 | 15 | 20 | 0 | 4 |
+| [Differential geometry](disciplines/differential-geometry.md) | 29 | 49 | 10 | 15 | 20 | 0 | 4 |
 | [Dynamical systems and ergodic theory](disciplines/dynamical-systems-and-ergodic-theory.md) | 12 | 19 | 2 | 9 | 12 | 0 | 1 |
 | [Functional analysis](disciplines/functional-analysis.md) | 11 | 19 | 16 | 10 | 22 | 0 | 0 |
 | [Group theory](disciplines/group-theory.md) | 14 | 22 | 8 | 12 | 17 | 0 | 0 |
 | [Mathematical logic](disciplines/mathematical-logic.md) | 6 | 8 | 5 | 6 | 8 | 0 | 0 |
 | [Mathematical physics](disciplines/mathematical-physics.md) | 25 | 59 | 7 | 17 | 25 | 1 | 6 |
-| [Number theory](disciplines/number-theory.md) | 31 | 58 | 7 | 16 | 24 | 2 | 0 |
-| [Operator algebras](disciplines/operator-algebras.md) | 19 | 31 | 6 | 14 | 23 | 1 | 0 |
+| [Number theory](disciplines/number-theory.md) | 31 | 58 | 8 | 17 | 25 | 2 | 0 |
+| [Operator algebras](disciplines/operator-algebras.md) | 19 | 31 | 7 | 15 | 24 | 1 | 0 |
 | [Partial differential equations](disciplines/partial-differential-equations.md) | 16 | 29 | 3 | 11 | 16 | 1 | 2 |
-| [Probability and statistical mechanics](disciplines/probability-and-statistical-mechanics.md) | 29 | 105 | 11 | 19 | 51 | 1 | 2 |
-| [Real and complex analysis](disciplines/real-and-complex-analysis.md) | 16 | 26 | 7 | 9 | 14 | 0 | 0 |
-| [Theoretical computer science](disciplines/theoretical-computer-science.md) | 40 | 73 | 29 | 32 | 64 | 1 | 3 |
+| [Probability and statistical mechanics](disciplines/probability-and-statistical-mechanics.md) | 29 | 105 | 12 | 19 | 52 | 1 | 2 |
+| [Real and complex analysis](disciplines/real-and-complex-analysis.md) | 16 | 26 | 8 | 10 | 15 | 0 | 0 |
+| [Theoretical computer science](disciplines/theoretical-computer-science.md) | 40 | 73 | 32 | 34 | 67 | 1 | 3 |
 | [Topology](disciplines/topology.md) | 18 | 26 | 1 | 3 | 3 | 0 | 0 |
 
 ## Topics
 
-Topics are a curated keyword vocabulary in [`notes/topics.tsv`](../topics.tsv) (the hand-written source of truth, with the reading verdict for each term in [`notes/topics.md`](../topics.md)), measured over four texts per family: title, abstract, scope note, and the derived Lean file paths. A family carries zero or more topics, so this is a label on top of the discipline partition, not a replacement for it. 92 terms, 971 assignments, 4 terms with no hit.
+Topics are a curated keyword vocabulary in [`notes/topics.tsv`](../topics.tsv) (the hand-written source of truth, with the reading verdict for each term in [`notes/topics.md`](../topics.md)), measured over four texts per family: title, abstract, scope note, and the derived Lean file paths. A family carries zero or more topics, so this is a label on top of the discipline partition, not a replacement for it. 92 terms, 978 assignments, 4 terms with no hit.
 
 | Topic | Families | Title | Abstract | Scope | Path |
 |---|---|---|---|---|---|
 | [graph-theory](topics/graph-theory.md) | 43 | 14 | 37 | 34 | 3 |
 | [algebraic-topology](topics/algebraic-topology.md) | 42 | 10 | 29 | 21 | 0 |
-| [algebraic-geometry](topics/algebraic-geometry.md) | 35 | 30 | 34 | 5 | 1 |
+| [algebraic-geometry](topics/algebraic-geometry.md) | 35 | 30 | 34 | 7 | 1 |
 | [manifolds](topics/manifolds.md) | 31 | 4 | 31 | 8 | 1 |
 | [riemannian-geometry](topics/riemannian-geometry.md) | 29 | 10 | 26 | 17 | 0 |
-| [complexity-theory](topics/complexity-theory.md) | 27 | 17 | 21 | 18 | 3 |
+| [complexity-theory](topics/complexity-theory.md) | 28 | 17 | 21 | 20 | 3 |
 | [group-theory](topics/group-theory.md) | 27 | 15 | 26 | 16 | 1 |
 | [metric-geometry](topics/metric-geometry.md) | 25 | 10 | 19 | 21 | 3 |
 | [algorithms](topics/algorithms.md) | 24 | 2 | 10 | 16 | 0 |
-| [operator-algebras](topics/operator-algebras.md) | 24 | 20 | 21 | 18 | 1 |
-| [computability](topics/computability.md) | 22 | 3 | 13 | 9 | 10 |
+| [operator-algebras](topics/operator-algebras.md) | 24 | 20 | 21 | 19 | 1 |
+| [computability](topics/computability.md) | 23 | 3 | 13 | 11 | 12 |
+| [complex-geometry](topics/complex-geometry.md) | 21 | 7 | 19 | 5 | 3 |
 | [mathematical-physics](topics/mathematical-physics.md) | 21 | 16 | 19 | 8 | 2 |
 | [statistical-mechanics](topics/statistical-mechanics.md) | 21 | 15 | 19 | 9 | 2 |
-| [complex-geometry](topics/complex-geometry.md) | 20 | 7 | 19 | 4 | 3 |
 | [convex-geometry](topics/convex-geometry.md) | 20 | 12 | 12 | 16 | 3 |
-| [curves](topics/curves.md) | 17 | 2 | 17 | 2 | 1 |
-| [harmonic-analysis](topics/harmonic-analysis.md) | 17 | 13 | 13 | 10 | 1 |
+| [curves](topics/curves.md) | 17 | 2 | 17 | 3 | 1 |
+| [harmonic-analysis](topics/harmonic-analysis.md) | 17 | 13 | 13 | 11 | 1 |
+| [measure-theory](topics/measure-theory.md) | 17 | 2 | 10 | 10 | 0 |
 | [partial-differential-equations](topics/partial-differential-equations.md) | 17 | 14 | 12 | 8 | 0 |
-| [functional-analysis](topics/functional-analysis.md) | 16 | 5 | 11 | 12 | 1 |
-| [measure-theory](topics/measure-theory.md) | 16 | 2 | 10 | 9 | 0 |
-| [disordered-systems](topics/disordered-systems.md) | 15 | 10 | 11 | 11 | 1 |
+| [disordered-systems](topics/disordered-systems.md) | 16 | 10 | 11 | 12 | 1 |
+| [functional-analysis](topics/functional-analysis.md) | 16 | 5 | 11 | 13 | 1 |
+| [surfaces](topics/surfaces.md) | 16 | 8 | 13 | 7 | 1 |
 | [spectral-theory](topics/spectral-theory.md) | 15 | 2 | 9 | 9 | 0 |
-| [surfaces](topics/surfaces.md) | 15 | 9 | 14 | 5 | 0 |
 | [banach-spaces](topics/banach-spaces.md) | 13 | 10 | 13 | 11 | 2 |
 | [discrete-geometry](topics/discrete-geometry.md) | 13 | 11 | 10 | 11 | 2 |
 | [logic](topics/logic.md) | 13 | 7 | 13 | 10 | 2 |
-| [planar-maps-and-lattice-models](topics/planar-maps-and-lattice-models.md) | 13 | 9 | 13 | 4 | 0 |
+| [planar-maps-and-lattice-models](topics/planar-maps-and-lattice-models.md) | 13 | 9 | 13 | 4 | 1 |
 | [quantum-theory](topics/quantum-theory.md) | 13 | 6 | 12 | 8 | 1 |
 | [symplectic-geometry](topics/symplectic-geometry.md) | 12 | 8 | 10 | 6 | 1 |
 | [condensed-matter](topics/condensed-matter.md) | 11 | 9 | 10 | 6 | 1 |
@@ -69,17 +69,17 @@ Topics are a curated keyword vocabulary in [`notes/topics.tsv`](../topics.tsv) (
 | [quantum-information](topics/quantum-information.md) | 11 | 6 | 7 | 9 | 0 |
 | [diophantine-equations](topics/diophantine-equations.md) | 10 | 5 | 10 | 6 | 0 |
 | [graph-coloring](topics/graph-coloring.md) | 10 | 3 | 9 | 7 | 2 |
-| [arithmetic-geometry](topics/arithmetic-geometry.md) | 9 | 5 | 8 | 2 | 0 |
+| [arithmetic-geometry](topics/arithmetic-geometry.md) | 9 | 5 | 8 | 3 | 0 |
+| [commutative-algebra](topics/commutative-algebra.md) | 9 | 6 | 6 | 6 | 1 |
 | [expanders-and-spectral-graphs](topics/expanders-and-spectral-graphs.md) | 9 | 5 | 5 | 5 | 0 |
 | [fractal-geometry](topics/fractal-geometry.md) | 9 | 2 | 6 | 6 | 0 |
-| [number-fields](topics/number-fields.md) | 9 | 1 | 8 | 2 | 0 |
+| [number-fields](topics/number-fields.md) | 9 | 1 | 8 | 3 | 0 |
 | [representation-theory](topics/representation-theory.md) | 9 | 4 | 6 | 5 | 2 |
 | [abelian-varieties](topics/abelian-varieties.md) | 8 | 3 | 7 | 1 | 0 |
 | [analytic-number-theory](topics/analytic-number-theory.md) | 8 | 4 | 8 | 4 | 0 |
-| [commutative-algebra](topics/commutative-algebra.md) | 8 | 6 | 6 | 4 | 1 |
 | [ergodic-theory](topics/ergodic-theory.md) | 8 | 2 | 6 | 5 | 0 |
 | [information-theory](topics/information-theory.md) | 8 | 6 | 4 | 8 | 0 |
-| [noncommutative-algebra](topics/noncommutative-algebra.md) | 8 | 7 | 7 | 4 | 0 |
+| [noncommutative-algebra](topics/noncommutative-algebra.md) | 8 | 7 | 7 | 5 | 0 |
 | [stable-homotopy](topics/stable-homotopy.md) | 8 | 8 | 7 | 2 | 0 |
 | [category-theory](topics/category-theory.md) | 7 | 2 | 6 | 3 | 1 |
 | [combinatorial-optimization](topics/combinatorial-optimization.md) | 7 | 4 | 2 | 7 | 0 |
@@ -90,7 +90,7 @@ Topics are a curated keyword vocabulary in [`notes/topics.tsv`](../topics.tsv) (
 | [potential-theory](topics/potential-theory.md) | 7 | 2 | 4 | 6 | 0 |
 | [probabilistic-combinatorics](topics/probabilistic-combinatorics.md) | 7 | 5 | 6 | 7 | 0 |
 | [additive-combinatorics](topics/additive-combinatorics.md) | 6 | 4 | 5 | 4 | 0 |
-| [geometric-measure-theory](topics/geometric-measure-theory.md) | 6 | 2 | 5 | 2 | 0 |
+| [geometric-measure-theory](topics/geometric-measure-theory.md) | 6 | 2 | 5 | 3 | 0 |
 | [quantum-computing](topics/quantum-computing.md) | 6 | 6 | 5 | 4 | 0 |
 | [random-graphs](topics/random-graphs.md) | 6 | 2 | 3 | 3 | 0 |
 | [sampling-and-counting](topics/sampling-and-counting.md) | 6 | 4 | 3 | 6 | 0 |
@@ -127,17 +127,17 @@ Topics are a curated keyword vocabulary in [`notes/topics.tsv`](../topics.tsv) (
 
 ## Names
 
-Names are measured over six layers by [`notes/scripts/measure_names.py`](../scripts/measure_names.py) and recorded in [`notes/names.md`](../names.md): four title layers (family titles, manuscript directory names, the optional titles of statement environments, the `main_results` declaration names) and two body layers (manuscript prose with the bibliography stripped, and the author fields of the shipped `.bib` files). A name is a **subject** when a title layer or a declaration carries it and a **citation** when only prose or a bibliography does, so only subject names get a page: 552 pages in [`names/`](names/) over 5859 measured names. The other 5307 are bibliography surnames that never reach a title layer — rows in [`names.tsv`](names.tsv) with `role = citation`, not pages. 9883 family-name edges cover 372 of 372 families; 0 names resolve to no family. Each page states, per source, which layer produced the hit: a name in a body paragraph is a citation, not a subject.
+Names are measured over six layers by [`notes/scripts/measure_names.py`](../scripts/measure_names.py) and recorded in [`notes/names.md`](../names.md): four title layers (family titles, manuscript directory names, the optional titles of statement environments, the `main_results` declaration names) and two body layers (manuscript prose with the bibliography stripped, and the author fields of the shipped `.bib` files). A name is a **subject** when a title layer or a declaration carries it and a **citation** when only prose or a bibliography does, so only subject names get a page: 551 pages in [`names/`](names/) over 5842 measured names. The other 5291 are bibliography surnames that never reach a title layer — rows in [`names.tsv`](names.tsv) with `role = citation`, not pages. 9819 family-name edges cover 372 of 372 families; 0 names resolve to no family. Each page states, per source, which layer produced the hit: a name in a body paragraph is a citation, not a subject.
 
 | Name | Families | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
-| [cauchy](names/cauchy.md) | 233 | 0 | 0 | 7 | 0 | 233 | 0 |
-| [euclidean](names/euclidean.md) | 194 | 3 | 5 | 10 | 3 | 194 | 0 |
+| [cauchy](names/cauchy.md) | 232 | 0 | 0 | 7 | 0 | 232 | 0 |
+| [euclidean](names/euclidean.md) | 193 | 3 | 5 | 10 | 3 | 193 | 0 |
 | [schwarz](names/schwarz.md) | 193 | 0 | 0 | 1 | 0 | 193 | 1 |
 | [lipschitz](names/lipschitz.md) | 178 | 4 | 6 | 10 | 1 | 178 | 0 |
 | [hilbert](names/hilbert.md) | 171 | 6 | 5 | 15 | 2 | 171 | 3 |
 | [taylor](names/taylor.md) | 165 | 0 | 0 | 12 | 0 | 164 | 21 |
-| [fourier](names/fourier.md) | 160 | 3 | 6 | 26 | 1 | 160 | 0 |
+| [fourier](names/fourier.md) | 160 | 3 | 6 | 26 | 2 | 160 | 0 |
 | [borel](names/borel.md) | 140 | 1 | 0 | 4 | 0 | 137 | 10 |
 | [jacobian](names/jacobian.md) | 136 | 0 | 0 | 5 | 0 | 136 | 0 |
 | [markov](names/markov.md) | 134 | 2 | 2 | 1 | 1 | 133 | 1 |
@@ -150,14 +150,14 @@ Names are measured over six layers by [`notes/scripts/measure_names.py`](../scri
 | [poincare](names/poincare.md) | 101 | 0 | 0 | 3 | 0 | 101 | 0 |
 | [hausdorff](names/hausdorff.md) | 94 | 1 | 2 | 2 | 0 | 94 | 1 |
 | [schur](names/schur.md) | 88 | 0 | 0 | 8 | 0 | 88 | 0 |
-| [hessian](names/hessian.md) | 87 | 0 | 1 | 8 | 1 | 87 | 0 |
+| [hessian](names/hessian.md) | 86 | 0 | 1 | 8 | 1 | 86 | 0 |
 | [frobenius](names/frobenius.md) | 85 | 0 | 1 | 14 | 0 | 85 | 0 |
 | [hermitian](names/hermitian.md) | 85 | 0 | 0 | 1 | 0 | 85 | 0 |
 | [dirichlet](names/dirichlet.md) | 84 | 0 | 1 | 8 | 1 | 84 | 0 |
 | [laurent](names/laurent.md) | 84 | 0 | 0 | 6 | 0 | 83 | 3 |
-| [neumann](names/neumann.md) | 80 | 1 | 1 | 4 | 0 | 80 | 2 |
+| [neumann](names/neumann.md) | 79 | 1 | 1 | 4 | 0 | 79 | 2 |
 | [minkowski](names/minkowski.md) | 78 | 1 | 1 | 3 | 1 | 78 | 0 |
-| [sobolev](names/sobolev.md) | 77 | 2 | 1 | 13 | 0 | 77 | 0 |
+| [sobolev](names/sobolev.md) | 76 | 2 | 1 | 13 | 0 | 76 | 0 |
 | [wang](names/wang.md) | 74 | 0 | 0 | 2 | 0 | 65 | 53 |
 | [bernoulli](names/bernoulli.md) | 72 | 2 | 3 | 0 | 0 | 72 | 0 |
 | [poisson](names/poisson.md) | 72 | 0 | 2 | 10 | 0 | 72 | 1 |
@@ -165,55 +165,55 @@ Names are measured over six layers by [`notes/scripts/measure_names.py`](../scri
 | [schmidt](names/schmidt.md) | 71 | 0 | 0 | 1 | 0 | 66 | 16 |
 | [zhang](names/zhang.md) | 69 | 0 | 0 | 1 | 0 | 55 | 55 |
 | [boolean](names/boolean.md) | 65 | 1 | 3 | 8 | 0 | 65 | 0 |
-| [green](names/green.md) | 65 | 1 | 1 | 12 | 0 | 61 | 17 |
+| [green](names/green.md) | 64 | 1 | 1 | 12 | 0 | 60 | 17 |
 | [young](names/young.md) | 62 | 0 | 0 | 3 | 0 | 60 | 5 |
 | [laplacian](names/laplacian.md) | 61 | 0 | 0 | 4 | 0 | 61 | 0 |
 | [gauss](names/gauss.md) | 60 | 1 | 1 | 6 | 0 | 60 | 0 |
 | [haar](names/haar.md) | 60 | 0 | 0 | 12 | 0 | 60 | 0 |
 | [serre](names/serre.md) | 57 | 1 | 0 | 0 | 0 | 54 | 20 |
 
-The 40 subject names that reach the most families; [`names.tsv`](names.tsv) carries all 5859. Column letters are the layers of the name pages: `F` family title, `M` manuscript directory, `E` theorem-environment title, `D` declaration, `b` prose, `B` bib author.
+The 40 subject names that reach the most families; [`names.tsv`](names.tsv) carries all 5842. Column letters are the layers of the name pages: `F` family title, `M` manuscript directory, `E` theorem-environment title, `D` declaration, `b` prose, `B` bib author.
 
 ## Tables
 
 | Table | Rows | Key | What it carries |
 |---|---|---|---|
 | `families.tsv` | 372 | `fam` | One row per catalogued family, with its page path and claim-shape columns. |
-| `manuscripts.tsv` | 722 | preprint dir slug | One row per manuscript: PDF, main file, formalized flag, bundle flags, source counts. |
-| `configs.tsv` | 405 | config stem | One row per comparator config, its family, and its `main_results` declarations. |
-| `lean-dirs.tsv` | 554 | `OAI/<discipline>/<module>` | One row per Lean module dir, with its `.lean` count and the declarations named there. |
-| `scope-notes.tsv` | 235 | `fam` | One row per scope note: configs linked, manuscripts linked, `## Scope` length. |
+| `manuscripts.tsv` | 719 | preprint dir slug | One row per manuscript: PDF, main file, formalized flag, bundle flags, source counts. |
+| `configs.tsv` | 416 | config stem | One row per comparator config, its family, and its `main_results` declarations. |
+| `lean-dirs.tsv` | 559 | `OAI/<discipline>/<module>` | One row per Lean module dir, with its `.lean` count and the declarations named there. |
+| `scope-notes.tsv` | 242 | `fam` | One row per scope note: configs linked, manuscripts linked, `## Scope` length. |
 | `traces.tsv` | 10 | trace stem | One row per published reasoning trace and the family README.md attributes it to. |
 | `topics-rendered.tsv` | 92 | term | One row per curated vocabulary term: its pattern, its yield, its yield by layer, and its page. The patterns live in `notes/topics.tsv`; this table is the measured copy. |
-| `names.tsv` | 5859 | name | One row per measured name — subject or citation-only — with its layer counts, prose counts, surface spellings, and its page (empty for a citation-only name). |
-| `edges/family-manuscript.tsv` | 722 | `fam` + dir | The release's own family→manuscript links. |
-| `edges/family-config.tsv` | 405 | `fam` + config | Scope-note links keyed per family as a set: 405, not the 415 link occurrences. |
-| `edges/config-declaration.tsv` | 185 | config + declaration | The `main_results` triples, with the family that links each config. |
-| `edges/family-lean.tsv` | 185 | `fam` + config | The derived family→Lean-file reach: 185 declarations over 127 families. There is no manuscript→Lean edge to carry. |
-| `edges/citation.tsv` | 396 | citing dir + target dir | manuscript→corpus manuscript from release-marked `.bib` hrefs; untyped. |
+| `names.tsv` | 5842 | name | One row per measured name — subject or citation-only — with its layer counts, prose counts, surface spellings, and its page (empty for a citation-only name). |
+| `edges/family-manuscript.tsv` | 719 | `fam` + dir | The release's own family→manuscript links. |
+| `edges/family-config.tsv` | 416 | `fam` + config | Scope-note links keyed per family as a set: 405, not the 415 link occurrences. |
+| `edges/config-declaration.tsv` | 200 | config + declaration | The `main_results` triples, with the family that links each config. |
+| `edges/family-lean.tsv` | 200 | `fam` + config | The derived family→Lean-file reach: 185 declarations over 127 families. There is no manuscript→Lean edge to carry. |
+| `edges/citation.tsv` | 391 | citing dir + target dir | manuscript→corpus manuscript from release-marked `.bib` hrefs; untyped. |
 | `edges/family-trace.tsv` | 10 | `fam` + stem | Family→trace attribution as README.md tabulates it. |
-| `edges/family-topic.tsv` | 971 | `fam` + topic | Family→topic assignments from the curated vocabulary, with the layers that hit (T/A/S/P). Multi-label: a family appears once per topic it carries. |
-| `edges/family-name.tsv` | 9883 | `fam` + name | Family→subject-name edges, with the layers that hit (F/M/E/D/b/B). Subject names only: a citation-only name has no family edge, only a `names.tsv` row. |
+| `edges/family-topic.tsv` | 978 | `fam` + topic | Family→topic assignments from the curated vocabulary, with the layers that hit (T/A/S/P). Multi-label: a family appears once per topic it carries. |
+| `edges/family-name.tsv` | 9819 | `fam` + name | Family→subject-name edges, with the layers that hit (F/M/E/D/b/B). Subject names only: a citation-only name has no family edge, only a `names.tsv` row. |
 
 ## Reconciliation
 
 | Quantity | Canonical (build_catalog joins) | Rendered here |
 |---|---|---|
 | families | 372 | 372 |
-| manuscripts | 722 | 722 |
-| formalized | 162 | 162 |
-| scope notes | 235 | 235 |
-| challenges | 405 | 405 |
+| manuscripts | 719 | 719 |
+| formalized | 173 | 172 |
+| scope notes | 242 | 242 |
+| challenges | 416 | 416 |
 | traces | 10 | 10 |
 | ver dirs | 30 | 30 |
 | family pages | 372 | 372 |
 | discipline pages | 17 | 17 |
 | topic pages | 92 | 92 |
-| topic assignments | 971 | 971 |
+| topic assignments | 978 | 978 |
 | families with a topic | 372 | 372 |
-| name pages | 552 | 552 |
-| names measured | 5859 | 5859 |
-| name→family edges | 9883 | 9883 |
+| name pages | 551 | 551 |
+| names measured | 5842 | 5842 |
+| name→family edges | 9819 | 9819 |
 | families with a name hit | 372 | 372 |
 | trace families with a subject name | 10 | 10 |
 

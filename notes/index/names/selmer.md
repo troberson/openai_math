@@ -4,7 +4,7 @@
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../names.tsv) with `role = citation`.
 
-Prose counts: 463 capitalized occurrences, 411 of them mid-sentence, 52 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
+Prose counts: 918 capitalized occurrences, 816 of them mid-sentence, 98 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
 
 ## Provenance by source
 
@@ -31,16 +31,25 @@ Prose counts: 463 capitalized occurrences, 411 of them mid-sentence, 52 lowercas
 
 | Dir | Family | Where the name appears | PDF |
 |---|---|---|---|
-| [`A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-September-24-2026`](../../../preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-September-24-2026/) | [004](../number-theory/004-hilberts-tenth-problem-over-q.md) | prose | [paper.pdf](../../../preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-September-24-2026/paper.pdf) |
-| [`Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-3-2026`](../../../preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-3-2026/) | [002](../number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md) | prose + title | [exact-bsd-low-selmer-corank.pdf](../../../preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-3-2026/exact-bsd-low-selmer-corank.pdf) |
-| [`Fontaine-Mazur-modularity-at-the-prime-2-September-23-2026`](../../../preprints/Fontaine-Mazur-modularity-at-the-prime-2-September-23-2026/) | [010](../number-theory/010-fontaine-mazur-modularity-at-the-prime-2-and-2-adic-pro-modularity.md) | prose | [paper.pdf](../../../preprints/Fontaine-Mazur-modularity-at-the-prime-2-September-23-2026/paper.pdf) |
-| [`Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-September-23-2026`](../../../preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-September-23-2026/) | [006](../number-theory/006-goldfelds-conjecture.md) | prose | [paper.pdf](../../../preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-September-23-2026/paper.pdf) |
-| [`Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026`](../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026/) | [004](../number-theory/004-hilberts-tenth-problem-over-q.md) | prose | [main.pdf](../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026/main.pdf) |
+| [`A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026`](../../../preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/) | [004](../number-theory/004-hilberts-tenth-problem-over-q.md) | prose | [paper.pdf](../../../preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/paper.pdf) |
+| [`A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-September-24-2026`](../../../preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-September-24-2026/) | — | prose | — |
+| [`Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-3-2026`](../../../preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-3-2026/) | — | prose | — |
+| [`Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026`](../../../preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/) | [002](../number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md) | prose + title | [exact-bsd-low-selmer-corank.pdf](../../../preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/exact-bsd-low-selmer-corank.pdf) |
+| [`Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026`](../../../preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/) | [010](../number-theory/010-fontaine-mazur-modularity-at-the-prime-2-and-2-adic-pro-modularity.md) | prose | [paper.pdf](../../../preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/paper.pdf) |
+| [`Fontaine-Mazur-modularity-at-the-prime-2-September-23-2026`](../../../preprints/Fontaine-Mazur-modularity-at-the-prime-2-September-23-2026/) | — | prose | — |
+| [`Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026`](../../../preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/) | [006](../number-theory/006-goldfelds-conjecture.md) | prose | [paper.pdf](../../../preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/paper.pdf) |
+| [`Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-September-23-2026`](../../../preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-September-23-2026/) | — | prose | — |
+| [`Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026`](../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/) | [004](../number-theory/004-hilberts-tenth-problem-over-q.md) | prose | [main.pdf](../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf) |
+| [`Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026`](../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026/) | — | prose | — |
 | [`The-Dimension-of-the-Two-Adic-Hecke-Algebra-at-Odd-Level-October-5-2026`](../../../preprints/The-Dimension-of-the-Two-Adic-Hecke-Algebra-at-Odd-Level-October-5-2026/) | [010](../number-theory/010-fontaine-mazur-modularity-at-the-prime-2-and-2-adic-pro-modularity.md) | prose | [two-adic-hecke.pdf](../../../preprints/The-Dimension-of-the-Two-Adic-Hecke-Algebra-at-Odd-Level-October-5-2026/two-adic-hecke.pdf) |
-| [`The-Selmer-converse-for-elliptic-curves-at-every-prime-September-24-2026`](../../../preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-September-24-2026/) | [002](../number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md) | prose + title | [main.pdf](../../../preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-September-24-2026/main.pdf) |
-| [`The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-September-23-2026`](../../../preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-September-23-2026/) | [006](../number-theory/006-goldfelds-conjecture.md) | prose | [paper.pdf](../../../preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-September-23-2026/paper.pdf) |
-| [`The-p-adic-section-conjecture-September-24-2026`](../../../preprints/The-p-adic-section-conjecture-September-24-2026/) | [019](../number-theory/019-p-adic-section-conjecture.md) | prose | [main.pdf](../../../preprints/The-p-adic-section-conjecture-September-24-2026/main.pdf) |
-| [`The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-September-24-2026`](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-September-24-2026/) | [002](../number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md) | prose + title | [paper.pdf](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-September-24-2026/paper.pdf) |
+| [`The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026`](../../../preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/) | [002](../number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md) | prose + title | [main.pdf](../../../preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/main.pdf) |
+| [`The-Selmer-converse-for-elliptic-curves-at-every-prime-September-24-2026`](../../../preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-September-24-2026/) | — | prose | — |
+| [`The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026`](../../../preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/) | [006](../number-theory/006-goldfelds-conjecture.md) | prose | [paper.pdf](../../../preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/paper.pdf) |
+| [`The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-September-23-2026`](../../../preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-September-23-2026/) | — | prose | — |
+| [`The-p-adic-section-conjecture-October-6-2026`](../../../preprints/The-p-adic-section-conjecture-October-6-2026/) | [019](../number-theory/019-p-adic-section-conjecture.md) | prose | [main.pdf](../../../preprints/The-p-adic-section-conjecture-October-6-2026/main.pdf) |
+| [`The-p-adic-section-conjecture-September-24-2026`](../../../preprints/The-p-adic-section-conjecture-September-24-2026/) | — | prose | — |
+| [`The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026`](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/) | [002](../number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md) | prose + title | [paper.pdf](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/paper.pdf) |
+| [`The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-September-24-2026`](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-September-24-2026/) | — | prose | — |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.
 
@@ -56,12 +65,12 @@ Up to 8 of the statement-environment titles that carry the name, verbatim with a
 |---|---|
 | [006](../number-theory/006-goldfelds-conjecture.md) | A finite Selmer criterion |
 | [006](../number-theory/006-goldfelds-conjecture.md) | Nullity forces Selmer dimension |
+| — | A finite Selmer criterion |
+| — | Nullity forces Selmer dimension |
 | [002](../number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md) | The unrestricted low-corank Selmer converse |
+| — | The unrestricted low-corank Selmer converse |
 | [019](../number-theory/019-p-adic-section-conjecture.md) | A Selmer-corank-zero elliptic target |
-| [002](../number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md) | Nonzero Selmer Bockstein |
-| [002](../number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md) | Selmer membership and the logarithmic comparison |
-| [002](../number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md) | Rank detection from Selmer corank one |
-| [002](../number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md) | Finite Selmer seed |
+| — | A Selmer-corank-zero elliptic target |
 
 ## Spelling variants
 

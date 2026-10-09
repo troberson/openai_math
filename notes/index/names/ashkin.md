@@ -4,7 +4,7 @@
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../names.tsv) with `role = citation`.
 
-Prose counts: 5 capitalized occurrences, 4 of them mid-sentence, 0 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
+Prose counts: 10 capitalized occurrences, 8 of them mid-sentence, 0 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
 
 ## Provenance by source
 
@@ -27,7 +27,8 @@ Prose counts: 5 capitalized occurrences, 4 of them mid-sentence, 0 lowercase. Th
 
 | Dir | Family | Where the name appears | PDF |
 |---|---|---|---|
-| [`The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026`](../../../preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026/) | [233](../probability-and-statistical-mechanics/233-joint-critical-ashkin-teller-scaling-limit.md) | prose + title | [main.pdf](../../../preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026/main.pdf) |
+| [`The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026`](../../../preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026/) | [233](../probability-and-statistical-mechanics/233-joint-critical-ashkin-teller-scaling-limit.md) | prose + title | [main.pdf](../../../preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026/main.pdf) |
+| [`The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026`](../../../preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026/) | — | prose | — |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.
 

@@ -22,6 +22,7 @@ fam	config
 025	EgyptianFractions
 025	ShortEgyptianFractions
 026	PrimeGaps
+027	CharacterVarietiesAllSeamsSupport
 028	GaussianMoat
 033	LogKodairaFiberNegative
 039	MaximalSeshadriConstants
@@ -29,16 +30,19 @@ fam	config
 047	ComplexCancellation
 049	AbhyankarSathaye
 049	CommutingDerivations
+049	StableCoordinateFour
 050	QuadricBundles
 052	KahlerSplitting
 052	SplitTangentIntegrability
 058	SymmetricDomains
+066	CartierChartCompactnessSupport
 071	KoebeCircleDomains
 072	Brennan
 072	BrennanSharp
 072	StrictMeans
 073	FalconerAllDimensions
 073	PlanarFalconer
+075	FourierLLogL
 076	AsymptoticallyMinimalLittlewood
 076	LittlewoodFiniteFlatness
 081	RieszQuantitative
@@ -81,6 +85,7 @@ fam	config
 102	OptimalMaxCut
 102	UniqueGamesTheorem
 102	VertexCover
+103	LogspaceEquality
 104	RandomizedMeanPayoff
 104	TruffetCounterexample
 105	PerfectCompleteness
@@ -123,6 +128,7 @@ fam	config
 129	TwoWayComplementation
 129	TwoWayDeterminization
 130	ExactFourier
+130	UniformFourier
 131	SwitchChain
 132	SensitivitySeparation
 133	ParityLifts
@@ -131,6 +137,7 @@ fam	config
 133	WeisfeilerLeman
 134	GeneralizedStarHeight
 135	DepthFive
+137	OneTapeSpace
 139	LogConcaveQuery
 140	GaussianFiniteEntropy
 140	GaussianInformation
@@ -154,6 +161,7 @@ fam	config
 152	SmoothObstruction
 155	PeriodicTilingThree
 156	BorsukNine
+157	HadwigerCounterexample
 157	ListHadwiger
 158	EuclideanFiveColor
 158	PlaneColoring
@@ -204,6 +212,7 @@ fam	config
 191	HeilbronnTriangle
 192	SquareRootDegree
 194	DuttaDomain
+195	SurfaceConeCandidateSupport
 196	TorsionFreeZeroDivisors
 197	GroupRingDeterminant
 197	KaplanskyDirectFiniteness
@@ -256,6 +265,7 @@ fam	config
 236	FreeIsing
 237	CriticalStripMass
 237	HoneycombBridgeFiniteness
+237	HoneycombBridgeMassSupport
 237	HoneycombFreeEnergy
 238	BinarySweep
 238	CoordinateSweeps
@@ -341,6 +351,7 @@ fam	config
 297	Naimark
 298	FiniteEntropySeparation
 299	CharacterCriterion
+301	TraceIdealTransportSupport
 303	ExactInfiniteness
 303	IndividualStrongInfiniteness
 307	CoarseAssembly

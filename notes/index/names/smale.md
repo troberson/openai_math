@@ -1,10 +1,10 @@
 # Name: smale
 
-11 families · subject name · 2 carried by a title or a declaration · 11 by prose · 7 by bibliography author
+10 families · subject name · 2 carried by a title or a declaration · 10 by prose · 7 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../names.tsv) with `role = citation`.
 
-Prose counts: 57 capitalized occurrences, 30 of them mid-sentence, 6 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
+Prose counts: 55 capitalized occurrences, 27 of them mid-sentence, 6 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
 
 ## Provenance by source
 
@@ -14,14 +14,13 @@ Prose counts: 57 capitalized occurrences, 30 of them mid-sentence, 6 lowercase. 
 | `M` — Manuscript title | title | 0 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 2 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 11 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 10 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 7 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
-| [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties-and-products-of-k3-surfaces.md) | The rational Hodge conjecture for CM abelian varieties and products of K3 surfaces | — | — | — | — | yes | — |
 | [059](../algebraic-and-complex-geometry/059-counterexamples-to-zariskis-multiplicity-conjecture.md) | Counterexamples to Zariski's multiplicity conjecture | — | — | yes | — | yes | yes |
 | [090](../convex-and-metric-geometry/090-universal-optimality-of-the-triangular-lattice.md) | Universal optimality of the triangular lattice | — | — | — | — | yes | — |
 | [152](../dynamical-systems-and-ergodic-theory/152-zero-entropy-does-not-guarantee-a-smooth-positive-volume-model.md) | Zero entropy does not guarantee a smooth positive-volume model | — | — | — | — | yes | yes |
@@ -38,10 +37,9 @@ Prose counts: 57 capitalized occurrences, 30 of them mid-sentence, 6 lowercase. 
 | Dir | Family | Where the name appears | PDF |
 |---|---|---|---|
 | [`A-finite-entropy-system-without-a-smooth-positive-volume-model-September-25-2026`](../../../preprints/A-finite-entropy-system-without-a-smooth-positive-volume-model-September-25-2026/) | [152](../dynamical-systems-and-ergodic-theory/152-zero-entropy-does-not-guarantee-a-smooth-positive-volume-model.md) | prose | [paper.pdf](../../../preprints/A-finite-entropy-system-without-a-smooth-positive-volume-model-September-25-2026/paper.pdf) |
-| [`Algebraicity-of-Kuga-Satake-Correspondences-for-K3-Surfaces-October-3-2026`](../../../preprints/Algebraicity-of-Kuga-Satake-Correspondences-for-K3-Surfaces-October-3-2026/) | [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties-and-products-of-k3-surfaces.md) | prose | [manuscript.pdf](../../../preprints/Algebraicity-of-Kuga-Satake-Correspondences-for-K3-Surfaces-October-3-2026/manuscript.pdf) |
-| [`Algebraicity-of-Weil-classes-on-split-abelian-eightfolds-September-18-2026`](../../../preprints/Algebraicity-of-Weil-classes-on-split-abelian-eightfolds-September-18-2026/) | [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties-and-products-of-k3-surfaces.md) | prose | [paper.pdf](../../../preprints/Algebraicity-of-Weil-classes-on-split-abelian-eightfolds-September-18-2026/paper.pdf) |
 | [`Ambiently-homeomorphic-isolated-hypersurfaces-of-multiplicities-two-and-three-September-24-2026`](../../../preprints/Ambiently-homeomorphic-isolated-hypersurfaces-of-multiplicities-two-and-three-September-24-2026/) | [059](../algebraic-and-complex-geometry/059-counterexamples-to-zariskis-multiplicity-conjecture.md) | prose | [paper.pdf](../../../preprints/Ambiently-homeomorphic-isolated-hypersurfaces-of-multiplicities-two-and-three-September-24-2026/paper.pdf) |
-| [`Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-September-23-2026`](../../../preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-September-23-2026/) | [341](../differential-geometry/341-donaldsons-hypersymplectic-deformation-conjecture.md) | prose | [paper.pdf](../../../preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-September-23-2026/paper.pdf) |
+| [`Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026`](../../../preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026/) | [341](../differential-geometry/341-donaldsons-hypersymplectic-deformation-conjecture.md) | prose | [paper.pdf](../../../preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026/paper.pdf) |
+| [`Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-September-23-2026`](../../../preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-September-23-2026/) | — | prose | — |
 | [`Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026`](../../../preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/) | [347](../differential-geometry/347-counterexamples-to-strong-forms-of-arnolds-fixed-point-conjecture.md) | prose | [paper.pdf](../../../preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/paper.pdf) |
 | [`Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026`](../../../preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026/) | [347](../differential-geometry/347-counterexamples-to-strong-forms-of-arnolds-fixed-point-conjecture.md) | prose | [hamiltonian-fixed-points-below-stable-morse-number.pdf](../../../preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026/hamiltonian-fixed-points-below-stable-morse-number.pdf) |
 | [`Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026`](../../../preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/) | [345](../differential-geometry/345-infinitely-many-closed-geodesics-on-spheres-and-three-manifolds.md) | prose | [paper.pdf](../../../preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/paper.pdf) |
@@ -51,7 +49,6 @@ Prose counts: 57 capitalized occurrences, 30 of them mid-sentence, 6 lowercase. 
 | [`Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026`](../../../preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/) | [368](../partial-differential-equations/368-three-dimensional-ball-evans-approximation-problem.md) | prose | [main.pdf](../../../preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/main.pdf) |
 | [`The-Kerr-Newman-Penrose-Inequality-for-Axisymmetric-Electrovacuum-Exteriors-October-5-2026`](../../../preprints/The-Kerr-Newman-Penrose-Inequality-for-Axisymmetric-Electrovacuum-Exteriors-October-5-2026/) | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | prose | [paper.pdf](../../../preprints/The-Kerr-Newman-Penrose-Inequality-for-Axisymmetric-Electrovacuum-Exteriors-October-5-2026/paper.pdf) |
 | [`The-metric-Blaschke-theorem-September-23-2026`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/) | [344](../differential-geometry/344-metric-blaschke-conjecture.md) | prose | [paper.pdf](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/paper.pdf) |
-| [`The-rational-Hodge-conjecture-for-products-of-K3-surfaces-October-4-2026`](../../../preprints/The-rational-Hodge-conjecture-for-products-of-K3-surfaces-October-4-2026/) | [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties-and-products-of-k3-surfaces.md) | prose | [hodge-conjecture-products-k3.pdf](../../../preprints/The-rational-Hodge-conjecture-for-products-of-K3-surfaces-October-4-2026/hodge-conjecture-products-k3.pdf) |
 | [`Triangular-minimality-for-planar-Coulomb-renormalized-energy-September-23-2026`](../../../preprints/Triangular-minimality-for-planar-Coulomb-renormalized-energy-September-23-2026/) | [090](../convex-and-metric-geometry/090-universal-optimality-of-the-triangular-lattice.md) | prose | [paper.pdf](../../../preprints/Triangular-minimality-for-planar-Coulomb-renormalized-energy-September-23-2026/paper.pdf) |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.

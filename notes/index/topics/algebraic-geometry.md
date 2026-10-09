@@ -1,6 +1,6 @@
 # Topic: algebraic-geometry
 
-35 families · pattern `algebraic geometr|birational|moduli space|moduli of|anticanonical|gotsman--linial|newton polytope|coherent sheaf|\bklt\b|fano|minimal model|abundance|iitaka|seshadri|line bundle|\bample\b|\bnef\b|severi|ogeri|bridgeland|gromov-witten|virasoro|complete intersection|projective bundle|derived category|p=w\b|hikita|quiver|shafarevich|zariski|lipman|griffiths|kobayashi|pixton|kuznetsov|gepner|mukai|campana|peternell|fujita|nagata|bloch's conjecture|hodge conjecture|zilber-pink|siegel threefold|affine fibration|spherical shell|lebrun|salamon|projective contact` · hits by layer: title 30 · abstract 34 · scope 5 · path 1
+35 families · pattern `algebraic geometr|birational|moduli space|moduli of|anticanonical|gotsman--linial|newton polytope|coherent sheaf|\bklt\b|fano|minimal model|abundance|iitaka|seshadri|line bundle|\bample\b|\bnef\b|severi|ogeri|bridgeland|gromov-witten|virasoro|complete intersection|projective bundle|derived category|p=w\b|hikita|quiver|shafarevich|zariski|lipman|griffiths|kobayashi|pixton|kuznetsov|gepner|mukai|campana|peternell|fujita|nagata|bloch's conjecture|hodge conjecture|zilber-pink|siegel threefold|affine fibration|spherical shell|lebrun|salamon|projective contact` · hits by layer: title 30 · abstract 34 · scope 7 · path 1
 
 A family is listed when the pattern hits its title, its abstract, its scope note, or the Lean file paths reached from its comparator configs. The match is a keyword floor, not a judgement: read the family page before treating a listing as a claim about what the result is about.
 
@@ -8,8 +8,8 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 |---|---|---|---|---|---|
 | [002](../number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md) | The full Birch--Swinnerton-Dyer formula in Selmer coranks zero and one | — | yes | — | — |
 | [016](../number-theory/016-zilber-pink-in-abelian-varieties-and-the-siegel-threefold.md) | Zilber--Pink in abelian varieties and the Siegel threefold | yes | yes | — | — |
-| [027](../number-theory/027-integral-density-on-curve-character-varieties.md) | Integral density on curve character varieties | — | yes | — | — |
-| [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties-and-products-of-k3-surfaces.md) | The rational Hodge conjecture for CM abelian varieties and products of K3 surfaces | yes | yes | — | — |
+| [027](../number-theory/027-integral-density-on-curve-character-varieties.md) | Integral density on curve character varieties | — | yes | yes | — |
+| [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties.md) | The rational Hodge conjecture for CM abelian varieties | yes | yes | — | — |
 | [033](../algebraic-and-complex-geometry/033-campanas-orbifold-iitaka-conjecture-and-logarithmic-subadditivity.md) | Campana's orbifold Iitaka conjecture and logarithmic subadditivity | yes | yes | yes | — |
 | [034](../algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md) | Log abundance and effective Iitaka fibrations | yes | yes | — | — |
 | [035](../algebraic-and-complex-geometry/035-threefold-log-abundance-in-numerical-dimension-one-in-characteristic-p-3.md) | Threefold log abundance in numerical dimension one in characteristic $p>3$ | yes | yes | — | — |
@@ -36,7 +36,7 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | [062](../algebraic-and-complex-geometry/062-lebrun-salamon-conjecture-and-projective-contact-classification.md) | The LeBrun--Salamon conjecture and projective contact classification | yes | yes | — | — |
 | [063](../algebraic-and-complex-geometry/063-generalized-mukai-conjecture.md) | The generalized Mukai conjecture | yes | yes | — | — |
 | [065](../algebraic-and-complex-geometry/065-virasoro-constraints-for-complete-intersections-and-projective-bundles.md) | Virasoro constraints for complete intersections and projective bundles | yes | yes | — | — |
-| [066](../algebraic-and-complex-geometry/066-bounded-klt-complements-for-fano-contractions.md) | Bounded klt complements for Fano contractions | yes | yes | — | — |
+| [066](../algebraic-and-complex-geometry/066-bounded-klt-complements-for-fano-contractions.md) | Bounded klt complements for Fano contractions | yes | yes | yes | — |
 | [067](../algebraic-and-complex-geometry/067-campana-peternell-conjecture-in-dimension-six.md) | The Campana--Peternell conjecture in dimension six | yes | yes | — | — |
 | [068](../algebraic-and-complex-geometry/068-anticanonical-nonvanishing-under-smooth-semipositivity.md) | Anticanonical nonvanishing under smooth semipositivity | yes | yes | — | — |
 | [127](../theoretical-computer-science/127-asymptotic-gotsman-linial-conjecture.md) | The asymptotic Gotsman--Linial conjecture | yes | yes | — | — |

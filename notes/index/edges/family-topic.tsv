@@ -60,10 +60,11 @@ fam	topic	layers
 024	diophantine-equations	TAS
 025	diophantine-equations	AS
 026	primes	TAS
-027	algebraic-geometry	A
-027	curves	TA
-027	arithmetic-geometry	TA
-027	number-fields	A
+027	algebraic-geometry	AS
+027	curves	TAS
+027	surfaces	S
+027	arithmetic-geometry	TAS
+027	number-fields	AS
 028	graph-theory	AS
 028	discrete-geometry	TASP
 028	primes	AS
@@ -74,7 +75,6 @@ fam	topic	layers
 031	number-fields	A
 031	galois-theory	TA
 032	algebraic-geometry	TA
-032	surfaces	TA
 032	abelian-varieties	TA
 033	algebraic-geometry	TAS
 033	manifolds	A
@@ -121,7 +121,7 @@ fam	topic	layers
 048	algebraic-geometry	TA
 048	complex-geometry	A
 048	surfaces	A
-049	geometric-measure-theory	A
+049	geometric-measure-theory	AS
 050	algebraic-geometry	TAS
 050	surfaces	AS
 051	algebraic-geometry	TA
@@ -162,7 +162,9 @@ fam	topic	layers
 065	algebraic-geometry	TA
 065	mathematical-physics	T
 065	curves	A
-066	algebraic-geometry	TA
+066	algebraic-geometry	TAS
+066	disordered-systems	S
+066	commutative-algebra	S
 067	algebraic-geometry	TA
 068	algebraic-geometry	TA
 069	curves	A
@@ -174,7 +176,8 @@ fam	topic	layers
 073	fractal-geometry	AS
 074	harmonic-analysis	TA
 074	fractal-geometry	A
-075	harmonic-analysis	T
+075	harmonic-analysis	TS
+075	measure-theory	S
 076	algorithms	S
 076	harmonic-analysis	TAS
 077	harmonic-analysis	T
@@ -234,7 +237,8 @@ fam	topic	layers
 102	complexity-theory	TAS
 102	algorithms	S
 102	computability	AP
-103	complexity-theory	TA
+103	complexity-theory	TAS
+103	computability	SP
 104	complexity-theory	TAS
 104	algorithms	S
 104	computability	P
@@ -301,6 +305,7 @@ fam	topic	layers
 130	complexity-theory	SP
 130	algorithms	A
 130	computability	P
+130	complex-geometry	S
 130	harmonic-analysis	TAS
 131	graph-theory	TAS
 131	algorithms	AS
@@ -318,7 +323,8 @@ fam	topic	layers
 134	formal-languages	TAS
 135	complexity-theory	TAS
 136	complexity-theory	TA
-137	computability	A
+137	complexity-theory	S
+137	computability	ASP
 138	complexity-theory	TA
 138	algorithms	A
 139	convex-geometry	TS
@@ -448,8 +454,9 @@ fam	topic	layers
 193	commutative-algebra	TA
 194	algebraic-topology	S
 194	commutative-algebra	TAS
-195	commutative-algebra	TA
-195	noncommutative-algebra	TA
+195	surfaces	SP
+195	commutative-algebra	TAS
+195	noncommutative-algebra	TAS
 196	algebraic-topology	AS
 196	group-theory	AS
 196	noncommutative-algebra	TAS
@@ -585,7 +592,7 @@ fam	topic	layers
 236	condensed-matter	A
 236	probability	S
 237	statistical-mechanics	S
-237	planar-maps-and-lattice-models	TAS
+237	planar-maps-and-lattice-models	TASP
 237	enumerative-combinatorics	TS
 238	complexity-theory	S
 238	harmonic-analysis	S
@@ -760,8 +767,8 @@ fam	topic	layers
 298	quantum-information	TS
 299	operator-algebras	TAS
 300	operator-algebras	TA
-301	operator-algebras	TA
-301	functional-analysis	A
+301	operator-algebras	TAS
+301	functional-analysis	AS
 302	operator-algebras	TA
 303	operator-algebras	TAS
 304	manifolds	A

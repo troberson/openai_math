@@ -1,6 +1,6 @@
 # Topic: complexity-theory
 
-27 families · pattern `complexity theor|unique games|2-to-1 games|p vs np|hardness of approximation|inapproxurab|\bpcp\b|ppad|circuit|quasipolynomial|matrix multiplication|permanent|subset sum|weisfeiler--leman|star height|state costs|derandomization|mean-payoff|parity games|exponential semidefinite|depth-three|depth-five|space simulation|sensitivit` · hits by layer: title 17 · abstract 21 · scope 18 · path 3
+28 families · pattern `complexity theor|unique games|2-to-1 games|p vs np|hardness of approximation|inapproxurab|\bpcp\b|ppad|circuit|quasipolynomial|matrix multiplication|permanent|subset sum|weisfeiler--leman|star height|state costs|derandomization|mean-payoff|parity games|exponential semidefinite|depth-three|depth-five|space simulation|sensitivit` · hits by layer: title 17 · abstract 21 · scope 20 · path 3
 
 A family is listed when the pattern hits its title, its abstract, its scope note, or the Lean file paths reached from its comparator configs. The match is a keyword floor, not a judgement: read the family page before treating a listing as a claim about what the result is about.
 
@@ -8,7 +8,7 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 |---|---|---|---|---|---|
 | [096](../convex-and-metric-geometry/096-gaussian-propeller-conjecture.md) | The Gaussian propeller conjecture | — | yes | — | — |
 | [102](../theoretical-computer-science/102-unique-games-conjecture-and-optimal-approximation-thresholds.md) | The Unique Games Conjecture and optimal approximation thresholds | yes | yes | yes | — |
-| [103](../theoretical-computer-science/103-derandomization-of-logarithmic-space-l-rl-bpl.md) | Derandomization of logarithmic space: $\mathsf L=\mathsf{RL}=\mathsf{BPL}$ | yes | yes | — | — |
+| [103](../theoretical-computer-science/103-derandomization-of-logarithmic-space-l-rl-bpl.md) | Derandomization of logarithmic space: $\mathsf L=\mathsf{RL}=\mathsf{BPL}$ | yes | yes | yes | — |
 | [104](../theoretical-computer-science/104-quasipolynomial-algorithms-for-mean-payoff-stochastic-and-parity-games.md) | Quasipolynomial algorithms for mean-payoff, stochastic and parity games | yes | yes | yes | — |
 | [105](../theoretical-computer-science/105-2-to-1-games-conjecture-with-perfect-completeness.md) | The 2-to-1 Games Conjecture with perfect completeness | yes | yes | yes | — |
 | [107](../theoretical-computer-science/107-matrix-multiplication-with-exponent-at-most-9-4.md) | Matrix multiplication with exponent at most $9/4$ | yes | yes | yes | — |
@@ -24,6 +24,7 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | [134](../theoretical-computer-science/134-generalized-star-height-at-most-three.md) | Generalized star height at most three | yes | — | yes | — |
 | [135](../theoretical-computer-science/135-sharp-homogeneous-depth-five-complexity-of-matrix-products.md) | Sharp homogeneous depth-five complexity of matrix products | yes | yes | yes | — |
 | [136](../theoretical-computer-science/136-quasilinear-pcp-for-ppad-conjecture.md) | The quasilinear PCP-for-PPAD conjecture | yes | yes | — | — |
+| [137](../theoretical-computer-science/137-one-tape-time-simulation-in-two-fifths-power-space.md) | One-tape time simulation in two-fifths-power space | — | — | yes | — |
 | [138](../theoretical-computer-science/138-subset-sum-in-o-2-0-49n-time.md) | Subset Sum in $O(2^{0.49n})$ time | yes | yes | — | — |
 | [141](../theoretical-computer-science/141-existential-theory-of-the-reals-and-existential-universal-sentences-in-the-counting-hierarchy.md) | The existential theory of the reals and existential--universal sentences in the counting hierarchy | — | yes | — | — |
 | [159](../combinatorics/159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemer-bounds.md) | Erd\H{o}s's reciprocal-sum conjecture and quasipolynomial Szemer\'edi bounds | yes | — | yes | — |

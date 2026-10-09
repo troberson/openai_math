@@ -1,8 +1,8 @@
 # Operator algebras
 
-19 families · 31 manuscripts · 6 formalized at source level · 14 scope notes · 23 comparator configs · 1 reasoning traces · 0 verification bundles
+19 families · 31 manuscripts · 7 formalized at source level · 15 scope notes · 24 comparator configs · 1 reasoning traces · 0 verification bundles
 
-Tier: T3 6 · T2 8 · T1 0 · T0 5
+Tier: T3 7 · T2 8 · T1 0 · T0 4
 
 | Family | Title | Tier | Mss | Form. | Scope | Configs | Trace |
 |---|---|---|---|---|---|---|---|
@@ -22,7 +22,7 @@ Tier: T3 6 · T2 8 · T1 0 · T0 5
 | [298](../operator-algebras/298-a-counterexample-to-voiculescus-free-entropy-equality-conjecture.md) | A counterexample to Voiculescu’s free-entropy equality conjecture | T2 | 1 | 0 | yes | 1 | — |
 | [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | The Kirchberg--R\o rdam character criterion | T3 | 1 | 1 | yes | 1 | — |
 | [300](../operator-algebras/300-popa-vaes-quadratic-strong-operator-paving-conjecture.md) | The Popa--Vaes quadratic strong-operator paving conjecture | T0 | 2 | 0 | — | 0 | — |
-| [301](../operator-algebras/301-classification-by-trace-cones-after-razak-jacelon-stabilization.md) | Classification by trace cones after Razak--Jacelon stabilization | T0 | 1 | 0 | — | 0 | — |
+| [301](../operator-algebras/301-classification-by-trace-cones-after-razak-jacelon-stabilization.md) | Classification by trace cones after Razak--Jacelon stabilization | T3 | 1 | 1 | yes | 1 | — |
 | [302](../operator-algebras/302-phillips-toms-formula-for-minimal-integer-actions.md) | The Phillips--Toms formula for minimal integer actions | T0 | 2 | 0 | — | 0 | — |
 | [303](../operator-algebras/303-from-ordinary-to-strong-pure-infiniteness.md) | From ordinary to strong pure infiniteness | T2 | 1 | 0 | yes | 2 | — |
 

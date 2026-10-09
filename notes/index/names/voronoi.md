@@ -1,10 +1,10 @@
 # Name: voronoi
 
-8 families · subject name · 3 carried by a title or a declaration · 8 by prose · 0 by bibliography author
+9 families · subject name · 3 carried by a title or a declaration · 9 by prose · 0 by bibliography author
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../names.tsv) with `role = citation`.
 
-Prose counts: 120 capitalized occurrences, 97 of them mid-sentence, 12 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
+Prose counts: 121 capitalized occurrences, 98 of them mid-sentence, 12 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
 
 ## Provenance by source
 
@@ -14,7 +14,7 @@ Prose counts: 120 capitalized occurrences, 97 of them mid-sentence, 12 lowercase
 | `M` — Manuscript title | title | 1 | A manuscript directory is named after it, so a manuscript takes it as its subject. |
 | `E` — Theorem title | title | 3 | A statement environment carries it in its optional title, so a theorem is named for it. |
 | `D` — Declaration | declaration | 0 | A `main_results` declaration name contains it, so a formalized statement is named for it. |
-| `b` — Body prose | body | 8 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
+| `b` — Body prose | body | 9 | A capitalized occurrence in manuscript prose — a citation, not a statement of subject. |
 | `B` — Bib author | body | 0 | An author surname in a shipped `.bib` — a citation, not a statement of subject. |
 
 ## Families
@@ -27,6 +27,7 @@ Prose counts: 120 capitalized occurrences, 97 of them mid-sentence, 12 lowercase
 | [159](../combinatorics/159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemer-bounds.md) | Erd\H{o}s's reciprocal-sum conjecture and quasipolynomial Szemer\'edi bounds | — | — | — | — | yes | — |
 | [223](../probability-and-statistical-mechanics/223-conformal-limits-of-square-lattice-random-cluster-interfaces.md) | Conformal limits of square-lattice random-cluster interfaces | — | — | — | — | yes | — |
 | [224](../probability-and-statistical-mechanics/224-critical-and-near-critical-universality-for-voronoi-percolation.md) | Critical and near-critical universality for Voronoi percolation | yes | yes | yes | — | yes | — |
+| [232](../probability-and-statistical-mechanics/232-gaussian-fields-and-sle-interfaces-for-lipschitz-heights.md) | Gaussian fields and SLE interfaces for Lipschitz heights | — | — | — | — | yes | — |
 | [267](../mathematical-physics/267-positive-temperature-bose-einstein-condensation-and-quantum-depletion.md) | Positive-temperature Bose--Einstein condensation and quantum depletion | — | — | — | — | yes | — |
 | [368](../partial-differential-equations/368-three-dimensional-ball-evans-approximation-problem.md) | The three-dimensional Ball--Evans approximation problem | — | — | — | — | yes | — |
 
@@ -45,6 +46,7 @@ Prose counts: 120 capitalized occurrences, 97 of them mid-sentence, 12 lowercase
 | [`Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026`](../../../preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/) | [368](../partial-differential-equations/368-three-dimensional-ball-evans-approximation-problem.md) | prose | [main.pdf](../../../preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/main.pdf) |
 | [`The-Euclidean-plane-is-not-five-colorable-September-23-2026`](../../../preprints/The-Euclidean-plane-is-not-five-colorable-September-23-2026/) | [158](../combinatorics/158-euclidean-plane-cannot-be-colored-with-five-colors.md) | prose | [paper.pdf](../../../preprints/The-Euclidean-plane-is-not-five-colorable-September-23-2026/paper.pdf) |
 | [`Triangular-minimality-for-planar-Coulomb-renormalized-energy-September-23-2026`](../../../preprints/Triangular-minimality-for-planar-Coulomb-renormalized-energy-September-23-2026/) | [090](../convex-and-metric-geometry/090-universal-optimality-of-the-triangular-lattice.md) | prose | [paper.pdf](../../../preprints/Triangular-minimality-for-planar-Coulomb-renormalized-energy-September-23-2026/paper.pdf) |
+| [`Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026`](../../../preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026/) | [232](../probability-and-statistical-mechanics/232-gaussian-fields-and-sle-interfaces-for-lipschitz-heights.md) | prose | [paper.pdf](../../../preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026/paper.pdf) |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.
 

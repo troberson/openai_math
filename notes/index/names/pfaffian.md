@@ -4,7 +4,7 @@
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../names.tsv) with `role = citation`.
 
-Prose counts: 195 capitalized occurrences, 161 of them mid-sentence, 41 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
+Prose counts: 214 capitalized occurrences, 171 of them mid-sentence, 48 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
 
 ## Provenance by source
 
@@ -23,7 +23,7 @@ Prose counts: 195 capitalized occurrences, 161 of them mid-sentence, 41 lowercas
 |---|---|---|---|---|---|---|---|
 | [002](../number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md) | The full Birch--Swinnerton-Dyer formula in Selmer coranks zero and one | — | — | yes | — | yes | — |
 | [015](../number-theory/015-torus-packet-equidistribution-in-prime-quartic-and-sextic-degrees.md) | Torus-packet equidistribution in prime, quartic, and sextic degrees | — | — | — | — | yes | — |
-| [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties-and-products-of-k3-surfaces.md) | The rational Hodge conjecture for CM abelian varieties and products of K3 surfaces | — | — | — | — | yes | — |
+| [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties.md) | The rational Hodge conjecture for CM abelian varieties | — | — | — | — | yes | — |
 | [054](../algebraic-and-complex-geometry/054-counterexamples-to-kuznetsovs-rationality-conjecture.md) | Counterexamples to Kuznetsov's rationality conjecture | — | — | — | — | yes | — |
 | [113](../theoretical-computer-science/113-approximate-counting-and-the-perfect-matching-entropy-conjecture.md) | Approximate counting and the perfect-matching entropy conjecture | — | — | — | — | yes | — |
 | [143](../dynamical-systems-and-ergodic-theory/143-uniform-limit-cycle-bounds-in-hilberts-sixteenth-problem.md) | Uniform limit-cycle bounds in Hilbert's sixteenth problem | — | — | — | — | yes | — |
@@ -58,9 +58,11 @@ Prose counts: 195 capitalized occurrences, 161 of them mid-sentence, 41 lowercas
 | [`The-Bass-trace-conjecture-for-complex-group-rings-September-24-2026`](../../../preprints/The-Bass-trace-conjecture-for-complex-group-rings-September-24-2026/) | [207](../algebra/207-1-bass-and-complex-bass-trace-conjectures.md) | prose | [The-Bass-trace-conjecture-for-complex-group-rings-September-24-2026.pdf](../../../preprints/The-Bass-trace-conjecture-for-complex-group-rings-September-24-2026/The-Bass-trace-conjecture-for-complex-group-rings-September-24-2026.pdf) |
 | [`The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026`](../../../preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/) | [226](../probability-and-statistical-mechanics/226-double-dimer-cle-4-conjecture-in-the-half-plane.md) | prose | [paper.pdf](../../../preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/paper.pdf) |
 | [`The-l1-Bass-Conjecture-for-Discrete-Groups-October-5-2026`](../../../preprints/The-l1-Bass-Conjecture-for-Discrete-Groups-October-5-2026/) | [207](../algebra/207-1-bass-and-complex-bass-trace-conjectures.md) | prose | [l1-bass-conjecture.pdf](../../../preprints/The-l1-Bass-Conjecture-for-Discrete-Groups-October-5-2026/l1-bass-conjecture.pdf) |
-| [`The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-September-24-2026`](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-September-24-2026/) | [002](../number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md) | prose | [paper.pdf](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-September-24-2026/paper.pdf) |
+| [`The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026`](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/) | [002](../number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md) | prose | [paper.pdf](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/paper.pdf) |
+| [`The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-September-24-2026`](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-September-24-2026/) | — | prose | — |
 | [`Uniform-marked-polygon-estimates-and-sharp-finite-bridge-moments-September-26-2026`](../../../preprints/Uniform-marked-polygon-estimates-and-sharp-finite-bridge-moments-September-26-2026/) | [237](../probability-and-statistical-mechanics/237-three-quarter-diameter-exponent-for-honeycomb-walks.md) | prose | [main.pdf](../../../preprints/Uniform-marked-polygon-estimates-and-sharp-finite-bridge-moments-September-26-2026/main.pdf) |
-| [`Weil-classes-and-Hodge-classes-on-abelian-powers-September-30-2026`](../../../preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-September-30-2026/) | [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties-and-products-of-k3-surfaces.md) | prose | [paper.pdf](../../../preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-September-30-2026/paper.pdf) |
+| [`Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026`](../../../preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/) | [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties.md) | prose | [paper.pdf](../../../preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/paper.pdf) |
+| [`Weil-classes-and-Hodge-classes-on-abelian-powers-September-30-2026`](../../../preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-September-30-2026/) | — | prose | — |
 | [`uniform-bounds-for-planar-polynomial-limit-cycles-September-24-2026`](../../../preprints/uniform-bounds-for-planar-polynomial-limit-cycles-September-24-2026/) | [143](../dynamical-systems-and-ergodic-theory/143-uniform-limit-cycle-bounds-in-hilberts-sixteenth-problem.md) | prose | [uniform-bounds-for-planar-polynomial-limit-cycles-September-24-2026.pdf](../../../preprints/uniform-bounds-for-planar-polynomial-limit-cycles-September-24-2026/uniform-bounds-for-planar-polynomial-limit-cycles-September-24-2026.pdf) |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.
@@ -81,6 +83,8 @@ Up to 8 of the statement-environment titles that carry the name, verbatim with a
 | [237](../probability-and-statistical-mechanics/237-three-quarter-diameter-exponent-for-honeycomb-walks.md) | Fixed-site regulated Pfaffian |
 | [002](../number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md) | Pfaffian divisibility with repeated factors |
 | [002](../number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md) | Paired and Pfaffian division |
+| — | Pfaffian divisibility with repeated factors |
+| — | Paired and Pfaffian division |
 
 ## Spelling variants
 

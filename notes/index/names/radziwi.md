@@ -4,7 +4,7 @@
 
 A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../names.tsv) with `role = citation`.
 
-Prose counts: 37 capitalized occurrences, 30 of them mid-sentence, 0 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
+Prose counts: 38 capitalized occurrences, 31 of them mid-sentence, 0 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/names.md`](../../names.md).
 
 ## Provenance by source
 
@@ -40,7 +40,8 @@ Prose counts: 37 capitalized occurrences, 30 of them mid-sentence, 0 lowercase. 
 | [`The-Quasi-Riemann-Hypothesis-October-5-2026`](../../../preprints/The-Quasi-Riemann-Hypothesis-October-5-2026/) | [003](../number-theory/003-quasi-riemann-hypothesis.md) | prose | [paper2.pdf](../../../preprints/The-Quasi-Riemann-Hypothesis-October-5-2026/paper2.pdf) |
 | [`The-Quasi-Riemann-Hypothesis-September-30-2026`](../../../preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/) | [003](../number-theory/003-quasi-riemann-hypothesis.md) | prose | [paper.pdf](../../../preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/paper.pdf) |
 | [`The-joint-Dickman-law-for-consecutive-integers-September-24-2026`](../../../preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/) | [012](../number-theory/012-independent-largest-prime-factors-of-consecutive-integers.md) | prose | [paper.pdf](../../../preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf) |
-| [`The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-September-23-2026`](../../../preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-September-23-2026/) | [006](../number-theory/006-goldfelds-conjecture.md) | prose | [paper.pdf](../../../preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-September-23-2026/paper.pdf) |
+| [`The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026`](../../../preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/) | [006](../number-theory/006-goldfelds-conjecture.md) | prose | [paper.pdf](../../../preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/paper.pdf) |
+| [`The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-September-23-2026`](../../../preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-September-23-2026/) | — | prose | — |
 | [`Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026`](../../../preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/) | [011](../number-theory/011-ford-konyagin-luca-conjecture-on-prime-predecessors.md) | prose | [paper.pdf](../../../preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf) |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.

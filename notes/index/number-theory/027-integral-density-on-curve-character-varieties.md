@@ -3,15 +3,15 @@
 |  |  |
 |---|---|
 | Discipline | [Number theory](../disciplines/number-theory.md) |
-| Tier | T0 |
-| Manuscripts | 1 (0 formalized at source level) |
-| Scope note | — |
-| Comparator configs | 0 (0 with a `main_results` declaration) |
+| Tier | T3 |
+| Manuscripts | 1 (1 formalized at source level) |
+| Scope note | [`lean/docs/027.md`](../../../lean/docs/027.md) |
+| Comparator configs | 1 (1 with a `main_results` declaration) |
 | Reasoning trace | — |
 | Verification bundles | 0 |
 | Cited by / cites | 0 in · 0 out |
 | Claim shapes | resolution, bound, density, uniform |
-| Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [curves](../topics/curves.md) · [arithmetic-geometry](../topics/arithmetic-geometry.md) · [number-fields](../topics/number-fields.md) |
+| Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [curves](../topics/curves.md) · [surfaces](../topics/surfaces.md) · [arithmetic-geometry](../topics/arithmetic-geometry.md) · [number-fields](../topics/number-fields.md) |
 | Companion families | — |
 | Summary page | — |
 
@@ -19,15 +19,21 @@
 
 | Dir | PDF | LaTeX tree | README | Formalized | Main file | Verification |
 |---|---|---|---|---|---|---|
-| [`Integral-points-on-character-varieties-of-curves-September-25-2026`](../../../preprints/Integral-points-on-character-varieties-of-curves-September-25-2026/) | [paper.pdf](../../../preprints/Integral-points-on-character-varieties-of-curves-September-25-2026/paper.pdf) | [build/](../../../preprints/Integral-points-on-character-varieties-of-curves-September-25-2026/build/) | [README.md](../../../preprints/Integral-points-on-character-varieties-of-curves-September-25-2026/README.md) | no | [main.tex](../../../preprints/Integral-points-on-character-varieties-of-curves-September-25-2026/build/main.tex) | — |
+| [`Integral-points-on-character-varieties-of-curves-September-25-2026`](../../../preprints/Integral-points-on-character-varieties-of-curves-September-25-2026/) | [paper.pdf](../../../preprints/Integral-points-on-character-varieties-of-curves-September-25-2026/paper.pdf) | [build/](../../../preprints/Integral-points-on-character-varieties-of-curves-September-25-2026/build/) | [README.md](../../../preprints/Integral-points-on-character-varieties-of-curves-September-25-2026/README.md) | yes | [main.tex](../../../preprints/Integral-points-on-character-varieties-of-curves-September-25-2026/build/main.tex) | — |
 
 ## Lean
 
-No `main_results` declaration reaches this family, and no scope note links a comparator config.
+| Config | Declaration | File | Module dir |
+|---|---|---|---|
+| [CharacterVarietiesAllSeamsSupport](../../../lean/ComparatorChallenges/CharacterVarietiesAllSeamsSupport.json) | `OAI.IntegralCharacterVarieties.SurfacePresentation.Diagram.producedMarkedValues_allSeams` | [ProducedSolution.lean](../../../lean/OAI/AlgebraicGeometry/CharacterVarieties/Seams/ProducedSolution.lean) | [`OAI/AlgebraicGeometry/CharacterVarieties/Seams`](../../../lean/OAI/AlgebraicGeometry/CharacterVarieties/Seams/) |
+
+The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 
-No scope note links a comparator config for this family.
+| Config | Statement | Solution | Theorems | Definitions | nanoda | In `main_results` |
+|---|---|---|---|---|---|---|
+| `CharacterVarietiesAllSeamsSupport` | [.json](../../../lean/ComparatorChallenges/CharacterVarietiesAllSeamsSupport.json) | [.lean](../../../lean/ComparatorChallenges/CharacterVarietiesAllSeamsSupport.lean) | 1 | 0 | no | yes |
 
 ## Verification bundles
 

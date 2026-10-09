@@ -1,6 +1,6 @@
 # Differential geometry
 
-29 families · 49 manuscripts · 11 formalized at source level · 15 scope notes · 20 comparator configs · 0 reasoning traces · 4 verification bundles
+29 families · 49 manuscripts · 10 formalized at source level · 15 scope notes · 20 comparator configs · 0 reasoning traces · 4 verification bundles
 
 Tier: T3 9 · T2 6 · T1 0 · T0 14
 
@@ -15,7 +15,7 @@ Tier: T3 9 · T2 6 · T1 0 · T0 14
 | [339](../differential-geometry/339-katoks-entropy-rigidity-conjecture.md) | Katok's entropy rigidity conjecture | T0 | 1 | 0 | — | 0 | — |
 | [340](../differential-geometry/340-a-counterexample-to-the-nearby-lagrangian-conjecture.md) | A counterexample to the nearby Lagrangian conjecture | T0 | 1 | 0 | — | 0 | — |
 | [341](../differential-geometry/341-donaldsons-hypersymplectic-deformation-conjecture.md) | Donaldson's hypersymplectic deformation conjecture | T0 | 1 | 0 | — | 0 | — |
-| [342](../differential-geometry/342-donaldsons-tamed-to-compatible-conjecture.md) | Donaldson's tamed-to-compatible conjecture | T3 | 1 | 1 | yes | 1 | — |
+| [342](../differential-geometry/342-donaldsons-tamed-to-compatible-conjecture.md) | Donaldson's tamed-to-compatible conjecture | T3 | 1 | 0 | yes | 1 | — |
 | [343](../differential-geometry/343-sharp-symplectic-ball-packing-criteria-in-higher-dimensions.md) | Sharp symplectic ball-packing criteria in higher dimensions | T2 | 1 | 0 | yes | 2 | — |
 | [344](../differential-geometry/344-metric-blaschke-conjecture.md) | The metric Blaschke conjecture | T0 | 1 | 0 | — | 0 | — |
 | [345](../differential-geometry/345-infinitely-many-closed-geodesics-on-spheres-and-three-manifolds.md) | Infinitely many closed geodesics on spheres and three-manifolds | T0 | 1 | 0 | — | 0 | — |

@@ -1,11 +1,12 @@
 # Topic: disordered-systems
 
-15 families · pattern `anderson model|localization|delocalization|random sat|satisfiability|perceptron|jamming|disorder|spin glass|sherrington|replica|diluted|orthogonally invariant|pair potentials` · hits by layer: title 10 · abstract 11 · scope 11 · path 1
+16 families · pattern `anderson model|localization|delocalization|random sat|satisfiability|perceptron|jamming|disorder|spin glass|sherrington|replica|diluted|orthogonally invariant|pair potentials` · hits by layer: title 10 · abstract 11 · scope 12 · path 1
 
 A family is listed when the pattern hits its title, its abstract, its scope note, or the Lean file paths reached from its comparator configs. The match is a keyword floor, not a judgement: read the family page before treating a listing as a claim about what the result is about.
 
 | Family | Title | T | A | S | P |
 |---|---|---|---|---|---|
+| [066](../algebraic-and-complex-geometry/066-bounded-klt-complements-for-fano-contractions.md) | Bounded klt complements for Fano contractions | — | — | yes | — |
 | [140](../theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md) | Memory--sample lower bounds for noiseless Gaussian regression | — | — | yes | yes |
 | [217](../probability-and-statistical-mechanics/217-low-temperature-sherrington-kirkpatrick-fluctuation-law.md) | The low-temperature Sherrington--Kirkpatrick fluctuation law | yes | yes | — | — |
 | [218](../probability-and-statistical-mechanics/218-conformal-universality-for-weakly-interacting-and-disordered-ising-models.md) | Conformal universality for weakly interacting and disordered Ising models | yes | yes | — | — |

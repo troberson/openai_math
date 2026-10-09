@@ -1,8 +1,8 @@
 # Probability and statistical mechanics
 
-29 families · 105 manuscripts · 11 formalized at source level · 19 scope notes · 51 comparator configs · 1 reasoning traces · 2 verification bundles
+29 families · 105 manuscripts · 12 formalized at source level · 19 scope notes · 52 comparator configs · 1 reasoning traces · 2 verification bundles
 
-Tier: T3 8 · T2 11 · T1 0 · T0 10
+Tier: T3 9 · T2 10 · T1 0 · T0 10
 
 | Family | Title | Tier | Mss | Form. | Scope | Configs | Trace |
 |---|---|---|---|---|---|---|---|
@@ -32,7 +32,7 @@ Tier: T3 8 · T2 11 · T1 0 · T0 10
 | [234](../probability-and-statistical-mechanics/234-all-temperature-pressure-for-orthogonally-invariant-ising-spin-glasses.md) | All-temperature pressure for orthogonally invariant Ising spin glasses | T2 | 1 | 0 | yes | 1 | — |
 | [235](../probability-and-statistical-mechanics/235-random-sat-thresholds-sharp-variance-and-computability.md) | Random-SAT thresholds, sharp variance and computability | T2 | 4 | 0 | yes | 4 | — |
 | [236](../probability-and-statistical-mechanics/236-factor-of-iid-threshold-for-free-ising-states-on-trees.md) | The factor-of-IID threshold for free Ising states on trees | T3 | 1 | 1 | yes | 1 | — |
-| [237](../probability-and-statistical-mechanics/237-three-quarter-diameter-exponent-for-honeycomb-walks.md) | The three-quarter diameter exponent for honeycomb walks | T2 | 13 | 0 | yes | 3 | — |
+| [237](../probability-and-statistical-mechanics/237-three-quarter-diameter-exponent-for-honeycomb-walks.md) | The three-quarter diameter exponent for honeycomb walks | T3 | 13 | 1 | yes | 4 | — |
 | [238](../probability-and-statistical-mechanics/238-optimal-logarithmic-mixing-of-the-thorp-shuffle.md) | Optimal logarithmic mixing of the Thorp shuffle | T3 | 12 | 3 | yes | 13 | — |
 | [239](../probability-and-statistical-mechanics/239-sharp-singularity-rates-for-symmetric-sign-matrices.md) | Sharp singularity rates for symmetric sign matrices | T0 | 2 | 0 | — | 0 | — |
 

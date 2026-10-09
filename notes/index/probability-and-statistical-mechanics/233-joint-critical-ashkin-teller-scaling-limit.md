@@ -19,7 +19,7 @@
 
 | Dir | PDF | LaTeX tree | README | Formalized | Main file | Verification |
 |---|---|---|---|---|---|---|
-| [`The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026`](../../../preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026/) | [main.pdf](../../../preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026/main.pdf) | [build/](../../../preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026/build/) | [README.md](../../../preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026/README.md) | no | [main.tex](../../../preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026/build/main.tex) | — |
+| [`The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026`](../../../preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026/) | [main.pdf](../../../preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026/main.pdf) | [build/](../../../preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026/build/) | [README.md](../../../preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026/README.md) | no | [main.tex](../../../preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026/build/main.tex) | — |
 
 ## Lean
 
