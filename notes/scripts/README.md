@@ -112,13 +112,17 @@ title normalizer, the citation-key read, the pair window and the component scan)
 script run as `python3 notes/scripts/foo.py` has `notes/scripts` on `sys.path`, so it imports them as
 `from catlib import ...` with no path boilerplate.
 
-**31** of the **44** scripts call the package: **6** `extract_`, **3** `build_`, **2** `measure_`,
-`check_index_links.py`, `read_manuscript.py`, and **18** of the **19** checkers. The last checker,
-`verify_upstream_history.py`, is ported by `math-lon.2.5`, which is also where the **22**
-`duplicate-code` findings go — measured 2026-10-09 with `--enable=R0801` over 54 files, every
-cluster now reported against `catlib/anchors.py` (see `notes/linting.md`). Two joins deliberately
-stay outside the package: `verify_upstream_history.py` reads `lean/formalization.yaml` through
-`git show <rev>:` (a history read), and `build_index.py` keeps its own `TRIPLE` regex.
+**32** of the **44** scripts call the package: **6** `extract_`, **3** `build_`, **2** `measure_`,
+`check_index_links.py`, `read_manuscript.py`, and **all 19** checkers — `math-lon.2.5` ported the last
+two, `verify_upstream_history.py` and `verify_summaries.py`, and the **22** `duplicate-code` findings
+did not move (measured 2026-10-09 with `--enable=R0801` over 54 files, every cluster reported against
+`catlib/anchors.py`; see `notes/linting.md`). What deliberately stays outside the package is a **read
+shape**, not a parse: `verify_upstream_history.py` reads `lean/formalization.yaml` and
+`notes/catalog.tsv` from a **revision** through `git show <rev>:`, so the package gained
+`parse_yaml_text` / `parse_overview_text` / `read_rows_from_text` — text-level cores its disk-level
+`parse_yaml` / `parse_overview` / `read_rows` delegate to — rather than a git reader;
+`verify_summaries.py` keeps its lenient `errors="replace"` read of a declared source, which may be a
+compiled PDF; and `build_index.py` keeps its own `TRIPLE` regex.
 
 The package is not in the census below: the script population is `notes/scripts/*.py`, and
 `catlib/` is 10 modules under that directory, counted as **54** source files by the lint gate in
@@ -213,4 +217,11 @@ that pass added then reads as already present and the recorded gap vanishes.
   tree hand-written. The tree is hand-written in what it says and script-touched in that one column.
 - The report-only table records which page a report feeds as stated in that page and in `AGENTS.md`.
   It is not derived from the report text, so a page that stops quoting a report keeps its row here.
+- **A needle can match nothing and the run stays green.** `verify_upstream_history.py`'s `SLUG`
+  pattern requires a trailing `/` inside the backticks; measured 2026-10-09 over the three pages it
+  checks it matches **0** tokens, while `upstream_history/2026-10-07_3014888.md` carries **14**
+  backticked manuscript-slug tokens of that shape written without the slash. The check is vacuous, not
+  failing — the run exits 0 because nothing is asserted, and a slug renamed to one the release does not
+  name is not caught by this needle. `math-lon.2.5` ported the file and left the pattern as it is,
+  because its acceptance is byte-identical gate reports; widening the needle is tracked as `math-cg1`.
 - Nothing in `lean/` is built, so no generated artifact here is a verification of a formalization.

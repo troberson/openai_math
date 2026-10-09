@@ -53,11 +53,14 @@ lives in this file and nowhere else.
 
 - Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `overview`, `ledger`, `preprints`,
   `text`, `yaml`, `anchors`, `bib` (10 modules). Import them (`from catlib import yaml as Y`); do not
-  re-implement a join in an extractor. **31** of the **44** scripts already do. A script run as
-  `python3 notes/scripts/foo.py` already has `notes/scripts` as `sys.path[0]`, so no `sys.path.insert`
-  is needed and `# noqa: E402` markers are not needed with it (measured 0 of each). The last checker,
-  `verify_upstream_history.py`, moves onto the package in `math-lon.2`; `verify_upstream_history.py`'s
-  `git show <rev>:` yaml read and `build_index.py`'s `TRIPLE` regex stay local by design. A page
+  re-implement a join in an extractor. **32** of the **44** scripts do, including **all 19** checkers.
+  A script run as `python3 notes/scripts/foo.py` already has `notes/scripts` as `sys.path[0]`, so no
+  `sys.path.insert` is needed and `# noqa: E402` markers are not needed with it (measured 0 of each).
+  What stays local is a read shape, not a join: `verify_upstream_history.py`'s `git show <rev>:`
+  reads of `lean/formalization.yaml` and `notes/catalog.tsv` (a **revision**, which the package does
+  not read — it gained `parse_yaml_text` / `parse_overview_text` / `read_rows_from_text` so the parse
+  is shared and only the git read is not), `verify_summaries.py`'s lenient `errors="replace"` read of
+  a declared source that may be a compiled PDF, and `build_index.py`'s `TRIPLE` regex. A page
   quotation is compared with `catlib.text.strip_markup` — the rule that folds quotes and strips
   markup — never with a checker's private copy of it.
 - Regenerate the ledger with `python3 notes/scripts/build_catalog.py` — stdlib only, runs in
