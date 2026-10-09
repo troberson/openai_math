@@ -112,8 +112,9 @@ That rule is what keeps `[S25]`-style prose citations from producing false posit
 ## 3. Regex hazards
 
 - **A quote/code-span alternation swallows quotations.** `“…”|`...`` matched a code span that opened
-  *before* a quotation and consumed the quotation's opening quote (`**509** `sorry` occurrences …
-  "zero of the 121,734 files under `lean/OAI/` …"`), so the candidate list came out empty. Scan the
+  *before* a quotation and consumed the quotation's opening quote (`**539** `sorry` occurrences, 415
+  of them at least one; "zero of the 122,458 files under `lean/OAI/` …"`), so the candidate list
+  came out empty. Scan the
   two forms with **separate regexes in separate windows**:
 
   ```python
