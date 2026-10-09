@@ -4,7 +4,7 @@
 
 **362. Global smoothness for relativistic Vlasov–Maxwell.** Proves large-data global existence and uniqueness for the three-dimensional, one-species relativistic Vlasov–Maxwell system. Smooth admissible initial data may be arbitrary provided the particle density is compactly supported and the electromagnetic fields have finite energy and bounded derivatives of every order; the solution remains smooth on every finite time interval. ([Lean](../../../lean/docs/362.md))
 
-The blurb above is reproduced from [S1:8799], with the Lean link rewritten as a relative link from this page's directory. The release sets the family number and title in bold and renders the en dash in the title as an en dash; the entry's own manuscript link sits at [S1:8806] and the release's copy of the abstract at [S1:8808].
+The blurb above is reproduced from [S1:8772], with the Lean link rewritten as a relative link from this page's directory. The release sets the family number and title in bold and renders the en dash in the title as an en dash; the entry's own manuscript link sits at [S1:8779] and the release's copy of the abstract at [S1:8781].
 
 ## Undergraduate summary
 

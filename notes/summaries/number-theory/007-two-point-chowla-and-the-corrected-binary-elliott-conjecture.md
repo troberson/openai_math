@@ -20,7 +20,7 @@ halves around it.
 
 The release's own LaTeX entry gives the family the shorter title "Two-point Chowla and the corrected
 binary Elliott conjecture" ([S2:90]), and the release attributes a reasoning trace to it: "Ordinary
-two-point correlations of multiplicative functions" ([S3:27], [S24]). One manuscript carries the
+two-point correlations of multiplicative functions" ([S3:28], [S24]). One manuscript carries the
 whole family ([S4]), dated September 24, 2026 ([S4:5], [S5:46]).
 
 ## Undergraduate summary
@@ -250,7 +250,7 @@ configurations naming three target theorems ([S18], [S19], [S20], [S21], [S22]) 
 own `formalization.yaml` records no entry for the manuscript, and the ledger's formalized and
 `main_results` counts for this family are both zero ([S17]). Read as a source-level fact, the
 formalization is present in the source tree and absent from the release's index of formalized
-results; the release publishes the derivation as a reasoning trace ([S3:27], [S24]), which is the
+results; the release publishes the derivation as a reasoning trace ([S3:28], [S24]), which is the
 only published derivation artifact for this family.
 
 ## Sources
@@ -265,7 +265,7 @@ carries no raw HTML.
 | --- | --- | --- | --- |
 | S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Release blurb, family 007 at line 166 |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | LaTeX entry `\resultentry{007}`, line 90 |
-| S3 | [`README.md`](../../../README.md) | 51 | Trace attribution, line 27 |
+| S3 | [`README.md`](../../../README.md) | 51 | Trace attribution, line 28 |
 | S4 | [`preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/README.md`](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/README.md) | 18 | Manuscript README (title, author, date, bibtex stub) |
 | S5 | [`preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/main.tex`](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/main.tex) | 90 | Title line 40, date line 46, abstract 49–58, three Parts |
 | S6 | [`preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/introduction.tex`](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/introduction.tex) | 278 | Theorems, prior work, main ideas, organization |

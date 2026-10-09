@@ -4,7 +4,7 @@
 
 **287. Isomorphism of the free group factors.** Resolves the free group factor isomorphism problem: $`L(\mathbb F_2)\cong L(\mathbb F_3)`$, and hence all interpolated free group factors, including $`L(\mathbb F_\infty)`$, are isomorphic. Their common factor has fundamental group $`\mathbb R_{\gt 0}`$. ([Lean](../../../lean/docs/287.md))
 
-The blurb above is reproduced from [S1:7186] and its Lean link is rewritten repo-relative. CONTENTS.md sets the entry's math in `$`…`$` delimiters with the math itself inside backticks, so the blurb renders as inline math. The manuscript link is a separate indented line below the blurb [S1:7193] and the abstract follows on the next indented line [S1:7195].
+The blurb above is reproduced from [S1:7159] and its Lean link is rewritten repo-relative. CONTENTS.md sets the entry's math in `$`…`$` delimiters with the math itself inside backticks, so the blurb renders as inline math. The manuscript link is a separate indented line below the blurb [S1:7166] and the abstract follows on the next indented line [S1:7168].
 
 ## Undergraduate summary
 
