@@ -327,14 +327,16 @@ lives in this file and nowhere else.
 ## Testing instructions
 
 - Nothing here builds and there is no test suite; the generator report is the test.
-- The whole-tree test is the gate list at `.qwen/tmp/gate.sh`: **61** invocations — the 7 writers,
+- The whole-tree test is the gate list at `notes/scripts/gate.sh`: **62** invocations — the 7 writers,
   the 17 gated report-only rows (including `check_summary_manuscripts.py` and
-  `locate_summary_quotes.py`; `read_manuscript.py` is the one script it does not run), each of the 18
-  checkers plain and with `--mutant` (**36** invocations), plus `verify_conjecture_standing.py` plain
-  only. Run it twice: the two reports must be byte-identical, and `notes/scripts/README.md` carries
+  `locate_summary_quotes.py`; `read_manuscript.py` is the one script it does not run), and **38**
+  checker invocations: each of the 18 checkers plain and with `--mutant` (**36**), plus
+  `verify_conjecture_standing.py` plain and with `--mutant` (**2**). Run it twice: the two reports
+  must be byte-identical, and `notes/scripts/README.md` carries
   the gate command for every row. `refresh_summary_line_counts.py` runs first among the checkers
   because `verify_summaries.py` flags a stale `Lines` cell. One driver at a time, and stop it by
-  process group, never by PID. `math-8ou` promotes the list into `notes/scripts/`.
+  process group, never by PID. `notes/scripts/gate_driver.sh` runs the list twice and writes the
+  reports, md5 snapshots and diffs under `.qwen/tmp/reports/`.
 - Run the generator twice and diff the output: `notes/catalog.tsv` must be byte-identical.
 - Check the report's reconciliation lines after every change: 372 families, 719 manuscripts,
   172 formalized, 242 scope notes, 416 challenges, 200 `main_results` entries over 189 configs,

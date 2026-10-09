@@ -2,8 +2,8 @@
 
 The venv, the three tool configs, the commands, and every exemption with the count it covers.
 Created for `math-e8k`. The three commands below are the lint gate; the twice-run gate that proves a
-lint fix changed no generated output runs from the scratch list at `.qwen/tmp/gate.sh` (promoted to
-`notes/scripts/` by `math-8ou`), and the idempotence discipline it implements is recorded in
+lint fix changed no generated output runs from the gate list at `notes/scripts/gate.sh` (promoted
+there from `.qwen/tmp/` by `math-8ou`), and the idempotence discipline it implements is recorded in
 `notes/scripts/README.md`.
 
 ## The environment

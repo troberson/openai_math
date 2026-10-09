@@ -292,7 +292,8 @@ its first line.
 
 Tooling used for this page: `python3 notes/scripts/verify_summaries.py` prints every cited line from
 the shipped file, checks every quotation against the lines it cites, and with `--mutant` proves the
-quote check discriminates; `.qwen/tmp/number001.py` applied the numbering above.
+quote check discriminates. The numbering above was applied by a scratch script that `math-8ou`
+deleted with the rest of the `.qwen/tmp/` one-off probes, so it is not in the tree.
 
 Absent by construction (T0): `lean/docs/001.md`, any `lean/OAI/**` file, any
 `lean/ComparatorChallenges/` entry, any `main_results` config, any verification dir, any reasoning

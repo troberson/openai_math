@@ -50,13 +50,14 @@ rows in six artifacts.
 ### Report-only
 
 The other **36** scripts write nothing. **18** of them print the report a page's counts come from.
-The Gate column is the invocation the gate list runs: `.qwen/tmp/gate.sh`, which runs **61**
+The Gate column is the invocation the gate list runs: `notes/scripts/gate.sh`, which runs **62**
 invocations — the 7 writers, the 17 gated report-only rows (including `check_summary_manuscripts.py`
-and `locate_summary_quotes.py`), each of the 18 checkers plain and with `--mutant` (**36**
-invocations), plus `verify_conjecture_standing.py` plain only — in class order, not in the order the
-rows sit; it prints one line per invocation with its exit code and writes nothing to the repo.
-`math-8ou` promotes it into `notes/scripts/`. A writer's gate is the twice-run byte-identity diff on
-its target, recorded in the writers table.
+and `locate_summary_quotes.py`), and **38** checker invocations: each of the 18 checkers plain and
+with `--mutant` (**36**), plus `verify_conjecture_standing.py` plain and with `--mutant` (**2**) — in
+class order, not in the order the rows sit; it prints one line per invocation with its exit code and
+writes nothing to the repo. `math-8ou` promoted it from `.qwen/tmp/` into `notes/scripts/`, closing
+the one gap the list had. A writer's gate is the twice-run byte-identity diff on its target, recorded
+in the writers table.
 
 | Script | Report feeds | Gate |
 |---|---|---|
@@ -92,14 +93,15 @@ page's text.
 
 The remaining **18** scripts verify a page or a table. Each exits non-zero when what it checks has
 drifted; each takes `--mutant`, which injects faults and asserts they are caught. The gate runs each
-one plain and then with `--mutant` — 36 of the 61 invocations — with one gap recorded in the table.
+one plain and then with `--mutant` — **38** of the 62 invocations: **36** from the loop over the 18
+rows below, **2** more for `verify_conjecture_standing.py`, which the list runs outside the loop.
 
 | Checker | Checks | Gate |
 |---|---|---|
 | `verify_abstracts.py` | `notes/abstracts.md` | plain + `--mutant` |
 | `verify_citations.py` | `notes/citations.md` | plain + `--mutant` |
 | `verify_conditional.py` | `notes/conditional.md` | plain + `--mutant` |
-| `verify_conjecture_standing.py` | `notes/conjecture-standing.tsv` | **plain only** — gate gap |
+| `verify_conjecture_standing.py` | `notes/conjecture-standing.tsv` | plain + `--mutant` |
 | `verify_counterexample_crosscheck.py` | `notes/counterexample-crosscheck.md` | plain + `--mutant` |
 | `verify_dependency_drift.py` | `notes/dependency-drift.md`, `notes/formalization-deps.md` | plain + `--mutant` |
 | `verify_findings.py` | `notes/findings.md` | plain + `--mutant` |
@@ -115,9 +117,10 @@ one plain and then with `--mutant` — 36 of the 61 invocations — with one gap
 | `verify_upstream_history.py` | `upstream_history/` — the three pages, outside `notes/` | plain + `--mutant` |
 | `verify_verification_dirs.py` | `notes/verification-dirs.md` | plain + `--mutant` |
 
-`verify_conjecture_standing.py` is the gap: the gate list runs it plain only, so its six mutants are
-not run by the gate. Measured 2026-10-09 by hand — `mutants 6  uncaught 0 []`, exit 0 — and adding it
-to the list is part of `math-8ou`.
+`verify_conjecture_standing.py` is the one checker the list kept outside its loop: it ran plain only,
+so its six mutants were never run by the gate. Measured 2026-10-09 by hand — `mutants 6  uncaught
+0 []`, exit 0 — `math-8ou` added the `--mutant` invocation, which is why the count reads 62 and not
+61.
 
 `verify_script_ownership.py` — this page's own checker — is not in the table: a checker cannot list
 itself as its input. It is the 19th checker and the 44th script the run counts.
@@ -226,20 +229,38 @@ git, so nothing in the scratch tree is tracked and no checker here reads it. A p
 question stays where it is and is deleted; a probe that a later bead re-runs is promoted, gets a row
 in the tables above, and only then gets a gate command.
 
-Measured 2026-10-09 over `.qwen/tmp/`: **367** top-level files, **7,116** files including
-subdirectories, **14** subdirectories. By top-level suffix: **220** `.txt`, **70** `.py`, **43** `.md`,
-**19** `.tsv`, **3** `.sh`, and **12** files in the remaining suffixes. The largest trees are gate and
+Measured 2026-10-09 over `.qwen/tmp/` **after** the `math-8ou` cleanup: **284** top-level files,
+**7,034** files including subdirectories, **14** subdirectories. By top-level suffix: **221** `.txt`,
+**43** `.md`, **19** `.tsv`, **1** `.py`, and **0** in every other suffix — the tree is now reports,
+drafts, baselines and index snapshots, with one script left in it. The largest trees are gate and
 render snapshots — `reports/` **215**, `idx_pre_sweep/`, `idx_run1/` and `idx_run2/` at **1,052** each,
 `index-run1/` **1,049**, `index_run1/` and `index_run2/` at **1,050** each, `lon2/` **85**, `lon1/`
-**63**, `leanout/` **38**, `msgs/` **34**.
+**63**, `leanout/` **38**, `msgs/` **35**.
 
-Two of the **3** `.sh` files are the gate list and its driver, `gate.sh` and `gate_driver.sh`, and
-they are the scratch scripts that must be promoted: the gate is the test this tree has, and a test
-that lives in an untracked directory is not a test the next session can run. `math-8ou` promotes both,
-deletes the one-off probes (the **70** top-level `.py` files are probe families — `hqd5_probe*.py` at
-16, `e8k_*.py` at 8, the `001-*` and `probe_*` sets — plus the four `/tmp` trees `stage5/`,
-`portcheck/`, `portcheck2/`, `pprobe/` and the six named `/tmp` one-offs), and records the
-one-driver and group-kill rules the gate runs need.
+Before the cleanup the same measurement read **367** top-level files, **7,116** total, and a top-level
+suffix histogram of **220** `.txt`, **70** `.py`, **43** `.md`, **19** `.tsv`, **3** `.sh` and **12**
+files in the remaining suffixes. `math-8ou` closed that gap: the gate list and its driver,
+`gate.sh` and `gate_driver.sh`, are promoted to `notes/scripts/gate.sh` and
+`notes/scripts/gate_driver.sh` — a test that lives in an untracked directory is not a test the next
+session can run, and the driver header now carries the one-driver and group-kill rules the gate runs
+need. The **70** one-off `.py` probes are deleted (the `hqd5_probe*.py` family at 16, the `e8k_*.py`
+lint-fix family at 8, the family-`001` summary builders at 11, the `probe_*` set at 6, the
+`0h2`/`extra` generators at 4, the marker/layout fixers at 4, the citation-needle printers at 2, the
+conditional-anchor checker `check_conditional_anchors.py`, and the single-purpose probes `measure_links.py`, `measure_subfindings.py`, `title_variants.py`,
+`upstream_probe.py`, `yaml_probe.py`, `topo.py`, `thms.py`, `show.py`, `core_all.py`,
+`find_core_only.py`, `cand_closure.py`, `gen_axioms.py`, `lint_anchors.py`, `port_nc.py`,
+`drop_syspath.py`, `build_scope_page.py`, `fix_topics.py`, `fix_topics_md.py`), together with
+`elab.sh` and the **12** probe outputs it left behind (`axioms.lean`, `axioms.log`, `axioms.olean`,
+`check.lean`, `check.olean`, `elab.log`, `hqd5_quotes.json`, `names.json`, `leanout.tmp.1682832`,
+`0h2_skel.err`, `cit1.err`, `cx2a.err`). The four `/tmp` trees `stage5/`, `portcheck/`,
+`portcheck2/`, `pprobe/` and the six `/tmp` one-offs `e402_probe.py`, `e402_probe2.py`,
+`lint_anchors_scratch.py`, `lint_stage4.txt`, `lint_stage4b.txt`, `port_check2.sh` are deleted too —
+`/tmp` is outside the rule's location and outside the repo, so a script written there is a script
+whose outputs cannot be re-measured.
+
+One script stays in the scratch tree: `scratch_census.py`, the enumerator that produced the
+classification above. It is a census of the scratch tree, not a measurement of the corpus, so it has
+no row in the tables above and no gate command; the next cleanup re-runs it.
 
 The scratch tree is not a record. `.qwen/tmp/n5d3-draft.md` is a working draft whose tail is the
 state a compacted session resumes from, and `.qwen/tmp/canonical_counts.md` is the count sheet the
