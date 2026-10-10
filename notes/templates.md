@@ -5,7 +5,7 @@ template text plus the writer's registry). Lines and bytes are of the template f
 is a `{{ ` occurrence counted over the whole file. No `lake`, `lean`, `lake exe cache get`, or
 comparator run.
 
-**Headline, with the rule that yields it:** report tree: **17** templates, **6,278** lines, **412,684** bytes, **1,221** slots; index tree: **5** templates, **209** lines, **14,819** bytes, **103** slots; all **22** templates: **6,487** lines, **427,503** bytes, **1,324** slots.
+**Headline, with the rule that yields it:** report tree: **17** templates, **6,278** lines, **412,771** bytes, **1,221** slots; index tree: **5** templates, **209** lines, **14,819** bytes, **103** slots; all **22** templates: **6,487** lines, **427,590** bytes, **1,324** slots.
 
 ## The report tree
 
@@ -30,10 +30,10 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `sources.md.j2` | 156 | 9,349 | 29 | `notes/sources.md` | `verify_sources.py` | 31 |
 | `subfinding-pairs.md.j2` | 675 | 57,519 | 38 | `notes/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |
 | `t0-chains.md.j2` | 569 | 34,007 | 62 | `notes/t0-chains.md` | `verify_t0_chains.py` | 12 |
-| `templates.md.j2` | 105 | 4,916 | 43 | `notes/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
+| `templates.md.j2` | 105 | 5,003 | 43 | `notes/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `topics.md.j2` | 335 | 23,046 | 117 | `notes/topics.md` | `measure_topics.py` | NOT DERIVED |
 | `verification-dirs.md.j2` | 258 | 24,980 | 44 | `notes/verification-dirs.md` | `verify_verification_dirs.py` | 16 |
-| **report tree** | **17** | **6,278** | **412,684** | **1,221** | | |
+| **report tree** | **17** | **6,278** | **412,771** | **1,221** | | |
 
 ## The index tree
 

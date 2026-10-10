@@ -16,8 +16,8 @@ comparator run.
 
 `notes/templates/report/*.j2`, rendered by `notes/scripts/render_reports.py`. Needles is the count
 of (phrase, label) pairs the builder can derive from that page's checker source by calling its
-`count_phrases` / `size_phrases`; `NOT DERIVED` is printed, not omitted, when the checker exposes
-no such call.
+`count_phrases` / `size_phrases` with the population the checker exports as `population()`;
+`NOT DERIVED` is printed, not omitted, when the checker exposes no such call.
 
 | Template | Lines | Bytes | Slots | Page | Checker | Needles |
 |---|---|---|---|---|---|---|
@@ -83,10 +83,10 @@ writer supplies it as split labels; a phrase the writer supplies as one string i
 which is why every count on this page is a per-row slot: a report template carries no Jinja loop,
 so a census that grows grows the slot set.
 
-Needle coverage is reported, not assumed: {{ p['derived'] }} has a checker whose needle list the
-builder can derive (`notes/counterexample-crosscheck.md`, 20 needles). For {{ p['not_derived'] }} the builder
-prints `checker needles NOT DERIVED (<checker>) - coverage unverified`, and those pages are proven
-by the render diff plus their own checkers.
+Needle coverage is reported, not assumed: {{ p['derived'] }} have a checker whose needle list the
+builder can derive, and the per-page counts are the Needles column of the report-tree table above.
+For {{ p['not_derived'] }} the builder prints `checker needles NOT DERIVED (<checker>) - coverage
+unverified`, and those pages are proven by the render diff plus their own checkers.
 
 ## Registry
 
