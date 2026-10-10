@@ -151,7 +151,7 @@ ALL_PAGES = {
     # script that checks any part of it is verify_script_ownership.py, which verifies the command
     # block and the ownership census rows and carries no count_phrases/size_phrases. The builder
     # therefore reports this coverage as NOT DERIVED, and the page is proven by the twice-render
-    # byte-identity diff plus that checker's plain run and its 11 mutants.
+    # byte-identity diff plus that checker's plain run and its 16 mutants.
     "notes/README.md": "verify_script_ownership.py",
     # counterexample-crosscheck.md's checker exports population() and count_phrases(), so the builder
     # derives its needle list from the checker itself - as it now does for the six other report-fed
