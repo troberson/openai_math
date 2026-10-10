@@ -5,7 +5,7 @@ template text plus the writer's registry). Lines and bytes are of the template f
 is a `{{ ` occurrence counted over the whole file. No `lake`, `lean`, `lake exe cache get`, or
 comparator run.
 
-**Headline, with the rule that yields it:** report tree: **17** templates, **6,278** lines, **412,686** bytes, **1,221** slots; index tree: **5** templates, **209** lines, **14,819** bytes, **103** slots; all **22** templates: **6,487** lines, **427,505** bytes, **1,324** slots.
+**Headline, with the rule that yields it:** report tree: **17** templates, **6,278** lines, **412,684** bytes, **1,221** slots; index tree: **5** templates, **209** lines, **14,819** bytes, **103** slots; all **22** templates: **6,487** lines, **427,503** bytes, **1,324** slots.
 
 ## The report tree
 
@@ -21,7 +21,7 @@ no such call.
 | `counterexample-crosscheck.md.j2` | 1,089 | 45,827 | 87 | `notes/counterexample-crosscheck.md` | `verify_counterexample_crosscheck.py` | 20 |
 | `dependency-drift.md.j2` | 229 | 11,520 | 95 | `notes/dependency-drift.md` | `verify_dependency_drift.py` | NOT DERIVED |
 | `index-design.md.j2` | 231 | 13,228 | 99 | `notes/index-design.md` | `verify_index_design.py` | NOT DERIVED |
-| `index-links.md.j2` | 208 | 12,186 | 85 | `notes/index-links.md` | `check_index_links.py` | NOT DERIVED |
+| `index-links.md.j2` | 208 | 12,184 | 85 | `notes/index-links.md` | `check_index_links.py` | NOT DERIVED |
 | `links.md.j2` | 224 | 12,284 | 110 | `notes/links.md` | `extract_links.py` | NOT DERIVED |
 | `named-results.md.j2` | 367 | 25,209 | 83 | `notes/named-results.md` | `verify_named_results.py` | NOT DERIVED |
 | `names.md.j2` | 276 | 13,727 | 130 | `notes/names.md` | `measure_names.py` | NOT DERIVED |
@@ -33,7 +33,7 @@ no such call.
 | `templates.md.j2` | 105 | 4,916 | 43 | `notes/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `topics.md.j2` | 335 | 23,046 | 117 | `notes/topics.md` | `measure_topics.py` | NOT DERIVED |
 | `verification-dirs.md.j2` | 258 | 24,980 | 44 | `notes/verification-dirs.md` | `verify_verification_dirs.py` | NOT DERIVED |
-| **report tree** | **17** | **6,278** | **412,686** | **1,221** | | |
+| **report tree** | **17** | **6,278** | **412,684** | **1,221** | | |
 
 ## The index tree
 
