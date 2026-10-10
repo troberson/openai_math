@@ -55,10 +55,13 @@ report-fed page skeletons in `notes/templates/report/*.j2`);
 `measure_index_sizes.py` imports `check_index_links` inside its link-check function
 (`measure_index_sizes.py:118`), not at module scope. Counted over `notes/scripts/*.py` as a script
 that imports the module (`import X` or `from X`, the module itself excluded), `build_catalog.py` has
-**18** importers, `build_sources.py` **1** (`verify_sources.py`; `read_manuscript.py` names it in a
-docstring, not in an import) and `verify_summaries.py` **3** (`verify_scope_exclusions.py` for its
-`norm()`, `locate_summary_quotes.py` and `refresh_summary_line_counts.py`). Editing a join in `build_catalog.py` can move
-rows in six artifacts.
+**16** importers, `build_sources.py` **2** (`verify_sources.py` and `render_reports.py:52`, which
+imports it at module scope; `read_manuscript.py` names it in a docstring, not in an import) and
+`verify_summaries.py` **0** — `math-6s7.1` moved the page parse to `catlib/summaries.py`, so
+`locate_summary_quotes.py`, `refresh_summary_line_counts.py` and `verify_scope_exclusions.py` import
+the package, not the checker, and `check_summary_manuscripts.py` stops importing `build_catalog`. The
+**18** and **1** this paragraph carried were stale at HEAD, which measures **17** and **2**; the port
+takes `build_catalog` to 16. Editing a join in `build_catalog.py` can move rows in six artifacts.
 
 ### Report-only
 
@@ -184,20 +187,26 @@ inserted line, deleted line) and `__init__.py`. A
 script run as `python3 notes/scripts/foo.py` has `notes/scripts` on `sys.path`, so it imports them as
 `from catlib import ...` with no path boilerplate.
 
-**37** of the **49** scripts call the package: **6** `extract_`, **3** `build_`, **6** `measure_`,
-`check_index_links.py`, `read_manuscript.py`, `render_reports.py`, and **all 19** checkers — `math-lon.2.5` ported the last
-two, `verify_upstream_history.py` and `verify_summaries.py`, and the **22** `duplicate-code` findings
+**40** of the **49** scripts call the package: **6** `extract_`, **3** `build_`, **6** `measure_`,
+`check_index_links.py`, `read_manuscript.py`, `render_reports.py`, **all 19** checkers, and the three
+summary-page readers `check_summary_manuscripts.py`, `locate_summary_quotes.py` and
+`refresh_summary_line_counts.py`, which `math-6s7.1` moved off `verify_summaries.py` onto
+`catlib/summaries.py` — a checker serving as a library is the shape that port broke, and
+`verify_summaries.py` now has **0** importers. `math-lon.2.5` ported the last two checkers,
+`verify_upstream_history.py` and `verify_summaries.py`, and the **22** `duplicate-code` findings
 did not move (measured 2026-10-09 with `--enable=R0801` over 55 files, every cluster reported against
 `catlib/anchors.py`; see `notes/linting.md`). What deliberately stays outside the package is a **read
 shape**, not a parse: `verify_upstream_history.py` reads `lean/formalization.yaml` and
 `notes/catalog.tsv` from a **revision** through `git show <rev>:`, so the package gained
 `parse_yaml_text` / `parse_overview_text` / `read_rows_from_text` — text-level cores its disk-level
-`parse_yaml` / `parse_overview` / `read_rows` delegate to — rather than a git reader;
-`verify_summaries.py` keeps its lenient `errors="replace"` read of a declared source, which may be a
-compiled PDF; and `build_index.py` keeps its own `TRIPLE` regex.
+`parse_yaml` / `parse_overview` / `read_rows` delegate to — rather than a git reader; and
+`build_index.py` keeps its own `TRIPLE` regex. The summary-page read is in the package:
+`catlib/summaries.py` carries the Sources-table row, the `[Sn:line]` marker, the page's manuscript
+roots, the lenient `errors="replace"` read of a declared source that may be a compiled PDF, and the
+overview's manuscript-ownership map.
 
 The package is not in the census below: the script population is `notes/scripts/*.py`, and
-`catlib/` is 12 modules under that directory, counted as **61** source files by the lint gate in
+`catlib/` is 13 modules under that directory, counted as **62** source files by the lint gate in
 `notes/linting.md`.
 
 ## The file census
@@ -368,7 +377,7 @@ tracked files under `notes/` before the bead that produced them closes.
   `stale swept 0 files []`. Diffing run 1 against run 2 reports the sweep as drift.
 - The writer rule reads path constants and write calls. A write built from a computed path (a variable
   assembled at runtime) is not found by it, and `refresh_summary_line_counts.py` is the realized case:
-  it resolves each page path through `verify_summaries.Page` and rewrites the `Lines` column of every
+  it resolves each page path through `catlib/summaries.py`'s `Page` and rewrites the `Lines` column of every
   page under `notes/summaries/`, so the rule files it under report-only and the census row calls that
   tree hand-written. The tree is hand-written in what it says and script-touched in that one column.
 - The report-only table records which page a report feeds as stated in that page and in `AGENTS.md`.

@@ -5,8 +5,8 @@ The Lines cell is a declared line count, and `verify_summaries.py` pass B compar
 on disk. A merge moves that number for every cited file at once, so the cell is a derived value that
 drifts; this script re-derives it.
 
-Path resolution is the checker's own (`verify_summaries.Page`), not a second implementation: the
-number written is the number the checker compares against, which is the only way a refresh can be
+Path resolution is the package's own (`catlib/summaries.py`'s `Page`), not a second implementation:
+the number written is the number the checker compares against, which is the only way a refresh can be
 trusted to land green. The count is `len(splitlines())`, matching the checker.
 
 Formatting follows the pages' existing style: thousands separated by commas at 1,000 and above.
@@ -18,11 +18,10 @@ Usage: python3 notes/scripts/refresh_summary_line_counts.py            # rewrite
 import argparse
 from pathlib import Path
 
-import verify_summaries as V
+from catlib.paths import ROOT, SUMMARIES_DIR
+from catlib.summaries import ROW, Page
 
-ROOT = V.ROOT
-SUMMARIES = V.SUMMARIES
-ROW = V.ROW
+SUMMARIES = SUMMARIES_DIR
 
 
 def fmt(n):
@@ -32,7 +31,7 @@ def fmt(n):
 def refresh(path, write):
     """Return (rows checked, drift list) for one page; rewrite the table when write is true."""
     lines = path.read_text(encoding="utf-8").splitlines()
-    page = V.Page(path, lines)
+    page = Page(path, lines)
     out, drift = list(lines), []
     for sid, rel, declared, n in page.rows:
         # "—" is a page's deliberate "no line count" cell (the compiled PDFs, whose byte

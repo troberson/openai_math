@@ -12,57 +12,38 @@ real. `overview.tex` names 719 distinct manuscript directories; 749 exist under 
 are on disk and unnamed. A page is *current* when every manuscript directory it names is named by
 the family the page belongs to, and *stale* when its declared manuscript root is not.
 
+The page read — family number, manuscript directories, declared root — is `catlib/summaries.py`'s,
+shared with `verify_summaries.py`. The root rule is the first backticked `preprints/` path in the page:
+the root-declaring prose ships in **13** forms across the 21 pages and **5** pages declare their root
+inside a table row, so a rule keyed on the `Manuscript root — ` phrase sees 2 pages and reports "no
+declared root" on 19.
+
 Report-only; writes nothing.
 
 Usage: python3 notes/scripts/check_summary_manuscripts.py          # every page
        python3 notes/scripts/check_summary_manuscripts.py <page.md> ...
 """
-import re
 import sys
 from pathlib import Path
 
-import build_catalog as B
+from catlib.paths import PREPRINTS, ROOT, SUMMARIES_DIR
+from catlib.summaries import named_dirs, page_dirs, page_fam
 
-ROOT = B.ROOT
-SUMMARIES = ROOT / "notes" / "summaries"
-
-# A manuscript directory as the pages spell it: inside a backticked repo-relative path or a link.
-PAPDIR = re.compile(r"preprints/([^/`\s]+)/")
-
-
-def ownership():
-    """-> ({dir: families naming it}, {dir: family of the page that names it})."""
-    _, fams = B.parse_overview()
-    named = {}
-    for fam, d in fams.items():
-        for p in d["tex_paps"]:
-            named.setdefault(p.split("/")[1], set()).add(fam)
-    return named
-
-
-def page_dirs(path):
-    """Manuscript directories a page names, plus the root its Sources prose declares first."""
-    text = path.read_text(encoding="utf-8")
-    dirs = sorted(set(PAPDIR.findall(text)))
-    root = None
-    m = re.search(r"Manuscript root — `preprints/([^/`]+)/", text)
-    if m:
-        root = m.group(1)
-    return dirs, root
+SUMMARIES = SUMMARIES_DIR
 
 
 def main():
     args = sys.argv[1:]
     pages = [Path(a).resolve() for a in args] if args else sorted(SUMMARIES.glob("**/*.md"))
-    named = ownership()
-    disk = {p.name for p in (ROOT / "preprints").iterdir() if p.is_dir()}
+    named = named_dirs()
+    disk = {p.name for p in PREPRINTS.iterdir() if p.is_dir()}
 
     stale_pages = 0
     total_dirs = 0
     unnamed = 0
     foreign = 0
     for path in pages:
-        fam = path.name[:3]
+        fam = page_fam(path.name)
         dirs, root = page_dirs(path)
         total_dirs += len(dirs)
         bad = []
@@ -88,9 +69,9 @@ def main():
     print(f"\npages {len(pages)}  pages with an off-family manuscript {stale_pages}  "
           f"manuscript dirs named {total_dirs}  unnamed-on-catalog {unnamed}  "
           f"named-by-another-family {foreign}")
-    named_dirs = set(named)
-    print(f"preprint dirs on disk {len(disk)}  distinct dirs named by overview.tex {len(named_dirs)}  "
-          f"on disk and unnamed {len(disk - named_dirs)}  named and absent {len(named_dirs - disk)}")
+    named_set = set(named)
+    print(f"preprint dirs on disk {len(disk)}  distinct dirs named by overview.tex {len(named_set)}  "
+          f"on disk and unnamed {len(disk - named_set)}  named and absent {len(named_set - disk)}")
     raise SystemExit(0)
 
 

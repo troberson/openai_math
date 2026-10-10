@@ -70,7 +70,7 @@ disable =
     # 4 sites, all the pair window `for i in range(len(ms)): for j in range(i + 1, len(ms)):`,
     # which enumerate does not express.
     C0200,
-    # 1 site. verify_summaries.py's Page class is a parsed-page data holder, not a behaviour class.
+    # 1 site. catlib/summaries.py's Page class is a parsed-page data holder, not a behaviour class.
     R0902,
 
 [BASIC]

@@ -31,11 +31,11 @@ import sys
 from pathlib import Path
 
 import extract_scope_notes as ex
-from verify_summaries import norm
 
 from catlib import render as RD
 from catlib import yaml as Y
 from catlib.paths import DOCS_DIR
+from catlib.text import strip_markup as norm
 
 ROOT = Path(__file__).resolve().parents[2]
 PAGE = ROOT / "notes" / "scope-exclusions.md"

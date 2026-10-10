@@ -40,11 +40,13 @@ Usage: python3 notes/scripts/verify_summaries.py                 # every page un
        python3 notes/scripts/verify_summaries.py <page.md> ...   # named pages only
        python3 notes/scripts/verify_summaries.py --mutant        # discrimination test as well
 
-What stays in this file, deliberately: the lenient read of a Sources-table file (`errors="replace"`)
-— a page may declare a compiled PDF as a source and the run must not abort — which is not the
-package's strict `read_text`; the page grammar (`ROW`, `CELL`, `MARKER`, `QUOTE`, `LINK`, `ENTITY`,
-`TAG`, `PAPDIR`, `BLOCK_RULES`, `NOTE_ENTRY`, `FORMAT_EXAMPLE`), which is this page's own contract,
-not a corpus-wide one; and Pass A, which is written per page against that page's findings.
+What stays in this file, deliberately: the family-keyed block rules (`BLOCK_RULES`, `NOTE_ENTRY`) and
+the format-example exemption (`FORMAT_EXAMPLE`), which are pass E's contract, not the page's; the mutant
+set, which is this checker's own discrimination test; and Pass A, which is written per page against
+that page's findings. The page grammar (`ROW`, `CELL`, `MARKER`, `QUOTE`, `LINK`, `ENTITY`, `TAG`,
+`PAPDIR`), the `Page` class, the marker/unit joins, the lenient `errors="replace"` read of a declared
+source, and the manuscript-ownership map are in `catlib/summaries.py`, shared with
+`locate_summary_quotes.py`, `refresh_summary_line_counts.py` and `check_summary_manuscripts.py`.
 """
 import argparse
 import os
@@ -52,20 +54,12 @@ import re
 import sys
 from pathlib import Path
 
-from catlib import overview as cov
-from catlib.paths import PREPRINTS, ROOT, SUMMARIES_DIR, read_text
+from catlib.paths import ROOT, SUMMARIES_DIR, read_text
 from catlib.text import strip_markup as norm
+from catlib.summaries import (ENTITY, LINK, MARKER, PAPDIR, QUOTE, TAG, Page, label, markers,
+                              named_dirs, superseded_dir, units, usable)
 
 SUMMARIES = SUMMARIES_DIR
-
-ROW = re.compile(r"^\|\s*(S\d+)\s*\|\s*(.+?)\s*\|\s*([\d,]+|—)\s*\|\s*(.*?)\s*\|\s*$")
-CELL = re.compile(r"`([^`]+)`")
-MARKER = re.compile(r"\[S(\d+)(?::(\d+)(?:[–-](\d+))?)?\]")
-QUOTE = re.compile(r"“([^”]{6,})”|\"([^\"]{6,})\"")
-LINK = re.compile(r"\]\(([^)\s]+)\)")
-ENTITY = re.compile(r"&(#[0-9]+|[a-zA-Z][a-zA-Z0-9]*);")
-TAG = re.compile(r"<[a-zA-Z/][^>]*>")
-PAPDIR = re.compile(r"preprints/([^/`\s]+)/")
 
 # Pass E applies only to files whose blocks are keyed by the family number, because that is the only
 # case where "the family's own block" is a fact the file itself records. Manuscript and Lean files
@@ -79,106 +73,6 @@ NOTE_ENTRY = re.compile(r"^- \*\*(\d{1,3})\*\*")
 # The Sources preamble demonstrates the marker syntax ("[S2:31] for one line"). Those tokens are an
 # example of the format, not a citation, so the unit that carries them makes no claim to check.
 FORMAT_EXAMPLE = "cited in the body as"
-
-
-class Page:
-    """A summary page plus the Sources table that resolves its markers."""
-
-    def __init__(self, path, lines):
-        self.path = path
-        self.lines = lines
-        self.cache = {}
-        self.table = {}
-        self.rows = []
-        self.ambiguous = []
-        m = re.match(r"(\d{1,3})-", path.name)
-        self.fam = m.group(1) if m else None
-        # Relative paths in the table are relative to the manuscript root the Sources prose names
-        # first; the repository root is the fallback. Globbing preprints/* is deliberately not a
-        # rule: build/main.tex, references.tex and README.md exist in many manuscript trees.
-        pre = None
-        for line in lines:
-            m = re.search(r"`(preprints/[^`]+)`", line)
-            if m:
-                pre = ROOT / m.group(1)
-                break
-        self.roots = ([pre] if pre and pre.is_dir() else []) + [ROOT]
-        self._read_table()
-
-    def _read_table(self):
-        for n, line in enumerate(self.lines, 1):
-            m = ROW.match(line)
-            if not m:
-                continue
-            sid, cell, declared = m.group(1), m.group(2), m.group(3)
-            path_cell = CELL.search(cell)
-            if not path_cell:
-                print(f"{sid} row at doc line {n} names no file")
-                continue
-            rel = path_cell.group(1)
-            hits = [r / rel for r in self.roots if (r / rel).is_file()]
-            if len(hits) > 1:
-                # Not pinned to one file: pass B counts this as a problem, so a page whose cell
-                # resolves under both the manuscript root and the repo root cannot report green.
-                self.ambiguous.append((sid, rel, hits))
-            self.table[sid] = (rel, hits[0] if hits else None)
-            self.rows.append((sid, rel, declared, n))
-
-    def lines_of(self, sid):
-        rel, path = self.table[sid]
-        if rel not in self.cache:
-            # A page may declare a compiled PDF as a source. Reading it must not abort the run:
-            # bytes that are not text decode to replacement characters, so a quotation cited to a
-            # PDF fails the verbatim test, which is the honest result - its text is not extractable.
-            self.cache[rel] = path.read_text(encoding="utf-8", errors="replace").splitlines()
-        return self.cache[rel]
-
-
-def markers(text):
-    """Citations in source order: (offset, S#, first line or None for the whole file, last line)."""
-    out = []
-    for m in MARKER.finditer(text):
-        a = int(m.group(2)) if m.group(2) else None
-        b = int(m.group(3)) if m.group(3) else a
-        out.append((m.start(), f"S{m.group(1)}", a, b))
-    out.sort()
-    return out
-
-
-def units(doc_lines):
-    """Join wrapped prose/bullet lines into logical units; keep block quotes as their own unit."""
-    out, i = [], 0
-    while i < len(doc_lines):
-        line = doc_lines[i]
-        if line.startswith("> "):
-            j = i
-            while j < len(doc_lines) and doc_lines[j].startswith(">"):
-                j += 1
-            out.append((i + 1, " ".join(l.lstrip("> ").strip() for l in doc_lines[i:j]), True))
-            i = j
-            continue
-        if not line.strip() or line.startswith(("#", "|", "---")):
-            i += 1
-            continue
-        j = i + 1
-        while j < len(doc_lines):
-            nxt = doc_lines[j]
-            if not nxt.strip() or nxt.startswith(("#", "|", "---", "> ")):
-                break
-            if nxt.startswith(("- ", "* ")) and not doc_lines[i].startswith(("- ", "* ")):
-                break
-            j += 1
-        out.append((i + 1, " ".join(l.strip() for l in doc_lines[i:j]), False))
-        i = j
-    return out
-
-
-def usable(page, cites):
-    return [c for c in cites if c[1] in page.table and page.table[c[1]][1] is not None]
-
-
-def label(sid, a, b):
-    return f"{sid}:{a}" + (f"-{b}" if b != a and a is not None else "") if a else f"{sid} (file)"
 
 
 def pass_b(page):
@@ -362,30 +256,6 @@ def blockquote_targets(page):
         if resolved:
             out.append((start_line, unit))
     return out
-
-
-_NAMED_CACHE = None
-
-
-def named_dirs():
-    """{manuscript dir name: families whose overview entry names it} — the release's own claim."""
-    global _NAMED_CACHE
-    if _NAMED_CACHE is None:
-        _, fams = cov.parse_overview()
-        _NAMED_CACHE = {}
-        for fam, d in fams.items():
-            for p in d["tex_paps"]:
-                _NAMED_CACHE.setdefault(p.split("/")[1], set()).add(fam)
-    return _NAMED_CACHE
-
-
-def superseded_dir():
-    """A manuscript directory that is on disk and named by no family — the shape an update leaves behind."""
-    named = named_dirs()
-    for p in sorted(PREPRINTS.iterdir()):
-        if p.is_dir() and p.name not in named:
-            return p.name
-    return None
 
 
 def pass_d(page):

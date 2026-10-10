@@ -56,8 +56,8 @@ lives in this file and nowhere else.
 ## Dev environment tips
 
 - Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `overview`, `ledger`, `preprints`,
-  `text`, `yaml`, `anchors`, `bib`, `measure`, `render` (12 modules). Import them (`from catlib import yaml as Y`);
-  do not re-implement a join in an extractor. **37** of the **49** scripts do, including **all 19**
+  `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries` (13 modules). Import them (`from catlib import yaml as Y`);
+  do not re-implement a join in an extractor. **40** of the **49** scripts do, including **all 19**
   checkers. `measure.py` is the writer-side measurement API (counts as data, no report formatting) and
   checkers deliberately do **not** import it — a checker that re-derives a count through the page's own
   code proves nothing. `render.py` is the page-vs-writer comparison: a page's count pass proves its
@@ -67,8 +67,11 @@ lives in this file and nowhere else.
   What stays local is a read shape, not a join: `verify_upstream_history.py`'s `git show <rev>:`
   reads of `lean/formalization.yaml` and `notes/catalog.tsv` (a **revision**, which the package does
   not read — it gained `parse_yaml_text` / `parse_overview_text` / `read_rows_from_text` so the parse
-  is shared and only the git read is not), `verify_summaries.py`'s lenient `errors="replace"` read of
-  a declared source that may be a compiled PDF, and `build_index.py`'s `TRIPLE` regex. A page
+  is shared and only the git read is not), and `build_index.py`'s `TRIPLE` regex. The summary-page
+  read is in the package: `catlib/summaries.py` carries the Sources-table row, the `[Sn:line]` marker,
+  the page's manuscript roots, the lenient `errors="replace"` read of a declared source that may be a
+  compiled PDF, and the overview's manuscript-ownership map — so `verify_summaries.py` is no longer a
+  library and has **0** importers. A page
   quotation is compared with `catlib.text.strip_markup` — the rule that folds quotes and strips
   markup — never with a checker's private copy of it.
 - Regenerate the ledger with `python3 notes/scripts/build_catalog.py` — stdlib only, runs in
