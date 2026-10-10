@@ -57,7 +57,7 @@ lives in this file and nowhere else.
 
 - Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `overview`, `ledger`, `preprints`,
   `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries` (13 modules). Import them (`from catlib import yaml as Y`);
-  do not re-implement a join in an extractor. **44** of the **49** scripts do, including **all 19**
+  do not re-implement a join in an extractor. **47** of the **49** scripts do, including **all 19**
   checkers. `measure.py` is the writer-side measurement API (counts as data, no report formatting) and
   checkers deliberately do **not** import it — a checker that re-derives a count through the page's own
   code proves nothing. `render.py` is the page-vs-writer comparison: a page's count pass proves its
@@ -77,7 +77,13 @@ lives in this file and nowhere else.
   renderer classify with one rule; what stays in `extract_verification_dirs.py` is the report shape
   (the numbered heading/command/scope lines, the README-section reconciliation, `families_by_slug`).
   A page quotation is compared with `catlib.text.strip_markup` — the rule that folds quotes and strips
-  markup — never with a checker's private copy of it.
+  markup — never with a checker's private copy of it. `build_catalog.py` is a **writer with a shim**:
+  it re-exports **10** names, each one because a script still reaches for it through the module, and
+  `main()` calls the package through `ledger.` / `overview.` / `yaml.`; a name with no importer is
+  dropped, not kept. `compare_abstracts.py`, `extract_subfinding_pairs.py` and `extract_named_results.py`
+  import `catlib.overview` / `catlib.ledger` / `catlib.paths` directly. `measure_names.py` stays a
+  library: `measure()` is that script's own product (the six-layer measurement `notes/names.md` is
+  checked against), and `dir_of` is its tolerance of a non-`preprints/` path over `catlib.paths.owner`.
 - Regenerate the ledger with `python3 notes/scripts/build_catalog.py` — stdlib only, runs in
   seconds, writes `notes/catalog.tsv` and prints the report that every number in
   `notes/README.md` comes from.
@@ -288,7 +294,7 @@ lives in this file and nowhere else.
   newline). **Zero of the 17 target-named headline titles pair a target noun with a resolve verb** — the
   release names conjectures in manuscript names, abstracts and prose, and in the overview **title**, not
   in statement captions, so `resolves_named` is evidence-backed by the record rather than by theorem
-  text. Match `build_catalog.TARGET_NOUN` **case-insensitively** on directory names, theorem titles and
+  text. Match `catlib.ledger.TARGET_NOUN` **case-insensitively** on directory names, theorem titles and
   overview titles: the ledger rule sees lowercase abstracts, and a case-sensitive match on those
   capitalized surfaces undercounts. The applied scope is a **union** — title ∪ abstract, both lowered
   together, 233 → 248 with removals 0; the 15 additions are 022 039 044 096 097 151 156 192 209 263

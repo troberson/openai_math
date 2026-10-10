@@ -66,7 +66,7 @@ import unicodedata
 import build_catalog as B
 
 from catlib import render as RD, yaml as Y
-from catlib.paths import PREPRINTS as PRE
+from catlib.paths import PREPRINTS as PRE, owner
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PAGE = ROOT / "notes" / "names.md"
@@ -202,11 +202,13 @@ def prose(t: str) -> str:
 
 
 def dir_of(path) -> str:
-    """The manuscript a path belongs to: the component after `preprints`."""
+    """The manuscript a path belongs to: `catlib.paths.owner`, with "" for a non-preprints path.
+
+    The name layers scan paths that are not under `preprints/` (the `.bib` and `.tex` sweeps reach
+    the whole tree), so the tolerance is part of the measurement; the rule itself is the package's.
+    """
     parts = pathlib.PurePosixPath(str(path)).parts
-    if "preprints" in parts:
-        return parts[parts.index("preprints") + 1]
-    return ""
+    return owner(path) if "preprints" in parts else ""
 
 
 def measure():

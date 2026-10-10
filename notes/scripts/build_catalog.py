@@ -16,11 +16,9 @@ from catlib.paths import ROOT
 
 OUT = ROOT / "notes" / "catalog.tsv"
 
-# Re-exported for the scripts that import this module; the joins live in catlib/.
+# Re-exported for the scripts that import this module; the joins live in catlib/. A name is
+# re-exported only while a script still reaches for it through this module.
 PAP = overview.PAP
-MONTHS = overview.MONTHS
-DATE_SUFFIX = overview.DATE_SUFFIX
-SHAPES = ledger.SHAPES
 read_args = overview.read_args
 parse_overview = overview.parse_overview
 parse_contents = overview.parse_contents
@@ -28,27 +26,14 @@ parse_yaml = yaml.parse_yaml
 parse_challenges = yaml.parse_challenges
 parse_docs = yaml.parse_docs
 parse_traces = yaml.parse_traces
-conditional_hits = ledger.conditional_hits
 shapes_of = ledger.shapes_of
-resolves_named = ledger.resolves_named
-counterex_broad = ledger.counterex_broad
-versions_of = ledger.versions_of
-TARGET_NOUN = ledger.TARGET_NOUN
-RESOLVE_VERB = ledger.RESOLVE_VERB
 COUNTEREX_PHRASE = ledger.COUNTEREX_PHRASE
 
 __all__ = [
     "COUNTEREX_PHRASE",
-    "DATE_SUFFIX",
-    "MONTHS",
     "OUT",
     "PAP",
-    "RESOLVE_VERB",
     "ROOT",
-    "SHAPES",
-    "TARGET_NOUN",
-    "conditional_hits",
-    "counterex_broad",
     "main",
     "parse_challenges",
     "parse_contents",
@@ -57,9 +42,7 @@ __all__ = [
     "parse_traces",
     "parse_yaml",
     "read_args",
-    "resolves_named",
     "shapes_of",
-    "versions_of",
 ]
 
 
@@ -122,11 +105,11 @@ def main():
             "trace": "|".join(sorted(trace_by_fam.get(fam, []))),
             "shapes": "|".join(shapes),
             "conditional": 1 if "conditional" in shapes else 0,
-            "resolves_named": resolves_named(info["title"], info["abstract"]),
-            "counterex_broad": counterex_broad(info["title"], info["abstract"]),
+            "resolves_named": ledger.resolves_named(info["title"], info["abstract"]),
+            "counterex_broad": ledger.counterex_broad(info["title"], info["abstract"]),
             "companions": "|".join(refs),
             "companion_word": 1 if re.search(r"\bcompanion", info["abstract"], re.I) else 0,
-            "versions": versions_of(all_paths),
+            "versions": ledger.versions_of(all_paths),
             "summary": 1 if fam in summary_fams else 0,
         })
 
@@ -153,7 +136,7 @@ def main():
     if rel["traces_unattributed_names"]:
         print(f"  unattributed      {rel['traces_unattributed_names']}")
     print("\ntier                " + "  ".join(f"{t}={pop['tiers'][t]}" for t in ledger.TIERS))
-    print("shapes              " + "  ".join(f"{n}={pop['shapes'][n]}" for n in SHAPES))
+    print("shapes              " + "  ".join(f"{n}={pop['shapes'][n]}" for n in ledger.SHAPES))
     print(f"                    {pop['shapes_ge3']} families match >=3 shapes, "
           f"{pop['shapes_none']} match none")
     print(f"conditional         {pop['conditional']}")

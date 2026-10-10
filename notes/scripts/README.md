@@ -50,12 +50,12 @@ Writers import each other, so a generated file's bytes are not a function of one
 `build_index.py` imports `build_catalog`, `measure_topics`, `measure_names`,
 `check_index_links` and `jinja2` (the index page text lives in `notes/templates/*.j2`, the seventeen
 report-fed page skeletons in `notes/templates/report/*.j2`);
-`extract_links.py`, `extract_subfindings.py`, `compare_abstracts.py`,
-`check_index_links.py`, `measure_names.py` and `measure_topics.py` all import `build_catalog`;
+`extract_links.py`, `extract_subfindings.py`, `check_index_links.py`, `measure_names.py` and
+`measure_topics.py` all import `build_catalog`;
 `measure_index_sizes.py` imports `check_index_links` inside its link-check function
 (`measure_index_sizes.py:118`), not at module scope. Counted over `notes/scripts/*.py` as a script
 that imports the module (`import X` or `from X`, the module itself excluded), `build_catalog.py` has
-**15** importers, `build_sources.py` **2** (`verify_sources.py` and `render_reports.py:52`, which
+**12** importers, `build_sources.py` **2** (`verify_sources.py` and `render_reports.py:52`, which
 imports it at module scope; `read_manuscript.py` names it in a docstring, not in an import) and
 `verify_summaries.py` **0** — `math-6s7.1` moved the page parse to `catlib/summaries.py`, so
 `locate_summary_quotes.py`, `refresh_summary_line_counts.py` and `verify_scope_exclusions.py` import
@@ -63,6 +63,13 @@ the package, not the checker, and `check_summary_manuscripts.py` stops importing
 **18** and **1** this paragraph carried were stale at HEAD, which measures **17** and **2**; the port
 takes `build_catalog` to 16, and `math-6s7.2` takes it to 15 — `extract_verification_dirs.py`
 now reads `catlib.overview.parse_overview`, `catlib.paths.owner` and `catlib.ledger.read_ledger`.
+`math-6s7.4` takes it to **12**: `compare_abstracts.py`, `extract_subfinding_pairs.py` and
+`extract_named_results.py` import `catlib.overview` / `catlib.ledger` / `catlib.paths` directly, and
+the shim shrinks to the **10** names that still have an importer (`PAP`, `read_args`,
+`parse_overview`, `parse_contents`, `parse_yaml`, `parse_challenges`, `parse_docs`, `parse_traces`,
+`shapes_of`, `COUNTEREX_PHRASE`). `MONTHS`, `DATE_SUFFIX`, `SHAPES`, `conditional_hits`,
+`resolves_named`, `counterex_broad`, `versions_of`, `TARGET_NOUN` and `RESOLVE_VERB` had none and are
+dropped; `main()` reads the package through `ledger.` for the three it needs.
 Editing a join in `build_catalog.py` can move rows in six artifacts.
 
 ### Report-only

@@ -9,8 +9,8 @@ Rules, stated because each one changes a number:
                thm 1; conjecture/thmstar/theoremA/theoremB/mainthm/theoremstar read 0, so the
                headline set is those three names.
   TARGET     = r"conjectur|\bquestion|\bproblem" (case-insensitive) - the same target noun the
-               ledger's resolves_named rule uses, from build_catalog.TARGET_NOUN.
-  RESOLVE    = build_catalog.RESOLVE_VERB, verbatim: prove(s|ed|ing)/disprov/refut/resolv/answer/
+               ledger's resolves_named rule uses, from catlib.ledger.TARGET_NOUN.
+  RESOLVE    = catlib.ledger.RESOLVE_VERB, verbatim: prove(s|ed|ing)/disprov/refut/resolv/answer/
                settl/establis/confirm/fail/violat/counterexample. "solve" and "resolution" are
                NOT in it; the gap is reported, not silently patched.
   sentence   = a run of text ending at . ! ? or :, longer than 20 characters.
@@ -19,7 +19,7 @@ Rules, stated because each one changes a number:
                braces removed.
   window     = 80 characters on each side of the target noun (the probe rule); sentence scope is
                reported as the second rule because the two disagree on 4 families.
-  family     = the path component after `preprints`, never parts[-2].
+  family     = the path component after `preprints`, never parts[-2] — `catlib.paths.owner`.
 """
 from __future__ import annotations
 
@@ -29,8 +29,10 @@ import pathlib
 import re
 import sys
 
-import build_catalog as B
 import measure_names as M
+
+from catlib import ledger, overview
+from catlib.paths import owner
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 
@@ -41,11 +43,11 @@ OVERVIEW = ROOT / "overview.tex"
 HEADLINE = ("theorem", "maintheorem", "thm")
 TITLED = re.compile(r"\\begin\{(%s)\}\s*\[([^\]]{1,140})\]" % "|".join(HEADLINE))
 BEGINS = re.compile(r"\\begin\{(%s)\}" % "|".join(HEADLINE))
-TARGET = B.TARGET_NOUN
+TARGET = ledger.TARGET_NOUN
 # Case-insensitive twin: directory names and theorem titles capitalize what the ledger rule
 # sees in lowercase abstracts, so a case-sensitive match on them undercounts.
 TARGET_I = re.compile(TARGET.pattern, re.I)
-RESOLVE = B.RESOLVE_VERB
+RESOLVE = ledger.RESOLVE_VERB
 EXTRA = re.compile(r"\bsolve[sd]?\b|\bresolution\b|\banswers?\b|\bsettled\b|\bsettling\b"
                    r"|\bnegatively\b|\bpositively\b|\brefutation\b|\bcounterexamples?\b")
 SENT = re.compile(r"[.!?:]")
@@ -57,10 +59,6 @@ ENTRY = re.compile(r"\\resultentry\{(\d{3})\}")
 A_FAMS = ["022", "039", "044", "151", "209", "297", "354", "365", "372", "263", "275"]
 B_FAMS = ["085", "094", "126", "144", "187", "299", "323", "333"]
 WINDOW = 80
-
-
-def dir_of(path) -> str:
-    return M.dir_of(path)
 
 
 def sentences(t: str):
@@ -84,7 +82,7 @@ def population():
 
     The checker imports this so the page and the report are judged against one measurement.
     """
-    order, fams = B.parse_overview()
+    order, fams = overview.parse_overview()
     ledger = {}
     with open(LEDGER, newline="", encoding="utf-8") as fh:
         for r in csv.DictReader(fh, delimiter="\t"):
@@ -94,7 +92,7 @@ def population():
     dir2fam, famdirs = {}, collections.defaultdict(list)
     for f in order:
         for p in fams[f]["tex_paps"]:
-            d = dir_of(p)
+            d = owner(p)
             if d and d not in famdirs[f]:
                 famdirs[f].append(d)
                 dir2fam[d] = f
@@ -118,7 +116,7 @@ def population():
 
     for depth in (1, 2, 3, 4):
         for p in sorted(PRE.glob("/".join(["*"] * depth) + "/*.tex")):
-            fam = dir2fam.get(dir_of(p))
+            fam = dir2fam.get(owner(p))
             files += 1
             raw = p.read_text(encoding="utf-8", errors="replace")
             rel = str(p.relative_to(ROOT))

@@ -33,7 +33,7 @@ import re
 import statistics
 import sys
 
-import build_catalog as B
+from catlib import ledger, overview
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PRE = ROOT / "preprints"
@@ -125,9 +125,9 @@ def stats(vals):
 
 
 def measure():
-    _order, fams = B.parse_overview()
+    _order, fams = overview.parse_overview()
     rows = list(csv.DictReader(SOURCES.open(encoding="utf-8"), delimiter="\t"))
-    ledger = list(csv.DictReader(LEDGER.open(encoding="utf-8"), delimiter="\t"))
+    ledger_rows = list(csv.DictReader(LEDGER.open(encoding="utf-8"), delimiter="\t"))
 
     # manuscript-level
     man = []
@@ -161,14 +161,14 @@ def measure():
     for r in rows:
         dirs_by_fam.setdefault(r["fam"], []).append(r["dir"])
     tag_dis = {}
-    tag_tot = {s: {"ov": 0, "ms": 0, "man": 0} for s in sorted(B.SHAPES)}
+    tag_tot = {s: {"ov": 0, "ms": 0, "man": 0} for s in sorted(ledger.SHAPES)}
     cond_dis = []
     cond_detail = []
     fam_shapes = {}
     for fam in sorted(dirs_by_fam):
         ov_text = fams[fam]["abstract"]
         ms_text = " ".join(t for d in dirs_by_fam[fam] for _, t in manuscript_abstract(d))
-        ovs, mss = set(B.shapes_of(ov_text)), set(B.shapes_of(ms_text))
+        ovs, mss = set(ledger.shapes_of(ov_text)), set(ledger.shapes_of(ms_text))
         fam_shapes[fam] = {"ov": sorted(ovs), "ms": sorted(mss)}
         for s in ovs:
             tag_tot[s]["ov"] += 1
@@ -179,7 +179,7 @@ def measure():
         # not "the family is that shape".
         for d in dirs_by_fam[fam]:
             for _, t in manuscript_abstract(d):
-                for s in B.shapes_of(t):
+                for s in ledger.shapes_of(t):
                     tag_tot[s]["man"] += 1
         for s in ovs | mss:
             if (s in ovs) != (s in mss):
@@ -223,17 +223,17 @@ def measure():
         "cond_dis": cond_dis,
         "cond_detail": cond_detail,
         "ledger_counts": {
-            "conditional": sum(1 for r in ledger if r["conditional"] == "1"),
-            "resolves_named": sum(1 for r in ledger if r["resolves_named"] == "1"),
-            "counterex_broad": sum(1 for r in ledger if r["counterex_broad"] == "1"),
-            "rows": len(ledger),
+            "conditional": sum(1 for r in ledger_rows if r["conditional"] == "1"),
+            "resolves_named": sum(1 for r in ledger_rows if r["resolves_named"] == "1"),
+            "counterex_broad": sum(1 for r in ledger_rows if r["counterex_broad"] == "1"),
+            "rows": len(ledger_rows),
         },
         "recomputed": {
-            "conditional": sum(1 for f in fams if "conditional" in B.shapes_of(fams[f]["abstract"])),
+            "conditional": sum(1 for f in fams if "conditional" in ledger.shapes_of(fams[f]["abstract"])),
             "resolves_named": sum(1 for f in fams
-                                  if B.resolves_named(fams[f]["title"], fams[f]["abstract"])),
-            "counterex_broad": sum(1 for f in fams if B.counterex_broad(fams[f]["title"],
-                                                                        fams[f]["abstract"])),
+                                  if ledger.resolves_named(fams[f]["title"], fams[f]["abstract"])),
+            "counterex_broad": sum(1 for f in fams if ledger.counterex_broad(fams[f]["title"],
+                                                                            fams[f]["abstract"])),
             "rows": len(fams),
         },
     }
@@ -408,7 +408,7 @@ def main():
 
     print("\nTAG-LEVEL (ledger rules: overview text vs the union of the family's manuscript abstracts)")
     print(f"  {'shape':16}  ovfam msfam man{m['manuscripts']}  ov-only  ms-only")
-    for s in sorted(B.SHAPES):
+    for s in sorted(ledger.SHAPES):
         d = m["tag_dis"].get(s, {"ov-only": [], "ms-only": []})
         t = m["tag_tot"][s]
         print(f"  {s:16} {t['ov']:5} {t['ms']:5} {t['man']:6}   {len(d['ov-only']):3}     {len(d['ms-only']):3}")

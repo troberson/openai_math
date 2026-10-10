@@ -26,9 +26,9 @@ import re
 import sys
 from typing import Any
 
-import build_catalog as bc
+from catlib.paths import ROOT
+from catlib.overview import parse_overview
 
-ROOT = bc.ROOT
 TSV = ROOT / "notes" / "subfindings.tsv"
 LEDGER = ROOT / "notes" / "catalog.tsv"
 
@@ -62,7 +62,7 @@ def population() -> dict[str, Any]:
     the page and the report are computed by the same rule and the page's checker re-derives it
     independently.
     """
-    _order, fams = bc.parse_overview()
+    _order, fams = parse_overview()
     rows = list(csv.DictReader(TSV.read_text(encoding="utf-8").splitlines(), delimiter="\t"))
     titles: dict[str, list[str]] = {}
     paths: dict[str, list[str]] = {}
