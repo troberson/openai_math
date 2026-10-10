@@ -17,7 +17,7 @@ nothing; `lake`, `lean`, `lake exe cache get`, and `comparator` are never invoke
 this page means "a proof was checked". Run it twice and diff: the report must be identical. Check this
 page with `python3 notes/scripts/verify_t0_chains.py --mutant` before quoting any of its counts — it
 re-derives every number from the ledger, `overview.tex`, `notes/subfindings.tsv` and the `.bib` files
-on disk, resolves every `file:line` anchor, matches every fenced block and quotation, and flags twelve
+on disk, resolves every `file:line` anchor, matches every fenced block and quotation, and flags thirteen
 injected mutations. It writes nothing.
 
 ## The chains the release records

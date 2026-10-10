@@ -40,13 +40,13 @@ python3 notes/scripts/measure_names.py      # the six name layers behind notes/n
 python3 notes/scripts/measure_names.py --json  # dumps the 5,842 measured rows plus metadata as JSON
 python3 notes/scripts/build_index.py        # writes notes/index/ (1,033 pages + 16 tables) and prints the reconciliation
 python3 notes/scripts/check_index_links.py  # checks every link in notes/index/ and CONTENTS.md against the shipped files; report-only
-python3 notes/scripts/check_index_links.py --mutant  # self-test: 20 injected broken hrefs (one per category) must all be caught, 7 real hrefs must resolve
+python3 notes/scripts/check_index_links.py --mutant  # self-test: 21 injected mutations (20 broken hrefs, one per category, plus one mutation of notes/index-links.md's own prose) must all be caught, 7 real hrefs must resolve
 python3 notes/scripts/compare_abstracts.py  # compares each manuscript abstract with its family's overview abstract; report-only
 python3 notes/scripts/compare_abstracts.py --tsv  # writes notes/abstracts.tsv (372 rows: best-match ratio, relation, both shape sets)
 python3 notes/scripts/compare_abstracts.py --mutant  # self-test: 7 injected corruptions must all be caught, 3 controls and 5 synthetic cases must stay right
 python3 notes/scripts/verify_abstracts.py --mutant  # checks notes/abstracts.md: every [S#] marker resolves, every quotation is verbatim in the file it names
 python3 notes/scripts/measure_proof_density.py  # tests proofs-per-family against tiers and claim shapes; report-only, writes nothing
-python3 notes/scripts/measure_proof_density.py --mutant  # self-test: 8 injected corruptions must all be caught, plus a 5-case check of the statistic itself
+python3 notes/scripts/measure_proof_density.py --mutant  # self-test: 9 injected corruptions must all be caught, plus a 5-case check of the statistic itself
 python3 notes/scripts/extract_counterexample_crosscheck.py  # pairs the 28 counterexample families outside T0 with their main_results declarations and carriers; report-only
 python3 notes/scripts/verify_counterexample_crosscheck.py --mutant  # checks notes/counterexample-crosscheck.md: anchors, fenced blocks, quotations, three tables, all 19 counts
 python3 notes/scripts/extract_t0_chains.py  # the 2 release-recorded cross-family edges, the 311 literature chain, and the 27 two-manuscript second-pass T0 families; report-only
@@ -60,7 +60,7 @@ python3 notes/scripts/verify_named_conjectures.py --mutant  # checks notes/named
 python3 notes/scripts/verify_upstream_history.py  # re-derives the 3014888 merge census from git and the ledger, then checks the three upstream_history/ pages: anchors, quotations, links, fenced blocks, the 14 backticked preprints/ slugs, two tables, every count phrase; report-only, writes nothing
 python3 notes/scripts/verify_upstream_history.py --mutant  # self-test: 13 injected faults (dead anchor, paraphrase, shifted anchor, dead path/link, renamed slug, altered counts) must all be caught
 python3 notes/scripts/verify_script_ownership.py  # checks notes/scripts/README.md: the derived writer set, the file census, naming coverage, shared basenames; report-only, writes nothing
-python3 notes/scripts/verify_script_ownership.py --mutant  # self-test: 11 injected faults (one per check form) must each be caught by the check it targets
+python3 notes/scripts/verify_script_ownership.py --mutant  # self-test: 12 injected faults (one per check form) must each be caught by the check it targets
 ```
 
 `notes/summaries-workflow.md` is the resume protocol for the summary-page batches: per-page steps,
@@ -221,8 +221,9 @@ the manuscript's **name** (76 families), its **own abstract** (275), its **prose
 ±80-character window), and in the overview **title** — which supplies **15** families the
 abstract-only rule misses. **The swap is applied: the column is the title ∪ abstract union at 248,
 removals 0** (the abstract-only scope it replaced read 233); a strict title+abstract *replacement*
-reads 149 (99 removals) and is rejected. `notes/scripts/extract_named_results.py` prints every count
-(report-only) and `notes/scripts/verify_named_results.py --mutant` checks the page (12/12 mutants
+reads 149 (99 removals from the applied 248) and is rejected.
+`notes/scripts/extract_named_results.py` prints every count
+(report-only) and `notes/scripts/verify_named_results.py --mutant` checks the page (13/13 mutants
 caught).
 
 **Proof density was tested as a signal and rejected — no column.** `notes/sources.tsv` counts
@@ -241,7 +242,7 @@ runs opposite the naive reading — the least-formalized tier (T0) carries the m
 because its manuscripts are the physically largest (median 168.2 KB vs 89.0 in T3). The null, the
 pre-registered rule, and what was not checked are in **`notes/proof-density.md`**;
 `notes/scripts/measure_proof_density.py` re-measures it (report-only, writes nothing; gates 0
-problems, statistic self-test 5/5, injected mutants caught 8/8).
+problems, statistic self-test 5/5, injected mutants caught 9/9).
 
 **`notes/conjecture-standing.tsv` records a prior, not a fact.** The 139 families flagged by both
 `resolves_named` and the `resolution` shape each get a row: the conjecture as the abstract names it,
@@ -328,7 +329,7 @@ rest. The gap between 5 (keyword) and 121 (reading) is why this page is a readin
 ledger tag. The exclusion rule is recorded with the page: a clause saying an assumption is *not
 imposed* widens the formalized claim rather than bounding it, so it is not an entry. `notes/scripts/verify_scope_exclusions.py`
 resolves every citation, requires each quotation verbatim on the line it cites **inside the `## Scope`
-span**, re-measures all seven table numbers from disk, and flags all six injected mutants.
+span**, re-measures all seven table numbers from disk, and flags all seven injected mutants.
 
 **`notes/subfindings.tsv` is the per-manuscript table: 1145 rows = 719 manuscript rows + 426
 comparator rows, typed by a `kind` column.** Extraction only — every field is copied from a file,
@@ -365,7 +366,7 @@ Measured on the page: **62** accepted clause pairs, **47** accepted headline pai
 recorded unmatched, **109** titles claimed, **94** unclaimed, **40** families with at least one
 accepted pair, **17** with at least one unmatched clause, **6** pairing a sub-finding with no probe
 hit. `notes/scripts/verify_subfinding_pairs.py --mutant` re-checks every quotation against the shipped
-line, re-derives every count from the parsed blocks, and flags all seven injected mutants;
+line, re-derives every count from the parsed blocks, and flags all eight injected mutants;
 `notes/scripts/extract_subfinding_pairs.py` prints the population and the vocabulary counts the page
 quotes, and writes nothing.
 
@@ -385,8 +386,8 @@ is rule-dependent: declared-by-`\newtheorem`-in-dir minus non-statement names is
 six-name list theorem/lemma/proposition/corollary/claim/conjecture is **21,203**, and the 85 gap is
 `assumption` 22, `foundation` 13, `auxproposition` 8, `hypothesis` 8, `auxlemma` 7, `standinginput` 5
 and 9 names at ≤4.
-`notes/scripts/verify_sources.py --mutant` re-derives all 30 quoted phrases from a fresh recount,
-requires every backticked directory name to exist, and flags all nine injected mutants.
+`notes/scripts/verify_sources.py --mutant` re-derives all 31 quoted phrases from a fresh recount,
+requires every backticked directory name to exist, and flags all twelve injected mutants.
 
 **`notes/verification-dirs.md` records what each of the 30 verification bundles says about itself.**
 A `preprints/<slug>/verification/` tree is a finite-arithmetic **certificate** — it checks arithmetic on

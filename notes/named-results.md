@@ -15,7 +15,7 @@ on this page means "a proof was checked". Run it twice and diff: the report must
 this page with `python3 notes/scripts/verify_named_results.py --mutant` before quoting any of its
 counts — it imports the extractor's own `population()`, re-derives every count from the ledger and the
 7,679 `.tex` files on disk, resolves every `file:line` anchor, matches every quotation against the
-anchored file, and flags twelve injected mutations. It writes nothing.
+anchored file, and flags thirteen injected mutations. It writes nothing.
 
 Population, from the report's POPULATION section: **372** ledger rows, **372** families in
 `overview.tex`, **719** manuscript directories, **7,679** `.tex` files at glob depths 1–4 under
@@ -182,7 +182,7 @@ documented at `notes/scripts/catlib/ledger.py:121` as
 
 **15** additions: 022 039 044 096 097 151 156 192 209 263 289 293 297 347 367. **Removals 0** — a union
 keeps every flag the abstract-only scope had, so the column reads **248**. A strict title+abstract
-*replacement* would read 149 (99 removals), which is why the applied rule is a union and not a
+*replacement* would read 149 (99 removals against the applied 248 column), which is why the applied rule is a union and not a
 replacement.
 
 All **15** are corroborated by a manuscript-abstract naming sentence (layer 2, count ≥ 1). **9** of the
