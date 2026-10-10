@@ -90,7 +90,12 @@ LABELS: dict[str, Callable[[], dict[str, str]]] = {
     "notes/names.md": lambda: R.names_phrases(POPULATIONS["notes/names.md"]()),
     "notes/proof-density.md": lambda: R.proof_density_phrases(POPULATIONS["notes/proof-density.md"]()),
     "notes/index-links.md": lambda: R.index_links_phrases(POPULATIONS["notes/index-links.md"]()),
-    "notes/links.md": lambda: R.links_phrases(POPULATIONS["notes/links.md"]()),
+    # links.md prints the MSC/keywords/bibliography figures formatted (**8,206**, 13,802), while
+    # links_full also carries each as an unformatted string for the topics page, which prints them
+    # bare (render_reports.py:2412). Requiring a raw label in the links page aborts the build with
+    # NOT FOUND, so the links template's label dict drops them: they are the topics page's slots.
+    "notes/links.md": lambda: {k: v for k, v in R.links_phrases(POPULATIONS["notes/links.md"]()).items()
+                               if not k.startswith("raw_")},
     "notes/dependency-drift.md": lambda: R.drift_phrases(POPULATIONS["notes/dependency-drift.md"]()),
     "notes/verification-dirs.md": lambda: R.verification_dirs_phrases(
         POPULATIONS["notes/verification-dirs.md"]()),
@@ -121,9 +126,9 @@ ALL_PAGES = {
     "notes/names.md": "measure_names.py",
     "notes/proof-density.md": "measure_proof_density.py",
     "notes/sources.md": "verify_sources.py",
-    # verification-dirs.md's checker takes a population argument and has no module-level population(),
-    # so its needles cannot be derived with an empty dict: the builder reports this coverage as
-    # NOT DERIVED, and the page is proven by the render diff plus the checker's own 18 mutants.
+    # verification-dirs.md's checker exports population() (its measure()), so the builder derives its
+    # needle list from the checker itself; the page is also proven by the render diff plus the
+    # checker's own mutants.
     "notes/verification-dirs.md": "verify_verification_dirs.py",
     # scope-exclusions.md's checker has no count_phrases/size_phrases at all: its needles are the
     # inline COUNTS/NONE_LINE regexes plus the measured() table labels, so the builder reports this
@@ -134,9 +139,8 @@ ALL_PAGES = {
     # size_phrases, so the builder reports this coverage as NOT DERIVED. The page is proven by the
     # render diff plus measure_topics.py --check, which re-measures all 92 recorded rows.
     "notes/topics.md": "measure_topics.py",
-    # t0-chains.md's checker takes a population argument and has no module-level population(), so its
-    # needles cannot be derived with an empty dict: the builder reports this coverage as NOT DERIVED
-    # and the page is proven by the render diff plus the checker's own 12 mutants.
+    # t0-chains.md's checker exports population() (its measured()), so the builder derives its needle
+    # list from the checker itself; the page is also proven by the render diff plus its own mutants.
     "notes/t0-chains.md": "verify_t0_chains.py",
     # subfinding-pairs.md's checker takes parsed inputs and has no module-level count_phrases, so its
     # needles cannot be derived: the builder reports this coverage as NOT DERIVED and the page is
@@ -149,8 +153,9 @@ ALL_PAGES = {
     # therefore reports this coverage as NOT DERIVED, and the page is proven by the twice-render
     # byte-identity diff plus that checker's plain run and its 11 mutants.
     "notes/README.md": "verify_script_ownership.py",
-    # counterexample-crosscheck.md is the one report-fed page whose checker exports population() and
-    # count_phrases(), so the builder derives its needle list from the checker itself.
+    # counterexample-crosscheck.md's checker exports population() and count_phrases(), so the builder
+    # derives its needle list from the checker itself - as it now does for the six other report-fed
+    # pages, whose per-page counts are the Needles column of the templates census.
     "notes/counterexample-crosscheck.md": "verify_counterexample_crosscheck.py",
     # templates.md has no page checker of its own: its census comes from the gated report-only
     # measure_templates.py, and the script that checks any part of it is verify_script_ownership.py,
