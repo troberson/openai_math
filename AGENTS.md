@@ -56,11 +56,12 @@ lives in this file and nowhere else.
 ## Dev environment tips
 
 - Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `overview`, `ledger`, `preprints`,
-  `text`, `yaml`, `anchors`, `bib`, `measure` (11 modules). Import them (`from catlib import yaml as Y`);
+  `text`, `yaml`, `anchors`, `bib`, `measure`, `render` (12 modules). Import them (`from catlib import yaml as Y`);
   do not re-implement a join in an extractor. **33** of the **46** scripts do, including **all 19**
   checkers. `measure.py` is the writer-side measurement API (counts as data, no report formatting) and
   checkers deliberately do **not** import it — a checker that re-derives a count through the page's own
-  code proves nothing.
+  code proves nothing. `render.py` is the page-vs-writer comparison: a page's count pass proves its
+  numbers are measured, and the render-diff proves the page on disk is the bytes the writer renders.
   A script run as `python3 notes/scripts/foo.py` already has `notes/scripts` as `sys.path[0]`, so no
   `sys.path.insert` is needed and `# noqa: E402` markers are not needed with it (measured 0 of each).
   What stays local is a read shape, not a join: `verify_upstream_history.py`'s `git show <rev>:`

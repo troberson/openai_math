@@ -43,8 +43,10 @@ as comments; the tables below are the same list with the measured counts.
 | pylint | 1,422 findings over 44 scripts | 142 | **0** (142 → 38 after the ruff autofixes, 38 → 21 by hand, 21 → 0 by the last three exemptions) |
 
 `python -m py_compile notes/scripts/*.py` passes for all 44 under the venv interpreter. The tree is
-**57 source files** today — **46** scripts plus `catlib/`'s **11** — and every current-state figure
-below is measured over 57; the baseline row above is the 44-file tree it was measured on.
+**58 source files** today — **46** scripts plus `catlib/`'s **12** — and every current-state figure
+below is measured over 58 (re-measured 2026-10-10, the day `catlib/render.py` landed); the baseline
+row above is the 44-file tree it was measured on, and the `duplicate-code` row below keeps its dated
+2026-10-09 measurement over 57 files.
 
 ## Exemptions
 
@@ -74,7 +76,7 @@ gate stays green.
 
 ## mypy per-file status
 
-Under `mypy.ini` the gate command checks **57 files with 0 errors**. `check_untyped_defs = False`,
+Under `mypy.ini` the gate command checks **58 files with 0 errors**. `check_untyped_defs = False`,
 so a function with no annotations is not analyzed — the gate proves the annotated surface, not the
 whole tree. The 3 baseline errors were real and are fixed: `compare_abstracts.py:63`
 (`_CACHE: dict = {}`), `build_index.py:166` (`WRITTEN: set = set()`), and a `None` guard in
@@ -83,17 +85,17 @@ whole tree. The 3 baseline errors were real and are fixed: `compare_abstracts.py
 The per-file figure is the **strict probe**, which is not a gate command:
 
 ```bash
-.venv/bin/mypy --check-untyped-defs notes/scripts/   # 200 errors in 36 files (57 checked)
+.venv/bin/mypy --check-untyped-defs notes/scripts/   # 195 errors in 34 files (58 checked)
 ```
 
-Its 200 findings are an annotation backlog, not defects: `var-annotated` 86 (an empty `dict`/`list`
+Its 195 findings are an annotation backlog, not defects: `var-annotated` 81 (an empty `dict`/`list`
 accumulator mypy cannot infer), `assignment` 45, `union-attr` 29, `misc` 10, `index` 10, `arg-type` 8,
 `operator` 4, `attr-defined` 2, `str-format` 2, `call-overload` 2, `str-unpack` 1,
-`func-returns-value` 1. **21 of 57 files are clean under the probe** —
-`build_catalog.py`, `build_report_templates.py`, `extract_verification_348.py`,
-`locate_summary_quotes.py`, `read_manuscript.py`, `render_reports.py`, `triage_t0.py`,
-`verify_counterexample_crosscheck.py`, `verify_index_design.py`,
-`verify_named_results.py`, and all 11 files under `catlib/`.
+`func-returns-value` 1. **24 of 58 files are clean under the probe** —
+`build_catalog.py`, `build_report_templates.py`, `check_index_links.py`, `extract_subfinding_pairs.py`,
+`extract_verification_348.py`, `locate_summary_quotes.py`, `read_manuscript.py`, `render_reports.py`,
+`triage_t0.py`, `verify_counterexample_crosscheck.py`, `verify_index_design.py`,
+`verify_named_results.py`, and all 12 files under `catlib/`.
 
 The count rises as checkers move onto the package, and the rise is not a regression: `catlib` is
 fully annotated, so a ported file's previously opaque calls (`read_text`, `read_rows`, `bib.read`)

@@ -136,7 +136,7 @@ itself as its input. It is the 19th checker and the 46th script the run counts.
 
 ## The shared package: `catlib/`
 
-`notes/scripts/catlib/` holds the joins the extractors share, so a join is written once. It is 11
+`notes/scripts/catlib/` holds the joins the extractors share, so a join is written once. It is 12
 modules, not scripts: `paths.py` (the repo-root constants, `rel()`, `owner()`, `read_text()`),
 `tsv.py` (the four TSV writer shapes), `overview.py` (the `\resultentry` parse), `ledger.py`
 (`notes/catalog.tsv` and the claim-shape rules), `preprints.py` (the 749 dirs versus the 719 listed
@@ -146,7 +146,10 @@ and the nearest-preceding-anchor read the page checkers share), `bib.py` (the `.
 title normalizer, the citation-key read, the pair window and the component scan), `measure.py` (the
 writer-side measurement API — the ledger and release counts as ints, sets and lists, with no report
 formatting; checkers deliberately do **not** import it, because a checker that re-derives a count
-through the page's own code proves nothing) and `__init__.py`. A
+through the page's own code proves nothing), `render.py` (the page-vs-writer comparison —
+`diff_problems()` reports where a committed page differs from the bytes `render_reports.py` renders
+for it, and `selftest_problems()` names the four cases it must report: identical, changed digit,
+inserted line, deleted line) and `__init__.py`. A
 script run as `python3 notes/scripts/foo.py` has `notes/scripts` on `sys.path`, so it imports them as
 `from catlib import ...` with no path boilerplate.
 
@@ -163,7 +166,7 @@ shape**, not a parse: `verify_upstream_history.py` reads `lean/formalization.yam
 compiled PDF; and `build_index.py` keeps its own `TRIPLE` regex.
 
 The package is not in the census below: the script population is `notes/scripts/*.py`, and
-`catlib/` is 11 modules under that directory, counted as **57** source files by the lint gate in
+`catlib/` is 12 modules under that directory, counted as **58** source files by the lint gate in
 `notes/linting.md`.
 
 ## The file census
