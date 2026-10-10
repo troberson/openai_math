@@ -25,13 +25,17 @@ from __future__ import annotations
 import collections
 import csv
 import pathlib
+import posixpath
 import re
 import statistics
+import subprocess
+import sys
 from typing import Any
 
 from jinja2 import Environment, FileSystemLoader
 
 import build_sources as S
+import check_index_links as CI
 import compare_abstracts as CA
 import extract_named_results as en
 import measure_index_sizes as M
@@ -53,6 +57,7 @@ NAMED_RESULTS_MD = ROOT / "notes" / "named-results.md"
 INDEX_DESIGN_MD = ROOT / "notes" / "index-design.md"
 NAMES_MD = ROOT / "notes" / "names.md"
 PROOF_DENSITY_MD = ROOT / "notes" / "proof-density.md"
+INDEX_LINKS_MD = ROOT / "notes" / "index-links.md"
 
 
 def f(x: int) -> str:
@@ -1018,20 +1023,237 @@ def proof_density_page(p: dict[str, str]) -> str:
     return ENV.get_template("proof-density.md.j2").render(p=p)
 
 
+# --- notes/index-links.md --------------------------------------------------------------
+# The page quotes two reports. check_index_links.py is imported (it does no work at module scope),
+# so the writer reads its measurement as data. build_index.py is run as a subprocess: it calls
+# main() at module scope, so importing it would run the 45-second index build inside every render.
+# The page's checker (check_index_links.py --mutant) keeps its own recomputation, as everywhere.
+
+IL_DIR_DESC = {
+    "manuscript-dir": "`preprints/<dir>/` — the manuscript directory",
+    "latex-build-tree": "`preprints/<dir>/build/` — the LaTeX source tree",
+    "lean-dir": "the Lean module dir named by a `main_results` file path",
+    "verification-dir": "`preprints/<dir>/verification/` — certificate bundles",
+    "index-dir": "`notes/index/names/`, linked from the entry point",
+}
+IL_GROUP_CELL = {"name pages": "name pages", "family pages": "family pages",
+                 "topic pages": "topic pages", "discipline pages": "discipline pages",
+                 "entry point": "entry point (`notes/index/README.md`)"}
+# Categories whose scanned count exceeds the render-time registered count, in the page's row order.
+IL_GAP_CATS = ["index-page", "manuscript-dir", "notes-doc", "index-table", "config-json",
+               "verification-dir", "index-dir"]
+# Where notes/index-links.md wraps a phrase across lines, the prefix its first line ends with.
+IL_SPLIT = {
+    "hl_canon": ["719",
+                 "manuscript PDFs, 719 `build/` trees, 719 `README.md` stubs, 242 scope notes, "
+                 "416 comparator",
+                 "configs (JSON and Lean side by side), 192 Lean files named by "
+                 "`formalization.yaml` over 183"],
+    "prose_lean200": ["`lean-dir` counts 200 links over"],
+    "prose_leanhost": ["14 dirs host more than one `main_results` declaration (max 3), and 6 files host"],
+    "prose_extra": ["`manuscript-dir` is the one category whose target count exceeds the "
+                    "canonical count: 746"],
+    "prose_superseded": ["The 27 extra targets are directories the upstream merge superseded —",
+                         "every one exists on disk, none is listed as a manuscript in "
+                         "`notes/subfindings.tsv`, and all 27"],
+    "prose_indexpage": ["`index-page` 521 targets = 372 family pages + 92 topic",
+                        "pages + 17 discipline pages + 40 name pages, and the 40 name pages are "
+                        "linked only from the entry"],
+    "prose_latexsource": ["`latex-source` 719 = the `main_tex` of each of the 719 manuscripts, "
+                          "all 719 present in"],
+    "prose_notesdoc": ["`notes-doc` 26 targets = `notes/names.md` (552 links: one from each of the",
+                       "551 name pages and one from the entry point), the 21 `notes/summaries/` "
+                       "pages family pages link,",
+                       "and the 5 notes docs the entry point links (`index-design.md`, `names.md`, "
+                       "`topics.md`,"],
+    "prose_regchecked": ["**48,012 links checked, 0"],
+    "prose_tracefiles": ["`reasoning_traces/` ships **11 files"],
+    "prose_fresh": ["**20 injected, 20 caught, 0 missed; 7 controls, 7"],
+    "prose_surplus": ["The 18,095 surplus links are"],
+}
+
+
+def build_index_report() -> dict[str, Any]:
+    """Run notes/scripts/build_index.py and parse the report lines the page quotes.
+
+    A subprocess, not an import: build_index.py calls main() at module scope, so importing it
+    would build the index inside every render.
+    """
+    proc = subprocess.run([sys.executable, str(ROOT / "notes" / "scripts" / "build_index.py")],
+                          capture_output=True, text=True, check=True, cwd=ROOT)
+    out: dict[str, Any] = {"checked": -1, "broken": -1, "reg": {}}
+    for ln in proc.stdout.splitlines():
+        if ln.startswith("links checked"):
+            out["checked"], out["broken"] = int(ln.split()[2]), int(ln.split()[-1])
+        elif ln.startswith("registered by group"):
+            for g in CI.GROUP_ORDER:
+                m = re.search(rf"{g} (\d+)", ln)
+                if m:
+                    out["reg"][g] = int(m.group(1))
+        elif ln.startswith("registered by category"):
+            for tok in ln[len("registered by category "):].split("  "):
+                k, v = tok.rsplit(" ", 1)
+                out["reg"][k] = int(v)
+    return out
+
+
+def index_links_population() -> dict[str, Any]:
+    """The two reports notes/index-links.md quotes, plus the checker's own self-test.
+
+    The build runs first so the disk scan reads the index the same render just produced.
+    """
+    build = build_index_report()
+    return {"scan": CI.measure(), "build": build, "mutant": CI.mutant_test()}
+
+
+def index_links_full(p: dict[str, Any]) -> dict[str, str]:
+    """label → full measured phrase, for notes/index-links.md."""
+    s, b, mt = p["scan"], p["build"], p["mutant"]
+    cats, canon, reg = s["cats"], s["canon"], b["reg"]
+    tg = {c: len(v) for c, v in s["targets"].items()}
+    kind, gp, groups = s["kind"], s["gp"], s["groups"]
+    nlinks, npages, nbroken = len(s["links"]), len(s["pages"]), len(s["broken"])
+    gap = nlinks - b["checked"]
+    name_gap = groups["name pages"] - reg["name pages"]
+    caught, total, missed, clean, ctotal = mt[0], mt[1], mt[2], mt[3], mt[4]
+    trap = mt[6]
+    dirs = collections.Counter(posixpath.dirname(fl) for _c, _d, fl in s["triples"])
+    files = collections.Counter(fl for _c, _d, fl in s["triples"])
+    tops = collections.Counter(r.split("/")[2] for r in s["targets"]["index-page"])
+    fam_pg = sum(v for k, v in tops.items() if k not in ("names", "topics", "disciplines"))
+    entry_docs = len({rel for pg, _h, rel in s["links"]
+                      if pg == "README.md" and CI.category(rel) == "notes-doc"})
+    summaries = len([r for r in s["targets"]["notes-doc"] if r.startswith("notes/summaries/")])
+    names_links = sum(1 for _pg, _h, rel in s["links"] if rel == "notes/names.md")
+    extra = len(s["extra_dirs"])
+    out: dict[str, str] = {}
+    out["h_title"] = f"{f(nlinks)} links checked against the shipped files, {nbroken} broken"
+    out["hl_pages"] = f"all {f(npages)} rendered index pages"
+    out["hl_links"] = f"{f(nlinks)} markdown links extracted"
+    out["hl_broken"] = f"→ **{nbroken} broken**"
+    out["hl_dirfile"] = f"{f(s['dir_links'])} resolve to a directory and {f(s['file_links'])} to a"
+    out["hl_canon"] = (f"{canon['manuscript-pdf']} manuscript PDFs, {canon['latex-build-tree']} "
+                       f"`build/` trees, {canon['manuscript-readme']} `README.md` stubs, "
+                       f"{canon['scope-note']} scope notes, {canon['config-json']} comparator "
+                       f"configs (JSON and Lean side by side), {canon['lean-file']} Lean files "
+                       f"named by `formalization.yaml` over {canon['lean-dir']} "
+                       f"module dirs, {canon['verification-dir']} verification dirs, "
+                       f"{canon['trace']} reasoning-trace stems")
+    out["hl_contents"] = (f"{len(s['contents'])} links, {len(s['contents_pdf'])} of them `.pdf`, "
+                          f"**{len(s['contents_broken'])} broken**")
+    out["trap_naive"] = f"`[^)]*` | `{trap[0][1]}` | {'yes' if trap[0][2] else 'no'}"
+    out["trap_balanced"] = f"paren-balanced | `{trap[1][1]}` | {'yes' if trap[1][2] else 'no'}"
+    for c, desc in IL_DIR_DESC.items():
+        out[f"dirrow_{c}"] = f"| `{c}` | {f(cats[c])} | {tg[c]} | {desc} |"
+    out["dir_intro"] = f"{f(s['dir_links'])} of the {f(nlinks)} links resolve to a directory"
+    out["prose_remaining"] = f"The remaining {f(s['file_links'])} links resolve to files"
+    out["prose_ver60"] = (f"`verification-dir` counts {cats['verification-dir']} links over "
+                          f"{tg['verification-dir']} dirs")
+    out["prose_lean200"] = f"`lean-dir` counts {cats['lean-dir']} links over {tg['lean-dir']} dirs"
+    out["prose_leanhost"] = (f"{sum(1 for v in dirs.values() if v > 1)} dirs host more than one "
+                             f"`main_results` declaration (max {max(dirs.values())}), and "
+                             f"{sum(1 for v in files.values() if v > 1)} files host more than one "
+                             f"(max {max(files.values())}), which is why {canon['lean-file']} "
+                             f"files sit in {canon['lean-dir']} dirs")
+    out["prose_extra"] = (f"`manuscript-dir` is the one category whose target count exceeds the "
+                          f"canonical count: {tg['manuscript-dir']} linked of "
+                          f"{canon['manuscript-dir']} shipped")
+    out["prose_superseded"] = (f"The {extra} extra targets are directories the upstream merge "
+                               f"superseded — every one exists on disk, none is listed as a "
+                               f"manuscript in `notes/subfindings.tsv`, and all {extra} are "
+                               f"reached only from name pages, by {f(s['extra_dir_links'])} links")
+    out["line_extra"] = (f"manuscript dirs linked outside the release set  {extra}  on disk "
+                         f"{s['extra_dirs_on_disk']}  links {s['extra_dir_links']}")
+    out["line_from"] = (f"From `python3 notes/scripts/check_index_links.py` ({f(npages)} pages, "
+                        f"{f(nlinks)} links, {nbroken} broken):")
+    for c in sorted(cats, key=lambda k: (-cats[k], k)):
+        cv = canon.get(c)
+        cell = "—" if cv is None else (f"{cv} = canonical" if tg[c] == cv
+                                       else f"{cv} linked {tg[c]} of {cv}")
+        out[f"catrow_{c}"] = (f"| `{c}` | {f(cats[c])} | {f(tg[c])} | {f(kind[(c, 'file')])} | "
+                              f"{f(kind[(c, 'dir')])} | {cell} |")
+    out["prose_indexpage"] = (f"`index-page` {tg['index-page']} targets = {fam_pg} family pages + "
+                              f"{tops['topics']} topic pages + {tops['disciplines']} discipline "
+                              f"pages + {tops['names']} name pages, and the {tops['names']} name "
+                              f"pages are linked only from the entry point")
+    out["prose_latexsource"] = (f"`latex-source` {tg['latex-source']} = the `main_tex` of each of "
+                                f"the {tg['latex-source']} manuscripts, all {tg['latex-source']} "
+                                f"present in `notes/sources.tsv`")
+    out["prose_notesdoc"] = (f"`notes-doc` {tg['notes-doc']} targets = `notes/names.md` "
+                             f"({names_links} links: one from each of the {gp['name pages']} name "
+                             f"pages and one from the entry point), the {summaries} "
+                             f"`notes/summaries/` pages family pages link, and the {entry_docs} "
+                             f"notes docs the entry point links (`index-design.md`, `names.md`, "
+                             f"`topics.md`, `topics.tsv`, `scripts/measure_names.py`)")
+    out["prose_indextable"] = f"`index-table` {tg['index-table']} target = `notes/index/names.tsv`"
+    out["prose_traces"] = (f"Traces: {len(s['trace_stems'])} stems attributed, "
+                           f"{len(s['trace_disk'])} on disk, {len(s['trace_unlisted'])} unattributed.")
+    out["prose_tracefiles"] = (f"`reasoning_traces/` ships **{s['trace_files']} files over "
+                               f"{len(s['trace_stems'])} stems**")
+    out["prose_contentspdf"] = (f"`CONTENTS.md`'s {len(s['contents_pdf'])} `.pdf` links are the "
+                                f"{canon['manuscript-pdf']} manuscript PDFs plus `overview.pdf`")
+    out["prose_regchecked"] = f"**{f(b['checked'])} links checked, {b['broken']} broken**"
+    out["prose_scanfinds"] = f"The disk scan finds **{f(nlinks)} links, {nbroken} broken**"
+    out["prose_gap"] = f"The {f(gap)}-link difference"
+    for g in CI.GROUP_ORDER:
+        out[f"gprow_{g}"] = (f"| {IL_GROUP_CELL[g]} | {gp[g]} | {f(groups[g])} | {f(reg[g])} | "
+                             f"{f(groups[g] - reg[g])} |")
+    for c in IL_GAP_CATS:
+        # The build report's registered-by-category line lists only categories with a non-zero
+        # count, so a category the registry never sees is registered 0, not missing.
+        rc = reg.get(c, 0)
+        out[f"gaprow_{c}"] = f"| `{c}` | {f(cats[c])} | {f(rc)} | {f(cats[c] - rc)} |"
+    out["prose_surplus"] = (f"The {f(gap)} surplus links are all verified by the disk scan, and "
+                            f"{f(name_gap)} of them ({round(name_gap / gap * 100)}%) sit on "
+                            f"name pages")
+    out["prose_mutants"] = f"injects {total} broken hrefs"
+    out["prose_controls"] = f"requires {ctotal} real hrefs to resolve"
+    out["prose_fresh"] = (f"**{total} injected, {caught} caught, {len(missed)} missed; "
+                          f"{ctotal} controls, {clean} resolve**")
+    out["prose_overviewpdf"] = (f"is inside the {len(s['contents_pdf'])} `.pdf` links in "
+                                f"`CONTENTS.md`** ({canon['manuscript-pdf']} manuscripts + 1)")
+    return out
+
+
+def index_links_phrases(p: dict[str, Any]) -> dict[str, str]:
+    """Slot dict for notes/index-links.md: full phrases, split at the page's own line breaks."""
+    out: dict[str, str] = {}
+    for label, phrase in index_links_full(p).items():
+        prefixes = IL_SPLIT.get(label)
+        if not prefixes:
+            out[label] = phrase
+            continue
+        rest = phrase
+        for i, pre in enumerate(prefixes):
+            rest = rest.lstrip()
+            if not rest.startswith(pre):
+                msg = f"slot {label!r}: page wrap {pre!r} is not a prefix of {rest!r}"
+                raise ValueError(msg)
+            out[f"{label} {'abcdefghij'[i]}"] = pre
+            rest = rest[len(pre):]
+        out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
+    return out
+
+
+def index_links_page(p: dict[str, str]) -> str:
+    return ENV.get_template("index-links.md.j2").render(p=p)
+
 
 def main() -> None:
     mp = en.population()
     ip = M.population()
     np_ = names_population()
     pdp = proof_density_population()
+    ilk = index_links_population()
     SOURCES_MD.write_text(sources_page(), encoding="utf-8")
     ABSTRACTS_MD.write_text(abstracts_page(), encoding="utf-8")
     NAMED_RESULTS_MD.write_text(named_results_page(mp), encoding="utf-8")
     INDEX_DESIGN_MD.write_text(index_page(ip), encoding="utf-8")
     NAMES_MD.write_text(names_page(names_phrases(np_)), encoding="utf-8")
     PROOF_DENSITY_MD.write_text(proof_density_page(proof_density_phrases(pdp)), encoding="utf-8")
+    INDEX_LINKS_MD.write_text(index_links_page(index_links_phrases(ilk)), encoding="utf-8")
     for page in (SOURCES_MD, ABSTRACTS_MD, NAMED_RESULTS_MD, INDEX_DESIGN_MD, NAMES_MD,
-                 PROOF_DENSITY_MD):
+                 PROOF_DENSITY_MD, INDEX_LINKS_MD):
         out = page.read_text(encoding="utf-8")
         print(f"{page.name} written  lines {len(out.splitlines())}  bytes {len(out.encode())}")
     ms, ma = measure(), CA.measure()
@@ -1039,6 +1261,7 @@ def main() -> None:
           f"  named-results {len(named_results_phrases(mp))}"
           f"  index-design {len(index_phrases(ip))}  names {len(names_phrases(np_))}"
           f"  proof-density {len(proof_density_phrases(pdp))}"
+          f"  index-links {len(index_links_phrases(ilk))}"
           f"  multi-root rows {len(ms['multi'])}  rows {ms['rows']}  listed {ms['listed']}"
           f"  dirs {ms['dirs']}  comparisons {ma['manuscripts']}  families {ma['families']}"
           f"  target rows {len(tgt_rows(mp))}")

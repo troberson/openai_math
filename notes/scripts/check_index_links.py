@@ -40,6 +40,7 @@ import pathlib
 import posixpath
 import re
 import sys
+from typing import Any
 
 import build_catalog as B
 
@@ -289,27 +290,18 @@ def contents_links():
     return out
 
 
-def main(argv):
-    if "--mutant" in argv:
-        caught, total, missed, clean, ctotal, wrong, trap, classed = mutant_test()
-        print(f"mutants injected       {total}  caught {caught}  missed {len(missed)}")
-        for m in missed:
-            print(f"  MISSED {m}")
-        print(f"controls checked       {ctotal}  resolve {clean}  absent {len(wrong)}")
-        for w in wrong:
-            print(f"  CONTROL-FAIL {w}")
-        print()
-        for label, target, ok in trap:
-            print(f"{label:16} {target!r:80} resolves {ok}")
-        print()
-        for rel, on_disk, tagged, cat in classed:
-            print(f"on disk {on_disk:4}  reported {tagged:4}  {cat:18} {rel}")
-        return 1 if (missed or wrong) else 0
+def measure() -> dict[str, Any]:
+    """Every number the report prints, as data.
 
+    `notes/index-links.md` is rendered from this dict by `render_reports.py`, which imports this
+    module; `main()` prints the same dict. The page and the report share one measurement, so the
+    report stays the page's source and the two cannot drift apart.
+    """
     links = check_index()
-    broken, cats = [], collections.Counter()
-    kind = collections.Counter()
-    groups = collections.Counter()
+    broken: list[str] = []
+    cats: collections.Counter[str] = collections.Counter()
+    kind: collections.Counter[tuple[str, str]] = collections.Counter()
+    groups: collections.Counter[str] = collections.Counter()
     targets = collections.defaultdict(set)
     for page, href, rel in links:
         c = category(rel)
@@ -342,13 +334,8 @@ def main(argv):
     pdf_paths = {p for f in order for p in fam_paps.get(f, ())}
     trace_stems = sorted({s for v in traces_by_fam.values() for s in v})
 
-    print(f"index pages scanned    {len(list(IDX.rglob('*.md')))}")
-    print(f"links extracted        {len(links)}")
-    print(f"broken links           {len(broken)}")
-    for b in broken:
-        print(f"  BROKEN {b}")
-    print()
-    print(f"{'category':22} {'links':>7} {'targets':>8} {'file':>6} {'dir':>5}  canonical")
+    pages = sorted(p.relative_to(IDX).as_posix() for p in IDX.rglob("*.md"))
+    gp = collections.Counter(page_group(r) for r in pages)
     canon = {
         "manuscript-pdf": len(pdf_paths),
         "manuscript-dir": paps,
@@ -362,6 +349,70 @@ def main(argv):
         "lean-file": len({f for _, _, f in triples}),
         "lean-dir": len({posixpath.dirname(f) for _, _, f in triples}),
     }
+    # Manuscript dirs the index links that the release does not list as manuscripts: the name
+    # layer is keyed by on-disk directory names, so it reaches dirs the merge superseded.
+    canon_dirs = {f"preprints/{p.split('/')[1]}" for p in pdf_paths}
+    extra_dirs = sorted(targets["manuscript-dir"] - canon_dirs)
+    cl = contents_links()
+    cbroken = [h for h in cl if not (ROOT / posixpath.normpath(h.split('#')[0])).exists()]
+    cpdf = [h for h in cl if h.endswith(".pdf")]
+    return {
+        "pages": pages,
+        "links": links,
+        "broken": broken,
+        "cats": cats,
+        "kind": kind,
+        "groups": groups,
+        "targets": targets,
+        "gp": gp,
+        "canon": canon,
+        "paps": paps,
+        "triples": triples,
+        "trace_stems": trace_stems,
+        "trace_unlisted": list(trace_unlisted),
+        "trace_files": sum(1 for p in (ROOT / "reasoning_traces").iterdir() if p.is_file()),
+        "trace_disk": sorted({p.stem for p in (ROOT / "reasoning_traces").iterdir() if p.is_file()}),
+        "extra_dirs": extra_dirs,
+        "extra_dirs_on_disk": sum(1 for d in extra_dirs if (ROOT / d).is_dir()),
+        "extra_dir_links": sum(1 for _p, _h, rel in links if rel in set(extra_dirs)),
+        "dir_links": sum(v for (c, k), v in kind.items() if k == "dir"),
+        "dir_cats": sorted({c for (c, k) in kind if k == "dir"}),
+        "file_links": sum(v for (c, k), v in kind.items() if k == "file"),
+        "contents": cl,
+        "contents_broken": cbroken,
+        "contents_pdf": cpdf,
+    }
+
+
+def main(argv):
+    if "--mutant" in argv:
+        caught, total, missed, clean, ctotal, wrong, trap, classed = mutant_test()
+        print(f"mutants injected       {total}  caught {caught}  missed {len(missed)}")
+        for m in missed:
+            print(f"  MISSED {m}")
+        print(f"controls checked       {ctotal}  resolve {clean}  absent {len(wrong)}")
+        for w in wrong:
+            print(f"  CONTROL-FAIL {w}")
+        print()
+        for label, target, ok in trap:
+            print(f"{label:16} {target!r:80} resolves {ok}")
+        print()
+        for rel, on_disk, tagged, cat in classed:
+            print(f"on disk {on_disk:4}  reported {tagged:4}  {cat:18} {rel}")
+        return 1 if (missed or wrong) else 0
+
+    m = measure()
+    links, broken, cats, kind, groups, targets = (m["links"], m["broken"], m["cats"], m["kind"],
+                                                  m["groups"], m["targets"])
+    canon, gp = m["canon"], m["gp"]
+
+    print(f"index pages scanned    {len(m['pages'])}")
+    print(f"links extracted        {len(links)}")
+    print(f"broken links           {len(broken)}")
+    for b in broken:
+        print(f"  BROKEN {b}")
+    print()
+    print(f"{'category':22} {'links':>7} {'targets':>8} {'file':>6} {'dir':>5}  canonical")
     for c in sorted(cats, key=lambda k: (-cats[k], k)):
         nf = kind[(c, "file")]
         nd = kind[(c, "dir")]
@@ -372,35 +423,24 @@ def main(argv):
               f"{'' if cv is None else str(cv) + '  ' + note}")
     print()
     print(f"{'page group':16} {'pages':>6} {'links':>7}")
-    gp = collections.Counter(page_group(p.relative_to(IDX).as_posix())
-                             for p in IDX.rglob("*.md"))
     for g in GROUP_ORDER:
         print(f"{g:16} {gp[g]:>6} {groups[g]:>7}")
     print(f"{'total':16} {sum(gp.values()):>6} {sum(groups.values()):>7}")
     print()
-    print(f"directory-resolving links  {sum(v for (c, k), v in kind.items() if k == 'dir')} "
-          f"over {sorted({c for (c, k) in kind if k == 'dir'})}")
-    print(f"file-resolving links       {sum(v for (c, k), v in kind.items() if k == 'file')}")
-    # Manuscript dirs the index links that the release does not list as manuscripts: the name
-    # layer is keyed by on-disk directory names, so it reaches dirs the merge superseded.
-    canon_dirs = {f"preprints/{p.split('/')[1]}" for p in pdf_paths}
-    extra_dirs = sorted(targets["manuscript-dir"] - canon_dirs)
-    print(f"manuscript dirs linked outside the release set  {len(extra_dirs)}  on disk "
-          f"{sum(1 for d in extra_dirs if (ROOT / d).is_dir())}  "
-          f"links {sum(1 for _p, _h, rel in links if rel in set(extra_dirs))}")
-    print(f"trace stems attributed     {len(trace_stems)}  on disk "
-          f"{len({p.stem for p in (ROOT / 'reasoning_traces').iterdir() if p.is_file()})}  "
-          f"unlisted {' '.join(trace_unlisted) if trace_unlisted else 'none'}")
+    print(f"directory-resolving links  {m['dir_links']} over {m['dir_cats']}")
+    print(f"file-resolving links       {m['file_links']}")
+    print(f"manuscript dirs linked outside the release set  {len(m['extra_dirs'])}  on disk "
+          f"{m['extra_dirs_on_disk']}  "
+          f"links {m['extra_dir_links']}")
+    print(f"trace stems attributed     {len(m['trace_stems'])}  on disk {len(m['trace_disk'])}  "
+          f"unlisted {' '.join(m['trace_unlisted']) if m['trace_unlisted'] else 'none'}")
 
-    cl = contents_links()
-    cbroken = [h for h in cl if not (ROOT / posixpath.normpath(h.split('#')[0])).exists()]
-    cpdf = [h for h in cl if h.endswith(".pdf")]
     print()
-    print(f"CONTENTS.md links        {len(cl)}  pdf links {len(cpdf)}  "
-          f"broken {len(cbroken)}")
-    for b in cbroken[:10]:
+    print(f"CONTENTS.md links        {len(m['contents'])}  pdf links {len(m['contents_pdf'])}  "
+          f"broken {len(m['contents_broken'])}")
+    for b in m["contents_broken"][:10]:
         print(f"  BROKEN {b}")
-    return 1 if (broken or cbroken) else 0
+    return 1 if (broken or m["contents_broken"]) else 0
 
 
 if __name__ == "__main__":
