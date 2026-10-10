@@ -9,10 +9,10 @@ is per file, and the checker exits 1 on a file no rule owns.
 It is also the script inventory. Every script under `notes/scripts/` is listed once, in one of three
 classes — writer, report-only, checker — with what it writes and the command the gate runs for it, and
 the fourth class, the scratch a session writes outside the tree, is recorded by rule rather than by
-file. The classes partition the **48** scripts: **9** writers, **20** report-only, **18** checkers,
+file. The classes partition the **49** scripts: **9** writers, **21** report-only, **18** checkers,
 and `verify_script_ownership.py` itself, which is the 19th checker and is not listed in its own table.
 
-## The split: 9 write, 38 write nothing
+## The split: 9 write, 39 write nothing
 
 The writer set is derived from the scripts' own source, not from this page: a script is a writer when
 a path constant rooted at `notes/` appears on the left of `.open(..., "w")` or `.write_text(...)`,
@@ -24,7 +24,7 @@ directory rather than a file stays visible. The fourth rule subtracts the self-t
 self-test writes the page it checks only to mutate it and restores the bytes it read in the `finally`
 — `check_index_links.py` and `measure_proof_density.py` each do exactly that, so their normal runs
 write nothing and they stay in the report-only class. That rule
-finds **9** writers over **47** scripts.
+finds **9** writers over **48** scripts.
 
 ### Writers
 
@@ -62,9 +62,9 @@ rows in six artifacts.
 
 ### Report-only
 
-The other **38** scripts write nothing. **20** of them print the report a page's counts come from.
-The Gate column is the invocation the gate list runs: `notes/scripts/gate.sh`, which runs **66**
-invocations — the **8** gated writers, the 20 gated report-only rows (including `check_summary_manuscripts.py`
+The other **39** scripts write nothing. **21** of them print the report a page's counts come from.
+The Gate column is the invocation the gate list runs: `notes/scripts/gate.sh`, which runs **67**
+invocations — the **8** gated writers, the 21 gated report-only rows (including `check_summary_manuscripts.py`
 and `locate_summary_quotes.py`, and `check_index_links.py` twice — plain and with `--mutant`, since
 `math-a0r.6.2` gave its self-test a prose mutant that only the gate can run), and **38** checker
 invocations: each of the 18 checkers plain and
@@ -88,6 +88,7 @@ in the writers table.
 | `extract_verification_348.py` | `notes/verification-dirs.md` | plain |
 | `extract_verification_dirs.py` | `notes/verification-dirs.md` | plain |
 | `locate_summary_quotes.py` | `notes/summaries/` — the lines a page should cite when a quotation stops matching | plain, no page argument |
+| `measure_checker_needles.py` | `notes/templates.md` — the per-checker needle inventory behind its Needles column | plain |
 | `measure_index_sizes.py` | `notes/index-design.md` | plain, run twice and diff |
 | `measure_names.py` | `notes/names.md` | plain |
 | `measure_proof_density.py` | `notes/proof-density.md` | `--mutant` |
@@ -112,7 +113,7 @@ compared with `render_reports.py`'s render of it, folded into the exit code), an
 
 The remaining **18** scripts verify a page or a table. Each exits non-zero when what it checks has
 drifted; each takes `--mutant`, which injects faults and asserts they are caught. The gate runs each
-one plain and then with `--mutant` — **38** of the 66 invocations: **36** from the loop over the 18
+one plain and then with `--mutant` — **38** of the 67 invocations: **36** from the loop over the 18
 rows below, **2** more for `verify_conjecture_standing.py`, which the list runs outside the loop.
 
 | Checker | Checks | Gate | Cost (s) |
@@ -158,11 +159,11 @@ writers — `extract_formalization_deps.py` reads all 122,458 files under `lean/
 so its six mutants were never run by the gate. Measured 2026-10-09 by hand — `mutants 6  uncaught
 0 []`, exit 0 — `math-8ou` added the `--mutant` invocation, which is why the count read 63 and not
 62. `math-a0r.6.2` added `check_index_links.py --mutant` for the same reason — its 21st mutant is a
-mutation of `notes/index-links.md`'s own prose, which only the self-test can catch — and the count is
-**65**.
+mutation of `notes/index-links.md`'s own prose, which only the self-test can catch — and `math-3la`
+added `measure_checker_needles.py`, so the count is **67**.
 
 `verify_script_ownership.py` — this page's own checker — is not in the table: a checker cannot list
-itself as its input. It is the 19th checker and the 47th script the run counts.
+itself as its input. It is the 19th checker and the 49th script the run counts.
 
 ## The shared package: `catlib/`
 
@@ -183,7 +184,7 @@ inserted line, deleted line) and `__init__.py`. A
 script run as `python3 notes/scripts/foo.py` has `notes/scripts` on `sys.path`, so it imports them as
 `from catlib import ...` with no path boilerplate.
 
-**35** of the **46** scripts call the package: **6** `extract_`, **3** `build_`, **4** `measure_`,
+**37** of the **49** scripts call the package: **6** `extract_`, **3** `build_`, **6** `measure_`,
 `check_index_links.py`, `read_manuscript.py`, `render_reports.py`, and **all 19** checkers — `math-lon.2.5` ported the last
 two, `verify_upstream_history.py` and `verify_summaries.py`, and the **22** `duplicate-code` findings
 did not move (measured 2026-10-09 with `--enable=R0801` over 55 files, every cluster reported against
@@ -196,7 +197,7 @@ shape**, not a parse: `verify_upstream_history.py` reads `lean/formalization.yam
 compiled PDF; and `build_index.py` keeps its own `TRIPLE` regex.
 
 The package is not in the census below: the script population is `notes/scripts/*.py`, and
-`catlib/` is 12 modules under that directory, counted as **58** source files by the lint gate in
+`catlib/` is 12 modules under that directory, counted as **61** source files by the lint gate in
 `notes/linting.md`.
 
 ## The file census
@@ -249,9 +250,10 @@ excludes the checker-verified pages, allowing formatting only on the pages no ch
 
 ## Naming coverage
 
-`notes/README.md`'s command block named **34** of the 47 scripts before this pass. Thirteen are named
+`notes/README.md`'s command block named **34** of the 48 scripts before this pass. Fourteen are named
 nowhere in the repo at the pinned baseline: `build_report_templates.py`, `check_summary_manuscripts.py`,
-`extract_citations.py`, `locate_summary_quotes.py`, `measure_templates.py`, `read_manuscript.py`,
+`extract_citations.py`, `locate_summary_quotes.py`, `measure_checker_needles.py`, `measure_templates.py`,
+`read_manuscript.py`,
 `refresh_summary_line_counts.py`, `render_reports.py`, `verify_citations.py`, `verify_findings.py`,
 `verify_named_conjectures.py`, `verify_upstream_history.py` and `dump_template_slots.py`. The first four are the report-template
 builder this pass promoted plus the `notes/summaries/` reading tooling and the citation extractor, so
@@ -262,8 +264,9 @@ named; `read_manuscript.py` and `refresh_summary_line_counts.py` are the rest of
 measurements whose checker no document named; `verify_upstream_history.py` is the tooling behind
 `upstream_history/`, the pages that record each upstream merge, which sit outside `notes/` and so
 outside this page's census; `measure_templates.py` is the census behind `notes/templates.md`, added by
-the pass that added that page; `dump_template_slots.py` is the slot dump that prints the same dict the census measures, promoted by `math-a0r.7`; and `render_reports.py` is the renderer for the seventeen report-fed pages.
-All 47 are named here and in the command
+the pass that added that page; `measure_checker_needles.py` is the per-checker needle probe the
+checker-coverage bead promoted; `dump_template_slots.py` is the slot dump that prints the same dict the census measures, promoted by `math-a0r.7`; and `render_reports.py` is the renderer for the seventeen report-fed pages.
+All 48 are named here and in the command
 block. "Before this pass" is
 pinned to the commit that created this page, read at its parent, not to `HEAD`: `HEAD` moves every
 time this page is edited, so a check keyed to it re-pins the baseline on each edit, and the naming
@@ -308,22 +311,30 @@ conditional-anchor checker `check_conditional_anchors.py`, and the single-purpos
 `/tmp` is outside the rule's location and outside the repo, so a script written there is a script
 whose outputs cannot be re-measured.
 
-Measured 2026-10-10 over `.qwen/tmp/` **after** the `math-a0r.7` cleanup: **395** top-level files,
-**136,070** files including subdirectories, **5** subdirectories. By top-level suffix: **296** `.txt`,
-**48** `.md`, **20** `.out`, **19** `.tsv`, **4** `.sh`, **3** `.md5`, **2** `.log` and **1** each
-`.patch`, `.pat`, `.diff`. The file total is one hardlink tree, not a working set:
-`ledger_bump_copy/` carries **135,173** of the **136,070** — the `cp -al` copy
-`simulate_ledger_bump.sh` builds to run the writer chain against a bumped `overview.tex`, whose
-entries share inodes with the repo, so it costs inodes and not disk. Excluding it the tree is **897**
-files. The working trees are `reports/` **367** (gate and render snapshots), `msgs/` **130** (commit
-messages and close notes) and **48** top-level `.md` drafts. The cleanup deleted **49** one-shot
-entries and **20** trees (`proof_v6`–`proof_v10`, `render_proof_cc`, `render_proof_readme`,
-`idx_pre_sweep`, `idx_run1`, `idx_run2`, `index-run1`, `index_run1`, `index_run2`, `leanout`,
-`lon1`, `lon2`, `head`, `esp`, `close`, `a0r5`, `__pycache__`) and the **36** superseded probes the
-promotion replaced — `a63_two_renders.sh` and `a63_dump_slots.py` by `two_render_proof.sh` and
-`dump_template_slots.py`, `a63_lint.sh` by the lint trio, `a64_demo.sh` and `a64_sed.txt` by
-`simulate_ledger_bump.sh`, `a63_measure_templates*.py` by `notes/scripts/measure_templates.py`, and
-`a62_lines_probe.py`, which the bead rejects — plus the `a64_copy/` demo tree.
+Measured 2026-10-10 over `.qwen/tmp/` **after** the `math-3la` cleanup: **403** top-level files,
+**136,180** files including subdirectories, **5** subdirectories. By top-level suffix: **304** `.txt`,
+**52** `.md`, **20** `.out`, **19** `.tsv`, **3** `.md5`, **2** `.log` and **1** each `.patch`,
+`.pat`, `.diff` — **0** `.sh` and **0** `.py`, which is the rule's own endpoint: a driver a later pass
+re-runs lives under `notes/scripts/`, and the scratch tree keeps outputs. The file total is one
+hardlink tree, not a working set: `ledger_bump_copy/` carries **135,177** of the **136,180** — the
+`cp -al` copy `simulate_ledger_bump.sh` builds to run the writer chain against a bumped
+`overview.tex`, whose entries share inodes with the repo, so it costs inodes and not disk. Excluding
+it the tree is **1,003** files. The working trees are `reports/` **438** (gate and render snapshots),
+`msgs/` **159** (commit messages and close notes) and **52** top-level `.md` drafts. The
+`math-a0r.7` cleanup deleted **49** one-shot entries and **20** trees (`proof_v6`–`proof_v10`,
+`render_proof_cc`, `render_proof_readme`, `idx_pre_sweep`, `idx_run1`, `idx_run2`, `index-run1`,
+`index_run1`, `index_run2`, `leanout`, `lon1`, `lon2`, `head`, `esp`, `close`, `a0r5`,
+`__pycache__`) and the **36** superseded probes the promotion replaced — `a63_two_renders.sh` and
+`a63_dump_slots.py` by `two_render_proof.sh` and `dump_template_slots.py`, `a63_lint.sh` by
+`notes/scripts/lint_scripts.sh`, `a64_demo.sh` and `a64_sed.txt` by `simulate_ledger_bump.sh`,
+`a63_measure_templates*.py` by `notes/scripts/measure_templates.py`, and `a62_lines_probe.py`, which
+the bead rejects — plus the `a64_copy/` demo tree. The `math-3la` cleanup deleted **10** more: the
+seven `a7_*` one-shots (`a7_apply.sh`, `a7_bump_run.sh`, `a7_il2_waiter.sh`, `a7_il_fix2.sh`,
+`a7_promoted_run.sh`, `a7_proof.sh`, `a7_tpl_rebuild.sh`), `a8_lint.sh` by
+`notes/scripts/lint_scripts.sh`, `a8_probe.py` by `notes/scripts/measure_checker_needles.py`, and
+`a8_proof_chain.sh`, deleted only after its run printed `CHAIN_DONE`. The top-level count falls by
+**10** while the file total falls by **8**, because two of the deleted files were hardlinks whose
+twins live in `ledger_bump_copy/`.
 
 The scratch tree is not a record. `.qwen/tmp/n5d3-draft.md` is a working draft whose tail is the
 state a compacted session resumes from, and `.qwen/tmp/canonical_counts.md` is the count sheet the
