@@ -59,6 +59,7 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
     "notes/names.md": R.names_population,
     "notes/proof-density.md": R.proof_density_population,
     "notes/index-links.md": R.index_links_population,
+    "notes/links.md": R.links_population,
 }
 # The writer's own slot dict per page. These are the calls render_reports.py makes when it renders,
 # so the labels and phrase strings the template gets are the writer's by construction.
@@ -70,12 +71,17 @@ LABELS: dict[str, Callable[[], dict[str, str]]] = {
     "notes/names.md": lambda: R.names_phrases(POPULATIONS["notes/names.md"]()),
     "notes/proof-density.md": lambda: R.proof_density_phrases(POPULATIONS["notes/proof-density.md"]()),
     "notes/index-links.md": lambda: R.index_links_phrases(POPULATIONS["notes/index-links.md"]()),
+    "notes/links.md": lambda: R.links_phrases(POPULATIONS["notes/links.md"]()),
 }
 PHRASE_FNS = ("count_phrases", "size_phrases")
 ALL_PAGES = {
     "notes/abstracts.md": "verify_abstracts.py",
     "notes/index-links.md": "check_index_links.py",
     "notes/index-design.md": "verify_index_design.py",
+    # links.md has no page checker: its counts come from the gated writer extract_links.py, which
+    # prints its report and writes notes/links.tsv and carries no count_phrases/size_phrases, so
+    # the builder reports this coverage as NOT DERIVED.
+    "notes/links.md": "extract_links.py",
     "notes/named-results.md": "verify_named_results.py",
     "notes/names.md": "measure_names.py",
     "notes/proof-density.md": "measure_proof_density.py",

@@ -58,6 +58,8 @@ INDEX_DESIGN_MD = ROOT / "notes" / "index-design.md"
 NAMES_MD = ROOT / "notes" / "names.md"
 PROOF_DENSITY_MD = ROOT / "notes" / "proof-density.md"
 INDEX_LINKS_MD = ROOT / "notes" / "index-links.md"
+LINKS_MD = ROOT / "notes" / "links.md"
+LINKS_TSV = ROOT / "notes" / "links.tsv"
 
 
 def f(x: int) -> str:
@@ -1239,12 +1241,327 @@ def index_links_page(p: dict[str, str]) -> str:
     return ENV.get_template("index-links.md.j2").render(p=p)
 
 
+# --- notes/links.md ---------------------------------------------------------------------
+
+# The table's 22 rows: label, the links.tsv edge key, the count-cell suffix, the page's prose.
+# Rows are slotted whole because the counts repeat (two 0s, two 30s, three 12s): a needle for a
+# repeated count alone collides with every row that count appears in.
+LINKS_ROWS: list[tuple[str, str, str, str]] = [
+    ("row01", "family->manuscript", "",
+     "A published link, not a claim the manuscript is formalized, read, or correct"),
+    ("row02", "manuscript->formalized", " of 719",
+     "A source-level declaration under `review: status: unchecked`"),
+    ("row03", "family->scope note", " of 372", "Release prose stating exclusions, not a certification"),
+    ("row04", "scope note->comparator statement", "", "A link to a statement file, not a comparator pass"),
+    ("row05", "comparator config->statement+solution", "", "A statement/solution pair on disk, not a run"),
+    ("row06", "family->main_results declaration", "", "The release's own list, not a verification"),
+    ("row07", "formalization->declared library", "", "A declared pin, not a buildable pin"),
+    ("row08", "formalization->observed import root", "",
+     "Direct imports over `lean/OAI/`, not the transitive closure"),
+    ("row09", "manuscript->bibliography entry", "", "Shipped entries, not checked references"),
+    ("row10", "manuscript->corpus manuscript (bib href)", "",
+     "What the release chose to cite, not importance"),
+    ("row11", "manuscript->corpus manuscript (body href)", "", "An in-text pointer, not a dependency"),
+    ("row12", "abstract->companion family", "", "An abstract naming a sibling, not a citation"),
+    ("row13", "abstract->'companion' wording", "", "A word, creating no edge"),
+    ("row14", "family->reasoning trace", "", "Release attribution, not evidence the trace is the proof"),
+    ("row15", "named-in-title", " of 372", "A property of catalog prose, not of the literature"),
+    ("row16", "cited-in-bib", " of 372", "A title-phrase proxy; a miss is not evidence of no impact"),
+    ("row17", "mentioned-in-body", " of 372", "A shared phrase can be not-a-reference"),
+    ("row18", "family->MSC code", "", "Negative: no classification vocabulary exists to read"),
+    ("row19", "bibliography entry->keywords field", "", "Negative: bibliographies carry no topic vocabulary"),
+    ("row20", "manuscript->\\keywords macro", " of 719", "98% of manuscripts define no keyword list"),
+    ("row21", "manuscript->verification bundle", "", "A certificate bundle, not a theorem check"),
+    ("row22", "family->notes summary page", "", "Our artifact, not part of the release"),
+]
+
+# The TSV edge key is not always the page's cell text: the page renders -> as → and styles two
+# edges the TSV does not style.
+LINKS_EDGE_DISP = {
+    "abstract->'companion' wording": 'abstract→"companion" wording',
+    "manuscript->\\keywords macro": "manuscript→`\\keywords` macro",
+}
+
+# Where notes/links.md wraps a phrase across lines, the prefix its first line ends with.
+LINKS_SPLIT = {
+    "sec426_chal": ["sums to **416** while this row"],
+    "mm_targets": ["span **268** target"],
+    "mm_same": ["**287** point at a"],
+    "mm_tree": ["resolves **432** hrefs, of which **22** point at **16**"],
+    "mm_edges": ["carries 391 resolved manuscript→manuscript"],
+    "rec_all": ["over all 500 listed files: **17** families, **12**"],
+    "knob_quote": ["Quote 14 with its"],
+    "neg_word": ['**9** families use the word "companion" in an'],
+}
+
+
+def links_report() -> dict[str, str]:
+    """Run notes/scripts/extract_links.py and key its report lines by their leading label.
+
+    A subprocess, not an import: extract_links.py writes notes/links.tsv, and the renderer must
+    not become a second writer of a file the ownership manifest attributes to one script.
+    """
+    proc = subprocess.run([sys.executable, str(ROOT / "notes" / "scripts" / "extract_links.py")],
+                          capture_output=True, text=True, check=True, cwd=ROOT)
+    rep: dict[str, str] = {}
+    for ln in proc.stdout.splitlines():
+        key, sep, rest = ln.partition(": ")
+        if sep:
+            rep[key] = rest.strip()
+    return rep
+
+
+def links_tsv_rows() -> dict[str, dict[str, str]]:
+    """The 22 written rows, keyed by edge — the renderer reads the TSV, never re-derives it."""
+    with LINKS_TSV.open(encoding="utf-8") as fh:
+        return {r["edge"]: r for r in csv.DictReader(fh, delimiter="\t")}
+
+
+def links_bc_line() -> int:
+    """The line of build_catalog.py carrying the companion pattern the page cites."""
+    lines = (ROOT / "notes" / "scripts" / "build_catalog.py").read_text(encoding="utf-8").splitlines()
+    for i, ln in enumerate(lines, 1):
+        if "result (\\d{3})" in ln:
+            return i
+    raise ValueError("companion pattern not found in build_catalog.py")
+
+
+def links_population() -> dict[str, Any]:
+    return {"rep": links_report(), "tsv": links_tsv_rows(), "bc_line": links_bc_line()}
+
+
+def links_full(p: dict[str, Any]) -> dict[str, str]:
+    """Every count notes/links.md quotes, read from the extract_links.py report and links.tsv."""
+    rep, tsv, bc_line = p["rep"], p["tsv"], p["bc_line"]
+
+    def n(key: str, pat: str) -> int:
+        m = re.search(pat, rep[key])
+        assert m is not None, f"{key}: {pat}"
+        return int(m.group(1))
+
+    out: dict[str, str] = {}
+    for label, edge, suffix, prose in LINKS_ROWS:
+        disp = LINKS_EDGE_DISP.get(edge, edge.replace("->", "→"))
+        out[label] = f"| {disp} | **{f(int(tsv[edge]['count']))}**{suffix} | {prose} |"
+
+    chal = n("scope note->comparator statement", r"^(\d+)")
+    chal_distinct = n("scope note->comparator statement", r"(\d+) distinct configs")
+    chal_dup = n("scope note->comparator statement", r"(\d+) duplicate links")
+    chal_dupdocs = n("scope note->comparator statement", r"inside (\d+) docs")
+    mdup = re.search(r"\(([\d, ]+)\)", rep["scope note->comparator statement"])
+    assert mdup is not None
+    chal_docs = n("scope note->comparator statement", r"(\d+) of \d+ docs")
+    chal_shared = n("scope note->comparator statement", r"(\d+) configs linked by >1 family")
+    cfg_lean = n("comparator config->statement+solution", r"(\d+) \.lean files")
+    cfg_unlinked = n("comparator config->statement+solution", r"(\d+) never linked")
+    mr = n("family->main_results declaration", r"^(\d+)")
+    mr_cfgs = n("family->main_results declaration", r"(\d+) unique configs")
+    mr_rep = n("family->main_results declaration", r"\((\d+) repeated entries\)")
+    mr_fams = n("family->main_results declaration", r"; (\d+) families")
+    bibent = n("manuscript->bibliography entry", r"^(\d+)")
+    bibfiles = n("manuscript->bibliography entry", r"(\d+) \.bib files")
+    bibdirs = n("manuscript->bibliography entry", r"in (\d+) of \d+ manuscript dirs")
+    bibhref = n("manuscript->corpus manuscript (bib href)", r"^(\d+)")
+    bibres = n("manuscript->corpus manuscript (bib href)", r"(\d+) resolved edges")
+    bibtarg = n("manuscript->corpus manuscript (bib href)", r"(\d+) target dirs")
+    bibfams = n("manuscript->corpus manuscript (bib href)", r"over (\d+) of \d+ families")
+    bibcite = n("manuscript->corpus manuscript (bib href)", r"(\d+) citing dirs")
+    bibsame = n("manuscript->corpus manuscript (bib href)", r"(\d+) same-family")
+    bibcross = n("manuscript->corpus manuscript (bib href)", r"(\d+) cross-family")
+    bibunres = n("manuscript->corpus manuscript (bib href)", r"(\d+) unresolved")
+    bodyhref = n("manuscript->corpus manuscript (body href)", r"^(\d+)")
+    bodytarg = n("manuscript->corpus manuscript (body href)", r"(\d+) target dirs")
+    bodyfams = n("manuscript->corpus manuscript (body href)", r"over (\d+) families")
+    bodycite = n("manuscript->corpus manuscript (body href)", r"(\d+) citing dirs")
+    comp = n("abstract->companion family", r"^(\d+)")
+    compword = n("abstract->'companion' wording", r"^(\d+)")
+    compword_edges = n("abstract->'companion' wording", r"(\d+) of them carry")
+    named = n("named-in-title", r"^(\d+)")
+    cited = n("cited-in-bib", r"^(\d+)")
+    cited_own = n("cited-in-bib", r"(\d+) families when")
+    mentioned = n("mentioned-in-body", r"^(\d+)")
+    mentioned_own = n("mentioned-in-body", r"(\d+) families including")
+    msc = n("family->MSC code", r"^(\d+)")
+    msc_files = n("family->MSC code", r"files scanned: (\d+)")
+    kw_bib = n("bibliography entry->keywords field", r"^(\d+)")
+    kw_tex = n("manuscript->\\keywords macro", r"^(\d+)")
+    mkw = re.search(r"\((\d+\.\d+)%\)", rep["manuscript->\\keywords macro"])
+    assert mkw is not None
+    kw_pct = mkw.group(1)
+    verif = n("manuscript->verification bundle", r"^(\d+)")
+    rows_n = n("rows", r"^(\d+)")
+    fields_n = n("rows", r"fields: (\d+)")
+    tex_files = n("bib entries", r"tex files: (\d+)")
+    disk = n("preprint dirs on disk", r"^(\d+)")
+    listed = n("preprint dirs on disk", r"listed manuscripts: (\d+)")
+    superseded = n("preprint dirs on disk", r"= (\d+) superseded editions")
+    notices = n("preprint dirs on disk", r"\+ (\d+) withdrawal notices")
+    families = n("family->scope note", r"of (\d+) families")
+    formalized = n("manuscript->formalized", r"^(\d+)")
+    stale_listed = n("bib hrefs pointing at superseded editions", r"listed-scope (\d+) over")
+    tree_stale = n("bib hrefs pointing at superseded editions", r"whole-tree (\d+) over")
+    tree_staledirs = n("bib hrefs pointing at superseded editions", r"whole-tree \d+ over (\d+) of")
+    tree_hrefs = n("bib hrefs pointing at superseded editions", r"of (\d+) tree hrefs")
+    legacy_files = n("legacy title proxy (6-token prefix, lowercased corpus, .bib at depth<=3)",
+                     r"files=(\d+)")
+    legacy_any = n("legacy title proxy (6-token prefix, lowercased corpus, .bib at depth<=3)",
+                   r"any=(\d+)")
+    legacy_cross = n("legacy title proxy (6-token prefix, lowercased corpus, .bib at depth<=3)",
+                     r"cross=(\d+)")
+    all_files = n("same title rule over all .bib", r"files=(\d+)")
+    all_any = n("same title rule over all .bib", r"any=(\d+)")
+    all_cross = n("same title rule over all .bib", r"cross=(\d+)")
+    mainres_only = n("mainres families", r"mainres-only: (\d+)")
+    form_only = n("mainres families", r"formalized-only: (\d+)")
+    form_fams = n("mainres families", r"formalized families: (\d+)")
+    body_targ2 = n("body href edges", r"target dirs: (\d+)")
+    ov_only = n("family->manuscript", r"overview\.tex-only links (\d+)")
+    ct_only = n("family->manuscript", r"CONTENTS\.md-only links (\d+)")
+    cited_l = re.findall(r"'(\d{3})'", rep["cited list"])
+    mentioned_l = re.findall(r"'(\d{3})'", rep["mentioned list"])
+    cm = rep["cited∩mentioned"]
+    inter_l = re.findall(r"'(\d{3})'", cm.split(" mentioned-only")[0])
+    mentonly_l = re.findall(r"'(\d{3})'", cm.split("mentioned-only: ")[1].split(" cited-only")[0])
+    citedonly_l = re.findall(r"'(\d{3})'", cm.split("cited-only: ")[1])
+    top = re.findall(r"\('(\d{3})', (\d+)\)", rep["top bib target families"])
+    pairs = re.findall(r"(\d{3})->(\d{3})", rep["abstract->companion family"])
+
+    out["prose_rowsfields"] = f"{rows_n} rows, {fields_n} fields"
+    out["prose_scope719"] = f"the **{listed}** manuscript directories the release"
+    out["prose_dirsdisk"] = (f"**{disk}** directories on disk = **{listed}** listed + "
+                             f"**{superseded}** superseded + **{notices}** withdrawal")
+
+    out["sec426_head"] = f"{chal} vs {chal_distinct}"
+    out["sec426_files"] = f"({chal_docs} files) contain"
+    out["sec426_occ"] = f"**{chal}** occurrences of"
+    out["sec426_distinct"] = f"**{chal_distinct}** distinct config names"
+    out["sec426_extra"] = f"The {chal_dup} extra occurrences"
+    out["sec426_docs"] = f"{chal_dupdocs} docs: `{mdup.group(1)}`"
+    out["sec426_shared"] = f"**{chal_shared}** configs are linked by more"
+    out["sec426_partition"] = f"the {chal_distinct} configs are partitioned"
+    out["sec426_chal"] = f"sums to **{chal_distinct}** while this row counts **{chal}**"
+    out["sec426_genline"] = f"the generator report line is `challenges {chal_distinct}`"
+    out["sec426_json"] = (f"**{cfg_unlinked}** of the {cfg_lean} `.json` files are unlinked "
+                          f"and **{cfg_unlinked}** linked")
+
+    out["mr_head"] = f"{mr} / {mr_cfgs} / {mr_fams}"
+    out["mr_entries"] = f"carries **{mr}** `comparator_config:` entries over"
+    out["mr_cfgs"] = f"**{mr_cfgs}** unique configs — **{mr_rep}** repeated entries across"
+    out["mr_fams"] = (f"**{mr_fams}** families have ≥1 entry, and the ledger `mainres` "
+                      f"column sums to {mr_cfgs}")
+    out["mr_notrepro"] = f"the measured figure is {mr_fams}"
+    out["mr_gap"] = (f"{mr_fams} families have a `main_results` entry; **{form_fams}** have a "
+                     f"formalized manuscript ({formalized} manuscripts)")
+    out["mr_diff"] = f"`mainres`−formalized = **{mainres_only}** family:"
+    out["mr_formdiff"] = f"formalized−`mainres` = **{form_only}**"
+
+    out["mm_entries"] = f"In the {f(bibent)} bibliography entries owned by listed"
+    out["mm_393"] = f"**{bibhref}** contain the literal string"
+    out["mm_391"] = f"**{bibres}** resolve to a shipped"
+    out["mm_unres"] = f"(**{bibunres}** unresolved)"
+    out["mm_targets"] = (f"span **{bibtarg}** target directories over **{bibfams} of {families} "
+                         f"families**, from **{bibcite}** citing directories")
+    out["mm_same"] = (f"**{bibsame}** point at a manuscript of the same family, "
+                      f"**{bibcross}** cross a family boundary")
+    out["mm_body"] = f"**{bodyhref}** " + "`\\href{…/preprints/…}` occurrences in `.tex`, over"
+    out["mm_bodytargets"] = (f"**{bodytarg}** target directories spanning **{bodyfams}** "
+                             f"families, from **{bodycite}** citing directories")
+    out["mm_bodyall"] = f"All {body_targ2} body"
+    out["mm_outside"] = f"**{stale_listed}** of the {bibres} resolved"
+    out["mm_tree"] = (f"resolves **{tree_hrefs}** hrefs, of which **{tree_stale}** point at "
+                      f"**{tree_staledirs}** superseded editions")
+    for fam, cnt in top:
+        out[f"top_{fam}"] = f"**{fam}** ({cnt})"
+    out["mm_edges"] = (f"carries {bibres} resolved manuscript→manuscript citation edges "
+                       f"reaching {bibfams} families")
+
+    out["namerow_named"] = (f"| named-in-title | `overview.tex` `\\resultentry` arg 2 | "
+                            f"**{named}** of {families} | — |")
+    out["namerow_cited"] = f"| cited-in-bib | `preprints/**/*.bib` | **{cited}** of {families} | {cited_own} |"
+    out["namerow_mentioned"] = (f"| mentioned-in-body | `preprints/**/*.tex` | **{mentioned}** of "
+                                f"{families} | {mentioned_own} |")
+    out["cited_list"] = ", ".join(cited_l)
+    out["mentioned_list"] = ", ".join(mentioned_l)
+    out["inter_count"] = f"**{len(inter_l)}** of these {mentioned}"
+    out["inter_list"] = f"({', '.join(inter_l)})"
+    out["mentonly_count"] = f"the **{len(mentonly_l)}** that do not"
+    out["mentonly_list"] = f"**{', '.join(mentonly_l)}**"
+    out["citedonly"] = f"{len(citedonly_l)} of the {cited} `cited-in-bib` families ({', '.join(citedonly_l)})"
+
+    out["rec_glob"] = (f"reach **{legacy_files} of the {all_files}** listed-manuscript `.bib` "
+                       f"files; the {all_files - legacy_files} at depth 4")
+    out["rec_all"] = (f"over all {all_files} listed files: **{all_any}** families, "
+                      f"**{all_cross}** cross-family.")
+
+    out["knob_row1"] = (f"| 6-token prefix | lowercased | {legacy_files} (depth ≤3) | "
+                        f"**{legacy_any}** ← the recorded figure | {legacy_cross} |")
+    out["knob_row2"] = (f"| 6-token prefix | lowercased | {all_files} (all listed) | {all_any} | "
+                        f"{all_cross} |")
+    out["knob_row8"] = (f"| normalized full title | normalized | {all_files} | **{cited_own}** | "
+                        f"**{cited}** ← shipped `cited-in-bib` |")
+    out["knob_dominant"] = f"taking 5 to {cited_own}"
+    out["knob_quote"] = (f"Quote {legacy_any} with its rule and its {legacy_files}-file scope, "
+                         f"and quote {all_cross} with the normalized rule and the {all_files}-file scope.")
+    out["knob_layers"] = (f"reaches {all_cross} cross-family families while the href layer "
+                          f"reaches {bibcross}")
+
+    out["neg_msc"] = f"**{msc}** MSC codes anywhere"
+    out["neg_files"] = (f"over {f(msc_files)} files ({f(tex_files)} `.tex` + {bibfiles} `.bib` "
+                        f"+ `overview.tex`)")
+    out["neg_kw"] = f"**{kw_bib}** `keywords =` fields in {f(bibent)} bibliography entries"
+    out["neg_kwmacro"] = "`\\keywords` in " + f"**{kw_tex}** of {listed} manuscript directories ({kw_pct}%)"
+    out["neg_companion"] = f"**{comp}** companion edges: `" + "`, `".join(f"{a}→{b}" for a, b in pairs) + "`"
+    out["neg_bcline"] = f"`notes/scripts/build_catalog.py:{bc_line}`"
+    out["neg_word"] = (f'**{compword}** families use the word "companion" in an abstract and '
+                       f"**{compword_edges}** of them carry a `result NNN` edge")
+    out["neg_onesided"] = (f"**{ov_only}** one-sided family→manuscript links: `overview.tex`-only "
+                           f"links {ov_only}, `CONTENTS.md`-only links {ct_only}")
+
+    out["nc_393"] = f"The {bibhref} release-labelled entries"
+    out["nc_12"] = f"the {cited} validated `cited-in-bib` cases"
+    out["nc_104"] = f"The {bibcross} cross-family citation edges"
+    out["nc_11"] = f"The {mentioned} cross-family hits"
+    out["nc_211"] = f"The {bodyhref} body hrefs"
+    out["nc_bibcov"] = (f"Bibliography coverage is **{bibdirs} of {listed}** manuscript "
+                        f"directories. The {listed - bibdirs} directories with no `.bib`")
+    out["nc_entries"] = f"The {f(bibent)} entries are counted by"
+    out["nc_verif"] = f"Whether the {verif} verification directories"
+    out["nc_superseded"] = f"The {superseded} superseded editions and {notices} withdrawal notices"
+    return out
+
+
+def links_phrases(p: dict[str, Any]) -> dict[str, str]:
+    """The slot dict: base labels, then each page-wrapped phrase as label a, label b, …"""
+    full = links_full(p)
+    out: dict[str, str] = {}
+    for label, val in full.items():
+        prefixes = LINKS_SPLIT.get(label)
+        if not prefixes:
+            out[label] = val
+            continue
+        rest = val
+        for i, pre in enumerate(prefixes):
+            rest = rest.lstrip()
+            if not rest.startswith(pre):
+                msg = f"slot {label!r}: page wrap {pre!r} is not a prefix of {rest!r}"
+                raise ValueError(msg)
+            out[f"{label} {'abcdefghij'[i]}"] = pre
+            rest = rest[len(pre):]
+        out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
+    return out
+
+
+def links_page(p: dict[str, str]) -> str:
+    return ENV.get_template("links.md.j2").render(p=p)
+
+
 def main() -> None:
     mp = en.population()
     ip = M.population()
     np_ = names_population()
     pdp = proof_density_population()
     ilk = index_links_population()
+    lk = links_population()
     SOURCES_MD.write_text(sources_page(), encoding="utf-8")
     ABSTRACTS_MD.write_text(abstracts_page(), encoding="utf-8")
     NAMED_RESULTS_MD.write_text(named_results_page(mp), encoding="utf-8")
@@ -1252,8 +1569,9 @@ def main() -> None:
     NAMES_MD.write_text(names_page(names_phrases(np_)), encoding="utf-8")
     PROOF_DENSITY_MD.write_text(proof_density_page(proof_density_phrases(pdp)), encoding="utf-8")
     INDEX_LINKS_MD.write_text(index_links_page(index_links_phrases(ilk)), encoding="utf-8")
+    LINKS_MD.write_text(links_page(links_phrases(lk)), encoding="utf-8")
     for page in (SOURCES_MD, ABSTRACTS_MD, NAMED_RESULTS_MD, INDEX_DESIGN_MD, NAMES_MD,
-                 PROOF_DENSITY_MD, INDEX_LINKS_MD):
+                 PROOF_DENSITY_MD, INDEX_LINKS_MD, LINKS_MD):
         out = page.read_text(encoding="utf-8")
         print(f"{page.name} written  lines {len(out.splitlines())}  bytes {len(out.encode())}")
     ms, ma = measure(), CA.measure()
@@ -1261,7 +1579,7 @@ def main() -> None:
           f"  named-results {len(named_results_phrases(mp))}"
           f"  index-design {len(index_phrases(ip))}  names {len(names_phrases(np_))}"
           f"  proof-density {len(proof_density_phrases(pdp))}"
-          f"  index-links {len(index_links_phrases(ilk))}"
+          f"  index-links {len(index_links_phrases(ilk))}  links {len(links_phrases(lk))}"
           f"  multi-root rows {len(ms['multi'])}  rows {ms['rows']}  listed {ms['listed']}"
           f"  dirs {ms['dirs']}  comparisons {ma['manuscripts']}  families {ma['families']}"
           f"  target rows {len(tgt_rows(mp))}")
