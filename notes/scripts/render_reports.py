@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import collections
 import csv
+import hashlib
 import json
 import pathlib
 import posixpath
@@ -39,13 +40,18 @@ import build_sources as S
 import check_index_links as CI
 import compare_abstracts as CA
 import extract_named_results as en
+import extract_scope_notes as ex
+import extract_subfinding_pairs as ep
+import extract_t0_chains as tc
+import extract_verification_dirs as evd
 import measure_index_sizes as M
 import measure_names as MN
 import measure_proof_density as PD
+import measure_topics as MT
 from catlib import overview, preprints, tsv
 from catlib import yaml as Y
 from catlib.paths import (COMPARATOR_DIR, DEPS_TSV, LAKEFILE, LAKE_MANIFEST, LEDGER_TSV, PREPRINTS,
-                          ROOT, SUBFINDINGS_TSV)
+                          ROOT, SUBFINDINGS_TSV, owner)
 
 TPL = ROOT / "notes" / "templates" / "report"
 ENV = Environment(loader=FileSystemLoader(str(TPL)), keep_trailing_newline=True,
@@ -66,6 +72,17 @@ DRIFT_MD = ROOT / "notes" / "dependency-drift.md"
 PATCHES_DIR = ROOT / "lean" / "patches"
 TOOLCHAIN_FILE = ROOT / "lean" / "lean-toolchain"
 DEPS_MD = ROOT / "notes" / "formalization-deps.md"
+VERIF_MD = ROOT / "notes" / "verification-dirs.md"
+EX_MD = ROOT / "notes" / "scope-exclusions.md"
+TOPICS_MD = ROOT / "notes" / "topics.md"
+T0_CHAINS_MD = ROOT / "notes" / "t0-chains.md"
+SP_MD = ROOT / "notes" / "subfinding-pairs.md"
+VPOS = PREPRINTS / "Positively-curved-Einstein-four-manifolds-September-23-2026" / "verification"
+VZERO = PREPRINTS / "Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026" / "verification"
+FOCK = PREPRINTS / "A-Fock-space-inequality-and-the-Laughlin-spectral-gap-September-24-2026"
+UNIF = PREPRINTS / "Uniform-Stability-of-the-Spherical-Laughlin-Gap-October-5-2026"
+NUM_WORDS = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven",
+             8: "eight", 9: "nine", 10: "ten", 11: "eleven", 12: "twelve"}
 
 
 def f(x: int) -> str:
@@ -1523,6 +1540,14 @@ def links_full(p: dict[str, Any]) -> dict[str, str]:
     out["neg_onesided"] = (f"**{ov_only}** one-sided family→manuscript links: `overview.tex`-only "
                            f"links {ov_only}, `CONTENTS.md`-only links {ct_only}")
 
+    # Unformatted counts, for the page that prints these figures without bold or thousands separators.
+    out["raw_msc"] = str(msc)
+    out["raw_msc_files"] = str(msc_files)
+    out["raw_kw_bib"] = str(kw_bib)
+    out["raw_kw_tex"] = str(kw_tex)
+    out["raw_bibent"] = str(bibent)
+    out["raw_listed"] = str(listed)
+
     out["nc_393"] = f"The {bibhref} release-labelled entries"
     out["nc_12"] = f"the {cited} validated `cited-in-bib` cases"
     out["nc_104"] = f"The {bibcross} cross-family citation edges"
@@ -1916,6 +1941,702 @@ def drift_page(p: dict[str, str]) -> str:
     return ENV.get_template("dependency-drift.md.j2").render(p=p)
 
 
+def verif_sha(p: pathlib.Path) -> str:
+    return hashlib.sha256(p.read_bytes()).hexdigest()
+
+
+def group_fams(fams: list[str]) -> str:
+    """Sorted families with repeats folded into `NNN (×k)`, the form the page prints."""
+    counts: list[tuple[str, int]] = []
+    for fam in sorted(fams):
+        if counts and counts[-1][0] == fam:
+            counts[-1] = (fam, counts[-1][1] + 1)
+        else:
+            counts.append((fam, 1))
+    return ", ".join(f"{fam}" if n == 1 else f"{fam} (×{n})" for fam, n in counts)
+
+
+def verification_dirs_population() -> dict[str, Any]:
+    """Every count notes/verification-dirs.md prints, recomputed from the shipped bundles.
+
+    The rules are the ones verify_verification_dirs.py measures with, re-derived on the writer side
+    through extract_verification_dirs.py. The checker deliberately does not import this module: a page
+    that drifts from the files has to show up as a checker failure, not as a shared blind spot.
+    """
+    rows = tsv.read_rows(LEDGER_TSV)
+    cov = sorted({r["fam"] for r in rows if int(r["covmd"]) > 0})
+    inp = sorted(r["fam"] for r in rows if int(r["inputs"]) > 0)
+    fam_by_slug, _order, _fams = evd.families_by_slug()
+    bundles = [p for p in sorted(x for x in evd.PRE.iterdir() if x.is_dir())
+               if (p / "verification").is_dir()]
+    named, runsec, unnamed = [], [], []
+    for p in bundles:
+        heads = evd.headings(p / "README.md")[1]
+        if any("Verification" in h for _, h in heads):
+            named.append(p.name)
+        elif any("Run the verification code" in h for _, h in heads):
+            runsec.append(p.name)
+        else:
+            unnamed.append(p.name)
+    classes: dict[str, int] = {}
+    no_entry, declaring, readme_fams = [], [], []
+    for p in bundles:
+        bundle = p / "verification"
+        _, rule, _ = evd.entry_point(bundle)
+        classes[rule] = classes.get(rule, 0) + 1
+        if rule == "none":
+            no_entry.append(p)
+        if evd.main_command(bundle)[0] is not None:
+            declaring.append(p)
+        if rule == "top-level README.md":
+            readme_fams.append(fam_by_slug[p.name])
+    a, b = FOCK / "verification/rows.txt", UNIF / "verification/rows.txt"
+    fp = {q.name: q for q in VPOS.iterdir() if q.is_file()}
+    fz = {q.name: q for q in VZERO.iterdir() if q.is_file()}
+    shared = sorted(set(fp) & set(fz))
+    same = [n for n in shared if fp[n].read_bytes() == fz[n].read_bytes()]
+    entries = json.loads((VZERO / "manifest.json").read_text(encoding="utf-8"))["files"]
+    bad = [n for n in sorted(entries)
+           if n not in fz or verif_sha(fz[n]) != entries[n]["sha256"]
+           or fz[n].stat().st_size != entries[n]["bytes"]]
+    res = json.loads((VPOS / "results.json").read_text(encoding="utf-8"))
+    summ = res["summary"]
+    src = (VPOS / "verify.py").read_text(encoding="utf-8").split("\n")
+    checks = json.loads((VPOS / "portability-results.json").read_text(encoding="utf-8"))["checks"]
+    cov_md = (VPOS / "COVERAGE.md").read_text(encoding="utf-8")
+    seen: set[str] = set()
+    named_cov: list[str] = []
+    for n in (re.findall(r"`([\w.]+\.(?:py|json|md))`", cov_md)
+              + re.findall(r"\[([\w.]+\.(?:py|json|md))\]\(", cov_md)):
+        if n not in seen:
+            seen.add(n)
+            named_cov.append(n)
+    present = [n for n in named_cov if (VPOS / n).exists() and (VZERO / n).exists()]
+    return {
+        "dirs": len(bundles),
+        "fams": len({fam_by_slug[p.name] for p in bundles}),
+        "fam_list": ", ".join(sorted(r["fam"] for r in rows if int(r["verification"]) > 0)),
+        "covn": sum(int(r["covmd"]) for r in rows),
+        "cov_fams": cov,
+        "inp_n": sum(int(r["inputs"]) for r in rows),
+        "inp_list": ", ".join(inp),
+        "v348": int(next(r for r in rows if r["fam"] == "348")["verification"]),
+        "named": len(named) + len(runsec),
+        "ver": len(named),
+        "run": len(runsec),
+        "unnamed_n": len(unnamed),
+        "classes": classes,
+        "no_entry": len(no_entry),
+        "no_entry_fams": [fam_by_slug[p.name] for p in no_entry if fam_by_slug[p.name] != "269"],
+        "rule4": sum(c for k, c in classes.items() if k.startswith("manifest")),
+        "declaring": len(declaring),
+        "declaring_fams": sorted({fam_by_slug[p.name] for p in declaring}),
+        "readme_fams": readme_fams,
+        "rows_lines": len(a.read_text(encoding="utf-8", errors="replace").splitlines()),
+        "rows_bytes": a.stat().st_size,
+        "rows_identical": a.read_bytes() == b.read_bytes(),
+        "shared": len(shared),
+        "identical": len(same),
+        "differ": len(shared) - len(same),
+        "entries": len(entries),
+        "mismatches": len(bad),
+        "identities": summ["identities"],
+        "interval_rows": summ["interval_certificate_rows"],
+        "reported": summ["reported_interval_rows"],
+        "supplementary": summ["interval_certificate_rows"] - summ["reported_interval_rows"],
+        "triangle_rows": len(res["triangle_certificates"]),
+        "det_floor": sum(1 for t in res["triangle_certificates"] if t["determinant_floor"] is not None),
+        "exact": summ["exact_value_assertions"],
+        "subintervals": sum(len(c["intervals"]) for c in res["interval_certificates"]),
+        "lines": len(src),
+        "checkfns": len([l for l in src if l.startswith("def check_")]),
+        "fnlines": [i + 1 for i, l in enumerate(src) if l.startswith("def check_")],
+        "printed_keys": len(re.findall(r'scalar_claim\("([\w.]*printed[\w.]*)', "\n".join(src))),
+        "require": sum(l.count("require(") for l in src),
+        "passed": json.dumps(res).count('"passed": true'),
+        "checks": len(checks),
+        "negative": len([c for c in checks if "rejected" in c["name"]]),
+        "ends_rejected": len([c for c in checks if c["name"].endswith("rejected")]),
+        "cov_present": len(present),
+    }
+
+
+def verification_dirs_full(v: dict[str, Any]) -> dict[str, str]:
+    """Label -> page-verbatim phrase. Labels with no suffix are the base values the builder wraps."""
+    dirs, fams = v["dirs"], v["fams"]
+    cls, cov_fams = v["classes"], v["cov_fams"]
+    readme_n = len(v["readme_fams"])
+    out: dict[str, str] = {}
+    out["v_dirs_fams"] = f"**{dirs} dirs over {fams} families**"
+    out["v_famlist"] = f"({v['fam_list']})"
+    out["v_covmd"] = f"`covmd` counts {v['covn']} `verification/COVERAGE.md`, both in family {cov_fams[0]}"
+    out["v_inputs"] = f"`inputs` counts {v['inp_n']} `INPUTS.md` ({v['inp_list']})"
+    out["v_v348"] = f"the ledger's `verification` value of {v['v348']} for family 348"
+    out["v_doc_readme"] = (f"**{readme_n} of {dirs}** ship a `README.md` with a run command and "
+                           f"success criteria: {group_fams(v['readme_fams'])}")
+    out["v_doc_noreadme"] = f"**{dirs - readme_n} ship no README**"
+    out["v_doc_manifest"] = (f"**{v['declaring']} of {dirs}** ship `manifest.json` "
+                             f"(both {v['declaring_fams'][0]} dirs)")
+    out["v_doc_covmd"] = f"**{v['covn']} of {dirs}** ship `COVERAGE.md` (both {cov_fams[0]} dirs)"
+    out["v_named"] = f"A README section names **{v['named']}** of the **{dirs}** bundles"
+    out["v_headings"] = f"**{v['ver']}** carry `## Verification` and **{v['run']}** carries"
+    out["v_unnamed"] = (f"**{v['unnamed_n']}** bundles ship a `verification/` tree "
+                        "their README never mentions")
+    out["v_rows"] = (f"Each is {v['rows_lines']} lines and {v['rows_bytes']} bytes, "
+                     f"and the two files are **{'byte-identical' if v['rows_identical'] else 'not identical'}**")
+    out["v_classes"] = (f"**{cls['top-level README.md']}** top-level `README.md`, "
+                        f"**{cls['subdirectory README.md']}** a subdirectory `README.md`, "
+                        f"**{cls['top-level script by name']}** a top-level script by name, "
+                        f"**{cls['subdirectory README.txt']}** a subdirectory `README.txt`, "
+                        f"**{cls['none']}** with **no entry point**")
+    out["v_rule4"] = f"Rule 4 fires for **{v['rule4']}** bundles"
+    out["v_declaring"] = (f"the {NUM_WORDS[v['declaring']]} family-{v['declaring_fams'][0]} dirs that "
+                          "declare `main_command` are claimed by rule 1 first")
+    nf = v["no_entry_fams"]
+    out["v_noentry"] = (f"The {v['no_entry']} with no entry point are the two 269 dirs above plus "
+                        f"{', '.join(nf[:-1])} and {nf[-1]}")
+    out["v_join"] = f"sums to {dirs} dirs over {fams} families"
+    out["v_shared"] = f"Of the {v['shared']} files they share, **{v['identical']} are byte-identical**"
+    out["v_differ"] = f"and **{v['differ']} differ**"
+    out["v_idents"] = f"**{v['identities']}** identities"
+    out["v_interval"] = (f"**{v['interval_rows']}** interval certificate rows "
+                         f"(**{v['reported']}** reported + **{v['supplementary']}** supplementary)")
+    out["v_triangle"] = (f"**{v['triangle_rows']}** triangle certificate rows "
+                         f"(**{v['det_floor']}** carrying a determinant floor)")
+    out["v_exact"] = f"**{v['exact']}** exact-value assertions"
+    out["v_subint"] = f"over **{v['subintervals']}** subinterval records"
+    out["v_verify"] = (f"`verify.py` is {v['lines']} lines with {v['checkfns']} `check_*` functions "
+                       f"(at lines {', '.join(str(n) for n in v['fnlines'])})")
+    out["v_printed"] = f"**{v['printed_keys']}** `scalar_claim` keys name a printed value"
+    out["v_require"] = f"through `require` ({v['require']} occurrences)"
+    out["v_passed"] = f"**{v['passed']}** such occurrences in `results.json`"
+    out["v_entries"] = f"list {v['entries']} files"
+    out["v_mismatch"] = f"({v['mismatches']} mismatches)"
+    out["v_cov"] = ("`COVERAGE.md` points at `results.json`, `verify.py`, `polynomial.py`, and "
+                    f"`README.md`; all {NUM_WORDS[v['cov_present']]} are present in both directories")
+    out["v_port"] = f"ships **{v['checks']}** checks, **{v['negative']}** of them negative"
+    out["v_reject"] = f"tests naming a rejection: **{v['ends_rejected']}** whose names end in `rejected`"
+    return out
+
+
+VERIF_SPLIT = {
+    "v_dirs_fams": ["**30 dirs over"],
+    "v_famlist": ["(059, 067, 087, 090, 101, 107, 119, 153, 187, 189, 205, 210, 229, 266, 268, 269, 272,"],
+    "v_covmd": ["`covmd` counts 2"],
+    "v_doc_readme": ["**12 of 30** ship a `README.md` with a run command and success criteria: "
+                     "087, 090 (×4), 107, 119,"],
+    "v_classes": ["**12** top-level `README.md`, **6** a subdirectory `README.md`, **5** a top-level"],
+    "v_declaring": ["the two family-348 dirs that declare `main_command` are claimed by"],
+    "v_v348": ["the"],
+    "v_verify": ["`verify.py` is 504 lines with 6 `check_*` functions (at lines 157, 170, 271,"],
+    "v_cov": ["`COVERAGE.md` points at `results.json`, `verify.py`,"],
+}
+
+
+def verification_dirs_phrases(v: dict[str, Any]) -> dict[str, str]:
+    """The slot dict: base labels, then each page-wrapped phrase as label a, label b, …"""
+    full = verification_dirs_full(v)
+    out: dict[str, str] = {}
+    for label, val in full.items():
+        prefixes = VERIF_SPLIT.get(label)
+        if not prefixes:
+            out[label] = val
+            continue
+        rest = val
+        for i, pre in enumerate(prefixes):
+            rest = rest.lstrip()
+            if not rest.startswith(pre):
+                msg = f"slot {label!r}: page wrap {pre!r} is not a prefix of {rest!r}"
+                raise ValueError(msg)
+            out[f"{label} {'abcdefghij'[i]}"] = pre
+            rest = rest[len(pre):]
+        out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
+    return out
+
+
+def verification_dirs_page(p: dict[str, str]) -> str:
+    return ENV.get_template("verification-dirs.md.j2").render(p=p)
+
+
+EX_ROW = re.compile(r"^\|\s*(\d{3})\s*\|\s*(.+?)\s*\|\s*$")
+EX_PAIR = re.compile(r"^“(.+)”\s*`lean/docs/(\d{3})\.md:(\d+)`$")
+
+
+def scope_exclusions_population() -> dict[str, str]:
+    """Every derived figure on notes/scope-exclusions.md, measured from the shipped scope notes.
+
+    The Entries table is a hand read — which clause and which line each family gets is a reading
+    decision, not a measurement — so the table stays literal in the template and the counts it
+    carries (rows, exclusion statements, quotations) are read back out of the page being replaced.
+    The page's own checker is what pins each of those quotations to a line inside its `## Scope`
+    section; this function measures the section geometry and the two keyword floors.
+    """
+    sections: dict[str, list[str]] = {}
+    doc_lines = 0
+    both = 0
+    for path in Y.doc_files():
+        lines = path.read_text(encoding="utf-8", errors="replace").splitlines()
+        doc_lines += len(lines)
+        if (any(l.strip() == "## Scope" for l in lines)
+                and any(l.strip() == "## Comparator links" for l in lines)):
+            both += 1
+        span = Y.scope_span_lines(lines)
+        if span is not None:
+            first, last = span
+            sections[path.stem] = lines[first - 1:last]
+    counts = [len(sec) for sec in sections.values()]
+
+    def hit_docs(phrases: list[str]) -> list[str]:
+        return sorted(stem for stem, sec in sections.items()
+                      if any(ph in " ".join(sec).lower() for ph in phrases))
+
+    narrow = hit_docs(ex.NARROW)
+    broad = hit_docs(ex.BROAD)
+    per_phrase = [sum(1 for sec in sections.values()
+                      if ph in " ".join(sec).lower()) for ph in ex.NARROW]
+
+    rows: list[tuple[str, str]] = []
+    for line in EX_MD.read_text(encoding="utf-8").splitlines():
+        m = EX_ROW.match(line)
+        if not m or m.group(1) == "Family" or set(m.group(2)) <= {"-"}:
+            continue
+        rows.append((m.group(1), m.group(2)))
+    excl = [cell for _, cell in rows if cell.strip() != "**None stated.**"]
+    quotes = sum(sum(1 for part in cell.split("·") if EX_PAIR.match(part.strip())) for cell in excl)
+    fams = len({r["fam"] for r in tsv.read_rows(LEDGER_TSV)})
+    return {
+        "notes": str(len(sections)), "both": str(both), "seclines": str(sum(counts)),
+        "alllines": str(doc_lines),
+        "minmedmax": f"{min(counts)} / {int(statistics.median(counts))} / {max(counts)}",
+        "narrow": str(len(narrow)), "broad": str(len(broad)),
+        "narrow_fams": ", ".join(narrow),
+        "perphrase": " / ".join(str(n) for n in per_phrase),
+        "rows": str(len(rows)), "excl": str(len(excl)), "quotes": str(quotes),
+        "none": str(len(rows) - len(excl)),
+        "fams": str(fams), "nonote": str(fams - len(sections)),
+    }
+
+
+def scope_exclusions_full(p: dict[str, str]) -> dict[str, str]:
+    return {
+        "ex_readall": f"All {p['notes']} scope notes on disk were read in full, section by section",
+        "ex_prose": (f"{p['excl']} of {p['rows']} sections state at least one exclusion, carrying "
+                     f"{p['quotes']} exclusion statements; {p['none']} state none."),
+        "ex_row_notes": f"| Scope notes | {p['notes']} |",
+        "ex_row_both": f"| Docs with both `## Scope` and `## Comparator links` | {p['both']} |",
+        "ex_row_seclines": f"| `## Scope` section lines | {p['seclines']} |",
+        "ex_row_alllines": f"| Scope-note lines, all files | {p['alllines']} |",
+        "ex_row_minmedmax": f"| Lines per section (min / median / max) | {p['minmedmax']} |",
+        "ex_row_narrow": f"| Docs hit by the {len(ex.NARROW)}-phrase narrow list | {p['narrow']} |",
+        "ex_row_broad": f"| Docs hit by the {len(ex.BROAD)}-phrase broad list | {p['broad']} |",
+        "ex_narrow_detail": (f"It hits {p['narrow']} of {p['notes']} — families {p['narrow_fams']}, "
+                             f"with per-phrase hits {p['perphrase']}."),
+        "ex_broad_detail": f"it hits {p['broad']} of {p['notes']}.",
+        "ex_floor_a": f"So {p['narrow']} is a floor under a narrow rule, not a census.",
+        "ex_floor_b": (f"A keyword filter finds {p['narrow']} sections; the reading pass finds "
+                       f"exclusions in {p['excl']} of the {p['notes']}."),
+        "ex_readlines": f"a human read of {p['seclines']} lines",
+        "ex_nonoote": (f"The {p['nonote']} families with no scope note at all "
+                       f"({p['fams']} families, {p['notes']} notes)"),
+    }
+
+
+EX_SPLIT = {
+    "ex_prose": ["121 of 242 sections state at least one exclusion, carrying 143 exclusion"],
+    "ex_narrow_detail": ["It hits 5 of 242 — families 003, 020, 049, 173, 360,"],
+    "ex_floor_b": ["A keyword filter finds 5 sections; the reading pass"],
+}
+
+
+def scope_exclusions_phrases(p: dict[str, str]) -> dict[str, str]:
+    out = scope_exclusions_full(p)
+    for label, prefixes in EX_SPLIT.items():
+        base = out.pop(label)
+        rest = base
+        for i, pre in enumerate(prefixes):
+            rest = rest.lstrip()
+            if not rest.startswith(pre):
+                raise ValueError(f"slot {label!r}: page wrap {pre!r} is not a prefix of {base!r}")
+            out[f"{label} {'abcdefghij'[i]}"] = pre
+            rest = rest[len(pre):]
+        out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
+    return out
+
+
+def scope_exclusions_page(p: dict[str, str]) -> str:
+    return ENV.get_template("scope-exclusions.md.j2").render(p=p)
+
+
+def topics_population(lf: dict[str, str]) -> dict[str, str]:
+    """Every derived figure on notes/topics.md, measured from the curated vocabulary.
+
+    notes/topics.tsv is the source of truth and measure_topics.measure() matches its patterns over the
+    four texts a family ships, so the 92-row yield table, the coverage line, and both histograms are
+    measurements. The reading-pass table stays literal: its reach column mixes bare-stem probes with a
+    shipped-pattern probe and with reading prose, and no single rule reproduces it. The MSC/keywords
+    figures come from the links population, which is where extract_links.py measures them.
+    """
+    rows, texts = MT.measure()
+    fams = len(texts)
+    nlayer = [sum(1 for t in texts.values() if t[i].strip()) for i in range(4)]
+    covered = set().union(*(r["families"] for r in rows))
+    assign = sum(len(r["families"]) for r in rows)
+    ycount = collections.Counter(len(r["families"]) for r in rows)
+    per = collections.Counter(len([r for r in rows if f in r["families"]]) for f in texts)
+    topics_per_family = sorted(per.elements())
+    _order, ov = overview.parse_overview()
+    titles = [ov[f]["title"] for f in ov]
+    header = MT.TSV.read_text(encoding="utf-8").splitlines()[0].split("\t")
+    zero = [r["term"] for r in rows if not r["families"]]
+    out = {
+        "terms": str(len(rows)), "cols": str(len(header)), "fams": str(fams),
+        "assign": str(assign), "covered": str(len(covered)),
+        "uncovered": str(fams - len(covered)), "zero": str(len(zero)),
+        "n_title": str(nlayer[0]), "n_abstract": str(nlayer[1]),
+        "n_scope": str(nlayer[2]), "n_path": str(nlayer[3]),
+        "nopath": str(fams - nlayer[3]),
+        "perfamily": " ".join(f"{k}:{v}" for k, v in sorted(per.items())),
+        "yieldhist": " ".join(f"{k}:{ycount[k]}" for k in sorted(ycount)),
+        "median": str(int(statistics.median(topics_per_family))),
+        "mean": f"{assign / fams:.2f}", "single": str(per[1]),
+        "thin3": str(sum(v for k, v in ycount.items() if k <= 3)),
+        "thin1": str(sum(v for k, v in ycount.items() if k <= 1)),
+        "noted": str(sum(1 for r in tsv.read_rows(MT.TSV) if r["note"].strip())),
+        "ascii_apos": str(sum(1 for t in titles if "'" in t)),
+        "u2019": str(sum(1 for t in titles if "\u2019" in t)),
+        "apos_pat": str(sum(1 for _term, pat in MT.VOCAB if "'" in pat)),
+        "msc": lf["raw_msc"], "msc_files": lf["raw_msc_files"],
+        "kw_bib": lf["raw_kw_bib"], "kw_tex": lf["raw_kw_tex"],
+        "bibent": lf["raw_bibent"], "listed": lf["raw_listed"],
+    }
+    for r in sorted(rows, key=lambda r: (-len(r["families"]), r["term"])):
+        out[f"tp_row_{r['term']}"] = (
+            f"| {r['term']} | {len(r['families'])} | {len(r['title'])} | {len(r['abstract'])} | "
+            f"{len(r['scope'])} | {len(r['path'])} |")
+    return out
+
+
+def topics_full(p: dict[str, str]) -> dict[str, str]:
+    return {
+        "tp_terms": f"**{p['terms']} curated terms**",
+        "tp_cols": f"**{p['cols']} columns**",
+        "tp_headline": (f"{p['terms']} patterns matched case-insensitively against the title, abstract, "
+                        f"scope-note text, and derived Lean file paths of the {p['fams']} catalogued "
+                        f"families \u2192 {p['assign']} family-topic assignments over {p['fams']} "
+                        f"families, {p['uncovered']} families uncovered, {p['zero']} terms with no hit."),
+        "tp_row_title": (f"| title | the 2nd argument of the family's `\\resultentry` in "
+                         f"`overview.tex` | {p['n_title']} |"),
+        "tp_row_abstract": f"| abstract | the 3rd argument of the same entry | {p['n_abstract']} |",
+        "tp_row_scope": f"| scope | the text of `lean/docs/<NNN>.md` | {p['n_scope']} |",
+        "tp_row_path": (f"| path | Lean file paths reached from the family's comparator configs "
+                        f"through `formalization.yaml` `main_results`, plus the Lean module dir "
+                        f"names | {p['n_path']} |"),
+        "tp_neg": (f"{p['msc']} MSC codes over {f(int(p['msc_files']))} files, {p['kw_bib']} "
+                   f"`keywords` fields over {f(int(p['bibent']))} bibliography entries, "
+                   f"`\\keywords` defined in {p['kw_tex']} of {p['listed']} manuscript directories"),
+        "tp_covered": f"families covered {p['covered']} of {p['fams']}, uncovered {p['uncovered']}",
+        "tp_perfamily": f"topics per family {p['perfamily']}",
+        "tp_median": f"median **{p['median']}**, mean {p['mean']}",
+        "tp_single": f"{p['single']} families carry exactly one topic",
+        "tp_yieldhist": f"yield histogram {p['yieldhist']}",
+        "tp_thin": (f"**{p['thin3']}** terms have a yield of 3 or less and {p['thin1']} "
+                    f"have a yield of 1 or less"),
+        "tp_thin_nc": f"**{p['thin3']}** terms have a yield of 3 or less.",
+        "tp_note": f"{p['noted']} of {p['terms']} rows carry one",
+        "tp_ascii": f"{p['ascii_apos']} use ASCII `'` and {p['u2019']} use U+2019",
+        "tp_apos": f"{p['apos_pat']} patterns contain an ASCII apostrophe",
+        "tp_nopath": f"{p['nopath']} families the path layer is empty",
+    }
+
+
+TP_SPLIT = {
+    "tp_headline": [
+        "92 patterns matched case-insensitively against the title,",
+        "abstract, scope-note text, and derived Lean file paths of the 372 catalogued families \u2192 978",
+    ],
+    "tp_neg": ["0 MSC codes over 8,206 files, 0 `keywords` fields over 12,876 bibliography entries,"],
+    "tp_thin": ["**17** terms have a yield of 3 or less"],
+    "tp_yieldhist": [
+        "yield histogram 0:4 1:5 2:3 3:5 4:9 5:4 6:5 7:8 8:6 9:6 10:2 11:6 12:1 13:5 15:1 16:3 17:4",
+    ],
+}
+
+
+def topics_phrases(p: dict[str, str]) -> dict[str, str]:
+    out = topics_full(p)
+    out.update({k: v for k, v in p.items() if k.startswith("tp_row_")})
+    for label, prefixes in TP_SPLIT.items():
+        base = out.pop(label)
+        rest = base
+        for i, pre in enumerate(prefixes):
+            rest = rest.lstrip()
+            if not rest.startswith(pre):
+                raise ValueError(f"slot {label!r}: page wrap {pre!r} is not a prefix of {base!r}")
+            out[f"{label} {'abcdefghij'[i]}"] = pre
+            rest = rest[len(pre):]
+        out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
+    return out
+
+
+def topics_page(p: dict[str, str]) -> str:
+    return ENV.get_template("topics.md.j2").render(p=p)
+
+
+# 311 enters the chain table by reading, not by measurement: the release records no `companions`
+# value for it, so the measured part is the two result (NNN) edges and 311 is the literature chain.
+TC_LIT_CHAIN = ("311",)
+
+
+def t0_chains_population() -> dict[str, Any]:
+    v = tc.population()
+    rows, pop = v["rows"], v["pop"]
+    mss = tc.manuscripts()
+    bib_edges = tc.release_bib_edges()
+    lines = ep.resultentry_lines()
+    fam_dirs = {f: sorted({owner(pathlib.Path(m["path"])) for m in mss[f]}) for f in pop}
+    fam_edges = {f: tc.intra_edges(fam_dirs[f], bib_edges) for f in pop}
+    fam_mutual = {f: sum(1 for a, b in fam_edges[f] if (b, a) in fam_edges[f]) // 2 for f in pop}
+    fam_bibs = {f: tc.bib_files(fam_dirs[f]) for f in pop}
+    return {"v": v, "rows": rows, "pop": pop, "lines": lines, "edges": fam_edges,
+            "mutual": fam_mutual, "bibs": fam_bibs, "chain": tc.chain_edges(rows),
+            "cw": tc.companion_word_fams(rows)}
+
+
+def t0_chains_full(p: dict[str, Any]) -> dict[str, str]:
+    v, rows, pop = p["v"], p["rows"], p["pop"]
+    lines, edges, mutual, bibs = p["lines"], p["edges"], p["mutual"], p["bibs"]
+    out: dict[str, str] = {}
+    paps = sum(int(rows[f]["paps"]) for f in pop)
+    out["tc_pop"] = f"**{len(pop)}** families carrying **{paps}** manuscripts"
+    tiers = ", ".join(f"`{t}:{n}`" for t, n in sorted(v["paps2_tiers"].items()) if n)
+    out["tc_repo"] = f"**{len(v['paps2'])}** families with exactly 2 manuscripts, split {tiers}"
+    out["tc_firstpass"] = (f"Of the **{len(v['t0_paps2'])}** at T0, **{len(v['first_pass'])}** were read in "
+                           f"the first pass ({', '.join(v['first_pass'])}), so **{len(pop)}** remain")
+    out["tc_first_pass_list"] = ", ".join(v["first_pass"])
+    out["tc_zero"] = f"holds for **{len(v['zero_signal'])}** of the {len(pop)} and fails for"
+    out["tc_268sig"] = (f"**{len(v['signal_outliers'])}**: "
+                        + " ".join(f"{f} carries `verification = {rows[f]['verification']}`"
+                                   for f in v["signal_outliers"]))
+    out["tc_trueof"] = f"That is true of **{len(v['zero_signal'])}**"
+    ce = p["chain"]
+    out["tc_edges"] = (f"Over **{len(rows)}** families that yields **{len(ce)}** edges — "
+                       + " and ".join(f"{s} → {d}" for s, d in ce) + " —")
+    for f in [x for pair in ce for x in pair] + list(TC_LIT_CHAIN):
+        r = rows[f]
+        out[f"tc_chain_{f}"] = (f"| {f} | {r['tier']} | {r['paps']} | {r['paps_form']} | {r['chal']} | "
+                                f"{r['mainres']} | {r['scope_note']} | {r['verification']} | "
+                                f"{r['trace'] or '0'} | {r['shapes'].replace('|', ', ')} |")
+    cw = p["cw"]
+    cw_pop = [f for f in pop if rows[f]["companion_word"] == "1"]
+    out["tc_cw"] = (f"fires on **{len(cw)}** families — {', '.join(cw)} — and "
+                    f"**{sum(1 for f in cw if rows[f]['companions'])}** of them carry a `companions` edge")
+    out["tc_cw_pop"] = f"Of the {len(pop)} families here, **{len(cw_pop)}** use the word ({', '.join(cw_pop)})"
+    withedge = [f for f in pop if edges[f]]
+    mutual_f = [f for f in pop if mutual[f]]
+    oneway = [f for f in pop if edges[f] and not mutual[f]]
+    noedge = [f for f in pop if not edges[f]]
+    nobib = [f for f in noedge if not bibs[f]]
+    out["tc_layer"] = (f"{len(ce)} edges over {len(rows)} families, while the companion relation it "
+                       f"describes in prose is at least {len(cw)} families wide, and the manuscript-level "
+                       f"citation layer below measures {len(withedge)} of {len(pop)}")
+    for f in pop:
+        r = rows[f]
+        # The page's discipline column is the reading-pass abbreviation it shares with t0-triage.md
+        # ("A&CG", "real&complex"), not the ledger's full name, so the template keeps it literal and
+        # the label starts at the shapes column.
+        out[f"tc_row_{f}"] = (f"{r['shapes'].replace('|', ', ') or '-'} | {len(bibs[f])} | "
+                              f"{len(edges[f])} | {mutual[f]} | `overview.tex:{lines[f]}` |")
+    out["tc_all"] = (f"All {len(pop)} are T0, all {paps} manuscripts carry `formalized = 0`, and "
+                     f"{len(v['zero_signal'])} of {len(pop)} carry no coverage signal at all")
+    out["tc_cite"] = (f"**{len(withedge)}** of the {len(pop)} cite their sibling: **{len(mutual_f)}** mutual "
+                      f"pairs and **{len(oneway)}** one-directional. **{len(noedge)}** cite no sibling, and "
+                      f"**{len(nobib)}** of those ({', '.join(nobib)}) ship no `.bib` file at all, so their "
+                      f"absence is unmeasurable rather than a negative.")
+    out["tc_mutual"] = "The mutual pairs are " + ", ".join(mutual_f)
+    out["tc_oneway"] = "The one-directional edges are " + ", ".join(oneway)
+    out["tc_none"] = f"The {len(noedge)} with no intra-family edge are " + ", ".join(noedge)
+    out["tc_nobib"] = f"of them ({', '.join(nobib)}) ship no `.bib` file;"
+    return out
+
+
+TC_SPLIT = {
+    "tc_firstpass": ["Of the",
+                     "**35** at T0, **8** were read in the first pass (004, 006, 018, 019, 029, 046, "
+                     "059, 209), so **27**"],
+    "tc_268sig": ["**1**: 268"],
+    "tc_trueof": ["That is true of"],
+    "tc_edges": ["Over **372** families"],
+    "tc_cw": ["fires on **9**",
+              "families — 003, 197, 207, 256, 266, 268, 270, 307, 364 — and **0** of them carry "
+              "a `companions`"],
+    "tc_layer": ["2 edges over 372 families, while the",
+                 "companion relation it describes in prose is at least 9 families wide, and the "
+                 "manuscript-level"],
+    "tc_cite": ["**15** of the 27 cite their sibling: **8** mutual pairs and **7** one-directional. "
+                "**12** cite no",
+                "sibling, and **3** of those (200, 239, 300) ship no `.bib` file at all, so their absence is"],
+    "tc_oneway": ["The one-directional edges are 037,"],
+}
+
+
+def t0_chains_phrases(p: dict[str, Any]) -> dict[str, str]:
+    out = t0_chains_full(p)
+    out.update({k: v for k, v in p.items() if k.startswith("tc_row_")})
+    out.update({k: v for k, v in p.items() if k.startswith("tc_chain_")})
+    for label, prefixes in TC_SPLIT.items():
+        base = out.pop(label)
+        rest = base
+        for i, pre in enumerate(prefixes):
+            rest = rest.lstrip()
+            if not rest.startswith(pre):
+                raise ValueError(f"slot {label!r}: page wrap {pre!r} is not a prefix of {base!r}")
+            out[f"{label} {'abcdefghij'[i]}"] = pre
+            rest = rest[len(pre):]
+        out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
+    return out
+
+
+def t0_chains_page(p: dict[str, str]) -> str:
+    return ENV.get_template("t0-chains.md.j2").render(p=p)
+
+
+# --- page 10: notes/subfinding-pairs.md -------------------------------------------------------
+# The pairing judgement is a reading record, so the writer reads it back out of the page it replaces
+# (the shape scope-exclusions.md's Entries table already uses): every Summary-table figure below is a
+# count of the page's own pair lines. verify_subfinding_pairs.py re-derives them independently and
+# pins every quoted clause and title to the family's \resultentry line, which the writer deliberately
+# does not share with it.
+
+SP_HEAD = re.compile(r"^## (?P<fam>\d{3}) · `overview\.tex:(?P<line>\d+)` · "
+                     r"n=(?P<n>\d+) · (?P<tier>T\d)$")
+SP_TARGET = re.compile(r"-> \"[^\"]*\" \(`overview\.tex:\d+`\) \[\d{3}:\d+\]$")
+SP_FP_SENT = re.compile(r"Probe-vocabulary false positives: ([0-9, ]+)\.")
+
+
+def subfinding_pairs_population() -> dict[str, Any]:
+    """The measured population, and the reading record exactly as the page carries it."""
+    v = ep.population()
+    text = SP_MD.read_text(encoding="utf-8")
+    blocks: list[dict[str, Any]] = []
+    cur: dict[str, Any] = {}
+    for ln in text.splitlines():
+        m = SP_HEAD.match(ln)
+        if m:
+            cur = {"fam": m["fam"], "line": int(m["line"]), "n": int(m["n"]), "tier": m["tier"],
+                   "main": 0, "main_t": 0, "clause": 0, "clause_t": 0, "claimed": [], "unclaimed": []}
+            blocks.append(cur)
+        elif cur and ln.startswith("- main: "):
+            cur["main"] += 1
+            cur["main_t"] += 1 if SP_TARGET.search(ln) else 0
+        elif cur and ln.startswith("- clause: "):
+            cur["clause"] += 1
+            cur["clause_t"] += 1 if SP_TARGET.search(ln) else 0
+        elif cur and ln.startswith("- claimed:"):
+            cur["claimed"] = ln[len("- claimed:"):].split()
+        elif cur and ln.startswith("- unclaimed:"):
+            cur["unclaimed"] = ln[len("- unclaimed:"):].split()
+    m = SP_FP_SENT.search(text)
+    if m is None:
+        raise ValueError("no probe false-positive sentence on the page")
+    fp = [x.strip() for x in m.group(1).split(",") if x.strip()]
+    rows = tsv.read_rows(SUBFINDINGS_TSV)
+    return {"v": v, "blocks": blocks, "fp": fp,
+            "comparator_rows": sum(1 for r in rows if r["kind"] == "comparator-link"),
+            "manuscript_rows": sum(1 for r in rows if r["kind"] == "manuscript")}
+
+
+def subfinding_pairs_full(p: dict[str, Any]) -> dict[str, str]:
+    v, blocks = p["v"], p["blocks"]
+    pop, counts, probe = v["pop"], v["counts"], v["probe"]
+    probe_all, multi, per = v["probe_all"], v["multi"], v["per_phrase"]
+    low, fams = v["low"], v["fams"]
+    out: dict[str, str] = {}
+    mss = sum(counts[f] for f in pop)
+    out["sp_pop"] = f"**{len(pop)} families over {mss} manuscripts**"
+    out["sp_probe_also"] = f"`also prove` ({len(per['also prove'])}),"
+    out["sp_probe_independ"] = (f"`Independent` ({len(per['independ'])}), "
+                                f"`also establish` ({len(per['also establish'])}),")
+    out["sp_probe_conseq"] = f"`not as a consequence` ({len(per['as a consequence'])})"
+    out["sp_indep_word"] = (f"not the word `independent` "
+                            f"({sum(1 for f in fams if 'independent' in low[f])})")
+    out["sp_t_also"] = f"| `also prove` | {len(per['also prove'])} |"
+    out["sp_t_independ"] = f"| `independ` (stem) | {len(per['independ'])} |"
+    out["sp_t_establish"] = f"| `also establish` | {len(per['also establish'])} |"
+    out["sp_t_consequence"] = f"| `as a consequence` | {len(per['as a consequence'])} |"
+    out["sp_t_union372"] = f"| union of the four, over all 372 | {len(probe_all)} |"
+    out["sp_t_multi"] = f"| families with ≥2 manuscripts | {len(multi)} |"
+    out["sp_t_union167"] = f"| **union of the four, over the 167** | **{len(probe)}** |"
+    out["sp_not51"] = f"{len(probe)}, not 51."
+    inside = [d for d in ep.DENSEST if d in probe]
+    outside = [d for d in ep.DENSEST if d not in probe]
+    out["sp_outside"] = (f"{NUM_WORDS[len(outside)].capitalize()} of the bead's "
+                         f"{NUM_WORDS[len(ep.DENSEST)]} named densest targets "
+                         f"(all but {', '.join(inside)})")
+    out["sp_decision"] = f"**{len(pop)} families, {mss} manuscripts**"
+    out["sp_densest_range"] = (f"{ep.DENSEST[0]} at n={counts[ep.DENSEST[0]]} down to "
+                               f"{ep.DENSEST[-1]} at n={counts[ep.DENSEST[-1]]}")
+    fp_probe = [x for x in p["fp"] if x in probe]
+    out["sp_fpcount"] = f"{len(fp_probe)} of the {len(probe)} probe-hit families"
+    accepted = sum(b["clause_t"] for b in blocks)
+    main_accepted = sum(b["main_t"] for b in blocks)
+    unmatched = sum(b["main"] + b["clause"] - b["main_t"] - b["clause_t"] for b in blocks)
+    claimed_total = sum(len(b["claimed"]) for b in blocks)
+    unclaimed_total = sum(len(b["unclaimed"]) for b in blocks)
+    with_pair = [b["fam"] for b in blocks if b["clause_t"]]
+    with_unmatched = sum(1 for b in blocks
+                         if b["main"] + b["clause"] - b["main_t"] - b["clause_t"])
+    noprobe = [b["fam"] for b in blocks if b["clause_t"] and b["fam"] not in probe]
+    out["sp_s_fams"] = f"| families read | {len(blocks)} |"
+    out["sp_s_mss"] = f"| manuscripts in the population | {mss} |"
+    out["sp_s_pairs"] = f"| sub-finding clause pairs accepted | {accepted} |"
+    out["sp_s_headline"] = f"| headline clause pairs accepted | {main_accepted} |"
+    out["sp_s_unmatched"] = f"| clauses recorded unmatched | {unmatched} |"
+    out["sp_s_claimed"] = f"| titles claimed by a clause | {claimed_total} |"
+    out["sp_s_unclaimed"] = f"| titles claimed by no clause | {unclaimed_total} |"
+    out["sp_s_fampair"] = f"| families with >=1 accepted sub-finding pair | {len(with_pair)} |"
+    out["sp_s_famunmatched"] = f"| families with >=1 clause recorded unmatched | {with_unmatched} |"
+    out["sp_s_noprobe"] = (f"| families with an accepted sub-finding pair and no probe hit "
+                           f"| {len(noprobe)} |")
+    out["sp_b_pair"] = (f"{len(with_pair)} of {len(blocks)} families have at least one accepted "
+                        f"sub-finding pair, and")
+    out["sp_b_claimed"] = f"{claimed_total} of the {mss} titles are claimed by a clause"
+    out["sp_b_unmatched"] = f"{unmatched} clauses in {with_unmatched} families state a result no"
+    out["sp_b_noprobe"] = f"{len(noprobe)} families pair sub-findings with no probe hit at"
+    out["sp_b_noprobe_list"] = (f"all ({', '.join(noprobe)}) — {NUM_WORDS[len(noprobe)]} of the bead's "
+                                f"{NUM_WORDS[len(ep.DENSEST)]} named densest targets —")
+    out["sp_b_fp"] = f"{len(fp_probe)} of the {len(probe)} probe hits"
+    out["sp_notread"] = (f"{len(multi) - len(pop)} families with two or more manuscripts are not read. "
+                         f"The page covers {len(pop)} of the {len(multi)}.")
+    out["sp_rows"] = (f"The {p['comparator_rows']} comparator-link rows in `notes/subfindings.tsv` "
+                      f"are not paired; only the {p['manuscript_rows']} manuscript rows")
+    out["sp_rows2"] = f"only {mss} of those are in this population"
+    return out
+
+
+SP_SPLIT = {
+    "sp_densest_range": ["034 at n=14 down to 211 at"],
+}
+
+
+def subfinding_pairs_phrases(p: dict[str, Any]) -> dict[str, str]:
+    out = subfinding_pairs_full(p)
+    for label, prefixes in SP_SPLIT.items():
+        base = out.pop(label)
+        rest = base
+        for i, pre in enumerate(prefixes):
+            rest = rest.lstrip()
+            if not rest.startswith(pre):
+                raise ValueError(f"slot {label!r}: page wrap {pre!r} is not a prefix of {base!r}")
+            out[f"{label} {'abcdefghij'[i]}"] = pre
+            rest = rest[len(pre):]
+        out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
+    return out
+
+
+def subfinding_pairs_page(p: dict[str, str]) -> str:
+    return ENV.get_template("subfinding-pairs.md.j2").render(p=p)
+
+
 def main() -> None:
     mp = en.population()
     ip = M.population()
@@ -1924,6 +2645,11 @@ def main() -> None:
     ilk = index_links_population()
     lk = links_population()
     dp = drift_population()
+    xp = scope_exclusions_population()
+    vp = verification_dirs_population()
+    tp = topics_population(links_full(lk))
+    tcp = t0_chains_population()
+    spp = subfinding_pairs_population()
     SOURCES_MD.write_text(sources_page(), encoding="utf-8")
     ABSTRACTS_MD.write_text(abstracts_page(), encoding="utf-8")
     NAMED_RESULTS_MD.write_text(named_results_page(mp), encoding="utf-8")
@@ -1933,8 +2659,14 @@ def main() -> None:
     INDEX_LINKS_MD.write_text(index_links_page(index_links_phrases(ilk)), encoding="utf-8")
     LINKS_MD.write_text(links_page(links_phrases(lk)), encoding="utf-8")
     DRIFT_MD.write_text(drift_page(drift_phrases(dp)), encoding="utf-8")
+    VERIF_MD.write_text(verification_dirs_page(verification_dirs_phrases(vp)), encoding="utf-8")
+    EX_MD.write_text(scope_exclusions_page(scope_exclusions_phrases(xp)), encoding="utf-8")
+    TOPICS_MD.write_text(topics_page(topics_phrases(tp)), encoding="utf-8")
+    T0_CHAINS_MD.write_text(t0_chains_page(t0_chains_phrases(tcp)), encoding="utf-8")
+    SP_MD.write_text(subfinding_pairs_page(subfinding_pairs_phrases(spp)), encoding="utf-8")
     for page in (SOURCES_MD, ABSTRACTS_MD, NAMED_RESULTS_MD, INDEX_DESIGN_MD, NAMES_MD,
-                 PROOF_DENSITY_MD, INDEX_LINKS_MD, LINKS_MD, DRIFT_MD):
+                 PROOF_DENSITY_MD, INDEX_LINKS_MD, LINKS_MD, DRIFT_MD, VERIF_MD, EX_MD, TOPICS_MD,
+                 T0_CHAINS_MD, SP_MD):
         out = page.read_text(encoding="utf-8")
         print(f"{page.name} written  lines {len(out.splitlines())}  bytes {len(out.encode())}")
     ms, ma = measure(), CA.measure()
@@ -1944,6 +2676,11 @@ def main() -> None:
           f"  proof-density {len(proof_density_phrases(pdp))}"
           f"  index-links {len(index_links_phrases(ilk))}  links {len(links_phrases(lk))}"
           f"  dependency-drift {len(drift_phrases(dp))}"
+          f"  verification-dirs {len(verification_dirs_phrases(vp))}"
+          f"  scope-exclusions {len(scope_exclusions_phrases(xp))}"
+          f"  topics {len(topics_phrases(tp))}"
+          f"  t0-chains {len(t0_chains_phrases(tcp))}"
+          f"  subfinding-pairs {len(subfinding_pairs_phrases(spp))}"
           f"  multi-root rows {len(ms['multi'])}  rows {ms['rows']}  listed {ms['listed']}"
           f"  dirs {ms['dirs']}  comparisons {ma['manuscripts']}  families {ma['families']}"
           f"  target rows {len(tgt_rows(mp))}")

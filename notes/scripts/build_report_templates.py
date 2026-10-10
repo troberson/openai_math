@@ -61,6 +61,15 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
     "notes/index-links.md": R.index_links_population,
     "notes/links.md": R.links_population,
     "notes/dependency-drift.md": R.drift_population,
+    "notes/verification-dirs.md": R.verification_dirs_population,
+    "notes/scope-exclusions.md": R.scope_exclusions_population,
+    # topics.md needs the links labels too: its MSC/keywords figures are measured by extract_links.py
+    # and derived in links_full, so its population is links_full over the links population.
+    "notes/topics.md": lambda: R.topics_population(R.links_full(R.links_population())),
+    "notes/t0-chains.md": R.t0_chains_population,
+    # subfinding-pairs.md's population is the pairing report's own, imported from
+    # extract_subfinding_pairs.py, plus the reading record parsed back out of the page.
+    "notes/subfinding-pairs.md": R.subfinding_pairs_population,
 }
 # The writer's own slot dict per page. These are the calls render_reports.py makes when it renders,
 # so the labels and phrase strings the template gets are the writer's by construction.
@@ -74,6 +83,14 @@ LABELS: dict[str, Callable[[], dict[str, str]]] = {
     "notes/index-links.md": lambda: R.index_links_phrases(POPULATIONS["notes/index-links.md"]()),
     "notes/links.md": lambda: R.links_phrases(POPULATIONS["notes/links.md"]()),
     "notes/dependency-drift.md": lambda: R.drift_phrases(POPULATIONS["notes/dependency-drift.md"]()),
+    "notes/verification-dirs.md": lambda: R.verification_dirs_phrases(
+        POPULATIONS["notes/verification-dirs.md"]()),
+    "notes/scope-exclusions.md": lambda: R.scope_exclusions_phrases(
+        POPULATIONS["notes/scope-exclusions.md"]()),
+    "notes/topics.md": lambda: R.topics_phrases(POPULATIONS["notes/topics.md"]()),
+    "notes/t0-chains.md": lambda: R.t0_chains_phrases(POPULATIONS["notes/t0-chains.md"]()),
+    "notes/subfinding-pairs.md": lambda: R.subfinding_pairs_phrases(
+        POPULATIONS["notes/subfinding-pairs.md"]()),
 }
 PHRASE_FNS = ("count_phrases", "size_phrases")
 ALL_PAGES = {
@@ -91,6 +108,28 @@ ALL_PAGES = {
     "notes/names.md": "measure_names.py",
     "notes/proof-density.md": "measure_proof_density.py",
     "notes/sources.md": "verify_sources.py",
+    # verification-dirs.md's checker takes a population argument and has no module-level population(),
+    # so its needles cannot be derived with an empty dict: the builder reports this coverage as
+    # NOT DERIVED, and the page is proven by the render diff plus the checker's own 18 mutants.
+    "notes/verification-dirs.md": "verify_verification_dirs.py",
+    # scope-exclusions.md's checker has no count_phrases/size_phrases at all: its needles are the
+    # inline COUNTS/NONE_LINE regexes plus the measured() table labels, so the builder reports this
+    # coverage as NOT DERIVED and the page is proven by the render diff plus the checker's own mutants.
+    "notes/scope-exclusions.md": "verify_scope_exclusions.py",
+    # topics.md has no page checker: its counts come from the gated report-only measure_topics.py,
+    # which prints the report every count on the page comes from and carries no count_phrases/
+    # size_phrases, so the builder reports this coverage as NOT DERIVED. The page is proven by the
+    # render diff plus measure_topics.py --check, which re-measures all 92 recorded rows.
+    "notes/topics.md": "measure_topics.py",
+    # t0-chains.md's checker takes a population argument and has no module-level population(), so its
+    # needles cannot be derived with an empty dict: the builder reports this coverage as NOT DERIVED
+    # and the page is proven by the render diff plus the checker's own 12 mutants.
+    "notes/t0-chains.md": "verify_t0_chains.py",
+    # subfinding-pairs.md's checker takes parsed inputs and has no module-level count_phrases, so its
+    # needles cannot be derived: the builder reports this coverage as NOT DERIVED and the page is
+    # proven by the render diff plus the checker's own 7 mutants, which pin every quoted clause and
+    # title to the family's \resultentry line.
+    "notes/subfinding-pairs.md": "verify_subfinding_pairs.py",
 }
 
 
