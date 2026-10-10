@@ -37,6 +37,7 @@ run check_index_links.py
 run check_index_links.py --mutant
 run measure_names.py
 run measure_templates.py
+run dump_template_slots.py
 run measure_proof_density.py --mutant
 # checkers: plain then mutant
 # refresh_summary_line_counts.py runs FIRST: it rewrites the Lines cells of the summary pages and
