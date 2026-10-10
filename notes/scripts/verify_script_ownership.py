@@ -14,8 +14,13 @@ Passes:
      with notes/scripts/render_reports.py's render of it. notes/scripts/README.md is hand-authored, so
      it has no render to compare with; the generated ledger readme does, and its prose is not covered
      by any count phrase here.
+  H. notes/templates.md -- the census of the two template trees. Lines, bytes and slot counts are
+     re-measured here from the template files, the page<->checker pairing is re-read from the builder's
+     ALL_PAGES literal, and the index tree's render counts are re-counted from notes/index/. The pass
+     re-measures rather than importing measure_templates.py: a checker that re-derives a count through
+     the same code the page's writer calls proves only that the code agrees with itself.
 
---mutant injects twelve faults, one per check form the page uses, and asserts each is caught.
+--mutant injects sixteen faults, one per check form the page uses, and asserts each is caught.
 Report-only: writes nothing.
 """
 from __future__ import annotations
@@ -30,6 +35,15 @@ from catlib.paths import NOTES, ROOT, SCRIPTS, read_text
 PAGE = SCRIPTS / "README.md"
 SELF = "verify_script_ownership.py"
 README = NOTES / "README.md"
+TEMPLATES_PAGE = NOTES / "templates.md"
+TPL_DIR = NOTES / "templates"
+REPORT_TPL_DIR = TPL_DIR / "report"
+INDEX_DIR = NOTES / "index"
+SLOT_MARK = "{{ "
+# The index-tree templates whose pages sit in a directory named for them; family pages sit in the
+# 17 discipline directories, and the entry point is a single file.
+INDEX_PAGE_DIRS = {"discipline.md.j2": "disciplines", "name.md.j2": "names", "topic.md.j2": "topics"}
+INDEX_NON_FAMILY = {"disciplines", "names", "topics", "edges"}
 
 # The page's hand-authored tables, by rule rather than by generator.
 HAND_AUTHORED_TSVS = {"notes/topics.tsv", "notes/conjecture-standing.tsv"}
@@ -172,6 +186,119 @@ def census_rows(text):
     return out
 
 
+def template_measure():
+    """Re-measure both template trees: name -> tree, lines, bytes, slots.
+
+    A slot is a `{{ ` occurrence counted over the whole file, the same rule notes/templates.md quotes,
+    read here from the bytes rather than from measure_templates.py.
+    """
+    out = {}
+    for tree, directory in (("report", REPORT_TPL_DIR), ("index", TPL_DIR)):
+        for t in sorted(directory.glob("*.j2")):
+            if t.parent != directory:
+                continue
+            text = read_text(t)
+            out[t.name] = {"tree": tree, "lines": len(text.splitlines()),
+                           "bytes": len(text.encode()), "slots": text.count(SLOT_MARK)}
+    return out
+
+
+def registry_pairs():
+    """The builder's page -> checker registry, and the line its ALL_PAGES literal opens on."""
+    lines = read_text(SCRIPTS / "build_report_templates.py").splitlines()
+    start = next((i for i, l in enumerate(lines, start=1) if l.startswith("ALL_PAGES")), 0)
+    if not start:
+        return {}, 0
+    block = "\n".join(lines[start - 1:])
+    end = block.find("\n}")
+    pairs = re.findall(r'"(notes/[^"]+\.md)"\s*:\s*"([A-Za-z0-9_]+\.py)"', block[:end] if end >= 0 else block)
+    return dict(pairs), start
+
+
+def index_render_counts():
+    """Pages on disk per index-tree template, counted from the tree build_index.py writes."""
+    counts = {n: len(list((INDEX_DIR / sub).rglob("*.md"))) for n, sub in INDEX_PAGE_DIRS.items()}
+    fam = [d for d in INDEX_DIR.iterdir() if d.is_dir() and d.name not in INDEX_NON_FAMILY]
+    counts["family.md.j2"] = sum(len(list(d.rglob("*.md"))) for d in fam)
+    counts["index-readme.md.j2"] = int((INDEX_DIR / "README.md").is_file())
+    return counts
+
+
+def template_table_rows(text):
+    """(report rows, index rows): template name -> cells, read from the page's two tables."""
+    report, index = {}, {}
+    for line in text.splitlines():
+        cells = [c.strip() for c in line.strip().strip("|").split("|")]
+        if len(cells) < 2 or not cells[0].startswith("`") or not cells[0].endswith(".j2`"):
+            continue
+        name = cell_paths(cells[0])[0]
+        if len(cells) == 7:
+            report[name] = cells
+        elif len(cells) == 5:
+            index[name] = cells
+    return report, index
+
+
+def templates_problems():
+    """Pass H: notes/templates.md against the template files, the registry, and notes/index/."""
+    p = []
+    text = read_text(TEMPLATES_PAGE)
+    cen = template_measure()
+    reg, anchor = registry_pairs()
+    renders = index_render_counts()
+    rows, idx_rows = template_table_rows(text)
+
+    want_report = {n for n, v in cen.items() if v["tree"] == "report"}
+    if set(rows) != want_report:
+        p.append(f"report table rows {sorted(set(rows))} != report templates on disk {sorted(want_report)}")
+    for n, cells in sorted(rows.items()):
+        v = cen.get(n)
+        if not v:
+            continue
+        if cells[1:4] != [f"{v['lines']:,}", f"{v['bytes']:,}", str(v["slots"])]:
+            p.append(f"template row {n}: page {cells[1:4]}, disk "
+                     f"{[f'{v['lines']:,}', f'{v['bytes']:,}', str(v['slots'])]}")
+        page = f"notes/{n[: -len('.j2')]}"
+        if cell_paths(cells[4]) != [page]:
+            p.append(f"template row {n}: page cell {cells[4]!r}, disk template name says {page!r}")
+        checker = cell_paths(cells[5])
+        if checker and checker[0] != reg.get(page, "-"):
+            p.append(f"template row {n}: page checker {checker[0]!r}, registry says {reg.get(page)!r}")
+
+    for n, cells in sorted(idx_rows.items()):
+        v = cen.get(n)
+        if not v:
+            p.append(f"index table row for a template that is not on disk: {n}")
+            continue
+        if cells[1:4] != [f"{v['lines']:,}", f"{v['bytes']:,}", str(v["slots"])]:
+            p.append(f"index row {n}: page {cells[1:4]}, disk "
+                     f"{[f'{v['lines']:,}', f'{v['bytes']:,}', str(v['slots'])]}")
+        m = re.match(r"([\d,]+)", cells[4])
+        if not m or int(m.group(1).replace(",", "")) != renders.get(n, -1):
+            p.append(f"index row {n}: page renders {cells[4]!r}, disk says {renders.get(n)}")
+    if set(idx_rows) != {n for n, v in cen.items() if v["tree"] == "index"}:
+        p.append(f"index table rows {sorted(idx_rows)} != index templates on disk "
+                 f"{sorted(n for n, v in cen.items() if v['tree'] == 'index')}")
+
+    for label, tree in (("report tree", "report"), ("index tree", "index")):
+        vals = [v for n, v in cen.items() if v["tree"] == tree]
+        want = (f"| **{label}** | **{len(vals)}** | **{sum(v['lines'] for v in vals):,}** |"
+                f" **{sum(v['bytes'] for v in vals):,}** | **{sum(v['slots'] for v in vals):,}** |")
+        if want not in text:
+            p.append(f"{label} total row does not read {want!r}")
+
+    if f"registry: **{len(reg)}** entries at `build_report_templates.py:{anchor}`" not in text:
+        p.append(f"registry sentence does not read 'registry: **{len(reg)}** entries at "
+                 f"`build_report_templates.py:{anchor}`'")
+    pages = {pg.rsplit("/", 1)[-1] for pg in reg}
+    missing = sorted(f"{n}.j2" for n in pages if not (REPORT_TPL_DIR / f"{n}.j2").is_file())
+    extra = sorted(t.name for t in REPORT_TPL_DIR.glob("*.j2") if t.name[: -len(".j2")] not in pages)
+    want = f"template-without-page **{len(missing)}**, page-without-template **{len(extra)}**"
+    if want not in text:
+        p.append(f"registry gap sentence does not read {want!r} (disk: {missing + extra})")
+    return p
+
+
 def check(text):
     p = []
     parts = sections(text)
@@ -198,8 +325,8 @@ def check(text):
             f"writer split sentence does not read '**{len(derived)}** writers over "
             f"**{len(names)}** scripts'"
         )
-    if len(names) != 45:
-        p.append(f"scripts on disk (excluding {SELF}): {len(names)}, page says 45")
+    if len(names) != 46:
+        p.append(f"scripts on disk (excluding {SELF}): {len(names)}, page says 46")
     if len(derived) != 9:
         p.append(f"derived writers: {len(derived)}, page says 9")
 
@@ -252,6 +379,9 @@ def check(text):
     checked = set()
     for cells in table_rows(parts.get("checkers", [])):
         checked.update(cell_paths(cells[1]))
+    # Pass H checks notes/templates.md, and this checker is not a row in its own table, so the
+    # table-derived credit cannot see it. A page checked by the checker measuring it is checked.
+    checked.add("notes/templates.md")
     top_md = sorted(f.name for f in top if f.suffix == ".md")
     md_checked = sorted(n for n in top_md if f"notes/{n}" in checked)
     md_free = sorted(n for n in top_md if f"notes/{n}" not in checked)
@@ -357,20 +487,20 @@ def sync_problems() -> list[str]:
 
 
 def mutants():
-    """Twelve faults, one per check form. Each must be caught by the check it targets."""
+    """Sixteen faults, one per check form. Each must be caught by the check it targets."""
     original = read_text(PAGE)
     cases = [
         ("writer target altered", original.replace("| `build_catalog.py` | `notes/catalog.tsv` |", "| `build_catalog.py` | `notes/catalog-x.tsv` |"), "page says 'notes/catalog-x.tsv'"),
         ("writer row deleted", original.replace("| `extract_links.py` | `notes/links.tsv` | run twice, byte-identical | `notes/links.md` |\n", ""), "writer extract_links.py: page says None"),
         ("hand-authored TSV claimed as generated", original.replace("**6** generated, **2** hand-authored", "**7** generated, **1** hand-authored"), "tsv census cell"),
-        ("writer count altered", original.replace("**9** writers over **45** scripts", "**10** writers over **45** scripts"), "writer split sentence"),
+        ("writer count altered", original.replace("**9** writers over **46** scripts", "**10** writers over **46** scripts"), "writer split sentence"),
         ("index file count altered", original.replace("| `notes/index/` | **1,049** |", "| `notes/index/` | **1,050** |"), "census row notes/index/"),
         ("collision name altered", original.replace("**1** shared basename — `README.md`", "**2** shared basenames — `README.md` and `topics.tsv`"), "collision sentence"),
         ("checker name altered", original.replace("| `verify_sources.py` |", "| `verify_sources2.py` |"), "non-writers"),
         ("unchecked page claimed as checked", original.replace("| `verify_abstracts.py` | `notes/abstracts.md` |", "| `verify_abstracts.py` | `notes/abstracts.md`, `notes/links.md` |"), "md census cell"),
         ("Not checked section deleted", original.replace("## Not checked", "## Checked"), "no '## Not checked' section"),
         ("summaries count altered", original.replace("| `notes/summaries/` | **21** |", "| `notes/summaries/` | **22** |"), "census row notes/summaries/"),
-        ("templates count altered", original.replace("| `notes/templates/` | **21** |", "| `notes/templates/` | **3** |"), "census row notes/templates/"),
+        ("templates count altered", original.replace("| `notes/templates/` | **22** |", "| `notes/templates/` | **3** |"), "census row notes/templates/"),
     ]
     fails = []
     for label, mutated, needle in cases:
@@ -404,7 +534,36 @@ def mutants():
             fails.append(f"readme prose count altered: NOT caught by the sync pass (problems: {found[:2]})")
         else:
             print(f"  caught readme prose count altered: {found[0][:110]}")
-    return fails, len(cases) + 1
+
+    # Pass H: four faults in notes/templates.md, each caught by the pass that owns it.
+    tpl_text = read_text(TEMPLATES_PAGE)
+    row = next((l for l in tpl_text.splitlines() if l.startswith("| `README.md.j2`")), "")
+    tpl_cases = [
+        ("template row renamed", tpl_text.replace("| `t0-chains.md.j2` |", "| `t0-chainz.md.j2` |", 1),
+         "report table rows"),
+        ("template page row deleted",
+         "\n".join(l for l in tpl_text.splitlines() if not l.startswith("| `templates.md.j2`")),
+         "report table rows"),
+        ("template slot count shifted", tpl_text.replace(row, row.replace("| 71 |", "| 72 |", 1), 1)
+         if row else "", "template row README.md.j2"),
+        ("registry count altered", tpl_text.replace("registry: **17** entries",
+                                                    "registry: **18** entries", 1),
+         "registry sentence"),
+    ]
+    for label, mutated, needle in tpl_cases:
+        if mutated == tpl_text:
+            fails.append(f"{label}: mutation changed nothing")
+            continue
+        TEMPLATES_PAGE.write_text(mutated, encoding="utf-8")
+        try:
+            found = templates_problems()
+        finally:
+            TEMPLATES_PAGE.write_text(tpl_text, encoding="utf-8")
+        if not any(needle in x for x in found):
+            fails.append(f"{label}: NOT caught by {needle!r} (problems: {found[:2]})")
+        else:
+            print(f"  caught {label}: {next(x for x in found if needle in x)[:110]}")
+    return fails, len(cases) + 1 + len(tpl_cases)
 
 
 def main():
@@ -440,15 +599,19 @@ def main():
     shared = sorted({f.name for f in top} & {f.name for f in index})
     print(f"top-level ∩ index basenames: {shared}")
     print(f"index ∩ summaries slugs: {len({f.name for f in index} & {f.name for f in summaries})}")
+    tpl = templates_problems()
+    print(f"templates census (notes/templates.md): {len(template_measure())} templates on disk, "
+          f"{len(tpl)} problems")
     p = check(text)
     sync = sync_problems()
-    for x in p + sync:
+    for x in p + tpl + sync:
         print(f"PROBLEM: {x}")
     print(f"sync problems (notes/README.md): {len(sync)}")
     print(f"reconciliation: writers == page {not any('writer' in x for x in p)}")
     print(f"reconciliation: census rows == disk {not any('census' in x for x in p)}")
     print(f"reconciliation: naming complete {not any('named' in x for x in p)}")
-    sys.exit(1 if p + sync else 0)
+    print(f"reconciliation: templates page == disk {not tpl}")
+    sys.exit(1 if p + tpl + sync else 0)
 
 
 if __name__ == "__main__":
