@@ -322,7 +322,7 @@ def check(text):
 
 
 def mutants():
-    """Ten faults, one per check form. Each must be caught by the check it targets."""
+    """Eleven faults, one per check form. Each must be caught by the check it targets."""
     original = read_text(PAGE)
     cases = [
         ("writer target altered", original.replace("| `build_catalog.py` | `notes/catalog.tsv` |", "| `build_catalog.py` | `notes/catalog-x.tsv` |"), "page says 'notes/catalog-x.tsv'"),
@@ -335,7 +335,7 @@ def mutants():
         ("unchecked page claimed as checked", original.replace("| `verify_abstracts.py` | `notes/abstracts.md` |", "| `verify_abstracts.py` | `notes/abstracts.md`, `notes/links.md` |"), "md census cell"),
         ("Not checked section deleted", original.replace("## Not checked", "## Checked"), "no '## Not checked' section"),
         ("summaries count altered", original.replace("| `notes/summaries/` | **21** |", "| `notes/summaries/` | **22** |"), "census row notes/summaries/"),
-        ("templates count altered", original.replace("| `notes/templates/` | **9** |", "| `notes/templates/` | **3** |"), "census row notes/templates/"),
+        ("templates count altered", original.replace("| `notes/templates/` | **10** |", "| `notes/templates/` | **3** |"), "census row notes/templates/"),
     ]
     fails = []
     for label, mutated, needle in cases:

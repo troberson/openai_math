@@ -56,6 +56,7 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
     "notes/abstracts.md": R.CA.measure,
     "notes/named-results.md": R.en.population,
     "notes/index-design.md": R.M.population,
+    "notes/names.md": R.names_population,
 }
 # The writer's own slot dict per page. These are the calls render_reports.py makes when it renders,
 # so the labels and phrase strings the template gets are the writer's by construction.
@@ -64,12 +65,14 @@ LABELS: dict[str, Callable[[], dict[str, str]]] = {
     "notes/abstracts.md": lambda: R.abstracts_phrases(POPULATIONS["notes/abstracts.md"]()),
     "notes/named-results.md": lambda: R.named_results_phrases(POPULATIONS["notes/named-results.md"]()),
     "notes/index-design.md": lambda: R.index_phrases(POPULATIONS["notes/index-design.md"]()),
+    "notes/names.md": lambda: R.names_phrases(POPULATIONS["notes/names.md"]()),
 }
 PHRASE_FNS = ("count_phrases", "size_phrases")
 ALL_PAGES = {
     "notes/abstracts.md": "verify_abstracts.py",
     "notes/index-design.md": "verify_index_design.py",
     "notes/named-results.md": "verify_named_results.py",
+    "notes/names.md": "measure_names.py",
     "notes/sources.md": "verify_sources.py",
 }
 
@@ -255,6 +258,11 @@ def build(page_rel: str, checker_name: str) -> int:
     print(f"template written: {out.relative_to(ROOT)}")
     print(f"labels {len(labels)} groups {len(groups)} hits {len(hits)} slots {nslots} exprs {total}")
     print(f"template lines {len((header + text).splitlines())} bytes {len((header + text).encode())}")
+    if wrapped:
+        # A phrase the page breaks across lines stays literal unless the writer supplies it as split
+        # labels. This list is the work list for the writer's split table (INDEX_SPLIT / NR_SPLIT).
+        print(f"left literal {len(wrapped)} (page wraps, writer supplies one string): "
+              + " ".join(sorted(wrapped)))
     if needles:
         print(f"checker needles {len(needles)} slotted {sum(1 for ph, _ in needles if ph in labels.values())}"
               f" literal {sum(1 for ph, _ in needles if ph not in labels.values())}")

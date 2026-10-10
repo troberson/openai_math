@@ -26,6 +26,7 @@ import collections
 import csv
 import pathlib
 import re
+import statistics
 from typing import Any
 
 from jinja2 import Environment, FileSystemLoader
@@ -34,6 +35,7 @@ import build_sources as S
 import compare_abstracts as CA
 import extract_named_results as en
 import measure_index_sizes as M
+import measure_names as MN
 from catlib import overview, preprints, tsv
 from catlib import yaml as Y
 from catlib.paths import COMPARATOR_DIR, LEDGER_TSV, PREPRINTS, ROOT, SUBFINDINGS_TSV
@@ -48,6 +50,7 @@ SOURCES_MD = ROOT / "notes" / "sources.md"
 ABSTRACTS_MD = ROOT / "notes" / "abstracts.md"
 NAMED_RESULTS_MD = ROOT / "notes" / "named-results.md"
 INDEX_DESIGN_MD = ROOT / "notes" / "index-design.md"
+NAMES_MD = ROOT / "notes" / "names.md"
 
 
 def f(x: int) -> str:
@@ -689,14 +692,197 @@ def index_page(p: dict[str, Any]) -> str:
     return ENV.get_template("index-design.md.j2").render(p=index_phrases(p))
 
 
+# --- notes/names.md ------------------------------------------------------------------
+# The page's fixed vocabularies, transcribed from the page: the probe tokens in the page's order,
+# the rejection-ladder buckets in the page's order, the layer flags with the layer names the page
+# prints, and the words-section keys in table order. The 40 yield rows are DERIVED (family count
+# descending, name ascending on a tie); the builder fails the render if a derived row is not on the
+# page, so the table's shape is checked, not transcribed.
+NAMES_PROBE = ["the", "all", "games", "lane", "hom", "quot", "cat", "adm", "boolean", "catalan",
+               "koebe", "saxl", "pixton", "wang", "cauchy"]
+NAMES_LADDER = ["not-a-word-key", "label-word", "maths-word", "contains-digit", "acronym",
+                "latex-macro", "no-prose-evidence", "prose-word"]
+NAMES_LAYERS = [("F", "family title", "fam_title_fams"), ("M", "manuscript directory title", "ms_title"),
+                ("E", "theorem-environment title", "env_title_fams"), ("D", "declaration name", "decl"),
+                ("b", "body prose", "body_fams"), ("B", "bib author", "bib_fams")]
+NAMES_WORDS = ["hom", "quot", "combinatorics", "computer", "beaver", "stablest"]
+NAMES_NUMBER_WORDS = {1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five", 6: "Six", 7: "Seven"}
+
+
+def names_population() -> dict[str, Any]:
+    """`measure_names.measure()`, plus the figures its report computes in `main()` and never returns.
+
+    The page cites four joins the measurement function does not carry: the wider-pattern environment
+    total (from `notes/sources.tsv`), the `main_results` entry and config counts (from
+    `lean/formalization.yaml`), the 372-family denominator (from `overview.tex`), and the trace-table
+    coverage (from the release's trace attribution). `measure_names.py` prints all of them and returns
+    none, so the writer computes them here.
+    """
+    rows, meta = MN.measure()
+    subject = [r for r in rows if r["role"] == "subject"]
+    covered: set[str] = set()
+    subj_cov: set[str] = set()
+    for r in rows:
+        covered |= set(r["fams"])
+    for r in subject:
+        subj_cov |= set(r["fams"])
+    order, _ = overview.parse_overview()
+    trace_by_fam, _ = Y.parse_traces()
+    _, mainres = Y.parse_yaml()
+    with TSV.open(encoding="utf-8") as fh:
+        wide_env = sum(int(r["thms"]) for r in csv.DictReader(fh, delimiter="\t"))
+    return {
+        "rows": rows,
+        "meta": meta,
+        "subject": subject,
+        "citation": [r for r in rows if r["role"] == "citation"],
+        "edges": sum(len(r["fams"]) for r in subject),
+        "fams": len(order),
+        "no_hit": len(set(order) - covered),
+        "traces": len(trace_by_fam),
+        "traces_covered": len(set(trace_by_fam) & subj_cov),
+        "no_family": sum(1 for r in rows if not r["fams"]),
+        "singletons": sum(1 for r in subject if len(r["fams"]) == 1),
+        "spellings": sum(1 for r in subject if len(r["variants"]) > 1),
+        "rejected_total": sum(v for n, v in meta["rejected"].items() if n != "family-title-via-bib"),
+        "mainres": sum(mainres.values()),
+        "mainres_configs": len(mainres),
+        "wide_env": wide_env,
+    }
+
+
+def names_phrases(mp: dict[str, Any]) -> dict[str, str]:
+    """The slot dict for notes/names.md, every value measured from the population.
+
+    Left literal by design: the 16-name escape list, the 6 merged-keys list, the deleted-gate names
+    list, the singleton examples, the curated `decl_top` excerpt (the page drops two of the report's
+    eight tokens), the gate formula, and the words-table title evidence — all curated prose the writer
+    does not compute. `env_cap`'s 8 is a code constant in `build_index.py`, not a measurement.
+    """
+    rows, meta = mp["rows"], mp["meta"]
+    subject, citation = mp["subject"], mp["citation"]
+    row = {r["name"]: r for r in subject}
+    edges, fam_total = mp["edges"], mp["fams"]
+    counts = [len(r["fams"]) for r in subject]
+    layer_hits = {flag: sum(1 for r in subject if r[key]) for flag, _label, key in NAMES_LAYERS}
+    top = sorted(subject, key=lambda r: (-len(r["fams"]), r["name"]))[:40]
+    merged, escape = meta["merged"], meta["escape_names"]
+    pr = {k: (mid, low) for k, _cap, mid, low in meta["probe"]}
+    avg = f"{edges / fam_total:.1f}"
+    med = statistics.median(counts)
+    p: dict[str, str] = {}
+
+    def cell(v: int) -> str:
+        return f(v) if v else "—"
+
+    def probe(t: str) -> str:
+        return f"{pr[t][0]}/{pr[t][1]}"
+
+    p["names_total"] = f"{f(len(rows))} name keys measured over the corpus"
+    p["names_subject a"] = f"{f(len(subject))} of"
+    p["names_subject b"] = "them appear in a title layer"
+    p["names_citation a"] = f"The other {f(len(citation))} are"
+    p["names_citation b"] = "found only in prose"
+    p["names_edges"] = f"The subject names produce {f(edges)} family-name edges over all {fam_total} families"
+    p["names_zero a"] = "No name resolves to"
+    p["names_zero b"] = f"zero families ({mp['no_family']})"
+    p["names_allfams a"] = (f"every family has a subject-name hit ({fam_total - mp['no_hit']} of "
+                            f"{fam_total}, so {mp['no_hit']} families with no name")
+    p["names_allfams b"] = "hit)"
+    p["names_traces"] = (f"all {mp['traces_covered']} published reasoning-trace families are "
+                         f"covered by subject names")
+    p["layerintro"] = f"Subject names with at least one hit in the layer, over the {f(len(subject))} subject names:"
+    for flag, layer_label, _key in NAMES_LAYERS:
+        p[f"layer_{flag}"] = f"`{flag}` {layer_label} | {f(layer_hits[flag])}"
+    p["prose550 a"] = f"{f(layer_hits['b'])} of {f(len(subject))} subject names also"
+    p["prose550 b"] = "occur in prose"
+    ca = row["cauchy"]
+    p["cauchy_prose"] = (f"`cauchy` appears in {f(len(ca['body_fams']))} family-title sets' prose and in "
+                         f"{len(ca['env_title_fams'])} theorem-environment titles")
+    p["decl_pairs a"] = "the corpus has"
+    p["decl_pairs b"] = (f"{mp['mainres']} `main_results` entries over {mp['mainres_configs']} configs, "
+                         f"whose declaration names decompose into {meta['decl_tokens']}")
+    p["decl_pairs c"] = f"distinct CamelCase tokens ({meta['decl_entries']} distinct config+declaration pairs)"
+    p["cauchy_232"] = f"`cauchy` occurs in the prose of {f(len(ca['fams']))} of {fam_total} families"
+    wang, zhang = row["wang"], row["zhang"]
+    p["wang_zhang a"] = (f"`wang` is a subject name in {len(wang['fams'])} families' records and a "
+                         f"bibliography author in {len(wang['bib_fams'])} of")
+    p["wang_zhang b"] = f"them; `zhang` in {len(zhang['fams'])} and {len(zhang['bib_fams'])}"
+    p["tsv_rows"] = f"`notes/index/names.tsv` carries all {f(len(rows))} rows with a `role` column"
+    p["spellings"] = (f"{mp['spellings']} of the {f(len(subject))} subject names are spelled "
+                      f"more than one way in prose alone")
+    p["spellings_count"] = f"the count of names with >1 prose spelling is {mp['spellings']}"
+    for t in NAMES_PROBE:
+        p[f"probe_{t}"] = f"`{t}` | {f(pr[t][0])} | {f(pr[t][1])}"
+    p["fail_factor a"] = f"`the` and `all` fail by a factor of {round(pr['the'][1] / pr['the'][0])} and"
+    p["fail_factor b"] = f"{round(pr['all'][1] / pr['all'][0])}"
+    p["games_lane"] = f"`games` ({probe('games')}) and `lane` ({probe('lane')}) fail"
+    p["catalan_koebe"] = f"`catalan` ({probe('catalan')}) and `koebe` ({probe('koebe')}) pass"
+    p["cauchy_gate"] = (f"`cauchy` is capitalized {f(pr['cauchy'][0])} times mid-sentence and written "
+                        f"lowercase {pr['cauchy'][1]} times")
+    p["ladder_intro"] = f"Candidate keys are the union of the four title/declaration layers: {f(meta['title_cands'])} keys"
+    p["ladder_reject a"] = (f"{f(mp['rejected_total'])} are rejected, leaving "
+                            f"{f(meta['title_cands'] - mp['rejected_total'])}; the plural merge below "
+                            f"removes {len(merged)},")
+    p["ladder_reject b"] = f"so {f(len(subject))} subject names remain"
+    for bucket in NAMES_LADDER:
+        p[f"ladder_{bucket}"] = f"`{bucket}` | {f(meta['rejected'].get(bucket, 0))}"
+    p["cat_adm a"] = f"`cat` ({probe('cat')}) and"
+    p["cat_adm b"] = f"`adm` ({probe('adm')}) both pass the mid-sentence name test"
+    p["escape_count"] = f"{len(escape)} keys are kept on that basis"
+    p["escape_of a"] = f"one of the {len(escape)} family-title escape"
+    p["escape_of b"] = "names"
+    p["words_count"] = f"{NAMES_NUMBER_WORDS[len(NAMES_WORDS)]} keys clear the mid-sentence gate"
+    p["boolean_kept a"] = f"`boolean` ({pr['boolean'][0]} mid / {pr['boolean'][1]}"
+    p["boolean_kept b"] = "lowercase"
+    maker, snaky = row["maker"], row["snaky"]
+    p["maker_snaky a"] = f"{maker['mid']}/{maker['low']} and"
+    p["maker_snaky b"] = f"{snaky['mid']}/{snaky['low']} mid-sentence"
+    for r in top:
+        p[f"yield_{r['name']}"] = (f"`{r['name']}` | {cell(len(r['fams']))} | "
+                                   f"{cell(len(r['fam_title_fams']))} | {cell(len(r['ms_title']))} | "
+                                   f"{cell(len(r['env_title_fams']))} | {cell(len(r['decl']))} | "
+                                   f"{cell(len(r['body_fams']))} | {cell(len(r['bib_fams']))}")
+    p["yield_bottom"] = f"The bottom of the list is {mp['singletons']} names attached to exactly one family"
+    p["dist_edges"] = f"{f(edges)} subject edges over {fam_total} families: {avg} subject names per family on average"
+    p["dist_median a"] = f"Median {med:g}"
+    p["dist_median b"] = (f"families per name; {mp['singletons']} names attach to exactly 1 family; "
+                          f"{sum(1 for c in counts if c >= 100)} names attach to 100 or more.")
+    p["totals a"] = (f"{f(meta['tex_files'])} `.tex` files at depth 1–3; {f(meta['env_count'])} "
+                     f"statement environments carrying an optional title;")
+    p["totals b"] = (f"{f(meta['bib_entries'])} `.bib` entries, {f(meta['bib_author_keys'])} "
+                     f"distinct author-surname keys")
+    p["sources_env a"] = f"`notes/sources.tsv` reports {f(mp['wide_env'])}"
+    p["sources_env b"] = "environments under a wider pattern"
+    p["avg_family"] = f"The average family carries {avg} subject names"
+    p["citation_no_page"] = f"({f(len(citation))} of them)"
+    p["merge_count"] = f"{len(merged)} keys merged:"
+    p["plural_forms a"] = f"{meta['plural_title']} plural"
+    p["plural_forms b"] = (f"forms appear in a title layer whose singular also appears in a title "
+                           f"layer; {meta['plural_name_like']} of them clear the")
+    p["plural_forms c"] = "mid-sentence name test"
+    p["boolean_dioph"] = (f"`boolean` ({len(row['boolean']['fams'])} families) and `diophantine` "
+                          f"({len(row['diophantine']['fams'])}) are kept as name-derived adjectives")
+    p["notchecked_prose a"] = f"{f(meta['rejected']['prose-word'])} candidates were rejected as prose-words by"
+    p["notchecked_prose b"] = "a capitalization ratio"
+    p["notchecked_nopro"] = f"the {meta['rejected']['no-prose-evidence']} `no-prose-evidence` rejections"
+    return p
+
+
+def names_page(p: dict[str, str]) -> str:
+    return ENV.get_template("names.md.j2").render(p=p)
+
+
 def main() -> None:
     mp = en.population()
     ip = M.population()
+    np_ = names_population()
     SOURCES_MD.write_text(sources_page(), encoding="utf-8")
     ABSTRACTS_MD.write_text(abstracts_page(), encoding="utf-8")
     NAMED_RESULTS_MD.write_text(named_results_page(mp), encoding="utf-8")
     INDEX_DESIGN_MD.write_text(index_page(ip), encoding="utf-8")
-    for page in (SOURCES_MD, ABSTRACTS_MD, NAMED_RESULTS_MD, INDEX_DESIGN_MD):
+    NAMES_MD.write_text(names_page(names_phrases(np_)), encoding="utf-8")
+    for page in (SOURCES_MD, ABSTRACTS_MD, NAMED_RESULTS_MD, INDEX_DESIGN_MD, NAMES_MD):
         out = page.read_text(encoding="utf-8")
         print(f"{page.name} written  lines {len(out.splitlines())}  bytes {len(out.encode())}")
     ms, ma = measure(), CA.measure()
