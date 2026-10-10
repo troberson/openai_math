@@ -335,7 +335,7 @@ def mutants():
         ("unchecked page claimed as checked", original.replace("| `verify_abstracts.py` | `notes/abstracts.md` |", "| `verify_abstracts.py` | `notes/abstracts.md`, `notes/links.md` |"), "md census cell"),
         ("Not checked section deleted", original.replace("## Not checked", "## Checked"), "no '## Not checked' section"),
         ("summaries count altered", original.replace("| `notes/summaries/` | **21** |", "| `notes/summaries/` | **22** |"), "census row notes/summaries/"),
-        ("templates count altered", original.replace("| `notes/templates/` | **20** |", "| `notes/templates/` | **3** |"), "census row notes/templates/"),
+        ("templates count altered", original.replace("| `notes/templates/` | **21** |", "| `notes/templates/` | **3** |"), "census row notes/templates/"),
     ]
     fails = []
     for label, mutated, needle in cases:
