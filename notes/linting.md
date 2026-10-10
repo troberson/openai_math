@@ -180,8 +180,8 @@ must be cumulative over the block, not per line), and re-inserting a blank line 
 - **jinja2 is used by `build_index.py` and `render_reports.py`** — `math-a0r.3` moved the prose of
   every generated index page into `notes/templates/`: `family.md.j2`, `discipline.md.j2`,
   `topic.md.j2`, `name.md.j2`, and `index-readme.md.j2` (**5** skeletons); `math-a0r.4` added the
-  report templates under `notes/templates/report/`, and `math-a0r.5` added `names.md.j2` and
-  `proof-density.md.j2` — **6** templates, rendered by `render_reports.py`. Both
+  report templates under `notes/templates/report/`, and `math-a0r.5` added `names.md.j2`,
+  `proof-density.md.j2` and `index-links.md.j2` — **7** templates, rendered by `render_reports.py`. Both
   render through `python3` under the gate (gate.sh runs plain `python3`, not the venv interpreter), so
   the gate depends on jinja2 being importable by the system interpreter too; both interpreters report
   **3.1.6** here.
