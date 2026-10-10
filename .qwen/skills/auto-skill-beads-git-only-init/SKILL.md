@@ -1,9 +1,10 @@
 ---
 name: beads-git-only-init
 description: Initialize bd (beads) so the issue store lives in git, not Dolt — the no-db config key
-  (not an init flag), the .git/info/exclude trap that blocks tracking, export/hook behaviour, the
-  agent files `bd init` scaffolds (keep and revise CLAUDE.md), and wrapping `bd prime` so its
-  push-mandatory context cannot override repo rules.
+  (not an init flag), the .git/info/exclude trap that blocks tracking, export/hook behaviour (bd
+  create does not re-export), the agent files `bd init` scaffolds (keep and revise CLAUDE.md), seeding
+  an epic with sub-beads (--deps direction, --body-file absolute path, export-and-count before
+  committing), and wrapping `bd prime` so its push-mandatory context cannot override repo rules.
 source: auto-skill
 extracted_at: '2026-10-07T08:30:15.038Z'
 ---
@@ -187,6 +188,50 @@ Use `--description=-` with stdin for any text containing quotes, apostrophes, or
 follow-up list said "the 28 two-manuscript families"; the ledger says 96 families have exactly 2
 manuscripts. The 28 are a named subset of one reading pass. Write the subset with its list and state
 the repo-wide count, or the issue becomes a false census.
+
+## 8b. Turning measured options into an epic with sub-beads
+
+When an investigation ends in priced options, the follow-through is one epic plus one bead per fix.
+The syntax details that cost time:
+
+```bash
+bd create "<umbrella>" --type epic --priority P2 --body-file /abs/path/epic.md      # ABSOLUTE path
+bd create "<fix title>" --parent <epic> --priority P2 --body-file /abs/path/b1.md
+bd create "<close>"    --parent <epic> --priority P2 --deps "epic.1,epic.2" --body-file /abs/path/b6.md
+bd show <close-id>      # DEPENDS ON: epic.1 epic.2 ...  — verify the direction, do not assume it
+```
+
+- **`--deps` direction.** Bare ids mean *this issue depends on those*. A `blocks:` prefix makes the
+  **new** issue the blocker of the named one — the inverse of what you asked for, and it silently
+  empties `bd ready`. Use bare ids for a dependent; verify with `bd show`.
+- **`--body-file` needs an absolute path**; a relative one fails. For inline text use
+  `--description=-` with stdin.
+- `bd create --help` lists `--type (bug|feature|task|epic|chore|decision)`.
+- **Give the close-out bead deps on every fix bead.** It then stays out of `bd ready` until the work
+  lands, which is what you want for a "sweep the docs and run the full gate" bead.
+
+**What goes in each body.** The epic carries the baseline measurement with its rule, the concentration
+("4 rows = 58 % of a pass"), and the **scope boundary against other tracked epics** ("this epic is
+wall time; the join refactoring epic does not overlap; the read cache belongs here"). Each fix bead
+carries: the measured evidence, the change, the **measured saving**, the **risk to the byte-identity
+proof**, and its **prove list** (which checkers, plain and `--mutant`, which gate rows, the lint
+driver, the twice-run). A body with a prove list is a bead a later session can execute cold.
+
+**Then export before you commit** — `bd create` does not re-export the tracked store (§3):
+
+```bash
+bd export -o .beads/issues.jsonl && wc -l < .beads/issues.jsonl && grep -c '<prefix>' .beads/issues.jsonl
+```
+
+Measured: after creating 7 issues the file still read 105 lines with **zero** of them. Commit the
+store as its **own commit** (one purpose per commit), then the code/docs as separate commits, and
+confirm with `git show --stat` that the code commit carries no store lines (the pre-commit hook
+re-exports and stages them otherwise).
+
+**When the instruction is "add these as beads, don't claim them / don't begin implementation":**
+create, export, commit, push, and **stop**. Report the ids, the dependency verification, the commit
+shas, and say explicitly that the new rows sit in `bd ready` as *not-claimable* work. Claiming one is
+the failure mode the instruction exists to prevent.
 
 ## 9. Do not commit unasked
 

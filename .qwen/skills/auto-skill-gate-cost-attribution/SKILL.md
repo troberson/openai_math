@@ -188,6 +188,56 @@ package is `@functools.cache def rendered(page)` keyed by the **page NAME** (`re
 dispatches `PAGE_RENDERERS[page]()`); passing page *text* raises `KeyError`. A cache keyed by name
 explains why one mutant row is 1.05× its plain run while another is 7.8×.
 
+## 6b. Census the fleet's read/write graph by **open mode**, not by AST
+
+The cache-scope decision and any claim about row order both need one thing: which scripts write the
+generated layer, and in which mode. Measure it with the same audit hook, capturing `(path, mode)`:
+
+```python
+if event == "open":
+    path, mode = str(args[0]), (args[1] if len(args) > 1 else "r")
+    opens.append((path, mode))
+# strip the repo root first, then bucket by top-level dir
+rel = pathlib.Path(path).resolve().relative_to(ROOT)
+```
+
+Print two tables: per-path counts **with their mode set** for every path under the generated dir, and
+every write-mode open **outside** it. That is what answers "do the scripts read what they write?"
+
+**Trap: an AST census is blind to branches.** Mapping a name to its enclosing call context tells you a
+`write_text` exists in the file, not that it runs. Here it classified a checker as read-write on two
+pages that a plain run opens in mode `r` only — the write lives solely in the `--mutant` branch. The
+mode strings from a real run are the authority for "writes in this mode"; an AST census is a candidate
+list. (Same class of bug as counting docstrings as call sites.)
+
+**Trap: prefix comparison against absolute paths.** Bucketing by `path.startswith("notes/")` while the
+paths are absolute reports **every** path as "other". Resolve and strip the root, then bucket.
+
+**Trap: parsing your own probe output.** `awk '/,w, /'` matches only the write-mode section, not the
+per-path table. Parse the table with block tracking:
+`awk '/^=== /{blk=$2} /paths/{on=1;next} /write-mode/{on=0} on && NF>=3 && $2 ~ /[wax]/ {print blk": "$2"  "$3}'`.
+And `sed -n '/^=== verify_foo/,/^=== /p'` matches **2 lines** — the target scripts print their own
+`===` report headings, so block boundaries are unreliable. Get line numbers with `grep -n '^=== '`
+first, then `sed -n 'a,bp'`.
+
+What the census produced here: every writer reads the generated layer it writes
+(`extract_subfindings` reads `catalog.tsv`; `build_sources` reads `catalog.tsv` **and**
+`subfindings.tsv`; `extract_links` reads `links.tsv` in modes `r,w` and reads the page the renderer
+writes), while the checker fleet writes almost nothing — two exceptions, one of them only in its
+`--mutant` branch.
+
+**Then read the row order off the graph.** Compare each writer's read set with the row that writes
+that file. Two reads pointed **backwards** in the runner's order, so the generator block is **not
+topological** and no single-pass ordering satisfies it — the twice-run is what absorbs the cycle. Two
+consequences to state: a cross-row cache over the generated layer is unsafe (the file a row reads is
+the file a later row rewrote), and a "just reorder the rows" fix must be proven with the md5 snapshot,
+not argued.
+
+**Check what your byte-identity snapshot covers before citing it as proof.** The driver's snapshot
+here is the 9 generated TSVs plus the generated index tree — it does **not** cover the generated
+markdown pages, so page oscillation between passes is invisible to the run1-vs-run2 diff. Say which
+layers the twice-run actually proves.
+
 ## 7. Price the options, then recommend an order
 
 Table every candidate with **measured cost removed** and **risk to the twice-run byte-identity proof**:
