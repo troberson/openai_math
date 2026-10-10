@@ -32,6 +32,8 @@ import re
 import statistics
 import subprocess
 import sys
+from collections.abc import Callable
+from functools import cache
 from typing import Any
 
 from jinja2 import Environment, FileSystemLoader
@@ -3032,37 +3034,89 @@ def crosscheck_page(p: dict[str, str]) -> str:
     return ENV.get_template("counterexample-crosscheck.md.j2").render(p=p)
 
 
+# The registry: page name -> the call that measures it, and page path -> the call that renders it.
+# A checker that wants the writer's bytes for a page calls render_page(page) instead of re-deriving
+# them, and a checker that wants the writer's numbers calls population_of(name). Both are cached, so
+# a run that renders a page and then reports its slots measures the corpus once.
+@cache
+def population_of(name: str) -> Any:
+    return POPULATIONS[name]()
+
+
+POPULATIONS: dict[str, Callable[[], Any]] = {
+    "named-results": en.population,
+    "index-design": M.population,
+    "names": names_population,
+    "proof-density": proof_density_population,
+    "index-links": index_links_population,
+    "links": links_population,
+    "dependency-drift": drift_population,
+    "verification-dirs": verification_dirs_population,
+    "scope-exclusions": scope_exclusions_population,
+    "topics": lambda: topics_population(links_full(population_of("links"))),
+    "t0-chains": t0_chains_population,
+    "subfinding-pairs": subfinding_pairs_population,
+    "README": readme_population,
+    "counterexample-crosscheck": crosscheck_population,
+}
+
+
+PAGE_RENDERERS: dict[pathlib.Path, Callable[[], str]] = {
+    SOURCES_MD: sources_page,
+    ABSTRACTS_MD: abstracts_page,
+    NAMED_RESULTS_MD: lambda: named_results_page(population_of("named-results")),
+    INDEX_DESIGN_MD: lambda: index_page(population_of("index-design")),
+    NAMES_MD: lambda: names_page(names_phrases(population_of("names"))),
+    PROOF_DENSITY_MD: lambda: proof_density_page(proof_density_phrases(population_of("proof-density"))),
+    INDEX_LINKS_MD: lambda: index_links_page(index_links_phrases(population_of("index-links"))),
+    LINKS_MD: lambda: links_page(links_phrases(population_of("links"))),
+    DRIFT_MD: lambda: drift_page(drift_phrases(population_of("dependency-drift"))),
+    VERIF_MD: lambda: verification_dirs_page(verification_dirs_phrases(population_of("verification-dirs"))),
+    EX_MD: lambda: scope_exclusions_page(scope_exclusions_phrases(population_of("scope-exclusions"))),
+    TOPICS_MD: lambda: topics_page(topics_phrases(population_of("topics"))),
+    T0_CHAINS_MD: lambda: t0_chains_page(t0_chains_phrases(population_of("t0-chains"))),
+    SP_MD: lambda: subfinding_pairs_page(subfinding_pairs_phrases(population_of("subfinding-pairs"))),
+    README_MD: lambda: readme_page(readme_phrases(population_of("README"))),
+    CROSSCHECK_MD: lambda: crosscheck_page(crosscheck_phrases(population_of("counterexample-crosscheck"))),
+}
+
+
+def render_page(page: pathlib.Path) -> str:
+    """The writer's bytes for a templated page — the baseline a render-diff compares the page against."""
+    return PAGE_RENDERERS[page]()
+
+
 def main() -> None:
-    mp = en.population()
-    ip = M.population()
-    np_ = names_population()
-    pdp = proof_density_population()
-    ilk = index_links_population()
-    lk = links_population()
-    dp = drift_population()
-    xp = scope_exclusions_population()
-    vp = verification_dirs_population()
-    tp = topics_population(links_full(lk))
-    tcp = t0_chains_population()
-    spp = subfinding_pairs_population()
-    rmp = readme_population()
-    xcp = crosscheck_population()
-    SOURCES_MD.write_text(sources_page(), encoding="utf-8")
-    ABSTRACTS_MD.write_text(abstracts_page(), encoding="utf-8")
-    NAMED_RESULTS_MD.write_text(named_results_page(mp), encoding="utf-8")
-    INDEX_DESIGN_MD.write_text(index_page(ip), encoding="utf-8")
-    NAMES_MD.write_text(names_page(names_phrases(np_)), encoding="utf-8")
-    PROOF_DENSITY_MD.write_text(proof_density_page(proof_density_phrases(pdp)), encoding="utf-8")
-    INDEX_LINKS_MD.write_text(index_links_page(index_links_phrases(ilk)), encoding="utf-8")
-    LINKS_MD.write_text(links_page(links_phrases(lk)), encoding="utf-8")
-    DRIFT_MD.write_text(drift_page(drift_phrases(dp)), encoding="utf-8")
-    VERIF_MD.write_text(verification_dirs_page(verification_dirs_phrases(vp)), encoding="utf-8")
-    EX_MD.write_text(scope_exclusions_page(scope_exclusions_phrases(xp)), encoding="utf-8")
-    TOPICS_MD.write_text(topics_page(topics_phrases(tp)), encoding="utf-8")
-    T0_CHAINS_MD.write_text(t0_chains_page(t0_chains_phrases(tcp)), encoding="utf-8")
-    SP_MD.write_text(subfinding_pairs_page(subfinding_pairs_phrases(spp)), encoding="utf-8")
-    README_MD.write_text(readme_page(readme_phrases(rmp)), encoding="utf-8")
-    CROSSCHECK_MD.write_text(crosscheck_page(crosscheck_phrases(xcp)), encoding="utf-8")
+    mp = population_of("named-results")
+    ip = population_of("index-design")
+    np_ = population_of("names")
+    pdp = population_of("proof-density")
+    ilk = population_of("index-links")
+    lk = population_of("links")
+    dp = population_of("dependency-drift")
+    xp = population_of("scope-exclusions")
+    vp = population_of("verification-dirs")
+    tp = population_of("topics")
+    tcp = population_of("t0-chains")
+    spp = population_of("subfinding-pairs")
+    rmp = population_of("README")
+    xcp = population_of("counterexample-crosscheck")
+    SOURCES_MD.write_text(render_page(SOURCES_MD), encoding="utf-8")
+    ABSTRACTS_MD.write_text(render_page(ABSTRACTS_MD), encoding="utf-8")
+    NAMED_RESULTS_MD.write_text(render_page(NAMED_RESULTS_MD), encoding="utf-8")
+    INDEX_DESIGN_MD.write_text(render_page(INDEX_DESIGN_MD), encoding="utf-8")
+    NAMES_MD.write_text(render_page(NAMES_MD), encoding="utf-8")
+    PROOF_DENSITY_MD.write_text(render_page(PROOF_DENSITY_MD), encoding="utf-8")
+    INDEX_LINKS_MD.write_text(render_page(INDEX_LINKS_MD), encoding="utf-8")
+    LINKS_MD.write_text(render_page(LINKS_MD), encoding="utf-8")
+    DRIFT_MD.write_text(render_page(DRIFT_MD), encoding="utf-8")
+    VERIF_MD.write_text(render_page(VERIF_MD), encoding="utf-8")
+    EX_MD.write_text(render_page(EX_MD), encoding="utf-8")
+    TOPICS_MD.write_text(render_page(TOPICS_MD), encoding="utf-8")
+    T0_CHAINS_MD.write_text(render_page(T0_CHAINS_MD), encoding="utf-8")
+    SP_MD.write_text(render_page(SP_MD), encoding="utf-8")
+    README_MD.write_text(render_page(README_MD), encoding="utf-8")
+    CROSSCHECK_MD.write_text(render_page(CROSSCHECK_MD), encoding="utf-8")
     for page in (SOURCES_MD, ABSTRACTS_MD, NAMED_RESULTS_MD, INDEX_DESIGN_MD, NAMES_MD,
                  PROOF_DENSITY_MD, INDEX_LINKS_MD, LINKS_MD, DRIFT_MD, VERIF_MD, EX_MD, TOPICS_MD,
                  T0_CHAINS_MD, SP_MD, README_MD, CROSSCHECK_MD):
