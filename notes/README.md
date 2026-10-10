@@ -30,8 +30,8 @@ python3 notes/scripts/extract_verification_dirs.py  # the 30 bundles, each one's
 python3 notes/scripts/verify_verification_dirs.py --mutant  # checks both sections of notes/verification-dirs.md against the bundle files
 python3 notes/scripts/measure_index_sizes.py  # the population behind notes/index-design.md, the rendered tables' row counts, and the disk link check; report-only
 python3 notes/scripts/verify_index_design.py --mutant  # checks notes/index-design.md: anchors, every count (schema rows read from notes/index/*.tsv), the five tabulated byte sizes
-python3 notes/scripts/build_report_templates.py  # rebuilds all nine report templates from each committed page and the slot dict its writer supplies (2 args = one page); writes notes/templates/report/<page>.j2
-python3 notes/scripts/render_reports.py       # writes notes/sources.md, notes/abstracts.md, notes/named-results.md, notes/index-design.md, notes/names.md, notes/proof-density.md, notes/index-links.md, notes/links.md and notes/dependency-drift.md from notes/templates/report/; run twice, byte-identical
+python3 notes/scripts/build_report_templates.py  # rebuilds all fourteen report templates from each committed page and the slot dict its writer supplies (2 args = one page); writes notes/templates/report/<page>.j2
+python3 notes/scripts/render_reports.py       # writes notes/sources.md, notes/abstracts.md, notes/named-results.md, notes/index-design.md, notes/names.md, notes/proof-density.md, notes/index-links.md, notes/links.md, notes/dependency-drift.md, notes/verification-dirs.md, notes/scope-exclusions.md, notes/topics.md, notes/t0-chains.md and notes/subfinding-pairs.md from notes/templates/report/; run twice, byte-identical
 python3 notes/scripts/build_sources.py      # writes notes/sources.tsv (the LaTeX surface of all 719 manuscripts) and prints the reconciliation
 python3 notes/scripts/verify_sources.py --mutant  # checks notes/sources.md against preprints/: every count, every anchor, every directory name
 python3 notes/scripts/measure_topics.py     # measures notes/topics.tsv over the four text layers; report-only, writes nothing

@@ -181,7 +181,8 @@ must be cumulative over the block, not per line), and re-inserting a blank line 
   every generated index page into `notes/templates/`: `family.md.j2`, `discipline.md.j2`,
   `topic.md.j2`, `name.md.j2`, and `index-readme.md.j2` (**5** skeletons); `math-a0r.4` added the
   report templates under `notes/templates/report/`, and `math-a0r.5` added `names.md.j2`,
-  `proof-density.md.j2`, `index-links.md.j2`, `links.md.j2` and `dependency-drift.md.j2` — **9**
+  `proof-density.md.j2`, `index-links.md.j2`, `links.md.j2`, `dependency-drift.md.j2` and
+  `verification-dirs.md.j2` and `scope-exclusions.md.j2` and `topics.md.j2` and `t0-chains.md.j2` and `subfinding-pairs.md.j2` — **14**
   templates, rendered by
   `render_reports.py`. Both
   render through `python3` under the gate (gate.sh runs plain `python3`, not the venv interpreter), so

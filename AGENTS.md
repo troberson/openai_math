@@ -47,7 +47,7 @@ lives in this file and nowhere else.
   `resolves_named` scope swap) with `named-results.tsv` **absent** beside it — the page is
   report-fed, not table-fed,
   `summaries/<discipline>/<NNN>-<name>.md`, `templates/` (the page skeletons the renderers read —
-  **5** hand-written index skeletons `build_index.py` renders, plus **9** report templates under
+  **5** hand-written index skeletons `build_index.py` renders, plus **14** report templates under
   `templates/report/` that `build_report_templates.py` builds from a page's own bytes at `HEAD`; a
   report template is generated, so edit the writer's label dict in `render_reports.py` and re-render
   rather than hand-editing it) — the only place a generated page's text lives, `notes/scripts/`.
