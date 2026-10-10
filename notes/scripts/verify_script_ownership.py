@@ -357,9 +357,16 @@ def check(text):
     index = [f for f in files if "index" in f.parts]
     summaries = [f for f in files if "summaries" in f.parts]
     templates = [f for f in files if "templates" in f.parts]
+    uphist = [f for f in files if "upstream_history" in f.parts]
     top = [f for f in files if f.parent == NOTES]
     for f in files:
-        if f not in index and f not in summaries and f not in templates and f not in top:
+        if (
+            f not in index
+            and f not in summaries
+            and f not in templates
+            and f not in uphist
+            and f not in top
+        ):
             p.append(f"file under notes/ owned by no rule: {f.relative_to(ROOT)}")
     top_tsv = sorted(f.name for f in top if f.suffix == ".tsv")
     gen_tsv = sorted(n for n in top_tsv if f"notes/{n}" in set(derived.values()))
@@ -388,6 +395,7 @@ def check(text):
         "notes/index/": len(index),
         "notes/summaries/": len(summaries),
         "notes/templates/": len(templates),
+        "notes/upstream_history/": len(uphist),
         "notes/*.tsv": len(top_tsv),
         "notes/*.md": len(top_md),
         "notes/": len(files),

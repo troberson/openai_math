@@ -134,7 +134,7 @@ rows below, **2** more for `verify_conjecture_standing.py`, which the list runs 
 | `verify_subfindings.py` | `notes/subfindings.tsv` | plain + `--mutant` | 0.1 / 0.6 |
 | `verify_summaries.py` | `notes/summaries/` | plain + `--mutant`, no page argument | 0.3 / 1.0 |
 | `verify_t0_chains.py` | `notes/t0-chains.md` | plain + `--mutant` | 0.1 / 0.2 |
-| `verify_upstream_history.py` | `upstream_history/` — the three pages, outside `notes/` | plain + `--mutant` | 0.7 / 0.5 |
+| `verify_upstream_history.py` | `notes/upstream_history/` — the three pages | plain + `--mutant` | 0.7 / 0.5 |
 | `verify_verification_dirs.py` | `notes/verification-dirs.md` | plain + `--mutant` | 0.1 / 0.8 |
 
 Cost is plain seconds / `--mutant` seconds, measured 2026-10-10 as one timed pass per checker with
@@ -207,9 +207,10 @@ The package is not in the census below: the script population is `notes/scripts/
 | `notes/index/` | **1,049** | generated — `build_index.py` |
 | `notes/summaries/` | **21** | hand-written — the reading record |
 | `notes/templates/` | **22** | **5** hand-written index skeletons + **17** report templates built by `build_report_templates.py` |
+| `notes/upstream_history/` | **3** | hand-written — one page per upstream merge, moved from the repository root on 2026-10-10 |
 | `notes/*.tsv` | **8** | **6** generated, **2** hand-authored |
 | `notes/*.md` | **28** | hand-written — **16** with a checker, **12** without |
-| `notes/` total, scripts excluded | **1,128** | — |
+| `notes/` total, scripts excluded | **1,131** | — |
 
 The generated TSVs are the six writer targets. The two hand-authored tables are:
 
@@ -262,8 +263,8 @@ named; `read_manuscript.py` and `refresh_summary_line_counts.py` are the rest of
 `verify_citations.py`, `verify_findings.py` and `verify_named_conjectures.py` are the checkers for
 `notes/citations.md`, `notes/findings.md` and `notes/named-conjectures.md`, so three pages carried
 measurements whose checker no document named; `verify_upstream_history.py` is the tooling behind
-`upstream_history/`, the pages that record each upstream merge, which sit outside `notes/` and so
-outside this page's census; `measure_templates.py` is the census behind `notes/templates.md`, added by
+`notes/upstream_history/`, the pages that record each upstream merge, which moved under `notes/` on
+2026-10-10 and are inside this page's census; `measure_templates.py` is the census behind `notes/templates.md`, added by
 the pass that added that page; `measure_checker_needles.py` is the per-checker needle probe the
 checker-coverage bead promoted; `dump_template_slots.py` is the slot dump that prints the same dict the census measures, promoted by `math-a0r.7`; and `render_reports.py` is the renderer for the seventeen report-fed pages.
 All 48 are named here and in the command
@@ -375,7 +376,7 @@ tracked files under `notes/` before the bead that produced them closes.
 - **A needle can match nothing and the run stays green.** `verify_upstream_history.py`'s `SLUG`
   pattern required a trailing `/` inside the backticks **and** a 3-letter month, while the corpus
   writes full month names only (`September` 576, `October` 172 over the **749** `preprints/` dirs), so
-  it matched **0** tokens on the three pages it checks — `upstream_history/2026-10-07_3014888.md`
+  it matched **0** tokens on the three pages it checks — `notes/upstream_history/2026-10-07_3014888.md`
   carries **14** backticked manuscript-slug tokens of that shape, written without the slash. The run
   exited 0 because nothing was asserted, and a slug renamed to one the release does not name was not
   caught. `math-lon.2.5` ported the file and left the pattern as it is, because its acceptance is

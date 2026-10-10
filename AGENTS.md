@@ -560,7 +560,7 @@ lives in this file and nowhere else.
   formalized: both levels get the anchor and quotation checks, only `###` is compared with the
   population, and each `####` family must be title-named, non-T0, and outside the population. Flags
   twelve injected mutants. It writes nothing.
-- Check the three `upstream_history/` pages with
+- Check the three `notes/upstream_history/` pages with
   `python3 notes/scripts/verify_upstream_history.py --mutant` before quoting any of their counts —
   `path:line` and `path:a-b` anchors resolve, `…suffix` and bare `:N` anchors resolve against the
   nearest preceding explicit path, every `*"…"*` matches the anchored lines verbatim modulo

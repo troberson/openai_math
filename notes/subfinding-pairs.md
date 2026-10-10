@@ -136,7 +136,7 @@ manuscript of family NNN in `notes/subfindings.tsv`, whose `title` column is the
   two clauses that paired here before the merge — the products-of-K3 theorem and the Kuga–Satake
   algebraicity result — were withdrawn on 2026-10-06 and their clauses are gone from the overview
   abstract, so the family lost two accepted pairs and three manuscripts. See
-  `upstream_history/2026-10-07_3014888.md`.
+  `notes/upstream_history/2026-10-07_3014888.md`.
 
 ## 034 · `overview.tex:146` · n=14 · T0
 
