@@ -36,6 +36,7 @@ import compare_abstracts as CA
 import extract_named_results as en
 import measure_index_sizes as M
 import measure_names as MN
+import measure_proof_density as PD
 from catlib import overview, preprints, tsv
 from catlib import yaml as Y
 from catlib.paths import COMPARATOR_DIR, LEDGER_TSV, PREPRINTS, ROOT, SUBFINDINGS_TSV
@@ -51,6 +52,7 @@ ABSTRACTS_MD = ROOT / "notes" / "abstracts.md"
 NAMED_RESULTS_MD = ROOT / "notes" / "named-results.md"
 INDEX_DESIGN_MD = ROOT / "notes" / "index-design.md"
 NAMES_MD = ROOT / "notes" / "names.md"
+PROOF_DENSITY_MD = ROOT / "notes" / "proof-density.md"
 
 
 def f(x: int) -> str:
@@ -873,22 +875,170 @@ def names_page(p: dict[str, str]) -> str:
     return ENV.get_template("names.md.j2").render(p=p)
 
 
+# The page's tables key to these, and the verdict pass mirrors measure_proof_density.report(): the
+# per-family control gates the two per-family signals, the per-manuscript control gates proofs/man.
+PD_SHAPE_KEYS = ("proofs", "proofs_per_man", "proofs_per_thm", "proofs_per_kb")
+PD_FLAG_KEYS = ("proofs_per_man", "proofs_per_thm", "proofs_per_kb")
+PD_SCALE = {"proofs": "family", "thms": "family", "proofs_per_man": "manuscript",
+            "proofs_per_thm": None, "proofs_per_kb": None, "kb_per_man": "manuscript"}
+PD_TABLE_KEYS = ("proofs", "thms", "proofs_per_man", "proofs_per_thm", "proofs_per_kb")
+PD_FLAG_SHORT = {"proofs_per_man": "man", "proofs_per_thm": "thm", "proofs_per_kb": "kb"}
+
+
+def pd_median(v: float) -> str:
+    """The page prints a median at one decimal from 1 up and at three below it."""
+    return f"{v:.1f}" if v >= 1 else f"{v:.3f}"
+
+
+def proof_density_population() -> dict[str, Any]:
+    """Everything notes/proof-density.md quotes, measured through the script the page names.
+
+    This page's checker IS the measurement (measure_proof_density.py --mutant), so the writer reuses
+    its statistic and its population build while the checker keeps its own gates and mutant list. The
+    split this module's header draws is against a checker importing the renderer, not against sharing
+    a measurement: verify_named_results.py re-derives its counts from extract_named_results.population()
+    exactly as this reuses measure_proof_density.build_families().
+    """
+    sources = PD.read_tsv(PD.SOURCES)
+    ledger = PD.read_tsv(PD.LEDGER)
+    fams = PD.build_families(sources, ledger)
+    tiers = {t: sum(1 for d in fams.values() if d["tier"] == t) for t in ("T3", "T2", "T1", "T0")}
+    med = {(key, t): PD.median([d[key] for d in fams.values() if d["tier"] == t])
+           for key, _lbl in PD.SIGNALS for t in ("T0", "T2", "T3")}
+    sep: dict[tuple[str, str, str], tuple[float, float]] = {}
+    for key, _lbl in PD.SIGNALS:
+        for a, b in PD.TIER_PAIRS:
+            auc, _z, pv = PD.auc_p([d[key] for d in fams.values() if d["tier"] == a],
+                                    [d[key] for d in fams.values() if d["tier"] == b])
+            sep[(key, a, b)] = (auc, pv)
+    ctl: dict[tuple[str, str, str], tuple[float, float]] = {}
+    for a, b in PD.TIER_PAIRS:
+        fa, _fz, fp = PD.auc_p([d["kb"] for d in fams.values() if d["tier"] == a],
+                               [d["kb"] for d in fams.values() if d["tier"] == b])
+        ctl[(a, b, "family")] = (fa, fp)
+        ma, _mz, mp_ = PD.auc_p([d["kb_per_man"] for d in fams.values() if d["tier"] == a],
+                                [d["kb_per_man"] for d in fams.values() if d["tier"] == b])
+        ctl[(a, b, "manuscript")] = (ma, mp_)
+    verdict: dict[tuple[str, str, str], str] = {}
+    for key, _lbl in PD.SIGNALS:
+        if key == "kb_per_man":
+            continue
+        for a, b in PD.TIER_PAIRS:
+            auc, pv = sep[(key, a, b)]
+            if auc >= PD.AUC_MIN and pv < PD.P_MAX:
+                scale = PD_SCALE[key]
+                verdict[(key, a, b)] = ("SIZE-EXPLAINED" if scale and
+                                         abs(auc - ctl[(a, b, scale)][0]) <= PD.SIZE_TOLERANCE
+                                         else "SEPARATES")
+            else:
+                verdict[(key, a, b)] = "NULL"
+    shapes = {(shape, key): PD.compare(fams, key, {shape: {f for f, d in fams.items()
+                                                            if shape in d["shapes"]}})[shape]
+              for shape in PD.SHAPES for key in PD_SHAPE_KEYS}
+    flags = {(flag, key): PD.compare(fams, key, {flag: {f for f, d in fams.items()
+                                                        if d.get(flag) == "1"}})[flag]
+             for flag in PD.FLAGS for key in PD_FLAG_KEYS}
+    st_ok, st_total = PD.selftest()
+    caught, mt_total, _cases = PD.mutants(PD.build_families)
+    return {
+        "rows": len(sources), "fams": len(fams),
+        "proofs": sum(d["proofs"] for d in fams.values()),
+        "thms": sum(d["thms"] for d in fams.values()),
+        "tiers": tiers,
+        "problems": len(PD.gate_checks(sources, ledger, fams)),
+        "selftest": (st_ok, st_total), "mutants": (caught, mt_total),
+        "med": med, "sep": sep, "ctl": ctl, "verdict": verdict,
+        "shapes": shapes, "flags": flags,
+        "signals": len(PD.SIGNALS), "pairs": len(PD.TIER_PAIRS),
+        "shape_contrasts": len(PD.SHAPES) * len(PD_SHAPE_KEYS),
+        "flag_contrasts": len(PD.FLAGS) * len(PD_FLAG_KEYS),
+        "auc_min": PD.AUC_MIN,
+    }
+
+
+def proof_density_phrases(mp: dict[str, Any]) -> dict[str, str]:
+    p: dict[str, str] = {}
+    p["rows"] = f(mp["rows"])
+    p["fams"] = f(mp["fams"])
+    p["proofs"] = f(mp["proofs"])
+    p["thms"] = f(mp["thms"])
+    p["tiers"] = " / ".join(f"{t} {mp['tiers'][t]}" for t in ("T3", "T2", "T1", "T0"))
+    p["gate_problems"] = f"All {mp['problems']} problems"
+    p["gate_selftest"] = f"statistic self-test {mp['selftest'][0]}/{mp['selftest'][1]}"
+    p["gate_mutants"] = f"injected mutants caught {mp['mutants'][0]}/{mp['mutants'][1]}"
+    for key, lab in (("proofs", "medrow_proofs"), ("thms", "medrow_thms")):
+        p[lab] = " | ".join(pd_median(mp["med"][(key, t)]) for t in ("T0", "T2", "T3"))
+    for key, _lbl in PD.SIGNALS:
+        if key in ("proofs", "thms"):
+            # The two raw-count rows are slotted whole: their T3 medians are both 27.0, and a bare
+            # "27.0" needle matches the other row's cell first, so the builder would slot one row's
+            # value into both. A whole-row needle is unique, and the row stays correct if the two
+            # medians ever diverge.
+            continue
+        for t in ("T0", "T2", "T3"):
+            p[f"med_{key}_{t}"] = pd_median(mp["med"][(key, t)])
+    for key in PD_TABLE_KEYS:
+        for a, b in PD.TIER_PAIRS:
+            auc, pv = mp["sep"][(key, a, b)]
+            p[f"sep_{key}_{a}{b}"] = f"{auc:.3f} / {pv:.2e} → {mp['verdict'][(key, a, b)]}"
+    p["ctlman"] = " | ".join(f"{mp['ctl'][(a, b, 'manuscript')][0]:.3f} / "
+                             f"{mp['ctl'][(a, b, 'manuscript')][1]:.2e}"
+                             for a, b in PD.TIER_PAIRS)
+    p["ctlfam"] = " | ".join(f"{mp['ctl'][(a, b, 'family')][0]:.3f}" for a, b in PD.TIER_PAIRS)
+    for key, lab in (("proofs", "fact_proofs"), ("thms", "fact_thms"),
+                     ("proofs_per_man", "fact_man")):
+        p[lab] = f"{mp['sep'][(key, 'T0', 'T2')][0]:.3f} / {mp['sep'][(key, 'T0', 'T3')][0]:.3f}"
+    p["fact_ctl_fam"] = (" / ".join(f"{mp['ctl'][(a, b, 'family')][0]:.3f}"
+                                    for a, b in PD.TIER_PAIRS[:2]))
+    p["fact_ctl_man"] = (" / ".join(f"{mp['ctl'][(a, b, 'manuscript')][0]:.3f}"
+                                    for a, b in PD.TIER_PAIRS[:2]))
+    for shape in ("conditional", "undecidability"):
+        auc, pv, n, _rest = mp["shapes"][(shape, "proofs")]
+        # The needle opens at the shape name, not at "n=5": the flag table below carries the same
+        # "(n=5)" for `conditional`, and a needle starting at the same offset as the flag label's
+        # shorter one is a fatal OVERLAP in the builder.
+        p[f"shape_{shape}"] = f"{shape}` (n={n}) at {auc:.3f} / {pv:.2e}"
+    p["shape_partial"] = (f"{mp['shapes'][('partial', 'proofs_per_kb')][0]:.3f} / "
+                          f"{mp['shapes'][('partial', 'proofs_per_kb')][1]:.2e}")
+    for flag in PD.FLAGS:
+        p[f"flag_{flag}_n"] = f"n={mp['flags'][(flag, 'proofs_per_man')][2]}"
+        for key, short in PD_FLAG_SHORT.items():
+            auc, pv, _n, _rest = mp["flags"][(flag, key)]
+            p[f"flag_{flag}_{short}"] = f"{auc:.3f} / {pv:.2e}"
+    rk = mp["flags"][("resolves_named", "proofs_per_kb")][0]
+    p["gap_bar"] = f"{rk:.3f} sits {mp['auc_min'] - rk:.3f} below the AUC bar"
+    p["count_signals"] = f"{mp['signals']} signals"
+    p["count_pairs"] = f"{mp['pairs']} tier pairs"
+    p["count_shape"] = f"{mp['shape_contrasts']} shape contrasts"
+    p["count_flag"] = f"{mp['flag_contrasts']} flag contrasts"
+    return p
+
+
+def proof_density_page(p: dict[str, str]) -> str:
+    return ENV.get_template("proof-density.md.j2").render(p=p)
+
+
+
 def main() -> None:
     mp = en.population()
     ip = M.population()
     np_ = names_population()
+    pdp = proof_density_population()
     SOURCES_MD.write_text(sources_page(), encoding="utf-8")
     ABSTRACTS_MD.write_text(abstracts_page(), encoding="utf-8")
     NAMED_RESULTS_MD.write_text(named_results_page(mp), encoding="utf-8")
     INDEX_DESIGN_MD.write_text(index_page(ip), encoding="utf-8")
     NAMES_MD.write_text(names_page(names_phrases(np_)), encoding="utf-8")
-    for page in (SOURCES_MD, ABSTRACTS_MD, NAMED_RESULTS_MD, INDEX_DESIGN_MD, NAMES_MD):
+    PROOF_DENSITY_MD.write_text(proof_density_page(proof_density_phrases(pdp)), encoding="utf-8")
+    for page in (SOURCES_MD, ABSTRACTS_MD, NAMED_RESULTS_MD, INDEX_DESIGN_MD, NAMES_MD,
+                 PROOF_DENSITY_MD):
         out = page.read_text(encoding="utf-8")
         print(f"{page.name} written  lines {len(out.splitlines())}  bytes {len(out.encode())}")
     ms, ma = measure(), CA.measure()
     print(f"slots  sources {len(phrases(ms))}  abstracts {len(abstracts_phrases(ma))}"
           f"  named-results {len(named_results_phrases(mp))}"
-          f"  index-design {len(index_phrases(ip))}"
+          f"  index-design {len(index_phrases(ip))}  names {len(names_phrases(np_))}"
+          f"  proof-density {len(proof_density_phrases(pdp))}"
           f"  multi-root rows {len(ms['multi'])}  rows {ms['rows']}  listed {ms['listed']}"
           f"  dirs {ms['dirs']}  comparisons {ma['manuscripts']}  families {ma['families']}"
           f"  target rows {len(tgt_rows(mp))}")

@@ -57,6 +57,7 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
     "notes/named-results.md": R.en.population,
     "notes/index-design.md": R.M.population,
     "notes/names.md": R.names_population,
+    "notes/proof-density.md": R.proof_density_population,
 }
 # The writer's own slot dict per page. These are the calls render_reports.py makes when it renders,
 # so the labels and phrase strings the template gets are the writer's by construction.
@@ -66,6 +67,7 @@ LABELS: dict[str, Callable[[], dict[str, str]]] = {
     "notes/named-results.md": lambda: R.named_results_phrases(POPULATIONS["notes/named-results.md"]()),
     "notes/index-design.md": lambda: R.index_phrases(POPULATIONS["notes/index-design.md"]()),
     "notes/names.md": lambda: R.names_phrases(POPULATIONS["notes/names.md"]()),
+    "notes/proof-density.md": lambda: R.proof_density_phrases(POPULATIONS["notes/proof-density.md"]()),
 }
 PHRASE_FNS = ("count_phrases", "size_phrases")
 ALL_PAGES = {
@@ -73,6 +75,7 @@ ALL_PAGES = {
     "notes/index-design.md": "verify_index_design.py",
     "notes/named-results.md": "verify_named_results.py",
     "notes/names.md": "measure_names.py",
+    "notes/proof-density.md": "measure_proof_density.py",
     "notes/sources.md": "verify_sources.py",
 }
 
