@@ -616,8 +616,8 @@ lives in this file and nowhere else.
   every time the command block is edited and would read the gap as empty the moment the naming
   lands — and recomputes the shared-basename sets
   (**1** top-level ∩ index: `README.md`; **13** index ∩ summaries slugs). It excludes
-  itself from the population, so the page's **38** scripts and **17** checkers are the run's 39 and
-  18. It flags ten injected mutants, each asserted against the check it targets, and writes nothing.
+  itself from the population, so the page's **45** scripts and **18** checkers are the run's 46 and
+  19. It flags eleven injected mutants, each asserted against the check it targets, and writes nothing.
   Run it twice and diff — the report is identical.
 
 ## PR instructions
