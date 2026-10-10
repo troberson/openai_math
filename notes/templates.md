@@ -32,6 +32,7 @@ no such call.
 | `t0-chains.md.j2` | 569 | 34,007 | 62 | `notes/t0-chains.md` | `verify_t0_chains.py` | NOT DERIVED |
 | `templates.md.j2` | 105 | 4,996 | 42 | `notes/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `topics.md.j2` | 335 | 23,046 | 117 | `notes/topics.md` | `measure_topics.py` | NOT DERIVED |
+| `verification-dirs.md.j2` | 258 | 24,980 | 44 | `notes/verification-dirs.md` | `verify_verification_dirs.py` | NOT DERIVED |
 | **report tree** | **17** | **6,276** | **412,372** | **1,220** | | |
 
 ## The index tree
