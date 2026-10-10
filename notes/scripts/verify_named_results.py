@@ -214,6 +214,11 @@ def corpus_facts():
     return len(chal), sorry, Y.oai_lean_count()
 
 
+def population() -> dict:
+    """The extractor's population under the name checker_needles() looks for."""
+    return en.population()
+
+
 def count_phrases(p) -> list:
     """(phrase, label) pairs the page must carry, all derived from the extractor's population()."""
     order, ledger, rn, fams = p["order"], p["ledger"], p["rn"], p["fams"]
@@ -407,7 +412,7 @@ MUTANTS = {
 
 
 def main(argv: list[str]) -> int:
-    p = en.population()
+    p = population()
     text = PAGE.read_text(encoding="utf-8")
     problems: list = []
     out = check(text, p, problems)

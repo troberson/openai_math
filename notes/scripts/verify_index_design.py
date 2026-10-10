@@ -61,6 +61,11 @@ def builds_on_anchor():
     raise SystemExit("no builds-on declaration in lean/formalization.yaml")
 
 
+def population():
+    """The index measurement under the name build_report_templates.checker_needles() looks for."""
+    return M.population()
+
+
 def count_phrases(p):
     """Exact phrases the page must contain for each bold count to be honest."""
     n, e, rb = f"{p['nodes']:,}", f"{p['edges_resolved']:,}", f"{p['edges_rawbib']:,}"
@@ -277,7 +282,7 @@ def check(text):
         else:
             i += 1
 
-    p = M.population()
+    p = population()
     for phrase, label in count_phrases(p):
         if norm(phrase) not in flat:
             problems.append(f"count mismatch ({label}): page does not contain {phrase!r}")

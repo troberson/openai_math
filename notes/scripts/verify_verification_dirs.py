@@ -130,6 +130,11 @@ def measure():
     }
 
 
+def population():
+    """measure() under the name build_report_templates.checker_needles() looks for."""
+    return measure()
+
+
 def entry_measure():
     """Independent recomputation of the entry-point section's population and classes.
 
@@ -364,7 +369,7 @@ def check(text, full_page):
     # Phrase matching collapses whitespace: line-wrapping in the page is markup.
     flat = norm(full_page)
 
-    v = measure()
+    v = population()
     for phrase, label in count_phrases(v):
         if norm(phrase) not in flat:
             problems.append(f"count mismatch ({label}): page does not contain {phrase!r}")

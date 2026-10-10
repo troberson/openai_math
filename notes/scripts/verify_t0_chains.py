@@ -109,6 +109,11 @@ def measured():
     }
 
 
+def population():
+    """measured() under the name build_report_templates.checker_needles() looks for."""
+    return measured()
+
+
 def count_phrases(m):
     v, rows, pop, cw = m["v"], m["rows"], m["pop"], m["cw"]
     cw_pop = [f for f in pop if rows[f]["companion_word"] == "1"]
@@ -420,7 +425,7 @@ MUTANTS = {
 def main(argv):
     mutant = "--mutant" in argv
     text = PAGE.read_text(encoding="utf-8")
-    m = measured()
+    m = population()
     res = check(text, m)
     print(f"== page {PAGE.relative_to(ROOT)}")
     print(f"anchors {res['anchors']}  blocks {res['blocks']}  quotes {res['quotes']}  "

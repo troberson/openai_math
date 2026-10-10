@@ -126,6 +126,11 @@ def measured():
     return _MEASURED
 
 
+def population():
+    """measured() under the name build_report_templates.checker_needles() looks for."""
+    return measured()
+
+
 def count_phrases(m):
     """(phrase, label) for every count the page must carry, rebuilt from a fresh measurement.
 
@@ -365,7 +370,7 @@ def main():
     if not QUOTE.search(text):
         problems.append("no quotations found")
 
-    counts = measured()
+    counts = population()
     found, stats = check(text, table, counts)
     problems += found
 
