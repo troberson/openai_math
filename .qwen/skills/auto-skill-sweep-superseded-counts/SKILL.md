@@ -4,7 +4,9 @@ description: Sweep every doc, checker and generated artifact that quotes a count
   invalidated — triage a fleet of red checkers first, enumerate the stale values, fix generated
   literals in the generator, make the checker measure the figure instead of carrying it, print the
   needles from the checker, re-target the mutants, and prove the sweep with a twice-run gate list
-  diffed against HEAD.
+  diffed against HEAD. The same sweep shape applies to a moved directory (§6a): link depth,
+  quotation-exempt links, repo-relative anchors versus page-relative links, census rules, and
+  HEAD-keyed template regeneration.
 source: auto-skill
 extracted_at: '2026-10-08T15:40:04.714Z'
 ---
@@ -223,6 +225,65 @@ harmless; export by hand (`bd export -o .beads/issues.jsonl`) and commit the sto
 bd specifics that bite: `bd close <id> --reason "…"` (there is **no** `--note`). An epic refuses to
 close while any child is open, **including a deferred child** — do not `--force` past that to hide a
 deferred item; leave the epic open and state why.
+
+## 6a. The same sweep shape applies to a moved directory
+
+Worked 2026-10-10 on `upstream_history/` → `notes/upstream_history/` (3 pages). A move is a count
+sweep in disguise: the path string is the literal, and every reader of it — checker path constants,
+docs, the ownership census, generated templates, mutant needles — goes red at once. The standing rule
+is that a doc naming the old path is a **defect of the move**, not a follow-up, so it lands in the
+same pass.
+
+Order that worked:
+
+1. `git mv` (history preserved, staged as `R`), committed with a pathspec covering **both** roots:
+   `git commit -q -F .qwen/tmp/msgs/x.md -- upstream_history notes/upstream_history notes/scripts/verify_upstream_history.py`
+2. Deepen the relative links by the depth you added, computed from each page's own directory:
+   `](../history.md)` → `](../../history.md)`.
+3. **Do not touch a link inside a `*"…"*` quotation.** The checker scans links on `QUOTE.sub("", body)`,
+   so a quotation that quotes the release's own markdown is not a page link; "fixing" its depth
+   falsifies a verified quotation.
+4. Separate anchors from links in the checker. Anchors here are repo-relative
+   (`rel = path[3:] if path.startswith("../") else path`, then `(ROOT / rel).is_file()`), so moving the
+   pages changes nothing about them. Only the link pass is page-relative — resolve it against the
+   page's own parent so a future move needs no checker edit at all:
+
+   ```python
+   for m in LINK.finditer(QUOTE.sub("", body)):
+       target = m.group(1)
+       if target.startswith(("http://", "https://", "#")):
+           continue
+       if not (ROOT / name).parent.joinpath(target).resolve().is_file():
+           problems.append(f"{name}:{a + 1}: link target {target!r} does not exist")
+   ```
+
+5. Ownership census. A checker that partitions `notes/` by path rule flags every moved file as
+   "owned by no rule" and its census total is short by the moved count
+   (`census row notes/: page says 1128, disk says 1131`). Add the rule **and** the census key, and add
+   the page's census row (3 files; total 1,128 → 1,131). Sweep the prose too: the manifest sentence
+   that explained *why* those pages sat outside the census becomes false on the move.
+6. Re-target the mutant whose needle was the pre-move bytes. The dead-link mutant searched
+   `[`history.md`](../history.md)`, which the move deletes, so the mutation was a no-op and the run
+   reported `MISSED — mutation changed nothing` (12 of 13 fired). Re-targeted to
+   `../../history.md` → `../../historyx.md`: 13 of 13. Same §4 rule, and it is easy to miss because a
+   move changes the bytes the needle was written against.
+7. **Generated report templates are the residual, and they cannot be fixed in the same commit.**
+   `build_report_templates.py` reads `git show HEAD:<page>`, so a template can only be re-slotted after
+   its page commits are in HEAD. Sequence: commit the pages → commit the doc sweep →
+   `build_report_templates.py` → `measure_templates.py` → `dump_template_slots.py` →
+   `render_reports.py` → commit the templates plus the page that tabulates their bytes
+   (`notes/templates.md`: 6,279 lines unchanged, 412,921 → **412,933** report tree, 427,740 →
+   **427,752** over all 22 — the +12 is exactly the two `notes/` prefixes). Never hand-edit
+   `notes/templates/report/*.j2`; the builder regenerates them from HEAD.
+8. Proof after a template rebuild: `render_reports.py` twice, and `git status --porcelain` after each
+   run must list **no** `notes/` file (every report-fed page byte-identical to HEAD) with the two
+   render reports identical. Budget for it: each render runs the child extractors and takes ~5 minutes,
+   so run the pair as one background shell.
+9. Grep the old path over docs, templates, skills, the generated tree **and** the bead store. Closed-bead
+   prose in `.beads/issues.jsonl` naming the old bare path is history — report it, do not rewrite it.
+
+A skill file that changed mid-session under you (an auto-skill update) is not yours: exclude it from
+every pathspec commit, name it in the report, and ask before committing it.
 
 ## 7. Report
 
