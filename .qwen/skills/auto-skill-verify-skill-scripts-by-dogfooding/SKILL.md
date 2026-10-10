@@ -59,8 +59,15 @@ Every finding on the known-good file is a defect until you have judged it:
 ## 5. Check memory for a duplicate before saving anything
 
 `ls ~/.qwen/memories/*/ && grep -l <topic> ~/.qwen/memories/*/*.md` — a prior session often
-already saved the fact. Keep the superset, delete the newcomer, fix the index line (a dangling
-index entry pointing at a deleted file is a bug you can see with `read_file`).
+already saved the fact. Keep the superset, delete the newcomer.
+
+Do **not** fix the index line by hand: a memory directory's `MEMORY.md` is manager-owned, so a
+`write_file`/`edit` on it reports success and echoes the new text while disk keeps the manager's
+version (measured 2026-10-10, two attempts, fresh mtime and unchanged bytes). Persist the memory as
+its own `.md` with complete frontmatter and verify index state from the shell
+(`grep -c '^- \[' MEMORY.md` vs `ls -1 */*.md | wc -l`). A dangling entry left by a deletion is a
+registry gap to report, not a line to hand-edit. Full procedure:
+`auto-skill-memory-fleet-maintenance`.
 
 ## 6. Report what you ran
 
