@@ -57,8 +57,11 @@ lives in this file and nowhere else.
 
 - Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `overview`, `ledger`, `preprints`,
   `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries`, `templates` (14 modules). Import them (`from catlib import yaml as Y`);
-  do not re-implement a join in an extractor. **47** of the **49** scripts do, including **all 19**
-  checkers. `measure.py` is the writer-side measurement API (counts as data, no report formatting) and
+  do not re-implement a join in an extractor. **48** of the **49** scripts do — the rule is
+  `^[[:space:]]*(from|import) catlib`, so a deferred import inside a function counts — including
+  **all 19** checkers; the sole non-importer is `dump_template_slots.py`, which reaches the slot dict
+  through `render_reports.py` and never touches the registry. `measure.py` is the writer-side
+  measurement API (counts as data, no report formatting) and
   checkers deliberately do **not** import it — a checker that re-derives a count through the page's own
   code proves nothing. `render.py` is the page-vs-writer comparison: a page's count pass proves its
   numbers are measured, and the render-diff proves the page on disk is the bytes the writer renders.

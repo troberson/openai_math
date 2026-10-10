@@ -179,7 +179,7 @@ itself as its input. It is the 19th checker and the 49th script the run counts.
 
 ## The shared package: `catlib/`
 
-`notes/scripts/catlib/` holds the joins the extractors share, so a join is written once. It is 12
+`notes/scripts/catlib/` holds the joins the extractors share, so a join is written once. It is 14
 modules, not scripts: `paths.py` (the repo-root constants, `rel()`, `owner()`, `read_text()`),
 `tsv.py` (the four TSV writer shapes), `overview.py` (the `\resultentry` parse), `ledger.py`
 (`notes/catalog.tsv` and the claim-shape rules), `preprints.py` (the 749 dirs versus the 719 listed
@@ -192,16 +192,23 @@ formatting; checkers deliberately do **not** import it, because a checker that r
 through the page's own code proves nothing), `render.py` (the page-vs-writer comparison —
 `diff_problems()` reports where a committed page differs from the bytes `render_reports.py` renders
 for it, and `selftest_problems()` names the four cases it must report: identical, changed digit,
-inserted line, deleted line) and `__init__.py`. A
+inserted line, deleted line), `summaries.py` (the Sources-table row, the `[Sn:line]` marker, the
+page's manuscript roots, the lenient `errors="replace"` read of a declared source that may be a
+compiled PDF, and the overview's manuscript-ownership map) and `templates.py` (the report-template
+registry — `ALL_PAGES`, the writer's per-page `POPULATIONS` and `LABELS` slot dicts,
+`checker_needles`, `group_labels`, `SPLIT_LABEL`) and `__init__.py`. A
 script run as `python3 notes/scripts/foo.py` has `notes/scripts` on `sys.path`, so it imports them as
 `from catlib import ...` with no path boilerplate.
 
-**44** of the **49** scripts call the package: **9** `extract_`, **3** `build_`, **6** `measure_`,
-`check_index_links.py`, `read_manuscript.py`, `render_reports.py`, `triage_t0.py`, **all 19** checkers,
-and the three summary-page readers `check_summary_manuscripts.py`, `locate_summary_quotes.py` and
-`refresh_summary_line_counts.py`, which `math-6s7.1` moved off `verify_summaries.py` onto
-`catlib/summaries.py` — a checker serving as a library is the shape that port broke, and
-`verify_summaries.py` now has **0** importers. `math-lon.2.5` ported the last two checkers,
+**48** of the **49** scripts call the package: **11** `extract_` (all of them), **4** `build_` (all),
+**6** `measure_` (all), **2** `check_` (`check_index_links.py` and `check_summary_manuscripts.py`),
+**all 19** checkers, plus `render_reports.py`, `triage_t0.py`, `read_manuscript.py`,
+`compare_abstracts.py`, `locate_summary_quotes.py` and `refresh_summary_line_counts.py`. The one
+script that does not is `dump_template_slots.py`, which reaches the slot dict through
+`render_reports.py` and never touches the registry. The three summary-page readers
+`check_summary_manuscripts.py`, `locate_summary_quotes.py` and `refresh_summary_line_counts.py` were
+moved off `verify_summaries.py` onto `catlib/summaries.py` by `math-6s7.1` — a checker serving as a
+library is the shape that port broke, and `verify_summaries.py` now has **0** importers. `math-lon.2.5` ported the last two checkers,
 `verify_upstream_history.py` and `verify_summaries.py`, and the **22** `duplicate-code` findings
 did not move (measured 2026-10-09 with `--enable=R0801` over 55 files, every cluster reported against
 `catlib/anchors.py`; see `notes/linting.md`). What deliberately stays outside the package is a **read
