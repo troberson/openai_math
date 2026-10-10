@@ -11,28 +11,28 @@ comparator run.
 
 `notes/templates/report/*.j2`, rendered by `notes/scripts/render_reports.py`. Needles is the count
 of (phrase, label) pairs the builder can derive from that page's checker source by calling its
-`count_phrases` / `size_phrases`; `NOT DERIVED` is printed, not omitted, when the checker exposes
-no such call.
+`count_phrases` / `size_phrases` with the population the checker exports as `population()`;
+`NOT DERIVED` is printed, not omitted, when the checker exposes no such call.
 
 | Template | Lines | Bytes | Slots | Page | Checker | Needles |
 |---|---|---|---|---|---|---|
 | `README.md.j2` | 702 | 57,173 | 71 | `notes/README.md` | `verify_script_ownership.py` | NOT DERIVED |
-| `abstracts.md.j2` | 406 | 32,445 | 42 | `notes/abstracts.md` | `verify_abstracts.py` | NOT DERIVED |
+| `abstracts.md.j2` | 406 | 32,445 | 42 | `notes/abstracts.md` | `verify_abstracts.py` | 45 |
 | `counterexample-crosscheck.md.j2` | 1,089 | 45,827 | 87 | `notes/counterexample-crosscheck.md` | `verify_counterexample_crosscheck.py` | 20 |
 | `dependency-drift.md.j2` | 229 | 11,520 | 95 | `notes/dependency-drift.md` | `verify_dependency_drift.py` | NOT DERIVED |
-| `index-design.md.j2` | 231 | 13,228 | 99 | `notes/index-design.md` | `verify_index_design.py` | NOT DERIVED |
+| `index-design.md.j2` | 231 | 13,228 | 99 | `notes/index-design.md` | `verify_index_design.py` | 82 |
 | `index-links.md.j2` | 208 | 12,184 | 85 | `notes/index-links.md` | `check_index_links.py` | NOT DERIVED |
 | `links.md.j2` | 224 | 12,284 | 110 | `notes/links.md` | `extract_links.py` | NOT DERIVED |
-| `named-results.md.j2` | 367 | 25,209 | 83 | `notes/named-results.md` | `verify_named_results.py` | NOT DERIVED |
+| `named-results.md.j2` | 367 | 25,209 | 83 | `notes/named-results.md` | `verify_named_results.py` | 66 |
 | `names.md.j2` | 276 | 13,727 | 130 | `notes/names.md` | `measure_names.py` | NOT DERIVED |
 | `proof-density.md.j2` | 120 | 8,497 | 67 | `notes/proof-density.md` | `measure_proof_density.py` | NOT DERIVED |
 | `scope-exclusions.md.j2` | 328 | 26,773 | 19 | `notes/scope-exclusions.md` | `verify_scope_exclusions.py` | NOT DERIVED |
-| `sources.md.j2` | 156 | 9,349 | 29 | `notes/sources.md` | `verify_sources.py` | NOT DERIVED |
+| `sources.md.j2` | 156 | 9,349 | 29 | `notes/sources.md` | `verify_sources.py` | 31 |
 | `subfinding-pairs.md.j2` | 675 | 57,519 | 38 | `notes/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |
-| `t0-chains.md.j2` | 569 | 34,007 | 62 | `notes/t0-chains.md` | `verify_t0_chains.py` | NOT DERIVED |
+| `t0-chains.md.j2` | 569 | 34,007 | 62 | `notes/t0-chains.md` | `verify_t0_chains.py` | 12 |
 | `templates.md.j2` | 105 | 4,916 | 43 | `notes/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `topics.md.j2` | 335 | 23,046 | 117 | `notes/topics.md` | `measure_topics.py` | NOT DERIVED |
-| `verification-dirs.md.j2` | 258 | 24,980 | 44 | `notes/verification-dirs.md` | `verify_verification_dirs.py` | NOT DERIVED |
+| `verification-dirs.md.j2` | 258 | 24,980 | 44 | `notes/verification-dirs.md` | `verify_verification_dirs.py` | 16 |
 | **report tree** | **17** | **6,278** | **412,684** | **1,221** | | |
 
 ## The index tree
@@ -75,14 +75,14 @@ writer supplies it as split labels; a phrase the writer supplies as one string i
 which is why every count on this page is a per-row slot: a report template carries no Jinja loop,
 so a census that grows grows the slot set.
 
-Needle coverage is reported, not assumed: **1** of **17** pages has a checker whose needle list the
-builder can derive (`notes/counterexample-crosscheck.md`, 20 needles). For the other **16** the builder
-prints `checker needles NOT DERIVED (<checker>) - coverage unverified`, and those pages are proven
-by the render diff plus their own checkers.
+Needle coverage is reported, not assumed: **7** of **17** pages have a checker whose needle list the
+builder can derive, and the per-page counts are the Needles column of the report-tree table above.
+For the other **10** the builder prints `checker needles NOT DERIVED (<checker>) - coverage
+unverified`, and those pages are proven by the render diff plus their own checkers.
 
 ## Registry
 
-registry: **17** entries at `build_report_templates.py:109` — page → checker, with the writer's
+registry: **17** entries at `build_report_templates.py:114` — page → checker, with the writer's
 population and slot dict recorded beside it. The registry and the tree are checked against each
 other: template-without-page **0**, page-without-template **0**.
 
@@ -94,4 +94,4 @@ other: template-without-page **0**, page-without-template **0**.
   page is `render_reports.py` run twice with the pages byte-identical, plus each page's own checker.
 - The index-tree templates are counted and their output is counted; `build_index.py`'s own report
   (links, canonical counts, stale sweep) is not re-checked here — see `notes/index-design.md`.
-- Needle coverage for the **16** NOT-DERIVED pages is unverified by the builder, by its own report line.
+- Needle coverage for the **10** NOT-DERIVED pages is unverified by the builder, by its own report line.
