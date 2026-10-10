@@ -147,9 +147,9 @@ runtime. `verify_named_results.py` is expensive in both columns (104.6 / 108.3) 
 the corpus read, which a mutant does not multiply. The 11 wired checkers pay the render-diff in their
 mutant runs; `verify_script_ownership.py`, this page's own checker, is 0.2 plain / 1.1 with
 `--mutant` and is not a row above. The 38 checker invocations sum to **1196.1 s** (20 min); the full
-64-invocation gate took **62 min** measured 2026-10-10 (05:49–06:51 UTC) — that timing predates
-`math-a0r.6.3`'s added row, so it is the 64-invocation list's cost, not the current list's — the
-difference being the
+65-invocation gate took **35 min** and **38 min** on its two runs measured 2026-10-10
+(10:48–11:23 and 11:23–12:01 UTC); the 64-invocation list took **62 min** the same morning
+(05:49–06:51 UTC), so the two figures are a spread, not a regression — the difference being the
 writers — `extract_formalization_deps.py` reads all 122,458 files under `lean/OAI/` and
 `build_index.py` renders 1,049 pages.
 
