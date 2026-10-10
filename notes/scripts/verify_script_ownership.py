@@ -15,10 +15,11 @@ Passes:
      it has no render to compare with; the generated ledger readme does, and its prose is not covered
      by any count phrase here.
   H. notes/templates.md -- the census of the two template trees. Lines, bytes and slot counts are
-     re-measured here from the template files, the page<->checker pairing is re-read from the builder's
-     ALL_PAGES literal, and the index tree's render counts are re-counted from notes/index/. The pass
-     re-measures rather than importing measure_templates.py: a checker that re-derives a count through
-     the same code the page's writer calls proves only that the code agrees with itself.
+     re-measured here from the template files, the page<->checker pairing is re-read from the
+     ALL_PAGES literal in `catlib/templates.py`, and the index tree's render counts are re-counted
+     from notes/index/. The pass re-measures rather than importing measure_templates.py: a checker
+     that re-derives a count through the same code the page's writer calls proves only that the code
+     agrees with itself.
 
 --mutant injects sixteen faults, one per check form the page uses, and asserts each is caught.
 Report-only: writes nothing.
@@ -204,8 +205,8 @@ def template_measure():
 
 
 def registry_pairs():
-    """The builder's page -> checker registry, and the line its ALL_PAGES literal opens on."""
-    lines = read_text(SCRIPTS / "build_report_templates.py").splitlines()
+    """The template registry's page -> checker pairs, and the line its ALL_PAGES literal opens on."""
+    lines = read_text(SCRIPTS / "catlib" / "templates.py").splitlines()
     start = next((i for i, l in enumerate(lines, start=1) if l.startswith("ALL_PAGES")), 0)
     if not start:
         return {}, 0
@@ -287,9 +288,9 @@ def templates_problems():
         if want not in text:
             p.append(f"{label} total row does not read {want!r}")
 
-    if f"registry: **{len(reg)}** entries at `build_report_templates.py:{anchor}`" not in text:
+    if f"registry: **{len(reg)}** entries at `catlib/templates.py:{anchor}`" not in text:
         p.append(f"registry sentence does not read 'registry: **{len(reg)}** entries at "
-                 f"`build_report_templates.py:{anchor}`'")
+                 f"`catlib/templates.py:{anchor}`'")
     pages = {pg.rsplit("/", 1)[-1] for pg in reg}
     missing = sorted(f"{n}.j2" for n in pages if not (REPORT_TPL_DIR / f"{n}.j2").is_file())
     extra = sorted(t.name for t in REPORT_TPL_DIR.glob("*.j2") if t.name[: -len(".j2")] not in pages)

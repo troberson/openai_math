@@ -56,7 +56,7 @@ lives in this file and nowhere else.
 ## Dev environment tips
 
 - Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `overview`, `ledger`, `preprints`,
-  `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries` (13 modules). Import them (`from catlib import yaml as Y`);
+  `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries`, `templates` (14 modules). Import them (`from catlib import yaml as Y`);
   do not re-implement a join in an extractor. **47** of the **49** scripts do, including **all 19**
   checkers. `measure.py` is the writer-side measurement API (counts as data, no report formatting) and
   checkers deliberately do **not** import it — a checker that re-derives a count through the page's own
@@ -84,6 +84,14 @@ lives in this file and nowhere else.
   import `catlib.overview` / `catlib.ledger` / `catlib.paths` directly. `measure_names.py` stays a
   library: `measure()` is that script's own product (the six-layer measurement `notes/names.md` is
   checked against), and `dir_of` is its tolerance of a non-`preprints/` path over `catlib.paths.owner`.
+  `catlib/templates.py` carries the report-template registry (page → checker, 17 entries), the writer's
+  per-page slot dicts, the needle derivation and the split-label grouping, so the builder,
+  `measure_checker_needles.py` and `measure_templates.py` read one registry instead of three routes to
+  the builder. The template construction stays in `build_report_templates.py` — the whitespace-flexible
+  locate, the split at the page's own line breaks, the raw-block wrapping, and the `git show HEAD:<page>`
+  read, which is a revision the package does not own. `catlib/templates.py` imports the writer at module
+  level, so a consumer that the writer imports must import it only inside a function
+  (`measure_templates.py`'s `registry()`).
 - Regenerate the ledger with `python3 notes/scripts/build_catalog.py` — stdlib only, runs in
   seconds, writes `notes/catalog.tsv` and prints the report that every number in
   `notes/README.md` comes from.

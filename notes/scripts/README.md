@@ -38,7 +38,7 @@ finds **9** writers over **48** scripts.
 | `extract_links.py` | `notes/links.tsv` | run twice, byte-identical | `notes/links.md` |
 | `extract_subfindings.py` | `notes/subfindings.tsv` | run twice, byte-identical | `notes/subfinding-pairs.md` |
 | `render_reports.py` | `notes/README.md`, `notes/abstracts.md`, `notes/dependency-drift.md`, `notes/index-design.md`, `notes/index-links.md`, `notes/links.md`, `notes/named-results.md`, `notes/names.md`, `notes/proof-density.md`, `notes/sources.md`, `notes/verification-dirs.md`, `notes/scope-exclusions.md`, `notes/topics.md`, `notes/t0-chains.md`, `notes/subfinding-pairs.md`, `notes/counterexample-crosscheck.md`, `notes/templates.md` | run twice, byte-identical | the seventeen report-fed pages |
-| `build_report_templates.py` | `notes/templates/report` | not in `gate.sh` — it reads each page with `git show HEAD:`, so a gate run would rewrite templates from committed bytes; run explicitly with 0 args (all seventeen pages) or 2 (one page) after a writer's slot dict changes | the seventeen page templates |
+| `build_report_templates.py` | `notes/templates/report` | not in `gate.sh` — it reads each page with `git show HEAD:`, so a gate run would rewrite templates from committed bytes; run explicitly with 0 args (all seventeen pages) or 2 (one page) after a writer's slot dict changes | the seventeen page templates; the registry, slot dicts and needle derivation it reads are in `catlib/templates.py` |
 
 Six writers emit one TSV each. `build_index.py` is the one-to-many case: it renders **1,049** files —
 **1,033** `.md` pages and **16** `.tsv` tables. `render_reports.py` renders the seventeen report-fed pages
@@ -226,9 +226,21 @@ the release-labelled bib-edge shape in `catlib/bib.py`, so `extract_t0_chains.py
 remove, and the one cycle that leaves the cyclic-import count — while `triage_t0.py` and
 `verify_named_conjectures.py` read the bucket rule from the package. The bucket **prose** stays in
 `triage_t0.py`: the order and the tags are a join, the wording is the report's labels.
+`math-6s7.5` put the report-template registry in `catlib/templates.py` — `ALL_PAGES` (page →
+checker, 17 entries), the writer's per-page `POPULATIONS` and `LABELS` dicts, `checker_needles`,
+`group_labels` and `SPLIT_LABEL` — so `build_report_templates.py`, `measure_checker_needles.py` and
+`measure_templates.py` read one registry instead of three routes to the builder, and
+`measure_templates.py`'s `all_pages_anchor()` points at the package. What stays in the builder is
+the writer path: the whitespace-flexible locate, the split at the page's own line breaks, the
+raw-block wrapping, and the `git show HEAD:<page>` read, which is a revision the package does not
+own. `dump_template_slots.py` prints the writer's slot dict through `render_reports.py` and never
+touched the registry, so it is unchanged. `catlib/templates.py` imports the writer at module level
+because its dicts are built from the writer's functions at import time, so a module the writer
+imports must import the package only inside a function — `measure_templates.py`'s `registry()`
+already does.
 
 The package is not in the census below: the script population is `notes/scripts/*.py`, and
-`catlib/` is 13 modules under that directory, counted as **62** source files by the lint gate in
+`catlib/` is 14 modules under that directory, counted as **63** source files by the lint gate in
 `notes/linting.md`.
 
 ## The file census

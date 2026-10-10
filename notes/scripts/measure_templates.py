@@ -33,16 +33,16 @@ NON_FAMILY_DIRS = {"disciplines", "names", "topics", "edges"}
 
 
 def registry() -> Any:
-    """The builder module, imported inside the call.
+    """The template registry module, imported inside the call.
 
-    render_reports.py imports this module to measure the census, and build_report_templates.py
-    imports the writer at module level and reads its slot dicts while its own module body runs, so
-    a module-level import here closes the cycle at import time: importing render_reports first would
-    build the builder's POPULATIONS dict against a half-initialised writer. Same deferred shape as
-    catlib/render.py's rendered(); notes/linting.md lists the cycles.
+    render_reports.py imports this module to measure the census, and catlib/templates.py builds its
+    POPULATIONS and LABELS dicts from the writer's functions while its own module body runs, so a
+    module-level import here closes the cycle at import time: importing the writer first would build
+    those dicts against a half-initialised writer. Same deferred shape as catlib/render.py's
+    rendered(); notes/linting.md lists the cycles.
     """
-    import build_report_templates
-    return build_report_templates
+    import catlib.templates
+    return catlib.templates
 
 
 def template_rows(directory: pathlib.Path) -> list[dict[str, Any]]:
@@ -92,7 +92,7 @@ def header_comment_lines(text: str) -> int:
 
 
 def all_pages_anchor() -> int:
-    """Line in build_report_templates.py where the page<->template registry opens."""
+    """Line in catlib/templates.py where the page<->template registry opens."""
     src = pathlib.Path(registry().__file__).read_text(encoding="utf-8")
     for i, line in enumerate(src.splitlines(), start=1):
         if line.startswith("ALL_PAGES"):
@@ -173,7 +173,7 @@ def report(p: dict[str, Any]) -> None:
     print(f"slot reuse (exprs - distinct) {p['reuse']} in {p['reuse_templates']} templates"
           f"  header comment lines report {p['header_lines']} index {p['index_header_lines']}")
     print(f"needles derived {p['derived_n']} of {p['registry_n']}: {' '.join(p['derived']) or '-'}")
-    print(f"registry  ALL_PAGES {p['registry_n']} at build_report_templates.py:{p['all_pages_anchor']}"
+    print(f"registry  ALL_PAGES {p['registry_n']} at catlib/templates.py:{p['all_pages_anchor']}"
           f"  template-without-page {len(p['missing'])}"
           f"  page-without-template {len(p['extra'])}  {' '.join(p['missing'] + p['extra'])}")
     r = p["renders"]

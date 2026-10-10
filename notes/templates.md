@@ -82,7 +82,7 @@ unverified`, and those pages are proven by the render diff plus their own checke
 
 ## Registry
 
-registry: **17** entries at `build_report_templates.py:114` — page → checker, with the writer's
+registry: **17** entries at `catlib/templates.py:100` — page → checker, with the writer's
 population and slot dict recorded beside it. The registry and the tree are checked against each
 other: template-without-page **0**, page-without-template **0**.
 

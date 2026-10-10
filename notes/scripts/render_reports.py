@@ -2358,7 +2358,7 @@ def templates_phrases(p: dict[str, Any]) -> dict[str, str]:
     out["not_derived"] = f"the other **{p['not_derived_n']}**"
     out["not_derived_bullet"] = f"the **{p['not_derived_n']}** NOT-DERIVED pages"
     out["registry"] = (f"registry: **{p['registry_n']}** entries at "
-                       f"`build_report_templates.py:{p['all_pages_anchor']}`")
+                       f"`catlib/templates.py:{p['all_pages_anchor']}`")
     out["gap"] = (f"template-without-page **{len(p['missing'])}**,"
                   f" page-without-template **{len(p['extra'])}**")
     ab = next(x for x in p["report_rows"] if x["name"] == "abstracts.md.j2")
