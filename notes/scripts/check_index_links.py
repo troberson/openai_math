@@ -166,8 +166,8 @@ CAT_PAGE = "differential-geometry/337-cartan-hadamard-isoperimetry-and-cat-0-fil
 # mutant_test() in-process while its own render is in progress, where the sync pass is inert by
 # design and the writer records this case as caught by construction.
 SYNC_MUTANT = "page prose wording altered"
-SYNC_NEEDLE = "demonstrated rather than documented."
-SYNC_REPLACEMENT = "demonstrated rather than recorded."
+SYNC_NEEDLE = "demonstrated rather than recorded."
+SYNC_REPLACEMENT = "demonstrated rather than written down."
 
 
 def resolve(page_rel, href):
