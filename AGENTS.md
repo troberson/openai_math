@@ -46,8 +46,11 @@ lives in this file and nowhere else.
   headline statements over 17 families, the three-layer naming record, and the applied 233 → 248
   `resolves_named` scope swap) with `named-results.tsv` **absent** beside it — the page is
   report-fed, not table-fed,
-  `summaries/<discipline>/<NNN>-<name>.md`, `templates/` (the page skeletons `build_index.py`
-  renders — hand-written, the only place a generated page's text lives), `notes/scripts/`.
+  `summaries/<discipline>/<NNN>-<name>.md`, `templates/` (the page skeletons the renderers read —
+  **5** hand-written index skeletons `build_index.py` renders, plus **6** report templates under
+  `templates/report/` that `build_report_templates.py` builds from a page's own bytes at `HEAD`; a
+  report template is generated, so edit the writer's label dict in `render_reports.py` and re-render
+  rather than hand-editing it) — the only place a generated page's text lives, `notes/scripts/`.
 - `.beads/issues.jsonl` is the tracked issue store, in bd no-db mode; see the beads section below.
 
 ## Dev environment tips
