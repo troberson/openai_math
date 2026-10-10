@@ -61,6 +61,7 @@ import extract_verification_dirs as evd
 import measure_index_sizes as M
 import measure_names as MN
 import measure_proof_density as PD
+import measure_templates as MTPL
 import measure_topics as MT
 from catlib import overview, preprints, tsv
 from catlib import render as RD
@@ -94,6 +95,7 @@ T0_CHAINS_MD = ROOT / "notes" / "t0-chains.md"
 SP_MD = ROOT / "notes" / "subfinding-pairs.md"
 README_MD = ROOT / "notes" / "README.md"
 CROSSCHECK_MD = ROOT / "notes" / "counterexample-crosscheck.md"
+TEMPLATES_MD = ROOT / "notes" / "templates.md"
 VPOS = PREPRINTS / "Positively-curved-Einstein-four-manifolds-September-23-2026" / "verification"
 VZERO = PREPRINTS / "Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026" / "verification"
 FOCK = PREPRINTS / "A-Fock-space-inequality-and-the-Laughlin-spectral-gap-September-24-2026"
@@ -2304,6 +2306,71 @@ def scope_exclusions_page(p: dict[str, str]) -> str:
     return ENV.get_template("scope-exclusions.md.j2").render(p=p)
 
 
+RENDER_NOUN = {
+    "discipline.md.j2": "discipline pages",
+    "family.md.j2": "family pages",
+    "index-readme.md.j2": "entry point",
+    "name.md.j2": "name pages",
+    "topic.md.j2": "topic pages",
+}
+
+
+def templates_population(abstracts_labels: int) -> dict[str, Any]:
+    """The template census, plus the writer-label count the page compares a slot count with."""
+    p = MTPL.population()
+    p["abstracts_labels"] = abstracts_labels
+    return p
+
+
+def templates_phrases(p: dict[str, Any]) -> dict[str, str]:
+    """label -> phrase, one label per table row, so a census that grows grows the slot set.
+
+    A report template carries no Jinja loop: every table row on the page is its own label, the same
+    shape as disc_row_NN in the index-design page. A phrase the writer supplies as ONE string that the
+    page wraps across lines is left literal by the builder, which would freeze a census number in the
+    template, so no phrase here spans a line.
+    """
+    out: dict[str, str] = {}
+    for n, r in enumerate(p["report_rows"], start=1):
+        out[f"tpl_row_{n:02d}"] = (
+            f"| `{r['name']}` | {int(r['lines']):,} | {int(r['bytes']):,} | {int(r['slots'])} | "
+            f"`{r['page']}` | `{r['checker']}` | {r['needles'] or 'NOT DERIVED'} |")
+    for n, r in enumerate(p["index_rows"], start=1):
+        out[f"idx_row_{n:02d}"] = (
+            f"| `{r['name']}` | {int(r['lines']):,} | {int(r['bytes']):,} | {int(r['slots'])} | "
+            f"{int(r['renders']):,} {RENDER_NOUN[r['name']]} |")
+    r, i, a = p["report"], p["index"], p["all"]
+    out["report_total"] = (f"| **report tree** | **{r['n']}** | **{r['lines']:,}** | **{r['bytes']:,}** |"
+                           f" **{r['slots']:,}** | | |")
+    out["index_total"] = (f"| **index tree** | **{i['n']}** | **{i['lines']:,}** | **{i['bytes']:,}** |"
+                          f" **{i['slots']:,}** | |")
+    out["census_report"] = (f"report tree: **{r['n']}** templates, **{r['lines']:,}** lines,"
+                            f" **{r['bytes']:,}** bytes, **{r['slots']:,}** slots")
+    out["census_index"] = (f"index tree: **{i['n']}** templates, **{i['lines']:,}** lines,"
+                           f" **{i['bytes']:,}** bytes, **{i['slots']:,}** slots")
+    out["census_all"] = (f"all **{a['n']}** templates: **{a['lines']:,}** lines, **{a['bytes']:,}** bytes,"
+                         f" **{a['slots']:,}** slots")
+    out["reuse"] = f"**{p['reuse']}** repeat expressions over **{p['reuse_templates']}** templates"
+    out["reuse_detail"] = p["reuse_detail"]
+    out["reuse_scope"] = f"over the **{a['n']}** committed templates"
+    out["header"] = f"header comment is **{p['header_lines']}** lines"
+    out["derived"] = f"**{p['derived_n']}** of **{p['registry_n']}** pages"
+    out["not_derived"] = f"the other **{p['not_derived_n']}**"
+    out["not_derived_bullet"] = f"the **{p['not_derived_n']}** NOT-DERIVED pages"
+    out["registry"] = (f"registry: **{p['registry_n']}** entries at "
+                       f"`build_report_templates.py:{p['all_pages_anchor']}`")
+    out["gap"] = (f"template-without-page **{len(p['missing'])}**,"
+                  f" page-without-template **{len(p['extra'])}**")
+    ab = next(x for x in p["report_rows"] if x["name"] == "abstracts.md.j2")
+    out["labels_vs_slots"] = (f"**{p['abstracts_labels']}** writer labels against **{ab['slots']}** slots"
+                              f" in `abstracts.md.j2`")
+    return out
+
+
+def templates_page(p: dict[str, str]) -> str:
+    return ENV.get_template("templates.md.j2").render(p=p)
+
+
 def topics_population(lf: dict[str, str]) -> dict[str, str]:
     """Every derived figure on notes/topics.md, measured from the curated vocabulary.
 
@@ -3089,6 +3156,10 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
     "subfinding-pairs": subfinding_pairs_population,
     "README": readme_population,
     "counterexample-crosscheck": crosscheck_population,
+    # templates.md reports the census of both template trees, measured by measure_templates.py. The
+    # page compares a template's slot count with the writer's label count, so the abstracts label count
+    # travels inside its population — CA.measure() is the call abstracts_page() makes.
+    "templates": lambda: templates_population(len(abstracts_phrases(CA.measure()))),
 }
 
 
@@ -3109,6 +3180,7 @@ PAGE_RENDERERS: dict[pathlib.Path, Callable[[], str]] = {
     SP_MD: lambda: subfinding_pairs_page(subfinding_pairs_phrases(population_of("subfinding-pairs"))),
     README_MD: lambda: readme_page(readme_phrases(population_of("README"))),
     CROSSCHECK_MD: lambda: crosscheck_page(crosscheck_phrases(population_of("counterexample-crosscheck"))),
+    TEMPLATES_MD: lambda: templates_page(templates_phrases(population_of("templates"))),
 }
 
 
@@ -3132,6 +3204,7 @@ def main() -> None:
     spp = population_of("subfinding-pairs")
     rmp = population_of("README")
     xcp = population_of("counterexample-crosscheck")
+    tplp = population_of("templates")
     SOURCES_MD.write_text(render_page(SOURCES_MD), encoding="utf-8")
     ABSTRACTS_MD.write_text(render_page(ABSTRACTS_MD), encoding="utf-8")
     NAMED_RESULTS_MD.write_text(render_page(NAMED_RESULTS_MD), encoding="utf-8")
@@ -3148,9 +3221,10 @@ def main() -> None:
     SP_MD.write_text(render_page(SP_MD), encoding="utf-8")
     README_MD.write_text(render_page(README_MD), encoding="utf-8")
     CROSSCHECK_MD.write_text(render_page(CROSSCHECK_MD), encoding="utf-8")
+    TEMPLATES_MD.write_text(render_page(TEMPLATES_MD), encoding="utf-8")
     for page in (SOURCES_MD, ABSTRACTS_MD, NAMED_RESULTS_MD, INDEX_DESIGN_MD, NAMES_MD,
                  PROOF_DENSITY_MD, INDEX_LINKS_MD, LINKS_MD, DRIFT_MD, VERIF_MD, EX_MD, TOPICS_MD,
-                 T0_CHAINS_MD, SP_MD, README_MD, CROSSCHECK_MD):
+                 T0_CHAINS_MD, SP_MD, README_MD, CROSSCHECK_MD, TEMPLATES_MD):
         out = page.read_text(encoding="utf-8")
         print(f"{page.name} written  lines {len(out.splitlines())}  bytes {len(out.encode())}")
     ms, ma = measure(), CA.measure()
@@ -3167,6 +3241,7 @@ def main() -> None:
           f"  subfinding-pairs {len(subfinding_pairs_phrases(spp))}"
           f"  readme {len(readme_phrases(rmp))}"
           f"  crosscheck {len(crosscheck_phrases(xcp))}"
+          f"  templates {len(templates_phrases(tplp))}"
           f"  multi-root rows {len(ms['multi'])}  rows {ms['rows']}  listed {ms['listed']}"
           f"  dirs {ms['dirs']}  comparisons {ma['manuscripts']}  families {ma['families']}"
           f"  target rows {len(tgt_rows(mp))}")
