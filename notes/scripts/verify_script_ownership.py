@@ -325,8 +325,6 @@ def check(text):
             f"writer split sentence does not read '**{len(derived)}** writers over "
             f"**{len(names)}** scripts'"
         )
-    if len(names) != 46:
-        p.append(f"scripts on disk (excluding {SELF}): {len(names)}, page says 46")
     if len(derived) != 9:
         p.append(f"derived writers: {len(derived)}, page says 9")
 
@@ -489,11 +487,12 @@ def sync_problems() -> list[str]:
 def mutants():
     """Sixteen faults, one per check form. Each must be caught by the check it targets."""
     original = read_text(PAGE)
+    n = len(script_names())
     cases = [
         ("writer target altered", original.replace("| `build_catalog.py` | `notes/catalog.tsv` |", "| `build_catalog.py` | `notes/catalog-x.tsv` |"), "page says 'notes/catalog-x.tsv'"),
         ("writer row deleted", original.replace("| `extract_links.py` | `notes/links.tsv` | run twice, byte-identical | `notes/links.md` |\n", ""), "writer extract_links.py: page says None"),
         ("hand-authored TSV claimed as generated", original.replace("**6** generated, **2** hand-authored", "**7** generated, **1** hand-authored"), "tsv census cell"),
-        ("writer count altered", original.replace("**9** writers over **46** scripts", "**10** writers over **46** scripts"), "writer split sentence"),
+        ("writer count altered", original.replace(f"**9** writers over **{n}** scripts", f"**10** writers over **{n}** scripts"), "writer split sentence"),
         ("index file count altered", original.replace("| `notes/index/` | **1,049** |", "| `notes/index/` | **1,050** |"), "census row notes/index/"),
         ("collision name altered", original.replace("**1** shared basename — `README.md`", "**2** shared basenames — `README.md` and `topics.tsv`"), "collision sentence"),
         ("checker name altered", original.replace("| `verify_sources.py` |", "| `verify_sources2.py` |"), "non-writers"),
