@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the upstream_history/ pages against git, the release files, and disk.
+"""Verify the notes/upstream_history/ pages against git, the release files, and disk.
 
 Report-only: writes nothing. Run twice and diff — the report must be identical.
 
@@ -48,12 +48,12 @@ from catlib.text import collapse_ws, fold_apostrophe
 from catlib.tsv import read_rows_from_text
 
 PAGES = [
-    "upstream_history/README.md",
-    "upstream_history/2026-10-07_3014888.md",
-    "upstream_history/2026-10-07_fd4aeeb.md",
+    "notes/upstream_history/README.md",
+    "notes/upstream_history/2026-10-07_3014888.md",
+    "notes/upstream_history/2026-10-07_fd4aeeb.md",
 ]
-PAGE_301 = "upstream_history/2026-10-07_3014888.md"
-PAGE_FD = "upstream_history/2026-10-07_fd4aeeb.md"
+PAGE_301 = "notes/upstream_history/2026-10-07_3014888.md"
+PAGE_FD = "notes/upstream_history/2026-10-07_fd4aeeb.md"
 BASE = "adc7f1241"  # merge-base: the release as we mirrored it
 UP = "301488868"  # the upstream commit the 3014888 page discusses
 PRE = "9b68bc538"  # our last pre-merge commit: the "Before" column of the ledger table
@@ -316,7 +316,7 @@ def check_page(name, text, _p, problems):
                 target = m.group(1)
                 if target.startswith(("http://", "https://", "#")):
                     continue
-                if not (ROOT / "upstream_history" / target).resolve().is_file():
+                if not (ROOT / name).parent.joinpath(target).resolve().is_file():
                     problems.append(f"{name}:{a + 1}: link target {target!r} does not exist")
         else:
             prev = [x for x in anchors if x[0] < a]
@@ -514,7 +514,7 @@ def mutants(p):
         ("count phrase", PAGE_301, base.replace("**749** directories", "**748** directories"), "phrase absent from page"),
         ("entry count", PAGE_301, base.replace("| 137 | `OneTapeSpace` | 2 |", "| 137 | `OneTapeSpace` | 1 |"), "main_results entries"),
         ("unanchored quote", PAGE_FD, fd.replace("Nothing. `git diff", 'Nothing. *"a quotation with no anchor at all"* `git diff'), "no anchor in its paragraph"),
-        ("dead link", PAGE_301, base.replace("[`history.md`](../history.md)", "[`history.md`](../historyx.md)"), "does not exist"),
+        ("dead link", PAGE_301, base.replace("[`history.md`](../../history.md)", "[`history.md`](../../historyx.md)"), "does not exist"),
     ]
     fired = 0
     for label, page, text, needle in cases:

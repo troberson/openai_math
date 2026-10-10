@@ -7,9 +7,9 @@ Upstream is `github.com/openai/math` (`upstream`, read-only). We merge each upst
 own merge commit on `notes` — one merge per upstream commit, never a rebase — so our reading notes
 stay interleaved with their releases in history.
 
-The release ships its own changelog at [`history.md`](../history.md). These pages are our reading of
-each commit: what moved in the release surface, what it means for the counts in `notes/`, and what
-we have not checked.
+The release ships its own changelog at [`history.md`](../../history.md). These pages are our reading
+of each commit: what moved in the release surface, what it means for the counts in `notes/`, and
+what we have not checked.
 
 | Page | Upstream commit | Our merge |
 | --- | --- | --- |
