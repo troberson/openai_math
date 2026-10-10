@@ -9,10 +9,10 @@ is per file, and the checker exits 1 on a file no rule owns.
 It is also the script inventory. Every script under `notes/scripts/` is listed once, in one of three
 classes — writer, report-only, checker — with what it writes and the command the gate runs for it, and
 the fourth class, the scratch a session writes outside the tree, is recorded by rule rather than by
-file. The classes partition the **47** scripts: **9** writers, **19** report-only, **18** checkers,
+file. The classes partition the **48** scripts: **9** writers, **20** report-only, **18** checkers,
 and `verify_script_ownership.py` itself, which is the 19th checker and is not listed in its own table.
 
-## The split: 9 write, 37 write nothing
+## The split: 9 write, 38 write nothing
 
 The writer set is derived from the scripts' own source, not from this page: a script is a writer when
 a path constant rooted at `notes/` appears on the left of `.open(..., "w")` or `.write_text(...)`,
@@ -24,7 +24,7 @@ directory rather than a file stays visible. The fourth rule subtracts the self-t
 self-test writes the page it checks only to mutate it and restores the bytes it read in the `finally`
 — `check_index_links.py` and `measure_proof_density.py` each do exactly that, so their normal runs
 write nothing and they stay in the report-only class. That rule
-finds **9** writers over **46** scripts.
+finds **9** writers over **47** scripts.
 
 ### Writers
 
@@ -62,9 +62,9 @@ rows in six artifacts.
 
 ### Report-only
 
-The other **37** scripts write nothing. **19** of them print the report a page's counts come from.
-The Gate column is the invocation the gate list runs: `notes/scripts/gate.sh`, which runs **65**
-invocations — the **8** gated writers, the 19 gated report-only rows (including `check_summary_manuscripts.py`
+The other **38** scripts write nothing. **20** of them print the report a page's counts come from.
+The Gate column is the invocation the gate list runs: `notes/scripts/gate.sh`, which runs **66**
+invocations — the **8** gated writers, the 20 gated report-only rows (including `check_summary_manuscripts.py`
 and `locate_summary_quotes.py`, and `check_index_links.py` twice — plain and with `--mutant`, since
 `math-a0r.6.2` gave its self-test a prose mutant that only the gate can run), and **38** checker
 invocations: each of the 18 checkers plain and
@@ -78,6 +78,7 @@ in the writers table.
 |---|---|---|
 | `check_index_links.py` | `notes/index-links.md` | plain + `--mutant` |
 | `check_summary_manuscripts.py` | `notes/summaries/` — which manuscripts each page reads, and whether the release still names them | plain |
+| `dump_template_slots.py` | `notes/templates.md` — the writer's slot labels with their values | plain |
 | `extract_citations.py` | `notes/citations.md` | plain |
 | `extract_counterexample_crosscheck.py` | `notes/counterexample-crosscheck.md` | plain |
 | `extract_named_results.py` | `notes/named-results.md` | plain |
@@ -111,7 +112,7 @@ compared with `render_reports.py`'s render of it, folded into the exit code), an
 
 The remaining **18** scripts verify a page or a table. Each exits non-zero when what it checks has
 drifted; each takes `--mutant`, which injects faults and asserts they are caught. The gate runs each
-one plain and then with `--mutant` — **38** of the 65 invocations: **36** from the loop over the 18
+one plain and then with `--mutant` — **38** of the 66 invocations: **36** from the loop over the 18
 rows below, **2** more for `verify_conjecture_standing.py`, which the list runs outside the loop.
 
 | Checker | Checks | Gate | Cost (s) |
@@ -248,11 +249,11 @@ excludes the checker-verified pages, allowing formatting only on the pages no ch
 
 ## Naming coverage
 
-`notes/README.md`'s command block named **34** of the 46 scripts before this pass. Twelve are named
+`notes/README.md`'s command block named **34** of the 47 scripts before this pass. Thirteen are named
 nowhere in the repo at the pinned baseline: `build_report_templates.py`, `check_summary_manuscripts.py`,
 `extract_citations.py`, `locate_summary_quotes.py`, `measure_templates.py`, `read_manuscript.py`,
 `refresh_summary_line_counts.py`, `render_reports.py`, `verify_citations.py`, `verify_findings.py`,
-`verify_named_conjectures.py` and `verify_upstream_history.py`. The first four are the report-template
+`verify_named_conjectures.py`, `verify_upstream_history.py` and `dump_template_slots.py`. The first four are the report-template
 builder this pass promoted plus the `notes/summaries/` reading tooling and the citation extractor, so
 the summaries tree and `notes/citations.md` carried measurements whose generating command no document
 named; `read_manuscript.py` and `refresh_summary_line_counts.py` are the rest of that reading tooling;
@@ -261,8 +262,8 @@ named; `read_manuscript.py` and `refresh_summary_line_counts.py` are the rest of
 measurements whose checker no document named; `verify_upstream_history.py` is the tooling behind
 `upstream_history/`, the pages that record each upstream merge, which sit outside `notes/` and so
 outside this page's census; `measure_templates.py` is the census behind `notes/templates.md`, added by
-the pass that added that page; and `render_reports.py` is the renderer for the seventeen report-fed pages.
-All 46 are named here and in the command
+the pass that added that page; `dump_template_slots.py` is the slot dump that prints the same dict the census measures, promoted by `math-a0r.7`; and `render_reports.py` is the renderer for the seventeen report-fed pages.
+All 47 are named here and in the command
 block. "Before this pass" is
 pinned to the commit that created this page, read at its parent, not to `HEAD`: `HEAD` moves every
 time this page is edited, so a check keyed to it re-pins the baseline on each edit, and the naming
@@ -307,9 +308,22 @@ conditional-anchor checker `check_conditional_anchors.py`, and the single-purpos
 `/tmp` is outside the rule's location and outside the repo, so a script written there is a script
 whose outputs cannot be re-measured.
 
-One script stays in the scratch tree: `scratch_census.py`, the enumerator that produced the
-classification above. It is a census of the scratch tree, not a measurement of the corpus, so it has
-no row in the tables above and no gate command; the next cleanup re-runs it.
+Measured 2026-10-10 over `.qwen/tmp/` **after** the `math-a0r.7` cleanup: **395** top-level files,
+**136,070** files including subdirectories, **5** subdirectories. By top-level suffix: **296** `.txt`,
+**48** `.md`, **20** `.out`, **19** `.tsv`, **4** `.sh`, **3** `.md5`, **2** `.log` and **1** each
+`.patch`, `.pat`, `.diff`. The file total is one hardlink tree, not a working set:
+`ledger_bump_copy/` carries **135,173** of the **136,070** — the `cp -al` copy
+`simulate_ledger_bump.sh` builds to run the writer chain against a bumped `overview.tex`, whose
+entries share inodes with the repo, so it costs inodes and not disk. Excluding it the tree is **897**
+files. The working trees are `reports/` **367** (gate and render snapshots), `msgs/` **130** (commit
+messages and close notes) and **48** top-level `.md` drafts. The cleanup deleted **49** one-shot
+entries and **20** trees (`proof_v6`–`proof_v10`, `render_proof_cc`, `render_proof_readme`,
+`idx_pre_sweep`, `idx_run1`, `idx_run2`, `index-run1`, `index_run1`, `index_run2`, `leanout`,
+`lon1`, `lon2`, `head`, `esp`, `close`, `a0r5`, `__pycache__`) and the **36** superseded probes the
+promotion replaced — `a63_two_renders.sh` and `a63_dump_slots.py` by `two_render_proof.sh` and
+`dump_template_slots.py`, `a63_lint.sh` by the lint trio, `a64_demo.sh` and `a64_sed.txt` by
+`simulate_ledger_bump.sh`, `a63_measure_templates*.py` by `notes/scripts/measure_templates.py`, and
+`a62_lines_probe.py`, which the bead rejects — plus the `a64_copy/` demo tree.
 
 The scratch tree is not a record. `.qwen/tmp/n5d3-draft.md` is a working draft whose tail is the
 state a compacted session resumes from, and `.qwen/tmp/canonical_counts.md` is the count sheet the

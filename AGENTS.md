@@ -57,7 +57,7 @@ lives in this file and nowhere else.
 
 - Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `overview`, `ledger`, `preprints`,
   `text`, `yaml`, `anchors`, `bib`, `measure`, `render` (12 modules). Import them (`from catlib import yaml as Y`);
-  do not re-implement a join in an extractor. **36** of the **47** scripts do, including **all 19**
+  do not re-implement a join in an extractor. **36** of the **48** scripts do, including **all 19**
   checkers. `measure.py` is the writer-side measurement API (counts as data, no report formatting) and
   checkers deliberately do **not** import it — a checker that re-derives a count through the page's own
   code proves nothing. `render.py` is the page-vs-writer comparison: a page's count pass proves its
@@ -312,14 +312,14 @@ lives in this file and nowhere else.
   manifest is `notes/scripts/README.md`, and it is the only place that answers "whose bytes are
   this". It is also the script inventory: every script under `notes/scripts/` is listed once as
   writer, report-only or checker, with what it writes and the gate command the gate list runs for it
-  — **9** writers, **19** report-only, **18** checkers, plus the page's own checker as the 19th
-  checker and 47th script — and the fourth class, scratch, is recorded by rule: **scratch lives under
+  — **9** writers, **20** report-only, **18** checkers, plus the page's own checker as the 19th
+  checker and 48th script — and the fourth class, scratch, is recorded by rule: **scratch lives under
   `.qwen/tmp/`, a permanent script lives under `notes/scripts/`**, so a probe that a later pass
   re-runs is promoted and gets a table row before it gets a gate command.
-  Scripts and generated files are **not** 1-to-1: of the **46** scripts, **9** write
+  Scripts and generated files are **not** 1-to-1: of the **47** scripts, **9** write
   (`build_catalog.py`, `build_sources.py`, `build_index.py`, `compare_abstracts.py` — with `--tsv`
   only — `extract_formalization_deps.py`, `extract_links.py`, `extract_subfindings.py`,
-  `render_reports.py`, `build_report_templates.py`) and **37**
+  `render_reports.py`, `build_report_templates.py`) and **38**
   write nothing, and `build_index.py` alone renders **1,049** files. Of the **8** top-level
   `notes/*.tsv`, **6** are generator output and **2** are hand-authored — `notes/topics.tsv` (the
   curated vocabulary `build_index.py` reads) and `notes/conjecture-standing.tsv` (the training-data
@@ -341,9 +341,9 @@ lives in this file and nowhere else.
 ## Testing instructions
 
 - Nothing here builds and there is no test suite; the generator report is the test.
-- The whole-tree test is the gate list at `notes/scripts/gate.sh`: **65** invocations — the **8**
+- The whole-tree test is the gate list at `notes/scripts/gate.sh`: **66** invocations — the **8**
   gated writers (`build_report_templates.py` is the writer it does not run),
-  the 19 gated report-only rows (including `check_summary_manuscripts.py` and
+  the 20 gated report-only rows (including `check_summary_manuscripts.py` and
   `locate_summary_quotes.py`, and `check_index_links.py` plain and with `--mutant`;
   `read_manuscript.py` is the one script it does not run), and **38**
   checker invocations: each of the 18 checkers plain and with `--mutant` (**36**), plus

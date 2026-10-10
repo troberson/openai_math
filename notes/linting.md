@@ -43,8 +43,8 @@ as comments; the tables below are the same list with the measured counts.
 | pylint | 1,422 findings over 44 scripts | 142 | **0** (142 → 38 after the ruff autofixes, 38 → 21 by hand, 21 → 0 by the last three exemptions) |
 
 `python -m py_compile notes/scripts/*.py` passes for all 44 under the venv interpreter. The tree is
-**59 source files** today — **47** scripts plus `catlib/`'s **12** — and every current-state figure
-below is measured over 59 (re-measured 2026-10-10, the day `notes/templates.md` and its census
+**60 source files** today — **48** scripts plus `catlib/`'s **12** — and every current-state figure
+below is measured over 60 (re-measured 2026-10-10, the day `notes/templates.md` and its census
 module landed); the baseline row above is the 44-file tree it was measured on, and the
 `duplicate-code` row below keeps its dated 2026-10-09 measurement over 57 files.
 
@@ -68,7 +68,7 @@ is not a defect in this tree.
 | pylint `global-statement` | 3 | Report accumulators are module-level by design. |
 | pylint `unsubscriptable-object` | 6 | `prev` is `None`-guarded before the subscript in `verify_dependency_drift.py:169-170` and `extract_formalization_deps.py:161-162`; pylint does not track the narrowing. |
 | pylint `exec-used` (inline, not in `.pylintrc`) | 1 | `build_report_templates.py:89` — the template builder loads its page's checker by `exec` to read its needle list, which the builder reports as **coverage** (how many of the checker's needles the template slots) and never uses as the slot source. The slots come from the writer's own label dict in `render_reports.py`, so a template cannot reference a label the writer does not supply. The file is a builder, not a checker: the page's own checker still re-derives the counts independently. |
-| pylint `cyclic-import` | 7 → **8** | Measured 2026-10-10 with `--enable=R0401` over 59 files, after `math-a0r.6.3` added the template census. **Seven** are one shape — `catlib.render → render_reports → X` for `X` = `measure_names`, `measure_topics`, `measure_proof_density`, `check_index_links`, `extract_links`, and the two in-process pairs `extract_named_results → measure_names` and `measure_index_sizes → check_index_links`. The writer imports the scripts whose numbers it renders, and the shared render-diff module imports the writer only inside `rendered()`, because that deferred import is the recursion guard `sync_inert()` needs: a module-level import there would make the writer unimportable from inside a render. The eighth is `build_report_templates → render_reports → measure_templates`, added when the census module became a writer-side import and the builder became a census-side import; it is closed by the census module's deferred `import build_report_templates` inside `registry()` (`measure_templates.py:44`). The import *graph* is cyclic; the import *cycle* never closes at runtime, since each deferred import runs when every module in the chain is already loaded — which is what the twice-run render and the 16 wired checkers demonstrate. |
+| pylint `cyclic-import` | 7 → **8** | Measured 2026-10-10 with `--enable=R0401` over 60 files, after `math-a0r.6.3` added the template census. **Seven** are one shape — `catlib.render → render_reports → X` for `X` = `measure_names`, `measure_topics`, `measure_proof_density`, `check_index_links`, `extract_links`, and the two in-process pairs `extract_named_results → measure_names` and `measure_index_sizes → check_index_links`. The writer imports the scripts whose numbers it renders, and the shared render-diff module imports the writer only inside `rendered()`, because that deferred import is the recursion guard `sync_inert()` needs: a module-level import there would make the writer unimportable from inside a render. The eighth is `build_report_templates → render_reports → measure_templates`, added when the census module became a writer-side import and the builder became a census-side import; it is closed by the census module's deferred `import build_report_templates` inside `registry()` (`measure_templates.py:44`). The import *graph* is cyclic; the import *cycle* never closes at runtime, since each deferred import runs when every module in the chain is already loaded — which is what the twice-run render and the 16 wired checkers demonstrate. |
 
 Removed in the same pass as the boilerplate: pylint `wrong-import-position` (`C0413`), exempted for
 **40** baseline sites. `pylint --enable=C0413` measures **61** findings on the tree that still had
@@ -77,7 +77,7 @@ gate stays green.
 
 ## mypy per-file status
 
-Under `mypy.ini` the gate command checks **59 files with 0 errors**. `check_untyped_defs = False`,
+Under `mypy.ini` the gate command checks **60 files with 0 errors**. `check_untyped_defs = False`,
 so a function with no annotations is not analyzed — the gate proves the annotated surface, not the
 whole tree. The 3 baseline errors were real and are fixed: `compare_abstracts.py:63`
 (`_CACHE: dict = {}`), `build_index.py:166` (`WRITTEN: set = set()`), and a `None` guard in
@@ -86,14 +86,14 @@ whole tree. The 3 baseline errors were real and are fixed: `compare_abstracts.py
 The per-file figure is the **strict probe**, which is not a gate command:
 
 ```bash
-.venv/bin/mypy --check-untyped-defs notes/scripts/   # 195 errors in 34 files (59 checked)
+.venv/bin/mypy --check-untyped-defs notes/scripts/   # 197 errors in 34 files (60 checked)
 ```
 
-Its 195 findings are an annotation backlog, not defects: `var-annotated` 81 (an empty `dict`/`list`
-accumulator mypy cannot infer), `assignment` 45, `union-attr` 29, `misc` 10, `index` 10, `arg-type` 8,
-`operator` 4, `attr-defined` 2, `str-format` 2, `call-overload` 2, `str-unpack` 1,
-`func-returns-value` 1. **25 of 59 files are clean under the probe** —
-`build_catalog.py`, `build_report_templates.py`, `check_index_links.py`, `extract_subfinding_pairs.py`,
+Its 197 findings are an annotation backlog, not defects: `var-annotated` 81 (an empty `dict`/`list`
+accumulator mypy cannot infer), `assignment` 46, `union-attr` 29, `misc` 10, `index` 10, `arg-type` 8,
+`operator` 5, `attr-defined` 2, `str-format` 2, `call-overload` 2, `str-unpack` 1,
+`func-returns-value` 1. **26 of 60 files are clean under the probe** —
+`build_catalog.py`, `build_report_templates.py`, `check_index_links.py`, `dump_template_slots.py`, `extract_subfinding_pairs.py`,
 `extract_verification_348.py`, `locate_summary_quotes.py`, `measure_templates.py`, `read_manuscript.py`,
 `render_reports.py`, `triage_t0.py`, `verify_counterexample_crosscheck.py`, `verify_index_design.py`,
 `verify_named_results.py`, and all 12 files under `catlib/`.
@@ -104,19 +104,23 @@ become typed call surfaces the probe can analyze. `extract_citations.py` 7 → 3
 `verify_citations.py` 8 → 11 across `math-lon.2.4` are that effect; the added findings are the
 accumulators and string paths the probe can now see through, and they are the annotation backlog.
 
+Measured 2026-10-10 over the 60-file tree: **197** findings over **34** files, the **26** clean files
+being the list above. Against the 200-finding / 36-file snapshot this table replaces, three files
+moved: `extract_links.py` 9 → 11, while `check_index_links.py` 3 → 0 and `extract_subfinding_pairs.py`
+2 → 0 — both are clean under the probe today.
+
 | Errors | File |
 |---|---|
 | 35 | `verify_upstream_history.py` |
 | 32 | `extract_citations.py` |
 | 12 | `build_index.py` |
-| 11 | `verify_citations.py` |
+| 11 | `verify_citations.py`, `extract_links.py` |
 | 10 | `verify_scope_exclusions.py`, `measure_names.py` |
-| 9 | `extract_links.py` |
 | 6 | `verify_findings.py` |
 | 5 | `build_sources.py`, `compare_abstracts.py`, `verify_sources.py`, `verify_subfinding_pairs.py` |
 | 4 | `measure_proof_density.py`, `verify_named_conjectures.py`, `verify_summaries.py`, `verify_t0_chains.py` |
-| 3 | `check_index_links.py`, `extract_formalization_deps.py`, `extract_named_results.py`, `measure_index_sizes.py`, `measure_topics.py`, `verify_subfindings.py` |
-| 2 | `extract_subfinding_pairs.py`, `extract_subfindings.py`, `extract_verification_dirs.py`, `verify_abstracts.py`, `verify_conjecture_standing.py`, `verify_script_ownership.py`, `verify_verification_dirs.py` |
+| 3 | `extract_formalization_deps.py`, `extract_named_results.py`, `measure_index_sizes.py`, `measure_topics.py`, `verify_subfindings.py` |
+| 2 | `extract_subfindings.py`, `extract_verification_dirs.py`, `verify_abstracts.py`, `verify_conjecture_standing.py`, `verify_script_ownership.py`, `verify_verification_dirs.py` |
 | 1 | `check_summary_manuscripts.py`, `extract_counterexample_crosscheck.py`, `extract_scope_notes.py`, `extract_t0_chains.py`, `refresh_summary_line_counts.py`, `verify_conditional.py`, `verify_dependency_drift.py` |
 
 ## pylint triage
@@ -165,11 +169,11 @@ must be cumulative over the block, not per line), and re-inserting a blank line 
 
 - **Behaviour.** The linters prove style and typing facts only. The autofix pass ran with
   `--fix --unsafe-fixes` and took ruff from 287 findings to 26; the 26 were fixed by hand. The
-  evidence that none of it changed any output is the gate — 65 invocations run twice with every
+  evidence that none of it changed any output is the gate — 66 invocations run twice with every
   generated artifact md5-snapshotted and diffed (`notes/scripts/README.md`).
 - **No test suite.** The generator report is the test, so a lint fix is verified by report
   equality, not by unit tests.
-- **The strict probe is not scheduled.** The 200-error `--check-untyped-defs` backlog above is a
+- **The strict probe is not scheduled.** The 197-error `--check-untyped-defs` backlog above is a
   work estimate; nothing runs that command as a gate.
 - **`duplicate-code` is off corpus-wide** — **29** findings measured with `--enable=R0801` over 57
   files after **all 19** checkers moved onto the package, and nothing automatic re-enables
