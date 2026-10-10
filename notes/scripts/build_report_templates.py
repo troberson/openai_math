@@ -72,6 +72,9 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
     "notes/subfinding-pairs.md": R.subfinding_pairs_population,
     # notes/README.md is derived from the ledger alone plus the yaml's sources/main_results counts.
     "notes/README.md": R.readme_population,
+    # counterexample-crosscheck.md re-runs the crosscheck extractor's own report-only helpers
+    # (main_results / scope_note / declaration_statement / carrier) over the ledger population.
+    "notes/counterexample-crosscheck.md": R.crosscheck_population,
 }
 # The writer's own slot dict per page. These are the calls render_reports.py makes when it renders,
 # so the labels and phrase strings the template gets are the writer's by construction.
@@ -94,6 +97,8 @@ LABELS: dict[str, Callable[[], dict[str, str]]] = {
     "notes/subfinding-pairs.md": lambda: R.subfinding_pairs_phrases(
         POPULATIONS["notes/subfinding-pairs.md"]()),
     "notes/README.md": lambda: R.readme_phrases(POPULATIONS["notes/README.md"]()),
+    "notes/counterexample-crosscheck.md": lambda: R.crosscheck_phrases(
+        POPULATIONS["notes/counterexample-crosscheck.md"]()),
 }
 PHRASE_FNS = ("count_phrases", "size_phrases")
 ALL_PAGES = {
@@ -139,6 +144,9 @@ ALL_PAGES = {
     # therefore reports this coverage as NOT DERIVED, and the page is proven by the twice-render
     # byte-identity diff plus that checker's plain run and its 11 mutants.
     "notes/README.md": "verify_script_ownership.py",
+    # counterexample-crosscheck.md is the one report-fed page whose checker exports population() and
+    # count_phrases(), so the builder derives its needle list from the checker itself.
+    "notes/counterexample-crosscheck.md": "verify_counterexample_crosscheck.py",
 }
 
 

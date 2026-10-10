@@ -36,9 +36,11 @@ from typing import Any
 
 from jinja2 import Environment, FileSystemLoader
 
+import build_catalog as B
 import build_sources as S
 import check_index_links as CI
 import compare_abstracts as CA
+import extract_counterexample_crosscheck as cc
 import extract_named_results as en
 import extract_scope_notes as ex
 import extract_subfinding_pairs as ep
@@ -78,6 +80,7 @@ TOPICS_MD = ROOT / "notes" / "topics.md"
 T0_CHAINS_MD = ROOT / "notes" / "t0-chains.md"
 SP_MD = ROOT / "notes" / "subfinding-pairs.md"
 README_MD = ROOT / "notes" / "README.md"
+CROSSCHECK_MD = ROOT / "notes" / "counterexample-crosscheck.md"
 VPOS = PREPRINTS / "Positively-curved-Einstein-four-manifolds-September-23-2026" / "verification"
 VZERO = PREPRINTS / "Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026" / "verification"
 FOCK = PREPRINTS / "A-Fock-space-inequality-and-the-Laughlin-spectral-gap-September-24-2026"
@@ -2836,6 +2839,199 @@ def readme_page(p: dict[str, str]) -> str:
     return ENV.get_template("README.md.j2").render(p=p)
 
 
+# The Verdict column and the gap table's "what the claim needs" cells are reading-pass findings,
+# not measurements: they ship as records keyed by family / (config, family).
+CC_VERDICTS = {
+    "047": "entry states the counterexample",
+    "072": "entry states it; two companion entries",
+    "095": "entry states the counterexample",
+    "100": "structural absence",
+    "118": "entry states the counterexample",
+    "151": "structural absence",
+    "155": "entry states the counterexample",
+    "157": "entry states the Hadwiger claim; one gap",
+    "161": "structural absence",
+    "162": "entries state both claims; one gap",
+    "172": "classification and spherical witness; five gaps",
+    "185": "entry states claim 1; one gap",
+    "190": "entry states the counterexample",
+    "191": "structural absence",
+    "192": "structural absence",
+    "197": "three entries state the three claims; one gap",
+    "198": "entry states claim 1; one companion",
+    "199": "entries state claims 1 and 3",
+    "244": "entry states claim 1; one gap",
+    "272": "structural absence",
+    "289": "structural absence",
+    "294": "entry states claim 1; one gap",
+    "297": "structural absence",
+    "323": "structural absence",
+    "329": "entry states the counterexample",
+    "347": "entry states a degenerate instance",
+    "350": "entries state two forms; one gap",
+    "361": "entry states the counterexample",
+}
+
+CC_NEEDS = {
+    ("ListHadwiger", "157"): "no claim sentence names it",
+    ("BalancedRyser", "162"): "the balanced case of the Ryser covering claim",
+    ("EuclideanRamseyCircle", "172"): "no claim sentence names it",
+    ("EuclideanRamseyNine", "172"): "no claim sentence names it",
+    ("EuclideanRamseyQuadratic", "172"): "no claim sentence names it",
+    ("EuclideanRamseySpherical", "172"): "no claim sentence names it",
+    ("EuclideanRamseyTransitive", "172"): "the Leader–Russell–Walters refutation (claim 1)",
+    ("InfiniteMatroidCorollaries", "185"): "the Joó partitional-matroid corollary (claim 2)",
+    ("KaplanskyDirectFiniteness", "197"): "the general direct-finiteness counterexample",
+    ("PartitionConsistency", "244"): "no claim sentence names it",
+    ("KaplanskyStableFiniteness", "294"): "no claim sentence names it",
+    ("NodalLength", "350"): "the nodal-length bound",
+}
+
+
+def crosscheck_population() -> dict[str, Any]:
+    rows = {r["fam"]: r for r in tsv.read_rows(LEDGER_TSV)}
+    order, fams = overview.parse_overview()
+    shape = [f for f in order if "counterexample" in B.shapes_of(fams[f]["abstract"])]
+    pop = [f for f in shape if rows[f]["tier"] != "T0"]
+    mr, entries = cc.main_results()
+    links = {f: cc.scope_note(f)[1] for f in pop}
+    cfgs = {f: sorted({c for _, c in links[f]}) for f in pop}
+    first_link = {f: {c: min(n for n, x in links[f] if x == c) for c in cfgs[f]} for f in pop}
+    gaps = {f: [c for c in cfgs[f] if c not in mr] for f in pop}
+    # The page's Entries column counts configs that HAVE an entry, not the yaml entries a config
+    # carries; the coverage sentences count the ledger's mainres column.
+    ent_cfg = {f: len([c for c in cfgs[f] if c in mr]) for f in pop}
+    all_cfg = sorted({c for f in pop for c in cfgs[f]})
+
+    def sorry(c: str) -> int:
+        p = COMPARATOR_DIR / f"{c}.lean"
+        return p.read_text(encoding="utf-8", errors="replace").count("sorry") if p.is_file() else 0
+
+    carriers = carriers_ok = 0
+    for f in pop:
+        for c in cfgs[f]:
+            ent = mr.get(c)
+            if ent is None:
+                continue
+            decl, rel, _ = ent
+            at, block = cc.declaration_statement(decl, rel)
+            if at is None:
+                continue
+            t = re.search(r":\s*([A-Z][A-Za-z0-9_.]*(?:\.\{[^}]*\})?)\s*:=", " ".join(block))
+            if not t:
+                continue
+            carriers += 1
+            cfile, _, _ = cc.carrier(t.group(1).split(".{")[0].split(".")[-1], rel)
+            if cfile is not None:
+                carriers_ok += 1
+    return {
+        "rows": rows, "pop": pop, "tiers": collections.Counter(rows[f]["tier"] for f in pop),
+        "shape": len(shape), "mr": mr, "entries": entries, "cfgs": cfgs, "links": links,
+        "first_link": first_link, "ent_cfg": ent_cfg, "gaps": gaps,
+        "with_entry": [f for f in pop if ent_cfg[f] > 0],
+        "without": [f for f in pop if ent_cfg[f] == 0],
+        "all_cfg": all_cfg,
+        "mainres": sum(int(rows[f]["mainres"]) for f in pop),
+        "sorry_distinct": sum(sorry(c) for c in all_cfg),
+        "sorry_links": sum(sorry(c) for f in pop for _, c in links[f]),
+        "carriers": carriers, "carriers_ok": carriers_ok,
+        "broad": [f for f in order if rows[f]["counterex_broad"] == "1"],
+    }
+
+
+def crosscheck_phrases(p: dict[str, Any]) -> dict[str, str]:
+    rows, pop = p["rows"], p["pop"]
+    t3, t2 = p["tiers"]["T3"], p["tiers"]["T2"]
+    out: dict[str, str] = {}
+    out["cc_pop"] = f"**{len(pop)}** families — **{t3}** at T3 and **{t2}** at T2"
+    out["cc_shape"] = f"**{p['shape']}** families overall, so"
+    out["cc_t0"] = f"**{p['shape'] - len(pop)}** carry the tag at T0"
+    out["cc_led_over"] = f"Ledger sums over the {len(pop)}:"
+    out["cc_led_a"] = (f"**{sum(int(rows[f]['mainres']) for f in pop)}** `main_results` declarations, "
+                       f"**{sum(int(rows[f]['chal']) for f in pop)}** comparator configs, "
+                       f"**{sum(int(rows[f]['paps_form']) for f in pop)}**")
+    out["cc_led_b"] = f"formalized manuscripts out of **{sum(int(rows[f]['paps']) for f in pop)}**"
+    out["cc_scope_all"] = f"Every one of the {len(pop)} has a scope note"
+    out["cc_yaml"] = (f"**{len(p['entries'])}** `main_results` entries over "
+                      f"**{len(set(p['entries']))}** unique configs")
+    out["cc_of"] = (f"Of the {len(pop)} families, **{len(p['with_entry'])}** have at least one entry "
+                    f"and **{len(p['without'])}**")
+    out["cc_tierdict"] = f"`{dict(collections.Counter(rows[f]['tier'] for f in p['without']))}`"
+    out["cc_decl_all"] = f"All **{p['mainres']}** declarations resolve"
+    out["cc_carrier"] = f"**{p['carriers']}** of the {len(pop)} are"
+    out["cc_carrier_res"] = f"**{p['carriers_ok']}** carriers resolve"
+    out["cc_cfg_acct"] = f"Config accounting: the {len(pop)} scope notes link"
+    out["cc_cfg"] = (f"**{len(p['all_cfg'])}** distinct configs, **{p['mainres']}** of them carry an "
+                     f"entry and")
+    out["cc_cfg_none"] = f"**{len(p['all_cfg']) - p['mainres']}** carry none"
+    t3g = [f for f in pop if rows[f]["tier"] == "T3" and p["gaps"][f]]
+    t2g = [f for f in pop if rows[f]["tier"] == "T2" and p["gaps"][f]]
+    out["cc_t3gap"] = f"**{sum(len(p['gaps'][f]) for f in t3g)}** configs in **{len(t3g)}** families"
+    out["cc_t2gap"] = (f"**{sum(len(p['gaps'][f]) for f in t2g)}** configs in all "
+                       f"**{len(t2g)}** families")
+    out["cc_h_t3"] = f"## The {t3} T3 families"
+    out["cc_h_t2"] = f"## The {t2} T2 families: structural absence"
+    out["cc_gap_intro"] = (f"The {sum(len(p['gaps'][f]) for f in t3g)} configs a T3 scope note links "
+                           f"that carry no `main_results` entry, in {len(t3g)} families:")
+    for f in pop:
+        out[f"cc_row_{f}"] = (f"| {f} | {rows[f]['tier']} | {len(p['cfgs'][f])} | {p['ent_cfg'][f]} | "
+                              f"{len(p['gaps'][f])} | {CC_VERDICTS[f]} |")
+    for f in pop:
+        if rows[f]["tier"] != "T2":
+            continue
+        cell = ", ".join(f"`{c}`" for c in p["cfgs"][f])
+        anchor = min(p["first_link"][f].values())
+        out[f"cc_t2row_{f}"] = f"| {f} | {cell} | `lean/docs/{f}.md:{anchor}` |"
+    for f in pop:
+        for c in p["gaps"][f]:
+            if rows[f]["tier"] != "T3":
+                continue
+            out[f"cc_gaprow_{c}"] = (f"| `{c}` | {f} | `lean/docs/{f}.md:{p['first_link'][f][c]}` | "
+                                     f"{CC_NEEDS[(c, f)]} |")
+    out["cc_100_links"] = f"{len(p['links']['100'])} link occurrences, {len(p['cfgs']['100'])} distinct configs"
+    out["cc_stub_a"] = (f"The {len(pop)} scope notes link **{len(p['all_cfg'])}** distinct configs, "
+                        f"and each has a stub file under")
+    out["cc_stub_sorry"] = f"carrying **{p['sorry_distinct']}** `sorry` occurrences"
+    out["cc_stub_links"] = (f"the same files carry {p['sorry_links']}, the "
+                            f"{p['sorry_links'] - p['sorry_distinct']}-gap being family 100's four")
+    out["cc_stub_cov"] = (f"which is why {p['mainres']} entries over {len(p['all_cfg'])} configs is "
+                          f"the coverage answer")
+    out["cc_bead_t0"] = f"fires on **{p['shape'] - len(pop)}** T0 families"
+    out["cc_bead_21"] = f"The **{sum(1 for f in p['broad'] if rows[f]['tier'] == 'T0')}** is the count"
+    out["cc_broad"] = (f"column, {len(p['broad'])} families corpus-wide: "
+                       f"{sum(1 for f in p['broad'] if rows[f]['tier'] == 'T0')}")
+    out["cc_broad_tiers"] = (f"T0, {sum(1 for f in p['broad'] if rows[f]['tier'] == 'T3')} T3, "
+                             f"{sum(1 for f in p['broad'] if rows[f]['tier'] == 'T2')} T2")
+    out["cc_nc_decl"] = f"The {len(pop)} declarations were resolved"
+    out["cc_nc_carrier"] = f"({p['carriers']} of them are)"
+    out["cc_nc_t0"] = f"The {p['shape'] - len(pop)} T0 families with the shape tag"
+    out["cc_nc_outside"] = (f"the {len(set(p['entries']))} − {p['mainres']} = "
+                            f"{len(set(p['entries'])) - p['mainres']} configs named by")
+    for label, prefixes in CC_SPLIT.items():
+        base = out.pop(label)
+        rest = base
+        for i, pre in enumerate(prefixes):
+            rest = rest.lstrip()
+            if not rest.startswith(pre):
+                raise ValueError(f"slot {label!r}: page wrap {pre!r} is not a prefix of {base!r}")
+            out[f"{label} {'abcdefghij'[i]}"] = pre
+            rest = rest[len(pre):]
+        out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
+    return out
+
+
+CC_SPLIT: dict[str, list[str]] = {
+    # label -> first-line prefix of each page newline inside its span; the tail is the remainder
+    "cc_bead_21": ["The"],
+    "cc_stub_cov": ["which is why 28 entries"],
+    "cc_t2gap": ["**12**"],
+}
+
+
+def crosscheck_page(p: dict[str, str]) -> str:
+    return ENV.get_template("counterexample-crosscheck.md.j2").render(p=p)
+
+
 def main() -> None:
     mp = en.population()
     ip = M.population()
@@ -2850,6 +3046,7 @@ def main() -> None:
     tcp = t0_chains_population()
     spp = subfinding_pairs_population()
     rmp = readme_population()
+    xcp = crosscheck_population()
     SOURCES_MD.write_text(sources_page(), encoding="utf-8")
     ABSTRACTS_MD.write_text(abstracts_page(), encoding="utf-8")
     NAMED_RESULTS_MD.write_text(named_results_page(mp), encoding="utf-8")
@@ -2865,9 +3062,10 @@ def main() -> None:
     T0_CHAINS_MD.write_text(t0_chains_page(t0_chains_phrases(tcp)), encoding="utf-8")
     SP_MD.write_text(subfinding_pairs_page(subfinding_pairs_phrases(spp)), encoding="utf-8")
     README_MD.write_text(readme_page(readme_phrases(rmp)), encoding="utf-8")
+    CROSSCHECK_MD.write_text(crosscheck_page(crosscheck_phrases(xcp)), encoding="utf-8")
     for page in (SOURCES_MD, ABSTRACTS_MD, NAMED_RESULTS_MD, INDEX_DESIGN_MD, NAMES_MD,
                  PROOF_DENSITY_MD, INDEX_LINKS_MD, LINKS_MD, DRIFT_MD, VERIF_MD, EX_MD, TOPICS_MD,
-                 T0_CHAINS_MD, SP_MD, README_MD):
+                 T0_CHAINS_MD, SP_MD, README_MD, CROSSCHECK_MD):
         out = page.read_text(encoding="utf-8")
         print(f"{page.name} written  lines {len(out.splitlines())}  bytes {len(out.encode())}")
     ms, ma = measure(), CA.measure()
@@ -2883,6 +3081,7 @@ def main() -> None:
           f"  t0-chains {len(t0_chains_phrases(tcp))}"
           f"  subfinding-pairs {len(subfinding_pairs_phrases(spp))}"
           f"  readme {len(readme_phrases(rmp))}"
+          f"  crosscheck {len(crosscheck_phrases(xcp))}"
           f"  multi-root rows {len(ms['multi'])}  rows {ms['rows']}  listed {ms['listed']}"
           f"  dirs {ms['dirs']}  comparisons {ma['manuscripts']}  families {ma['families']}"
           f"  target rows {len(tgt_rows(mp))}")
