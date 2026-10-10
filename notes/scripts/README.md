@@ -2,7 +2,7 @@
 
 Measured 2026-10-09 by `python3 notes/scripts/verify_script_ownership.py` — report-only, it writes
 nothing, and every count below is re-derived by that run. The page answers one question: for each of
-the **1,124** files under `notes/` (the scripts excluded), which is whose bytes. A generated file is
+the **1,125** files under `notes/` (the scripts excluded), which is whose bytes. A generated file is
 changed by editing its generator and re-rendering; a hand-written file is edited directly. Ownership
 is per file, and the checker exits 1 on a file no rule owns.
 
@@ -33,18 +33,18 @@ finds **9** writers over **45** scripts.
 | `extract_formalization_deps.py` | `notes/formalization-deps.tsv` | run twice, byte-identical | `notes/dependency-drift.md` |
 | `extract_links.py` | `notes/links.tsv` | run twice, byte-identical | `notes/links.md` |
 | `extract_subfindings.py` | `notes/subfindings.tsv` | run twice, byte-identical | `notes/subfinding-pairs.md` |
-| `render_reports.py` | `notes/abstracts.md`, `notes/dependency-drift.md`, `notes/index-design.md`, `notes/index-links.md`, `notes/links.md`, `notes/named-results.md`, `notes/names.md`, `notes/proof-density.md`, `notes/sources.md`, `notes/verification-dirs.md`, `notes/scope-exclusions.md`, `notes/topics.md`, `notes/t0-chains.md`, `notes/subfinding-pairs.md` | run twice, byte-identical | the fourteen report-fed pages |
-| `build_report_templates.py` | `notes/templates/report` | not in `gate.sh` — it reads each page with `git show HEAD:`, so a gate run would rewrite templates from committed bytes; run explicitly with 0 args (all fourteen pages) or 2 (one page) after a writer's slot dict changes | the fourteen page templates |
+| `render_reports.py` | `notes/README.md`, `notes/abstracts.md`, `notes/dependency-drift.md`, `notes/index-design.md`, `notes/index-links.md`, `notes/links.md`, `notes/named-results.md`, `notes/names.md`, `notes/proof-density.md`, `notes/sources.md`, `notes/verification-dirs.md`, `notes/scope-exclusions.md`, `notes/topics.md`, `notes/t0-chains.md`, `notes/subfinding-pairs.md` | run twice, byte-identical | the fifteen report-fed pages |
+| `build_report_templates.py` | `notes/templates/report` | not in `gate.sh` — it reads each page with `git show HEAD:`, so a gate run would rewrite templates from committed bytes; run explicitly with 0 args (all fifteen pages) or 2 (one page) after a writer's slot dict changes | the fifteen page templates |
 
 Six writers emit one TSV each. `build_index.py` is the one-to-many case: it renders **1,049** files —
-**1,033** `.md` pages and **16** `.tsv` tables. `render_reports.py` renders the fourteen report-fed pages
+**1,033** `.md` pages and **16** `.tsv` tables. `render_reports.py` renders the fifteen report-fed pages
 from the templates `build_report_templates.py` builds from the committed page and the slot dict that
 writer supplies. `compare_abstracts.py` is the conditional case: its
 default run writes nothing and only `--tsv` touches `notes/abstracts.tsv`.
 
 Writers import each other, so a generated file's bytes are not a function of one script.
 `build_index.py` imports `build_catalog`, `measure_topics`, `measure_names`,
-`check_index_links` and `jinja2` (the index page text lives in `notes/templates/*.j2`, the fourteen
+`check_index_links` and `jinja2` (the index page text lives in `notes/templates/*.j2`, the fifteen
 report-fed page skeletons in `notes/templates/report/*.j2`);
 `extract_links.py`, `extract_subfindings.py`, `compare_abstracts.py`,
 `check_index_links.py`, `measure_names.py` and `measure_topics.py` all import `build_catalog`;
@@ -172,10 +172,10 @@ The package is not in the census below: the script population is `notes/scripts/
 |---|---|---|
 | `notes/index/` | **1,049** | generated — `build_index.py` |
 | `notes/summaries/` | **21** | hand-written — the reading record |
-| `notes/templates/` | **19** | **5** hand-written index skeletons + **14** report templates built by `build_report_templates.py` |
+| `notes/templates/` | **20** | **5** hand-written index skeletons + **15** report templates built by `build_report_templates.py` |
 | `notes/*.tsv` | **8** | **6** generated, **2** hand-authored |
 | `notes/*.md` | **27** | hand-written — **15** with a checker, **12** without |
-| `notes/` total, scripts excluded | **1,124** | — |
+| `notes/` total, scripts excluded | **1,125** | — |
 
 The generated TSVs are the six writer targets. The two hand-authored tables are:
 
@@ -228,7 +228,7 @@ named; `read_manuscript.py` and `refresh_summary_line_counts.py` are the rest of
 `notes/citations.md`, `notes/findings.md` and `notes/named-conjectures.md`, so three pages carried
 measurements whose checker no document named; `verify_upstream_history.py` is the tooling behind
 `upstream_history/`, the pages that record each upstream merge, which sit outside `notes/` and so
-outside this page's census; and `render_reports.py` is the renderer for the fourteen report-fed pages.
+outside this page's census; and `render_reports.py` is the renderer for the fifteen report-fed pages.
 All 45 are named here and in the command
 block. "Before this pass" is
 pinned to the commit that created this page, read at its parent, not to `HEAD`: `HEAD` moves every
