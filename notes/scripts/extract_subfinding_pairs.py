@@ -24,6 +24,7 @@ Usage: python3 notes/scripts/extract_subfinding_pairs.py
 import csv
 import re
 import sys
+from typing import Any
 
 import build_catalog as bc
 
@@ -53,18 +54,18 @@ def resultentry_lines():
     return out
 
 
-def main():
-    if not TSV.is_file():
-        print(f"{TSV.name} not found - run notes/scripts/extract_subfindings.py first")
-        return 1
-    if not LEDGER.is_file():
-        print(f"{LEDGER.name} not found - run notes/scripts/build_catalog.py first")
-        return 1
+def population() -> dict[str, Any]:
+    """The measured population and the raw material per family, as this report prints it.
 
+    The union rule lives here once: `main()` prints from these values and
+    `notes/scripts/render_reports.py` imports this function to render `notes/subfinding-pairs.md`, so
+    the page and the report are computed by the same rule and the page's checker re-derives it
+    independently.
+    """
     _order, fams = bc.parse_overview()
     rows = list(csv.DictReader(TSV.read_text(encoding="utf-8").splitlines(), delimiter="\t"))
-    titles = {}
-    paths = {}
+    titles: dict[str, list[str]] = {}
+    paths: dict[str, list[str]] = {}
     for r in rows:
         if r["kind"] == "manuscript":
             titles.setdefault(r["fam"], []).append(r["title"])
@@ -79,7 +80,25 @@ def main():
     per_phrase = {p: {f for f in fams if p in low[f]} for p in PROBE}
     probe_all = set().union(*per_phrase.values())
     probe = probe_all & multi
-    population = sorted(probe | set(DENSEST))
+    pop = sorted(probe | set(DENSEST))
+    return {"fams": fams, "titles": titles, "paths": paths, "counts": counts, "lines": lines,
+            "ledger": ledger, "multi": multi, "low": low, "per_phrase": per_phrase,
+            "probe_all": probe_all, "probe": probe, "pop": pop}
+
+
+def main():
+    if not TSV.is_file():
+        print(f"{TSV.name} not found - run notes/scripts/extract_subfindings.py first")
+        return 1
+    if not LEDGER.is_file():
+        print(f"{LEDGER.name} not found - run notes/scripts/build_catalog.py first")
+        return 1
+
+    v = population()
+    fams, titles, paths = v["fams"], v["titles"], v["paths"]
+    counts, lines, ledger = v["counts"], v["lines"], v["ledger"]
+    multi, low, per_phrase = v["multi"], v["low"], v["per_phrase"]
+    probe_all, probe, pop = v["probe_all"], v["probe"], v["pop"]
 
     print(f"population rule: (abstract contains one of {PROBE}) AND (>=2 manuscripts), "
           f"union the bead's {len(DENSEST)} densest names")
@@ -93,12 +112,12 @@ def main():
     print(f"bead densest names in probe   {[d for d in DENSEST if d in probe]}")
     print(f"bead densest names outside    {[d for d in DENSEST if d not in probe]}")
     print()
-    print(f"POPULATION {len(population)} families, "
-          f"{sum(counts[f] for f in population)} manuscripts")
-    print("families: " + " ".join(population))
+    print(f"POPULATION {len(pop)} families, "
+          f"{sum(counts[f] for f in pop)} manuscripts")
+    print("families: " + " ".join(pop))
     print()
     print("raw material, one block per family:")
-    for fam in population:
+    for fam in pop:
         tier = ledger[fam]["tier"]
         print(f"=== {fam}  overview.tex:{lines[fam]}  n={counts[fam]}  tier={tier}  "
               f"paps_form={ledger[fam]['paps_form']}")
