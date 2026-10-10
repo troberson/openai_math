@@ -4,7 +4,9 @@ description: Initialize bd (beads) so the issue store lives in git, not Dolt —
   (not an init flag), the .git/info/exclude trap that blocks tracking, export/hook behaviour (bd
   create does not re-export), the agent files `bd init` scaffolds (keep and revise CLAUDE.md), seeding
   an epic with sub-beads (--deps direction, --body-file absolute path, export-and-count before
-  committing), and wrapping `bd prime` so its push-mandatory context cannot override repo rules.
+  committing), encoding a recommended order as a linear dep chain, closing superseded beads with a
+  pointer (--reason, epic refuses to close with a child open), and wrapping `bd prime` so its
+  push-mandatory context cannot override repo rules.
 source: auto-skill
 extracted_at: '2026-10-07T08:30:15.038Z'
 ---
@@ -232,6 +234,41 @@ re-exports and stages them otherwise).
 create, export, commit, push, and **stop**. Report the ids, the dependency verification, the commit
 shas, and say explicitly that the new rows sit in `bd ready` as *not-claimable* work. Claiming one is
 the failure mode the instruction exists to prevent.
+
+## 8c. Encoding a recommended order, and superseding beads a new epic absorbs
+
+**Recommended sequence ⇒ linear dependency chain, not a flat sibling set.** Give each child `--deps`
+on its predecessor:
+
+```bash
+bd create "step 2 ..." --parent <epic> --priority P2 --deps "<epic>.1" --body-file /abs/b2.md
+bd show <epic>.2      # DEPENDS ON: <epic>.1
+bd ready              # only .1 is claimable — the order is now enforced by the tracker
+```
+
+This is how "go with your recommendation" survives into a later session: the queue itself refuses the
+out-of-order claim. Verify with `bd ready` that exactly one new row appeared.
+
+**When a new design subsumes beads that already exist, close them with a pointer — never delete,
+never leave them open next to their replacement.** Two epics carrying the same fixes makes `bd ready`
+a lie.
+
+```bash
+bd close <epic>.1 --reason "Superseded by <new>.4 — <what replaces it>."
+bd close <epic>.4 --reason "Superseded by <new>.4. The <scope rule> survives, restated as: <rule>."
+bd close <epic>.5 --reason "Moved into <new>.5, which adds the <precondition> this bead needed."
+```
+
+- `bd close` takes `--reason` (and `--reason-file`); there is **no `--note`**.
+- **An epic refuses to close while a child is open.** Close the absorbed children, keep the doc-sweep
+  child open, and the epic stays open legitimately — say so in the report.
+- Record in each reason **what survives** from the old bead, not only what is superseded, and record
+  **where** it moved, so the store and the docs agree.
+- Re-scope in the same pass as the creation, then export and count both prefixes:
+  `grep -c '<new-prefix>' .beads/issues.jsonl && grep -c '<old-prefix>' .beads/issues.jsonl`.
+
+Report the ready-queue delta with its cause (5 closed, 1 newly claimable ⇒ 24 → 19), never as a bare
+count.
 
 ## 9. Do not commit unasked
 
