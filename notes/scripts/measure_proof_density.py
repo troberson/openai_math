@@ -15,6 +15,10 @@ conditional-tag discipline in notes/conditional.md):
 AUC is P(X > Y) for the first-named group over the second (Mann-Whitney U); 0.5 is
 no separation. z uses the tie-corrected SD.
 
+Sync pass: notes/proof-density.md is compared with notes/scripts/render_reports.py's render
+of it. The gates prove the numbers are measured; they prove nothing about the sentences
+around them, and the page's tables are prose in the template, not report output.
+
 Usage: python3 notes/scripts/measure_proof_density.py [--mutant]
 """
 
@@ -23,9 +27,12 @@ import math
 import pathlib
 import sys
 
+from catlib import render as RD
+
 REPO = pathlib.Path(__file__).resolve().parents[2]
 SOURCES = REPO / "notes" / "sources.tsv"
 LEDGER = REPO / "notes" / "catalog.tsv"
+PAGE = REPO / "notes" / "proof-density.md"
 
 # Totals recorded in beads math-hqd.3 and in notes/sources.md, re-measured 2026-10-09 after the
 # upstream merge (719 manuscripts / 20,341 proofs / 21,288 statements / tiers 136-106-0-130).
@@ -43,6 +50,10 @@ TIER_PAIRS = [("T0", "T2"), ("T0", "T3"), ("T2", "T3")]
 SHAPES = ["uniform", "resolution", "bound", "counterexample", "partial",
           "classification", "density", "conditional", "undecidability"]
 FLAGS = ["conditional", "resolves_named", "counterex_broad"]
+
+# The sync-pass mutant's name, exported because render_reports.py runs mutants() in-process while
+# its own render is in progress, where the sync pass is inert by design.
+SYNC_MUTANT = "page prose length altered"
 
 
 def read_tsv(path):
@@ -300,6 +311,18 @@ def mutants(fams_builder):
     apply("flip a tier label", lambda r, l: l[0].__setitem__("tier", "T2"))
     apply("duplicate a dir row", lambda r, l: r.append(dict(r[0])))
     apply("negative proofs", lambda r, l: r[0].__setitem__("proofs", "-3"))
+
+    # Sync pass: a prose length in the limitations list. No gate reads the page, so only the
+    # render diff can see it.
+    page_text = PAGE.read_text(encoding="utf-8")
+    mutated = page_text.replace("a 40-line construction", "a 41-line construction", 1)
+    PAGE.write_text(mutated, encoding="utf-8")
+    try:
+        probs = RD.sync_problems(PAGE, mutated)
+    finally:
+        PAGE.write_text(page_text, encoding="utf-8")
+    cases.append((SYNC_MUTANT, bool(probs), probs[:2]))
+
     caught = sum(1 for _, ok, _ in cases if ok)
     return caught, len(cases), cases
 
@@ -312,10 +335,12 @@ def main():
     fams = build_families(sources, ledger)
     st_ok, st_total = selftest()
     problems = report(fams, ledger, sources, quiet=quiet)
+    sync = RD.sync_problems(PAGE, PAGE.read_text(encoding="utf-8"))
     print("=== gates ===")
     print(f"statistic self-test {st_ok}/{st_total}")
-    print("PROBLEMS " + str(len(problems) + (st_total - st_ok)))
-    for p in problems:
+    print(f"sync problems (notes/proof-density.md) {len(sync)}")
+    print("PROBLEMS " + str(len(problems) + (st_total - st_ok) + len(sync)))
+    for p in problems + sync:
         print("  " + p)
     if "--mutant" in args:
         caught, total, cases = mutants(build_families)
@@ -325,7 +350,7 @@ def main():
         print(f"mutants caught {caught}/{total}")
         if caught != total:
             sys.exit(1)
-    if problems:
+    if problems or sync:
         sys.exit(1)
 
 

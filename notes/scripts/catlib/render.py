@@ -14,6 +14,11 @@ which is the file a reader has to be pointed at.
 from __future__ import annotations
 
 import difflib
+import functools
+import os
+import pathlib
+
+_IN_RENDER = False
 
 
 def diff_problems(text: str, rendered: str, limit: int = 12) -> list[str]:
@@ -53,6 +58,50 @@ def _clip(line: str) -> str:
     return repr(line if len(line) <= 80 else line[:80] + "…")
 
 
+@functools.cache
+def rendered(page: pathlib.Path) -> str:
+    """The writer's bytes for one page, measured once per process.
+
+    The import is inside the function on purpose: `render_reports.py` imports the checkers that
+    call this, so a module-level import here would make the two modules a cycle. The cache is why
+    a checker with a mutant loop pays for the corpus once, not once per mutant.
+    """
+    global _IN_RENDER
+    _IN_RENDER = True
+    try:
+        import render_reports as R
+
+        return R.render_page(page)
+    finally:
+        _IN_RENDER = False
+
+
+def sync_inert() -> bool:
+    """True when a sync pass must not run, because running it would ask the writer to render the
+    page that is asking.
+
+    The writer computes a page's slots by importing — or spawning — the very scripts that call
+    `sync_problems`: `render_reports.py` calls `measure_proof_density.report()` in-process for
+    `notes/proof-density.md`, and it runs `extract_links.py` as a subprocess for `notes/links.md`.
+    A sync pass started from inside a render would recurse, so the pass is inert while a render is
+    in progress, and inert in a child the writer spawned (marked by `RENDER_REPORTS_CHILD`).
+    """
+    return _IN_RENDER or os.environ.get("RENDER_REPORTS_CHILD") == "1"
+
+
+def sync_problems(page: pathlib.Path, text: str) -> list[str]:
+    """The SYNC pass: a page's bytes on disk against the bytes the writer renders for it.
+
+    This proves the page is what the writer produces. It proves nothing about whether the writer's
+    numbers are right — the checker's own count pass, built from its own measurement, is what does
+    that, and the two passes are deliberately independent. Inside a render (or in a child the
+    writer spawned) it returns []: see `sync_inert`.
+    """
+    if sync_inert():
+        return []
+    return diff_problems(text, rendered(page))
+
+
 def selftest_problems() -> list[str]:
     """The four cases the render-diff must report: identical, changed digit, inserted, deleted."""
     base = "alpha 12 rows\nbeta 3 files\ngamma 7 dirs\n"
@@ -68,6 +117,8 @@ def selftest_problems() -> list[str]:
     deled = diff_problems("alpha 12 rows\ngamma 7 dirs\n", base)
     if len(deled) != 2:
         out.append(f"selftest: deleted line not reported: {deled}")
+    if sync_inert():
+        out.append("selftest: sync reported inert outside a render")
     return out
 
 

@@ -29,6 +29,13 @@ edition of a revised manuscript on disk beside its replacement, and a withdrawn 
 directory beside its notice, so a directory walk is 749 dirs, not 719 manuscripts, and a
 superseded edition's bibliography would count its edges twice. The whole-tree counts and the
 superseded-target citation counts are printed in the report, not written to the TSV.
+
+Sync pass: notes/links.md is compared with notes/scripts/render_reports.py's render of it.
+The report proves the numbers are measured; it proves nothing about the sentences around them,
+and the page's tables are prose in the template, not report output. render_reports.py runs this
+script as a child to compute that page's slots, and marks the child with RENDER_REPORTS_CHILD,
+where the pass is inert by design — the writer rendering the page this pass asks for would
+recurse. The gate's plain run is where the pass does its work.
 """
 import bisect
 import collections
@@ -39,6 +46,7 @@ from pathlib import Path
 
 import build_catalog as bc
 
+from catlib import render as RD
 from catlib import yaml as Y
 from catlib.paths import (
     COMPARATOR_DIR as CHALLENGES,
@@ -51,6 +59,7 @@ from catlib.paths import (
 
 REPO = Path(__file__).resolve().parents[2]
 OUT = REPO / "notes" / "links.tsv"
+PAGE = REPO / "notes" / "links.md"
 
 FIELDS = ["edge", "source", "pattern", "count", "detail", "command", "not_meaning"]
 CMD = "python3 notes/scripts/extract_links.py"
@@ -625,7 +634,11 @@ def main():
     print(f"body href edges: {sum(tex_edges.values())}  target dirs: {len(tex_target)}")
     print(f"MSC hits: {msc_hits}  bib keywords fields: {kw_bib}  \\keywords dirs: {len(kw_tex)}")
     print(f"written: {OUT.relative_to(REPO)}")
-    return 0
+    sync = RD.sync_problems(PAGE, PAGE.read_text(encoding="utf-8"))
+    print(f"sync problems (notes/links.md) {len(sync)}")
+    for p in sync:
+        print("  " + p)
+    return len(sync)
 
 
 if __name__ == "__main__":

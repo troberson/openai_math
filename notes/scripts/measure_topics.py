@@ -35,6 +35,10 @@ both K\\"ahler and Kähler, and "erd" reaches every spelling of Erdos.
 Run with --families to print, for each term, the titles of the families it flags,
 marked T/A/S/P by the layer that hit. That is the reading pass: a term is quotable
 only after its flagged families have been read.
+
+Sync pass: notes/topics.md is compared with notes/scripts/render_reports.py's render of it.
+--check proves the recorded counts are measured; it proves nothing about the sentences around
+them, and the page's tables are prose in the template, not report output.
 """
 from __future__ import annotations
 
@@ -46,8 +50,11 @@ import sys
 
 import build_catalog as B
 
+from catlib import render as RD
+
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 DOCS = ROOT / "lean" / "docs"
+PAGE = ROOT / "notes" / "topics.md"
 TRIPLE = re.compile(
     r"comparator_config:\s*ComparatorChallenges/([A-Za-z0-9_]+)\.json\s*\n"
     r"\s*declaration:\s*(\S+)\s*\n\s*file:\s*(\S+)")
@@ -131,6 +138,7 @@ def measure(vocab=VOCAB):
 
 def main(argv=()):
     rows, texts = measure()
+    sync = RD.sync_problems(PAGE, PAGE.read_text(encoding="utf-8"))
     if "--check" in argv:
         with TSV.open(encoding="utf-8") as fh:
             recorded = list(csv.DictReader(fh, delimiter="\t"))
@@ -158,9 +166,11 @@ def main(argv=()):
         covered = set().union(*[r["families"] for r in rows])
         if len(covered) != len(texts):
             problems.append(f"{len(texts) - len(covered)} families carry no topic")
+        problems.extend(sync)
         print(f"topics.tsv check    {len(recorded)} terms, "
               f"{len(covered)} of {len(texts)} families covered, "
               f"problems {len(problems)}")
+        print(f"sync problems (notes/topics.md) {len(sync)}")
         for p in problems:
             print(f"  {p}")
         sys.exit(1 if problems else 0)
@@ -191,6 +201,10 @@ def main(argv=()):
     print("topics per family     " + "  ".join(f"{k}:{topics[k]}"
                                               for k in sorted(topics)))
     print(f"topic assignments     {sum(len(r['families']) for r in rows)}")
+    print(f"sync problems (notes/topics.md) {len(sync)}")
+    for p in sync:
+        print("  " + p)
+    sys.exit(1 if sync else 0)
 
 
 if __name__ == "__main__":

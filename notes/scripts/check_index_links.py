@@ -32,6 +32,10 @@ Run: python3 notes/scripts/check_index_links.py [--contents]
 --mutant runs the self-test instead of the scan: injected broken hrefs, one per
 category, must all be caught, real hrefs must all resolve, and the paren-balanced
 scanner must keep the CAT(0) path whole where `[^)]*` truncates it.
+
+Sync pass: notes/index-links.md is compared with notes/scripts/render_reports.py's render of it.
+The scan proves the counts are measured; it proves nothing about the sentences around them, and
+the page's tables are prose in the template, not report output.
 """
 from __future__ import annotations
 
@@ -44,11 +48,12 @@ from typing import Any
 
 import build_catalog as B
 
-from catlib import yaml as Y
+from catlib import render as RD, yaml as Y
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 
 IDX = ROOT / "notes" / "index"
+PAGE = ROOT / "notes" / "index-links.md"
 SCHEME = re.compile(r"^[a-zA-Z][a-zA-Z0-9+.-]*:")
 # The main_results triples come from the package reader; build_index.py calls main() at module
 # scope, so importing it would run the build.
@@ -157,6 +162,13 @@ GROUP_ORDER = ["name pages", "family pages", "topic pages", "discipline pages",
 CAT_DIR = "preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026"
 CAT_PAGE = "differential-geometry/337-cartan-hadamard-isoperimetry-and-cat-0-fillings.md"
 
+# The sync-pass mutant: the page's own prose, its name exported because render_reports.py runs
+# mutant_test() in-process while its own render is in progress, where the sync pass is inert by
+# design and the writer records this case as caught by construction.
+SYNC_MUTANT = "page prose wording altered"
+SYNC_NEEDLE = "demonstrated rather than documented."
+SYNC_REPLACEMENT = "demonstrated rather than recorded."
+
 
 def resolve(page_rel, href):
     """Resolve an href found on an index page to a repo-relative path."""
@@ -246,7 +258,21 @@ def mutant_test():
         classed.append((rel, on_disk, "dir" if tagged else "file", category(rel)))
         if on_disk == "dir" and not tagged:
             missed.append(f"{rel}: a directory the classifier does not tag as one")
-    return caught, len(MUTANTS), missed, clean, len(CONTROLS), wrong, trap, classed
+
+    # Sync pass: a wording change in the page's own prose. No injected href sees it and no gate
+    # reads the page, so only the render diff can.
+    page_text = PAGE.read_text(encoding="utf-8")
+    mutated = page_text.replace(SYNC_NEEDLE, SYNC_REPLACEMENT, 1)
+    PAGE.write_text(mutated, encoding="utf-8")
+    try:
+        probs = RD.sync_problems(PAGE, mutated)
+    finally:
+        PAGE.write_text(page_text, encoding="utf-8")
+    if probs:
+        caught += 1
+    else:
+        missed.append(f"{SYNC_MUTANT}: the sync pass reported no problem")
+    return caught, len(MUTANTS) + 1, missed, clean, len(CONTROLS), wrong, trap, classed
 
 
 def check_index():
@@ -440,7 +466,12 @@ def main(argv):
           f"broken {len(m['contents_broken'])}")
     for b in m["contents_broken"][:10]:
         print(f"  BROKEN {b}")
-    return 1 if (broken or m["contents_broken"]) else 0
+    sync = RD.sync_problems(PAGE, PAGE.read_text(encoding="utf-8"))
+    print()
+    print(f"sync problems (notes/index-links.md) {len(sync)}")
+    for p in sync:
+        print("  " + p)
+    return 1 if (broken or m["contents_broken"] or sync) else 0
 
 
 if __name__ == "__main__":

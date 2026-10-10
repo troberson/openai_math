@@ -22,11 +22,18 @@ upstream merge moved 13 of the phrases on this page and neither pass noticed. Pa
 "quote a count only from a fresh report" checkable. The pre-merge reproduction the page quotes is a
 probe, not a shipped measurement, and is deliberately not in the phrase list.
 
+Pass D (sync) diffs the page bytes against the bytes `render_reports.py` renders for this page. Pass C
+proves the numbers on the page are measured by an independent recount; Pass D proves the page is the
+writer's text. Neither proves the other's half: a render-diff reads the writer's own code, so it
+cannot catch a number that is wrong in both, and Pass C reads only the phrases in its own list, so it
+cannot see prose the list never names.
+
 --mutant proves the checker discriminates: it corrupts a real quotation, fabricates one, repoints a
 real quotation at a file that does not contain it, deletes a marker, names a marker absent from the
 table, points a table row at a path that does not exist, alters a count, skews a tag-table row, moves
-a bucket count, alters a disagreement count, and renames a multi-abstract directory -- and requires
-each pass to flag its mutant while the real page stays silent.
+a bucket count, alters a disagreement count, renames a multi-abstract directory, and alters a prose
+count outside the phrase list (visible only to Pass D) -- and requires each pass to flag its mutant
+while the real page stays silent.
 
 Usage: python3 notes/scripts/verify_abstracts.py            # check the page
        python3 notes/scripts/verify_abstracts.py --mutant   # discrimination test as well
@@ -39,6 +46,7 @@ import sys
 
 import build_catalog as B
 import compare_abstracts as CA
+from catlib import render as RD
 from catlib.paths import LEDGER_TSV, NOTES, ROOT
 from catlib.text import collapse_ws
 from catlib.tsv import read_rows
@@ -243,8 +251,11 @@ def check(text, table, counts=None):
                 problems.append(
                     f"count mismatch ({label}): page does not contain {flat(phrase)!r}")
 
+    sync = RD.sync_problems(PAGE, text)
+    problems.extend(sync)
+
     stats = {"markers": len(set(MARKER.findall(text))), "sources": len(table),
-             "quotes": quotes, "verified": verified, "phrases": phrases}
+             "quotes": quotes, "verified": verified, "phrases": phrases, "sync": len(sync)}
     return problems, stats
 
 
@@ -328,6 +339,12 @@ def mutants(text, table, counts):
     record("multi-abstract directory renamed",
            text.replace(f"`{mdir}`", f"`{mdir[:-len(date)]}November-1-2026`", 1),
            f"count mismatch (multi-abstract directory {fam_id})")
+
+    # Prose Pass C never reads: 692 is the manuscript count in the page's own prose, in no phrase
+    # in count_phrases(). Only the sync pass can see it.
+    record("prose count outside the phrase list altered",
+           text.replace("The 692 manuscript", "The 693 manuscript", 1),
+           "page is not the writer's render")
     return out
 
 
@@ -356,7 +373,7 @@ def main():
         print(f"PROBLEM {p}")
     print(f"sources {stats['sources']}   markers {stats['markers']}   "
           f"quotations {stats['quotes']}   verified {stats['verified']}   "
-          f"count phrases {stats['phrases']}")
+          f"count phrases {stats['phrases']}   sync problems {stats['sync']}")
 
     if args.mutant:
         if problems:

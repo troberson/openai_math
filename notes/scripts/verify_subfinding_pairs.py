@@ -14,9 +14,13 @@ Checks, in order:
   targets      the claimed set equals the set of ids used as pair targets.
   counts       the Summary table's numbers, the probe false-positive list, and the closing
                measurements are recomputed from the parsed lines.
+  sync         the page is compared with notes/scripts/render_reports.py's render of it, so prose the
+               count passes never parse cannot drift from the writer's template. The counts pass
+               proves the numbers are measured; it proves nothing about the sentences around them.
   tail         the page ends with a "Not checked" section.
 
---mutant injects seven defects into the page text in memory and requires each to be reported.
+--mutant injects eight defects into the page text in memory and requires each to be reported, the
+last being a prose count outside every recomputed table -- visible only to the sync check.
 
 Usage: python3 notes/scripts/verify_subfinding_pairs.py [--mutant]
 """
@@ -25,7 +29,7 @@ import sys
 
 import build_catalog as bc
 import extract_subfinding_pairs as ep
-from catlib import overview, tsv
+from catlib import overview, render as RD, tsv
 from catlib.paths import LEDGER_TSV, NOTES, OVERVIEW_TEX, ROOT, SUBFINDINGS_TSV
 
 PAGE = NOTES / "subfinding-pairs.md"
@@ -270,6 +274,8 @@ def main():
     population, probe, probe_all, multi = population_of(counts)
     text = PAGE.read_text(encoding="utf-8")
     problems, measured = check(text, inputs, population, probe, probe_all, multi)
+    sync = RD.sync_problems(PAGE, text)
+    problems.extend(sync)
 
     print(f"population rule      (probe {ep.PROBE}) AND (>=2 manuscripts), "
           f"union {len(ep.DENSEST)} named densest families")
@@ -280,6 +286,7 @@ def main():
     print("measured:")
     for label, value in measured.items():
         print(f"  {label:52} {value:4}")
+    print(f"  {'sync problems':52} {len(sync):4}")
     print()
     print(f"problems             {len(problems)}")
     for p in problems:
@@ -312,6 +319,10 @@ def main():
                                  "- main: \"x\" (`overview.tex:92`) -> unmatched\n"
                                  "- claimed:\n- unclaimed:\n\n"
                                  "## 009 · `overview.tex:94` · n=3 · T2", 1)),
+            # Prose the counts pass never parses: the rejected-rule yields are narrative, not a
+            # Summary-table row. Only the sync check can see them.
+            ("a rejected-rule yield in prose altered",
+             lambda t: t.replace("tried and rejected: `also` (56)", "tried and rejected: `also` (57)", 1)),
         ]
         missed = 0
         for name, fn in cases:
@@ -321,6 +332,7 @@ def main():
                 missed += 1
                 continue
             found, _ = check(mutated, inputs, population, probe, probe_all, multi)
+            found += RD.sync_problems(PAGE, mutated)
             if not found:
                 print(f"  {name:42} NOT REPORTED")
                 missed += 1

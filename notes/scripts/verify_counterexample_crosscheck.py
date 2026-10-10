@@ -25,15 +25,19 @@ are never invoked here, so no verdict in the page can mean "a proof was checked"
    against the file.
 7. Per-family blocks. Each T3 block must name exactly its own family's linked configs and state the
    right number of no-entry configs.
+8. Sync. The page is compared with notes/scripts/render_reports.py's render of it, so prose that no
+   count phrase covers cannot drift from the writer's template. The count checks prove the numbers
+   are measured; they prove nothing about the sentences around them.
 
---mutant runs the built-in mutations and fails if any goes uncaught.
+--mutant runs the built-in mutations and fails if any goes uncaught, the last of them a prose count
+outside every count phrase -- visible only to check 8.
 """
 import re
 import sys
 
 import build_catalog
 import extract_counterexample_crosscheck as cx
-from catlib import anchors, ledger as L, overview
+from catlib import anchors, ledger as L, overview, render as RD
 from catlib.paths import COMPARATOR_DIR, FORMALIZATION_YAML, NOTES, ROOT
 from catlib.text import collapse_ws
 
@@ -282,7 +286,9 @@ def check(text):
             problems.append(f"block {f}: {stated} no-entry statements, gaps are "
                             f"{len(v['per'][f]['gaps'])}")
 
-    return problems, n_anchor, n_block, n_quote, v
+    sync = RD.sync_problems(PAGE, text)
+    problems.extend(sync)
+    return problems, n_anchor, n_block, n_quote, len(sync), v
 
 
 MUTANTS = {
@@ -308,13 +314,17 @@ MUTANTS = {
     "quote moved to another family": lambda t: t.replace(
         "Claim 2 (`overview.tex:170`) — *\"It also disproves the Dolgachev",
         "Claim 2 (`overview.tex:218`) — *\"It also disproves the Dolgachev", 1),
+    # Prose no count phrase reads: the formalized-manuscript denominator in the population
+    # paragraph. Only the render diff can see it.
+    "prose count": lambda t: t.replace("formalized manuscripts out of **50**.",
+                                       "formalized manuscripts out of **51**.", 1),
 }
 
 
 def main():
     mutant = "--mutant" in sys.argv
     text = PAGE.read_text(encoding="utf-8")
-    problems, n_anchor, n_block, n_quote, v = check(text)
+    problems, n_anchor, n_block, n_quote, n_sync, v = check(text)
     for p in problems:
         print(f"PROBLEM {p}")
     print(f"population {len(v['pop'])}  T3 {v['t3']}  T2 {v['t2']}  shape {v['shape']}  T0 shape {v['t0']}")
@@ -322,7 +332,7 @@ def main():
     print(f"yaml entries {v['entries']}  unique configs {v['unique']}  carriers {v['carriers']}")
     print(f"linked configs {v['configs']}  T3 gaps {len(v['t3_gaps'])} in {v['t3_gap_fams']} families  "
           f"T2 gaps {v['t2_gaps']}  stub sorries {v['sorries']}")
-    print(f"anchors {n_anchor}  block lines {n_block}  quotations {n_quote}")
+    print(f"anchors {n_anchor}  block lines {n_block}  quotations {n_quote}  sync problems {n_sync}")
     print(f"problems {len(problems)}")
 
     if mutant:
@@ -333,7 +343,7 @@ def main():
                 print(f"MUTANT {name}: NOT INJECTED (page text changed — fix the mutant)")
                 failed.append(name)
                 continue
-            mp, _, _, _, _ = check(mtext)
+            mp, _, _, _, _, _ = check(mtext)
             status = "caught" if mp else "MISSED"
             print(f"MUTANT {name}: {status} ({len(mp)} problems)")
             if not mp:

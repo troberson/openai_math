@@ -21,12 +21,16 @@ B. "## What the 348 bundle checks, and what it omits" — the family-348 reading
 3. Counts. Each bold count is compared with an independent recomputation from the files on disk, by
    matching the exact phrase the page must contain. The entry-point table is additionally checked
    structurally: one row per bundle, in slug order, with the family the slug belongs to.
+4. Sync. The page is compared with notes/scripts/render_reports.py's render of it, so prose that no
+   count phrase covers cannot drift from the writer's template. The count pass proves the numbers are
+   measured; it proves nothing about the sentences around them.
 
 Line counts in the family-348 section follow len(text.split("\n")), the rule the
 extract_verification_348.py report uses; the entry-point section's file line count follows
 splitlines(), the rule the extract_verification_dirs.py report uses. The page matches each.
 
---mutant runs the built-in mutations and fails if any goes uncaught.
+--mutant runs the built-in mutations and fails if any goes uncaught, the last of them a prose line
+count in an entry-point table cell that no count phrase reads -- visible only to pass 4.
 """
 import hashlib
 import json
@@ -34,7 +38,7 @@ import re
 import sys
 
 import extract_verification_dirs as evd
-from catlib import anchors
+from catlib import anchors, render as RD
 from catlib.paths import LEDGER_TSV, NOTES, PREPRINTS, ROOT
 from catlib.text import collapse_ws
 from catlib.tsv import read_rows
@@ -397,9 +401,12 @@ def check(text, full_page):
     if not e["rows_identical"]:
         problems.append("the two family-269 rows.txt files are not byte-identical")
 
+    sync = RD.sync_problems(PAGE, text)
+    problems.extend(sync)
+
     counts = (n_anchor, n_block_lines, n_prose, n_row_quotes, n_says,
               len(count_phrases(v)), len(ledger_phrases(lv)), len(entry_phrases(e)) + 1,
-              len(rows))
+              len(rows), len(sync))
     return problems, counts
 
 
@@ -444,6 +451,9 @@ MUTANTS = {
     "entry-section ledger sum altered": lambda t: t.replace("sums to 30 dirs over 22 families",
                                                             "sums to 31 dirs over 22 families", 1),
     "table row deleted": lambda t: re.sub(r"^\| 371 \| .*$\n", "", t, count=1, flags=re.M),
+    # Prose no count phrase reads: the script's line count inside the family-067 entry-point cell.
+    # The table check reads only the family column, so only the render diff can see it.
+    "entry cell line count altered": lambda t: t.replace("a 167-line script", "a 168-line script", 1),
 }
 
 
@@ -467,13 +477,13 @@ def main():
         raise SystemExit(1 if uncaught else 0)
 
     problems, (n_anchor, n_block_lines, n_prose, n_row, n_says, n_counts, n_ledger,
-               n_entry, n_rows) = check(text, text)
+               n_entry, n_rows, n_sync) = check(text, text)
     for p in problems:
         print(f"PROBLEM {p}")
     print(f"\nanchors {n_anchor}  block lines {n_block_lines}  prose quotes {n_prose}"
           f"  row quotes {n_row}  says-quotes {n_says}  count phrases {n_counts}"
           f"  ledger phrases {n_ledger}  entry phrases {n_entry}  table rows {n_rows}"
-          f"  problems {len(problems)}")
+          f"  sync problems {n_sync}  problems {len(problems)}")
     raise SystemExit(1 if problems else 0)
 
 

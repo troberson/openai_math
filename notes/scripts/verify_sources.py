@@ -16,6 +16,10 @@ Report-only; writes nothing and runs nothing. Three passes:
 3. Counts. Every bold count on the page is checked by matching the exact phrase the page must
    contain, rebuilt from a fresh recount: the disk census, the column sums, the main-file outcomes,
    the root distribution, the six-name environment total, and the per-name gap.
+4. Sync. The page bytes are diffed against the bytes `render_reports.py` renders for this page.
+   The count pass proves the numbers on the page are measured by an independent recount; the sync
+   pass proves the page is the writer's text. Neither proves the other's half — a render-diff reads
+   the writer's own code, so it cannot catch a number that is wrong in both.
 
 Whitespace runs are collapsed on both sides of every comparison: line-wrapping in the page is
 markup, not part of the text.
@@ -29,7 +33,7 @@ import re
 import sys
 
 import build_sources as S
-from catlib import overview, preprints, tsv
+from catlib import overview, preprints, render as RD, tsv
 from catlib.paths import LEDGER_TSV, PREPRINTS, SUBFINDINGS_TSV
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
@@ -263,7 +267,9 @@ def check(text):
         if norm(phrase) not in flat:
             problems.append(f"count mismatch ({label}): page does not contain {phrase!r}")
 
-    return problems, n_anchor, n_block_lines, n_slug, len(count_phrases(m))
+    sync = RD.sync_problems(PAGE, text)
+    problems.extend(sync)
+    return problems, n_anchor, n_block_lines, n_slug, len(count_phrases(m)), len(sync)
 
 
 MUTANTS = {
@@ -287,6 +293,9 @@ MUTANTS = {
                                                "the **720** the release lists", 1),
     "formalized share altered": lambda t: t.replace("at **172** of 719 manuscripts",
                                                      "at **173** of 719 manuscripts", 1),
+    # Prose the count pass never reads: 717 is the bead's substring figure, quoted for the record,
+    # not a measured needle. Only the sync pass can see it.
+    "sync-only prose count altered": lambda t: t.replace("measures 717 dirs", "measures 718 dirs", 1),
 }
 
 
@@ -301,7 +310,7 @@ def main():
                 print(f"mutant target absent: {name}")
                 uncaught.append(name)
                 continue
-            problems, _, _, _, _ = check(mutated)
+            problems, _, _, _, _, _ = check(mutated)
             print(f"mutant {name}: {'caught' if problems else 'NOT CAUGHT'}"
                   f" ({len(problems)} problems)")
             if not problems:
@@ -309,11 +318,11 @@ def main():
         print(f"mutants not caught {len(uncaught)} of {len(MUTANTS)}")
         raise SystemExit(1 if uncaught else 0)
 
-    problems, n_anchor, n_block_lines, n_slug, n_phrases = check(text)
+    problems, n_anchor, n_block_lines, n_slug, n_phrases, n_sync = check(text)
     for p in problems:
         print(f"PROBLEM {p}")
     print(f"\nanchors {n_anchor}  slugs {n_slug}  block lines {n_block_lines}"
-          f"  count phrases {n_phrases}  problems {len(problems)}")
+          f"  count phrases {n_phrases}  sync problems {n_sync}  problems {len(problems)}")
     raise SystemExit(1 if problems else 0)
 
 

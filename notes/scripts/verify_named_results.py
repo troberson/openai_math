@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 r"""Check notes/named-results.md against the shipped files. Report-only: writes nothing.
 
-Run with --mutant to also run the self-test: twelve injected corruptions, one per check form,
+Run with --mutant to also run the self-test: thirteen injected corruptions, one per check form,
 all of which must be flagged.
 
 What it checks, and why each check exists:
@@ -23,6 +23,12 @@ What it checks, and why each check exists:
             under lean/OAI. The zero-`sorry` claim over lean/OAI is NOT re-derived here: scanning
             122,458 files for `sorry` is the job of extract_formalization_deps.py, not of a page
             checker.
+  sync      the page bytes are diffed against the bytes render_reports.py renders for this page.
+            The count pass proves the numbers on the page are measured by an independent recount;
+            the sync pass proves the page is the writer's text. Neither proves the other's half -
+            a render-diff reads the writer's own code, so it cannot catch a number that is wrong
+            in both, and the count pass reads only the phrases in its own list, so it cannot see
+            prose the list never names.
 """
 from __future__ import annotations
 
@@ -34,6 +40,7 @@ import sys
 import extract_named_results as en
 import measure_names as M
 
+from catlib import render as RD
 from catlib import yaml as Y
 from catlib.paths import COMPARATOR_DIR
 
@@ -46,7 +53,7 @@ QUOTE = re.compile(r'\*"([^"]{12,})"\*')
 ROW = re.compile(r'^\| (\d{3}) \| (T\d) \| (\d) \| `([^`]+):(\d+)` \| \*"([^"]*)"\* \|$', re.M)
 SPAN = 12
 # The page spells its mutation count as a word, so the phrase check needs the spelling.
-WORDS = {12: "twelve"}
+WORDS = {12: "twelve", 13: "thirteen"}
 # The target-split sentence spells its leading count as a word and agrees with it.
 NUMWORDS = {1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five", 6: "Six"}
 
@@ -292,7 +299,8 @@ def count_phrases(p) -> list:
         (f"## The title-scope swap: {len(abstract_only)} → {len(rn)}", "title-scope heading"),
         (f"**{len(add)}** additions: {' '.join(add)}", "additions"),
         (f"so the column reads **{len(rn)}**", "union figure"),
-        (f"would read {len(strict)} ({len(rn - strict)} removals)", "strict replacement"),
+        (f"would read {len(strict)} ({len(rn - strict)} removals against the applied "
+         f"{len(rn)} column)", "strict replacement"),
         (f"All **{len(add)}** are corroborated", "additions corroborated"),
         (f"**{len(notdir)}** of the {len(add)} are not directory-named: {' '.join(notdir)}",
          "additions not dir-named"),
@@ -350,6 +358,9 @@ def check(text: str, p, problems: list) -> dict:
         problems.append("a Direction-B family is not rn = 1 in the ledger")
     if len(en.A_FAMS) != 11:
         problems.append(f"A_FAMS is {len(en.A_FAMS)}, the page states 11")
+    sync = RD.sync_problems(PAGE, text)
+    problems.extend(sync)
+    out["sync problems"] = len(sync)
     return out
 
 
@@ -388,6 +399,10 @@ MUTANTS = {
             r'*"This resolves the smooth three-dimensional isotropic elastic Calder\'on uniqueness '
             r'problem under these positivity assumptions."*',
             r'*"This resolves the elastic Calder\'on problem."*'),
+    # Prose the count pass never reads: the per-command breakdown of the headline-begins row is not
+    # in count_phrases(). Only the sync pass can see it.
+    "sync-only prose count altered":
+        lambda t: t.replace("`\\begin{theorem}` 2,405", "`\\begin{theorem}` 2,406", 1),
 }
 
 
@@ -400,6 +415,7 @@ def main(argv: list[str]) -> int:
     for k in ("anchors", "bare anchors", "table rows", "quotations"):
         print(f"  {k}: {out[k]}")
     print(f"  count phrases: {out['count phrases']} of {out['count phrases total']} re-derived")
+    print(f"  sync problems: {out['sync problems']}")
     for pr in problems:
         print("PROBLEM:", pr)
     print(f"problems {len(problems)}")

@@ -20,9 +20,13 @@ Checks, in order:
      with titles that match notes/subfindings.tsv and sit verbatim on the family's anchor line,
      and each Citation layer line matches the recomputed .bib / edge / mutual counts;
   7. the named mutual, one-directional, no-edge and no-.bib lists match the recomputation;
-  8. family 268's two verification directories exist.
+  8. family 268's two verification directories exist;
+  9. the page is compared with notes/scripts/render_reports.py's render of it, so prose that no
+     count phrase covers cannot drift from the writer's template. Check 4 proves the numbers are
+     measured; it proves nothing about the sentences around them.
 
---mutant corrupts twelve facts, one per check family, and the checker must flag every one.
+--mutant corrupts thirteen facts, one per check family plus a prose count no count phrase reads
+(visible only to check 9), and the checker must flag every one.
 """
 from __future__ import annotations
 
@@ -30,7 +34,7 @@ import re
 import sys
 
 import extract_t0_chains as tc
-from catlib import anchors, overview
+from catlib import anchors, overview, render as RD
 from catlib.paths import NOTES, ROOT, owner
 from catlib.text import collapse_ws
 
@@ -361,6 +365,8 @@ def check(text, m):
     n_head, n_bullets = check_family_blocks(lines, m, problems)
     n_list = check_lists(flat, m, problems)
     n_file = check_files(m, problems)
+    sync = RD.sync_problems(PAGE, text)
+    problems.extend(sync)
     return {
         "problems": problems,
         "anchors": n_anchor,
@@ -373,6 +379,7 @@ def check(text, m):
         "bullets": n_bullets,
         "lists": n_list,
         "files": n_file,
+        "sync": len(sync),
     }
 
 
@@ -404,6 +411,9 @@ MUTANTS = {
         "Citation layer: 2 `.bib` files, 2 intra-family edges, 1 mutual pair.\n\n"
         "### 270 — ", "Citation layer: 2 `.bib` files, 3 intra-family edges, 1 mutual pair.\n\n"
         "### 270 — "),
+    # Prose no count phrase reads: the heading name in the population rule. Check 4 never parses
+    # it, so only the render diff can see it.
+    "prose-count": lambda t: t.replace("the remaining 93 families", "the remaining 94 families"),
 }
 
 
@@ -414,7 +424,7 @@ def main(argv):
     res = check(text, m)
     print(f"== page {PAGE.relative_to(ROOT)}")
     print(f"anchors {res['anchors']}  blocks {res['blocks']}  quotes {res['quotes']}  "
-          f"counts {res['counts']}")
+          f"counts {res['counts']}  sync {res['sync']}")
     print(f"summary rows {res['sum_rows']}  chain rows {res['chain_rows']}  blocks {res['heads']}  "
           f"bullets {res['bullets']}  lists {res['lists']}  files {res['files']}")
     for p in res["problems"]:

@@ -16,6 +16,11 @@ Report-only; writes nothing. Three passes over the page:
 3. Byte sizes. The five TSV sizes the page tabulates are re-read from disk and compared with the
    values the page's byte phrases quote. The scope is the five named files, not every `notes/*.tsv`:
    the sum over all of them is a different quantity (see `LEDGER_SET`).
+4. Sync. The page bytes are diffed against the bytes `render_reports.py` renders for this page. The
+   count passes prove the numbers on the page are measured by an independent recount; the sync pass
+   proves the page is the writer's text. Neither proves the other's half — a render-diff reads the
+   writer's own code, so it cannot catch a number that is wrong in both, and the count passes read
+   only the phrases in their own lists, so they cannot see prose a list never names.
 
 Whitespace runs are collapsed on both sides of every comparison: line-wrapping in the page is
 markup, not part of the text (see the ruling recorded for the summaries pages).
@@ -28,6 +33,7 @@ import sys
 
 import measure_index_sizes as M
 
+from catlib import render as RD
 from catlib import yaml as Y
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
@@ -279,7 +285,11 @@ def check(text):
         if norm(phrase) not in flat:
             problems.append(f"size mismatch ({label}): page does not contain {phrase!r}")
 
-    return problems, n_anchor, n_block_lines, len(count_phrases(p)) + len(size_phrases(p))
+    sync = RD.sync_problems(PAGE, text)
+    problems.extend(sync)
+
+    return (problems, n_anchor, n_block_lines,
+            len(count_phrases(p)) + len(size_phrases(p)), len(sync))
 
 
 MUTANTS = {
@@ -306,6 +316,10 @@ MUTANTS = {
                                                  "together totals **297036** B", 1),
     "disk link count altered": lambda t: t.replace("covers **66,107** links",
                                                    "covers **66,108** links", 1),
+    # Prose the count passes never read: the schema table's byte column is not in count_phrases()
+    # or size_phrases(). Only the sync pass can see it.
+    "sync-only prose count altered": lambda t: t.replace("| `catalog.tsv` | **49213** |",
+                                                         "| `catalog.tsv` | **49214** |", 1),
 }
 
 
@@ -320,7 +334,7 @@ def main():
                 print(f"mutant target absent: {name}")
                 uncaught.append(name)
                 continue
-            problems, _, _, _ = check(mutated)
+            problems, _, _, _, _ = check(mutated)
             print(f"mutant {name}: {'caught' if problems else 'NOT CAUGHT'}"
                   f" ({len(problems)} problems)")
             if not problems:
@@ -328,11 +342,11 @@ def main():
         print(f"mutants not caught {len(uncaught)} of {len(MUTANTS)}")
         raise SystemExit(1 if uncaught else 0)
 
-    problems, n_anchor, n_block_lines, n_phrases = check(text)
+    problems, n_anchor, n_block_lines, n_phrases, n_sync = check(text)
     for p in problems:
         print(f"PROBLEM {p}")
     print(f"\nanchors {n_anchor}  block lines {n_block_lines}  count phrases {n_phrases}"
-          f"  problems {len(problems)}")
+          f"  sync problems {n_sync}  problems {len(problems)}")
     raise SystemExit(1 if problems else 0)
 
 

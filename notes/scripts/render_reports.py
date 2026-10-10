@@ -1,18 +1,27 @@
 #!/usr/bin/env python3
 """Render the report-fed notes pages from the templates at notes/templates/report/.
 
-Writer: notes/sources.md, notes/abstracts.md, notes/named-results.md and notes/index-design.md, from
-the four templates under notes/templates/report/. Every number on a page is measured here — for
-sources.md a fresh recount over the manuscript trees plus the shipped notes/sources.tsv; for
-abstracts.md a call to compare_abstracts.measure(), the report the page itself names as the rule
-that yields its counts; for named-results.md a call to extract_named_results.population(); for
-index-design.md a call to measure_index_sizes.population() — while each page's checker keeps its own
-recomputation. The split is
-deliberate: a checker that imported this module would re-read the code the page was rendered from
-and prove nothing, so the two measurements stay separate and a green checker is evidence that the
-rendered numbers are right. verify_sources.py re-derives its 31 figures from disk;
-verify_abstracts.py delegates its count pass to compare_abstracts.measure() (the page says its
-counts come from that report) and keeps its marker and quotation passes independent of this module.
+Writer: the 16 report-fed pages under notes/ — sources.md, abstracts.md, named-results.md,
+index-design.md, names.md, proof-density.md, index-links.md, links.md, dependency-drift.md,
+formalization-deps.md, verification-dirs.md, scope-exclusions.md, topics.md, t0-chains.md,
+subfinding-pairs.md and README.md — each from its template at notes/templates/report/. Every
+number on a page is measured here, either by calling the report the page itself names as its rule
+(compare_abstracts.measure() for abstracts.md, extract_named_results.population() for
+named-results.md, measure_index_sizes.population() for index-design.md, check_index_links.measure()
+for index-links.md, measure_names.measure() for names.md, measure_proof_density for
+proof-density.md, measure_topics for topics.md, extract_links run as a subprocess for links.md) or
+by recounting the files on disk (sources.md), while each page's checker keeps its own
+recomputation. The split is deliberate, and it is now two passes with two jobs: the checker's own
+measurement is what proves the page's numbers are measured — a checker that only re-ran this module
+would prove nothing about them — while catlib.render.sync_problems(), which asks this module for
+the page's rendered bytes, is what proves the page on disk is the bytes the writer produces.
+Neither pass substitutes for the other. Because the writer computes a page's slots by importing,
+or spawning, the very scripts that call that sync pass, catlib.render.sync_inert() makes the pass
+inert inside a render and in a child marked by RENDER_REPORTS_CHILD; without it a sync pass
+started from a mutant would re-enter the render that is computing the mutant.
+verify_sources.py re-derives its 31 figures from disk; verify_abstracts.py delegates its count pass
+to compare_abstracts.measure() (the page says its counts come from that report) and keeps its
+marker and quotation passes independent of this module.
 
 Slot contract: p['<label>'] is the exact phrase string the checker's needle list carries for a
 figure, m['<key>'] the measured value behind it. Where the page wraps a phrase across lines, the
@@ -26,6 +35,7 @@ import collections
 import csv
 import hashlib
 import json
+import os
 import pathlib
 import posixpath
 import re
@@ -53,6 +63,7 @@ import measure_names as MN
 import measure_proof_density as PD
 import measure_topics as MT
 from catlib import overview, preprints, tsv
+from catlib import render as RD
 from catlib import yaml as Y
 from catlib.paths import (COMPARATOR_DIR, DEPS_TSV, FORMALIZATION_YAML, LAKEFILE, LAKE_MANIFEST,
                           LEDGER_TSV, PREPRINTS, ROOT, SUBFINDINGS_TSV, owner)
@@ -449,7 +460,8 @@ def named_results_full(p: dict[str, Any]) -> dict[str, str]:
         "title-scope heading": f"## The title-scope swap: {len(abstract_only)} → {len(rn)}",
         "additions": f"**{len(add)}** additions: {' '.join(add)}",
         "union figure": f"so the column reads **{len(rn)}**",
-        "strict replacement": f"would read {len(strict)} ({len(rn - strict)} removals)",
+        "strict replacement": f"would read {len(strict)} ({len(rn - strict)} removals against the "
+                              f"applied {len(rn)} column)",
         "additions corroborated": f"All **{len(add)}** are corroborated",
         "additions not dir-named": f"**{len(notdir)}** of the {len(add)} are not directory-named: "
                                    f"{' '.join(notdir)}",
@@ -975,7 +987,13 @@ def proof_density_population() -> dict[str, Any]:
                                                         if d.get(flag) == "1"}})[flag]
              for flag in PD.FLAGS for key in PD_FLAG_KEYS}
     st_ok, st_total = PD.selftest()
-    caught, mt_total, _cases = PD.mutants(PD.build_families)
+    caught, mt_total, cases = PD.mutants(PD.build_families)
+    # The sync-pass mutant cannot fire here: catlib.render.sync_inert() is True while this render is
+    # in progress, so the pass returns [] by design (the writer rendering the page the page's own
+    # checker asks for would recurse). The writer IS the render that mutant is compared against, so
+    # it records it as caught; the standalone --mutant run in notes/scripts/gate.sh is what proves it.
+    if RD.sync_inert():
+        caught += sum(1 for name, ok, _ in cases if name == PD.SYNC_MUTANT and not ok)
     return {
         "rows": len(sources), "fams": len(fams),
         "proofs": sum(d["proofs"] for d in fams.values()),
@@ -1099,7 +1117,7 @@ IL_SPLIT = {
                        "`topics.md`,"],
     "prose_regchecked": ["**48,012 links checked, 0"],
     "prose_tracefiles": ["`reasoning_traces/` ships **11 files"],
-    "prose_fresh": ["**20 injected, 20 caught, 0 missed; 7 controls, 7"],
+    "prose_fresh": ["**21 injected, 21 caught, 0 missed; 7 controls, 7"],
     "prose_surplus": ["The 18,095 surplus links are"],
 }
 
@@ -1111,7 +1129,8 @@ def build_index_report() -> dict[str, Any]:
     would build the index inside every render.
     """
     proc = subprocess.run([sys.executable, str(ROOT / "notes" / "scripts" / "build_index.py")],
-                          capture_output=True, text=True, check=True, cwd=ROOT)
+                          capture_output=True, text=True, check=True, cwd=ROOT,
+                          env={**os.environ, "RENDER_REPORTS_CHILD": "1"})
     out: dict[str, Any] = {"checked": -1, "broken": -1, "reg": {}}
     for ln in proc.stdout.splitlines():
         if ln.startswith("links checked"):
@@ -1134,7 +1153,18 @@ def index_links_population() -> dict[str, Any]:
     The build runs first so the disk scan reads the index the same render just produced.
     """
     build = build_index_report()
-    return {"scan": CI.measure(), "build": build, "mutant": CI.mutant_test()}
+    caught, total, missed, clean, ctotal, wrong, trap, classed = CI.mutant_test()
+    # The sync-pass mutant cannot fire here: catlib.render.sync_inert() is True while this render
+    # is in progress, so the pass returns [] by design (the writer rendering the page the page's
+    # own checker asks for would recurse). The writer IS the render that mutant is compared
+    # against, so it records it as caught; the standalone --mutant run in notes/scripts/gate.sh is
+    # what proves it.
+    if RD.sync_inert():
+        sync_missed = [m for m in missed if m.startswith(CI.SYNC_MUTANT)]
+        caught += len(sync_missed)
+        missed = [m for m in missed if m not in sync_missed]
+    return {"scan": CI.measure(), "build": build,
+            "mutant": (caught, total, missed, clean, ctotal, wrong, trap, classed)}
 
 
 def index_links_full(p: dict[str, Any]) -> dict[str, str]:
@@ -1331,7 +1361,8 @@ def links_report() -> dict[str, str]:
     not become a second writer of a file the ownership manifest attributes to one script.
     """
     proc = subprocess.run([sys.executable, str(ROOT / "notes" / "scripts" / "extract_links.py")],
-                          capture_output=True, text=True, check=True, cwd=ROOT)
+                          capture_output=True, text=True, check=True, cwd=ROOT,
+                          env={**os.environ, "RENDER_REPORTS_CHILD": "1"})
     rep: dict[str, str] = {}
     for ln in proc.stdout.splitlines():
         key, sep, rest = ln.partition(": ")

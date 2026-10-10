@@ -34,6 +34,7 @@ run triage_t0.py
 run measure_topics.py --check
 run measure_index_sizes.py
 run check_index_links.py
+run check_index_links.py --mutant
 run measure_names.py
 run measure_proof_density.py --mutant
 # checkers: plain then mutant

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Verify notes/dependency-drift.md against the shipped dependency record.
 
-Report-only; writes nothing. Four passes:
+Report-only; writes nothing. Five passes:
 
 1. Anchors. Every `path:line` anchor must name a file that exists and a line inside it;
    every bare `:NN` anchor resolves against the last explicit path that precedes it.
@@ -15,10 +15,16 @@ Report-only; writes nothing. Four passes:
    `lean/patches/`, imports and patch lines from `notes/formalization-deps.tsv` — and must
    appear in the page. The patch-size table must equal the TSV row by row, and every name
    list the page prints must equal the computed set.
+5. Sync. The page is compared with notes/scripts/render_reports.py's render of it, so prose that
+   no count phrase covers cannot drift from the writer's template. The count pass proves the
+   numbers are measured; it proves nothing about the sentences around them.
 
 `lean/OAI/**/*.lean` is never scanned here: import counts are read from the TSV, which
 `extract_formalization_deps.py` measured. The 122,458-file figure is reconciled against
 `notes/formalization-deps.md`, which records it.
+
+--mutant runs the built-in mutations and fails if any goes uncaught, the last of them a prose
+row count outside every count phrase -- visible only to pass 5.
 """
 import csv
 import pathlib
@@ -27,7 +33,7 @@ import statistics
 import sys
 import collections
 
-from catlib import yaml as Y
+from catlib import render as RD, yaml as Y
 from catlib.paths import LAKEFILE, LAKE_MANIFEST as MANIFEST
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
@@ -456,7 +462,9 @@ def check(text):
     if "unmeasurable without" not in flat:
         problems.append("page does not mark transitive imports unmeasurable without lake")
 
-    return problems, (len(tokens), n_quote, n_span, len(tbl))
+    sync = RD.sync_problems(PAGE, text)
+    problems.extend(sync)
+    return problems, (len(tokens), n_quote, n_span, len(tbl), len(sync))
 
 
 MUTANTS = {
@@ -479,6 +487,10 @@ MUTANTS = {
         "`s!\".{label}-bootstrap-{pid}-{stamp}\"`", 1),
     "table row dropped": lambda t: t.replace(
         "| orbicurve-cores | **0** | 695 |\n", "", 1),
+    # Prose no count phrase reads: the deps-record row count in the opening sources sentence.
+    # Only the render diff can see it.
+    "prose row count": lambda t: t.replace("`notes/formalization-deps.tsv` (31 rows, 8 fields)",
+                                            "`notes/formalization-deps.tsv` (32 rows, 8 fields)", 1),
 }
 
 
@@ -501,12 +513,12 @@ def main():
         print(f"mutants not caught {len(uncaught)} of {len(MUTANTS)}")
         raise SystemExit(1 if uncaught else 0)
 
-    problems, (n_anchor, n_quote, n_span, n_table) = check(text)
+    problems, (n_anchor, n_quote, n_span, n_table, n_sync) = check(text)
     for p in problems:
         print(f"PROBLEM {p}")
     m = measure()
     print(f"\nanchors {n_anchor}  blockquotes {n_quote}  checked code spans {n_span}"
-          f"  table rows {n_table}  problems {len(problems)}")
+          f"  table rows {n_table}  sync problems {n_sync}  problems {len(problems)}")
     print(f"declared {len(m['declared'])}  patched {len(m['patched'])}"
           f"  patch lines {n(m['total_lines'])}  hunks {m['total_hunks']}"
           f"  toolchain patches {m['tc_patches']}  from-versions {len(m['froms'])}")

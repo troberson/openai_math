@@ -10,8 +10,12 @@ Passes:
      and re-derive the "named before this pass" gap from the commit that created this page.
   E. Recompute the shared-basename sets and match the page.
   F. Layout: no preamble, a "## Not checked" section, and no self-reference in the checker table.
+  G. Sync. notes/README.md -- the one page this checker reads that the writer generates -- is compared
+     with notes/scripts/render_reports.py's render of it. notes/scripts/README.md is hand-authored, so
+     it has no render to compare with; the generated ledger readme does, and its prose is not covered
+     by any count phrase here.
 
---mutant injects eleven faults, one per check form the page uses, and asserts each is caught.
+--mutant injects twelve faults, one per check form the page uses, and asserts each is caught.
 Report-only: writes nothing.
 """
 from __future__ import annotations
@@ -20,6 +24,7 @@ import re
 import subprocess
 import sys
 
+from catlib import render as RD
 from catlib.paths import NOTES, ROOT, SCRIPTS, read_text
 
 PAGE = SCRIPTS / "README.md"
@@ -28,6 +33,9 @@ README = NOTES / "README.md"
 
 # The page's hand-authored tables, by rule rather than by generator.
 HAND_AUTHORED_TSVS = {"notes/topics.tsv", "notes/conjecture-standing.tsv"}
+
+# The self-test entry points, whose page writes are a mutate-and-restore rather than ownership.
+SELFTEST_DEF = re.compile(r"^def (?:mutants?|mutant_test|selftest)\(", re.M)
 
 
 def script_names():
@@ -54,6 +62,24 @@ def notes_const(src: str, name: str) -> str | None:
     return "/".join(parts) if parts and parts[0] == "notes" else None
 
 
+def strip_selftest(src: str) -> str:
+    """Blank the body of a module-level self-test function.
+
+    A self-test writes the page it checks in order to mutate it, then restores the bytes it read —
+    `PAGE.write_text(mutated)` inside the test, `PAGE.write_text(page_text)` in the `finally`. That
+    pair leaves the file byte-identical, so it is not ownership: keying the writer rule on the write
+    call alone reads a checker's self-test as a generator, and a script whose normal run writes
+    nothing lands in the writers table.
+    """
+    lines = src.splitlines(keepends=True)
+    for i in reversed([n for n, l in enumerate(lines) if SELFTEST_DEF.match(l)]):
+        j = i + 1
+        while j < len(lines) and (lines[j][:1] in (" ", "\t") or not lines[j].strip()):
+            j += 1
+        lines[i:j] = ["\n"] * (j - i)
+    return "".join(lines)
+
+
 def writers():
     """A script is a writer when a notes/-rooted path constant is written, plus the tree case.
 
@@ -62,14 +88,18 @@ def writers():
     a module constant (`out = TPL_DIR / (name)`, then `out.write_text(...)`). The second and third
     are invisible to a source-text pattern over `open`/`write_text` keyed to the receiver alone, so
     a write that moves into the shared package, or a writer that names a directory rather than a
-    file, would silently drop its script out of the writer set.
+    file, would silently drop its script out of the writer set. The write calls are read from
+    `strip_selftest(src)`, which is the fourth rule: a self-test's mutate-and-restore write is not
+    ownership, so the two scripts whose only page write sits inside their self-test stay writers of
+    nothing.
     """
     consts = path_constants()
     out = {}
     for name in script_names():
         src = read_text(SCRIPTS / name)
+        scan = strip_selftest(src)
         targets = set()
-        for var in re.findall(r'([A-Za-z_]\w*)\.(?:open\([^)]*"w"[^)]*\)|write_text\()', src):
+        for var in re.findall(r'([A-Za-z_]\w*)\.(?:open\([^)]*"w"[^)]*\)|write_text\()', scan):
             direct = notes_const(src, var)
             if direct:
                 targets.add(direct)
@@ -321,8 +351,13 @@ def check(text):
     return p
 
 
+def sync_problems() -> list[str]:
+    """Pass G: notes/README.md against the writer's render of that page."""
+    return RD.sync_problems(README, read_text(README))
+
+
 def mutants():
-    """Eleven faults, one per check form. Each must be caught by the check it targets."""
+    """Twelve faults, one per check form. Each must be caught by the check it targets."""
     original = read_text(PAGE)
     cases = [
         ("writer target altered", original.replace("| `build_catalog.py` | `notes/catalog.tsv` |", "| `build_catalog.py` | `notes/catalog-x.tsv` |"), "page says 'notes/catalog-x.tsv'"),
@@ -351,7 +386,25 @@ def mutants():
             fails.append(f"{label}: NOT caught by {needle!r} (problems: {found[:2]})")
         else:
             print(f"  caught {label}: {next(x for x in found if needle in x)[:110]}")
-    return fails, len(cases)
+
+    # Pass G: a prose count in the generated ledger readme. No check here reads notes/README.md prose,
+    # so only the render diff can see it.
+    readme_text = read_text(README)
+    mutated_readme = readme_text.replace("A README section names 28 of the 30",
+                                         "A README section names 29 of the 30", 1)
+    if mutated_readme == readme_text:
+        fails.append("readme prose count altered: mutation changed nothing")
+    else:
+        README.write_text(mutated_readme, encoding="utf-8")
+        try:
+            found = sync_problems()
+        finally:
+            README.write_text(readme_text, encoding="utf-8")
+        if not found:
+            fails.append(f"readme prose count altered: NOT caught by the sync pass (problems: {found[:2]})")
+        else:
+            print(f"  caught readme prose count altered: {found[0][:110]}")
+    return fails, len(cases) + 1
 
 
 def main():
@@ -388,12 +441,14 @@ def main():
     print(f"top-level ∩ index basenames: {shared}")
     print(f"index ∩ summaries slugs: {len({f.name for f in index} & {f.name for f in summaries})}")
     p = check(text)
-    for x in p:
+    sync = sync_problems()
+    for x in p + sync:
         print(f"PROBLEM: {x}")
+    print(f"sync problems (notes/README.md): {len(sync)}")
     print(f"reconciliation: writers == page {not any('writer' in x for x in p)}")
     print(f"reconciliation: census rows == disk {not any('census' in x for x in p)}")
     print(f"reconciliation: naming complete {not any('named' in x for x in p)}")
-    sys.exit(1 if p else 0)
+    sys.exit(1 if p + sync else 0)
 
 
 if __name__ == "__main__":

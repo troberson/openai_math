@@ -47,6 +47,10 @@ a LaTeX macro (dominant surface with an internal capital: OpenAIWidth), a prose 
 then the name-like test. A candidate that is name-like from any title source is a
 subject; one that is not name-like is accepted only through the family-title escape.
 
+Sync pass: notes/names.md is compared with notes/scripts/render_reports.py's render of it. The
+report proves the numbers are measured; it proves nothing about the sentences around them, and
+the page's tables are prose in the template, not report output.
+
 Run: python3 notes/scripts/measure_names.py [--json]
 """
 from __future__ import annotations
@@ -61,10 +65,11 @@ import unicodedata
 
 import build_catalog as B
 
-from catlib import yaml as Y
+from catlib import render as RD, yaml as Y
 from catlib.paths import PREPRINTS as PRE
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
+PAGE = ROOT / "notes" / "names.md"
 
 LEDGER = {}
 with open(ROOT / "notes" / "catalog.tsv", newline="", encoding="utf-8") as _fh:
@@ -464,7 +469,11 @@ def main(argv):
     top = sorted(subject, key=lambda r: (-len(r["fams"]), r["name"]))[:12]
     print("top subject names        " + " ".join(
         "%s:%d" % (r["name"], len(r["fams"])) for r in top))
-    return 0
+    sync = RD.sync_problems(PAGE, PAGE.read_text(encoding="utf-8"))
+    print(f"sync problems (notes/names.md) {len(sync)}")
+    for p in sync:
+        print("  " + p)
+    return len(sync)
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@
 """Verify every citation in notes/scope-exclusions.md against the shipped scope notes. Writes nothing.
 
 The page carries one table row per family with a scope note. Each row is either **None stated.** or a
-sequence of “quotation” `lean/docs/NNN.md:<line>` pairs. Four passes read the same rows:
+sequence of “quotation” `lean/docs/NNN.md:<line>` pairs. Five passes read the same rows:
 
   Pass A (coverage)  - exactly 242 rows, one per family that has a `## Scope` section, each id exactly
                        once, matching the files on disk.
@@ -13,10 +13,15 @@ sequence of “quotation” `lean/docs/NNN.md:<line>` pairs. Four passes read th
                        line exists; it proves nothing about the text attributed to it.
   Pass D (numbers)   - the Measurements table and the prose counts are re-measured from the files on
                        disk and compared with what the page states.
+  Pass E (sync)      - the page is compared with notes/scripts/render_reports.py's render of it, so
+                       prose the count passes never parse cannot drift from the writer's template.
+                       Pass D proves the numbers are measured; it proves nothing about the sentences
+                       around them.
 
 --mutant proves the checker discriminates: it corrupts a real quotation, cites a real quotation to a
-line outside the Scope section, invents a quotation the file does not contain, and deletes a family
-row, asserting Pass A-D flags each while the real page stays silent.
+line outside the Scope section, invents a quotation the file does not contain, deletes a family row,
+and alters a prose count outside the measured tables (visible only to Pass E), asserting Pass A-E
+flags each while the real page stays silent.
 
 Usage: python3 notes/scripts/verify_scope_exclusions.py
        python3 notes/scripts/verify_scope_exclusions.py --mutant
@@ -28,6 +33,7 @@ from pathlib import Path
 import extract_scope_notes as ex
 from verify_summaries import norm
 
+from catlib import render as RD
 from catlib import yaml as Y
 from catlib.paths import DOCS_DIR
 
@@ -167,11 +173,21 @@ def check(lines):
 
 def main():
     mutant = "--mutant" in sys.argv
-    lines = PAGE.read_text(encoding="utf-8").splitlines()
+    text = PAGE.read_text(encoding="utf-8")
+    lines = text.splitlines()
+    tail = "\n" if text.endswith("\n") else ""
+
+    def as_text(ls: list[str]) -> str:
+        """Rebuild page text from mutated lines so Pass E sees the same bytes a page on disk has."""
+        return "\n".join(ls) + tail
+
     problems, rows, excl, quotes = check(lines)
+    sync = RD.sync_problems(PAGE, text)
+    problems.extend(sync)
     print(f"page: {PAGE.relative_to(ROOT)}")
     print(f"rows {rows}, families with a stated exclusion {excl}, "
           f"none-stated {rows - excl}, quotations {quotes}")
+    print(f"sync problems: {len(sync)}")
     print(f"problems: {len(problems)}")
     for p in problems:
         print(f"  {p}")
@@ -220,6 +236,7 @@ def main():
         cand = list(lines)
         cand[first_row - 1] = mutated
         got, _, _, _ = check(cand)
+        got += RD.sync_problems(PAGE, as_text(cand))
         hit = [p for p in got if expect in p]
         if not hit:
             undetected += 1
@@ -228,10 +245,24 @@ def main():
     # A family row deleted: Pass A must notice the table no longer covers the 242 notes.
     cand = [l for i, l in enumerate(lines) if i != first_row - 1]
     got, _, _, _ = check(cand)
+    got += RD.sync_problems(PAGE, as_text(cand))
     hit = [p for p in got if "no row" in p]
     if not hit:
         undetected += 1
     print(f"  deleted family row ({fam}): {'detected' if hit else 'UNDETECTED'} ({len(got)} problems)")
+
+    # Prose Pass D never parses: how many scope notes the 2026-10-07 merge added is not a
+    # Measurements-table row and not one of the prose counts Pass D reads. Only Pass E can see it.
+    prose = next(n for n, l in enumerate(lines) if l.startswith("plus the 7 that the 2026-10-07"))
+    cand = list(lines)
+    cand[prose] = cand[prose].replace("plus the 7 that", "plus the 8 that", 1)
+    got, _, _, _ = check(cand)
+    got += RD.sync_problems(PAGE, as_text(cand))
+    hit = [p for p in got if "page is not the writer's render" in p]
+    if not hit:
+        undetected += 1
+    print(f"  prose count outside the measured tables altered: "
+          f"{'detected' if hit else 'UNDETECTED'} ({len(got)} problems)")
 
     print(f"undetected mutants: {undetected}")
     return 0 if (undetected == 0 and not problems) else 1
