@@ -57,7 +57,7 @@ lives in this file and nowhere else.
 
 - Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `overview`, `ledger`, `preprints`,
   `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries` (13 modules). Import them (`from catlib import yaml as Y`);
-  do not re-implement a join in an extractor. **42** of the **49** scripts do, including **all 19**
+  do not re-implement a join in an extractor. **44** of the **49** scripts do, including **all 19**
   checkers. `measure.py` is the writer-side measurement API (counts as data, no report formatting) and
   checkers deliberately do **not** import it — a checker that re-derives a count through the page's own
   code proves nothing. `render.py` is the page-vs-writer comparison: a page's count pass proves its

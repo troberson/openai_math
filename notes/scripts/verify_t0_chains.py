@@ -35,7 +35,10 @@ import sys
 
 import extract_t0_chains as tc
 from catlib import anchors, overview, render as RD
+from catlib.bib import release_bib_edges
+from catlib.ledger import chain_edges, companion_word_fams
 from catlib.paths import NOTES, ROOT, owner
+from catlib.preprints import listed_dirs_from_contents
 from catlib.text import collapse_ws
 
 PAGE = NOTES / "t0-chains.md"
@@ -80,13 +83,13 @@ def measured():
     v = tc.population()
     rows, pop = v["rows"], v["pop"]
     mss = tc.manuscripts()
-    edges = tc.release_bib_edges()
+    edges = release_bib_edges(listed_dirs_from_contents())
     lines = overview.overview_lines()
     dirs = {f: sorted({owner(m["path"]) for m in mss[f]}) for f in pop}
     fam_edges = {f: tc.intra_edges(dirs[f], edges) for f in pop}
     mutual = {f: sum(1 for a, b in fam_edges[f] if (b, a) in fam_edges[f]) // 2 for f in pop}
-    bibs = {f: tc.bib_files(dirs[f]) for f in pop}
-    cw = tc.companion_word_fams(rows)
+    bibs = {f: tc.bib_files_paths(dirs[f]) for f in pop}
+    cw = companion_word_fams(rows)
     return {
         "v": v,
         "rows": rows,
@@ -98,7 +101,7 @@ def measured():
         "mutual": mutual,
         "bibs": bibs,
         "cw": cw,
-        "chain_edges": tc.chain_edges(rows),
+        "chain_edges": chain_edges(rows),
         "mss_n": sum(len(mss[f]) for f in pop),
         "with_edge": sorted(f for f in pop if fam_edges[f]),
         "mutual_fams": sorted(f for f in pop if mutual[f]),

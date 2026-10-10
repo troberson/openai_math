@@ -30,6 +30,8 @@ ATLINE = re.compile(r"^\s*@", re.M)
 ACCENT = re.compile(r"\\(?:['`^~=\".](?![a-zA-Z])|c|v|u|H|k|r|d|b|t|o)\{?([a-zA-Z])\}?")
 CITE = re.compile(r"\\cite[a-zA-Z]*\*?(?:\[[^\]]*\])?\{([^}]*)\}")
 RELEASE_HREF = re.compile(r"\\href\{[^}]*/preprints/([^/]+)/[^}]*\.pdf\}")
+HREF = re.compile(r"\\href\{(https?://[^}]+)\}")
+PREPRINT_PDF = re.compile(r"/preprints/([^/\\]+)/([A-Za-z0-9_.\-]+\.pdf)")
 THRESHOLDS = (1, 2, 3, 5, 10)
 CLUSTER_K = (1, 5, 10)
 TOP_N = 20
@@ -117,6 +119,27 @@ def manuscript_map() -> dict[str, str]:
         if r.get("kind") == "manuscript":
             man2fam[r["path"].split("/")[1]] = r["fam"]
     return man2fam
+
+
+def release_bib_edges(scope: set[str]) -> set[tuple[str, str]]:
+    """(citing dir, cited dir) for every release-labelled `.bib` href that resolves on disk.
+
+    A release-labelled entry is one carrying the "OpenAI Math Release" note. Scope is the listed
+    manuscripts: a superseded edition on disk would count the same edge twice. The edge is
+    **untyped** — the release records no builds-on / contrasts-with relation, so an edge is a
+    citation choice, not consequence.
+    """
+    from catlib.preprints import bib_entries
+
+    edges = set()
+    for d, body in bib_entries(scope):
+        if "OpenAI Math Release" not in body:
+            continue
+        for url in HREF.findall(body):
+            m = PREPRINT_PDF.search(url)
+            if m and (PREPRINTS / m.group(1) / m.group(2)).exists():
+                edges.add((d, m.group(1)))
+    return edges
 
 
 def tex_tree(man: str) -> Iterable[str]:

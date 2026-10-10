@@ -9,42 +9,38 @@ so a broader signal added to the first-match chain would move families between b
 C. The underlying `shapes` tags stay multi-label; the T0 counts for both columns are printed below.
 
 Usage: python3 notes/scripts/triage_t0.py [--tsv notes/catalog.tsv]
+
+The tier, the shape tags, and the first-match bucket rule are the package's
+(`catlib.ledger`); the prose each bucket carries is report formatting and stays here.
 """
 
 import argparse
 import collections
-import csv
-from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
+from catlib.ledger import T0_BUCKETS, bucket_of, read_ledger
+from catlib.paths import LEDGER_TSV
 
-# First match wins. Ordered by how cheaply the claim can be checked, not by importance.
-BUCKETS = [
-    ("C", "counterexample", "names an object that breaks a conjecture - cheapest to check"),
-    ("R", "resolution", "resolves/proves/settles a named conjecture - largest claim, no evidence"),
-    ("B", "bound", "bound, sharpness, power-saving, improvement"),
-    ("K", "classification", "if and only if / classified / characterization"),
-    ("U", "uniform", "uniformity over every object in a class"),
-    ("O", None, "density, partial, undecidability, conditional - tagged but no bucket above"),
-    ("N", None, "no shape tag at all - title is the only signal"),
-]
+# What each bucket means, keyed by code. The order and the tags are `catlib.ledger.T0_BUCKETS`;
+# this is the report's wording, not a join.
+BUCKET_PROSE = {
+    "C": "names an object that breaks a conjecture - cheapest to check",
+    "R": "resolves/proves/settles a named conjecture - largest claim, no evidence",
+    "B": "bound, sharpness, power-saving, improvement",
+    "K": "if and only if / classified / characterization",
+    "U": "uniformity over every object in a class",
+    "O": "density, partial, undecidability, conditional - tagged but no bucket above",
+    "N": "no shape tag at all - title is the only signal",
+}
 
-
-def bucket_of(shapes: str) -> str:
-    tags = set(shapes.split("|")) if shapes else set()
-    for code, tag, _ in BUCKETS:
-        if tag and tag in tags:
-            return code
-    return "N" if not tags else "O"
+BUCKETS = [(code, tag, BUCKET_PROSE[code]) for code, tag in T0_BUCKETS]
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--tsv", default=str(ROOT / "notes" / "catalog.tsv"))
+    ap.add_argument("--tsv", default=str(LEDGER_TSV))
     args = ap.parse_args()
 
-    with open(args.tsv, encoding="utf-8") as fh:
-        rows = list(csv.DictReader(fh, delimiter="\t"))
+    rows = read_ledger(args.tsv)
     t0 = [r for r in rows if r["tier"] == "T0"]
     for r in t0:
         r["bucket"] = bucket_of(r["shapes"])

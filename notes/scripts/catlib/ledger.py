@@ -58,13 +58,17 @@ COUNTEREX_PHRASE = re.compile(
 TIERS = ("T3", "T2", "T1", "T0")
 
 
-def read_ledger(path: Path = LEDGER_TSV) -> list[dict[str, str]]:
-    """The 372 ledger rows as dicts. Parse with DictReader(delimiter='\\t'), never split(',')."""
-    with path.open(encoding="utf-8") as fh:
+def read_ledger(path: Path | str = LEDGER_TSV) -> list[dict[str, str]]:
+    """The 372 ledger rows as dicts. Parse with DictReader(delimiter='\\t'), never split(',').
+
+    Accepts a str as well as a Path, because `triage_t0.py`'s `--tsv` argument arrives as a string.
+    """
+    p = Path(path)
+    with p.open(encoding="utf-8") as fh:
         return list(csv.DictReader(fh, delimiter="\t"))
 
 
-def ledger_by_fam(path: Path = LEDGER_TSV) -> dict[str, dict[str, str]]:
+def ledger_by_fam(path: Path | str = LEDGER_TSV) -> dict[str, dict[str, str]]:
     """{fam: row}, the join every family-keyed reader wants."""
     return {r["fam"]: r for r in read_ledger(path)}
 
@@ -152,6 +156,55 @@ def tier_of(has_main_results: bool, has_configs: bool, has_scope_note: bool) -> 
     if has_scope_note:
         return "T1"
     return "T0"
+
+
+# The T0 first-match chain, in the order `triage_t0.py` records it: ordered by how cheaply the
+# claim can be checked, not by importance. `O` and `N` are the two catch-alls — tagged but no
+# bucket above, and no tag at all. The prose each bucket carries is report formatting and stays in
+# the script; the order and the tags are the join.
+T0_BUCKETS: tuple[tuple[str, str | None], ...] = (
+    ("C", "counterexample"),
+    ("R", "resolution"),
+    ("B", "bound"),
+    ("K", "classification"),
+    ("U", "uniform"),
+    ("O", None),
+    ("N", None),
+)
+
+
+def bucket_of(shapes: str) -> str:
+    """The T0 bucket a `shapes` value lands in, first match wins.
+
+    `resolves_named` and `counterex_broad` are NOT in this chain. Widening `counterexample` to the
+    broad rule moves every T0 family carrying the flag but not the tag into C, so the two columns
+    discriminate as columns, not as first-match entries.
+    """
+    tags = set(shapes.split("|")) if shapes else set()
+    for code, tag in T0_BUCKETS:
+        if tag and tag in tags:
+            return code
+    return "N" if not tags else "O"
+
+
+def chain_edges(rows: Any) -> list[tuple[str, str]]:
+    """(family, companion) for every `result (NNN)` link the release records.
+
+    The release records a cross-family link only as a `result (NNN)` clause inside the overview
+    abstract, which is what the ledger's `companions` column parses: 2 edges over 372 families.
+    """
+    vals = rows.values() if isinstance(rows, dict) else rows
+    return [(r["fam"], e) for r in vals for e in r["companions"].split("|") if e]
+
+
+def companion_word_fams(rows: Any) -> list[str]:
+    """Families whose abstract uses `\\bcompanion` — a word, not an edge.
+
+    9 families corpus-wide, **0** of them carrying a `companions` value, which is why the word is
+    not a link.
+    """
+    vals = rows.values() if isinstance(rows, dict) else rows
+    return [r["fam"] for r in vals if r["companion_word"] == "1"]
 
 
 def shapes_counts(rows: list[dict[str, Any]]) -> dict[str, int]:

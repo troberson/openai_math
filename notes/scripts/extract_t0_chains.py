@@ -21,26 +21,29 @@ an edge: 9 families, none of them carrying a `companions` value.
 Intra-family citation edges are manuscript-level: a release-labelled .bib entry (one carrying the
 "OpenAI Math Release" note) whose href target is a preprints/<dir>/<file>.pdf that exists on disk,
 where the citing and cited directories belong to the same family.
+
+The joins are the package's: `catlib.ledger` carries the ledger read, the chain edges and the
+companion-word set; `catlib.bib` carries the release-labelled bib-edge shape; `catlib.overview`
+carries the `\resultentry` anchors; `catlib.preprints` carries the listed-manuscript scope and the
+`.bib` file list. The script stops importing `extract_links.py` and `extract_subfinding_pairs.py` —
+two report-only scripts it was reaching into for its joins. What stays here is the reading-pass
+shape: the second-pass span of `notes/t0-triage.md`, the coverage-signal columns, and the
+same-directory edge pairing.
 """
-import csv
-import pathlib
 import re
 
-import extract_links
-import extract_subfinding_pairs as ep
+from catlib.bib import release_bib_edges
+from catlib.ledger import chain_edges, companion_word_fams, read_ledger
+from catlib.overview import overview_lines
+from catlib.paths import OVERVIEW_TEX, PREPRINTS, ROOT, SUBFINDINGS_TSV, owner, read_text
+from catlib.preprints import bib_files, listed_dirs_from_contents
+from catlib.tsv import read_rows
 
-ROOT = pathlib.Path(__file__).resolve().parents[2]
-LEDGER = ROOT / "notes" / "catalog.tsv"
-SUBFINDINGS = ROOT / "notes" / "subfindings.tsv"
-TRIAGE = ROOT / "notes" / "t0-triage.md"
+NOTES = ROOT / "notes"
+TRIAGE = NOTES / "t0-triage.md"
 SECOND_PASS_START = "## Second pass: the remaining 93 families"
 SECOND_PASS_END = "## What the triage shows"
 SIGNAL_COLS = ("paps_form", "chal", "mainres", "scope_note", "verification", "inputs", "covmd")
-
-
-def ledger_rows():
-    with LEDGER.open(encoding="utf-8") as fh:
-        return list(csv.DictReader(fh, delimiter="\t"))
 
 
 def second_pass_ids():
@@ -53,47 +56,17 @@ def second_pass_ids():
 def manuscripts():
     """fam -> ordered list of manuscript rows from notes/subfindings.tsv."""
     out = {}
-    with SUBFINDINGS.open(encoding="utf-8") as fh:
-        for r in csv.DictReader(fh, delimiter="\t"):
-            if r["kind"] == "manuscript":
-                out.setdefault(r["fam"], []).append(r)
+    for r in read_rows(SUBFINDINGS_TSV):
+        if r["kind"] == "manuscript":
+            out.setdefault(r["fam"], []).append(r)
     for rows in out.values():
         rows.sort(key=lambda r: int(r["seq"]))
     return out
 
 
-def chain_edges(rows):
-    vals = rows.values() if isinstance(rows, dict) else rows
-    return [(r["fam"], e) for r in vals for e in r["companions"].split("|") if e]
-
-
-def companion_word_fams(rows):
-    vals = rows.values() if isinstance(rows, dict) else rows
-    return [r["fam"] for r in vals if r["companion_word"] == "1"]
-
-
-def release_bib_edges():
-    """(citing_dir, cited_dir) for every release-labelled .bib href that resolves on disk.
-
-    Scope is the listed manuscripts: a superseded edition on disk would count the same edge twice.
-    """
-    edges = set()
-    for d, body in extract_links.bib_entries(extract_links.listed_dirs()):
-        if "OpenAI Math Release" not in body:
-            continue
-        for url in extract_links.HREF.findall(body):
-            m = extract_links.PREPRINT_URL.search(url)
-            if m and (ROOT / "preprints" / m.group(1) / m.group(2)).exists():
-                edges.add((d, m.group(1)))
-    return edges
-
-
-def bib_files(dirs):
-    out = []
-    for d in sorted(dirs):
-        base = ROOT / "preprints" / d
-        out += sorted(str(p.relative_to(ROOT)) for p in base.rglob("*.bib"))
-    return out
+def bib_files_paths(dirs):
+    """Repo-relative `.bib` paths owned by a set of manuscript directories."""
+    return sorted(str(p.relative_to(ROOT)) for p in bib_files(set(dirs)))
 
 
 def signal_sum(row):
@@ -101,7 +74,7 @@ def signal_sum(row):
 
 
 def population():
-    rows = {r["fam"]: r for r in ledger_rows()}
+    rows = {r["fam"]: r for r in read_ledger()}
     second = second_pass_ids()
     paps2 = [f for f, r in rows.items() if int(r["paps"]) == 2]
     t0_paps2 = [f for f in paps2 if rows[f]["tier"] == "T0"]
@@ -129,12 +102,12 @@ def main():
     v = population()
     rows, pop = v["rows"], v["pop"]
     mss = manuscripts()
-    edges = release_bib_edges()
-    lines = ep.resultentry_lines()
-    fam_dirs = {f: sorted({extract_links.owner(pathlib.Path(m["path"])) for m in mss[f]}) for f in pop}
+    edges = release_bib_edges(listed_dirs_from_contents())
+    lines = overview_lines()
+    fam_dirs = {f: sorted({owner(m["path"]) for m in mss[f]}) for f in pop}
     fam_edges = {f: intra_edges(fam_dirs[f], edges) for f in pop}
     fam_mutual = {f: sum(1 for a, b in fam_edges[f] if (b, a) in fam_edges[f]) // 2 for f in pop}
-    fam_bibs = {f: bib_files(fam_dirs[f]) for f in pop}
+    fam_bibs = {f: bib_files_paths(fam_dirs[f]) for f in pop}
 
     print("== population")
     print(f"repo-wide paps==2            {len(v['paps2'])}")
@@ -196,14 +169,14 @@ def main():
     print(f"paths exist on disk             "
           f"{all((ROOT / m['path']).exists() for f in pop for m in mss[f])}")
     print(f"every manuscript dir has README "
-          f"{all((ROOT / 'preprints' / extract_links.owner(pathlib.Path(m['path'])) / 'README.md').exists() for f in pop for m in mss[f])}")
+          f"{all((PREPRINTS / owner(m['path']) / 'README.md').exists() for f in pop for m in mss[f])}")
     print(f"tier matches ledger             "
           f"{all(m['tier'] == rows[f]['tier'] for f in pop for m in mss[f])}")
     print(f"formalized flags all zero       "
           f"{all(m['formalized'] == '0' for f in pop for m in mss[f])}")
     print(f"population all T0               {all(rows[f]['tier'] == 'T0' for f in pop)}")
     print(f"overview anchors in range       "
-          f"{all(1 <= lines[f] <= len((ROOT / 'overview.tex').read_text(encoding='utf-8').split(chr(10))) for f in pop)}")
+          f"{all(1 <= lines[f] <= len(read_text(OVERVIEW_TEX).split(chr(10))) for f in pop)}")
     return 0
 
 

@@ -63,7 +63,7 @@ import measure_names as MN
 import measure_proof_density as PD
 import measure_templates as MTPL
 import measure_topics as MT
-from catlib import overview, preprints, tsv
+from catlib import bib, ledger, overview, preprints, tsv
 from catlib import render as RD
 from catlib import yaml as Y
 from catlib.paths import (COMPARATOR_DIR, DEPS_TSV, FORMALIZATION_YAML, LAKEFILE, LAKE_MANIFEST,
@@ -2495,15 +2495,15 @@ def t0_chains_population() -> dict[str, Any]:
     v = tc.population()
     rows, pop = v["rows"], v["pop"]
     mss = tc.manuscripts()
-    bib_edges = tc.release_bib_edges()
+    bib_edges = bib.release_bib_edges(preprints.listed_dirs_from_contents())
     lines = ep.resultentry_lines()
     fam_dirs = {f: sorted({owner(pathlib.Path(m["path"])) for m in mss[f]}) for f in pop}
     fam_edges = {f: tc.intra_edges(fam_dirs[f], bib_edges) for f in pop}
     fam_mutual = {f: sum(1 for a, b in fam_edges[f] if (b, a) in fam_edges[f]) // 2 for f in pop}
-    fam_bibs = {f: tc.bib_files(fam_dirs[f]) for f in pop}
+    fam_bibs = {f: tc.bib_files_paths(fam_dirs[f]) for f in pop}
     return {"v": v, "rows": rows, "pop": pop, "lines": lines, "edges": fam_edges,
-            "mutual": fam_mutual, "bibs": fam_bibs, "chain": tc.chain_edges(rows),
-            "cw": tc.companion_word_fams(rows)}
+            "mutual": fam_mutual, "bibs": fam_bibs, "chain": ledger.chain_edges(rows),
+            "cw": ledger.companion_word_fams(rows)}
 
 
 def t0_chains_full(p: dict[str, Any]) -> dict[str, str]:

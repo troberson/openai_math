@@ -189,9 +189,9 @@ inserted line, deleted line) and `__init__.py`. A
 script run as `python3 notes/scripts/foo.py` has `notes/scripts` on `sys.path`, so it imports them as
 `from catlib import ...` with no path boilerplate.
 
-**42** of the **49** scripts call the package: **8** `extract_`, **3** `build_`, **6** `measure_`,
-`check_index_links.py`, `read_manuscript.py`, `render_reports.py`, **all 19** checkers, and the three
-summary-page readers `check_summary_manuscripts.py`, `locate_summary_quotes.py` and
+**44** of the **49** scripts call the package: **9** `extract_`, **3** `build_`, **6** `measure_`,
+`check_index_links.py`, `read_manuscript.py`, `render_reports.py`, `triage_t0.py`, **all 19** checkers,
+and the three summary-page readers `check_summary_manuscripts.py`, `locate_summary_quotes.py` and
 `refresh_summary_line_counts.py`, which `math-6s7.1` moved off `verify_summaries.py` onto
 `catlib/summaries.py` — a checker serving as a library is the shape that port broke, and
 `verify_summaries.py` now has **0** importers. `math-lon.2.5` ported the last two checkers,
@@ -212,7 +212,13 @@ package and took `extract_verification_dirs.py` off `build_catalog`; the page ch
 renderer were importing the extractor's private `PRE` / `entry_point` / `main_command` and now
 import the package's, so the six-rule entry-point classification has one vocabulary. What stays in
 the extractor is the report shape: the numbered heading/command/scope lines, the README-section
-reconciliation, and `families_by_slug`.
+reconciliation, and `families_by_slug`. `math-6s7.3` put the T0 first-match chain
+(`T0_BUCKETS` / `bucket_of`), the chain edges and the companion-word set in `catlib/ledger.py`, and
+the release-labelled bib-edge shape in `catlib/bib.py`, so `extract_t0_chains.py` stops importing
+`extract_links.py` and `extract_subfinding_pairs.py` — the dependency shape this epic exists to
+remove, and the one cycle that leaves the cyclic-import count — while `triage_t0.py` and
+`verify_named_conjectures.py` read the bucket rule from the package. The bucket **prose** stays in
+`triage_t0.py`: the order and the tags are a join, the wording is the report's labels.
 
 The package is not in the census below: the script population is `notes/scripts/*.py`, and
 `catlib/` is 13 modules under that directory, counted as **62** source files by the lint gate in

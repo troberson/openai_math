@@ -1,7 +1,9 @@
 """Verify notes/named-conjectures.md against the shipped files.
 
-Report-only: writes nothing. Re-derives the population from notes/catalog.tsv and
-notes/scripts/triage_t0.py, resolves every statement anchor against the manuscript LaTeX it cites,
+Report-only: writes nothing. Re-derives the population from `notes/catalog.tsv` and the bucket rule
+in `catlib.ledger` (`read_ledger` and `bucket_of` — `math-6s7.3` moved the first-match chain out of
+`triage_t0.py`, so this checker no longer imports a report-only script), resolves every statement
+anchor against the manuscript LaTeX it cites,
 matches every quotation verbatim against the lines it cites, resolves every prose `path:line`
 citation (including the ones with no path, and the ones relative to a manuscript directory named in
 the entry) and requires a citation that opens a statement environment to end on its `\\end`, checks
@@ -34,10 +36,9 @@ import sys
 from collections import Counter
 
 from catlib.bib import read
-from catlib.ledger import read_ledger
+from catlib.ledger import bucket_of, read_ledger
 from catlib.paths import NOTES, ROOT, read_text
 from catlib.text import collapse_ws
-import triage_t0
 
 PAGE = NOTES / "named-conjectures.md"
 
@@ -67,7 +68,7 @@ def population(rows):
     t0 = [r for r in rows if r["tier"] == "T0"]
     first, second = [], []
     for r in t0:
-        bucket = triage_t0.bucket_of(r["shapes"])
+        bucket = bucket_of(r["shapes"])
         if bucket == "C" or r["fam"] <= "031" or int(r["paps"]) >= 3:
             first.append(r)
         else:
@@ -90,7 +91,7 @@ def measure(rows):
         "two_pap_families": sum(1 for r in pop if int(r["paps"]) == 2),
     }
     for b in ("R", "B", "K", "N", "U", "C", "O"):
-        n = sum(1 for r in pop if triage_t0.bucket_of(r["shapes"]) == b)
+        n = sum(1 for r in pop if bucket_of(r["shapes"]) == b)
         if n:
             out["bucket_" + b] = n
     disc = Counter(r["discipline"] for r in pop)
