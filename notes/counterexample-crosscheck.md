@@ -13,7 +13,7 @@ Ledger sums over the 28: **28** `main_results` declarations, **52** comparator c
 formalized manuscripts out of **50**. Every one of the 28 has a scope note.
 
 `lean/formalization.yaml` carries **200** `main_results` entries over **189** unique configs (one
-block, `lean/formalization.yaml:917`). Of the 28 families, **19** have at least one entry and **9**
+block, `lean/formalization.yaml:972`). Of the 28 families, **19** have at least one entry and **9**
 have none, and the no-entry tier counter reads `{'T2': 9}`: the absence is structural, not a reading
 gap — T2 is the tier the release assigns to a family whose scope note links configs that no
 `main_results` entry names.

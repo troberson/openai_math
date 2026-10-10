@@ -176,21 +176,21 @@ every one of them. Unlike `resolves_named`, this column is a **strict superset**
 in **`notes/counterexample-tag.md`**.
 
 **The counterexample families outside T0 are cross-checked claim by claim.** Population rule:
-`counterexample` in `shapes` **and** `tier != T0` — **28** families, **18 at T3 and 10 at T2**. The 18
-T3 families carry **27** `main_results` declarations; all 27 resolve, **11** are written against a
+`counterexample` in `shapes` **and** `tier != T0` — **28** families, **19 at T3 and 9 at T2**. The 28
+families carry **28** `main_results` declarations; all 28 resolve, **11** are written against a
 carrier `def … : Prop :=` and all 11 carriers resolve through the declaration file's import closure.
-The 10 T2 families carry **none**, which is the tier's structural absence rather than a per-family
-finding. Of the **51** configs their scope notes link, **24** have no entry: **11** in **7** T3
-families, **13** across the 10 T2 families. Pairing a claim with a declaration is a reading step, not a
-join — see the traps below. Verdicts for all 27, each resting on a verbatim carrier or statement quote
-at its `file:line`, are in **`notes/counterexample-crosscheck.md`**, which also records the bead
+The 9 T2 families carry **none**, which is the tier's structural absence rather than a per-family
+finding. Of the **52** configs their scope notes link, **24** have no entry: **12** in **8** T3
+families, **12** across all **9** T2 families. Pairing a claim with a declaration is a reading step, not
+a join — see the traps below. Verdicts for all 28, each resting on a verbatim carrier or statement
+quote at its `file:line`, are in **`notes/counterexample-crosscheck.md`**, which also records the bead
 prose's "21 T0 counterexample-shaped families" beside the shape rule's **16** without resolving the
 gap between them.
 
 **The release records 2 cross-family links, not a graph.** The ledger's `companions` column parses
 `result (NNN)` clauses inside the overview abstract, and over 372 families that yields **2** edges:
 001 → 032 and 002 → 006. The `companion_word` column (`\bcompanion` in the same abstract) fires on
-**10** families and **0** of them carry an edge, so the word gestures at a companion without recording
+**9** families and **0** of them carry an edge, so the word gestures at a companion without recording
 one. All five families in the three bead-named chains sit at T0 with every coverage column at zero, so
 "only as strong as its weakest unformalized link" reads here as *every* link; the third chain,
 311 ⇒ Hovey–Strickland, is a literature chain and has no corpus edge at all. The 28 two-manuscript
