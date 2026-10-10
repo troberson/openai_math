@@ -181,7 +181,8 @@ must be cumulative over the block, not per line), and re-inserting a blank line 
   every generated index page into `notes/templates/`: `family.md.j2`, `discipline.md.j2`,
   `topic.md.j2`, `name.md.j2`, and `index-readme.md.j2` (**5** skeletons); `math-a0r.4` added the
   report templates under `notes/templates/report/`, and `math-a0r.5` added `names.md.j2`,
-  `proof-density.md.j2`, `index-links.md.j2` and `links.md.j2` — **8** templates, rendered by
+  `proof-density.md.j2`, `index-links.md.j2`, `links.md.j2` and `dependency-drift.md.j2` — **9**
+  templates, rendered by
   `render_reports.py`. Both
   render through `python3` under the gate (gate.sh runs plain `python3`, not the venv interpreter), so
   the gate depends on jinja2 being importable by the system interpreter too; both interpreters report
