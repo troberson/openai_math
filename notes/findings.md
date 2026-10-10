@@ -238,7 +238,7 @@ not survive a re-run.
 | S16 | [`notes/counterexample-crosscheck.md`](counterexample-crosscheck.md) | 1062 | The counterexample families' evidence cross-check |
 | S17 | [`notes/scripts/extract_scope_notes.py`](scripts/extract_scope_notes.py) | 78 | The phrase-list floors behind the 5 and 44 counts |
 | S18 | [`notes/proof-density.md`](proof-density.md) | 113 | The proof-density test, its bar, and its nulls |
-| S19 | [`notes/scripts/measure_proof_density.py`](scripts/measure_proof_density.py) | 333 | The AUC and p re-derivation for every density figure |
+| S19 | [`notes/scripts/measure_proof_density.py`](scripts/measure_proof_density.py) | 358 | The AUC and p re-derivation for every density figure |
 | S20 | [`notes/named-results.md`](named-results.md) | 346 | Headline environments read for named targets |
 | S21 | [`notes/citations.md`](citations.md) | 328 | Bibliographic overlap by discipline |
 | S22 | [`notes/scripts/extract_citations.py`](scripts/extract_citations.py) | 257 | The citation extractor and its coverage report |

@@ -287,7 +287,12 @@ lives in this file and nowhere else.
   together, 233 → 248 with removals 0; the 15 additions are 022 039 044 096 097 151 156 192 209 263
   289 293 297 347 367. A strict title+abstract *replacement* — both regexes on the raw concatenation —
   reads 149 (94 removals, 10 additions) and a case-sensitive raw-title read (target noun in the title,
-  verb in the lowered pair) yields 148 (100 removals, 15 additions) — quote which scope you mean.
+  verb in the lowered pair) yields 148 (100 removals, 15 additions); **both pairs are measured against
+  the abstract-only 233**, which is what the extractor's report line subtracts
+  (`extract_named_results.py:312`). `render_reports.py:463` subtracts the **applied 248** instead and
+  renders "149 (99 removals)" — a different rule (target noun case-insensitively in the title, verb in
+  the lowered abstract) that also reads 149 and differs from the raw-concatenation set on **128**
+  families. Quote a removal count with its baseline and its rule.
   Findings: `notes/named-results.md`.
 - `notes/sources.tsv`'s `abstract` column is a per-directory **flag**, not an occurrence count: the
   corpus ships 722 `abstract` environments over 719 manuscript directories (057, 039 and 056 each ship
@@ -336,10 +341,11 @@ lives in this file and nowhere else.
 ## Testing instructions
 
 - Nothing here builds and there is no test suite; the generator report is the test.
-- The whole-tree test is the gate list at `notes/scripts/gate.sh`: **63** invocations — the **8**
+- The whole-tree test is the gate list at `notes/scripts/gate.sh`: **64** invocations — the **8**
   gated writers (`build_report_templates.py` is the writer it does not run),
-  the 17 gated report-only rows (including `check_summary_manuscripts.py` and
-  `locate_summary_quotes.py`; `read_manuscript.py` is the one script it does not run), and **38**
+  the 18 gated report-only rows (including `check_summary_manuscripts.py` and
+  `locate_summary_quotes.py`, and `check_index_links.py` plain and with `--mutant`;
+  `read_manuscript.py` is the one script it does not run), and **38**
   checker invocations: each of the 18 checkers plain and with `--mutant` (**36**), plus
   `verify_conjecture_standing.py` plain and with `--mutant` (**2**). Run it twice: the two reports
   must be byte-identical, and `notes/scripts/README.md` carries
@@ -379,7 +385,8 @@ lives in this file and nowhere else.
   quoting any of its counts — it resolves every `path:line` anchor and every bare `:NNN` overview anchor
   against `famline`, re-derives all 66 count phrases from `extract_named_results.population()`, checks
   the 17-row target table against that population and the ledger, matches every `*"…"*` quotation against
-  the file its pinned anchor names, and flags twelve injected mutations. It writes nothing; run it twice
+  the file its pinned anchor names, and flags thirteen injected mutations — the last a prose count in
+  the page, caught only by comparing the page with the writer's render of it. It writes nothing; run it twice
   and diff — the report is identical. Quote a quotation's anchor as the checker pins it: a manuscript
   sentence wraps across 1–4 source lines, so the anchor is the **prose-coordinate** line the extractor
   reports, not the line the sentence ends on.
@@ -388,7 +395,9 @@ lives in this file and nowhere else.
   number, gates on the population (719 rows, 719 distinct dirs, 372 families on both sides, per-family
   source rows == ledger `paps`, 20,341 proofs, 21,288 statements, tier counts 136/106/0/130, positive
   `tex_bytes`, every source dir present under `preprints/`), self-tests the statistic against 5
-  hand-computed AUCs, and flags 8 injected corruptions. It writes nothing; run it twice and diff — the
+  hand-computed AUCs, compares `notes/proof-density.md` with the writer's render of it, and flags 9
+  injected corruptions — the last a prose proof length in the limitations list, visible only to that
+  render diff. It writes nothing; run it twice and diff — the
   report must be identical. Ties score 0.5, so `([1,2,3],[0,1,2])` is **7/9**, not 6/9, and the ranks
   must be assigned over the **jointly sorted** pooled sample — sorting each group and concatenating
   gives every AUC as 0.000 with absurd p-values.
@@ -396,7 +405,8 @@ lives in this file and nowhere else.
   before quoting any entry — it requires exactly one row per scope note on disk, checks every
   `lean/docs/NNN.md:<line>` anchor falls inside that file's `## Scope` span, requires each quotation
   verbatim on the line it cites, re-measures all seven Measurements-table numbers from the files, and
-  flags six injected mutants including a paraphrase dressed as a quote. `extract_scope_notes.py` is
+  flags seven injected mutants including a paraphrase dressed as a quote and a prose count that only the
+  diff against the writer's render of the page can catch. `extract_scope_notes.py` is
   report-only: it writes nothing and is where the page's counts come from.
 - Check `notes/subfindings.tsv` with `python3 notes/scripts/verify_subfindings.py --mutant` before
   quoting a row — it re-derives every manuscript row from `overview.tex` (path, display title,
@@ -416,7 +426,8 @@ lives in this file and nowhere else.
   extension fails, it is not skipped), matches each fenced block against the nearest preceding anchor,
   re-derives all 82 count and byte phrases from `measure_index_sizes.population()` (schema-table row
   counts from the rendered TSVs themselves; byte phrases scoped to the five TSVs the page tabulates,
-  so `sources.tsv` and `topics.tsv` are not demanded), and flags thirteen injected mutations. It
+  so `sources.tsv` and `topics.tsv` are not demanded), and flags fourteen injected mutations — the last
+  a prose count, visible only in the diff against the writer's render. It
   writes nothing.
 - Run `python3 notes/scripts/build_sources.py` twice and diff: `notes/sources.tsv` must be
   byte-identical and the report identical. Its report reconciles **719 rows over 719 listed manuscript
@@ -433,7 +444,8 @@ lives in this file and nowhere else.
   resolves every `path:line` anchor of any extension, matches each fenced block against the nearest
   preceding anchor, and requires every `pdf` on disk non-empty, every `main_tex` present and declaring
   `\documentclass` at line start, every `fam` in the ledger, and every family's row count equal to
-  `paps`. It flags nine injected mutants and writes nothing.
+  `paps`. It flags twelve injected mutants and writes nothing — the last three being prose counts in
+  `notes/sources.md`, caught only by comparing the page with the writer's render of it.
 - Check `notes/subfinding-pairs.md` with `python3 notes/scripts/verify_subfinding_pairs.py --mutant`
   before quoting any count from it — it requires exactly one block per population family and none
   outside, resolves each block's `overview.tex` anchor to that family's `\resultentry` line, checks
@@ -441,7 +453,8 @@ lives in this file and nowhere else.
   every quoted title to be verbatim on that line, requires each `[fam:seq]` to resolve to a manuscript
   row of the block's own family, requires `claimed` and `unclaimed` to be disjoint and to cover the
   family's full `1..n` exactly once, re-measures the ten Summary-table numbers from the parsed lines,
-  and flags seven injected mutants including a paraphrase dressed as a quote. It writes nothing.
+  and flags eight injected mutants including a paraphrase dressed as a quote and a prose count visible
+  only in the diff against the writer's render. It writes nothing.
 - Check `notes/conditional.md` with `python3 notes/scripts/verify_conditional.py --mutant` before
   quoting the source check — it attributes each fenced block to the nearest preceding `file:line`
   anchor and matches every block line, resolves each `*"…"*` prose quotation and each inline
@@ -461,7 +474,7 @@ lives in this file and nowhere else.
   the 12-row T3 gap table, and the 9-row T2 table to equal the recomputation, and requires each of the
   28 entries to cite its yaml block at the `- comparator_config:` line — the extractor's yaml anchor is
   the `file:` line, so a 3-line entry block starts at `file-line − 2` — its statement anchor at the line
-  where the declaration opens, and the carrier's definition anchor. It flags thirteen injected mutants
+  where the declaration opens, and the carrier's definition anchor. It flags fourteen injected mutants
   and writes nothing. Run `python3 notes/scripts/extract_counterexample_crosscheck.py` twice and diff:
   the report must be identical.
 - Check `notes/t0-chains.md` with `python3 notes/scripts/verify_t0_chains.py --mutant` before quoting
@@ -471,7 +484,7 @@ lives in this file and nowhere else.
   quotation to the anchor in its own line or in the contiguous lines above it, re-derives the 12 count
   phrases and the 4 named family lists, requires the 27-row summary table and the 5-row chain table to
   equal the ledger, and requires each of the 27 blocks to carry exactly 2 manuscript bullets whose title
-  is verbatim on the family's `\resultentry` line and whose path exists on disk. It flags twelve
+  is verbatim on the family's `\resultentry` line and whose path exists on disk. It flags thirteen
   injected mutants and writes nothing. Run `python3 notes/scripts/extract_t0_chains.py` twice and diff:
   the report must be identical — 27 families over 54 manuscripts, 26 with zero coverage signal, 2 chain
   edges over 372 families, 9 `companion_word` families carrying 0 edges, 15 families citing their
@@ -487,8 +500,9 @@ lives in this file and nowhere else.
   anchor is caught), re-checks the ledger's `verification`/`inputs`/`covmd` claims from
   `notes/catalog.tsv`, requires the entry-point table to carry one row per bundle in slug order with the
   family that slug belongs to, requires the two family-269 `rows.txt` files to be byte-identical,
-  re-checks that every artifact `COVERAGE.md` names is on disk, and flags eighteen injected mutants
-  including an abbreviated anchor and a deleted table row. It writes nothing.
+  re-checks that every artifact `COVERAGE.md` names is on disk, and flags nineteen injected mutants
+  including an abbreviated anchor, a deleted table row, and a prose line count visible only in the diff
+  against the writer's render. It writes nothing.
 - Check `notes/conjecture-standing.tsv` with
   `python3 notes/scripts/verify_conjecture_standing.py --mutant` before quoting any row — it proves
   the 139-row fam set against the ledger, resolves every `overview.tex:<n>` anchor to that family's
@@ -507,7 +521,7 @@ lives in this file and nowhere else.
   against the nearest explicit file), matches all 7 blockquotes and every checked code span verbatim
   against `lean/lakefile.lean`, `lean/formalization.yaml`, the deps TSV, and the patch files, requires
   the 23-row patch table to equal the TSV row by row in descending order, requires each named library
-  list to equal the measured set, and flags nine injected mutants. Its report reconciles the three
+  list to equal the measured set, and flags ten injected mutants. Its report reconciles the three
   surfaces independently: TSV patch lines == on-disk line sum == 160,187; the 11-library
   pre-resolution array == the 11 `lana-agents` URLs, disjoint from the 12-library `post_update` array,
   union == the 23 patched libraries; 19 zero-import with 14 patched and 5 not; medians 2,575 (any
@@ -567,7 +581,9 @@ lives in this file and nowhere else.
   200 `main_results` entries over 189 unique configs in 136 families, 393 release-labelled bib
   entries over 391 resolved edges reaching 156 families, the legacy title proxy at 14 over 417
   `.bib` files (17 any / 12 cross over all 500), 0 MSC hits, 0 bib `keywords` fields, and 12
-  `\keywords` directories.
+  `\keywords` directories. The run ends with `sync problems (notes/links.md) N`, folded into the exit
+  code; `render_reports.py` computes that page's slots by running this script as a child and marks the
+  child with `RENDER_REPORTS_CHILD`, where the pass is inert by design.
 - Run `python3 notes/scripts/build_index.py` twice and diff: `notes/index/` must be byte-identical and
   the report identical. Its report reconciles 372 family pages + 17 discipline pages + 92 topic pages
   + 551 name pages + 1 entry point (**1,033** pages, 16 tables), **48,012** relative links with 0
@@ -596,14 +612,22 @@ lives in this file and nowhere else.
   **18,095**-link difference is registry under-coverage, not a disagreement about existence — both
   report 0 broken. Link scanning must be paren-balanced: `[^)]*` truncates
   `preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/paper.pdf` and invents a broken
-  link, so the baseline is 0 broken links, not 1. `--mutant` runs the self-test (20 injected hrefs, one
-  per category, all caught; 7 real hrefs, all resolving). Findings: `notes/index-links.md`.
+  link, so the baseline is 0 broken links, not 1. `--mutant` runs the self-test (21 injected mutations:
+  20 broken hrefs, one per category, plus one mutation of the page's own prose — all caught; 7 real
+  hrefs, all resolving). The run ends with `sync problems (notes/index-links.md) N`, folded into the exit
+  code; the prose mutant is that pass's own target. Findings: `notes/index-links.md`.
 - Run `python3 notes/scripts/measure_names.py` before quoting a name count: it re-derives every figure
   in `notes/names.md` from the corpus (7,240 `.tex` files, 16,889 titled statement environments,
   13,581 `.bib` entries over 5,809 author keys, 3,407 title candidates, 2,850 rejections by bucket).
-  It writes nothing, so the pages are not its test — `notes/names.md` is the document it checks.
+  It writes nothing, so the pages are not its test — `notes/names.md` is the document it checks. Its
+  report branch ends with a sync pass: `sync problems (notes/names.md) N`, the page compared with
+  `render_reports.py`'s render of it; the script exits 1 on a nonzero N. It has no mutant self-test, so
+  the pass has no mutant of its own to catch.
 - Run `python3 notes/scripts/measure_topics.py --check` before quoting any topic count: it re-measures
-  all 92 rows of `notes/topics.tsv` and exits 1 when a recorded per-layer count has drifted. Its
+  all 92 rows of `notes/topics.tsv` and exits 1 when a recorded per-layer count has drifted, or when
+  `notes/topics.md` disagrees with `render_reports.py`'s render of it — the sync pass prints
+  `sync problems (notes/topics.md) N` in both the `--check` branch and the plain report, and the plain
+  report exits 1 on a nonzero N. Its
   report yields 92 terms over 372 families, 4 unassigned terms, 372 of 372 families covered, 978
   assignments, and the per-family topic histogram `1:93 2:103 3:87 4:51 5:21 6:13 7:2 8:1 9:1`. Quote a
   term with its per-layer counts, not its yield alone — a yield of 24 can be 2 titles and 16 scope
@@ -621,7 +645,7 @@ lives in this file and nowhere else.
   lands — and recomputes the shared-basename sets
   (**1** top-level ∩ index: `README.md`; **13** index ∩ summaries slugs). It excludes
   itself from the population, so the page's **45** scripts and **18** checkers are the run's 46 and
-  19. It flags eleven injected mutants, each asserted against the check it targets, and writes nothing.
+  19. It flags twelve injected mutants, each asserted against the check it targets, and writes nothing.
   Run it twice and diff — the report is identical.
 
 ## PR instructions

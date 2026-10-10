@@ -25,11 +25,19 @@ disable =
     # 12 sites. Module-level path constants are UPPER_CASE and the extractors use short loop
     # variables; both are the local naming convention (see [BASIC] good-names).
     C0103,
-    # 6 sites. A checker that reads a page section by section imports inside the function that
-    # needs it.
+    # 9 sites. A checker that reads a page section by section imports inside the function that
+    # needs it; catlib/render.py's lazy import of render_reports is the import cycle it must not
+    # close at module level.
     C0415,
     # 2 sites. A backslash inside a report template string is the report's own formatting.
     C3001,
+    # 7 cycles, all one shape: catlib.render -> render_reports -> <measuring script>. The writer
+    # imports the scripts whose numbers it renders, and the shared render-diff module imports the
+    # writer only inside a function — that deferred import is the recursion guard the sync pass
+    # needs (see catlib/render.py's rendered()), and a module-level import would make the writer
+    # unimportable from inside a render. Python resolves the graph because the import is deferred
+    # to a point where every module is already loaded; the cycles are listed in notes/linting.md.
+    R0401,
     # 80 / 37 / 35 / 5 / 3 / 2 / 5 sites. A generator that reconciles a corpus is long and wide by
     # design; the metrics describe the report, not a defect.
     R0914,

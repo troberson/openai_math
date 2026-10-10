@@ -68,6 +68,7 @@ is not a defect in this tree.
 | pylint `global-statement` | 3 | Report accumulators are module-level by design. |
 | pylint `unsubscriptable-object` | 6 | `prev` is `None`-guarded before the subscript in `verify_dependency_drift.py:169-170` and `extract_formalization_deps.py:161-162`; pylint does not track the narrowing. |
 | pylint `exec-used` (inline, not in `.pylintrc`) | 1 | `build_report_templates.py:89` — the template builder loads its page's checker by `exec` to read its needle list, which the builder reports as **coverage** (how many of the checker's needles the template slots) and never uses as the slot source. The slots come from the writer's own label dict in `render_reports.py`, so a template cannot reference a label the writer does not supply. The file is a builder, not a checker: the page's own checker still re-derives the counts independently. |
+| pylint `cyclic-import` | **7** | Measured 2026-10-10 with `--enable=R0401` over 58 files, after `math-a0r.6.2` wired the sync pass. All **7** are one shape — `catlib.render → render_reports → X` for `X` = `measure_names`, `measure_topics`, `measure_proof_density`, `check_index_links`, `extract_links`, and the two in-process pairs `extract_named_results → measure_names` and `measure_index_sizes → check_index_links`. The writer imports the scripts whose numbers it renders, and the shared render-diff module imports the writer only inside `rendered()`, because that deferred import is the recursion guard `sync_inert()` needs: a module-level import there would make the writer unimportable from inside a render. The import *graph* is cyclic; the import *cycle* never closes at runtime, since the deferred import runs when every module in the chain is already loaded — which is what the twice-run render and the 16 wired checkers demonstrate. |
 
 Removed in the same pass as the boilerplate: pylint `wrong-import-position` (`C0413`), exempted for
 **40** baseline sites. `pylint --enable=C0413` measures **61** findings on the tree that still had
@@ -164,7 +165,7 @@ must be cumulative over the block, not per line), and re-inserting a blank line 
 
 - **Behaviour.** The linters prove style and typing facts only. The autofix pass ran with
   `--fix --unsafe-fixes` and took ruff from 287 findings to 26; the 26 were fixed by hand. The
-  evidence that none of it changed any output is the gate — 63 invocations run twice with every
+  evidence that none of it changed any output is the gate — 64 invocations run twice with every
   generated artifact md5-snapshotted and diffed (`notes/scripts/README.md`).
 - **No test suite.** The generator report is the test, so a lint fix is verified by report
   equality, not by unit tests.

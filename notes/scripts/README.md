@@ -19,7 +19,11 @@ a path constant rooted at `notes/` appears on the left of `.open(..., "w")` or `
 plus the tree case — a `notes/index` constant reached through the module's own `write()` helper — and
 plus one hop: a receiver built from a module constant (`out = TPL_DIR / (name)`, then
 `out.write_text(...)`) is owned by that constant's directory, which is how a writer that names a
-directory rather than a file stays visible. That rule
+directory rather than a file stays visible. The fourth rule subtracts the self-test: a module-level
+`mutants` / `mutant_test` / `selftest` body is blanked before the write calls are read, because a
+self-test writes the page it checks only to mutate it and restores the bytes it read in the `finally`
+— `check_index_links.py` and `measure_proof_density.py` each do exactly that, so their normal runs
+write nothing and they stay in the report-only class. That rule
 finds **9** writers over **45** scripts.
 
 ### Writers
@@ -59,9 +63,11 @@ rows in six artifacts.
 ### Report-only
 
 The other **36** scripts write nothing. **18** of them print the report a page's counts come from.
-The Gate column is the invocation the gate list runs: `notes/scripts/gate.sh`, which runs **63**
-invocations — the **8** gated writers, the 17 gated report-only rows (including `check_summary_manuscripts.py`
-and `locate_summary_quotes.py`), and **38** checker invocations: each of the 18 checkers plain and
+The Gate column is the invocation the gate list runs: `notes/scripts/gate.sh`, which runs **64**
+invocations — the **8** gated writers, the 18 gated report-only rows (including `check_summary_manuscripts.py`
+and `locate_summary_quotes.py`, and `check_index_links.py` twice — plain and with `--mutant`, since
+`math-a0r.6.2` gave its self-test a prose mutant that only the gate can run), and **38** checker
+invocations: each of the 18 checkers plain and
 with `--mutant` (**36**), plus `verify_conjecture_standing.py` plain and with `--mutant` (**2**) — in
 class order, not in the order the rows sit; it prints one line per invocation with its exit code and
 writes nothing to the repo. `math-8ou` promoted it from `.qwen/tmp/` into `notes/scripts/`, closing
@@ -70,7 +76,7 @@ in the writers table.
 
 | Script | Report feeds | Gate |
 |---|---|---|
-| `check_index_links.py` | `notes/index-links.md` | plain |
+| `check_index_links.py` | `notes/index-links.md` | plain + `--mutant` |
 | `check_summary_manuscripts.py` | `notes/summaries/` — which manuscripts each page reads, and whether the release still names them | plain |
 | `extract_citations.py` | `notes/citations.md` | plain |
 | `extract_counterexample_crosscheck.py` | `notes/counterexample-crosscheck.md` | plain |
@@ -96,40 +102,60 @@ argument, so a gate run over it would read one manuscript chosen by the list rat
 
 `check_index_links.py` is the link checker for `notes/index/` and `CONTENTS.md` — it reads the tree and
 writes nothing, so it sits here rather than in the checker table, which lists scripts that verify a
-page's text.
+page's text. Since `math-a0r.6.2` its run ends with a sync pass on `notes/index-links.md` (the page
+compared with `render_reports.py`'s render of it, folded into the exit code), and its self-test's
+21st mutant is a mutation of that page's prose.
 
 ### Checkers
 
 The remaining **18** scripts verify a page or a table. Each exits non-zero when what it checks has
 drifted; each takes `--mutant`, which injects faults and asserts they are caught. The gate runs each
-one plain and then with `--mutant` — **38** of the 63 invocations: **36** from the loop over the 18
+one plain and then with `--mutant` — **38** of the 64 invocations: **36** from the loop over the 18
 rows below, **2** more for `verify_conjecture_standing.py`, which the list runs outside the loop.
 
-| Checker | Checks | Gate |
-|---|---|---|
-| `verify_abstracts.py` | `notes/abstracts.md` | plain + `--mutant` |
-| `verify_citations.py` | `notes/citations.md` | plain + `--mutant` |
-| `verify_conditional.py` | `notes/conditional.md` | plain + `--mutant` |
-| `verify_conjecture_standing.py` | `notes/conjecture-standing.tsv` | plain + `--mutant` |
-| `verify_counterexample_crosscheck.py` | `notes/counterexample-crosscheck.md` | plain + `--mutant` |
-| `verify_dependency_drift.py` | `notes/dependency-drift.md`, `notes/formalization-deps.md` | plain + `--mutant` |
-| `verify_findings.py` | `notes/findings.md` | plain + `--mutant` |
-| `verify_index_design.py` | `notes/index-design.md` | plain + `--mutant` |
-| `verify_named_conjectures.py` | `notes/named-conjectures.md` | plain + `--mutant` |
-| `verify_named_results.py` | `notes/named-results.md` | plain + `--mutant` |
-| `verify_scope_exclusions.py` | `notes/scope-exclusions.md` | plain + `--mutant` |
-| `verify_sources.py` | `notes/sources.md` | plain + `--mutant` |
-| `verify_subfinding_pairs.py` | `notes/subfinding-pairs.md` | plain + `--mutant` |
-| `verify_subfindings.py` | `notes/subfindings.tsv` | plain + `--mutant` |
-| `verify_summaries.py` | `notes/summaries/` | plain + `--mutant`, no page argument |
-| `verify_t0_chains.py` | `notes/t0-chains.md` | plain + `--mutant` |
-| `verify_upstream_history.py` | `upstream_history/` — the three pages, outside `notes/` | plain + `--mutant` |
-| `verify_verification_dirs.py` | `notes/verification-dirs.md` | plain + `--mutant` |
+| Checker | Checks | Gate | Cost (s) |
+|---|---|---|---|
+| `verify_abstracts.py` | `notes/abstracts.md` | plain + `--mutant` | 1.0 / 1.0 |
+| `verify_citations.py` | `notes/citations.md` | plain + `--mutant` | 1.4 / 2.8 |
+| `verify_conditional.py` | `notes/conditional.md` | plain + `--mutant` | 0.0 / 0.0 |
+| `verify_conjecture_standing.py` | `notes/conjecture-standing.tsv` | plain + `--mutant` | 0.0 / 0.0 |
+| `verify_counterexample_crosscheck.py` | `notes/counterexample-crosscheck.md` | plain + `--mutant` | 0.3 / 2.4 |
+| `verify_dependency_drift.py` | `notes/dependency-drift.md`, `notes/formalization-deps.md` | plain + `--mutant` | 0.3 / 1.8 |
+| `verify_findings.py` | `notes/findings.md` | plain + `--mutant` | 103.4 / 825.3 |
+| `verify_index_design.py` | `notes/index-design.md` | plain + `--mutant` | 2.7 / 20.7 |
+| `verify_named_conjectures.py` | `notes/named-conjectures.md` | plain + `--mutant` | 0.0 / 0.1 |
+| `verify_named_results.py` | `notes/named-results.md` | plain + `--mutant` | 104.6 / 108.3 |
+| `verify_scope_exclusions.py` | `notes/scope-exclusions.md` | plain + `--mutant` | 0.1 / 0.2 |
+| `verify_sources.py` | `notes/sources.md` | plain + `--mutant` | 1.9 / 13.2 |
+| `verify_subfinding_pairs.py` | `notes/subfinding-pairs.md` | plain + `--mutant` | 0.1 / 0.1 |
+| `verify_subfindings.py` | `notes/subfindings.tsv` | plain + `--mutant` | 0.1 / 0.6 |
+| `verify_summaries.py` | `notes/summaries/` | plain + `--mutant`, no page argument | 0.3 / 1.0 |
+| `verify_t0_chains.py` | `notes/t0-chains.md` | plain + `--mutant` | 0.1 / 0.2 |
+| `verify_upstream_history.py` | `upstream_history/` — the three pages, outside `notes/` | plain + `--mutant` | 0.7 / 0.5 |
+| `verify_verification_dirs.py` | `notes/verification-dirs.md` | plain + `--mutant` | 0.1 / 0.8 |
+
+Cost is plain seconds / `--mutant` seconds, measured 2026-10-10 as one timed pass per checker with
+the local model server loaded — a floor from one measurement, not a benchmark. The spread between
+the two columns is structural, not noise: `--mutant` re-runs the whole check once per injected
+fault, so a checker whose plain run is a full measurement pays it again per mutant.
+`verify_findings.py` is the extreme: its Pass E runs the fast extractors as subprocesses inside
+`check()` (`:357`, the subprocess call at `:116`), and `check()` runs 8 times under `--mutant` — the
+clean page in `main()`, once per each of the 6 mutants (`:514`), and the clean page again as the
+mutants' baseline (`:518`) — so 8 × 103 s = 825 s, and that one checker is most of the gate's
+runtime. `verify_named_results.py` is expensive in both columns (104.6 / 108.3) because its cost is
+the corpus read, which a mutant does not multiply. The 11 wired checkers pay the render-diff in their
+mutant runs; `verify_script_ownership.py`, this page's own checker, is 0.2 plain / 1.1 with
+`--mutant` and is not a row above. The 38 checker invocations sum to **1196.1 s** (20 min); the full
+64-invocation gate took **62 min** measured 2026-10-10 (05:49–06:51 UTC), the difference being the
+writers — `extract_formalization_deps.py` reads all 122,458 files under `lean/OAI/` and
+`build_index.py` renders 1,049 pages.
 
 `verify_conjecture_standing.py` is the one checker the list kept outside its loop: it ran plain only,
 so its six mutants were never run by the gate. Measured 2026-10-09 by hand — `mutants 6  uncaught
-0 []`, exit 0 — `math-8ou` added the `--mutant` invocation, which is why the count reads 63 and not
-62.
+0 []`, exit 0 — `math-8ou` added the `--mutant` invocation, which is why the count read 63 and not
+62. `math-a0r.6.2` added `check_index_links.py --mutant` for the same reason — its 21st mutant is a
+mutation of `notes/index-links.md`'s own prose, which only the self-test can catch — and the count is
+**64**.
 
 `verify_script_ownership.py` — this page's own checker — is not in the table: a checker cannot list
 itself as its input. It is the 19th checker and the 46th script the run counts.
@@ -153,7 +179,7 @@ inserted line, deleted line) and `__init__.py`. A
 script run as `python3 notes/scripts/foo.py` has `notes/scripts` on `sys.path`, so it imports them as
 `from catlib import ...` with no path boilerplate.
 
-**33** of the **46** scripts call the package: **6** `extract_`, **3** `build_`, **2** `measure_`,
+**35** of the **46** scripts call the package: **6** `extract_`, **3** `build_`, **4** `measure_`,
 `check_index_links.py`, `read_manuscript.py`, `render_reports.py`, and **all 19** checkers — `math-lon.2.5` ported the last
 two, `verify_upstream_history.py` and `verify_summaries.py`, and the **22** `duplicate-code` findings
 did not move (measured 2026-10-09 with `--enable=R0801` over 55 files, every cluster reported against
