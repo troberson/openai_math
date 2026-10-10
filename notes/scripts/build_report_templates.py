@@ -60,6 +60,7 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
     "notes/proof-density.md": R.proof_density_population,
     "notes/index-links.md": R.index_links_population,
     "notes/links.md": R.links_population,
+    "notes/dependency-drift.md": R.drift_population,
 }
 # The writer's own slot dict per page. These are the calls render_reports.py makes when it renders,
 # so the labels and phrase strings the template gets are the writer's by construction.
@@ -72,6 +73,7 @@ LABELS: dict[str, Callable[[], dict[str, str]]] = {
     "notes/proof-density.md": lambda: R.proof_density_phrases(POPULATIONS["notes/proof-density.md"]()),
     "notes/index-links.md": lambda: R.index_links_phrases(POPULATIONS["notes/index-links.md"]()),
     "notes/links.md": lambda: R.links_phrases(POPULATIONS["notes/links.md"]()),
+    "notes/dependency-drift.md": lambda: R.drift_phrases(POPULATIONS["notes/dependency-drift.md"]()),
 }
 PHRASE_FNS = ("count_phrases", "size_phrases")
 ALL_PAGES = {
@@ -82,6 +84,9 @@ ALL_PAGES = {
     # prints its report and writes notes/links.tsv and carries no count_phrases/size_phrases, so
     # the builder reports this coverage as NOT DERIVED.
     "notes/links.md": "extract_links.py",
+    # dependency-drift.md's checker takes no count_phrases/size_phrases: its needles are inline
+    # want() calls inside check(), so the builder reports this coverage as NOT DERIVED.
+    "notes/dependency-drift.md": "verify_dependency_drift.py",
     "notes/named-results.md": "verify_named_results.py",
     "notes/names.md": "measure_names.py",
     "notes/proof-density.md": "measure_proof_density.py",

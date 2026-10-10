@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import collections
 import csv
+import json
 import pathlib
 import posixpath
 import re
@@ -43,7 +44,8 @@ import measure_names as MN
 import measure_proof_density as PD
 from catlib import overview, preprints, tsv
 from catlib import yaml as Y
-from catlib.paths import COMPARATOR_DIR, LEDGER_TSV, PREPRINTS, ROOT, SUBFINDINGS_TSV
+from catlib.paths import (COMPARATOR_DIR, DEPS_TSV, LAKEFILE, LAKE_MANIFEST, LEDGER_TSV, PREPRINTS,
+                          ROOT, SUBFINDINGS_TSV)
 
 TPL = ROOT / "notes" / "templates" / "report"
 ENV = Environment(loader=FileSystemLoader(str(TPL)), keep_trailing_newline=True,
@@ -60,6 +62,10 @@ PROOF_DENSITY_MD = ROOT / "notes" / "proof-density.md"
 INDEX_LINKS_MD = ROOT / "notes" / "index-links.md"
 LINKS_MD = ROOT / "notes" / "links.md"
 LINKS_TSV = ROOT / "notes" / "links.tsv"
+DRIFT_MD = ROOT / "notes" / "dependency-drift.md"
+PATCHES_DIR = ROOT / "lean" / "patches"
+TOOLCHAIN_FILE = ROOT / "lean" / "lean-toolchain"
+DEPS_MD = ROOT / "notes" / "formalization-deps.md"
 
 
 def f(x: int) -> str:
@@ -1555,6 +1561,361 @@ def links_page(p: dict[str, str]) -> str:
     return ENV.get_template("links.md.j2").render(p=p)
 
 
+# =============================================================================
+# notes/dependency-drift.md — the pinned-commit / patch surface
+# =============================================================================
+#
+# Read-only over the page's sources: notes/formalization-deps.tsv, lean/lakefile.lean,
+# lean/patches/*.patch, lean/lean-toolchain, lean/lake-manifest.json, lean/formalization.yaml and the
+# OAI source-file count recorded in notes/formalization-deps.md. Nothing is built and nothing is run.
+#
+# verify_dependency_drift.py is deliberately NOT imported. A checker that re-derives a count through
+# the same code as the page it checks proves nothing, so the checker keeps its own recomputation and
+# this section stays on the writer side of that line.
+DRIFT_REQUIRE = re.compile(
+    r'^require\s+(?:«(?P<l1>[^»]+)»|(?P<l2>[A-Za-z0-9_.\-]+))\s+from\s+git\s*\n'
+    r'\s*"(?P<url>[^"]+)"\s*@\s*"(?P<commit>[0-9a-f]+)"', re.M)
+PRE_ARRAY = "preResolutionPatchNames : Array Lean.Name := #["
+POST_ARRAY = "for name in #["
+
+
+def drift_strip(s: str) -> str:
+    """Lakefile labels are written «doc-gen4»; the TSV key is doc-gen4."""
+    return s.strip("«»")
+
+
+def drift_requires(text: str) -> list[dict[str, Any]]:
+    out: list[dict[str, Any]] = []
+    for m in DRIFT_REQUIRE.finditer(text):
+        raw = m.group("l1") or m.group("l2")
+        out.append({"label": drift_strip(raw), "raw": f"«{raw}»" if m.group("l1") else raw,
+                    "url": m.group("url"), "commit": m.group("commit"),
+                    "line": text[:m.start()].count("\n") + 1})
+    return out
+
+
+def drift_array(text: str, marker: str) -> tuple[list[str], int, int]:
+    """Names in a hard-coded lakefile array, with the array's first and last line.
+
+    Lean writes a name as `iut with one leading backtick and no closing one, so the closing
+    delimiter is whitespace, a comma, or the array's `]`.
+    """
+    i = text.index(marker)
+    j = text.index("]", i)
+    names = [drift_strip(s) for s in re.findall(r"`([^\s`,\]]+)", text[i:j])]
+    return names, text[:i].count("\n") + 1, text[:j].count("\n") + 1
+
+
+def drift_patches() -> dict[str, dict[str, Any]]:
+    """Per patch file: lines, `diff --git` hunks, files touched, toolchain hunk, from/to versions."""
+    out: dict[str, dict[str, Any]] = {}
+    for p in sorted(PATCHES_DIR.glob("*.patch")):
+        text = p.read_text(encoding="utf-8", errors="replace")
+        lines = text.split("\n")
+        heads = [i for i, ln in enumerate(lines) if ln.startswith("diff --git ")]
+        files: list[str] = []
+        for i in heads:
+            tail = lines[i].split()[-1]
+            files.append(tail[2:] if tail.startswith("b/") else tail)
+        froms: list[str] = []
+        tos: list[str] = []
+        for k, i in enumerate(heads):
+            end = heads[k + 1] if k + 1 < len(heads) else len(lines)
+            if not files[k].endswith("lean-toolchain"):
+                continue
+            for ln in lines[i:end]:
+                if "leanprover/lean4:" not in ln:
+                    continue
+                ver = ln.split("leanprover/lean4:")[-1].strip()
+                if ln.startswith("-"):
+                    froms.append(ver)
+                elif ln.startswith("+"):
+                    tos.append(ver)
+        out[p.name] = {"lines": len(text.splitlines()), "hunks": len(heads), "files": len(files),
+                       "toolchain": any(f.endswith("lean-toolchain") for f in files),
+                       "lakefile": any(re.search(r"(^|/)lakefile\.\w+$", f) for f in files),
+                       "froms": froms, "tos": tos}
+    return out
+
+
+def drift_key(url: str) -> str:
+    """Repo URL -> TSV library key, the derivation the yaml ordering check needs."""
+    last = url.rstrip("/").split("/")[-1]
+    if last.endswith(".git"):
+        last = last[: -len(".git")]
+    key = re.sub(r"[0-9]+$", "", re.sub(r"[^a-z0-9]", "", last.lower()))
+    for suffix in ("lean4", "lean"):
+        if key.endswith(suffix) and len(key) > len(suffix):
+            key = re.sub(r"[0-9]+$", "", key[: -len(suffix)])
+            break
+    return key
+
+
+def drift_above(nm: str) -> str:
+    """The page names a violation's upper entry by its repo name minus the toolchain suffix.
+
+    `fixed-point-theorems-lean4` is the yaml `id`'s last segment; the page writes
+    `fixed-point-theorems`. The TSV library name is not the rule here - the page writes
+    `zeta_3_irrational`, the URL segment, where the TSV name is `Zeta3Irrational`.
+    """
+    return re.sub(r"-lean\d*$", "", nm)
+
+
+def drift_violations(imports_by_key: dict[str, int]) -> list[tuple[int, str, int, str, int]]:
+    """yaml `related_formalizations` entries that break the ordering comment the file carries."""
+    lines = Y.yaml_lines(tolerant=True)
+    start = lines.index("related_formalizations:")
+    urls: list[str] = []
+    for ln in lines[start + 1:]:
+        if ln and not ln.startswith(" "):
+            break
+        m = re.match(r"\s+-\s+id:\s*(\S+)", ln)
+        if m:
+            urls.append(m.group(1))
+    out: list[tuple[int, str, int, str, int]] = []
+    prev: tuple[int, int, str] | None = None
+    for i, url in enumerate(urls, start=1):
+        last = url.rstrip("/").split("/")[-1]
+        if last.endswith(".git"):
+            last = last[: -len(".git")]
+        cnt = imports_by_key.get(drift_key(url))
+        if cnt is None:
+            continue
+        if prev is not None and cnt > prev[1]:
+            out.append((i, last, cnt, prev[2], prev[1]))
+        prev = (i, cnt, last)
+    return out
+
+
+def drift_population() -> dict[str, Any]:
+    rows = tsv.read_rows(DEPS_TSV)
+    fields = len(DEPS_TSV.read_text(encoding="utf-8").splitlines()[0].split("\t"))
+    declared = [r for r in rows if r["lakefile_declared"] == "y"]
+    # A typed side table keyed by stripped library name: the TSV rows are dict[str, str] and the
+    # numeric reads below need ints, so the rows are never widened in place.
+    metric: dict[str, dict[str, Any]] = {
+        drift_strip(r["library"]): {
+            "imports": int(r["direct_imports"]),
+            "plines": int(r["patch_lines"]),
+            "patch_file": r["patch_file"],
+            "repo_url": r["repo_url"],
+        }
+        for r in declared
+    }
+    lake_text = LAKEFILE.read_text(encoding="utf-8")
+    reqs = drift_requires(lake_text)
+    pre, pre_s, pre_e = drift_array(lake_text, PRE_ARRAY)
+    post, post_s, post_e = drift_array(lake_text, POST_ARRAY)
+    patches = drift_patches()
+    by_name = metric
+    zero = sorted(n for n, v in by_name.items() if v["imports"] == 0)
+    patched = sorted(n for n, v in by_name.items() if v["patch_file"] != "none")
+    froms: collections.Counter[str] = collections.Counter()
+    for v in patches.values():
+        froms.update(v["froms"])
+    imports_by_key = {drift_key(v["repo_url"]): v["imports"] for v in by_name.values()}
+    manifest = json.loads(LAKE_MANIFEST.read_text(encoding="utf-8"))
+    pkg_names = {drift_strip(q["name"]) for q in manifest["packages"]}
+    src = re.search(r'OAI/\*\*/\*\.lean` \((\d[\d,]*) files\)', DEPS_MD.read_text(encoding="utf-8"))
+    if src is None:
+        msg = "notes/formalization-deps.md names no OAI source-file count"
+        raise ValueError(msg)
+    return {
+        "rows": rows, "fields": fields, "declared": declared, "reqs": reqs,
+        "patches": patches, "by_name": by_name, "zero": zero, "patched": patched,
+        "lake_lines": len(lake_text.splitlines()), "commit_len": min(len(r["commit"]) for r in reqs),
+        "pre": pre, "pre_s": pre_s, "pre_e": pre_e, "post": post, "post_s": post_s, "post_e": post_e,
+        "pre_lines": sum(by_name[x]["plines"] for x in pre),
+        "post_lines": sum(by_name[x]["plines"] for x in post),
+        "total_lines": sum(v["lines"] for v in patches.values()),
+        "total_hunks": sum(v["hunks"] for v in patches.values()),
+        "tc": sum(1 for v in patches.values() if v["toolchain"]),
+        "lakefile_patches": sum(1 for v in patches.values() if v["lakefile"]),
+        "froms": froms, "tos": sorted({v for p in patches.values() for v in p["tos"]}),
+        "nopatch": sorted(n for n, v in by_name.items() if v["patch_file"] == "none"),
+        "zero_nopatch": sorted(n for n, v in by_name.items()
+                               if v["imports"] == 0 and v["patch_file"] == "none"),
+        "zero_patched": sorted(n for n, v in by_name.items()
+                               if v["imports"] == 0 and v["patch_file"] != "none"),
+        "post_zero": sorted(set(post) & set(zero)),
+        "lana": sorted(n for n, v in by_name.items() if "lana-agents/" in v["repo_url"]),
+        "last_block": [r for r in reqs if r["line"] >= 73],
+        "last_block_nopatch": len([r for r in reqs if r["line"] >= 73
+                                   if by_name[r["label"]]["patch_file"] == "none"]),
+        "imports": imports_by_key,
+        "violations": drift_violations(imports_by_key),
+        "med_import": statistics.median([v["plines"] for v in by_name.values() if v["imports"] > 0]),
+        "med_zero": statistics.median([v["plines"] for v in by_name.values() if v["imports"] == 0]),
+        "manifest_pkgs": len(pkg_names),
+        "transitive": sorted(pkg_names - set(by_name)),
+        "toolchain": TOOLCHAIN_FILE.read_text(encoding="utf-8").splitlines()[0].strip(),
+        "src_files": int(src.group(1).replace(",", "")),
+    }
+
+
+def drift_full(p: dict[str, Any]) -> dict[str, str]:
+    by_name: dict[str, dict[str, Any]] = p["by_name"]
+    reqs: list[dict[str, Any]] = p["reqs"]
+    n_decl = len(p["declared"])
+    n_patch = len(p["patches"])
+    n_zero = len(p["zero"])
+    out: dict[str, str] = {}
+    out["hdr_tsv"] = f"({len(p['rows'])} rows, {p['fields']} fields)"
+    out["hdr_lake_lines"] = f"({p['lake_lines']} lines)"
+    out["hdr_patches"] = f"{n_patch} `*-lean4341.patch` files plus `README.md`"
+    out["t1_row1"] = (f"| `require … from git \"url\" @ \"commit\"` declarations | **{len(reqs)}**, "
+                      f"every one pinned to a **{p['commit_len']}-char** commit | "
+                      f"`lean/lakefile.lean:{reqs[0]['line']}`–`:{reqs[-1]['line'] + 1}` |")
+    out["t1_row2"] = (f"| Patch files | **{n_patch}**, **{f(p['total_lines'])}** lines, "
+                      f"**{f(p['total_hunks'])}** `diff --git` file hunks | `lean/patches/` |")
+    out["t1_row3"] = (f"| Declared libraries with **no** patch | **{len(p['nopatch'])}** | "
+                      "`notes/formalization-deps.tsv` |")
+    out["t1_row4"] = (f"| Patches that rewrite the dependency's `lean-toolchain` | "
+                      f"**{p['tc']} of {n_patch}** | `lean/patches/*.patch` |")
+    out["t1_row5"] = (f"| Distinct toolchain versions the patches migrate **from** | "
+                      f"**{len(p['froms'])}**, all migrating **to** `{p['tos'][0]}` | "
+                      "`lean/patches/*.patch` |")
+    out["t1_row6"] = f"| Release toolchain | `{p['toolchain']}` | `lean/lean-toolchain:1` |"
+    out["p1_23names"] = f"The {n_patch} patch filenames all end"
+    out["p1_impl"] = f"A {f(p['src_files'])}-file agent-generated Lean tree"
+    ranked = sorted(p["froms"].items(), key=lambda kv: (-kv[1], kv[0]))
+    multi = [f"`{v}` ×{c}" for v, c in ranked if c > 1]
+    single = [f"`{v}`" for v, c in ranked if c == 1]
+    out["p1_tc_move"] = (f"The {p['tc']} toolchain hunks move {len(p['froms'])} distinct upstream "
+                         f"versions onto the release's own: {', '.join(multi)}, and one each of "
+                         f"{', '.join(single)}.")
+    out["p1_sits"] = (f"It sits on {len(reqs)} pinned commits plus {f(p['total_lines'])} lines of "
+                      f"release-specific edits to {n_patch} of them, {p['tc']} of which have had "
+                      "their toolchain rewritten to match.")
+    out["p1_ratio"] = (f"The compatibility layer is {round(p['total_lines'] / p['src_files'], 1)} "
+                       "lines of patch per source file in the tree it supports.")
+    out["t4_row1"] = (f"| Pre-resolution (`run_cmd`) | `lean/lakefile.lean:{p['pre_s']}`–`:{p['pre_e']}`, "
+                      f"driven at `:271`–`:275` | **{len(p['pre'])}** | **{f(p['pre_lines'])}** |")
+    out["t4_row2"] = (f"| `post_update` preflight | `lean/lakefile.lean:{p['post_s']}`–`:{p['post_e']}` | "
+                      f"**{len(p['post'])}** | **{f(p['post_lines'])}** |")
+    out["p4_union"] = f"their union is **exactly** the {n_patch} patched libraries"
+    out["p4_lana"] = (f"The {len(p['pre'])} pre-resolution libraries are **exactly** the "
+                      f"{len(p['lana'])} declared libraries whose URL is under")
+    out["p4_overrule"] = f"for the {len(p['pre'])} libraries it controls the source of"
+    lb = p["last_block"]
+    out["p5_requires"] = (f"is **{len(lb)}** requires "
+                          f"(`lean/lakefile.lean:{lb[0]['line']}`–`:{lb[-1]['line'] + 1}`):")
+    out["p5_names"] = ", ".join(f"`{r['raw']}`" if r["raw"].startswith("«") else r["raw"]
+                                for r in lb) + "."
+    out["p5_nopatch"] = f"**{p['last_block_nopatch']} of those {len(lb)} ship no patch**"
+    out["p5_one"] = f"One mathlib across {len(reqs)} pinned third-party trees"
+    out["p5_plus"] = (f"It is achieved by last-wins ordering plus {p['tc']} patches that rewrite "
+                      "each dependency's own toolchain, plus patches that rewrite a dependency's "
+                      "own mathlib revision.")
+    out["p5_imposed"] = f"The release's mathlib version is imposed on the ecosystem, {p['tc']} times."
+    out["p6_table_intro"] = f"The table is all **{n_patch}** declared libraries with a patch, ordered by patch lines."
+    for i, name in enumerate(sorted(p["patched"], key=lambda k: -by_name[k]["plines"]), start=1):
+        imp = by_name[name]["imports"]
+        out[f"lib_{i:02d}"] = f"| {name} | {'**0**' if imp == 0 else imp} | {f(by_name[name]['plines'])} |"
+    out["p6_median"] = (f"Median patch lines: **{f(int(p['med_import']))}** for declared libraries "
+                        f"with any direct import, **{f(int(p['med_zero']))}** for declared "
+                        "libraries with none.")
+    top = max(p["patched"], key=lambda k: by_name[k]["plines"])
+    top_imp = max(by_name, key=lambda k: by_name[k]["imports"])
+    top_zero = max(p["zero"], key=lambda k: by_name[k]["plines"])
+    out["p6_largest"] = (f"The largest patch in the release, {top} at {f(by_name[top]['plines'])} "
+                         f"lines, sits beside the largest import count, {top_imp} at "
+                         f"{f(by_name[top_imp]['imports'])} — and {top_imp} itself ships **no** patch.")
+    out["p6_largest_unused"] = (f"The largest patch on a library OAI never imports directly is "
+                                f"{top_zero} at {f(by_name[top_zero]['plines'])} lines.")
+    out["p6_tau"] = (f"A library can be load-bearing and untouched (mathlib, TauCeti at "
+                     f"{by_name['TauCeti']['imports']} imports) or unused and heavily rewritten "
+                     "(AINTLIB, carleson).")
+    out["p7_zero"] = f"**{n_zero} of the {n_decl}** declared libraries have `direct_imports = 0`:"
+    out["p7_zerolist"] = ", ".join(f"`{n}`" for n in p["zero"]) + "."
+    out["p7_zeropatched"] = (f"**{len(p['zero_patched'])} of those {n_zero} ship a patch**; "
+                             f"the {len(p['zero_nopatch'])} that do not are")
+    out["p7_zeronopatch"] = ", ".join(f"`{n}`" for n in p["zero_nopatch"]) + "."
+    out["p7_allpre"] = (f"All {len(p['pre'])} pre-resolution libraries are in the zero-import set, "
+                        f"and {len(p['post_zero'])} of the {len(p['post'])} `post_update` libraries are "
+                        "(" + ", ".join(f"`{n}`" for n in p["post_zero"]) + ").")
+    out["p7_viol"] = (f"**That claim is recorded, not asserted true, and {len(p['violations'])} "
+                      "entries violate it** (measured in")
+    out["p7_violist"] = "; ".join(f"{name} {cnt} above {drift_above(prev)} {pcount}"
+                                  for _, name, cnt, prev, pcount in p["violations"]) + ")"
+    out["p7_zero19"] = (f"The {n_zero} zero-import libraries sit beside that claim: an "
+                        f"ordering-by-import comment over a list in which {n_zero} of {n_decl} "
+                        "entries import nothing directly is a claim about a list that is mostly not a usage list.")
+    out["p7_manifest"] = f"({p['manifest_pkgs']} resolved packages)"
+    out["p7_transitive"] = (f"The manifest's {len(p['transitive'])} transitive-only packages "
+                            "(`Qq`, `aesop`, `batteries`, …) are none of the "
+                            f"{n_zero} zero-import libraries")
+    out["p7_floor"] = ("the direct-import counts are the floor they are: **no direct import**, "
+                       "not non-use.")
+    out["p7_impl"] = (f"{n_decl} declarations, {n_decl - n_zero} with direct imports, "
+                      f"{n_zero} with none, {n_patch} patched.")
+    out["nc_hunks"] = f"The {f(p['total_hunks'])} `diff --git` hunks are counted by filename"
+    out["nc_lines"] = (f"how much of the {f(p['total_lines'])} lines is toolchain-compat renaming "
+                       "and how much is mathematics.")
+    out["nc_split"] = f"The {len(p['pre'])}/{len(p['post'])} phase split is read from two hard-coded arrays"
+    out["nc_last"] = f"{n_decl} declarations, {n_patch} patches, no build to say which are load-bearing."
+    return out
+
+
+DRIFT_SPLIT = {
+    "p1_tc_move": ["The 22 toolchain",
+                   "hunks move 8 distinct upstream versions onto the release's own: "
+                   "`v4.32.0` ×13, `v4.34.0` ×3, and one"],
+    "p1_sits": ["It sits on 30 pinned commits plus 160,187 lines of release-specific edits to 23 of them,"],
+    "p1_ratio": ["The compatibility layer is 1.3 lines of patch"],
+    "p5_nopatch": ["**6 of"],
+    "p5_plus": ["It is achieved by last-wins ordering plus 22 patches that rewrite each"],
+    "p5_imposed": ["The"],
+    "p6_table_intro": ["The table is all **23** declared"],
+    "p6_median": ["Median patch lines: **2,575** for declared libraries with any direct import, "
+                  "**408** for declared"],
+    "p6_largest": ["The largest patch in the release, PrimeNumberTheoremAnd at 39,904 lines, sits"],
+    "p6_largest_unused": ["The"],
+    "p6_tau": ["A library can be load-bearing and"],
+    "p7_zerolist": ["`AINTLIB`, `LeanArchitect`,",
+                    "`PrimeCert`, `Zeta3Irrational`, `belyi`, `carleson`, `checkdecls`, `doc-gen4`, "
+                    "`elliptic-curves`,",
+                    "`formal-schemes`, `genl`, `heights`, `iut`, `leancert`, `oka`, `orbicurve-cores`, `pi1`,"],
+    "p7_zeropatched": ["**14 of those 19 ship a patch**; the 5 that do not"],
+    "p7_allpre": ["All 11 pre-resolution",
+                  "libraries are in the zero-import set, and 3 of the 12 `post_update` libraries are"],
+    "p7_violist": ["strongpnt 12 above AINTLIB 0; TauCeti 5 above fixed-point-theorems 4;",
+                   "gromov 2 above heights 0; schoenflies-lean 2 above iut 0; AbsorptionCutoff 1 above"],
+    "p7_zero19": ["The 19 zero-import libraries sit beside that claim: an ordering-by-import",
+                  "comment over a list in which 19 of 30 entries import nothing directly is a claim "
+                  "about a list that is"],
+    "p7_transitive": ["The",
+                      "manifest's 12 transitive-only packages (`Qq`, `aesop`, `batteries`, …) are none "
+                      "of the 19 zero-import"],
+    "p7_floor": ["the direct-import counts are the floor they are: **no direct"],
+}
+
+
+def drift_phrases(p: dict[str, Any]) -> dict[str, str]:
+    """The slot dict: base labels, then each page-wrapped phrase as label a, label b, …"""
+    full = drift_full(p)
+    out: dict[str, str] = {}
+    for label, val in full.items():
+        prefixes = DRIFT_SPLIT.get(label)
+        if not prefixes:
+            out[label] = val
+            continue
+        rest = val
+        for i, pre in enumerate(prefixes):
+            rest = rest.lstrip()
+            if not rest.startswith(pre):
+                msg = f"slot {label!r}: page wrap {pre!r} is not a prefix of {rest!r}"
+                raise ValueError(msg)
+            out[f"{label} {'abcdefghij'[i]}"] = pre
+            rest = rest[len(pre):]
+        out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
+    return out
+
+
+def drift_page(p: dict[str, str]) -> str:
+    return ENV.get_template("dependency-drift.md.j2").render(p=p)
+
+
 def main() -> None:
     mp = en.population()
     ip = M.population()
@@ -1562,6 +1923,7 @@ def main() -> None:
     pdp = proof_density_population()
     ilk = index_links_population()
     lk = links_population()
+    dp = drift_population()
     SOURCES_MD.write_text(sources_page(), encoding="utf-8")
     ABSTRACTS_MD.write_text(abstracts_page(), encoding="utf-8")
     NAMED_RESULTS_MD.write_text(named_results_page(mp), encoding="utf-8")
@@ -1570,8 +1932,9 @@ def main() -> None:
     PROOF_DENSITY_MD.write_text(proof_density_page(proof_density_phrases(pdp)), encoding="utf-8")
     INDEX_LINKS_MD.write_text(index_links_page(index_links_phrases(ilk)), encoding="utf-8")
     LINKS_MD.write_text(links_page(links_phrases(lk)), encoding="utf-8")
+    DRIFT_MD.write_text(drift_page(drift_phrases(dp)), encoding="utf-8")
     for page in (SOURCES_MD, ABSTRACTS_MD, NAMED_RESULTS_MD, INDEX_DESIGN_MD, NAMES_MD,
-                 PROOF_DENSITY_MD, INDEX_LINKS_MD, LINKS_MD):
+                 PROOF_DENSITY_MD, INDEX_LINKS_MD, LINKS_MD, DRIFT_MD):
         out = page.read_text(encoding="utf-8")
         print(f"{page.name} written  lines {len(out.splitlines())}  bytes {len(out.encode())}")
     ms, ma = measure(), CA.measure()
@@ -1580,6 +1943,7 @@ def main() -> None:
           f"  index-design {len(index_phrases(ip))}  names {len(names_phrases(np_))}"
           f"  proof-density {len(proof_density_phrases(pdp))}"
           f"  index-links {len(index_links_phrases(ilk))}  links {len(links_phrases(lk))}"
+          f"  dependency-drift {len(drift_phrases(dp))}"
           f"  multi-root rows {len(ms['multi'])}  rows {ms['rows']}  listed {ms['listed']}"
           f"  dirs {ms['dirs']}  comparisons {ma['manuscripts']}  families {ma['families']}"
           f"  target rows {len(tgt_rows(mp))}")
