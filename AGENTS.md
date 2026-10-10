@@ -57,7 +57,7 @@ lives in this file and nowhere else.
 
 - Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `overview`, `ledger`, `preprints`,
   `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries` (13 modules). Import them (`from catlib import yaml as Y`);
-  do not re-implement a join in an extractor. **40** of the **49** scripts do, including **all 19**
+  do not re-implement a join in an extractor. **42** of the **49** scripts do, including **all 19**
   checkers. `measure.py` is the writer-side measurement API (counts as data, no report formatting) and
   checkers deliberately do **not** import it — a checker that re-derives a count through the page's own
   code proves nothing. `render.py` is the page-vs-writer comparison: a page's count pass proves its
@@ -71,8 +71,12 @@ lives in this file and nowhere else.
   read is in the package: `catlib/summaries.py` carries the Sources-table row, the `[Sn:line]` marker,
   the page's manuscript roots, the lenient `errors="replace"` read of a declared source that may be a
   compiled PDF, and the overview's manuscript-ownership map — so `verify_summaries.py` is no longer a
-  library and has **0** importers. A page
-  quotation is compared with `catlib.text.strip_markup` — the rule that folds quotes and strips
+  library and has **0** importers. The verification-bundle walk is in the package too:
+  `catlib/preprints.py` carries `bundle_of` / `bundle_files` / `main_command` / `entry_point` and the
+  `MANIFESTS` / `SCRIPT_PREFIX` vocabulary, so the two bundle extractors, the page checker, and the
+  renderer classify with one rule; what stays in `extract_verification_dirs.py` is the report shape
+  (the numbered heading/command/scope lines, the README-section reconciliation, `families_by_slug`).
+  A page quotation is compared with `catlib.text.strip_markup` — the rule that folds quotes and strips
   markup — never with a checker's private copy of it.
 - Regenerate the ledger with `python3 notes/scripts/build_catalog.py` — stdlib only, runs in
   seconds, writes `notes/catalog.tsv` and prints the report that every number in

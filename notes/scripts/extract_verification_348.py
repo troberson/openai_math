@@ -14,17 +14,22 @@ Sections:
 5. verify.py structure: check functions, where all_passed is set, printed-value literals.
 6. The portability suite: check count and how many are negative tests.
 7. Manuscript references to the bundle.
+
+The bundle walk is the package's (`catlib/preprints.py`'s `bundle_of` / `bundle_files`), the same
+reader `extract_verification_dirs.py` uses. What stays here is the comparison: the byte-identity
+read between the two bundles, the manifest hash audit, and the per-file structure reads, none of
+which is a directory shape the package can express.
 """
 import hashlib
 import json
-import pathlib
 import re
 
-ROOT = pathlib.Path(__file__).resolve().parents[2]
-PRE = ROOT / "preprints"
+from catlib.paths import PREPRINTS
+from catlib.preprints import bundle_files, bundle_of
+
 DIRS = {
-    "positively": PRE / "Positively-curved-Einstein-four-manifolds-September-23-2026",
-    "zero-plane": PRE / "Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026",
+    "positively": PREPRINTS / "Positively-curved-Einstein-four-manifolds-September-23-2026",
+    "zero-plane": PREPRINTS / "Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026",
 }
 FAM = "348"
 
@@ -33,13 +38,9 @@ def sha(p):
     return hashlib.sha256(p.read_bytes()).hexdigest()
 
 
-def files(d):
-    return {p.name: p for p in (d / "verification").iterdir() if p.is_file()}
-
-
 def main():
     pos, zero = DIRS["positively"], DIRS["zero-plane"]
-    fp, fz = files(pos), files(zero)
+    fp, fz = bundle_files(bundle_of(pos)), bundle_files(bundle_of(zero))
 
     print(f"== family {FAM}: {len(fp)} files in the positively-curved dir, "
           f"{len(fz)} in the zero-plane dir")
@@ -58,10 +59,10 @@ def main():
 
     print("== manifest audit")
     for label, d in sorted(DIRS.items()):
-        v = d / "verification"
+        v = bundle_of(d)
         m = json.loads((v / "manifest.json").read_text(encoding="utf-8"))
         entries = m["files"]
-        on_disk = files(d)
+        on_disk = bundle_files(v)
         listed = sorted(entries)
         missing = sorted(set(on_disk) - set(listed))
         bad = [n for n in listed
@@ -77,7 +78,7 @@ def main():
 
     print("== declared dependencies vs imports")
     for label, d in sorted(DIRS.items()):
-        v = d / "verification"
+        v = bundle_of(d)
         deps = json.loads((v / "dependencies.json").read_text(encoding="utf-8"))
         imports = set()
         for p in v.glob("*.py"):
@@ -96,7 +97,8 @@ def main():
               f"  regenerate_command {deps['regenerate_command']!r}")
 
     print("== results.json (shipped, byte-identical in both dirs)")
-    r = json.loads((pos / "verification/results.json").read_text(encoding="utf-8"))
+    posb = bundle_of(pos)
+    r = json.loads((posb / "results.json").read_text(encoding="utf-8"))
     s = r["summary"]
     print(f"   scope: {r['scope']!r}")
     print(f"   arithmetic: {r['arithmetic']!r}")
@@ -117,13 +119,13 @@ def main():
     print(f"   '\"passed\": true' occurrences in results.json {passed}")
 
     print("== verify.py structure")
-    src = (pos / "verification/verify.py").read_text(encoding="utf-8").split("\n")
+    src = (posb / "verify.py").read_text(encoding="utf-8").split("\n")
     fns = [i + 1 for i, l in enumerate(src) if l.startswith("def check_")]
     print(f"   lines {len(src)}  check_* functions {len(fns)} at lines {fns}")
     ap = [i + 1 for i, l in enumerate(src) if '"all_passed"' in l]
     print(f"   all_passed appears at lines {ap}")
-    for n in ap:
-        print(f"      :{n}: {src[n - 1]}")
+    for ln in ap:
+        print(f"      :{ln}: {src[ln - 1]}")
     printed = re.findall(r'scalar_claim\("([\w.]*printed[\w.]*)', "\n".join(src))
     print(f"   scalar_claim keys naming a printed value: {len(printed)}")
     req = sum(l.count("require(") for l in src)
@@ -135,7 +137,7 @@ def main():
             print(f"   scope line :{i + 1}: {l.strip()}")
 
     print("== portability suite")
-    p = json.loads((pos / "verification/portability-results.json").read_text(encoding="utf-8"))
+    p = json.loads((posb / "portability-results.json").read_text(encoding="utf-8"))
     cs = p["checks"]
     neg = [c["name"] for c in cs if "rejected" in c["name"]]
     ends = [c["name"] for c in cs if c["name"].endswith("rejected")]

@@ -55,13 +55,15 @@ report-fed page skeletons in `notes/templates/report/*.j2`);
 `measure_index_sizes.py` imports `check_index_links` inside its link-check function
 (`measure_index_sizes.py:118`), not at module scope. Counted over `notes/scripts/*.py` as a script
 that imports the module (`import X` or `from X`, the module itself excluded), `build_catalog.py` has
-**16** importers, `build_sources.py` **2** (`verify_sources.py` and `render_reports.py:52`, which
+**15** importers, `build_sources.py` **2** (`verify_sources.py` and `render_reports.py:52`, which
 imports it at module scope; `read_manuscript.py` names it in a docstring, not in an import) and
 `verify_summaries.py` **0** — `math-6s7.1` moved the page parse to `catlib/summaries.py`, so
 `locate_summary_quotes.py`, `refresh_summary_line_counts.py` and `verify_scope_exclusions.py` import
 the package, not the checker, and `check_summary_manuscripts.py` stops importing `build_catalog`. The
 **18** and **1** this paragraph carried were stale at HEAD, which measures **17** and **2**; the port
-takes `build_catalog` to 16. Editing a join in `build_catalog.py` can move rows in six artifacts.
+takes `build_catalog` to 16, and `math-6s7.2` takes it to 15 — `extract_verification_dirs.py`
+now reads `catlib.overview.parse_overview`, `catlib.paths.owner` and `catlib.ledger.read_ledger`.
+Editing a join in `build_catalog.py` can move rows in six artifacts.
 
 ### Report-only
 
@@ -187,7 +189,7 @@ inserted line, deleted line) and `__init__.py`. A
 script run as `python3 notes/scripts/foo.py` has `notes/scripts` on `sys.path`, so it imports them as
 `from catlib import ...` with no path boilerplate.
 
-**40** of the **49** scripts call the package: **6** `extract_`, **3** `build_`, **6** `measure_`,
+**42** of the **49** scripts call the package: **8** `extract_`, **3** `build_`, **6** `measure_`,
 `check_index_links.py`, `read_manuscript.py`, `render_reports.py`, **all 19** checkers, and the three
 summary-page readers `check_summary_manuscripts.py`, `locate_summary_quotes.py` and
 `refresh_summary_line_counts.py`, which `math-6s7.1` moved off `verify_summaries.py` onto
@@ -203,7 +205,14 @@ shape**, not a parse: `verify_upstream_history.py` reads `lean/formalization.yam
 `build_index.py` keeps its own `TRIPLE` regex. The summary-page read is in the package:
 `catlib/summaries.py` carries the Sources-table row, the `[Sn:line]` marker, the page's manuscript
 roots, the lenient `errors="replace"` read of a declared source that may be a compiled PDF, and the
-overview's manuscript-ownership map.
+overview's manuscript-ownership map. `math-6s7.2` put the verification-bundle walk in
+`catlib/preprints.py` (`bundle_of` / `bundle_files` / `main_command` / `entry_point`, with
+`MANIFESTS` and `SCRIPT_PREFIX`), which took the two `extract_verification_*` scripts onto the
+package and took `extract_verification_dirs.py` off `build_catalog`; the page checker and the
+renderer were importing the extractor's private `PRE` / `entry_point` / `main_command` and now
+import the package's, so the six-rule entry-point classification has one vocabulary. What stays in
+the extractor is the report shape: the numbered heading/command/scope lines, the README-section
+reconciliation, and `families_by_slug`.
 
 The package is not in the census below: the script population is `notes/scripts/*.py`, and
 `catlib/` is 13 modules under that directory, counted as **62** source files by the lint gate in

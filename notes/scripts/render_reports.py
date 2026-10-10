@@ -96,8 +96,8 @@ SP_MD = ROOT / "notes" / "subfinding-pairs.md"
 README_MD = ROOT / "notes" / "README.md"
 CROSSCHECK_MD = ROOT / "notes" / "counterexample-crosscheck.md"
 TEMPLATES_MD = ROOT / "notes" / "templates.md"
-VPOS = PREPRINTS / "Positively-curved-Einstein-four-manifolds-September-23-2026" / "verification"
-VZERO = PREPRINTS / "Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026" / "verification"
+VPOS = preprints.bundle_of(PREPRINTS / "Positively-curved-Einstein-four-manifolds-September-23-2026")
+VZERO = preprints.bundle_of(PREPRINTS / "Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026")
 FOCK = PREPRINTS / "A-Fock-space-inequality-and-the-Laughlin-spectral-gap-September-24-2026"
 UNIF = PREPRINTS / "Uniform-Stability-of-the-Spherical-Laughlin-Gap-October-5-2026"
 NUM_WORDS = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven",
@@ -2006,8 +2006,8 @@ def verification_dirs_population() -> dict[str, Any]:
     cov = sorted({r["fam"] for r in rows if int(r["covmd"]) > 0})
     inp = sorted(r["fam"] for r in rows if int(r["inputs"]) > 0)
     fam_by_slug, _order, _fams = evd.families_by_slug()
-    bundles = [p for p in sorted(x for x in evd.PRE.iterdir() if x.is_dir())
-               if (p / "verification").is_dir()]
+    bundles = [p for p in sorted(x for x in PREPRINTS.iterdir() if x.is_dir())
+               if preprints.bundle_of(p).is_dir()]
     named, runsec, unnamed = [], [], []
     for p in bundles:
         heads = evd.headings(p / "README.md")[1]
@@ -2020,18 +2020,18 @@ def verification_dirs_population() -> dict[str, Any]:
     classes: dict[str, int] = {}
     no_entry, declaring, readme_fams = [], [], []
     for p in bundles:
-        bundle = p / "verification"
-        _, rule, _ = evd.entry_point(bundle)
+        bundle = preprints.bundle_of(p)
+        _, rule, _ = preprints.entry_point(bundle)
         classes[rule] = classes.get(rule, 0) + 1
         if rule == "none":
             no_entry.append(p)
-        if evd.main_command(bundle)[0] is not None:
+        if preprints.main_command(bundle)[0] is not None:
             declaring.append(p)
         if rule == "top-level README.md":
             readme_fams.append(fam_by_slug[p.name])
     a, b = FOCK / "verification/rows.txt", UNIF / "verification/rows.txt"
-    fp = {q.name: q for q in VPOS.iterdir() if q.is_file()}
-    fz = {q.name: q for q in VZERO.iterdir() if q.is_file()}
+    fp = preprints.bundle_files(VPOS)
+    fz = preprints.bundle_files(VZERO)
     shared = sorted(set(fp) & set(fz))
     same = [n for n in shared if fp[n].read_bytes() == fz[n].read_bytes()]
     entries = json.loads((VZERO / "manifest.json").read_text(encoding="utf-8"))["files"]

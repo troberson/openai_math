@@ -40,13 +40,14 @@ import sys
 import extract_verification_dirs as evd
 from catlib import anchors, render as RD
 from catlib.paths import LEDGER_TSV, NOTES, PREPRINTS, ROOT
+from catlib.preprints import bundle_of, entry_point, main_command
 from catlib.text import collapse_ws
 from catlib.tsv import read_rows
 
 PAGE = NOTES / "verification-dirs.md"
 POS = PREPRINTS / "Positively-curved-Einstein-four-manifolds-September-23-2026"
 ZERO = PREPRINTS / "Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026"
-VPOS, VZERO = POS / "verification", ZERO / "verification"
+VPOS, VZERO = bundle_of(POS), bundle_of(ZERO)
 SECTION = "## What the 348 bundle checks, and what it omits"
 ENTRY = "## Every bundle and its own entry point"
 FOCK = PREPRINTS / "A-Fock-space-inequality-and-the-Laughlin-spectral-gap-September-24-2026"
@@ -142,8 +143,8 @@ def entry_measure():
     overview.tex): a README section is read as naming a bundle only for a dir that ships one.
     """
     fam_by_slug, _order, _fams = evd.families_by_slug()
-    dirs = sorted(p for p in evd.PRE.iterdir() if p.is_dir())
-    bundles = [p for p in dirs if (p / "verification").is_dir()]
+    dirs = sorted(p for p in PREPRINTS.iterdir() if p.is_dir())
+    bundles = [p for p in dirs if bundle_of(p).is_dir()]
     named, runsec, unnamed = [], [], []
     for p in bundles:
         heads = evd.headings(p / "README.md")[1]
@@ -155,12 +156,12 @@ def entry_measure():
             unnamed.append(p.name)
     classes, no_entry, declaring = {}, [], []
     for p in bundles:
-        bundle = p / "verification"
-        _, rule, _ = evd.entry_point(bundle)
+        bundle = bundle_of(p)
+        _, rule, _ = entry_point(bundle)
         classes[rule] = classes.get(rule, 0) + 1
         if rule == "none":
             no_entry.append(p)
-        if evd.main_command(bundle)[0] is not None:
+        if main_command(bundle)[0] is not None:
             declaring.append(p)
     a, b = FOCK / "verification/rows.txt", UNIF / "verification/rows.txt"
     ta = a.read_text(encoding="utf-8", errors="replace")

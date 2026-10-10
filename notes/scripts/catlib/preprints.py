@@ -18,10 +18,17 @@ Statement environments are counted by the **declared rule**: `\\begin{X}` for X 
 `\\newtheorem` in the same dir, minus `NON_STATEMENT`. The six-name list
 (theorem/lemma/proposition/corollary/claim/conjecture) is kept as a separate measure, not as the
 default: the two figures differ by 85 occurrences and a count must name its rule.
+
+The verification bundles are the second read shape here: `bundle_of` / `bundle_files` /
+`main_command` / `entry_point` walk the 30 `preprints/<slug>/verification/` trees as text, never
+executed. `MANIFESTS` and `SCRIPT_PREFIX` are the entry-point vocabulary, kept in one place
+because the page quotes entry-point classes with the extractor's rule and the two bundle readers
+must classify with one rule, not two private ones.
 """
 
 from __future__ import annotations
 
+import json
 import re
 from collections import Counter
 from pathlib import Path
@@ -140,3 +147,62 @@ def bib_entries(scope: set[str]) -> list[tuple[str, str]]:
             nxt = txt.find("@", m.end())
             out.append((owner(p), txt[m.start(): nxt if nxt > 0 else len(txt)]))
     return out
+
+
+SCRIPT_PREFIX = re.compile(r"^(verify|reproduce|run|check)")
+MANIFESTS = ("manifest.json", "CERTIFICATE.json", "CERTIFICATE-SUPPORT-MANIFEST.json",
+             "BUILD-INPUTS.json", "package-manifest.json")
+
+
+def bundle_of(d: Path) -> Path:
+    """The `verification/` bundle of a manuscript dir; idempotent on a bundle path."""
+    return d if d.name == "verification" else d / "verification"
+
+
+def bundle_files(bundle: Path) -> dict[str, Path]:
+    """Top-level files in a bundle keyed by name — the shape the byte comparisons read."""
+    return {p.name: p for p in sorted(bundle.iterdir()) if p.is_file()}
+
+
+def main_command(bundle: Path) -> tuple[Path | None, str | None, str | None]:
+    """First `main_command` / `checker` / `command` string declared by a JSON manifest."""
+    for p in sorted(bundle.rglob("*.json")):
+        if p.name not in MANIFESTS:
+            continue
+        try:
+            data = json.loads(p.read_text(encoding="utf-8", errors="replace"))
+        except json.JSONDecodeError:
+            continue
+        if isinstance(data, dict):
+            for key in ("main_command", "checker", "command"):
+                v = data.get(key)
+                if isinstance(v, str) and v.strip():
+                    return p, key, v.strip()
+    return None, None, None
+
+
+def entry_point(bundle: Path) -> tuple[Path | None, str, int]:
+    """The bundle's entry point as `(path, rule, extra)` — the first rule that fires.
+
+    `extra` is what the rule saw: the count of subdirectory `README.md` / `README.txt` files, or
+    of top-level scripts matching `SCRIPT_PREFIX`; 1 for the single-hit rules, 0 for none. The
+    page quotes entry-point classes with this order and never as coverage, so the vocabulary
+    lives here and the two bundle readers share it.
+    """
+    top = bundle / "README.md"
+    if top.is_file():
+        return top, "top-level README.md", 1
+    subs = [p for p in sorted(bundle.rglob("README.md")) if p != top]
+    if subs:
+        return subs[0], "subdirectory README.md", len(subs)
+    txt = sorted(bundle.rglob("README.txt"))
+    if txt:
+        return txt[0], "subdirectory README.txt", len(txt)
+    mp, key, _val = main_command(bundle)
+    if mp is not None:
+        return mp, f"manifest {key}", 1
+    scripts = [p for p in sorted(bundle.iterdir())
+               if p.is_file() and SCRIPT_PREFIX.match(p.name)]
+    if scripts:
+        return scripts[0], "top-level script by name", len(scripts)
+    return None, "none", 0
