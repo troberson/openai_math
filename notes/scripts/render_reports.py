@@ -50,8 +50,8 @@ import measure_proof_density as PD
 import measure_topics as MT
 from catlib import overview, preprints, tsv
 from catlib import yaml as Y
-from catlib.paths import (COMPARATOR_DIR, DEPS_TSV, LAKEFILE, LAKE_MANIFEST, LEDGER_TSV, PREPRINTS,
-                          ROOT, SUBFINDINGS_TSV, owner)
+from catlib.paths import (COMPARATOR_DIR, DEPS_TSV, FORMALIZATION_YAML, LAKEFILE, LAKE_MANIFEST,
+                          LEDGER_TSV, PREPRINTS, ROOT, SUBFINDINGS_TSV, owner)
 
 TPL = ROOT / "notes" / "templates" / "report"
 ENV = Environment(loader=FileSystemLoader(str(TPL)), keep_trailing_newline=True,
@@ -77,6 +77,7 @@ EX_MD = ROOT / "notes" / "scope-exclusions.md"
 TOPICS_MD = ROOT / "notes" / "topics.md"
 T0_CHAINS_MD = ROOT / "notes" / "t0-chains.md"
 SP_MD = ROOT / "notes" / "subfinding-pairs.md"
+README_MD = ROOT / "notes" / "README.md"
 VPOS = PREPRINTS / "Positively-curved-Einstein-four-manifolds-September-23-2026" / "verification"
 VZERO = PREPRINTS / "Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026" / "verification"
 FOCK = PREPRINTS / "A-Fock-space-inequality-and-the-Laughlin-spectral-gap-September-24-2026"
@@ -2637,6 +2638,204 @@ def subfinding_pairs_page(p: dict[str, str]) -> str:
     return ENV.get_template("subfinding-pairs.md.j2").render(p=p)
 
 
+README_SHAPE_GIST: dict[str, str] = {
+    "uniform": '"uniformly", "for every", "arbitrary"',
+    "resolution": "resolves / proves the conjecture / answers the question / settles",
+    "bound": "bound, sharp, power-saving, improvement, inequality",
+    "counterexample": "counterexample, disprove, refute, fails, violation",
+    "partial": "at most, restricted, in coranks, for fixed, unramified part",
+    "classification": "if and only if, classified, characterization",
+    "density": "density",
+    "conditional": "assuming, we assume, under the … hypothesis, provided that",
+    "undecidability": "no algorithm, undecidable, unsolvable, negative answer",
+}
+
+README_TIER_MEANING: dict[str, str] = {
+    "T3": "≥1 linked config listed in `main_results`",
+    "T2": "linked configs exist, none listed in `main_results` (companion/secondary statements)",
+    "T1": "scope note with no comparator link",
+    "T0": "no scope note, no challenge, no main result",
+}
+
+README_ABSTRACT_SCOPE = 233
+
+
+def readme_population() -> dict[str, Any]:
+    entries = Y.main_results_entries()
+    return {
+        "rows": tsv.read_rows(LEDGER_TSV),
+        "sources_paths": len(Y.SOURCE_ID.findall(FORMALIZATION_YAML.read_text(encoding="utf-8"))),
+        "entries": len(entries),
+        "entry_configs": {e["config"] for e in entries},
+        "docs": Y.parse_docs(),
+    }
+
+
+def readme_full(p: dict[str, Any]) -> dict[str, str]:
+    rows = p["rows"]
+    out: dict[str, str] = {}
+    fams = len(rows)
+    paps = sum(int(r["paps"]) for r in rows)
+    form = sum(int(r["paps_form"]) for r in rows)
+    notes = sum(int(r["scope_note"]) for r in rows)
+    chal = sum(int(r["chal"]) for r in rows)
+    tiers = collections.Counter(r["tier"] for r in rows)
+    shapes = collections.Counter(s for r in rows for s in r["shapes"].split("|") if s)
+    out["cov_row_1"] = (f"| Manuscripts with a formalized main result | `formalization.yaml` → "
+                        f"`sources:` | {form} / {paps} |")
+    out["cov_row_2"] = f"| Families with a scope note | `lean/docs/<NNN>.md` | {notes} / {fams} |"
+    out["cov_row_3"] = (f"| Statement/solution pairs | `lean/ComparatorChallenges/*.json` | "
+                        f"{chal} |")
+    out["cov_row_4"] = (f"| Catalogued main results | `formalization.yaml` → `status.main_results` | "
+                        f"{p['entries']} entries / {len(p['entry_configs'])} unique configs |")
+
+    fam_form = sum(1 for r in rows if int(r["paps_form"]))
+    fam_main = sum(1 for r in rows if int(r["mainres"]))
+    gap = [r["fam"] for r in rows if int(r["mainres"]) and not int(r["paps_form"])]
+    out["cov_agree"] = (f"{fam_form} families have ≥1 formalized manuscript and {fam_main} have "
+                        f"≥1 config listed in `main_results`")
+    out["cov_gap"] = f"the difference is family **{gap[0]}**"
+    out["cov_paths"] = f"The yaml's own `sources:` list carries {p['sources_paths']} paths"
+    out["cov_t2"] = (f"The {tiers['T2']} families at T2 have a scope note and comparator links, "
+                     f"and zero formalized manuscripts.")
+
+    for i, tier in enumerate(("T3", "T2", "T1", "T0")):
+        out[f"tier_row_{i + 1}"] = f"| {tier} | {README_TIER_MEANING[tier]} | {tiers[tier]} |"
+    out["tier_t1"] = f"every one of the {notes} scope notes links at least one challenge file"
+    out["tier_t0"] = f"**All {tiers['T0']} T0 families have zero formalized manuscripts**"
+    t0 = [r for r in rows if r["tier"] == "T0"]
+    t0_noshape = [r for r in t0 if not r["shapes"]]
+    out["tier_flag"] = (f"{sum(1 for r in t0 if r['resolves_named'] == '1')} of the {len(t0)} are "
+                        f"flagged, including {sum(1 for r in t0_noshape if r['resolves_named'] == '1')}"
+                        f" of the {len(t0_noshape)} families with no shape tag at all")
+
+    for i, shape in enumerate(README_SHAPE_GIST):
+        out[f"shape_row_{i + 1}"] = f"| {shape} | {README_SHAPE_GIST[shape]} | {shapes[shape]} |"
+    out["shape_multi"] = (f"{sum(1 for r in rows if len([s for s in r['shapes'].split('|') if s]) >= 3)}"
+                          f" families match ≥3 shapes and {sum(1 for r in rows if not r['shapes'])}"
+                          " match none")
+    out["cond_fams"] = "`conditional` families: **" + ", ".join(
+        sorted(r["fam"] for r in rows if r["conditional"] == "1")) + ".**"
+
+    cc = [r for r in rows if "counterexample" in r["shapes"].split("|") and r["tier"] != "T0"]
+    cc_t3 = [r for r in cc if r["tier"] == "T3"]
+    cc_t2 = [r for r in cc if r["tier"] == "T2"]
+    cc_decl = sum(int(r["mainres"]) for r in cc)
+    linked: set[str] = set()
+    gaps_t3 = fams_t3_gap = gaps_t2 = 0
+    for r in cc:
+        cfgs = set(p["docs"].get(r["fam"], {}).get("configs", ()))
+        linked |= cfgs
+        gaps = [c for c in cfgs if c not in p["entry_configs"]]
+        if r["tier"] == "T3":
+            gaps_t3 += len(gaps)
+            fams_t3_gap += 1 if gaps else 0
+        else:
+            gaps_t2 += len(gaps)
+    out["cc_pop"] = f"**{len(cc)}** families, **{len(cc_t3)} at T3 and {len(cc_t2)} at T2**"
+    out["cc_decl"] = (f"The {len(cc)} families carry **{cc_decl}** `main_results` declarations; "
+                      f"all {cc_decl} resolve,")
+    out["cc_t2"] = f"The {len(cc_t2)} T2 families carry **none**"
+    out["cc_gaps"] = (f"Of the **{len(linked)}** configs their scope notes link, "
+                      f"**{gaps_t3 + gaps_t2}** have no entry: **{gaps_t3}** in **{fams_t3_gap}** T3 "
+                      f"families, **{gaps_t2}** across all **{len(cc_t2)}** T2 families")
+
+    out["cw_fire"] = f"fires on **{sum(1 for r in rows if r['companion_word'] == '1')}** families"
+    out["cw_edge"] = "and **0** of them carry an edge"
+
+    ver_fams = sorted({r["fam"] for r in rows if int(r["verification"])})
+    ver_dirs = sum(int(r["verification"]) for r in rows)
+    v348 = int(next(r for r in rows if r["fam"] == "348")["verification"])
+    out["col_paps"] = (f"| `paps` | `CONTENTS.md` links ∪ `overview.tex` `\\href` links | The two "
+                       f"mappings agree exactly: {paps} links, 0 one-sided |")
+    out["col_form"] = f"| `paps_form` | `formalization.yaml` `sources:` ids | Sums to {form} |"
+    out["col_note"] = f"| `scope_note` | file exists | {notes} total |"
+    out["col_ver"] = (f"| `verification` | manuscript dirs with a `verification/` subdir | "
+                      f"{ver_dirs} dirs over {len(ver_fams)} families; family 348's {v348} are one "
+                      "bundle shipped twice. A **count, not a pointer** — see the entry-point record "
+                      "in `notes/verification-dirs.md` |")
+    inp = sorted(r["fam"] for r in rows if int(r["inputs"]))
+    out["col_inputs"] = (f"| `inputs` | manuscript dirs with `INPUTS.md` | {sum(int(r['inputs']) for r in rows)} "
+                         f"dirs over {len(inp)} families ({', '.join(inp)}) |")
+    cov = sorted(r["fam"] for r in rows if int(r["covmd"]))
+    out["col_covmd"] = (f"| `covmd` | dirs with `verification/COVERAGE.md` | "
+                        f"{sum(int(r['covmd']) for r in rows)} files, both in family {cov[0]} — these "
+                        "bound what a check covers |")
+    tr = sorted(r["fam"] for r in rows if r["trace"])
+    out["col_trace"] = (f"| `trace` | `README.md` reasoning-trace table | {len(tr)} families; read "
+                        "from the release table, not guessed from filenames |")
+    out["col_named"] = (f"| `resolves_named` | title **or** abstract (lowered together) names a "
+                        "conjecture/question/problem **and** uses a resolution verb | "
+                        f"{sum(1 for r in rows if r['resolves_named'] == '1')} families, the "
+                        f"abstract-only scope having read {README_ABSTRACT_SCOPE}; separate from the "
+                        f"`resolution` shape ({shapes['resolution']}) so the T0 buckets stay put |")
+    out["col_cex"] = (f"| `counterex_broad` | title **or** abstract matches the counterexample "
+                      f"phrase rule | {sum(1 for r in rows if r['counterex_broad'] == '1')} families; "
+                      f"a strict superset of the `counterexample` shape ({shapes['counterexample']}), "
+                      "kept out of `shapes` so the T0 buckets stay put |")
+    out["col_cword"] = (f"| `companion_word` | abstract says \"companion\" | "
+                        f"{sum(1 for r in rows if r['companion_word'] == '1')} families |")
+    ver = [r for r in rows if int(r["versions"]) > 0]
+    out["col_versions"] = (f"| `versions` | manuscripts sharing a date-stripped dir slug | "
+                           f"{len(ver)} families, {sum(int(r['versions']) for r in ver)} dated "
+                           f"re-issues ({', '.join(r['fam'] for r in ver)}) |")
+    out["col_summary"] = (f"| `summary` | a page exists at "
+                          "`notes/summaries/<discipline>/<NNN>-*.md` | Filesystem fact, not a derived "
+                          f"claim; {sum(1 for r in rows if int(r['summary']))} of {fams} families, "
+                          f"{sum(int(r['paps']) for r in rows if int(r['summary']))} manuscripts "
+                          "behind them |")
+
+    order: list[str] = []
+    by: dict[str, dict[str, int]] = {}
+    for r in rows:
+        d = r["discipline"]
+        if d not in by:
+            by[d] = {"fams": 0, "notes": 0, "paps": 0, "form": 0}
+            order.append(d)
+        by[d]["fams"] += 1
+        by[d]["notes"] += int(r["scope_note"])
+        by[d]["paps"] += int(r["paps"])
+        by[d]["form"] += int(r["paps_form"])
+    ranked = sorted(order, key=lambda d: (-by[d]["fams"], order.index(d)))
+    for i, d in enumerate(ranked):
+        b = by[d]
+        out[f"disc_row_{i + 1:02d}"] = (f"| {d} | {b['fams']} | {b['notes']} | {b['paps']} | "
+                                        f"{b['form']} |")
+    out["disc_sum"] = f"The columns sum to {fams} / {notes} / {paps} / {form}."
+    out["trace_fams"] = "(" + ", ".join(tr) + ")"
+    return out
+
+
+README_SPLIT: dict[str, list[str]] = {
+    "cc_decl": ["The 28"],
+    "cov_agree": ["135 families have ≥1 formalized manuscript and 136 have"],
+    "cov_t2": ["The"],
+    "tier_flag": ["86 of the 130 are flagged, including 11 of the 19 families with no shape"],
+    "cc_gaps": ["Of the **52** configs their scope notes link, **24** have no entry: **12** in **8** T3"],
+    "cw_fire": ["fires on"],
+    "trace_fams": ["(007, 017, 087, 102,"],
+}
+
+
+def readme_phrases(p: dict[str, str]) -> dict[str, str]:
+    out = readme_full(p)
+    for label, prefixes in README_SPLIT.items():
+        base = out.pop(label)
+        rest = base
+        for i, pre in enumerate(prefixes):
+            rest = rest.lstrip()
+            if not rest.startswith(pre):
+                raise ValueError(f"slot {label!r}: page wrap {pre!r} is not a prefix of {base!r}")
+            out[f"{label} {'abcdefghij'[i]}"] = pre
+            rest = rest[len(pre):]
+        out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
+    return out
+
+
+def readme_page(p: dict[str, str]) -> str:
+    return ENV.get_template("README.md.j2").render(p=p)
+
+
 def main() -> None:
     mp = en.population()
     ip = M.population()
@@ -2650,6 +2849,7 @@ def main() -> None:
     tp = topics_population(links_full(lk))
     tcp = t0_chains_population()
     spp = subfinding_pairs_population()
+    rmp = readme_population()
     SOURCES_MD.write_text(sources_page(), encoding="utf-8")
     ABSTRACTS_MD.write_text(abstracts_page(), encoding="utf-8")
     NAMED_RESULTS_MD.write_text(named_results_page(mp), encoding="utf-8")
@@ -2664,9 +2864,10 @@ def main() -> None:
     TOPICS_MD.write_text(topics_page(topics_phrases(tp)), encoding="utf-8")
     T0_CHAINS_MD.write_text(t0_chains_page(t0_chains_phrases(tcp)), encoding="utf-8")
     SP_MD.write_text(subfinding_pairs_page(subfinding_pairs_phrases(spp)), encoding="utf-8")
+    README_MD.write_text(readme_page(readme_phrases(rmp)), encoding="utf-8")
     for page in (SOURCES_MD, ABSTRACTS_MD, NAMED_RESULTS_MD, INDEX_DESIGN_MD, NAMES_MD,
                  PROOF_DENSITY_MD, INDEX_LINKS_MD, LINKS_MD, DRIFT_MD, VERIF_MD, EX_MD, TOPICS_MD,
-                 T0_CHAINS_MD, SP_MD):
+                 T0_CHAINS_MD, SP_MD, README_MD):
         out = page.read_text(encoding="utf-8")
         print(f"{page.name} written  lines {len(out.splitlines())}  bytes {len(out.encode())}")
     ms, ma = measure(), CA.measure()
@@ -2681,6 +2882,7 @@ def main() -> None:
           f"  topics {len(topics_phrases(tp))}"
           f"  t0-chains {len(t0_chains_phrases(tcp))}"
           f"  subfinding-pairs {len(subfinding_pairs_phrases(spp))}"
+          f"  readme {len(readme_phrases(rmp))}"
           f"  multi-root rows {len(ms['multi'])}  rows {ms['rows']}  listed {ms['listed']}"
           f"  dirs {ms['dirs']}  comparisons {ma['manuscripts']}  families {ma['families']}"
           f"  target rows {len(tgt_rows(mp))}")

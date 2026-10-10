@@ -70,6 +70,8 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
     # subfinding-pairs.md's population is the pairing report's own, imported from
     # extract_subfinding_pairs.py, plus the reading record parsed back out of the page.
     "notes/subfinding-pairs.md": R.subfinding_pairs_population,
+    # notes/README.md is derived from the ledger alone plus the yaml's sources/main_results counts.
+    "notes/README.md": R.readme_population,
 }
 # The writer's own slot dict per page. These are the calls render_reports.py makes when it renders,
 # so the labels and phrase strings the template gets are the writer's by construction.
@@ -91,6 +93,7 @@ LABELS: dict[str, Callable[[], dict[str, str]]] = {
     "notes/t0-chains.md": lambda: R.t0_chains_phrases(POPULATIONS["notes/t0-chains.md"]()),
     "notes/subfinding-pairs.md": lambda: R.subfinding_pairs_phrases(
         POPULATIONS["notes/subfinding-pairs.md"]()),
+    "notes/README.md": lambda: R.readme_phrases(POPULATIONS["notes/README.md"]()),
 }
 PHRASE_FNS = ("count_phrases", "size_phrases")
 ALL_PAGES = {
@@ -130,6 +133,12 @@ ALL_PAGES = {
     # proven by the render diff plus the checker's own 7 mutants, which pin every quoted clause and
     # title to the family's \resultentry line.
     "notes/subfinding-pairs.md": "verify_subfinding_pairs.py",
+    # notes/README.md has no page checker at all: it is the ledger's reading guide, and the only
+    # script that checks any part of it is verify_script_ownership.py, which verifies the command
+    # block and the ownership census rows and carries no count_phrases/size_phrases. The builder
+    # therefore reports this coverage as NOT DERIVED, and the page is proven by the twice-render
+    # byte-identity diff plus that checker's plain run and its 11 mutants.
+    "notes/README.md": "verify_script_ownership.py",
 }
 
 
