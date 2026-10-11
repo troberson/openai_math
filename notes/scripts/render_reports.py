@@ -65,7 +65,6 @@ import measure_templates as MTPL
 import measure_topics as MT
 from catlib import bib, ledger, overview, preprints, tsv
 from catlib.atomic import Staging
-from catlib import render as RD
 from catlib import yaml as Y
 from catlib.paths import (COMPARATOR_DIR, DEPS_TSV, FORMALIZATION_YAML, LAKEFILE, LAKE_MANIFEST,
                           LEDGER_TSV, PREPRINTS, ROOT, SUBFINDINGS_TSV, owner)
@@ -990,7 +989,7 @@ def proof_density_population() -> dict[str, Any]:
                                                         if d.get(flag) == "1"}})[flag]
              for flag in PD.FLAGS for key in PD_FLAG_KEYS}
     st_ok, st_total = PD.selftest()
-    caught, mt_total, cases = PD.mutants(PD.build_families)
+    caught, mt_total, _cases = PD.mutants(PD.build_families)
     # The render-diff mutant is not in this list: verify_page_sync.py owns the page check, mutates
     # the page in memory, and is the standalone --mutant run in gate.sh.
     return {
@@ -1116,7 +1115,7 @@ IL_SPLIT = {
                        "`topics.md`,"],
     "prose_regchecked": ["**48,012 links checked, 0"],
     "prose_tracefiles": ["`reasoning_traces/` ships **11 files"],
-    "prose_fresh": ["**21 injected, 21 caught, 0 missed; 7 controls, 7"],
+    "prose_fresh": ["**20 injected, 20 caught, 0 missed; 7 controls, 7"],
     "prose_surplus": ["The 18,095 surplus links are"],
 }
 

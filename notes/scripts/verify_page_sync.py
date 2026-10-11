@@ -33,8 +33,8 @@ PAGES = [
      "A directory walk would count a superseded edition's bibliography a second time.",
      "A directory walk would count a superseded edition's bibliography twice over."),
     (ROOT / "notes" / "names.md",
-     "Names sit in four places in this release, and they do not mean the same thing:",
-     "Names sit in four places in this release, and they do not mean the same thing at all:"),
+     "Names sit in four places in this release, and they do not",
+     "Names sit in five places in this release, and they do not"),
     (ROOT / "notes" / "topics.md",
      "the pattern column is the source of truth",
      "the pattern column is the authoritative source"),
@@ -50,7 +50,7 @@ PAGES = [
 def check() -> list[str]:
     """Sync problems for each page: its bytes on disk against the writer's render."""
     out: list[str] = []
-    for page, needle, _ in PAGES:
+    for page, _, _ in PAGES:
         text = page.read_text(encoding="utf-8")
         for p in RD.sync_problems(page, text):
             out.append(f"{page.name}: {p}")
