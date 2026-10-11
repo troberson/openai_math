@@ -12,14 +12,14 @@
 #   kill -TERM -- -<PGID>
 cd "$(dirname "$0")/../.." || exit 1
 R=.qwen/tmp/reports
-G=notes/scripts/gate.sh
+G=notes/scripts/gate.py
 snap() {
   { md5sum notes/catalog.tsv notes/sources.tsv notes/links.tsv notes/subfindings.tsv \
       notes/abstracts.tsv notes/formalization-deps.tsv notes/conjecture-standing.tsv \
       notes/topics.tsv notes/named-results.tsv 2>/dev/null;
     find notes/index -type f -print0 | xargs -0 md5sum | sort; } | sort -k2
 }
-bash "$G" > "$R/gate_run1.txt" 2>&1
+python3 "$G" > "$R/gate_run1.txt" 2>&1
 snap > "$R/gate_md5_run1.txt"
 git status --porcelain > "$R/gate_git_run1.txt"
 grep -v '^exit 0' "$R/gate_run1.txt" > "$R/gate_failures.txt"

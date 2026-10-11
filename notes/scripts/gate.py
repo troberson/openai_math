@@ -1,0 +1,174 @@
+#!/usr/bin/env python3
+"""The gate list as a dependency graph.
+
+`gate.sh` ran two blocks: a 17-row serial chain and a 58-row `xargs -P 8` pool. The serial block
+carried 8 report-only extractors that write nothing tracked, and the pool could not start until the
+whole chain finished, so the pass measured 288.9 s serial against 172.5 s pooled — 461.4 s of driver
+wall. Here every row declares the generated artifacts it writes and the ones it needs, and a row
+starts as soon as every row that writes its needs has finished. The writer critical path is
+`build_catalog.py` 0.1 -> `extract_links.py` 18.6 -> `build_index.py` 55.3 -> `render_reports.py`
+147.9 = 221.9 s, so the floor is that path plus the longest row that needs the rendered pages
+(`verify_page_sync.py --both`, 121.9 s) — about 344 s.
+
+Printing stays canonical: each row writes its own `.line` file, and the report prints the `.line`
+files in list order after the last row finishes, so the report is the same bytes a serial run
+prints. `GATE_POOL=1` runs the rows one at a time in list order — the serial baseline the pooled
+report is diffed against.
+
+Pool size is set by measured RSS, not core count: nproc 32, 6.1 Gi available with the model server
+loaded, the two heaviest rows peak at 415 MB, so 12 concurrent rows.
+
+A pooled row must spawn no writer. `render_reports.py` runs its `build_index.py` and
+`extract_links.py` children with `--check-only` and `RENDER_REPORTS_CHILD=1`, so the render row
+writes pages and nothing else.
+
+Invoke as: python3 notes/scripts/gate.py  (from anywhere; it cds to the repo root).
+"""
+
+import os
+import re
+import subprocess
+import time
+from concurrent.futures import FIRST_COMPLETED, Future, ThreadPoolExecutor, wait
+
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+S = "notes/scripts"
+R = ".qwen/tmp/reports"
+N = int(os.environ.get("GATE_POOL", "12"))
+
+# (spec, needs, writes). `needs` is the set of generated artifacts the row reads; `writes` is the
+# set it produces. A row runs when every artifact in `needs` has been written by a finished row.
+# The list order is the canonical print order: the report is printed in this order, not in
+# completion order.
+ROWS = [
+    ("build_catalog.py", (), ("catalog",)),
+    ("build_sources.py", (), ("sources",)),
+    ("build_index.py", ("catalog", "sources", "links", "subfindings", "abstracts"), ("index",)),
+    ("extract_links.py", ("catalog",), ("links",)),
+    ("extract_subfindings.py", (), ("subfindings",)),
+    ("extract_formalization_deps.py", (), ("deps",)),
+    ("compare_abstracts.py --tsv", ("catalog",), ("abstracts",)),
+    ("extract_named_results.py", ("catalog",), ()),
+    ("extract_counterexample_crosscheck.py", ("catalog",), ()),
+    ("extract_t0_chains.py", ("catalog",), ()),
+    ("extract_verification_dirs.py", ("catalog",), ()),
+    ("extract_verification_348.py", (), ()),
+    ("extract_subfinding_pairs.py", ("catalog",), ()),
+    ("extract_scope_notes.py", (), ()),
+    ("extract_citations.py", (), ()),
+    ("render_reports.py",
+     ("catalog", "sources", "links", "subfindings", "abstracts", "deps", "index"), ("pages",)),
+    ("refresh_summary_line_counts.py", (), ("summaries",)),
+    ("triage_t0.py", ("catalog",), ()),
+    ("measure_topics.py --check", ("pages",), ()),
+    ("measure_index_sizes.py", ("index",), ()),
+    ("check_index_links.py", ("index",), ()),
+    ("check_index_links.py --mutant", ("index",), ()),
+    ("measure_names.py", (), ()),
+    ("measure_faithfulness.py", ("catalog",), ()),
+    ("measure_templates.py", (), ()),
+    ("dump_template_slots.py", (), ()),
+    ("measure_checker_needles.py", (), ()),
+    ("measure_proof_density.py --mutant", ("pages",), ()),
+    ("verify_summaries.py", ("pages", "summaries"), ()),
+    ("verify_summaries.py --mutant", ("pages", "summaries"), ()),
+    ("verify_abstracts.py", ("pages",), ()),
+    ("verify_abstracts.py --mutant", ("pages",), ()),
+    ("verify_named_results.py", ("pages",), ()),
+    ("verify_named_results.py --mutant", ("pages",), ()),
+    ("verify_named_conjectures.py", ("pages",), ()),
+    ("verify_named_conjectures.py --mutant", ("pages",), ()),
+    ("verify_scope_exclusions.py", ("pages",), ()),
+    ("verify_scope_exclusions.py --mutant", ("pages",), ()),
+    ("verify_subfindings.py", ("pages",), ()),
+    ("verify_subfindings.py --mutant", ("pages",), ()),
+    ("verify_subfinding_pairs.py", ("pages",), ()),
+    ("verify_subfinding_pairs.py --mutant", ("pages",), ()),
+    ("verify_index_design.py", ("pages",), ()),
+    ("verify_index_design.py --mutant", ("pages",), ()),
+    ("verify_sources.py", ("pages",), ()),
+    ("verify_sources.py --mutant", ("pages",), ()),
+    ("verify_conditional.py", ("pages",), ()),
+    ("verify_conditional.py --mutant", ("pages",), ()),
+    ("verify_counterexample_crosscheck.py", ("pages",), ()),
+    ("verify_counterexample_crosscheck.py --mutant", ("pages",), ()),
+    ("verify_t0_chains.py", ("pages",), ()),
+    ("verify_t0_chains.py --mutant", ("pages",), ()),
+    ("verify_verification_dirs.py", ("pages",), ()),
+    ("verify_verification_dirs.py --mutant", ("pages",), ()),
+    ("verify_dependency_drift.py", ("pages",), ()),
+    ("verify_dependency_drift.py --mutant", ("pages",), ()),
+    ("verify_script_ownership.py", ("pages",), ()),
+    ("verify_script_ownership.py --mutant", ("pages",), ()),
+    ("verify_findings.py", ("pages",), ()),
+    ("verify_findings.py --mutant", ("pages",), ()),
+    ("verify_citations.py", ("pages",), ()),
+    ("verify_citations.py --mutant", ("pages",), ()),
+    ("verify_upstream_history.py", ("pages",), ()),
+    ("verify_upstream_history.py --mutant", ("pages",), ()),
+    ("verify_fleet_design.py", ("pages",), ()),
+    ("verify_fleet_design.py --mutant", ("pages",), ()),
+    ("verify_faithfulness.py", ("pages",), ()),
+    ("verify_faithfulness.py --mutant", ("pages",), ()),
+    ("verify_page_sync.py --both", ("pages",), ()),
+    ("verify_cache_promotion.py",
+     ("catalog", "sources", "links", "subfindings", "abstracts", "deps", "index", "pages"), ()),
+    ("verify_cache_promotion.py --mutant",
+     ("catalog", "sources", "links", "subfindings", "abstracts", "deps", "index", "pages"), ()),
+    ("verify_conjecture_standing.py", ("catalog",), ()),
+    ("verify_conjecture_standing.py --mutant", ("catalog",), ()),
+    ("check_summary_manuscripts.py", ("summaries",), ()),
+    ("locate_summary_quotes.py", ("summaries",), ()),
+]
+
+
+def tag_of(spec: str) -> str:
+    """The report/line filename stem. `tr -c 'A-Za-z0-9' '_'` over the spec plus its newline, which
+    is what appends the trailing underscore the shell version carries."""
+    return re.sub(r"[^A-Za-z0-9]", "_", spec + "\n")
+
+
+def run(spec: str) -> None:
+    tag = tag_of(spec)
+    a = spec.split()
+    report = f"{R}/gate_{tag}.txt"
+    t0 = time.time()
+    with open(report, "wb") as out:
+        rc = subprocess.run(["python3", f"{S}/{a[0]}"] + a[1:], stdout=out,
+                            stderr=subprocess.STDOUT, check=False).returncode
+    w = int((time.time() - t0) * 10)
+    with open(report, "rb") as f:
+        head = f.read(200).decode("utf-8", "replace").replace("\n", " ").rstrip()
+    with open(f"{R}/gate_{tag}.line", "w", encoding="utf-8") as f:
+        f.write(f"exit {rc} :: {spec} :: {head} in {w // 10}.{w % 10}s\n")
+
+
+def main() -> int:
+    os.chdir(ROOT)
+    os.makedirs(R, exist_ok=True)
+    todo = list(ROWS)
+    done: set[str] = set()
+    futures: dict[Future, tuple[str, tuple[str, ...], tuple[str, ...]]] = {}
+    with ThreadPoolExecutor(max_workers=N) as ex:
+        while todo or futures:
+            ready = [r for r in todo if set(r[1]) <= done]
+            for r in ready:
+                todo.remove(r)
+                futures[ex.submit(run, r[0])] = r
+            if not futures:
+                for r in todo:
+                    print(f"DEADLOCK: {r[0]} needs {sorted(set(r[1]) - done)}")
+                return 1
+            finished, _ = wait(futures, return_when=FIRST_COMPLETED)
+            for f in finished:
+                spec, _, writes = futures.pop(f)
+                f.result()
+                done.update(writes)
+    for spec, _, _ in ROWS:
+        with open(f"{R}/gate_{tag_of(spec)}.line", encoding="utf-8") as line:
+            print(line.read(), end="")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
