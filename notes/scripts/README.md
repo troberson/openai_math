@@ -2,17 +2,17 @@
 
 Measured 2026-10-10 by `python3 notes/scripts/verify_script_ownership.py` — report-only, it writes
 nothing, and every count below is re-derived by that run. The page answers one question: for each of
-the **1,134** files under `notes/` (the scripts excluded), which is whose bytes. A generated file is
+the **1,136** files under `notes/` (the scripts excluded), which is whose bytes. A generated file is
 changed by editing its generator and re-rendering; a hand-written file is edited directly. Ownership
 is per file, and the checker exits 1 on a file no rule owns.
 
 It is also the script inventory. Every script under `notes/scripts/` is listed once, in one of three
 classes — writer, report-only, checker — with what it writes and the command the gate runs for it, and
 the fourth class, the scratch a session writes outside the tree, is recorded by rule rather than by
-file. The classes partition the **52** scripts: **10** writers, **22** report-only, **20** checkers,
+file. The classes partition the **52** scripts: **10** writers, **21** report-only, **20** checkers,
 and `verify_script_ownership.py` itself, which is the 21st checker and is not listed in its own table.
 
-## The split: 10 write, 42 write nothing
+## The split: 10 write, 41 write nothing
 
 The writer set is derived from the scripts' own source, not from this page: a script is a writer when
 a path constant rooted at `notes/` appears on the left of `.open(..., "w")` or `.write_text(...)`,
@@ -42,7 +42,7 @@ finds **10** writers over **51** scripts.
 | `extract_subfindings.py` | `notes/subfindings.tsv` | run twice, byte-identical | `notes/subfinding-pairs.md` |
 | `render_reports.py` | `notes/README.md`, `notes/abstracts.md`, `notes/dependency-drift.md`, `notes/index-design.md`, `notes/index-links.md`, `notes/links.md`, `notes/named-results.md`, `notes/names.md`, `notes/proof-density.md`, `notes/sources.md`, `notes/verification-dirs.md`, `notes/scope-exclusions.md`, `notes/topics.md`, `notes/t0-chains.md`, `notes/subfinding-pairs.md`, `notes/counterexample-crosscheck.md`, `notes/templates.md` | run twice, byte-identical | the seventeen report-fed pages |
 | `build_report_templates.py` | `notes/templates/report` | not in `gate.sh` — it reads each page with `git show HEAD:`, so a gate run would rewrite templates from committed bytes; run explicitly with 0 args (all seventeen pages) or 2 (one page) after a writer's slot dict changes | the seventeen page templates; the registry, slot dicts and needle derivation it reads are in `catlib/templates.py` |
-| `measure_open_probe.py` | `notes/probe/` | not in `gate.sh` — a record carries a wall time per target, so a run-1/run-2 byte diff of a record is a timing artifact, not a proof; run explicitly over the purity and amplification targets, appending stdout to build a multi-target record | the two probe records `verify_fleet_design.py` parses |
+| `measure_open_probe.py` | `notes/probe` | not in `gate.sh` — a record carries a wall time per target, so a run-1/run-2 byte diff of a record is a timing artifact, not a proof; run explicitly over the purity and amplification targets, appending stdout to build a multi-target record | the two probe records `verify_fleet_design.py` parses |
 
 Six writers emit one TSV each. `build_index.py` is the one-to-many case: it renders **1,049** files —
 **1,033** `.md` pages and **16** `.tsv` tables. `render_reports.py` renders the seventeen report-fed pages
@@ -88,7 +88,7 @@ Editing a join in `build_catalog.py` can move rows in six artifacts.
 
 ### Report-only
 
-The other **42** scripts write nothing. **22** of them print the report a page's counts come from.
+The other **41** scripts write nothing. **21** of them print the report a page's counts come from.
 The Gate column is the invocation the gate list runs: `notes/scripts/gate.sh`, which runs **71**
 invocations — the **8** gated writers (the two writers it does not run are `build_report_templates.py`
 and `measure_open_probe.py`, each for the reason in its own row), the 21 gated report-only rows (including `check_summary_manuscripts.py`
@@ -281,10 +281,10 @@ The package is not in the census below: the script population is `notes/scripts/
 | `notes/summaries/` | **21** | hand-written — the reading record |
 | `notes/templates/` | **22** | **5** hand-written index skeletons + **17** report templates built by `build_report_templates.py` |
 | `notes/upstream_history/` | **3** | hand-written — one page per upstream merge, moved from the repository root on 2026-10-10 |
-| `notes/probe/` | **2** | the audit-hook probe records the fleet-design page quotes, captured 2026-10-10 |
+| `notes/probe/` | **4** | the audit-hook probe records the fleet-design page quotes: the 2026-10-11 pair `measure_open_probe.py` writes and the checker parses, and the 2026-10-10 pair the page's cold-cache figures come from |
 | `notes/*.tsv` | **8** | **6** generated, **2** hand-authored |
 | `notes/*.md` | **29** | hand-written — **22** with a checker, **7** without |
-| `notes/` total, scripts excluded | **1,134** | — |
+| `notes/` total, scripts excluded | **1,136** | — |
 
 The generated TSVs are the six writer targets. The two hand-authored tables are:
 
@@ -327,9 +327,9 @@ excludes the checker-verified pages, allowing formatting only on the pages no ch
 
 ## Naming coverage
 
-`notes/README.md`'s command block named **34** of the 50 scripts before this pass. Sixteen are named
+`notes/README.md`'s command block named **34** of the 51 scripts before this pass. Seventeen are named
 nowhere in the repo at the pinned baseline: `build_report_templates.py`, `check_summary_manuscripts.py`,
-`extract_citations.py`, `locate_summary_quotes.py`, `measure_checker_needles.py`, `measure_templates.py`,
+`extract_citations.py`, `locate_summary_quotes.py`, `measure_checker_needles.py`, `measure_open_probe.py`, `measure_templates.py`,
 `read_manuscript.py`,
 `refresh_summary_line_counts.py`, `render_reports.py`, `verify_citations.py`, `verify_findings.py`,
 `verify_fleet_design.py`, `verify_named_conjectures.py`, `verify_page_sync.py`, `verify_upstream_history.py` and `dump_template_slots.py`. The first four are the report-template
@@ -342,7 +342,7 @@ measurements whose checker no document named; `verify_upstream_history.py` is th
 `notes/upstream_history/`, the pages that record each upstream merge, which moved under `notes/` on
 2026-10-10 and are inside this page's census; `measure_templates.py` is the census behind `notes/templates.md`, added by
 the pass that added that page; `measure_checker_needles.py` is the per-checker needle probe the
-checker-coverage bead promoted; `dump_template_slots.py` is the slot dump that prints the same dict the census measures, promoted by `math-a0r.7`; `verify_fleet_design.py` is the checker for `notes/fleet-design.md`, promoted by `math-o3a.1` together with the two probe records it parses; `verify_page_sync.py` is the checker `math-o3a.3` created when the five sync passes left the writer fleet, so the pinned baseline predates it; and `render_reports.py` is the renderer for the seventeen report-fed pages.
+checker-coverage bead promoted; `dump_template_slots.py` is the slot dump that prints the same dict the census measures, promoted by `math-a0r.7`; `verify_fleet_design.py` is the checker for `notes/fleet-design.md`, promoted by `math-o3a.1` together with the two probe records it parses; `verify_page_sync.py` is the checker `math-o3a.3` created when the five sync passes left the writer fleet, so the pinned baseline predates it; `measure_open_probe.py` is the audit-hook probe `math-o3a.3.4` promoted from `.qwen/tmp/a11_open_probe2.py`, so the pinned baseline predates it too; and `render_reports.py` is the renderer for the seventeen report-fed pages.
 All 52 are named here and in the command
 block. "Before this pass" is
 pinned to the commit that created this page, read at its parent, not to `HEAD`: `HEAD` moves every

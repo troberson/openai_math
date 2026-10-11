@@ -341,7 +341,7 @@ lives in this file and nowhere else.
   manifest is `notes/scripts/README.md`, and it is the only place that answers "whose bytes are
   this". It is also the script inventory: every script under `notes/scripts/` is listed once as
   writer, report-only or checker, with what it writes and the gate command the gate list runs for it
-  — **10** writers, **22** report-only, **20** checkers, plus the page's own checker as the 21st
+  — **10** writers, **21** report-only, **20** checkers, plus the page's own checker as the 21st
   checker and 52nd script — and the fourth class, scratch, is recorded by rule: **scratch lives under
   `.qwen/tmp/`, a permanent script lives under `notes/scripts/`**, so a probe that a later pass
   re-runs is promoted and gets a table row before it gets a gate command. `math-o3a.3.4` is that rule
