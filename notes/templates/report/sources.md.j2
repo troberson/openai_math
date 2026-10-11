@@ -4,7 +4,7 @@
    writer supplies. Proof after a rebuild: render_reports.py twice, page byte-identical. #}
 # The manuscript source surface
 
-Measured 2026-10-08 by `python3 notes/scripts/build_sources.py`, which writes `notes/sources.tsv` —
+Measured 2026-10-08 by `python3 notes/scripts/build_sources.py`, which writes `notes/tables/sources.tsv` —
 {{ p['table shape'] }}, one row per manuscript the release lists. The script reads the manuscript
 trees as text: no `lake`, `lean`, `lake exe cache get`, or comparator run, no PDF parsing, no `.lean`
 file opened. Run it twice and diff: the TSV is byte-identical and the report is identical. Every
@@ -20,7 +20,7 @@ describe the listed corpus only.
 | Column | Rule | Corpus total |
 |---|---|---|
 | `dir` | `preprints/` directory name — manuscript ownership is the path component after `preprints` {{ p['dir distinct count'] }}
-| `fam` | Family id, from the manuscript rows of `notes/subfindings.tsv` {{ p['fam distinct count'] }}
+| `fam` | Family id, from the manuscript rows of `notes/tables/subfindings.tsv` {{ p['fam distinct count'] }}
 | `pdf` | Manuscript PDF path, reconciled against `overview.tex` | 719, all on disk, all non-empty |
 | `main_tex` | Resolved main file, rule below {{ p['main_tex filled count'] }}
 | `roots` | `.tex` files declaring `\documentclass` **at line start** {{ p['roots distribution'] }}
@@ -124,12 +124,12 @@ The report's reconciliation lines, from the run that wrote the shipped TSV:
 - {{ p['report reconciliation'] }};
 - overview manuscript slugs not on disk **0**;
 - empty or missing PDF files **0**;
-- families outside `notes/catalog.tsv` **0**; per-family row count vs ledger `paps` differences **0**;
+- families outside `notes/tables/catalog.tsv` **0**; per-family row count vs ledger `paps` differences **0**;
 - `overview.tex` manuscript paths (the paren-aware `PAP` regex) {{ p['overview path distinct count'] }}
   {{ p['pdf distinct count'] }}; paths in one and not the other **0** and **0**; families whose path set
   differs from `overview.tex` **0**.
 
-The `pdf` column is derived from `notes/subfindings.tsv`, so the last three lines are the
+The `pdf` column is derived from `notes/tables/subfindings.tsv`, so the last three lines are the
 independent check: they re-parse the release's own list out of `overview.tex` with
 `build_catalog.parse_overview()` rather than trusting the table's own source.
 
@@ -152,5 +152,5 @@ re-measure a manuscript that stayed put.
 - The manuscript abstract text was not compared with the `overview.tex` abstract — that is
   `math-hqd.2`.
 - Nothing here says a manuscript is formalized, correct, or read. The formalized flag lives in
-  `notes/catalog.tsv` {{ p['formalized share'] }}, at source level under
+  `notes/tables/catalog.tsv` {{ p['formalized share'] }}, at source level under
   `lean/formalization.yaml` `review: status: unchecked`.

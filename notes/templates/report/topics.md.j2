@@ -4,7 +4,7 @@
    writer supplies. Proof after a rebuild: render_reports.py twice, page byte-identical. #}
 # The topic vocabulary
 
-Built 2026-10-07. The vocabulary is {{ p['tp_terms'] }} in [`notes/topics.tsv`](topics.tsv) —
+Built 2026-10-07. The vocabulary is {{ p['tp_terms'] }} in [`notes/tables/topics.tsv`](topics.tsv) —
 {{ p['tp_cols'] }} (`term`, `pattern`, `fams`, `title`, `abstract`, `scope`, `path`, `status`, `note`) —
 and the pattern column is the source of truth: `notes/scripts/measure_topics.py` loads it, matches
 it, and records the counts the row carries as evidence. `python3 notes/scripts/measure_topics.py`
@@ -204,7 +204,7 @@ families and none of them is a tropical-geometry family.
 
 A term is quotable only after its flagged families have been read (`--families` prints them, marked
 T/A/S/P). Every narrowing below was forced by a quoted family that the bare stem reached and that
-is not about the term. Full per-term verdicts live in the `note` column of `notes/topics.tsv` —
+is not about the term. Full per-term verdicts live in the `note` column of `notes/tables/topics.tsv` —
 **{{ p['tp_note'] }}**.
 
 The **reach** column is the bare stem measured over all four layers, and **excluded** is the set it
@@ -292,7 +292,7 @@ is why the patterns carry stems rather than whole words.
   Optimization, Probability, RepresentationTheory, RingTheory, SetTheory, Topology) are two
   unaligned groupings, so a mirror term would have had to pick one.
 - **Attribution axes** (`erdos-problems`, `shub-problems`): attribution already lives in
-  `notes/conjecture-standing.tsv` and in the `resolves_named` ledger column. As a topic it is a
+  `notes/tables/conjecture-standing.tsv` and in the `resolves_named` ledger column. As a topic it is a
   property of catalog prose, not of the mathematics — which is exactly why bare `erdos` had to be
   dropped from random-graphs.
 - **Claim-shape axes** (`counterexample`, `resolution`, `algorithms`, `conditional`): these are

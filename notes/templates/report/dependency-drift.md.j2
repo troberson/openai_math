@@ -4,7 +4,7 @@
    writer supplies. Proof after a rebuild: render_reports.py twice, page byte-identical. #}
 # What the dependency record implies about automated formalization
 
-Measured 2026-10-07 from three sources only: `notes/formalization-deps.tsv` {{ p['hdr_tsv'] }},
+Measured 2026-10-07 from three sources only: `notes/tables/formalization-deps.tsv` {{ p['hdr_tsv'] }},
 `lean/lakefile.lean` {{ p['hdr_lake_lines'] }}, and `lean/patches/` ({{ p['hdr_patches'] }}).
 No `lake`, `lean`, `lake exe cache get`, or comparator run, and **no build was attempted** — every pin
 below is a declared pin, and every patch below is an asserted-applicable patch, not a verified one.
@@ -135,7 +135,7 @@ upstream to agree. {{ p['p5_plus a'] }}
 
 ## Patch size tracks upstream surgery, not use
 
-Direct imports come from `notes/formalization-deps.tsv` (`direct_imports`, measured over
+Direct imports come from `notes/tables/formalization-deps.tsv` (`direct_imports`, measured over
 `lean/OAI/**/*.lean`); patch lines are the file's line count. {{ p['p6_table_intro a'] }}
 {{ p['p6_table_intro b'] }}
 
