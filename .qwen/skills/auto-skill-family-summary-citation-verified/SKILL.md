@@ -369,8 +369,16 @@ count guard instead of the verbatim check. Undetected mutants must fail the exit
   while every relative href in the table reports `DEAD LINK`. Say the root in the cells, not the prose.
 - **A quoted sentence that wraps in the source needs the full span.** Prose in these manuscripts wraps
   mid-sentence, so a one-line anchor is usually short by a line: "…had required a stronger complexity
-  assumption." spans 31–33, not 32–33, and citing 32–34 lands on a blank line (`BLANK S19:34`). Grep
-  the sentence, read the region with `grep -n "" | sed -n 'A,Bp'`, and set both ends from what you saw.
+  assumption." spans 31–33, not 32–33, and citing 32–34 lands on a blank line (`BLANK S19:34`).
+- **Number anchors in the checker's `splitlines()` numbering, never in a shell display.** The checker
+  resolves a marker against `read_text().splitlines()`, so that is the only numbering that counts.
+  Measured 2026-10-10 on family 003: anchors read off a `sed -n '76,102p'` dump were **off by one**
+  because the shell tool's display drops a leading blank line, so counting printed lines started one
+  line late — 10 anchors wrong, reported as 4 `BLANK` problems and 4 `NOT VERBATIM` misses, all fixed
+  by re-deriving from a probe that prints the index itself:
+  `python3 -c "import pathlib;[print(i+1, l) for i,l in enumerate(pathlib.Path(f).read_text().splitlines()[a-1:b])]"`.
+  `cat -n` is safe (it prints the number), a bare `sed` range is not. The same probe is what measures
+  the `Lines` cells, so anchors and counts come from one read.
 
 ## 7. Report
 
@@ -383,6 +391,17 @@ Keep the verifier. The pass B and pass C checkers are promoted: `notes/scripts/v
 is the standing checker for `notes/summaries/`, so every page is one command away from green —
 no arguments checks every page, named pages check just those, and `--mutant` proves the quote check
 discriminates. Pass A stays per-page: its needles are that page's own recorded findings.
+
+**A page can be written and verified outside `notes/` while a gate run is in flight.** The checker
+takes page paths as positional args, so `python3 notes/scripts/verify_summaries.py
+.qwen/pending-summaries/003-….md` verifies a page that is not yet in the tree. Links resolve as
+`page.path.parent / href`, so hrefs from `.qwen/pending-summaries/` are `../../CONTENTS.md`,
+`../../lean/docs/003.md`, `../../preprints/…` — two levels, not the three a
+`notes/summaries/<discipline>/` page uses. `.qwen/*` is gitignored (with `!.qwen/skills/`), so the
+page is invisible to `git status` and to the gate's `git status` snapshot, and `notes/` stays
+untouched. Measured 2026-10-10: plain 0 problems, `--mutant` 6 of 6 flagged, nothing tracked
+changed. Move the page into `notes/summaries/<discipline>/` only when `notes/` is free, and re-run
+the checker from the new directory — the href depth changes with it.
 
 ## Related skills
 
