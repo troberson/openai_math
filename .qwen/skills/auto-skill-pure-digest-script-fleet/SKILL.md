@@ -57,7 +57,10 @@ backwards read of a page another script writes.
 The structural cause of order-dependence in this fleet was **checkers embedded in writers**: 15
 scripts carried a trailing `sync problems (page.md) N` pass comparing themselves with the renderer's
 output. 10 are `verify_*` checkers (legal — reading a page is their job); **5 are writers**, and those
-five are what makes the writer fleet order-dependent. Move them to checker rows.
+five are what makes the writer fleet order-dependent. Move them to checker rows. **Realized:** the pass
+has one owner, `verify_page_sync.py --both`, over the 5 sync pages, and the census
+`grep -rlE 'sync problems' notes/scripts/*.py | wc -l` now reads **13**, all `verify_*` checkers — no
+writer carries it.
 
 Two scripts must be **excluded from tree-digest keying** because they read git *history*, not the
 tree (`git show <rev>:` reads). Enumerate them explicitly; a digest-keyed cache over them is a bug.
@@ -128,9 +131,12 @@ current L0 tree digests.** That is content-addressed equality, stronger than the
 the twice-run checks.
 
 Support it with an idempotency census (grep for `datetime` / `uuid` / `getpid` / `platform` / env
-reads / unsorted `iterdir`/`rglob`). Here: 0 nondeterministic calls, 1 env read, 2 set-iteration sites
-consumed as `len(set(...))`, 11+3 unsorted directory walks consumed as a length or dict keys — i.e.
-**deterministic by consumption, not by construction**. Fix it by sorting at the collection boundary.
+reads / unsorted `iterdir`/`rglob`). Here: 0 nondeterministic calls (no `datetime` / `time.time` /
+`uuid` / `getpid` / `platform` in any writer), **2** env reads (the two `RENDER_REPORTS_CHILD`
+children), 2 set-iteration sites consumed as `len(set(...))`, **9 in the writers + 9 in `catlib`**
+unsorted directory walks consumed as a length or dict keys — i.e. **deterministic by consumption, not
+by construction**; the current site list is in `notes/fleet-design.md`. Fix it by sorting at the
+collection boundary.
 Do **not** pin `PYTHONHASHSEED` as the fix.
 
 ## 7. The extras that fall out
@@ -139,7 +145,9 @@ Do **not** pin `PYTHONHASHSEED` as the fix.
   parallelism, so it comes before any pool. Verify the mode claim with the open-mode probe, not with
   the AST census.
 - **One process, many passes.** The biggest writer re-parsed the release tex 58× and re-read the
-  ledger 36× because each checker shells out to it.
+  ledger 36× because each checker shells out to it (pre-record-store measure). Post-store, the same
+  writer measures **75,394** opens with **63,075** repeats — the repeats are the record-store reads,
+  not corpus walks. Current figures: `notes/fleet-design.md` options table.
 - **One writer per artifact.** One generated page had two writers (a renderer and a checker); pick the
   owner (recommendation: the renderer owns, the checker only checks).
 - **Split measure from render** so a page's numbers are measured, and the page-vs-writer diff proves
