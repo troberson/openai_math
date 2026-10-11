@@ -37,7 +37,7 @@ from catlib.paths import owner
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 
 PRE = ROOT / "preprints"
-LEDGER = ROOT / "notes" / "catalog.tsv"
+LEDGER = ROOT / "notes" / "tables" / "catalog.tsv"
 OVERVIEW = ROOT / "overview.tex"
 
 HEADLINE = ("theorem", "maintheorem", "thm")

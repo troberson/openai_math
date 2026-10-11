@@ -107,7 +107,7 @@ ALL_PAGES = {
     "notes/index-links.md": "check_index_links.py",
     "notes/index-design.md": "verify_index_design.py",
     # links.md has no page checker: its counts come from the gated writer extract_links.py, which
-    # prints its report and writes notes/links.tsv and carries no count_phrases/size_phrases, so
+    # prints its report and writes notes/tables/links.tsv and carries no count_phrases/size_phrases, so
     # the builder reports this coverage as NOT DERIVED.
     "notes/links.md": "extract_links.py",
     # dependency-drift.md's checker takes no count_phrases/size_phrases: its needles are inline

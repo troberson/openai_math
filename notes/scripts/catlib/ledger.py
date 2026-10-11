@@ -1,4 +1,4 @@
-"""notes/catalog.tsv and the claim-shape rules keyed to its abstracts.
+"""notes/tables/catalog.tsv and the claim-shape rules keyed to its abstracts.
 
 The shape/tag rules live here because they are keyed to the overview.tex paraphrase, not to
 the manuscripts: compare_abstracts.py measures 0 of 719 manuscript comparisons and 0 of 372

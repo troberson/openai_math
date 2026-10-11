@@ -14,7 +14,7 @@ Report-only; writes nothing. Three passes over the page:
    are read from the generated files under `notes/index/`, so a rendered table that drops rows is a
    mismatch rather than a phrase built from the upstream count it was derived from.
 3. Byte sizes. The five TSV sizes the page tabulates are re-read from disk and compared with the
-   values the page's byte phrases quote. The scope is the five named files, not every `notes/*.tsv`:
+   values the page's byte phrases quote. The scope is the five named files, not every `notes/tables/*.tsv`:
    the sum over all of them is a different quantity (see `LEDGER_SET`).
 4. Sync. The page bytes are diffed against the bytes `render_reports.py` renders for this page. The
    count passes prove the numbers on the page are measured by an independent recount; the sync pass
@@ -121,9 +121,9 @@ def count_phrases(p):
         (f"carries **{sf}** rows at **{p['sf_bpr']:.1f}** B/row", "subfindings bytes per row"),
         (f"the whole ledger set is **{setb}** B", "ledger set byte total"),
         (f"the ledger set the **{setb}** B figure covers", "ledger set scope sentence"),
-        (f"every `notes/*.tsv` together totals **{p['all_tsv_bytes']}** B", "all-TSV byte total"),
-        (f"`notes/sources.tsv` (**{p['sizes']['sources.tsv'][0]}** B over "
-         f"**{p['sizes']['sources.tsv'][1]}** rows) and `notes/topics.tsv` "
+        (f"every `notes/tables/*.tsv` together totals **{p['all_tsv_bytes']}** B", "all-TSV byte total"),
+        (f"`notes/tables/sources.tsv` (**{p['sizes']['sources.tsv'][0]}** B over "
+         f"**{p['sizes']['sources.tsv'][1]}** rows) and `notes/tables/topics.tsv` "
          f"(**{p['sizes']['topics.tsv'][0]}** B over **{p['sizes']['topics.tsv'][1]}** rows)",
          "added TSV byte figures"),
         (f"(**{p['builds_on']}** `builds-on` declarations at "

@@ -72,7 +72,7 @@ from catlib.paths import PREPRINTS as PRE, owner
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 
 LEDGER = {}
-with open(ROOT / "notes" / "catalog.tsv", newline="", encoding="utf-8") as _fh:
+with open(ROOT / "notes" / "tables" / "catalog.tsv", newline="", encoding="utf-8") as _fh:
     for _r in csv.DictReader(_fh, delimiter="\t"):
         LEDGER[_r["fam"]] = _r
 

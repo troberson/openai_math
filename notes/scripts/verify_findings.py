@@ -9,7 +9,7 @@ The page is a synthesis, so its claims arrive in three kinds and each needs a di
   Pass B (quotes)    - every quotation adjacent to a line anchor must appear, markup aside, on the
                        lines it cites. An anchor proves a line exists; it proves nothing about text.
   Pass C (ledger)    - the ledger counts are re-derived by importing build_catalog's parse functions
-                       and rebuilding every row. main() is never called: it writes notes/catalog.tsv.
+                       and rebuilding every row. main() is never called: it writes notes/tables/catalog.tsv.
   Pass D (tables)    - the TSV and on-disk counts are re-measured from the shipped files.
   Pass E (reports)   - the fast extractors run as subprocesses; each report line the page quotes must
                        read the same in the report and in the page.
@@ -121,7 +121,7 @@ def run(script):
 def ledger():
     """Every catalog.tsv row rebuilt from the shipped files, exactly as build_catalog builds it.
 
-    main() is never called because it writes notes/catalog.tsv; the row construction below is a
+    main() is never called because it writes notes/tables/catalog.tsv; the row construction below is a
     copy of it, so a page count is checked against the generator's own rules, not against a
     paraphrase of them — the rules being catlib's, which the generator itself uses.
     """
@@ -184,12 +184,12 @@ def measured():
     def by_tier(s):
         return Counter(rows[f]["tier"] for f in s)
 
-    sub = tsv("notes/subfindings.tsv")
+    sub = tsv("notes/tables/subfindings.tsv")
     mss_rows = [r for r in sub if r["kind"] == "manuscript"]
     comp_rows = [r for r in sub if r["kind"] == "comparator-link"]
-    src, links = tsv("notes/sources.tsv"), tsv("notes/links.tsv")
-    topics, deps = tsv("notes/topics.tsv"), tsv("notes/formalization-deps.tsv")
-    standing = tsv("notes/conjecture-standing.tsv")
+    src, links = tsv("notes/tables/sources.tsv"), tsv("notes/tables/links.tsv")
+    topics, deps = tsv("notes/tables/topics.tsv"), tsv("notes/tables/formalization-deps.tsv")
+    standing = tsv("notes/tables/conjecture-standing.tsv")
     lk = {r["edge"]: r for r in links}
     bib = lk["manuscript->corpus manuscript (bib href)"]["detail"]
 
@@ -215,7 +215,7 @@ def measured():
 
     return {
         "fams": fams,
-        "cols": len(tsv("notes/catalog.tsv")[0]),
+        "cols": len(tsv("notes/tables/catalog.tsv")[0]),
         "tier": tier,
         "shapes": shapes,
         "ge3": sum(1 for r in rows.values() if len(r["shapes"]) >= 3),

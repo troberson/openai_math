@@ -14,9 +14,9 @@ cd "$(dirname "$0")/../.." || exit 1
 R=.qwen/tmp/reports
 G=notes/scripts/gate.py
 snap() {
-  { md5sum notes/catalog.tsv notes/sources.tsv notes/links.tsv notes/subfindings.tsv \
-      notes/abstracts.tsv notes/formalization-deps.tsv notes/conjecture-standing.tsv \
-      notes/topics.tsv notes/named-results.tsv 2>/dev/null;
+  { md5sum notes/tables/catalog.tsv notes/tables/sources.tsv notes/tables/links.tsv notes/tables/subfindings.tsv \
+      notes/tables/abstracts.tsv notes/tables/formalization-deps.tsv notes/tables/conjecture-standing.tsv \
+      notes/tables/topics.tsv;
     find notes/index -type f -print0 | xargs -0 md5sum | sort; } | sort -k2
 }
 python3 "$G" > "$R/gate_run1.txt" 2>&1

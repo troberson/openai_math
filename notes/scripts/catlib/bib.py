@@ -113,7 +113,7 @@ def entries(text: str) -> list[tuple[str, str, str, int]]:
 
 
 def manuscript_map() -> dict[str, str]:
-    """{manuscript dir: family} from the manuscript rows of notes/subfindings.tsv."""
+    """{manuscript dir: family} from the manuscript rows of notes/tables/subfindings.tsv."""
     man2fam = {}
     for r in read_rows(SUBFINDINGS_TSV):
         if r.get("kind") == "manuscript":

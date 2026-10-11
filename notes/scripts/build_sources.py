@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write notes/sources.tsv: the LaTeX source surface of each of the 719 listed manuscripts.
+"""Write notes/tables/sources.tsv: the LaTeX source surface of each of the 719 listed manuscripts.
 
 Reads the manuscript trees as text. Runs nothing, parses no PDF, opens no Lean file. The row set is
 the manuscript list parsed from `overview.tex`, not a walk of preprints/: upstream keeps superseded
@@ -75,7 +75,7 @@ def row_for(rec, fam, pdf):
 
 def build():
     # The manuscript list comes straight from overview.tex. It used to come from
-    # notes/subfindings.tsv, which extract_subfindings.py writes later in the same gate pass, so
+    # notes/tables/subfindings.tsv, which extract_subfindings.py writes later in the same gate pass, so
     # row 2 depended on row 5 and no single-pass ordering satisfied the edge.
     _, ov_fams = overview.parse_overview()
     subs = [{"fam": fam, "path": p} for fam, entry in ov_fams.items() for p in entry["tex_paps"]]

@@ -29,19 +29,22 @@ DOCS_DIR = LEAN / "docs"
 # Ledger surface
 NOTES = ROOT / "notes"
 SCRIPTS = NOTES / "scripts"
-LEDGER_TSV = NOTES / "catalog.tsv"
-SOURCES_TSV = NOTES / "sources.tsv"
-LINKS_TSV = NOTES / "links.tsv"
-SUBFINDINGS_TSV = NOTES / "subfindings.tsv"
-ABSTRACTS_TSV = NOTES / "abstracts.tsv"
-DEPS_TSV = NOTES / "formalization-deps.tsv"
-STANDING_TSV = NOTES / "conjecture-standing.tsv"
-TOPICS_TSV = NOTES / "topics.tsv"
+TABLES = NOTES / "tables"
+LEDGER_TSV = TABLES / "catalog.tsv"
+SOURCES_TSV = TABLES / "sources.tsv"
+LINKS_TSV = TABLES / "links.tsv"
+SUBFINDINGS_TSV = TABLES / "subfindings.tsv"
+ABSTRACTS_TSV = TABLES / "abstracts.tsv"
+DEPS_TSV = TABLES / "formalization-deps.tsv"
+STANDING_TSV = TABLES / "conjecture-standing.tsv"
+TOPICS_TSV = TABLES / "topics.tsv"
 INDEX_DIR = NOTES / "index"
 SUMMARIES_DIR = NOTES / "summaries"
 
-# The nine top-level TSVs the proof gate hashes; the gate's snapshot rule is this list
-# plus every file under INDEX_DIR.
+# The eight TSVs the proof gate hashes; the gate's snapshot rule is this list plus every
+# file under INDEX_DIR. The snapshot used to name a ninth, notes/named-results.tsv, which
+# no writer produces — the named-result page is report-fed, not table-fed — so the phantom
+# entry and the 2>/dev/null that hid it are gone together.
 GATE_TSVS = (
     LEDGER_TSV,
     SOURCES_TSV,
@@ -51,7 +54,6 @@ GATE_TSVS = (
     DEPS_TSV,
     STANDING_TSV,
     TOPICS_TSV,
-    NOTES / "named-results.tsv",
 )
 
 

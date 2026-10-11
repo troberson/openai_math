@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Extract notes/links.tsv: the typed-edge inventory of the release.
+"""Extract notes/tables/links.tsv: the typed-edge inventory of the release.
 
 One row per relation type. Every count is computed here, so the command column
 names this script and re-running it reproduces every number in the file.
@@ -31,7 +31,7 @@ superseded edition's bibliography would count its edges twice. The whole-tree co
 superseded-target citation counts are printed in the report, not written to the TSV.
 
 The page check is not here: `notes/links.md` is compared with `render_reports.py`'s render of it by
-`verify_page_sync.py`, which owns that pass. This script writes `notes/links.tsv` and prints the
+`verify_page_sync.py`, which owns that pass. This script writes `notes/tables/links.tsv` and prints the
 report every count in the page comes from; it reads no page, so it is not order-dependent — the
 sync pass used to pull `render_reports` in-process, and that render read this script's own output.
 """
@@ -57,7 +57,7 @@ from catlib.paths import (
 from catlib.promote import key_for, promote
 
 REPO = Path(__file__).resolve().parents[2]
-OUT = REPO / "notes" / "links.tsv"
+OUT = REPO / "notes" / "tables" / "links.tsv"
 
 # The builder's key: the ledger, the page its sync pass compares, the topics vocabulary and the page's
 # template are the tracked reads outside the five hashed trees.
@@ -349,7 +349,7 @@ def main():
         "lean/lakefile.lean",
         "`require ... from git \"url\" @ \"commit\"`",
         len(lake),
-        "each pinned to a 40-char commit; see notes/formalization-deps.tsv",
+        "each pinned to a 40-char commit; see notes/tables/formalization-deps.tsv",
         "A declared pin. No lake run happened here, so no pin is verified buildable.",
     )
     row(
@@ -496,7 +496,7 @@ def main():
     named = [f for f, t in titles.items() if NOUN.search(t)]
     row(
         "named-in-title",
-        "overview.tex `\\resultentry` arg 2 (via notes/catalog.tsv `title`)",
+        "overview.tex `\\resultentry` arg 2 (via notes/tables/catalog.tsv `title`)",
         "title contains conjecture|problem|question|hypothesis",
         len(named),
         f"of {n_families} families",

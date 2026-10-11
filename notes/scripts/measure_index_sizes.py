@@ -13,10 +13,10 @@ Rules stated where they matter:
 - Traces are counted as distinct stems over files: the Mézard–Parisi trace ships as both `.pdf` and
   `.tex`, so 11 files carry 10 traces.
 - Family→config is counted per family as a set, which is why it reads 416 here and 426 in
-  notes/links.tsv, where 7 scope notes link one config twice.
+  notes/tables/links.tsv, where 7 scope notes link one config twice.
 - Manuscript ownership is the path component after `preprints`, never `parts[-2]`.
 - "The whole ledger set" is the five tracked TSVs notes/index-design.md tabulates, named in
-  LEDGER_SET below. The sum over *every* notes/*.tsv is reported separately as `all_tsv_bytes`: it
+  LEDGER_SET below. The sum over *every* notes/tables/*.tsv is reported separately as `all_tsv_bytes`: it
   grew from 296,283 B to 541,463 B when `sources.tsv` and `topics.tsv` were added, so quoting it as
   the ledger set would move a number the page states under a narrower rule.
 - Index table row counts are read from the generated files under `notes/index/`, not derived from
@@ -103,7 +103,7 @@ def population():
     kw_dirs = int(links["manuscript->\\keywords macro"]["count"])
 
     sizes = {}
-    for p in sorted((ROOT / "notes").glob("*.tsv")):
+    for p in sorted((ROOT / "notes" / "tables").glob("*.tsv")):
         n = len([l for l in p.read_text(encoding="utf-8").split("\n") if l.strip()]) - 1
         sizes[p.name] = (p.stat().st_size, n)
 
@@ -227,7 +227,7 @@ def main():
     print(f"  yaml builds-on declarations       {p['builds_on']}")
     print(f"  subfindings B/row                 {p['sf_bpr']:.1f}")
     print(f"  ledger set bytes (5 named TSVs)   {p['ledger_set_bytes']}")
-    print(f"  all notes/*.tsv bytes             {p['all_tsv_bytes']}")
+    print(f"  all notes/tables/*.tsv bytes      {p['all_tsv_bytes']}")
     print(f"  \\keywords share of manuscripts    {p['kw_pct']:.1f}%")
     print("TOTALS")
     print(f"  nodes (excl. {p['lean_files']} .lean files) {p['nodes']}")

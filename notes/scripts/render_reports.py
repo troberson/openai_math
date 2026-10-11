@@ -78,7 +78,7 @@ TPL = ROOT / "notes" / "templates" / "report"
 # consumer of the registry pay that read. The L1 list is the registry's.
 ENV = Environment(loader=FileSystemLoader(str(TPL)), keep_trailing_newline=True,
                   trim_blocks=True, lstrip_blocks=True, autoescape=False)
-TSV = ROOT / "notes" / "sources.tsv"
+TSV = ROOT / "notes" / "tables" / "sources.tsv"
 # One constant per page, written by name in main(): the ownership checker derives a writer's targets
 # from the receiver of its write call, so a write through a loop variable is invisible to it.
 SOURCES_MD = ROOT / "notes" / "sources.md"
@@ -89,7 +89,7 @@ NAMES_MD = ROOT / "notes" / "names.md"
 PROOF_DENSITY_MD = ROOT / "notes" / "proof-density.md"
 INDEX_LINKS_MD = ROOT / "notes" / "index-links.md"
 LINKS_MD = ROOT / "notes" / "links.md"
-LINKS_TSV = ROOT / "notes" / "links.tsv"
+LINKS_TSV = ROOT / "notes" / "tables" / "links.tsv"
 DRIFT_MD = ROOT / "notes" / "dependency-drift.md"
 PATCHES_DIR = ROOT / "lean" / "patches"
 TOOLCHAIN_FILE = ROOT / "lean" / "lean-toolchain"
@@ -602,10 +602,10 @@ def index_full(p: dict[str, Any]) -> dict[str, str]:
         "subfindings bytes per row": f"carries **{sf}** rows at **{p['sf_bpr']:.1f}** B/row",
         "ledger set byte total": f"the whole ledger set is **{setb}** B",
         "ledger set scope sentence": f"the ledger set the **{setb}** B figure covers",
-        "all-TSV byte total": f"every `notes/*.tsv` together totals **{p['all_tsv_bytes']}** B",
-        "added TSV byte figures": f"`notes/sources.tsv` (**{p['sizes']['sources.tsv'][0]}** B over "
+        "all-TSV byte total": f"every `notes/tables/*.tsv` together totals **{p['all_tsv_bytes']}** B",
+        "added TSV byte figures": f"`notes/tables/sources.tsv` (**{p['sizes']['sources.tsv'][0]}** B over "
                                   f"**{p['sizes']['sources.tsv'][1]}** rows) and "
-                                  f"`notes/topics.tsv` (**{p['sizes']['topics.tsv'][0]}** B over "
+                                  f"`notes/tables/topics.tsv` (**{p['sizes']['topics.tsv'][0]}** B over "
                                   f"**{p['sizes']['topics.tsv'][1]}** rows)",
         "builds-on declaration count": f"(**{p['builds_on']}** `builds-on` declarations at "
                                        f"`lean/formalization.yaml:{builds_on_anchor()}`)",
@@ -723,7 +723,7 @@ def index_phrases(p: dict[str, Any]) -> dict[str, str]:
 # phrase raises ValueError here rather than reflowing the page.
 INDEX_SPLIT = {
     "MSC hit count": ["family → MSC code"],
-    "added TSV byte figures": ["`notes/sources.tsv`"],
+    "added TSV byte figures": ["`notes/tables/sources.tsv`"],
     "bib keywords count": ["bibliography entry → `keywords` field **0** over **13,802**"],
     "builds-on declaration count": ["(**30** `builds-on` declarations at"],
     "derivable lean reach": ["config → file (yaml: **189** configs, all **189** of them also "
@@ -772,7 +772,7 @@ def names_population() -> dict[str, Any]:
     """`measure_names.measure()`, plus the figures its report computes in `main()` and never returns.
 
     The page cites four joins the measurement function does not carry: the wider-pattern environment
-    total (from `notes/sources.tsv`), the `main_results` entry and config counts (from
+    total (from `notes/tables/sources.tsv`), the `main_results` entry and config counts (from
     `lean/formalization.yaml`), the 372-family denominator (from `overview.tex`), and the trace-table
     coverage (from the release's trace attribution). `measure_names.py` prints all of them and returns
     none, so the writer computes them here.
@@ -911,7 +911,7 @@ def names_phrases(mp: dict[str, Any]) -> dict[str, str]:
                      f"statement environments carrying an optional title;")
     p["totals b"] = (f"{f(meta['bib_entries'])} `.bib` entries, {f(meta['bib_author_keys'])} "
                      f"distinct author-surname keys")
-    p["sources_env a"] = f"`notes/sources.tsv` reports {f(mp['wide_env'])}"
+    p["sources_env a"] = f"`notes/tables/sources.tsv` reports {f(mp['wide_env'])}"
     p["sources_env b"] = "environments under a wider pattern"
     p["avg_family"] = f"The average family carries {avg} subject names"
     p["citation_no_page"] = f"({f(len(citation))} of them)"
@@ -1109,7 +1109,7 @@ IL_SPLIT = {
                     "canonical count: 746"],
     "prose_superseded": ["The 27 extra targets are directories the upstream merge superseded —",
                          "every one exists on disk, none is listed as a manuscript in "
-                         "`notes/subfindings.tsv`, and all 27"],
+                         "`notes/tables/subfindings.tsv`, and all 27"],
     "prose_indexpage": ["`index-page` 521 targets = 372 family pages + 92 topic",
                         "pages + 17 discipline pages + 40 name pages, and the 40 name pages are "
                         "linked only from the entry"],
@@ -1222,7 +1222,7 @@ def index_links_full(p: dict[str, Any]) -> dict[str, str]:
                           f"{canon['manuscript-dir']} shipped")
     out["prose_superseded"] = (f"The {extra} extra targets are directories the upstream merge "
                                f"superseded — every one exists on disk, none is listed as a "
-                               f"manuscript in `notes/subfindings.tsv`, and all {extra} are "
+                               f"manuscript in `notes/tables/subfindings.tsv`, and all {extra} are "
                                f"reached only from name pages, by {f(s['extra_dir_links'])} links")
     out["line_extra"] = (f"manuscript dirs linked outside the release set  {extra}  on disk "
                          f"{s['extra_dirs_on_disk']}  links {s['extra_dir_links']}")
@@ -1240,7 +1240,7 @@ def index_links_full(p: dict[str, Any]) -> dict[str, str]:
                               f"pages are linked only from the entry point")
     out["prose_latexsource"] = (f"`latex-source` {tg['latex-source']} = the `main_tex` of each of "
                                 f"the {tg['latex-source']} manuscripts, all {tg['latex-source']} "
-                                f"present in `notes/sources.tsv`")
+                                f"present in `notes/tables/sources.tsv`")
     out["prose_notesdoc"] = (f"`notes-doc` {tg['notes-doc']} targets = `notes/names.md` "
                              f"({names_links} links: one from each of the {gp['name pages']} name "
                              f"pages and one from the entry point), the {summaries} "
@@ -1358,7 +1358,7 @@ LINKS_SPLIT = {
 def links_report() -> dict[str, str]:
     """Run notes/scripts/extract_links.py and key its report lines by their leading label.
 
-    A subprocess, not an import: extract_links.py writes notes/links.tsv, and the renderer must
+    A subprocess, not an import: extract_links.py writes notes/tables/links.tsv, and the renderer must
     not become a second writer of a file the ownership manifest attributes to one script. It runs
     with `--check-only`, so the child writes nothing and two renders can run at once.
     """
@@ -1630,7 +1630,7 @@ def links_page(p: dict[str, str]) -> str:
 # notes/dependency-drift.md — the pinned-commit / patch surface
 # =============================================================================
 #
-# Read-only over the page's sources: notes/formalization-deps.tsv, lean/lakefile.lean,
+# Read-only over the page's sources: notes/tables/formalization-deps.tsv, lean/lakefile.lean,
 # lean/patches/*.patch, lean/lean-toolchain, lean/lake-manifest.json, lean/formalization.yaml and the
 # OAI source-file count recorded in notes/formalization-deps.md. Nothing is built and nothing is run.
 #
@@ -1834,7 +1834,7 @@ def drift_full(p: dict[str, Any]) -> dict[str, str]:
     out["t1_row2"] = (f"| Patch files | **{n_patch}**, **{f(p['total_lines'])}** lines, "
                       f"**{f(p['total_hunks'])}** `diff --git` file hunks | `lean/patches/` |")
     out["t1_row3"] = (f"| Declared libraries with **no** patch | **{len(p['nopatch'])}** | "
-                      "`notes/formalization-deps.tsv` |")
+                      "`notes/tables/formalization-deps.tsv` |")
     out["t1_row4"] = (f"| Patches that rewrite the dependency's `lean-toolchain` | "
                       f"**{p['tc']} of {n_patch}** | `lean/patches/*.patch` |")
     out["t1_row5"] = (f"| Distinct toolchain versions the patches migrate **from** | "
@@ -2375,7 +2375,7 @@ def templates_page(p: dict[str, str]) -> str:
 def topics_population(lf: dict[str, str]) -> dict[str, str]:
     """Every derived figure on notes/topics.md, measured from the curated vocabulary.
 
-    notes/topics.tsv is the source of truth and measure_topics.measure() matches its patterns over the
+    notes/tables/topics.tsv is the source of truth and measure_topics.measure() matches its patterns over the
     four texts a family ships, so the 92-row yield table, the coverage line, and both histograms are
     measurements. The reading-pass table stays literal: its reach column mixes bare-stem probes with a
     shipped-pattern probe and with reading prose, and no single rule reproduces it. The MSC/keywords
@@ -2712,7 +2712,7 @@ def subfinding_pairs_full(p: dict[str, Any]) -> dict[str, str]:
     out["sp_b_fp"] = f"{len(fp_probe)} of the {len(probe)} probe hits"
     out["sp_notread"] = (f"{len(multi) - len(pop)} families with two or more manuscripts are not read. "
                          f"The page covers {len(pop)} of the {len(multi)}.")
-    out["sp_rows"] = (f"The {p['comparator_rows']} comparator-link rows in `notes/subfindings.tsv` "
+    out["sp_rows"] = (f"The {p['comparator_rows']} comparator-link rows in `notes/tables/subfindings.tsv` "
                       f"are not paired; only the {p['manuscript_rows']} manuscript rows")
     out["sp_rows2"] = f"only {mss} of those are in this population"
     return out

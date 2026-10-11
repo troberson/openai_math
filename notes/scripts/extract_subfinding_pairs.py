@@ -29,8 +29,8 @@ from typing import Any
 from catlib.paths import ROOT
 from catlib.overview import parse_overview
 
-TSV = ROOT / "notes" / "subfindings.tsv"
-LEDGER = ROOT / "notes" / "catalog.tsv"
+TSV = ROOT / "notes" / "tables" / "subfindings.tsv"
+LEDGER = ROOT / "notes" / "tables" / "catalog.tsv"
 
 # The counts math-el4.4 prints beside each phrase, quoted so a fresh run can be read against them.
 BEAD_COUNTS = {"also prove": 25, "independ": 35, "also establish": 5, "as a consequence": 1}

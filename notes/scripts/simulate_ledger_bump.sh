@@ -8,7 +8,7 @@
 #
 # cp -al shares INODES: a file in the copy IS the file in the repo, so every path a writer will
 # overwrite must be unlinked and re-copied first, or the writer edits the real tree through the
-# link. The unlink-and-recopy set is exactly: the edited file, every notes/*.tsv, the generated
+# link. The unlink-and-recopy set is exactly: the edited file, every notes/tables/*.tsv, the generated
 # report pages, and the whole generated notes/index tree. preprints/, lean/, notes/summaries/ and
 # notes/templates/ stay hardlinked (read-only here), which is what makes the copy cheap.
 #
@@ -44,7 +44,7 @@ writers() {  # writers <dir> <tag> — the writers whose output the demo claims 
   # is copied real, and nothing on this path reads it.
   #
   # The chain runs a second time because the TSVs form a chain, not a DAG that converges in one
-  # pass: build_sources.py takes its row set from notes/subfindings.tsv, which
+  # pass: build_sources.py takes its row set from notes/tables/subfindings.tsv, which
   # extract_subfindings.py writes AFTER it in gate order. One pass leaves sources.tsv one
   # generation behind the edited overview.tex, and build_index.py then dies with
   # KeyError on the new manuscript directory. The repo sits at a fixed point, so this is
@@ -66,10 +66,10 @@ probe() {  # probe <dir> <tag> — every count the demo claims moves
   grep -E "^(families|manuscripts|formalized|challenges|main_results|scope notes|tier)" \
     "$R/bump_${tag}_build_catalog.txt"
   awk -F'\t' '$1=="342"{printf "ledger 342: paps=%s paps_form=%s tier=%s chal=%s mainres=%s\n", $4,$5,$6,$7,$8}' \
-    "$d/notes/catalog.tsv"
+    "$d/notes/tables/catalog.tsv"
   printf "subfindings manuscript rows: %s\n" \
-    "$(awk -F'\t' 'NR>1 && $1=="manuscript"' "$d/notes/subfindings.tsv" | wc -l)"
-  printf "sources.tsv rows: %s\n" "$(( $(wc -l < "$d/notes/sources.tsv") - 1 ))"
+    "$(awk -F'\t' 'NR>1 && $1=="manuscript"' "$d/notes/tables/subfindings.tsv" | wc -l)"
+  printf "sources.tsv rows: %s\n" "$(( $(wc -l < "$d/notes/tables/sources.tsv") - 1 ))"
   printf "index pages: %s\n" "$(find "$d/notes/index" -type f 2>/dev/null | wc -l)"
 }
 
@@ -77,13 +77,13 @@ rm -rf "$COPY"
 mkdir -p "$COPY"
 cp -al overview.tex CONTENTS.md README.md notes lean preprints reasoning_traces "$COPY"/
 rm -f "$COPY/overview.tex" && cp overview.tex "$COPY/overview.tex"
-for f in notes/*.tsv $PAGES; do rm -f "$COPY/$f" && cp "$f" "$COPY/$f"; done
+for f in notes/tables/*.tsv $PAGES; do rm -f "$COPY/$f" && cp "$f" "$COPY/$f"; done
 rm -rf "$COPY/notes/index" && cp -a notes/index "$COPY/notes/index"
 rm -rf "$COPY/notes/scripts/__pycache__" "$COPY/notes/scripts/catlib/__pycache__"
 # Hardlink guard: a writer writes through a shared inode, so any copy file with links > 1 is the repo's
 # file. Abort before the first writer runs rather than editing the real tree.
 shared=""
-for f in "$COPY/overview.tex" "$COPY"/notes/*.tsv; do
+for f in "$COPY/overview.tex" "$COPY"/notes/tables/*.tsv; do
   [ "$(stat -c %h "$f")" = "1" ] || shared="$shared ${f#$COPY/}"
 done
 for p in $PAGES; do
@@ -93,9 +93,9 @@ if [ -n "$shared" ]; then
   echo "ABORT: copy files still share an inode with the repo:$shared" >&2
   exit 3
 fi
-echo "hardlink guard: overview.tex, notes/*.tsv and all $(echo $PAGES | wc -w) pages are links=1"
+echo "hardlink guard: overview.tex, notes/tables/*.tsv and all $(echo $PAGES | wc -w) pages are links=1"
 echo "=== inode sharing (1 = unlinked real file, 2 = shared with the repo) ==="
-for f in "$COPY/overview.tex" "$COPY/notes/catalog.tsv" "$COPY/notes/README.md" \
+for f in "$COPY/overview.tex" "$COPY/notes/tables/catalog.tsv" "$COPY/notes/README.md" \
          "$COPY/notes/index/differential-geometry/342-donaldsons-tamed-to-compatible-conjecture.md" \
          "$COPY/preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/paper.pdf"; do
   printf '%-84s links=%s\n' "${f#$REPO/}" "$(stat -c %h "$f")"

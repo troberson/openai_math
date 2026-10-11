@@ -137,7 +137,7 @@ def count_phrases(m):
     Passes A and B check quotations and markers and are silent about numbers, so a page whose counts
     are prose drifts silently. Each phrase is the exact string the page must contain, compared with
     whitespace collapsed on both sides. The pre-merge reproduction in the floor paragraph is a probe
-    (it points the extractor at a historical notes/sources.tsv), not a shipped measurement, so its
+    (it points the extractor at a historical notes/tables/sources.tsv), not a shipped measurement, so its
     figures are deliberately absent here.
     """
     n, fam = len(m["man"]), m["families"]
@@ -298,7 +298,7 @@ def mutants(text, table, counts):
     record("quotation fabricated", fab, "not in overview.tex")
 
     repoint = text[:mark_start] + "[S31]" + text[mark_end:]
-    record("quotation repointed at a file that lacks it", repoint, "not in notes/abstracts.tsv")
+    record("quotation repointed at a file that lacks it", repoint, "not in notes/tables/abstracts.tsv")
 
     nomark = text[:mark_start] + text[mark_end:]
     record("marker deleted", nomark, "no [S#] marker")

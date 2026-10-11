@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify notes/subfindings.tsv against the files it was extracted from. Writes nothing.
+"""Verify notes/tables/subfindings.tsv against the files it was extracted from. Writes nothing.
 
 The TSV carries two row kinds in one rectangular table. Four passes read the same rows:
 
@@ -36,8 +36,8 @@ import extract_subfindings as ex
 from catlib import yaml as Y
 
 ROOT = bc.ROOT
-TSV = ROOT / "notes" / "subfindings.tsv"
-LEDGER = ROOT / "notes" / "catalog.tsv"
+TSV = ROOT / "notes" / "tables" / "subfindings.tsv"
+LEDGER = ROOT / "notes" / "tables" / "catalog.tsv"
 
 
 def shipped():

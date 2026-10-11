@@ -4,8 +4,8 @@ r"""Report the T0 cross-family chains and the 27 two-manuscript second-pass fami
 Report-only: writes nothing, runs nothing. Lean is never invoked, so nothing here checks a proof.
 
 Population rule (all three conditions are needed to reproduce the 27):
-  1. tier == T0 in notes/catalog.tsv,
-  2. paps == 2 in notes/catalog.tsv,
+  1. tier == T0 in notes/tables/catalog.tsv,
+  2. paps == 2 in notes/tables/catalog.tsv,
   3. the family id appears in the second-pass reading sections of notes/t0-triage.md
      (the "Second pass: the remaining 93 families" heading through the line before
      "What the triage shows").
@@ -54,7 +54,7 @@ def second_pass_ids():
 
 
 def manuscripts():
-    """fam -> ordered list of manuscript rows from notes/subfindings.tsv."""
+    """fam -> ordered list of manuscript rows from notes/tables/subfindings.tsv."""
     out = {}
     for r in read_rows(SUBFINDINGS_TSV):
         if r["kind"] == "manuscript":

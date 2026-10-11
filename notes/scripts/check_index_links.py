@@ -202,7 +202,7 @@ MUTANTS = [
 # so these must resolve.
 CONTROLS = [
     ("README.md", "../index-design.md"),
-    ("README.md", "../topics.tsv"),
+    ("README.md", "../tables/topics.tsv"),
     ("README.md", "names/"),
     ("names/cauchy.md", "../names.tsv"),
     ("names/cauchy.md", "../../../lean/docs/003.md"),
@@ -337,7 +337,7 @@ def measure() -> dict[str, Any]:
                      for e in Y.main_results_entries())
     import csv
     ledger = {}
-    with open(ROOT / "notes" / "catalog.tsv", newline="", encoding="utf-8") as fh:
+    with open(ROOT / "notes" / "tables" / "catalog.tsv", newline="", encoding="utf-8") as fh:
         for r in csv.DictReader(fh, delimiter="\t"):
             ledger[r["fam"]] = r
     paps = sum(int(r["paps"]) for r in ledger.values())

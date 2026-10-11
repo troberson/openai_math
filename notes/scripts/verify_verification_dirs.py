@@ -9,7 +9,7 @@ A. "## Every bundle and its own entry point" — the 30-bundle population, the R
 B. "## What the 348 bundle checks, and what it omits" — the family-348 reading.
 
 1. Ledger claims. The page's counts of verification dirs, `covmd`, `inputs`, and family 348's
-   `verification` value are recomputed from notes/catalog.tsv.
+   `verification` value are recomputed from notes/tables/catalog.tsv.
 2. Citations. Every `path:line` anchor must resolve. A fenced block is attributed to the nearest
    preceding anchor and every block line must match that file at consecutive line numbers. A quotation
    in *"..."* form is attributed to an anchor on the same line when one follows it (a table row: the

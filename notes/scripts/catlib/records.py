@@ -10,7 +10,7 @@ Records live under `.qwen/cache/records/<key>/`. The `.qwen/*` rule in `.gitigno
 tree untracked, so a cache write never touches the tracked tree and `git status` stays clean.
 
 Records are megabytes, text is not: the store carries derived counts keyed by manuscript directory,
-never raw `.tex`. `preprints/` is 632 MB and `lean/OAI/` is 1.8 GB; the eight top-level `notes/*.tsv`
+never raw `.tex`. `preprints/` is 632 MB and `lean/OAI/` is 1.8 GB; the eight `notes/tables/*.tsv`
 total 630,606 bytes. A record store that carried text would be the corpus with extra steps.
 
 The five hashed paths are the same list `verify_fleet_design.py` carries. The checker keeps its own
@@ -55,7 +55,7 @@ def key(source: str, l1: tuple[str, ...] = (), args: tuple[str, ...] = ()) -> st
 
     `source` is the consumer's source text, so editing the consumer invalidates its records.
     `l1` is the text of the tracked files it reads that are not part of the five hashed trees
-    (`notes/catalog.tsv` is the common case). `args` is the command line, so a `--tsv` run and a
+    (`notes/tables/catalog.tsv` is the common case). `args` is the command line, so a `--tsv` run and a
     plain run do not share a record.
     """
     parts = tree_digests() + [sha(source)] + [sha(t) for t in l1] + list(args)

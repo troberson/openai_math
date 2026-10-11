@@ -6,7 +6,7 @@ are never invoked here, so no verdict in the page can mean "a proof was checked"
 
 1. Population. The 28-family population, its tier split, its ledger sums, the main_results entry and
    config counts, the per-family linked-config / entry / gap counts, the carrier-typed count, and the
-   stub and sorry counts are all recomputed from notes/catalog.tsv, overview.tex,
+   stub and sorry counts are all recomputed from notes/tables/catalog.tsv, overview.tex,
    lean/formalization.yaml, lean/docs/, and lean/ComparatorChallenges/. Every count phrase the page
    asserts is matched against that recomputation.
 2. Anchors. Every backticked `path:line` anchor must resolve inside its file.

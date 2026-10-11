@@ -9,7 +9,7 @@ Checks, in order:
   header       the block's overview.tex line is that family's \resultentry line; n is its manuscript
                count; the tier matches the generated ledger.
   quotes       every quoted clause and every quoted title appears verbatim on the cited line.
-  ids          every [fam:seq] resolves in notes/subfindings.tsv to that family and that title.
+  ids          every [fam:seq] resolves in notes/tables/subfindings.tsv to that family and that title.
   coverage     claimed and unclaimed are disjoint and cover the family's full seq set exactly.
   targets      the claimed set equals the set of ids used as pair targets.
   counts       the Summary table's numbers, the probe false-positive list, and the closing

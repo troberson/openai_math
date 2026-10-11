@@ -7,7 +7,7 @@ what that text is relative to the manuscripts: is it the manuscript abstract, an
 or a rewrite? A plain run writes nothing and exits 1 when a reconciliation gate fails.
 
 Three units, stated because they answer different questions:
-  * manuscript-level: one comparison per manuscript dir listed in `notes/sources.tsv` (719 as of the
+  * manuscript-level: one comparison per manuscript dir listed in `notes/tables/sources.tsv` (719 as of the
     2026-10-07 upstream merge), overview text vs that manuscript.
   * family-level: 372 comparisons, the best-matching manuscript in the family. A family carries up
     to 14 manuscripts and its overview abstract is a synthesis of them, so a low manuscript-level
@@ -22,7 +22,7 @@ a macro leaves a space where it sat, so a macro adjacent to punctuation ("...con
 cannot read identical — it reads abridged, which is the honest outcome for a normalizer that deletes
 text.
 
-`--tsv` writes `notes/abstracts.tsv` (one row per family) after the gates pass. `--mutant` corrupts
+`--tsv` writes `notes/tables/abstracts.tsv` (one row per family) after the gates pass. `--mutant` corrupts
 the measured population and fails if a gate goes uncaught.
 """
 
@@ -41,9 +41,9 @@ from catlib.promote import key_for, promote
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PRE = ROOT / "preprints"
-LEDGER = ROOT / "notes" / "catalog.tsv"
-SOURCES = ROOT / "notes" / "sources.tsv"
-TSV_OUT = ROOT / "notes" / "abstracts.tsv"
+LEDGER = ROOT / "notes" / "tables" / "catalog.tsv"
+SOURCES = ROOT / "notes" / "tables" / "sources.tsv"
+TSV_OUT = ROOT / "notes" / "tables" / "abstracts.tsv"
 
 # The builder's key: the ledger and the sources table are the tracked reads outside the trees.
 KEY = key_for("compare_abstracts.py", tuple(sys.argv[1:]))
@@ -73,7 +73,7 @@ _CACHE: dict = {}
 def manuscript_abstract(d):
     """-> [(relpath, normalized text)] for one preprint dir.
 
-    `notes/sources.tsv`'s `abstract` column is a per-dir flag, not a count, so it reads 1 for all
+    `notes/tables/sources.tsv`'s `abstract` column is a per-dir flag, not a count, so it reads 1 for all
     719 listed dirs while the corpus ships 722 abstract environments — 3 dirs carry two. A dir
     yielding 0 is a reconciliation failure; a dir yielding 2+ is reported, and the manuscript-level
     pass compares the overview text with that dir's best-matching abstract. Cached because the
@@ -256,10 +256,10 @@ def check(m):
     if m["families"] != 372:
         problems.append(f"families {m['families']} != 372")
     if m["manuscripts"] != m["sources_rows"]:
-        problems.append(f"manuscripts {m['manuscripts']} != notes/sources.tsv rows {m['sources_rows']}")
+        problems.append(f"manuscripts {m['manuscripts']} != notes/tables/sources.tsv rows {m['sources_rows']}")
     if m["dirs_with_abstract"] != m["manuscripts"]:
         problems.append(f"dirs with an abstract {m['dirs_with_abstract']} != manuscripts "
-                        f"{m['manuscripts']} (notes/sources.tsv flags 1 for every dir)")
+                        f"{m['manuscripts']} (notes/tables/sources.tsv flags 1 for every dir)")
     if len(m["empty_dirs"]):
         problems.append(f"{len(m['empty_dirs'])} manuscript dirs carry no abstract environment: "
                         f"{m['empty_dirs'][:5]}")
@@ -328,7 +328,7 @@ TSV_COLUMNS = ["fam", "n_man", "best_ratio", "relation", "best_dir", "best_file"
 
 
 def write_tsv(m):
-    """notes/abstracts.tsv: one row per family, the per-family record the findings doc cites.
+    """notes/tables/abstracts.tsv: one row per family, the per-family record the findings doc cites.
 
     `best_ratio`/`relation` are the family-level best match. `ov_shapes`/`ms_shapes` are the ledger's
     own rules applied to the overview text and to the union of the family's manuscript abstracts;

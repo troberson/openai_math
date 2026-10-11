@@ -2,7 +2,7 @@
 """Measure proof density over the 719 manuscripts and test whether it discriminates.
 
 Report-only: writes nothing. Every number it prints is derived here, from
-notes/sources.tsv (per-manuscript counts) joined to notes/catalog.tsv (tier and
+notes/tables/sources.tsv (per-manuscript counts) joined to notes/tables/catalog.tsv (tier and
 claim-shape tags) by family number.
 
 Pre-registered discrimination rule (fixed before the statistics were run, per the
@@ -28,8 +28,8 @@ import pathlib
 import sys
 
 REPO = pathlib.Path(__file__).resolve().parents[2]
-SOURCES = REPO / "notes" / "sources.tsv"
-LEDGER = REPO / "notes" / "catalog.tsv"
+SOURCES = REPO / "notes" / "tables" / "sources.tsv"
+LEDGER = REPO / "notes" / "tables" / "catalog.tsv"
 
 # Totals recorded in beads math-hqd.3 and in notes/sources.md, re-measured 2026-10-09 after the
 # upstream merge (719 manuscripts / 20,341 proofs / 21,288 statements / tiers 136-106-0-130).

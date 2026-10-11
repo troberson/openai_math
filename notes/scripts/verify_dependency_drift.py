@@ -12,7 +12,7 @@ Report-only; writes nothing. Five passes:
    elision and is exempt; so is anything path-shaped.
 4. Counts, table, name lists. Every number the page quotes is re-derived from the files —
    declarations and arrays from `lean/lakefile.lean`, hunks and toolchain rewrites from
-   `lean/patches/`, imports and patch lines from `notes/formalization-deps.tsv` — and must
+   `lean/patches/`, imports and patch lines from `notes/tables/formalization-deps.tsv` — and must
    appear in the page. The patch-size table must equal the TSV row by row, and every name
    list the page prints must equal the computed set.
 5. Sync. The page is compared with notes/scripts/render_reports.py's render of it, so prose that
@@ -38,7 +38,7 @@ from catlib.paths import LAKEFILE, LAKE_MANIFEST as MANIFEST
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PAGE = ROOT / "notes" / "dependency-drift.md"
-TSV = ROOT / "notes" / "formalization-deps.tsv"
+TSV = ROOT / "notes" / "tables" / "formalization-deps.tsv"
 PATCHDIR = ROOT / "lean" / "patches"
 TOOLCHAIN = ROOT / "lean" / "lean-toolchain"
 DEPSMD = ROOT / "notes" / "formalization-deps.md"
@@ -489,8 +489,8 @@ MUTANTS = {
         "| orbicurve-cores | **0** | 695 |\n", "", 1),
     # Prose no count phrase reads: the deps-record row count in the opening sources sentence.
     # Only the render diff can see it.
-    "prose row count": lambda t: t.replace("`notes/formalization-deps.tsv` (31 rows, 8 fields)",
-                                            "`notes/formalization-deps.tsv` (32 rows, 8 fields)", 1),
+    "prose row count": lambda t: t.replace("`notes/tables/formalization-deps.tsv` (31 rows, 8 fields)",
+                                            "`notes/tables/formalization-deps.tsv` (32 rows, 8 fields)", 1),
 }
 
 

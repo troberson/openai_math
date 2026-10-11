@@ -79,7 +79,9 @@ def layer(path: str) -> str:
         return "generated"
     rest = path[len("notes/"):]
     if rest.endswith(".tsv"):
-        return "hand-authored" if rest in HAND else "generated"
+        # The probe records carry both the pre-move `notes/topics.tsv` and the post-move
+        # `notes/tables/topics.tsv`, so the hand-authored test is on the basename.
+        return "hand-authored" if rest.split("/")[-1] in HAND else "generated"
     return "page"
 
 
@@ -141,7 +143,7 @@ def population() -> Pop:
     ignored = [l for l in sh("git", "status", "--porcelain", "--ignored=matching", "--",
                              "preprints", "lean", "overview.tex", "CONTENTS.md",
                              "reasoning_traces").splitlines() if l.strip()]
-    tsvs = sorted((ROOT / "notes").glob("*.tsv"))
+    tsvs = sorted((ROOT / "notes" / "tables").glob("*.tsv"))
     tsv_bytes = sum(len(p.read_bytes()) for p in tsvs)
     du: dict[str, int] = {}
     for name, rel in (("preprints", "preprints"), ("oai", "lean/OAI"), ("index", "notes/index")):
@@ -357,7 +359,7 @@ def main(argv: list[str]) -> int:
           f"{pop['modules']} catlib modules")
     print(f"sync pass: {pop['sync']} scripts ({pop['sync_verify']} verify_, {pop['sync_other']} not)")
     print(f"tree digests: {pop['digests']}  ignored lines: {pop['ignored']}")
-    print(f"notes/*.tsv: {pop['tsv_count']} files, {pop['tsv_bytes']} bytes")
+    print(f"notes/tables/*.tsv: {pop['tsv_count']} files, {pop['tsv_bytes']} bytes")
     print(f"gate rows: {pop['gate_rows']}  set sites: {len(pop['set_sites'])} "
           f"({', '.join(pop['set_sites'])})  env hits: {pop['env_hits']}")
     print(f"purity population: {len(pop['purity'])} scripts")

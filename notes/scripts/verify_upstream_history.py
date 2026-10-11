@@ -20,7 +20,7 @@ What each check measures, and the rule behind it:
 
 Run with --mutant to corrupt one real claim per form the page uses and prove each fires.
 
-What stays in this file, deliberately: the git reads (`git show <rev>:notes/catalog.tsv`,
+What stays in this file, deliberately: the git reads (`git show <rev>:notes/tables/catalog.tsv`,
 `:lean/formalization.yaml`, `:overview.tex`, `ls-tree`) — this checker is the only one that
 measures a **revision**, and the package reads disk; the page grammar (ANCHOR, QUOTE, LINK,
 SLUG), which is this page's own contract, not a corpus-wide one; and the needle list, whose
@@ -99,7 +99,7 @@ def overview_text(text):
 
 def ledger(rev=None):
     if rev:
-        return read_rows_from_text(git("show", f"{rev}:notes/catalog.tsv"))
+        return read_rows_from_text(git("show", f"{rev}:notes/tables/catalog.tsv"))
     return read_ledger()
 
 

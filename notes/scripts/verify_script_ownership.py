@@ -41,6 +41,7 @@ TPL_DIR = NOTES / "templates"
 REPORT_TPL_DIR = TPL_DIR / "report"
 INDEX_DIR = NOTES / "index"
 PROBE_DIR = NOTES / "probe"
+TABLES_DIR = NOTES / "tables"
 SLOT_MARK = "{{ "
 # The index-tree templates whose pages sit in a directory named for them; family pages sit in the
 # 17 discipline directories, and the entry point is a single file.
@@ -48,7 +49,7 @@ INDEX_PAGE_DIRS = {"discipline.md.j2": "disciplines", "name.md.j2": "names", "to
 INDEX_NON_FAMILY = {"disciplines", "names", "topics", "edges"}
 
 # The page's hand-authored tables, by rule rather than by generator.
-HAND_AUTHORED_TSVS = {"notes/topics.tsv", "notes/conjecture-standing.tsv"}
+HAND_AUTHORED_TSVS = {"notes/tables/topics.tsv", "notes/tables/conjecture-standing.tsv"}
 
 # The self-test entry points, whose page writes are a mutate-and-restore rather than ownership.
 SELFTEST_DEF = re.compile(r"^def (?:mutants?|mutant_test|selftest)\(", re.M)
@@ -59,10 +60,40 @@ def script_names():
 
 
 def path_constants():
-    """The notes/-rooted path constants the shared package defines: name -> repo-relative path."""
+    """The notes/-rooted path constants the shared package defines: name -> repo-relative path.
+
+    The chain is two levels deep now: `TABLES = NOTES / "tables"` and then
+    `SOURCES_TSV = TABLES / "sources.tsv"`, so a rule that reads only `NAME = NOTES / "x"` loses the
+    eight TSV constants and reports a writer that aliases them as a writer of nothing. Resolve the
+    base identifier recursively, keeping only paths that start at `notes/`.
+    """
     src = read_text(SCRIPTS / "catlib" / "paths.py")
-    return {n: f"notes/{f}"
-            for n, f in re.findall(r'^(\w+)\s*=\s*NOTES\s*/\s*"([^"]+)"', src, re.M)}
+    decls = {n: (base, re.findall(r'"([^"]+)"', parts))
+            for n, base, parts in re.findall(
+                r'^(\w+)\s*=\s*(\w+)\s*/\s*((?:"[^"]+"\s*/\s*)*"[^"]+")', src, re.M)}
+    out: dict[str, str] = {}
+
+    def resolve(name: str, seen: set[str]) -> str | None:
+        if name in out:
+            return out[name]
+        if name in seen or name not in decls:
+            return None
+        base, quoted = decls[name]
+        if base == "ROOT":
+            if quoted[0] != "notes":
+                return None
+            path = "/".join(quoted)
+        else:
+            pre = resolve(base, seen | {name})
+            if pre is None:
+                return None
+            path = pre + "/" + "/".join(quoted)
+        out[name] = path
+        return path
+
+    for name in decls:
+        resolve(name, set())
+    return {n: p for n, p in out.items() if p.startswith("notes")}
 
 
 def notes_const(src: str, name: str) -> str | None:
@@ -125,7 +156,7 @@ def writer_targets(src: str) -> list[str]:
             if base:
                 targets.add(base)
     for const in re.findall(r'\b\w+\.write_\w+\(\s*([A-Za-z_]\w*)\b', src):
-        # The script may define the constant itself (`OUT = ROOT / "notes" / "catalog.tsv"`), alias
+        # The script may define the constant itself (`OUT = ROOT / "notes" / "tables" / "catalog.tsv"`), alias
         # the package constant (`OUT = SOURCES_TSV`), or name a package constant directly.
         direct = notes_const(src, const)
         if direct:
@@ -387,21 +418,22 @@ def check(text):
     templates = [f for f in files if "templates" in f.parts]
     uphist = [f for f in files if "upstream_history" in f.parts]
     probe = [f for f in files if "probe" in f.parts]
+    tables = [f for f in files if "tables" in f.parts]
     top = [f for f in files if f.parent == NOTES]
-    owned = set(index) | set(summaries) | set(templates) | set(uphist) | set(probe) | set(top)
+    owned = set(index) | set(summaries) | set(templates) | set(uphist) | set(probe) | set(tables) | set(top)
     for f in files:
         if f not in owned:
             p.append(f"file under notes/ owned by no rule: {f.relative_to(ROOT)}")
-    top_tsv = sorted(f.name for f in top if f.suffix == ".tsv")
-    gen_tsv = sorted(n for n in top_tsv if f"notes/{n}" in set(derived.values()))
-    hand_tsv = sorted(n for n in top_tsv if f"notes/{n}" not in set(derived.values()))
-    if sorted(f"notes/{n}" for n in hand_tsv) != sorted(HAND_AUTHORED_TSVS):
+    tables_tsv = sorted(f.name for f in tables if f.suffix == ".tsv")
+    gen_tsv = sorted(n for n in tables_tsv if f"notes/tables/{n}" in set(derived.values()))
+    hand_tsv = sorted(n for n in tables_tsv if f"notes/tables/{n}" not in set(derived.values()))
+    if hand_tsv != sorted(n.split("/")[-1] for n in HAND_AUTHORED_TSVS):
         p.append(
-            f"hand-authored top-level TSVs: {hand_tsv}, page lists "
+            f"hand-authored tables TSVs: {hand_tsv}, page lists "
             f"{sorted(n.split('/')[-1] for n in HAND_AUTHORED_TSVS)}"
         )
     if len(gen_tsv) != 6:
-        p.append(f"generated top-level TSVs: {len(gen_tsv)}, page says 6")
+        p.append(f"generated tables TSVs: {len(gen_tsv)}, page says 6")
     if f"**{len(gen_tsv)}** generated, **{len(hand_tsv)}** hand-authored" not in text:
         p.append(f"tsv census cell does not read '**{len(gen_tsv)}** generated, **{len(hand_tsv)}** hand-authored'")
 
@@ -421,7 +453,7 @@ def check(text):
         "notes/templates/": len(templates),
         "notes/upstream_history/": len(uphist),
         "notes/probe/": len(probe),
-        "notes/*.tsv": len(top_tsv),
+        "notes/tables/*.tsv": len(tables_tsv),
         "notes/*.md": len(top_md),
         "notes/": len(files),
     }
@@ -522,8 +554,8 @@ def mutants():
     original = read_text(PAGE)
     n = len(script_names())
     cases = [
-        ("writer target altered", original.replace("| `build_catalog.py` | `notes/catalog.tsv` |", "| `build_catalog.py` | `notes/catalog-x.tsv` |"), "page says 'notes/catalog-x.tsv'"),
-        ("writer row deleted", original.replace("| `extract_links.py` | `notes/links.tsv` | single run; cached bytes == promoted bytes under the key | `notes/links.md` |\n", ""), "writer extract_links.py: page says None"),
+        ("writer target altered", original.replace("| `build_catalog.py` | `notes/tables/catalog.tsv` |", "| `build_catalog.py` | `notes/catalog-x.tsv` |"), "page says 'notes/catalog-x.tsv'"),
+        ("writer row deleted", original.replace("| `extract_links.py` | `notes/tables/links.tsv` | single run; cached bytes == promoted bytes under the key | `notes/links.md` |\n", ""), "writer extract_links.py: page says None"),
         ("hand-authored TSV claimed as generated", original.replace("**6** generated, **2** hand-authored", "**7** generated, **1** hand-authored"), "tsv census cell"),
         ("writer count altered", original.replace(f"**10** writers over **{n}** scripts", f"**9** writers over **{n}** scripts"), "writer split sentence"),
         ("index file count altered", original.replace("| `notes/index/` | **1,049** |", "| `notes/index/` | **1,050** |"), "census row notes/index/"),

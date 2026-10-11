@@ -16,7 +16,7 @@ families with at least one hit; per-layer counts are reported separately because
 path hit and an abstract hit are not the same kind of evidence — the path layer is
 the release's own filing choice, the abstract layer is the release's own prose.
 
-Terms are curated in notes/topics.tsv, not derived: the release ships no topic
+Terms are curated in notes/tables/topics.tsv, not derived: the release ships no topic
 vocabulary (0 MSC codes over 8,206 files, 0 bib keywords fields over 12,876 entries,
 \\keywords in 12 of 719 manuscript dirs), so there is nothing to derive a term from
 and nothing to validate a derived term against. The TSV is the source of truth — the
@@ -56,7 +56,7 @@ TRIPLE = re.compile(
     r"comparator_config:\s*ComparatorChallenges/([A-Za-z0-9_]+)\.json\s*\n"
     r"\s*declaration:\s*(\S+)\s*\n\s*file:\s*(\S+)")
 
-# Curated vocabulary lives in notes/topics.tsv, one row per term: the term, its
+# Curated vocabulary lives in notes/tables/topics.tsv, one row per term: the term, its
 # pattern, the counts the row records as evidence, a status, and the reading verdict.
 # Patterns are case-insensitive and match a stem, not a whole word, so "manifold"
 # reaches "manifolds" and "ergodic" reaches "ergodicity". A term with no hit is
@@ -64,7 +64,7 @@ TRIPLE = re.compile(
 # about the corpus, not a defect. Run --check to prove the recorded counts still
 # match the corpus; a row whose counts drifted is a stale row, not a rounding
 # difference, and --check exits non-zero so a generator can fail on it.
-TSV = ROOT / "notes" / "topics.tsv"
+TSV = ROOT / "notes" / "tables" / "topics.tsv"
 
 
 def load_vocab(path=TSV):

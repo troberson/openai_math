@@ -29,7 +29,7 @@ Rules this generator encodes, all of them stated in notes/index-design.md:
   separately.
 - **Page filenames are a mechanical slug of the title**, not the hand-shortened names used under
   notes/summaries/. Index pages pair with summary pages by family number, never by filename.
-- **Topics come from the curated vocabulary at `notes/topics.tsv`**, measured by
+- **Topics come from the curated vocabulary at `notes/tables/topics.tsv`**, measured by
   measure_topics.py, never derived here. A topic is multi-label — a family carries zero or more —
   so it is an added label, not a partition: the 17 catalog disciplines stay the partition.
 - **Names come from measure_names.py, and only subject names get a page.** A name is a subject
@@ -71,8 +71,8 @@ from catlib.paths import (
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 IDX = ROOT / "notes" / "index"
-LEDGER = ROOT / "notes" / "catalog.tsv"
-SRC = ROOT / "notes" / "sources.tsv"
+LEDGER = ROOT / "notes" / "tables" / "catalog.tsv"
+SRC = ROOT / "notes" / "tables" / "sources.tsv"
 # The builder's L1, read from the audit-hook open record: the three ledger TSVs and the page
 # skeletons, all outside the five hashed trees. The pages it writes are its own output, not L1.
 KEY = key_for("build_index.py", tuple(sys.argv[1:]))
@@ -141,7 +141,7 @@ def base(path):
 
 
 def citation_edges(dir2fam, report):
-    """manuscript -> corpus manuscript, the rule recorded in notes/links.tsv.
+    """manuscript -> corpus manuscript, the rule recorded in notes/tables/links.tsv.
 
     A `.bib` entry that carries the release marker `OpenAI Math Release` and an `\\href` whose
     `/preprints/<dir>/<file>.pdf` target exists on disk. Deduplicated to a set of dir pairs.
@@ -609,7 +609,7 @@ def main():
          "One row per published reasoning trace and the family README.md attributes it to."),
         ("`topics-rendered.tsv`", topic_table_rows, "term",
          "One row per curated vocabulary term: its pattern, its yield, its yield by layer, and "
-         "its page. The patterns live in `notes/topics.tsv`; this table is the measured copy."),
+         "its page. The patterns live in `notes/tables/topics.tsv`; this table is the measured copy."),
         ("`names.tsv`", name_table_rows, "name",
          "One row per measured name — subject or citation-only — with its layer counts, prose "
          "counts, surface spellings, and its page (empty for a citation-only name)."),
@@ -736,7 +736,7 @@ def main():
           f"negative {len([r for r in topic_rows if not r['families']])}  "
           f"max {max(topic_rows, key=lambda r: len(r['families']))['term']} "
           f"{max(len(r['families']) for r in topic_rows)}  "
-          f"drift vs notes/topics.tsv {len(drift)} {drift[:5]}")
+          f"drift vs notes/tables/topics.tsv {len(drift)} {drift[:5]}")
     ne = edges["edges/family-name.tsv"]
     print(f"names               {len(name_rows)} measured  subject {len(subject_rows)} "
           f"(pages {len(name_pages)})  citation-only {len(citation_rows)}  "
