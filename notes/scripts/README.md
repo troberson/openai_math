@@ -121,7 +121,7 @@ baseline. A row must spawn no writer, so the render children (`build_index.py`,
 `extract_links.py`) run with `--check-only`. `gate_driver.sh` runs the list once, snapshots the md5 of
 every generated artifact and `git status` raw, and prints the `verify_cache_promotion.py` row, whose
 key is computed from the current `git rev-parse HEAD:<path>` tree digests. Measured 2026-10-11:
-**374.1** s of driver wall over **994.4** s of row time, against **461.4** s when the read-only rows
+**351.1** s of driver wall over **919.4** s of row time, against **461.4** s when the read-only rows
 had to wait for the serial chain to finish.
 
 | Script | Report feeds | Gate |

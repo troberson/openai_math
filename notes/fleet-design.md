@@ -295,27 +295,28 @@ key names it. The catch is the honest cost of the single run.
 | B | **Realized by `math-o3a.5.2`**: run the 56-row read-only block in a bounded pool (`xargs -P 8`), the writer block serial, printing in the canonical order of the list | pass 928 s → 431 s (497 s saved, 2.15x); the pooled report diffed against the serial report with wall-time tokens normalized is 0 bytes | none for checkers (they write nothing); writers stay in the dependency chain. The catch: the block is not read-only until the render children run with `--check-only` — two `build_index.py` children sharing the staging root collided in the first pooled run |
 | C | **Realized by `math-o3a.4`**: memoise the corpus read as a digest-keyed record store (`catlib/records.py`) rather than as a memoised `read_text` | `build_sources.py` 39,083 → 65 opens, rchar 641.3 → 6.5 MB, wall 3.21 → 0.11 s; `render_reports.py` 152,680 → 75,394 opens, repeats 140,364 → 63,075, wall 231.58 → 138.99 s | none — the store writes nothing tracked and the generated layer is untouched |
 | D | Collapse `extract_links.py`'s six `preprints/**` walks into one, or convert it to the store | 5 of 6 walks over 8,007 `.tex` + 521 `.bib`; rchar 4,249.2 MB → ~700 MB, disk 3,601.4 MB → ~630 MB (row 56.60 s) | none — same file set, one enumeration |
-| E | **Realized by `math-unv`**: replace the shell list's two blocks with a dependency scheduler — `ROWS` carries (spec, needs, writes) over the generated artifacts and a row starts when every row that writes its needs has finished | pass 461.4 s → 374.1 s (87.3 s saved); the 8 report-only extractors and the corpus readers start at t=0 instead of after `render_reports.py` | none for checkers (they write nothing); the print order is the list order, so the report is the same bytes a serial run prints. The catch: row time rises (921.8 → 994.4 s) because 12 rows share the machine, and the cap must be sized by measured RSS, not core count |
+| E | **Realized by `math-unv`**: replace the shell list's two blocks with a dependency scheduler — `ROWS` carries (spec, needs, writes) over the generated artifacts and a row starts when every row that writes its needs has finished | pass 461.4 s → 351.1 s (110.3 s saved); the 8 report-only extractors and the corpus readers start at t=0 instead of after `render_reports.py` | none for checkers (they write nothing); the print order is the list order, so the report is the same bytes a serial run prints. The catch: row time is flat (921.8 → 919.4 s) — 12 rows share the machine, so each row runs slower than it does alone — and the cap must be sized by measured RSS, not core count |
 
 Recommended order **A → D**: A and D are local with zero cache semantics; C is done, and the store is
 the shape C took; B is done, and the measured pass was **431 s** — the pair the twice-run cost was
 **862 s**, and the second run is gone, so the gate is one 431 s pass. The
 composition the table predicted (2,006 s → ~970 s after A+B) landed at 431 s with B alone, because C
 had already removed the re-collection B was priced to overlap. **E is done** and the pass is
-**374.1 s**: E is what the serial block's read-only rows were waiting for, which is the one
+**351.1 s**: E is what the serial block's read-only rows were waiting for, which is the one
 re-collection the pool could not remove.
 
-The pass re-measured 2026-10-11, after the scheduler replaced the two blocks, is **374.1** s of driver
-wall, over **994.4** s of row time. The rule: the driver's own timestamps (first row's `.line` file at
-19:15:40, driver output at 19:21:54) and the report's per-row `in X.Xs` tokens. The writer critical
-path is `build_catalog.py` 0.1 → `extract_links.py` 26.0 → `build_index.py` 57.3 →
-`render_reports.py` 156.9 = **240.3** s, and the longest row that needs the rendered pages
-(`verify_page_sync.py --both`, 128.9 s) starts at 19:19:45 and finishes at 19:21:54, so the wall is
-that path plus that row. The 461.4 s pass measured 40 minutes earlier over the same 75 rows ran the 8
-report-only extractors inside the serial chain, so nothing read-only could start until
-`render_reports.py` finished; the scheduler starts them at 19:15:40 and the wall fell **87.3** s. Row
-time rose from 921.8 s to 994.4 s: 12 rows share the machine, so each row runs slower than it does
-alone. The 431 s figure is the same shape measured earlier on 2026-10-11 over 71 rows, and the 478.7 s
+The pass re-measured 2026-10-11, after the scheduler replaced the two blocks, is **351.1** s of driver
+wall, over **919.4** s of row time. The rule: the driver's own timestamps (first row's `.line` file at
+19:32:08, driver output at 19:37:59) and the report's per-row `in X.Xs` tokens. The writer critical
+path is `build_catalog.py` 0.1 → `extract_links.py` 21.5 → `build_index.py` 54.8 →
+`render_reports.py` 147.1 = **223.5** s, and the longest row that needs the rendered pages
+(`verify_page_sync.py --both`, 122.5 s) starts at 19:35:56 and finishes at 19:37:59, so the wall is
+that path, plus that row, plus the 4 s it waited for a free slot in the 12-row pool. The 461.4 s pass
+measured 23 minutes earlier over the same 75 rows ran the 8 report-only extractors inside the serial
+chain, so nothing read-only could start until `render_reports.py` finished; the scheduler starts them
+at 19:32:08 and the wall fell **110.3** s. Row time is flat — 921.8 s against **919.4** s: 12 rows
+share the machine, so each row runs slower than it does alone, and the sum is the same. The 431 s
+figure is the same shape measured earlier on 2026-10-11 over 71 rows, and the 478.7 s
 pass over 76 rows carried `verify_page_sync.py` as two rows (128.0 s plain, 124.8 s `--mutant`) with a
 two-row tail; collapsing them into `--both` removed **130.9** s of row time and **17.3** s of wall.
 

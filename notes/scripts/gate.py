@@ -5,10 +5,11 @@
 carried 8 report-only extractors that write nothing tracked, and the pool could not start until the
 whole chain finished, so the pass measured 288.9 s serial against 172.5 s pooled — 461.4 s of driver
 wall. Here every row declares the generated artifacts it writes and the ones it needs, and a row
-starts as soon as every row that writes its needs has finished. The writer critical path is
-`build_catalog.py` 0.1 -> `extract_links.py` 18.6 -> `build_index.py` 55.3 -> `render_reports.py`
-147.9 = 221.9 s, so the floor is that path plus the longest row that needs the rendered pages
-(`verify_page_sync.py --both`, 121.9 s) — about 344 s.
+starts as soon as every row that writes its needs has finished. Measured 2026-10-11 over the same 75
+rows: the writer critical path is `build_catalog.py` 0.1 -> `extract_links.py` 21.5 ->
+`build_index.py` 54.8 -> `render_reports.py` 147.1 = 223.5 s, plus the longest row that needs the
+rendered pages (`verify_page_sync.py --both`, 122.5 s) = 346.0 s, and the driver wall measured
+351.1 s against the shell list's 461.4 s.
 
 Printing stays canonical: each row writes its own `.line` file, and the report prints the `.line`
 files in list order after the last row finishes, so the report is the same bytes a serial run
