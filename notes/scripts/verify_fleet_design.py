@@ -200,7 +200,9 @@ def count_phrases(pop: Pop) -> list[str]:
     ]
 
 
-ANCHOR = re.compile(r"`(notes/scripts/[\w.]+\.py|notes/scripts/catlib/[\w.]+\.py|catlib/[\w.]+\.py|[\w.]+\.py):(\d+)(?:-(\d+))?`")
+ANCHOR = re.compile(r"`(notes/[\w./+-]+\.(?:md|tsv)|notes/scripts/[\w.]+\.py"
+                    r"|notes/scripts/catlib/[\w.]+\.py|catlib/[\w.]+\.py|[\w.]+\.py)"
+                    r":(\d+)(?:-(\d+))?`")
 BLOCK = re.compile(r"```[a-z]*\n(.*?)```", re.S)
 
 
@@ -209,6 +211,11 @@ def anchor_path(rel: str) -> Path:
         return ROOT / rel
     if rel.startswith("catlib/"):
         return ROOT / "notes/scripts" / rel
+    if rel.startswith("notes/"):
+        # A notes-page anchor is repo-relative, so it resolves against the root and a page move
+        # needs no resolver change. Checked before the bare-name branch, which would read
+        # `notes/reports/x.md` as a script under notes/scripts/.
+        return ROOT / rel
     return SCRIPTS / rel
 
 
@@ -298,6 +305,11 @@ MUTANTS = [
     ("digest count widened", lambda p: p.replace("**5** digests", "**6** digests", 1)),
     ("probe figure altered", lambda p: p.replace("75,394", "75,395")),
     ("anchor outside the file", lambda p: p.replace("render_reports.py:1139", "render_reports.py:3400", 1)),
+    # The page ships no notes-page anchor, so the resolver's notes/ branch is inert on a clean page.
+    # This mutant injects one with a line past the file's end, which is the only way the branch is
+    # proven to fire.
+    ("notes-page anchor outside the file",
+     lambda p: p.replace("`render_reports.py:1139`", "`render_reports.py:1139` `notes/fleet-design.md:9999`", 1)),
     ("prose count in the size argument", lambda p: p.replace("**630,606** bytes", "**630,605** bytes", 1)),
 ]
 
