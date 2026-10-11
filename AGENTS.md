@@ -14,7 +14,8 @@ lives in this file and nowhere else.
   `ComparatorChallenges/*.json`, and `formalization.yaml`.
 - `reasoning_traces/` holds 10 published traces in 11 files — the Mézard–Parisi trace ships as
   both `.pdf` and `.tex`.
-- `notes/` is the reading ledger: `catalog.tsv` (372 rows, 22 columns), `README.md`,
+- `notes/` is the reading ledger: the 8 TSVs under `notes/tables/` — `catalog.tsv` (372 rows,
+  22 columns) is the ledger — `README.md`,
   `t0-triage.md`, `conditional.md`, `resolution-tag.md`, `counterexample-tag.md`, `proof-density.md`,
   `counterexample-crosscheck.md` (the 28 counterexample-shaped families outside T0, each claim paired
   with the `main_results` declaration that corresponds to it),
