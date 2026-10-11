@@ -54,8 +54,8 @@ END = re.compile(r"\\end\{(theorem|maintheorem|thm)\}")
 AE = re.compile(r"a\.e\.|almost every|almost all|a\.s\.|measure zero|null set", re.I)
 LIT = re.compile(r"(?<![\w.])\d+(?:\s*/\s*\d+)?(?![\w.])")
 FRAC = re.compile(r"\\frac\s*\{?(\d+)\}?\s*\{?(\d+)\}?")
-DISROW = re.compile(r"^\|\s*`([A-Za-z0-9_]+)`\s*\|\s*(\d{3})\s*\|\s*(.+?)\s*\|\s*$")
-OVROW = re.compile(r"^\|\s*`([A-Za-z0-9_]+)`\s*\|\s*(\d{3})\s*\|\s*(.+?)\s*\|\s*(.+?)\s*\|\s*$")
+DISROW = re.compile(r"^\|\s*`([A-Za-z0-9_]+)`\s*\|\s*(\d{3})\s*\|\s*([^|]+?)\s*\|\s*$")
+OVROW = re.compile(r"^\|\s*`([A-Za-z0-9_]+)`\s*\|\s*(\d{3})\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|\s*$")
 AEROW = re.compile(r"^\|\s*(\d{3})\s*\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*\|")
 OVERVIEW_TEX = ROOT / "overview.tex"
 
@@ -67,13 +67,18 @@ def read(p):
 
 
 def entries():
-    """config stem -> (declaration, file), first entry wins, from the yaml text."""
+    """config stem -> (declaration, file), LAST entry wins, from the yaml text.
+
+    189 configs over 200 entries, so 11 configs carry more than one entry. The writer's rule is the
+    package's dict comprehension, where the last entry for a stem overwrites the earlier one; this
+    walk stores the same, so the two read the same declaration for a doubled config.
+    """
     out, cur = {}, {}
     for ln in read(FYAML).splitlines():
         m = KEY.search(ln)
         if m:
             cur = {"c": m.group(1)}
-            out.setdefault(m.group(1), cur)
+            out[m.group(1)] = cur
             continue
         m = DECL.match(ln)
         if m and cur:
@@ -268,6 +273,7 @@ def population():
         "entries": len(KEY.findall(read(FYAML))), "unique": len(mr),
         "resolved": len(mr) - len(unresolved), "unresolved": unresolved,
         "typed": typed, "carriers_ok": len(bodies), "missing": missing,
+        "bodies": bodies, "clits": clits,
         "size_min": sizes[0], "size_med": sizes[len(sizes) // 2],
         "size_max": sizes[-1], "size_sum": sum(sizes),
         "with_lit": with_lit, "lit_total": lit_total,
@@ -381,7 +387,8 @@ def check(text):
             if w != g:
                 problems.append(f"overlap row {g[0]}: {g} != {w}")
 
-    ae_rows = [tuple(int(x) for x in m.groups()) for ln in lines if (m := AEROW.match(ln))]
+    ae_rows = [(m.group(1), int(m.group(2)), int(m.group(3)), int(m.group(4)),
+                int(m.group(5))) for ln in lines if (m := AEROW.match(ln))]
     if ae_rows != v["ae_table"]:
         problems.append(f"a.e. table has {len(ae_rows)} rows, recomputation has {len(v['ae_table'])}")
         for w, g in zip(v["ae_table"], ae_rows, strict=False):
