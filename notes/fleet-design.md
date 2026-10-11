@@ -137,18 +137,13 @@ after the store conversion). `verify_fleet_design.py` parses the two 2026-10-11 
 
 | script | write modes | generated reads, and whether any points backwards |
 |---|---|---|
-| `build_sources.py` | `notes/.sources.tsv.tmp` (w) — the atomic sibling temp, not the tracked target | `notes/catalog.tsv` (r), written at row 1 — forward |
-| `extract_links.py` | `notes/.links.tsv.tmp` (w) — the atomic sibling temp | `notes/catalog.tsv` (r), written at row 1 — forward |
-| `render_reports.py` | 0 under `notes/`: 17 staged slots under `.qwen/cache/staging/render_reports/` (w), moved onto the pages by `os.replace`, which is not an `open` event | 1,077 generated reads (22 `notes/*.tsv`, 22 `notes/templates/report/*.j2`, 1,049 `notes/index/**`) — all written earlier in the same pass |
-| `build_index.py` | 0 under `notes/`: 1,049 staged slots (w), promoted by `os.replace` | 7 generated reads (2 `notes/*.tsv`, 5 `notes/templates/*.j2`) — forward |
-| `check_index_links.py` | 0 — `math-o3a.3` removed its page write | 1,034 `notes/index/**` pages and `notes/catalog.tsv` (r), written at row 3 — forward |
-| `measure_proof_density.py` | 0 — `math-o3a.3` removed its page write | `notes/catalog.tsv`, `notes/sources.tsv` (r) — forward |
-| `verify_script_ownership.py` | 0 in a plain run (AST census says `RW` on `notes/README.md` and `notes/templates.md`; the probe records mode `r` only) | 23 generated reads (1 `notes/*.tsv`, 22 `notes/templates/report/*.j2`) — forward |
-
-The paths in this table are the **pre-move** names: the records the table is parsed from were written
-on 2026-10-11, before the 8 TSVs moved into `notes/tables/`, so the opens they logged name the
-top-level paths. The counts are the same under the move — the same 8 files, read the same number of
-times — and the checker compares the counts, not the path strings.
+| `build_sources.py` | `notes/tables/.sources.tsv.tmp` (w) — the atomic sibling temp, not the tracked target | `notes/tables/catalog.tsv` (r), written at row 1 — forward |
+| `extract_links.py` | `notes/tables/.links.tsv.tmp` (w) — the atomic sibling temp | `notes/tables/catalog.tsv` (r), written at row 1 — forward |
+| `render_reports.py` | 0 under `notes/`: 18 staged slots under `.qwen/cache/staging/render_reports/` (w), moved onto the pages by `os.replace`, which is not an `open` event | 1,078 generated reads (6 `notes/tables/*.tsv`, 18 `notes/templates/report/*.j2`, 5 `notes/templates/*.j2`, 1,049 `notes/index/**`) — all written earlier in the same pass |
+| `build_index.py` | 0 under `notes/`: 1,049 staged slots (w), promoted by `os.replace` | 7 generated reads (2 `notes/tables/*.tsv`, 5 `notes/templates/*.j2`) — forward |
+| `check_index_links.py` | 0 — `math-o3a.3` removed its page write | 1,033 `notes/index/**` pages and `notes/tables/catalog.tsv` (r), written at row 3 — forward |
+| `measure_proof_density.py` | 0 — `math-o3a.3` removed its page write | `notes/tables/catalog.tsv`, `notes/tables/sources.tsv` (r) — forward |
+| `verify_script_ownership.py` | 0 in a plain run (AST census says `RW` on `notes/README.md` and `notes/templates.md`; the probe records mode `r` only) | 25 generated reads (2 `notes/tables/*.tsv`, 23 `notes/templates/*.j2`) — forward |
 
 **0** of the 7 scripts reads a generated file that a later gate row writes. The two backwards edges
 the 2026-10-10 probe recorded are gone: `build_sources.py` consumed the **previous pass's**
@@ -174,30 +169,36 @@ Rule: `sys.addaudithook` on `open` counts events, distinct paths, repeats, `rcha
 
 | gate row | wall s | opens | distinct | repeats | rchar MB | disk MB |
 |---|---|---|---|---|---|---|
-| `build_sources.py` | 0.11 | 65 | 62 | 3 (5 %) | 6.5 | 0.0 |
-| `extract_links.py` | 18.25 | 157,518 | 130,983 | 26,535 | 2,123.0 | 0.0 |
-| `build_index.py` | 48.84 | 17,803 | 9,548 | 8,255 | 261.0 | 0.0 |
-| `dump_template_slots.py` | 57.96 | 59,676 | 10,457 | 49,219 | 967.3 | 0.0 |
-| `render_reports.py` | 138.99 | 75,394 | 12,319 | **63,075 (84 %)** | 3,568.8 | 0.0 |
+| `build_sources.py` | 0.15 | 71 | 64 | 7 (10 %) | 6.5 | 0.0 |
+| `extract_links.py` | 24.24 | 157,539 | 130,998 | 26,541 | 2,123.5 | 0.0 |
+| `build_index.py` | 60.02 | 18,875 | 10,607 | 8,268 | 261.7 | 0.0 |
+| `dump_template_slots.py` | 61.06 | 80,221 | 18,413 | 61,808 | 1,229.5 | 0.0 |
+| `render_reports.py` | 151.32 | 117,360 | 18,935 | **98,425 (84 %)** | 4,103.9 | 0.1 |
 
 `disk MB` is `read_bytes`, bytes taken from storage rather than from the page cache. Every row reads
-0.0 because the cache was warm when this run started; the 2026-10-10 run, which started cold, recorded
-**3,601.4** for `extract_links.py` and **1,854.8** for `render_reports.py`. The cold/warm swing is a
+0.0 except `render_reports.py` at **0.1**, because the cache was warm when this run started; the
+2026-10-10 run, which started cold, recorded **3,601.4** for `extract_links.py` and **1,854.8** for
+`render_reports.py`. The cold/warm swing is a
 dated observation, not a re-derivable count, and the wall column moves with it.
 
-`render_reports.py` opens **75,394** times over **12,319** distinct paths — **63,075 repeats
-(84 %)** — and pulls 3.6 GB through `read()`. The bucket split says where: `preprints/` **65,129**
-opens, `notes/index/` 4,180, `lean/docs/` 1,992, `lean/OAI/` 1,870, `lean/ComparatorChallenges/`
-1,823, `notes/` 97, `notes/templates/` 61 — the buckets sum to the row's 75,394, and **86 %** of the
-opens are release inputs. The mechanism is now **attributed**, not inferred: a call-site probe (the same
-audit hook, walking the caller stack up to the first frame under `notes/scripts/`; scratch at
-`.qwen/tmp/a18_call_sites2.py`) puts those opens at `catlib/paths.py:77` **16,410**,
+`render_reports.py` opens **117,360** times over **18,935** distinct paths — **98,425 repeats
+(84 %)** — and pulls 4.1 GB through `read()`. The bucket split says where: `preprints/` **84,089**
+opens, `lean/OAI/` 23,275, `notes/index/` 5,229, `lean/docs/` 2,476, `lean/ComparatorChallenges/`
+1,823, `notes/` 94, `notes/templates/` 87, `notes/scripts/` 59 — the buckets sum to the row's 117,360,
+and **95 %** of the opens are release inputs. The record-store key changed when the 8 TSVs moved, so
+this run rebuilt the store, and the rebuild walks every `preprints/` directory: the `preprints/` bucket
+is 18,960 opens and `lean/OAI/` 21,405 opens above the run the call-site probe measured. The call-site
+attribution below is that earlier run's measurement, and its 65,129 total is that run's `preprints/`
+bucket, not this row's. The mechanism is now **attributed**, not inferred: a call-site probe (the same
+audit hook, walking the caller stack up to the first frame under `notes/scripts/`; the scratch it was
+run from is no longer on disk, so these figures cannot be re-measured) puts those opens at
+`catlib/paths.py:77` **16,410**,
 `extract_named_results.py:121` **15,358**, `catlib/templates.py:174` **8,991**,
 `compare_abstracts.py:82` **7,705**, `measure_names.py:250` and `measure_names.py:376` **7,240** each,
 `measure_index_sizes.py:91` **1,563**, `measure_names.py:291` **521**,
 `extract_verification_dirs.py:43` **30**, `catlib/preprints.py:201` **7** — 65,129 in total. The stacked
 walk `measure()` used to run is gone: it is `@cache`d and reads the record store, so its second call in
-the process is a cache hit, and `build_sources.py`'s row fell from 39,083 opens to **65** for the same
+the process is a cache hit, and `build_sources.py`'s row fell from 39,083 opens to **71** for the same
 reason. What remains is the extractors the renderer imports, each walking the corpus once per process.
 `catlib/paths.read_text` is the uncached reader behind those opens (**230** `read_text(` call sites over
 the **57** scripts and **17** catlib modules, counted as occurrences over both globs on 2026-10-11; the
@@ -205,15 +206,15 @@ page read **217** over **55** scripts before the two `math-faz` probes landed); 
 name, `records.manuscript_store`, keyed by the store digest, and `promote.cached_text`, keyed by the
 builder's key.
 
-The same probe puts `check_index_links.py` at **1.16** s in its own row (plain run, 1,717 opens over
-1,714 distinct paths), and the timed import run measured its subprocess cost inside
+The same probe puts `check_index_links.py` at **1.23** s in its own row (plain run, 1,732 opens over
+1,728 distinct paths), and the timed import run measured its subprocess cost inside
 `verify_findings.py` at **51.49** s per call — 7 calls in the mutant loop. Two measurement sources,
 quoted separately: the row time from the probe, the per-call cost from the in-process timing. The
 2026-10-10 probe recorded the row at 57.91 s; that run started cold, and the row's opens are the
 1,033 index pages plus the 416 comparator files and 242 scope notes, which is what a warm cache
 makes cheap.
 
-`extract_links.py`'s `rchar` fell from 4,249.2 MB to 2,123.0 MB and its wall from 56.60 s to 18.25 s
+`extract_links.py`'s `rchar` fell from 4,249.2 MB to 2,123.5 MB and its wall from 56.60 s to 24.24 s
 when `math-o3a.3` moved its sync pass into `verify_page_sync.py`. The pass called
 `catlib.render.rendered()`, which runs the renderer's `measure()` — the full-corpus walk — inside
 `extract_links.py`'s own process. The writer now walks the corpus once, and the render happens in the
@@ -238,7 +239,7 @@ fresh bytes) and reads `LINKS_TSV` at `:1372` — **after** the child; it runs `
 **not** the generated layer (`notes/tables/*.tsv`, `notes/index/**`, `notes/summaries/**`).
 
 The probe prints per-path counts only for `notes/`, and those counts are exactly the generated side of
-the split: `notes/tables/catalog.tsv` **29** opens, every `notes/index/` page **4**, `notes/index-links.md`
+the split: `notes/tables/catalog.tsv` **33** opens, every `notes/index/` page **4**, `notes/index-links.md`
 **1**. All three are generated, so none is cacheable under this rule. The release-input side has no
 per-path count in the record — `overview.tex` and the manuscript main files sit in the bucket totals —
 so the bucket split is the evidence for that half, not a reopen count. The record store is safe under

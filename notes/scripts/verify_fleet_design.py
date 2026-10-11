@@ -79,8 +79,8 @@ def layer(path: str) -> str:
         return "generated"
     rest = path[len("notes/"):]
     if rest.endswith(".tsv"):
-        # The probe records carry both the pre-move `notes/topics.tsv` and the post-move
-        # `notes/tables/topics.tsv`, so the hand-authored test is on the basename.
+        # A TSV sits under `notes/tables/`, so the hand-authored test is on the basename: the two
+        # hand-authored tables are named by basename in HAND, the six generated ones are not.
         return "hand-authored" if rest.split("/")[-1] in HAND else "generated"
     return "page"
 
@@ -305,7 +305,7 @@ MUTANTS = [
     ("sync split altered", lambda p: p.replace("**12** are `verify_*`", "**11** are `verify_*`", 1)),
     ("purity row deleted", lambda p: re.sub(r"^\|\s*`check_index_links\.py`.*\n", "", p, count=1, flags=re.M)),
     ("digest count widened", lambda p: p.replace("**5** digests", "**6** digests", 1)),
-    ("probe figure altered", lambda p: p.replace("75,394", "75,395")),
+    ("probe figure altered", lambda p: p.replace("117,360", "117,361")),
     ("anchor outside the file", lambda p: p.replace("render_reports.py:1139", "render_reports.py:3400", 1)),
     # The page ships no notes-page anchor, so the resolver's notes/ branch is inert on a clean page.
     # This mutant injects one with a line past the file's end, which is the only way the branch is

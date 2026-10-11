@@ -36,19 +36,18 @@ trace stems attributed     10  on disk 10  unlisted none
 CONTENTS.md links        962  pdf links 720  broken 0
 [probe] target exit code: 0
 [probe2] target notes/scripts/check_index_links.py 
-[probe2] wall 1.16  opens 1717  distinct 1714  repeats 3
-[probe2] rchar MB 14.2  read_bytes MB 0.0
+[probe2] wall 1.23  opens 1732  distinct 1728  repeats 4
+[probe2] rchar MB 14.6  read_bytes MB 0.0
 [probe2] buckets:
           notes/index/               1033
           lean/ComparatorChallenges/ 416
           lean/docs/                 242
-          abs/other                  11
-          notes/scripts/             9
-          other                      4
+          abs/other                  19
+          notes/scripts/             13
+          other                      7
           top-level                  1
           notes/                     1
 [probe2] notes/ paths (count  modes  path):
-              1  r        notes/catalog.tsv
               1  r        notes/index/README.md
               1  r        notes/index/algebra/193-serres-intersection-multiplicity-conjecture.md
               1  r        notes/index/algebra/194-lechs-multiplicity-conjecture.md
@@ -1082,6 +1081,7 @@ CONTENTS.md links        962  pdf links 720  broken 0
               1  r        notes/index/topology/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md
               1  r        notes/index/topology/320-a-four-dimensional-counterexample-to-borel-rigidity.md
               1  r        notes/index/topology/321-a-counterexample-to-walls-finite-d-2-conjecture.md
+              1  r        notes/tables/catalog.tsv
 [probe2] write-mode paths outside notes/:
 === population ===
 sources rows 719 | families 372 | proofs 20341 | thms 21288
@@ -1165,57 +1165,52 @@ PROBLEMS 0
           notes/scripts/             3
           notes/                     2
 [probe2] notes/ paths (count  modes  path):
-              1  r        notes/catalog.tsv
-              1  r        notes/sources.tsv
+              1  r        notes/tables/catalog.tsv
+              1  r        notes/tables/sources.tsv
 [probe2] write-mode paths outside notes/:
 === notes/scripts/README.md ownership check ===
-scripts (excluding verify_script_ownership.py): 51
+scripts (excluding verify_script_ownership.py): 57
 writers derived from source: 10
-  writes build_catalog.py: notes/catalog.tsv
+  writes build_catalog.py: notes/tables/catalog.tsv
   writes build_index.py: notes/index/
   writes build_report_templates.py: notes/templates/report
-  writes build_sources.py: notes/sources.tsv
-  writes compare_abstracts.py: notes/abstracts.tsv
-  writes extract_formalization_deps.py: notes/formalization-deps.tsv
-  writes extract_links.py: notes/links.tsv
-  writes extract_subfindings.py: notes/subfindings.tsv
+  writes build_sources.py: notes/tables/sources.tsv
+  writes compare_abstracts.py: notes/tables/abstracts.tsv
+  writes extract_formalization_deps.py: notes/tables/formalization-deps.tsv
+  writes extract_links.py: notes/tables/links.tsv
+  writes extract_subfindings.py: notes/tables/subfindings.tsv
   writes measure_open_probe.py: notes/probe
-  writes render_reports.py: notes/README.md, notes/abstracts.md, notes/counterexample-crosscheck.md, notes/dependency-drift.md, notes/index-design.md, notes/index-links.md, notes/links.md, notes/named-results.md, notes/names.md, notes/proof-density.md, notes/scope-exclusions.md, notes/sources.md, notes/subfinding-pairs.md, notes/t0-chains.md, notes/templates.md, notes/topics.md, notes/verification-dirs.md
+  writes render_reports.py: notes/README.md, notes/abstracts.md, notes/counterexample-crosscheck.md, notes/dependency-drift.md, notes/formalization-faithfulness.md, notes/index-design.md, notes/index-links.md, notes/links.md, notes/named-results.md, notes/names.md, notes/proof-density.md, notes/scope-exclusions.md, notes/sources.md, notes/subfinding-pairs.md, notes/t0-chains.md, notes/templates.md, notes/topics.md, notes/verification-dirs.md
 index tree: 1049 (1033 md + 16 tsv)
 summaries: 21
-templates: 22
-top-level: 8 tsv + 29 md
-notes/ total (scripts excluded): 1134
+templates: 23
+top-level: 0 tsv + 30 md
+notes/ total (scripts excluded): 1139
 top-level ∩ index basenames: ['README.md']
 index ∩ summaries slugs: 13
-templates census (notes/templates.md): 22 templates on disk, 0 problems
-PROBLEM: writer measure_open_probe.py: page says 'notes/probe/', source says 'notes/probe'
-PROBLEM: derived writers: 10, page says 9
-PROBLEM: report-only sentence does not read '**41** scripts write nothing'
-PROBLEM: report-only sentence does not read '**21** of them'
-PROBLEM: script not named in notes/README.md: measure_open_probe.py
-PROBLEM: naming sentence does not read 'named **34** of the 51 scripts'
-PROBLEM: gap list: page names ['build_report_templates.py', 'check_summary_manuscripts.py', 'dump_template_slots.py', 'extract_citations.py', 'locate_summary_quotes.py', 'measure_checker_needles.py', 'measure_templates.py', 'read_manuscript.py', 'refresh_summary_line_counts.py', 'render_reports.py', 'verify_citations.py', 'verify_findings.py', 'verify_fleet_design.py', 'verify_named_conjectures.py', 'verify_page_sync.py', 'verify_upstream_history.py'], git HEAD says ['build_report_templates.py', 'check_summary_manuscripts.py', 'dump_template_slots.py', 'extract_citations.py', 'locate_summary_quotes.py', 'measure_checker_needles.py', 'measure_open_probe.py', 'measure_templates.py', 'read_manuscript.py', 'refresh_summary_line_counts.py', 'render_reports.py', 'verify_citations.py', 'verify_findings.py', 'verify_fleet_design.py', 'verify_named_conjectures.py', 'verify_page_sync.py', 'verify_upstream_history.py']
+templates census (notes/templates.md): 23 templates on disk, 0 problems
 sync problems (notes/README.md): 0
-reconciliation: writers == page False
+reconciliation: writers == page True
 reconciliation: census rows == disk True
-reconciliation: naming complete False
+reconciliation: naming complete True
 reconciliation: templates page == disk True
-[probe] target exit code: 1
+[probe] target exit code: 0
 [probe2] target notes/scripts/verify_script_ownership.py 
-[probe2] wall 0.20  opens 640  distinct 416  repeats 224
-[probe2] rchar MB 7.7  read_bytes MB 0.0
+[probe2] wall 0.24  opens 682  distinct 428  repeats 254
+[probe2] rchar MB 8.5  read_bytes MB 0.0
 [probe2] buckets:
-          notes/scripts/             274
+          notes/scripts/             304
           lean/docs/                 242
           abs/other                  65
-          notes/templates/           45
-          notes/                     6
-          other                      6
+          notes/templates/           47
+          other                      13
+          notes/                     9
           top-level                  2
 [probe2] notes/ paths (count  modes  path):
               2  r        notes/README.md
-              2  r        notes/catalog.tsv
+              4  r        notes/tables/catalog.tsv
+              1  r        notes/tables/sources.tsv
+              1  r        notes/tables/topics.tsv
               1  r        notes/templates.md
               2  r        notes/templates/discipline.md.j2
               2  r        notes/templates/family.md.j2
@@ -1225,6 +1220,7 @@ reconciliation: templates page == disk True
               2  r        notes/templates/report/abstracts.md.j2
               2  r        notes/templates/report/counterexample-crosscheck.md.j2
               2  r        notes/templates/report/dependency-drift.md.j2
+              2  r        notes/templates/report/formalization-faithfulness.md.j2
               2  r        notes/templates/report/index-design.md.j2
               2  r        notes/templates/report/index-links.md.j2
               2  r        notes/templates/report/links.md.j2
@@ -1239,5 +1235,4 @@ reconciliation: templates page == disk True
               2  r        notes/templates/report/topics.md.j2
               2  r        notes/templates/report/verification-dirs.md.j2
               2  r        notes/templates/topic.md.j2
-              1  r        notes/topics.tsv
 [probe2] write-mode paths outside notes/:
