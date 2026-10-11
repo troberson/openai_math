@@ -32,7 +32,7 @@ from catlib.atomic import RECORDS_ROOT, cache_text, write_atomic
 from catlib.paths import ROOT, SCRIPTS
 from catlib.records import key as digest_key
 
-# The seventeen report-fed pages, in the order the registry in `catlib/templates.py` lists them.
+# The eighteen report-fed pages, in the order the registry in `catlib/templates.py` lists them.
 REPORT_PAGES = (
     "notes/abstracts.md",
     "notes/index-links.md",
@@ -49,6 +49,7 @@ REPORT_PAGES = (
     "notes/t0-chains.md",
     "notes/subfinding-pairs.md",
     "notes/counterexample-crosscheck.md",
+    "notes/formalization-faithfulness.md",
     "notes/templates.md",
     "notes/README.md",
 )
