@@ -42,6 +42,19 @@ ignored generated directory inside a hashed path. `HEAD:lean` is a **commit** di
 not change it, and a cache read under `lean/` is not a tree read the digest covers — which is why the
 key stays exact here and would not if a generated file landed inside `preprints/`.
 
+**The store is built.** `math-o3a.4` put the key into `notes/scripts/catlib/records.py`, which writes
+`.qwen/cache/records/<key>/manuscripts.jsonl` — one row per directory under `preprints/`, **749**
+rows, not the **719** listed manuscripts: `measure_names.py` scans the whole tree, so a store scoped
+to the listed set cannot reproduce its counts. The key is the **builder's**, not the consumer's:
+`store_key()` hashes the five tree digests, `records.py`'s own source, each L1 file, and the args,
+truncated to 32 hex, so a consumer that changes how it reads records does not invalidate records it
+reads unchanged. Records are megabytes, text is not: a row carries derived counts (the `.tex` list, the
+byte sum, the `\documentclass` roots, the resolved main file, the declared-environment counts, the
+statement titles, the abstract bodies) — **4,992,197** bytes over **749** rows, built in **1.93 s**,
+cache hit **0.012 s** — and no row carries raw `.tex` text, which is why `measure_names.py`'s prose
+scan still reads files. The store lives under `.qwen/`, untracked by the repo's `.qwen/*` rule, so a
+cache write never touches the tracked tree: `git status` is identical before and after a build.
+
 Two scripts are not keyed by a tree digest, because they read git **history**, not the tree:
 `verify_upstream_history.py` (`git show <rev>:` of `lean/formalization.yaml` and `notes/catalog.tsv`)
 and `verify_script_ownership.py` (the four-scripts-named-nowhere gap from
@@ -69,7 +82,7 @@ inputs are the expensive, immutable, cacheable part.
 Rule: `grep -cE 'os\.replace|os\.rename|shutil\.move|NamedTemporaryFile'` over `notes/scripts/*.py`
 and `notes/scripts/catlib/*.py`, **excluding `verify_fleet_design.py`** — that checker carries the
 pattern as a needle, so counting it would read 1 and the rule would be about the checker, not the
-fleet. Over **51** scripts and **15** catlib modules the count is **2 matches**, both in
+fleet. Over **51** scripts and **16** catlib modules the count is **2 matches**, both in
 `catlib/atomic.py`: the `os.replace` at `catlib/atomic.py:41`, which promotes the sibling temp onto
 the target, and the one at `catlib/atomic.py:67`, which promotes a staged slot onto its tracked path.
 Before `math-o3a.2.1` the count was **0 matches** over **49** scripts and **14** modules: every writer
@@ -113,8 +126,12 @@ only) lists every `notes/` path each script opens. A path is a write only if a m
 `w`, `a` or `x`. The AST census maps a name to a call context and does **not** track branches, so a
 `write_text` that lives only in a `--mutant` path is reported as a write in every mode — the probe's
 mode strings are the authority. The probe is `notes/scripts/measure_open_probe.py`, promoted from
-`.qwen/tmp/a11_open_probe2.py` by `math-o3a.3.4`, and the records it writes are
-`notes/probe/2026-10-11_writers.txt` and `notes/probe/2026-10-11_checkers.txt`.
+`.qwen/tmp/a11_open_probe2.py` by `math-o3a.3.4`. The tracked records are **5**:
+`notes/probe/2026-10-10_writers.txt`, `notes/probe/2026-10-10_checkers.txt`,
+`notes/probe/2026-10-11_writers.txt`, `notes/probe/2026-10-11_checkers.txt` and
+`notes/probe/2026-10-11_rr_after.txt` (the single-target `render_reports.py` record taken mid-pass,
+after the store conversion). `verify_fleet_design.py` parses the two 2026-10-11 records; the
+2026-10-10 pair is the **before** state the amplification table's deltas are measured against.
 
 | script | write modes | generated reads, and whether any points backwards |
 |---|---|---|
@@ -150,29 +167,34 @@ Rule: `sys.addaudithook` on `open` counts events, distinct paths, repeats, `rcha
 
 | gate row | wall s | opens | distinct | repeats | rchar MB | disk MB |
 |---|---|---|---|---|---|---|
-| `build_sources.py` | 3.21 | 39,083 | 7,754 | 31,329 (80 %) | 641.3 | 0.0 |
-| `extract_links.py` | 23.26 | 157,518 | 130,983 | 26,535 | 2,123.0 | 0.0 |
-| `build_index.py` | 58.3 | 17,803 | 9,548 | 8,255 | 261.0 | 0.0 |
-| `dump_template_slots.py` | 59.05 | 59,678 | 10,456 | 49,222 | 967.9 | 0.0 |
-| `render_reports.py` | 231.58 | 152,680 | 12,316 | **140,364 (92 %)** | 4,837.4 | 0.0 |
+| `build_sources.py` | 0.11 | 65 | 62 | 3 (5 %) | 6.5 | 0.0 |
+| `extract_links.py` | 18.25 | 157,518 | 130,983 | 26,535 | 2,123.0 | 0.0 |
+| `build_index.py` | 48.84 | 17,803 | 9,548 | 8,255 | 261.0 | 0.0 |
+| `dump_template_slots.py` | 57.96 | 59,676 | 10,457 | 49,219 | 967.3 | 0.0 |
+| `render_reports.py` | 138.99 | 75,394 | 12,319 | **63,075 (84 %)** | 3,568.8 | 0.0 |
 
 `disk MB` is `read_bytes`, bytes taken from storage rather than from the page cache. Every row reads
 0.0 because the cache was warm when this run started; the 2026-10-10 run, which started cold, recorded
 **3,601.4** for `extract_links.py` and **1,854.8** for `render_reports.py`. The cold/warm swing is a
 dated observation, not a re-derivable count, and the wall column moves with it.
 
-`render_reports.py` opens **152,680** times over **12,316** distinct paths — **140,364 repeats
-(92 %)** — and pulls 4.8 GB through `read()`. The bucket split says where: `preprints/` **142,403**
-opens, `notes/index/` 4,180, `lean/docs/` 1,992, `lean/OAI/` 1,870, `lean/ComparatorChallenges/` 1,823,
-`notes/` 106, `notes/templates/` 61 — the buckets sum to the row's 152,680, and **93 %** of the opens
-are release inputs. The mechanism is stacked full-corpus walks, not one loop: `render_reports.py:119
-def measure()` is called twice per process, and each call walks all 719 listed dirs reading their `.tex`
-four times (`roots_of`, `main_no_dc`, `substring_multi`, `build_sources.env_variants`). The probe
-records buckets, not per-path counts under `preprints/`, so the **198** opens per listed dir the bucket
-implies are not attributed to a call site: the split is measured, the per-call attribution is not.
-`catlib/paths.read_text` is the uncached reader behind these opens
-(**220** `read_text(` call sites over the **43** scripts the gate runs — 26 named explicitly, 17 in the
-checker loop); the only cache in catlib is `render.rendered`, keyed by page name.
+`render_reports.py` opens **75,394** times over **12,319** distinct paths — **63,075 repeats
+(84 %)** — and pulls 3.6 GB through `read()`. The bucket split says where: `preprints/` **65,129**
+opens, `notes/index/` 4,180, `lean/docs/` 1,992, `lean/OAI/` 1,870, `lean/ComparatorChallenges/`
+1,823, `notes/` 97, `notes/templates/` 61 — the buckets sum to the row's 75,394, and **86 %** of the
+opens are release inputs. The mechanism is now **attributed**, not inferred: a call-site probe (the same
+audit hook, walking the caller stack up to the first frame under `notes/scripts/`; scratch at
+`.qwen/tmp/a18_call_sites2.py`) puts those opens at `catlib/paths.py:77` **16,410**,
+`extract_named_results.py:121` **15,358**, `catlib/templates.py:174` **8,991**,
+`compare_abstracts.py:82` **7,705**, `measure_names.py:250` and `measure_names.py:376` **7,240** each,
+`measure_index_sizes.py:91` **1,563**, `measure_names.py:291` **521**,
+`extract_verification_dirs.py:43` **30**, `catlib/preprints.py:201` **7** — 65,129 in total. The stacked
+walk `measure()` used to run is gone: it is `@cache`d and reads the record store, so its second call in
+the process is a cache hit, and `build_sources.py`'s row fell from 39,083 opens to **65** for the same
+reason. What remains is the extractors the renderer imports, each walking the corpus once per process.
+`catlib/paths.read_text` is the uncached reader behind those opens (**217** `read_text(` call sites over
+the **52** scripts and **16** catlib modules); the caches in catlib are `render.rendered`, keyed by page
+name, and `records.manuscript_store`, keyed by the store digest.
 
 The same probe puts `check_index_links.py` at **1.16** s in its own row (plain run, 1,717 opens over
 1,714 distinct paths), and the timed import run measured its subprocess cost inside
@@ -182,16 +204,19 @@ quoted separately: the row time from the probe, the per-call cost from the in-pr
 1,033 index pages plus the 416 comparator files and 242 scope notes, which is what a warm cache
 makes cheap.
 
-`extract_links.py`'s `rchar` fell from 4,249.2 MB to 2,123.0 MB and its wall from 56.60 s to 23.26 s
+`extract_links.py`'s `rchar` fell from 4,249.2 MB to 2,123.0 MB and its wall from 56.60 s to 18.25 s
 when `math-o3a.3` moved its sync pass into `verify_page_sync.py`. The pass called
 `catlib.render.rendered()`, which runs the renderer's `measure()` — the full-corpus walk — inside
 `extract_links.py`'s own process. The writer now walks the corpus once, and the render happens in the
-checker that owns it.
+checker that owns it. `extract_links.py` is the one writer `math-o3a.4` has **not** converted to the
+record store: its six `preprints/**` walks are still its own.
 
 Decisive: `check("notes/findings.md")` timed three times in one process — **104.50 s → 67.24 s →
 0.13 s** on identical code, identical page, identical output. Memoising the 5 report subprocesses
 removes 37.26 s per call; the page-check work is 0.9 s. The gate's cost is re-collection, not
-computation.
+computation. `math-o3a.4.3` realized that for the corpus measures: `@cache` on
+`render_reports.measure()`, `compare_abstracts.measure()`, `measure_names.measure()` and
+`check_index_links.measure()`, so the repeats inside a process are cache hits.
 
 ## The cache-safety rule (the load-bearing constraint)
 
@@ -204,10 +229,12 @@ fresh bytes) and reads `LINKS_TSV` at `:1378` — **after** the child; it runs `
 **not** the generated layer (`notes/*.tsv`, `notes/index/**`, `notes/summaries/**`).
 
 The probe prints per-path counts only for `notes/`, and those counts are exactly the generated side of
-the split: `notes/catalog.tsv` **36** opens, `notes/index-links.md` **8**, every `notes/index/` page
-**5**. All three are generated, so none is cacheable under this rule. The release-input side has no
+the split: `notes/catalog.tsv` **29** opens, every `notes/index/` page **4**, `notes/index-links.md`
+**1**. All three are generated, so none is cacheable under this rule. The release-input side has no
 per-path count in the record — `overview.tex` and the manuscript main files sit in the bucket totals —
-so the bucket split is the evidence for that half, not a reopen count.
+so the bucket split is the evidence for that half, not a reopen count. The record store is safe under
+this rule by construction, not by scope: it is keyed by the L0 tree digests, so a cache hit can only
+name bytes read from a tree that is still the tree at `HEAD`, and it writes nothing under `notes/`.
 
 ## Why the second run earns its 33.4 minutes
 
@@ -248,11 +275,11 @@ single run cannot see that at all.
 |---|---|---|---|
 | A | Compute `outs`/`ledger()`/`tsv()` **once** in `verify_findings.py` and pass them into `check()`, so the 7-pass mutant loop re-runs only page work | 6 × 37.26 s = **223.6 s/pass** (447.2 s/pair); row 832.7 s → ~609 s | none — no cache, same subprocesses, same bytes |
 | B | Run the 50-row measurement/checker block in a bounded pool (32 CPUs; the gate is serial) | block 1,555 s → max row (832.7 s now, ~114 s after A) | none for checkers (they write nothing); writers stay in the dependency chain |
-| C | Memoise reads of the **immutable release inputs** in `catlib/paths.read_text` (scope rule above) | 49,222 of 59,681 repeat opens (`dump_template_slots`); 31,328 of 39,080 (`build_sources`); rchar 967.8 MB → ~200 MB on the probed row | low, and only if the scope excludes generated files |
-| D | Collapse `extract_links.py`'s six `preprints/**` walks into one | 5 of 6 walks over 8,007 `.tex` + 521 `.bib`; rchar 4,249.2 MB → ~700 MB, disk 3,601.4 MB → ~630 MB (row 56.60 s) | none — same file set, one enumeration |
+| C | **Realized by `math-o3a.4`**: memoise the corpus read as a digest-keyed record store (`catlib/records.py`) rather than as a memoised `read_text` | `build_sources.py` 39,083 → 65 opens, rchar 641.3 → 6.5 MB, wall 3.21 → 0.11 s; `render_reports.py` 152,680 → 75,394 opens, repeats 140,364 → 63,075, wall 231.58 → 138.99 s | none — the store writes nothing tracked and the generated layer is untouched |
+| D | Collapse `extract_links.py`'s six `preprints/**` walks into one, or convert it to the store | 5 of 6 walks over 8,007 `.tex` + 521 `.bib`; rchar 4,249.2 MB → ~700 MB, disk 3,601.4 MB → ~630 MB (row 56.60 s) | none — same file set, one enumeration |
 
-Recommended order **A → D → C → B**: A and D are local with zero cache semantics; C is the real fix for
-the re-collection hypothesis and belongs in `catlib/paths`; B is the structural win. Composition: pass
+Recommended order **A → D → B**: A and D are local with zero cache semantics; C is done, and the store
+is the shape C took; B is the structural win. Composition: pass
 2,006 s → ~970 s after A+B → ~680 s with C warm, so the pair ≈ 23 min.
 
 Intended, not to be "fixed": a checker importing its own extractor, and `render_reports.py` running
@@ -266,8 +293,11 @@ through the writer's code proves nothing (`catlib/measure.py` docstring).
 1. **Anchors** — every backticked `path:line` anchor resolves, **prefixed** (a `notes/scripts/…` or
    `catlib/…` path) **or bare** (`render_reports.py:1132`, `build_catalog.py:121`); a bare name resolves
    under `notes/scripts/`. The line exists in the named file and a `path:a-b` span fits inside it. The
-   page carries **4** anchors of the recognized form (`build_catalog.py:121`, `build_index.py:565`,
-   `render_reports.py:1132`, `render_reports.py:2033`); an anchor written with trailing text
+   page carries **18** distinct anchors of the recognized form (**24** occurrences), the four named here
+   (`build_catalog.py:121`, `build_index.py:565`, `render_reports.py:1132`, `render_reports.py:2033`),
+   the eight call-site anchors in the amplification section, and `catlib/atomic.py:41`,
+   `catlib/atomic.py:67`, `catlib/preprints.py:66`, `catlib/preprints.py:164`,
+   `catlib/yaml.py:126`; an anchor written with trailing text
    (`` `render_reports.py:119 def measure()` ``) is not a form the checker parses, which is why the
    anchor mutant targets one of the four.
 2. **Fenced blocks** — each block is attributed to the **nearest preceding** anchor and matched against
@@ -288,8 +318,10 @@ through the writer's code proves nothing (`catlib/measure.py` docstring).
 5. **Mutants** — 7 injected corruptions, each asserted against the pass it targets: the atomicity
    count shifted, the sync split altered, a purity row deleted, the digest count widened, a probe
    figure altered, an anchor shifted outside its file, and a prose count in the size argument. Measured
-   2026-10-11 at 06:41 UTC against the re-measured probe: plain **0 problems**, `--mutant` **7 of 7**
-   flagged, and both reports byte-identical across two runs. The atomicity mutant was inert twice
+   2026-10-11 at 08:48 UTC against the re-measured probe: plain **0 problems**, `--mutant` **7 of 7**
+   flagged, and both reports byte-identical across two runs. The probe-figure mutant targets the
+   `render_reports.py` opens figure in the amplification table, so it re-targets whenever that row is
+   re-measured. The atomicity mutant was inert twice
    during this pass, both times for the same reason: a paragraph that restates the atomicity count
    leaves the phrase a second time, so the single occurrence the mutant replaces is not the only one
    and the count check still finds it. Both restatements are now prose without the bold form, and the

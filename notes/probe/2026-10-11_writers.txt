@@ -30,13 +30,13 @@ names the declared rule adds: assumption 22, foundation 13, auxproposition 8, hy
 dirs with main_tex empty         0
 dirs with an abstract            719 of 719
 [probe2] target notes/scripts/build_sources.py 
-[probe2] wall 3.21  opens 39083  distinct 7754  repeats 31329
-[probe2] rchar MB 641.3  read_bytes MB 0.0
+[probe2] wall 0.11  opens 65  distinct 62  repeats 3
+[probe2] rchar MB 6.5  read_bytes MB 0.0
 [probe2] buckets:
-          preprints/                 39061
-          abs/other                  11
-          notes/scripts/             7
-          other                      2
+          preprints/                 30
+          abs/other                  19
+          notes/scripts/             9
+          other                      5
           notes/                     2
 [probe2] notes/ paths (count  modes  path):
               1  w        notes/.sources.tsv.tmp
@@ -85,7 +85,7 @@ MSC hits: 0  bib keywords fields: 0  \keywords dirs: 12
 written: notes/links.tsv
 [probe] target exit code: 0
 [probe2] target notes/scripts/extract_links.py 
-[probe2] wall 23.26  opens 157518  distinct 130983  repeats 26535
+[probe2] wall 18.25  opens 157518  distinct 130983  repeats 26535
 [probe2] rchar MB 2123.0  read_bytes MB 0.0
 [probe2] buckets:
           lean/OAI/                  122458
@@ -123,7 +123,7 @@ manuscript links    main file 719 of 719  build/ 719  README.md 719
 stale swept         0 files []  empty dirs removed 0
 written             1033 pages + 16 tables -> notes/index/
 [probe2] target notes/scripts/build_index.py 
-[probe2] wall 58.30  opens 17803  distinct 9548  repeats 8255
+[probe2] wall 48.84  opens 17803  distinct 9548  repeats 8255
 [probe2] rchar MB 261.0  read_bytes MB 0.0
 [probe2] buckets:
           preprints/                 15522
@@ -1194,9 +1194,9 @@ written             1033 pages + 16 tables -> notes/index/
               1  w .qwen/cache/staging/build_index/.1046.tmp
               1  w .qwen/cache/staging/build_index/.1047.tmp
               1  w .qwen/cache/staging/build_index/.1048.tmp
-    'census_all': 'all **22** templates: **6,496** lines, **428,949** bytes, **1,324** slots',
+    'census_all': 'all **22** templates: **6,497** lines, **429,269** bytes, **1,324** slots',
     'census_index': 'index tree: **5** templates, **209** lines, **14,819** bytes, **103** slots',
-    'census_report': 'report tree: **17** templates, **6,287** lines, **414,130** bytes, **1,221** slots',
+    'census_report': 'report tree: **17** templates, **6,288** lines, **414,450** bytes, **1,221** slots',
     'derived': '**7** of **17** pages',
     'gap': 'template-without-page **0**, page-without-template **0**',
     'header': 'header comment is **4** lines',
@@ -1210,11 +1210,11 @@ written             1033 pages + 16 tables -> notes/index/
     'not_derived': 'the other **10**',
     'not_derived_bullet': 'the **10** NOT-DERIVED pages',
     'registry': 'registry: **17** entries at `catlib/templates.py:100`',
-    'report_total': '| **report tree** | **17** | **6,287** | **414,130** | **1,221** | | |',
+    'report_total': '| **report tree** | **17** | **6,288** | **414,450** | **1,221** | | |',
     'reuse': '**11** repeat expressions over **4** templates',
     'reuse_detail': '`proof-density.md.j2` (2 repeats); `templates.md.j2` (1 repeat); `index-readme.md.j2` (5 repeats); `name.md.j2` (3 repeats)',
     'reuse_scope': 'over the **22** committed templates',
-    'tpl_row_01': '| `README.md.j2` | 707 | 58,227 | 71 | `notes/README.md` | `verify_script_ownership.py` | NOT DERIVED |',
+    'tpl_row_01': '| `README.md.j2` | 708 | 58,547 | 71 | `notes/README.md` | `verify_script_ownership.py` | NOT DERIVED |',
     'tpl_row_02': '| `abstracts.md.j2` | 406 | 32,445 | 42 | `notes/abstracts.md` | `verify_abstracts.py` | 45 |',
     'tpl_row_03': '| `counterexample-crosscheck.md.j2` | 1,089 | 45,827 | 87 | `notes/counterexample-crosscheck.md` | `verify_counterexample_crosscheck.py` | 20 |',
     'tpl_row_04': '| `dependency-drift.md.j2` | 229 | 11,520 | 95 | `notes/dependency-drift.md` | `verify_dependency_drift.py` | NOT DERIVED |',
@@ -1233,23 +1233,23 @@ written             1033 pages + 16 tables -> notes/index/
     'tpl_row_17': '| `verification-dirs.md.j2` | 258 | 24,980 | 44 | `notes/verification-dirs.md` | `verify_verification_dirs.py` | 16 |',
 labels 37
 [probe2] target notes/scripts/dump_template_slots.py 
-[probe2] wall 59.05  opens 59678  distinct 10456  repeats 49222
-[probe2] rchar MB 967.9  read_bytes MB 0.0
+[probe2] wall 57.96  opens 59676  distinct 10457  repeats 49219
+[probe2] rchar MB 967.3  read_bytes MB 0.0
 [probe2] buckets:
           preprints/                 56328
           notes/index/               2098
           lean/docs/                 512
           lean/ComparatorChallenges/ 468
           abs/other                  66
-          notes/scripts/             48
+          notes/scripts/             49
           notes/templates/           44
-          notes/                     41
-          other                      40
+          notes/                     39
+          other                      39
           lean/OAI/                  28
           top-level                  5
 [probe2] notes/ paths (count  modes  path):
               2  r        notes/abstracts.tsv
-             15  r        notes/catalog.tsv
+             14  r        notes/catalog.tsv
               2  r        notes/conjecture-standing.tsv
               2  r        notes/formalization-deps.tsv
               2  r        notes/index/README.md
@@ -2302,7 +2302,7 @@ labels 37
               2  r        notes/index/topology/321-a-counterexample-to-walls-finite-d-2-conjecture.md
               2  r        notes/index/traces.tsv
               4  r        notes/links.tsv
-              5  r        notes/sources.tsv
+              4  r        notes/sources.tsv
               6  r        notes/subfindings.tsv
               1  r        notes/t0-triage.md
               2  r        notes/templates/discipline.md.j2
@@ -2343,30 +2343,30 @@ scope-exclusions.md written  lines 316  bytes 26613
 topics.md written  lines 327  bytes 24057
 t0-chains.md written  lines 542  bytes 35016
 subfinding-pairs.md written  lines 623  bytes 56755
-README.md written  lines 682  bytes 60515
+README.md written  lines 683  bytes 60835
 counterexample-crosscheck.md written  lines 1062  bytes 47378
 templates.md written  lines 97  bytes 6714
 slots  sources 31  abstracts 41  named-results 82  index-design 98  names 129  proof-density 64  index-links 84  links 115  dependency-drift 94  verification-dirs 43  scope-exclusions 18  topics 116  t0-chains 61  subfinding-pairs 37  readme 70  crosscheck 86  templates 37  multi-root rows 4  rows 719  listed 719  dirs 749  comparisons 719  families 372  target rows 17
 [probe2] target notes/scripts/render_reports.py 
-[probe2] wall 231.58  opens 152680  distinct 12316  repeats 140364
-[probe2] rchar MB 4837.4  read_bytes MB 0.0
+[probe2] wall 138.99  opens 75394  distinct 12319  repeats 63075
+[probe2] rchar MB 3568.8  read_bytes MB 0.0
 [probe2] buckets:
-          preprints/                 142403
+          preprints/                 65129
           notes/index/               4180
           lean/docs/                 1992
           lean/OAI/                  1870
           lean/ComparatorChallenges/ 1823
-          notes/                     106
-          other                      85
+          notes/                     97
+          other                      82
           abs/other                  67
           notes/templates/           61
-          notes/scripts/             49
-          top-level                  44
+          notes/scripts/             51
+          top-level                  42
 [probe2] notes/ paths (count  modes  path):
               1  r        notes/README.md
               1  r        notes/abstracts.md
               3  r        notes/abstracts.tsv
-             33  r        notes/catalog.tsv
+             29  r        notes/catalog.tsv
               3  r        notes/conjecture-standing.tsv
               1  r        notes/counterexample-crosscheck.md
               1  r        notes/dependency-drift.md
@@ -3430,9 +3430,9 @@ slots  sources 31  abstracts 41  named-results 82  index-design 98  names 129  p
               1  r        notes/proof-density.md
               2  r        notes/scope-exclusions.md
               1  r        notes/sources.md
-             13  r        notes/sources.tsv
+              9  r        notes/sources.tsv
               2  r        notes/subfinding-pairs.md
-             13  r        notes/subfindings.tsv
+             12  r        notes/subfindings.tsv
               1  r        notes/t0-chains.md
               2  r        notes/t0-triage.md
               1  r        notes/templates.md
