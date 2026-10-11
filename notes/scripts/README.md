@@ -102,12 +102,19 @@ and `locate_summary_quotes.py`, and `check_index_links.py` twice — plain and w
 `math-a0r.6.2` gave its self-test a prose mutant that only the gate can run), and **42** checker
 invocations: each of the 20 checkers plain and
 with `--mutant` (**40**), plus `verify_conjecture_standing.py` plain and with `--mutant` (**2**) — in
-class order, not in the order the rows sit; it prints one line per invocation with its exit code and
-writes nothing to the repo. `math-8ou` promoted it from `.qwen/tmp/` into `notes/scripts/`, closing
+class order, not in the order the rows sit; it prints one line per invocation with its exit code, its
+wall time, and the first 200 bytes of its report, and writes nothing to the repo outside
+`.qwen/tmp/reports/`. `math-8ou` promoted it from `.qwen/tmp/` into `notes/scripts/`, closing
 the one gap the list had. A writer's gate is the twice-run byte-identity diff on its target, recorded
-in the writers table. `gate_driver.sh` normalizes wall-time tokens (`0.53s` → `Ts`) before diffing
-the two run reports: `measure_checker_needles.py` prints one timing per checker, so the raw reports
-differ between runs on timing alone. The md5 and `git status` diffs are raw.
+in the writers table. The list is two arrays: `serial_rows` (the writers in dependency order, plus
+`refresh_summary_line_counts.py`) run in order, `pool_rows` (the **54** read-only invocations) run
+through `xargs -P 8` and print in the canonical order of the list, so the pooled report is the same
+bytes a serial run prints — measured 2026-10-11: serial 928 s, pooled 431 s, pooled report diffed
+against the serial report with wall-time tokens normalized 0 bytes. `GATE_POOL=1` runs everything
+serially. A pooled row must spawn no writer, so the render children (`build_index.py`,
+`extract_links.py`) run with `--check-only`. `gate_driver.sh` normalizes wall-time tokens (`0.53s` →
+`Ts`) before diffing the two run reports: every row prints its wall time, so the raw reports differ
+between runs on timing alone. The md5 and `git status` diffs are raw.
 
 | Script | Report feeds | Gate |
 |---|---|---|

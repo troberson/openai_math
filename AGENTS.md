@@ -399,10 +399,16 @@ lives in this file and nowhere else.
   `locate_summary_quotes.py`, and `check_index_links.py` plain and with `--mutant`;
   `read_manuscript.py` is the one script it does not run), and **42**
   checker invocations: each of the 20 checkers plain and with `--mutant` (**40**), plus
-  `verify_conjecture_standing.py` plain and with `--mutant` (**2**). Run it twice: the two md5
+  `verify_conjecture_standing.py` plain and with `--mutant` (**2**). The list is two arrays:
+  `serial_rows` (the writers in dependency order, plus `refresh_summary_line_counts.py`) run in
+  order, `pool_rows` (the **54** read-only invocations) run through `xargs -P 8` and print in the
+  canonical order of the list, so the report is the same bytes a serial run prints. `GATE_POOL=1`
+  runs everything serially — that is the baseline the pooled report is diffed against. A row in the
+  pool must spawn no writer: the render of `notes/index-links.md` runs `build_index.py` as a child,
+  so the render children run with `--check-only`. Run it twice: the two md5
   snapshots and the two `git status` snapshots must be byte-identical, and the two run reports must
-  be identical once the driver normalizes wall-time tokens (`measure_checker_needles.py` prints one
-  timing per checker, so a raw run diff is never byte-identical); `notes/scripts/README.md` carries
+  be identical once the driver normalizes wall-time tokens (every row prints its wall time, so a raw
+  run diff is never byte-identical); `notes/scripts/README.md` carries
   the gate command for every row. `refresh_summary_line_counts.py` runs first among the checkers
   because `verify_summaries.py` flags a stale `Lines` cell. One driver at a time, and stop it by
   process group, never by PID. `notes/scripts/gate_driver.sh` runs the list twice and writes the

@@ -300,7 +300,7 @@ MUTANTS = [
     ("purity row deleted", lambda p: re.sub(r"^\|\s*`check_index_links\.py`.*\n", "", p, count=1, flags=re.M)),
     ("digest count widened", lambda p: p.replace("**5** digests", "**6** digests", 1)),
     ("probe figure altered", lambda p: p.replace("75,394", "75,395")),
-    ("anchor outside the file", lambda p: p.replace("render_reports.py:1132", "render_reports.py:3400", 1)),
+    ("anchor outside the file", lambda p: p.replace("render_reports.py:1134", "render_reports.py:3400", 1)),
     ("prose count in the size argument", lambda p: p.replace("**630,606** bytes", "**630,605** bytes", 1)),
 ]
 
