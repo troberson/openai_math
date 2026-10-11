@@ -42,8 +42,9 @@ behaviour and rules only.
 5. **Claim shape is multi-label.** 66 families match ≥3 shapes, 57 match none. Never present the
    taxonomy as a partition; report the tag set.
 6. **A tag is not a claim, and tags omit as well as mislabel.** Keyword tags need a reading pass
-   before you call a family by them: the `conditional` tag flagged 9 families, 5 of which were not
-   assumptions. In the other direction, 74 families use counterexample language and only 44 carry
+   before you call a family by them: the naive `conditional` tag flagged 9 families, 5 of which were
+   not assumptions; with the generator's guards the tag yields **5** (014, 125, 240, 244, 282). In the
+   other direction, 74 families use counterexample language and only 44 carry
    the `counterexample` tag — all 30 untagged flags are genuine on reading. Quote shape counts as
    floors. `notes/conditional.md` is the model — name the hypothesis, say where it sits, record the
    flags you dropped.
@@ -106,7 +107,7 @@ behaviour and rules only.
 |---|---|---|
 | `notes/catalog.tsv` | 372-row ledger, 22 columns, one row per family | Any lookup, filter, or count |
 | `notes/README.md` | Column definitions, tier defs, shape yields, discipline table, traps | Before quoting any number |
-| `notes/scripts/build_catalog.py` | Generator (stdlib only, ~300 lines) | Regenerating, or adding a column |
+| `notes/scripts/build_catalog.py` | Generator (stdlib only, **185** lines measured 2026-10-11 — the joins live in `catlib/ledger.py` / `catlib/overview.py`) | Regenerating, or adding a column |
 | `notes/scripts/triage_t0.py` | Buckets the 130 T0 families by claim shape (reads the ledger, writes nothing) | Any T0 count, bucket, or priority question |
 | `notes/t0-triage.md` | T0 buckets, two reading passes covering all 130 families, the 21-family counterexample record, scope qualifiers found in abstracts | Before triaging or discussing T0 families |
 | `notes/conditional.md` | Manual pass: what each conditional family assumes, and dropped flags | Before calling any family conditional |
@@ -165,7 +166,9 @@ behaviour and rules only.
 - `Path` vs `str` in a membership test. `verification`, `inputs`, and `covmd` read 0 for all 372
   rows because the reference sets held `Path` objects while the tested values were strings — a
   silently empty column, indistinguishable from a genuinely empty one. Key such sets on `.name`, and
-  quote the repo-wide sum the generator prints (30 dirs / 22 families, 4, 2) rather than a row count.
+  quote the repo-wide sum the generator prints (2026-10-11 report: `verification dirs 30`,
+  `INPUTS.md 4`, `COVERAGE.md 2`; the ledger's `verification > 0` set is **22** families) rather than
+  a row count.
 - A coverage document is not coverage. Family 318's `SUPPORT-COVERAGE.md` names a `support/r-ce/`
   certificate bundle, `BUILDING.md`, and `SUPPORT-COVERAGE.json`; none exist on disk or in git. When
   a family ships a coverage statement, check that the artifacts it names are present before
