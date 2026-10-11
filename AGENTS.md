@@ -46,8 +46,11 @@ lives in this file and nowhere else.
   headline statements over 17 families, the three-layer naming record, and the applied 233 → 248
   `resolves_named` scope swap) with `named-results.tsv` **absent** beside it — the page is
   report-fed, not table-fed,
+  `formalization-faithfulness.md` (the Lean-vs-manuscript faithfulness read — the mistranslation
+  paper's two signatures, the 189 resolved declarations, the 61 carrier bodies, the literal pairing,
+  and the `a.e.` surface),
   `summaries/<discipline>/<NNN>-<name>.md`, `templates/` (the page skeletons the renderers read —
-  **5** hand-written index skeletons `build_index.py` renders, plus **17** report templates under
+  **5** hand-written index skeletons `build_index.py` renders, plus **18** report templates under
   `templates/report/` that `build_report_templates.py` builds from a page's own bytes at `HEAD`; a
   report template is generated, so edit the writer's label dict in `render_reports.py` and re-render
   rather than hand-editing it) — the only place a generated page's text lives, `notes/scripts/`.
@@ -57,9 +60,9 @@ lives in this file and nowhere else.
 
 - Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `atomic`, `promote`, `overview`, `ledger`, `preprints`,
   `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries`, `templates`, `records` (17 modules). Import them (`from catlib import yaml as Y`);
-  do not re-implement a join in an extractor. **49** of the **53** scripts do — the rule is
+  do not re-implement a join in an extractor. **50** of the **55** scripts do — the rule is
   `^[ \t]*(from|import) catlib`, so a deferred import inside a function counts — including
-  **all 21** checkers; the four non-importers are `dump_template_slots.py`, which reaches the slot dict
+  **all 22** checkers; the four non-importers are `dump_template_slots.py`, which reaches the slot dict
   through `render_reports.py` and never touches the registry, `verify_fleet_design.py`, which
   measures the fleet's own sources and the tracked probe records, so it has no corpus join to import,
   and `measure_proof_density.py` and `measure_topics.py`, which were this rule's two-importers-today
@@ -221,6 +224,13 @@ lives in this file and nowhere else.
   through the declaration file's **import closure** (BFS over `import OAI.*`), not through the directory
   layout — **11** of the 28 declarations are carrier-typed, and a verdict that quotes only the `main`
   line quotes nothing.
+- A declaration read must match the **qualified** name as well as the tail, and a carrier read must
+  allow `noncomputable`: `lean/OAI/Probability/ThorpRouting/Main.lean:13` writes
+  `theorem ThorpNine.main :` and `lean/OAI/Computability/MeanPayoff/Model.lean:113` writes
+  `noncomputable def MainClaim : Prop := by`. A bare-tail rule reads 188 of the 189 declarations and a
+  `private|protected`-only carrier rule misses 1 of the 61 carriers. Both rules were widened in
+  `extract_counterexample_crosscheck.py`; measured over the 28-family counterexample population,
+  neither widening adds a row, so `notes/counterexample-crosscheck.md`'s counts are unchanged by them.
 - `sorry` in a comparator stub has two rules: **55** over the 52 distinct config files behind the
   population, **58** over scope-note link **occurrences** (the 3-gap is family 100's four links to
   `CylinderCovering`). Quote the figure with the rule; the extractor prints the per-link number and the
@@ -355,17 +365,17 @@ lives in this file and nowhere else.
   manifest is `notes/scripts/README.md`, and it is the only place that answers "whose bytes are
   this". It is also the script inventory: every script under `notes/scripts/` is listed once as
   writer, report-only or checker, with what it writes and the gate command the gate list runs for it
-  — **10** writers, **21** report-only, **20** checkers, plus the page's own checker as the 21st
-  checker and 52nd script — and the fourth class, scratch, is recorded by rule: **scratch lives under
+  — **10** writers, **22** report-only, **22** checkers, plus the page's own checker as the 23rd
+  checker and 55th script — and the fourth class, scratch, is recorded by rule: **scratch lives under
   `.qwen/tmp/`, a permanent script lives under `notes/scripts/`**, so a probe that a later pass
   re-runs is promoted and gets a table row before it gets a gate command. `math-o3a.3.4` is that rule
   realized: the audit-hook probe moved from `.qwen/tmp/a11_open_probe2.py` to
   `notes/scripts/measure_open_probe.py`, and the gate does not run it because a record carries a wall
   time per target, so a twice-run byte diff of a record is a timing artifact.
-  Scripts and generated files are **not** 1-to-1: of the **51** scripts, **10** write
+  Scripts and generated files are **not** 1-to-1: of the **54** scripts, **10** write
   (`build_catalog.py`, `build_sources.py`, `build_index.py`, `compare_abstracts.py` — with `--tsv`
   only — `extract_formalization_deps.py`, `extract_links.py`, `extract_subfindings.py`,
-  `render_reports.py`, `build_report_templates.py`, `measure_open_probe.py`) and **41**
+  `render_reports.py`, `build_report_templates.py`, `measure_open_probe.py`) and **44**
   write nothing, and `build_index.py` alone renders **1,049** files. Of the **8** top-level
   `notes/*.tsv`, **6** are generator output and **2** are hand-authored — `notes/topics.tsv` (the
   curated vocabulary `build_index.py` reads) and `notes/conjecture-standing.tsv` (the training-data
@@ -394,15 +404,15 @@ lives in this file and nowhere else.
   nothing. Prove the mode by running a writer plain, then with the flag, diffing the two reports (the
   write announcement is the only line allowed to differ) and confirming `git status --porcelain` is
   unchanged by the flagged run. The read-only gate pool is the block that runs rows with this flag.
-- The whole-tree test is the gate list at `notes/scripts/gate.sh`: **73** invocations — the **8**
+- The whole-tree test is the gate list at `notes/scripts/gate.sh`: **76** invocations — the **8**
   gated writers (`build_report_templates.py` is the writer it does not run),
-  the 21 gated report-only rows (including `check_summary_manuscripts.py` and
+  the 22 gated report-only rows (including `check_summary_manuscripts.py` and
   `locate_summary_quotes.py`, and `check_index_links.py` plain and with `--mutant`;
-  `read_manuscript.py` is the one script it does not run), and **44**
-  checker invocations: each of the 21 checkers plain and with `--mutant` (**42**), plus
+  `read_manuscript.py` is the one script it does not run), and **46**
+  checker invocations: each of the 22 checkers plain and with `--mutant` (**44**), plus
   `verify_conjecture_standing.py` plain and with `--mutant` (**2**). The list is two arrays:
   `serial_rows` (the writers in dependency order, plus `refresh_summary_line_counts.py`) run in
-  order, `pool_rows` (the **56** read-only invocations) run through `xargs -P 8` and print in the
+  order, `pool_rows` (the **59** read-only invocations) run through `xargs -P 8` and print in the
   canonical order of the list, so the report is the same bytes a serial run prints. `GATE_POOL=1`
   runs everything serially — that is the baseline the pooled report is diffed against. A row in the
   pool must spawn no writer: the render of `notes/index-links.md` runs `build_index.py` as a child,
@@ -552,6 +562,17 @@ lives in this file and nowhere else.
   where the declaration opens, and the carrier's definition anchor. It flags fourteen injected mutants
   and writes nothing. Run `python3 notes/scripts/extract_counterexample_crosscheck.py` twice and diff:
   the report must be identical.
+- Check `notes/formalization-faithfulness.md` with
+  `python3 notes/scripts/verify_faithfulness.py --mutant` before quoting any of its counts — it
+  re-derives the `main_results` / declaration / carrier / import-closure walk, the manuscript
+  theorem-environment literal sets, and the `a.e.` surface with its **own** regexes and its own file
+  reads, never through `measure_faithfulness.py`, and matches all 13 count phrases against that
+  recomputation. It resolves every `path:line` and `path:a-b` anchor, attributes each fenced block to
+  the **nearest preceding** anchor, pins each `*"…"*` quotation to the anchor in its own line, requires
+  the 2-row disjoint table, the 15-row overlap table and the 32-row `a.e.` table to equal the
+  recomputation, and ends with the render diff against `render_reports.py`. It flags fifteen injected
+  mutants and writes nothing. Quote a count from `python3 notes/scripts/measure_faithfulness.py`'s
+  report, which is the writer's source for every number on the page.
 - Check `notes/t0-chains.md` with `python3 notes/scripts/verify_t0_chains.py --mutant` before quoting
   any of its counts — it resolves every `file:line` anchor (`.bib` files included), matches each fenced
   block against the **nearest preceding** anchor as joined text against the same number of source lines
@@ -724,8 +745,8 @@ lives in this file and nowhere else.
   every time the command block is edited and would read the gap as empty the moment the naming
   lands — and recomputes the shared-basename sets
   (**1** top-level ∩ index: `README.md`; **13** index ∩ summaries slugs). It excludes
-  itself from the population, so the page's **53** scripts and **22** checkers are the run's **52** and
-  21. It flags seventeen injected mutants, each asserted against the check it targets, and writes nothing.
+  itself from the population, so the page's **55** scripts and **23** checkers are the run's **54** and
+  22. It flags seventeen injected mutants, each asserted against the check it targets, and writes nothing.
 - Check the promotion protocol with `python3 notes/scripts/verify_cache_promotion.py --mutant` before
   quoting any cache figure — it re-derives the `catlib/promote.py` registry three ways: the writer set
   (`ARTIFACTS` plus the one writer the protocol excludes, `measure_open_probe.py`, whose record carries

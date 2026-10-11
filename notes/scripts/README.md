@@ -1,18 +1,18 @@
 # Scripts and generated files
 
-Measured 2026-10-10 by `python3 notes/scripts/verify_script_ownership.py` — report-only, it writes
+Measured 2026-10-11 by `python3 notes/scripts/verify_script_ownership.py` — report-only, it writes
 nothing, and every count below is re-derived by that run. The page answers one question: for each of
-the **1,137** files under `notes/` (the scripts excluded), which is whose bytes. A generated file is
+the **1,138** files under `notes/` (the scripts excluded), which is whose bytes. A generated file is
 changed by editing its generator and re-rendering; a hand-written file is edited directly. Ownership
 is per file, and the checker exits 1 on a file no rule owns.
 
 It is also the script inventory. Every script under `notes/scripts/` is listed once, in one of three
 classes — writer, report-only, checker — with what it writes and the command the gate runs for it, and
 the fourth class, the scratch a session writes outside the tree, is recorded by rule rather than by
-file. The classes partition the **53** scripts: **10** writers, **21** report-only, **21** checkers,
-and `verify_script_ownership.py` itself, which is the 22nd checker and is not listed in its own table.
+file. The classes partition the **55** scripts: **10** writers, **22** report-only, **22** checkers,
+and `verify_script_ownership.py` itself, which is the 23rd checker and is not listed in its own table.
 
-## The split: 10 write, 42 write nothing
+## The split: 10 write, 44 write nothing
 
 The writer set is derived from the scripts' own source, not from this page: a script is a writer when
 a path constant rooted at `notes/` appears on the left of `.open(..., "w")` or `.write_text(...)`,
@@ -28,7 +28,7 @@ self-test: a module-level
 `mutants` / `mutant_test` / `selftest` body is blanked before the write calls are read, because a
 self-test writes the page it checks only to mutate it and restores the bytes it read in the `finally`
 — `verify_script_ownership.py` does exactly that, in three branches (the page it checks, `notes/scripts/README.md`, and `notes/templates.md`), so its normal run writes nothing and it stays in the checker class. `check_index_links.py` and `measure_proof_density.py` were this rule's examples; `math-o3a.3` moved their sync pass into `verify_page_sync.py`, which mutates page text in memory, so neither script carries a write call any more. That rule
-finds **10** writers over **52** scripts.
+finds **10** writers over **54** scripts.
 
 ### Writers
 
@@ -41,12 +41,12 @@ finds **10** writers over **52** scripts.
 | `extract_formalization_deps.py` | `notes/formalization-deps.tsv` | single run; cached bytes == promoted bytes under the key | `notes/dependency-drift.md` |
 | `extract_links.py` | `notes/links.tsv` | single run; cached bytes == promoted bytes under the key | `notes/links.md` |
 | `extract_subfindings.py` | `notes/subfindings.tsv` | single run; cached bytes == promoted bytes under the key | `notes/subfinding-pairs.md` |
-| `render_reports.py` | `notes/README.md`, `notes/abstracts.md`, `notes/dependency-drift.md`, `notes/index-design.md`, `notes/index-links.md`, `notes/links.md`, `notes/named-results.md`, `notes/names.md`, `notes/proof-density.md`, `notes/sources.md`, `notes/verification-dirs.md`, `notes/scope-exclusions.md`, `notes/topics.md`, `notes/t0-chains.md`, `notes/subfinding-pairs.md`, `notes/counterexample-crosscheck.md`, `notes/templates.md` | single run; cached bytes == promoted bytes for all 17 pages | the seventeen report-fed pages |
-| `build_report_templates.py` | `notes/templates/report` | not in `gate.sh` — it reads each page with `git show HEAD:`, so a gate run would rewrite templates from committed bytes; run explicitly with 0 args (all seventeen pages) or 2 (one page) after a writer's slot dict changes | the seventeen page templates; the registry, slot dicts and needle derivation it reads are in `catlib/templates.py` |
+| `render_reports.py` | `notes/README.md`, `notes/abstracts.md`, `notes/dependency-drift.md`, `notes/index-design.md`, `notes/index-links.md`, `notes/links.md`, `notes/named-results.md`, `notes/names.md`, `notes/proof-density.md`, `notes/sources.md`, `notes/verification-dirs.md`, `notes/scope-exclusions.md`, `notes/topics.md`, `notes/t0-chains.md`, `notes/subfinding-pairs.md`, `notes/counterexample-crosscheck.md`, `notes/formalization-faithfulness.md`, `notes/templates.md` | single run; cached bytes == promoted bytes for all 18 pages | the eighteen report-fed pages |
+| `build_report_templates.py` | `notes/templates/report` | not in `gate.sh` — it reads each page with `git show HEAD:`, so a gate run would rewrite templates from committed bytes; run explicitly with 0 args (all eighteen pages) or 2 (one page) after a writer's slot dict changes | the eighteen page templates; the registry, slot dicts and needle derivation it reads are in `catlib/templates.py` |
 | `measure_open_probe.py` | `notes/probe` | not in `gate.sh` — a record carries a wall time per target, so a run-1/run-2 byte diff of a record is a timing artifact, not a proof; run explicitly over the purity and amplification targets, appending stdout to build a multi-target record | the two probe records `verify_fleet_design.py` parses |
 
 Six writers emit one TSV each. `build_index.py` is the one-to-many case: it renders **1,049** files —
-**1,033** `.md` pages and **16** `.tsv` tables. `render_reports.py` renders the seventeen report-fed pages
+**1,033** `.md` pages and **16** `.tsv` tables. `render_reports.py` renders the eighteen report-fed pages
 from the templates `build_report_templates.py` builds from the committed page and the slot dict that
 writer supplies. `compare_abstracts.py` is the conditional case: its
 default run writes nothing and only `--tsv` touches `notes/abstracts.tsv`.
@@ -95,21 +95,21 @@ Editing a join in `build_catalog.py` can move rows in six artifacts.
 
 ### Report-only
 
-The other **42** scripts write nothing. **21** of them print the report a page's counts come from.
-The Gate column is the invocation the gate list runs: `notes/scripts/gate.sh`, which runs **73**
+The other **44** scripts write nothing. **22** of them print the report a page's counts come from.
+The Gate column is the invocation the gate list runs: `notes/scripts/gate.sh`, which runs **76**
 invocations — the **8** gated writers (the two writers it does not run are `build_report_templates.py`
-and `measure_open_probe.py`, each for the reason in its own row), the 21 gated report-only rows (including `check_summary_manuscripts.py`
+and `measure_open_probe.py`, each for the reason in its own row), the 22 gated report-only rows (including `check_summary_manuscripts.py`
 and `locate_summary_quotes.py`, and `check_index_links.py` twice — plain and with `--mutant`, since
-`math-a0r.6.2` gave its self-test a prose mutant that only the gate can run), and **44** checker
-invocations: each of the 21 checkers plain and
-with `--mutant` (**42**), plus `verify_conjecture_standing.py` plain and with `--mutant` (**2**) — in
+`math-a0r.6.2` gave its self-test a prose mutant that only the gate can run), and **46** checker
+invocations: each of the 22 checkers plain and
+with `--mutant` (**44**), plus `verify_conjecture_standing.py` plain and with `--mutant` (**2**) — in
 class order, not in the order the rows sit; it prints one line per invocation with its exit code, its
 wall time, and the first 200 bytes of its report, and writes nothing to the repo outside
 `.qwen/tmp/reports/`. `math-8ou` promoted it from `.qwen/tmp/` into `notes/scripts/`, closing
 the one gap the list had. A writer's gate is the single run plus the promote-and-verify assertion
 recorded in the writers table: the bytes it lands under its key must equal the bytes on the tracked
 path. The list is two arrays: `serial_rows` (the writers in dependency order, plus
-`refresh_summary_line_counts.py`) run in order, `pool_rows` (the **56** read-only invocations) run
+`refresh_summary_line_counts.py`) run in order, `pool_rows` (the **59** read-only invocations) run
 through `xargs -P 8` and print in the canonical order of the list, so the pooled report is the same
 bytes a serial run prints — measured 2026-10-11: serial 928 s, pooled 431 s, pooled report diffed
 against the serial report with wall-time tokens normalized 0 bytes. `GATE_POOL=1` runs everything
@@ -134,6 +134,7 @@ the twice-run needed (`0.53s` → `Ts`, because every row prints its wall time) 
 | `extract_verification_dirs.py` | `notes/verification-dirs.md` | plain |
 | `locate_summary_quotes.py` | `notes/summaries/` — the lines a page should cite when a quotation stops matching | plain, no page argument |
 | `measure_checker_needles.py` | `notes/templates.md` — the per-checker needle inventory behind its Needles column | plain |
+| `measure_faithfulness.py` | `notes/formalization-faithfulness.md` | plain |
 | `measure_index_sizes.py` | `notes/index-design.md` | plain |
 | `measure_names.py` | `notes/names.md` | plain |
 | `measure_proof_density.py` | `notes/proof-density.md` | `--mutant` |
@@ -156,9 +157,9 @@ compared with `render_reports.py`'s render of it, folded into the exit code), an
 
 ### Checkers
 
-The remaining **21** scripts verify a page or a table. Each exits non-zero when what it checks has
+The remaining **22** scripts verify a page or a table. Each exits non-zero when what it checks has
 drifted; each takes `--mutant`, which injects faults and asserts they are caught. The gate runs each
-one plain and then with `--mutant` — **44** of the 73 invocations: **42** from the loop over the 21
+one plain and then with `--mutant` — **46** of the 76 invocations: **44** from the loop over the 22
 rows below, **2** more for `verify_conjecture_standing.py`, which the list runs outside the loop.
 
 | Checker | Checks | Gate | Cost (s) |
@@ -170,6 +171,7 @@ rows below, **2** more for `verify_conjecture_standing.py`, which the list runs 
 | `verify_conjecture_standing.py` | `notes/conjecture-standing.tsv` | plain + `--mutant` | 0.0 / 0.0 |
 | `verify_counterexample_crosscheck.py` | `notes/counterexample-crosscheck.md` | plain + `--mutant` | 0.3 / 2.4 |
 | `verify_dependency_drift.py` | `notes/dependency-drift.md`, `notes/formalization-deps.md` | plain + `--mutant` | 0.3 / 1.8 |
+| `verify_faithfulness.py` | `notes/formalization-faithfulness.md` — anchors, the count phrases re-derived by its own `main_results`/declaration/carrier/closure walk (not the writer's), the disjoint and overlap pairing tables, the `a.e.` table, and the render diff | plain + `--mutant` | 0.0 / 0.0 |
 | `verify_findings.py` | `notes/findings.md` | plain + `--mutant` | 103.4 / 825.3 |
 | `verify_fleet_design.py` | `notes/fleet-design.md` — anchors, the count phrases re-derived from `git`/`du`/the probe records, the purity and amplification tables | plain + `--mutant` | 0.3 / 0.5 |
 | `verify_index_design.py` | `notes/index-design.md` | plain + `--mutant` | 2.7 / 20.7 |
