@@ -35,7 +35,8 @@ python3 notes/scripts/render_reports.py       # writes notes/sources.md, notes/a
 python3 notes/scripts/measure_templates.py    # the census behind notes/templates.md: lines, bytes and slots of all 23 templates, the builder's page->checker registry, and needle coverage; report-only, writes nothing
 python3 notes/scripts/dump_template_slots.py   # prints the writer's templates slot dict, one label per line, with its values; report-only, writes nothing
 python3 notes/scripts/measure_checker_needles.py  # per-checker needle inventory behind the census page's Needles column; report-only, writes nothing
-python3 notes/scripts/measure_open_probe.py --record <name> <target.py>  # the audit-hook probe: every open() a target performs, with its mode string, bucketed; writes notes/probe/<name>.txt through catlib.atomic. Not in gate.sh — a record carries a wall time per target, so a twice-run byte diff is a timing artifact
+python3 notes/scripts/measure_open_probe.py --record <name> <target.py>  # the audit-hook probe: every open() a target performs, with its mode string, bucketed; writes notes/probe/<name>.txt through catlib.atomic. Not in gate.py — a record carries a wall time per target, so a twice-run byte diff is a timing artifact
+python3 notes/scripts/gate.py  # the gate list: 75 rows as a dependency graph, each row a (spec, needs, writes) triple, a row starting when its needs are written; prints one line per row in list order and writes only under .qwen/tmp/reports/. GATE_POOL is the concurrency cap (12 rows), GATE_POOL=1 the serial baseline
 python3 notes/scripts/build_sources.py      # writes notes/sources.tsv (the LaTeX surface of all 719 manuscripts) and prints the reconciliation
 python3 notes/scripts/verify_sources.py --mutant  # checks notes/sources.md against preprints/: every count, every anchor, every directory name
 python3 notes/scripts/measure_topics.py     # measures notes/topics.tsv over the four text layers; report-only, writes nothing
