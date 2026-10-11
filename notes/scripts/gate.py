@@ -137,7 +137,7 @@ def run(spec: str) -> None:
     report = f"{R}/gate_{tag}.txt"
     t0 = time.time()
     with open(report, "wb") as out:
-        rc = subprocess.run(["python3", f"{S}/{a[0]}"] + a[1:], stdout=out,
+        rc = subprocess.run(["python3", f"{S}/{a[0]}", *a[1:]], stdout=out,
                             stderr=subprocess.STDOUT, check=False).returncode
     w = int((time.time() - t0) * 10)
     with open(report, "rb") as f:
