@@ -16,8 +16,11 @@ tab-delimited table as one field.
 from __future__ import annotations
 
 import csv
+import io
 from collections.abc import Iterable, Mapping, Sequence
 from pathlib import Path
+
+from catlib.atomic import write_atomic
 
 
 def cell(value: object) -> str:
@@ -46,32 +49,33 @@ def read_matrix(path: Path) -> tuple[list[str], list[list[str]]]:
 
 def write_rows(path: Path, cols: Sequence[str], rows: Iterable[Mapping[str, object]]) -> None:
     """Header line plus one line per row, cells folded by cell()."""
-    with path.open("w", encoding="utf-8") as fh:
-        fh.write("\t".join(cols) + "\n")
-        for r in rows:
-            fh.write("\t".join(cell(r[c]) for c in cols) + "\n")
+    text = "\t".join(cols) + "\n"
+    for r in rows:
+        text += "\t".join(cell(r[c]) for c in cols) + "\n"
+    write_atomic(path, text)
 
 
 def write_csv(path: Path, cols: Sequence[str], rows: Iterable[Mapping[str, object]]) -> None:
     """csv.writer form: a cell containing the delimiter is quoted."""
-    with path.open("w", encoding="utf-8", newline="") as fh:
-        w = csv.writer(fh, delimiter="\t", lineterminator="\n")
-        w.writerow(cols)
-        for r in rows:
-            w.writerow([r[c] for c in cols])
+    buf = io.StringIO(newline="")
+    w = csv.writer(buf, delimiter="\t", lineterminator="\n")
+    w.writerow(cols)
+    for r in rows:
+        w.writerow([r[c] for c in cols])
+    write_atomic(path, buf.getvalue())
 
 
 def write_plain(path: Path, cols: Sequence[str], rows: Iterable[Mapping[str, object]]) -> None:
     """Unsanitized join: the writer that produced formalization-deps.tsv."""
-    with path.open("w", encoding="utf-8") as fh:
-        fh.write("\t".join(cols) + "\n")
-        for r in rows:
-            fh.write("\t".join(str(r[c]) for c in cols) + "\n")
+    text = "\t".join(cols) + "\n"
+    for r in rows:
+        text += "\t".join(str(r[c]) for c in cols) + "\n"
+    write_atomic(path, text)
 
 
 def write_sanitized(path: Path, cols: Sequence[str], rows: Iterable[Mapping[str, object]]) -> None:
     """Tab-only fold: the writer that produced links.tsv."""
-    with path.open("w", encoding="utf-8") as fh:
-        fh.write("\t".join(cols) + "\n")
-        for r in rows:
-            fh.write("\t".join(str(r[c]).replace("\t", " ") for c in cols) + "\n")
+    text = "\t".join(cols) + "\n"
+    for r in rows:
+        text += "\t".join(str(r[c]).replace("\t", " ") for c in cols) + "\n"
+    write_atomic(path, text)

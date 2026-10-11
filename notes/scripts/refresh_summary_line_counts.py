@@ -18,6 +18,7 @@ Usage: python3 notes/scripts/refresh_summary_line_counts.py            # rewrite
 import argparse
 from pathlib import Path
 
+from catlib.atomic import write_atomic
 from catlib.paths import ROOT, SUMMARIES_DIR
 from catlib.summaries import ROW, Page
 
@@ -55,7 +56,7 @@ def refresh(path, write):
         body = "\n".join(out)
         if not body.endswith("\n"):
             body += "\n"
-        path.write_text(body, encoding="utf-8")
+        write_atomic(path, body)
     return len(page.rows), drift
 
 

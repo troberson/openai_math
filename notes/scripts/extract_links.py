@@ -47,6 +47,7 @@ from pathlib import Path
 import build_catalog as bc
 
 from catlib import render as RD
+from catlib import tsv
 from catlib import yaml as Y
 from catlib.paths import (
     COMPARATOR_DIR as CHALLENGES,
@@ -598,10 +599,7 @@ def main():
         "authority about the result.",
     )
 
-    with OUT.open("w", encoding="utf-8") as fh:
-        fh.write("\t".join(FIELDS) + "\n")
-        for r in rows_out:
-            fh.write("\t".join(str(r[f]).replace("\t", " ") for f in FIELDS) + "\n")
+    tsv.write_sanitized(OUT, FIELDS, rows_out)
 
     for line in report:
         print(line)

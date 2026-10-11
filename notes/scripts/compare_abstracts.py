@@ -28,12 +28,14 @@ the measured population and fails if a gate goes uncaught.
 
 import csv
 import difflib
+import io
 import pathlib
 import re
 import statistics
 import sys
 
 from catlib import ledger, overview
+from catlib.atomic import write_atomic
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PRE = ROOT / "preprints"
@@ -327,16 +329,17 @@ def write_tsv(m):
     n_man = {}
     for x in m["man"]:
         n_man[x["fam"]] = n_man.get(x["fam"], 0) + 1
-    with TSV_OUT.open("w", encoding="utf-8", newline="") as fh:
-        w = csv.writer(fh, delimiter="\t", lineterminator="\n")
-        w.writerow(TSV_COLUMNS)
-        for fam in m["fam_order"]:
-            b, sh = m["fam_best"][fam], m["fam_shapes"][fam]
-            w.writerow([fam, n_man[fam], f"{b['ratio']:.3f}", b["relation"], b["dir"], b["file"],
-                        " ".join(sh["ov"]), " ".join(sh["ms"]),
-                        " ".join(sorted(set(sh["ov"]) - set(sh["ms"]))),
-                        " ".join(sorted(set(sh["ms"]) - set(sh["ov"]))),
-                        int("conditional" in sh["ov"]), int("conditional" in sh["ms"])])
+    buf = io.StringIO(newline="")
+    w = csv.writer(buf, delimiter="\t", lineterminator="\n")
+    w.writerow(TSV_COLUMNS)
+    for fam in m["fam_order"]:
+        b, sh = m["fam_best"][fam], m["fam_shapes"][fam]
+        w.writerow([fam, n_man[fam], f"{b['ratio']:.3f}", b["relation"], b["dir"], b["file"],
+                    " ".join(sh["ov"]), " ".join(sh["ms"]),
+                    " ".join(sorted(set(sh["ov"]) - set(sh["ms"]))),
+                    " ".join(sorted(set(sh["ms"]) - set(sh["ov"]))),
+                    int("conditional" in sh["ov"]), int("conditional" in sh["ms"])])
+    write_atomic(TSV_OUT, buf.getvalue())
     return TSV_OUT
 
 

@@ -57,6 +57,7 @@ import measure_names as MN
 import check_index_links as CL  # report-only: the checker runs nothing at import
 
 from catlib import yaml as Y
+from catlib.atomic import Staging
 from catlib.paths import (
     COMPARATOR_DIR as CHAL,
     FORMALIZATION_YAML,
@@ -164,13 +165,12 @@ def citation_edges(dir2fam, report):
 
 
 WRITTEN: set = set()
+ST = Staging("build_index")
 
 
 def write(relpath, text):
-    f = IDX / relpath
-    f.parent.mkdir(parents=True, exist_ok=True)
-    f.write_text(text, encoding="utf-8")
-    WRITTEN.add(f)
+    ST.stage(IDX / relpath, text)
+    WRITTEN.add(IDX / relpath)
 
 
 def write_tsv(relpath, cols, rows):
@@ -760,6 +760,9 @@ def main():
     print(f"manuscript links    main file {sum(1 for r in manuscript_rows if r['main_tex'])} of "
           f"{len(manuscript_rows)}  build/ {sum(1 for r in manuscript_rows if r['build'] == '1')}  "
           f"README.md {sum(1 for r in manuscript_rows if r['readme'] == '1')}")
+    # The staged bytes are promoted only now, after every reconciliation line has printed, so a run
+    # killed before this point leaves the tracked tree exactly as it was.
+    ST.promote()
     # A page whose family title changed is written under a new slug, so the old page survives on
     # disk and its manuscript table links the editions the merge superseded. The tree is generated,
     # so anything this build did not write is stale and is removed.

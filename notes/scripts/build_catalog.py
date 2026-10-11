@@ -11,7 +11,7 @@ Never invokes lean, lake, or comparator. Runtime is a few seconds.
 import re
 from pathlib import Path
 
-from catlib import ledger, measure, overview, yaml
+from catlib import ledger, measure, overview, tsv, yaml
 from catlib.paths import ROOT
 
 OUT = ROOT / "notes" / "catalog.tsv"
@@ -113,10 +113,7 @@ def main():
             "summary": 1 if fam in summary_fams else 0,
         })
 
-    with OUT.open("w", encoding="utf-8") as fh:
-        fh.write("\t".join(cols) + "\n")
-        for r in rows:
-            fh.write("\t".join(str(r[c]).replace("\t", " ").replace("\n", " ") for c in cols) + "\n")
+    tsv.write_rows(OUT, cols, rows)
 
     # ---- report: every number quoted in notes/README.md comes from here ----
     rel = measure.release()

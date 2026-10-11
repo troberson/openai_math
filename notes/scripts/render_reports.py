@@ -64,6 +64,7 @@ import measure_proof_density as PD
 import measure_templates as MTPL
 import measure_topics as MT
 from catlib import bib, ledger, overview, preprints, tsv
+from catlib.atomic import Staging
 from catlib import render as RD
 from catlib import yaml as Y
 from catlib.paths import (COMPARATOR_DIR, DEPS_TSV, FORMALIZATION_YAML, LAKEFILE, LAKE_MANIFEST,
@@ -3205,23 +3206,25 @@ def main() -> None:
     rmp = population_of("README")
     xcp = population_of("counterexample-crosscheck")
     tplp = population_of("templates")
-    SOURCES_MD.write_text(render_page(SOURCES_MD), encoding="utf-8")
-    ABSTRACTS_MD.write_text(render_page(ABSTRACTS_MD), encoding="utf-8")
-    NAMED_RESULTS_MD.write_text(render_page(NAMED_RESULTS_MD), encoding="utf-8")
-    INDEX_DESIGN_MD.write_text(render_page(INDEX_DESIGN_MD), encoding="utf-8")
-    NAMES_MD.write_text(render_page(NAMES_MD), encoding="utf-8")
-    PROOF_DENSITY_MD.write_text(render_page(PROOF_DENSITY_MD), encoding="utf-8")
-    INDEX_LINKS_MD.write_text(render_page(INDEX_LINKS_MD), encoding="utf-8")
-    LINKS_MD.write_text(render_page(LINKS_MD), encoding="utf-8")
-    DRIFT_MD.write_text(render_page(DRIFT_MD), encoding="utf-8")
-    VERIF_MD.write_text(render_page(VERIF_MD), encoding="utf-8")
-    EX_MD.write_text(render_page(EX_MD), encoding="utf-8")
-    TOPICS_MD.write_text(render_page(TOPICS_MD), encoding="utf-8")
-    T0_CHAINS_MD.write_text(render_page(T0_CHAINS_MD), encoding="utf-8")
-    SP_MD.write_text(render_page(SP_MD), encoding="utf-8")
-    README_MD.write_text(render_page(README_MD), encoding="utf-8")
-    CROSSCHECK_MD.write_text(render_page(CROSSCHECK_MD), encoding="utf-8")
-    TEMPLATES_MD.write_text(render_page(TEMPLATES_MD), encoding="utf-8")
+    ST = Staging("render_reports")
+    ST.stage(SOURCES_MD, render_page(SOURCES_MD))
+    ST.stage(ABSTRACTS_MD, render_page(ABSTRACTS_MD))
+    ST.stage(NAMED_RESULTS_MD, render_page(NAMED_RESULTS_MD))
+    ST.stage(INDEX_DESIGN_MD, render_page(INDEX_DESIGN_MD))
+    ST.stage(NAMES_MD, render_page(NAMES_MD))
+    ST.stage(PROOF_DENSITY_MD, render_page(PROOF_DENSITY_MD))
+    ST.stage(INDEX_LINKS_MD, render_page(INDEX_LINKS_MD))
+    ST.stage(LINKS_MD, render_page(LINKS_MD))
+    ST.stage(DRIFT_MD, render_page(DRIFT_MD))
+    ST.stage(VERIF_MD, render_page(VERIF_MD))
+    ST.stage(EX_MD, render_page(EX_MD))
+    ST.stage(TOPICS_MD, render_page(TOPICS_MD))
+    ST.stage(T0_CHAINS_MD, render_page(T0_CHAINS_MD))
+    ST.stage(SP_MD, render_page(SP_MD))
+    ST.stage(README_MD, render_page(README_MD))
+    ST.stage(CROSSCHECK_MD, render_page(CROSSCHECK_MD))
+    ST.stage(TEMPLATES_MD, render_page(TEMPLATES_MD))
+    ST.promote()
     for page in (SOURCES_MD, ABSTRACTS_MD, NAMED_RESULTS_MD, INDEX_DESIGN_MD, NAMES_MD,
                  PROOF_DENSITY_MD, INDEX_LINKS_MD, LINKS_MD, DRIFT_MD, VERIF_MD, EX_MD, TOPICS_MD,
                  T0_CHAINS_MD, SP_MD, README_MD, CROSSCHECK_MD, TEMPLATES_MD):

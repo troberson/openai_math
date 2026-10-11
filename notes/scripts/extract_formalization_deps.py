@@ -22,6 +22,7 @@ import sys
 import collections
 from pathlib import Path
 
+from catlib import tsv
 from catlib import yaml as Y
 from catlib.paths import LAKEFILE, LAKE_MANIFEST as MANIFEST, OAI_DIR as SOURCE
 
@@ -272,10 +273,7 @@ def main():
         print(f"problems: {len(problems)} — TSV not written")
         return 1
 
-    with OUT.open("w", encoding="utf-8") as fh:
-        fh.write("\t".join(FIELDS) + "\n")
-        for r in rows:
-            fh.write("\t".join(str(r[f]) for f in FIELDS) + "\n")
+    tsv.write_plain(OUT, FIELDS, rows)
 
     print(f"rows: {len(rows)}  fields: {len(FIELDS)}")
     print(f"lakefile require declarations: {len(lake)}")

@@ -30,6 +30,7 @@ from collections import Counter
 
 import build_catalog as bc
 
+from catlib import tsv
 from catlib import yaml as Y
 
 ROOT = bc.ROOT
@@ -151,9 +152,7 @@ def main():
     manuscripts = manuscript_rows(tiers, sources)
     comparators = comparator_rows()
 
-    OUT.write_text("\t".join(COLS) + "\n" + "\n".join(
-        "\t".join(str(r[c]) for c in COLS) for r in manuscripts + comparators) + "\n",
-        encoding="utf-8")
+    tsv.write_plain(OUT, COLS, manuscripts + comparators)
 
     paps = ledger_paps()
     href_by_fam = Counter(r["fam"] for r in manuscripts)
