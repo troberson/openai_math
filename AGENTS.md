@@ -389,6 +389,10 @@ lives in this file and nowhere else.
 ## Testing instructions
 
 - Nothing here builds and there is no test suite; the generator report is the test.
+- Every writer takes `--check-only`: the run does its full measurement, prints its report, and writes
+  nothing. Prove the mode by running a writer plain, then with the flag, diffing the two reports (the
+  write announcement is the only line allowed to differ) and confirming `git status --porcelain` is
+  unchanged by the flagged run. The read-only gate pool is the block that runs rows with this flag.
 - The whole-tree test is the gate list at `notes/scripts/gate.sh`: **71** invocations — the **8**
   gated writers (`build_report_templates.py` is the writer it does not run),
   the 21 gated report-only rows (including `check_summary_manuscripts.py` and

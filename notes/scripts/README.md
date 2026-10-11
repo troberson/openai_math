@@ -50,6 +50,12 @@ from the templates `build_report_templates.py` builds from the committed page an
 writer supplies. `compare_abstracts.py` is the conditional case: its
 default run writes nothing and only `--tsv` touches `notes/abstracts.tsv`.
 
+All **10** writers take `--check-only`: the run does its full measurement, prints its report, and writes
+nothing. Measured 2026-10-11 by running each writer plain and then with the flag — the report is
+identical in both runs (the write announcement is the only line that differs) and
+`git status --porcelain` is unchanged by the flagged run. `gate.sh` runs the writers plain; the read-only
+pool `math-o3a.5.2` adds is the block that runs with the flag, which is why the flag comes first.
+
 All ten writers write through `catlib/atomic.py`, so a crash never leaves a half-written tracked
 file. The single-file writers use `write_atomic()`, which lands bytes on a sibling temp name in the
 same directory, fsyncs, and moves the temp onto the target. The three multi-file writers
