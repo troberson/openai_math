@@ -69,9 +69,13 @@ re-run by anyone.
 
 The A-only set is the whole point of the exercise. Print, for each family, the sentence the rule
 matched, plus tier and the downstream bucket, then record a verdict per family (genuine in kind /
-not). Here: 30 families, all genuine, 25 of them also flagged by the other broad column, 41
-manuscripts behind them, and **all 30 sitting outside the target bucket** — i.e. a first-match
-consumer hides every one of them. That last line is the argument that decides the design fork.
+not). Here: 30 families, all genuine, 41 manuscripts behind them. Re-measured 2026-10-11 against
+`notes/counterexample-tag.md`: **27** of the 30 also carry `resolves_named = 1` (25 under the
+abstract-only scope), and by tier the set is **T0 5, T2 9, T3 16** — so "outside the target bucket"
+is a statement about the **bucket**, not the tier. The decisive number is **0 of the 30 sit in bucket
+C** (the first-match counterexample bucket; they land N 14, B 10, R 2, K 2, O 2), which is what a
+first-match consumer hides. 5 of the 30 **are** T0. State the bucket, not the tier, in the argument
+that decides the design fork.
 
 ## 5. Write the rule down
 
