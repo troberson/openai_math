@@ -144,7 +144,9 @@ manuscripts the graph claimed to see.
 Written against the old bytes, the target string is absent after the sweep, the mutation is a no-op,
 and the mutant gate reports NOT INJECTED — a checker whose mutant cannot be injected verifies nothing
 while exiting 0. Re-target in the **same** pass as the page, and assert `mutated != page` (see
-`notes-page-checker-traps` §1.1).
+`notes-page-checker-traps` §1.1). The two needles above are the 2026-10-08 pair; the current pair is
+`all notes/*.tsv bytes **630,606**` and `links extracted **66,107**` — re-target against the live
+page, not against the sweep's own record.
 
 ## 4a. Triage a fleet of red checkers before editing any of them
 
@@ -275,7 +277,10 @@ Order that worked:
    `build_report_templates.py` → `measure_templates.py` → `dump_template_slots.py` →
    `render_reports.py` → commit the templates plus the page that tabulates their bytes
    (`notes/templates.md`: 6,279 lines unchanged, 412,921 → **412,933** report tree, 427,740 →
-   **427,752** over all 22 — the +12 is exactly the two `notes/` prefixes). Never hand-edit
+   **427,752** over all 22 — the +12 is exactly the two `notes/` prefixes). Re-measured 2026-10-11
+   from `notes/templates.md`: **18** report templates / **6,708** lines / **440,523** bytes, and
+   **455,342** bytes over all **23** (the 5 hand-written index skeletons are in the total). The
+   template count moves with the fleet, so quote the page's headline, not this pair. Never hand-edit
    `notes/templates/report/*.j2`; the builder regenerates them from HEAD.
 8. Proof after a template rebuild: `render_reports.py` twice, and `git status --porcelain` after each
    run must list **no** `notes/` file (every report-fed page byte-identical to HEAD) with the two
@@ -290,7 +295,10 @@ every pathspec commit, name it in the report, and ask before committing it.
 ## 6b. Adding a script to the fleet is a census sweep in disguise
 
 Worked 2026-10-11 on `verify_fleet_design.py` (the 50th script, the 19th looped checker): one new file
-moved ~20 count phrases in five docs plus the gate list. The checker that measures the census is the
+moved ~20 count phrases in five docs plus the gate list. Re-measured 2026-10-11 from
+`notes/scripts/README.md`: the fleet is **56** scripts — **10** writers, **23** report-only, **22**
+checkers — so the "Nth" ordinal in the page moves with every addition; read it from the page, not from
+this record. The checker that measures the census is the
 enumerator — run it plain and it prints every phrase it demands, so sweep against its output, not
 against a hand-built list.
 
@@ -317,7 +325,9 @@ The chain, in the order that worked:
    `git show HEAD:<page>`) → `render_reports.py` → the sync pass is green. Same rule as §6a item 7.
 4. **`AGENTS.md`**: the importer line, the inventory, the gate counts, and the new page's rule.
 5. **`notes/linting.md`**: the source-file count (scripts + `catlib/` modules), the mypy gate line
-   (`Success: no issues found in 64 source files`), the strict probe's `(N checked)` and the clean set
+   (`Success: no issues found in 73 source files`, measured 2026-10-11 with `.venv/bin/mypy
+   notes/scripts/` — the count moves with every script, so quote it from a fresh run), the strict
+   probe's `(N checked)` and the clean set
    (**N − files-with-errors**, not the previous clean count plus one — count the distinct files the
    probe names), and the `duplicate-code` / `cyclic-import` rows.
 6. **A checker's own count-phrase template must be grammatical.** `f"returns **{n} lines**"` fails when
@@ -382,9 +392,11 @@ reproduced exactly from a fresh `parse_overview()`, so they were verified, not c
 
 ## 7. Report
 
-Quote each figure with the rule that yields it and the fresh report line it came from
-(`links extracted 65699`, `all notes/*.tsv bytes 630987`), state which derived numbers did **not**
-move and why, and close with what is not checked. In this repo the standing gap list includes: a doc
-with no checker (`notes/links.md` — its counts are reproduced by `extract_links.py`'s report, not
-verified against the page), citation checkers that verify quotations and not claims, and nothing in
+Quote each figure with the rule that yields it and the fresh report line it came from (2026-10-11:
+`links extracted 66107`, `all notes/*.tsv bytes 630606`), state which derived numbers did **not**
+move and why, and close with what is not checked. The 2026-10-08 gap "a doc with no checker
+(`notes/links.md`)" is **closed**: `verify_page_sync.py --both` is the render diff for
+`notes/links.md`, `notes/names.md`, `notes/topics.md`, `notes/proof-density.md` and
+`notes/index-links.md`, so those five pages are compared with the writer's render. What remains:
+citation checkers that verify quotations and not claims, and nothing in
 `lean/` built, so no formalization is elaboration-verified.
