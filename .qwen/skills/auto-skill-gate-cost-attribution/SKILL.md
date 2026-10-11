@@ -243,10 +243,13 @@ own generated table, a checker stops reading a table another row writes later) m
 and the dependency scheduler then starts each row when its `needs` have finished. That is what the
 scheduler in section 10 does, and it is why the twice-run is no longer needed.
 
-**Check what your byte-identity snapshot covers before citing it as proof.** The driver's snapshot here
-is the 9 generated TSVs, the generated index tree, the generated pages, the summaries, the report
-templates and `notes/README.md` — it does **not** cover the hand-written pages, so a hand-written page
-edit is invisible to the snapshot diff. Say which layers the snapshot actually proves.
+**Check what your byte-identity snapshot covers before citing it as proof.** Re-read
+`notes/scripts/gate_driver.sh`'s `snap()` 2026-10-11: it md5s **9 named TSVs** (only **8** exist on
+disk — `notes/named-results.tsv` is a phantom that `2>/dev/null` drops silently) plus every file under
+`notes/index/`. It does **not** cover `notes/*.md`, the summaries, the report templates, or
+`notes/README.md`, so a hand-written page edit and a report-fed page edit are both invisible to the
+snapshot diff. The promote-and-verify assertion, not the snapshot, is what proves the tracked
+artifacts. Say which layers the snapshot actually proves.
 
 ## 7. Price the options, then recommend an order
 
@@ -304,7 +307,9 @@ row writes is a cycle; remove it at the source (stop the reader reading) rather 
 a second pass.
 
 **The pool cap is sized by measured RSS, not by core count.** 32 cores is not the constraint here:
-~6.1 GiB available with the model server loaded, the two heaviest rows peaking at 415 MB. A cap of 12
+~6.1 GiB available with the model server loaded (2026-10-10), the two heaviest rows peaking at 415 MB.
+Re-measured 2026-10-11: `free -h` reads **4.7 Gi available** of 60 with the engine at **34.3 GiB** RSS,
+so the available figure moves with the loaded model — re-measure before sizing. A cap of 12
 rows is what the measurement supports. `GATE_POOL=1` runs everything serially — that is the baseline
 the pooled report is diffed against, and it must be run, because "pooled is faster than serial" is a
 claim you can only make against a measured serial pass.
