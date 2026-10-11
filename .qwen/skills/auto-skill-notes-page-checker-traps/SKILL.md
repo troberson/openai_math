@@ -164,6 +164,15 @@ The `[S5:25-26]` "quotation" was a paraphrase; the fix was the page (quote the r
 checker. Judge every finding both ways before touching either side, and re-run the checker after the
 last edit — the tally you report is from that final run.
 
+**The numbering contract is `splitlines()`, and the `BLANK` guard is what exposes a violation.** The
+checker resolves a marker against `read_text().splitlines()`, so a page whose anchors were read off a
+shell display is off by one wherever the display dropped a leading blank line. Measured 2026-10-10: 10
+anchors in one manuscript, reported as 4 `BLANK` problems and 4 `NOT VERBATIM` misses. The fix is the
+page, and the fix is a probe that prints the index (`enumerate(splitlines())`), not a `sed` range —
+`cat -n` prints the number, a bare `sed -n 'A,Bp'` does not, and the shell tool's display drops the
+blank line the count depends on. Keep the `BLANK` guard: it is the only signal an anchor landed on a
+blank line, and a page can report green on a shifted anchor whose span happens to contain the quote.
+
 ## 7. Report
 
 Quote the final run's report lines verbatim, the twice-run diff result, and the mutant block including
