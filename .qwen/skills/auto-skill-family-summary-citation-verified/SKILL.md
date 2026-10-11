@@ -91,8 +91,8 @@ S3–S12 are paths inside it; S1–S2 are at the repository root.
 
 | # | File | Lines | Role |
 |---|---|---|---|
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,169 | release family list |
-| S13 | [`notes/t0-triage.md`](../../t0-triage.md) | 879 | ours, not in the release |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | release family list |
+| S13 | [`notes/t0-triage.md`](../../t0-triage.md) | 897 | ours, not in the release |
 ```
 
 - **One row per file**, `S1…Sn` in the order the page uses them, plus a line-count column and a role
@@ -104,8 +104,9 @@ S3–S12 are paths inside it; S1–S2 are at the repository root.
 - **Write every File cell as a repo-relative path, in backticks.** The checker reads the *first
   backticked* text in the cell as the path, so a plain link cell resolves nothing and every marker in
   that file becomes `UNKNOWN SOURCE`. This matters most in a multi-manuscript family: family 032 ships
-  eight manuscripts, and `build/paper.tex` exists in five of the eight trees while
-  `build/sections/01-introduction.tex` exists in two (repo-wide the counts are 207 and 194). With one
+  **five** manuscripts after the merge (eight before it), and `build/paper.tex` exists in four of the
+  five trees while `build/sections/01-introduction.tex` exists in one (repo-wide the counts are **217**
+  and **231**). With one
   manuscript root as the first search root, a cell written
   `build/sections/01-introduction.tex` silently resolved into the CM tree and
   reported `LINE COUNT … says 156, file has 227`, while paths present in neither root resolved to
@@ -199,7 +200,7 @@ CELL   = re.compile(r"`([^`]+)`")                                  # the path in
 MARKER = re.compile(r"\[S(\d+)(?::(\d+)(?:[–-](\d+))?)?\]")        # [S4] [S4:29] [S4:29–56]
 # The Sources table IS the resolver: {S#: (rel, path)}. Resolve rel against the manuscript root named
 # in the Sources prose FIRST, then the repo root, and print a loud note for any name that exists
-# under both — a bare `README.md` is 18 lines in the preprint and 50 at the repo root.
+# under both — a bare `README.md` is 21 lines in the preprint and 51 at the repo root.
 PRE = None
 for line in doc_lines:
     m = re.search(r"`(preprints/[^`]+)`", line)
@@ -297,8 +298,9 @@ count guard instead of the verbatim check. Undetected mutants must fail the exit
   `references.tex`, `README.md` exist in many preprint trees, so `next(dir for dir in glob)` picks an
   arbitrary paper and every range check goes red at once (`S10:222 -> references.tex (file has 216
   lines)` when the real file has 274). Resolve through the manuscript root the Sources section names.
-- **A bare relative name is ambiguous between the two roots.** `README.md` is 18 lines in the preprint
-  and 50 at the repo root. The checker resolves manuscript-first and **counts** the collision as a
+- **A bare relative name is ambiguous between the two roots.** `README.md` is 21 lines in the preprint
+  (18 before the merge) and 51 at the repo root. The checker resolves manuscript-first and **counts**
+  the collision as a
   problem (`AMBIGUOUS S2 (README.md) resolves under 2 roots`), so the page cannot report green with
   it. No path form disambiguates a name that exists under both roots — `Path("./README.md")`
   normalizes to `README.md` — which is why every File cell is the full repository-relative path.
