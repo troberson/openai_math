@@ -121,6 +121,19 @@ behaviour and rules only.
 | `notes/links.tsv` | 22-row typed-edge inventory: every relation type in the release with source, pattern, count, detail, the command that computes it, and what the edge does **not** mean | Any "what connects X to Y" question, and the index-schema decision |
 | `notes/links.md` | The 426-vs-416 and 200/189/136 reconciliations, the href citation layer, the three name relations as three rows, the unreproduced "14", the negatives, what was not checked | Before quoting any edge count |
 | `notes/scripts/extract_links.py` | Writes `notes/links.tsv` and prints the per-edge report; 20 seconds, deterministic | Regenerating, or adding an edge type |
+| `notes/sources.tsv` + `notes/sources.md` | Per-manuscript source surface (root count, resolved main file, section/proof/statement counts, `.bib` count, `.tex` bytes) and the page that quotes it | Any per-manuscript count; `verify_sources.py --mutant` before quoting |
+| `notes/subfindings.tsv` + `notes/subfinding-pairs.md` | 719 manuscript rows + 426 comparator rows typed by `kind`; the 49-family abstract↔title pairing | Before quoting a display title or a sub-finding pair |
+| `notes/scope-exclusions.md` | What each of the 242 scope notes says it leaves out; 121 sections state no exclusion | Before claiming what a formalization excludes |
+| `notes/verification-dirs.md` | The 30 certificate bundles, each entry point, the family-348 reading | Before quoting a `verification` column value |
+| `notes/index/` + `notes/index-design.md` + `notes/index-links.md` | The rendered index (1,033 pages + 16 tables), the schema decision, the link check | Any family / discipline / topic / name lookup |
+| `notes/names.md` + `notes/topics.md` | The six measured name layers (551 subject pages over 5,842 keys) and the 92-term curated vocabulary with per-layer counts | Before quoting a name or topic count |
+| `notes/proof-density.md` | The tested size-proxy result: three raw measures clear the bar and sit within 0.03 of the tex-KB control; both density measures are NULL | Before claiming a proof count discriminates a tier |
+| `notes/formalization-faithfulness.md` | The Lean-vs-manuscript faithfulness read: 189 resolved declarations, 61 carrier bodies, the literal pairing, the `a.e.` surface | Before claiming a formalized statement matches the manuscript |
+| `notes/named-results.md` | The named-result inventory the manuscript **statements** carry, and the applied 233 → 248 `resolves_named` scope swap | Before quoting a `resolves_named` count |
+| `notes/abstracts.md` + `notes/abstracts.tsv` | The overview abstract is a rewritten paraphrase: 0 of 719 manuscript and 0 of 372 family best matches read identical | Before quoting a claim-shape tag as a claim about a manuscript |
+| `notes/citations.md` | The shared-bibliography population: 521 `.bib` files, 13,802 entries, 8,775 distinct works, 2,251 shared | Before quoting a shared-work or co-citation count |
+| `notes/scripts/README.md` | The ownership manifest — which files are generated and which are hand-written, and the gate command for every script | Before editing anything under `notes/` |
+| `notes/upstream_history/` | Per-upstream-commit merge records | Before quoting what upstream changed |
 | `lean/docs/<NNN>.md` | Family scope note: what the formalization covers and excludes | Any claim about a formalized result |
 | `lean/ComparatorChallenges/*.json` | Statement/solution pairs, `permitted_axioms` | Checking what a challenge permits |
 | `lean/formalization.yaml` | `sources`, `status.main_results`, `automation`, `review` | Coverage and verification-ceiling claims |
