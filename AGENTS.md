@@ -382,7 +382,8 @@ lives in this file and nowhere else.
   `.venv/` (uv-managed, untracked, CPython 3.12.13) and the configs are `ruff.toml`, `mypy.ini` and
   `.pylintrc` at the repository root; `notes/linting.md` records the tool versions, every exemption
   with the count it covers, and the mypy strict-probe backlog. A linter autofix is a corpus-wide
-  edit: prove it with the twice-run gate, not with the linter's own exit code.
+  edit: prove it with the gate, whose promote-and-verify assertion compares the cached bytes with the
+  promoted bytes for every tracked artifact, not with the linter's own exit code.
 - Project skills live in `.qwen/skills/` — `proof-triage` routes ledger work,
   `auto-skill-lean-formalization-coverage-audit` carries the measurement method.
 
@@ -405,15 +406,19 @@ lives in this file and nowhere else.
   canonical order of the list, so the report is the same bytes a serial run prints. `GATE_POOL=1`
   runs everything serially — that is the baseline the pooled report is diffed against. A row in the
   pool must spawn no writer: the render of `notes/index-links.md` runs `build_index.py` as a child,
-  so the render children run with `--check-only`. Run it twice: the two md5
-  snapshots and the two `git status` snapshots must be byte-identical, and the two run reports must
-  be identical once the driver normalizes wall-time tokens (every row prints its wall time, so a raw
-  run diff is never byte-identical); `notes/scripts/README.md` carries
+  so the render children run with `--check-only`. Run it once: the driver snapshots the md5 of every
+  generated artifact and `git status` raw, and prints the promote-and-verify assertion the gate's own
+  `verify_cache_promotion.py` row carries — for every tracked artifact, the bytes landed under the
+  builder's key must equal the bytes on the tracked path, and the key is computed from the current
+  `git rev-parse HEAD:<path>` tree digests, so a key that no longer matches HEAD makes its records
+  missing and the row fails. `notes/scripts/README.md` carries
   the gate command for every row. `refresh_summary_line_counts.py` runs first among the checkers
   because `verify_summaries.py` flags a stale `Lines` cell. One driver at a time, and stop it by
-  process group, never by PID. `notes/scripts/gate_driver.sh` runs the list twice and writes the
-  reports, md5 snapshots and diffs under `.qwen/tmp/reports/`.
-- Run the generator twice and diff the output: `notes/catalog.tsv` must be byte-identical.
+  process group, never by PID. `notes/scripts/gate_driver.sh` runs the list once and writes the
+  report, the md5 and `git status` snapshots, the failures file, the assertion row and the head diff
+  under `.qwen/tmp/reports/`.
+- Run the generator once: `verify_cache_promotion.py` asserts that the bytes cached under its key
+  equal the bytes on `notes/catalog.tsv`, so the twice-run byte diff is gone.
 - Check the report's reconciliation lines after every change: 372 families, 719 manuscripts,
   **173** formalized manuscript paths (`formalized (yaml)` — the count of paths in
   `formalization.yaml`'s `sources:`), 242 scope notes, 416 challenges, 200 `main_results` entries over
@@ -444,8 +449,9 @@ lives in this file and nowhere else.
   against the text its marker's file carries. Read `overview.tex` through
   `build_catalog.parse_overview()`, never with a `\resultentry` regex: the abstracts contain braces, so
   a `[^{}]*` group silently drops the math-heavy families, which are the ones being quoted.
-  `python3 notes/scripts/compare_abstracts.py --tsv` writes `notes/abstracts.tsv`; run it twice and
-  diff — 372 rows byte-identical — and `--mutant` must catch all 7 injected corruptions.
+  `python3 notes/scripts/compare_abstracts.py --tsv` writes `notes/abstracts.tsv`; run it once and
+  `verify_cache_promotion.py` asserts that the bytes cached under its key equal the bytes on the TSV —
+  372 rows — and `--mutant` must catch all 7 injected corruptions.
 - Check `notes/named-results.md` with `python3 notes/scripts/verify_named_results.py --mutant` before
   quoting any of its counts — it resolves every `path:line` anchor and every bare `:NNN` overview anchor
   against `famline`, re-derives all 66 count phrases from `extract_named_results.population()`, checks
@@ -479,7 +485,8 @@ lives in this file and nowhere else.
   each path and each `.lean` file to exist on disk, requires each family's row count to equal the
   ledger's `paps`, requires `seq` to run 1..n per family and kind, rejects a field a kind never fills,
   and flags seven injected mutants including a same-family row swap. Run
-  `python3 notes/scripts/extract_subfindings.py` twice and diff: the TSV must be byte-identical.
+  `python3 notes/scripts/extract_subfindings.py` once: `verify_cache_promotion.py` asserts that the
+  bytes cached under its key equal the bytes on the TSV.
 - Run `python3 notes/scripts/extract_subfinding_pairs.py` twice and diff: the report must be identical.
 - Run `python3 notes/scripts/measure_index_sizes.py` twice and diff: the report must be identical. It
   writes nothing, and every count in `notes/index-design.md` comes from it. It prints two byte sums
@@ -494,8 +501,8 @@ lives in this file and nowhere else.
   so `sources.tsv` and `topics.tsv` are not demanded), and flags fourteen injected mutations — the last
   a prose count, visible only in the diff against the writer's render. It
   writes nothing.
-- Run `python3 notes/scripts/build_sources.py` twice and diff: `notes/sources.tsv` must be
-  byte-identical and the report identical. Its report reconciles **719 rows over 719 listed manuscript
+- Run `python3 notes/scripts/build_sources.py` once: `verify_cache_promotion.py` asserts that the bytes
+  cached under its key equal the bytes on `notes/sources.tsv`. Its report reconciles **719 rows over 719 listed manuscript
   dirs** (`preprints/` itself carries **749** dirs — 30 unlisted, 27 superseded releases plus 3
   withdrawal notices), 0 overview manuscript slugs absent from disk, 0 empty or missing PDFs, 0 families
   outside the ledger, 0 per-family row-count differences against the ledger's `paps`, 0
@@ -580,8 +587,8 @@ lives in this file and nowhere else.
   `gap` field, a renamed conjecture, a row widened to 11 fields). It writes nothing; the injections
   are targeted from the parsed rows, so an injection that finds no target fails the run as NOT
   INJECTED rather than passing as detected.
-- Run `python3 notes/scripts/extract_formalization_deps.py` twice and diff: the TSV must be
-  byte-identical. Its report reconciles 31 rows = 30 declared + 1 undeclared, 30 lakefile requires
+- Run `python3 notes/scripts/extract_formalization_deps.py` once: `verify_cache_promotion.py` asserts
+  that the bytes cached under its key equal the bytes on the TSV. Its report reconciles 31 rows = 30 declared + 1 undeclared, 30 lakefile requires
   pinned to 40-char commits, 30 yaml entries, 23 patches over 160,187 lines, 42 manifest packages
   = 30 declared + 12 transitive, 19 declared with zero direct imports, and 5 yaml ordering violations.
 - Check `notes/dependency-drift.md` with `python3 notes/scripts/verify_dependency_drift.py --mutant`
@@ -644,16 +651,16 @@ lives in this file and nowhere else.
   computed-path rule above). `read_manuscript.py <preprints-dir>` prints a manuscript's abstract,
   section skeleton, and titled statement environments with `file:line` anchors, and is the reading
   entry point for a manuscript. All four write nothing.
-- Run `python3 notes/scripts/extract_links.py` twice and diff: the TSV must be byte-identical and the
-  report identical. Its report reconciles 22 rows, 426 link occurrences over 416 distinct configs,
+- Run `python3 notes/scripts/extract_links.py` once: `verify_cache_promotion.py` asserts that the bytes
+  cached under its key equal the bytes on the TSV. Its report reconciles 22 rows, 426 link occurrences over 416 distinct configs,
   200 `main_results` entries over 189 unique configs in 136 families, 393 release-labelled bib
   entries over 391 resolved edges reaching 156 families, the legacy title proxy at 14 over 417
   `.bib` files (17 any / 12 cross over all 500), 0 MSC hits, 0 bib `keywords` fields, and 12
   `\keywords` directories. The run ends with `sync problems (notes/links.md) N`, folded into the exit
   code; `render_reports.py` computes that page's slots by running this script as a child and marks the
   child with `RENDER_REPORTS_CHILD`, where the pass is inert by design.
-- Run `python3 notes/scripts/build_index.py` twice and diff: `notes/index/` must be byte-identical and
-  the report identical. Its report reconciles 372 family pages + 17 discipline pages + 92 topic pages
+- Run `python3 notes/scripts/build_index.py` once: `verify_cache_promotion.py` asserts that the bytes
+  cached under its key equal the bytes on all **1,049** index files. Its report reconciles 372 family pages + 17 discipline pages + 92 topic pages
   + 551 name pages + 1 entry point (**1,033** pages, 16 tables), **48,012** relative links with 0
   broken, canonical == rendered on families 372 / manuscripts 719 / scope notes 242 / challenges 416 /
   traces 10 / verification dirs 30, and canonical **173** against rendered **172** on formalized — the

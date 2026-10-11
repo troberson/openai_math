@@ -34,14 +34,14 @@ finds **10** writers over **52** scripts.
 
 | Script | Writes | Gate | Report feeds |
 |---|---|---|---|
-| `build_catalog.py` | `notes/catalog.tsv` | run twice, byte-identical | `notes/README.md`, `notes/findings.md` |
-| `build_sources.py` | `notes/sources.tsv` | run twice, byte-identical | `notes/sources.md` |
-| `build_index.py` | `notes/index/` | run twice, tree byte-identical | `notes/index-links.md` |
-| `compare_abstracts.py` | `notes/abstracts.tsv` | `--tsv` only; run twice, byte-identical | `notes/abstracts.md` |
-| `extract_formalization_deps.py` | `notes/formalization-deps.tsv` | run twice, byte-identical | `notes/dependency-drift.md` |
-| `extract_links.py` | `notes/links.tsv` | run twice, byte-identical | `notes/links.md` |
-| `extract_subfindings.py` | `notes/subfindings.tsv` | run twice, byte-identical | `notes/subfinding-pairs.md` |
-| `render_reports.py` | `notes/README.md`, `notes/abstracts.md`, `notes/dependency-drift.md`, `notes/index-design.md`, `notes/index-links.md`, `notes/links.md`, `notes/named-results.md`, `notes/names.md`, `notes/proof-density.md`, `notes/sources.md`, `notes/verification-dirs.md`, `notes/scope-exclusions.md`, `notes/topics.md`, `notes/t0-chains.md`, `notes/subfinding-pairs.md`, `notes/counterexample-crosscheck.md`, `notes/templates.md` | run twice, byte-identical | the seventeen report-fed pages |
+| `build_catalog.py` | `notes/catalog.tsv` | single run; cached bytes == promoted bytes under the key | `notes/README.md`, `notes/findings.md` |
+| `build_sources.py` | `notes/sources.tsv` | single run; cached bytes == promoted bytes under the key | `notes/sources.md` |
+| `build_index.py` | `notes/index/` | single run; cached bytes == promoted bytes for all 1,049 files | `notes/index-links.md` |
+| `compare_abstracts.py` | `notes/abstracts.tsv` | `--tsv` only; single run; cached bytes == promoted bytes under the key | `notes/abstracts.md` |
+| `extract_formalization_deps.py` | `notes/formalization-deps.tsv` | single run; cached bytes == promoted bytes under the key | `notes/dependency-drift.md` |
+| `extract_links.py` | `notes/links.tsv` | single run; cached bytes == promoted bytes under the key | `notes/links.md` |
+| `extract_subfindings.py` | `notes/subfindings.tsv` | single run; cached bytes == promoted bytes under the key | `notes/subfinding-pairs.md` |
+| `render_reports.py` | `notes/README.md`, `notes/abstracts.md`, `notes/dependency-drift.md`, `notes/index-design.md`, `notes/index-links.md`, `notes/links.md`, `notes/named-results.md`, `notes/names.md`, `notes/proof-density.md`, `notes/sources.md`, `notes/verification-dirs.md`, `notes/scope-exclusions.md`, `notes/topics.md`, `notes/t0-chains.md`, `notes/subfinding-pairs.md`, `notes/counterexample-crosscheck.md`, `notes/templates.md` | single run; cached bytes == promoted bytes for all 17 pages | the seventeen report-fed pages |
 | `build_report_templates.py` | `notes/templates/report` | not in `gate.sh` — it reads each page with `git show HEAD:`, so a gate run would rewrite templates from committed bytes; run explicitly with 0 args (all seventeen pages) or 2 (one page) after a writer's slot dict changes | the seventeen page templates; the registry, slot dicts and needle derivation it reads are in `catlib/templates.py` |
 | `measure_open_probe.py` | `notes/probe` | not in `gate.sh` — a record carries a wall time per target, so a run-1/run-2 byte diff of a record is a timing artifact, not a proof; run explicitly over the purity and amplification targets, appending stdout to build a multi-target record | the two probe records `verify_fleet_design.py` parses |
 
@@ -106,16 +106,18 @@ with `--mutant` (**42**), plus `verify_conjecture_standing.py` plain and with `-
 class order, not in the order the rows sit; it prints one line per invocation with its exit code, its
 wall time, and the first 200 bytes of its report, and writes nothing to the repo outside
 `.qwen/tmp/reports/`. `math-8ou` promoted it from `.qwen/tmp/` into `notes/scripts/`, closing
-the one gap the list had. A writer's gate is the twice-run byte-identity diff on its target, recorded
-in the writers table. The list is two arrays: `serial_rows` (the writers in dependency order, plus
+the one gap the list had. A writer's gate is the single run plus the promote-and-verify assertion
+recorded in the writers table: the bytes it lands under its key must equal the bytes on the tracked
+path. The list is two arrays: `serial_rows` (the writers in dependency order, plus
 `refresh_summary_line_counts.py`) run in order, `pool_rows` (the **56** read-only invocations) run
 through `xargs -P 8` and print in the canonical order of the list, so the pooled report is the same
 bytes a serial run prints — measured 2026-10-11: serial 928 s, pooled 431 s, pooled report diffed
 against the serial report with wall-time tokens normalized 0 bytes. `GATE_POOL=1` runs everything
 serially. A pooled row must spawn no writer, so the render children (`build_index.py`,
-`extract_links.py`) run with `--check-only`. `gate_driver.sh` normalizes wall-time tokens (`0.53s` →
-`Ts`) before diffing the two run reports: every row prints its wall time, so the raw reports differ
-between runs on timing alone. The md5 and `git status` diffs are raw.
+`extract_links.py`) run with `--check-only`. `gate_driver.sh` runs the list once, snapshots the md5 of
+every generated artifact and `git status` raw, and prints the `verify_cache_promotion.py` row, whose
+key is computed from the current `git rev-parse HEAD:<path>` tree digests. The wall-time normalization
+the twice-run needed (`0.53s` → `Ts`, because every row prints its wall time) left with the second run.
 
 | Script | Report feeds | Gate |
 |---|---|---|
@@ -132,7 +134,7 @@ between runs on timing alone. The md5 and `git status` diffs are raw.
 | `extract_verification_dirs.py` | `notes/verification-dirs.md` | plain |
 | `locate_summary_quotes.py` | `notes/summaries/` — the lines a page should cite when a quotation stops matching | plain, no page argument |
 | `measure_checker_needles.py` | `notes/templates.md` — the per-checker needle inventory behind its Needles column | plain |
-| `measure_index_sizes.py` | `notes/index-design.md` | plain, run twice and diff |
+| `measure_index_sizes.py` | `notes/index-design.md` | plain |
 | `measure_names.py` | `notes/names.md` | plain |
 | `measure_proof_density.py` | `notes/proof-density.md` | `--mutant` |
 | `measure_templates.py` | `notes/templates.md` | plain |
@@ -446,9 +448,9 @@ tracked files under `notes/` before the bead that produced them closes.
 ## Not checked
 
 - **The checker proves ownership, not byte-sync.** Nothing asserts that a file under `notes/index/`
-  equals what `build_index.py` currently renders. That proof is the manual discipline — run the
-  generator twice, diff, and diff against `HEAD`. A hand-edit to a rendered page survives until a
-  checker's needle happens to break.
+  equals what `build_index.py` currently renders. The assertion covers the cache half: the bytes under
+  the key equal the bytes on the tracked path, and `git status` compares the tracked path with `HEAD`.
+  A hand-edit to a rendered page survives until a checker's needle happens to break.
 - `build_index.py` sweeps its own tree: it tracks every path its `write()` helper emits and, at the end
   of `main()`, unlinks any `notes/index/**.md` or `**.tsv` it did not write, then removes empty
   directories and prints `stale swept N files [...]`. The realized case is the 2026-10-07 merge: family
