@@ -332,7 +332,7 @@ lives in this file and nowhere else.
   reads 149 (94 removals, 10 additions) and a case-sensitive raw-title read (target noun in the title,
   verb in the lowered pair) yields 148 (100 removals, 15 additions); **both pairs are measured against
   the abstract-only 233**, which is what the extractor's report line subtracts
-  (`extract_named_results.py:312`). `render_reports.py:463` subtracts the **applied 248** instead and
+  (`extract_named_results.py:312`). `render_reports.py:470` subtracts the **applied 248** instead and
   renders "149 (99 removals)" — a different rule (target noun case-insensitively in the title, verb in
   the lowered abstract) that also reads 149 and differs from the raw-concatenation set on **128**
   families. Quote a removal count with its baseline and its rule.

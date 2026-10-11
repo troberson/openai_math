@@ -351,12 +351,13 @@ excludes the checker-verified pages, allowing formatting only on the pages no ch
 
 ## Naming coverage
 
-`notes/README.md`'s command block named **34** of the 51 scripts before this pass. Seventeen are named
+`notes/README.md`'s command block named **34** of the 52 scripts before this pass. Eighteen are named
 nowhere in the repo at the pinned baseline: `build_report_templates.py`, `check_summary_manuscripts.py`,
 `extract_citations.py`, `locate_summary_quotes.py`, `measure_checker_needles.py`, `measure_open_probe.py`, `measure_templates.py`,
 `read_manuscript.py`,
 `refresh_summary_line_counts.py`, `render_reports.py`, `verify_citations.py`, `verify_findings.py`,
-`verify_fleet_design.py`, `verify_named_conjectures.py`, `verify_page_sync.py`, `verify_upstream_history.py` and `dump_template_slots.py`. The first four are the report-template
+`verify_fleet_design.py`, `verify_named_conjectures.py`, `verify_page_sync.py`, `verify_upstream_history.py`,
+`dump_template_slots.py` and `verify_cache_promotion.py`. The first four are the report-template
 builder this pass promoted plus the `notes/summaries/` reading tooling and the citation extractor, so
 the summaries tree and `notes/citations.md` carried measurements whose generating command no document
 named; `read_manuscript.py` and `refresh_summary_line_counts.py` are the rest of that reading tooling;
@@ -366,7 +367,7 @@ measurements whose checker no document named; `verify_upstream_history.py` is th
 `notes/upstream_history/`, the pages that record each upstream merge, which moved under `notes/` on
 2026-10-10 and are inside this page's census; `measure_templates.py` is the census behind `notes/templates.md`, added by
 the pass that added that page; `measure_checker_needles.py` is the per-checker needle probe the
-checker-coverage bead promoted; `dump_template_slots.py` is the slot dump that prints the same dict the census measures, promoted by `math-a0r.7`; `verify_fleet_design.py` is the checker for `notes/fleet-design.md`, promoted by `math-o3a.1` together with the two probe records it parses; `verify_page_sync.py` is the checker `math-o3a.3` created when the five sync passes left the writer fleet, so the pinned baseline predates it; `measure_open_probe.py` is the audit-hook probe `math-o3a.3.4` promoted from `.qwen/tmp/a11_open_probe2.py`, so the pinned baseline predates it too; and `render_reports.py` is the renderer for the seventeen report-fed pages.
+checker-coverage bead promoted; `dump_template_slots.py` is the slot dump that prints the same dict the census measures, promoted by `math-a0r.7`; `verify_fleet_design.py` is the checker for `notes/fleet-design.md`, promoted by `math-o3a.1` together with the two probe records it parses; `verify_page_sync.py` is the checker `math-o3a.3` created when the five sync passes left the writer fleet, so the pinned baseline predates it; `measure_open_probe.py` is the audit-hook probe `math-o3a.3.4` promoted from `.qwen/tmp/a11_open_probe2.py`, so the pinned baseline predates it too; `render_reports.py` is the renderer for the seventeen report-fed pages; and `verify_cache_promotion.py` is the checker `math-o3a.6.1` created for the promotion protocol, so the pinned baseline predates it.
 All 52 are named here and in the command
 block. "Before this pass" is
 pinned to the commit that created this page, read at its parent, not to `HEAD`: `HEAD` moves every
