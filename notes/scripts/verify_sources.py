@@ -94,7 +94,16 @@ def measure():
         1 for d in dirs
         if len([f for f in d.rglob("*.tex")
                 if "\\documentclass" in f.read_text(encoding="utf-8", errors="replace")]) > 1)
-    six, decl, per_name = S.env_variants(dirs)
+    # The checker keeps its own walk: a checker that re-derives the env counts through the writer's
+    # record store proves nothing about the writer, so this recomputation stays on the corpus.
+    six = 0
+    per_name = collections.Counter()
+    for d in dirs:
+        ts = preprints.texts(preprints.tex_files(d))
+        declared = preprints.declared_envs(ts)
+        six += preprints.six_count(ts)
+        per_name.update(preprints.per_name_counts(ts, declared))
+    decl = sum(per_name.values())
     added = {n: c for n, c in per_name.items() if n not in preprints.SIX}
     n = len(body)
     sums = {c: sum(int(r[c]) for r in body)

@@ -45,6 +45,8 @@ import pathlib
 import posixpath
 import re
 import sys
+
+from functools import cache
 from typing import Any
 
 import build_catalog as B
@@ -298,6 +300,7 @@ def contents_links():
     return out
 
 
+@cache
 def measure() -> dict[str, Any]:
     """Every number the report prints, as data.
 

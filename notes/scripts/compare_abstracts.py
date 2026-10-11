@@ -34,6 +34,8 @@ import re
 import statistics
 import sys
 
+from functools import cache
+
 from catlib import ledger, overview
 from catlib.atomic import write_atomic
 
@@ -126,7 +128,11 @@ def stats(vals):
             "p90": q[8], "max": v[-1]}
 
 
+@cache
 def measure():
+    """The abstract comparison population. Cached: render_reports.py calls it three times per
+    process (abstracts.md, the templates slot census, and the readme slot), and it is a pure
+    function of the tracked tree."""
     _order, fams = overview.parse_overview()
     rows = list(csv.DictReader(SOURCES.open(encoding="utf-8"), delimiter="\t"))
     ledger_rows = list(csv.DictReader(LEDGER.open(encoding="utf-8"), delimiter="\t"))

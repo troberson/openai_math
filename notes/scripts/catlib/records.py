@@ -29,7 +29,7 @@ from typing import Any
 
 from catlib import preprints
 from catlib.atomic import write_atomic
-from catlib.paths import PREPRINTS, ROOT, rel
+from catlib.paths import PREPRINTS, ROOT, read_text, rel
 from catlib.preprints import DOCCLASS
 
 DIGEST_PATHS = ["HEAD:preprints", "HEAD:lean", "HEAD:overview.tex", "HEAD:CONTENTS.md",
@@ -97,6 +97,7 @@ def record_for(d: Path) -> dict[str, Any]:
     roots = [f for f, t in zip(files, ts, strict=True) if DOCCLASS.search(t)]
     roots = sorted(roots, key=lambda f: (len(f.relative_to(d).parts), str(f.relative_to(d))))
     main, rule = preprints.main_tex_of(roots)
+    text_of = dict(zip(files, ts, strict=True))
     return {
         "dir": d.name,
         "tex": [rel(f) for f in files],
@@ -104,6 +105,10 @@ def record_for(d: Path) -> dict[str, Any]:
         "roots": [rel(f) for f in roots],
         "main": rel(main) if main is not None else "",
         "rule": rule,
+        "subroots": sum(1 for t in ts if "\\documentclass" in t),
+        "main_no_dc": [rel(f) for f in sorted(d.rglob("main.tex"))
+                       if not DOCCLASS.search(text_of[f])],
+        "pdfs": len(list(d.glob("*.pdf"))),
         "bib": [rel(f) for f in sorted(d.rglob("*.bib"))],
         "counts": preprints.env_counts(ts, declared),
         "six": preprints.six_count(ts),
@@ -114,7 +119,17 @@ def record_for(d: Path) -> dict[str, Any]:
     }
 
 
-def manuscript_store(k: str) -> dict[str, dict[str, Any]]:
+def store_key() -> str:
+    """The manuscript store's key: the tree digests and this module's own source.
+
+    The store content is a function of the tracked tree and `record_for`, so those are exactly the
+    inputs the key must cover. A consumer's own source is not part of it: a consumer that changes
+    how it reads records must not invalidate records it reads unchanged.
+    """
+    return key(read_text(Path(__file__)))
+
+
+def manuscript_store() -> dict[str, dict[str, Any]]:
     """The keyed store as {dir: record}, over every directory under `preprints/`.
 
     Built once per key, read back on every later call. The population is the 749 dirs on disk,
@@ -122,7 +137,7 @@ def manuscript_store(k: str) -> dict[str, dict[str, Any]]:
     the listed set cannot reproduce its counts. A consumer that wants the manuscript list filters
     the store by the `overview.tex` slug set, which is the same filter `build_sources.py` uses.
     """
-    path = RECORDS_ROOT / k / "manuscripts.jsonl"
+    path = RECORDS_ROOT / store_key() / "manuscripts.jsonl"
     if not path.is_file():
         dirs = sorted(p for p in PREPRINTS.iterdir() if p.is_dir())
         write_atomic(path, "\n".join(json.dumps(record_for(d), ensure_ascii=False) for d in dirs))

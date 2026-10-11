@@ -62,6 +62,8 @@ import re
 import sys
 import unicodedata
 
+from functools import cache
+
 import build_catalog as B
 
 from catlib import yaml as Y
@@ -209,7 +211,10 @@ def dir_of(path) -> str:
     return owner(path) if "preprints" in parts else ""
 
 
+@cache
 def measure():
+    """The six-layer name population. Cached: it walks every `.tex` at depth 1-3 and every `.bib`,
+    and render_reports.py calls it once per process, so the cache keeps a second caller cheap."""
     order, fams = B.parse_overview()
     dir2fam = {}
     for f in order:

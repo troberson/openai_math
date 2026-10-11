@@ -63,7 +63,7 @@ import measure_names as MN
 import measure_proof_density as PD
 import measure_templates as MTPL
 import measure_topics as MT
-from catlib import bib, ledger, overview, preprints, tsv
+from catlib import bib, ledger, overview, preprints, records, tsv
 from catlib.atomic import Staging
 from catlib import yaml as Y
 from catlib.paths import (COMPARATOR_DIR, DEPS_TSV, FORMALIZATION_YAML, LAKEFILE, LAKE_MANIFEST,
@@ -116,8 +116,13 @@ def listed_dirs() -> list[pathlib.Path]:
                    if r["kind"] == "manuscript"})
 
 
+@cache
 def measure() -> dict[str, Any]:
-    """Everything the page quotes, recomputed from disk."""
+    """Everything the page quotes, recomputed from disk.
+
+    Cached: the page functions call it twice per process (the render pass and the slot census),
+    and the result is a pure function of the tracked tree, so the second call is a cache hit.
+    """
     with TSV.open(encoding="utf-8") as fh:
         rdr = csv.reader(fh, delimiter="\t")
         header = next(rdr)
@@ -129,29 +134,24 @@ def measure() -> dict[str, Any]:
                if "Withdrawal notice" in (p / "README.md").read_text(encoding="utf-8",
                                                                       errors="replace")]
     ledger = tsv.read_rows(LEDGER_TSV)
+    store = records.manuscript_store()
 
     rootdist: dict[int, int] = collections.Counter()
     outcomes: dict[str, int] = collections.Counter()
     single_names: dict[str, int] = collections.Counter()
     for d in listed:
-        roots = preprints.roots_of(d)
-        rootdist[len(roots)] += 1
-        main, rule = preprints.main_tex_of(roots)
-        if main is None:
+        rec = store[d.name]
+        rootdist[len(rec["roots"])] += 1
+        if not rec["main"]:
             outcomes["flagged"] += 1
-        elif rule == "single-root":
+        elif rec["rule"] == "single-root":
             outcomes["single-root"] += 1
-            single_names[main.name] += 1
+            single_names[pathlib.PurePosixPath(rec["main"]).name] += 1
         else:
-            outcomes[main.name] += 1
-    main_no_dc = sum(1 for d in listed for g in d.rglob("main.tex")
-                     if not preprints.DOCCLASS.search(g.read_text(encoding="utf-8",
-                                                                   errors="replace")))
-    substring_multi = sum(
-        1 for d in listed
-        if len([g for g in d.rglob("*.tex")
-                if "\\documentclass" in g.read_text(encoding="utf-8", errors="replace")]) > 1)
-    six, decl, per_name = S.env_variants(listed)
+            outcomes[pathlib.PurePosixPath(rec["main"]).name] += 1
+    main_no_dc = sum(len(store[d.name]["main_no_dc"]) for d in listed)
+    substring_multi = sum(1 for d in listed if store[d.name]["subroots"] > 1)
+    six, decl, per_name = S.env_variants(store, listed)
     n = len(body)
     sums = {c: sum(int(r[c]) for r in body)
             for c in ("roots", "tex", "bib", "sections", "subsections", "subsubsections",

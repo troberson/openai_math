@@ -37,9 +37,9 @@ The LaTeX joins live in catlib/preprints.py; the TSV reader and writer in catlib
 import collections
 import pathlib
 
-from catlib import overview, preprints, text, tsv
+from catlib import overview, records, text, tsv
 from catlib.paths import LEDGER_TSV, PREPRINTS, ROOT, SOURCES_TSV, read_text
-from catlib.preprints import DOCCLASS, SIX
+from catlib.preprints import SIX
 
 OUT = SOURCES_TSV
 
@@ -47,28 +47,23 @@ COLUMNS = ["dir", "fam", "pdf", "main_tex", "roots", "tex", "bib", "sections", "
            "subsubsections", "proofs", "thms", "abstract", "tex_bytes"]
 
 
-def row_for(d, fam, pdf):
-    tex_files = preprints.tex_files(d)
-    ts = preprints.texts(tex_files)
-    declared = preprints.declared_envs(ts)
-    counts = preprints.env_counts(ts, declared)
-    roots = preprints.roots_of(d)
-    main, _ = preprints.main_tex_of(roots)
+def row_for(rec, fam, pdf):
+    """The sources.tsv row, assembled from the record store rather than from a walk of the dir."""
     return {
-        "dir": d.name,
+        "dir": rec["dir"],
         "fam": fam,
         "pdf": pdf,
-        "main_tex": "" if main is None else str(main.relative_to(PREPRINTS)),
-        "roots": len(roots),
-        "tex": len(tex_files),
-        "bib": len(list(d.rglob("*.bib"))),
-        "sections": counts["sections"],
-        "subsections": counts["subsections"],
-        "subsubsections": counts["subsubsections"],
-        "proofs": counts["proofs"],
-        "thms": counts["thms"],
-        "abstract": counts["abstract"],
-        "tex_bytes": sum(f.stat().st_size for f in tex_files),
+        "main_tex": rec["main"].removeprefix("preprints/"),
+        "roots": len(rec["roots"]),
+        "tex": len(rec["tex"]),
+        "bib": len(rec["bib"]),
+        "sections": rec["counts"]["sections"],
+        "subsections": rec["counts"]["subsections"],
+        "subsubsections": rec["counts"]["subsubsections"],
+        "proofs": rec["counts"]["proofs"],
+        "thms": rec["counts"]["thms"],
+        "abstract": rec["counts"]["abstract"],
+        "tex_bytes": rec["tex_bytes"],
     }
 
 
@@ -84,21 +79,21 @@ def build():
     # directory ships only a README and the archived PDF, so a directory walk is not the
     # manuscript list.
     dirs = sorted(PREPRINTS / name for name in by_slug)
-    rows = [row_for(d, by_slug[d.name]["fam"], "preprints/" + d.name + "/" +
+    store = records.manuscript_store()
+    rows = [row_for(store[d.name], by_slug[d.name]["fam"], "preprints/" + d.name + "/" +
                     pathlib.PurePosixPath(by_slug[d.name]["path"]).name)
             for d in dirs]
-    return rows, subs, dirs
+    return rows, subs, dirs, store
 
 
-def env_variants(dirs):
+def env_variants(store, dirs):
     """(six-name total, declared-rule total, per-name counts under the declared rule)."""
     six = 0
     per_name = collections.Counter()
     for d in dirs:
-        ts = preprints.texts(preprints.tex_files(d))
-        declared = preprints.declared_envs(ts)
-        six += preprints.six_count(ts)
-        per_name.update(preprints.per_name_counts(ts, declared))
+        rec = store[d.name]
+        six += rec["six"]
+        per_name.update(rec["per_name"])
     return six, sum(per_name.values()), per_name
 
 
@@ -106,7 +101,7 @@ def write(rows):
     tsv.write_csv(OUT, COLUMNS, rows)
 
 
-def report(rows, subs, dirs):
+def report(rows, subs, dirs, store):
     ledger = tsv.read_rows(LEDGER_TSV)
     fams = {r["fam"] for r in ledger}
     paps = {r["fam"]: int(r["paps"]) for r in ledger}
@@ -129,26 +124,22 @@ def report(rows, subs, dirs):
     single_names = collections.Counter()
     multi = []
     for d in dirs:
-        roots = preprints.roots_of(d)
-        main, rule = preprints.main_tex_of(roots)
+        rec = store[d.name]
+        rule = rec["rule"]
         if rule == "single-root":
             outcomes["single-root"] += 1
-            single_names[main.name] += 1
+            single_names[pathlib.PurePosixPath(rec["main"]).name] += 1
         elif rule == "flagged":
             outcomes["flagged"] += 1
-        elif main.name == "main.tex":
+        elif pathlib.PurePosixPath(rec["main"]).name == "main.tex":
             outcomes["name-main"] += 1
         else:
             outcomes["name-paper"] += 1
-        if len(roots) > 1:
+        if len(rec["roots"]) > 1:
             multi.append(d.name)
-    substring_multi = sum(
-        1 for d in dirs
-        if len([f for f in d.rglob("*.tex")
-                if "\\documentclass" in read_text(f)]) > 1)
-    main_no_dc = [str(f.relative_to(PREPRINTS)) for d in dirs for f in d.rglob("main.tex")
-                  if not DOCCLASS.search(read_text(f))]
-    pdf_per_dir = {len(list(d.glob("*.pdf"))) for d in dirs}
+    substring_multi = sum(1 for d in dirs if store[d.name]["subroots"] > 1)
+    main_no_dc = [p.removeprefix("preprints/") for d in dirs for p in store[d.name]["main_no_dc"]]
+    pdf_per_dir = {store[d.name]["pdfs"] for d in dirs}
 
     # Self-check, not an independent one: the row set is now built from this same parse, so the
     # comparison can only catch a bug in how the rows are assembled from it. The independent check
@@ -188,7 +179,7 @@ def report(rows, subs, dirs):
     for c in ("tex", "bib", "sections", "subsections", "subsubsections", "proofs", "thms",
               "abstract", "tex_bytes"):
         print(f"sum {c:16} {sum(int(r[c]) for r in rows)}")
-    six, decl, per_name = env_variants(dirs)
+    six, decl, per_name = env_variants(store, dirs)
     added = {n: c for n, c in per_name.items() if n not in SIX}
     print(f"thms rule (declared minus non-statement) {decl}  = sum of thms column "
           f"{sum(int(r['thms']) for r in rows)}")
@@ -200,9 +191,9 @@ def report(rows, subs, dirs):
 
 
 def main():
-    rows, subs, dirs = build()
+    rows, subs, dirs, store = build()
     write(rows)
-    report(rows, subs, dirs)
+    report(rows, subs, dirs, store)
 
 
 if __name__ == "__main__":
