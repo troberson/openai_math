@@ -294,6 +294,58 @@ Order that worked:
 A skill file that changed mid-session under you (an auto-skill update) is not yours: exclude it from
 every pathspec commit, name it in the report, and ask before committing it.
 
+## 6b. Adding a script to the fleet is a census sweep in disguise
+
+Worked 2026-10-11 on `verify_fleet_design.py` (the 50th script, the 19th looped checker): one new file
+moved ~20 count phrases in five docs plus the gate list. The checker that measures the census is the
+enumerator — run it plain and it prints every phrase it demands, so sweep against its output, not
+against a hand-built list.
+
+The chain, in the order that worked:
+
+1. **`gate.sh`**: append the name to the checker loop, keeping the backslash continuation. Invocations
+   = explicit `run` statements − 2 (the loop body is two of them) + 2 × checkers: 33 − 2 + 2×19 = **69**.
+   Counting `run` lines at column 0 reads 31 because the loop body is indented.
+2. **The inventory page**: the class partition (scripts / checkers / "the Nth checker and the Nth
+   script"), the write-nothing split, the checker table row (alphabetical — its second cell must name
+   the page it checks, because the checker builds the checked-page set from that cell, so a missing row
+   makes the page read as unchecked), the checker-invocation counts, the cost sum (add the new row's
+   measured plain + mutant seconds: 1196.1 + 0.27 + 0.49 = **1196.9 s**), the importer census and the
+   non-importer sentence (the census rule is `^[[:space:]]*(from|import) catlib`, so a deferred import
+   counts), the naming sentence `named **X** of the **N** scripts` where X = N − gaps and the gaps are
+   re-derived from the **pinned baseline commit**, not HEAD, the gap list itself, and the census table
+   (new directory row, `notes/*.md` count, total).
+3. **`notes/README.md`'s command block is a generated page.** Hand-editing it leaves the ownership
+   checker's sync pass red (`page line 65: page has '…', writer does not`). Sequence: commit the page →
+   `build_report_templates.py notes/README.md verify_script_ownership.py` (it reads
+   `git show HEAD:<page>`) → `render_reports.py` → the sync pass is green. Same rule as §6a item 7.
+4. **`AGENTS.md`**: the importer line, the inventory, the gate counts, and the new page's rule.
+5. **`notes/linting.md`**: the source-file count (scripts + `catlib/` modules), the mypy gate line
+   (`Success: no issues found in 64 source files`), the strict probe's `(N checked)` and the clean set
+   (**N − files-with-errors**, not the previous clean count plus one — count the distinct files the
+   probe names), and the `duplicate-code` / `cyclic-import` rows.
+6. **A checker's own count-phrase template must be grammatical.** `f"returns **{n} lines**"` fails when
+   the measured value is 1: the checker reports `count phrase not in the page: returns **1 lines**` and
+   the page is the stale side. Write `f"**{n}** line{'s' if n != 1 else ''}"`.
+7. **Check a probe's stability before sweeping its count.** `pylint --enable=R0401` read **7, 7, 7, 8,
+   8** across five runs on the same tree, and `git archive HEAD notes/scripts` (the tree before the
+   addition) gave the **identical distribution** — so the new checker added no cycle, and the count is a
+   run property, not a tree property. Record the distribution and the diff between the two sets
+   (`sed 's/.*Cyclic import //' | sort | diff`), not one number, and say in the doc that the count
+   varies. A sequence of recorded counts (7 → 8 → 9 → 8 → 7) can be run-order noise, not five tree
+   changes.
+8. **Lint the new file before committing it.** A six-clause `and` chain in a membership test trips
+   pylint `too-many-boolean-expressions` (R0916, limit 5) — build the set union once outside the loop.
+   A `×` in a comment trips ruff `RUF003`.
+9. **A checker that parses a record requires that record on disk.** The probe records the page quotes
+   lived in `.qwen/tmp/` (gitignored), so the gate row would be vacuous in a fresh clone. Track them
+   (`notes/probe/`), give the ownership checker a rule for the new directory, add the census row, and
+   keep the absence guard that exits 1 when a record is missing.
+
+Commit order: the code (page + checker + tracked evidence) as one commit, then the inventory sweep,
+then the template rebuild, then the doc sweeps. New files need `git add` before a pathspec commit —
+`git commit -- <new-file>` fails with "pathspec did not match any file(s) known to git".
+
 ## 7. Report
 
 Quote each figure with the rule that yields it and the fresh report line it came from
