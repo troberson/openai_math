@@ -217,7 +217,8 @@ bd show <close-id>      # DEPENDS ON: epic.1 epic.2 ...  — verify the directio
 wall time; the join refactoring epic does not overlap; the read cache belongs here"). Each fix bead
 carries: the measured evidence, the change, the **measured saving**, the **risk to the byte-identity
 proof**, and its **prove list** (which checkers, plain and `--mutant`, which gate rows, the lint
-driver, the twice-run). A body with a prove list is a bead a later session can execute cold.
+driver, the promote-and-verify assertion). A body with a prove list is a bead a later session can
+execute cold.
 
 **Then export before you commit** — `bd create` does not re-export the tracked store (§3):
 
