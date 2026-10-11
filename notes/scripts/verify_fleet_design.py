@@ -37,7 +37,7 @@ from typing import TypedDict
 ROOT = Path(__file__).resolve().parents[2]
 PAGE = ROOT / "notes" / "fleet-design.md"
 SCRIPTS = ROOT / "notes" / "scripts"
-PROBE = [ROOT / "notes/probe/2026-10-10_writers.txt", ROOT / "notes/probe/2026-10-10_checkers.txt"]
+PROBE = [ROOT / "notes/probe/2026-10-11_writers.txt", ROOT / "notes/probe/2026-10-11_checkers.txt"]
 DIGEST_PATHS = ["HEAD:preprints", "HEAD:lean", "HEAD:overview.tex", "HEAD:CONTENTS.md",
                 "HEAD:reasoning_traces"]
 HAND = {"topics.tsv", "conjecture-standing.tsv"}
@@ -278,7 +278,7 @@ def table_problems(page: str, pop: Pop) -> list[str]:
     out = []
     # The purity table is checked inside its own section: the amplification table names four of the
     # same scripts, so a page-wide row scan would let a deleted purity row pass.
-    sec = re.search(r"## The purity violations.*?(?=\n## )", page, re.S)
+    sec = re.search(r"## The purity population.*?(?=\n## )", page, re.S)
     if not sec:
         return ["purity section absent"]
     rows = re.findall(r"^\|\s*`([^`]+\.py)`\s*\|", sec.group(0), re.M)
@@ -298,7 +298,7 @@ MUTANTS = [
     ("sync split altered", lambda p: p.replace("**11** are `verify_*`", "**10** are `verify_*`", 1)),
     ("purity row deleted", lambda p: re.sub(r"^\|\s*`check_index_links\.py`.*\n", "", p, count=1, flags=re.M)),
     ("digest count widened", lambda p: p.replace("**5** digests", "**6** digests", 1)),
-    ("probe figure altered", lambda p: p.replace("154,399", "154,400")),
+    ("probe figure altered", lambda p: p.replace("152,680", "152,681")),
     ("anchor outside the file", lambda p: p.replace("render_reports.py:1132", "render_reports.py:3400", 1)),
     ("prose count in the size argument", lambda p: p.replace("**630,606** bytes", "**630,605** bytes", 1)),
 ]
