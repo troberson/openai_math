@@ -28,12 +28,16 @@ t = open(p).read()
 m = re.match(r"^---\n(.*?)\n---\n", t, re.S)
 d = yaml.safe_load(m.group(1))
 print("name:", d["name"], "| desc chars:", len(d["description"]), "| body lines:", t.count("\n"))
-assert d["name"] == p.split("/")[-2], "name must match directory"
+dirn = p.split("/")[-2]
+assert d["name"] in (dirn, dirn.removeprefix("auto-skill-")), "name must match the directory, auto-skill- prefix allowed"
 assert len(d["description"]) <= 1024
 PY
 ```
 
 If PyYAML is missing, fall back to a regex check and say so — do not claim a parse you did not do.
+**The parse is the test that matters:** an unquoted `description:` containing `: ` fails YAML
+(measured 2026-10-11: 2 of 18 skills in this repo had invalid frontmatter, both from auto-skill
+description edits that widened the trigger list). Quote the description when it contains a colon.
 
 ## 3. Run the script on three inputs
 
