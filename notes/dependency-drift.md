@@ -1,6 +1,6 @@
 # What the dependency record implies about automated formalization
 
-Measured 2026-10-07 from three sources only: `notes/formalization-deps.tsv` (31 rows, 8 fields),
+Measured 2026-10-07 from three sources only: `notes/tables/formalization-deps.tsv` (31 rows, 8 fields),
 `lean/lakefile.lean` (335 lines), and `lean/patches/` (23 `*-lean4341.patch` files plus `README.md`).
 No `lake`, `lean`, `lake exe cache get`, or comparator run, and **no build was attempted** — every pin
 below is a declared pin, and every patch below is an asserted-applicable patch, not a verified one.
@@ -12,7 +12,7 @@ Quote each number with the rule that yields it.
 |---|---|---|
 | `require … from git "url" @ "commit"` declarations | **30**, every one pinned to a **40-char** commit | `lean/lakefile.lean:10`–`:86` |
 | Patch files | **23**, **160,187** lines, **734** `diff --git` file hunks | `lean/patches/` |
-| Declared libraries with **no** patch | **7** | `notes/formalization-deps.tsv` |
+| Declared libraries with **no** patch | **7** | `notes/tables/formalization-deps.tsv` |
 | Patches that rewrite the dependency's `lean-toolchain` | **22 of 23** | `lean/patches/*.patch` |
 | Distinct toolchain versions the patches migrate **from** | **8**, all migrating **to** `v4.34.1` | `lean/patches/*.patch` |
 | Release toolchain | `leanprover/lean4:v4.34.1` | `lean/lean-toolchain:1` |
@@ -127,7 +127,7 @@ release's mathlib version is imposed on the ecosystem, 22 times.
 
 ## Patch size tracks upstream surgery, not use
 
-Direct imports come from `notes/formalization-deps.tsv` (`direct_imports`, measured over
+Direct imports come from `notes/tables/formalization-deps.tsv` (`direct_imports`, measured over
 `lean/OAI/**/*.lean`); patch lines are the file's line count. The table is all **23** declared
 libraries with a patch, ordered by patch lines.
 

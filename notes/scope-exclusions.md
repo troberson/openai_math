@@ -310,7 +310,7 @@ One row per family. A quotation is verbatim from the cited line, markup aside.
 - Whether a section states an exclusion using none of the measured vocabulary. The reading pass is
   the only guard against that, and it is a human read of 1512 lines, not a rule.
 - The `## Comparator links` sections. They name configs, not exclusions; the config inventory lives
-  in `notes/links.tsv`.
+  in `notes/tables/links.tsv`.
 - The 130 families with no scope note at all (372 families, 242 notes): absence of a note is not
   recorded here, because there is no `## Scope` section to read for them.
 

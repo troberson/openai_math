@@ -56,7 +56,7 @@ more than one (max 3), which is why 192 files sit in 183 dirs.
 
 **`manuscript-dir` is the one category whose target count exceeds the canonical count: 746
 linked of 719 shipped.** The 27 extra targets are directories the upstream merge superseded —
-every one exists on disk, none is listed as a manuscript in `notes/subfindings.tsv`, and all 27
+every one exists on disk, none is listed as a manuscript in `notes/tables/subfindings.tsv`, and all 27
 are reached only from name pages, by 1,100 links. The name layer is keyed by on-disk directory
 names, so it reaches manuscript directories the release's own manuscript list no longer names.
 The checker prints the count with its rule:
@@ -94,7 +94,7 @@ canonical column are index-internal. `index-page` 521 targets = 372 family pages
 pages + 17 discipline pages + 40 name pages, and the 40 name pages are linked only from the entry
 point — family pages link no name page, the direction recorded in `notes/names.md`.
 `latex-source` 719 = the `main_tex` of each of the 719 manuscripts, all 719 present in
-`notes/sources.tsv`. `notes-doc` 26 targets = `notes/names.md` (552 links: one from each of the
+`notes/tables/sources.tsv`. `notes-doc` 26 targets = `notes/names.md` (552 links: one from each of the
 551 name pages and one from the entry point), the 21 `notes/summaries/` pages family pages link,
 and the 5 notes docs the entry point links (`index-design.md`, `names.md`, `topics.md`,
 `topics.tsv`, `scripts/measure_names.py`). `index-table` 1 target = `notes/index/names.tsv`.

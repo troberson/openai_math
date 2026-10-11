@@ -1,7 +1,7 @@
 # The upstream library graph
 
 Measured 2026-10-07 by `python3 notes/scripts/extract_formalization_deps.py`, which writes
-`notes/formalization-deps.tsv` — **31 rows, 8 fields**. No `lake`, `lean`, `lake exe cache get`, or
+`notes/tables/formalization-deps.tsv` — **31 rows, 8 fields**. No `lake`, `lean`, `lake exe cache get`, or
 comparator run, and **no build was attempted**, so every pin below is a declared pin, not a verified
 buildable pin. The generator report is the test; quote a number below with the rule that yields it.
 

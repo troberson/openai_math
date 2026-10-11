@@ -1,6 +1,6 @@
 # The manuscript source surface
 
-Measured 2026-10-08 by `python3 notes/scripts/build_sources.py`, which writes `notes/sources.tsv` —
+Measured 2026-10-08 by `python3 notes/scripts/build_sources.py`, which writes `notes/tables/sources.tsv` —
 **719 rows, 14 columns**, one row per manuscript the release lists. The script reads the manuscript
 trees as text: no `lake`, `lean`, `lake exe cache get`, or comparator run, no PDF parsing, no `.lean`
 file opened. Run it twice and diff: the TSV is byte-identical and the report is identical. Every
@@ -16,7 +16,7 @@ describe the listed corpus only.
 | Column | Rule | Corpus total |
 |---|---|---|
 | `dir` | `preprints/` directory name — manuscript ownership is the path component after `preprints` | 719 distinct |
-| `fam` | Family id, from the manuscript rows of `notes/subfindings.tsv` | 372 distinct |
+| `fam` | Family id, from the manuscript rows of `notes/tables/subfindings.tsv` | 372 distinct |
 | `pdf` | Manuscript PDF path, reconciled against `overview.tex` | 719, all on disk, all non-empty |
 | `main_tex` | Resolved main file, rule below | 719 filled, **0** empty |
 | `roots` | `.tex` files declaring `\documentclass` **at line start** | **724** over 719 dirs: 715 with 1, 3 with 2, 1 with 3 |
@@ -113,12 +113,12 @@ The report's reconciliation lines, from the run that wrote the shipped TSV:
 - rows written **719**, listed manuscript dirs **719**, preprint dirs on disk **749**;
 - overview manuscript slugs not on disk **0**;
 - empty or missing PDF files **0**;
-- families outside `notes/catalog.tsv` **0**; per-family row count vs ledger `paps` differences **0**;
+- families outside `notes/tables/catalog.tsv` **0**; per-family row count vs ledger `paps` differences **0**;
 - `overview.tex` manuscript paths (the paren-aware `PAP` regex) **719** distinct vs `sources.tsv`
   `pdf` **719** distinct; paths in one and not the other **0** and **0**; families whose path set
   differs from `overview.tex` **0**.
 
-The `pdf` column is derived from `notes/subfindings.tsv`, so the last three lines are the
+The `pdf` column is derived from `notes/tables/subfindings.tsv`, so the last three lines are the
 independent check: they re-parse the release's own list out of `overview.tex` with
 `build_catalog.parse_overview()` rather than trusting the table's own source.
 
@@ -140,5 +140,5 @@ re-measure a manuscript that stayed put.
 - The manuscript abstract text was not compared with the `overview.tex` abstract — that is
   `math-hqd.2`.
 - Nothing here says a manuscript is formalized, correct, or read. The formalized flag lives in
-  `notes/catalog.tsv` at **172** of 719 manuscripts, at source level under
+  `notes/tables/catalog.tsv` at **172** of 719 manuscripts, at source level under
   `lean/formalization.yaml` `review: status: unchecked`.

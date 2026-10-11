@@ -58,7 +58,7 @@ clause that states an additional result. A clause is a sub-finding when it asser
 headline does not already assert. The quoted clause and the quoted title are both taken verbatim from
 the family's single `\resultentry` line, so one anchor proves both sides: the abstract and every
 display title of a family sit on that line (verified for all 372 families). `[NNN:k]` is the k-th
-manuscript of family NNN in `notes/subfindings.tsv`, whose `title` column is the same display text.
+manuscript of family NNN in `notes/tables/subfindings.tsv`, whose `title` column is the same display text.
 `claimed` and `unclaimed` partition the family's manuscripts, so every title is accounted for once.
 
 
@@ -607,14 +607,14 @@ manuscript of family NNN in `notes/subfindings.tsv`, whose `title` column is the
 
 - No Lean build. `lake`, `lean`, `lake exe cache get`, and the comparator are never run here, so nothing
   on this page says a family's formalization proves the clause it is paired to; `tier` is the ledger's
-  formalization tier, read from `notes/catalog.tsv`.
+  formalization tier, read from `notes/tables/catalog.tsv`.
 - The pairing is a reading call on the abstract and the link text only. Manuscripts were not opened to
   confirm that a claimed title's paper contains the clause it is paired to, and an unclaimed title's
   paper may well prove a result the abstract omits — 260 and 238 are the cases that make that likely.
 - The population rule is provisional. The bead's 51 does not reproduce; the recorded rule yields 49
   families over 203 manuscripts, and the revisit condition is in the population section.
 - 118 families with two or more manuscripts are not read. The page covers 49 of the 167.
-- The 426 comparator-link rows in `notes/subfindings.tsv` are not paired; only the 719 manuscript rows
+- The 426 comparator-link rows in `notes/tables/subfindings.tsv` are not paired; only the 719 manuscript rows
   are eligible, and only 203 of those are in this population.
 - Clause boundaries were chosen by reading, not by a parser: a clause is a sentence, or a sentence
   fragment when one sentence states two results (039, 227, 271). Two clauses are quoted twice because

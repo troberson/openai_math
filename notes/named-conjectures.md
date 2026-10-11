@@ -10,7 +10,7 @@ conjecture in the literature, and it does not compare against a formalized state
 
 ## Population
 
-Derived from `notes/catalog.tsv` and `notes/scripts/triage_t0.py`, not copied:
+Derived from `notes/tables/catalog.tsv` and `notes/scripts/triage_t0.py`, not copied:
 
 - T0 rows: 130 families, 244 manuscripts.
 - First pass (read in `notes/t0-triage.md`): bucket C ∪ `fam <= '031'` ∪ `paps >= 3` = 43 families,
@@ -991,7 +991,7 @@ errors in the manuscript.
 ## Measurements
 
 Re-derived by `python3 notes/scripts/verify_named_conjectures.py` (report-only; it re-derives every
-number below from `notes/catalog.tsv`, `notes/scripts/triage_t0.py`, and this page, and exits 1 on a
+number below from `notes/tables/catalog.tsv`, `notes/scripts/triage_t0.py`, and this page, and exits 1 on a
 mismatch):
 
 - `entries` 44

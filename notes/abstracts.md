@@ -8,7 +8,7 @@ texts per family and records what the comparison shows.
 **The rule that yields every count here:** `python3 notes/scripts/compare_abstracts.py` [S33] — it
 parses the 372 `\resultentry` abstracts out of `overview.tex` [S1], extracts every
 `\begin{abstract}` block from every manuscript's LaTeX, normalizes both, and compares them. It
-writes nothing; `--tsv` writes `notes/abstracts.tsv` [S31] (one row per family, 372 rows) after its
+writes nothing; `--tsv` writes `notes/tables/abstracts.tsv` [S31] (one row per family, 372 rows) after its
 reconciliation gates pass, and `--mutant` proves the gates discriminate. All counts below are from a
 fresh run of that report.
 
@@ -47,7 +47,7 @@ the error is systematic, and the `conditional` tag is where it bites.
   `build/provenance/companion/main.tex`) and family 056
   (`Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026`,
   `build/main.tex` and `build/termination-generalized-lc-kahler-fourfolds.tex`). The `abstract`
-  column in `notes/sources.tsv` is a 0/1 **flag** per directory, not an occurrence count, so it
+  column in `notes/tables/sources.tsv` is a 0/1 **flag** per directory, not an occurrence count, so it
   reads 719 and cannot show this.
 - **Normalization is lossy, deliberately.** Comments, the abstract environment markers,
   `\label`/`\ref`/`\cite`-family macros, generic `\newcommand`-family macros, math delimiters,
@@ -80,7 +80,7 @@ spread over **88** families. The manuscript-level minimum 0.006 is family 032's 
 
 **The floor moved from the 87 this page recorded before the 2026-10-07 merge, and the merge is not
 the reason.** The shipped rule reproduces 149, not 87, over the *pre-merge* manuscript list too:
-run against `notes/sources.tsv` as of `9b68bc538` (722 rows), the extractor yields 719 comparisons
+run against `notes/tables/sources.tsv` as of `9b68bc538` (722 rows), the extractor yields 719 comparisons
 with the same distribution — 149 below 0.05, buckets 566 / 97 / 32 / 20 / 4, median 0.126, min 0.006.
 Three of those 722 rows are family 032's withdrawn manuscripts, whose directories now ship a notice
 and an archived PDF and no LaTeX, so they yield no abstract and drop out. The 692 manuscript
@@ -306,7 +306,7 @@ shorter statement of the same result, written for a reader choosing which family
   the manuscripts (144 of 372 families vs 153 of 719 manuscripts).
 - `conditional` is the tag where paraphrase and rule interact worst: 11 families disagree, and only
   5 of them are real conditionals the overview presents unconditionally.
-- `notes/abstracts.tsv` [S31] is the per-family record — 372 rows with the best-match ratio,
+- `notes/tables/abstracts.tsv` [S31] is the per-family record — 372 rows with the best-match ratio,
   relation, matched file, both shape sets, the disagreement sets, and the two conditional flags.
   Prose entries above cover the informative subset (4 near-identical, 8 largest divergences, 2
   syntheses, 11 conditional disagreements); the other divergent families are in the TSV, not in
@@ -325,10 +325,10 @@ abstract. No family was checked against its Lean formalization in this pass, and
 no `lake`, no `lean`, no comparator.
 
 The pre-merge reproduction quoted above is a **probe, not a shipped command**: it points
-`compare_abstracts.SOURCES` at `git show 9b68bc538:notes/sources.tsv` and calls `measure()`. The
+`compare_abstracts.SOURCES` at `git show 9b68bc538:notes/tables/sources.tsv` and calls `measure()`. The
 extractor has no flag for a historical manuscript list, so the 149-over-the-pre-merge-list figure is
-reproducible only by that probe, and `notes/abstracts.tsv` records the current list. The 3 family-032
-withdrawal-notice directories are outside `notes/sources.tsv` and outside every count here; their
+reproducible only by that probe, and `notes/tables/abstracts.tsv` records the current list. The 3 family-032
+withdrawal-notice directories are outside `notes/tables/sources.tsv` and outside every count here; their
 archived PDFs were not read, and a withdrawn manuscript's abstract is not compared with the overview
 that no longer describes it.
 
@@ -372,7 +372,7 @@ Markers in the body are `[S#]`. Paths are repo-relative. Overview quotations are
 | S28 | `preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/main.tex` | Family 244. |
 | S29 | `preprints/The-spacetime-Penrose-inequality-with-charge-and-original-data-rigidity-October-5-2026/build/paper.tex` | Family 260. |
 | S30 | `preprints/Scale-and-conformal-symmetry-in-four-dimensional-operational-quantum-field-theory-September-26-2026/build/main.tex` | Family 282. |
-| S31 | `notes/abstracts.tsv` | Generated per-family record, 372 rows. |
+| S31 | `notes/tables/abstracts.tsv` | Generated per-family record, 372 rows. |
 | S32 | `notes/scripts/build_catalog.py` | `SHAPES`, `ASSUME`, `TECH_AFTER`, `conditional_hits`. |
 | S33 | `notes/scripts/compare_abstracts.py` | The comparison, the ratio function, and its gates. |
 | S34 | `preprints/Equality-and-rigidity-in-the-spacetime-Penrose-inequality-September-27-2026/build/paper.tex` | Family 260, outermostness and decay hypotheses. |

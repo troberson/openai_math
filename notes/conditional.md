@@ -1,6 +1,6 @@
 # Conditional families — manual pass
 
-The `conditional` tag in `notes/catalog.tsv` is a keyword match on the family abstract. Reading
+The `conditional` tag in `notes/tables/catalog.tsv` is a keyword match on the family abstract. Reading
 the flagged abstracts is the only way to name the hypothesis. This file records that reading:
 **what each family assumes, where the assumption sits, and what the formalization covers.**
 

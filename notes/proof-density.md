@@ -1,6 +1,6 @@
 # Proof density — tested as a ledger signal, and rejected
 
-`notes/sources.tsv` counts `\begin{proof}` per manuscript. The question beads `math-hqd.3` asks is
+`notes/tables/sources.tsv` counts `\begin{proof}` per manuscript. The question beads `math-hqd.3` asks is
 whether proofs-per-family carries information the ledger does not already carry. It does not: **no
 column was added.** Every number below comes from
 `python3 notes/scripts/measure_proof_density.py --mutant`, run 2026-10-08; the report is deterministic
@@ -105,7 +105,7 @@ counterexample and multi-claim nulls are recorded.
   work. A 2-line "by the cited theorem" proof counts the same as a 40-line construction.
 - Proofs outside `proof` environments — `proofsketch`, `proofidea`, and hand-written "Proof." prose are
   not counted by the rule, and no survey of those environment names was done.
-- Statements counted in files the source index does not read: `notes/sources.tsv` counts the LaTeX tree
+- Statements counted in files the source index does not read: `notes/tables/sources.tsv` counts the LaTeX tree
   per manuscript directory, so a proof in a file outside that tree is invisible.
 - The tier pairs are Lean-exposure groups, not difficulty groups. Nothing here separates a hard
   manuscript from an easy one, and no difficulty measure was attempted.

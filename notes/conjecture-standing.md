@@ -1,6 +1,6 @@
 # Conjecture standing for the 139 named-conjecture resolution families
 
-Written 2026-10-07 as the record for `notes/conjecture-standing.tsv`. The table's `standing_prior_2025`
+Written 2026-10-07 as the record for `notes/tables/conjecture-standing.tsv`. The table's `standing_prior_2025`
 column is **the assistant's training-data prior, not a literature survey**: what a working
 mathematician's memory, frozen at the release's pre-announcement cutoff, says about each conjecture's
 standing. Nothing in that column was read from this repo, and nothing in it has been checked against
@@ -32,7 +32,7 @@ release_claim  gap  surprise_tier  abstract_line
 ```
 
 Pure TSV, header line, no comments — parse with `csv.DictReader(..., delimiter='\t')`. `discipline`
-and `tier` are copied from `notes/catalog.tsv`, not judged. Naming the standing column
+and `tier` are copied from `notes/tables/catalog.tsv`, not judged. Naming the standing column
 `standing_prior_2025` is the structural labelling: the number is never presented as the conjecture's
 status, only as the prior's account of it.
 
@@ -102,7 +102,7 @@ Three rows were corrected by the checker on its first run: **187** cited line 45
 ## Not checked
 
 - **No row asserts consequence.** The table records standing and claim only. The reason is not that
-  the corpus lacks citation structure: `notes/links.tsv` measures **397** release-labelled
+  the corpus lacks citation structure: `notes/tables/links.tsv` measures **397** release-labelled
   bibliography entries resolving to **396** manuscript→manuscript edges over **158 of 372** families,
   **105** of them crossing a family boundary. The reason is that those edges are **untyped** — the
   release records no builds-on / contrasts-with / refutes relation, so an edge says the release chose

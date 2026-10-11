@@ -18,7 +18,7 @@ at ≥1 shared title are a textbook floor, not a signal — see "The discipline 
 | Owner manuscripts | **513** of 719 | path component after `preprints`, never `parts[-2]` |
 | Owners with >1 file | **7** (max 3) | `references.bib` 477, `refs.bib` 24, `sources.bib` 7, `literature.bib` 4, `bibliography.bib` 2, `companions.bib` 2, `projective_references.bib` 2, 3 singletons |
 | Path depth | 4:435 5:79 6:5 9:2 | components of the repo-relative path |
-| Families covered | **299** of 372 | via `notes/subfindings.tsv` manuscript rows |
+| Families covered | **299** of 372 | via `notes/tables/subfindings.tsv` manuscript rows |
 | Disciplines covered | **17** of 17 | via the ledger `discipline` column |
 | Entries | **13,802** | `@type{key,` at line start, body to the next line-start `@` |
 | Entry types | article 9,451 · misc 2,337 · book 776 · incollection 734 · inproceedings 415 · techreport 37 · phdthesis 35 · unpublished 12 · mastersthesis 5 | `@` type lowercased |
@@ -210,7 +210,7 @@ complex analysis), 223+225 (5), 227 (5), 376 (5), 267 (4), 211 (4). **0** of 67 
 
 The release cites its own preprints by URL, and that layer has its own cluster structure. Rule: an
 entry is release-labelled when its body contains `OpenAI Math Release`; its target is the
-`preprints/<dir>/` component of the `\href{…pdf}` in the body — the rule `notes/links.tsv` records.
+`preprints/<dir>/` component of the `\href{…pdf}` in the body — the rule `notes/tables/links.tsv` records.
 
 **432** release-labelled entries (393 in ledger-listed manuscripts), from **277** manuscripts,
 pointing at **268** distinct targets; **80** targets are cited by ≥2 manuscripts. **203** manuscript

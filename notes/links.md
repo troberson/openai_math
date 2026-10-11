@@ -1,6 +1,6 @@
 # The typed-edge inventory
 
-Measured 2026-10-08 by `python3 notes/scripts/extract_links.py`, which writes `notes/links.tsv` —
+Measured 2026-10-08 by `python3 notes/scripts/extract_links.py`, which writes `notes/tables/links.tsv` —
 **22 rows, 7 fields** (`edge`, `source`, `pattern`, `count`, `detail`, `command`, `not_meaning`). No
 `lake`, `lean`, `lake exe cache get`, or comparator run, so nothing here is a verified build, a
 verified pass, or a verified citation target beyond the file-existence checks stated per row. The
@@ -162,7 +162,7 @@ scope):
 | normalized full title | normalized | 417 | 20 | 10 |
 | normalized full title | normalized | 500 | **23** | **12** ← shipped `cited-in-bib` |
 
-The last row is the rule shipped in `notes/links.tsv`; the first row is the recorded 14. Normalizing
+The last row is the rule shipped in `notes/tables/links.tsv`; the first row is the recorded 14. Normalizing
 the corpus is the dominant knob — it is what turns punctuation-bearing titles into matchable phrases,
 taking 5 to 23 — which is why a stem-style variant is not interchangeable with a normalized one.
 Other variants measured over the 500 listed `.bib` files: title-core (trailing noun dropped) over a
