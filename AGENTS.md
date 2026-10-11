@@ -57,10 +57,12 @@ lives in this file and nowhere else.
 
 - Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `overview`, `ledger`, `preprints`,
   `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries`, `templates` (14 modules). Import them (`from catlib import yaml as Y`);
-  do not re-implement a join in an extractor. **48** of the **49** scripts do — the rule is
+  do not re-implement a join in an extractor. **48** of the **50** scripts do — the rule is
   `^[[:space:]]*(from|import) catlib`, so a deferred import inside a function counts — including
-  **all 19** checkers; the sole non-importer is `dump_template_slots.py`, which reaches the slot dict
-  through `render_reports.py` and never touches the registry. `measure.py` is the writer-side
+  **all 20** checkers; the two non-importers are `dump_template_slots.py`, which reaches the slot dict
+  through `render_reports.py` and never touches the registry, and `verify_fleet_design.py`, which
+  measures the fleet's own sources and the tracked probe records, so it has no corpus join to import.
+  `measure.py` is the writer-side
   measurement API (counts as data, no report formatting) and
   checkers deliberately do **not** import it — a checker that re-derives a count through the page's own
   code proves nothing. `render.py` is the page-vs-writer comparison: a page's count pass proves its
@@ -336,14 +338,14 @@ lives in this file and nowhere else.
   manifest is `notes/scripts/README.md`, and it is the only place that answers "whose bytes are
   this". It is also the script inventory: every script under `notes/scripts/` is listed once as
   writer, report-only or checker, with what it writes and the gate command the gate list runs for it
-  — **9** writers, **21** report-only, **18** checkers, plus the page's own checker as the 19th
-  checker and 49th script — and the fourth class, scratch, is recorded by rule: **scratch lives under
+  — **9** writers, **21** report-only, **19** checkers, plus the page's own checker as the 20th
+  checker and 50th script — and the fourth class, scratch, is recorded by rule: **scratch lives under
   `.qwen/tmp/`, a permanent script lives under `notes/scripts/`**, so a probe that a later pass
   re-runs is promoted and gets a table row before it gets a gate command.
-  Scripts and generated files are **not** 1-to-1: of the **48** scripts, **9** write
+  Scripts and generated files are **not** 1-to-1: of the **49** scripts, **9** write
   (`build_catalog.py`, `build_sources.py`, `build_index.py`, `compare_abstracts.py` — with `--tsv`
   only — `extract_formalization_deps.py`, `extract_links.py`, `extract_subfindings.py`,
-  `render_reports.py`, `build_report_templates.py`) and **39**
+  `render_reports.py`, `build_report_templates.py`) and **40**
   write nothing, and `build_index.py` alone renders **1,049** files. Of the **8** top-level
   `notes/*.tsv`, **6** are generator output and **2** are hand-authored — `notes/topics.tsv` (the
   curated vocabulary `build_index.py` reads) and `notes/conjecture-standing.tsv` (the training-data
@@ -367,12 +369,12 @@ lives in this file and nowhere else.
 ## Testing instructions
 
 - Nothing here builds and there is no test suite; the generator report is the test.
-- The whole-tree test is the gate list at `notes/scripts/gate.sh`: **67** invocations — the **8**
+- The whole-tree test is the gate list at `notes/scripts/gate.sh`: **69** invocations — the **8**
   gated writers (`build_report_templates.py` is the writer it does not run),
   the 21 gated report-only rows (including `check_summary_manuscripts.py` and
   `locate_summary_quotes.py`, and `check_index_links.py` plain and with `--mutant`;
-  `read_manuscript.py` is the one script it does not run), and **38**
-  checker invocations: each of the 18 checkers plain and with `--mutant` (**36**), plus
+  `read_manuscript.py` is the one script it does not run), and **40**
+  checker invocations: each of the 19 checkers plain and with `--mutant` (**38**), plus
   `verify_conjecture_standing.py` plain and with `--mutant` (**2**). Run it twice: the two reports
   must be byte-identical, and `notes/scripts/README.md` carries
   the gate command for every row. `refresh_summary_line_counts.py` runs first among the checkers
@@ -663,16 +665,30 @@ lives in this file and nowhere else.
   `notes/`-rooted path constant left of `.open(..., "w")` / `.write_text(...)`, plus the `notes/index`
   tree case), classifies every file under `notes/` with the scripts excluded and flags a file no rule
   owns, re-derives every census count, requires every script named in the page **and** in the
-  `notes/README.md` command block, re-derives the four-scripts-named-nowhere gap from
+  `notes/README.md` command block, re-derives the scripts-named-nowhere gap from
   `git show <manifest-commit>^:notes/README.md` and `<manifest-commit>^:AGENTS.md`, where
   `<manifest-commit>` is the oldest commit touching `notes/scripts/README.md`
   (`git log --format=%H --reverse -- notes/scripts/README.md`) — **not** from `HEAD`, which moves
   every time the command block is edited and would read the gap as empty the moment the naming
   lands — and recomputes the shared-basename sets
   (**1** top-level ∩ index: `README.md`; **13** index ∩ summaries slugs). It excludes
-  itself from the population, so the page's **49** scripts and **18** checkers are the run's **48** and
-  19. It flags sixteen injected mutants, each asserted against the check it targets, and writes nothing.
+  itself from the population, so the page's **50** scripts and **19** checkers are the run's **49** and
+  20. It flags sixteen injected mutants, each asserted against the check it targets, and writes nothing.
   Run it twice and diff — the report is identical.
+- Check `notes/fleet-design.md` with `python3 notes/scripts/verify_fleet_design.py --mutant` before
+  quoting any of its counts — it re-derives the atomicity grep (over the fleet's own sources, the
+  checker excluded because its source carries the pattern as a needle), the sync-pass census, the five
+  `git rev-parse HEAD:<path>` tree digests, the `git status --porcelain --ignored=matching` check over
+  the five hashed paths, the `notes/*.tsv` byte sum, the three `du -sk` sizes, the gate row count from
+  `gate.sh`, the two set-site lines, the env-hit count, and the probe table's wall/opens/distinct/repeats
+  figures — parsed from the two audit-hook records **tracked under `notes/probe/`**, which the checker
+  requires on disk. It resolves every backticked `path:line` anchor, bare script names included (a bare
+  name resolves under `notes/scripts/`), matches the 7-row purity table **inside the purity section**
+  (the amplification table names four of the same scripts, so a page-wide row scan lets a deleted purity
+  row pass), requires each of the 5 amplification rows, and flags 7 injected mutants. The dated
+  observations — the `free -h` available line, the wall times, the cold/warm swing — are **not**
+  re-derived: a checker that re-measures them fails the day the machine changes. It writes nothing; run
+  it twice and diff — the report is identical.
 
 ## PR instructions
 
