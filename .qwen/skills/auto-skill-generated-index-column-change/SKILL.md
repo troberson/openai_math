@@ -131,13 +131,18 @@ print(sum(1 for o, n in zip(old, new) for c in oldcols if o[c] != n[c]))
 Expected: added `['resolves_named']`, removed `[]`, **0 differences in pre-existing columns** across
 all 372 rows. Also:
 
-- Regenerate twice and diff — the artifact must be byte-identical, and the report identical.
+- Regenerate **once** and run `verify_cache_promotion.py`: the writer lands its bytes under the
+  digest key and the assertion compares the cached bytes with the bytes on `notes/catalog.tsv`. The
+  twice-run byte diff is gone (realized 2026-10-11).
 - Re-run every downstream consumer and compare to its *recorded* numbers (buckets C 16, R 46, B 27,
   K 8, U 12, O 2, N 19 over 130 families / 244 manuscripts; the values recorded when this method was
   written were C 16, R 50, B 29, K 8, U 12, O 2, N 20 over 137 families / 255 manuscripts, and an
   upstream merge moved them — a moved baseline is exactly what this comparison is for).
-- Confirm the generator's reconciliation lines and cross-checks are unchanged (372 / 719 / 172 / 242,
-  both `overview.tex` ↔ `CONTENTS.md` cross-checks 0).
+- Confirm the generator's reconciliation lines and cross-checks are unchanged (2026-10-11 report:
+  families 372 / manuscripts 719 / `formalized (yaml)` **173** / challenges 416 / `main_results` 200
+  entries over 189 configs / scope notes 242, both `overview.tex` ↔ `CONTENTS.md` cross-checks 0). The
+  discipline table's formalized column sums to **172** — the 1-gap is `formalization.yaml` naming a
+  superseded manuscript that the overview does not list. Quote the pair with its rule.
 - Confirm the new column **discriminates** before quoting it: not all-1, not all-0, no blanks, and
   not a copy of the existing signal (114 families differ from the tag).
 
