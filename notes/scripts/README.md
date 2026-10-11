@@ -2,7 +2,7 @@
 
 Measured 2026-10-10 by `python3 notes/scripts/verify_script_ownership.py` — report-only, it writes
 nothing, and every count below is re-derived by that run. The page answers one question: for each of
-the **1,136** files under `notes/` (the scripts excluded), which is whose bytes. A generated file is
+the **1,137** files under `notes/` (the scripts excluded), which is whose bytes. A generated file is
 changed by editing its generator and re-rendering; a hand-written file is edited directly. Ownership
 is per file, and the checker exits 1 on a file no rule owns.
 
@@ -281,10 +281,10 @@ The package is not in the census below: the script population is `notes/scripts/
 | `notes/summaries/` | **21** | hand-written — the reading record |
 | `notes/templates/` | **22** | **5** hand-written index skeletons + **17** report templates built by `build_report_templates.py` |
 | `notes/upstream_history/` | **3** | hand-written — one page per upstream merge, moved from the repository root on 2026-10-10 |
-| `notes/probe/` | **4** | the audit-hook probe records the fleet-design page quotes: the 2026-10-11 pair `measure_open_probe.py` writes and the checker parses, and the 2026-10-10 pair the page's cold-cache figures come from |
+| `notes/probe/` | **5** | the audit-hook probe records the fleet-design page quotes: the 2026-10-11 writers/checkers pair `measure_open_probe.py` writes and the checker parses, the 2026-10-11 `render_reports.py` after-record that proves the repeat count fell, and the 2026-10-10 pair the page's cold-cache figures come from |
 | `notes/*.tsv` | **8** | **6** generated, **2** hand-authored |
 | `notes/*.md` | **29** | hand-written — **22** with a checker, **7** without |
-| `notes/` total, scripts excluded | **1,136** | — |
+| `notes/` total, scripts excluded | **1,137** | — |
 
 The generated TSVs are the six writer targets. The two hand-authored tables are:
 

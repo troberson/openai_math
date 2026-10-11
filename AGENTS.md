@@ -56,7 +56,7 @@ lives in this file and nowhere else.
 ## Dev environment tips
 
 - Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `atomic`, `overview`, `ledger`, `preprints`,
-  `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries`, `templates` (15 modules). Import them (`from catlib import yaml as Y`);
+  `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries`, `templates`, `records` (16 modules). Import them (`from catlib import yaml as Y`);
   do not re-implement a join in an extractor. **48** of the **52** scripts do — the rule is
   `^[[:space:]]*(from|import) catlib`, so a deferred import inside a function counts — including
   **all 20** checkers; the four non-importers are `dump_template_slots.py`, which reaches the slot dict
@@ -100,6 +100,20 @@ lives in this file and nowhere else.
   read, which is a revision the package does not own. `catlib/templates.py` imports the writer at module
   level, so a consumer that the writer imports must import it only inside a function
   (`measure_templates.py`'s `registry()`).
+- The digest-keyed record store is `notes/scripts/catlib/records.py`. `manuscript_store()` reads
+  `.qwen/cache/records/<key>/manuscripts.jsonl` and returns the records keyed by directory name, built
+  over **all 749** dirs under `preprints/` — not the 719 listed manuscripts, because `measure_names.py`
+  scans the whole tree and a store scoped to the listed set cannot reproduce its counts. The key is the
+  **builder's** (five tree digests + `records.py`'s own source + L1 hashes + args), not the consumer's,
+  so a consumer that changes how it reads records does not invalidate records it reads unchanged. A
+  record carries derived counts (the `.tex` list, the byte sum, the `\documentclass` roots, the resolved
+  main file, the declared environments, the per-name counts, the statement titles, the abstract bodies)
+  and never raw `.tex` text — which is why `measure_names.py`'s prose scan still walks files. Consumers
+  that read it: `build_sources.py`, `render_reports.py`. Consumers that do **not**: `extract_links.py`,
+  `dump_template_slots.py`, `extract_subfindings.py`, `extract_verification_dirs.py`,
+  `read_manuscript.py`, `measure_proof_density.py`. `verify_sources.py` keeps its own corpus walk by
+  rule — a checker that re-derives through the writer's store proves nothing about the writer. The store
+  is untracked (`.qwen/*`), so a cache write never touches the tracked tree.
 - Regenerate the ledger with `python3 notes/scripts/build_catalog.py` — stdlib only, runs in
   seconds, writes `notes/catalog.tsv` and prints the report that every number in
   `notes/README.md` comes from.
@@ -698,8 +712,10 @@ lives in this file and nowhere else.
   `git rev-parse HEAD:<path>` tree digests, the `git status --porcelain --ignored=matching` check over
   the five hashed paths, the `notes/*.tsv` byte sum, the three `du -sk` sizes, the gate row count from
   `gate.sh`, the two set-site lines, the env-hit count, and the probe table's wall/opens/distinct/repeats
-  figures — parsed from the two audit-hook records **tracked under `notes/probe/`** (the 2026-10-11 pair,
-  written by `notes/scripts/measure_open_probe.py`), which the checker requires on disk. It resolves
+  figures — parsed from the **5** audit-hook records **tracked under `notes/probe/`** (the checker parses
+  the 2026-10-11 pair, written by `notes/scripts/measure_open_probe.py`; the 2026-10-10 pair and the
+  single-target `render_reports.py` after-record are the before-state the page's deltas are measured
+  against), which the checker requires on disk. It resolves
   every backticked `path:line` anchor, bare script names included (a bare
   name resolves under `notes/scripts/`), matches the 7-row purity table **inside the purity section**
   (the amplification table names four of the same scripts, so a page-wide row scan lets a deleted purity

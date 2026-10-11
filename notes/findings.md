@@ -229,7 +229,7 @@ not survive a re-run.
 | S7 | [`notes/counterexample-tag.md`](counterexample-tag.md) | 203 | The `counterex_broad` phrase rule and the 30 flag-only readings |
 | S8 | [`notes/conditional.md`](conditional.md) | 261 | The conditional-tag reading pass and the comparator-`sorry` reading |
 | S9 | [`notes/abstracts.md`](abstracts.md) | 381 | The overview-abstract vs manuscript-abstract comparison |
-| S10 | [`notes/scripts/compare_abstracts.py`](scripts/compare_abstracts.py) | 441 | The generator of that comparison |
+| S10 | [`notes/scripts/compare_abstracts.py`](scripts/compare_abstracts.py) | 447 | The generator of that comparison |
 | S11 | [`notes/t0-triage.md`](t0-triage.md) | 897 | The 130-family T0 reading pass: buckets, counts, unread remainder |
 | S12 | [`notes/t0-chains.md`](t0-chains.md) | 542 | The 27 two-manuscript T0 families and their coverage signal |
 | S13 | [`notes/links.md`](links.md) | 217 | The typed-edge inventory: scope-note links, citation edges |
