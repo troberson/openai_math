@@ -312,7 +312,7 @@ MUTANTS = [
     # proven to fire.
     ("notes-page anchor outside the file",
      lambda p: p.replace("`render_reports.py:1139`", "`render_reports.py:1139` `notes/fleet-design.md:9999`", 1)),
-    ("prose count in the size argument", lambda p: p.replace("**630,606** bytes", "**630,605** bytes", 1)),
+    ("prose count in the size argument", lambda p: p.replace("**630,620** bytes", "**630,619** bytes", 1)),
 ]
 
 

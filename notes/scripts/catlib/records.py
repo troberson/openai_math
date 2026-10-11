@@ -11,7 +11,7 @@ tree untracked, so a cache write never touches the tracked tree and `git status`
 
 Records are megabytes, text is not: the store carries derived counts keyed by manuscript directory,
 never raw `.tex`. `preprints/` is 632 MB and `lean/OAI/` is 1.8 GB; the eight `notes/tables/*.tsv`
-total 630,606 bytes. A record store that carried text would be the corpus with extra steps.
+total 630,620 bytes. A record store that carried text would be the corpus with extra steps.
 
 The five hashed paths are the same list `verify_fleet_design.py` carries. The checker keeps its own
 copy: a checker that re-derives a count through the code the page uses proves nothing, so the digest

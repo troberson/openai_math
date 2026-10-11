@@ -509,8 +509,8 @@ lives in this file and nowhere else.
 - Run `python3 notes/scripts/extract_subfinding_pairs.py` twice and diff: the report must be identical.
 - Run `python3 notes/scripts/measure_index_sizes.py` twice and diff: the report must be identical. It
   writes nothing, and every count in `notes/index-design.md` comes from it. It prints two byte sums
-  that are not interchangeable — `ledger set bytes (5 named TSVs)` **297036** and
-  `all notes/tables/*.tsv bytes` **630606** — and an INDEX section whose table row counts are read from the
+  that are not interchangeable — `ledger set bytes (5 named TSVs)` **297050** and
+  `all notes/tables/*.tsv bytes` **630620** — and an INDEX section whose table row counts are read from the
   generated files under `notes/index/`, not derived from the upstream counts they were built from.
 - Check `notes/index-design.md` with `python3 notes/scripts/verify_index_design.py --mutant` before
   quoting the schema — it resolves every backticked `path:line` anchor of any extension (a mistyped
