@@ -9,10 +9,10 @@ is per file, and the checker exits 1 on a file no rule owns.
 It is also the script inventory. Every script under `notes/scripts/` is listed once, in one of three
 classes — writer, report-only, checker — with what it writes and the command the gate runs for it, and
 the fourth class, the scratch a session writes outside the tree, is recorded by rule rather than by
-file. The classes partition the **51** scripts: **9** writers, **21** report-only, **20** checkers,
+file. The classes partition the **52** scripts: **10** writers, **22** report-only, **20** checkers,
 and `verify_script_ownership.py` itself, which is the 21st checker and is not listed in its own table.
 
-## The split: 9 write, 41 write nothing
+## The split: 10 write, 42 write nothing
 
 The writer set is derived from the scripts' own source, not from this page: a script is a writer when
 a path constant rooted at `notes/` appears on the left of `.open(..., "w")` or `.write_text(...)`,
@@ -27,7 +27,7 @@ self-test: a module-level
 `mutants` / `mutant_test` / `selftest` body is blanked before the write calls are read, because a
 self-test writes the page it checks only to mutate it and restores the bytes it read in the `finally`
 — `verify_script_ownership.py` does exactly that, in three branches (the page it checks, `notes/scripts/README.md`, and `notes/templates.md`), so its normal run writes nothing and it stays in the checker class. `check_index_links.py` and `measure_proof_density.py` were this rule's examples; `math-o3a.3` moved their sync pass into `verify_page_sync.py`, which mutates page text in memory, so neither script carries a write call any more. That rule
-finds **9** writers over **50** scripts.
+finds **10** writers over **51** scripts.
 
 ### Writers
 
@@ -42,6 +42,7 @@ finds **9** writers over **50** scripts.
 | `extract_subfindings.py` | `notes/subfindings.tsv` | run twice, byte-identical | `notes/subfinding-pairs.md` |
 | `render_reports.py` | `notes/README.md`, `notes/abstracts.md`, `notes/dependency-drift.md`, `notes/index-design.md`, `notes/index-links.md`, `notes/links.md`, `notes/named-results.md`, `notes/names.md`, `notes/proof-density.md`, `notes/sources.md`, `notes/verification-dirs.md`, `notes/scope-exclusions.md`, `notes/topics.md`, `notes/t0-chains.md`, `notes/subfinding-pairs.md`, `notes/counterexample-crosscheck.md`, `notes/templates.md` | run twice, byte-identical | the seventeen report-fed pages |
 | `build_report_templates.py` | `notes/templates/report` | not in `gate.sh` — it reads each page with `git show HEAD:`, so a gate run would rewrite templates from committed bytes; run explicitly with 0 args (all seventeen pages) or 2 (one page) after a writer's slot dict changes | the seventeen page templates; the registry, slot dicts and needle derivation it reads are in `catlib/templates.py` |
+| `measure_open_probe.py` | `notes/probe/` | not in `gate.sh` — a record carries a wall time per target, so a run-1/run-2 byte diff of a record is a timing artifact, not a proof; run explicitly over the purity and amplification targets, appending stdout to build a multi-target record | the two probe records `verify_fleet_design.py` parses |
 
 Six writers emit one TSV each. `build_index.py` is the one-to-many case: it renders **1,049** files —
 **1,033** `.md` pages and **16** `.tsv` tables. `render_reports.py` renders the seventeen report-fed pages
@@ -49,7 +50,7 @@ from the templates `build_report_templates.py` builds from the committed page an
 writer supplies. `compare_abstracts.py` is the conditional case: its
 default run writes nothing and only `--tsv` touches `notes/abstracts.tsv`.
 
-All nine writers write through `catlib/atomic.py`, so a crash never leaves a half-written tracked
+All ten writers write through `catlib/atomic.py`, so a crash never leaves a half-written tracked
 file. The single-file writers use `write_atomic()`, which lands bytes on a sibling temp name in the
 same directory, fsyncs, and moves the temp onto the target. The three multi-file writers
 (`build_index.py`, `render_reports.py`, `build_report_templates.py`) use `Staging(name)`: `stage()`
@@ -87,9 +88,10 @@ Editing a join in `build_catalog.py` can move rows in six artifacts.
 
 ### Report-only
 
-The other **41** scripts write nothing. **21** of them print the report a page's counts come from.
+The other **42** scripts write nothing. **22** of them print the report a page's counts come from.
 The Gate column is the invocation the gate list runs: `notes/scripts/gate.sh`, which runs **71**
-invocations — the **8** gated writers, the 21 gated report-only rows (including `check_summary_manuscripts.py`
+invocations — the **8** gated writers (the two writers it does not run are `build_report_templates.py`
+and `measure_open_probe.py`, each for the reason in its own row), the 21 gated report-only rows (including `check_summary_manuscripts.py`
 and `locate_summary_quotes.py`, and `check_index_links.py` twice — plain and with `--mutant`, since
 `math-a0r.6.2` gave its self-test a prose mutant that only the gate can run), and **42** checker
 invocations: each of the 20 checkers plain and
@@ -341,7 +343,7 @@ measurements whose checker no document named; `verify_upstream_history.py` is th
 2026-10-10 and are inside this page's census; `measure_templates.py` is the census behind `notes/templates.md`, added by
 the pass that added that page; `measure_checker_needles.py` is the per-checker needle probe the
 checker-coverage bead promoted; `dump_template_slots.py` is the slot dump that prints the same dict the census measures, promoted by `math-a0r.7`; `verify_fleet_design.py` is the checker for `notes/fleet-design.md`, promoted by `math-o3a.1` together with the two probe records it parses; `verify_page_sync.py` is the checker `math-o3a.3` created when the five sync passes left the writer fleet, so the pinned baseline predates it; and `render_reports.py` is the renderer for the seventeen report-fed pages.
-All 50 are named here and in the command
+All 52 are named here and in the command
 block. "Before this pass" is
 pinned to the commit that created this page, read at its parent, not to `HEAD`: `HEAD` moves every
 time this page is edited, so a check keyed to it re-pins the baseline on each edit, and the naming

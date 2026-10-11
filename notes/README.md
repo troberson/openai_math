@@ -35,6 +35,7 @@ python3 notes/scripts/render_reports.py       # writes notes/sources.md, notes/a
 python3 notes/scripts/measure_templates.py    # the census behind notes/templates.md: lines, bytes and slots of all 22 templates, the builder's page->checker registry, and needle coverage; report-only, writes nothing
 python3 notes/scripts/dump_template_slots.py   # prints the writer's templates slot dict, one label per line, with its values; report-only, writes nothing
 python3 notes/scripts/measure_checker_needles.py  # per-checker needle inventory behind the census page's Needles column; report-only, writes nothing
+python3 notes/scripts/measure_open_probe.py --record <name> <target.py>  # the audit-hook probe: every open() a target performs, with its mode string, bucketed; writes notes/probe/<name>.txt through catlib.atomic. Not in gate.sh — a record carries a wall time per target, so a twice-run byte diff is a timing artifact
 python3 notes/scripts/build_sources.py      # writes notes/sources.tsv (the LaTeX surface of all 719 manuscripts) and prints the reconciliation
 python3 notes/scripts/verify_sources.py --mutant  # checks notes/sources.md against preprints/: every count, every anchor, every directory name
 python3 notes/scripts/measure_topics.py     # measures notes/topics.tsv over the four text layers; report-only, writes nothing

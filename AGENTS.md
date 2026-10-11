@@ -57,7 +57,7 @@ lives in this file and nowhere else.
 
 - Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `atomic`, `overview`, `ledger`, `preprints`,
   `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries`, `templates` (15 modules). Import them (`from catlib import yaml as Y`);
-  do not re-implement a join in an extractor. **47** of the **51** scripts do — the rule is
+  do not re-implement a join in an extractor. **48** of the **52** scripts do — the rule is
   `^[[:space:]]*(from|import) catlib`, so a deferred import inside a function counts — including
   **all 20** checkers; the four non-importers are `dump_template_slots.py`, which reaches the slot dict
   through `render_reports.py` and never touches the registry, `verify_fleet_design.py`, which
@@ -341,14 +341,17 @@ lives in this file and nowhere else.
   manifest is `notes/scripts/README.md`, and it is the only place that answers "whose bytes are
   this". It is also the script inventory: every script under `notes/scripts/` is listed once as
   writer, report-only or checker, with what it writes and the gate command the gate list runs for it
-  — **9** writers, **21** report-only, **19** checkers, plus the page's own checker as the 20th
-  checker and 50th script — and the fourth class, scratch, is recorded by rule: **scratch lives under
+  — **10** writers, **22** report-only, **20** checkers, plus the page's own checker as the 21st
+  checker and 52nd script — and the fourth class, scratch, is recorded by rule: **scratch lives under
   `.qwen/tmp/`, a permanent script lives under `notes/scripts/`**, so a probe that a later pass
-  re-runs is promoted and gets a table row before it gets a gate command.
-  Scripts and generated files are **not** 1-to-1: of the **49** scripts, **9** write
+  re-runs is promoted and gets a table row before it gets a gate command. `math-o3a.3.4` is that rule
+  realized: the audit-hook probe moved from `.qwen/tmp/a11_open_probe2.py` to
+  `notes/scripts/measure_open_probe.py`, and the gate does not run it because a record carries a wall
+  time per target, so a twice-run byte diff of a record is a timing artifact.
+  Scripts and generated files are **not** 1-to-1: of the **51** scripts, **10** write
   (`build_catalog.py`, `build_sources.py`, `build_index.py`, `compare_abstracts.py` — with `--tsv`
   only — `extract_formalization_deps.py`, `extract_links.py`, `extract_subfindings.py`,
-  `render_reports.py`, `build_report_templates.py`) and **40**
+  `render_reports.py`, `build_report_templates.py`, `measure_open_probe.py`) and **41**
   write nothing, and `build_index.py` alone renders **1,049** files. Of the **8** top-level
   `notes/*.tsv`, **6** are generator output and **2** are hand-authored — `notes/topics.tsv` (the
   curated vocabulary `build_index.py` reads) and `notes/conjecture-standing.tsv` (the training-data
@@ -695,8 +698,9 @@ lives in this file and nowhere else.
   `git rev-parse HEAD:<path>` tree digests, the `git status --porcelain --ignored=matching` check over
   the five hashed paths, the `notes/*.tsv` byte sum, the three `du -sk` sizes, the gate row count from
   `gate.sh`, the two set-site lines, the env-hit count, and the probe table's wall/opens/distinct/repeats
-  figures — parsed from the two audit-hook records **tracked under `notes/probe/`**, which the checker
-  requires on disk. It resolves every backticked `path:line` anchor, bare script names included (a bare
+  figures — parsed from the two audit-hook records **tracked under `notes/probe/`** (the 2026-10-11 pair,
+  written by `notes/scripts/measure_open_probe.py`), which the checker requires on disk. It resolves
+  every backticked `path:line` anchor, bare script names included (a bare
   name resolves under `notes/scripts/`), matches the 7-row purity table **inside the purity section**
   (the amplification table names four of the same scripts, so a page-wide row scan lets a deleted purity
   row pass), requires each of the 5 amplification rows, and flags 7 injected mutants. The dated

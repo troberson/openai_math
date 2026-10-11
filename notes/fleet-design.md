@@ -1,6 +1,8 @@
 # The script fleet as a DAG over content digests
 
-Draft for `notes/fleet-design.md`. Every number is from a named command, measured 2026-10-10.
+Draft for `notes/fleet-design.md`. Every number is from a named command. The probe figures are the
+2026-10-11 run of `notes/scripts/measure_open_probe.py` over the eight targets the two tables need;
+the rest is measured 2026-10-10 and re-checked by `verify_fleet_design.py`.
 
 ## The four layers
 
@@ -8,8 +10,8 @@ Draft for `notes/fleet-design.md`. Every number is from a named command, measure
 |---|---|---|---|
 | **L0** | the release tree: `preprints/**`, `lean/**`, `overview.tex`, `CONTENTS.md`, `reasoning_traces/**` | upstream, via the merge commits | the git **tree digest** of each path |
 | **L1** | the hand-authored inputs: `notes/topics.tsv`, `notes/conjecture-standing.tsv`, the **11** hand-written `notes/*.md` pages (of the **28** top-level pages — the other **17** are report-fed, so they are L3) | a human, in a commit | the file's content hash |
-| **L2** | the derived records: the **8** `notes/*.tsv` present on disk, `notes/index/**` (1,049 files), `notes/summaries/**` | the 9 writers | (L0 digests, script-source hash, L1 hashes, args) |
-| **L3** | the tracked output pages: the 17 report-fed `notes/*.md` | `render_reports.py`, plus the **2** checkers that also write a page (`check_index_links.py`, `measure_proof_density.py` — mutant branch only) | the same key |
+| **L2** | the derived records: the **8** `notes/*.tsv` present on disk, `notes/index/**` (1,049 files), `notes/summaries/**`, `notes/probe/**` | the 10 writers | (L0 digests, script-source hash, L1 hashes, args) |
+| **L3** | the tracked output pages: the 17 report-fed `notes/*.md` | `render_reports.py` alone — `math-o3a.3` moved the two checkers' page writes into `verify_page_sync.py`, which mutates page text in memory | the same key |
 
 ## The purity rule, stated precisely
 
@@ -67,7 +69,7 @@ inputs are the expensive, immutable, cacheable part.
 Rule: `grep -cE 'os\.replace|os\.rename|shutil\.move|NamedTemporaryFile'` over `notes/scripts/*.py`
 and `notes/scripts/catlib/*.py`, **excluding `verify_fleet_design.py`** — that checker carries the
 pattern as a needle, so counting it would read 1 and the rule would be about the checker, not the
-fleet. Over **50** scripts and **15** catlib modules the count is **2 matches**, both in
+fleet. Over **51** scripts and **15** catlib modules the count is **2 matches**, both in
 `catlib/atomic.py`: the `os.replace` at `catlib/atomic.py:41`, which promotes the sibling temp onto
 the target, and the one at `catlib/atomic.py:67`, which promotes a staged slot onto its tracked path.
 Before `math-o3a.2.1` the count was **0 matches** over **49** scripts and **14** modules: every writer
@@ -104,57 +106,65 @@ of those pages has one writer. A page with two writers is the reason `gate_drive
 cannot cover `notes/*.md`: the second writer runs after the first, so a run-1/run-2 md5 diff of the
 pages is a real signal, not a formality — that stays true of the pages `render_reports.py` writes.
 
-## The purity violations (7 scripts, mode-verified)
+## The purity population (7 scripts, mode-verified)
 
 Rule: the audit-hook probe (`sys.addaudithook` on `open`, mode string recorded per path, parent process
 only) lists every `notes/` path each script opens. A path is a write only if a mode string contains
 `w`, `a` or `x`. The AST census maps a name to a call context and does **not** track branches, so a
 `write_text` that lives only in a `--mutant` path is reported as a write in every mode — the probe's
-mode strings are the authority.
+mode strings are the authority. The probe is `notes/scripts/measure_open_probe.py`, promoted from
+`.qwen/tmp/a11_open_probe2.py` by `math-o3a.3.4`, and the records it writes are
+`notes/probe/2026-10-11_writers.txt` and `notes/probe/2026-10-11_checkers.txt`.
 
-| script | write modes | generated read that breaks purity |
+| script | write modes | generated reads, and whether any points backwards |
 |---|---|---|
-| `build_sources.py` | `notes/sources.tsv` (w) | `notes/subfindings.tsv` (r) — written by `extract_subfindings.py` at gate row 5, **after** row 2 |
-| `extract_links.py` | `notes/links.tsv` (r,w) | `notes/links.tsv` (r) — its own output, opened read-write; `notes/templates/report/links.md.j2` (r) |
-| `render_reports.py` | 17 pages (w) | `notes/links.tsv`, `notes/sources.tsv`, `notes/subfindings.tsv`, `notes/abstracts.tsv`, `notes/formalization-deps.tsv` (r) — all written earlier in the same pass |
-| `build_index.py` | `notes/index/**` (w, 1,049 files) | `notes/sources.tsv` (r) — written at row 2 |
-| `check_index_links.py` | `notes/index-links.md` (r,w) | second writer of a page `render_reports.py` writes |
-| `measure_proof_density.py` | `notes/proof-density.md` (r,w, mutant branch only) | second writer of a page `render_reports.py` writes |
-| `verify_script_ownership.py` | 0 in a plain run (AST census says `RW` on `notes/README.md` and `notes/templates.md`; the probe records mode `r` only) | reads 22 `notes/templates/report/*.j2` — generated by `build_report_templates.py` |
+| `build_sources.py` | `notes/.sources.tsv.tmp` (w) — the atomic sibling temp, not the tracked target | `notes/catalog.tsv` (r), written at row 1 — forward |
+| `extract_links.py` | `notes/.links.tsv.tmp` (w) — the atomic sibling temp | `notes/catalog.tsv` (r), written at row 1 — forward |
+| `render_reports.py` | 0 under `notes/`: 17 staged slots under `.qwen/cache/staging/render_reports/` (w), moved onto the pages by `os.replace`, which is not an `open` event | 1,077 generated reads (22 `notes/*.tsv`, 22 `notes/templates/report/*.j2`, 1,049 `notes/index/**`) — all written earlier in the same pass |
+| `build_index.py` | 0 under `notes/`: 1,049 staged slots (w), promoted by `os.replace` | 7 generated reads (2 `notes/*.tsv`, 5 `notes/templates/*.j2`) — forward |
+| `check_index_links.py` | 0 — `math-o3a.3` removed its page write | 1,034 `notes/index/**` pages and `notes/catalog.tsv` (r), written at row 3 — forward |
+| `measure_proof_density.py` | 0 — `math-o3a.3` removed its page write | `notes/catalog.tsv`, `notes/sources.tsv` (r) — forward |
+| `verify_script_ownership.py` | 0 in a plain run (AST census says `RW` on `notes/README.md` and `notes/templates.md`; the probe records mode `r` only) | 23 generated reads (1 `notes/*.tsv`, 22 `notes/templates/report/*.j2`) — forward |
 
-The table is the 2026-10-10 probe, and the checker parses these records, so the rows are the state
-the probe measured. `math-o3a.3` removes **three** of the seven violations: `build_sources.py` no
-longer reads `notes/subfindings.tsv` (its manuscript list is parsed from `overview.tex`),
-`extract_links.py` no longer reads `notes/links.tsv` or `notes/links.md` (its sync pass moved), and
-`check_index_links.py` and `measure_proof_density.py` no longer write a page. The next probe run
-measures the new set; until then the table is the dated record and the count stays **7**.
-
-The two backwards edges are the ones the twice-run absorbs: `build_sources.py` consumes the
-**previous pass's** `subfindings.tsv` as its manuscript list, and `extract_links.py` reads
-`notes/links.md` that `render_reports.py` wrote in the previous pass. No single-pass order satisfies
-both, so the row order in `gate.sh` is provably not topological. `math-o3a.3` removes both: the
+**0** of the 7 scripts reads a generated file that a later gate row writes. The two backwards edges
+the 2026-10-10 probe recorded are gone: `build_sources.py` consumed the **previous pass's**
+`subfindings.tsv` as its manuscript list and `extract_links.py` read `notes/links.md` that
+`render_reports.py` wrote in the previous pass, and no single-pass order satisfies both — which is
+why the row order in `gate.sh` was provably not topological. `math-o3a.3` removed both: the
 manuscript list comes from `overview.tex`, and no writer reads a page. The remaining generated reads
-are all forward — `render_reports.py` and `build_index.py` read TSVs written earlier in the same
-pass — so a single pass satisfies them.
+are all forward, so a single pass satisfies them.
+
+Two shapes the probe records that the AST census cannot see. A staging writer writes nothing under
+`notes/` during its run — its bytes land untracked and `promote()` moves them with `os.replace`, which
+is not an `open` event — so the probe's write column for `render_reports.py` and `build_index.py` is
+0, and the two `os.replace` sites in `catlib/atomic.py` are what accounts for those moves. And the
+single-file
+writers write the dotted sibling temp, so the write column names `notes/.sources.tsv.tmp` and
+`notes/.links.tsv.tmp`, not the tracked targets.
 
 ## The read amplification (why the gate costs an hour)
 
 Rule: `sys.addaudithook` on `open` counts events, distinct paths, repeats, `rchar` (bytes through
 `read()`) and `read_bytes` (bytes from storage), parent process only. The records are
-`notes/probe/2026-10-10_writers.txt` and `notes/probe/2026-10-10_checkers.txt`; the checker parses them.
+`notes/probe/2026-10-11_writers.txt` and `notes/probe/2026-10-11_checkers.txt`; the checker parses them.
 
 | gate row | wall s | opens | distinct | repeats | rchar MB | disk MB |
 |---|---|---|---|---|---|---|
-| `build_sources.py` | 2.51 | 39,080 | 7,752 | 31,328 (80 %) | 641.1 | 0.3 |
-| `extract_links.py` | 56.60 | 157,599 | 131,062 | 26,537 | 4,249.2 | **3,601.4** |
-| `build_index.py` | 51.94 | 17,809 | 9,554 | 8,255 | 261.2 | 3.5 |
-| `dump_template_slots.py` | 76.92 | 59,681 | 10,459 | 49,222 | 967.8 | 44.7 |
-| `render_reports.py` | 332.23 | 154,399 | 12,301 | **142,098 (92 %)** | 5,113.5 | 1,854.8 |
+| `build_sources.py` | 3.21 | 39,083 | 7,754 | 31,329 (80 %) | 641.3 | 0.0 |
+| `extract_links.py` | 23.26 | 157,518 | 130,983 | 26,535 | 2,123.0 | 0.0 |
+| `build_index.py` | 58.3 | 17,803 | 9,548 | 8,255 | 261.0 | 0.0 |
+| `dump_template_slots.py` | 59.05 | 59,678 | 10,456 | 49,222 | 967.9 | 0.0 |
+| `render_reports.py` | 231.58 | 152,680 | 12,316 | **140,364 (92 %)** | 4,837.4 | 0.0 |
 
-`render_reports.py` opens **154,399** times over **12,301** distinct paths — **142,098 repeats
-(92 %)** — and pulls 1.9 GB from storage. The bucket split says where: `preprints/` **142,403** opens,
-`notes/index/` 5,213, `lean/ComparatorChallenges/` 2,239, `lean/docs/` 2,234, `lean/OAI/` 1,870,
-`notes/` 140, `notes/templates/` 63 — the buckets sum to the row's 154,399, and **95 %** of the opens
+`disk MB` is `read_bytes`, bytes taken from storage rather than from the page cache. Every row reads
+0.0 because the cache was warm when this run started; the 2026-10-10 run, which started cold, recorded
+**3,601.4** for `extract_links.py` and **1,854.8** for `render_reports.py`. The cold/warm swing is a
+dated observation, not a re-derivable count, and the wall column moves with it.
+
+`render_reports.py` opens **152,680** times over **12,316** distinct paths — **140,364 repeats
+(92 %)** — and pulls 4.8 GB through `read()`. The bucket split says where: `preprints/` **142,403**
+opens, `notes/index/` 4,180, `lean/docs/` 1,992, `lean/OAI/` 1,870, `lean/ComparatorChallenges/` 1,823,
+`notes/` 106, `notes/templates/` 61 — the buckets sum to the row's 152,680, and **93 %** of the opens
 are release inputs. The mechanism is stacked full-corpus walks, not one loop: `render_reports.py:119
 def measure()` is called twice per process, and each call walks all 719 listed dirs reading their `.tex`
 four times (`roots_of`, `main_no_dc`, `substring_multi`, `build_sources.env_variants`). The probe
@@ -164,10 +174,19 @@ implies are not attributed to a call site: the split is measured, the per-call a
 (**220** `read_text(` call sites over the **43** scripts the gate runs — 26 named explicitly, 17 in the
 checker loop); the only cache in catlib is `render.rendered`, keyed by page name.
 
-The same probe puts `check_index_links.py` at **57.91** s in its own row, and the timed import run
-measured its subprocess cost inside `verify_findings.py` at **51.49** s per call — 7 calls in the
-mutant loop. Two measurement sources, quoted separately: the row time from the probe, the per-call
-cost from the in-process timing.
+The same probe puts `check_index_links.py` at **1.16** s in its own row (plain run, 1,717 opens over
+1,714 distinct paths), and the timed import run measured its subprocess cost inside
+`verify_findings.py` at **51.49** s per call — 7 calls in the mutant loop. Two measurement sources,
+quoted separately: the row time from the probe, the per-call cost from the in-process timing. The
+2026-10-10 probe recorded the row at 57.91 s; that run started cold, and the row's opens are the
+1,033 index pages plus the 416 comparator files and 242 scope notes, which is what a warm cache
+makes cheap.
+
+`extract_links.py`'s `rchar` fell from 4,249.2 MB to 2,123.0 MB and its wall from 56.60 s to 23.26 s
+when `math-o3a.3` moved its sync pass into `verify_page_sync.py`. The pass called
+`catlib.render.rendered()`, which runs the renderer's `measure()` — the full-corpus walk — inside
+`extract_links.py`'s own process. The writer now walks the corpus once, and the render happens in the
+checker that owns it.
 
 Decisive: `check("notes/findings.md")` timed three times in one process — **104.50 s → 67.24 s →
 0.13 s** on identical code, identical page, identical output. Memoising the 5 report subprocesses
@@ -258,8 +277,8 @@ through the writer's code proves nothing (`catlib/measure.py` docstring).
    tree-digest `git rev-parse`, the `--ignored=matching` check, the byte sum over the present
    `notes/*.tsv`, the three `du -sk` sizes, the gate row count from `gate.sh`, the two set-site lines,
    the env-hit count, and the probe table's figures (parsed from
-   `notes/probe/2026-10-10_writers.txt` and `notes/probe/2026-10-10_checkers.txt`, the measurement's
-   own records, tracked in git). The `free -h` available line, the
+   `notes/probe/2026-10-11_writers.txt` and `notes/probe/2026-10-11_checkers.txt`, the records
+   `notes/scripts/measure_open_probe.py` writes, tracked in git). The `free -h` available line, the
    wall times, and the cold/warm swing are **not** re-derived: they are dated observations in the page,
    and a checker that re-measures them fails the day the machine changes.
 4. **Tables** — the 7-row purity table equals the probe parse, scanned **inside the purity section**
@@ -269,7 +288,11 @@ through the writer's code proves nothing (`catlib/measure.py` docstring).
 5. **Mutants** — 7 injected corruptions, each asserted against the pass it targets: the atomicity
    count shifted, the sync split altered, a purity row deleted, the digest count widened, a probe
    figure altered, an anchor shifted outside its file, and a prose count in the size argument. Measured
-   2026-10-11 at 05:35 UTC: plain **0 problems**, `--mutant` **7 of 7** flagged, and both reports
-   byte-identical across two runs. The row pair is in `gate.sh` (the checker loop runs 19 → **20**
+   2026-10-11 at 06:41 UTC against the re-measured probe: plain **0 problems**, `--mutant` **7 of 7**
+   flagged, and both reports byte-identical across two runs. The atomicity mutant was inert twice
+   during this pass, both times for the same reason: a paragraph that restates the atomicity count
+   leaves the phrase a second time, so the single occurrence the mutant replaces is not the only one
+   and the count check still finds it. Both restatements are now prose without the bold form, and the
+   phrase occurs once. The row pair is in `gate.sh` (the checker loop runs 19 → **20**
    checkers, so the list is 69 → **71** invocations) and the page + checker are rows in
    `notes/scripts/README.md`.
