@@ -38,7 +38,10 @@ checker defect, not a page defect.
 - **Once a checker measures everything, it is the needle list.** Import its `measure()` in a scratch
   script and print every needle in the checker's exact format; sweep the page against that printout
   instead of hand-computing counts from a raw report (`sweep-superseded-counts` §3a).
-- **Run twice, diff, byte-identical.** Exit non-zero on problems **and** on undetected mutants.
+- **A checker writes nothing, so its own report is the test** — run it plain and with `--mutant` and
+  exit non-zero on problems **and** on undetected mutants. The "run the writer twice and diff" test is
+  gone: writers promote bytes under a digest key and `verify_cache_promotion.py` asserts the cached
+  bytes equal the bytes on the tracked path, so one run proves the artifact.
 - Fast extractors the page quotes are re-run as **subprocesses with `cwd=notes/scripts`** so sibling
   imports resolve (0.02–1 s each). Extractors that take 40–52 s are never imported into a checker.
 
@@ -48,7 +51,9 @@ Three separate failures, all found in one session:
 
 1. **A stale mutant target is a silent no-op.** `p.replace("Reading all 235 sections, 115", …)` after
    the page had been rewritten to a verbatim quotation: the target string no longer existed, the
-   mutation did nothing, the run reported `UNDETECTED (0 problems)` and **exited 0**. Assert the
+   mutation did nothing, the run reported `UNDETECTED (0 problems)` and **exited 0**. That pair is a
+   dated incident, not a current figure — `notes/scope-exclusions.md` now reads **242** scope notes
+   with **121** stating an exclusion, so re-audit targets against the live page. Assert the
    mutation changed the page:
 
    ```python
