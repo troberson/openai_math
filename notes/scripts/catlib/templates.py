@@ -61,6 +61,9 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
     # counterexample-crosscheck.md re-runs the crosscheck extractor's own report-only helpers
     # (main_results / scope_note / declaration_statement / carrier) over the ledger population.
     "notes/counterexample-crosscheck.md": R.crosscheck_population,
+    # formalization-faithfulness.md's population is measure_faithfulness.py's own report-only
+    # measurement, imported by the writer.
+    "notes/formalization-faithfulness.md": R.faithfulness_population,
     # templates.md's census is measure_templates.population(); the page also compares a template's slot
     # count with the writer's label count, so the abstracts label count travels inside the population —
     # the same CA.measure() call abstracts_page() makes.
@@ -94,6 +97,8 @@ LABELS: dict[str, Callable[[], dict[str, str]]] = {
     "notes/README.md": lambda: R.readme_phrases(POPULATIONS["notes/README.md"]()),
     "notes/counterexample-crosscheck.md": lambda: R.crosscheck_phrases(
         POPULATIONS["notes/counterexample-crosscheck.md"]()),
+    "notes/formalization-faithfulness.md": lambda: R.faithfulness_phrases(
+        POPULATIONS["notes/formalization-faithfulness.md"]()),
     "notes/templates.md": lambda: R.templates_phrases(POPULATIONS["notes/templates.md"]()),
 }
 PHRASE_FNS = ("count_phrases", "size_phrases")
@@ -143,6 +148,9 @@ ALL_PAGES = {
     # derives its needle list from the checker itself - as it now does for the six other report-fed
     # pages, whose per-page counts are the Needles column of the templates census.
     "notes/counterexample-crosscheck.md": "verify_counterexample_crosscheck.py",
+    # formalization-faithfulness.md's checker exports population() and count_phrases(), so the builder
+    # derives its needle list from the checker itself, as it does for the crosscheck page.
+    "notes/formalization-faithfulness.md": "verify_faithfulness.py",
     # templates.md has no page checker of its own: its census comes from the gated report-only
     # measure_templates.py, and the script that checks any part of it is verify_script_ownership.py,
     # which verifies the census rows and carries no count_phrases/size_phrases, so the builder reports

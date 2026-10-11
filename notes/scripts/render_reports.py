@@ -59,6 +59,7 @@ import extract_subfinding_pairs as ep
 import extract_t0_chains as tc
 import extract_verification_dirs as evd
 import measure_index_sizes as M
+import measure_faithfulness as FA
 import measure_names as MN
 import measure_proof_density as PD
 import measure_templates as MTPL
@@ -100,6 +101,7 @@ T0_CHAINS_MD = ROOT / "notes" / "t0-chains.md"
 SP_MD = ROOT / "notes" / "subfinding-pairs.md"
 README_MD = ROOT / "notes" / "README.md"
 CROSSCHECK_MD = ROOT / "notes" / "counterexample-crosscheck.md"
+FAITH_MD = ROOT / "notes" / "formalization-faithfulness.md"
 TEMPLATES_MD = ROOT / "notes" / "templates.md"
 VPOS = preprints.bundle_of(PREPRINTS / "Positively-curved-Einstein-four-manifolds-September-23-2026")
 VZERO = preprints.bundle_of(PREPRINTS / "Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026")
@@ -3131,6 +3133,68 @@ def crosscheck_page(p: dict[str, str]) -> str:
     return ENV.get_template("counterexample-crosscheck.md.j2").render(p=p)
 
 
+def faithfulness_population() -> dict[str, Any]:
+    """The formalized-statement surface, measured by measure_faithfulness.py.
+
+    The page's checker keeps its own recomputation; this is the writer's side of the split, so the
+    render and the count pass are independent.
+    """
+    return FA.population()
+
+
+def _lits(vals: list) -> str:
+    return ", ".join(str(v) for v in vals)
+
+
+def faithfulness_phrases(p: dict[str, Any]) -> dict[str, str]:
+    out: dict[str, str] = {}
+    out["fa_surface"] = (
+        f"Over the **{p['entries']}** `main_results` entries over **{p['unique']}** unique configs:\n\n"
+        f"- **{p['resolved']}** of the {p['unique']} declarations resolve to a statement in the file "
+        f"the yaml names.\n"
+        f"- **{p['carrier_typed']}** of the {p['resolved']} statements are opaque: the type is a name "
+        f"that must be opened, not a formula.\n"
+        f"  All **{p['carriers_ok']}** carriers resolve through the declaration file's import closure.\n"
+        f"- Carrier bodies: min **{p['size_min']}** line, median **{p['size_med']}**, max "
+        f"**{p['size_max']}**, sum **{p['size_sum']}** lines.\n"
+        f"- **{p['with_literal']}** of the **{p['carriers_ok']}** carriers carry at least one integer "
+        f"literal; **{p['lit_total']}** distinct literals in total."
+    )
+    pr = p["pair"]
+    out["fa_pair"] = (
+        f"Over the **{p['carriers_ok']}** carriers, all **{p['carriers_ok']}** have a scope-note family: "
+        f"**{pr['exact']}** exact, **{pr['subset']}** lean-subset,\n"
+        f"**{pr['overlap']}** overlap, **{pr['disjoint']}** disjoint, "
+        f"**{pr['carrier_no_literal']}** carriers with no literal, "
+        f"**{pr['no_headline_literal']}** families with no headline\nliteral."
+    )
+    out["fa_disjoint"] = "\n".join(
+        ["| Config | Family | Carrier literals |", "| --- | --- | --- |"]
+        + [f"| `{c}` | {fs[0]} | {_lits(lits)} |" for c, fs, lits in p["disjoint"]])
+    out["fa_overlap"] = "\n".join(
+        ["| Config | Family | Extra | Shared |", "| --- | --- | --- | --- |"]
+        + [f"| `{c}` | {fs[0]} | {_lits(extra)} | {_lits(shared)} |"
+           for c, fs, extra, shared in p["overlap_extra"]])
+    out["fa_ae"] = (
+        f"Over the 719 listed manuscripts there are\n"
+        f"**{p['env_total']:,}** theorem environments; **{p['ae_envs']}** carry an `a.e.`-style phrase "
+        f"(`a.e.`, `almost every`,\n`almost all`, `a.s.`, `measure zero`, `null set`), over "
+        f"**{len(p['ae_fams'])}** families. **{len(p['ae_inter'])}** of those {len(p['ae_fams'])} families\n"
+        f"have a scope-note config; the {len(p['ae_inter'])} link **{len(p['ae_cfgs'])}** configs, of "
+        f"which **{len(p['ae_with'])}** have a `main_results` entry and\n"
+        f"**{len(p['ae_without'])}** have none."
+    )
+    out["fa_ae_table"] = "\n".join(
+        ["| Family | `a.e.` envs | Configs linked | With entry | Without |",
+         "| --- | --- | --- | --- | --- |"]
+        + [f"| {f} | {a} | {c} | {w} | {o} |" for f, a, c, w, o in p["ae_table"]])
+    return out
+
+
+def faithfulness_page(p: dict[str, str]) -> str:
+    return ENV.get_template("formalization-faithfulness.md.j2").render(p=p)
+
+
 # The registry: page name -> the call that measures it, and page path -> the call that renders it.
 # A checker that wants the writer's bytes for a page calls render_page(page) instead of re-deriving
 # them, and a checker that wants the writer's numbers calls population_of(name). Both are cached, so
@@ -3155,6 +3219,7 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
     "subfinding-pairs": subfinding_pairs_population,
     "README": readme_population,
     "counterexample-crosscheck": crosscheck_population,
+    "formalization-faithfulness": faithfulness_population,
     # templates.md reports the census of both template trees, measured by measure_templates.py. The
     # page compares a template's slot count with the writer's label count, so the abstracts label count
     # travels inside its population — CA.measure() is the call abstracts_page() makes.
@@ -3179,6 +3244,7 @@ PAGE_RENDERERS: dict[pathlib.Path, Callable[[], str]] = {
     SP_MD: lambda: subfinding_pairs_page(subfinding_pairs_phrases(population_of("subfinding-pairs"))),
     README_MD: lambda: readme_page(readme_phrases(population_of("README"))),
     CROSSCHECK_MD: lambda: crosscheck_page(crosscheck_phrases(population_of("counterexample-crosscheck"))),
+    FAITH_MD: lambda: faithfulness_page(faithfulness_phrases(population_of("formalization-faithfulness"))),
     TEMPLATES_MD: lambda: templates_page(templates_phrases(population_of("templates"))),
 }
 
@@ -3203,6 +3269,7 @@ def main() -> None:
     spp = population_of("subfinding-pairs")
     rmp = population_of("README")
     xcp = population_of("counterexample-crosscheck")
+    fap = population_of("formalization-faithfulness")
     tplp = population_of("templates")
     ST = Staging("render_reports", key_for("render_reports.py", tuple(sys.argv[1:])))
     ST.stage(SOURCES_MD, render_page(SOURCES_MD))
@@ -3221,6 +3288,7 @@ def main() -> None:
     ST.stage(SP_MD, render_page(SP_MD))
     ST.stage(README_MD, render_page(README_MD))
     ST.stage(CROSSCHECK_MD, render_page(CROSSCHECK_MD))
+    ST.stage(FAITH_MD, render_page(FAITH_MD))
     ST.stage(TEMPLATES_MD, render_page(TEMPLATES_MD))
     staged = ST.staged()
     texts = ST.staged_texts()
@@ -3242,6 +3310,7 @@ def main() -> None:
           f"  subfinding-pairs {len(subfinding_pairs_phrases(spp))}"
           f"  readme {len(readme_phrases(rmp))}"
           f"  crosscheck {len(crosscheck_phrases(xcp))}"
+          f"  faithfulness {len(faithfulness_phrases(fap))}"
           f"  templates {len(templates_phrases(tplp))}"
           f"  multi-root rows {len(ms['multi'])}  rows {ms['rows']}  listed {ms['listed']}"
           f"  dirs {ms['dirs']}  comparisons {ma['manuscripts']}  families {ma['families']}"

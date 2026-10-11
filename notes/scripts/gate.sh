@@ -43,6 +43,7 @@ pool_rows+=("measure_index_sizes.py")
 pool_rows+=("check_index_links.py")
 pool_rows+=("check_index_links.py --mutant")
 pool_rows+=("measure_names.py")
+pool_rows+=("measure_faithfulness.py")
 pool_rows+=("measure_templates.py")
 pool_rows+=("dump_template_slots.py")
 pool_rows+=("measure_checker_needles.py")
@@ -52,7 +53,7 @@ for c in verify_summaries verify_abstracts verify_named_results verify_named_con
          verify_sources verify_conditional verify_counterexample_crosscheck verify_t0_chains \
          verify_verification_dirs verify_dependency_drift verify_script_ownership \
          verify_findings verify_citations verify_upstream_history verify_fleet_design \
-         verify_page_sync; do
+         verify_page_sync verify_faithfulness; do
   pool_rows+=("$c.py")
   pool_rows+=("$c.py --mutant")
 done
