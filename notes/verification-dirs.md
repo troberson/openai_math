@@ -307,6 +307,44 @@ in JSON, so use the runner instead of treating an individual exit code as suffic
 and its program-to-claim table maps each of the ten programs to the finite computation it performs
 (`preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/verification/README.md:25`).
 
+## What a run costs, read from the shipped logs (2026-10-11)
+
+Six of the 30 bundles ship recorded timings; 24 ship none. Nothing was executed to produce these
+numbers — they are the release's own reports, read as text.
+
+| Fam | Bundle | Recorded time | Where |
+|---|---|---|---|
+| 205 | `Universal-Tensor-Squares…` | 529.739 s over 61 children, slowest `n=64` at 116.495 s; capacity checks 0.005737 s and 105.008179 s; the README command totals 634.753 s | `preprints/Universal-Tensor-Squares-for-Symmetric-Groups-September-24-2026/verification/computation/character-61-degrees.log:183` |
+| 229 | `The-Reconstruction-Threshold…Four-State-Potts` | mode `a` 98.066 s, mode `b` 1287.904 s, total 1385.970 s | `preprints/The-Reconstruction-Threshold-for-the-Ferromagnetic-Four-State-Potts-Model-October-5-2026/verification/checks/full-runs.json:15` |
+| 268 | `The-periodic-spin-one-Haldane-gap…` | 5426.971 s recorded across 324 thermal sector records, 12 per-run files, and the 120-site trial at 17.055 s | `preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/verification/computations/evidence/trials/certificate120.json` |
+| 268 | `A-boundary-field-gap…` | scalar 0.028 s, thermal 5.194 s over 16 records | `preprints/A-boundary-field-gap-for-the-spin-one-Heisenberg-chain-September-24-2026/verification/scalar-certificate.json:1156` |
+| 090 | `Triangular-minimality…` | wrapper 79.7876 s, child full-certificate timer 72.598 s | `preprints/Triangular-minimality-for-planar-Coulomb-renormalized-energy-September-23-2026/verification/data/certificate-record.txt:5` |
+| 361 | `A-counterexample-to-integer-degree…` | 3.369 s | `preprints/A-counterexample-to-integer-degree-harmonic-dimension-comparison-September-25-2026/verification/counting-check-output.txt:9` |
+
+Sum over the six: 7,536 s ≈ 2.09 h.
+
+Family 205 is the case where a ceiling read as a duration inflates the estimate by 24×. The README
+states the limit: "Each character child is limited to 1536 MiB of address space and 300 seconds of
+wall time; a timeout or failed run is not a certificate"
+(`preprints/Universal-Tensor-Squares-for-Symmetric-Groups-September-24-2026/verification/computation/README.md:19`),
+and 61 degrees × 300 s is 5.08 h. The shipped log answers the same question in seconds: the wall limit
+is a ceiling, the slowest child used 116.495 s of it
+(`preprints/Universal-Tensor-Squares-for-Symmetric-Groups-September-24-2026/verification/computation/character-61-degrees.log:183`),
+and the two top degrees (63 at 88.970 s, 64 at 116.495 s) account for 205.465 s of the 529.739 s. A
+run that hits the ceiling is a failed run, not a slow one.
+
+The command lists 61 degrees, not 55: `runs 1 3 {5..8} {10..64}` is 1, 3, 5–8, and 10–64, and the
+shipped log is named `character-61-degrees.log`. 55 is the `10..64` range alone.
+
+Two of the six sums are not one run's wall time. The 268 periodic figure is a sum over 324 sector
+records and 12 per-run files, and `--workers` controls concurrency, so it is work volume, not elapsed
+time. The 229 total is two separate C++ traversals, run one after the other.
+
+The 24 bundles with no recorded timing include every bundle whose check is a single Python script —
+153, 101, 067, 266, 059, 189, 187, 371, 367, 348 (×2), 087, 119, 107 (×2), 090 (×3), 210, 272, 352,
+229 `The-exact-reconstruction-threshold…`, 269 (×2). Their cost is unmeasured, and no README names a
+time figure.
+
 ## Requirements, for anyone who wants to run them
 
 Python only, standard library: 348 (×2, Python ≥ 3.10), 361, 090 `An-atomic-certificate`, 268
