@@ -87,7 +87,8 @@ the truly-unread set come out: `AGENTS.md`, `CLAUDE.md`, and three notes docs.
 A format pass must name what it will never touch:
 
 - **Generated trees** — a renderer's output must stay byte-identical across runs; formatting it breaks
-  the twice-run diff test. Edit the generator, not the output.
+  the render-diff test (the page's bytes on disk against the bytes its writer renders). Edit the
+  generator, not the output.
 - **Mirrored upstream/release files** — a byte-for-byte mirror of someone else's release is not yours
   to restyle.
 - **Tool-generated files** (issue-store READMEs, scaffolds).
@@ -188,8 +189,9 @@ spans), 2,043 padded table lines.
 numbers from the page's own tables (byte totals "scoped to the TSVs the page tabulates"). When padding
 breaks the row regex, the derivation widens and the checker prints a count mismatch that reads like a
 data drift in the corpus — `verify_index_design` demanded `630987` where the page states `541463`, and
-`630987` was the sum of a wider glob, not a changed file. Reproduce the derivation in-process before
-quoting any drift:
+`630987` was the sum of a wider glob, not a changed file. Re-measured 2026-10-11 the pair is
+`630606` demanded and `630606` stated — both numbers moved with the upstream merge, so quote the
+current pair, not the observed one. Reproduce the derivation in-process before quoting any drift:
 
 ```python
 import sys; sys.path.insert(0, 'notes/scripts')
