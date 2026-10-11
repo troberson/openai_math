@@ -36,6 +36,7 @@ The LaTeX joins live in catlib/preprints.py; the TSV reader and writer in catlib
 """
 import collections
 import pathlib
+import sys
 
 from catlib import overview, records, text, tsv
 from catlib.paths import LEDGER_TSV, PREPRINTS, ROOT, SOURCES_TSV, read_text
@@ -191,8 +192,10 @@ def report(rows, subs, dirs, store):
 
 
 def main():
+    check_only = "--check-only" in sys.argv[1:]
     rows, subs, dirs, store = build()
-    write(rows)
+    if not check_only:
+        write(rows)
     report(rows, subs, dirs, store)
 
 

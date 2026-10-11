@@ -114,6 +114,8 @@ def block(target: str, args: list[str], wall: float, before: dict[str, int],
 def main() -> int:
     argv = sys.argv[1:]
     record = None
+    check_only = "--check-only" in argv
+    argv = [a for a in argv if a != "--check-only"]
     if argv and argv[0] == "--record":
         record = argv[1]
         argv = argv[2:]
@@ -137,7 +139,7 @@ def main() -> int:
     lines = block(target, rest, wall, before, after)
     text = buf.getvalue() + "\n".join(lines) + "\n"
     print(text, end="")
-    if record is not None:
+    if record is not None and not check_only:
         write_atomic(PROBE_DIR / f"{record}.txt", text)
     return 0
 

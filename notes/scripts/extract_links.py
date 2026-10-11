@@ -595,7 +595,8 @@ def main():
         "authority about the result.",
     )
 
-    tsv.write_sanitized(OUT, FIELDS, rows_out)
+    if "--check-only" not in sys.argv[1:]:
+        tsv.write_sanitized(OUT, FIELDS, rows_out)
 
     for line in report:
         print(line)

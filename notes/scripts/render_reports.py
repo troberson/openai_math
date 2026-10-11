@@ -3212,11 +3212,11 @@ def main() -> None:
     ST.stage(README_MD, render_page(README_MD))
     ST.stage(CROSSCHECK_MD, render_page(CROSSCHECK_MD))
     ST.stage(TEMPLATES_MD, render_page(TEMPLATES_MD))
-    ST.promote()
-    for page in (SOURCES_MD, ABSTRACTS_MD, NAMED_RESULTS_MD, INDEX_DESIGN_MD, NAMES_MD,
-                 PROOF_DENSITY_MD, INDEX_LINKS_MD, LINKS_MD, DRIFT_MD, VERIF_MD, EX_MD, TOPICS_MD,
-                 T0_CHAINS_MD, SP_MD, README_MD, CROSSCHECK_MD, TEMPLATES_MD):
-        out = page.read_text(encoding="utf-8")
+    staged = ST.staged()
+    texts = ST.staged_texts()
+    if "--check-only" not in sys.argv[1:]:
+        ST.promote()
+    for page, out in zip(staged, texts, strict=True):
         print(f"{page.name} written  lines {len(out.splitlines())}  bytes {len(out.encode())}")
     ms, ma = measure(), CA.measure()
     print(f"slots  sources {len(phrases(ms))}  abstracts {len(abstracts_phrases(ma))}"

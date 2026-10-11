@@ -47,6 +47,7 @@ import csv
 import pathlib
 import posixpath
 import re
+import sys
 import unicodedata
 
 from jinja2 import Environment, FileSystemLoader
@@ -762,19 +763,22 @@ def main():
           f"README.md {sum(1 for r in manuscript_rows if r['readme'] == '1')}")
     # The staged bytes are promoted only now, after every reconciliation line has printed, so a run
     # killed before this point leaves the tracked tree exactly as it was.
-    ST.promote()
+    check_only = "--check-only" in sys.argv[1:]
+    if not check_only:
+        ST.promote()
     # A page whose family title changed is written under a new slug, so the old page survives on
     # disk and its manuscript table links the editions the merge superseded. The tree is generated,
     # so anything this build did not write is stale and is removed.
     stale = sorted(p for p in IDX.rglob("*")
                    if p.is_file() and p.suffix in (".md", ".tsv") and p not in WRITTEN)
-    for p in stale:
-        p.unlink()
     empty_dirs = 0
-    for d in sorted((x for x in IDX.rglob("*") if x.is_dir()), key=lambda x: -len(x.parts)):
-        if not any(d.iterdir()):
-            d.rmdir()
-            empty_dirs += 1
+    if not check_only:
+        for p in stale:
+            p.unlink()
+        for d in sorted((x for x in IDX.rglob("*") if x.is_dir()), key=lambda x: -len(x.parts)):
+            if not any(d.iterdir()):
+                d.rmdir()
+                empty_dirs += 1
     print(f"stale swept         {len(stale)} files {sorted(p.relative_to(IDX).as_posix() for p in stale)}  "
           f"empty dirs removed {empty_dirs}")
     print(f"written             {len(pages) + len(disc_pages) + len(topic_pages) + len(name_pages) + 1} "

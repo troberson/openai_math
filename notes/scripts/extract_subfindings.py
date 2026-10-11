@@ -152,7 +152,9 @@ def main():
     manuscripts = manuscript_rows(tiers, sources)
     comparators = comparator_rows()
 
-    tsv.write_plain(OUT, COLS, manuscripts + comparators)
+    check_only = "--check-only" in sys.argv[1:]
+    if not check_only:
+        tsv.write_plain(OUT, COLS, manuscripts + comparators)
 
     paps = ledger_paps()
     href_by_fam = Counter(r["fam"] for r in manuscripts)
@@ -183,6 +185,8 @@ def main():
     print("Not checked: whether a display title matches a clause of the family abstract, and whether")
     print("a named statement names a theorem that exists in the .lean file. Both are reading calls;")
     print("this file extracts what the release writes, nothing more.")
+    if check_only:
+        print("[check-only] nothing written")
 
 
 if __name__ == "__main__":

@@ -218,18 +218,21 @@ def build(page_rel: str, checker_name: str) -> int:
 
 
 def main(argv: list[str]) -> int:
+    check_only = "--check-only" in argv
+    argv = [a for a in argv if a != "--check-only"]
     if not argv:
         for page, checker in sorted(T.ALL_PAGES.items()):
             rc = build(page, checker)
             if rc:
                 return rc
-        ST.promote()
+        if not check_only:
+            ST.promote()
         return 0
     if len(argv) != 2:
         print("usage: build_report_templates.py [<notes/page.md> <verify_page.py>]")
         return 2
     rc = build(argv[0], argv[1])
-    if rc == 0:
+    if rc == 0 and not check_only:
         ST.promote()
     return rc
 

@@ -9,6 +9,7 @@ Never invokes lean, lake, or comparator. Runtime is a few seconds.
 """
 
 import re
+import sys
 from pathlib import Path
 
 from catlib import ledger, measure, overview, tsv, yaml
@@ -113,7 +114,8 @@ def main():
             "summary": 1 if fam in summary_fams else 0,
         })
 
-    tsv.write_rows(OUT, cols, rows)
+    if "--check-only" not in sys.argv[1:]:
+        tsv.write_rows(OUT, cols, rows)
 
     # ---- report: every number quoted in notes/README.md comes from here ----
     rel = measure.release()

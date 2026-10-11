@@ -48,6 +48,7 @@ class Staging:
         self.name = name
         self.root = STAGING_ROOT / name
         self._targets: list[Path] = []
+        self._texts: list[str] = []
 
     def stage(self, path: Path, text: str) -> None:
         """Land text in a numbered slot under the staging root and record the tracked path it will move to."""
@@ -55,10 +56,15 @@ class Staging:
         slot.parent.mkdir(parents=True, exist_ok=True)
         write_atomic(slot, text)
         self._targets.append(path)
+        self._texts.append(text)
 
     def staged(self) -> list[Path]:
         """The tracked paths staged so far, in staging order."""
         return list(self._targets)
+
+    def staged_texts(self) -> list[str]:
+        """The text staged so far, in staging order — the bytes a `--check-only` run reports without promoting."""
+        return list(self._texts)
 
     def promote(self) -> None:
         """Move every staged slot onto its tracked path, then drop the staging tree. The approval step."""

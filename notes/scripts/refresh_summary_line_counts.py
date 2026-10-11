@@ -64,12 +64,14 @@ def main():
     ap = argparse.ArgumentParser(add_help=True)
     ap.add_argument("pages", nargs="*", help="named pages (default: every page under notes/summaries)")
     ap.add_argument("--check", action="store_true", help="print drift and write nothing")
+    ap.add_argument("--check-only", action="store_true", help="alias of --check")
     args = ap.parse_args()
+    check = args.check or args.check_only
     pages = [Path(p).resolve() for p in args.pages] or sorted(SUMMARIES.glob("**/*.md"))
 
     total_rows = total_drift = 0
     for p in pages:
-        rows, drift = refresh(p, write=not args.check)
+        rows, drift = refresh(p, write=not check)
         total_rows += rows
         total_drift += len(drift)
         if drift:
@@ -77,9 +79,9 @@ def main():
             for d in drift:
                 print(f"    {d}")
     print(f"\npages {len(pages)}  table rows {total_rows}  "
-          f"{'stale' if args.check else 'refreshed'} {total_drift}  "
-          f"mode {'check' if args.check else 'write'}")
-    raise SystemExit(1 if args.check and total_drift else 0)
+          f"{'stale' if check else 'refreshed'} {total_drift}  "
+          f"mode {'check' if check else 'write'}")
+    raise SystemExit(1 if check and total_drift else 0)
 
 
 main()

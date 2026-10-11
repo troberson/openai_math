@@ -388,8 +388,11 @@ def main():
         raise SystemExit(1)
 
     if "--tsv" in sys.argv:
-        write_tsv(m)
-        print(f"wrote {TSV_OUT.relative_to(ROOT)}: {len(m['fam_order'])} rows")
+        if "--check-only" in sys.argv:
+            print("[check-only] tsv write skipped")
+        else:
+            write_tsv(m)
+            print(f"wrote {TSV_OUT.relative_to(ROOT)}: {len(m['fam_order'])} rows")
 
     print(f"families            {m['families']}   manuscripts {m['manuscripts']}   "
           f"dirs with an abstract {m['dirs_with_abstract']}   "

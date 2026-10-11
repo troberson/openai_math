@@ -273,7 +273,10 @@ def main():
         print(f"problems: {len(problems)} — TSV not written")
         return 1
 
-    tsv.write_plain(OUT, FIELDS, rows)
+    if "--check-only" in sys.argv[1:]:
+        print("[check-only] TSV write skipped")
+    else:
+        tsv.write_plain(OUT, FIELDS, rows)
 
     print(f"rows: {len(rows)}  fields: {len(FIELDS)}")
     print(f"lakefile require declarations: {len(lake)}")
