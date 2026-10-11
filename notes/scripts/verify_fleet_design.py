@@ -147,13 +147,14 @@ def population() -> Pop:
     for name, rel in (("preprints", "preprints"), ("oai", "lean/OAI"), ("index", "notes/index")):
         du[name] = int(sh("du", "-sk", rel).split()[0]) // 1024
     gate = (SCRIPTS / "gate.sh").read_text(encoding="utf-8")
-    # 67 invocations: the explicit `run` lines, plus the checker loop, which runs each named checker
-    # plain and with --mutant. Counting `run` statements alone reads 33.
-    explicit = len([l for l in gate.splitlines() if l.strip().startswith("run ")])
+    # 71 invocations: the explicit `rows+=(` lines, plus the checker loop, which runs each named
+    # checker plain and with --mutant. Counting the row-append statements alone reads 33.
+    explicit = len([l for l in gate.splitlines()
+                    if re.match(r"\s*(serial_rows|pool_rows)\+=\(", l)])
     loop = re.search(r"for c in (.*?); do", gate, re.S)
     # The loop list is a backslash continuation, so the raw split counts the `\` characters as names.
     checkers = len([t for t in loop.group(1).split() if t != "\\"]) if loop else 0
-    # The loop carries 2 `run` statements, already in `explicit`; its body runs twice per checker.
+    # The loop carries 2 row appends, already in `explicit`; its body runs twice per checker.
     gate_rows = explicit - 2 * (1 if loop else 0) + 2 * checkers
     set_sites: list[str] = []
     for name in ("build_catalog.py", "build_index.py"):

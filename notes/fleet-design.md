@@ -241,9 +241,9 @@ name bytes read from a tree that is still the tree at `HEAD`, and it writes noth
 The gate's proof is **twice-run byte-identity** of the **9** TSV names `gate_driver.sh` snapshots
 (**8** present on disk — `notes/named-results.tsv` is absent, so `md5sum` skips it under `2>/dev/null`)
 plus every file under `notes/index/` (md5 snapshots), plus identical `git status` snapshots. `notes/scripts/gate.sh` carries
-**71** invocations: **33** `run` statements, of which **2** are the checker-loop body, so
-**31** fixed rows + **20** checkers × 2 (plain and `--mutant`) = 71. Counting lines that start with
-`run` at column 0 reads 31, because the loop body is indented. Non-determinism sources in the 9 writers,
+**71** invocations: **33** row-append statements (`serial_rows` and `pool_rows`), of which **2** are
+the checker-loop body, so **31** fixed rows + **20** checkers × 2 (plain and `--mutant`) = 71.
+Counting the appends at column 0 reads 31, because the loop body is indented. Non-determinism sources in the 9 writers,
 by class:
 
 - **Time / random / env:** **2 hits** — `render_reports.py:1132` and `:1357` set

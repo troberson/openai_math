@@ -1124,9 +1124,12 @@ def build_index_report() -> dict[str, Any]:
     """Run notes/scripts/build_index.py and parse the report lines the page quotes.
 
     A subprocess, not an import: build_index.py calls main() at module scope, so importing it
-    would build the index inside every render.
+    would build the index inside every render. It runs with `--check-only` so a render spawns no
+    writer — the gate's pooled block runs several renders at once, and two children sharing the
+    `build_index` staging root collide. The report the render parses is the same bytes.
     """
-    proc = subprocess.run([sys.executable, str(ROOT / "notes" / "scripts" / "build_index.py")],
+    proc = subprocess.run([sys.executable, str(ROOT / "notes" / "scripts" / "build_index.py"),
+                           "--check-only"],
                           capture_output=True, text=True, check=True, cwd=ROOT,
                           env={**os.environ, "RENDER_REPORTS_CHILD": "1"})
     out: dict[str, Any] = {"checked": -1, "broken": -1, "reg": {}}
@@ -1349,9 +1352,11 @@ def links_report() -> dict[str, str]:
     """Run notes/scripts/extract_links.py and key its report lines by their leading label.
 
     A subprocess, not an import: extract_links.py writes notes/links.tsv, and the renderer must
-    not become a second writer of a file the ownership manifest attributes to one script.
+    not become a second writer of a file the ownership manifest attributes to one script. It runs
+    with `--check-only`, so the child writes nothing and two renders can run at once.
     """
-    proc = subprocess.run([sys.executable, str(ROOT / "notes" / "scripts" / "extract_links.py")],
+    proc = subprocess.run([sys.executable, str(ROOT / "notes" / "scripts" / "extract_links.py"),
+                           "--check-only"],
                           capture_output=True, text=True, check=True, cwd=ROOT,
                           env={**os.environ, "RENDER_REPORTS_CHILD": "1"})
     rep: dict[str, str] = {}
