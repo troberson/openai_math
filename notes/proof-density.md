@@ -23,7 +23,9 @@ environments (the declared-`\newtheorem` rule minus the non-statement names; the
 21,203). Tiers T3 136 / T2 106 / T1 0 / T0 130. Gates: row count, distinct dirs, family-set equality
 with the ledger, per-family row count == ledger `paps`, the two corpus totals, tier counts, positive
 `tex_bytes`, non-negative counts, every source dir present under `preprints/`, ledger `paps` sum == 719.
-All 0 problems; statistic self-test 5/5; injected mutants caught 9/9.
+All 0 problems; statistic self-test 5/5; injected mutants caught 8/8. The page's prose length is not
+mutated here: `verify_page_sync.py` owns the render diff and mutates in memory, so this script never
+writes the page.
 
 ## Medians by tier
 

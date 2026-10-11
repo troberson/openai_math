@@ -2,7 +2,7 @@
 """Write notes/sources.tsv: the LaTeX source surface of each of the 719 listed manuscripts.
 
 Reads the manuscript trees as text. Runs nothing, parses no PDF, opens no Lean file. The row set is
-the manuscript list from notes/subfindings.tsv, not a walk of preprints/: upstream keeps superseded
+the manuscript list parsed from `overview.tex`, not a walk of preprints/: upstream keeps superseded
 editions beside their replacements and a withdrawal notice beside its replacement, so a directory
 walk is 749 dirs, not 719 manuscripts.
 
@@ -28,8 +28,9 @@ Rules stated where they matter:
 - `abstract` is a line-start `\\begin{abstract}` anywhere in the dir. All 719 listed dirs have one,
   so the column does not discriminate; it is kept because the bead asked for it.
 - Manuscript ownership is the path component after `preprints`, never `parts[-2]`. Family and PDF
-  path come from the manuscript rows of notes/subfindings.tsv, which is itself derived from
-  overview.tex.
+  path come from the `\\resultentry` link fields of `overview.tex`, parsed by
+  `catlib.overview.parse_overview()` — the same parse the independent check below uses, so the
+  table's row set is the release's own list, not a table derived from it.
 
 The LaTeX joins live in catlib/preprints.py; the TSV reader and writer in catlib/tsv.py.
 """
@@ -37,7 +38,7 @@ import collections
 import pathlib
 
 from catlib import overview, preprints, text, tsv
-from catlib.paths import LEDGER_TSV, PREPRINTS, ROOT, SOURCES_TSV, SUBFINDINGS_TSV, read_text
+from catlib.paths import LEDGER_TSV, PREPRINTS, ROOT, SOURCES_TSV, read_text
 from catlib.preprints import DOCCLASS, SIX
 
 OUT = SOURCES_TSV
@@ -72,7 +73,11 @@ def row_for(d, fam, pdf):
 
 
 def build():
-    subs = [r for r in tsv.read_rows(SUBFINDINGS_TSV) if r["kind"] == "manuscript"]
+    # The manuscript list comes straight from overview.tex. It used to come from
+    # notes/subfindings.tsv, which extract_subfindings.py writes later in the same gate pass, so
+    # row 2 depended on row 5 and no single-pass ordering satisfied the edge.
+    _, ov_fams = overview.parse_overview()
+    subs = [{"fam": fam, "path": p} for fam, entry in ov_fams.items() for p in entry["tex_paps"]]
     by_slug = {r["path"].split("/")[1]: r for r in subs}
     # The listed manuscripts, not every directory under preprints/: upstream keeps a superseded
     # edition of a revised manuscript on disk beside its replacement, and a withdrawn manuscript's
@@ -145,9 +150,9 @@ def report(rows, subs, dirs):
                   if not DOCCLASS.search(read_text(f))]
     pdf_per_dir = {len(list(d.glob("*.pdf"))) for d in dirs}
 
-    # Independent check: the release's own manuscript list, parsed from overview.tex with the
-    # paren-aware manuscript-path rule, not from the subfindings rows this table's pdf column is
-    # derived from.
+    # Self-check, not an independent one: the row set is now built from this same parse, so the
+    # comparison can only catch a bug in how the rows are assembled from it. The independent check
+    # is the one below — every pdf the table names exists on disk and is non-empty.
     _, ov_fams = overview.parse_overview()
     ov_paths = sorted(p for f in ov_fams for p in ov_fams[f]["tex_paps"])
     mine = sorted(r["pdf"] for r in rows)

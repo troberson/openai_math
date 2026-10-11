@@ -141,10 +141,12 @@ tables repeat targets.
 
 ## Self-test
 
-`python3 notes/scripts/check_index_links.py --mutant` injects 21 broken hrefs — one per
+`python3 notes/scripts/check_index_links.py --mutant` injects 20 broken hrefs — one per
 category the checker classifies, so a checker that only walks manuscript paths fails — and
-requires 7 real hrefs to resolve. Fresh run: **21 injected, 21 caught, 0 missed; 7 controls, 7
-resolve** (exit 0). The self-test earned its keep on the first run, catching two real defects:
+requires 7 real hrefs to resolve. Fresh run: **20 injected, 20 caught, 0 missed; 7 controls, 7
+resolve** (exit 0). The page's own prose is not mutated here: `verify_page_sync.py` owns that
+check and mutates in memory, so this checker never writes the page. The self-test earned its
+keep on the first run, catching two real defects:
 
 - `notes/index/names/` is a directory, and the classifier tagged it `index-table` because it
   sits under `notes/index/` and has no `.md` suffix. It is now its own category, `index-dir`,

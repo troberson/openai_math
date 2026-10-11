@@ -991,12 +991,8 @@ def proof_density_population() -> dict[str, Any]:
              for flag in PD.FLAGS for key in PD_FLAG_KEYS}
     st_ok, st_total = PD.selftest()
     caught, mt_total, cases = PD.mutants(PD.build_families)
-    # The sync-pass mutant cannot fire here: catlib.render.sync_inert() is True while this render is
-    # in progress, so the pass returns [] by design (the writer rendering the page the page's own
-    # checker asks for would recurse). The writer IS the render that mutant is compared against, so
-    # it records it as caught; the standalone --mutant run in notes/scripts/gate.sh is what proves it.
-    if RD.sync_inert():
-        caught += sum(1 for name, ok, _ in cases if name == PD.SYNC_MUTANT and not ok)
+    # The render-diff mutant is not in this list: verify_page_sync.py owns the page check, mutates
+    # the page in memory, and is the standalone --mutant run in gate.sh.
     return {
         "rows": len(sources), "fams": len(fams),
         "proofs": sum(d["proofs"] for d in fams.values()),
@@ -1157,15 +1153,8 @@ def index_links_population() -> dict[str, Any]:
     """
     build = build_index_report()
     caught, total, missed, clean, ctotal, wrong, trap, classed = CI.mutant_test()
-    # The sync-pass mutant cannot fire here: catlib.render.sync_inert() is True while this render
-    # is in progress, so the pass returns [] by design (the writer rendering the page the page's
-    # own checker asks for would recurse). The writer IS the render that mutant is compared
-    # against, so it records it as caught; the standalone --mutant run in notes/scripts/gate.sh is
-    # what proves it.
-    if RD.sync_inert():
-        sync_missed = [m for m in missed if m.startswith(CI.SYNC_MUTANT)]
-        caught += len(sync_missed)
-        missed = [m for m in missed if m not in sync_missed]
+    # The render-diff mutant is not in this list: verify_page_sync.py owns the page check, mutates
+    # the page in memory, and is the standalone --mutant run in gate.sh.
     return {"scan": CI.measure(), "build": build,
             "mutant": (caught, total, missed, clean, ctotal, wrong, trap, classed)}
 
