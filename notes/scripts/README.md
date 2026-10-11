@@ -96,20 +96,21 @@ Editing a join in `build_catalog.py` can move rows in six artifacts.
 ### Report-only
 
 The other **44** scripts write nothing. **22** of them print the report a page's counts come from.
-The Gate column is the invocation the gate list runs: `notes/scripts/gate.sh`, which runs **76**
+The Gate column is the invocation the gate list runs: `notes/scripts/gate.sh`, which runs **75**
 invocations — the **8** gated writers (the two writers it does not run are `build_report_templates.py`
 and `measure_open_probe.py`, each for the reason in its own row), the 22 gated report-only rows (including `check_summary_manuscripts.py`
 and `locate_summary_quotes.py`, and `check_index_links.py` twice — plain and with `--mutant`, since
-`math-a0r.6.2` gave its self-test a prose mutant that only the gate can run), and **46** checker
-invocations: each of the 22 checkers plain and
-with `--mutant` (**44**), plus `verify_conjecture_standing.py` plain and with `--mutant` (**2**) — in
+`math-a0r.6.2` gave its self-test a prose mutant that only the gate can run), and **45** checker
+invocations: each of the 20 loop checkers plain and
+with `--mutant` (**40**), plus `verify_page_sync.py --both` (**1**) — both passes in one process, because `catlib.render.rendered`
+is cached per process and two rows pay the corpus walk twice — plus `verify_conjecture_standing.py` plain and with `--mutant` (**2**) — in
 class order, not in the order the rows sit; it prints one line per invocation with its exit code, its
 wall time, and the first 200 bytes of its report, and writes nothing to the repo outside
 `.qwen/tmp/reports/`. `math-8ou` promoted it from `.qwen/tmp/` into `notes/scripts/`, closing
 the one gap the list had. A writer's gate is the single run plus the promote-and-verify assertion
 recorded in the writers table: the bytes it lands under its key must equal the bytes on the tracked
 path. The list is two arrays: `serial_rows` (the writers in dependency order, plus
-`refresh_summary_line_counts.py`) run in order, `pool_rows` (the **59** read-only invocations) run
+`refresh_summary_line_counts.py`) run in order, `pool_rows` (the **58** read-only invocations) run
 through `xargs -P 8` and print in the canonical order of the list, so the pooled report is the same
 bytes a serial run prints — measured 2026-10-11: serial 928 s, pooled 431 s, pooled report diffed
 against the serial report with wall-time tokens normalized 0 bytes. `GATE_POOL=1` runs everything
@@ -159,8 +160,10 @@ compared with `render_reports.py`'s render of it, folded into the exit code), an
 
 The remaining **22** scripts verify a page or a table. Each exits non-zero when what it checks has
 drifted; each takes `--mutant`, which injects faults and asserts they are caught. The gate runs each
-one plain and then with `--mutant` — **46** of the 76 invocations: **44** from the loop over the 22
-rows below, **2** more for `verify_conjecture_standing.py`, which the list runs outside the loop.
+one plain and then with `--mutant` — **45** of the 75 invocations: **40** from the loop over the 20
+rows below, **1** for `verify_page_sync.py --both`, which runs both passes in one process,
+**2** for `verify_cache_promotion.py` and **2** for `verify_conjecture_standing.py`, which the list
+runs outside the loop.
 
 | Checker | Checks | Gate | Cost (s) |
 |---|---|---|---|
@@ -177,7 +180,7 @@ rows below, **2** more for `verify_conjecture_standing.py`, which the list runs 
 | `verify_index_design.py` | `notes/index-design.md` | plain + `--mutant` | 2.7 / 20.7 |
 | `verify_named_conjectures.py` | `notes/named-conjectures.md` | plain + `--mutant` | 0.0 / 0.1 |
 | `verify_named_results.py` | `notes/named-results.md` | plain + `--mutant` | 104.6 / 108.3 |
-| `verify_page_sync.py` | `notes/links.md`, `notes/names.md`, `notes/topics.md`, `notes/proof-density.md`, `notes/index-links.md` — the render diff for the five pages whose sync pass used to live in a writer; the mutants mutate page prose in memory, so no page is written | plain + `--mutant` | 115.1 / 70.2 |
+| `verify_page_sync.py` | `notes/links.md`, `notes/names.md`, `notes/topics.md`, `notes/proof-density.md`, `notes/index-links.md` — the render diff for the five pages whose sync pass used to live in a writer; the mutants mutate page prose in memory, so no page is written | `--both` — plain and mutant in one process | 125.2 |
 | `verify_scope_exclusions.py` | `notes/scope-exclusions.md` | plain + `--mutant` | 0.1 / 0.2 |
 | `verify_sources.py` | `notes/sources.md` | plain + `--mutant` | 1.9 / 13.2 |
 | `verify_subfinding_pairs.py` | `notes/subfinding-pairs.md` | plain + `--mutant` | 0.1 / 0.1 |
@@ -197,9 +200,12 @@ fault, so a checker whose plain run is a full measurement pays it again per muta
 clean page in `main()`, once per each of the 6 mutants (`:514`), and the clean page again as the
 mutants' baseline (`:518`) — so 8 × 103 s = 825 s, and that one checker is most of the gate's
 runtime. `verify_named_results.py` is expensive in both columns (104.6 / 108.3) because its cost is
-the corpus read, which a mutant does not multiply. The 11 wired checkers pay the render-diff in their
-mutant runs; `verify_script_ownership.py`, this page's own checker, is 0.2 plain / 1.1 with
-`--mutant` and is not a row above. The 40 checker invocations sum to **1196.9 s** (20 min); the full
+the corpus read, which a mutant does not multiply. The 13 checkers that call the render-diff pay it in
+their mutant runs; `verify_script_ownership.py`, this page's own checker, is 0.2 plain / 1.1 with
+`--mutant` and is not a row above. `verify_page_sync.py`'s Cost is one number, not a pair: `--both`
+runs the plain pass and the mutant loop in one process, so `catlib.render.rendered` is walked once
+(123.4 s plain + 122.9 s mutant as two rows, against 125.2 s in one). The 45 checker invocations sum
+to **1342.9 s** (22 min), measured 2026-10-11 as the sum of the Cost column above; the full
 65-invocation gate took **35 min** and **38 min** on its two runs measured 2026-10-10
 (10:48–11:23 and 11:23–12:01 UTC); the 64-invocation list took **62 min** the same morning
 (05:49–06:51 UTC), so the two figures are a spread, not a regression — the difference being the
