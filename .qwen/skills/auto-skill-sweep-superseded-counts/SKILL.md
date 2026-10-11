@@ -1,14 +1,6 @@
 ---
 name: sweep-superseded-counts
-description: Sweep every doc, checker and generated artifact that quotes a count a later batch
-  invalidated — triage a fleet of red checkers first, enumerate the stale values, fix generated
-  literals in the generator, make the checker measure the figure instead of carrying it, print the
-  needles from the checker, re-target the mutants, and prove the sweep with the single gate run and
-  the promote-and-verify assertion. The same sweep shape applies to a moved directory (§6a): link
-  depth, quotation-exempt links, repo-relative anchors versus page-relative links, census rules, and
-  HEAD-keyed template regeneration; and to the bead store (§6c): open bodies are live instructions,
-  titles carry counts, and `bd update` writes the DB so the tracked JSONL must be exported before you
-  verify.
+description: "Sweep every doc, checker and generated artifact that quotes a count a later batch invalidated — triage a fleet of red checkers first, enumerate the stale values, fix generated literals in the generator, make the checker measure the figure instead of carrying it, print the needles from the checker, re-target the mutants, and prove the sweep with the single gate run and the promote-and-verify assertion. The same sweep shape applies to a moved directory (section 6a): link depth, quotation-exempt links, repo-relative anchors versus page-relative links, census rules, and HEAD-keyed template regeneration; and to the bead store (section 6c): open bodies are live instructions, titles carry counts, and `bd update` writes the DB so the tracked JSONL must be exported before you verify."
 source: auto-skill
 extracted_at: '2026-10-08T15:40:04.714Z'
 ---
@@ -304,9 +296,12 @@ against a hand-built list.
 
 The chain, in the order that worked:
 
-1. **`gate.sh`**: append the name to the checker loop, keeping the backslash continuation. Invocations
-   = explicit `run` statements − 2 (the loop body is two of them) + 2 × checkers: 33 − 2 + 2×19 = **69**.
-   Counting `run` lines at column 0 reads 31 because the loop body is indented.
+1. **The gate list**: append the row to `notes/scripts/gate.py`'s `ROWS` array as a
+   `(spec, needs, writes)` triple, and add the artifact key the row writes. Invocations = the number of
+   `ROWS` entries, so a new checker is **two** rows (plain and `--mutant`) and the count is read
+   straight from the array — there is no `run`-statement arithmetic left. A checker that reads a
+   generated artifact needs that artifact in its `needs`; a row that spawns a writer must run the child
+   with `--check-only`.
 2. **The inventory page**: the class partition (scripts / checkers / "the Nth checker and the Nth
    script"), the write-nothing split, the checker table row (alphabetical — its second cell must name
    the page it checks, because the checker builds the checked-page set from that cell, so a missing row
