@@ -131,8 +131,9 @@ current discipline; each following `\resultentry{NNN}{...}` belongs to it). Fami
 comes from `CONTENTS.md` (`**NNN. Title**` headers, then `(preprints/...pdf)` links). Then tabulate
 per discipline: families, families with a scope note, manuscripts, formalized manuscripts.
 
-Expect strong skew. Catalog result: Topology 3/18 families and 1/26 manuscripts covered,
-algebraic geometry 7/36 and 7/89, versus functional analysis 10/11 and 16/19, logic 6/6 and 5/8.
+Expect strong skew. Re-measured 2026-10-11 off the ledger's discipline table: Topology 3/18 families
+and 1/26 manuscripts covered, algebraic and complex geometry **8/36** and **9/86**, versus functional
+analysis 10/11 and 16/19, logic 6/6 and 5/8. (The values written were 7/36 and 7/89, before the merge.)
 
 Worth checking separately: **the marquee results.** Ten of the twelve headline number-theory
 families (Milne, full BSD, Hilbert's tenth over ℚ, Goldfeld, Fontaine–Mazur at 2,
@@ -173,11 +174,13 @@ formalized" from being read as a finding.
   Order buckets by how cheaply the claim can be checked, not by importance: counterexample (names a
   concrete object — cheapest), resolution (largest claim, no evidence), bound, classification,
   uniform, other, untagged. Print a reconciliation line: bucket families and manuscripts must equal
-  the tier totals exactly (137 / 255 in the catalog).
+  the tier totals exactly (re-measured 2026-10-11: **130 / 244**; the values written were 137 / 255).
 - **Choose the reading subset from three overlapping criteria and quote the union, never the sum:**
   the counterexample bucket ∪ the marquee id range (the opening families of the release's most
-  prominent discipline) ∪ families with ≥3 manuscripts. Catalog: 16 ∪ 15 ∪ 22 = **44 families, 134
-  manuscripts**; the per-group manuscript counts (29 / 36 / 104) overlap and never sum to 134.
+  prominent discipline) ∪ families with ≥3 manuscripts. Re-measured 2026-10-11: 16 ∪ **14** ∪ 22 =
+  **43 families, 130 manuscripts**; the per-group manuscript counts (29 / **35** / **101**) overlap
+  and never sum to 130. (Written as 16 ∪ 15 ∪ 22 = 44 families / 134 manuscripts with per-group
+  counts 29 / 36 / 104, before the merge.)
 - **Scope qualifiers live in abstracts, not titles.** "the discriminant threshold is ineffective",
   "retain their stated height, renormalization, and field-input assumptions", "under the stated
   marked-boundary approximations", "for some sufficiently large even N", "the required nuclear charge
@@ -195,15 +198,17 @@ formalized" from being read as a finding.
   yield the way the `conditional` audit recorded it, and do not silently retag — a first-match
   consumer of the tags re-buckets families when you widen one, so a broad rule may belong in its own
   column. See `notes/counterexample-tag.md`.
-- **Expect the taxonomy to be silent.** 20 of 137 T0 families carry no shape tag at all, including
-  marquee-grade results. Say that plainly rather than forcing them into a bucket. Reading the
-  untagged set settled most of them: 9 of 15 resolve a conjecture named in the title, 1 is a
-  counterexample, 3 resist the vocabulary entirely.
+- **Expect the taxonomy to be silent.** Re-measured 2026-10-11: **19 of 130** T0 families carry no
+  shape tag at all (20 of 137 when this was written), including marquee-grade results. Say that
+  plainly rather than forcing them into a bucket. The ledger column agrees with the reading record:
+  **11 of the 19** untagged T0 families carry `resolves_named = 1` (the reading pass read 9 of 15 as
+  resolving a title-named conjecture, 1 as a counterexample, 3 resisting the vocabulary entirely).
 - **Close with what was not read** — here, abstracts are the release's own source-level assertions,
   not verified results: no manuscript PDF was read, no proof was checked against the conjecture as
   stated in the literature, and no Lean was run. State the remaining gap in families and
   manuscripts; after the second pass this catalog's zero-signal tier is fully read at abstract
-  level (44 families / 134 manuscripts, then 93 / 121), so the gap is depth, not coverage.
+  level (43 families / 130 manuscripts, then 87 / 114 — re-measured 2026-10-11; the pass recorded
+  44 / 134 then 93 / 121), so the gap is depth, not coverage.
 
 ## 9. Check the evidence that ships with a result
 
@@ -247,8 +252,9 @@ result and no trace, so the abstract was the whole evidence.
 ## 10. Claim-level correspondence: does the declaration state the claim?
 
 Coverage counts say a family has a formalized main result. They do not say the result is the one the
-blurb claims. Worked on the 28 counterexample-shaped families outside the zero-signal tier
-(18 at the top tier, 10 at the scope-note-only tier).
+blurb claims. Worked on the 28 counterexample-shaped families outside the zero-signal tier —
+re-measured 2026-10-11 as **19 at the top tier, 9 at the scope-note-only tier** (written as 18 and 10,
+before the merge).
 
 - **Pair the claim sentence with the config, not the family with the count.** Split the release
   abstract into sentences (`re.split(r"(?<=[.!?])\s+", abstract)`) and keep the ones matching the
@@ -257,9 +263,10 @@ blurb claims. Worked on the 28 counterexample-shaped families outside the zero-s
   "has a formalized counterpart" is the wrong unit: catalog family 172's entry
   (`OAI.EuclideanRamsey.classification`, `theorem classification … : Ramsey a ↔ FieldCriterion a`) is
   a positive classification, while the config carrying its refuted Leader–Russell–Walters conjecture
-  (`EuclideanRamseyTransitive`) has no entry at all. 8 of the configs the 18 covered families link
-  carry no entry — a covered family can have no counterpart for the claim being audited.
-- **Open the carrier.** 11 of the 27 declarations are written `theorem main : MainStatement :=` — the
+  (`EuclideanRamseyTransitive`) has no entry at all. Re-measured 2026-10-11: of the **52** configs the
+  28 scope notes link, **24** carry no `main_results` entry — 12 of those gaps sit in 8 T3 families and
+  12 across the 9 T2 families. A covered family can have no counterpart for the claim being audited.
+- **Open the carrier.** 11 of the **28** declarations are written `theorem main : MainStatement :=` — the
   statement is a type name, and the counterexample content lives in the carrier definition. Detect the
   carrier on the head line (`:\s*([A-Z][A-Za-z0-9_.]*)(?:\.\{[^}]*\})?\s*:=`), then find its definition
   in the declaration's own file first and that file's tree second; the body is the indented run under
@@ -304,12 +311,13 @@ blurb claims. Worked on the 28 counterexample-shaped families outside the zero-s
   window to `:=` with a generous cap.
 - **Structural absence is not a finding.** In a tier defined as "scope note links configs that no
   `main_results` entry names", every family in it has 0 entries and 0 formalized manuscripts by
-  construction — all 10 here have `mainres 0` and `paps_form 0`. Say the absence is definitional, then
-  record the challenge configs the scope note *does* link: those are the release's own statement of the
-  target, and the stubs carry the `sorry` (51 linked stubs, 56 occurrences).
+  construction — all **9** here have `mainres 0` and `paps_form 0` (10 before the merge). Say the
+  absence is definitional, then record the challenge configs the scope note *does* link: those are the
+  release's own statement of the target, and the stubs carry the `sorry` (re-measured 2026-10-11:
+  **52** linked stubs, **58** occurrences; written as 51 and 56).
 - **Base-dir trap.** `formalization.yaml`'s `file:` values already carry the `OAI/` prefix
   (`file: OAI/Analysis/Kaplansky/Main.lean`), so the base is `ROOT/lean`. Joining them onto
-  `ROOT/lean/OAI` yields `lean/OAI/OAI/...` and every declaration reports "not found" — 27 of 27,
+  `ROOT/lean/OAI` yields `lean/OAI/OAI/...` and every declaration reports "not found" — 28 of 28,
   indistinguishable from a library that genuinely lacks them. Assert a nonzero resolved count in the
   report.
 - **Record a prose/rule discrepancy with both numbers.** The task brief named "the 21 T0
