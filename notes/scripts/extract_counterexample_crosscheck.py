@@ -65,14 +65,23 @@ def counterex_sentences(abstract):
 
 
 def declaration_statement(decl, rel):
-    """(line, signature lines) where a declaration's statement opens in its file."""
+    """(line, signature lines) where a declaration's statement opens in its file.
+
+    Matched two ways. A file usually writes the declaration's last component
+    (`theorem main_theorem :` for `OAI.Brennan.main_theorem`); ThorpRouting writes the qualified
+    name itself, `theorem ThorpNine.main :` at OAI/Probability/ThorpRouting/Main.lean:13, which the
+    bare-tail rule reads as NOT FOUND. Measured over the 28-family counterexample population the
+    qualified rule adds 0 rows, so the crosscheck page's counts are unchanged by it.
+    """
     p = LEAN_ROOT / rel
     if not p.is_file():
         return None, []
     lines = p.read_text(encoding="utf-8", errors="replace").splitlines()
     tail = decl.split(".")[-1]
+    full = decl.removeprefix("OAI.")
+    pat = rf"^\s*(theorem|lemma|proposition|corollary|def|example)\s+(?:{re.escape(full)}|{re.escape(tail)})\b"
     for i, ln in enumerate(lines, start=1):
-        if re.match(rf"^\s*(theorem|lemma|proposition|corollary|def|example)\s+{re.escape(tail)}\b", ln):
+        if re.match(pat, ln):
             block = [ln.strip()]
             j = i
             while len(block) < 12 and j < len(lines) and not block[-1].rstrip().endswith(":="):
@@ -86,7 +95,8 @@ def declaration_statement(decl, rel):
 
 
 CARRIER_DEF = re.compile(
-    r"^\s*(?:private\s+|protected\s+)?(?:def|abbrev|structure)\s+([A-Za-z0-9_.]+)\s*:\s*(?:Prop\s*)?[:=]")
+    r"^\s*(?:private\s+|protected\s+|noncomputable\s+)?(?:def|abbrev|structure)\s+"
+    r"([A-Za-z0-9_.]+)\s*:\s*(?:Prop\s*)?[:=]")
 IMPORT = re.compile(r"^\s*import\s+(OAI[\w.]*)\s*$")
 
 
