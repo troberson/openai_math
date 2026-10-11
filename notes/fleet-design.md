@@ -83,7 +83,7 @@ inputs are the expensive, immutable, cacheable part.
 Rule: `grep -cE 'os\.replace|os\.rename|shutil\.move|NamedTemporaryFile'` over `notes/scripts/*.py`
 and `notes/scripts/catlib/*.py`, **excluding `verify_fleet_design.py`** — that checker carries the
 pattern as a needle, so counting it would read 1 and the rule would be about the checker, not the
-fleet. Over **54** scripts and **17** catlib modules the count is **2 matches**, both in
+fleet. Over **55** scripts and **17** catlib modules the count is **2 matches**, both in
 `catlib/atomic.py`: the `os.replace` at `catlib/atomic.py:41`, which promotes the sibling temp onto
 the target, and the one at `catlib/atomic.py:67`, which promotes a staged slot onto its tracked path.
 Before `math-o3a.2.1` the count was **0 matches** over **49** scripts and **14** modules: every writer
@@ -150,7 +150,7 @@ after the store conversion). `verify_fleet_design.py` parses the two 2026-10-11 
 the 2026-10-10 probe recorded are gone: `build_sources.py` consumed the **previous pass's**
 `subfindings.tsv` as its manuscript list and `extract_links.py` read `notes/links.md` that
 `render_reports.py` wrote in the previous pass, and no single-pass order satisfies both — which is
-why the row order in `gate.sh` was provably not topological. `math-o3a.3` removed both: the
+why the row order in the shell list was provably not topological. `math-o3a.3` removed both: the
 manuscript list comes from `overview.tex`, and no writer reads a page. The remaining generated reads
 are all forward, so a single pass satisfies them.
 
@@ -196,7 +196,7 @@ walk `measure()` used to run is gone: it is `@cache`d and reads the record store
 the process is a cache hit, and `build_sources.py`'s row fell from 39,083 opens to **65** for the same
 reason. What remains is the extractors the renderer imports, each walking the corpus once per process.
 `catlib/paths.read_text` is the uncached reader behind those opens (**217** `read_text(` call sites over
-the **54** scripts and **17** catlib modules); the caches in catlib are `render.rendered`, keyed by page
+the **55** scripts and **17** catlib modules); the caches in catlib are `render.rendered`, keyed by page
 name, `records.manuscript_store`, keyed by the store digest, and `promote.cached_text`, keyed by the
 builder's key.
 
@@ -249,12 +249,12 @@ is now the promote-and-verify assertion the gate's own `verify_cache_promotion.p
 every tracked artifact, the bytes the writer landed under its key equal the bytes on the tracked path,
 and the key is computed from the current `git rev-parse HEAD:<path>` tree digests, so a key that no
 longer matches HEAD makes its records missing and the row fails. The driver keeps the md5 and
-`git status` snapshots raw and prints the assertion row. `notes/scripts/gate.sh` carries
-**75** invocations: **37** row-append statements (`serial_rows` and `pool_rows`), of which **2** are
-the checker-loop body, so **35** fixed rows + **20** checkers × 2 (plain and `--mutant`) = 75.
-`verify_page_sync.py` is one of the fixed rows, not a loop pair: its `--both` flag runs the plain pass
-and the mutant loop in one process. Counting the appends at column 0 reads 35, because the loop body is
-indented. Non-determinism sources in the 9 writers,
+`git status` snapshots raw and prints the assertion row. `notes/scripts/gate.py` carries
+**75** invocations as `ROWS` entries, each a (spec, needs, writes) triple over the generated
+artifacts: the 9 writers declare what they write, every checker needs `pages`,
+`check_index_links.py` and `measure_index_sizes.py` need `index`, and the two summary readers need
+`summaries`. A row starts as soon as every row that writes its `needs` has finished, so counting the
+tuples in the `ROWS` block is the row count. Non-determinism sources in the 9 writers,
 by class:
 
 - **Time / random / env:** **2 hits** — `render_reports.py:1139` and `:1366` set
@@ -278,7 +278,7 @@ by class:
   single run is not: a writer's bytes are written once, so cache == disk holds trivially over an order
   that changed them. The probe is gone with the second run; what covers the class is the two sites
   being order-independent **by consumption** and the nine walks consumed as `len(...)` or dict keys.
-  Pinning `PYTHONHASHSEED=0` in `gate.sh` would still **hide** the bug class rather than fix it.
+  Pinning `PYTHONHASHSEED=0` in `gate.py` would still **hide** the bug class rather than fix it.
 
 Recorded catch: `.qwen/tmp/reports/a61_*` (2026-10-09 23:21→23:25) — `a61_run_diff.txt` **0 bytes**
 (all 67 reports identical), the 9 TSV snapshots identical, and `a61_md5_diff.txt` **116 bytes**:
@@ -295,26 +295,29 @@ key names it. The catch is the honest cost of the single run.
 | B | **Realized by `math-o3a.5.2`**: run the 56-row read-only block in a bounded pool (`xargs -P 8`), the writer block serial, printing in the canonical order of the list | pass 928 s → 431 s (497 s saved, 2.15x); the pooled report diffed against the serial report with wall-time tokens normalized is 0 bytes | none for checkers (they write nothing); writers stay in the dependency chain. The catch: the block is not read-only until the render children run with `--check-only` — two `build_index.py` children sharing the staging root collided in the first pooled run |
 | C | **Realized by `math-o3a.4`**: memoise the corpus read as a digest-keyed record store (`catlib/records.py`) rather than as a memoised `read_text` | `build_sources.py` 39,083 → 65 opens, rchar 641.3 → 6.5 MB, wall 3.21 → 0.11 s; `render_reports.py` 152,680 → 75,394 opens, repeats 140,364 → 63,075, wall 231.58 → 138.99 s | none — the store writes nothing tracked and the generated layer is untouched |
 | D | Collapse `extract_links.py`'s six `preprints/**` walks into one, or convert it to the store | 5 of 6 walks over 8,007 `.tex` + 521 `.bib`; rchar 4,249.2 MB → ~700 MB, disk 3,601.4 MB → ~630 MB (row 56.60 s) | none — same file set, one enumeration |
+| E | **Realized by `math-unv`**: replace the shell list's two blocks with a dependency scheduler — `ROWS` carries (spec, needs, writes) over the generated artifacts and a row starts when every row that writes its needs has finished | pass 461.4 s → 374.1 s (87.3 s saved); the 8 report-only extractors and the corpus readers start at t=0 instead of after `render_reports.py` | none for checkers (they write nothing); the print order is the list order, so the report is the same bytes a serial run prints. The catch: row time rises (921.8 → 994.4 s) because 12 rows share the machine, and the cap must be sized by measured RSS, not core count |
 
 Recommended order **A → D**: A and D are local with zero cache semantics; C is done, and the store is
-the shape C took; B is done, and the measured pass is **431 s** — the pair the twice-run cost was
+the shape C took; B is done, and the measured pass was **431 s** — the pair the twice-run cost was
 **862 s**, and the second run is gone, so the gate is one 431 s pass. The
 composition the table predicted (2,006 s → ~970 s after A+B) landed at 431 s with B alone, because C
-had already removed the re-collection B was priced to overlap.
+had already removed the re-collection B was priced to overlap. **E is done** and the pass is
+**374.1 s**: E is what the serial block's read-only rows were waiting for, which is the one
+re-collection the pool could not remove.
 
-The pass re-measured 2026-10-11, after B collapsed the page-sync pair into one row, is **461.4** s of
-driver wall, over **921.8** s of row time. The rule: the driver's own timestamps (first row's `.line`
-file at 19:01:08, driver output at 19:08:49) and the report's per-row `in X.Xs` tokens, summed by
-block. The serial writer block is **288.9** s wall against **288.3** s of row time — no parallelism,
-so the two are the same number, and `render_reports.py`'s 158.2 s row is half of it. The read-only
-pool (`-P 8`, **58** rows) is **172.5** s wall against **633.5** s of row time, a 3.7x packing, not
-the 8x an ideal pack would give: the pool's longest row (`verify_page_sync.py --both`, 121.9 s)
-finishes last, at 19:08:49, so the tail is one row deep and the last 121.9 s of the pass is one row.
-The 478.7 s pass measured the same morning over 76 rows carried that row as two rows (128.0 s plain,
-124.8 s `--mutant`), finishing at 11:18:28 and 11:18:36 — a two-row tail; collapsing them removed
-**130.9** s of row time and **17.3** s of wall. The 431 s figure is the same shape measured earlier
-on 2026-10-11 over 71 rows; the growth to 76 was the 3 rows the faithfulness pair added
-(`measure_faithfulness.py`, `verify_faithfulness.py` plain and `--mutant`), not a slower fleet.
+The pass re-measured 2026-10-11, after the scheduler replaced the two blocks, is **374.1** s of driver
+wall, over **994.4** s of row time. The rule: the driver's own timestamps (first row's `.line` file at
+19:15:40, driver output at 19:21:54) and the report's per-row `in X.Xs` tokens. The writer critical
+path is `build_catalog.py` 0.1 → `extract_links.py` 26.0 → `build_index.py` 57.3 →
+`render_reports.py` 156.9 = **240.3** s, and the longest row that needs the rendered pages
+(`verify_page_sync.py --both`, 128.9 s) starts at 19:19:45 and finishes at 19:21:54, so the wall is
+that path plus that row. The 461.4 s pass measured 40 minutes earlier over the same 75 rows ran the 8
+report-only extractors inside the serial chain, so nothing read-only could start until
+`render_reports.py` finished; the scheduler starts them at 19:15:40 and the wall fell **87.3** s. Row
+time rose from 921.8 s to 994.4 s: 12 rows share the machine, so each row runs slower than it does
+alone. The 431 s figure is the same shape measured earlier on 2026-10-11 over 71 rows, and the 478.7 s
+pass over 76 rows carried `verify_page_sync.py` as two rows (128.0 s plain, 124.8 s `--mutant`) with a
+two-row tail; collapsing them into `--both` removed **130.9** s of row time and **17.3** s of wall.
 
 Intended, not to be "fixed": a checker importing its own extractor, and `render_reports.py` running
 writers in-process/subprocess (`:1131` build_index, `:1358` extract_links). A checker that re-derives
@@ -340,7 +343,8 @@ through the writer's code proves nothing (`catlib/measure.py` docstring).
    and exists for the blocks the page will carry.
 3. **Counts** — every count phrase is re-derived: the atomicity grep, the sync-pass grep, the
    tree-digest `git rev-parse`, the `--ignored=matching` check, the byte sum over the present
-   `notes/*.tsv`, the three `du -sk` sizes, the gate row count from `gate.sh`, the two set-site lines,
+   `notes/*.tsv`, the three `du -sk` sizes, the gate row count from `gate.py`'s `ROWS` block, the two
+   set-site lines,
    the env-hit count, and the probe table's figures (parsed from
    `notes/probe/2026-10-11_writers.txt` and `notes/probe/2026-10-11_checkers.txt`, the records
    `notes/scripts/measure_open_probe.py` writes, tracked in git). The `free -h` available line, the
@@ -360,8 +364,8 @@ through the writer's code proves nothing (`catlib/measure.py` docstring).
    during this pass, both times for the same reason: a paragraph that restates the atomicity count
    leaves the phrase a second time, so the single occurrence the mutant replaces is not the only one
    and the count check still finds it. Both restatements are now prose without the bold form, and the
-   phrase occurs once. The row pair is in `gate.sh` (the checker loop runs 20 → **21**
-   checkers, so the list is 73 → **76** invocations; `math-o3a.5.2`'s B pass then took
-   `verify_page_sync.py` out of the loop as a single `--both` row, so the loop is back to **20**
-   checkers and the list is **75**) and the page + checker are rows in
+   phrase occurs once. The row pair is in `gate.py`'s `ROWS` list, where each checker is two explicit
+   entries. The shell list ran each checker through a loop over 20 → **21** checkers (73 → **76**
+   invocations) until `math-o3a.5.2`'s B pass collapsed `verify_page_sync.py` into a single `--both`
+   row (75), and `math-unv` removed the loop when the list became a graph. The page + checker are rows in
    `notes/scripts/README.md`.

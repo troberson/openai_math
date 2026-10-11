@@ -146,16 +146,13 @@ def population() -> Pop:
     du: dict[str, int] = {}
     for name, rel in (("preprints", "preprints"), ("oai", "lean/OAI"), ("index", "notes/index")):
         du[name] = int(sh("du", "-sk", rel).split()[0]) // 1024
-    gate = (SCRIPTS / "gate.sh").read_text(encoding="utf-8")
-    # 71 invocations: the explicit `rows+=(` lines, plus the checker loop, which runs each named
-    # checker plain and with --mutant. Counting the row-append statements alone reads 33.
-    explicit = len([l for l in gate.splitlines()
-                    if re.match(r"\s*(serial_rows|pool_rows)\+=\(", l)])
-    loop = re.search(r"for c in (.*?); do", gate, re.S)
-    # The loop list is a backslash continuation, so the raw split counts the `\` characters as names.
-    checkers = len([t for t in loop.group(1).split() if t != "\\"]) if loop else 0
-    # The loop carries 2 row appends, already in `explicit`; its body runs twice per checker.
-    gate_rows = explicit - 2 * (1 if loop else 0) + 2 * checkers
+    gate = (SCRIPTS / "gate.py").read_text(encoding="utf-8")
+    # Each ROWS entry is one invocation and the list order is the canonical print order, so counting
+    # the tuples is the row count. The spec is followed by the needs tuple, so the row is matched by
+    # the pair, not by a bare leading `("…",` — a wrapped row's continuation line starts with the
+    # needs tuple's own first string and would otherwise count as a row.
+    rows_block = gate[gate.index("ROWS = ["):]
+    gate_rows = len(re.findall(r'^\s*\(".*?",\s*\(', rows_block, re.M))
     set_sites: list[str] = []
     for name in ("build_catalog.py", "build_index.py"):
         for i, line in enumerate((SCRIPTS / name).read_text(encoding="utf-8").splitlines(), 1):
