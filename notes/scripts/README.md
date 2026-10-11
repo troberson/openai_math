@@ -105,7 +105,9 @@ with `--mutant` (**40**), plus `verify_conjecture_standing.py` plain and with `-
 class order, not in the order the rows sit; it prints one line per invocation with its exit code and
 writes nothing to the repo. `math-8ou` promoted it from `.qwen/tmp/` into `notes/scripts/`, closing
 the one gap the list had. A writer's gate is the twice-run byte-identity diff on its target, recorded
-in the writers table.
+in the writers table. `gate_driver.sh` normalizes wall-time tokens (`0.53s` → `Ts`) before diffing
+the two run reports: `measure_checker_needles.py` prints one timing per checker, so the raw reports
+differ between runs on timing alone. The md5 and `git status` diffs are raw.
 
 | Script | Report feeds | Gate |
 |---|---|---|
