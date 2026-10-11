@@ -53,10 +53,14 @@ for c in verify_summaries verify_abstracts verify_named_results verify_named_con
          verify_sources verify_conditional verify_counterexample_crosscheck verify_t0_chains \
          verify_verification_dirs verify_dependency_drift verify_script_ownership \
          verify_findings verify_citations verify_upstream_history verify_fleet_design \
-         verify_page_sync verify_faithfulness; do
+         verify_faithfulness; do
   pool_rows+=("$c.py")
   pool_rows+=("$c.py --mutant")
 done
+# verify_page_sync.py runs both passes in one process: catlib.render.rendered is cached per process,
+# so a plain row and a --mutant row pay the corpus walk twice (123.4 s + 122.9 s) where one --both
+# row pays it once (125.2 s). The tag carries the flag, so the row's report file is its own.
+pool_rows+=("verify_page_sync.py --both")
 pool_rows+=("verify_cache_promotion.py")
 pool_rows+=("verify_cache_promotion.py --mutant")
 pool_rows+=("verify_conjecture_standing.py")

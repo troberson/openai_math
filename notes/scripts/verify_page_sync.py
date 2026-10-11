@@ -18,7 +18,11 @@ pages that had a second writer in the mutant branch — have one writer each. A 
 absent from its page is reported as a problem: an inert mutant is not a pass.
 
 `catlib.render.rendered` is cached per process, so the plain pass and the mutant loop pay for the
-corpus once per page, not once per mutant.
+corpus once per page, not once per mutant. The cache is per process, so running the two passes as
+two invocations pays the corpus walk twice: measured 123.4 s plain + 122.9 s mutant as two rows,
+against **125.2 s** for both in one process. `--both` runs them in one process and prints both
+reports, so the gate carries one row. The check stays independent — the render is the writer's code
+run in this process, not bytes read from the writer's cache.
 """
 
 import sys
@@ -76,6 +80,16 @@ def mutant_problems() -> tuple[int, int, list[str]]:
 
 
 def main() -> int:
+    if "--both" in sys.argv:
+        problems = check()
+        print(f"sync problems {len(problems)}")
+        for p in problems:
+            print(f"  {p}")
+        caught, total, mprobs = mutant_problems()
+        print(f"sync mutants caught {caught} of {total}")
+        for p in mprobs:
+            print(f"  {p}")
+        return 1 if problems or mprobs or caught != total else 0
     if "--mutant" in sys.argv:
         caught, total, problems = mutant_problems()
         print(f"sync mutants caught {caught} of {total}")
