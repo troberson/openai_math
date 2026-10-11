@@ -781,17 +781,20 @@ lives in this file and nowhere else.
   observations — the `free -h` available line, the wall times, the cold/warm swing — are **not**
   re-derived: a checker that re-measures them fails the day the machine changes. It writes nothing; run
   it twice and diff — the report is identical.
-- Check the five sync pages with `python3 notes/scripts/verify_page_sync.py --mutant` before reporting
+- Check the five sync pages with `python3 notes/scripts/verify_page_sync.py --both` before reporting
   them green — it is the render diff for `notes/links.md`, `notes/names.md`, `notes/topics.md`,
   `notes/proof-density.md` and `notes/index-links.md`: each page's bytes on disk against the bytes
   `render_reports.py` renders for it. `math-o3a.3` moved this pass out of `extract_links.py`,
   `measure_names.py`, `measure_topics.py`, `measure_proof_density.py` and `check_index_links.py`, so the
-  writer fleet reads only what it is allowed to read and the page check has one owner. `--mutant`
+  writer fleet reads only what it is allowed to read and the page check has one owner. `math-o3a.5.2`'s
+  B pass collapsed the two gate rows into `--both`, which prints the plain report and then the mutant
+  report in one process: `catlib.render.rendered` is cached **per process**, so two rows paid the corpus
+  walk twice. `--mutant`
   mutates each page's prose **in memory** and compares the mutated text with the render — it never
   writes a page, so the two pages that had a second writer in a mutant branch (`notes/index-links.md`,
   `notes/proof-density.md`) have one writer each. A needle absent from its page is reported as a
-  problem: an inert mutant is not a pass. It writes nothing; run plain and with `--mutant`, twice each,
-  and diff — the reports are identical (plain **0 problems**, `--mutant` **5 of 5**).
+  problem: an inert mutant is not a pass. It writes nothing; run `--both` twice and diff — the report
+  is identical (**0 problems**, **5 of 5** caught).
 
 ## PR instructions
 
