@@ -32,10 +32,14 @@ import build_catalog as bc
 
 from catlib import tsv
 from catlib import yaml as Y
+from catlib.promote import key_for, promote
 
 ROOT = bc.ROOT
 OUT = ROOT / "notes" / "subfindings.tsv"
 LEDGER = ROOT / "notes" / "catalog.tsv"
+
+# The builder's key: the ledger is the tracked read outside the five hashed trees.
+KEY = key_for("extract_subfindings.py", tuple(sys.argv[1:]))
 
 COLS = ["kind", "fam", "seq", "title", "path", "formalized", "tier", "statement", "lean_file"]
 
@@ -154,7 +158,7 @@ def main():
 
     check_only = "--check-only" in sys.argv[1:]
     if not check_only:
-        tsv.write_plain(OUT, COLS, manuscripts + comparators)
+        promote(OUT, KEY, tsv.plain_text(COLS, manuscripts + comparators))
 
     paps = ledger_paps()
     href_by_fam = Counter(r["fam"] for r in manuscripts)

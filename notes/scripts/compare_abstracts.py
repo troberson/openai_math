@@ -37,13 +37,16 @@ import sys
 from functools import cache
 
 from catlib import ledger, overview
-from catlib.atomic import write_atomic
+from catlib.promote import key_for, promote
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PRE = ROOT / "preprints"
 LEDGER = ROOT / "notes" / "catalog.tsv"
 SOURCES = ROOT / "notes" / "sources.tsv"
 TSV_OUT = ROOT / "notes" / "abstracts.tsv"
+
+# The builder's key: the ledger and the sources table are the tracked reads outside the trees.
+KEY = key_for("compare_abstracts.py", tuple(sys.argv[1:]))
 
 # Macros whose arguments are references, not prose. Dropping them is what lets a manuscript abstract
 # that says "\ref{thm:intro}" compare against an overview sentence that says the same theorem in words.
@@ -345,7 +348,7 @@ def write_tsv(m):
                     " ".join(sorted(set(sh["ov"]) - set(sh["ms"]))),
                     " ".join(sorted(set(sh["ms"]) - set(sh["ov"]))),
                     int("conditional" in sh["ov"]), int("conditional" in sh["ms"])])
-    write_atomic(TSV_OUT, buf.getvalue())
+    promote(TSV_OUT, KEY, buf.getvalue())
     return TSV_OUT
 
 

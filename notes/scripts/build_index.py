@@ -59,6 +59,7 @@ import check_index_links as CL  # report-only: the checker runs nothing at impor
 
 from catlib import yaml as Y
 from catlib.atomic import Staging
+from catlib.promote import key_for
 from catlib.paths import (
     COMPARATOR_DIR as CHAL,
     FORMALIZATION_YAML,
@@ -72,6 +73,9 @@ ROOT = pathlib.Path(__file__).resolve().parents[2]
 IDX = ROOT / "notes" / "index"
 LEDGER = ROOT / "notes" / "catalog.tsv"
 SRC = ROOT / "notes" / "sources.tsv"
+# The builder's L1, read from the audit-hook open record: the three ledger TSVs and the page
+# skeletons, all outside the five hashed trees. The pages it writes are its own output, not L1.
+KEY = key_for("build_index.py", tuple(sys.argv[1:]))
 
 UP = "../../../"     # notes/index/<discipline>/<page>.md -> repo root
 
@@ -166,7 +170,7 @@ def citation_edges(dir2fam, report):
 
 
 WRITTEN: set = set()
-ST = Staging("build_index")
+ST = Staging("build_index", KEY)
 
 
 def write(relpath, text):

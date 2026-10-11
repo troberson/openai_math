@@ -16,13 +16,19 @@ Usage: python3 notes/scripts/refresh_summary_line_counts.py            # rewrite
        python3 notes/scripts/refresh_summary_line_counts.py <page.md>  # named pages only
 """
 import argparse
+import sys
 from pathlib import Path
 
-from catlib.atomic import write_atomic
+from catlib.atomic import cache_text
 from catlib.paths import ROOT, SUMMARIES_DIR
+from catlib.promote import artifact_of, key_for, promote
 from catlib.summaries import ROW, Page
 
 SUMMARIES = SUMMARIES_DIR
+
+# The builder's key: the manuscript files it reads are inside the hashed trees; the summary pages it
+# reads are its own output, so they are not L1.
+KEY = key_for("refresh_summary_line_counts.py", tuple(sys.argv[1:]))
 
 
 def fmt(n):
@@ -52,11 +58,15 @@ def refresh(path, write):
         if write:
             m = ROW.match(out[n - 1])
             out[n - 1] = f"| {m.group(1)} | {m.group(2)} | {want} | {m.group(4)} |"
+    body = "\n".join(out)
+    if not body.endswith("\n"):
+        body += "\n"
     if write and drift:
-        body = "\n".join(out)
-        if not body.endswith("\n"):
-            body += "\n"
-        write_atomic(path, body)
+        promote(path, KEY, body)
+    elif write:
+        # A page with no drift is not promoted, so its bytes are cached without approval: the cache
+        # entry and the tracked page stay the same bytes, which is what the cache verifier compares.
+        cache_text(KEY, artifact_of(path), body)
     return len(page.rows), drift
 
 

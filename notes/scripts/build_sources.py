@@ -41,8 +41,13 @@ import sys
 from catlib import overview, records, text, tsv
 from catlib.paths import LEDGER_TSV, PREPRINTS, ROOT, SOURCES_TSV, read_text
 from catlib.preprints import SIX
+from catlib.promote import key_for, promote
 
 OUT = SOURCES_TSV
+
+# The builder's key: the ledger is the tracked file outside the five hashed trees this script reads.
+# The manuscript list comes from overview.tex, which is inside a hashed tree.
+KEY = key_for("build_sources.py", tuple(sys.argv[1:]))
 
 COLUMNS = ["dir", "fam", "pdf", "main_tex", "roots", "tex", "bib", "sections", "subsections",
            "subsubsections", "proofs", "thms", "abstract", "tex_bytes"]
@@ -99,7 +104,7 @@ def env_variants(store, dirs):
 
 
 def write(rows):
-    tsv.write_csv(OUT, COLUMNS, rows)
+    promote(OUT, KEY, tsv.csv_text(COLUMNS, rows))
 
 
 def report(rows, subs, dirs, store):

@@ -47,10 +47,14 @@ import sys
 
 from catlib import templates as T
 from catlib.atomic import Staging
+from catlib.promote import key_for
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 TPL_DIR = ROOT / "notes" / "templates" / "report"
-ST = Staging("build_report_templates")
+# The builder reads each page from HEAD, so its L1 is the page set. The docstring requires a clean
+# checkout of the page it rebuilds, which makes the working-tree bytes the bytes HEAD supplied.
+KEY = key_for("build_report_templates.py", tuple(sys.argv[1:]))
+ST = Staging("build_report_templates", KEY)
 WS_RUN = re.compile(r"[ \t]*\n[ \t]*")
 
 # The registry, the writer's slot dicts and the needle derivation are in catlib/templates.py;

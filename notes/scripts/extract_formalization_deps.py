@@ -25,10 +25,14 @@ from pathlib import Path
 from catlib import tsv
 from catlib import yaml as Y
 from catlib.paths import LAKEFILE, LAKE_MANIFEST as MANIFEST, OAI_DIR as SOURCE
+from catlib.promote import key_for, promote
 
 REPO = Path(__file__).resolve().parents[2]
 PATCHES = REPO / "lean" / "patches"
 OUT = REPO / "notes" / "formalization-deps.tsv"
+
+# The builder's key: every input is inside the five hashed trees, so L1 is empty.
+KEY = key_for("extract_formalization_deps.py", tuple(sys.argv[1:]))
 
 FIELDS = [
     "library",
@@ -276,7 +280,7 @@ def main():
     if "--check-only" in sys.argv[1:]:
         print("[check-only] TSV write skipped")
     else:
-        tsv.write_plain(OUT, FIELDS, rows)
+        promote(OUT, KEY, tsv.plain_text(FIELDS, rows))
 
     print(f"rows: {len(rows)}  fields: {len(FIELDS)}")
     print(f"lakefile require declarations: {len(lake)}")

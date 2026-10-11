@@ -27,6 +27,7 @@ from pathlib import Path
 from catlib.paths import ROOT
 
 STAGING_ROOT = ROOT / ".qwen" / "cache" / "staging"
+RECORDS_ROOT = ROOT / ".qwen" / "cache" / "records"
 
 
 def write_atomic(path: Path, text: str) -> None:
@@ -41,20 +42,30 @@ def write_atomic(path: Path, text: str) -> None:
     os.replace(tmp, path)
 
 
+def cache_text(key: str, artifact: str, text: str) -> None:
+    """Land text under the keyed record store. The store is untracked by the `.qwen/*` rule."""
+    d = RECORDS_ROOT / key
+    d.mkdir(parents=True, exist_ok=True)
+    write_atomic(d / artifact, text)
+
+
 class Staging:
     """Staged writes for a multi-file writer: bytes land untracked, promote() moves them onto the tree."""
 
-    def __init__(self, name: str) -> None:
+    def __init__(self, name: str, key: str | None = None) -> None:
         self.name = name
+        self.key = key
         self.root = STAGING_ROOT / name
         self._targets: list[Path] = []
         self._texts: list[str] = []
 
     def stage(self, path: Path, text: str) -> None:
-        """Land text in a numbered slot under the staging root and record the tracked path it will move to."""
+        """Land text in a numbered slot under the staging root, cache it under the key, record the tracked path."""
         slot = self.root / f"{len(self._targets):04d}"
         slot.parent.mkdir(parents=True, exist_ok=True)
         write_atomic(slot, text)
+        if self.key:
+            cache_text(self.key, str(path.relative_to(ROOT)), text)
         self._targets.append(path)
         self._texts.append(text)
 

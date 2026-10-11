@@ -102,10 +102,12 @@ def writer_targets(src: str) -> list[str]:
     Four shapes, because a script may open the file itself (`OUT.open("w")`), hand a package
     constant to a package writer (`tsv.write_csv(OUT, COLUMNS, rows)`), build the receiver from a
     module constant (`out = TPL_DIR / (name)`, then `out.write_text(...)`), or hand the target to the
-    package's atomic writer (`write_atomic(TARGET, text)`) or staging writer (`stage(TARGET, text)`).
-    The last two are the shape the fleet moved
+    package's atomic writer (`write_atomic(TARGET, text)`), staging writer (`stage(TARGET, text)`) or
+    promotion writer (`promote(TARGET, key, text)`). The last three are the shape the fleet moved
     to: the write call no longer names a path, so a rule keyed on `open`/`write_text` alone reads a
-    writer that stages as a writer of nothing. The write calls are read from `strip_selftest(src)`,
+    writer that stages as a writer of nothing. In each of the three, the target name is resolved the
+    same way — package constant, alias of a package constant, or a locally built constant. The write
+    calls are read from `strip_selftest(src)`,
     which is the fifth rule: a self-test's mutate-and-restore write is not ownership, so the scripts
     whose only page write sits inside their self-test stay writers of nothing.
     """
@@ -133,13 +135,18 @@ def writer_targets(src: str) -> list[str]:
         key = alias.group(1) if alias else const
         if consts.get(key):
             targets.add(consts[key])
-    for var in re.findall(r"\b(?:write_atomic|stage)\(\s*([A-Za-z_]\w*)\b", scan):
+    for var in re.findall(r"\b(?:write_atomic|stage|promote)\(\s*([A-Za-z_]\w*)\b", scan):
         direct = notes_const(src, var)
         if direct:
             targets.add(direct)
             continue
         if consts.get(var):
             targets.add(consts[var])
+            continue
+        alias = re.search(rf"^{var}\s*=\s*([A-Za-z_]\w*)\s*$", src, re.M)
+        key = alias.group(1) if alias else var
+        if consts.get(key):
+            targets.add(consts[key])
             continue
         hop = re.search(rf"^\s*{var}\s*=\s*([A-Za-z_]\w*)\s*/\s*\(", src, re.M)
         if hop:

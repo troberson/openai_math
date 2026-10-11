@@ -65,11 +65,16 @@ import measure_templates as MTPL
 import measure_topics as MT
 from catlib import bib, ledger, overview, preprints, records, tsv
 from catlib.atomic import Staging
+from catlib.promote import key_for
 from catlib import yaml as Y
-from catlib.paths import (COMPARATOR_DIR, DEPS_TSV, FORMALIZATION_YAML, LAKEFILE, LAKE_MANIFEST,
-                          LEDGER_TSV, PREPRINTS, ROOT, SUBFINDINGS_TSV, owner)
+from catlib.paths import (COMPARATOR_DIR, DEPS_TSV, FORMALIZATION_YAML, LAKEFILE,
+                          LAKE_MANIFEST, LEDGER_TSV, PREPRINTS, ROOT, SUBFINDINGS_TSV, owner)
 
 TPL = ROOT / "notes" / "templates" / "report"
+
+# The builder's key is computed inside main(), not at import: its L1 names the 1,049-file index tree
+# it reads, and `catlib/templates.py` imports this module, so a module-level key would make every
+# consumer of the registry pay that read. The L1 list is the registry's.
 ENV = Environment(loader=FileSystemLoader(str(TPL)), keep_trailing_newline=True,
                   trim_blocks=True, lstrip_blocks=True, autoescape=False)
 TSV = ROOT / "notes" / "sources.tsv"
@@ -3199,7 +3204,7 @@ def main() -> None:
     rmp = population_of("README")
     xcp = population_of("counterexample-crosscheck")
     tplp = population_of("templates")
-    ST = Staging("render_reports")
+    ST = Staging("render_reports", key_for("render_reports.py", tuple(sys.argv[1:])))
     ST.stage(SOURCES_MD, render_page(SOURCES_MD))
     ST.stage(ABSTRACTS_MD, render_page(ABSTRACTS_MD))
     ST.stage(NAMED_RESULTS_MD, render_page(NAMED_RESULTS_MD))

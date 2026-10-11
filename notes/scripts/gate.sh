@@ -56,6 +56,8 @@ for c in verify_summaries verify_abstracts verify_named_results verify_named_con
   pool_rows+=("$c.py")
   pool_rows+=("$c.py --mutant")
 done
+pool_rows+=("verify_cache_promotion.py")
+pool_rows+=("verify_cache_promotion.py --mutant")
 pool_rows+=("verify_conjecture_standing.py")
 pool_rows+=("verify_conjecture_standing.py --mutant")
 pool_rows+=("check_summary_manuscripts.py")

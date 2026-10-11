@@ -47,35 +47,55 @@ def read_matrix(path: Path) -> tuple[list[str], list[list[str]]]:
         return fields, [r for r in rdr if r]
 
 
-def write_rows(path: Path, cols: Sequence[str], rows: Iterable[Mapping[str, object]]) -> None:
-    """Header line plus one line per row, cells folded by cell()."""
+def rows_text(cols: Sequence[str], rows: Iterable[Mapping[str, object]]) -> str:
+    """Header line plus one line per row, cells folded by cell(), as text rather than as a write."""
     text = "\t".join(cols) + "\n"
     for r in rows:
         text += "\t".join(cell(r[c]) for c in cols) + "\n"
-    write_atomic(path, text)
+    return text
 
 
-def write_csv(path: Path, cols: Sequence[str], rows: Iterable[Mapping[str, object]]) -> None:
-    """csv.writer form: a cell containing the delimiter is quoted."""
+def write_rows(path: Path, cols: Sequence[str], rows: Iterable[Mapping[str, object]]) -> None:
+    """Header line plus one line per row, cells folded by cell()."""
+    write_atomic(path, rows_text(cols, rows))
+
+
+def csv_text(cols: Sequence[str], rows: Iterable[Mapping[str, object]]) -> str:
+    """csv.writer form as text: a cell containing the delimiter is quoted."""
     buf = io.StringIO(newline="")
     w = csv.writer(buf, delimiter="\t", lineterminator="\n")
     w.writerow(cols)
     for r in rows:
         w.writerow([r[c] for c in cols])
-    write_atomic(path, buf.getvalue())
+    return buf.getvalue()
+
+
+def write_csv(path: Path, cols: Sequence[str], rows: Iterable[Mapping[str, object]]) -> None:
+    """csv.writer form: a cell containing the delimiter is quoted."""
+    write_atomic(path, csv_text(cols, rows))
+
+
+def plain_text(cols: Sequence[str], rows: Iterable[Mapping[str, object]]) -> str:
+    """Unsanitized join as text: the writer that produced formalization-deps.tsv."""
+    text = "\t".join(cols) + "\n"
+    for r in rows:
+        text += "\t".join(str(r[c]) for c in cols) + "\n"
+    return text
 
 
 def write_plain(path: Path, cols: Sequence[str], rows: Iterable[Mapping[str, object]]) -> None:
     """Unsanitized join: the writer that produced formalization-deps.tsv."""
+    write_atomic(path, plain_text(cols, rows))
+
+
+def sanitized_text(cols: Sequence[str], rows: Iterable[Mapping[str, object]]) -> str:
+    """Tab-only fold as text: the writer that produced links.tsv."""
     text = "\t".join(cols) + "\n"
     for r in rows:
-        text += "\t".join(str(r[c]) for c in cols) + "\n"
-    write_atomic(path, text)
+        text += "\t".join(str(r[c]).replace("\t", " ") for c in cols) + "\n"
+    return text
 
 
 def write_sanitized(path: Path, cols: Sequence[str], rows: Iterable[Mapping[str, object]]) -> None:
     """Tab-only fold: the writer that produced links.tsv."""
-    text = "\t".join(cols) + "\n"
-    for r in rows:
-        text += "\t".join(str(r[c]).replace("\t", " ") for c in cols) + "\n"
-    write_atomic(path, text)
+    write_atomic(path, sanitized_text(cols, rows))

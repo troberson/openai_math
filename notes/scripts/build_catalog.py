@@ -14,8 +14,13 @@ from pathlib import Path
 
 from catlib import ledger, measure, overview, tsv, yaml
 from catlib.paths import ROOT
+from catlib.promote import key_for, promote
 
 OUT = ROOT / "notes" / "catalog.tsv"
+
+# The builder's key is computed at write time, not at import: build_catalog reads only the five
+# hashed trees, so its L1 list is empty and the key is the source plus the args.
+KEY = key_for("build_catalog.py", tuple(sys.argv[1:]))
 
 # Re-exported for the scripts that import this module; the joins live in catlib/. A name is
 # re-exported only while a script still reaches for it through this module.
@@ -115,7 +120,7 @@ def main():
         })
 
     if "--check-only" not in sys.argv[1:]:
-        tsv.write_rows(OUT, cols, rows)
+        promote(OUT, KEY, tsv.rows_text(cols, rows))
 
     # ---- report: every number quoted in notes/README.md comes from here ----
     rel = measure.release()

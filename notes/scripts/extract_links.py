@@ -54,9 +54,14 @@ from catlib.paths import (
     PREPRINTS,
     README_MD as README,
 )
+from catlib.promote import key_for, promote
 
 REPO = Path(__file__).resolve().parents[2]
 OUT = REPO / "notes" / "links.tsv"
+
+# The builder's key: the ledger, the page its sync pass compares, the topics vocabulary and the page's
+# template are the tracked reads outside the five hashed trees.
+KEY = key_for("extract_links.py", tuple(sys.argv[1:]))
 
 FIELDS = ["edge", "source", "pattern", "count", "detail", "command", "not_meaning"]
 CMD = "python3 notes/scripts/extract_links.py"
@@ -596,7 +601,7 @@ def main():
     )
 
     if "--check-only" not in sys.argv[1:]:
-        tsv.write_sanitized(OUT, FIELDS, rows_out)
+        promote(OUT, KEY, tsv.sanitized_text(FIELDS, rows_out))
 
     for line in report:
         print(line)
