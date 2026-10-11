@@ -315,7 +315,12 @@ that path, plus that row, plus the 4 s it waited for a free slot in the 12-row p
 measured 23 minutes earlier over the same 75 rows ran the 8 report-only extractors inside the serial
 chain, so nothing read-only could start until `render_reports.py` finished; the scheduler starts them
 at 19:32:08 and the wall fell **110.3** s. Row time is flat — 921.8 s against **919.4** s: 12 rows
-share the machine, so each row runs slower than it does alone, and the sum is the same. The 431 s
+share the machine, so each row runs slower than it does alone, and the sum is the same. The serial
+baseline (`GATE_POOL=1`) ran the same 75 rows at **876.0** s wall over **872.6** s row time — with
+nothing overlapping the wall is the row sum, so the pooled pass is **2.49**× faster. The two reports
+are identical in row order and row content once every wall-time token is normalized, including the
+tokens a report carries inside its own first 200 bytes (`measure_checker_needles.py` prints a per-target
+time), which is the honest form of the byte-identity the scheduler was asked to prove. The 431 s
 figure is the same shape measured earlier on 2026-10-11 over 71 rows, and the 478.7 s
 pass over 76 rows carried `verify_page_sync.py` as two rows (128.0 s plain, 124.8 s `--mutant`) with a
 two-row tail; collapsing them into `--both` removed **130.9** s of row time and **17.3** s of wall.

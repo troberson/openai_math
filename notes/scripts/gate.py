@@ -12,9 +12,11 @@ rendered pages (`verify_page_sync.py --both`, 122.5 s) = 346.0 s, and the driver
 351.1 s against the shell list's 461.4 s.
 
 Printing stays canonical: each row writes its own `.line` file, and the report prints the `.line`
-files in list order after the last row finishes, so the report is the same bytes a serial run
-prints. `GATE_POOL=1` runs the rows one at a time in list order — the serial baseline the pooled
-report is diffed against.
+files in list order after the last row finishes, so the report is the same text a serial run prints.
+`GATE_POOL=1` runs the rows one at a time in list order — the serial baseline the pooled report is
+diffed against. Measured 2026-10-11: the serial pass is 876.0 s wall over 872.6 s row time against the
+pooled 351.1 s, and the two reports match in row order and row content once every wall-time token is
+normalized, including the tokens a report carries inside its own first 200 bytes.
 
 Pool size is set by measured RSS, not core count: nproc 32, 6.1 Gi available with the model server
 loaded, the two heaviest rows peak at 415 MB, so 12 concurrent rows.
