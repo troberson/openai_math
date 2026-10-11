@@ -111,7 +111,7 @@ The 85 gap is names the declared rule counts that the six omit: `assumption` 22,
 The report's reconciliation lines, from the run that wrote the shipped TSV:
 
 - rows written **719**, listed manuscript dirs **719**, preprint dirs on disk **749**;
-- subfindings slugs not on disk **0**;
+- overview manuscript slugs not on disk **0**;
 - empty or missing PDF files **0**;
 - families outside `notes/catalog.tsv` **0**; per-family row count vs ledger `paps` differences **0**;
 - `overview.tex` manuscript paths (the paren-aware `PAP` regex) **719** distinct vs `sources.tsv`

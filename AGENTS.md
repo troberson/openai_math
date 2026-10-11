@@ -57,11 +57,14 @@ lives in this file and nowhere else.
 
 - Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `atomic`, `overview`, `ledger`, `preprints`,
   `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries`, `templates` (15 modules). Import them (`from catlib import yaml as Y`);
-  do not re-implement a join in an extractor. **48** of the **50** scripts do — the rule is
+  do not re-implement a join in an extractor. **47** of the **51** scripts do — the rule is
   `^[[:space:]]*(from|import) catlib`, so a deferred import inside a function counts — including
-  **all 20** checkers; the two non-importers are `dump_template_slots.py`, which reaches the slot dict
-  through `render_reports.py` and never touches the registry, and `verify_fleet_design.py`, which
-  measures the fleet's own sources and the tracked probe records, so it has no corpus join to import.
+  **all 20** checkers; the four non-importers are `dump_template_slots.py`, which reaches the slot dict
+  through `render_reports.py` and never touches the registry, `verify_fleet_design.py`, which
+  measures the fleet's own sources and the tracked probe records, so it has no corpus join to import,
+  and `measure_proof_density.py` and `measure_topics.py`, which were this rule's two-importers-today
+  case until `math-o3a.3`: each carried `from catlib import render as RD` as its only package import,
+  and the sync pass that used it moved to `verify_page_sync.py`.
   `measure.py` is the writer-side
   measurement API (counts as data, no report formatting) and
   checkers deliberately do **not** import it — a checker that re-derives a count through the page's own
@@ -369,12 +372,12 @@ lives in this file and nowhere else.
 ## Testing instructions
 
 - Nothing here builds and there is no test suite; the generator report is the test.
-- The whole-tree test is the gate list at `notes/scripts/gate.sh`: **69** invocations — the **8**
+- The whole-tree test is the gate list at `notes/scripts/gate.sh`: **71** invocations — the **8**
   gated writers (`build_report_templates.py` is the writer it does not run),
   the 21 gated report-only rows (including `check_summary_manuscripts.py` and
   `locate_summary_quotes.py`, and `check_index_links.py` plain and with `--mutant`;
-  `read_manuscript.py` is the one script it does not run), and **40**
-  checker invocations: each of the 19 checkers plain and with `--mutant` (**38**), plus
+  `read_manuscript.py` is the one script it does not run), and **42**
+  checker invocations: each of the 20 checkers plain and with `--mutant` (**40**), plus
   `verify_conjecture_standing.py` plain and with `--mutant` (**2**). Run it twice: the two reports
   must be byte-identical, and `notes/scripts/README.md` carries
   the gate command for every row. `refresh_summary_line_counts.py` runs first among the checkers
@@ -460,11 +463,14 @@ lives in this file and nowhere else.
 - Run `python3 notes/scripts/build_sources.py` twice and diff: `notes/sources.tsv` must be
   byte-identical and the report identical. Its report reconciles **719 rows over 719 listed manuscript
   dirs** (`preprints/` itself carries **749** dirs — 30 unlisted, 27 superseded releases plus 3
-  withdrawal notices), 0 dirs with no `subfindings.tsv` manuscript row, 0 subfindings slugs absent from
-  disk, 0 empty or missing PDFs, 0 families outside the ledger, 0 per-family row-count differences
-  against the ledger's `paps`, and 0 manuscript-path differences between `overview.tex` and
-  `sources.tsv` in either direction — the last three being the independent check, since they re-parse
-  `overview.tex` with `build_catalog.parse_overview()` instead of trusting the table's own source.
+  withdrawal notices), 0 overview manuscript slugs absent from disk, 0 empty or missing PDFs, 0 families
+  outside the ledger, 0 per-family row-count differences against the ledger's `paps`, 0
+  manuscript-path differences between `overview.tex` and `sources.tsv` in either direction, and 0
+  families whose path set differs from `overview.tex`. The row set is parsed straight from
+  `overview.tex` — `math-o3a.3` removed the read of `notes/subfindings.tsv`, which
+  `extract_subfindings.py` wrote later in the same gate pass, so row 2 depended on row 5 — which makes
+  the row-assembly comparison self-referential. The independent checks are the on-disk PDF read and the
+  path-set comparison, both keyed to `catlib.overview.parse_overview()` rather than to the table.
 - Check `notes/sources.md` with `python3 notes/scripts/verify_sources.py --mutant` before quoting any
   figure — it re-derives all 31 count phrases from a fresh recount over `preprints/` (root
   distribution, main-file outcomes, single-root names, column sums, the six-name environment total and
@@ -692,6 +698,17 @@ lives in this file and nowhere else.
   observations — the `free -h` available line, the wall times, the cold/warm swing — are **not**
   re-derived: a checker that re-measures them fails the day the machine changes. It writes nothing; run
   it twice and diff — the report is identical.
+- Check the five sync pages with `python3 notes/scripts/verify_page_sync.py --mutant` before reporting
+  them green — it is the render diff for `notes/links.md`, `notes/names.md`, `notes/topics.md`,
+  `notes/proof-density.md` and `notes/index-links.md`: each page's bytes on disk against the bytes
+  `render_reports.py` renders for it. `math-o3a.3` moved this pass out of `extract_links.py`,
+  `measure_names.py`, `measure_topics.py`, `measure_proof_density.py` and `check_index_links.py`, so the
+  writer fleet reads only what it is allowed to read and the page check has one owner. `--mutant`
+  mutates each page's prose **in memory** and compares the mutated text with the render — it never
+  writes a page, so the two pages that had a second writer in a mutant branch (`notes/index-links.md`,
+  `notes/proof-density.md`) have one writer each. A needle absent from its page is reported as a
+  problem: an inert mutant is not a pass. It writes nothing; run plain and with `--mutant`, twice each,
+  and diff — the reports are identical (plain **0 problems**, `--mutant` **5 of 5**).
 
 ## PR instructions
 

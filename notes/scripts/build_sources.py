@@ -168,7 +168,7 @@ def report(rows, subs, dirs):
     print(f"listed manuscript dirs           {len(dirs)}")
     print(f"preprint dirs on disk            {len(disk)}  unlisted {len(unlisted)} = "
           f"{len(unlisted) - len(notices)} superseded + {len(notices)} withdrawal notices")
-    print(f"subfindings slugs not on disk    {len(extra)} {extra[:3]}")
+    print(f"overview manuscript slugs not on disk    {len(extra)} {extra[:3]}")
     print(f"empty/missing PDF files          {pdf_diff}")
     print(f"fams outside the ledger          {len(fam_diff)} {fam_diff[:3]}")
     print(f"per-family row count vs ledger paps, differences  {len(paps_diff)} {paps_diff[:3]}")
