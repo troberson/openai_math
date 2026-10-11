@@ -3146,48 +3146,93 @@ def _lits(vals: list) -> str:
     return ", ".join(str(v) for v in vals)
 
 
-def faithfulness_phrases(p: dict[str, Any]) -> dict[str, str]:
+def faithfulness_full(p: dict[str, Any]) -> dict[str, str]:
+    """The writer's slot dict for notes/formalization-faithfulness.md, before the page-wrap split.
+
+    Each prose label is ONE single-line string: the page's own text with its whitespace runs collapsed
+    to single spaces, so the builder can split it at the page's line breaks. The three tables are
+    slotted one label per data row; the header rows are literal.
+    """
     out: dict[str, str] = {}
     out["fa_surface"] = (
-        f"Over the **{p['entries']}** `main_results` entries over **{p['unique']}** unique configs:\n\n"
+        f"Over the **{p['entries']}** `main_results` entries over **{p['unique']}** unique configs: "
         f"- **{p['resolved']}** of the {p['unique']} declarations resolve to a statement in the file "
-        f"the yaml names.\n"
-        f"- **{p['carrier_typed']}** of the {p['resolved']} statements are opaque: the type is a name "
-        f"that must be opened, not a formula.\n"
-        f"  All **{p['carriers_ok']}** carriers resolve through the declaration file's import closure.\n"
-        f"- Carrier bodies: min **{p['size_min']}** line, median **{p['size_med']}**, max "
-        f"**{p['size_max']}**, sum **{p['size_sum']}** lines.\n"
-        f"- **{p['with_literal']}** of the **{p['carriers_ok']}** carriers carry at least one integer "
-        f"literal; **{p['lit_total']}** distinct literals in total."
+        f"the yaml names. - **{p['carrier_typed']}** of the {p['resolved']} statements are opaque: "
+        f"the type is a name that must be opened, not a formula. All **{p['carriers_ok']}** carriers "
+        f"resolve through the declaration file's import closure. - Carrier bodies: min "
+        f"**{p['size_min']}** line, median **{p['size_med']}**, max **{p['size_max']}**, sum "
+        f"**{p['size_sum']}** lines. - **{p['with_literal']}** of the **{p['carriers_ok']}** carriers "
+        f"carry at least one integer literal; **{p['lit_total']}** distinct literals in total."
     )
     pr = p["pair"]
     out["fa_pair"] = (
-        f"Over the **{p['carriers_ok']}** carriers, all **{p['carriers_ok']}** have a scope-note family: "
-        f"**{pr['exact']}** exact, **{pr['subset']}** lean-subset,\n"
-        f"**{pr['overlap']}** overlap, **{pr['disjoint']}** disjoint, "
-        f"**{pr['carrier_no_literal']}** carriers with no literal, "
-        f"**{pr['no_headline_literal']}** families with no headline\nliteral."
+        f"Over the **{p['carriers_ok']}** carriers, all **{p['carriers_ok']}** have a scope-note "
+        f"family: **{pr['exact']}** exact, **{pr['subset']}** lean-subset, **{pr['overlap']}** overlap, "
+        f"**{pr['disjoint']}** disjoint, **{pr['carrier_no_literal']}** carriers with no literal, "
+        f"**{pr['no_headline_literal']}** families with no headline literal."
     )
-    out["fa_disjoint"] = "\n".join(
-        ["| Config | Family | Carrier literals |", "| --- | --- | --- |"]
-        + [f"| `{c}` | {fs[0]} | {_lits(lits)} |" for c, fs, lits in p["disjoint"]])
-    out["fa_overlap"] = "\n".join(
-        ["| Config | Family | Extra | Shared |", "| --- | --- | --- | --- |"]
-        + [f"| `{c}` | {fs[0]} | {_lits(extra)} | {_lits(shared)} |"
-           for c, fs, extra, shared in p["overlap_extra"]])
     out["fa_ae"] = (
-        f"Over the 719 listed manuscripts there are\n"
-        f"**{p['env_total']:,}** theorem environments; **{p['ae_envs']}** carry an `a.e.`-style phrase "
-        f"(`a.e.`, `almost every`,\n`almost all`, `a.s.`, `measure zero`, `null set`), over "
-        f"**{len(p['ae_fams'])}** families. **{len(p['ae_inter'])}** of those {len(p['ae_fams'])} families\n"
-        f"have a scope-note config; the {len(p['ae_inter'])} link **{len(p['ae_cfgs'])}** configs, of "
-        f"which **{len(p['ae_with'])}** have a `main_results` entry and\n"
-        f"**{len(p['ae_without'])}** have none."
+        f"Over the 719 listed manuscripts there are **{p['env_total']:,}** theorem environments; "
+        f"**{p['ae_envs']}** carry an `a.e.`-style phrase (`a.e.`, `almost every`, `almost all`, "
+        f"`a.s.`, `measure zero`, `null set`), over **{len(p['ae_fams'])}** families. "
+        f"**{len(p['ae_inter'])}** of those {len(p['ae_fams'])} families have a scope-note config; "
+        f"the {len(p['ae_inter'])} link **{len(p['ae_cfgs'])}** configs, of which "
+        f"**{len(p['ae_with'])}** have a `main_results` entry and **{len(p['ae_without'])}** have none."
     )
-    out["fa_ae_table"] = "\n".join(
-        ["| Family | `a.e.` envs | Configs linked | With entry | Without |",
-         "| --- | --- | --- | --- | --- |"]
-        + [f"| {f} | {a} | {c} | {w} | {o} |" for f, a, c, w, o in p["ae_table"]])
+    for i, (c, fs, lits) in enumerate(p["disjoint"], 1):
+        out[f"fa_dis_row_{i}"] = f"| `{c}` | {fs[0]} | {_lits(lits)} |"
+    for i, (c, fs, extra, shared) in enumerate(p["overlap_extra"], 1):
+        out[f"fa_ovr_row_{i}"] = f"| `{c}` | {fs[0]} | {_lits(extra)} | {_lits(shared)} |"
+    for i, (f, a, c, w, o) in enumerate(p["ae_table"], 1):
+        out[f"fa_aet_row_{i}"] = f"| {f} | {a} | {c} | {w} | {o} |"
+    return out
+
+
+# The page's own line breaks, recorded as the prefix each wrapped line carries. A phrase the page wraps
+# across lines can only be slotted when the writer supplies it as split labels, because the separator
+# between parts is the page's break. These prefixes carry the measured counts as literals, so a count
+# that moves raises the ValueError below rather than reflowing the paragraph.
+FAITH_SPLIT: dict[str, list[str]] = {
+    "fa_surface": [
+        "Over the **200** `main_results` entries over **189** unique configs:",
+        # The blank line between the lead-in and the bullet list is its own whitespace run, so the
+        # split has an empty part here. The separator carries the break; this part carries nothing.
+        "",
+        "- **189** of the 189 declarations resolve to a statement in the file the yaml names.",
+        "- **61** of the 189 statements are opaque: the type is a name that must be opened, "
+        "not a formula.",
+        "All **61** carriers resolve through the declaration file's import closure.",
+        "- Carrier bodies: min **1** line, median **6**, max **17**, sum **417** lines.",
+    ],
+    "fa_pair": [
+        "Over the **61** carriers, all **61** have a scope-note family: **1** exact, "
+        "**31** lean-subset,",
+        "**15** overlap, **2** disjoint, **10** carriers with no literal, "
+        "**2** families with no headline",
+    ],
+    "fa_ae": [
+        "Over the 719 listed manuscripts there are",
+        "**2,288** theorem environments; **48** carry an `a.e.`-style phrase (`a.e.`, `almost every`,",
+        "`almost all`, `a.s.`, `measure zero`, `null set`), over **32** families. "
+        "**19** of those 32 families",
+        "have a scope-note config; the 19 link **54** configs, of which **19** have a "
+        "`main_results` entry and",
+    ],
+}
+
+
+def faithfulness_phrases(p: dict[str, Any]) -> dict[str, str]:
+    out = faithfulness_full(p)
+    for label, prefixes in FAITH_SPLIT.items():
+        base = out.pop(label)
+        rest = base
+        for i, pre in enumerate(prefixes):
+            rest = rest.lstrip()
+            if not rest.startswith(pre):
+                raise ValueError(f"slot {label!r}: page wrap {pre!r} is not a prefix of {rest!r}")
+            out[f"{label} {'abcdefghij'[i]}"] = pre
+            rest = rest[len(pre):]
+        out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
     return out
 
 
