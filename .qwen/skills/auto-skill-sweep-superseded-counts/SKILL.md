@@ -179,6 +179,15 @@ e.g. 144 problems across 21 summary pages). Report the fleet as a table with the
 checker, order it shortest-path-first, and state what was **not** checked: no `--mutant` run is
 meaningful until the checker exits 0, and a grep census of stale numbers is sizing, not an enumeration.
 
+**A refactor that shrinks a script makes a page's `Lines` cell stale, and the gate row is the only
+detector.** Measured 2026-10-10: five `catlib` ports moved the shared joins out of
+`build_catalog.py`, and `notes/findings.md:224` still declared 198 lines — the gate row
+`verify_findings.py` exited 1 with `S2: declares 198 lines, notes/scripts/build_catalog.py has 181`.
+The fix is the cell, set from `len(read_text().splitlines())` (the checker's own rule), and the sweep
+must re-run that checker plain **and** `--mutant`. When a batch of ports lands, grep every Sources
+table for the scripts it names and refresh each `Lines` cell in the same pass — a page that declares a
+script's length is a claim about a file the refactor edits.
+
 Re-measure the git state too. A handoff note said 3 commits were queued for push; live it was 5.
 
 ## 5. Run the whole gate list, twice, diffed against HEAD as well as between runs
