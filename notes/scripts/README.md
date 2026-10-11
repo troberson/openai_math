@@ -9,10 +9,10 @@ is per file, and the checker exits 1 on a file no rule owns.
 It is also the script inventory. Every script under `notes/scripts/` is listed once, in one of three
 classes — writer, report-only, checker — with what it writes and the command the gate runs for it, and
 the fourth class, the scratch a session writes outside the tree, is recorded by rule rather than by
-file. The classes partition the **55** scripts: **10** writers, **22** report-only, **22** checkers,
+file. The classes partition the **56** scripts: **10** writers, **23** report-only, **22** checkers,
 and `verify_script_ownership.py` itself, which is the 23rd checker and is not listed in its own table.
 
-## The split: 10 write, 44 write nothing
+## The split: 10 write, 45 write nothing
 
 The writer set is derived from the scripts' own source, not from this page: a script is a writer when
 a path constant rooted at `notes/` appears on the left of `.open(..., "w")` or `.write_text(...)`,
@@ -28,7 +28,7 @@ self-test: a module-level
 `mutants` / `mutant_test` / `selftest` body is blanked before the write calls are read, because a
 self-test writes the page it checks only to mutate it and restores the bytes it read in the `finally`
 — `verify_script_ownership.py` does exactly that, in three branches (the page it checks, `notes/scripts/README.md`, and `notes/templates.md`), so its normal run writes nothing and it stays in the checker class. `check_index_links.py` and `measure_proof_density.py` were this rule's examples; `math-o3a.3` moved their sync pass into `verify_page_sync.py`, which mutates page text in memory, so neither script carries a write call any more. That rule
-finds **10** writers over **54** scripts.
+finds **10** writers over **55** scripts.
 
 ### Writers
 
@@ -42,8 +42,8 @@ finds **10** writers over **54** scripts.
 | `extract_links.py` | `notes/links.tsv` | single run; cached bytes == promoted bytes under the key | `notes/links.md` |
 | `extract_subfindings.py` | `notes/subfindings.tsv` | single run; cached bytes == promoted bytes under the key | `notes/subfinding-pairs.md` |
 | `render_reports.py` | `notes/README.md`, `notes/abstracts.md`, `notes/dependency-drift.md`, `notes/index-design.md`, `notes/index-links.md`, `notes/links.md`, `notes/named-results.md`, `notes/names.md`, `notes/proof-density.md`, `notes/sources.md`, `notes/verification-dirs.md`, `notes/scope-exclusions.md`, `notes/topics.md`, `notes/t0-chains.md`, `notes/subfinding-pairs.md`, `notes/counterexample-crosscheck.md`, `notes/formalization-faithfulness.md`, `notes/templates.md` | single run; cached bytes == promoted bytes for all 18 pages | the eighteen report-fed pages |
-| `build_report_templates.py` | `notes/templates/report` | not in `gate.sh` — it reads each page with `git show HEAD:`, so a gate run would rewrite templates from committed bytes; run explicitly with 0 args (all eighteen pages) or 2 (one page) after a writer's slot dict changes | the eighteen page templates; the registry, slot dicts and needle derivation it reads are in `catlib/templates.py` |
-| `measure_open_probe.py` | `notes/probe` | not in `gate.sh` — a record carries a wall time per target, so a run-1/run-2 byte diff of a record is a timing artifact, not a proof; run explicitly over the purity and amplification targets, appending stdout to build a multi-target record | the two probe records `verify_fleet_design.py` parses |
+| `build_report_templates.py` | `notes/templates/report` | not in `gate.py` — it reads each page with `git show HEAD:`, so a gate run would rewrite templates from committed bytes; run explicitly with 0 args (all eighteen pages) or 2 (one page) after a writer's slot dict changes | the eighteen page templates; the registry, slot dicts and needle derivation it reads are in `catlib/templates.py` |
+| `measure_open_probe.py` | `notes/probe` | not in `gate.py` — a record carries a wall time per target, so a run-1/run-2 byte diff of a record is a timing artifact, not a proof; run explicitly over the purity and amplification targets, appending stdout to build a multi-target record | the two probe records `verify_fleet_design.py` parses |
 
 Six writers emit one TSV each. `build_index.py` is the one-to-many case: it renders **1,049** files —
 **1,033** `.md` pages and **16** `.tsv` tables. `render_reports.py` renders the eighteen report-fed pages
@@ -54,8 +54,8 @@ default run writes nothing and only `--tsv` touches `notes/abstracts.tsv`.
 All **10** writers take `--check-only`: the run does its full measurement, prints its report, and writes
 nothing. Measured 2026-10-11 by running each writer plain and then with the flag — the report is
 identical in both runs (the write announcement is the only line that differs) and
-`git status --porcelain` is unchanged by the flagged run. `gate.sh` runs the writers plain; the read-only
-pool `math-o3a.5.2` adds is the block that runs with the flag, which is why the flag comes first.
+`git status --porcelain` is unchanged by the flagged run. `gate.py` runs the writers plain; the read-only
+rows `math-o3a.5.2` pooled are the rows that run with the flag, which is why the flag comes first.
 
 All ten writers write through `catlib/atomic.py`, so a crash never leaves a half-written tracked
 file. The single-file writers use `write_atomic()`, which lands bytes on a sibling temp name in the
@@ -95,30 +95,34 @@ Editing a join in `build_catalog.py` can move rows in six artifacts.
 
 ### Report-only
 
-The other **44** scripts write nothing. **22** of them print the report a page's counts come from.
-The Gate column is the invocation the gate list runs: `notes/scripts/gate.sh`, which runs **75**
+The other **45** scripts write nothing. **23** of them print a report: **22** print the report a page's
+counts come from and `gate.py` prints the gate report itself.
+The Gate column is the invocation the gate list runs: `notes/scripts/gate.py`, which runs **75**
 invocations — the **8** gated writers (the two writers it does not run are `build_report_templates.py`
 and `measure_open_probe.py`, each for the reason in its own row), the 22 gated report-only rows (including `check_summary_manuscripts.py`
 and `locate_summary_quotes.py`, and `check_index_links.py` twice — plain and with `--mutant`, since
 `math-a0r.6.2` gave its self-test a prose mutant that only the gate can run), and **45** checker
-invocations: each of the 20 loop checkers plain and
-with `--mutant` (**40**), plus `verify_page_sync.py --both` (**1**) — both passes in one process, because `catlib.render.rendered`
+invocations: **40** from the 20 checkers, each listed twice (plain and with `--mutant`), plus
+`verify_page_sync.py --both` (**1**) — both passes in one process, because `catlib.render.rendered`
 is cached per process and two rows pay the corpus walk twice — plus `verify_conjecture_standing.py` plain and with `--mutant` (**2**) — in
 class order, not in the order the rows sit; it prints one line per invocation with its exit code, its
 wall time, and the first 200 bytes of its report, and writes nothing to the repo outside
-`.qwen/tmp/reports/`. `math-8ou` promoted it from `.qwen/tmp/` into `notes/scripts/`, closing
-the one gap the list had. A writer's gate is the single run plus the promote-and-verify assertion
+`.qwen/tmp/reports/`. `math-8ou` promoted the list from `.qwen/tmp/` into `notes/scripts/`, closing
+the one gap the list had; `math-unv` replaced the shell list with the scheduler. A writer's gate is the single run plus the promote-and-verify assertion
 recorded in the writers table: the bytes it lands under its key must equal the bytes on the tracked
-path. The list is two arrays: `serial_rows` (the writers in dependency order, plus
-`refresh_summary_line_counts.py`) run in order, `pool_rows` (the **58** read-only invocations) run
-through `xargs -P 8` and print in the canonical order of the list, so the pooled report is the same
-bytes a serial run prints — measured 2026-10-11: serial 928 s, pooled 431 s, pooled report diffed
-against the serial report with wall-time tokens normalized 0 bytes. `GATE_POOL=1` runs everything
-serially. A pooled row must spawn no writer, so the render children (`build_index.py`,
+path. The list is one array, `ROWS`, of (spec, needs, writes) triples over the generated artifacts; a
+row starts as soon as every row that writes its `needs` has finished, so the 8 report-only extractors
+and the corpus readers start at t=0 and the writer chain runs as a graph, not as a fixed order. Each
+row writes its own `.line` file and the report prints the `.line` files in list order after the last
+row, so the report is the same bytes a serial run prints. `GATE_POOL` is the concurrency cap, **12**
+rows, sized by measured RSS (6.1 Gi available with the model server loaded, the two heaviest rows peak
+at 415 MB), not by core count; `GATE_POOL=1` runs the rows one at a time in list order, the serial
+baseline. A row must spawn no writer, so the render children (`build_index.py`,
 `extract_links.py`) run with `--check-only`. `gate_driver.sh` runs the list once, snapshots the md5 of
 every generated artifact and `git status` raw, and prints the `verify_cache_promotion.py` row, whose
-key is computed from the current `git rev-parse HEAD:<path>` tree digests. The wall-time normalization
-the twice-run needed (`0.53s` → `Ts`, because every row prints its wall time) left with the second run.
+key is computed from the current `git rev-parse HEAD:<path>` tree digests. Measured 2026-10-11:
+**374.1** s of driver wall over **994.4** s of row time, against **461.4** s when the read-only rows
+had to wait for the serial chain to finish.
 
 | Script | Report feeds | Gate |
 |---|---|---|
@@ -133,6 +137,7 @@ the twice-run needed (`0.53s` → `Ts`, because every row prints its wall time) 
 | `extract_t0_chains.py` | `notes/t0-chains.md` | plain |
 | `extract_verification_348.py` | `notes/verification-dirs.md` | plain |
 | `extract_verification_dirs.py` | `notes/verification-dirs.md` | plain |
+| `gate.py` | none — the gate list itself: 75 rows as a dependency graph, printing one line per row in list order | **the list** — run by `gate_driver.sh` |
 | `locate_summary_quotes.py` | `notes/summaries/` — the lines a page should cite when a quotation stops matching | plain, no page argument |
 | `measure_checker_needles.py` | `notes/templates.md` — the per-checker needle inventory behind its Needles column | plain |
 | `measure_faithfulness.py` | `notes/formalization-faithfulness.md` | plain |
@@ -160,10 +165,10 @@ compared with `render_reports.py`'s render of it, folded into the exit code), an
 
 The remaining **22** scripts verify a page or a table. Each exits non-zero when what it checks has
 drifted; each takes `--mutant`, which injects faults and asserts they are caught. The gate runs each
-one plain and then with `--mutant` — **45** of the 75 invocations: **40** from the loop over the 20
-rows below, **1** for `verify_page_sync.py --both`, which runs both passes in one process,
-**2** for `verify_cache_promotion.py` and **2** for `verify_conjecture_standing.py`, which the list
-runs outside the loop.
+one plain and then with `--mutant` — **45** of the 75 invocations: **40** from the 20 rows below, each
+listed twice, **1** for `verify_page_sync.py --both`, which runs both passes in one process,
+**2** for `verify_cache_promotion.py` and **2** for `verify_conjecture_standing.py`, which the shell
+list kept outside its loop and the scheduler lists as their own entries.
 
 | Checker | Checks | Gate | Cost (s) |
 |---|---|---|---|
@@ -362,9 +367,9 @@ excludes the checker-verified pages, allowing formatting only on the pages no ch
 
 ## Naming coverage
 
-`notes/README.md`'s command block named **34** of the 54 scripts before this pass. Twenty are named
+`notes/README.md`'s command block named **34** of the 55 scripts before this pass. Twenty-one are named
 nowhere in the repo at the pinned baseline: `build_report_templates.py`, `check_summary_manuscripts.py`,
-`extract_citations.py`, `locate_summary_quotes.py`, `measure_checker_needles.py`, `measure_faithfulness.py`, `measure_open_probe.py`, `measure_templates.py`,
+`extract_citations.py`, `gate.py`, `locate_summary_quotes.py`, `measure_checker_needles.py`, `measure_faithfulness.py`, `measure_open_probe.py`, `measure_templates.py`,
 `read_manuscript.py`,
 `refresh_summary_line_counts.py`, `render_reports.py`, `verify_citations.py`, `verify_faithfulness.py`, `verify_findings.py`,
 `verify_fleet_design.py`, `verify_named_conjectures.py`, `verify_page_sync.py`, `verify_upstream_history.py`,
@@ -378,8 +383,8 @@ measurements whose checker no document named; `verify_upstream_history.py` is th
 `notes/upstream_history/`, the pages that record each upstream merge, which moved under `notes/` on
 2026-10-10 and are inside this page's census; `measure_templates.py` is the census behind `notes/templates.md`, added by
 the pass that added that page; `measure_checker_needles.py` is the per-checker needle probe the
-checker-coverage bead promoted; `dump_template_slots.py` is the slot dump that prints the same dict the census measures, promoted by `math-a0r.7`; `verify_fleet_design.py` is the checker for `notes/fleet-design.md`, promoted by `math-o3a.1` together with the two probe records it parses; `verify_page_sync.py` is the checker `math-o3a.3` created when the five sync passes left the writer fleet, so the pinned baseline predates it; `measure_open_probe.py` is the audit-hook probe `math-o3a.3.4` promoted from `.qwen/tmp/a11_open_probe2.py`, so the pinned baseline predates it too; `measure_faithfulness.py` is the faithfulness measurement promoted from `.qwen/tmp/faith_probe.py` by the pass that added `notes/formalization-faithfulness.md`, and `verify_faithfulness.py` is that page's checker, so the pinned baseline predates both; `render_reports.py` is the renderer for the eighteen report-fed pages; and `verify_cache_promotion.py` is the checker `math-o3a.6.1` created for the promotion protocol, so the pinned baseline predates it.
-All 54 are named here and in the command
+checker-coverage bead promoted; `dump_template_slots.py` is the slot dump that prints the same dict the census measures, promoted by `math-a0r.7`; `verify_fleet_design.py` is the checker for `notes/fleet-design.md`, promoted by `math-o3a.1` together with the two probe records it parses; `verify_page_sync.py` is the checker `math-o3a.3` created when the five sync passes left the writer fleet, so the pinned baseline predates it; `measure_open_probe.py` is the audit-hook probe `math-o3a.3.4` promoted from `.qwen/tmp/a11_open_probe2.py`, so the pinned baseline predates it too; `measure_faithfulness.py` is the faithfulness measurement promoted from `.qwen/tmp/faith_probe.py` by the pass that added `notes/formalization-faithfulness.md`, and `verify_faithfulness.py` is that page's checker, so the pinned baseline predates both; `render_reports.py` is the renderer for the eighteen report-fed pages; `verify_cache_promotion.py` is the checker `math-o3a.6.1` created for the promotion protocol, so the pinned baseline predates it; and `gate.py` is the dependency scheduler `math-unv` wrote to replace `notes/scripts/gate.sh`, so the pinned baseline predates it.
+All 55 are named here and in the command
 block. "Before this pass" is
 pinned to the commit that created this page, read at its parent, not to `HEAD`: `HEAD` moves every
 time this page is edited, so a check keyed to it re-pins the baseline on each edit, and the naming
@@ -409,7 +414,8 @@ files in the remaining suffixes. `math-8ou` closed that gap: the gate list and i
 `gate.sh` and `gate_driver.sh`, are promoted to `notes/scripts/gate.sh` and
 `notes/scripts/gate_driver.sh` — a test that lives in an untracked directory is not a test the next
 session can run, and the driver header now carries the one-driver and group-kill rules the gate runs
-need. The **70** one-off `.py` probes are deleted (the `hqd5_probe*.py` family at 16, the `e8k_*.py`
+need. `math-unv` replaced `notes/scripts/gate.sh` with `notes/scripts/gate.py`, the dependency
+scheduler, so the promoted pair is now the driver plus the scheduler. The **70** one-off `.py` probes are deleted (the `hqd5_probe*.py` family at 16, the `e8k_*.py`
 lint-fix family at 8, the family-`001` summary builders at 11, the `probe_*` set at 6, the
 `0h2`/`extra` generators at 4, the marker/layout fixers at 4, the citation-needle printers at 2, the
 conditional-anchor checker `check_conditional_anchors.py`, and the single-purpose probes `measure_links.py`, `measure_subfindings.py`, `title_variants.py`,
