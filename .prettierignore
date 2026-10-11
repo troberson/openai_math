@@ -8,12 +8,13 @@ notes/index/
 # so none of it is configurable. Format only the four pages no checker parses, listed below.
 # notes/scripts/README.md is excluded for the same reason: its checker's needles match unpadded
 # table cells and `**N**` counts verbatim, and its mutant set asserts those needles fire.
-# upstream_history/ pages carry the same two byte-forms: `*"…"` quotations pinned to `path:line`
-# anchors, and unpadded cells in their change tables.
+# upstream_history pages carry the same two byte-forms: `*"…"` quotations pinned to `path:line`
+# anchors, and unpadded cells in their change tables. The pages moved under notes/ on 2026-10-10,
+# so the rule has to name the new path — notes/*.md is top-level only and does not reach them.
 notes/*.md
 notes/scripts/**/*.md
 notes/summaries/**/*.md
-upstream_history/*.md
+notes/upstream_history/*.md
 !notes/conjecture-standing.md
 !notes/links.md
 !notes/proof-density.md
