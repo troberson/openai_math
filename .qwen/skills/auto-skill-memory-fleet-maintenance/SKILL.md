@@ -1,6 +1,6 @@
 ---
 name: memory-fleet-maintenance
-description: Run a /dream-style memory-consolidation pass that survives the manager-owned MEMORY.md index — census pointers vs files, root-cause a registry gap through the frontmatter index gate, measure sizes in characters, fix category values, compress by pointing at skills, and report what is left undone honestly.
+description: Run a /dream-style memory-consolidation pass that survives the manager-owned MEMORY.md index — census pointers vs files, re-measure every fact a memory cites against the repo before rewriting, root-cause a registry gap through the frontmatter index gate, measure sizes, fix category values, split only at a usage_scenarios boundary, and report what is left undone honestly.
 source: auto-skill
 extracted_at: '2026-10-10T20:07:52.881Z'
 ---
@@ -81,6 +81,37 @@ Values copied from the type names (`feedback`, `reference`, `project`) are the u
 them by what the memory *is*: a durable working habit → `behavior_habit`; a tool quirk →
 `tool_experience`; a repo trap → `common_pitfall`. Never invent a nested category.
 
+## 2b. Facts decay faster than rules — verify against the repo before rewriting
+
+In a repo where work lands between passes, **the dominant failure is not duplication, it is a memory
+whose fact has inverted.** Measured 2026-10-11 on a 77-file project fleet: 7 of 77 memories asserted a
+state the repo no longer had, and only 2 pairs were genuine duplicates. Work the facts first.
+
+For every memory naming a file, function, count, path, queue, or line number, re-measure it before you
+touch the file:
+
+- `ls <path>` / `grep -l <symbol> notes/scripts/*.py` — does the thing exist?
+- `grep -c` / `find … | wc -l` / `grep -o … | wc -l` — is the count the memory quotes still the count?
+- `bd ready` / the generator's report / the page's own table — for a queue, a census, a tier count.
+
+Stale claims found in one pass, all caught by a one-line shell measure: "atomic promotion is 0 %
+implemented" (the registry `catlib/promote.py` existed); "404 sorries" (measured 539 over 416 files);
+"121,734 files / 25.9M lines" (measured 122,458 / 26,060,031); "67 invocations over 49 scripts,
+2,006 s per pass" (measured 73 over 53, 431 s); "387 lines" (measured 503); "nothing implemented, only
+`.1` claimable" (the epic was closed); "15 scripts carry a sync pass" (measured 12, all checkers).
+
+**When a fact inverts, rename the file and delete the old one.** The slug is part of the retrieval
+surface: a file named `writers-have-no-atomic-promotion.md` keeps asserting the false claim even after
+its body is rewritten, and a future agent reads the name before the body. Write the new file with
+complete frontmatter, confirm it gets indexed, then `rm` the old one, then re-run the §0 census — the
+dangling pointer to a deleted file clears itself on the next index regeneration, so do not hand-edit the
+index to remove it.
+
+**Never store a number a fresh run re-derives.** A script's line count, a live queue size, a tier count,
+a census total all drift with every bead. Replace the number with the command that prints it ("re-measure
+from `bd ready`", "read the tier table from `notes/README.md`"). Measured drift: one script's line count
+went 387 → 503 in four days.
+
 ## 3. Compress by moving procedure into skills, not by trimming rules
 
 Frontmatter (name, description, keywords, usage_scenarios) is ~700 characters of fixed cost, so a
@@ -108,6 +139,12 @@ beats more trimming on a dense rule list (measured: a 2,667-char rule list split
 with a pointer line in each half). A split is only legitimate if each half is independently retrievable
 and no rule is lost; give the new file complete frontmatter and confirm it gets indexed.
 
+**The checkable test is the file's own `usage_scenarios`.** If they already name two distinct tasks,
+the boundary is real and the split is legitimate. If the memory is one rule with one `Why:`, compress it
+and do not split — splitting a single rule cuts at a character position, not a retrieval boundary.
+Measured 2026-10-11: 3 files split (2,788 → 2,243 + 1,942; 2,408 → 2,088 + 1,697; 2,406 → 1,896 + 1,664)
+and 5 left whole at 2,065–2,402. Put a pointer line in each half.
+
 ## 4. Merge duplication by ownership, not by deletion
 
 When two memories restate the same rule, pick the owner (the narrower, named topic), move the rule
@@ -123,9 +160,12 @@ Before writing any new memory, check for a duplicate:
 - `write_file` / `edit` require a real `read_file` on that exact path **immediately before** the
   call. A read early in a long tool sequence, and any "file was restored" notice, do not satisfy it.
   A windowed read is enough for `edit`.
-- **`write_file` on an existing memory is rejected even after a full read in the immediately
-  preceding message** ("has not been read in this session … overwriting replaces every byte").
-  Compress with `edit`; reserve `write_file` for the file a split creates.
+- **A shell `cat`/`sed` dump is not a prior read.** `write_file` on an existing memory was rejected
+  ("has not been read in this session … overwriting replaces every byte") after the only prior view of
+  that file was a shell `cat`. A `read_file` on that exact path in the **immediately preceding message**
+  does satisfy it: measured 2026-10-11, `read_file` → `write_file` succeeded 8 times in one pass on
+  memory files. So the gate is the prior read, not the tool. Prefer `edit` for a trim (it needs only a
+  windowed read); use `write_file` for a rewrite, a split's new file, or a rename.
 - **The prior-read record expires when the read's result is compacted out of context.** A long
   maintenance pass hits this repeatedly: `edit` fails with "File … has not been read in this session"
   right after a successful `edit` on the same file. Fix: re-`read_file`, then `edit` in the
