@@ -33,7 +33,7 @@ import re
 from collections import Counter
 from pathlib import Path
 
-from catlib.paths import PREPRINTS, SUBFINDINGS_TSV, owner, read_text
+from catlib.paths import PREPRINTS, SUBFINDINGS_TSV, owner, read_text, rel
 from catlib.tsv import read_rows
 
 DOCCLASS = re.compile(r"^\s*\\documentclass", re.M)
@@ -45,6 +45,8 @@ SECTION = re.compile(r"\\section\*?\{")
 SUBSECTION = re.compile(r"\\subsection\*?\{")
 SUBSUBSECTION = re.compile(r"\\subsubsection\*?\{")
 BIB_ENTRY = re.compile(r"@[A-Za-z]+\s*\{([^,]*),")
+TITLE_ARG = re.compile(r"\\begin\{([A-Za-z*]+)\}\s*\[([^\]]{1,140})\]")
+ABSTRACT_BODY = re.compile(r"\\begin\{abstract\}(.*?)\\end\{abstract\}", re.S)
 
 # Environments declared by \newtheorem that state nothing.
 NON_STATEMENT = {"definition", "remark", "example", "notation", "convention", "procedure",
@@ -52,6 +54,12 @@ NON_STATEMENT = {"definition", "remark", "example", "notation", "convention", "p
 
 # The six-name list the release prose quotes, kept as its own measure.
 SIX = {"theorem", "lemma", "proposition", "corollary", "claim", "conjecture"}
+
+# Statement environments whose optional argument is a name the release chose. The name list is
+# measure_names.py's; the record builder and the name measure must read one rule, not two.
+STATEMENT_ENV = ("theorem", "lemma", "proposition", "corollary", "conjecture",
+                 "claim", "definition", "example", "remark", "question",
+                 "convention", "thm")
 
 
 def tex_files(d: Path) -> list[Path]:
@@ -116,6 +124,26 @@ def per_name_counts(texts: list[str], declared: set[str]) -> Counter:
     for t in texts:
         per_name.update(m for m in BEGIN.findall(t) if m in declared)
     return per_name
+
+
+def statement_titles(files: list[Path], texts: list[str]) -> list[tuple[str, str, str]]:
+    """(repo-relative file, env, title) for every statement environment with a title argument.
+
+    The file is part of the record: `measure_names.py` scans `.tex` at depth 1-3 only, so a
+    consumer that reads records must be able to reproduce its depth-scoped count, and a flat
+    title list cannot.
+    """
+    out: list[tuple[str, str, str]] = []
+    for f, t in zip(files, texts, strict=True):
+        for env, title in TITLE_ARG.findall(t):
+            if env in STATEMENT_ENV:
+                out.append((rel(f), env, title))
+    return out
+
+
+def abstract_texts(files: list[Path], texts: list[str]) -> list[tuple[str, str]]:
+    """(repo-relative file, abstract body) for every `\\begin{abstract}` in the dir. A dir can carry two."""
+    return [(rel(f), m) for f, t in zip(files, texts, strict=True) for m in ABSTRACT_BODY.findall(t)]
 
 
 def listed_dirs_from_contents() -> set[str]:
