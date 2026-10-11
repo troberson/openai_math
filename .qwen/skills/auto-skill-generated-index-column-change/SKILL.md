@@ -145,9 +145,10 @@ all 372 rows. Also:
 
 Cross-tab the new column against the downstream partition — that is the argument for it:
 
-- 88 of the 137 zero-signal (T0) families flagged; 40 of those sit **outside** the resolution bucket,
-  where first match hides them.
-- 12 of the 20 families in the "no shape tag at all" bucket are named-conjecture families, so the
+- 86 of the 130 zero-signal (T0) families flagged; 38 of those sit **outside** the resolution bucket,
+  where first match hides them. (Re-measured 2026-10-11: the values written were 88 of 137 and 40, and
+  an upstream merge moved the T0 population.)
+- 11 of the 19 families in the "no shape tag at all" bucket are named-conjecture families, so the
   bucket's description ("title is the only signal") stopped being true for half of it.
 
 ## 6. Sweep the docs that describe the schema
