@@ -55,8 +55,8 @@ lives in this file and nowhere else.
 
 ## Dev environment tips
 
-- Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `overview`, `ledger`, `preprints`,
-  `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries`, `templates` (14 modules). Import them (`from catlib import yaml as Y`);
+- Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `atomic`, `overview`, `ledger`, `preprints`,
+  `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries`, `templates` (15 modules). Import them (`from catlib import yaml as Y`);
   do not re-implement a join in an extractor. **48** of the **50** scripts do — the rule is
   `^[[:space:]]*(from|import) catlib`, so a deferred import inside a function counts — including
   **all 20** checkers; the two non-importers are `dump_template_slots.py`, which reaches the slot dict
@@ -663,7 +663,10 @@ lives in this file and nowhere else.
 - Check `notes/scripts/README.md` with `python3 notes/scripts/verify_script_ownership.py --mutant`
   before quoting any ownership figure — it derives the writer set from the scripts' own source (a
   `notes/`-rooted path constant left of `.open(..., "w")` / `.write_text(...)`, plus the `notes/index`
-  tree case), classifies every file under `notes/` with the scripts excluded and flags a file no rule
+  tree case, plus the one-hop receiver `out = TPL_DIR / (name)`, plus the atomic and staging cases —
+  a `write_atomic(CONST, text)` or `stage(CONST, text)` call, which is how a writer whose write moved
+  into `catlib.atomic` stays visible), blanks a module-level `mutants` / `mutant_test` / `selftest` body before reading the write
+  calls, classifies every file under `notes/` with the scripts excluded and flags a file no rule
   owns, re-derives every census count, requires every script named in the page **and** in the
   `notes/README.md` command block, re-derives the scripts-named-nowhere gap from
   `git show <manifest-commit>^:notes/README.md` and `<manifest-commit>^:AGENTS.md`, where
@@ -673,7 +676,7 @@ lives in this file and nowhere else.
   lands — and recomputes the shared-basename sets
   (**1** top-level ∩ index: `README.md`; **13** index ∩ summaries slugs). It excludes
   itself from the population, so the page's **50** scripts and **19** checkers are the run's **49** and
-  20. It flags sixteen injected mutants, each asserted against the check it targets, and writes nothing.
+  20. It flags seventeen injected mutants, each asserted against the check it targets, and writes nothing.
   Run it twice and diff — the report is identical.
 - Check `notes/fleet-design.md` with `python3 notes/scripts/verify_fleet_design.py --mutant` before
   quoting any of its counts — it re-derives the atomicity grep (over the fleet's own sources, the

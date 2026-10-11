@@ -67,9 +67,15 @@ inputs are the expensive, immutable, cacheable part.
 Rule: `grep -cE 'os\.replace|os\.rename|shutil\.move|NamedTemporaryFile'` over `notes/scripts/*.py`
 and `notes/scripts/catlib/*.py`, **excluding `verify_fleet_design.py`** — that checker carries the
 pattern as a needle, so counting it would read 1 and the rule would be about the checker, not the
-fleet. Over **49** scripts and **14** catlib modules the count is **0 matches**. No writer in the fleet
-writes atomically: every writer opens its tracked target directly, so a crash mid-write leaves a
-half-written tracked file. Atomic promotion is 0 % implemented.
+fleet. Over **49** scripts and **15** catlib modules the count is **2 matches**, both in
+`catlib/atomic.py`: the `os.replace` at `catlib/atomic.py:41`, which promotes the sibling temp onto
+the target, and the one at `catlib/atomic.py:67`, which promotes a staged slot onto its tracked path.
+Before `math-o3a.2.1` the count was **0 matches** over **49** scripts and **14** modules: every writer
+opened its tracked target directly, so a crash mid-write left a half-written tracked file. Atomic
+promotion is now **2** sites, both in the package, and every writer's write goes through them —
+`catlib/tsv.py`'s four TSV writers, `build_index.py`'s page writer, `render_reports.py`'s 17 page
+writes, `build_report_templates.py`, `refresh_summary_line_counts.py` and `compare_abstracts.py --tsv`
+— so the count stays small by construction: two primitives, and no writer carries its own move.
 
 ## The sync-pass census
 
@@ -244,7 +250,7 @@ through the writer's code proves nothing (`catlib/measure.py` docstring).
 5. **Mutants** — 7 injected corruptions, each asserted against the pass it targets: the atomicity
    count shifted, the sync split altered, a purity row deleted, the digest count widened, a probe
    figure altered, an anchor shifted outside its file, and a prose count in the size argument. Measured
-   2026-10-11 at 02:44 UTC: plain **0 problems**, `--mutant` **7 of 7** flagged, and both reports
+   2026-10-11 at 04:05 UTC: plain **0 problems**, `--mutant` **7 of 7** flagged, and both reports
    byte-identical across two runs. The row pair is in `gate.sh` (the checker loop runs 18 → **19**
    checkers, so the list is 67 → **69** invocations; measured cost plain 0.27 s, `--mutant` 0.49 s) and
    the page + checker are rows in `notes/scripts/README.md`.

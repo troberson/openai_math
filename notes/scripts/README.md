@@ -19,7 +19,11 @@ a path constant rooted at `notes/` appears on the left of `.open(..., "w")` or `
 plus the tree case — a `notes/index` constant reached through the module's own `write()` helper — and
 plus one hop: a receiver built from a module constant (`out = TPL_DIR / (name)`, then
 `out.write_text(...)`) is owned by that constant's directory, which is how a writer that names a
-directory rather than a file stays visible. The fourth rule subtracts the self-test: a module-level
+directory rather than a file stays visible. The fourth rule is the atomic case: a
+`write_atomic(CONST, text)` call whose first argument is a `notes/` path constant, or a local built
+from one, is owned by that constant — this is how a writer whose write moved into `catlib.atomic`
+stays visible, since the write call itself is no longer in the script. The fifth rule subtracts the
+self-test: a module-level
 `mutants` / `mutant_test` / `selftest` body is blanked before the write calls are read, because a
 self-test writes the page it checks only to mutate it and restores the bytes it read in the `finally`
 — `check_index_links.py` and `measure_proof_density.py` each do exactly that, so their normal runs
@@ -45,6 +49,16 @@ Six writers emit one TSV each. `build_index.py` is the one-to-many case: it rend
 from the templates `build_report_templates.py` builds from the committed page and the slot dict that
 writer supplies. `compare_abstracts.py` is the conditional case: its
 default run writes nothing and only `--tsv` touches `notes/abstracts.tsv`.
+
+All nine writers write through `catlib/atomic.py`, so a crash never leaves a half-written tracked
+file. The single-file writers use `write_atomic()`, which lands bytes on a sibling temp name in the
+same directory, fsyncs, and moves the temp onto the target. The three multi-file writers
+(`build_index.py`, `render_reports.py`, `build_report_templates.py`) use `Staging(name)`: `stage()`
+lands bytes under `.qwen/cache/staging/<name>/`, which the `.qwen/*` rule in `.gitignore` keeps
+untracked, and records the tracked path; `promote()` moves every staged slot onto its tracked path.
+A writer calls `promote()` only after its own reconciliation lines have printed, so killing a writer
+mid-run leaves the tracked tree exactly as it was — the proof is `build_index.py` killed mid-run in
+the 1,049-file case with `git status --porcelain` clean.
 
 Writers import each other, so a generated file's bytes are not a function of one script.
 `build_index.py` imports `build_catalog`, `measure_topics`, `measure_names`,
@@ -181,9 +195,13 @@ itself as its input. It is the 20th checker and the 50th script the run counts.
 
 ## The shared package: `catlib/`
 
-`notes/scripts/catlib/` holds the joins the extractors share, so a join is written once. It is 14
+`notes/scripts/catlib/` holds the joins the extractors share, so a join is written once. It is 15
 modules, not scripts: `paths.py` (the repo-root constants, `rel()`, `owner()`, `read_text()`),
-`tsv.py` (the four TSV writer shapes), `overview.py` (the `\resultentry` parse), `ledger.py`
+`tsv.py` (the four TSV writer shapes), `atomic.py` (the atomic write primitive —
+`write_atomic()` writes through a sibling temp name, fsyncs, then moves the temp onto the target, so
+a crash never leaves a half-written tracked file; every writer's write site goes through it, which is
+why the fleet's atomicity grep reads 1 match, not 9), `overview.py` (the `\resultentry` parse),
+`ledger.py`
 (`notes/catalog.tsv` and the claim-shape rules), `preprints.py` (the 749 dirs versus the 719 listed
 manuscripts), `text.py` (the six normalizers), `yaml.py` (`main_results_entries()`, the scope-note
 spans, the Lean-tree file list), `anchors.py` (the `path:line` anchor grammar, the fenced-block scan
@@ -250,7 +268,7 @@ imports must import the package only inside a function — `measure_templates.py
 already does.
 
 The package is not in the census below: the script population is `notes/scripts/*.py`, and
-`catlib/` is 14 modules under that directory, counted as **64** source files by the lint gate in
+`catlib/` is 15 modules under that directory, counted as **65** source files by the lint gate in
 `notes/linting.md`.
 
 ## The file census
