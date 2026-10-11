@@ -48,7 +48,7 @@ for c in verify_summaries verify_abstracts verify_named_results verify_named_con
          verify_scope_exclusions verify_subfindings verify_subfinding_pairs verify_index_design \
          verify_sources verify_conditional verify_counterexample_crosscheck verify_t0_chains \
          verify_verification_dirs verify_dependency_drift verify_script_ownership \
-         verify_findings verify_citations verify_upstream_history; do
+         verify_findings verify_citations verify_upstream_history verify_fleet_design; do
   run "$c.py"
   run "$c.py" --mutant
 done

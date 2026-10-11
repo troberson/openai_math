@@ -62,6 +62,8 @@ python3 notes/scripts/verify_findings.py --mutant  # checks notes/findings.md: e
 python3 notes/scripts/verify_named_conjectures.py --mutant  # checks notes/named-conjectures.md: statement anchors, quotations, prose citations, the entry set, every Measurements number
 python3 notes/scripts/verify_upstream_history.py  # re-derives the 3014888 merge census from git and the ledger, then checks the three notes/upstream_history/ pages: anchors, quotations, links, fenced blocks, the 14 backticked preprints/ slugs, two tables, every count phrase; report-only, writes nothing
 python3 notes/scripts/verify_upstream_history.py --mutant  # self-test: 13 injected faults (dead anchor, paraphrase, shifted anchor, dead path/link, renamed slug, altered counts) must all be caught
+python3 notes/scripts/verify_fleet_design.py  # checks notes/fleet-design.md: anchors, the count phrases re-derived from git/du/the tracked probe records, the purity and amplification tables; report-only, writes nothing
+python3 notes/scripts/verify_fleet_design.py --mutant  # self-test: 7 injected corruptions (shifted atomicity count, altered sync split, deleted purity row, widened digest count, altered probe figure, dead anchor, prose count) must all be caught
 python3 notes/scripts/verify_script_ownership.py  # checks notes/scripts/README.md: the derived writer set, the file census, naming coverage, shared basenames; report-only, writes nothing
 python3 notes/scripts/verify_script_ownership.py --mutant  # self-test: 12 injected faults (one per check form) must each be caught by the check it targets
 ```
