@@ -215,6 +215,98 @@ tests naming a rejection: **7** whose names end in `rejected` (`altered_saved_re
 `original_runtime_files_unchanged`. This is the only bundle among the 30 that demonstrates its own
 checks fail on bad input; the report is a shipped artifact, not a run this session performed.
 
+## What the scripts compute (read 2026-10-11)
+
+Read as text; nothing was executed. Over the 30 bundles: 21 ship Python only, 7 ship C++ alongside
+Python, 2 ship no source at all. The source surface is 23,606 lines of `.py`, `.cpp`, `.c`, `.h`, and
+the `.py` files carry 1,164 occurrences of `assert` (a substring count over the Python sources). The
+counts come from `.qwen/tmp/bundle_inventory.py`, which walks each `verification/` tree, maps slug to
+family through `catlib.overview.parse_overview()` manuscript ownership, and counts source lines.
+
+Every bundle computes a **closed finite statement**: a fixed list of integers, rationals, matrices,
+or enumerated objects, checked against literals written into the script, with a printed marker as the
+verdict. Four shapes cover the 30.
+
+**Exact rational and interval enclosures (the largest group).** No floating-point arithmetic enters
+the check. 153's `verify_degree31.py` represents every real as an integer over `S = 10**30` and every
+root center over `E = 10**40`, and states the contract in its docstring: "integers or
+fractions.Fraction; no floating-point operation enters the proof"
+(`preprints/Arithmetic-classification-and-non-Pisot-singularity-for-Bernoulli-convolutions-October-3-2026/verification/verify_degree31.py:8`),
+then "checks root-center inequalities, coefficient arrays, rounded cosine products, predictor sums,
+and finite products bounding the anisotropy term"
+(`preprints/Arithmetic-classification-and-non-Pisot-singularity-for-Bernoulli-convolutions-October-3-2026/verification/verify_degree31.py:9`).
+101's `verify_scalar.py` is the same discipline with `Fraction` and outward rounding: "Printed
+decimals are rounded OUTWARDS; no float is used"
+(`preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/verification/verify_scalar.py:7`).
+352's `certificate.py` runs an interval recurrence at `scale=2**256`
+(`preprints/A-finite-time-singularity-of-Calabi-flow-on-projective-space-September-24-2026/verification/certificate.py:2`)
+and `tail-check.py` ends "All root, projection, convolution, coefficient, derivative, residual, and
+contraction checks passed exactly."
+(`preprints/A-finite-time-singularity-of-Calabi-flow-on-projective-space-September-24-2026/verification/tail-check.py:172`).
+268's boundary-field bundle prints its counts in the marker itself: `PASS: 67 exact scalar
+comparisons and equalities; no floating-point premise`
+(`preprints/A-boundary-field-gap-for-the-spin-one-Heisenberg-chain-September-24-2026/verification/README.md:19`)
+and `All 15 exact recurrences and both thermal conclusions certified.`
+(`preprints/A-boundary-field-gap-for-the-spin-one-Heisenberg-chain-September-24-2026/verification/README.md:21`).
+The rest of the group are Bernstein-floor certificates: a coefficient floor on each subinterval, with
+the floors written as rational literals. 090's `numeric_balls.py` records `completed_counts` of
+37,310 Bernstein comparisons and ten tail comparisons
+(`preprints/Universal-optimality-of-the-triangular-lattice-September-23-2026/verification/README.md:39`);
+371's verifier names the assumptions it does not prove — "the manuscript supplies the K=8 reality,
+evenness, and degree-at-most-30 identity and the K=5 degree bounds `deg(d) <= 10`, `deg(c) <= 9`, and
+`deg(Im(c)) <= 8`"
+(`preprints/Stable-Self-Similar-Blowup-for-a-Supercritical-Defocusing-Schrodinger-Equation-on-the-Torus-September-24-2026/verification/certificates/README.md:42`).
+
+**Rank and kernel certificates.** 067's `verify.py` builds a `1785×581` matrix over `QQ` through
+SymPy's `DomainMatrix` and asserts the shape
+(`preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/verification/verify.py:74`),
+then the kernel dimensions — `assert ker(red(A.to_Matrix())).shape==(581,65)`
+(`preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/verification/verify.py:78`)
+— and prints `pass` at the end
+(`preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/verification/verify.py:167`).
+266 canonicalizes tuples of integer matrices by permutation and degree, prints a rank table, and
+asserts two exact integer identities in the final scalar sum
+(`preprints/Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-order-six-September-24-2026/verification/verify.py:440`).
+059's `validation/explicit_relation.py` is deliberately independent of the certificate it checks: "No
+matrix, rank certificate, factor table, or relation-producing program is read. Each of the six positive
+integers in every row is factored by trial division"
+(`preprints/Ambiently-homeomorphic-isolated-hypersurfaces-of-multiplicities-two-and-three-September-24-2026/verification/validation/explicit_relation.py:4`).
+189's `code/verify.py` runs both shipped checkers and records `sha256` of the interpreter itself
+alongside the run output
+(`preprints/Cycle-clique-Ramsey-numbers-September-25-2026/verification/code/verify.py:35`).
+
+**Enumeration with declared resource limits.** 205 enumerates symmetric-group characters at degrees
+`1 3 {5..8} {10..64}` and states the ceiling: "Each character child is limited to 1536 MiB of address
+space and 300 seconds of wall time; a timeout or failed run is not a certificate"
+(`preprints/Universal-Tensor-Squares-for-Symmetric-Groups-September-24-2026/verification/computation/README.md:19`).
+210 ships two C++ programs and a runner that separates reading from executing: "Default / --check is
+read-only and does not execute either C++ program"
+(`preprints/Foulkes-Conjecture-for-the-Sixth-Symmetric-Power-September-25-2026/verification/verify_computations.py:4`)
+— `--check` compares the `SHA-256` of the two sources and of the four captured `.stdout`/`.stderr`
+files with literals in the runner. 107's square certificate regenerates two exact charts, `qP420_gmp`
+(420, 224) and `qP780_gmp` (780, 500), each pinned by a hash
+(`preprints/Complex-Matrix-Multiplication-Below-2.258-and-Rectangular-Bounds-September-24-2026/verification/certificate/reproduce.py:20`).
+229's three-state bundle names the traversal totals a correct run must reach: "visited-box totals
+414080, 756096, and 1004426 for cases 0, 1, and 2"
+(`preprints/The-exact-reconstruction-threshold-for-the-three-state-symmetric-channel-September-25-2026/verification/README.md:32`),
+and its Potts sibling names the terminal lines the two C++ modes must print: `done 4479 19 lp=2074
+lt=166` and `done 1935 20 lp=871 lt=97`
+(`preprints/The-Reconstruction-Threshold-for-the-Ferromagnetic-Four-State-Potts-Model-October-5-2026/README.md:43`).
+
+**Data with no program.** Family 269's two bundles ship only `verification/rows.txt` — 7 rows of
+integer coefficient pairs over 20 lines, byte-identical between them, typeset into the manuscripts by
+`\lstinputlisting`. There is nothing to run.
+
+The success marker is always exit 0 **plus** a printed or JSON marker the bundle names: `PASS`,
+`"all_passed": true`, `"status": "pass"`, `"success": true`, `terminal OK`, or a stated record count
+(229 three-state requires `summary.json` with "37 passing subprocess records"
+(`preprints/The-exact-reconstruction-threshold-for-the-three-state-symmetric-channel-September-25-2026/verification/README.md:18`)).
+087's runner is the most explicit about why the marker matters: "Several programs report failures only
+in JSON, so use the runner instead of treating an individual exit code as sufficient"
+(`preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/verification/README.md:41`),
+and its program-to-claim table maps each of the ten programs to the finite computation it performs
+(`preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/verification/README.md:25`).
+
 ## Requirements, for anyone who wants to run them
 
 Python only, standard library: 348 (×2, Python ≥ 3.10), 361, 090 `An-atomic-certificate`, 268
@@ -225,13 +317,30 @@ UBSan), 090 `Triangular-minimality` (g++ C++17, OpenMP, Boost.Multiprecision). 1
 is Python ≥ 3.9 stdlib. `network_required` is false where stated; 090 and 348 need the full paper
 source tree present because manifests hash `build/` sources.
 
+The full venv surface, read from the scripts' own imports rather than the declared requirements: five
+pinned packages — `python-flint==0.9.0`, `sympy==1.14.0`, `numpy==2.3.5`, `scipy==1.16.2`
+(`preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/verification/computations/README.md:10`),
+`mpmath==1.3.0` (`preprints/Staggered-extraction-for-exact-matrix-multiplication-over-every-field-September-24-2026/verification/data/README.md:3`).
+Two bundles import third-party libraries they never declare: 067's `verify.py` imports `sympy`
+(`preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/verification/verify.py:4`)
+and `numpy` (`preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/verification/verify.py:8`)
+in a bundle with no `requirements.txt` and no README, and 348's `check_scalar_certificates.py` imports
+`sympy` while `dependencies.json` declares `"third_party_dependencies": []`. Seven bundles need a C++
+compiler: 119, 229 (×2), 090 `Triangular-minimality`, 107 `certificate`, 210, 205. 107's
+`certificate` package additionally needs GMP headers, and 210 and 229 need Boost.Multiprecision.
+
 ## Not checked
 
 - **Nothing was executed.** No `verify.py`, `reproduce.py`, or certificate program was run, so no
   family here has a passing run in this record. Running them needs a virtualenv (system Python is
-  PEP 668 externally managed) and, for four bundles, a C++17 toolchain.
-- The 18 undocumented bundles were counted, not read for scope; their limits are unstated, not known
-  to be absent.
+  PEP 668 externally managed) and, for seven bundles, a C++17 toolchain.
+- The 11 bundles that ship no markdown at all (101, 153, 059, 189, 266, 067, 272, 352, 210, and the two
+  269 dirs) were read for their scripts' headers, imports, and `assert`/`print` lines, not for scope
+  prose: their limits are unstated by the release, not known to be absent. The remaining 19 bundles
+  carry a README naming a scope limit — 12 top-level, 6 subdirectory, 1 `README.txt`.
+- Script **bodies** were not read end to end. The computation shape was taken from each script's
+  docstring, its imports, and its `assert`/`print` lines; the enumeration inside a 500-line checker was
+  not traced. The C++ sources were not read at all.
 - Certificate *contents* were not audited: no check that a bundle's finite claims are the ones the
   manuscript uses, and no recomputation of any bound.
 - `results.json`/`CERTIFICATE.json`-style stored outputs were not compared with freshly generated
