@@ -220,7 +220,7 @@ not survive a re-run.
 
 | ID | File | Lines | Role |
 |---|---|---|---|
-| S1 | [`notes/tables/catalog.tsv`](catalog.tsv) | 373 | The generated ledger: 372 rows, 22 columns |
+| S1 | [`notes/tables/catalog.tsv`](tables/catalog.tsv) | 373 | The generated ledger: 372 rows, 22 columns |
 | S2 | [`notes/scripts/build_catalog.py`](scripts/build_catalog.py) | 185 | The generator whose report is the test for every ledger count |
 | S3 | [`overview.tex`](../overview.tex) | 859 | The release's own 372 `\resultentry` entries and abstracts |
 | S4 | [`lean/formalization.yaml`](../lean/formalization.yaml) | 1783 | Tiers, `main_results`, automation and review statements |
@@ -249,7 +249,7 @@ not survive a re-run.
 | S27 | [`notes/index-links.md`](index-links.md) | 205 | The rendered index link check |
 | S28 | [`notes/dependency-drift.md`](dependency-drift.md) | 221 | Pinned commits, patches, toolchain normalisation |
 | S29 | [`notes/formalization-deps.md`](formalization-deps.md) | 179 | The upstream library graph and import counts |
-| S30 | [`notes/tables/conjecture-standing.tsv`](conjecture-standing.tsv) | 140 | The 139-row prior as data |
+| S30 | [`notes/tables/conjecture-standing.tsv`](tables/conjecture-standing.tsv) | 140 | The 139-row prior as data |
 | S31 | [`notes/conjecture-standing.md`](conjecture-standing.md) | 130 | The prior table, its limits, and the row-145 contradiction |
 
 ## Not checked

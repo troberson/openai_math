@@ -1,6 +1,6 @@
 # The topic vocabulary
 
-Built 2026-10-07. The vocabulary is **92 curated terms** in [`notes/tables/topics.tsv`](topics.tsv) —
+Built 2026-10-07. The vocabulary is **92 curated terms** in [`notes/tables/topics.tsv`](tables/topics.tsv) —
 **9 columns** (`term`, `pattern`, `fams`, `title`, `abstract`, `scope`, `path`, `status`, `note`) —
 and the pattern column is the source of truth: `notes/scripts/measure_topics.py` loads it, matches
 it, and records the counts the row carries as evidence. `python3 notes/scripts/measure_topics.py`
