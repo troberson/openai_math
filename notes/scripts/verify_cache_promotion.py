@@ -31,7 +31,7 @@ from __future__ import annotations
 
 import re
 import sys
-from pathlib import Path
+from itertools import pairwise
 
 from catlib import templates as T
 from catlib.promote import (ARTIFACTS, ARGS, L1, NON_CACHED, PAGE_EXTRA, PROBE_EXEMPT,
@@ -57,7 +57,7 @@ def probe_reads() -> dict[str, set[str]]:
         lines = probe.read_text(encoding="utf-8").splitlines()
         targets = [i for i, line in enumerate(lines) if line.startswith("[probe2] target notes/scripts/")]
         targets.append(len(lines))
-        for a, b in zip(targets, targets[1:]):
+        for a, b in pairwise(targets):
             name = lines[a].split()[2].split("/")[-1]
             if name in out:
                 continue
