@@ -3,7 +3,7 @@
 #
 # The checker list is derived from disk (notes/scripts/verify_*.py), never written out by hand:
 # a hardcoded list is what made the first version of this probe drift from the gate's own list.
-# Not a gate.sh row — it runs every checker twice, so it costs more than the gate's checker
+# Not a gate.py row — it runs every checker twice, so it costs more than the gate's checker
 # section alone; it is the tool that answers "which checker is the gate's cost".
 # Root from git, not from the script's depth: "$(dirname "$0")/../.." is correct only at exactly two
 # levels below the root.

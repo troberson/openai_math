@@ -3,8 +3,9 @@
 The venv, the three tool configs, the commands, and every exemption with the count it covers.
 Created for `math-e8k`. The three commands below are the lint gate, run as one command by
 `notes/scripts/lint_scripts.sh` (promoted from `.qwen/tmp/` by `math-3la`); the twice-run gate that proves a
-lint fix changed no generated output runs from the gate list at `notes/scripts/gate.sh` (promoted
-there from `.qwen/tmp/` by `math-8ou`), and the idempotence discipline it implements is recorded in
+lint fix changed no generated output runs from the gate list at `notes/scripts/gate.py` (promoted
+there from `.qwen/tmp/` by `math-8ou` as `gate.sh`, and rewritten as the scheduler by `math-unv`), and
+the idempotence discipline it implements is recorded in
 `notes/scripts/README.md`.
 
 ## The environment
@@ -240,7 +241,7 @@ must be cumulative over the block, not per line), and re-inserting a blank line 
   `verification-dirs.md.j2` and `scope-exclusions.md.j2` and `topics.md.j2` and `t0-chains.md.j2` and `subfinding-pairs.md.j2` — **17**
   templates under `notes/templates/report/` (counted on disk 2026-10-11 at 03:49 UTC), rendered by
   `render_reports.py`. Both
-  render through `python3` under the gate (gate.sh runs plain `python3`, not the venv interpreter), so
+  render through `python3` under the gate (gate.py runs plain `python3`, not the venv interpreter), so
   the gate depends on jinja2 being importable by the system interpreter too; both interpreters report
   **3.1.6** here.
 - **The venv is untracked.** `.venv/` is in `.gitignore`, so the versions in the table above are

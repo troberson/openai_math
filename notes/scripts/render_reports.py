@@ -998,7 +998,7 @@ def proof_density_population() -> dict[str, Any]:
     st_ok, st_total = PD.selftest()
     caught, mt_total, _cases = PD.mutants(PD.build_families)
     # The render-diff mutant is not in this list: verify_page_sync.py owns the page check, mutates
-    # the page in memory, and is the standalone --mutant run in gate.sh.
+    # the page in memory, and is the row the gate runs with --both.
     return {
         "rows": len(sources), "fams": len(fams),
         "proofs": sum(d["proofs"] for d in fams.values()),
@@ -1163,7 +1163,7 @@ def index_links_population() -> dict[str, Any]:
     build = build_index_report()
     caught, total, missed, clean, ctotal, wrong, trap, classed = CI.mutant_test()
     # The render-diff mutant is not in this list: verify_page_sync.py owns the page check, mutates
-    # the page in memory, and is the standalone --mutant run in gate.sh.
+    # the page in memory, and is the row the gate runs with --both.
     return {"scan": CI.measure(), "build": build,
             "mutant": (caught, total, missed, clean, ctotal, wrong, trap, classed)}
 

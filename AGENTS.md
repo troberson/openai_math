@@ -404,16 +404,19 @@ lives in this file and nowhere else.
   nothing. Prove the mode by running a writer plain, then with the flag, diffing the two reports (the
   write announcement is the only line allowed to differ) and confirming `git status --porcelain` is
   unchanged by the flagged run. The read-only gate pool is the block that runs rows with this flag.
-- The whole-tree test is the gate list at `notes/scripts/gate.sh`: **76** invocations — the **8**
-  gated writers (`build_report_templates.py` is the writer it does not run),
-  the 22 gated report-only rows (including `check_summary_manuscripts.py` and
+- The whole-tree test is the gate list at `notes/scripts/gate.py`: **75** invocations — the **8**
+  gated writers (`build_report_templates.py` and `measure_open_probe.py` are the writers it does not
+  run), the 22 gated report-only rows (including `check_summary_manuscripts.py` and
   `locate_summary_quotes.py`, and `check_index_links.py` plain and with `--mutant`;
-  `read_manuscript.py` is the one script it does not run), and **46**
-  checker invocations: each of the 22 checkers plain and with `--mutant` (**44**), plus
-  `verify_conjecture_standing.py` plain and with `--mutant` (**2**). The list is two arrays:
-  `serial_rows` (the writers in dependency order, plus `refresh_summary_line_counts.py`) run in
-  order, `pool_rows` (the **59** read-only invocations) run through `xargs -P 8` and print in the
-  canonical order of the list, so the report is the same bytes a serial run prints. `GATE_POOL=1`
+  `read_manuscript.py` is the one script it does not run), and **45**
+  checker invocations: each of the 20 checkers plain and with `--mutant` (**40**), plus
+  `verify_page_sync.py --both` (**1**), plus `verify_conjecture_standing.py` plain and with
+  `--mutant` (**2**). The list is one array, `ROWS`, of (spec, needs, writes) triples over the
+  generated artifacts: a row starts as soon as every row that writes its `needs` has finished, each
+  row writes its own `.line` file, and the report prints the `.line` files in list order after the
+  last row, so the report is the same bytes a serial run prints. `GATE_POOL` is the concurrency cap,
+  **12** rows, sized by measured RSS (6.1 Gi available with the model server loaded, the two heaviest
+  rows peak at 415 MB), not by core count; `GATE_POOL=1`
   runs everything serially — that is the baseline the pooled report is diffed against. A row in the
   pool must spawn no writer: the render of `notes/index-links.md` runs `build_index.py` as a child,
   so the render children run with `--check-only`. Run it once: the driver snapshots the md5 of every
@@ -765,8 +768,9 @@ lives in this file and nowhere else.
   checker excluded because its source carries the pattern as a needle), the sync-pass census, the five
   `git rev-parse HEAD:<path>` tree digests, the `git status --porcelain --ignored=matching` check over
   the five hashed paths, the `notes/*.tsv` byte sum, the three `du -sk` sizes, the gate row count from
-  `gate.sh`, the two set-site lines, the env-hit count, and the probe table's wall/opens/distinct/repeats
-  figures — parsed from the **5** audit-hook records **tracked under `notes/probe/`** (the checker parses
+  `gate.py`'s `ROWS` block, the two set-site lines, the env-hit count, and the probe table's
+  wall/opens/distinct/repeats figures — parsed from the **5** audit-hook records **tracked under
+  `notes/probe/`** (the checker parses
   the 2026-10-11 pair, written by `notes/scripts/measure_open_probe.py`; the 2026-10-10 pair and the
   single-target `render_reports.py` after-record are the before-state the page's deltas are measured
   against), which the checker requires on disk. It resolves
