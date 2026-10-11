@@ -88,7 +88,7 @@ gate stays green.
 
 ## mypy per-file status
 
-Under `mypy.ini` the gate command checks **65 files with 0 errors**. `check_untyped_defs = False`,
+Under `mypy.ini` the gate command checks **75 files with 0 errors**. `check_untyped_defs = False`,
 so a function with no annotations is not analyzed — the gate proves the annotated surface, not the
 whole tree. The 3 baseline errors were real and are fixed: `compare_abstracts.py:63`
 (`_CACHE: dict = {}`), `build_index.py:166` (`WRITTEN: set = set()`), and a `None` guard in
@@ -97,17 +97,17 @@ whole tree. The 3 baseline errors were real and are fixed: `compare_abstracts.py
 The per-file figure is the **strict probe**, which is not a gate command:
 
 ```bash
-.venv/bin/mypy --check-untyped-defs notes/scripts/   # 195 errors in 34 files (67 checked)
+.venv/bin/mypy --check-untyped-defs notes/scripts/   # 199 errors in 35 files (75 checked)
 ```
 
-Its 195 findings are an annotation backlog, not defects: `var-annotated` 79 (an empty `dict`/`list`
-accumulator mypy cannot infer), `assignment` 45, `union-attr` 29, `misc` 10, `index` 10, `arg-type` 8,
+Its 199 findings are an annotation backlog, not defects: `var-annotated` 83 (an empty `dict`/`list`
+accumulator mypy cannot infer), `assignment` 46, `union-attr` 28, `misc` 10, `index` 10, `arg-type` 8,
 `operator` 5, `attr-defined` 2, `str-format` 2, `call-overload` 2, `type-var` 1, `str-unpack` 1,
-`func-returns-value` 1. **33 of 67 files are clean under the probe** —
+`func-returns-value` 1. **40 of 75 files are clean under the probe** —
 `build_catalog.py`, `build_report_templates.py`, `check_index_links.py`, `dump_template_slots.py`, `extract_subfinding_pairs.py`,
-`extract_verification_348.py`, `locate_summary_quotes.py`, `measure_checker_needles.py`, `measure_open_probe.py`, `measure_templates.py`, `read_manuscript.py`,
-`render_reports.py`, `triage_t0.py`, `verify_counterexample_crosscheck.py`, `verify_index_design.py`,
-`verify_named_results.py`, `verify_fleet_design.py`, `verify_page_sync.py`, and all 15 files under `catlib/` — `catlib/summaries.py` included.
+`extract_verification_348.py`, `gate.py`, `locate_summary_quotes.py`, `measure_anchor_blocks.py`, `measure_checker_needles.py`, `measure_faithfulness.py`, `measure_move_surface.py`, `measure_open_probe.py`, `measure_templates.py`, `read_manuscript.py`,
+`render_reports.py`, `triage_t0.py`, `verify_cache_promotion.py`, `verify_counterexample_crosscheck.py`, `verify_index_design.py`,
+`verify_named_results.py`, `verify_fleet_design.py`, `verify_page_sync.py`, and all 17 files under `catlib/` — `catlib/summaries.py` included.
 `math-6s7.2` re-measured 2026-10-10 at 22:31 UTC: **197 errors in 34 files, the same 28-file clean set**,
 byte-neutral. It briefly read 199 in 35: annotating `bundle_files` as `dict[str, Path]` made `n` a `str`
 in the 348 extractor's byte-identity pass, so the later `for n in ap` (a line-number loop) collided with
@@ -138,6 +138,15 @@ the clean set **32 → 33** — `measure_open_probe.py` is fully annotated and a
 probe added no finding. It carried two on arrival and they were fixed before the count: the probe
 reused `ms` for a joined mode string in one loop and a `set[str]` in the next, which mypy read as
 `[assignment]` plus `[operator]`; the first is now `shown`.
+`math-faz.1` re-measured 2026-10-11 at 21:21 UTC: **199 errors in 35 files** over the 75-file tree,
+the clean set **33 → 40**. The tree gained 8 files since 06:42 UTC: `gate.py`, `measure_faithfulness.py`,
+`verify_cache_promotion.py`, `catlib/promote.py`, `catlib/records.py` and the two `math-faz` move probes
+arrive clean, and `verify_faithfulness.py` arrives in the error set with 5 findings, which is the
+34 → 35 rise. The 195 → 199 is that 5 less one `union-attr` that left elsewhere; the split moves
+`var-annotated` 79 → 83 and `assignment` 45 → 46 and every other code is unchanged. The probes carried
+one finding on arrival and it was fixed before the count: `measure_anchor_blocks.py` reused `h` for a
+5-tuple in the block loop and a 3-tuple in the quotation loop, which mypy read as `[assignment]`; the
+loops now use `b` and `q`.
 
 The count rises as checkers move onto the package, and the rise is not a regression: `catlib` is
 fully annotated, so a ported file's previously opaque calls (`read_text`, `read_rows`, `bib.read`)
@@ -216,11 +225,14 @@ must be cumulative over the block, not per line), and re-inserting a blank line 
 
 - **Behaviour.** The linters prove style and typing facts only. The autofix pass ran with
   `--fix --unsafe-fixes` and took ruff from 287 findings to 26; the 26 were fixed by hand. The
-  evidence that none of it changed any output is the gate — 71 invocations run twice with every
-  generated artifact md5-snapshotted and diffed (`notes/scripts/README.md`).
+  evidence that none of it changed any output is the gate — **75** invocations run once, with every
+  tracked artifact's cached bytes compared with the bytes on its tracked path (`notes/scripts/README.md`).
+  The trio was not green at `HEAD` before `math-faz.1`: `gate.py:140` carried one `RUF005` finding, the
+  `[a, b] + c` list concatenation in the row command, and it is fixed to `[a, b, *c]` — the same list,
+  so the command each row spawns is unchanged.
 - **No test suite.** The generator report is the test, so a lint fix is verified by report
   equality, not by unit tests.
-- **The strict probe is not scheduled.** The 195-error `--check-untyped-defs` backlog above is a
+- **The strict probe is not scheduled.** The 199-error `--check-untyped-defs` backlog above is a
   work estimate; nothing runs that command as a gate.
 - **`duplicate-code` is off corpus-wide** — **29** findings measured with `--enable=R0801` over 57
   files after **all 19** checkers moved onto the package, re-measured 2026-10-10 at **40** over 62

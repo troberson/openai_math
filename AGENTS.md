@@ -60,10 +60,11 @@ lives in this file and nowhere else.
 
 - Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `atomic`, `promote`, `overview`, `ledger`, `preprints`,
   `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries`, `templates`, `records` (17 modules). Import them (`from catlib import yaml as Y`);
-  do not re-implement a join in an extractor. **50** of the **55** scripts do — the rule is
+  do not re-implement a join in an extractor. **53** of the **58** scripts do — the rule is
   `^[ \t]*(from|import) catlib`, so a deferred import inside a function counts — including
-  **all 22** checkers; the four non-importers are `dump_template_slots.py`, which reaches the slot dict
-  through `render_reports.py` and never touches the registry, `verify_fleet_design.py`, which
+  **22** of the **23** checkers; the five non-importers are `dump_template_slots.py`, which reaches the slot dict
+  through `render_reports.py` and never touches the registry, `gate.py`, which spawns rows and reads
+  no corpus, `verify_fleet_design.py`, which
   measures the fleet's own sources and the tracked probe records, so it has no corpus join to import,
   and `measure_proof_density.py` and `measure_topics.py`, which were this rule's two-importers-today
   case until `math-o3a.3`: each carried `from catlib import render as RD` as its only package import,
@@ -365,17 +366,21 @@ lives in this file and nowhere else.
   manifest is `notes/scripts/README.md`, and it is the only place that answers "whose bytes are
   this". It is also the script inventory: every script under `notes/scripts/` is listed once as
   writer, report-only or checker, with what it writes and the gate command the gate list runs for it
-  — **10** writers, **22** report-only, **22** checkers, plus the page's own checker as the 23rd
-  checker and 55th script — and the fourth class, scratch, is recorded by rule: **scratch lives under
+  — **10** writers, **25** report-only, **22** checkers, plus the page's own checker as the 23rd
+  checker and 58th script — and the fourth class, scratch, is recorded by rule: **scratch lives under
   `.qwen/tmp/`, a permanent script lives under `notes/scripts/`**, so a probe that a later pass
   re-runs is promoted and gets a table row before it gets a gate command. `math-o3a.3.4` is that rule
   realized: the audit-hook probe moved from `.qwen/tmp/a11_open_probe2.py` to
   `notes/scripts/measure_open_probe.py`, and the gate does not run it because a record carries a wall
-  time per target, so a twice-run byte diff of a record is a timing artifact.
-  Scripts and generated files are **not** 1-to-1: of the **54** scripts, **10** write
+  time per target, so a twice-run byte diff of a record is a timing artifact. `math-faz.1` is the rule
+  realized twice: the two notes-move probes moved from `.qwen/tmp/notes_move_probe.py` and
+  `.qwen/tmp/notes_block_probe.py` to `notes/scripts/measure_move_surface.py` and
+  `notes/scripts/measure_anchor_blocks.py`, and the gate does not run them because a pass re-runs them
+  by hand before and after each move.
+  Scripts and generated files are **not** 1-to-1: of the **57** scripts, **10** write
   (`build_catalog.py`, `build_sources.py`, `build_index.py`, `compare_abstracts.py` — with `--tsv`
   only — `extract_formalization_deps.py`, `extract_links.py`, `extract_subfindings.py`,
-  `render_reports.py`, `build_report_templates.py`, `measure_open_probe.py`) and **44**
+  `render_reports.py`, `build_report_templates.py`, `measure_open_probe.py`) and **47**
   write nothing, and `build_index.py` alone renders **1,049** files. Of the **8** top-level
   `notes/*.tsv`, **6** are generator output and **2** are hand-authored — `notes/topics.tsv` (the
   curated vocabulary `build_index.py` reads) and `notes/conjecture-standing.tsv` (the training-data
@@ -409,9 +414,9 @@ lives in this file and nowhere else.
   run), the 22 gated report-only rows (including `check_summary_manuscripts.py` and
   `locate_summary_quotes.py`, and `check_index_links.py` plain and with `--mutant`;
   `read_manuscript.py` is the one script it does not run), and **45**
-  checker invocations: each of the 20 checkers plain and with `--mutant` (**40**), plus
-  `verify_page_sync.py --both` (**1**), plus `verify_conjecture_standing.py` plain and with
-  `--mutant` (**2**). The list is one array, `ROWS`, of (spec, needs, writes) triples over the
+  checker invocations: **44** from the 22 checkers listed twice (plain and with `--mutant`) — the 21
+  table checkers plus `verify_script_ownership.py`, the census page's own checker — plus
+  `verify_page_sync.py --both` (**1**). The list is one array, `ROWS`, of (spec, needs, writes) triples over the
   generated artifacts: a row starts as soon as every row that writes its `needs` has finished, each
   row writes its own `.line` file, and the report prints the `.line` files in list order after the
   last row, so the report is the same bytes a serial run prints. `GATE_POOL` is the concurrency cap,
@@ -748,7 +753,7 @@ lives in this file and nowhere else.
   every time the command block is edited and would read the gap as empty the moment the naming
   lands — and recomputes the shared-basename sets
   (**1** top-level ∩ index: `README.md`; **13** index ∩ summaries slugs). It excludes
-  itself from the population, so the page's **55** scripts and **23** checkers are the run's **54** and
+  itself from the population, so the page's **58** scripts and **23** checkers are the run's **57** and
   22. It flags seventeen injected mutants, each asserted against the check it targets, and writes nothing.
 - Check the promotion protocol with `python3 notes/scripts/verify_cache_promotion.py --mutant` before
   quoting any cache figure — it re-derives the `catlib/promote.py` registry three ways: the writer set
