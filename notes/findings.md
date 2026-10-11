@@ -233,7 +233,7 @@ not survive a re-run.
 | S11 | [`notes/t0-triage.md`](t0-triage.md) | 897 | The 130-family T0 reading pass: buckets, counts, unread remainder |
 | S12 | [`notes/t0-chains.md`](t0-chains.md) | 542 | The 27 two-manuscript T0 families and their coverage signal |
 | S13 | [`notes/links.md`](links.md) | 217 | The typed-edge inventory: scope-note links, citation edges |
-| S14 | [`notes/verification-dirs.md`](verification-dirs.md) | 253 | The 30 verification bundles and what each ships |
+| S14 | [`notes/verification-dirs.md`](verification-dirs.md) | 400 | The 30 verification bundles and what each ships |
 | S15 | [`README.md`](../README.md) | 51 | The release's own trace attributions |
 | S16 | [`notes/counterexample-crosscheck.md`](counterexample-crosscheck.md) | 1062 | The counterexample families' evidence cross-check |
 | S17 | [`notes/scripts/extract_scope_notes.py`](scripts/extract_scope_notes.py) | 78 | The phrase-list floors behind the 5 and 44 counts |
