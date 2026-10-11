@@ -99,7 +99,15 @@ def overview_text(text):
 
 def ledger(rev=None):
     if rev:
-        return read_rows_from_text(git("show", f"{rev}:notes/tables/catalog.tsv"))
+        # The catalog moved into notes/tables/ on 2026-10-11, so every revision the pages quote
+        # from before the move carries it at the top level. Read whichever path the revision has:
+        # a fixed path here fails the historical read with exit 128.
+        for path in ("notes/tables/catalog.tsv", "notes/catalog.tsv"):
+            try:
+                return read_rows_from_text(git("show", f"{rev}:{path}"))
+            except subprocess.CalledProcessError:
+                continue
+        raise SystemExit(f"no catalog.tsv at {rev}")
     return read_ledger()
 
 
