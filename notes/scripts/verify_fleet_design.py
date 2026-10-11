@@ -185,7 +185,7 @@ def population() -> Pop:
 def count_phrases(pop: Pop) -> list[str]:
     du = pop["du"]
     return [
-        f"**{pop['atomic']} matches**",
+        f"**{pop['atomic']} match{'es' if pop['atomic'] != 1 else ''}**",
         f"**{pop['scripts']}** scripts and **{pop['modules']}** catlib modules",
         f"**{pop['sync']}** scripts",
         f"**{pop['sync_verify']}** are `verify_*`",
@@ -294,7 +294,7 @@ def table_problems(page: str, pop: Pop) -> list[str]:
 
 
 MUTANTS = [
-    ("atomicity count shifted", lambda p: p.replace("**0 matches**", "**1 match**", 1)),
+    ("atomicity count shifted", lambda p: p.replace("**2 matches**", "**1 match**", 1)),
     ("sync split altered", lambda p: p.replace("**10** are `verify_*`", "**9** are `verify_*`", 1)),
     ("purity row deleted", lambda p: re.sub(r"^\|\s*`check_index_links\.py`.*\n", "", p, count=1, flags=re.M)),
     ("digest count widened", lambda p: p.replace("**5** digests", "**6** digests", 1)),
@@ -341,7 +341,8 @@ def main(argv: list[str]) -> int:
     problems = anchor_problems(page) + block_problems(page) + count_problems(page, pop) \
         + table_problems(page, pop)
     print("=== notes/fleet-design.md check ===")
-    print(f"atomicity grep: {pop['atomic']} matches over {pop['scripts']} scripts "
+    print(f"atomicity grep: {pop['atomic']} match{'es' if pop['atomic'] != 1 else ''} "
+          f"over {pop['scripts']} scripts "
           f"(this checker excluded, its source carries the pattern as a needle) + "
           f"{pop['modules']} catlib modules")
     print(f"sync pass: {pop['sync']} scripts ({pop['sync_verify']} verify_, {pop['sync_other']} not)")

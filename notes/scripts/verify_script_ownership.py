@@ -96,48 +96,69 @@ def strip_selftest(src: str) -> str:
     return "".join(lines)
 
 
-def writers():
-    """A script is a writer when a notes/-rooted path constant is written, plus the tree case.
+def writer_targets(src: str) -> list[str]:
+    """The notes/-rooted targets a script writes, from its own source.
 
-    Three shapes, because a script may open the file itself (`OUT.open("w")`), hand a package
-    constant to a package writer (`tsv.write_csv(OUT, COLUMNS, rows)`), or build the receiver from
-    a module constant (`out = TPL_DIR / (name)`, then `out.write_text(...)`). The second and third
-    are invisible to a source-text pattern over `open`/`write_text` keyed to the receiver alone, so
-    a write that moves into the shared package, or a writer that names a directory rather than a
-    file, would silently drop its script out of the writer set. The write calls are read from
-    `strip_selftest(src)`, which is the fourth rule: a self-test's mutate-and-restore write is not
-    ownership, so the two scripts whose only page write sits inside their self-test stay writers of
-    nothing.
+    Four shapes, because a script may open the file itself (`OUT.open("w")`), hand a package
+    constant to a package writer (`tsv.write_csv(OUT, COLUMNS, rows)`), build the receiver from a
+    module constant (`out = TPL_DIR / (name)`, then `out.write_text(...)`), or hand the target to the
+    package's atomic writer (`write_atomic(TARGET, text)`) or staging writer (`stage(TARGET, text)`).
+    The last two are the shape the fleet moved
+    to: the write call no longer names a path, so a rule keyed on `open`/`write_text` alone reads a
+    writer that stages as a writer of nothing. The write calls are read from `strip_selftest(src)`,
+    which is the fifth rule: a self-test's mutate-and-restore write is not ownership, so the scripts
+    whose only page write sits inside their self-test stay writers of nothing.
     """
     consts = path_constants()
-    out = {}
-    for name in script_names():
-        src = read_text(SCRIPTS / name)
-        scan = strip_selftest(src)
-        targets = set()
-        for var in re.findall(r'([A-Za-z_]\w*)\.(?:open\([^)]*"w"[^)]*\)|write_text\()', scan):
-            direct = notes_const(src, var)
-            if direct:
-                targets.add(direct)
-                continue
-            hop = re.search(rf"^\s*{var}\s*=\s*([A-Za-z_]\w*)\s*/\s*\(", src, re.M)
-            if hop:
-                base = notes_const(src, hop.group(1))
-                if base:
-                    targets.add(base)
-        for const in re.findall(r'\b\w+\.write_\w+\(\s*([A-Za-z_]\w*)\b', src):
-            # A script may alias the package constant (`OUT = SOURCES_TSV`), so resolve one hop.
-            alias = re.search(rf"^{const}\s*=\s*([A-Za-z_]\w*)\s*$", src, re.M)
-            key = alias.group(1) if alias else const
-            if consts.get(key):
-                targets.add(consts[key])
-        if re.search(r'^\w+\s*=\s*\w+\s*/\s*"notes"\s*/\s*"index"', src, re.M) and re.search(
-            r"^def write\(", src, re.M
-        ):
-            targets.add("notes/index/")
-        if targets:
-            out[name] = sorted(targets)
-    return out
+    scan = strip_selftest(src)
+    targets = set()
+    for var in re.findall(r'([A-Za-z_]\w*)\.(?:open\([^)]*"w"[^)]*\)|write_text\()', scan):
+        direct = notes_const(src, var)
+        if direct:
+            targets.add(direct)
+            continue
+        hop = re.search(rf"^\s*{var}\s*=\s*([A-Za-z_]\w*)\s*/\s*\(", src, re.M)
+        if hop:
+            base = notes_const(src, hop.group(1))
+            if base:
+                targets.add(base)
+    for const in re.findall(r'\b\w+\.write_\w+\(\s*([A-Za-z_]\w*)\b', src):
+        # The script may define the constant itself (`OUT = ROOT / "notes" / "catalog.tsv"`), alias
+        # the package constant (`OUT = SOURCES_TSV`), or name a package constant directly.
+        direct = notes_const(src, const)
+        if direct:
+            targets.add(direct)
+            continue
+        alias = re.search(rf"^{const}\s*=\s*([A-Za-z_]\w*)\s*$", src, re.M)
+        key = alias.group(1) if alias else const
+        if consts.get(key):
+            targets.add(consts[key])
+    for var in re.findall(r"\b(?:write_atomic|stage)\(\s*([A-Za-z_]\w*)\b", scan):
+        direct = notes_const(src, var)
+        if direct:
+            targets.add(direct)
+            continue
+        if consts.get(var):
+            targets.add(consts[var])
+            continue
+        hop = re.search(rf"^\s*{var}\s*=\s*([A-Za-z_]\w*)\s*/\s*\(", src, re.M)
+        if hop:
+            base = notes_const(src, hop.group(1))
+            if base:
+                targets.add(base)
+    if re.search(r'^\w+\s*=\s*\w+\s*/\s*"notes"\s*/\s*"index"', src, re.M) and re.search(
+        r"^def write\(", src, re.M
+    ):
+        targets.add("notes/index/")
+    # The index tree is one target: the constant reads `notes/index` and the tree rule reads
+    # `notes/index/`, and the page's writers table carries the directory form.
+    return sorted({"notes/index/" if t == "notes/index" else t for t in targets})
+
+
+def writers():
+    """A script is a writer when a notes/-rooted path constant is written, plus the tree case."""
+    return {name: writer_targets(read_text(SCRIPTS / name)) for name in script_names()
+            if writer_targets(read_text(SCRIPTS / name))}
 
 
 def population():
@@ -569,7 +590,25 @@ def mutants():
             fails.append(f"{label}: NOT caught by {needle!r} (problems: {found[:2]})")
         else:
             print(f"  caught {label}: {next(x for x in found if needle in x)[:110]}")
-    return fails, len(cases) + 1 + len(tpl_cases)
+
+    # Pass I: the atomic and staging write shapes. The derivation must key on the target the writer
+    # hands the package, not on the call name — a writer that retargets away from notes/ has to drop out.
+    rr = read_text(SCRIPTS / "render_reports.py")
+    atomic_case = rr.replace("ST.stage(README_MD, render_page(README_MD))",
+                             'ST.stage(pathlib.Path("README.md"), render_page(README_MD))', 1)
+    if atomic_case == rr:
+        fails.append("atomic write retargeted: mutation changed nothing")
+    else:
+        before = writer_targets(rr)
+        after = writer_targets(atomic_case)
+        if "notes/README.md" in after:
+            fails.append(f"atomic write retargeted: NOT caught (targets {after[:4]})")
+        elif "notes/README.md" not in before:
+            fails.append("atomic write retargeted: the clean source does not carry the target")
+        else:
+            print(f"  caught atomic write retargeted: notes/README.md dropped from "
+                  f"{len(before)} targets to {len(after)}")
+    return fails, len(cases) + 1 + len(tpl_cases) + 1
 
 
 def main():
