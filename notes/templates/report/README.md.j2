@@ -70,6 +70,8 @@ python3 notes/scripts/verify_fleet_design.py  # checks notes/fleet-design.md: an
 python3 notes/scripts/verify_fleet_design.py --mutant  # self-test: 7 injected corruptions (shifted atomicity count, altered sync split, deleted purity row, widened digest count, altered probe figure, dead anchor, prose count) must all be caught
 python3 notes/scripts/verify_script_ownership.py  # checks notes/scripts/README.md: the derived writer set, the file census, naming coverage, shared basenames; report-only, writes nothing
 python3 notes/scripts/verify_script_ownership.py --mutant  # self-test: 12 injected faults (one per check form) must each be caught by the check it targets
+python3 notes/scripts/verify_page_sync.py  # checks the render diff for notes/links.md, notes/names.md, notes/topics.md, notes/proof-density.md, notes/index-links.md — the page's bytes against what render_reports.py renders; report-only, writes nothing
+python3 notes/scripts/verify_page_sync.py --mutant  # self-test: 5 injected prose edits, one per page, applied in memory; a needle absent from its page is reported as a problem
 ```
 
 `notes/summaries-workflow.md` is the resume protocol for the summary-page batches: per-page steps,
