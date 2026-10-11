@@ -386,9 +386,14 @@ lives in this file and nowhere else.
   reports, md5 snapshots and diffs under `.qwen/tmp/reports/`.
 - Run the generator twice and diff the output: `notes/catalog.tsv` must be byte-identical.
 - Check the report's reconciliation lines after every change: 372 families, 719 manuscripts,
-  172 formalized, 242 scope notes, 416 challenges, 200 `main_results` entries over 189 configs,
-  and both `overview.tex` ↔ `CONTENTS.md` cross-checks reading 0.
-- Confirm the discipline table sums to 372 / 242 / 719 / 172.
+  **173** formalized manuscript paths (`formalized (yaml)` — the count of paths in
+  `formalization.yaml`'s `sources:`), 242 scope notes, 416 challenges, 200 `main_results` entries over
+  189 configs, and both `overview.tex` ↔ `CONTENTS.md` cross-checks reading 0. The 173 is one more
+  than the 172 listed manuscripts: `formalization.yaml` names the superseded
+  `Taming-implies-compatibility-on-four-manifolds-September-23-2026`, which family 342's overview entry
+  does not list.
+- Confirm the discipline table sums to 372 / 242 / 719 / 172 — the last is `paps_form`, the
+  per-manuscript formalized flag, which counts only listed manuscripts.
 - Quote a count only from a fresh generator report, never from a previous run's output.
 - Confirm a new tag discriminates before quoting it: the `conditional` tag flagged 9 families and
   5 were not assumptions. `notes/conditional.md` is the model for a reading pass.
