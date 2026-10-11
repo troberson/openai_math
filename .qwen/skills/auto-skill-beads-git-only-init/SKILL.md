@@ -175,9 +175,11 @@ bd graph --all --box
 
 Use `--description=-` with stdin for any text containing quotes, apostrophes, or slashes.
 
-- **`bd ready`'s leading glyph is not its status legend.** Ready rows print `●`, and the legend at the
-  bottom of the same output spells `●` "blocked", so a 9-issue queue reads as 9 blocked issues.
-  Confirm with the JSON and read the field:
+- **`bd ready`'s row glyphs are not the status legend.** Measured on bd 1.0.4: each ready row prints
+  `○` (its status, open), then `●` as the **priority separator** before `P2`, and the legend at the
+  bottom of the same output spells `●` "blocked". A reader scanning the rows sees `●` in every line
+  and reads a fully-ready queue as fully blocked. The status glyph is the first one; confirm with the
+  JSON and read the field:
 
   ```bash
   bd list --status=open --json | python3 -c 'import sys,json; d=json.load(sys.stdin); \
