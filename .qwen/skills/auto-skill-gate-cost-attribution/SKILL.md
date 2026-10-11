@@ -1,6 +1,6 @@
 ---
 name: gate-cost-attribution
-description: Find out why a serial gate/test runner takes an hour — attribute wall time per row without instrumenting the runner, separate re-collection from computation, measure the fleet's read/write graph and the runner's row-order cycles, census idempotency risk, and price each candidate fix by cost removed and byte-identity risk. Use when a gate is "too slow", when a no-cache hypothesis is raised, before adding a cache to a verification tree, or when asked whether a twice-run is really needed.
+description: Find out why a serial gate/test runner takes an hour — attribute wall time per row without instrumenting the runner, separate re-collection from computation, measure the fleet's read/write graph and the runner's row-order cycles, census idempotency risk, price each candidate fix by cost removed and byte-identity risk, and implement the dependency scheduler the options table prices: the pool cap sized by measured RSS, canonical printing, and the honest form of the byte-identity test. Use when a gate is "too slow", when a no-cache hypothesis is raised, before adding a cache to a verification tree, when asked whether a twice-run is really needed, when asked to parallelize a gate over the full machine, or when a gate's "byte-identical report" acceptance criterion has to be verified.
 source: auto-skill
 extracted_at: '2026-10-10T18:55:25.508Z'
 ---
