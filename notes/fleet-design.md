@@ -250,9 +250,11 @@ every tracked artifact, the bytes the writer landed under its key equal the byte
 and the key is computed from the current `git rev-parse HEAD:<path>` tree digests, so a key that no
 longer matches HEAD makes its records missing and the row fails. The driver keeps the md5 and
 `git status` snapshots raw and prints the assertion row. `notes/scripts/gate.sh` carries
-**76** invocations: **36** row-append statements (`serial_rows` and `pool_rows`), of which **2** are
-the checker-loop body, so **34** fixed rows + **21** checkers × 2 (plain and `--mutant`) = 76.
-Counting the appends at column 0 reads 34, because the loop body is indented. Non-determinism sources in the 9 writers,
+**75** invocations: **37** row-append statements (`serial_rows` and `pool_rows`), of which **2** are
+the checker-loop body, so **35** fixed rows + **20** checkers × 2 (plain and `--mutant`) = 75.
+`verify_page_sync.py` is one of the fixed rows, not a loop pair: its `--both` flag runs the plain pass
+and the mutant loop in one process. Counting the appends at column 0 reads 35, because the loop body is
+indented. Non-determinism sources in the 9 writers,
 by class:
 
 - **Time / random / env:** **2 hits** — `render_reports.py:1139` and `:1366` set
@@ -300,17 +302,19 @@ the shape C took; B is done, and the measured pass is **431 s** — the pair the
 composition the table predicted (2,006 s → ~970 s after A+B) landed at 431 s with B alone, because C
 had already removed the re-collection B was priced to overlap.
 
-The pass re-measured 2026-10-11, after the faithfulness rows joined the list, is **478.7** s of driver
-wall, over **1,103.2** s of row time. The rule: the driver's own timestamps (first row's `.line` file
-at 11:10:38, driver output at 11:18:36) and the report's per-row `in X.Xs` tokens, summed by block.
-The serial writer block is **298.9** s wall against **298.1** s of row time — no parallelism, so the
-two are the same number, and `render_reports.py`'s 158.2 s row is half of it. The read-only pool
-(`-P 8`) is **179.4** s wall against **805.0** s of row time, a 4.5x packing, not the 8x an ideal
-pack would give: the pool's longest rows (`verify_page_sync.py` 128.0 s and its `--mutant` 124.8 s)
-finish last, at 11:18:28 and 11:18:36, so the tail is two rows deep and the last 124.8 s of the pass
-is one row. The 431 s figure is the same shape measured on 2026-10-11 morning over 71 rows; the
-growth to 76 is the 3 rows the faithfulness pair added (`measure_faithfulness.py`,
-`verify_faithfulness.py` plain and `--mutant`), not a slower fleet.
+The pass re-measured 2026-10-11, after B collapsed the page-sync pair into one row, is **461.4** s of
+driver wall, over **921.8** s of row time. The rule: the driver's own timestamps (first row's `.line`
+file at 19:01:08, driver output at 19:08:49) and the report's per-row `in X.Xs` tokens, summed by
+block. The serial writer block is **288.9** s wall against **288.3** s of row time — no parallelism,
+so the two are the same number, and `render_reports.py`'s 158.2 s row is half of it. The read-only
+pool (`-P 8`, **58** rows) is **172.5** s wall against **633.5** s of row time, a 3.7x packing, not
+the 8x an ideal pack would give: the pool's longest row (`verify_page_sync.py --both`, 121.9 s)
+finishes last, at 19:08:49, so the tail is one row deep and the last 121.9 s of the pass is one row.
+The 478.7 s pass measured the same morning over 76 rows carried that row as two rows (128.0 s plain,
+124.8 s `--mutant`), finishing at 11:18:28 and 11:18:36 — a two-row tail; collapsing them removed
+**130.9** s of row time and **17.3** s of wall. The 431 s figure is the same shape measured earlier
+on 2026-10-11 over 71 rows; the growth to 76 was the 3 rows the faithfulness pair added
+(`measure_faithfulness.py`, `verify_faithfulness.py` plain and `--mutant`), not a slower fleet.
 
 Intended, not to be "fixed": a checker importing its own extractor, and `render_reports.py` running
 writers in-process/subprocess (`:1131` build_index, `:1358` extract_links). A checker that re-derives
@@ -357,5 +361,7 @@ through the writer's code proves nothing (`catlib/measure.py` docstring).
    leaves the phrase a second time, so the single occurrence the mutant replaces is not the only one
    and the count check still finds it. Both restatements are now prose without the bold form, and the
    phrase occurs once. The row pair is in `gate.sh` (the checker loop runs 20 → **21**
-   checkers, so the list is 73 → **76** invocations) and the page + checker are rows in
+   checkers, so the list is 73 → **76** invocations; `math-o3a.5.2`'s B pass then took
+   `verify_page_sync.py` out of the loop as a single `--both` row, so the loop is back to **20**
+   checkers and the list is **75**) and the page + checker are rows in
    `notes/scripts/README.md`.
