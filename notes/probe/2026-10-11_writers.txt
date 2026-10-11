@@ -3479,3 +3479,49 @@ slots  sources 31  abstracts 41  named-results 82  index-design 98  names 129  p
               1  w .qwen/cache/staging/render_reports/.0014.tmp
               1  w .qwen/cache/staging/render_reports/.0015.tmp
               1  w .qwen/cache/staging/render_reports/.0016.tmp
+
+pages 21  table rows 566  stale 0  mode check
+[probe] target exit code: 0
+[probe2] target notes/scripts/refresh_summary_line_counts.py --check
+[probe2] wall 0.06  opens 587  distinct 512  repeats 75
+[probe2] rchar MB 28.0  read_bytes MB 0.0
+[probe2] buckets:
+          preprints/                 338
+          lean/OAI/                  57
+          other                      44
+          abs/other                  33
+          lean/ComparatorChallenges/ 32
+          notes/                     29
+          notes/summaries/           21
+          notes/scripts/             12
+          lean/docs/                 11
+          top-level                  9
+          reasoning_traces/          1
+[probe2] notes/ paths (count  modes  path):
+             14  r        notes/catalog.tsv
+              2  r        notes/counterexample-tag.md
+              2  r        notes/sources.md
+              1  r        notes/summaries/algebra/197-nonsofic-groups-and-group-ring-counterexamples.md
+              1  r        notes/summaries/algebraic-and-complex-geometry/032-the-rational-hodge-conjecture-for-cm-abelian-varieties.md
+              1  r        notes/summaries/combinatorics/159-quasipolynomial-bounds-for-arithmetic-progressions.md
+              1  r        notes/summaries/convex-and-metric-geometry/087-the-mahler-conjectures-and-symplectic-width.md
+              1  r        notes/summaries/mathematical-physics/271-blochs-law-and-spontaneous-ferromagnetic-order.md
+              1  r        notes/summaries/number-theory/001-milnes-rationality-conjecture.md
+              1  r        notes/summaries/number-theory/002-full-birch-swinnerton-dyer-formula-from-low-selmer-corank.md
+              1  r        notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md
+              1  r        notes/summaries/number-theory/006-goldfelds-conjecture.md
+              1  r        notes/summaries/number-theory/007-two-point-chowla-and-the-corrected-binary-elliott-conjecture.md
+              1  r        notes/summaries/number-theory/010-fontaine-mazur-modularity-at-the-prime-2.md
+              1  r        notes/summaries/number-theory/011-the-ford-konyagin-luca-conjecture-on-prime-predecessors.md
+              1  r        notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md
+              1  r        notes/summaries/number-theory/016-zilber-pink-in-abelian-varieties-and-the-siegel-threefold.md
+              1  r        notes/summaries/number-theory/017-the-irrationality-exponent-of-pi-is-2.md
+              1  r        notes/summaries/number-theory/018-margulis-platonov-conjecture-over-global-fields.md
+              1  r        notes/summaries/number-theory/019-p-adic-section-conjecture.md
+              1  r        notes/summaries/operator-algebras/287-all-nonabelian-free-group-factors-are-isomorphic.md
+              1  r        notes/summaries/partial-differential-equations/362-global-smoothness-for-relativistic-vlasov-maxwell.md
+              1  r        notes/summaries/probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md
+              1  r        notes/summaries/theoretical-computer-science/102-unique-games-conjecture-and-optimal-approximation-thresholds.md
+             11  r        notes/t0-triage.md
+[probe2] write-mode paths outside notes/:
+              2  r,w 3

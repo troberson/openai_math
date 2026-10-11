@@ -82,15 +82,16 @@ inputs are the expensive, immutable, cacheable part.
 Rule: `grep -cE 'os\.replace|os\.rename|shutil\.move|NamedTemporaryFile'` over `notes/scripts/*.py`
 and `notes/scripts/catlib/*.py`, **excluding `verify_fleet_design.py`** — that checker carries the
 pattern as a needle, so counting it would read 1 and the rule would be about the checker, not the
-fleet. Over **51** scripts and **16** catlib modules the count is **2 matches**, both in
+fleet. Over **52** scripts and **17** catlib modules the count is **2 matches**, both in
 `catlib/atomic.py`: the `os.replace` at `catlib/atomic.py:41`, which promotes the sibling temp onto
 the target, and the one at `catlib/atomic.py:67`, which promotes a staged slot onto its tracked path.
 Before `math-o3a.2.1` the count was **0 matches** over **49** scripts and **14** modules: every writer
 opened its tracked target directly, so a crash mid-write left a half-written tracked file. Atomic
 promotion is now **2** sites, both in the package, and every writer's write goes through them —
-`catlib/tsv.py`'s four TSV writers, `build_index.py`'s page writer, `render_reports.py`'s 17 page
-writes, `build_report_templates.py`, `refresh_summary_line_counts.py` and `compare_abstracts.py --tsv`
-— so the count stays small by construction: two primitives, and no writer carries its own move.
+`catlib/tsv.py`'s four TSV writers, `catlib/promote.py`'s `promote()`, `build_index.py`'s page writer,
+`render_reports.py`'s 17 page writes, `build_report_templates.py`, `refresh_summary_line_counts.py` and
+`compare_abstracts.py --tsv` — so the count stays small by construction: two primitives, and no writer
+carries its own move.
 
 ## The sync-pass census
 
@@ -193,8 +194,9 @@ walk `measure()` used to run is gone: it is `@cache`d and reads the record store
 the process is a cache hit, and `build_sources.py`'s row fell from 39,083 opens to **65** for the same
 reason. What remains is the extractors the renderer imports, each walking the corpus once per process.
 `catlib/paths.read_text` is the uncached reader behind those opens (**217** `read_text(` call sites over
-the **52** scripts and **16** catlib modules); the caches in catlib are `render.rendered`, keyed by page
-name, and `records.manuscript_store`, keyed by the store digest.
+the **52** scripts and **17** catlib modules); the caches in catlib are `render.rendered`, keyed by page
+name, `records.manuscript_store`, keyed by the store digest, and `promote.cached_text`, keyed by the
+builder's key.
 
 The same probe puts `check_index_links.py` at **1.16** s in its own row (plain run, 1,717 opens over
 1,714 distinct paths), and the timed import run measured its subprocess cost inside
@@ -241,9 +243,9 @@ name bytes read from a tree that is still the tree at `HEAD`, and it writes noth
 The gate's proof is **twice-run byte-identity** of the **9** TSV names `gate_driver.sh` snapshots
 (**8** present on disk — `notes/named-results.tsv` is absent, so `md5sum` skips it under `2>/dev/null`)
 plus every file under `notes/index/` (md5 snapshots), plus identical `git status` snapshots. `notes/scripts/gate.sh` carries
-**71** invocations: **33** row-append statements (`serial_rows` and `pool_rows`), of which **2** are
-the checker-loop body, so **31** fixed rows + **20** checkers × 2 (plain and `--mutant`) = 71.
-Counting the appends at column 0 reads 31, because the loop body is indented. Non-determinism sources in the 9 writers,
+**73** invocations: **35** row-append statements (`serial_rows` and `pool_rows`), of which **2** are
+the checker-loop body, so **33** fixed rows + **20** checkers × 2 (plain and `--mutant`) = 73.
+Counting the appends at column 0 reads 33, because the loop body is indented. Non-determinism sources in the 9 writers,
 by class:
 
 - **Time / random / env:** **2 hits** — `render_reports.py:1134` and `:1361` set
@@ -274,7 +276,7 @@ single run cannot see that at all.
 | # | change | measured cost removed | byte-identity risk |
 |---|---|---|---|
 | A | Compute `outs`/`ledger()`/`tsv()` **once** in `verify_findings.py` and pass them into `check()`, so the 7-pass mutant loop re-runs only page work | 6 × 37.26 s = **223.6 s/pass** (447.2 s/pair); row 832.7 s → ~609 s | none — no cache, same subprocesses, same bytes |
-| B | **Realized by `math-o3a.5.2`**: run the 54-row read-only block in a bounded pool (`xargs -P 8`), the writer block serial, printing in the canonical order of the list | pass 928 s → 431 s (497 s saved, 2.15x); the pooled report diffed against the serial report with wall-time tokens normalized is 0 bytes | none for checkers (they write nothing); writers stay in the dependency chain. The catch: the block is not read-only until the render children run with `--check-only` — two `build_index.py` children sharing the staging root collided in the first pooled run |
+| B | **Realized by `math-o3a.5.2`**: run the 56-row read-only block in a bounded pool (`xargs -P 8`), the writer block serial, printing in the canonical order of the list | pass 928 s → 431 s (497 s saved, 2.15x); the pooled report diffed against the serial report with wall-time tokens normalized is 0 bytes | none for checkers (they write nothing); writers stay in the dependency chain. The catch: the block is not read-only until the render children run with `--check-only` — two `build_index.py` children sharing the staging root collided in the first pooled run |
 | C | **Realized by `math-o3a.4`**: memoise the corpus read as a digest-keyed record store (`catlib/records.py`) rather than as a memoised `read_text` | `build_sources.py` 39,083 → 65 opens, rchar 641.3 → 6.5 MB, wall 3.21 → 0.11 s; `render_reports.py` 152,680 → 75,394 opens, repeats 140,364 → 63,075, wall 231.58 → 138.99 s | none — the store writes nothing tracked and the generated layer is untouched |
 | D | Collapse `extract_links.py`'s six `preprints/**` walks into one, or convert it to the store | 5 of 6 walks over 8,007 `.tex` + 521 `.bib`; rchar 4,249.2 MB → ~700 MB, disk 3,601.4 MB → ~630 MB (row 56.60 s) | none — same file set, one enumeration |
 

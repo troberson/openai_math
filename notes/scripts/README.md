@@ -9,25 +9,26 @@ is per file, and the checker exits 1 on a file no rule owns.
 It is also the script inventory. Every script under `notes/scripts/` is listed once, in one of three
 classes — writer, report-only, checker — with what it writes and the command the gate runs for it, and
 the fourth class, the scratch a session writes outside the tree, is recorded by rule rather than by
-file. The classes partition the **52** scripts: **10** writers, **21** report-only, **20** checkers,
-and `verify_script_ownership.py` itself, which is the 21st checker and is not listed in its own table.
+file. The classes partition the **53** scripts: **10** writers, **21** report-only, **21** checkers,
+and `verify_script_ownership.py` itself, which is the 22nd checker and is not listed in its own table.
 
-## The split: 10 write, 41 write nothing
+## The split: 10 write, 42 write nothing
 
 The writer set is derived from the scripts' own source, not from this page: a script is a writer when
 a path constant rooted at `notes/` appears on the left of `.open(..., "w")` or `.write_text(...)`,
 plus the tree case — a `notes/index` constant reached through the module's own `write()` helper — and
 plus one hop: a receiver built from a module constant (`out = TPL_DIR / (name)`, then
 `out.write_text(...)`) is owned by that constant's directory, which is how a writer that names a
-directory rather than a file stays visible. The fourth rule is the atomic case: a
-`write_atomic(CONST, text)` call whose first argument is a `notes/` path constant, or a local built
-from one, is owned by that constant — this is how a writer whose write moved into `catlib.atomic`
-stays visible, since the write call itself is no longer in the script. The fifth rule subtracts the
+directory rather than a file stays visible. The fourth rule is the package-write case: a
+`write_atomic(CONST, text)`, `stage(CONST, text)` or `promote(CONST, key, text)` call whose first
+argument is a `notes/` path constant, an alias of one, or a local built from one, is owned by that
+constant — this is how a writer whose write moved into `catlib.atomic` or `catlib.promote` stays
+visible, since the write call itself is no longer in the script. The fifth rule subtracts the
 self-test: a module-level
 `mutants` / `mutant_test` / `selftest` body is blanked before the write calls are read, because a
 self-test writes the page it checks only to mutate it and restores the bytes it read in the `finally`
 — `verify_script_ownership.py` does exactly that, in three branches (the page it checks, `notes/scripts/README.md`, and `notes/templates.md`), so its normal run writes nothing and it stays in the checker class. `check_index_links.py` and `measure_proof_density.py` were this rule's examples; `math-o3a.3` moved their sync pass into `verify_page_sync.py`, which mutates page text in memory, so neither script carries a write call any more. That rule
-finds **10** writers over **51** scripts.
+finds **10** writers over **52** scripts.
 
 ### Writers
 
@@ -94,20 +95,20 @@ Editing a join in `build_catalog.py` can move rows in six artifacts.
 
 ### Report-only
 
-The other **41** scripts write nothing. **21** of them print the report a page's counts come from.
-The Gate column is the invocation the gate list runs: `notes/scripts/gate.sh`, which runs **71**
+The other **42** scripts write nothing. **21** of them print the report a page's counts come from.
+The Gate column is the invocation the gate list runs: `notes/scripts/gate.sh`, which runs **73**
 invocations — the **8** gated writers (the two writers it does not run are `build_report_templates.py`
 and `measure_open_probe.py`, each for the reason in its own row), the 21 gated report-only rows (including `check_summary_manuscripts.py`
 and `locate_summary_quotes.py`, and `check_index_links.py` twice — plain and with `--mutant`, since
-`math-a0r.6.2` gave its self-test a prose mutant that only the gate can run), and **42** checker
-invocations: each of the 20 checkers plain and
-with `--mutant` (**40**), plus `verify_conjecture_standing.py` plain and with `--mutant` (**2**) — in
+`math-a0r.6.2` gave its self-test a prose mutant that only the gate can run), and **44** checker
+invocations: each of the 21 checkers plain and
+with `--mutant` (**42**), plus `verify_conjecture_standing.py` plain and with `--mutant` (**2**) — in
 class order, not in the order the rows sit; it prints one line per invocation with its exit code, its
 wall time, and the first 200 bytes of its report, and writes nothing to the repo outside
 `.qwen/tmp/reports/`. `math-8ou` promoted it from `.qwen/tmp/` into `notes/scripts/`, closing
 the one gap the list had. A writer's gate is the twice-run byte-identity diff on its target, recorded
 in the writers table. The list is two arrays: `serial_rows` (the writers in dependency order, plus
-`refresh_summary_line_counts.py`) run in order, `pool_rows` (the **54** read-only invocations) run
+`refresh_summary_line_counts.py`) run in order, `pool_rows` (the **56** read-only invocations) run
 through `xargs -P 8` and print in the canonical order of the list, so the pooled report is the same
 bytes a serial run prints — measured 2026-10-11: serial 928 s, pooled 431 s, pooled report diffed
 against the serial report with wall-time tokens normalized 0 bytes. `GATE_POOL=1` runs everything
@@ -153,14 +154,15 @@ compared with `render_reports.py`'s render of it, folded into the exit code), an
 
 ### Checkers
 
-The remaining **20** scripts verify a page or a table. Each exits non-zero when what it checks has
+The remaining **21** scripts verify a page or a table. Each exits non-zero when what it checks has
 drifted; each takes `--mutant`, which injects faults and asserts they are caught. The gate runs each
-one plain and then with `--mutant` — **42** of the 71 invocations: **40** from the loop over the 20
+one plain and then with `--mutant` — **44** of the 73 invocations: **42** from the loop over the 21
 rows below, **2** more for `verify_conjecture_standing.py`, which the list runs outside the loop.
 
 | Checker | Checks | Gate | Cost (s) |
 |---|---|---|---|
 | `verify_abstracts.py` | `notes/abstracts.md` | plain + `--mutant` | 1.0 / 1.0 |
+| `verify_cache_promotion.py` | `catlib/promote.py` — the registry shape against the writers table, the L1 lists against the audit-hook records, and the cached bytes against every tracked artifact under its key | plain + `--mutant` | 1.0 / 7.0 |
 | `verify_citations.py` | `notes/citations.md` | plain + `--mutant` | 1.4 / 2.8 |
 | `verify_conditional.py` | `notes/conditional.md` | plain + `--mutant` | 0.0 / 0.0 |
 | `verify_conjecture_standing.py` | `notes/conjecture-standing.tsv` | plain + `--mutant` | 0.0 / 0.0 |
@@ -204,17 +206,20 @@ so its six mutants were never run by the gate. Measured 2026-10-09 by hand — `
 0 []`, exit 0 — `math-8ou` added the `--mutant` invocation, which is why the count read 63 and not
 62. `math-a0r.6.2` added `check_index_links.py --mutant` for the same reason — its 21st mutant is a
 mutation of `notes/index-links.md`'s own prose, which only the self-test can catch — and `math-3la`
-added `measure_checker_needles.py`, so the count is **69** after `math-o3a.1` added
-`verify_fleet_design.py` plain and with `--mutant` (0.3 / 0.5 s).
+added `measure_checker_needles.py`, so the count is **73** after `math-o3a.1` added
+`verify_fleet_design.py` plain and with `--mutant` (0.3 / 0.5 s) and `math-o3a.6.1` added
+`verify_cache_promotion.py` plain and with `--mutant` (1.0 / 7.0 s).
 
 `verify_script_ownership.py` — this page's own checker — is not in the table: a checker cannot list
-itself as its input. It is the 20th checker and the 50th script the run counts.
+itself as its input. It is the 22nd checker and the 52nd script the run counts.
 
 ## The shared package: `catlib/`
 
-`notes/scripts/catlib/` holds the joins the extractors share, so a join is written once. It is 15
+`notes/scripts/catlib/` holds the joins the extractors share, so a join is written once. It is 16
 modules, not scripts: `paths.py` (the repo-root constants, `rel()`, `owner()`, `read_text()`),
-`tsv.py` (the four TSV writer shapes), `atomic.py` (the atomic write primitive —
+`tsv.py` (the four TSV writer shapes), `promote.py` (the promotion protocol — the `L1` and `ARTIFACTS`
+registry, `key_for()` for the builder's digest key, `promote()` which caches the bytes under the key
+and then writes the same bytes onto the tracked path, and `cached_text()`), `atomic.py` (the atomic write primitive —
 `write_atomic()` writes through a sibling temp name, fsyncs, then moves the temp onto the target, so
 a crash never leaves a half-written tracked file; every writer's write site goes through it, which is
 why the fleet's atomicity grep reads 1 match, not 9), `overview.py` (the `\resultentry` parse),
@@ -237,13 +242,17 @@ registry — `ALL_PAGES`, the writer's per-page `POPULATIONS` and `LABELS` slot 
 script run as `python3 notes/scripts/foo.py` has `notes/scripts` on `sys.path`, so it imports them as
 `from catlib import ...` with no path boilerplate.
 
-**48** of the **50** scripts call the package: **11** `extract_` (all of them), **4** `build_` (all),
-**6** `measure_` (all), **2** `check_` (`check_index_links.py` and `check_summary_manuscripts.py`),
-**all 20** checkers, plus `render_reports.py`, `triage_t0.py`, `read_manuscript.py`,
-`compare_abstracts.py`, `locate_summary_quotes.py` and `refresh_summary_line_counts.py`. The two
+**49** of the **53** scripts call the package, measured by the rule `^[ \t]*(from|import) catlib` over
+each script's own source: **11** `extract_` (all of them), **4** `build_` (all), **5** `measure_`
+(`measure_checker_needles.py`, `measure_index_sizes.py`, `measure_names.py`, `measure_open_probe.py`,
+`measure_templates.py`), **2** `check_` (`check_index_links.py` and `check_summary_manuscripts.py`),
+**all 21** checkers, plus `render_reports.py`, `triage_t0.py`, `read_manuscript.py`,
+`compare_abstracts.py`, `locate_summary_quotes.py` and `refresh_summary_line_counts.py`. The four
 scripts that do not are `dump_template_slots.py`, which reaches the slot dict through
-`render_reports.py` and never touches the registry, and `verify_fleet_design.py`, which measures the
-fleet's own sources and the probe records, so it has no corpus join to import. The three summary-page readers
+`render_reports.py` and never touches the registry; `verify_fleet_design.py`, which measures the
+fleet's own sources and the probe records, so it has no corpus join to import; and
+`measure_proof_density.py` and `measure_topics.py`, which read the Sources table and the vocabulary
+directly. The three summary-page readers
 `check_summary_manuscripts.py`, `locate_summary_quotes.py` and `refresh_summary_line_counts.py` were
 moved off `verify_summaries.py` onto `catlib/summaries.py` by `math-6s7.1` — a checker serving as a
 library is the shape that port broke, and `verify_summaries.py` now has **0** importers. `math-lon.2.5` ported the last two checkers,

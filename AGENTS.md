@@ -55,11 +55,11 @@ lives in this file and nowhere else.
 
 ## Dev environment tips
 
-- Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `atomic`, `overview`, `ledger`, `preprints`,
-  `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries`, `templates`, `records` (16 modules). Import them (`from catlib import yaml as Y`);
-  do not re-implement a join in an extractor. **48** of the **52** scripts do — the rule is
-  `^[[:space:]]*(from|import) catlib`, so a deferred import inside a function counts — including
-  **all 20** checkers; the four non-importers are `dump_template_slots.py`, which reaches the slot dict
+- Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `atomic`, `promote`, `overview`, `ledger`, `preprints`,
+  `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries`, `templates`, `records` (17 modules). Import them (`from catlib import yaml as Y`);
+  do not re-implement a join in an extractor. **49** of the **53** scripts do — the rule is
+  `^[ \t]*(from|import) catlib`, so a deferred import inside a function counts — including
+  **all 21** checkers; the four non-importers are `dump_template_slots.py`, which reaches the slot dict
   through `render_reports.py` and never touches the registry, `verify_fleet_design.py`, which
   measures the fleet's own sources and the tracked probe records, so it has no corpus join to import,
   and `measure_proof_density.py` and `measure_topics.py`, which were this rule's two-importers-today
@@ -393,15 +393,15 @@ lives in this file and nowhere else.
   nothing. Prove the mode by running a writer plain, then with the flag, diffing the two reports (the
   write announcement is the only line allowed to differ) and confirming `git status --porcelain` is
   unchanged by the flagged run. The read-only gate pool is the block that runs rows with this flag.
-- The whole-tree test is the gate list at `notes/scripts/gate.sh`: **71** invocations — the **8**
+- The whole-tree test is the gate list at `notes/scripts/gate.sh`: **73** invocations — the **8**
   gated writers (`build_report_templates.py` is the writer it does not run),
   the 21 gated report-only rows (including `check_summary_manuscripts.py` and
   `locate_summary_quotes.py`, and `check_index_links.py` plain and with `--mutant`;
-  `read_manuscript.py` is the one script it does not run), and **42**
-  checker invocations: each of the 20 checkers plain and with `--mutant` (**40**), plus
+  `read_manuscript.py` is the one script it does not run), and **44**
+  checker invocations: each of the 21 checkers plain and with `--mutant` (**42**), plus
   `verify_conjecture_standing.py` plain and with `--mutant` (**2**). The list is two arrays:
   `serial_rows` (the writers in dependency order, plus `refresh_summary_line_counts.py`) run in
-  order, `pool_rows` (the **54** read-only invocations) run through `xargs -P 8` and print in the
+  order, `pool_rows` (the **56** read-only invocations) run through `xargs -P 8` and print in the
   canonical order of the list, so the report is the same bytes a serial run prints. `GATE_POOL=1`
   runs everything serially — that is the baseline the pooled report is diffed against. A row in the
   pool must spawn no writer: the render of `notes/index-links.md` runs `build_index.py` as a child,
@@ -703,9 +703,11 @@ lives in this file and nowhere else.
 - Check `notes/scripts/README.md` with `python3 notes/scripts/verify_script_ownership.py --mutant`
   before quoting any ownership figure — it derives the writer set from the scripts' own source (a
   `notes/`-rooted path constant left of `.open(..., "w")` / `.write_text(...)`, plus the `notes/index`
-  tree case, plus the one-hop receiver `out = TPL_DIR / (name)`, plus the atomic and staging cases —
-  a `write_atomic(CONST, text)` or `stage(CONST, text)` call, which is how a writer whose write moved
-  into `catlib.atomic` stays visible), blanks a module-level `mutants` / `mutant_test` / `selftest` body before reading the write
+  tree case, plus the one-hop receiver `out = TPL_DIR / (name)`, plus the package-write cases — a
+  `write_atomic(CONST, text)`, `stage(CONST, text)` or `promote(CONST, key, text)` call, resolved
+  through a package constant, an alias of one, or a locally built constant, which is how a writer
+  whose write moved into `catlib.atomic` or `catlib.promote` stays visible), blanks a module-level
+  `mutants` / `mutant_test` / `selftest` body before reading the write
   calls, classifies every file under `notes/` with the scripts excluded and flags a file no rule
   owns, re-derives every census count, requires every script named in the page **and** in the
   `notes/README.md` command block, re-derives the scripts-named-nowhere gap from
@@ -715,8 +717,20 @@ lives in this file and nowhere else.
   every time the command block is edited and would read the gap as empty the moment the naming
   lands — and recomputes the shared-basename sets
   (**1** top-level ∩ index: `README.md`; **13** index ∩ summaries slugs). It excludes
-  itself from the population, so the page's **50** scripts and **19** checkers are the run's **49** and
-  20. It flags seventeen injected mutants, each asserted against the check it targets, and writes nothing.
+  itself from the population, so the page's **53** scripts and **22** checkers are the run's **52** and
+  21. It flags seventeen injected mutants, each asserted against the check it targets, and writes nothing.
+- Check the promotion protocol with `python3 notes/scripts/verify_cache_promotion.py --mutant` before
+  quoting any cache figure — it re-derives the `catlib/promote.py` registry three ways: the writer set
+  (`ARTIFACTS` plus the one writer the protocol excludes, `measure_open_probe.py`, whose record carries
+  a wall time) against the writers table in `notes/scripts/README.md`; each writer's `L1` list against
+  the audit-hook open-mode records in `notes/probe/`, newest record per target, with the writer's own
+  outputs excluded and the check scoped to the `notes/` bucket the record prints; and every tracked
+  artifact's bytes against the cache entry under the key the registry recomputes with the canonical gate
+  args. `build_report_templates.py` is exempt from the probe check because it reads pages with
+  `git show HEAD:`, a subprocess read the `open` event cannot see. It flags eight injected mutants
+  (corrupted cache entry, deleted cache entry, removed `L1` entry, `L1` self-read, dropped writer,
+  altered page list, altered tracked page, shifted args) and restores every byte it mutates; it writes
+  nothing to the tracked tree.
   Run it twice and diff — the report is identical.
 - Check `notes/fleet-design.md` with `python3 notes/scripts/verify_fleet_design.py --mutant` before
   quoting any of its counts — it re-derives the atomicity grep (over the fleet's own sources, the
