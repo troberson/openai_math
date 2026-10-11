@@ -185,8 +185,9 @@ Answer the meta-question from joint distributions, not from anecdotes:
   125, 240, 244, 282) = 1%. The keyword regex flagged 9 and 5 were false.
 - **Disproving is a disproportionate share of output.** 44 tagged counterexample families, 74 genuine —
   about a fifth of the corpus. Counterexample-hunting is a search problem, and search is what sampling
-  is good at. Concentrated in Combinatorics 9, Differential geometry 6, Algebraic/complex geometry 5,
-  Topology 5, Algebra 4, Operator algebras 4.
+  is good at. Re-measured 2026-10-11 over the `counterex_broad` column: Combinatorics 10, Differential
+  geometry 9, Algebraic and complex geometry 8, Algebra 8, Operator algebras 7, Topology 6, Group
+  theory 5 (the values written were 9 / 6 / 5 / 5 / 4 / 4, before the merge moved the population).
 - **Where it works tracks self-containedness, not importance.** Dense: combinatorics 37/33/50/20,
   theoretical CS 40/34/73/32, functional analysis 11/10/19/16. Thin: topology 18/3/26/1,
   algebraic+complex geometry 36/8/86/9, dynamics 12/9/19/2. Each quadruple is
@@ -194,8 +195,9 @@ Answer the meta-question from joint distributions, not from anecdotes:
   table. Automated proving succeeds where arguments are finitary and self-contained; it stalls where a
   proof needs a large pre-built dependency mass.
 - **The limits are catalogued, not hidden.** 227 of 416 challenge configs are not in `main_results`;
-  150 of them in 106 families with zero main results. That is a release-authored list of what it posed
-  and did not finish — the most informative dataset about failure modes, and it is dense JSON.
+  150 of them sit in the **236** families with zero `main_results` entries. That is a release-authored
+  list of what it posed and did not finish — the most informative dataset about failure modes, and it
+  is dense JSON.
 - **Results ship as clusters.** 719/372 = 1.93 manuscripts per family. Reasoning traces exist for 10 of
   372 (2.7%) — the method is almost entirely opaque.
 
