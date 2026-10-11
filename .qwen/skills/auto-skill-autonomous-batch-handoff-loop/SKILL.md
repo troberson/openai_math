@@ -66,11 +66,15 @@ Each entry: the decision area, the **provisional choice**, and **what would forc
 A gate is not "check it looks right". Write the commands and the expected reconciliation lines:
 
 ```
-python3 notes/scripts/build_catalog.py > /tmp/r1.txt && cp notes/catalog.tsv /tmp/c1.tsv
-python3 notes/scripts/build_catalog.py > /tmp/r2.txt && cp notes/catalog.tsv /tmp/c2.tsv
-diff /tmp/c1.tsv /tmp/c2.tsv && diff /tmp/r1.txt /tmp/r2.txt     # must be byte-identical
+python3 notes/scripts/gate.py            # one pass: every row, plain and --mutant
+python3 notes/scripts/verify_cache_promotion.py   # cached bytes == bytes on the tracked path
 python3 notes/scripts/verify_summaries.py --mutant               # zero problems, zero undetected mutants
 ```
+
+The twice-run byte diff is **not** the gate: a writer's bytes are asserted against the cache entry
+under its digest key, which is stronger than the temporal coincidence of two runs. A gate list that
+runs rows in dependency order needs one pass, and the report's wall times make a byte-identical diff
+impossible — normalize them out before diffing two reports.
 
 Reconciliation lines that must not move: 372 families, 719 manuscripts, 172 formalized, 416
 challenges, 200 `main_results` entries over 189 configs, 242 scope notes, both cross-checks 0.
