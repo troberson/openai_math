@@ -532,7 +532,7 @@ def mutants():
         ("unchecked page claimed as checked", original.replace("| `verify_abstracts.py` | `notes/abstracts.md` |", "| `verify_abstracts.py` | `notes/abstracts.md`, `notes/counterexample-tag.md` |"), "md census cell"),
         ("Not checked section deleted", original.replace("## Not checked", "## Checked"), "no '## Not checked' section"),
         ("summaries count altered", original.replace("| `notes/summaries/` | **21** |", "| `notes/summaries/` | **22** |"), "census row notes/summaries/"),
-        ("templates count altered", original.replace("| `notes/templates/` | **22** |", "| `notes/templates/` | **3** |"), "census row notes/templates/"),
+        ("templates count altered", original.replace("| `notes/templates/` | **23** |", "| `notes/templates/` | **3** |"), "census row notes/templates/"),
     ]
     fails = []
     for label, mutated, needle in cases:
@@ -578,8 +578,8 @@ def mutants():
          "report table rows"),
         ("template slot count shifted", tpl_text.replace(row, row.replace("| 71 |", "| 72 |", 1), 1)
          if row else "", "template row README.md.j2"),
-        ("registry count altered", tpl_text.replace("registry: **17** entries",
-                                                    "registry: **18** entries", 1),
+        ("registry count altered", tpl_text.replace("registry: **18** entries",
+                                                    "registry: **17** entries", 1),
          "registry sentence"),
     ]
     for label, mutated, needle in tpl_cases:

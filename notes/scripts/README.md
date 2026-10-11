@@ -2,7 +2,7 @@
 
 Measured 2026-10-11 by `python3 notes/scripts/verify_script_ownership.py` — report-only, it writes
 nothing, and every count below is re-derived by that run. The page answers one question: for each of
-the **1,138** files under `notes/` (the scripts excluded), which is whose bytes. A generated file is
+the **1,139** files under `notes/` (the scripts excluded), which is whose bytes. A generated file is
 changed by editing its generator and re-rendering; a hand-written file is edited directly. Ownership
 is per file, and the checker exits 1 on a file no rule owns.
 
@@ -171,7 +171,7 @@ rows below, **2** more for `verify_conjecture_standing.py`, which the list runs 
 | `verify_conjecture_standing.py` | `notes/conjecture-standing.tsv` | plain + `--mutant` | 0.0 / 0.0 |
 | `verify_counterexample_crosscheck.py` | `notes/counterexample-crosscheck.md` | plain + `--mutant` | 0.3 / 2.4 |
 | `verify_dependency_drift.py` | `notes/dependency-drift.md`, `notes/formalization-deps.md` | plain + `--mutant` | 0.3 / 1.8 |
-| `verify_faithfulness.py` | `notes/formalization-faithfulness.md` — anchors, the count phrases re-derived by its own `main_results`/declaration/carrier/closure walk (not the writer's), the disjoint and overlap pairing tables, the `a.e.` table, and the render diff | plain + `--mutant` | 0.0 / 0.0 |
+| `verify_faithfulness.py` | `notes/formalization-faithfulness.md` — anchors, the count phrases re-derived by its own `main_results`/declaration/carrier/closure walk (not the writer's), the disjoint and overlap pairing tables, the `a.e.` table, and the render diff | plain + `--mutant` | 1.4 / 11.4 |
 | `verify_findings.py` | `notes/findings.md` | plain + `--mutant` | 103.4 / 825.3 |
 | `verify_fleet_design.py` | `notes/fleet-design.md` — anchors, the count phrases re-derived from `git`/`du`/the probe records, the purity and amplification tables | plain + `--mutant` | 0.3 / 0.5 |
 | `verify_index_design.py` | `notes/index-design.md` | plain + `--mutant` | 2.7 / 20.7 |
@@ -188,7 +188,8 @@ rows below, **2** more for `verify_conjecture_standing.py`, which the list runs 
 | `verify_verification_dirs.py` | `notes/verification-dirs.md` | plain + `--mutant` | 0.1 / 0.8 |
 
 Cost is plain seconds / `--mutant` seconds, measured 2026-10-10 as one timed pass per checker with
-the local model server loaded — a floor from one measurement, not a benchmark. The spread between
+the local model server loaded — a floor from one measurement, not a benchmark. `verify_faithfulness.py`'s
+row is measured 2026-10-11, the day that checker was promoted. The spread between
 the two columns is structural, not noise: `--mutant` re-runs the whole check once per injected
 fault, so a checker whose plain run is a full measurement pays it again per mutant.
 `verify_findings.py` is the extreme: its Pass E runs the fast extractors as subprocesses inside
@@ -307,12 +308,12 @@ The package is not in the census below: the script population is `notes/scripts/
 |---|---|---|
 | `notes/index/` | **1,049** | generated — `build_index.py` |
 | `notes/summaries/` | **21** | hand-written — the reading record |
-| `notes/templates/` | **22** | **5** hand-written index skeletons + **17** report templates built by `build_report_templates.py` |
+| `notes/templates/` | **23** | **5** hand-written index skeletons + **18** report templates built by `build_report_templates.py` |
 | `notes/upstream_history/` | **3** | hand-written — one page per upstream merge, moved from the repository root on 2026-10-10 |
 | `notes/probe/` | **5** | the audit-hook probe records the fleet-design page quotes: the 2026-10-11 writers/checkers pair `measure_open_probe.py` writes and the checker parses, the 2026-10-11 `render_reports.py` after-record that proves the repeat count fell, and the 2026-10-10 pair the page's cold-cache figures come from |
 | `notes/*.tsv` | **8** | **6** generated, **2** hand-authored |
-| `notes/*.md` | **29** | hand-written — **22** with a checker, **7** without |
-| `notes/` total, scripts excluded | **1,137** | — |
+| `notes/*.md` | **30** | hand-written — **23** with a checker, **7** without |
+| `notes/` total, scripts excluded | **1,139** | — |
 
 The generated TSVs are the six writer targets. The two hand-authored tables are:
 
@@ -355,11 +356,11 @@ excludes the checker-verified pages, allowing formatting only on the pages no ch
 
 ## Naming coverage
 
-`notes/README.md`'s command block named **34** of the 52 scripts before this pass. Eighteen are named
+`notes/README.md`'s command block named **34** of the 54 scripts before this pass. Twenty are named
 nowhere in the repo at the pinned baseline: `build_report_templates.py`, `check_summary_manuscripts.py`,
-`extract_citations.py`, `locate_summary_quotes.py`, `measure_checker_needles.py`, `measure_open_probe.py`, `measure_templates.py`,
+`extract_citations.py`, `locate_summary_quotes.py`, `measure_checker_needles.py`, `measure_faithfulness.py`, `measure_open_probe.py`, `measure_templates.py`,
 `read_manuscript.py`,
-`refresh_summary_line_counts.py`, `render_reports.py`, `verify_citations.py`, `verify_findings.py`,
+`refresh_summary_line_counts.py`, `render_reports.py`, `verify_citations.py`, `verify_faithfulness.py`, `verify_findings.py`,
 `verify_fleet_design.py`, `verify_named_conjectures.py`, `verify_page_sync.py`, `verify_upstream_history.py`,
 `dump_template_slots.py` and `verify_cache_promotion.py`. The first four are the report-template
 builder this pass promoted plus the `notes/summaries/` reading tooling and the citation extractor, so
@@ -371,8 +372,8 @@ measurements whose checker no document named; `verify_upstream_history.py` is th
 `notes/upstream_history/`, the pages that record each upstream merge, which moved under `notes/` on
 2026-10-10 and are inside this page's census; `measure_templates.py` is the census behind `notes/templates.md`, added by
 the pass that added that page; `measure_checker_needles.py` is the per-checker needle probe the
-checker-coverage bead promoted; `dump_template_slots.py` is the slot dump that prints the same dict the census measures, promoted by `math-a0r.7`; `verify_fleet_design.py` is the checker for `notes/fleet-design.md`, promoted by `math-o3a.1` together with the two probe records it parses; `verify_page_sync.py` is the checker `math-o3a.3` created when the five sync passes left the writer fleet, so the pinned baseline predates it; `measure_open_probe.py` is the audit-hook probe `math-o3a.3.4` promoted from `.qwen/tmp/a11_open_probe2.py`, so the pinned baseline predates it too; `render_reports.py` is the renderer for the seventeen report-fed pages; and `verify_cache_promotion.py` is the checker `math-o3a.6.1` created for the promotion protocol, so the pinned baseline predates it.
-All 52 are named here and in the command
+checker-coverage bead promoted; `dump_template_slots.py` is the slot dump that prints the same dict the census measures, promoted by `math-a0r.7`; `verify_fleet_design.py` is the checker for `notes/fleet-design.md`, promoted by `math-o3a.1` together with the two probe records it parses; `verify_page_sync.py` is the checker `math-o3a.3` created when the five sync passes left the writer fleet, so the pinned baseline predates it; `measure_open_probe.py` is the audit-hook probe `math-o3a.3.4` promoted from `.qwen/tmp/a11_open_probe2.py`, so the pinned baseline predates it too; `measure_faithfulness.py` is the faithfulness measurement promoted from `.qwen/tmp/faith_probe.py` by the pass that added `notes/formalization-faithfulness.md`, and `verify_faithfulness.py` is that page's checker, so the pinned baseline predates both; `render_reports.py` is the renderer for the eighteen report-fed pages; and `verify_cache_promotion.py` is the checker `math-o3a.6.1` created for the promotion protocol, so the pinned baseline predates it.
+All 54 are named here and in the command
 block. "Before this pass" is
 pinned to the commit that created this page, read at its parent, not to `HEAD`: `HEAD` moves every
 time this page is edited, so a check keyed to it re-pins the baseline on each edit, and the naming
