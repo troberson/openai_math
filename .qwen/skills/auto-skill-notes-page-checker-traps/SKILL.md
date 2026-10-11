@@ -175,7 +175,8 @@ blank line, and a page can report green on a shifted anchor whose span happens t
 
 ## 7. Report
 
-Quote the final run's report lines verbatim, the twice-run diff result, and the mutant block including
-the `clean page: clean (0 problems)` line. State the anchored-quotation count. End with what the
-checker does **not** verify: prose citations with no adjacent span, claims inherited from the records
-the page cites, and anything that would need a build.
+Quote the final run's report lines verbatim, the render-diff result (the page's bytes on disk against
+the bytes its writer renders), and the mutant block including the `clean page: clean (0 problems)`
+line. State the anchored-quotation count. End with what the checker does **not** verify: prose
+citations with no adjacent span, claims inherited from the records the page cites, and anything that
+would need a build.
