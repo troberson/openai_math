@@ -3,10 +3,12 @@ name: sweep-superseded-counts
 description: Sweep every doc, checker and generated artifact that quotes a count a later batch
   invalidated — triage a fleet of red checkers first, enumerate the stale values, fix generated
   literals in the generator, make the checker measure the figure instead of carrying it, print the
-  needles from the checker, re-target the mutants, and prove the sweep with a twice-run gate list
-  diffed against HEAD. The same sweep shape applies to a moved directory (§6a): link depth,
-  quotation-exempt links, repo-relative anchors versus page-relative links, census rules, and
-  HEAD-keyed template regeneration.
+  needles from the checker, re-target the mutants, and prove the sweep with the single gate run and
+  the promote-and-verify assertion. The same sweep shape applies to a moved directory (§6a): link
+  depth, quotation-exempt links, repo-relative anchors versus page-relative links, census rules, and
+  HEAD-keyed template regeneration; and to the bead store (§6c): open bodies are live instructions,
+  titles carry counts, and `bd update` writes the DB so the tracked JSONL must be exported before you
+  verify.
 source: auto-skill
 extracted_at: '2026-10-08T15:40:04.714Z'
 ---
@@ -190,25 +192,24 @@ script's length is a claim about a file the refactor edits.
 
 Re-measure the git state too. A handoff note said 3 commits were queued for push; live it was 5.
 
-## 5. Run the whole gate list, twice, diffed against HEAD as well as between runs
+## 5. Run the whole gate list once, and read the promote-and-verify assertion
 
 The bead's two gates are necessary, not sufficient: the sweep touched a generator, a checker, a
-generated tree, and five docs. Run everything, twice, and add the third diff:
+generated tree, and five docs. **Since 2026-10-11 the gate is one pass and the second run is gone.** Every
+writer computes its bytes once, lands them under the digest-keyed record store, and writes the same bytes
+onto the tracked path, so the test is the `verify_cache_promotion.py` row: for every tracked artifact, the
+bytes cached under the builder's key must equal the bytes on the tracked path. The driver runs the list
+once, snapshots md5 and `git status --porcelain`, and prints `rows N failures M` plus that assertion row.
 
-```
-python3 X.py > /tmp/r1.txt && cp out.tsv /tmp/a.tsv
-python3 X.py > /tmp/r2.txt && cp out.tsv /tmp/b.tsv
-diff -q /tmp/a.tsv /tmp/b.tsv && diff -q /tmp/r1.txt /tmp/r2.txt && diff -q /tmp/head.tsv /tmp/b.tsv
-```
+What the single run does **not** prove, and what you check by hand: a hand-written page moving mid-run is
+invisible to a single run and to the assertion, so `git status --porcelain` after the run must list no
+`notes/` file, and `git diff --stat HEAD` is still the check that the sweep did not silently change a
+measurement. Report-only extractors keep their "run twice and diff" test.
 
-"identical between runs" proves determinism. "Unchanged vs HEAD" proves the sweep did not silently
-change a measurement — the sweep edited `extract_links.py`, and only the vs-HEAD diff shows the other
-21 rows of `links.tsv` are untouched.
-
-Batch the fast checkers in a loop that prints `plain=N mutant=N` per script (17 of them in one loop,
-each run plain **and** `--mutant` — the two runs answer different questions). Run the slow one
-(`extract_formalization_deps.py`, minutes over 122,458 files) as a background shell while the rest
-run. Quote the reconciliation lines from the fresh runs, never from the handoff file.
+Batch the fast checkers in a loop that prints `plain=N mutant=N` per script (each run plain **and**
+`--mutant` — the two runs answer different questions). Run the slow one (minutes over 122,458 files) as a
+background shell while the rest run. Quote the reconciliation lines from the fresh runs, never from the
+handoff file.
 
 ## 6. Commit split: when files overlap across purposes, merge and say so
 
@@ -345,6 +346,44 @@ The chain, in the order that worked:
 Commit order: the code (page + checker + tracked evidence) as one commit, then the inventory sweep,
 then the template rebuild, then the doc sweeps. New files need `git add` before a pathspec commit —
 `git commit -- <new-file>` fails with "pathspec did not match any file(s) known to git".
+
+## 6c. An open bead body is a live instruction — sweep it, and export before you verify
+
+Worked 2026-10-11 on six bead bodies. A count in an **open** bead body is a live instruction — the bead's
+acceptance bar compares against it — so it is swept. A count in a **closed** bead body is history: report
+it, never rewrite it (§6a item 9).
+
+**The trap that makes the sweep look finished when it is not: `bd update` writes the database, not the
+tracked JSONL.** Verifying by reading `.beads/issues.jsonl` immediately after six `bd update` calls read all
+six bodies as the pre-edit text (byte lengths unchanged, so the check reported every one stale). Sequence:
+`bd update` → `bd export -o .beads/issues.jsonl` → verify, or verify with `bd show <id>`.
+
+The chain that worked:
+
+1. **Dump each body to a file** (parse the store with `json`) and edit only the stale numbers, keeping the
+   procedure text, the acceptance bar, and the standing directives verbatim.
+2. **Measure each count from the source that produces it**, never from the body: the generator report
+   (`build_catalog.py --check-only`), a ledger join (`tier == "T0"` and `resolves_named == "1"`), a
+   filesystem measure (`find preprints -name '*.tex' | wc -l` and the byte sum), the page's own table with
+   its checker reporting 0 problems, and `bd ready` for a queue.
+3. **Rewrite the body to record the old value and the rule that yields the new one.** The sweep is then
+   self-documenting: a later pass can tell a live claim from a documented move.
+4. **Titles carry counts too** — `bd update <id> --title "…"`. A title is the retrieval surface, the same
+   rule as a memory filename slug: a title naming "the 83 remaining …" keeps asserting the stale count after
+   the body is fixed. Fix the title in the same pass.
+5. **A stale blocker sentence is prose, not an edge.** "This child is blocked by X" where X closed months
+   ago: the `blocks` edge is satisfied, so the sentence is the stale side. Say the edge is satisfied and the
+   bead is ready; do not delete the edge.
+6. `bd update --body-file` needs an **absolute** path — it resolves relative to `<repo>/.qwen/`, not cwd.
+7. Commit the store as its own pathspec commit: `git commit -q -F msg -- .beads/issues.jsonl`.
+
+What moved in the pass worked: a first-pass comparison 206/64/111/95 → **203/62/109/94** (the page's Summary
+table, checker 0 problems); a tier band 83/124 over a T0 of 137 → **78/118** inside a T0 of 130 families and
+244 manuscripts; a five-discipline group 131/272 → **132/273**; a twelve-discipline group 137/266 →
+**141/271**, its formalized split 123 of 268 (59/64) → **163 of 273** (79/84), its unformalized denominator
+560 of 722 → **547 of 719 listed**; a coverage denominator 722 → **719 listed** (749 dirs); an FTS surface
+7,729 files / 128 MB → **8,007 / 129 MB**. Two titles fixed. The three reading bands (73/146, 37/119, 8/46)
+reproduced exactly from a fresh `parse_overview()`, so they were verified, not changed.
 
 ## 7. Report
 
