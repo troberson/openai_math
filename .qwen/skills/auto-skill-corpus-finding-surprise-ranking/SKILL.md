@@ -55,11 +55,11 @@ That count reproduces, and its conclusion does not. Measured 2026-10-08 by
   ownership test: **10** cross-family over 417 files, **12** over 500.
 - The corpus is lowercased, not normalized. Normalizing it (punctuation stripped, every `the` dropped)
   and using the full title gives **23** any / **12** cross-family — the rule shipped in
-  `notes/links.tsv`. Corpus normalization is the dominant knob: it moves 5 to 23.
+  `notes/tables/links.tsv`. Corpus normalization is the dominant knob: it moves 5 to 23.
 
 Meanwhile the release's own citation edges are in those same bibliographies as URLs: **393**
 release-labelled `.bib` entries resolve to **391** manuscript→manuscript edges over **156 of 372**
-families, **104** crossing a family boundary, plus **211** body hrefs (`notes/links.tsv`). The
+families, **104** crossing a family boundary, plus **211** body hrefs (`notes/tables/links.tsv`). The
 manuscripts *do* cite each other; a title phrase is simply not how the release writes a citation.
 
 So the course change is narrower than "consequence is unmeasurable". What is unmeasurable is the
@@ -81,7 +81,7 @@ shape → 139 of 372 families. Cross-tab it against the formalization tier befor
 
 Quote the set with its rule: `T3 101 T2 61 T0 48` is not a row of either — it splices the 248-set's
 T3/T2 counts onto the 139-set's T0 count and sums to 210. Measured 2026-10-08 from
-`notes/catalog.tsv`; the 139 rows in `notes/conjecture-standing.tsv` carry the 139-set split.
+`notes/tables/catalog.tsv`; the 139 rows in `notes/tables/conjecture-standing.tsv` carry the 139-set split.
 
 **Tier and named-resolution are uncorrelated.** 48 families that resolve a named conjecture have zero
 formalization signal. Lead with that: the corpus's boldest claims are its least-certified ones. It is
@@ -126,7 +126,7 @@ Ship it as a table with a **`prior_confidence`** column. The frontier is exactly
 thinnest and stalest, and Tier 3 is what a low-confidence prior looks like when checked. Confidence is
 in the *prior*, not in the result.
 
-Shipped 2026-10-07 as **`notes/conjecture-standing.tsv`** — 139 rows, 10 columns
+Shipped 2026-10-07 as **`notes/tables/conjecture-standing.tsv`** — 139 rows, 10 columns
 (`fam discipline tier conjecture standing_prior_2025 prior_confidence release_claim gap
 surprise_tier abstract_line`), with `notes/conjecture-standing.md` for the scheme and
 `notes/scripts/verify_conjecture_standing.py` as its checker. Measured yields: surprise tier

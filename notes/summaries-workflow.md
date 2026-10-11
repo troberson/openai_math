@@ -344,8 +344,8 @@ A batch is one bd issue. Per page, in this order:
 ## Gates (run at every batch boundary, quote numbers only from this run)
 
 ```
-python3 notes/scripts/build_catalog.py > /tmp/r1.txt && cp notes/catalog.tsv /tmp/c1.tsv
-python3 notes/scripts/build_catalog.py > /tmp/r2.txt && cp notes/catalog.tsv /tmp/c2.tsv
+python3 notes/scripts/build_catalog.py > /tmp/r1.txt && cp notes/tables/catalog.tsv /tmp/c1.tsv
+python3 notes/scripts/build_catalog.py > /tmp/r2.txt && cp notes/tables/catalog.tsv /tmp/c2.tsv
 diff /tmp/c1.tsv /tmp/c2.tsv && diff /tmp/r1.txt /tmp/r2.txt     # must be byte-identical
 python3 notes/scripts/verify_summaries.py --mutant                # zero problems, zero undetected mutants
 python3 notes/scripts/check_summary_manuscripts.py                # 0 pages with an off-family manuscript

@@ -2,7 +2,7 @@
 name: proof-triage
 description: >-
   Categorize the proofs in the OpenAI Research Catalog by claim shape and by the evidence that
-  ships with each result family, using the git-tracked ledger at notes/catalog.tsv. Use when
+  ships with each result family, using the git-tracked ledger at notes/tables/catalog.tsv. Use when
   asked what kind of result a family is (resolution, bound, counterexample, classification,
   conditional, undecidability), how much of a family is formalized, which families have scope
   notes, comparator challenges, reasoning traces, or verification dirs, how to triage the
@@ -57,19 +57,19 @@ behaviour and rules only.
    Widening `counterexample` would move 6 T0 families into bucket C, where first match currently
    leaves them. Quote both counts as floors; see `notes/resolution-tag.md` and
    `notes/counterexample-tag.md`.
-8. **A prior is not a measurement.** `notes/conjecture-standing.tsv` records what the assistant's
+8. **A prior is not a measurement.** `notes/tables/conjecture-standing.tsv` records what the assistant's
    training data says about a conjecture's standing at an early-2025 cutoff, self-rated by
    `prior_confidence`. Quote it as the prior it is, pair every row with its confidence, and never
    present a surprise tier as a property of the result. No row may assert consequence. The reason is
    not that the corpus lacks citation structure — it has 391 measured manuscript→manuscript edges
-   (`notes/links.tsv`) — it is that the edges are **untyped**, so they record a citation choice, not
+   (`notes/tables/links.tsv`) — it is that the edges are **untyped**, so they record a citation choice, not
    a dependence. Run `notes/scripts/verify_conjecture_standing.py` before quoting rows.
-9. **A declared pin is not a build.** `notes/formalization-deps.tsv` records what the declaration
+9. **A declared pin is not a build.** `notes/tables/formalization-deps.tsv` records what the declaration
    layers say. No `lake` run means no pin is verified buildable and no patch is verified applicable.
    Import counts are direct statements over `lean/OAI/**/*.lean` only — quote the scope with the
    number, and never present them as the transitive closure. `lean/lake-manifest.json` is generated,
    so it is evidence of a resolution event, not of a build in this repo.
-10. **Quote an edge with the rule that yields its count.** `notes/links.tsv` is the typed-edge
+10. **Quote an edge with the rule that yields its count.** `notes/tables/links.tsv` is the typed-edge
     inventory: 22 rows, 7 fields, every count from `python3 notes/scripts/extract_links.py`.
     426 is scope-note link **occurrences** and 416 is **distinct configs** (the ledger's `chal`
     column is the deduped 416); `mainres` sums to 189 unique configs while the yaml carries 200
@@ -83,7 +83,7 @@ behaviour and rules only.
 
 1. **Refresh** — run the generator; read its report. Every number quoted in `notes/README.md`
    comes from that report, so re-run before quoting counts.
-2. **Look up** — filter `notes/catalog.tsv` by `fam`, `tier`, `shapes`, `resolves_named`,
+2. **Look up** — filter `notes/tables/catalog.tsv` by `fam`, `tier`, `shapes`, `resolves_named`,
    `counterex_broad`, `discipline`, `trace`. Parse with `csv.DictReader(..., delimiter='\t')`, not
    `split(',')`.
 3. **Read the primary text** — the ledger is an index, not the evidence. For any claim about what
@@ -105,7 +105,7 @@ behaviour and rules only.
 
 | Path | What it is | Read when |
 |---|---|---|
-| `notes/catalog.tsv` | 372-row ledger, 22 columns, one row per family | Any lookup, filter, or count |
+| `notes/tables/catalog.tsv` | 372-row ledger, 22 columns, one row per family | Any lookup, filter, or count |
 | `notes/README.md` | Column definitions, tier defs, shape yields, discipline table, traps | Before quoting any number |
 | `notes/scripts/build_catalog.py` | Generator (stdlib only, **185** lines measured 2026-10-11 — the joins live in `catlib/ledger.py` / `catlib/overview.py`) | Regenerating, or adding a column |
 | `notes/scripts/triage_t0.py` | Buckets the 130 T0 families by claim shape (reads the ledger, writes nothing) | Any T0 count, bucket, or priority question |
@@ -113,17 +113,17 @@ behaviour and rules only.
 | `notes/conditional.md` | Manual pass: what each conditional family assumes, and dropped flags | Before calling any family conditional |
 | `notes/resolution-tag.md` | Named-target rule: yield, the 94-family reading verdict, the `resolves_named` decision | Before quoting a resolution count or changing a tag |
 | `notes/counterexample-tag.md` | Counterexample phrase rule: yield, the 30-family reading verdict, the `counterex_broad` decision | Before quoting a counterexample count, or checking a family the tag misses |
-| `notes/conjecture-standing.tsv` | 139 rows: named conjecture, **training-data prior** on its standing as of early 2025, `prior_confidence`, the release claim, the gap, surprise tier, `overview.tex` anchor | Any "how surprising is this" or conjecture-standing question |
+| `notes/tables/conjecture-standing.tsv` | 139 rows: named conjecture, **training-data prior** on its standing as of early 2025, `prior_confidence`, the release claim, the gap, surprise tier, `overview.tex` anchor | Any "how surprising is this" or conjecture-standing question |
 | `notes/conjecture-standing.md` | The tier scheme, the 139-vs-233 selection, the counts, the 145 conflict row, what the table cannot say | Before quoting a standing row as evidence |
 | `notes/scripts/verify_conjecture_standing.py` | Proves the standing table: fam set, ledger discipline/tier, anchors against `\resultentry`, confidence vocabulary, abstract-name fidelity, no consequence language | Before quoting any standing row |
-| `notes/formalization-deps.tsv` | 31 rows: 30 declared upstream libraries with pinned commits, yaml relationship, direct import counts, patch file and line count, plus BernoulliRegular as `lakefile_declared=n` | Any dependency, pin, or upstream-library question |
+| `notes/tables/formalization-deps.tsv` | 31 rows: 30 declared upstream libraries with pinned commits, yaml relationship, direct import counts, patch file and line count, plus BernoulliRegular as `lakefile_declared=n` | Any dependency, pin, or upstream-library question |
 | `notes/formalization-deps.md` | The import rule and its scope, the `.git` join trap, the yaml ordering claim with its 5 violations, the 19 zero-import rows, the manifest reconciliation, the BernoulliRegular finding, what was not checked | Before quoting a dependency count, or claiming a pin is buildable |
 | `notes/scripts/extract_formalization_deps.py` | Writes the deps table and prints its reconciliation; reads 122,458 files, refuses to write when a join breaks | Regenerating, or extending the deps table |
-| `notes/links.tsv` | 22-row typed-edge inventory: every relation type in the release with source, pattern, count, detail, the command that computes it, and what the edge does **not** mean | Any "what connects X to Y" question, and the index-schema decision |
+| `notes/tables/links.tsv` | 22-row typed-edge inventory: every relation type in the release with source, pattern, count, detail, the command that computes it, and what the edge does **not** mean | Any "what connects X to Y" question, and the index-schema decision |
 | `notes/links.md` | The 426-vs-416 and 200/189/136 reconciliations, the href citation layer, the three name relations as three rows, the unreproduced "14", the negatives, what was not checked | Before quoting any edge count |
-| `notes/scripts/extract_links.py` | Writes `notes/links.tsv` and prints the per-edge report; 20 seconds, deterministic | Regenerating, or adding an edge type |
-| `notes/sources.tsv` + `notes/sources.md` | Per-manuscript source surface (root count, resolved main file, section/proof/statement counts, `.bib` count, `.tex` bytes) and the page that quotes it | Any per-manuscript count; `verify_sources.py --mutant` before quoting |
-| `notes/subfindings.tsv` + `notes/subfinding-pairs.md` | 719 manuscript rows + 426 comparator rows typed by `kind`; the 49-family abstract↔title pairing | Before quoting a display title or a sub-finding pair |
+| `notes/scripts/extract_links.py` | Writes `notes/tables/links.tsv` and prints the per-edge report; 20 seconds, deterministic | Regenerating, or adding an edge type |
+| `notes/tables/sources.tsv` + `notes/sources.md` | Per-manuscript source surface (root count, resolved main file, section/proof/statement counts, `.bib` count, `.tex` bytes) and the page that quotes it | Any per-manuscript count; `verify_sources.py --mutant` before quoting |
+| `notes/tables/subfindings.tsv` + `notes/subfinding-pairs.md` | 719 manuscript rows + 426 comparator rows typed by `kind`; the 49-family abstract↔title pairing | Before quoting a display title or a sub-finding pair |
 | `notes/scope-exclusions.md` | What each of the 242 scope notes says it leaves out; 121 sections state no exclusion | Before claiming what a formalization excludes |
 | `notes/verification-dirs.md` | The 30 certificate bundles, each entry point, the family-348 reading | Before quoting a `verification` column value |
 | `notes/index/` + `notes/index-design.md` + `notes/index-links.md` | The rendered index (1,033 pages + 16 tables), the schema decision, the link check | Any family / discipline / topic / name lookup |
@@ -131,7 +131,7 @@ behaviour and rules only.
 | `notes/proof-density.md` | The tested size-proxy result: three raw measures clear the bar and sit within 0.03 of the tex-KB control; both density measures are NULL | Before claiming a proof count discriminates a tier |
 | `notes/formalization-faithfulness.md` | The Lean-vs-manuscript faithfulness read: 189 resolved declarations, 61 carrier bodies, the literal pairing, the `a.e.` surface | Before claiming a formalized statement matches the manuscript |
 | `notes/named-results.md` | The named-result inventory the manuscript **statements** carry, and the applied 233 → 248 `resolves_named` scope swap | Before quoting a `resolves_named` count |
-| `notes/abstracts.md` + `notes/abstracts.tsv` | The overview abstract is a rewritten paraphrase: 0 of 719 manuscript and 0 of 372 family best matches read identical | Before quoting a claim-shape tag as a claim about a manuscript |
+| `notes/abstracts.md` + `notes/tables/abstracts.tsv` | The overview abstract is a rewritten paraphrase: 0 of 719 manuscript and 0 of 372 family best matches read identical | Before quoting a claim-shape tag as a claim about a manuscript |
 | `notes/citations.md` | The shared-bibliography population: 521 `.bib` files, 13,802 entries, 8,775 distinct works, 2,251 shared | Before quoting a shared-work or co-citation count |
 | `notes/scripts/README.md` | The ownership manifest — which files are generated and which are hand-written, and the gate command for every script | Before editing anything under `notes/` |
 | `notes/upstream_history/` | Per-upstream-commit merge records | Before quoting what upstream changed |

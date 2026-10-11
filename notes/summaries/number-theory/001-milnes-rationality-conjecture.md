@@ -279,7 +279,7 @@ and S15 sit under the manuscript root, S1–S2 at the repository root, S13–S14
 | S11 | [`preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/build/figures/two-transports.tex`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/build/figures/two-transports.tex) | 28 | figure source — panels at [S11:8], [S11:17] |
 | S12 | [`preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/README.md`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/README.md) | 21 | title, author, date, bibtex citation stub; the version note at [S12:19–21] names the September-23 directory as the previous version |
 | S13 | [`notes/t0-triage.md`](../../t0-triage.md) | 897 | 001 in the T0 **classification** bucket (K), not the resolution bucket, at [S13:107]; the 001 + 032 chain at [S13:501]. Ours, not in the release |
-| S14 | [`notes/catalog.tsv`](../../catalog.tsv) | 373 | the ledger row `fam=001`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S14 | [`notes/tables/catalog.tsv`](../../tables/catalog.tsv) | 373 | the ledger row `fam=001`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
 | S15 | [`preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/paper.pdf`](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/paper.pdf) | — | the manuscript as shipped |
 
 Links are relative to this page: `../../../` is the repository root and `../../` is `notes/`, so every

@@ -34,13 +34,13 @@ finds **10** writers over **57** scripts.
 
 | Script | Writes | Gate | Report feeds |
 |---|---|---|---|
-| `build_catalog.py` | `notes/catalog.tsv` | single run; cached bytes == promoted bytes under the key | `notes/README.md`, `notes/findings.md` |
-| `build_sources.py` | `notes/sources.tsv` | single run; cached bytes == promoted bytes under the key | `notes/sources.md` |
+| `build_catalog.py` | `notes/tables/catalog.tsv` | single run; cached bytes == promoted bytes under the key | `notes/README.md`, `notes/findings.md` |
+| `build_sources.py` | `notes/tables/sources.tsv` | single run; cached bytes == promoted bytes under the key | `notes/sources.md` |
 | `build_index.py` | `notes/index/` | single run; cached bytes == promoted bytes for all 1,049 files | `notes/index-links.md` |
-| `compare_abstracts.py` | `notes/abstracts.tsv` | `--tsv` only; single run; cached bytes == promoted bytes under the key | `notes/abstracts.md` |
-| `extract_formalization_deps.py` | `notes/formalization-deps.tsv` | single run; cached bytes == promoted bytes under the key | `notes/dependency-drift.md` |
-| `extract_links.py` | `notes/links.tsv` | single run; cached bytes == promoted bytes under the key | `notes/links.md` |
-| `extract_subfindings.py` | `notes/subfindings.tsv` | single run; cached bytes == promoted bytes under the key | `notes/subfinding-pairs.md` |
+| `compare_abstracts.py` | `notes/tables/abstracts.tsv` | `--tsv` only; single run; cached bytes == promoted bytes under the key | `notes/abstracts.md` |
+| `extract_formalization_deps.py` | `notes/tables/formalization-deps.tsv` | single run; cached bytes == promoted bytes under the key | `notes/dependency-drift.md` |
+| `extract_links.py` | `notes/tables/links.tsv` | single run; cached bytes == promoted bytes under the key | `notes/links.md` |
+| `extract_subfindings.py` | `notes/tables/subfindings.tsv` | single run; cached bytes == promoted bytes under the key | `notes/subfinding-pairs.md` |
 | `render_reports.py` | `notes/README.md`, `notes/abstracts.md`, `notes/dependency-drift.md`, `notes/index-design.md`, `notes/index-links.md`, `notes/links.md`, `notes/named-results.md`, `notes/names.md`, `notes/proof-density.md`, `notes/sources.md`, `notes/verification-dirs.md`, `notes/scope-exclusions.md`, `notes/topics.md`, `notes/t0-chains.md`, `notes/subfinding-pairs.md`, `notes/counterexample-crosscheck.md`, `notes/formalization-faithfulness.md`, `notes/templates.md` | single run; cached bytes == promoted bytes for all 18 pages | the eighteen report-fed pages |
 | `build_report_templates.py` | `notes/templates/report` | not in `gate.py` — it reads each page with `git show HEAD:`, so a gate run would rewrite templates from committed bytes; run explicitly with 0 args (all eighteen pages) or 2 (one page) after a writer's slot dict changes | the eighteen page templates; the registry, slot dicts and needle derivation it reads are in `catlib/templates.py` |
 | `measure_open_probe.py` | `notes/probe` | not in `gate.py` — a record carries a wall time per target, so a run-1/run-2 byte diff of a record is a timing artifact, not a proof; run explicitly over the purity and amplification targets, appending stdout to build a multi-target record | the two probe records `verify_fleet_design.py` parses |
@@ -49,7 +49,7 @@ Six writers emit one TSV each. `build_index.py` is the one-to-many case: it rend
 **1,033** `.md` pages and **16** `.tsv` tables. `render_reports.py` renders the eighteen report-fed pages
 from the templates `build_report_templates.py` builds from the committed page and the slot dict that
 writer supplies. `compare_abstracts.py` is the conditional case: its
-default run writes nothing and only `--tsv` touches `notes/abstracts.tsv`.
+default run writes nothing and only `--tsv` touches `notes/tables/abstracts.tsv`.
 
 All **10** writers take `--check-only`: the run does its full measurement, prints its report, and writes
 nothing. Measured 2026-10-11 by running each writer plain and then with the flag — the report is
@@ -180,7 +180,7 @@ list kept outside its loop and the scheduler lists as their own entries.
 | `verify_cache_promotion.py` | `catlib/promote.py` — the registry shape against the writers table, the L1 lists against the audit-hook records, and the cached bytes against every tracked artifact under its key | plain + `--mutant` | 1.0 / 7.0 |
 | `verify_citations.py` | `notes/citations.md` | plain + `--mutant` | 1.4 / 2.8 |
 | `verify_conditional.py` | `notes/conditional.md` | plain + `--mutant` | 0.0 / 0.0 |
-| `verify_conjecture_standing.py` | `notes/conjecture-standing.tsv` | plain + `--mutant` | 0.0 / 0.0 |
+| `verify_conjecture_standing.py` | `notes/tables/conjecture-standing.tsv` | plain + `--mutant` | 0.0 / 0.0 |
 | `verify_counterexample_crosscheck.py` | `notes/counterexample-crosscheck.md` | plain + `--mutant` | 0.3 / 2.4 |
 | `verify_dependency_drift.py` | `notes/dependency-drift.md`, `notes/formalization-deps.md` | plain + `--mutant` | 0.3 / 1.8 |
 | `verify_faithfulness.py` | `notes/formalization-faithfulness.md` — anchors, the count phrases re-derived by its own `main_results`/declaration/carrier/closure walk (not the writer's), the disjoint and overlap pairing tables, the `a.e.` table, and the render diff | plain + `--mutant` | 1.4 / 11.4 |
@@ -193,7 +193,7 @@ list kept outside its loop and the scheduler lists as their own entries.
 | `verify_scope_exclusions.py` | `notes/scope-exclusions.md` | plain + `--mutant` | 0.1 / 0.2 |
 | `verify_sources.py` | `notes/sources.md` | plain + `--mutant` | 1.9 / 13.2 |
 | `verify_subfinding_pairs.py` | `notes/subfinding-pairs.md` | plain + `--mutant` | 0.1 / 0.1 |
-| `verify_subfindings.py` | `notes/subfindings.tsv` | plain + `--mutant` | 0.1 / 0.6 |
+| `verify_subfindings.py` | `notes/tables/subfindings.tsv` | plain + `--mutant` | 0.1 / 0.6 |
 | `verify_summaries.py` | `notes/summaries/` | plain + `--mutant`, no page argument | 0.3 / 1.0 |
 | `verify_t0_chains.py` | `notes/t0-chains.md` | plain + `--mutant` | 0.1 / 0.2 |
 | `verify_upstream_history.py` | `notes/upstream_history/` — the three pages | plain + `--mutant` | 0.7 / 0.5 |
@@ -248,7 +248,7 @@ and then writes the same bytes onto the tracked path, and `cached_text()`), `ato
 a crash never leaves a half-written tracked file; every writer's write site goes through it, which is
 why the fleet's atomicity grep reads 1 match, not 9), `overview.py` (the `\resultentry` parse),
 `ledger.py`
-(`notes/catalog.tsv` and the claim-shape rules), `preprints.py` (the 749 dirs versus the 719 listed
+(`notes/tables/catalog.tsv` and the claim-shape rules), `preprints.py` (the 749 dirs versus the 719 listed
 manuscripts), `text.py` (the six normalizers), `yaml.py` (`main_results_entries()`, the scope-note
 spans, the Lean-tree file list), `anchors.py` (the `path:line` anchor grammar, the fenced-block scan
 and the nearest-preceding-anchor read the page checkers share), `bib.py` (the `.bib` entry parse, the
@@ -285,7 +285,7 @@ library is the shape that port broke, and `verify_summaries.py` now has **0** im
 did not move (measured 2026-10-09 with `--enable=R0801` over 55 files, every cluster reported against
 `catlib/anchors.py`; see `notes/linting.md`). What deliberately stays outside the package is a **read
 shape**, not a parse: `verify_upstream_history.py` reads `lean/formalization.yaml` and
-`notes/catalog.tsv` from a **revision** through `git show <rev>:`, so the package gained
+`notes/tables/catalog.tsv` from a **revision** through `git show <rev>:`, so the package gained
 `parse_yaml_text` / `parse_overview_text` / `read_rows_from_text` — text-level cores its disk-level
 `parse_yaml` / `parse_overview` / `read_rows` delegate to — rather than a git reader; and
 `build_index.py` keeps its own `TRIPLE` regex. The summary-page read is in the package:
@@ -331,7 +331,7 @@ The package is not in the census below: the script population is `notes/scripts/
 | `notes/templates/` | **23** | **5** hand-written index skeletons + **18** report templates built by `build_report_templates.py` |
 | `notes/upstream_history/` | **3** | hand-written — one page per upstream merge, moved from the repository root on 2026-10-10 |
 | `notes/probe/` | **5** | the audit-hook probe records the fleet-design page quotes: the 2026-10-11 writers/checkers pair `measure_open_probe.py` writes and the checker parses, the 2026-10-11 `render_reports.py` after-record that proves the repeat count fell, and the 2026-10-10 pair the page's cold-cache figures come from |
-| `notes/*.tsv` | **8** | **6** generated, **2** hand-authored |
+| `notes/tables/*.tsv` | **8** | **6** generated, **2** hand-authored |
 | `notes/*.md` | **30** | hand-written — **23** with a checker, **7** without |
 | `notes/` total, scripts excluded | **1,139** | — |
 
@@ -339,8 +339,8 @@ The generated TSVs are the six writer targets. The two hand-authored tables are:
 
 | Table | Why it is hand-authored |
 |---|---|
-| `notes/topics.tsv` | The curated topic vocabulary. `measure_topics.py --check` re-measures its 92 rows and exits 1 when a recorded count drifts; `build_index.py` reads it and renders `notes/index/topics-rendered.tsv`. A generated file inside `notes/index/` is overwritten by the next render, which is why the vocabulary lives above that tree. |
-| `notes/conjecture-standing.tsv` | The training-data prior. Its `standing_prior_2025` column is the assistant's memory at an early-2025 cutoff, self-rated by `prior_confidence`; no script can derive a memory, and `verify_conjecture_standing.py` checks the rows against the ledger and `overview.tex` rather than regenerating them. |
+| `notes/tables/topics.tsv` | The curated topic vocabulary. `measure_topics.py --check` re-measures its 92 rows and exits 1 when a recorded count drifts; `build_index.py` reads it and renders `notes/index/topics-rendered.tsv`. A generated file inside `notes/index/` is overwritten by the next render, which is why the vocabulary lives outside that tree. |
+| `notes/tables/conjecture-standing.tsv` | The training-data prior. Its `standing_prior_2025` column is the assistant's memory at an early-2025 cutoff, self-rated by `prior_confidence`; no script can derive a memory, and `verify_conjecture_standing.py` checks the rows against the ledger and `overview.tex` rather than regenerating them. |
 
 The 7 pages with no checker are `notes/README.md`, `notes/conjecture-standing.md`,
 `notes/counterexample-tag.md`, `notes/linting.md`, `notes/resolution-tag.md`,
@@ -358,14 +358,14 @@ Measured over the top level and the index tree: **1** shared basename — `READM
 `notes/README.md` is the ledger readme and `notes/index/README.md` is the index entry point, so that
 pair is harmless.
 
-The tree used to carry a second, load-bearing collision. `notes/topics.tsv` is the hand-authored
+The tree used to carry a second, load-bearing collision. `notes/tables/topics.tsv` is the hand-authored
 vocabulary and `notes/index/topics.tsv` was generated from it, with adjacent schemas —
 `term pattern fams title abstract scope path status` in both, then `note` in the hand-authored file
 and `page` in the rendered one — so a reference to `topics.tsv` without its directory was ambiguous,
 and a `notes/**/topics.tsv` glob read both. The rendered table is now
-`notes/index/topics-rendered.tsv`, which says which layer it measures; the vocabulary's path is
-unchanged, and `measure_topics.py` and `AGENTS.md` both name it. `build_index.py` reads the top-level
-file and writes the rendered one.
+`notes/index/topics-rendered.tsv`, which says which layer it measures, and the vocabulary moved to
+`notes/tables/` on 2026-10-11, so the two names cannot collide again. `measure_topics.py` and
+`AGENTS.md` both name the vocabulary; `build_index.py` reads it and writes the rendered table.
 
 The index tree and the summaries tree share **13** page slugs — the families that carry both a rendered
 page and a reading summary, which is the pairing the index reports.

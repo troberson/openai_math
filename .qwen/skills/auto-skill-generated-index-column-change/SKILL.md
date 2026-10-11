@@ -11,7 +11,7 @@ extracted_at: '2026-10-07T08:19:15.882Z'
 
 For repos whose analysis lives in a generated artifact (a TSV ledger, an index, a report) plus
 scripts that consume it. Worked out on the OpenAI Research Catalog
-(`/home/tamara/Downloads/_Git/math`): `notes/scripts/build_catalog.py` → `notes/catalog.tsv`
+(`/home/tamara/Downloads/_Git/math`): `notes/scripts/build_catalog.py` → `notes/tables/catalog.tsv`
 (372 rows), consumed by `notes/scripts/triage_t0.py` and described in `notes/README.md`,
 `notes/t0-triage.md`, and a project skill.
 
@@ -122,7 +122,7 @@ column:
 ```python
 import csv
 old = list(csv.DictReader(open("/tmp/old.tsv", encoding="utf-8"), delimiter="\t"))   # git show HEAD:...
-new = list(csv.DictReader(open("notes/catalog.tsv", encoding="utf-8"), delimiter="\t"))
+new = list(csv.DictReader(open("notes/tables/catalog.tsv", encoding="utf-8"), delimiter="\t"))
 oldcols, newcols = list(old[0]), list(new[0])
 print([c for c in newcols if c not in oldcols], [c for c in oldcols if c not in newcols])
 print(sum(1 for o, n in zip(old, new) for c in oldcols if o[c] != n[c]))
@@ -132,7 +132,7 @@ Expected: added `['resolves_named']`, removed `[]`, **0 differences in pre-exist
 all 372 rows. Also:
 
 - Regenerate **once** and run `verify_cache_promotion.py`: the writer lands its bytes under the
-  digest key and the assertion compares the cached bytes with the bytes on `notes/catalog.tsv`. The
+  digest key and the assertion compares the cached bytes with the bytes on `notes/tables/catalog.tsv`. The
   twice-run byte diff is gone (realized 2026-10-11).
 - Re-run every downstream consumer and compare to its *recorded* numbers (buckets C 16, R 46, B 27,
   K 8, U 12, O 2, N 19 over 130 families / 244 manuscripts; the values recorded when this method was

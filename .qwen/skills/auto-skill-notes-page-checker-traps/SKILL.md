@@ -17,7 +17,7 @@ checker defect, not a page defect.
 ## 0. The checker's contract, fixed before the first line
 
 - **Write nothing.** If the generator's `main()` writes the ledger (here `build_catalog.main()` writes
-  `notes/catalog.tsv`), a checker that imports and calls it mutates the repo. **Copy the row builder**
+  `notes/tables/catalog.tsv`), a checker that imports and calls it mutates the repo. **Copy the row builder**
   into the checker and rebuild rows from the shipped files.
 - **The report line is the test.** Print the same figure the page quotes, with the rule attached
   (`main_results 200 entries over 189 configs`, not `189 over 189`). A report line that prints a

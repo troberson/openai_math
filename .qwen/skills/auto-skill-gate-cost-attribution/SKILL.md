@@ -117,7 +117,7 @@ probed at **154,407 opens / 12,309 distinct / 142,098 repeats (92 %)**, rchar **
 
 ```
 58  overview.tex
-36  notes/catalog.tsv
+36  notes/tables/catalog.tsv
 22  preprints/<slug>/build/main.tex   ← for every one of the 719 manuscript dirs
 ```
 
@@ -183,7 +183,7 @@ A memoised read is safe **only for immutable release inputs**. Find every place 
 file and then reads it back in the same run:
 
 - `render_reports.py` runs `extract_links.py` as a child (comment: "extract_links.py writes
-  notes/links.tsv, and the renderer must" see fresh bytes) and reads `LINKS_TSV` **after** it;
+  notes/tables/links.tsv, and the renderer must" see fresh bytes) and reads `LINKS_TSV` **after** it;
   same for `build_index.py`.
 - So: cache `preprints/**`, `lean/**`, `overview.tex`, `CONTENTS.md`, `reasoning_traces/**`,
   `lean/docs/**`. **Exclude** `notes/*.tsv`, `notes/index/**`, `notes/summaries/**`.

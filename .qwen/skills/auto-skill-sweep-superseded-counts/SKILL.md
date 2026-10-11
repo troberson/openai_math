@@ -52,7 +52,7 @@ record lists, mutant `replace()` targets, and text emitted into generated pages.
 ## 2. Fix a generated literal in the generator, never in the generated page
 
 `notes/index/README.md:228` carries the link figure, and the string lives in `build_index.py`
-(lines 911-913). `notes/links.tsv:23` is emitted by `extract_links.py`. Editing the generated page
+(lines 911-913). `notes/tables/links.tsv:23` is emitted by `extract_links.py`. Editing the generated page
 desyncs it from the generator, and the next render silently reverts your fix.
 
 ```python

@@ -555,6 +555,6 @@ Section map, read from the manuscript's own include list [S3:49–58]:
 | S18 | [`lean/OAI/Analysis/VlasovMaxwell/Main.lean`](../../../lean/OAI/Analysis/VlasovMaxwell/Main.lean) | 54 | Formalized main theorem |
 | S19 | [`lean/OAI/Analysis/VlasovMaxwell/Model.lean`](../../../lean/OAI/Analysis/VlasovMaxwell/Model.lean) | 109 | Formalized model scaffolding |
 | S20 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1,783 | Release index of papers and results |
-| S21 | [`notes/catalog.tsv`](../../../notes/catalog.tsv) | 373 | Reading ledger row for family 362 |
+| S21 | [`notes/tables/catalog.tsv`](../../../notes/tables/catalog.tsv) | 373 | Reading ledger row for family 362 |
 | S22 | [`reasoning_traces/relativistic-vlasov-maxwell.pdf`](../../../reasoning_traces/relativistic-vlasov-maxwell.pdf) | — | Published reasoning trace |
 | S23 | [`paper.pdf`](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/paper.pdf) | — | Manuscript PDF |
