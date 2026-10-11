@@ -221,7 +221,7 @@ not survive a re-run.
 | ID | File | Lines | Role |
 |---|---|---|---|
 | S1 | [`notes/catalog.tsv`](catalog.tsv) | 373 | The generated ledger: 372 rows, 22 columns |
-| S2 | [`notes/scripts/build_catalog.py`](scripts/build_catalog.py) | 178 | The generator whose report is the test for every ledger count |
+| S2 | [`notes/scripts/build_catalog.py`](scripts/build_catalog.py) | 180 | The generator whose report is the test for every ledger count |
 | S3 | [`overview.tex`](../overview.tex) | 859 | The release's own 372 `\resultentry` entries and abstracts |
 | S4 | [`lean/formalization.yaml`](../lean/formalization.yaml) | 1783 | Tiers, `main_results`, automation and review statements |
 | S5 | [`notes/scope-exclusions.md`](scope-exclusions.md) | 316 | The 242 scope notes read for exclusions |
@@ -229,7 +229,7 @@ not survive a re-run.
 | S7 | [`notes/counterexample-tag.md`](counterexample-tag.md) | 203 | The `counterex_broad` phrase rule and the 30 flag-only readings |
 | S8 | [`notes/conditional.md`](conditional.md) | 261 | The conditional-tag reading pass and the comparator-`sorry` reading |
 | S9 | [`notes/abstracts.md`](abstracts.md) | 381 | The overview-abstract vs manuscript-abstract comparison |
-| S10 | [`notes/scripts/compare_abstracts.py`](scripts/compare_abstracts.py) | 447 | The generator of that comparison |
+| S10 | [`notes/scripts/compare_abstracts.py`](scripts/compare_abstracts.py) | 450 | The generator of that comparison |
 | S11 | [`notes/t0-triage.md`](t0-triage.md) | 897 | The 130-family T0 reading pass: buckets, counts, unread remainder |
 | S12 | [`notes/t0-chains.md`](t0-chains.md) | 542 | The 27 two-manuscript T0 families and their coverage signal |
 | S13 | [`notes/links.md`](links.md) | 217 | The typed-edge inventory: scope-note links, citation edges |
