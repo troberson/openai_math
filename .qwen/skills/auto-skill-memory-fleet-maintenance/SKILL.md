@@ -9,7 +9,9 @@ extracted_at: '2026-10-10T20:07:52.881Z'
 
 Use for a memory-maintenance / "dream" pass over `~/.qwen/memories/` (user scope) and
 `~/.qwen/projects/<hash>/memory/` (project scope). Worked end to end 2026-10-10 on a 70-file project
-fleet plus a 61-file user fleet (post-pass census, §0). The two scopes have **separate `MEMORY.md`
+fleet plus a 61-file user fleet (post-pass census, §0). Re-measured 2026-10-11 with the §0 commands:
+user **67** files / **66** pointers, project **85** files / **85** pointers — the fleet grows between
+passes, so re-census rather than quoting the recorded pair. The two scopes have **separate `MEMORY.md`
 indexes** — never cross-reference them.
 
 ## 0. Census before you touch anything
@@ -97,8 +99,10 @@ touch the file:
 Stale claims found in one pass, all caught by a one-line shell measure: "atomic promotion is 0 %
 implemented" (the registry `catlib/promote.py` existed); "404 sorries" (measured 539 over 416 files);
 "121,734 files / 25.9M lines" (measured 122,458 / 26,060,031); "67 invocations over 49 scripts,
-2,006 s per pass" (measured 73 over 53, 431 s); "387 lines" (measured 503); "nothing implemented, only
-`.1` claimable" (the epic was closed); "15 scripts carry a sync pass" (measured 12, all checkers).
+2,006 s per pass" (measured 2026-10-11: **75** invocations over **56** scripts — the row count moves
+with every bead, so re-count from `notes/scripts/gate.py`'s `ROWS`); "387 lines" (measured 503);
+"nothing implemented, only `.1` claimable" (the epic was closed); "15 scripts carry a sync pass"
+(measured 2026-10-11: **13**, all checkers — `grep -rlE 'sync problems' notes/scripts/*.py | wc -l`).
 
 **When a fact inverts, rename the file and delete the old one.** The slug is part of the retrieval
 surface: a file named `writers-have-no-atomic-promotion.md` keeps asserting the false claim even after
