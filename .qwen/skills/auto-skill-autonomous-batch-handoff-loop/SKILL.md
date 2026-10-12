@@ -66,18 +66,30 @@ Each entry: the decision area, the **provisional choice**, and **what would forc
 A gate is not "check it looks right". Write the commands and the expected reconciliation lines:
 
 ```
-python3 notes/scripts/gate.py            # one pass: every row, plain and --mutant
+bash notes/scripts/gate_driver.sh        # one pass over the 78-row list, in the foreground
 python3 notes/scripts/verify_cache_promotion.py   # cached bytes == bytes on the tracked path
-python3 notes/scripts/verify_summaries.py --mutant               # zero problems, zero undetected mutants
 ```
+
+No checker carries a `--mutant` branch any more. The mutants live in
+`notes/scripts/tests/test_<page>.py` and run as `run_tests.py` rows — **25** of the 78 — and each
+asserts that the pass owning its injected fault flags the page. `verify_page_sync.py --both` runs the
+plain pass and the mutant loop in one process, mutating page prose **in memory**, so no page is
+written by a test. A gate command that names `--mutant` is stale: it runs nothing and reports green.
+
+Run the driver in the foreground with a timeout under 600000 ms — the shell tool rejects 600000.
+`GATE_POOL=12` is the concurrency cap, sized by measured RSS, not core count; `GATE_POOL=1` runs the
+list serially and is the baseline the pooled report is diffed against. Stop it by process group, never
+by PID.
 
 The twice-run byte diff is **not** the gate: a writer's bytes are asserted against the cache entry
 under its digest key, which is stronger than the temporal coincidence of two runs. A gate list that
 runs rows in dependency order needs one pass, and the report's wall times make a byte-identical diff
 impossible — normalize them out before diffing two reports.
 
-Reconciliation lines that must not move: 372 families, 719 manuscripts, 172 formalized, 416
-challenges, 200 `main_results` entries over 189 configs, 242 scope notes, both cross-checks 0.
+Reconciliation lines that must not move: 372 families, 719 manuscripts, **173** formalized
+(`formalized (yaml)` — the path count in `formalization.yaml`, one more than the 172 listed
+manuscripts), 242 scope notes, 416 challenges, 200 `main_results` entries over 189 configs, both
+`overview.tex` ↔ `CONTENTS.md` cross-checks 0.
 
 Quote numbers only from the current run — never from the handoff file's recorded numbers. The file
 records them so you notice when they move, not so you can reuse them.
