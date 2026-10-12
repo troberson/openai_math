@@ -91,10 +91,14 @@ L1: dict[str, tuple[str, ...]] = {
     # population, so render_reports.py, build_index.py, extract_named_results.py and
     # verify_named_results.py read the store instead of each walking 7,240 .tex files.
     "measure_names.py": ("notes/tables/catalog.tsv",),
-    # The seeder reads one page and one source. `overview.tex` is inside a hashed tree, so the key
-    # already covers it; the page is not, so the L1 names it. The probe record
-    # `notes/probe/2026-10-12_seed_quotes.txt` is the read that justifies this list.
-    "seed_quotes.py": ("notes/subfinding-pairs.md",),
+    # The seeder reads one page, one source, the 21 summaries pages, and the notes pages those pages
+    # declare as sources. `overview.tex` is inside a hashed tree, so the key already covers it; the
+    # pair page, the summaries tree and the three cited notes pages are not, so the L1 names them. The
+    # probe record `notes/probe/2026-10-12_seed_quotes_summaries.txt` is the read that justifies this
+    # list: it is the first record that names the summaries tree, and the three notes pages appear
+    # because a Sources cell can point at a notes page, not only at a manuscript file.
+    "seed_quotes.py": ("notes/subfinding-pairs.md", "notes/summaries/", "notes/counterexample-tag.md",
+                       "notes/t0-triage.md", "notes/tables/catalog.tsv"),
 }
 
 ARTIFACTS: dict[str, tuple[str, ...]] = {

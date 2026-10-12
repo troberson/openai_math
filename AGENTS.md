@@ -1019,12 +1019,13 @@ lives in this file and nowhere else.
   `git rev-parse HEAD:<path>` tree digests, the `git status --porcelain --ignored=matching` check over
   the five hashed paths, the `notes/tables/*.tsv` byte sum, the three `du -sk` sizes, the gate row count from
   `gate.py`'s `ROWS` block, the three site counts (atomicity, env, set iteration), the probe table's
-  wall/opens/distinct/repeats figures, and the **7** audit-hook records **tracked under
+  wall/opens/distinct/repeats figures, and the **8** audit-hook records **tracked under
   `notes/probe/`** (the checker parses
   the 2026-10-11 pair, written by `notes/scripts/measure_open_probe.py` over **9** targets; the 2026-10-10 pair, the
-  single-target `render_reports.py` after-record, the 2026-10-12 `seed_quotes.py` record and the
-  2026-10-12 `render_reports.py` record that captures the fleet census are the records the page's
-  deltas and the promotion checker read), which the
+  single-target `render_reports.py` after-record, the two 2026-10-12 `seed_quotes.py` records (the
+  pair-page run and the widened run that reads the 21 summaries pages and the notes pages their Sources
+  cells cite) and the 2026-10-12 `render_reports.py` record that captures the fleet census are the
+  records the page's deltas and the promotion checker read), which the
   checker requires on disk. It resolves
   every backticked `path:line` anchor, bare script names included (a bare
   name resolves under `notes/scripts/`), matches the purity table — **8** rows, the set the probe parse

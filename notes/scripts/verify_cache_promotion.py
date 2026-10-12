@@ -51,10 +51,13 @@ from catlib.promote import (
 )
 
 # Newest first: a target is taken from the first record that names it, so the record a re-probe lands
-# supersedes the older one for that target. `2026-10-12_rr_fleet` is the render_reports.py run that
-# captures the fleet census — the writer reads the script tree and the two 2026-10-11 records, which
-# the 2026-10-11 record of itself cannot name.
-PROBES = (ROOT / "notes" / "probe" / "2026-10-12_rr_fleet.txt",
+# supersedes the older one for that target. `2026-10-12_seed_quotes_summaries` is the seeder run that
+# reads the 21 summaries pages and the notes pages their Sources cells cite — the first record that
+# names the summaries tree, so it supersedes the pair-page-only record for that target.
+# `2026-10-12_rr_fleet` is the render_reports.py run that captures the fleet census — the writer reads
+# the script tree and the two 2026-10-11 records, which the 2026-10-11 record of itself cannot name.
+PROBES = (ROOT / "notes" / "probe" / "2026-10-12_seed_quotes_summaries.txt",
+          ROOT / "notes" / "probe" / "2026-10-12_rr_fleet.txt",
           ROOT / "notes" / "probe" / "2026-10-12_seed_quotes.txt",
           ROOT / "notes" / "probe" / "2026-10-11_writers.txt",
           ROOT / "notes" / "probe" / "2026-10-10_writers.txt")

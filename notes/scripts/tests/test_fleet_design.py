@@ -90,8 +90,8 @@ MUTANTS = [
     # The probe-record count is measured from the tracked record tree, so a page that names a record
     # the tree does not carry is caught by the count pass.
     ("probe record count understated",
-     "count phrase not in the page: The tracked records are **7**:",
-     lambda t: t.replace("The tracked records are **7**:", "The tracked records are **6**:", 1)),
+     "count phrase not in the page: The tracked records are **8**:",
+     lambda t: t.replace("The tracked records are **8**:", "The tracked records are **7**:", 1)),
     ("writer-row count in the gate paragraph",
      "count phrase not in the page: the **10** writers declare what they write",
      lambda t: t.replace("the **10** writers declare what they write",
