@@ -27,7 +27,8 @@ python3 notes/scripts/extract_scope_notes.py  # re-measures the 242 `## Scope` s
 python3 notes/scripts/verify_scope_exclusions.py  # checks notes/scope-exclusions.md against lean/docs/
 python3 notes/scripts/run_tests.py notes/scripts/tests/test_scope_exclusions.py -q  # the extracted self-tests: 7 injected defects in page text, each asserted against the pass that owns it
 python3 notes/scripts/extract_subfindings.py  # writes notes/tables/subfindings.tsv and prints the reconciliation
-python3 notes/scripts/verify_subfindings.py --mutant  # checks notes/tables/subfindings.tsv against overview.tex and lean/docs/
+python3 notes/scripts/verify_subfindings.py  # checks notes/tables/subfindings.tsv against overview.tex and lean/docs/
+python3 notes/scripts/run_tests.py notes/scripts/tests/test_subfindings.py -q  # the extracted self-tests: 7 injected row corruptions, each asserted against the pass that owns it
 python3 notes/scripts/extract_subfinding_pairs.py  # lays out the pairing population; report-only, writes nothing
 python3 notes/scripts/verify_subfinding_pairs.py --mutant  # checks notes/subfinding-pairs.md against overview.tex
 python3 notes/scripts/verify_conditional.py --mutant  # checks notes/conditional.md against the Lean source it cites
@@ -381,7 +382,9 @@ claimed by none, and **18** clauses state a sub-finding no title names. The othe
 recorded, not paired.
 `notes/scripts/verify_subfindings.py` re-derives every row from `overview.tex`,
 `formalization.yaml`, `lean/docs/`, and the ledger, requires each path and each `.lean` file to exist
-on disk, and flags all seven injected mutants including a same-family row swap.
+on disk. Its seven mutants live in `notes/scripts/tests/test_subfindings.py`, which injects them into
+the table bytes in memory and asserts the pass that owns each one flags it, including the same-family
+row swap that only the seq check can see.
 
 **`notes/subfinding-pairs.md` is the pairing itself: 49 blocks, one per family, each quoting the
 abstract clause and the display title it names, both with the `overview.tex` line they were verified
