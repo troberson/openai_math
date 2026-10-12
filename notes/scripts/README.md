@@ -9,10 +9,10 @@ is per file, and the checker exits 1 on a file no rule owns.
 It is also the script inventory. Every script under `notes/scripts/` is listed once, in one of three
 classes — writer, report-only, checker — with what it writes and the command the gate runs for it, and
 the fourth class, the scratch a session writes outside the tree, is recorded by rule rather than by
-file. The classes partition the **61** scripts: **14** writers, **24** report-only, **22** checkers,
+file. The classes partition the **67** scripts: **14** writers, **30** report-only, **22** checkers,
 and `verify_script_ownership.py` itself, which is the 23rd checker and is not listed in its own table.
 
-## The split: 14 write, 46 write nothing
+## The split: 14 write, 52 write nothing
 
 The writer set is derived from the scripts' own source, not from this page: a script is a writer when
 a path constant rooted at `notes/` appears on the left of `.open(..., "w")` or `.write_text(...)`,
@@ -33,7 +33,7 @@ self-test: a module-level
 `mutants` / `mutant_test` / `selftest` body is blanked before the write calls are read, because a
 self-test writes the page it checks only to mutate it and restores the bytes it read in the `finally`
 — `verify_script_ownership.py` does exactly that, in three branches (the page it checks, `notes/scripts/README.md`, and `notes/templates.md`), so its normal run writes nothing and it stays in the checker class. `check_index_links.py` and `measure_proof_density.py` were this rule's examples; `math-o3a.3` moved their sync pass into `verify_page_sync.py`, which mutates page text in memory, so neither script carries a write call any more. That rule
-finds **14** writers over **60** scripts.
+finds **14** writers over **66** scripts.
 
 ### Writers
 
@@ -117,11 +117,13 @@ Editing a join in `build_catalog.py` can move rows in six artifacts.
 
 ### Report-only
 
-The other **46** scripts write nothing. **24** of them print a report: **19** print the report a page's
+The other **52** scripts write nothing. **30** of them print a report: **19** print the report a page's
 counts come from, **1** prints the quote-spec classification the seeded `notes/tables/quotes.tsv` is
 measured against, **1** prints the pytest report for the extracted checker self-tests
 (`run_tests.py`), **2** print the notes-move surface `math-faz` prices before a pass and re-checks
-after it, and `gate.py` prints the gate report itself.
+after it, **6** print a wall or a candidate comparison that no page's counts come from (the render
+phase, pool and fresh-process probes, the links phase and scan-candidate probes, and the Lean import
+layout probe), and `gate.py` prints the gate report itself.
 The Gate column is the invocation the gate list runs: `notes/scripts/gate.py`, which runs **78**
 invocations — the **10** gated writers (the two writers it does not run are `build_report_templates.py`
 and `measure_open_probe.py`, each for the reason in its own row), the 45 gated report-only rows (including `check_summary_manuscripts.py`
@@ -210,8 +212,14 @@ had to wait for the serial chain to finish.
 | `measure_checker_needles.py` | `notes/templates.md` — the per-checker needle inventory behind its Needles column | plain |
 | `measure_faithfulness.py` | `notes/formalization-faithfulness.md` | plain |
 | `measure_index_sizes.py` | `notes/index-design.md` | plain |
+| `measure_import_layout.py` | `extract_links.py`'s import header rule — the Lean files whose first command is a doc-comment opener (`/-`), a bare `module` line, or a `public import` line, which is the evidence the widened `HEADER_SKIP` rule was written from | **not gated** — walks 122,458 files; run by hand when the header rule changes |
+| `measure_links_phases.py` | `extract_links.py`'s phases — the wall each read and scan takes, attributed by wrapping the script's own reads, because cProfile totals attribute cost to functions, not phases | **not gated** — a phase wall is a function of a run |
 | `measure_move_surface.py` | `math-faz` — the moved/stable path-mention split over the 30 pages the reorg moves, by context; the bead re-runs it after each pass | **not gated** |
 | `measure_proof_density.py` | `notes/proof-density.md` | the self-tests are in `notes/scripts/tests/test_proof_density.py`, run by the `run_tests.py` row; the plain run is not gated, because `render_reports.py` imports the module and calls `build_families()` rather than running the script |
+| `measure_render_phases.py` | `render_reports.py`'s phase wall with concurrent children — cumulative, in `main()` call order | **not gated** — a phase wall is a function of a run |
+| `measure_render_pool.py` | whether pooling the 15 child-free populations lowers the render wall; measured 2026-10-12 and the answer was no (22.16 s pooled against 16.78 s unpooled, because pool results never reach the parent's cached `population_of`) | **not gated** — a wall is a function of a run |
+| `measure_render_processes.py` | the cost of each population in a fresh process, which is the pool's per-process price; `links` 14.59 s and `topics` 16.40 s, each re-running the `extract_links` child | **not gated** — a per-process wall is a function of a run |
+| `measure_scan_candidates.py` | the four candidate scans priced against the rule each must reproduce; the import header and the MSC substring gate were accepted, the single-pass `norm` and the 372-alternation regex were rejected | **not gated** — the accepted rules are already in `extract_links.py` |
 | `measure_summaries_seed.py` | `notes/tables/quotes.tsv` — the span set, the citation attribution and the raw/folded/not-located classification the seeded summaries specs are measured against | plain |
 | `measure_topics.py` | `notes/topics.md` | `--check` |
 | `read_manuscript.py` | none — a reading aid; prints a manuscript's abstract, section skeleton and titled statement environments with `file:line` anchors | **not gated** |
@@ -413,7 +421,7 @@ from the array, not from the history: **10** writer rows, **45**
 report-only rows, **23** checker invocations.
 
 `verify_script_ownership.py` — this page's own checker — is not in the table: a checker cannot list
-itself as its input. It is the 23rd checker and the 61st script; the run counts **59** scripts
+itself as its input. It is the 23rd checker and the 67th script; the run counts **65** scripts
 because it excludes itself.
 
 ## The shared package: `catlib/`
@@ -449,19 +457,20 @@ registry — `ALL_PAGES`, the writer's per-page `POPULATIONS` and `LABELS` slot 
 script run as `python3 notes/scripts/foo.py` has `notes/scripts` on `sys.path`, so it imports them as
 `from catlib import ...` with no path boilerplate.
 
-**54** of the **59** scripts call the package, measured by the rule `^[ \t]*(from|import) catlib` over
-each script's own source: **11** `extract_` (all of them), **4** `build_` (all), **8** `measure_`
-(all 10 but `measure_proof_density.py` and `measure_topics.py`, including the two `math-faz` move
-probes), **2** `check_` (`check_index_links.py` and `check_summary_manuscripts.py`),
+**60** of the **65** scripts call the package, measured by the rule `^[ \t]*(from|import) catlib` over
+each script's own source: **11** `extract_` (all of them), **4** `build_` (all), **12** `measure_`
+(all 17 but `measure_proof_density.py`, `measure_topics.py` and the three render probes, which reach
+`render_reports` directly), **2** `check_` (`check_index_links.py` and `check_summary_manuscripts.py`),
 **22** of the **23** `verify_` scripts, plus `render_reports.py`, `triage_t0.py`, `read_manuscript.py`,
 `compare_abstracts.py`, `locate_summary_quotes.py`, `refresh_summary_line_counts.py` and `run_tests.py`.
-The five
+The seven
 scripts that do not are `dump_template_slots.py`, which reaches the slot dict through
 `render_reports.py` and never touches the registry; `gate.py`, which spawns rows and reads no corpus;
 `verify_fleet_design.py`, which measures the
-fleet's own sources and the probe records, so it has no corpus join to import; and
+fleet's own sources and the probe records, so it has no corpus join to import;
 `measure_proof_density.py` and `measure_topics.py`, which read the Sources table and the vocabulary
-directly. The three summary-page readers
+directly; and `measure_render_phases.py`, `measure_render_pool.py` and `measure_render_processes.py`,
+which import `render_reports` and get the joins through it. The three summary-page readers
 `check_summary_manuscripts.py`, `locate_summary_quotes.py` and `refresh_summary_line_counts.py` were
 moved off `verify_summaries.py` onto `catlib/summaries.py` by `math-6s7.1` — a checker serving as a
 library is the shape that port broke, and `verify_summaries.py` now has **0** importers. `math-lon.2.5` ported the last two checkers,
@@ -567,10 +576,13 @@ excludes the checker-verified pages, allowing formatting only on the pages no ch
 
 ## Naming coverage
 
-`notes/README.md`'s command block named **34** of the 60 scripts before this pass. Twenty-six are named
+`notes/README.md`'s command block named **34** of the 66 scripts before this pass. Thirty-two are named
 nowhere in the repo at the pinned baseline: `build_report_templates.py`, `check_summary_manuscripts.py`,
 `extract_citations.py`, `gate.py`, `locate_summary_quotes.py`, `measure_anchor_blocks.py`,
-`measure_checker_needles.py`, `measure_faithfulness.py`, `measure_move_surface.py`, `measure_open_probe.py`, `measure_summaries_seed.py`, `measure_templates.py`,
+`measure_checker_needles.py`, `measure_faithfulness.py`, `measure_import_layout.py`,
+`measure_links_phases.py`, `measure_move_surface.py`, `measure_open_probe.py`,
+`measure_render_phases.py`, `measure_render_pool.py`, `measure_render_processes.py`,
+`measure_scan_candidates.py`, `measure_summaries_seed.py`, `measure_templates.py`,
 `read_manuscript.py`,
 `refresh_summary_line_counts.py`, `render_reports.py`, `seed_quotes.py`, `verify_citations.py`, `verify_faithfulness.py`, `verify_findings.py`,
 `verify_fleet_design.py`, `verify_named_conjectures.py`, `verify_page_sync.py`, `verify_upstream_history.py`,
