@@ -592,15 +592,25 @@ lives in this file and nowhere else.
   `extract_subfindings.py` wrote later in the same gate pass, so row 2 depended on row 5 — which makes
   the row-assembly comparison self-referential. The independent checks are the on-disk PDF read and the
   path-set comparison, both keyed to `catlib.overview.parse_overview()` rather than to the table.
-- Check `notes/sources.md` with `python3 notes/scripts/verify_sources.py --mutant` before quoting any
-  figure — it re-derives all 31 count phrases from a fresh recount over `preprints/` (root
-  distribution, main-file outcomes, single-root names, column sums, the six-name environment total and
-  its per-name gap), requires every backticked manuscript directory name on the page to exist,
-  resolves every `path:line` anchor of any extension, matches each fenced block against the nearest
-  preceding anchor, and requires every `pdf` on disk non-empty, every `main_tex` present and declaring
-  `\documentclass` at line start, every `fam` in the ledger, and every family's row count equal to
-  `paps`. It flags twelve injected mutants and writes nothing — the last three being prose counts in
-  `notes/sources.md`, caught only by comparing the page with the writer's render of it.
+- Check `notes/sources.md` with `python3 notes/scripts/verify_sources.py` before quoting any figure —
+  it re-derives all 31 count phrases from a fresh recount over `preprints/` (root distribution,
+  main-file outcomes, single-root names, column sums, the six-name environment total and its per-name
+  gap), requires every backticked manuscript directory name on the page to exist, resolves every
+  `path:line` anchor of any extension, matches each fenced block against the nearest preceding anchor,
+  and requires every `pdf` on disk non-empty, every `main_tex` present and declaring `\documentclass`
+  at line start, every `fam` in the ledger, and every family's row count equal to `paps`. The twelve
+  injected mutants are in `notes/scripts/tests/test_sources.py`, run by the `run_tests.py` gate row:
+  an anchor line shifted, an anchor file renamed, a block line altered, a column count, a byte figure,
+  the six-name count, the gap breakdown, a manuscript directory name, the root distribution, the disk
+  census, the formalized share, and a prose count no count phrase covers — the last is visible only in
+  the diff against the writer's render. Each needle is measured specific: it fires for its own fault
+  and for no other, and the render-diff line fires for every fault, so no needle is that line. The
+  clean test pins the population the passes report: 2 anchors, 7 slugs, 4 block lines, 31 count
+  phrases, 0 sync problems, 719 rows over 14 columns, 749 dirs on disk (719 listed, 27 superseded, 3
+  withdrawal notices), 372 families, 172 formalized, 12 `main.tex` without `\documentclass`, 21,203
+  six-name environments against the declared-rule 21,288. `main()` reads no argv, so `--mutant` is
+  inert, and `population()` is under `functools.cache` (`:152`), so the thirteen `check()` calls the
+  row makes pay the corpus walk once. It writes nothing.
 - Check `notes/subfinding-pairs.md` with `python3 notes/scripts/verify_subfinding_pairs.py --mutant`
   before quoting any count from it — it requires exactly one block per population family and none
   outside, resolves each block's `overview.tex` anchor to that family's `\resultentry` line, checks

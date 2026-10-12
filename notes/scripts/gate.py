@@ -90,7 +90,7 @@ ROWS = [
     ("verify_index_design.py", ("pages",), ()),
     ("verify_index_design.py --mutant", ("pages",), ()),
     ("verify_sources.py", ("pages",), ()),
-    ("verify_sources.py --mutant", ("pages",), ()),
+    ("run_tests.py notes/scripts/tests/test_sources.py -q", ("pages",), ()),
     ("verify_conditional.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_conditional.py -q", ("pages",), ()),
     ("verify_counterexample_crosscheck.py", ("pages",), ()),

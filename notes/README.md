@@ -44,7 +44,8 @@ python3 notes/scripts/measure_anchor_blocks.py  # the fenced blocks (0) and the 
 python3 notes/scripts/measure_open_probe.py --record <name> <target.py>  # the audit-hook probe: every open() a target performs, with its mode string, bucketed; writes notes/probe/<name>.txt through catlib.atomic. Not in gate.py — a record carries a wall time per target, so a twice-run byte diff is a timing artifact
 python3 notes/scripts/gate.py  # the gate list: 75 rows as a dependency graph, each row a (spec, needs, writes) triple, a row starting when its needs are written; prints one line per row in list order and writes only under .qwen/tmp/reports/. GATE_POOL is the concurrency cap (12 rows), GATE_POOL=1 the serial baseline
 python3 notes/scripts/build_sources.py      # writes notes/tables/sources.tsv (the LaTeX surface of all 719 manuscripts) and prints the reconciliation
-python3 notes/scripts/verify_sources.py --mutant  # checks notes/sources.md against preprints/: every count, every anchor, every directory name
+python3 notes/scripts/verify_sources.py  # checks notes/sources.md against preprints/: every count, every anchor, every directory name; report-only, writes nothing
+python3 notes/scripts/run_tests.py notes/scripts/tests/test_sources.py -q  # the extracted self-tests: 12 injected faults (an anchor line shifted, an anchor file renamed, a block line altered, a column count, a byte figure, the six-name count, the gap breakdown, a manuscript directory name, the root distribution, the disk census, the formalized share, a prose count only the render diff can see), each asserted against the pass that owns it
 python3 notes/scripts/measure_topics.py     # measures notes/tables/topics.tsv over the four text layers; report-only, writes nothing
 python3 notes/scripts/measure_topics.py --check  # re-measures all 92 rows and exits 1 when a recorded count has drifted
 python3 notes/scripts/measure_names.py      # the six name layers behind notes/names.md; a writer — lands the population as the keyed record .qwen/cache/records/<key>/names.json
@@ -413,8 +414,9 @@ is rule-dependent: declared-by-`\newtheorem`-in-dir minus non-statement names is
 six-name list theorem/lemma/proposition/corollary/claim/conjecture is **21,203**, and the 85 gap is
 `assumption` 22, `foundation` 13, `auxproposition` 8, `hypothesis` 8, `auxlemma` 7, `standinginput` 5
 and 9 names at ≤4.
-`notes/scripts/verify_sources.py --mutant` re-derives all 31 quoted phrases from a fresh recount,
-requires every backticked directory name to exist, and flags all twelve injected mutants.
+`notes/scripts/verify_sources.py` re-derives all 31 quoted phrases from a fresh recount and requires
+every backticked directory name to exist; the twelve injected mutants live in
+`notes/scripts/tests/test_sources.py`, run by the `run_tests.py` gate row.
 
 **`notes/verification-dirs.md` records what each of the 30 verification bundles says about itself.**
 A `preprints/<slug>/verification/` tree is a finite-arithmetic **certificate** — it checks arithmetic on

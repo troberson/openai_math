@@ -24,13 +24,15 @@ Report-only; writes nothing and runs nothing. Three passes:
 Whitespace runs are collapsed on both sides of every comparison: line-wrapping in the page is
 markup, not part of the text.
 
---mutant runs the built-in mutations and fails if any goes uncaught.
+The self-tests are in notes/scripts/tests/test_sources.py: that file injects the twelve page faults
+and asserts each fires the pass that owns it. `main()` reads no argv, so `--mutant` is inert here.
 """
 import collections
 import csv
 import pathlib
 import re
 import sys
+from functools import cache
 
 import build_sources as S
 from catlib import overview, preprints, tsv
@@ -147,8 +149,14 @@ def measure():
     }
 
 
+@cache
 def population():
-    """measure() under the name build_report_templates.checker_needles() looks for."""
+    """measure() under the name build_report_templates.checker_needles() looks for.
+
+    The checker writes nothing and the self-tests mutate page text in memory, so a second call in the
+    same process cannot see a different corpus; the cache is what keeps a multi-`check()` run (the
+    clean page plus each of the twelve faults) from paying the corpus walk once per call.
+    """
     return measure()
 
 
@@ -287,58 +295,15 @@ def check(text):
     return problems, n_anchor, n_block_lines, n_slug, len(count_phrases(m)), len(sync)
 
 
-MUTANTS = {
-    "anchor line shifted": lambda t: t.replace("pgfmanual-en-macros.tex:1177",
-                                               "pgfmanual-en-macros.tex:1176", 1),
-    "anchor file renamed": lambda t: t.replace("build/paper.tex:1", "build/paper.yml:1", 1),
-    "block line altered": lambda t: t.replace("\\def\\extractclass#1#2@{%",
-                                              "\\def\\extractclass#1#3@{%", 1),
-    "count altered": lambda t: t.replace("**16,297**", "**16,290**", 1),
-    "byte figure altered": lambda t: t.replace("**127,456,942**", "**127,000,000**", 1),
-    "six-name count altered": lambda t: t.replace("quotes **21,203** for",
-                                                  "quotes **21,288** for", 1),
-    "gap breakdown altered": lambda t: t.replace("`assumption` 22, `foundation` 13",
-                                                 "`assumption` 21, `foundation` 13", 1),
-    "directory name altered": lambda t: t.replace(
-        "`Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-5-2026`",
-        "`Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-6-2026`", 1),
-    "root distribution altered": lambda t: t.replace("715 with 1, 3 with 2, 1 with 3",
-                                                     "716 with 1, 2 with 2, 1 with 3", 1),
-    "disk census altered": lambda t: t.replace("the **719** the release lists",
-                                               "the **720** the release lists", 1),
-    "formalized share altered": lambda t: t.replace("at **172** of 719 manuscripts",
-                                                     "at **173** of 719 manuscripts", 1),
-    # Prose the count pass never reads: 717 is the bead's substring figure, quoted for the record,
-    # not a measured needle. Only the sync pass can see it.
-    "sync-only prose count altered": lambda t: t.replace("measures 717 dirs", "measures 718 dirs", 1),
-}
-
-
 def main():
     text = PAGE.read_text(encoding="utf-8", errors="replace")
-
-    if "--mutant" in sys.argv:
-        uncaught = []
-        for name, fn in MUTANTS.items():
-            mutated = fn(text)
-            if mutated == text:
-                print(f"mutant target absent: {name}")
-                uncaught.append(name)
-                continue
-            problems, _, _, _, _, _ = check(mutated)
-            print(f"mutant {name}: {'caught' if problems else 'NOT CAUGHT'}"
-                  f" ({len(problems)} problems)")
-            if not problems:
-                uncaught.append(name)
-        print(f"mutants not caught {len(uncaught)} of {len(MUTANTS)}")
-        raise SystemExit(1 if uncaught else 0)
-
     problems, n_anchor, n_block_lines, n_slug, n_phrases, n_sync = check(text)
     for p in problems:
         print(f"PROBLEM {p}")
     print(f"\nanchors {n_anchor}  slugs {n_slug}  block lines {n_block_lines}"
           f"  count phrases {n_phrases}  sync problems {n_sync}  problems {len(problems)}")
-    raise SystemExit(1 if problems else 0)
+    return 1 if problems else 0
 
 
-main()
+if __name__ == "__main__":
+    sys.exit(main())
