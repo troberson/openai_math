@@ -104,7 +104,7 @@ ROWS = [
     ("verify_script_ownership.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_script_ownership.py -q", ("pages",), ()),
     ("verify_findings.py", ("pages",), ()),
-    ("verify_findings.py --mutant", ("pages",), ()),
+    ("run_tests.py notes/scripts/tests/test_findings.py -q", ("pages",), ()),
     ("verify_citations.py", ("pages",), ()),
     ("verify_citations.py --mutant", ("pages",), ()),
     ("verify_upstream_history.py", ("pages",), ()),

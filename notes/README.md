@@ -70,7 +70,8 @@ python3 notes/scripts/extract_named_results.py  # the headline-statement invento
 python3 notes/scripts/verify_named_results.py --mutant  # checks notes/named-results.md: 61 anchors, 15 bare overview anchors, the 17-row target table, 61 quotations, all 66 counts
 python3 notes/scripts/extract_citations.py  # the shared-bibliography graph over the .bib files under preprints/; report-only, writes nothing
 python3 notes/scripts/verify_citations.py --mutant  # checks notes/citations.md: work-table rows, anchors, fenced blocks, quotations, every count, against the .bib entries it names
-python3 notes/scripts/verify_findings.py --mutant  # checks notes/findings.md: every [Sn:line] marker, every quotation, every quoted count, against the reports it cites
+python3 notes/scripts/verify_findings.py  # checks notes/findings.md: every [Sn:line] marker, every quotation, every quoted count, against the reports it cites; report-only, writes nothing
+python3 notes/scripts/run_tests.py notes/scripts/tests/test_findings.py -q  # the extracted self-tests: 6 injected faults (an altered quotation word, a real quotation cited to the neighbouring line, a fabricated quotation, a moved ledger count, a deleted Sources row, an aged Sources line count), each asserted against the pass that owns it
 python3 notes/scripts/verify_named_conjectures.py  # checks notes/named-conjectures.md: statement anchors, quotations, prose citations, the entry set, every Measurements number
 python3 notes/scripts/run_tests.py notes/scripts/tests/test_named_conjectures.py -q  # the extracted self-tests: 12 injected defects in page text, each asserted against the pass that owns it
 python3 notes/scripts/verify_upstream_history.py  # re-derives the 3014888 merge census from git and the ledger, then checks the three notes/upstream_history/ pages: anchors, quotations, links, fenced blocks, the 14 backticked preprints/ slugs, two tables, every count phrase; report-only, writes nothing

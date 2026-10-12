@@ -18,17 +18,21 @@ The page is a synthesis, so its claims arrive in three kinds and each needs a di
   Pass G (closing)   - the page closes with a "Not checked" section and carries no preamble, per the
                        repo rules.
 
---mutant corrupts one real quotation, cites a real quotation to a neighbouring line, invents a
-quotation, changes a ledger count, deletes a Sources row, and ages a Sources line count, asserting
-each is flagged while the real page stays clean.
+The self-tests live in `notes/scripts/tests/test_findings.py`: six injected faults, one per check form
+the page uses, run through pytest. `main()` reads no argv, so `--mutant` is inert. A corrupted
+quotation, a real quotation cited to the neighbouring line, a fabricated quotation, a moved ledger
+count, a deleted Sources row, and an aged Sources line count, each asserted against the pass that owns
+it. Every fault is built from a real quotation, marker, count phrase, row and line count in the page as
+committed, and each is injected in memory, so no fault touches a tracked file. The checker measures;
+the test file injects.
 
 Usage: python3 notes/scripts/verify_findings.py
-       python3 notes/scripts/verify_findings.py --mutant
 """
 import re
 import subprocess
 import sys
 from collections import Counter
+from functools import cache
 from pathlib import Path
 
 from catlib import yaml as Y
@@ -125,8 +129,14 @@ def tsv(rel):
     return read_rows(ROOT / rel)
 
 
+@cache
 def run(script):
-    """One extractor's stdout. cwd is notes/scripts so its sibling imports resolve."""
+    """One extractor's stdout, cached per process. cwd is notes/scripts so its sibling imports resolve.
+
+    Every script in `REPORTS` is report-only, so a second call in the same process cannot see a
+    different stdout; the cache is what keeps a multi-`check()` run (the self-tests' clean page plus
+    each fault) from paying the five subprocesses once per call.
+    """
     r = subprocess.run([sys.executable, str(SCRIPTS / script)], cwd=SCRIPTS,
                        capture_output=True, text=True, timeout=300, check=False)  # nonzero exits are the finding
     return r.stdout
@@ -476,15 +486,9 @@ def check(page):
 
 
 def main():
-    mutant = "--mutant" in sys.argv
     page = PAGE.read_text(encoding="utf-8")
     problems, m, table, quotes = check(page)
     t = m["tier"]
-    summary = mutants(page) if mutant else None
-    if summary is not None:
-        undetected = int(summary.rsplit("undetected mutants:", 1)[1])
-        if undetected:
-            problems.append(f"{undetected} injected mutants went undetected")
     print(f"page: {PAGE.relative_to(ROOT)}")
     print(f"sources rows {table}, anchored quotations verified {quotes}")
     print(f"families {m['fams']} over {m['cols']} columns | manuscripts {m['mss']} | "
@@ -498,41 +502,7 @@ def main():
           f"index pages {m['index_pages']} | problems {len(problems)}")
     for p in problems:
         print(f"  {p}")
-    if summary is not None:
-        print()
-        print("mutants:")
-        print(summary)
     return 0 if not problems else 1
-
-
-def mutants(page):
-    """Six corruptions; each must be flagged, and the real page must stay clean."""
-    cases = [
-        ("corrupted quotation",
-         lambda p: p.replace("Five families are genuinely conditional",
-                             "Five families are genuinely conditional-ish", 1), "no quotation"),
-        ("quotation cited to the neighbouring line",
-         lambda p: p.replace("[S8:7]", "[S8:8]", 1), "no quotation"),
-        ("fabricated quotation",
-         lambda p: p.replace('"121 of 242 sections state at', '"121 of 242 scope notes state at'),
-         "no quotation"),
-        ("changed ledger count", lambda p: p.replace("T3 136 · T2 106", "T3 137 · T2 105", 1),
-         "count not stated as measured"),
-        ("deleted Sources row",
-         lambda p: "\n".join(l for l in p.splitlines() if not l.startswith("| S14 |")),
-         "cites no Sources row"),
-        ("aged Sources line count", lambda p: p.replace("| 897 |", "| 896 |", 1), "declares"),
-    ]
-    out, undetected = [], 0
-    for name, fn, expect in cases:
-        got, _, _, _ = check(fn(page))
-        hit = [p for p in got if expect in p]
-        undetected += 0 if hit else 1
-        out.append(f"  {name}: {'detected' if hit else 'UNDETECTED'} ({len(got)} problems)")
-    base, _, _, _ = check(page)
-    out.append(f"  clean page: {'clean' if not base else 'PROBLEMS'} ({len(base)} problems)")
-    out.append(f"undetected mutants: {undetected}")
-    return "\n".join(out)
 
 
 if __name__ == "__main__":

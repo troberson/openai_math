@@ -705,15 +705,24 @@ lives in this file and nowhere else.
   sensitivity numbers, requires the discipline-crossing list, the ≥5 cluster table and the
   release-target table to be complete in both directions (no measured row missing, no page row
   unmeasured), and flags nine injected mutants. It writes nothing.
-- Check `notes/findings.md` with `python3 notes/scripts/verify_findings.py --mutant` before quoting
-  any of its counts — five passes: sources (the Sources table names files that exist, declares the
+- Check `notes/findings.md` with `python3 notes/scripts/verify_findings.py` and its extracted self-tests
+  with `python3 notes/scripts/run_tests.py notes/scripts/tests/test_findings.py -q` before quoting
+  any of its counts — seven passes: sources (the Sources table names files that exist, declares the
   line count they have, every row is cited, and the body's `[Sn]` markers are contiguous and in
   first-use order), quotations (a quotation adjacent to a line anchor must appear, markup aside, on
   the lines it cites — an anchor proves a line exists, it proves nothing about text), ledger (every
   row rebuilt by importing `build_catalog`'s parse functions; `main()` is never called because it
-  writes `notes/tables/catalog.tsv`), tables (TSV and on-disk counts re-measured), and reports (the fast
-  extractors run as subprocesses and each report line the page quotes must match). Six injected
-  mutants plus a clean page, all detected. It writes nothing.
+  writes `notes/tables/catalog.tsv`), tables (TSV and on-disk counts re-measured), reports (the fast
+  extractors run as subprocesses and each report line the page quotes must match), records (a count
+  quoted from a record must appear in that record), and closing (the page ends with `## Not checked`
+  and carries no preamble). The checker takes no `--mutant`; the test file injects six faults (an altered
+  quotation word, a real quotation cited to the neighbouring line, a fabricated quotation, a moved
+  ledger count, a deleted Sources row, an aged Sources line count) and pins the two population counts
+  the passes report — 31 Sources rows and 12 anchored quotations verified, so a page with fewer
+  quotations is a pass that stopped checking. Each needle is measured specific: it fires for its own
+  fault and for no other. `run()` is under `functools.cache` (`verify_findings.py:132`) because every
+  script in `REPORTS` is report-only, which is what keeps the seven `check()` calls the test row makes
+  from paying the five subprocesses once per call. It writes nothing.
 - Check `notes/named-conjectures.md` with `python3 notes/scripts/verify_named_conjectures.py` and its
   extracted self-tests with
   `python3 notes/scripts/run_tests.py notes/scripts/tests/test_named_conjectures.py -q`
