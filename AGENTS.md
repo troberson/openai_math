@@ -51,7 +51,7 @@ lives in this file and nowhere else.
   paper's two signatures, the 189 resolved declarations, the 61 carrier bodies, the literal pairing,
   and the `a.e.` surface),
   `summaries/<discipline>/<NNN>-<name>.md`, `templates/` (the page skeletons the renderers read —
-  **5** hand-written index skeletons `build_index.py` renders, plus **18** report templates under
+  **5** hand-written index skeletons `build_index.py` renders, plus **19** report templates under
   `templates/report/` that `build_report_templates.py` builds from a page's own bytes at `HEAD`; a
   report template is generated, so edit the writer's label dict in `render_reports.py` and re-render
   rather than hand-editing it) — the only place a generated page's text lives, `notes/scripts/`.

@@ -9,9 +9,9 @@ the rest is measured 2026-10-10 and re-checked by `verify_fleet_design.py`.
 | layer | what it is | who writes it | keyed by |
 |---|---|---|---|
 | **L0** | the release tree: `preprints/**`, `lean/**`, `overview.tex`, `CONTENTS.md`, `reasoning_traces/**` | upstream, via the merge commits | the git **tree digest** of each path |
-| **L1** | the hand-authored inputs: `notes/tables/topics.tsv`, `notes/tables/conjecture-standing.tsv`, the **10** hand-written `notes/*.md` pages (of the **28** top-level pages — the other **18** are report-fed, so they are L3) | a human, in a commit | the file's content hash |
+| **L1** | the hand-authored inputs: `notes/tables/topics.tsv`, `notes/tables/conjecture-standing.tsv`, the **10** hand-written `notes/*.md` pages (of the **29** top-level pages — the other **19** are report-fed, so they are L3) | a human, in a commit | the file's content hash |
 | **L2** | the derived records: the **8** `notes/tables/*.tsv` present on disk, `notes/index/**` (1,049 files), `notes/summaries/**`, `notes/probe/**`, and the untracked keyed store `.qwen/cache/records/**` | the 11 writers | (L0 digests, script-source hash, L1 hashes, args) |
-| **L3** | the tracked output pages: the 18 report-fed `notes/*.md` | `render_reports.py` alone — `math-o3a.3` moved the two checkers' page writes into `verify_page_sync.py`, which mutates page text in memory | the same key |
+| **L3** | the tracked output pages: the 19 report-fed `notes/*.md` | `render_reports.py` alone — `math-o3a.3` moved the two checkers' page writes into `verify_page_sync.py`, which mutates page text in memory | the same key |
 
 ## The purity rule, stated precisely
 
