@@ -13,12 +13,14 @@ Report-only: writes nothing. Re-derives the whole shared-bibliography population
   - The discipline-crossing list, the >=5 cluster table and the release-target table must be
     complete: no measured row missing, no page row unmeasured.
 
---mutant corrupts one real quotation, one anchor, one count, one headline, one cluster membership,
-one work count, one discipline composition and one release-target count in an in-memory copy and
-requires each to be flagged.
+The self-tests are in notes/scripts/tests/test_citations.py: that file injects the nine page faults
+(a paraphrase dressed as a quotation, an invented anchor file, an anchor off by one line, a pair-table
+count, a headline crossing count, a cluster membership, a work count, a cluster discipline composition
+and a release-target count) and asserts each fires the pass that owns it. `main()` reads no argv, so
+`--mutant` is inert here.
 
 Usage:
-    python3 notes/scripts/verify_citations.py [--mutant]
+    python3 notes/scripts/verify_citations.py
 """
 
 import collections
@@ -26,6 +28,7 @@ import os
 import re
 import sys
 import unicodedata
+from functools import cache
 
 from catlib import bib
 from catlib.bib import (
@@ -69,6 +72,7 @@ def clusters(pairs, k):
     return [c for c in bib.clusters(pairs, k) if len(c) > 1]
 
 
+@cache
 def measure(normfn):
     files = bib_files()
     led = {r["fam"]: r for r in read_ledger()}
@@ -180,7 +184,7 @@ def entry_at(path, line):
     return None
 
 
-def check(page, M, M2):
+def passes(page, M, M2):
     fails = []
     flat = re.sub(r"\s+", " ", page)
 
@@ -478,40 +482,16 @@ def check(page, M, M2):
     return fails
 
 
+def check(text: str) -> list:
+    """The page checks against the cached populations — the entry point the self-tests call."""
+    return passes(text, measure(norm_title), measure(norm_noguard))
+
+
 def seen_nt_order(rows, _M):
     out = []
     for _cnt, title, _path, _line in rows:
         out.append(norm_title(title))
     return out
-
-
-MUTANTS = [
-    ("paraphrase dressed as a quotation",
-     lambda p: p.replace("author = {{The Stacks Project Authors}}",
-                         "author = {{The Stacks Project editors}}")),
-    ("invented anchor file",
-     lambda p: p.replace("`preprints/A-conditional-abelianity-theorem-for-special-fourfold-pairs-"
-                         "with-a-half-weight-divisor-October-5-2026/build/source/references.bib:106`",
-                         "`preprints/No-such-manuscript-September-1-2026/build/references.bib:106`")),
-    ("anchor off by one line",
-     lambda p: p.replace("half-weight-divisor-October-5-2026/build/source/references.bib:106`",
-                         "half-weight-divisor-October-5-2026/build/source/references.bib:105`")),
-    ("count drift in the pair table",
-     lambda p: p.replace("| \u22655 | **419** |", "| \u22655 | **418** |")),
-    ("headline crossing count",
-     lambda p: p.replace("6 of 419 pairs at \u22655", "7 of 419 pairs at \u22655")),
-    ("cluster membership swap",
-     lambda p: p.replace("033 034 035 036 037 046 051 054 056 057 058 065 066 068",
-                         "033 034 039 036 037 046 051 054 056 057 058 065 066 068")),
-    ("work count drift",
-     lambda p: p.replace("| 42 | `The {Stacks Project}`", "| 43 | `The {Stacks Project}`")),
-    ("cluster discipline composition",
-     lambda p: p.replace("Mathematical physics 11, Differential geometry 4",
-                         "Mathematical physics 12, Differential geometry 3")),
-    ("release-target count",
-     lambda p: p.replace("| 11 | `Log-abundance-in-characteristic-zero-September-24-2026`",
-                         "| 12 | `Log-abundance-in-characteristic-zero-September-24-2026`")),
-]
 
 
 def main():
@@ -523,21 +503,10 @@ def main():
           "%d shared, %d pairs >=1"
           % (len(M["files"]), len(M["owners"]), M["n_entries"], len(M["inv"]), len(M["shared"]),
              len(M["pairs"])))
-    fails = check(page, M, M2)
+    fails = passes(page, M, M2)
     print("page checks: %d problems" % len(fails))
     for f in fails:
         print("  FAIL %s" % f)
-
-    if "--mutant" in sys.argv:
-        print("mutant self-test:")
-        for name, fn in MUTANTS:
-            bad = fn(page)
-            if bad == page:
-                print("  NOT INJECTED (page text changed): %s" % name)
-                continue
-            mfails = check(bad, M, M2)
-            print("  %-34s %s (%d)" % (name, "caught" if mfails else "MISSED", len(mfails)))
-
     print("clean" if not fails else "problems: %d" % len(fails))
     return 1 if fails else 0
 

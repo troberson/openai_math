@@ -106,7 +106,7 @@ ROWS = [
     ("verify_findings.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_findings.py -q", ("pages",), ()),
     ("verify_citations.py", ("pages",), ()),
-    ("verify_citations.py --mutant", ("pages",), ()),
+    ("run_tests.py notes/scripts/tests/test_citations.py -q", ("pages",), ()),
     ("verify_upstream_history.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_upstream_history.py -q", ("pages",), ()),
     ("verify_fleet_design.py", ("pages",), ()),

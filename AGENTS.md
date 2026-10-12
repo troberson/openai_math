@@ -423,25 +423,17 @@ lives in this file and nowhere else.
   unchanged by the flagged run. The read-only gate pool is the block that runs rows with this flag.
 - The whole-tree test is the gate list at `notes/scripts/gate.py`: **75** invocations — the **9**
   gated writers (`build_report_templates.py` and `measure_open_probe.py` are the writers it does not
-  run), the 28 gated report-only rows (including `check_summary_manuscripts.py` and
+  run), the 40 gated report-only rows (including `check_summary_manuscripts.py` and
   `locate_summary_quotes.py`, `check_index_links.py` plain and its extracted self-tests row, and the
-  eight extracted self-tests rows, `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q`,
-  `run_tests.py notes/scripts/tests/test_conjecture_standing.py -q`,
-  `run_tests.py notes/scripts/tests/test_abstracts.py -q`,
-  `run_tests.py notes/scripts/tests/test_named_conjectures.py -q`,
-  `run_tests.py notes/scripts/tests/test_subfindings.py -q`,
-  `run_tests.py notes/scripts/tests/test_summaries.py -q`,
-  `run_tests.py notes/scripts/tests/test_index_links.py -q` and
-  `run_tests.py notes/scripts/tests/test_script_ownership.py -q`;
-  `read_manuscript.py` is the one script it does not run), and **38**
-  checker invocations: **30** from the 15 checkers listed twice (plain and with `--mutant`) — the 15
-  table checkers — plus
-  `verify_page_sync.py --both` (**1**), `verify_script_ownership.py` plain (**1**),
-  `verify_scope_exclusions.py` plain (**1**), `verify_conjecture_standing.py` plain (**1**),
-  `verify_abstracts.py` plain (**1**), `verify_named_conjectures.py` plain (**1**),
-  `verify_subfindings.py` plain (**1**) and
-  `verify_summaries.py` plain (**1**), none of which
-  carries a `--mutant` branch any more.
+  twenty-one extracted self-tests rows, from
+  `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q` to
+  `run_tests.py notes/scripts/tests/test_citations.py -q` — the full list is in
+  `notes/scripts/README.md`; `read_manuscript.py` is the one script it does not run), and **26**
+  checker invocations: **6** from the 3 checkers listed twice (plain and with `--mutant`) — the 3
+  table checkers, `verify_subfinding_pairs.py`, `verify_t0_chains.py` and
+  `verify_dependency_drift.py` — plus
+  `verify_page_sync.py --both` (**1**) and **19** plain-only rows for the checkers whose self-tests
+  are extracted, none of which carries a `--mutant` branch any more.
   The list is one array, `ROWS`, of (spec, needs, writes) triples over the
   generated artifacts: a row starts as soon as every row that writes its `needs` has finished, each
   row writes its own `.line` file, and the report prints the `.line` files in list order after the
@@ -778,17 +770,23 @@ lives in this file and nowhere else.
   union == the 23 patched libraries; 19 zero-import with 14 patched and 5 not; medians 2,575 (any
   import) vs 408 (none). Run it twice and diff — the report must be identical. It writes nothing and
   never scans `lean/OAI/**/*.lean`; import counts come from the TSV.
-- Check `notes/citations.md` with `python3 notes/scripts/verify_citations.py --mutant` before quoting
-  any of its counts — it re-derives the shared-bibliography population from `preprints/**/*.bib`
-  through `catlib.bib` (the fresh run measures 521 `.bib` files, 513 owner
+- Check `notes/citations.md` with `python3 notes/scripts/verify_citations.py` and its extracted
+  self-tests with `python3 notes/scripts/run_tests.py notes/scripts/tests/test_citations.py -q`
+  before quoting any of its counts — the checker re-derives the shared-bibliography population from
+  `preprints/**/*.bib` through `catlib.bib` (the fresh run measures 521 `.bib` files, 513 owner
   manuscripts, 13,802 entries, 8,775 distinct works, 2,251 shared works, 3,668 pairs with ≥1 shared
   work), requires each work-table row's manuscript count to equal the measured owning set and its
   quoted title to be the most frequent verbatim form for its normalized title at the anchor line,
   matches every fenced block against its nearest preceding anchor, re-measures the population,
   cited-key, work-layer, pair-layer, discipline-crossing, cluster, release-layer, coverage and
-  sensitivity numbers, requires the discipline-crossing list, the ≥5 cluster table and the
+  sensitivity numbers, and requires the discipline-crossing list, the ≥5 cluster table and the
   release-target table to be complete in both directions (no measured row missing, no page row
-  unmeasured), and flags nine injected mutants. It writes nothing.
+  unmeasured). The nine injected mutants live in the test file (a paraphrase dressed as a quotation,
+  an invented anchor file, an anchor off by one line, a pair-table count, a headline crossing count,
+  a cluster membership swap, a work count, a cluster discipline composition, and a release-target
+  count), each asserted against the pass that owns it; `main()` reads no argv, so `--mutant` is inert
+  in the checker. `measure()` is under `functools.cache` (`:75`), so the row pays the two
+  normalizations once. It writes nothing.
 - Check `notes/findings.md` with `python3 notes/scripts/verify_findings.py` and its extracted self-tests
   with `python3 notes/scripts/run_tests.py notes/scripts/tests/test_findings.py -q` before quoting
   any of its counts — seven passes: sources (the Sources table names files that exist, declares the
