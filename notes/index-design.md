@@ -65,10 +65,11 @@ The five tracked TSVs, measured on disk:
 | `links.tsv` | **7280** | **22** |
 | `subfindings.tsv` | **169216** | **1145** |
 
-Those five named files are the ledger set the **297,050** B figure covers. `notes/tables/sources.tsv`
-(**221463** B over **719** rows) and `notes/tables/topics.tsv` (**22631** B over **92** rows) are tracked
-TSVs too, and every `notes/tables/*.tsv` together totals **630620** B — quote the set with the figure,
-since the two sums answer different questions.
+Those five named files are the ledger set the **297,050** B figure covers. `notes/tables/abstracts.tsv`
+(**89476** B over **372** rows), `notes/tables/quotes.tsv` (**24171** B over **236** rows),
+`notes/tables/sources.tsv` (**221463** B over **719** rows) and `notes/tables/topics.tsv` (**22631** B
+over **92** rows) are tracked TSVs too, and every `notes/tables/*.tsv` together totals **654791** B —
+quote the set with the figure, since the two sums answer different questions.
 
 ## 2. Location — `notes/index/`
 

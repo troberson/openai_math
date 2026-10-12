@@ -567,6 +567,11 @@ def index_full(p: dict[str, Any]) -> dict[str, str]:
     sf, tex = f"{p['sf_rows']:,}", f"{p['tex_files']:,}"
     setb, rawkib = f"{p['ledger_set_bytes']:,}", f"{p['rawbib_kib']:,}"
     fam, man, disc = p["families"], p["manuscripts"], p["disciplines"]
+    # The tracked TSVs outside the ledger set are every table on disk minus the five the page tabulates,
+    # so a new table lands in the sentence the day it is written, not when someone remembers it.
+    added = [f"`notes/tables/{n}` (**{p['sizes'][n][0]}** B over **{p['sizes'][n][1]}** rows)"
+             for n in sorted(set(p["sizes"]) - set(M.LEDGER_SET))]
+    added_list = ", ".join(added[:-1]) + " and " + added[-1]
 
     def ir(name: str) -> str:
         return f"{p['index_rows'][name]:,}"
@@ -613,10 +618,7 @@ def index_full(p: dict[str, Any]) -> dict[str, str]:
         "ledger set byte total": f"the whole ledger set is **{setb}** B",
         "ledger set scope sentence": f"the ledger set the **{setb}** B figure covers",
         "all-TSV byte total": f"every `notes/tables/*.tsv` together totals **{p['all_tsv_bytes']}** B",
-        "added TSV byte figures": f"`notes/tables/sources.tsv` (**{p['sizes']['sources.tsv'][0]}** B over "
-                                  f"**{p['sizes']['sources.tsv'][1]}** rows) and "
-                                  f"`notes/tables/topics.tsv` (**{p['sizes']['topics.tsv'][0]}** B over "
-                                  f"**{p['sizes']['topics.tsv'][1]}** rows)",
+        "added TSV byte figures": added_list,
         "builds-on declaration count": f"(**{p['builds_on']}** `builds-on` declarations at "
                                        f"`lean/formalization.yaml:{builds_on_anchor()}`)",
         "page count decision": f"**{fam}** family pages, and no per-manuscript pages",
@@ -733,7 +735,11 @@ def index_phrases(p: dict[str, Any]) -> dict[str, str]:
 # phrase raises ValueError here rather than reflowing the page.
 INDEX_SPLIT = {
     "MSC hit count": ["family → MSC code"],
-    "added TSV byte figures": ["`notes/tables/sources.tsv`"],
+    "added TSV byte figures": ["`notes/tables/abstracts.tsv`",
+                               "(**89476** B over **372** rows), `notes/tables/quotes.tsv` "
+                               "(**24171** B over **236** rows),",
+                               "`notes/tables/sources.tsv` (**221463** B over **719** rows) and "
+                               "`notes/tables/topics.tsv` (**22631** B"],
     "bib keywords count": ["bibliography entry → `keywords` field **0** over **13,802**"],
     "builds-on declaration count": ["(**30** `builds-on` declarations at"],
     "derivable lean reach": [("config → file (yaml: **189** configs, all **189** of them also "

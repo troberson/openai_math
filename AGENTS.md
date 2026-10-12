@@ -599,7 +599,7 @@ lives in this file and nowhere else.
 - Run `python3 notes/scripts/measure_index_sizes.py` twice and diff: the report must be identical. It
   writes nothing, and every count in `notes/index-design.md` comes from it. It prints two byte sums
   that are not interchangeable — `ledger set bytes (5 named TSVs)` **297050** and
-  `all notes/tables/*.tsv bytes` **630620** — and an INDEX section whose table row counts are read from the
+  `all notes/tables/*.tsv bytes` **654791** — and an INDEX section whose table row counts are read from the
   generated files under `notes/index/`, not derived from the upstream counts they were built from.
 - Check `notes/index-design.md` with `python3 notes/scripts/verify_index_design.py` before quoting the
   schema — it resolves every backticked `path:line` anchor of any extension (a mistyped
@@ -620,7 +620,7 @@ lives in this file and nowhere else.
   tables, 372 families over 719 manuscripts, 242 scope notes, 416 configs, 200 `main_results` entries
   over 189 configs, 172 formalized, 749 preprint dirs, 122,458 `.lean` files, 559 module dirs, 17
   disciplines against 23 Lean dirs, 10 traces in 11 files, 30 verification bundles, 521 `.bib` files
-  with 13,802 entries and 393 hrefs, the ledger set at 297,050 B against the all-TSV 630,620 B, 66,107
+  with 13,802 entries and 393 hrefs, the ledger set at 297,050 B against the all-TSV 654,791 B, 66,107
   disk links with 0 broken and 17,700 resolving to a directory, and the substring counts 18 / 373
   against the brace-qualified 17 / 372. `main()` reads no argv, so `--mutant` is inert, and
   `population()` is under `functools.cache` (`:66`), so the fifteen `check()` calls the row makes pay

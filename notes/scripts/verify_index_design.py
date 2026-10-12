@@ -81,6 +81,13 @@ def count_phrases(p):
     sf, tex = f"{p['sf_rows']:,}", f"{p['tex_files']:,}"
     setb, rawkib = f"{p['ledger_set_bytes']:,}", f"{p['rawbib_kib']:,}"
     fam, man, disc = p["families"], p["manuscripts"], p["disciplines"]
+    # The tracked TSVs outside the ledger set, in the same rule the writer uses: every table on disk
+    # minus the five the page tabulates. A new table moves the phrase the checker demands.
+    added = sorted(set(p["sizes"]) - set(M.LEDGER_SET))
+    added_list = ", ".join(f"`notes/tables/{n}` (**{p['sizes'][n][0]}** B over "
+                           f"**{p['sizes'][n][1]}** rows)" for n in added[:-1])
+    added_list += " and " + (f"`notes/tables/{added[-1]}` (**{p['sizes'][added[-1]][0]}** B over "
+                             f"**{p['sizes'][added[-1]][1]}** rows)")
 
     def ir(name):
         """A rendered table's row count, read from the generated file."""
@@ -130,10 +137,7 @@ def count_phrases(p):
         (f"the whole ledger set is **{setb}** B", "ledger set byte total"),
         (f"the ledger set the **{setb}** B figure covers", "ledger set scope sentence"),
         (f"every `notes/tables/*.tsv` together totals **{p['all_tsv_bytes']}** B", "all-TSV byte total"),
-        ((f"`notes/tables/sources.tsv` (**{p['sizes']['sources.tsv'][0]}** B over "
-         f"**{p['sizes']['sources.tsv'][1]}** rows) and `notes/tables/topics.tsv` "
-         f"(**{p['sizes']['topics.tsv'][0]}** B over **{p['sizes']['topics.tsv'][1]}** rows)"),
-         "added TSV byte figures"),
+        (added_list, "added TSV byte figures"),
         ((f"(**{p['builds_on']}** `builds-on` declarations at "
          f"`lean/formalization.yaml:{builds_on_anchor()}`)"),
          "builds-on declaration count"),
