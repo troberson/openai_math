@@ -25,13 +25,17 @@ from __future__ import annotations
 
 import collections
 import csv
+import json
 import pathlib
 import re
 import sys
+from functools import cache
 
 import measure_names as M
 from catlib import ledger, overview
 from catlib.paths import owner
+from catlib.promote import key_for
+from catlib.records import cached
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 
@@ -76,11 +80,78 @@ def flat(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
 
-def population():
-    """Everything the report and notes/named-results.md assert, measured from the shipped files.
+# The record is JSON, so the types the population carries that JSON has no word for are recorded
+# here and restored on read. A set becomes a sorted list (so the record bytes are stable across
+# runs), a Counter a dict, a `defaultdict(list)` a dict, and a tuple a list. The consumer set is
+# the writer plus `verify_named_results.py`, which unpacks `tgt` 4-tuples, does set arithmetic on
+# `rn`, `pw`, `ps`, `eo`, and joins `core` and `add` into a page phrase — so `core` and `add` stay
+# sorted lists, not sets, and the page's family list keeps the order the measurement gave it.
+REC_SETS = ("rn", "subject", "subj_fams", "tgt_fams", "have_b", "have_t", "no_head",
+            "dn", "an", "pw", "ps", "eo", "abstract_only", "scope_raw", "scope_title_cs")
+REC_COUNTERS = ("env_begins", "tiers")
+REC_DEFAULT_TUPLE = ("head_titled", "abstract_named", "prose_window", "prose_sentence", "extra_only")
+REC_DEFAULT_STR = ("famdirs",)
+REC_TUPLES = ("tgt", "verb_in_title", "subj_hits")
 
-    The checker imports this so the page and the report are judged against one measurement.
+
+def encode(p: dict) -> str:
+    """The population as record bytes: every JSON-unrepresentable type flattened to its JSON form."""
+    q = dict(p)
+    for k in REC_SETS:
+        q[k] = sorted(p[k])
+    for k in REC_COUNTERS:
+        q[k] = dict(p[k])
+    for k in REC_DEFAULT_TUPLE:
+        q[k] = {f: [list(r) for r in rows] for f, rows in p[k].items()}
+    for k in REC_DEFAULT_STR:
+        q[k] = {f: list(rows) for f, rows in p[k].items()}
+    for k in REC_TUPLES:
+        q[k] = [list(r) for r in p[k]]
+    return json.dumps(q, ensure_ascii=False)
+
+
+def decode(text: str) -> dict:
+    """The record bytes back to the population, with the types the consumers index restored."""
+    p = json.loads(text)
+    for k in REC_SETS:
+        p[k] = set(p[k])
+    for k in REC_COUNTERS:
+        p[k] = collections.Counter(p[k])
+    for k in REC_DEFAULT_TUPLE:
+        d: collections.defaultdict[str, list] = collections.defaultdict(list)
+        d.update({f: [tuple(r) for r in rows] for f, rows in p[k].items()})
+        p[k] = d
+    for k in REC_DEFAULT_STR:
+        d = collections.defaultdict(list)
+        d.update({f: list(rows) for f, rows in p[k].items()})
+        p[k] = d
+    for k in REC_TUPLES:
+        p[k] = [tuple(r) for r in p[k]]
+    return p
+
+
+@cache
+def rec_key() -> str:
+    """The record key. The L1 names the ledger and `measure_names.py`, whose keyed record this
+    population reads through `M.measure()`, so the key covers the measurement the record carries."""
+    return key_for("extract_named_results.py", ())
+
+
+def population() -> dict:
+    """Everything the report and notes/named-results.md assert, read from the keyed record.
+
+    The walk is paid once per key: this script, `render_reports.py`, `verify_named_results.py` and its
+    extracted self-tests read the same bytes. The checker imports this so the page and the report are
+    judged against one measurement. The key is bound to a name before the call: the ownership census
+    derives this script as a writer from `cached(<name>, "record")`, and `cached(rec_key(), …)` is not
+    the shape its rule reads.
     """
+    key = rec_key()
+    return decode(cached(key, "named_results.json", lambda: encode(measure())))
+
+
+def measure() -> dict:
+    """The walk: the 7,240-file `.tex` scan, the ledger, and the overview parse."""
     order, fams = overview.parse_overview()
     ledger = {}
     with open(LEDGER, newline="", encoding="utf-8") as fh:

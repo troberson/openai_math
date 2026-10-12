@@ -400,7 +400,7 @@ lives in this file and nowhere else.
   manifest is `notes/scripts/README.md`, and it is the only place that answers "whose bytes are
   this". It is also the script inventory: every script under `notes/scripts/` is listed once as
   writer, report-only or checker, with what it writes and the gate command the gate list runs for it
-  — **12** writers, **26** report-only, **22** checkers, plus the page's own checker as the 23rd
+  — **14** writers, **24** report-only, **22** checkers, plus the page's own checker as the 23rd
   checker and 61st script — and the fourth class, scratch, is recorded by rule: **scratch lives under
   `.qwen/tmp/`, a permanent script lives under `notes/scripts/`**, so a probe that a later pass
   re-runs is promoted and gets a table row before it gets a gate command. `math-o3a.3.4` is that rule
@@ -413,15 +413,19 @@ lives in this file and nowhere else.
   by hand before and after each move. The quote-spec probe is the rule realized a third time:
   `measure_summaries_seed.py` moved from `.qwen/tmp/measure_summaries_seed.py` and the gate does run
   it, because its report is a function of the pages on disk.
-  Scripts and generated files are **not** 1-to-1: of the **61** scripts, **12** write
+  Scripts and generated files are **not** 1-to-1: of the **61** scripts, **14** write
   (`build_catalog.py`, `build_sources.py`, `build_index.py`, `compare_abstracts.py` — with `--tsv`
   only — `extract_formalization_deps.py`, `extract_links.py`, `extract_subfindings.py`,
   `render_reports.py`, `build_report_templates.py`, `measure_open_probe.py`, `measure_names.py`,
-  `seed_quotes.py`) and **48**
-  write nothing, and `build_index.py` alone renders **1,049** files. `measure_names.py` is the record
-  producer: its target is `.qwen/cache/records/<key>/names.json`, which the `.qwen/*` rule keeps
-  untracked, so it is the one writer with no tracked artifact and the one writer target the
-  promote-and-verify byte comparison cannot read. Of the **9**
+  `seed_quotes.py`, `extract_named_results.py`, `measure_templates.py`) and **46**
+  write nothing, and `build_index.py` alone renders **1,049** files. **Three** of the writers are
+  record producers: `measure_names.py` lands `names.json`, `extract_named_results.py` lands
+  `named_results.json`, `measure_templates.py` lands `templates.json`, all under
+  `.qwen/cache/records/<key>/`, which the `.qwen/*` rule keeps untracked, so they are the writers with
+  no tracked artifact and the writer targets the promote-and-verify byte comparison cannot read. Each
+  is a consumer's key, not the consumer's own, so a consumer that changes how it reads a record does
+  not invalidate records it reads unchanged. A record carries derived counts, never raw `.tex` text,
+  which is why `measure_names.py`'s prose scan still walks files. Of the **9**
   `notes/tables/*.tsv`, **7** are generator output and **2** are hand-authored — `notes/tables/topics.tsv` (the
   curated vocabulary `build_index.py` reads) and `notes/tables/conjecture-standing.tsv` (the training-data
   prior) — and regenerating either destroys the file. `notes/index/` is generated wholesale: edit

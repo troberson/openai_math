@@ -1,0 +1,198 @@
+POPULATION
+  ledger rows 372  families in overview.tex 372  manuscript dirs 719
+  .tex files at depths 1-4 under preprints/ 7679
+  headline begins 2410  titled (whole-text scan) 1619  of which the match spans a newline 10
+  resolves_named = 1: 248 families  (abstract-only scope: 233)
+
+HEADLINE INVENTORY (rule: theorem/maintheorem/thm begins and titled begins)
+  headline begins 2410  titled headline begins (per-line scan) 1609
+  per-env begins: maintheorem=4 theorem=2405 thm=1
+  families with >=1 headline begin 372  with >=1 titled headline 271  with none 101
+  titled headline titles matching 'Main...' (generic, no content named): 0
+
+TARGET-NAMED HEADLINE STATEMENTS (rule: titled headline title matching TARGET)
+  statements 17  families 17
+  with a resolve verb in the same title: 0 statements over 0 families; target+verb in one title: 0
+  006 rn=1 tier=T0 preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/sections/00-introduction.tex:35 "Goldfeld's analytic density conjecture"
+  013 rn=1 tier=T2 preprints/the-additive-indecomposability-of-the-primes-September-24-2026/build/sections/01-introduction.tex:15 "Ostmann's conjecture"
+  060 rn=1 tier=T0 preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/paper.tex:102 'Global Spherical Shell conjecture'
+  072 rn=1 tier=T3 preprints/Brennans-conjecture-and-sharp-inverse-square-integral-means-September-24-2026/build/sections/00-introduction.tex:52 "Brennan's conjecture and inverse-square means"
+  074 rn=1 tier=T0 preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/build/sections/02-framework.tex:1160 'Reduction to a bad weighted problem'
+  087 rn=1 tier=T3 preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/build/sections/00-introduction.tex:26 'General Mahler conjecture'
+  119 rn=1 tier=T3 preprints/Hellinger-contraction-with-arbitrary-Boolean-output-bias-September-24-2026/build/main.tex:54 'Hellinger conjecture'
+  186 rn=1 tier=T2 preprints/A-Sharp-Threshold-Bound-for-Monotone-Graph-Properties-September-25-2026/build/sections/introduction.tex:12 'Friedgut--Kalai sharp-threshold conjecture'
+  194 rn=1 tier=T2 preprints/Lechs-multiplicity-conjecture-September-23-2026/build/main.tex:80 "Lech's conjecture"
+  203 rn=1 tier=T0 preprints/Donovans-Conjecture-over-Algebraic-Closures-of-Prime-Fields-September-24-2026/build/sections/00_introduction.tex:27 "Donovan's conjecture"
+  205 rn=1 tier=T3 preprints/A-Cyclic-Polytabloid-Proof-of-Saxls-Conjecture-September-24-2026/build/sections/introduction.tex:18 "Saxl's conjecture"
+  245 rn=1 tier=T2 preprints/Weak-and-strong-normalization-in-pure-type-systems-September-25-2026/build/sections/introduction.tex:116 'The $\\beta$-Barendregt--Geuvers--Klop conjecture'
+  246 rn=1 tier=T2 preprints/A-Modulus-Proof-of-Cannons-Conjecture-September-23-2026/build/main.tex:94 "Cannon's conjecture"
+  263 rn=1 tier=T3 preprints/Generalized-outer-electron-radii-of-neutral-Coulomb-atoms-September-24-2026/build/sections/01-introduction.tex:38 'Generalized ionization conjecture: radii'
+  275 rn=0 tier=T2 preprints/Continuum-Coulomb-hardness-with-binary-nuclear-charges-September-24-2026/build/sections/01-finite-models.tex:19 'Source problem'
+  304 rn=1 tier=T0 preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/build/sections/01-introduction.tex:9 'The Hilbert--Smith conjecture'
+  311 rn=1 tier=T0 preprints/Stabilizer-Orbits-and-Thick-Tensor-Ideals-of-Dualizable-Kn-Local-Spectra-September-24-2026/build/sections/01-introduction.tex:74 'Hovey--Strickland conjecture'
+
+SUBJECT-NAMED HEADLINE STATEMENTS (rule: titled headline title containing a name-layer subject)
+  statements 207  families 112  (subjects in the name layer: 551)
+  subject-named ∩ rn 74  subject-named-not-rn 38
+  subject-named-not-rn: 002 009 010 014 015 023 036 069 099 114 115 116 125 140 211 212 216 218 222 223 224 227 231 232 238 239 260 261 271 275 282 286 318 331 337 353 376 377
+
+CROSS-TABS vs resolves_named
+  headline-target ∩ rn 16  headline-target-not-rn 1 -> 275
+  rn-not-headline-target 232
+  rn families with no titled headline theorem: 76  tiers T3=37 T2=25 T1=0 T0=14
+  non-rn families with titled headline theorems: 99
+
+LAYER 1 - manuscript directory name names a target
+  families 76  dirs 88  ∩rn 73  dir-not-rn 3 -> 354 365 372  rn-not-dir 175
+
+LAYER 2 - the manuscript's own abstract names a target with a resolve verb
+  families 275  sentences 397  ∩rn 227  abstract-not-rn 48  rn-not-abstract 21
+  abstract-not-rn: 009 010 014 015 017 023 026 036 042 046 082 093 103 122 137 182 190 211 212 215 219 221 224 231 232 233 261 262 271 273 281 283 302 312 318 336 337 345 346 348 353 354 357 359 361 362 365 372
+  rn-not-abstract: 020 027 085 094 124 126 129 134 144 155 158 160 187 191 277 280 299 309 322 323 342
+
+LAYER 3 - manuscript prose (bibliography and cite braces stripped)
+  window ±80: hits 1665 over 337 families  ∩rn 240  prose-not-rn 97  rn-not-prose 8 -> 085 094 126 144 187 299 323 333
+  sentence scope: hits 1283 over 332 families  ∩rn 238  prose-not-rn 94  rn-not-prose 10 -> 020 085 094 144 158 187 280 299 322 323
+  rn-not-prose under BOTH rules: 6 -> 085 094 144 187 299 323
+
+VERB VOCABULARY GAP (target noun with an EXTRA verb, no column verb, in prose)
+  families 5 -> 085 138 144 234 358  of these rn=1: 2
+
+TITLE-SCOPE SWAP (applied: target noun in the overview title, verb in its abstract)
+  additions 15 -> 022 039 044 096 097 151 156 192 209 263 289 293 297 347 367
+  column reads 248; abstract-only scope reads 233; removals 0 - the union keeps every flag the abstract-only scope had
+  scope alternates: both regexes on the raw title+abstract read 149 (removals 94, additions 10); target noun case-sensitive in the title with the verb in the lowered pair read 148 (removals 100, additions 15)
+
+DIRECTION A - manuscript names a target the abstract-only scope missed
+  (reading material, anchored)
+--- 022 tier=T0 rn=1 paps=1 shapes=uniform
+  overview.tex:120 TITLE: The weak inhomogeneous Duffin--Schaeffer conjecture
+  overview.tex:120 ABSTRACT: Proves that for every real shift $\gamma$ and finite-valued $\psi:\mathbb N\to[0,\infty)$, divergence of $\sum_q\phi(q)\psi(q)/q$ implies $\|qx-\gamma\|<\psi(q)$ for infinitely many $q$, for almost every $x$. Here $\phi$ is Euler's totient and the norm is distance to the nearest integer. Numerators are unrestricted; no monotonicity or Diophantine condition on $\gamma$ is needed.
+  DIRS: The-weak-inhomogeneous-Duffin-Schaeffer-conjecture-September-25-2026
+  MS-ABSTRACT preprints/The-weak-inhomogeneous-Duffin-Schaeffer-conjecture-September-25-2026/build/main.tex:37 'We prove the weak inhomogeneous Duffin--Schaeffer conjecture.'
+  MS-PROSE preprints/The-weak-inhomogeneous-Duffin-Schaeffer-conjecture-September-25-2026/build/main.tex:38 ...begindocument \maketitle \beginabstract We prove the weak inhomogeneous Duffin--Schaeffer conjecture. For every fixed $\gamma\in\mathbb R$ and finite-valued $\psi:\mathbb N\to[0,\infty)$, d...
+--- 039 tier=T3 rn=1 paps=4 shapes=bound|classification|uniform
+  overview.tex:156 TITLE: Nagata's conjecture and maximal Seshadri constants
+  overview.tex:156 ABSTRACT: Proves Nagata's strict inequality $\sum_i m_i<d\sqrt r$ for every nonzero effective plane curve of degree $d$ through $r\ge10$ very general complex points, with arbitrary multiplicities $m_i$. It also proves maximal multipoint Seshadri constants $(L^n/r)^{1/n}$ for every smooth polarized projective variety of dimension $n\ge2$ and all sufficiently large $r$: at very general points over $\mathbb C$, and at the geometric generic tuple over any algebraically closed field of positive characteristic.
+  DIRS: Nagatas-Conjecture-for-Plane-Curves-September-23-2026 | Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026 | Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-5-2026 | Maximal-multipoint-Seshadri-constants-in-positive-characteristic-October-5-2026
+  MS-ABSTRACT preprints/Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026/build/main.tex:11 'This resolves positively the qualitative Nagata--Biran conjecture for surfaces.'
+  MS-PROSE preprints/Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026/build/main.tex:12 ...ry sufficiently large integer $r$. This resolves positively the qualitative Nagata--Biran conjecture for surfaces. \endabstract \tableofcontents \inputsections/introduction \inputsections/j...
+--- 044 tier=T0 rn=1 paps=1 shapes=uniform
+  overview.tex:166 TITLE: The equivariant cohomological Hikita conjecture for quivers
+  overview.tex:166 ABSTRACT: Proves the equivariant cohomological Hikita correspondence for every finite quiver, including loops and multiple arrows, with arbitrary dimension and framing vectors and commuting flavor torus. When every semistable point is stable and the gauge action is free, the equivariant cohomology of the Nakajima variety is canonically the coordinate ring of the scheme-theoretic cocharacter-fixed locus of its flavor-deformed Coulomb branch.
+  DIRS: The-equivariant-cohomological-Hikita-conjecture-for-arbitrary-quivers-September-24-2026
+  MS-ABSTRACT preprints/The-equivariant-cohomological-Hikita-conjecture-for-arbitrary-quivers-September-24-2026/build/main.tex:48 'We prove the equivariant cohomological Hikita conjecture for arbitrary finite quivers, including loops and multiple arrows.'
+  MS-PROSE preprints/The-equivariant-cohomological-Hikita-conjecture-for-arbitrary-quivers-September-24-2026/build/main.tex:49 ...26 \begindocument \maketitle \beginabstract We prove the equivariant cohomological Hikita conjecture for arbitrary finite quivers, including loops and multiple arrows. For any dimension and...
+--- 151 tier=T2 rn=1 paps=1 shapes=counterexample|bound
+  overview.tex:381 TITLE: A $C^1$ counterexample to Shub’s entropy conjecture
+  overview.tex:381 ABSTRACT: Constructs a noninvertible $C^1$ self-map of a compact smooth manifold with zero topological entropy but eigenvalue $2$ on second homology. This disproves the homological entropy lower bound for general $C^1$ self-maps: homological growth need not force positive orbit complexity.
+  DIRS: A-C1-Counterexample-to-the-Entropy-Conjecture-September-25-2026
+  MS-ABSTRACT preprints/A-C1-Counterexample-to-the-Entropy-Conjecture-September-25-2026/build/source/main.tex:39 "We disprove the general \\(C^1\\) self-map formulation of Shub's entropy conjecture."
+  MS-PROSE preprints/A-C1-Counterexample-to-the-Entropy-Conjecture-September-25-2026/build/source/main.tex:13 ...s=true,allcolors=linkblue]hyperref \hypersetuppdftitle=A C1 Counterexample to the Entropy Conjecture, pdfauthor=OpenAI \usepackage[nameinlink,noabbrev,capitalise]cleveref \pdftr...
+--- 209 tier=T0 rn=1 paps=2 shapes=counterexample|classification
+  overview.tex:499 TITLE: Integral counterexamples to Gersten’s conjecture
+  overview.tex:499 ABSTRACT: Disproves unrestricted integral Gersten injectivity in degrees $3$ and $5$. Two explicit two-dimensional ramified regular local rings of mixed characteristic $(0,5)$ have nonzero integral $K$-theory classes that vanish over their fraction fields.
+  DIRS: An-Integral-Counterexample-to-Gerstens-Conjecture-September-25-2026 | An-Integral-Degree-Three-Gersten-Counterexample-September-26-2026
+  MS-ABSTRACT preprints/An-Integral-Degree-Three-Gersten-Counterexample-September-26-2026/build/main.tex:33 'This gives a negative answer to the unrestricted integral Gersten conjecture.'
+  MS-PROSE preprints/An-Integral-Degree-Three-Gersten-Counterexample-September-26-2026/build/main.tex:34 ...A)$ has nonzero kernel. This gives a negative answer to the unrestricted integral Gersten conjecture. \endabstract \inputsections/introduction \inputsections/model \inputsections/integral-c...
+--- 297 tier=T2 rn=1 paps=1 shapes=counterexample|classification
+  overview.tex:686 TITLE: A ZFC counterexample to Naimark's problem
+  overview.tex:686 ABSTRACT: Gives an alternative to \href{https://arxiv.org/abs/2609.26930v1}{Tanaka's ZFC construction} of a unital infinite-dimensional simple complex $C^*$-algebra with a faithful tracial state and exactly one nonzero irreducible representation up to unitary equivalence. Thus the unrestricted compact-operator characterization fails without additional set-theoretic assumptions; the counterexample is nonseparable.
+  DIRS: A-counterexample-to-Naimarks-problem-in-ZFC-September-24-2026
+  MS-ABSTRACT preprints/A-counterexample-to-Naimarks-problem-in-ZFC-September-24-2026/build/main.tex:34 "This gives a negative answer to Naimark's problem without additional set-theoretic assumptions."
+  MS-PROSE preprints/A-counterexample-to-Naimarks-problem-in-ZFC-September-24-2026/build/main.tex:14 ...nameinlink,capitalize,noabbrev]cleveref \hypersetuppdftitle=A counterexample to Naimark's problem in ZFC,pdfauthor=OpenAI \allowdisplaybreaks[1] \numberwithinequationsection \newtheoremth...
+--- 354 tier=T2 rn=0 paps=1 shapes=
+  overview.tex:806 TITLE: Isoperimetric regions in the cubic three-torus
+  overview.tex:806 ABSTRACT: Determines the isoperimetric profile of the unit cubic flat three-torus and classifies every finite-perimeter minimizer: balls, circular tubes around shortest closed geodesics, coordinate slabs, and their complements. The transition volumes are $4\pi/81$ and $1/\pi$, with exactly the adjacent two types minimizing at each transition.
+  DIRS: The-Isoperimetric-Conjecture-for-the-Cubic-Flat-Three-Torus-September-24-2026
+  MS-ABSTRACT preprints/The-Isoperimetric-Conjecture-for-the-Cubic-Flat-Three-Torus-September-24-2026/build/paper.tex:36 'We prove the isoperimetric conjecture for the cubic flat three-torus and classify all minimizers, including the equality cases at the transition volumes $4\\pi/81$ and $1/\\pi$.'
+  MS-PROSE preprints/The-Isoperimetric-Conjecture-for-the-Cubic-Flat-Three-Torus-September-24-2026/build/paper.tex:37 ...24, 2026 \begindocument \maketitle \vspace-2em \beginabstract We prove the isoperimetric conjecture for the cubic flat three-torus and classify all minimizers, including the equality cases...
+--- 365 tier=T3 rn=0 paps=3 shapes=bound|uniform
+  overview.tex:830 TITLE: Joint metric and connection recovery from one boundary patch
+  overview.tex:830 ABSTRACT: Zero-frequency measurements on any nonempty open boundary patch determine a smooth metric and smooth unitary connection on a trivial Hermitian rank-two bundle over a compact connected manifold of dimension at least three, up to diffeomorphism and gauge fixed on that patch. Inputs and observations use the same patch. In contrast, distinct uniformly positive bounded measurable scalar conductivities on a three-dimensional ball can have identical full-boundary data.
+  DIRS: Determination-of-a-metric-and-a-unitary-connection-from-one-boundary-patch-October-5-2026 | Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026 | Nonuniqueness-for-Bounded-Measurable-Scalar-Conductivities-in-Three-Dimensions-September-23-2026
+  MS-ABSTRACT preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/build/paper.tex:8 'We resolve the smooth anisotropic Calderon uniqueness problem with arbitrary same-patch measurements.'
+  MS-PROSE preprints/Nonuniqueness-for-Bounded-Measurable-Scalar-Conductivities-in-Three-Dimensions-September-23-2026/build/paper.tex:126 ...ectivity of its linearization at constant conductivities~\citeCalderon. For the nonlinear problem in dimensions at least three, Sylvester and Uhlmann established full-boundary uniqueness...
+--- 372 tier=T2 rn=0 paps=1 shapes=bound
+  overview.tex:846 TITLE: Global uniqueness in smooth isotropic elasticity
+  overview.tex:846 ABSTRACT: Proves that full static boundary displacement-to-traction data determine both smooth real Lam\'e moduli on every bounded connected smooth domain in $\mathbb R^3$, provided $\mu>0$ and $3\lambda+2\mu>0$ on the closure. Neither analyticity, proximity to constant coefficients nor prior knowledge near the boundary is required.
+  DIRS: Global-Uniqueness-for-the-Smooth-Isotropic-Elasticity-Inverse-Problem-September-24-2026
+  MS-ABSTRACT preprints/Global-Uniqueness-for-the-Smooth-Isotropic-Elasticity-Inverse-Problem-September-24-2026/build/main.tex:46 'This resolves the smooth three-dimensional isotropic elastic Calderon uniqueness problem under these positivity assumptions.'
+  MS-PROSE preprints/Global-Uniqueness-for-the-Smooth-Isotropic-Elasticity-Inverse-Problem-September-24-2026/build/main.tex:41 ...4, 2026 \hypersetuppdftitle=Global Uniqueness for the Smooth Isotropic Elasticity Inverse Problem,pdfauthor=OpenAI \begindocument \maketitle \beginabstract We prove that the full static...
+--- 263 tier=T3 rn=1 paps=3 shapes=bound|partial
+  overview.tex:615 TITLE: The ionization and generalized ionization conjectures
+  overview.tex:615 ABSTRACT: For the full nonrelativistic Coulomb model with two electron spin states, proves that a molecule with $M$ fixed nuclei of charges at least one and total charge $Z$ strictly binds at most $Z+CM$ electrons. Neutral-atom first ionization energies and radii containing all but an expected half-electron have universal positive upper and lower bounds. The energy cost of removing $m$ electrons has Thomas--Fermi asymptotics as $m\to\infty$ and $Z/m\to\infty$; neutral-atom outer radii have the corresponding iterated-limit asymptotics, taking $Z\to\infty$ first.
+  DIRS: Uniform-excess-charge-for-Coulomb-molecules-and-the-outer-radius-of-neutral-atoms-September-24-2026 | Generalized-ionization-energies-for-full-Coulomb-atoms-September-24-2026 | Generalized-outer-electron-radii-of-neutral-Coulomb-atoms-September-24-2026
+  HEAD preprints/Generalized-outer-electron-radii-of-neutral-Coulomb-atoms-September-24-2026/build/sections/01-introduction.tex:38 'Generalized ionization conjecture: radii'
+  MS-ABSTRACT preprints/Generalized-ionization-energies-for-full-Coulomb-atoms-September-24-2026/build/paper.tex:51 'We prove the energy part of the generalized ionization conjecture for full nonrelativistic Coulomb atoms with two electron spin states.'
+  MS-PROSE preprints/Generalized-ionization-energies-for-full-Coulomb-atoms-September-24-2026/build/paper.tex:52 ...document \maketitle \beginabstract We prove the energy part of the generalized ionization conjecture for full nonrelativistic Coulomb atoms with two electron spin states. The energy needed...
+--- 275 tier=T2 rn=0 paps=2 shapes=
+  overview.tex:639 TITLE: QMA-hardness of continuum Coulomb energy
+  overview.tex:639 ABSTRACT: Proves QMA-hardness of approximating the electronic Coulomb energy infimum in three dimensions, minimizing over the full spinful fermionic continuum space. Deterministic polynomial-time reductions work even with only unit-charge nuclei at distinct rational positions, polynomially many electrons and an energy-threshold separation of at least one.
+  DIRS: Continuum-Coulomb-hardness-with-binary-nuclear-charges-September-24-2026 | QMA-hardness-of-continuum-Coulomb-energy-with-unit-nuclear-charges-September-24-2026
+  HEAD preprints/Continuum-Coulomb-hardness-with-binary-nuclear-charges-September-24-2026/build/sections/01-finite-models.tex:19 'Source problem'
+  MS-ABSTRACT: no sentence naming a target with a resolve verb
+  MS-PROSE preprints/Continuum-Coulomb-hardness-with-binary-nuclear-charges-September-24-2026/build/sections/00-introduction.tex:63 ...andl, and Verstraete established QMA-completeness of the finite-mode $N$-representability problem under polynomial-time Turing reductions, using general two-body fermionic Hamiltonians in...
+
+DIRECTION B - column reads 1, manuscript naming is thin (reading material, anchored)
+--- 085 tier=T3 rn=1 paps=1 shapes=resolution|uniform
+  overview.tex:244 TITLE: Endpoint regularity of the planar centered maximal function
+  overview.tex:244 ABSTRACT: Resolves the planar centered-disk case of the Haj{\l}asz--Onninen maximal-function regularity problem. For every real $f\in W^{1,1}(\mathbb R^2)$, the centered disk maximal function satisfies $\|\nabla Mf\|_1\le C\|\nabla f\|_1$ with an absolute constant. It belongs locally to $W^{1,1}$ and has a globally integrable weak gradient.
+  DIRS: An-Endpoint-Gradient-Bound-for-the-Centered-Disk-Maximal-Operator-September-26-2026
+  titled headline statements 0  target-named headline 0  ms-abstract target+verb 0  prose window 0  prose sentence 0  extra-only 2
+  EVID preprints/An-Endpoint-Gradient-Bound-for-the-Centered-Disk-Maximal-Operator-September-26-2026/build/main.tex:51 'This gives a positive resolution of the planar centered-disk case of the endpoint question of Haj\\lasz and Onninen.'
+  EVID preprints/An-Endpoint-Gradient-Bound-for-the-Centered-Disk-Maximal-Operator-September-26-2026/build/sections/introduction.tex:15 'We give a positive resolution of the planar centered-disk case of their endpoint question.'
+--- 094 tier=T3 rn=1 paps=1 shapes=partial|uniform
+  overview.tex:264 TITLE: Subpolynomial dimension reduction in $L_p$
+  overview.tex:264 ABSTRACT: For every fixed $1<p<\infty$ and distortion $D>1$, every $n$-point subset of real $L_p$ embeds into $\ell_p^d$ with distortion at most $D$ and dimension $d=n^{o(1)}$, answering Naor's sublinear-dimension question for $p\ne2$. In contrast, exact embeddings require worst-case dimension $\Theta(n^2)$ when $p\ne2$.
+  DIRS: Subpolynomial-dimension-reduction-in-Lp-September-23-2026
+  titled headline statements 0  target-named headline 0  ms-abstract target+verb 0  prose window 0  prose sentence 0  extra-only 0
+--- 126 tier=T2 rn=1 paps=1 shapes=bound|uniform
+  overview.tex:329 TITLE: Exponential semidefinite complexity of perfect matching
+  overview.tex:329 ABSTRACT: Proves that every exact semidefinite lift of the perfect matching polytope has exponential size, answering Rothvoss's polynomial-size lift question negatively. The bound holds even for the positive semidefinite rank of its odd-cut slack matrix after any fixed shift $0<\rho<1$, allowing arbitrary real positive semidefinite factors.
+  DIRS: Exponential-PSD-rank-of-positively-shifted-matching-matrices-October-5-2026
+  titled headline statements 2  target-named headline 0  ms-abstract target+verb 0  prose window 0  prose sentence 1  extra-only 0
+  EVID preprints/Exponential-PSD-rank-of-positively-shifted-matching-matrices-October-5-2026/build/source/sections/introduction.tex:7 'We prove an exponential lower bound for perfect matching by studying an exact factorization problem that also allows a fixed positive shift of every odd-cut slack.'
+  EVID preprints/Exponential-PSD-rank-of-positively-shifted-matching-matrices-October-5-2026/build/source/sections/fourier-smoothing.tex:42 'Fourier smoothing of matrix squares'
+  EVID preprints/Exponential-PSD-rank-of-positively-shifted-matching-matrices-October-5-2026/build/source/sections/matching-smoothing.tex:42 'Uniform smoothing'
+--- 144 tier=T2 rn=1 paps=1 shapes=resolution
+  overview.tex:367 TITLE: Banach's simple Lebesgue-spectrum problem
+  overview.tex:367 ABSTRACT: Resolves the probability-preserving form of Banach's simple Lebesgue-spectrum problem within smooth dynamics. A smooth volume-preserving diffeomorphism of the standard-volume three-torus has simple Lebesgue spectrum on its entire complex mean-zero $L^2$ space: the bilateral iterates of one real observable form an orthonormal basis of that space.
+  DIRS: A-smooth-three-torus-diffeomorphism-with-simple-Lebesgue-spectrum-September-23-2026
+  titled headline statements 0  target-named headline 0  ms-abstract target+verb 0  prose window 0  prose sentence 0  extra-only 1
+  EVID preprints/A-smooth-three-torus-diffeomorphism-with-simple-Lebesgue-spectrum-September-23-2026/build/main.tex:11 "black,pdftitle=A smooth three-torus diffeomorphism with simple Lebesgue spectrum,pdfauthor=OpenAI \\newcommand\\T\\mathbb T \\newcommand\\R\\mathbb R \\newcommand\\Z\\mathbb Z \\newcommand\\N\\mathbb N \\newcommand\\C\\mathbb C \\newcommand\\eps\\varepsilon \\newcommand\\1\\mathbf 1 \\newcommand\\dd\\,\\mathrm d \\DeclareMathOperator\\eee \\DeclareMathOperator\\ReaRe \\DeclareMathOperator\\ImaIm \\DeclareMathOperator\\suppsupp \\DeclareMathOperator\\distdist \\DeclareMathOperator\\LebLeb \\newcommand\\calH\\mathcal H \\newcommand\\calC\\mathcal C \\newtheoremtheoremTheorem[section] \\newtheoremlemma[theorem]Lemma \\newtheoremproposition[theorem]Proposition \\newtheoremcorollary[theorem]Corollary \\theoremstyledefinition \\newtheoremdefinition[theorem]Definition \\theoremstyleremark \\newtheoremremark[theorem]Remark \\numberwithinequationsection \\setlistitemsep=2pt,topsep=5pt \\setlength\\emergencystretch1em \\titleA smooth three-torus diffeomorphism with simple Lebesgue spectrum \\authorOpenAI \\dateSeptember 23, 2026 \\begindocument \\maketitle \\beginabstract We solve the probability-preserving form of Banach's simple Lebesgue-spectrum problem in smooth dynamics."
+--- 187 tier=T2 rn=1 paps=1 shapes=resolution
+  overview.tex:453 TITLE: Snaky in 21 Maker moves
+  overview.tex:453 ABSTRACT: Settles the Snaky achievement problem: Maker can force the six-cell Snaky shape within 21 of its own moves on the initially empty infinite square board. Maker moves first, each player claims one free cell per turn, and translations, rotations and reflections count as wins.
+  DIRS: Snaky-in-21-Maker-moves-September-25-2026
+  titled headline statements 0  target-named headline 0  ms-abstract target+verb 0  prose window 0  prose sentence 0  extra-only 0
+--- 299 tier=T3 rn=1 paps=1 shapes=uniform
+  overview.tex:690 TITLE: The Kirchberg--R\o rdam character criterion
+  overview.tex:690 ABSTRACT: A nonzero unital separable complex $C^*$-algebra is Jiang--Su stable exactly when its norm central-sequence algebra has no characters, for every free ultrafilter. This answers the Kirchberg--R\o rdam character question. Also, the infinite minimal tensor power of every such algebra without characters is Jiang--Su stable, answering the Dadarlat--Toms question.
+  DIRS: The-Kirchberg-Rordam-character-criterion-September-25-2026
+  titled headline statements 0  target-named headline 0  ms-abstract target+verb 0  prose window 0  prose sentence 0  extra-only 0
+--- 323 tier=T2 rn=1 paps=1 shapes=counterexample
+  overview.tex:742 TITLE: Relative independence of the separable quotient problem
+  overview.tex:742 ABSTRACT: Establishes, relative to the consistency of a measurable cardinal, that the separable quotient problem is independent of ZFC. The assertion that every infinite-dimensional Banach space has a separable infinite-dimensional quotient can hold for all real and complex Banach spaces, whereas the continuum hypothesis yields counterexamples over both fields.
+  DIRS: Relative-independence-of-the-separable-quotient-problem-September-23-2026
+  titled headline statements 1  target-named headline 0  ms-abstract target+verb 0  prose window 0  prose sentence 0  extra-only 0
+  EVID preprints/Relative-independence-of-the-separable-quotient-problem-September-23-2026/build/sections/models.tex:15 'Solovay'
+--- 333 tier=T2 rn=1 paps=1 shapes=resolution|uniform
+  overview.tex:764 TITLE: Smooth isometric immersions of surfaces into $\mathbb R^4$
+  overview.tex:764 ABSTRACT: Every closed smooth Riemannian surface admits a smooth isometric immersion into $\mathbb R^4$, resolving the closed-surface form of the four-dimensional isometric-immersion problem. This includes nonorientable surfaces and metrics of arbitrary Gaussian curvature.
+  DIRS: Smooth-isometric-immersions-of-closed-surfaces-into-Euclidean-four-space-September-23-2026
+  titled headline statements 0  target-named headline 0  ms-abstract target+verb 1  prose window 0  prose sentence 1  extra-only 0
+  EVID preprints/Smooth-isometric-immersions-of-closed-surfaces-into-Euclidean-four-space-September-23-2026/build/main.tex:38 'This resolves the closed-surface form of the classical four-dimensional isometric-immersion problem.'
+  EVID preprints/Smooth-isometric-immersions-of-closed-surfaces-into-Euclidean-four-space-September-23-2026/build/main.tex:38 'This resolves the closed-surface form of the classical four-dimensional isometric-immersion problem.'
+[probe] target exit code: 0
+[probe2] target notes/scripts/extract_named_results.py 
+[probe2] wall 0.02  opens 47  distinct 37  repeats 10
+[probe2] rchar MB 3.1  read_bytes MB 0.0
+[probe2] buckets:
+          abs/other                  19
+          notes/scripts/             17
+          other                      8
+          notes/                     3
+[probe2] notes/ paths (count  modes  path):
+              3  r        notes/tables/catalog.tsv
+[probe2] write-mode paths outside notes/:

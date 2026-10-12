@@ -9,10 +9,10 @@ is per file, and the checker exits 1 on a file no rule owns.
 It is also the script inventory. Every script under `notes/scripts/` is listed once, in one of three
 classes — writer, report-only, checker — with what it writes and the command the gate runs for it, and
 the fourth class, the scratch a session writes outside the tree, is recorded by rule rather than by
-file. The classes partition the **61** scripts: **12** writers, **26** report-only, **22** checkers,
+file. The classes partition the **61** scripts: **14** writers, **24** report-only, **22** checkers,
 and `verify_script_ownership.py` itself, which is the 23rd checker and is not listed in its own table.
 
-## The split: 12 write, 48 write nothing
+## The split: 14 write, 46 write nothing
 
 The writer set is derived from the scripts' own source, not from this page: a script is a writer when
 a path constant rooted at `notes/` appears on the left of `.open(..., "w")` or `.write_text(...)`,
@@ -33,7 +33,7 @@ self-test: a module-level
 `mutants` / `mutant_test` / `selftest` body is blanked before the write calls are read, because a
 self-test writes the page it checks only to mutate it and restores the bytes it read in the `finally`
 — `verify_script_ownership.py` does exactly that, in three branches (the page it checks, `notes/scripts/README.md`, and `notes/templates.md`), so its normal run writes nothing and it stays in the checker class. `check_index_links.py` and `measure_proof_density.py` were this rule's examples; `math-o3a.3` moved their sync pass into `verify_page_sync.py`, which mutates page text in memory, so neither script carries a write call any more. That rule
-finds **12** writers over **60** scripts.
+finds **14** writers over **60** scripts.
 
 ### Writers
 
@@ -49,6 +49,8 @@ finds **12** writers over **60** scripts.
 | `render_reports.py` | `notes/README.md`, `notes/abstracts.md`, `notes/dependency-drift.md`, `notes/index-design.md`, `notes/index-links.md`, `notes/links.md`, `notes/named-results.md`, `notes/names.md`, `notes/proof-density.md`, `notes/sources.md`, `notes/verification-dirs.md`, `notes/scope-exclusions.md`, `notes/topics.md`, `notes/t0-chains.md`, `notes/subfinding-pairs.md`, `notes/counterexample-crosscheck.md`, `notes/formalization-faithfulness.md`, `notes/fleet-design.md`, `notes/templates.md` | single run; cached bytes == promoted bytes for all 19 pages | the nineteen report-fed pages |
 | `build_report_templates.py` | `notes/templates/report` | not in `gate.py` — it reads each page with `git show HEAD:`, so a gate run would rewrite templates from committed bytes; run explicitly with 0 args (all nineteen pages) or 2 (one page) after a writer's slot dict changes | the nineteen page templates; the registry, slot dicts and needle derivation it reads are in `catlib/templates.py` |
 | `measure_names.py` | `.qwen/cache/records/<key>/names.json` | plain; no tracked artifact, so the promote-and-verify assertion compares no bytes for it — `verify_cache_promotion.py` proves its L1 against the probe record and the cache check reads no tracked path | `notes/names.md`, and the 551 name pages `build_index.py` renders from `--json` |
+| `extract_named_results.py` | `.qwen/cache/records/<key>/named_results.json` | plain; no tracked artifact, so the promote-and-verify assertion compares no bytes for it — `verify_cache_promotion.py` proves its L1 against the probe record and the cache check reads no tracked path | `notes/named-results.md` — the writer, `verify_named_results.py` and `notes/scripts/tests/test_named_results.py` read the same record, so the 7,240-file `.tex` walk is paid once per key, not once per process |
+| `measure_templates.py` | `.qwen/cache/records/<key>/templates.json` | plain; no tracked artifact, so the promote-and-verify assertion compares no bytes for it — `verify_cache_promotion.py` proves its L1 against the probe record and the cache check reads no tracked path | `notes/templates.md` — the writer, `render_reports.py` and `build_report_templates.py`'s floor page read the same record |
 | `measure_open_probe.py` | `notes/probe` | not in `gate.py` — a record carries a wall time per target, so a run-1/run-2 byte diff of a record is a timing artifact, not a proof; run explicitly over the purity and amplification targets, appending stdout to build a multi-target record | the two probe records `verify_fleet_design.py` parses |
 | `seed_quotes.py` | `notes/tables/quotes.tsv` | single run; cached bytes == promoted bytes under the key | `notes/subfinding-pairs.md` and `notes/summaries/**` — the two surfaces whose quotes it seeds; `render_reports.py` reads the pair rows back for the pair page, and `notes/scripts/tests/test_quotes.py` reads the whole table back |
 
@@ -56,27 +58,32 @@ Seven writers emit one TSV each. `build_index.py` is the one-to-many case: it re
 **1,033** `.md` pages and **16** `.tsv` tables. `render_reports.py` renders the nineteen report-fed pages
 from the templates `build_report_templates.py` builds from the committed page and the slot dict that
 writer supplies. `compare_abstracts.py` is the conditional case: its
-default run writes nothing and only `--tsv` touches `notes/tables/abstracts.tsv`. `measure_names.py` is
-the record producer: its target is not a tracked path, and its consumers (`render_reports.py`,
-`build_index.py`, `extract_named_results.py`, `verify_named_results.py`) read the store through
-`measure()`, so the 7,240-file corpus walk is paid once per key instead of once per process.
+default run writes nothing and only `--tsv` touches `notes/tables/abstracts.tsv`. The three record
+producers (`measure_names.py`, `extract_named_results.py`, `measure_templates.py`) write to the keyed
+store, not to a tracked path: `measure_names.py`'s consumers (`render_reports.py`, `build_index.py`,
+`extract_named_results.py`, `verify_named_results.py`) read it through `measure()`,
+`extract_named_results.py`'s consumers (`render_reports.py`, `verify_named_results.py` and
+`notes/scripts/tests/test_named_results.py`) read it through `population()`, and
+`measure_templates.py`'s (`render_reports.py` and `build_report_templates.py`'s floor page) read it
+through `population()`, so each walk is paid once per key instead of once per process.
 
-All **11** writers take `--check-only`: the run does its full measurement, prints its report, and writes
+All **14** writers take `--check-only`: the run does its full measurement, prints its report, and writes
 nothing. Measured 2026-10-11 by running each writer plain and then with the flag — the report is
 identical in both runs (the write announcement is the only line that differs) and
-`git status --porcelain` is unchanged by the flagged run. `measure_names.py` is the case where the
-flagged run's proof is the report identity alone: its write lands in the untracked store, so
-`git status` is clean for it plain and flagged alike. `gate.py` runs the writers plain; the read-only
+`git status --porcelain` is unchanged by the flagged run. The three record producers are the case where
+the flagged run's proof is the report identity alone: their write lands in the untracked store, so
+`git status` is clean for them plain and flagged alike. `gate.py` runs the writers plain; the read-only
 rows `math-o3a.5.2` pooled are the rows that run with the flag, which is why the flag comes first.
 
-All eleven writers write through `catlib/atomic.py`, so a crash never leaves a half-written tracked
-file. The single-file writers use `write_atomic()`, which lands bytes on a sibling temp name in the
-same directory, fsyncs, and moves the temp onto the target. The three multi-file writers
-(`build_index.py`, `render_reports.py`, `build_report_templates.py`) use `Staging(name)`: `stage()`
-lands bytes under `.qwen/cache/staging/<name>/`, which the `.qwen/*` rule in `.gitignore` keeps
-untracked, and records the tracked path; `promote()` moves every staged slot onto its tracked path.
-`measure_names.py` reaches `write_atomic()` through `catlib/records.py`'s `cached()`, which lands the
-record inside the keyed store; there is no tracked file there to half-write, so the crash-safety
+All fourteen writers reach `write_atomic()` in `catlib/atomic.py`, so a crash never leaves a
+half-written tracked file. The single-file writers use `write_atomic()`, which lands bytes on a sibling
+temp name in the same directory, fsyncs, and moves the temp onto the target. The three multi-file
+writers (`build_index.py`, `render_reports.py`, `build_report_templates.py`) use `Staging(name)`:
+`stage()` lands bytes under `.qwen/cache/staging/<name>/`, which the `.qwen/*` rule in `.gitignore`
+keeps untracked, and records the tracked path; `promote()` moves every staged slot onto its tracked
+path. The three record producers reach `write_atomic()` through `catlib/records.py`'s `cached()`,
+which lands the record inside the keyed store; there is no tracked file there to half-write, so the
+crash-safety
 argument for it is the untracked-ness of the tree, not the temp-name move.
 A writer calls `promote()` only after its own reconciliation lines have printed, so killing a writer
 mid-run leaves the tracked tree exactly as it was — the proof is `build_index.py` killed mid-run in
@@ -110,7 +117,7 @@ Editing a join in `build_catalog.py` can move rows in six artifacts.
 
 ### Report-only
 
-The other **48** scripts write nothing. **26** of them print a report: **21** print the report a page's
+The other **46** scripts write nothing. **24** of them print a report: **19** print the report a page's
 counts come from, **1** prints the quote-spec classification the seeded `notes/tables/quotes.tsv` is
 measured against, **1** prints the pytest report for the extracted checker self-tests
 (`run_tests.py`), **2** print the notes-move surface `math-faz` prices before a pass and re-checks
@@ -192,7 +199,6 @@ had to wait for the serial chain to finish.
 | `dump_template_slots.py` | `notes/templates.md` — the writer's slot labels with their values | plain |
 | `extract_citations.py` | `notes/citations.md` | plain |
 | `extract_counterexample_crosscheck.py` | `notes/counterexample-crosscheck.md` | plain |
-| `extract_named_results.py` | `notes/named-results.md` | plain |
 | `extract_scope_notes.py` | `notes/scope-exclusions.md` | plain |
 | `extract_subfinding_pairs.py` | `notes/subfinding-pairs.md` | plain |
 | `extract_t0_chains.py` | `notes/t0-chains.md` | plain |
@@ -207,7 +213,6 @@ had to wait for the serial chain to finish.
 | `measure_move_surface.py` | `math-faz` — the moved/stable path-mention split over the 30 pages the reorg moves, by context; the bead re-runs it after each pass | **not gated** |
 | `measure_proof_density.py` | `notes/proof-density.md` | the self-tests are in `notes/scripts/tests/test_proof_density.py`, run by the `run_tests.py` row; the plain run is not gated, because `render_reports.py` imports the module and calls `build_families()` rather than running the script |
 | `measure_summaries_seed.py` | `notes/tables/quotes.tsv` — the span set, the citation attribution and the raw/folded/not-located classification the seeded summaries specs are measured against | plain |
-| `measure_templates.py` | `notes/templates.md` | plain |
 | `measure_topics.py` | `notes/topics.md` | `--check` |
 | `read_manuscript.py` | none — a reading aid; prints a manuscript's abstract, section skeleton and titled statement environments with `file:line` anchors | **not gated** |
 | `refresh_summary_line_counts.py` | `notes/summaries/` — rewrites the `Lines` column of the Sources table in every page | plain, **first among the checkers** |
@@ -510,10 +515,10 @@ excludes them with the script tree, so they are not scripts.
 | `notes/summaries/` | **21** | hand-written — the reading record |
 | `notes/templates/` | **24** | **5** hand-written index skeletons + **19** report templates built by `build_report_templates.py` |
 | `notes/upstream_history/` | **3** | hand-written — the record of each upstream merge, checked by `verify_upstream_history.py` |
-| `notes/probe/` | **8** | the audit-hook probe records: the 2026-10-11 writers/checkers pair `measure_open_probe.py` writes and the fleet checker parses, the 2026-10-11 `render_reports.py` after-record that proves the repeat count fell, the 2026-10-10 pair the page's cold-cache figures come from, the 2026-10-12 `render_reports.py` record that captures the fleet census the writer added (the script tree and the two 2026-10-11 records it scans, which its own 2026-10-11 record cannot name), the 2026-10-12 `seed_quotes.py` record that proves its L1 list names the one page it reads, and the 2026-10-12 `seed_quotes.py` record that proves the widened L1 names the summaries tree and the notes pages its Sources cells cite |
+| `notes/probe/` | **10** | the audit-hook probe records: the 2026-10-11 writers/checkers pair `measure_open_probe.py` writes and the fleet checker parses, the 2026-10-11 `render_reports.py` after-record that proves the repeat count fell, the 2026-10-10 pair the page's cold-cache figures come from, the 2026-10-12 `render_reports.py` record that captures the fleet census the writer added (the script tree and the two 2026-10-11 records it scans, which its own 2026-10-11 record cannot name), the 2026-10-12 `seed_quotes.py` record that proves its L1 list names the one page it reads, the 2026-10-12 `seed_quotes.py` record that proves the widened L1 names the summaries tree and the notes pages its Sources cells cite, the 2026-10-12 `extract_named_results.py` record that proves its L1 names the ledger at its `tables/` path (the older record for that target names `notes/catalog.tsv`, the pre-move path), and the 2026-10-12 `measure_templates.py` record that proves the census L1 names the 1,049-file index tree and the 24-file template tree |
 | `notes/tables/*.tsv` | **9** | **7** generated, **2** hand-authored |
 | `notes/*.md` | **29** | **19** generated — the report-fed pages `render_reports.py` renders; **10** hand-written. **23** with a checker, **6** without |
-| `notes/` total, scripts excluded | **1,143** | — |
+| `notes/` total, scripts excluded | **1,145** | — |
 
 The generated TSVs are the seven writer targets. The two hand-authored tables are:
 

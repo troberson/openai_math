@@ -56,7 +56,14 @@ from catlib.promote import (
 # names the summaries tree, so it supersedes the pair-page-only record for that target.
 # `2026-10-12_rr_fleet` is the render_reports.py run that captures the fleet census — the writer reads
 # the script tree and the two 2026-10-11 records, which the 2026-10-11 record of itself cannot name.
-PROBES = (ROOT / "notes" / "probe" / "2026-10-12_seed_quotes_summaries.txt",
+# `2026-10-12_extract_named_results` is the run that proves the population producer's L1: the older
+# record for that target names `notes/catalog.tsv`, the ledger's pre-`tables/` path, so the new record
+# is what makes the registry's `notes/tables/catalog.tsv` provable.
+# `2026-10-12_measure_templates` is the census producer's record: it names the 1,049-file index tree
+# the census counts renders into and the 24-file template tree it reads, which no earlier record does.
+PROBES = (ROOT / "notes" / "probe" / "2026-10-12_extract_named_results.txt",
+          ROOT / "notes" / "probe" / "2026-10-12_measure_templates.txt",
+          ROOT / "notes" / "probe" / "2026-10-12_seed_quotes_summaries.txt",
           ROOT / "notes" / "probe" / "2026-10-12_rr_fleet.txt",
           ROOT / "notes" / "probe" / "2026-10-12_seed_quotes.txt",
           ROOT / "notes" / "probe" / "2026-10-11_writers.txt",

@@ -17,12 +17,16 @@ Run: python3 notes/scripts/measure_templates.py
 """
 from __future__ import annotations
 
+import json
 import pathlib
 import re
 import sys
+from functools import cache
 from typing import Any
 
 from catlib import paths as P
+from catlib.promote import key_for
+from catlib.records import cached
 
 TEMPLATES = P.NOTES / "templates"
 REPORT_DIR = TEMPLATES / "report"
@@ -108,8 +112,29 @@ def tree_totals(rows_list: list[dict[str, Any]]) -> dict[str, int]:
             "distinct": sum(int(r["distinct"]) for r in rows_list)}
 
 
+@cache
+def rec_key() -> str:
+    """The record key, computed lazily. The L1 names the 1,049-file index tree, so a module-level key
+    would make every consumer that imports this module pay that hash at import time."""
+    return key_for("measure_templates.py", ())
+
+
 def population() -> dict[str, Any]:
-    """Every measured value notes/templates.md quotes, from the template files and the registry."""
+    """Every measured value notes/templates.md quotes, read from the keyed record.
+
+    The walk is paid once per key: this script, `render_reports.py`, the builder's floor page and the
+    gate row read the same bytes. `coverage()`'s tuple values round-trip as 2-element lists, which is
+    the shape every consumer unpacks them into, so the record is type-safe for this population. The key
+    is bound to a name before the call: the ownership census derives this script as a writer from
+    `cached(<name>, "record")`, and `cached(rec_key(), …)` is not the shape its rule reads.
+    """
+    key = rec_key()
+    return json.loads(cached(key, "templates.json",
+                             lambda: json.dumps(measure(), ensure_ascii=False)))
+
+
+def measure() -> dict[str, Any]:
+    """The walk: template text, the registry, and the index render counts."""
     b = registry()
     rep = template_rows(REPORT_DIR)
     idx = template_rows(TEMPLATES)

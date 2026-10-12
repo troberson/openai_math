@@ -99,6 +99,16 @@ L1: dict[str, tuple[str, ...]] = {
     # because a Sources cell can point at a notes page, not only at a manuscript file.
     "seed_quotes.py": ("notes/subfinding-pairs.md", "notes/summaries/", "notes/counterexample-tag.md",
                        "notes/t0-triage.md", "notes/tables/catalog.tsv"),
+    # The named-result population is a record producer: its inputs are the ledger and the five hashed
+    # trees, plus `measure_names.py`, whose keyed record it reads through `M.measure()`. That record
+    # is a function of `measure_names.py`'s source, so the key must hash the source: a key that did
+    # not could serve a population whose subject vocabulary came from a measurement that has moved.
+    # The probe scope excludes `notes/scripts/`, so the source entry is hashed, not compared.
+    "extract_named_results.py": ("notes/tables/catalog.tsv", "notes/scripts/measure_names.py"),
+    # The template census reads both template trees, the index tree it counts renders into, and the
+    # registry module it reads the page set from. The registry entry is hashed, not compared: the
+    # probe's printed scope excludes `notes/scripts/`.
+    "measure_templates.py": ("notes/templates/", "notes/index/", "notes/scripts/catlib/templates.py"),
 }
 
 ARTIFACTS: dict[str, tuple[str, ...]] = {
@@ -117,6 +127,10 @@ ARTIFACTS: dict[str, tuple[str, ...]] = {
     # "no tracked bytes to compare" and the L1 check still prove its inputs.
     "measure_names.py": (),
     "seed_quotes.py": ("notes/tables/quotes.tsv",),
+    # The two population producers: report-only scripts whose record is the population, so they have
+    # no tracked bytes to compare and the L1 pass is what proves their read surface.
+    "extract_named_results.py": (),
+    "measure_templates.py": (),
 }
 
 
@@ -139,6 +153,10 @@ ARGS: dict[str, tuple[str, ...]] = {
     # The canonical run is the plain report, which lands the TSV; `--tsv` prints the same rows to
     # stdout and `--check-only` measures without writing, so neither shares the plain run's record.
     "seed_quotes.py": (),
+    # Report-only producers: the population is the same bytes in every mode, so the record is keyed
+    # with no args and a `--check-only` run reads the record the plain run landed.
+    "extract_named_results.py": (),
+    "measure_templates.py": (),
 }
 
 # The writers table names one writer the protocol deliberately excludes: `measure_open_probe.py`'s
