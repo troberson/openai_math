@@ -31,7 +31,8 @@ python3 notes/scripts/extract_subfindings.py  # writes notes/tables/subfindings.
 python3 notes/scripts/verify_subfindings.py  # checks notes/tables/subfindings.tsv against overview.tex and lean/docs/
 python3 notes/scripts/run_tests.py notes/scripts/tests/test_subfindings.py -q  # the extracted self-tests: 7 injected row corruptions, each asserted against the pass that owns it
 python3 notes/scripts/extract_subfinding_pairs.py  # lays out the pairing population; report-only, writes nothing
-python3 notes/scripts/verify_subfinding_pairs.py --mutant  # checks notes/subfinding-pairs.md against overview.tex
+python3 notes/scripts/verify_subfinding_pairs.py  # checks notes/subfinding-pairs.md against overview.tex
+python3 notes/scripts/run_tests.py notes/scripts/tests/test_subfinding_pairs.py -q  # the extracted self-tests: 8 injected faults (a paraphrase dressed as a quote, a clause anchor on the wrong line, a title id borrowed from another family, an id in both partitions, a title dropped from the partition, a stale Summary-table count, a block for a family outside the population, and a rejected-rule yield in prose altered), each asserted against the pass that owns it
 python3 notes/scripts/verify_conditional.py  # checks notes/conditional.md against the Lean source it cites; report-only, writes nothing
 python3 notes/scripts/run_tests.py notes/scripts/tests/test_conditional.py -q  # the extracted self-tests: 6 injected faults (2 fenced-block faults, a dropped block anchor, a renamed anchor file, an altered prose quote, an altered inline citation), each asserted against the pass that owns it
 python3 notes/scripts/extract_verification_348.py  # measures the two family-348 verification bundles; report-only, writes nothing
@@ -408,8 +409,10 @@ multi-manuscript families is **40**), which the page records with the rules trie
 Measured on the page: **62** accepted clause pairs, **47** accepted headline pairs, **18** clauses
 recorded unmatched, **109** titles claimed, **94** unclaimed, **40** families with at least one
 accepted pair, **17** with at least one unmatched clause, **6** pairing a sub-finding with no probe
-hit. `notes/scripts/verify_subfinding_pairs.py --mutant` re-checks every quotation against the shipped
-line, re-derives every count from the parsed blocks, and flags all eight injected mutants;
+hit. `notes/scripts/verify_subfinding_pairs.py` re-checks every quotation against the shipped
+line and re-derives every count from the parsed blocks; the 8 injected mutants live in
+`notes/scripts/tests/test_subfinding_pairs.py`, run by the `run_tests.py` gate row, and the last is a
+rejected-rule yield in prose that only the render diff can see.
 `notes/scripts/extract_subfinding_pairs.py` prints the population and the vocabulary counts the page
 quotes, and writes nothing.
 
