@@ -23,8 +23,10 @@ Report-only; writes nothing. Five passes:
 `extract_formalization_deps.py` measured. The 122,458-file figure is reconciled against
 `notes/formalization-deps.md`, which records it.
 
---mutant runs the built-in mutations and fails if any goes uncaught, the last of them a prose
-row count outside every count phrase -- visible only to pass 5.
+The self-tests are in notes/scripts/tests/test_dependency_drift.py: that file injects the ten page
+faults — nine count, anchor, table, name-list and code-span faults plus a prose row count outside
+every count phrase, visible only to pass 5 — and asserts each fires the pass that owns it. `main()`
+reads no argv, so `--mutant` is inert here.
 """
 import collections
 import csv
@@ -32,6 +34,7 @@ import pathlib
 import re
 import statistics
 import sys
+from functools import cache
 
 from catlib import render as RD
 from catlib import yaml as Y
@@ -182,6 +185,7 @@ def yaml_order_violations(imports_by_key):
     return out
 
 
+@cache
 def measure():
     rows = tsv_rows()
     declared = [r for r in rows if r["lakefile_declared"] == "y"]
@@ -470,52 +474,8 @@ def check(text):
     return problems, (len(tokens), n_quote, n_span, len(tbl), len(sync))
 
 
-MUTANTS = {
-    "blockquote paraphrased as a quote": lambda t: t.replace(
-        "compatibility patch was lost during dependency resolution.",
-        "compatibility patch was lost by dependency resolution.", 1),
-    "anchor out of range": lambda t: t.replace(
-        "`lean/lakefile.lean:10`–`:86`", "`lean/lakefile.lean:10`–`:486`", 1),
-    "table row count shifted": lambda t: t.replace(
-        "| PrimeNumberTheoremAnd | 244 | 39,904 |", "| PrimeNumberTheoremAnd | 244 | 39,905 |", 1),
-    "name dropped from the zero-import list": lambda t: t.replace(
-        "`oka`, `orbicurve-cores`,", "`oka`,", 1),
-    "patch-line total shifted": lambda t: t.replace("160,187", "160,186"),
-    "phase count shifted": lambda t: t.replace(
-        "| **11** | **6,658** |", "| **10** | **6,658** |", 1),
-    "ordering-violation count shifted": lambda t: t.replace(
-        "and 5 entries violate it", "and 6 entries violate it", 1),
-    "code span paraphrased": lambda t: t.replace(
-        "`s!\".{plan.label}-bootstrap-{pid}-{stamp}\"`",
-        "`s!\".{label}-bootstrap-{pid}-{stamp}\"`", 1),
-    "table row dropped": lambda t: t.replace(
-        "| orbicurve-cores | **0** | 695 |\n", "", 1),
-    # Prose no count phrase reads: the deps-record row count in the opening sources sentence.
-    # Only the render diff can see it.
-    "prose row count": lambda t: t.replace("`notes/tables/formalization-deps.tsv` (31 rows, 8 fields)",
-                                            "`notes/tables/formalization-deps.tsv` (32 rows, 8 fields)", 1),
-}
-
-
 def main():
     text = PAGE.read_text(encoding="utf-8", errors="replace")
-
-    if "--mutant" in sys.argv:
-        uncaught = []
-        for name, fn in MUTANTS.items():
-            mutated = fn(text)
-            if mutated == text:
-                print(f"mutant target absent: {name}")
-                uncaught.append(name)
-                continue
-            problems, _ = check(mutated)
-            print(f"mutant {name}: {'caught' if problems else 'NOT CAUGHT'}"
-                  f" ({len(problems)} problems)")
-            if not problems:
-                uncaught.append(name)
-        print(f"mutants not caught {len(uncaught)} of {len(MUTANTS)}")
-        raise SystemExit(1 if uncaught else 0)
-
     problems, (n_anchor, n_quote, n_span, n_table, n_sync) = check(text)
     for p in problems:
         print(f"PROBLEM {p}")
@@ -531,7 +491,8 @@ def main():
     print(f"zero-import {len(m['zero'])}  zero unpached {len(m['zero_nopatch'])}"
           f"  median imported {n(int(m['median_import']))}  median zero {n(int(m['median_zero']))}"
           f"  yaml violations {len(m['violations'])}")
-    raise SystemExit(1 if problems else 0)
+    return 1 if problems else 0
 
 
-main()
+if __name__ == "__main__":
+    sys.exit(main())

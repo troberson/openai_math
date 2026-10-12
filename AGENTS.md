@@ -423,16 +423,15 @@ lives in this file and nowhere else.
   unchanged by the flagged run. The read-only gate pool is the block that runs rows with this flag.
 - The whole-tree test is the gate list at `notes/scripts/gate.py`: **75** invocations — the **9**
   gated writers (`build_report_templates.py` and `measure_open_probe.py` are the writers it does not
-  run), the 41 gated report-only rows (including `check_summary_manuscripts.py` and
+  run), the 42 gated report-only rows (including `check_summary_manuscripts.py` and
   `locate_summary_quotes.py`, `check_index_links.py` plain and its extracted self-tests row, and the
-  twenty-two extracted self-tests rows, from
+  twenty-three extracted self-tests rows, from
   `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q` to
-  `run_tests.py notes/scripts/tests/test_t0_chains.py -q` — the full list is in
-  `notes/scripts/README.md`; `read_manuscript.py` is the one script it does not run), and **25**
-  checker invocations: **4** from the 2 checkers listed twice (plain and with `--mutant`) — the 2
-  table checkers, `verify_subfinding_pairs.py` and
-  `verify_dependency_drift.py` — plus
-  `verify_page_sync.py --both` (**1**) and **20** plain-only rows for the checkers whose self-tests
+  `run_tests.py notes/scripts/tests/test_dependency_drift.py -q` — the full list is in
+  `notes/scripts/README.md`; `read_manuscript.py` is the one script it does not run), and **24**
+  checker invocations: **2** from the 1 checker listed twice (plain and with `--mutant`) — the 1
+  table checker, `verify_subfinding_pairs.py` — plus
+  `verify_page_sync.py --both` (**1**) and **21** plain-only rows for the checkers whose self-tests
   are extracted, none of which carries a `--mutant` branch any more.
   The list is one array, `ROWS`, of (spec, needs, writes) triples over the
   generated artifacts: a row starts as soon as every row that writes its `needs` has finished, each
@@ -768,13 +767,21 @@ lives in this file and nowhere else.
   that the bytes cached under its key equal the bytes on the TSV. Its report reconciles 31 rows = 30 declared + 1 undeclared, 30 lakefile requires
   pinned to 40-char commits, 30 yaml entries, 23 patches over 160,187 lines, 42 manifest packages
   = 30 declared + 12 transitive, 19 declared with zero direct imports, and 5 yaml ordering violations.
-- Check `notes/dependency-drift.md` with `python3 notes/scripts/verify_dependency_drift.py --mutant`
+- Check `notes/dependency-drift.md` with `python3 notes/scripts/verify_dependency_drift.py` and its
+  extracted self-tests with
+  `python3 notes/scripts/run_tests.py notes/scripts/tests/test_dependency_drift.py -q`
   before quoting any dependency figure — it resolves all 52 `path:line` anchors (bare `:NNN` anchors
   against the nearest explicit file), matches all 7 blockquotes and every checked code span verbatim
   against `lean/lakefile.lean`, `lean/formalization.yaml`, the deps TSV, and the patch files, requires
   the 23-row patch table to equal the TSV row by row in descending order, requires each named library
-  list to equal the measured set, and flags ten injected mutants. Its report reconciles the three
-  surfaces independently: TSV patch lines == on-disk line sum == 160,187; the 11-library
+  list to equal the measured set, and re-measures every count phrase. The ten injected mutants live in
+  the test file (a blockquote paraphrase, an anchor out of range, a table row count, a name dropped
+  from the zero-import list, a patch-line total, a phase count, an ordering-violation count, a code
+  span paraphrase, a table row dropped, and a prose row count outside the phrase list), each asserted
+  against the pass that owns it; the last is keyed to the page line the render diff names. `main()`
+  reads no argv, so `--mutant` is inert in the checker. `measure()` is under `functools.cache`
+  (`:185`), so the row pays the TSV, lakefile, yaml and patch-file walk once. Its report reconciles the
+  three surfaces independently: TSV patch lines == on-disk line sum == 160,187; the 11-library
   pre-resolution array == the 11 `lana-agents` URLs, disjoint from the 12-library `post_update` array,
   union == the 23 patched libraries; 19 zero-import with 14 patched and 5 not; medians 2,575 (any
   import) vs 408 (none). Run it twice and diff — the report must be identical. It writes nothing and

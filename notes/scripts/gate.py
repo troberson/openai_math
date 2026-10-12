@@ -100,7 +100,7 @@ ROWS = [
     ("verify_verification_dirs.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_verification_dirs.py -q", ("pages",), ()),
     ("verify_dependency_drift.py", ("pages",), ()),
-    ("verify_dependency_drift.py --mutant", ("pages",), ()),
+    ("run_tests.py notes/scripts/tests/test_dependency_drift.py -q", ("pages",), ()),
     ("verify_script_ownership.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_script_ownership.py -q", ("pages",), ()),
     ("verify_findings.py", ("pages",), ()),
