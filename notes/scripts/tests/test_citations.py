@@ -28,8 +28,8 @@ PAGE = pathlib.Path("notes/citations.md")
 # fire on the clean page.
 MUTANTS = [
     ("paraphrase dressed as a quotation",
-     "block line 2 does not match preprints/A-conditional-abelianity-theorem-for-special-fourfold-"
-     "pairs-with-a-half-weight-divisor-October-5-2026/build/source/references.bib",
+     ("block line 2 does not match preprints/A-conditional-abelianity-theorem-for-special-fourfold-"
+      "pairs-with-a-half-weight-divisor-October-5-2026/build/source/references.bib"),
      lambda p: p.replace("author = {{The Stacks Project Authors}}",
                          "author = {{The Stacks Project editors}}")),
     ("invented anchor file",
@@ -38,20 +38,20 @@ MUTANTS = [
                          "with-a-half-weight-divisor-October-5-2026/build/source/references.bib:106`",
                          "`preprints/No-such-manuscript-September-1-2026/build/references.bib:106`")),
     ("anchor off by one line",
-     "no entry begins at preprints/A-conditional-abelianity-theorem-for-special-fourfold-pairs-"
-     "with-a-half-weight-divisor-October-5-2026/build/source/references.bib:105",
+     ("no entry begins at preprints/A-conditional-abelianity-theorem-for-special-fourfold-pairs-"
+      "with-a-half-weight-divisor-October-5-2026/build/source/references.bib:105"),
      lambda p: p.replace("half-weight-divisor-October-5-2026/build/source/references.bib:106`",
                          "half-weight-divisor-October-5-2026/build/source/references.bib:105`")),
     ("count drift in the pair table",
      "pair layer >=5: page does not contain '| \u22655 | **419** | 296 | **6** |'",
      lambda p: p.replace("| \u22655 | **419** |", "| \u22655 | **418** |")),
     ("headline crossing count",
-     "headline crossing count: page does not contain '6 of 419 pairs at \u22655 shared titles "
-     "cross a discipline boundary'",
+     ("headline crossing count: page does not contain '6 of 419 pairs at \u22655 shared titles "
+      "cross a discipline boundary'"),
      lambda p: p.replace("6 of 419 pairs at \u22655", "7 of 419 pairs at \u22655")),
     ("cluster membership swap",
-     "cluster row '033 034 039 036 037 046 051 054 056 057 058 065 066 068': measured membership "
-     "033 034 035 036 037 046 051 054 056 057 058 065 066 068",
+     ("cluster row '033 034 039 036 037 046 051 054 056 057 058 065 066 068': measured membership "
+      "033 034 035 036 037 046 051 054 056 057 058 065 066 068"),
      lambda p: p.replace("033 034 035 036 037 046 051 054 056 057 058 065 066 068",
                          "033 034 039 036 037 046 051 054 056 057 058 065 066 068")),
     ("work count drift",

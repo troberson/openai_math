@@ -149,7 +149,7 @@ def main() -> int:
     modes = Counter(s["mode"] for s in specs)
     print(f"quotes in the pages: {len(specs)}")
     print(f"  pair-line specs ({PAGES}): {len(pair)}")
-    print(f"  summaries specs ({len(set(s['page'] for s in summ))} pages): {len(summ)}")
+    print(f"  summaries specs ({len({s['page'] for s in summ})} pages): {len(summ)}")
     print(f"  specs seeded: {len(seeded)}   measured negatives (start 0): {len(specs) - len(seeded)}")
     print(f"  single-line spec: {sum(1 for s in seeded if s['start'] == s['end'])}"
           f"   range spec: {sum(1 for s in seeded if s['start'] != s['end'])}")

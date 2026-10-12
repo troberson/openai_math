@@ -62,7 +62,8 @@ import measure_names as MN
 import measure_proof_density as PD
 import measure_templates as MTPL
 import measure_topics as MT
-from catlib import bib, ledger, overview, preprints, quotes as Q, records, tsv
+from catlib import bib, ledger, overview, preprints, records, tsv
+from catlib import quotes as Q
 from catlib import yaml as Y
 from catlib.atomic import Staging
 from catlib.paths import (
@@ -738,10 +739,10 @@ def index_phrases(p: dict[str, Any]) -> dict[str, str]:
 INDEX_SPLIT = {
     "MSC hit count": ["family → MSC code"],
     "added TSV byte figures": ["`notes/tables/abstracts.tsv`",
-                               "(**89476** B over **372** rows), `notes/tables/quotes.tsv` "
-                               "(**277124** B over **1161** rows),",
-                               "`notes/tables/sources.tsv` (**221463** B over **719** rows) and "
-                               "`notes/tables/topics.tsv` (**22631** B"],
+                               ("(**89476** B over **372** rows), `notes/tables/quotes.tsv` "
+                                "(**277124** B over **1161** rows),"),
+                               ("`notes/tables/sources.tsv` (**221463** B over **719** rows) and "
+                                "`notes/tables/topics.tsv` (**22631** B")],
     "bib keywords count": ["bibliography entry → `keywords` field **0** over **13,802**"],
     "builds-on declaration count": ["(**30** `builds-on` declarations at"],
     "derivable lean reach": [("config → file (yaml: **189** configs, all **189** of them also "
@@ -2857,8 +2858,8 @@ def sp_pair_lines() -> list[tuple[str, str]]:
         if which == "title":
             head, cstart, cwhich = pending
             out.append((f"sp_line_{fam}_{seq}",
-                        f'- {cwhich}: "{head}" (`overview.tex:{cstart}`) '
-                        f'-> "{span}" (`overview.tex:{start}`) [{fam}:{seq}]'))
+                        (f'- {cwhich}: "{head}" (`overview.tex:{cstart}`) '
+                         f'-> "{span}" (`overview.tex:{start}`) [{fam}:{seq}]')))
             pending = ("", 0, "")
         elif seq:
             pending = (span, start, which)
@@ -2967,8 +2968,7 @@ def subfinding_pairs_full(p: dict[str, Any]) -> dict[str, str]:
     out["sp_rows"] = (f"The {p['comparator_rows']} comparator-link rows in `notes/tables/subfindings.tsv` "
                       f"are not paired; only the {p['manuscript_rows']} manuscript rows")
     out["sp_rows2"] = f"only {mss} of those are in this population"
-    for label, text in p["pair_lines"]:
-        out[label] = text
+    out |= dict(p["pair_lines"])
     return out
 
 

@@ -140,7 +140,7 @@ def test_clean_page(page_rows, summary_rows):
         ok = got == q if spec["mode"] == "raw" else got is not None and norm(got) == norm(q)
         if not ok:
             bad.append((spec["page"], spec["fam"], spec["seq"], spec["which"], spec["mode"]))
-    assert bad == [], bad[:3]
+    assert not bad, bad[:3]
 
 
 @pytest.mark.parametrize("label,src,start,end,head,tail,expected", MUTANTS)

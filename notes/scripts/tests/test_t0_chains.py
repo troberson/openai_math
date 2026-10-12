@@ -28,21 +28,21 @@ PAGE = pathlib.Path("notes/t0-chains.md")
 # fire on the clean page.
 MUTANTS = [
     ("paraphrase dressed as a quotation",
-     "quote at page line 379 is not on overview.tex:629: 'The unique threshold bound state for the "
-     "SU(N) BFSS model'",
+     ("quote at page line 379 is not on overview.tex:629: 'The unique threshold bound state for the "
+      "SU(N) BFSS model'"),
      lambda p: p.replace('*"The unique threshold bound state of the SU(N) BFSS model"*',
                          '*"The unique threshold bound state for the SU(N) BFSS model"*')),
     ("title swap",
-     "quote at page line 368 is not on overview.tex:625: 'Positive eigenvalues of the relative SU(2) "
-     "BFSS Hamiltonian'",
+     ("quote at page line 368 is not on overview.tex:625: 'Positive eigenvalues of the relative SU(2) "
+      "BFSS Hamiltonian'"),
      lambda p: p.replace('*"Boundary-field gap"*',
                          '*"Positive eigenvalues of the relative SU(2) BFSS Hamiltonian"*')),
     ("chain table tier",
      "chain table 032 tier 'T2' != ledger 'T0'",
      lambda p: p.replace("| 032 | T0 | 5 |", "| 032 | T2 | 5 |")),
     ("edge count",
-     "count phrase missing (intra-family edges): '**15** of the 27 cite their sibling: **8** mutual "
-     "pairs and **7** one-directional'",
+     ("count phrase missing (intra-family edges): '**15** of the 27 cite their sibling: **8** mutual "
+      "pairs and **7** one-directional'"),
      lambda p: p.replace("**15** of the 27 cite their sibling",
                          "**16** of the 27 cite their sibling")),
     ("anchor line out of range",
@@ -56,8 +56,8 @@ MUTANTS = [
      lambda p: p.replace("| 035 | A&CG | bound, classification | 1 | 0 | 0 |",
                          "| 035 | A&CG | bound, classification | 3 | 0 | 0 |")),
     ("manuscript path not on disk",
-     "065/2: path 'preprints/Virasoro-Constraints-for-Projective-Complete-Intersections-September-24-"
-     "2026/paper.pdf' != subfindings path",
+     ("065/2: path 'preprints/Virasoro-Constraints-for-Projective-Complete-Intersections-September-24-"
+      "2026/paper.pdf' != subfindings path"),
      lambda p: p.replace(
          "preprints/Virasoro-Constraints-for-Projective-Complete-Intersections-September-24-2026/"
          "article.pdf",
@@ -71,8 +71,8 @@ MUTANTS = [
      lambda p: p.replace("The mutual pairs are 041, 077, 217, 265, 268, 286, 302, 368.",
                          "The mutual pairs are 077, 217, 265, 268, 286, 302, 368.")),
     ("fenced block line",
-     "block at page line 97 does not match preprints/Stabilizer-Orbits-and-Thick-Tensor-Ideals-of-"
-     "Dualizable-Kn-Local-Spectra-September-24-2026/build/refere",
+     ("block at page line 97 does not match preprints/Stabilizer-Orbits-and-Thick-Tensor-Ideals-of-"
+      "Dualizable-Kn-Local-Spectra-September-24-2026/build/refere"),
      lambda p: p.replace("  journal = {Selecta Mathematica. New Series},",
                          "  journal = {Selecta Math.},")),
     ("citation layer count",

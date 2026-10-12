@@ -46,7 +46,7 @@ def read_join_rows(path: Path) -> list[dict[str, str]]:
     if not lines:
         return []
     fields = lines[0].split("\t")
-    return [dict(zip(fields, line.split("\t"))) for line in lines[1:] if line]
+    return [dict(zip(fields, line.split("\t"), strict=True)) for line in lines[1:] if line]
 
 
 def read_rows_from_text(text: str) -> list[dict[str, str]]:

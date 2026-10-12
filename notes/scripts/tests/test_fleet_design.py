@@ -32,7 +32,7 @@ and probe phrases, 0 sync problems, 2 atomicity matches over 59 scripts and 18 c
 sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 9 TSVs at 907,744 bytes, 631M
 `preprints/`, 1,740M `lean/OAI/`, 14M `notes/index/`, 78 gate rows, 10 writer rows, 2 env hits, 8
 purity scripts,
-the sites at `atomic.py:42` / `atomic.py:84`, `render_reports.py:1155` / `render_reports.py:1375`
+the sites at `atomic.py:42` / `atomic.py:84`, `render_reports.py:1156` / `render_reports.py:1376`
 and `build_catalog.py:128` / `build_index.py:583`, and the probe row the amplification table quotes
 at 151.32 s wall over 117,360 opens, 18,935 distinct paths and 98,425 repeats. A page with fewer
 anchors or phrases is a pass that stopped checking, not a pass that passed.
@@ -68,17 +68,17 @@ MUTANTS = [
      lambda t: t.replace("**5** digests", "**6** digests", 1)),
     ("probe figure altered", "probe figure not in the page: opens 117,360",
      lambda t: t.replace("117,360", "117,361")),
-    # The site anchors moved when the writer's own source grew: the env pair is now 1155 / 1375, so
-    # each env fault shifts a site to its neighbour, and the anchor-outside fault uses a line the
-    # writer does not have (4,000 is inside a 3,560-line file, so the anchor pass reads it as valid).
+    # The site anchors moved when the writer's own source grew: the env pair is now 1156 / 1376, so
+    # each env fault shifts a site to its neighbour, and the anchor-outside fault uses a line past
+    # the file's end (4,000 against a 3,628-line file), which is the form the anchor pass flags.
     ("anchor outside the file", "anchor line outside file: `render_reports.py:4000`",
-     lambda t: t.replace("render_reports.py:1155", "render_reports.py:4000", 1)),
+     lambda t: t.replace("render_reports.py:1156", "render_reports.py:4000", 1)),
     # The page ships no notes-page anchor, so the resolver's notes/ branch is inert on a clean page.
     # This fault injects one with a line past the file's end, which is the only way the branch is
     # proven to fire.
     ("notes-page anchor outside the file", "anchor line outside file: `notes/fleet-design.md:9999`",
-     lambda t: t.replace("`render_reports.py:1155`",
-                         "`render_reports.py:1155` `notes/fleet-design.md:9999`", 1)),
+     lambda t: t.replace("`render_reports.py:1156`",
+                         "`render_reports.py:1156` `notes/fleet-design.md:9999`", 1)),
     ("prose count in the size argument", "count phrase not in the page: **907,744** bytes",
      lambda t: t.replace("**907,744** bytes", "**907,743** bytes", 1)),
     # The TSV count and the writer-row count are measured from the fleet's own tree and the ROWS block,
@@ -106,18 +106,19 @@ MUTANTS = [
      "set-iteration bullet names ['build_catalog.py:128', 'build_index.py:584'",
      lambda t: t.replace("build_index.py:583", "build_index.py:584", 1)),
     ("set-site anchor shifted in the checker list", "site build_index.py:583 absent",
-     lambda t: t.replace("`build_index.py:583`, `render_reports.py:1155`",
-                         "`build_index.py:584`, `render_reports.py:1155`", 1)),
+     lambda t: t.replace("`build_index.py:583`, `render_reports.py:1156`",
+                         "`build_index.py:584`, `render_reports.py:1156`", 1)),
     ("atomicity anchor shifted in the paragraph", "atomicity paragraph names ['atomic.py:43'",
      lambda t: t.replace("catlib/atomic.py:42", "catlib/atomic.py:43", 1)),
     ("atomicity anchor shifted in the checker list", "site atomic.py:42 absent",
      lambda t: t.replace("`catlib/atomic.py:42`, `catlib/atomic.py:84`",
                          "`catlib/atomic.py:43`, `catlib/atomic.py:84`", 1)),
-    ("env anchor shifted in the bullet", "env bullet names ['render_reports.py:1156'",
-     lambda t: t.replace("`render_reports.py:1155` and", "`render_reports.py:1156` and", 1)),
-    ("env anchor shifted in the checker list", "site render_reports.py:1155 absent",
-     lambda t: t.replace("`render_reports.py:1155`, `render_reports.py:2043`",
-                         "`render_reports.py:1156`, `render_reports.py:2043`", 1)),
+    ("env anchor shifted in the bullet",
+     "env bullet names ['render_reports.py:1157'",
+     lambda t: t.replace("`render_reports.py:1156` and", "`render_reports.py:1157` and", 1)),
+    ("env anchor shifted in the checker list", "site render_reports.py:1156 absent",
+     lambda t: t.replace("`render_reports.py:1156`, `render_reports.py:2043`",
+                         "`render_reports.py:1157`, `render_reports.py:2043`", 1)),
     # A dated observation the writer deliberately does not slot. The count pass, the anchor pass and
     # the site pass all ignore it, so only the render diff can see the page is no longer the writer's
     # bytes — which is the pass this page gained when it became report-fed.
@@ -151,11 +152,11 @@ def test_clean_page(mod, text):
         f"digests {p['digests']}, ignored {p['ignored']}, tsv {p['tsv_bytes']}"
     assert (p["du"]["preprints"], p["du"]["oai"], p["du"]["index"]) == (631, 1740, 14), \
         f"du {p['du']}"
-    assert (p["gate_rows"], p["writer_rows"], p["env_hits"], len(p["purity"])) == (78, 10, 2, 8), \
-        f"gate rows {p['gate_rows']}, writer rows {p['writer_rows']}, env hits {p['env_hits']}, " \
-        f"purity {len(p['purity'])}"
+    assert (p["gate_rows"], p["writer_rows"], p["env_hits"], len(p["purity"])) == (78, 10, 2, 8), (
+        f"gate rows {p['gate_rows']}, writer rows {p['writer_rows']}, env hits {p['env_hits']}, "
+        f"purity {len(p['purity'])}")
     assert sorted(p["atomic_sites"]) == ["atomic.py:42", "atomic.py:84"], p["atomic_sites"]
-    assert sorted(p["env_sites"]) == ["render_reports.py:1155", "render_reports.py:1375"], \
+    assert sorted(p["env_sites"]) == ["render_reports.py:1156", "render_reports.py:1376"], \
         p["env_sites"]
     assert sorted(p["set_sites"]) == ["build_catalog.py:128", "build_index.py:583"], p["set_sites"]
     r = p["rows"]["render_reports.py"]

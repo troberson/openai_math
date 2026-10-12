@@ -28,8 +28,8 @@ PAGE = pathlib.Path("notes/subfinding-pairs.md")
 # fire on the clean page.
 MUTANTS = [
     ("paraphrase dressed as a quote",
-     "009: page:69: quoted clause is not verbatim on overview.tex:94: "
-     "Also proves Bogomolov-Pop reconstruction from abelian-by-cen",
+     ("009: page:69: quoted clause is not verbatim on overview.tex:94: "
+      "Also proves Bogomolov-Pop reconstruction from abelian-by-cen"),
      lambda p: p.replace('"Also proves Bogomolov--Pop reconstruction',
                          '"Also proves Bogomolov-Pop reconstruction', 1)),
     ("clause anchor on the wrong line",
