@@ -423,16 +423,16 @@ lives in this file and nowhere else.
   unchanged by the flagged run. The read-only gate pool is the block that runs rows with this flag.
 - The whole-tree test is the gate list at `notes/scripts/gate.py`: **75** invocations — the **9**
   gated writers (`build_report_templates.py` and `measure_open_probe.py` are the writers it does not
-  run), the 40 gated report-only rows (including `check_summary_manuscripts.py` and
+  run), the 41 gated report-only rows (including `check_summary_manuscripts.py` and
   `locate_summary_quotes.py`, `check_index_links.py` plain and its extracted self-tests row, and the
-  twenty-one extracted self-tests rows, from
+  twenty-two extracted self-tests rows, from
   `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q` to
-  `run_tests.py notes/scripts/tests/test_citations.py -q` — the full list is in
-  `notes/scripts/README.md`; `read_manuscript.py` is the one script it does not run), and **26**
-  checker invocations: **6** from the 3 checkers listed twice (plain and with `--mutant`) — the 3
-  table checkers, `verify_subfinding_pairs.py`, `verify_t0_chains.py` and
+  `run_tests.py notes/scripts/tests/test_t0_chains.py -q` — the full list is in
+  `notes/scripts/README.md`; `read_manuscript.py` is the one script it does not run), and **25**
+  checker invocations: **4** from the 2 checkers listed twice (plain and with `--mutant`) — the 2
+  table checkers, `verify_subfinding_pairs.py` and
   `verify_dependency_drift.py` — plus
-  `verify_page_sync.py --both` (**1**) and **19** plain-only rows for the checkers whose self-tests
+  `verify_page_sync.py --both` (**1**) and **20** plain-only rows for the checkers whose self-tests
   are extracted, none of which carries a `--mutant` branch any more.
   The list is one array, `ROWS`, of (spec, needs, writes) triples over the
   generated artifacts: a row starts as soon as every row that writes its `needs` has finished, each
@@ -699,15 +699,24 @@ lives in this file and nowhere else.
   reads no argv, so `--mutant` is inert, and writes nothing. Quote a count from
   `python3 notes/scripts/measure_faithfulness.py`'s report, which is the writer's source for every
   number on the page.
-- Check `notes/t0-chains.md` with `python3 notes/scripts/verify_t0_chains.py --mutant` before quoting
-  any of its counts — it resolves every `file:line` anchor (`.bib` files included), matches each fenced
-  block against the **nearest preceding** anchor as joined text against the same number of source lines
-  (so a one-line overview abstract re-wrapped across page lines still matches), pins each `*"…"*`
-  quotation to the anchor in its own line or in the contiguous lines above it, re-derives the 12 count
-  phrases and the 4 named family lists, requires the 27-row summary table and the 5-row chain table to
-  equal the ledger, and requires each of the 27 blocks to carry exactly 2 manuscript bullets whose title
-  is verbatim on the family's `\resultentry` line and whose path exists on disk. It flags thirteen
-  injected mutants and writes nothing. Run `python3 notes/scripts/extract_t0_chains.py` twice and diff:
+- Check `notes/t0-chains.md` with `python3 notes/scripts/verify_t0_chains.py` and its extracted
+  self-tests with `python3 notes/scripts/run_tests.py notes/scripts/tests/test_t0_chains.py -q`
+  before quoting any of its counts — it resolves every `file:line` anchor (`.bib` files included),
+  matches each fenced block against the **nearest preceding** anchor as joined text against the same
+  number of source lines (so a one-line overview abstract re-wrapped across page lines still matches),
+  pins each `*"…"*` quotation to the anchor in its own line or in the contiguous lines above it,
+  re-derives the 12 count phrases and the 4 named family lists, requires the 27-row summary table and
+  the 5-row chain table to equal the ledger, and requires each of the 27 blocks to carry exactly 2
+  manuscript bullets whose title is verbatim on the family's `\resultentry` line and whose path exists
+  on disk. The thirteen injected mutants live in the test file (a paraphrase dressed as a quotation, a
+  title swap, a chain-table tier, an edge count, an anchor line out of range, a block for a family
+  outside the population, a table `.bib` count, a manuscript path not on disk, a population count
+  phrase, a mutual-pairs list, a fenced block line, a citation-layer count, and a prose count outside
+  the phrase list), each asserted against the pass that owns it; the last is keyed to the page line the
+  render diff names, because the render diff truncates both sides. `main()` reads no argv, so
+  `--mutant` is inert in the checker. `population()` is under `functools.cache` (`:118`), so the row
+  pays the ledger, `subfindings.tsv`, `notes/t0-triage.md` and `.bib` walk once. It writes nothing.
+  Run `python3 notes/scripts/extract_t0_chains.py` twice and diff:
   the report must be identical — 27 families over 54 manuscripts, 26 with zero coverage signal, 2 chain
   edges over 372 families, 9 `companion_word` families carrying 0 edges, 15 families citing their
   sibling (8 mutual, 7 one-way), and 8 reconciliation lines reading True.

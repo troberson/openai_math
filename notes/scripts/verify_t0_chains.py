@@ -25,13 +25,15 @@ Checks, in order:
      count phrase covers cannot drift from the writer's template. Check 4 proves the numbers are
      measured; it proves nothing about the sentences around them.
 
---mutant corrupts thirteen facts, one per check family plus a prose count no count phrase reads
-(visible only to check 9), and the checker must flag every one.
+The self-tests are in notes/scripts/tests/test_t0_chains.py: that file injects the thirteen page
+faults — one per check family plus a prose count no count phrase reads (visible only to check 9) —
+and asserts each fires the pass that owns it. `main()` reads no argv, so `--mutant` is inert here.
 """
 from __future__ import annotations
 
 import re
 import sys
+from functools import cache
 
 import extract_t0_chains as tc
 from catlib import anchors, overview
@@ -113,6 +115,7 @@ def measured():
     }
 
 
+@cache
 def population():
     """measured() under the name build_report_templates.checker_needles() looks for."""
     return measured()
@@ -360,7 +363,7 @@ def check_files(_m, problems):
     return len(VER268)
 
 
-def check(text, m):
+def passes(text, m):
     lines = text.split("\n")
     flat = norm(text)
     cache: dict[str, list[str]] = {}
@@ -392,45 +395,15 @@ def check(text, m):
     }
 
 
-MUTANTS = {
-    "paraphrase-as-quote": lambda t: t.replace(
-        '*"The unique threshold bound state of the SU(N) BFSS model"*',
-        '*"The unique threshold bound state for the SU(N) BFSS model"*'),
-    "title-swap": lambda t: t.replace(
-        '*"Boundary-field gap"*', '*"Positive eigenvalues of the relative SU(2) BFSS Hamiltonian"*'),
-    "chain-tier": lambda t: t.replace("| 032 | T0 | 5 |", "| 032 | T2 | 5 |"),
-    "edge-count": lambda t: t.replace("**15** of the 27 cite their sibling",
-                                      "**16** of the 27 cite their sibling"),
-    "anchor-range": lambda t: t.replace("(`overview.tex:716`)", "(`overview.tex:9999`)"),
-    "deleted-block": lambda t: t.replace("### 300 — ", "### 301 — "),
-    "bib-count": lambda t: t.replace("| 035 | A&CG | bound, classification | 1 | 0 | 0 |",
-                                     "| 035 | A&CG | bound, classification | 3 | 0 | 0 |"),
-    "path-missing": lambda t: t.replace(
-        "preprints/Virasoro-Constraints-for-Projective-Complete-Intersections-September-24-2026/"
-        "article.pdf",
-        "preprints/Virasoro-Constraints-for-Projective-Complete-Intersections-September-24-2026/"
-        "paper.pdf"),
-    "pop-count": lambda t: t.replace("**27** families carrying", "**28** families carrying"),
-    "mutual-list": lambda t: t.replace(
-        "The mutual pairs are 041, 077, 217, 265, 268, 286, 302, 368.",
-        "The mutual pairs are 077, 217, 265, 268, 286, 302, 368."),
-    "block-line": lambda t: t.replace(
-        "  journal = {Selecta Mathematica. New Series},", "  journal = {Selecta Math.},"),
-    "citation-layer": lambda t: t.replace(
-        "Citation layer: 2 `.bib` files, 2 intra-family edges, 1 mutual pair.\n\n"
-        "### 270 — ", "Citation layer: 2 `.bib` files, 3 intra-family edges, 1 mutual pair.\n\n"
-        "### 270 — "),
-    # Prose no count phrase reads: the heading name in the population rule. Check 4 never parses
-    # it, so only the render diff can see it.
-    "prose-count": lambda t: t.replace("the remaining 93 families", "the remaining 94 families"),
-}
+def check(text: str) -> dict:
+    """The nine passes against the cached population — the entry point the self-tests call."""
+    return passes(text, population())
 
 
-def main(argv):
-    mutant = "--mutant" in argv
+def main():
     text = PAGE.read_text(encoding="utf-8")
     m = population()
-    res = check(text, m)
+    res = passes(text, m)
     print(f"== page {PAGE.relative_to(ROOT)}")
     print(f"anchors {res['anchors']}  blocks {res['blocks']}  quotes {res['quotes']}  "
           f"counts {res['counts']}  sync {res['sync']}")
@@ -439,24 +412,8 @@ def main(argv):
     for p in res["problems"]:
         print(f"PROBLEM {p}")
     print(f"problems {len(res['problems'])}")
-    missed = 0
-    if mutant:
-        print("\n== mutants")
-        for name, fn in MUTANTS.items():
-            mutated = fn(text)
-            if mutated == text:
-                print(f"  {name:<20} NOT INJECTED (phrase absent from the page)")
-                missed += 1
-                continue
-            found = check(mutated, m)["problems"]
-            if found:
-                print(f"  {name:<20} caught: {found[0][:88]}")
-            else:
-                print(f"  {name:<20} NOT CAUGHT")
-                missed += 1
-        print(f"mutants caught {len(MUTANTS) - missed}/{len(MUTANTS)}")
-    return 1 if (res["problems"] or missed) else 0
+    return 1 if res["problems"] else 0
 
 
 if __name__ == "__main__":
-    raise SystemExit(main(sys.argv[1:]))
+    sys.exit(main())

@@ -96,7 +96,7 @@ ROWS = [
     ("verify_counterexample_crosscheck.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_counterexample_crosscheck.py -q", ("pages",), ()),
     ("verify_t0_chains.py", ("pages",), ()),
-    ("verify_t0_chains.py --mutant", ("pages",), ()),
+    ("run_tests.py notes/scripts/tests/test_t0_chains.py -q", ("pages",), ()),
     ("verify_verification_dirs.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_verification_dirs.py -q", ("pages",), ()),
     ("verify_dependency_drift.py", ("pages",), ()),
