@@ -457,17 +457,15 @@ registry — `ALL_PAGES`, the writer's per-page `POPULATIONS` and `LABELS` slot 
 script run as `python3 notes/scripts/foo.py` has `notes/scripts` on `sys.path`, so it imports them as
 `from catlib import ...` with no path boilerplate.
 
-**60** of the **65** scripts call the package, measured by the rule `^[ \t]*(from|import) catlib` over
+**60** of the **67** scripts call the package, measured by the rule `^[ \t]*(from|import) catlib` over
 each script's own source: **11** `extract_` (all of them), **4** `build_` (all), **12** `measure_`
 (all 17 but `measure_proof_density.py`, `measure_topics.py` and the three render probes, which reach
 `render_reports` directly), **2** `check_` (`check_index_links.py` and `check_summary_manuscripts.py`),
-**22** of the **23** `verify_` scripts, plus `render_reports.py`, `triage_t0.py`, `read_manuscript.py`,
-`compare_abstracts.py`, `locate_summary_quotes.py`, `refresh_summary_line_counts.py` and `run_tests.py`.
-The seven
+**23** `verify_` scripts (all of them), plus `render_reports.py`, `seed_quotes.py`, `triage_t0.py`,
+`read_manuscript.py`, `compare_abstracts.py`, `locate_summary_quotes.py`,
+`refresh_summary_line_counts.py` and `run_tests.py`. The seven
 scripts that do not are `dump_template_slots.py`, which reaches the slot dict through
 `render_reports.py` and never touches the registry; `gate.py`, which spawns rows and reads no corpus;
-`verify_fleet_design.py`, which measures the
-fleet's own sources and the probe records, so it has no corpus join to import;
 `measure_proof_density.py` and `measure_topics.py`, which read the Sources table and the vocabulary
 directly; and `measure_render_phases.py`, `measure_render_pool.py` and `measure_render_processes.py`,
 which import `render_reports` and get the joins through it. The three summary-page readers
