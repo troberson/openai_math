@@ -229,7 +229,7 @@ walk `measure()` used to run is gone: it is `@cache`d and reads the record store
 the process is a cache hit, and `build_sources.py`'s row fell from 39,083 opens to **71** for the same
 reason. What remains is the extractors the renderer imports, each walking the corpus once per process.
 `catlib/paths.read_text` is the uncached reader behind those opens (**230** `read_text(` call sites over
-the **57** scripts and **17** catlib modules, counted as occurrences over both globs on 2026-10-11; the
+the {{ p['fleet_sizes'] }}, counted as occurrences over both globs on 2026-10-11; the
 page read **217** over **55** scripts before the two `math-faz` probes landed); the caches in catlib are `render.rendered`, keyed by page
 name, `records.manuscript_store`, keyed by the store digest, and `promote.cached_text`, keyed by the
 builder's key.
