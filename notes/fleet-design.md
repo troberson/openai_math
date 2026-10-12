@@ -31,6 +31,14 @@ key = (the five L0 tree digests, hash of the script's own source, hash of each L
 argv). The script-source hash is what "we have not changed the definition of what we are searching
 for" means: a regex edit invalidates exactly that script's cache entries, not the fleet's.
 
+The key hashes the read surface the writer **reads**, and for one writer that is not the working tree.
+`build_report_templates.py` rebuilds each template from `git show HEAD:<page>`, so `key_for()` hashes
+its 18-page L1 from HEAD. Its own output feeds one of those entries — `notes/templates.md` tabulates
+the template bytes — so a render after the builder moves that page, and a key computed from the
+working tree stops matching the key the builder used. Measured 2026-10-12 at 00:48 UTC: with the
+working-tree read, `verify_cache_promotion.py` reported **18** problems, every template's cache entry
+missing under the recomputed key; with the HEAD read, the same run prints **0**.
+
 The digests are free and exact. `git rev-parse HEAD:preprints HEAD:lean HEAD:overview.tex
 HEAD:CONTENTS.md HEAD:reasoning_traces` prints **5** digests in **0.001 s** (measured 2026-10-10;
 `real 0m0.001s`), and the key is exact because

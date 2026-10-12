@@ -777,7 +777,11 @@ lives in this file and nowhere else.
   outputs excluded and the check scoped to the `notes/` bucket the record prints; and every tracked
   artifact's bytes against the cache entry under the key the registry recomputes with the canonical gate
   args. `build_report_templates.py` is exempt from the probe check because it reads pages with
-  `git show HEAD:`, a subprocess read the `open` event cannot see. It flags eight injected mutants
+  `git show HEAD:`, a subprocess read the `open` event cannot see — and `key_for()` hashes **that**
+  writer's `L1` from HEAD for the same reason: it reads HEAD, so the key must hash HEAD. Its own output
+  feeds one `L1` entry (`notes/templates.md` tabulates the template bytes), so a render after the builder
+  moves that page and a working-tree key stops matching the key the builder used — measured 2026-10-12,
+  **18** problems with the working-tree read, **0** with the HEAD read. It flags eight injected mutants
   (corrupted cache entry, deleted cache entry, removed `L1` entry, `L1` self-read, dropped writer,
   altered page list, altered tracked page, shifted args) and restores every byte it mutates; it writes
   nothing to the tracked tree.

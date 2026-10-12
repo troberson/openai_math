@@ -252,11 +252,15 @@ because it excludes itself.
 
 ## The shared package: `catlib/`
 
-`notes/scripts/catlib/` holds the joins the extractors share, so a join is written once. It is 16
+`notes/scripts/catlib/` holds the joins the extractors share, so a join is written once. It is 17
 modules, not scripts: `paths.py` (the repo-root constants, `rel()`, `owner()`, `read_text()`),
 `tsv.py` (the four TSV writer shapes), `promote.py` (the promotion protocol — the `L1` and `ARTIFACTS`
 registry, `key_for()` for the builder's digest key, `promote()` which caches the bytes under the key
-and then writes the same bytes onto the tracked path, and `cached_text()`), `atomic.py` (the atomic write primitive —
+and then writes the same bytes onto the tracked path, and `cached_text()`), `records.py` (the
+digest-keyed record store — `key()` over the five `git rev-parse HEAD:<path>` tree digests, the
+builder's source, its L1 texts and its args, truncated to 32 hex; `manuscript_store()` reads the
+749-row per-manuscript record set under `.qwen/cache/records/<key>/`, and `cached(KEY, "name",
+builder)` builds a record once, lands it atomically, and reads it back), `atomic.py` (the atomic write primitive —
 `write_atomic()` writes through a sibling temp name, fsyncs, then moves the temp onto the target, so
 a crash never leaves a half-written tracked file; every writer's write site goes through it, which is
 why the fleet's atomicity grep reads 1 match, not 9), `overview.py` (the `\resultentry` parse),
