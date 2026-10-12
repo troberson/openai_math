@@ -43,6 +43,7 @@ import statistics
 import subprocess
 import sys
 from collections.abc import Callable
+from concurrent.futures import Future, ThreadPoolExecutor
 from functools import cache
 from typing import Any
 
@@ -1142,6 +1143,38 @@ IL_SPLIT = {
 }
 
 
+CHILDREN: dict[str, list[str]] = {
+    "build_index": [sys.executable, str(ROOT / "notes" / "scripts" / "build_index.py"), "--check-only"],
+    "extract_links": [sys.executable, str(ROOT / "notes" / "scripts" / "extract_links.py"), "--check-only"],
+}
+# A thread, not a `Popen` we hold: `subprocess.run` owns its process as a context manager, so the
+# launch site carries no open resource, and the thread blocks in the kernel wait, which releases the GIL.
+_POOL = ThreadPoolExecutor(max_workers=len(CHILDREN))
+_RUNNING: dict[str, Future] = {}
+
+
+def launch(name: str) -> Future:
+    """Launch a render child once. `--check-only` means it writes nothing, so several can run at once."""
+    fut = _RUNNING.get(name)
+    if fut is None:
+        fut = _POOL.submit(lambda: subprocess.run(CHILDREN[name], capture_output=True, text=True,
+                                                  check=True, cwd=ROOT,
+                                                  env={**os.environ, "RENDER_REPORTS_CHILD": "1"}).stdout)
+        _RUNNING[name] = fut
+    return fut
+
+
+def child_out(name: str) -> str:
+    """A render child's stdout, launching it on first need so children overlap the in-process walks.
+
+    `main()` launches both before any population runs, which is what lets the 18.8 s `extract_links`
+    walk overlap the in-process measurements instead of sitting in front of them. A checker that imports
+    this module and calls a population gets the same report from a lazy launch, and the same
+    `CalledProcessError` a `check=True` `subprocess.run` raises.
+    """
+    return launch(name).result()
+
+
 def build_index_report() -> dict[str, Any]:
     """Run notes/scripts/build_index.py and parse the report lines the page quotes.
 
@@ -1150,12 +1183,9 @@ def build_index_report() -> dict[str, Any]:
     writer — the gate's pooled block runs several renders at once, and two children sharing the
     `build_index` staging root collide. The report the render parses is the same bytes.
     """
-    proc = subprocess.run([sys.executable, str(ROOT / "notes" / "scripts" / "build_index.py"),
-                           "--check-only"],
-                          capture_output=True, text=True, check=True, cwd=ROOT,
-                          env={**os.environ, "RENDER_REPORTS_CHILD": "1"})
+    stdout = child_out("build_index")
     out: dict[str, Any] = {"checked": -1, "broken": -1, "reg": {}}
-    for ln in proc.stdout.splitlines():
+    for ln in stdout.splitlines():
         if ln.startswith("links checked"):
             out["checked"], out["broken"] = int(ln.split()[2]), int(ln.split()[-1])
         elif ln.startswith("registered by group"):
@@ -1370,12 +1400,8 @@ def links_report() -> dict[str, str]:
     not become a second writer of a file the ownership manifest attributes to one script. It runs
     with `--check-only`, so the child writes nothing and two renders can run at once.
     """
-    proc = subprocess.run([sys.executable, str(ROOT / "notes" / "scripts" / "extract_links.py"),
-                           "--check-only"],
-                          capture_output=True, text=True, check=True, cwd=ROOT,
-                          env={**os.environ, "RENDER_REPORTS_CHILD": "1"})
     rep: dict[str, str] = {}
-    for ln in proc.stdout.splitlines():
+    for ln in child_out("extract_links").splitlines():
         key, sep, rest = ln.partition(": ")
         if sep:
             rep[key] = rest.strip()
@@ -2556,7 +2582,7 @@ def fleet_phrases(v: dict[str, Any]) -> dict[str, str]:
         "gate_writers": f"the **{v['writer_rows']}** writers declare what they write",
         "gate_writers_class": f"Non-determinism sources in the **{v['writer_rows']}** writers, by class:",
         "set_sites": f"**{len(v['set_sites'])} sites**",
-        "env_hits": f"**{v['env_hits']} hits**",
+        "env_hits": f"**{v['env_hits']} hit{'s' if v['env_hits'] != 1 else ''}**",
         "purity_heading": f"## The purity population ({n} scripts, mode-verified)",
         "purity_zero": f"**0** of the {n} scripts reads a generated file",
     }
@@ -3558,16 +3584,24 @@ def render_page(page: pathlib.Path) -> str:
 
 
 def main() -> None:
+    # Launch both children before any measurement runs. The `extract_links` walk is 18.8 s and the
+    # `build_index` walk is 6.0 s; launched up front they run while the in-process populations run, so
+    # the wall is the longest of the three, not their sum. A child writes nothing, so this is safe.
+    for name in CHILDREN:
+        launch(name)
+    # The children are launched, so the populations that do not need them run first. `links` is
+    # collected last of the child-backed populations: the parent reaches it after ~26 s of in-process
+    # work, by which time the 18.8 s walk has finished, so the collect does not idle the parent.
+    # `topics` needs the links population, so it follows it. The staging order below stays canonical —
+    # the pages are rendered from the cached populations, so call order cannot move a page.
     mp = population_of("named-results")
     ip = population_of("index-design")
     np_ = population_of("names")
     pdp = population_of("proof-density")
     ilk = population_of("index-links")
-    lk = population_of("links")
     dp = population_of("dependency-drift")
     xp = population_of("scope-exclusions")
     vp = population_of("verification-dirs")
-    tp = population_of("topics")
     tcp = population_of("t0-chains")
     spp = population_of("subfinding-pairs")
     rmp = population_of("README")
@@ -3575,6 +3609,8 @@ def main() -> None:
     fap = population_of("formalization-faithfulness")
     flp = population_of("fleet-design")
     tplp = population_of("templates")
+    lk = population_of("links")
+    tp = population_of("topics")
     ST = Staging("render_reports", key_for("render_reports.py", tuple(sys.argv[1:])))
     ST.stage(SOURCES_MD, render_page(SOURCES_MD))
     ST.stage(ABSTRACTS_MD, render_page(ABSTRACTS_MD))

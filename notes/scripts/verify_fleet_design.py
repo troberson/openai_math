@@ -259,7 +259,7 @@ def count_phrases(pop: Pop) -> list[tuple[str, str]]:
         (f"Non-determinism sources in the **{pop['writer_rows']}** writers, by class:",
          "gate_writers_class"),
         (f"**{len(pop['set_sites'])} sites**", "set_sites"),
-        (f"**{pop['env_hits']} hits**", "env_hits"),
+        (f"**{pop['env_hits']} hit{'s' if pop['env_hits'] != 1 else ''}**", "env_hits"),
         # The purity population is the probe parse, so its heading count and the sentence that closes
         # the section are measured, not carried: adding a target to the probe moves both.
         (f"## The purity population ({len(pop['purity'])} scripts, mode-verified)", "purity_heading"),
