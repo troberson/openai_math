@@ -26,6 +26,7 @@ so it is a measurement of a run, not a function of a digest, and a cache would s
 
 from __future__ import annotations
 
+import subprocess
 from pathlib import Path
 
 from catlib.atomic import RECORDS_ROOT, cache_text, write_atomic
@@ -132,6 +133,12 @@ PAGE_EXTRA = frozenset({"refresh_summary_line_counts.py"})
 # record for it carries only the reads its imports perform. Its L1 is the page set its own source names.
 PROBE_EXEMPT = frozenset({"build_report_templates.py"})
 
+# The same writer's L1 must be hashed from HEAD, not from the working tree, because that is what it
+# reads. Its own output feeds one of the L1 entries: `notes/templates.md` tabulates the template bytes,
+# so a render after the builder moves that page's bytes and a working-tree key stops matching the key
+# the builder used. Hashing the read surface the writer actually reads makes the key a function of HEAD.
+L1_HEAD = frozenset({"build_report_templates.py"})
+
 
 def expand(entry: str) -> list[Path]:
     """A repo-relative file, or every file under a repo-relative tree when the entry ends in `/`."""
@@ -148,7 +155,12 @@ def l1_paths(name: str) -> list[Path]:
 def key_for(name: str, args: tuple[str, ...] = ()) -> str:
     """The builder's cache key: tree digests, the builder's source, its L1 inputs, its args."""
     script = SCRIPTS / name
-    texts = tuple(p.read_text(encoding="utf-8") for p in l1_paths(name))
+    if name in L1_HEAD:
+        texts = tuple(subprocess.run(["git", "-C", str(ROOT), "show", f"HEAD:{p.relative_to(ROOT)}"],
+                                     check=True, capture_output=True).stdout.decode("utf-8")
+                      for p in l1_paths(name))
+    else:
+        texts = tuple(p.read_text(encoding="utf-8") for p in l1_paths(name))
     return digest_key(script.read_text(encoding="utf-8"), texts, args)
 
 

@@ -63,8 +63,10 @@ from catlib.promote import key_for
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 TPL_DIR = ROOT / "notes" / "templates" / "report"
-# The builder reads each page from HEAD, so its L1 is the page set. The docstring requires a clean
-# checkout of the page it rebuilds, which makes the working-tree bytes the bytes HEAD supplied.
+# The builder reads each page from HEAD, so its L1 is the page set, and `key_for` hashes that L1 from
+# HEAD for this writer: the key is a function of the bytes it reads, not of the working tree. Its own
+# output feeds one L1 entry — notes/templates.md tabulates the template bytes — so a render after the
+# builder moves that page and a working-tree key would stop matching the key this run used.
 KEY = key_for("build_report_templates.py", tuple(sys.argv[1:]))
 ST = Staging("build_report_templates", KEY)
 WS_RUN = re.compile(r"[ \t]*\n[ \t]*")
