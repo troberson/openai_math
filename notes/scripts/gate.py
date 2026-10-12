@@ -119,7 +119,7 @@ ROWS = [
     ("verify_cache_promotion.py --mutant",
      ("catalog", "sources", "links", "subfindings", "abstracts", "deps", "index", "pages"), ()),
     ("verify_conjecture_standing.py", ("catalog",), ()),
-    ("verify_conjecture_standing.py --mutant", ("catalog",), ()),
+    ("run_tests.py notes/scripts/tests/test_conjecture_standing.py -q", ("catalog",), ()),
     ("check_summary_manuscripts.py", ("summaries",), ()),
     ("locate_summary_quotes.py", ("summaries",), ()),
 ]

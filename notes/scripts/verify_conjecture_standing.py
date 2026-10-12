@@ -16,10 +16,13 @@ Checks, in order:
 
 Writes nothing. Exit 0 means clean.
 
---mutant injects the six defects the page records, into the table text in memory, and requires
-each to be reported. The injections are targeted from the parsed rows, so they follow the table
-when a row's anchor or name changes; an injection that finds no target is reported as NOT INJECTED
-and fails the run, so a mutant cannot pass by quietly stopping applying.
+The self-tests live in `notes/scripts/tests/test_conjecture_standing.py`: they inject the six
+defects the page records into the table text in memory and assert the pass that owns each one
+reports it. This script measures; it no longer injects.
+
+Usage:
+  python3 notes/scripts/verify_conjecture_standing.py
+  python3 notes/scripts/run_tests.py notes/scripts/tests/test_conjecture_standing.py -q
 """
 import re
 import sys
@@ -120,63 +123,7 @@ def check(text, led, want, entries):
     return problems, rows
 
 
-def _row(text, fam):
-    """The single table line for fam, and its index in the line list."""
-    lines = text.split("\n")
-    for i, ln in enumerate(lines):
-        if ln.startswith(f"{fam}\t"):
-            return lines, i
-    return lines, None
-
-
-def _set_field(text, fam, idx, value):
-    lines, i = _row(text, fam)
-    if i is None:
-        return text
-    fields = lines[i].split("\t")
-    fields[idx] = value
-    lines[i] = "\t".join(fields)
-    return "\n".join(lines)
-
-
-def mutants(text, led, want):
-    """The six defects the page records, targeted from the parsed rows."""
-    rows = tsv.read_rows_from_text(text)
-    anchored = [r for r in rows if re.fullmatch(r"overview\.tex:\d+", r["abstract_line"])]
-    named = [r for r in rows if surname_tokens(r["conjecture"])]
-    outside = min(set(led) - want - {r["fam"] for r in rows})
-    anchor_fam, anchor_line = anchored[0]["fam"], int(anchored[0]["abstract_line"].split(":")[1])
-    conf_fam, gap_fam, name_fam, wide_fam = rows[0]["fam"], rows[1]["fam"], named[0]["fam"], rows[0]["fam"]
-    gap_text = rows[1]["gap"]
-    return [
-        ("anchor shifted by two lines",
-         lambda t: _set_field(t, anchor_fam, 9, f"overview.tex:{anchor_line + 2}")),
-        ("a blanked prior_confidence",
-         lambda t: _set_field(t, conf_fam, 5, "")),
-        ("a family added outside the selection",
-         lambda t: t.rstrip("\n") + "\n" + "\t".join(
-             [outside, led[outside]["discipline"], led[outside]["tier"],
-              "an added row outside the selection", "not a prior judgment", "low",
-              "a synthetic release claim", "synthetic gap", "1", "overview.tex:1"])),
-        ("a consequence assertion in a gap field",
-         lambda t: _set_field(t, gap_fam, 7, gap_text + "; it opens the door to the general case")),
-        ("a conjecture renamed to a name absent from its abstract",
-         lambda t: _set_field(t, name_fam, 3, "Zauner dimension-six mutually unbiased bases conjecture")),
-        ("a row widened to 11 fields",
-         lambda t: _append_field(t, wide_fam)),
-    ]
-
-
-def _append_field(text, fam):
-    lines, i = _row(text, fam)
-    if i is None:
-        return text
-    lines[i] = lines[i] + "\textra field"
-    return "\n".join(lines)
-
-
 def main():
-    mutant = "--mutant" in sys.argv[1:]
     led, want, entries = selection()
     text = STANDING_TSV.read_text(encoding="utf-8")
     problems, rows = check(text, led, want, entries)
@@ -200,27 +147,7 @@ def main():
         print(f"\n{len(problems)} PROBLEM(S):")
         for p in problems:
             print("  -", p)
-        if not mutant:
-            return 1
-
-    if mutant:
-        print("\nmutants:")
-        cases = mutants(text, led, want)
-        failed = []
-        for name, fn in cases:
-            mutated = fn(text)
-            if mutated == text:
-                print(f"  {name:52} NOT INJECTED (table text changed — fix the mutant)")
-                failed.append(name)
-                continue
-            found, _ = check(mutated, led, want, entries)
-            if not found:
-                print(f"  {name:52} NOT REPORTED")
-                failed.append(name)
-            else:
-                print(f"  {name:52} reported: {found[0]}")
-        print(f"mutants {len(cases)}  uncaught {len(failed)} {failed}")
-        return 1 if (problems or failed) else 0
+        return 1
 
     print("problems: 0")
     return 0

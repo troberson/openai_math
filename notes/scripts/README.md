@@ -115,15 +115,16 @@ counts come from, **1** prints the pytest report for the extracted checker self-
 after it, and `gate.py` prints the gate report itself.
 The Gate column is the invocation the gate list runs: `notes/scripts/gate.py`, which runs **75**
 invocations — the **9** gated writers (the two writers it does not run are `build_report_templates.py`
-and `measure_open_probe.py`, each for the reason in its own row), the 22 gated report-only rows (including `check_summary_manuscripts.py`
+and `measure_open_probe.py`, each for the reason in its own row), the 24 gated report-only rows (including `check_summary_manuscripts.py`
 and `locate_summary_quotes.py`, `check_index_links.py` twice — plain and with `--mutant`, since
-`math-a0r.6.2` gave its self-test a prose mutant that only the gate can run — and `run_tests.py
-notes/scripts/tests/test_scope_exclusions.py -q`, the extracted self-tests row), and **44** checker
-invocations: **42** from the 21 checkers listed twice (plain and with `--mutant`) — the 20 table
+`math-a0r.6.2` gave its self-test a prose mutant that only the gate can run — and the two extracted
+self-tests rows, `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q` and
+`run_tests.py notes/scripts/tests/test_conjecture_standing.py -q`), and **43** checker
+invocations: **38** from the 19 checkers listed twice (plain and with `--mutant`) — the 19 table
 checkers plus `verify_script_ownership.py`, this page's own checker — plus
 `verify_page_sync.py --both` (**1**) — both passes in one process, because `catlib.render.rendered`
 is cached per process and two rows pay the corpus walk twice — plus `verify_scope_exclusions.py` plain
-(**1**), which no longer carries a `--mutant` branch — in
+(**1**) and `verify_conjecture_standing.py` plain (**1**), which no longer carry a `--mutant` branch — in
 class order, not in the order the rows sit; it prints one line per invocation with its exit code, its
 wall time, and the first 200 bytes of its report, and writes nothing to the repo outside
 `.qwen/tmp/reports/`. `math-8ou` promoted the list from `.qwen/tmp/` into `notes/scripts/`, closing
@@ -185,15 +186,17 @@ compared with `render_reports.py`'s render of it, folded into the exit code), an
 ### Checkers
 
 The remaining **22** scripts verify a page or a table. Each exits non-zero when what it checks has
-drifted; **21** take `--mutant`, which injects faults and asserts they are caught, and **1** —
-`verify_scope_exclusions.py` — has its self-tests extracted to
-`notes/scripts/tests/test_scope_exclusions.py`, so the checker measures and the test file injects.
+drifted; **20** take `--mutant`, which injects faults and asserts they are caught, and **2** —
+`verify_scope_exclusions.py` and `verify_conjecture_standing.py` — have their self-tests extracted to
+`notes/scripts/tests/`, so the checker measures and the test file injects.
 The gate runs each one plain and then with `--mutant` —
-**44** of the 75 invocations: **40** from the 20 rows below, each listed twice, **2** for
+**43** of the 75 invocations: **38** from the 19 rows below, each listed twice, **2** for
 `verify_script_ownership.py` (the 23rd checker, not listed in its own table), **1** for
-`verify_page_sync.py --both`, which runs both passes in one process, and **1** plain for
-`verify_scope_exclusions.py`. The extracted self-tests row is a report-only row, not a checker
-invocation: `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q`.
+`verify_page_sync.py --both`, which runs both passes in one process, **1** plain for
+`verify_scope_exclusions.py` and **1** plain for `verify_conjecture_standing.py`. The extracted
+self-tests rows are report-only rows, not checker invocations:
+`run_tests.py notes/scripts/tests/test_scope_exclusions.py -q` and
+`run_tests.py notes/scripts/tests/test_conjecture_standing.py -q`.
 
 | Checker | Checks | Gate | Cost (s) |
 |---|---|---|---|
@@ -201,7 +204,7 @@ invocation: `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q`.
 | `verify_cache_promotion.py` | `catlib/promote.py` — the registry shape against the writers table, the L1 lists against the audit-hook records, and the cached bytes against every tracked artifact under its key | plain + `--mutant` | 1.0 / 7.0 |
 | `verify_citations.py` | `notes/citations.md` | plain + `--mutant` | 1.4 / 2.8 |
 | `verify_conditional.py` | `notes/conditional.md` | plain + `--mutant` | 0.0 / 0.0 |
-| `verify_conjecture_standing.py` | `notes/tables/conjecture-standing.tsv` | plain + `--mutant` | 0.0 / 0.0 |
+| `verify_conjecture_standing.py` | `notes/tables/conjecture-standing.tsv` | plain; the self-tests are in `notes/scripts/tests/test_conjecture_standing.py`, run by the `run_tests.py` row | 0.0 |
 | `verify_counterexample_crosscheck.py` | `notes/counterexample-crosscheck.md` | plain + `--mutant` | 0.3 / 2.4 |
 | `verify_dependency_drift.py` | `notes/dependency-drift.md`, `notes/formalization-deps.md` | plain + `--mutant` | 0.3 / 1.8 |
 | `verify_faithfulness.py` | `notes/formalization-faithfulness.md` — anchors, the count phrases re-derived by its own `main_results`/declaration/carrier/closure walk (not the writer's), the disjoint and overlap pairing tables, the `a.e.` table, and the render diff | plain + `--mutant` | 1.4 / 11.4 |
@@ -234,7 +237,7 @@ the corpus read, which a mutant does not multiply. The 13 checkers that call the
 their mutant runs; `verify_script_ownership.py`, this page's own checker, is 0.2 plain / 1.1 with
 `--mutant` and is not a row above. `verify_page_sync.py`'s Cost is one number, not a pair: `--both`
 runs the plain pass and the mutant loop in one process, so `catlib.render.rendered` is walked once
-(123.4 s plain + 122.9 s mutant as two rows, against 125.2 s in one). The 44 checker invocations sum
+(123.4 s plain + 122.9 s mutant as two rows, against 125.2 s in one). The 43 checker invocations sum
 to **1342.7 s** (22 min), measured 2026-10-11 as the sum of the Cost column above; the full
 65-invocation gate took **35 min** and **38 min** on its two runs measured 2026-10-10
 (10:48–11:23 and 11:23–12:01 UTC); the 64-invocation list took **62 min** the same morning
@@ -245,14 +248,14 @@ writers — `extract_formalization_deps.py` reads all 122,458 files under `lean/
 `verify_conjecture_standing.py` is the one checker the list kept outside its loop: it ran plain only,
 so its six mutants were never run by the gate. Measured 2026-10-09 by hand — `mutants 6  uncaught
 0 []`, exit 0 — `math-8ou` added the `--mutant` invocation, which is why the count read 63 and not
-62. `math-a0r.6.2` added `check_index_links.py --mutant` for the same reason — its 21st mutant is a
+62; the pass that extracted its self-tests removed that invocation again. `math-a0r.6.2` added `check_index_links.py --mutant` for the same reason — its 21st mutant is a
 mutation of `notes/index-links.md`'s own prose, which only the self-test can catch — and `math-3la`
 added `measure_checker_needles.py`, so the count is **75** after `math-o3a.1` added
 `verify_fleet_design.py` plain and with `--mutant` (0.3 / 0.5 s), `math-o3a.6.1` added
 `verify_cache_promotion.py` plain and with `--mutant` (1.0 / 7.0 s), and the rows `math-unv`'s
 scheduler and `math-o3a.5.2`'s `--both` collapse added took the list to what the `ROWS` array
-carries. The count is read from the array, not from the history: **8** writer rows, **23**
-report-only rows, **44** checker invocations.
+carries. The count is read from the array, not from the history: **8** writer rows, **24**
+report-only rows, **43** checker invocations.
 
 `verify_script_ownership.py` — this page's own checker — is not in the table: a checker cannot list
 itself as its input. It is the 23rd checker and the 59th script; the run counts **58** scripts
@@ -346,8 +349,8 @@ already does.
 
 The package is not in the census below: the script population is `notes/scripts/*.py`, and
 `catlib/` is 17 modules under that directory, so the population the census counts is **76** files.
-The lint gate checks **78**, because the extracted checker self-tests live inside the tree
-(`notes/scripts/tests/`, 2 files) and the trio over `notes/scripts/` recurses into it; the census
+The lint gate checks **79**, because the extracted checker self-tests live inside the tree
+(`notes/scripts/tests/`, 3 files) and the trio over `notes/scripts/` recurses into it; the census
 excludes them with the script tree, so they are not scripts.
 (`.venv/bin/mypy notes/scripts/` prints the count it checked).
 

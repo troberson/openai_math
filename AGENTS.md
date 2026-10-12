@@ -423,14 +423,16 @@ lives in this file and nowhere else.
   unchanged by the flagged run. The read-only gate pool is the block that runs rows with this flag.
 - The whole-tree test is the gate list at `notes/scripts/gate.py`: **75** invocations — the **8**
   gated writers (`build_report_templates.py` and `measure_open_probe.py` are the writers it does not
-  run), the 23 gated report-only rows (including `check_summary_manuscripts.py` and
-  `locate_summary_quotes.py`, `check_index_links.py` plain and with `--mutant`, and
-  `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q`, the extracted self-tests row;
-  `read_manuscript.py` is the one script it does not run), and **44**
-  checker invocations: **42** from the 21 checkers listed twice (plain and with `--mutant`) — the 20
+  run), the 24 gated report-only rows (including `check_summary_manuscripts.py` and
+  `locate_summary_quotes.py`, `check_index_links.py` plain and with `--mutant`, and the two extracted
+  self-tests rows, `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q` and
+  `run_tests.py notes/scripts/tests/test_conjecture_standing.py -q`;
+  `read_manuscript.py` is the one script it does not run), and **43**
+  checker invocations: **38** from the 19 checkers listed twice (plain and with `--mutant`) — the 19
   table checkers plus `verify_script_ownership.py`, the census page's own checker — plus
-  `verify_page_sync.py --both` (**1**) and `verify_scope_exclusions.py` plain (**1**), which no longer
-  carries a `--mutant` branch. The list is one array, `ROWS`, of (spec, needs, writes) triples over the
+  `verify_page_sync.py --both` (**1**), `verify_scope_exclusions.py` plain (**1**) and
+  `verify_conjecture_standing.py` plain (**1**), none of which carries a `--mutant` branch any more.
+  The list is one array, `ROWS`, of (spec, needs, writes) triples over the
   generated artifacts: a row starts as soon as every row that writes its `needs` has finished, each
   row writes its own `.line` file, and the report prints the `.line` files in list order after the
   last row, so the report is the same bytes a serial run prints. `GATE_POOL` is the concurrency cap,
@@ -627,14 +629,17 @@ lives in this file and nowhere else.
   including an abbreviated anchor, a deleted table row, and a prose line count visible only in the diff
   against the writer's render. It writes nothing.
 - Check `notes/tables/conjecture-standing.tsv` with
-  `python3 notes/scripts/verify_conjecture_standing.py --mutant` before quoting any row — it proves
-  the 139-row fam set against the ledger, resolves every `overview.tex:<n>` anchor to that family's
-  own `\resultentry`, requires `prior_confidence` in vocabulary, rejects conjecture names the cited
-  abstract does not use, rejects consequence language, and flags six injected mutants (a shifted
-  anchor, a blanked `prior_confidence`, a row outside the selection, a consequence assertion in a
-  `gap` field, a renamed conjecture, a row widened to 11 fields). It writes nothing; the injections
-  are targeted from the parsed rows, so an injection that finds no target fails the run as NOT
-  INJECTED rather than passing as detected.
+  `python3 notes/scripts/verify_conjecture_standing.py` and its extracted self-tests with
+  `python3 notes/scripts/run_tests.py notes/scripts/tests/test_conjecture_standing.py -q`
+  before quoting any row — the checker proves the 139-row fam set against the ledger, resolves every
+  `overview.tex:<n>` anchor to that family's own `\resultentry`, requires `prior_confidence` in
+  vocabulary, rejects conjecture names the cited abstract does not use, and rejects consequence
+  language. The test file injects the six defects (a shifted anchor, a blanked `prior_confidence`, a
+  row outside the selection, a consequence assertion in a `gap` field, a renamed conjecture, a row
+  widened to 11 fields) and asserts the pass that owns each one reports it. The injections are
+  targeted from the parsed rows, so an injection that finds no target fails its test rather than
+  passing as detected. The checker measures, the test file injects; the checker no longer carries its
+  own `--mutant` branch.
 - Run `python3 notes/scripts/extract_formalization_deps.py` once: `verify_cache_promotion.py` asserts
   that the bytes cached under its key equal the bytes on the TSV. Its report reconciles 31 rows = 30 declared + 1 undeclared, 30 lakefile requires
   pinned to 40-char commits, 30 yaml entries, 23 patches over 160,187 lines, 42 manifest packages
