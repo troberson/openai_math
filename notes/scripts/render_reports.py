@@ -2520,6 +2520,14 @@ def fleet_population() -> dict[str, Any]:
     }
 
 
+# Where notes/fleet-design.md wraps a phrase across lines, the prefix the page's first line ends
+# with. Transcribed from the page bytes, not invented: a prefix that stops matching the measured
+# phrase raises ValueError here rather than reflowing the page.
+FLEET_SPLIT = {
+    "gate_writers_class": ["Non-determinism sources in the **10** writers,"],
+}
+
+
 def fleet_phrases(v: dict[str, Any]) -> dict[str, str]:
     """The slot dict. Each phrase is unique in the page, so a label cannot slot a dated observation."""
     du = v["du"]
@@ -2551,6 +2559,16 @@ def fleet_phrases(v: dict[str, Any]) -> dict[str, str]:
         for i, site in enumerate(sites):
             name, ln = site.split(":")
             out[f"{key}_site_{i}"] = f"`{name}:{ln}`"
+    for label, prefixes in FLEET_SPLIT.items():
+        base = out.pop(label)
+        rest = base
+        for i, pre in enumerate(prefixes):
+            rest = rest.lstrip()
+            if not rest.startswith(pre):
+                raise ValueError(f"slot {label!r}: page wrap {pre!r} is not a prefix of {base!r}")
+            out[f"{label} {'abcdefghij'[i]}"] = pre
+            rest = rest[len(pre):]
+        out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
     return out
 
 

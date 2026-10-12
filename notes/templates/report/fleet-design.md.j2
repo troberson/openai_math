@@ -78,7 +78,7 @@ blind.
 
 Rule: `du -sk` per surface, divided by 1024. `preprints/` is {{ p['du_preprints'] }}, `lean/OAI/` is {{ p['du_oai'] }}
 (122,458 files), `notes/index/` is {{ p['du_index'] }}. `cat notes/tables/*.tsv | wc -c` = {{ p['tsv_bytes'] }} over the
-**8** `notes/tables/*.tsv` present on disk. `free -h` reported **7.2 GiB available of 60 GiB** on 2026-10-10, with the
+{{ p['tsv_count'] }}. `free -h` reported **7.2 GiB available of 60 GiB** on 2026-10-10, with the
 model server resident — a dated observation, not a re-derivable count.
 
 A full-corpus `.tex` scan is 128.8 MB over 8,007 files; a `lean/OAI` scan is 1.7 GB. With that little
@@ -286,11 +286,11 @@ and the key is computed from the current `git rev-parse HEAD:<path>` tree digest
 longer matches HEAD makes its records missing and the row fails. The driver keeps the md5 and
 `git status` snapshots raw and prints the assertion row. `notes/scripts/gate.py` carries
 {{ p['gate_rows'] }} as `ROWS` entries, each a (spec, needs, writes) triple over the generated
-artifacts: the 9 writers declare what they write, every checker needs `pages`,
+artifacts: {{ p['gate_writers'] }}, every checker needs `pages`,
 `check_index_links.py` and `measure_index_sizes.py` need `index`, and the two summary readers need
 `summaries`. A row starts as soon as every row that writes its `needs` has finished, so counting the
-tuples in the `ROWS` block is the row count. Non-determinism sources in the 9 writers,
-by class:
+tuples in the `ROWS` block is the row count. {{ p['gate_writers_class a'] }}
+{{ p['gate_writers_class b'] }}
 
 - **Time / random / env:** {{ p['env_hits'] }} — {{ p['env_site_0'] }} and {{ p['env_site_1'] }} set
 {% raw %}  `env={**os.environ, "RENDER_REPORTS_CHILD": "1"}` for the two children. Zero `datetime`,
