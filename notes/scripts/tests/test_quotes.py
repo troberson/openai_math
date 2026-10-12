@@ -1,23 +1,28 @@
 r"""The self-tests for `notes/scripts/catlib/quotes.py` and `notes/scripts/seed_quotes.py`.
 
 The resolver resolves a `(path, start, end, head, tail)` spec to the verbatim source span; the seeder
-seeds the specs for `notes/subfinding-pairs.md` and requires each to reproduce the page's quote. This
-file injects the faults the locator must catch: a head absent from the window; a tail that occurs only
-before the head; a line number past the file's end; a window whose start is after its end; a head that
-is unique in the line and still bounds a span running to a later occurrence of the tail; a trailing
-`\qquad ` that must join to one space, not two; an HTML tag inside a word the page spells without
-markup, where the raw span is NOT the page quote and only the folded comparison is; math whose `<` and
-`>` make the folded line lose text the raw line keeps; and a quote that wraps across lines.
+seeds the specs for `notes/subfinding-pairs.md` and the 21 summaries pages and requires each to
+reproduce the page's quote. This file injects the faults the locator must catch: a head absent from the
+window; a tail that occurs only before the head; a line number past the file's end; a window whose start
+is after its end; a head that is unique in the line and still bounds a span running to a later
+occurrence of the tail; a trailing `\qquad ` that must join to one space, not two; an HTML tag inside a
+word the page spells without markup, where the raw span is NOT the page quote and only the folded
+comparison is; math whose `<` and `>` make the folded line lose text the raw line keeps; and a quote
+that wraps across lines.
 
-The clean test pins the population the seeder reports for the real page: 236 quotes, 236 specs seeded,
-236 reproduced byte-for-byte, 42 heads widened past three words, 79 whole-quote specs, 236 single-line
-specs, 0 range specs, 0 round-trip failures. The seeded table on disk must reproduce every page quote,
-so a resolver that passes its synthetic cases and fails the corpus is caught.
+The clean test pins the population the seeder reports for the two surfaces: **1,161** specs, **236**
+from the pair page and **925** from the summaries pages; **1,147** seeded and **14** measured negatives
+(the spans the cited file does not carry, seeded to `start` 0); **529** single-line and **618** range
+specs; **158** heads widened past three words; **228** whole-quote specs; the `mode` split **1,096**
+raw, **51** folded, **14** not located; **0** round-trip failures. The seeded table on disk must
+reproduce every page quote, in its own class — byte-for-byte for `raw`, fold-equal for `folded` — so a
+resolver that passes its synthetic cases and fails the corpus is caught.
 
 The resolver measures; this file injects. Run:
   python3 notes/scripts/run_tests.py notes/scripts/tests/test_quotes.py -q
 """
 import pathlib
+from collections import Counter
 
 import pytest
 from catlib.paths import ROOT
@@ -95,29 +100,47 @@ SEEDS = [
 
 
 @pytest.fixture(scope="module")
-def lines():
-    return SRC.read_text(encoding="utf-8").splitlines()
-
-
-@pytest.fixture(scope="module")
 def page_rows():
     import seed_quotes as S
     return S.rows(S.SRC.read_text(encoding="utf-8").splitlines())
 
 
-def test_clean_page(page_rows, lines):
-    """The population the seeder reports for the real page, pinned."""
-    seeded = [s for s, _q in page_rows if s["start"] != "0"]
+@pytest.fixture(scope="module")
+def summary_rows():
+    import seed_quotes as S
+    return S.summary_rows()
+
+
+def test_clean_page(page_rows, summary_rows):
+    """The population the seeder reports for both surfaces, pinned."""
+    all_rows = page_rows + summary_rows
+    seeded = [s for s, _q in all_rows if s["start"] != "0"]
     assert len(page_rows) == 236
-    assert len(seeded) == 236
-    bad = [s for s, q in page_rows
-           if s["start"] != "0" and resolve(lines, int(s["start"]), int(s["end"]),
-                                            s["head"], s["tail"] or None) != q]
-    assert bad == []
-    assert sum(1 for s in seeded if s["start"] == s["end"]) == 236
-    assert sum(1 for s in seeded if s["start"] != s["end"]) == 0
-    assert sum(1 for s in seeded if len(s["head"].split()) > 3) == 42
-    assert sum(1 for s in seeded if s["tail"] == "") == 79
+    assert len(summary_rows) == 925
+    assert len(all_rows) == 1161
+    assert len(seeded) == 1147
+    assert sum(1 for s in seeded if s["start"] == s["end"]) == 529
+    assert sum(1 for s in seeded if s["start"] != s["end"]) == 618
+    assert sum(1 for s in seeded if len(s["head"].split()) > 3) == 158
+    assert sum(1 for s in seeded if s["tail"] == "") == 228
+    modes = Counter(s["mode"] for s, _q in all_rows)
+    assert (modes["raw"], modes["folded"], modes["none"]) == (1096, 51, 14), modes
+    # Every seeded spec must reproduce its quote in its own class, so a spec that resolves to text the
+    # page does not quote is a failure, not a pass.
+    cache: dict[str, list[str]] = {}
+    bad = []
+    for spec, q in all_rows:
+        if spec["start"] == "0":
+            continue
+        key = spec["path"]
+        if key not in cache:
+            cache[key] = (ROOT / key).read_text(encoding="utf-8", errors="replace").splitlines()
+        got = resolve(cache[key], int(spec["start"]), int(spec["end"]),
+                      spec["head"], spec["tail"] or None)
+        ok = got == q if spec["mode"] == "raw" else got is not None and norm(got) == norm(q)
+        if not ok:
+            bad.append((spec["page"], spec["fam"], spec["seq"], spec["which"], spec["mode"]))
+    assert bad == [], bad[:3]
 
 
 @pytest.mark.parametrize("label,src,start,end,head,tail,expected", MUTANTS)
@@ -137,19 +160,34 @@ def test_seed_faults(src, quote, start, end, expected, label):
         assert span == quote or norm(span) == norm(quote), label
 
 
-def test_seeded_table_reproduces_the_page(page_rows):
-    """The table on disk must carry the specs that reproduce every page quote, so a stale TSV is caught."""
+def test_seeded_table_reproduces_the_page(page_rows, summary_rows):
+    """The table on disk must carry the specs that reproduce every page quote, so a stale TSV is caught.
+
+    The key is `(page, fam, seq, which)`, because the two surfaces number their rows differently: a pair
+    row's `seq` is the manuscript the pair names, a summaries row's is the span's index in the page. The
+    round-trip is per class — byte-for-byte for `raw`, fold-equal for `folded` — and a `none` row must
+    carry no spec, so its `start` is 0.
+    """
     tsv = ROOT / "notes" / "tables" / "quotes.tsv"
     if not tsv.is_file():
         pytest.skip("notes/tables/quotes.tsv has not been written yet")
-    from catlib.tsv import read_rows
-    rows = read_rows(tsv)
-    keyed = {(r["fam"], r["seq"], r["which"]): r for r in rows}
-    assert len(keyed) == len(page_rows)
-    for spec, q in page_rows:
-        r = keyed[(spec["fam"], spec["seq"], spec["which"])]
-        src = (ROOT / r["path"]).read_text(encoding="utf-8").splitlines()
-        assert resolve(src, int(r["start"]), int(r["end"]), r["head"], r["tail"] or None) == q
+    from catlib.tsv import read_join_rows
+    rows = read_join_rows(tsv)
+    keyed = {(r["page"], r["fam"], r["seq"], r["which"]): r for r in rows}
+    assert len(keyed) == len(page_rows) + len(summary_rows)
+    cache: dict[str, list[str]] = {}
+    for spec, q in page_rows + summary_rows:
+        r = keyed[(spec["page"], spec["fam"], spec["seq"], spec["which"])]
+        assert r["mode"] == spec["mode"], (spec["page"], spec["fam"], spec["seq"], spec["which"])
+        if r["mode"] == "none":
+            assert r["start"] == "0" and r["end"] == "0", (spec["page"], spec["fam"], spec["seq"])
+            continue
+        key = r["path"]
+        if key not in cache:
+            cache[key] = (ROOT / key).read_text(encoding="utf-8", errors="replace").splitlines()
+        got = resolve(cache[key], int(r["start"]), int(r["end"]), r["head"], r["tail"] or None)
+        ok = got == q if r["mode"] == "raw" else got is not None and norm(got) == norm(q)
+        assert ok, (spec["page"], spec["fam"], spec["seq"], spec["which"], r["mode"])
 
 
 def test_page_anchor_grammar_is_shared():

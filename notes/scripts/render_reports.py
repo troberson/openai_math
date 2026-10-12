@@ -739,7 +739,7 @@ INDEX_SPLIT = {
     "MSC hit count": ["family → MSC code"],
     "added TSV byte figures": ["`notes/tables/abstracts.tsv`",
                                "(**89476** B over **372** rows), `notes/tables/quotes.tsv` "
-                               "(**24171** B over **236** rows),",
+                               "(**277124** B over **1161** rows),",
                                "`notes/tables/sources.tsv` (**221463** B over **719** rows) and "
                                "`notes/tables/topics.tsv` (**22631** B"],
     "bib keywords count": ["bibliography entry → `keywords` field **0** over **13,802**"],
@@ -2830,12 +2830,14 @@ SP_FP_SENT = re.compile(r"Probe-vocabulary false positives: ([0-9, ]+)\.")
 def sp_pair_lines() -> list[tuple[str, str]]:
     """Every pair line the quote-spec table resolves to, as (label, line text), in table order.
 
-    `notes/tables/quotes.tsv` is seeded in page order, so a clause row is followed by its title row.
-    The resolver returns raw source bytes, which is what this page quotes verbatim, so the line the
-    writer builds is the page's line byte for byte. A clause with no `seq` is a clause the page records
-    as unmatched — it has no title row after it, and the page writes `-> unmatched` where the target
-    would be. A spec that does not resolve raises: a page whose quote moved must fail the writer, not
-    render a quote the source does not carry.
+    `notes/tables/quotes.tsv` is seeded in page order, so a clause row is followed by its title row. The
+    table also carries the summaries rows, which this page does not render, so the pair rows are selected
+    by `page` — a writer that read the whole table would build 1,161 lines for a 127-line page. The
+    resolver returns raw source bytes, which is what this page quotes verbatim, so the line the writer
+    builds is the page's line byte for byte. A clause with no `seq` is a clause the page records as
+    unmatched — it has no title row after it, and the page writes `-> unmatched` where the target would
+    be. A spec that does not resolve raises: a page whose quote moved must fail the writer, not render a
+    quote the source does not carry.
     """
     lines = OVERVIEW_TEX.read_text(encoding="utf-8").splitlines()
     out: list[tuple[str, str]] = []
@@ -2844,7 +2846,9 @@ def sp_pair_lines() -> list[tuple[str, str]]:
     # tuple — pylint reports E0633 on unpacking an Optional.
     pending = ("", 0, "")
     unmatched: dict[str, int] = {}
-    for r in tsv.read_rows(QUOTES_TSV):
+    for r in tsv.read_join_rows(QUOTES_TSV):
+        if r["page"] != str(SP_MD.relative_to(ROOT)):
+            continue
         fam, seq, which = r["fam"], r["seq"], r["which"]
         start, end = int(r["start"]), int(r["end"])
         span = Q.resolve(lines, start, end, r["head"], r["tail"] or None)

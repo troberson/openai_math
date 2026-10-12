@@ -32,9 +32,11 @@ lives in this file and nowhere else.
   note says its formalization leaves out), `subfindings.tsv` (1145 rows — 719 manuscript rows and 426
   comparator rows, typed by a `kind` column) with `subfinding-pairs.md` (49 families, 203 manuscripts —
   the reading pass that pairs abstract clauses with display titles) beside it,
-  `quotes.tsv` (236 rows, 9 columns — the `(path, start, end, head, tail)` spec for every pair-line
-  quote in `subfinding-pairs.md`, seeded by `seed_quotes.py` and resolved back to the source bytes by
-  `catlib/quotes.py`, which shares the page's anchor grammar with `catlib/anchors.py`),
+  `quotes.tsv` (1,161 rows, 10 columns — the `(path, start, end, head, tail, mode)` spec for every
+  pair-line quote in `subfinding-pairs.md` and every quoted span the 21 summaries pages carry, seeded by
+  `seed_quotes.py` and resolved back to the source bytes by `catlib/quotes.py`, which shares the pair
+  page's anchor grammar with `catlib/anchors.py` and the summaries span and attribution rules with
+  `catlib/summaries.py`),
   `index-design.md` (the index schema decision — store, location, granularity, topic vocabulary — with
   the measured node and edge population that justifies it), `index/` (the rendered index, all of it
   generated: 372 family pages in 17 discipline dirs, 17 discipline pages, 92 topic pages, 551 name
@@ -330,23 +332,24 @@ lives in this file and nowhere else.
   ≥2 sentences with a prove-verb (32), ≥3 sentences (73). Same shape as the counterexample 74 / 30 case;
   see `notes/counterexample-tag.md` and the population section of `notes/subfinding-pairs.md`.
 - Seed the quote-spec table with `python3 notes/scripts/seed_quotes.py` — a writer that lands
-  `notes/tables/quotes.tsv` (236 rows, 9 columns) through the promote registry and resolves every spec
-  back against `overview.tex`, requiring the resolved span to be the page's quote byte-for-byte. A spec
-  is `(page, fam, seq, which, path, start, end, head, tail)`: it names a span **without containing it**
-  — the line window the quote sits on, the first words widened until they are unique inside that window,
-  and the last three words. The resolver is `catlib/quotes.py` and its `ANCH` is
-  `catlib.anchors.anchor_pattern(EXT_MAN, ranges=True)` — the same grammar the page's checker uses, so a
-  page whose anchor grammar narrows fails the seeder the way it fails the checker. **Page breaks inside a
-  quote are the common case, not the edge:** measured 2026-10-12 over the 21 summaries pages, 491 of the
-  736 quoted spans `verify_summaries.py` pass C checks sit across 2 to 8 source lines and 240 in one, so
+  `notes/tables/quotes.tsv` (1,161 rows, 10 columns) through the promote registry and resolves every spec
+  back against the file its `path` names, requiring the resolved span to be the page's quote in its own
+  class. A spec is `(page, fam, seq, which, path, start, end, head, tail, mode)`: it names a span
+  **without containing it** — the line window the quote sits on, the first words widened until they are
+  unique inside that window, the last three words, and the round-trip class. **Page breaks inside a
+  quote are the common case, not the edge:** measured 2026-10-12 over the 21 summaries pages, 618 of the
+  925 quoted spans `verify_summaries.py` pass C checks sit across 2 to 26 source lines and 293 in one, so
   the spec names a window and the resolver joins it as a LaTeX paragraph — a line break is one space, and
   a line's own trailing space is not a second. **Locate on raw bytes, never on the folded line:**
   `catlib.text.strip_markup` is lossy on math, `overview.tex:505` folds to `for $04$, establishing` and
   the clause is gone. The shortest-span rule is load-bearing: first-head-then-first-tail fails 2 of 236
-  (families 114 and 262), shortest-span fails 0. **The page's quotes are normalized, not verbatim** — 22
-  of the 736 summaries spans are fold-equal, not raw-equal, so a writer that rendered raw bytes would
-  change those 22 quotes' text; 5 of the 736 are not located, 2 of them ref-substitutions (the page
-  writes `Theorem 1` where the source writes `Theorem~\ref{thm:main}`). `--check-only` measures and
+  (families 114 and 262), shortest-span fails 0. **The page's quotes are normalized, not verbatim** — 51
+  of the 925 summaries spans are fold-equal, not raw-equal, so a writer that rendered raw bytes would
+  change those 51 quotes' text; 14 of the 925 are not located (LaTeX accent escapes and math the word
+  pattern's `MARK` set does not tolerate), and they are seeded to `start` 0 as measured negatives, not
+  deleted. **The join-form reader is the inverse of the join-form writer:** `rows_text` does not quote a
+  cell, so `csv.DictReader` strips the quotes off a `head` that begins with `"` — a page's block quote of
+  a JSON source — which is why `catlib.tsv.read_join_rows` splits on tabs. `--check-only` measures and
   writes nothing; the gate runs the writer row and the `run_tests.py` row for
   `notes/scripts/tests/test_quotes.py` (**16** tests).
 - Compare the two abstracts a family ships with `python3 notes/scripts/compare_abstracts.py` — report

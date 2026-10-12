@@ -34,6 +34,21 @@ def read_rows(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(fh, delimiter="\t"))
 
 
+def read_join_rows(path: Path) -> list[dict[str, str]]:
+    """Rows as dicts for a table written by the join writers (`rows_text` / `write_rows`).
+
+    The join writers do not quote a cell, so a cell that starts with `"` is data. Parsing those tables
+    with `csv.DictReader` strips the quotes off such a cell: the quote-spec table's `head` and `tail`
+    cells carry a page's block quote of a JSON source, which begins with `"`, and the reader loses the
+    quotes the resolver needs. The exact inverse of `cell()` is a tab split, so this reader splits.
+    """
+    lines = path.read_text(encoding="utf-8").splitlines()
+    if not lines:
+        return []
+    fields = lines[0].split("\t")
+    return [dict(zip(fields, line.split("\t"))) for line in lines[1:] if line]
+
+
 def read_rows_from_text(text: str) -> list[dict[str, str]]:
     """Rows as dicts from text already in memory (the read-once-and-reuse pattern)."""
     return list(csv.DictReader(text.splitlines(), delimiter="\t"))

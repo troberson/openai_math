@@ -50,7 +50,7 @@ finds **12** writers over **60** scripts.
 | `build_report_templates.py` | `notes/templates/report` | not in `gate.py` — it reads each page with `git show HEAD:`, so a gate run would rewrite templates from committed bytes; run explicitly with 0 args (all nineteen pages) or 2 (one page) after a writer's slot dict changes | the nineteen page templates; the registry, slot dicts and needle derivation it reads are in `catlib/templates.py` |
 | `measure_names.py` | `.qwen/cache/records/<key>/names.json` | plain; no tracked artifact, so the promote-and-verify assertion compares no bytes for it — `verify_cache_promotion.py` proves its L1 against the probe record and the cache check reads no tracked path | `notes/names.md`, and the 551 name pages `build_index.py` renders from `--json` |
 | `measure_open_probe.py` | `notes/probe` | not in `gate.py` — a record carries a wall time per target, so a run-1/run-2 byte diff of a record is a timing artifact, not a proof; run explicitly over the purity and amplification targets, appending stdout to build a multi-target record | the two probe records `verify_fleet_design.py` parses |
-| `seed_quotes.py` | `notes/tables/quotes.tsv` | single run; cached bytes == promoted bytes under the key | `notes/subfinding-pairs.md` — the page whose quotes it seeds, and the page's checker reads the seeded specs back |
+| `seed_quotes.py` | `notes/tables/quotes.tsv` | single run; cached bytes == promoted bytes under the key | `notes/subfinding-pairs.md` and `notes/summaries/**` — the two surfaces whose quotes it seeds; `render_reports.py` reads the pair rows back for the pair page, and `notes/scripts/tests/test_quotes.py` reads the whole table back |
 
 Seven writers emit one TSV each. `build_index.py` is the one-to-many case: it renders **1,049** files —
 **1,033** `.md` pages and **16** `.tsv` tables. `render_reports.py` renders the nineteen report-fed pages
@@ -510,10 +510,10 @@ excludes them with the script tree, so they are not scripts.
 | `notes/summaries/` | **21** | hand-written — the reading record |
 | `notes/templates/` | **24** | **5** hand-written index skeletons + **19** report templates built by `build_report_templates.py` |
 | `notes/upstream_history/` | **3** | hand-written — the record of each upstream merge, checked by `verify_upstream_history.py` |
-| `notes/probe/` | **7** | the audit-hook probe records: the 2026-10-11 writers/checkers pair `measure_open_probe.py` writes and the fleet checker parses, the 2026-10-11 `render_reports.py` after-record that proves the repeat count fell, the 2026-10-10 pair the page's cold-cache figures come from, the 2026-10-12 `render_reports.py` record that captures the fleet census the writer added (the script tree and the two 2026-10-11 records it scans, which its own 2026-10-11 record cannot name), and the 2026-10-12 `seed_quotes.py` record that proves its L1 list names the one page it reads |
+| `notes/probe/` | **8** | the audit-hook probe records: the 2026-10-11 writers/checkers pair `measure_open_probe.py` writes and the fleet checker parses, the 2026-10-11 `render_reports.py` after-record that proves the repeat count fell, the 2026-10-10 pair the page's cold-cache figures come from, the 2026-10-12 `render_reports.py` record that captures the fleet census the writer added (the script tree and the two 2026-10-11 records it scans, which its own 2026-10-11 record cannot name), the 2026-10-12 `seed_quotes.py` record that proves its L1 list names the one page it reads, and the 2026-10-12 `seed_quotes.py` record that proves the widened L1 names the summaries tree and the notes pages its Sources cells cite |
 | `notes/tables/*.tsv` | **9** | **7** generated, **2** hand-authored |
 | `notes/*.md` | **29** | **19** generated — the report-fed pages `render_reports.py` renders; **10** hand-written. **23** with a checker, **6** without |
-| `notes/` total, scripts excluded | **1,142** | — |
+| `notes/` total, scripts excluded | **1,143** | — |
 
 The generated TSVs are the seven writer targets. The two hand-authored tables are:
 
