@@ -1026,14 +1026,15 @@ lives in this file and nowhere else.
   `git rev-parse HEAD:<path>` tree digests, the `git status --porcelain --ignored=matching` check over
   the five hashed paths, the `notes/tables/*.tsv` byte sum, the three `du -sk` sizes, the gate row count from
   `gate.py`'s `ROWS` block, the three site counts (atomicity, env, set iteration), the probe table's
-  wall/opens/distinct/repeats figures, and the **8** audit-hook records **tracked under
-  `notes/probe/`** (the checker parses
-  the 2026-10-11 pair, written by `notes/scripts/measure_open_probe.py` over **9** targets; the 2026-10-10 pair, the
-  single-target `render_reports.py` after-record, the two 2026-10-12 `seed_quotes.py` records (the
-  pair-page run and the widened run that reads the 21 summaries pages and the notes pages their Sources
-  cells cite) and the 2026-10-12 `render_reports.py` record that captures the fleet census are the
-  records the page's deltas and the promotion checker read), which the
-  checker requires on disk. It resolves
+  wall/opens/distinct/repeats figures, and the **10** audit-hook records **tracked under
+  `notes/probe/`** (the checker parses the two 2026-10-11 records, written by
+  `notes/scripts/measure_open_probe.py` over **9** targets, for its probe table; the tree's other
+  records — the 2026-10-10 pair, the single-target `render_reports.py` after-record, the two
+  2026-10-12 `seed_quotes.py` records, the 2026-10-12 `render_reports.py` record that captures the
+  fleet census, and the two 2026-10-12 records for the keyed-record producers
+  `extract_named_results.py` and `measure_templates.py` — are the records
+  `verify_cache_promotion.py` reads (**seven** of them, for its L1 exactness pass) and the records
+  the page's amplification deltas are measured against), which the checker requires on disk. It resolves
   every backticked `path:line` anchor, bare script names included (a bare
   name resolves under `notes/scripts/`), matches the purity table — **8** rows, the set the probe parse
   yields, so adding a probe target moves the table and the heading count together
