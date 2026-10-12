@@ -443,8 +443,6 @@ def check(text):
             f"hand-authored tables TSVs: {hand_tsv}, page lists "
             f"{sorted(n.split('/')[-1] for n in HAND_AUTHORED_TSVS)}"
         )
-    if len(gen_tsv) != 6:
-        p.append(f"generated tables TSVs: {len(gen_tsv)}, page says 6")
     if f"**{len(gen_tsv)}** generated, **{len(hand_tsv)}** hand-authored" not in text:
         p.append(f"tsv census cell does not read '**{len(gen_tsv)}** generated, **{len(hand_tsv)}** hand-authored'")
 

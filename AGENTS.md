@@ -14,7 +14,7 @@ lives in this file and nowhere else.
   `ComparatorChallenges/*.json`, and `formalization.yaml`.
 - `reasoning_traces/` holds 10 published traces in 11 files — the Mézard–Parisi trace ships as
   both `.pdf` and `.tex`.
-- `notes/` is the reading ledger: the 8 TSVs under `notes/tables/` — `catalog.tsv` (372 rows,
+- `notes/` is the reading ledger: the 9 TSVs under `notes/tables/` — `catalog.tsv` (372 rows,
   22 columns) is the ledger — `README.md`,
   `t0-triage.md`, `conditional.md`, `resolution-tag.md`, `counterexample-tag.md`, `proof-density.md`,
   `counterexample-crosscheck.md` (the 28 counterexample-shaped families outside T0, each claim paired
@@ -32,6 +32,9 @@ lives in this file and nowhere else.
   note says its formalization leaves out), `subfindings.tsv` (1145 rows — 719 manuscript rows and 426
   comparator rows, typed by a `kind` column) with `subfinding-pairs.md` (49 families, 203 manuscripts —
   the reading pass that pairs abstract clauses with display titles) beside it,
+  `quotes.tsv` (236 rows, 9 columns — the `(path, start, end, head, tail)` spec for every pair-line
+  quote in `subfinding-pairs.md`, seeded by `seed_quotes.py` and resolved back to the source bytes by
+  `catlib/quotes.py`, which shares the page's anchor grammar with `catlib/anchors.py`),
   `index-design.md` (the index schema decision — store, location, granularity, topic vocabulary — with
   the measured node and edge population that justifies it), `index/` (the rendered index, all of it
   generated: 372 family pages in 17 discipline dirs, 17 discipline pages, 92 topic pages, 551 name
@@ -60,16 +63,17 @@ lives in this file and nowhere else.
 ## Dev environment tips
 
 - Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `atomic`, `promote`, `overview`, `ledger`, `preprints`,
-  `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries`, `templates`, `records` (17 modules). Import them (`from catlib import yaml as Y`);
-  do not re-implement a join in an extractor. **54** of the **59** scripts do — the rule is
-  `^[ \t]*(from|import) catlib`, so a deferred import inside a function counts — including
-  **22** of the **23** checkers; the five non-importers are `dump_template_slots.py`, which reaches the slot dict
+  `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries`, `templates`, `records`, `quotes` (18 modules). Import them (`from catlib import yaml as Y`);
+  do not re-implement a join in an extractor. **55** of the **59** scripts do — the rule is
+  `^[ \t]*(from|import) catlib`, so a deferred import inside a function counts — including all **23**
+  checkers; the four non-importers are `dump_template_slots.py`, which reaches the slot dict
   through `render_reports.py` and never touches the registry, `gate.py`, which spawns rows and reads
-  no corpus, `verify_fleet_design.py`, which
-  measures the fleet's own sources and the tracked probe records, so it has no corpus join to import,
+  no corpus,
   and `measure_proof_density.py` and `measure_topics.py`, which were this rule's two-importers-today
   case until `math-o3a.3`: each carried `from catlib import render as RD` as its only package import,
-  and the sync pass that used it moved to `verify_page_sync.py`.
+  and the sync pass that used it moved to `verify_page_sync.py`. `verify_fleet_design.py` is no longer
+  on this list: the pass that added its fleet census gave it `from catlib import render as RD` for the
+  render diff, so the page it checks is compared through the writer's own code.
   `measure.py` is the writer-side
   measurement API (counts as data, no report formatting) and
   checkers deliberately do **not** import it — a checker that re-derives a count through the page's own
@@ -325,6 +329,26 @@ lives in this file and nowhere else.
   tried and rejected: `also` (56), `both ` (48), `companion` (10), `together` (8), ≥2 prove-verbs (33),
   ≥2 sentences with a prove-verb (32), ≥3 sentences (73). Same shape as the counterexample 74 / 30 case;
   see `notes/counterexample-tag.md` and the population section of `notes/subfinding-pairs.md`.
+- Seed the quote-spec table with `python3 notes/scripts/seed_quotes.py` — a writer that lands
+  `notes/tables/quotes.tsv` (236 rows, 9 columns) through the promote registry and resolves every spec
+  back against `overview.tex`, requiring the resolved span to be the page's quote byte-for-byte. A spec
+  is `(page, fam, seq, which, path, start, end, head, tail)`: it names a span **without containing it**
+  — the line window the quote sits on, the first words widened until they are unique inside that window,
+  and the last three words. The resolver is `catlib/quotes.py` and its `ANCH` is
+  `catlib.anchors.anchor_pattern(EXT_MAN, ranges=True)` — the same grammar the page's checker uses, so a
+  page whose anchor grammar narrows fails the seeder the way it fails the checker. **Page breaks inside a
+  quote are the common case, not the edge:** measured 2026-10-12 over the 21 summaries pages, 491 of the
+  736 quoted spans `verify_summaries.py` pass C checks sit across 2 to 8 source lines and 240 in one, so
+  the spec names a window and the resolver joins it as a LaTeX paragraph — a line break is one space, and
+  a line's own trailing space is not a second. **Locate on raw bytes, never on the folded line:**
+  `catlib.text.strip_markup` is lossy on math, `overview.tex:505` folds to `for $04$, establishing` and
+  the clause is gone. The shortest-span rule is load-bearing: first-head-then-first-tail fails 2 of 236
+  (families 114 and 262), shortest-span fails 0. **The page's quotes are normalized, not verbatim** — 22
+  of the 736 summaries spans are fold-equal, not raw-equal, so a writer that rendered raw bytes would
+  change those 22 quotes' text; 5 of the 736 are not located, 2 of them ref-substitutions (the page
+  writes `Theorem 1` where the source writes `Theorem~\ref{thm:main}`). `--check-only` measures and
+  writes nothing; the gate runs the writer row and the `run_tests.py` row for
+  `notes/scripts/tests/test_quotes.py` (**16** tests).
 - Compare the two abstracts a family ships with `python3 notes/scripts/compare_abstracts.py` — report
   only, `--tsv` writes `notes/tables/abstracts.tsv`. **The `overview.tex` abstract is a rewritten paraphrase,
   not the manuscript abstract: 0 of 719 manuscript comparisons and 0 of 372 family best matches read
@@ -373,8 +397,8 @@ lives in this file and nowhere else.
   manifest is `notes/scripts/README.md`, and it is the only place that answers "whose bytes are
   this". It is also the script inventory: every script under `notes/scripts/` is listed once as
   writer, report-only or checker, with what it writes and the gate command the gate list runs for it
-  — **11** writers, **25** report-only, **22** checkers, plus the page's own checker as the 23rd
-  checker and 59th script — and the fourth class, scratch, is recorded by rule: **scratch lives under
+  — **12** writers, **25** report-only, **22** checkers, plus the page's own checker as the 23rd
+  checker and 60th script — and the fourth class, scratch, is recorded by rule: **scratch lives under
   `.qwen/tmp/`, a permanent script lives under `notes/scripts/`**, so a probe that a later pass
   re-runs is promoted and gets a table row before it gets a gate command. `math-o3a.3.4` is that rule
   realized: the audit-hook probe moved from `.qwen/tmp/a11_open_probe2.py` to
@@ -384,15 +408,16 @@ lives in this file and nowhere else.
   `.qwen/tmp/notes_block_probe.py` to `notes/scripts/measure_move_surface.py` and
   `notes/scripts/measure_anchor_blocks.py`, and the gate does not run them because a pass re-runs them
   by hand before and after each move.
-  Scripts and generated files are **not** 1-to-1: of the **58** scripts, **11** write
+  Scripts and generated files are **not** 1-to-1: of the **59** scripts, **12** write
   (`build_catalog.py`, `build_sources.py`, `build_index.py`, `compare_abstracts.py` — with `--tsv`
   only — `extract_formalization_deps.py`, `extract_links.py`, `extract_subfindings.py`,
-  `render_reports.py`, `build_report_templates.py`, `measure_open_probe.py`, `measure_names.py`) and **47**
+  `render_reports.py`, `build_report_templates.py`, `measure_open_probe.py`, `measure_names.py`,
+  `seed_quotes.py`) and **47**
   write nothing, and `build_index.py` alone renders **1,049** files. `measure_names.py` is the record
   producer: its target is `.qwen/cache/records/<key>/names.json`, which the `.qwen/*` rule keeps
   untracked, so it is the one writer with no tracked artifact and the one writer target the
-  promote-and-verify byte comparison cannot read. Of the **8**
-  `notes/tables/*.tsv`, **6** are generator output and **2** are hand-authored — `notes/tables/topics.tsv` (the
+  promote-and-verify byte comparison cannot read. Of the **9**
+  `notes/tables/*.tsv`, **7** are generator output and **2** are hand-authored — `notes/tables/topics.tsv` (the
   curated vocabulary `build_index.py` reads) and `notes/tables/conjecture-standing.tsv` (the training-data
   prior) — and regenerating either destroys the file. `notes/index/` is generated wholesale: edit
   `build_index.py` and re-render, never format or hand-edit a page. The only basename shared between
@@ -421,13 +446,13 @@ lives in this file and nowhere else.
   nothing. Prove the mode by running a writer plain, then with the flag, diffing the two reports (the
   write announcement is the only line allowed to differ) and confirming `git status --porcelain` is
   unchanged by the flagged run. The read-only gate pool is the block that runs rows with this flag.
-- The whole-tree test is the gate list at `notes/scripts/gate.py`: **75** invocations — the **9**
+- The whole-tree test is the gate list at `notes/scripts/gate.py`: **77** invocations — the **10**
   gated writers (`build_report_templates.py` and `measure_open_probe.py` are the writers it does not
-  run), the 43 gated report-only rows (including `check_summary_manuscripts.py` and
+  run), the 44 gated report-only rows (including `check_summary_manuscripts.py` and
   `locate_summary_quotes.py`, `check_index_links.py` plain and its extracted self-tests row, and the
-  twenty-four extracted self-tests rows, from
+  twenty-five extracted self-tests rows, from
   `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q` to
-  `run_tests.py notes/scripts/tests/test_subfinding_pairs.py -q` — the full list is in
+  `run_tests.py notes/scripts/tests/test_quotes.py -q` — the full list is in
   `notes/scripts/README.md`; `read_manuscript.py` is the one script it does not run), and **23**
   checker invocations: `verify_page_sync.py --both` (**1**) and **22** plain-only rows for the
   checkers whose self-tests are extracted. No checker carries a `--mutant` branch any more.
@@ -954,7 +979,7 @@ lives in this file and nowhere else.
   every time the command block is edited and would read the gap as empty the moment the naming
   lands — and recomputes the shared-basename sets
   (**1** top-level ∩ index: `README.md`; **13** index ∩ summaries slugs). It excludes
-  itself from the population, so the page's **59** scripts and **23** checkers are the run's **58** and
+  itself from the population, so the page's **60** scripts and **23** checkers are the run's **59** and
   22. Its self-tests are extracted to `notes/scripts/tests/test_script_ownership.py` and run by the
   gate's `run_tests.py` row: **18** injected faults — eleven in the census page's text, one prose
   count in the generated `notes/README.md` (which only the render diff can see), four in

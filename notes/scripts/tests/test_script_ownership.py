@@ -30,9 +30,9 @@ PAGE_CASES = [
     ("writer row deleted", "writer extract_links.py: page says None",
      lambda t: t.replace("| `extract_links.py` | `notes/tables/links.tsv` | single run; cached "
                          "bytes == promoted bytes under the key | `notes/links.md` |\n", "")),
-    ("hand-authored TSV claimed as generated", "tsv census cell",
-     lambda t: t.replace("**6** generated, **2** hand-authored",
-                         "**7** generated, **1** hand-authored")),
+    ("generated TSV count understated", "tsv census cell",
+     lambda t: t.replace("**7** generated, **2** hand-authored",
+                         "**6** generated, **2** hand-authored")),
     ("index file count altered", "census row notes/index/",
      lambda t: t.replace("| `notes/index/` | **1,049** |", "| `notes/index/` | **1,050** |")),
     ("collision name altered", "collision sentence",
