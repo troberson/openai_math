@@ -1050,7 +1050,7 @@ lives in this file and nowhere else.
   58 scripts and 18 catlib modules, 12 sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 9
   TSVs at 654,791 bytes, 631M `preprints/`, 1,740M `lean/OAI/`, 14M `notes/index/`, 77 gate rows, 10
   writer rows, 2 env hits, 8 purity scripts, the sites at `atomic.py:42` / `atomic.py:84`,
-  `render_reports.py:1153` / `render_reports.py:1373` and `build_catalog.py:128` /
+  `render_reports.py:1155` / `render_reports.py:1375` and `build_catalog.py:128` /
   `build_index.py:583`, and the probe row the amplification table quotes at 151.32 s wall over
   117,360 opens, 18,935 distinct paths and 98,425 repeats. `main()` reads no argv, so `--mutant` is
   inert, and `population()` is under `functools.cache`, so the twenty `check()` calls the row makes
