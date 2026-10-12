@@ -25,7 +25,7 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `index-design.md.j2` | 231 | 13,284 | 99 | `notes/index-design.md` | `verify_index_design.py` | 82 |
 | `index-links.md.j2` | 215 | 12,823 | 81 | `notes/index-links.md` | `check_index_links.py` | NOT DERIVED |
 | `links.md.j2` | 224 | 12,298 | 110 | `notes/links.md` | `extract_links.py` | NOT DERIVED |
-| `named-results.md.j2` | 367 | 25,210 | 83 | `notes/named-results.md` | `verify_named_results.py` | 66 |
+| `named-results.md.j2` | 367 | 25,210 | 83 | `notes/named-results.md` | `verify_named_results.py` | 65 |
 | `names.md.j2` | 277 | 13,865 | 130 | `notes/names.md` | `measure_names.py` | NOT DERIVED |
 | `proof-density.md.j2` | 122 | 8,637 | 66 | `notes/proof-density.md` | `measure_proof_density.py` | NOT DERIVED |
 | `scope-exclusions.md.j2` | 328 | 26,780 | 19 | `notes/scope-exclusions.md` | `verify_scope_exclusions.py` | NOT DERIVED |
