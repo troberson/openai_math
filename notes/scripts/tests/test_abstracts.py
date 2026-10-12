@@ -111,7 +111,7 @@ def test_marker_absent_from_the_table(mod, page, table, counts):
     assert hits, "a marker with no table row was not flagged"
 
 
-def test_table_path_missing_on_disk(mod, page, table, counts):
+def test_table_path_missing_on_disk(mod, page, counts):
     cand = "\n".join(l for l in page.splitlines() if not l.startswith("| S31 |"))
     assert cand != page, "the S31 table row is gone from the page"
     tbl, _ = mod.parse_table(cand.splitlines())
@@ -129,7 +129,7 @@ def test_headline_count_altered(mod, page, table, counts):
     assert hits, "the count pass did not flag the altered headline"
 
 
-def test_tag_table_row_skewed(mod, page, table, counts):
+def test_tag_table_row_skewed(mod, table, counts):
     t = counts["tag_tot"]["classification"]
     d = counts["tag_dis"].get("classification", {"ov-only": [], "ms-only": []})
     row = (f"| classification | {t['ov']} | {t['ms']} | {t['man']} | {len(d['ov-only'])} "
@@ -140,7 +140,7 @@ def test_tag_table_row_skewed(mod, page, table, counts):
     assert hits, "a skewed tag-table row was not flagged"
 
 
-def test_bucket_count_moved(mod, page, table, counts):
+def test_bucket_count_moved(mod, table, counts):
     mb, fb = counts["man_buckets"], counts["fam_buckets"]
     brow = (f"| count | {' / '.join(str(mb[k]) for k in BKEY)} "
             f"| {' / '.join(str(fb[k]) for k in BKEY)} |")
