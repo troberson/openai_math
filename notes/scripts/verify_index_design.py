@@ -25,11 +25,14 @@ Report-only; writes nothing. Three passes over the page:
 Whitespace runs are collapsed on both sides of every comparison: line-wrapping in the page is
 markup, not part of the text (see the ruling recorded for the summaries pages).
 
---mutant runs the built-in mutations and fails if any goes uncaught.
+The self-tests are in notes/scripts/tests/test_index_design.py: that file injects the fourteen page
+faults and asserts each fires the pass that owns it. `main()` reads no argv, so `--mutant` is inert
+here.
 """
 import pathlib
 import re
 import sys
+from functools import cache
 
 import measure_index_sizes as M
 from catlib import render as RD
@@ -60,8 +63,14 @@ def builds_on_anchor():
     raise SystemExit("no builds-on declaration in lean/formalization.yaml")
 
 
+@cache
 def population():
-    """The index measurement under the name build_report_templates.checker_needles() looks for."""
+    """The index measurement under the name build_report_templates.checker_needles() looks for.
+
+    The checker writes nothing and the self-tests mutate page text in memory, so a second call in the
+    same process cannot see a different corpus; the cache is what keeps a multi-`check()` run (the
+    clean page plus each of the fourteen faults) from paying the index-tree walk once per call.
+    """
     return M.population()
 
 
@@ -296,62 +305,15 @@ def check(text):
             len(count_phrases(p)) + len(size_phrases(p)), len(sync))
 
 
-MUTANTS = {
-    "anchor line shifted": lambda t: t.replace("`lean/formalization.yaml:977`",
-                                               "`lean/formalization.yaml:976`", 1),
-    "anchor file renamed": lambda t: t.replace("`lean/formalization.yaml:982`",
-                                               "`lean/formalization.yml:982`", 1),
-    "block line altered": lambda t: t.replace("      declaration: OAI.GAD.main",
-                                              "      declaration: OAI.AmplitudeDamping.main", 1),
-    "count altered": lambda t: t.replace("**2,560** index nodes", "**2,700** index nodes", 1),
-    "derived count altered": lambda t: t.replace("is wrong **150** times", "is wrong **149** times",
-                                                 1),
-    "links value altered": lambda t: t.replace("**391** resolved", "**392** resolved", 1),
-    "abbreviated anchor": lambda t: t.replace("`overview.tex:28`", "`.../overview.tex:28`", 1),
-    "substring-rule count altered": lambda t: t.replace("of the command name reads 18 and",
-                                                        "of the command name reads 17 and", 1),
-    "projected size altered": lambda t: t.replace("**2,021** KiB", "**2,000** KiB", 1),
-    "rendered row count altered": lambda t: t.replace("`family-topic.tsv` | **978**",
-                                                       "`family-topic.tsv` | **977**", 1),
-    "ledger set widened to all TSVs": lambda t: t.replace("the whole ledger set is **297,050** B",
-                                                          "the whole ledger set is **630,620** B",
-                                                          1),
-    "all-TSV total altered": lambda t: t.replace("together totals **630620** B",
-                                                 "together totals **297050** B", 1),
-    "disk link count altered": lambda t: t.replace("covers **66,107** links",
-                                                   "covers **66,108** links", 1),
-    # Prose the count passes never read: the schema table's byte column is not in count_phrases()
-    # or size_phrases(). Only the sync pass can see it.
-    "sync-only prose count altered": lambda t: t.replace("| `catalog.tsv` | **49213** |",
-                                                         "| `catalog.tsv` | **49214** |", 1),
-}
-
-
 def main():
     text = PAGE.read_text(encoding="utf-8", errors="replace")
-
-    if "--mutant" in sys.argv:
-        uncaught = []
-        for name, fn in MUTANTS.items():
-            mutated = fn(text)
-            if mutated == text:
-                print(f"mutant target absent: {name}")
-                uncaught.append(name)
-                continue
-            problems, _, _, _, _ = check(mutated)
-            print(f"mutant {name}: {'caught' if problems else 'NOT CAUGHT'}"
-                  f" ({len(problems)} problems)")
-            if not problems:
-                uncaught.append(name)
-        print(f"mutants not caught {len(uncaught)} of {len(MUTANTS)}")
-        raise SystemExit(1 if uncaught else 0)
-
     problems, n_anchor, n_block_lines, n_phrases, n_sync = check(text)
     for p in problems:
         print(f"PROBLEM {p}")
     print(f"\nanchors {n_anchor}  block lines {n_block_lines}  count phrases {n_phrases}"
           f"  sync problems {n_sync}  problems {len(problems)}")
-    raise SystemExit(1 if problems else 0)
+    return 1 if problems else 0
 
 
-main()
+if __name__ == "__main__":
+    sys.exit(main())

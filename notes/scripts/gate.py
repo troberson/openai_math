@@ -88,7 +88,7 @@ ROWS = [
     ("verify_subfinding_pairs.py", ("pages",), ()),
     ("verify_subfinding_pairs.py --mutant", ("pages",), ()),
     ("verify_index_design.py", ("pages",), ()),
-    ("verify_index_design.py --mutant", ("pages",), ()),
+    ("run_tests.py notes/scripts/tests/test_index_design.py -q", ("pages",), ()),
     ("verify_sources.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_sources.py -q", ("pages",), ()),
     ("verify_conditional.py", ("pages",), ()),
