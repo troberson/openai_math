@@ -208,50 +208,56 @@ self-tests rows are report-only rows, not checker invocations:
 
 | Checker | Checks | Gate | Cost (s) |
 |---|---|---|---|
-| `verify_abstracts.py` | `notes/abstracts.md` | plain; the self-tests are in `notes/scripts/tests/test_abstracts.py`, run by the `run_tests.py` row | 1.0 |
-| `verify_cache_promotion.py` | `catlib/promote.py` — the registry shape against the writers table, the L1 lists against the audit-hook records, and the cached bytes against every tracked artifact under its key | plain + `--mutant` | 1.0 / 7.0 |
-| `verify_citations.py` | `notes/citations.md` | plain + `--mutant` | 1.4 / 2.8 |
-| `verify_conditional.py` | `notes/conditional.md` | plain + `--mutant` | 0.0 / 0.0 |
-| `verify_conjecture_standing.py` | `notes/tables/conjecture-standing.tsv` | plain; the self-tests are in `notes/scripts/tests/test_conjecture_standing.py`, run by the `run_tests.py` row | 0.0 |
-| `verify_counterexample_crosscheck.py` | `notes/counterexample-crosscheck.md` | plain + `--mutant` | 0.3 / 2.4 |
-| `verify_dependency_drift.py` | `notes/dependency-drift.md`, `notes/formalization-deps.md` | plain + `--mutant` | 0.3 / 1.8 |
-| `verify_faithfulness.py` | `notes/formalization-faithfulness.md` — anchors, the count phrases re-derived by its own `main_results`/declaration/carrier/closure walk (not the writer's), the disjoint and overlap pairing tables, the `a.e.` table, and the render diff | plain + `--mutant` | 1.4 / 11.4 |
-| `verify_findings.py` | `notes/findings.md` | plain + `--mutant` | 103.4 / 825.3 |
-| `verify_fleet_design.py` | `notes/fleet-design.md` — anchors, the count phrases re-derived from `git`/`du`/the probe records, each of the three site paragraphs (atomicity, env, set iteration) and the checker-section anchor list compared with the measured `name:line` set, the purity and amplification tables, and the page against `render_reports.py`'s render of it | plain + `--mutant` | 0.3 / 0.5 |
-| `verify_index_design.py` | `notes/index-design.md` | plain + `--mutant` | 2.7 / 20.7 |
-| `verify_named_conjectures.py` | `notes/named-conjectures.md` | plain; the self-tests are in `notes/scripts/tests/test_named_conjectures.py`, run by the `run_tests.py` row | 0.0 |
-| `verify_named_results.py` | `notes/named-results.md` | plain + `--mutant` | 104.6 / 108.3 |
-| `verify_page_sync.py` | `notes/links.md`, `notes/names.md`, `notes/topics.md`, `notes/proof-density.md`, `notes/index-links.md` — the render diff for the five pages whose sync pass used to live in a writer; the mutants mutate page prose in memory, so no page is written | `--both` — plain and mutant in one process | 125.2 |
+| `verify_abstracts.py` | `notes/abstracts.md` | plain; the self-tests are in `notes/scripts/tests/test_abstracts.py`, run by the `run_tests.py` row | 0.8 |
+| `verify_cache_promotion.py` | `catlib/promote.py` — the registry shape against the writers table, the L1 lists against the audit-hook records, and the cached bytes against every tracked artifact under its key | plain + `--mutant` | 0.2 / 1.3 |
+| `verify_citations.py` | `notes/citations.md` | plain + `--mutant` | 1.9 / 3.8 |
+| `verify_conditional.py` | `notes/conditional.md` | plain + `--mutant` | 0 / 0 |
+| `verify_conjecture_standing.py` | `notes/tables/conjecture-standing.tsv` | plain; the self-tests are in `notes/scripts/tests/test_conjecture_standing.py`, run by the `run_tests.py` row | 0 |
+| `verify_counterexample_crosscheck.py` | `notes/counterexample-crosscheck.md` | plain + `--mutant` | 0.4 / 3.3 |
+| `verify_dependency_drift.py` | `notes/dependency-drift.md`, `notes/formalization-deps.md` | plain + `--mutant` | 0.3 / 2.8 |
+| `verify_faithfulness.py` | `notes/formalization-faithfulness.md` — anchors, the count phrases re-derived by its own `main_results`/declaration/carrier/closure walk (not the writer's), the disjoint and overlap pairing tables, the `a.e.` table, and the render diff | plain + `--mutant` | 1.8 / 15 |
+| `verify_findings.py` | `notes/findings.md` | plain + `--mutant` | 4.6 / 35.6 |
+| `verify_fleet_design.py` | `notes/fleet-design.md` — anchors, the count phrases re-derived from `git`/`du`/the probe records, each of the three site paragraphs (atomicity, env, set iteration) and the checker-section anchor list compared with the measured `name:line` set, the purity and amplification tables, and the page against `render_reports.py`'s render of it | plain + `--mutant` | 0.6 / 1 |
+| `verify_index_design.py` | `notes/index-design.md` | plain + `--mutant` | 3.9 / 26.7 |
+| `verify_named_conjectures.py` | `notes/named-conjectures.md` | plain; the self-tests are in `notes/scripts/tests/test_named_conjectures.py`, run by the `run_tests.py` row | 0 |
+| `verify_named_results.py` | `notes/named-results.md` | plain + `--mutant` | 24 / 29.3 |
+| `verify_page_sync.py` | `notes/links.md`, `notes/names.md`, `notes/topics.md`, `notes/proof-density.md`, `notes/index-links.md` — the render diff for the five pages whose sync pass used to live in a writer; the mutants mutate page prose in memory, so no page is written | `--both` — plain and mutant in one process | 35.3 |
 | `verify_scope_exclusions.py` | `notes/scope-exclusions.md` | plain; the self-tests are in `notes/scripts/tests/test_scope_exclusions.py`, run by the `run_tests.py` row | 0.1 |
-| `verify_sources.py` | `notes/sources.md` | plain + `--mutant` | 1.9 / 13.2 |
+| `verify_sources.py` | `notes/sources.md` | plain + `--mutant` | 1.5 / 16.8 |
 | `verify_subfinding_pairs.py` | `notes/subfinding-pairs.md` | plain + `--mutant` | 0.1 / 0.1 |
-| `verify_subfindings.py` | `notes/tables/subfindings.tsv` | plain + `--mutant` | 0.1 / 0.6 |
-| `verify_summaries.py` | `notes/summaries/` | plain + `--mutant`, no page argument | 0.3 / 1.0 |
-| `verify_t0_chains.py` | `notes/t0-chains.md` | plain + `--mutant` | 0.1 / 0.2 |
-| `verify_upstream_history.py` | `notes/upstream_history/` — the three pages | plain + `--mutant` | 0.7 / 0.5 |
-| `verify_verification_dirs.py` | `notes/verification-dirs.md` | plain + `--mutant` | 0.1 / 0.8 |
+| `verify_subfindings.py` | `notes/tables/subfindings.tsv` | plain + `--mutant` | 0.1 / 0.8 |
+| `verify_summaries.py` | `notes/summaries/` | plain + `--mutant`, no page argument | 0.9 / 3.3 |
+| `verify_t0_chains.py` | `notes/t0-chains.md` | plain + `--mutant` | 1.8 / 1.7 |
+| `verify_upstream_history.py` | `notes/upstream_history/` — the three pages | plain + `--mutant` | 0.7 / 0.7 |
+| `verify_verification_dirs.py` | `notes/verification-dirs.md` | plain + `--mutant` | 0.1 / 1.2 |
 
-Cost is plain seconds / `--mutant` seconds, measured 2026-10-10 as one timed pass per checker with
-the local model server loaded — a floor from one measurement, not a benchmark. `verify_faithfulness.py`'s
-row is measured 2026-10-11, the day that checker was promoted. The spread between
+Cost is plain seconds / `--mutant` seconds, measured 2026-10-12 as the wall time the gate printed for
+each row in one pooled run with the local model server loaded — a floor from one measurement, not a
+benchmark. The spread between
 the two columns is structural, not noise: `--mutant` re-runs the whole check once per injected
 fault, so a checker whose plain run is a full measurement pays it again per mutant.
 `verify_findings.py` is the extreme: its Pass E runs the fast extractors as subprocesses inside
 `check()` (`:357`, the subprocess call at `:116`), and `check()` runs 8 times under `--mutant` — the
 clean page in `main()`, once per each of the 6 mutants (`:514`), and the clean page again as the
-mutants' baseline (`:518`) — so 8 × 103 s = 825 s, and that one checker is most of the gate's
-runtime. `verify_named_results.py` is expensive in both columns (104.6 / 108.3) because its cost is
-the corpus read, which a mutant does not multiply. The 13 checkers that call the render-diff pay it in
-their mutant runs; `verify_script_ownership.py`, this page's own checker, is 0.2 plain / 1.1 with
+mutants' baseline (`:518`) — so 8 × 4.6 s = 35.6 s, and that one checker is the gate's heaviest row.
+`verify_named_results.py` is expensive in both columns (24.0 / 29.3) because its cost is
+the corpus read, which a mutant does not multiply. The 14 checkers that import the render-diff pay it
+in their mutant runs; `verify_script_ownership.py`, this page's own checker, is 0.4 plain / 2.1 with
 `--mutant` and is not a row above. `verify_page_sync.py`'s Cost is one number, not a pair: `--both`
 runs the plain pass and the mutant loop in one process, so `catlib.render.rendered` is walked once
-(123.4 s plain + 122.9 s mutant as two rows, against 125.2 s in one). The 41 checker invocations sum
-to **1341.6 s** (22 min), measured 2026-10-12 as the sum of the Cost column above; the full
+(123.4 s plain + 122.9 s mutant as two rows, against 125.2 s in one, measured 2026-10-10; the same
+single walk measured **35.3 s** in the 2026-10-12 run, because the render-diff reads the cached
+records the writers promote rather than re-walking the corpus). The 41 checker invocations sum
+to **225.0 s**, measured 2026-10-12 as the sum of the Cost column above, each cell read from the wall
+time the gate printed for its row; the full 75-row gate ran in **2 min 18 s** wall
+(22:03:15–22:05:33 local) and its 75 row times sum to **414.1 s**, so the 12-row pool makes the wall
+time a third of the sum. The writers are the tail: `render_reports.py` 66.9 s,
+`extract_links.py` 23.7 s, `extract_formalization_deps.py` 9.5 s (the 122,458-file walk under
+`lean/OAI/` is paid once per cache key, so a warm run reads records), `build_index.py` 6.9 s. The
 65-invocation gate took **35 min** and **38 min** on its two runs measured 2026-10-10
-(10:48–11:23 and 11:23–12:01 UTC); the 64-invocation list took **62 min** the same morning
-(05:49–06:51 UTC), so the two figures are a spread, not a regression — the difference being the
-writers — `extract_formalization_deps.py` reads all 122,458 files under `lean/OAI/` and
-`build_index.py` renders 1,049 pages.
+(10:48–11:23 and 11:23–12:01 UTC) and the 64-invocation list took **62 min** the same morning
+(05:49–06:51 UTC) — the pre-cache figures, which the 2026-10-11 promote-and-key work is what
+replaced.
 
 `verify_conjecture_standing.py` is the one checker the list kept outside its loop: it ran plain only,
 so its six mutants were never run by the gate. Measured 2026-10-09 by hand — `mutants 6  uncaught
@@ -259,8 +265,8 @@ so its six mutants were never run by the gate. Measured 2026-10-09 by hand — `
 62; the pass that extracted its self-tests removed that invocation again. `math-a0r.6.2` added `check_index_links.py --mutant` for the same reason — its 21st mutant is a
 mutation of `notes/index-links.md`'s own prose, which only the self-test can catch — and `math-3la`
 added `measure_checker_needles.py`, so the count is **75** after `math-o3a.1` added
-`verify_fleet_design.py` plain and with `--mutant` (0.3 / 0.5 s), `math-o3a.6.1` added
-`verify_cache_promotion.py` plain and with `--mutant` (1.0 / 7.0 s), and the rows `math-unv`'s
+`verify_fleet_design.py` plain and with `--mutant`, `math-o3a.6.1` added
+`verify_cache_promotion.py` plain and with `--mutant`, and the rows `math-unv`'s
 scheduler and `math-o3a.5.2`'s `--both` collapse added took the list to what the `ROWS` array
 carries. The count is read from the array, not from the history: **9** writer rows, **25**
 report-only rows, **41** checker invocations.
