@@ -29,11 +29,18 @@ are never invoked here, so no verdict in the page can mean "a proof was checked"
    count phrase covers cannot drift from the writer's template. The count checks prove the numbers
    are measured; they prove nothing about the sentences around them.
 
---mutant runs the built-in mutations and fails if any goes uncaught, the last of them a prose count
-outside every count phrase -- visible only to check 8.
+The self-tests live in `notes/scripts/tests/test_counterexample_crosscheck.py`: fourteen injected
+faults, one per check form the page uses, run through pytest. `main()` reads no argv, so `--mutant`
+is inert. A tier swapped in the summary table, a config count moved, a statement anchor shifted, a
+carrier body word changed, a claim quote word changed, a yaml anchor shifted, a gap row's family
+changed, a `sorry` count moved, a T2 row deleted, a T2 config taken from another family, a carrier
+paraphrase, an anchor file that is not on disk, a quote moved to another family's line, and a prose
+count no count phrase covers — the last visible only to check 8. Each is injected in memory, so no
+fault touches a tracked file. The checker measures; the test file injects.
+
+Usage: python3 notes/scripts/verify_counterexample_crosscheck.py
 """
 import re
-import sys
 
 import build_catalog
 import extract_counterexample_crosscheck as cx
@@ -293,38 +300,7 @@ def check(text):
     return problems, n_anchor, n_block, n_quote, len(sync), v
 
 
-MUTANTS = {
-    "tier swap": lambda t: t.replace("| 047 | T3 | 1 | 1 | 0 |", "| 047 | T2 | 1 | 1 | 0 |", 1),
-    "config count": lambda t: t.replace("| 172 | T3 | 7 | 2 | 5 |", "| 172 | T3 | 6 | 2 | 4 |", 1),
-    "statement anchor shifted": lambda t: t.replace("`lean/OAI/Algebra/AffineCancellation/Main.lean:32`",
-                                                    "`lean/OAI/Algebra/AffineCancellation/Main.lean:33`", 1),
-    "carrier body word": lambda t: t.replace("ringKrullDim A = 4", "ringKrullDim A = 5", 1),
-    "claim quote word": lambda t: t.replace("disproving affine-space cancellation",
-                                            "disproving affine-space duality", 1),
-    "yaml anchor shifted": lambda t: t.replace("`lean/formalization.yaml:1041`",
-                                               "`lean/formalization.yaml:1042`", 1),
-    "gap row family": lambda t: t.replace("| `BalancedRyser` | 162 |", "| `BalancedRyser` | 185 |", 1),
-    "sorry count": lambda t: t.replace("carrying **55** `sorry` occurrences",
-                                        "carrying **57** `sorry` occurrences", 1),
-    "T2 row deleted": lambda t: t.replace("| 151 | `C1EntropyCounterexample` | `lean/docs/151.md:15` |\n", "", 1),
-    "T2 config from another family": lambda t: t.replace("`C1EntropyCounterexample` | `lean/docs/151.md:15`",
-                                                          "`Naimark` | `lean/docs/151.md:15`", 1),
-    "carrier paraphrase": lambda t: t.replace("¬ Nonempty (A ≃ₐ[ℂ] MvPolynomial (Fin 4) ℂ)",
-                                              "Nonempty (A ≃ₐ[ℂ] MvPolynomial (Fin 4) ℂ)", 1),
-    "anchor file absent": lambda t: t.replace("`lean/OAI/Geometry/Arnold/Main.lean:14`",
-                                              "`lean/OAI/Geometry/Arnold/Nope.lean:14`", 1),
-    "quote moved to another family": lambda t: t.replace(
-        "Claim 2 (`overview.tex:170`) — *\"It also disproves the Dolgachev",
-        "Claim 2 (`overview.tex:218`) — *\"It also disproves the Dolgachev", 1),
-    # Prose no count phrase reads: the formalized-manuscript denominator in the population
-    # paragraph. Only the render diff can see it.
-    "prose count": lambda t: t.replace("formalized manuscripts out of **50**.",
-                                       "formalized manuscripts out of **51**.", 1),
-}
-
-
 def main():
-    mutant = "--mutant" in sys.argv
     text = PAGE.read_text(encoding="utf-8")
     problems, n_anchor, n_block, n_quote, n_sync, v = check(text)
     for p in problems:
@@ -336,22 +312,6 @@ def main():
           f"T2 gaps {v['t2_gaps']}  stub sorries {v['sorries']}")
     print(f"anchors {n_anchor}  block lines {n_block}  quotations {n_quote}  sync problems {n_sync}")
     print(f"problems {len(problems)}")
-
-    if mutant:
-        failed = []
-        for name, fn in MUTANTS.items():
-            mtext = fn(text)
-            if mtext == text:
-                print(f"MUTANT {name}: NOT INJECTED (page text changed — fix the mutant)")
-                failed.append(name)
-                continue
-            mp, _, _, _, _, _ = check(mtext)
-            status = "caught" if mp else "MISSED"
-            print(f"MUTANT {name}: {status} ({len(mp)} problems)")
-            if not mp:
-                failed.append(name)
-        print(f"mutants {len(MUTANTS)}  uncaught {len(failed)} {failed}")
-        return 1 if (problems or failed) else 0
     return 1 if problems else 0
 
 

@@ -614,8 +614,10 @@ lives in this file and nowhere else.
   asserted against the pass that owns it. It reports
   **15 unanchored prose quotations** — the pre-existing abstract and scope-note quotes in the
   per-family sections, which carry no line anchors and are therefore not verified. It writes nothing.
-- Check `notes/counterexample-crosscheck.md` with
-  `python3 notes/scripts/verify_counterexample_crosscheck.py --mutant` before quoting any of its counts
+- Check `notes/counterexample-crosscheck.md` with `python3 notes/scripts/verify_counterexample_crosscheck.py`
+  and its extracted self-tests with
+  `python3 notes/scripts/run_tests.py notes/scripts/tests/test_counterexample_crosscheck.py -q`
+  before quoting any of its counts
   — it recomputes the population, tier split, ledger sums, per-family config/entry/gap counts, the
   carrier-typed count, and the stub and `sorry` totals from `notes/tables/catalog.tsv`, `overview.tex`,
   `lean/formalization.yaml`, `lean/docs/`, and `lean/ComparatorChallenges/`, and matches all 20 count
@@ -627,8 +629,14 @@ lives in this file and nowhere else.
   the 12-row T3 gap table, and the 9-row T2 table to equal the recomputation, and requires each of the
   28 entries to cite its yaml block at the `- comparator_config:` line — the extractor's yaml anchor is
   the `file:` line, so a 3-line entry block starts at `file-line − 2` — its statement anchor at the line
-  where the declaration opens, and the carrier's definition anchor. It flags fourteen injected mutants
-  and writes nothing. Run `python3 notes/scripts/extract_counterexample_crosscheck.py` twice and diff:
+  where the declaration opens, and the carrier's definition anchor. The checker takes no `--mutant`; the
+  test file injects fourteen faults (a tier swapped, a config count moved, a statement anchor shifted, a
+  carrier body word, a claim quote word, a yaml anchor shifted, a gap row family, a `sorry` count, a
+  deleted T2 row, a T2 config taken from another family, a carrier paraphrase, an absent anchor file, a
+  quote moved to another family's line, and a prose count only the render diff can see) and pins the four
+  population counts the passes report — 172 anchors, 295 block lines, 38 quotations, 0 sync problems.
+  Each needle is measured specific: it fires for its own fault and for no other. Both write nothing.
+  Run `python3 notes/scripts/extract_counterexample_crosscheck.py` twice and diff:
   the report must be identical.
 - Check `notes/formalization-faithfulness.md` with
   `python3 notes/scripts/verify_faithfulness.py --mutant` before quoting any of its counts — it
