@@ -421,17 +421,19 @@ lives in this file and nowhere else.
   nothing. Prove the mode by running a writer plain, then with the flag, diffing the two reports (the
   write announcement is the only line allowed to differ) and confirming `git status --porcelain` is
   unchanged by the flagged run. The read-only gate pool is the block that runs rows with this flag.
-- The whole-tree test is the gate list at `notes/scripts/gate.py`: **75** invocations — the **8**
+- The whole-tree test is the gate list at `notes/scripts/gate.py`: **75** invocations — the **9**
   gated writers (`build_report_templates.py` and `measure_open_probe.py` are the writers it does not
   run), the 24 gated report-only rows (including `check_summary_manuscripts.py` and
-  `locate_summary_quotes.py`, `check_index_links.py` plain and with `--mutant`, and the two extracted
-  self-tests rows, `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q` and
-  `run_tests.py notes/scripts/tests/test_conjecture_standing.py -q`;
-  `read_manuscript.py` is the one script it does not run), and **43**
-  checker invocations: **38** from the 19 checkers listed twice (plain and with `--mutant`) — the 19
+  `locate_summary_quotes.py`, `check_index_links.py` plain and with `--mutant`, and the three
+  extracted self-tests rows, `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q`,
+  `run_tests.py notes/scripts/tests/test_conjecture_standing.py -q` and
+  `run_tests.py notes/scripts/tests/test_abstracts.py -q`;
+  `read_manuscript.py` is the one script it does not run), and **42**
+  checker invocations: **36** from the 18 checkers listed twice (plain and with `--mutant`) — the 18
   table checkers plus `verify_script_ownership.py`, the census page's own checker — plus
-  `verify_page_sync.py --both` (**1**), `verify_scope_exclusions.py` plain (**1**) and
-  `verify_conjecture_standing.py` plain (**1**), none of which carries a `--mutant` branch any more.
+  `verify_page_sync.py --both` (**1**), `verify_scope_exclusions.py` plain (**1**),
+  `verify_conjecture_standing.py` plain (**1**) and `verify_abstracts.py` plain (**1**), none of which
+  carries a `--mutant` branch any more.
   The list is one array, `ROWS`, of (spec, needs, writes) triples over the
   generated artifacts: a row starts as soon as every row that writes its `needs` has finished, each
   row writes its own `.line` file, and the report prints the `.line` files in list order after the
@@ -477,10 +479,20 @@ lives in this file and nowhere else.
   problem, and writes nothing. `--mutant` corrupts one real quotation in each form the page uses
   (inline, inline wrapped across lines, block quote) and invents one, so quote the report by its form
   names: a page with no quotation marks at all is proven only by the block-quote mutant.
-- Check `notes/abstracts.md` with `python3 notes/scripts/verify_abstracts.py --mutant` before quoting
-  any of its counts — it resolves every `[S#]` marker to a Sources-table row, requires every row cited
-  at least once and every table path to exist, and checks every quotation verbatim-modulo-whitespace
-  against the text its marker's file carries. Read `overview.tex` through
+- Check `notes/abstracts.md` with `python3 notes/scripts/verify_abstracts.py` and its extracted
+  self-tests with
+  `python3 notes/scripts/run_tests.py notes/scripts/tests/test_abstracts.py -q`
+  before quoting any of its counts — the checker resolves every `[S#]` marker to a Sources-table row,
+  requires every row cited at least once and every table path to exist, checks every quotation
+  verbatim-modulo-whitespace against the text its marker's file carries, re-derives all 45 count
+  phrases from `compare_abstracts.measure()`, and diffs the page against the writer's render. The test
+  file injects the twelve defects — a quotation word altered, a quotation fabricated, a quotation
+  repointed at a table row that cannot carry it, a marker deleted, a marker absent from the table, a
+  table path missing on disk, the headline count, a tag-table row, a bucket count, the disagreement
+  count, a multi-abstract directory name, and a prose count outside the phrase list, which only the
+  render diff can see — and asserts the pass that owns each one flags it. The checker measures, the
+  test file injects; the checker no longer carries its own `--mutant` branch.
+  Read `overview.tex` through
   `build_catalog.parse_overview()`, never with a `\resultentry` regex: the abstracts contain braces, so
   a `[^{}]*` group silently drops the math-heavy families, which are the ones being quoted.
   `python3 notes/scripts/compare_abstracts.py --tsv` writes `notes/tables/abstracts.tsv`; run it once and

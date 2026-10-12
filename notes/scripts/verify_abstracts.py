@@ -28,19 +28,20 @@ writer's text. Neither proves the other's half: a render-diff reads the writer's
 cannot catch a number that is wrong in both, and Pass C reads only the phrases in its own list, so it
 cannot see prose the list never names.
 
---mutant proves the checker discriminates: it corrupts a real quotation, fabricates one, repoints a
-real quotation at a file that does not contain it, deletes a marker, names a marker absent from the
-table, points a table row at a path that does not exist, alters a count, skews a tag-table row, moves
-a bucket count, alters a disagreement count, renames a multi-abstract directory, and alters a prose
-count outside the phrase list (visible only to Pass D) -- and requires each pass to flag its mutant
-while the real page stays silent.
+The self-tests live in `notes/scripts/tests/test_abstracts.py`: they inject the twelve corruptions the
+page records — a quotation word altered, a quotation fabricated, a quotation repointed at a table row
+that cannot carry it, a marker deleted, a marker absent from the table, a table path missing on disk,
+the headline count, a tag-table row, a bucket count, the disagreement count, a multi-abstract
+directory name, and a prose count outside the phrase list (visible only to Pass D) — into the page
+text in memory and assert the pass that owns each one reports it. This script measures; it no longer
+injects.
 
-Usage: python3 notes/scripts/verify_abstracts.py            # check the page
-       python3 notes/scripts/verify_abstracts.py --mutant   # discrimination test as well
+Usage:
+  python3 notes/scripts/verify_abstracts.py
+  python3 notes/scripts/run_tests.py notes/scripts/tests/test_abstracts.py -q
 
 Writes nothing. Exit 1 when any check fails.
 """
-import argparse
 import re
 import sys
 
@@ -264,100 +265,7 @@ def check(text, table, counts=None):
     return problems, stats
 
 
-def mutants(text, table, counts):
-    """(name, flagged, detail) for each corruption; flagged means the checker reported a problem.
-
-    Every quotation mutant is built from a real quotation on the real page, and every count mutant is
-    built from a real phrase in the real page, so a checker that merely re-reads its own regexes and
-    never touches the shipped text cannot pass this test. A mutant whose target string is absent from
-    the page is reported as unflagged: a silent no-op is a failed discrimination test, not a pass.
-    """
-    out = []
-
-    def record(name, mutated, needle, tbl=None):
-        if mutated == text:
-            out.append((name, False, "mutant target absent from the page"))
-            return
-        probs, _ = check(mutated, tbl or table, counts)
-        out.append((name, any(needle in p for p in probs),
-                    f"{len(probs)} problem(s): " + "; ".join(probs)[:120]))
-
-    q = next(m for m in QUOTE.finditer(text)
-             if len(m.group(1)) > 40 and marker_after(text, m.end())
-             and table.get(marker_after(text, m.end()).group(1), "").endswith(".tex")
-             and "prove" in m.group(1))
-    mk = marker_after(text, q.end())
-    gap = re.match(r"[ \t\r\n)]*", text[q.end():q.end() + 12]).end()
-    mark_start = q.end() + gap
-    mark_end = mark_start + len(mk.group(0))
-
-    corrupt = text[:q.start()] + "“" + q.group(1).replace("prove", "disprove", 1) + "”" + text[q.end():]
-    record("quotation word altered", corrupt, "not in")
-
-    fab = text[:q.start()] + "“the ledger proves every family is formalized in Lean” [S1]\n" + text[q.start():]
-    record("quotation fabricated", fab, "not in overview.tex")
-
-    repoint = text[:mark_start] + "[S31]" + text[mark_end:]
-    record("quotation repointed at a file that lacks it", repoint, "not in notes/tables/abstracts.tsv")
-
-    nomark = text[:mark_start] + text[mark_end:]
-    record("marker deleted", nomark, "no [S#] marker")
-
-    ghost = text + "\nAn unlisted source [S99] is cited here.\n"
-    record("marker absent from the table", ghost, "not in the Sources table")
-
-    bad = "\n".join(l for l in text.splitlines() if not l.startswith("| S31 |"))
-    tbl, _ = parse_table(bad.splitlines())
-    tbl["S31"] = "notes/does-not-exist.tsv"
-    record("table path missing on disk", bad, "does not exist", tbl)
-
-    n = len(counts["man"])
-    record("headline count altered",
-           text.replace(f"**0 identical, 0 abridged, {n} divergent.**",
-                        f"**0 identical, 0 abridged, {n + 3} divergent.**", 1),
-           "count mismatch (headline relation counts)")
-
-    t = counts["tag_tot"]["classification"]
-    d = counts["tag_dis"].get("classification", {"ov-only": [], "ms-only": []})
-    row = (f"| classification | {t['ov']} | {t['ms']} | {t['man']} | {len(d['ov-only'])} "
-           f"| {len(d['ms-only'])} |")
-    record("tag-table row skewed", row.replace(f"| {t['ms']} |", f"| {t['ms'] - 1} |", 1),
-           "count mismatch (tag row classification)")
-
-    bkey = ("<0.30", "0.30-0.50", "0.50-0.70", "0.70-0.90", ">=0.90")
-    mb, fb = counts["man_buckets"], counts["fam_buckets"]
-    brow = (f"| count | {' / '.join(str(mb[k]) for k in bkey)} "
-            f"| {' / '.join(str(fb[k]) for k in bkey)} |")
-    record("bucket count moved", brow.replace(f"{mb['<0.30']} /", f"{mb['<0.30'] + 3} /", 1),
-           "count mismatch (bucket row)")
-
-    dis = sum(1 for f, sh in counts["fam_shapes"].items() if sh["ov"] != sh["ms"])
-    record("disagreement count altered",
-           text.replace(f"**{dis} of {counts['families']} families have at least one shape "
-                        f"disagreement between the two texts;",
-                        f"**{dis - 1} of {counts['families']} families have at least one shape "
-                        f"disagreement between the two texts;", 1),
-           "count mismatch (shape disagreement count)")
-
-    fam_id, mdir, _k = counts["multi_dirs"][-1]
-    date = "-".join(mdir.rsplit("-", 2)[1:])
-    record("multi-abstract directory renamed",
-           text.replace(f"`{mdir}`", f"`{mdir[:-len(date)]}November-1-2026`", 1),
-           f"count mismatch (multi-abstract directory {fam_id})")
-
-    # Prose Pass C never reads: 692 is the manuscript count in the page's own prose, in no phrase
-    # in count_phrases(). Only the sync pass can see it.
-    record("prose count outside the phrase list altered",
-           text.replace("The 692 manuscript", "The 693 manuscript", 1),
-           "page is not the writer's render")
-    return out
-
-
 def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--mutant", action="store_true", help="run the discrimination test")
-    args = ap.parse_args()
-
     text = PAGE.read_text(encoding="utf-8", errors="replace")
     lines = text.splitlines()
     table, dupes = parse_table(lines)
@@ -379,17 +287,6 @@ def main():
     print(f"sources {stats['sources']}   markers {stats['markers']}   "
           f"quotations {stats['quotes']}   verified {stats['verified']}   "
           f"count phrases {stats['phrases']}   sync problems {stats['sync']}")
-
-    if args.mutant:
-        if problems:
-            print("--- mutants skipped: the real page is not silent")
-        else:
-            unflagged = 0
-            for name, flagged, detail in mutants(text, table, counts):
-                print(f"--- mutant {name}: {'FLAGGED' if flagged else 'MISSED'} ({detail})")
-                unflagged += 0 if flagged else 1
-            if unflagged:
-                problems.append(f"{unflagged} undetected mutants")
 
     print(f"{'FAIL' if problems else 'OK'}: {len(problems)} problems")
     return 1 if problems else 0

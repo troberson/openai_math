@@ -76,7 +76,7 @@ ROWS = [
     ("verify_summaries.py", ("pages", "summaries"), ()),
     ("verify_summaries.py --mutant", ("pages", "summaries"), ()),
     ("verify_abstracts.py", ("pages",), ()),
-    ("verify_abstracts.py --mutant", ("pages",), ()),
+    ("run_tests.py notes/scripts/tests/test_abstracts.py -q", ("pages",), ()),
     ("verify_named_results.py", ("pages",), ()),
     ("verify_named_results.py --mutant", ("pages",), ()),
     ("verify_named_conjectures.py", ("pages",), ()),
