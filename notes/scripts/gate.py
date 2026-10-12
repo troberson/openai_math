@@ -116,7 +116,7 @@ ROWS = [
     ("verify_page_sync.py --both", ("pages",), ()),
     ("verify_cache_promotion.py",
      ("catalog", "sources", "links", "subfindings", "abstracts", "deps", "index", "pages"), ()),
-    ("verify_cache_promotion.py --mutant",
+    ("run_tests.py notes/scripts/tests/test_cache_promotion.py -q",
      ("catalog", "sources", "links", "subfindings", "abstracts", "deps", "index", "pages"), ()),
     ("verify_conjecture_standing.py", ("catalog",), ()),
     ("run_tests.py notes/scripts/tests/test_conjecture_standing.py -q", ("catalog",), ()),

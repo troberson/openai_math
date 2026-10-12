@@ -20,12 +20,13 @@ gate args, and every artifact (a file, or every file under a tree) is compared b
 cache entry under that key. A missing entry is a problem, and so is a cache that disagrees with the
 tracked tree.
 
-**D. Mutants.** `--mutant` corrupts one cached page, deletes one cached page, removes one L1 entry the
-probe names, adds one L1 entry that is a self-output, drops one writer from `ARTIFACTS`, alters one
-`REPORT_PAGES` entry, alters one tracked page on disk, and shifts one writer's canonical args. Each is
-asserted against the pass that must catch it, and every mutation is undone before the run ends.
+The self-tests live in `notes/scripts/tests/test_cache_promotion.py`: eight injected faults, one per
+pass, run through pytest. `main()` reads no argv, so `--mutant` is inert. Six faults are injected in
+the registry structures the passes take as arguments; two corrupt a cache entry under `.qwen/cache/`,
+which is untracked, and are undone by re-writing the disk bytes back. No fault touches a tracked file.
+The checker measures; the test file injects.
 
-Usage: python3 notes/scripts/verify_cache_promotion.py [--mutant]
+Usage: python3 notes/scripts/verify_cache_promotion.py
 """
 from __future__ import annotations
 
@@ -171,83 +172,14 @@ def check(artifacts: dict[str, tuple[str, ...]], l1: dict[str, tuple[str, ...]],
     return p
 
 
-def mutate(label: str) -> tuple[dict, dict, tuple, dict]:
-    """Apply one mutation to the registry (or to the bytes it checks) and return the mutated inputs."""
-    a = {k: tuple(v) for k, v in ARTIFACTS.items()}
-    l = {k: tuple(v) for k, v in L1.items()}
-    pg = list(REPORT_PAGES)
-    ar = {k: tuple(v) for k, v in ARGS.items()}
-    if label == "cached page corrupted":
-        key = key_for("render_reports.py", ())
-        path = CACHE / key / "notes/sources.md"
-        path.write_text(path.read_text(encoding="utf-8") + "MUTANT\n", encoding="utf-8")
-    elif label == "cached page deleted":
-        key = key_for("render_reports.py", ())
-        (CACHE / key / "notes/names.md").unlink(missing_ok=True)
-    elif label == "L1 entry the probe names removed":
-        l["refresh_summary_line_counts.py"] = tuple(
-            e for e in l["refresh_summary_line_counts.py"] if e != "notes/t0-triage.md")
-    elif label == "L1 entry added that is a self-output":
-        l["build_index.py"] = l["build_index.py"] + ("notes/index/",)
-    elif label == "writer dropped from ARTIFACTS":
-        a.pop("extract_links.py")
-        l.pop("extract_links.py")
-    elif label == "REPORT_PAGES entry altered":
-        pg = [p for p in pg if p != "notes/topics.md"] + ["notes/topics2.md"]
-    elif label == "tracked page altered on disk":
-        page = ROOT / "notes" / "proof-density.md"
-        page.write_text(page.read_text(encoding="utf-8") + "\nMUTANT\n", encoding="utf-8")
-    elif label == "canonical args shifted":
-        ar["compare_abstracts.py"] = ("--tsv", "extra")
-    return a, l, tuple(pg), ar
-
-
-def restore(label: str) -> None:
-    """Undo a byte-level mutation so a mutant run leaves the tree and the cache as it found them."""
-    if label in ("cached page corrupted", "cached page deleted"):
-        key = key_for("render_reports.py", ())
-        rel = "notes/sources.md" if label == "cached page corrupted" else "notes/names.md"
-        disk = ROOT / rel
-        (CACHE / key / rel).write_bytes(disk.read_bytes())
-    elif label == "tracked page altered on disk":
-        page = ROOT / "notes" / "proof-density.md"
-        text = page.read_text(encoding="utf-8")
-        page.write_text(text.replace("\nMUTANT\n", ""), encoding="utf-8")
-
-
 def main() -> int:
-    if "--mutant" not in sys.argv[1:]:
-        problems = check(ARTIFACTS, L1, REPORT_PAGES, ARGS, NON_CACHED, PAGE_EXTRA)
-        for line in problems:
-            print(f"PROBLEM: {line}")
-        print(f"\nwriters {len(ARTIFACTS)} + non-cached {len(NON_CACHED)}  "
-              f"probed targets {len(probe_reads())}  problems {len(problems)}")
-        return 1 if problems else 0
-
-    cases = [
-        ("cached page corrupted", "cache != disk"),
-        ("cached page deleted", "cache entry missing"),
-        ("L1 entry the probe names removed", "L1 drift"),
-        ("L1 entry added that is a self-output", "L1 self-read"),
-        ("writer dropped from ARTIFACTS", "ARTIFACTS + non-cached writer set"),
-        ("REPORT_PAGES entry altered", "REPORT_PAGES"),
-        ("tracked page altered on disk", "cache != disk"),
-        ("canonical args shifted", "cache entry missing"),
-    ]
-    print("=== cache promotion mutant self-test ===")
-    caught = 0
-    for label, needle in cases:
-        a, l, pg, ar = mutate(label)
-        problems = check(a, l, pg, ar, NON_CACHED, PAGE_EXTRA)
-        restore(label)
-        hit = [x for x in problems if needle in x]
-        if hit:
-            caught += 1
-            print(f"  caught {label}: {hit[0]}")
-        else:
-            print(f"  NOT CAUGHT {label}")
-    print(f"mutants flagged: {caught} of {len(cases)}")
-    return 0 if caught == len(cases) else 1
+    problems = check(ARTIFACTS, L1, REPORT_PAGES, ARGS, NON_CACHED, PAGE_EXTRA)
+    for line in problems:
+        print(f"PROBLEM: {line}")
+    print(f"\nwriters {len(ARTIFACTS)} + non-cached {len(NON_CACHED)}  "
+          f"probed targets {len(probe_reads())}  problems {len(problems)}")
+    return 1 if problems else 0
 
 
-main()
+if __name__ == "__main__":
+    sys.exit(main())

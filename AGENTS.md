@@ -845,8 +845,10 @@ lives in this file and nowhere else.
   `notes/templates.md`, and two writer-source faults that move a write target out of the derived
   writer set — each asserted against the check it targets. Passes G and H take page text as an
   argument, so neither the checker nor the tests write a page. **19** tests, all passing.
-- Check the promotion protocol with `python3 notes/scripts/verify_cache_promotion.py --mutant` before
-  quoting any cache figure — it re-derives the `catlib/promote.py` registry three ways: the writer set
+- Check the promotion protocol with `python3 notes/scripts/verify_cache_promotion.py` and its
+  extracted self-tests with
+  `python3 notes/scripts/run_tests.py notes/scripts/tests/test_cache_promotion.py -q` before quoting
+  any cache figure — it re-derives the `catlib/promote.py` registry three ways: the writer set
   (`ARTIFACTS` plus the one writer the protocol excludes, `measure_open_probe.py`, whose record carries
   a wall time) against the writers table in `notes/scripts/README.md`; each writer's `L1` list against
   the audit-hook open-mode records in `notes/probe/`, newest record per target, with the writer's own
@@ -859,11 +861,13 @@ lives in this file and nowhere else.
   writer's `L1` from HEAD for the same reason: it reads HEAD, so the key must hash HEAD. Its own output
   feeds one `L1` entry (`notes/templates.md` tabulates the template bytes), so a render after the builder
   moves that page and a working-tree key stops matching the key the builder used — measured 2026-10-12,
-  **18** problems with the working-tree read, **0** with the HEAD read. It flags eight injected mutants
-  (corrupted cache entry, deleted cache entry, removed `L1` entry, `L1` self-read, dropped writer,
-  altered page list, altered tracked page, shifted args) and restores every byte it mutates; it writes
-  nothing to the tracked tree.
-  Run it twice and diff — the report is identical.
+  **18** problems with the working-tree read, **0** with the HEAD read. The test file injects eight
+  faults, one per pass: five in the registry structures the passes take as arguments (a removed `L1`
+  entry the probe names, an `L1` entry added that is a self-output, a dropped writer, an altered page
+  list, shifted canonical args) and three in the cache entries under the untracked key (corrupted,
+  deleted, corrupted again on a second artifact), each asserted against the pass that owns it and
+  undone by writing the disk bytes back, so the run leaves the cache as it found it and no fault
+  touches a tracked file. Run the checker twice and diff — the report is identical.
 - Check `notes/fleet-design.md` with `python3 notes/scripts/verify_fleet_design.py --mutant` before
   quoting any of its counts — it re-derives the atomicity grep (over the fleet's own sources, the **two**
   needle-carrying scripts excluded: the checker, whose count pass embeds the pattern, and
