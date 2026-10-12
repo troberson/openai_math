@@ -81,6 +81,7 @@ class Pop(TypedDict):
     probe_records: int
     du: dict[str, int]
     gate_rows: int
+    writer_rows: int
     set_sites: list[str]
     atomic_sites: list[str]
     env_sites: list[str]
