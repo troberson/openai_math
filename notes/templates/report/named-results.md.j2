@@ -6,7 +6,7 @@
 
 ## Population
 
-The ledger's `resolves_named` column is a title-and-abstract heuristic: `notes/scripts/catlib/ledger.py:98`
+The ledger's `resolves_named` column is a title-and-abstract heuristic: `notes/scripts/catlib/ledger.py:102`
 returns 1 when a family's **overview title + abstract**, lowered, matches both `TARGET_NOUN`
 {% raw %}(`conjectur|\bquestion|\bproblem`) and `RESOLVE_VERB`
 (`\bprov(?:e|es|ed|ing)\b|\bdisprov|\brefut|\bresolv|\banswer|\bsettl|\bestablis|\bconfirm|\bfail|\bviolat|\bcounterexample`).
@@ -188,7 +188,7 @@ So the verb gap is real for 2 families and is a self-framed sub-problem for 3. W
 
 Rule: target noun in the family's **overview title**, resolve verb in its overview abstract. The
 column read the abstract only; this is the same generator's precedent — `counterex_broad` is
-documented at `notes/scripts/catlib/ledger.py:121` as
+documented at `notes/scripts/catlib/ledger.py:125` as
 *"Input scope is title + abstract, stated because it changes the count"*.
 
 {{ p['additions'] }}. **Removals 0** — a union
