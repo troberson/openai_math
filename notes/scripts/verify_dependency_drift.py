@@ -173,6 +173,8 @@ def yaml_order_violations(imports_by_key):
         cnt = imports_by_key.get(key)
         if cnt is None:
             continue
+        # Merging the guard into `prev is not None and cnt > prev[1]` makes pylint report E1136:
+        # it does not narrow prev across `and`.
         if prev is not None:
             if cnt > prev[1]:
                 out.append((i, last, cnt, prev[2], prev[1]))

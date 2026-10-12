@@ -50,6 +50,12 @@ ignore = [
     "PLW0603",
     # 1 site, measured 2026-10-12. The if/else block is the report's own branch.
     "SIM108",
+    # 3 sites, measured 2026-10-12. Each is the `prev is not None` guard of a running-maxima loop.
+    # Merging it into `prev is not None and n > prev[1]` makes pylint report E1136 (unsubscriptable)
+    # at every `prev[i]`: pylint does not narrow a None-guard across `and`, and annotating
+    # `prev: tuple[int, int, str] | None` does not change that (measured on a copy). The nested form
+    # is what keeps both linters quiet, so the rule is ignored rather than the guard split.
+    "SIM102",
 ]
 
 [lint.per-file-ignores]

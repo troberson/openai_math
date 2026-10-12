@@ -164,6 +164,8 @@ def yaml_order_violations(yaml, imports_by_key):
     out, prev = [], None
     for i, y in enumerate(yaml, start=1):
         n = imports_by_key.get(url_key(y["url"]), 0)
+        # pylint reports E1136 when the guard is merged into `prev is not None and n > prev[1]`:
+        # it does not narrow prev across `and`. The nested form is what keeps both linters quiet.
         if prev is not None:
             if n > prev[1]:
                 out.append((i, y["url"].rsplit("/", 1)[-1], n,
