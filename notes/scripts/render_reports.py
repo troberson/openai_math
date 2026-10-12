@@ -1166,29 +1166,26 @@ def build_index_report() -> dict[str, Any]:
 
 
 def index_links_population() -> dict[str, Any]:
-    """The two reports notes/index-links.md quotes, plus the checker's own self-test.
+    """The two reports notes/index-links.md quotes.
 
-    The build runs first so the disk scan reads the index the same render just produced.
+    The build runs first so the disk scan reads the index the same render just produced. The
+    self-test counts are not here: the injected hrefs live in
+    `notes/scripts/tests/test_index_links.py`, which is not this writer's input.
     """
     build = build_index_report()
-    caught, total, missed, clean, ctotal, wrong, trap, classed = CI.mutant_test()
-    # The render-diff mutant is not in this list: verify_page_sync.py owns the page check, mutates
-    # the page in memory, and is the row the gate runs with --both.
-    return {"scan": CI.measure(), "build": build,
-            "mutant": (caught, total, missed, clean, ctotal, wrong, trap, classed)}
+    return {"scan": CI.measure(), "build": build}
 
 
 def index_links_full(p: dict[str, Any]) -> dict[str, str]:
     """label → full measured phrase, for notes/index-links.md."""
-    s, b, mt = p["scan"], p["build"], p["mutant"]
+    s, b = p["scan"], p["build"]
     cats, canon, reg = s["cats"], s["canon"], b["reg"]
     tg = {c: len(v) for c, v in s["targets"].items()}
     kind, gp, groups = s["kind"], s["gp"], s["groups"]
     nlinks, npages, nbroken = len(s["links"]), len(s["pages"]), len(s["broken"])
     gap = nlinks - b["checked"]
     name_gap = groups["name pages"] - reg["name pages"]
-    caught, total, missed, clean, ctotal = mt[0], mt[1], mt[2], mt[3], mt[4]
-    trap = mt[6]
+    trap = s["trap"]
     dirs = collections.Counter(posixpath.dirname(fl) for _c, _d, fl in s["triples"])
     files = collections.Counter(fl for _c, _d, fl in s["triples"])
     tops = collections.Counter(r.split("/")[2] for r in s["targets"]["index-page"])
@@ -1278,10 +1275,6 @@ def index_links_full(p: dict[str, Any]) -> dict[str, str]:
     out["prose_surplus"] = (f"The {f(gap)} surplus links are all verified by the disk scan, and "
                             f"{f(name_gap)} of them ({round(name_gap / gap * 100)}%) sit on "
                             f"name pages")
-    out["prose_mutants"] = f"injects {total} broken hrefs"
-    out["prose_controls"] = f"requires {ctotal} real hrefs to resolve"
-    out["prose_fresh"] = (f"**{total} injected, {caught} caught, {len(missed)} missed; "
-                          f"{ctotal} controls, {clean} resolve**")
     out["prose_overviewpdf"] = (f"is inside the {len(s['contents_pdf'])} `.pdf` links in "
                                 f"`CONTENTS.md`** ({canon['manuscript-pdf']} manuscripts + 1)")
     return out

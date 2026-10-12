@@ -51,7 +51,7 @@ python3 notes/scripts/measure_names.py --json  # dumps the 5,842 measured rows p
 python3 notes/scripts/measure_names.py --check-only  # the full measurement, printed, with no record write
 python3 notes/scripts/build_index.py        # writes notes/index/ (1,033 pages + 16 tables) and prints the reconciliation
 python3 notes/scripts/check_index_links.py  # checks every link in notes/index/ and CONTENTS.md against the shipped files; report-only
-python3 notes/scripts/check_index_links.py --mutant  # self-test: 21 injected mutations (20 broken hrefs, one per category, plus one mutation of notes/index-links.md's own prose) must all be caught, 7 real hrefs must resolve
+python3 notes/scripts/run_tests.py notes/scripts/tests/test_index_links.py -q  # the extracted self-tests: 20 injected broken hrefs (one per category), 7 real hrefs that must resolve, the paren-balanced scanner against `[^)]*`, the directory set against disk, and the 0-broken scan baseline
 python3 notes/scripts/compare_abstracts.py  # compares each manuscript abstract with its family's overview abstract; report-only
 python3 notes/scripts/compare_abstracts.py --tsv  # writes notes/tables/abstracts.tsv (372 rows: best-match ratio, relation, both shape sets)
 python3 notes/scripts/compare_abstracts.py --mutant  # self-test: 7 injected corruptions must all be caught, 3 controls and 5 synthetic cases must stay right

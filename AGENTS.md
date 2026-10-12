@@ -424,13 +424,14 @@ lives in this file and nowhere else.
 - The whole-tree test is the gate list at `notes/scripts/gate.py`: **75** invocations — the **9**
   gated writers (`build_report_templates.py` and `measure_open_probe.py` are the writers it does not
   run), the 27 gated report-only rows (including `check_summary_manuscripts.py` and
-  `locate_summary_quotes.py`, `check_index_links.py` plain and with `--mutant`, and the six
-  extracted self-tests rows, `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q`,
+  `locate_summary_quotes.py`, `check_index_links.py` plain and its extracted self-tests row, and the
+  seven extracted self-tests rows, `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q`,
   `run_tests.py notes/scripts/tests/test_conjecture_standing.py -q`,
   `run_tests.py notes/scripts/tests/test_abstracts.py -q`,
   `run_tests.py notes/scripts/tests/test_named_conjectures.py -q`,
-  `run_tests.py notes/scripts/tests/test_subfindings.py -q` and
-  `run_tests.py notes/scripts/tests/test_summaries.py -q`;
+  `run_tests.py notes/scripts/tests/test_subfindings.py -q`,
+  `run_tests.py notes/scripts/tests/test_summaries.py -q` and
+  `run_tests.py notes/scripts/tests/test_index_links.py -q`;
   `read_manuscript.py` is the one script it does not run), and **39**
   checker invocations: **30** from the 15 checkers listed twice (plain and with `--mutant`) — the 15
   table checkers plus `verify_script_ownership.py`, the census page's own checker — plus
@@ -780,10 +781,14 @@ lives in this file and nowhere else.
   **18,095**-link difference is registry under-coverage, not a disagreement about existence — both
   report 0 broken. Link scanning must be paren-balanced: `[^)]*` truncates
   `preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/paper.pdf` and invents a broken
-  link, so the baseline is 0 broken links, not 1. `--mutant` runs the self-test (21 injected mutations:
-  20 broken hrefs, one per category, plus one mutation of the page's own prose — all caught; 7 real
-  hrefs, all resolving). The run ends with `sync problems (notes/index-links.md) N`, folded into the exit
-  code; the prose mutant is that pass's own target. Findings: `notes/index-links.md`.
+  link, so the baseline is 0 broken links, not 1. Its self-tests are extracted to
+  `notes/scripts/tests/test_index_links.py` and run by the gate's `run_tests.py` row: 20 injected
+  broken hrefs (one per category the checker classifies), 7 real hrefs that must resolve, the
+  paren-balanced scanner against `[^)]*`, the directory set against what is on disk, and the
+  0-broken scan baseline the page quotes — **6** tests, all passing. `trap()` stays in the checker
+  because `render_reports.py` renders its two rows into the page's scanner table. The prose mutant
+  lives in `verify_page_sync.py --mutant`, which owns the page check and mutates in memory, so
+  neither script writes the page. Findings: `notes/index-links.md`.
 - Run `python3 notes/scripts/measure_names.py` before quoting a name count: it re-derives every figure
   in `notes/names.md` from the corpus (7,240 `.tex` files, 16,889 titled statement environments,
   13,581 `.bib` entries over 5,809 author keys, 3,407 title candidates, 2,850 rejections by bucket).

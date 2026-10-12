@@ -116,14 +116,14 @@ after it, and `gate.py` prints the gate report itself.
 The Gate column is the invocation the gate list runs: `notes/scripts/gate.py`, which runs **75**
 invocations — the **9** gated writers (the two writers it does not run are `build_report_templates.py`
 and `measure_open_probe.py`, each for the reason in its own row), the 27 gated report-only rows (including `check_summary_manuscripts.py`
-and `locate_summary_quotes.py`, `check_index_links.py` twice — plain and with `--mutant`, since
-`math-a0r.6.2` gave its self-test a prose mutant that only the gate can run — and the six extracted
-self-tests rows, `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q`,
+and `locate_summary_quotes.py`, `check_index_links.py` plain and its extracted self-tests row, and
+the seven extracted self-tests rows, `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q`,
 `run_tests.py notes/scripts/tests/test_conjecture_standing.py -q`,
 `run_tests.py notes/scripts/tests/test_abstracts.py -q`,
 `run_tests.py notes/scripts/tests/test_named_conjectures.py -q`,
-`run_tests.py notes/scripts/tests/test_subfindings.py -q` and
-`run_tests.py notes/scripts/tests/test_summaries.py -q`), and **39** checker
+`run_tests.py notes/scripts/tests/test_subfindings.py -q`,
+`run_tests.py notes/scripts/tests/test_summaries.py -q` and
+`run_tests.py notes/scripts/tests/test_index_links.py -q`), and **39** checker
 invocations: **30** from the 15 checkers listed twice (plain and with `--mutant`) — the 15 table
 checkers plus `verify_script_ownership.py`, this page's own checker — plus
 `verify_page_sync.py --both` (**1**) — both passes in one process, because `catlib.render.rendered`
@@ -153,7 +153,7 @@ had to wait for the serial chain to finish.
 
 | Script | Report feeds | Gate |
 |---|---|---|
-| `check_index_links.py` | `notes/index-links.md` | plain + `--mutant` |
+| `check_index_links.py` | `notes/index-links.md` | plain; the self-tests are in `notes/scripts/tests/test_index_links.py`, run by the `run_tests.py` row |
 | `check_summary_manuscripts.py` | `notes/summaries/` — which manuscripts each page reads, and whether the release still names them | plain |
 | `dump_template_slots.py` | `notes/templates.md` — the writer's slot labels with their values | plain |
 | `extract_citations.py` | `notes/citations.md` | plain |
@@ -186,9 +186,12 @@ argument, so a gate run over it would read one manuscript chosen by the list rat
 
 `check_index_links.py` is the link checker for `notes/index/` and `CONTENTS.md` — it reads the tree and
 writes nothing, so it sits here rather than in the checker table, which lists scripts that verify a
-page's text. Since `math-a0r.6.2` its run ends with a sync pass on `notes/index-links.md` (the page
-compared with `render_reports.py`'s render of it, folded into the exit code), and its self-test's
-21st mutant is a mutation of that page's prose.
+page's text. `math-o3a.3` removed its sync pass on `notes/index-links.md` — the page is compared with
+`render_reports.py`'s render of it by `verify_page_sync.py`, which mutates the page in memory — and
+the pass that extracted its self-tests removed its `--mutant` branch: the 20 injected hrefs live in
+`notes/scripts/tests/test_index_links.py`, and the prose mutant `math-a0r.6.2` added is
+`verify_page_sync.py`'s. `trap()` stays in the checker because `render_reports.py` renders its two
+rows into the page's scanner table.
 
 ### Checkers
 
@@ -270,13 +273,16 @@ replaced.
 `verify_conjecture_standing.py` is the one checker the list kept outside its loop: it ran plain only,
 so its six mutants were never run by the gate. Measured 2026-10-09 by hand — `mutants 6  uncaught
 0 []`, exit 0 — `math-8ou` added the `--mutant` invocation, which is why the count read 63 and not
-62; the pass that extracted its self-tests removed that invocation again. `math-a0r.6.2` added `check_index_links.py --mutant` for the same reason — its 21st mutant is a
-mutation of `notes/index-links.md`'s own prose, which only the self-test can catch — and `math-3la`
+62; the pass that extracted its self-tests removed that invocation again. `math-a0r.6.2` added
+`check_index_links.py --mutant` for the same reason — its 21st mutant is a mutation of
+`notes/index-links.md`'s own prose, which only a self-test can catch — and `math-3la`
 added `measure_checker_needles.py`, so the count is **75** after `math-o3a.1` added
 `verify_fleet_design.py` plain and with `--mutant`, `math-o3a.6.1` added
 `verify_cache_promotion.py` plain and with `--mutant`, and the rows `math-unv`'s
 scheduler and `math-o3a.5.2`'s `--both` collapse added took the list to what the `ROWS` array
-carries. The count is read from the array, not from the history: **9** writer rows, **27**
+carries. That `--mutant` row is now the `run_tests.py` row for `notes/scripts/tests/test_index_links.py`,
+and the prose mutant is `verify_page_sync.py`'s, so the row count did not move. The count is read
+from the array, not from the history: **9** writer rows, **27**
 report-only rows, **39** checker invocations.
 
 `verify_script_ownership.py` — this page's own checker — is not in the table: a checker cannot list

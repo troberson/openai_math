@@ -30,8 +30,9 @@ the path is consumed. Measured on the line the family 337 page ships:
 | paren-balanced | `../../../preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/paper.pdf` | yes |
 
 The baseline for any checker written against this corpus is **0 broken links, not 1**.
-`python3 notes/scripts/check_index_links.py --mutant` prints both rows, so the trap stays
-demonstrated rather than recorded.
+The two rows are measured by `check_index_links.trap()`, which `render_reports.py` renders into
+this table, and `notes/scripts/tests/test_index_links.py` asserts the naive scan truncates while
+the balanced scan resolves, so the trap stays demonstrated rather than recorded.
 
 ## A link to a directory is not a link to a file
 
@@ -141,12 +142,16 @@ tables repeat targets.
 
 ## Self-test
 
-`python3 notes/scripts/check_index_links.py --mutant` injects 20 broken hrefs — one per
-category the checker classifies, so a checker that only walks manuscript paths fails — and
-requires 7 real hrefs to resolve. Fresh run: **20 injected, 20 caught, 0 missed; 7 controls, 7
-resolve** (exit 0). The page's own prose is not mutated here: `verify_page_sync.py` owns that
-check and mutates in memory, so this checker never writes the page. The self-test earned its
-keep on the first run, catching two real defects:
+`notes/scripts/tests/test_index_links.py` injects 20 broken hrefs — one per category the
+checker classifies, so a checker that only walks manuscript paths fails — and requires 7 real
+hrefs to resolve. The 6 tests run through `python3 notes/scripts/run_tests.py
+notes/scripts/tests/test_index_links.py -q`; the checker's own run takes no `--mutant` argument,
+so the injected hrefs live only in the test file. The page's own prose is not mutated here:
+`verify_page_sync.py` owns that check and mutates in memory, so neither script writes the page.
+The sixth test asserts the scan baseline this page quotes — 1,033 pages, 66,107 links, 0 broken,
+17,700 resolving to a directory and 48,407 to a file — so a scan that drifts moves the page and
+fails the test together. The self-test earned its keep on the first run, catching two real
+defects:
 
 - `notes/index/names/` is a directory, and the classifier tagged it `index-table` because it
   sits under `notes/index/` and has no `.md` suffix. It is now its own category, `index-dir`,

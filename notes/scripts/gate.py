@@ -66,7 +66,7 @@ ROWS = [
     ("measure_topics.py --check", ("pages",), ()),
     ("measure_index_sizes.py", ("index",), ()),
     ("check_index_links.py", ("index",), ()),
-    ("check_index_links.py --mutant", ("index",), ()),
+    ("run_tests.py notes/scripts/tests/test_index_links.py -q", ("index",), ()),
     ("measure_names.py", (), ()),
     ("measure_faithfulness.py", ("catalog",), ()),
     ("measure_templates.py", (), ()),

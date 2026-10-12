@@ -29,9 +29,11 @@ quotes: the render-time registry total minus the scanned total, attributed per g
 
 Run: python3 notes/scripts/check_index_links.py [--contents]
 --contents adds the CONTENTS.md link check (it is on by default in the report).
---mutant runs the self-test instead of the scan: injected broken hrefs, one per
-category, must all be caught, real hrefs must all resolve, and the paren-balanced
-scanner must keep the CAT(0) path whole where `[^)]*` truncates it.
+
+The self-tests are not here: they live in `notes/scripts/tests/test_index_links.py`, which injects
+the broken hrefs, requires the real hrefs to resolve, and asserts the paren-balanced scanner keeps
+the CAT(0) path whole where `[^)]*` truncates it. `trap()` stays in this file because
+`render_reports.py` renders its two rows into the page's scanner table.
 
 The page check is not here: `notes/index-links.md` is compared with `render_reports.py`'s render of
 it by `verify_page_sync.py`, which owns that pass and mutates the page in memory. The scan proves
@@ -158,7 +160,7 @@ DIR_CATEGORIES = {"manuscript-dir", "latex-build-tree", "verification-dir", "lea
 GROUP_ORDER = ["name pages", "family pages", "topic pages", "discipline pages",
                "entry point"]
 
-# The path that breaks a `[^)]*` link scan, used by the --mutant self-test.
+# The path that breaks a `[^)]*` link scan, used by the scanner table and by the self-tests.
 CAT_DIR = "preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026"
 CAT_PAGE = "differential-geometry/337-cartan-hadamard-isoperimetry-and-cat-0-fillings.md"
 
@@ -169,92 +171,18 @@ def resolve(page_rel, href):
     return posixpath.normpath(posixpath.join(base.relative_to(ROOT).as_posix(), href))
 
 
-# Injected hrefs that must all be reported broken, one per category the checker
-# classifies, so a checker that only walks manuscript paths fails the self-test.
-MUTANTS = [
-    ("README.md", "disciplines/no-such.md", "index-page"),
-    ("README.md", "no-such-table.tsv", "index-table"),
-    ("README.md", "no-such-dir/", "index-dir"),
-    ("README.md", "../no-such-note.md", "notes-doc"),
-    ("names/cauchy.md", "../number-theory/999-no-such-family.md", "index-page"),
-    ("names/cauchy.md", "../topics/no-such-topic.md", "index-page"),
-    ("names/cauchy.md", f"../../../{CAT_DIR}/no-such-file.tex", "latex-source"),
-    ("names/cauchy.md", "../../../preprints/No-Such-Manuscript/paper.pdf",
-     "manuscript-pdf"),
-    ("names/cauchy.md", "../../../preprints/No-Such-Manuscript/", "manuscript-dir"),
-    ("names/cauchy.md", "../../../lean/ComparatorChallenges/no_such_config.json",
-     "config-json"),
-    ("names/cauchy.md", "../../../lean/ComparatorChallenges/NoSuch.lean", "config-lean"),
-    ("names/cauchy.md", "../../../lean/OAI/No/Such/Module.lean", "lean-file"),
-    ("names/cauchy.md", "../../../lean/OAI/No/Such/", "lean-dir"),
-    ("names/cauchy.md", "../../../lean/docs/999.md", "scope-note"),
-    ("names/cauchy.md", "../../../reasoning_traces/no-such-trace.pdf", "trace"),
-    ("names/cauchy.md", "../../../nope/thing.lean", "release-surface"),
-    (CAT_PAGE, "../../../preprints/No-Such-Manuscript/build/", "latex-build-tree"),
-    (CAT_PAGE, "../../../preprints/No-Such-Manuscript/verification/", "verification-dir"),
-    (CAT_PAGE, "../../../preprints/No-Such-Manuscript/README.md", "manuscript-readme"),
-    (CAT_PAGE, "../../../preprints/No-Such-Manuscript/nothing.bib", "latex-bib"),
-]
+def trap():
+    """The paren-balanced scanner demonstrated on the line that breaks `[^)]*`.
 
-# Real hrefs taken from the rendered pages: a checker that flags everything is useless,
-# so these must resolve.
-CONTROLS = [
-    ("README.md", "../index-design.md"),
-    ("README.md", "../tables/topics.tsv"),
-    ("README.md", "names/"),
-    ("names/cauchy.md", "../names.tsv"),
-    ("names/cauchy.md", "../../../lean/docs/003.md"),
-    (CAT_PAGE, f"../../../{CAT_DIR}/paper.pdf"),
-    (CAT_PAGE, f"../../../{CAT_DIR}/build/"),
-]
-
-
-def mutant_test():
-    """Run the checker's own existence and classification tests over injected hrefs."""
-    missed = []
-    caught = 0
-    for page, href, cat in MUTANTS:
-        rel = resolve(page, href)
-        if (ROOT / rel).exists():
-            missed.append(f"{page} -> {href}: injected target resolves, the test is inert")
-        elif category(rel) != cat:
-            missed.append(f"{page} -> {href}: broken but classified {category(rel)}, "
-                          f"expected {cat}")
-        else:
-            caught += 1
-
-    clean = 0
-    wrong = []
-    for page, href in CONTROLS:
-        rel = resolve(page, href)
-        if (ROOT / rel).exists():
-            clean += 1
-        else:
-            wrong.append(f"{page} -> {href}: resolves to {rel}, which is absent")
-
-    # The regex trap, demonstrated on the line itself: `[^)]*` truncates at `(0)` and
-    # the truncated target does not exist, so a naive checker reports a broken link.
+    `render_reports.py` renders these two rows into `notes/index-links.md`, so the trap stays
+    demonstrated rather than recorded: the naive pattern truncates at `(0)`, the truncated target
+    does not exist, and a checker built on `[^)]*` reports a broken link that is not there.
+    """
     line = f"[paper](../../../{CAT_DIR}/paper.pdf)"
     naive = re.findall(r"\]\(([^)]*)\)", line)[0]
     balanced = md_links(line)[0]
-    trap = []
-    for label, target in (("naive [^)]*", naive), ("paren-balanced", balanced)):
-        trap.append((label, target, (ROOT / resolve(CAT_PAGE, target)).exists()))
-
-    # Directory-vs-file: what the classifier tags must match what is on disk.
-    classed = []
-    for rel, _ in ((f"{CAT_DIR}/build/", "dir"), (f"{CAT_DIR}/paper.pdf", "file"),
-                   ("lean/docs/003.md", "file"), ("lean/OAI/Combinatorics", "dir"),
-                   ("notes/index/names/", "dir"), ("notes/names.md", "file")):
-        on_disk = "dir" if (ROOT / rel).is_dir() else "file"
-        tagged = category(rel) in DIR_CATEGORIES
-        classed.append((rel, on_disk, "dir" if tagged else "file", category(rel)))
-        if on_disk == "dir" and not tagged:
-            missed.append(f"{rel}: a directory the classifier does not tag as one")
-
-    # The render-diff mutant is not here: verify_page_sync.py owns the page check and mutates the
-    # page in memory, so this script never writes notes/index-links.md.
-    return caught, len(MUTANTS), missed, clean, len(CONTROLS), wrong, trap, classed
+    return [(label, target, (ROOT / resolve(CAT_PAGE, target)).exists())
+            for label, target in (("naive [^)]*", naive), ("paren-balanced", balanced))]
 
 
 def check_index():
@@ -384,6 +312,7 @@ def measure() -> dict[str, Any]:
         "extra_dirs": extra_dirs,
         "extra_dirs_on_disk": sum(1 for d in extra_dirs if (ROOT / d).is_dir()),
         "extra_dir_links": sum(1 for _p, _h, rel in links if rel in set(extra_dirs)),
+        "trap": trap(),
         "dir_links": sum(v for (c, k), v in kind.items() if k == "dir"),
         "dir_cats": sorted({c for (c, k) in kind if k == "dir"}),
         "file_links": sum(v for (c, k), v in kind.items() if k == "file"),
@@ -393,23 +322,7 @@ def measure() -> dict[str, Any]:
     }
 
 
-def main(argv):
-    if "--mutant" in argv:
-        caught, total, missed, clean, ctotal, wrong, trap, classed = mutant_test()
-        print(f"mutants injected       {total}  caught {caught}  missed {len(missed)}")
-        for m in missed:
-            print(f"  MISSED {m}")
-        print(f"controls checked       {ctotal}  resolve {clean}  absent {len(wrong)}")
-        for w in wrong:
-            print(f"  CONTROL-FAIL {w}")
-        print()
-        for label, target, ok in trap:
-            print(f"{label:16} {target!r:80} resolves {ok}")
-        print()
-        for rel, on_disk, tagged, cat in classed:
-            print(f"on disk {on_disk:4}  reported {tagged:4}  {cat:18} {rel}")
-        return 1 if (missed or wrong) else 0
-
+def main():
     m = measure()
     links, broken, cats, kind, groups, targets = (m["links"], m["broken"], m["cats"], m["kind"],
                                                   m["groups"], m["targets"])
@@ -453,4 +366,4 @@ def main(argv):
 
 
 if __name__ == "__main__":
-    sys.exit(main(sys.argv[1:]))
+    sys.exit(main())
