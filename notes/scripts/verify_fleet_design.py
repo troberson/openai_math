@@ -393,33 +393,33 @@ MUTANTS = [
      lambda p: p.replace("## The purity population (8 scripts", "## The purity population (7 scripts", 1)),
     ("digest count widened", lambda p: p.replace("**5** digests", "**6** digests", 1)),
     ("probe figure altered", lambda p: p.replace("117,360", "117,361")),
-    # The site anchors moved when the writer took them over: the env pair is now 1151 / 1378, so each
+    # The site anchors moved when the writer took them over: the env pair is now 1147 / 1367, so each
     # env mutant shifts a site to its neighbour, and the anchor-outside mutant uses a line the writer
     # does not have (3400 is inside a 3,566-line file, so the anchor pass would read it as valid).
-    ("anchor outside the file", lambda p: p.replace("render_reports.py:1151", "render_reports.py:4000", 1)),
+    ("anchor outside the file", lambda p: p.replace("render_reports.py:1147", "render_reports.py:4000", 1)),
     # The page ships no notes-page anchor, so the resolver's notes/ branch is inert on a clean page.
     # This mutant injects one with a line past the file's end, which is the only way the branch is
     # proven to fire.
     ("notes-page anchor outside the file",
-     lambda p: p.replace("`render_reports.py:1151`", "`render_reports.py:1151` `notes/fleet-design.md:9999`", 1)),
+     lambda p: p.replace("`render_reports.py:1147`", "`render_reports.py:1147` `notes/fleet-design.md:9999`", 1)),
     ("prose count in the size argument", lambda p: p.replace("**630,620** bytes", "**630,619** bytes", 1)),
     # A measured site shifted to a line that exists in its file passes the anchor pass and the count
     # pass, so only the site comparison can catch it. One mutant per list the comparison reads.
     ("set-site anchor shifted in the bullet",
      lambda p: p.replace("build_index.py:583", "build_index.py:584", 1)),
     ("set-site anchor shifted in the checker list",
-     lambda p: p.replace("`build_index.py:583`, `render_reports.py:1151`",
-                         "`build_index.py:584`, `render_reports.py:1151`", 1)),
+     lambda p: p.replace("`build_index.py:583`, `render_reports.py:1147`",
+                         "`build_index.py:584`, `render_reports.py:1147`", 1)),
     ("atomicity anchor shifted in the paragraph",
      lambda p: p.replace("catlib/atomic.py:42", "catlib/atomic.py:43", 1)),
     ("atomicity anchor shifted in the checker list",
      lambda p: p.replace("`catlib/atomic.py:42`, `catlib/atomic.py:84`",
                          "`catlib/atomic.py:43`, `catlib/atomic.py:84`", 1)),
     ("env anchor shifted in the bullet",
-     lambda p: p.replace("`render_reports.py:1151` and", "`render_reports.py:1152` and", 1)),
+     lambda p: p.replace("`render_reports.py:1147` and", "`render_reports.py:1148` and", 1)),
     ("env anchor shifted in the checker list",
-     lambda p: p.replace("`render_reports.py:1151`, `render_reports.py:2043`",
-                         "`render_reports.py:1152`, `render_reports.py:2043`", 1)),
+     lambda p: p.replace("`render_reports.py:1147`, `render_reports.py:2043`",
+                         "`render_reports.py:1148`, `render_reports.py:2043`", 1)),
     # A dated observation the writer deliberately does not slot. The count pass, the anchor pass and
     # the site pass all ignore it, so only the render diff can see the page is no longer the writer's
     # bytes — which is the pass this page gained when it became report-fed.
