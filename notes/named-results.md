@@ -12,10 +12,11 @@ measures the manuscript side of the same claim and compares the two.
 Regenerate with `python3 notes/scripts/extract_named_results.py` — report-only, it writes nothing and
 runs nothing; `lake`, `lean`, `lake exe cache get`, and `comparator` are never invoked here, so nothing
 on this page means "a proof was checked". Run it twice and diff: the report must be identical. Check
-this page with `python3 notes/scripts/verify_named_results.py --mutant` before quoting any of its
+this page with `python3 notes/scripts/verify_named_results.py` before quoting any of its
 counts — it imports the extractor's own `population()`, re-derives every count from the ledger and the
 7,679 `.tex` files on disk, resolves every `file:line` anchor, matches every quotation against the
-anchored file, and flags thirteen injected mutations. It writes nothing.
+anchored file, and the thirteen injected mutations live in
+`notes/scripts/tests/test_named_results.py`, run by the `run_tests.py` gate row. It writes nothing.
 
 Population, from the report's POPULATION section: **372** ledger rows, **372** families in
 `overview.tex`, **719** manuscript directories, **7,679** `.tex` files at glob depths 1–4 under

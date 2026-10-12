@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 r"""Check notes/named-results.md against the shipped files. Report-only: writes nothing.
 
-Run with --mutant to also run the self-test: thirteen injected corruptions, one per check form,
-all of which must be flagged.
-
 What it checks, and why each check exists:
   anchors   every backticked `file:line` resolves: the file exists under the repo root and the
             line number is inside it. Bare `:NNN` anchors (the page's shorthand after a family
@@ -29,6 +26,10 @@ What it checks, and why each check exists:
             a render-diff reads the writer's own code, so it cannot catch a number that is wrong
             in both, and the count pass reads only the phrases in its own list, so it cannot see
             prose the list never names.
+
+The self-tests are in notes/scripts/tests/test_named_results.py: that file injects the thirteen page
+faults and asserts each fires the pass that owns it. `main()` reads no argv, so `--mutant` is inert
+here.
 """
 from __future__ import annotations
 
@@ -36,6 +37,7 @@ import bisect
 import pathlib
 import re
 import sys
+from functools import cache
 
 import extract_named_results as en
 import measure_names as M
@@ -51,8 +53,6 @@ BARE = re.compile(r"(\d{3})\s+\(`:(\d+)`\)")
 QUOTE = re.compile(r'\*"([^"]{12,})"\*')
 ROW = re.compile(r'^\| (\d{3}) \| (T\d) \| (\d) \| `([^`]+):(\d+)` \| \*"([^"]*)"\* \|$', re.MULTILINE)
 SPAN = 12
-# The page spells its mutation count as a word, so the phrase check needs the spelling.
-WORDS = {12: "twelve", 13: "thirteen"}
 # The target-split sentence spells its leading count as a word and agrees with it.
 NUMWORDS = {1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five", 6: "Six"}
 
@@ -213,8 +213,14 @@ def corpus_facts():
     return len(chal), sorry, Y.oai_lean_count()
 
 
+@cache
 def population() -> dict:
-    """The extractor's population under the name checker_needles() looks for."""
+    """The extractor's population under the name checker_needles() looks for.
+
+    The checker writes nothing and the self-tests mutate page text in memory, so a second call in the
+    same process cannot see a different corpus; the cache is what keeps the clean page plus each of the
+    thirteen faults from paying the 7,240-file walk once per call.
+    """
     return en.population()
 
 
@@ -244,7 +250,6 @@ def count_phrases(p) -> list:
         (f"**{p['ndirs']}** manuscript directories", "manuscript dirs"),
         (f"**{files:,}** `.tex` files at glob depths 1–4", "tex files (population)"),
         (f"`resolves_named = 1` on **{len(rn)}** families", "rn count"),
-        (f"flags {WORDS.get(len(MUTANTS), str(len(MUTANTS)))} injected mutations", "mutant claim"),
         (f"| headline begins | {begins:,} |", "headline begins"),
         (f"`\\begin{{theorem}}` {env['theorem']:,}", "theorem begins"),
         (f"`\\begin{{maintheorem}}` {env['maintheorem']}", "maintheorem begins"),
@@ -340,7 +345,7 @@ def count_phrases(p) -> list:
     ]
 
 
-def check(text: str, p, problems: list) -> dict:
+def passes(text: str, p, problems: list) -> dict:
     cache: dict = {}
     out = {}
     out["anchors"] = check_anchors(text, cache, problems)
@@ -368,53 +373,21 @@ def check(text: str, p, problems: list) -> dict:
     return out
 
 
-MUTANTS = {
-    "count: rn share 248 -> 249":
-        lambda t: t.replace("It reads **248** of **372** families",
-                            "It reads **249** of **372** families"),
-    "count: titled per-line 1,609 -> 1,619":
-        lambda t: t.replace("| titled headline begins | 1,609 |",
-                            "| titled headline begins | 1,619 |"),
-    "family list: layer-1 dir-not-rn drops 372":
-        lambda t: t.replace("are not: 354 365 372.", "are not: 354 365."),
-    "inline quotation: resolution -> solution":
-        lambda t: t.replace("This gives a positive resolution of the planar",
-                            "This gives a positive solution of the planar"),
-    "overview quotation: problem -> question":
-        lambda t: t.replace('*"Settles the Snaky achievement problem"*',
-                            '*"Settles the Snaky achievement question"*'),
-    "invented quotation at a real anchor":
-        lambda t: t + '\n*"We prove the Riemann hypothesis for every finite abelian category."*'
-            ' (`notes/names.md:1`)\n',
-    "anchor line out of range":
-        lambda t: t.replace("Centered-Disk-Maximal-Operator-September-26-2026/build/main.tex:51",
-                            "Centered-Disk-Maximal-Operator-September-26-2026/build/main.tex:99999"),
-    "anchor path absent":
-        lambda t: t.replace("Centered-Disk-Maximal-Operator-September-26-2026/build/main.tex",
-                            "Centered-Disk-Maximal-Operator-September-26-2026/build/mainn.tex"),
-    "table tier: 006 T0 -> T3":
-        lambda t: t.replace("| 006 | T0 | 1 |", "| 006 | T3 | 1 |"),
-    "count: column 248 -> 247":
-        lambda t: t.replace("so the column reads **248**", "so the column reads **247**"),
-    "bare anchor: 039 :156 -> :157":
-        lambda t: t.replace("039 (`:156`)", "039 (`:157`)"),
-    "paraphrase dressed as a quotation":
-        lambda t: t.replace(
-            r'*"This resolves the smooth three-dimensional isotropic elastic Calder\'on uniqueness '
-            r'problem under these positivity assumptions."*',
-            r'*"This resolves the elastic Calder\'on problem."*'),
-    # Prose the count pass never reads: the per-command breakdown of the headline-begins row is not
-    # in count_phrases(). Only the sync pass can see it.
-    "sync-only prose count altered":
-        lambda t: t.replace("`\\begin{theorem}` 2,405", "`\\begin{theorem}` 2,406", 1),
-}
+def check(text: str) -> tuple[list, dict]:
+    """All passes over page text. Returns (problems, counters).
 
-
-def main(argv: list[str]) -> int:
-    p = population()
-    text = PAGE.read_text(encoding="utf-8")
+    `text` is page text, not a path: the self-tests mutate the page in memory, so nothing here writes
+    a page. The counters are the pass populations the report prints, so a page that drops a pass shows
+    up as a smaller count, not as a silent pass.
+    """
     problems: list = []
-    out = check(text, p, problems)
+    out = passes(text, population(), problems)
+    return problems, out
+
+
+def main() -> int:
+    text = PAGE.read_text(encoding="utf-8")
+    problems, out = check(text)
     print("== page", PAGE.relative_to(ROOT))
     for k in ("anchors", "bare anchors", "table rows", "quotations"):
         print(f"  {k}: {out[k]}")
@@ -423,25 +396,8 @@ def main(argv: list[str]) -> int:
     for pr in problems:
         print("PROBLEM:", pr)
     print(f"problems {len(problems)}")
-
-    missed = 0
-    if "--mutant" in argv:
-        print(f"\n== mutants ({len(MUTANTS)})")
-        for name, fn in MUTANTS.items():
-            mutated = fn(text)
-            if mutated == text:
-                print(f"NOT INJECTED: {name}")
-                missed += 1
-                continue
-            sub: list = []
-            check(mutated, p, sub)
-            print(f"{'caught' if sub else 'NOT CAUGHT'}: {name}"
-                  + (f"  [{sub[0]}]" if sub else ""))
-            if not sub:
-                missed += 1
-        print(f"mutants caught {len(MUTANTS) - missed}/{len(MUTANTS)}")
-    return 1 if (problems or missed) else 0
+    return 1 if problems else 0
 
 
 if __name__ == "__main__":
-    sys.exit(main(sys.argv[1:]))
+    sys.exit(main())

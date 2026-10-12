@@ -72,7 +72,8 @@ python3 notes/scripts/run_tests.py notes/scripts/tests/test_faithfulness.py -q  
 python3 notes/scripts/extract_t0_chains.py  # the 2 release-recorded cross-family edges, the 311 literature chain, and the 27 two-manuscript second-pass T0 families; report-only
 python3 notes/scripts/verify_t0_chains.py --mutant  # checks notes/t0-chains.md: anchors, fenced blocks, quotations, two tables, 27 blocks with 54 titles and paths, all 12 counts and 4 named lists
 python3 notes/scripts/extract_named_results.py  # the headline-statement inventory the manuscript sources carry, cross-tabbed against resolves_named; report-only, writes nothing
-python3 notes/scripts/verify_named_results.py --mutant  # checks notes/named-results.md: 61 anchors, 15 bare overview anchors, the 17-row target table, 61 quotations, all 66 counts
+python3 notes/scripts/verify_named_results.py  # checks notes/named-results.md: 61 anchors, 15 bare overview anchors, the 17-row target table, 61 quotations, all 65 counts
+python3 notes/scripts/run_tests.py notes/scripts/tests/test_named_results.py -q  # the extracted self-tests: 13 injected faults (the resolves_named share, the titled-per-line count, a family dropped from a family list, an inline quotation's word, an overview quotation's word, an invented quotation, an anchor line past the file's end, an anchor path that does not exist, a table tier, the applied column's count, a bare anchor shifted by one, a paraphrase dressed as a quotation, and a per-command count in the headline-begins row that no count phrase reads), each asserted against the pass that owns it
 python3 notes/scripts/extract_citations.py  # the shared-bibliography graph over the .bib files under preprints/; report-only, writes nothing
 python3 notes/scripts/verify_citations.py --mutant  # checks notes/citations.md: work-table rows, anchors, fenced blocks, quotations, every count, against the .bib entries it names
 python3 notes/scripts/verify_findings.py  # checks notes/findings.md: every [Sn:line] marker, every quotation, every quoted count, against the reports it cites; report-only, writes nothing
@@ -250,8 +251,8 @@ abstract-only rule misses. **The swap is applied: the column is the title ∪ ab
 removals 0** (the abstract-only scope it replaced read 233); a strict title+abstract *replacement*
 reads 149 (99 removals from the applied 248) and is rejected.
 `notes/scripts/extract_named_results.py` prints every count
-(report-only) and `notes/scripts/verify_named_results.py --mutant` checks the page (13/13 mutants
-caught).
+(report-only) and `notes/scripts/verify_named_results.py` checks the page; the 13 injected mutants
+live in `notes/scripts/tests/test_named_results.py`, run by the `run_tests.py` gate row.
 
 **Proof density was tested as a signal and rejected — no column.** `notes/tables/sources.tsv` counts
 **20,341** `\begin{proof}` over 719 manuscripts, so proofs-per-family is one command away, and it was

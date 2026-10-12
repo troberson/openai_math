@@ -514,12 +514,26 @@ lives in this file and nowhere else.
   `python3 notes/scripts/compare_abstracts.py --tsv` writes `notes/tables/abstracts.tsv`; run it once and
   `verify_cache_promotion.py` asserts that the bytes cached under its key equal the bytes on the TSV —
   372 rows — and `--mutant` must catch all 7 injected corruptions.
-- Check `notes/named-results.md` with `python3 notes/scripts/verify_named_results.py --mutant` before
+- Check `notes/named-results.md` with `python3 notes/scripts/verify_named_results.py` before
   quoting any of its counts — it resolves every `path:line` anchor and every bare `:NNN` overview anchor
-  against `famline`, re-derives all 66 count phrases from `extract_named_results.population()`, checks
-  the 17-row target table against that population and the ledger, matches every `*"…"*` quotation against
-  the file its pinned anchor names, and flags thirteen injected mutations — the last a prose count in
-  the page, caught only by comparing the page with the writer's render of it. It writes nothing; run it twice
+  against `famline`, re-derives all 65 count phrases from `extract_named_results.population()`, checks
+  the 17-row target table against that population and the ledger, and matches every `*"…"*` quotation
+  against the file its pinned anchor names. The thirteen injected mutations live in
+  `notes/scripts/tests/test_named_results.py`, run by the `run_tests.py` gate row: the
+  `resolves_named` share, the titled-per-line count, a family dropped from a family list, an inline
+  quotation's word, an overview quotation's word, an invented quotation, an anchor line past the file's
+  end, an anchor path that does not exist, a table tier, the applied column's count, a bare anchor
+  shifted by one, a paraphrase dressed as a quotation, and a per-command count in the headline-begins
+  row that no count phrase reads — the last is caught only by comparing the page with the writer's
+  render of it. Each needle is measured specific: it fires for its own fault and for no other. The
+  clean test pins the population the passes report: 61 anchors, 15 bare anchors, 17 table rows, 61
+  quotations, 65 count phrases, 0 sync problems; 7,679 `.tex` files, 719 manuscript dirs, 2,410
+  headline begins, 1,609 titled per line (1,619 whole-text), 373 target-named titles, 76 families with
+  no headline, 248 `resolves_named`, 275 title-union, 15 additions, 6 core, 76 directory-name, 5
+  abstract-only, 207 prose hits, 551 subject keys, 17 targets, 0 generic, 372 prose sentences and
+  windows, and the per-command split 2,405 `theorem` / 4 `maintheorem` / 1 `thm`. `main()` reads no
+  argv, so `--mutant` is inert, and `population()` is under `functools.cache`, so the fourteen
+  `check()` calls the row makes pay the 7,240-file walk once. It writes nothing; run it twice
   and diff — the report is identical. Quote a quotation's anchor as the checker pins it: a manuscript
   sentence wraps across 1–4 source lines, so the anchor is the **prose-coordinate** line the extractor
   reports, not the line the sentence ends on.
