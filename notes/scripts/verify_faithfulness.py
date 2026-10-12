@@ -25,13 +25,13 @@ name, a `noncomputable` carrier) are in the checker too, so a mutant that remove
 6. Sync. The page is compared with render_reports.py's render of it, so prose that no count phrase
    covers cannot drift from the writer's template.
 
---mutant runs the built-in mutations and fails if any goes uncaught, the last of them a prose count
-outside every count phrase — visible only to check 6.
+The self-tests are in notes/scripts/tests/test_faithfulness.py: that file injects the fifteen faults
+and asserts each fires the pass that owns it. `main()` reads no argv, so `--mutant` is inert here.
 """
 import collections
 import re
-import sys
 from fractions import Fraction
+from functools import cache
 
 from catlib import anchors
 from catlib import render as RD
@@ -184,7 +184,15 @@ def lits(text, tex=False):
     return out
 
 
+@cache
 def population():
+    """The recomputed population, cached per process.
+
+    The checker writes nothing and the self-tests mutate page text in memory, so a second call in the
+    same process cannot see a different corpus; the cache is what keeps a multi-`check()` run (the
+    clean page plus each of the fifteen faults) from paying the yaml/docs/OAI/preprints walk once per
+    call.
+    """
     mr = entries()
     cfg2fam = collections.defaultdict(set)
     for p in DOCS_DIR.glob("*.md"):
@@ -402,38 +410,7 @@ def check(text):
     return problems, n_anchor, n_block, n_quote, len(RD.sync_problems(PAGE, text)), v
 
 
-MUTANTS = {
-    "entries count": lambda t: t.replace("Over the **200** `main_results` entries",
-                                          "Over the **201** `main_results` entries", 1),
-    "resolved count": lambda t: t.replace("**189** of the 189 declarations resolve",
-                                           "**188** of the 189 declarations resolve", 1),
-    "carrier-typed count": lambda t: t.replace("**61** of the 189 statements are opaque",
-                                                "**60** of the 189 statements are opaque", 1),
-    "median body size": lambda t: t.replace("median **6**, max **17**", "median **7**, max **17**", 1),
-    "literal census": lambda t: t.replace("**126** distinct literals in total",
-                                           "**127** distinct literals in total", 1),
-    "pairing class count": lambda t: t.replace("**31** lean-subset,", "**32** lean-subset,", 1),
-    "disjoint family": lambda t: t.replace("| `AuslanderReiten` | 199 | 2 |",
-                                            "| `AuslanderReiten` | 198 | 2 |", 1),
-    "overlap extra literal": lambda t: t.replace("| `GrahamSpherical` | 172 | 2, 12, 50 | 0, 1 |",
-                                                  "| `GrahamSpherical` | 172 | 2, 12 | 0, 1 |", 1),
-    "a.e. census": lambda t: t.replace("**2,288** theorem environments", "**2,289** theorem environments", 1),
-    "a.e. row deleted": lambda t: t.replace("| 154 | 6 | 0 | 0 | 0 |\n", "", 1),
-    "a.e. row count": lambda t: t.replace("| 238 | 1 | 13 | 4 | 9 |", "| 238 | 1 | 12 | 4 | 8 |", 1),
-    "statement anchor shifted": lambda t: t.replace("`lean/OAI/Analysis/IntegralMeans/Model.lean:33`",
-                                                    "`lean/OAI/Analysis/IntegralMeans/Model.lean:34`", 1),
-    "carrier rule narrowed": lambda t: t.replace("allows `private` and `protected` but not `noncomputable`",
-                                                  "allows `private` and `protected` only", 1),
-    "quote anchor shifted": lambda t: t.replace("`lean/docs/260.md:11`", "`lean/docs/260.md:10`", 1),
-    # Prose no count phrase reads: the comparator-sorry figure in the limitations list.
-    # Only the render diff can see it.
-    "prose count": lambda t: t.replace("The 416 comparator files carry 539 `sorry`s",
-                                       "The 416 comparator files carry 540 `sorry`s", 1),
-}
-
-
 def main():
-    mutant = "--mutant" in sys.argv
     text = PAGE.read_text(encoding="utf-8")
     problems, n_anchor, n_block, n_quote, n_sync, v = check(text)
     for p in problems:
@@ -452,22 +429,6 @@ def main():
           f"inter {len(v['inter'])}  cfgs {len(v['cfgs'])}  with {v['ae_with']}  without {v['ae_without']}")
     print(f"anchors {n_anchor}  block lines {n_block}  quotations {n_quote}  sync problems {n_sync}")
     print(f"problems {len(problems)}")
-
-    if mutant:
-        failed = []
-        for name, fn in MUTANTS.items():
-            mtext = fn(text)
-            if mtext == text:
-                print(f"MUTANT {name}: NOT INJECTED (page text changed — fix the mutant)")
-                failed.append(name)
-                continue
-            mp, _, _, _, _, _ = check(mtext)
-            status = "caught" if mp else "MISSED"
-            print(f"MUTANT {name}: {status} ({len(mp)} problems)")
-            if not mp:
-                failed.append(name)
-        print(f"mutants {len(MUTANTS)}  uncaught {len(failed)} {failed}")
-        return 1 if (problems or failed) else 0
     return 1 if problems else 0
 
 

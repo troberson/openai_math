@@ -638,17 +638,29 @@ lives in this file and nowhere else.
   Each needle is measured specific: it fires for its own fault and for no other. Both write nothing.
   Run `python3 notes/scripts/extract_counterexample_crosscheck.py` twice and diff:
   the report must be identical.
-- Check `notes/formalization-faithfulness.md` with
-  `python3 notes/scripts/verify_faithfulness.py --mutant` before quoting any of its counts — it
+- Check `notes/formalization-faithfulness.md` with `python3 notes/scripts/verify_faithfulness.py`
+  and its extracted self-tests with
+  `python3 notes/scripts/run_tests.py notes/scripts/tests/test_faithfulness.py -q`
+  before quoting any of its counts — it
   re-derives the `main_results` / declaration / carrier / import-closure walk, the manuscript
   theorem-environment literal sets, and the `a.e.` surface with its **own** regexes and its own file
   reads, never through `measure_faithfulness.py`, and matches all 13 count phrases against that
   recomputation. It resolves every `path:line` and `path:a-b` anchor, attributes each fenced block to
   the **nearest preceding** anchor, pins each `*"…"*` quotation to the anchor in its own line, requires
   the 2-row disjoint table, the 15-row overlap table and the 32-row `a.e.` table to equal the
-  recomputation, and ends with the render diff against `render_reports.py`. It flags fifteen injected
-  mutants and writes nothing. Quote a count from `python3 notes/scripts/measure_faithfulness.py`'s
-  report, which is the writer's source for every number on the page.
+  recomputation, and ends with the render diff against `render_reports.py`. The test file injects the
+  fifteen faults (the entries count, the resolved count, the carrier-typed count, the median body size,
+  the literal census, a pairing class count, a disjoint table family, an overlap table's extra literal,
+  the `a.e.` census, a deleted `a.e.` row, an `a.e.` row count, a statement anchor shifted, the carrier
+  rule narrowed, a quote anchor shifted, and a prose count visible only to the render diff) and asserts
+  each needle fires for its own fault and for no other; the clean test pins 10 anchors, 30 block lines,
+  1 quotation, 0 sync problems, 200 entries over 189 configs, 189 resolved declarations, 61
+  carrier-typed statements, 61 resolved carriers, the six pairing classes, 2,288 theorem environments
+  with 48 `a.e.` hits over 32 families, and the 32-row `a.e.` table. `population()` is under
+  `functools.cache`, so the sixteen `check()` calls the row makes pay the corpus walk once. The checker
+  reads no argv, so `--mutant` is inert, and writes nothing. Quote a count from
+  `python3 notes/scripts/measure_faithfulness.py`'s report, which is the writer's source for every
+  number on the page.
 - Check `notes/t0-chains.md` with `python3 notes/scripts/verify_t0_chains.py --mutant` before quoting
   any of its counts — it resolves every `file:line` anchor (`.bib` files included), matches each fenced
   block against the **nearest preceding** anchor as joined text against the same number of source lines

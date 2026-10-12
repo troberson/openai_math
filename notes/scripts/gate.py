@@ -112,7 +112,7 @@ ROWS = [
     ("verify_fleet_design.py", ("pages",), ()),
     ("verify_fleet_design.py --mutant", ("pages",), ()),
     ("verify_faithfulness.py", ("pages",), ()),
-    ("verify_faithfulness.py --mutant", ("pages",), ()),
+    ("run_tests.py notes/scripts/tests/test_faithfulness.py -q", ("pages",), ()),
     ("verify_page_sync.py --both", ("pages",), ()),
     ("verify_cache_promotion.py",
      ("catalog", "sources", "links", "subfindings", "abstracts", "deps", "index", "pages"), ()),
