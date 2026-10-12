@@ -190,6 +190,10 @@ def population() -> Pop:
     # needs tuple's own first string and would otherwise count as a row.
     rows_block = gate[gate.index("ROWS = ["):]
     gate_rows = len(re.findall(r'^\s*\(".*?",\s*\(', rows_block, re.MULTILINE))
+    # A row that declares an artifact is a writer row. `), ("` cannot count them: the needs tuple opens
+    # the same way, so it reads 86 over the 77 rows. The rows with an empty `writes` set end `), ())`,
+    # so the writer rows are the row count minus that count.
+    writer_rows = gate_rows - len(re.findall(r'\),\s*\(\)\)', rows_block))
     set_sites: list[str] = []
     for name in ("build_catalog.py", "build_index.py"):
         for i, line in enumerate((SCRIPTS / name).read_text(encoding="utf-8").splitlines(), 1):
@@ -219,7 +223,8 @@ def population() -> Pop:
         "sync": len(sync), "sync_verify": len([s for s in sync if s.startswith("verify_")]),
         "sync_other": len([s for s in sync if not s.startswith("verify_")]),
         "digests": len(digests), "ignored": len(ignored), "tsv_bytes": tsv_bytes,
-        "tsv_count": len(tsvs), "du": du, "gate_rows": gate_rows, "set_sites": set_sites,
+        "tsv_count": len(tsvs), "du": du, "gate_rows": gate_rows, "writer_rows": writer_rows,
+        "set_sites": set_sites,
         "atomic_sites": atomic_sites, "env_sites": env_sites,
         "env_hits": env_hits, "purity": purity, "rows": rows, "cli_wall": cli,
     }
@@ -240,10 +245,14 @@ def count_phrases(pop: Pop) -> list[tuple[str, str]]:
         (f"**{pop['digests']}** digests", "digests"),
         (f"returns **{pop['ignored']} line{'s' if pop['ignored'] != 1 else ''}**", "ignored_line"),
         (f"**{pop['tsv_bytes']:,}** bytes", "tsv_bytes"),
+        (f"**{pop['tsv_count']}** `notes/tables/*.tsv` present on disk", "tsv_count"),
         (f"**{du['preprints']}M**", "du_preprints"),
         (f"**{du['oai']}M**", "du_oai"),
         (f"**{du['index']}M**", "du_index"),
         (f"**{pop['gate_rows']}** invocations", "gate_rows"),
+        (f"the **{pop['writer_rows']}** writers declare what they write", "gate_writers"),
+        (f"Non-determinism sources in the **{pop['writer_rows']}** writers, by class:",
+         "gate_writers_class"),
         (f"**{len(pop['set_sites'])} sites**", "set_sites"),
         (f"**{pop['env_hits']} hits**", "env_hits"),
         # The purity population is the probe parse, so its heading count and the sentence that closes

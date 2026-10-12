@@ -13,12 +13,13 @@ passes both and only this comparison catches it. Tables: the purity table equals
 scanned inside the purity section, and each amplification row is present. Sync: the page bytes
 against `render_reports.py`'s render of it.
 
-This file injects sixteen faults, one per check form the page uses, and asserts each fires the pass
+This file injects nineteen faults, one per check form the page uses, and asserts each fires the pass
 that owns it: the atomicity count, the sync split, a deleted purity row, the purity heading count,
 the digest count, a probe figure, an anchor past the file's end, a notes-page anchor past the
-file's end, the TSV byte figure, and six site anchors shifted by one line — two in the bullet, two
-in the checker list, two in the paragraph. The last is a dated observation the writer deliberately
-leaves literal, so only the render diff can catch it.
+file's end, the TSV byte figure, the TSV file count, the writer-row count in the gate paragraph, the
+writer-row count in the non-determinism sentence, and six site anchors shifted by one line — two in
+the bullet, two in the checker list, two in the paragraph. The last is a dated observation the writer
+deliberately leaves literal, so only the render diff can catch it.
 
 Every fault is built from a real count phrase, a real probe figure, a real anchor, a real table row
 and a real site anchor in the page as committed. Each test asserts the injected text differs from
@@ -26,10 +27,11 @@ the page it started from, and each needle is the problem string the pass that ow
 — measured specific, each needle fires for its own fault and for no other. The render-diff line
 fires for every fault, so no needle is that line.
 
-The clean test asserts the passes are silent and pins the counts they report: 34 anchors, 20 count
-and probe phrases, 0 sync problems, 2 atomicity matches over 57 scripts and 17 catlib modules, 12
-sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 8 TSVs at 630,620 bytes, 631M
-`preprints/`, 1,740M `lean/OAI/`, 14M `notes/index/`, 75 gate rows, 2 env hits, 8 purity scripts,
+The clean test asserts the passes are silent and pins the counts they report: 34 anchors, 23 count
+and probe phrases, 0 sync problems, 2 atomicity matches over 58 scripts and 18 catlib modules, 12
+sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 9 TSVs at 654,791 bytes, 631M
+`preprints/`, 1,740M `lean/OAI/`, 14M `notes/index/`, 77 gate rows, 10 writer rows, 2 env hits, 8
+purity scripts,
 the sites at `atomic.py:42` / `atomic.py:84`, `render_reports.py:1147` / `render_reports.py:1367`
 and `build_catalog.py:128` / `build_index.py:583`, and the probe row the amplification table quotes
 at 151.32 s wall over 117,360 opens, 18,935 distinct paths and 98,425 repeats. A page with fewer
@@ -77,8 +79,22 @@ MUTANTS = [
     ("notes-page anchor outside the file", "anchor line outside file: `notes/fleet-design.md:9999`",
      lambda t: t.replace("`render_reports.py:1147`",
                          "`render_reports.py:1147` `notes/fleet-design.md:9999`", 1)),
-    ("prose count in the size argument", "count phrase not in the page: **630,620** bytes",
-     lambda t: t.replace("**630,620** bytes", "**630,619** bytes", 1)),
+    ("prose count in the size argument", "count phrase not in the page: **654,791** bytes",
+     lambda t: t.replace("**654,791** bytes", "**654,790** bytes", 1)),
+    # The TSV count and the writer-row count are measured from the fleet's own tree and the ROWS block,
+    # so a page that names a count the measurement contradicts is caught by the count pass.
+    ("TSV count understated",
+     "count phrase not in the page: **9** `notes/tables/*.tsv` present on disk",
+     lambda t: t.replace("**9** `notes/tables/*.tsv` present on disk",
+                         "**8** `notes/tables/*.tsv` present on disk", 1)),
+    ("writer-row count in the gate paragraph",
+     "count phrase not in the page: the **10** writers declare what they write",
+     lambda t: t.replace("the **10** writers declare what they write",
+                         "the **9** writers declare what they write", 1)),
+    ("writer-row count in the non-determinism sentence",
+     "count phrase not in the page: Non-determinism sources in the **10** writers, by class:",
+     lambda t: t.replace("Non-determinism sources in the **10** writers",
+                         "Non-determinism sources in the **9** writers", 1)),
     # A measured site shifted to a line that exists in its file passes the anchor pass and the count
     # pass, so only the site comparison can catch it. One fault per list the comparison reads.
     ("set-site anchor shifted in the bullet",
@@ -119,19 +135,20 @@ def test_clean_page(mod, text):
     """Every pass is silent, and the counts the passes report are pinned."""
     problems, n_anchor, n_phrases, n_sync = mod.check(text)
     assert not problems, problems[:3]
-    assert (n_anchor, n_phrases, n_sync) == (34, 20, 0), \
+    assert (n_anchor, n_phrases, n_sync) == (34, 23, 0), \
         f"anchors {n_anchor}, phrases {n_phrases}, sync {n_sync}"
     p = mod.population()
-    assert (p["atomic"], p["scripts"], p["modules"]) == (2, 57, 17), \
+    assert (p["atomic"], p["scripts"], p["modules"]) == (2, 58, 18), \
         f"atomic {p['atomic']}, scripts {p['scripts']}, modules {p['modules']}"
     assert (p["sync"], p["sync_verify"], p["sync_other"]) == (12, 12, 0), \
         f"sync {p['sync']}, verify_ {p['sync_verify']}, not {p['sync_other']}"
-    assert (p["digests"], p["ignored"], p["tsv_count"], p["tsv_bytes"]) == (5, 1, 8, 630620), \
+    assert (p["digests"], p["ignored"], p["tsv_count"], p["tsv_bytes"]) == (5, 1, 9, 654791), \
         f"digests {p['digests']}, ignored {p['ignored']}, tsv {p['tsv_bytes']}"
     assert (p["du"]["preprints"], p["du"]["oai"], p["du"]["index"]) == (631, 1740, 14), \
         f"du {p['du']}"
-    assert (p["gate_rows"], p["env_hits"], len(p["purity"])) == (75, 2, 8), \
-        f"gate rows {p['gate_rows']}, env hits {p['env_hits']}, purity {len(p['purity'])}"
+    assert (p["gate_rows"], p["writer_rows"], p["env_hits"], len(p["purity"])) == (77, 10, 2, 8), \
+        f"gate rows {p['gate_rows']}, writer rows {p['writer_rows']}, env hits {p['env_hits']}, " \
+        f"purity {len(p['purity'])}"
     assert sorted(p["atomic_sites"]) == ["atomic.py:42", "atomic.py:84"], p["atomic_sites"]
     assert sorted(p["env_sites"]) == ["render_reports.py:1147", "render_reports.py:1367"], \
         p["env_sites"]

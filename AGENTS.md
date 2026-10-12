@@ -1034,22 +1034,25 @@ lives in this file and nowhere else.
   site enumerated twice in the paragraph leaves the shift invisible, so this comparison is the only one
   that catches it), compares the page with `render_reports.py`'s render of it (the page is report-fed:
   its measured phrases, **including the six site anchors**, are slots the writer supplies from its own
-  scan of the fleet's sources), and the 16 injected mutants live in
+  scan of the fleet's sources), and the 19 injected mutants live in
   `notes/scripts/tests/test_fleet_design.py`, run by the `run_tests.py` gate row: the atomicity count,
   the sync split, a deleted purity row, the purity heading count, the digest count, a probe figure, an
-  anchor past the file's end, a notes-page anchor past the file's end, the TSV byte figure, and six site
-  anchors shifted by one line — two in the bullet, two in the checker list, two in the paragraph. The
+  anchor past the file's end, a notes-page anchor past the file's end, the TSV byte figure, the TSV file
+  count, the writer-row count in the gate paragraph, the writer-row count in the non-determinism
+  sentence, and six site anchors shifted by one line — two in the bullet, two in the checker list, two
+  in the paragraph. The
   last fault is a dated observation the writer deliberately leaves literal, so only the render diff can
   catch it. Each needle is measured specific: it fires for its own fault and for no other, and the
   render-diff line fires for every fault, so no needle is that line. The clean test pins the population
-  the passes report: 34 anchors, 20 count and probe phrases, 0 sync problems, 2 atomicity matches over
-  57 scripts and 17 catlib modules, 12 sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 8
-  TSVs at 630,620 bytes, 631M `preprints/`, 1,740M `lean/OAI/`, 14M `notes/index/`, 75 gate rows, 2 env
+  the passes report: 34 anchors, 23 count and probe phrases, 0 sync problems, 2 atomicity matches over
+  58 scripts and 18 catlib modules, 12 sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 9
+  TSVs at 654,791 bytes, 631M `preprints/`, 1,740M `lean/OAI/`, 14M `notes/index/`, 77 gate rows, 10
+  writer rows, 2 env
   hits, 8 purity scripts, the sites at `atomic.py:42` / `atomic.py:84`, `render_reports.py:1147` /
   `render_reports.py:1367` and `build_catalog.py:128` / `build_index.py:583`, and the probe row the
   amplification table quotes at 151.32 s wall over 117,360 opens, 18,935 distinct paths and 98,425
   repeats. `main()` reads no argv, so `--mutant` is inert, and `population()` is under
-  `functools.cache`, so the seventeen `check()` calls the row makes pay the `git`/`du`/script-tree walk
+  `functools.cache`, so the twenty `check()` calls the row makes pay the `git`/`du`/script-tree walk
   once. It writes nothing; run it twice and diff — the report is identical.
 - Check the five sync pages with `python3 notes/scripts/verify_page_sync.py --both` before reporting
   them green — it is the render diff for `notes/links.md`, `notes/names.md`, `notes/topics.md`,

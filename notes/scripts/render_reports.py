@@ -2504,6 +2504,11 @@ def fleet_population() -> dict[str, Any]:
         "tsv_bytes": sum(len(p.read_bytes()) for p in tsvs), "tsv_count": len(tsvs),
         "du": du,
         "gate_rows": len(re.findall(r'^\s*\(".*?",\s*\(', rows_block, re.MULTILINE)),
+        # A row that declares an artifact is a writer row. `), ("` cannot count them: the needs tuple
+        # opens the same way, so it reads 86. The rows with an empty `writes` set end `), ())`, so the
+        # writer rows are the row count minus that count.
+        "writer_rows": len(re.findall(r'^\s*\(".*?",\s*\(', rows_block, re.MULTILINE))
+                       - len(re.findall(r'\),\s*\(\)\)', rows_block)),
         "set_sites": set_sites, "env_sites": env_sites, "env_hits": len(env_sites),
         "purity": purity,
     }
@@ -2523,10 +2528,13 @@ def fleet_phrases(v: dict[str, Any]) -> dict[str, str]:
         "digests": f"**{v['digests']}** digests",
         "ignored_line": f"returns **{v['ignored']} line{'s' if v['ignored'] != 1 else ''}**",
         "tsv_bytes": f"**{v['tsv_bytes']:,}** bytes",
+        "tsv_count": f"**{v['tsv_count']}** `notes/tables/*.tsv` present on disk",
         "du_preprints": f"**{du['preprints']}M**",
         "du_oai": f"**{du['oai']}M**",
         "du_index": f"**{du['index']}M**",
         "gate_rows": f"**{v['gate_rows']}** invocations",
+        "gate_writers": f"the **{v['writer_rows']}** writers declare what they write",
+        "gate_writers_class": f"Non-determinism sources in the **{v['writer_rows']}** writers, by class:",
         "set_sites": f"**{len(v['set_sites'])} sites**",
         "env_hits": f"**{v['env_hits']} hits**",
         "purity_heading": f"## The purity population ({n} scripts, mode-verified)",
