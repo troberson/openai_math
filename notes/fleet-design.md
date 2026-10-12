@@ -91,7 +91,7 @@ Rule: `grep -cE 'os\.replace|os\.rename|shutil\.move|NamedTemporaryFile'` over `
 and `notes/scripts/catlib/*.py`, **excluding `verify_fleet_design.py` and `render_reports.py`** — the
 checker carries the pattern in its count pass and the writer carries it as its `FLEET_ATOMIC` constant,
 so counting either would read a needle as a site and the rule would be about the censuses, not the
-fleet. Over **56** scripts and **17** catlib modules the count is **2 matches**, both in
+fleet. Over **57** scripts and **17** catlib modules the count is **2 matches**, both in
 `catlib/atomic.py`: the `os.replace` at `catlib/atomic.py:42`, which promotes the sibling temp onto
 the target, and the one at `catlib/atomic.py:84`, which promotes a staged slot onto its tracked path.
 Before `math-o3a.2.1` the count was **0 matches** over **49** scripts and **14** modules: every writer
