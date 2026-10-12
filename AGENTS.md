@@ -1052,11 +1052,11 @@ lives in this file and nowhere else.
   last fault is a dated observation the writer deliberately leaves literal, so only the render diff can
   catch it. Each needle is measured specific: it fires for its own fault and for no other, and the
   render-diff line fires for every fault, so no needle is that line. The clean test pins the population
-  the passes report: 34 anchors, 24 count and probe phrases, 0 sync problems, 2 atomicity matches over
+  the passes report: 32 anchors, 24 count and probe phrases, 0 sync problems, 2 atomicity matches over
   59 scripts and 18 catlib modules, 12 sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 9
   TSVs at 907,744 bytes, 631M `preprints/`, 1,740M `lean/OAI/`, 14M `notes/index/`, 78 gate rows, 10
-  writer rows, 2 env hits, 8 purity scripts, the sites at `atomic.py:42` / `atomic.py:84`,
-  `render_reports.py:1156` / `render_reports.py:1376` and `build_catalog.py:128` /
+  writer rows, 1 env hit, 8 purity scripts, the sites at `atomic.py:42` / `atomic.py:84`,
+  `render_reports.py:1162` and `build_catalog.py:128` /
   `build_index.py:583`, and the probe row the amplification table quotes at 151.32 s wall over
   117,360 opens, 18,935 distinct paths and 98,425 repeats. `main()` reads no argv, so `--mutant` is
   inert, and `population()` is under `functools.cache`, so the twenty-one `check()` calls the row makes
