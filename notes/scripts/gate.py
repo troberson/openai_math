@@ -84,7 +84,7 @@ ROWS = [
     ("verify_scope_exclusions.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_scope_exclusions.py -q", ("pages",), ()),
     ("verify_subfindings.py", ("pages",), ()),
-    ("verify_subfindings.py --mutant", ("pages",), ()),
+    ("run_tests.py notes/scripts/tests/test_subfindings.py -q", ("pages",), ()),
     ("verify_subfinding_pairs.py", ("pages",), ()),
     ("verify_subfinding_pairs.py --mutant", ("pages",), ()),
     ("verify_index_design.py", ("pages",), ()),

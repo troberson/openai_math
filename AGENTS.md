@@ -423,18 +423,19 @@ lives in this file and nowhere else.
   unchanged by the flagged run. The read-only gate pool is the block that runs rows with this flag.
 - The whole-tree test is the gate list at `notes/scripts/gate.py`: **75** invocations — the **9**
   gated writers (`build_report_templates.py` and `measure_open_probe.py` are the writers it does not
-  run), the 25 gated report-only rows (including `check_summary_manuscripts.py` and
-  `locate_summary_quotes.py`, `check_index_links.py` plain and with `--mutant`, and the four
+  run), the 26 gated report-only rows (including `check_summary_manuscripts.py` and
+  `locate_summary_quotes.py`, `check_index_links.py` plain and with `--mutant`, and the five
   extracted self-tests rows, `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q`,
   `run_tests.py notes/scripts/tests/test_conjecture_standing.py -q`,
-  `run_tests.py notes/scripts/tests/test_abstracts.py -q` and
-  `run_tests.py notes/scripts/tests/test_named_conjectures.py -q`;
-  `read_manuscript.py` is the one script it does not run), and **41**
-  checker invocations: **34** from the 17 checkers listed twice (plain and with `--mutant`) — the 17
+  `run_tests.py notes/scripts/tests/test_abstracts.py -q`,
+  `run_tests.py notes/scripts/tests/test_named_conjectures.py -q` and
+  `run_tests.py notes/scripts/tests/test_subfindings.py -q`;
+  `read_manuscript.py` is the one script it does not run), and **40**
+  checker invocations: **32** from the 16 checkers listed twice (plain and with `--mutant`) — the 16
   table checkers plus `verify_script_ownership.py`, the census page's own checker — plus
   `verify_page_sync.py --both` (**1**), `verify_scope_exclusions.py` plain (**1**),
-  `verify_conjecture_standing.py` plain (**1**), `verify_abstracts.py` plain (**1**) and
-  `verify_named_conjectures.py` plain (**1**), none of which
+  `verify_conjecture_standing.py` plain (**1**), `verify_abstracts.py` plain (**1**),
+  `verify_named_conjectures.py` plain (**1**) and `verify_subfindings.py` plain (**1**), none of which
   carries a `--mutant` branch any more.
   The list is one array, `ROWS`, of (spec, needs, writes) triples over the
   generated artifacts: a row starts as soon as every row that writes its `needs` has finished, each
@@ -532,12 +533,19 @@ lives in this file and nowhere else.
   render of the page can catch — and asserts the pass that owns each one flags it. The checker measures,
   the test file injects; the checker no longer carries its own `--mutant` branch.
   `extract_scope_notes.py` is report-only: it writes nothing and is where the page's counts come from.
-- Check `notes/tables/subfindings.tsv` with `python3 notes/scripts/verify_subfindings.py --mutant` before
+- Check `notes/tables/subfindings.tsv` with `python3 notes/scripts/verify_subfindings.py` before
   quoting a row — it re-derives every manuscript row from `overview.tex` (path, display title,
   formalized flag, tier) and every comparator row from its scope note's table **in order**, requires
   each path and each `.lean` file to exist on disk, requires each family's row count to equal the
-  ledger's `paps`, requires `seq` to run 1..n per family and kind, rejects a field a kind never fills,
-  and flags seven injected mutants including a same-family row swap. Run
+  ledger's `paps`, requires `seq` to run 1..n per family and kind, rejects a field a kind never fills.
+  Its seven mutants live in `notes/scripts/tests/test_subfindings.py`, run with
+  `python3 notes/scripts/run_tests.py notes/scripts/tests/test_subfindings.py -q` — a display title
+  renamed, a path moved off the `overview.tex` path, a formalized flag flipped, a tier flipped, a
+  comparator statement renamed, a comparator row deleted, and a same-family row swap, each asserted
+  against the pass that owns it. The path mutant is caught by the comparison with `overview.tex`, not
+  by the on-disk branch: the checker tests the *truth* path for existence, so a mutated row path hits
+  the mismatch branch first and no mutant can reach the on-disk branch. The checker measures, the test
+  file injects; the checker no longer carries its own `--mutant` branch. Run
   `python3 notes/scripts/extract_subfindings.py` once: `verify_cache_promotion.py` asserts that the
   bytes cached under its key equal the bytes on the TSV.
 - Run `python3 notes/scripts/extract_subfinding_pairs.py` twice and diff: the report must be identical.

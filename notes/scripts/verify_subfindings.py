@@ -18,17 +18,17 @@ The TSV carries two row kinds in one rectangular table. Four passes read the sam
                        372 and 242 families, 416 distinct configs, 172 formalized) are re-measured
                        from the files and compared with the table.
 
---mutant proves the checker discriminates: it renames a real title, points a real row at a manuscript
-that does not exist, deletes a comparator row, flips a formalized flag, flips a tier, and reorders two
-rows in one family. Each is asserted to be flagged while the real table stays silent.
+--mutant is gone: the self-tests live in `notes/scripts/tests/test_subfindings.py`, run through
+`notes/scripts/run_tests.py`. Seven corruptions are injected in memory over the real table's own rows —
+a display title renamed, a path moved off the `overview.tex` path, a formalized flag flipped, a tier
+flipped, a comparator statement renamed, a comparator row deleted, and two rows swapped inside one
+family — each asserted against the pass that owns it. This script measures; it no longer injects.
 
 Usage: python3 notes/scripts/verify_subfindings.py
-       python3 notes/scripts/verify_subfindings.py --mutant
 """
 import csv
 import re
 import sys
-from collections import Counter
 
 import build_catalog as bc
 import extract_subfindings as ex
@@ -173,7 +173,6 @@ def check(header, rows):
 
 
 def main():
-    mutant = "--mutant" in sys.argv
     header, rows = shipped()
     problems, man, comp = check(header, rows)
     print(f"table: {TSV.relative_to(ROOT)}")
@@ -182,62 +181,7 @@ def main():
     print(f"problems: {len(problems)}")
     for p in problems[:40]:
         print(f"  {p}")
-
-    if not mutant:
-        return 0 if not problems else 1
-
-    print()
-    print("mutants:")
-    text = TSV.read_text(encoding="utf-8").splitlines()
-    man_idx = next(i for i, l in enumerate(text) if l.startswith("manuscript\t"))
-    comp_idx = next(i for i, l in enumerate(text) if l.startswith("comparator-link\t"))
-    man_fields = text[man_idx].split("\t")
-    comp_fields = text[comp_idx].split("\t")
-    man_fam = man_fields[1]
-    comp_fam = comp_fields[1]
-    cases = [
-        ("renamed display title", man_idx, man_fam,
-         "\t".join([*man_fields[:3], man_fields[3] + " (renamed)", *man_fields[4:]])),
-        ("manuscript path that does not exist", man_idx, man_fam,
-         "\t".join([*man_fields[:4], man_fields[4].replace("paper.pdf", "nosuch.pdf"), *man_fields[5:]])),
-        ("flipped formalized flag", man_idx, man_fam,
-         "\t".join([*man_fields[:5], "1" if man_fields[5] == "0" else "0", *man_fields[6:]])),
-        ("flipped tier", man_idx, man_fam,
-         "\t".join([*man_fields[:6], "T0" if man_fields[6] == "T3" else "T3", *man_fields[7:]])),
-        ("renamed comparator statement", comp_idx, comp_fam,
-         "\t".join([*comp_fields[:7], comp_fields[7] + " (invented)", *comp_fields[8:]])),
-        ("comparator row deleted", comp_idx, comp_fam, None),
-    ]
-    undetected = 0
-    for name, idx, fam, replacement in cases:
-        cand = list(text)
-        if replacement is None:
-            del cand[idx]
-        else:
-            cand[idx] = replacement
-        got, _, _ = check(cand[0].split("\t"), list(csv.DictReader(cand, delimiter="\t")))
-        hit = [p for p in got if fam in p or "comparator rows:" in p or "no table" in p]
-        if not hit:
-            undetected += 1
-        print(f"  {name}: {'detected' if hit else 'UNDETECTED'} ({len(got)} problems)"
-              + (f" -> {hit[0][:70]}" if hit else ""))
-
-    # Two rows swapped inside one family: the row set is unchanged, only the order is wrong, so
-    # this mutant checks the seq check. It needs a family with more than one manuscript.
-    counts = Counter(l.split("\t")[1] for l in text if l.startswith("manuscript\t"))
-    swap_fam = next(f for f, n in sorted(counts.items()) if n > 1)
-    fam_rows = [i for i, l in enumerate(text) if l.startswith(f"manuscript\t{swap_fam}\t")]
-    cand = list(text)
-    cand[fam_rows[0]], cand[fam_rows[1]] = cand[fam_rows[1]], cand[fam_rows[0]]
-    got, _, _ = check(cand[0].split("\t"), list(csv.DictReader(cand, delimiter="\t")))
-    hit = [p for p in got if swap_fam in p]
-    if not hit:
-        undetected += 1
-    print(f"  two rows swapped in family {swap_fam}: {'detected' if hit else 'UNDETECTED'} "
-          f"({len(got)} problems)" + (f" -> {hit[0][:70]}" if hit else ""))
-
-    print(f"undetected mutants: {undetected}")
-    return 0 if (undetected == 0 and not problems) else 1
+    return 0 if not problems else 1
 
 
 if __name__ == "__main__":
