@@ -26,8 +26,8 @@ import re
 import sys
 from typing import Any
 
-from catlib.paths import ROOT
 from catlib.overview import parse_overview
+from catlib.paths import ROOT
 
 TSV = ROOT / "notes" / "tables" / "subfindings.tsv"
 LEDGER = ROOT / "notes" / "tables" / "catalog.tsv"

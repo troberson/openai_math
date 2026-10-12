@@ -43,7 +43,7 @@ from catlib.text import collapse_ws
 PAGE = NOTES / "named-conjectures.md"
 
 PRIORITY = ["038", "078", "079", "101", "202", "344", "346", "375"]
-NAME_TOKEN = re.compile(r"conjectur|\bquestion|\bproblem", re.I)
+NAME_TOKEN = re.compile(r"conjectur|\bquestion|\bproblem", re.IGNORECASE)
 STATEMENT_ENV = (
     "theorem", "maintheorem", "mainthm", "corollary", "proposition",
     "conjecture", "problem", "question", "claim", "remark",
@@ -152,10 +152,8 @@ def quotes_in(body):
                 break
             j += 1
         text = " ".join(block)
-        if text.startswith('"'):
-            text = text[1:]
-        if text.endswith('"'):
-            text = text[:-1]
+        text = text.removeprefix('"')
+        text = text.removesuffix('"')
         found.append((path, a, b, text if block else None))
     return found
 
@@ -172,7 +170,7 @@ def verdict_of(body):
 def check_quotes(page_lines, problems):
     ents = blocks(page_lines)
     anchors = 0
-    verdicts = Counter()
+    verdicts: Counter[str] = Counter()
     for fam, (_, body, _) in sorted(ents.items()):
         v = verdict_of(body)
         if v is None:
@@ -488,7 +486,7 @@ def main():
     expected, pop = measure(rows)
     base = read_text(PAGE).split("\n")
 
-    problems = []
+    problems: list[str] = []
     anchors, verdicts = check_quotes(base, problems)
     cites = check_citations(base, problems)
     check_entry_set(base, pop, rows, problems)
@@ -517,7 +515,7 @@ def main():
     if mutant:
         caught = 0
         for label, lines in mutants(base):
-            inner = []
+            inner: list[str] = []
             a2, v2 = check_quotes(lines, inner)
             c2 = check_citations(lines, inner)
             check_entry_set(lines, pop, rows, inner)

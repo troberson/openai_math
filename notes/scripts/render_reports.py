@@ -46,8 +46,6 @@ from collections.abc import Callable
 from functools import cache
 from typing import Any
 
-from jinja2 import Environment, FileSystemLoader
-
 import build_catalog as B
 import build_sources as S
 import check_index_links as CI
@@ -58,18 +56,29 @@ import extract_scope_notes as ex
 import extract_subfinding_pairs as ep
 import extract_t0_chains as tc
 import extract_verification_dirs as evd
-import measure_index_sizes as M
 import measure_faithfulness as FA
+import measure_index_sizes as M
 import measure_names as MN
 import measure_proof_density as PD
 import measure_templates as MTPL
 import measure_topics as MT
 from catlib import bib, ledger, overview, preprints, records, tsv
-from catlib.atomic import Staging
-from catlib.promote import key_for
 from catlib import yaml as Y
-from catlib.paths import (COMPARATOR_DIR, DEPS_TSV, FORMALIZATION_YAML, LAKEFILE,
-                          LAKE_MANIFEST, LEDGER_TSV, PREPRINTS, ROOT, SUBFINDINGS_TSV, owner)
+from catlib.atomic import Staging
+from catlib.paths import (
+    COMPARATOR_DIR,
+    DEPS_TSV,
+    FORMALIZATION_YAML,
+    LAKE_MANIFEST,
+    LAKEFILE,
+    LEDGER_TSV,
+    PREPRINTS,
+    ROOT,
+    SUBFINDINGS_TSV,
+    owner,
+)
+from catlib.promote import key_for
+from jinja2 import Environment, FileSystemLoader
 
 TPL = ROOT / "notes" / "templates" / "report"
 
@@ -726,22 +735,22 @@ INDEX_SPLIT = {
     "added TSV byte figures": ["`notes/tables/sources.tsv`"],
     "bib keywords count": ["bibliography entry → `keywords` field **0** over **13,802**"],
     "builds-on declaration count": ["(**30** `builds-on` declarations at"],
-    "derivable lean reach": ["config → file (yaml: **189** configs, all **189** of them also "
-                             "named by a scope note), which reaches"],
+    "derivable lean reach": [("config → file (yaml: **189** configs, all **189** of them also "
+                             "named by a scope note), which reaches")],
     "disk link check": ["covers **66,107** links over the same 1,033 pages, also with"],
-    "lean edge scope": ["The index carries family → Lean file for **136** families; the "
-                        "**172** is a"],
-    "link occurrence gap": ["**426** scope-note link occurrences against **416** distinct "
-                            "configs: 7 scope notes link one config"],
+    "lean edge scope": [("The index carries family → Lean file for **136** families; the "
+                        "**172** is a")],
+    "link occurrence gap": [("**426** scope-note link occurrences against **416** distinct "
+                            "configs: 7 scope notes link one config")],
     "manuscripts-per-family distribution": ["a family carries a maximum of **14**"],
     "namespace agreement count": ["the triples name **183** module dirs, and the declaration"],
-    "population totals": ["Totals: **2,560** index nodes (excluding the **122,458** `.lean` "
-                          "files) and **3,415** edges, or"],
+    "population totals": [("Totals: **2,560** index nodes (excluding the **122,458** `.lean` "
+                          "files) and **3,415** edges, or")],
     "raw-bib projection": ["**13,802** rows at the measured **150** B/row is"],
     "subfindings key counts": ["keyed by"],
     "substring vs line-start counts": ["so a substring count of the command name reads 18 and",
-                                       "373. The brace-qualified substring reads **17** and "
-                                       "**372** only because each definition writes"],
+                                       ("373. The brace-qualified substring reads **17** and "
+                                       "**372** only because each definition writes")],
     "superseded estimate": ["superseded by the measured **2,560**"],
 }
 
@@ -1099,27 +1108,27 @@ IL_GAP_CATS = ["index-page", "manuscript-dir", "notes-doc", "index-table", "conf
 # Where notes/index-links.md wraps a phrase across lines, the prefix its first line ends with.
 IL_SPLIT = {
     "hl_canon": ["719",
-                 "manuscript PDFs, 719 `build/` trees, 719 `README.md` stubs, 242 scope notes, "
-                 "416 comparator",
-                 "configs (JSON and Lean side by side), 192 Lean files named by "
-                 "`formalization.yaml` over 183"],
+                 ("manuscript PDFs, 719 `build/` trees, 719 `README.md` stubs, 242 scope notes, "
+                 "416 comparator"),
+                 ("configs (JSON and Lean side by side), 192 Lean files named by "
+                 "`formalization.yaml` over 183")],
     "prose_lean200": ["`lean-dir` counts 200 links over"],
     "prose_leanhost": ["14 dirs host more than one `main_results` declaration (max 3), and 6 files host"],
-    "prose_extra": ["`manuscript-dir` is the one category whose target count exceeds the "
-                    "canonical count: 746"],
+    "prose_extra": [("`manuscript-dir` is the one category whose target count exceeds the "
+                    "canonical count: 746")],
     "prose_superseded": ["The 27 extra targets are directories the upstream merge superseded —",
-                         "every one exists on disk, none is listed as a manuscript in "
-                         "`notes/tables/subfindings.tsv`, and all 27"],
+                         ("every one exists on disk, none is listed as a manuscript in "
+                         "`notes/tables/subfindings.tsv`, and all 27")],
     "prose_indexpage": ["`index-page` 521 targets = 372 family pages + 92 topic",
-                        "pages + 17 discipline pages + 40 name pages, and the 40 name pages are "
-                        "linked only from the entry"],
-    "prose_latexsource": ["`latex-source` 719 = the `main_tex` of each of the 719 manuscripts, "
-                          "all 719 present in"],
+                        ("pages + 17 discipline pages + 40 name pages, and the 40 name pages are "
+                        "linked only from the entry")],
+    "prose_latexsource": [("`latex-source` 719 = the `main_tex` of each of the 719 manuscripts, "
+                          "all 719 present in")],
     "prose_notesdoc": ["`notes-doc` 26 targets = `notes/names.md` (552 links: one from each of the",
-                       "551 name pages and one from the entry point), the 21 `notes/summaries/` "
-                       "pages family pages link,",
-                       "and the 5 notes docs the entry point links (`index-design.md`, `names.md`, "
-                       "`topics.md`,"],
+                       ("551 name pages and one from the entry point), the 21 `notes/summaries/` "
+                       "pages family pages link,"),
+                       ("and the 5 notes docs the entry point links (`index-design.md`, `names.md`, "
+                       "`topics.md`,")],
     "prose_regchecked": ["**48,012 links checked, 0"],
     "prose_tracefiles": ["`reasoning_traces/` ships **11 files"],
     "prose_fresh": ["**20 injected, 20 caught, 0 missed; 7 controls, 7"],
@@ -1639,7 +1648,7 @@ def links_page(p: dict[str, str]) -> str:
 # this section stays on the writer side of that line.
 DRIFT_REQUIRE = re.compile(
     r'^require\s+(?:«(?P<l1>[^»]+)»|(?P<l2>[A-Za-z0-9_.\-]+))\s+from\s+git\s*\n'
-    r'\s*"(?P<url>[^"]+)"\s*@\s*"(?P<commit>[0-9a-f]+)"', re.M)
+    r'\s*"(?P<url>[^"]+)"\s*@\s*"(?P<commit>[0-9a-f]+)"', re.MULTILINE)
 PRE_ARRAY = "preResolutionPatchNames : Array Lean.Name := #["
 POST_ARRAY = "for name in #["
 
@@ -1681,7 +1690,7 @@ def drift_patches() -> dict[str, dict[str, Any]]:
         files: list[str] = []
         for i in heads:
             tail = lines[i].split()[-1]
-            files.append(tail[2:] if tail.startswith("b/") else tail)
+            files.append(tail.removeprefix("b/"))
         froms: list[str] = []
         tos: list[str] = []
         for k, i in enumerate(heads):
@@ -1706,8 +1715,7 @@ def drift_patches() -> dict[str, dict[str, Any]]:
 def drift_key(url: str) -> str:
     """Repo URL -> TSV library key, the derivation the yaml ordering check needs."""
     last = url.rstrip("/").split("/")[-1]
-    if last.endswith(".git"):
-        last = last[: -len(".git")]
+    last = last.removesuffix(".git")
     key = re.sub(r"[0-9]+$", "", re.sub(r"[^a-z0-9]", "", last.lower()))
     for suffix in ("lean4", "lean"):
         if key.endswith(suffix) and len(key) > len(suffix):
@@ -1741,13 +1749,13 @@ def drift_violations(imports_by_key: dict[str, int]) -> list[tuple[int, str, int
     prev: tuple[int, int, str] | None = None
     for i, url in enumerate(urls, start=1):
         last = url.rstrip("/").split("/")[-1]
-        if last.endswith(".git"):
-            last = last[: -len(".git")]
+        last = last.removesuffix(".git")
         cnt = imports_by_key.get(drift_key(url))
         if cnt is None:
             continue
-        if prev is not None and cnt > prev[1]:
-            out.append((i, last, cnt, prev[2], prev[1]))
+        if prev is not None:
+            if cnt > prev[1]:
+                out.append((i, last, cnt, prev[2], prev[1]))
         prev = (i, cnt, last)
     return out
 
@@ -1924,22 +1932,22 @@ def drift_full(p: dict[str, Any]) -> dict[str, str]:
 
 DRIFT_SPLIT = {
     "p1_tc_move": ["The 22 toolchain",
-                   "hunks move 8 distinct upstream versions onto the release's own: "
-                   "`v4.32.0` ×13, `v4.34.0` ×3, and one"],
+                   ("hunks move 8 distinct upstream versions onto the release's own: "
+                   "`v4.32.0` ×13, `v4.34.0` ×3, and one")],
     "p1_sits": ["It sits on 30 pinned commits plus 160,187 lines of release-specific edits to 23 of them,"],
     "p1_ratio": ["The compatibility layer is 1.3 lines of patch"],
     "p5_nopatch": ["**6 of"],
     "p5_plus": ["It is achieved by last-wins ordering plus 22 patches that rewrite each"],
     "p5_imposed": ["The"],
     "p6_table_intro": ["The table is all **23** declared"],
-    "p6_median": ["Median patch lines: **2,575** for declared libraries with any direct import, "
-                  "**408** for declared"],
+    "p6_median": [("Median patch lines: **2,575** for declared libraries with any direct import, "
+                  "**408** for declared")],
     "p6_largest": ["The largest patch in the release, PrimeNumberTheoremAnd at 39,904 lines, sits"],
     "p6_largest_unused": ["The"],
     "p6_tau": ["A library can be load-bearing and"],
     "p7_zerolist": ["`AINTLIB`, `LeanArchitect`,",
-                    "`PrimeCert`, `Zeta3Irrational`, `belyi`, `carleson`, `checkdecls`, `doc-gen4`, "
-                    "`elliptic-curves`,",
+                    ("`PrimeCert`, `Zeta3Irrational`, `belyi`, `carleson`, `checkdecls`, `doc-gen4`, "
+                    "`elliptic-curves`,"),
                     "`formal-schemes`, `genl`, `heights`, `iut`, `leancert`, `oka`, `orbicurve-cores`, `pi1`,"],
     "p7_zeropatched": ["**14 of those 19 ship a patch**; the 5 that do not"],
     "p7_allpre": ["All 11 pre-resolution",
@@ -1947,11 +1955,11 @@ DRIFT_SPLIT = {
     "p7_violist": ["strongpnt 12 above AINTLIB 0; TauCeti 5 above fixed-point-theorems 4;",
                    "gromov 2 above heights 0; schoenflies-lean 2 above iut 0; AbsorptionCutoff 1 above"],
     "p7_zero19": ["The 19 zero-import libraries sit beside that claim: an ordering-by-import",
-                  "comment over a list in which 19 of 30 entries import nothing directly is a claim "
-                  "about a list that is"],
+                  ("comment over a list in which 19 of 30 entries import nothing directly is a claim "
+                  "about a list that is")],
     "p7_transitive": ["The",
-                      "manifest's 12 transitive-only packages (`Qq`, `aesop`, `batteries`, …) are none "
-                      "of the 19 zero-import"],
+                      ("manifest's 12 transitive-only packages (`Qq`, `aesop`, `batteries`, …) are none "
+                      "of the 19 zero-import")],
     "p7_floor": ["the direct-import counts are the floor they are: **no direct"],
 }
 
@@ -2163,8 +2171,8 @@ VERIF_SPLIT = {
     "v_dirs_fams": ["**30 dirs over"],
     "v_famlist": ["(059, 067, 087, 090, 101, 107, 119, 153, 187, 189, 205, 210, 229, 266, 268, 269, 272,"],
     "v_covmd": ["`covmd` counts 2"],
-    "v_doc_readme": ["**12 of 30** ship a `README.md` with a run command and success criteria: "
-                     "087, 090 (×4), 107, 119,"],
+    "v_doc_readme": [("**12 of 30** ship a `README.md` with a run command and success criteria: "
+                     "087, 090 (×4), 107, 119,")],
     "v_classes": ["**12** top-level `README.md`, **6** a subdirectory `README.md`, **5** a top-level"],
     "v_declaring": ["the two family-348 dirs that declare `main_command` are claimed by"],
     "v_v348": ["the"],
@@ -2566,19 +2574,19 @@ def t0_chains_full(p: dict[str, Any]) -> dict[str, str]:
 
 TC_SPLIT = {
     "tc_firstpass": ["Of the",
-                     "**35** at T0, **8** were read in the first pass (004, 006, 018, 019, 029, 046, "
-                     "059, 209), so **27**"],
+                     ("**35** at T0, **8** were read in the first pass (004, 006, 018, 019, 029, 046, "
+                     "059, 209), so **27**")],
     "tc_268sig": ["**1**: 268"],
     "tc_trueof": ["That is true of"],
     "tc_edges": ["Over **372** families"],
     "tc_cw": ["fires on **9**",
-              "families — 003, 197, 207, 256, 266, 268, 270, 307, 364 — and **0** of them carry "
-              "a `companions`"],
+              ("families — 003, 197, 207, 256, 266, 268, 270, 307, 364 — and **0** of them carry "
+              "a `companions`")],
     "tc_layer": ["2 edges over 372 families, while the",
-                 "companion relation it describes in prose is at least 9 families wide, and the "
-                 "manuscript-level"],
-    "tc_cite": ["**15** of the 27 cite their sibling: **8** mutual pairs and **7** one-directional. "
-                "**12** cite no",
+                 ("companion relation it describes in prose is at least 9 families wide, and the "
+                 "manuscript-level")],
+    "tc_cite": [("**15** of the 27 cite their sibling: **8** mutual pairs and **7** one-directional. "
+                "**12** cite no"),
                 "sibling, and **3** of those (200, 239, 300) ship no `.bib` file at all, so their absence is"],
     "tc_oneway": ["The one-directional edges are 037,"],
 }
@@ -3199,24 +3207,24 @@ FAITH_SPLIT: dict[str, list[str]] = {
         # split has an empty part here. The separator carries the break; this part carries nothing.
         "",
         "- **189** of the 189 declarations resolve to a statement in the file the yaml names.",
-        "- **61** of the 189 statements are opaque: the type is a name that must be opened, "
-        "not a formula.",
+        ("- **61** of the 189 statements are opaque: the type is a name that must be opened, "
+        "not a formula."),
         "All **61** carriers resolve through the declaration file's import closure.",
         "- Carrier bodies: min **1** line, median **6**, max **17**, sum **417** lines.",
     ],
     "fa_pair": [
-        "Over the **61** carriers, all **61** have a scope-note family: **1** exact, "
-        "**31** lean-subset,",
-        "**15** overlap, **2** disjoint, **10** carriers with no literal, "
-        "**2** families with no headline",
+        ("Over the **61** carriers, all **61** have a scope-note family: **1** exact, "
+        "**31** lean-subset,"),
+        ("**15** overlap, **2** disjoint, **10** carriers with no literal, "
+        "**2** families with no headline"),
     ],
     "fa_ae": [
         "Over the 719 listed manuscripts there are",
         "**2,288** theorem environments; **48** carry an `a.e.`-style phrase (`a.e.`, `almost every`,",
-        "`almost all`, `a.s.`, `measure zero`, `null set`), over **32** families. "
-        "**19** of those 32 families",
-        "have a scope-note config; the 19 link **54** configs, of which **19** have a "
-        "`main_results` entry and",
+        ("`almost all`, `a.s.`, `measure zero`, `null set`), over **32** families. "
+        "**19** of those 32 families"),
+        ("have a scope-note config; the 19 link **54** configs, of which **19** have a "
+        "`main_results` entry and"),
     ],
 }
 

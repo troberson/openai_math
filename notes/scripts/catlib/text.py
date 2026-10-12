@@ -87,8 +87,7 @@ def library_key(name: str) -> str:
 def url_key(url: str) -> str:
     """Join key for a repo URL: the lakefile writes '.git' and formalization.yaml does not."""
     last = url.rstrip("/").split("/")[-1]
-    if last.endswith(".git"):
-        last = last[: -len(".git")]
+    last = last.removesuffix(".git")
     return library_key(last)
 
 

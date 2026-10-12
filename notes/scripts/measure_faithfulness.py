@@ -31,14 +31,13 @@ from fractions import Fraction
 
 import build_catalog
 import extract_counterexample_crosscheck as cx
-
 from catlib.paths import DOCS_DIR, PREPRINTS
 
 LIT = re.compile(r"(?<![\w.])\d+(?:\s*/\s*\d+)?(?![\w.])")
 FRAC = re.compile(r"\\frac\s*\{?(\d+)\}?\s*\{?(\d+)\}?")
 STMT_ENV = re.compile(r"\\begin\{(theorem|maintheorem|thm)\}")
 END_ENV = re.compile(r"\\end\{(theorem|maintheorem|thm)\}")
-AE_PHRASE = re.compile(r"a\.e\.|almost every|almost all|a\.s\.|measure zero|null set", re.I)
+AE_PHRASE = re.compile(r"a\.e\.|almost every|almost all|a\.s\.|measure zero|null set", re.IGNORECASE)
 LINK = re.compile(r"\.\./ComparatorChallenges/([A-Za-z0-9_]+)\.lean")
 
 

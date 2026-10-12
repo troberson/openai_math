@@ -16,15 +16,17 @@ lean/lake-manifest.json is read for the report only, never for a column: it is a
 generated artifact, so its resolved revs are reconciled against the declared pins
 and reported, not written into the table.
 """
+import collections
 import json
 import re
 import sys
-import collections
 from pathlib import Path
 
 from catlib import tsv
 from catlib import yaml as Y
-from catlib.paths import LAKEFILE, LAKE_MANIFEST as MANIFEST, OAI_DIR as SOURCE
+from catlib.paths import LAKE_MANIFEST as MANIFEST
+from catlib.paths import LAKEFILE
+from catlib.paths import OAI_DIR as SOURCE
 from catlib.promote import key_for, promote
 
 REPO = Path(__file__).resolve().parents[2]
@@ -82,8 +84,7 @@ def url_key(url):
     """Join key for a repo URL. The lakefile writes '.git' and formalization.yaml
     does not, so the suffix is stripped before normalizing."""
     last = url.rstrip("/").split("/")[-1]
-    if last.endswith(".git"):
-        last = last[: -len(".git")]
+    last = last.removesuffix(".git")
     return norm(last)
 
 
@@ -93,7 +94,7 @@ def lakefile_rows():
     pat = re.compile(
         r'^require\s+(?:«(?P<l1>[^»]+)»|(?P<l2>[A-Za-z0-9_.\-]+))\s+from\s+git\s*\n'
         r'\s*"(?P<url>[^"]+)"\s*@\s*"(?P<commit>[0-9a-f]+)"',
-        re.M,
+        re.MULTILINE,
     )
     rows = []
     for m in pat.finditer(text):
@@ -126,8 +127,8 @@ def import_counts():
     The root is the first token after `import`, so `import all Mathlib` is rooted
     at `all` and is not counted as a Mathlib import.
     """
-    pat = re.compile(r"^\s*import\s+([A-Za-z_][A-Za-z0-9_.]*)", re.M)
-    counts = collections.Counter()
+    pat = re.compile(r"^\s*import\s+([A-Za-z_][A-Za-z0-9_.]*)", re.MULTILINE)
+    counts: collections.Counter[str] = collections.Counter()
     files = 0
     for p in sorted(SOURCE.glob("**/*.lean")):
         files += 1
@@ -163,8 +164,10 @@ def yaml_order_violations(yaml, imports_by_key):
     out, prev = [], None
     for i, y in enumerate(yaml, start=1):
         n = imports_by_key.get(url_key(y["url"]), 0)
-        if prev is not None and n > prev[1]:
-            out.append((i, y["url"].rsplit("/", 1)[-1], n, prev[2].rsplit("/", 1)[-1], prev[1]))
+        if prev is not None:
+            if n > prev[1]:
+                out.append((i, y["url"].rsplit("/", 1)[-1], n,
+                            prev[2].rsplit("/", 1)[-1], prev[1]))
         prev = (i, n, y["url"])
     return out
 

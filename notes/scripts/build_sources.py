@@ -95,7 +95,7 @@ def build():
 def env_variants(store, dirs):
     """(six-name total, declared-rule total, per-name counts under the declared rule)."""
     six = 0
-    per_name = collections.Counter()
+    per_name: collections.Counter[str] = collections.Counter()
     for d in dirs:
         rec = store[d.name]
         six += rec["six"]
@@ -127,7 +127,7 @@ def report(rows, subs, dirs, store):
     paps_diff = [f for f, n in per_fam.items() if paps.get(f) != n]
 
     outcomes = {"name-main": 0, "name-paper": 0, "single-root": 0, "flagged": 0}
-    single_names = collections.Counter()
+    single_names: collections.Counter[str] = collections.Counter()
     multi = []
     for d in dirs:
         rec = store[d.name]
@@ -155,7 +155,7 @@ def report(rows, subs, dirs, store):
     mine = sorted(r["pdf"] for r in rows)
     ov_only = sorted(set(ov_paths) - set(mine))
     mine_only = sorted(set(mine) - set(ov_paths))
-    by_fam = {}
+    by_fam: dict[str, set[str]] = {}
     for r in rows:
         by_fam.setdefault(r["fam"], set()).add(r["pdf"])
     fam_path_diff = [f for f in ov_fams

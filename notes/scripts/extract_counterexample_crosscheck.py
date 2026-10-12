@@ -19,12 +19,15 @@ import re
 
 import build_catalog
 import extract_subfinding_pairs as ep
-
 from catlib import ledger as L
 from catlib import yaml as Y
 from catlib.paths import (
     COMPARATOR_DIR as CHALLENGES,
+)
+from catlib.paths import (
     DOCS_DIR as DOCS,
+)
+from catlib.paths import (
     LEAN as LEAN_ROOT,
 )
 
@@ -108,7 +111,9 @@ def import_closure(rel, cap=400):
     OAI/Analysis/Cuntz/Quasitrace.lean, outside Kaplansky/'s own tree. Bounded so a walk over the
     122,458-file tree cannot run away.
     """
-    seen, order, queue = set(), [], [rel]
+    seen: set[str] = set()
+    order: list[str] = []
+    queue: list[str] = [rel]
     while queue and len(order) < cap:
         r = queue.pop(0)
         p = LEAN_ROOT / r

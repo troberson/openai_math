@@ -32,7 +32,6 @@ import re
 import sys
 
 import measure_index_sizes as M
-
 from catlib import render as RD
 from catlib import yaml as Y
 
@@ -89,8 +88,8 @@ def count_phrases(p):
         (f"| Lean discipline dirs | **{p['lean_disc']}** |", "lean discipline dir count"),
         (f"| Lean module dirs | **{p['lean_mods']}** |", "lean module dir count"),
         (f"| `.lean` files | **{lf}** |", "lean file count"),
-        (f"| Comparator configs | **{p['chal_json']}** | "
-         f"`lean/ComparatorChallenges/*.json`, matched by **{p['chal_lean']}** `.lean` |",
+        ((f"| Comparator configs | **{p['chal_json']}** | "
+         f"`lean/ComparatorChallenges/*.json`, matched by **{p['chal_lean']}** `.lean` |"),
          "comparator config counts"),
         (f"| Scope notes | **{p['scope_notes']}** |", "scope note count"),
         (f"| `main_results` entries / configs | **{p['mr_entries']}** / **{p['mr_configs']}** |",
@@ -105,52 +104,52 @@ def count_phrases(p):
         (f"| family → manuscript | **{p['e_fam_man']}** |", "family-manuscript edge count"),
         (f"| family → discipline | **{p['e_fam_disc']}** |", "family-discipline edge count"),
         (f"| manuscript → formalized | **{p['formalized']}** |", "formalized manuscript count"),
-        (f"| family → config | **{p['fam_cfg_occ']}** occurrences over **{p['fam_cfg_distinct']}** "
-         f"distinct configs in **{p['fam_cfg_fams']}** families |", "family-config edge counts"),
+        ((f"| family → config | **{p['fam_cfg_occ']}** occurrences over **{p['fam_cfg_distinct']}** "
+         f"distinct configs in **{p['fam_cfg_fams']}** families |"), "family-config edge counts"),
         (f"| config → declaration | **{p['mr_entries']}** |", "config-declaration edge count"),
         (f"| family → Lean file | **{p['reach']}** families |", "family-lean reach count"),
-        (f"| manuscript → corpus manuscript | **{p['resolved']}** resolved "
-         f"(**{p['cross']}** cross-family) | from **{p['bib_hrefs']}** bib hrefs |",
+        ((f"| manuscript → corpus manuscript | **{p['resolved']}** resolved "
+         f"(**{p['cross']}** cross-family) | from **{p['bib_hrefs']}** bib hrefs |"),
          "citation edge counts"),
-        (f"| subfindings rows | **{sf}** = **{p['sf_man']}** manuscript + "
-         f"**{p['sf_comp']}** comparator |", "subfindings row counts"),
+        ((f"| subfindings rows | **{sf}** = **{p['sf_man']}** manuscript + "
+         f"**{p['sf_comp']}** comparator |"), "subfindings row counts"),
         # totals
-        (f"Totals: **{n}** index nodes (excluding the **{lf}** `.lean` files) and "
-         f"**{e}** edges, or **{rb}**", "population totals"),
+        ((f"Totals: **{n}** index nodes (excluding the **{lf}** `.lean` files) and "
+         f"**{e}** edges, or **{rb}**"), "population totals"),
         (f"The measured population is **{n}** nodes and **{e}** edges", "store-section totals"),
         (f"carries **{sf}** rows at **{p['sf_bpr']:.1f}** B/row", "subfindings bytes per row"),
         (f"the whole ledger set is **{setb}** B", "ledger set byte total"),
         (f"the ledger set the **{setb}** B figure covers", "ledger set scope sentence"),
         (f"every `notes/tables/*.tsv` together totals **{p['all_tsv_bytes']}** B", "all-TSV byte total"),
-        (f"`notes/tables/sources.tsv` (**{p['sizes']['sources.tsv'][0]}** B over "
+        ((f"`notes/tables/sources.tsv` (**{p['sizes']['sources.tsv'][0]}** B over "
          f"**{p['sizes']['sources.tsv'][1]}** rows) and `notes/tables/topics.tsv` "
-         f"(**{p['sizes']['topics.tsv'][0]}** B over **{p['sizes']['topics.tsv'][1]}** rows)",
+         f"(**{p['sizes']['topics.tsv'][0]}** B over **{p['sizes']['topics.tsv'][1]}** rows)"),
          "added TSV byte figures"),
-        (f"(**{p['builds_on']}** `builds-on` declarations at "
-         f"`lean/formalization.yaml:{builds_on_anchor()}`)",
+        ((f"(**{p['builds_on']}** `builds-on` declarations at "
+         f"`lean/formalization.yaml:{builds_on_anchor()}`)"),
          "builds-on declaration count"),
         # granularity
         (f"**{fam}** family pages, and no per-manuscript pages", "page count decision"),
-        (f"a family carries a maximum of **{p['max_paps']}** manuscripts, **{p['fams_1']}** "
-         f"families carry exactly **1**, and **{p['fams_2']}** carry two or more",
+        ((f"a family carries a maximum of **{p['max_paps']}** manuscripts, **{p['fams_1']}** "
+         f"families carry exactly **1**, and **{p['fams_2']}** carry two or more"),
          "manuscripts-per-family distribution"),
         (f"a table of at most {p['max_paps']} rows", "table row bound"),
-        (f"keyed by manuscript (**{p['sf_man']}** rows) and comparator link "
-         f"(**{p['sf_comp']}** rows)", "subfindings key counts"),
+        ((f"keyed by manuscript (**{p['sf_man']}** rows) and comparator link "
+         f"(**{p['sf_comp']}** rows)"), "subfindings key counts"),
         # topic vocabulary
         (f"family → MSC code **{p['msc_hits']}** hits over **{p['msc_scanned']:,}** files scanned",
          "MSC hit count"),
         (f"bibliography entry → `keywords` field **{p['bib_kw']}** over **{be}** entries",
          "bib keywords count"),
-        (f"manuscript → `\\keywords` macro **{p['kw_dirs']}** of **{man}** "
-         f"(**{p['kw_pct']:.1f}%**)", "keywords macro share"),
+        ((f"manuscript → `\\keywords` macro **{p['kw_dirs']}** of **{man}** "
+         f"(**{p['kw_pct']:.1f}%**)"), "keywords macro share"),
         (f"**{disc}** catalog disciplines against **{p['lean_disc']}** Lean discipline dirs",
          "grouping counts"),
-        (f"the triples name **{p['mr_dirs']}** module dirs, and the declaration namespace equals "
-         f"the file's module dir in only **{p['ns_agree']}** of **{p['mr_entries']}** entries",
+        ((f"the triples name **{p['mr_dirs']}** module dirs, and the declaration namespace equals "
+         f"the file's module dir in only **{p['ns_agree']}** of **{p['mr_entries']}** entries"),
          "namespace agreement count"),
-        (f"A name-based guess is wrong **{p['mr_entries'] - p['ns_agree']}** times out of "
-         f"**{p['mr_entries']}**", "namespace disagreement count"),
+        ((f"A name-based guess is wrong **{p['mr_entries'] - p['ns_agree']}** times out of "
+         f"**{p['mr_entries']}**"), "namespace disagreement count"),
         (f"with **{p['msc_hits']}** MSC codes and **{p['bib_kw']}** `keywords` fields",
          "derived-vocabulary rejection basis"),
         # schema tables — every row count here is read from the generated table itself
@@ -169,13 +168,13 @@ def count_phrases(p):
         (f"`family-config.tsv` | **{ir('family-config.tsv')}**", "family-config.tsv rows"),
         (f"`config-declaration.tsv` | **{ir('config-declaration.tsv')}**",
          "config-declaration.tsv rows"),
-        (f"`family-lean.tsv` | **{ir('family-lean.tsv')}** | family → Lean file, derived; "
-         f"**{p['mr_files']}** files over **{p['reach']}** families", "family-lean.tsv rows"),
-        (f"`citation.tsv` | **{ir('citation.tsv')}** | manuscript → corpus manuscript, "
-         f"**{p['cross']}** cross-family", "citation.tsv rows"),
+        ((f"`family-lean.tsv` | **{ir('family-lean.tsv')}** | family → Lean file, derived; "
+         f"**{p['mr_files']}** files over **{p['reach']}** families"), "family-lean.tsv rows"),
+        ((f"`citation.tsv` | **{ir('citation.tsv')}** | manuscript → corpus manuscript, "
+         f"**{p['cross']}** cross-family"), "citation.tsv rows"),
         (f"`family-trace.tsv` | **{ir('family-trace.tsv')}**", "family-trace.tsv rows"),
-        (f"`family-topic.tsv` | **{ir('family-topic.tsv')}** | family → topic, "
-         f"**zero or more** per family", "family-topic.tsv rows"),
+        ((f"`family-topic.tsv` | **{ir('family-topic.tsv')}** | family → topic, "
+         f"**zero or more** per family"), "family-topic.tsv rows"),
         (f"`family-name.tsv` | **{ir('family-name.tsv')}**", "family-name.tsv rows"),
         (f"**{p['index_pages']:,}** pages and **{p['index_tables']}** tables in total",
          "rendered page/table totals"),
@@ -185,35 +184,35 @@ def count_phrases(p):
          "raw-bib projection"),
         (f"subset is **{p['resolved']}** rows (**{p['res_kib']}** KiB)", "resolved-edge projection"),
         # edges the release does not ship
-        (f"scope notes: **{p['fam_cfg_occ']}** occurrences, **{p['fam_cfg_distinct']}** distinct "
-         f"configs, **{p['fam_cfg_fams']}** families", "scope-note config counts"),
-        (f"config → file (yaml: **{p['mr_configs']}** configs, all **{p['cfg_in_both']}** of them "
-         f"also named by a scope note), which reaches **{p['reach']}** families",
+        ((f"scope notes: **{p['fam_cfg_occ']}** occurrences, **{p['fam_cfg_distinct']}** distinct "
+         f"configs, **{p['fam_cfg_fams']}** families"), "scope-note config counts"),
+        ((f"config → file (yaml: **{p['mr_configs']}** configs, all **{p['cfg_in_both']}** of them "
+         f"also named by a scope note), which reaches **{p['reach']}** families"),
          "derivable lean reach"),
-        (f"The index carries family → Lean file for **{p['reach']}** families; the "
-         f"**{p['formalized']}** is a manuscript-level flag", "lean edge scope"),
+        ((f"The index carries family → Lean file for **{p['reach']}** families; the "
+         f"**{p['formalized']}** is a manuscript-level flag"), "lean edge scope"),
         (f"**{p['e_fam_disc']}** edges, one per family", "family-discipline join count"),
         # counting traps
-        (f"so a substring count of the command name reads {p['substr_disc']} and "
+        ((f"so a substring count of the command name reads {p['substr_disc']} and "
          f"{p['substr_res']}. The brace-qualified substring reads **{p['brace_disc']}** and "
          f"**{p['brace_res']}** only because each definition writes `}}[n]{{` after the name. "
-         f"The rule is the command at line start: **{disc}** and **{fam}**",
+         f"The rule is the command at line start: **{disc}** and **{fam}**"),
          "substring vs line-start counts"),
         (f"Traces: **{p['trace_files']}** files, **{p['traces']}** traces", "trace file/trace trap"),
-        (f"**{p['sf_comp']}** scope-note link occurrences against **{p['chal_json']}** distinct "
-         f"configs: {p['dup_docs']} scope notes link one config twice", "link occurrence gap"),
+        ((f"**{p['sf_comp']}** scope-note link occurrences against **{p['chal_json']}** distinct "
+         f"configs: {p['dup_docs']} scope notes link one config twice"), "link occurrence gap"),
         # not checked
         ("The **150** B/row byte figures are projections", "projection basis"),
         (f"The **{be}** bib entries are counted", "bib entry caveat"),
         (f"The **{p['reach']}**-family Lean reach", "lean reach caveat"),
         (f"The **{p['ns_agree']}** of **{p['mr_entries']}** namespace agreement",
          "namespace caveat"),
-        (f"Whether the **{p['lean_disc']}** Lean discipline dirs align with the **{disc}** catalog "
-         f"disciplines", "grouping caveat"),
+        ((f"Whether the **{p['lean_disc']}** Lean discipline dirs align with the **{disc}** catalog "
+         f"disciplines"), "grouping caveat"),
         (f"superseded by the measured **{n}** and **{rb}**", "superseded estimate"),
-        (f"covers **{p['disk_links']:,}** links over the same {p['index_pages']:,} pages, also with "
+        ((f"covers **{p['disk_links']:,}** links over the same {p['index_pages']:,} pages, also with "
          f"**{p['disk_broken']}** broken, and **{p['disk_dirs']:,}** of them resolve to a "
-         f"directory", "disk link check"),
+         f"directory"), "disk link check"),
     ]
 
 

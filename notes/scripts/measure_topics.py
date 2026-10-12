@@ -95,11 +95,11 @@ def norm(s: str) -> str:
 def lean_paths(_fams, docs):
     """family -> set of Lean file paths reached through its comparator configs."""
     _, _main_results = B.parse_yaml()
-    cfg2file = {}
+    cfg2file: dict[str, set[str]] = {}
     yaml = (ROOT / "lean" / "formalization.yaml").read_text(encoding="utf-8")
     for cfg, _decl, fpath in TRIPLE.findall(yaml):
         cfg2file.setdefault(cfg, set()).add(fpath)
-    out = collections.defaultdict(set)
+    out: collections.defaultdict[str, set[str]] = collections.defaultdict(set)
     for fam, info in docs.items():
         for cfg in info["configs"]:
             out[fam] |= cfg2file.get(cfg, set())
@@ -117,8 +117,8 @@ def measure(vocab=VOCAB):
              for f in fams}
     rows = []
     for term, pattern in vocab:
-        rx = re.compile(pattern, re.I)
-        hit = {"title": set(), "abstract": set(), "scope": set(), "path": set()}
+        rx = re.compile(pattern, re.IGNORECASE)
+        hit: dict[str, set[str]] = {"title": set(), "abstract": set(), "scope": set(), "path": set()}
         for f, (t, a, s, p) in texts.items():
             if rx.search(t):
                 hit["title"].add(f)

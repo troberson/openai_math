@@ -30,11 +30,11 @@ from catlib.paths import (
 )
 
 CONFIG_KEY = re.compile(r"comparator_config:\s*ComparatorChallenges/([A-Za-z0-9_]+)\.json")
-SOURCE_ID = re.compile(r"^\s*id:\s*\.\./(" + r"preprints/(?:[^\s(){}\\]|\([0-9]+\))*\.pdf" + r")", re.M)
+SOURCE_ID = re.compile(r"^\s*id:\s*\.\./(" + r"preprints/(?:[^\s(){}\\]|\([0-9]+\))*\.pdf" + r")", re.MULTILINE)
 DOC_CONFIG = re.compile(r"\.\./ComparatorChallenges/([A-Za-z0-9_]+)\.lean")
 DOC_PAP = re.compile(r"\]\(\.\./\.\./(preprints/(?:[^\s(){}\\]|\([0-9]+\))*\.pdf)\)")
-SCOPE_SPAN = re.compile(r"^## Scope\n(.*?)(?=^## |\Z)", re.M | re.S)
-TRACE_ROW = re.compile(r"^\|\s*(\d{3})\s*\|\s*\[[^\]]*\]\(reasoning_traces/([^)]+?)\.(?:pdf|tex)\)", re.M)
+SCOPE_SPAN = re.compile(r"^## Scope\n(.*?)(?=^## |\Z)", re.MULTILINE | re.DOTALL)
+TRACE_ROW = re.compile(r"^\|\s*(\d{3})\s*\|\s*\[[^\]]*\]\(reasoning_traces/([^)]+?)\.(?:pdf|tex)\)", re.MULTILINE)
 
 
 def parse_yaml_text(text: str) -> tuple[set[str], Counter]:

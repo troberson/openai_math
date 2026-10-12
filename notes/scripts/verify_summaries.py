@@ -55,9 +55,22 @@ import sys
 from pathlib import Path
 
 from catlib.paths import ROOT, SUMMARIES_DIR, read_text
+from catlib.summaries import (
+    ENTITY,
+    LINK,
+    MARKER,
+    PAPDIR,
+    QUOTE,
+    TAG,
+    Page,
+    label,
+    markers,
+    named_dirs,
+    superseded_dir,
+    units,
+    usable,
+)
 from catlib.text import strip_markup as norm
-from catlib.summaries import (ENTITY, LINK, MARKER, PAPDIR, QUOTE, TAG, Page, label, markers,
-                              named_dirs, superseded_dir, units, usable)
 
 SUMMARIES = SUMMARIES_DIR
 
@@ -233,7 +246,8 @@ def _inject(text, start, end, span):
 
 def inline_targets(text):
     """Inline quotations Pass C can see, split by whether the span is wrapped across lines."""
-    single, wrapped = [], []
+    single: list[re.Match[str]] = []
+    wrapped: list[re.Match[str]] = []
     for m in QUOTE.finditer(text):
         span = m.group(1) or m.group(2)
         if len(span) < 12 or "Prior (my training data" in span:
@@ -262,7 +276,7 @@ def pass_d(page):
     """Supersession. Every manuscript the page names must be one the catalog currently names for this family."""
     named = named_dirs()
     fam = page.fam
-    seen = {}
+    seen: dict[str, int] = {}
     for n, line in enumerate(page.lines, 1):
         for d in PAPDIR.findall(line):
             seen.setdefault(d, n)
@@ -419,8 +433,8 @@ def mutants(page):
                 lines[start_line - 1] = line[:m.start()] + tok + line[m.end():]
                 _, outside = pass_e(Page(page.path, lines))
                 results.append(("E moves a bare locator cite out of the family block", outside > 0,
-                                f"{outside} flagged ({label(sid, a, b)} -> {rel} at doc line {start_line}, "
-                                f"block starts {bl[0][0]})"))
+                                (f"{outside} flagged ({label(sid, a, b)} -> {rel} at doc line {start_line}, "
+                                f"block starts {bl[0][0]})")))
                 moved = True
                 break
         if moved:

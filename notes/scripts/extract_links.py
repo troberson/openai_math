@@ -43,15 +43,22 @@ import sys
 from pathlib import Path
 
 import build_catalog as bc
-
 from catlib import tsv
 from catlib import yaml as Y
 from catlib.paths import (
     COMPARATOR_DIR as CHALLENGES,
+)
+from catlib.paths import (
     LAKEFILE,
-    LEDGER_TSV as LEDGER,
-    OAI_DIR as SOURCE,
     PREPRINTS,
+)
+from catlib.paths import (
+    LEDGER_TSV as LEDGER,
+)
+from catlib.paths import (
+    OAI_DIR as SOURCE,
+)
+from catlib.paths import (
     README_MD as README,
 )
 from catlib.promote import key_for, promote
@@ -67,13 +74,13 @@ FIELDS = ["edge", "source", "pattern", "count", "detail", "command", "not_meanin
 CMD = "python3 notes/scripts/extract_links.py"
 
 # Title-phrase normalization for the three name relations.
-NOUN = re.compile(r"\b(conjecture|conjectures|problem|problems|question|questions|hypothesis)\b", re.I)
+NOUN = re.compile(r"\b(conjecture|conjectures|problem|problems|question|questions|hypothesis)\b", re.IGNORECASE)
 # MSC classification statements, written as a rule rather than a stem search: a bare
 # \bMSC\b / "primary class" scan hits prose ("MSc thesis", "2-primary class groups").
 MSC = re.compile(
     r"MSC\s?-?\s?20\d\d|MSC\s*:|\\msc\b|mscclass|Mathematics Subject Classification"
     r"|Primary\s*:?\s*\d{2}\s?[A-Z]\s?xx",
-    re.I,
+    re.IGNORECASE,
 )
 HREF = re.compile(r"\\href\{(https?://[^}]+)\}")
 PREPRINT_URL = re.compile(r"/preprints/([^/\\]+)/([A-Za-z0-9_.\-]+\.pdf)")
@@ -109,7 +116,7 @@ def listed_dirs():
 
 def read_group(paths):
     """dir -> normalized text, over a file list."""
-    norm_text = {}
+    norm_text: dict[str, str] = {}
     for p in paths:
         t = p.read_text(encoding="utf-8", errors="replace")
         d = owner(p)
@@ -174,7 +181,7 @@ def legacy_title_proxy(titles, fam_dirs, scope):
     deep = sorted(p for p in PREPRINTS.glob("**/*.bib") if owner(p) in scope)
     out = {}
     for label, paths in (("depth<=3", shallow), ("all", deep)):
-        per = {}
+        per: dict[str, str] = {}
         for p in paths:
             d = owner(p)
             per[d] = per.get(d, "") + " " + p.read_text(encoding="utf-8", errors="replace").lower()
@@ -218,7 +225,7 @@ def main():
     bib_blob = Blob(read_group(bib_files))
     tex_blob = Blob(read_group(tex_files))
 
-    report = []
+    report: list[str] = []
 
     def row(edge, source, pattern, count, detail, not_meaning):
         rows_out.append(
@@ -234,7 +241,7 @@ def main():
         )
         report.append(f"{edge}: {count}  {detail}")
 
-    rows_out = []
+    rows_out: list[dict[str, str]] = []
 
     # --- catalog structure -------------------------------------------------
     _, fams = bc.parse_overview()
@@ -268,7 +275,7 @@ def main():
     )
 
     # --- comparator layer --------------------------------------------------
-    link_files = collections.Counter()
+    link_files: collections.Counter[str] = collections.Counter()
     docs_with_links = 0
     raw_links = 0
     docs_with_intra_dupes = []
@@ -328,16 +335,16 @@ def main():
     lake_pairs = re.findall(
         r'^require\s+(?:«(?P<name>[^»]+)»|(?P<plain>[A-Za-z0-9_.\-]+))\s+from\s+git\s*\n\s*"(?P<url>[^"]+)"',
         LAKEFILE.read_text(encoding="utf-8"),
-        re.M,
+        re.MULTILINE,
     )
     lake = [u for _n, _p, u in lake_pairs]
     # A declared library is reached by an import root whose name matches the require name, with
     # guillemets and hyphens folded out of both sides; `Schoenflies` reaches «schoenflies-lean».
     declared_slugs = [re.sub(r"[^a-z0-9]", "", (n or p).lower()) for n, p, _u in lake_pairs]
     CORE = {"OAI", "Lean", "Std", "Init", "Lake", "all"}
-    imports = collections.Counter()
+    imports: collections.Counter[str] = collections.Counter()
     for p in sorted(SOURCE.glob("**/*.lean")):
-        for root in re.findall(r"^\s*import\s+([A-Za-z_][A-Za-z0-9_.]*)", p.read_text(encoding="utf-8", errors="replace"), re.M):
+        for root in re.findall(r"^\s*import\s+([A-Za-z_][A-Za-z0-9_.]*)", p.read_text(encoding="utf-8", errors="replace"), re.MULTILINE):
             imports[root.split(".")[0]] += 1
     external = {r: c for r, c in imports.items() if r not in CORE}
     reached = {r for r in external if re.sub(r"[^a-z0-9]", "", r.lower()) in declared_slugs
@@ -365,7 +372,7 @@ def main():
     )
 
     # --- bibliographies ----------------------------------------------------
-    ent = sum(len(re.findall(r"^@[A-Za-z]+", p.read_text(encoding="utf-8", errors="replace"), re.M)) for p in bib_files)
+    ent = sum(len(re.findall(r"^@[A-Za-z]+", p.read_text(encoding="utf-8", errors="replace"), re.MULTILINE)) for p in bib_files)
     row(
         "manuscript->bibliography entry",
         "preprints/**/*.bib",
@@ -382,7 +389,7 @@ def main():
     edges = set()
     target_dirs, citing_dirs = set(), set()
     target_fams, citing_fams = set(), set()
-    target_fam_counts = collections.Counter()
+    target_fam_counts: collections.Counter[str] = collections.Counter()
     stale_targets, stale_hrefs = set(), 0
     self_family = 0
     unresolved = 0
@@ -420,7 +427,7 @@ def main():
         "chose to cite, not importance, and it is not a citation graph of the wider literature.",
     )
     # Whole-tree census: the same href scan over every .bib on disk, superseded editions included.
-    tree_stale = collections.Counter()
+    tree_stale: collections.Counter[str] = collections.Counter()
     tree_hrefs = 0
     for p in bib_tree:
         for u in HREF.findall(p.read_text(encoding="utf-8", errors="replace")):
@@ -429,7 +436,7 @@ def main():
                 tree_hrefs += 1
                 if m.group(1) not in dir2fam:
                     tree_stale[m.group(1)] += 1
-    tex_edges = collections.Counter()
+    tex_edges: collections.Counter[str] = collections.Counter()
     tex_target, tex_citing = set(), set()
     for p in tex_files:
         t = p.read_text(encoding="utf-8", errors="replace")
@@ -476,7 +483,7 @@ def main():
     )
 
     # --- reasoning traces --------------------------------------------------
-    tr = re.findall(r"^\|\s*(\d{3})\s*\|\s*\[[^\]]*\]\(reasoning_traces/([^)]+?)\.(?:pdf|tex)\)", README.read_text(encoding="utf-8"), re.M)
+    tr = re.findall(r"^\|\s*(\d{3})\s*\|\s*\[[^\]]*\]\(reasoning_traces/([^)]+?)\.(?:pdf|tex)\)", README.read_text(encoding="utf-8"), re.MULTILINE)
     fams_tr = {f for f, _ in tr}
     stems = {s for _, s in tr}
     trace_files = sorted(p for p in (REPO / "reasoning_traces").rglob("*") if p.is_file())
@@ -558,7 +565,7 @@ def main():
         "grouping cannot be read from classification codes. A bare `\\bMSC\\b` scan is not "
         "this rule — it hits 'MSc thesis' and '2-primary class groups'.",
     )
-    kw_bib = sum(len(re.findall(r"^\s*keywords\s*=", p.read_text(encoding="utf-8", errors="replace"), re.M | re.I)) for p in bib_files)
+    kw_bib = sum(len(re.findall(r"^\s*keywords\s*=", p.read_text(encoding="utf-8", errors="replace"), re.MULTILINE | re.IGNORECASE)) for p in bib_files)
     row(
         "bibliography entry->keywords field",
         "preprints/**/*.bib",

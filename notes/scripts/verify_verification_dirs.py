@@ -34,11 +34,13 @@ count in an entry-point table cell that no count phrase reads -- visible only to
 """
 import hashlib
 import json
+import pathlib
 import re
 import sys
 
 import extract_verification_dirs as evd
-from catlib import anchors, render as RD
+from catlib import anchors
+from catlib import render as RD
 from catlib.paths import LEDGER_TSV, NOTES, PREPRINTS, ROOT
 from catlib.preprints import bundle_of, entry_point, main_command
 from catlib.text import collapse_ws
@@ -154,7 +156,9 @@ def entry_measure():
             runsec.append(p.name)
         else:
             unnamed.append(p.name)
-    classes, no_entry, declaring = {}, [], []
+    classes: dict[str, int] = {}
+    no_entry: list[pathlib.Path] = []
+    declaring: list[pathlib.Path] = []
     for p in bundles:
         bundle = bundle_of(p)
         _, rule, _ = entry_point(bundle)
@@ -194,18 +198,18 @@ def entry_phrases(v):
         (f"**{v['ver']}** carry `## Verification` and **{v['run']}** carries", "README heading counts"),
         (f"**{len(v['unnamed'])}** bundles ship a `verification/` tree their README never mentions",
          "unnamed bundle count"),
-        (f"Each is {v['rows_lines']} lines and {v['rows_bytes']} bytes, and the two files are "
-         "**byte-identical**", "rows.txt size and identity"),
-        (f"**{c.get('top-level README.md', 0)}** top-level `README.md`, "
+        ((f"Each is {v['rows_lines']} lines and {v['rows_bytes']} bytes, and the two files are "
+         "**byte-identical**"), "rows.txt size and identity"),
+        ((f"**{c.get('top-level README.md', 0)}** top-level `README.md`, "
          f"**{c.get('subdirectory README.md', 0)}** a subdirectory `README.md`, "
          f"**{c.get('top-level script by name', 0)}** a top-level script by name, "
          f"**{c.get('subdirectory README.txt', 0)}** a subdirectory `README.txt`, "
-         f"**{v['no_entry']}** with **no entry point**", "entry-point class counts"),
+         f"**{v['no_entry']}** with **no entry point**"), "entry-point class counts"),
         (f"Rule 4 fires for **{v['rule4']}** bundles", "rule 4 firing count"),
-        (f"the {WORDS[v['declaring']]} family-348 dirs that declare `main_command` are claimed by "
-         "rule 1 first", "manifest main_command count"),
-        (f"The {v['no_entry']} with no entry point are the two 269 dirs above plus "
-         f"{', '.join(v['no_entry_fams'][:-1])} and {v['no_entry_fams'][-1]}",
+        ((f"the {WORDS[v['declaring']]} family-348 dirs that declare `main_command` are claimed by "
+         "rule 1 first"), "manifest main_command count"),
+        ((f"The {v['no_entry']} with no entry point are the two 269 dirs above plus "
+         f"{', '.join(v['no_entry_fams'][:-1])} and {v['no_entry_fams'][-1]}"),
          "no-entry-point family list"),
     ]
 
@@ -217,14 +221,14 @@ def count_phrases(v):
          "shared/identical file counts"),
         (f"and **{v['differ']} differ**", "differing file count"),
         (f"**{v['identities']}** identities", "identities count"),
-        (f"**{v['interval_rows']}** interval certificate rows (**{v['reported']}** reported + "
-         f"**{v['supplementary']}** supplementary)", "interval row counts"),
-        (f"**{v['triangle_rows']}** triangle certificate rows (**{v['det_floor']}** carrying a "
-         "determinant floor)", "triangle row counts"),
+        ((f"**{v['interval_rows']}** interval certificate rows (**{v['reported']}** reported + "
+         f"**{v['supplementary']}** supplementary)"), "interval row counts"),
+        ((f"**{v['triangle_rows']}** triangle certificate rows (**{v['det_floor']}** carrying a "
+         "determinant floor)"), "triangle row counts"),
         (f"**{v['exact']}** exact-value assertions", "exact-value count"),
         (f"over **{v['subintervals']}** subinterval records", "subinterval record count"),
-        (f"`verify.py` is {v['lines']} lines with {v['checkfns']} `check_*` functions "
-         f"(at lines {', '.join(str(n) for n in v['fnlines'])})", "verify.py structure counts"),
+        ((f"`verify.py` is {v['lines']} lines with {v['checkfns']} `check_*` functions "
+         f"(at lines {', '.join(str(n) for n in v['fnlines'])})"), "verify.py structure counts"),
         (f"**{v['printed_keys']}** `scalar_claim` keys name a printed value", "printed-key count"),
         (f"through `require` ({v['require']} occurrences)", "require occurrence count"),
         (f"**{v['passed']}** such occurrences in `results.json`", "passed-record count"),
@@ -234,8 +238,8 @@ def count_phrases(v):
          "portability check counts"),
         (f"tests naming a rejection: **{v['ends_rejected']}** whose names end in `rejected`",
          "negative-test name counts"),
-        (f"`COVERAGE.md` points at `results.json`, `verify.py`, `polynomial.py`, and `README.md`; "
-         f"all {WORDS[v['cov_present']]} are present in both directories",
+        ((f"`COVERAGE.md` points at `results.json`, `verify.py`, `polynomial.py`, and `README.md`; "
+         f"all {WORDS[v['cov_present']]} are present in both directories"),
          "coverage-file artifact presence"),
     ]
 
@@ -267,8 +271,8 @@ def ledger_phrases(v):
     return [
         (f"**{v['dirs']} dirs over\n{v['fams']} families**", "verification dir/family totals"),
         (f"({v['fam_list']})", "verification family list"),
-        (f"`covmd` counts {v['covn']} `verification/COVERAGE.md`, both in family "
-         f"{v['cov_fams'][0]}", "covmd claim"),
+        ((f"`covmd` counts {v['covn']} `verification/COVERAGE.md`, both in family "
+         f"{v['cov_fams'][0]}"), "covmd claim"),
         (f"`inputs` counts {v['inp_n']} `INPUTS.md` ({v['inp_list']})", "inputs claim"),
         (f"the ledger's `verification` value of {v['v348']} for family 348",
          "family 348 verification value"),
@@ -390,13 +394,13 @@ def check(text, full_page):
             problems.append(f"entry-point count mismatch ({label}): page does not contain {phrase!r}")
 
     entry_body = section_bodies(text)[0][1]
-    rows = re.findall(r"^\| (\d{3}) \|", entry_body, re.M)
+    rows = re.findall(r"^\| (\d{3}) \|", entry_body, re.MULTILINE)
     if len(rows) != e["dirs"]:
         problems.append(f"entry-point table has {len(rows)} rows, the bundle count is {e['dirs']}")
     elif rows != e["table"]:
         bad = [f"{i + 1}: {r} != {t}" for i, (r, t) in enumerate(zip(rows, e["table"], strict=False)) if r != t]
         problems.append(f"entry-point table family order: {'; '.join(bad)}")
-    bullets = re.findall(r"^- `preprints/([^`]+)`", entry_body, re.M)
+    bullets = re.findall(r"^- `preprints/([^`]+)`", entry_body, re.MULTILINE)
     if len(bullets) != len(e["unnamed"]):
         problems.append(f"unnamed-bundle list has {len(bullets)} bullets, the count is {len(e['unnamed'])}")
     for slug in bullets:
@@ -456,7 +460,7 @@ MUTANTS = {
                                                        "Rule 4 fires for **1** bundles", 1),
     "entry-section ledger sum altered": lambda t: t.replace("sums to 30 dirs over 22 families",
                                                             "sums to 31 dirs over 22 families", 1),
-    "table row deleted": lambda t: re.sub(r"^\| 371 \| .*$\n", "", t, count=1, flags=re.M),
+    "table row deleted": lambda t: re.sub(r"^\| 371 \| .*$\n", "", t, count=1, flags=re.MULTILINE),
     # Prose no count phrase reads: the script's line count inside the family-067 entry-point cell.
     # The table check reads only the family column, so only the render diff can see it.
     "entry cell line count altered": lambda t: t.replace("a 167-line script", "a 168-line script", 1),

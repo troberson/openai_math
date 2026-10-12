@@ -25,8 +25,8 @@ from collections.abc import Iterable, Mapping
 from catlib.paths import PREPRINTS, SUBFINDINGS_TSV, rel
 from catlib.tsv import read_rows
 
-ENTRY = re.compile(r"^\s*@\s*(\w+)\s*\{\s*([^,]*)\s*,", re.M)
-ATLINE = re.compile(r"^\s*@", re.M)
+ENTRY = re.compile(r"^\s*@\s*(\w+)\s*\{\s*([^,]*)\s*,", re.MULTILINE)
+ATLINE = re.compile(r"^\s*@", re.MULTILINE)
 ACCENT = re.compile(r"\\(?:['`^~=\".](?![a-zA-Z])|c|v|u|H|k|r|d|b|t|o)\{?([a-zA-Z])\}?")
 CITE = re.compile(r"\\cite[a-zA-Z]*\*?(?:\[[^\]]*\])?\{([^}]*)\}")
 RELEASE_HREF = re.compile(r"\\href\{[^}]*/preprints/([^/]+)/[^}]*\.pdf\}")
@@ -63,7 +63,7 @@ def bib_files() -> list[str]:
 
 def field(body: str, name: str) -> str | None:
     """Raw value of `name = {...}` (or `name = "..."`) in an entry body, or None."""
-    m = re.search(r"\b%s\s*=\s*([{\"\"])" % name, body, re.I)
+    m = re.search(r"\b%s\s*=\s*([{\"\"])" % name, body, re.IGNORECASE)
     if not m:
         return None
     j = m.end()

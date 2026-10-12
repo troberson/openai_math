@@ -34,7 +34,8 @@ import re
 import sys
 
 import extract_t0_chains as tc
-from catlib import anchors, overview, render as RD
+from catlib import anchors, overview
+from catlib import render as RD
 from catlib.bib import release_bib_edges
 from catlib.ledger import chain_edges, companion_word_fams
 from catlib.paths import NOTES, ROOT, owner
@@ -123,24 +124,24 @@ def count_phrases(m):
     return [
         (f"**{len(pop)}** families carrying **{m['mss_n']}** manuscripts", "population"),
         (f"**{len(v['paps2'])}** families with exactly 2 manuscripts", "repo-wide paps==2"),
-        (f"`T0:{v['paps2_tiers']['T0']}`, `T2:{v['paps2_tiers']['T2']}`, "
-         f"`T3:{v['paps2_tiers']['T3']}`", "paps==2 tiers"),
+        ((f"`T0:{v['paps2_tiers']['T0']}`, `T2:{v['paps2_tiers']['T2']}`, "
+         f"`T3:{v['paps2_tiers']['T3']}`"), "paps==2 tiers"),
         (f"**{len(v['t0_paps2'])}** at T0", "T0 paps==2"),
-        (f"**{len(v['first_pass'])}** were read in the first pass "
-         f"({', '.join(v['first_pass'])})", "first pass"),
-        (f"holds for **{len(v['zero_signal'])}** of the {len(pop)} "
-         f"and fails for **{len(v['signal_outliers'])}**", "coverage signal"),
+        ((f"**{len(v['first_pass'])}** were read in the first pass "
+         f"({', '.join(v['first_pass'])})"), "first pass"),
+        ((f"holds for **{len(v['zero_signal'])}** of the {len(pop)} "
+         f"and fails for **{len(v['signal_outliers'])}**"), "coverage signal"),
         ("`verification = 2`", "268 verification"),
         (f"Over **{len(rows)}** families that yields **{len(m['chain_edges'])}** edges", "chain edges"),
-        (f"fires on **{len(cw)}** families — {', '.join(cw)} — and "
-         f"**{sum(1 for f in cw if rows[f]['companions'])}** of them carry a `companions` edge",
+        ((f"fires on **{len(cw)}** families — {', '.join(cw)} — and "
+         f"**{sum(1 for f in cw if rows[f]['companions'])}** of them carry a `companions` edge"),
          "companion_word"),
         (f"**{len(cw_pop)}** use the word ({', '.join(cw_pop)})", "companion_word in population"),
-        (f"**{len(m['with_edge'])}** of the {len(pop)} cite their sibling: "
-         f"**{len(m['mutual_fams'])}** mutual pairs and **{len(m['oneway'])}** one-directional",
+        ((f"**{len(m['with_edge'])}** of the {len(pop)} cite their sibling: "
+         f"**{len(m['mutual_fams'])}** mutual pairs and **{len(m['oneway'])}** one-directional"),
          "intra-family edges"),
-        (f"**{len(m['noedge'])}** cite no sibling, and **{len(m['nobib'])}** of those "
-         f"({', '.join(m['nobib'])})", "no-edge families"),
+        ((f"**{len(m['noedge'])}** cite no sibling, and **{len(m['nobib'])}** of those "
+         f"({', '.join(m['nobib'])})"), "no-edge families"),
     ]
 
 
@@ -362,8 +363,8 @@ def check_files(_m, problems):
 def check(text, m):
     lines = text.split("\n")
     flat = norm(text)
-    cache = {}
-    problems = []
+    cache: dict[str, list[str]] = {}
+    problems: list[str] = []
     n_anchor = check_anchors(lines, cache, problems)
     n_block = check_blocks(lines, cache, problems)
     n_quote = check_quotes(lines, cache, problems)

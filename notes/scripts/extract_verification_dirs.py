@@ -32,7 +32,7 @@ from catlib.preprints import bundle_of, entry_point
 
 def families_by_slug():
     order, fams = parse_overview()
-    out = {}
+    out: dict[str, str] = {}
     for fam in order:
         for p in fams[fam]["tex_paps"]:
             out.setdefault(owner(p), fam)
@@ -96,7 +96,7 @@ def main():
     print(f"families carrying a bundle {len(fams_with_bundle)}")
 
     print("== per-bundle entry point")
-    classes = {}
+    classes: dict[str, int] = {}
     no_entry = []
     named_by_slug = {n: (h, ln) for n, h, ln in named}
     run_by_slug = {n: (h, ln) for n, h, ln in runsec}

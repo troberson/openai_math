@@ -88,10 +88,10 @@ def block(target: str, args: list[str], wall: float, before: dict[str, int],
          after: dict[str, int]) -> list[str]:
     repeats = {p: c for p, c in opens.items() if c > 1}
     out = [f"[probe2] target {target} {' '.join(args)}",
-           f"[probe2] wall {wall:.2f}  opens {sum(opens.values())}  distinct {len(opens)}  "
-           f"repeats {sum(c - 1 for c in repeats.values())}",
-           f"[probe2] rchar MB {(after.get('rchar', 0) - before.get('rchar', 0)) / 1e6:.1f}  "
-           f"read_bytes MB {(after.get('read_bytes', 0) - before.get('read_bytes', 0)) / 1e6:.1f}",
+           (f"[probe2] wall {wall:.2f}  opens {sum(opens.values())}  distinct {len(opens)}  "
+           f"repeats {sum(c - 1 for c in repeats.values())}"),
+           (f"[probe2] rchar MB {(after.get('rchar', 0) - before.get('rchar', 0)) / 1e6:.1f}  "
+           f"read_bytes MB {(after.get('read_bytes', 0) - before.get('read_bytes', 0)) / 1e6:.1f}"),
            "[probe2] buckets:"]
     for b, c in collections.Counter(bucket(p) for p in opens.elements()).most_common():
         out.append(f"          {b:26} {c}")

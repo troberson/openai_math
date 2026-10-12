@@ -26,6 +26,7 @@ import csv
 import math
 import pathlib
 import sys
+from typing import Any
 
 REPO = pathlib.Path(__file__).resolve().parents[2]
 SOURCES = REPO / "notes" / "tables" / "sources.tsv"
@@ -95,7 +96,7 @@ def median(vals):
 
 
 def build_families(sources, ledger):
-    fams = {}
+    fams: dict[str, dict[str, Any]] = {}
     for row in sources:
         fam = row["fam"]
         d = fams.setdefault(fam, {"proofs": 0, "thms": 0, "bytes": 0, "rows": 0})
@@ -154,7 +155,7 @@ def gate_checks(sources, ledger, fams):
         problems.append(f"proofs sum {sum(int(r['proofs']) for r in sources)} != {EXPECTED_PROOFS}")
     if sum(int(r["thms"]) for r in sources) != EXPECTED_THMS:
         problems.append(f"thms sum {sum(int(r['thms']) for r in sources)} != {EXPECTED_THMS}")
-    tiers = {}
+    tiers: dict[str, int] = {}
     for f in led_fams:
         tiers[fams[f]["tier"]] = tiers.get(fams[f]["tier"], 0) + 1
     if {k: tiers.get(k, 0) for k in EXPECTED_TIERS} != EXPECTED_TIERS:
@@ -190,7 +191,7 @@ def report(fams, ledger, sources, quiet=False):
         print(f"sources rows {len(sources)} | families {len(fams)} | "
               f"proofs {sum(d['proofs'] for d in fams.values())} | "
               f"thms {sum(d['thms'] for d in fams.values())}")
-        tiers = {}
+        tiers: dict[str, int] = {}
         for d in fams.values():
             tiers[d["tier"]] = tiers.get(d["tier"], 0) + 1
         print("tiers " + " ".join(f"{k}:{tiers.get(k, 0)}" for k in ("T3", "T2", "T1", "T0")))

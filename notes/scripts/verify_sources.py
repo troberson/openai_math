@@ -33,7 +33,8 @@ import re
 import sys
 
 import build_sources as S
-from catlib import overview, preprints, render as RD, tsv
+from catlib import overview, preprints, tsv
+from catlib import render as RD
 from catlib.paths import LEDGER_TSV, PREPRINTS, SUBFINDINGS_TSV
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
@@ -75,9 +76,9 @@ def measure():
     ledger = tsv.read_rows(LEDGER_TSV)
     paps = {r["fam"]: int(r["paps"]) for r in ledger}
 
-    rootdist = collections.Counter()
-    outcomes = collections.Counter()
-    single_names = collections.Counter()
+    rootdist: collections.Counter[int] = collections.Counter()
+    outcomes: collections.Counter[str] = collections.Counter()
+    single_names: collections.Counter[str] = collections.Counter()
     main_no_dc = 0
     for d in dirs:
         roots = preprints.roots_of(d)
@@ -97,7 +98,7 @@ def measure():
     # The checker keeps its own walk: a checker that re-derives the env counts through the writer's
     # record store proves nothing about the writer, so this recomputation stays on the corpus.
     six = 0
-    per_name = collections.Counter()
+    per_name: collections.Counter[str] = collections.Counter()
     for d in dirs:
         ts = preprints.texts(preprints.tex_files(d))
         declared = preprints.declared_envs(ts)
@@ -175,16 +176,16 @@ def count_phrases(m):
         (f"| **{f(s['thms'])}** |", "thms count"),
         (f"| **{s['abstract']} of {m['rows']}** |", "abstract count"),
         (f"| **{f(s['tex_bytes'])}** (mean {f(round(m['mean_bytes']))} per dir) |", "tex bytes"),
-        (f"**main.tex {o['main.tex']}, paper.tex {o['paper.tex']}, single-root {o['single-root']}, "
-         f"flagged {o['flagged']}.**", "main-file outcomes"),
+        ((f"**main.tex {o['main.tex']}, paper.tex {o['paper.tex']}, single-root {o['single-root']}, "
+         f"flagged {o['flagged']}.**"), "main-file outcomes"),
         (f"because **{m['main_no_dc']}** `main.tex` files in the corpus", "main.tex without documentclass"),
-        (f"`preamble.tex` **{sn['preamble.tex']}**, `manuscript.tex` **{sn['manuscript.tex']}**, "
-         f"`common.tex` **{sn['common.tex']}**", "single-root name counts"),
+        ((f"`preamble.tex` **{sn['preamble.tex']}**, `manuscript.tex` **{sn['manuscript.tex']}**, "
+         f"`common.tex` **{sn['common.tex']}**"), "single-root name counts"),
         (f"and **{sum(c for n, c in sn.items()) - sn['preamble.tex'] - sn['manuscript.tex'] - sn['common.tex']}** singletons",
          "single-root singleton count"),
-        (f"`preprints/` holds **{m['dirs']}** directories: the **{m['listed']}** the release lists, "
+        ((f"`preprints/` holds **{m['dirs']}** directories: the **{m['listed']}** the release lists, "
          f"**{m['superseded']}** superseded editions upstream keeps beside their replacements, and "
-         f"**{m['notices']}** withdrawal notices", "disk census"),
+         f"**{m['notices']}** withdrawal notices"), "disk census"),
         (f"**Every one of the {m['rows']} resolved main files sits under a `build/` directory.**",
          "main file under build"),
         (f"and **{m['substring_multi']}** with two or three", "substring multi-root count"),
@@ -195,8 +196,8 @@ def count_phrases(m):
         (f"quotes **{f(m['six'])}** for", "six-name count"),
         (f"The {m['decl'] - m['six']} gap is names", "env gap"),
         (f"{gap}. The TSV column carries the declared-rule figure.", "env gap breakdown"),
-        (f"rows written **{m['rows']}**, listed manuscript dirs **{m['listed']}**, "
-         f"preprint dirs on disk **{m['dirs']}**", "report reconciliation"),
+        ((f"rows written **{m['rows']}**, listed manuscript dirs **{m['listed']}**, "
+         f"preprint dirs on disk **{m['dirs']}**"), "report reconciliation"),
         (f"**{m['pdf_ov_distinct']}** distinct vs `sources.tsv`", "overview path distinct count"),
         (f"`pdf` **{m['pdf_distinct']}** distinct", "pdf distinct count"),
         (f"at **{m['formalized']}** of {m['rows']} manuscripts", "formalized share"),

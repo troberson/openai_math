@@ -53,7 +53,7 @@ def main():
           f"max {max(counts)}, mean {sum(counts) / len(counts):.2f}")
 
     for name, phrases in (("narrow", NARROW), ("broad", BROAD)):
-        per_phrase = {}
+        per_phrase: dict[str, list[str]] = {}
         hits = []
         for stem, (_, _, sec) in sections.items():
             text = " ".join(sec).lower()

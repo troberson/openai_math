@@ -33,8 +33,8 @@ import pathlib
 import re
 import statistics
 import sys
-
 from functools import cache
+from typing import Any
 
 from catlib import ledger, overview
 from catlib.promote import key_for, promote
@@ -83,7 +83,7 @@ def manuscript_abstract(d):
         found = []
         for p in sorted((PRE / d).rglob("*.tex")):
             t = p.read_text(encoding="utf-8", errors="replace")
-            for m in re.findall(r"\\begin\{abstract\}(.*?)\\end\{abstract\}", t, re.S):
+            for m in re.findall(r"\\begin\{abstract\}(.*?)\\end\{abstract\}", t, re.DOTALL):
                 found.append((str(p.relative_to(PRE)), norm(m)))
         _CACHE[d] = found
     return _CACHE[d]
@@ -160,7 +160,7 @@ def measure():
                     "ov": fams[r["fam"]]["abstract"], "ms": best[1]})
 
     # family-level: best-matching manuscript per family
-    byfam = {}
+    byfam: dict[str, dict[str, Any]] = {}
     for m in man:
         cur = byfam.get(m["fam"])
         if cur is None or m["ratio"] > cur["ratio"]:
@@ -168,10 +168,10 @@ def measure():
     fams_sorted = sorted(byfam)
 
     # tag-level: ledger rules over the overview text vs over the family's manuscript abstracts
-    dirs_by_fam = {}
+    dirs_by_fam: dict[str, list[str]] = {}
     for r in rows:
         dirs_by_fam.setdefault(r["fam"], []).append(r["dir"])
-    tag_dis = {}
+    tag_dis: dict[str, dict[str, list[str]]] = {}
     tag_tot = {s: {"ov": 0, "ms": 0, "man": 0} for s in sorted(ledger.SHAPES)}
     cond_dis = []
     cond_detail = []
@@ -335,7 +335,7 @@ def write_tsv(m):
     `ov_only`/`ms_only` are their set differences. Rows are the unit the bead asked for — every
     divergent family gets a row, which at 372 rows is a table, not prose.
     """
-    n_man = {}
+    n_man: dict[str, int] = {}
     for x in m["man"]:
         n_man[x["fam"]] = n_man.get(x["fam"], 0) + 1
     buf = io.StringIO(newline="")

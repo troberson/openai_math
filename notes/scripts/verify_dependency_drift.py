@@ -26,15 +26,17 @@ Report-only; writes nothing. Five passes:
 --mutant runs the built-in mutations and fails if any goes uncaught, the last of them a prose
 row count outside every count phrase -- visible only to pass 5.
 """
+import collections
 import csv
 import pathlib
 import re
 import statistics
 import sys
-import collections
 
-from catlib import render as RD, yaml as Y
-from catlib.paths import LAKEFILE, LAKE_MANIFEST as MANIFEST
+from catlib import render as RD
+from catlib import yaml as Y
+from catlib.paths import LAKE_MANIFEST as MANIFEST
+from catlib.paths import LAKEFILE
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PAGE = ROOT / "notes" / "dependency-drift.md"
@@ -52,7 +54,7 @@ SPAN = re.compile(r"`([^`\n]+)`")
 REQUIRE = re.compile(
     r'^require\s+(?:«(?P<l1>[^»]+)»|(?P<l2>[A-Za-z0-9_.\-]+))\s+from\s+git\s*\n'
     r'\s*"(?P<url>[^"]+)"\s*@\s*"(?P<commit>[0-9a-f]+)"',
-    re.M,
+    re.MULTILINE,
 )
 CODEISH = ('s!"', '=>', ':=', '--', '(', ')', '#', '"', '<|', '{', '}')
 PATHISH = re.compile(r"(\.lean|\.md|\.yaml|\.tsv|\.json|\.patch|\.toml|\.txt)$")
@@ -116,7 +118,7 @@ def patch_info():
         files = []
         for i in heads:
             tail = lines[i].split()[-1]
-            files.append(tail[2:] if tail.startswith("b/") else tail)
+            files.append(tail.removeprefix("b/"))
         froms, tos = [], []
         for k, i in enumerate(heads):
             end = heads[k + 1] if k + 1 < len(heads) else len(lines)
@@ -161,8 +163,7 @@ def yaml_order_violations(imports_by_key):
     out, prev = [], None
     for i, url in enumerate(urls, start=1):
         last = url.rstrip("/").split("/")[-1]
-        if last.endswith(".git"):
-            last = last[: -len(".git")]
+        last = last.removesuffix(".git")
         key = re.sub(r"[0-9]+$", "", re.sub(r"[^a-z0-9]", "", last.lower()))
         for suffix in ("lean4", "lean"):
             if key.endswith(suffix) and len(key) > len(suffix):
@@ -172,8 +173,9 @@ def yaml_order_violations(imports_by_key):
         cnt = imports_by_key.get(key)
         if cnt is None:
             continue
-        if prev is not None and cnt > prev[1]:
-            out.append((i, last, cnt, prev[2], prev[1]))
+        if prev is not None:
+            if cnt > prev[1]:
+                out.append((i, last, cnt, prev[2], prev[1]))
         prev = (i, cnt, last)
     return out
 
@@ -193,14 +195,13 @@ def measure():
     by_name = {r["name"]: r for r in declared}
     zero = sorted(r["name"] for r in declared if r["imports"] == 0)
     patched = sorted(r["name"] for r in declared if r["patch_file"] != "none")
-    froms = collections.Counter()
+    froms: collections.Counter[str] = collections.Counter()
     for info in patches.values():
         froms.update(info["froms"])
     imports_by_key = {}
     for r in declared:
         last = r["repo_url"].rstrip("/").split("/")[-1]
-        if last.endswith(".git"):
-            last = last[: -len(".git")]
+        last = last.removesuffix(".git")
         key = re.sub(r"[0-9]+$", "", re.sub(r"[^a-z0-9]", "", last.lower()))
         for suffix in ("lean4", "lean"):
             if key.endswith(suffix) and len(key) > len(suffix):
@@ -246,7 +247,7 @@ def measure():
 def table_rows(text):
     """(name, imports, patch lines) for the patch-size table."""
     rows = []
-    for _m in re.finditer(r"^\| ([\w.-]+) \| (\*?\*?)(\d+)\2? \| (\*?\*?)([\d,]+)\2? \|$", text, re.M):
+    for _m in re.finditer(r"^\| ([\w.-]+) \| (\*?\*?)(\d+)\2? \| (\*?\*?)([\d,]+)\2? \|$", text, re.MULTILINE):
         pass
     for ln in text.split("\n"):
         if not ln.startswith("| ") or ln.startswith("|---"):

@@ -32,10 +32,24 @@ from collections import Counter
 from pathlib import Path
 
 from catlib import yaml as Y
-from catlib.ledger import counterex_broad, resolves_named, shapes_of, tier_of, versions_of
+from catlib.ledger import (
+    counterex_broad,
+    resolves_named,
+    shapes_of,
+    tier_of,
+    versions_of,
+)
 from catlib.overview import parse_contents, parse_overview
-from catlib.paths import (COMPARATOR_DIR, INDEX_DIR, NOTES, PREPRINTS, REASONING_TRACES, ROOT,
-                          SCRIPTS, SUMMARIES_DIR)
+from catlib.paths import (
+    COMPARATOR_DIR,
+    INDEX_DIR,
+    NOTES,
+    PREPRINTS,
+    REASONING_TRACES,
+    ROOT,
+    SCRIPTS,
+    SUMMARIES_DIR,
+)
 from catlib.text import strip_markup
 from catlib.tsv import read_rows
 
@@ -159,7 +173,7 @@ def ledger():
             "conditional": 1 if "conditional" in shapes else 0,
             "named": resolves_named(info["title"], info["abstract"]),
             "cxbroad": counterex_broad(info["title"], info["abstract"]),
-            "companion": 1 if re.search(r"\bcompanion", info["abstract"], re.I) else 0,
+            "companion": 1 if re.search(r"\bcompanion", info["abstract"], re.IGNORECASE) else 0,
             "versions": versions_of(all_paths),
             "summary": 1 if fam in summary_fams else 0,
             "paths": all_paths,
@@ -337,8 +351,8 @@ def needles(m):
         f"carries **{m['standing']}** rows",
         (f"**{m['pins']}** declared library pins, **{m['patches']}** patches over "
          f"**{m['patch_lines']:,}** lines"),
-        f"**{m['index_pages']:,}** pages carry **{m['disk_links']:,}** links with "
-        f"**{m['disk_broken']}** broken",
+        (f"**{m['index_pages']:,}** pages carry **{m['disk_links']:,}** links with "
+        f"**{m['disk_broken']}** broken"),
         f"the 10-gap against **{m['scope_configs']}**",
         (f"**{m['bib_edges']}** manuscript→manuscript edges over **{m['bib_fams']}** of "
          f"{m['fams']} families, **{m['bib_cross']}** crossing"),

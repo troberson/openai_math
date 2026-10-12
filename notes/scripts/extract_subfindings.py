@@ -29,7 +29,6 @@ import sys
 from collections import Counter
 
 import build_catalog as bc
-
 from catlib import tsv
 from catlib import yaml as Y
 from catlib.promote import key_for, promote
@@ -52,7 +51,7 @@ def resultentry_link_fields():
     """{fam: raw body of the 4th \resultentry brace group}, by slice-based brace reading."""
     text = (ROOT / "overview.tex").read_text(encoding="utf-8")
     i = text.index("\\begin{document}")
-    links = {}
+    links: dict[str, str] = {}
     while True:
         ns = text.find("\\cataloguesection{", i)
         nr = text.find("\\resultentry{", i)
@@ -67,7 +66,7 @@ def resultentry_link_fields():
 
 def href_pairs(body):
     """[(target, display title)] for every \\href{...}{...} in a 4th-field body, in order."""
-    out = []
+    out: list[tuple[str, str]] = []
     k = 0
     while True:
         h = body.find("\\href", k)

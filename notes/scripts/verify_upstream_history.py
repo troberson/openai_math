@@ -59,7 +59,7 @@ UP = "301488868"  # the upstream commit the 3014888 page discusses
 PRE = "9b68bc538"  # our last pre-merge commit: the "Before" column of the ledger table
 
 ANCHOR = re.compile(r"`([^`\n]*?)?:([0-9]+)(?:-([0-9]+))?`")
-QUOTE = re.compile(r'\*"([^"]*?)"\*', re.S)
+QUOTE = re.compile(r'\*"([^"]*?)"\*', re.DOTALL)
 LINK = re.compile(r"\]\(([^)\s]+)\)")
 # Full month names, not abbreviations: the release writes September/October in every slug (576 and
 # 172 of the 749 preprints/ dirs), so an `Oct` alternation matches nothing. The trailing slash is
@@ -273,7 +273,7 @@ def resolve_anchor(path, last_explicit, pool, problems, where):
             return cand[0]
         problems.append(f"{where}: suffix anchor {path!r} resolves to {len(cand)} files")
         return None
-    rel = path[3:] if path.startswith("../") else path
+    rel = path.removeprefix("../")
     if not (ROOT / rel).is_file():
         problems.append(f"{where}: anchor path {path!r} is not a file")
         return None
@@ -392,18 +392,18 @@ def check_counts(name, text, p, problems):
     cite = ", ".join(f"**{f}** ({n})" for f, n in sorted(p["citation_only"].items()))
     for phrase in [
         f"**{p['added']} files added, {p['deleted']} deleted, {p['modified']} modified**",
-        f"repaired {nrep} manuscripts, re-issued {ncite} more for citations alone, and added "
-        f"{len(p['new_configs'])} formalizations",
-        f"The manuscript count moves **{p['sum_paps'][0]} → {p['sum_paps'][1]}** and the family count "
-        f"holds at **{p['ledger_rows'][1]}**",
+        (f"repaired {nrep} manuscripts, re-issued {ncite} more for citations alone, and added "
+        f"{len(p['new_configs'])} formalizations"),
+        (f"The manuscript count moves **{p['sum_paps'][0]} → {p['sum_paps'][1]}** and the family count "
+        f"holds at **{p['ledger_rows'][1]}**"),
         f"reads {p['listed_form']} formalized manuscripts of the {p['listed']} listed",
         f"Fixes: {nrep} manuscripts, {nrep - 1} of them proof repairs",
         f"so **{nrep - 1}** of the {nrep} carry mathematical repair",
         f"Citation-only re-issues: {ncite} manuscripts",
         cite,
         f"Additional formalizations: {len(p['new_configs'])} configs, {p['new_entries']} declarations",
-        f"grows from {p['entries'][0]} `main_results` entries over {p['configs'][0]} configs to "
-        f"**{p['entries'][1]} entries over {p['configs'][1]} configs**",
+        (f"grows from {p['entries'][0]} `main_results` entries over {p['configs'][0]} configs to "
+        f"**{p['entries'][1]} entries over {p['configs'][1]} configs**"),
         f"grows **{p['challenges'][0]} → {p['challenges'][1]}** configs",
         f"the only such change, {p['companion_pre']} families carry it then **{p['companion_post']}**",
         f"**{len(p['resultentry_changed'])}** `\\resultentry` lines are rewritten",
@@ -425,14 +425,14 @@ def check_counts(name, text, p, problems):
         f"| Families with a formalized manuscript | {p['fam_form'][0]} | {p['fam_form'][1]} |",
         f"| Scope notes | {p['scope_notes'][0]} | {p['scope_notes'][1]} |",
         f"| Comparator challenges | {p['challenges'][0]} | {p['challenges'][1]} |",
-        f"| `main_results` entries / configs | {p['entries'][0]} / {p['configs'][0]} | "
-        f"{p['entries'][1]} / {p['configs'][1]} |",
-        f"| T3 / T2 / T1 / T0 | {t0['T3']} / {t0['T2']} / {t0['T1']} / {t0['T0']} | "
-        f"{t2['T3']} / {t2['T2']} / {t2['T1']} / {t2['T0']} |",
+        (f"| `main_results` entries / configs | {p['entries'][0]} / {p['configs'][0]} | "
+        f"{p['entries'][1]} / {p['configs'][1]} |"),
+        (f"| T3 / T2 / T1 / T0 | {t0['T3']} / {t0['T2']} / {t0['T1']} / {t0['T0']} | "
+        f"{t2['T3']} / {t2['T2']} / {t2['T1']} / {t2['T0']} |"),
         f"**T0 → T3** for {' '.join(t0m)}, **T2 → T3** for {' '.join(t2m)}",
         f"{' '.join(lose)}** loses its formalization flag",
-        f"Verification bundles ({p['sum_verification'][1]}), `INPUTS.md` ({p['sum_inputs'][1]}), "
-        f"`COVERAGE.md` ({p['sum_covmd'][1]}), reasoning traces ({p['sum_trace'][1]})",
+        (f"Verification bundles ({p['sum_verification'][1]}), `INPUTS.md` ({p['sum_inputs'][1]}), "
+        f"`COVERAGE.md` ({p['sum_covmd'][1]}), reasoning traces ({p['sum_trace'][1]})"),
         f"formalization is **{p['listed_form']}**, not {p['sources'][1]}",
         f"One of the {p['sources'][1]} `sources:` ids",
         f"All {p['sources'][1]} ids resolve",
@@ -545,7 +545,7 @@ def mutants(p):
 def main():
     mutant = "--mutant" in sys.argv
     p = measure()
-    problems = []
+    problems: list[str] = []
     slug_hits = 0
     for name in PAGES:
         text = read_text(ROOT / name)

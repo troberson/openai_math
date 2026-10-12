@@ -30,6 +30,8 @@ import re
 from catlib import yaml as Y
 from catlib.paths import (
     COMPARATOR_DIR as CHAL,
+)
+from catlib.paths import (
     LEDGER_TSV,
     LINKS_TSV,
     OAI_DIR,
@@ -89,7 +91,7 @@ def population():
     bib_entries = 0
     for b in bib:
         txt = b.read_text(encoding="utf-8", errors="replace")
-        bib_entries += len(re.findall(r"^\s*@\w+\s*{", txt, re.M))
+        bib_entries += len(re.findall(r"^\s*@\w+\s*{", txt, re.MULTILINE))
 
     trace_files = [p for p in sorted((ROOT / "reasoning_traces").rglob("*")) if p.is_file()]
     ver = [r for r in rows if int(r["verification"]) > 0]

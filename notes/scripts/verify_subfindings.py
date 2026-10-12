@@ -32,7 +32,6 @@ from collections import Counter
 
 import build_catalog as bc
 import extract_subfindings as ex
-
 from catlib import yaml as Y
 
 ROOT = bc.ROOT
@@ -101,7 +100,7 @@ def check(header, rows):
     man = [r for r in rows if r.get("kind") == "manuscript"]
     comp = [r for r in rows if r.get("kind") == "comparator-link"]
 
-    by_fam = {}
+    by_fam: dict[str, list[dict[str, str]]] = {}
     for r in man:
         by_fam.setdefault(r["fam"], []).append(r)
     for fam, want in sorted(paths.items()):
@@ -132,7 +131,7 @@ def check(header, rows):
     for fam in sorted(set(by_fam) - set(paths)):
         problems.append(f"{fam}: manuscript rows with no hrefs in overview.tex")
 
-    comp_by_fam = {}
+    comp_by_fam: dict[str, list[dict[str, str]]] = {}
     for r in comp:
         comp_by_fam.setdefault(r["fam"], []).append(r)
     for fam, want in sorted(tables.items()):

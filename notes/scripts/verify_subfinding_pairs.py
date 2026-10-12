@@ -29,7 +29,8 @@ import sys
 
 import build_catalog as bc
 import extract_subfinding_pairs as ep
-from catlib import overview, render as RD, tsv
+from catlib import overview, tsv
+from catlib import render as RD
 from catlib.paths import LEDGER_TSV, NOTES, OVERVIEW_TEX, ROOT, SUBFINDINGS_TSV
 
 PAGE = NOTES / "subfinding-pairs.md"
@@ -55,7 +56,7 @@ def load_inputs():
     for r in tsv.read_rows(SUBFINDINGS_TSV):
         if r["kind"] == "manuscript":
             titles[(r["fam"], int(r["seq"]))] = r["title"]
-    counts = {}
+    counts: dict[str, int] = {}
     for (fam, _) in titles:
         counts[fam] = counts.get(fam, 0) + 1
     ledger = {r["fam"]: r for r in tsv.read_rows(LEDGER_TSV)}
@@ -120,7 +121,7 @@ def parse_page(text, problems):
 def check(text, inputs, population, probe, probe_all, multi):
     """-> (problems, measured). Every check the page is subject to."""
     tex_lines, entry_lines, titles, counts, ledger = inputs
-    problems = []
+    problems: list[str] = []
     blocks = parse_page(text, problems)
 
     block_fams = [b["fam"] for b in blocks]

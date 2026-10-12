@@ -33,7 +33,8 @@ import re
 import sys
 from fractions import Fraction
 
-from catlib import anchors, render as RD
+from catlib import anchors
+from catlib import render as RD
 from catlib.paths import DOCS_DIR, LEAN, NOTES, PREPRINTS, ROOT
 from catlib.text import collapse_ws
 
@@ -51,7 +52,7 @@ CARR = re.compile(r"^\s*(?:private\s+|protected\s+|noncomputable\s+)?(?:def|abbr
 IMP = re.compile(r"^\s*import\s+(OAI[\w.]*)\s*$")
 ENV = re.compile(r"\\begin\{(theorem|maintheorem|thm)\}")
 END = re.compile(r"\\end\{(theorem|maintheorem|thm)\}")
-AE = re.compile(r"a\.e\.|almost every|almost all|a\.s\.|measure zero|null set", re.I)
+AE = re.compile(r"a\.e\.|almost every|almost all|a\.s\.|measure zero|null set", re.IGNORECASE)
 LIT = re.compile(r"(?<![\w.])\d+(?:\s*/\s*\d+)?(?![\w.])")
 FRAC = re.compile(r"\\frac\s*\{?(\d+)\}?\s*\{?(\d+)\}?")
 DISROW = re.compile(r"^\|\s*`([A-Za-z0-9_]+)`\s*\|\s*(\d{3})\s*\|\s*([^|]+?)\s*\|\s*$")
@@ -109,7 +110,9 @@ def stmt_line(decl, rel):
 
 
 def closure(rel, cap=400):
-    seen, order, q = set(), [], [rel]
+    seen: set[str] = set()
+    order: list[str] = []
+    q: list[str] = [rel]
     while q and len(order) < cap:
         r = q.pop(0)
         p = LEAN / r
@@ -222,7 +225,7 @@ def population():
     with_lit = sum(1 for s in clits.values() if s)
     lit_total = sum(len(s) for s in clits.values())
 
-    pair = collections.Counter()
+    pair: collections.Counter[str] = collections.Counter()
     disjoint, overlap = [], []
     for c in sorted(bodies):
         fams_c = sorted(cfg2fam[c])
@@ -252,7 +255,7 @@ def population():
             if extra:
                 overlap.append((c, fams_c[0], extra, sorted(clits[c] & mlits)))
 
-    ae = collections.defaultdict(int)
+    ae: collections.defaultdict[str, int] = collections.defaultdict(int)
     env_total = 0
     for f, dirs in fammap.items():
         for body in env_bodies(dirs):
@@ -294,22 +297,22 @@ def count_phrases(v):
         (f"**{v['resolved']}** of the {v['unique']} declarations resolve", "resolved"),
         (f"**{v['typed']}** of the {v['resolved']} statements are opaque", "carrier-typed"),
         (f"All **{v['carriers_ok']}** carriers resolve", "carriers resolved"),
-        (f"min **{v['size_min']}** line, median **{v['size_med']}**, max **{v['size_max']}**, "
-         f"sum **{v['size_sum']}** lines", "body sizes"),
-        (f"**{v['with_lit']}** of the **{v['carriers_ok']}** carriers carry at least one integer "
-         f"literal; **{v['lit_total']}** distinct literals in total", "literals"),
-        (f"Over the **{v['carriers_ok']}** carriers, all **{v['carriers_ok']}** have a scope-note "
-         f"family:", "pairing population"),
+        ((f"min **{v['size_min']}** line, median **{v['size_med']}**, max **{v['size_max']}**, "
+         f"sum **{v['size_sum']}** lines"), "body sizes"),
+        ((f"**{v['with_lit']}** of the **{v['carriers_ok']}** carriers carry at least one integer "
+         f"literal; **{v['lit_total']}** distinct literals in total"), "literals"),
+        ((f"Over the **{v['carriers_ok']}** carriers, all **{v['carriers_ok']}** have a scope-note "
+         f"family:"), "pairing population"),
         (f"**{pr['exact']}** exact, **{pr['subset']}** lean-subset,", "pairing a"),
-        (f"**{pr['overlap']}** overlap, **{pr['disjoint']}** disjoint, "
+        ((f"**{pr['overlap']}** overlap, **{pr['disjoint']}** disjoint, "
          f"**{pr['carrier_no_literal']}** carriers with no literal, "
-         f"**{pr['no_headline_literal']}** families with no headline", "pairing b"),
-        (f"**{v['env_total']:,}** theorem environments; **{v['ae_envs']}** carry an `a.e.`-style "
-         f"phrase", "a.e. census"),
-        (f"over **{len(v['ae_fams'])}** families. **{len(v['inter'])}** of those {len(v['ae_fams'])} "
-         f"families", "a.e. families"),
-        (f"have a scope-note config; the {len(v['inter'])} link **{len(v['cfgs'])}** configs, of "
-         f"which **{v['ae_with']}** have a `main_results` entry and", "a.e. configs"),
+         f"**{pr['no_headline_literal']}** families with no headline"), "pairing b"),
+        ((f"**{v['env_total']:,}** theorem environments; **{v['ae_envs']}** carry an `a.e.`-style "
+         f"phrase"), "a.e. census"),
+        ((f"over **{len(v['ae_fams'])}** families. **{len(v['inter'])}** of those {len(v['ae_fams'])} "
+         f"families"), "a.e. families"),
+        ((f"have a scope-note config; the {len(v['inter'])} link **{len(v['cfgs'])}** configs, of "
+         f"which **{v['ae_with']}** have a `main_results` entry and"), "a.e. configs"),
         (f"**{v['ae_without']}** have none", "a.e. without"),
     ]
 

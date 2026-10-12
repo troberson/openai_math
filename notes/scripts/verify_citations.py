@@ -75,14 +75,14 @@ def measure(normfn):
     man2fam = manuscript_map()
 
     owners = collections.Counter(owner(p) for p in files)
-    types = collections.Counter()
-    keys = collections.Counter()
+    types: collections.Counter[str] = collections.Counter()
+    keys: collections.Counter[str] = collections.Counter()
     titles = collections.defaultdict(set)
-    verbatim = collections.defaultdict(collections.Counter)
-    where = collections.defaultdict(dict)
+    verbatim: collections.defaultdict[str, collections.Counter[str]] = collections.defaultdict(collections.Counter)
+    where: collections.defaultdict[str, dict[str, tuple[str, int]]] = collections.defaultdict(dict)
     entry_keys = collections.defaultdict(set)
     release = collections.defaultdict(set)
-    release_count = collections.Counter()
+    release_count: collections.Counter[str] = collections.Counter()
     n_entries = release_entries = 0
 
     for p in files:
@@ -237,7 +237,7 @@ def check(page, M, M2):
          "sharing nothing")
 
     # ---- work table: every row, with its anchor ---------------------------
-    rows = re.findall(r"^\|\s*(\d+)\s*\|\s*`([^`]+)`\s*\|\s*`([^`]+?):(\d+)`\s*\|\s*$", page, re.M)
+    rows = re.findall(r"^\|\s*(\d+)\s*\|\s*`([^`]+)`\s*\|\s*`([^`]+?):(\d+)`\s*\|\s*$", page, re.MULTILINE)
     if len(rows) != TOP_N:
         fails.append("work table has %d rows, expected %d" % (len(rows), TOP_N))
     seen_nt = set()
@@ -299,7 +299,7 @@ def check(page, M, M2):
                 fa, fb, da, db = fb, fa, db, da
             cross.append((fa, fb, v, da, db))
     cross.sort(key=lambda t: (-t[2], t[0], t[1]))
-    prows = re.findall(r"^\|\s*(\d+)\s*\|\s*(\d{3}) × (\d{3})\s*\|\s*([^|]+)\|\s*$", page, re.M)
+    prows = re.findall(r"^\|\s*(\d+)\s*\|\s*(\d{3}) × (\d{3})\s*\|\s*([^|]+)\|\s*$", page, re.MULTILINE)
     if len(prows) != len(cross):
         fails.append("cross-discipline table has %d rows, measured %d" % (len(prows), len(cross)))
     for (fa, fb, v, da, db), (cnt, pa, pb, ds) in zip(cross, prows, strict=False):
@@ -343,7 +343,7 @@ def check(page, M, M2):
                  "largest >=10 membership")
 
     crows = re.findall(r"^\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*([0-9 ]+)\|\s*([^|]+)\|\s*$",
-                       page, re.M)
+                       page, re.MULTILINE)
     multi5 = clusters(M["pairs"], 5)[:12]
     if len(crows) != len(multi5):
         fails.append("cluster table has %d rows, measured top-%d" % (len(crows), len(multi5)))
@@ -371,7 +371,7 @@ def check(page, M, M2):
          % (len(M["rpairs"]), sum(1 for v in M["rpairs"].values() if v >= 2),
             sum(1 for (a, b) in M["rpairs"] if M["fam"][a] != M["fam"][b]),
             format(len(M["rpairs"]), ",")), "release pairs")
-    rrows = re.findall(r"^\|\s*(\d+)\s*\|\s*`([^`]+)`\s*\|\s*$", page, re.M)
+    rrows = re.findall(r"^\|\s*(\d+)\s*\|\s*`([^`]+)`\s*\|\s*$", page, re.MULTILINE)
     top_r = sorted(M["rinv"].items(), key=lambda kv: (-len(kv[1]), kv[0]))[:10]
     if len(rrows) != 10:
         fails.append("release-target table has %d rows, expected 10" % len(rrows))
@@ -426,7 +426,7 @@ def check(page, M, M2):
         delta = ung - guarded
         cell = "**0**" if delta == 0 else "%+d" % delta
         m = re.search(r"^\|\s*%s\s*\|\s*([\d,]+)\s*\|\s*([\d,]+)\s*\|\s*(\*\*0\*\*|[+\u2212-]\d+)\s*\|"
-                      % re.escape(label), page, re.M)
+                      % re.escape(label), page, re.MULTILINE)
         if not m:
             fails.append("sensitivity row %r absent" % label)
             continue
@@ -448,7 +448,7 @@ def check(page, M, M2):
         elif int(line) > len(read(full).split("\n")):
             fails.append("anchor line out of range: %s:%s" % (path, line))
 
-    blocks = re.findall(r"```bibtex\n(.*?)```", page, re.S)
+    blocks = re.findall(r"```bibtex\n(.*?)```", page, re.DOTALL)
     if len(blocks) != 2:
         fails.append("page has %d bibtex blocks, expected 2" % len(blocks))
     for blk in blocks:

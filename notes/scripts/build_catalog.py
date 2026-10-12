@@ -114,7 +114,7 @@ def main():
             "resolves_named": ledger.resolves_named(info["title"], info["abstract"]),
             "counterex_broad": ledger.counterex_broad(info["title"], info["abstract"]),
             "companions": "|".join(refs),
-            "companion_word": 1 if re.search(r"\bcompanion", info["abstract"], re.I) else 0,
+            "companion_word": 1 if re.search(r"\bcompanion", info["abstract"], re.IGNORECASE) else 0,
             "versions": ledger.versions_of(all_paths),
             "summary": 1 if fam in summary_fams else 0,
         })

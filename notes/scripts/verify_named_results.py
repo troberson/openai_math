@@ -39,7 +39,6 @@ import sys
 
 import extract_named_results as en
 import measure_names as M
-
 from catlib import render as RD
 from catlib import yaml as Y
 from catlib.paths import COMPARATOR_DIR
@@ -50,7 +49,7 @@ PAGE = ROOT / "notes" / "named-results.md"
 ANCHOR = re.compile(r"`([\w./+-]+?\.(?:py|md|tex|json|txt|lean|yaml|bib)):(\d+)`")
 BARE = re.compile(r"(\d{3})\s+\(`:(\d+)`\)")
 QUOTE = re.compile(r'\*"([^"]{12,})"\*')
-ROW = re.compile(r'^\| (\d{3}) \| (T\d) \| (\d) \| `([^`]+):(\d+)` \| \*"([^"]*)"\* \|$', re.M)
+ROW = re.compile(r'^\| (\d{3}) \| (T\d) \| (\d) \| `([^`]+):(\d+)` \| \*"([^"]*)"\* \|$', re.MULTILINE)
 SPAN = 12
 # The page spells its mutation count as a word, so the phrase check needs the spelling.
 WORDS = {12: "twelve", 13: "thirteen"}
@@ -257,62 +256,62 @@ def count_phrases(p) -> list:
         (f"| families with ≥1 titled headline | {len(have_t)} |", "families with titles"),
         (f"| families with no titled headline | {len(order) - len(have_t)} |", "families without"),
         (f"| titles matching `Main…` (content-free) | {generic} |", "generic titles"),
-        (f"rule: **{titled:,}** is the per-line scan, **{titled_all:,}** is the whole-text scan, "
-         f"and the {split}-title gap", "per-line warning"),
+        ((f"rule: **{titled:,}** is the per-line scan, **{titled_all:,}** is the whole-text scan, "
+         f"and the {split}-title gap"), "per-line warning"),
         (f"## Target-named headline statements: {len(tgt)} over {len(tgt_fams)} families", "target heading"),
-        (f"Over **{titled:,}** titled headline statements, **{len(tgt)}** titles name a conjecture, "
-         f"question, or problem, in **{len(tgt_fams)}** families", "target counts"),
+        ((f"Over **{titled:,}** titled headline statements, **{len(tgt)}** titles name a conjecture, "
+         f"question, or problem, in **{len(tgt_fams)}** families"), "target counts"),
         (f"negative: {len(p['verb_in_title'])} of these {len(tgt)} titles", "verb-in-title"),
-        (f"{NUMWORDS[len(tgt_fams - rn)]} of the {len(tgt)} ({', '.join(sorted(tgt_fams - rn))}) "
+        ((f"{NUMWORDS[len(tgt_fams - rn)]} of the {len(tgt)} ({', '.join(sorted(tgt_fams - rn))}) "
          f"{'sits' if len(tgt_fams - rn) == 1 else 'sit'} in "
          f"{'a family' if len(tgt_fams - rn) == 1 else 'families'} the column reads 0; the other "
-         f"{len(tgt_fams & rn)} sit in families it reads 1", "target split"),
+         f"{len(tgt_fams & rn)} sit in families it reads 1"), "target split"),
         (f"## Subject-named headline statements: {len(subj_hits)} over {len(subj_fams)} families",
          "subject heading"),
         (f"one of the {len(p['subject'])} subject names", "subject vocabulary"),
-        (f"**{len(subj_hits)}** statements over **{len(subj_fams)}** families. "
-         f"**{len(subj_fams & rn)}** of those families are `rn = 1`; **{len(subj_fams - rn)}** are not:",
+        ((f"**{len(subj_hits)}** statements over **{len(subj_fams)}** families. "
+         f"**{len(subj_fams & rn)}** of those families are `rn = 1`; **{len(subj_fams - rn)}** are not:"),
          "subject counts"),
         (" ".join(sorted(subj_fams - rn)), "subject-not-rn list"),
         (f"| headline-target ∩ `rn` | {len(tgt_fams & rn)} |", "cross-tab 1"),
         (f"| headline-target, `rn = 0` | {len(tgt_fams - rn)} → {' '.join(sorted(tgt_fams - rn))} |",
          "cross-tab 2"),
         (f"| `rn = 1`, no target-named headline statement | {len(rn - tgt_fams)} |", "cross-tab 3"),
-        (f"| `rn = 1` with **no titled headline theorem at all** | {len(no_head)} "
-         f"(T3 {tiers['T3']}, T2 {tiers['T2']}, T1 {tiers['T1']}, T0 {tiers['T0']}) |", "cross-tab 4"),
+        ((f"| `rn = 1` with **no titled headline theorem at all** | {len(no_head)} "
+         f"(T3 {tiers['T3']}, T2 {tiers['T2']}, T1 {tiers['T1']}, T0 {tiers['T0']}) |"), "cross-tab 4"),
         (f"| `rn = 0` with titled headline theorems | {len(have_t - rn)} |", "cross-tab 5"),
         (f"**{len(no_head)} of the {len(rn)} flagged families ship no titled headline theorem**",
          "no-headline claim"),
-        (f"**{len(dn)}** families over **{sum(len(v) for v in p['dir_named'].values())}** directories. "
+        ((f"**{len(dn)}** families over **{sum(len(v) for v in p['dir_named'].values())}** directories. "
          f"**{len(dn & rn)}** are `rn = 1`. **{len(dn - rn)}** are not: {' '.join(sorted(dn - rn))}. "
-         f"**{len(rn - dn)}**", "layer 1"),
-        (f"**{len(an)}** families over **{sum(len(v) for v in p['abstract_named'].values())}** "
+         f"**{len(rn - dn)}**"), "layer 1"),
+        ((f"**{len(an)}** families over **{sum(len(v) for v in p['abstract_named'].values())}** "
          f"sentences. **{len(an & rn)}** are `rn = 1`. **{len(an - rn)}** are not, and "
-         f"**{len(rn - an)}**", "layer 2"),
+         f"**{len(rn - an)}**"), "layer 2"),
         (" ".join(sorted(rn - an)), "rn-not-abstract list"),
         (f"it would read {len(rn)} + {len(an - rn)} = **{len(rn) + len(an - rn)}**", "layer 2 union"),
-        (f"| window ±{en.WINDOW} characters | {sum(len(v) for v in p['prose_window'].values()):,} | "
+        ((f"| window ±{en.WINDOW} characters | {sum(len(v) for v in p['prose_window'].values()):,} | "
          f"{len(pw)} | {len(pw & rn)} | {len(pw - rn)} | {len(rn - pw)} → "
-         f"{' '.join(sorted(rn - pw))} |", "layer 3 window"),
-        (f"| one sentence | {sum(len(v) for v in p['prose_sentence'].values()):,} | {len(ps)} | "
-         f"{len(ps & rn)} | {len(ps - rn)} | {len(rn - ps)} → {' '.join(sorted(rn - ps))} |",
+         f"{' '.join(sorted(rn - pw))} |"), "layer 3 window"),
+        ((f"| one sentence | {sum(len(v) for v in p['prose_sentence'].values()):,} | {len(ps)} | "
+         f"{len(ps & rn)} | {len(ps - rn)} | {len(rn - ps)} → {' '.join(sorted(rn - ps))} |"),
          "layer 3 sentence"),
-        (f"**{len(core)}** families are `rn = 1` and name no target anywhere in their manuscript "
-         f"prose under **both** rules: {' '.join(core)}", "layer 3 core"),
+        ((f"**{len(core)}** families are `rn = 1` and name no target anywhere in their manuscript "
+         f"prose under **both** rules: {' '.join(core)}"), "layer 3 core"),
         (f"**{len(eo)}** families: {' '.join(sorted(eo))}, of which **{len(eo & rn)}** are `rn = 1`",
          "verb gap"),
         (f"## The title-scope swap: {len(abstract_only)} → {len(rn)}", "title-scope heading"),
         (f"**{len(add)}** additions: {' '.join(add)}", "additions"),
         (f"so the column reads **{len(rn)}**", "union figure"),
-        (f"would read {len(strict)} ({len(rn - strict)} removals against the applied "
-         f"{len(rn)} column)", "strict replacement"),
+        ((f"would read {len(strict)} ({len(rn - strict)} removals against the applied "
+         f"{len(rn)} column)"), "strict replacement"),
         (f"All **{len(add)}** are corroborated", "additions corroborated"),
         (f"**{len(notdir)}** of the {len(add)} are not directory-named: {' '.join(notdir)}",
          "additions not dir-named"),
         (f"manuscript-abstract-named but **not** title-named, so they sit outside the {len(add)}",
          "outside the additions"),
-        (f"The manuscript-abstract layer alone ({len(an - rn)} families) would cover them and reach "
-         f"{len(rn) + len(an - rn)}", "abstract layer reach"),
+        ((f"The manuscript-abstract layer alone ({len(an - rn)} families) would cover them and reach "
+         f"{len(rn) + len(an - rn)}"), "abstract layer reach"),
         (f"**{len(en.A_FAMS)}** families. Ten are real; one is the rule's false positive",
          "direction A count"),
         (f"**{len(set(real_a) & set(add))} of the {len(real_a)} real misses are flagged**",
@@ -321,23 +320,23 @@ def count_phrases(p) -> list:
         (f"**{len(en.B_FAMS)}** families, all `rn = 1`", "direction B count"),
         (f"the {len(en.B_FAMS)} split **3 corroborated / 5 resting on the overview paraphrase alone**",
          "direction B split"),
-        (f"{len(bset & (rn - an))} of the {len(en.B_FAMS)} also sit in the layer-2 `rn-not-abstract` "
-         f"list; 333 does not", "direction B layer 2"),
-        (f"Over {titled:,} titled headline statements, {len(tgt)} titles name a target and "
-         f"**{len(p['verb_in_title'])}** of them pair a target noun with a resolve verb",
+        ((f"{len(bset & (rn - an))} of the {len(en.B_FAMS)} also sit in the layer-2 `rn-not-abstract` "
+         f"list; 333 does not"), "direction B layer 2"),
+        ((f"Over {titled:,} titled headline statements, {len(tgt)} titles name a target and "
+         f"**{len(p['verb_in_title'])}** of them pair a target noun with a resolve verb"),
          "load-bearing negative"),
-        (f"**{len(real_a)} real misses** (Direction A) and **{len(add)} title-scope additions**, "
-         f"overlapping in {' '.join(sorted(set(add) & set(real_a)))}", "overlap"),
+        ((f"**{len(real_a)} real misses** (Direction A) and **{len(add)} title-scope additions**, "
+         f"overlapping in {' '.join(sorted(set(add) & set(real_a)))}"), "overlap"),
         (f"the swap is applied, so the column reads **{len(rn)}** with removals 0", "union verdict"),
         (f"**5 of the {len(en.B_FAMS)} Direction-B families**", "direction B verdict"),
-        (f"The {len(an - rn)}-family layer-2 set is **unadjudicated**. It is the widest candidate "
-         f"({len(rn) + len(an - rn)})", "not checked layer 2"),
+        ((f"The {len(an - rn)}-family layer-2 set is **unadjudicated**. It is the widest candidate "
+         f"({len(rn) + len(an - rn)})"), "not checked layer 2"),
         (f"The {len(pw - rn)}-family `prose-not-rn` set (window scope)", "not checked prose"),
         (f"The {len(subj_fams - rn)} subject-named-not-`rn` families", "not checked subjects"),
         (f"The {len(order) - len(have_t)} families with no titled headline theorem",
          "not checked no-title"),
-        (f"zero of the {noai:,} files under `lean/OAI/**/*.lean` contain `sorry` while the {nchal} "
-         f"comparator files carry {nsorry} `sorry` occurrences", "corpus sorry facts"),
+        ((f"zero of the {noai:,} files under `lean/OAI/**/*.lean` contain `sorry` while the {nchal} "
+         f"comparator files carry {nsorry} `sorry` occurrences"), "corpus sorry facts"),
     ]
 
 

@@ -35,7 +35,14 @@ import re
 from catlib.bib import release_bib_edges
 from catlib.ledger import chain_edges, companion_word_fams, read_ledger
 from catlib.overview import overview_lines
-from catlib.paths import OVERVIEW_TEX, PREPRINTS, ROOT, SUBFINDINGS_TSV, owner, read_text
+from catlib.paths import (
+    OVERVIEW_TEX,
+    PREPRINTS,
+    ROOT,
+    SUBFINDINGS_TSV,
+    owner,
+    read_text,
+)
 from catlib.preprints import bib_files, listed_dirs_from_contents
 from catlib.tsv import read_rows
 
@@ -55,7 +62,7 @@ def second_pass_ids():
 
 def manuscripts():
     """fam -> ordered list of manuscript rows from notes/tables/subfindings.tsv."""
-    out = {}
+    out: dict[str, list[dict[str, str]]] = {}
     for r in read_rows(SUBFINDINGS_TSV):
         if r["kind"] == "manuscript":
             out.setdefault(r["fam"], []).append(r)

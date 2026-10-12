@@ -31,7 +31,6 @@ import sys
 from pathlib import Path
 
 import extract_scope_notes as ex
-
 from catlib import render as RD
 from catlib import yaml as Y
 from catlib.paths import DOCS_DIR
@@ -162,7 +161,7 @@ def check(lines):
 
     block = "\n".join(lines)
     for label, value in measured().items():
-        m = re.search(r"^\|\s*" + re.escape(label) + r"\s*\|\s*(.+?)\s*\|\s*$", block, re.M)
+        m = re.search(r"^\|\s*" + re.escape(label) + r"\s*\|\s*(.+?)\s*\|\s*$", block, re.MULTILINE)
         if not m:
             problems.append(f"measurements table names no value for: {label}")
         elif m.group(1) != str(value):

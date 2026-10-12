@@ -37,7 +37,9 @@ import sys
 
 import build_catalog
 import extract_counterexample_crosscheck as cx
-from catlib import anchors, ledger as L, overview, render as RD
+from catlib import anchors, overview
+from catlib import ledger as L
+from catlib import render as RD
 from catlib.paths import COMPARATOR_DIR, FORMALIZATION_YAML, NOTES, ROOT
 from catlib.text import collapse_ws
 
@@ -120,8 +122,8 @@ def count_phrases(v):
         (f"**{v['carriers']}** of the {v['mainres']} are written", "carrier-typed"),
         (f"all **{v['carriers']}** carriers resolve", "carriers resolved"),
         (f"**{v['configs']}** distinct configs", "linked configs"),
-        (f"**{v['mainres']}** of them carry an entry and "
-         f"**{v['configs'] - v['mainres']}** carry none", "config entry split"),
+        ((f"**{v['mainres']}** of them carry an entry and "
+         f"**{v['configs'] - v['mainres']}** carry none"), "config entry split"),
         (f"**{len(v['t3_gaps'])}** configs in **{v['t3_gap_fams']}** families", "T3 gaps"),
         (f"**{v['t2_gaps']}** configs in all **{v['t2']}** families", "T2 gaps"),
         (f"carrying **{v['sorries']}** `sorry` occurrences", "stub sorries"),
@@ -270,13 +272,13 @@ def check(text):
 
     # 9. per-family blocks name exactly their own configs and the right gap count
     t3_pop = [f for f in v["pop"] if v["per"][f]["tier"] == "T3"]
-    heads = re.findall(r"^### (\d{3}) —", text, re.M)
+    heads = re.findall(r"^### (\d{3}) —", text, re.MULTILINE)
     if heads != t3_pop:
         problems.append(f"T3 blocks {heads} != {t3_pop}")
     universe = {p.stem for p in CONFIGS_DIR.glob("*.json")}
     for _n, f in enumerate(heads):
         start = text.index(f"### {f} —")
-        nxt = re.search(r"^### |^## ", text[start + 5:], re.M)
+        nxt = re.search(r"^### |^## ", text[start + 5:], re.MULTILINE)
         body = text[start + 5:start + 5 + (nxt.start() if nxt else len(text))]
         named = sorted({c for c in re.findall(r"`([A-Za-z0-9_]+)`", body) if c in universe})
         if named != v["per"][f]["configs"]:

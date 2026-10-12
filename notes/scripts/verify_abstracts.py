@@ -56,7 +56,7 @@ PAGE = NOTES / "abstracts.md"
 ROW = re.compile(r"^\|\s*(S\d+)\s*\|\s*`([^`]+)`\s*\|\s*(.*?)\s*\|\s*$")
 MARKER = re.compile(r"\[(S\d+)\]")
 QUOTE = re.compile(r"“([^”]+)”")
-ABSTRACT = re.compile(r"\\begin\{abstract\}(.*?)\\end\{abstract\}", re.S)
+ABSTRACT = re.compile(r"\\begin\{abstract\}(.*?)\\end\{abstract\}", re.DOTALL)
 ELLIPSIS = "…"
 
 _OVERVIEW = None
@@ -162,17 +162,17 @@ def count_phrases(m):
         (f"**Abstract environments: {envs} over {dirs} directories.**", "abstract environments"),
         (f"Every one of the {dirs} manuscript directories", "directories with an abstract"),
         (f"reads {dirs} and cannot show this.", "sources.tsv flag column"),
-        (f"| manuscript-level | {n} | {mr['min']:.3f} | {mr['p10']:.3f} | **{mr['median']:.3f}** "
-         f"| {mr['p90']:.3f} | {mr['max']:.3f} |", "manuscript ratio row"),
-        (f"| family-level best match | {fam} | {fr['min']:.3f} | {fr['p10']:.3f} "
-         f"| **{fr['median']:.3f}** | {fr['p90']:.3f} | {fr['max']:.3f} |", "family ratio row"),
-        (f"| count | {' / '.join(str(mb[k]) for k in bkey)} "
-         f"| {' / '.join(str(fb[k]) for k in bkey)} |", "bucket row"),
+        ((f"| manuscript-level | {n} | {mr['min']:.3f} | {mr['p10']:.3f} | **{mr['median']:.3f}** "
+         f"| {mr['p90']:.3f} | {mr['max']:.3f} |"), "manuscript ratio row"),
+        ((f"| family-level best match | {fam} | {fr['min']:.3f} | {fr['p10']:.3f} "
+         f"| **{fr['median']:.3f}** | {fr['p90']:.3f} | {fr['max']:.3f} |"), "family ratio row"),
+        ((f"| count | {' / '.join(str(mb[k]) for k in bkey)} "
+         f"| {' / '.join(str(fb[k]) for k in bkey)} |"), "bucket row"),
         (", ".join(f"**{f}** ({m['fam_best'][f]['ratio']:.3f})" for f in m["fam_hi"]),
          "near-identical families"),
         (f"below 0.05: {', '.join(m['fam_lo'])}.", "low best-match families"),
-        (f"**{len(low)} of the {n}** comparisons fall below 0.05, spread over "
-         f"**{len({x['fam'] for x in low})}** families.", "manuscript-level floor"),
+        ((f"**{len(low)} of the {n}** comparisons fall below 0.05, spread over "
+         f"**{len({x['fam'] for x in low})}** families."), "manuscript-level floor"),
         (f"The manuscript-level minimum {minrow['ratio']:.3f} is family {minrow['fam']}'s surviving",
          "manuscript-level minimum"),
         (f"man{n}", "tag table header token"),
@@ -180,20 +180,20 @@ def count_phrases(m):
     for s in sorted(m["tag_tot"]):
         d = m["tag_dis"].get(s, {"ov-only": [], "ms-only": []})
         t = m["tag_tot"][s]
-        out.append((f"| {s} | {t['ov']} | {t['ms']} | {t['man']} | {len(d['ov-only'])} "
-                    f"| {len(d['ms-only'])} |", f"tag row {s}"))
+        out.append(((f"| {s} | {t['ov']} | {t['ms']} | {t['man']} | {len(d['ov-only'])} "
+                    f"| {len(d['ms-only'])} |"), f"tag row {s}"))
     out += [
-        (f"**{len(dis)} of {fam} families have at least one shape disagreement between the two "
-         f"texts; {fam - len(dis)} have none.**", "shape disagreement count"),
-        (f"Of the {len(dis)}, {single} are single-manuscript families and {len(dis) - single} are "
-         f"multi-manuscript families.", "disagreement manuscript split"),
-        (f"{res['ov']} of {fam} families ({round(100 * res['ov'] / fam)}%) call a resolution in "
+        ((f"**{len(dis)} of {fam} families have at least one shape disagreement between the two "
+         f"texts; {fam - len(dis)} have none.**"), "shape disagreement count"),
+        ((f"Of the {len(dis)}, {single} are single-manuscript families and {len(dis) - single} are "
+         f"multi-manuscript families."), "disagreement manuscript split"),
+        ((f"{res['ov']} of {fam} families ({round(100 * res['ov'] / fam)}%) call a resolution in "
          f"the overview, against {res['man']} of {n} manuscripts "
-         f"({round(100 * res['man'] / n)}%)", "resolution over-flag rate"),
+         f"({round(100 * res['man'] / n)}%)"), "resolution over-flag rate"),
         (f"({und['ov']} families vs {und['man']} manuscripts)", "undecidability rate"),
-        (f"{len(m['cond_dis'])} families disagree on the `conditional` tag: "
+        ((f"{len(m['cond_dis'])} families disagree on the `conditional` tag: "
          f"{len(cond['ov-only'])} flagged by the overview only ({', '.join(cond['ov-only'])}) "
-         f"and {len(cond['ms-only'])}", "conditional disagreements"),
+         f"and {len(cond['ms-only'])}"), "conditional disagreements"),
         (f"({res['ov']} of {fam} families vs {res['man']} of {n} manuscripts)",
          "consequence bullet resolution counts"),
         (f"(one row per family, {fam} rows)", "tsv row count (rule paragraph)"),

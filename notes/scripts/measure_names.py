@@ -64,13 +64,12 @@ import pathlib
 import re
 import sys
 import unicodedata
-
 from functools import cache
 
 import build_catalog as B
-
 from catlib import yaml as Y
-from catlib.paths import PREPRINTS as PRE, owner
+from catlib.paths import PREPRINTS as PRE
+from catlib.paths import owner
 from catlib.promote import key_for
 from catlib.records import cached
 
@@ -201,7 +200,7 @@ def tex_files():
 
 def strip_bibliography(t: str) -> str:
     t = re.sub(r"\\begin\{thebibliography\}.*?(\\end\{thebibliography\}|$)", " ", t,
-               flags=re.S)
+               flags=re.DOTALL)
     return re.sub(r"\\bibliography\{[^}]*\}|\\printbibliography|\\addbibresource\{[^}]*\}",
                   " ", t)
 
@@ -302,10 +301,10 @@ def build_records() -> str:
     for p in sorted(PRE.glob("**/*.bib")):
         fam = dir2fam.get(dir_of(p))
         t = p.read_text(encoding="utf-8", errors="replace")
-        for m in re.finditer(r"^\s*@\w+\s*\{([^,]*),\s*(.*?)^\s*\}", t, re.S | re.M):
+        for m in re.finditer(r"^\s*@\w+\s*\{([^,]*),\s*(.*?)^\s*\}", t, re.DOTALL | re.MULTILINE):
             bib_entries += 1
             am = re.search(r"^\s*author\s*=\s*[{\"]?(.*?)[}\"]?\s*,?\s*$",
-                           m.group(2), re.M | re.S)
+                           m.group(2), re.MULTILINE | re.DOTALL)
             if not am:
                 continue
             a = re.sub(r"\$[^$]*\$", " ", re.sub(r"\s+", " ", am.group(1)))

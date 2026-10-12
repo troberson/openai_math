@@ -36,8 +36,8 @@ from pathlib import Path
 from catlib.paths import PREPRINTS, SUBFINDINGS_TSV, owner, read_text, rel
 from catlib.tsv import read_rows
 
-DOCCLASS = re.compile(r"^\s*\\documentclass", re.M)
-ABSTRACT = re.compile(r"^\s*\\begin\{abstract\}", re.M)
+DOCCLASS = re.compile(r"^\s*\\documentclass", re.MULTILINE)
+ABSTRACT = re.compile(r"^\s*\\begin\{abstract\}", re.MULTILINE)
 BEGIN = re.compile(r"\\begin\{([A-Za-z*]+)\}")
 PROOF = re.compile(r"\\begin\{proof\}")
 NEWTHEOREM = re.compile(r"\\newtheorem\*?\{([A-Za-z]+)\}")
@@ -46,7 +46,7 @@ SUBSECTION = re.compile(r"\\subsection\*?\{")
 SUBSUBSECTION = re.compile(r"\\subsubsection\*?\{")
 BIB_ENTRY = re.compile(r"@[A-Za-z]+\s*\{([^,]*),")
 TITLE_ARG = re.compile(r"\\begin\{([A-Za-z*]+)\}\s*\[([^\]]{1,140})\]")
-ABSTRACT_BODY = re.compile(r"\\begin\{abstract\}(.*?)\\end\{abstract\}", re.S)
+ABSTRACT_BODY = re.compile(r"\\begin\{abstract\}(.*?)\\end\{abstract\}", re.DOTALL)
 
 # Environments declared by \newtheorem that state nothing.
 NON_STATEMENT = {"definition", "remark", "example", "notation", "convention", "procedure",

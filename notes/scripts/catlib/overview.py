@@ -103,7 +103,7 @@ def parse_contents() -> dict[str, list[str]]:
     text = read_text(CONTENTS_MD)
     fam = None
     paps: dict[str, list[str]] = defaultdict(list)
-    header = re.compile(r"^\*\*(\d{3})\.\s", re.M)
+    header = re.compile(r"^\*\*(\d{3})\.\s", re.MULTILINE)
     link = re.compile(r"\]\((" + PAP + r")\)")
     events = [(m.start(), "fam", m.group(1)) for m in header.finditer(text)]
     events += [(m.start(), "pap", m.group(1)) for m in link.finditer(text)]

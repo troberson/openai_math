@@ -45,12 +45,10 @@ import pathlib
 import posixpath
 import re
 import sys
-
 from functools import cache
 from typing import Any
 
 import build_catalog as B
-
 from catlib import yaml as Y
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
@@ -91,7 +89,7 @@ def md_links(text):
             break
         raw = text[j + 2:k]
         # A markdown title is a quoted tail: [t](path "Title")
-        m = re.match(r'^(.*?)\s+"[^"]*"$', raw, re.S)
+        m = re.match(r'^(.*?)\s+"[^"]*"$', raw, re.DOTALL)
         if m:
             raw = m.group(1)
         raw = raw.strip()

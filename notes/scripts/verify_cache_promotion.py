@@ -34,9 +34,18 @@ import sys
 from itertools import pairwise
 
 from catlib import templates as T
-from catlib.promote import (ARTIFACTS, ARGS, L1, NON_CACHED, PAGE_EXTRA, PROBE_EXEMPT,
-                            REPORT_PAGES, expand, key_for)
 from catlib.paths import ROOT
+from catlib.promote import (
+    ARGS,
+    ARTIFACTS,
+    L1,
+    NON_CACHED,
+    PAGE_EXTRA,
+    PROBE_EXEMPT,
+    REPORT_PAGES,
+    expand,
+    key_for,
+)
 
 PROBES = (ROOT / "notes" / "probe" / "2026-10-11_writers.txt",
           ROOT / "notes" / "probe" / "2026-10-10_writers.txt")
@@ -82,7 +91,7 @@ def norm(entry: str) -> str:
 def writers_table() -> dict[str, set[str]]:
     """The writers table in notes/scripts/README.md: script -> the set of target cells it names."""
     text = README.read_text(encoding="utf-8")
-    m = re.search(r"### Writers\n(.*?)\n\n", text, re.S)
+    m = re.search(r"### Writers\n(.*?)\n\n", text, re.DOTALL)
     rows: dict[str, set[str]] = {}
     for line in (m.group(1) if m else "").splitlines():
         cells = [c.strip() for c in line.split("|")]

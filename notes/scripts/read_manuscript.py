@@ -29,7 +29,7 @@ from catlib import preprints
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 SECTION = re.compile(r"\\(section|subsection|subsubsection)\*?\{([^}]*)\}")
 STATEMENT = re.compile(r"\\begin\{([A-Za-z]+)\}(?:\[([^\]]*)\])?")
-ABSTRACT = re.compile(r"\\begin\{abstract\}(.*?)\\end\{abstract\}", re.S)
+ABSTRACT = re.compile(r"\\begin\{abstract\}(.*?)\\end\{abstract\}", re.DOTALL)
 INCLUDE = re.compile(r"\\(input|include|subfile)\{([^}]+)\}")
 TITLE_WORDS = re.compile(r"\\title\{([^}]*)\}")
 

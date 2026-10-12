@@ -155,7 +155,7 @@ def population() -> Pop:
     # the pair, not by a bare leading `("…",` — a wrapped row's continuation line starts with the
     # needs tuple's own first string and would otherwise count as a row.
     rows_block = gate[gate.index("ROWS = ["):]
-    gate_rows = len(re.findall(r'^\s*\(".*?",\s*\(', rows_block, re.M))
+    gate_rows = len(re.findall(r'^\s*\(".*?",\s*\(', rows_block, re.MULTILINE))
     set_sites: list[str] = []
     for name in ("build_catalog.py", "build_index.py"):
         for i, line in enumerate((SCRIPTS / name).read_text(encoding="utf-8").splitlines(), 1):
@@ -210,7 +210,7 @@ def count_phrases(pop: Pop) -> list[str]:
 ANCHOR = re.compile(r"`(notes/[\w./+-]+\.(?:md|tsv)|notes/scripts/[\w.]+\.py"
                     r"|notes/scripts/catlib/[\w.]+\.py|catlib/[\w.]+\.py|[\w.]+\.py)"
                     r":(\d+)(?:-(\d+))?`")
-BLOCK = re.compile(r"```[a-z]*\n(.*?)```", re.S)
+BLOCK = re.compile(r"```[a-z]*\n(.*?)```", re.DOTALL)
 
 
 def anchor_path(rel: str) -> Path:
@@ -290,10 +290,10 @@ def table_problems(page: str, pop: Pop) -> list[str]:
     out = []
     # The purity table is checked inside its own section: the amplification table names four of the
     # same scripts, so a page-wide row scan would let a deleted purity row pass.
-    sec = re.search(r"## The purity population.*?(?=\n## )", page, re.S)
+    sec = re.search(r"## The purity population.*?(?=\n## )", page, re.DOTALL)
     if not sec:
         return ["purity section absent"]
-    rows = re.findall(r"^\|\s*`([^`]+\.py)`\s*\|", sec.group(0), re.M)
+    rows = re.findall(r"^\|\s*`([^`]+\.py)`\s*\|", sec.group(0), re.MULTILINE)
     want = [s for s, _, _ in pop["purity"]]
     if sorted(rows) != sorted(want):
         out.append(f"purity table rows {sorted(rows)} != population {sorted(want)}")
@@ -306,19 +306,19 @@ def table_problems(page: str, pop: Pop) -> list[str]:
 MUTANTS = [
     ("atomicity count shifted", lambda p: p.replace("**2 matches**", "**1 match**", 1)),
     ("sync split altered", lambda p: p.replace("**12** are `verify_*`", "**11** are `verify_*`", 1)),
-    ("purity row deleted", lambda p: re.sub(r"^\|\s*`check_index_links\.py`.*\n", "", p, count=1, flags=re.M)),
+    ("purity row deleted", lambda p: re.sub(r"^\|\s*`check_index_links\.py`.*\n", "", p, count=1, flags=re.MULTILINE)),
     # The purity heading count is the probe parse, so a page that names one target it does not measure
     # is caught by the count pass, not by the row scan.
     ("purity population count altered",
      lambda p: p.replace("## The purity population (8 scripts", "## The purity population (7 scripts", 1)),
     ("digest count widened", lambda p: p.replace("**5** digests", "**6** digests", 1)),
     ("probe figure altered", lambda p: p.replace("117,360", "117,361")),
-    ("anchor outside the file", lambda p: p.replace("render_reports.py:1139", "render_reports.py:3400", 1)),
+    ("anchor outside the file", lambda p: p.replace("render_reports.py:1148", "render_reports.py:3400", 1)),
     # The page ships no notes-page anchor, so the resolver's notes/ branch is inert on a clean page.
     # This mutant injects one with a line past the file's end, which is the only way the branch is
     # proven to fire.
     ("notes-page anchor outside the file",
-     lambda p: p.replace("`render_reports.py:1139`", "`render_reports.py:1139` `notes/fleet-design.md:9999`", 1)),
+     lambda p: p.replace("`render_reports.py:1148`", "`render_reports.py:1148` `notes/fleet-design.md:9999`", 1)),
     ("prose count in the size argument", lambda p: p.replace("**630,620** bytes", "**630,619** bytes", 1)),
 ]
 

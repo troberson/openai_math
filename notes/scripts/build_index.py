@@ -49,25 +49,32 @@ import posixpath
 import re
 import sys
 import unicodedata
-
-from jinja2 import Environment, FileSystemLoader
+from typing import Any
 
 import build_catalog as B
-import measure_topics as MT
-import measure_names as MN
 import check_index_links as CL  # report-only: the checker runs nothing at import
-
+import measure_names as MN
+import measure_topics as MT
 from catlib import yaml as Y
 from catlib.atomic import Staging
-from catlib.promote import key_for
 from catlib.paths import (
     COMPARATOR_DIR as CHAL,
+)
+from catlib.paths import (
     FORMALIZATION_YAML,
-    OAI_DIR as OAI,
-    PREPRINTS as PRE,
-    REASONING_TRACES as TRACES,
     read_text,
 )
+from catlib.paths import (
+    OAI_DIR as OAI,
+)
+from catlib.paths import (
+    PREPRINTS as PRE,
+)
+from catlib.paths import (
+    REASONING_TRACES as TRACES,
+)
+from catlib.promote import key_for
+from jinja2 import Environment, FileSystemLoader
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 IDX = ROOT / "notes" / "index"
@@ -124,7 +131,7 @@ def slug(title):
     t = t.replace("$", "").replace("'", "").replace("\u2019", "")
     t = re.sub(r"\\[A-Za-z]+\*?", "", t)
     t = re.sub(r"[^a-z0-9]+", "-", t.lower()).strip("-")
-    return t[4:] if t.startswith("the-") else t
+    return t.removeprefix("the-")
 
 
 def disc_slug(discipline):
@@ -260,7 +267,7 @@ def name_page(r, fams, page_of, dir2fam, dir2pdf, cfg2fams):
                      (f in r["fam_title_fams"], f in ms_fams, f in r["env_title_fams"],
                       f in decl_fams, f in r["body_fams"], f in r["bib_fams"])])
                 for f in r["fams"]]
-    ms = {}
+    ms: dict[str, set[str]] = {}
     for _f, d in r["ms_title"]:
         ms.setdefault(d, set()).add("title")
     for d in r["body_ms"]:
@@ -292,15 +299,15 @@ def main():
     trace_by_fam, trace_unlisted = B.parse_traces()
     ledger = {r["fam"]: r for r in tsv(LEDGER)}
     srcrows = {r["dir"]: r for r in tsv(SRC)}
-    report = collections.Counter()
+    report: collections.Counter[str] = collections.Counter()
 
     ver_dirs = {p.parent.name for p in PRE.glob("*/verification")}
     inputs_dirs = {p.parent.name for p in PRE.glob("*/INPUTS.md")}
     covmd_dirs = {p.parent.parent.name for p in PRE.glob("*/verification/COVERAGE.md")}
-    summary_by_fam = {}
-    for p in sorted((ROOT / "notes" / "summaries").glob("*/*.md")):
-        if re.match(r"^\d{3}-", p.name):
-            summary_by_fam.setdefault(p.name[:3], p)
+    summary_by_fam: dict[str, pathlib.Path] = {}
+    for sp in sorted((ROOT / "notes" / "summaries").glob("*/*.md")):
+        if re.match(r"^\d{3}-", sp.name):
+            summary_by_fam.setdefault(sp.name[:3], sp)
 
     triples = sorted(TRIPLE.findall(read_text(FORMALIZATION_YAML)))
     cfg2decls = collections.defaultdict(list)
@@ -314,7 +321,8 @@ def main():
     # family -> manuscript: the same union build_catalog.py writes to the ledger.
     fam_paths = {f: sorted(set(fam_paps.get(f, [])) | set(v["tex_paps"])) for f, v in fams.items()}
     dir2fam = {pathlib.PurePosixPath(p).parts[1]: f for f, ps in fam_paths.items() for p in ps}
-    cites_out, cites_in = collections.Counter(), collections.Counter()
+    cites_out: collections.Counter[str] = collections.Counter()
+    cites_in: collections.Counter[str] = collections.Counter()
     citations = citation_edges(dir2fam, report)
     for _, ff, _, ft in citations:
         cites_out[ff] += 1
@@ -329,7 +337,7 @@ def main():
     mod_dirs = sorted(f"OAI/{d.name}/{m.name}"
                       for d in (p for p in OAI.iterdir() if p.is_dir())
                       for m in (p for p in d.iterdir() if p.is_dir()))
-    mod_lean = collections.Counter()
+    mod_lean: collections.Counter[str] = collections.Counter()
     for p in Y.oai_lean_files():
         rel = p.relative_to(OAI).parts
         if len(rel) >= 2:
@@ -343,8 +351,13 @@ def main():
     topic_by_term = {r["term"]: r for r in topic_rows}
     fam2topics = {f: [r["term"] for r in topic_rows if f in r["families"]] for f in fams}
     pages, links = [], []
-    family_rows, manuscript_rows, config_rows, lean_dir_rows, scope_rows, trace_rows = [], [], [], [], [], []
-    edges = {name: [] for name, _ in EDGE_TABLES}
+    family_rows: list[dict[str, Any]] = []
+    manuscript_rows: list[dict[str, Any]] = []
+    config_rows: list[dict[str, Any]] = []
+    lean_dir_rows: list[dict[str, Any]] = []
+    scope_rows: list[dict[str, Any]] = []
+    trace_rows: list[dict[str, Any]] = []
+    edges: dict[str, list[dict[str, str]]] = {name: [] for name, _ in EDGE_TABLES}
     for d1, ff, d2, ft in citations:
         edges["edges/citation.tsv"].append(
             {"citing_dir": d1, "citing_fam": ff, "target_dir": d2, "target_fam": ft,
@@ -357,12 +370,12 @@ def main():
         page = page_of[fam]
         pages.append(page)
         mans = []
-        for p in fam_paths[fam]:
-            d = pathlib.PurePosixPath(p).parts[1]
+        for mp in fam_paths[fam]:
+            d = pathlib.PurePosixPath(mp).parts[1]
             s = srcrows[d]
             mans.append({
-                "dir": d, "fam": fam, "pdf": p,
-                "formalized": "1" if p in sources else "0",
+                "dir": d, "fam": fam, "pdf": mp,
+                "formalized": "1" if mp in sources else "0",
                 "main_tex": s["main_tex"],
                 "build": "1" if (PRE / d / "build").is_dir() else "0",
                 "readme": "1" if (PRE / d / "README.md").exists() else "0",
@@ -373,7 +386,7 @@ def main():
                 "page": page,
             })
             edges["edges/family-manuscript.tsv"].append(
-                {"fam": fam, "dir": d, "pdf": p, "formalized": mans[-1]["formalized"]})
+                {"fam": fam, "dir": d, "pdf": mp, "formalized": mans[-1]["formalized"]})
         manuscript_rows.extend(mans)
         cfgs = docs[fam]["configs"] if fam in docs else []
         decls = [(c, d, f) for c in cfgs for d, f in cfg2decls.get(c, [])]
@@ -386,8 +399,8 @@ def main():
         for s in tfiles:
             edges["edges/family-trace.tsv"].append(
                 {"fam": fam, "stem": s, "files": "|".join(x.name for x in sorted(TRACES.glob(f"{s}.*")))})
-        sp = summary_by_fam.get(fam)
-        summary_href = f"notes/summaries/{sp.relative_to(ROOT / 'notes' / 'summaries')}" if sp else ""
+        spage = summary_by_fam.get(fam)
+        summary_href = f"notes/summaries/{spage.relative_to(ROOT / 'notes' / 'summaries')}" if spage else ""
         companions = [f"[{c}](../{page_of[c]})" for c in led["companions"].split("|")
                       if c and c in fams]
         tier = ("T3" if any(c in main_results for c in cfgs) else
@@ -407,14 +420,14 @@ def main():
             "trace": "|".join(tfiles), "shapes": led["shapes"],
             "conditional": led["conditional"], "resolves_named": led["resolves_named"],
             "counterex_broad": led["counterex_broad"], "companions": led["companions"],
-            "summary": "1" if sp else "0",
+            "summary": "1" if spage else "0",
             "lean_files": len(lean_files_by_fam.get(fam, ())),
             "cite_out": cites_out[fam], "cite_in": cites_in[fam],
             "topics": len(fam2topics[fam]),
         })
         write(page, family_page(
             family_rows[-1], mans, cfgs, decls, tfiles, challenges, main_results,
-            summary_href, sp.name if sp else "", companions, info["abstract"],
+            summary_href, spage.name if spage else "", companions, info["abstract"],
             fam2topics[fam]))
         links.append((page, f"../disciplines/{ds}.md"))
         for t in fam2topics[fam]:
@@ -458,12 +471,12 @@ def main():
         edges["edges/config-declaration.tsv"].append(
             {"config": c, "fam": "|".join(sorted(cfg2fams.get(c, ()))), "declaration": d,
              "file": f, "module_dir": posixpath.dirname(f)})
-    for m in mod_dirs:
-        _, disc, mod = m.split("/")
-        lean_dir_rows.append({"dir": m, "discipline": disc, "module": mod,
-                              "lean_files": mod_lean[m],
-                              "named_by_yaml": len(mod_decls.get(m, ())),
-                              "declarations": "|".join(sorted(mod_decls.get(m, ())))})
+    for mdir in mod_dirs:
+        _, disc, mod = mdir.split("/")
+        lean_dir_rows.append({"dir": mdir, "discipline": disc, "module": mod,
+                              "lean_files": mod_lean[mdir],
+                              "named_by_yaml": len(mod_decls.get(mdir, ())),
+                              "declarations": "|".join(sorted(mod_decls.get(mdir, ())))})
     for fam in sorted(docs):
         scope_rows.append({"fam": fam, "configs": len(docs[fam]["configs"]),
                            "paps": len(docs[fam]["paps"]),
@@ -608,11 +621,11 @@ def main():
         ("`traces.tsv`", trace_rows, "trace stem",
          "One row per published reasoning trace and the family README.md attributes it to."),
         ("`topics-rendered.tsv`", topic_table_rows, "term",
-         "One row per curated vocabulary term: its pattern, its yield, its yield by layer, and "
-         "its page. The patterns live in `notes/tables/topics.tsv`; this table is the measured copy."),
+         ("One row per curated vocabulary term: its pattern, its yield, its yield by layer, and "
+         "its page. The patterns live in `notes/tables/topics.tsv`; this table is the measured copy.")),
         ("`names.tsv`", name_table_rows, "name",
-         "One row per measured name — subject or citation-only — with its layer counts, prose "
-         "counts, surface spellings, and its page (empty for a citation-only name)."),
+         ("One row per measured name — subject or citation-only — with its layer counts, prose "
+         "counts, surface spellings, and its page (empty for a citation-only name).")),
         ("`edges/family-manuscript.tsv`", edges["edges/family-manuscript.tsv"], "`fam` + dir",
          "The release's own family→manuscript links."),
         ("`edges/family-config.tsv`", edges["edges/family-config.tsv"], "`fam` + config",
@@ -620,18 +633,18 @@ def main():
         ("`edges/config-declaration.tsv`", edges["edges/config-declaration.tsv"],
          "config + declaration", "The `main_results` triples, with the family that links each config."),
         ("`edges/family-lean.tsv`", edges["edges/family-lean.tsv"], "`fam` + config",
-         "The derived family→Lean-file reach: 200 declarations over 136 families. There is no "
-         "manuscript→Lean edge to carry."),
+         ("The derived family→Lean-file reach: 200 declarations over 136 families. There is no "
+         "manuscript→Lean edge to carry.")),
         ("`edges/citation.tsv`", edges["edges/citation.tsv"], "citing dir + target dir",
          "manuscript→corpus manuscript from release-marked `.bib` hrefs; untyped."),
         ("`edges/family-trace.tsv`", edges["edges/family-trace.tsv"], "`fam` + stem",
          "Family→trace attribution as README.md tabulates it."),
         ("`edges/family-topic.tsv`", edges["edges/family-topic.tsv"], "`fam` + topic",
-         "Family→topic assignments from the curated vocabulary, with the layers that hit "
-         "(T/A/S/P). Multi-label: a family appears once per topic it carries."),
+         ("Family→topic assignments from the curated vocabulary, with the layers that hit "
+         "(T/A/S/P). Multi-label: a family appears once per topic it carries.")),
         ("`edges/family-name.tsv`", edges["edges/family-name.tsv"], "`fam` + name",
-         "Family→subject-name edges, with the layers that hit (F/M/E/D/b/B). Subject names only: "
-         "a citation-only name has no family edge, only a `names.tsv` row."),
+         ("Family→subject-name edges, with the layers that hit (F/M/E/D/b/B). Subject names only: "
+         "a citation-only name has no family edge, only a `names.tsv` row.")),
     )]
     recon_rows = [[k.replace("_", " "), canon[k], rendered[k]]
                   for k in ("families", "manuscripts", "formalized", "scope_notes", "challenges",

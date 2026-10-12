@@ -72,14 +72,14 @@ def main():
 
     # ---- population -------------------------------------------------------
     owners = collections.Counter(owner(p) for p in files)
-    types = collections.Counter()
-    keys = collections.Counter()
+    types: collections.Counter[str] = collections.Counter()
+    keys: collections.Counter[str] = collections.Counter()
     titles = collections.defaultdict(set)          # manuscript -> {norm title}
-    verbatim = collections.defaultdict(collections.Counter)  # norm title -> Counter(verbatim form)
-    where = collections.defaultdict(dict)  # norm title -> {verbatim form: (path, line) first seen}
+    verbatim: collections.defaultdict[str, collections.Counter[str]] = collections.defaultdict(collections.Counter)  # norm title -> Counter(verbatim form)
+    where: collections.defaultdict[str, dict[str, tuple[str, int]]] = collections.defaultdict(dict)  # norm title -> {verbatim form: (path, line) first seen}
     entry_keys = collections.defaultdict(set)      # manuscript -> {bib keys}
     release = collections.defaultdict(set)         # manuscript -> {release dirs cited}
-    release_count = collections.Counter()          # manuscript -> release-labelled entry count
+    release_count: collections.Counter[str] = collections.Counter()          # manuscript -> release-labelled entry count
     n_entries = 0
     release_entries = 0
     for p in files:

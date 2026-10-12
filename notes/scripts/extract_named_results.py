@@ -30,7 +30,6 @@ import re
 import sys
 
 import measure_names as M
-
 from catlib import ledger, overview
 from catlib.paths import owner
 
@@ -46,13 +45,13 @@ BEGINS = re.compile(r"\\begin\{(%s)\}" % "|".join(HEADLINE))
 TARGET = ledger.TARGET_NOUN
 # Case-insensitive twin: directory names and theorem titles capitalize what the ledger rule
 # sees in lowercase abstracts, so a case-sensitive match on them undercounts.
-TARGET_I = re.compile(TARGET.pattern, re.I)
+TARGET_I = re.compile(TARGET.pattern, re.IGNORECASE)
 RESOLVE = ledger.RESOLVE_VERB
 EXTRA = re.compile(r"\bsolve[sd]?\b|\bresolution\b|\banswers?\b|\bsettled\b|\bsettling\b"
                    r"|\bnegatively\b|\bpositively\b|\brefutation\b|\bcounterexamples?\b")
 SENT = re.compile(r"[.!?:]")
-ABSTRACT = re.compile(r"\\begin\{abstract\}(.*?)\\end\{abstract\}", re.S)
-GENERIC = re.compile(r"^\s*(the\s+)?main\b", re.I)
+ABSTRACT = re.compile(r"\\begin\{abstract\}(.*?)\\end\{abstract\}", re.DOTALL)
+GENERIC = re.compile(r"^\s*(the\s+)?main\b", re.IGNORECASE)
 ENTRY = re.compile(r"\\resultentry\{(\d{3})\}")
 
 # Families the reading pass adjudicates; the report prints their evidence with anchors.
@@ -89,7 +88,8 @@ def population():
             ledger[r["fam"]] = r
     rn = {f for f in order if ledger[f]["resolves_named"] == "1"}
 
-    dir2fam, famdirs = {}, collections.defaultdict(list)
+    dir2fam: dict[str, str] = {}
+    famdirs: collections.defaultdict[str, list[str]] = collections.defaultdict(list)
     for f in order:
         for p in fams[f]["tex_paps"]:
             d = owner(p)
@@ -105,9 +105,9 @@ def population():
             famline[m.group(1)] = ln
 
     files, begins, titled, titled_all, titled_split = 0, 0, 0, 0, 0
-    env_begins = collections.Counter()
+    env_begins: collections.Counter[str] = collections.Counter()
     head_titled = collections.defaultdict(list)
-    head_begins = collections.Counter()
+    head_begins: collections.Counter[str | None] = collections.Counter()
     generic = 0
     abstract_named = collections.defaultdict(list)
     prose_window = collections.defaultdict(list)

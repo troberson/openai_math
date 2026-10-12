@@ -33,7 +33,7 @@ CONFIDENCE = {"high", "medium", "low"}
 TIERS = {"1", "2", "3", "4"}
 CONSEQUENCE = re.compile(
     r"consequent|opens the door|paves the way|spawns|triggers|reshapes the field"
-    r"|now implies|leads to a solution|has implications", re.I)
+    r"|now implies|leads to a solution|has implications", re.IGNORECASE)
 STOP = {"the", "a", "an", "of", "and", "or", "for", "in", "on", "to", "with", "by", "as", "is", "are", "be", "it", "its", "their", "this", "that", "these", "those", "from", "at", "every", "all", "any", "each", "fixed", "nontrivial", "increasing", "general", "case", "cases", "conjecture", "conjectures", "problem", "problems", "question", "questions", "theorem"}
 
 
@@ -181,10 +181,10 @@ def main():
     text = STANDING_TSV.read_text(encoding="utf-8")
     problems, rows = check(text, led, want, entries)
 
-    tiers = {}
+    tiers: dict[str, int] = {}
     for r in rows:
         tiers[r.get("surprise_tier", "?")] = tiers.get(r.get("surprise_tier", "?"), 0) + 1
-    conf = {}
+    conf: dict[str, int] = {}
     for r in rows:
         conf[r.get("prior_confidence", "?")] = conf.get(r.get("prior_confidence", "?"), 0) + 1
     resolved = sum(1 for r in rows

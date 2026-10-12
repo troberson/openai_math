@@ -57,7 +57,7 @@ INDEX_NON_FAMILY = {"disciplines", "names", "topics", "edges"}
 HAND_AUTHORED_TSVS = {"notes/tables/topics.tsv", "notes/tables/conjecture-standing.tsv"}
 
 # The self-test entry points, whose page writes are a mutate-and-restore rather than ownership.
-SELFTEST_DEF = re.compile(r"^def (?:mutants?|mutant_test|selftest)\(", re.M)
+SELFTEST_DEF = re.compile(r"^def (?:mutants?|mutant_test|selftest)\(", re.MULTILINE)
 
 
 def script_names():
@@ -75,7 +75,7 @@ def path_constants():
     src = read_text(SCRIPTS / "catlib" / "paths.py")
     decls = {n: (base, re.findall(r'"([^"]+)"', parts))
             for n, base, parts in re.findall(
-                r'^(\w+)\s*=\s*(\w+)\s*/\s*((?:"[^"]+"\s*/\s*)*"[^"]+")', src, re.M)}
+                r'^(\w+)\s*=\s*(\w+)\s*/\s*((?:"[^"]+"\s*/\s*)*"[^"]+")', src, re.MULTILINE)}
     out: dict[str, str] = {}
 
     def resolve(name: str, seen: set[str]) -> str | None:
@@ -107,7 +107,7 @@ def notes_const(src: str, name: str) -> str | None:
     Every quoted part is joined: `TPL_DIR = ROOT / "notes" / "templates" / "report"` is
     `notes/templates/report` — capturing only the last quoted part reads `notes/report`.
     """
-    m = re.search(rf'^{name}\s*=\s*\w+\s*/\s*((?:"[^"]+"\s*/\s*)+"[^"]+")', src, re.M)
+    m = re.search(rf'^{name}\s*=\s*\w+\s*/\s*((?:"[^"]+"\s*/\s*)+"[^"]+")', src, re.MULTILINE)
     if not m:
         return None
     parts = re.findall(r'"([^"]+)"', m.group(1))
@@ -158,7 +158,7 @@ def writer_targets(src: str) -> list[str]:
         if direct:
             targets.add(direct)
             continue
-        hop = re.search(rf"^\s*{var}\s*=\s*([A-Za-z_]\w*)\s*/\s*\(", src, re.M)
+        hop = re.search(rf"^\s*{var}\s*=\s*([A-Za-z_]\w*)\s*/\s*\(", src, re.MULTILINE)
         if hop:
             base = notes_const(src, hop.group(1))
             if base:
@@ -170,7 +170,7 @@ def writer_targets(src: str) -> list[str]:
         if direct:
             targets.add(direct)
             continue
-        alias = re.search(rf"^{const}\s*=\s*([A-Za-z_]\w*)\s*$", src, re.M)
+        alias = re.search(rf"^{const}\s*=\s*([A-Za-z_]\w*)\s*$", src, re.MULTILINE)
         key = alias.group(1) if alias else const
         if consts.get(key):
             targets.add(consts[key])
@@ -182,20 +182,20 @@ def writer_targets(src: str) -> list[str]:
         if consts.get(var):
             targets.add(consts[var])
             continue
-        alias = re.search(rf"^{var}\s*=\s*([A-Za-z_]\w*)\s*$", src, re.M)
+        alias = re.search(rf"^{var}\s*=\s*([A-Za-z_]\w*)\s*$", src, re.MULTILINE)
         key = alias.group(1) if alias else var
         if consts.get(key):
             targets.add(consts[key])
             continue
-        hop = re.search(rf"^\s*{var}\s*=\s*([A-Za-z_]\w*)\s*/\s*\(", src, re.M)
+        hop = re.search(rf"^\s*{var}\s*=\s*([A-Za-z_]\w*)\s*/\s*\(", src, re.MULTILINE)
         if hop:
             base = notes_const(src, hop.group(1))
             if base:
                 targets.add(base)
     for rec in re.findall(r'\bcached\(\s*[A-Za-z_]\w*\s*,\s*"([^"]+)"', scan):
         targets.add(RECORD_PREFIX + rec)
-    if re.search(r'^\w+\s*=\s*\w+\s*/\s*"notes"\s*/\s*"index"', src, re.M) and re.search(
-        r"^def write\(", src, re.M
+    if re.search(r'^\w+\s*=\s*\w+\s*/\s*"notes"\s*/\s*"index"', src, re.MULTILINE) and re.search(
+        r"^def write\(", src, re.MULTILINE
     ):
         targets.add("notes/index/")
     # The index tree is one target: the constant reads `notes/index` and the tree rule reads
@@ -220,7 +220,7 @@ def population():
 
 def sections(text):
     """Split the page at its headings; a level-2 heading closes the level-3 section above it."""
-    parts = {}
+    parts: dict[str, list[str]] = {}
     current = "top"
     for line in text.splitlines():
         if line.startswith("### "):
@@ -485,7 +485,7 @@ def check(text):
             f"md census cell does not read '**{len(md_checked)}** with a checker, "
             f"**{len(md_free)}** without'"
         )
-    free_named = re.search(r"The (\d+) pages with no checker are (.*?)\. Their counts", text, re.S)
+    free_named = re.search(r"The (\d+) pages with no checker are (.*?)\. Their counts", text, re.DOTALL)
     if not free_named:
         p.append("no sentence naming the pages with no checker")
     else:
@@ -523,7 +523,7 @@ def check(text):
     if f"named **{named_before}** of the {len(names)} scripts" not in text:
         p.append(f"naming sentence does not read 'named **{named_before}** of the {len(names)} scripts'")
     gap_page = re.search(
-        r"named\s+nowhere in the repo at the pinned baseline:\s*(.*?)\.\s*The first four", text, re.S)
+        r"named\s+nowhere in the repo at the pinned baseline:\s*(.*?)\.\s*The first four", text, re.DOTALL)
     if not gap_page:
         p.append("no sentence naming the scripts named nowhere")
     else:
