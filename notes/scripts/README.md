@@ -346,11 +346,10 @@ The package is not in the census below: the script population is `notes/scripts/
 | `notes/index/` | **1,049** | generated — `build_index.py` |
 | `notes/summaries/` | **21** | hand-written — the reading record |
 | `notes/templates/` | **24** | **5** hand-written index skeletons + **19** report templates built by `build_report_templates.py` |
-| `notes/upstream_history/` | **3** | hand-written — one page per upstream merge, moved from the repository root on 2026-10-10 |
-| `notes/probe/` | **5** | the audit-hook probe records the fleet-design page quotes: the 2026-10-11 writers/checkers pair `measure_open_probe.py` writes and the checker parses, the 2026-10-11 `render_reports.py` after-record that proves the repeat count fell, and the 2026-10-10 pair the page's cold-cache figures come from |
+| `notes/probe/` | **6** | the audit-hook probe records: the 2026-10-11 writers/checkers pair `measure_open_probe.py` writes and the fleet checker parses, the 2026-10-11 `render_reports.py` after-record that proves the repeat count fell, the 2026-10-10 pair the page's cold-cache figures come from, and the 2026-10-12 `render_reports.py` record that captures the fleet census the writer added (the script tree and the two 2026-10-11 records it scans, which its own 2026-10-11 record cannot name) |
 | `notes/tables/*.tsv` | **8** | **6** generated, **2** hand-authored |
 | `notes/*.md` | **29** | **19** generated — the report-fed pages `render_reports.py` renders; **10** hand-written. **23** have a checker, **6** have none |
-| `notes/` total, scripts excluded | **1,138** | — |
+| `notes/` total, scripts excluded | **1,139** | — |
 
 The generated TSVs are the six writer targets. The two hand-authored tables are:
 

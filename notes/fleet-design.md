@@ -138,11 +138,13 @@ only) lists every `notes/` path each script opens. A path is a write only if a m
 `w`, `a` or `x`. The AST census maps a name to a call context and does **not** track branches, so a
 `write_text` that lives only in a `--mutant` path is reported as a write in every mode — the probe's
 mode strings are the authority. The probe is `notes/scripts/measure_open_probe.py`, promoted from
-`.qwen/tmp/a11_open_probe2.py` by `math-o3a.3.4`. The tracked records are **5**:
+`.qwen/tmp/a11_open_probe2.py` by `math-o3a.3.4`. The tracked records are **6**:
 `notes/probe/2026-10-10_writers.txt`, `notes/probe/2026-10-10_checkers.txt`,
-`notes/probe/2026-10-11_writers.txt`, `notes/probe/2026-10-11_checkers.txt` and
+`notes/probe/2026-10-11_writers.txt`, `notes/probe/2026-10-11_checkers.txt`,
 `notes/probe/2026-10-11_rr_after.txt` (the single-target `render_reports.py` record taken mid-pass,
-after the store conversion). `verify_fleet_design.py` parses the two 2026-10-11 records; the
+after the store conversion) and `notes/probe/2026-10-12_rr_fleet.txt` (the `render_reports.py` record
+taken after the fleet census moved into the writer, which names the script tree the census scans).
+`verify_fleet_design.py` parses the two 2026-10-11 records; the
 2026-10-10 pair is the **before** state the amplification table's deltas are measured against.
 
 | script | write modes | generated reads, and whether any points backwards |

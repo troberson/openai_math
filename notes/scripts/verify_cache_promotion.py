@@ -47,7 +47,12 @@ from catlib.promote import (
     key_for,
 )
 
-PROBES = (ROOT / "notes" / "probe" / "2026-10-11_writers.txt",
+# Newest first: a target is taken from the first record that names it, so the record a re-probe lands
+# supersedes the older one for that target. `2026-10-12_rr_fleet` is the render_reports.py run that
+# captures the fleet census — the writer reads the script tree and the two 2026-10-11 records, which
+# the 2026-10-11 record of itself cannot name.
+PROBES = (ROOT / "notes" / "probe" / "2026-10-12_rr_fleet.txt",
+          ROOT / "notes" / "probe" / "2026-10-11_writers.txt",
           ROOT / "notes" / "probe" / "2026-10-10_writers.txt")
 README = ROOT / "notes" / "scripts" / "README.md"
 CACHE = ROOT / ".qwen" / "cache" / "records"
@@ -132,11 +137,14 @@ def check(artifacts: dict[str, tuple[str, ...]], l1: dict[str, tuple[str, ...]],
             continue
         # The probe record prints its `notes/` bucket, so the exactness check is scoped to that
         # bucket. A registry entry outside `notes/` (the root README.md) is proved by the source, not
-        # by the record.
+        # by the record. The record omits `notes/scripts/` and `notes/probe/` from its printed paths
+        # (the probe's own rule), so the comparison uses the same scope: a registry entry naming the
+        # script tree hashes the sources the writer scans, and the record cannot name them.
         want = {path for path in reads[name]
                 if not any(path.startswith(own) for own in artifacts[name])}
         got = {str(pp.relative_to(ROOT)) for entry in entries for pp in expand(entry)
-               if str(pp.relative_to(ROOT)).startswith("notes/")}
+               if str(pp.relative_to(ROOT)).startswith("notes/")
+               and not str(pp.relative_to(ROOT)).startswith(("notes/scripts/", "notes/probe/"))}
         if want != got:
             p.append(f"L1 drift {name}: probe names {sorted(want - got)}, "
                      f"registry names {sorted(got - want)}")

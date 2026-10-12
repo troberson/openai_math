@@ -77,11 +77,14 @@ L1: dict[str, tuple[str, ...]] = {
                           "notes/tables/formalization-deps.tsv", "notes/tables/links.tsv",
                           "notes/tables/sources.tsv", "notes/tables/subfindings.tsv", "notes/t0-triage.md",
                           "notes/tables/topics.tsv", "notes/templates/", "notes/index/",
-                          # The fleet page's population scans the fleet's own sources and the tracked
-                          # probe records, and counts the top-level pages under notes/. A key that did
-                          # not hash them could serve a page whose site list was measured against a
-                          # script tree that has since moved.
-                          "notes/scripts/", "notes/probe/", "notes/"),
+                          # The fleet page's population scans the fleet's own sources and the two
+                          # tracked probe records, so the key must hash them: a key that did not could
+                          # serve a page whose site list was measured against a script tree that has
+                          # since moved. The top-level `notes/*.md` pages are NOT here — the fleet
+                          # population globs their names, it does not open them, and the audit-hook
+                          # record names only opens.
+                          "notes/scripts/", "notes/probe/2026-10-11_writers.txt",
+                          "notes/probe/2026-10-11_checkers.txt"),
     "build_report_templates.py": REPORT_PAGES,
     # The names measurement is a record producer, not a page writer: its only tracked input is the
     # ledger, which the probe records as the single notes/ path it opens read-only. Its record is the
@@ -147,9 +150,15 @@ L1_HEAD = frozenset({"build_report_templates.py"})
 
 
 def expand(entry: str) -> list[Path]:
-    """A repo-relative file, or every file under a repo-relative tree when the entry ends in `/`."""
+    """A repo-relative file, or every file under a repo-relative tree when the entry ends in `/`.
+
+    A tree entry names the source surface the writer reads, so the compiled caches Python writes under
+    `__pycache__` are not part of it: they are not UTF-8, they are a function of the source the key
+    already hashes, and the audit-hook record does not name them.
+    """
     if entry.endswith("/"):
-        return sorted(p for p in (ROOT / entry).rglob("*") if p.is_file())
+        return sorted(p for p in (ROOT / entry).rglob("*")
+                      if p.is_file() and "__pycache__" not in p.parts)
     return [ROOT / entry]
 
 

@@ -77,7 +77,7 @@ from catlib.paths import (
     SUBFINDINGS_TSV,
     owner,
 )
-from catlib.promote import REPORT_PAGES, key_for
+from catlib.promote import key_for
 from jinja2 import Environment, FileSystemLoader
 
 TPL = ROOT / "notes" / "templates" / "report"
@@ -2506,9 +2506,6 @@ def fleet_population() -> dict[str, Any]:
         purity.append((script, len(writes), len(gen)))
     du = {name: int(fleet_sh("du", "-sk", rel).split()[0]) // 1024
           for name, rel in (("preprints", "preprints"), ("oai", "lean/OAI"), ("index", "notes/index"))}
-    fed = [p for p in REPORT_PAGES if p != "notes/README.md"]
-    top = sorted(p.name for p in (ROOT / "notes").glob("*.md") if p.name != "README.md")
-    fednames = {p.split("/")[-1] for p in fed}
     return {
         "atomic": atomic, "atomic_sites": atomic_sites,
         "scripts": len(scripts), "modules": len(modules),
@@ -2520,8 +2517,6 @@ def fleet_population() -> dict[str, Any]:
         "gate_rows": len(re.findall(r'^\s*\(".*?",\s*\(', rows_block, re.MULTILINE)),
         "set_sites": set_sites, "env_sites": env_sites, "env_hits": len(env_sites),
         "purity": purity,
-        "report_fed": len(fed), "hand_written": len(set(top) - fednames),
-        "top_level": len(top), "page_writes": len(REPORT_PAGES),
     }
 
 
@@ -2547,11 +2542,6 @@ def fleet_phrases(v: dict[str, Any]) -> dict[str, str]:
         "env_hits": f"**{v['env_hits']} hits**",
         "purity_heading": f"## The purity population ({n} scripts, mode-verified)",
         "purity_zero": f"**0** of the {n} scripts reads a generated file",
-        "report_fed": f"the other **{v['report_fed']}** are report-fed, so they are L3",
-        "hand_written": f"the **{v['hand_written']}** hand-written `notes/*.md` pages",
-        "top_level": f"of the **{v['top_level']}** top-level pages",
-        "l3_pages": f"the {v['report_fed']} report-fed `notes/*.md`",
-        "page_writes": f"{v['page_writes']} page writes",
     }
     for key, sites in (("atomic", v["atomic_sites"]), ("set", v["set_sites"]),
                        ("env", v["env_sites"])):

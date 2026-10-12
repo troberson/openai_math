@@ -776,7 +776,9 @@ lives in this file and nowhere else.
   (`ARTIFACTS` plus the one writer the protocol excludes, `measure_open_probe.py`, whose record carries
   a wall time) against the writers table in `notes/scripts/README.md`; each writer's `L1` list against
   the audit-hook open-mode records in `notes/probe/`, newest record per target, with the writer's own
-  outputs excluded and the check scoped to the `notes/` bucket the record prints; and every tracked
+  outputs excluded and the check scoped to the `notes/` bucket the record prints — which excludes
+  `notes/scripts/` and `notes/probe/`, so an `L1` tree entry naming the script tree hashes the sources
+  a census scans without demanding the record name them; and every tracked
   artifact's bytes against the cache entry under the key the registry recomputes with the canonical gate
   args. `build_report_templates.py` is exempt from the probe check because it reads pages with
   `git show HEAD:`, a subprocess read the `open` event cannot see — and `key_for()` hashes **that**
@@ -796,11 +798,12 @@ lives in this file and nowhere else.
   `git rev-parse HEAD:<path>` tree digests, the `git status --porcelain --ignored=matching` check over
   the five hashed paths, the `notes/tables/*.tsv` byte sum, the three `du -sk` sizes, the gate row count from
   `gate.py`'s `ROWS` block, the three site counts (atomicity, env, set iteration), and the probe table's
-  wall/opens/distinct/repeats figures — parsed from the **5** audit-hook records **tracked under
+  wall/opens/distinct/repeats figures — parsed from the **6** audit-hook records **tracked under
   `notes/probe/`** (the checker parses
-  the 2026-10-11 pair, written by `notes/scripts/measure_open_probe.py` over **9** targets; the 2026-10-10 pair and the
-  single-target `render_reports.py` after-record are the before-state the page's deltas are measured
-  against), which the checker requires on disk. It resolves
+  the 2026-10-11 pair, written by `notes/scripts/measure_open_probe.py` over **9** targets; the 2026-10-10 pair, the
+  single-target `render_reports.py` after-record and the 2026-10-12 `render_reports.py` record that
+  captures the fleet census are the records the page's deltas and the promotion checker read), which the
+  checker requires on disk. It resolves
   every backticked `path:line` anchor, bare script names included (a bare
   name resolves under `notes/scripts/`), matches the purity table — **8** rows, the set the probe parse
   yields, so adding a probe target moves the table and the heading count together
