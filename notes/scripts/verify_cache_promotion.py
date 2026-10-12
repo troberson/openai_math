@@ -9,11 +9,13 @@ protocol deliberately excludes, equals the writers table in `notes/scripts/READM
 `catlib/templates.py`; no writer's L1 names a file it writes (a self-read would make the key depend on
 its own output, so a write would invalidate the record it just landed); and every L1 file is on disk.
 
-**B. L1 exactness.** The audit-hook open-mode records at `notes/probe/2026-10-11_writers.txt` and
-`notes/probe/2026-10-10_writers.txt` list every `notes/` path each target opened, with its mode. The
-registry's L1 must equal that set with the writer's own outputs removed: a file the writer reads that
-the key does not name is a cache that can serve stale bytes, which is the failure mode L1 exists to
-prevent, and a file the key names that the writer never opens is a key that invalidates for nothing.
+**B. L1 exactness.** The audit-hook open-mode records at
+`notes/probe/2026-10-12_rr_fleet.txt`, `notes/probe/2026-10-12_seed_quotes.txt`,
+`notes/probe/2026-10-11_writers.txt` and `notes/probe/2026-10-10_writers.txt` list every `notes/`
+path each target opened, with its mode. The registry's L1 must equal that set with the writer's own
+outputs removed: a file the writer reads that the key does not name is a cache that can serve stale
+bytes, which is the failure mode L1 exists to prevent, and a file the key names that the writer never
+opens is a key that invalidates for nothing.
 
 **C. Cache equals disk.** For every writer, the key is recomputed from the registry with the canonical
 gate args, and every artifact (a file, or every file under a tree) is compared byte-for-byte with the
@@ -53,6 +55,7 @@ from catlib.promote import (
 # captures the fleet census — the writer reads the script tree and the two 2026-10-11 records, which
 # the 2026-10-11 record of itself cannot name.
 PROBES = (ROOT / "notes" / "probe" / "2026-10-12_rr_fleet.txt",
+          ROOT / "notes" / "probe" / "2026-10-12_seed_quotes.txt",
           ROOT / "notes" / "probe" / "2026-10-11_writers.txt",
           ROOT / "notes" / "probe" / "2026-10-10_writers.txt")
 README = ROOT / "notes" / "scripts" / "README.md"
