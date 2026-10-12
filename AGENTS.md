@@ -61,7 +61,7 @@ lives in this file and nowhere else.
 
 - Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `atomic`, `promote`, `overview`, `ledger`, `preprints`,
   `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries`, `templates`, `records` (17 modules). Import them (`from catlib import yaml as Y`);
-  do not re-implement a join in an extractor. **53** of the **58** scripts do — the rule is
+  do not re-implement a join in an extractor. **54** of the **59** scripts do — the rule is
   `^[ \t]*(from|import) catlib`, so a deferred import inside a function counts — including
   **22** of the **23** checkers; the five non-importers are `dump_template_slots.py`, which reaches the slot dict
   through `render_reports.py` and never touches the registry, `gate.py`, which spawns rows and reads
@@ -373,8 +373,8 @@ lives in this file and nowhere else.
   manifest is `notes/scripts/README.md`, and it is the only place that answers "whose bytes are
   this". It is also the script inventory: every script under `notes/scripts/` is listed once as
   writer, report-only or checker, with what it writes and the gate command the gate list runs for it
-  — **11** writers, **24** report-only, **22** checkers, plus the page's own checker as the 23rd
-  checker and 58th script — and the fourth class, scratch, is recorded by rule: **scratch lives under
+  — **11** writers, **25** report-only, **22** checkers, plus the page's own checker as the 23rd
+  checker and 59th script — and the fourth class, scratch, is recorded by rule: **scratch lives under
   `.qwen/tmp/`, a permanent script lives under `notes/scripts/`**, so a probe that a later pass
   re-runs is promoted and gets a table row before it gets a gate command. `math-o3a.3.4` is that rule
   realized: the audit-hook probe moved from `.qwen/tmp/a11_open_probe2.py` to
@@ -384,10 +384,10 @@ lives in this file and nowhere else.
   `.qwen/tmp/notes_block_probe.py` to `notes/scripts/measure_move_surface.py` and
   `notes/scripts/measure_anchor_blocks.py`, and the gate does not run them because a pass re-runs them
   by hand before and after each move.
-  Scripts and generated files are **not** 1-to-1: of the **57** scripts, **11** write
+  Scripts and generated files are **not** 1-to-1: of the **58** scripts, **11** write
   (`build_catalog.py`, `build_sources.py`, `build_index.py`, `compare_abstracts.py` — with `--tsv`
   only — `extract_formalization_deps.py`, `extract_links.py`, `extract_subfindings.py`,
-  `render_reports.py`, `build_report_templates.py`, `measure_open_probe.py`, `measure_names.py`) and **46**
+  `render_reports.py`, `build_report_templates.py`, `measure_open_probe.py`, `measure_names.py`) and **47**
   write nothing, and `build_index.py` alone renders **1,049** files. `measure_names.py` is the record
   producer: its target is `.qwen/cache/records/<key>/names.json`, which the `.qwen/*` rule keeps
   untracked, so it is the one writer with no tracked artifact and the one writer target the
@@ -423,12 +423,14 @@ lives in this file and nowhere else.
   unchanged by the flagged run. The read-only gate pool is the block that runs rows with this flag.
 - The whole-tree test is the gate list at `notes/scripts/gate.py`: **75** invocations — the **8**
   gated writers (`build_report_templates.py` and `measure_open_probe.py` are the writers it does not
-  run), the 22 gated report-only rows (including `check_summary_manuscripts.py` and
-  `locate_summary_quotes.py`, and `check_index_links.py` plain and with `--mutant`;
-  `read_manuscript.py` is the one script it does not run), and **45**
-  checker invocations: **44** from the 22 checkers listed twice (plain and with `--mutant`) — the 21
+  run), the 23 gated report-only rows (including `check_summary_manuscripts.py` and
+  `locate_summary_quotes.py`, `check_index_links.py` plain and with `--mutant`, and
+  `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q`, the extracted self-tests row;
+  `read_manuscript.py` is the one script it does not run), and **44**
+  checker invocations: **42** from the 21 checkers listed twice (plain and with `--mutant`) — the 20
   table checkers plus `verify_script_ownership.py`, the census page's own checker — plus
-  `verify_page_sync.py --both` (**1**). The list is one array, `ROWS`, of (spec, needs, writes) triples over the
+  `verify_page_sync.py --both` (**1**) and `verify_scope_exclusions.py` plain (**1**), which no longer
+  carries a `--mutant` branch. The list is one array, `ROWS`, of (spec, needs, writes) triples over the
   generated artifacts: a row starts as soon as every row that writes its `needs` has finished, each
   row writes its own `.line` file, and the report prints the `.line` files in list order after the
   last row, so the report is the same bytes a serial run prints. `GATE_POOL` is the concurrency cap,
@@ -503,7 +505,8 @@ lives in this file and nowhere else.
   must be assigned over the **jointly sorted** pooled sample — sorting each group and concatenating
   gives every AUC as 0.000 with absurd p-values.
 - Check `notes/scope-exclusions.md` with `python3 notes/scripts/verify_scope_exclusions.py` and its
-  extracted self-tests with `python3 notes/scripts/run_tests.py tests/test_scope_exclusions.py -q`
+  extracted self-tests with
+  `python3 notes/scripts/run_tests.py notes/scripts/tests/test_scope_exclusions.py -q`
   before quoting any entry — the checker requires exactly one row per scope note on disk, checks every
   `lean/docs/NNN.md:<line>` anchor falls inside that file's `## Scope` span, requires each quotation
   verbatim on the line it cites, and re-measures all seven Measurements-table numbers from the files.
@@ -773,7 +776,7 @@ lives in this file and nowhere else.
   every time the command block is edited and would read the gap as empty the moment the naming
   lands — and recomputes the shared-basename sets
   (**1** top-level ∩ index: `README.md`; **13** index ∩ summaries slugs). It excludes
-  itself from the population, so the page's **58** scripts and **23** checkers are the run's **57** and
+  itself from the population, so the page's **59** scripts and **23** checkers are the run's **58** and
   22. It flags eighteen injected mutants, each asserted against the check it targets, and writes nothing.
 - Check the promotion protocol with `python3 notes/scripts/verify_cache_promotion.py --mutant` before
   quoting any cache figure — it re-derives the `catlib/promote.py` registry three ways: the writer set

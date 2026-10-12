@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # Proof chain for the lint trio over notes/scripts/, capturing each tool's OWN exit code.
+# The extracted checker self-tests live inside that tree (notes/scripts/tests/), so the trio checks
+# them with the scripts; no second scope is needed.
 # pylint needs PYTHONPATH so it can import the module-level render_reports import.
 # Root from git, not from the script's depth: "$(dirname "$0")/../.." is correct only at exactly
 # two levels below the root.

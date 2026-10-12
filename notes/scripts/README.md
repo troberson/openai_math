@@ -118,7 +118,7 @@ invocations — the **9** gated writers (the two writers it does not run are `bu
 and `measure_open_probe.py`, each for the reason in its own row), the 22 gated report-only rows (including `check_summary_manuscripts.py`
 and `locate_summary_quotes.py`, `check_index_links.py` twice — plain and with `--mutant`, since
 `math-a0r.6.2` gave its self-test a prose mutant that only the gate can run — and `run_tests.py
-tests/test_scope_exclusions.py -q`, the extracted self-tests row), and **44** checker
+notes/scripts/tests/test_scope_exclusions.py -q`, the extracted self-tests row), and **44** checker
 invocations: **42** from the 21 checkers listed twice (plain and with `--mutant`) — the 20 table
 checkers plus `verify_script_ownership.py`, this page's own checker — plus
 `verify_page_sync.py --both` (**1**) — both passes in one process, because `catlib.render.rendered`
@@ -168,7 +168,7 @@ had to wait for the serial chain to finish.
 | `measure_topics.py` | `notes/topics.md` | `--check` |
 | `read_manuscript.py` | none — a reading aid; prints a manuscript's abstract, section skeleton and titled statement environments with `file:line` anchors | **not gated** |
 | `refresh_summary_line_counts.py` | `notes/summaries/` — rewrites the `Lines` column of the Sources table in every page | plain, **first among the checkers** |
-| `run_tests.py` | none — the seam between the gate and the extracted checker self-tests: the gate runs every row as `python3 notes/scripts/<spec>` and pytest lives in the venv, so this row names the venv's python and passes pytest args through | plain |
+| `run_tests.py` | none — the seam between the gate and the extracted checker self-tests, which live in `notes/scripts/tests/`: the gate runs every row as `python3 notes/scripts/<spec>` and pytest lives in the venv, so this row names the venv's python and passes pytest args through | plain |
 | `triage_t0.py` | `notes/t0-triage.md` | plain |
 
 `read_manuscript.py` is the only script the gate does not run: it takes a `preprints/` directory
@@ -186,13 +186,14 @@ compared with `render_reports.py`'s render of it, folded into the exit code), an
 
 The remaining **22** scripts verify a page or a table. Each exits non-zero when what it checks has
 drifted; **21** take `--mutant`, which injects faults and asserts they are caught, and **1** —
-`verify_scope_exclusions.py` — has its self-tests extracted to `tests/test_scope_exclusions.py`, so the
-checker measures and the test file injects. The gate runs each one plain and then with `--mutant` —
+`verify_scope_exclusions.py` — has its self-tests extracted to
+`notes/scripts/tests/test_scope_exclusions.py`, so the checker measures and the test file injects.
+The gate runs each one plain and then with `--mutant` —
 **44** of the 75 invocations: **40** from the 20 rows below, each listed twice, **2** for
 `verify_script_ownership.py` (the 23rd checker, not listed in its own table), **1** for
 `verify_page_sync.py --both`, which runs both passes in one process, and **1** plain for
 `verify_scope_exclusions.py`. The extracted self-tests row is a report-only row, not a checker
-invocation: `run_tests.py tests/test_scope_exclusions.py -q`.
+invocation: `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q`.
 
 | Checker | Checks | Gate | Cost (s) |
 |---|---|---|---|
@@ -210,7 +211,7 @@ invocation: `run_tests.py tests/test_scope_exclusions.py -q`.
 | `verify_named_conjectures.py` | `notes/named-conjectures.md` | plain + `--mutant` | 0.0 / 0.1 |
 | `verify_named_results.py` | `notes/named-results.md` | plain + `--mutant` | 104.6 / 108.3 |
 | `verify_page_sync.py` | `notes/links.md`, `notes/names.md`, `notes/topics.md`, `notes/proof-density.md`, `notes/index-links.md` — the render diff for the five pages whose sync pass used to live in a writer; the mutants mutate page prose in memory, so no page is written | `--both` — plain and mutant in one process | 125.2 |
-| `verify_scope_exclusions.py` | `notes/scope-exclusions.md` | plain; the self-tests are in `tests/test_scope_exclusions.py`, run by the `run_tests.py` row | 0.1 |
+| `verify_scope_exclusions.py` | `notes/scope-exclusions.md` | plain; the self-tests are in `notes/scripts/tests/test_scope_exclusions.py`, run by the `run_tests.py` row | 0.1 |
 | `verify_sources.py` | `notes/sources.md` | plain + `--mutant` | 1.9 / 13.2 |
 | `verify_subfinding_pairs.py` | `notes/subfinding-pairs.md` | plain + `--mutant` | 0.1 / 0.1 |
 | `verify_subfindings.py` | `notes/tables/subfindings.tsv` | plain + `--mutant` | 0.1 / 0.6 |
@@ -344,7 +345,10 @@ imports must import the package only inside a function — `measure_templates.py
 already does.
 
 The package is not in the census below: the script population is `notes/scripts/*.py`, and
-`catlib/` is 17 modules under that directory, so the lint gate checks **76** source files
+`catlib/` is 17 modules under that directory, so the population the census counts is **76** files.
+The lint gate checks **78**, because the extracted checker self-tests live inside the tree
+(`notes/scripts/tests/`, 2 files) and the trio over `notes/scripts/` recurses into it; the census
+excludes them with the script tree, so they are not scripts.
 (`.venv/bin/mypy notes/scripts/` prints the count it checked).
 
 ## The file census

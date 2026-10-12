@@ -3,9 +3,11 @@
 
 The gate runs every row as `python3 notes/scripts/<spec>`, and pytest lives in the uv-managed venv,
 not in the system python the gate uses. This script is the seam: a gate row names this script, the
-harness lives in the test files, and the checker under test stays measurement-only.
+harness lives in the test files, and the checker under test stays measurement-only. The tests sit in
+the script tree (`notes/scripts/tests/`), so the lint trio over `notes/scripts/` covers them and the
+census excludes them with the script tree.
 
-Usage: python3 notes/scripts/run_tests.py [pytest args]
+Usage: python3 notes/scripts/run_tests.py notes/scripts/tests/test_<checker>.py -q
 """
 import subprocess
 import sys

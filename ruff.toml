@@ -1,4 +1,5 @@
-# Ruff configuration for the ledger scripts under notes/scripts/ (math-e8k).
+# Ruff configuration for the ledger scripts under notes/scripts/, including the extracted checker
+# self-tests under notes/scripts/tests/ (math-e8k).
 #
 # The gate command is `.venv/bin/ruff check notes/scripts/` and it must exit 0.
 # Every rule below that is ignored carries the count it was measured at and the reason the finding is
