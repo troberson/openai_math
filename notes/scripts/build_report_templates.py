@@ -37,9 +37,21 @@ start and the template fails to compile (`unexpected char '\\'`). Wrapping is sa
 Run it from a clean checkout of the page it rebuilds: it reads HEAD, not the working tree. Proof
 after any rebuild is the render - `python3 notes/scripts/render_reports.py` twice, pages
 byte-identical to HEAD. Prints the label -> phrase-part dict the writer supplies. Touches no page.
+
+The 18 pages are built in a fork pool, because the wall is the per-page measurement, not the page
+loop: measured 2026-10-11, `build_report_templates.py --check-only` runs 190.45 s with user 182.585 s
+(one core), of which 173.02 s is the writer measurement, 15.08 s the needle derivation, 0.10 s the
+`git show` calls and the regex locate. `build()` is pure and returns its report lines, so the PARENT
+prints in sorted page order and stages in sorted page order - the slot numbering `Staging` gives
+(`len(self._targets)`) is the serial numbering, and the report is the bytes a serial run prints. A
+worker writes nothing: staging is one writer's approval, and 18 workers writing the same slot `0000`
+is not it. The pages share caches per process (`measure_names.measure()` is `@cache`d), so a pool
+multiplies the corpus walk it needs - the floor is the slowest page, `notes/templates.md`, whose
+population runs the needle derivation for all 18 checkers.
 """
 from __future__ import annotations
 
+import multiprocessing as mp
 import pathlib
 import re
 import subprocess
@@ -56,6 +68,10 @@ TPL_DIR = ROOT / "notes" / "templates" / "report"
 KEY = key_for("build_report_templates.py", tuple(sys.argv[1:]))
 ST = Staging("build_report_templates", KEY)
 WS_RUN = re.compile(r"[ \t]*\n[ \t]*")
+# Measured 2026-10-11: the pool wall equals the slowest page (notes/templates.md, 71 s cold), so 6
+# workers reach the floor (69.34 s) and 12 and 18 do not beat it (66.56 s / 68.71 s). 6 keeps the
+# concurrent peak at ~600 MB of the 847 MB the 18 isolated pages measure.
+POOL = 6
 
 # The registry, the writer's slot dicts and the needle derivation are in catlib/templates.py;
 # this module is the writer path that turns them into a template.
@@ -127,11 +143,20 @@ def raw_wrap(text: str) -> str:
     return "\n".join(out)
 
 
-def build(page_rel: str, checker_name: str) -> int:
+def build(page_rel: str, checker_name: str) -> tuple[int, list[str], pathlib.Path, str]:
+    """One page's template, built without writing: (rc, report lines, template path, template text).
+
+    The per-page work is pure — `git show HEAD:<page>`, the writer's slot dict, the regex locate, the
+    needle derivation, the string replacement — so it runs in a pool worker. Staging is NOT here: the
+    parent stages, in sorted page order, which is what makes the slot numbering the serial numbering.
+    Every line this function would have printed is returned in `lines` so the parent prints the report
+    in page order.
+    """
+    lines: list[str] = []
     label_fn = T.LABELS.get(page_rel)
     if label_fn is None:
-        print(f"no writer slot dict recorded for {page_rel}")
-        return 1
+        lines.append(f"no writer slot dict recorded for {page_rel}")
+        return 1, lines, pathlib.Path(""), ""
     labels = label_fn()
     groups = T.group_labels(labels)
 
@@ -141,8 +166,8 @@ def build(page_rel: str, checker_name: str) -> int:
         needle = " ".join(v for _, v in parts)
         found = list(flex(needle).finditer(text))
         if not found:
-            print(f"NOT FOUND ({base}): {needle!r}")
-            return 1
+            lines.append(f"NOT FOUND ({base}): {needle!r}")
+            return 1, lines, pathlib.Path(""), ""
         hits.extend((m.start(), m.end(), base, parts) for m in found)
     hits.sort()
     kept: list[tuple[int, int, str, list[tuple[str, str]]]] = []
@@ -151,10 +176,11 @@ def build(page_rel: str, checker_name: str) -> int:
             # A label whose phrase is a substring of another label's phrase is already slotted by the
             # wider span; only a partial overlap is a real conflict.
             if h[1] <= kept[-1][1]:
-                print(f"covered by {kept[-1][2]!r}: {h[2]!r} [{h[0]}:{h[1]}]")
+                lines.append(f"covered by {kept[-1][2]!r}: {h[2]!r} [{h[0]}:{h[1]}]")
                 continue
-            print(f"OVERLAP: {kept[-1][2]!r} [{kept[-1][0]}:{kept[-1][1]}] vs {h[2]!r} [{h[0]}:{h[1]}]")
-            return 1
+            lines.append(f"OVERLAP: {kept[-1][2]!r} [{kept[-1][0]}:{kept[-1][1]}] vs "
+                         f"{h[2]!r} [{h[0]}:{h[1]}]")
+            return 1, lines, pathlib.Path(""), ""
         kept.append(h)
     hits = kept
 
@@ -179,8 +205,9 @@ def build(page_rel: str, checker_name: str) -> int:
         else:
             split, seps = split_parts(matched, " ".join(v for _, v in parts))
             if len(split) != len(parts):
-                print(f"WRAP MISMATCH ({base}): page splits into {len(split)}, writer has {len(parts)}")
-                return 1
+                lines.append(f"WRAP MISMATCH ({base}): page splits into {len(split)}, "
+                             f"writer has {len(parts)}")
+                return 1, lines, pathlib.Path(""), ""
             exprs = []
             for (lab, _), part in zip(parts, split, strict=True):
                 slots[lab] = part
@@ -197,46 +224,70 @@ def build(page_rel: str, checker_name: str) -> int:
               f"   from git show HEAD:{page_rel} and the slot dict in notes/scripts/render_reports.py.\n"
               f"   Literal text is byte-exact from the committed page; every {{{{ }}}} slot is a label the\n"
               f"   writer supplies. Proof after a rebuild: render_reports.py twice, page byte-identical. #}}\n")
-    ST.stage(out, header + text)
+    full = header + text
     total = text.count("{{ ")
     needles = T.checker_needles(ROOT / "notes" / "scripts" / checker_name)
-    print(f"template written: {out.relative_to(ROOT)}")
-    print(f"labels {len(labels)} groups {len(groups)} hits {len(hits)} slots {nslots} exprs {total}")
-    print(f"template lines {len((header + text).splitlines())} bytes {len((header + text).encode())}")
+    lines.append(f"template written: {out.relative_to(ROOT)}")
+    lines.append(f"labels {len(labels)} groups {len(groups)} hits {len(hits)} slots {nslots} exprs {total}")
+    lines.append(f"template lines {len(full.splitlines())} bytes {len(full.encode())}")
     if wrapped:
         # A phrase the page breaks across lines stays literal unless the writer supplies it as split
         # labels. This list is the work list for the writer's split table (INDEX_SPLIT / NR_SPLIT).
-        print(f"left literal {len(wrapped)} (page wraps, writer supplies one string): "
-              + " ".join(sorted(wrapped)))
+        lines.append(f"left literal {len(wrapped)} (page wraps, writer supplies one string): "
+                     + " ".join(sorted(wrapped)))
     if needles:
-        print(f"checker needles {len(needles)} slotted {sum(1 for ph, _ in needles if ph in labels.values())}"
-              f" literal {sum(1 for ph, _ in needles if ph not in labels.values())}")
+        lines.append(f"checker needles {len(needles)} slotted "
+                     f"{sum(1 for ph, _ in needles if ph in labels.values())} literal "
+                     f"{sum(1 for ph, _ in needles if ph not in labels.values())}")
     else:
         # A checker whose needle list cannot be derived from a call with no population gives no
         # coverage signal at all; printing "0 needles" would read as a clean report that checked nothing.
-        print(f"checker needles NOT DERIVED ({checker_name}) - coverage unverified")
-    print("\n# writer slots (label -> phrase part)")
+        lines.append(f"checker needles NOT DERIVED ({checker_name}) - coverage unverified")
+    lines.append("\n# writer slots (label -> phrase part)")
     for k, v in sorted(slots.items()):
-        print(f"    {k!r}: {v!r},")
-    return 0
+        lines.append(f"    {k!r}: {v!r},")
+    return 0, lines, out, full
+
+
+def worker(page_checker: tuple[str, str]) -> tuple[int, list[str], pathlib.Path, str]:
+    """`build` as a pool task: a `sys.exit(1)` from `split_parts` becomes rc 1, not a traceback.
+
+    `split_parts` exits the process on a SPLIT MISMATCH; in a worker that would raise SystemExit
+    through `pool.map` and print a traceback in the parent. The serial builder exits 1 with its line
+    printed, so the conversion keeps the report and the exit code the same.
+    """
+    page, checker = page_checker
+    try:
+        return build(page, checker)
+    except SystemExit:
+        return 1, [], pathlib.Path(""), ""
 
 
 def main(argv: list[str]) -> int:
     check_only = "--check-only" in argv
     argv = [a for a in argv if a != "--check-only"]
     if not argv:
-        for page, checker in sorted(T.ALL_PAGES.items()):
-            rc = build(page, checker)
+        pages = sorted(T.ALL_PAGES.items())
+        with mp.Pool(POOL) as pool:
+            results = pool.map(worker, pages)
+        for rc, lines, out, text in results:
+            for line in lines:
+                print(line)
             if rc:
                 return rc
+            if not check_only:
+                ST.stage(out, text)
         if not check_only:
             ST.promote()
         return 0
     if len(argv) != 2:
         print("usage: build_report_templates.py [<notes/page.md> <verify_page.py>]")
         return 2
-    rc = build(argv[0], argv[1])
+    rc, lines, out, text = build(argv[0], argv[1])
+    for line in lines:
+        print(line)
     if rc == 0 and not check_only:
+        ST.stage(out, text)
         ST.promote()
     return rc
 

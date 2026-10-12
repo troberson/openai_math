@@ -45,13 +45,18 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
     "notes/names.md": R.names_population,
     "notes/proof-density.md": R.proof_density_population,
     "notes/index-links.md": R.index_links_population,
-    "notes/links.md": R.links_population,
+    # Both links pages read the SAME cached population. render_reports.py:3262 builds its topics
+    # population from population_of("links"), and population_of is @cache'd, so the links walk is paid
+    # once per process. Calling R.links_population() directly here made notes/topics.md re-run the
+    # walk notes/links.md had already paid — measured 23.34 s of labels for topics against 19.23 s for
+    # links in one builder process.
+    "notes/links.md": lambda: R.population_of("links"),
     "notes/dependency-drift.md": R.drift_population,
     "notes/verification-dirs.md": R.verification_dirs_population,
     "notes/scope-exclusions.md": R.scope_exclusions_population,
     # topics.md needs the links labels too: its MSC/keywords figures are measured by extract_links.py
     # and derived in links_full, so its population is links_full over the links population.
-    "notes/topics.md": lambda: R.topics_population(R.links_full(R.links_population())),
+    "notes/topics.md": lambda: R.topics_population(R.links_full(R.population_of("links"))),
     "notes/t0-chains.md": R.t0_chains_population,
     # subfinding-pairs.md's population is the pairing report's own, imported from
     # extract_subfinding_pairs.py, plus the reading record parsed back out of the page.
