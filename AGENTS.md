@@ -601,7 +601,7 @@ lives in this file and nowhere else.
 - Run `python3 notes/scripts/measure_index_sizes.py` twice and diff: the report must be identical. It
   writes nothing, and every count in `notes/index-design.md` comes from it. It prints two byte sums
   that are not interchangeable — `ledger set bytes (5 named TSVs)` **297050** and
-  `all notes/tables/*.tsv bytes` **654791** — and an INDEX section whose table row counts are read from the
+  `all notes/tables/*.tsv bytes` **907744** — and an INDEX section whose table row counts are read from the
   generated files under `notes/index/`, not derived from the upstream counts they were built from.
 - Check `notes/index-design.md` with `python3 notes/scripts/verify_index_design.py` before quoting the
   schema — it resolves every backticked `path:line` anchor of any extension (a mistyped
@@ -622,7 +622,7 @@ lives in this file and nowhere else.
   tables, 372 families over 719 manuscripts, 242 scope notes, 416 configs, 200 `main_results` entries
   over 189 configs, 172 formalized, 749 preprint dirs, 122,458 `.lean` files, 559 module dirs, 17
   disciplines against 23 Lean dirs, 10 traces in 11 files, 30 verification bundles, 521 `.bib` files
-  with 13,802 entries and 393 hrefs, the ledger set at 297,050 B against the all-TSV 654,791 B, 66,107
+  with 13,802 entries and 393 hrefs, the ledger set at 297,050 B against the all-TSV 907,744 B, 66,107
   disk links with 0 broken and 17,700 resolving to a directory, and the substring counts 18 / 373
   against the brace-qualified 17 / 372. `main()` reads no argv, so `--mutant` is inert, and
   `population()` is under `functools.cache` (`:66`), so the fifteen `check()` calls the row makes pay
@@ -1050,7 +1050,7 @@ lives in this file and nowhere else.
   render-diff line fires for every fault, so no needle is that line. The clean test pins the population
   the passes report: 34 anchors, 24 count and probe phrases, 0 sync problems, 2 atomicity matches over
   59 scripts and 18 catlib modules, 12 sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 9
-  TSVs at 654,791 bytes, 631M `preprints/`, 1,740M `lean/OAI/`, 14M `notes/index/`, 78 gate rows, 10
+  TSVs at 907,744 bytes, 631M `preprints/`, 1,740M `lean/OAI/`, 14M `notes/index/`, 78 gate rows, 10
   writer rows, 2 env hits, 8 purity scripts, the sites at `atomic.py:42` / `atomic.py:84`,
   `render_reports.py:1155` / `render_reports.py:1375` and `build_catalog.py:128` /
   `build_index.py:583`, and the probe row the amplification table quotes at 151.32 s wall over
