@@ -502,13 +502,17 @@ lives in this file and nowhere else.
   report must be identical. Ties score 0.5, so `([1,2,3],[0,1,2])` is **7/9**, not 6/9, and the ranks
   must be assigned over the **jointly sorted** pooled sample — sorting each group and concatenating
   gives every AUC as 0.000 with absurd p-values.
-- Check `notes/scope-exclusions.md` with `python3 notes/scripts/verify_scope_exclusions.py --mutant`
-  before quoting any entry — it requires exactly one row per scope note on disk, checks every
+- Check `notes/scope-exclusions.md` with `python3 notes/scripts/verify_scope_exclusions.py` and its
+  extracted self-tests with `python3 notes/scripts/run_tests.py tests/test_scope_exclusions.py -q`
+  before quoting any entry — the checker requires exactly one row per scope note on disk, checks every
   `lean/docs/NNN.md:<line>` anchor falls inside that file's `## Scope` span, requires each quotation
-  verbatim on the line it cites, re-measures all seven Measurements-table numbers from the files, and
-  flags seven injected mutants including a paraphrase dressed as a quote and a prose count that only the
-  diff against the writer's render of the page can catch. `extract_scope_notes.py` is
-  report-only: it writes nothing and is where the page's counts come from.
+  verbatim on the line it cites, and re-measures all seven Measurements-table numbers from the files.
+  The test file injects the seven defects — a corrupted quotation, a citation outside the `## Scope`
+  span, a fabricated quotation, a paraphrase dressed as a quote, a quotation cited to the wrong line
+  inside the section, a deleted family row, and a prose count that only the diff against the writer's
+  render of the page can catch — and asserts the pass that owns each one flags it. The checker measures,
+  the test file injects; the checker no longer carries its own `--mutant` branch.
+  `extract_scope_notes.py` is report-only: it writes nothing and is where the page's counts come from.
 - Check `notes/tables/subfindings.tsv` with `python3 notes/scripts/verify_subfindings.py --mutant` before
   quoting a row — it re-derives every manuscript row from `overview.tex` (path, display title,
   formalized flag, tier) and every comparator row from its scope note's table **in order**, requires

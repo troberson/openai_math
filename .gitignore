@@ -5,6 +5,9 @@
 # Python bytecode from the notes scripts
 __pycache__/
 
+# pytest's collection cache (the extracted checker self-tests); never tracked
+.pytest_cache/
+
 # Project venv for the script linters (math-e8k); uv-managed, never tracked
 .venv/
 

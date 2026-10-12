@@ -9,10 +9,10 @@ is per file, and the checker exits 1 on a file no rule owns.
 It is also the script inventory. Every script under `notes/scripts/` is listed once, in one of three
 classes — writer, report-only, checker — with what it writes and the command the gate runs for it, and
 the fourth class, the scratch a session writes outside the tree, is recorded by rule rather than by
-file. The classes partition the **58** scripts: **11** writers, **24** report-only, **22** checkers,
+file. The classes partition the **59** scripts: **11** writers, **25** report-only, **22** checkers,
 and `verify_script_ownership.py` itself, which is the 23rd checker and is not listed in its own table.
 
-## The split: 11 write, 46 write nothing
+## The split: 11 write, 47 write nothing
 
 The writer set is derived from the scripts' own source, not from this page: a script is a writer when
 a path constant rooted at `notes/` appears on the left of `.open(..., "w")` or `.write_text(...)`,
@@ -33,7 +33,7 @@ self-test: a module-level
 `mutants` / `mutant_test` / `selftest` body is blanked before the write calls are read, because a
 self-test writes the page it checks only to mutate it and restores the bytes it read in the `finally`
 — `verify_script_ownership.py` does exactly that, in three branches (the page it checks, `notes/scripts/README.md`, and `notes/templates.md`), so its normal run writes nothing and it stays in the checker class. `check_index_links.py` and `measure_proof_density.py` were this rule's examples; `math-o3a.3` moved their sync pass into `verify_page_sync.py`, which mutates page text in memory, so neither script carries a write call any more. That rule
-finds **11** writers over **57** scripts.
+finds **11** writers over **58** scripts.
 
 ### Writers
 
@@ -109,18 +109,21 @@ Editing a join in `build_catalog.py` can move rows in six artifacts.
 
 ### Report-only
 
-The other **46** scripts write nothing. **24** of them print a report: **21** print the report a page's
-counts come from, **2** print the notes-move surface `math-faz` prices before a pass and re-checks
+The other **47** scripts write nothing. **25** of them print a report: **21** print the report a page's
+counts come from, **1** prints the pytest report for the extracted checker self-tests
+(`run_tests.py`), **2** print the notes-move surface `math-faz` prices before a pass and re-checks
 after it, and `gate.py` prints the gate report itself.
 The Gate column is the invocation the gate list runs: `notes/scripts/gate.py`, which runs **75**
 invocations — the **9** gated writers (the two writers it does not run are `build_report_templates.py`
-and `measure_open_probe.py`, each for the reason in its own row), the 21 gated report-only rows (including `check_summary_manuscripts.py`
-and `locate_summary_quotes.py`, and `check_index_links.py` twice — plain and with `--mutant`, since
-`math-a0r.6.2` gave its self-test a prose mutant that only the gate can run), and **45** checker
-invocations: **44** from the 22 checkers listed twice (plain and with `--mutant`) — the 21 table
+and `measure_open_probe.py`, each for the reason in its own row), the 22 gated report-only rows (including `check_summary_manuscripts.py`
+and `locate_summary_quotes.py`, `check_index_links.py` twice — plain and with `--mutant`, since
+`math-a0r.6.2` gave its self-test a prose mutant that only the gate can run — and `run_tests.py
+tests/test_scope_exclusions.py -q`, the extracted self-tests row), and **44** checker
+invocations: **42** from the 21 checkers listed twice (plain and with `--mutant`) — the 20 table
 checkers plus `verify_script_ownership.py`, this page's own checker — plus
 `verify_page_sync.py --both` (**1**) — both passes in one process, because `catlib.render.rendered`
-is cached per process and two rows pay the corpus walk twice — in
+is cached per process and two rows pay the corpus walk twice — plus `verify_scope_exclusions.py` plain
+(**1**), which no longer carries a `--mutant` branch — in
 class order, not in the order the rows sit; it prints one line per invocation with its exit code, its
 wall time, and the first 200 bytes of its report, and writes nothing to the repo outside
 `.qwen/tmp/reports/`. `math-8ou` promoted the list from `.qwen/tmp/` into `notes/scripts/`, closing
@@ -165,6 +168,7 @@ had to wait for the serial chain to finish.
 | `measure_topics.py` | `notes/topics.md` | `--check` |
 | `read_manuscript.py` | none — a reading aid; prints a manuscript's abstract, section skeleton and titled statement environments with `file:line` anchors | **not gated** |
 | `refresh_summary_line_counts.py` | `notes/summaries/` — rewrites the `Lines` column of the Sources table in every page | plain, **first among the checkers** |
+| `run_tests.py` | none — the seam between the gate and the extracted checker self-tests: the gate runs every row as `python3 notes/scripts/<spec>` and pytest lives in the venv, so this row names the venv's python and passes pytest args through | plain |
 | `triage_t0.py` | `notes/t0-triage.md` | plain |
 
 `read_manuscript.py` is the only script the gate does not run: it takes a `preprints/` directory
@@ -181,11 +185,14 @@ compared with `render_reports.py`'s render of it, folded into the exit code), an
 ### Checkers
 
 The remaining **22** scripts verify a page or a table. Each exits non-zero when what it checks has
-drifted; each takes `--mutant`, which injects faults and asserts they are caught. The gate runs each
-one plain and then with `--mutant` — **45** of the 75 invocations: **40** from the 20 rows below, each
-listed twice, **1** for `verify_page_sync.py --both`, which runs both passes in one process,
-**2** for `verify_cache_promotion.py` and **2** for `verify_conjecture_standing.py`, which the shell
-list kept outside its loop and the scheduler lists as their own entries.
+drifted; **21** take `--mutant`, which injects faults and asserts they are caught, and **1** —
+`verify_scope_exclusions.py` — has its self-tests extracted to `tests/test_scope_exclusions.py`, so the
+checker measures and the test file injects. The gate runs each one plain and then with `--mutant` —
+**44** of the 75 invocations: **40** from the 20 rows below, each listed twice, **2** for
+`verify_script_ownership.py` (the 23rd checker, not listed in its own table), **1** for
+`verify_page_sync.py --both`, which runs both passes in one process, and **1** plain for
+`verify_scope_exclusions.py`. The extracted self-tests row is a report-only row, not a checker
+invocation: `run_tests.py tests/test_scope_exclusions.py -q`.
 
 | Checker | Checks | Gate | Cost (s) |
 |---|---|---|---|
@@ -203,7 +210,7 @@ list kept outside its loop and the scheduler lists as their own entries.
 | `verify_named_conjectures.py` | `notes/named-conjectures.md` | plain + `--mutant` | 0.0 / 0.1 |
 | `verify_named_results.py` | `notes/named-results.md` | plain + `--mutant` | 104.6 / 108.3 |
 | `verify_page_sync.py` | `notes/links.md`, `notes/names.md`, `notes/topics.md`, `notes/proof-density.md`, `notes/index-links.md` — the render diff for the five pages whose sync pass used to live in a writer; the mutants mutate page prose in memory, so no page is written | `--both` — plain and mutant in one process | 125.2 |
-| `verify_scope_exclusions.py` | `notes/scope-exclusions.md` | plain + `--mutant` | 0.1 / 0.2 |
+| `verify_scope_exclusions.py` | `notes/scope-exclusions.md` | plain; the self-tests are in `tests/test_scope_exclusions.py`, run by the `run_tests.py` row | 0.1 |
 | `verify_sources.py` | `notes/sources.md` | plain + `--mutant` | 1.9 / 13.2 |
 | `verify_subfinding_pairs.py` | `notes/subfinding-pairs.md` | plain + `--mutant` | 0.1 / 0.1 |
 | `verify_subfindings.py` | `notes/tables/subfindings.tsv` | plain + `--mutant` | 0.1 / 0.6 |
@@ -226,8 +233,8 @@ the corpus read, which a mutant does not multiply. The 13 checkers that call the
 their mutant runs; `verify_script_ownership.py`, this page's own checker, is 0.2 plain / 1.1 with
 `--mutant` and is not a row above. `verify_page_sync.py`'s Cost is one number, not a pair: `--both`
 runs the plain pass and the mutant loop in one process, so `catlib.render.rendered` is walked once
-(123.4 s plain + 122.9 s mutant as two rows, against 125.2 s in one). The 45 checker invocations sum
-to **1342.9 s** (22 min), measured 2026-10-11 as the sum of the Cost column above; the full
+(123.4 s plain + 122.9 s mutant as two rows, against 125.2 s in one). The 44 checker invocations sum
+to **1342.7 s** (22 min), measured 2026-10-11 as the sum of the Cost column above; the full
 65-invocation gate took **35 min** and **38 min** on its two runs measured 2026-10-10
 (10:48–11:23 and 11:23–12:01 UTC); the 64-invocation list took **62 min** the same morning
 (05:49–06:51 UTC), so the two figures are a spread, not a regression — the difference being the
@@ -243,11 +250,11 @@ added `measure_checker_needles.py`, so the count is **75** after `math-o3a.1` ad
 `verify_fleet_design.py` plain and with `--mutant` (0.3 / 0.5 s), `math-o3a.6.1` added
 `verify_cache_promotion.py` plain and with `--mutant` (1.0 / 7.0 s), and the rows `math-unv`'s
 scheduler and `math-o3a.5.2`'s `--both` collapse added took the list to what the `ROWS` array
-carries. The count is read from the array, not from the history: **8** writer rows, **22**
-report-only rows, **45** checker invocations.
+carries. The count is read from the array, not from the history: **8** writer rows, **23**
+report-only rows, **44** checker invocations.
 
 `verify_script_ownership.py` — this page's own checker — is not in the table: a checker cannot list
-itself as its input. It is the 23rd checker and the 58th script; the run counts **57** scripts
+itself as its input. It is the 23rd checker and the 59th script; the run counts **58** scripts
 because it excludes itself.
 
 ## The shared package: `catlib/`
@@ -283,12 +290,13 @@ registry — `ALL_PAGES`, the writer's per-page `POPULATIONS` and `LABELS` slot 
 script run as `python3 notes/scripts/foo.py` has `notes/scripts` on `sys.path`, so it imports them as
 `from catlib import ...` with no path boilerplate.
 
-**53** of the **58** scripts call the package, measured by the rule `^[ \t]*(from|import) catlib` over
+**54** of the **59** scripts call the package, measured by the rule `^[ \t]*(from|import) catlib` over
 each script's own source: **11** `extract_` (all of them), **4** `build_` (all), **8** `measure_`
 (all 10 but `measure_proof_density.py` and `measure_topics.py`, including the two `math-faz` move
 probes), **2** `check_` (`check_index_links.py` and `check_summary_manuscripts.py`),
 **22** of the **23** `verify_` scripts, plus `render_reports.py`, `triage_t0.py`, `read_manuscript.py`,
-`compare_abstracts.py`, `locate_summary_quotes.py` and `refresh_summary_line_counts.py`. The five
+`compare_abstracts.py`, `locate_summary_quotes.py`, `refresh_summary_line_counts.py` and `run_tests.py`.
+The five
 scripts that do not are `dump_template_slots.py`, which reaches the slot dict through
 `render_reports.py` and never touches the registry; `gate.py`, which spawns rows and reads no corpus;
 `verify_fleet_design.py`, which measures the
@@ -336,7 +344,7 @@ imports must import the package only inside a function — `measure_templates.py
 already does.
 
 The package is not in the census below: the script population is `notes/scripts/*.py`, and
-`catlib/` is 17 modules under that directory, so the lint gate checks **75** source files
+`catlib/` is 17 modules under that directory, so the lint gate checks **76** source files
 (`.venv/bin/mypy notes/scripts/` prints the count it checked).
 
 ## The file census
@@ -397,14 +405,14 @@ excludes the checker-verified pages, allowing formatting only on the pages no ch
 
 ## Naming coverage
 
-`notes/README.md`'s command block named **34** of the 57 scripts before this pass. Twenty-three are named
+`notes/README.md`'s command block named **34** of the 58 scripts before this pass. Twenty-four are named
 nowhere in the repo at the pinned baseline: `build_report_templates.py`, `check_summary_manuscripts.py`,
 `extract_citations.py`, `gate.py`, `locate_summary_quotes.py`, `measure_anchor_blocks.py`,
 `measure_checker_needles.py`, `measure_faithfulness.py`, `measure_move_surface.py`, `measure_open_probe.py`, `measure_templates.py`,
 `read_manuscript.py`,
 `refresh_summary_line_counts.py`, `render_reports.py`, `verify_citations.py`, `verify_faithfulness.py`, `verify_findings.py`,
 `verify_fleet_design.py`, `verify_named_conjectures.py`, `verify_page_sync.py`, `verify_upstream_history.py`,
-`dump_template_slots.py` and `verify_cache_promotion.py`. The first four are the report-template
+`dump_template_slots.py`, `verify_cache_promotion.py` and `run_tests.py`. The first four are the report-template
 builder this pass promoted plus the `notes/summaries/` reading tooling and the citation extractor, so
 the summaries tree and `notes/citations.md` carried measurements whose generating command no document
 named; `read_manuscript.py` and `refresh_summary_line_counts.py` are the rest of that reading tooling;
@@ -414,7 +422,7 @@ measurements whose checker no document named; `verify_upstream_history.py` is th
 `notes/upstream_history/`, the pages that record each upstream merge, which moved under `notes/` on
 2026-10-10 and are inside this page's census; `measure_templates.py` is the census behind `notes/templates.md`, added by
 the pass that added that page; `measure_checker_needles.py` is the per-checker needle probe the
-checker-coverage bead promoted; `dump_template_slots.py` is the slot dump that prints the same dict the census measures, promoted by `math-a0r.7`; `verify_fleet_design.py` is the checker for `notes/fleet-design.md`, promoted by `math-o3a.1` together with the two probe records it parses; `verify_page_sync.py` is the checker `math-o3a.3` created when the five sync passes left the writer fleet, so the pinned baseline predates it; `measure_open_probe.py` is the audit-hook probe `math-o3a.3.4` promoted from `.qwen/tmp/a11_open_probe2.py`, so the pinned baseline predates it too; `measure_faithfulness.py` is the faithfulness measurement promoted from `.qwen/tmp/faith_probe.py` by the pass that added `notes/formalization-faithfulness.md`, and `verify_faithfulness.py` is that page's checker, so the pinned baseline predates both; `render_reports.py` is the renderer for the nineteen report-fed pages; `verify_cache_promotion.py` is the checker `math-o3a.6.1` created for the promotion protocol, so the pinned baseline predates it; `measure_anchor_blocks.py` and `measure_move_surface.py` are the two notes-move probes `math-faz.1` promoted from `.qwen/tmp/notes_block_probe.py` and `.qwen/tmp/notes_move_probe.py`, which price a directory move before it happens and re-check the mention counts after it, so the pinned baseline predates both; and `gate.py` is the dependency scheduler `math-unv` wrote to replace `notes/scripts/gate.sh`, so the pinned baseline predates it.
+checker-coverage bead promoted; `dump_template_slots.py` is the slot dump that prints the same dict the census measures, promoted by `math-a0r.7`; `verify_fleet_design.py` is the checker for `notes/fleet-design.md`, promoted by `math-o3a.1` together with the two probe records it parses; `verify_page_sync.py` is the checker `math-o3a.3` created when the five sync passes left the writer fleet, so the pinned baseline predates it; `measure_open_probe.py` is the audit-hook probe `math-o3a.3.4` promoted from `.qwen/tmp/a11_open_probe2.py`, so the pinned baseline predates it too; `measure_faithfulness.py` is the faithfulness measurement promoted from `.qwen/tmp/faith_probe.py` by the pass that added `notes/formalization-faithfulness.md`, and `verify_faithfulness.py` is that page's checker, so the pinned baseline predates both; `render_reports.py` is the renderer for the nineteen report-fed pages; `verify_cache_promotion.py` is the checker `math-o3a.6.1` created for the promotion protocol, so the pinned baseline predates it; `measure_anchor_blocks.py` and `measure_move_surface.py` are the two notes-move probes `math-faz.1` promoted from `.qwen/tmp/notes_block_probe.py` and `.qwen/tmp/notes_move_probe.py`, which price a directory move before it happens and re-check the mention counts after it, so the pinned baseline predates both; and `gate.py` is the dependency scheduler `math-unv` wrote to replace `notes/scripts/gate.sh`, so the pinned baseline predates it; `run_tests.py` is the seam that runs the extracted checker self-tests through the venv's pytest, promoted by the pass that extracted `verify_scope_exclusions.py`'s, so the pinned baseline predates it.
 All 58 are named here and in the command
 block. "Before this pass" is
 pinned to the commit that created this page, read at its parent, not to `HEAD`: `HEAD` moves every

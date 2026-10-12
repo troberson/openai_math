@@ -82,7 +82,7 @@ ROWS = [
     ("verify_named_conjectures.py", ("pages",), ()),
     ("verify_named_conjectures.py --mutant", ("pages",), ()),
     ("verify_scope_exclusions.py", ("pages",), ()),
-    ("verify_scope_exclusions.py --mutant", ("pages",), ()),
+    ("run_tests.py tests/test_scope_exclusions.py -q", ("pages",), ()),
     ("verify_subfindings.py", ("pages",), ()),
     ("verify_subfindings.py --mutant", ("pages",), ()),
     ("verify_subfinding_pairs.py", ("pages",), ()),

@@ -18,13 +18,13 @@ sequence of “quotation” `lean/docs/NNN.md:<line>` pairs. Five passes read th
                        Pass D proves the numbers are measured; it proves nothing about the sentences
                        around them.
 
---mutant proves the checker discriminates: it corrupts a real quotation, cites a real quotation to a
-line outside the Scope section, invents a quotation the file does not contain, deletes a family row,
-and alters a prose count outside the measured tables (visible only to Pass E), asserting Pass A-E
-flags each while the real page stays silent.
+The self-tests live in `tests/test_scope_exclusions.py`: they corrupt a real quotation, cite a real
+quotation to a line outside the Scope section, invent a quotation the file does not contain, delete a
+family row, and alter a prose count outside the measured tables (visible only to Pass E), asserting
+Pass A-E flags each while the real page stays silent. This script measures; it no longer injects.
 
 Usage: python3 notes/scripts/verify_scope_exclusions.py
-       python3 notes/scripts/verify_scope_exclusions.py --mutant
+       python3 -m pytest tests/test_scope_exclusions.py -q
 """
 import re
 import sys
@@ -171,15 +171,8 @@ def check(lines):
 
 
 def main():
-    mutant = "--mutant" in sys.argv
     text = PAGE.read_text(encoding="utf-8")
     lines = text.splitlines()
-    tail = "\n" if text.endswith("\n") else ""
-
-    def as_text(ls: list[str]) -> str:
-        """Rebuild page text from mutated lines so Pass E sees the same bytes a page on disk has."""
-        return "\n".join(ls) + tail
-
     problems, rows, excl, quotes = check(lines)
     sync = RD.sync_problems(PAGE, text)
     problems.extend(sync)
@@ -190,81 +183,7 @@ def main():
     print(f"problems: {len(problems)}")
     for p in problems:
         print(f"  {p}")
-
-    if not mutant:
-        return 0 if not problems else 1
-
-    print()
-    print("mutants:")
-    first_row = next(n for n, l in enumerate(lines, 1) if ROW.match(l))
-    base = lines[first_row - 1]
-    m = ROW.match(base)
-    fam, cell = m.group(1), m.group(2)
-    q = re.search(r"“([^”]+)”", cell).group(1)
-    cite = re.search(r"`lean/docs/(\d{3})\.md:(\d+)`", cell)
-    src = (DOCS_DIR / f"{fam}.md").read_text(encoding="utf-8", errors="replace").splitlines()
-    _first, last = Y.scope_span_lines(src)
-    outside = next(n for n in range(last + 1, len(src) + 1) if src[n - 1].strip())
-
-    cases = [
-        # A real quotation with one word corrupted: Pass C must flag the text, not the anchor.
-        ("corrupted quotation", base.replace(q, q.replace("the", "tbe", 1), 1), "not on"),
-        # A real quotation cited to a real line outside the section: Pass B must check the span.
-        ("citation outside the Scope section",
-         base.replace(cite.group(0), f"`lean/docs/{fam}.md:{outside}`", 1),
-         "outside the `## Scope` section"),
-        # A quotation the cited file does not contain anywhere: Pass C must flag it.
-        ("fabricated quotation",
-         base.replace(q, "the formalization deliberately omits every companion result", 1),
-         "not on"),
-        # A paraphrase dressed as a quote: same section, same shape, different words.
-        ("paraphrased quotation",
-         base.replace(q, q.replace("are excluded in", "are omitted from", 1), 1),
-         "not on"),
-        # Line drift: a real quotation cited to a different non-blank real line in the same section.
-        # Pass B accepts the anchor, so only Pass C can catch it.
-        ("quotation cited to the wrong line in the section",
-         base.replace(cite.group(0),
-                      f"`lean/docs/{fam}.md:{next(n for n in range(int(cite.group(2)) + 1, last + 1) if src[n - 1].strip())}`",
-                      1),
-         "not on"),
-    ]
-
-    undetected = 0
-    for name, mutated, expect in cases:
-        cand = list(lines)
-        cand[first_row - 1] = mutated
-        got, _, _, _ = check(cand)
-        got += RD.sync_problems(PAGE, as_text(cand))
-        hit = [p for p in got if expect in p]
-        if not hit:
-            undetected += 1
-        print(f"  {name}: {'detected' if hit else 'UNDETECTED'} ({len(got)} problems)")
-
-    # A family row deleted: Pass A must notice the table no longer covers the 242 notes.
-    cand = [l for i, l in enumerate(lines) if i != first_row - 1]
-    got, _, _, _ = check(cand)
-    got += RD.sync_problems(PAGE, as_text(cand))
-    hit = [p for p in got if "no row" in p]
-    if not hit:
-        undetected += 1
-    print(f"  deleted family row ({fam}): {'detected' if hit else 'UNDETECTED'} ({len(got)} problems)")
-
-    # Prose Pass D never parses: how many scope notes the 2026-10-07 merge added is not a
-    # Measurements-table row and not one of the prose counts Pass D reads. Only Pass E can see it.
-    prose = next(n for n, l in enumerate(lines) if l.startswith("plus the 7 that the 2026-10-07"))
-    cand = list(lines)
-    cand[prose] = cand[prose].replace("plus the 7 that", "plus the 8 that", 1)
-    got, _, _, _ = check(cand)
-    got += RD.sync_problems(PAGE, as_text(cand))
-    hit = [p for p in got if "page is not the writer's render" in p]
-    if not hit:
-        undetected += 1
-    print(f"  prose count outside the measured tables altered: "
-          f"{'detected' if hit else 'UNDETECTED'} ({len(got)} problems)")
-
-    print(f"undetected mutants: {undetected}")
-    return 0 if (undetected == 0 and not problems) else 1
+    return 0 if not problems else 1
 
 
 if __name__ == "__main__":
