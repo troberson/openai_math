@@ -239,7 +239,7 @@ not survive a re-run.
 | S17 | [`notes/scripts/extract_scope_notes.py`](scripts/extract_scope_notes.py) | 78 | The phrase-list floors behind the 5 and 44 counts |
 | S18 | [`notes/proof-density.md`](proof-density.md) | 115 | The proof-density test, its bar, and its nulls |
 | S19 | [`notes/scripts/measure_proof_density.py`](scripts/measure_proof_density.py) | 303 | The AUC and p re-derivation for every density figure |
-| S20 | [`notes/named-results.md`](named-results.md) | 346 | Headline environments read for named targets |
+| S20 | [`notes/named-results.md`](named-results.md) | 347 | Headline environments read for named targets |
 | S21 | [`notes/citations.md`](citations.md) | 328 | Bibliographic overlap by discipline |
 | S22 | [`notes/scripts/extract_citations.py`](scripts/extract_citations.py) | 257 | The citation extractor and its coverage report |
 | S23 | [`notes/names.md`](names.md) | 269 | The six-layer name measurement and the subject/citation split |
