@@ -178,7 +178,62 @@ page, and the fix is a probe that prints the index (`enumerate(splitlines())`), 
 blank line the count depends on. Keep the `BLANK` guard: it is the only signal an anchor landed on a
 blank line, and a page can report green on a shifted anchor whose span happens to contain the quote.
 
-## 7. Report
+## 7. The anchor-set comparison, and the duplication that makes it inert
+
+A page that quotes measured `name:line` sites (atomicity sites, env sites, set-iteration sites) needs a
+pass that compares the page's anchors with the measured **set**. Two passes are not enough:
+
+- the **count** pass proves only the count — a page naming a stale line still says `2 sites`;
+- the **anchor** pass proves only that the line exists in the file — a site shifted to a neighbouring
+  line resolves fine.
+
+So the pass must require `sorted(page anchors in the paragraph) == sorted(measured sites)`, and the
+report must print the measured sites with their line numbers so the page's numbers are checkable.
+Measured 2026-10-12 on `notes/fleet-design.md`: the checker printed `set sites 2` with line numbers and
+reported `problems 0` against a page naming two stale lines.
+
+**The duplication trap.** A presence check ("every measured site appears in the checker-section
+paragraph") is inert when the page carries the site **twice** in that paragraph — shifting one copy
+leaves the site present in the other. Two mutants were undetected this way: the page enumerated all six
+measured sites in the same paragraph that also carried the four-anchor list. Fixes, in order:
+
+1. Require each site carried **once** in the paragraph, and de-duplicate the page: list the four, then
+   "the three the four do not carry", never the six.
+2. Move the paragraph's **illustrative** anchors off the measured sites. A bare-anchor example written
+   with a measured site anchor (`render_reports.py:1150`) is a second copy of that site in the same
+   paragraph. Pick a verified anchor that is not a measured site.
+3. Path every anchor in a bullet the pass reads. A pathless anchor (`:1375`) is invisible to a regex
+   that requires a path, so a bullet with one pathless anchor reads as one anchor and the set
+   comparison silently compares one of two.
+
+**Proving a new pass with new mutants.** Do not run `HEAD`'s checker with `--mutant` against the new
+page: its needles are stale, so it prints `UNDETECTED: <name>: target not in the page` and the count is
+meaningless. The honest proof is to load HEAD's checker as a module and evaluate the **new** lambdas
+against the **current** page with HEAD's problem functions:
+
+```python
+import importlib.util, pathlib, subprocess
+src = subprocess.run(["git", "show", "HEAD:notes/scripts/verify_X.py"], capture_output=True, text=True)
+pathlib.Path(".qwen/tmp/head_X.py").write_text(src.stdout, encoding="utf-8")
+spec = importlib.util.spec_from_file_location("headX", ".qwen/tmp/head_X.py")
+head = importlib.util.module_from_spec(spec); spec.loader.exec_module(head)
+page = pathlib.Path("notes/X.md").read_text(encoding="utf-8")
+pop = head.population()
+for name, a, b in new_mutants:          # (name, needle, replacement)
+    m = page.replace(a, b, 1)
+    print(name, len(head.count_problems(m, pop) + head.anchor_problems(m) + head.old_site_pass(m, pop)))
+```
+
+Expect `0 problems` for every new mutation under HEAD's checker and `N of N` under the fixed one. A
+`LazyLoader` wrapper breaks this: the checker computes `ROOT = Path(__file__).resolve().parents[2]` and
+`__file__` is undefined under a LazyLoader, so write the copy to a file and load it with
+`spec_from_file_location`.
+
+When the page's anchors move (a lint autofix shifts a line number), **re-target every mutant needle in
+the same pass** — a needle matching pre-sweep bytes is an inert mutant. Full sweep procedure:
+`sweep-superseded-counts`.
+
+## 8. Report
 
 Quote the final run's report lines verbatim, the render-diff result (the page's bytes on disk against
 the bytes its writer renders), and the mutant block including the `clean page: clean (0 problems)`
