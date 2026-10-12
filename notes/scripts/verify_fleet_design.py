@@ -12,16 +12,19 @@ Report-only; writes nothing. Six passes:
    is vacuous on it.
 3. **Counts** — every count phrase is re-derived by running the command the page names: the atomicity
    grep, the sync-pass grep, the tree-digest `git rev-parse`, the `--ignored=matching` check, the TSV
-   byte sum, the three `du -sk` sizes, the gate row count, the two set-site lines, the env-hit count,
-   and the probe parse.
-4. **Set sites** — the set-iteration bullet's anchors must equal the measured `name:line` set, and the
-   checker-section anchor list must carry every measured site. The count pass proves only the count: a
-   set-site anchor shifted to a line that exists in its file passes the anchor pass, so this pass is
-   what makes the page's set-site anchors mean the measured lines.
+   byte sum, the three `du -sk` sizes, the gate row count, the three site counts (atomicity, env, set
+   iteration), and the probe parse.
+4. **Site anchors** — the three paragraphs that state measured sites with line numbers (the atomicity
+   paragraph, the env bullet, the set-iteration bullet) must each name exactly their measured
+   `name:line` set, and the checker-section anchor list must carry every measured site. The count pass
+   proves only the count: a site anchor shifted to a line that exists in its file passes the anchor
+   pass, so this pass is what makes the page's site anchors mean the measured lines. Each site must be
+   carried **once** in the checker-section paragraph — a site enumerated twice there makes a shift of
+   one copy invisible.
 5. **Tables** — the purity table equals the probe parse, scanned inside the purity section (the
    amplification table names four of the same scripts, so a page-wide row scan lets a deleted purity row
    pass), and each amplification row is present. The options table is prose and is not re-derived.
-6. **Mutants** — 11 injected corruptions, each asserted against the pass it targets.
+6. **Mutants** — 15 injected corruptions, each asserted against the pass it targets.
 
 Volatile measurements (the `free -h` available line, the wall times, the cold/warm swing) are dated
 observations in the page and are **not** re-derived: a checker that re-measures them fails the day the
@@ -68,6 +71,8 @@ class Pop(TypedDict):
     du: dict[str, int]
     gate_rows: int
     set_sites: list[str]
+    atomic_sites: list[str]
+    env_sites: list[str]
     env_hits: int
     purity: list[tuple[str, int, int]]
     rows: dict[str, dict[str, float]]
@@ -135,12 +140,17 @@ def probe_rows() -> dict[str, dict[str, float]]:
 
 def population() -> Pop:
     # The atomicity census excludes this checker: its own source carries the pattern as a needle, so
-    # counting it would read 1, and the page's rule is about the fleet, not about the checker.
+    # counting it would read 1, and the page's rule is about the fleet, not about the checker. The
+    # sites are recorded with their line numbers so the page's anchors can be compared with them.
     atomic = 0
+    atomic_sites: list[str] = []
     scripts = [p for p in sorted(SCRIPTS.glob("*.py")) if p.name != "verify_fleet_design.py"]
     for p in scripts + sorted((SCRIPTS / "catlib").glob("*.py")):
-        atomic += len(re.findall(r"os\.replace|os\.rename|shutil\.move|NamedTemporaryFile",
-                                 p.read_text(encoding="utf-8")))
+        for i, line in enumerate(p.read_text(encoding="utf-8").splitlines(), 1):
+            n = len(re.findall(r"os\.replace|os\.rename|shutil\.move|NamedTemporaryFile", line))
+            if n:
+                atomic += n
+                atomic_sites.append(f"{p.name}:{i}")
     sync = sorted(p.name for p in SCRIPTS.glob("*.py")
                   if "sync problems" in p.read_text(encoding="utf-8")
                   and p.name != "verify_fleet_design.py")
@@ -165,8 +175,11 @@ def population() -> Pop:
         for i, line in enumerate((SCRIPTS / name).read_text(encoding="utf-8").splitlines(), 1):
             if "for p in set(" in line:
                 set_sites.append(f"{name}:{i}")
-    env_hits = len([l for l in (SCRIPTS / "render_reports.py").read_text(encoding="utf-8").splitlines()
-                    if 'env={**os.environ, "RENDER_REPORTS_CHILD"' in l])
+    env_sites: list[str] = []
+    for i, line in enumerate((SCRIPTS / "render_reports.py").read_text(encoding="utf-8").splitlines(), 1):
+        if 'env={**os.environ, "RENDER_REPORTS_CHILD"' in line:
+            env_sites.append(f"render_reports.py:{i}")
+    env_hits = len(env_sites)
     per = probe_blocks()
     purity: list[tuple[str, int, int]] = []
     for script in PURITY:
@@ -183,6 +196,7 @@ def population() -> Pop:
         "sync_other": len([s for s in sync if not s.startswith("verify_")]),
         "digests": len(digests), "ignored": len(ignored), "tsv_bytes": tsv_bytes,
         "tsv_count": len(tsvs), "du": du, "gate_rows": gate_rows, "set_sites": set_sites,
+        "atomic_sites": atomic_sites, "env_sites": env_sites,
         "env_hits": env_hits, "purity": purity, "rows": rows, "cli_wall": cli,
     }
 
@@ -216,7 +230,9 @@ ANCHOR = re.compile(r"`(notes/[\w./+-]+\.(?:md|tsv)|notes/scripts/[\w.]+\.py"
                     r":(\d+)(?:-(\d+))?`")
 BLOCK = re.compile(r"```[a-z]*\n(.*?)```", re.DOTALL)
 SET_BULLET = re.compile(r"- \*\*Set iteration order:\*\*.*?(?=\n- )", re.DOTALL)
-FOUR = re.compile(r"the four named here\s*\((.*?)\)", re.DOTALL)
+ENV_BULLET = re.compile(r"- \*\*Time / random / env:\*\*.*?(?=\n- )", re.DOTALL)
+ATOMIC_PARA = re.compile(r"\*\*\d+ matches?\*\*,.*?(?=\n\n)", re.DOTALL)
+ANCHORS_PARA = re.compile(r"1\. \*\*Anchors\*\* —.*?(?=\n2\. )", re.DOTALL)
 
 
 def anchor_path(rel: str) -> Path:
@@ -309,23 +325,41 @@ def table_problems(page: str, pop: Pop) -> list[str]:
     return out
 
 
-def set_site_problems(page: str, pop: Pop) -> list[str]:
+def norm(rel: str) -> str:
+    """Fold a page anchor's catlib/ prefix onto the measured module name."""
+    return rel.removeprefix("catlib/")
+
+
+def site_problems(page: str, pop: Pop) -> list[str]:
+    """Compare the page's anchors with the measured sites, not just the measured count.
+
+    Three site classes are measured with line numbers — atomicity, env, set iteration — and each is
+    stated in its own paragraph. The count pass proves only the count and the anchor pass only that
+    the line exists, so a site shifted to a neighbouring line passes both. Each paragraph's anchors
+    must equal its measured set, and the checker-section anchor list must carry every measured site.
+    """
     out: list[str] = []
-    sec = SET_BULLET.search(page)
-    if not sec:
-        return ["set-iteration bullet absent"]
-    named = sorted(f"{m.group(1)}:{m.group(2)}" for m in ANCHOR.finditer(sec.group(0)))
-    want = sorted(pop["set_sites"])
-    if named != want:
-        out.append(f"set-iteration bullet names {named}, measured {want}")
-    four = FOUR.search(page)
+    want: dict[str, list[str]] = {}
+    for pat, label, sites in ((ATOMIC_PARA, "atomicity paragraph", sorted(pop["atomic_sites"])),
+                              (ENV_BULLET, "env bullet", sorted(pop["env_sites"])),
+                              (SET_BULLET, "set-iteration bullet", sorted(pop["set_sites"]))):
+        sec = pat.search(page)
+        if not sec:
+            out.append(f"{label} absent")
+            continue
+        named = sorted(f"{norm(m.group(1))}:{m.group(2)}" for m in ANCHOR.finditer(sec.group(0)))
+        want[label] = sites
+        if named != sites:
+            out.append(f"{label} names {named}, measured {sites}")
+    four = ANCHORS_PARA.search(page)
     if not four:
-        out.append("checker-section anchor list absent")
+        out.append("checker-section anchors paragraph absent")
     else:
-        listed = {f"{m.group(1)}:{m.group(2)}" for m in ANCHOR.finditer(four.group(1))}
-        for site in want:
-            if site not in listed:
-                out.append(f"set site {site} absent from the checker-section anchor list")
+        listed = {f"{norm(m.group(1))}:{m.group(2)}" for m in ANCHOR.finditer(four.group(0))}
+        for sites in want.values():
+            for site in sites:
+                if site not in listed:
+                    out.append(f"site {site} absent from the checker-section anchors paragraph")
     return out
 
 
@@ -339,20 +373,30 @@ MUTANTS = [
      lambda p: p.replace("## The purity population (8 scripts", "## The purity population (7 scripts", 1)),
     ("digest count widened", lambda p: p.replace("**5** digests", "**6** digests", 1)),
     ("probe figure altered", lambda p: p.replace("117,360", "117,361")),
-    ("anchor outside the file", lambda p: p.replace("render_reports.py:1148", "render_reports.py:3400", 1)),
+    ("anchor outside the file", lambda p: p.replace("render_reports.py:1150", "render_reports.py:3400", 1)),
     # The page ships no notes-page anchor, so the resolver's notes/ branch is inert on a clean page.
     # This mutant injects one with a line past the file's end, which is the only way the branch is
     # proven to fire.
     ("notes-page anchor outside the file",
-     lambda p: p.replace("`render_reports.py:1148`", "`render_reports.py:1148` `notes/fleet-design.md:9999`", 1)),
+     lambda p: p.replace("`render_reports.py:1150`", "`render_reports.py:1150` `notes/fleet-design.md:9999`", 1)),
     ("prose count in the size argument", lambda p: p.replace("**630,620** bytes", "**630,619** bytes", 1)),
-    # A set-site anchor shifted to a line that exists in its file passes the anchor pass and the count
-    # pass, so only the set-site comparison can catch it. One mutant per list the comparison reads.
+    # A measured site shifted to a line that exists in its file passes the anchor pass and the count
+    # pass, so only the site comparison can catch it. One mutant per list the comparison reads.
     ("set-site anchor shifted in the bullet",
      lambda p: p.replace("build_index.py:583", "build_index.py:584", 1)),
     ("set-site anchor shifted in the checker list",
-     lambda p: p.replace("`build_index.py:583`, `render_reports.py:1148`",
-                         "`build_index.py:584`, `render_reports.py:1148`", 1)),
+     lambda p: p.replace("`build_index.py:583`, `render_reports.py:1150`",
+                         "`build_index.py:584`, `render_reports.py:1150`", 1)),
+    ("atomicity anchor shifted in the paragraph",
+     lambda p: p.replace("catlib/atomic.py:42", "catlib/atomic.py:43", 1)),
+    ("atomicity anchor shifted in the checker list",
+     lambda p: p.replace("`catlib/atomic.py:42`, `catlib/atomic.py:84`",
+                         "`catlib/atomic.py:43`, `catlib/atomic.py:84`", 1)),
+    ("env anchor shifted in the bullet",
+     lambda p: p.replace("`render_reports.py:1150` and", "`render_reports.py:1151` and", 1)),
+    ("env anchor shifted in the checker list",
+     lambda p: p.replace("`render_reports.py:1150`, `render_reports.py:2043`",
+                         "`render_reports.py:1151`, `render_reports.py:2043`", 1)),
 ]
 
 
@@ -365,7 +409,7 @@ def mutants(page: str) -> str:
             undetected.append(f"{name}: target not in the page")
             continue
         probs = count_problems(mutated, pop) + table_problems(mutated, pop) \
-            + anchor_problems(mutated) + set_site_problems(mutated, pop)
+            + anchor_problems(mutated) + site_problems(mutated, pop)
         if probs:
             caught += 1
         else:
@@ -392,7 +436,7 @@ def main(argv: list[str]) -> int:
     page = page_path.read_text(encoding="utf-8")
     pop = population()
     problems = anchor_problems(page) + block_problems(page) + count_problems(page, pop) \
-        + table_problems(page, pop) + set_site_problems(page, pop)
+        + table_problems(page, pop) + site_problems(page, pop)
     print("=== notes/fleet-design.md check ===")
     print(f"atomicity grep: {pop['atomic']} match{'es' if pop['atomic'] != 1 else ''} "
           f"over {pop['scripts']} scripts "
@@ -401,8 +445,10 @@ def main(argv: list[str]) -> int:
     print(f"sync pass: {pop['sync']} scripts ({pop['sync_verify']} verify_, {pop['sync_other']} not)")
     print(f"tree digests: {pop['digests']}  ignored lines: {pop['ignored']}")
     print(f"notes/tables/*.tsv: {pop['tsv_count']} files, {pop['tsv_bytes']} bytes")
-    print(f"gate rows: {pop['gate_rows']}  set sites: {len(pop['set_sites'])} "
-          f"({', '.join(pop['set_sites'])})  env hits: {pop['env_hits']}")
+    print(f"gate rows: {pop['gate_rows']}  env hits: {pop['env_hits']}")
+    for label, sites in (("atomic sites", pop["atomic_sites"]), ("env sites", pop["env_sites"]),
+                         ("set sites", pop["set_sites"])):
+        print(f"  {label}: {len(sites)} ({', '.join(sites)})")
     print(f"purity population: {len(pop['purity'])} scripts")
     for script, writes, gen in pop["purity"]:
         print(f"  {script}: writes {writes}, generated reads {gen}")
