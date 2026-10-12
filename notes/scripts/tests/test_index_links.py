@@ -28,8 +28,9 @@ MUTANTS = [
     ("README.md", "../no-such-note.md", "notes-doc"),
     ("names/cauchy.md", "../number-theory/999-no-such-family.md", "index-page"),
     ("names/cauchy.md", "../topics/no-such-topic.md", "index-page"),
-    ("names/cauchy.md", "../../../preprints/Sharp-integral-fillings-in-CAT(0)-spaces-"
-     "September-23-2026/no-such-file.tex", "latex-source"),
+    ("names/cauchy.md",
+     ("../../../preprints/Sharp-integral-fillings-in-CAT(0)-spaces-"
+      "September-23-2026/no-such-file.tex"), "latex-source"),
     ("names/cauchy.md", "../../../preprints/No-Such-Manuscript/paper.pdf", "manuscript-pdf"),
     ("names/cauchy.md", "../../../preprints/No-Such-Manuscript/", "manuscript-dir"),
     ("names/cauchy.md", "../../../lean/ComparatorChallenges/no_such_config.json", "config-json"),
