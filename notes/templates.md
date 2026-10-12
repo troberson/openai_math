@@ -5,7 +5,7 @@ template text plus the writer's registry). Lines and bytes are of the template f
 is a `{{ ` occurrence counted over the whole file. No `lake`, `lean`, `lake exe cache get`, or
 comparator run.
 
-**Headline, with the rule that yields it:** report tree: **19** templates, **7,201** lines, **490,775** bytes, **1,321** slots; index tree: **5** templates, **209** lines, **14,847** bytes, **103** slots; all **24** templates: **7,410** lines, **505,622** bytes, **1,424** slots.
+**Headline, with the rule that yields it:** report tree: **19** templates, **7,162** lines, **460,098** bytes, **1,448** slots; index tree: **5** templates, **209** lines, **14,847** bytes, **103** slots; all **24** templates: **7,371** lines, **474,945** bytes, **1,551** slots.
 
 ## The report tree
 
@@ -30,12 +30,12 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `proof-density.md.j2` | 122 | 8,637 | 66 | `notes/proof-density.md` | `measure_proof_density.py` | NOT DERIVED |
 | `scope-exclusions.md.j2` | 328 | 26,780 | 19 | `notes/scope-exclusions.md` | `verify_scope_exclusions.py` | NOT DERIVED |
 | `sources.md.j2` | 156 | 9,392 | 29 | `notes/sources.md` | `verify_sources.py` | 31 |
-| `subfinding-pairs.md.j2` | 675 | 57,539 | 38 | `notes/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |
+| `subfinding-pairs.md.j2` | 636 | 26,862 | 165 | `notes/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |
 | `t0-chains.md.j2` | 569 | 34,014 | 62 | `notes/t0-chains.md` | `verify_t0_chains.py` | 12 |
 | `templates.md.j2` | 107 | 5,047 | 45 | `notes/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `topics.md.j2` | 335 | 23,074 | 117 | `notes/topics.md` | `measure_topics.py` | NOT DERIVED |
 | `verification-dirs.md.j2` | 408 | 37,944 | 44 | `notes/verification-dirs.md` | `verify_verification_dirs.py` | 16 |
-| **report tree** | **19** | **7,201** | **490,775** | **1,321** | | |
+| **report tree** | **19** | **7,162** | **460,098** | **1,448** | | |
 
 ## The index tree
 
