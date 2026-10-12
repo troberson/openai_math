@@ -76,6 +76,11 @@ L1: dict[str, tuple[str, ...]] = {
                           "notes/tables/sources.tsv", "notes/tables/subfindings.tsv", "notes/t0-triage.md",
                           "notes/tables/topics.tsv", "notes/templates/", "notes/index/"),
     "build_report_templates.py": REPORT_PAGES,
+    # The names measurement is a record producer, not a page writer: its only tracked input is the
+    # ledger, which the probe records as the single notes/ path it opens read-only. Its record is the
+    # population, so render_reports.py, build_index.py, extract_named_results.py and
+    # verify_named_results.py read the store instead of each walking 7,240 .tex files.
+    "measure_names.py": ("notes/tables/catalog.tsv",),
 }
 
 ARTIFACTS: dict[str, tuple[str, ...]] = {
@@ -89,6 +94,10 @@ ARTIFACTS: dict[str, tuple[str, ...]] = {
     "build_index.py": ("notes/index/",),
     "render_reports.py": REPORT_PAGES,
     "build_report_templates.py": ("notes/templates/report/",),
+    # A record producer has no tracked artifact: its bytes land under the keyed store, which the
+    # `.qwen/*` rule keeps untracked. The empty tuple is what makes the cache check read it as
+    # "no tracked bytes to compare" and the L1 check still prove its inputs.
+    "measure_names.py": (),
 }
 
 
@@ -105,6 +114,9 @@ ARGS: dict[str, tuple[str, ...]] = {
     "build_index.py": (),
     "render_reports.py": (),
     "build_report_templates.py": (),
+    # The canonical run is the plain report; `--json` dumps the same population, so a `--json` run
+    # does not share the record. The key is the plain run's.
+    "measure_names.py": (),
 }
 
 # The writers table names one writer the protocol deliberately excludes: `measure_open_probe.py`'s

@@ -5,8 +5,11 @@ math-u41.4. Names sit in four sources; this script extracts candidate names from
 all four, plus the two body layers that tell a subject from a citation, normalizes
 the spelling variants the sources disagree on, classifies each candidate, and prints
 the report every count in notes/names.md and notes/index/names/ comes from. With
---json it dumps the records notes/scripts/build_index.py renders into name pages. It
-writes no file in the repo.
+--json it dumps the records notes/scripts/build_index.py renders into name pages. It writes one file:
+the keyed record store at `.qwen/cache/records/<key>/names.json`, which the `.qwen/*` rule in
+`.gitignore` keeps untracked, so a cache write never touches the tracked tree. Every consumer that
+calls `measure()` reads that store, so the corpus walk is paid once per key, not once per process.
+`--check-only` runs the full measurement and prints the report without landing the record.
 
 Sources, and the provenance each yields:
   title-family   family titles in overview.tex             - title, a subject
@@ -50,7 +53,7 @@ subject; one that is not name-like is accepted only through the family-title esc
 The page check is not here: `notes/names.md` is compared with `render_reports.py`'s render of it by
 `verify_page_sync.py`, which owns that pass. This script measures and prints; it reads no page.
 
-Run: python3 notes/scripts/measure_names.py [--json]
+Run: python3 notes/scripts/measure_names.py [--json] [--check-only]
 """
 from __future__ import annotations
 
@@ -68,8 +71,16 @@ import build_catalog as B
 
 from catlib import yaml as Y
 from catlib.paths import PREPRINTS as PRE, owner
+from catlib.promote import key_for
+from catlib.records import cached
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
+# The store key is this script's, not its consumers': render_reports.py, build_index.py and
+# extract_named_results.py all call measure(), and a consumer that changes how it reads must not
+# invalidate records it reads unchanged. The key covers the five git tree digests (preprints/, lean/,
+# overview.tex, CONTENTS.md, reasoning_traces), this source, and the one notes/ file the probe records
+# this script opening read-only: notes/tables/catalog.tsv.
+KEY = key_for("measure_names.py", ())
 
 LEDGER = {}
 with open(ROOT / "notes" / "tables" / "catalog.tsv", newline="", encoding="utf-8") as _fh:
@@ -211,10 +222,12 @@ def dir_of(path) -> str:
     return owner(path) if "preprints" in parts else ""
 
 
-@cache
-def measure():
-    """The six-layer name population. Cached: it walks every `.tex` at depth 1-3 and every `.bib`,
-    and render_reports.py calls it once per process, so the cache keeps a second caller cheap."""
+def build_records() -> str:
+    """The six-layer name population as record text: the walk over every `.tex` at depth 1-3 and every `.bib`.
+
+    The record is the population, not the raw text: rows keyed by canonical name, plus the meta the
+    report prints. Tuples become JSON lists, which every consumer unpacks the same way.
+    """
     order, fams = B.parse_overview()
     dir2fam = {}
     for f in order:
@@ -224,10 +237,10 @@ def measure():
                 dir2fam[d] = f
 
     fam_title = collections.defaultdict(set)
-    ms_title = collections.defaultdict(list)
+    ms_title: dict[str, list[tuple[str, str]]] = collections.defaultdict(list)
     env_title = collections.defaultdict(set)
-    env_hits = collections.defaultdict(list)
-    surfaces = collections.defaultdict(collections.Counter)
+    env_hits: dict[str, list[tuple[str | None, str]]] = collections.defaultdict(list)
+    surfaces: dict[str, collections.Counter[str]] = collections.defaultdict(collections.Counter)
     env_count = 0
     for f in order:
         for m in NAME.finditer(fold(fams[f]["title"])):
@@ -240,11 +253,11 @@ def measure():
             if (f, d) not in ms_title[k]:
                 ms_title[k].append((f, d))
 
-    cap = collections.Counter()
-    mid = collections.Counter()
-    low = collections.Counter()
+    cap: collections.Counter[str] = collections.Counter()
+    mid: collections.Counter[str] = collections.Counter()
+    low: collections.Counter[str] = collections.Counter()
     body = collections.defaultdict(set)
-    variants = collections.defaultdict(collections.Counter)
+    variants: dict[str, collections.Counter[str]] = collections.defaultdict(collections.Counter)
     for p in tex_files():
         fam = dir2fam.get(dir_of(p))
         raw = p.read_text(encoding="utf-8", errors="replace")
@@ -327,7 +340,8 @@ def measure():
         return bool(v) and macro_shaped(v.most_common(1)[0][0])
 
     title_cands = set(fam_title) | set(ms_title) | set(env_title) | set(decl)
-    subject, rejected = set(), collections.Counter()
+    subject: set[str] = set()
+    rejected: collections.Counter[str] = collections.Counter()
     escape_names = []
     for k in title_cands:
         if len(k) < 3 or not OKKEY.match(k):
@@ -427,11 +441,32 @@ def measure():
         "plural_name_like": sum(1 for k in plural_title if name_like(k)),
         "escape_names": sorted(escape_names),
     }
-    return rows, meta
+    return json.dumps({"rows": rows, "meta": meta}, ensure_ascii=False)
+
+
+@cache
+def measure() -> tuple[list, dict]:
+    """The population, read from the keyed record store: built once per key, read back on every call.
+
+    The walk is the fleet's hot spot — 47.76 s in a cold process, and every process that needs the name
+    signal pays it: render_reports.py (the names page), build_index.py (the name pages),
+    extract_named_results.py, verify_named_results.py (whose population() is the extractor's), and this
+    script's own report. The store is keyed by the five tree digests plus this source plus catalog.tsv,
+    so a corpus change invalidates it and a consumer change does not.
+    """
+    d = json.loads(cached(KEY, "names.json", build_records))
+    return d["rows"], d["meta"]
 
 
 def main(argv):
-    rows, meta = measure()
+    # `--check-only` is the writer's flagged run: the full measurement, printed, with no record write.
+    # The store landing is this script's approval, so the flagged run builds the record text in memory
+    # and never calls `cached()`.
+    if "--check-only" in argv:
+        d = json.loads(build_records())
+        rows, meta = d["rows"], d["meta"]
+    else:
+        rows, meta = measure()
     if "--json" in argv:
         json.dump({"rows": rows, "meta": meta}, sys.stdout, indent=1)
         return 0

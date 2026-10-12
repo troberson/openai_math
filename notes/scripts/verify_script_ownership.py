@@ -21,7 +21,7 @@ Passes:
      that re-derives a count through the same code the page's writer calls proves only that the code
      agrees with itself.
 
---mutant injects sixteen faults, one per check form the page uses, and asserts each is caught.
+--mutant injects eighteen faults, one per check form the page uses, and asserts each is caught.
 Report-only: writes nothing.
 """
 from __future__ import annotations
@@ -43,6 +43,11 @@ INDEX_DIR = NOTES / "index"
 PROBE_DIR = NOTES / "probe"
 TABLES_DIR = NOTES / "tables"
 SLOT_MARK = "{{ "
+# The record-store target the writers table carries. A record's directory is the digest key, which the
+# source does not name, so the rule keys on the literal record name — the only part of the path the
+# script writes down. The `.qwen/*` rule in `.gitignore` keeps the tree untracked, so this target is
+# outside the notes/ census and outside the promote-and-verify byte comparison.
+RECORD_PREFIX = ".qwen/cache/records/<key>/"
 # The index-tree templates whose pages sit in a directory named for them; family pages sit in the
 # 17 discipline directories, and the entry point is a single file.
 INDEX_PAGE_DIRS = {"discipline.md.j2": "disciplines", "name.md.j2": "names", "topic.md.j2": "topics"}
@@ -130,16 +135,19 @@ def strip_selftest(src: str) -> str:
 def writer_targets(src: str) -> list[str]:
     """The notes/-rooted targets a script writes, from its own source.
 
-    Four shapes, because a script may open the file itself (`OUT.open("w")`), hand a package
+    Five shapes, because a script may open the file itself (`OUT.open("w")`), hand a package
     constant to a package writer (`tsv.write_csv(OUT, COLUMNS, rows)`), build the receiver from a
-    module constant (`out = TPL_DIR / (name)`, then `out.write_text(...)`), or hand the target to the
+    module constant (`out = TPL_DIR / (name)`, then `out.write_text(...)`), hand the target to the
     package's atomic writer (`write_atomic(TARGET, text)`), staging writer (`stage(TARGET, text)`) or
-    promotion writer (`promote(TARGET, key, text)`). The last three are the shape the fleet moved
+    promotion writer (`promote(TARGET, key, text)`), or hand a record name to the keyed store
+    (`cached(KEY, "names.json", builder)`). The three package writers are the shape the fleet moved
     to: the write call no longer names a path, so a rule keyed on `open`/`write_text` alone reads a
     writer that stages as a writer of nothing. In each of the three, the target name is resolved the
-    same way — package constant, alias of a package constant, or a locally built constant. The write
+    same way — package constant, alias of a package constant, or a locally built constant. The store
+    is the shape that cannot be resolved that way: its directory is the digest key, which the source
+    does not name, so the rule takes the literal record name and prefixes the store root. The write
     calls are read from `strip_selftest(src)`,
-    which is the fifth rule: a self-test's mutate-and-restore write is not ownership, so the scripts
+    which is the sixth rule: a self-test's mutate-and-restore write is not ownership, so the scripts
     whose only page write sits inside their self-test stay writers of nothing.
     """
     consts = path_constants()
@@ -184,6 +192,8 @@ def writer_targets(src: str) -> list[str]:
             base = notes_const(src, hop.group(1))
             if base:
                 targets.add(base)
+    for rec in re.findall(r'\bcached\(\s*[A-Za-z_]\w*\s*,\s*"([^"]+)"', scan):
+        targets.add(RECORD_PREFIX + rec)
     if re.search(r'^\w+\s*=\s*\w+\s*/\s*"notes"\s*/\s*"index"', src, re.M) and re.search(
         r"^def write\(", src, re.M
     ):
@@ -194,7 +204,7 @@ def writer_targets(src: str) -> list[str]:
 
 
 def writers():
-    """A script is a writer when a notes/-rooted path constant is written, plus the tree case."""
+    """A script is a writer when a notes/-rooted path constant is written, plus the tree and store cases."""
     return {name: writer_targets(read_text(SCRIPTS / name)) for name in script_names()
             if writer_targets(read_text(SCRIPTS / name))}
 
@@ -557,7 +567,9 @@ def mutants():
         ("writer target altered", original.replace("| `build_catalog.py` | `notes/tables/catalog.tsv` |", "| `build_catalog.py` | `notes/catalog-x.tsv` |"), "page says 'notes/catalog-x.tsv'"),
         ("writer row deleted", original.replace("| `extract_links.py` | `notes/tables/links.tsv` | single run; cached bytes == promoted bytes under the key | `notes/links.md` |\n", ""), "writer extract_links.py: page says None"),
         ("hand-authored TSV claimed as generated", original.replace("**6** generated, **2** hand-authored", "**7** generated, **1** hand-authored"), "tsv census cell"),
-        ("writer count altered", original.replace(f"**10** writers over **{n}** scripts", f"**9** writers over **{n}** scripts"), "writer split sentence"),
+        ("writer count altered", original.replace(f"**{len(writers())}** writers over **{n}** scripts",
+                                                  f"**{len(writers()) - 1}** writers over **{n}** scripts"),
+         "writer split sentence"),
         ("index file count altered", original.replace("| `notes/index/` | **1,049** |", "| `notes/index/` | **1,050** |"), "census row notes/index/"),
         ("collision name altered", original.replace("**1** shared basename — `README.md`", "**2** shared basenames — `README.md` and `topics.tsv`"), "collision sentence"),
         ("checker name altered", original.replace("| `verify_sources.py` |", "| `verify_sources2.py` |"), "non-writers"),
@@ -645,7 +657,25 @@ def mutants():
         else:
             print(f"  caught atomic write retargeted: notes/README.md dropped from "
                   f"{len(before)} targets to {len(after)}")
-    return fails, len(cases) + 1 + len(tpl_cases) + 1
+    # Pass I, second case: the keyed store. `cached(KEY, "names.json", builder)` names no path, so the
+    # rule keys on the literal record name. A record name held in a variable is not a target the source
+    # writes down, so the writer must drop out of the writer set.
+    mn = read_text(SCRIPTS / "measure_names.py")
+    rec_case = mn.replace('cached(KEY, "names.json", build_records)', "cached(KEY, rec_name, build_records)", 1)
+    want = RECORD_PREFIX + "names.json"
+    if rec_case == mn:
+        fails.append("record-store write retargeted: mutation changed nothing")
+    else:
+        before = writer_targets(mn)
+        after = writer_targets(rec_case)
+        if want in after:
+            fails.append(f"record-store write retargeted: NOT caught (targets {after[:4]})")
+        elif want not in before:
+            fails.append("record-store write retargeted: the clean source does not carry the target")
+        else:
+            print(f"  caught record-store write retargeted: {want} dropped from "
+                  f"{len(before)} targets to {len(after)}")
+    return fails, len(cases) + 1 + len(tpl_cases) + 2
 
 
 def main():

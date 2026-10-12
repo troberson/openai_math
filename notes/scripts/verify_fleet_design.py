@@ -17,7 +17,7 @@ Report-only; writes nothing. Five passes:
 4. **Tables** — the purity table equals the probe parse, scanned inside the purity section (the
    amplification table names four of the same scripts, so a page-wide row scan lets a deleted purity row
    pass), and each amplification row is present. The options table is prose and is not re-derived.
-5. **Mutants** — 7 injected corruptions, each asserted against the pass it targets.
+5. **Mutants** — 9 injected corruptions, each asserted against the pass it targets.
 
 Volatile measurements (the `free -h` available line, the wall times, the cold/warm swing) are dated
 observations in the page and are **not** re-derived: a checker that re-measures them fails the day the
@@ -42,7 +42,8 @@ DIGEST_PATHS = ["HEAD:preprints", "HEAD:lean", "HEAD:overview.tex", "HEAD:CONTEN
                 "HEAD:reasoning_traces"]
 HAND = {"topics.tsv", "conjecture-standing.tsv"}
 PURITY = ["build_sources.py", "extract_links.py", "render_reports.py", "build_index.py",
-          "check_index_links.py", "measure_proof_density.py", "verify_script_ownership.py"]
+          "check_index_links.py", "measure_proof_density.py", "measure_names.py",
+          "verify_script_ownership.py"]
 ROWS = ["build_sources.py", "extract_links.py", "build_index.py", "dump_template_slots.py",
         "render_reports.py"]
 
@@ -199,6 +200,10 @@ def count_phrases(pop: Pop) -> list[str]:
         f"**{pop['gate_rows']}** invocations",
         f"**{len(pop['set_sites'])} sites**",
         f"**{pop['env_hits']} hits**",
+        # The purity population is the probe parse, so its heading count and the sentence that closes
+        # the section are measured, not carried: adding a target to the probe moves both.
+        f"## The purity population ({len(pop['purity'])} scripts, mode-verified)",
+        f"**0** of the {len(pop['purity'])} scripts reads a generated file",
     ]
 
 
@@ -292,8 +297,6 @@ def table_problems(page: str, pop: Pop) -> list[str]:
     want = [s for s, _, _ in pop["purity"]]
     if sorted(rows) != sorted(want):
         out.append(f"purity table rows {sorted(rows)} != population {sorted(want)}")
-    if len(pop["purity"]) != 7:
-        out.append(f"purity population reads {len(pop['purity'])}, not 7")
     for row in ROWS:
         if row not in page:
             out.append(f"amplification row absent: {row}")
@@ -304,6 +307,10 @@ MUTANTS = [
     ("atomicity count shifted", lambda p: p.replace("**2 matches**", "**1 match**", 1)),
     ("sync split altered", lambda p: p.replace("**12** are `verify_*`", "**11** are `verify_*`", 1)),
     ("purity row deleted", lambda p: re.sub(r"^\|\s*`check_index_links\.py`.*\n", "", p, count=1, flags=re.M)),
+    # The purity heading count is the probe parse, so a page that names one target it does not measure
+    # is caught by the count pass, not by the row scan.
+    ("purity population count altered",
+     lambda p: p.replace("## The purity population (8 scripts", "## The purity population (7 scripts", 1)),
     ("digest count widened", lambda p: p.replace("**5** digests", "**6** digests", 1)),
     ("probe figure altered", lambda p: p.replace("117,360", "117,361")),
     ("anchor outside the file", lambda p: p.replace("render_reports.py:1139", "render_reports.py:3400", 1)),
