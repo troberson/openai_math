@@ -23,7 +23,8 @@ python3 notes/scripts/extract_formalization_deps.py  # writes notes/tables/forma
 python3 notes/scripts/verify_dependency_drift.py --mutant  # checks notes/dependency-drift.md: anchors, blockquotes, code spans, the patch table, every count
 python3 notes/scripts/extract_links.py      # writes notes/tables/links.tsv and prints the per-edge report
 python3 notes/scripts/extract_scope_notes.py  # re-measures the 242 `## Scope` sections; report-only, writes nothing
-python3 notes/scripts/verify_scope_exclusions.py --mutant  # checks notes/scope-exclusions.md against lean/docs/
+python3 notes/scripts/verify_scope_exclusions.py  # checks notes/scope-exclusions.md against lean/docs/
+python3 notes/scripts/run_tests.py tests/test_scope_exclusions.py -q  # the extracted self-tests: 7 injected defects in page text, each asserted against the pass that owns it
 python3 notes/scripts/extract_subfindings.py  # writes notes/tables/subfindings.tsv and prints the reconciliation
 python3 notes/scripts/verify_subfindings.py --mutant  # checks notes/tables/subfindings.tsv against overview.tex and lean/docs/
 python3 notes/scripts/extract_subfinding_pairs.py  # lays out the pairing population; report-only, writes nothing
