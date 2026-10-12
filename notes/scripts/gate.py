@@ -92,7 +92,7 @@ ROWS = [
     ("verify_sources.py", ("pages",), ()),
     ("verify_sources.py --mutant", ("pages",), ()),
     ("verify_conditional.py", ("pages",), ()),
-    ("verify_conditional.py --mutant", ("pages",), ()),
+    ("run_tests.py notes/scripts/tests/test_conditional.py -q", ("pages",), ()),
     ("verify_counterexample_crosscheck.py", ("pages",), ()),
     ("verify_counterexample_crosscheck.py --mutant", ("pages",), ()),
     ("verify_t0_chains.py", ("pages",), ()),

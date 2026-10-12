@@ -13,6 +13,11 @@ A block with no preceding anchor, a block line that does not match, and a prose 
 that is not found are problems (exit 1). Prose quotations with no anchor at all are
 counted and reported separately as a known gap, not as a failure — the pre-existing
 per-family sections quote catalog abstracts without line anchors.
+
+The self-tests live in `notes/scripts/tests/test_conditional.py`: six injected faults, one per
+check form the page uses, run through pytest. `main()` reads no argv, so `--mutant` is inert, and
+the tests inject page text in memory, so nothing here writes a page. The checker measures; the
+test file injects.
 """
 import re
 import sys
@@ -92,49 +97,16 @@ def check(text):
     return problems, unanchored, (n_blocks, n_lines, n_prose, n_inline)
 
 
-MUTANTS = {
-    "block anchor shifted by one": lambda t: t.replace(
-        "`lean/OAI/ModelTheory/Categoricity/Main.lean:233`",
-        "`lean/OAI/ModelTheory/Categoricity/Main.lean:234`", 1),
-    "anchor file renamed": lambda t: t.replace(
-        "`lean/OAI/ModelTheory/Categoricity/Model.lean:101`",
-        "`lean/OAI/ModelTheory/Categoricity/Mode.lean:101`", 1),
-    "prose quote altered": lambda t: t.replace(
-        "and failure of the Axiom of Choice.", "and failure of Choice.", 1),
-    "block line altered": lambda t: t.replace(
-        "theorem main (hCH : CH.{u}) :", "theorem main (hCH : CH) :", 1),
-    "block anchor dropped": lambda t: t.replace(
-        "exists only as a challenge stub, `lean/ComparatorChallenges/PartitionConsistency.lean:318`:",
-        "exists only as a challenge stub:", 1),
-}
-
-
 def main():
-    text = PAGE.read_text(encoding="utf-8", errors="replace")
-
-    if "--mutant" in sys.argv:
-        uncaught = []
-        for name, fn in MUTANTS.items():
-            mutated = fn(text)
-            if mutated == text:
-                print(f"mutant target absent: {name}")
-                uncaught.append(name)
-                continue
-            problems, _, _ = check(mutated)
-            print(f"mutant {name}: {'caught' if problems else 'NOT CAUGHT'}"
-                  f" ({len(problems)} problems)")
-            if not problems:
-                uncaught.append(name)
-        print(f"mutants not caught {len(uncaught)} of {len(MUTANTS)}")
-        raise SystemExit(1 if uncaught else 0)
-
-    problems, unanchored, (n_blocks, n_lines, n_prose, n_inline) = check(text)
+    problems, unanchored, (n_blocks, n_lines, n_prose, n_inline) = \
+        check(PAGE.read_text(encoding="utf-8", errors="replace"))
     for p in problems:
         print(f"PROBLEM {p}")
     print(f"\nblocks {n_blocks}  block lines {n_lines}  anchored prose quotes {n_prose}"
           f"  inline citations {n_inline}  unanchored prose quotes {unanchored}"
           f"  problems {len(problems)}")
-    raise SystemExit(1 if problems else 0)
+    return 1 if problems else 0
 
 
-main()
+if __name__ == "__main__":
+    sys.exit(main())

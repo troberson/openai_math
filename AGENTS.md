@@ -604,10 +604,14 @@ lives in this file and nowhere else.
   family's full `1..n` exactly once, re-measures the ten Summary-table numbers from the parsed lines,
   and flags eight injected mutants including a paraphrase dressed as a quote and a prose count visible
   only in the diff against the writer's render. It writes nothing.
-- Check `notes/conditional.md` with `python3 notes/scripts/verify_conditional.py --mutant` before
-  quoting the source check — it attributes each fenced block to the nearest preceding `file:line`
-  anchor and matches every block line, resolves each `*"…"*` prose quotation and each inline
-  `name → file:line` citation against the shipped file, and flags five injected mutants. It reports
+- Check `notes/conditional.md` with `python3 notes/scripts/verify_conditional.py` and its extracted
+  self-tests with `python3 notes/scripts/run_tests.py notes/scripts/tests/test_conditional.py -q`
+  before quoting the source check — the checker attributes each fenced block to the nearest preceding
+  `file:line` anchor and matches every block line, resolves each `*"…"*` prose quotation and each
+  inline `name → file:line` citation against the shipped file, and the test file injects six faults,
+  one per check form the page uses (a shifted block anchor, an altered block line, a dropped block
+  anchor, a renamed anchor file, an altered prose quotation, an altered inline citation), each
+  asserted against the pass that owns it. It reports
   **15 unanchored prose quotations** — the pre-existing abstract and scope-note quotes in the
   per-family sections, which carry no line anchors and are therefore not verified. It writes nothing.
 - Check `notes/counterexample-crosscheck.md` with
