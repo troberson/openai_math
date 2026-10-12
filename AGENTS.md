@@ -1016,12 +1016,13 @@ lives in this file and nowhere else.
   scripts excluded), the five
   `git rev-parse HEAD:<path>` tree digests, the `git status --porcelain --ignored=matching` check over
   the five hashed paths, the `notes/tables/*.tsv` byte sum, the three `du -sk` sizes, the gate row count from
-  `gate.py`'s `ROWS` block, the three site counts (atomicity, env, set iteration), and the probe table's
-  wall/opens/distinct/repeats figures — parsed from the **6** audit-hook records **tracked under
+  `gate.py`'s `ROWS` block, the three site counts (atomicity, env, set iteration), the probe table's
+  wall/opens/distinct/repeats figures, and the **7** audit-hook records **tracked under
   `notes/probe/`** (the checker parses
   the 2026-10-11 pair, written by `notes/scripts/measure_open_probe.py` over **9** targets; the 2026-10-10 pair, the
-  single-target `render_reports.py` after-record and the 2026-10-12 `render_reports.py` record that
-  captures the fleet census are the records the page's deltas and the promotion checker read), which the
+  single-target `render_reports.py` after-record, the 2026-10-12 `seed_quotes.py` record and the
+  2026-10-12 `render_reports.py` record that captures the fleet census are the records the page's
+  deltas and the promotion checker read), which the
   checker requires on disk. It resolves
   every backticked `path:line` anchor, bare script names included (a bare
   name resolves under `notes/scripts/`), matches the purity table — **8** rows, the set the probe parse
@@ -1034,17 +1035,18 @@ lives in this file and nowhere else.
   site enumerated twice in the paragraph leaves the shift invisible, so this comparison is the only one
   that catches it), compares the page with `render_reports.py`'s render of it (the page is report-fed:
   its measured phrases, **including the six site anchors**, are slots the writer supplies from its own
-  scan of the fleet's sources), and the 19 injected mutants live in
+  scan of the fleet's sources), and the 20 injected mutants live in
   `notes/scripts/tests/test_fleet_design.py`, run by the `run_tests.py` gate row: the atomicity count,
   the sync split, a deleted purity row, the purity heading count, the digest count, a probe figure, an
   anchor past the file's end, a notes-page anchor past the file's end, the TSV byte figure, the TSV file
-  count, the writer-row count in the gate paragraph, the writer-row count in the non-determinism
-  sentence, and six site anchors shifted by one line — two in the bullet, two in the checker list, two
+  count, the probe record count, the writer-row count in the gate paragraph, the writer-row count in the
+  non-determinism sentence, and six site anchors shifted by one line — two in the bullet, two in the
+  checker list, two
   in the paragraph. The
   last fault is a dated observation the writer deliberately leaves literal, so only the render diff can
   catch it. Each needle is measured specific: it fires for its own fault and for no other, and the
   render-diff line fires for every fault, so no needle is that line. The clean test pins the population
-  the passes report: 34 anchors, 23 count and probe phrases, 0 sync problems, 2 atomicity matches over
+  the passes report: 34 anchors, 24 count and probe phrases, 0 sync problems, 2 atomicity matches over
   58 scripts and 18 catlib modules, 12 sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 9
   TSVs at 654,791 bytes, 631M `preprints/`, 1,740M `lean/OAI/`, 14M `notes/index/`, 77 gate rows, 10
   writer rows, 2 env hits, 8 purity scripts, the sites at `atomic.py:42` / `atomic.py:84`,

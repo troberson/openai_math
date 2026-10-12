@@ -2480,6 +2480,7 @@ def fleet_population() -> dict[str, Any]:
                                    "preprints", "lean", "overview.tex", "CONTENTS.md",
                                    "reasoning_traces").splitlines() if l.strip()]
     tsvs = sorted((ROOT / "notes/tables").glob("*.tsv"))
+    probe = sorted(p.name for p in (ROOT / "notes/probe").iterdir() if p.is_file())
     gate = (ROOT / "notes/scripts/gate.py").read_text(encoding="utf-8")
     rows_block = gate[gate.index("ROWS = ["):]
     set_sites: list[str] = []
@@ -2508,6 +2509,7 @@ def fleet_population() -> dict[str, Any]:
         "sync_other": sum(1 for s in sync if not s.startswith("verify_")),
         "digests": len(digests), "ignored": len(ignored),
         "tsv_bytes": sum(len(p.read_bytes()) for p in tsvs), "tsv_count": len(tsvs),
+        "probe_records": len(probe),
         "du": du,
         "gate_rows": len(re.findall(r'^\s*\(".*?",\s*\(', rows_block, re.MULTILINE)),
         # A row that declares an artifact is a writer row. `), ("` cannot count them: the needs tuple
@@ -2543,6 +2545,7 @@ def fleet_phrases(v: dict[str, Any]) -> dict[str, str]:
         "ignored_line": f"returns **{v['ignored']} line{'s' if v['ignored'] != 1 else ''}**",
         "tsv_bytes": f"**{v['tsv_bytes']:,}** bytes",
         "tsv_count": f"**{v['tsv_count']}** `notes/tables/*.tsv` present on disk",
+        "probe_records": f"The tracked records are **{v['probe_records']}**:",
         "du_preprints": f"**{du['preprints']}M**",
         "du_oai": f"**{du['oai']}M**",
         "du_index": f"**{du['index']}M**",

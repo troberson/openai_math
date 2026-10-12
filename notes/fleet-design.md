@@ -138,13 +138,16 @@ only) lists every `notes/` path each script opens. A path is a write only if a m
 `w`, `a` or `x`. The AST census maps a name to a call context and does **not** track branches, so a
 `write_text` that lives only in a `--mutant` path is reported as a write in every mode — the probe's
 mode strings are the authority. The probe is `notes/scripts/measure_open_probe.py`, promoted from
-`.qwen/tmp/a11_open_probe2.py` by `math-o3a.3.4`. The tracked records are **6**:
+`.qwen/tmp/a11_open_probe2.py` by `math-o3a.3.4`. The tracked records are **7**:
 `notes/probe/2026-10-10_writers.txt`, `notes/probe/2026-10-10_checkers.txt`,
 `notes/probe/2026-10-11_writers.txt`, `notes/probe/2026-10-11_checkers.txt`,
 `notes/probe/2026-10-11_rr_after.txt` (the single-target `render_reports.py` record taken mid-pass,
-after the store conversion) and `notes/probe/2026-10-12_rr_fleet.txt` (the `render_reports.py` record
+after the store conversion), `notes/probe/2026-10-12_seed_quotes.txt` (the `seed_quotes.py` run, which
+reads `notes/subfinding-pairs.md` and writes the TSV through the atomic sibling temp), and
+`notes/probe/2026-10-12_rr_fleet.txt` (the `render_reports.py` record
 taken after the fleet census moved into the writer, which names the script tree the census scans).
-`verify_fleet_design.py` parses the two 2026-10-11 records; the
+`verify_fleet_design.py` parses the two 2026-10-11 records; `verify_cache_promotion.py` reads all
+four of the 2026-10-10, 2026-10-11 and 2026-10-12 records for its L1 exactness pass; the
 2026-10-10 pair is the **before** state the amplification table's deltas are measured against.
 
 | script | write modes | generated reads, and whether any points backwards |

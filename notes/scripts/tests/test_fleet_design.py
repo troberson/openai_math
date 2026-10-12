@@ -13,13 +13,13 @@ passes both and only this comparison catches it. Tables: the purity table equals
 scanned inside the purity section, and each amplification row is present. Sync: the page bytes
 against `render_reports.py`'s render of it.
 
-This file injects nineteen faults, one per check form the page uses, and asserts each fires the pass
+This file injects twenty faults, one per check form the page uses, and asserts each fires the pass
 that owns it: the atomicity count, the sync split, a deleted purity row, the purity heading count,
 the digest count, a probe figure, an anchor past the file's end, a notes-page anchor past the
-file's end, the TSV byte figure, the TSV file count, the writer-row count in the gate paragraph, the
-writer-row count in the non-determinism sentence, and six site anchors shifted by one line — two in
-the bullet, two in the checker list, two in the paragraph. The last is a dated observation the writer
-deliberately leaves literal, so only the render diff can catch it.
+file's end, the TSV byte figure, the TSV file count, the probe-record count, the writer-row count in
+the gate paragraph, the writer-row count in the non-determinism sentence, and six site anchors shifted
+by one line — two in the bullet, two in the checker list, two in the paragraph. The last is a dated
+observation the writer deliberately leaves literal, so only the render diff can catch it.
 
 Every fault is built from a real count phrase, a real probe figure, a real anchor, a real table row
 and a real site anchor in the page as committed. Each test asserts the injected text differs from
@@ -27,7 +27,7 @@ the page it started from, and each needle is the problem string the pass that ow
 — measured specific, each needle fires for its own fault and for no other. The render-diff line
 fires for every fault, so no needle is that line.
 
-The clean test asserts the passes are silent and pins the counts they report: 34 anchors, 23 count
+The clean test asserts the passes are silent and pins the counts they report: 34 anchors, 24 count
 and probe phrases, 0 sync problems, 2 atomicity matches over 58 scripts and 18 catlib modules, 12
 sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 9 TSVs at 654,791 bytes, 631M
 `preprints/`, 1,740M `lean/OAI/`, 14M `notes/index/`, 77 gate rows, 10 writer rows, 2 env hits, 8
@@ -87,6 +87,11 @@ MUTANTS = [
      "count phrase not in the page: **9** `notes/tables/*.tsv` present on disk",
      lambda t: t.replace("**9** `notes/tables/*.tsv` present on disk",
                          "**8** `notes/tables/*.tsv` present on disk", 1)),
+    # The probe-record count is measured from the tracked record tree, so a page that names a record
+    # the tree does not carry is caught by the count pass.
+    ("probe record count understated",
+     "count phrase not in the page: The tracked records are **7**:",
+     lambda t: t.replace("The tracked records are **7**:", "The tracked records are **6**:", 1)),
     ("writer-row count in the gate paragraph",
      "count phrase not in the page: the **10** writers declare what they write",
      lambda t: t.replace("the **10** writers declare what they write",
@@ -135,7 +140,7 @@ def test_clean_page(mod, text):
     """Every pass is silent, and the counts the passes report are pinned."""
     problems, n_anchor, n_phrases, n_sync = mod.check(text)
     assert not problems, problems[:3]
-    assert (n_anchor, n_phrases, n_sync) == (34, 23, 0), \
+    assert (n_anchor, n_phrases, n_sync) == (34, 24, 0), \
         f"anchors {n_anchor}, phrases {n_phrases}, sync {n_sync}"
     p = mod.population()
     assert (p["atomic"], p["scripts"], p["modules"]) == (2, 58, 18), \

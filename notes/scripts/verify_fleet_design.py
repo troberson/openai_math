@@ -78,6 +78,7 @@ class Pop(TypedDict):
     ignored: int
     tsv_bytes: int
     tsv_count: int
+    probe_records: int
     du: dict[str, int]
     gate_rows: int
     set_sites: list[str]
@@ -179,6 +180,7 @@ def population() -> Pop:
                              "preprints", "lean", "overview.tex", "CONTENTS.md",
                              "reasoning_traces").splitlines() if l.strip()]
     tsvs = sorted((ROOT / "notes" / "tables").glob("*.tsv"))
+    probe_records = len([p for p in (ROOT / "notes" / "probe").iterdir() if p.is_file()])
     tsv_bytes = sum(len(p.read_bytes()) for p in tsvs)
     du: dict[str, int] = {}
     for name, rel in (("preprints", "preprints"), ("oai", "lean/OAI"), ("index", "notes/index")):
@@ -223,7 +225,8 @@ def population() -> Pop:
         "sync": len(sync), "sync_verify": len([s for s in sync if s.startswith("verify_")]),
         "sync_other": len([s for s in sync if not s.startswith("verify_")]),
         "digests": len(digests), "ignored": len(ignored), "tsv_bytes": tsv_bytes,
-        "tsv_count": len(tsvs), "du": du, "gate_rows": gate_rows, "writer_rows": writer_rows,
+        "tsv_count": len(tsvs), "probe_records": probe_records, "du": du,
+        "gate_rows": gate_rows, "writer_rows": writer_rows,
         "set_sites": set_sites,
         "atomic_sites": atomic_sites, "env_sites": env_sites,
         "env_hits": env_hits, "purity": purity, "rows": rows, "cli_wall": cli,
@@ -246,6 +249,7 @@ def count_phrases(pop: Pop) -> list[tuple[str, str]]:
         (f"returns **{pop['ignored']} line{'s' if pop['ignored'] != 1 else ''}**", "ignored_line"),
         (f"**{pop['tsv_bytes']:,}** bytes", "tsv_bytes"),
         (f"**{pop['tsv_count']}** `notes/tables/*.tsv` present on disk", "tsv_count"),
+        (f"The tracked records are **{pop['probe_records']}**:", "probe_records"),
         (f"**{du['preprints']}M**", "du_preprints"),
         (f"**{du['oai']}M**", "du_oai"),
         (f"**{du['index']}M**", "du_index"),
@@ -435,6 +439,7 @@ def main() -> int:
     print(f"sync pass: {pop['sync']} scripts ({pop['sync_verify']} verify_, {pop['sync_other']} not)")
     print(f"tree digests: {pop['digests']}  ignored lines: {pop['ignored']}")
     print(f"notes/tables/*.tsv: {pop['tsv_count']} files, {pop['tsv_bytes']} bytes")
+    print(f"notes/probe/ records: {pop['probe_records']}")
     print(f"gate rows: {pop['gate_rows']}  env hits: {pop['env_hits']}")
     for label, sites in (("atomic sites", pop["atomic_sites"]), ("env sites", pop["env_sites"]),
                          ("set sites", pop["set_sites"])):
