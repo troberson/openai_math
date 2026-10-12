@@ -64,7 +64,7 @@ lives in this file and nowhere else.
 
 - Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `atomic`, `promote`, `overview`, `ledger`, `preprints`,
   `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries`, `templates`, `records`, `quotes` (18 modules). Import them (`from catlib import yaml as Y`);
-  do not re-implement a join in an extractor. **55** of the **59** scripts do — the rule is
+  do not re-implement a join in an extractor. **57** of the **61** scripts do — the rule is
   `^[ \t]*(from|import) catlib`, so a deferred import inside a function counts — including all **23**
   checkers; the four non-importers are `dump_template_slots.py`, which reaches the slot dict
   through `render_reports.py` and never touches the registry, `gate.py`, which spawns rows and reads
@@ -397,8 +397,8 @@ lives in this file and nowhere else.
   manifest is `notes/scripts/README.md`, and it is the only place that answers "whose bytes are
   this". It is also the script inventory: every script under `notes/scripts/` is listed once as
   writer, report-only or checker, with what it writes and the gate command the gate list runs for it
-  — **12** writers, **25** report-only, **22** checkers, plus the page's own checker as the 23rd
-  checker and 60th script — and the fourth class, scratch, is recorded by rule: **scratch lives under
+  — **12** writers, **26** report-only, **22** checkers, plus the page's own checker as the 23rd
+  checker and 61st script — and the fourth class, scratch, is recorded by rule: **scratch lives under
   `.qwen/tmp/`, a permanent script lives under `notes/scripts/`**, so a probe that a later pass
   re-runs is promoted and gets a table row before it gets a gate command. `math-o3a.3.4` is that rule
   realized: the audit-hook probe moved from `.qwen/tmp/a11_open_probe2.py` to
@@ -407,12 +407,14 @@ lives in this file and nowhere else.
   realized twice: the two notes-move probes moved from `.qwen/tmp/notes_move_probe.py` and
   `.qwen/tmp/notes_block_probe.py` to `notes/scripts/measure_move_surface.py` and
   `notes/scripts/measure_anchor_blocks.py`, and the gate does not run them because a pass re-runs them
-  by hand before and after each move.
-  Scripts and generated files are **not** 1-to-1: of the **59** scripts, **12** write
+  by hand before and after each move. The quote-spec probe is the rule realized a third time:
+  `measure_summaries_seed.py` moved from `.qwen/tmp/measure_summaries_seed.py` and the gate does run
+  it, because its report is a function of the pages on disk.
+  Scripts and generated files are **not** 1-to-1: of the **61** scripts, **12** write
   (`build_catalog.py`, `build_sources.py`, `build_index.py`, `compare_abstracts.py` — with `--tsv`
   only — `extract_formalization_deps.py`, `extract_links.py`, `extract_subfindings.py`,
   `render_reports.py`, `build_report_templates.py`, `measure_open_probe.py`, `measure_names.py`,
-  `seed_quotes.py`) and **47**
+  `seed_quotes.py`) and **48**
   write nothing, and `build_index.py` alone renders **1,049** files. `measure_names.py` is the record
   producer: its target is `.qwen/cache/records/<key>/names.json`, which the `.qwen/*` rule keeps
   untracked, so it is the one writer with no tracked artifact and the one writer target the
@@ -446,10 +448,10 @@ lives in this file and nowhere else.
   nothing. Prove the mode by running a writer plain, then with the flag, diffing the two reports (the
   write announcement is the only line allowed to differ) and confirming `git status --porcelain` is
   unchanged by the flagged run. The read-only gate pool is the block that runs rows with this flag.
-- The whole-tree test is the gate list at `notes/scripts/gate.py`: **77** invocations — the **10**
+- The whole-tree test is the gate list at `notes/scripts/gate.py`: **78** invocations — the **10**
   gated writers (`build_report_templates.py` and `measure_open_probe.py` are the writers it does not
-  run), the 44 gated report-only rows (including `check_summary_manuscripts.py` and
-  `locate_summary_quotes.py`, `check_index_links.py` plain and its extracted self-tests row, and the
+  run), the 45 gated report-only rows (including `check_summary_manuscripts.py`,
+  `locate_summary_quotes.py` and `measure_summaries_seed.py`, `check_index_links.py` plain and its extracted self-tests row, and the
   twenty-five extracted self-tests rows, from
   `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q` to
   `run_tests.py notes/scripts/tests/test_quotes.py -q` — the full list is in
@@ -1047,13 +1049,13 @@ lives in this file and nowhere else.
   catch it. Each needle is measured specific: it fires for its own fault and for no other, and the
   render-diff line fires for every fault, so no needle is that line. The clean test pins the population
   the passes report: 34 anchors, 24 count and probe phrases, 0 sync problems, 2 atomicity matches over
-  58 scripts and 18 catlib modules, 12 sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 9
-  TSVs at 654,791 bytes, 631M `preprints/`, 1,740M `lean/OAI/`, 14M `notes/index/`, 77 gate rows, 10
+  59 scripts and 18 catlib modules, 12 sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 9
+  TSVs at 654,791 bytes, 631M `preprints/`, 1,740M `lean/OAI/`, 14M `notes/index/`, 78 gate rows, 10
   writer rows, 2 env hits, 8 purity scripts, the sites at `atomic.py:42` / `atomic.py:84`,
   `render_reports.py:1155` / `render_reports.py:1375` and `build_catalog.py:128` /
   `build_index.py:583`, and the probe row the amplification table quotes at 151.32 s wall over
   117,360 opens, 18,935 distinct paths and 98,425 repeats. `main()` reads no argv, so `--mutant` is
-  inert, and `population()` is under `functools.cache`, so the twenty `check()` calls the row makes
+  inert, and `population()` is under `functools.cache`, so the twenty-one `check()` calls the row makes
   pay the `git`/`du`/script-tree walk once. It writes nothing; run it twice and diff — the report is
   identical.
 - Check the five sync pages with `python3 notes/scripts/verify_page_sync.py --both` before reporting

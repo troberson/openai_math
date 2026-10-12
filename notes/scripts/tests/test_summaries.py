@@ -25,12 +25,12 @@ from catlib.paths import SUMMARIES_DIR, read_text
 from catlib.summaries import (
     MARKER,
     PAPDIR,
+    PRIOR,
     QUOTE,
     Page,
-    markers,
+    candidates,
     superseded_dir,
     units,
-    usable,
 )
 
 pytestmark = pytest.mark.mutant
@@ -73,24 +73,20 @@ def inline_targets(text):
     wrapped = []
     for m in QUOTE.finditer(text):
         span = m.group(1) or m.group(2)
-        if len(span) < 12 or "Prior (my training data" in span:
+        if len(span) < 12 or PRIOR in span:
             continue
         (wrapped if "\n" in span else single).append(m)
     return single, wrapped
 
 
 def blockquote_targets(page):
-    """Block-quote units Pass C checks, i.e. those with a citation on a line above them."""
+    """Block-quote units Pass C checks, i.e. those with a citation on a line above them. The
+    attribution is the package's `candidates` rule, the same one pass C runs."""
     out = []
     for start_line, unit, is_blockquote in units(page.lines):
         if not is_blockquote or len(unit) < 12:
             continue
-        resolved = []
-        for back in range(start_line - 2, max(start_line - 5, -1), -1):
-            resolved = usable(page, markers(page.lines[back]))
-            if resolved:
-                break
-        if resolved:
+        if candidates(page, unit, start_line, True):
             out.append((start_line, unit))
     return out
 

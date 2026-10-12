@@ -40,13 +40,14 @@ boundary is skipped. This script measures; it no longer injects.
 Usage: python3 notes/scripts/verify_summaries.py                 # every page under notes/summaries
        python3 notes/scripts/verify_summaries.py <page.md> ...   # named pages only
 
-What stays in this file, deliberately: the family-keyed block rules (`BLOCK_RULES`, `NOTE_ENTRY`) and
-the format-example exemption (`FORMAT_EXAMPLE`), which are pass E's contract, not the page's; and Pass
-A, which is written per page against that page's findings. The page grammar (`ROW`, `CELL`, `MARKER`,
-`QUOTE`, `LINK`, `ENTITY`, `TAG`, `PAPDIR`), the `Page` class, the marker/unit joins, the lenient
-`errors="replace"` read of a declared source, and the manuscript-ownership map are in
-`catlib/summaries.py`, shared with `locate_summary_quotes.py`, `refresh_summary_line_counts.py` and
-`check_summary_manuscripts.py`.
+What stays in this file, deliberately: the family-keyed block rules (`BLOCK_RULES`, `NOTE_ENTRY`),
+which are pass E's contract, not the page's; and Pass A, which is written per page against that page's
+findings. The page grammar (`ROW`, `CELL`, `MARKER`, `QUOTE`, `LINK`, `ENTITY`, `TAG`, `PAPDIR`), the
+`Page` class, the marker/unit joins, the block-quote attribution rule (`candidates`), the span rule
+(`spans_of`), the two unit exemptions (`FORMAT_EXAMPLE`, `PRIOR`), the lenient `errors="replace"` read
+of a declared source, and the manuscript-ownership map are in `catlib/summaries.py`, shared with
+`locate_summary_quotes.py`, `refresh_summary_line_counts.py`, `check_summary_manuscripts.py`,
+`measure_summaries_seed.py` and `seed_quotes.py`.
 """
 import argparse
 import os
@@ -57,15 +58,19 @@ from pathlib import Path
 from catlib.paths import ROOT, SUMMARIES_DIR, read_text
 from catlib.summaries import (
     ENTITY,
+    FORMAT_EXAMPLE,
     LINK,
     MARKER,
     PAPDIR,
+    PRIOR,
     QUOTE,
     TAG,
     Page,
+    candidates,
     label,
     markers,
     named_dirs,
+    spans_of,
     units,
     usable,
 )
@@ -82,9 +87,6 @@ BLOCK_RULES = {
     "README.md": (re.compile(r"^\|\s*(\d{1,3})\s*\|"), None),
 }
 NOTE_ENTRY = re.compile(r"^- \*\*(\d{1,3})\*\*")
-# The Sources preamble demonstrates the marker syntax ("[S2:31] for one line"). Those tokens are an
-# example of the format, not a citation, so the unit that carries them makes no claim to check.
-FORMAT_EXAMPLE = "cited in the body as"
 
 
 def pass_b(page):
@@ -188,31 +190,17 @@ def pass_c(page):
     """Quote fidelity. Returns (spans, misses)."""
     checked = misses = 0
     for start_line, unit, is_blockquote in units(page.lines):
-        if is_blockquote:
-            # A block quote is attributed by the citation on the line above it.
-            resolved = []
-            for back in range(start_line - 2, max(start_line - 5, -1), -1):
-                resolved = usable(page, markers(page.lines[back]))
-                if resolved:
-                    break
-            spans = [unit]
-        else:
-            if "Prior (my training data" in unit:
-                # A prior paragraph is explicitly not repo text; nothing in it is a quotation.
-                continue
-            resolved = usable(page, markers(unit))
-            # Spans under 12 characters are terms under discussion ("proves"), not quotations.
-            spans = [m.group(1) or m.group(2) for m in QUOTE.finditer(unit)
-                     if len(m.group(1) or m.group(2)) >= 12]
-
-        candidates = [(sid, a, b) for _, sid, a, b in resolved]
-        for span in spans:
-            if not candidates:
+        if not is_blockquote and PRIOR in unit:
+            # A prior paragraph is explicitly not repo text; nothing in it is a quotation.
+            continue
+        cands = candidates(page, unit, start_line, is_blockquote)
+        for span in spans_of(unit, is_blockquote):
+            if not cands:
                 print(f"NO CITATION in unit at doc line {start_line}: {span[:50]!r}")
                 misses += 1
                 continue
             hit = None
-            for sid, a, b in candidates:
+            for sid, a, b in cands:
                 src = page.lines_of(sid)
                 haystack = norm(" ".join(src[a - 1:max(a, b)]) if a else " ".join(src))
                 if norm(span) in haystack:
@@ -221,10 +209,10 @@ def pass_c(page):
             checked += 1
             if hit is None:
                 misses += 1
-                near = ", ".join(label(s, a, b) for s, a, b in candidates[:4])
+                near = ", ".join(label(s, a, b) for s, a, b in cands[:4])
                 print(f"NOT VERBATIM [doc line {start_line}] cited {near}")
                 print(f"   page says : {norm(span)[:130]}")
-                sid, a, b = candidates[0]
+                sid, a, b = cands[0]
                 src = page.lines_of(sid)
                 print(f"   line says : {norm(' '.join(src[a - 1:b] if a else src))[:130]}")
     return checked, misses
@@ -297,7 +285,7 @@ def bare_locator_cites(page):
     fam = int(page.fam)
     out = []
     for start_line, unit, is_blockquote in units(page.lines):
-        if is_blockquote or FORMAT_EXAMPLE in unit or "Prior (my training data" in unit:
+        if is_blockquote or FORMAT_EXAMPLE in unit or PRIOR in unit:
             continue
         if any(len(m.group(1) or m.group(2)) >= 12 for m in QUOTE.finditer(unit)):
             continue

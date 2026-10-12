@@ -124,6 +124,7 @@ ROWS = [
     ("run_tests.py notes/scripts/tests/test_conjecture_standing.py -q", ("catalog",), ()),
     ("check_summary_manuscripts.py", ("summaries",), ()),
     ("locate_summary_quotes.py", ("summaries",), ()),
+    ("measure_summaries_seed.py", ("summaries",), ()),
 ]
 
 

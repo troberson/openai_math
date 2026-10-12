@@ -36,8 +36,9 @@ OUT = ROOT / "notes" / "tables" / "quotes.tsv"
 
 COLS = ("page", "fam", "seq", "which", "path", "start", "end", "head", "tail")
 
-# The widest window a seeded spec may name. Measured 2026-10-12: the summaries spans top out at 8 lines,
-# so 24 bounds the search without cutting a real quote.
+# The widest window the pair-line seeder widens a spec to. Measured 2026-10-12: every pair-line quote
+# sits on the anchored line, and the summaries spans, seeded against the range their own marker names,
+# reach 26 lines, so this bound is never reached by the page it applies to.
 MAXW = 24
 
 HEADER = re.compile(r"^## (?P<fam>\d{3}) · `overview\.tex:(?P<line>\d+)` · n=(?P<n>\d+) · (?P<tier>T\d)$")

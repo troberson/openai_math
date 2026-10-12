@@ -48,6 +48,13 @@ PAPDIR = re.compile(r"preprints/([^/`\s]+)/")
 FAM = re.compile(r"(\d{1,3})-")
 ROOTPATH = re.compile(r"`(preprints/[^`]+)`")
 
+# The Sources preamble demonstrates the marker syntax ("[S2:31] for one line"). Those tokens are an
+# example of the format, not a citation, so the unit that carries them makes no claim to check.
+FORMAT_EXAMPLE = "cited in the body as"
+# A prior paragraph is explicitly labelled as the assistant's training-data memory, not repo text, so
+# nothing inside it is a quotation of a source.
+PRIOR = "Prior (my training data"
+
 
 def page_fam(name: str) -> str | None:
     """The family number a page name carries, in the ledger's zero-padded form."""
@@ -190,6 +197,36 @@ def units(doc_lines: list[str]) -> list[tuple[int, str, bool]]:
 def usable(page: Page, cites: list[tuple[int, str, int | None, int | None]]) -> list[tuple[int, str, int | None, int | None]]:
     """Citations whose source is in the table and resolves to a file on disk."""
     return [c for c in cites if c[1] in page.table and page.table[c[1]][1] is not None]
+
+
+def candidates(page: Page, unit: str, start_line: int, is_bq: bool) -> list[tuple[str, int | None, int | None]]:
+    """The citations a unit is attributed to, in source order: `(S#, first line or None, last line)`.
+
+    A block quote is attributed by the citation on the line **above** it, walking back at most three
+    lines and taking the first line that carries a usable citation; a prose unit is attributed by the
+    markers inside it. A citation whose source is not in the table, or resolves to no file, is not a
+    candidate. This is the rule `verify_summaries.py` pass C, `locate_summary_quotes.py` and
+    `seed_quotes.py` all run, so a span one of them attributes is the span the others attribute.
+    """
+    if is_bq:
+        for back in range(start_line - 2, max(start_line - 5, -1), -1):
+            res = usable(page, markers(page.lines[back]))
+            if res:
+                return [(sid, a, b) for _, sid, a, b in res]
+        return []
+    return [(sid, a, b) for _, sid, a, b in usable(page, markers(unit))]
+
+
+def spans_of(unit: str, is_bq: bool) -> list[str]:
+    """The quoted spans a unit carries: the whole block quote, or the prose quotations of 12+ chars.
+
+    A span under 12 characters is a term under discussion ("proves"), not a quotation, and a block
+    quote is one span: its lines are already joined by `units`.
+    """
+    if is_bq:
+        return [unit]
+    return [m.group(1) or m.group(2) for m in QUOTE.finditer(unit)
+            if len(m.group(1) or m.group(2)) >= 12]
 
 
 def label(sid: str, a: int | None, b: int | None) -> str:

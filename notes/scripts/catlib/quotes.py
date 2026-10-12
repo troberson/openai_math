@@ -10,13 +10,14 @@ byte.
 **The page grammar is shared with `catlib.anchors`.** `ANCH` is `anchor_pattern(EXT_MAN, ranges=True)`,
 the grammar `notes/named-results.md` and `notes/t0-chains.md` ship, so a seeder that reads a page's
 anchors uses the same rule the page's checker uses: a page whose anchor grammar narrows fails the seeder
-the way it fails the checker. `nearest_anchor` is the block-quote attribution -- a block quote is cited
-by the marker on the prose line above it, not by a marker of its own.
+the way it fails the checker. `nearest_anchor` is the block-quote attribution for a page that cites by
+an anchor; `catlib.summaries.candidates` is the same idea for a page that cites by a `[Sn:line]` marker.
 
 **Page breaks inside a quote are the common case, not the edge.** Measured 2026-10-12 over the 21
-summaries pages: of the 736 quoted spans of 12 characters or more that `verify_summaries.py` pass C
-checks, 240 sit in one source line and 491 sit across 2 to 8 lines. A spec that names a single line
-cannot carry them, so the spec names a window and the resolver joins it.
+summaries pages, with the checker's own span and attribution rules (`catlib.summaries.spans_of` and
+`candidates`): of the **925** quoted spans of 12 characters or more that `verify_summaries.py` pass C
+checks, **293** sit in one source line and **618** sit across 2 to 26 lines. A spec that names a single
+line cannot carry them, so the spec names a window and the resolver joins it.
 
 **Locate on raw bytes, never on the folded line.** `catlib.text.strip_markup` is the verification
 normalizer and it is lossy on math: `overview.tex:505` carries
@@ -37,6 +38,7 @@ from __future__ import annotations
 import re
 
 from catlib.anchors import EXT_MAN, anchor_pattern
+from catlib.summaries import FORMAT_EXAMPLE, PRIOR, Page, candidates, spans_of, units
 from catlib.text import collapse_ws, strip_markup
 
 MIN_BOUND = 3
@@ -155,6 +157,48 @@ def folded(lines: list[str], start: int, end: int, head: str, tail: str | None) 
     `resolve` is the comparison; this is the form for a quote the page wrote with markup dropped."""
     span = resolve(lines, start, end, head, tail)
     return strip_markup(span) if span is not None else None
+
+
+def seed_page(page: Page) -> list[tuple[str, str, str, int, int, str, str | None, str]]:
+    """Every quoted span a summaries page carries, seeded to a spec, in page order.
+
+    Yields `(sid, which, span, start, end, head, tail, mode)` per span. `sid` is the Sources-table row
+    the span is attributed to by `catlib.summaries.candidates` — the block-quote rule walks back from the
+    quote to the citation on the line above it, so a block quote is seeded against the file its marker
+    names, not against the page. The window is the cited range the marker names: a summaries marker
+    cites lines, so the spec names those lines and no widening is needed. `which` is `block` for a block
+    quote and `inline` for a prose quotation. `mode` is the round-trip class: `raw` when the resolved
+    span is the page's quote byte-for-byte, `folded` when it is equal only after the checker's
+    normalizer (the page dropped markup the source carries), and `none` when the cited file does not
+    carry the span.
+    """
+    out: list[tuple[str, str, str, int, int, str, str | None, str]] = []
+    for start_line, unit, is_bq in units(page.lines):
+        if not is_bq and (PRIOR in unit or FORMAT_EXAMPLE in unit):
+            continue
+        cands = candidates(page, unit, start_line, is_bq)
+        which = "block" if is_bq else "inline"
+        for span in spans_of(unit, is_bq):
+            hit = None
+            for sid, a, b in cands:
+                src = page.lines_of(sid)
+                got = seed(src, span, a or 1, b or len(src))
+                if got:
+                    hit = (sid, src, got)
+                    break
+            if hit is None:
+                out.append((cands[0][0] if cands else "", which, span, 0, 0, "", None, "none"))
+                continue
+            sid, src, (s, e, head, tail) = hit
+            r = resolve(src, s, e, head, tail)
+            if r == span:
+                mode = "raw"
+            elif r is not None and strip_markup(r) == strip_markup(span):
+                mode = "folded"
+            else:
+                mode = "none"
+            out.append((sid, which, span, s, e, head, tail, mode))
+    return out
 
 
 def spec_lines(path: str, start: int, end: int, head: str, tail: str | None) -> str:
