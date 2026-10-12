@@ -2,7 +2,7 @@
 
 Measured 2026-10-11 by `python3 notes/scripts/verify_script_ownership.py` — report-only, it writes
 nothing, and every count below is re-derived by that run. The page answers one question: for each of
-the **1,139** files under `notes/` (the scripts excluded), which is whose bytes. A generated file is
+the **1,140** files under `notes/` (the scripts excluded), which is whose bytes. A generated file is
 changed by editing its generator and re-rendering; a hand-written file is edited directly. Ownership
 is per file, and the checker exits 1 on a file no rule owns.
 
@@ -346,10 +346,11 @@ The package is not in the census below: the script population is `notes/scripts/
 | `notes/index/` | **1,049** | generated — `build_index.py` |
 | `notes/summaries/` | **21** | hand-written — the reading record |
 | `notes/templates/` | **24** | **5** hand-written index skeletons + **19** report templates built by `build_report_templates.py` |
+| `notes/upstream_history/` | **3** | hand-written — the record of each upstream merge, checked by `verify_upstream_history.py` |
 | `notes/probe/` | **6** | the audit-hook probe records: the 2026-10-11 writers/checkers pair `measure_open_probe.py` writes and the fleet checker parses, the 2026-10-11 `render_reports.py` after-record that proves the repeat count fell, the 2026-10-10 pair the page's cold-cache figures come from, and the 2026-10-12 `render_reports.py` record that captures the fleet census the writer added (the script tree and the two 2026-10-11 records it scans, which its own 2026-10-11 record cannot name) |
 | `notes/tables/*.tsv` | **8** | **6** generated, **2** hand-authored |
-| `notes/*.md` | **29** | **19** generated — the report-fed pages `render_reports.py` renders; **10** hand-written. **23** have a checker, **6** have none |
-| `notes/` total, scripts excluded | **1,139** | — |
+| `notes/*.md` | **29** | **19** generated — the report-fed pages `render_reports.py` renders; **10** hand-written. **23** with a checker, **6** without |
+| `notes/` total, scripts excluded | **1,140** | — |
 
 The generated TSVs are the six writer targets. The two hand-authored tables are:
 
