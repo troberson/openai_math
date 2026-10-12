@@ -33,7 +33,7 @@ from catlib.atomic import RECORDS_ROOT, cache_text, write_atomic
 from catlib.paths import ROOT, SCRIPTS
 from catlib.records import key as digest_key
 
-# The eighteen report-fed pages, in the order the registry in `catlib/templates.py` lists them.
+# The nineteen report-fed pages, in the order the registry in `catlib/templates.py` lists them.
 REPORT_PAGES = (
     "notes/abstracts.md",
     "notes/index-links.md",
@@ -51,6 +51,7 @@ REPORT_PAGES = (
     "notes/subfinding-pairs.md",
     "notes/counterexample-crosscheck.md",
     "notes/formalization-faithfulness.md",
+    "notes/fleet-design.md",
     "notes/templates.md",
     "notes/README.md",
 )
@@ -75,7 +76,12 @@ L1: dict[str, tuple[str, ...]] = {
                           "notes/tables/conjecture-standing.tsv", "notes/formalization-deps.md",
                           "notes/tables/formalization-deps.tsv", "notes/tables/links.tsv",
                           "notes/tables/sources.tsv", "notes/tables/subfindings.tsv", "notes/t0-triage.md",
-                          "notes/tables/topics.tsv", "notes/templates/", "notes/index/"),
+                          "notes/tables/topics.tsv", "notes/templates/", "notes/index/",
+                          # The fleet page's population scans the fleet's own sources and the tracked
+                          # probe records, and counts the top-level pages under notes/. A key that did
+                          # not hash them could serve a page whose site list was measured against a
+                          # script tree that has since moved.
+                          "notes/scripts/", "notes/probe/", "notes/"),
     "build_report_templates.py": REPORT_PAGES,
     # The names measurement is a record producer, not a page writer: its only tracked input is the
     # ledger, which the probe records as the single notes/ path it opens read-only. Its record is the

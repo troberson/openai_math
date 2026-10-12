@@ -69,6 +69,11 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
     # formalization-faithfulness.md's population is measure_faithfulness.py's own report-only
     # measurement, imported by the writer.
     "notes/formalization-faithfulness.md": R.faithfulness_population,
+    # fleet-design.md's population is the writer's own scan of the fleet's sources — the atomicity
+    # grep, the sync census, the digests, the du sizes, the gate rows, the three site lists, the probe
+    # parse. The page's checker measures the same figures with its own reads: a checker that compared
+    # the page with the writer's numbers would prove nothing about them.
+    "notes/fleet-design.md": R.fleet_population,
     # templates.md's census is measure_templates.population(); the page also compares a template's slot
     # count with the writer's label count, so the abstracts label count travels inside the population —
     # the same CA.measure() call abstracts_page() makes.
@@ -104,6 +109,7 @@ LABELS: dict[str, Callable[[], dict[str, str]]] = {
         POPULATIONS["notes/counterexample-crosscheck.md"]()),
     "notes/formalization-faithfulness.md": lambda: R.faithfulness_phrases(
         POPULATIONS["notes/formalization-faithfulness.md"]()),
+    "notes/fleet-design.md": lambda: R.fleet_phrases(POPULATIONS["notes/fleet-design.md"]()),
     "notes/templates.md": lambda: R.templates_phrases(POPULATIONS["notes/templates.md"]()),
 }
 PHRASE_FNS = ("count_phrases", "size_phrases")
@@ -156,6 +162,11 @@ ALL_PAGES = {
     # formalization-faithfulness.md's checker exports population() and count_phrases(), so the builder
     # derives its needle list from the checker itself, as it does for the crosscheck page.
     "notes/formalization-faithfulness.md": "verify_faithfulness.py",
+    # fleet-design.md's checker exports population() and count_phrases(), so the builder derives its
+    # needle list from the checker itself. The page's dated observations (the free -h line, the wall
+    # times, the cold/warm swing) are deliberately NOT slots: a writer that recomputed them would move
+    # the page the day the machine changed, so they stay literal in the template.
+    "notes/fleet-design.md": "verify_fleet_design.py",
     # templates.md has no page checker of its own: its census comes from the gated report-only
     # measure_templates.py, and the script that checks any part of it is verify_script_ownership.py,
     # which verifies the census rows and carries no count_phrases/size_phrases, so the builder reports

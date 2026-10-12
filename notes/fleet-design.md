@@ -9,9 +9,9 @@ the rest is measured 2026-10-10 and re-checked by `verify_fleet_design.py`.
 | layer | what it is | who writes it | keyed by |
 |---|---|---|---|
 | **L0** | the release tree: `preprints/**`, `lean/**`, `overview.tex`, `CONTENTS.md`, `reasoning_traces/**` | upstream, via the merge commits | the git **tree digest** of each path |
-| **L1** | the hand-authored inputs: `notes/tables/topics.tsv`, `notes/tables/conjecture-standing.tsv`, the **11** hand-written `notes/*.md` pages (of the **28** top-level pages — the other **17** are report-fed, so they are L3) | a human, in a commit | the file's content hash |
+| **L1** | the hand-authored inputs: `notes/tables/topics.tsv`, `notes/tables/conjecture-standing.tsv`, the **10** hand-written `notes/*.md` pages (of the **28** top-level pages — the other **18** are report-fed, so they are L3) | a human, in a commit | the file's content hash |
 | **L2** | the derived records: the **8** `notes/tables/*.tsv` present on disk, `notes/index/**` (1,049 files), `notes/summaries/**`, `notes/probe/**`, and the untracked keyed store `.qwen/cache/records/**` | the 11 writers | (L0 digests, script-source hash, L1 hashes, args) |
-| **L3** | the tracked output pages: the 17 report-fed `notes/*.md` | `render_reports.py` alone — `math-o3a.3` moved the two checkers' page writes into `verify_page_sync.py`, which mutates page text in memory | the same key |
+| **L3** | the tracked output pages: the 18 report-fed `notes/*.md` | `render_reports.py` alone — `math-o3a.3` moved the two checkers' page writes into `verify_page_sync.py`, which mutates page text in memory | the same key |
 
 ## The purity rule, stated precisely
 
@@ -88,16 +88,17 @@ inputs are the expensive, immutable, cacheable part.
 ## The atomicity finding
 
 Rule: `grep -cE 'os\.replace|os\.rename|shutil\.move|NamedTemporaryFile'` over `notes/scripts/*.py`
-and `notes/scripts/catlib/*.py`, **excluding `verify_fleet_design.py`** — that checker carries the
-pattern as a needle, so counting it would read 1 and the rule would be about the checker, not the
-fleet. Over **57** scripts and **17** catlib modules the count is **2 matches**, both in
+and `notes/scripts/catlib/*.py`, **excluding `verify_fleet_design.py` and `render_reports.py`** — the
+checker carries the pattern in its count pass and the writer carries it as its `FLEET_ATOMIC` constant,
+so counting either would read a needle as a site and the rule would be about the censuses, not the
+fleet. Over **56** scripts and **17** catlib modules the count is **2 matches**, both in
 `catlib/atomic.py`: the `os.replace` at `catlib/atomic.py:42`, which promotes the sibling temp onto
 the target, and the one at `catlib/atomic.py:84`, which promotes a staged slot onto its tracked path.
 Before `math-o3a.2.1` the count was **0 matches** over **49** scripts and **14** modules: every writer
 opened its tracked target directly, so a crash mid-write left a half-written tracked file. Atomic
 promotion is now **2** sites, both in the package, and every writer's write goes through them —
 `catlib/tsv.py`'s four TSV writers, `catlib/promote.py`'s `promote()`, `build_index.py`'s page writer,
-`render_reports.py`'s 17 page writes, `build_report_templates.py`, `refresh_summary_line_counts.py` and
+`render_reports.py`'s 19 page writes, `build_report_templates.py`, `refresh_summary_line_counts.py` and
 `compare_abstracts.py --tsv` — so the count stays small by construction: two primitives, and no writer
 carries its own move.
 
@@ -109,8 +110,9 @@ reading the page they verify is their job, so the pass is legal: `verify_abstrac
 `verify_index_design.py`,
 `verify_named_results.py`, `verify_page_sync.py`, `verify_scope_exclusions.py`,
 `verify_script_ownership.py`, `verify_sources.py`, `verify_subfinding_pairs.py`,
-`verify_verification_dirs.py`. **0** are not. `verify_fleet_design.py` carries the string as a needle
-and is excluded from the count, so the rule is 13 files found, 12 counted.
+`verify_verification_dirs.py`. **0** are not. `verify_fleet_design.py` and `render_reports.py` carry the
+string as a needle — the checker's sync pass prints `sync problems`, the writer's census line tests for
+it — and both are excluded from the count, so the rule is 14 files found, 12 counted.
 
 Before `math-o3a.3` the count was **15**, split **10** checkers and **5** non-checkers
 (`check_index_links.py`, `extract_links.py`, `measure_names.py`, `measure_proof_density.py`,
@@ -282,7 +284,7 @@ artifacts: the 9 writers declare what they write, every checker needs `pages`,
 tuples in the `ROWS` block is the row count. Non-determinism sources in the 9 writers,
 by class:
 
-- **Time / random / env:** **2 hits** — `render_reports.py:1150` and `render_reports.py:1377` set
+- **Time / random / env:** **2 hits** — `render_reports.py:1151` and `render_reports.py:1378` set
   `env={**os.environ, "RENDER_REPORTS_CHILD": "1"}` for the two children. Zero `datetime`,
   `time.time`, `uuid`, `getpid`, `platform` in any writer, so no timestamp reaches a generated byte.
 - **Set iteration order:** **2 sites** — `build_catalog.py:128`, `build_index.py:583`, both
@@ -358,16 +360,16 @@ through the writer's code proves nothing (`catlib/measure.py` docstring).
 
 ## The checker
 
-`notes/scripts/verify_fleet_design.py` (report-only, writes nothing) with six passes:
+`notes/scripts/verify_fleet_design.py` (report-only, writes nothing) with seven passes:
 
 1. **Anchors** — every backticked `path:line` anchor resolves, **prefixed** (a `notes/scripts/…` or
    `catlib/…` path) **or bare** (`measure_index_sizes.py:93`, `extract_links.py:593`); a bare name resolves
    under `notes/scripts/`. The line exists in the named file and a `path:a-b` span fits inside it. The
    page carries the anchors the checker counts, the four named here
-   (`build_catalog.py:128`, `build_index.py:583`, `render_reports.py:1150`, `render_reports.py:2043`),
+   (`build_catalog.py:128`, `build_index.py:583`, `render_reports.py:1151`, `render_reports.py:2043`),
    the eight call-site anchors in the amplification section, the unsorted-walk list, the three measured
    site anchors the four do not carry (`catlib/atomic.py:42`, `catlib/atomic.py:84`,
-   `render_reports.py:1377`), and
+   `render_reports.py:1378`), and
    `catlib/preprints.py:77`, `catlib/preprints.py:192`,
    `catlib/yaml.py:126`; an anchor written with trailing text
    (`` `render_reports.py:128 def measure()` ``) is not a form the checker parses, which is why the
@@ -398,21 +400,28 @@ through the writer's code proves nothing (`catlib/measure.py` docstring).
    (the amplification table names four of the same scripts, so a page-wide row scan lets a deleted
    purity row pass), and each of the 5 amplification rows is present. The options table is prose the
    checker does not re-derive.
-6. **Mutants** — 15 injected corruptions, each asserted against the pass it targets: the atomicity
+6. **Sync** — the page's bytes on disk against the bytes `render_reports.py` renders for it. The page
+   is report-fed: its measured phrases are slots the writer supplies from its own scan of the fleet's
+   sources, so a hand edit to a slotted phrase, a stale render, or a template that no longer matches the
+   page all show up here. The count pass proves the numbers are measured; this pass proves the page is
+   the writer's text. The two measurements stay independent: the writer's scan is its own, not this
+   checker's, so a checker that compared the page with the writer's numbers would prove nothing.
+7. **Mutants** — 16 injected corruptions, each asserted against the pass it targets: the atomicity
    count shifted, the sync split altered, a purity row deleted, the purity population count in the
    section heading, the digest count widened, a probe figure altered, an anchor shifted outside its
-   file, a notes-page anchor injected past its file's end, a prose count in the size argument, and
+   file, a notes-page anchor injected past its file's end, a prose count in the size argument,
    **six** site anchors shifted to a neighbouring line — one per list the site pass reads, the
    atomicity paragraph, the env bullet, the set-iteration bullet, and the checker-section anchor list
-   for each of the three classes.
+   for each of the three classes — and a dated observation in the page, which the writer deliberately
+   leaves literal, so only the render diff can catch it.
    The purity heading count and the closing sentence of the purity section are both in the count
    phrase list, so the population is measured, not carried: adding a probe target moves the table,
    the heading and the sentence together. Measured
-   2026-10-12 against the re-measured probe: plain **0 problems**, `--mutant` **15 of 15**
+   2026-10-12 against the re-measured probe: plain **0 problems**, `--mutant` **16 of 16**
    flagged, and both reports byte-identical across two runs. The six site mutants were confirmed
    against the checker as it stood before this pass, which compared set sites only: run against
    `HEAD`'s version, they print **11 of 15** with the four atomicity and env mutants named
-   `UNDETECTED`; run against the fixed checker, **15 of 15**. Two of them were first inert for the
+   `UNDETECTED`; run against the fixed checker, **16 of 16**. Two of them were first inert for the
    same reason the atomicity count mutant was inert twice earlier in this pass: a page that enumerates
    the six measured sites in the checker-section paragraph carries each site twice, so shifting one
    copy leaves the site present in the other and the presence check passes. The paragraph now lists the
@@ -423,7 +432,9 @@ through the writer's code proves nothing (`catlib/measure.py` docstring).
    during this pass, both times for the same reason: a paragraph that restates the atomicity count
    leaves the phrase a second time, so the single occurrence the mutant replaces is not the only one
    and the count check still finds it. Both restatements are now prose without the bold form, and the
-   phrase occurs once. The row pair is in `gate.py`'s `ROWS` list, where each checker is two explicit
+   phrase occurs once. The sixteenth mutant alters a dated observation the writer does not slot, so the
+   count pass cannot see it and the render diff is the only pass that can: it is the mutant that proves
+   the sync pass is live on this page. The row pair is in `gate.py`'s `ROWS` list, where each checker is two explicit
    entries. The shell list ran each checker through a loop over 20 → **21** checkers (73 → **76**
    invocations) until `math-o3a.5.2`'s B pass collapsed `verify_page_sync.py` into a single `--both`
    row (75), and `math-unv` removed the loop when the list became a graph. The page + checker are rows in

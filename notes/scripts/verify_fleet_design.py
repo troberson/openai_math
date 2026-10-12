@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Check `notes/fleet-design.md` — the four-layer design and its measured inventory.
 
-Report-only; writes nothing. Six passes:
+Report-only; writes nothing. Seven passes:
 
 1. **Anchors** — every backticked `path:line` (or `path:a-b`) in the page resolves against the file,
    a prefixed path under the repo root, a bare script name under `notes/scripts/`, and a span fits
@@ -24,11 +24,18 @@ Report-only; writes nothing. Six passes:
 5. **Tables** — the purity table equals the probe parse, scanned inside the purity section (the
    amplification table names four of the same scripts, so a page-wide row scan lets a deleted purity row
    pass), and each amplification row is present. The options table is prose and is not re-derived.
-6. **Mutants** — 15 injected corruptions, each asserted against the pass it targets.
+6. **Sync** — the page's bytes on disk against the bytes `render_reports.py` renders for it. The page
+   is report-fed: its measured phrases are slots the writer supplies from its own scan of the fleet's
+   sources, so a hand edit to a slotted phrase, a stale render, or a template that no longer matches the
+   page all show up here. The count pass proves the numbers are measured; this pass proves the page is
+   the writer's text. The two are independent: the writer's measurement is its own, not this checker's.
+7. **Mutants** — 16 injected corruptions, each asserted against the pass it targets. The last is a
+   dated observation the writer deliberately leaves literal, so only the render diff can catch it.
 
 Volatile measurements (the `free -h` available line, the wall times, the cold/warm swing) are dated
 observations in the page and are **not** re-derived: a checker that re-measures them fails the day the
-machine changes.
+machine changes. They are also **not** writer slots, for the same reason: a writer that recomputed them
+would move the page every day the machine changed, so they stay literal in the template.
 
 Run plain and with `--mutant`; run twice and diff.
 """
@@ -40,6 +47,8 @@ import subprocess
 import sys
 from pathlib import Path
 from typing import TypedDict
+
+from catlib import render as RD
 
 ROOT = Path(__file__).resolve().parents[2]
 PAGE = ROOT / "notes" / "fleet-design.md"
@@ -139,12 +148,15 @@ def probe_rows() -> dict[str, dict[str, float]]:
 
 
 def population() -> Pop:
-    # The atomicity census excludes this checker: its own source carries the pattern as a needle, so
-    # counting it would read 1, and the page's rule is about the fleet, not about the checker. The
-    # sites are recorded with their line numbers so the page's anchors can be compared with them.
+    # The atomicity census excludes the two scripts that carry the pattern as a needle: this checker,
+    # whose count pass embeds it, and `render_reports.py`, whose `FLEET_ATOMIC` constant is the needle.
+    # Neither has a real atomicity site, so counting them would read the census as 3 with a phantom
+    # site. The sites are recorded with their line numbers so the page's anchors can be compared with
+    # them.
     atomic = 0
     atomic_sites: list[str] = []
-    scripts = [p for p in sorted(SCRIPTS.glob("*.py")) if p.name != "verify_fleet_design.py"]
+    scripts = [p for p in sorted(SCRIPTS.glob("*.py"))
+               if p.name not in ("verify_fleet_design.py", "render_reports.py")]
     for p in scripts + sorted((SCRIPTS / "catlib").glob("*.py")):
         for i, line in enumerate(p.read_text(encoding="utf-8").splitlines(), 1):
             n = len(re.findall(r"os\.replace|os\.rename|shutil\.move|NamedTemporaryFile", line))
@@ -153,7 +165,7 @@ def population() -> Pop:
                 atomic_sites.append(f"{p.name}:{i}")
     sync = sorted(p.name for p in SCRIPTS.glob("*.py")
                   if "sync problems" in p.read_text(encoding="utf-8")
-                  and p.name != "verify_fleet_design.py")
+                  and p.name not in ("verify_fleet_design.py", "render_reports.py"))
     digests = sh("git", "rev-parse", *DIGEST_PATHS).split()
     ignored = [l for l in sh("git", "status", "--porcelain", "--ignored=matching", "--",
                              "preprints", "lean", "overview.tex", "CONTENTS.md",
@@ -176,8 +188,12 @@ def population() -> Pop:
             if "for p in set(" in line:
                 set_sites.append(f"{name}:{i}")
     env_sites: list[str] = []
+    # The needle is written as a concatenation so this test line does not contain it. The census reads
+    # `render_reports.py`, which carries the same needle in its own env scan; written whole in both,
+    # each census counts its own test as a site.
+    env_needle = 'env={**os.environ, ' + '"RENDER_REPORTS_CHILD"'
     for i, line in enumerate((SCRIPTS / "render_reports.py").read_text(encoding="utf-8").splitlines(), 1):
-        if 'env={**os.environ, "RENDER_REPORTS_CHILD"' in line:
+        if env_needle in line:
             env_sites.append(f"render_reports.py:{i}")
     env_hits = len(env_sites)
     per = probe_blocks()
@@ -201,27 +217,31 @@ def population() -> Pop:
     }
 
 
-def count_phrases(pop: Pop) -> list[str]:
+def count_phrases(pop: Pop) -> list[tuple[str, str]]:
     du = pop["du"]
+    # The needles are (phrase, label) pairs, the shape `build_report_templates.py` reads: the label is
+    # the writer's slot label, so the builder's coverage report says which of these phrases the template
+    # slots and which it leaves literal. The site anchors are not here — pass 4 compares them with the
+    # measured sites, which a phrase comparison cannot do.
     return [
-        f"**{pop['atomic']} match{'es' if pop['atomic'] != 1 else ''}**",
-        f"**{pop['scripts']}** scripts and **{pop['modules']}** catlib modules",
-        f"**{pop['sync']}** scripts",
-        f"**{pop['sync_verify']}** are `verify_*`",
-        f"**{pop['sync_other']}** are not",
-        f"**{pop['digests']}** digests",
-        f"returns **{pop['ignored']} line{'s' if pop['ignored'] != 1 else ''}**",
-        f"**{pop['tsv_bytes']:,}** bytes",
-        f"**{du['preprints']}M**",
-        f"**{du['oai']}M**",
-        f"**{du['index']}M**",
-        f"**{pop['gate_rows']}** invocations",
-        f"**{len(pop['set_sites'])} sites**",
-        f"**{pop['env_hits']} hits**",
+        (f"**{pop['atomic']} match{'es' if pop['atomic'] != 1 else ''}**", "atomic_count"),
+        (f"**{pop['scripts']}** scripts and **{pop['modules']}** catlib modules", "fleet_sizes"),
+        (f"**{pop['sync']}** scripts", "sync_scripts"),
+        (f"**{pop['sync_verify']}** are `verify_*`", "sync_verify"),
+        (f"**{pop['sync_other']}** are not", "sync_other"),
+        (f"**{pop['digests']}** digests", "digests"),
+        (f"returns **{pop['ignored']} line{'s' if pop['ignored'] != 1 else ''}**", "ignored_line"),
+        (f"**{pop['tsv_bytes']:,}** bytes", "tsv_bytes"),
+        (f"**{du['preprints']}M**", "du_preprints"),
+        (f"**{du['oai']}M**", "du_oai"),
+        (f"**{du['index']}M**", "du_index"),
+        (f"**{pop['gate_rows']}** invocations", "gate_rows"),
+        (f"**{len(pop['set_sites'])} sites**", "set_sites"),
+        (f"**{pop['env_hits']} hits**", "env_hits"),
         # The purity population is the probe parse, so its heading count and the sentence that closes
         # the section are measured, not carried: adding a target to the probe moves both.
-        f"## The purity population ({len(pop['purity'])} scripts, mode-verified)",
-        f"**0** of the {len(pop['purity'])} scripts reads a generated file",
+        (f"## The purity population ({len(pop['purity'])} scripts, mode-verified)", "purity_heading"),
+        (f"**0** of the {len(pop['purity'])} scripts reads a generated file", "purity_zero"),
     ]
 
 
@@ -294,7 +314,7 @@ def block_problems(page: str) -> list[str]:
 def count_problems(page: str, pop: Pop) -> list[str]:
     flat = re.sub(r"\s+", " ", page)
     out = []
-    for phrase in count_phrases(pop):
+    for phrase, _label in count_phrases(pop):
         if phrase not in flat:
             out.append(f"count phrase not in the page: {phrase}")
     rows = pop["rows"]
@@ -373,30 +393,37 @@ MUTANTS = [
      lambda p: p.replace("## The purity population (8 scripts", "## The purity population (7 scripts", 1)),
     ("digest count widened", lambda p: p.replace("**5** digests", "**6** digests", 1)),
     ("probe figure altered", lambda p: p.replace("117,360", "117,361")),
-    ("anchor outside the file", lambda p: p.replace("render_reports.py:1150", "render_reports.py:3400", 1)),
+    # The site anchors moved when the writer took them over: the env pair is now 1151 / 1378, so each
+    # env mutant shifts a site to its neighbour, and the anchor-outside mutant uses a line the writer
+    # does not have (3400 is inside a 3,566-line file, so the anchor pass would read it as valid).
+    ("anchor outside the file", lambda p: p.replace("render_reports.py:1151", "render_reports.py:4000", 1)),
     # The page ships no notes-page anchor, so the resolver's notes/ branch is inert on a clean page.
     # This mutant injects one with a line past the file's end, which is the only way the branch is
     # proven to fire.
     ("notes-page anchor outside the file",
-     lambda p: p.replace("`render_reports.py:1150`", "`render_reports.py:1150` `notes/fleet-design.md:9999`", 1)),
+     lambda p: p.replace("`render_reports.py:1151`", "`render_reports.py:1151` `notes/fleet-design.md:9999`", 1)),
     ("prose count in the size argument", lambda p: p.replace("**630,620** bytes", "**630,619** bytes", 1)),
     # A measured site shifted to a line that exists in its file passes the anchor pass and the count
     # pass, so only the site comparison can catch it. One mutant per list the comparison reads.
     ("set-site anchor shifted in the bullet",
      lambda p: p.replace("build_index.py:583", "build_index.py:584", 1)),
     ("set-site anchor shifted in the checker list",
-     lambda p: p.replace("`build_index.py:583`, `render_reports.py:1150`",
-                         "`build_index.py:584`, `render_reports.py:1150`", 1)),
+     lambda p: p.replace("`build_index.py:583`, `render_reports.py:1151`",
+                         "`build_index.py:584`, `render_reports.py:1151`", 1)),
     ("atomicity anchor shifted in the paragraph",
      lambda p: p.replace("catlib/atomic.py:42", "catlib/atomic.py:43", 1)),
     ("atomicity anchor shifted in the checker list",
      lambda p: p.replace("`catlib/atomic.py:42`, `catlib/atomic.py:84`",
                          "`catlib/atomic.py:43`, `catlib/atomic.py:84`", 1)),
     ("env anchor shifted in the bullet",
-     lambda p: p.replace("`render_reports.py:1150` and", "`render_reports.py:1151` and", 1)),
+     lambda p: p.replace("`render_reports.py:1151` and", "`render_reports.py:1152` and", 1)),
     ("env anchor shifted in the checker list",
-     lambda p: p.replace("`render_reports.py:1150`, `render_reports.py:2043`",
-                         "`render_reports.py:1151`, `render_reports.py:2043`", 1)),
+     lambda p: p.replace("`render_reports.py:1151`, `render_reports.py:2043`",
+                         "`render_reports.py:1152`, `render_reports.py:2043`", 1)),
+    # A dated observation the writer deliberately does not slot. The count pass, the anchor pass and
+    # the site pass all ignore it, so only the render diff can see the page is no longer the writer's
+    # bytes — which is the pass this page gained when it became report-fed.
+    ("dated observation altered in the page", lambda p: p.replace("**11 of 15**", "**10 of 15**", 1)),
 ]
 
 
@@ -409,7 +436,8 @@ def mutants(page: str) -> str:
             undetected.append(f"{name}: target not in the page")
             continue
         probs = count_problems(mutated, pop) + table_problems(mutated, pop) \
-            + anchor_problems(mutated) + site_problems(mutated, pop)
+            + anchor_problems(mutated) + site_problems(mutated, pop) \
+            + RD.sync_problems(PAGE, mutated)
         if probs:
             caught += 1
         else:
@@ -436,11 +464,12 @@ def main(argv: list[str]) -> int:
     page = page_path.read_text(encoding="utf-8")
     pop = population()
     problems = anchor_problems(page) + block_problems(page) + count_problems(page, pop) \
-        + table_problems(page, pop) + site_problems(page, pop)
+        + table_problems(page, pop) + site_problems(page, pop) \
+        + RD.sync_problems(page_path, page)
     print("=== notes/fleet-design.md check ===")
     print(f"atomicity grep: {pop['atomic']} match{'es' if pop['atomic'] != 1 else ''} "
           f"over {pop['scripts']} scripts "
-          f"(this checker excluded, its source carries the pattern as a needle) + "
+          f"(the two needle-carrying scripts excluded) + "
           f"{pop['modules']} catlib modules")
     print(f"sync pass: {pop['sync']} scripts ({pop['sync_verify']} verify_, {pop['sync_other']} not)")
     print(f"tree digests: {pop['digests']}  ignored lines: {pop['ignored']}")
@@ -453,6 +482,7 @@ def main(argv: list[str]) -> int:
     for script, writes, gen in pop["purity"]:
         print(f"  {script}: writes {writes}, generated reads {gen}")
     print(f"check_index_links wall {pop['cli_wall']:.2f} s (the probe row the amplification table quotes)")
+    print(f"sync problems: {len(RD.sync_problems(page_path, page))}")
     for prob in problems:
         print(f"  PROBLEM: {prob}")
     summary = mutants(page) if "--mutant" in argv else None

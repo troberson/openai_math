@@ -77,7 +77,7 @@ from catlib.paths import (
     SUBFINDINGS_TSV,
     owner,
 )
-from catlib.promote import key_for
+from catlib.promote import REPORT_PAGES, key_for
 from jinja2 import Environment, FileSystemLoader
 
 TPL = ROOT / "notes" / "templates" / "report"
@@ -112,6 +112,7 @@ README_MD = ROOT / "notes" / "README.md"
 CROSSCHECK_MD = ROOT / "notes" / "counterexample-crosscheck.md"
 FAITH_MD = ROOT / "notes" / "formalization-faithfulness.md"
 TEMPLATES_MD = ROOT / "notes" / "templates.md"
+FLEET_MD = ROOT / "notes" / "fleet-design.md"
 VPOS = preprints.bundle_of(PREPRINTS / "Positively-curved-Einstein-four-manifolds-September-23-2026")
 VZERO = preprints.bundle_of(PREPRINTS / "Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026")
 FOCK = PREPRINTS / "A-Fock-space-inequality-and-the-Laughlin-spectral-gap-September-24-2026"
@@ -2382,6 +2383,188 @@ def templates_page(p: dict[str, str]) -> str:
     return ENV.get_template("templates.md.j2").render(p=p)
 
 
+FLEET_PROBE = [ROOT / "notes/probe/2026-10-11_writers.txt",
+               ROOT / "notes/probe/2026-10-11_checkers.txt"]
+FLEET_DIGESTS = ["HEAD:preprints", "HEAD:lean", "HEAD:overview.tex", "HEAD:CONTENTS.md",
+                 "HEAD:reasoning_traces"]
+FLEET_HAND = {"topics.tsv", "conjecture-standing.tsv"}
+FLEET_PURITY = ["build_sources.py", "extract_links.py", "render_reports.py", "build_index.py",
+                "check_index_links.py", "measure_proof_density.py", "measure_names.py",
+                "verify_script_ownership.py"]
+FLEET_ATOMIC = r"os\.replace|os\.rename|shutil\.move|NamedTemporaryFile"
+# The env census greps this literal in `render_reports.py`. It is written as a concatenation so the
+# census line that tests it does not contain it: a needle written whole makes the census count its
+# own test as a site, which is the same trap that makes the atomicity census exclude the scripts that
+# carry its pattern.
+ENV_NEEDLE = 'env={**os.environ, ' + '"RENDER_REPORTS_CHILD"'
+
+
+def fleet_sh(*args: str) -> str:
+    return subprocess.run(args, cwd=ROOT, capture_output=True, text=True, check=False).stdout
+
+
+def fleet_layer(path: str) -> str:
+    """The layer a probe-recorded `notes/` path belongs to."""
+    if path.startswith(("notes/index/", "notes/summaries/", "notes/templates/")):
+        return "generated"
+    rest = path[len("notes/"):]
+    if rest.endswith(".tsv"):
+        return "hand-authored" if rest.split("/")[-1] in FLEET_HAND else "generated"
+    return "page"
+
+
+def fleet_probe_blocks() -> dict[str, dict[str, str]]:
+    """Per script, the `notes/` paths it opened with the recorded mode string."""
+    per: dict[str, dict[str, str]] = {}
+    for f in FLEET_PROBE:
+        script, innotes = None, False
+        for line in f.read_text(encoding="utf-8").splitlines():
+            m = re.match(r"^\[probe2\] target notes/scripts/(\S+)", line)
+            if m:
+                script, innotes = m.group(1), False
+                continue
+            if line.startswith("[probe2] notes/ paths"):
+                innotes = True
+                continue
+            if innotes and line.startswith("[probe2] write-mode paths outside"):
+                innotes = False
+                continue
+            if innotes:
+                m = re.match(r"^\s+(\d+)\s+(\S+)\s+(notes/\S+)$", line)
+                if m and script:
+                    per.setdefault(script, {})[m.group(3)] = m.group(2)
+    return per
+
+
+def fleet_probe_wall() -> dict[str, float]:
+    """Per gate row, the probe's wall time — the figure the amplification table quotes."""
+    out: dict[str, float] = {}
+    for f in FLEET_PROBE:
+        script = None
+        for line in f.read_text(encoding="utf-8").splitlines():
+            m = re.match(r"^\[probe2\] target notes/scripts/(\S+)", line)
+            if m:
+                script = m.group(1)
+            m = re.match(r"^\[probe2\] wall (\S+)  opens (\S+)  distinct (\S+)  repeats (\S+)", line)
+            if m and script:
+                out[script] = float(m.group(1))
+    return out
+
+
+def fleet_population() -> dict[str, Any]:
+    """Every derived figure on `notes/fleet-design.md`, measured from the fleet's own sources.
+
+    The writer's measurement is deliberately its own: the page's checker re-derives the same figures
+    with its own reads, and a checker that compared the page with the writer's numbers would prove
+    nothing about them. The dated observations the page carries — the `free -h` line, the wall times,
+    the cold/warm swing, the cache-key problem counts — are NOT here: they are measurements of a run,
+    and a writer that recomputed them would move the page the day the machine changed. The atomicity
+    census excludes the two scripts that carry the pattern as a needle: `verify_fleet_design.py`, whose
+    count pass embeds it, and this writer, whose `FLEET_ATOMIC` constant is the needle. Neither has a
+    real atomicity site, so counting them would read the census as 3 with a phantom site.
+    """
+    scripts = [p for p in sorted((ROOT / "notes/scripts").glob("*.py"))
+               if p.name not in ("verify_fleet_design.py", "render_reports.py")]
+    modules = sorted((ROOT / "notes/scripts/catlib").glob("*.py"))
+    atomic = 0
+    atomic_sites: list[str] = []
+    modnames = {p.name for p in modules}
+    for p in scripts + modules:
+        for i, line in enumerate(p.read_text(encoding="utf-8").splitlines(), 1):
+            n = len(re.findall(FLEET_ATOMIC, line))
+            if n:
+                atomic += n
+                # The page anchors a catlib site as `catlib/atomic.py:42`, so the site string carries
+                # the prefix the page uses; the checker folds it off before comparing.
+                atomic_sites.append(f"{'catlib/' if p.name in modnames else ''}{p.name}:{i}")
+    sync = sorted(p.name for p in (ROOT / "notes/scripts").glob("*.py")
+                  if "sync problems" in p.read_text(encoding="utf-8")
+                  and p.name not in ("verify_fleet_design.py", "render_reports.py"))
+    digests = fleet_sh("git", "rev-parse", *FLEET_DIGESTS).split()
+    ignored = [l for l in fleet_sh("git", "status", "--porcelain", "--ignored=matching", "--",
+                                   "preprints", "lean", "overview.tex", "CONTENTS.md",
+                                   "reasoning_traces").splitlines() if l.strip()]
+    tsvs = sorted((ROOT / "notes/tables").glob("*.tsv"))
+    gate = (ROOT / "notes/scripts/gate.py").read_text(encoding="utf-8")
+    rows_block = gate[gate.index("ROWS = ["):]
+    set_sites: list[str] = []
+    for name in ("build_catalog.py", "build_index.py"):
+        for i, line in enumerate((ROOT / "notes/scripts" / name).read_text(encoding="utf-8").splitlines(), 1):
+            if "for p in set(" in line:
+                set_sites.append(f"{name}:{i}")
+    env_sites: list[str] = []
+    for i, line in enumerate((ROOT / "notes/scripts/render_reports.py")
+                             .read_text(encoding="utf-8").splitlines(), 1):
+        if ENV_NEEDLE in line:
+            env_sites.append(f"render_reports.py:{i}")
+    per = fleet_probe_blocks()
+    purity: list[tuple[str, int, int]] = []
+    for script in FLEET_PURITY:
+        paths = per.get(script, {})
+        writes = [p for p, m in paths.items() if any(c in "wax" for c in m)]
+        gen = [p for p, m in paths.items() if "r" in m and fleet_layer(p) == "generated"]
+        purity.append((script, len(writes), len(gen)))
+    du = {name: int(fleet_sh("du", "-sk", rel).split()[0]) // 1024
+          for name, rel in (("preprints", "preprints"), ("oai", "lean/OAI"), ("index", "notes/index"))}
+    fed = [p for p in REPORT_PAGES if p != "notes/README.md"]
+    top = sorted(p.name for p in (ROOT / "notes").glob("*.md") if p.name != "README.md")
+    fednames = {p.split("/")[-1] for p in fed}
+    return {
+        "atomic": atomic, "atomic_sites": atomic_sites,
+        "scripts": len(scripts), "modules": len(modules),
+        "sync": len(sync), "sync_verify": sum(1 for s in sync if s.startswith("verify_")),
+        "sync_other": sum(1 for s in sync if not s.startswith("verify_")),
+        "digests": len(digests), "ignored": len(ignored),
+        "tsv_bytes": sum(len(p.read_bytes()) for p in tsvs), "tsv_count": len(tsvs),
+        "du": du,
+        "gate_rows": len(re.findall(r'^\s*\(".*?",\s*\(', rows_block, re.MULTILINE)),
+        "set_sites": set_sites, "env_sites": env_sites, "env_hits": len(env_sites),
+        "purity": purity,
+        "report_fed": len(fed), "hand_written": len(set(top) - fednames),
+        "top_level": len(top), "page_writes": len(REPORT_PAGES),
+    }
+
+
+def fleet_phrases(v: dict[str, Any]) -> dict[str, str]:
+    """The slot dict. Each phrase is unique in the page, so a label cannot slot a dated observation."""
+    du = v["du"]
+    n = len(v["purity"])
+    out: dict[str, str] = {
+        "atomic_count": f"**{v['atomic']} match{'es' if v['atomic'] != 1 else ''}**",
+        "atomic_sites_count": f"**{len(v['atomic_sites'])}** sites",
+        "fleet_sizes": f"**{v['scripts']}** scripts and **{v['modules']}** catlib modules",
+        "sync_scripts": f"**{v['sync']}** scripts",
+        "sync_verify": f"**{v['sync_verify']}** are `verify_*`",
+        "sync_other": f"**{v['sync_other']}** are not",
+        "digests": f"**{v['digests']}** digests",
+        "ignored_line": f"returns **{v['ignored']} line{'s' if v['ignored'] != 1 else ''}**",
+        "tsv_bytes": f"**{v['tsv_bytes']:,}** bytes",
+        "du_preprints": f"**{du['preprints']}M**",
+        "du_oai": f"**{du['oai']}M**",
+        "du_index": f"**{du['index']}M**",
+        "gate_rows": f"**{v['gate_rows']}** invocations",
+        "set_sites": f"**{len(v['set_sites'])} sites**",
+        "env_hits": f"**{v['env_hits']} hits**",
+        "purity_heading": f"## The purity population ({n} scripts, mode-verified)",
+        "purity_zero": f"**0** of the {n} scripts reads a generated file",
+        "report_fed": f"the other **{v['report_fed']}** are report-fed, so they are L3",
+        "hand_written": f"the **{v['hand_written']}** hand-written `notes/*.md` pages",
+        "top_level": f"of the **{v['top_level']}** top-level pages",
+        "l3_pages": f"the {v['report_fed']} report-fed `notes/*.md`",
+        "page_writes": f"{v['page_writes']} page writes",
+    }
+    for key, sites in (("atomic", v["atomic_sites"]), ("set", v["set_sites"]),
+                       ("env", v["env_sites"])):
+        for i, site in enumerate(sites):
+            name, ln = site.split(":")
+            out[f"{key}_site_{i}"] = f"`{name}:{ln}`"
+    return out
+
+
+def fleet_page(p: dict[str, str]) -> str:
+    return ENV.get_template("fleet-design.md.j2").render(p=p)
+
+
 def topics_population(lf: dict[str, str]) -> dict[str, str]:
     """Every derived figure on notes/topics.md, measured from the curated vocabulary.
 
@@ -3275,6 +3458,9 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
     "README": readme_population,
     "counterexample-crosscheck": crosscheck_population,
     "formalization-faithfulness": faithfulness_population,
+    # fleet-design.md's figures are the writer's own scan of the fleet's sources. The page's checker
+    # measures the same figures with its own reads, so the two are independent by construction.
+    "fleet-design": fleet_population,
     # templates.md reports the census of both template trees, measured by measure_templates.py. The
     # page compares a template's slot count with the writer's label count, so the abstracts label count
     # travels inside its population — CA.measure() is the call abstracts_page() makes.
@@ -3300,6 +3486,7 @@ PAGE_RENDERERS: dict[pathlib.Path, Callable[[], str]] = {
     README_MD: lambda: readme_page(readme_phrases(population_of("README"))),
     CROSSCHECK_MD: lambda: crosscheck_page(crosscheck_phrases(population_of("counterexample-crosscheck"))),
     FAITH_MD: lambda: faithfulness_page(faithfulness_phrases(population_of("formalization-faithfulness"))),
+    FLEET_MD: lambda: fleet_page(fleet_phrases(population_of("fleet-design"))),
     TEMPLATES_MD: lambda: templates_page(templates_phrases(population_of("templates"))),
 }
 
@@ -3325,6 +3512,7 @@ def main() -> None:
     rmp = population_of("README")
     xcp = population_of("counterexample-crosscheck")
     fap = population_of("formalization-faithfulness")
+    flp = population_of("fleet-design")
     tplp = population_of("templates")
     ST = Staging("render_reports", key_for("render_reports.py", tuple(sys.argv[1:])))
     ST.stage(SOURCES_MD, render_page(SOURCES_MD))
@@ -3344,6 +3532,7 @@ def main() -> None:
     ST.stage(README_MD, render_page(README_MD))
     ST.stage(CROSSCHECK_MD, render_page(CROSSCHECK_MD))
     ST.stage(FAITH_MD, render_page(FAITH_MD))
+    ST.stage(FLEET_MD, render_page(FLEET_MD))
     ST.stage(TEMPLATES_MD, render_page(TEMPLATES_MD))
     staged = ST.staged()
     texts = ST.staged_texts()
@@ -3366,6 +3555,7 @@ def main() -> None:
           f"  readme {len(readme_phrases(rmp))}"
           f"  crosscheck {len(crosscheck_phrases(xcp))}"
           f"  faithfulness {len(faithfulness_phrases(fap))}"
+          f"  fleet {len(fleet_phrases(flp))}"
           f"  templates {len(templates_phrases(tplp))}"
           f"  multi-root rows {len(ms['multi'])}  rows {ms['rows']}  listed {ms['listed']}"
           f"  dirs {ms['dirs']}  comparisons {ma['manuscripts']}  families {ma['families']}"

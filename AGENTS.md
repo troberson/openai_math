@@ -789,8 +789,10 @@ lives in this file and nowhere else.
   nothing to the tracked tree.
   Run it twice and diff — the report is identical.
 - Check `notes/fleet-design.md` with `python3 notes/scripts/verify_fleet_design.py --mutant` before
-  quoting any of its counts — it re-derives the atomicity grep (over the fleet's own sources, the
-  checker excluded because its source carries the pattern as a needle), the sync-pass census, the five
+  quoting any of its counts — it re-derives the atomicity grep (over the fleet's own sources, the **two**
+  needle-carrying scripts excluded: the checker, whose count pass embeds the pattern, and
+  `render_reports.py`, whose `FLEET_ATOMIC` constant is it), the sync-pass census (the same two
+  scripts excluded), the five
   `git rev-parse HEAD:<path>` tree digests, the `git status --porcelain --ignored=matching` check over
   the five hashed paths, the `notes/tables/*.tsv` byte sum, the three `du -sk` sizes, the gate row count from
   `gate.py`'s `ROWS` block, the three site counts (atomicity, env, set iteration), and the probe table's
@@ -808,9 +810,13 @@ lives in this file and nowhere else.
   list with the measured `name:line` set, requiring each site to be carried **once** in that paragraph
   (a site anchor shifted to a neighbouring line passes both the anchor pass and the count pass, and a
   site enumerated twice in the paragraph leaves the shift invisible, so this comparison is the only one
-  that catches it), and flags 15 injected mutants. The dated
+  that catches it), compares the page with `render_reports.py`'s render of it (the page is report-fed:
+  its measured phrases, **including the six site anchors**, are slots the writer supplies from its own
+  scan of the fleet's sources), and flags 16 injected mutants. The dated
   observations — the `free -h` available line, the wall times, the cold/warm swing — are **not**
-  re-derived: a checker that re-measures them fails the day the machine changes. It writes nothing; run
+  re-derived and are **not** slots: a checker that re-measures them fails the day the machine changes,
+  and a writer that recomputed them would move the page the same day, so they stay literal in the
+  template and the sixteenth mutant targets one of them. It writes nothing; run
   it twice and diff — the report is identical.
 - Check the five sync pages with `python3 notes/scripts/verify_page_sync.py --both` before reporting
   them green — it is the render diff for `notes/links.md`, `notes/names.md`, `notes/topics.md`,

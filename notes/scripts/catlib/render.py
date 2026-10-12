@@ -18,6 +18,8 @@ import functools
 import os
 import pathlib
 
+import jinja2
+
 _IN_RENDER = False
 
 
@@ -96,10 +98,17 @@ def sync_problems(page: pathlib.Path, text: str) -> list[str]:
     numbers are right — the checker's own count pass, built from its own measurement, is what does
     that, and the two passes are deliberately independent. Inside a render (or in a child the
     writer spawned) it returns []: see `sync_inert`.
+
+    A page whose template has not been built cannot be compared, so the pass says that rather than
+    reporting a byte difference it cannot compute.
     """
     if sync_inert():
         return []
-    return diff_problems(text, rendered(page))
+    try:
+        r = rendered(page)
+    except jinja2.TemplateNotFound:
+        return [f"writer has no template for {page.name}"]
+    return diff_problems(text, r)
 
 
 def selftest_problems() -> list[str]:
