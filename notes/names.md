@@ -1,9 +1,10 @@
 # Names — the four places a name sits, and which of them mean subject
 
-Built 2026-10-07 by `notes/scripts/measure_names.py` (measurement, writes nothing) and
-`notes/scripts/build_index.py` (writes `notes/index/names/`, `notes/index/names.tsv`,
-`notes/index/edges/family-name.tsv`). Every count below is from a fresh run of those two
-scripts; the rule that yields each count is stated beside it.
+Built 2026-10-07 by `notes/scripts/measure_names.py` (measurement — a writer: it lands the
+population as the keyed record `.qwen/cache/records/<key>/names.json`, and `--check-only` prints the
+report without landing it) and `notes/scripts/build_index.py` (writes `notes/index/names/`,
+`notes/index/names.tsv`, `notes/index/edges/family-name.tsv`). Every count below is from a fresh run
+of those two scripts; the rule that yields each count is stated beside it.
 
 `"Cauchy-related"` is a name query. Names sit in four places in this release, and they do not
 mean the same thing:
