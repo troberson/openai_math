@@ -358,7 +358,7 @@ through the writer's code proves nothing (`catlib/measure.py` docstring).
 
 ## The checker
 
-`notes/scripts/verify_fleet_design.py` (report-only, writes nothing) with five passes:
+`notes/scripts/verify_fleet_design.py` (report-only, writes nothing) with six passes:
 
 1. **Anchors** — every backticked `path:line` anchor resolves, **prefixed** (a `notes/scripts/…` or
    `catlib/…` path) **or bare** (`render_reports.py:1148`, `build_catalog.py:128`); a bare name resolves
@@ -383,19 +383,29 @@ through the writer's code proves nothing (`catlib/measure.py` docstring).
    `notes/scripts/measure_open_probe.py` writes, tracked in git). The `free -h` available line, the
    wall times, and the cold/warm swing are **not** re-derived: they are dated observations in the page,
    and a checker that re-measures them fails the day the machine changes.
-4. **Tables** — the 8-row purity table equals the probe parse, scanned **inside the purity section**
+4. **Set sites** — the set-iteration bullet's anchors must equal the measured `name:line` set
+   (`build_catalog.py:128`, `build_index.py:583`), and the checker-section anchor list must carry every
+   measured site. The count pass proves only the count and the anchor pass only that the line exists,
+   so a set-site anchor shifted to a neighbouring line passes both: this pass is what makes the page's
+   set-site anchors mean the measured lines. This is the fix for the count-only comparison the checker
+   carried before 2026-10-12, which printed the measured sites with their line numbers and reported
+   `problems 0` against a page that named a stale line.
+5. **Tables** — the 8-row purity table equals the probe parse, scanned **inside the purity section**
    (the amplification table names four of the same scripts, so a page-wide row scan lets a deleted
    purity row pass), and each of the 5 amplification rows is present. The options table is prose the
    checker does not re-derive.
-5. **Mutants** — 9 injected corruptions, each asserted against the pass it targets: the atomicity
+6. **Mutants** — 11 injected corruptions, each asserted against the pass it targets: the atomicity
    count shifted, the sync split altered, a purity row deleted, the purity population count in the
    section heading, the digest count widened, a probe figure altered, an anchor shifted outside its
-   file, a notes-page anchor injected past its file's end, and a prose count in the size argument.
+   file, a notes-page anchor injected past its file's end, a prose count in the size argument, and a
+   set-site anchor shifted to a neighbouring line — one mutant per list the set-site pass reads.
    The purity heading count and the closing sentence of the purity section are both in the count
    phrase list, so the population is measured, not carried: adding a probe target moves the table,
    the heading and the sentence together. Measured
-   2026-10-11 against the re-measured probe: plain **0 problems**, `--mutant` **9 of 9**
-   flagged, and both reports byte-identical across two runs. The probe-figure mutant targets the
+   2026-10-11 against the re-measured probe: plain **0 problems**, `--mutant` **11 of 11**
+   flagged, and both reports byte-identical across two runs. The two set-site mutants were confirmed
+   against the pre-fix checker: run against `HEAD`'s version, which carried no set-site pass, they
+   print **9 of 11** with both named `UNDETECTED`; run against the fixed checker, **11 of 11**. The probe-figure mutant targets the
    `render_reports.py` opens figure in the amplification table, so it re-targets whenever that row is
    re-measured. The atomicity mutant was inert twice
    during this pass, both times for the same reason: a paragraph that restates the atomicity count

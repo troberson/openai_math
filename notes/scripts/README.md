@@ -198,7 +198,7 @@ list kept outside its loop and the scheduler lists as their own entries.
 | `verify_dependency_drift.py` | `notes/dependency-drift.md`, `notes/formalization-deps.md` | plain + `--mutant` | 0.3 / 1.8 |
 | `verify_faithfulness.py` | `notes/formalization-faithfulness.md` — anchors, the count phrases re-derived by its own `main_results`/declaration/carrier/closure walk (not the writer's), the disjoint and overlap pairing tables, the `a.e.` table, and the render diff | plain + `--mutant` | 1.4 / 11.4 |
 | `verify_findings.py` | `notes/findings.md` | plain + `--mutant` | 103.4 / 825.3 |
-| `verify_fleet_design.py` | `notes/fleet-design.md` — anchors, the count phrases re-derived from `git`/`du`/the probe records, the purity and amplification tables | plain + `--mutant` | 0.3 / 0.5 |
+| `verify_fleet_design.py` | `notes/fleet-design.md` — anchors, the count phrases re-derived from `git`/`du`/the probe records, the set-site anchors compared with the measured `name:line` set, the purity and amplification tables | plain + `--mutant` | 0.3 / 0.5 |
 | `verify_index_design.py` | `notes/index-design.md` | plain + `--mutant` | 2.7 / 20.7 |
 | `verify_named_conjectures.py` | `notes/named-conjectures.md` | plain + `--mutant` | 0.0 / 0.1 |
 | `verify_named_results.py` | `notes/named-results.md` | plain + `--mutant` | 104.6 / 108.3 |

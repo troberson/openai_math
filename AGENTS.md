@@ -803,7 +803,10 @@ lives in this file and nowhere else.
   name resolves under `notes/scripts/`), matches the purity table — **8** rows, the set the probe parse
   yields, so adding a probe target moves the table and the heading count together
   (the amplification table names four of the same scripts, so a page-wide row scan lets a deleted purity
-  row pass), requires each of the 5 amplification rows, and flags 9 injected mutants. The dated
+  row pass), requires each of the 5 amplification rows, compares the set-iteration bullet's anchors and
+  the checker-section anchor list with the measured `name:line` set (a set-site anchor shifted to a
+  neighbouring line passes both the anchor pass and the count pass, so this comparison is the only one
+  that catches it), and flags 11 injected mutants. The dated
   observations — the `free -h` available line, the wall times, the cold/warm swing — are **not**
   re-derived: a checker that re-measures them fails the day the machine changes. It writes nothing; run
   it twice and diff — the report is identical.
