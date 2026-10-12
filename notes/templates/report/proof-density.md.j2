@@ -29,7 +29,7 @@ Population: {{ p['rows'] }} source rows, {{ p['fams'] }} families, **{{ p['proof
 21,203). Tiers {{ p['tiers'] }}. Gates: row count, distinct dirs, family-set equality
 with the ledger, per-family row count == ledger `paps`, the two corpus totals, tier counts, positive
 `tex_bytes`, non-negative counts, every source dir present under `preprints/`, ledger `paps` sum == {{ p['rows'] }}.
-{{ p['gate_problems'] }}; {{ p['gate_selftest'] }}; {{ p['gate_mutants'] }}. The page's prose length is not
+{{ p['gate_problems'] }}; {{ p['gate_selftest'] }}; . The page's prose length is not
 mutated here: `verify_page_sync.py` owns the render diff and mutates in memory, so this script never
 writes the page.
 

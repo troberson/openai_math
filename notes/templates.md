@@ -5,7 +5,7 @@ template text plus the writer's registry). Lines and bytes are of the template f
 is a `{{ ` occurrence counted over the whole file. No `lake`, `lean`, `lake exe cache get`, or
 comparator run.
 
-**Headline, with the rule that yields it:** report tree: **19** templates, **7,180** lines, **484,948** bytes, **1,315** slots; index tree: **5** templates, **209** lines, **14,847** bytes, **103** slots; all **24** templates: **7,389** lines, **499,795** bytes, **1,418** slots.
+**Headline, with the rule that yields it:** report tree: **19** templates, **7,180** lines, **484,925** bytes, **1,314** slots; index tree: **5** templates, **209** lines, **14,847** bytes, **103** slots; all **24** templates: **7,389** lines, **499,772** bytes, **1,417** slots.
 
 ## The report tree
 
@@ -27,7 +27,7 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `links.md.j2` | 224 | 12,298 | 110 | `notes/links.md` | `extract_links.py` | NOT DERIVED |
 | `named-results.md.j2` | 367 | 25,210 | 83 | `notes/named-results.md` | `verify_named_results.py` | 66 |
 | `names.md.j2` | 277 | 13,865 | 130 | `notes/names.md` | `measure_names.py` | NOT DERIVED |
-| `proof-density.md.j2` | 122 | 8,660 | 67 | `notes/proof-density.md` | `measure_proof_density.py` | NOT DERIVED |
+| `proof-density.md.j2` | 122 | 8,637 | 66 | `notes/proof-density.md` | `measure_proof_density.py` | NOT DERIVED |
 | `scope-exclusions.md.j2` | 328 | 26,780 | 19 | `notes/scope-exclusions.md` | `verify_scope_exclusions.py` | NOT DERIVED |
 | `sources.md.j2` | 156 | 9,392 | 29 | `notes/sources.md` | `verify_sources.py` | 31 |
 | `subfinding-pairs.md.j2` | 675 | 57,539 | 38 | `notes/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |
@@ -35,7 +35,7 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `templates.md.j2` | 107 | 5,047 | 45 | `notes/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `topics.md.j2` | 335 | 23,074 | 117 | `notes/topics.md` | `measure_topics.py` | NOT DERIVED |
 | `verification-dirs.md.j2` | 408 | 37,944 | 44 | `notes/verification-dirs.md` | `verify_verification_dirs.py` | 16 |
-| **report tree** | **19** | **7,180** | **484,948** | **1,315** | | |
+| **report tree** | **19** | **7,180** | **484,925** | **1,314** | | |
 
 ## The index tree
 
