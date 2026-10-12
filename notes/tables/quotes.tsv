@@ -1,0 +1,237 @@
+page	fam	seq	which	path	start	end	head	tail
+notes/subfinding-pairs.md	009	1	main	overview.tex	94	94	Reconstructs function fields	and their product.
+notes/subfinding-pairs.md	009	1	title	overview.tex	94	94	Reconstruction of Function	Mod-$\ell$ Milnor $K$-Theory
+notes/subfinding-pairs.md	009	2	clause	overview.tex	94	94	These data recover	in equal characteristic.
+notes/subfinding-pairs.md	009	2	title	overview.tex	94	94	Reconstruction from Milnor	modulo the characteristic
+notes/subfinding-pairs.md	009	3	clause	overview.tex	94	94	Also proves Bogomolov--Pop	from the characteristic.
+notes/subfinding-pairs.md	009	3	title	overview.tex	94	94	The Bogomolov-Pop reconstruction theorem	
+notes/subfinding-pairs.md	010	1	main	overview.tex	96	96	Every continuous odd	odd tame level.
+notes/subfinding-pairs.md	010	1	title	overview.tex	96	96	Unrestricted pro-modularity	
+notes/subfinding-pairs.md	010	3	clause	overview.tex	96	96	Also proves classical	without residual restrictions.
+notes/subfinding-pairs.md	010	3	title	overview.tex	96	96	Fontaine–Mazur modularity at the prime 2	
+notes/subfinding-pairs.md	011	2	main	overview.tex	98	98	Proves that the	$x$ and $x\to\infty$.
+notes/subfinding-pairs.md	011	2	title	overview.tex	98	98	The Poisson-Dirichlet law for prime predecessors	
+notes/subfinding-pairs.md	011	1	clause	overview.tex	98	98	It also proves	for every $\varepsilon>0$.
+notes/subfinding-pairs.md	011	1	title	overview.tex	98	98	Weighted dilation graphs,	and totient fibers
+notes/subfinding-pairs.md	014	5	main	overview.tex	104	104	Proves the restricted	Lie-theoretic characteristic hypotheses.
+notes/subfinding-pairs.md	014	5	title	overview.tex	104	104	Restricted geometric Langlands	
+notes/subfinding-pairs.md	014		clause	overview.tex	104	104	Over arbitrary algebraically	and $p\nmid |W_G|$.
+notes/subfinding-pairs.md	014	4	clause	overview.tex	104	104	Over global function	or ramification-depth restrictions
+notes/subfinding-pairs.md	014	4	title	overview.tex	104	104	Temperedness at ramified	generic exceptional groups
+notes/subfinding-pairs.md	014	2	clause	overview.tex	104	104	and at every	generic unramified component.
+notes/subfinding-pairs.md	014	2	title	overview.tex	104	104	Unramified Arthur filtration	
+notes/subfinding-pairs.md	014	1	clause	overview.tex	104	104	Assuming the finite-level	group, including inertia.
+notes/subfinding-pairs.md	014	1	title	overview.tex	104	104	Global Arthur Enhancements	Cuspidal Excursion Parameters
+notes/subfinding-pairs.md	016	1	main	overview.tex	108	108	Proves the abelian	containing torsion coset.
+notes/subfinding-pairs.md	016	1	title	overview.tex	108	108	Abelian Zilber–Pink	
+notes/subfinding-pairs.md	016		clause	overview.tex	108	108	It also proves	or reduction assumptions.
+notes/subfinding-pairs.md	019	2	main	overview.tex	114	114	Proves that rational	\'etale fundamental group.
+notes/subfinding-pairs.md	019	2	title	overview.tex	114	114	p-adic section conjecture	
+notes/subfinding-pairs.md	019		clause	overview.tex	114	114	It also proves	at least two.
+notes/subfinding-pairs.md	032	1	main	overview.tex	142	142	Proves the rational	dimension and codimension.
+notes/subfinding-pairs.md	032	1	title	overview.tex	142	142	The rational Hodge	CM abelian varieties
+notes/subfinding-pairs.md	032		clause	overview.tex	142	142	Through Milne's theorems,	in every characteristic.
+notes/subfinding-pairs.md	034	1	main	overview.tex	146	146	Using logarithmic Iitaka	adjoint is semiample.
+notes/subfinding-pairs.md	034	1	title	overview.tex	146	146	Log abundance for compact Kähler spaces	
+notes/subfinding-pairs.md	034	4	clause	overview.tex	146	146	It also proves	of characteristic zero
+notes/subfinding-pairs.md	034	4	title	overview.tex	146	146	Log abundance in characteristic zero	
+notes/subfinding-pairs.md	034	10	clause	overview.tex	146	146	and the effective	in that setting.
+notes/subfinding-pairs.md	034	10	title	overview.tex	146	146	Uniform pluricanonical Iitaka fibrations	
+notes/subfinding-pairs.md	034	2	clause	overview.tex	146	146	A further result	number of components.
+notes/subfinding-pairs.md	034	2	title	overview.tex	146	146	Uniform indices for	log Calabi--Yau pairs
+notes/subfinding-pairs.md	039	1	main	overview.tex	156	156	Proves Nagata's strict	arbitrary multiplicities $m_i$.
+notes/subfinding-pairs.md	039	1	title	overview.tex	156	156	Plane-curve Nagata conjecture	
+notes/subfinding-pairs.md	039	3	clause	overview.tex	156	156	It also proves	over $\mathbb C$
+notes/subfinding-pairs.md	039	3	title	overview.tex	156	156	Maximal Multipoint Seshadri	in Higher Dimensions
+notes/subfinding-pairs.md	039	4	clause	overview.tex	156	156	and at the	of positive characteristic.
+notes/subfinding-pairs.md	039	4	title	overview.tex	156	156	Maximal multipoint Seshadri	in positive characteristic
+notes/subfinding-pairs.md	041	2	main	overview.tex	160	160	Proves the strong	manifold is semiample.
+notes/subfinding-pairs.md	041	2	title	overview.tex	160	160	Strong hyperkähler SYZ	
+notes/subfinding-pairs.md	041	1	clause	overview.tex	160	160	It also proves	and deformation type.
+notes/subfinding-pairs.md	041	1	title	overview.tex	160	160	Projective-space bases	
+notes/subfinding-pairs.md	056	1	main	overview.tex	188	188	Proves termination of	prescribed ample signs.
+notes/subfinding-pairs.md	056	1	title	overview.tex	188	188	Termination of generalized log	compact Kähler fourfolds
+notes/subfinding-pairs.md	056	3	clause	overview.tex	188	188	Also proves termination	in characteristic zero.
+notes/subfinding-pairs.md	056	3	title	overview.tex	188	188	Log canonical fourfold termination	
+notes/subfinding-pairs.md	068	1	main	overview.tex	210	210	If $X$ is	for some $m>0$.
+notes/subfinding-pairs.md	068	1	title	overview.tex	210	210	Smooth semipositivity	
+notes/subfinding-pairs.md	068		clause	overview.tex	210	210	Thus smooth semipositivity	in every dimension.
+notes/subfinding-pairs.md	071	2	main	overview.tex	216	216	Resolves the existence	disks or points.
+notes/subfinding-pairs.md	071	2	title	overview.tex	216	216	Koebe’s circle-domain conjecture	
+notes/subfinding-pairs.md	071	1	clause	overview.tex	216	216	It also proves	the He--Schramm conjecture.
+notes/subfinding-pairs.md	071	1	title	overview.tex	216	216	Removable boundaries and rigidity	
+notes/subfinding-pairs.md	088	1	main	overview.tex	252	252	Proves Petty's projection-volume	fixed body volume.
+notes/subfinding-pairs.md	088	1	title	overview.tex	252	252	Petty’s projection-volume conjecture	
+notes/subfinding-pairs.md	088	2	clause	overview.tex	252	252	In contrast, products	sufficiently large dimension.
+notes/subfinding-pairs.md	088	2	title	overview.tex	252	252	Product counterexample to simplex maximum	
+notes/subfinding-pairs.md	088		clause	overview.tex	252	252	Also establishes the	Lutwak--Petty projection inequalities.
+notes/subfinding-pairs.md	102	1	main	overview.tex	282	282	Proves Khot's Unique Games Conjecture.	
+notes/subfinding-pairs.md	102	1	title	overview.tex	282	282	Unique Games theorem	
+notes/subfinding-pairs.md	102	2	clause	overview.tex	282	282	Independent direct reductions	ratio for Max-Cut
+notes/subfinding-pairs.md	102	2	title	overview.tex	282	282	Optimal Max-Cut hardness	
+notes/subfinding-pairs.md	102	3	clause	overview.tex	282	282	below factor two for Vertex Cover	
+notes/subfinding-pairs.md	102	3	title	overview.tex	282	282	Factor-two Vertex Cover hardness	
+notes/subfinding-pairs.md	102	4	clause	overview.tex	282	282	and within any	feedback vertex set.
+notes/subfinding-pairs.md	102	4	title	overview.tex	282	282	Constant-factor Min-UnCut hardness	
+notes/subfinding-pairs.md	102	5	clause	overview.tex	282	282	and within any	feedback vertex set.
+notes/subfinding-pairs.md	102	5	title	overview.tex	282	282	Directed feedback vertex set hardness	
+notes/subfinding-pairs.md	113	1	main	overview.tex	304	304	Gives a fully	of zero counts.
+notes/subfinding-pairs.md	113	1	title	overview.tex	304	304	Perfect-matching FPRAS	
+notes/subfinding-pairs.md	113	2	clause	overview.tex	304	304	Also proves the	including boundary points.
+notes/subfinding-pairs.md	113	2	title	overview.tex	304	304	Entropy and face dimension	
+notes/subfinding-pairs.md	114	1	main	overview.tex	306	306	Gives a fully	exact rank-value oracles.
+notes/subfinding-pairs.md	114	1	title	overview.tex	306	306	An FPRAS for	with Binary Capacities
+notes/subfinding-pairs.md	114	2	clause	overview.tex	306	306	For matroids presented	the ranks differ.
+notes/subfinding-pairs.md	114	2	title	overview.tex	306	306	Approximate counting of	of two matroids
+notes/subfinding-pairs.md	119	1	main	overview.tex	316	316	Proves the Courtade--Kumar	independent bit-flip noise.
+notes/subfinding-pairs.md	119	1	title	overview.tex	316	316	Sharp binary-information contraction	
+notes/subfinding-pairs.md	119	2	clause	overview.tex	316	316	The Hellinger conjecture	and noise correlation.
+notes/subfinding-pairs.md	119	2	title	overview.tex	316	316	Arbitrary-bias Hellinger contraction	
+notes/subfinding-pairs.md	119		clause	overview.tex	316	316	A stronger theorem	fixed initial information.
+notes/subfinding-pairs.md	122	3	main	overview.tex	322	322	At every fixed	out polynomial-sample reconstruction.
+notes/subfinding-pairs.md	122	3	title	overview.tex	322	322	Quantitative lower bounds for trace reconstruction	
+notes/subfinding-pairs.md	122	1	clause	overview.tex	322	322	A uniform decoder	rational retention probabilities.
+notes/subfinding-pairs.md	122	1	title	overview.tex	322	322	Uniform quasipolynomial-time trace reconstruction	
+notes/subfinding-pairs.md	122	2	clause	overview.tex	322	322	When the deletion	and parameter encoding.
+notes/subfinding-pairs.md	122	2	title	overview.tex	322	322	A latest-anchor induction	worst-case trace reconstruction
+notes/subfinding-pairs.md	129	1	main	overview.tex	335	335	Proves exponential lower	nondeterministic finite automata
+notes/subfinding-pairs.md	129	1	title	overview.tex	335	335	Nondeterministic complementation lower bound	
+notes/subfinding-pairs.md	129	2	clause	overview.tex	335	335	and for simulating	two-way deterministic ones.
+notes/subfinding-pairs.md	129	2	title	overview.tex	335	335	Two-way deterministic state lower bound	
+notes/subfinding-pairs.md	129		clause	overview.tex	335	335	The latter resolves	growing finite alphabets
+notes/subfinding-pairs.md	134	3	main	overview.tex	345	345	Every regular language	the same alphabet.
+notes/subfinding-pairs.md	134	3	title	overview.tex	345	345	Star height at most three	
+notes/subfinding-pairs.md	134		clause	overview.tex	345	345	This establishes an	generalized star-height problem.
+notes/subfinding-pairs.md	157	1	main	overview.tex	395	395	Disproves Hadwiger's conjecture	largest clique-minor order.
+notes/subfinding-pairs.md	157	1	title	overview.tex	395	395	Hadwiger counterexample	
+notes/subfinding-pairs.md	157	2	clause	overview.tex	395	395	Also disproves the	chromatic bound $\chi_f(G)\le\mu(G)+1$.
+notes/subfinding-pairs.md	157	2	title	overview.tex	395	395	Colin de Verdière counterexample	
+notes/subfinding-pairs.md	157	3	clause	overview.tex	395	395	In the positive	universal constant $C$.
+notes/subfinding-pairs.md	157	3	title	overview.tex	395	395	Linear list-coloring bound	
+notes/subfinding-pairs.md	170	2	main	overview.tex	419	419	For every fixed	at that scale.
+notes/subfinding-pairs.md	170	2	title	overview.tex	419	419	Fixed off-diagonal Ramsey numbers	
+notes/subfinding-pairs.md	184	1	main	overview.tex	447	447	Proves the Alon--Krivelevich--Sudakov	is sufficiently large.
+notes/subfinding-pairs.md	184	1	title	overview.tex	447	447	Correspondence coloring graphs	a forbidden clique
+notes/subfinding-pairs.md	184	2	clause	overview.tex	447	447	Also proves the	size $\Omega_r(n\log d/d)$.
+notes/subfinding-pairs.md	184	2	title	overview.tex	447	447	A logarithmic independence	for clique-free graphs
+notes/subfinding-pairs.md	203	1	main	overview.tex	487	487	Proves Donovan's conjecture:	every prime $p$.
+notes/subfinding-pairs.md	203	1	title	overview.tex	487	487	Donovan over algebraically closed fields	
+notes/subfinding-pairs.md	203	2	clause	overview.tex	487	487	Also proves the	closed residue field.
+notes/subfinding-pairs.md	203	2	title	overview.tex	487	487	Integral Donovan over Witt vectors	
+notes/subfinding-pairs.md	210	1	main	overview.tex	501	501	Proves the sixth	finite-dimensional complex $V$.
+notes/subfinding-pairs.md	210	1	title	overview.tex	501	501	Sixth symmetric power	
+notes/subfinding-pairs.md	210	2	clause	overview.tex	501	501	More generally, the	dimension-independent quadratic stabilization.
+notes/subfinding-pairs.md	210	2	title	overview.tex	501	501	Quadratic stabilization	
+notes/subfinding-pairs.md	211	5	main	overview.tex	505	505	Critical Fortuin--Kasteleyn planar	spheres for $0<q\le4$
+notes/subfinding-pairs.md	211	5	title	overview.tex	505	505	Critical sphere at $q=4$	
+notes/subfinding-pairs.md	211	7	clause	overview.tex	505	505	and to the	surface-to-tree geometric transition.
+notes/subfinding-pairs.md	211	7	title	overview.tex	505	505	Brownian CRT limits for $q>4$	
+notes/subfinding-pairs.md	211	1	clause	overview.tex	505	505	For FK--Ising and	the limiting sphere.
+notes/subfinding-pairs.md	211	1	title	overview.tex	505	505	Random Walks on	Liouville Brownian Motion
+notes/subfinding-pairs.md	211	2	clause	overview.tex	505	505	The FK--Ising spectral	stated Brownian/LQG inputs.
+notes/subfinding-pairs.md	211	2	title	overview.tex	505	505	Spectral convergence for	FK--Ising planar maps
+notes/subfinding-pairs.md	213	2	main	overview.tex	509	509	Resolves the Benjamini--Schramm	no infinite cluster.
+notes/subfinding-pairs.md	213	2	title	overview.tex	509	509	Quasi-transitive graphs at criticality	
+notes/subfinding-pairs.md	213	1	clause	overview.tex	509	509	The family also	on $\mathbb Z^3$.
+notes/subfinding-pairs.md	213	1	title	overview.tex	509	509	Cubic-lattice bond and site percolation	
+notes/subfinding-pairs.md	215	1	main	overview.tex	513	513	Constructs the canonical	positive mass gap.
+notes/subfinding-pairs.md	215	1	title	overview.tex	513	513	O(3) massive continuum limit	
+notes/subfinding-pairs.md	215	3	clause	overview.tex	513	513	For the square-lattice	transfer gap, $m_{\mathrm{lat}}(\beta)\sim32e^{\pi/4-1/2}\sqrt\beta\,e^{-\pi\beta}$.
+notes/subfinding-pairs.md	215	3	title	overview.tex	513	513	Exact mass asymptotics	$O(4)$ lattice model
+notes/subfinding-pairs.md	215	5	clause	overview.tex	513	513	The family also	every positive temperature.
+notes/subfinding-pairs.md	215	5	title	overview.tex	513	513	O(n) exponential decay	
+notes/subfinding-pairs.md	227	4	main	overview.tex	537	537	For zero-field Gaussian	for fixed $0\le\beta<1$
+notes/subfinding-pairs.md	227	4	title	overview.tex	537	537	High-temperature cutoff	
+notes/subfinding-pairs.md	227	8	clause	overview.tex	537	537	mixing time $n^{2/3+o(1)}$ at $\beta=1$	
+notes/subfinding-pairs.md	227	8	title	overview.tex	537	537	Critical mixing	
+notes/subfinding-pairs.md	227	6	clause	overview.tex	537	537	and stretched-exponential mixing	probability over disorder.
+notes/subfinding-pairs.md	227	6	title	overview.tex	537	537	Typical-start stretched-exponential barriers	
+notes/subfinding-pairs.md	227	1	clause	overview.tex	537	537	At criticality, rescaled	the stationary limit.
+notes/subfinding-pairs.md	227	1	title	overview.tex	537	537	Universality of critical	the Sherrington--Kirkpatrick model
+notes/subfinding-pairs.md	235	1	main	overview.tex	553	553	For random $k$-SAT	positive limiting thresholds
+notes/subfinding-pairs.md	235	1	title	overview.tex	553	553	Fixed-clause-size limiting threshold	
+notes/subfinding-pairs.md	235	3	clause	overview.tex	553	553	and hitting-time variance	every fixed $k\ge3$
+notes/subfinding-pairs.md	235	3	title	overview.tex	553	553	Random k-SAT hitting-time variance	
+notes/subfinding-pairs.md	235	4	clause	overview.tex	553	553	and computability of the 3-SAT threshold.	
+notes/subfinding-pairs.md	235	4	title	overview.tex	553	553	Computing the random 3-SAT threshold	
+notes/subfinding-pairs.md	237		main	overview.tex	557	557	Proves the diameter	has diameter $n^{3/4+o(1)}$.
+notes/subfinding-pairs.md	237	4	clause	overview.tex	557	557	Its local mass	have exponent $4/3$.
+notes/subfinding-pairs.md	237	4	title	overview.tex	557	557	Mass and covering	for fixed-length walks
+notes/subfinding-pairs.md	237		clause	overview.tex	557	557	These estimates hold	high polynomial probability.
+notes/subfinding-pairs.md	238	1	main	overview.tex	559	559	Proves that the	power-of-two deck sizes.
+notes/subfinding-pairs.md	238	1	title	overview.tex	559	559	Optimal-order mixing of the Thorp shuffle	
+notes/subfinding-pairs.md	238		clause	overview.tex	559	559	Convergence is in	individual card positions.
+notes/subfinding-pairs.md	239	1	main	overview.tex	561	561	Determines the sharp	above the diagonal.
+notes/subfinding-pairs.md	239	1	title	overview.tex	561	561	The sharp exponential	symmetric Bernoulli matrices
+notes/subfinding-pairs.md	239	2	clause	overview.tex	561	561	for fixed bias	rate is $(p^2+(1-p)^2+o(1))^n$.
+notes/subfinding-pairs.md	239	2	title	overview.tex	561	561	The sharp singularity	symmetric sign matrices
+notes/subfinding-pairs.md	239		clause	overview.tex	561	561	In the biased	attain this rate.
+notes/subfinding-pairs.md	258	1	main	overview.tex	603	603	Proves Gersten's conjecture:	$m,n\ne0$, is word-hyperbolic.
+notes/subfinding-pairs.md	258	1	title	overview.tex	603	603	Baumslag–Solitar-free one-relator groups	
+notes/subfinding-pairs.md	258	2	clause	overview.tex	603	603	It also proves	virtually compact special.
+notes/subfinding-pairs.md	258	2	title	overview.tex	603	603	Virtual compact specialness	
+notes/subfinding-pairs.md	260	9	main	overview.tex	609	609	Proves the sharp	stated decay assumptions.
+notes/subfinding-pairs.md	260	9	title	overview.tex	609	609	Numerical spacetime	
+notes/subfinding-pairs.md	260	11	clause	overview.tex	609	609	It bounds invariant	additional horizon hypotheses.
+notes/subfinding-pairs.md	260	11	title	overview.tex	609	609	Equality and rigidity	
+notes/subfinding-pairs.md	260	1	clause	overview.tex	609	609	Charged upper-area bounds	dyonic three-dimensional data;
+notes/subfinding-pairs.md	260	1	title	overview.tex	609	609	Three-dimensional charged inequality	
+notes/subfinding-pairs.md	260	2	clause	overview.tex	609	609	the higher-dimensional purely	matched neutral theorem.
+notes/subfinding-pairs.md	260	2	title	overview.tex	609	609	Higher-dimensional charged reduction	
+notes/subfinding-pairs.md	261	2	main	overview.tex	611	611	In dimension two,	surely pure-point spectrum.
+notes/subfinding-pairs.md	261	2	title	overview.tex	611	611	Pure-point spectrum	
+notes/subfinding-pairs.md	261	1	clause	overview.tex	611	611	In every fixed	nonzero spectral weight.
+notes/subfinding-pairs.md	261	1	title	overview.tex	611	611	Absolutely continuous spectrum	
+notes/subfinding-pairs.md	261		clause	overview.tex	611	611	Resolves the predicted	uniform site potentials.
+notes/subfinding-pairs.md	262	2	main	overview.tex	613	613	Proves the sharp	$W\ge0$ with $\int\operatorname{tr}(W^{\gamma+1/2})<\infty$
+notes/subfinding-pairs.md	262	2	title	overview.tex	613	613	Sharp one-dimensional Lieb--Thirring	for matrix potentials
+notes/subfinding-pairs.md	262	3	clause	overview.tex	613	613	the optimal constant	of matrix size.
+notes/subfinding-pairs.md	262	3	title	overview.tex	613	613	Sharp one-dimensional Lieb–Thirring constants	
+notes/subfinding-pairs.md	262	1	clause	overview.tex	613	613	All equality cases	and zero channels.
+notes/subfinding-pairs.md	262	1	title	overview.tex	613	613	Equality cases in	matrix Lieb--Thirring inequality
+notes/subfinding-pairs.md	266	1	main	overview.tex	621	621	Proves $N(6)=3$, resolving	but four cannot.
+notes/subfinding-pairs.md	266	1	title	overview.tex	621	621	Maximum number of bases	
+notes/subfinding-pairs.md	266	2	clause	overview.tex	621	621	An independent companion	cubic equivalence class.
+notes/subfinding-pairs.md	266	2	title	overview.tex	621	621	Exact Fourier certificates	
+notes/subfinding-pairs.md	267	1	main	overview.tex	623	623	Proves Bose--Einstein condensation	the thermodynamic limit.
+notes/subfinding-pairs.md	267	1	title	overview.tex	623	623	Bose--Einstein condensation at	dilute hard-sphere gas
+notes/subfinding-pairs.md	267	2	clause	overview.tex	623	623	At zero temperature,	the dilute limit.
+notes/subfinding-pairs.md	267	2	title	overview.tex	623	623	Quantum Depletion and	Hard-Sphere Bose Gas
+notes/subfinding-pairs.md	267	3	clause	overview.tex	623	623	At zero temperature,	the dilute limit.
+notes/subfinding-pairs.md	267	3	title	overview.tex	623	623	Quantum Depletion for	Bounded Repulsive Potentials
+notes/subfinding-pairs.md	271	1	main	overview.tex	631	631	Proves Bloch's $T^{3/2}$	generates $\mathbb Z^3$.
+notes/subfinding-pairs.md	271	1	title	overview.tex	631	631	Bloch's Law for	in Three Dimensions
+notes/subfinding-pairs.md	271	4	clause	overview.tex	631	631	The family also	every dimension $d\ge3$
+notes/subfinding-pairs.md	271	4	title	overview.tex	631	631	Spontaneous magnetization in	quantum Heisenberg ferromagnet
+notes/subfinding-pairs.md	271	2	clause	overview.tex	631	631	and determines the	three-dimensional nearest-neighbor couplings.
+notes/subfinding-pairs.md	271	2	title	overview.tex	631	631	The first lattice	to Bloch's law
+notes/subfinding-pairs.md	281	1	main	overview.tex	651	651	Proves that QAOA	before circuit depth.
+notes/subfinding-pairs.md	281	1	title	overview.tex	651	651	QAOA attains the	the thermodynamic-first limit
+notes/subfinding-pairs.md	281		clause	overview.tex	651	651	This also yields	infinity before degree.
+notes/subfinding-pairs.md	291	1	main	overview.tex	674	674	Proves equivariant Jiang--Su	on trace dynamics.
+notes/subfinding-pairs.md	291	1	title	overview.tex	674	674	Equivariant Jiang--Su Stability	Stably Finite Case
+notes/subfinding-pairs.md	291	3	clause	overview.tex	674	674	The family also	infinite-dimensional nuclear setting.
+notes/subfinding-pairs.md	291	3	title	overview.tex	674	674	Nuclear dimension and Jiang–Su stability	
+notes/subfinding-pairs.md	325	2	main	overview.tex	746	746	Resolves the complete	the numerical range.
+notes/subfinding-pairs.md	325	2	title	overview.tex	746	746	Structural proof	
+notes/subfinding-pairs.md	325		clause	overview.tex	746	746	The constant $2$	in infinite dimensions.
+notes/subfinding-pairs.md	335	1	main	overview.tex	768	768	Proves $\int_M(\mathrm{Scal}_g^-)^{n/2}\,dV_g\ge a_n\lVert	only on dimension.
+notes/subfinding-pairs.md	335	1	title	overview.tex	768	768	An integral scalar	real simplicial volume
+notes/subfinding-pairs.md	335	2	clause	overview.tex	768	768	Also proves rational	manifold is flat.
+notes/subfinding-pairs.md	335	2	title	overview.tex	768	768	Positive scalar curvature forces rational inessentiality	
+notes/subfinding-pairs.md	337	1	main	overview.tex	772	772	Proves generalized Cartan--Hadamard	equal-volume model ball.
+notes/subfinding-pairs.md	337	1	title	overview.tex	772	772	Cartan–Hadamard isoperimetry and rigidity	
+notes/subfinding-pairs.md	337		clause	overview.tex	772	772	Bounded positive-volume equality	are Euclidean balls.
+notes/subfinding-pairs.md	337	2	clause	overview.tex	772	772	Also proves sharp	proper CAT$(0)$ spaces.
+notes/subfinding-pairs.md	337	2	title	overview.tex	772	772	Sharp integral fillings in CAT(0) spaces	
+notes/subfinding-pairs.md	346	1	main	overview.tex	790	790	Proves that every	dimension and codimension.
+notes/subfinding-pairs.md	346	1	title	overview.tex	790	790	A Codimension-One Bound	Stationary Integral Varifold
+notes/subfinding-pairs.md	346	2	clause	overview.tex	790	790	On round spheres,	$m$-dimensional Hausdorff measure.
+notes/subfinding-pairs.md	346	2	title	overview.tex	790	790	Almost-everywhere regularity of stationary integral varifolds	
+notes/subfinding-pairs.md	361		main	overview.tex	820	820	Disproves Yau's proposed	nonnegative Ricci curvature.
+notes/subfinding-pairs.md	361	2	clause	overview.tex	820	820	For every sufficiently	Euclidean count $(k+1)^2$.
+notes/subfinding-pairs.md	361	2	title	overview.tex	820	820	Three-dimensional counterexample	
+notes/subfinding-pairs.md	376	1	main	overview.tex	855	855	Constructs viscous incompressible	smooth external forcing.
+notes/subfinding-pairs.md	376	1	title	overview.tex	855	855	Finite instructions and shear flows	
+notes/subfinding-pairs.md	376	2	clause	overview.tex	855	855	A terminating compiler	the machine halts.
+notes/subfinding-pairs.md	376	2	title	overview.tex	855	855	Fixed particle test	

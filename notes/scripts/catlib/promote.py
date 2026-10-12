@@ -91,6 +91,10 @@ L1: dict[str, tuple[str, ...]] = {
     # population, so render_reports.py, build_index.py, extract_named_results.py and
     # verify_named_results.py read the store instead of each walking 7,240 .tex files.
     "measure_names.py": ("notes/tables/catalog.tsv",),
+    # The seeder reads one page and one source. `overview.tex` is inside a hashed tree, so the key
+    # already covers it; the page is not, so the L1 names it. The probe record
+    # `notes/probe/2026-10-12_seed_quotes.txt` is the read that justifies this list.
+    "seed_quotes.py": ("notes/subfinding-pairs.md",),
 }
 
 ARTIFACTS: dict[str, tuple[str, ...]] = {
@@ -108,6 +112,7 @@ ARTIFACTS: dict[str, tuple[str, ...]] = {
     # `.qwen/*` rule keeps untracked. The empty tuple is what makes the cache check read it as
     # "no tracked bytes to compare" and the L1 check still prove its inputs.
     "measure_names.py": (),
+    "seed_quotes.py": ("notes/tables/quotes.tsv",),
 }
 
 
@@ -127,6 +132,9 @@ ARGS: dict[str, tuple[str, ...]] = {
     # The canonical run is the plain report; `--json` dumps the same population, so a `--json` run
     # does not share the record. The key is the plain run's.
     "measure_names.py": (),
+    # The canonical run is the plain report, which lands the TSV; `--tsv` prints the same rows to
+    # stdout and `--check-only` measures without writing, so neither shares the plain run's record.
+    "seed_quotes.py": (),
 }
 
 # The writers table names one writer the protocol deliberately excludes: `measure_open_probe.py`'s

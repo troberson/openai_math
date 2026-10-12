@@ -1,0 +1,21 @@
+quotes in the page: 236
+  specs seeded: 236
+  single-line spec: 236   range spec: 0
+  head widened past 3 words: 42
+  whole-quote spec (no boundary): 79
+  resolver reproduces the page quote byte-for-byte: 236
+  round-trip failures: 0
+[probe] target exit code: 0
+[probe2] target notes/scripts/seed_quotes.py 
+[probe2] wall 1.08  opens 37  distinct 33  repeats 4
+[probe2] rchar MB 1.1  read_bytes MB 0.0
+[probe2] buckets:
+          abs/other                  19
+          notes/scripts/             11
+          other                      4
+          notes/                     3
+[probe2] notes/ paths (count  modes  path):
+              2  r        notes/subfinding-pairs.md
+              1  w        notes/tables/.quotes.tsv.tmp
+[probe2] write-mode paths outside notes/:
+              1  w .qwen/cache/records/b2b90a951ba53e9dc6fc0d3993067401/notes/tables/.quotes.tsv.tmp
