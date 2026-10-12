@@ -3,7 +3,7 @@
 `notes/tables/sources.tsv` counts `\begin{proof}` per manuscript. The question beads `math-hqd.3` asks is
 whether proofs-per-family carries information the ledger does not already carry. It does not: **no
 column was added.** Every number below comes from
-`python3 notes/scripts/measure_proof_density.py`, run 2026-10-08; the report is deterministic
+`python3 notes/scripts/measure_proof_density.py --mutant`, run 2026-10-08; the report is deterministic
 (two runs, byte-identical) and writes nothing.
 
 ## The rule, fixed before the statistics
@@ -23,10 +23,9 @@ environments (the declared-`\newtheorem` rule minus the non-statement names; the
 21,203). Tiers T3 136 / T2 106 / T1 0 / T0 130. Gates: row count, distinct dirs, family-set equality
 with the ledger, per-family row count == ledger `paps`, the two corpus totals, tier counts, positive
 `tex_bytes`, non-negative counts, every source dir present under `preprints/`, ledger `paps` sum == 719.
-All 0 problems; statistic self-test 5/5; the eight row faults are in
-`notes/scripts/tests/test_proof_density.py`, run by the `run_tests.py` gate row. The page's prose
-length is not mutated here: `verify_page_sync.py` owns the render diff and mutates in memory, so this
-script never writes the page.
+All 0 problems; statistic self-test 5/5; . The page's prose length is not
+mutated here: `verify_page_sync.py` owns the render diff and mutates in memory, so this script never
+writes the page.
 
 ## Medians by tier
 
