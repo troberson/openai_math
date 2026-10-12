@@ -20,6 +20,12 @@ python3 notes/scripts/extract_formalization_deps.py  # writes notes/tables/forma
 python3 notes/scripts/verify_dependency_drift.py  # checks notes/dependency-drift.md: anchors, blockquotes, code spans, the patch table, every count
 python3 notes/scripts/run_tests.py notes/scripts/tests/test_dependency_drift.py -q  # the extracted self-tests: 10 injected faults (a blockquote paraphrase, an anchor out of range, a table row count, a name dropped from the zero-import list, a patch-line total, a phase count, an ordering-violation count, a code span paraphrase, a table row dropped, and a prose row count outside the phrase list), each asserted against the pass that owns it
 python3 notes/scripts/extract_links.py      # writes notes/tables/links.tsv and prints the per-edge report
+python3 notes/scripts/measure_links_phases.py  # the wall of each phase inside extract_links.py's main(); not gated — a phase wall is a function of a run
+python3 notes/scripts/measure_scan_candidates.py  # prices the four candidate scans against the rule each must reproduce; not gated — the accepted rules are already in extract_links.py
+python3 notes/scripts/measure_import_layout.py  # the Lean files whose first command is a doc-comment opener, a bare `module` line, or a `public import` line; not gated — walks 122,458 files
+python3 notes/scripts/measure_render_phases.py  # render_reports.py's phase wall with concurrent children, in main() call order; not gated
+python3 notes/scripts/measure_render_pool.py  # whether pooling the 15 child-free populations lowers the render wall; measured 2026-10-12, the answer was no; not gated
+python3 notes/scripts/measure_render_processes.py  # each population's cost in a fresh process, which is the pool's per-process price; not gated
 python3 notes/scripts/extract_scope_notes.py  # re-measures the 242 `## Scope` sections; report-only, writes nothing
 python3 notes/scripts/verify_scope_exclusions.py  # checks notes/scope-exclusions.md against lean/docs/
 python3 notes/scripts/run_tests.py notes/scripts/tests/test_scope_exclusions.py -q  # the extracted self-tests: 7 injected defects in page text, each asserted against the pass that owns it
