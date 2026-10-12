@@ -91,7 +91,7 @@ Rule: `grep -cE 'os\.replace|os\.rename|shutil\.move|NamedTemporaryFile'` over `
 and `notes/scripts/catlib/*.py`, **excluding `verify_fleet_design.py` and `render_reports.py`** — the
 checker carries the pattern in its count pass and the writer carries it as its `FLEET_ATOMIC` constant,
 so counting either would read a needle as a site and the rule would be about the censuses, not the
-fleet. Over **59** scripts and **18** catlib modules the count is **2 matches**, both in
+fleet. Over **65** scripts and **18** catlib modules the count is **2 matches**, both in
 `catlib/atomic.py`: the `os.replace` at `catlib/atomic.py:42`, which promotes the sibling temp onto
 the target, and the one at `catlib/atomic.py:84`, which promotes a staged slot onto its tracked path.
 Before `math-o3a.2.1` the count was **0 matches** over **49** scripts and **14** modules: every writer
@@ -233,7 +233,7 @@ walk `measure()` used to run is gone: it is `@cache`d and reads the record store
 the process is a cache hit, and `build_sources.py`'s row fell from 39,083 opens to **71** for the same
 reason. What remains is the extractors the renderer imports, each walking the corpus once per process.
 `catlib/paths.read_text` is the uncached reader behind those opens (**230** `read_text(` call sites over
-the **59** scripts and **18** catlib modules, counted as occurrences over both globs on 2026-10-11; the
+the **65** scripts and **18** catlib modules, counted as occurrences over both globs on 2026-10-11; the
 page read **217** over **55** scripts before the two `math-faz` probes landed); the caches in catlib are `render.rendered`, keyed by page
 name, `records.manuscript_store`, keyed by the store digest, and `promote.cached_text`, keyed by the
 builder's key.
