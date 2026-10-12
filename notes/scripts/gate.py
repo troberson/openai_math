@@ -74,7 +74,7 @@ ROWS = [
     ("measure_checker_needles.py", (), ()),
     ("measure_proof_density.py --mutant", ("pages",), ()),
     ("verify_summaries.py", ("pages", "summaries"), ()),
-    ("verify_summaries.py --mutant", ("pages", "summaries"), ()),
+    ("run_tests.py notes/scripts/tests/test_summaries.py -q", ("pages", "summaries"), ()),
     ("verify_abstracts.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_abstracts.py -q", ("pages",), ()),
     ("verify_named_results.py", ("pages",), ()),

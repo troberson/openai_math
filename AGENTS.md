@@ -423,19 +423,21 @@ lives in this file and nowhere else.
   unchanged by the flagged run. The read-only gate pool is the block that runs rows with this flag.
 - The whole-tree test is the gate list at `notes/scripts/gate.py`: **75** invocations — the **9**
   gated writers (`build_report_templates.py` and `measure_open_probe.py` are the writers it does not
-  run), the 26 gated report-only rows (including `check_summary_manuscripts.py` and
-  `locate_summary_quotes.py`, `check_index_links.py` plain and with `--mutant`, and the five
+  run), the 27 gated report-only rows (including `check_summary_manuscripts.py` and
+  `locate_summary_quotes.py`, `check_index_links.py` plain and with `--mutant`, and the six
   extracted self-tests rows, `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q`,
   `run_tests.py notes/scripts/tests/test_conjecture_standing.py -q`,
   `run_tests.py notes/scripts/tests/test_abstracts.py -q`,
-  `run_tests.py notes/scripts/tests/test_named_conjectures.py -q` and
-  `run_tests.py notes/scripts/tests/test_subfindings.py -q`;
-  `read_manuscript.py` is the one script it does not run), and **40**
-  checker invocations: **32** from the 16 checkers listed twice (plain and with `--mutant`) — the 16
+  `run_tests.py notes/scripts/tests/test_named_conjectures.py -q`,
+  `run_tests.py notes/scripts/tests/test_subfindings.py -q` and
+  `run_tests.py notes/scripts/tests/test_summaries.py -q`;
+  `read_manuscript.py` is the one script it does not run), and **39**
+  checker invocations: **30** from the 15 checkers listed twice (plain and with `--mutant`) — the 15
   table checkers plus `verify_script_ownership.py`, the census page's own checker — plus
   `verify_page_sync.py --both` (**1**), `verify_scope_exclusions.py` plain (**1**),
   `verify_conjecture_standing.py` plain (**1**), `verify_abstracts.py` plain (**1**),
-  `verify_named_conjectures.py` plain (**1**) and `verify_subfindings.py` plain (**1**), none of which
+  `verify_named_conjectures.py` plain (**1**), `verify_subfindings.py` plain (**1**) and
+  `verify_summaries.py` plain (**1**), none of which
   carries a `--mutant` branch any more.
   The list is one array, `ROWS`, of (spec, needs, writes) triples over the
   generated artifacts: a row starts as soon as every row that writes its `needs` has finished, each
@@ -476,12 +478,20 @@ lives in this file and nowhere else.
   (excluding only `\s` and parentheses) glues adjacent `\href` targets into one string: it reads
   717 distinct, **1** of which is not a file, and loses 2 real paths. A phantom is a glued match,
   not an extra manuscript.
-- Check every `notes/summaries/` page with `python3 notes/scripts/verify_summaries.py --mutant`
+- Check every `notes/summaries/` page with `python3 notes/scripts/verify_summaries.py`
   before reporting it green — it resolves every `[Sn:line]` marker against the shipped file, checks
   every quotation against the lines it cites, counts a File cell that resolves under both roots as a
-  problem, and writes nothing. `--mutant` corrupts one real quotation in each form the page uses
-  (inline, inline wrapped across lines, block quote) and invents one, so quote the report by its form
-  names: a page with no quotation marks at all is proven only by the block-quote mutant.
+  problem, and writes nothing. Its mutants live in
+  `notes/scripts/tests/test_summaries.py`, run with
+  `python3 notes/scripts/run_tests.py notes/scripts/tests/test_summaries.py -q`: a real quotation
+  corrupted in each form the page uses (inline, inline wrapped across lines, block quote), one
+  fabricated quotation, the manuscript root retargeted to a superseded sibling, and a bare locator
+  citation moved above the family's own block. The tests mirror the checker's own selection — the
+  first target of each form per page, and a page whose target has no word boundary is skipped — and
+  the criterion is that the pass flags the page, so a mutation inside a unit with no usable citation
+  counts as flagged by the `NO CITATION` branch. Quote the report by its form names: a page with no
+  quotation marks at all is proven only by the block-quote mutant. The checker measures, the test file
+  injects; the checker no longer carries its own `--mutant` branch.
 - Check `notes/abstracts.md` with `python3 notes/scripts/verify_abstracts.py` and its extracted
   self-tests with
   `python3 notes/scripts/run_tests.py notes/scripts/tests/test_abstracts.py -q`

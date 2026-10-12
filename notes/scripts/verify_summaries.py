@@ -29,24 +29,24 @@ manuscript the release no longer names. Two more passes close that gap:
                       Files with no family key — manuscripts, Lean sources, yaml, tsv — are skipped:
                       the pass makes no claim about them.
 
---mutant proves the checker discriminates: it corrupts a real quotation in every quotation form the
-page actually uses (inline, inline wrapped across line breaks, block quote), invents one fabricated
-quotation, retargets the page's manuscript to a superseded sibling directory, and moves a bare
-locator citation to the line above the family's own block; it asserts the matching pass flags each
-while the real page stays silent. A form the page does not use is not tested, so the report names
-the form it corrupted.
+--mutant is gone: the self-tests live in `notes/scripts/tests/test_summaries.py`, run through
+`notes/scripts/run_tests.py`. Seven tests inject in memory over the real pages' own text — a quotation
+corrupted in each form a page uses (inline, wrapped across line breaks, block quote), a fabricated
+quotation, the manuscript root retargeted to a superseded sibling, and a bare locator citation moved
+above the family's own block — each asserted against the pass that owns it. The tests mirror the
+checker's own selection: the first target of each form per page, and a page whose target has no word
+boundary is skipped. This script measures; it no longer injects.
 
 Usage: python3 notes/scripts/verify_summaries.py                 # every page under notes/summaries
        python3 notes/scripts/verify_summaries.py <page.md> ...   # named pages only
-       python3 notes/scripts/verify_summaries.py --mutant        # discrimination test as well
 
 What stays in this file, deliberately: the family-keyed block rules (`BLOCK_RULES`, `NOTE_ENTRY`) and
-the format-example exemption (`FORMAT_EXAMPLE`), which are pass E's contract, not the page's; the mutant
-set, which is this checker's own discrimination test; and Pass A, which is written per page against
-that page's findings. The page grammar (`ROW`, `CELL`, `MARKER`, `QUOTE`, `LINK`, `ENTITY`, `TAG`,
-`PAPDIR`), the `Page` class, the marker/unit joins, the lenient `errors="replace"` read of a declared
-source, and the manuscript-ownership map are in `catlib/summaries.py`, shared with
-`locate_summary_quotes.py`, `refresh_summary_line_counts.py` and `check_summary_manuscripts.py`.
+the format-example exemption (`FORMAT_EXAMPLE`), which are pass E's contract, not the page's; and Pass
+A, which is written per page against that page's findings. The page grammar (`ROW`, `CELL`, `MARKER`,
+`QUOTE`, `LINK`, `ENTITY`, `TAG`, `PAPDIR`), the `Page` class, the marker/unit joins, the lenient
+`errors="replace"` read of a declared source, and the manuscript-ownership map are in
+`catlib/summaries.py`, shared with `locate_summary_quotes.py`, `refresh_summary_line_counts.py` and
+`check_summary_manuscripts.py`.
 """
 import argparse
 import os
@@ -66,7 +66,6 @@ from catlib.summaries import (
     label,
     markers,
     named_dirs,
-    superseded_dir,
     units,
     usable,
 )
@@ -231,47 +230,6 @@ def pass_c(page):
     return checked, misses
 
 
-FABRICATED = "the formalization is complete and machine-checked"
-
-
-def _inject(text, start, end, span):
-    """Splice the marker token into the middle of a quotation, at a word boundary."""
-    cut = span.rfind(" ", 0, len(span) // 2) + 1
-    if cut <= 0:
-        cut = span.find(" ", len(span) // 2) + 1
-    if cut <= 0:
-        return None
-    return text[:start] + span[:cut] + "XYZZY " + span[cut:] + text[end:]
-
-
-def inline_targets(text):
-    """Inline quotations Pass C can see, split by whether the span is wrapped across lines."""
-    single: list[re.Match[str]] = []
-    wrapped: list[re.Match[str]] = []
-    for m in QUOTE.finditer(text):
-        span = m.group(1) or m.group(2)
-        if len(span) < 12 or "Prior (my training data" in span:
-            continue
-        (wrapped if "\n" in span else single).append(m)
-    return single, wrapped
-
-
-def blockquote_targets(page):
-    """Block-quote units Pass C checks, i.e. those with a citation on a line above them."""
-    out = []
-    for start_line, unit, is_blockquote in units(page.lines):
-        if not is_blockquote or len(unit) < 12:
-            continue
-        resolved = []
-        for back in range(start_line - 2, max(start_line - 5, -1), -1):
-            resolved = usable(page, markers(page.lines[back]))
-            if resolved:
-                break
-        if resolved:
-            out.append((start_line, unit))
-    return out
-
-
 def pass_d(page):
     """Supersession. Every manuscript the page names must be one the catalog currently names for this family."""
     named = named_dirs()
@@ -367,101 +325,9 @@ def pass_e(page):
     return cites, problems
 
 
-def mutants(page):
-    """Corrupt a real quotation in every form the page uses, invent one, assert Pass C flags each."""
-    text = "\n".join(page.lines)
-    results = []
-
-    # Mutant A: a real quotation, one token deeper than the source. Pages quote in three forms and
-    # a page can carry only one of them, so each present form is tested and named.
-    single, wrapped = inline_targets(text)
-    for name, group in (("A1 corrupts an inline quotation", single),
-                        ("A2 corrupts a wrapped inline quotation", wrapped)):
-        if not group:
-            continue
-        m = group[0]
-        g = 1 if m.group(1) else 2
-        bad = _inject(text, m.start(g), m.end(g), m.group(g))
-        if bad is None:
-            continue
-        _, misses = pass_c(Page(page.path, bad.splitlines()))
-        results.append((name, misses > 0, f"{misses} flagged"))
-
-    for start_line, _unit in blockquote_targets(page)[:1]:
-        line = page.lines[start_line - 1]
-        bad_line = _inject(line, 0, len(line), line)
-        if bad_line is None:
-            continue
-        lines = list(page.lines)
-        lines[start_line - 1] = bad_line
-        _, misses = pass_c(Page(page.path, lines))
-        results.append(("A3 corrupts a block-quote attribution", misses > 0,
-                        f"{misses} flagged (block quote at doc line {start_line})"))
-
-    # Mutant D: retarget the page's declared manuscript root to a superseded sibling — a directory
-    # that is on disk, tracked in git, and named by no family. Pass B stays green on it (the path
-    # resolves, the files exist); only Pass D sees that the release has moved on from it.
-    target = superseded_dir()
-    lines = list(page.lines)
-    for i, line in enumerate(lines):
-        m = PAPDIR.search(line)
-        if m and target:
-            lines[i] = line[:m.start(1)] + target + line[m.end(1):]
-            _, stale = pass_d(Page(page.path, lines))
-            results.append(("D retargets the manuscript to a superseded directory", stale > 0,
-                            f"{stale} flagged (preprints/{target}/ at doc line {i + 1})"))
-            break
-    else:
-        results.append(("D retargets the manuscript to a superseded directory", False,
-                        "no preprints/ path in the page"))
-
-    # Mutant E: move a bare locator citation to the line just above the family's own block. The
-    # marker still resolves, the line is in range and non-blank, and the file is the right file —
-    # Pass B is green and Pass C has nothing to compare, so only Pass E can see the mislocation.
-    locs = bare_locator_cites(page)
-    moved = False
-    for start_line, sid, a, b, rel, bl in locs:
-        if not bl:
-            continue
-        line = page.lines[start_line - 1]
-        new = bl[0][0] - 1
-        for m in MARKER.finditer(line):
-            if m.group(2) and int(m.group(2)) == a and f"S{m.group(1)}" == sid:
-                sep = (line[m.start(3) - 1] if m.group(3) else "")
-                tok = f"[S{m.group(1)}:{new}" + (f"{sep}{new}]" if m.group(3) else "]")
-                lines = list(page.lines)
-                lines[start_line - 1] = line[:m.start()] + tok + line[m.end():]
-                _, outside = pass_e(Page(page.path, lines))
-                results.append(("E moves a bare locator cite out of the family block", outside > 0,
-                                (f"{outside} flagged ({label(sid, a, b)} -> {rel} at doc line {start_line}, "
-                                f"block starts {bl[0][0]})")))
-                moved = True
-                break
-        if moved:
-            break
-    if not moved:
-        results.append(("E moves a bare locator cite out of the family block", False,
-                        "no bare locator cite into a family-keyed file"))
-
-    # Mutant B: a fabricated quotation attached to a line that already carries a citation.
-    lines = list(page.lines)
-    for i, line in enumerate(lines):
-        m = MARKER.search(line)
-        if m and not line.startswith(("#", "|", ">")):
-            lines[i] = line + f" “{FABRICATED}” [{m.group(0)}]"
-            break
-    else:
-        results.append(("B invents a cited quotation", False, "no citable prose line"))
-        return results
-    _, misses = pass_c(Page(page.path, lines))
-    results.append(("B invents a cited quotation", misses > 0, f"{misses} flagged"))
-    return results
-
-
 def main():
     ap = argparse.ArgumentParser(add_help=True)
     ap.add_argument("pages", nargs="*", help="summary pages (default: every page under notes/summaries)")
-    ap.add_argument("--mutant", action="store_true", help="run the Pass C discrimination test")
     ap.add_argument("--quiet", action="store_true", help="print only the summary lines")
     args = ap.parse_args()
 
@@ -475,7 +341,7 @@ def main():
 
     import contextlib
     io = sys.stdout
-    total_b = total_c = total_problems = total_mutants = 0
+    total_b = total_c = total_problems = 0
     for doc in docs:
         lines = read_text(doc).splitlines()
         page = Page(doc, lines)
@@ -495,21 +361,11 @@ def main():
                   f"or off-family")
             print(f"--- pass E: {cites} bare line citations into family-keyed files, {outside} "
                   f"outside the family's own block")
-            unflagged = 0
-            if args.mutant:
-                if misses or problems or stale or outside:
-                    print("--- mutants skipped: the real page is not silent")
-                    unflagged = 2
-                else:
-                    for name, flagged, detail in mutants(page):
-                        print(f"--- mutant {name}: {'FLAGGED' if flagged else 'MISSED'} ({detail})")
-                        unflagged += 0 if flagged else 1
         total_b += positions
         total_c += spans
-        total_problems += problems + misses + stale + outside + unflagged
-        total_mutants += unflagged
+        total_problems += problems + misses + stale + outside
     print(f"===== TOTAL {len(docs)} page(s): {total_b} marker positions, {total_c} quoted spans, "
-          f"{total_problems} problems" + (f" ({total_mutants} undetected mutants)" if args.mutant else ""))
+          f"{total_problems} problems")
     sys.exit(1 if total_problems else 0)
 
 
