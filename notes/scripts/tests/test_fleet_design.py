@@ -28,7 +28,7 @@ the page it started from, and each needle is the problem string the pass that ow
 fires for every fault, so no needle is that line.
 
 The clean test asserts the passes are silent and pins the counts they report: 32 anchors, 24 count
-and probe phrases, 0 sync problems, 2 atomicity matches over 59 scripts and 18 catlib modules, 12
+and probe phrases, 0 sync problems, 2 atomicity matches over 65 scripts and 18 catlib modules, 12
 sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 9 TSVs at 907,744 bytes, 631M
 `preprints/`, 1,740M `lean/OAI/`, 14M `notes/index/`, 78 gate rows, 10 writer rows, 1 env hit, 8
 purity scripts,
@@ -146,7 +146,7 @@ def test_clean_page(mod, text):
     assert (n_anchor, n_phrases, n_sync) == (32, 24, 0), \
         f"anchors {n_anchor}, phrases {n_phrases}, sync {n_sync}"
     p = mod.population()
-    assert (p["atomic"], p["scripts"], p["modules"]) == (2, 59, 18), \
+    assert (p["atomic"], p["scripts"], p["modules"]) == (2, 65, 18), \
         f"atomic {p['atomic']}, scripts {p['scripts']}, modules {p['modules']}"
     assert (p["sync"], p["sync_verify"], p["sync_other"]) == (12, 12, 0), \
         f"sync {p['sync']}, verify_ {p['sync_verify']}, not {p['sync_other']}"
