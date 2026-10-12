@@ -20,7 +20,7 @@ python3 notes/scripts/verify_dependency_drift.py --mutant  # checks notes/depend
 python3 notes/scripts/extract_links.py      # writes notes/tables/links.tsv and prints the per-edge report
 python3 notes/scripts/extract_scope_notes.py  # re-measures the 242 `## Scope` sections; report-only, writes nothing
 python3 notes/scripts/verify_scope_exclusions.py  # checks notes/scope-exclusions.md against lean/docs/
-python3 notes/scripts/run_tests.py tests/test_scope_exclusions.py -q  # the extracted self-tests: 7 injected defects in page text, each asserted against the pass that owns it
+python3 notes/scripts/run_tests.py notes/scripts/tests/test_scope_exclusions.py -q  # the extracted self-tests: 7 injected defects in page text, each asserted against the pass that owns it
 python3 notes/scripts/extract_subfindings.py  # writes notes/tables/subfindings.tsv and prints the reconciliation
 python3 notes/scripts/verify_subfindings.py --mutant  # checks notes/tables/subfindings.tsv against overview.tex and lean/docs/
 python3 notes/scripts/extract_subfinding_pairs.py  # lays out the pairing population; report-only, writes nothing
@@ -345,7 +345,8 @@ rest. The gap between 5 (keyword) and 121 (reading) is why this page is a readin
 ledger tag. The exclusion rule is recorded with the page: a clause saying an assumption is *not
 imposed* widens the formalized claim rather than bounding it, so it is not an entry. `notes/scripts/verify_scope_exclusions.py`
 resolves every citation, requires each quotation verbatim on the line it cites **inside the `## Scope`
-span**, re-measures all seven table numbers from disk, and flags all seven injected mutants.
+span**, and re-measures all seven table numbers from disk; the seven defects the checker used to inject
+live in `notes/scripts/tests/test_scope_exclusions.py`, which asserts the pass that owns each one flags it.
 
 **`notes/tables/subfindings.tsv` is the per-manuscript table: 1145 rows = 719 manuscript rows + 426
 comparator rows, typed by a `kind` column.** Extraction only — every field is copied from a file,
