@@ -709,16 +709,34 @@ lives in this file and nowhere else.
   bundles, which README section names them, and each bundle's entry point) and
   `python3 notes/scripts/extract_verification_348.py` (the family-348 pair); run each twice and diff:
   the report must be identical. Both read the bundles as text and run nothing. Check
-  `notes/verification-dirs.md` with `python3 notes/scripts/verify_verification_dirs.py --mutant` before
+  `notes/verification-dirs.md` with `python3 notes/scripts/verify_verification_dirs.py` before
   quoting either of its sections — it re-derives every bold count from the files on disk, resolves every
   `file:line` anchor, matches each fenced block line, checks each quotation against the anchored lines
   (a quotation with an anchor in its own table row must match at the anchored line exactly, so a shifted
   anchor is caught), re-checks the ledger's `verification`/`inputs`/`covmd` claims from
   `notes/tables/catalog.tsv`, requires the entry-point table to carry one row per bundle in slug order with the
-  family that slug belongs to, requires the two family-269 `rows.txt` files to be byte-identical,
-  re-checks that every artifact `COVERAGE.md` names is on disk, and flags nineteen injected mutants
-  including an abbreviated anchor, a deleted table row, and a prose line count visible only in the diff
-  against the writer's render. It writes nothing.
+  family that slug belongs to, requires the two family-269 `rows.txt` files to be byte-identical, and
+  re-checks that every artifact `COVERAGE.md` names is on disk. The nineteen injected mutants live in
+  `notes/scripts/tests/test_verification_dirs.py`, run by the `run_tests.py` gate row: an anchor line
+  shifted, an anchor file renamed, a block line altered, a prose quote altered, the passed-record
+  count, the negative-test count, a ledger value, an abbreviated anchor, the coverage-file artifact
+  presence, an entry class count, the unnamed bundle count, an entry-section quote, an entry-section
+  anchor, the `rows.txt` size, a table row's family, the rule-4 firing count, the entry-section ledger
+  sum, a deleted table row, and a script line count inside an entry-point cell that no count phrase
+  reads — the last is visible only in the diff against the writer's render. Each needle is measured
+  specific: it fires for its own fault and for no other, and the generic render-diff line fires for
+  every fault, so the prose fault is keyed to the page line the render diff names. The clean test pins
+  the population the passes report: 42 anchors, 3 block lines, 2 prose quotes, 27 row quotes, 1
+  says-quote, 16 count phrases, 5 ledger phrases, 9 entry phrases, 30 table rows, 0 sync problems; 4
+  named `COVERAGE.md` files all present, 9 shared, 7 identical, 2 differing, 8 entries, 0 mismatches,
+  53 identities, 21 interval rows, 15 reported, 6 supplementary, 12 triangle rows, 9 determinant
+  floors, 24 exact, 41 subintervals, 504 lines, 6 check functions, 9 printed keys, 13 `require` calls,
+  151 passed-record occurrences, 11 checks with 8 negative and 7 ending `rejected`; and the entry
+  recomputation at 30 bundles over 22 families, 28 named by a README section, 27 by a `## Verification`
+  heading and 1 by the other, 6 with no entry point, 0 rule-4 firings, 2 declaring READMEs, and the two
+  `rows.txt` files at 20 lines and 1,436 bytes, byte-identical. `main()` reads no argv, so `--mutant`
+  is inert, and `population()` and `entry_measure()` are under `functools.cache`, so the twenty
+  `check()` calls the row makes pay the bundle walk once. It writes nothing.
 - Check `notes/tables/conjecture-standing.tsv` with
   `python3 notes/scripts/verify_conjecture_standing.py` and its extracted self-tests with
   `python3 notes/scripts/run_tests.py notes/scripts/tests/test_conjecture_standing.py -q`

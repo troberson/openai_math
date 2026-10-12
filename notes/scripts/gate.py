@@ -98,7 +98,7 @@ ROWS = [
     ("verify_t0_chains.py", ("pages",), ()),
     ("verify_t0_chains.py --mutant", ("pages",), ()),
     ("verify_verification_dirs.py", ("pages",), ()),
-    ("verify_verification_dirs.py --mutant", ("pages",), ()),
+    ("run_tests.py notes/scripts/tests/test_verification_dirs.py -q", ("pages",), ()),
     ("verify_dependency_drift.py", ("pages",), ()),
     ("verify_dependency_drift.py --mutant", ("pages",), ()),
     ("verify_script_ownership.py", ("pages",), ()),

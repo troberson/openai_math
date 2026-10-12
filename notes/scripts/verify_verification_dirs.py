@@ -29,14 +29,16 @@ Line counts in the family-348 section follow len(text.split("\n")), the rule the
 extract_verification_348.py report uses; the entry-point section's file line count follows
 splitlines(), the rule the extract_verification_dirs.py report uses. The page matches each.
 
---mutant runs the built-in mutations and fails if any goes uncaught, the last of them a prose line
-count in an entry-point table cell that no count phrase reads -- visible only to pass 4.
+The self-tests are in notes/scripts/tests/test_verification_dirs.py: that file injects the nineteen
+page faults and asserts each fires the pass that owns it. `main()` reads no argv, so `--mutant` is
+inert here.
 """
 import hashlib
 import json
 import pathlib
 import re
 import sys
+from functools import cache
 
 import extract_verification_dirs as evd
 from catlib import anchors
@@ -133,11 +135,18 @@ def measure():
     }
 
 
+@cache
 def population():
-    """measure() under the name build_report_templates.checker_needles() looks for."""
+    """measure() under the name build_report_templates.checker_needles() looks for.
+
+    The checker writes nothing and the self-tests mutate page text in memory, so a second call in the
+    same process cannot see a different corpus; the cache is what keeps the clean page plus each of the
+    nineteen faults from paying the bundle walk once per call.
+    """
     return measure()
 
 
+@cache
 def entry_measure():
     """Independent recomputation of the entry-point section's population and classes.
 
@@ -420,72 +429,8 @@ def check(text, full_page):
     return problems, counts
 
 
-MUTANTS = {
-    "anchor line shifted": lambda t: t.replace(
-        "`preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/verification/verify.py:496`",
-        "`preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/verification/verify.py:495`", 1),
-    "anchor file renamed": lambda t: t.replace(
-        "September-23-2026/build/sections/07-certificates.tex:14",
-        "September-23-2026/build/sections/06-certificates.tex:14", 1),
-    "block line altered": lambda t: t.replace(
-        '"Recomputed exact results differ from bundled results.json")',
-        '"Recomputed results differ from bundled results.json")', 1),
-    "prose quote altered": lambda t: t.replace(
-        "calculus, Jacobi comparison, and Sobolev arguments",
-        "calculus, Jacobi comparison, and Sobolev estimates", 1),
-    "count altered": lambda t: t.replace("**151** such occurrences", "**150** such occurrences", 1),
-    "negative-test count altered": lambda t: t.replace(
-        "ships **11** checks, **8** of them negative", "ships **11** checks, **7** of them negative", 1),
-    "ledger value altered": lambda t: t.replace(
-        "`verification` value of 2 for family 348",
-        "`verification` value of 1 for family 348", 1),
-    "abbreviated anchor": lambda t: t.replace(
-        "`preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/verification/verify.py:477`",
-        "`.../verification/verify.py:477`", 1),
-    "coverage artifact presence overstated": lambda t: t.replace(
-        "all four are present in both directories", "all five are present in both directories", 1),
-    "entry class count altered": lambda t: t.replace(
-        "**12** top-level `README.md`", "**13** top-level `README.md`", 1),
-    "unnamed bundle count altered": lambda t: t.replace(
-        "**2** bundles ship a `verification/` tree", "**3** bundles ship a `verification/` tree", 1),
-    "entry-section quote altered": lambda t: t.replace(
-        "*\"They verify finite scalar, thermal, and trial calculations, not the analytic proof.\"*",
-        "*\"They verify finite scalar, thermal, and trial calculations, not the analytic argument.\"*", 1),
-    "entry-section anchor shifted": lambda t: t.replace(
-        "chain-September-24-2026/verification/README.md:54`",
-        "chain-September-24-2026/verification/README.md:53`", 1),
-    "rows.txt size altered": lambda t: t.replace("20 lines and 1436 bytes", "20 lines and 1437 bytes", 1),
-    "table row family altered": lambda t: t.replace("| 371 | `Stable-Self-Similar", "| 372 | `Stable-Self-Similar", 1),
-    "rule 4 firing count altered": lambda t: t.replace("Rule 4 fires for **0** bundles",
-                                                       "Rule 4 fires for **1** bundles", 1),
-    "entry-section ledger sum altered": lambda t: t.replace("sums to 30 dirs over 22 families",
-                                                            "sums to 31 dirs over 22 families", 1),
-    "table row deleted": lambda t: re.sub(r"^\| 371 \| .*$\n", "", t, count=1, flags=re.MULTILINE),
-    # Prose no count phrase reads: the script's line count inside the family-067 entry-point cell.
-    # The table check reads only the family column, so only the render diff can see it.
-    "entry cell line count altered": lambda t: t.replace("a 167-line script", "a 168-line script", 1),
-}
-
-
-def main():
+def main() -> int:
     text = PAGE.read_text(encoding="utf-8", errors="replace")
-
-    if "--mutant" in sys.argv:
-        uncaught = []
-        for name, fn in MUTANTS.items():
-            mutated = fn(text)
-            if mutated == text:
-                print(f"mutant target absent: {name}")
-                uncaught.append(name)
-                continue
-            problems, _ = check(mutated, mutated)
-            print(f"mutant {name}: {'caught' if problems else 'NOT CAUGHT'}"
-                  f" ({len(problems)} problems)")
-            if not problems:
-                uncaught.append(name)
-        print(f"mutants not caught {len(uncaught)} of {len(MUTANTS)}")
-        raise SystemExit(1 if uncaught else 0)
-
     problems, (n_anchor, n_block_lines, n_prose, n_row, n_says, n_counts, n_ledger,
                n_entry, n_rows, n_sync) = check(text, text)
     for p in problems:
@@ -494,7 +439,8 @@ def main():
           f"  row quotes {n_row}  says-quotes {n_says}  count phrases {n_counts}"
           f"  ledger phrases {n_ledger}  entry phrases {n_entry}  table rows {n_rows}"
           f"  sync problems {n_sync}  problems {len(problems)}")
-    raise SystemExit(1 if problems else 0)
+    return 1 if problems else 0
 
 
-main()
+if __name__ == "__main__":
+    sys.exit(main())
