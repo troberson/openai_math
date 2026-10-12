@@ -52,6 +52,16 @@ PAGE_CASES = [
      lambda t: t.replace("| `notes/templates/` | **24** |", "| `notes/templates/` | **3** |")),
 ]
 
+def shift_slot_cell(t):
+    """Shift the slot-count cell of the README.md.j2 row. The row's line, byte and slot counts are
+    measured from the template, so the fault has to be built from the row as it stands, not from a
+    literal transcription of them."""
+    row = next((l for l in t.splitlines() if l.startswith("| `README.md.j2`")), "")
+    cells = row.split("|")
+    cells[4] = f" {int(cells[4]) + 1} "
+    return t.replace(row, "|".join(cells), 1)
+
+
 # Faults in the templates census page, each keyed to the pass that owns it.
 TPL_CASES = [
     ("template row renamed", "report table rows",
@@ -59,9 +69,7 @@ TPL_CASES = [
     ("template page row deleted", "report table rows",
      lambda t: "\n".join(l for l in t.splitlines()
                          if not l.startswith("| `templates.md.j2`"))),
-    ("template slot count shifted", "template row README.md.j2",
-     lambda t: t.replace("| `README.md.j2` | 723 | 62,536 | 71 |",
-                         "| `README.md.j2` | 723 | 62,536 | 72 |", 1)),
+    ("template slot count shifted", "template row README.md.j2", shift_slot_cell),
     ("registry count altered", "registry sentence",
      lambda t: t.replace("registry: **19** entries", "registry: **17** entries", 1)),
 ]
