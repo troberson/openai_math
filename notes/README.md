@@ -54,7 +54,8 @@ python3 notes/scripts/check_index_links.py --mutant  # self-test: 21 injected mu
 python3 notes/scripts/compare_abstracts.py  # compares each manuscript abstract with its family's overview abstract; report-only
 python3 notes/scripts/compare_abstracts.py --tsv  # writes notes/tables/abstracts.tsv (372 rows: best-match ratio, relation, both shape sets)
 python3 notes/scripts/compare_abstracts.py --mutant  # self-test: 7 injected corruptions must all be caught, 3 controls and 5 synthetic cases must stay right
-python3 notes/scripts/verify_abstracts.py --mutant  # checks notes/abstracts.md: every [S#] marker resolves, every quotation is verbatim in the file it names
+python3 notes/scripts/verify_abstracts.py  # checks notes/abstracts.md: every [S#] marker resolves, every quotation is verbatim in the file it names
+python3 notes/scripts/run_tests.py notes/scripts/tests/test_abstracts.py -q  # the extracted self-tests: 12 injected defects in page text, each asserted against the pass that owns it
 python3 notes/scripts/measure_proof_density.py  # tests proofs-per-family against tiers and claim shapes; report-only, writes nothing
 python3 notes/scripts/measure_proof_density.py --mutant  # self-test: 9 injected corruptions must all be caught, plus a 5-case check of the statistic itself
 python3 notes/scripts/extract_counterexample_crosscheck.py  # pairs the 28 counterexample families outside T0 with their main_results declarations and carriers; report-only
