@@ -19,6 +19,7 @@ python3 notes/scripts/locate_summary_quotes.py <page.md> [page.md ...]  # where 
 python3 notes/scripts/refresh_summary_line_counts.py  # rewrites the Lines column of the Sources table in every summaries page
 python3 notes/scripts/read_manuscript.py <preprints-dir>  # prints a manuscript's abstract, section skeleton and titled statement environments with file:line anchors (--limit N, --all, --sections-only)
 python3 notes/scripts/verify_conjecture_standing.py  # checks notes/tables/conjecture-standing.tsv against the ledger and overview.tex
+python3 notes/scripts/run_tests.py notes/scripts/tests/test_conjecture_standing.py -q  # the extracted self-tests: 6 injected defects in table text, each asserted against the pass that owns it
 python3 notes/scripts/extract_formalization_deps.py  # writes notes/tables/formalization-deps.tsv and prints the reconciliation
 python3 notes/scripts/verify_dependency_drift.py --mutant  # checks notes/dependency-drift.md: anchors, blockquotes, code spans, the patch table, every count
 python3 notes/scripts/extract_links.py      # writes notes/tables/links.tsv and prints the per-edge report
