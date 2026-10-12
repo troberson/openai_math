@@ -929,7 +929,7 @@ lives in this file and nowhere else.
   deleted, corrupted again on a second artifact), each asserted against the pass that owns it and
   undone by writing the disk bytes back, so the run leaves the cache as it found it and no fault
   touches a tracked file. Run the checker twice and diff — the report is identical.
-- Check `notes/fleet-design.md` with `python3 notes/scripts/verify_fleet_design.py --mutant` before
+- Check `notes/fleet-design.md` with `python3 notes/scripts/verify_fleet_design.py` before
   quoting any of its counts — it re-derives the atomicity grep (over the fleet's own sources, the **two**
   needle-carrying scripts excluded: the checker, whose count pass embeds the pattern, and
   `render_reports.py`, whose `FLEET_ATOMIC` constant is it), the sync-pass census (the same two
@@ -954,12 +954,23 @@ lives in this file and nowhere else.
   site enumerated twice in the paragraph leaves the shift invisible, so this comparison is the only one
   that catches it), compares the page with `render_reports.py`'s render of it (the page is report-fed:
   its measured phrases, **including the six site anchors**, are slots the writer supplies from its own
-  scan of the fleet's sources), and flags 16 injected mutants. The dated
-  observations — the `free -h` available line, the wall times, the cold/warm swing — are **not**
-  re-derived and are **not** slots: a checker that re-measures them fails the day the machine changes,
-  and a writer that recomputed them would move the page the same day, so they stay literal in the
-  template and the sixteenth mutant targets one of them. It writes nothing; run
-  it twice and diff — the report is identical.
+  scan of the fleet's sources), and the 16 injected mutants live in
+  `notes/scripts/tests/test_fleet_design.py`, run by the `run_tests.py` gate row: the atomicity count,
+  the sync split, a deleted purity row, the purity heading count, the digest count, a probe figure, an
+  anchor past the file's end, a notes-page anchor past the file's end, the TSV byte figure, and six site
+  anchors shifted by one line — two in the bullet, two in the checker list, two in the paragraph. The
+  last fault is a dated observation the writer deliberately leaves literal, so only the render diff can
+  catch it. Each needle is measured specific: it fires for its own fault and for no other, and the
+  render-diff line fires for every fault, so no needle is that line. The clean test pins the population
+  the passes report: 34 anchors, 20 count and probe phrases, 0 sync problems, 2 atomicity matches over
+  57 scripts and 17 catlib modules, 12 sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 8
+  TSVs at 630,620 bytes, 631M `preprints/`, 1,740M `lean/OAI/`, 14M `notes/index/`, 75 gate rows, 2 env
+  hits, 8 purity scripts, the sites at `atomic.py:42` / `atomic.py:84`, `render_reports.py:1147` /
+  `render_reports.py:1367` and `build_catalog.py:128` / `build_index.py:583`, and the probe row the
+  amplification table quotes at 151.32 s wall over 117,360 opens, 18,935 distinct paths and 98,425
+  repeats. `main()` reads no argv, so `--mutant` is inert, and `population()` is under
+  `functools.cache`, so the seventeen `check()` calls the row makes pay the `git`/`du`/script-tree walk
+  once. It writes nothing; run it twice and diff — the report is identical.
 - Check the five sync pages with `python3 notes/scripts/verify_page_sync.py --both` before reporting
   them green — it is the render diff for `notes/links.md`, `notes/names.md`, `notes/topics.md`,
   `notes/proof-density.md` and `notes/index-links.md`: each page's bytes on disk against the bytes

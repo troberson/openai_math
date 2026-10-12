@@ -29,15 +29,15 @@ Report-only; writes nothing. Seven passes:
    sources, so a hand edit to a slotted phrase, a stale render, or a template that no longer matches the
    page all show up here. The count pass proves the numbers are measured; this pass proves the page is
    the writer's text. The two are independent: the writer's measurement is its own, not this checker's.
-7. **Mutants** — 16 injected corruptions, each asserted against the pass it targets. The last is a
-   dated observation the writer deliberately leaves literal, so only the render diff can catch it.
 
 Volatile measurements (the `free -h` available line, the wall times, the cold/warm swing) are dated
 observations in the page and are **not** re-derived: a checker that re-measures them fails the day the
 machine changes. They are also **not** writer slots, for the same reason: a writer that recomputed them
 would move the page every day the machine changed, so they stay literal in the template.
 
-Run plain and with `--mutant`; run twice and diff.
+The self-tests are in notes/scripts/tests/test_fleet_design.py: that file injects the sixteen page
+faults and asserts each fires the pass that owns it. `main()` reads no argv, so `--mutant` is inert
+here.
 """
 
 from __future__ import annotations
@@ -45,6 +45,7 @@ from __future__ import annotations
 import re
 import subprocess
 import sys
+from functools import cache
 from pathlib import Path
 from typing import TypedDict
 
@@ -147,7 +148,14 @@ def probe_rows() -> dict[str, dict[str, float]]:
     return out
 
 
+@cache
 def population() -> Pop:
+    """The measured population, cached for a multi-`check()` run.
+
+    The checker writes nothing and the self-tests mutate page text in memory, so a second call in the
+    same process cannot see a different corpus; the cache is what keeps the clean page plus each of the
+    sixteen faults from paying the `git`/`du`/script-tree walk once per call.
+    """
     # The atomicity census excludes the two scripts that carry the pattern as a needle: this checker,
     # whose count pass embeds it, and `render_reports.py`, whose `FLEET_ATOMIC` constant is the needle.
     # Neither has a real atomicity site, so counting them would read the census as 3 with a phantom
@@ -383,89 +391,33 @@ def site_problems(page: str, pop: Pop) -> list[str]:
     return out
 
 
-MUTANTS = [
-    ("atomicity count shifted", lambda p: p.replace("**2 matches**", "**1 match**", 1)),
-    ("sync split altered", lambda p: p.replace("**12** are `verify_*`", "**11** are `verify_*`", 1)),
-    ("purity row deleted", lambda p: re.sub(r"^\|\s*`check_index_links\.py`.*\n", "", p, count=1, flags=re.MULTILINE)),
-    # The purity heading count is the probe parse, so a page that names one target it does not measure
-    # is caught by the count pass, not by the row scan.
-    ("purity population count altered",
-     lambda p: p.replace("## The purity population (8 scripts", "## The purity population (7 scripts", 1)),
-    ("digest count widened", lambda p: p.replace("**5** digests", "**6** digests", 1)),
-    ("probe figure altered", lambda p: p.replace("117,360", "117,361")),
-    # The site anchors moved when the writer took them over: the env pair is now 1147 / 1367, so each
-    # env mutant shifts a site to its neighbour, and the anchor-outside mutant uses a line the writer
-    # does not have (3400 is inside a 3,566-line file, so the anchor pass would read it as valid).
-    ("anchor outside the file", lambda p: p.replace("render_reports.py:1147", "render_reports.py:4000", 1)),
-    # The page ships no notes-page anchor, so the resolver's notes/ branch is inert on a clean page.
-    # This mutant injects one with a line past the file's end, which is the only way the branch is
-    # proven to fire.
-    ("notes-page anchor outside the file",
-     lambda p: p.replace("`render_reports.py:1147`", "`render_reports.py:1147` `notes/fleet-design.md:9999`", 1)),
-    ("prose count in the size argument", lambda p: p.replace("**630,620** bytes", "**630,619** bytes", 1)),
-    # A measured site shifted to a line that exists in its file passes the anchor pass and the count
-    # pass, so only the site comparison can catch it. One mutant per list the comparison reads.
-    ("set-site anchor shifted in the bullet",
-     lambda p: p.replace("build_index.py:583", "build_index.py:584", 1)),
-    ("set-site anchor shifted in the checker list",
-     lambda p: p.replace("`build_index.py:583`, `render_reports.py:1147`",
-                         "`build_index.py:584`, `render_reports.py:1147`", 1)),
-    ("atomicity anchor shifted in the paragraph",
-     lambda p: p.replace("catlib/atomic.py:42", "catlib/atomic.py:43", 1)),
-    ("atomicity anchor shifted in the checker list",
-     lambda p: p.replace("`catlib/atomic.py:42`, `catlib/atomic.py:84`",
-                         "`catlib/atomic.py:43`, `catlib/atomic.py:84`", 1)),
-    ("env anchor shifted in the bullet",
-     lambda p: p.replace("`render_reports.py:1147` and", "`render_reports.py:1148` and", 1)),
-    ("env anchor shifted in the checker list",
-     lambda p: p.replace("`render_reports.py:1147`, `render_reports.py:2043`",
-                         "`render_reports.py:1148`, `render_reports.py:2043`", 1)),
-    # A dated observation the writer deliberately does not slot. The count pass, the anchor pass and
-    # the site pass all ignore it, so only the render diff can see the page is no longer the writer's
-    # bytes — which is the pass this page gained when it became report-fed.
-    ("dated observation altered in the page", lambda p: p.replace("**11 of 15**", "**10 of 15**", 1)),
-]
+def check(text: str) -> tuple[list[str], int, int, int]:
+    """All six passes over page text. Returns (problems, anchors, phrases, sync problems).
 
-
-def mutants(page: str) -> str:
-    caught, undetected = 0, []
+    `text` is page text, not a path: the self-tests mutate the page in memory, so nothing here writes
+    a page. The anchor count is the number of `path:line` shapes the resolver read, and the phrase
+    count is the count needles plus the four probe figures, so a page that drops a pass shows up as a
+    smaller count, not as a silent pass.
+    """
     pop = population()
-    for name, fn in MUTANTS:
-        mutated = fn(page)
-        if mutated == page:
-            undetected.append(f"{name}: target not in the page")
-            continue
-        probs = count_problems(mutated, pop) + table_problems(mutated, pop) \
-            + anchor_problems(mutated) + site_problems(mutated, pop) \
-            + RD.sync_problems(PAGE, mutated)
-        if probs:
-            caught += 1
-        else:
-            undetected.append(name)
-    print(f"mutants flagged: {caught} of {len(MUTANTS)}")
-    for u in undetected:
-        print(f"  UNDETECTED: {u}")
-    return f"undetected mutants: {len(undetected)}"
+    sync = RD.sync_problems(PAGE, text)
+    problems = anchor_problems(text) + block_problems(text) + count_problems(text, pop) \
+        + table_problems(text, pop) + site_problems(text, pop) + sync
+    return (problems, len(ANCHOR.findall(text)), len(count_phrases(pop)) + 4, len(sync))
 
 
-def main(argv: list[str]) -> int:
-    page_path = PAGE
-    for a in argv:
-        if a.startswith("--page="):
-            page_path = Path(a.split("=", 1)[1])
-    if not page_path.exists():
-        print(f"page absent: {page_path}")
+def main() -> int:
+    if not PAGE.exists():
+        print(f"page absent: {PAGE}")
         return 1
     missing = [pp for pp in PROBE if not pp.exists()]
     if missing:
         for pp in missing:
             print(f"probe record absent: {pp}")
         return 1
-    page = page_path.read_text(encoding="utf-8")
+    page = PAGE.read_text(encoding="utf-8")
     pop = population()
-    problems = anchor_problems(page) + block_problems(page) + count_problems(page, pop) \
-        + table_problems(page, pop) + site_problems(page, pop) \
-        + RD.sync_problems(page_path, page)
+    problems, n_anchor, n_phrases, n_sync = check(page)
     print("=== notes/fleet-design.md check ===")
     print(f"atomicity grep: {pop['atomic']} match{'es' if pop['atomic'] != 1 else ''} "
           f"over {pop['scripts']} scripts "
@@ -482,17 +434,12 @@ def main(argv: list[str]) -> int:
     for script, writes, gen in pop["purity"]:
         print(f"  {script}: writes {writes}, generated reads {gen}")
     print(f"check_index_links wall {pop['cli_wall']:.2f} s (the probe row the amplification table quotes)")
-    print(f"sync problems: {len(RD.sync_problems(page_path, page))}")
+    print(f"anchors {n_anchor}  phrases {n_phrases}  sync problems {n_sync}")
     for prob in problems:
         print(f"  PROBLEM: {prob}")
-    summary = mutants(page) if "--mutant" in argv else None
-    if summary is not None:
-        n = int(summary.rsplit("undetected mutants:", 1)[1])
-        if n:
-            problems.append(f"{n} injected mutants went undetected")
     print(f"problems: {len(problems)}")
     return 1 if problems else 0
 
 
 if __name__ == "__main__":
-    sys.exit(main(sys.argv[1:]))
+    sys.exit(main())

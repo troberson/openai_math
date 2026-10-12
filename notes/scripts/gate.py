@@ -110,7 +110,7 @@ ROWS = [
     ("verify_upstream_history.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_upstream_history.py -q", ("pages",), ()),
     ("verify_fleet_design.py", ("pages",), ()),
-    ("verify_fleet_design.py --mutant", ("pages",), ()),
+    ("run_tests.py notes/scripts/tests/test_fleet_design.py -q", ("pages",), ()),
     ("verify_faithfulness.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_faithfulness.py -q", ("pages",), ()),
     ("verify_page_sync.py --both", ("pages",), ()),

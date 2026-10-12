@@ -1,0 +1,152 @@
+"""The self-tests for `notes/scripts/verify_fleet_design.py`.
+
+The checker verifies `notes/fleet-design.md` against the fleet it describes. Anchors: every
+backticked `path:line` (or `path:a-b`) resolves against the file, a prefixed path under the repo
+root, a bare script name under `notes/scripts/`, and a span fits inside the file. Counts: every
+count phrase is re-derived by running the command the page names — the atomicity grep, the
+sync-pass grep, the tree-digest `git rev-parse`, the `--ignored=matching` check, the TSV byte sum,
+the three `du -sk` sizes, the gate row count, the three site counts, and the probe parse. Site
+anchors: the atomicity paragraph, the env bullet, the set-iteration bullet and the checker-section
+anchor list must each name exactly their measured `name:line` set — the count pass proves only the
+count and the anchor pass only that the line exists, so a site shifted to a neighbouring line
+passes both and only this comparison catches it. Tables: the purity table equals the probe parse,
+scanned inside the purity section, and each amplification row is present. Sync: the page bytes
+against `render_reports.py`'s render of it.
+
+This file injects sixteen faults, one per check form the page uses, and asserts each fires the pass
+that owns it: the atomicity count, the sync split, a deleted purity row, the purity heading count,
+the digest count, a probe figure, an anchor past the file's end, a notes-page anchor past the
+file's end, the TSV byte figure, and six site anchors shifted by one line — two in the bullet, two
+in the checker list, two in the paragraph. The last is a dated observation the writer deliberately
+leaves literal, so only the render diff can catch it.
+
+Every fault is built from a real count phrase, a real probe figure, a real anchor, a real table row
+and a real site anchor in the page as committed. Each test asserts the injected text differs from
+the page it started from, and each needle is the problem string the pass that owns that form prints
+— measured specific, each needle fires for its own fault and for no other. The render-diff line
+fires for every fault, so no needle is that line.
+
+The clean test asserts the passes are silent and pins the counts they report: 34 anchors, 20 count
+and probe phrases, 0 sync problems, 2 atomicity matches over 57 scripts and 17 catlib modules, 12
+sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 8 TSVs at 630,620 bytes, 631M
+`preprints/`, 1,740M `lean/OAI/`, 14M `notes/index/`, 75 gate rows, 2 env hits, 8 purity scripts,
+the sites at `atomic.py:42` / `atomic.py:84`, `render_reports.py:1147` / `render_reports.py:1367`
+and `build_catalog.py:128` / `build_index.py:583`, and the probe row the amplification table quotes
+at 151.32 s wall over 117,360 opens, 18,935 distinct paths and 98,425 repeats. A page with fewer
+anchors or phrases is a pass that stopped checking, not a pass that passed.
+
+The checker reads no argv and `check()` takes page text, so nothing here writes a page: the checker
+writes nothing and the tests write nothing. `population()` is under `functools.cache`, so the
+seventeen `check()` calls the row makes pay the `git`/`du`/script-tree walk once.
+
+The checker measures; this file injects. Run:
+  python3 notes/scripts/run_tests.py notes/scripts/tests/test_fleet_design.py -q
+"""
+import re
+
+import pytest
+
+pytestmark = pytest.mark.mutant
+
+# Faults in the page's own text, each keyed to the problem string the pass that owns it prints.
+MUTANTS = [
+    ("atomicity count shifted", "count phrase not in the page: **2 matches**",
+     lambda t: t.replace("**2 matches**", "**1 match**", 1)),
+    ("sync split altered", "count phrase not in the page: **12** are `verify_*`",
+     lambda t: t.replace("**12** are `verify_*`", "**11** are `verify_*`", 1)),
+    ("purity row deleted", "purity table rows",
+     lambda t: re.sub(r"^\|\s*`check_index_links\.py`.*\n", "", t, count=1, flags=re.MULTILINE)),
+    # The purity heading count is the probe parse, so a page that names one target it does not
+    # measure is caught by the count pass, not by the row scan.
+    ("purity population count altered",
+     "count phrase not in the page: ## The purity population (8 scripts, mode-verified)",
+     lambda t: t.replace("## The purity population (8 scripts",
+                         "## The purity population (7 scripts", 1)),
+    ("digest count widened", "count phrase not in the page: **5** digests",
+     lambda t: t.replace("**5** digests", "**6** digests", 1)),
+    ("probe figure altered", "probe figure not in the page: opens 117,360",
+     lambda t: t.replace("117,360", "117,361")),
+    # The site anchors moved when the writer took them over: the env pair is now 1147 / 1367, so
+    # each env fault shifts a site to its neighbour, and the anchor-outside fault uses a line the
+    # writer does not have (4,000 is inside a 3,545-line file, so the anchor pass reads it as valid).
+    ("anchor outside the file", "anchor line outside file: `render_reports.py:4000`",
+     lambda t: t.replace("render_reports.py:1147", "render_reports.py:4000", 1)),
+    # The page ships no notes-page anchor, so the resolver's notes/ branch is inert on a clean page.
+    # This fault injects one with a line past the file's end, which is the only way the branch is
+    # proven to fire.
+    ("notes-page anchor outside the file", "anchor line outside file: `notes/fleet-design.md:9999`",
+     lambda t: t.replace("`render_reports.py:1147`",
+                         "`render_reports.py:1147` `notes/fleet-design.md:9999`", 1)),
+    ("prose count in the size argument", "count phrase not in the page: **630,620** bytes",
+     lambda t: t.replace("**630,620** bytes", "**630,619** bytes", 1)),
+    # A measured site shifted to a line that exists in its file passes the anchor pass and the count
+    # pass, so only the site comparison can catch it. One fault per list the comparison reads.
+    ("set-site anchor shifted in the bullet",
+     "set-iteration bullet names ['build_catalog.py:128', 'build_index.py:584'",
+     lambda t: t.replace("build_index.py:583", "build_index.py:584", 1)),
+    ("set-site anchor shifted in the checker list", "site build_index.py:583 absent",
+     lambda t: t.replace("`build_index.py:583`, `render_reports.py:1147`",
+                         "`build_index.py:584`, `render_reports.py:1147`", 1)),
+    ("atomicity anchor shifted in the paragraph", "atomicity paragraph names ['atomic.py:43'",
+     lambda t: t.replace("catlib/atomic.py:42", "catlib/atomic.py:43", 1)),
+    ("atomicity anchor shifted in the checker list", "site atomic.py:42 absent",
+     lambda t: t.replace("`catlib/atomic.py:42`, `catlib/atomic.py:84`",
+                         "`catlib/atomic.py:43`, `catlib/atomic.py:84`", 1)),
+    ("env anchor shifted in the bullet", "env bullet names ['render_reports.py:1148'",
+     lambda t: t.replace("`render_reports.py:1147` and", "`render_reports.py:1148` and", 1)),
+    ("env anchor shifted in the checker list", "site render_reports.py:1147 absent",
+     lambda t: t.replace("`render_reports.py:1147`, `render_reports.py:2043`",
+                         "`render_reports.py:1148`, `render_reports.py:2043`", 1)),
+    # A dated observation the writer deliberately does not slot. The count pass, the anchor pass and
+    # the site pass all ignore it, so only the render diff can see the page is no longer the writer's
+    # bytes — which is the pass this page gained when it became report-fed.
+    ("dated observation altered in the page", "**10 of 15**",
+     lambda t: t.replace("**11 of 15**", "**10 of 15**", 1)),
+]
+
+
+@pytest.fixture(scope="module")
+def mod(load):
+    return load("verify_fleet_design")
+
+
+@pytest.fixture(scope="module")
+def text(mod):
+    return mod.PAGE.read_text(encoding="utf-8")
+
+
+def test_clean_page(mod, text):
+    """Every pass is silent, and the counts the passes report are pinned."""
+    problems, n_anchor, n_phrases, n_sync = mod.check(text)
+    assert not problems, problems[:3]
+    assert (n_anchor, n_phrases, n_sync) == (34, 20, 0), \
+        f"anchors {n_anchor}, phrases {n_phrases}, sync {n_sync}"
+    p = mod.population()
+    assert (p["atomic"], p["scripts"], p["modules"]) == (2, 57, 17), \
+        f"atomic {p['atomic']}, scripts {p['scripts']}, modules {p['modules']}"
+    assert (p["sync"], p["sync_verify"], p["sync_other"]) == (12, 12, 0), \
+        f"sync {p['sync']}, verify_ {p['sync_verify']}, not {p['sync_other']}"
+    assert (p["digests"], p["ignored"], p["tsv_count"], p["tsv_bytes"]) == (5, 1, 8, 630620), \
+        f"digests {p['digests']}, ignored {p['ignored']}, tsv {p['tsv_bytes']}"
+    assert (p["du"]["preprints"], p["du"]["oai"], p["du"]["index"]) == (631, 1740, 14), \
+        f"du {p['du']}"
+    assert (p["gate_rows"], p["env_hits"], len(p["purity"])) == (75, 2, 8), \
+        f"gate rows {p['gate_rows']}, env hits {p['env_hits']}, purity {len(p['purity'])}"
+    assert sorted(p["atomic_sites"]) == ["atomic.py:42", "atomic.py:84"], p["atomic_sites"]
+    assert sorted(p["env_sites"]) == ["render_reports.py:1147", "render_reports.py:1367"], \
+        p["env_sites"]
+    assert sorted(p["set_sites"]) == ["build_catalog.py:128", "build_index.py:583"], p["set_sites"]
+    r = p["rows"]["render_reports.py"]
+    assert (r["wall"], r["opens"], r["distinct"], r["repeats"]) == (151.32, 117360, 18935, 98425), \
+        f"probe row {r}"
+    assert p["cli_wall"] == 1.23, f"check_index_links wall {p['cli_wall']}"
+
+
+@pytest.mark.parametrize("label,needle,mut", MUTANTS)
+def test_injected_faults(mod, text, label, needle, mut):
+    """A fault in each of the check forms, injected in memory. The needle is the problem string the
+    pass that owns that form prints, so a pass that fires on something else is not a pass."""
+    cand = mut(text)
+    assert cand != text, f"{label}: mutation changed nothing"
+    found, _, _, _ = mod.check(cand)
+    assert any(needle in x for x in found), f"{label}: NOT caught by {needle!r} ({found[:2]})"
