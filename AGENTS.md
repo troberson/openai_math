@@ -423,16 +423,18 @@ lives in this file and nowhere else.
   unchanged by the flagged run. The read-only gate pool is the block that runs rows with this flag.
 - The whole-tree test is the gate list at `notes/scripts/gate.py`: **75** invocations — the **9**
   gated writers (`build_report_templates.py` and `measure_open_probe.py` are the writers it does not
-  run), the 24 gated report-only rows (including `check_summary_manuscripts.py` and
-  `locate_summary_quotes.py`, `check_index_links.py` plain and with `--mutant`, and the three
+  run), the 25 gated report-only rows (including `check_summary_manuscripts.py` and
+  `locate_summary_quotes.py`, `check_index_links.py` plain and with `--mutant`, and the four
   extracted self-tests rows, `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q`,
-  `run_tests.py notes/scripts/tests/test_conjecture_standing.py -q` and
-  `run_tests.py notes/scripts/tests/test_abstracts.py -q`;
-  `read_manuscript.py` is the one script it does not run), and **42**
-  checker invocations: **36** from the 18 checkers listed twice (plain and with `--mutant`) — the 18
+  `run_tests.py notes/scripts/tests/test_conjecture_standing.py -q`,
+  `run_tests.py notes/scripts/tests/test_abstracts.py -q` and
+  `run_tests.py notes/scripts/tests/test_named_conjectures.py -q`;
+  `read_manuscript.py` is the one script it does not run), and **41**
+  checker invocations: **34** from the 17 checkers listed twice (plain and with `--mutant`) — the 17
   table checkers plus `verify_script_ownership.py`, the census page's own checker — plus
   `verify_page_sync.py --both` (**1**), `verify_scope_exclusions.py` plain (**1**),
-  `verify_conjecture_standing.py` plain (**1**) and `verify_abstracts.py` plain (**1**), none of which
+  `verify_conjecture_standing.py` plain (**1**), `verify_abstracts.py` plain (**1**) and
+  `verify_named_conjectures.py` plain (**1**), none of which
   carries a `--mutant` branch any more.
   The list is one array, `ROWS`, of (spec, needs, writes) triples over the
   generated artifacts: a row starts as soon as every row that writes its `needs` has finished, each
@@ -687,17 +689,25 @@ lives in this file and nowhere else.
   writes `notes/tables/catalog.tsv`), tables (TSV and on-disk counts re-measured), and reports (the fast
   extractors run as subprocesses and each report line the page quotes must match). Six injected
   mutants plus a clean page, all detected. It writes nothing.
-- Check `notes/named-conjectures.md` with `python3 notes/scripts/verify_named_conjectures.py --mutant`
+- Check `notes/named-conjectures.md` with `python3 notes/scripts/verify_named_conjectures.py` and its
+  extracted self-tests with
+  `python3 notes/scripts/run_tests.py notes/scripts/tests/test_named_conjectures.py -q`
   before quoting any of its counts — it re-derives the population from `notes/tables/catalog.tsv` and
-  `triage_t0.py`, resolves every statement anchor against the manuscript LaTeX it cites, matches
+  the bucket rule in `catlib.ledger`, resolves every statement anchor against the manuscript LaTeX it
+  cites, matches
   every quotation verbatim, resolves every prose `path:line` citation (including the pathless ones
   and the ones relative to a manuscript directory named in the entry) and requires a citation that
   opens a statement environment to end on its `\end`, checks the entry set against the derived
   population, and re-measures every Measurements number. `### NNN - ` is a population entry and
   `#### NNN - ` a promoted one — a family the pass read while it was T0 that upstream has since
   formalized: both levels get the anchor and quotation checks, only `###` is compared with the
-  population, and each `####` family must be title-named, non-T0, and outside the population. Flags
-  twelve injected mutants. It writes nothing.
+  population, and each `####` family must be title-named, non-T0, and outside the population.
+  The test file injects the twelve defects (an inline quotation, a quotation wrapped across lines, an
+  invented quotation, an anchor start line shifted, an anchor path absent from disk, a Measurements
+  count, a population entry deleted, an entry for a family outside the population, a population entry
+  demoted to the promoted level, a verdict word, a citation truncated before its `\end`, a citation
+  whose path is not on disk) and asserts the pass that owns each one reports it. The checker measures,
+  the test file injects; the checker no longer carries its own `--mutant` branch. It writes nothing.
 - Check the three `notes/upstream_history/` pages with
   `python3 notes/scripts/verify_upstream_history.py --mutant` before quoting any of their counts —
   `path:line` and `path:a-b` anchors resolve, `…suffix` and bare `:N` anchors resolve against the

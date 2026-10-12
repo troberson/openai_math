@@ -15,9 +15,6 @@ entry — a family this pass read while it was T0 that upstream has since formal
 rule no longer includes it. Both levels get the anchor and quotation checks; only `###` is compared
 with the population, and each `####` family must be title-named, non-T0, and outside the population.
 
---mutant corrupts the page in memory (never on disk) in twelve ways and reports how many the checks
-catch.
-
 The anchor grammar is this page's own and stays local: statement anchors are bracketed and
 range-required, prose citations are backticked with an optional range. The shared
 `catlib.anchors.anchor_pattern` is backtick-delimited with no bracket requirement, so measured on
@@ -25,9 +22,13 @@ this page it reads 68 anchors where the page's grammar reads 59 -- it swallows t
 citations that `prose_citations` deliberately excludes. Same reason the local `norm` is an alias of
 `catlib.text.collapse_ws` rather than a second implementation.
 
+The self-tests live in `notes/scripts/tests/test_named_conjectures.py`: they corrupt the page in
+memory (never on disk) in the twelve ways the page records and assert the pass that owns each one
+reports it. This script measures; it no longer injects.
+
 Usage:
     python3 notes/scripts/verify_named_conjectures.py
-    python3 notes/scripts/verify_named_conjectures.py --mutant
+    python3 notes/scripts/run_tests.py notes/scripts/tests/test_named_conjectures.py -q
 """
 
 import os
@@ -371,117 +372,7 @@ def quote_blocks(lines):
     return out
 
 
-def mutants(page_lines):
-    """Twelve in-memory corruptions, one per check the page relies on."""
-    out = []
-    qb = quote_blocks(page_lines)
-
-    # 1. inline quotation: corrupt the opening line of a quotation
-    lines = list(page_lines)
-    a = qb[0][1]
-    lines[a] = lines[a].replace("\\begin{theorem", "\\begin{theorm", 1)
-    if lines[a] != page_lines[a]:
-        out.append(("inline quotation corrupted", lines))
-
-    # 2. quotation wrapped across lines: corrupt a continuation line of a multi-line quotation
-    lines = list(page_lines)
-    for _, a, b in qb:
-        if b - a < 2:
-            continue
-        mid = (a + b) // 2
-        lines[mid] = lines[mid].replace("the", "txe", 1)
-        if lines[mid] != page_lines[mid]:
-            out.append(("wrapped quotation corrupted", lines))
-            break
-
-    # 3. invented quotation
-    lines = list(page_lines)
-    lines[qb[0][1]] = '  "This sentence is not in the shipped manuscript."'
-    out.append(("invented quotation", lines))
-
-    # 4. anchor line range shifted
-    lines = list(page_lines)
-    for i, l in enumerate(lines):
-        m = ANCHOR.search(l)
-        if m:
-            lines[i] = l[:m.start()] + "[`%s:%d-%d`]" % (m.group(1), int(m.group(2)) + 1, int(m.group(3))) + l[m.end():]
-            out.append(("anchor start line shifted", lines))
-            break
-    # 5. anchor path that does not exist
-    lines = list(page_lines)
-    for i, l in enumerate(lines):
-        m = ANCHOR.search(l)
-        if m:
-            lines[i] = l[:m.start()] + "[`preprints/No-Such-Manuscript/build/main.tex:%s-%s`]" % (m.group(2), m.group(3)) + l[m.end():]
-            out.append(("anchor path absent", lines))
-            break
-    # 6. a Measurements count
-    lines = list(page_lines)
-    for i, l in enumerate(lines):
-        if l.startswith("- `pop_families`"):
-            lines[i] = "- `pop_families` 44"
-            out.append(("measurements count corrupted", lines))
-            break
-    # 7. an entry deleted
-    lines = list(page_lines)
-    for i, l in enumerate(lines):
-        if HEADING.match(l) and l.startswith("### 316"):
-            j = i + 1
-            while j < len(lines) and not lines[j].startswith("## "):
-                j += 1
-            del lines[i:j]
-            out.append(("population entry deleted", lines))
-            break
-    # 8. an entry for a family outside the population
-    lines = list(page_lines)
-    for i, l in enumerate(lines):
-        if l.startswith("## Discrepancies"):
-            lines[i:i] = ["### 001 - A family outside the population", "",
-                          "- **Reading**: `match`. Injected.", ""]
-            out.append(("entry outside the population added", lines))
-            break
-    # 9. a verdict word
-    lines = list(page_lines)
-    for i, l in enumerate(lines):
-        if l.strip().startswith("- **Reading**: `match`"):
-            lines[i] = l.replace("`match`", "`wider`", 1)
-            out.append(("verdict word changed", lines))
-            break
-    # 10. a prose citation truncated before its \end
-    lines = list(page_lines)
-    for _i, path, a, b in prose_citations(page_lines):
-        if path and b > a:
-            for j, l in enumerate(lines):
-                m = CITE.search(l)
-                if m and m.group(1) == path and int(m.group(3)) == b:
-                    lines[j] = l[:m.start()] + "`%s:%d-%d`" % (path, a, b - 1) + l[m.end():]
-                    out.append(("prose citation truncated", lines))
-                    break
-            if len(out) > 9:
-                break
-    # 11. a prose citation whose path is not on disk
-    lines = list(page_lines)
-    for _i, path, a, b in prose_citations(page_lines):
-        if path.startswith("build/"):
-            for j, l in enumerate(lines):
-                m = CITE.search(l)
-                if m and m.group(1) == path:
-                    lines[j] = l[:m.start()] + "`build/no-such-file.tex:%d-%d`" % (a, b) + l[m.end():]
-                    out.append(("prose citation path absent", lines))
-                    break
-            break
-    # 12. a population entry demoted to the promoted level
-    lines = list(page_lines)
-    for i, l in enumerate(lines):
-        if HEADING.match(l) and l.startswith("### 316"):
-            lines[i] = "####" + l[3:]
-            out.append(("population entry demoted to promoted", lines))
-            break
-    return out
-
-
 def main():
-    mutant = "--mutant" in sys.argv
     rows = ledger_rows()
     expected, pop = measure(rows)
     base = read_text(PAGE).split("\n")
@@ -511,21 +402,6 @@ def main():
           % (expected["priority_in_pop"], expected["priority_outside_pop"]))
     print("ledger check: mainres, chal and scope_note are 0 for all %d population families"
           % expected["pop_families"])
-
-    if mutant:
-        caught = 0
-        for label, lines in mutants(base):
-            inner: list[str] = []
-            a2, v2 = check_quotes(lines, inner)
-            c2 = check_citations(lines, inner)
-            check_entry_set(lines, pop, rows, inner)
-            check_measurements(lines, expected, a2, v2, c2, inner)
-            check_formalization_claim(lines, rows, inner)
-            status = "caught" if inner else "MISSED"
-            if inner:
-                caught += 1
-            print("mutant: %s -> %s (%s)" % (label, status, inner[0] if inner else "no problem reported"))
-        print("flags %d injected mutations" % caught)
 
     if problems:
         print("\n%d problems:" % len(problems))
