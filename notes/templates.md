@@ -5,7 +5,7 @@ template text plus the writer's registry). Lines and bytes are of the template f
 is a `{{ ` occurrence counted over the whole file. No `lake`, `lean`, `lake exe cache get`, or
 comparator run.
 
-**Headline, with the rule that yields it:** report tree: **19** templates, **7,176** lines, **482,875** bytes, **1,315** slots; index tree: **5** templates, **209** lines, **14,847** bytes, **103** slots; all **24** templates: **7,385** lines, **497,722** bytes, **1,418** slots.
+**Headline, with the rule that yields it:** report tree: **19** templates, **7,177** lines, **483,188** bytes, **1,315** slots; index tree: **5** templates, **209** lines, **14,847** bytes, **103** slots; all **24** templates: **7,386** lines, **498,035** bytes, **1,418** slots.
 
 ## The report tree
 
@@ -16,7 +16,7 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 
 | Template | Lines | Bytes | Slots | Page | Checker | Needles |
 |---|---|---|---|---|---|---|
-| `README.md.j2` | 723 | 62,671 | 71 | `notes/README.md` | `verify_script_ownership.py` | NOT DERIVED |
+| `README.md.j2` | 724 | 62,984 | 71 | `notes/README.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `abstracts.md.j2` | 406 | 32,501 | 42 | `notes/abstracts.md` | `verify_abstracts.py` | 45 |
 | `counterexample-crosscheck.md.j2` | 1,089 | 45,827 | 87 | `notes/counterexample-crosscheck.md` | `verify_counterexample_crosscheck.py` | 20 |
 | `dependency-drift.md.j2` | 229 | 11,534 | 95 | `notes/dependency-drift.md` | `verify_dependency_drift.py` | NOT DERIVED |
@@ -35,7 +35,7 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `templates.md.j2` | 107 | 5,047 | 45 | `notes/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `topics.md.j2` | 335 | 23,074 | 117 | `notes/topics.md` | `measure_topics.py` | NOT DERIVED |
 | `verification-dirs.md.j2` | 408 | 37,944 | 44 | `notes/verification-dirs.md` | `verify_verification_dirs.py` | 16 |
-| **report tree** | **19** | **7,176** | **482,875** | **1,315** | | |
+| **report tree** | **19** | **7,177** | **483,188** | **1,315** | | |
 
 ## The index tree
 

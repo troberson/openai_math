@@ -31,7 +31,8 @@ python3 notes/scripts/verify_subfindings.py  # checks notes/tables/subfindings.t
 python3 notes/scripts/run_tests.py notes/scripts/tests/test_subfindings.py -q  # the extracted self-tests: 7 injected row corruptions, each asserted against the pass that owns it
 python3 notes/scripts/extract_subfinding_pairs.py  # lays out the pairing population; report-only, writes nothing
 python3 notes/scripts/verify_subfinding_pairs.py --mutant  # checks notes/subfinding-pairs.md against overview.tex
-python3 notes/scripts/verify_conditional.py --mutant  # checks notes/conditional.md against the Lean source it cites
+python3 notes/scripts/verify_conditional.py  # checks notes/conditional.md against the Lean source it cites; report-only, writes nothing
+python3 notes/scripts/run_tests.py notes/scripts/tests/test_conditional.py -q  # the extracted self-tests: 6 injected faults (2 fenced-block faults, a dropped block anchor, a renamed anchor file, an altered prose quote, an altered inline citation), each asserted against the pass that owns it
 python3 notes/scripts/extract_verification_348.py  # measures the two family-348 verification bundles; report-only, writes nothing
 python3 notes/scripts/extract_verification_dirs.py  # the 30 bundles, each one's own entry point, and the README sections that name them; report-only
 python3 notes/scripts/verify_verification_dirs.py --mutant  # checks both sections of notes/verification-dirs.md against the bundle files
