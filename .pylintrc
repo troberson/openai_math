@@ -4,8 +4,8 @@
 # Gate command: `.venv/bin/pylint notes/scripts/` — it must exit 0.
 # Every rule below that is disabled carries the count it was measured at and the reason the finding
 # is not a defect. The counts are re-derivable: `PYTHONPATH=notes/scripts .venv/bin/pylint
-# --disable=all --enable=<code> notes/scripts/` prints them. Measured 2026-10-12 over the 100-file
-# tree: 2,050 findings. Pylint's default message set is enabled, so what follows is a disable list,
+# --disable=all --enable=<code> notes/scripts/` prints them. Measured 2026-10-12 over the 101-file
+# tree: 2,060 findings. Pylint's default message set is enabled, so what follows is a disable list,
 # and the default set itself reports 0 — that is what the gate command asserts.
 # Codes, not symbolic names: pylint 4.1.2 rejects several of the older symbolic spellings with
 # W0012 bad-option-value.
@@ -15,10 +15,10 @@ score = no
 
 [MESSAGES CONTROL]
 disable =
-    # 873 sites. Report lines embed manuscript paths and verbatim quotations, which are long by
+    # 879 sites. Report lines embed manuscript paths and verbatim quotations, which are long by
     # construction and must not be wrapped.
     C0301,
-    # 355 sites (249 in the script tree, 106 in the extracted self-tests). A report function is a
+    # 358 sites (249 in the script tree, 109 in the extracted self-tests). A report function is a
     # one-purpose helper whose contract is the report line it prints; the module docstring states
     # what the script measures.
     C0116,
@@ -41,7 +41,7 @@ disable =
     # unimportable from inside a render. Python resolves the graph because the import is deferred
     # to a point where every module is already loaded.
     R0401,
-    # 105 / 40 / 39 / 1 / 2 / 2 / 10 / 10 sites. A generator that reconciles a corpus is long and
+    # 104 / 40 / 39 / 1 / 2 / 2 / 10 / 10 sites. A generator that reconciles a corpus is long and
     # wide by design; the metrics describe the report, not a defect.
     R0914,
     R0912,
@@ -55,21 +55,22 @@ disable =
     # notes/scripts/tests/test_faithfulness.py, whose repeated mutate-then-assert shape is
     # the point of one test per defect. The checker-to-checker duplication (the anchor/fence loops)
     # and extract-to-verify, which math-lon.2 removes when the checkers move onto the package,
-    # measured 0 in the 100-file tree.
+    # measured 0 in the 101-file tree.
     R0801,
     # 3 sites. The report accumulators are module-level by design.
     W0603,
-    # 32 / 338 sites. A checker reuses the ledger's own names (rows, fams) inside a function that
+    # 32 / 340 sites. A checker reuses the ledger's own names (rows, fams) inside a function that
     # reads the same population; the rest are the pytest fixture pattern, where a test's parameter
     # name is the fixture's name by design and pytest injects it, so the shadow is the contract.
     # The 32 sit in the script tree (render_reports 12, catlib/preprints 6,
     # verify_t0_chains 5 and verify_named_results 5 — the check() wrapper that reads the population
     # the passes take as an argument — extract_named_results 2, verify_sources 1, catlib/render 1);
-    # the 338 are the twenty-three extracted self-test files (named_conjectures 80, abstracts 66,
+    # the 340 are the twenty-four extracted self-test files (named_conjectures 80, abstracts 66,
     # scope_exclusions 38, subfindings 27, conjecture_standing 19, summaries 14, script_ownership 12,
     # cache_promotion 10, upstream_history 8, proof_density 7, index_links 6, named_results 5,
     # verification_dirs 5, sources 5, index_design 5, fleet_design 5, findings 5, faithfulness 5,
-    # counterexample_crosscheck 5, conditional 5, citations 2, t0_chains 2, dependency_drift 2).
+    # counterexample_crosscheck 5, conditional 5, citations 2, t0_chains 2, dependency_drift 2,
+    # subfinding_pairs 2).
     W0621,
     # 19 sites, all of them comprehensions that iterate a dict's keys and index it
     # (`sum(1 for f in fams if ... fams[f]["abstract"] ...)`). The key is the family number the
