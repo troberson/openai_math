@@ -21,7 +21,8 @@ python3 notes/scripts/read_manuscript.py <preprints-dir>  # prints a manuscript'
 python3 notes/scripts/verify_conjecture_standing.py  # checks notes/tables/conjecture-standing.tsv against the ledger and overview.tex
 python3 notes/scripts/run_tests.py notes/scripts/tests/test_conjecture_standing.py -q  # the extracted self-tests: 6 injected defects in table text, each asserted against the pass that owns it
 python3 notes/scripts/extract_formalization_deps.py  # writes notes/tables/formalization-deps.tsv and prints the reconciliation
-python3 notes/scripts/verify_dependency_drift.py --mutant  # checks notes/dependency-drift.md: anchors, blockquotes, code spans, the patch table, every count
+python3 notes/scripts/verify_dependency_drift.py  # checks notes/dependency-drift.md: anchors, blockquotes, code spans, the patch table, every count
+python3 notes/scripts/run_tests.py notes/scripts/tests/test_dependency_drift.py -q  # the extracted self-tests: 10 injected faults (a blockquote paraphrase, an anchor out of range, a table row count, a name dropped from the zero-import list, a patch-line total, a phase count, an ordering-violation count, a code span paraphrase, a table row dropped, and a prose row count outside the phrase list), each asserted against the pass that owns it
 python3 notes/scripts/extract_links.py      # writes notes/tables/links.tsv and prints the per-edge report
 python3 notes/scripts/extract_scope_notes.py  # re-measures the 242 `## Scope` sections; report-only, writes nothing
 python3 notes/scripts/verify_scope_exclusions.py  # checks notes/scope-exclusions.md against lean/docs/
@@ -318,8 +319,10 @@ array (**11** libraries, 6,658 lines) being exactly the 11 `lana-agents` URLs an
 **2,575** for libraries with any direct import versus **408** for libraries with none. The yaml
 ordering claim is reported as a claim with its **5** violations, and transitive imports are marked
 unmeasurable without `lake` rather than estimated. **No build was attempted** — pins are declared pins
-and patches are asserted-applicable, not verified. `notes/scripts/verify_dependency_drift.py --mutant`
-re-checks all 52 anchors, 7 blockquotes, 9 code spans, the 23-row patch table, and every count.
+and patches are asserted-applicable, not verified. `notes/scripts/verify_dependency_drift.py`
+re-checks all 52 anchors, 7 blockquotes, 9 code spans, the 23-row patch table, and every count, and the
+10 injected mutants live in `notes/scripts/tests/test_dependency_drift.py`, run by the `run_tests.py`
+gate row.
 
 **`notes/tables/links.tsv` is the typed-edge inventory: 22 rows, 7 fields**, every count computed by one
 command in 20 seconds. It is the input the index-schema decision needs, so the rows are edge *types*,
