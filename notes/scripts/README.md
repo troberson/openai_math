@@ -88,9 +88,9 @@ report-fed page skeletons in `notes/templates/report/*.j2`);
 `extract_links.py`, `extract_subfindings.py`, `check_index_links.py`, `measure_names.py` and
 `measure_topics.py` all import `build_catalog`;
 `measure_index_sizes.py` imports `check_index_links` inside its link-check function
-(`measure_index_sizes.py:118`), not at module scope. Counted over `notes/scripts/*.py` as a script
+(`measure_index_sizes.py:120`), not at module scope. Counted over `notes/scripts/*.py` as a script
 that imports the module (`import X` or `from X`, the module itself excluded), `build_catalog.py` has
-**12** importers, `build_sources.py` **2** (`verify_sources.py` and `render_reports.py:52`, which
+**12** importers, `build_sources.py` **2** (`verify_sources.py` and `render_reports.py:50`, which
 imports it at module scope; `read_manuscript.py` names it in a docstring, not in an import) and
 `verify_summaries.py` **0** — `math-6s7.1` moved the page parse to `catlib/summaries.py`, so
 `locate_summary_quotes.py`, `refresh_summary_line_counts.py` and `verify_scope_exclusions.py` import
@@ -300,7 +300,7 @@ moved off `verify_summaries.py` onto `catlib/summaries.py` by `math-6s7.1` — a
 library is the shape that port broke, and `verify_summaries.py` now has **0** importers. `math-lon.2.5` ported the last two checkers,
 `verify_upstream_history.py` and `verify_summaries.py`, and the **22** `duplicate-code` findings
 did not move (measured 2026-10-09 with `--enable=R0801` over 55 files, every cluster reported against
-`catlib/anchors.py`; see `notes/linting.md`). What deliberately stays outside the package is a **read
+`catlib/anchors.py`). What deliberately stays outside the package is a **read
 shape**, not a parse: `verify_upstream_history.py` reads `lean/formalization.yaml` and
 `notes/tables/catalog.tsv` from a **revision** through `git show <rev>:`, so the package gained
 `parse_yaml_text` / `parse_overview_text` / `read_rows_from_text` — text-level cores its disk-level
@@ -336,8 +336,8 @@ imports must import the package only inside a function — `measure_templates.py
 already does.
 
 The package is not in the census below: the script population is `notes/scripts/*.py`, and
-`catlib/` is 15 modules under that directory, counted as **66** source files by the lint gate in
-`notes/linting.md`.
+`catlib/` is 17 modules under that directory, so the lint gate checks **75** source files
+(`.venv/bin/mypy notes/scripts/` prints the count it checked).
 
 ## The file census
 
@@ -349,8 +349,8 @@ The package is not in the census below: the script population is `notes/scripts/
 | `notes/upstream_history/` | **3** | hand-written — one page per upstream merge, moved from the repository root on 2026-10-10 |
 | `notes/probe/` | **5** | the audit-hook probe records the fleet-design page quotes: the 2026-10-11 writers/checkers pair `measure_open_probe.py` writes and the checker parses, the 2026-10-11 `render_reports.py` after-record that proves the repeat count fell, and the 2026-10-10 pair the page's cold-cache figures come from |
 | `notes/tables/*.tsv` | **8** | **6** generated, **2** hand-authored |
-| `notes/*.md` | **30** | hand-written — **23** with a checker, **7** without |
-| `notes/` total, scripts excluded | **1,139** | — |
+| `notes/*.md` | **29** | hand-written — **23** with a checker, **6** without |
+| `notes/` total, scripts excluded | **1,138** | — |
 
 The generated TSVs are the six writer targets. The two hand-authored tables are:
 
@@ -359,12 +359,16 @@ The generated TSVs are the six writer targets. The two hand-authored tables are:
 | `notes/tables/topics.tsv` | The curated topic vocabulary. `measure_topics.py --check` re-measures its 92 rows and exits 1 when a recorded count drifts; `build_index.py` reads it and renders `notes/index/topics-rendered.tsv`. A generated file inside `notes/index/` is overwritten by the next render, which is why the vocabulary lives outside that tree. |
 | `notes/tables/conjecture-standing.tsv` | The training-data prior. Its `standing_prior_2025` column is the assistant's memory at an early-2025 cutoff, self-rated by `prior_confidence`; no script can derive a memory, and `verify_conjecture_standing.py` checks the rows against the ledger and `overview.tex` rather than regenerating them. |
 
-The 7 pages with no checker are `notes/README.md`, `notes/conjecture-standing.md`,
-`notes/counterexample-tag.md`, `notes/linting.md`, `notes/resolution-tag.md`,
-`notes/summaries-workflow.md` and `notes/t0-triage.md`. Their counts are reproduced by the report-only
-scripts above; nothing verifies them against the page. `notes/linting.md` is the one page in that set
-whose counts come from tools outside this tree — the three linter commands it names, run from the
-untracked `.venv/`. The five pages `notes/index-links.md`, `notes/links.md`, `notes/names.md`,
+The 6 pages with no checker are `notes/README.md`, `notes/conjecture-standing.md`,
+`notes/counterexample-tag.md`, `notes/resolution-tag.md`, `notes/summaries-workflow.md` and
+`notes/t0-triage.md`. Their counts are reproduced by the report-only
+scripts above; nothing verifies them against the page. `notes/linting.md` was the seventh until
+2026-10-12: it was the one page in that set whose counts came from tools outside this tree — the three
+linter commands, run from the untracked `.venv/` — and because every count it carried is re-derivable
+by running a rule alone, and every exemption reason is already a comment in `ruff.toml`, `mypy.ini`
+and `.pylintrc`, the page was a manual transcription of what the linters print. It is deleted; the
+annotation backlog its strict probe measured is queue state, so it moves to bd.
+The five pages `notes/index-links.md`, `notes/links.md`, `notes/names.md`,
 `notes/proof-density.md` and `notes/topics.md` were in this set until `math-o3a.3`: their render diff
 was carried by a report-only script that read a page it did not verify, and `verify_page_sync.py`
 owns that check now.

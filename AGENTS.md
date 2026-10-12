@@ -405,8 +405,10 @@ lives in this file and nowhere else.
   each tool's exit code — all three exit 0. `pylint` needs `PYTHONPATH=notes/scripts`, which the
   driver sets; without it pylint reports `E0401: Unable to import 'render_reports'`. The venv is
   `.venv/` (uv-managed, untracked, CPython 3.12.13) and the configs are `ruff.toml`, `mypy.ini` and
-  `.pylintrc` at the repository root; `notes/linting.md` records the tool versions, every exemption
-  with the count it covers, and the mypy strict-probe backlog. A linter autofix is a corpus-wide
+  `.pylintrc` at the repository root; each carries its exemptions as comments with the dated count and
+  the reason, and every count is re-derivable by running the rule alone (`ruff check --select X`,
+  `pylint --enable=X --disable=all`, `mypy --check-untyped-defs`). The strict probe's findings are the
+  annotation backlog — queue state, tracked in bd, not a page. A linter autofix is a corpus-wide
   edit: prove it with the gate, whose promote-and-verify assertion compares the cached bytes with the
   promoted bytes for every tracked artifact, not with the linter's own exit code.
 - Project skills live in `.qwen/skills/` — `proof-triage` routes ledger work,
