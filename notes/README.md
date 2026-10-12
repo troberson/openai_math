@@ -9,7 +9,7 @@ Regenerate the ledger (a few seconds, no Lean):
 python3 notes/scripts/build_catalog.py      # writes notes/tables/catalog.tsv and prints the report
 python3 notes/scripts/triage_t0.py          # buckets the 130 T0 families by claim shape
 python3 notes/scripts/verify_summaries.py   # checks every citation in notes/summaries/ against the files it names
-python3 notes/scripts/verify_summaries.py --mutant  # same, plus the injected-fault self-test
+python3 notes/scripts/run_tests.py notes/scripts/tests/test_summaries.py -q  # the extracted self-tests: 6 injected page corruptions, each asserted against the pass that owns it
 python3 notes/scripts/check_summary_manuscripts.py  # which manuscripts each summaries page reads, and whether the release still names them; report-only
 python3 notes/scripts/locate_summary_quotes.py <page.md> [page.md ...]  # where a quotation's text actually sits, when verify_summaries.py reports a miss; report-only
 python3 notes/scripts/refresh_summary_line_counts.py  # rewrites the Lines column of the Sources table in every summaries page
