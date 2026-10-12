@@ -5,7 +5,7 @@ template text plus the writer's registry). Lines and bytes are of the template f
 is a `{{ ` occurrence counted over the whole file. No `lake`, `lean`, `lake exe cache get`, or
 comparator run.
 
-**Headline, with the rule that yields it:** report tree: **19** templates, **7,184** lines, **486,823** bytes, **1,314** slots; index tree: **5** templates, **209** lines, **14,847** bytes, **103** slots; all **24** templates: **7,393** lines, **501,670** bytes, **1,417** slots.
+**Headline, with the rule that yields it:** report tree: **19** templates, **7,186** lines, **487,577** bytes, **1,314** slots; index tree: **5** templates, **209** lines, **14,847** bytes, **103** slots; all **24** templates: **7,395** lines, **502,424** bytes, **1,417** slots.
 
 ## The report tree
 
@@ -16,7 +16,7 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 
 | Template | Lines | Bytes | Slots | Page | Checker | Needles |
 |---|---|---|---|---|---|---|
-| `README.md.j2` | 731 | 66,642 | 71 | `notes/README.md` | `verify_script_ownership.py` | NOT DERIVED |
+| `README.md.j2` | 732 | 67,319 | 71 | `notes/README.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `abstracts.md.j2` | 406 | 32,501 | 42 | `notes/abstracts.md` | `verify_abstracts.py` | 45 |
 | `counterexample-crosscheck.md.j2` | 1,089 | 45,827 | 87 | `notes/counterexample-crosscheck.md` | `verify_counterexample_crosscheck.py` | 20 |
 | `dependency-drift.md.j2` | 229 | 11,534 | 95 | `notes/dependency-drift.md` | `verify_dependency_drift.py` | NOT DERIVED |
@@ -25,7 +25,7 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `index-design.md.j2` | 231 | 13,284 | 99 | `notes/index-design.md` | `verify_index_design.py` | 82 |
 | `index-links.md.j2` | 215 | 12,823 | 81 | `notes/index-links.md` | `check_index_links.py` | NOT DERIVED |
 | `links.md.j2` | 224 | 12,298 | 110 | `notes/links.md` | `extract_links.py` | NOT DERIVED |
-| `named-results.md.j2` | 367 | 25,210 | 83 | `notes/named-results.md` | `verify_named_results.py` | 65 |
+| `named-results.md.j2` | 368 | 25,287 | 83 | `notes/named-results.md` | `verify_named_results.py` | 65 |
 | `names.md.j2` | 277 | 13,865 | 130 | `notes/names.md` | `measure_names.py` | NOT DERIVED |
 | `proof-density.md.j2` | 122 | 8,637 | 66 | `notes/proof-density.md` | `measure_proof_density.py` | NOT DERIVED |
 | `scope-exclusions.md.j2` | 328 | 26,780 | 19 | `notes/scope-exclusions.md` | `verify_scope_exclusions.py` | NOT DERIVED |
@@ -35,7 +35,7 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `templates.md.j2` | 107 | 5,047 | 45 | `notes/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `topics.md.j2` | 335 | 23,074 | 117 | `notes/topics.md` | `measure_topics.py` | NOT DERIVED |
 | `verification-dirs.md.j2` | 408 | 37,944 | 44 | `notes/verification-dirs.md` | `verify_verification_dirs.py` | 16 |
-| **report tree** | **19** | **7,184** | **486,823** | **1,314** | | |
+| **report tree** | **19** | **7,186** | **487,577** | **1,314** | | |
 
 ## The index tree
 
