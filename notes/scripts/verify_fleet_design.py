@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Check `notes/fleet-design.md` — the four-layer design and its measured inventory.
 
-Report-only; writes nothing. Five passes:
+Report-only; writes nothing. Six passes:
 
 1. **Anchors** — every backticked `path:line` (or `path:a-b`) in the page resolves against the file,
    a prefixed path under the repo root, a bare script name under `notes/scripts/`, and a span fits
@@ -14,10 +14,14 @@ Report-only; writes nothing. Five passes:
    grep, the sync-pass grep, the tree-digest `git rev-parse`, the `--ignored=matching` check, the TSV
    byte sum, the three `du -sk` sizes, the gate row count, the two set-site lines, the env-hit count,
    and the probe parse.
-4. **Tables** — the purity table equals the probe parse, scanned inside the purity section (the
+4. **Set sites** — the set-iteration bullet's anchors must equal the measured `name:line` set, and the
+   checker-section anchor list must carry every measured site. The count pass proves only the count: a
+   set-site anchor shifted to a line that exists in its file passes the anchor pass, so this pass is
+   what makes the page's set-site anchors mean the measured lines.
+5. **Tables** — the purity table equals the probe parse, scanned inside the purity section (the
    amplification table names four of the same scripts, so a page-wide row scan lets a deleted purity row
    pass), and each amplification row is present. The options table is prose and is not re-derived.
-5. **Mutants** — 9 injected corruptions, each asserted against the pass it targets.
+6. **Mutants** — 11 injected corruptions, each asserted against the pass it targets.
 
 Volatile measurements (the `free -h` available line, the wall times, the cold/warm swing) are dated
 observations in the page and are **not** re-derived: a checker that re-measures them fails the day the
@@ -211,6 +215,8 @@ ANCHOR = re.compile(r"`(notes/[\w./+-]+\.(?:md|tsv)|notes/scripts/[\w.]+\.py"
                     r"|notes/scripts/catlib/[\w.]+\.py|catlib/[\w.]+\.py|[\w.]+\.py)"
                     r":(\d+)(?:-(\d+))?`")
 BLOCK = re.compile(r"```[a-z]*\n(.*?)```", re.DOTALL)
+SET_BULLET = re.compile(r"- \*\*Set iteration order:\*\*.*?(?=\n- )", re.DOTALL)
+FOUR = re.compile(r"the four named here\s*\((.*?)\)", re.DOTALL)
 
 
 def anchor_path(rel: str) -> Path:
@@ -303,6 +309,26 @@ def table_problems(page: str, pop: Pop) -> list[str]:
     return out
 
 
+def set_site_problems(page: str, pop: Pop) -> list[str]:
+    out: list[str] = []
+    sec = SET_BULLET.search(page)
+    if not sec:
+        return ["set-iteration bullet absent"]
+    named = sorted(f"{m.group(1)}:{m.group(2)}" for m in ANCHOR.finditer(sec.group(0)))
+    want = sorted(pop["set_sites"])
+    if named != want:
+        out.append(f"set-iteration bullet names {named}, measured {want}")
+    four = FOUR.search(page)
+    if not four:
+        out.append("checker-section anchor list absent")
+    else:
+        listed = {f"{m.group(1)}:{m.group(2)}" for m in ANCHOR.finditer(four.group(1))}
+        for site in want:
+            if site not in listed:
+                out.append(f"set site {site} absent from the checker-section anchor list")
+    return out
+
+
 MUTANTS = [
     ("atomicity count shifted", lambda p: p.replace("**2 matches**", "**1 match**", 1)),
     ("sync split altered", lambda p: p.replace("**12** are `verify_*`", "**11** are `verify_*`", 1)),
@@ -320,6 +346,13 @@ MUTANTS = [
     ("notes-page anchor outside the file",
      lambda p: p.replace("`render_reports.py:1148`", "`render_reports.py:1148` `notes/fleet-design.md:9999`", 1)),
     ("prose count in the size argument", lambda p: p.replace("**630,620** bytes", "**630,619** bytes", 1)),
+    # A set-site anchor shifted to a line that exists in its file passes the anchor pass and the count
+    # pass, so only the set-site comparison can catch it. One mutant per list the comparison reads.
+    ("set-site anchor shifted in the bullet",
+     lambda p: p.replace("build_index.py:583", "build_index.py:584", 1)),
+    ("set-site anchor shifted in the checker list",
+     lambda p: p.replace("`build_index.py:583`, `render_reports.py:1148`",
+                         "`build_index.py:584`, `render_reports.py:1148`", 1)),
 ]
 
 
@@ -331,7 +364,8 @@ def mutants(page: str) -> str:
         if mutated == page:
             undetected.append(f"{name}: target not in the page")
             continue
-        probs = count_problems(mutated, pop) + table_problems(mutated, pop) + anchor_problems(mutated)
+        probs = count_problems(mutated, pop) + table_problems(mutated, pop) \
+            + anchor_problems(mutated) + set_site_problems(mutated, pop)
         if probs:
             caught += 1
         else:
@@ -358,7 +392,7 @@ def main(argv: list[str]) -> int:
     page = page_path.read_text(encoding="utf-8")
     pop = population()
     problems = anchor_problems(page) + block_problems(page) + count_problems(page, pop) \
-        + table_problems(page, pop)
+        + table_problems(page, pop) + set_site_problems(page, pop)
     print("=== notes/fleet-design.md check ===")
     print(f"atomicity grep: {pop['atomic']} match{'es' if pop['atomic'] != 1 else ''} "
           f"over {pop['scripts']} scripts "
