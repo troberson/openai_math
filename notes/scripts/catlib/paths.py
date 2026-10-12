@@ -38,6 +38,7 @@ ABSTRACTS_TSV = TABLES / "abstracts.tsv"
 DEPS_TSV = TABLES / "formalization-deps.tsv"
 STANDING_TSV = TABLES / "conjecture-standing.tsv"
 TOPICS_TSV = TABLES / "topics.tsv"
+QUOTES_TSV = TABLES / "quotes.tsv"
 INDEX_DIR = NOTES / "index"
 SUMMARIES_DIR = NOTES / "summaries"
 

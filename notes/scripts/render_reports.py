@@ -62,7 +62,7 @@ import measure_names as MN
 import measure_proof_density as PD
 import measure_templates as MTPL
 import measure_topics as MT
-from catlib import bib, ledger, overview, preprints, records, tsv
+from catlib import bib, ledger, overview, preprints, quotes as Q, records, tsv
 from catlib import yaml as Y
 from catlib.atomic import Staging
 from catlib.paths import (
@@ -72,7 +72,9 @@ from catlib.paths import (
     LAKE_MANIFEST,
     LAKEFILE,
     LEDGER_TSV,
+    OVERVIEW_TEX,
     PREPRINTS,
+    QUOTES_TSV,
     ROOT,
     SUBFINDINGS_TSV,
     owner,
@@ -2825,6 +2827,45 @@ SP_TARGET = re.compile(r"-> \"[^\"]*\" \(`overview\.tex:\d+`\) \[\d{3}:\d+\]$")
 SP_FP_SENT = re.compile(r"Probe-vocabulary false positives: ([0-9, ]+)\.")
 
 
+def sp_pair_lines() -> list[tuple[str, str]]:
+    """Every pair line the quote-spec table resolves to, as (label, line text), in table order.
+
+    `notes/tables/quotes.tsv` is seeded in page order, so a clause row is followed by its title row.
+    The resolver returns raw source bytes, which is what this page quotes verbatim, so the line the
+    writer builds is the page's line byte for byte. A clause with no `seq` is a clause the page records
+    as unmatched — it has no title row after it, and the page writes `-> unmatched` where the target
+    would be. A spec that does not resolve raises: a page whose quote moved must fail the writer, not
+    render a quote the source does not carry.
+    """
+    lines = OVERVIEW_TEX.read_text(encoding="utf-8").splitlines()
+    out: list[tuple[str, str]] = []
+    # A clause row is always followed by its title row, so the pending clause is never missing when a
+    # title arrives. The empty head is the "nothing pending" state, which keeps the value a plain
+    # tuple — pylint reports E0633 on unpacking an Optional.
+    pending = ("", 0, "")
+    unmatched: dict[str, int] = {}
+    for r in tsv.read_rows(QUOTES_TSV):
+        fam, seq, which = r["fam"], r["seq"], r["which"]
+        start, end = int(r["start"]), int(r["end"])
+        span = Q.resolve(lines, start, end, r["head"], r["tail"] or None)
+        if span is None:
+            raise ValueError(f"quote spec {fam}:{seq} {which} does not resolve")
+        if which == "title":
+            head, cstart, cwhich = pending
+            out.append((f"sp_line_{fam}_{seq}",
+                        f'- {cwhich}: "{head}" (`overview.tex:{cstart}`) '
+                        f'-> "{span}" (`overview.tex:{start}`) [{fam}:{seq}]'))
+            pending = ("", 0, "")
+        elif seq:
+            pending = (span, start, which)
+        else:
+            k = unmatched.get(fam, 0)
+            unmatched[fam] = k + 1
+            out.append((f"sp_line_{fam}_u{k}",
+                        f'- {which}: "{span}" (`overview.tex:{start}`) -> unmatched'))
+    return out
+
+
 def subfinding_pairs_population() -> dict[str, Any]:
     """The measured population, and the reading record exactly as the page carries it."""
     v = ep.population()
@@ -2852,7 +2893,7 @@ def subfinding_pairs_population() -> dict[str, Any]:
         raise ValueError("no probe false-positive sentence on the page")
     fp = [x.strip() for x in m.group(1).split(",") if x.strip()]
     rows = tsv.read_rows(SUBFINDINGS_TSV)
-    return {"v": v, "blocks": blocks, "fp": fp,
+    return {"v": v, "blocks": blocks, "fp": fp, "pair_lines": sp_pair_lines(),
             "comparator_rows": sum(1 for r in rows if r["kind"] == "comparator-link"),
             "manuscript_rows": sum(1 for r in rows if r["kind"] == "manuscript")}
 
@@ -2922,6 +2963,8 @@ def subfinding_pairs_full(p: dict[str, Any]) -> dict[str, str]:
     out["sp_rows"] = (f"The {p['comparator_rows']} comparator-link rows in `notes/tables/subfindings.tsv` "
                       f"are not paired; only the {p['manuscript_rows']} manuscript rows")
     out["sp_rows2"] = f"only {mss} of those are in this population"
+    for label, text in p["pair_lines"]:
+        out[label] = text
     return out
 
 
