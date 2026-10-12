@@ -79,7 +79,7 @@ python3 notes/scripts/verify_fleet_design.py --mutant  # self-test: 16 injected 
 python3 notes/scripts/verify_cache_promotion.py  # checks catlib/promote.py: the registry against the writers table, the L1 lists against the audit-hook records, and the cached bytes against every tracked artifact under its key; report-only, writes nothing
 python3 notes/scripts/verify_cache_promotion.py --mutant  # self-test: 8 injected faults (corrupted cache entry, deleted cache entry, removed L1 entry, self-output in L1, dropped writer, altered page list, altered tracked page, shifted args) must all be caught
 python3 notes/scripts/verify_script_ownership.py  # checks notes/scripts/README.md: the derived writer set, the file census, naming coverage, shared basenames; report-only, writes nothing
-python3 notes/scripts/verify_script_ownership.py --mutant  # self-test: 18 injected faults (one per check form) must each be caught by the check it targets
+python3 notes/scripts/run_tests.py notes/scripts/tests/test_script_ownership.py -q  # the extracted self-tests: 18 injected faults (11 in the census page, 1 prose count in notes/README.md, 4 in notes/templates.md, 2 writer-source write retargets), each asserted against the check it targets
 python3 notes/scripts/verify_page_sync.py --both  # checks the render diff for notes/links.md, notes/names.md, notes/topics.md, notes/proof-density.md, notes/index-links.md — the page's bytes against what render_reports.py renders, and self-tests it with 5 injected prose edits, one per page, applied in memory; both passes run in one process so the corpus walk is paid once; report-only, writes nothing
 ```
 

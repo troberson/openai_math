@@ -423,21 +423,23 @@ lives in this file and nowhere else.
   unchanged by the flagged run. The read-only gate pool is the block that runs rows with this flag.
 - The whole-tree test is the gate list at `notes/scripts/gate.py`: **75** invocations — the **9**
   gated writers (`build_report_templates.py` and `measure_open_probe.py` are the writers it does not
-  run), the 27 gated report-only rows (including `check_summary_manuscripts.py` and
+  run), the 28 gated report-only rows (including `check_summary_manuscripts.py` and
   `locate_summary_quotes.py`, `check_index_links.py` plain and its extracted self-tests row, and the
-  seven extracted self-tests rows, `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q`,
+  eight extracted self-tests rows, `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q`,
   `run_tests.py notes/scripts/tests/test_conjecture_standing.py -q`,
   `run_tests.py notes/scripts/tests/test_abstracts.py -q`,
   `run_tests.py notes/scripts/tests/test_named_conjectures.py -q`,
   `run_tests.py notes/scripts/tests/test_subfindings.py -q`,
-  `run_tests.py notes/scripts/tests/test_summaries.py -q` and
-  `run_tests.py notes/scripts/tests/test_index_links.py -q`;
-  `read_manuscript.py` is the one script it does not run), and **39**
+  `run_tests.py notes/scripts/tests/test_summaries.py -q`,
+  `run_tests.py notes/scripts/tests/test_index_links.py -q` and
+  `run_tests.py notes/scripts/tests/test_script_ownership.py -q`;
+  `read_manuscript.py` is the one script it does not run), and **38**
   checker invocations: **30** from the 15 checkers listed twice (plain and with `--mutant`) — the 15
-  table checkers plus `verify_script_ownership.py`, the census page's own checker — plus
-  `verify_page_sync.py --both` (**1**), `verify_scope_exclusions.py` plain (**1**),
-  `verify_conjecture_standing.py` plain (**1**), `verify_abstracts.py` plain (**1**),
-  `verify_named_conjectures.py` plain (**1**), `verify_subfindings.py` plain (**1**) and
+  table checkers — plus
+  `verify_page_sync.py --both` (**1**), `verify_script_ownership.py` plain (**1**),
+  `verify_scope_exclusions.py` plain (**1**), `verify_conjecture_standing.py` plain (**1**),
+  `verify_abstracts.py` plain (**1**), `verify_named_conjectures.py` plain (**1**),
+  `verify_subfindings.py` plain (**1**) and
   `verify_summaries.py` plain (**1**), none of which
   carries a `--mutant` branch any more.
   The list is one array, `ROWS`, of (spec, needs, writes) triples over the
@@ -806,7 +808,7 @@ lives in this file and nowhere else.
   assignments, and the per-family topic histogram `1:93 2:103 3:87 4:51 5:21 6:13 7:2 8:1 9:1`. Quote a
   term with its per-layer counts, not its yield alone — a yield of 24 can be 2 titles and 16 scope
   notes.
-- Check `notes/scripts/README.md` with `python3 notes/scripts/verify_script_ownership.py --mutant`
+- Check `notes/scripts/README.md` with `python3 notes/scripts/verify_script_ownership.py`
   before quoting any ownership figure — it derives the writer set from the scripts' own source (a
   `notes/`-rooted path constant left of `.open(..., "w")` / `.write_text(...)`, plus the `notes/index`
   tree case, plus the one-hop receiver `out = TPL_DIR / (name)`, plus the package-write cases — a
@@ -827,7 +829,12 @@ lives in this file and nowhere else.
   lands — and recomputes the shared-basename sets
   (**1** top-level ∩ index: `README.md`; **13** index ∩ summaries slugs). It excludes
   itself from the population, so the page's **59** scripts and **23** checkers are the run's **58** and
-  22. It flags eighteen injected mutants, each asserted against the check it targets, and writes nothing.
+  22. Its self-tests are extracted to `notes/scripts/tests/test_script_ownership.py` and run by the
+  gate's `run_tests.py` row: **18** injected faults — eleven in the census page's text, one prose
+  count in the generated `notes/README.md` (which only the render diff can see), four in
+  `notes/templates.md`, and two writer-source faults that move a write target out of the derived
+  writer set — each asserted against the check it targets. Passes G and H take page text as an
+  argument, so neither the checker nor the tests write a page. **19** tests, all passing.
 - Check the promotion protocol with `python3 notes/scripts/verify_cache_promotion.py --mutant` before
   quoting any cache figure — it re-derives the `catlib/promote.py` registry three ways: the writer set
   (`ARTIFACTS` plus the one writer the protocol excludes, `measure_open_probe.py`, whose record carries

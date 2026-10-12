@@ -102,7 +102,7 @@ ROWS = [
     ("verify_dependency_drift.py", ("pages",), ()),
     ("verify_dependency_drift.py --mutant", ("pages",), ()),
     ("verify_script_ownership.py", ("pages",), ()),
-    ("verify_script_ownership.py --mutant", ("pages",), ()),
+    ("run_tests.py notes/scripts/tests/test_script_ownership.py -q", ("pages",), ()),
     ("verify_findings.py", ("pages",), ()),
     ("verify_findings.py --mutant", ("pages",), ()),
     ("verify_citations.py", ("pages",), ()),

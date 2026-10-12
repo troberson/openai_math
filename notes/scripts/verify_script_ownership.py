@@ -21,7 +21,9 @@ Passes:
      that re-derives a count through the same code the page's writer calls proves only that the code
      agrees with itself.
 
---mutant injects eighteen faults, one per check form the page uses, and asserts each is caught.
+The self-tests are not here: they live in `notes/scripts/tests/test_script_ownership.py`, which
+mutates page text in memory and asserts each fault is caught by the check that owns it. Passes H
+and G take the page text as an argument, so no page is written by the checker or by the tests.
 Report-only: writes nothing.
 """
 from __future__ import annotations
@@ -310,10 +312,9 @@ def template_table_rows(text):
     return report, index
 
 
-def templates_problems():
+def templates_problems(text):
     """Pass H: notes/templates.md against the template files, the registry, and notes/index/."""
     p = []
-    text = read_text(TEMPLATES_PAGE)
     cen = template_measure()
     reg, anchor = registry_pairs()
     renders = index_render_counts()
@@ -554,140 +555,13 @@ def check(text):
     return p
 
 
-def sync_problems() -> list[str]:
-    """Pass G: notes/README.md against the writer's render of that page."""
-    return RD.sync_problems(README, read_text(README))
-
-
-def mutants():
-    """Sixteen faults, one per check form. Each must be caught by the check it targets."""
-    original = read_text(PAGE)
-    n = len(script_names())
-    cases = [
-        ("writer target altered", original.replace("| `build_catalog.py` | `notes/tables/catalog.tsv` |", "| `build_catalog.py` | `notes/catalog-x.tsv` |"), "page says 'notes/catalog-x.tsv'"),
-        ("writer row deleted", original.replace("| `extract_links.py` | `notes/tables/links.tsv` | single run; cached bytes == promoted bytes under the key | `notes/links.md` |\n", ""), "writer extract_links.py: page says None"),
-        ("hand-authored TSV claimed as generated", original.replace("**6** generated, **2** hand-authored", "**7** generated, **1** hand-authored"), "tsv census cell"),
-        ("writer count altered", original.replace(f"**{len(writers())}** writers over **{n}** scripts",
-                                                  f"**{len(writers()) - 1}** writers over **{n}** scripts"),
-         "writer split sentence"),
-        ("index file count altered", original.replace("| `notes/index/` | **1,049** |", "| `notes/index/` | **1,050** |"), "census row notes/index/"),
-        ("collision name altered", original.replace("**1** shared basename — `README.md`", "**2** shared basenames — `README.md` and `topics.tsv`"), "collision sentence"),
-        ("checker name altered", original.replace("| `verify_sources.py` |", "| `verify_sources2.py` |"), "non-writers"),
-        ("unchecked page claimed as checked", original.replace("| `verify_abstracts.py` | `notes/abstracts.md` |", "| `verify_abstracts.py` | `notes/abstracts.md`, `notes/counterexample-tag.md` |"), "md census cell"),
-        ("Not checked section deleted", original.replace("## Not checked", "## Checked"), "no '## Not checked' section"),
-        ("summaries count altered", original.replace("| `notes/summaries/` | **21** |", "| `notes/summaries/` | **22** |"), "census row notes/summaries/"),
-        ("templates count altered", original.replace("| `notes/templates/` | **24** |", "| `notes/templates/` | **3** |"), "census row notes/templates/"),
-    ]
-    fails = []
-    for label, mutated, needle in cases:
-        if mutated == original:
-            fails.append(f"{label}: mutation changed nothing")
-            continue
-        PAGE.write_text(mutated, encoding="utf-8")
-        try:
-            found = check(mutated)
-        finally:
-            PAGE.write_text(original, encoding="utf-8")
-        if not any(needle in x for x in found):
-            fails.append(f"{label}: NOT caught by {needle!r} (problems: {found[:2]})")
-        else:
-            print(f"  caught {label}: {next(x for x in found if needle in x)[:110]}")
-
-    # Pass G: a prose count in the generated ledger readme. No check here reads notes/README.md prose,
-    # so only the render diff can see it.
-    readme_text = read_text(README)
-    mutated_readme = readme_text.replace("A README section names 28 of the 30",
-                                         "A README section names 29 of the 30", 1)
-    if mutated_readme == readme_text:
-        fails.append("readme prose count altered: mutation changed nothing")
-    else:
-        README.write_text(mutated_readme, encoding="utf-8")
-        try:
-            found = sync_problems()
-        finally:
-            README.write_text(readme_text, encoding="utf-8")
-        if not found:
-            fails.append(f"readme prose count altered: NOT caught by the sync pass (problems: {found[:2]})")
-        else:
-            print(f"  caught readme prose count altered: {found[0][:110]}")
-
-    # Pass H: four faults in notes/templates.md, each caught by the pass that owns it.
-    tpl_text = read_text(TEMPLATES_PAGE)
-    row = next((l for l in tpl_text.splitlines() if l.startswith("| `README.md.j2`")), "")
-    tpl_cases = [
-        ("template row renamed", tpl_text.replace("| `t0-chains.md.j2` |", "| `t0-chainz.md.j2` |", 1),
-         "report table rows"),
-        ("template page row deleted",
-         "\n".join(l for l in tpl_text.splitlines() if not l.startswith("| `templates.md.j2`")),
-         "report table rows"),
-        ("template slot count shifted", tpl_text.replace(row, row.replace("| 71 |", "| 72 |", 1), 1)
-         if row else "", "template row README.md.j2"),
-        ("registry count altered", tpl_text.replace("registry: **19** entries",
-                                                    "registry: **17** entries", 1),
-         "registry sentence"),
-    ]
-    for label, mutated, needle in tpl_cases:
-        if mutated == tpl_text:
-            fails.append(f"{label}: mutation changed nothing")
-            continue
-        TEMPLATES_PAGE.write_text(mutated, encoding="utf-8")
-        try:
-            found = templates_problems()
-        finally:
-            TEMPLATES_PAGE.write_text(tpl_text, encoding="utf-8")
-        if not any(needle in x for x in found):
-            fails.append(f"{label}: NOT caught by {needle!r} (problems: {found[:2]})")
-        else:
-            print(f"  caught {label}: {next(x for x in found if needle in x)[:110]}")
-
-    # Pass I: the atomic and staging write shapes. The derivation must key on the target the writer
-    # hands the package, not on the call name — a writer that retargets away from notes/ has to drop out.
-    rr = read_text(SCRIPTS / "render_reports.py")
-    atomic_case = rr.replace("ST.stage(README_MD, render_page(README_MD))",
-                             'ST.stage(pathlib.Path("README.md"), render_page(README_MD))', 1)
-    if atomic_case == rr:
-        fails.append("atomic write retargeted: mutation changed nothing")
-    else:
-        before = writer_targets(rr)
-        after = writer_targets(atomic_case)
-        if "notes/README.md" in after:
-            fails.append(f"atomic write retargeted: NOT caught (targets {after[:4]})")
-        elif "notes/README.md" not in before:
-            fails.append("atomic write retargeted: the clean source does not carry the target")
-        else:
-            print(f"  caught atomic write retargeted: notes/README.md dropped from "
-                  f"{len(before)} targets to {len(after)}")
-    # Pass I, second case: the keyed store. `cached(KEY, "names.json", builder)` names no path, so the
-    # rule keys on the literal record name. A record name held in a variable is not a target the source
-    # writes down, so the writer must drop out of the writer set.
-    mn = read_text(SCRIPTS / "measure_names.py")
-    rec_case = mn.replace('cached(KEY, "names.json", build_records)', "cached(KEY, rec_name, build_records)", 1)
-    want = RECORD_PREFIX + "names.json"
-    if rec_case == mn:
-        fails.append("record-store write retargeted: mutation changed nothing")
-    else:
-        before = writer_targets(mn)
-        after = writer_targets(rec_case)
-        if want in after:
-            fails.append(f"record-store write retargeted: NOT caught (targets {after[:4]})")
-        elif want not in before:
-            fails.append("record-store write retargeted: the clean source does not carry the target")
-        else:
-            print(f"  caught record-store write retargeted: {want} dropped from "
-                  f"{len(before)} targets to {len(after)}")
-    return fails, len(cases) + 1 + len(tpl_cases) + 2
+def sync_problems(page, text) -> list[str]:
+    """Pass G: a generated page against the writer's render of it."""
+    return RD.sync_problems(page, text)
 
 
 def main():
     text = read_text(PAGE)
-    if "--mutant" in sys.argv:
-        print("=== notes/scripts/README.md mutant self-test ===")
-        fails, total = mutants()
-        for f in fails:
-            print(f"MUTANT NOT CAUGHT: {f}")
-        print(f"mutants flagged: {total - len(fails)} of {total}")
-        sys.exit(1 if fails else 0)
-
     print("=== notes/scripts/README.md ownership check ===")
     wr = writers()
     names = script_names()
@@ -711,11 +585,11 @@ def main():
     shared = sorted({f.name for f in top} & {f.name for f in index})
     print(f"top-level ∩ index basenames: {shared}")
     print(f"index ∩ summaries slugs: {len({f.name for f in index} & {f.name for f in summaries})}")
-    tpl = templates_problems()
+    tpl = templates_problems(read_text(TEMPLATES_PAGE))
     print(f"templates census (notes/templates.md): {len(template_measure())} templates on disk, "
           f"{len(tpl)} problems")
     p = check(text)
-    sync = sync_problems()
+    sync = sync_problems(README, read_text(README))
     for x in p + tpl + sync:
         print(f"PROBLEM: {x}")
     print(f"sync problems (notes/README.md): {len(sync)}")
