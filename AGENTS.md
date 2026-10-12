@@ -423,16 +423,14 @@ lives in this file and nowhere else.
   unchanged by the flagged run. The read-only gate pool is the block that runs rows with this flag.
 - The whole-tree test is the gate list at `notes/scripts/gate.py`: **75** invocations — the **9**
   gated writers (`build_report_templates.py` and `measure_open_probe.py` are the writers it does not
-  run), the 42 gated report-only rows (including `check_summary_manuscripts.py` and
+  run), the 43 gated report-only rows (including `check_summary_manuscripts.py` and
   `locate_summary_quotes.py`, `check_index_links.py` plain and its extracted self-tests row, and the
-  twenty-three extracted self-tests rows, from
+  twenty-four extracted self-tests rows, from
   `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q` to
-  `run_tests.py notes/scripts/tests/test_dependency_drift.py -q` — the full list is in
-  `notes/scripts/README.md`; `read_manuscript.py` is the one script it does not run), and **24**
-  checker invocations: **2** from the 1 checker listed twice (plain and with `--mutant`) — the 1
-  table checker, `verify_subfinding_pairs.py` — plus
-  `verify_page_sync.py --both` (**1**) and **21** plain-only rows for the checkers whose self-tests
-  are extracted, none of which carries a `--mutant` branch any more.
+  `run_tests.py notes/scripts/tests/test_subfinding_pairs.py -q` — the full list is in
+  `notes/scripts/README.md`; `read_manuscript.py` is the one script it does not run), and **23**
+  checker invocations: `verify_page_sync.py --both` (**1**) and **22** plain-only rows for the
+  checkers whose self-tests are extracted. No checker carries a `--mutant` branch any more.
   The list is one array, `ROWS`, of (spec, needs, writes) triples over the
   generated artifacts: a row starts as soon as every row that writes its `needs` has finished, each
   row writes its own `.line` file, and the report prints the `.line` files in list order after the
@@ -632,15 +630,26 @@ lives in this file and nowhere else.
   six-name environments against the declared-rule 21,288. `main()` reads no argv, so `--mutant` is
   inert, and `population()` is under `functools.cache` (`:152`), so the thirteen `check()` calls the
   row makes pay the corpus walk once. It writes nothing.
-- Check `notes/subfinding-pairs.md` with `python3 notes/scripts/verify_subfinding_pairs.py --mutant`
-  before quoting any count from it — it requires exactly one block per population family and none
+- Check `notes/subfinding-pairs.md` with `python3 notes/scripts/verify_subfinding_pairs.py` and its
+  extracted self-tests with
+  `python3 notes/scripts/run_tests.py notes/scripts/tests/test_subfinding_pairs.py -q`
+  before quoting any count from it — the checker requires exactly one block per population family and none
   outside, resolves each block's `overview.tex` anchor to that family's `\resultentry` line, checks
   `n` against `subfindings.tsv` and the tier against the ledger, requires every quoted clause and
   every quoted title to be verbatim on that line, requires each `[fam:seq]` to resolve to a manuscript
   row of the block's own family, requires `claimed` and `unclaimed` to be disjoint and to cover the
-  family's full `1..n` exactly once, re-measures the ten Summary-table numbers from the parsed lines,
-  and flags eight injected mutants including a paraphrase dressed as a quote and a prose count visible
-  only in the diff against the writer's render. It writes nothing.
+  family's full `1..n` exactly once, and re-measures the ten Summary-table numbers from the parsed
+  lines. The eight injected mutants live in the test file (a paraphrase dressed as a quote, a clause
+  anchor on the wrong line, a title id borrowed from another family, an id in both partitions, a title
+  dropped from the partition, a stale Summary-table count, a block for a family outside the population,
+  and a rejected-rule yield in prose altered), each asserted against the pass that owns it; the last is
+  keyed to the page line the render diff names, because the counts pass never parses that sentence.
+  `main()` reads no argv, so `--mutant` is inert in the checker. `load_inputs()` is under
+  `functools.cache` (`:54`), so the row pays the `overview.tex`, `subfindings.tsv` and ledger walk once.
+  Its clean test pins the population the passes report: 49 blocks over 203 manuscripts, 62 clause pairs,
+  47 headline pairs, 18 unmatched clauses, 109 titles claimed, 94 unclaimed, 40 families with an accepted
+  pair, 17 with an unmatched clause, 6 pairing with no probe hit, 62 probe hits over 372, 40 over the
+  167 multi-manuscript families. It writes nothing.
 - Check `notes/conditional.md` with `python3 notes/scripts/verify_conditional.py` and its extracted
   self-tests with `python3 notes/scripts/run_tests.py notes/scripts/tests/test_conditional.py -q`
   before quoting the source check — the checker attributes each fenced block to the nearest preceding

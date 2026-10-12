@@ -115,9 +115,9 @@ counts come from, **1** prints the pytest report for the extracted checker self-
 after it, and `gate.py` prints the gate report itself.
 The Gate column is the invocation the gate list runs: `notes/scripts/gate.py`, which runs **75**
 invocations — the **9** gated writers (the two writers it does not run are `build_report_templates.py`
-and `measure_open_probe.py`, each for the reason in its own row), the 42 gated report-only rows (including `check_summary_manuscripts.py`
+and `measure_open_probe.py`, each for the reason in its own row), the 43 gated report-only rows (including `check_summary_manuscripts.py`
 and `locate_summary_quotes.py`, `check_index_links.py` plain and its extracted self-tests row, and
-the twenty-three extracted self-tests rows, `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q`,
+the twenty-four extracted self-tests rows, `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q`,
 `run_tests.py notes/scripts/tests/test_conjecture_standing.py -q`,
 `run_tests.py notes/scripts/tests/test_abstracts.py -q`,
 `run_tests.py notes/scripts/tests/test_named_conjectures.py -q`,
@@ -139,9 +139,9 @@ the twenty-three extracted self-tests rows, `run_tests.py notes/scripts/tests/te
 `run_tests.py notes/scripts/tests/test_named_results.py -q` and
 `run_tests.py notes/scripts/tests/test_citations.py -q` and
 `run_tests.py notes/scripts/tests/test_t0_chains.py -q` and
-`run_tests.py notes/scripts/tests/test_dependency_drift.py -q`), and **24** checker
-invocations: **2** from the 1 checker listed twice (plain and with `--mutant`) — the 1 table
-checker — plus
+`run_tests.py notes/scripts/tests/test_dependency_drift.py -q` and
+`run_tests.py notes/scripts/tests/test_subfinding_pairs.py -q`), and **23** checker
+invocations:
 `verify_page_sync.py --both` (**1**) — both passes in one process, because `catlib.render.rendered`
 is cached per process and two rows pay the corpus walk twice — plus `verify_script_ownership.py` plain
 (**1**), `verify_scope_exclusions.py` plain (**1**), `verify_conjecture_standing.py` plain (**1**),
@@ -154,9 +154,9 @@ is cached per process and two rows pay the corpus walk twice — plus `verify_sc
 `verify_findings.py` plain (**1**) and
 `verify_counterexample_crosscheck.py` plain (**1**) and
 `verify_sources.py` plain (**1**) and
+`verify_subfinding_pairs.py` plain (**1**) and
 `verify_index_design.py` plain (**1**) and
 `verify_fleet_design.py` plain (**1**) and
-`verify_verification_dirs.py` plain (**1**) and
 `verify_named_results.py` plain (**1**) and
 `verify_faithfulness.py` plain (**1**) and
 `verify_citations.py` plain (**1**) and
@@ -227,20 +227,21 @@ rows into the page's scanner table.
 ### Checkers
 
 The remaining **22** scripts verify a page or a table. Each exits non-zero when what it checks has
-drifted; **1** takes `--mutant`, which injects faults and asserts they are caught, and **21** —
+drifted; **0** take `--mutant` — after the twenty-fourth extraction no checker carries a mutant
+branch any more — and **22** —
 `verify_scope_exclusions.py`, `verify_conjecture_standing.py`, `verify_abstracts.py`,
 `verify_named_conjectures.py`, `verify_subfindings.py`, `verify_summaries.py` and
 `verify_script_ownership.py`, `verify_conditional.py`, `verify_upstream_history.py`,
 `verify_cache_promotion.py`, `verify_findings.py`, `verify_counterexample_crosscheck.py`,
-`verify_faithfulness.py`, `verify_sources.py`, `verify_index_design.py`,
+`verify_faithfulness.py`, `verify_sources.py`, `verify_subfinding_pairs.py`, `verify_index_design.py`,
 `verify_fleet_design.py`, `verify_verification_dirs.py`,
 `verify_named_results.py`,
 `verify_citations.py`,
 `verify_t0_chains.py` and
 `verify_dependency_drift.py` — have their
 self-tests extracted to `notes/scripts/tests/`, so the checker measures and the test file injects.
-The gate runs each one plain and then with `--mutant` —
-**24** of the 75 invocations: **2** from the 1 row below, listed twice, **1** for
+The gate runs each one plain —
+**23** of the 75 invocations: **1** for
 `verify_page_sync.py --both`, which runs both passes in one process, **1** plain for
 `verify_script_ownership.py` (the 23rd checker, not listed in its own table), **1** plain for
 `verify_scope_exclusions.py`, **1** plain for `verify_conjecture_standing.py`, **1** plain for
@@ -252,6 +253,7 @@ The gate runs each one plain and then with `--mutant` —
 **1** plain for `verify_findings.py` and
 **1** plain for `verify_counterexample_crosscheck.py` and
 **1** plain for `verify_sources.py` and
+**1** plain for `verify_subfinding_pairs.py` and
 **1** plain for `verify_index_design.py` and
 **1** plain for `verify_fleet_design.py` and
 **1** plain for `verify_verification_dirs.py` and
@@ -298,7 +300,7 @@ self-tests rows are report-only rows, not checker invocations:
 | `verify_page_sync.py` | `notes/links.md`, `notes/names.md`, `notes/topics.md`, `notes/proof-density.md`, `notes/index-links.md` — the render diff for the five pages whose sync pass used to live in a writer; the mutants mutate page prose in memory, so no page is written | `--both` — plain and mutant in one process | 27.7 |
 | `verify_scope_exclusions.py` | `notes/scope-exclusions.md` | plain; the self-tests are in `notes/scripts/tests/test_scope_exclusions.py`, run by the `run_tests.py` row | 0 |
 | `verify_sources.py` | `notes/sources.md` | plain; the self-tests are in `notes/scripts/tests/test_sources.py`, run by the `run_tests.py` row | 1.2 |
-| `verify_subfinding_pairs.py` | `notes/subfinding-pairs.md` | plain + `--mutant` | 0.1 / 0.1 |
+| `verify_subfinding_pairs.py` | `notes/subfinding-pairs.md` | plain; the self-tests are in `notes/scripts/tests/test_subfinding_pairs.py`, run by the `run_tests.py` row | 0.1 |
 | `verify_subfindings.py` | `notes/tables/subfindings.tsv` | plain; the self-tests are in `notes/scripts/tests/test_subfindings.py`, run by the `run_tests.py` row | 0.1 |
 | `verify_summaries.py` | `notes/summaries/` | plain; the self-tests are in `notes/scripts/tests/test_summaries.py`, run by the `run_tests.py` row | 0.8 |
 | `verify_t0_chains.py` | `notes/t0-chains.md` | plain; the self-tests are in `notes/scripts/tests/test_t0_chains.py`, run by the `run_tests.py` row | 1.4 |
@@ -358,8 +360,10 @@ walk once.
 and the 23 patch files: `measure()` is under `functools.cache` (`:185`), so its `run_tests.py` row
 measures **2.2 s** where the `--mutant` row took **2.0 s** — the eleven `check()` calls the row makes pay
 the walk once.
-`verify_page_sync.py --both` at **27.7 s** is the gate's heaviest checker row. The 1 checker that takes
-`--mutant` and imports the render-diff pays that walk in its mutant run; `verify_script_ownership.py`,
+`verify_subfinding_pairs.py` is the same case with `overview.tex`, `notes/tables/subfindings.tsv` and the
+ledger: `load_inputs()` is under `functools.cache` (`:54`), so its `run_tests.py` row measures **0.4 s**
+where the `--mutant` row took **0.1 s** — the nine `check()` calls the row makes pay the walk once.
+`verify_page_sync.py --both` at **27.7 s** is the gate's heaviest checker row. `verify_script_ownership.py`,
 this page's own checker, is a plain row only now that its self-tests are extracted, and is not a row
 above.
 `verify_page_sync.py`'s Cost is one number, not a pair: `--both`
@@ -392,8 +396,8 @@ added `measure_checker_needles.py`, so the count is **75** after `math-o3a.1` ad
 scheduler and `math-o3a.5.2`'s `--both` collapse added took the list to what the `ROWS` array
 carries. That `--mutant` row is now the `run_tests.py` row for `notes/scripts/tests/test_index_links.py`,
 and the prose mutant is `verify_page_sync.py`'s, so the row count did not move. The count is read
-from the array, not from the history: **9** writer rows, **42**
-report-only rows, **24** checker invocations.
+from the array, not from the history: **9** writer rows, **43**
+report-only rows, **23** checker invocations.
 
 `verify_script_ownership.py` — this page's own checker — is not in the table: a checker cannot list
 itself as its input. It is the 23rd checker and the 59th script; the run counts **58** scripts
