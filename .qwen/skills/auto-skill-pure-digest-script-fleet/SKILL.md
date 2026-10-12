@@ -9,7 +9,7 @@ extracted_at: '2026-10-10T19:43:53.211Z'
 
 Worked out on `/home/tamara/Downloads/_Git/math` for `notes/scripts/` (49 scripts and 9 writers at
 the time, a 67-invocation gate run twice = ~67 min) after the cost investigation in the
-`gate-cost-attribution` skill. The design is **realized**: the fleet is 58 scripts with 10 writers,
+`gate-cost-attribution` skill. The design is **realized**: the fleet is 58 scripts with 11 writers,
 the gate is `gate.py`'s 75-row dependency list run once, and every writer promotes through the
 digest-keyed store. The user asked for five properties: **pure** (idempotent, non-interdependent),
 **read something only once**, **ACID atomicity** (no partial file on crash), **cached** (unchanged

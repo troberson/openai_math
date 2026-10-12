@@ -4721,3 +4721,38 @@ pages 21  table rows 566  stale 0  mode check
              11  r        notes/t0-triage.md
              14  r        notes/tables/catalog.tsv
 [probe2] write-mode paths outside notes/:
+tex files scanned        7240
+statement envs w/ title  16889
+bib entries parsed       13581  author keys 5809
+title candidates         3407  rejected 2850 [('acronym', 59), ('label-word', 25), ('latex-macro', 15), ('maths-word', 6), ('no-prose-evidence', 288), ('not-a-word-key', 76), ('prose-word', 2381)]
+  via family title+bib   16  bochner campana curtis elliott etingof green jacobsthal kraetzer mahler ostmann pop riesz ryser shub swinnerton-dyer wilson
+declarations             193 entries  351 tokens  counterexample:9 main:9 projection:5 target:5 critical:4 current:4 log:4 matrix:4
+probe tokens             the=23736/856520 all=1426/43916 games=57/100 lane=16/48 hom=647/270 quot=69/22 cat=169/42 adm=414/40 boolean=596/28 catalan=33/7 koebe=39/14 saxl=21/9 pixton=14/6 wang=198/8 cauchy=2209/111
+plural merge             6 merged (goldfelds hamiltonians hessians jacobians lagrangians laplacians)  266 plural forms in a title layer, 6 name-like
+names                    5842  subject 551  citation-only 5291
+subject edges            9819 family-name edges over 372 families
+subject singletons       68
+subject max              (232, 'cauchy')
+spelling variants        326 subject names with >1 surface form in prose
+names with no family     0
+families with a hit      372 of 372  no-hit 0
+trace families covered   10 of 10 by subject  all 10
+trace families           007 017 087 102 159 197 221 271 287 362
+unlisted traces          none
+top subject names        cauchy:232 euclidean:193 schwarz:193 lipschitz:178 hilbert:171 taylor:165 fourier:160 borel:140 jacobian:136 markov:134 gaussian:130 lebesgue:125
+[probe] target exit code: 0
+[probe2] target notes/scripts/measure_names.py 
+[probe2] wall 46.17  opens 15050  distinct 7801  repeats 7249
+[probe2] rchar MB 251.6  read_bytes MB 0.0
+[probe2] buckets:
+          preprints/                 15001
+          abs/other                  20
+          notes/scripts/             16
+          other                      10
+          notes/                     2
+          top-level                  1
+[probe2] notes/ paths (count  modes  path):
+              2  r        notes/tables/catalog.tsv
+[probe2] write-mode paths outside notes/:
+              1  w .qwen/cache/records/d4785fdec357dcf625a08a1042dc2001/.names.json.tmp
+              3  r,w 3

@@ -296,7 +296,7 @@ every pathspec commit, name it in the report, and ask before committing it.
 
 Worked 2026-10-11 on `verify_fleet_design.py` (the 50th script, the 19th looped checker): one new file
 moved ~20 count phrases in five docs plus the gate list. Re-measured 2026-10-11 from
-`notes/scripts/README.md`: the fleet is **56** scripts — **10** writers, **23** report-only, **22**
+`notes/scripts/README.md`: the fleet is **58** scripts — **11** writers, **24** report-only, **22**
 checkers — so the "Nth" ordinal in the page moves with every addition; read it from the page, not from
 this record. The checker that measures the census is the
 enumerator — run it plain and it prints every phrase it demands, so sweep against its output, not

@@ -118,7 +118,11 @@ lives in this file and nowhere else.
   `dump_template_slots.py`, `extract_subfindings.py`, `extract_verification_dirs.py`,
   `read_manuscript.py`, `measure_proof_density.py`. `verify_sources.py` keeps its own corpus walk by
   rule — a checker that re-derives through the writer's store proves nothing about the writer. The store
-  is untracked (`.qwen/*`), so a cache write never touches the tracked tree.
+  is untracked (`.qwen/*`), so a cache write never touches the tracked tree. `measure_names.py` is the
+  store's second producer: `measure()` reads `.qwen/cache/records/<key>/names.json`, keyed by its own
+  source plus `notes/tables/catalog.tsv` and the five tree digests, and its consumers
+  (`render_reports.py`, `build_index.py`, `extract_named_results.py`, `verify_named_results.py`) read
+  that record, so the 7,240-file walk is paid once per key, not once per process.
 - Regenerate the ledger with `python3 notes/scripts/build_catalog.py` — stdlib only, runs in
   seconds, writes `notes/tables/catalog.tsv` and prints the report that every number in
   `notes/README.md` comes from.
@@ -134,8 +138,10 @@ lives in this file and nowhere else.
   mechanical (NFKD, strip combining marks, drop `$`/apostrophes/`\command`, lowercase, non-alphanumerics
   → `-`, leading `the-` dropped): 0 collisions, max length 93. Index↔summary pairing is by family
   number only — 21 of 372 families have a summary page.
-- Names are a measured layer, not a curated one: `python3 notes/scripts/measure_names.py` (report-only,
-  ~42 s; `--json` dumps the rows) reads six layers — family titles, manuscript directory names, the
+- Names are a measured layer, not a curated one: `python3 notes/scripts/measure_names.py` (a writer —
+  it lands the population as the record `.qwen/cache/records/<key>/names.json`; cold ~42 s, a warm run
+  reads the store; `--json` dumps the rows, `--check-only` prints the report without landing the record)
+  reads six layers — family titles, manuscript directory names, the
   optional titles of 16,889 statement environments, `main_results` declaration names, capitalized prose
   tokens, and `.bib` author surnames. **A title or declaration hit is a subject; a prose or
   bibliography hit is a citation, and only subjects get a page** — 551 pages over 5,842 measured keys,
@@ -367,7 +373,7 @@ lives in this file and nowhere else.
   manifest is `notes/scripts/README.md`, and it is the only place that answers "whose bytes are
   this". It is also the script inventory: every script under `notes/scripts/` is listed once as
   writer, report-only or checker, with what it writes and the gate command the gate list runs for it
-  — **10** writers, **25** report-only, **22** checkers, plus the page's own checker as the 23rd
+  — **11** writers, **24** report-only, **22** checkers, plus the page's own checker as the 23rd
   checker and 58th script — and the fourth class, scratch, is recorded by rule: **scratch lives under
   `.qwen/tmp/`, a permanent script lives under `notes/scripts/`**, so a probe that a later pass
   re-runs is promoted and gets a table row before it gets a gate command. `math-o3a.3.4` is that rule
@@ -378,11 +384,14 @@ lives in this file and nowhere else.
   `.qwen/tmp/notes_block_probe.py` to `notes/scripts/measure_move_surface.py` and
   `notes/scripts/measure_anchor_blocks.py`, and the gate does not run them because a pass re-runs them
   by hand before and after each move.
-  Scripts and generated files are **not** 1-to-1: of the **57** scripts, **10** write
+  Scripts and generated files are **not** 1-to-1: of the **57** scripts, **11** write
   (`build_catalog.py`, `build_sources.py`, `build_index.py`, `compare_abstracts.py` — with `--tsv`
   only — `extract_formalization_deps.py`, `extract_links.py`, `extract_subfindings.py`,
-  `render_reports.py`, `build_report_templates.py`, `measure_open_probe.py`) and **47**
-  write nothing, and `build_index.py` alone renders **1,049** files. Of the **8**
+  `render_reports.py`, `build_report_templates.py`, `measure_open_probe.py`, `measure_names.py`) and **46**
+  write nothing, and `build_index.py` alone renders **1,049** files. `measure_names.py` is the record
+  producer: its target is `.qwen/cache/records/<key>/names.json`, which the `.qwen/*` rule keeps
+  untracked, so it is the one writer with no tracked artifact and the one writer target the
+  promote-and-verify byte comparison cannot read. Of the **8**
   `notes/tables/*.tsv`, **6** are generator output and **2** are hand-authored — `notes/tables/topics.tsv` (the
   curated vocabulary `build_index.py` reads) and `notes/tables/conjecture-standing.tsv` (the training-data
   prior) — and regenerating either destroys the file. `notes/index/` is generated wholesale: edit
@@ -724,7 +733,8 @@ lives in this file and nowhere else.
 - Run `python3 notes/scripts/measure_names.py` before quoting a name count: it re-derives every figure
   in `notes/names.md` from the corpus (7,240 `.tex` files, 16,889 titled statement environments,
   13,581 `.bib` entries over 5,809 author keys, 3,407 title candidates, 2,850 rejections by bucket).
-  It writes nothing, so the pages are not its test — `notes/names.md` is the document it checks. Its
+  It writes only the keyed record under `.qwen/cache/records/`, which is untracked, so the pages are not
+  its test — `notes/names.md` is the document it checks. Its
   report branch ends with a sync pass: `sync problems (notes/names.md) N`, the page compared with
   `render_reports.py`'s render of it; the script exits 1 on a nonzero N. It has no mutant self-test, so
   the pass has no mutant of its own to catch.
@@ -743,7 +753,10 @@ lives in this file and nowhere else.
   tree case, plus the one-hop receiver `out = TPL_DIR / (name)`, plus the package-write cases — a
   `write_atomic(CONST, text)`, `stage(CONST, text)` or `promote(CONST, key, text)` call, resolved
   through a package constant, an alias of one, or a locally built constant, which is how a writer
-  whose write moved into `catlib.atomic` or `catlib.promote` stays visible), blanks a module-level
+  whose write moved into `catlib.atomic` or `catlib.promote` stays visible), plus the keyed-store case —
+  `cached(KEY, "names.json", builder)` names no path, so the rule takes the literal record name and
+  prefixes `.qwen/cache/records/<key>/`, which is the one target outside `notes/` the page carries),
+  blanks a module-level
   `mutants` / `mutant_test` / `selftest` body before reading the write
   calls, classifies every file under `notes/` with the scripts excluded and flags a file no rule
   owns, re-derives every census count, requires every script named in the page **and** in the
@@ -755,7 +768,7 @@ lives in this file and nowhere else.
   lands — and recomputes the shared-basename sets
   (**1** top-level ∩ index: `README.md`; **13** index ∩ summaries slugs). It excludes
   itself from the population, so the page's **58** scripts and **23** checkers are the run's **57** and
-  22. It flags seventeen injected mutants, each asserted against the check it targets, and writes nothing.
+  22. It flags eighteen injected mutants, each asserted against the check it targets, and writes nothing.
 - Check the promotion protocol with `python3 notes/scripts/verify_cache_promotion.py --mutant` before
   quoting any cache figure — it re-derives the `catlib/promote.py` registry three ways: the writer set
   (`ARTIFACTS` plus the one writer the protocol excludes, `measure_open_probe.py`, whose record carries
@@ -777,13 +790,14 @@ lives in this file and nowhere else.
   `gate.py`'s `ROWS` block, the two set-site lines, the env-hit count, and the probe table's
   wall/opens/distinct/repeats figures — parsed from the **5** audit-hook records **tracked under
   `notes/probe/`** (the checker parses
-  the 2026-10-11 pair, written by `notes/scripts/measure_open_probe.py`; the 2026-10-10 pair and the
+  the 2026-10-11 pair, written by `notes/scripts/measure_open_probe.py` over **9** targets; the 2026-10-10 pair and the
   single-target `render_reports.py` after-record are the before-state the page's deltas are measured
   against), which the checker requires on disk. It resolves
   every backticked `path:line` anchor, bare script names included (a bare
-  name resolves under `notes/scripts/`), matches the 7-row purity table **inside the purity section**
+  name resolves under `notes/scripts/`), matches the purity table — **8** rows, the set the probe parse
+  yields, so adding a probe target moves the table and the heading count together
   (the amplification table names four of the same scripts, so a page-wide row scan lets a deleted purity
-  row pass), requires each of the 5 amplification rows, and flags 7 injected mutants. The dated
+  row pass), requires each of the 5 amplification rows, and flags 9 injected mutants. The dated
   observations — the `free -h` available line, the wall times, the cold/warm swing — are **not**
   re-derived: a checker that re-measures them fails the day the machine changes. It writes nothing; run
   it twice and diff — the report is identical.
