@@ -18,7 +18,10 @@ What each check measures, and the rule behind it:
   counts       every count phrase on the page is re-derived from git + disk, not from the page
   tables       the fixes table and the config table are checked row by row against disk
 
-Run with --mutant to corrupt one real claim per form the page uses and prove each fires.
+The self-tests live in `notes/scripts/tests/test_upstream_history.py`: thirteen injected faults, one
+per form the page uses, run through pytest. `main()` reads no argv, so `--mutant` is inert, and the
+tests inject page text in memory, so nothing here writes a page. The checker measures; the test file
+injects.
 
 What stays in this file, deliberately: the git reads (`git show <rev>:notes/tables/catalog.tsv`,
 `:lean/formalization.yaml`, `:overview.tex`, `ls-tree`) — this checker is the only one that
@@ -496,54 +499,7 @@ def check_tables(name, text, p, problems):
             problems.append(f"table: {cfg} has {p['main_post'][cfg]} main_results entries, row says {n}")
 
 
-# ---------------------------------------------------------------- mutants
-
-def mutants(p):
-    base = read_text(ROOT / PAGE_301)
-    fd = read_text(ROOT / PAGE_FD)
-    cases = [
-        ("diff triple", PAGE_301, base.replace("**1135 files added, 31 deleted, 19 modified**",
-                                               "**1134 files added, 31 deleted, 19 modified**"), "phrase absent from page"),
-        ("deleted row", PAGE_301, "\n".join(l for l in base.split("\n")
-                                            if not l.startswith("| 376 | `Incompressible-Box-Transport")), "fixes rows"),
-        ("quote word", PAGE_301, base.replace("supplies the annulus proof of the circuit estimate",
-                                              "supplies the annulus proof of the bound estimate"), "not verbatim in its anchored lines"),
-        ("paraphrase", PAGE_301, base.replace('The resulting count is therefore"*',
-                                              'so the count is therefore nonzero"*'), "not verbatim in its anchored lines"),
-        ("anchor shift", PAGE_301, base.replace("`history.md:19`", "`history.md:18`"), "not verbatim in its anchored lines"),
-        ("dead path", PAGE_301, base.replace("preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/README.md:21",
-                                             "preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-8-2026/README.md:21"), "is not a file"),
-        # The needle ": slug '" is the SLUG pass only; the table pass reports the same fact as
-        # "table: '…' is not a preprints/ directory", so a shared needle cannot tell them apart.
-        ("slug rename", PAGE_301, base.replace("`Taming-implies-compatibility-on-four-manifolds-October-6-2026`",
-                                               "`Taming-implies-compatibility-on-four-manifolds-October-5-2026`"), ": slug '"),
-        ("tier list", PAGE_301, base.replace("for 027 066 075 103 137 195 301", "for 027 066 075 103 137 301"), "phrase absent from page"),
-        ("config name", PAGE_301, base.replace("`FourierLLogL`", "`FourierLLogL2`"), "new configs"),
-        ("count phrase", PAGE_301, base.replace("**749** directories", "**748** directories"), "phrase absent from page"),
-        ("entry count", PAGE_301, base.replace("| 137 | `OneTapeSpace` | 2 |", "| 137 | `OneTapeSpace` | 1 |"), "main_results entries"),
-        ("unanchored quote", PAGE_FD, fd.replace("Nothing. `git diff", 'Nothing. *"a quotation with no anchor at all"* `git diff'), "no anchor in its paragraph"),
-        ("dead link", PAGE_301, base.replace("[`history.md`](../../history.md)", "[`history.md`](../../historyx.md)"), "does not exist"),
-    ]
-    fired = 0
-    for label, page, text, needle in cases:
-        original = read_text(ROOT / page)
-        if text == original:
-            # A mutation whose search string is absent from the page is a silent no-op: the
-            # mutant reports "MISSED" for the same reason a real fault goes unreported.
-            problems = [f"mutation {label} changed nothing — its search string is not in {page}"]
-        else:
-            problems = []
-            check_page(page, text, p, problems)
-            check_counts(page, text, p, problems)
-            check_tables(page, text, p, problems)
-        hit = [x for x in problems if needle in x]
-        fired += bool(hit)
-        print(f"  mutant {label:<18} {'FIRED ' if hit else 'MISSED'}  {(hit or problems or ['no problem'])[0][:88]}")
-    return fired, len(cases)
-
-
 def main():
-    mutant = "--mutant" in sys.argv
     p = measure()
     problems: list[str] = []
     slug_hits = 0
@@ -590,13 +546,6 @@ def main():
     print(f"problems: {len(problems)}")
     for x in problems:
         print(f"  ! {x}")
-    if mutant:
-        print()
-        print("== mutants ==")
-        fired, total = mutants(p)
-        print(f"fired {fired} of {total}")
-        if fired < total:
-            problems.append("a mutant did not fire")
     ok = not problems
     print()
     print("RESULT:", "green" if ok else f"{len(problems)} problems")

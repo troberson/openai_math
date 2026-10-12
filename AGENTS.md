@@ -733,16 +733,22 @@ lives in this file and nowhere else.
   demoted to the promoted level, a verdict word, a citation truncated before its `\end`, a citation
   whose path is not on disk) and asserts the pass that owns each one reports it. The checker measures,
   the test file injects; the checker no longer carries its own `--mutant` branch. It writes nothing.
-- Check the three `notes/upstream_history/` pages with
-  `python3 notes/scripts/verify_upstream_history.py --mutant` before quoting any of their counts —
-  `path:line` and `path:a-b` anchors resolve, `…suffix` and bare `:N` anchors resolve against the
-  nearest preceding explicit path, every `*"…"*` matches the anchored lines verbatim modulo
-  whitespace with the anchor in the same paragraph, every fenced block is matched against its
-  nearest preceding anchor (a block with no preceding anchor is skipped), the **14** backticked
-  `preprints/` slugs on `2026-10-07_3014888.md` each exist as a directory, and the links, both
-  tables, and every count phrase are re-measured; the report prints the slug count and a run that
-  matches **0** is reported as a vacuous needle, not as green. Flags thirteen injected mutants.
-  Run it twice and diff — the report must be identical. It writes nothing.
+- Check the three `notes/upstream_history/` pages with `python3 notes/scripts/verify_upstream_history.py`
+  and its extracted self-tests with
+  `python3 notes/scripts/run_tests.py notes/scripts/tests/test_upstream_history.py -q` before quoting
+  any of their counts — `path:line` and `path:a-b` anchors resolve, `…suffix` and bare `:N` anchors
+  resolve against the nearest preceding explicit path, every `*"…"*` matches the anchored lines
+  verbatim modulo whitespace with the anchor in the same paragraph, every fenced block is matched
+  against its nearest preceding anchor (a block with no preceding anchor is skipped), the **14**
+  backticked `preprints/` slugs on `2026-10-07_3014888.md` each exist as a directory, and the links,
+  both tables, and every count phrase are re-measured; the report prints the slug count and a run
+  that matches **0** is reported as a vacuous needle, not as green. The test file injects thirteen
+  faults, one per form the page uses (two moved count phrases, a deleted table row, an altered
+  quotation word, a paraphrase dressed as a quote, a shifted anchor, a dead anchor path, a renamed
+  slug, a truncated tier list, an altered config name, a moved entry count, a quotation with no
+  anchor, a dead link), each asserted against the pass that owns it, and the clean test requires the
+  slug pass to be non-vacuous. Run the checker twice and diff — the report must be identical. It
+  writes nothing.
 - The summaries pages carry three tools beyond `verify_summaries.py`: `check_summary_manuscripts.py`
   (which manuscripts each page reads, and whether the release still names them),
   `locate_summary_quotes.py <page.md>` (where a quotation's text actually sits, when
