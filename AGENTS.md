@@ -875,6 +875,12 @@ travels with the `notes` branch like any other tracked file. Prefix is `math`.
 - The beads git hooks are active (`core.hooksPath` = `.beads/hooks`); the pre-commit hook re-exports
   `.beads/issues.jsonl` and stages it, so the tracked store is current in the commit whose work it
   records. By hand: `bd export -o .beads/issues.jsonl`.
+- `bd`'s `prepare-commit-msg` hook appends an agent identity trailer. A user section **outside** the
+  beads markers in `.beads/hooks/prepare-commit-msg` deletes every `Co-authored-by:` line from the
+  message file, so this repo's commits carry none. The section is outside the markers because
+  `bd hooks install` preserves content there and re-adds only the beads section — re-check the strip
+  after a `bd hooks install` or a bd upgrade. The hook file is untracked tool state, so the fix is
+  per-machine.
 - Findings belong in tracked files under `notes/`, not in bd memories — `bd remember` is not the
   record of record here.
 - Repo rules outrank this section: commit only when asked, push only to `origin` (the fork) and
