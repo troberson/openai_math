@@ -19,13 +19,14 @@ The page check is not here: `notes/proof-density.md` is compared with `render_re
 of it by `verify_page_sync.py`, which owns that pass and mutates the page in memory. The gates
 prove the numbers are measured; they prove nothing about the sentences around them.
 
-Usage: python3 notes/scripts/measure_proof_density.py [--mutant]
+The self-tests are in notes/scripts/tests/test_proof_density.py: that file injects the eight row
+faults and asserts each fires the gate that owns it. `main()` reads no argv, so `--mutant` and
+`--quiet` are inert here.
 """
 
 import csv
 import math
 import pathlib
-import sys
 from typing import Any
 
 REPO = pathlib.Path(__file__).resolve().parents[2]
@@ -184,86 +185,85 @@ def compare(fams, key, groups):
     return out
 
 
-def report(fams, ledger, sources, quiet=False):
+def report(fams, ledger, sources):
     problems = gate_checks(sources, ledger, fams)
-    if not quiet:
-        print("=== population ===")
-        print(f"sources rows {len(sources)} | families {len(fams)} | "
-              f"proofs {sum(d['proofs'] for d in fams.values())} | "
-              f"thms {sum(d['thms'] for d in fams.values())}")
-        tiers: dict[str, int] = {}
-        for d in fams.values():
-            tiers[d["tier"]] = tiers.get(d["tier"], 0) + 1
-        print("tiers " + " ".join(f"{k}:{tiers.get(k, 0)}" for k in ("T3", "T2", "T1", "T0")))
-        print("=== medians by tier ===")
-        for key, label in SIGNALS:
-            cells = []
-            for t in ("T0", "T2", "T3"):
-                vals = [d[key] for d in fams.values() if d["tier"] == t]
-                cells.append(f"{t} {median(vals):.3f}")
-            print(f"{label:34} " + "  ".join(cells))
-        print(f"=== tier separations (AUC / p; threshold AUC>={AUC_MIN}, p<{P_MAX}) ===")
-        for key, label in SIGNALS:
-            cells = []
-            for a, b in TIER_PAIRS:
-                ga = [d[key] for d in fams.values() if d["tier"] == a]
-                gb = [d[key] for d in fams.values() if d["tier"] == b]
-                res = auc_p(ga, gb)
-                mark = "*" if res and res[0] >= AUC_MIN and res[2] < P_MAX else " "
-                cells.append(f"{a}>{b} {res[0]:.3f}/{res[2]:.2e}{mark}")
-            print(f"{label:34} " + "  ".join(cells))
-        print("=== verdict (pre-registered: SEPARATES = AUC>=%.2f and p<%.2f; "
-              "SIZE-EXPLAINED = within %.2f of the tex-KB control) ===" %
-              (AUC_MIN, P_MAX, SIZE_TOLERANCE))
-        control = {}
+    print("=== population ===")
+    print(f"sources rows {len(sources)} | families {len(fams)} | "
+          f"proofs {sum(d['proofs'] for d in fams.values())} | "
+          f"thms {sum(d['thms'] for d in fams.values())}")
+    tiers: dict[str, int] = {}
+    for d in fams.values():
+        tiers[d["tier"]] = tiers.get(d["tier"], 0) + 1
+    print("tiers " + " ".join(f"{k}:{tiers.get(k, 0)}" for k in ("T3", "T2", "T1", "T0")))
+    print("=== medians by tier ===")
+    for key, label in SIGNALS:
+        cells = []
+        for t in ("T0", "T2", "T3"):
+            vals = [d[key] for d in fams.values() if d["tier"] == t]
+            cells.append(f"{t} {median(vals):.3f}")
+        print(f"{label:34} " + "  ".join(cells))
+    print(f"=== tier separations (AUC / p; threshold AUC>={AUC_MIN}, p<{P_MAX}) ===")
+    for key, label in SIGNALS:
+        cells = []
+        for a, b in TIER_PAIRS:
+            ga = [d[key] for d in fams.values() if d["tier"] == a]
+            gb = [d[key] for d in fams.values() if d["tier"] == b]
+            res = auc_p(ga, gb)
+            mark = "*" if res and res[0] >= AUC_MIN and res[2] < P_MAX else " "
+            cells.append(f"{a}>{b} {res[0]:.3f}/{res[2]:.2e}{mark}")
+        print(f"{label:34} " + "  ".join(cells))
+    print("=== verdict (pre-registered: SEPARATES = AUC>=%.2f and p<%.2f; "
+          "SIZE-EXPLAINED = within %.2f of the tex-KB control) ===" %
+          (AUC_MIN, P_MAX, SIZE_TOLERANCE))
+    control = {}
+    for pair in TIER_PAIRS:
+        control[(pair, "family")] = auc_p(
+            [d["kb"] for d in fams.values() if d["tier"] == pair[0]],
+            [d["kb"] for d in fams.values() if d["tier"] == pair[1]])[0]
+        control[(pair, "manuscript")] = auc_p(
+            [d["kb_per_man"] for d in fams.values() if d["tier"] == pair[0]],
+            [d["kb_per_man"] for d in fams.values() if d["tier"] == pair[1]])[0]
+    print(f"{'tex KB per family (control)':34} " + "  ".join(
+        f"{a}>{b} {control[((a, b), 'family')]:.3f}" for a, b in TIER_PAIRS))
+    scale = {"proofs": "family", "thms": "family", "proofs_per_man": "manuscript",
+             "proofs_per_thm": None, "proofs_per_kb": None, "kb_per_man": "manuscript"}
+    for key, label in SIGNALS:
+        if key == "kb_per_man":
+            continue
+        cells = []
         for pair in TIER_PAIRS:
-            control[(pair, "family")] = auc_p(
-                [d["kb"] for d in fams.values() if d["tier"] == pair[0]],
-                [d["kb"] for d in fams.values() if d["tier"] == pair[1]])[0]
-            control[(pair, "manuscript")] = auc_p(
-                [d["kb_per_man"] for d in fams.values() if d["tier"] == pair[0]],
-                [d["kb_per_man"] for d in fams.values() if d["tier"] == pair[1]])[0]
-        print(f"{'tex KB per family (control)':34} " + "  ".join(
-            f"{a}>{b} {control[((a, b), 'family')]:.3f}" for a, b in TIER_PAIRS))
-        scale = {"proofs": "family", "thms": "family", "proofs_per_man": "manuscript",
-                 "proofs_per_thm": None, "proofs_per_kb": None, "kb_per_man": "manuscript"}
-        for key, label in SIGNALS:
-            if key == "kb_per_man":
-                continue
-            cells = []
-            for pair in TIER_PAIRS:
-                ga = [d[key] for d in fams.values() if d["tier"] == pair[0]]
-                gb = [d[key] for d in fams.values() if d["tier"] == pair[1]]
-                auc, _, pval = auc_p(ga, gb)
-                if auc >= AUC_MIN and pval < P_MAX:
-                    if scale[key] and abs(auc - control[(pair, scale[key])]) <= SIZE_TOLERANCE:
-                        verdict = "SIZE-EXPLAINED"
-                    else:
-                        verdict = "SEPARATES"
+            ga = [d[key] for d in fams.values() if d["tier"] == pair[0]]
+            gb = [d[key] for d in fams.values() if d["tier"] == pair[1]]
+            auc, _, pval = auc_p(ga, gb)
+            if auc >= AUC_MIN and pval < P_MAX:
+                if scale[key] and abs(auc - control[(pair, scale[key])]) <= SIZE_TOLERANCE:
+                    verdict = "SIZE-EXPLAINED"
                 else:
-                    verdict = "NULL"
-                cells.append(f"{pair[0]}>{pair[1]} {verdict}")
-            print(f"{label:34} " + "  ".join(cells))
-        print("=== claim-shape contrasts (in-shape vs rest) ===")
-        for key, label in [("proofs", "proofs per family"), ("proofs_per_man", "proofs per manuscript"),
-                           ("proofs_per_thm", "proofs per statement"), ("proofs_per_kb", "proofs per tex KB")]:
-            for shape in SHAPES:
-                grp = {f for f, d in fams.items() if shape in d["shapes"]}
-                if len(grp) < 4:
-                    print(f"{label:24} {shape:14} n={len(grp)} (too few)")
-                    continue
-                res = compare(fams, key, {shape: grp})[shape]
-                mark = "*" if res[0] >= AUC_MIN and res[1] < P_MAX else " "
-                print(f"{label:24} {shape:14} n={res[2]:3} AUC={res[0]:.3f} p={res[1]:.2e}{mark}")
-        print("=== ledger flag contrasts ===")
-        for key, label in [("proofs_per_man", "proofs per manuscript"),
-                           ("proofs_per_thm", "proofs per statement"),
-                           ("proofs_per_kb", "proofs per tex KB")]:
-            for flag in FLAGS:
-                grp = {f for f, d in fams.items() if d.get(flag) == "1"}
-                res = compare(fams, key, {flag: grp})[flag]
-                mark = "*" if res[0] >= AUC_MIN and res[1] < P_MAX else " "
-                print(f"{label:24} {flag:16} n={res[2]:3} AUC={res[0]:.3f} p={res[1]:.2e}{mark}")
+                    verdict = "SEPARATES"
+            else:
+                verdict = "NULL"
+            cells.append(f"{pair[0]}>{pair[1]} {verdict}")
+        print(f"{label:34} " + "  ".join(cells))
+    print("=== claim-shape contrasts (in-shape vs rest) ===")
+    for key, label in [("proofs", "proofs per family"), ("proofs_per_man", "proofs per manuscript"),
+                       ("proofs_per_thm", "proofs per statement"), ("proofs_per_kb", "proofs per tex KB")]:
+        for shape in SHAPES:
+            grp = {f for f, d in fams.items() if shape in d["shapes"]}
+            if len(grp) < 4:
+                print(f"{label:24} {shape:14} n={len(grp)} (too few)")
+                continue
+            res = compare(fams, key, {shape: grp})[shape]
+            mark = "*" if res[0] >= AUC_MIN and res[1] < P_MAX else " "
+            print(f"{label:24} {shape:14} n={res[2]:3} AUC={res[0]:.3f} p={res[1]:.2e}{mark}")
+    print("=== ledger flag contrasts ===")
+    for key, label in [("proofs_per_man", "proofs per manuscript"),
+                       ("proofs_per_thm", "proofs per statement"),
+                       ("proofs_per_kb", "proofs per tex KB")]:
+        for flag in FLAGS:
+            grp = {f for f, d in fams.items() if d.get(flag) == "1"}
+            res = compare(fams, key, {flag: grp})[flag]
+            mark = "*" if res[0] >= AUC_MIN and res[1] < P_MAX else " "
+            print(f"{label:24} {flag:16} n={res[2]:3} AUC={res[0]:.3f} p={res[1]:.2e}{mark}")
     return problems
 
 
@@ -283,59 +283,21 @@ def selftest():
     return ok, len(cases)
 
 
-def mutants(fams_builder):
-    """Each mutation must be caught by a gate. Returns (caught, total, details)."""
-    sources = read_tsv(SOURCES)
-    ledger = read_tsv(LEDGER)
-    cases = []
-
-    def apply(name, fn):
-        rows = [dict(r) for r in sources]
-        led = [dict(r) for r in ledger]
-        fn(rows, led)
-        fams = fams_builder(rows, led)
-        probs = gate_checks(rows, led, fams)
-        cases.append((name, bool(probs), probs[:2]))
-
-    apply("drop a sources row", lambda r, l: r.pop(0))
-    apply("proofs +1 on one row", lambda r, l: r[0].__setitem__("proofs", str(int(r[0]["proofs"]) + 1)))
-    apply("thms +1 on one row", lambda r, l: r[0].__setitem__("thms", str(int(r[0]["thms"]) + 1)))
-    apply("rename a family", lambda r, l: r[0].__setitem__("fam", "999"))
-    apply("zero tex_bytes", lambda r, l: r[0].__setitem__("tex_bytes", "0"))
-    apply("flip a tier label", lambda r, l: l[0].__setitem__("tier", "T2"))
-    apply("duplicate a dir row", lambda r, l: r.append(dict(r[0])))
-    apply("negative proofs", lambda r, l: r[0].__setitem__("proofs", "-3"))
-
-    # The render-diff mutant is not here: verify_page_sync.py owns the page check and mutates the
-    # page in memory, so this script never writes notes/proof-density.md.
-    caught = sum(1 for _, ok, _ in cases if ok)
-    return caught, len(cases), cases
-
-
 def main():
-    args = sys.argv[1:]
-    quiet = "--quiet" in args
     sources = read_tsv(SOURCES)
     ledger = read_tsv(LEDGER)
     fams = build_families(sources, ledger)
     st_ok, st_total = selftest()
-    problems = report(fams, ledger, sources, quiet=quiet)
+    problems = report(fams, ledger, sources)
     print("=== gates ===")
     print(f"statistic self-test {st_ok}/{st_total}")
     print("PROBLEMS " + str(len(problems) + (st_total - st_ok)))
     for p in problems:
         print("  " + p)
-    if "--mutant" in args:
-        caught, total, cases = mutants(build_families)
-        print("=== mutants ===")
-        for name, ok, detail in cases:
-            print(f"  {'CAUGHT ' if ok else 'MISSED '} {name}" + ("" if ok else f" -> {detail}"))
-        print(f"mutants caught {caught}/{total}")
-        if caught != total:
-            sys.exit(1)
     if problems:
-        sys.exit(1)
+        return 1
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

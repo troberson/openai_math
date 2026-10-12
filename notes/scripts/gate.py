@@ -72,7 +72,7 @@ ROWS = [
     ("measure_templates.py", (), ()),
     ("dump_template_slots.py", (), ()),
     ("measure_checker_needles.py", (), ()),
-    ("measure_proof_density.py --mutant", ("pages",), ()),
+    ("run_tests.py notes/scripts/tests/test_proof_density.py -q", ("pages",), ()),
     ("verify_summaries.py", ("pages", "summaries"), ()),
     ("run_tests.py notes/scripts/tests/test_summaries.py -q", ("pages", "summaries"), ()),
     ("verify_abstracts.py", ("pages",), ()),

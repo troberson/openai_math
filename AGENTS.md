@@ -523,15 +523,21 @@ lives in this file and nowhere else.
   and diff — the report is identical. Quote a quotation's anchor as the checker pins it: a manuscript
   sentence wraps across 1–4 source lines, so the anchor is the **prose-coordinate** line the extractor
   reports, not the line the sentence ends on.
-- Run `python3 notes/scripts/measure_proof_density.py --mutant` before quoting a proof-density figure —
+- Run `python3 notes/scripts/measure_proof_density.py` before quoting a proof-density figure —
   it re-derives every AUC and p from `notes/tables/sources.tsv` joined to `notes/tables/catalog.tsv` by family
   number, gates on the population (719 rows, 719 distinct dirs, 372 families on both sides, per-family
   source rows == ledger `paps`, 20,341 proofs, 21,288 statements, tier counts 136/106/0/130, positive
-  `tex_bytes`, every source dir present under `preprints/`), self-tests the statistic against 5
-  hand-computed AUCs, compares `notes/proof-density.md` with the writer's render of it, and flags 9
-  injected corruptions — the last a prose proof length in the limitations list, visible only to that
-  render diff. It writes nothing; run it twice and diff — the
-  report must be identical. Ties score 0.5, so `([1,2,3],[0,1,2])` is **7/9**, not 6/9, and the ranks
+  `tex_bytes`, every source dir present under `preprints/`), and self-tests the statistic against 5
+  hand-computed AUCs. Its extracted self-tests are in
+  `notes/scripts/tests/test_proof_density.py`: that file injects the eight row faults (a sources row
+  dropped, a proofs count +1, a statements count +1, a family renamed, `tex_bytes` zeroed, a tier label
+  flipped, a dir row duplicated, a negative proofs count) and asserts each needle fires for its own
+  fault and for no other; the tier needle is `'T0': 129` rather than the whole dict, because the gate
+  prints the tier counts in set-iteration order, which is not stable across processes. The clean test
+  pins the population the gates report. The page check is **not** here: `verify_page_sync.py` owns the
+  render diff and mutates the page in memory, so this script never writes `notes/proof-density.md` and
+  `main()` reads no argv, making `--mutant` and `--quiet` inert. It writes nothing; run it twice and
+  diff — the report must be identical. Ties score 0.5, so `([1,2,3],[0,1,2])` is **7/9**, not 6/9, and the ranks
   must be assigned over the **jointly sorted** pooled sample — sorting each group and concatenating
   gives every AUC as 0.000 with absurd p-values.
 - Check `notes/scope-exclusions.md` with `python3 notes/scripts/verify_scope_exclusions.py` and its

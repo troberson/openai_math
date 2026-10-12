@@ -1006,16 +1006,13 @@ def proof_density_population() -> dict[str, Any]:
                                                         if d.get(flag) == "1"}})[flag]
              for flag in PD.FLAGS for key in PD_FLAG_KEYS}
     st_ok, st_total = PD.selftest()
-    caught, mt_total, _cases = PD.mutants(PD.build_families)
-    # The render-diff mutant is not in this list: verify_page_sync.py owns the page check, mutates
-    # the page in memory, and is the row the gate runs with --both.
     return {
         "rows": len(sources), "fams": len(fams),
         "proofs": sum(d["proofs"] for d in fams.values()),
         "thms": sum(d["thms"] for d in fams.values()),
         "tiers": tiers,
         "problems": len(PD.gate_checks(sources, ledger, fams)),
-        "selftest": (st_ok, st_total), "mutants": (caught, mt_total),
+        "selftest": (st_ok, st_total),
         "med": med, "sep": sep, "ctl": ctl, "verdict": verdict,
         "shapes": shapes, "flags": flags,
         "signals": len(PD.SIGNALS), "pairs": len(PD.TIER_PAIRS),
@@ -1034,7 +1031,6 @@ def proof_density_phrases(mp: dict[str, Any]) -> dict[str, str]:
     p["tiers"] = " / ".join(f"{t} {mp['tiers'][t]}" for t in ("T3", "T2", "T1", "T0"))
     p["gate_problems"] = f"All {mp['problems']} problems"
     p["gate_selftest"] = f"statistic self-test {mp['selftest'][0]}/{mp['selftest'][1]}"
-    p["gate_mutants"] = f"injected mutants caught {mp['mutants'][0]}/{mp['mutants'][1]}"
     for key, lab in (("proofs", "medrow_proofs"), ("thms", "medrow_thms")):
         p[lab] = " | ".join(pd_median(mp["med"][(key, t)]) for t in ("T0", "T2", "T3"))
     for key, _lbl in PD.SIGNALS:

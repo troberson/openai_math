@@ -117,7 +117,7 @@ The Gate column is the invocation the gate list runs: `notes/scripts/gate.py`, w
 invocations — the **9** gated writers (the two writers it does not run are `build_report_templates.py`
 and `measure_open_probe.py`, each for the reason in its own row), the 34 gated report-only rows (including `check_summary_manuscripts.py`
 and `locate_summary_quotes.py`, `check_index_links.py` plain and its extracted self-tests row, and
-the fourteen extracted self-tests rows, `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q`,
+the fifteen extracted self-tests rows, `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q`,
 `run_tests.py notes/scripts/tests/test_conjecture_standing.py -q`,
 `run_tests.py notes/scripts/tests/test_abstracts.py -q`,
 `run_tests.py notes/scripts/tests/test_named_conjectures.py -q`,
@@ -130,7 +130,8 @@ the fourteen extracted self-tests rows, `run_tests.py notes/scripts/tests/test_s
 `run_tests.py notes/scripts/tests/test_cache_promotion.py -q` and
 `run_tests.py notes/scripts/tests/test_findings.py -q` and
 `run_tests.py notes/scripts/tests/test_counterexample_crosscheck.py -q` and
-`run_tests.py notes/scripts/tests/test_faithfulness.py -q`), and **32** checker
+`run_tests.py notes/scripts/tests/test_faithfulness.py -q` and
+`run_tests.py notes/scripts/tests/test_proof_density.py -q`), and **32** checker
 invocations: **18** from the 9 checkers listed twice (plain and with `--mutant`) — the 9 table
 checkers — plus
 `verify_page_sync.py --both` (**1**) — both passes in one process, because `catlib.render.rendered`
@@ -185,7 +186,7 @@ had to wait for the serial chain to finish.
 | `measure_faithfulness.py` | `notes/formalization-faithfulness.md` | plain |
 | `measure_index_sizes.py` | `notes/index-design.md` | plain |
 | `measure_move_surface.py` | `math-faz` — the moved/stable path-mention split over the 30 pages the reorg moves, by context; the bead re-runs it after each pass | **not gated** |
-| `measure_proof_density.py` | `notes/proof-density.md` | `--mutant` |
+| `measure_proof_density.py` | `notes/proof-density.md` | the self-tests are in `notes/scripts/tests/test_proof_density.py`, run by the `run_tests.py` row; the plain run is not gated, because `render_reports.py` imports the module and calls `build_families()` rather than running the script |
 | `measure_templates.py` | `notes/templates.md` | plain |
 | `measure_topics.py` | `notes/topics.md` | `--check` |
 | `read_manuscript.py` | none — a reading aid; prints a manuscript's abstract, section skeleton and titled statement environments with `file:line` anchors | **not gated** |
