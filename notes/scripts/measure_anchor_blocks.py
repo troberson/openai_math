@@ -11,7 +11,8 @@ The anchor set is the **moved** surface only — `notes/<page>.md|tsv`, `notes/r
 `notes/development/…`, `notes/tables/…`. A pattern that allows `/` freely in the body matches anchors
 naming directories the reorg leaves in place (`notes/index/README.md:12`), which would read as an
 attributed block that no move touches. Recorded baseline: 0 attributed blocks, 4 quotation lines in
-`t0-chains.md` and 1 in `summaries-workflow.md` = 5 anchored citations.
+`t0-chains.md` = 4 anchored citations. The fifth was a quotation in `summaries-workflow.md` whose
+anchor is now a code span, so that line no longer carries a quotation.
 
 Scope is the 30 pages the reorg moves: the top-level `notes/*.md`, plus `notes/reports/*.md` and
 `notes/development/*.md` once those directories exist. Report-only: writes nothing.
