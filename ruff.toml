@@ -29,13 +29,13 @@ select = [
     "RET",
 ]
 ignore = [
-    # 164 sites, measured 2026-10-12. The report strings are built with %-formatting on purpose: a
+    # 162 sites, measured 2026-10-12. The report strings are built with %-formatting on purpose: a
     # report line is a printf template reused across tiers. Ruff's fix is `.format()`, not an
     # f-string, and it is marked unsafe because it is not always neutral: on a regex built by
     # %-substitution it doubles `{` for the format layer, so `([{\"\"])` becomes `([{{\"\"])` and
-    # the character class gains `{`. The 164 sites need per-site review, not autofix.
+    # the character class gains `{`. The 162 sites need per-site review, not autofix.
     "UP031",
-    # 95 sites, measured 2026-10-12. `l` is a line and `I` never appears; the ambiguous-name rule
+    # 97 sites, measured 2026-10-12. `l` is a line and `I` never appears; the ambiguous-name rule
     # is about readers mistaking a letter for a digit, and in these scripts the single-letter names
     # are line, row and counter locals inside a loop that is ten lines long.
     "E741",
