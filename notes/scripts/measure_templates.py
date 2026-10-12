@@ -39,7 +39,7 @@ def registry() -> Any:
     POPULATIONS and LABELS dicts from the writer's functions while its own module body runs, so a
     module-level import here closes the cycle at import time: importing the writer first would build
     those dicts against a half-initialised writer. Same deferred shape as catlib/render.py's
-    rendered(); notes/linting.md lists the cycles.
+    rendered(); `.pylintrc`'s `R0401` comment names the cycle this guard keeps open.
     """
     import catlib.templates
     return catlib.templates

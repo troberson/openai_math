@@ -324,26 +324,20 @@ The chain, in the order that worked:
    `build_report_templates.py notes/README.md verify_script_ownership.py` (it reads
    `git show HEAD:<page>`) → `render_reports.py` → the sync pass is green. Same rule as §6a item 7.
 4. **`AGENTS.md`**: the importer line, the inventory, the gate counts, and the new page's rule.
-5. **`notes/linting.md`**: the source-file count (scripts + `catlib/` modules), the mypy gate line
-   (`Success: no issues found in 73 source files`, measured 2026-10-11 with `.venv/bin/mypy
-   notes/scripts/` — the count moves with every script, so quote it from a fresh run), the strict
-   probe's `(N checked)` and the clean set
-   (**N − files-with-errors**, not the previous clean count plus one — count the distinct files the
-   probe names), and the `duplicate-code` / `cyclic-import` rows.
-6. **A checker's own count-phrase template must be grammatical.** `f"returns **{n} lines**"` fails when
+5. **A checker's own count-phrase template must be grammatical.** `f"returns **{n} lines**"` fails when
    the measured value is 1: the checker reports `count phrase not in the page: returns **1 lines**` and
    the page is the stale side. Write `f"**{n}** line{'s' if n != 1 else ''}"`.
-7. **Check a probe's stability before sweeping its count.** `pylint --enable=R0401` read **7, 7, 7, 8,
+6. **Check a probe's stability before sweeping its count.** `pylint --enable=R0401` read **7, 7, 7, 8,
    8** across five runs on the same tree, and `git archive HEAD notes/scripts` (the tree before the
    addition) gave the **identical distribution** — so the new checker added no cycle, and the count is a
    run property, not a tree property. Record the distribution and the diff between the two sets
    (`sed 's/.*Cyclic import //' | sort | diff`), not one number, and say in the doc that the count
    varies. A sequence of recorded counts (7 → 8 → 9 → 8 → 7) can be run-order noise, not five tree
    changes.
-8. **Lint the new file before committing it.** A six-clause `and` chain in a membership test trips
+7. **Lint the new file before committing it.** A six-clause `and` chain in a membership test trips
    pylint `too-many-boolean-expressions` (R0916, limit 5) — build the set union once outside the loop.
    A `×` in a comment trips ruff `RUF003`.
-9. **A checker that parses a record requires that record on disk.** The probe records the page quotes
+8. **A checker that parses a record requires that record on disk.** The probe records the page quotes
    lived in `.qwen/tmp/` (gitignored), so the gate row would be vacuous in a fresh clone. Track them
    (`notes/probe/`), give the ownership checker a rule for the new directory, add the census row, and
    keep the absence guard that exits 1 when a record is missing.
