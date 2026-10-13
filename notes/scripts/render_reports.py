@@ -756,7 +756,7 @@ INDEX_SPLIT = {
          "`notes/tables/lean-dirs.tsv` (**41937** B over **559** rows),"),
         ("`notes/tables/manuscripts.tsv` (**277805** B over **719** rows), "
          "`notes/tables/names.tsv` (**304513** B over **5842** rows),"),
-        ("`notes/tables/quotes.tsv` (**333196** B over **1637** rows), "
+        ("`notes/tables/quotes.tsv` (**338073** B over **1679** rows), "
          "`notes/tables/scope-notes.tsv` (**26677** B over **242** rows),"),
         ("`notes/tables/sources.tsv` (**221463** B over **719** rows), "
          "`notes/tables/topics-rendered.tsv` (**19127** B over **92** rows), "
@@ -3049,7 +3049,6 @@ def subfinding_pairs_full(p: dict[str, Any]) -> dict[str, str]:
 
 
 SP_SPLIT = {
-    "sp_densest_range": ["034 at n=14 down to 211 at"],
     "sp_notread": ["Every family with two or more manuscripts is read: the page covers 167 of the 167, carrying 514",
                    "manuscripts."],
 }
