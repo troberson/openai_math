@@ -65,7 +65,8 @@ from catlib.promote import (
 # the 16 generated tables moved out of `notes/index/` into `notes/tables/`, so the index tree these two
 # writers read is 1,033 pages, not 1,049 files, and the older records for those targets name the 16 TSVs
 # under the path the writers no longer open.
-PROBES = (ROOT / "notes" / "development" / "probe" / "2026-10-12_extract_named_results.txt",
+PROBES = (ROOT / "notes" / "development" / "probe" / "2026-10-13_build_index_db.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-12_extract_named_results.txt",
           ROOT / "notes" / "development" / "probe" / "2026-10-12_measure_templates_tables.txt",
           ROOT / "notes" / "development" / "probe" / "2026-10-12_seed_quotes_summaries.txt",
           ROOT / "notes" / "development" / "probe" / "2026-10-12_rr_tables.txt",
