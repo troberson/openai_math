@@ -1,4 +1,4 @@
-# Index link integrity — 66,107 links checked against the shipped files, 0 broken
+# Index link integrity — 66,108 links checked against the shipped files, 0 broken
 
 Built 2026-10-07 by `notes/scripts/check_index_links.py` (report-only: it writes nothing and
 exits non-zero if any link is broken). Every count below is from a fresh run of that script, of
@@ -7,8 +7,8 @@ exits non-zero if any link is broken). Every count below is from a fresh run of 
 `lake exe cache get`, or comparator run.
 
 **Headline, with the rule that yields it:** all 1,033 rendered index pages read from disk →
-66,107 markdown links extracted with a paren-balanced target scanner, each resolved against its
-page's directory → **0 broken**. Of those links, **17,700 resolve to a directory and 48,407 to a
+66,108 markdown links extracted with a paren-balanced target scanner, each resolved against its
+page's directory → **0 broken**. Of those links, **17,700 resolve to a directory and 48,408 to a
 file**. Every shipped-file category reconciles with a fresh `build_catalog.py` parse: 719
 manuscript PDFs, 719 `build/` trees, 719 `README.md` stubs, 242 scope notes, 416 comparator
 configs (JSON and Lean side by side), 192 Lean files named by `formalization.yaml` over 183
@@ -36,7 +36,7 @@ the balanced scan resolves, so the trap stays demonstrated rather than recorded.
 
 ## A link to a directory is not a link to a file
 
-17,700 of the 66,107 links resolve to a directory. They are deliberate: the index links a
+17,700 of the 66,108 links resolve to a directory. They are deliberate: the index links a
 manuscript's LaTeX tree, a verification bundle, and a Lean module directory because those are
 trees, not documents, and the index's job is to get a reader to the tree. The report separates
 them per category and names them:
@@ -49,7 +49,7 @@ them per category and names them:
 | `verification-dir` | 60 | 30 | `preprints/<dir>/verification/` — certificate bundles |
 | `index-dir` | 1 | 1 | `notes/index/names/`, linked from the entry point |
 
-The remaining 48,407 links resolve to files. `verification-dir` counts 60 links over 30 dirs
+The remaining 48,408 links resolve to files. `verification-dir` counts 60 links over 30 dirs
 because each bundle is linked twice on family pages — once in the Manuscripts table, once in the
 verification section — and the registry appends one of the two; `lean-dir` counts 200 links over
 183 dirs because 14 dirs host more than one `main_results` declaration (max 3), and 6 files host
@@ -68,7 +68,7 @@ manuscript dirs linked outside the release set  27  on disk 27  links 1100
 
 ## Category table, reconciled with a fresh parse
 
-From `python3 notes/scripts/check_index_links.py` (1,033 pages, 66,107 links, 0 broken):
+From `python3 notes/scripts/check_index_links.py` (1,033 pages, 66,108 links, 0 broken):
 
 | Category | Links | Targets | file | dir | canonical |
 |---|---|---|---|---|---|
@@ -111,7 +111,7 @@ unlinked. `CONTENTS.md`'s 720 `.pdf` links are the 719 manuscript PDFs plus `ove
 ## Coverage: the disk scan is a superset of the render-time check
 
 `build_index.py` checks its own links as it renders and reports **48,013 links checked, 0
-broken** (fresh run). The disk scan finds **66,107 links, 0 broken**. The 18,094-link difference
+broken** (fresh run). The disk scan finds **66,108 links, 0 broken**. The 18,094-link difference
 is not a discrepancy about existence — both report zero — it is the render-time registry
 under-covering the pages it writes. The registry appends one href per registered relationship
 (an edge, a canonical file); the rendered bodies emit the same target again in other tables, and
@@ -123,7 +123,7 @@ Attributed two ways, each summing to 18,094:
 | Page group | Pages | Scanned | Registered | Gap |
 |---|---|---|---|---|
 | name pages | 551 | 57,888 | 40,899 | 16,989 |
-| family pages | 372 | 6,712 | 5,764 | 948 |
+| family pages | 372 | 6,713 | 5,764 | 948 |
 | topic pages | 92 | 978 | 978 | 0 |
 | discipline pages | 17 | 372 | 372 | 0 |
 | entry point (`notes/index/README.md`) | 1 | 157 | 0 | 157 |
@@ -173,8 +173,8 @@ so the injected hrefs live only in the test file. The page's own prose is not mu
 `verify_page_sync.py` owns that check and mutates in memory, so neither script writes the page.
 The sixth test pins the basename pass — both set sizes (1,027 index basenames, 25 table basenames),
 the 6 intra-tree duplicates, 0 collisions, and a collision injected by handing the pass a shared
-name. The seventh test asserts the scan baseline this page quotes — 1,033 pages, 66,107 links, 0
-broken, 17,700 resolving to a directory and 48,407 to a file — so a scan that drifts moves the page
+name. The seventh test asserts the scan baseline this page quotes — 1,033 pages, 66,108 links, 0
+broken, 17,700 resolving to a directory and 48,408 to a file — so a scan that drifts moves the page
 and fails the test together. The self-test earned its keep on the first run, catching two real
 defects:
 

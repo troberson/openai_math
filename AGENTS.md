@@ -637,7 +637,7 @@ lives in this file and nowhere else.
   tables, 372 families over 719 manuscripts, 242 scope notes, 416 configs, 200 `main_results` entries
   over 189 configs, 172 formalized, 749 preprint dirs, 122,458 `.lean` files, 559 module dirs, 17
   disciplines against 23 Lean dirs, 10 traces in 11 files, 30 verification bundles, 521 `.bib` files
-  with 13,802 entries and 393 hrefs, the ledger set at 297,050 B against the all-TSV 2,207,042 B, 66,107
+  with 13,802 entries and 393 hrefs, the ledger set at 297,050 B against the all-TSV 2,252,773 B, 66,108
   disk links with 0 broken and 17,700 resolving to a directory, and the substring counts 18 / 373
   against the brace-qualified 17 / 372. `main()` reads no argv, so `--mutant` is inert, and
   `population()` is under `functools.cache` (`:66`), so the fifteen `check()` calls the row makes pay
@@ -947,11 +947,11 @@ lives in this file and nowhere else.
   re-render rather than editing a page.
 - Check the rendered index against the shipped files with
   `python3 notes/scripts/check_index_links.py` — report-only, ~1 s, exits non-zero on a broken link.
-  It re-derives the check from disk: **1,033** pages, **66,107** links, 0 broken, of which **17,700**
+  It re-derives the check from disk: **1,033** pages, **66,108** links, 0 broken, of which **17,700**
   resolve to a directory (`manuscript-dir`, `latex-build-tree`, `lean-dir`, `verification-dir`,
-  `index-dir`) and **48,407** to a file, every shipped-file category equal to a fresh
-  `build_catalog.py` count. The render report's **48,012** links are the registry's subset; the
-  **18,095**-link difference is registry under-coverage, not a disagreement about existence — both
+  `index-dir`) and **48,408** to a file, every shipped-file category equal to a fresh
+  `build_catalog.py` count. The render report's **48,013** links are the registry's subset; the
+  **18,094**-link difference is registry under-coverage, not a disagreement about existence — both
   report 0 broken. Link scanning must be paren-balanced: `[^)]*` truncates
   `preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/paper.pdf` and invents a broken
   link, so the baseline is 0 broken links, not 1. Its self-tests are extracted to

@@ -119,7 +119,7 @@ RECORD = {
     "S24": ["92", "978"],
     "S25": s25_figures(),
     "S26": ["724", "719", "749", "20,341", "21,288", "21,203", "717", "5"],
-    "S27": ["1,033", "66,107"],
+    "S27": ["1,033", "66,108"],
     "S28": ["160,187", "734", "v4.34.1", "1.3"],
     "S29": ["277,607", "56,416", "278,523", "56,944", "122,458", "56,702"],
     "S31": ["139", "60", "64", "11", "42", "84", "13", "145",
@@ -146,7 +146,6 @@ REPORTS = [
     ("extract_citations.py",
      "listed manuscripts with no .bib: 225 of 719, of which 225 carry an inline thebibliography and 0 carry neither",
      "blind to **225** of 719 manuscripts"),
-    ("check_index_links.py", "links extracted        66107", "**66,107** links with **0** broken"),
 ]
 
 
@@ -481,8 +480,13 @@ def check(page):
             problems.append(f"count not stated as measured: {n[:80]}")
 
     # Pass E - the extractors' own reports.
-    outs = {s: run(s) for s in {s for s, _, _ in REPORTS}}
-    for script, report, shown in REPORTS:
+    outs = {s: run(s) for s in {s for s, _, _ in REPORTS} | {"check_index_links.py"}}
+    # The disk link scan's count is read from its own report, so a scan that drifts moves
+    # the required page phrase without this file carrying a number.
+    n = int(first_group(r"links extracted\s+(\d+)", outs["check_index_links.py"]))
+    for script, report, shown in list(REPORTS) + [
+            ("check_index_links.py", f"links extracted        {n}",
+             f"**{n:,}** links with **0** broken")]:
         if report not in outs[script]:
             problems.append(f"{script} report no longer reads: {report[:60]}")
         if shown not in flat:
