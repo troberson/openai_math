@@ -80,7 +80,7 @@ From `python3 notes/scripts/check_index_links.py` (1,033 pages, 66,107 links, 0 
 | `manuscript-readme` | 719 | 719 | 719 | 0 | 719 = canonical |
 | `config-json` | 705 | 416 | 705 | 0 | 416 = canonical |
 | `notes-doc` | 576 | 25 | 576 | 0 | — |
-
+| `tables-tsv` | 554 | 2 | 554 | 0 | — |
 | `config-lean` | 416 | 416 | 416 | 0 | 416 = canonical |
 | `lean-file` | 289 | 192 | 289 | 0 | 192 = canonical |
 | `scope-note` | 242 | 242 | 242 | 0 | 242 = canonical |
