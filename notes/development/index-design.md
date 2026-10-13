@@ -72,7 +72,7 @@ Those five named files are the ledger set the **297,050** B figure covers. The 2
 `notes/tables/family-name.tsv` (**136769** B over **9819** rows), `notes/tables/family-topic.tsv` (**23682** B over **978** rows),
 `notes/tables/family-trace.tsv` (**855** B over **10** rows), `notes/tables/lean-dirs.tsv` (**41937** B over **559** rows),
 `notes/tables/manuscripts.tsv` (**277805** B over **719** rows), `notes/tables/names.tsv` (**304513** B over **5842** rows),
-`notes/tables/quotes.tsv` (**338073** B over **1679** rows), `notes/tables/scope-notes.tsv` (**26677** B over **242** rows),
+`notes/tables/quotes.tsv` (**357218** B over **1744** rows), `notes/tables/scope-notes.tsv` (**26677** B over **242** rows),
 `notes/tables/sources.tsv` (**221463** B over **719** rows), `notes/tables/topics-rendered.tsv` (**19127** B over **92** rows), `notes/tables/topics.tsv` (**22631** B over **92** rows) and
 `notes/tables/traces.tsv` (**1639** B over **10** rows) — are tracked TSVs too: 4 written by the ledger
 scripts and 16 rendered by `build_index.py` into `notes/tables/` on `math-faz.6`, and every
