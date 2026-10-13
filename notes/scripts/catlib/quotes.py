@@ -13,10 +13,10 @@ anchors uses the same rule the page's checker uses: a page whose anchor grammar 
 the way it fails the checker. `nearest_anchor` is the block-quote attribution for a page that cites by
 an anchor; `catlib.summaries.candidates` is the same idea for a page that cites by a `[Sn:line]` marker.
 
-**Page breaks inside a quote are the common case, not the edge.** Measured 2026-10-12 over the 21
+**Page breaks inside a quote are the common case, not the edge.** Measured 2026-10-13 over the 22
 summaries pages, with the checker's own span and attribution rules (`catlib.summaries.spans_of` and
-`candidates`): of the **925** quoted spans of 12 characters or more that `verify_summaries.py` pass C
-checks, **293** sit in one source line and **618** sit across 2 to 26 lines. A spec that names a single
+`candidates`): of the **990** quoted spans of 12 characters or more that `verify_summaries.py` pass C
+checks, **314** sit in one source line and **661** sit across 2 to 26 lines. A spec that names a single
 line cannot carry them, so the spec names a window and the resolver joins it.
 
 **Locate on raw bytes, never on the folded line.** `catlib.text.strip_markup` is the verification
