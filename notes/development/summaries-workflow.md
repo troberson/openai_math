@@ -275,3 +275,14 @@ issue.
   HEAD's page to build its template, so the row for a rebuilt template has to be committed first. The
   slot-count rule is `text.count("{{ ")` over the whole file, which includes the header comment's literal
   `{{ }}`, so the row carries 423 for a template the builder reports as 422 exprs.
+- **The signalling-word filter's cost is measured, and it is the bulk of the page.** Chosen 2026-10-13
+  on `math-el4.5`. The bead's "remaining 118 families / 311 manuscripts" is exactly the three bands
+  minus the ten named densest targets. Reading it yields **141** accepted clause pairs, **118** headline
+  pairs, **259** titles claimed, **52** unclaimed and **0** unmatched clauses — 141 of the page's 203.
+  The families the filter left claim **83.2%** of their titles against the first pass's **53.7%**, so the
+  probe vocabulary is not selecting the families that pair well; the ten densest targets are the outlier
+  at 27%. Revisit if a new rule widens the population: the cost is a property of the filter, not of the
+  page.
+- **A prose needle names the mutated value, not the original.** Chosen 2026-10-13 on `math-el4.5`. The
+  render-diff line reports the page's mutated line, so a needle keyed to the pre-mutation text never
+  fires. The existing rejected-rule needle already names `(57)`, the value the mutation writes.
