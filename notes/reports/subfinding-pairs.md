@@ -1583,7 +1583,7 @@ manuscript of family NNN in `notes/tables/subfindings.tsv`, whose `title` column
   40 probe hits are technical uses of the same words. A pass that probes only the bead's second list
   finds nothing, which is how the bead's own first probe of this question produced a false negative.
 - **The signalling-word filter's cost is the bulk of the page.** The bead's remaining set is the
-  no-signalling-word set: **167 families over 514 manuscripts**, the three bands minus the ten named
+  no-signalling-word set: **118 families over 311 manuscripts**, the three bands minus the ten named
   densest targets. Reading it yields **141** accepted clause pairs, **118** accepted headline pairs,
   **259** titles claimed, **52** unclaimed, and **0** clauses recorded unmatched — 141 of the page's 203
   clause pairs. The first pass read 49 families over 203 manuscripts, accepted 62 clause pairs, and

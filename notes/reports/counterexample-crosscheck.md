@@ -40,32 +40,32 @@ of them. Gaps = configs with no entry.
 |---|---|---|---|---|---|
 | 047 | T3 | 1 | 1 | 0 | entry states the counterexample |
 | 072 | T3 | 3 | 3 | 0 | entry states it; two companion entries |
-| 047 | T3 | 1 | 1 | 0 | entry states the counterexample |
+| 095 | T3 | 1 | 1 | 0 | entry states the counterexample |
 | 100 | T2 | 3 | 0 | 3 | structural absence |
-| 047 | T3 | 1 | 1 | 0 | entry states the counterexample |
-| 100 | T2 | 3 | 0 | 3 | structural absence |
-| 047 | T3 | 1 | 1 | 0 | entry states the counterexample |
+| 118 | T3 | 1 | 1 | 0 | entry states the counterexample |
+| 151 | T2 | 1 | 0 | 1 | structural absence |
+| 155 | T3 | 1 | 1 | 0 | entry states the counterexample |
 | 157 | T3 | 2 | 1 | 1 | entry states the Hadwiger claim; one gap |
-| 100 | T2 | 3 | 0 | 3 | structural absence |
+| 161 | T2 | 1 | 0 | 1 | structural absence |
 | 162 | T3 | 3 | 2 | 1 | entries state both claims; one gap |
 | 172 | T3 | 7 | 2 | 5 | classification and spherical witness; five gaps |
 | 185 | T3 | 2 | 1 | 1 | entry states claim 1; one gap |
-| 047 | T3 | 1 | 1 | 0 | entry states the counterexample |
-| 100 | T2 | 3 | 0 | 3 | structural absence |
-| 100 | T2 | 3 | 0 | 3 | structural absence |
+| 190 | T3 | 1 | 1 | 0 | entry states the counterexample |
+| 191 | T2 | 1 | 0 | 1 | structural absence |
+| 192 | T2 | 1 | 0 | 1 | structural absence |
 | 197 | T3 | 4 | 3 | 1 | three entries state the three claims; one gap |
 | 198 | T3 | 2 | 2 | 0 | entry states claim 1; one companion |
 | 199 | T3 | 2 | 2 | 0 | entries state claims 1 and 3 |
-| 185 | T3 | 2 | 1 | 1 | entry states claim 1; one gap |
-| 100 | T2 | 3 | 0 | 3 | structural absence |
-| 100 | T2 | 3 | 0 | 3 | structural absence |
-| 185 | T3 | 2 | 1 | 1 | entry states claim 1; one gap |
-| 100 | T2 | 3 | 0 | 3 | structural absence |
-| 100 | T2 | 3 | 0 | 3 | structural absence |
-| 047 | T3 | 1 | 1 | 0 | entry states the counterexample |
+| 244 | T3 | 2 | 1 | 1 | entry states claim 1; one gap |
+| 272 | T2 | 2 | 0 | 2 | structural absence |
+| 289 | T2 | 1 | 0 | 1 | structural absence |
+| 294 | T3 | 2 | 1 | 1 | entry states claim 1; one gap |
+| 297 | T2 | 1 | 0 | 1 | structural absence |
+| 323 | T2 | 1 | 0 | 1 | structural absence |
+| 329 | T3 | 1 | 1 | 0 | entry states the counterexample |
 | 347 | T3 | 1 | 1 | 0 | entry states a degenerate instance |
 | 350 | T3 | 3 | 2 | 1 | entries state two forms; one gap |
-| 047 | T3 | 1 | 1 | 0 | entry states the counterexample |
+| 361 | T3 | 1 | 1 | 0 | entry states the counterexample |
 
 ## The 19 T3 families
 

@@ -16,17 +16,17 @@ describe the listed corpus only.
 | Column | Rule | Corpus total |
 |---|---|---|
 | `dir` | `preprints/` directory name — manuscript ownership is the path component after `preprints` | 719 distinct |
-| `fam` | Family id, from the manuscript rows of `notes/tables/subfindings.tsv` | 719 distinct |
+| `fam` | Family id, from the manuscript rows of `notes/tables/subfindings.tsv` | 372 distinct |
 | `pdf` | Manuscript PDF path, reconciled against `overview.tex` | 719, all on disk, all non-empty |
 | `main_tex` | Resolved main file, rule below | 719 filled, **0** empty |
 | `roots` | `.tex` files declaring `\documentclass` **at line start** | **724** over 719 dirs: 715 with 1, 3 with 2, 1 with 3 |
 | `tex` | All `.tex` files under the dir | **7,705** (max 201, mean 10.72 per dir) |
 | `bib` | `.bib` files under the dir | **500**; **225** dirs carry none |
 | `sections` | `\section*?{` | **6,019** |
-| `subsections` | `\subsection*?{` | **6,019** |
-| `subsubsections` | `\subsubsection*?{` | **6,019** |
+| `subsections` | `\subsection*?{` | **16,297** |
+| `subsubsections` | `\subsubsection*?{` | **316** |
 | `proofs` | `\begin{proof}` | **20,341**; **1** dir carries none |
-| `thms` | Statement environments, rule below | **6,019** |
+| `thms` | Statement environments, rule below | **21,288** |
 | `abstract` | Line-start `\begin{abstract}` anywhere in the dir | **719 of 719** |
 | `tex_bytes` | Sum of `.tex` file sizes | **127,456,942** (mean 177,270 per dir) |
 
@@ -111,12 +111,12 @@ The 85 gap is names the declared rule counts that the six omit: `assumption` 22,
 The report's reconciliation lines, from the run that wrote the shipped TSV:
 
 - rows written **719**, listed manuscript dirs **719**, preprint dirs on disk **749**;
-- overview manuscript slugs not on disk **5**;
-- empty or missing PDF files **5**;
-- families outside `notes/tables/catalog.tsv` **5**; per-family row count vs ledger `paps` differences **5**;
+- overview manuscript slugs not on disk **0**;
+- empty or missing PDF files **0**;
+- families outside `notes/tables/catalog.tsv` **0**; per-family row count vs ledger `paps` differences **0**;
 - `overview.tex` manuscript paths (the paren-aware `PAP` regex) **719** distinct vs `sources.tsv`
-  `pdf` **719** distinct; paths in one and not the other **5** and **5**; families whose path set
-  differs from `overview.tex` **5**.
+  `pdf` **719** distinct; paths in one and not the other **0** and **0**; families whose path set
+  differs from `overview.tex` **0**.
 
 The `pdf` column is derived from `notes/tables/subfindings.tsv`, so the last three lines are the
 independent check: they re-parse the release's own list out of `overview.tex` with
@@ -124,7 +124,7 @@ independent check: they re-parse the release's own list out of `overview.tex` wi
 
 Diffing the 722-row table shipped before the Oct 7 merge against this 719-row table: 30 directories
 leave (27 superseded editions, 3 withdrawal notices), 27 arrive (the new date-named editions), and
-**5** cells change in the directories present in both. The merge moves directory names; it does not
+**0** cells change in the directories present in both. The merge moves directory names; it does not
 re-measure a manuscript that stayed put.
 
 ## Not checked

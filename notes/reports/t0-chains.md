@@ -134,28 +134,28 @@ line in `overview.tex`.
 | 041 | A&CG | resolution | 2 | 2 | 1 | `overview.tex:160` |
 | 055 | A&CG | uniform | 2 | 0 | 0 | `overview.tex:186` |
 | 065 | A&CG | resolution, uniform | 1 | 0 | 0 | `overview.tex:204` |
-| 074 | real&complex | resolution, uniform | 1 | 0 | 0 | `overview.tex:204` |
+| 074 | real&complex | resolution, uniform | 2 | 1 | 0 | `overview.tex:222` |
 | 077 | real&complex | resolution, bound, uniform | 2 | 2 | 1 | `overview.tex:228` |
 | 080 | real&complex | bound, uniform | 1 | 1 | 0 | `overview.tex:234` |
-| 138 | TCS | bound, uniform | 1 | 1 | 0 | `overview.tex:234` |
+| 138 | TCS | bound, uniform | 1 | 0 | 0 | `overview.tex:353` |
 | 147 | dyn sys | resolution, bound | 2 | 1 | 0 | `overview.tex:373` |
 | 200 | algebra | resolution, classification, uniform | 0 | 0 | 0 | `overview.tex:481` |
 | 203 | algebra | bound, classification, uniform | 1 | 1 | 0 | `overview.tex:487` |
 | 217 | prob | classification, uniform | 2 | 2 | 1 | `overview.tex:517` |
-| 219 | prob | uniform | 2 | 0 | 0 | `overview.tex:186` |
+| 219 | prob | uniform | 1 | 0 | 0 | `overview.tex:521` |
 | 239 | prob | bound, partial, uniform | 0 | 0 | 0 | `overview.tex:561` |
 | 258 | group theory | - | 1 | 1 | 0 | `overview.tex:603` |
-| 265 | mathphys | bound, partial, uniform | 0 | 0 | 0 | `overview.tex:561` |
-| 268 | mathphys | resolution, bound, uniform | 2 | 2 | 1 | `overview.tex:228` |
-| 270 | mathphys | resolution, bound, uniform | 2 | 2 | 1 | `overview.tex:228` |
-| 286 | opalg | classification, uniform | 2 | 2 | 1 | `overview.tex:517` |
-| 300 | opalg | resolution, bound | 2 | 1 | 0 | `overview.tex:373` |
-| 302 | opalg | bound, partial, uniform | 0 | 0 | 0 | `overview.tex:561` |
-| 308 | topology | uniform | 2 | 0 | 0 | `overview.tex:186` |
-| 335 | diffgeom | resolution, uniform | 1 | 0 | 0 | `overview.tex:204` |
+| 265 | mathphys | bound, partial, uniform | 2 | 2 | 1 | `overview.tex:619` |
+| 268 | mathphys | resolution, bound, uniform | 2 | 2 | 1 | `overview.tex:625` |
+| 270 | mathphys | resolution, bound, uniform | 1 | 0 | 0 | `overview.tex:629` |
+| 286 | opalg | classification, uniform | 2 | 2 | 1 | `overview.tex:664` |
+| 300 | opalg | resolution, bound | 0 | 0 | 0 | `overview.tex:692` |
+| 302 | opalg | bound, partial, uniform | 2 | 2 | 1 | `overview.tex:696` |
+| 308 | topology | uniform | 2 | 0 | 0 | `overview.tex:710` |
+| 335 | diffgeom | resolution, uniform | 1 | 0 | 0 | `overview.tex:768` |
 | 346 | diffgeom | bound, partial | 2 | 1 | 0 | `overview.tex:790` |
 | 364 | PDE | bound, density, uniform | 2 | 0 | 0 | `overview.tex:828` |
-| 368 | PDE | resolution, bound, uniform | 2 | 2 | 1 | `overview.tex:228` |
+| 368 | PDE | resolution, bound, uniform | 2 | 2 | 1 | `overview.tex:837` |
 
 All 27 are T0, all 54 manuscripts carry `formalized = 0`, and 25 of 27 carry no coverage signal at all.
 
