@@ -141,7 +141,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 144	Dynamical systems and ergodic theory	Banach's simple Lebesgue-spectrum problem	1	0	T2	1	0	1	543	0	0	0		resolution	0	1	0		0	0	0
 145	Dynamical systems and ergodic theory	Rokhlin's multiple-mixing problem	1	0	T2	1	0	1	377	0	0	0		resolution	0	1	0		0	0	0
 146	Dynamical systems and ergodic theory	Sinai's positive-entropy conjecture for the standard map	1	0	T2	3	0	1	599	0	0	0		uniform	0	1	0		0	0	0
-147	Dynamical systems and ergodic theory	The near-boundary Birkhoff conjecture	2	0	T0	0	0	0	0	0	0	0		resolution|bound	0	1	0		0	0	0
+147	Dynamical systems and ergodic theory	The near-boundary Birkhoff conjecture	2	0	T0	0	0	0	0	0	0	0		resolution|bound	0	1	0		0	0	1
 148	Dynamical systems and ergodic theory	The dimension formula for self-similar measures on the line	1	1	T3	2	1	1	751	0	0	0		resolution|uniform	0	1	0		0	0	0
 149	Dynamical systems and ergodic theory	Permanence for weakly reversible reaction networks	2	0	T2	1	0	1	564	0	0	0		resolution|bound|uniform	0	1	0		0	0	0
 150	Dynamical systems and ergodic theory	Weak mixing of irrational triangular billiards	2	0	T2	1	0	1	481	0	0	0		uniform	0	0	0		0	0	0

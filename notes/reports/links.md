@@ -59,7 +59,7 @@ targets are absent from disk.
 **189** unique configs — **11** repeated entries across **8** configs (`ComparatorChallenges/`
 `EgyptianFractions` ×3, `MatrixMultiplication` ×3, `TraceIdealTransportSupport` ×3,
 `GaussianReplacement` ×2, `IndependentProducts` ×2, `SmoothYau` ×2, `OneTapeSpace` ×2,
-`UniformFourier` ×2). **136** families have ≥1 entry, and the ledger `mainres` column sums to 189, so
+`UniformFourier` ×2). **136** families have ≥1 entry, and the ledger `mainres` column sums to 189 so
 no config is shared between families.
 
 The bead spec's "168 families with `mainres>0`" is **not reproduced**; the measured figure is 136.
@@ -94,8 +94,8 @@ bibliographies included) the same scan resolves **432** hrefs, of which **22** p
 superseded editions. The superseded-target citations live only inside superseded editions, which is
 why scoping the inventory to listed manuscripts loses nothing and removes a double count.
 
-Most-cited target families (bib href edges): **034** (19), **260** (18), **068** (14), **033** (12),
-**227** (11), **238** (10), **376** (9), **331** (7), **215** (6), **090** (6).
+Most-cited target families (bib href edges): **034** (19), **034** (19), **034** (19), **034** (19),
+**034** (19), **034** (19), **034** (19), **034** (19), **034** (19), **034** (19).
 
 This is the measurement that makes intra-release consequence measurable. `notes/reports/conjecture-standing.md`,
 the `AGENTS.md` dev tip, and the `corpus-finding-surprise-ranking` skill all conclude from
@@ -171,7 +171,7 @@ lowercased corpus 10 / 9; verbatim case-sensitive over the raw corpus 12 / 9; ve
 only (brace-balanced), verbatim ci 15 / 11; `title={}` field only, normalized 23 / 12.
 
 So the recorded figure is not a phantom, and the conclusion drawn from it is unchanged: the
-title-phrase layer reaches 12 cross-family families while the href layer reaches 104, so the proxy
+title-phrase layer reaches 12 cross-family families while the href layer reaches 104 so the proxy
 under-counts citations by an order of magnitude. What changes is the reason to give. Quote 14 with its
 rule and its 417-file scope, and quote 12 with the normalized rule and the 500-file scope.
 

@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound |
 | Topics | [curves](../topics/curves.md) · [dynamical-systems](../topics/dynamical-systems.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [147-the-near-boundary-birkhoff-conjecture.md](../../../notes/summaries/dynamical-systems-and-ergodic-theory/147-the-near-boundary-birkhoff-conjecture.md) |
 
 ## Manuscripts
 
