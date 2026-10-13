@@ -116,10 +116,15 @@ ROWS = [
     ("verify_faithfulness.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_faithfulness.py -q", ("pages",), ()),
     ("verify_page_sync.py --both", ("pages",), ()),
+    # The checker compares the cache bytes with the disk bytes for every writer, so it must start
+    # after every writer that lands a tracked artifact — `quotes` and `summaries` included. A row
+    # that reads a cache entry a concurrent writer has not landed yet reports a missing entry.
     ("verify_cache_promotion.py",
-     ("catalog", "sources", "links", "subfindings", "abstracts", "deps", "index", "pages"), ()),
+     ("catalog", "sources", "links", "subfindings", "abstracts", "deps", "index", "pages",
+      "quotes", "summaries"), ()),
     ("run_tests.py notes/scripts/tests/test_cache_promotion.py -q",
-     ("catalog", "sources", "links", "subfindings", "abstracts", "deps", "index", "pages"), ()),
+     ("catalog", "sources", "links", "subfindings", "abstracts", "deps", "index", "pages",
+      "quotes", "summaries"), ()),
     ("verify_conjecture_standing.py", ("catalog",), ()),
     ("run_tests.py notes/scripts/tests/test_conjecture_standing.py -q", ("catalog",), ()),
     ("check_summary_manuscripts.py", ("summaries",), ()),
