@@ -15,8 +15,10 @@ title.
 Population: {{ p['sp_pop'] }}. The rule is the bead's own two signals unioned with
 its named targets — abstracts containing a multi-claim phrase **and** at least two manuscripts, plus
 the ten densest families it names — and band 1, the families with exactly 2 manuscripts and no probe
-word, which `math-el4.9` added, and band 2, the families with 3-4 manuscripts and no probe word, which
-`math-el4.10` added. The bead states 51 families for the intersection; that number does
+word, which `math-el4.9` added, band 2, the families with 3-4 manuscripts and no probe word, which
+`math-el4.10` added, and band 3, the families with 5 or more manuscripts and no probe word, which
+`math-el4.11` added. The three bands cover every multi-manuscript family the probe filter left, so the
+population is the multi set. The bead states 51 families for the intersection; that number does
 not reproduce, and the gap is the first thing this page records.
 
 ## The population, and why it is not the bead's 51
@@ -46,12 +48,14 @@ is the counterexample 74 / 30 case recorded in `notes/reports/counterexample-tag
 
 **Decision, recorded 2026-10-07, extended 2026-10-13.** Population = (probe ∩ multi) ∪ the bead's ten
 named densest families ∪ band 1 (exactly 2 manuscripts and no probe word) ∪ band 2 (3-4 manuscripts and
-no probe word) = {{ p['sp_decision'] }} (206 before the 2026-10-07 upstream merge; family 032
-lost three manuscripts to the withdrawal and stayed in the population). The union is chosen over the
-intersection because the bead's named targets are the point of the task — {{ p['sp_densest_range a'] }}
-{{ p['sp_densest_range b'] }} — and the probe is the point of its vocabulary warning. Band 1 is added by `math-el4.9` and band 2
-by `math-el4.10` because the bead's remaining set is the no-signalling-word set, and the bands are its
-densest slices.
+no probe word) ∪ band 3 (5 or more manuscripts and no probe word) = {{ p['sp_decision'] }}
+(206 before the 2026-10-07 upstream merge; family 032 lost three manuscripts to the withdrawal and
+stayed in the population). The union is chosen over the intersection because the bead's named targets
+are the point of the task — {{ p['sp_densest_range'] }} — and the probe is the point of its
+vocabulary warning. Band 1 is added by `math-el4.9`, band 2 by `math-el4.10`, and band 3 by
+`math-el4.11` because the bead's remaining set is the no-signalling-word set, and the bands are its
+densest slices. The three bands together cover every multi-manuscript family, so the population is the
+multi set and the ten named targets are inside it.
 Revisit condition: if a later pass finds a
 phrase rule that yields 51, re-measure the population before extending the page; the rework is a re-run
 of `notes/scripts/extract_subfinding_pairs.py` plus blocks for the families the new rule adds, which is
@@ -208,6 +212,14 @@ manuscript of family NNN in `notes/tables/subfindings.tsv`, whose `title` column
   algebraicity result — were withdrawn on 2026-10-06 and their clauses are gone from the overview
   abstract, so the family lost two accepted pairs and three manuscripts. See
   `notes/development/upstream_history/2026-10-07_3014888.md`.
+
+## 033 · `overview.tex:144` · n=5 · T2
+
+{{ p['sp_line_033_1'] }}
+{{ p['sp_line_033_2'] }}
+- claimed: 033:1 033:2
+- unclaimed: 033:3 033:4 033:5
+- note: The abstract states two theorems; three titles name machinery the abstract does not state — the reverse inequality, the projective Hodge lines, and the K"ahler b-semiampleness input.
 
 ## 034 · `overview.tex:146` · n=14 · T0
 
@@ -639,6 +651,14 @@ manuscript of family NNN in `notes/tables/subfindings.tsv`, whose `title` column
 - unclaimed:
 - note: The second title names the space bound; the abstract states the per-execution and probability guarantees, not the space. The pairing is weak.
 
+## 140 · `overview.tex:357` · n=6 · T3
+
+{{ p['sp_line_140_1'] }}
+{{ p['sp_line_140_3'] }}
+- claimed: 140:1 140:3
+- unclaimed: 140:2 140:4 140:5 140:6
+- note: One theorem and one output constraint; the four remaining titles name the estimator machinery the abstract does not state.
+
 ## 143 · `overview.tex:365` · n=2 · T3
 
 {{ p['sp_line_143_1'] }}
@@ -871,6 +891,16 @@ manuscript of family NNN in `notes/tables/subfindings.tsv`, whose `title` column
 - note: "O(3) isolated particle pole" and "O(4) mass bounds" ship with no clause; the mass-gap phrase in
   the headline is the closest the abstract comes to either.
 
+## 216 · `overview.tex:515` · n=6 · T0
+
+{{ p['sp_line_216_1'] }}
+{{ p['sp_line_216_4'] }}
+{{ p['sp_line_216_6'] }}
+{{ p['sp_line_216_2'] }}
+- claimed: 216:1 216:2 216:4 216:6
+- unclaimed: 216:3 216:5
+- note: The abstract names six conclusions in three sentences. The correlation-exponent title restates the headline clause, which the first title claims, so it is unclaimed.
+
 ## 217 · `overview.tex:517` · n=2 · T0
 
 {{ p['sp_line_217_2'] }}
@@ -878,6 +908,15 @@ manuscript of family NNN in `notes/tables/subfindings.tsv`, whose `title` column
 - claimed: 217:1 217:2
 - unclaimed:
 - note: The headline names both halves; the clause is the limiting-law half stated as a convergence.
+
+## 218 · `overview.tex:519` · n=6 · T2
+
+{{ p['sp_line_218_4'] }}
+{{ p['sp_line_218_5'] }}
+{{ p['sp_line_218_1'] }}
+- claimed: 218:1 218:4 218:5
+- unclaimed: 218:2 218:3 218:6
+- note: The quenched title pairs with the iid-disorder clause. The second quenched title is a variant of the same result, so the abstract's one disorder clause claims only one of them.
 
 ## 219 · `overview.tex:521` · n=2 · T0
 
@@ -905,6 +944,15 @@ manuscript of family NNN in `notes/tables/subfindings.tsv`, whose `title` column
 - claimed: 222:1 222:2 222:3 222:4
 - unclaimed: 
 - note: Margin $-1$ is the jamming regime the second title names.
+
+## 223 · `overview.tex:529` · n=6 · T0
+
+{{ p['sp_line_223_6'] }}
+{{ p['sp_line_223_1'] }}
+{{ p['sp_line_223_2'] }}
+- claimed: 223:1 223:2 223:6
+- unclaimed: 223:3 223:4 223:5
+- note: The headline clause claims the general conformal-limit title; the two domain clauses claim the q-split titles. The quenched, thermal, and occupation-measure titles name results the abstract does not state.
 
 ## 224 · `overview.tex:531` · n=3 · T0
 
@@ -1306,6 +1354,15 @@ manuscript of family NNN in `notes/tables/subfindings.tsv`, whose `title` column
 - unclaimed:
 - note: The clause names the explicit example, which is the second title.
 
+## 318 · `overview.tex:730` · n=5 · T0
+
+{{ p['sp_line_318_5'] }}
+{{ p['sp_line_318_1'] }}
+{{ p['sp_line_318_4'] }}
+- claimed: 318:1 318:4 318:5
+- unclaimed: 318:2 318:3
+- note: The rational-obstruction title restates the headline clause, which the counterexample title claims, so it is unclaimed.
+
 ## 324 · `overview.tex:744` · n=2 · T3
 
 {{ p['sp_line_324_1'] }}
@@ -1323,6 +1380,14 @@ manuscript of family NNN in `notes/tables/subfindings.tsv`, whose `title` column
 - note: The family ships **two proofs of one theorem**, so its display titles name a method
   ("Direct proof", "Structural proof") rather than a sub-finding; the pairing is degenerate by
   construction. Probe hit only: "independent of the matrix size".
+
+## 331 · `overview.tex:758` · n=7 · T3
+
+{{ p['sp_line_331_1'] }}
+{{ p['sp_line_331_3'] }}
+- claimed: 331:1 331:3
+- unclaimed: 331:2 331:4 331:5 331:6 331:7
+- note: Two sentences, seven titles. The five unclaimed titles name the lens, Daugavet, potential, product, and recursive constructions the abstract does not state.
 
 ## 335 · `overview.tex:768` · n=2 · T0
 
@@ -1356,6 +1421,14 @@ manuscript of family NNN in `notes/tables/subfindings.tsv`, whose `title` column
 {{ p['sp_line_346_2'] }}
 - claimed: 346:1 346:2
 - unclaimed:
+
+## 347 · `overview.tex:792` · n=5 · T3
+
+{{ p['sp_line_347_1'] }}
+{{ p['sp_line_347_5'] }}
+- claimed: 347:1 347:5
+- unclaimed: 347:2 347:3 347:4
+- note: The dimension-free title restates the headline clause, which the dimension-22 title claims. The Floer-bound title names a bound the abstract does not state.
 
 ## 348 · `overview.tex:794` · n=3 · T2
 
@@ -1503,23 +1576,24 @@ manuscript of family NNN in `notes/tables/subfindings.tsv`, whose `title` column
   consequence in 281; the Crouzeix sharpness in 325; and the CAT$(0)$ rigidity in 337. Recording them is
   the point of the "do not force a pairing" instruction.
 - **The probe vocabulary is a floor, not a reading.** {{ p['sp_b_noprobe'] }}
-  all — 71 of them are band 1 and 34 are band 2, which the rule defines by the absence of a probe word,
-  and 6 (014, 211, 227, 237, 260, 376) are bead densest targets outside the probe — because the six
-  densest clauses are a second bare declarative sentence with no connective at all: "Over global
+  all — 71 of them are band 1, 34 are band 2, 8 are band 3 outside the named densest targets, which the
+  rule defines by the absence of a probe word, and 6 (014, 211, 227, 237, 260, 376) are bead densest
+  targets outside the probe — because
+  the six densest clauses are a second bare declarative sentence with no connective at all: "Over global
   function fields, proves Ramanujan at every place …", "Its local mass and covering numbers have
   exponent $4/3$.", "Charged upper-area bounds treat dyonic three-dimensional data;", "mixing time
 {% raw %}  $n^{2/3+o(1)}$ at $\beta=1$", "A terminating compiler turns a Turing machine and input into a finite
 {% endraw %}
   program for the force", and 211's "this also gives" — none of it is a phrase the bead's four probes
-  list. The 128 band clauses do use connectives, and the list misses every one: "A companion"
-  (256, 268, 270, 307, 364, 003, 197), "A separate" (046, 162, 243), "Separately" (036, 285),
+  list. The 147 band clauses do use connectives, and the list misses every one: "A companion"
+  (256, 268, 270, 307, 364, 003, 197), "A separate" (046, 162, 243, 347), "Separately" (036, 285),
   "More generally" (205, 290), "Moreover" (206), "Pairing with a third input" (082), "An application
   proves" (175), "A spherical extension" (222), "Counterexamples show" (289), "In contrast" (365),
   "Further" (107), and "also" with a verb the list does not pair it with — "also gives" (115, 293),
   "also recovers" (286), "also pass" (065), "also admit" (265, 116), "also holds" (212, 182),
   "also applies" (186), "also equivalent" (251), "also suffices" (147), "also constructs" (055, 305),
   "also minimizes" (090), "also contain" (250), "also have" (336), "also EXPTIME-complete" (133),
-  "The algebraic companion proves" (207). 91 of the 128 band clauses are bare declarative. 13 of the
+  "The algebraic companion proves" (207). 108 of the 147 band clauses are bare declarative. 13 of the
   40 probe hits are technical uses of the same words. A pass that probes only the bead's second list
   finds nothing, which is how the bead's own first probe of this question produced a false negative.
 - **A display title is not the manuscript's title.** The `preprints/` directory name carries the full
@@ -1539,8 +1613,8 @@ manuscript of family NNN in `notes/tables/subfindings.tsv`, whose `title` column
 - The pairing is a reading call on the abstract and the link text only. Manuscripts were not opened to
   confirm that a claimed title's paper contains the clause it is paired to, and an unclaimed title's
   paper may well prove a result the abstract omits — 260 and 238 are the cases that make that likely.
-- The population rule is provisional. The bead's 51 does not reproduce; the recorded rule yields 159
-  families over 468 manuscripts, and the revisit condition is in the population section.
+- The population rule is provisional. The bead's 51 does not reproduce; the recorded rule yields 167
+  families over 514 manuscripts, and the revisit condition is in the population section.
 - {{ p['sp_notread a'] }}
   {{ p['sp_notread b'] }}
 {{ p['sp_notread c'] }}- {{ p['sp_rows'] }}
