@@ -333,14 +333,18 @@ def main():
     for doc in docs:
         lines = read_text(doc).splitlines()
         page = Page(doc, lines)
+        # The tree's index page is link-only: it names no manuscript directory and cites no
+        # family-keyed file, so pass D and pass E have nothing to check and its family-number rule
+        # would fire on a file named `README.md`. Passes B and C still run, so its links are checked.
+        link_only = doc.name == "README.md"
         print(f"===== {doc.relative_to(ROOT)}")
         with contextlib.ExitStack() as stack:
             sink = stack.enter_context(open(os.devnull, "w", encoding="utf-8")) if args.quiet else io
             stack.enter_context(contextlib.redirect_stdout(sink))
             positions, sources, links, problems = pass_b(page)
             spans, misses = pass_c(page)
-            dirs, stale = pass_d(page)
-            cites, outside = pass_e(page)
+            dirs, stale = (0, 0) if link_only else pass_d(page)
+            cites, outside = (0, 0) if link_only else pass_e(page)
             print(f"--- pass B: {positions} marker positions against {sources} declared sources, "
                   f"{links} markdown links resolved from the page directory, {problems} problems")
             print(f"--- pass C: {spans} quoted spans checked against their cited lines, "

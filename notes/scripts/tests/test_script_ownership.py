@@ -47,7 +47,7 @@ PAGE_CASES = [
     ("Not checked section deleted", "no '## Not checked' section",
      lambda t: t.replace("## Not checked", "## Checked")),
     ("summaries count altered", "census row notes/summaries/",
-     lambda t: t.replace("| `notes/summaries/` | **21** |", "| `notes/summaries/` | **22** |")),
+     lambda t: t.replace("| `notes/summaries/` | **22** |", "| `notes/summaries/` | **21** |")),
     ("templates count altered", "census row notes/templates/",
      lambda t: t.replace("| `notes/templates/` | **24** |", "| `notes/templates/` | **3** |")),
 ]

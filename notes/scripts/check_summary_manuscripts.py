@@ -43,6 +43,10 @@ def main():
     unnamed = 0
     foreign = 0
     for path in pages:
+        if path.name == "README.md":
+            # The tree's index page is link-only: it names no manuscript directory, so there is no
+            # root to check and no family id to read from its name.
+            continue
         fam = page_fam(path.name)
         dirs, root = page_dirs(path)
         if fam is None:

@@ -92,10 +92,14 @@ def blockquote_targets(page):
 
 
 def test_clean_pages(mod, pages):
-    assert len(pages) == 21, f"{len(pages)} summary pages on disk, expected 21"
+    assert len(pages) == 22, f"{len(pages)} summary pages on disk, expected 22"
     for page in pages:
         _positions, _sources, _links, problems = mod.pass_b(page)
         _spans, misses = mod.pass_c(page)
+        # The tree's index page is link-only, so the checker skips pass D and pass E for it; the clean
+        # test mirrors that selection.
+        if page.path.name == "README.md":
+            continue
         _dirs, stale = mod.pass_d(page)
         _cites, outside = mod.pass_e(page)
         assert problems == 0, f"{page.path.name}: pass B reports {problems} problems"

@@ -526,7 +526,7 @@ excludes them with the script tree, so they are not scripts.
 | Population | Files | Owner |
 |---|---|---|
 | `notes/index/` | **1,033** | generated — `build_index.py`; the 16 tables it renders land in `notes/tables/` |
-| `notes/summaries/` | **21** | hand-written — the reading record |
+| `notes/summaries/` | **22** | hand-written — the reading record: 21 family pages and the link-only index page `README.md` |
 | `notes/templates/` | **24** | **5** hand-written index skeletons + **19** report templates built by `build_report_templates.py` |
 | `notes/development/*.md` | **5** | hand-written in part: `summaries-workflow.md` is the resume protocol; the other four are report-fed pages `render_reports.py` renders. `math-faz.3` moved them here from the top level. |
 | `notes/development/upstream_history/` | **3** | hand-written — the record of each upstream merge, checked by `verify_upstream_history.py` |
@@ -534,7 +534,7 @@ excludes them with the script tree, so they are not scripts.
 | `notes/tables/*.tsv` | **25** | **23** generated, **2** hand-authored — 7 written by the ledger scripts and 16 rendered by `build_index.py` since `math-faz.6` |
 | `notes/reports/*.md` | **23** | **14** generated — the report-fed pages `render_reports.py` renders; **9** hand-written. **19** with a checker, **4** without. `math-faz.4` moved them here from the top level. |
 | `notes/*.md` | **1** | `notes/README.md`, the entry point — hand-written, no checker |
-| `notes/` total, scripts excluded | **1,148** | — |
+| `notes/` total, scripts excluded | **1,149** | — |
 
 The generated TSVs are the **23** the writer set writes: the 7 named writer targets and the 16 tables
 `build_index.py` stages into `notes/tables/`. The two hand-authored tables are:
@@ -577,8 +577,9 @@ and a `notes/**/topics.tsv` glob read both. The rendered table is now
 `notes/tables/` on 2026-10-11, so the two names cannot collide again. `measure_topics.py` and
 `AGENTS.md` both name the vocabulary; `build_index.py` reads it and writes the rendered table.
 
-The index tree and the summaries tree share **13** page slugs — the families that carry both a rendered
-page and a reading summary, which is the pairing the index reports.
+The index tree and the summaries tree share **14** page slugs — the families that carry both a rendered
+page and a reading summary, which is the pairing the index reports, plus `README.md`, which each tree
+carries as its own entry point.
 
 `notes/index/` is excluded from prettier for this reason and the byte-exactness contract:
 `.prettierignore` names the tree with the instruction to edit `build_index.py` and re-render, and
