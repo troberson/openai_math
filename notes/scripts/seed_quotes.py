@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-r"""Seed the quote-spec table for the pair-line page and the 22 summaries pages, and prove the resolver
+r"""Seed the quote-spec table for the pair-line page and the 23 summaries pages, and prove the resolver
 reproduces every quote.
 
 A spec is `(page, fam, seq, which, path, start, end, head, tail, mode)`: the source file, the line window
@@ -25,8 +25,8 @@ span's index in the page. `mode` is `raw` when the resolved span is the page's q
 when it is equal only after `catlib.text.strip_markup` (the page dropped markup the source carries), and
 `none` when the cited file does not carry the span.
 
-Measured 2026-10-13: **1,744** specs over the two surfaces -- **754** pair-line specs, all raw, and **990**
-summaries specs, **922** raw, **53** folded, **15** not located. The 15 are seeded with `start` 0 and kept
+Measured 2026-10-13: **1,774** specs over the two surfaces -- **754** pair-line specs, all raw, and **1020**
+summaries specs, **949** raw, **56** folded, **15** not located. The 15 are seeded with `start` 0 and kept
 as measured negatives: the table records that the cited file does not carry the span, and they do not fail
 the round-trip.
 
@@ -103,7 +103,7 @@ def rows(lines: list[str]) -> list[tuple[dict[str, str], str]]:
 
 
 def summary_rows() -> list[tuple[dict[str, str], str]]:
-    """Every quoted span the 22 summaries pages carry, seeded to a spec, with the quote it must reproduce.
+    """Every quoted span the 23 summaries pages carry, seeded to a spec, with the quote it must reproduce.
 
     `path` is the file the page's `[Sn]` row resolves to, repo-relative, so a row names a file the round-trip
     can read without knowing the manuscript root. A span with no usable citation, or one the cited file does

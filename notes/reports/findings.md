@@ -174,7 +174,7 @@ directory** [S26]. Proof environments total **20,341**; statement environments t
 declared rule and **21,203** by the six-name list, the 85 gap being `assumption`, `foundation`,
 `auxproposition`, `hypothesis`, `auxlemma` and 10 names at ≤5 [S26].
 
-**The rendered index is link-clean.** **1,033** pages carry **66,108** links with **0** broken [S27].
+**The rendered index is link-clean.** **1,033** pages carry **66,109** links with **0** broken [S27].
 
 ## The dependency record
 
@@ -272,6 +272,6 @@ not survive a re-run.
   inferred from their file names, not from a stated criterion.
 - **Not measured:** proof density per discipline (only per tier and per shape); the 101 families with
   no titled headline (why the manuscript names no headline is a reading question); the 225
-  manuscripts invisible to the citation method; the 4 topics with no hit; the 22 of 372 families that
+  manuscripts invisible to the citation method; the 4 topics with no hit; the 23 of 372 families that
   have a summary page, which is a coverage fraction, not a coverage claim.
 

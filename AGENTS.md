@@ -33,7 +33,7 @@ lives in this file and nowhere else.
   comparator rows, typed by a `kind` column) with `subfinding-pairs.md` (167 families, 514 manuscripts —
   the reading pass that pairs abstract clauses with display titles) beside it,
   `quotes.tsv` (1,744 rows, 10 columns — the `(path, start, end, head, tail, mode)` spec for every
-  pair-line quote in `subfinding-pairs.md` and every quoted span the 22 summaries pages carry, seeded by
+  pair-line quote in `subfinding-pairs.md` and every quoted span the 23 summaries pages carry, seeded by
   `seed_quotes.py` and resolved back to the source bytes by `catlib/quotes.py`, which shares the pair
   page's anchor grammar with `catlib/anchors.py` and the summaries span and attribution rules with
   `catlib/summaries.py`),
@@ -145,7 +145,7 @@ lives in this file and nowhere else.
   that no `main_results` entry names renders as *absent*, never as unformalized. Page slugs are
   mechanical (NFKD, strip combining marks, drop `$`/apostrophes/`\command`, lowercase, non-alphanumerics
   → `-`, leading `the-` dropped): 0 collisions, max length 93. Index↔summary pairing is by family
-  number only — 22 of 372 families have a summary page.
+  number only — 23 of 372 families have a summary page.
 - Names are a measured layer, not a curated one: `python3 notes/scripts/measure_names.py` (a writer —
   it lands the population as the record `.qwen/cache/records/<key>/names.json`; cold ~42 s, a warm run
   reads the store; `--json` dumps the rows, `--check-only` prints the report without landing the record)
@@ -345,15 +345,15 @@ lives in this file and nowhere else.
   class. A spec is `(page, fam, seq, which, path, start, end, head, tail, mode)`: it names a span
   **without containing it** — the line window the quote sits on, the first words widened until they are
   unique inside that window, the last three words, and the round-trip class. **Page breaks inside a
-  quote are the common case, not the edge:** measured 2026-10-13 over the 22 summaries pages, 661 of the
-  990 quoted spans `verify_summaries.py` pass C checks sit across 2 to 26 source lines and 314 in one, so
+  quote are the common case, not the edge:** measured 2026-10-13 over the 23 summaries pages, 681 of the
+  1020 quoted spans `verify_summaries.py` pass C checks sit across 2 to 26 source lines and 324 in one, so
   the spec names a window and the resolver joins it as a LaTeX paragraph — a line break is one space, and
   a line's own trailing space is not a second. **Locate on raw bytes, never on the folded line:**
   `catlib.text.strip_markup` is lossy on math, `overview.tex:505` folds to `for $04$, establishing` and
   the clause is gone. The shortest-span rule is load-bearing: first-head-then-first-tail fails 6 of 754
   (families 018, 114, 150, 247, 262, 336), shortest-span fails 0. **The page's quotes are normalized, not
-  verbatim** — 53 of the 990 summaries spans are fold-equal, not raw-equal, so a writer that rendered raw
-  bytes would change those 53 quotes' text; 15 of the 990 are not located (LaTeX accent escapes and math
+  verbatim** — 56 of the 1020 summaries spans are fold-equal, not raw-equal, so a writer that rendered
+  raw bytes would change those 56 quotes' text; 15 of the 1020 are not located (LaTeX accent escapes and math
   pattern's `MARK` set does not tolerate), and they are seeded to `start` 0 as measured negatives, not
   deleted. **The join-form reader is the inverse of the join-form writer:** `rows_text` does not quote a
   cell, so `csv.DictReader` strips the quotes off a `head` that begins with `"` — a page's block quote of
@@ -639,7 +639,7 @@ lives in this file and nowhere else.
   over 189 configs, 172 formalized, 749 preprint dirs, 122,458 `.lean` files, 559 module dirs, 17
   disciplines against 23 Lean dirs, 10 traces in 11 files, 30 verification bundles, 521 `.bib` files
   with 13,802 entries and 393 hrefs, the ledger set at 297,050 B against the all-TSV 2,252,773 B, the
-  index tree at 11,530,104 B over 1,033 pages, 66,108
+  index tree at 11,530,284 B over 1,033 pages, 66,109
   disk links with 0 broken and 17,700 resolving to a directory, and the substring counts 18 / 373
   against the brace-qualified 17 / 372. `main()` reads no argv, so `--mutant` is inert, and
   `population()` is under `functools.cache` (`:66`), so the fifteen `check()` calls the row makes pay
@@ -949,10 +949,10 @@ lives in this file and nowhere else.
   re-render rather than editing a page.
 - Check the rendered index against the shipped files with
   `python3 notes/scripts/check_index_links.py` — report-only, ~1 s, exits non-zero on a broken link.
-  It re-derives the check from disk: **1,033** pages, **66,108** links, 0 broken, of which **17,700**
+  It re-derives the check from disk: **1,033** pages, **66,109** links, 0 broken, of which **17,700**
   resolve to a directory (`manuscript-dir`, `latex-build-tree`, `lean-dir`, `verification-dir`,
-  `index-dir`) and **48,408** to a file, every shipped-file category equal to a fresh
-  `build_catalog.py` count. The render report's **48,013** links are the registry's subset; the
+  `index-dir`) and **48,409** to a file, every shipped-file category equal to a fresh
+  `build_catalog.py` count. The render report's **48,014** links are the registry's subset; the
   **18,095**-link difference is registry under-coverage, not a disagreement about existence — both
   report 0 broken. Link scanning must be paren-balanced: `[^)]*` truncates
   `preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/paper.pdf` and invents a broken

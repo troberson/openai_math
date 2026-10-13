@@ -12,9 +12,9 @@ measured quotation traps) lives in `.qwen/skills/auto-skill-family-summary-citat
   positions, 925 quoted spans, 0 problems**; `check_summary_manuscripts.py`: **21 pages, 0 with an
   off-family manuscript, 57 manuscript dirs named, 0 unnamed-on-catalog, 0 named-by-another-family**,
   749 preprint dirs on disk, 719 named by `overview.tex`, 30 on disk and unnamed, 0 named and absent.
-- **Pages done (22):** 001, 002, 004, 006, 007, 010, 011, 014, 016, 017, 018, 019, 032, 087, 101,
-  102, 159, 197, 221, 271, 287, 362. The ledger's `summary` column is 1 for those; the generator
-  reports "summary pages 22 of 372 families, 58 manuscripts behind them".
+- **Pages done (23):** 001, 002, 004, 006, 007, 010, 011, 014, 016, 017, 018, 019, 032, 087, 101,
+  102, 159, 197, 221, 226, 271, 287, 362. The ledger's `summary` column is 1 for those; the
+  generator reports "summary pages 23 of 372 families, 59 manuscripts behind them".
 - **Next batch:** `math-ckd.3` — tier B, the 78 remaining T0 families with `resolves_named = 1`
   (118 manuscripts, re-measured from the current ledger 2026-10-12). `bd update math-ckd.3 --claim`,
   then steps 1–10 per page. Check `bd ready` first: summaries are P4 and any ready P1/P2 outranks

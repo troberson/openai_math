@@ -79,7 +79,7 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **350 families have no summary page.** The 22 pages cover 22 of 372 families; the rest are recorded in
+- **349 families have no summary page.** The 23 pages cover 23 of 372 families; the rest are recorded in
   the ledger and the index, not summarized.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not

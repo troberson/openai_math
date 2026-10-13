@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-r"""Measure the quote-spec resolver over the 23 summaries pages and classify every quoted span.
+r"""Measure the quote-spec resolver over the 24 summaries pages and classify every quoted span.
 
 The seeder at `seed_quotes.py` seeds a spec for each span this probe classifies, so the probe is the
 measurement the seeded table is checked against: it counts the spans the pages carry, the class each
@@ -12,12 +12,12 @@ classification is `catlib.quotes.seed_page`: `raw` when the resolved span is the
 byte-for-byte, `folded` when it is equal only after the checker's normalizer (the page dropped markup
 the source carries), `none` when the cited file does not carry the span.
 
-Measured 2026-10-13 over the 23 pages: **990** spans of 12 characters or more, **922** raw-equal,
-**53** fold-equal, **15** not located, **0** resolving to text the page does not quote. **786** spans
-are inline and **204** are block quotes. **314** spans sit in one source line and **661** sit across 2
-to 26 lines; the widths are 1:314 2:317 3:183 4:63 5:29 6:12 7:9 8:13 9:5 10:6 11:4 12:1 13:3 14:2
+Measured 2026-10-13 over the 24 pages: **1020** spans of 12 characters or more, **949** raw-equal,
+**56** fold-equal, **15** not located, **0** resolving to text the page does not quote. **815** spans
+are inline and **205** are block quotes. **324** spans sit in one source line and **681** sit across 2
+to 26 lines; the widths are 1:324 2:334 3:185 4:64 5:29 6:12 7:9 8:13 9:5 10:6 11:4 12:1 13:3 14:2
 15:1 16:3 17:2 18:2 19:2 20:2 21:1 26:1, and the 15 unlocated spans carry no width, so the width
-histogram sums to 975.
+histogram sums to 999.
 
 Usage: python3 notes/scripts/measure_summaries_seed.py
 """
