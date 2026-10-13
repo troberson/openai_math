@@ -3021,13 +3021,13 @@ def subfinding_pairs_full(p: dict[str, Any]) -> dict[str, str]:
     out["sp_b_unmatched"] = f"{unmatched} clauses in {with_unmatched} families state a result no"
     band_in = len(set(noprobe) & set(p["v"]["band"]))
     b2_in = len(set(noprobe) & set(p["v"]["band2"]))
-    b3_in = len(set(noprobe) & set(p["v"]["band3"]))
     dens_out = sorted(f for f in noprobe if f in ep.DENSEST)
+    b3_in = len(set(noprobe) & set(p["v"]["band3"]) - set(dens_out))
     out["sp_b_noprobe"] = f"{len(noprobe)} families pair sub-findings with no probe hit at"
-    out["sp_b_noprobe_list"] = (f"all — {band_in} of them are band 1, {b2_in} are band 2, "
-                                f"{b3_in} are band 3, which the rule defines by the absence of a probe "
-                                f"word, and {len(dens_out)} ({', '.join(dens_out)}) are bead densest "
-                                f"targets outside the probe —")
+    out["sp_b_noprobe_list"] = (f"all — {band_in} of them are band 1, {b2_in} are band 2, {b3_in} are "
+                                f"band 3 outside the named densest targets, which the rule defines by "
+                                f"the absence of a probe word, and {len(dens_out)} "
+                                f"({', '.join(dens_out)}) are bead densest targets outside the probe —")
     out["sp_b_fp"] = f"{len(fp_probe)} of the {len(probe)} probe hits"
     rem = [f for f in multi if f not in pop]
     if rem:

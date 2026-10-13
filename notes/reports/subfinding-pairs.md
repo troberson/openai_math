@@ -1563,8 +1563,9 @@ manuscript of family NNN in `notes/tables/subfindings.tsv`, whose `title` column
   consequence in 281; the Crouzeix sharpness in 325; and the CAT$(0)$ rigidity in 337. Recording them is
   the point of the "do not force a pairing" instruction.
 - **The probe vocabulary is a floor, not a reading.** 119 families pair sub-findings with no probe hit at
-  all — 71 of them are band 1, 34 are band 2, 8 are band 3, which the rule defines by the absence of a
-  probe word, and 6 (014, 211, 227, 237, 260, 376) are bead densest targets outside the probe — because
+  all — 71 of them are band 1, 34 are band 2, 8 are band 3 outside the named densest targets, which the
+  rule defines by the absence of a probe word, and 6 (014, 211, 227, 237, 260, 376) are bead densest
+  targets outside the probe — because
   the six densest clauses are a second bare declarative sentence with no connective at all: "Over global
   function fields, proves Ramanujan at every place …", "Its local mass and covering numbers have
   exponent $4/3$.", "Charged upper-area bounds treat dyonic three-dimensional data;", "mixing time
