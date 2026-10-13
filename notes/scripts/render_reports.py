@@ -3020,11 +3020,12 @@ def subfinding_pairs_full(p: dict[str, Any]) -> dict[str, str]:
     out["sp_b_claimed"] = f"{claimed_total} of the {mss} titles are claimed by a clause"
     out["sp_b_unmatched"] = f"{unmatched} clauses in {with_unmatched} families state a result no"
     band_in = len(set(noprobe) & set(p["v"]["band"]))
+    b2_in = len(set(noprobe) & set(p["v"]["band2"]))
     dens_out = sorted(f for f in noprobe if f in ep.DENSEST)
     out["sp_b_noprobe"] = f"{len(noprobe)} families pair sub-findings with no probe hit at"
-    out["sp_b_noprobe_list"] = (f"all — {band_in} of them are band 1, which the rule defines by the "
-                                f"absence of a probe word, and {len(dens_out)} ({', '.join(dens_out)}) "
-                                f"are bead densest targets outside the probe —")
+    out["sp_b_noprobe_list"] = (f"all — {band_in} of them are band 1 and {b2_in} are band 2, which the "
+                                f"rule defines by the absence of a probe word, and {len(dens_out)} "
+                                f"({', '.join(dens_out)}) are bead densest targets outside the probe —")
     out["sp_b_fp"] = f"{len(fp_probe)} of the {len(probe)} probe hits"
     rem = [f for f in multi if f not in pop]
     b2 = [f for f in rem if 3 <= counts[f] <= 4]
@@ -3042,8 +3043,8 @@ def subfinding_pairs_full(p: dict[str, Any]) -> dict[str, str]:
 
 SP_SPLIT = {
     "sp_densest_range": ["034 at n=14 down to 211 at"],
-    "sp_notread": ["45 families with two or more manuscripts are not read, carrying 165 manuscripts: 37 at 3-4",
-                   "manuscripts (119) and 8 at 5 or more (46). The page covers 122 of the 167."],
+    "sp_notread": ["8 families with two or more manuscripts are not read, carrying 46 manuscripts: 0 at 3-4",
+                   "manuscripts (0) and 8 at 5 or more (46). The page covers 159 of the 167."],
 }
 
 
