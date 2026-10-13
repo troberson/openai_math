@@ -30,9 +30,9 @@ lives in this file and nowhere else.
   `links.tsv` (22 rows, 7 columns — the
   typed-edge inventory) with `links.md` beside it, `scope-exclusions.md` (242 rows — what each scope
   note says its formalization leaves out), `subfindings.tsv` (1145 rows — 719 manuscript rows and 426
-  comparator rows, typed by a `kind` column) with `subfinding-pairs.md` (159 families, 468 manuscripts —
+  comparator rows, typed by a `kind` column) with `subfinding-pairs.md` (167 families, 514 manuscripts —
   the reading pass that pairs abstract clauses with display titles) beside it,
-  `quotes.tsv` (1,637 rows, 10 columns — the `(path, start, end, head, tail, mode)` spec for every
+  `quotes.tsv` (1,679 rows, 10 columns — the `(path, start, end, head, tail, mode)` spec for every
   pair-line quote in `subfinding-pairs.md` and every quoted span the 21 summaries pages carry, seeded by
   `seed_quotes.py` and resolved back to the source bytes by `catlib/quotes.py`, which shares the pair
   page's anchor grammar with `catlib/anchors.py` and the summaries span and attribution rules with
@@ -317,19 +317,21 @@ lives in this file and nowhere else.
   a brace. Quote 426 as comparator-table **rows** and 416 as **distinct configs** — the 10-gap is the
   same 7 docs `links.tsv` records (071, 100, 115, 134, 274, 275, 293), so a per-family `set()` over a
   table reports 416 rows and is wrong. A display title is link text, not a sub-result, and it is not
-  the manuscript's own title — the `preprints/` directory name is. Pairing has been read for 159
-  families (468 manuscripts) in `notes/reports/subfinding-pairs.md`: 190 sub-finding clause pairs and
-  157 headline clause pairs accepted, 18 clauses recorded unmatched, 347 of 468 titles claimed by a
-  clause and 121 by none. Quote the display text verbatim — the release is inconsistent about capitalization
+  the manuscript's own title — the `preprints/` directory name is. Pairing has been read for 167
+  families (514 manuscripts) in `notes/reports/subfinding-pairs.md`: 203 sub-finding clause pairs and
+  165 headline clause pairs accepted, 18 clauses recorded unmatched, 368 of 514 titles claimed by a
+  clause and 146 by none. Quote the display text verbatim — the release is inconsistent about capitalization
   (`Correspondence coloring graphs…` vs `Equivariant Jiang--Su Stability…`) and about dashes
   (`Lieb--Thirring` vs `Lieb–Thirring`), so a normalized title is not verbatim.
 - Extract the pairing population with `python3 notes/scripts/extract_subfinding_pairs.py` — report-only,
   writes nothing. Its population rule is (probe phrases `also prove`, `independ`, `also establish`,
   `as a consequence`) AND ≥2 manuscripts, union the ten named densest targets, union band 1 (exactly 2
-  manuscripts and no probe word), union band 2 (3-4 manuscripts and no probe word): 159 families,
-  468 manuscripts. Band 1 is `math-el4.9`'s addition — 73 families over 146 manuscripts — and band 2
-  is `math-el4.10`'s — 37 families over 119 manuscripts; the bands are the densest slices of the set
-  the first pass left unread.
+  manuscripts and no probe word), union band 2 (3-4 manuscripts and no probe word), union band 3 (5 or
+  more manuscripts and no probe word): 167 families, 514 manuscripts. Band 1 is `math-el4.9`'s addition —
+  73 families over 146 manuscripts — and band 2 is `math-el4.10`'s — 37 families over 119 manuscripts;
+  band 3 is `math-el4.11`'s — the rule reads 17 families over 128 manuscripts, 10 of them already the
+  named densest targets, so the pass added 8 families over 46 manuscripts. The three bands cover every
+  multi-manuscript family, so the population is the whole multi set.
   **The bead's "51 of them also use multi-claim language" does not reproduce.** The four
   per-phrase counts (25 / 35 / 5 / 1) reproduce exactly over all 372 abstracts only when the second is
   read as the stem `independ` (`independent` gives 34), and their union over the 167 multi-manuscript
@@ -338,7 +340,7 @@ lives in this file and nowhere else.
   ≥2 sentences with a prove-verb (32), ≥3 sentences (73). Same shape as the counterexample 74 / 30 case;
   see `notes/reports/counterexample-tag.md` and the population section of `notes/reports/subfinding-pairs.md`.
 - Seed the quote-spec table with `python3 notes/scripts/seed_quotes.py` — a writer that lands
-  `notes/tables/quotes.tsv` (1,637 rows, 10 columns) through the promote registry and resolves every spec
+  `notes/tables/quotes.tsv` (1,679 rows, 10 columns) through the promote registry and resolves every spec
   back against the file its `path` names, requiring the resolved span to be the page's quote in its own
   class. A spec is `(page, fam, seq, which, path, start, end, head, tail, mode)`: it names a span
   **without containing it** — the line window the quote sits on, the first words widened until they are
@@ -686,10 +688,11 @@ lives in this file and nowhere else.
   keyed to the page line the render diff names, because the counts pass never parses that sentence.
   `main()` reads no argv, so `--mutant` is inert in the checker. `load_inputs()` is under
   `functools.cache` (`:54`), so the row pays the `overview.tex`, `subfindings.tsv` and ledger walk once.
-  Its clean test pins the population the passes report: 159 blocks over 468 manuscripts, 190 clause
-  pairs, 157 headline pairs, 18 unmatched clauses, 347 titles claimed, 121 unclaimed, 145 families with
-  an accepted pair, 17 with an unmatched clause, 111 pairing with no probe hit, 62 probe hits over 372,
-  40 over the 167 multi-manuscript families, band 1 at 73 families, and band 2 at 37 families. It
+  Its clean test pins the population the passes report: 167 blocks over 514 manuscripts, 203 clause
+  pairs, 165 headline pairs, 18 unmatched clauses, 368 titles claimed, 146 unclaimed, 153 families with
+  an accepted pair, 17 with an unmatched clause, 119 pairing with no probe hit, 62 probe hits over 372,
+  40 over the 167 multi-manuscript families, band 1 at 73 families, band 2 at 37 families, and band 3 at
+  17 families. It
   writes nothing.
 - Check `notes/reports/conditional.md` with `python3 notes/scripts/verify_conditional.py` and its extracted
   self-tests with `python3 notes/scripts/run_tests.py notes/scripts/tests/test_conditional.py -q`
