@@ -366,3 +366,15 @@ issue.
   quotes `$\ell_1$` is not verbatim. Gate: **78 rows, 0 failures**, empty head diff, cache promotion 0
   problems. `math-ckd.3`'s remaining set is **75 families over 115 manuscripts**; the tree ends at
   **99** family pages plus the index page.
+
+- **Pages are generated, not hand-swept.** Chosen 2026-10-13: the builder builds each template from
+  `git show HEAD:<page>`, so a slot's number in HEAD is the previous measurement, and a needle matched
+  on its exact number is NOT FOUND once a count moves — the template keeps HEAD's literal and the render
+  writes that literal back, which is the manual sweep. `catlib.text.flex` now relaxes digit runs, and
+  `apply_split` matches a line-break prefix flexibly and emits the measured span. Two constraints the
+  first version violated, measured on the pages: a needle relaxes its digits only when it carries at
+  least two literal characters and only for runs whose neighbours are not letters (the bare "719" needle
+  matched "A 2-line ... 40-line construction"; "631M" matched "1740M" and "12M"), and a needle that
+  fires on more than one distinct span is left literal and reported as a weak needle, because a slot is
+  one place in the page. Revisit when the weak-needle list is non-empty: the fix is widening the writer's
+  label value, not loosening the matcher.
