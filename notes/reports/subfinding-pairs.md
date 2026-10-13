@@ -1603,7 +1603,7 @@ manuscript of family NNN in `notes/tables/subfindings.tsv`, whose `title` column
 - Every family with two or more manuscripts is read: the page covers 167 of the 167, carrying 514
   manuscripts.
 - The 426 comparator-link rows in `notes/tables/subfindings.tsv` are not paired; only the 719 manuscript rows
-  are eligible, and all 514 of those are in this population.
+  are eligible, and only 514 of those are in this population.
 - Clause boundaries were chosen by reading, not by a parser: a clause is a sentence, or a sentence
   fragment when one sentence states two results (039, 227, 271). Two clauses are quoted twice because
   each names two manuscripts (102, 267).
