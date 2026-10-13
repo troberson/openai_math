@@ -98,8 +98,8 @@ point — family pages link no name page, the direction recorded in `notes/repor
 `notes/tables/sources.tsv`. `notes-doc` 25 targets = `notes/reports/names.md` (552 links: one from each of the
 551 name pages and one from the entry point), the 21 `notes/summaries/` pages family pages link,
 and the 4 notes docs the entry point links (`index-design.md`, `names.md`, `topics.md`,
-`scripts/measure_names.py`). `tables-tsv` 2 targets = `notes/tables/names.tsv` (553 links: one from
-each of the 551 name pages and 2 from the entry point) and `notes/tables/topics.tsv`
+`scripts/measure_names.py`). `tables-tsv` 2 targets = `notes/tables/names.tsv` (553 links: one from each of the 551 name
+pages and 2 from the entry point) and `notes/tables/topics.tsv`
 (1 link, the entry point) — the 16 generated tables moved out of `notes/index/` on `math-faz.6`,
 so the index tree carries no table and every table link leaves the tree.
 
