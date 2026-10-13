@@ -27,17 +27,18 @@ PAGE = pathlib.Path("notes/reports/subfinding-pairs.md")
 # (label, needle, mutation). A needle must fire for its own fault and for no other, and must not
 # fire on the clean page.
 MUTANTS = [
+    # The band blocks shifted the page's line numbers, so each 009 needle names the block's new line.
     ("paraphrase dressed as a quote",
-     ("009: page:69: quoted clause is not verbatim on overview.tex:94: "
+     ("009: page:88: quoted clause is not verbatim on overview.tex:94: "
       "Also proves Bogomolov-Pop reconstruction from abelian-by-cen"),
      lambda p: p.replace('"Also proves Bogomolov--Pop reconstruction',
                          '"Also proves Bogomolov-Pop reconstruction', 1)),
     ("clause anchor on the wrong line",
-     "009: page:69: clause anchor overview.tex:95 differs from the block anchor 94",
+     "009: page:88: clause anchor overview.tex:95 differs from the block anchor 94",
      lambda p: p.replace("`overview.tex:94`) -> \"The Bogomolov-Pop",
                          "`overview.tex:95`) -> \"The Bogomolov-Pop", 1)),
     ("title id borrowed from another family",
-     "009: page:69: target id 010:3 is from another family",
+     "009: page:88: target id 010:3 is from another family",
      lambda p: p.replace("[009:3]", "[010:3]", 1)),
     ("an id in both partitions",
      "041: ids in both claimed and unclaimed: ['041:1']",
@@ -48,8 +49,8 @@ MUTANTS = [
      lambda p: p.replace("- unclaimed: 034:3 034:5 034:6",
                          "- unclaimed: 034:5 034:6", 1)),
     ("a stale Summary-table count",
-     "Summary table: titles claimed by no clause states 60, measured 94",
-     lambda p: p.replace("| titles claimed by no clause | 94 |",
+     "Summary table: titles claimed by no clause states 60, measured 96",
+     lambda p: p.replace("| titles claimed by no clause | 96 |",
                          "| titles claimed by no clause | 60 |", 1)),
     ("a block outside the population",
      "blocks for families outside the population: ['008']",
@@ -61,7 +62,7 @@ MUTANTS = [
     # Prose the counts pass never parses: the rejected-rule yields are narrative, not a
     # Summary-table row. Only the render diff can see them, so the needle is the page line it names.
     ("a rejected-rule yield in prose altered",
-     "page line 35: page 'tried and rejected: `also` (57)",
+     "page line 36: page 'tried and rejected: `also` (57)",
      lambda p: p.replace("tried and rejected: `also` (56)",
                          "tried and rejected: `also` (57)", 1)),
 ]
@@ -85,13 +86,14 @@ def test_clean_page(load, text):
             measured["families with >=1 accepted sub-finding pair"],
             measured["families with >=1 clause recorded unmatched"],
             measured["families with an accepted sub-finding pair and no probe hit"]) == \
-        (49, 203, 62, 47, 18, 109, 94, 40, 17, 6)
+        (122, 349, 133, 120, 18, 253, 96, 111, 17, 77)
     assert (measured["probe hits over all 372"], measured["probe hits over the multi set"],
             measured["multi-manuscript families"]) == (62, 40, 167)
     inputs = v.load_inputs()
     _, _, _, counts, _ = inputs
-    population, probe, probe_all, multi = v.population_of(counts)
-    assert (len(population), len(probe), len(probe_all), len(multi)) == (49, 40, 62, 167)
+    population, probe, probe_all, multi, band = v.population_of(counts)
+    assert (len(population), len(probe), len(probe_all), len(multi), len(band)) == \
+        (122, 40, 62, 167, 73)
 
 
 @pytest.mark.parametrize("label,needle,mut", MUTANTS)
