@@ -2581,11 +2581,22 @@ def fleet_phrases(v: dict[str, Any]) -> dict[str, str]:
         "purity_heading": f"## The purity population ({n} scripts, mode-verified)",
         "purity_zero": f"**0** of the {n} scripts reads a generated file",
     }
+    # A bare anchor is a weak needle: the digit run in "`render_reports.py:1186`" relaxes to "any
+    # number", so the env site also matched the `:2043` site, and "`catlib/atomic.py:42`" matched the
+    # `:84` site. Each site carries the words the page puts around it, so the needle is its own.
+    # The checker-section paragraph names the same sites in one paren list. Without a label the
+    # builder leaves HEAD's anchor literal, so a site that moves leaves the page stale.
+    out["checker_sites"] = ("(" + ", ".join(f"`{s}`" for s in v["set_sites"] + v["env_sites"])
+                            + ", `render_reports.py:2043`)")
+    SITE_CTX = {"atomic": (["the `os.replace` at ", "the one at "], ""),
+                "set": (["**2 sites** — ", ", "], ""),
+                "env": (["— "], " sets")}
     for key, sites in (("atomic", v["atomic_sites"]), ("set", v["set_sites"]),
                        ("env", v["env_sites"])):
+        pre, suf = SITE_CTX[key]
         for i, site in enumerate(sites):
             name, ln = site.split(":")
-            out[f"{key}_site_{i}"] = f"`{name}:{ln}`"
+            out[f"{key}_site_{i}"] = pre[i] + f"`{name}:{ln}`" + suf
     for label, prefixes in FLEET_SPLIT.items():
         base = out.pop(label)
         rest = base
