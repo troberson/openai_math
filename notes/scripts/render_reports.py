@@ -2589,7 +2589,7 @@ def fleet_population() -> dict[str, Any]:
 # with. Transcribed from the page bytes, not invented: a prefix that stops matching the measured
 # phrase raises ValueError here rather than reflowing the page.
 FLEET_SPLIT = {
-    "gate_writers_class": ["Non-determinism sources in the **10** writers,"],
+    "gate_writers_class": ["Non-determinism sources in the **11** writers,"],
 }
 
 
