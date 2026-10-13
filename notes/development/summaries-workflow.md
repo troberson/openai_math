@@ -202,3 +202,27 @@ issue.
   to 2,174,703 and 11,529,933, so the acceptance criteria now quote the fresh report. Revisit whenever
   a bead's acceptance names a byte figure: quote it from a fresh generator report, never from the
   estimate recorded when the bead was written.
+- **The command block's counts are re-measured from the scripts, not carried forward.** Chosen
+  2026-10-13 on `math-faz.5`. The command block is literal template text, so the count pass never
+  reads it and a drift is invisible until the render diff names the page line. Measured from the test
+  files and the gate array: `gate.py` 78 rows (the page said 77), `test_index_links.py` 21 injected
+  hrefs over 18 categories with 8 controls (was 20 injected, 7 real), `test_upstream_history.py` 14
+  faults (was 13), `test_fleet_design.py` 20 faults (was 16), `measure_proof_density.py` 8
+  corruptions (the command block and the body prose both said 9), and the move-surface probe after the
+  reorg reads 0 top-level, 304 in the new dirs, 26 stable (was 282, 0, 16). Revisit whenever a test
+  file gains a mutant or the gate gains a row — the drift is silent, so the sweep has to be paid.
+- **The gate row classes are counted from the `ROWS` array, not from the writers table.** Chosen
+  2026-10-13 on `math-faz.5`. The array carries 11 writer rows, 44 report-only rows, and 23 checker
+  invocations. The writers table lists 14 writers, so the page's "10 gated writers / 45 report-only"
+  was arithmetically right and factually wrong: four writers are not writer rows
+  (`build_report_templates.py` and `measure_open_probe.py` are not in the list at all;
+  `measure_names.py` and `extract_named_results.py` run as `--check-only` rows), and
+  `refresh_summary_line_counts.py` is a writer row the table lists as a checker. Revisit if a writer
+  gains a gate row — the class counts have to be re-derived from the array, not from the table.
+- **The census page is edited in place; the entry point goes through the promote cycle.** Chosen
+  2026-10-13 on `math-faz.5`. `notes/scripts/README.md` has no template in the registry (the registry
+  is 19 report templates and 5 index templates), so its counts are edited directly and proven by
+  `verify_script_ownership.py`. `notes/README.md` is template-fed, so its sweep is edit page → commit →
+  `build_report_templates.py` → `render_reports.py` → prove `git status --porcelain` empty, and the
+  template commit and the re-rendered `notes/development/templates.md` commit are part of the same
+  batch. Revisit if the census page gains a template.
