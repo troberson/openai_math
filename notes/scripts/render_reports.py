@@ -756,7 +756,7 @@ INDEX_SPLIT = {
          "`notes/tables/lean-dirs.tsv` (**41937** B over **559** rows),"),
         ("`notes/tables/manuscripts.tsv` (**277805** B over **719** rows), "
          "`notes/tables/names.tsv` (**304513** B over **5842** rows),"),
-        ("`notes/tables/quotes.tsv` (**369719** B over **1792** rows), "
+        ("`notes/tables/quotes.tsv` (**373435** B over **1806** rows), "
          "`notes/tables/scope-notes.tsv` (**26677** B over **242** rows),"),
         ("`notes/tables/sources.tsv` (**221463** B over **719** rows), "
          "`notes/tables/topics-rendered.tsv` (**19127** B over **92** rows), "
@@ -765,7 +765,7 @@ INDEX_SPLIT = {
     "builds-on declaration count": ["(**30** `builds-on` declarations at"],
     "derivable lean reach": [("config → file (yaml: **189** configs, all **189** of them also "
                              "named by a scope note), which reaches")],
-    "disk link check": ["covers **66,110** links over the same 1,033 pages, also with"],
+    "disk link check": ["covers **66,111** links over the same 1,033 pages, also with"],
     "lean edge scope": [("The index carries family → Lean file for **136** families; the "
                         "**172** is a")],
     "link occurrence gap": [("**426** scope-note link occurrences against **416** distinct "
@@ -1148,8 +1148,8 @@ IL_SPLIT = {
                         "linked only from the entry")],
     "prose_latexsource": [("`latex-source` 719 = the `main_tex` of each of the 719 manuscripts, "
                           "all 719 present in")],
-    "prose_notesdoc": ["`notes-doc` 28 targets = `notes/reports/names.md` (552 links: one from each of the",
-                       ("551 name pages and one from the entry point), the 24 `notes/summaries/` "
+    "prose_notesdoc": ["`notes-doc` 29 targets = `notes/reports/names.md` (552 links: one from each of the",
+                       ("551 name pages and one from the entry point), the 25 `notes/summaries/` "
                        "pages family pages link,"),
                        ("and the 4 notes docs the entry point links (`index-design.md`, `names.md`, "
                        "`topics.md`,")],
@@ -1158,7 +1158,7 @@ IL_SPLIT = {
                         ("pages and 2 from the entry point) and `notes/tables/topics.tsv`")],
     "prose_basenames": [("The index tree carries 1,027 distinct file basenames over 1,033 pages "
                         "and `notes/tables/` carries")],
-    "prose_regchecked": ["**48,015 links checked, 0"],
+    "prose_regchecked": ["**48,016 links checked, 0"],
     "prose_tracefiles": ["`reasoning_traces/` ships **11 files"],
     "prose_fresh": ["**20 injected, 20 caught, 0 missed; 7 controls, 7"],
     "prose_surplus": ["The 18,095 surplus links are"],
@@ -2779,6 +2779,21 @@ def t0_chains_population() -> dict[str, Any]:
             "cw": ledger.companion_word_fams(rows)}
 
 
+SIGNAL_LABELS = (("paps_form", "a formalized manuscript"), ("chal", "comparator challenges"),
+                 ("mainres", "a `main_results` entry"), ("scope_note", "a scope note"),
+                 ("verification", "a verification bundle"), ("inputs", "verification inputs"),
+                 ("covmd", "a coverage document"))
+
+
+def signal_label(row: dict[str, str]) -> str:
+    parts = [lab for col, lab in SIGNAL_LABELS if int(row[col]) > 0]
+    if row["trace"]:
+        parts.append("a reasoning trace")
+    if int(row["summary"]) > 0:
+        parts.append("a summary page")
+    return " and ".join(parts)
+
+
 def t0_chains_full(p: dict[str, Any]) -> dict[str, str]:
     v, rows, pop = p["v"], p["rows"], p["pop"]
     lines, edges, mutual, bibs = p["lines"], p["edges"], p["mutual"], p["bibs"]
@@ -2792,8 +2807,8 @@ def t0_chains_full(p: dict[str, Any]) -> dict[str, str]:
     out["tc_first_pass_list"] = ", ".join(v["first_pass"])
     out["tc_zero"] = f"holds for **{len(v['zero_signal'])}** of the {len(pop)} and fails for"
     out["tc_268sig"] = (f"**{len(v['signal_outliers'])}**: "
-                        + " ".join(f"{f} carries `verification = {rows[f]['verification']}`"
-                                   for f in v["signal_outliers"]))
+                        + "; ".join(f"{f} carries {signal_label(rows[f])}"
+                                    for f in v["signal_outliers"]))
     out["tc_trueof"] = f"That is true of **{len(v['zero_signal'])}**"
     ce = p["chain"]
     out["tc_edges"] = (f"Over **{len(rows)}** families that yields **{len(ce)}** edges — "
@@ -2840,7 +2855,7 @@ TC_SPLIT = {
     "tc_firstpass": ["Of the",
                      ("**35** at T0, **8** were read in the first pass (004, 006, 018, 019, 029, 046, "
                      "059, 209), so **27**")],
-    "tc_268sig": ["**1**: 268"],
+    "tc_268sig": ["**2**: 147 carries a summary page; 268 carries a verification bundle"],
     "tc_trueof": ["That is true of"],
     "tc_edges": ["Over **372** families"],
     "tc_cw": ["fires on **9**",

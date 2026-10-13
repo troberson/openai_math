@@ -31,7 +31,7 @@ lines, 82 count and byte phrases, 0 sync problems, 2,560 nodes over 3,415 resolv
 manuscripts, 242 scope notes, 416 configs, 200 `main_results` entries over 189 configs, 172 formalized,
 749 preprint dirs, 122,458 `.lean` files, 559 module dirs, 17 disciplines against 23 Lean dirs, 10
 traces in 11 files, 30 verification bundles, 521 `.bib` files with 13,802 entries and 393 hrefs, the
-ledger set at 297,050 B against the all-TSV 2,265,274 B, 66,110 disk links with 0 broken and 17,700
+ledger set at 297,050 B against the all-TSV 2,268,990 B, 66,110 disk links with 0 broken and 17,700
 resolving to a directory, and the substring counts 18 / 373 against the brace-qualified 17 / 372. A
 page with fewer anchors, block lines or phrases is a pass that stopped checking, not a pass that
 passed.
@@ -74,11 +74,11 @@ MUTANTS = [
      lambda t: t.replace("the whole ledger set is **297,050** B",
                          "the whole ledger set is **2,174,703** B", 1)),
     ("all-TSV total altered", "count mismatch (all-TSV byte total)",
-     lambda t: t.replace("together totals **2265274** B", "together totals **297050** B", 1)),
+     lambda t: t.replace("together totals **2268990** B", "together totals **297050** B", 1)),
     ("index tree byte total altered", "count mismatch (index tree byte total)",
-     lambda t: t.replace("carries **11530406** B", "carries **11530405** B", 1)),
+     lambda t: t.replace("carries **11530557** B", "carries **11530405** B", 1)),
     ("disk link count", "count mismatch (disk link check)",
-     lambda t: t.replace("covers **66,110** links", "covers **66,111** links", 1)),
+     lambda t: t.replace("covers **66,111** links", "covers **66,112** links", 1)),
     # Prose the count passes never read: the schema table's byte column is not in count_phrases()
     # or size_phrases(). Only the render diff can see it.
     ("schema byte column", "size mismatch (catalog.tsv measured size)",
@@ -114,9 +114,9 @@ def test_clean_page(mod, text):
     assert (p["traces"], p["trace_files"], p["ver_dirs"], p["bib_files"], p["bib_entries"],
             p["bib_hrefs"]) == (10, 11, 30, 521, 13802, 393), f"traces {p['traces']}, bib {p['bib_files']}"
     assert (p["ledger_set_bytes"], p["all_tsv_bytes"], p["disk_links"], p["disk_broken"],
-            p["disk_dirs"], p["rawbib_kib"]) == (297050, 2265274, 66110, 0, 17700, 2021), \
+            p["disk_dirs"], p["rawbib_kib"]) == (297050, 2268990, 66110, 0, 17700, 2021), \
         f"ledger set {p['ledger_set_bytes']}, all TSV {p['all_tsv_bytes']}, links {p['disk_links']}"
-    assert (p["index_bytes"], p["index_pages"]) == (11530406, 1033), \
+    assert (p["index_bytes"], p["index_pages"]) == (11530557, 1033), \
         f"index tree {p['index_bytes']} B over {p['index_pages']} pages"
     assert (p["substr_disc"], p["substr_res"], p["brace_disc"], p["brace_res"],
             p["resultentries"]) == (18, 373, 17, 372, 372), f"substring {p['substr_disc']}"
