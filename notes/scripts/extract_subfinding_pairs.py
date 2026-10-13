@@ -66,6 +66,17 @@ def band2(counts: dict, low: dict) -> list:
     return sorted(f for f, n in counts.items() if 3 <= n <= 4 and not any(p in low[f] for p in PROBE))
 
 
+def band3(counts: dict, low: dict) -> list:
+    """Band 3 of the split: 5 or more manuscripts and no probe word. `math-el4.11`'s population —
+    8 families / 46 manuscripts, measured 2026-10-13.
+
+    Same construction as bands 1 and 2. Band 3 is the last slice: the three bands together cover every
+    multi-manuscript family the probe filter left, so the population is the multi set unioned with the
+    bead's named densest targets, and every named target is already in the multi set.
+    """
+    return sorted(f for f, n in counts.items() if n >= 5 and not any(p in low[f] for p in PROBE))
+
+
 def resultentry_lines():
     """{fam: 1-based overview.tex line of its \resultentry}."""
     out = {}
@@ -104,10 +115,11 @@ def population() -> dict[str, Any]:
     probe = probe_all & multi
     band = band1(counts, low)
     b2 = band2(counts, low)
-    pop = sorted(probe | set(DENSEST) | set(band) | set(b2))
+    b3 = band3(counts, low)
+    pop = sorted(probe | set(DENSEST) | set(band) | set(b2) | set(b3))
     return {"fams": fams, "titles": titles, "paths": paths, "counts": counts, "lines": lines,
             "ledger": ledger, "multi": multi, "low": low, "per_phrase": per_phrase,
-            "probe_all": probe_all, "probe": probe, "band": band, "band2": b2, "pop": pop}
+            "probe_all": probe_all, "probe": probe, "band": band, "band2": b2, "band3": b3, "pop": pop}
 
 
 def main():
@@ -123,12 +135,13 @@ def main():
     counts, lines, ledger = v["counts"], v["lines"], v["ledger"]
     multi, low, per_phrase = v["multi"], v["low"], v["per_phrase"]
     probe_all, probe, pop, band = v["probe_all"], v["probe"], v["pop"], v["band"]
-    band2 = v["band2"]
+    band2, band3 = v["band2"], v["band3"]
 
     print(f"population rule: (abstract contains one of {PROBE}) AND (>=2 manuscripts), "
           f"union the bead's {len(DENSEST)} densest names, "
           f"union band 1 (exactly 2 manuscripts and no probe word), "
-          f"union band 2 (3-4 manuscripts and no probe word)")
+          f"union band 2 (3-4 manuscripts and no probe word), "
+          f"union band 3 (5+ manuscripts and no probe word)")
     print()
     print("per-phrase hits over all 372 abstracts (the bead's counts):")
     for p in PROBE:
@@ -143,6 +156,10 @@ def main():
     print(f"band 2 (n==3-4, no probe word) {len(band2)} families, "
           f"{sum(counts[f] for f in band2)} manuscripts")
     print(f"band 2 in pop                 {len(set(band2) & set(pop))}")
+    print(f"band 3 (n>=5, no probe word)  {len(band3)} families, "
+          f"{sum(counts[f] for f in band3)} manuscripts")
+    print(f"band 3 in pop                 {len(set(band3) & set(pop))}")
+    print(f"multi families not in pop     {len(multi) - len(pop)}")
     print()
     print(f"POPULATION {len(pop)} families, "
           f"{sum(counts[f] for f in pop)} manuscripts")

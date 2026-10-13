@@ -83,7 +83,9 @@ def population_of(counts):
     probe = probe_all & multi
     band = set(ep.band1(counts, low))
     band2 = set(ep.band2(counts, low))
-    return sorted(probe | set(ep.DENSEST) | band | band2), probe, probe_all, multi, band, band2
+    band3 = set(ep.band3(counts, low))
+    return sorted(probe | set(ep.DENSEST) | band | band2 | band3), probe, probe_all, multi, \
+        band, band2, band3
 
 
 def parse_page(text, problems):
@@ -280,7 +282,7 @@ def check(text: str) -> tuple[list, dict]:
     """-> (problems, measured), the sync pass included. The self-tests call this with page text."""
     inputs = load_inputs()
     _, _, _, counts, _ = inputs
-    population, probe, probe_all, multi, _band, _band2 = population_of(counts)
+    population, probe, probe_all, multi, _band, _band2, _band3 = population_of(counts)
     problems, measured = passes(text, inputs, population, probe, probe_all, multi)
     problems.extend(RD.sync_problems(PAGE, text))
     return problems, measured
@@ -294,7 +296,7 @@ def main():
 
     inputs = load_inputs()
     _, _, _, counts, _ = inputs
-    population, probe, probe_all, multi, band, band2 = population_of(counts)
+    population, probe, probe_all, multi, band, band2, band3 = population_of(counts)
     text = PAGE.read_text(encoding="utf-8")
     problems, measured = passes(text, inputs, population, probe, probe_all, multi)
     sync = RD.sync_problems(PAGE, text)
@@ -302,11 +304,13 @@ def main():
 
     print(f"population rule      (probe {ep.PROBE}) AND (>=2 manuscripts), "
           f"union {len(ep.DENSEST)} named densest families, "
-          f"union band 1 (n==2, no probe word), union band 2 (n==3-4, no probe word)")
+          f"union band 1 (n==2, no probe word), union band 2 (n==3-4, no probe word), "
+          f"union band 3 (n>=5, no probe word)")
     print(f"population           {len(population)} families, "
           f"{sum(counts[f] for f in population)} manuscripts")
     print(f"band 1               {len(band)} families, {2 * len(band)} manuscripts")
     print(f"band 2               {len(band2)} families, {sum(counts[f] for f in band2)} manuscripts")
+    print(f"band 3               {len(band3)} families, {sum(counts[f] for f in band3)} manuscripts")
     print(f"page                 {PAGE.relative_to(ROOT)}")
     print()
     print("measured:")
