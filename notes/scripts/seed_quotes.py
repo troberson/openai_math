@@ -25,8 +25,8 @@ span's index in the page. `mode` is `raw` when the resolved span is the page's q
 when it is equal only after `catlib.text.strip_markup` (the page dropped markup the source carries), and
 `none` when the cited file does not carry the span.
 
-Measured 2026-10-13: **1,774** specs over the two surfaces -- **754** pair-line specs, all raw, and **1020**
-summaries specs, **949** raw, **56** folded, **15** not located. The 15 are seeded with `start` 0 and kept
+Measured 2026-10-13: **1,792** specs over the two surfaces -- **754** pair-line specs, all raw, and **1038**
+summaries specs, **966** raw, **57** folded, **15** not located. The 15 are seeded with `start` 0 and kept
 as measured negatives: the table records that the cited file does not carry the span, and they do not fail
 the round-trip.
 

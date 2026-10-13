@@ -15,8 +15,8 @@ an anchor; `catlib.summaries.candidates` is the same idea for a page that cites 
 
 **Page breaks inside a quote are the common case, not the edge.** Measured 2026-10-13 over the 23
 summaries pages, with the checker's own span and attribution rules (`catlib.summaries.spans_of` and
-`candidates`): of the **1020** quoted spans of 12 characters or more that `verify_summaries.py` pass C
-checks, **324** sit in one source line and **681** sit across 2 to 26 lines. A spec that names a single
+`candidates`): of the **1038** quoted spans of 12 characters or more that `verify_summaries.py` pass C
+checks, **335** sit in one source line and **688** sit across 2 to 26 lines. A spec that names a single
 line cannot carry them, so the spec names a window and the resolver joins it.
 
 **Locate on raw bytes, never on the folded line.** `catlib.text.strip_markup` is the verification

@@ -12,12 +12,12 @@ classification is `catlib.quotes.seed_page`: `raw` when the resolved span is the
 byte-for-byte, `folded` when it is equal only after the checker's normalizer (the page dropped markup
 the source carries), `none` when the cited file does not carry the span.
 
-Measured 2026-10-13 over the 24 pages: **1020** spans of 12 characters or more, **949** raw-equal,
-**56** fold-equal, **15** not located, **0** resolving to text the page does not quote. **815** spans
-are inline and **205** are block quotes. **324** spans sit in one source line and **681** sit across 2
-to 26 lines; the widths are 1:324 2:334 3:185 4:64 5:29 6:12 7:9 8:13 9:5 10:6 11:4 12:1 13:3 14:2
+Measured 2026-10-13 over the 25 pages: **1038** spans of 12 characters or more, **966** raw-equal,
+**57** fold-equal, **15** not located, **0** resolving to text the page does not quote. **832** spans
+are inline and **206** are block quotes. **335** spans sit in one source line and **688** sit across 2
+to 26 lines; the widths are 1:335 2:339 3:187 4:64 5:29 6:12 7:9 8:13 9:5 10:6 11:4 12:1 13:3 14:2
 15:1 16:3 17:2 18:2 19:2 20:2 21:1 26:1, and the 15 unlocated spans carry no width, so the width
-histogram sums to 999.
+histogram sums to 1,023.
 
 Usage: python3 notes/scripts/measure_summaries_seed.py
 """

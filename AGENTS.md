@@ -32,7 +32,7 @@ lives in this file and nowhere else.
   note says its formalization leaves out), `subfindings.tsv` (1145 rows — 719 manuscript rows and 426
   comparator rows, typed by a `kind` column) with `subfinding-pairs.md` (167 families, 514 manuscripts —
   the reading pass that pairs abstract clauses with display titles) beside it,
-  `quotes.tsv` (1,744 rows, 10 columns — the `(path, start, end, head, tail, mode)` spec for every
+  `quotes.tsv` (1,792 rows, 10 columns — the `(path, start, end, head, tail, mode)` spec for every
   pair-line quote in `subfinding-pairs.md` and every quoted span the 24 summaries pages carry, seeded by
   `seed_quotes.py` and resolved back to the source bytes by `catlib/quotes.py`, which shares the pair
   page's anchor grammar with `catlib/anchors.py` and the summaries span and attribution rules with
@@ -352,8 +352,8 @@ lives in this file and nowhere else.
   `catlib.text.strip_markup` is lossy on math, `overview.tex:505` folds to `for $04$, establishing` and
   the clause is gone. The shortest-span rule is load-bearing: first-head-then-first-tail fails 6 of 754
   (families 018, 114, 150, 247, 262, 336), shortest-span fails 0. **The page's quotes are normalized, not
-  verbatim** — 56 of the 1020 summaries spans are fold-equal, not raw-equal, so a writer that rendered
-  raw bytes would change those 56 quotes' text; 15 of the 1020 are not located (LaTeX accent escapes and math
+  verbatim** — 57 of the 1038 summaries spans are fold-equal, not raw-equal, so a writer that rendered
+  raw bytes would change those 57 quotes' text; 15 of the 1038 are not located (LaTeX accent escapes and math
   pattern's `MARK` set does not tolerate), and they are seeded to `start` 0 as measured negatives, not
   deleted. **The join-form reader is the inverse of the join-form writer:** `rows_text` does not quote a
   cell, so `csv.DictReader` strips the quotes off a `head` that begins with `"` — a page's block quote of
@@ -639,7 +639,7 @@ lives in this file and nowhere else.
   over 189 configs, 172 formalized, 749 preprint dirs, 122,458 `.lean` files, 559 module dirs, 17
   disciplines against 23 Lean dirs, 10 traces in 11 files, 30 verification bundles, 521 `.bib` files
   with 13,802 entries and 393 hrefs, the ledger set at 297,050 B against the all-TSV 2,252,773 B, the
-  index tree at 11,530,284 B over 1,033 pages, 66,109
+  index tree at 11,530,406 B over 1,033 pages, 66,110
   disk links with 0 broken and 17,700 resolving to a directory, and the substring counts 18 / 373
   against the brace-qualified 17 / 372. `main()` reads no argv, so `--mutant` is inert, and
   `population()` is under `functools.cache` (`:66`), so the fifteen `check()` calls the row makes pay
@@ -949,11 +949,11 @@ lives in this file and nowhere else.
   re-render rather than editing a page.
 - Check the rendered index against the shipped files with
   `python3 notes/scripts/check_index_links.py` — report-only, ~1 s, exits non-zero on a broken link.
-  It re-derives the check from disk: **1,033** pages, **66,109** links, 0 broken, of which **17,700**
+  It re-derives the check from disk: **1,033** pages, **66,110** links, 0 broken, of which **17,700**
   resolve to a directory (`manuscript-dir`, `latex-build-tree`, `lean-dir`, `verification-dir`,
-  `index-dir`) and **48,409** to a file, every shipped-file category equal to a fresh
-  `build_catalog.py` count. The render report's **48,014** links are the registry's subset; the
-  **18,095**-link difference is registry under-coverage, not a disagreement about existence — both
+  `index-dir`) and **48,410** to a file, every shipped-file category equal to a fresh
+  `build_catalog.py` count. The render report's **48,015** links are the registry's subset; the
+  **18,096**-link difference is registry under-coverage, not a disagreement about existence — both
   report 0 broken. Link scanning must be paren-balanced: `[^)]*` truncates
   `preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/paper.pdf` and invents a broken
   link, so the baseline is 0 broken links, not 1. Its self-tests are extracted to
