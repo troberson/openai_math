@@ -100,7 +100,7 @@ def test_clean_page(mod, text):
     """Every pass is silent, and the counts the passes report are pinned."""
     problems, n_anchor, n_block, n_phrases, n_sync = mod.check(text)
     assert not problems, problems[:3]
-    assert (n_anchor, n_block, n_phrases, n_sync) == (9, 3, 82, 0), \
+    assert (n_anchor, n_block, n_phrases, n_sync) == (9, 3, 83, 0), \
         f"anchors {n_anchor}, block lines {n_block}, phrases {n_phrases}, sync {n_sync}"
     p = mod.population()
     assert (p["nodes"], p["edges_resolved"], p["edges_rawbib"], p["resolved"], p["cross"]) == \
@@ -116,6 +116,8 @@ def test_clean_page(mod, text):
     assert (p["ledger_set_bytes"], p["all_tsv_bytes"], p["disk_links"], p["disk_broken"],
             p["disk_dirs"], p["rawbib_kib"]) == (297050, 2252773, 66108, 0, 17700, 2021), \
         f"ledger set {p['ledger_set_bytes']}, all TSV {p['all_tsv_bytes']}, links {p['disk_links']}"
+    assert (p["index_bytes"], p["index_pages"]) == (11530104, 1033), \
+        f"index tree {p['index_bytes']} B over {p['index_pages']} pages"
     assert (p["substr_disc"], p["substr_res"], p["brace_disc"], p["brace_res"],
             p["resultentries"]) == (18, 373, 17, 372, 372), f"substring {p['substr_disc']}"
 
