@@ -1155,8 +1155,7 @@ IL_SPLIT = {
                        "`topics.md`,")],
     "prose_tablestsv": [("`tables-tsv` 2 targets = `notes/tables/names.tsv` (553 links: one from "
                         "each of the 551 name"),
-                        ("pages and 2 from the entry point) and `notes/tables/topics.tsv`"),
-                        "(1 link, the entry point)"],
+                        ("pages and 2 from the entry point) and `notes/tables/topics.tsv`")],
     "prose_basenames": [("The index tree carries 1,027 distinct file basenames over 1,033 pages "
                         "and `notes/tables/` carries")],
     "prose_regchecked": ["**48,012 links checked, 0"],
