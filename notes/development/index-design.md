@@ -76,7 +76,7 @@ Those five named files are the ledger set the **297,050** B figure covers. The 2
 `notes/tables/sources.tsv` (**221463** B over **719** rows), `notes/tables/topics-rendered.tsv` (**19127** B over **92** rows), `notes/tables/topics.tsv` (**22631** B over **92** rows) and
 `notes/tables/traces.tsv` (**1639** B over **10** rows) — are tracked TSVs too: 4 written by the ledger
 scripts and 16 rendered by `build_index.py` into `notes/tables/` on `math-faz.6`, and every
-`notes/tables/*.tsv` together totals **2233628** B — quote the set with the figure, since the two
+`notes/tables/*.tsv` together totals **2252773** B — quote the set with the figure, since the two
 sums answer different questions.
 
 ## 2. Location — `notes/index/`
