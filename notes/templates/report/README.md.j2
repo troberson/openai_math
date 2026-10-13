@@ -419,8 +419,8 @@ release's own structural encoding of sub-findings: family 102 ships five hrefs t
 theorem*, *Optimal Max-Cut hardness*, *Factor-two Vertex Cover hardness*, *Constant-factor Min-UnCut
 hardness*, *Directed feedback vertex set hardness*, and its abstract carries exactly those five
 claims (read 2026-10-07: the UGC proof plus Max-Cut / Vertex Cover / Min-UnCut / directed FVS
-hardness). That matching has now been read for **159 families over 468 manuscripts** in
-`notes/reports/subfinding-pairs.md`: **347** of those titles are claimed by an abstract clause, **121** are
+hardness). That matching has now been read for **167 families over 514 manuscripts** in
+`notes/reports/subfinding-pairs.md`: **368** of those titles are claimed by an abstract clause, **146** are
 claimed by none, and **18** clauses state a sub-finding no title names. The other 372 titles are
 recorded, not paired.
 `notes/scripts/verify_subfindings.py` re-derives every row from `overview.tex`,
@@ -429,17 +429,21 @@ on disk. Its seven mutants live in `notes/scripts/tests/test_subfindings.py`, wh
 the table bytes in memory and asserts the pass that owns each one flags it, including the same-family
 row swap that only the seq check can see.
 
-**`notes/reports/subfinding-pairs.md` is the pairing itself: 159 blocks, one per family, each quoting the
+**`notes/reports/subfinding-pairs.md` is the pairing itself: 167 blocks, one per family, each quoting the
 abstract clause and the display title it names, both with the `overview.tex` line they were verified
 on.** Population = (abstract contains one of the release's four multi-claim phrases **and** ships ≥2
 manuscripts) ∪ the ten densest families the task names ∪ band 1 (exactly 2 manuscripts and no probe
-word) ∪ band 2 (3-4 manuscripts and no probe word) = **159 families, 468 manuscripts**; the task states
+word) ∪ band 2 (3-4 manuscripts and no probe word) ∪ band 3 (5 or more manuscripts and no probe word)
+= **167 families, 514 manuscripts**; the task states
 51 for that intersection and the number does not reproduce (the union over the 167 multi-manuscript
 families is **40**), which the page records with the rules tried and rejected. Band 1 is
 `math-el4.9`'s addition: 73 families over 146 manuscripts. Band 2 is `math-el4.10`'s: 37 families over
-119 manuscripts. Measured on the page: **190** accepted clause pairs, **157** accepted headline pairs,
-**18** clauses recorded unmatched, **347** titles claimed, **121** unclaimed, **145** families with at
-least one accepted pair, **17** with at least one unmatched clause, **111** pairing a sub-finding with
+119 manuscripts. Band 3 is `math-el4.11`'s: the rule reads 17 families over 128 manuscripts, 10 of them
+the named densest targets, so the pass added 8 families over 46 manuscripts, and the three bands together
+cover every multi-manuscript family. Measured on the page: **203** accepted clause pairs, **165** accepted
+headline pairs,
+**18** clauses recorded unmatched, **368** titles claimed, **146** unclaimed, **153** families with at
+least one accepted pair, **17** with at least one unmatched clause, **119** pairing a sub-finding with
 no probe hit. `notes/scripts/verify_subfinding_pairs.py` re-checks every quotation against the shipped
 line and re-derives every count from the parsed blocks; the 8 injected mutants live in
 `notes/scripts/tests/test_subfinding_pairs.py`, run by the `run_tests.py` gate row, and the last is a
@@ -728,8 +732,8 @@ the community will scrutinize.
   what the notes contain.
 - **A display title is not a claim about the abstract.** The 719 titles are what the release writes
   as link text; nothing in the repo states that a title corresponds to a clause of the abstract. The
-  pairing has now been read for 159 families (`notes/reports/subfinding-pairs.md`) and it is a reading
-  call, not a release encoding: 121 of the 468 titles in that population are claimed by no clause, and 18
+  pairing has now been read for 167 families (`notes/reports/subfinding-pairs.md`) and it is a reading
+  call, not a release encoding: 146 of the 514 titles in that population are claimed by no clause, and 18
   clauses name a result no title names. Outside that population a title is still a label, not a
   sub-result.
 - **A display title is not the manuscript's title.** The `preprints/` directory name carries the full
