@@ -220,7 +220,7 @@ def measured():
     files = sorted(COMPARATOR_DIR.glob("*.lean"))
     sorries = [p.read_text(encoding="utf-8", errors="replace").count("sorry") for p in files]
     bundles = sorted(d for d in (ROOT / "preprints").glob("*/verification"))
-    topic_edges = tsv("notes/index/edges/family-topic.tsv")
+    topic_edges = tsv("notes/tables/family-topic.tsv")
 
     # The disk link scan is the source of the page's index-link figure, so it is measured here
     # rather than written as a literal the page has to stay in step with by hand.

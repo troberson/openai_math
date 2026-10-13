@@ -29,11 +29,11 @@ fires for every fault, so no needle is that line.
 
 The clean test asserts the passes are silent and pins the counts they report: 32 anchors, 24 count
 and probe phrases, 0 sync problems, 2 atomicity matches over 65 scripts and 18 catlib modules, 12
-sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 9 TSVs at 909,768 bytes, 631M
-`preprints/`, 1,740M `lean/OAI/`, 14M `notes/index/`, 78 gate rows, 10 writer rows, 1 env hit, 8
+sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 25 TSVs at 2,174,703 bytes, 631M
+`preprints/`, 1,740M `lean/OAI/`, 12M `notes/index/`, 78 gate rows, 10 writer rows, 1 env hit, 8
 purity scripts,
-the sites at `atomic.py:42` / `atomic.py:84`, `render_reports.py:1162`
-and `build_catalog.py:128` / `build_index.py:583`, and the probe row the amplification table quotes
+the sites at `atomic.py:42` / `atomic.py:84`, `render_reports.py:1184`
+and `build_catalog.py:128` / `build_index.py:591`, and the probe row the amplification table quotes
 at 151.32 s wall over 117,360 opens, 18,935 distinct paths and 98,425 repeats. A page with fewer
 anchors or phrases is a pass that stopped checking, not a pass that passed.
 
@@ -68,32 +68,32 @@ MUTANTS = [
      lambda t: t.replace("**5** digests", "**6** digests", 1)),
     ("probe figure altered", "probe figure not in the page: opens 117,360",
      lambda t: t.replace("117,360", "117,361")),
-    # The site anchors moved when the writer's env construction collapsed into one launch site: the
-    # env site is now the single 1162, so each env fault shifts it to its neighbour, and the
-    # anchor-outside fault uses a line past the file's end (4,000 against a 3,664-line file), which
-    # is the form the anchor pass flags.
+    # The site anchors moved when the writer gained the basename slots: the env site is now the single
+    # 1184, so each env fault shifts it to its neighbour, and the anchor-outside fault uses a line past
+    # the file's end (4,000 against a 3,664-line file), which is the form the anchor pass flags.
     ("anchor outside the file", "anchor line outside file: `render_reports.py:4000`",
-     lambda t: t.replace("render_reports.py:1162", "render_reports.py:4000", 1)),
+     lambda t: t.replace("render_reports.py:1184", "render_reports.py:4000", 1)),
     # The page ships no notes-page anchor, so the resolver's notes/ branch is inert on a clean page.
     # This fault injects one with a line past the file's end, which is the only way the branch is
     # proven to fire.
     ("notes-page anchor outside the file", "anchor line outside file: `notes/development/fleet-design.md:9999`",
-     lambda t: t.replace("`render_reports.py:1162`",
-                         "`render_reports.py:1162` `notes/development/fleet-design.md:9999`", 1)),
-    ("prose count in the size argument", "count phrase not in the page: **909,768** bytes",
-     lambda t: t.replace("**909,768** bytes", "**909,767** bytes", 1)),
+     lambda t: t.replace("`render_reports.py:1184`",
+                         "`render_reports.py:1184` `notes/development/fleet-design.md:9999`", 1)),
+    ("prose count in the size argument", "count phrase not in the page: **2,174,703** bytes",
+     lambda t: t.replace("**2,174,703** bytes", "**2,174,702** bytes", 1)),
     # The TSV count and the writer-row count are measured from the fleet's own tree and the ROWS block,
-    # so a page that names a count the measurement contradicts is caught by the count pass.
+    # so a page that names a count the measurement contradicts is caught by the count pass. The tree
+    # carries 25 TSVs since `math-faz.6` moved the 16 generated tables into it.
     ("TSV count understated",
-     "count phrase not in the page: **9** `notes/tables/*.tsv` present on disk",
-     lambda t: t.replace("**9** `notes/tables/*.tsv` present on disk",
-                         "**8** `notes/tables/*.tsv` present on disk", 1)),
+     "count phrase not in the page: **25** `notes/tables/*.tsv` present on disk",
+     lambda t: t.replace("**25** `notes/tables/*.tsv` present on disk",
+                         "**24** `notes/tables/*.tsv` present on disk", 1)),
     # The probe-record count is measured from the tracked record tree, so a page that names a record
-    # the tree does not carry is caught by the count pass. The tree carries 10 records, so the needle
-    # names 10 and the fault understates that.
+    # the tree does not carry is caught by the count pass. The tree carries 12 records, so the needle
+    # names 12 and the fault understates that.
     ("probe record count understated",
-     "count phrase not in the page: The tracked records are **10**:",
-     lambda t: t.replace("The tracked records are **10**:", "The tracked records are **9**:", 1)),
+     "count phrase not in the page: The tracked records are **12**:",
+     lambda t: t.replace("The tracked records are **12**:", "The tracked records are **11**:", 1)),
     ("writer-row count in the gate paragraph",
      "count phrase not in the page: the **10** writers declare what they write",
      lambda t: t.replace("the **10** writers declare what they write",
@@ -105,22 +105,22 @@ MUTANTS = [
     # A measured site shifted to a line that exists in its file passes the anchor pass and the count
     # pass, so only the site comparison can catch it. One fault per list the comparison reads.
     ("set-site anchor shifted in the bullet",
-     "set-iteration bullet names ['build_catalog.py:128', 'build_index.py:584'",
-     lambda t: t.replace("build_index.py:583", "build_index.py:584", 1)),
-    ("set-site anchor shifted in the checker list", "site build_index.py:583 absent",
-     lambda t: t.replace("`build_index.py:583`, `render_reports.py:1162`",
-                         "`build_index.py:584`, `render_reports.py:1162`", 1)),
+     "set-iteration bullet names ['build_catalog.py:128', 'build_index.py:592'",
+     lambda t: t.replace("build_index.py:591", "build_index.py:592", 1)),
+    ("set-site anchor shifted in the checker list", "site build_index.py:591 absent",
+     lambda t: t.replace("`build_index.py:591`, `render_reports.py:1184`",
+                         "`build_index.py:592`, `render_reports.py:1184`", 1)),
     ("atomicity anchor shifted in the paragraph", "atomicity paragraph names ['atomic.py:43'",
      lambda t: t.replace("catlib/atomic.py:42", "catlib/atomic.py:43", 1)),
     ("atomicity anchor shifted in the checker list", "site atomic.py:42 absent",
      lambda t: t.replace("`catlib/atomic.py:42`, `catlib/atomic.py:84`",
                          "`catlib/atomic.py:43`, `catlib/atomic.py:84`", 1)),
     ("env anchor shifted in the bullet",
-     "env bullet names ['render_reports.py:1163'",
-     lambda t: t.replace("`render_reports.py:1162` sets", "`render_reports.py:1163` sets", 1)),
-    ("env anchor shifted in the checker list", "site render_reports.py:1162 absent",
-     lambda t: t.replace("`render_reports.py:1162`, `render_reports.py:2043`",
-                         "`render_reports.py:1163`, `render_reports.py:2043`", 1)),
+     "env bullet names ['render_reports.py:1185'",
+     lambda t: t.replace("`render_reports.py:1184` sets", "`render_reports.py:1185` sets", 1)),
+    ("env anchor shifted in the checker list", "site render_reports.py:1184 absent",
+     lambda t: t.replace("`render_reports.py:1184`, `render_reports.py:2043`",
+                         "`render_reports.py:1185`, `render_reports.py:2043`", 1)),
     # A dated observation the writer deliberately does not slot. The count pass, the anchor pass and
     # the site pass all ignore it, so only the render diff can see the page is no longer the writer's
     # bytes — which is the pass this page gained when it became report-fed.
@@ -150,16 +150,16 @@ def test_clean_page(mod, text):
         f"atomic {p['atomic']}, scripts {p['scripts']}, modules {p['modules']}"
     assert (p["sync"], p["sync_verify"], p["sync_other"]) == (12, 12, 0), \
         f"sync {p['sync']}, verify_ {p['sync_verify']}, not {p['sync_other']}"
-    assert (p["digests"], p["ignored"], p["tsv_count"], p["tsv_bytes"]) == (5, 1, 9, 909768), \
+    assert (p["digests"], p["ignored"], p["tsv_count"], p["tsv_bytes"]) == (5, 1, 25, 2174703), \
         f"digests {p['digests']}, ignored {p['ignored']}, tsv {p['tsv_bytes']}"
-    assert (p["du"]["preprints"], p["du"]["oai"], p["du"]["index"]) == (631, 1740, 14), \
+    assert (p["du"]["preprints"], p["du"]["oai"], p["du"]["index"]) == (631, 1740, 12), \
         f"du {p['du']}"
     assert (p["gate_rows"], p["writer_rows"], p["env_hits"], len(p["purity"])) == (78, 10, 1, 8), (
         f"gate rows {p['gate_rows']}, writer rows {p['writer_rows']}, env hits {p['env_hits']}, "
         f"purity {len(p['purity'])}")
     assert sorted(p["atomic_sites"]) == ["atomic.py:42", "atomic.py:84"], p["atomic_sites"]
-    assert sorted(p["env_sites"]) == ["render_reports.py:1162"], p["env_sites"]
-    assert sorted(p["set_sites"]) == ["build_catalog.py:128", "build_index.py:583"], p["set_sites"]
+    assert sorted(p["env_sites"]) == ["render_reports.py:1184"], p["env_sites"]
+    assert sorted(p["set_sites"]) == ["build_catalog.py:128", "build_index.py:591"], p["set_sites"]
     r = p["rows"]["render_reports.py"]
     assert (r["wall"], r["opens"], r["distinct"], r["repeats"]) == (151.32, 117360, 18935, 98425), \
         f"probe row {r}"
