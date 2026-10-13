@@ -33,7 +33,7 @@ lives in this file and nowhere else.
   comparator rows, typed by a `kind` column) with `subfinding-pairs.md` (167 families, 514 manuscripts —
   the reading pass that pairs abstract clauses with display titles) beside it,
   `quotes.tsv` (1,744 rows, 10 columns — the `(path, start, end, head, tail, mode)` spec for every
-  pair-line quote in `subfinding-pairs.md` and every quoted span the 23 summaries pages carry, seeded by
+  pair-line quote in `subfinding-pairs.md` and every quoted span the 24 summaries pages carry, seeded by
   `seed_quotes.py` and resolved back to the source bytes by `catlib/quotes.py`, which shares the pair
   page's anchor grammar with `catlib/anchors.py` and the summaries span and attribution rules with
   `catlib/summaries.py`),
@@ -145,7 +145,7 @@ lives in this file and nowhere else.
   that no `main_results` entry names renders as *absent*, never as unformalized. Page slugs are
   mechanical (NFKD, strip combining marks, drop `$`/apostrophes/`\command`, lowercase, non-alphanumerics
   → `-`, leading `the-` dropped): 0 collisions, max length 93. Index↔summary pairing is by family
-  number only — 23 of 372 families have a summary page.
+  number only — 24 of 372 families have a summary page.
 - Names are a measured layer, not a curated one: `python3 notes/scripts/measure_names.py` (a writer —
   it lands the population as the record `.qwen/cache/records/<key>/names.json`; cold ~42 s, a warm run
   reads the store; `--json` dumps the rows, `--check-only` prints the report without landing the record)
@@ -345,7 +345,7 @@ lives in this file and nowhere else.
   class. A spec is `(page, fam, seq, which, path, start, end, head, tail, mode)`: it names a span
   **without containing it** — the line window the quote sits on, the first words widened until they are
   unique inside that window, the last three words, and the round-trip class. **Page breaks inside a
-  quote are the common case, not the edge:** measured 2026-10-13 over the 23 summaries pages, 681 of the
+  quote are the common case, not the edge:** measured 2026-10-13 over the 24 summaries pages, 688 of the
   1020 quoted spans `verify_summaries.py` pass C checks sit across 2 to 26 source lines and 324 in one, so
   the spec names a window and the resolver joins it as a LaTeX paragraph — a line break is one space, and
   a line's own trailing space is not a second. **Locate on raw bytes, never on the folded line:**

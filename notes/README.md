@@ -499,7 +499,7 @@ rendered on **six of the seven** coverage counts (372 / 719 / 242 / 416 / 10 / 3
 the yaml `sources:` entry whose manuscript is not in the ledger; `vs ledger` diffs of 0 on tier,
 `mainres`, `chal`, `paps`, `paps_form`; ledger and overview family sets equal with **372 pages and 0
 absent on disk**; 11 trace files over 10 attributed stems; **0** configs linked by more than one family;
-**0** page collisions (max slug length 93); 23 of 372 summary pairings; manuscript links resolving 719 of
+**0** page collisions (max slug length 93); 24 of 372 summary pairings; manuscript links resolving 719 of
 719 for main file, `build/` and `README.md`; **drift vs `notes/tables/topics.tsv` 0**; names 5,842 measured /
 551 subject pages / 5,291 citation-only / 9,819 edges over 372 families / **0** names with no family /
 **10 of 10** trace families covered by a subject name.
@@ -551,7 +551,7 @@ no name-to-name edge is built.
 | `companions` | `result NNN` cross-refs in the abstract | |
 | `companion_word` | abstract says "companion" | 9 families |
 | `versions` | manuscripts sharing a date-stripped dir slug | 2 families, 4 dated re-issues (003, 056) |
-| `summary` | a page exists at `notes/summaries/<discipline>/<NNN>-*.md` | Filesystem fact, not a derived claim; 23 of 372 families, 59 manuscripts behind them |
+| `summary` | a page exists at `notes/summaries/<discipline>/<NNN>-*.md` | Filesystem fact, not a derived claim; 24 of 372 families, 60 manuscripts behind them |
 
 ## Coverage tracks exposure, not importance
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-r"""Seed the quote-spec table for the pair-line page and the 23 summaries pages, and prove the resolver
+r"""Seed the quote-spec table for the pair-line page and the 24 summaries pages, and prove the resolver
 reproduces every quote.
 
 A spec is `(page, fam, seq, which, path, start, end, head, tail, mode)`: the source file, the line window
@@ -103,7 +103,7 @@ def rows(lines: list[str]) -> list[tuple[dict[str, str], str]]:
 
 
 def summary_rows() -> list[tuple[dict[str, str], str]]:
-    """Every quoted span the 23 summaries pages carry, seeded to a spec, with the quote it must reproduce.
+    """Every quoted span the 24 summaries pages carry, seeded to a spec, with the quote it must reproduce.
 
     `path` is the file the page's `[Sn]` row resolves to, repo-relative, so a row names a file the round-trip
     can read without knowing the manuscript root. A span with no usable citation, or one the cited file does
