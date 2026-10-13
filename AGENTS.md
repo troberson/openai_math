@@ -32,7 +32,7 @@ lives in this file and nowhere else.
   note says its formalization leaves out), `subfindings.tsv` (1145 rows — 719 manuscript rows and 426
   comparator rows, typed by a `kind` column) with `subfinding-pairs.md` (122 families, 349 manuscripts —
   the reading pass that pairs abstract clauses with display titles) beside it,
-  `quotes.tsv` (1,161 rows, 10 columns — the `(path, start, end, head, tail, mode)` spec for every
+  `quotes.tsv` (1,449 rows, 10 columns — the `(path, start, end, head, tail, mode)` spec for every
   pair-line quote in `subfinding-pairs.md` and every quoted span the 21 summaries pages carry, seeded by
   `seed_quotes.py` and resolved back to the source bytes by `catlib/quotes.py`, which shares the pair
   page's anchor grammar with `catlib/anchors.py` and the summaries span and attribution rules with
@@ -336,7 +336,7 @@ lives in this file and nowhere else.
   ≥2 sentences with a prove-verb (32), ≥3 sentences (73). Same shape as the counterexample 74 / 30 case;
   see `notes/reports/counterexample-tag.md` and the population section of `notes/reports/subfinding-pairs.md`.
 - Seed the quote-spec table with `python3 notes/scripts/seed_quotes.py` — a writer that lands
-  `notes/tables/quotes.tsv` (1,161 rows, 10 columns) through the promote registry and resolves every spec
+  `notes/tables/quotes.tsv` (1,449 rows, 10 columns) through the promote registry and resolves every spec
   back against the file its `path` names, requiring the resolved span to be the page's quote in its own
   class. A spec is `(page, fam, seq, which, path, start, end, head, tail, mode)`: it names a span
   **without containing it** — the line window the quote sits on, the first words widened until they are
@@ -633,7 +633,7 @@ lives in this file and nowhere else.
   tables, 372 families over 719 manuscripts, 242 scope notes, 416 configs, 200 `main_results` entries
   over 189 configs, 172 formalized, 749 preprint dirs, 122,458 `.lean` files, 559 module dirs, 17
   disciplines against 23 Lean dirs, 10 traces in 11 files, 30 verification bundles, 521 `.bib` files
-  with 13,802 entries and 393 hrefs, the ledger set at 297,050 B against the all-TSV 907,744 B, 66,107
+  with 13,802 entries and 393 hrefs, the ledger set at 297,050 B against the all-TSV 2,207,042 B, 66,107
   disk links with 0 broken and 17,700 resolving to a directory, and the substring counts 18 / 373
   against the brace-qualified 17 / 372. `main()` reads no argv, so `--mutant` is inert, and
   `population()` is under `functools.cache` (`:66`), so the fifteen `check()` calls the row makes pay
@@ -1062,11 +1062,11 @@ lives in this file and nowhere else.
   catch it. Each needle is measured specific: it fires for its own fault and for no other, and the
   render-diff line fires for every fault, so no needle is that line. The clean test pins the population
   the passes report: 32 anchors, 24 count and probe phrases, 0 sync problems, 2 atomicity matches over
-  65 scripts and 18 catlib modules, 12 sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 9
-  TSVs at 907,744 bytes, 631M `preprints/`, 1,740M `lean/OAI/`, 14M `notes/index/`, 78 gate rows, 10
+  65 scripts and 18 catlib modules, 12 sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 25
+  TSVs at 2,207,042 bytes, 631M `preprints/`, 1,740M `lean/OAI/`, 12M `notes/index/`, 78 gate rows, 11
   writer rows, 1 env hit, 8 purity scripts, the sites at `atomic.py:42` / `atomic.py:84`,
-  `render_reports.py:1162` and `build_catalog.py:128` /
-  `build_index.py:583`, and the probe row the amplification table quotes at 151.32 s wall over
+  `render_reports.py:1184` and `build_catalog.py:128` /
+  `build_index.py:591`, and the probe row the amplification table quotes at 151.32 s wall over
   117,360 opens, 18,935 distinct paths and 98,425 repeats. `main()` reads no argv, so `--mutant` is
   inert, and `population()` is under `functools.cache`, so the twenty-one `check()` calls the row makes
   pay the `git`/`du`/script-tree walk once. It writes nothing; run it twice and diff — the report is

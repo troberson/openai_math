@@ -74,7 +74,7 @@ MUTANTS = [
      lambda t: t.replace("the whole ledger set is **297,050** B",
                          "the whole ledger set is **2,174,703** B", 1)),
     ("all-TSV total altered", "count mismatch (all-TSV byte total)",
-     lambda t: t.replace("together totals **2174703** B", "together totals **297050** B", 1)),
+     lambda t: t.replace("together totals **2207042** B", "together totals **297050** B", 1)),
     ("disk link count", "count mismatch (disk link check)",
      lambda t: t.replace("covers **66,107** links", "covers **66,108** links", 1)),
     # Prose the count passes never read: the schema table's byte column is not in count_phrases()
@@ -112,7 +112,7 @@ def test_clean_page(mod, text):
     assert (p["traces"], p["trace_files"], p["ver_dirs"], p["bib_files"], p["bib_entries"],
             p["bib_hrefs"]) == (10, 11, 30, 521, 13802, 393), f"traces {p['traces']}, bib {p['bib_files']}"
     assert (p["ledger_set_bytes"], p["all_tsv_bytes"], p["disk_links"], p["disk_broken"],
-            p["disk_dirs"], p["rawbib_kib"]) == (297050, 2174703, 66107, 0, 17700, 2021), \
+            p["disk_dirs"], p["rawbib_kib"]) == (297050, 2207042, 66107, 0, 17700, 2021), \
         f"ledger set {p['ledger_set_bytes']}, all TSV {p['all_tsv_bytes']}, links {p['disk_links']}"
     assert (p["substr_disc"], p["substr_res"], p["brace_disc"], p["brace_res"],
             p["resultentries"]) == (18, 373, 17, 372, 372), f"substring {p['substr_disc']}"
