@@ -320,3 +320,16 @@ issue.
   Lean. Ordering inside a shard is by ascending manuscript count, the Tier C rule already recorded.
   Revisit if a family in this set gains a scope note, which means upstream formalized it and the tier
   moved.
+- **The sweep family 101's page moved is landed, and the byte total is now measured.**
+  Chosen 2026-10-13 on `math-ckd.3`. Family 101's page added one summaries page, so the
+  census reads **23** pages (22 family pages), the seed probe classifies **990** spans
+  (**922** raw-equal, **53** fold-equal, **15** not located, **314** single-line, **661**
+  across 2 to 26 lines), the disk scan reads **66,108** links with **48,408**
+  file-resolving, and the index tree carries **11,530,104** B over 1,033 pages. The head-rule
+  probe re-measured: first-head-then-first-tail fails **6** of **754** pair-line specs
+  (families 018, 114, 150, 247, 262, 336), shortest-span fails 0. The index-design checker
+  gained the byte total as a measured count phrase (83 phrases, 15 mutants), the notes readme's
+  four phrases became writer slots measured from the scan, the render report and the seed probe,
+  and the index README template's baseline line was swept. Gate: **78 rows, 0 failures**, empty
+  head diff, cache promotion 0 problems. `math-ckd.3`'s remaining set is **77 families over
+  117 manuscripts**; the tree ends at **99** family pages plus the index page.
