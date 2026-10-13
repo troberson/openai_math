@@ -1205,7 +1205,8 @@ manuscript of family NNN in `notes/tables/subfindings.tsv`, whose `title` column
   paper may well prove a result the abstract omits — 260 and 238 are the cases that make that likely.
 - The population rule is provisional. The bead's 51 does not reproduce; the recorded rule yields 122
   families over 349 manuscripts, and the revisit condition is in the population section.
-- 45 families with two or more manuscripts are not read. The page covers 122 of the 167.
+- 45 families with two or more manuscripts are not read, carrying 165 manuscripts: 37 at 3-4
+  manuscripts (119) and 8 at 5 or more (46). The page covers 122 of the 167.
 - The 426 comparator-link rows in `notes/tables/subfindings.tsv` are not paired; only the 719 manuscript rows
   are eligible, and only 349 of those are in this population.
 - Clause boundaries were chosen by reading, not by a parser: a clause is a sentence, or a sentence
