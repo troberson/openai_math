@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [statistical-mechanics](../topics/statistical-mechanics.md) · [curves](../topics/curves.md) · [planar-maps-and-lattice-models](../topics/planar-maps-and-lattice-models.md) · [conformal-universality](../topics/conformal-universality.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [226-the-curve-scaling-limit-of-half-plane-double-dimers.md](../../../notes/summaries/probability-and-statistical-mechanics/226-the-curve-scaling-limit-of-half-plane-double-dimers.md) |
 
 ## Manuscripts
 

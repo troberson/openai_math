@@ -219,7 +219,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 223	Probability and statistical mechanics	Conformal limits of square-lattice random-cluster interfaces	6	0	T0	0	0	0	0	0	0	0		bound	0	0	0		0	0	0
 224	Probability and statistical mechanics	Critical and near-critical universality for Voronoi percolation	3	0	T0	0	0	0	0	0	0	0		bound	0	0	0		0	0	0
 225	Probability and statistical mechanics	Gaussian free field limits for the balanced six-vertex model	1	0	T0	0	0	0	0	0	0	0			0	0	0		0	0	0
-226	Probability and statistical mechanics	The double-dimer $\mathrm{CLE}_4$ conjecture in the half-plane	1	0	T0	0	0	0	0	0	0	0		resolution	0	1	0		0	0	0
+226	Probability and statistical mechanics	The double-dimer $\mathrm{CLE}_4$ conjecture in the half-plane	1	0	T0	0	0	0	0	0	0	0		resolution	0	1	0		0	0	1
 227	Probability and statistical mechanics	The dynamical phase transition in the Sherrington--Kirkpatrick model	8	1	T3	5	2	1	2748	0	0	0		partial	0	0	0		0	0	0
 228	Probability and statistical mechanics	Continuum phase transitions for radial pair potentials	2	2	T3	3	2	1	1045	0	0	0		bound|density	0	0	0		0	0	0
 229	Probability and statistical mechanics	Sharp three- and four-state reconstruction thresholds	3	0	T2	2	0	1	654	2	0	0			0	0	0		0	0	0
