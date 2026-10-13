@@ -17,9 +17,12 @@ pattern that forbids `/` reads 282 today and 0 after the move. So the probe prin
 - **moved, in the new directories** — `notes/reports/…`, `notes/development/…`, `notes/tables/…`:
   0 before, 282 after. The two moved counts must agree; that is the comparability test;
 - **stable** — mentions under `scripts/`, `index/`, `summaries/`, `development/probe/`,
-  `development/upstream_history/`: 16, and must not change across any pass. The two `development/`
-  buckets are directories the reorg moved *into*, so a mention naming them is stable, not moved:
-  `MOVED_NEW` requires a filename directly after `development/`, and the probe records are `.txt`.
+  `development/upstream_history/`, plus `notes/README.md`: 17 before `.3`, and must not change
+  across any pass. The two `development/` buckets are directories the reorg moved *into*, so a
+  mention naming them is stable, not moved: `MOVED_NEW` requires a filename directly after
+  `development/`, and the probe records are `.txt`. `notes/README.md` is the entry point the reorg
+  leaves at the top level, so a mention naming it is stable too, and `MOVED_TOP` excludes it —
+  without the exclusion the comparability test reads the entry point's own 103 mentions as moved.
 
 Scope is the 30 pages the reorg moves: the top-level `notes/*.md`, plus `notes/reports/*.md` and
 `notes/development/*.md` once those directories exist. Report-only: writes nothing.
@@ -33,10 +36,10 @@ from pathlib import Path
 from catlib import anchors
 from catlib.paths import ROOT
 
-MOVED_TOP = re.compile(r"notes/[A-Za-z0-9._+-]*\.(?:md|tsv)")
+MOVED_TOP = re.compile(r"notes/(?!README\.md)[A-Za-z0-9._+-]*\.(?:md|tsv)")
 MOVED_NEW = re.compile(r"notes/(?:reports|development|tables)/[A-Za-z0-9._+-]*\.(?:md|tsv)")
 STABLE = re.compile(r"notes/(?:scripts|index|summaries|development/probe|development/upstream_history)"
-                    r"/[A-Za-z0-9._+/-]*\.(?:md|tsv)")
+                    r"/[A-Za-z0-9._+/-]*\.(?:md|tsv)|notes/README\.md")
 ANCHORED = re.compile(r"notes/(?:(?:reports|development|tables)/)?[A-Za-z0-9._+-]*\.(?:md|tsv):\d+")
 QUOTE = re.compile(r'\*[^*]*["“][^"”]*["”][^*]*\*')
 SPAN = re.compile(r"`[^`\n]+`")

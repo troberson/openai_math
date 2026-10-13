@@ -7,7 +7,7 @@ the tex-KB AUC on the same pair. Every number it prints is derived from `notes/t
 joined to `notes/tables/catalog.tsv` by family number. The gates re-measure the population: rows,
 distinct dirs, the family set on both sides, the per-family source rows against the ledger `paps`, the
 proofs and statements sums, the tier counts, non-positive `tex_bytes`, negative counts, and every
-source dir present under `preprints/`. The page check is not here: `notes/proof-density.md` is
+source dir present under `preprints/`. The page check is not here: `notes/reports/proof-density.md` is
 compared with `render_reports.py`'s render of it by `verify_page_sync.py`, which owns that pass.
 
 This file injects eight faults into the TSV rows in memory and asserts each fires the gate that owns

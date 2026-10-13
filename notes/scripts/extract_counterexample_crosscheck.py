@@ -2,11 +2,11 @@
 """Cross-check the counterexample-shaped families outside T0 against main_results; report-only.
 
 Population rule: `counterexample` in the ledger's `shapes` column AND tier != T0 — 28 families,
-19 at T3 and 9 at T2. The T0 counterexample-shaped families are read in notes/t0-triage.md, so
+19 at T3 and 9 at T2. The T0 counterexample-shaped families are read in notes/reports/t0-triage.md, so
 this report covers the rest. For each family it prints the abstract sentence that carries the
 counterexample language, the comparator configs its scope note links, the main_results entry each
 config carries, and the Lean statement that entry's declaration opens with — every line numbered
-so notes/counterexample-crosscheck.md can cite it.
+so notes/reports/counterexample-crosscheck.md can cite it.
 
 Run it twice and diff: the report must be identical. It writes nothing and runs nothing; Lean
 files are read as text, per the repo rule that lake, lean, and comparator are never invoked.

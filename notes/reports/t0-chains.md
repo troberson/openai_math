@@ -3,7 +3,7 @@
 ## Population
 
 Rule, all three conditions: the ledger's `tier` is `T0`, the ledger's `paps` is exactly **2**, and the
-family id appears in the second-pass reading sections of `notes/t0-triage.md` (the `## Second pass:
+family id appears in the second-pass reading sections of `notes/reports/t0-triage.md` (the `## Second pass:
 the remaining 93 families` heading through the line before `## What the triage shows`). That is
 **27** families carrying **54** manuscripts.
 
@@ -58,10 +58,10 @@ strong as its weakest unformalized link" reads here as *every* link:
 | 311 | T0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | resolution |
 
 The triage record states the same finding, and its consequence sentence is the reason this page
-exists (`notes/t0-triage.md:505`) — *"Cross-family chains sit entirely inside T0."* — and
-(`notes/t0-triage.md:508`) — *"Both chains are unformalized"* — with the follow-up phrased at
-(`notes/t0-triage.md:858`) — *"Cross-family chains inside T0: 001↔032, 002↔006, and
-311⇒Hovey–Strickland. A chain is only as"* and (`notes/t0-triage.md:859`) — *"strong as its weakest,
+exists (`notes/reports/t0-triage.md:505`) — *"Cross-family chains sit entirely inside T0."* — and
+(`notes/reports/t0-triage.md:508`) — *"Both chains are unformalized"* — with the follow-up phrased at
+(`notes/reports/t0-triage.md:858`) — *"Cross-family chains inside T0: 001↔032, 002↔006, and
+311⇒Hovey–Strickland. A chain is only as"* and (`notes/reports/t0-triage.md:859`) — *"strong as its weakest,
 unformalized link."*
 
 ## 311 ⇒ Hovey–Strickland is a literature chain, not a release edge
@@ -525,7 +525,7 @@ recorded outputs. Nothing here says a certificate was run, and nothing here says
   `lean/formalization.yaml`, not evidence about any manuscript.
 - Every abstract quoted here is the release's rewritten paraphrase in `overview.tex`, not the
   manuscript abstract — 0 of 719 manuscript comparisons read identical or abridged
-  (`notes/abstracts.md`), so a scope-limit clause quoted from the overview is a claim about the
+  (`notes/reports/abstracts.md`), so a scope-limit clause quoted from the overview is a claim about the
   summary.
 - Pairing labels are reading judgements from titles and overview clauses. No manuscript proof,
   theorem environment, or hypothesis list was read for any of the 27; 311 is the only family on this
@@ -539,4 +539,4 @@ recorded outputs. Nothing here says a certificate was run, and nothing here says
 - The chain families' abstracts were quoted, not verified against their manuscripts; the claim that
   032's theorems give the Tate and Hodge standard conjectures is the release's claim, unverified.
 - The 8 first-pass T0 two-manuscript families (004, 006, 018, 019, 029, 046, 059, 209) are outside
-  this page by construction; 006 is itself a chain family and is read in `notes/t0-triage.md`.
+  this page by construction; 006 is itself a chain family and is read in `notes/reports/t0-triage.md`.

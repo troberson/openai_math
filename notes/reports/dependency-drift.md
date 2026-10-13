@@ -182,7 +182,7 @@ libraries are in the zero-import set, and 3 of the 12 `post_update` libraries ar
 > `lean/formalization.yaml:878:  # Imported libraries, ordered by direct import count in project Lean sources.`
 
 **That claim is recorded, not asserted true, and 5 entries violate it** (measured in
-`notes/formalization-deps.md`: strongpnt 12 above AINTLIB 0; TauCeti 5 above fixed-point-theorems 4;
+`notes/reports/formalization-deps.md`: strongpnt 12 above AINTLIB 0; TauCeti 5 above fixed-point-theorems 4;
 gromov 2 above heights 0; schoenflies-lean 2 above iut 0; AbsorptionCutoff 1 above
 zeta_3_irrational 0). The 19 zero-import libraries sit beside that claim: an ordering-by-import
 comment over a list in which 19 of 30 entries import nothing directly is a claim about a list that is
@@ -215,7 +215,7 @@ in the compatibility layer, and it lands on libraries the proofs never import.
   `:295`–`:297`). Why a given library sits in one array and not the other is inferred from the
   `:262` comment and the AINTLIB `lakefile.toml` hunk; the release states no per-library reason.
 - `lean/lake-manifest.json` was read for package/rev reconciliation only (in
-  `notes/formalization-deps.md`); it carries no dependency edges, so which declared library pulls in
+  `notes/reports/formalization-deps.md`); it carries no dependency edges, so which declared library pulls in
   each transitive-only package is not recorded.
 - Whether each declared library is *needed* is not measured, and whether each patch is *needed* is
   not measured — 30 declarations, 23 patches, no build to say which are load-bearing.

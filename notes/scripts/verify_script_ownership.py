@@ -44,6 +44,7 @@ REPORT_TPL_DIR = TPL_DIR / "report"
 INDEX_DIR = NOTES / "index"
 PROBE_DIR = NOTES / "development" / "probe"
 DEV_DIR = NOTES / "development"
+REPORTS_DIR = NOTES / "reports"
 TABLES_DIR = NOTES / "tables"
 SLOT_MARK = "{{ "
 # The record-store target the writers table carries. A record's directory is the digest key, which the
@@ -436,9 +437,10 @@ def check(text):
     probe = [f for f in files if "probe" in f.parts]
     tables = [f for f in files if "tables" in f.parts]
     dev = [f for f in files if f.parent == DEV_DIR]
+    reports = [f for f in files if f.parent == REPORTS_DIR]
     top = [f for f in files if f.parent == NOTES]
     owned = (set(index) | set(summaries) | set(templates) | set(uphist) | set(probe) | set(tables)
-             | set(dev) | set(top))
+             | set(dev) | set(reports) | set(top))
     for f in files:
         if f not in owned:
             p.append(f"file under notes/ owned by no rule: {f.relative_to(ROOT)}")
@@ -460,9 +462,15 @@ def check(text):
     # the table-derived credit cannot see it. A page checked by the checker measuring it is checked.
     checked.add("notes/development/templates.md")
     top_md = sorted(f.name for f in top if f.suffix == ".md")
+    reports_md = sorted(f.name for f in reports if f.suffix == ".md")
     dev_md = sorted(f.name for f in dev if f.suffix == ".md")
-    md_checked = sorted(n for n in top_md if f"notes/{n}" in checked)
-    md_free = sorted(n for n in top_md if f"notes/{n}" not in checked)
+    # The checked/free split is over the pages the census tabulates as prose pages: the entry point at
+    # the top level and the 23 report pages. A page's checker names it by its repo-relative path, so
+    # the split is keyed on that path, not on the basename — after `math-faz.4` the checked pages sit
+    # one level deeper and a basename key would credit a top-level name against a reports page.
+    md_pages = sorted(f.relative_to(NOTES).as_posix() for f in top + reports if f.suffix == ".md")
+    md_checked = sorted(n for n in md_pages if f"notes/{n}" in checked)
+    md_free = sorted(n for n in md_pages if f"notes/{n}" not in checked)
     census = census_rows(text)
     expect = {
         "notes/index/": len(index),
@@ -472,6 +480,7 @@ def check(text):
         "notes/development/upstream_history/": len(uphist),
         "notes/development/probe/": len(probe),
         "notes/tables/*.tsv": len(tables_tsv),
+        "notes/reports/*.md": len(reports_md),
         "notes/*.md": len(top_md),
         "notes/": len(files),
     }

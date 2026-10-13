@@ -1164,7 +1164,7 @@ proofs per tex KB        resolves_named   n=248 AUC=0.586 p=6.84e-03
 proofs per tex KB        counterex_broad  n= 74 AUC=0.572 p=5.60e-02 
 === gates ===
 statistic self-test 5/5
-sync problems (notes/proof-density.md) 0
+sync problems (notes/reports/proof-density.md) 0
 PROBLEMS 0
 === mutants ===
   CAUGHT  drop a sources row
@@ -1187,7 +1187,7 @@ mutants caught 9/9
           notes/templates/           1
 [probe2] notes/ paths (count  modes  path):
               5  r        notes/catalog.tsv
-              7  r,w      notes/proof-density.md
+              7  r,w      notes/reports/proof-density.md
               4  r        notes/sources.tsv
               1  r        notes/templates/report/proof-density.md.j2
               1  r        notes/topics.tsv
@@ -1204,7 +1204,7 @@ writers derived from source: 9
   writes extract_formalization_deps.py: notes/formalization-deps.tsv
   writes extract_links.py: notes/links.tsv
   writes extract_subfindings.py: notes/subfindings.tsv
-  writes render_reports.py: notes/README.md, notes/abstracts.md, notes/counterexample-crosscheck.md, notes/dependency-drift.md, notes/development/index-design.md, notes/development/index-links.md, notes/links.md, notes/named-results.md, notes/names.md, notes/proof-density.md, notes/scope-exclusions.md, notes/sources.md, notes/subfinding-pairs.md, notes/t0-chains.md, notes/development/templates.md, notes/topics.md, notes/verification-dirs.md
+  writes render_reports.py: notes/README.md, notes/reports/abstracts.md, notes/reports/counterexample-crosscheck.md, notes/reports/dependency-drift.md, notes/development/index-design.md, notes/development/index-links.md, notes/reports/links.md, notes/reports/named-results.md, notes/reports/names.md, notes/reports/proof-density.md, notes/reports/scope-exclusions.md, notes/reports/sources.md, notes/reports/subfinding-pairs.md, notes/reports/t0-chains.md, notes/development/templates.md, notes/reports/topics.md, notes/reports/verification-dirs.md
 index tree: 1049 (1033 md + 16 tsv)
 summaries: 21
 templates: 22
@@ -1278,7 +1278,7 @@ trace families covered   10 of 10 by subject  all 10
 trace families           007 017 087 102 159 197 221 271 287 362
 unlisted traces          none
 top subject names        cauchy:232 euclidean:193 schwarz:193 lipschitz:178 hilbert:171 taylor:165 fourier:160 borel:140 jacobian:136 markov:134 gaussian:130 lebesgue:125
-sync problems (notes/names.md) 0
+sync problems (notes/reports/names.md) 0
 [probe] target exit code: 0
 [probe2] target notes/scripts/measure_names.py 
 [probe2] wall 109.11  opens 30112  distinct 7862  repeats 22250
@@ -1293,14 +1293,14 @@ sync problems (notes/names.md) 0
           notes/templates/           1
 [probe2] notes/ paths (count  modes  path):
               2  r        notes/catalog.tsv
-              1  r        notes/names.md
+              1  r        notes/reports/names.md
               1  r        notes/sources.tsv
               1  r        notes/templates/report/names.md.j2
               1  r        notes/topics.tsv
 [probe2] write-mode paths outside notes/:
 === measure_topics.py --check
 topics.tsv check    92 terms, 372 of 372 families covered, problems 0
-sync problems (notes/topics.md) 0
+sync problems (notes/reports/topics.md) 0
 [probe] target exit code: 0
 [probe2] target notes/scripts/measure_topics.py --check
 [probe2] wall 33.70  opens 1082  distinct 345  repeats 737
@@ -1317,7 +1317,7 @@ sync problems (notes/topics.md) 0
               1  r        notes/catalog.tsv
               1  r        notes/links.tsv
               1  r        notes/templates/report/topics.md.j2
-              1  r        notes/topics.md
+              1  r        notes/reports/topics.md
               5  r        notes/topics.tsv
 [probe2] write-mode paths outside notes/:
 === measure_templates.py
@@ -1347,7 +1347,7 @@ report tree  templates 17  lines 6279  bytes 412921  slots 1221
 index tree   templates 5  lines 209  bytes 14819  slots 103
 all          templates 22  lines 6488  bytes 427740  slots 1324
 slot reuse (exprs - distinct) 11 in 4 templates  header comment lines report 4 index 0
-needles derived 7 of 17: notes/abstracts.md notes/counterexample-crosscheck.md notes/development/index-design.md notes/named-results.md notes/sources.md notes/t0-chains.md notes/verification-dirs.md
+needles derived 7 of 17: notes/reports/abstracts.md notes/reports/counterexample-crosscheck.md notes/development/index-design.md notes/reports/named-results.md notes/reports/sources.md notes/reports/t0-chains.md notes/reports/verification-dirs.md
 registry  ALL_PAGES 17 at build_report_templates.py:114  template-without-page 0  page-without-template 0  
 index pages on disk  families 372  disciplines 17  topics 92  names 551  readme 1
 [probe] target exit code: 0
@@ -2423,7 +2423,7 @@ index pages on disk  families 372  disciplines 17  topics 92  names 551  readme 
               4  r        notes/links.tsv
               4  r        notes/sources.tsv
               6  r        notes/subfindings.tsv
-              1  r        notes/t0-triage.md
+              1  r        notes/reports/t0-triage.md
               2  r        notes/templates/discipline.md.j2
               2  r        notes/templates/family.md.j2
               2  r        notes/templates/index-readme.md.j2
@@ -2470,22 +2470,22 @@ index pages on disk  families 372  disciplines 17  topics 92  names 551  readme 
     'reuse_detail': '`proof-density.md.j2` (2 repeats); `templates.md.j2` (1 repeat); `index-readme.md.j2` (5 repeats); `name.md.j2` (3 repeats)',
     'reuse_scope': 'over the **22** committed templates',
     'tpl_row_01': '| `README.md.j2` | 703 | 57,323 | 71 | `notes/README.md` | `verify_script_ownership.py` | NOT DERIVED |',
-    'tpl_row_02': '| `abstracts.md.j2` | 406 | 32,445 | 42 | `notes/abstracts.md` | `verify_abstracts.py` | 45 |',
-    'tpl_row_03': '| `counterexample-crosscheck.md.j2` | 1,089 | 45,827 | 87 | `notes/counterexample-crosscheck.md` | `verify_counterexample_crosscheck.py` | 20 |',
-    'tpl_row_04': '| `dependency-drift.md.j2` | 229 | 11,520 | 95 | `notes/dependency-drift.md` | `verify_dependency_drift.py` | NOT DERIVED |',
+    'tpl_row_02': '| `abstracts.md.j2` | 406 | 32,445 | 42 | `notes/reports/abstracts.md` | `verify_abstracts.py` | 45 |',
+    'tpl_row_03': '| `counterexample-crosscheck.md.j2` | 1,089 | 45,827 | 87 | `notes/reports/counterexample-crosscheck.md` | `verify_counterexample_crosscheck.py` | 20 |',
+    'tpl_row_04': '| `dependency-drift.md.j2` | 229 | 11,520 | 95 | `notes/reports/dependency-drift.md` | `verify_dependency_drift.py` | NOT DERIVED |',
     'tpl_row_05': '| `index-design.md.j2` | 231 | 13,228 | 99 | `notes/development/index-design.md` | `verify_index_design.py` | 82 |',
     'tpl_row_06': '| `index-links.md.j2` | 208 | 12,184 | 85 | `notes/development/index-links.md` | `check_index_links.py` | NOT DERIVED |',
-    'tpl_row_07': '| `links.md.j2` | 224 | 12,284 | 110 | `notes/links.md` | `extract_links.py` | NOT DERIVED |',
-    'tpl_row_08': '| `named-results.md.j2` | 367 | 25,209 | 83 | `notes/named-results.md` | `verify_named_results.py` | 66 |',
-    'tpl_row_09': '| `names.md.j2` | 276 | 13,727 | 130 | `notes/names.md` | `measure_names.py` | NOT DERIVED |',
-    'tpl_row_10': '| `proof-density.md.j2` | 120 | 8,497 | 67 | `notes/proof-density.md` | `measure_proof_density.py` | NOT DERIVED |',
-    'tpl_row_11': '| `scope-exclusions.md.j2` | 328 | 26,773 | 19 | `notes/scope-exclusions.md` | `verify_scope_exclusions.py` | NOT DERIVED |',
-    'tpl_row_12': '| `sources.md.j2` | 156 | 9,349 | 29 | `notes/sources.md` | `verify_sources.py` | 31 |',
-    'tpl_row_13': '| `subfinding-pairs.md.j2` | 675 | 57,519 | 38 | `notes/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |',
-    'tpl_row_14': '| `t0-chains.md.j2` | 569 | 34,007 | 62 | `notes/t0-chains.md` | `verify_t0_chains.py` | 12 |',
+    'tpl_row_07': '| `links.md.j2` | 224 | 12,284 | 110 | `notes/reports/links.md` | `extract_links.py` | NOT DERIVED |',
+    'tpl_row_08': '| `named-results.md.j2` | 367 | 25,209 | 83 | `notes/reports/named-results.md` | `verify_named_results.py` | 66 |',
+    'tpl_row_09': '| `names.md.j2` | 276 | 13,727 | 130 | `notes/reports/names.md` | `measure_names.py` | NOT DERIVED |',
+    'tpl_row_10': '| `proof-density.md.j2` | 120 | 8,497 | 67 | `notes/reports/proof-density.md` | `measure_proof_density.py` | NOT DERIVED |',
+    'tpl_row_11': '| `scope-exclusions.md.j2` | 328 | 26,773 | 19 | `notes/reports/scope-exclusions.md` | `verify_scope_exclusions.py` | NOT DERIVED |',
+    'tpl_row_12': '| `sources.md.j2` | 156 | 9,349 | 29 | `notes/reports/sources.md` | `verify_sources.py` | 31 |',
+    'tpl_row_13': '| `subfinding-pairs.md.j2` | 675 | 57,519 | 38 | `notes/reports/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |',
+    'tpl_row_14': '| `t0-chains.md.j2` | 569 | 34,007 | 62 | `notes/reports/t0-chains.md` | `verify_t0_chains.py` | 12 |',
     'tpl_row_15': '| `templates.md.j2` | 105 | 5,003 | 43 | `notes/development/templates.md` | `verify_script_ownership.py` | NOT DERIVED |',
-    'tpl_row_16': '| `topics.md.j2` | 335 | 23,046 | 117 | `notes/topics.md` | `measure_topics.py` | NOT DERIVED |',
-    'tpl_row_17': '| `verification-dirs.md.j2` | 258 | 24,980 | 44 | `notes/verification-dirs.md` | `verify_verification_dirs.py` | 16 |',
+    'tpl_row_16': '| `topics.md.j2` | 335 | 23,046 | 117 | `notes/reports/topics.md` | `measure_topics.py` | NOT DERIVED |',
+    'tpl_row_17': '| `verification-dirs.md.j2` | 258 | 24,980 | 44 | `notes/reports/verification-dirs.md` | `verify_verification_dirs.py` | 16 |',
 labels 37
 [probe2] target notes/scripts/dump_template_slots.py 
 [probe2] wall 76.92  opens 59681  distinct 10459  repeats 49222
@@ -3559,7 +3559,7 @@ labels 37
               4  r        notes/links.tsv
               5  r        notes/sources.tsv
               6  r        notes/subfindings.tsv
-              1  r        notes/t0-triage.md
+              1  r        notes/reports/t0-triage.md
               2  r        notes/templates/discipline.md.j2
               2  r        notes/templates/family.md.j2
               2  r        notes/templates/index-readme.md.j2
@@ -4754,7 +4754,7 @@ SIZES
               1  r        notes/topics.tsv
 [probe2] write-mode paths outside notes/:
 === verify_findings.py
-page: notes/findings.md
+page: notes/reports/findings.md
 sources rows 31, anchored quotations verified 12
 families 372 over 22 columns | manuscripts 719 | formalized 172 | tiers T3:136 T2:106 T1:0 T0:130
 resolves_named 248 | counterex_broad 74 over 120 manuscripts | conditional 014 125 240 244 282 | companion 9 | versions 2
@@ -4774,34 +4774,34 @@ proofs 20341 | statements 21288 | comparator rows 426 | index pages 1033 | probl
           top-level                  6
           notes/index/               1
 [probe2] notes/ paths (count  modes  path):
-              3  r        notes/abstracts.md
+              3  r        notes/reports/abstracts.md
               2  r        notes/catalog.tsv
-              3  r        notes/citations.md
-              4  r        notes/conditional.md
-              3  r        notes/conjecture-standing.md
+              3  r        notes/reports/citations.md
+              4  r        notes/reports/conditional.md
+              3  r        notes/reports/conjecture-standing.md
               2  r        notes/conjecture-standing.tsv
-              2  r        notes/counterexample-crosscheck.md
-              2  r        notes/counterexample-tag.md
-              2  r        notes/dependency-drift.md
-              1  r        notes/findings.md
-              2  r        notes/formalization-deps.md
+              2  r        notes/reports/counterexample-crosscheck.md
+              2  r        notes/reports/counterexample-tag.md
+              2  r        notes/reports/dependency-drift.md
+              1  r        notes/reports/findings.md
+              2  r        notes/reports/formalization-deps.md
               1  r        notes/formalization-deps.tsv
               2  r        notes/development/index-links.md
               1  r        notes/index/edges/family-topic.tsv
-              3  r        notes/links.md
+              3  r        notes/reports/links.md
               1  r        notes/links.tsv
-              2  r        notes/named-results.md
-              2  r        notes/names.md
-              3  r        notes/proof-density.md
-              2  r        notes/resolution-tag.md
-              3  r        notes/scope-exclusions.md
-              2  r        notes/sources.md
+              2  r        notes/reports/named-results.md
+              2  r        notes/reports/names.md
+              3  r        notes/reports/proof-density.md
+              2  r        notes/reports/resolution-tag.md
+              3  r        notes/reports/scope-exclusions.md
+              2  r        notes/reports/sources.md
               1  r        notes/sources.tsv
-              4  r        notes/subfinding-pairs.md
+              4  r        notes/reports/subfinding-pairs.md
               1  r        notes/subfindings.tsv
-              2  r        notes/t0-chains.md
-              4  r        notes/t0-triage.md
-              2  r        notes/topics.md
+              2  r        notes/reports/t0-chains.md
+              4  r        notes/reports/t0-triage.md
+              2  r        notes/reports/topics.md
               1  r        notes/topics.tsv
-              3  r        notes/verification-dirs.md
+              3  r        notes/reports/verification-dirs.md
 [probe2] write-mode paths outside notes/:

@@ -1,4 +1,4 @@
-"""Verify notes/citations.md against the shipped .bib files and a fresh measurement.
+"""Verify notes/reports/citations.md against the shipped .bib files and a fresh measurement.
 
 Report-only: writes nothing. Re-derives the whole shared-bibliography population from
 `preprints/**/*.bib` through `catlib.bib`, then checks the page against it:

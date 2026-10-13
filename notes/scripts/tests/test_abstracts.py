@@ -1,6 +1,6 @@
 """The self-tests for `notes/scripts/verify_abstracts.py`.
 
-Each test injects one corruption into the text of `notes/abstracts.md` in memory and asserts the pass
+Each test injects one corruption into the text of `notes/reports/abstracts.md` in memory and asserts the pass
 that owns it reports a problem: the quotation pass (word altered, fabricated, repointed), the marker
 pass (marker deleted, marker absent from the table, table path missing on disk), the count pass
 (headline, tag row, bucket row, disagreement count, multi-abstract directory), and the sync pass (a

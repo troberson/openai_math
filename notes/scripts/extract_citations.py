@@ -1,6 +1,6 @@
 """Measure the shared-bibliography graph over the .bib files under preprints/.
 
-Report-only: writes nothing. Every count in notes/citations.md comes from this report.
+Report-only: writes nothing. Every count in notes/reports/citations.md comes from this report.
 
 Method, stated once so the page can quote it:
 

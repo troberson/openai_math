@@ -12,10 +12,10 @@ extracted_at: '2026-10-07T15:41:26.914Z'
 For analysis repos where docs quote counts produced by a **reading pass** ("74 families use
 counterexample language, 44 carry the tag, 30 of the 31 untagged flags are genuine") and the regex
 that produced them lives nowhere. Worked out on `math-7ej` in
-`/home/tamara/Downloads/_Git/math`: `notes/README.md:86-89` and `notes/t0-triage.md:517-521` both
+`/home/tamara/Downloads/_Git/math`: `notes/README.md:86-89` and `notes/reports/t0-triage.md:517-521` both
 quoted the counterexample numbers while the generator shipped only the narrow `SHAPES` tag. The rule
 is now in the generator as `COUNTEREX_PHRASE` / `counterex_broad`, recorded in
-`notes/counterexample-tag.md`.
+`notes/reports/counterexample-tag.md`.
 
 ## 0. Prove the numbers are unreproducible before trusting them
 
@@ -70,7 +70,7 @@ re-run by anyone.
 The A-only set is the whole point of the exercise. Print, for each family, the sentence the rule
 matched, plus tier and the downstream bucket, then record a verdict per family (genuine in kind /
 not). Here: 30 families, all genuine, 41 manuscripts behind them. Re-measured 2026-10-11 against
-`notes/counterexample-tag.md`: **27** of the 30 also carry `resolves_named = 1` (25 under the
+`notes/reports/counterexample-tag.md`: **27** of the 30 also carry `resolves_named = 1` (25 under the
 abstract-only scope), and by tier the set is **T0 5, T2 9, T3 16** — so "outside the target bucket"
 is a statement about the **bucket**, not the tier. The decisive number is **0 of the 30 sit in bucket
 C** (the first-match counterexample bucket; they land N 14, B 10, R 2, K 2, O 2), which is what a

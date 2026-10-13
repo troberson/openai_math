@@ -35,7 +35,7 @@ probe-and-multi set, so the 51 cannot be the intersection of the two signals it 
 tried and rejected: `also` (56), `both ` (48), `companion` (10), `together` (8), two or more
 prove-verbs in the abstract (33), two or more sentences containing a prove-verb (32), three or more
 sentences (73). None yields 51, and the same shape of gap — a quoted count with no reproducible rule —
-is the counterexample 74 / 30 case recorded in `notes/counterexample-tag.md`.
+is the counterexample 74 / 30 case recorded in `notes/reports/counterexample-tag.md`.
 
 **Decision, recorded 2026-10-07.** Population = (probe ∩ multi) ∪ the bead's ten named densest
 families = **49 families, 203 manuscripts** (206 before the 2026-10-07 upstream merge; family 032 lost

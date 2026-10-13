@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check notes/subfinding-pairs.md against the shipped files, and re-measure every number it prints.
+"""Check notes/reports/subfinding-pairs.md against the shipped files, and re-measure every number it prints.
 
 Read-only: writes nothing. Run it before quoting any count from the page.
 

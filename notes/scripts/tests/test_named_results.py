@@ -1,6 +1,6 @@
 """The self-tests for `notes/scripts/verify_named_results.py`.
 
-The checker verifies `notes/named-results.md` against the corpus the page describes. Anchors: every
+The checker verifies `notes/reports/named-results.md` against the corpus the page describes. Anchors: every
 `path:line` resolves against the shipped file, a bare `:NNN` resolves to the family named nearest
 before it, and a `path:a-b` span fits inside the file. Quotations: every `*"…"*` is matched against
 the lines its anchor names, in a window, so a paraphrase dressed as a quotation fails and an invented
@@ -60,9 +60,9 @@ MUTANTS = [
     ("overview quotation", "QUOTE not in overview.tex:453: 'Settles the Snaky achievement question'",
      lambda t: t.replace('*"Settles the Snaky achievement problem"*',
                          '*"Settles the Snaky achievement question"*')),
-    ("invented quotation", "QUOTE not in notes/names.md:1",
+    ("invented quotation", "QUOTE not in notes/reports/names.md:1",
      lambda t: t + '\n*"We prove the Riemann hypothesis for every finite abelian category."*'
-                   ' (`notes/names.md:1`)\n'),
+                   ' (`notes/reports/names.md:1`)\n'),
     ("anchor line out of range", f"ANCHOR line out of range: {CENTER}/build/main.tex:99999",
      lambda t: t.replace(f"{CENTER}/build/main.tex:51", f"{CENTER}/build/main.tex:99999")),
     ("anchor path absent", "ANCHOR path absent",

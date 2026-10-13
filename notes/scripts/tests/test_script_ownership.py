@@ -29,7 +29,7 @@ PAGE_CASES = [
                          "| `build_catalog.py` | `notes/catalog-x.tsv` |")),
     ("writer row deleted", "writer extract_links.py: page says None",
      lambda t: t.replace("| `extract_links.py` | `notes/tables/links.tsv` | single run; cached "
-                         "bytes == promoted bytes under the key | `notes/links.md` |\n", "")),
+                         "bytes == promoted bytes under the key | `notes/reports/links.md` |\n", "")),
     ("generated TSV count understated", "tsv census cell",
      lambda t: t.replace("**7** generated, **2** hand-authored",
                          "**6** generated, **2** hand-authored")),
@@ -41,9 +41,9 @@ PAGE_CASES = [
     ("checker name altered", "non-writers",
      lambda t: t.replace("| `verify_sources.py` |", "| `verify_sources2.py` |")),
     ("unchecked page claimed as checked", "md census cell",
-     lambda t: t.replace("| `verify_abstracts.py` | `notes/abstracts.md` |",
-                         "| `verify_abstracts.py` | `notes/abstracts.md`, "
-                         "`notes/counterexample-tag.md` |")),
+     lambda t: t.replace("| `verify_abstracts.py` | `notes/reports/abstracts.md` |",
+                         "| `verify_abstracts.py` | `notes/reports/abstracts.md`, "
+                         "`notes/reports/counterexample-tag.md` |")),
     ("Not checked section deleted", "no '## Not checked' section",
      lambda t: t.replace("## Not checked", "## Checked")),
     ("summaries count altered", "census row notes/summaries/",

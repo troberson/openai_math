@@ -2404,23 +2404,23 @@ written             1033 pages + 16 tables -> notes/index/
     'reuse_detail': '`proof-density.md.j2` (2 repeats); `templates.md.j2` (1 repeat); `index-readme.md.j2` (5 repeats); `name.md.j2` (3 repeats)',
     'reuse_scope': 'over the **23** committed templates',
     'tpl_row_01': '| `README.md.j2` | 714 | 60,402 | 71 | `notes/README.md` | `verify_script_ownership.py` | NOT DERIVED |',
-    'tpl_row_02': '| `abstracts.md.j2` | 406 | 32,501 | 42 | `notes/abstracts.md` | `verify_abstracts.py` | 45 |',
-    'tpl_row_03': '| `counterexample-crosscheck.md.j2` | 1,089 | 45,827 | 87 | `notes/counterexample-crosscheck.md` | `verify_counterexample_crosscheck.py` | 20 |',
-    'tpl_row_04': '| `dependency-drift.md.j2` | 229 | 11,534 | 95 | `notes/dependency-drift.md` | `verify_dependency_drift.py` | NOT DERIVED |',
-    'tpl_row_05': '| `formalization-faithfulness.md.j2` | 265 | 11,802 | 65 | `notes/formalization-faithfulness.md` | `verify_faithfulness.py` | 13 |',
+    'tpl_row_02': '| `abstracts.md.j2` | 406 | 32,501 | 42 | `notes/reports/abstracts.md` | `verify_abstracts.py` | 45 |',
+    'tpl_row_03': '| `counterexample-crosscheck.md.j2` | 1,089 | 45,827 | 87 | `notes/reports/counterexample-crosscheck.md` | `verify_counterexample_crosscheck.py` | 20 |',
+    'tpl_row_04': '| `dependency-drift.md.j2` | 229 | 11,534 | 95 | `notes/reports/dependency-drift.md` | `verify_dependency_drift.py` | NOT DERIVED |',
+    'tpl_row_05': '| `formalization-faithfulness.md.j2` | 265 | 11,802 | 65 | `notes/reports/formalization-faithfulness.md` | `verify_faithfulness.py` | 13 |',
     'tpl_row_06': '| `index-design.md.j2` | 231 | 13,284 | 99 | `notes/development/index-design.md` | `verify_index_design.py` | 82 |',
     'tpl_row_07': '| `index-links.md.j2` | 210 | 12,326 | 85 | `notes/development/index-links.md` | `check_index_links.py` | NOT DERIVED |',
-    'tpl_row_08': '| `links.md.j2` | 224 | 12,298 | 110 | `notes/links.md` | `extract_links.py` | NOT DERIVED |',
-    'tpl_row_09': '| `named-results.md.j2` | 367 | 25,209 | 83 | `notes/named-results.md` | `verify_named_results.py` | 66 |',
-    'tpl_row_10': '| `names.md.j2` | 276 | 13,727 | 130 | `notes/names.md` | `measure_names.py` | NOT DERIVED |',
-    'tpl_row_11': '| `proof-density.md.j2` | 122 | 8,660 | 67 | `notes/proof-density.md` | `measure_proof_density.py` | NOT DERIVED |',
-    'tpl_row_12': '| `scope-exclusions.md.j2` | 328 | 26,780 | 19 | `notes/scope-exclusions.md` | `verify_scope_exclusions.py` | NOT DERIVED |',
-    'tpl_row_13': '| `sources.md.j2` | 156 | 9,392 | 29 | `notes/sources.md` | `verify_sources.py` | 31 |',
-    'tpl_row_14': '| `subfinding-pairs.md.j2` | 675 | 57,539 | 38 | `notes/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |',
-    'tpl_row_15': '| `t0-chains.md.j2` | 569 | 34,014 | 62 | `notes/t0-chains.md` | `verify_t0_chains.py` | 12 |',
+    'tpl_row_08': '| `links.md.j2` | 224 | 12,298 | 110 | `notes/reports/links.md` | `extract_links.py` | NOT DERIVED |',
+    'tpl_row_09': '| `named-results.md.j2` | 367 | 25,209 | 83 | `notes/reports/named-results.md` | `verify_named_results.py` | 66 |',
+    'tpl_row_10': '| `names.md.j2` | 276 | 13,727 | 130 | `notes/reports/names.md` | `measure_names.py` | NOT DERIVED |',
+    'tpl_row_11': '| `proof-density.md.j2` | 122 | 8,660 | 67 | `notes/reports/proof-density.md` | `measure_proof_density.py` | NOT DERIVED |',
+    'tpl_row_12': '| `scope-exclusions.md.j2` | 328 | 26,780 | 19 | `notes/reports/scope-exclusions.md` | `verify_scope_exclusions.py` | NOT DERIVED |',
+    'tpl_row_13': '| `sources.md.j2` | 156 | 9,392 | 29 | `notes/reports/sources.md` | `verify_sources.py` | 31 |',
+    'tpl_row_14': '| `subfinding-pairs.md.j2` | 675 | 57,539 | 38 | `notes/reports/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |',
+    'tpl_row_15': '| `t0-chains.md.j2` | 569 | 34,014 | 62 | `notes/reports/t0-chains.md` | `verify_t0_chains.py` | 12 |',
     'tpl_row_16': '| `templates.md.j2` | 106 | 5,025 | 44 | `notes/development/templates.md` | `verify_script_ownership.py` | NOT DERIVED |',
-    'tpl_row_17': '| `topics.md.j2` | 335 | 23,067 | 117 | `notes/topics.md` | `measure_topics.py` | NOT DERIVED |',
-    'tpl_row_18': '| `verification-dirs.md.j2` | 408 | 37,944 | 44 | `notes/verification-dirs.md` | `verify_verification_dirs.py` | 16 |',
+    'tpl_row_17': '| `topics.md.j2` | 335 | 23,067 | 117 | `notes/reports/topics.md` | `measure_topics.py` | NOT DERIVED |',
+    'tpl_row_18': '| `verification-dirs.md.j2` | 408 | 37,944 | 44 | `notes/reports/verification-dirs.md` | `verify_verification_dirs.py` | 16 |',
 labels 38
 [probe2] target notes/scripts/dump_template_slots.py 
 [probe2] wall 61.06  opens 80221  distinct 18413  repeats 61808
@@ -3487,7 +3487,7 @@ labels 38
               2  r        notes/index/topology/320-a-four-dimensional-counterexample-to-borel-rigidity.md
               2  r        notes/index/topology/321-a-counterexample-to-walls-finite-d-2-conjecture.md
               2  r        notes/index/traces.tsv
-              1  r        notes/t0-triage.md
+              1  r        notes/reports/t0-triage.md
               2  r        notes/tables/abstracts.tsv
              17  r        notes/tables/catalog.tsv
               2  r        notes/tables/conjecture-standing.tsv
@@ -3555,7 +3555,7 @@ slots  sources 31  abstracts 41  named-results 82  index-design 98  names 129  p
           notes/scripts/             59
           top-level                  45
 [probe2] notes/ paths (count  modes  path):
-              2  r        notes/formalization-deps.md
+              2  r        notes/reports/formalization-deps.md
               5  r        notes/index/README.md
               5  r        notes/index/algebra/193-serres-intersection-multiplicity-conjecture.md
               5  r        notes/index/algebra/194-lechs-multiplicity-conjecture.md
@@ -4605,9 +4605,9 @@ slots  sources 31  abstracts 41  named-results 82  index-design 98  names 129  p
               5  r        notes/index/topology/320-a-four-dimensional-counterexample-to-borel-rigidity.md
               5  r        notes/index/topology/321-a-counterexample-to-walls-finite-d-2-conjecture.md
               4  r        notes/index/traces.tsv
-              1  r        notes/scope-exclusions.md
-              1  r        notes/subfinding-pairs.md
-              3  r        notes/t0-triage.md
+              1  r        notes/reports/scope-exclusions.md
+              1  r        notes/reports/subfinding-pairs.md
+              3  r        notes/reports/t0-triage.md
               4  r        notes/tables/abstracts.tsv
              33  r        notes/tables/catalog.tsv
               4  r        notes/tables/conjecture-standing.tsv
@@ -4695,8 +4695,8 @@ pages 21  table rows 566  stale 0  mode check
           top-level                  9
           reasoning_traces/          1
 [probe2] notes/ paths (count  modes  path):
-              2  r        notes/counterexample-tag.md
-              2  r        notes/sources.md
+              2  r        notes/reports/counterexample-tag.md
+              2  r        notes/reports/sources.md
               1  r        notes/summaries/algebra/197-nonsofic-groups-and-group-ring-counterexamples.md
               1  r        notes/summaries/algebraic-and-complex-geometry/032-the-rational-hodge-conjecture-for-cm-abelian-varieties.md
               1  r        notes/summaries/combinatorics/159-quasipolynomial-bounds-for-arithmetic-progressions.md
@@ -4718,7 +4718,7 @@ pages 21  table rows 566  stale 0  mode check
               1  r        notes/summaries/partial-differential-equations/362-global-smoothness-for-relativistic-vlasov-maxwell.md
               1  r        notes/summaries/probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md
               1  r        notes/summaries/theoretical-computer-science/102-unique-games-conjecture-and-optimal-approximation-thresholds.md
-             11  r        notes/t0-triage.md
+             11  r        notes/reports/t0-triage.md
              14  r        notes/tables/catalog.tsv
 [probe2] write-mode paths outside notes/:
 tex files scanned        7240

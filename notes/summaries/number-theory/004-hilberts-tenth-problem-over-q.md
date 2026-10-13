@@ -129,9 +129,9 @@ On the elliptic-curve side, the 2-converse has its own history, and the companio
 | S11 | [`preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/build/references.bib`](../../../preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/build/references.bib) | 355 | `OpenAIGoldfeldTwoConverse2026` — family 006 (349–355) |
 | S12 | [`preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf`](../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf) | — | Typeset manuscript, 701,017 bytes |
 | S13 | [`preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/paper.pdf`](../../../preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/paper.pdf) | — | Typeset manuscript, 893,027 bytes |
-| S14 | [`notes/t0-triage.md`](../../t0-triage.md) | 897 | Bucket entry (117–118); flag-only reading (534) |
+| S14 | [`notes/reports/t0-triage.md`](../../t0-triage.md) | 897 | Bucket entry (117–118); flag-only reading (534) |
 | S15 | [`notes/tables/catalog.tsv`](../../tables/catalog.tsv) | 373 | Ledger row 5 — tier, counts, claim-shape tags |
-| S16 | [`notes/counterexample-tag.md`](../../counterexample-tag.md) | 203 | Phrase rule (39–44); 004 catch (53–55); 004 verdict (65–67); T0 counts (183–184) |
+| S16 | [`notes/reports/counterexample-tag.md`](../../counterexample-tag.md) | 203 | Phrase rule (39–44); 004 catch (53–55); 004 verdict (65–67); T0 counts (183–184) |
 
 Both manuscripts ship their LaTeX source under a `build/` tree and their PDF at the directory root; the provenance blocks [S3:9–17], [S8:9–17] give the citation keys, and the typeset PDFs are [S12] and [S13]. The release's own entry for the family is [S2:84], which names both manuscript paths.
 

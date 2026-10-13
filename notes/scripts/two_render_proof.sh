@@ -10,7 +10,7 @@
 # levels below the root, so the same file run from a staging directory renders the wrong tree.
 cd "$(cd "$(dirname "$0")" && git rev-parse --show-toplevel)" || exit 1
 R=.qwen/tmp/reports
-# Page name == template basename minus .j2 (links.md.j2 renders notes/links.md); md5sum on the .j2
+# Page name == template basename minus .j2 (links.md.j2 renders notes/reports/links.md); md5sum on the .j2
 # basenames would fail on files that do not exist.
 PAGES=""
 for t in notes/templates/report/*.j2; do p="${t##*/}"; PAGES="$PAGES notes/${p%.j2}"; done

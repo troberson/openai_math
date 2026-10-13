@@ -2,7 +2,7 @@
 """Measure the two family-348 verification bundles; report-only, writes nothing.
 
 Every number quoted in the "What the 348 bundle checks, and what it omits" section of
-notes/verification-dirs.md comes from this report. Run it twice and diff: the output must be
+notes/reports/verification-dirs.md comes from this report. Run it twice and diff: the output must be
 identical. No verification program is executed — the bundle is read as text, per the repo rule
 that nothing in preprints/ is run.
 

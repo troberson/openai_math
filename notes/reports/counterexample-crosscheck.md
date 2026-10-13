@@ -4,7 +4,7 @@
 
 Rule: the ledger's `shapes` column contains `counterexample` **and** the tier is not `T0`. That is
 **28** families — **19** at T3 and **9** at T2. The shape rule fires on **44** families overall, so
-**16** carry the tag at T0; those are read in `notes/t0-triage.md`, which is why the bead's population
+**16** carry the tag at T0; those are read in `notes/reports/t0-triage.md`, which is why the bead's population
 excludes them. Regenerate with `python3 notes/scripts/extract_counterexample_crosscheck.py` —
 report-only, it writes nothing and runs nothing, and running it twice and diffing must give an
 identical report.
@@ -1034,7 +1034,7 @@ over 52 configs is the coverage answer, and the `sorry` count is not a failure o
 ## The bead's "21" and the shape rule's "16"
 
 The bead says "The 21 T0 counterexample-shaped families are already recorded in
-`notes/t0-triage.md`". The ledger's `counterexample` shape tag fires on **16** T0 families. The
+`notes/reports/t0-triage.md`". The ledger's `counterexample` shape tag fires on **16** T0 families. The
 **21** is the count of counterexample families in the t0-triage reading record, which uses the broader
 phrase rule (the same rule behind the ledger's `counterex_broad` column, 74 families corpus-wide: 21
 T0, 35 T3, 18 T2). Both numbers are recorded here with the rule behind each; they are not resolved
@@ -1054,7 +1054,7 @@ against each other, because they count different things — a keyword tag versus
   statement text. The release records no claim-to-config relation, so a pairing is an inference, not
   a recorded edge.
 - The 16 T0 families with the shape tag were not cross-checked here; the T0 reading record is
-  `notes/t0-triage.md`.
+  `notes/reports/t0-triage.md`.
 - Configs linked by scope notes outside this population, and the 189 − 28 = 161 configs named by
   `main_results` that no population scope note links, were not examined.
 - Whether a `main_results` declaration's statement is the manuscript's own theorem, a specialization,

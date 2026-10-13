@@ -96,7 +96,7 @@ S3–S12 are paths inside it; S1–S2 are at the repository root.
 | # | File | Lines | Role |
 |---|---|---|---|
 | S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | release family list |
-| S13 | [`notes/t0-triage.md`](../../t0-triage.md) | 897 | ours, not in the release |
+| S13 | [`notes/reports/t0-triage.md`](../../t0-triage.md) | 897 | ours, not in the release |
 ```
 
 - **One row per file**, `S1…Sn` in the order the page uses them, plus a line-count column and a role

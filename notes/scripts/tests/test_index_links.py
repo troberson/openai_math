@@ -70,7 +70,7 @@ CLASSIFIED = [
     ("lean/docs/003.md", "file"),
     ("lean/OAI/Combinatorics", "dir"),
     ("notes/index/names/", "dir"),
-    ("notes/names.md", "file"),
+    ("notes/reports/names.md", "file"),
 ]
 
 

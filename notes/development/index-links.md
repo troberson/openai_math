@@ -93,9 +93,9 @@ From `python3 notes/scripts/check_index_links.py` (1,033 pages, 66,107 links, 0 
 ships, computed from a fresh parse — not from a previous run's output. Categories with no
 canonical column are index-internal. `index-page` 521 targets = 372 family pages + 92 topic
 pages + 17 discipline pages + 40 name pages, and the 40 name pages are linked only from the entry
-point — family pages link no name page, the direction recorded in `notes/names.md`.
+point — family pages link no name page, the direction recorded in `notes/reports/names.md`.
 `latex-source` 719 = the `main_tex` of each of the 719 manuscripts, all 719 present in
-`notes/tables/sources.tsv`. `notes-doc` 26 targets = `notes/names.md` (552 links: one from each of the
+`notes/tables/sources.tsv`. `notes-doc` 26 targets = `notes/reports/names.md` (552 links: one from each of the
 551 name pages and one from the entry point), the 21 `notes/summaries/` pages family pages link,
 and the 5 notes docs the entry point links (`index-design.md`, `names.md`, `topics.md`,
 `topics.tsv`, `scripts/measure_names.py`). `index-table` 1 target = `notes/index/names.tsv`.
@@ -129,7 +129,7 @@ Attributed two ways, each summing to 18,095:
 |---|---|---|---|---|
 | `index-page` | 28,557 | 12,521 | 16,036 | name pages link a family page in four tables (Families 9,819, the Manuscripts table's Family column 14,901, declaration and environment-title rows 986); the registry appends only the Families-table links, which are the 9,819 `family-name` edges. Family pages' 1,352 discipline/topic/companion links are all registered; the entry point's 149 are not registered at all. |
 | `manuscript-dir` | 16,720 | 16,001 | 719 | the Manuscripts table on each family page links the manuscript directory; the registry registers the PDF, `build/`, `README.md`, and `main_tex` for that manuscript, not the directory row. |
-| `notes-doc` | 577 | 21 | 556 | each of the 551 name pages links `notes/names.md`; the entry point links 5 notes docs. |
+| `notes-doc` | 577 | 21 | 556 | each of the 551 name pages links `notes/reports/names.md`; the entry point links 5 notes docs. |
 | `index-table` | 553 | 0 | 553 | each of the 551 name pages links `notes/index/names.tsv`; the entry point links 2 tables. |
 | `config-json` | 705 | 505 | 200 | family pages link a config in the Configs table (416) and again in the `main_results` table (200 declarations); the registry appends the 416. Name pages' 89 are registered. |
 | `verification-dir` | 60 | 30 | 30 | each bundle is linked twice in the bodies, registered once. |

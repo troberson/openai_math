@@ -6,7 +6,7 @@ Report-only: writes nothing, runs nothing. Lean is never invoked, so nothing her
 Population rule (all three conditions are needed to reproduce the 27):
   1. tier == T0 in notes/tables/catalog.tsv,
   2. paps == 2 in notes/tables/catalog.tsv,
-  3. the family id appears in the second-pass reading sections of notes/t0-triage.md
+  3. the family id appears in the second-pass reading sections of notes/reports/t0-triage.md
      (the "Second pass: the remaining 93 families" heading through the line before
      "What the triage shows").
 Repo-wide there are 96 families with exactly 2 manuscripts; 35 of them are T0; 8 of those 35
@@ -27,7 +27,7 @@ companion-word set; `catlib.bib` carries the release-labelled bib-edge shape; `c
 carries the `\resultentry` anchors; `catlib.preprints` carries the listed-manuscript scope and the
 `.bib` file list. The script stops importing `extract_links.py` and `extract_subfinding_pairs.py` —
 two report-only scripts it was reaching into for its joins. What stays here is the reading-pass
-shape: the second-pass span of `notes/t0-triage.md`, the coverage-signal columns, and the
+shape: the second-pass span of `notes/reports/t0-triage.md`, the coverage-signal columns, and the
 same-directory edge pairing.
 """
 import re

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify notes/verification-dirs.md against the shipped files.
+"""Verify notes/reports/verification-dirs.md against the shipped files.
 
 Report-only; writes nothing. Two sections are checked, each for anchors, quotations, fenced blocks, and
 count phrases:

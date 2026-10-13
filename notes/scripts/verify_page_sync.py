@@ -13,7 +13,7 @@ the writer's numbers are right, which is the count pass's job, and the two are d
 independent.
 
 `--mutant` mutates each page's prose **in memory** and compares the mutated text with the
-render. It never writes a page, so `notes/development/index-links.md` and `notes/proof-density.md` —
+render. It never writes a page, so `notes/development/index-links.md` and `notes/reports/proof-density.md` —
 the two pages that had a second writer in the mutant branch — have one writer each. A needle that is
 absent from its page is reported as a problem: an inert mutant is not a pass.
 

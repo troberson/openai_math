@@ -2,7 +2,7 @@
 
 Measured 2026-10-06 by static reading of the 372 family titles and abstracts in `overview.tex`; the
 rule behind the counts was written down on 2026-10-07 and is recorded below. No `lake`, `lean`, or
-comparator run. Method is the one `notes/conditional.md` records: propose a rule, count what it
+comparator run. Method is the one `notes/reports/conditional.md` records: propose a rule, count what it
 flags, read every flagged family, record the flags reading drops. **No shape tag was changed** — the
 measurement ended in a new column, under "Decision".
 
@@ -19,7 +19,7 @@ only if the abstract repeats the word.
 
 ## The recorded counts had no rule behind them
 
-`notes/README.md` and `notes/t0-triage.md` quote "74 flagged, 44 tagged, 31 untagged, 30 genuine".
+`notes/README.md` and `notes/reports/t0-triage.md` quote "74 flagged, 44 tagged, 31 untagged, 30 genuine".
 No variant of the vocabulary those docs quote reproduces them:
 
 | candidate (title + abstract, case-folded) | flag | flag-only |
@@ -63,7 +63,7 @@ All 30 were read at the matched sentence. **All 30 are counterexamples in kind**
 Five need qualifiers:
 
 - **004** — a negative resolution, not an exhibited object. The family is in the undecidability set
-  (`notes/t0-triage.md` names 004, 206, 242, 247), so the flag is right for the reason "the answer is
+  (`notes/reports/t0-triage.md` names 004, 206, 242, 247), so the flag is right for the reason "the answer is
   no", not "here is an object".
 - **088** — mixed. The headline result *proves* Petty's projection-volume conjecture in the remaining
   dimensions; the counterexamples are the simplex cases named in the title.
@@ -75,8 +75,8 @@ Five need qualifiers:
   out every smaller power. Genuine, and the reason the flag is not the same as bucket C.
 
 Precision on this corpus is therefore **30/30 on "counterexample in kind"**, with 0 dropped and 5
-qualified. Same shape as `resolution` (94 flagged, 94 genuine, `notes/resolution-tag.md`) and much
-better than `conditional` (9 flagged, 5 genuine, `notes/conditional.md`): the tag omits far more than
+qualified. Same shape as `resolution` (94 flagged, 94 genuine, `notes/reports/resolution-tag.md`) and much
+better than `conditional` (9 flagged, 5 genuine, `notes/reports/conditional.md`): the tag omits far more than
 it mislabels.
 
 ## Why the tag misses each one
@@ -143,7 +143,7 @@ Widening `SHAPES["counterexample"]` from 44 to 74 moves families between the T0 
 | N untagged | 19 | 19 |
 
 Five T0 families move, all into C: 004 (from R), 048 (from K), 201 (from K), 259 (from B), 284 (from
-B). Every recorded bucket count in `notes/t0-triage.md` would stop matching.
+B). Every recorded bucket count in `notes/reports/t0-triage.md` would stop matching.
 
 The decisive number: **0 of the 30 flag-only families sit in bucket C** (they are N 14, B 10, R 2,
 K 2, O 2). First match hides every one of them, so the widening is a re-assignment of the reading
@@ -154,7 +154,7 @@ order, not a discovery.
 `notes/scripts/build_catalog.py` now writes a 22nd column, **`counterex_broad`**, carrying the phrase
 rule. `SHAPES["counterexample"]` is unchanged, so the shape table stays at 44 and the first-match
 buckets are untouched — re-run after the change, they are C 16, R 46, B 27, K 8, U 12, O 2, N 19 over
-130 families / 244 manuscripts / 0 formalized, identical to the record in `notes/t0-triage.md`.
+130 families / 244 manuscripts / 0 formalized, identical to the record in `notes/reports/t0-triage.md`.
 
 Fresh generator report: **`counterex_broad` 74 of 372 families, `counterexample` tag 44, tag-only 0,
 flag-only 30.** By tier T3 35, T2 18, T1 0, T0 21; 120 manuscripts behind the flagged families.

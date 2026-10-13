@@ -28,12 +28,12 @@ multi-label. Ordered by how cheaply the claim can be checked, not by importance.
 Buckets come from `shapes` alone. The ledger's `resolves_named` column (248 families repo-wide) is a
 second T0 discriminator: it flags **86 of these 130**, including 11 of the 19 in N — 019, 031, 043,
 051, 060, 164, 258, 306, 316, 338, 341, all named-conjecture families — so N is no longer
-title-only for half its families. Cross-tab and method: `notes/resolution-tag.md`.
+title-only for half its families. Cross-tab and method: `notes/reports/resolution-tag.md`.
 
 `counterex_broad` (74 families repo-wide) is a third: it flags **21 of these 130**, of which 16 are
 the C bucket and **5 are not** — 004 (R), 048 and 201 (K), 259 and 284 (B). First match
 never shows them as counterexamples, which is why the signal is a column and not a widened tag.
-Cross-tab and method: `notes/counterexample-tag.md`.
+Cross-tab and method: `notes/reports/counterexample-tag.md`.
 
 Bucket concentration by discipline (families with ≥2): C is Topology 5, A&CG 4, differential
 geometry 3. R is A&CG 9, number theory 7, real/complex analysis 5, algebra 5, topology 5, differential
@@ -528,7 +528,7 @@ Reading the titles settles most of them, which is what reading-priority item 4 a
    the tag, so **30** are flagged without being tagged; all 30 are counterexamples in kind. The rule
    that reproduces those counts is now written down — `COUNTEREX_PHRASE` in
    `notes/scripts/build_catalog.py`, a phrase rule rather than a stem rule — and the per-family reading
-   is in **`notes/counterexample-tag.md`**. It excludes three false positives found by reading the
+   is in **`notes/reports/counterexample-tag.md`**. It excludes three false positives found by reading the
    matched sentence: 348 ("answers … nonnegatively"), 339 ("strictly negative sectional curvature"),
    355 ("at every negative time"). In T0 the flag-only families are **004, 048, 195, 201, 259, 284**;
    004 is a negative *resolution* of Hilbert's tenth problem over **Q**, not an exhibited object. So
@@ -561,7 +561,7 @@ abstract in `overview.tex` is the whole body of evidence the release ships for t
 
 The `counterex_broad` column flags **6** T0 families that the tag misses: the five above plus **004**,
 which is a negative *resolution* (Hilbert's tenth over **Q**) with no counterexample object exhibited,
-so it stays out of this object-level set. See `notes/counterexample-tag.md`.
+so it stays out of this object-level set. See `notes/reports/counterexample-tag.md`.
 
 Mode: **E** = the abstract names a constructed object; **X** = the object is indexed by a parameter
 the abstract leaves unspecified ("sufficiently large", "higher-dimensional", "nonnumerically").
@@ -858,7 +858,7 @@ check, not what to read.
 3. Cross-family chains inside T0: 001↔032, 002↔006, and 311⇒Hovey–Strickland. A chain is only as
    strong as its weakest, unformalized link.
 4. The tag-yield question from finding 9: measure what a `resolution` tag would add repo-wide before
-   touching `build_catalog.py`, and record the yield the way `notes/conditional.md` records it.
+   touching `build_catalog.py`, and record the yield the way `notes/reports/conditional.md` records it.
 5. The 28 two-manuscript families of the second pass (035, 037, 041, 055, 065, 066, 074, 077, 080,
    138, 147, 200, 203, 217, 219, 239, 258, 265, 268, 270, 286, 300, 302, 308, 335, 346, 364, 368) —
    the companion manuscript is where scope limits hide.

@@ -84,7 +84,7 @@ def sync_inert() -> bool:
 
     The writer computes a page's slots by importing — or spawning — the very scripts that call
     `sync_problems`: `render_reports.py` calls `measure_proof_density.report()` in-process for
-    `notes/proof-density.md`, and it runs `extract_links.py` as a subprocess for `notes/links.md`.
+    `notes/reports/proof-density.md`, and it runs `extract_links.py` as a subprocess for `notes/reports/links.md`.
     A sync pass started from inside a render would recurse, so the pass is inert while a render is
     in progress, and inert in a child the writer spawned (marked by `RENDER_REPORTS_CHILD`).
     """

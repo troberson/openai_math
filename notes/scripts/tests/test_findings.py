@@ -1,6 +1,6 @@
 """The self-tests for `notes/scripts/verify_findings.py`.
 
-The checker verifies `notes/findings.md` in seven passes: the Sources table (rows exist, declare the
+The checker verifies `notes/reports/findings.md` in seven passes: the Sources table (rows exist, declare the
 line count they have, every row is cited, the body's `[Sn]` markers are contiguous and in first-use
 order), anchored quotations (a quotation next to a `[Sn:line]` marker must appear, markup aside, on
 the lines it cites), the ledger (every catalog row rebuilt from the shipped files through `catlib`'s

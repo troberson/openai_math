@@ -22,7 +22,7 @@ import pathlib
 
 import pytest
 
-PAGE = pathlib.Path("notes/subfinding-pairs.md")
+PAGE = pathlib.Path("notes/reports/subfinding-pairs.md")
 
 # (label, needle, mutation). A needle must fire for its own fault and for no other, and must not
 # fire on the clean page.

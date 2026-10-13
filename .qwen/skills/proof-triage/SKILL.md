@@ -46,7 +46,7 @@ behaviour and rules only.
    not assumptions; with the generator's guards the tag yields **5** (014, 125, 240, 244, 282). In the
    other direction, 74 families use counterexample language and only 44 carry
    the `counterexample` tag — all 30 untagged flags are genuine on reading. Quote shape counts as
-   floors. `notes/conditional.md` is the model — name the hypothesis, say where it sits, record the
+   floors. `notes/reports/conditional.md` is the model — name the hypothesis, say where it sits, record the
    flags you dropped.
 7. **A broad rule goes in a column, not a shape.** `triage_t0.py` assigns T0 buckets by **first
    match**, so widening a shape moves families between buckets and re-cuts the reading order. Both
@@ -55,8 +55,8 @@ behaviour and rules only.
    tag-only 003, 010, 082, 103, 261, union 253), and the counterexample phrase rule as
    `counterex_broad` (74 against the `counterexample` shape's 44 — a **strict superset**, tag-only 0).
    Widening `counterexample` would move 6 T0 families into bucket C, where first match currently
-   leaves them. Quote both counts as floors; see `notes/resolution-tag.md` and
-   `notes/counterexample-tag.md`.
+   leaves them. Quote both counts as floors; see `notes/reports/resolution-tag.md` and
+   `notes/reports/counterexample-tag.md`.
 8. **A prior is not a measurement.** `notes/tables/conjecture-standing.tsv` records what the assistant's
    training data says about a conjecture's standing at an early-2025 cutoff, self-rated by
    `prior_confidence`. Quote it as the prior it is, pair every row with its confidence, and never
@@ -91,14 +91,14 @@ behaviour and rules only.
    manuscript abstract in `CONTENTS.md`. Quote exclusions; they are the load-bearing part.
 4. **Triage the silent families** — T0 (130 families, 244 manuscripts, 0 formalized) has no
    coverage signal at all. Run `notes/scripts/triage_t0.py` for the buckets and read
-   `notes/t0-triage.md` before adding to the pass; `shapes` drives the buckets,
+   `notes/reports/t0-triage.md` before adding to the pass; `shapes` drives the buckets,
    `resolves_named` (86 of 130) is the second discriminator and `counterex_broad` (21 of 130) the
    third — 5 of those 21 sit outside bucket C, which is why the column exists. Two
    reading passes cover all 130 families at abstract level, and the 21 counterexample-shaped ones are
    recorded there with object, broken conjecture, and construction mode — new T0 work is checking
    those claims against manuscript source, not reading titles.
 5. **Record manual findings in the repo**, not in chat: append to `notes/` as a tracked file
-   (e.g. `notes/conditional.md`), one row per family, stating exactly what each assumes.
+   (e.g. `notes/reports/conditional.md`), one row per family, stating exactly what each assumes.
 6. **State the ceiling** — end coverage answers with what has *not* been checked.
 
 ## Resource map
@@ -109,30 +109,30 @@ behaviour and rules only.
 | `notes/README.md` | Column definitions, tier defs, shape yields, discipline table, traps | Before quoting any number |
 | `notes/scripts/build_catalog.py` | Generator (stdlib only, **185** lines measured 2026-10-11 — the joins live in `catlib/ledger.py` / `catlib/overview.py`) | Regenerating, or adding a column |
 | `notes/scripts/triage_t0.py` | Buckets the 130 T0 families by claim shape (reads the ledger, writes nothing) | Any T0 count, bucket, or priority question |
-| `notes/t0-triage.md` | T0 buckets, two reading passes covering all 130 families, the 21-family counterexample record, scope qualifiers found in abstracts | Before triaging or discussing T0 families |
-| `notes/conditional.md` | Manual pass: what each conditional family assumes, and dropped flags | Before calling any family conditional |
-| `notes/resolution-tag.md` | Named-target rule: yield, the 94-family reading verdict, the `resolves_named` decision | Before quoting a resolution count or changing a tag |
-| `notes/counterexample-tag.md` | Counterexample phrase rule: yield, the 30-family reading verdict, the `counterex_broad` decision | Before quoting a counterexample count, or checking a family the tag misses |
+| `notes/reports/t0-triage.md` | T0 buckets, two reading passes covering all 130 families, the 21-family counterexample record, scope qualifiers found in abstracts | Before triaging or discussing T0 families |
+| `notes/reports/conditional.md` | Manual pass: what each conditional family assumes, and dropped flags | Before calling any family conditional |
+| `notes/reports/resolution-tag.md` | Named-target rule: yield, the 94-family reading verdict, the `resolves_named` decision | Before quoting a resolution count or changing a tag |
+| `notes/reports/counterexample-tag.md` | Counterexample phrase rule: yield, the 30-family reading verdict, the `counterex_broad` decision | Before quoting a counterexample count, or checking a family the tag misses |
 | `notes/tables/conjecture-standing.tsv` | 139 rows: named conjecture, **training-data prior** on its standing as of early 2025, `prior_confidence`, the release claim, the gap, surprise tier, `overview.tex` anchor | Any "how surprising is this" or conjecture-standing question |
-| `notes/conjecture-standing.md` | The tier scheme, the 139-vs-233 selection, the counts, the 145 conflict row, what the table cannot say | Before quoting a standing row as evidence |
+| `notes/reports/conjecture-standing.md` | The tier scheme, the 139-vs-233 selection, the counts, the 145 conflict row, what the table cannot say | Before quoting a standing row as evidence |
 | `notes/scripts/verify_conjecture_standing.py` | Proves the standing table: fam set, ledger discipline/tier, anchors against `\resultentry`, confidence vocabulary, abstract-name fidelity, no consequence language | Before quoting any standing row |
 | `notes/tables/formalization-deps.tsv` | 31 rows: 30 declared upstream libraries with pinned commits, yaml relationship, direct import counts, patch file and line count, plus BernoulliRegular as `lakefile_declared=n` | Any dependency, pin, or upstream-library question |
-| `notes/formalization-deps.md` | The import rule and its scope, the `.git` join trap, the yaml ordering claim with its 5 violations, the 19 zero-import rows, the manifest reconciliation, the BernoulliRegular finding, what was not checked | Before quoting a dependency count, or claiming a pin is buildable |
+| `notes/reports/formalization-deps.md` | The import rule and its scope, the `.git` join trap, the yaml ordering claim with its 5 violations, the 19 zero-import rows, the manifest reconciliation, the BernoulliRegular finding, what was not checked | Before quoting a dependency count, or claiming a pin is buildable |
 | `notes/scripts/extract_formalization_deps.py` | Writes the deps table and prints its reconciliation; reads 122,458 files, refuses to write when a join breaks | Regenerating, or extending the deps table |
 | `notes/tables/links.tsv` | 22-row typed-edge inventory: every relation type in the release with source, pattern, count, detail, the command that computes it, and what the edge does **not** mean | Any "what connects X to Y" question, and the index-schema decision |
-| `notes/links.md` | The 426-vs-416 and 200/189/136 reconciliations, the href citation layer, the three name relations as three rows, the unreproduced "14", the negatives, what was not checked | Before quoting any edge count |
+| `notes/reports/links.md` | The 426-vs-416 and 200/189/136 reconciliations, the href citation layer, the three name relations as three rows, the unreproduced "14", the negatives, what was not checked | Before quoting any edge count |
 | `notes/scripts/extract_links.py` | Writes `notes/tables/links.tsv` and prints the per-edge report; 20 seconds, deterministic | Regenerating, or adding an edge type |
-| `notes/tables/sources.tsv` + `notes/sources.md` | Per-manuscript source surface (root count, resolved main file, section/proof/statement counts, `.bib` count, `.tex` bytes) and the page that quotes it | Any per-manuscript count; `verify_sources.py --mutant` before quoting |
-| `notes/tables/subfindings.tsv` + `notes/subfinding-pairs.md` | 719 manuscript rows + 426 comparator rows typed by `kind`; the 49-family abstract↔title pairing | Before quoting a display title or a sub-finding pair |
-| `notes/scope-exclusions.md` | What each of the 242 scope notes says it leaves out; 121 sections state no exclusion | Before claiming what a formalization excludes |
-| `notes/verification-dirs.md` | The 30 certificate bundles, each entry point, the family-348 reading | Before quoting a `verification` column value |
+| `notes/tables/sources.tsv` + `notes/reports/sources.md` | Per-manuscript source surface (root count, resolved main file, section/proof/statement counts, `.bib` count, `.tex` bytes) and the page that quotes it | Any per-manuscript count; `verify_sources.py --mutant` before quoting |
+| `notes/tables/subfindings.tsv` + `notes/reports/subfinding-pairs.md` | 719 manuscript rows + 426 comparator rows typed by `kind`; the 49-family abstract↔title pairing | Before quoting a display title or a sub-finding pair |
+| `notes/reports/scope-exclusions.md` | What each of the 242 scope notes says it leaves out; 121 sections state no exclusion | Before claiming what a formalization excludes |
+| `notes/reports/verification-dirs.md` | The 30 certificate bundles, each entry point, the family-348 reading | Before quoting a `verification` column value |
 | `notes/index/` + `notes/development/index-design.md` + `notes/development/index-links.md` | The rendered index (1,033 pages + 16 tables), the schema decision, the link check | Any family / discipline / topic / name lookup |
-| `notes/names.md` + `notes/topics.md` | The six measured name layers (551 subject pages over 5,842 keys) and the 92-term curated vocabulary with per-layer counts | Before quoting a name or topic count |
-| `notes/proof-density.md` | The tested size-proxy result: three raw measures clear the bar and sit within 0.03 of the tex-KB control; both density measures are NULL | Before claiming a proof count discriminates a tier |
-| `notes/formalization-faithfulness.md` | The Lean-vs-manuscript faithfulness read: 189 resolved declarations, 61 carrier bodies, the literal pairing, the `a.e.` surface | Before claiming a formalized statement matches the manuscript |
-| `notes/named-results.md` | The named-result inventory the manuscript **statements** carry, and the applied 233 → 248 `resolves_named` scope swap | Before quoting a `resolves_named` count |
-| `notes/abstracts.md` + `notes/tables/abstracts.tsv` | The overview abstract is a rewritten paraphrase: 0 of 719 manuscript and 0 of 372 family best matches read identical | Before quoting a claim-shape tag as a claim about a manuscript |
-| `notes/citations.md` | The shared-bibliography population: 521 `.bib` files, 13,802 entries, 8,775 distinct works, 2,251 shared | Before quoting a shared-work or co-citation count |
+| `notes/reports/names.md` + `notes/reports/topics.md` | The six measured name layers (551 subject pages over 5,842 keys) and the 92-term curated vocabulary with per-layer counts | Before quoting a name or topic count |
+| `notes/reports/proof-density.md` | The tested size-proxy result: three raw measures clear the bar and sit within 0.03 of the tex-KB control; both density measures are NULL | Before claiming a proof count discriminates a tier |
+| `notes/reports/formalization-faithfulness.md` | The Lean-vs-manuscript faithfulness read: 189 resolved declarations, 61 carrier bodies, the literal pairing, the `a.e.` surface | Before claiming a formalized statement matches the manuscript |
+| `notes/reports/named-results.md` | The named-result inventory the manuscript **statements** carry, and the applied 233 → 248 `resolves_named` scope swap | Before quoting a `resolves_named` count |
+| `notes/reports/abstracts.md` + `notes/tables/abstracts.tsv` | The overview abstract is a rewritten paraphrase: 0 of 719 manuscript and 0 of 372 family best matches read identical | Before quoting a claim-shape tag as a claim about a manuscript |
+| `notes/reports/citations.md` | The shared-bibliography population: 521 `.bib` files, 13,802 entries, 8,775 distinct works, 2,251 shared | Before quoting a shared-work or co-citation count |
 | `notes/scripts/README.md` | The ownership manifest — which files are generated and which are hand-written, and the gate command for every script | Before editing anything under `notes/` |
 | `notes/development/upstream_history/` | Per-upstream-commit merge records | Before quoting what upstream changed |
 | `lean/docs/<NNN>.md` | Family scope note: what the formalization covers and excludes | Any claim about a formalized result |
@@ -162,7 +162,7 @@ behaviour and rules only.
 - A quoted count with no rule behind it. The 74 / 44 / 31 / 30 figures this repo quoted for a day came
   from a reading pass whose regex was never written down, and no variant of the vocabulary the prose
   quoted reproduces them (unbounded `negativ` → 90, `\bnegativ` → 75, abstract-only phrase rule → 72).
-  Write the rule in code before quoting the count; see `notes/counterexample-tag.md`.
+  Write the rule in code before quoting the count; see `notes/reports/counterexample-tag.md`.
 - `Path` vs `str` in a membership test. `verification`, `inputs`, and `covmd` read 0 for all 372
   rows because the reference sets held `Path` objects while the tested values were strings — a
   silently empty column, indistinguishable from a genuinely empty one. Key such sets on `.name`, and

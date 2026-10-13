@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify every count and quotation in notes/findings.md. Writes nothing.
+"""Verify every count and quotation in notes/reports/findings.md. Writes nothing.
 
 The page is a synthesis, so its claims arrive in three kinds and each needs a different check:
 

@@ -19,7 +19,7 @@ import pathlib
 
 import pytest
 
-PAGE = pathlib.Path("notes/dependency-drift.md")
+PAGE = pathlib.Path("notes/reports/dependency-drift.md")
 
 # (label, needle, mutation). A needle must fire for its own fault and for no other, and must not
 # fire on the clean page.

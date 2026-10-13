@@ -1,7 +1,7 @@
 r"""The self-tests for `notes/scripts/catlib/quotes.py` and `notes/scripts/seed_quotes.py`.
 
 The resolver resolves a `(path, start, end, head, tail)` spec to the verbatim source span; the seeder
-seeds the specs for `notes/subfinding-pairs.md` and the 21 summaries pages and requires each to
+seeds the specs for `notes/reports/subfinding-pairs.md` and the 21 summaries pages and requires each to
 reproduce the page's quote. This file injects the faults the locator must catch: a head absent from the
 window; a tail that occurs only before the head; a line number past the file's end; a window whose start
 is after its end; a head that is unique in the line and still bounds a span running to a later

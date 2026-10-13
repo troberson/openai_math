@@ -67,7 +67,7 @@ So the course change is narrower than "consequence is unmeasurable". What is unm
 consequence ranking stays **prior-based and must be labelled as such**, and you may quote the 391
 edges as evidence that a result was cited, never as evidence that it mattered. Do not build a
 consequence score on intra-corpus edges, and do not report the title-phrase count as a citation count.
-See `notes/links.md` for the full rule grid.
+See `notes/reports/links.md` for the full rule grid.
 
 ## 2. Get the claim set from the ledger, then check the correlation
 
@@ -128,7 +128,7 @@ in the *prior*, not in the result.
 
 Shipped 2026-10-07 as **`notes/tables/conjecture-standing.tsv`** — 139 rows, 10 columns
 (`fam discipline tier conjecture standing_prior_2025 prior_confidence release_claim gap
-surprise_tier abstract_line`), with `notes/conjecture-standing.md` for the scheme and
+surprise_tier abstract_line`), with `notes/reports/conjecture-standing.md` for the scheme and
 `notes/scripts/verify_conjecture_standing.py` as its checker. Measured yields: surprise tier
 1:60, 2:64, 3:11, 4:4; confidence high 42, medium 84, low 13; all 139 anchors resolve to their own
 `\resultentry` line. Two things the shipped table does that the scheme above only asks for: the

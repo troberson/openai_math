@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify notes/counterexample-crosscheck.md against the shipped files.
+"""Verify notes/reports/counterexample-crosscheck.md against the shipped files.
 
 Report-only; writes nothing; runs nothing. Lean files are read as text — lake, lean, and comparator
 are never invoked here, so no verdict in the page can mean "a proof was checked".

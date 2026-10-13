@@ -1,6 +1,6 @@
 """The self-tests for `notes/scripts/verify_faithfulness.py`.
 
-The checker verifies `notes/formalization-faithfulness.md` against the shipped files: the entry and
+The checker verifies `notes/reports/formalization-faithfulness.md` against the shipped files: the entry and
 config counts, the resolved-declaration count, the carrier-typed and resolved-carrier counts, the
 carrier body sizes, the literal census, the four pairing classes, the `a.e.` environment census and
 the family/config intersection are recomputed from `lean/formalization.yaml`, `lean/docs/`,

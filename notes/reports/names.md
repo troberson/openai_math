@@ -225,7 +225,7 @@ families per name; 68 names attach to exactly 1 family; 17 names attach to 100 o
 
 7,240 `.tex` files at depth 1–3; 16,889 statement environments carrying an optional title;
 13,581 `.bib` entries, 5,809 distinct author-surname keys. (`notes/tables/sources.tsv` reports 21,288
-environments under a wider pattern; `notes/sources.md` states both rules.)
+environments under a wider pattern; `notes/reports/sources.md` states both rules.)
 
 ## Recorded decisions
 

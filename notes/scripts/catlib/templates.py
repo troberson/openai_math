@@ -39,37 +39,37 @@ SPLIT_LABEL = re.compile(r"^(.* [a-j])$")
 # The writer's slot dict is built from it, and the page's checker is handed the same object so its
 # needle list is derived, not transcribed.
 POPULATIONS: dict[str, Callable[[], Any]] = {
-    "notes/sources.md": R.measure,
-    "notes/abstracts.md": R.CA.measure,
-    "notes/named-results.md": R.en.population,
+    "notes/reports/sources.md": R.measure,
+    "notes/reports/abstracts.md": R.CA.measure,
+    "notes/reports/named-results.md": R.en.population,
     "notes/development/index-design.md": R.M.population,
-    "notes/names.md": R.names_population,
-    "notes/proof-density.md": R.proof_density_population,
+    "notes/reports/names.md": R.names_population,
+    "notes/reports/proof-density.md": R.proof_density_population,
     "notes/development/index-links.md": R.index_links_population,
     # Both links pages read the SAME cached population. render_reports.py:3262 builds its topics
     # population from population_of("links"), and population_of is @cache'd, so the links walk is paid
-    # once per process. Calling R.links_population() directly here made notes/topics.md re-run the
-    # walk notes/links.md had already paid — measured 23.34 s of labels for topics against 19.23 s for
+    # once per process. Calling R.links_population() directly here made notes/reports/topics.md re-run the
+    # walk notes/reports/links.md had already paid — measured 23.34 s of labels for topics against 19.23 s for
     # links in one builder process.
-    "notes/links.md": lambda: R.population_of("links"),
-    "notes/dependency-drift.md": R.drift_population,
-    "notes/verification-dirs.md": R.verification_dirs_population,
-    "notes/scope-exclusions.md": R.scope_exclusions_population,
+    "notes/reports/links.md": lambda: R.population_of("links"),
+    "notes/reports/dependency-drift.md": R.drift_population,
+    "notes/reports/verification-dirs.md": R.verification_dirs_population,
+    "notes/reports/scope-exclusions.md": R.scope_exclusions_population,
     # topics.md needs the links labels too: its MSC/keywords figures are measured by extract_links.py
     # and derived in links_full, so its population is links_full over the links population.
-    "notes/topics.md": lambda: R.topics_population(R.links_full(R.population_of("links"))),
-    "notes/t0-chains.md": R.t0_chains_population,
+    "notes/reports/topics.md": lambda: R.topics_population(R.links_full(R.population_of("links"))),
+    "notes/reports/t0-chains.md": R.t0_chains_population,
     # subfinding-pairs.md's population is the pairing report's own, imported from
     # extract_subfinding_pairs.py, plus the reading record parsed back out of the page.
-    "notes/subfinding-pairs.md": R.subfinding_pairs_population,
+    "notes/reports/subfinding-pairs.md": R.subfinding_pairs_population,
     # notes/README.md is derived from the ledger alone plus the yaml's sources/main_results counts.
     "notes/README.md": R.readme_population,
     # counterexample-crosscheck.md re-runs the crosscheck extractor's own report-only helpers
     # (main_results / scope_note / declaration_statement / carrier) over the ledger population.
-    "notes/counterexample-crosscheck.md": R.crosscheck_population,
+    "notes/reports/counterexample-crosscheck.md": R.crosscheck_population,
     # formalization-faithfulness.md's population is measure_faithfulness.py's own report-only
     # measurement, imported by the writer.
-    "notes/formalization-faithfulness.md": R.faithfulness_population,
+    "notes/reports/formalization-faithfulness.md": R.faithfulness_population,
     # fleet-design.md's population is the writer's own scan of the fleet's sources — the atomicity
     # grep, the sync census, the digests, the du sizes, the gate rows, the three site lists, the probe
     # parse. The page's checker measures the same figures with its own reads: a checker that compared
@@ -83,35 +83,35 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
 # The writer's own slot dict per page. These are the calls render_reports.py makes when it renders,
 # so the labels and phrase strings the template gets are the writer's by construction.
 LABELS: dict[str, Callable[[], dict[str, str]]] = {
-    "notes/sources.md": lambda: R.phrases(POPULATIONS["notes/sources.md"]()),
-    "notes/abstracts.md": lambda: R.abstracts_phrases(POPULATIONS["notes/abstracts.md"]()),
-    "notes/named-results.md": lambda: R.named_results_phrases(POPULATIONS["notes/named-results.md"]()),
+    "notes/reports/sources.md": lambda: R.phrases(POPULATIONS["notes/reports/sources.md"]()),
+    "notes/reports/abstracts.md": lambda: R.abstracts_phrases(POPULATIONS["notes/reports/abstracts.md"]()),
+    "notes/reports/named-results.md": lambda: R.named_results_phrases(POPULATIONS["notes/reports/named-results.md"]()),
     "notes/development/index-design.md": lambda: R.index_phrases(
         POPULATIONS["notes/development/index-design.md"]()),
-    "notes/names.md": lambda: R.names_phrases(POPULATIONS["notes/names.md"]()),
-    "notes/proof-density.md": lambda: R.proof_density_phrases(POPULATIONS["notes/proof-density.md"]()),
+    "notes/reports/names.md": lambda: R.names_phrases(POPULATIONS["notes/reports/names.md"]()),
+    "notes/reports/proof-density.md": lambda: R.proof_density_phrases(POPULATIONS["notes/reports/proof-density.md"]()),
     "notes/development/index-links.md": lambda: R.index_links_phrases(
         POPULATIONS["notes/development/index-links.md"]()),
     # links.md prints the MSC/keywords/bibliography figures formatted (**8,206**, 13,802), while
     # links_full also carries each as an unformatted string for the topics page, which prints them
     # bare (render_reports.py:2412). Requiring a raw label in the links page aborts the build with
     # NOT FOUND, so the links template's label dict drops them: they are the topics page's slots.
-    "notes/links.md": lambda: {k: v for k, v in R.links_phrases(POPULATIONS["notes/links.md"]()).items()
+    "notes/reports/links.md": lambda: {k: v for k, v in R.links_phrases(POPULATIONS["notes/reports/links.md"]()).items()
                                if not k.startswith("raw_")},
-    "notes/dependency-drift.md": lambda: R.drift_phrases(POPULATIONS["notes/dependency-drift.md"]()),
-    "notes/verification-dirs.md": lambda: R.verification_dirs_phrases(
-        POPULATIONS["notes/verification-dirs.md"]()),
-    "notes/scope-exclusions.md": lambda: R.scope_exclusions_phrases(
-        POPULATIONS["notes/scope-exclusions.md"]()),
-    "notes/topics.md": lambda: R.topics_phrases(POPULATIONS["notes/topics.md"]()),
-    "notes/t0-chains.md": lambda: R.t0_chains_phrases(POPULATIONS["notes/t0-chains.md"]()),
-    "notes/subfinding-pairs.md": lambda: R.subfinding_pairs_phrases(
-        POPULATIONS["notes/subfinding-pairs.md"]()),
+    "notes/reports/dependency-drift.md": lambda: R.drift_phrases(POPULATIONS["notes/reports/dependency-drift.md"]()),
+    "notes/reports/verification-dirs.md": lambda: R.verification_dirs_phrases(
+        POPULATIONS["notes/reports/verification-dirs.md"]()),
+    "notes/reports/scope-exclusions.md": lambda: R.scope_exclusions_phrases(
+        POPULATIONS["notes/reports/scope-exclusions.md"]()),
+    "notes/reports/topics.md": lambda: R.topics_phrases(POPULATIONS["notes/reports/topics.md"]()),
+    "notes/reports/t0-chains.md": lambda: R.t0_chains_phrases(POPULATIONS["notes/reports/t0-chains.md"]()),
+    "notes/reports/subfinding-pairs.md": lambda: R.subfinding_pairs_phrases(
+        POPULATIONS["notes/reports/subfinding-pairs.md"]()),
     "notes/README.md": lambda: R.readme_phrases(POPULATIONS["notes/README.md"]()),
-    "notes/counterexample-crosscheck.md": lambda: R.crosscheck_phrases(
-        POPULATIONS["notes/counterexample-crosscheck.md"]()),
-    "notes/formalization-faithfulness.md": lambda: R.faithfulness_phrases(
-        POPULATIONS["notes/formalization-faithfulness.md"]()),
+    "notes/reports/counterexample-crosscheck.md": lambda: R.crosscheck_phrases(
+        POPULATIONS["notes/reports/counterexample-crosscheck.md"]()),
+    "notes/reports/formalization-faithfulness.md": lambda: R.faithfulness_phrases(
+        POPULATIONS["notes/reports/formalization-faithfulness.md"]()),
     "notes/development/fleet-design.md": lambda: R.fleet_phrases(
         POPULATIONS["notes/development/fleet-design.md"]()),
     "notes/development/templates.md": lambda: R.templates_phrases(
@@ -119,41 +119,41 @@ LABELS: dict[str, Callable[[], dict[str, str]]] = {
 }
 PHRASE_FNS = ("count_phrases", "size_phrases")
 ALL_PAGES = {
-    "notes/abstracts.md": "verify_abstracts.py",
+    "notes/reports/abstracts.md": "verify_abstracts.py",
     "notes/development/index-links.md": "check_index_links.py",
     "notes/development/index-design.md": "verify_index_design.py",
     # links.md has no page checker: its counts come from the gated writer extract_links.py, which
     # prints its report and writes notes/tables/links.tsv and carries no count_phrases/size_phrases, so
     # the builder reports this coverage as NOT DERIVED.
-    "notes/links.md": "extract_links.py",
+    "notes/reports/links.md": "extract_links.py",
     # dependency-drift.md's checker takes no count_phrases/size_phrases: its needles are inline
     # want() calls inside check(), so the builder reports this coverage as NOT DERIVED.
-    "notes/dependency-drift.md": "verify_dependency_drift.py",
-    "notes/named-results.md": "verify_named_results.py",
-    "notes/names.md": "measure_names.py",
-    "notes/proof-density.md": "measure_proof_density.py",
-    "notes/sources.md": "verify_sources.py",
+    "notes/reports/dependency-drift.md": "verify_dependency_drift.py",
+    "notes/reports/named-results.md": "verify_named_results.py",
+    "notes/reports/names.md": "measure_names.py",
+    "notes/reports/proof-density.md": "measure_proof_density.py",
+    "notes/reports/sources.md": "verify_sources.py",
     # verification-dirs.md's checker exports population() (its measure()), so the builder derives its
     # needle list from the checker itself; the page is also proven by the render diff plus the
     # checker's own mutants.
-    "notes/verification-dirs.md": "verify_verification_dirs.py",
+    "notes/reports/verification-dirs.md": "verify_verification_dirs.py",
     # scope-exclusions.md's checker has no count_phrases/size_phrases at all: its needles are the
     # inline COUNTS/NONE_LINE regexes plus the measured() table labels, so the builder reports this
     # coverage as NOT DERIVED and the page is proven by the render diff plus the checker's own mutants.
-    "notes/scope-exclusions.md": "verify_scope_exclusions.py",
+    "notes/reports/scope-exclusions.md": "verify_scope_exclusions.py",
     # topics.md has no page checker: its counts come from the gated report-only measure_topics.py,
     # which prints the report every count on the page comes from and carries no count_phrases/
     # size_phrases, so the builder reports this coverage as NOT DERIVED. The page is proven by the
     # render diff plus measure_topics.py --check, which re-measures all 92 recorded rows.
-    "notes/topics.md": "measure_topics.py",
+    "notes/reports/topics.md": "measure_topics.py",
     # t0-chains.md's checker exports population() (its measured()), so the builder derives its needle
     # list from the checker itself; the page is also proven by the render diff plus its own mutants.
-    "notes/t0-chains.md": "verify_t0_chains.py",
+    "notes/reports/t0-chains.md": "verify_t0_chains.py",
     # subfinding-pairs.md's checker takes parsed inputs and has no module-level count_phrases, so its
     # needles cannot be derived: the builder reports this coverage as NOT DERIVED and the page is
     # proven by the render diff plus the checker's own 7 mutants, which pin every quoted clause and
     # title to the family's \resultentry line.
-    "notes/subfinding-pairs.md": "verify_subfinding_pairs.py",
+    "notes/reports/subfinding-pairs.md": "verify_subfinding_pairs.py",
     # notes/README.md has no page checker at all: it is the ledger's reading guide, and the only
     # script that checks any part of it is verify_script_ownership.py, which verifies the command
     # block and the ownership census rows and carries no count_phrases/size_phrases. The builder
@@ -163,10 +163,10 @@ ALL_PAGES = {
     # counterexample-crosscheck.md's checker exports population() and count_phrases(), so the builder
     # derives its needle list from the checker itself - as it now does for the six other report-fed
     # pages, whose per-page counts are the Needles column of the templates census.
-    "notes/counterexample-crosscheck.md": "verify_counterexample_crosscheck.py",
+    "notes/reports/counterexample-crosscheck.md": "verify_counterexample_crosscheck.py",
     # formalization-faithfulness.md's checker exports population() and count_phrases(), so the builder
     # derives its needle list from the checker itself, as it does for the crosscheck page.
-    "notes/formalization-faithfulness.md": "verify_faithfulness.py",
+    "notes/reports/formalization-faithfulness.md": "verify_faithfulness.py",
     # fleet-design.md's checker exports population() and count_phrases(), so the builder derives its
     # needle list from the checker itself. The page's dated observations (the free -h line, the wall
     # times, the cold/warm swing) are deliberately NOT slots: a writer that recomputed them would move

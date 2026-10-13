@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Print the population for the title<->abstract reading pass, with the raw material per family.
 
-Report-only: writes nothing. The page it feeds is notes/subfinding-pairs.md, written by reading.
+Report-only: writes nothing. The page it feeds is notes/reports/subfinding-pairs.md, written by reading.
 
 The population is a union of two rules, both stated here in code:
 
@@ -58,7 +58,7 @@ def population() -> dict[str, Any]:
     """The measured population and the raw material per family, as this report prints it.
 
     The union rule lives here once: `main()` prints from these values and
-    `notes/scripts/render_reports.py` imports this function to render `notes/subfinding-pairs.md`, so
+    `notes/scripts/render_reports.py` imports this function to render `notes/reports/subfinding-pairs.md`, so
     the page and the report are computed by the same rule and the page's checker re-derives it
     independently.
     """

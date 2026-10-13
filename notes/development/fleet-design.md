@@ -21,7 +21,7 @@ pure: the record's bytes depend on a script that has not run yet, so the key can
 
 The rule is not "never read the output dir". `render_reports.py` reads `notes/tables/sources.tsv` and
 `notes/tables/links.tsv` and is legal, because those records are pure functions of L0 ∪ L1 — the renderer
-does not write them. `extract_links.py` reading `notes/links.md` is not legal: that page is written by
+does not write them. `extract_links.py` reading `notes/reports/links.md` is not legal: that page is written by
 the renderer, in the same pass, from a key that includes `notes/tables/links.tsv`, which `extract_links.py`
 writes.
 
@@ -123,7 +123,7 @@ passes now live in `verify_page_sync.py`, which owns the render diff for all fiv
 
 The 2026-10-10 probe recorded **two** pages with two writers: `notes/development/index-links.md`, written by
 `render_reports.py` (mode-verified in its 17-page `r,w` list) and by `check_index_links.py` (mode
-`r,w`); and `notes/proof-density.md`, written by `render_reports.py` and by
+`r,w`); and `notes/reports/proof-density.md`, written by `render_reports.py` and by
 `measure_proof_density.py --mutant` (mutant branch only). Both second writers were the sync-pass
 mutant, which wrote the mutated page to disk to test the render diff. `verify_page_sync.py` mutates
 the page text in memory and compares it with the render, so neither checker writes a page and each
@@ -143,7 +143,7 @@ mode strings are the authority. The probe is `notes/scripts/measure_open_probe.p
 `notes/development/probe/2026-10-11_writers.txt`, `notes/development/probe/2026-10-11_checkers.txt`,
 `notes/development/probe/2026-10-11_rr_after.txt` (the single-target `render_reports.py` record taken mid-pass,
 after the store conversion), `notes/development/probe/2026-10-12_seed_quotes.txt` (the `seed_quotes.py` run, which
-reads `notes/subfinding-pairs.md` and writes the TSV through the atomic sibling temp),
+reads `notes/reports/subfinding-pairs.md` and writes the TSV through the atomic sibling temp),
 `notes/development/probe/2026-10-12_seed_quotes_summaries.txt` (the widened `seed_quotes.py` run, which reads the
 21 summaries pages, the notes pages their Sources cells cite, and the manuscript files those cells
 resolve to), `notes/development/probe/2026-10-12_rr_fleet.txt` (the `render_reports.py` record
@@ -170,7 +170,7 @@ seven of the 2026-10-10, 2026-10-11 and 2026-10-12 records for its L1 exactness 
 
 **0** of the 8 scripts reads a generated file that a later gate row writes. The two backwards edges
 the 2026-10-10 probe recorded are gone: `build_sources.py` consumed the **previous pass's**
-`subfindings.tsv` as its manuscript list and `extract_links.py` read `notes/links.md` that
+`subfindings.tsv` as its manuscript list and `extract_links.py` read `notes/reports/links.md` that
 `render_reports.py` wrote in the previous pass, and no single-pass order satisfies both — which is
 why the row order in the shell list was provably not topological. `math-o3a.3` removed both: the
 manuscript list comes from `overview.tex`, and no writer reads a page. The remaining generated reads
@@ -253,7 +253,7 @@ when `math-o3a.3` moved its sync pass into `verify_page_sync.py`. The pass calle
 checker that owns it. `extract_links.py` is the one writer `math-o3a.4` has **not** converted to the
 record store: its six `preprints/**` walks are still its own.
 
-Decisive: `check("notes/findings.md")` timed three times in one process — **104.50 s → 67.24 s →
+Decisive: `check("notes/reports/findings.md")` timed three times in one process — **104.50 s → 67.24 s →
 0.13 s** on identical code, identical page, identical output. Memoising the 5 report subprocesses
 removes 37.26 s per call; the page-check work is 0.9 s. The gate's cost is re-collection, not
 computation. `math-o3a.4.3` realized that for the corpus measures: `@cache` on

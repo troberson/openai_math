@@ -261,7 +261,7 @@ which results the release itself treats as load-bearing.
 ```
 
 The second is the shape of a release-internal citation: author `OpenAI`, a title phrase as the entry
-title, and the target carried by URL. It is why the title-phrase proxy in `notes/links.md` reaches 12
+title, and the target carried by URL. It is why the title-phrase proxy in `notes/reports/links.md` reaches 12
 cross-family families while the href layer reaches 104.
 
 ## Sensitivity of the headline to the normalization rule

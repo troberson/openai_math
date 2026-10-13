@@ -23,7 +23,7 @@ REPO="$(cd "$(dirname "$0")" && git rev-parse --show-toplevel)" || exit 1
 cd "$REPO" || exit 1
 COPY="$REPO/.qwen/tmp/ledger_bump_copy"
 R="$REPO/.qwen/tmp/reports"
-# The page a template renders is its basename minus the .j2 suffix: links.md.j2 renders notes/links.md.
+# The page a template renders is its basename minus the .j2 suffix: links.md.j2 renders notes/reports/links.md.
 # Keep the suffix and the unlink-and-recopy loop names files that do not exist, every cp fails, and the
 # copy's pages stay HARDLINKED to the repo's — render_reports.py then writes the real tree.
 PAGES=""

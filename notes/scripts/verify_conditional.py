@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify every source citation in notes/conditional.md against the shipped files.
+"""Verify every source citation in notes/reports/conditional.md against the shipped files.
 
 Report-only; writes nothing. Two passes:
 

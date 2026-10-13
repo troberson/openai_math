@@ -260,7 +260,7 @@ def phrases(m: dict[str, Any]) -> dict[str, str]:
 
 
 def sources_page() -> str:
-    """notes/sources.md, rendered."""
+    """notes/reports/sources.md, rendered."""
     m = measure()
     p = phrases(m)
     return ENV.get_template("sources.md.j2").render(m=m, p=p, f=f, multi=m["multi"])
@@ -342,7 +342,7 @@ def abstracts_phrases(m: dict[str, Any]) -> dict[str, str]:
 
 
 def abstracts_page() -> str:
-    """notes/abstracts.md, rendered."""
+    """notes/reports/abstracts.md, rendered."""
     m = CA.measure()
     p = abstracts_phrases(m)
     low = [x for x in m["man"] if x["ratio"] < 0.05]
@@ -544,7 +544,7 @@ def tgt_rows(p: dict[str, Any]) -> list[str]:
 
 
 def named_results_page(p: dict[str, Any]) -> str:
-    """notes/named-results.md, rendered from the extractor's population()."""
+    """notes/reports/named-results.md, rendered from the extractor's population()."""
     return ENV.get_template("named-results.md.j2").render(
         p=named_results_phrases(p), tgtrows=tgt_rows(p), f=f,
         m={"titled": p["titled"], "titled_all": p["titled_all"]},
@@ -771,7 +771,7 @@ def index_page(p: dict[str, Any]) -> str:
     return ENV.get_template("index-design.md.j2").render(p=index_phrases(p))
 
 
-# --- notes/names.md ------------------------------------------------------------------
+# --- notes/reports/names.md ------------------------------------------------------------------
 # The page's fixed vocabularies, transcribed from the page: the probe tokens in the page's order,
 # the rejection-ladder buckets in the page's order, the layer flags with the layer names the page
 # prints, and the words-section keys in table order. The 40 yield rows are DERIVED (family count
@@ -831,7 +831,7 @@ def names_population() -> dict[str, Any]:
 
 
 def names_phrases(mp: dict[str, Any]) -> dict[str, str]:
-    """The slot dict for notes/names.md, every value measured from the population.
+    """The slot dict for notes/reports/names.md, every value measured from the population.
 
     Left literal by design: the 16-name escape list, the 6 merged-keys list, the deleted-gate names
     list, the singleton examples, the curated `decl_top` excerpt (the page drops two of the report's
@@ -968,7 +968,7 @@ def pd_median(v: float) -> str:
 
 
 def proof_density_population() -> dict[str, Any]:
-    """Everything notes/proof-density.md quotes, measured through the script the page names.
+    """Everything notes/reports/proof-density.md quotes, measured through the script the page names.
 
     This page's checker IS the measurement (measure_proof_density.py --mutant), so the writer reuses
     its statistic and its population build while the checker keeps its own gates and mutant list. The
@@ -1131,7 +1131,7 @@ IL_SPLIT = {
                         "linked only from the entry")],
     "prose_latexsource": [("`latex-source` 719 = the `main_tex` of each of the 719 manuscripts, "
                           "all 719 present in")],
-    "prose_notesdoc": ["`notes-doc` 26 targets = `notes/names.md` (552 links: one from each of the",
+    "prose_notesdoc": ["`notes-doc` 26 targets = `notes/reports/names.md` (552 links: one from each of the",
                        ("551 name pages and one from the entry point), the 21 `notes/summaries/` "
                        "pages family pages link,"),
                        ("and the 5 notes docs the entry point links (`index-design.md`, `names.md`, "
@@ -1228,7 +1228,7 @@ def index_links_full(p: dict[str, Any]) -> dict[str, str]:
     entry_docs = len({rel for pg, _h, rel in s["links"]
                       if pg == "README.md" and CI.category(rel) == "notes-doc"})
     summaries = len([r for r in s["targets"]["notes-doc"] if r.startswith("notes/summaries/")])
-    names_links = sum(1 for _pg, _h, rel in s["links"] if rel == "notes/names.md")
+    names_links = sum(1 for _pg, _h, rel in s["links"] if rel == "notes/reports/names.md")
     extra = len(s["extra_dirs"])
     out: dict[str, str] = {}
     out["h_title"] = f"{f(nlinks)} links checked against the shipped files, {nbroken} broken"
@@ -1283,7 +1283,7 @@ def index_links_full(p: dict[str, Any]) -> dict[str, str]:
     out["prose_latexsource"] = (f"`latex-source` {tg['latex-source']} = the `main_tex` of each of "
                                 f"the {tg['latex-source']} manuscripts, all {tg['latex-source']} "
                                 f"present in `notes/tables/sources.tsv`")
-    out["prose_notesdoc"] = (f"`notes-doc` {tg['notes-doc']} targets = `notes/names.md` "
+    out["prose_notesdoc"] = (f"`notes-doc` {tg['notes-doc']} targets = `notes/reports/names.md` "
                              f"({names_links} links: one from each of the {gp['name pages']} name "
                              f"pages and one from the entry point), the {summaries} "
                              f"`notes/summaries/` pages family pages link, and the {entry_docs} "
@@ -1339,7 +1339,7 @@ def index_links_page(p: dict[str, str]) -> str:
     return ENV.get_template("index-links.md.j2").render(p=p)
 
 
-# --- notes/links.md ---------------------------------------------------------------------
+# --- notes/reports/links.md ---------------------------------------------------------------------
 
 # The table's 22 rows: label, the links.tsv edge key, the count-cell suffix, the page's prose.
 # Rows are slotted whole because the counts repeat (two 0s, two 30s, three 12s): a needle for a
@@ -1380,7 +1380,7 @@ LINKS_EDGE_DISP = {
     "manuscript->\\keywords macro": "manuscript→`\\keywords` macro",
 }
 
-# Where notes/links.md wraps a phrase across lines, the prefix its first line ends with.
+# Where notes/reports/links.md wraps a phrase across lines, the prefix its first line ends with.
 LINKS_SPLIT = {
     "sec426_chal": ["sums to **416** while this row"],
     "mm_targets": ["span **268** target"],
@@ -1428,7 +1428,7 @@ def links_population() -> dict[str, Any]:
 
 
 def links_full(p: dict[str, Any]) -> dict[str, str]:
-    """Every count notes/links.md quotes, read from the extract_links.py report and links.tsv."""
+    """Every count notes/reports/links.md quotes, read from the extract_links.py report and links.tsv."""
     rep, tsv, bc_line = p["rep"], p["tsv"], p["bc_line"]
 
     def n(key: str, pat: str) -> int:
@@ -1661,12 +1661,12 @@ def links_page(p: dict[str, str]) -> str:
 
 
 # =============================================================================
-# notes/dependency-drift.md — the pinned-commit / patch surface
+# notes/reports/dependency-drift.md — the pinned-commit / patch surface
 # =============================================================================
 #
 # Read-only over the page's sources: notes/tables/formalization-deps.tsv, lean/lakefile.lean,
 # lean/patches/*.patch, lean/lean-toolchain, lean/lake-manifest.json, lean/formalization.yaml and the
-# OAI source-file count recorded in notes/formalization-deps.md. Nothing is built and nothing is run.
+# OAI source-file count recorded in notes/reports/formalization-deps.md. Nothing is built and nothing is run.
 #
 # verify_dependency_drift.py is deliberately NOT imported. A checker that re-derives a count through
 # the same code as the page it checks proves nothing, so the checker keeps its own recomputation and
@@ -1818,7 +1818,7 @@ def drift_population() -> dict[str, Any]:
     pkg_names = {drift_strip(q["name"]) for q in manifest["packages"]}
     src = re.search(r'OAI/\*\*/\*\.lean` \((\d[\d,]*) files\)', DEPS_MD.read_text(encoding="utf-8"))
     if src is None:
-        msg = "notes/formalization-deps.md names no OAI source-file count"
+        msg = "notes/reports/formalization-deps.md names no OAI source-file count"
         raise ValueError(msg)
     return {
         "rows": rows, "fields": fields, "declared": declared, "reqs": reqs,
@@ -2032,7 +2032,7 @@ def group_fams(fams: list[str]) -> str:
 
 
 def verification_dirs_population() -> dict[str, Any]:
-    """Every count notes/verification-dirs.md prints, recomputed from the shipped bundles.
+    """Every count notes/reports/verification-dirs.md prints, recomputed from the shipped bundles.
 
     The rules are the ones verify_verification_dirs.py measures with, re-derived on the writer side
     through extract_verification_dirs.py. The checker deliberately does not import this module: a page
@@ -2238,7 +2238,7 @@ EX_PAIR = re.compile(r"^“(.+)”\s*`lean/docs/(\d{3})\.md:(\d+)`$")
 
 
 def scope_exclusions_population() -> dict[str, str]:
-    """Every derived figure on notes/scope-exclusions.md, measured from the shipped scope notes.
+    """Every derived figure on notes/reports/scope-exclusions.md, measured from the shipped scope notes.
 
     The Entries table is a hand read — which clause and which line each family gets is a reading
     decision, not a measurement — so the table stays literal in the template and the counts it
@@ -2609,7 +2609,7 @@ def fleet_page(p: dict[str, str]) -> str:
 
 
 def topics_population(lf: dict[str, str]) -> dict[str, str]:
-    """Every derived figure on notes/topics.md, measured from the curated vocabulary.
+    """Every derived figure on notes/reports/topics.md, measured from the curated vocabulary.
 
     notes/tables/topics.tsv is the source of truth and measure_topics.measure() matches its patterns over the
     four texts a family ships, so the 92-row yield table, the coverage line, and both histograms are
@@ -2841,7 +2841,7 @@ def t0_chains_page(p: dict[str, str]) -> str:
     return ENV.get_template("t0-chains.md.j2").render(p=p)
 
 
-# --- page 10: notes/subfinding-pairs.md -------------------------------------------------------
+# --- page 10: notes/reports/subfinding-pairs.md -------------------------------------------------------
 # The pairing judgement is a reading record, so the writer reads it back out of the page it replaces
 # (the shape scope-exclusions.md's Entries table already uses): every Summary-table figure below is a
 # count of the page's own pair lines. verify_subfinding_pairs.py re-derives them independently and
@@ -3137,7 +3137,7 @@ def readme_full(p: dict[str, Any]) -> dict[str, str]:
     out["col_ver"] = (f"| `verification` | manuscript dirs with a `verification/` subdir | "
                       f"{ver_dirs} dirs over {len(ver_fams)} families; family 348's {v348} are one "
                       "bundle shipped twice. A **count, not a pointer** — see the entry-point record "
-                      "in `notes/verification-dirs.md` |")
+                      "in `notes/reports/verification-dirs.md` |")
     inp = sorted(r["fam"] for r in rows if int(r["inputs"]))
     out["col_inputs"] = (f"| `inputs` | manuscript dirs with `INPUTS.md` | {sum(int(r['inputs']) for r in rows)} "
                          f"dirs over {len(inp)} families ({', '.join(inp)}) |")
@@ -3427,7 +3427,7 @@ def _lits(vals: list) -> str:
 
 
 def faithfulness_full(p: dict[str, Any]) -> dict[str, str]:
-    """The writer's slot dict for notes/formalization-faithfulness.md, before the page-wrap split.
+    """The writer's slot dict for notes/reports/formalization-faithfulness.md, before the page-wrap split.
 
     Each prose label is ONE single-line string: the page's own text with its whitespace runs collapsed
     to single spaces, so the builder can split it at the page's line breaks. The three tables are

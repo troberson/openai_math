@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify every quotation and source marker in notes/abstracts.md against the shipped files.
+"""Verify every quotation and source marker in notes/reports/abstracts.md against the shipped files.
 
 The page cites sources as [S1] .. [S33]; the Sources table at the bottom maps S# to a repo-relative
 path. Two passes read the same table:

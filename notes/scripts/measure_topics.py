@@ -1,6 +1,6 @@
 """Measure a curated topic vocabulary against the four text layers a family ships.
 
-Report-only: writes nothing. Every count in notes/topics.md comes from this report.
+Report-only: writes nothing. Every count in notes/reports/topics.md comes from this report.
 
 A family has four searchable texts, all shipped by the release:
 
@@ -36,7 +36,7 @@ Run with --families to print, for each term, the titles of the families it flags
 marked T/A/S/P by the layer that hit. That is the reading pass: a term is quotable
 only after its flagged families have been read.
 
-The page check is not here: `notes/topics.md` is compared with `render_reports.py`'s render of it
+The page check is not here: `notes/reports/topics.md` is compared with `render_reports.py`'s render of it
 by `verify_page_sync.py`, which owns that pass. `--check` proves the recorded counts are measured;
 that is a count pass, and the render diff is a separate pass with a separate owner.
 """

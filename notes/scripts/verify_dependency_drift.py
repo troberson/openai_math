@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify notes/dependency-drift.md against the shipped dependency record.
+"""Verify notes/reports/dependency-drift.md against the shipped dependency record.
 
 Report-only; writes nothing. Five passes:
 
@@ -21,7 +21,7 @@ Report-only; writes nothing. Five passes:
 
 `lean/OAI/**/*.lean` is never scanned here: import counts are read from the TSV, which
 `extract_formalization_deps.py` measured. The 122,458-file figure is reconciled against
-`notes/formalization-deps.md`, which records it.
+`notes/reports/formalization-deps.md`, which records it.
 
 The self-tests are in notes/scripts/tests/test_dependency_drift.py: that file injects the ten page
 faults — nine count, anchor, table, name-list and code-span faults plus a prose row count outside

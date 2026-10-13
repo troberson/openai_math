@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-r"""Verify every citation, quotation, table row, and count in notes/t0-chains.md.
+r"""Verify every citation, quotation, table row, and count in notes/reports/t0-chains.md.
 
 Report-only: writes nothing, runs nothing. Lean is never invoked, so nothing here proves a theorem.
 
@@ -14,7 +14,7 @@ Checks, in order:
      line, else the last anchor in the contiguous lines above it) and must appear verbatim,
      modulo whitespace, on that anchored line;
   4. the count phrases are re-derived from notes/tables/catalog.tsv, notes/tables/subfindings.tsv,
-     notes/t0-triage.md and the .bib layer by importing extract_t0_chains;
+     notes/reports/t0-triage.md and the .bib layer by importing extract_t0_chains;
   5. the 27-row summary table and the 5-row chain table are re-derived field by field;
   6. the 27 per-family blocks match the population, each names exactly its own two manuscripts
      with titles that match notes/tables/subfindings.tsv and sit verbatim on the family's anchor line,

@@ -1,4 +1,4 @@
-"""Verify notes/named-conjectures.md against the shipped files.
+"""Verify notes/reports/named-conjectures.md against the shipped files.
 
 Report-only: writes nothing. Re-derives the population from `notes/tables/catalog.tsv` and the bucket rule
 in `catlib.ledger` (`read_ledger` and `bucket_of` — `math-6s7.3` moved the first-match chain out of

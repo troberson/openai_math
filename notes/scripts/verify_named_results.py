@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-r"""Check notes/named-results.md against the shipped files. Report-only: writes nothing.
+r"""Check notes/reports/named-results.md against the shipped files. Report-only: writes nothing.
 
 What it checks, and why each check exists:
   anchors   every backticked `file:line` resolves: the file exists under the repo root and the

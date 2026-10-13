@@ -2,7 +2,7 @@
 
 The 43 second-pass T0 families whose titles name a conjecture, problem, or question, each read
 against the theorem its manuscript actually states. Follow-up 2 in the priority list at the end of
-`notes/t0-triage.md`; tracked as bead `math-0h2`. The record it follows states these are claims,
+`notes/reports/t0-triage.md`; tracked as bead `math-0h2`. The record it follows states these are claims,
 not checked facts: no conjecture had been identified in the literature and no formalized statement
 had been compared with the claim. This page does the statement comparison. It does not identify any
 conjecture in the literature, and it does not compare against a formalized statement — see
@@ -13,7 +13,7 @@ conjecture in the literature, and it does not compare against a formalized state
 Derived from `notes/tables/catalog.tsv` and `notes/scripts/triage_t0.py`, not copied:
 
 - T0 rows: 130 families, 244 manuscripts.
-- First pass (read in `notes/t0-triage.md`): bucket C ∪ `fam <= '031'` ∪ `paps >= 3` = 43 families,
+- First pass (read in `notes/reports/t0-triage.md`): bucket C ∪ `fam <= '031'` ∪ `paps >= 3` = 43 families,
   130 manuscripts.
 - Second pass (remaining): 87 families, 114 manuscripts.
 - Title-named: `re.search(r"conjectur|\bquestion|\bproblem", title)` over the second pass,
@@ -55,7 +55,7 @@ population entries plus 2 promoted.
   - `narrower` — the blurb states less than the manuscript proves.
   - `wider` — the blurb states more than the manuscript proves.
 - The blurb is the `overview.tex` paraphrase, not the manuscript abstract: 0 of 719 manuscript
-  comparisons read identical (`notes/abstracts.md`), so a verdict compares the blurb's *claim* with
+  comparisons read identical (`notes/reports/abstracts.md`), so a verdict compares the blurb's *claim* with
   the manuscript's *theorem*, not their wording.
 
 ## The bead's priority set (sharp-bound claims)
@@ -984,8 +984,8 @@ errors in the manuscript.
 - **The 44 remaining second-pass families** (87 − 43) have titles that name no conjecture, problem,
   or question and were not read in this pass.
 - **Blurb wording was not compared with manuscript abstracts** — that comparison is
-  `notes/abstracts.md`, which finds 0 of 719 identical.
-- **The 43 first-pass families** were read in `notes/t0-triage.md` at claim-shape level, not at
+  `notes/reports/abstracts.md`, which finds 0 of 719 identical.
+- **The 43 first-pass families** were read in `notes/reports/t0-triage.md` at claim-shape level, not at
   statement level.
 
 ## Measurements

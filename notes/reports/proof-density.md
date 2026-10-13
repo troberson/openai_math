@@ -10,7 +10,7 @@ column was added.** Every number below comes from
 
 AUC is P(group A > group B) (Mann–Whitney U; ties 0.5), with the tie-corrected normal-approximation z
 and two-sided p. AUC 0.5 is no separation. The decision thresholds were written into the script header
-before the data was read, following the `notes/conditional.md` discipline (a tag is quotable only after
+before the data was read, following the `notes/reports/conditional.md` discipline (a tag is quotable only after
 it discriminates):
 
 - **SEPARATES** — AUC ≥ 0.65 **and** p < 0.01.
@@ -110,6 +110,6 @@ counterexample and multi-claim nulls are recorded.
 - The tier pairs are Lean-exposure groups, not difficulty groups. Nothing here separates a hard
   manuscript from an easy one, and no difficulty measure was attempted.
 - The shape contrasts key to the `overview.tex` paraphrase, not to the manuscripts
-  (`notes/abstracts.md`), so a shape-level null is a null about the summary labels.
+  (`notes/reports/abstracts.md`), so a shape-level null is a null about the summary labels.
 - No multiple-comparison correction: 6 signals × 3 tier pairs + 36 shape contrasts + 9 flag contrasts
   are reported unadjusted, so a single p < 0.01 among them is not by itself evidence.

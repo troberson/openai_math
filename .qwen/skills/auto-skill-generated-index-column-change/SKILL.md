@@ -13,7 +13,7 @@ For repos whose analysis lives in a generated artifact (a TSV ledger, an index, 
 scripts that consume it. Worked out on the OpenAI Research Catalog
 (`/home/tamara/Downloads/_Git/math`): `notes/scripts/build_catalog.py` → `notes/tables/catalog.tsv`
 (372 rows), consumed by `notes/scripts/triage_t0.py` and described in `notes/README.md`,
-`notes/t0-triage.md`, and a project skill.
+`notes/reports/t0-triage.md`, and a project skill.
 
 ## 0. If the docs quote counts no code reproduces, reconstruct the rule first
 

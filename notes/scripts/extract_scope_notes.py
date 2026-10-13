@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Re-measure the Scope sections of the 242 scope notes. Writes nothing; prints the report.
 
-Every count in notes/scope-exclusions.md comes from this run, so the page's numbers are checkable
+Every count in notes/reports/scope-exclusions.md comes from this run, so the page's numbers are checkable
 against a command. The point of the two vocabulary lists is the floor: the narrow list reproduces
 the 5-of-242 figure the earlier reading pass recorded, and the broad list shows how much a wider
 rule finds. Both are keyword floors over prose, not censuses - the exclusions themselves are the
@@ -71,7 +71,7 @@ def main():
 
     print()
     print("Not checked: whether a section states an exclusion without using any of this vocabulary.")
-    print("That is what the reading pass in notes/scope-exclusions.md is for; these counts are floors.")
+    print("That is what the reading pass in notes/reports/scope-exclusions.md is for; these counts are floors.")
 
 
 if __name__ == "__main__":

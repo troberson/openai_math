@@ -103,7 +103,7 @@ lives in this file and nowhere else.
   `main()` calls the package through `ledger.` / `overview.` / `yaml.`; a name with no importer is
   dropped, not kept. `compare_abstracts.py`, `extract_subfinding_pairs.py` and `extract_named_results.py`
   import `catlib.overview` / `catlib.ledger` / `catlib.paths` directly. `measure_names.py` stays a
-  library: `measure()` is that script's own product (the six-layer measurement `notes/names.md` is
+  library: `measure()` is that script's own product (the six-layer measurement `notes/reports/names.md` is
   checked against), and `dir_of` is its tolerance of a non-`preprints/` path over `catlib.paths.owner`.
   `catlib/templates.py` carries the report-template registry (page → checker, 17 entries), the writer's
   per-page slot dicts, the needle derivation and the split-label grouping, so the builder,
@@ -205,12 +205,12 @@ lives in this file and nowhere else.
   is what leaves the first-match T0 buckets in `triage_t0.py` untouched.
 - Quote a count only with the rule that yields it. The counterexample figures were quoted from a
   reading pass for a day before `COUNTEREX_PHRASE` was written into the generator; no stem variant of
-  the quoted vocabulary reproduces 74 / 30. See `notes/counterexample-tag.md`.
+  the quoted vocabulary reproduces 74 / 30. See `notes/reports/counterexample-tag.md`.
 - Absence of formalization is not a red flag — 547 of 719 manuscripts are unformalized.
 - Read `lean/docs/<NNN>.md` before claiming what a family proves; its `## Scope` section is the
   load-bearing part. It is not an exclusions list, though: **121 of 242 sections state no exclusion
   at all**, and a clause saying an assumption is *not imposed* widens the formalized claim rather
-  than bounding it. The read record is `notes/scope-exclusions.md`; re-measure its floors with
+  than bounding it. The read record is `notes/reports/scope-exclusions.md`; re-measure its floors with
   `python3 notes/scripts/extract_scope_notes.py` (report-only) — the 5-phrase list hits 5 of 242 and
   the 24-phrase list hits 44, while reading finds exclusions in 121. Quote a floor with its phrase
   list, never as the number of families with exclusions.
@@ -246,7 +246,7 @@ lives in this file and nowhere else.
   `noncomputable def MainClaim : Prop := by`. A bare-tail rule reads 188 of the 189 declarations and a
   `private|protected`-only carrier rule misses 1 of the 61 carriers. Both rules were widened in
   `extract_counterexample_crosscheck.py`; measured over the 28-family counterexample population,
-  neither widening adds a row, so `notes/counterexample-crosscheck.md`'s counts are unchanged by them.
+  neither widening adds a row, so `notes/reports/counterexample-crosscheck.md`'s counts are unchanged by them.
 - `sorry` in a comparator stub has two rules: **55** over the 52 distinct config files behind the
   population, **58** over scope-note link **occurrences** (the 3-gap is family 100's four links to
   `CylinderCovering`). Quote the figure with the rule; the extractor prints the per-link number and the
@@ -264,18 +264,18 @@ lives in this file and nowhere else.
 - Attribute reasoning traces from the table in `README.md`, never by guessing from filenames.
 - Bucket the T0 families with `python3 notes/scripts/triage_t0.py` — it reads `notes/tables/catalog.tsv`,
   writes nothing, and reconciles 130 families over 244 manuscripts. Findings live in
-  `notes/t0-triage.md`.
+  `notes/reports/t0-triage.md`.
 - Measure the chains and the 27 with `python3 notes/scripts/extract_t0_chains.py` — report-only, writes
   nothing. Reproducing the bead's 28 needs **three** conditions at once: `tier == T0`, `paps == 2`, and
   the family id appearing between `## Second pass: the remaining 93 families` and `## What the triage
-  shows` in `notes/t0-triage.md`. Repo-wide there are **96** families with exactly 2 manuscripts
+  shows` in `notes/reports/t0-triage.md`. Repo-wide there are **96** families with exactly 2 manuscripts
   (`T0:35`, `T2:20`, `T3:41`) and **35** of them are T0, 8 read in the first pass — so 27 is a
   reading-pass subset, never a census, and "no coverage signal" holds for **26** of them (268 carries
   `verification = 2`). The bead's 28 counted family 066, which the post-merge ledger puts at T3.
   The release records a cross-family link only as a `result (NNN)` clause in the
   overview abstract, which is what the ledger's `companions` column parses: **2** edges over 372
   families. `companion_word` (`\bcompanion` in the same abstract) fires on **9** families and **0** of
-  them carry a `companions` edge — the word is not a link. Findings live in `notes/t0-chains.md`.
+  them carry a `companions` edge — the word is not a link. Findings live in `notes/reports/t0-chains.md`.
 - Quote `notes/tables/conjecture-standing.tsv` as a prior, never as a literature fact. Its
   `standing_prior_2025` column is the assistant's training-data memory at an early-2025 cutoff,
   self-rated by `prior_confidence`; the repo supplies only `release_claim` and `abstract_line`.
@@ -286,7 +286,7 @@ lives in this file and nowhere else.
   consequence. The "only 14 of 372 family titles appear in the corpus's `.bib` files" figure this tip
   used to carry **is** reproduced — by a 6-token lowercased title prefix over the 417 `.bib` files at
   glob depth ≤3, counting own-family bibliographies — but its conclusion ("these manuscripts do not
-  cite each other") does not follow; see `notes/links.md`.
+  cite each other") does not follow; see `notes/reports/links.md`.
 - Extract the upstream library graph with `python3 notes/scripts/extract_formalization_deps.py`. It
   reads all 122,458 `lean/OAI/**/*.lean` files, so it takes minutes, not seconds, and it refuses to
   write the TSV when a join breaks. Import counts are over `lean/OAI/**/*.lean` — the whole tree
@@ -318,7 +318,7 @@ lives in this file and nowhere else.
   same 7 docs `links.tsv` records (071, 100, 115, 134, 274, 275, 293), so a per-family `set()` over a
   table reports 416 rows and is wrong. A display title is link text, not a sub-result, and it is not
   the manuscript's own title — the `preprints/` directory name is. Pairing has been read for 49
-  families (203 manuscripts) in `notes/subfinding-pairs.md`: 62 sub-finding clause pairs and 47 headline
+  families (203 manuscripts) in `notes/reports/subfinding-pairs.md`: 62 sub-finding clause pairs and 47 headline
   clause pairs accepted, 18 clauses recorded unmatched, 109 of 203 titles claimed by a clause and 94 by
   none. Quote the display text verbatim — the release is inconsistent about capitalization
   (`Correspondence coloring graphs…` vs `Equivariant Jiang--Su Stability…`) and about dashes
@@ -332,7 +332,7 @@ lives in this file and nowhere else.
   families is 40, not 51 — nine of the bead's ten named densest targets sit outside its own 40. Rules
   tried and rejected: `also` (56), `both ` (48), `companion` (10), `together` (8), ≥2 prove-verbs (33),
   ≥2 sentences with a prove-verb (32), ≥3 sentences (73). Same shape as the counterexample 74 / 30 case;
-  see `notes/counterexample-tag.md` and the population section of `notes/subfinding-pairs.md`.
+  see `notes/reports/counterexample-tag.md` and the population section of `notes/reports/subfinding-pairs.md`.
 - Seed the quote-spec table with `python3 notes/scripts/seed_quotes.py` — a writer that lands
   `notes/tables/quotes.tsv` (1,161 rows, 10 columns) through the promote registry and resolves every spec
   back against the file its `path` names, requiring the resolved span to be the page's quote in its own
@@ -363,7 +363,7 @@ lives in this file and nowhere else.
   `resolution`, which it over-flags (144 of 372 families vs 153 of 719 manuscripts). For a
   multi-manuscript family a low per-manuscript ratio is expected — the overview is a synthesis of
   several manuscripts (368 merges $p\le2$ with $p>2$; 240 merges a ZFC theorem with a CH obstruction),
-  so quote the unit with the number. See `notes/abstracts.md`.
+  so quote the unit with the number. See `notes/reports/abstracts.md`.
 - Extract the named-result inventory the manuscript **statements** carry with
   `python3 notes/scripts/extract_named_results.py` — report-only, writes nothing; run it twice and diff,
   the 186-line report is byte-identical. Headline statements are `theorem`/`maintheorem`/`thm` begins:
@@ -383,7 +383,7 @@ lives in this file and nowhere else.
   renders "149 (99 removals)" — a different rule (target noun case-insensitively in the title, verb in
   the lowered abstract) that also reads 149 and differs from the raw-concatenation set on **128**
   families. Quote a removal count with its baseline and its rule.
-  Findings: `notes/named-results.md`.
+  Findings: `notes/reports/named-results.md`.
 - `notes/tables/sources.tsv`'s `abstract` column is a per-directory **flag**, not an occurrence count: the
   corpus ships 722 `abstract` environments over 719 manuscript directories (057, 039 and 056 each ship
   two), and every one of the 719 directories has at least one.
@@ -397,7 +397,7 @@ lives in this file and nowhere else.
   corpus-wide and tier-independent — and no claim shape clears the bar. Direction is opposite the
   naive reading: T0, the least-formalized tier, carries the most proofs per manuscript (median
   30.000) because its manuscripts are the largest (168.206 KB vs 89.041 in T3). **No ledger column
-  was added.** Findings in `notes/proof-density.md`.
+  was added.** Findings in `notes/reports/proof-density.md`.
 - Distinguish generated from hand-written **before** editing anything under `notes/`: the ownership
   manifest is `notes/scripts/README.md`, and it is the only place that answers "whose bytes are
   this". It is also the script inventory: every script under `notes/scripts/` is listed once as
@@ -499,7 +499,7 @@ lives in this file and nowhere else.
   per-manuscript formalized flag, which counts only listed manuscripts.
 - Quote a count only from a fresh generator report, never from a previous run's output.
 - Confirm a new tag discriminates before quoting it: the `conditional` tag flagged 9 families and
-  5 were not assumptions. `notes/conditional.md` is the model for a reading pass.
+  5 were not assumptions. `notes/reports/conditional.md` is the model for a reading pass.
 - Parenthesized manuscript paths need `preprints/(?:[^\s(){}\\]|\([0-9]+\))*\.pdf`; excluding
   `{}` and `\` is what keeps the read honest — the strict rule gives **719** matches, **719**
   distinct, **0** of them absent from disk, exactly the manuscript list, while a looser class
@@ -520,7 +520,7 @@ lives in this file and nowhere else.
   counts as flagged by the `NO CITATION` branch. Quote the report by its form names: a page with no
   quotation marks at all is proven only by the block-quote mutant. The checker measures, the test file
   injects; the checker no longer carries its own `--mutant` branch.
-- Check `notes/abstracts.md` with `python3 notes/scripts/verify_abstracts.py` and its extracted
+- Check `notes/reports/abstracts.md` with `python3 notes/scripts/verify_abstracts.py` and its extracted
   self-tests with
   `python3 notes/scripts/run_tests.py notes/scripts/tests/test_abstracts.py -q`
   before quoting any of its counts — the checker resolves every `[S#]` marker to a Sources-table row,
@@ -539,7 +539,7 @@ lives in this file and nowhere else.
   `python3 notes/scripts/compare_abstracts.py --tsv` writes `notes/tables/abstracts.tsv`; run it once and
   `verify_cache_promotion.py` asserts that the bytes cached under its key equal the bytes on the TSV —
   372 rows — and `--mutant` must catch all 7 injected corruptions.
-- Check `notes/named-results.md` with `python3 notes/scripts/verify_named_results.py` before
+- Check `notes/reports/named-results.md` with `python3 notes/scripts/verify_named_results.py` before
   quoting any of its counts — it resolves every `path:line` anchor and every bare `:NNN` overview anchor
   against `famline`, re-derives all 65 count phrases from `extract_named_results.population()`, checks
   the 17-row target table against that population and the ledger, and matches every `*"…"*` quotation
@@ -574,12 +574,12 @@ lives in this file and nowhere else.
   fault and for no other; the tier needle is `'T0': 129` rather than the whole dict, because the gate
   prints the tier counts in set-iteration order, which is not stable across processes. The clean test
   pins the population the gates report. The page check is **not** here: `verify_page_sync.py` owns the
-  render diff and mutates the page in memory, so this script never writes `notes/proof-density.md` and
+  render diff and mutates the page in memory, so this script never writes `notes/reports/proof-density.md` and
   `main()` reads no argv, making `--mutant` and `--quiet` inert. It writes nothing; run it twice and
   diff — the report must be identical. Ties score 0.5, so `([1,2,3],[0,1,2])` is **7/9**, not 6/9, and the ranks
   must be assigned over the **jointly sorted** pooled sample — sorting each group and concatenating
   gives every AUC as 0.000 with absurd p-values.
-- Check `notes/scope-exclusions.md` with `python3 notes/scripts/verify_scope_exclusions.py` and its
+- Check `notes/reports/scope-exclusions.md` with `python3 notes/scripts/verify_scope_exclusions.py` and its
   extracted self-tests with
   `python3 notes/scripts/run_tests.py notes/scripts/tests/test_scope_exclusions.py -q`
   before quoting any entry — the checker requires exactly one row per scope note on disk, checks every
@@ -647,7 +647,7 @@ lives in this file and nowhere else.
   `extract_subfindings.py` wrote later in the same gate pass, so row 2 depended on row 5 — which makes
   the row-assembly comparison self-referential. The independent checks are the on-disk PDF read and the
   path-set comparison, both keyed to `catlib.overview.parse_overview()` rather than to the table.
-- Check `notes/sources.md` with `python3 notes/scripts/verify_sources.py` before quoting any figure —
+- Check `notes/reports/sources.md` with `python3 notes/scripts/verify_sources.py` before quoting any figure —
   it re-derives all 31 count phrases from a fresh recount over `preprints/` (root distribution,
   main-file outcomes, single-root names, column sums, the six-name environment total and its per-name
   gap), requires every backticked manuscript directory name on the page to exist, resolves every
@@ -666,7 +666,7 @@ lives in this file and nowhere else.
   six-name environments against the declared-rule 21,288. `main()` reads no argv, so `--mutant` is
   inert, and `population()` is under `functools.cache` (`:152`), so the thirteen `check()` calls the
   row makes pay the corpus walk once. It writes nothing.
-- Check `notes/subfinding-pairs.md` with `python3 notes/scripts/verify_subfinding_pairs.py` and its
+- Check `notes/reports/subfinding-pairs.md` with `python3 notes/scripts/verify_subfinding_pairs.py` and its
   extracted self-tests with
   `python3 notes/scripts/run_tests.py notes/scripts/tests/test_subfinding_pairs.py -q`
   before quoting any count from it — the checker requires exactly one block per population family and none
@@ -686,7 +686,7 @@ lives in this file and nowhere else.
   47 headline pairs, 18 unmatched clauses, 109 titles claimed, 94 unclaimed, 40 families with an accepted
   pair, 17 with an unmatched clause, 6 pairing with no probe hit, 62 probe hits over 372, 40 over the
   167 multi-manuscript families. It writes nothing.
-- Check `notes/conditional.md` with `python3 notes/scripts/verify_conditional.py` and its extracted
+- Check `notes/reports/conditional.md` with `python3 notes/scripts/verify_conditional.py` and its extracted
   self-tests with `python3 notes/scripts/run_tests.py notes/scripts/tests/test_conditional.py -q`
   before quoting the source check — the checker attributes each fenced block to the nearest preceding
   `file:line` anchor and matches every block line, resolves each `*"…"*` prose quotation and each
@@ -696,7 +696,7 @@ lives in this file and nowhere else.
   asserted against the pass that owns it. It reports
   **15 unanchored prose quotations** — the pre-existing abstract and scope-note quotes in the
   per-family sections, which carry no line anchors and are therefore not verified. It writes nothing.
-- Check `notes/counterexample-crosscheck.md` with `python3 notes/scripts/verify_counterexample_crosscheck.py`
+- Check `notes/reports/counterexample-crosscheck.md` with `python3 notes/scripts/verify_counterexample_crosscheck.py`
   and its extracted self-tests with
   `python3 notes/scripts/run_tests.py notes/scripts/tests/test_counterexample_crosscheck.py -q`
   before quoting any of its counts
@@ -720,7 +720,7 @@ lives in this file and nowhere else.
   Each needle is measured specific: it fires for its own fault and for no other. Both write nothing.
   Run `python3 notes/scripts/extract_counterexample_crosscheck.py` twice and diff:
   the report must be identical.
-- Check `notes/formalization-faithfulness.md` with `python3 notes/scripts/verify_faithfulness.py`
+- Check `notes/reports/formalization-faithfulness.md` with `python3 notes/scripts/verify_faithfulness.py`
   and its extracted self-tests with
   `python3 notes/scripts/run_tests.py notes/scripts/tests/test_faithfulness.py -q`
   before quoting any of its counts — it
@@ -743,7 +743,7 @@ lives in this file and nowhere else.
   reads no argv, so `--mutant` is inert, and writes nothing. Quote a count from
   `python3 notes/scripts/measure_faithfulness.py`'s report, which is the writer's source for every
   number on the page.
-- Check `notes/t0-chains.md` with `python3 notes/scripts/verify_t0_chains.py` and its extracted
+- Check `notes/reports/t0-chains.md` with `python3 notes/scripts/verify_t0_chains.py` and its extracted
   self-tests with `python3 notes/scripts/run_tests.py notes/scripts/tests/test_t0_chains.py -q`
   before quoting any of its counts — it resolves every `file:line` anchor (`.bib` files included),
   matches each fenced block against the **nearest preceding** anchor as joined text against the same
@@ -759,7 +759,7 @@ lives in this file and nowhere else.
   the phrase list), each asserted against the pass that owns it; the last is keyed to the page line the
   render diff names, because the render diff truncates both sides. `main()` reads no argv, so
   `--mutant` is inert in the checker. `population()` is under `functools.cache` (`:118`), so the row
-  pays the ledger, `subfindings.tsv`, `notes/t0-triage.md` and `.bib` walk once. It writes nothing.
+  pays the ledger, `subfindings.tsv`, `notes/reports/t0-triage.md` and `.bib` walk once. It writes nothing.
   Run `python3 notes/scripts/extract_t0_chains.py` twice and diff:
   the report must be identical — 27 families over 54 manuscripts, 26 with zero coverage signal, 2 chain
   edges over 372 families, 9 `companion_word` families carrying 0 edges, 15 families citing their
@@ -768,7 +768,7 @@ lives in this file and nowhere else.
   bundles, which README section names them, and each bundle's entry point) and
   `python3 notes/scripts/extract_verification_348.py` (the family-348 pair); run each twice and diff:
   the report must be identical. Both read the bundles as text and run nothing. Check
-  `notes/verification-dirs.md` with `python3 notes/scripts/verify_verification_dirs.py` before
+  `notes/reports/verification-dirs.md` with `python3 notes/scripts/verify_verification_dirs.py` before
   quoting either of its sections — it re-derives every bold count from the files on disk, resolves every
   `file:line` anchor, matches each fenced block line, checks each quotation against the anchored lines
   (a quotation with an anchor in its own table row must match at the anchored line exactly, so a shifted
@@ -812,7 +812,7 @@ lives in this file and nowhere else.
   that the bytes cached under its key equal the bytes on the TSV. Its report reconciles 31 rows = 30 declared + 1 undeclared, 30 lakefile requires
   pinned to 40-char commits, 30 yaml entries, 23 patches over 160,187 lines, 42 manifest packages
   = 30 declared + 12 transitive, 19 declared with zero direct imports, and 5 yaml ordering violations.
-- Check `notes/dependency-drift.md` with `python3 notes/scripts/verify_dependency_drift.py` and its
+- Check `notes/reports/dependency-drift.md` with `python3 notes/scripts/verify_dependency_drift.py` and its
   extracted self-tests with
   `python3 notes/scripts/run_tests.py notes/scripts/tests/test_dependency_drift.py -q`
   before quoting any dependency figure — it resolves all 52 `path:line` anchors (bare `:NNN` anchors
@@ -831,7 +831,7 @@ lives in this file and nowhere else.
   union == the 23 patched libraries; 19 zero-import with 14 patched and 5 not; medians 2,575 (any
   import) vs 408 (none). Run it twice and diff — the report must be identical. It writes nothing and
   never scans `lean/OAI/**/*.lean`; import counts come from the TSV.
-- Check `notes/citations.md` with `python3 notes/scripts/verify_citations.py` and its extracted
+- Check `notes/reports/citations.md` with `python3 notes/scripts/verify_citations.py` and its extracted
   self-tests with `python3 notes/scripts/run_tests.py notes/scripts/tests/test_citations.py -q`
   before quoting any of its counts — the checker re-derives the shared-bibliography population from
   `preprints/**/*.bib` through `catlib.bib` (the fresh run measures 521 `.bib` files, 513 owner
@@ -848,7 +848,7 @@ lives in this file and nowhere else.
   count), each asserted against the pass that owns it; `main()` reads no argv, so `--mutant` is inert
   in the checker. `measure()` is under `functools.cache` (`:75`), so the row pays the two
   normalizations once. It writes nothing.
-- Check `notes/findings.md` with `python3 notes/scripts/verify_findings.py` and its extracted self-tests
+- Check `notes/reports/findings.md` with `python3 notes/scripts/verify_findings.py` and its extracted self-tests
   with `python3 notes/scripts/run_tests.py notes/scripts/tests/test_findings.py -q` before quoting
   any of its counts — seven passes: sources (the Sources table names files that exist, declares the
   line count they have, every row is cited, and the body's `[Sn]` markers are contiguous and in
@@ -866,7 +866,7 @@ lives in this file and nowhere else.
   fault and for no other. `run()` is under `functools.cache` (`verify_findings.py:132`) because every
   script in `REPORTS` is report-only, which is what keeps the seven `check()` calls the test row makes
   from paying the five subprocesses once per call. It writes nothing.
-- Check `notes/named-conjectures.md` with `python3 notes/scripts/verify_named_conjectures.py` and its
+- Check `notes/reports/named-conjectures.md` with `python3 notes/scripts/verify_named_conjectures.py` and its
   extracted self-tests with
   `python3 notes/scripts/run_tests.py notes/scripts/tests/test_named_conjectures.py -q`
   before quoting any of its counts — it re-derives the population from `notes/tables/catalog.tsv` and
@@ -914,7 +914,7 @@ lives in this file and nowhere else.
   200 `main_results` entries over 189 unique configs in 136 families, 393 release-labelled bib
   entries over 391 resolved edges reaching 156 families, the legacy title proxy at 14 over 417
   `.bib` files (17 any / 12 cross over all 500), 0 MSC hits, 0 bib `keywords` fields, and 12
-  `\keywords` directories. The run ends with `sync problems (notes/links.md) N`, folded into the exit
+  `\keywords` directories. The run ends with `sync problems (notes/reports/links.md) N`, folded into the exit
   code; `render_reports.py` computes that page's slots by running this script as a child and marks the
   child with `RENDER_REPORTS_CHILD`, where the pass is inert by design.
 - Run `python3 notes/scripts/build_index.py` once: `verify_cache_promotion.py` asserts that the bytes
@@ -954,17 +954,17 @@ lives in this file and nowhere else.
   lives in `verify_page_sync.py --mutant`, which owns the page check and mutates in memory, so
   neither script writes the page. Findings: `notes/development/index-links.md`.
 - Run `python3 notes/scripts/measure_names.py` before quoting a name count: it re-derives every figure
-  in `notes/names.md` from the corpus (7,240 `.tex` files, 16,889 titled statement environments,
+  in `notes/reports/names.md` from the corpus (7,240 `.tex` files, 16,889 titled statement environments,
   13,581 `.bib` entries over 5,809 author keys, 3,407 title candidates, 2,850 rejections by bucket).
   It writes only the keyed record under `.qwen/cache/records/`, which is untracked, so the pages are not
-  its test — `notes/names.md` is the document it checks. Its
-  report branch ends with a sync pass: `sync problems (notes/names.md) N`, the page compared with
+  its test — `notes/reports/names.md` is the document it checks. Its
+  report branch ends with a sync pass: `sync problems (notes/reports/names.md) N`, the page compared with
   `render_reports.py`'s render of it; the script exits 1 on a nonzero N. It has no mutant self-test, so
   the pass has no mutant of its own to catch.
 - Run `python3 notes/scripts/measure_topics.py --check` before quoting any topic count: it re-measures
   all 92 rows of `notes/tables/topics.tsv` and exits 1 when a recorded per-layer count has drifted, or when
-  `notes/topics.md` disagrees with `render_reports.py`'s render of it — the sync pass prints
-  `sync problems (notes/topics.md) N` in both the `--check` branch and the plain report, and the plain
+  `notes/reports/topics.md` disagrees with `render_reports.py`'s render of it — the sync pass prints
+  `sync problems (notes/reports/topics.md) N` in both the `--check` branch and the plain report, and the plain
   report exits 1 on a nonzero N. Its
   report yields 92 terms over 372 families, 4 unassigned terms, 372 of 372 families covered, 978
   assignments, and the per-family topic histogram `1:93 2:103 3:87 4:51 5:21 6:13 7:2 8:1 9:1`. Quote a
@@ -1070,8 +1070,8 @@ lives in this file and nowhere else.
   pay the `git`/`du`/script-tree walk once. It writes nothing; run it twice and diff — the report is
   identical.
 - Check the five sync pages with `python3 notes/scripts/verify_page_sync.py --both` before reporting
-  them green — it is the render diff for `notes/links.md`, `notes/names.md`, `notes/topics.md`,
-  `notes/proof-density.md` and `notes/development/index-links.md`: each page's bytes on disk against the bytes
+  them green — it is the render diff for `notes/reports/links.md`, `notes/reports/names.md`, `notes/reports/topics.md`,
+  `notes/reports/proof-density.md` and `notes/development/index-links.md`: each page's bytes on disk against the bytes
   `render_reports.py` renders for it. `math-o3a.3` moved this pass out of `extract_links.py`,
   `measure_names.py`, `measure_topics.py`, `measure_proof_density.py` and `check_index_links.py`, so the
   writer fleet reads only what it is allowed to read and the page check has one owner. `math-o3a.5.2`'s
@@ -1080,7 +1080,7 @@ lives in this file and nowhere else.
   walk twice. `--mutant`
   mutates each page's prose **in memory** and compares the mutated text with the render — it never
   writes a page, so the two pages that had a second writer in a mutant branch (`notes/development/index-links.md`,
-  `notes/proof-density.md`) have one writer each. A needle absent from its page is reported as a
+  `notes/reports/proof-density.md`) have one writer each. A needle absent from its page is reported as a
   problem: an inert mutant is not a pass. It writes nothing; run `--both` twice and diff — the report
   is identical (**0 problems**, **5 of 5** caught).
 

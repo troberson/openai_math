@@ -34,7 +34,7 @@ slots  sources 31  abstracts 41  named-results 82  index-design 98  names 129  p
           abs/other                  67
           top-level                  44
 [probe2] notes/ paths (count  modes  path):
-              2  r        notes/formalization-deps.md
+              2  r        notes/reports/formalization-deps.md
               5  r        notes/index/README.md
               5  r        notes/index/algebra/193-serres-intersection-multiplicity-conjecture.md
               5  r        notes/index/algebra/194-lechs-multiplicity-conjecture.md
@@ -1084,9 +1084,9 @@ slots  sources 31  abstracts 41  named-results 82  index-design 98  names 129  p
               5  r        notes/index/topology/320-a-four-dimensional-counterexample-to-borel-rigidity.md
               5  r        notes/index/topology/321-a-counterexample-to-walls-finite-d-2-conjecture.md
               4  r        notes/index/traces.tsv
-              1  r        notes/scope-exclusions.md
-              1  r        notes/subfinding-pairs.md
-              3  r        notes/t0-triage.md
+              1  r        notes/reports/scope-exclusions.md
+              1  r        notes/reports/subfinding-pairs.md
+              3  r        notes/reports/t0-triage.md
               6  r        notes/tables/abstracts.tsv
              37  r        notes/tables/catalog.tsv
               6  r        notes/tables/conjecture-standing.tsv

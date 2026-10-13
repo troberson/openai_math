@@ -7,7 +7,7 @@ extracted_at: '2026-10-08T06:34:04.344Z'
 
 # Writing a checker for a notes page
 
-Worked out on `/home/tamara/Downloads/_Git/math` while shipping `notes/findings.md` with
+Worked out on `/home/tamara/Downloads/_Git/math` while shipping `notes/reports/findings.md` with
 `notes/scripts/verify_findings.py`. The page-writing half is covered by
 `family-summary-citation-verified` (passes A/B/C). **This file is the checker-authoring half** — the
 defects that made a checker report success while verifying nothing, and the ones that made it report
@@ -52,7 +52,7 @@ Three separate failures, all found in one session:
 1. **A stale mutant target is a silent no-op.** `p.replace("Reading all 235 sections, 115", …)` after
    the page had been rewritten to a verbatim quotation: the target string no longer existed, the
    mutation did nothing, the run reported `UNDETECTED (0 problems)` and **exited 0**. That pair is a
-   dated incident, not a current figure — `notes/scope-exclusions.md` now reads **242** scope notes
+   dated incident, not a current figure — `notes/reports/scope-exclusions.md` now reads **242** scope notes
    with **121** stating an exclusion, so re-audit targets against the live page. Assert the
    mutation changed the page:
 

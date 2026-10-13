@@ -5,7 +5,7 @@ Measured 2026-10-06 by static reading of the 372 family abstracts in `overview.t
 before any tag rule in `notes/scripts/build_catalog.py` is widened. **No tag was changed.** The
 measurement ended in a separate column, recorded under "Decision" below.
 
-Method is the one `notes/conditional.md` records: propose a rule, count what it flags, read every
+Method is the one `notes/reports/conditional.md` records: propose a rule, count what it flags, read every
 flagged abstract, and record the flags that reading drops.
 
 ## The current rule and what it misses
@@ -33,7 +33,7 @@ complex geometry 16, group theory 9, differential geometry 9, combinatorics 8, t
 
 The column as applied reads the overview **title and abstract lowered together** and flags **248**
 (T0 86, T2 61, T3 101), so the column-only set is **109**, not 94. The 15 title-scope additions are
-corroborated at the manuscript-abstract layer in `notes/named-results.md`; they were **not read
+corroborated at the manuscript-abstract layer in `notes/reports/named-results.md`; they were **not read
 here**, so the precision figure below is measured on the 94 abstract-only flags and says nothing
 about the extra 15.
 
@@ -46,7 +46,7 @@ Three need qualifiers:
 - **277** is the only accidental match: `question` appears in "correlated question distributions",
   a technical noun. The result (exponential threshold repetition for every finite two-player
   one-round entangled game) is a genuine resolution in kind, so the flag is right for the wrong
-  reason. This is the "conditional expectation" class from `notes/conditional.md`.
+  reason. This is the "conditional expectation" class from `notes/reports/conditional.md`.
 - **080** resolves the sharp Sobolev endpoint of Carleson's convergence problem, not the whole
   problem. **158** rules out five-colourings of the plane, narrowing Hadwiger–Nelson to {6,7}
   without settling it. Both are partial resolutions, and the tag would not say so.
@@ -54,7 +54,7 @@ Three need qualifiers:
 Precision of the candidate rule on this corpus is therefore 94/94 on "resolution in kind", with 1
 accidental match and 2 partials. That is a much better yield than `conditional` (9 flagged, 5
 genuine) and the same shape as `counterexample` (30 untagged flags, 30 genuine —
-`notes/counterexample-tag.md`): the tag omits far more than it mislabels.
+`notes/reports/counterexample-tag.md`): the tag omits far more than it mislabels.
 
 ## Why the current rule misses each one
 
@@ -182,7 +182,7 @@ families out of C, B, K, U, N into R. The 130/244 T0 totals and every coverage l
 candidate rule. The `resolution` entry in `SHAPES` is unchanged, so the shape table stays at 144 and
 the first-match buckets in `triage_t0.py` are untouched — re-run after the change, the buckets are
 C 16, R 46, B 27, K 8, U 12, O 2, N 19 over 130 families / 244 manuscripts / 0 formalized, identical
-to the record in `notes/t0-triage.md`.
+to the record in `notes/reports/t0-triage.md`.
 
 ```python
 TARGET_NOUN  = r"conjectur|\bquestion|\bproblem"
@@ -239,7 +239,7 @@ against the first-match buckets (`triage_t0.py`, bucket: column=1 / column=0):
 41 flagged T0 families (57 manuscripts) sit outside bucket R — first match assigns them elsewhere, so
 the bucket table alone never shows them as named-target resolutions.
 
-The N bucket is described in `notes/t0-triage.md` as "no shape tag at all — title is the only signal".
+The N bucket is described in `notes/reports/t0-triage.md` as "no shape tag at all — title is the only signal".
 Most of it is now not title-only; all 11 are named-conjecture families: 019, 031, 043, 051, 060, 164,
 258, 306, 316, 338, 341. Those are the T0 families where the abstract names a conjecture and the
 `resolution` pattern matched none of its verbs, which is exactly the miss this file measures.

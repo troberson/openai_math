@@ -62,7 +62,7 @@ noncomputable def MainClaim : Prop := by
 
 A carrier rule that allows `private` and `protected` but not `noncomputable` reads this as missing.
 Measured over the 28-family counterexample population, neither widening adds a row, so
-`notes/counterexample-crosscheck.md`'s counts are unchanged by them.
+`notes/reports/counterexample-crosscheck.md`'s counts are unchanged by them.
 
 ## The numeric pairing
 

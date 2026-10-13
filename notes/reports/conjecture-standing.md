@@ -110,7 +110,7 @@ Three rows were corrected by the checker on its first run: **187** cited line 45
   files" figure this bullet used to carry is reproduced (a 6-token lowercased title prefix over the 417
   `.bib` files at glob depth ≤3, own-family bibliographies included), but it measures a proxy whose
   scope is 417 of 501 files and which has no ownership test; the shipped title rule yields 12
-  cross-family / 23 including own-family. See `notes/links.md`. Consequence claims stay
+  cross-family / 23 including own-family. See `notes/reports/links.md`. Consequence claims stay
   external to this table, now because the edges carry no direction of dependence, not because they
   are absent.
 - The prior is not a literature survey. It is one model's memory at a cutoff: it can be wrong about a

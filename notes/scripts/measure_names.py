@@ -4,7 +4,7 @@
 math-u41.4. Names sit in four sources; this script extracts candidate names from
 all four, plus the two body layers that tell a subject from a citation, normalizes
 the spelling variants the sources disagree on, classifies each candidate, and prints
-the report every count in notes/names.md and notes/index/names/ comes from. With
+the report every count in notes/reports/names.md and notes/index/names/ comes from. With
 --json it dumps the records notes/scripts/build_index.py renders into name pages. It writes one file:
 the keyed record store at `.qwen/cache/records/<key>/names.json`, which the `.qwen/*` rule in
 `.gitignore` keeps untracked, so a cache write never touches the tracked tree. Every consumer that
@@ -50,7 +50,7 @@ a LaTeX macro (dominant surface with an internal capital: OpenAIWidth), a prose 
 then the name-like test. A candidate that is name-like from any title source is a
 subject; one that is not name-like is accepted only through the family-title escape.
 
-The page check is not here: `notes/names.md` is compared with `render_reports.py`'s render of it by
+The page check is not here: `notes/reports/names.md` is compared with `render_reports.py`'s render of it by
 `verify_page_sync.py`, which owns that pass. This script measures and prints; it reads no page.
 
 Run: python3 notes/scripts/measure_names.py [--json] [--check-only]
@@ -130,7 +130,7 @@ LABEL_WORDS = {
 
 # Tokens that pass the mid-sentence capitalization test and appear in a title layer,
 # but name a mathematical object or an English adjective, not a person. Each was
-# traced to the title that produced it; the trace is recorded in notes/names.md.
+# traced to the title that produced it; the trace is recorded in notes/reports/names.md.
 # Names that look like this and are kept: eccles ("Eccles's conjecture for spheres"),
 # street ("Street nerves of two-piece covers"), villain (the Villain field),
 # sebastiani ("Thom--Sebastiani--Sakamoto"), saint ("Saint--Venant"), solitar
@@ -144,7 +144,7 @@ JUNK_WORDS = {
     "stablest",    # "Majority Is Stablest with a degree cutoff"
 }
 
-# The tokens notes/names.md tabulates to show the gate separating names from words.
+# The tokens notes/reports/names.md tabulates to show the gate separating names from words.
 # Rejected candidates carry no row in the JSON, so the gate's evidence for them lives
 # only here: the report prints cap/mid/low for each token in this list.
 PROBE_TOKENS = ("the", "all", "games", "lane", "hom", "quot", "cat", "adm",

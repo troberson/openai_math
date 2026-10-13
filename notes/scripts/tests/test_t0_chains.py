@@ -1,10 +1,10 @@
-"""The extracted self-tests for `notes/scripts/verify_t0_chains.py` and `notes/t0-chains.md`.
+"""The extracted self-tests for `notes/scripts/verify_t0_chains.py` and `notes/reports/t0-chains.md`.
 
 The checker's passes are: the anchor pass (every backticked `path:line` resolves to a file that
 exists with the line in range); the fenced-block pass (each block attributed to the nearest preceding
 anchor, matched as joined text against the same number of source lines); the quotation pass (each
 *"…"* pinned to an anchor in its own row, verbatim modulo whitespace); the count pass (the count
-phrases re-derived from the ledger, `subfindings.tsv`, `notes/t0-triage.md` and the `.bib` layer);
+phrases re-derived from the ledger, `subfindings.tsv`, `notes/reports/t0-triage.md` and the `.bib` layer);
 the summary-table and chain-table passes (field by field); the family-block pass (one block per
 population family, each naming exactly its own two manuscripts with titles verbatim on the family's
 anchor line, and each Citation layer line matching the recomputed counts); the named-list pass; the
@@ -22,7 +22,7 @@ import pathlib
 
 import pytest
 
-PAGE = pathlib.Path("notes/t0-chains.md")
+PAGE = pathlib.Path("notes/reports/t0-chains.md")
 
 # (label, needle, mutation). A needle must fire for its own fault and for no other, and must not
 # fire on the clean page.

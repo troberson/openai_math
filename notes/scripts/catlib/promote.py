@@ -36,22 +36,22 @@ from catlib.records import key as digest_key
 
 # The nineteen report-fed pages, in the order the registry in `catlib/templates.py` lists them.
 REPORT_PAGES = (
-    "notes/abstracts.md",
+    "notes/reports/abstracts.md",
     "notes/development/index-links.md",
     "notes/development/index-design.md",
-    "notes/links.md",
-    "notes/dependency-drift.md",
-    "notes/named-results.md",
-    "notes/names.md",
-    "notes/proof-density.md",
-    "notes/sources.md",
-    "notes/verification-dirs.md",
-    "notes/scope-exclusions.md",
-    "notes/topics.md",
-    "notes/t0-chains.md",
-    "notes/subfinding-pairs.md",
-    "notes/counterexample-crosscheck.md",
-    "notes/formalization-faithfulness.md",
+    "notes/reports/links.md",
+    "notes/reports/dependency-drift.md",
+    "notes/reports/named-results.md",
+    "notes/reports/names.md",
+    "notes/reports/proof-density.md",
+    "notes/reports/sources.md",
+    "notes/reports/verification-dirs.md",
+    "notes/reports/scope-exclusions.md",
+    "notes/reports/topics.md",
+    "notes/reports/t0-chains.md",
+    "notes/reports/subfinding-pairs.md",
+    "notes/reports/counterexample-crosscheck.md",
+    "notes/reports/formalization-faithfulness.md",
     "notes/development/fleet-design.md",
     "notes/development/templates.md",
     "notes/README.md",
@@ -67,16 +67,16 @@ L1: dict[str, tuple[str, ...]] = {
     "extract_subfindings.py": ("notes/tables/catalog.tsv",),
     "extract_formalization_deps.py": (),
     "compare_abstracts.py": ("notes/tables/catalog.tsv", "notes/tables/sources.tsv"),
-    "refresh_summary_line_counts.py": ("notes/tables/catalog.tsv", "notes/counterexample-tag.md",
-                                       "notes/sources.md", "notes/t0-triage.md"),
+    "refresh_summary_line_counts.py": ("notes/tables/catalog.tsv", "notes/reports/counterexample-tag.md",
+                                       "notes/reports/sources.md", "notes/reports/t0-triage.md"),
     "build_index.py": ("README.md", "notes/tables/catalog.tsv", "notes/tables/sources.tsv", "notes/tables/topics.tsv",
                        "notes/templates/discipline.md.j2", "notes/templates/family.md.j2",
                        "notes/templates/index-readme.md.j2", "notes/templates/name.md.j2",
                        "notes/templates/topic.md.j2"),
     "render_reports.py": ("README.md", "notes/tables/abstracts.tsv", "notes/tables/catalog.tsv",
-                          "notes/tables/conjecture-standing.tsv", "notes/formalization-deps.md",
+                          "notes/tables/conjecture-standing.tsv", "notes/reports/formalization-deps.md",
                           "notes/tables/formalization-deps.tsv", "notes/tables/links.tsv",
-                          "notes/tables/sources.tsv", "notes/tables/subfindings.tsv", "notes/t0-triage.md",
+                          "notes/tables/sources.tsv", "notes/tables/subfindings.tsv", "notes/reports/t0-triage.md",
                           "notes/tables/topics.tsv", "notes/templates/", "notes/index/",
                           # The fleet page's population scans the fleet's own sources and the two
                           # tracked probe records, so the key must hash them: a key that did not could
@@ -98,8 +98,8 @@ L1: dict[str, tuple[str, ...]] = {
     # probe record `notes/development/probe/2026-10-12_seed_quotes_summaries.txt` justifies this
     # list: it is the first record that names the summaries tree, and the three notes pages appear
     # because a Sources cell can point at a notes page, not only at a manuscript file.
-    "seed_quotes.py": ("notes/subfinding-pairs.md", "notes/summaries/", "notes/counterexample-tag.md",
-                       "notes/t0-triage.md", "notes/tables/catalog.tsv"),
+    "seed_quotes.py": ("notes/reports/subfinding-pairs.md", "notes/summaries/", "notes/reports/counterexample-tag.md",
+                       "notes/reports/t0-triage.md", "notes/tables/catalog.tsv"),
     # The named-result population is a record producer: its inputs are the ledger and the five hashed
     # trees, plus `measure_names.py`, whose keyed record it reads through `M.measure()`. That record
     # is a function of `measure_names.py`'s source, so the key must hash the source: a key that did

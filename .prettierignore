@@ -15,9 +15,9 @@ notes/*.md
 notes/scripts/**/*.md
 notes/summaries/**/*.md
 notes/development/upstream_history/*.md
-!notes/conjecture-standing.md
-!notes/links.md
-!notes/proof-density.md
+!notes/reports/conjecture-standing.md
+!notes/reports/links.md
+!notes/reports/proof-density.md
 !notes/development/summaries-workflow.md
 
 # Release mirror - this fork mirrors the release byte-for-byte.

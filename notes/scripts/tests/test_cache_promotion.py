@@ -31,26 +31,26 @@ REGISTRY_CASES = [
     ("L1 entry the probe names removed", "L1 drift refresh_summary_line_counts.py",
      lambda a, l, pg, ar: (a, {**l, "refresh_summary_line_counts.py":
                                tuple(e for e in l["refresh_summary_line_counts.py"]
-                                   if e != "notes/t0-triage.md")}, pg, ar)),
+                                   if e != "notes/reports/t0-triage.md")}, pg, ar)),
     ("L1 entry added that is a self-output", "L1 self-read: build_index.py",
      lambda a, l, pg, ar: (a, {**l, "build_index.py": l["build_index.py"] + ("notes/index/",)}, pg, ar)),
     ("writer dropped from ARTIFACTS", "ARTIFACTS + non-cached writer set",
      lambda a, l, pg, ar: ({k: v for k, v in a.items() if k != "extract_links.py"},
                            {k: v for k, v in l.items() if k != "extract_links.py"}, pg, ar)),
     ("REPORT_PAGES entry altered", "REPORT_PAGES != catlib/templates registry",
-     lambda a, l, pg, ar: (a, l, (*[p for p in pg if p != "notes/topics.md"], "notes/topics2.md"), ar)),
+     lambda a, l, pg, ar: (a, l, (*[p for p in pg if p != "notes/reports/topics.md"], "notes/topics2.md"), ar)),
     ("canonical args shifted", "cache entry missing: compare_abstracts.py",
      lambda a, l, pg, ar: (a, l, pg, {**ar, "compare_abstracts.py": ("--tsv", "extra")})),
 ]
 
 # Faults in the cache entries the byte comparison reads, each keyed to the problem string it prints.
 CACHE_CASES = [
-    ("cached page corrupted", "notes/sources.md", "cache != disk: render_reports.py notes/sources.md",
+    ("cached page corrupted", "notes/reports/sources.md", "cache != disk: render_reports.py notes/reports/sources.md",
      lambda text: text + "MUTANT\n"),
-    ("cached page deleted", "notes/names.md", "cache entry missing: render_reports.py notes/names.md",
+    ("cached page deleted", "notes/reports/names.md", "cache entry missing: render_reports.py notes/reports/names.md",
      None),
-    ("second cached page corrupted", "notes/proof-density.md",
-     "cache != disk: render_reports.py notes/proof-density.md", lambda text: text + "MUTANT\n"),
+    ("second cached page corrupted", "notes/reports/proof-density.md",
+     "cache != disk: render_reports.py notes/reports/proof-density.md", lambda text: text + "MUTANT\n"),
 ]
 
 

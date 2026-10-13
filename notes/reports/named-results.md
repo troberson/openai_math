@@ -89,7 +89,7 @@ other 16 sit in families it reads 1.
 
 Rule: a titled headline statement whose title contains a **name-layer subject** — one of the 551
 subject names measured by `notes/scripts/measure_names.py` (subjects, not citations; the rule and the
-subject/citation split are in `notes/names.md`).
+subject/citation split are in `notes/reports/names.md`).
 
 **207** statements over **112** families. **74** of those families are `rn = 1`; **38** are not:
 002 009 010 014 015 023 036 069 099 114 115 116 125 140 211 212 216 218 222 223 224 227 231 232 238
@@ -322,7 +322,7 @@ So `resolves_named` becomes evidence-backed by the record, not by theorem titles
 - **5 of the 8 Direction-B families** rest on the overview paraphrase alone, which is what the column
   is: a reading of the release's summary, not of the manuscript.
 - The column stays a **column**, not a shape: it is a flag on the ledger, and the claim-shape tags are
-  keyed to the same overview paraphrase (`notes/abstracts.md`), so a flag is a claim about the summary.
+  keyed to the same overview paraphrase (`notes/reports/abstracts.md`), so a flag is a claim about the summary.
 
 ## What has not been checked
 

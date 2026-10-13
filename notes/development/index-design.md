@@ -223,4 +223,4 @@ manuscript-level flag.
 - Name pages are keyed by folded name, so a hyphenated double surname is one node
   (`baumslag-solitar`-style forms stay as single keys) and no name-to-name edge is built. The
   prose (`b`) and bib-author (`B`) columns are citations; the page states that, and no per-occurrence
-  context is stored. `notes/names.md` carries the ladder, the escape rule, and the rest of the tail.
+  context is stored. `notes/reports/names.md` carries the ladder, the escape rule, and the rest of the tail.

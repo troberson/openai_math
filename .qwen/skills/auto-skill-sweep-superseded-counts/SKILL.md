@@ -177,7 +177,7 @@ meaningful until the checker exits 0, and a grep census of stale numbers is sizi
 
 **A refactor that shrinks a script makes a page's `Lines` cell stale, and the gate row is the only
 detector.** Measured 2026-10-10: five `catlib` ports moved the shared joins out of
-`build_catalog.py`, and `notes/findings.md:224` still declared 198 lines — the gate row
+`build_catalog.py`, and `notes/reports/findings.md:224` still declared 198 lines — the gate row
 `verify_findings.py` exited 1 with `S2: declares 198 lines, notes/scripts/build_catalog.py has 181`.
 The fix is the cell, set from `len(read_text().splitlines())` (the checker's own rule), and the sweep
 must re-run that checker plain **and** `--mutant`. When a batch of ports lands, grep every Sources
@@ -208,12 +208,12 @@ handoff file.
 ## 6. Commit split: when files overlap across purposes, merge and say so
 
 Checkers read the **working tree**, not the index, so a hunk-split commit is a commit no checker can
-verify. Here four docs (`AGENTS.md`, `notes/README.md`, `notes/findings.md`,
+verify. Here four docs (`AGENTS.md`, `notes/README.md`, `notes/reports/findings.md`,
 `notes/development/index-design.md`) each carried figures from two or three of the three sweeps, so splitting by
 purpose needed hunk-level staging and produced unverifiable intermediate commits. Ship one sweep
 commit and record the reason in the body:
 
-> The three sweeps ship as one commit: AGENTS.md, notes/README.md, notes/findings.md and
+> The three sweeps ship as one commit: AGENTS.md, notes/README.md, notes/reports/findings.md and
 > notes/development/index-design.md each carry figures from more than one sweep, so splitting by purpose needs
 > hunk-level staging and would leave intermediate commits that no checker can verify — the checkers
 > read the working tree, not the index.
@@ -389,8 +389,8 @@ reproduced exactly from a fresh `parse_overview()`, so they were verified, not c
 Quote each figure with the rule that yields it and the fresh report line it came from (2026-10-11:
 `links extracted 66107`, `all notes/*.tsv bytes 630606`), state which derived numbers did **not**
 move and why, and close with what is not checked. The 2026-10-08 gap "a doc with no checker
-(`notes/links.md`)" is **closed**: `verify_page_sync.py --both` is the render diff for
-`notes/links.md`, `notes/names.md`, `notes/topics.md`, `notes/proof-density.md` and
+(`notes/reports/links.md`)" is **closed**: `verify_page_sync.py --both` is the render diff for
+`notes/reports/links.md`, `notes/reports/names.md`, `notes/reports/topics.md`, `notes/reports/proof-density.md` and
 `notes/development/index-links.md`, so those five pages are compared with the writer's render. What remains:
 citation checkers that verify quotations and not claims, and nothing in
 `lean/` built, so no formalization is elaboration-verified.

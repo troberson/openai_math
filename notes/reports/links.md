@@ -97,7 +97,7 @@ why scoping the inventory to listed manuscripts loses nothing and removes a doub
 Most-cited target families (bib href edges): **034** (19), **260** (18), **068** (14), **033** (12),
 **227** (11), **238** (10), **376** (9), **331** (7), **215** (6), **090** (6).
 
-This is the measurement that makes intra-release consequence measurable. `notes/conjecture-standing.md`,
+This is the measurement that makes intra-release consequence measurable. `notes/reports/conjecture-standing.md`,
 the `AGENTS.md` dev tip, and the `corpus-finding-surprise-ranking` skill all conclude from
 "only 14 of 372 family titles appear in the corpus's `.bib` files" that the manuscripts do not cite
 each other, so intra-corpus consequence is unmeasurable. The **count** reproduces (see the section

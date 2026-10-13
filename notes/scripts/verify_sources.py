@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify notes/sources.md and notes/tables/sources.tsv against the manuscript trees on disk.
+"""Verify notes/reports/sources.md and notes/tables/sources.tsv against the manuscript trees on disk.
 
 Report-only; writes nothing and runs nothing. Three passes:
 

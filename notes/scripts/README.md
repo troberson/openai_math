@@ -39,20 +39,20 @@ finds **14** writers over **66** scripts.
 
 | Script | Writes | Gate | Report feeds |
 |---|---|---|---|
-| `build_catalog.py` | `notes/tables/catalog.tsv` | single run; cached bytes == promoted bytes under the key | `notes/README.md`, `notes/findings.md` |
-| `build_sources.py` | `notes/tables/sources.tsv` | single run; cached bytes == promoted bytes under the key | `notes/sources.md` |
+| `build_catalog.py` | `notes/tables/catalog.tsv` | single run; cached bytes == promoted bytes under the key | `notes/README.md`, `notes/reports/findings.md` |
+| `build_sources.py` | `notes/tables/sources.tsv` | single run; cached bytes == promoted bytes under the key | `notes/reports/sources.md` |
 | `build_index.py` | `notes/index/` | single run; cached bytes == promoted bytes for all 1,049 files | `notes/development/index-links.md` |
-| `compare_abstracts.py` | `notes/tables/abstracts.tsv` | `--tsv` only; single run; cached bytes == promoted bytes under the key | `notes/abstracts.md` |
-| `extract_formalization_deps.py` | `notes/tables/formalization-deps.tsv` | single run; cached bytes == promoted bytes under the key | `notes/dependency-drift.md` |
-| `extract_links.py` | `notes/tables/links.tsv` | single run; cached bytes == promoted bytes under the key | `notes/links.md` |
-| `extract_subfindings.py` | `notes/tables/subfindings.tsv` | single run; cached bytes == promoted bytes under the key | `notes/subfinding-pairs.md` |
-| `render_reports.py` | `notes/README.md`, `notes/abstracts.md`, `notes/dependency-drift.md`, `notes/development/index-design.md`, `notes/development/index-links.md`, `notes/links.md`, `notes/named-results.md`, `notes/names.md`, `notes/proof-density.md`, `notes/sources.md`, `notes/verification-dirs.md`, `notes/scope-exclusions.md`, `notes/topics.md`, `notes/t0-chains.md`, `notes/subfinding-pairs.md`, `notes/counterexample-crosscheck.md`, `notes/formalization-faithfulness.md`, `notes/development/fleet-design.md`, `notes/development/templates.md` | single run; cached bytes == promoted bytes for all 19 pages | the nineteen report-fed pages |
+| `compare_abstracts.py` | `notes/tables/abstracts.tsv` | `--tsv` only; single run; cached bytes == promoted bytes under the key | `notes/reports/abstracts.md` |
+| `extract_formalization_deps.py` | `notes/tables/formalization-deps.tsv` | single run; cached bytes == promoted bytes under the key | `notes/reports/dependency-drift.md` |
+| `extract_links.py` | `notes/tables/links.tsv` | single run; cached bytes == promoted bytes under the key | `notes/reports/links.md` |
+| `extract_subfindings.py` | `notes/tables/subfindings.tsv` | single run; cached bytes == promoted bytes under the key | `notes/reports/subfinding-pairs.md` |
+| `render_reports.py` | `notes/README.md`, `notes/reports/abstracts.md`, `notes/reports/dependency-drift.md`, `notes/development/index-design.md`, `notes/development/index-links.md`, `notes/reports/links.md`, `notes/reports/named-results.md`, `notes/reports/names.md`, `notes/reports/proof-density.md`, `notes/reports/sources.md`, `notes/reports/verification-dirs.md`, `notes/reports/scope-exclusions.md`, `notes/reports/topics.md`, `notes/reports/t0-chains.md`, `notes/reports/subfinding-pairs.md`, `notes/reports/counterexample-crosscheck.md`, `notes/reports/formalization-faithfulness.md`, `notes/development/fleet-design.md`, `notes/development/templates.md` | single run; cached bytes == promoted bytes for all 19 pages | the nineteen report-fed pages |
 | `build_report_templates.py` | `notes/templates/report` | not in `gate.py` — it reads each page with `git show HEAD:`, so a gate run would rewrite templates from committed bytes; run explicitly with 0 args (all nineteen pages) or 2 (one page) after a writer's slot dict changes | the nineteen page templates; the registry, slot dicts and needle derivation it reads are in `catlib/templates.py` |
-| `measure_names.py` | `.qwen/cache/records/<key>/names.json` | plain; no tracked artifact, so the promote-and-verify assertion compares no bytes for it — `verify_cache_promotion.py` proves its L1 against the probe record and the cache check reads no tracked path | `notes/names.md`, and the 551 name pages `build_index.py` renders from `--json` |
-| `extract_named_results.py` | `.qwen/cache/records/<key>/named_results.json` | plain; no tracked artifact, so the promote-and-verify assertion compares no bytes for it — `verify_cache_promotion.py` proves its L1 against the probe record and the cache check reads no tracked path | `notes/named-results.md` — the writer, `verify_named_results.py` and `notes/scripts/tests/test_named_results.py` read the same record, so the 7,240-file `.tex` walk is paid once per key, not once per process |
+| `measure_names.py` | `.qwen/cache/records/<key>/names.json` | plain; no tracked artifact, so the promote-and-verify assertion compares no bytes for it — `verify_cache_promotion.py` proves its L1 against the probe record and the cache check reads no tracked path | `notes/reports/names.md`, and the 551 name pages `build_index.py` renders from `--json` |
+| `extract_named_results.py` | `.qwen/cache/records/<key>/named_results.json` | plain; no tracked artifact, so the promote-and-verify assertion compares no bytes for it — `verify_cache_promotion.py` proves its L1 against the probe record and the cache check reads no tracked path | `notes/reports/named-results.md` — the writer, `verify_named_results.py` and `notes/scripts/tests/test_named_results.py` read the same record, so the 7,240-file `.tex` walk is paid once per key, not once per process |
 | `measure_templates.py` | `.qwen/cache/records/<key>/templates.json` | plain; no tracked artifact, so the promote-and-verify assertion compares no bytes for it — `verify_cache_promotion.py` proves its L1 against the probe record and the cache check reads no tracked path | `notes/development/templates.md` — the writer, `render_reports.py` and `build_report_templates.py`'s floor page read the same record |
 | `measure_open_probe.py` | `notes/development/probe` | not in `gate.py` — a record carries a wall time per target, so a run-1/run-2 byte diff of a record is a timing artifact, not a proof; run explicitly over the purity and amplification targets, appending stdout to build a multi-target record | the two probe records `verify_fleet_design.py` parses |
-| `seed_quotes.py` | `notes/tables/quotes.tsv` | single run; cached bytes == promoted bytes under the key | `notes/subfinding-pairs.md` and `notes/summaries/**` — the two surfaces whose quotes it seeds; `render_reports.py` reads the pair rows back for the pair page, and `notes/scripts/tests/test_quotes.py` reads the whole table back |
+| `seed_quotes.py` | `notes/tables/quotes.tsv` | single run; cached bytes == promoted bytes under the key | `notes/reports/subfinding-pairs.md` and `notes/summaries/**` — the two surfaces whose quotes it seeds; `render_reports.py` reads the pair rows back for the pair page, and `notes/scripts/tests/test_quotes.py` reads the whole table back |
 
 Seven writers emit one TSV each. `build_index.py` is the one-to-many case: it renders **1,049** files —
 **1,033** `.md` pages and **16** `.tsv` tables. `render_reports.py` renders the nineteen report-fed pages
@@ -199,33 +199,33 @@ had to wait for the serial chain to finish.
 | `check_index_links.py` | `notes/development/index-links.md` | plain; the self-tests are in `notes/scripts/tests/test_index_links.py`, run by the `run_tests.py` row |
 | `check_summary_manuscripts.py` | `notes/summaries/` — which manuscripts each page reads, and whether the release still names them | plain |
 | `dump_template_slots.py` | `notes/development/templates.md` — the writer's slot labels with their values | plain |
-| `extract_citations.py` | `notes/citations.md` | plain |
-| `extract_counterexample_crosscheck.py` | `notes/counterexample-crosscheck.md` | plain |
-| `extract_scope_notes.py` | `notes/scope-exclusions.md` | plain |
-| `extract_subfinding_pairs.py` | `notes/subfinding-pairs.md` | plain |
-| `extract_t0_chains.py` | `notes/t0-chains.md` | plain |
-| `extract_verification_348.py` | `notes/verification-dirs.md` | plain |
-| `extract_verification_dirs.py` | `notes/verification-dirs.md` | plain |
+| `extract_citations.py` | `notes/reports/citations.md` | plain |
+| `extract_counterexample_crosscheck.py` | `notes/reports/counterexample-crosscheck.md` | plain |
+| `extract_scope_notes.py` | `notes/reports/scope-exclusions.md` | plain |
+| `extract_subfinding_pairs.py` | `notes/reports/subfinding-pairs.md` | plain |
+| `extract_t0_chains.py` | `notes/reports/t0-chains.md` | plain |
+| `extract_verification_348.py` | `notes/reports/verification-dirs.md` | plain |
+| `extract_verification_dirs.py` | `notes/reports/verification-dirs.md` | plain |
 | `gate.py` | none — the gate list itself: 78 rows as a dependency graph, printing one line per row in list order | **the list** — run by `gate_driver.sh` |
 | `locate_summary_quotes.py` | `notes/summaries/` — the lines a page should cite when a quotation stops matching | plain, no page argument |
 | `measure_anchor_blocks.py` | `math-faz` — the fenced blocks and quotations in the moved pages attributed to a notes-page anchor; the bead re-runs it after each pass | **not gated** |
 | `measure_checker_needles.py` | `notes/development/templates.md` — the per-checker needle inventory behind its Needles column | plain |
-| `measure_faithfulness.py` | `notes/formalization-faithfulness.md` | plain |
+| `measure_faithfulness.py` | `notes/reports/formalization-faithfulness.md` | plain |
 | `measure_index_sizes.py` | `notes/development/index-design.md` | plain |
 | `measure_import_layout.py` | `extract_links.py`'s import header rule — the Lean files whose first command is a doc-comment opener (`/-`), a bare `module` line, or a `public import` line, which is the evidence the widened `HEADER_SKIP` rule was written from | **not gated** — walks 122,458 files; run by hand when the header rule changes |
 | `measure_links_phases.py` | `extract_links.py`'s phases — the wall each read and scan takes, attributed by wrapping the script's own reads, because cProfile totals attribute cost to functions, not phases | **not gated** — a phase wall is a function of a run |
 | `measure_move_surface.py` | `math-faz` — the moved/stable path-mention split over the 30 pages the reorg moves, by context; the bead re-runs it after each pass | **not gated** |
-| `measure_proof_density.py` | `notes/proof-density.md` | the self-tests are in `notes/scripts/tests/test_proof_density.py`, run by the `run_tests.py` row; the plain run is not gated, because `render_reports.py` imports the module and calls `build_families()` rather than running the script |
+| `measure_proof_density.py` | `notes/reports/proof-density.md` | the self-tests are in `notes/scripts/tests/test_proof_density.py`, run by the `run_tests.py` row; the plain run is not gated, because `render_reports.py` imports the module and calls `build_families()` rather than running the script |
 | `measure_render_phases.py` | `render_reports.py`'s phase wall with concurrent children — cumulative, in `main()` call order | **not gated** — a phase wall is a function of a run |
 | `measure_render_pool.py` | whether pooling the 15 child-free populations lowers the render wall; measured 2026-10-12 and the answer was no (22.16 s pooled against 16.78 s unpooled, because pool results never reach the parent's cached `population_of`) | **not gated** — a wall is a function of a run |
 | `measure_render_processes.py` | the cost of each population in a fresh process, which is the pool's per-process price; `links` 14.59 s and `topics` 16.40 s, each re-running the `extract_links` child | **not gated** — a per-process wall is a function of a run |
 | `measure_scan_candidates.py` | the four candidate scans priced against the rule each must reproduce; the import header and the MSC substring gate were accepted, the single-pass `norm` and the 372-alternation regex were rejected | **not gated** — the accepted rules are already in `extract_links.py` |
 | `measure_summaries_seed.py` | `notes/tables/quotes.tsv` — the span set, the citation attribution and the raw/folded/not-located classification the seeded summaries specs are measured against | plain |
-| `measure_topics.py` | `notes/topics.md` | `--check` |
+| `measure_topics.py` | `notes/reports/topics.md` | `--check` |
 | `read_manuscript.py` | none — a reading aid; prints a manuscript's abstract, section skeleton and titled statement environments with `file:line` anchors | **not gated** |
 | `refresh_summary_line_counts.py` | `notes/summaries/` — rewrites the `Lines` column of the Sources table in every page | plain, **first among the checkers** |
 | `run_tests.py` | none — the seam between the gate and the extracted checker self-tests, which live in `notes/scripts/tests/`: the gate runs every row as `python3 notes/scripts/<spec>` and pytest lives in the venv, so this row names the venv's python and passes pytest args through | plain |
-| `triage_t0.py` | `notes/t0-triage.md` | plain |
+| `triage_t0.py` | `notes/reports/t0-triage.md` | plain |
 
 `read_manuscript.py` is the only script the gate does not run: it takes a `preprints/` directory
 argument, so a gate run over it would read one manuscript chosen by the list rather than the corpus.
@@ -301,28 +301,28 @@ self-tests rows are report-only rows, not checker invocations:
 
 | Checker | Checks | Gate | Cost (s) |
 |---|---|---|---|
-| `verify_abstracts.py` | `notes/abstracts.md` | plain; the self-tests are in `notes/scripts/tests/test_abstracts.py`, run by the `run_tests.py` row | 0.7 |
+| `verify_abstracts.py` | `notes/reports/abstracts.md` | plain; the self-tests are in `notes/scripts/tests/test_abstracts.py`, run by the `run_tests.py` row | 0.7 |
 | `verify_cache_promotion.py` | `catlib/promote.py` — the registry shape against the writers table, the L1 lists against the audit-hook records, and the cached bytes against every tracked artifact under its key | plain; the self-tests are in `notes/scripts/tests/test_cache_promotion.py`, run by the `run_tests.py` row | 0.2 |
-| `verify_citations.py` | `notes/citations.md` | plain; the self-tests are in `notes/scripts/tests/test_citations.py`, run by the `run_tests.py` row | 1.5 |
-| `verify_conditional.py` | `notes/conditional.md` | plain; the self-tests are in `notes/scripts/tests/test_conditional.py`, run by the `run_tests.py` row | 0 |
+| `verify_citations.py` | `notes/reports/citations.md` | plain; the self-tests are in `notes/scripts/tests/test_citations.py`, run by the `run_tests.py` row | 1.5 |
+| `verify_conditional.py` | `notes/reports/conditional.md` | plain; the self-tests are in `notes/scripts/tests/test_conditional.py`, run by the `run_tests.py` row | 0 |
 | `verify_conjecture_standing.py` | `notes/tables/conjecture-standing.tsv` | plain; the self-tests are in `notes/scripts/tests/test_conjecture_standing.py`, run by the `run_tests.py` row | 0 |
-| `verify_counterexample_crosscheck.py` | `notes/counterexample-crosscheck.md` | plain; the self-tests are in `notes/scripts/tests/test_counterexample_crosscheck.py`, run by the `run_tests.py` row | 0.3 |
-| `verify_dependency_drift.py` | `notes/dependency-drift.md`, `notes/formalization-deps.md` | plain; the self-tests are in `notes/scripts/tests/test_dependency_drift.py`, run by the `run_tests.py` row | 0.3 |
-| `verify_faithfulness.py` | `notes/formalization-faithfulness.md` — anchors, the count phrases re-derived by its own `main_results`/declaration/carrier/closure walk (not the writer's), the disjoint and overlap pairing tables, the `a.e.` table, and the render diff | plain; the self-tests are in `notes/scripts/tests/test_faithfulness.py`, run by the `run_tests.py` row | 1.4 |
-| `verify_findings.py` | `notes/findings.md` | plain; the self-tests are in `notes/scripts/tests/test_findings.py`, run by the `run_tests.py` row | 2.4 |
+| `verify_counterexample_crosscheck.py` | `notes/reports/counterexample-crosscheck.md` | plain; the self-tests are in `notes/scripts/tests/test_counterexample_crosscheck.py`, run by the `run_tests.py` row | 0.3 |
+| `verify_dependency_drift.py` | `notes/reports/dependency-drift.md`, `notes/reports/formalization-deps.md` | plain; the self-tests are in `notes/scripts/tests/test_dependency_drift.py`, run by the `run_tests.py` row | 0.3 |
+| `verify_faithfulness.py` | `notes/reports/formalization-faithfulness.md` — anchors, the count phrases re-derived by its own `main_results`/declaration/carrier/closure walk (not the writer's), the disjoint and overlap pairing tables, the `a.e.` table, and the render diff | plain; the self-tests are in `notes/scripts/tests/test_faithfulness.py`, run by the `run_tests.py` row | 1.4 |
+| `verify_findings.py` | `notes/reports/findings.md` | plain; the self-tests are in `notes/scripts/tests/test_findings.py`, run by the `run_tests.py` row | 2.4 |
 | `verify_fleet_design.py` | `notes/development/fleet-design.md` — anchors, the count phrases re-derived from `git`/`du`/the probe records, each of the three site paragraphs (atomicity, env, set iteration) and the checker-section anchor list compared with the measured `name:line` set, the purity and amplification tables, and the page against `render_reports.py`'s render of it | plain; the self-tests are in `notes/scripts/tests/test_fleet_design.py`, run by the `run_tests.py` row | 0.5 |
 | `verify_index_design.py` | `notes/development/index-design.md` | plain; the self-tests are in `notes/scripts/tests/test_index_design.py`, run by the `run_tests.py` row | 3.0 |
-| `verify_named_conjectures.py` | `notes/named-conjectures.md` | plain; the self-tests are in `notes/scripts/tests/test_named_conjectures.py`, run by the `run_tests.py` row | 0 |
-| `verify_named_results.py` | `notes/named-results.md` | plain; the self-tests are in `notes/scripts/tests/test_named_results.py`, run by the `run_tests.py` row | 0.6 |
-| `verify_page_sync.py` | `notes/links.md`, `notes/names.md`, `notes/topics.md`, `notes/proof-density.md`, `notes/development/index-links.md` — the render diff for the five pages whose sync pass used to live in a writer; the mutants mutate page prose in memory, so no page is written | `--both` — plain and mutant in one process | 25.1 |
-| `verify_scope_exclusions.py` | `notes/scope-exclusions.md` | plain; the self-tests are in `notes/scripts/tests/test_scope_exclusions.py`, run by the `run_tests.py` row | 0 |
-| `verify_sources.py` | `notes/sources.md` | plain; the self-tests are in `notes/scripts/tests/test_sources.py`, run by the `run_tests.py` row | 1.2 |
-| `verify_subfinding_pairs.py` | `notes/subfinding-pairs.md` | plain; the self-tests are in `notes/scripts/tests/test_subfinding_pairs.py`, run by the `run_tests.py` row | 0.4 |
+| `verify_named_conjectures.py` | `notes/reports/named-conjectures.md` | plain; the self-tests are in `notes/scripts/tests/test_named_conjectures.py`, run by the `run_tests.py` row | 0 |
+| `verify_named_results.py` | `notes/reports/named-results.md` | plain; the self-tests are in `notes/scripts/tests/test_named_results.py`, run by the `run_tests.py` row | 0.6 |
+| `verify_page_sync.py` | `notes/reports/links.md`, `notes/reports/names.md`, `notes/reports/topics.md`, `notes/reports/proof-density.md`, `notes/development/index-links.md` — the render diff for the five pages whose sync pass used to live in a writer; the mutants mutate page prose in memory, so no page is written | `--both` — plain and mutant in one process | 25.1 |
+| `verify_scope_exclusions.py` | `notes/reports/scope-exclusions.md` | plain; the self-tests are in `notes/scripts/tests/test_scope_exclusions.py`, run by the `run_tests.py` row | 0 |
+| `verify_sources.py` | `notes/reports/sources.md` | plain; the self-tests are in `notes/scripts/tests/test_sources.py`, run by the `run_tests.py` row | 1.2 |
+| `verify_subfinding_pairs.py` | `notes/reports/subfinding-pairs.md` | plain; the self-tests are in `notes/scripts/tests/test_subfinding_pairs.py`, run by the `run_tests.py` row | 0.4 |
 | `verify_subfindings.py` | `notes/tables/subfindings.tsv` | plain; the self-tests are in `notes/scripts/tests/test_subfindings.py`, run by the `run_tests.py` row | 0 |
 | `verify_summaries.py` | `notes/summaries/` | plain; the self-tests are in `notes/scripts/tests/test_summaries.py`, run by the `run_tests.py` row | 0.8 |
-| `verify_t0_chains.py` | `notes/t0-chains.md` | plain; the self-tests are in `notes/scripts/tests/test_t0_chains.py`, run by the `run_tests.py` row | 1.4 |
+| `verify_t0_chains.py` | `notes/reports/t0-chains.md` | plain; the self-tests are in `notes/scripts/tests/test_t0_chains.py`, run by the `run_tests.py` row | 1.4 |
 | `verify_upstream_history.py` | `notes/development/upstream_history/` — the three pages | plain; the self-tests are in `notes/scripts/tests/test_upstream_history.py`, run by the `run_tests.py` row | 0.5 |
-| `verify_verification_dirs.py` | `notes/verification-dirs.md` | plain; the self-tests are in `notes/scripts/tests/test_verification_dirs.py`, run by the `run_tests.py` row | 0.1 |
+| `verify_verification_dirs.py` | `notes/reports/verification-dirs.md` | plain; the self-tests are in `notes/scripts/tests/test_verification_dirs.py`, run by the `run_tests.py` row | 0.1 |
 
 Cost is plain seconds, measured 2026-10-12 as the wall time the gate printed for
 each row in one pooled run with the local model server loaded — a floor from one measurement, not a
@@ -372,7 +372,7 @@ which a mutant does multiply.
 ten `check()` calls the row makes pay the two normalizations once. The cache persists only because the
 test loader memoizes: a loader that re-executed the module per test gave each test an empty cache, and
 the row measured **16.9 s** before the loader was memoized.
-`verify_t0_chains.py` is the same case with the ledger, `subfindings.tsv`, `notes/t0-triage.md` and the
+`verify_t0_chains.py` is the same case with the ledger, `subfindings.tsv`, `notes/reports/t0-triage.md` and the
 `.bib` layer: `population()` is under `functools.cache` (`:118`), so its `run_tests.py` row measures
 **1.9 s** where the `--mutant` row took **1.4 s** — the fourteen `check()` calls the row makes pay the
 walk once.
@@ -527,7 +527,8 @@ excludes them with the script tree, so they are not scripts.
 | `notes/development/upstream_history/` | **3** | hand-written — the record of each upstream merge, checked by `verify_upstream_history.py` |
 | `notes/development/probe/` | **10** | the audit-hook probe records: the 2026-10-11 writers/checkers pair `measure_open_probe.py` writes and the fleet checker parses, the 2026-10-11 `render_reports.py` after-record that proves the repeat count fell, the 2026-10-10 pair the page's cold-cache figures come from, the 2026-10-12 `render_reports.py` record that captures the fleet census the writer added (the script tree and the two 2026-10-11 records it scans, which its own 2026-10-11 record cannot name), the 2026-10-12 `seed_quotes.py` record that proves its L1 list names the one page it reads, the 2026-10-12 `seed_quotes.py` record that proves the widened L1 names the summaries tree and the notes pages its Sources cells cite, the 2026-10-12 `extract_named_results.py` record that proves its L1 names the ledger at its `tables/` path (the older record for that target names `notes/catalog.tsv`, the pre-move path), and the 2026-10-12 `measure_templates.py` record that proves the census L1 names the 1,049-file index tree and the 24-file template tree |
 | `notes/tables/*.tsv` | **9** | **7** generated, **2** hand-authored |
-| `notes/*.md` | **24** | **15** generated — the report-fed pages `render_reports.py` renders; **9** hand-written. **19** with a checker, **5** without |
+| `notes/reports/*.md` | **23** | **14** generated — the report-fed pages `render_reports.py` renders; **9** hand-written. **19** with a checker, **4** without. `math-faz.4` moved them here from the top level. |
+| `notes/*.md` | **1** | `notes/README.md`, the entry point — hand-written, no checker |
 | `notes/` total, scripts excluded | **1,145** | — |
 
 The generated TSVs are the seven writer targets. The two hand-authored tables are:
@@ -537,8 +538,10 @@ The generated TSVs are the seven writer targets. The two hand-authored tables ar
 | `notes/tables/topics.tsv` | The curated topic vocabulary. `measure_topics.py --check` re-measures its 92 rows and exits 1 when a recorded count drifts; `build_index.py` reads it and renders `notes/index/topics-rendered.tsv`. A generated file inside `notes/index/` is overwritten by the next render, which is why the vocabulary lives outside that tree. |
 | `notes/tables/conjecture-standing.tsv` | The training-data prior. Its `standing_prior_2025` column is the assistant's memory at an early-2025 cutoff, self-rated by `prior_confidence`; no script can derive a memory, and `verify_conjecture_standing.py` checks the rows against the ledger and `overview.tex` rather than regenerating them. |
 
-The 5 pages with no checker are `notes/README.md`, `notes/conjecture-standing.md`,
-`notes/counterexample-tag.md`, `notes/resolution-tag.md` and `notes/t0-triage.md`. Their counts
+Across the **24** prose pages — the 23 report pages and the entry point — **19** with a checker,
+**5** without. The 5 pages with no checker are `notes/README.md`,
+`notes/reports/conjecture-standing.md`,
+`notes/reports/counterexample-tag.md`, `notes/reports/resolution-tag.md` and `notes/reports/t0-triage.md`. Their counts
 are reproduced by the report-only
 scripts above; nothing verifies them against the page. `notes/development/summaries-workflow.md` is
 the one page under `notes/development/` with no checker — it is the resume protocol, a procedure, not a
@@ -548,8 +551,8 @@ linter commands, run from the untracked `.venv/` — and because every count it 
 by running a rule alone, and every exemption reason is already a comment in `ruff.toml`, `mypy.ini`
 and `.pylintrc`, the page was a manual transcription of what the linters print. It is deleted; the
 annotation backlog its strict probe measured is queue state, so it moves to bd.
-The five pages `notes/development/index-links.md`, `notes/links.md`, `notes/names.md`,
-`notes/proof-density.md` and `notes/topics.md` were in this set until `math-o3a.3`: their render diff
+The five pages `notes/development/index-links.md`, `notes/reports/links.md`, `notes/reports/names.md`,
+`notes/reports/proof-density.md` and `notes/reports/topics.md` were in this set until `math-o3a.3`: their render diff
 was carried by a report-only script that read a page it did not verify, and `verify_page_sync.py`
 owns that check now.
 
@@ -589,15 +592,15 @@ nowhere in the repo at the pinned baseline: `build_report_templates.py`, `check_
 `verify_fleet_design.py`, `verify_named_conjectures.py`, `verify_page_sync.py`, `verify_upstream_history.py`,
 `dump_template_slots.py`, `verify_cache_promotion.py` and `run_tests.py`. The first four are the report-template
 builder this pass promoted plus the `notes/summaries/` reading tooling and the citation extractor, so
-the summaries tree and `notes/citations.md` carried measurements whose generating command no document
+the summaries tree and `notes/reports/citations.md` carried measurements whose generating command no document
 named; `read_manuscript.py` and `refresh_summary_line_counts.py` are the rest of that reading tooling;
 `verify_citations.py`, `verify_findings.py` and `verify_named_conjectures.py` are the checkers for
-`notes/citations.md`, `notes/findings.md` and `notes/named-conjectures.md`, so three pages carried
+`notes/reports/citations.md`, `notes/reports/findings.md` and `notes/reports/named-conjectures.md`, so three pages carried
 measurements whose checker no document named; `verify_upstream_history.py` is the tooling behind
 `notes/development/upstream_history/`, the pages that record each upstream merge, which moved under `notes/` on
 2026-10-10 and are inside this page's census; `measure_templates.py` is the census behind `notes/development/templates.md`, added by
 the pass that added that page; `measure_checker_needles.py` is the per-checker needle probe the
-checker-coverage bead promoted; `dump_template_slots.py` is the slot dump that prints the same dict the census measures, promoted by `math-a0r.7`; `verify_fleet_design.py` is the checker for `notes/development/fleet-design.md`, promoted by `math-o3a.1` together with the two probe records it parses; `verify_page_sync.py` is the checker `math-o3a.3` created when the five sync passes left the writer fleet, so the pinned baseline predates it; `measure_open_probe.py` is the audit-hook probe `math-o3a.3.4` promoted from `.qwen/tmp/a11_open_probe2.py`, so the pinned baseline predates it too; `measure_faithfulness.py` is the faithfulness measurement promoted from `.qwen/tmp/faith_probe.py` by the pass that added `notes/formalization-faithfulness.md`, and `verify_faithfulness.py` is that page's checker, so the pinned baseline predates both; `render_reports.py` is the renderer for the nineteen report-fed pages; `verify_cache_promotion.py` is the checker `math-o3a.6.1` created for the promotion protocol, so the pinned baseline predates it; `measure_anchor_blocks.py` and `measure_move_surface.py` are the two notes-move probes `math-faz.1` promoted from `.qwen/tmp/notes_block_probe.py` and `.qwen/tmp/notes_move_probe.py`, which price a directory move before it happens and re-check the mention counts after it, so the pinned baseline predates both; and `gate.py` is the dependency scheduler `math-unv` wrote to replace `notes/scripts/gate.sh`, so the pinned baseline predates it; `seed_quotes.py` is the quote-spec seeder this pass promoted from `.qwen/tmp/seed_quotes4.py`, which seeds `notes/tables/quotes.tsv` from `notes/subfinding-pairs.md`'s pair lines and resolves each spec back against `overview.tex`, so the pinned baseline predates it; `run_tests.py` is the seam that runs the extracted checker self-tests through the venv's pytest, promoted by the pass that extracted `verify_scope_exclusions.py`'s, so the pinned baseline predates it; `measure_summaries_seed.py` is the quote-spec classification this pass promoted from `.qwen/tmp/measure_summaries_seed.py`, which measures the 925 spans the 21 summaries pages carry and the class each seeded spec round-trips in, so the pinned baseline predates it.
+checker-coverage bead promoted; `dump_template_slots.py` is the slot dump that prints the same dict the census measures, promoted by `math-a0r.7`; `verify_fleet_design.py` is the checker for `notes/development/fleet-design.md`, promoted by `math-o3a.1` together with the two probe records it parses; `verify_page_sync.py` is the checker `math-o3a.3` created when the five sync passes left the writer fleet, so the pinned baseline predates it; `measure_open_probe.py` is the audit-hook probe `math-o3a.3.4` promoted from `.qwen/tmp/a11_open_probe2.py`, so the pinned baseline predates it too; `measure_faithfulness.py` is the faithfulness measurement promoted from `.qwen/tmp/faith_probe.py` by the pass that added `notes/reports/formalization-faithfulness.md`, and `verify_faithfulness.py` is that page's checker, so the pinned baseline predates both; `render_reports.py` is the renderer for the nineteen report-fed pages; `verify_cache_promotion.py` is the checker `math-o3a.6.1` created for the promotion protocol, so the pinned baseline predates it; `measure_anchor_blocks.py` and `measure_move_surface.py` are the two notes-move probes `math-faz.1` promoted from `.qwen/tmp/notes_block_probe.py` and `.qwen/tmp/notes_move_probe.py`, which price a directory move before it happens and re-check the mention counts after it, so the pinned baseline predates both; and `gate.py` is the dependency scheduler `math-unv` wrote to replace `notes/scripts/gate.sh`, so the pinned baseline predates it; `seed_quotes.py` is the quote-spec seeder this pass promoted from `.qwen/tmp/seed_quotes4.py`, which seeds `notes/tables/quotes.tsv` from `notes/reports/subfinding-pairs.md`'s pair lines and resolves each spec back against `overview.tex`, so the pinned baseline predates it; `run_tests.py` is the seam that runs the extracted checker self-tests through the venv's pytest, promoted by the pass that extracted `verify_scope_exclusions.py`'s, so the pinned baseline predates it; `measure_summaries_seed.py` is the quote-spec classification this pass promoted from `.qwen/tmp/measure_summaries_seed.py`, which measures the 925 spans the 21 summaries pages carry and the class each seeded spec round-trips in, so the pinned baseline predates it.
 All 61 are named here and in the command
 block. "Before this pass" is
 pinned to the commit that created this page, read at its parent, not to `HEAD`: `HEAD` moves every

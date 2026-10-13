@@ -244,7 +244,7 @@ in these abstracts:
 information` (140) and `conditional permutation` (238) are technical uses that pass the filter.
 
 Recorded as a decision point, not applied: widening `ASSUME` for (1)–(4) would move families into
-the `conditional` ledger column and change `notes/t0-triage.md`'s first-match buckets for
+the `conditional` ledger column and change `notes/reports/t0-triage.md`'s first-match buckets for
 `conditional`-tagged families, which is the same taxonomy-change risk that kept `resolves_named`
 and `counterex_broad` out of `SHAPES` [S32]. The bead asked which text the tag should read, not for
 a new rule; the answer is per family, above.

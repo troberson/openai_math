@@ -197,7 +197,7 @@ formalized" from being read as a finding.
   tagged set before treating a bucket as a census. Widening a rule is a generator change: measure its
   yield the way the `conditional` audit recorded it, and do not silently retag — a first-match
   consumer of the tags re-buckets families when you widen one, so a broad rule may belong in its own
-  column. See `notes/counterexample-tag.md`.
+  column. See `notes/reports/counterexample-tag.md`.
 - **Expect the taxonomy to be silent.** Re-measured 2026-10-11: **19 of 130** T0 families carry no
   shape tag at all (20 of 137 when this was written), including marquee-grade results. Say that
   plainly rather than forcing them into a bucket. The ledger column agrees with the reading record:

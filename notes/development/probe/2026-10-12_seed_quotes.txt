@@ -15,7 +15,7 @@ quotes in the page: 236
           other                      4
           notes/                     3
 [probe2] notes/ paths (count  modes  path):
-              2  r        notes/subfinding-pairs.md
+              2  r        notes/reports/subfinding-pairs.md
               1  w        notes/tables/.quotes.tsv.tmp
 [probe2] write-mode paths outside notes/:
               1  w .qwen/cache/records/b2b90a951ba53e9dc6fc0d3993067401/notes/tables/.quotes.tsv.tmp

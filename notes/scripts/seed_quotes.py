@@ -8,7 +8,7 @@ three words, and the round-trip class. `catlib/quotes.py` resolves the spec back
 script seeds the specs from pages that already carry their quotes, then resolves each one and requires the
 resolved span to be the page's quote -- so a seeded table is a round-trip, not a transcription.
 
-**The two page grammars are two seeders.** `notes/subfinding-pairs.md` cites by anchor:
+**The two page grammars are two seeders.** `notes/reports/subfinding-pairs.md` cites by anchor:
 
     - main|clause: "<clause>" (`overview.tex:94`) -> "<title>" (`overview.tex:94`) [009:3]
 

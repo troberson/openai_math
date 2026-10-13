@@ -1,5 +1,5 @@
 quotes in the pages: 1161
-  pair-line specs (notes/subfinding-pairs.md): 236
+  pair-line specs (notes/reports/subfinding-pairs.md): 236
   summaries specs (21 pages): 925
   specs seeded: 1147   measured negatives (start 0): 14
   single-line spec: 529   range spec: 618
@@ -25,8 +25,8 @@ quotes in the pages: 1161
           top-level                  5
           reasoning_traces/          2
 [probe2] notes/ paths (count  modes  path):
-              2  r        notes/counterexample-tag.md
-              2  r        notes/subfinding-pairs.md
+              2  r        notes/reports/counterexample-tag.md
+              2  r        notes/reports/subfinding-pairs.md
               2  r        notes/summaries/algebra/197-nonsofic-groups-and-group-ring-counterexamples.md
               2  r        notes/summaries/algebraic-and-complex-geometry/032-the-rational-hodge-conjecture-for-cm-abelian-varieties.md
               2  r        notes/summaries/combinatorics/159-quasipolynomial-bounds-for-arithmetic-progressions.md
@@ -48,7 +48,7 @@ quotes in the pages: 1161
               2  r        notes/summaries/partial-differential-equations/362-global-smoothness-for-relativistic-vlasov-maxwell.md
               2  r        notes/summaries/probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md
               2  r        notes/summaries/theoretical-computer-science/102-unique-games-conjecture-and-optimal-approximation-thresholds.md
-              7  r        notes/t0-triage.md
+              7  r        notes/reports/t0-triage.md
               1  w        notes/tables/.quotes.tsv.tmp
               7  r        notes/tables/catalog.tsv
 [probe2] write-mode paths outside notes/:

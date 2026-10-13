@@ -1180,7 +1180,7 @@ writers derived from source: 10
   writes extract_links.py: notes/tables/links.tsv
   writes extract_subfindings.py: notes/tables/subfindings.tsv
   writes measure_open_probe.py: notes/development/probe
-  writes render_reports.py: notes/README.md, notes/abstracts.md, notes/counterexample-crosscheck.md, notes/dependency-drift.md, notes/formalization-faithfulness.md, notes/development/index-design.md, notes/development/index-links.md, notes/links.md, notes/named-results.md, notes/names.md, notes/proof-density.md, notes/scope-exclusions.md, notes/sources.md, notes/subfinding-pairs.md, notes/t0-chains.md, notes/development/templates.md, notes/topics.md, notes/verification-dirs.md
+  writes render_reports.py: notes/README.md, notes/reports/abstracts.md, notes/reports/counterexample-crosscheck.md, notes/reports/dependency-drift.md, notes/reports/formalization-faithfulness.md, notes/development/index-design.md, notes/development/index-links.md, notes/reports/links.md, notes/reports/named-results.md, notes/reports/names.md, notes/reports/proof-density.md, notes/reports/scope-exclusions.md, notes/reports/sources.md, notes/reports/subfinding-pairs.md, notes/reports/t0-chains.md, notes/development/templates.md, notes/reports/topics.md, notes/reports/verification-dirs.md
 index tree: 1049 (1033 md + 16 tsv)
 summaries: 21
 templates: 23

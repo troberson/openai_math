@@ -26,7 +26,7 @@ report tree  templates 19  lines 7164  bytes 460696  slots 1446
 index tree   templates 5  lines 209  bytes 14847  slots 103
 all          templates 24  lines 7373  bytes 475543  slots 1549
 slot reuse (exprs - distinct) 17 in 5 templates  header comment lines report 4 index 0
-needles derived 9 of 19: notes/abstracts.md notes/counterexample-crosscheck.md notes/development/fleet-design.md notes/formalization-faithfulness.md notes/development/index-design.md notes/named-results.md notes/sources.md notes/t0-chains.md notes/verification-dirs.md
+needles derived 9 of 19: notes/reports/abstracts.md notes/reports/counterexample-crosscheck.md notes/development/fleet-design.md notes/reports/formalization-faithfulness.md notes/development/index-design.md notes/reports/named-results.md notes/reports/sources.md notes/reports/t0-chains.md notes/reports/verification-dirs.md
 registry  ALL_PAGES 19 at catlib/templates.py:116  template-without-page 0  page-without-template 0  
 index pages on disk  families 372  disciplines 17  topics 92  names 551  readme 1
 [probe] target exit code: 0

@@ -1,6 +1,6 @@
 """The self-tests for `notes/scripts/verify_verification_dirs.py`.
 
-The checker verifies `notes/verification-dirs.md` against the 30 bundles it describes. Anchors:
+The checker verifies `notes/reports/verification-dirs.md` against the 30 bundles it describes. Anchors:
 every `path:line` and `path:a-b` resolves against the file, a prefixed path resolves against the
 repo root, and a span fits inside the file. Quotations: each `*"…"*` in the family-348 section is
 matched against the lines its anchor names, each row quote in the entry-point section is matched at

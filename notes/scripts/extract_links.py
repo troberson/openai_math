@@ -30,7 +30,7 @@ directory beside its notice, so a directory walk is 749 dirs, not 719 manuscript
 superseded edition's bibliography would count its edges twice. The whole-tree counts and the
 superseded-target citation counts are printed in the report, not written to the TSV.
 
-The page check is not here: `notes/links.md` is compared with `render_reports.py`'s render of it by
+The page check is not here: `notes/reports/links.md` is compared with `render_reports.py`'s render of it by
 `verify_page_sync.py`, which owns that pass. This script writes `notes/tables/links.tsv` and prints the
 report every count in the page comes from; it reads no page, so it is not order-dependent — the
 sync pass used to pull `render_reports` in-process, and that render read this script's own output.
