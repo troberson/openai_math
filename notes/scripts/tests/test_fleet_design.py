@@ -90,11 +90,11 @@ MUTANTS = [
      lambda t: t.replace("**25** `notes/tables/*.tsv` present on disk",
                          "**24** `notes/tables/*.tsv` present on disk", 1)),
     # The probe-record count is measured from the tracked record tree, so a page that names a record
-    # the tree does not carry is caught by the count pass. The tree carries 13 records, so the needle
-    # names 13 and the fault understates that.
+    # the tree does not carry is caught by the count pass. The tree carries 14 records, so the needle
+    # names 14 and the fault understates that.
     ("probe record count understated",
-     "count phrase not in the page: The tracked records are **13**:",
-     lambda t: t.replace("The tracked records are **13**:", "The tracked records are **12**:", 1)),
+     "count phrase not in the page: The tracked records are **14**:",
+     lambda t: t.replace("The tracked records are **14**:", "The tracked records are **13**:", 1)),
     ("writer-row count in the gate paragraph",
      "count phrase not in the page: the **11** writers declare what they write",
      lambda t: t.replace("the **11** writers declare what they write",

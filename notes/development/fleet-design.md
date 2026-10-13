@@ -138,7 +138,7 @@ only) lists every `notes/` path each script opens. A path is a write only if a m
 `w`, `a` or `x`. The AST census maps a name to a call context and does **not** track branches, so a
 `write_text` that lives only in a `--mutant` path is reported as a write in every mode — the probe's
 mode strings are the authority. The probe is `notes/scripts/measure_open_probe.py`, promoted from
-`.qwen/tmp/a11_open_probe2.py` by `math-o3a.3.4`. The tracked records are **13**:
+`.qwen/tmp/a11_open_probe2.py` by `math-o3a.3.4`. The tracked records are **14**:
 `notes/development/probe/2026-10-10_writers.txt`, `notes/development/probe/2026-10-10_checkers.txt`,
 `notes/development/probe/2026-10-11_writers.txt`, `notes/development/probe/2026-10-11_checkers.txt`,
 `notes/development/probe/2026-10-11_rr_after.txt` (the single-target `render_reports.py` record taken mid-pass,
@@ -152,9 +152,17 @@ taken after the fleet census moved into the writer, which names the script tree 
 for that target names `notes/catalog.tsv`, the ledger's pre-`tables/` path, so this is the record that
 makes the registry's `notes/tables/catalog.tsv` provable) and
 `notes/development/probe/2026-10-12_measure_templates.txt` (the template census's run, which names the 1,049-file
-index tree the census counts renders into and the 24-file template tree it reads).
+index tree the census counts renders into and the 24-file template tree it reads),
+`notes/development/probe/2026-10-12_measure_templates_tables.txt` (the census run after `math-faz.6` moved
+the 16 index tables out, which names the 1,033-page index tree),
+`notes/development/probe/2026-10-12_rr_tables.txt` (the `render_reports.py` run after the move, which names
+`notes/tables/` as a tree),
+`notes/development/probe/2026-10-13_build_index_db.txt` (the FTS builder's run, which proves its L1 is empty
+and names its one write-mode path outside `notes/` — the keyed record's staging file) and
+`notes/development/probe/2026-10-13_seed_quotes_summaries.txt` (the `seed_quotes.py` run after `math-ckd.6`
+added the summaries tree's link-only index page, which names that page).
 `verify_fleet_design.py` parses the two 2026-10-11 records; `verify_cache_promotion.py` reads all
-seven of the 2026-10-10, 2026-10-11 and 2026-10-12 records for its L1 exactness pass; the
+fourteen records for its L1 exactness pass; the
 2026-10-10 pair is the **before** state the amplification table's deltas are measured against.
 
 | script | write modes | generated reads, and whether any points backwards |
