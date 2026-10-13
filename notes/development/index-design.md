@@ -65,11 +65,19 @@ The five tracked TSVs, measured on disk:
 | `links.tsv` | **7280** | **22** |
 | `subfindings.tsv` | **169216** | **1145** |
 
-Those five named files are the ledger set the **297,050** B figure covers. `notes/tables/abstracts.tsv` (**89476** B over **372** rows), `notes/tables/citation.tsv` (**64092** B over **391** rows),
+Those five named files are the ledger set the **297,050** B figure covers. The 20 tracked TSVs outside it — `notes/tables/abstracts.tsv` (**89476** B over **372** rows), `notes/tables/citation.tsv` (**64092** B over **391** rows),
 `notes/tables/config-declaration.tsv` (**27385** B over **200** rows), `notes/tables/configs.tsv` (**65761** B over **416** rows),
 `notes/tables/families.tsv` (**108550** B over **372** rows), `notes/tables/family-config.tsv` (**8893** B over **416** rows),
-`notes/tables/family-lean.tsv` (**21287** B over **200** rows), `notes/tables/family-manuscript.tsv` (**135963** B over **719** rows), are tracked TSVs too, and every `notes/tables/*.tsv` together totals **2174703** B —
-quote the set with the figure, since the two sums answer different questions.
+`notes/tables/family-lean.tsv` (**21287** B over **200** rows), `notes/tables/family-manuscript.tsv` (**135963** B over **719** rows),
+`notes/tables/family-name.tsv` (**136769** B over **9819** rows), `notes/tables/family-topic.tsv` (**23682** B over **978** rows),
+`notes/tables/family-trace.tsv` (**855** B over **10** rows), `notes/tables/lean-dirs.tsv` (**41937** B over **559** rows),
+`notes/tables/manuscripts.tsv` (**277805** B over **719** rows), `notes/tables/names.tsv` (**304513** B over **5842** rows),
+`notes/tables/quotes.tsv` (**279148** B over **1161** rows), `notes/tables/scope-notes.tsv` (**26677** B over **242** rows),
+`notes/tables/sources.tsv` (**221463** B over **719** rows), `notes/tables/topics-rendered.tsv` (**19127** B over **92** rows), `notes/tables/topics.tsv` (**22631** B over **92** rows) and
+`notes/tables/traces.tsv` (**1639** B over **10** rows) — are tracked TSVs too: 4 written by the ledger
+scripts and 16 rendered by `build_index.py` into `notes/tables/` on `math-faz.6`, and every
+`notes/tables/*.tsv` together totals **2174703** B — quote the set with the figure, since the two
+sums answer different questions.
 
 ## 2. Location — `notes/index/`
 
