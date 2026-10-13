@@ -67,7 +67,7 @@ MUTANTS = [
      lambda p: p.replace("tried and rejected: `also` (56)",
                          "tried and rejected: `also` (57)", 1)),
     ("the filter-cost clause count in prose altered",
-     "page line 1587: page '  densest targets. Reading it yields **141** accepted clause pairs",
+     "page line 1587: page '  densest targets. Reading it yields **140** accepted clause pairs",
      lambda p: p.replace("Reading it yields **141** accepted clause pairs",
                          "Reading it yields **140** accepted clause pairs", 1)),
 ]
