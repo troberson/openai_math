@@ -11,15 +11,17 @@ after each pass.
 Two patterns, because one pattern cannot be comparable across the move. A single pattern that allows
 `/` reads 350 mentions over the 29 pages after the move, 25 of them naming locations the reorg leaves
 in place (`notes/scripts/README.md`, `notes/tables/names.tsv`, `notes/development/upstream_history/…`).
-A single pattern that forbids `/` reads 282 before the move and 304 after. So the probe prints three
+A single pattern that forbids `/` reads 282 before the move and 305 after. So the probe prints three
 counts:
 
 - **moved, top level** — `notes/<page>.md|tsv`: 282 before the move, 0 after;
 - **moved, in the new directories** — `notes/reports/…`, `notes/development/…`, `notes/tables/…`:
-  0 before, 304 after. The two moved counts must agree; that is the comparability test;
+  0 before, 305 after. The two moved counts must agree; that is the comparability test;
 - **stable** — mentions under `scripts/`, `index/`, `summaries/`, `development/probe/`,
   `development/upstream_history/`, plus `notes/README.md` and the six paths the sweep records as
-  deleted or pre-move: 17 before `.3`, 25 after, and must not change across a pass. The two
+  deleted or pre-move: 17 before `.3`, 25 after the move, 28 after `math-faz.5` rewrote the entry
+  point. The constraint is that a *move* pass must not change it; a content pass that names a stable
+  page in prose does change it, and the sweep records the new figure rather than the old one. The two
   `development/` buckets are directories the reorg moved *into*, so a mention naming them is
   stable, not moved: `MOVED_NEW` requires a filename directly after `development/`, and the probe
   records are `.txt`. `notes/README.md` is the entry point the reorg leaves at the top level, so a
@@ -28,7 +30,7 @@ counts:
   excluded for the same reason: a mention of `notes/linting.md` is a record of a deletion, and a
   pass that moves pages cannot move it.
 
-Scope is the 30 pages the reorg moves: the top-level `notes/*.md`, plus `notes/reports/*.md` and
+Scope is the 29 pages the reorg moved: the top-level `notes/*.md`, plus `notes/reports/*.md` and
 `notes/development/*.md` once those directories exist. Report-only: writes nothing.
 """
 
