@@ -1,21 +1,21 @@
-quotes in the pages: 1679
+quotes in the pages: 1744
   pair-line specs (notes/reports/subfinding-pairs.md): 754
-  summaries specs (21 pages): 925
-  specs seeded: 1665   measured negatives (start 0): 14
-  single-line spec: 1047   range spec: 618
-  head widened past 3 words: 247
-  whole-quote spec (no boundary): 429
-  mode: raw 1614  folded 51  not located 14
-  resolver reproduces the page quote: 1665 of 1665
+  summaries specs (22 pages): 990
+  specs seeded: 1729   measured negatives (start 0): 15
+  single-line spec: 1068   range spec: 661
+  head widened past 3 words: 255
+  whole-quote spec (no boundary): 437
+  mode: raw 1676  folded 53  not located 15
+  resolver reproduces the page quote: 1729 of 1729
   round-trip failures: 0
 [probe] target exit code: 0
 [probe2] target notes/scripts/seed_quotes.py 
-[probe2] wall 22.57  opens 554  distinct 291  repeats 263
-[probe2] rchar MB 24.7  read_bytes MB 0.0
+[probe2] wall 23.21  opens 578  distinct 303  repeats 275
+[probe2] rchar MB 25.7  read_bytes MB 1.3
 [probe2] buckets:
-          preprints/                 341
-          notes/summaries/           44
-          other                      35
+          preprints/                 362
+          notes/summaries/           46
+          other                      36
           lean/OAI/                  35
           notes/                     22
           lean/ComparatorChallenges/ 22
@@ -33,6 +33,7 @@ quotes in the pages: 1679
               2  r        notes/summaries/algebraic-and-complex-geometry/032-the-rational-hodge-conjecture-for-cm-abelian-varieties.md
               2  r        notes/summaries/combinatorics/159-quasipolynomial-bounds-for-arithmetic-progressions.md
               2  r        notes/summaries/convex-and-metric-geometry/087-the-mahler-conjectures-and-symplectic-width.md
+              2  r        notes/summaries/convex-and-metric-geometry/101-the-sharp-simplex-conjecture-for-isotropic-constants.md
               2  r        notes/summaries/mathematical-physics/271-blochs-law-and-spontaneous-ferromagnetic-order.md
               2  r        notes/summaries/number-theory/001-milnes-rationality-conjecture.md
               2  r        notes/summaries/number-theory/002-full-birch-swinnerton-dyer-formula-from-low-selmer-corank.md
@@ -53,4 +54,4 @@ quotes in the pages: 1679
               1  w        notes/tables/.quotes.tsv.tmp
               8  r        notes/tables/catalog.tsv
 [probe2] write-mode paths outside notes/:
-              1  w .qwen/cache/records/54aeb960d514f5cd405b24ea234a03fa/notes/tables/.quotes.tsv.tmp
+              1  w .qwen/cache/records/00b899f126c82392bd348f79909e1e4a/notes/tables/.quotes.tsv.tmp
