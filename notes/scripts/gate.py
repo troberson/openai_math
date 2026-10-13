@@ -71,7 +71,9 @@ ROWS = [
     ("measure_names.py", (), ()),
     ("measure_faithfulness.py", ("catalog",), ()),
     ("measure_templates.py", (), ()),
-    ("dump_template_slots.py", (), ()),
+    # The slot dump runs `measure_templates.py` as a child, so it must start after the row that lands
+    # the keyed record: two processes writing the same record key is the race that made this row fail.
+    ("dump_template_slots.py", ("measure_templates.py",), ()),
     ("measure_checker_needles.py", (), ()),
     ("run_tests.py notes/scripts/tests/test_proof_density.py -q", ("pages",), ()),
     ("verify_summaries.py", ("pages", "summaries"), ()),
