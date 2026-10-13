@@ -13,7 +13,7 @@
 | Claim shapes | bound |
 | Topics | [group-theory](../topics/group-theory.md) · [measure-theory](../topics/measure-theory.md) · [ergodic-theory](../topics/ergodic-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [259-a-group-without-fixed-price.md](../../../notes/summaries/group-theory/259-a-group-without-fixed-price.md) |
 
 ## Manuscripts
 

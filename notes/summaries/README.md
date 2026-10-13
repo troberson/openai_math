@@ -37,6 +37,10 @@ manuscript says and where it sits, with a `file:line` anchor the checker resolve
 - [032 — The rational Hodge conjecture for CM abelian varieties](algebraic-and-complex-geometry/032-the-rational-hodge-conjecture-for-cm-abelian-varieties.md)
 - [159 — Quasipolynomial bounds for arithmetic progressions](combinatorics/159-quasipolynomial-bounds-for-arithmetic-progressions.md)
 - [087 — The Mahler conjectures and symplectic width](convex-and-metric-geometry/087-the-mahler-conjectures-and-symplectic-width.md)
+- [101 — The sharp simplex conjecture for isotropic constants](convex-and-metric-geometry/101-the-sharp-simplex-conjecture-for-isotropic-constants.md)
+- [147 — The near-boundary Birkhoff conjecture](dynamical-systems-and-ergodic-theory/147-the-near-boundary-birkhoff-conjecture.md)
+- [332 — Metric Markov cotype two for $\ell_1$](functional-analysis/332-metric-markov-cotype-two-for-l1.md)
+- [259 — A group without fixed price](group-theory/259-a-group-without-fixed-price.md)
 - [271 — Bloch's law and spontaneous ferromagnetic order](mathematical-physics/271-blochs-law-and-spontaneous-ferromagnetic-order.md)
 - [001 — Milne's rationality conjecture](number-theory/001-milnes-rationality-conjecture.md)
 - [002 — Full Birch–Swinnerton-Dyer formula from low Selmer corank](number-theory/002-full-birch-swinnerton-dyer-formula-from-low-selmer-corank.md)
@@ -53,7 +57,10 @@ manuscript says and where it sits, with a `file:line` anchor the checker resolve
 - [287 — All nonabelian free group factors are isomorphic](operator-algebras/287-all-nonabelian-free-group-factors-are-isomorphic.md)
 - [362 — Global smoothness for relativistic Vlasov–Maxwell](partial-differential-equations/362-global-smoothness-for-relativistic-vlasov-maxwell.md)
 - [221 — Mézard–Parisi formula for diluted spin glasses](probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md)
+- [226 — The curve scaling limit of half-plane double dimers](probability-and-statistical-mechanics/226-the-curve-scaling-limit-of-half-plane-double-dimers.md)
 - [102 — Unique games conjecture and optimal approximation thresholds](theoretical-computer-science/102-unique-games-conjecture-and-optimal-approximation-thresholds.md)
+- [109 — Integer multiplication below $n\log n$](theoretical-computer-science/109-integer-multiplication-below-n-n.md)
+- [136 — The quasilinear PCP-for-PPAD conjecture](theoretical-computer-science/136-quasilinear-pcp-for-ppad-conjecture.md)
 
 ## The checker
 
@@ -79,7 +86,7 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **345 families have no summary page.** The 27 pages cover 27 of 372 families; the rest are recorded in
+- **344 families have no summary page.** The 28 pages cover 28 of 372 families; the rest are recorded in
   the ledger and the index, not summarized.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not
