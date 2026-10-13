@@ -5,7 +5,7 @@ template text plus the writer's registry). Lines and bytes are of the template f
 is a `{{ ` occurrence counted over the whole file. No `lake`, `lean`, `lake exe cache get`, or
 comparator run.
 
-**Headline, with the rule that yields it:** report tree: **19** templates, **8,245** lines, **502,460** bytes, **1,718** slots; index tree: **5** templates, **209** lines, **14,981** bytes, **103** slots; all **24** templates: **8,454** lines, **517,441** bytes, **1,821** slots.
+**Headline, with the rule that yields it:** report tree: **19** templates, **8,244** lines, **502,378** bytes, **1,717** slots; index tree: **5** templates, **209** lines, **14,981** bytes, **103** slots; all **24** templates: **8,453** lines, **517,359** bytes, **1,820** slots.
 
 ## The report tree
 
@@ -35,7 +35,7 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `templates.md.j2` | 107 | 5,071 | 45 | `notes/development/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `topics.md.j2` | 335 | 23,082 | 117 | `notes/reports/topics.md` | `measure_topics.py` | NOT DERIVED |
 | `verification-dirs.md.j2` | 408 | 37,952 | 44 | `notes/reports/verification-dirs.md` | `verify_verification_dirs.py` | 16 |
-| **report tree** | **19** | **8,245** | **502,460** | **1,718** | | |
+| **report tree** | **19** | **8,244** | **502,378** | **1,717** | | |
 
 ## The index tree
 
