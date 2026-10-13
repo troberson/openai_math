@@ -621,23 +621,25 @@ lives in this file and nowhere else.
 - Check `notes/development/index-design.md` with `python3 notes/scripts/verify_index_design.py` before quoting the
   schema — it resolves every backticked `path:line` anchor of any extension (a mistyped
   extension fails, it is not skipped), matches each fenced block against the nearest preceding anchor,
-  and re-derives all 82 count and byte phrases from `measure_index_sizes.population()` (schema-table row
+  and re-derives all 83 count and byte phrases from `measure_index_sizes.population()` (schema-table row
   counts from the rendered TSVs themselves; byte phrases scoped to the five TSVs the page tabulates,
-  so `sources.tsv` and `topics.tsv` are not demanded). The fourteen injected mutations are in
+  so `sources.tsv` and `topics.tsv` are not demanded). The fifteen injected mutations are in
   `notes/scripts/tests/test_index_design.py`, run by the `run_tests.py` gate row: an anchor line
   shifted, an anchor file renamed, a block line altered, the node total, the namespace disagreement
   count, the citation-edge count, an abbreviated anchor, the substring-rule counts, the raw-bib
   projection, a rendered schema row count, the ledger-set byte total widened to the all-TSV sum, the
-  all-TSV total swapped with the ledger set, the disk link count, and a schema-table byte column no
+  all-TSV total swapped with the ledger set, the index tree byte total, the disk link count, and a
+  schema-table byte column no
   count or size phrase covers — the last is visible only in the diff against the writer's render. Each
   needle is measured specific: it fires for its own fault and for no other, and the render-diff line
   fires for every fault, so no needle is that line. The clean test pins the population the passes
-  report: 9 anchors, 3 block lines, 82 count and byte phrases, 0 sync problems, 2,560 nodes over 3,415
+  report: 9 anchors, 3 block lines, 83 count and byte phrases, 0 sync problems, 2,560 nodes over 3,415
   resolved edges (17,217 raw), 391 citation edges over 104 cross-family, 1,033 index pages and 16
   tables, 372 families over 719 manuscripts, 242 scope notes, 416 configs, 200 `main_results` entries
   over 189 configs, 172 formalized, 749 preprint dirs, 122,458 `.lean` files, 559 module dirs, 17
   disciplines against 23 Lean dirs, 10 traces in 11 files, 30 verification bundles, 521 `.bib` files
-  with 13,802 entries and 393 hrefs, the ledger set at 297,050 B against the all-TSV 2,252,773 B, 66,108
+  with 13,802 entries and 393 hrefs, the ledger set at 297,050 B against the all-TSV 2,252,773 B, the
+  index tree at 11,530,104 B over 1,033 pages, 66,108
   disk links with 0 broken and 17,700 resolving to a directory, and the substring counts 18 / 373
   against the brace-qualified 17 / 372. `main()` reads no argv, so `--mutant` is inert, and
   `population()` is under `functools.cache` (`:66`), so the fifteen `check()` calls the row makes pay

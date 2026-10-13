@@ -137,6 +137,7 @@ def count_phrases(p):
         (f"the whole ledger set is **{setb}** B", "ledger set byte total"),
         (f"the ledger set the **{setb}** B figure covers", "ledger set scope sentence"),
         (f"every `notes/tables/*.tsv` together totals **{p['all_tsv_bytes']}** B", "all-TSV byte total"),
+        (f"the index tree carries **{p['index_bytes']}** B over the **{p['index_pages']:,}** pages", "index tree byte total"),
         (added_list, "added TSV byte figures"),
         ((f"(**{p['builds_on']}** `builds-on` declarations at "
          f"`lean/formalization.yaml:{builds_on_anchor()}`)"),

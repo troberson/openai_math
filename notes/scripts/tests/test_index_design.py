@@ -3,20 +3,20 @@
 The checker verifies `notes/development/index-design.md` against the tree it describes. Anchors: every
 backticked `path:line` shape must name a file that exists and a line inside it, so a mistyped
 extension fails instead of being skipped, and every fenced block is attributed to its nearest
-preceding anchor and matched at consecutive lines. Counts: all 82 count and byte phrases are rebuilt
+preceding anchor and matched at consecutive lines. Counts: all 83 count and byte phrases are rebuilt
 from `measure_index_sizes.population()` — the node and edge totals, the citation-edge counts, the
 schema tables' row counts read from the generated files under `notes/index/`, the substring-versus-
-line-start command counts, the ledger-set and all-TSV byte sums, the disk link check, and the raw-bib
+line-start command counts, the ledger-set and all-TSV byte sums, the index tree byte total, the disk link check, and the raw-bib
 projection. Byte sizes: the five TSVs the page tabulates are re-read from disk. The page is compared
 with `render_reports.py`'s render of it. The schema tables' row counts come from the rendered files,
 so a table that drops rows is a mismatch, not a phrase built from the upstream count it was derived
 from.
 
-This file injects fourteen faults, one per check form the page uses, and asserts each fires the pass
+This file injects fifteen faults, one per check form the page uses, and asserts each fires the pass
 that owns it: an anchor line shifted, an anchor file renamed, a block line altered, the node total,
 the namespace disagreement count, the citation-edge count, an abbreviated anchor, the substring-rule
 counts, the raw-bib projection, a rendered schema row count, the ledger-set byte total widened to the
-all-TSV sum, the all-TSV total swapped with the ledger set, the disk link count, and a schema-table
+all-TSV sum, the all-TSV total swapped with the ledger set, the index tree byte total, the disk link count, and a schema-table
 byte column no count or size phrase covers — the last is visible only to the render diff.
 
 Every fault is built from a real anchor, a real block line, a real count phrase, a real byte phrase
@@ -75,6 +75,8 @@ MUTANTS = [
                          "the whole ledger set is **2,174,703** B", 1)),
     ("all-TSV total altered", "count mismatch (all-TSV byte total)",
      lambda t: t.replace("together totals **2252773** B", "together totals **297050** B", 1)),
+    ("index tree byte total altered", "count mismatch (index tree byte total)",
+     lambda t: t.replace("carries **11530104** B", "carries **11529933** B", 1)),
     ("disk link count", "count mismatch (disk link check)",
      lambda t: t.replace("covers **66,108** links", "covers **66,109** links", 1)),
     # Prose the count passes never read: the schema table's byte column is not in count_phrases()
