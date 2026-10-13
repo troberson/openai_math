@@ -30,7 +30,7 @@ lives in this file and nowhere else.
   `links.tsv` (22 rows, 7 columns — the
   typed-edge inventory) with `links.md` beside it, `scope-exclusions.md` (242 rows — what each scope
   note says its formalization leaves out), `subfindings.tsv` (1145 rows — 719 manuscript rows and 426
-  comparator rows, typed by a `kind` column) with `subfinding-pairs.md` (49 families, 203 manuscripts —
+  comparator rows, typed by a `kind` column) with `subfinding-pairs.md` (122 families, 349 manuscripts —
   the reading pass that pairs abstract clauses with display titles) beside it,
   `quotes.tsv` (1,161 rows, 10 columns — the `(path, start, end, head, tail, mode)` spec for every
   pair-line quote in `subfinding-pairs.md` and every quoted span the 21 summaries pages carry, seeded by
@@ -317,16 +317,18 @@ lives in this file and nowhere else.
   a brace. Quote 426 as comparator-table **rows** and 416 as **distinct configs** — the 10-gap is the
   same 7 docs `links.tsv` records (071, 100, 115, 134, 274, 275, 293), so a per-family `set()` over a
   table reports 416 rows and is wrong. A display title is link text, not a sub-result, and it is not
-  the manuscript's own title — the `preprints/` directory name is. Pairing has been read for 49
-  families (203 manuscripts) in `notes/reports/subfinding-pairs.md`: 62 sub-finding clause pairs and 47 headline
-  clause pairs accepted, 18 clauses recorded unmatched, 109 of 203 titles claimed by a clause and 94 by
-  none. Quote the display text verbatim — the release is inconsistent about capitalization
+  the manuscript's own title — the `preprints/` directory name is. Pairing has been read for 122
+  families (349 manuscripts) in `notes/reports/subfinding-pairs.md`: 133 sub-finding clause pairs and
+  120 headline clause pairs accepted, 18 clauses recorded unmatched, 253 of 349 titles claimed by a
+  clause and 96 by none. Quote the display text verbatim — the release is inconsistent about capitalization
   (`Correspondence coloring graphs…` vs `Equivariant Jiang--Su Stability…`) and about dashes
   (`Lieb--Thirring` vs `Lieb–Thirring`), so a normalized title is not verbatim.
 - Extract the pairing population with `python3 notes/scripts/extract_subfinding_pairs.py` — report-only,
   writes nothing. Its population rule is (probe phrases `also prove`, `independ`, `also establish`,
-  `as a consequence`) AND ≥2 manuscripts, union the ten named densest targets: 49 families, 203
-  manuscripts. **The bead's "51 of them also use multi-claim language" does not reproduce.** The four
+  `as a consequence`) AND ≥2 manuscripts, union the ten named densest targets, union band 1 (exactly 2
+  manuscripts and no probe word): 122 families, 349 manuscripts. Band 1 is `math-el4.9`'s addition —
+  73 families over 146 manuscripts, the densest slice of the set the first pass left unread.
+  **The bead's "51 of them also use multi-claim language" does not reproduce.** The four
   per-phrase counts (25 / 35 / 5 / 1) reproduce exactly over all 372 abstracts only when the second is
   read as the stem `independ` (`independent` gives 34), and their union over the 167 multi-manuscript
   families is 40, not 51 — nine of the bead's ten named densest targets sit outside its own 40. Rules
@@ -682,10 +684,10 @@ lives in this file and nowhere else.
   keyed to the page line the render diff names, because the counts pass never parses that sentence.
   `main()` reads no argv, so `--mutant` is inert in the checker. `load_inputs()` is under
   `functools.cache` (`:54`), so the row pays the `overview.tex`, `subfindings.tsv` and ledger walk once.
-  Its clean test pins the population the passes report: 49 blocks over 203 manuscripts, 62 clause pairs,
-  47 headline pairs, 18 unmatched clauses, 109 titles claimed, 94 unclaimed, 40 families with an accepted
-  pair, 17 with an unmatched clause, 6 pairing with no probe hit, 62 probe hits over 372, 40 over the
-  167 multi-manuscript families. It writes nothing.
+  Its clean test pins the population the passes report: 122 blocks over 349 manuscripts, 133 clause
+  pairs, 120 headline pairs, 18 unmatched clauses, 253 titles claimed, 96 unclaimed, 111 families with
+  an accepted pair, 17 with an unmatched clause, 77 pairing with no probe hit, 62 probe hits over 372,
+  40 over the 167 multi-manuscript families, and band 1 at 73 families. It writes nothing.
 - Check `notes/reports/conditional.md` with `python3 notes/scripts/verify_conditional.py` and its extracted
   self-tests with `python3 notes/scripts/run_tests.py notes/scripts/tests/test_conditional.py -q`
   before quoting the source check — the checker attributes each fenced block to the nearest preceding
