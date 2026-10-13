@@ -137,3 +137,14 @@ issue.
   one-time run and the stated concern is losing context to compaction, not stalling. Revisit if the run
   outgrows a sitting — then arm a prompt-only `/loop` whose prompt points here and stops when
   `bd ready` has no P4 issue.
+- **Strict-probe fixes: rename before annotate.** Chosen 2026-10-12 on `math-8su`: a finding that came
+  from one variable bound to two types in one function is fixed by renaming, because a rename keeps the
+  line count and a line-count change moves the `path:line` anchors the notes pages carry. Revisit if a
+  future pass needs a real annotation and the anchor sweep has to be paid.
+- **Shared guards go in `catlib/text.py`.** `first_group` / `first_match` return `""` when a pattern
+  does not fire, so a checker reports a missing report line instead of crashing with AttributeError on
+  the defect it is hunting. The file carries no page anchors, so appending to it is anchor-safe.
+  Revisit if a checker needs a guard the two helpers cannot carry.
+- **Push cadence.** Push at bead boundaries, not per commit: the standing grant is "push to git after
+  every batch of commits (approximately one bead)". Revisit if a bead's work spans several sittings —
+  then push at each commit batch, not at the bead close.
