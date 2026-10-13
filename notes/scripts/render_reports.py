@@ -63,8 +63,9 @@ import measure_names as MN
 import measure_proof_density as PD
 import measure_templates as MTPL
 import measure_topics as MT
-from catlib import bib, ledger, overview, preprints, records, text as TX, tsv
+from catlib import bib, ledger, overview, preprints, records, tsv
 from catlib import quotes as Q
+from catlib import text as TX
 from catlib import yaml as Y
 from catlib.atomic import Staging
 from catlib.paths import (
@@ -2567,7 +2568,7 @@ def fleet_phrases(v: dict[str, Any]) -> dict[str, str]:
         "sync_other": f"**{v['sync_other']}** are not",
         "digests": f"**{v['digests']}** digests",
         "ignored_line": f"returns **{v['ignored']} line{'s' if v['ignored'] != 1 else ''}**",
-        "tsv_bytes": f"**{v['tsv_bytes']:,}** bytes",
+        "tsv_bytes": f"`cat notes/tables/*.tsv | wc -c` = **{v['tsv_bytes']:,}** bytes",
         "tsv_count": f"**{v['tsv_count']}** `notes/tables/*.tsv` present on disk",
         "probe_records": f"The tracked records are **{v['probe_records']}**:",
         "du_preprints": f"**{du['preprints']}M**",
@@ -3212,10 +3213,12 @@ def readme_full(p: dict[str, Any]) -> dict[str, str]:
         m = re.match(r"single-line (\d+)  multi-line (\d+)", ln)
         if m:
             seed.update(single=int(m.group(1)), multi=int(m.group(2)))
-    out["scan_links"] = f"**{len(scan['links']):,}** links, **{len(scan['broken'])}** broken, " \
-                        f"**{scan['dir_links']:,}** of them resolving to a directory and " \
-                        f"**{scan['file_links']:,}** to a file"
+    out["scan_links"] = (f"**{len(scan['links']):,}** links, **{len(scan['broken'])}** broken, "
+                         f"**{scan['dir_links']:,}** of them resolving to a directory and "
+                         f"**{scan['file_links']:,}** to a file")
     out["pairings"] = f"{sum(1 for r in rows if int(r['summary']))} of 372 summary pairings"
+    out["summary_pages"] = (f"`notes/summaries/` is **{sum(1 for r in rows if int(r['summary']))}** "
+                           "hand-written per-family pages.")
     b = build_index_report()
     # The disk-check sentence names the registry surplus on the line after the count run, so the
     # surplus is its own slot: the writer measures it, the page does not carry a stale literal.

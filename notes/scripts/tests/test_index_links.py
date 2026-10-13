@@ -9,8 +9,8 @@ classifier tags as a directory must be a directory on disk. The basename pass is
 `math-faz.6` moved the 16 generated tables on: the index tree and `notes/tables/` share no
 basename, so the two sets are pinned at 1,027 and 25 and a collision is injected by handing the
 pass a shared name — a pass that returns 0 because a set is empty is not a pass. The clean test
-asserts the scan baseline the page quotes: 1,033 pages, 66,111 links, 0 broken, 17,700 resolving to
-a directory and 48,411 to a file.
+asserts the scan baseline the page quotes: 1,033 pages, 66,113 links, 0 broken, 17,700 resolving to
+a directory and 48,413 to a file.
 
 The page's own prose is not mutated here: `verify_page_sync.py` owns the page check and mutates
 the page in memory, so nothing in this file writes an index page. Every injected href is built
@@ -176,9 +176,9 @@ def test_clean_scan_baseline(mod):
     page's own figures, so a scan that drifts moves the page and fails this test together."""
     m = mod.measure()
     assert len(m["pages"]) == 1033, f"{len(m['pages'])} index pages on disk, expected 1033"
-    assert len(m["links"]) == 66111, f"{len(m['links'])} links extracted, expected 66,111"
+    assert len(m["links"]) == 66113, f"{len(m['links'])} links extracted, expected 66,113"
     assert not m["broken"], list(m["broken"][:5])
     assert m["dir_links"] == 17700, f"{m['dir_links']} directory-resolving links, expected 17,700"
-    assert m["file_links"] == 48411, f"{m['file_links']} file-resolving links, expected 48,411"
+    assert m["file_links"] == 48413, f"{m['file_links']} file-resolving links, expected 48,413"
     assert m["collisions"] == [], f"basename collisions: {m['collisions'][:3]}"
     assert m["contents_broken"] == [], m["contents_broken"][:5]
