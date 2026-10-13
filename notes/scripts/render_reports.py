@@ -1148,8 +1148,8 @@ IL_SPLIT = {
                         "linked only from the entry")],
     "prose_latexsource": [("`latex-source` 719 = the `main_tex` of each of the 719 manuscripts, "
                           "all 719 present in")],
-    "prose_notesdoc": ["`notes-doc` 25 targets = `notes/reports/names.md` (552 links: one from each of the",
-                       ("551 name pages and one from the entry point), the 21 `notes/summaries/` "
+    "prose_notesdoc": ["`notes-doc` 26 targets = `notes/reports/names.md` (552 links: one from each of the",
+                       ("551 name pages and one from the entry point), the 22 `notes/summaries/` "
                        "pages family pages link,"),
                        ("and the 4 notes docs the entry point links (`index-design.md`, `names.md`, "
                        "`topics.md`,")],
@@ -1161,7 +1161,7 @@ IL_SPLIT = {
     "prose_regchecked": ["**48,013 links checked, 0"],
     "prose_tracefiles": ["`reasoning_traces/` ships **11 files"],
     "prose_fresh": ["**20 injected, 20 caught, 0 missed; 7 controls, 7"],
-    "prose_surplus": ["The 18,094 surplus links are"],
+    "prose_surplus": ["The 18,095 surplus links are"],
 }
 
 
