@@ -76,7 +76,7 @@ Those five named files are the ledger set the **297,050** B figure covers. The 2
 `notes/tables/sources.tsv` (**221463** B over **719** rows), `notes/tables/topics-rendered.tsv` (**19127** B over **92** rows), `notes/tables/topics.tsv` (**22631** B over **92** rows) and
 `notes/tables/traces.tsv` (**1639** B over **10** rows) — are tracked TSVs too: 4 written by the ledger
 scripts and 16 rendered by `build_index.py` into `notes/tables/` on `math-faz.6`, and every
-`notes/tables/*.tsv` together totals **2265274** B — quote the set with the figure, since the two
+`notes/tables/*.tsv` together totals **2268990** B — quote the set with the figure, since the two
 sums answer different questions.
 
 ## 2. Location — `notes/index/`
@@ -216,7 +216,7 @@ manuscript-level flag.
   The index itself is rendered — **1,033** pages, **16** tables, `links checked 48012 broken 0`, and a
   two-run determinism check in which all **1,049** generated files were byte-identical with an
   identical report — but no page was read for prose quality. The byte cost is measured: the index tree
-  carries **11530406** B over the **1,033** pages, and the 16 tables are counted in the
+  carries **11530557** B over the **1,033** pages, and the 16 tables are counted in the
   `notes/tables/*.tsv` sum. The render-time figure is the registry's own subset: the disk check
   (`notes/scripts/check_index_links.py`) covers **66,111** links over the same 1,033 pages, also with
   **0** broken, and **17,700** of them resolve to a directory. `notes/development/index-links.md` carries

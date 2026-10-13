@@ -140,30 +140,30 @@ line in `overview.tex`.
 | 035 | A&CG | {{ p['tc_row_035'] }}
 | 037 | A&CG | {{ p['tc_row_037'] }}
 | 041 | A&CG | {{ p['tc_row_041'] }}
-| 055 | A&CG | {{ p['tc_row_055'] }}
-| 065 | A&CG | {{ p['tc_row_065'] }}
-| 074 | real&complex | {{ p['tc_row_074'] }}
-| 077 | real&complex | {{ p['tc_row_077'] }}
-| 080 | real&complex | {{ p['tc_row_080'] }}
-| 138 | TCS | {{ p['tc_row_138'] }}
-| 147 | dyn sys | {{ p['tc_row_147'] }}
+| 055 | A&CG | uniform | 2 | 0 | 0 | `overview.tex:186` |
+| 065 | A&CG | resolution, uniform | 1 | 0 | 0 | `overview.tex:204` |
+| 074 | real&complex | resolution, uniform | 2 | 1 | 0 | `overview.tex:222` |
+| 077 | real&complex | resolution, bound, uniform | 2 | 2 | 1 | `overview.tex:228` |
+| 080 | real&complex | bound, uniform | 1 | 1 | 0 | `overview.tex:234` |
+| 138 | TCS | bound, uniform | 1 | 0 | 0 | `overview.tex:353` |
+| 147 | dyn sys | resolution, bound | 2 | 1 | 0 | `overview.tex:373` |
 | 200 | algebra | {{ p['tc_row_200'] }}
 | 203 | algebra | {{ p['tc_row_203'] }}
-| 217 | prob | {{ p['tc_row_217'] }}
-| 219 | prob | {{ p['tc_row_219'] }}
-| 239 | prob | {{ p['tc_row_239'] }}
+| 217 | prob | classification, uniform | 2 | 2 | 1 | `overview.tex:517` |
+| 219 | prob | uniform | 1 | 0 | 0 | `overview.tex:521` |
+| 239 | prob | bound, partial, uniform | 0 | 0 | 0 | `overview.tex:561` |
 | 258 | group theory | {{ p['tc_row_258'] }}
-| 265 | mathphys | {{ p['tc_row_265'] }}
-| 268 | mathphys | {{ p['tc_row_268'] }}
-| 270 | mathphys | {{ p['tc_row_270'] }}
-| 286 | opalg | {{ p['tc_row_286'] }}
-| 300 | opalg | {{ p['tc_row_300'] }}
-| 302 | opalg | {{ p['tc_row_302'] }}
-| 308 | topology | {{ p['tc_row_308'] }}
-| 335 | diffgeom | {{ p['tc_row_335'] }}
-| 346 | diffgeom | {{ p['tc_row_346'] }}
+| 265 | mathphys | bound, partial, uniform | 2 | 2 | 1 | `overview.tex:619` |
+| 268 | mathphys | resolution, bound, uniform | 2 | 2 | 1 | `overview.tex:625` |
+| 270 | mathphys | resolution, bound, uniform | 1 | 0 | 0 | `overview.tex:629` |
+| 286 | opalg | classification, uniform | 2 | 2 | 1 | `overview.tex:664` |
+| 300 | opalg | resolution, bound | 0 | 0 | 0 | `overview.tex:692` |
+| 302 | opalg | bound, partial, uniform | 2 | 2 | 1 | `overview.tex:696` |
+| 308 | topology | uniform | 2 | 0 | 0 | `overview.tex:710` |
+| 335 | diffgeom | resolution, uniform | 1 | 0 | 0 | `overview.tex:768` |
+| 346 | diffgeom | bound, partial | 2 | 1 | 0 | `overview.tex:790` |
 | 364 | PDE | {{ p['tc_row_364'] }}
-| 368 | PDE | {{ p['tc_row_368'] }}
+| 368 | PDE | resolution, bound, uniform | 2 | 2 | 1 | `overview.tex:837` |
 
 {{ p['tc_all'] }}.
 
@@ -564,5 +564,5 @@ recorded outputs. Nothing here says a certificate was run, and nothing here says
 - No authorship check: whether the two manuscripts of a family share authors is not measured.
 - The chain families' abstracts were quoted, not verified against their manuscripts; the claim that
   032's theorems give the Tate and Hodge standard conjectures is the release's claim, unverified.
-- The 8 first-pass T0 two-manuscript families ({{ p['tc_first_pass_list'] }}) are outside
+- The 8 first-pass T0 two-manuscript families (004, 006, 018, 019, 029, 046, 059, 209) are outside
   this page by construction; 006 is itself a chain family and is read in `notes/reports/t0-triage.md`.

@@ -19,18 +19,19 @@ describe the listed corpus only.
 
 | Column | Rule | Corpus total |
 |---|---|---|
-| `dir` | `preprints/` directory name — manuscript ownership is the path component after `preprints` {{ p['dir distinct count'] }}
-| `fam` | Family id, from the manuscript rows of `notes/tables/subfindings.tsv` {{ p['fam distinct count'] }}
+| `dir` | `preprints/` directory name — manuscript ownership is the path component after `preprints` | 719 distinct |
+| `fam` | Family id, from the manuscript rows of `notes/tables/subfindings.tsv` | 372 distinct |
 | `pdf` | Manuscript PDF path, reconciled against `overview.tex` | 719, all on disk, all non-empty |
 | `main_tex` | Resolved main file, rule below {{ p['main_tex filled count'] }}
 | `roots` | `.tex` files declaring `\documentclass` **at line start** {{ p['roots distribution'] }}
 | `tex` | All `.tex` files under the dir {{ p['tex file count'] }}
 | `bib` | `.bib` files under the dir {{ p['bib count'] }}
-| `sections` | `\section*?{` {{ p['section count'] }}
-| `subsections` | `\subsection*?{` {{ p['subsection count'] }}
-| `subsubsections` | `\subsubsection*?{` {{ p['subsubsection count'] }}
+{% raw %}| `sections` | `\section*?{` | **6,019** |
+| `subsections` | `\subsection*?{` | **16,297** |
+| `subsubsections` | `\subsubsection*?{` | **316** |
+{% endraw %}
 | `proofs` | `\begin{proof}` {{ p['proof count'] }}
-| `thms` | Statement environments, rule below {{ p['thms count'] }}
+| `thms` | Statement environments, rule below | **21,288** |
 | `abstract` | Line-start `\begin{abstract}` anywhere in the dir {{ p['abstract count'] }}
 | `tex_bytes` | Sum of `.tex` file sizes {{ p['tex bytes'] }}
 
@@ -54,7 +55,7 @@ The name test is applied to roots, not to files, {{ p['main.tex without document
 non-root file.
 
 The 16 single-root dirs resolve to: {{ p['single-root name counts'] }},
-and {{ p['single-root singleton count'] }} singletons (`invariant-sk.tex`, `critical-percolation-z3.tex`,
+and **5** singletons (`invariant-sk.tex`, `critical-percolation-z3.tex`,
 `positive-eigenvalues-relative-su2-bfss.tex`, `strong-ulam-stability.tex`, `paper2.tex`). The bead's
 spec records 17 with `preamble.tex` 8 and 4 singletons; the split never reproduced — one singleton is
 counted as a `preamble.tex` there — and the 17 is now 16, because the withdrawn

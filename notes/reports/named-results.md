@@ -36,7 +36,7 @@ conjecture environment.
 
 | Measure | Count | Rule |
 |---|---|---|
-| headline begins | 2,410 | `\begin{theorem}` 2,405, `\begin{maintheorem}` 4, `\begin{thm}` 1 |
+| headline begins | 2,410 | `\begin{theorem}` 2,405 `\begin{maintheorem}` 4 `\begin{thm}` 1 |
 | titled headline begins | 1,609 | `\begin{X}[title]`, scanned **per line** |
 | titled headline begins, whole-text scan | 1,619 | same pattern over the whole file |
 | of those, titles whose match spans a newline | 10 | the 1,609 / 1,619 gap |
@@ -217,7 +217,7 @@ All **15** are corroborated by a manuscript-abstract naming sentence (layer 2, c
 
 **The union does not cover everything the source names.** 354, 365 and 372 are directory-named and
 manuscript-abstract-named but **not** title-named, so they sit outside the 15. The manuscript-abstract
-layer alone (48 families) would cover them and reach 296, and that layer is unadjudicated.
+layer alone (48 families) would cover them and reach 296 and that layer is unadjudicated.
 
 ## Direction A — the source names a target, the column reads 0
 
