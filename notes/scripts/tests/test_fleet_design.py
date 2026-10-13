@@ -90,11 +90,11 @@ MUTANTS = [
      lambda t: t.replace("**25** `notes/tables/*.tsv` present on disk",
                          "**24** `notes/tables/*.tsv` present on disk", 1)),
     # The probe-record count is measured from the tracked record tree, so a page that names a record
-    # the tree does not carry is caught by the count pass. The tree carries 12 records, so the needle
-    # names 12 and the fault understates that.
+    # the tree does not carry is caught by the count pass. The tree carries 13 records, so the needle
+    # names 13 and the fault understates that.
     ("probe record count understated",
-     "count phrase not in the page: The tracked records are **12**:",
-     lambda t: t.replace("The tracked records are **12**:", "The tracked records are **11**:", 1)),
+     "count phrase not in the page: The tracked records are **13**:",
+     lambda t: t.replace("The tracked records are **13**:", "The tracked records are **12**:", 1)),
     ("writer-row count in the gate paragraph",
      "count phrase not in the page: the **11** writers declare what they write",
      lambda t: t.replace("the **11** writers declare what they write",
@@ -147,7 +147,7 @@ def test_clean_page(mod, text):
     assert (n_anchor, n_phrases, n_sync) == (32, 24, 0), \
         f"anchors {n_anchor}, phrases {n_phrases}, sync {n_sync}"
     p = mod.population()
-    assert (p["atomic"], p["scripts"], p["modules"]) == (2, 65, 18), \
+    assert (p["atomic"], p["scripts"], p["modules"]) == (2, 66, 18), \
         f"atomic {p['atomic']}, scripts {p['scripts']}, modules {p['modules']}"
     assert (p["sync"], p["sync_verify"], p["sync_other"]) == (12, 12, 0), \
         f"sync {p['sync']}, verify_ {p['sync_verify']}, not {p['sync_other']}"
