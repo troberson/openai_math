@@ -31,10 +31,10 @@ PAGE_CASES = [
      lambda t: t.replace("| `extract_links.py` | `notes/tables/links.tsv` | single run; cached "
                          "bytes == promoted bytes under the key | `notes/reports/links.md` |\n", "")),
     ("generated TSV count understated", "tsv census cell",
-     lambda t: t.replace("**7** generated, **2** hand-authored",
-                         "**6** generated, **2** hand-authored")),
+     lambda t: t.replace("**23** generated, **2** hand-authored",
+                         "**22** generated, **2** hand-authored")),
     ("index file count altered", "census row notes/index/",
-     lambda t: t.replace("| `notes/index/` | **1,049** |", "| `notes/index/` | **1,050** |")),
+     lambda t: t.replace("| `notes/index/` | **1,033** |", "| `notes/index/` | **1,034** |")),
     ("collision name altered", "collision sentence",
      lambda t: t.replace("**1** shared basename — `README.md`",
                          "**2** shared basenames — `README.md` and `topics.tsv`")),

@@ -382,7 +382,10 @@ def check(text):
     parts = sections(text)
     names = script_names()
     wr = writers()
-    derived = {k: v[0] for k, v in wr.items()}
+    # A script can write more than one target (`build_index.py` stages the index pages and the 16
+    # generated tables), so the writers table takes the sorted first target and the TSV rule reads
+    # the whole list.
+    derived = {k: sorted(v)[0] for k, v in wr.items()}
 
     # A. writers: derived set == page table
     page_writers = {}
@@ -445,8 +448,15 @@ def check(text):
         if f not in owned:
             p.append(f"file under notes/ owned by no rule: {f.relative_to(ROOT)}")
     tables_tsv = sorted(f.name for f in tables if f.suffix == ".tsv")
-    gen_tsv = sorted(n for n in tables_tsv if f"notes/tables/{n}" in set(derived.values()))
-    hand_tsv = sorted(n for n in tables_tsv if f"notes/tables/{n}" not in set(derived.values()))
+    derived_paths = {t for v in wr.values() for t in v}
+    # `build_index.py` stages the 16 generated tables as `TABLES / basename`, so the target the rule
+    # resolves is the directory, not a file. A TSV under a derived directory is generated; the
+    # hand-authored pair is the rule that names which tables the writer set does not write.
+    gen = {n for n in tables_tsv if f"notes/tables/{n}" in derived_paths}
+    if "notes/tables" in derived_paths:
+        gen |= set(tables_tsv) - {n.split("/")[-1] for n in HAND_AUTHORED_TSVS}
+    gen_tsv = sorted(gen)
+    hand_tsv = sorted(set(tables_tsv) - gen)
     if hand_tsv != sorted(n.split("/")[-1] for n in HAND_AUTHORED_TSVS):
         p.append(
             f"hand-authored tables TSVs: {hand_tsv}, page lists "

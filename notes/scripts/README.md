@@ -55,7 +55,8 @@ finds **14** writers over **66** scripts.
 | `seed_quotes.py` | `notes/tables/quotes.tsv` | single run; cached bytes == promoted bytes under the key | `notes/reports/subfinding-pairs.md` and `notes/summaries/**` — the two surfaces whose quotes it seeds; `render_reports.py` reads the pair rows back for the pair page, and `notes/scripts/tests/test_quotes.py` reads the whole table back |
 
 Seven writers emit one TSV each. `build_index.py` is the one-to-many case: it renders **1,049** files —
-**1,033** `.md` pages and **16** `.tsv` tables. `render_reports.py` renders the nineteen report-fed pages
+**1,033** `.md` pages and **0** `.tsv` tables in `notes/index/`, plus the **16** `.tsv` tables it stages
+into `notes/tables/`. `render_reports.py` renders the nineteen report-fed pages
 from the templates `build_report_templates.py` builds from the committed page and the slot dict that
 writer supplies. `compare_abstracts.py` is the conditional case: its
 default run writes nothing and only `--tsv` touches `notes/tables/abstracts.tsv`. The three record
@@ -520,22 +521,23 @@ excludes them with the script tree, so they are not scripts.
 
 | Population | Files | Owner |
 |---|---|---|
-| `notes/index/` | **1,049** | generated — `build_index.py` |
+| `notes/index/` | **1,033** | generated — `build_index.py`; the 16 tables it renders land in `notes/tables/` |
 | `notes/summaries/` | **21** | hand-written — the reading record |
 | `notes/templates/` | **24** | **5** hand-written index skeletons + **19** report templates built by `build_report_templates.py` |
 | `notes/development/*.md` | **5** | hand-written in part: `summaries-workflow.md` is the resume protocol; the other four are report-fed pages `render_reports.py` renders. `math-faz.3` moved them here from the top level. |
 | `notes/development/upstream_history/` | **3** | hand-written — the record of each upstream merge, checked by `verify_upstream_history.py` |
-| `notes/development/probe/` | **10** | the audit-hook probe records: the 2026-10-11 writers/checkers pair `measure_open_probe.py` writes and the fleet checker parses, the 2026-10-11 `render_reports.py` after-record that proves the repeat count fell, the 2026-10-10 pair the page's cold-cache figures come from, the 2026-10-12 `render_reports.py` record that captures the fleet census the writer added (the script tree and the two 2026-10-11 records it scans, which its own 2026-10-11 record cannot name), the 2026-10-12 `seed_quotes.py` record that proves its L1 list names the one page it reads, the 2026-10-12 `seed_quotes.py` record that proves the widened L1 names the summaries tree and the notes pages its Sources cells cite, the 2026-10-12 `extract_named_results.py` record that proves its L1 names the ledger at its `tables/` path (the older record for that target names `notes/catalog.tsv`, the pre-move path), and the 2026-10-12 `measure_templates.py` record that proves the census L1 names the 1,049-file index tree and the 24-file template tree |
-| `notes/tables/*.tsv` | **9** | **7** generated, **2** hand-authored |
+| `notes/development/probe/` | **12** | the audit-hook probe records: the 2026-10-11 writers/checkers pair `measure_open_probe.py` writes and the fleet checker parses, the 2026-10-11 `render_reports.py` after-record that proves the repeat count fell, the 2026-10-10 pair the page's cold-cache figures come from, the 2026-10-12 `render_reports.py` record that captures the fleet census the writer added (the script tree and the two 2026-10-11 records it scans, which its own 2026-10-11 record cannot name), the 2026-10-12 `seed_quotes.py` record that proves its L1 list names the one page it reads, the 2026-10-12 `seed_quotes.py` record that proves the widened L1 names the summaries tree and the notes pages its Sources cells cite, the 2026-10-12 `extract_named_results.py` record that proves its L1 names the ledger at its `tables/` path (the older record for that target names `notes/catalog.tsv`, the pre-move path), the 2026-10-12 `measure_templates.py` record that proves the census L1 names the index tree at its pre-move 1,049-file size, the 2026-10-12 `measure_templates.py` record that proves the census L1 names the 1,033-page index tree after `math-faz.6` moved the 16 tables out, and the 2026-10-12 `render_reports.py` record that proves the writer's L1 names `notes/tables/` as a tree after the move |
+| `notes/tables/*.tsv` | **25** | **23** generated, **2** hand-authored — 7 written by the ledger scripts and 16 rendered by `build_index.py` since `math-faz.6` |
 | `notes/reports/*.md` | **23** | **14** generated — the report-fed pages `render_reports.py` renders; **9** hand-written. **19** with a checker, **4** without. `math-faz.4` moved them here from the top level. |
 | `notes/*.md` | **1** | `notes/README.md`, the entry point — hand-written, no checker |
-| `notes/` total, scripts excluded | **1,145** | — |
+| `notes/` total, scripts excluded | **1,147** | — |
 
-The generated TSVs are the seven writer targets. The two hand-authored tables are:
+The generated TSVs are the **23** the writer set writes: the 7 named writer targets and the 16 tables
+`build_index.py` stages into `notes/tables/`. The two hand-authored tables are:
 
 | Table | Why it is hand-authored |
 |---|---|
-| `notes/tables/topics.tsv` | The curated topic vocabulary. `measure_topics.py --check` re-measures its 92 rows and exits 1 when a recorded count drifts; `build_index.py` reads it and renders `notes/index/topics-rendered.tsv`. A generated file inside `notes/index/` is overwritten by the next render, which is why the vocabulary lives outside that tree. |
+| `notes/tables/topics.tsv` | The curated topic vocabulary. `measure_topics.py --check` re-measures its 92 rows and exits 1 when a recorded count drifts; `build_index.py` reads it and renders `notes/tables/topics-rendered.tsv`. A generated file inside `notes/index/` is overwritten by the next render, which is why the vocabulary lives outside that tree; `math-faz.6` put the render in `notes/tables/`, where the vocabulary and the render sit side by side. |
 | `notes/tables/conjecture-standing.tsv` | The training-data prior. Its `standing_prior_2025` column is the assistant's memory at an early-2025 cutoff, self-rated by `prior_confidence`; no script can derive a memory, and `verify_conjecture_standing.py` checks the rows against the ledger and `overview.tex` rather than regenerating them. |
 
 Across the **24** prose pages — the 23 report pages and the entry point — **19** with a checker, **5** without.
