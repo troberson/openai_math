@@ -95,5 +95,5 @@ other: template-without-page **0**, page-without-template **0**.
 - No template is executed here: the census is text measurement. Proof that a template renders its
   page is `render_reports.py` run twice with the pages byte-identical, plus each page's own checker.
 - The index-tree templates are counted and their output is counted; `build_index.py`'s own report
-  (links, canonical counts, stale sweep) is not re-checked here — see `notes/index-design.md`.
+  (links, canonical counts, stale sweep) is not re-checked here — see `notes/development/index-design.md`.
 - Needle coverage for the **10** NOT-DERIVED pages is unverified by the builder, by its own report line.
