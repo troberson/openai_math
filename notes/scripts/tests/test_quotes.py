@@ -10,10 +10,10 @@ word the page spells without markup, where the raw span is NOT the page quote an
 comparison is; math whose `<` and `>` make the folded line lose text the raw line keeps; and a quote
 that wraps across lines.
 
-The clean test pins the population the seeder reports for the two surfaces: **1,161** specs, **236**
-from the pair page and **925** from the summaries pages; **1,147** seeded and **14** measured negatives
-(the spans the cited file does not carry, seeded to `start` 0); **529** single-line and **618** range
-specs; **158** heads widened past three words; **228** whole-quote specs; the `mode` split **1,096**
+The clean test pins the population the seeder reports for the two surfaces: **1,449** specs, **524**
+from the pair page and **925** from the summaries pages; **1,435** seeded and **14** measured negatives
+(the spans the cited file does not carry, seeded to `start` 0); **817** single-line and **618** range
+specs; **204** heads widened past three words; **347** whole-quote specs; the `mode` split **1,384**
 raw, **51** folded, **14** not located; **0** round-trip failures. The seeded table on disk must
 reproduce every page quote, in its own class — byte-for-byte for `raw`, fold-equal for `folded` — so a
 resolver that passes its synthetic cases and fails the corpus is caught.
@@ -115,16 +115,16 @@ def test_clean_page(page_rows, summary_rows):
     """The population the seeder reports for both surfaces, pinned."""
     all_rows = page_rows + summary_rows
     seeded = [s for s, _q in all_rows if s["start"] != "0"]
-    assert len(page_rows) == 236
+    assert len(page_rows) == 524
     assert len(summary_rows) == 925
-    assert len(all_rows) == 1161
-    assert len(seeded) == 1147
-    assert sum(1 for s in seeded if s["start"] == s["end"]) == 529
+    assert len(all_rows) == 1449
+    assert len(seeded) == 1435
+    assert sum(1 for s in seeded if s["start"] == s["end"]) == 817
     assert sum(1 for s in seeded if s["start"] != s["end"]) == 618
-    assert sum(1 for s in seeded if len(s["head"].split()) > 3) == 158
-    assert sum(1 for s in seeded if s["tail"] == "") == 228
+    assert sum(1 for s in seeded if len(s["head"].split()) > 3) == 204
+    assert sum(1 for s in seeded if s["tail"] == "") == 347
     modes = Counter(s["mode"] for s, _q in all_rows)
-    assert (modes["raw"], modes["folded"], modes["none"]) == (1096, 51, 14), modes
+    assert (modes["raw"], modes["folded"], modes["none"]) == (1384, 51, 14), modes
     # Every seeded spec must reproduce its quote in its own class, so a spec that resolves to text the
     # page does not quote is a failure, not a pass.
     cache: dict[str, list[str]] = {}
