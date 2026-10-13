@@ -50,7 +50,7 @@ from catlib.bib import (
 from catlib.ledger import read_ledger
 from catlib.paths import NOTES, PREPRINTS, ROOT, owner, rel
 
-PAGE = str(NOTES / "citations.md")
+PAGE = str(NOTES / "reports" / "citations.md")
 ACCENT_NOGUARD = re.compile(r"\\(?:['`^~=\".]|c|v|u|H|k|r|d|b|t|o)\{?([a-zA-Z])\}?")
 
 

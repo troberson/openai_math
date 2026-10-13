@@ -1,240 +1,240 @@
 page	fam	seq	which	path	start	end	head	tail	mode
-notes/subfinding-pairs.md	009	1	main	overview.tex	94	94	Reconstructs function fields	and their product.	raw
-notes/subfinding-pairs.md	009	1	title	overview.tex	94	94	Reconstruction of Function	Mod-$\ell$ Milnor $K$-Theory	raw
-notes/subfinding-pairs.md	009	2	clause	overview.tex	94	94	These data recover	in equal characteristic.	raw
-notes/subfinding-pairs.md	009	2	title	overview.tex	94	94	Reconstruction from Milnor	modulo the characteristic	raw
-notes/subfinding-pairs.md	009	3	clause	overview.tex	94	94	Also proves Bogomolov--Pop	from the characteristic.	raw
-notes/subfinding-pairs.md	009	3	title	overview.tex	94	94	The Bogomolov-Pop reconstruction theorem		raw
-notes/subfinding-pairs.md	010	1	main	overview.tex	96	96	Every continuous odd	odd tame level.	raw
-notes/subfinding-pairs.md	010	1	title	overview.tex	96	96	Unrestricted pro-modularity		raw
-notes/subfinding-pairs.md	010	3	clause	overview.tex	96	96	Also proves classical	without residual restrictions.	raw
-notes/subfinding-pairs.md	010	3	title	overview.tex	96	96	Fontaine–Mazur modularity at the prime 2		raw
-notes/subfinding-pairs.md	011	2	main	overview.tex	98	98	Proves that the	$x$ and $x\to\infty$.	raw
-notes/subfinding-pairs.md	011	2	title	overview.tex	98	98	The Poisson-Dirichlet law for prime predecessors		raw
-notes/subfinding-pairs.md	011	1	clause	overview.tex	98	98	It also proves	for every $\varepsilon>0$.	raw
-notes/subfinding-pairs.md	011	1	title	overview.tex	98	98	Weighted dilation graphs,	and totient fibers	raw
-notes/subfinding-pairs.md	014	5	main	overview.tex	104	104	Proves the restricted	Lie-theoretic characteristic hypotheses.	raw
-notes/subfinding-pairs.md	014	5	title	overview.tex	104	104	Restricted geometric Langlands		raw
-notes/subfinding-pairs.md	014		clause	overview.tex	104	104	Over arbitrary algebraically	and $p\nmid |W_G|$.	raw
-notes/subfinding-pairs.md	014	4	clause	overview.tex	104	104	Over global function	or ramification-depth restrictions	raw
-notes/subfinding-pairs.md	014	4	title	overview.tex	104	104	Temperedness at ramified	generic exceptional groups	raw
-notes/subfinding-pairs.md	014	2	clause	overview.tex	104	104	and at every	generic unramified component.	raw
-notes/subfinding-pairs.md	014	2	title	overview.tex	104	104	Unramified Arthur filtration		raw
-notes/subfinding-pairs.md	014	1	clause	overview.tex	104	104	Assuming the finite-level	group, including inertia.	raw
-notes/subfinding-pairs.md	014	1	title	overview.tex	104	104	Global Arthur Enhancements	Cuspidal Excursion Parameters	raw
-notes/subfinding-pairs.md	016	1	main	overview.tex	108	108	Proves the abelian	containing torsion coset.	raw
-notes/subfinding-pairs.md	016	1	title	overview.tex	108	108	Abelian Zilber–Pink		raw
-notes/subfinding-pairs.md	016		clause	overview.tex	108	108	It also proves	or reduction assumptions.	raw
-notes/subfinding-pairs.md	019	2	main	overview.tex	114	114	Proves that rational	\'etale fundamental group.	raw
-notes/subfinding-pairs.md	019	2	title	overview.tex	114	114	p-adic section conjecture		raw
-notes/subfinding-pairs.md	019		clause	overview.tex	114	114	It also proves	at least two.	raw
-notes/subfinding-pairs.md	032	1	main	overview.tex	142	142	Proves the rational	dimension and codimension.	raw
-notes/subfinding-pairs.md	032	1	title	overview.tex	142	142	The rational Hodge	CM abelian varieties	raw
-notes/subfinding-pairs.md	032		clause	overview.tex	142	142	Through Milne's theorems,	in every characteristic.	raw
-notes/subfinding-pairs.md	034	1	main	overview.tex	146	146	Using logarithmic Iitaka	adjoint is semiample.	raw
-notes/subfinding-pairs.md	034	1	title	overview.tex	146	146	Log abundance for compact Kähler spaces		raw
-notes/subfinding-pairs.md	034	4	clause	overview.tex	146	146	It also proves	of characteristic zero	raw
-notes/subfinding-pairs.md	034	4	title	overview.tex	146	146	Log abundance in characteristic zero		raw
-notes/subfinding-pairs.md	034	10	clause	overview.tex	146	146	and the effective	in that setting.	raw
-notes/subfinding-pairs.md	034	10	title	overview.tex	146	146	Uniform pluricanonical Iitaka fibrations		raw
-notes/subfinding-pairs.md	034	2	clause	overview.tex	146	146	A further result	number of components.	raw
-notes/subfinding-pairs.md	034	2	title	overview.tex	146	146	Uniform indices for	log Calabi--Yau pairs	raw
-notes/subfinding-pairs.md	039	1	main	overview.tex	156	156	Proves Nagata's strict	arbitrary multiplicities $m_i$.	raw
-notes/subfinding-pairs.md	039	1	title	overview.tex	156	156	Plane-curve Nagata conjecture		raw
-notes/subfinding-pairs.md	039	3	clause	overview.tex	156	156	It also proves	over $\mathbb C$	raw
-notes/subfinding-pairs.md	039	3	title	overview.tex	156	156	Maximal Multipoint Seshadri	in Higher Dimensions	raw
-notes/subfinding-pairs.md	039	4	clause	overview.tex	156	156	and at the	of positive characteristic.	raw
-notes/subfinding-pairs.md	039	4	title	overview.tex	156	156	Maximal multipoint Seshadri	in positive characteristic	raw
-notes/subfinding-pairs.md	041	2	main	overview.tex	160	160	Proves the strong	manifold is semiample.	raw
-notes/subfinding-pairs.md	041	2	title	overview.tex	160	160	Strong hyperkähler SYZ		raw
-notes/subfinding-pairs.md	041	1	clause	overview.tex	160	160	It also proves	and deformation type.	raw
-notes/subfinding-pairs.md	041	1	title	overview.tex	160	160	Projective-space bases		raw
-notes/subfinding-pairs.md	056	1	main	overview.tex	188	188	Proves termination of	prescribed ample signs.	raw
-notes/subfinding-pairs.md	056	1	title	overview.tex	188	188	Termination of generalized log	compact Kähler fourfolds	raw
-notes/subfinding-pairs.md	056	3	clause	overview.tex	188	188	Also proves termination	in characteristic zero.	raw
-notes/subfinding-pairs.md	056	3	title	overview.tex	188	188	Log canonical fourfold termination		raw
-notes/subfinding-pairs.md	068	1	main	overview.tex	210	210	If $X$ is	for some $m>0$.	raw
-notes/subfinding-pairs.md	068	1	title	overview.tex	210	210	Smooth semipositivity		raw
-notes/subfinding-pairs.md	068		clause	overview.tex	210	210	Thus smooth semipositivity	in every dimension.	raw
-notes/subfinding-pairs.md	071	2	main	overview.tex	216	216	Resolves the existence	disks or points.	raw
-notes/subfinding-pairs.md	071	2	title	overview.tex	216	216	Koebe’s circle-domain conjecture		raw
-notes/subfinding-pairs.md	071	1	clause	overview.tex	216	216	It also proves	the He--Schramm conjecture.	raw
-notes/subfinding-pairs.md	071	1	title	overview.tex	216	216	Removable boundaries and rigidity		raw
-notes/subfinding-pairs.md	088	1	main	overview.tex	252	252	Proves Petty's projection-volume	fixed body volume.	raw
-notes/subfinding-pairs.md	088	1	title	overview.tex	252	252	Petty’s projection-volume conjecture		raw
-notes/subfinding-pairs.md	088	2	clause	overview.tex	252	252	In contrast, products	sufficiently large dimension.	raw
-notes/subfinding-pairs.md	088	2	title	overview.tex	252	252	Product counterexample to simplex maximum		raw
-notes/subfinding-pairs.md	088		clause	overview.tex	252	252	Also establishes the	Lutwak--Petty projection inequalities.	raw
-notes/subfinding-pairs.md	102	1	main	overview.tex	282	282	Proves Khot's Unique Games Conjecture.		raw
-notes/subfinding-pairs.md	102	1	title	overview.tex	282	282	Unique Games theorem		raw
-notes/subfinding-pairs.md	102	2	clause	overview.tex	282	282	Independent direct reductions	ratio for Max-Cut	raw
-notes/subfinding-pairs.md	102	2	title	overview.tex	282	282	Optimal Max-Cut hardness		raw
-notes/subfinding-pairs.md	102	3	clause	overview.tex	282	282	below factor two for Vertex Cover		raw
-notes/subfinding-pairs.md	102	3	title	overview.tex	282	282	Factor-two Vertex Cover hardness		raw
-notes/subfinding-pairs.md	102	4	clause	overview.tex	282	282	and within any	feedback vertex set.	raw
-notes/subfinding-pairs.md	102	4	title	overview.tex	282	282	Constant-factor Min-UnCut hardness		raw
-notes/subfinding-pairs.md	102	5	clause	overview.tex	282	282	and within any	feedback vertex set.	raw
-notes/subfinding-pairs.md	102	5	title	overview.tex	282	282	Directed feedback vertex set hardness		raw
-notes/subfinding-pairs.md	113	1	main	overview.tex	304	304	Gives a fully	of zero counts.	raw
-notes/subfinding-pairs.md	113	1	title	overview.tex	304	304	Perfect-matching FPRAS		raw
-notes/subfinding-pairs.md	113	2	clause	overview.tex	304	304	Also proves the	including boundary points.	raw
-notes/subfinding-pairs.md	113	2	title	overview.tex	304	304	Entropy and face dimension		raw
-notes/subfinding-pairs.md	114	1	main	overview.tex	306	306	Gives a fully	exact rank-value oracles.	raw
-notes/subfinding-pairs.md	114	1	title	overview.tex	306	306	An FPRAS for	with Binary Capacities	raw
-notes/subfinding-pairs.md	114	2	clause	overview.tex	306	306	For matroids presented	the ranks differ.	raw
-notes/subfinding-pairs.md	114	2	title	overview.tex	306	306	Approximate counting of	of two matroids	raw
-notes/subfinding-pairs.md	119	1	main	overview.tex	316	316	Proves the Courtade--Kumar	independent bit-flip noise.	raw
-notes/subfinding-pairs.md	119	1	title	overview.tex	316	316	Sharp binary-information contraction		raw
-notes/subfinding-pairs.md	119	2	clause	overview.tex	316	316	The Hellinger conjecture	and noise correlation.	raw
-notes/subfinding-pairs.md	119	2	title	overview.tex	316	316	Arbitrary-bias Hellinger contraction		raw
-notes/subfinding-pairs.md	119		clause	overview.tex	316	316	A stronger theorem	fixed initial information.	raw
-notes/subfinding-pairs.md	122	3	main	overview.tex	322	322	At every fixed	out polynomial-sample reconstruction.	raw
-notes/subfinding-pairs.md	122	3	title	overview.tex	322	322	Quantitative lower bounds for trace reconstruction		raw
-notes/subfinding-pairs.md	122	1	clause	overview.tex	322	322	A uniform decoder	rational retention probabilities.	raw
-notes/subfinding-pairs.md	122	1	title	overview.tex	322	322	Uniform quasipolynomial-time trace reconstruction		raw
-notes/subfinding-pairs.md	122	2	clause	overview.tex	322	322	When the deletion	and parameter encoding.	raw
-notes/subfinding-pairs.md	122	2	title	overview.tex	322	322	A latest-anchor induction	worst-case trace reconstruction	raw
-notes/subfinding-pairs.md	129	1	main	overview.tex	335	335	Proves exponential lower	nondeterministic finite automata	raw
-notes/subfinding-pairs.md	129	1	title	overview.tex	335	335	Nondeterministic complementation lower bound		raw
-notes/subfinding-pairs.md	129	2	clause	overview.tex	335	335	and for simulating	two-way deterministic ones.	raw
-notes/subfinding-pairs.md	129	2	title	overview.tex	335	335	Two-way deterministic state lower bound		raw
-notes/subfinding-pairs.md	129		clause	overview.tex	335	335	The latter resolves	growing finite alphabets	raw
-notes/subfinding-pairs.md	134	3	main	overview.tex	345	345	Every regular language	the same alphabet.	raw
-notes/subfinding-pairs.md	134	3	title	overview.tex	345	345	Star height at most three		raw
-notes/subfinding-pairs.md	134		clause	overview.tex	345	345	This establishes an	generalized star-height problem.	raw
-notes/subfinding-pairs.md	157	1	main	overview.tex	395	395	Disproves Hadwiger's conjecture	largest clique-minor order.	raw
-notes/subfinding-pairs.md	157	1	title	overview.tex	395	395	Hadwiger counterexample		raw
-notes/subfinding-pairs.md	157	2	clause	overview.tex	395	395	Also disproves the	chromatic bound $\chi_f(G)\le\mu(G)+1$.	raw
-notes/subfinding-pairs.md	157	2	title	overview.tex	395	395	Colin de Verdière counterexample		raw
-notes/subfinding-pairs.md	157	3	clause	overview.tex	395	395	In the positive	universal constant $C$.	raw
-notes/subfinding-pairs.md	157	3	title	overview.tex	395	395	Linear list-coloring bound		raw
-notes/subfinding-pairs.md	170	2	main	overview.tex	419	419	For every fixed	at that scale.	raw
-notes/subfinding-pairs.md	170	2	title	overview.tex	419	419	Fixed off-diagonal Ramsey numbers		raw
-notes/subfinding-pairs.md	184	1	main	overview.tex	447	447	Proves the Alon--Krivelevich--Sudakov	is sufficiently large.	raw
-notes/subfinding-pairs.md	184	1	title	overview.tex	447	447	Correspondence coloring graphs	a forbidden clique	raw
-notes/subfinding-pairs.md	184	2	clause	overview.tex	447	447	Also proves the	size $\Omega_r(n\log d/d)$.	raw
-notes/subfinding-pairs.md	184	2	title	overview.tex	447	447	A logarithmic independence	for clique-free graphs	raw
-notes/subfinding-pairs.md	203	1	main	overview.tex	487	487	Proves Donovan's conjecture:	every prime $p$.	raw
-notes/subfinding-pairs.md	203	1	title	overview.tex	487	487	Donovan over algebraically closed fields		raw
-notes/subfinding-pairs.md	203	2	clause	overview.tex	487	487	Also proves the	closed residue field.	raw
-notes/subfinding-pairs.md	203	2	title	overview.tex	487	487	Integral Donovan over Witt vectors		raw
-notes/subfinding-pairs.md	210	1	main	overview.tex	501	501	Proves the sixth	finite-dimensional complex $V$.	raw
-notes/subfinding-pairs.md	210	1	title	overview.tex	501	501	Sixth symmetric power		raw
-notes/subfinding-pairs.md	210	2	clause	overview.tex	501	501	More generally, the	dimension-independent quadratic stabilization.	raw
-notes/subfinding-pairs.md	210	2	title	overview.tex	501	501	Quadratic stabilization		raw
-notes/subfinding-pairs.md	211	5	main	overview.tex	505	505	Critical Fortuin--Kasteleyn planar	spheres for $0<q\le4$	raw
-notes/subfinding-pairs.md	211	5	title	overview.tex	505	505	Critical sphere at $q=4$		raw
-notes/subfinding-pairs.md	211	7	clause	overview.tex	505	505	and to the	surface-to-tree geometric transition.	raw
-notes/subfinding-pairs.md	211	7	title	overview.tex	505	505	Brownian CRT limits for $q>4$		raw
-notes/subfinding-pairs.md	211	1	clause	overview.tex	505	505	For FK--Ising and	the limiting sphere.	raw
-notes/subfinding-pairs.md	211	1	title	overview.tex	505	505	Random Walks on	Liouville Brownian Motion	raw
-notes/subfinding-pairs.md	211	2	clause	overview.tex	505	505	The FK--Ising spectral	stated Brownian/LQG inputs.	raw
-notes/subfinding-pairs.md	211	2	title	overview.tex	505	505	Spectral convergence for	FK--Ising planar maps	raw
-notes/subfinding-pairs.md	213	2	main	overview.tex	509	509	Resolves the Benjamini--Schramm	no infinite cluster.	raw
-notes/subfinding-pairs.md	213	2	title	overview.tex	509	509	Quasi-transitive graphs at criticality		raw
-notes/subfinding-pairs.md	213	1	clause	overview.tex	509	509	The family also	on $\mathbb Z^3$.	raw
-notes/subfinding-pairs.md	213	1	title	overview.tex	509	509	Cubic-lattice bond and site percolation		raw
-notes/subfinding-pairs.md	215	1	main	overview.tex	513	513	Constructs the canonical	positive mass gap.	raw
-notes/subfinding-pairs.md	215	1	title	overview.tex	513	513	O(3) massive continuum limit		raw
-notes/subfinding-pairs.md	215	3	clause	overview.tex	513	513	For the square-lattice	transfer gap, $m_{\mathrm{lat}}(\beta)\sim32e^{\pi/4-1/2}\sqrt\beta\,e^{-\pi\beta}$.	raw
-notes/subfinding-pairs.md	215	3	title	overview.tex	513	513	Exact mass asymptotics	$O(4)$ lattice model	raw
-notes/subfinding-pairs.md	215	5	clause	overview.tex	513	513	The family also	every positive temperature.	raw
-notes/subfinding-pairs.md	215	5	title	overview.tex	513	513	O(n) exponential decay		raw
-notes/subfinding-pairs.md	227	4	main	overview.tex	537	537	For zero-field Gaussian	for fixed $0\le\beta<1$	raw
-notes/subfinding-pairs.md	227	4	title	overview.tex	537	537	High-temperature cutoff		raw
-notes/subfinding-pairs.md	227	8	clause	overview.tex	537	537	mixing time $n^{2/3+o(1)}$ at $\beta=1$		raw
-notes/subfinding-pairs.md	227	8	title	overview.tex	537	537	Critical mixing		raw
-notes/subfinding-pairs.md	227	6	clause	overview.tex	537	537	and stretched-exponential mixing	probability over disorder.	raw
-notes/subfinding-pairs.md	227	6	title	overview.tex	537	537	Typical-start stretched-exponential barriers		raw
-notes/subfinding-pairs.md	227	1	clause	overview.tex	537	537	At criticality, rescaled	the stationary limit.	raw
-notes/subfinding-pairs.md	227	1	title	overview.tex	537	537	Universality of critical	the Sherrington--Kirkpatrick model	raw
-notes/subfinding-pairs.md	235	1	main	overview.tex	553	553	For random $k$-SAT	positive limiting thresholds	raw
-notes/subfinding-pairs.md	235	1	title	overview.tex	553	553	Fixed-clause-size limiting threshold		raw
-notes/subfinding-pairs.md	235	3	clause	overview.tex	553	553	and hitting-time variance	every fixed $k\ge3$	raw
-notes/subfinding-pairs.md	235	3	title	overview.tex	553	553	Random k-SAT hitting-time variance		raw
-notes/subfinding-pairs.md	235	4	clause	overview.tex	553	553	and computability of the 3-SAT threshold.		raw
-notes/subfinding-pairs.md	235	4	title	overview.tex	553	553	Computing the random 3-SAT threshold		raw
-notes/subfinding-pairs.md	237		main	overview.tex	557	557	Proves the diameter	has diameter $n^{3/4+o(1)}$.	raw
-notes/subfinding-pairs.md	237	4	clause	overview.tex	557	557	Its local mass	have exponent $4/3$.	raw
-notes/subfinding-pairs.md	237	4	title	overview.tex	557	557	Mass and covering	for fixed-length walks	raw
-notes/subfinding-pairs.md	237		clause	overview.tex	557	557	These estimates hold	high polynomial probability.	raw
-notes/subfinding-pairs.md	238	1	main	overview.tex	559	559	Proves that the	power-of-two deck sizes.	raw
-notes/subfinding-pairs.md	238	1	title	overview.tex	559	559	Optimal-order mixing of the Thorp shuffle		raw
-notes/subfinding-pairs.md	238		clause	overview.tex	559	559	Convergence is in	individual card positions.	raw
-notes/subfinding-pairs.md	239	1	main	overview.tex	561	561	Determines the sharp	above the diagonal.	raw
-notes/subfinding-pairs.md	239	1	title	overview.tex	561	561	The sharp exponential	symmetric Bernoulli matrices	raw
-notes/subfinding-pairs.md	239	2	clause	overview.tex	561	561	for fixed bias	rate is $(p^2+(1-p)^2+o(1))^n$.	raw
-notes/subfinding-pairs.md	239	2	title	overview.tex	561	561	The sharp singularity	symmetric sign matrices	raw
-notes/subfinding-pairs.md	239		clause	overview.tex	561	561	In the biased	attain this rate.	raw
-notes/subfinding-pairs.md	258	1	main	overview.tex	603	603	Proves Gersten's conjecture:	$m,n\ne0$, is word-hyperbolic.	raw
-notes/subfinding-pairs.md	258	1	title	overview.tex	603	603	Baumslag–Solitar-free one-relator groups		raw
-notes/subfinding-pairs.md	258	2	clause	overview.tex	603	603	It also proves	virtually compact special.	raw
-notes/subfinding-pairs.md	258	2	title	overview.tex	603	603	Virtual compact specialness		raw
-notes/subfinding-pairs.md	260	9	main	overview.tex	609	609	Proves the sharp	stated decay assumptions.	raw
-notes/subfinding-pairs.md	260	9	title	overview.tex	609	609	Numerical spacetime		raw
-notes/subfinding-pairs.md	260	11	clause	overview.tex	609	609	It bounds invariant	additional horizon hypotheses.	raw
-notes/subfinding-pairs.md	260	11	title	overview.tex	609	609	Equality and rigidity		raw
-notes/subfinding-pairs.md	260	1	clause	overview.tex	609	609	Charged upper-area bounds	dyonic three-dimensional data;	raw
-notes/subfinding-pairs.md	260	1	title	overview.tex	609	609	Three-dimensional charged inequality		raw
-notes/subfinding-pairs.md	260	2	clause	overview.tex	609	609	the higher-dimensional purely	matched neutral theorem.	raw
-notes/subfinding-pairs.md	260	2	title	overview.tex	609	609	Higher-dimensional charged reduction		raw
-notes/subfinding-pairs.md	261	2	main	overview.tex	611	611	In dimension two,	surely pure-point spectrum.	raw
-notes/subfinding-pairs.md	261	2	title	overview.tex	611	611	Pure-point spectrum		raw
-notes/subfinding-pairs.md	261	1	clause	overview.tex	611	611	In every fixed	nonzero spectral weight.	raw
-notes/subfinding-pairs.md	261	1	title	overview.tex	611	611	Absolutely continuous spectrum		raw
-notes/subfinding-pairs.md	261		clause	overview.tex	611	611	Resolves the predicted	uniform site potentials.	raw
-notes/subfinding-pairs.md	262	2	main	overview.tex	613	613	Proves the sharp	$W\ge0$ with $\int\operatorname{tr}(W^{\gamma+1/2})<\infty$	raw
-notes/subfinding-pairs.md	262	2	title	overview.tex	613	613	Sharp one-dimensional Lieb--Thirring	for matrix potentials	raw
-notes/subfinding-pairs.md	262	3	clause	overview.tex	613	613	the optimal constant	of matrix size.	raw
-notes/subfinding-pairs.md	262	3	title	overview.tex	613	613	Sharp one-dimensional Lieb–Thirring constants		raw
-notes/subfinding-pairs.md	262	1	clause	overview.tex	613	613	All equality cases	and zero channels.	raw
-notes/subfinding-pairs.md	262	1	title	overview.tex	613	613	Equality cases in	matrix Lieb--Thirring inequality	raw
-notes/subfinding-pairs.md	266	1	main	overview.tex	621	621	Proves $N(6)=3$, resolving	but four cannot.	raw
-notes/subfinding-pairs.md	266	1	title	overview.tex	621	621	Maximum number of bases		raw
-notes/subfinding-pairs.md	266	2	clause	overview.tex	621	621	An independent companion	cubic equivalence class.	raw
-notes/subfinding-pairs.md	266	2	title	overview.tex	621	621	Exact Fourier certificates		raw
-notes/subfinding-pairs.md	267	1	main	overview.tex	623	623	Proves Bose--Einstein condensation	the thermodynamic limit.	raw
-notes/subfinding-pairs.md	267	1	title	overview.tex	623	623	Bose--Einstein condensation at	dilute hard-sphere gas	raw
-notes/subfinding-pairs.md	267	2	clause	overview.tex	623	623	At zero temperature,	the dilute limit.	raw
-notes/subfinding-pairs.md	267	2	title	overview.tex	623	623	Quantum Depletion and	Hard-Sphere Bose Gas	raw
-notes/subfinding-pairs.md	267	3	clause	overview.tex	623	623	At zero temperature,	the dilute limit.	raw
-notes/subfinding-pairs.md	267	3	title	overview.tex	623	623	Quantum Depletion for	Bounded Repulsive Potentials	raw
-notes/subfinding-pairs.md	271	1	main	overview.tex	631	631	Proves Bloch's $T^{3/2}$	generates $\mathbb Z^3$.	raw
-notes/subfinding-pairs.md	271	1	title	overview.tex	631	631	Bloch's Law for	in Three Dimensions	raw
-notes/subfinding-pairs.md	271	4	clause	overview.tex	631	631	The family also	every dimension $d\ge3$	raw
-notes/subfinding-pairs.md	271	4	title	overview.tex	631	631	Spontaneous magnetization in	quantum Heisenberg ferromagnet	raw
-notes/subfinding-pairs.md	271	2	clause	overview.tex	631	631	and determines the	three-dimensional nearest-neighbor couplings.	raw
-notes/subfinding-pairs.md	271	2	title	overview.tex	631	631	The first lattice	to Bloch's law	raw
-notes/subfinding-pairs.md	281	1	main	overview.tex	651	651	Proves that QAOA	before circuit depth.	raw
-notes/subfinding-pairs.md	281	1	title	overview.tex	651	651	QAOA attains the	the thermodynamic-first limit	raw
-notes/subfinding-pairs.md	281		clause	overview.tex	651	651	This also yields	infinity before degree.	raw
-notes/subfinding-pairs.md	291	1	main	overview.tex	674	674	Proves equivariant Jiang--Su	on trace dynamics.	raw
-notes/subfinding-pairs.md	291	1	title	overview.tex	674	674	Equivariant Jiang--Su Stability	Stably Finite Case	raw
-notes/subfinding-pairs.md	291	3	clause	overview.tex	674	674	The family also	infinite-dimensional nuclear setting.	raw
-notes/subfinding-pairs.md	291	3	title	overview.tex	674	674	Nuclear dimension and Jiang–Su stability		raw
-notes/subfinding-pairs.md	325	2	main	overview.tex	746	746	Resolves the complete	the numerical range.	raw
-notes/subfinding-pairs.md	325	2	title	overview.tex	746	746	Structural proof		raw
-notes/subfinding-pairs.md	325		clause	overview.tex	746	746	The constant $2$	in infinite dimensions.	raw
-notes/subfinding-pairs.md	335	1	main	overview.tex	768	768	Proves $\int_M(\mathrm{Scal}_g^-)^{n/2}\,dV_g\ge a_n\lVert	only on dimension.	raw
-notes/subfinding-pairs.md	335	1	title	overview.tex	768	768	An integral scalar	real simplicial volume	raw
-notes/subfinding-pairs.md	335	2	clause	overview.tex	768	768	Also proves rational	manifold is flat.	raw
-notes/subfinding-pairs.md	335	2	title	overview.tex	768	768	Positive scalar curvature forces rational inessentiality		raw
-notes/subfinding-pairs.md	337	1	main	overview.tex	772	772	Proves generalized Cartan--Hadamard	equal-volume model ball.	raw
-notes/subfinding-pairs.md	337	1	title	overview.tex	772	772	Cartan–Hadamard isoperimetry and rigidity		raw
-notes/subfinding-pairs.md	337		clause	overview.tex	772	772	Bounded positive-volume equality	are Euclidean balls.	raw
-notes/subfinding-pairs.md	337	2	clause	overview.tex	772	772	Also proves sharp	proper CAT$(0)$ spaces.	raw
-notes/subfinding-pairs.md	337	2	title	overview.tex	772	772	Sharp integral fillings in CAT(0) spaces		raw
-notes/subfinding-pairs.md	346	1	main	overview.tex	790	790	Proves that every	dimension and codimension.	raw
-notes/subfinding-pairs.md	346	1	title	overview.tex	790	790	A Codimension-One Bound	Stationary Integral Varifold	raw
-notes/subfinding-pairs.md	346	2	clause	overview.tex	790	790	On round spheres,	$m$-dimensional Hausdorff measure.	raw
-notes/subfinding-pairs.md	346	2	title	overview.tex	790	790	Almost-everywhere regularity of stationary integral varifolds		raw
-notes/subfinding-pairs.md	361		main	overview.tex	820	820	Disproves Yau's proposed	nonnegative Ricci curvature.	raw
-notes/subfinding-pairs.md	361	2	clause	overview.tex	820	820	For every sufficiently	Euclidean count $(k+1)^2$.	raw
-notes/subfinding-pairs.md	361	2	title	overview.tex	820	820	Three-dimensional counterexample		raw
-notes/subfinding-pairs.md	376	1	main	overview.tex	855	855	Constructs viscous incompressible	smooth external forcing.	raw
-notes/subfinding-pairs.md	376	1	title	overview.tex	855	855	Finite instructions and shear flows		raw
-notes/subfinding-pairs.md	376	2	clause	overview.tex	855	855	A terminating compiler	the machine halts.	raw
-notes/subfinding-pairs.md	376	2	title	overview.tex	855	855	Fixed particle test		raw
+notes/reports/subfinding-pairs.md	009	1	main	overview.tex	94	94	Reconstructs function fields	and their product.	raw
+notes/reports/subfinding-pairs.md	009	1	title	overview.tex	94	94	Reconstruction of Function	Mod-$\ell$ Milnor $K$-Theory	raw
+notes/reports/subfinding-pairs.md	009	2	clause	overview.tex	94	94	These data recover	in equal characteristic.	raw
+notes/reports/subfinding-pairs.md	009	2	title	overview.tex	94	94	Reconstruction from Milnor	modulo the characteristic	raw
+notes/reports/subfinding-pairs.md	009	3	clause	overview.tex	94	94	Also proves Bogomolov--Pop	from the characteristic.	raw
+notes/reports/subfinding-pairs.md	009	3	title	overview.tex	94	94	The Bogomolov-Pop reconstruction theorem		raw
+notes/reports/subfinding-pairs.md	010	1	main	overview.tex	96	96	Every continuous odd	odd tame level.	raw
+notes/reports/subfinding-pairs.md	010	1	title	overview.tex	96	96	Unrestricted pro-modularity		raw
+notes/reports/subfinding-pairs.md	010	3	clause	overview.tex	96	96	Also proves classical	without residual restrictions.	raw
+notes/reports/subfinding-pairs.md	010	3	title	overview.tex	96	96	Fontaine–Mazur modularity at the prime 2		raw
+notes/reports/subfinding-pairs.md	011	2	main	overview.tex	98	98	Proves that the	$x$ and $x\to\infty$.	raw
+notes/reports/subfinding-pairs.md	011	2	title	overview.tex	98	98	The Poisson-Dirichlet law for prime predecessors		raw
+notes/reports/subfinding-pairs.md	011	1	clause	overview.tex	98	98	It also proves	for every $\varepsilon>0$.	raw
+notes/reports/subfinding-pairs.md	011	1	title	overview.tex	98	98	Weighted dilation graphs,	and totient fibers	raw
+notes/reports/subfinding-pairs.md	014	5	main	overview.tex	104	104	Proves the restricted	Lie-theoretic characteristic hypotheses.	raw
+notes/reports/subfinding-pairs.md	014	5	title	overview.tex	104	104	Restricted geometric Langlands		raw
+notes/reports/subfinding-pairs.md	014		clause	overview.tex	104	104	Over arbitrary algebraically	and $p\nmid |W_G|$.	raw
+notes/reports/subfinding-pairs.md	014	4	clause	overview.tex	104	104	Over global function	or ramification-depth restrictions	raw
+notes/reports/subfinding-pairs.md	014	4	title	overview.tex	104	104	Temperedness at ramified	generic exceptional groups	raw
+notes/reports/subfinding-pairs.md	014	2	clause	overview.tex	104	104	and at every	generic unramified component.	raw
+notes/reports/subfinding-pairs.md	014	2	title	overview.tex	104	104	Unramified Arthur filtration		raw
+notes/reports/subfinding-pairs.md	014	1	clause	overview.tex	104	104	Assuming the finite-level	group, including inertia.	raw
+notes/reports/subfinding-pairs.md	014	1	title	overview.tex	104	104	Global Arthur Enhancements	Cuspidal Excursion Parameters	raw
+notes/reports/subfinding-pairs.md	016	1	main	overview.tex	108	108	Proves the abelian	containing torsion coset.	raw
+notes/reports/subfinding-pairs.md	016	1	title	overview.tex	108	108	Abelian Zilber–Pink		raw
+notes/reports/subfinding-pairs.md	016		clause	overview.tex	108	108	It also proves	or reduction assumptions.	raw
+notes/reports/subfinding-pairs.md	019	2	main	overview.tex	114	114	Proves that rational	\'etale fundamental group.	raw
+notes/reports/subfinding-pairs.md	019	2	title	overview.tex	114	114	p-adic section conjecture		raw
+notes/reports/subfinding-pairs.md	019		clause	overview.tex	114	114	It also proves	at least two.	raw
+notes/reports/subfinding-pairs.md	032	1	main	overview.tex	142	142	Proves the rational	dimension and codimension.	raw
+notes/reports/subfinding-pairs.md	032	1	title	overview.tex	142	142	The rational Hodge	CM abelian varieties	raw
+notes/reports/subfinding-pairs.md	032		clause	overview.tex	142	142	Through Milne's theorems,	in every characteristic.	raw
+notes/reports/subfinding-pairs.md	034	1	main	overview.tex	146	146	Using logarithmic Iitaka	adjoint is semiample.	raw
+notes/reports/subfinding-pairs.md	034	1	title	overview.tex	146	146	Log abundance for compact Kähler spaces		raw
+notes/reports/subfinding-pairs.md	034	4	clause	overview.tex	146	146	It also proves	of characteristic zero	raw
+notes/reports/subfinding-pairs.md	034	4	title	overview.tex	146	146	Log abundance in characteristic zero		raw
+notes/reports/subfinding-pairs.md	034	10	clause	overview.tex	146	146	and the effective	in that setting.	raw
+notes/reports/subfinding-pairs.md	034	10	title	overview.tex	146	146	Uniform pluricanonical Iitaka fibrations		raw
+notes/reports/subfinding-pairs.md	034	2	clause	overview.tex	146	146	A further result	number of components.	raw
+notes/reports/subfinding-pairs.md	034	2	title	overview.tex	146	146	Uniform indices for	log Calabi--Yau pairs	raw
+notes/reports/subfinding-pairs.md	039	1	main	overview.tex	156	156	Proves Nagata's strict	arbitrary multiplicities $m_i$.	raw
+notes/reports/subfinding-pairs.md	039	1	title	overview.tex	156	156	Plane-curve Nagata conjecture		raw
+notes/reports/subfinding-pairs.md	039	3	clause	overview.tex	156	156	It also proves	over $\mathbb C$	raw
+notes/reports/subfinding-pairs.md	039	3	title	overview.tex	156	156	Maximal Multipoint Seshadri	in Higher Dimensions	raw
+notes/reports/subfinding-pairs.md	039	4	clause	overview.tex	156	156	and at the	of positive characteristic.	raw
+notes/reports/subfinding-pairs.md	039	4	title	overview.tex	156	156	Maximal multipoint Seshadri	in positive characteristic	raw
+notes/reports/subfinding-pairs.md	041	2	main	overview.tex	160	160	Proves the strong	manifold is semiample.	raw
+notes/reports/subfinding-pairs.md	041	2	title	overview.tex	160	160	Strong hyperkähler SYZ		raw
+notes/reports/subfinding-pairs.md	041	1	clause	overview.tex	160	160	It also proves	and deformation type.	raw
+notes/reports/subfinding-pairs.md	041	1	title	overview.tex	160	160	Projective-space bases		raw
+notes/reports/subfinding-pairs.md	056	1	main	overview.tex	188	188	Proves termination of	prescribed ample signs.	raw
+notes/reports/subfinding-pairs.md	056	1	title	overview.tex	188	188	Termination of generalized log	compact Kähler fourfolds	raw
+notes/reports/subfinding-pairs.md	056	3	clause	overview.tex	188	188	Also proves termination	in characteristic zero.	raw
+notes/reports/subfinding-pairs.md	056	3	title	overview.tex	188	188	Log canonical fourfold termination		raw
+notes/reports/subfinding-pairs.md	068	1	main	overview.tex	210	210	If $X$ is	for some $m>0$.	raw
+notes/reports/subfinding-pairs.md	068	1	title	overview.tex	210	210	Smooth semipositivity		raw
+notes/reports/subfinding-pairs.md	068		clause	overview.tex	210	210	Thus smooth semipositivity	in every dimension.	raw
+notes/reports/subfinding-pairs.md	071	2	main	overview.tex	216	216	Resolves the existence	disks or points.	raw
+notes/reports/subfinding-pairs.md	071	2	title	overview.tex	216	216	Koebe’s circle-domain conjecture		raw
+notes/reports/subfinding-pairs.md	071	1	clause	overview.tex	216	216	It also proves	the He--Schramm conjecture.	raw
+notes/reports/subfinding-pairs.md	071	1	title	overview.tex	216	216	Removable boundaries and rigidity		raw
+notes/reports/subfinding-pairs.md	088	1	main	overview.tex	252	252	Proves Petty's projection-volume	fixed body volume.	raw
+notes/reports/subfinding-pairs.md	088	1	title	overview.tex	252	252	Petty’s projection-volume conjecture		raw
+notes/reports/subfinding-pairs.md	088	2	clause	overview.tex	252	252	In contrast, products	sufficiently large dimension.	raw
+notes/reports/subfinding-pairs.md	088	2	title	overview.tex	252	252	Product counterexample to simplex maximum		raw
+notes/reports/subfinding-pairs.md	088		clause	overview.tex	252	252	Also establishes the	Lutwak--Petty projection inequalities.	raw
+notes/reports/subfinding-pairs.md	102	1	main	overview.tex	282	282	Proves Khot's Unique Games Conjecture.		raw
+notes/reports/subfinding-pairs.md	102	1	title	overview.tex	282	282	Unique Games theorem		raw
+notes/reports/subfinding-pairs.md	102	2	clause	overview.tex	282	282	Independent direct reductions	ratio for Max-Cut	raw
+notes/reports/subfinding-pairs.md	102	2	title	overview.tex	282	282	Optimal Max-Cut hardness		raw
+notes/reports/subfinding-pairs.md	102	3	clause	overview.tex	282	282	below factor two for Vertex Cover		raw
+notes/reports/subfinding-pairs.md	102	3	title	overview.tex	282	282	Factor-two Vertex Cover hardness		raw
+notes/reports/subfinding-pairs.md	102	4	clause	overview.tex	282	282	and within any	feedback vertex set.	raw
+notes/reports/subfinding-pairs.md	102	4	title	overview.tex	282	282	Constant-factor Min-UnCut hardness		raw
+notes/reports/subfinding-pairs.md	102	5	clause	overview.tex	282	282	and within any	feedback vertex set.	raw
+notes/reports/subfinding-pairs.md	102	5	title	overview.tex	282	282	Directed feedback vertex set hardness		raw
+notes/reports/subfinding-pairs.md	113	1	main	overview.tex	304	304	Gives a fully	of zero counts.	raw
+notes/reports/subfinding-pairs.md	113	1	title	overview.tex	304	304	Perfect-matching FPRAS		raw
+notes/reports/subfinding-pairs.md	113	2	clause	overview.tex	304	304	Also proves the	including boundary points.	raw
+notes/reports/subfinding-pairs.md	113	2	title	overview.tex	304	304	Entropy and face dimension		raw
+notes/reports/subfinding-pairs.md	114	1	main	overview.tex	306	306	Gives a fully	exact rank-value oracles.	raw
+notes/reports/subfinding-pairs.md	114	1	title	overview.tex	306	306	An FPRAS for	with Binary Capacities	raw
+notes/reports/subfinding-pairs.md	114	2	clause	overview.tex	306	306	For matroids presented	the ranks differ.	raw
+notes/reports/subfinding-pairs.md	114	2	title	overview.tex	306	306	Approximate counting of	of two matroids	raw
+notes/reports/subfinding-pairs.md	119	1	main	overview.tex	316	316	Proves the Courtade--Kumar	independent bit-flip noise.	raw
+notes/reports/subfinding-pairs.md	119	1	title	overview.tex	316	316	Sharp binary-information contraction		raw
+notes/reports/subfinding-pairs.md	119	2	clause	overview.tex	316	316	The Hellinger conjecture	and noise correlation.	raw
+notes/reports/subfinding-pairs.md	119	2	title	overview.tex	316	316	Arbitrary-bias Hellinger contraction		raw
+notes/reports/subfinding-pairs.md	119		clause	overview.tex	316	316	A stronger theorem	fixed initial information.	raw
+notes/reports/subfinding-pairs.md	122	3	main	overview.tex	322	322	At every fixed	out polynomial-sample reconstruction.	raw
+notes/reports/subfinding-pairs.md	122	3	title	overview.tex	322	322	Quantitative lower bounds for trace reconstruction		raw
+notes/reports/subfinding-pairs.md	122	1	clause	overview.tex	322	322	A uniform decoder	rational retention probabilities.	raw
+notes/reports/subfinding-pairs.md	122	1	title	overview.tex	322	322	Uniform quasipolynomial-time trace reconstruction		raw
+notes/reports/subfinding-pairs.md	122	2	clause	overview.tex	322	322	When the deletion	and parameter encoding.	raw
+notes/reports/subfinding-pairs.md	122	2	title	overview.tex	322	322	A latest-anchor induction	worst-case trace reconstruction	raw
+notes/reports/subfinding-pairs.md	129	1	main	overview.tex	335	335	Proves exponential lower	nondeterministic finite automata	raw
+notes/reports/subfinding-pairs.md	129	1	title	overview.tex	335	335	Nondeterministic complementation lower bound		raw
+notes/reports/subfinding-pairs.md	129	2	clause	overview.tex	335	335	and for simulating	two-way deterministic ones.	raw
+notes/reports/subfinding-pairs.md	129	2	title	overview.tex	335	335	Two-way deterministic state lower bound		raw
+notes/reports/subfinding-pairs.md	129		clause	overview.tex	335	335	The latter resolves	growing finite alphabets	raw
+notes/reports/subfinding-pairs.md	134	3	main	overview.tex	345	345	Every regular language	the same alphabet.	raw
+notes/reports/subfinding-pairs.md	134	3	title	overview.tex	345	345	Star height at most three		raw
+notes/reports/subfinding-pairs.md	134		clause	overview.tex	345	345	This establishes an	generalized star-height problem.	raw
+notes/reports/subfinding-pairs.md	157	1	main	overview.tex	395	395	Disproves Hadwiger's conjecture	largest clique-minor order.	raw
+notes/reports/subfinding-pairs.md	157	1	title	overview.tex	395	395	Hadwiger counterexample		raw
+notes/reports/subfinding-pairs.md	157	2	clause	overview.tex	395	395	Also disproves the	chromatic bound $\chi_f(G)\le\mu(G)+1$.	raw
+notes/reports/subfinding-pairs.md	157	2	title	overview.tex	395	395	Colin de Verdière counterexample		raw
+notes/reports/subfinding-pairs.md	157	3	clause	overview.tex	395	395	In the positive	universal constant $C$.	raw
+notes/reports/subfinding-pairs.md	157	3	title	overview.tex	395	395	Linear list-coloring bound		raw
+notes/reports/subfinding-pairs.md	170	2	main	overview.tex	419	419	For every fixed	at that scale.	raw
+notes/reports/subfinding-pairs.md	170	2	title	overview.tex	419	419	Fixed off-diagonal Ramsey numbers		raw
+notes/reports/subfinding-pairs.md	184	1	main	overview.tex	447	447	Proves the Alon--Krivelevich--Sudakov	is sufficiently large.	raw
+notes/reports/subfinding-pairs.md	184	1	title	overview.tex	447	447	Correspondence coloring graphs	a forbidden clique	raw
+notes/reports/subfinding-pairs.md	184	2	clause	overview.tex	447	447	Also proves the	size $\Omega_r(n\log d/d)$.	raw
+notes/reports/subfinding-pairs.md	184	2	title	overview.tex	447	447	A logarithmic independence	for clique-free graphs	raw
+notes/reports/subfinding-pairs.md	203	1	main	overview.tex	487	487	Proves Donovan's conjecture:	every prime $p$.	raw
+notes/reports/subfinding-pairs.md	203	1	title	overview.tex	487	487	Donovan over algebraically closed fields		raw
+notes/reports/subfinding-pairs.md	203	2	clause	overview.tex	487	487	Also proves the	closed residue field.	raw
+notes/reports/subfinding-pairs.md	203	2	title	overview.tex	487	487	Integral Donovan over Witt vectors		raw
+notes/reports/subfinding-pairs.md	210	1	main	overview.tex	501	501	Proves the sixth	finite-dimensional complex $V$.	raw
+notes/reports/subfinding-pairs.md	210	1	title	overview.tex	501	501	Sixth symmetric power		raw
+notes/reports/subfinding-pairs.md	210	2	clause	overview.tex	501	501	More generally, the	dimension-independent quadratic stabilization.	raw
+notes/reports/subfinding-pairs.md	210	2	title	overview.tex	501	501	Quadratic stabilization		raw
+notes/reports/subfinding-pairs.md	211	5	main	overview.tex	505	505	Critical Fortuin--Kasteleyn planar	spheres for $0<q\le4$	raw
+notes/reports/subfinding-pairs.md	211	5	title	overview.tex	505	505	Critical sphere at $q=4$		raw
+notes/reports/subfinding-pairs.md	211	7	clause	overview.tex	505	505	and to the	surface-to-tree geometric transition.	raw
+notes/reports/subfinding-pairs.md	211	7	title	overview.tex	505	505	Brownian CRT limits for $q>4$		raw
+notes/reports/subfinding-pairs.md	211	1	clause	overview.tex	505	505	For FK--Ising and	the limiting sphere.	raw
+notes/reports/subfinding-pairs.md	211	1	title	overview.tex	505	505	Random Walks on	Liouville Brownian Motion	raw
+notes/reports/subfinding-pairs.md	211	2	clause	overview.tex	505	505	The FK--Ising spectral	stated Brownian/LQG inputs.	raw
+notes/reports/subfinding-pairs.md	211	2	title	overview.tex	505	505	Spectral convergence for	FK--Ising planar maps	raw
+notes/reports/subfinding-pairs.md	213	2	main	overview.tex	509	509	Resolves the Benjamini--Schramm	no infinite cluster.	raw
+notes/reports/subfinding-pairs.md	213	2	title	overview.tex	509	509	Quasi-transitive graphs at criticality		raw
+notes/reports/subfinding-pairs.md	213	1	clause	overview.tex	509	509	The family also	on $\mathbb Z^3$.	raw
+notes/reports/subfinding-pairs.md	213	1	title	overview.tex	509	509	Cubic-lattice bond and site percolation		raw
+notes/reports/subfinding-pairs.md	215	1	main	overview.tex	513	513	Constructs the canonical	positive mass gap.	raw
+notes/reports/subfinding-pairs.md	215	1	title	overview.tex	513	513	O(3) massive continuum limit		raw
+notes/reports/subfinding-pairs.md	215	3	clause	overview.tex	513	513	For the square-lattice	transfer gap, $m_{\mathrm{lat}}(\beta)\sim32e^{\pi/4-1/2}\sqrt\beta\,e^{-\pi\beta}$.	raw
+notes/reports/subfinding-pairs.md	215	3	title	overview.tex	513	513	Exact mass asymptotics	$O(4)$ lattice model	raw
+notes/reports/subfinding-pairs.md	215	5	clause	overview.tex	513	513	The family also	every positive temperature.	raw
+notes/reports/subfinding-pairs.md	215	5	title	overview.tex	513	513	O(n) exponential decay		raw
+notes/reports/subfinding-pairs.md	227	4	main	overview.tex	537	537	For zero-field Gaussian	for fixed $0\le\beta<1$	raw
+notes/reports/subfinding-pairs.md	227	4	title	overview.tex	537	537	High-temperature cutoff		raw
+notes/reports/subfinding-pairs.md	227	8	clause	overview.tex	537	537	mixing time $n^{2/3+o(1)}$ at $\beta=1$		raw
+notes/reports/subfinding-pairs.md	227	8	title	overview.tex	537	537	Critical mixing		raw
+notes/reports/subfinding-pairs.md	227	6	clause	overview.tex	537	537	and stretched-exponential mixing	probability over disorder.	raw
+notes/reports/subfinding-pairs.md	227	6	title	overview.tex	537	537	Typical-start stretched-exponential barriers		raw
+notes/reports/subfinding-pairs.md	227	1	clause	overview.tex	537	537	At criticality, rescaled	the stationary limit.	raw
+notes/reports/subfinding-pairs.md	227	1	title	overview.tex	537	537	Universality of critical	the Sherrington--Kirkpatrick model	raw
+notes/reports/subfinding-pairs.md	235	1	main	overview.tex	553	553	For random $k$-SAT	positive limiting thresholds	raw
+notes/reports/subfinding-pairs.md	235	1	title	overview.tex	553	553	Fixed-clause-size limiting threshold		raw
+notes/reports/subfinding-pairs.md	235	3	clause	overview.tex	553	553	and hitting-time variance	every fixed $k\ge3$	raw
+notes/reports/subfinding-pairs.md	235	3	title	overview.tex	553	553	Random k-SAT hitting-time variance		raw
+notes/reports/subfinding-pairs.md	235	4	clause	overview.tex	553	553	and computability of the 3-SAT threshold.		raw
+notes/reports/subfinding-pairs.md	235	4	title	overview.tex	553	553	Computing the random 3-SAT threshold		raw
+notes/reports/subfinding-pairs.md	237		main	overview.tex	557	557	Proves the diameter	has diameter $n^{3/4+o(1)}$.	raw
+notes/reports/subfinding-pairs.md	237	4	clause	overview.tex	557	557	Its local mass	have exponent $4/3$.	raw
+notes/reports/subfinding-pairs.md	237	4	title	overview.tex	557	557	Mass and covering	for fixed-length walks	raw
+notes/reports/subfinding-pairs.md	237		clause	overview.tex	557	557	These estimates hold	high polynomial probability.	raw
+notes/reports/subfinding-pairs.md	238	1	main	overview.tex	559	559	Proves that the	power-of-two deck sizes.	raw
+notes/reports/subfinding-pairs.md	238	1	title	overview.tex	559	559	Optimal-order mixing of the Thorp shuffle		raw
+notes/reports/subfinding-pairs.md	238		clause	overview.tex	559	559	Convergence is in	individual card positions.	raw
+notes/reports/subfinding-pairs.md	239	1	main	overview.tex	561	561	Determines the sharp	above the diagonal.	raw
+notes/reports/subfinding-pairs.md	239	1	title	overview.tex	561	561	The sharp exponential	symmetric Bernoulli matrices	raw
+notes/reports/subfinding-pairs.md	239	2	clause	overview.tex	561	561	for fixed bias	rate is $(p^2+(1-p)^2+o(1))^n$.	raw
+notes/reports/subfinding-pairs.md	239	2	title	overview.tex	561	561	The sharp singularity	symmetric sign matrices	raw
+notes/reports/subfinding-pairs.md	239		clause	overview.tex	561	561	In the biased	attain this rate.	raw
+notes/reports/subfinding-pairs.md	258	1	main	overview.tex	603	603	Proves Gersten's conjecture:	$m,n\ne0$, is word-hyperbolic.	raw
+notes/reports/subfinding-pairs.md	258	1	title	overview.tex	603	603	Baumslag–Solitar-free one-relator groups		raw
+notes/reports/subfinding-pairs.md	258	2	clause	overview.tex	603	603	It also proves	virtually compact special.	raw
+notes/reports/subfinding-pairs.md	258	2	title	overview.tex	603	603	Virtual compact specialness		raw
+notes/reports/subfinding-pairs.md	260	9	main	overview.tex	609	609	Proves the sharp	stated decay assumptions.	raw
+notes/reports/subfinding-pairs.md	260	9	title	overview.tex	609	609	Numerical spacetime		raw
+notes/reports/subfinding-pairs.md	260	11	clause	overview.tex	609	609	It bounds invariant	additional horizon hypotheses.	raw
+notes/reports/subfinding-pairs.md	260	11	title	overview.tex	609	609	Equality and rigidity		raw
+notes/reports/subfinding-pairs.md	260	1	clause	overview.tex	609	609	Charged upper-area bounds	dyonic three-dimensional data;	raw
+notes/reports/subfinding-pairs.md	260	1	title	overview.tex	609	609	Three-dimensional charged inequality		raw
+notes/reports/subfinding-pairs.md	260	2	clause	overview.tex	609	609	the higher-dimensional purely	matched neutral theorem.	raw
+notes/reports/subfinding-pairs.md	260	2	title	overview.tex	609	609	Higher-dimensional charged reduction		raw
+notes/reports/subfinding-pairs.md	261	2	main	overview.tex	611	611	In dimension two,	surely pure-point spectrum.	raw
+notes/reports/subfinding-pairs.md	261	2	title	overview.tex	611	611	Pure-point spectrum		raw
+notes/reports/subfinding-pairs.md	261	1	clause	overview.tex	611	611	In every fixed	nonzero spectral weight.	raw
+notes/reports/subfinding-pairs.md	261	1	title	overview.tex	611	611	Absolutely continuous spectrum		raw
+notes/reports/subfinding-pairs.md	261		clause	overview.tex	611	611	Resolves the predicted	uniform site potentials.	raw
+notes/reports/subfinding-pairs.md	262	2	main	overview.tex	613	613	Proves the sharp	$W\ge0$ with $\int\operatorname{tr}(W^{\gamma+1/2})<\infty$	raw
+notes/reports/subfinding-pairs.md	262	2	title	overview.tex	613	613	Sharp one-dimensional Lieb--Thirring	for matrix potentials	raw
+notes/reports/subfinding-pairs.md	262	3	clause	overview.tex	613	613	the optimal constant	of matrix size.	raw
+notes/reports/subfinding-pairs.md	262	3	title	overview.tex	613	613	Sharp one-dimensional Lieb–Thirring constants		raw
+notes/reports/subfinding-pairs.md	262	1	clause	overview.tex	613	613	All equality cases	and zero channels.	raw
+notes/reports/subfinding-pairs.md	262	1	title	overview.tex	613	613	Equality cases in	matrix Lieb--Thirring inequality	raw
+notes/reports/subfinding-pairs.md	266	1	main	overview.tex	621	621	Proves $N(6)=3$, resolving	but four cannot.	raw
+notes/reports/subfinding-pairs.md	266	1	title	overview.tex	621	621	Maximum number of bases		raw
+notes/reports/subfinding-pairs.md	266	2	clause	overview.tex	621	621	An independent companion	cubic equivalence class.	raw
+notes/reports/subfinding-pairs.md	266	2	title	overview.tex	621	621	Exact Fourier certificates		raw
+notes/reports/subfinding-pairs.md	267	1	main	overview.tex	623	623	Proves Bose--Einstein condensation	the thermodynamic limit.	raw
+notes/reports/subfinding-pairs.md	267	1	title	overview.tex	623	623	Bose--Einstein condensation at	dilute hard-sphere gas	raw
+notes/reports/subfinding-pairs.md	267	2	clause	overview.tex	623	623	At zero temperature,	the dilute limit.	raw
+notes/reports/subfinding-pairs.md	267	2	title	overview.tex	623	623	Quantum Depletion and	Hard-Sphere Bose Gas	raw
+notes/reports/subfinding-pairs.md	267	3	clause	overview.tex	623	623	At zero temperature,	the dilute limit.	raw
+notes/reports/subfinding-pairs.md	267	3	title	overview.tex	623	623	Quantum Depletion for	Bounded Repulsive Potentials	raw
+notes/reports/subfinding-pairs.md	271	1	main	overview.tex	631	631	Proves Bloch's $T^{3/2}$	generates $\mathbb Z^3$.	raw
+notes/reports/subfinding-pairs.md	271	1	title	overview.tex	631	631	Bloch's Law for	in Three Dimensions	raw
+notes/reports/subfinding-pairs.md	271	4	clause	overview.tex	631	631	The family also	every dimension $d\ge3$	raw
+notes/reports/subfinding-pairs.md	271	4	title	overview.tex	631	631	Spontaneous magnetization in	quantum Heisenberg ferromagnet	raw
+notes/reports/subfinding-pairs.md	271	2	clause	overview.tex	631	631	and determines the	three-dimensional nearest-neighbor couplings.	raw
+notes/reports/subfinding-pairs.md	271	2	title	overview.tex	631	631	The first lattice	to Bloch's law	raw
+notes/reports/subfinding-pairs.md	281	1	main	overview.tex	651	651	Proves that QAOA	before circuit depth.	raw
+notes/reports/subfinding-pairs.md	281	1	title	overview.tex	651	651	QAOA attains the	the thermodynamic-first limit	raw
+notes/reports/subfinding-pairs.md	281		clause	overview.tex	651	651	This also yields	infinity before degree.	raw
+notes/reports/subfinding-pairs.md	291	1	main	overview.tex	674	674	Proves equivariant Jiang--Su	on trace dynamics.	raw
+notes/reports/subfinding-pairs.md	291	1	title	overview.tex	674	674	Equivariant Jiang--Su Stability	Stably Finite Case	raw
+notes/reports/subfinding-pairs.md	291	3	clause	overview.tex	674	674	The family also	infinite-dimensional nuclear setting.	raw
+notes/reports/subfinding-pairs.md	291	3	title	overview.tex	674	674	Nuclear dimension and Jiang–Su stability		raw
+notes/reports/subfinding-pairs.md	325	2	main	overview.tex	746	746	Resolves the complete	the numerical range.	raw
+notes/reports/subfinding-pairs.md	325	2	title	overview.tex	746	746	Structural proof		raw
+notes/reports/subfinding-pairs.md	325		clause	overview.tex	746	746	The constant $2$	in infinite dimensions.	raw
+notes/reports/subfinding-pairs.md	335	1	main	overview.tex	768	768	Proves $\int_M(\mathrm{Scal}_g^-)^{n/2}\,dV_g\ge a_n\lVert	only on dimension.	raw
+notes/reports/subfinding-pairs.md	335	1	title	overview.tex	768	768	An integral scalar	real simplicial volume	raw
+notes/reports/subfinding-pairs.md	335	2	clause	overview.tex	768	768	Also proves rational	manifold is flat.	raw
+notes/reports/subfinding-pairs.md	335	2	title	overview.tex	768	768	Positive scalar curvature forces rational inessentiality		raw
+notes/reports/subfinding-pairs.md	337	1	main	overview.tex	772	772	Proves generalized Cartan--Hadamard	equal-volume model ball.	raw
+notes/reports/subfinding-pairs.md	337	1	title	overview.tex	772	772	Cartan–Hadamard isoperimetry and rigidity		raw
+notes/reports/subfinding-pairs.md	337		clause	overview.tex	772	772	Bounded positive-volume equality	are Euclidean balls.	raw
+notes/reports/subfinding-pairs.md	337	2	clause	overview.tex	772	772	Also proves sharp	proper CAT$(0)$ spaces.	raw
+notes/reports/subfinding-pairs.md	337	2	title	overview.tex	772	772	Sharp integral fillings in CAT(0) spaces		raw
+notes/reports/subfinding-pairs.md	346	1	main	overview.tex	790	790	Proves that every	dimension and codimension.	raw
+notes/reports/subfinding-pairs.md	346	1	title	overview.tex	790	790	A Codimension-One Bound	Stationary Integral Varifold	raw
+notes/reports/subfinding-pairs.md	346	2	clause	overview.tex	790	790	On round spheres,	$m$-dimensional Hausdorff measure.	raw
+notes/reports/subfinding-pairs.md	346	2	title	overview.tex	790	790	Almost-everywhere regularity of stationary integral varifolds		raw
+notes/reports/subfinding-pairs.md	361		main	overview.tex	820	820	Disproves Yau's proposed	nonnegative Ricci curvature.	raw
+notes/reports/subfinding-pairs.md	361	2	clause	overview.tex	820	820	For every sufficiently	Euclidean count $(k+1)^2$.	raw
+notes/reports/subfinding-pairs.md	361	2	title	overview.tex	820	820	Three-dimensional counterexample		raw
+notes/reports/subfinding-pairs.md	376	1	main	overview.tex	855	855	Constructs viscous incompressible	smooth external forcing.	raw
+notes/reports/subfinding-pairs.md	376	1	title	overview.tex	855	855	Finite instructions and shear flows		raw
+notes/reports/subfinding-pairs.md	376	2	clause	overview.tex	855	855	A terminating compiler	the machine halts.	raw
+notes/reports/subfinding-pairs.md	376	2	title	overview.tex	855	855	Fixed particle test		raw
 notes/summaries/algebra/197-nonsofic-groups-and-group-ring-counterexamples.md	197	1	inline	preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Characteristic-Two-September-23-2026/build/sections/01-introduction.tex	4	4	whether this finite support is enough		raw
 notes/summaries/algebra/197-nonsofic-groups-and-group-ring-counterexamples.md	197	2	inline	preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/README.md	4	4	October 4, 2026		raw
 notes/summaries/algebra/197-nonsofic-groups-and-group-ring-counterexamples.md	197	3	inline	preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Characteristic-Two-September-23-2026/README.md	5	5	September 23, 2026		raw
@@ -477,7 +477,7 @@ notes/summaries/number-theory/002-full-birch-swinnerton-dyer-formula-from-low-se
 notes/summaries/number-theory/002-full-birch-swinnerton-dyer-formula-from-low-selmer-corank.md	002	28	inline	preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/build/sections/01-introduction.tex	74	75	The converse reverses	value or derivative.	raw
 notes/summaries/number-theory/002-full-birch-swinnerton-dyer-formula-from-low-selmer-corank.md	002	29	inline	preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/build/sections/01-introduction.tex	56	58	bound the full	analytic rank one.	raw
 notes/summaries/number-theory/002-full-birch-swinnerton-dyer-formula-from-low-selmer-corank.md	002	30	inline	CONTENTS.md	32	32	With result 006,	curve over ℚ.	raw
-notes/summaries/number-theory/002-full-birch-swinnerton-dyer-formula-from-low-selmer-corank.md	002	31	inline	notes/t0-triage.md	858	859	A chain is	weakest, unformalized link.	raw
+notes/summaries/number-theory/002-full-birch-swinnerton-dyer-formula-from-low-selmer-corank.md	002	31	inline	notes/reports/t0-triage.md	858	859	A chain is	weakest, unformalized link.	raw
 notes/summaries/number-theory/002-full-birch-swinnerton-dyer-formula-from-low-selmer-corank.md	002	32	inline	preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/build/sections/15-conclusion.tex	121	123	The proof of	by absolute value.	raw
 notes/summaries/number-theory/002-full-birch-swinnerton-dyer-formula-from-low-selmer-corank.md	002	33	inline	preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/build/sections/15-conclusion.tex	113	117	In particular, the	the prime two.	raw
 notes/summaries/number-theory/002-full-birch-swinnerton-dyer-formula-from-low-selmer-corank.md	002	34	inline	preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/build/sections/01-introduction.tex	118	121	The auxiliary twist-density	imaginary quadratic fields.	raw
@@ -511,12 +511,12 @@ notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md	004	24	block	
 notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md	004	25	block	preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/build/paper.tex	60	64	We prove a	reduction at $2$.	raw
 notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md	004	26	block	preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/build/sections/introduction.tex	32	34	The statement includes	the bad primes.	raw
 notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md	004	27	block	preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/build/sections/introduction.tex	39	43	The broader companion	to the proof.	raw
-notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md	004	28	inline	notes/t0-triage.md	534	534	004 is a	an exhibited object	raw
+notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md	004	28	inline	notes/reports/t0-triage.md	534	534	004 is a	an exhibited object	raw
 notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md	004	29	block	preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/build/sections/07-consequences.tex	100	107	The many-one reduction	\(\Z\) in \(\Q\).	raw
 notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md	004	30	inline	preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/build/sections/01-introduction.tex	141	142	The field \(\mathbb	generated \(\mathbb Z\)-algebra	raw
 notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md	004	31	inline	preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/build/sections/introduction.tex	34	37	It is a	its Selmer hypothesis.	raw
 notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md	004	32	inline	overview.tex	84	84	resolving Hilbert's tenth	$\mathbb Q$ negatively	raw
-notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md	004	33	inline	notes/counterexample-tag.md	65	65	a negative resolution,	an exhibited object	raw
+notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md	004	33	inline	notes/reports/counterexample-tag.md	65	65	a negative resolution,	an exhibited object	raw
 notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md	004	34	inline	preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/build/sections/01-introduction.tex	27	29	Davis, Putnam, and	is also allowed	raw
 notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md	004	35	inline	preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/build/sections/01-introduction.tex	32	33	Matiyasevich supplied the	a Fibonacci relation	raw
 notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md	004	36	inline	preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/build/sections/01-introduction.tex	33	35	the theorem that	integers is Diophantine	raw
@@ -542,9 +542,9 @@ notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md	004	55	inline
 notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md	004	56	inline	preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/build/sections/introduction.tex	151	152	The finite construction	nonzero address simultaneously	raw
 notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md	004	57	inline	preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/build/sections/introduction.tex	153	153	The variables are	between auxiliary primes	raw
 notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md	004	58	inline	preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/build/sections/introduction.tex	141	142	The arithmetic difficulty	is unavailable here.	raw
-notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md	004	59	inline	notes/t0-triage.md	117	117	no algorithm for	a negative answer	raw
-notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md	004	60	inline	notes/t0-triage.md	118	118	The only T0 family tagged `undecidability`		folded
-notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md	004	61	inline	notes/counterexample-tag.md	53	55	is what catches	counterexample object exhibited	raw
+notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md	004	59	inline	notes/reports/t0-triage.md	117	117	no algorithm for	a negative answer	raw
+notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md	004	60	inline	notes/reports/t0-triage.md	118	118	The only T0 family tagged `undecidability`		folded
+notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md	004	61	inline	notes/reports/counterexample-tag.md	53	55	is what catches	counterexample object exhibited	raw
 notes/summaries/number-theory/006-goldfelds-conjecture.md	006	1	block	CONTENTS.md	0	0			none
 notes/summaries/number-theory/006-goldfelds-conjecture.md	006	2	block	CONTENTS.md	150	150	We prove Goldfeld's analytic density conjecture: for every elliptic curve *E* over ℚ, the quadratic twists of *E* with analytic rank zero and one each have density 1/2 among signed squarefree twist parameters ordered by absolute value. We also prove the low-corank 2-converse: if the $2^\infty$-Selmer corank of *E* is zero or one, then it equals the analytic and Mordell–Weil ranks, and the Tate–Shafarevich group is finite.		folded
 notes/summaries/number-theory/006-goldfelds-conjecture.md	006	3	block	CONTENTS.md	159	159	For every elliptic	this counting convention.	raw
@@ -564,15 +564,15 @@ notes/summaries/number-theory/006-goldfelds-conjecture.md	006	16	inline	preprint
 notes/summaries/number-theory/006-goldfelds-conjecture.md	006	17	inline	preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/sections/00-introduction.tex	90	91	The rank and	Birch--Swinnerton-Dyer leading-coefficient formula.	raw
 notes/summaries/number-theory/006-goldfelds-conjecture.md	006	18	inline	preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/build/sections/introduction.tex	155	156	Hanners claims the	rational elliptic curve	raw
 notes/summaries/number-theory/006-goldfelds-conjecture.md	006	19	inline	preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/build/sections/introduction.tex	160	160	This is not	the claimed theorem.	raw
-notes/summaries/number-theory/006-goldfelds-conjecture.md	006	20	inline	notes/t0-triage.md	24	24	density, partial, undecidability	no bucket above	raw
-notes/summaries/number-theory/006-goldfelds-conjecture.md	006	21	inline	notes/t0-triage.md	119	120	Goldfeld's conjecture for	by absolute value	raw
+notes/summaries/number-theory/006-goldfelds-conjecture.md	006	20	inline	notes/reports/t0-triage.md	24	24	density, partial, undecidability	no bucket above	raw
+notes/summaries/number-theory/006-goldfelds-conjecture.md	006	21	inline	notes/reports/t0-triage.md	119	120	Goldfeld's conjecture for	by absolute value	raw
 notes/summaries/number-theory/006-goldfelds-conjecture.md	006	22	inline	preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/references.bib	3	3	Conjectures on elliptic	over quadratic fields	raw
 notes/summaries/number-theory/006-goldfelds-conjecture.md	006	23	inline	preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/references.bib	18	18	The Birch and Swinnerton-Dyer conjecture implies		folded
 notes/summaries/number-theory/006-goldfelds-conjecture.md	006	24	inline	preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/sections/00-introduction.tex	160	161	We use the	pointwise analytic implication	raw
 notes/summaries/number-theory/006-goldfelds-conjecture.md	006	25	inline	preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/sections/00-introduction.tex	87	88	Its proof uses	densities established here.	raw
 notes/summaries/number-theory/006-goldfelds-conjecture.md	006	26	inline	CONTENTS.md	32	32	With result 006,	curve over ℚ.	raw
-notes/summaries/number-theory/006-goldfelds-conjecture.md	006	27	inline	notes/t0-triage.md	858	858	Cross-family chains inside	002↔006, and 311⇒Hovey–Strickland.	raw
-notes/summaries/number-theory/006-goldfelds-conjecture.md	006	28	inline	notes/t0-triage.md	858	859	A chain is	weakest, unformalized link.	raw
+notes/summaries/number-theory/006-goldfelds-conjecture.md	006	27	inline	notes/reports/t0-triage.md	858	858	Cross-family chains inside	002↔006, and 311⇒Hovey–Strickland.	raw
+notes/summaries/number-theory/006-goldfelds-conjecture.md	006	28	inline	notes/reports/t0-triage.md	858	859	A chain is	weakest, unformalized link.	raw
 notes/summaries/number-theory/007-two-point-chowla-and-the-corrected-binary-elliott-conjecture.md	007	1	block	CONTENTS.md	166	166	**007. Ordinary two-point correlations and the corrected Elliott conjecture.** Proves the ordinary two-point Chowla conjecture, with a bound $`O(X/(\log X)^c)`$ for Liouville correlation sums along fixed nonproportional affine forms,		folded
 notes/summaries/number-theory/007-two-point-chowla-and-the-corrected-binary-elliott-conjecture.md	007	2	block	CONTENTS.md	0	0			none
 notes/summaries/number-theory/007-two-point-chowla-and-the-corrected-binary-elliott-conjecture.md	007	3	inline	overview.tex	90	90	Two-point Chowla and	binary Elliott conjecture	raw
@@ -700,9 +700,9 @@ notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanuj
 notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md	014	3	block	CONTENTS.md	332	332	Proves the restricted	Lie-theoretic characteristic hypotheses.	raw
 notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md	014	4	inline	CONTENTS.md	332	332	the same conclusion holds assuming additionally that *p* is very good for the group and $`p\nmid |W_G|`$		folded
 notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md	014	5	block	CONTENTS.md	332	332	Assuming the finite-level	group, including inertia.	raw
-notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md	014	6	inline	notes/t0-triage.md	129	129	Ramanujan is unconditional		raw
-notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md	014	7	inline	notes/t0-triage.md	131	132	assuming the finite-level Ramanujan–Arthur decomposition		raw
-notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md	014	8	inline	notes/t0-triage.md	132	132	The `conditional` tag is genuine here.		raw
+notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md	014	6	inline	notes/reports/t0-triage.md	129	129	Ramanujan is unconditional		raw
+notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md	014	7	inline	notes/reports/t0-triage.md	131	132	assuming the finite-level Ramanujan–Arthur decomposition		raw
+notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md	014	8	inline	notes/reports/t0-triage.md	132	132	The `conditional` tag is genuine here.		raw
 notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md	014	9	block	CONTENTS.md	341	341	Under the finite-level Ramanujan–Arthur decomposition stated in Theorem 1.1, we construct a global Arthur enhancement for every occurring cuspidal excursion parameter at a specified full finite level for a split connected semisimple group over a global function field. A single algebraic SL*2* and a commuting Weil centralizer map recover the given parameter by diagonal specialization on the entire Weil group, including inertia. The result does not assert ellipticity, Arthur-packet classification, or a multiplicity formula.		folded
 notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md	014	10	block	CONTENTS.md	359	359	We prove rational	generalized Ramanujan conjecture.	raw
 notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md	014	11	block	CONTENTS.md	377	377	We prove the	groups in characteristic	raw
@@ -792,8 +792,8 @@ notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanuj
 notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md	014	95	inline	CONTENTS.md	341	341	The result does	a multiplicity formula.	raw
 notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md	014	96	inline	preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/build/manuscript.tex	271	273	A global enhancement	Gaitsgory and Lafforgue	raw
 notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md	014	97	inline	preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/build/sections/01-introduction.tex	201	201	established inputs from	of that paper.	raw
-notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md	014	98	inline	notes/t0-triage.md	131	132	assuming the finite-level Ramanujan–Arthur decomposition		raw
-notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md	014	99	inline	notes/t0-triage.md	132	132	The `conditional` tag is genuine here.		raw
+notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md	014	98	inline	notes/reports/t0-triage.md	131	132	assuming the finite-level Ramanujan–Arthur decomposition		raw
+notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md	014	99	inline	notes/reports/t0-triage.md	132	132	The `conditional` tag is genuine here.		raw
 notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md	014	100	inline	preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/build/manuscript.tex	181	181	Assume Theorem~\ref{thm:parent}.		raw
 notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md	014	101	inline	preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/build/manuscript.tex	226	228	Arthur's conjectures explain	commutes with it.	raw
 notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md	014	102	inline	preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/build/manuscript.tex	228	230	This structure appeared	unipotent automorphic representations	raw
@@ -947,7 +947,7 @@ notes/summaries/number-theory/018-margulis-platonov-conjecture-over-global-field
 notes/summaries/number-theory/018-margulis-platonov-conjecture-over-global-fields.md	018	50	inline	preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/build/sections/introduction.tex	120	120	is the Margulis--Platonov statement assumed in		raw
 notes/summaries/number-theory/018-margulis-platonov-conjecture-over-global-fields.md	018	51	inline	preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/build/sections/introduction.tex	128	131	The corollary is	outside that range.	raw
 notes/summaries/number-theory/018-margulis-platonov-conjecture-over-global-fields.md	018	52	inline	preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/build/sections/introduction.tex	82	83	That relationship does	to prove it.	raw
-notes/summaries/number-theory/018-margulis-platonov-conjecture-over-global-fields.md	018	53	inline	notes/t0-triage.md	135	135	018 (2p, R) — Margulis–Platonov over every global field, including characteristic 2.		folded
+notes/summaries/number-theory/018-margulis-platonov-conjecture-over-global-fields.md	018	53	inline	notes/reports/t0-triage.md	135	135	018 (2p, R) — Margulis–Platonov over every global field, including characteristic 2.		folded
 notes/summaries/number-theory/018-margulis-platonov-conjecture-over-global-fields.md	018	54	inline	preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/build/paper/01-introduction.tex	42	44	Its origins lie	connected simple groups.	raw
 notes/summaries/number-theory/018-margulis-platonov-conjecture-over-global-fields.md	018	55	inline	preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/build/sections/introduction.tex	45	47	The conjecture grew	finite local product	raw
 notes/summaries/number-theory/018-margulis-platonov-conjecture-over-global-fields.md	018	56	inline	preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/build/paper/01-introduction.tex	46	48	The finite-index assertion	specified local groups.	raw
@@ -993,7 +993,7 @@ notes/summaries/number-theory/019-p-adic-section-conjecture.md	019	31	inline	pre
 notes/summaries/number-theory/019-p-adic-section-conjecture.md	019	32	inline	preprints/The-p-adic-section-conjecture-October-6-2026/build/sections/08-global-sections.tex	229	231	The general implication	not supply it.	raw
 notes/summaries/number-theory/019-p-adic-section-conjecture.md	019	33	inline	preprints/The-p-adic-section-conjecture-October-6-2026/build/sections/08-global-sections.tex	275	276	This asserts neither	or uniform bound.	raw
 notes/summaries/number-theory/019-p-adic-section-conjecture.md	019	34	inline	preprints/The-p-adic-section-conjecture-October-6-2026/build/sections/07-sections.tex	179	182	Notice that a type-$2h$ valuation can lie over a non-rational closed point. Rationality here follows from the surjection to $G_k$; no unrestricted equivalence between ``not type $2h$'' and ``not originating from a rational point'' is used.		folded
-notes/summaries/number-theory/019-p-adic-section-conjecture.md	019	35	inline	notes/t0-triage.md	136	138	019 (2p, N) — the p-adic section conjecture for smooth proper geometrically connected curves of genus ≥2 over finite extensions of Q_p; plus the Grothendieck section conjecture over Q for X₀(N) and X₁(N) of genus ≥2. No shape tag at all.		folded
+notes/summaries/number-theory/019-p-adic-section-conjecture.md	019	35	inline	notes/reports/t0-triage.md	136	138	019 (2p, N) — the p-adic section conjecture for smooth proper geometrically connected curves of genus ≥2 over finite extensions of Q_p; plus the Grothendieck section conjecture over Q for X₀(N) and X₁(N) of genus ≥2. No shape tag at all.		folded
 notes/summaries/number-theory/019-p-adic-section-conjecture.md	019	36	inline	preprints/The-p-adic-section-conjecture-October-6-2026/build/sections/01-introduction.tex	23	25	It is a	the prime field	raw
 notes/summaries/number-theory/019-p-adic-section-conjecture.md	019	37	inline	preprints/The-p-adic-section-conjecture-October-6-2026/build/sections/01-introduction.tex	53	55	Koenigsmann proves that	a rational point	raw
 notes/summaries/number-theory/019-p-adic-section-conjecture.md	019	38	inline	preprints/The-p-adic-section-conjecture-October-6-2026/build/sections/01-introduction.tex	65	67	Pop--Stix localize every	valuations can support	raw

@@ -33,16 +33,16 @@ from catlib.paths import ROOT
 # (page, needle, replacement). Each needle is prose the page carries verbatim, not a count phrase:
 # a count is re-derived by the page's own count pass, so mutating one proves that pass, not this.
 PAGES = [
-    (ROOT / "notes" / "links.md",
+    (ROOT / "notes" / "reports" / "links.md",
      "A directory walk would count a superseded edition's bibliography a second time.",
      "A directory walk would count a superseded edition's bibliography twice over."),
-    (ROOT / "notes" / "names.md",
+    (ROOT / "notes" / "reports" / "names.md",
      "Names sit in four places in this release, and they do not",
      "Names sit in five places in this release, and they do not"),
-    (ROOT / "notes" / "topics.md",
+    (ROOT / "notes" / "reports" / "topics.md",
      "the pattern column is the source of truth",
      "the pattern column is the authoritative source"),
-    (ROOT / "notes" / "proof-density.md",
+    (ROOT / "notes" / "reports" / "proof-density.md",
      "a 40-line construction",
      "a 41-line construction"),
     (ROOT / "notes" / "development" / "index-links.md",

@@ -38,7 +38,7 @@ from catlib import render as RD
 from catlib.paths import DOCS_DIR, LEAN, NOTES, PREPRINTS, ROOT
 from catlib.text import collapse_ws, first_group
 
-PAGE = NOTES / "formalization-faithfulness.md"
+PAGE = NOTES / "reports" / "formalization-faithfulness.md"
 ANCHOR = anchors.anchor_pattern(anchors.EXT_YAML, ranges=True)
 QUOTE = re.compile(r'\*"([^"]{12,})"\*')
 KEY = re.compile(r"comparator_config:\s*ComparatorChallenges/([A-Za-z0-9_]+)\.json")

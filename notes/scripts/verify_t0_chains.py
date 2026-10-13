@@ -44,7 +44,7 @@ from catlib.paths import NOTES, ROOT, owner
 from catlib.preprints import listed_dirs_from_contents
 from catlib.text import collapse_ws, first_group
 
-PAGE = NOTES / "t0-chains.md"
+PAGE = NOTES / "reports" / "t0-chains.md"
 ANCHOR = anchors.anchor_pattern(anchors.EXT_MAN)
 QUOTE = re.compile(r'\*"([^"]{12,})"\*')
 HEAD = re.compile(r"^### (\d{3}) — ")

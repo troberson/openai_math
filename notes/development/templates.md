@@ -5,7 +5,7 @@ template text plus the writer's registry). Lines and bytes are of the template f
 is a `{{ ` occurrence counted over the whole file. No `lake`, `lean`, `lake exe cache get`, or
 comparator run.
 
-**Headline, with the rule that yields it:** report tree: **19** templates, **7,175** lines, **462,626** bytes, **1,446** slots; index tree: **5** templates, **209** lines, **14,895** bytes, **103** slots; all **24** templates: **7,384** lines, **477,521** bytes, **1,549** slots.
+**Headline, with the rule that yields it:** report tree: **19** templates, **7,175** lines, **463,506** bytes, **1,446** slots; index tree: **5** templates, **209** lines, **14,951** bytes, **103** slots; all **24** templates: **7,384** lines, **478,457** bytes, **1,549** slots.
 
 ## The report tree
 
@@ -16,26 +16,26 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 
 | Template | Lines | Bytes | Slots | Page | Checker | Needles |
 |---|---|---|---|---|---|---|
-| `README.md.j2` | 750 | 71,776 | 71 | `notes/README.md` | `verify_script_ownership.py` | NOT DERIVED |
-| `abstracts.md.j2` | 406 | 32,501 | 42 | `notes/reports/abstracts.md` | `verify_abstracts.py` | 45 |
-| `counterexample-crosscheck.md.j2` | 1,089 | 45,827 | 87 | `notes/reports/counterexample-crosscheck.md` | `verify_counterexample_crosscheck.py` | 20 |
-| `dependency-drift.md.j2` | 229 | 11,534 | 95 | `notes/reports/dependency-drift.md` | `verify_dependency_drift.py` | NOT DERIVED |
-| `fleet-design.md.j2` | 459 | 39,735 | 34 | `notes/development/fleet-design.md` | `verify_fleet_design.py` | 20 |
-| `formalization-faithfulness.md.j2` | 265 | 11,802 | 65 | `notes/reports/formalization-faithfulness.md` | `verify_faithfulness.py` | 13 |
-| `index-design.md.j2` | 232 | 13,380 | 101 | `notes/development/index-design.md` | `verify_index_design.py` | 82 |
-| `index-links.md.j2` | 215 | 12,835 | 81 | `notes/development/index-links.md` | `check_index_links.py` | NOT DERIVED |
-| `links.md.j2` | 224 | 12,298 | 110 | `notes/reports/links.md` | `extract_links.py` | NOT DERIVED |
-| `named-results.md.j2` | 368 | 25,287 | 83 | `notes/reports/named-results.md` | `verify_named_results.py` | 65 |
-| `names.md.j2` | 277 | 13,865 | 130 | `notes/reports/names.md` | `measure_names.py` | NOT DERIVED |
-| `proof-density.md.j2` | 122 | 8,637 | 66 | `notes/reports/proof-density.md` | `measure_proof_density.py` | NOT DERIVED |
-| `scope-exclusions.md.j2` | 328 | 26,780 | 19 | `notes/reports/scope-exclusions.md` | `verify_scope_exclusions.py` | NOT DERIVED |
-| `sources.md.j2` | 156 | 9,392 | 29 | `notes/reports/sources.md` | `verify_sources.py` | 31 |
-| `subfinding-pairs.md.j2` | 636 | 26,874 | 165 | `notes/reports/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |
-| `t0-chains.md.j2` | 569 | 34,014 | 62 | `notes/reports/t0-chains.md` | `verify_t0_chains.py` | 12 |
+| `README.md.j2` | 750 | 72,312 | 71 | `notes/README.md` | `verify_script_ownership.py` | NOT DERIVED |
+| `abstracts.md.j2` | 406 | 32,517 | 42 | `notes/reports/abstracts.md` | `verify_abstracts.py` | 45 |
+| `counterexample-crosscheck.md.j2` | 1,089 | 45,859 | 87 | `notes/reports/counterexample-crosscheck.md` | `verify_counterexample_crosscheck.py` | 20 |
+| `dependency-drift.md.j2` | 229 | 11,558 | 95 | `notes/reports/dependency-drift.md` | `verify_dependency_drift.py` | NOT DERIVED |
+| `fleet-design.md.j2` | 459 | 39,775 | 34 | `notes/development/fleet-design.md` | `verify_fleet_design.py` | 20 |
+| `formalization-faithfulness.md.j2` | 265 | 11,818 | 65 | `notes/reports/formalization-faithfulness.md` | `verify_faithfulness.py` | 13 |
+| `index-design.md.j2` | 232 | 13,388 | 101 | `notes/development/index-design.md` | `verify_index_design.py` | 82 |
+| `index-links.md.j2` | 215 | 12,851 | 81 | `notes/development/index-links.md` | `check_index_links.py` | NOT DERIVED |
+| `links.md.j2` | 224 | 12,314 | 110 | `notes/reports/links.md` | `extract_links.py` | NOT DERIVED |
+| `named-results.md.j2` | 368 | 25,311 | 83 | `notes/reports/named-results.md` | `verify_named_results.py` | 65 |
+| `names.md.j2` | 277 | 13,881 | 130 | `notes/reports/names.md` | `measure_names.py` | NOT DERIVED |
+| `proof-density.md.j2` | 122 | 8,661 | 66 | `notes/reports/proof-density.md` | `measure_proof_density.py` | NOT DERIVED |
+| `scope-exclusions.md.j2` | 328 | 26,788 | 19 | `notes/reports/scope-exclusions.md` | `verify_scope_exclusions.py` | NOT DERIVED |
+| `sources.md.j2` | 156 | 9,400 | 29 | `notes/reports/sources.md` | `verify_sources.py` | 31 |
+| `subfinding-pairs.md.j2` | 636 | 26,890 | 165 | `notes/reports/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |
+| `t0-chains.md.j2` | 569 | 34,078 | 62 | `notes/reports/t0-chains.md` | `verify_t0_chains.py` | 12 |
 | `templates.md.j2` | 107 | 5,071 | 45 | `notes/development/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
-| `topics.md.j2` | 335 | 23,074 | 117 | `notes/reports/topics.md` | `measure_topics.py` | NOT DERIVED |
-| `verification-dirs.md.j2` | 408 | 37,944 | 44 | `notes/reports/verification-dirs.md` | `verify_verification_dirs.py` | 16 |
-| **report tree** | **19** | **7,175** | **462,626** | **1,446** | | |
+| `topics.md.j2` | 335 | 23,082 | 117 | `notes/reports/topics.md` | `measure_topics.py` | NOT DERIVED |
+| `verification-dirs.md.j2` | 408 | 37,952 | 44 | `notes/reports/verification-dirs.md` | `verify_verification_dirs.py` | 16 |
+| **report tree** | **19** | **7,175** | **463,506** | **1,446** | | |
 
 ## The index tree
 
@@ -46,10 +46,10 @@ the count of pages on disk that the template produced, read from the tree it wri
 |---|---|---|---|---|
 | `discipline.md.j2` | 12 | 876 | 13 | 17 discipline pages |
 | `family.md.j2` | 60 | 3,699 | 28 | 372 family pages |
-| `index-readme.md.j2` | 61 | 5,641 | 24 | 1 entry point |
-| `name.md.j2` | 62 | 3,560 | 27 | 551 name pages |
+| `index-readme.md.j2` | 61 | 5,681 | 24 | 1 entry point |
+| `name.md.j2` | 62 | 3,576 | 27 | 551 name pages |
 | `topic.md.j2` | 14 | 1,119 | 11 | 92 topic pages |
-| **index tree** | **5** | **209** | **14,895** | **103** | |
+| **index tree** | **5** | **209** | **14,951** | **103** | |
 
 ## The slot rule
 

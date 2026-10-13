@@ -41,7 +41,7 @@ from catlib.ledger import bucket_of, read_ledger
 from catlib.paths import NOTES, ROOT, read_text
 from catlib.text import collapse_ws
 
-PAGE = NOTES / "named-conjectures.md"
+PAGE = NOTES / "reports" / "named-conjectures.md"
 
 PRIORITY = ["038", "078", "079", "101", "202", "344", "346", "375"]
 NAME_TOKEN = re.compile(r"conjectur|\bquestion|\bproblem", re.IGNORECASE)

@@ -52,7 +52,7 @@ from catlib.paths import LEDGER_TSV, NOTES, ROOT
 from catlib.text import collapse_ws
 from catlib.tsv import read_rows
 
-PAGE = NOTES / "abstracts.md"
+PAGE = NOTES / "reports" / "abstracts.md"
 
 ROW = re.compile(r"^\|\s*(S\d+)\s*\|\s*`([^`]+)`\s*\|\s*(.*?)\s*\|\s*$")
 MARKER = re.compile(r"\[(S\d+)\]")

@@ -57,7 +57,7 @@ from catlib.paths import (
 from catlib.text import first_group, strip_markup
 from catlib.tsv import read_rows
 
-PAGE = NOTES / "findings.md"
+PAGE = NOTES / "reports" / "findings.md"
 TRACES = REASONING_TRACES
 INDEX = INDEX_DIR
 

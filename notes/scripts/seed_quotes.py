@@ -46,7 +46,7 @@ from catlib.summaries import Page
 from catlib.text import strip_markup
 from catlib.tsv import rows_text
 
-PAGE = ROOT / "notes" / "subfinding-pairs.md"
+PAGE = ROOT / "notes" / "reports" / "subfinding-pairs.md"
 SRC = ROOT / "overview.tex"
 OUT = ROOT / "notes" / "tables" / "quotes.tsv"
 PAGES = str(PAGE.relative_to(ROOT))

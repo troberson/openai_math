@@ -56,7 +56,7 @@ def mod(load):
 
 @pytest.fixture(scope="module")
 def page(mod):
-    return (mod.NOTES / "findings.md").read_text(encoding="utf-8")
+    return (mod.NOTES / "reports" / "findings.md").read_text(encoding="utf-8")
 
 
 def test_clean_page(mod, page):

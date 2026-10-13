@@ -29,7 +29,7 @@ fires for every fault, so no needle is that line.
 
 The clean test asserts the passes are silent and pins the counts they report: 32 anchors, 24 count
 and probe phrases, 0 sync problems, 2 atomicity matches over 65 scripts and 18 catlib modules, 12
-sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 9 TSVs at 907,744 bytes, 631M
+sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 9 TSVs at 909,768 bytes, 631M
 `preprints/`, 1,740M `lean/OAI/`, 14M `notes/index/`, 78 gate rows, 10 writer rows, 1 env hit, 8
 purity scripts,
 the sites at `atomic.py:42` / `atomic.py:84`, `render_reports.py:1162`
@@ -80,8 +80,8 @@ MUTANTS = [
     ("notes-page anchor outside the file", "anchor line outside file: `notes/development/fleet-design.md:9999`",
      lambda t: t.replace("`render_reports.py:1162`",
                          "`render_reports.py:1162` `notes/development/fleet-design.md:9999`", 1)),
-    ("prose count in the size argument", "count phrase not in the page: **907,744** bytes",
-     lambda t: t.replace("**907,744** bytes", "**907,743** bytes", 1)),
+    ("prose count in the size argument", "count phrase not in the page: **909,768** bytes",
+     lambda t: t.replace("**909,768** bytes", "**909,767** bytes", 1)),
     # The TSV count and the writer-row count are measured from the fleet's own tree and the ROWS block,
     # so a page that names a count the measurement contradicts is caught by the count pass.
     ("TSV count understated",
@@ -150,7 +150,7 @@ def test_clean_page(mod, text):
         f"atomic {p['atomic']}, scripts {p['scripts']}, modules {p['modules']}"
     assert (p["sync"], p["sync_verify"], p["sync_other"]) == (12, 12, 0), \
         f"sync {p['sync']}, verify_ {p['sync_verify']}, not {p['sync_other']}"
-    assert (p["digests"], p["ignored"], p["tsv_count"], p["tsv_bytes"]) == (5, 1, 9, 907744), \
+    assert (p["digests"], p["ignored"], p["tsv_count"], p["tsv_bytes"]) == (5, 1, 9, 909768), \
         f"digests {p['digests']}, ignored {p['ignored']}, tsv {p['tsv_bytes']}"
     assert (p["du"]["preprints"], p["du"]["oai"], p["du"]["index"]) == (631, 1740, 14), \
         f"du {p['du']}"

@@ -50,7 +50,7 @@ from catlib import render as RD
 from catlib.paths import COMPARATOR_DIR, FORMALIZATION_YAML, NOTES, ROOT
 from catlib.text import collapse_ws
 
-PAGE = NOTES / "counterexample-crosscheck.md"
+PAGE = NOTES / "reports" / "counterexample-crosscheck.md"
 ANCHOR = anchors.anchor_pattern(anchors.EXT_YAML)
 QUOTE = re.compile(r'\*"([^"]{12,})"\*')
 ROW = re.compile(r"^\|\s*(\d{3})\s*\|\s*(T\d)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*\|")

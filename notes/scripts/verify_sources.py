@@ -40,7 +40,7 @@ from catlib import render as RD
 from catlib.paths import LEDGER_TSV, PREPRINTS, SUBFINDINGS_TSV
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-PAGE = ROOT / "notes" / "sources.md"
+PAGE = ROOT / "notes" / "reports" / "sources.md"
 TSV = ROOT / "notes" / "tables" / "sources.tsv"
 
 ANCHOR = re.compile(r"`([\w./+-]+?\.(?:py|md|tex|json|tsv|yaml)):(\d+)`")

@@ -47,7 +47,7 @@ from catlib.preprints import bib_files, listed_dirs_from_contents
 from catlib.tsv import read_rows
 
 NOTES = ROOT / "notes"
-TRIAGE = NOTES / "t0-triage.md"
+TRIAGE = NOTES / "reports" / "t0-triage.md"
 SECOND_PASS_START = "## Second pass: the remaining 93 families"
 SECOND_PASS_END = "## What the triage shows"
 SIGNAL_COLS = ("paps_form", "chal", "mainres", "scope_note", "verification", "inputs", "covmd")

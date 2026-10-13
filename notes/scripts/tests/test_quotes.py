@@ -29,7 +29,7 @@ from catlib.paths import ROOT
 from catlib.quotes import resolve, seed
 from catlib.text import strip_markup as norm
 
-PAGE = ROOT / "notes" / "subfinding-pairs.md"
+PAGE = ROOT / "notes" / "reports" / "subfinding-pairs.md"
 SRC = ROOT / "overview.tex"
 
 # Family 262's shape: the title is quoted twice in one abstract, once as the entry title and once as

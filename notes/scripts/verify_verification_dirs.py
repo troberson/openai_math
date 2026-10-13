@@ -48,7 +48,7 @@ from catlib.preprints import bundle_of, entry_point, main_command
 from catlib.text import collapse_ws
 from catlib.tsv import read_rows
 
-PAGE = NOTES / "verification-dirs.md"
+PAGE = NOTES / "reports" / "verification-dirs.md"
 POS = PREPRINTS / "Positively-curved-Einstein-four-manifolds-September-23-2026"
 ZERO = PREPRINTS / "Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026"
 VPOS, VZERO = bundle_of(POS), bundle_of(ZERO)

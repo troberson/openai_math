@@ -42,11 +42,11 @@ from catlib.paths import LAKE_MANIFEST as MANIFEST
 from catlib.paths import LAKEFILE
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-PAGE = ROOT / "notes" / "dependency-drift.md"
+PAGE = ROOT / "notes" / "reports" / "dependency-drift.md"
 TSV = ROOT / "notes" / "tables" / "formalization-deps.tsv"
 PATCHDIR = ROOT / "lean" / "patches"
 TOOLCHAIN = ROOT / "lean" / "lean-toolchain"
-DEPSMD = ROOT / "notes" / "formalization-deps.md"
+DEPSMD = ROOT / "notes" / "reports" / "formalization-deps.md"
 
 SUFFIX = "-lean4341.patch"
 

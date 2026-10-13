@@ -43,7 +43,7 @@ def new_block(fam: str, line: int, n: int, tier: str) -> dict:
     return {"fam": fam, "line": line, "n": n, "tier": tier,
             "pairs": [], "claimed": None, "unclaimed": None}
 
-PAGE = NOTES / "subfinding-pairs.md"
+PAGE = NOTES / "reports" / "subfinding-pairs.md"
 
 HEADER = re.compile(r"^## (?P<fam>\d{3}) · `overview\.tex:(?P<line>\d+)` · "
                     r"n=(?P<n>\d+) · (?P<tier>T\d)\s*$")

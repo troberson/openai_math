@@ -94,27 +94,27 @@ ENV = Environment(loader=FileSystemLoader(str(TPL)), keep_trailing_newline=True,
 TSV = ROOT / "notes" / "tables" / "sources.tsv"
 # One constant per page, written by name in main(): the ownership checker derives a writer's targets
 # from the receiver of its write call, so a write through a loop variable is invisible to it.
-SOURCES_MD = ROOT / "notes" / "sources.md"
-ABSTRACTS_MD = ROOT / "notes" / "abstracts.md"
-NAMED_RESULTS_MD = ROOT / "notes" / "named-results.md"
+SOURCES_MD = ROOT / "notes" / "reports" / "sources.md"
+ABSTRACTS_MD = ROOT / "notes" / "reports" / "abstracts.md"
+NAMED_RESULTS_MD = ROOT / "notes" / "reports" / "named-results.md"
 INDEX_DESIGN_MD = ROOT / "notes" / "development" / "index-design.md"
-NAMES_MD = ROOT / "notes" / "names.md"
-PROOF_DENSITY_MD = ROOT / "notes" / "proof-density.md"
+NAMES_MD = ROOT / "notes" / "reports" / "names.md"
+PROOF_DENSITY_MD = ROOT / "notes" / "reports" / "proof-density.md"
 INDEX_LINKS_MD = ROOT / "notes" / "development" / "index-links.md"
-LINKS_MD = ROOT / "notes" / "links.md"
+LINKS_MD = ROOT / "notes" / "reports" / "links.md"
 LINKS_TSV = ROOT / "notes" / "tables" / "links.tsv"
-DRIFT_MD = ROOT / "notes" / "dependency-drift.md"
+DRIFT_MD = ROOT / "notes" / "reports" / "dependency-drift.md"
 PATCHES_DIR = ROOT / "lean" / "patches"
 TOOLCHAIN_FILE = ROOT / "lean" / "lean-toolchain"
-DEPS_MD = ROOT / "notes" / "formalization-deps.md"
-VERIF_MD = ROOT / "notes" / "verification-dirs.md"
-EX_MD = ROOT / "notes" / "scope-exclusions.md"
-TOPICS_MD = ROOT / "notes" / "topics.md"
-T0_CHAINS_MD = ROOT / "notes" / "t0-chains.md"
-SP_MD = ROOT / "notes" / "subfinding-pairs.md"
+DEPS_MD = ROOT / "notes" / "reports" / "formalization-deps.md"
+VERIF_MD = ROOT / "notes" / "reports" / "verification-dirs.md"
+EX_MD = ROOT / "notes" / "reports" / "scope-exclusions.md"
+TOPICS_MD = ROOT / "notes" / "reports" / "topics.md"
+T0_CHAINS_MD = ROOT / "notes" / "reports" / "t0-chains.md"
+SP_MD = ROOT / "notes" / "reports" / "subfinding-pairs.md"
 README_MD = ROOT / "notes" / "README.md"
-CROSSCHECK_MD = ROOT / "notes" / "counterexample-crosscheck.md"
-FAITH_MD = ROOT / "notes" / "formalization-faithfulness.md"
+CROSSCHECK_MD = ROOT / "notes" / "reports" / "counterexample-crosscheck.md"
+FAITH_MD = ROOT / "notes" / "reports" / "formalization-faithfulness.md"
 TEMPLATES_MD = ROOT / "notes" / "development" / "templates.md"
 FLEET_MD = ROOT / "notes" / "development" / "fleet-design.md"
 VPOS = preprints.bundle_of(PREPRINTS / "Positively-curved-Einstein-four-manifolds-September-23-2026")
@@ -741,7 +741,7 @@ INDEX_SPLIT = {
     "MSC hit count": ["family → MSC code"],
     "added TSV byte figures": ["`notes/tables/abstracts.tsv`",
                                ("(**89476** B over **372** rows), `notes/tables/quotes.tsv` "
-                                "(**277124** B over **1161** rows),"),
+                                "(**279148** B over **1161** rows),"),
                                ("`notes/tables/sources.tsv` (**221463** B over **719** rows) and "
                                 "`notes/tables/topics.tsv` (**22631** B")],
     "bib keywords count": ["bibliography entry → `keywords` field **0** over **13,802**"],

@@ -47,7 +47,7 @@ from catlib.paths import COMPARATOR_DIR
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 
-PAGE = ROOT / "notes" / "named-results.md"
+PAGE = ROOT / "notes" / "reports" / "named-results.md"
 ANCHOR = re.compile(r"`([\w./+-]+?\.(?:py|md|tex|json|txt|lean|yaml|bib)):(\d+)`")
 BARE = re.compile(r"(\d{3})\s+\(`:(\d+)`\)")
 QUOTE = re.compile(r'\*"([^"]{12,})"\*')

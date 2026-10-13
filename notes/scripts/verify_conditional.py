@@ -26,7 +26,7 @@ from catlib import anchors
 from catlib.paths import NOTES, ROOT
 from catlib.text import collapse_ws
 
-PAGE = NOTES / "conditional.md"
+PAGE = NOTES / "reports" / "conditional.md"
 
 ANCHOR = anchors.anchor_pattern(anchors.EXT_LEAN)
 QUOTE = re.compile(r'\*"([^"|]{12,})"\*')

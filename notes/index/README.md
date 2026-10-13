@@ -28,7 +28,7 @@ The schema is decided in [notes/development/index-design.md](../development/inde
 
 ## Topics
 
-Topics are a curated keyword vocabulary in [`notes/tables/topics.tsv`](../tables/topics.tsv) (the hand-written source of truth, with the reading verdict for each term in [`notes/reports/topics.md`](../topics.md)), measured over four texts per family: title, abstract, scope note, and the derived Lean file paths. A family carries zero or more topics, so this is a label on top of the discipline partition, not a replacement for it. 92 terms, 978 assignments, 4 terms with no hit.
+Topics are a curated keyword vocabulary in [`notes/tables/topics.tsv`](../tables/topics.tsv) (the hand-written source of truth, with the reading verdict for each term in [`notes/reports/topics.md`](../reports/topics.md)), measured over four texts per family: title, abstract, scope note, and the derived Lean file paths. A family carries zero or more topics, so this is a label on top of the discipline partition, not a replacement for it. 92 terms, 978 assignments, 4 terms with no hit.
 
 | Topic | Families | Title | Abstract | Scope | Path |
 |---|---|---|---|---|---|
@@ -127,7 +127,7 @@ Topics are a curated keyword vocabulary in [`notes/tables/topics.tsv`](../tables
 
 ## Names
 
-Names are measured over six layers by [`notes/scripts/measure_names.py`](../scripts/measure_names.py) and recorded in [`notes/reports/names.md`](../names.md): four title layers (family titles, manuscript directory names, the optional titles of statement environments, the `main_results` declaration names) and two body layers (manuscript prose with the bibliography stripped, and the author fields of the shipped `.bib` files). A name is a **subject** when a title layer or a declaration carries it and a **citation** when only prose or a bibliography does, so only subject names get a page: 551 pages in [`names/`](names/) over 5842 measured names. The other 5291 are bibliography surnames that never reach a title layer — rows in [`names.tsv`](names.tsv) with `role = citation`, not pages. 9819 family-name edges cover 372 of 372 families; 0 names resolve to no family. Each page states, per source, which layer produced the hit: a name in a body paragraph is a citation, not a subject.
+Names are measured over six layers by [`notes/scripts/measure_names.py`](../scripts/measure_names.py) and recorded in [`notes/reports/names.md`](../reports/names.md): four title layers (family titles, manuscript directory names, the optional titles of statement environments, the `main_results` declaration names) and two body layers (manuscript prose with the bibliography stripped, and the author fields of the shipped `.bib` files). A name is a **subject** when a title layer or a declaration carries it and a **citation** when only prose or a bibliography does, so only subject names get a page: 551 pages in [`names/`](names/) over 5842 measured names. The other 5291 are bibliography surnames that never reach a title layer — rows in [`names.tsv`](names.tsv) with `role = citation`, not pages. 9819 family-name edges cover 372 of 372 families; 0 names resolve to no family. Each page states, per source, which layer produced the hit: a name in a body paragraph is a citation, not a subject.
 
 | Name | Families | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|

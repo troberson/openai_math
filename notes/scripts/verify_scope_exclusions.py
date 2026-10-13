@@ -37,7 +37,7 @@ from catlib.paths import DOCS_DIR
 from catlib.text import strip_markup as norm
 
 ROOT = Path(__file__).resolve().parents[2]
-PAGE = ROOT / "notes" / "scope-exclusions.md"
+PAGE = ROOT / "notes" / "reports" / "scope-exclusions.md"
 
 ROW = re.compile(r"^\|\s*(\d{3})\s*\|\s*(.+?)\s*\|\s*$")
 PAIR = re.compile(r"^“(.+)”\s*`lean/docs/(\d{3})\.md:(\d+)`$")
