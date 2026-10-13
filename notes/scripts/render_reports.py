@@ -1158,10 +1158,10 @@ IL_SPLIT = {
                         ("pages and 2 from the entry point) and `notes/tables/topics.tsv`")],
     "prose_basenames": [("The index tree carries 1,027 distinct file basenames over 1,033 pages "
                         "and `notes/tables/` carries")],
-    "prose_regchecked": ["**48,012 links checked, 0"],
+    "prose_regchecked": ["**48,013 links checked, 0"],
     "prose_tracefiles": ["`reasoning_traces/` ships **11 files"],
     "prose_fresh": ["**20 injected, 20 caught, 0 missed; 7 controls, 7"],
-    "prose_surplus": ["The 18,095 surplus links are"],
+    "prose_surplus": ["The 18,094 surplus links are"],
 }
 
 

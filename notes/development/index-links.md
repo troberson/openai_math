@@ -110,20 +110,20 @@ unlinked. `CONTENTS.md`'s 720 `.pdf` links are the 719 manuscript PDFs plus `ove
 
 ## Coverage: the disk scan is a superset of the render-time check
 
-`build_index.py` checks its own links as it renders and reports **48,012 links checked, 0
-broken** (fresh run). The disk scan finds **66,107 links, 0 broken**. The 18,095-link difference
+`build_index.py` checks its own links as it renders and reports **48,013 links checked, 0
+broken** (fresh run). The disk scan finds **66,107 links, 0 broken**. The 18,094-link difference
 is not a discrepancy about existence — both report zero — it is the render-time registry
 under-covering the pages it writes. The registry appends one href per registered relationship
 (an edge, a canonical file); the rendered bodies emit the same target again in other tables, and
 they carry navigation links the registry never appends. Both sides are printed by the tools: the
 checker counts scanned links per page group, and `build_index.py` prints registered links per
 group and per category, classified by importing the checker's own `category`/`resolve` rule.
-Attributed two ways, each summing to 18,095:
+Attributed two ways, each summing to 18,094:
 
 | Page group | Pages | Scanned | Registered | Gap |
 |---|---|---|---|---|
 | name pages | 551 | 57,888 | 40,899 | 16,989 |
-| family pages | 372 | 6,712 | 5,763 | 949 |
+| family pages | 372 | 6,712 | 5,764 | 948 |
 | topic pages | 92 | 978 | 978 | 0 |
 | discipline pages | 17 | 372 | 372 | 0 |
 | entry point (`notes/index/README.md`) | 1 | 157 | 0 | 157 |
@@ -132,14 +132,14 @@ Attributed two ways, each summing to 18,095:
 |---|---|---|---|---|
 | `index-page` | 28,557 | 12,521 | 16,036 | name pages link a family page in four tables (Families 9,819, the Manuscripts table's Family column 14,901, declaration and environment-title rows 986); the registry appends only the Families-table links, which are the 9,819 `family-name` edges. Family pages' 1,352 discipline/topic/companion links are all registered; the entry point's 149 are not registered at all. |
 | `manuscript-dir` | 16,720 | 16,001 | 719 | the Manuscripts table on each family page links the manuscript directory; the registry registers the PDF, `build/`, `README.md`, and `main_tex` for that manuscript, not the directory row. |
-| `notes-doc` | 576 | 21 | 555 | each of the 551 name pages links `notes/reports/names.md`; the entry point links 4 notes docs. |
+| `notes-doc` | 576 | 22 | 554 | each of the 551 name pages links `notes/reports/names.md`; the entry point links 4 notes docs. |
 | `tables-tsv` | 554 | 0 | 554 | each of the 551 name pages links `notes/tables/names.tsv`; the entry point links 2 tables. |
 | `config-json` | 705 | 505 | 200 | family pages link a config in the Configs table (416) and again in the `main_results` table (200 declarations); the registry appends the 416. Name pages' 89 are registered. |
 | `verification-dir` | 60 | 30 | 30 | each bundle is linked twice in the bodies, registered once. |
 | `index-dir` | 1 | 0 | 1 | the entry point's link to `names/`. |
 
 Every other category has gap 0: scanned links equal registered links. So the render-time check is
-a subset that passes; the disk check is the full set and also passes. The 18,095 surplus links are
+a subset that passes; the disk check is the full set and also passes. The 18,094 surplus links are
 all verified by the disk scan, and 16,989 of them (94%) sit on name pages, which is where the
 tables repeat targets.
 
