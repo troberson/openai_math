@@ -59,6 +59,10 @@ notes/reports/subfinding-pairs.md	029	1	title	overview.tex	134	134	Primitive roo
 notes/reports/subfinding-pairs.md	032	1	main	overview.tex	142	142	Proves the rational	dimension and codimension.	raw
 notes/reports/subfinding-pairs.md	032	1	title	overview.tex	142	142	The rational Hodge	CM abelian varieties	raw
 notes/reports/subfinding-pairs.md	032		clause	overview.tex	142	142	Through Milne's theorems,	in every characteristic.	raw
+notes/reports/subfinding-pairs.md	033	1	main	overview.tex	144	144	Proves Campana's orbifold	rational simple-normal-crossing boundaries.	raw
+notes/reports/subfinding-pairs.md	033	1	title	overview.tex	144	144	Orbifold and logarithmic subadditivity		raw
+notes/reports/subfinding-pairs.md	033	2	clause	overview.tex	144	144	proves Popa's inequality	geometric generic fiber	raw
+notes/reports/subfinding-pairs.md	033	2	title	overview.tex	144	144	Whole-fiber variation		raw
 notes/reports/subfinding-pairs.md	034	1	main	overview.tex	146	146	Using logarithmic Iitaka	adjoint is semiample.	raw
 notes/reports/subfinding-pairs.md	034	1	title	overview.tex	146	146	Log abundance for compact Kähler spaces		raw
 notes/reports/subfinding-pairs.md	034	4	clause	overview.tex	146	146	It also proves	of characteristic zero	raw
@@ -284,6 +288,10 @@ notes/reports/subfinding-pairs.md	138	1	main	overview.tex	353	353	Gives a unifor
 notes/reports/subfinding-pairs.md	138	1	title	overview.tex	353	353	Subset Sum in Time $O(2^{0.49n})$		raw
 notes/reports/subfinding-pairs.md	138	2	clause	overview.tex	353	353	The time bound	on every input.	raw
 notes/reports/subfinding-pairs.md	138	2	title	overview.tex	353	353	A Low-Space Algorithm	Worst-Case Subset Sum	raw
+notes/reports/subfinding-pairs.md	140	1	main	overview.tex	357	357	a one-pass learner	with probability $2/3$	raw
+notes/reports/subfinding-pairs.md	140	1	title	overview.tex	357	357	Memory and precision		raw
+notes/reports/subfinding-pairs.md	140	3	clause	overview.tex	357	357	Computation and randomized	and fresh randomness.	raw
+notes/reports/subfinding-pairs.md	140	3	title	overview.tex	357	357	Localization costs		raw
 notes/reports/subfinding-pairs.md	143	1	main	overview.tex	365	365	Resolves the uniform	on its degree.	raw
 notes/reports/subfinding-pairs.md	143	1	title	overview.tex	365	365	Uniform limit-cycle bounds		raw
 notes/reports/subfinding-pairs.md	143	2	clause	overview.tex	365	365	For classical quintic	two limit cycles.	raw
@@ -406,10 +414,24 @@ notes/reports/subfinding-pairs.md	215	3	clause	overview.tex	513	513	For the squa
 notes/reports/subfinding-pairs.md	215	3	title	overview.tex	513	513	Exact mass asymptotics	$O(4)$ lattice model	raw
 notes/reports/subfinding-pairs.md	215	5	clause	overview.tex	513	513	The family also	every positive temperature.	raw
 notes/reports/subfinding-pairs.md	215	5	title	overview.tex	513	513	O(n) exponential decay		raw
+notes/reports/subfinding-pairs.md	216	1	main	overview.tex	515	515	proves critical axis	$C_{\beta_c}(r)\sim Ar^{-1/4}(\log r)^{1/8}$	raw
+notes/reports/subfinding-pairs.md	216	1	title	overview.tex	515	515	The critical logarithmic	planar XY model	raw
+notes/reports/subfinding-pairs.md	216	4	clause	overview.tex	515	515	the Berezinskii--Kosterlitz--Thouless essential	free-box thermodynamic limit	raw
+notes/reports/subfinding-pairs.md	216	4	title	overview.tex	515	515	Essential Singularity of	Planar XY Model	raw
+notes/reports/subfinding-pairs.md	216	6	clause	overview.tex	515	515	discrete Gaussian heights	geometric torus sizes	raw
+notes/reports/subfinding-pairs.md	216	6	title	overview.tex	515	515	Height and spin-field universality		raw
+notes/reports/subfinding-pairs.md	216	2	clause	overview.tex	515	515	Critical center-magnetization and	and field-input assumptions.	raw
+notes/reports/subfinding-pairs.md	216	2	title	overview.tex	515	515	Critical Center Magnetization	Planar XY Model	raw
 notes/reports/subfinding-pairs.md	217	2	main	overview.tex	517	517	For every fixed	log partition function.	raw
 notes/reports/subfinding-pairs.md	217	2	title	overview.tex	517	517	Fluctuation scale		raw
 notes/reports/subfinding-pairs.md	217	1	clause	overview.tex	517	517	Exact centering and	characterized nondegenerate law.	raw
 notes/reports/subfinding-pairs.md	217	1	title	overview.tex	517	517	Free-energy limiting law		raw
+notes/reports/subfinding-pairs.md	218	4	main	overview.tex	519	519	Weak finite-range square-symmetric	and energy limits	raw
+notes/reports/subfinding-pairs.md	218	4	title	overview.tex	519	519	Bulk correlation universality		raw
+notes/reports/subfinding-pairs.md	218	5	clause	overview.tex	519	519	weak square-symmetric contour	$\mathrm{SLE}_3$ interface limits	raw
+notes/reports/subfinding-pairs.md	218	5	title	overview.tex	519	519	$\mathrm{SLE}_3$ universality		raw
+notes/reports/subfinding-pairs.md	218	1	clause	overview.tex	519	519	With sufficiently weak	probability over environments.	raw
+notes/reports/subfinding-pairs.md	218	1	title	overview.tex	519	519	Quenched $\mathrm{SLE}_3$ limits	random-bond Ising models	raw
 notes/reports/subfinding-pairs.md	219	2	main	overview.tex	521	521	For every fixed	for cubic graphs.	raw
 notes/reports/subfinding-pairs.md	219	2	title	overview.tex	521	521	GOE bulk universality	random regular graphs	raw
 notes/reports/subfinding-pairs.md	219	1	clause	overview.tex	521	521	The same fixed-energy	clean spectral edges.	raw
@@ -428,6 +450,12 @@ notes/reports/subfinding-pairs.md	222	3	clause	overview.tex	527	527	A spherical 
 notes/reports/subfinding-pairs.md	222	3	title	overview.tex	527	527	Bi-orthogonally invariant disorder		raw
 notes/reports/subfinding-pairs.md	222	2	clause	overview.tex	527	527	At margin $-1$,	and force laws	raw
 notes/reports/subfinding-pairs.md	222	2	title	overview.tex	527	527	Negative spherical perceptron jamming		raw
+notes/reports/subfinding-pairs.md	223	6	main	overview.tex	529	529	Proves chordal $\mathrm{SLE}_\kappa$	with $\kappa=4\pi/\arccos(-\sqrt q/2)$	raw
+notes/reports/subfinding-pairs.md	223	6	title	overview.tex	529	529	Conformal Limits of	Square-Lattice Random-Cluster Interfaces	raw
+notes/reports/subfinding-pairs.md	223	1	clause	overview.tex	529	529	bounded Jordan domains	allowed for $q\ge1$	raw
+notes/reports/subfinding-pairs.md	223	1	title	overview.tex	529	529	FK interfaces and	loops ($1\le q<4$)	raw
+notes/reports/subfinding-pairs.md	223	2	clause	overview.tex	529	529	smooth Jordan domains for $q<1$		raw
+notes/reports/subfinding-pairs.md	223	2	title	overview.tex	529	529	Self-dual interfaces ($q<1$)		raw
 notes/reports/subfinding-pairs.md	224	3	main	overview.tex	531	531	Proves Cardy's formula	bounded Jordan quadrilateral.	raw
 notes/reports/subfinding-pairs.md	224	3	title	overview.tex	531	531	Cardy’s formula for critical Poisson–Voronoi percolation		raw
 notes/reports/subfinding-pairs.md	224	1	clause	overview.tex	531	531	This establishes quenched	for crossing thresholds.	raw
@@ -632,6 +660,12 @@ notes/reports/subfinding-pairs.md	308	1	main	overview.tex	710	710	For every $n\g
 notes/reports/subfinding-pairs.md	308	1	title	overview.tex	710	710	Varying primes		raw
 notes/reports/subfinding-pairs.md	308	2	clause	overview.tex	710	710	Thus Smith--Toda complexes	$V(4)$ at $p=1009$.	raw
 notes/reports/subfinding-pairs.md	308	2	title	overview.tex	710	710	V(4) at prime 1009		raw
+notes/reports/subfinding-pairs.md	318	5	main	overview.tex	730	730	Disproves strong chromatic	and $p+1$ ($p\ge7$).	raw
+notes/reports/subfinding-pairs.md	318	5	title	overview.tex	730	730	Weak chromatic splitting counterexamples		raw
+notes/reports/subfinding-pairs.md	318	1	clause	overview.tex	730	730	for $n\ge1$ and	predicted localized-sphere pieces	raw
+notes/reports/subfinding-pairs.md	318	1	title	overview.tex	730	730	Filtered splitting at generic primes		raw
+notes/reports/subfinding-pairs.md	318	4	clause	overview.tex	730	730	At height three	derived completed sphere.	raw
+notes/reports/subfinding-pairs.md	318	4	title	overview.tex	730	730	Finite-assembly failure at prime three		raw
 notes/reports/subfinding-pairs.md	324	1	main	overview.tex	744	744	Constructs separable real	Lipschitz-isomorphism problem negatively.	raw
 notes/reports/subfinding-pairs.md	324	1	title	overview.tex	744	744	Lipschitz equivalence without linear isomorphism		raw
 notes/reports/subfinding-pairs.md	324	2	clause	overview.tex	744	744	Thus even the	linear isomorphism class.	raw
@@ -639,6 +673,10 @@ notes/reports/subfinding-pairs.md	324	2	title	overview.tex	744	744	Bi-Lipschitz 
 notes/reports/subfinding-pairs.md	325	2	main	overview.tex	746	746	Resolves the complete	the numerical range.	raw
 notes/reports/subfinding-pairs.md	325	2	title	overview.tex	746	746	Structural proof		raw
 notes/reports/subfinding-pairs.md	325		clause	overview.tex	746	746	The constant $2$	in infinite dimensions.	raw
+notes/reports/subfinding-pairs.md	331	1	main	overview.tex	758	758	Constructs a real	to reflexive spaces.	raw
+notes/reports/subfinding-pairs.md	331	1	title	overview.tex	758	758	Reflexive tree-space example		raw
+notes/reports/subfinding-pairs.md	331	3	clause	overview.tex	758	758	In the same	even under reflexivity.	raw
+notes/reports/subfinding-pairs.md	331	3	title	overview.tex	758	758	Midpoint and tree energies		raw
 notes/reports/subfinding-pairs.md	335	1	main	overview.tex	768	768	Proves $\int_M(\mathrm{Scal}_g^-)^{n/2}\,dV_g\ge a_n\lVert	only on dimension.	raw
 notes/reports/subfinding-pairs.md	335	1	title	overview.tex	768	768	An integral scalar	real simplicial volume	raw
 notes/reports/subfinding-pairs.md	335	2	clause	overview.tex	768	768	Also proves rational	manifold is flat.	raw
@@ -656,6 +694,10 @@ notes/reports/subfinding-pairs.md	346	1	main	overview.tex	790	790	Proves that ev
 notes/reports/subfinding-pairs.md	346	1	title	overview.tex	790	790	A Codimension-One Bound	Stationary Integral Varifold	raw
 notes/reports/subfinding-pairs.md	346	2	clause	overview.tex	790	790	On round spheres,	$m$-dimensional Hausdorff measure.	raw
 notes/reports/subfinding-pairs.md	346	2	title	overview.tex	790	790	Almost-everywhere regularity of stationary integral varifolds		raw
+notes/reports/subfinding-pairs.md	347	1	main	overview.tex	792	792	Disproves stable-Morse lower	number is unbounded.	raw
+notes/reports/subfinding-pairs.md	347	1	title	overview.tex	792	792	Hamiltonian Fixed Points	in Dimension Twenty-Two	raw
+notes/reports/subfinding-pairs.md	347	5	clause	overview.tex	792	792	A separate Hamiltonian	every smooth function.	raw
+notes/reports/subfinding-pairs.md	347	5	title	overview.tex	792	792	Three fixed points	symplectic quadric threefold	raw
 notes/reports/subfinding-pairs.md	348	1	main	overview.tex	794	794	Classifies closed connected	nonnegative sectional curvature	raw
 notes/reports/subfinding-pairs.md	348	1	title	overview.tex	794	794	Zero-Plane Rigidity for Einstein Four-Manifolds		raw
 notes/reports/subfinding-pairs.md	348	3	clause	overview.tex	794	794	up to scaling,	equal round two-spheres.	raw
