@@ -296,3 +296,14 @@ issue.
   layer is worth recommending as routine. The wall times are a property of a run, not of the digest, so
   they are recorded here as a dated observation and the database stays untracked. Revisit if the corpus
   grows: the build is linear in bytes and the database is 1.5x the corpus.
+- **The summaries index page is link-only, so the manuscript passes skip it.** Chosen 2026-10-13 on
+  `math-ckd.6`. `notes/summaries/README.md` carries the coverage as four layers, a link per page, the
+  cost model, the checker command and a Not checked ending. It names no manuscript directory and cites no
+  family-keyed file, so `verify_summaries.py` skips pass D and pass E for a page named `README.md` and
+  `check_summary_manuscripts.py` skips it entirely; passes B and C still run, so its links are checked.
+  The shared-basename set grows to **14** because the index tree carries its own `README.md`, and the
+  `seed_quotes.py` L1 (the summaries tree) needed a fresh probe record to name the new page.
+- **A page that carries a quotation in a code span is a quotation.** Chosen 2026-10-13 on `math-ckd.6`.
+  The summaries checker's pass C matched `scope: "Partial progress."` inside a backticked code span as a
+  prose quotation needing a citation, and pass B read `<preprints-dir>` as stray HTML. A link-only page
+  must carry neither angle brackets nor a quoted phrase.
