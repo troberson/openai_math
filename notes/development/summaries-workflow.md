@@ -175,3 +175,30 @@ issue.
   starts after both writers. The gate prints rows 78 failures 0. Revisit if a writer lands a tracked
   artifact outside the ten artifacts the row names — the race is invisible until a record key changes,
   which is exactly what a directory move does.
+- **The basename pass is scoped to the two trees, not to the index alone.** Chosen 2026-10-12 on
+  `math-faz.6`. The invariant the table move needs is that `notes/index/` and `notes/tables/` share
+  no file basename. Inside the index tree, 6 discipline names are also topic terms, so
+  `disciplines/X.md` and `topics/X.md` share a basename; a pass over the index alone would report
+  those as collisions. Revisit if a page ever links a table by bare basename rather than by relative
+  path — that is the only shape where an intra-tree duplicate becomes ambiguous.
+- **`render_reports.py`'s L1 names `notes/tables/` as a tree, not the eight TSVs it used to name.**
+  Chosen 2026-10-12 on `math-faz.6`. The writer opens all 25 TSVs once the 16 generated tables land
+  there, and the audit-hook record names exactly that set, so a tree entry is the honest L1 and the
+  expanded set matches the record. Revisit if the writer stops opening the tables it does not need.
+- **Two fresh probe records replace the two that named the 16 TSVs under the pre-move path.**
+  Chosen 2026-10-12 on `math-faz.6`. The read surface genuinely shrank (the writers no longer open
+  the 16 TSVs under `notes/index/`), so retargeting the strings inside the old records would have
+  made them claim reads the writers do not make; `measure_open_probe.py` landed
+  `2026-10-12_rr_tables.txt` and `2026-10-12_measure_templates_tables.txt` and `PROBES` names them as
+  the newest for those targets. Revisit if a move leaves the read set identical and only the path
+  string changes — then retargeting is the right move, as `.3` did.
+- **The ownership rule reads the whole writer target list, not the first target.** Chosen 2026-10-12
+  on `math-faz.6`. `build_index.py` stages the index pages and the 16 tables, so the derived target is
+  the tables directory; the writers table takes the sorted first target and the TSV rule reads the
+  list, which is what makes the 16 rendered tables count as generated. Revisit if a script gains a
+  third write target — the writers table then needs two cells.
+- **The bead's acceptance figures were re-measured, not carried.** Chosen 2026-10-12 on `math-faz.6`.
+  The body recorded `all_tsv_bytes 2172679` and the index tree at `11513879`; the re-render moved both
+  to 2,174,703 and 11,529,933, so the acceptance criteria now quote the fresh report. Revisit whenever
+  a bead's acceptance names a byte figure: quote it from a fresh generator report, never from the
+  estimate recorded when the bead was written.
