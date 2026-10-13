@@ -5,7 +5,7 @@ template text plus the writer's registry). Lines and bytes are of the template f
 is a `{{ ` occurrence counted over the whole file. No `lake`, `lean`, `lake exe cache get`, or
 comparator run.
 
-**Headline, with the rule that yields it:** report tree: **19** templates, **7,175** lines, **462,134** bytes, **1,446** slots; index tree: **5** templates, **209** lines, **14,847** bytes, **103** slots; all **24** templates: **7,384** lines, **476,981** bytes, **1,549** slots.
+**Headline, with the rule that yields it:** report tree: **19** templates, **7,175** lines, **462,134** bytes, **1,446** slots; index tree: **5** templates, **209** lines, **14,895** bytes, **103** slots; all **24** templates: **7,384** lines, **477,029** bytes, **1,549** slots.
 
 ## The report tree
 
@@ -45,11 +45,11 @@ the count of pages on disk that the template produced, read from the tree it wri
 | Template | Lines | Bytes | Slots | Renders |
 |---|---|---|---|---|
 | `discipline.md.j2` | 12 | 876 | 13 | 17 discipline pages |
-| `family.md.j2` | 60 | 3,687 | 28 | 372 family pages |
-| `index-readme.md.j2` | 61 | 5,605 | 24 | 1 entry point |
+| `family.md.j2` | 60 | 3,699 | 28 | 372 family pages |
+| `index-readme.md.j2` | 61 | 5,641 | 24 | 1 entry point |
 | `name.md.j2` | 62 | 3,560 | 27 | 551 name pages |
 | `topic.md.j2` | 14 | 1,119 | 11 | 92 topic pages |
-| **index tree** | **5** | **209** | **14,847** | **103** | |
+| **index tree** | **5** | **209** | **14,895** | **103** | |
 
 ## The slot rule
 
@@ -84,7 +84,7 @@ unverified`, and those pages are proven by the render diff plus their own checke
 
 ## Registry
 
-registry: **19** entries at `catlib/templates.py:116` — page → checker, with the writer's
+registry: **19** entries at `catlib/templates.py:121` — page → checker, with the writer's
 population and slot dict recorded beside it. The registry and the tree are checked against each
 other: template-without-page **0**, page-without-template **0**.
 
@@ -95,5 +95,5 @@ other: template-without-page **0**, page-without-template **0**.
 - No template is executed here: the census is text measurement. Proof that a template renders its
   page is `render_reports.py` run twice with the pages byte-identical, plus each page's own checker.
 - The index-tree templates are counted and their output is counted; `build_index.py`'s own report
-  (links, canonical counts, stale sweep) is not re-checked here — see `notes/development/index-design.md`.
+  (links, canonical counts, stale sweep) is not re-checked here — see `notes/index-design.md`.
 - Needle coverage for the **10** NOT-DERIVED pages is unverified by the builder, by its own report line.
