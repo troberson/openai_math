@@ -239,3 +239,21 @@ issue.
   unsatisfiable as written. It now names the two rows that actually measure the page: the checker's
   0 problems and the extracted test file's 9 passing tests. Revisit when a bead is written for a
   checker that still carries its own mutant branch.
+- **Band 2 is the same construction as band 1, so the rule keeps four conditions.** Chosen
+  2026-10-13 on `math-el4.10`. The band is a manuscript-count window over the set the probe filter
+  left, so `band2()` is 3-4 manuscripts and no probe word — 37 families, 119 manuscripts — and the
+  population is the four-way union at 159 families over 468 manuscripts. The bead's own notes carried
+  the split (37 at 3-4 = 119, 8 at 5+ = 46) and the measurement confirmed it; the handoff's 24/72 +
+  21/111 did not. Revisit when band 3 is read: the rule gains a fifth condition or the remaining set
+  closes.
+- **A reading pass of this size is built by a verifier, not typed.** Chosen 2026-10-13 on
+  `math-el4.10`. The 37 blocks were generated from a pair table under `.qwen/tmp/` that refuses to
+  emit a block whose clause is not a verbatim substring of the parsed abstract or whose title is not
+  the verbatim display title at that manuscript's seq. Typing 128 clauses and 119 titles by hand is
+  where the U+2019 apostrophe errors came from in band 1. Revisit for band 3: the same shape, with
+  more clauses per family.
+- **A re-seed moves the byte figures the design pages quote, and the ledger set is the one that does
+  not move.** Chosen 2026-10-13 on `math-el4.10`. `quotes.tsv` went to 333,196 B over 1,637 rows and
+  the all-TSV sum to 2,228,751 B, but the ledger set stays 297,050 B because `quotes.tsv` is not one
+  of the five TSVs `notes/development/index-design.md` tabulates. The two sums answer different
+  questions, so sweep both with their own rule. Revisit when a re-seed touches one of the five.
