@@ -400,3 +400,44 @@ issue.
   **78 rows, 0 failures**, empty head diff, cache promotion 0 problems, `verify_page_sync.py --both` 0
   problems with 5 of 5 mutants caught. `math-ckd.3`'s remaining set is **72 families over 111
   manuscripts**; the tree ends at **99** family pages plus the index page.
+
+### 2026-10-13 — The group-theory page for 259 lands, and the sweep finds a stale list
+
+The shard is Group theory, the bead's cheapest remaining. Family 259 (one
+manuscript) is written first; family 258 (two manuscripts) is not yet read.
+
+**The read_file line numbers are one below the checker's.** `verify_summaries.py`
+resolves a marker against `len(text.splitlines())`, and `read_file` labels the same
+line one lower for these manuscript files — its count includes the trailing newline.
+Six markers were retargeted after the first verification run, and two quotations
+were fabricated from truncated shell and `read_file` dumps: the planar lemma's
+opening, the CONTENTS blurb's `rank $100$` (the release writes `rank 100`), and the
+overview abstract, which says "answering the general fixed-price problem
+negatively", not "giving a negative answer to Gaboriau's general fixed-price
+problem". The rule the batch re-learned: quote only from a printed `splitlines()`
+dump, and retarget every marker to that numbering. The page is green at 88 marker
+positions, 32 quoted spans, 0 problems.
+
+**The summaries index list was stale by seven pages.** `notes/summaries/README.md`
+listed 21 pages while the tree held 28: 101, 109, 136, 147, 226, 259, 332 were
+added by earlier batches that swept the counts but not the list. The list now
+carries all 28 in discipline order and every link resolves. This is the sweep the
+bead's body now names as part of each batch.
+
+**A new page needs a fresh audit-hook record.** `seed_quotes.py`'s L1 names every
+summaries page, so the new page made the registry's L1 wider than the newest record
+naming the target; `verify_cache_promotion.py` reported the drift as
+`registry names [the page]`. The re-probe lands
+`notes/development/probe/2026-10-13_seed_quotes_259.txt`, which names the page in
+its `notes/` bucket, and the checker takes it as the newest record for that target.
+The tracked records move 18 to 19.
+
+Counts the page moved: ledger summary column 27/64 → **28/65**; summaries tree 28 →
+**29** files; `notes/` total 1,160 → **1,162**; index links 66,113 → **66,114** with
+file-resolving 48,413 → **48,414**; all-TSV 2,294,676 → **2,301,027** B; index tree
+11,530,829 → **11,530,936** B; `quotes.tsv` 1,906 → **1,938** specs. Six test pins
+retargeted: the page count, the link and byte figures, the probe record count, the
+quote population, and the ownership needle. Gate: **78 rows, 0 failures**, empty head
+diff, cache promotion 0 problems, lint trio 0/0/0. `math-ckd.3`'s remaining set is
+**71 families over 110 manuscripts**; the tree ends at **98** family pages plus the
+index page.
