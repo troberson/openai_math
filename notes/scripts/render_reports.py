@@ -765,7 +765,7 @@ INDEX_SPLIT = {
     "builds-on declaration count": ["(**30** `builds-on` declarations at"],
     "derivable lean reach": [("config → file (yaml: **189** configs, all **189** of them also "
                              "named by a scope note), which reaches")],
-    "disk link check": ["covers **66,108** links over the same 1,033 pages, also with"],
+    "disk link check": ["covers **66,109** links over the same 1,033 pages, also with"],
     "lean edge scope": [("The index carries family → Lean file for **136** families; the "
                         "**172** is a")],
     "link occurrence gap": [("**426** scope-note link occurrences against **416** distinct "
