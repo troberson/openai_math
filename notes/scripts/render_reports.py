@@ -2808,7 +2808,7 @@ def t0_chains_full(p: dict[str, Any]) -> dict[str, str]:
     out["tc_zero"] = f"holds for **{len(v['zero_signal'])}** of the {len(pop)} and fails for"
     out["tc_268sig"] = (f"**{len(v['signal_outliers'])}**: "
                         + "; ".join(f"{f} carries {signal_label(rows[f])}"
-                                    for f in v["signal_outliers"]))
+                                    for f in v["signal_outliers"]) + ".")
     out["tc_trueof"] = f"That is true of **{len(v['zero_signal'])}**"
     ce = p["chain"]
     out["tc_edges"] = (f"Over **{len(rows)}** families that yields **{len(ce)}** edges — "
@@ -2855,7 +2855,7 @@ TC_SPLIT = {
     "tc_firstpass": ["Of the",
                      ("**35** at T0, **8** were read in the first pass (004, 006, 018, 019, 029, 046, "
                      "059, 209), so **27**")],
-    "tc_268sig": ["**2**: 147 carries a summary page; 268 carries a verification bundle"],
+    "tc_268sig": ["**2**: 147 carries a summary page; 268 carries a verification bundle."],
     "tc_trueof": ["That is true of"],
     "tc_edges": ["Over **372** families"],
     "tc_cw": ["fires on **9**",
