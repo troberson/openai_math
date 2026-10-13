@@ -3026,8 +3026,13 @@ def subfinding_pairs_full(p: dict[str, Any]) -> dict[str, str]:
                                 f"absence of a probe word, and {len(dens_out)} ({', '.join(dens_out)}) "
                                 f"are bead densest targets outside the probe —")
     out["sp_b_fp"] = f"{len(fp_probe)} of the {len(probe)} probe hits"
-    out["sp_notread"] = (f"{len(multi) - len(pop)} families with two or more manuscripts are not read. "
-                         f"The page covers {len(pop)} of the {len(multi)}.")
+    rem = [f for f in multi if f not in pop]
+    b2 = [f for f in rem if 3 <= counts[f] <= 4]
+    b3 = [f for f in rem if counts[f] >= 5]
+    out["sp_notread"] = (f"{len(rem)} families with two or more manuscripts are not read, carrying "
+                         f"{sum(counts[f] for f in rem)} manuscripts: {len(b2)} at 3-4 "
+                         f"manuscripts ({sum(counts[f] for f in b2)}) and {len(b3)} at 5 or more "
+                         f"({sum(counts[f] for f in b3)}). The page covers {len(pop)} of the {len(multi)}.")
     out["sp_rows"] = (f"The {p['comparator_rows']} comparator-link rows in `notes/tables/subfindings.tsv` "
                       f"are not paired; only the {p['manuscript_rows']} manuscript rows")
     out["sp_rows2"] = f"only {mss} of those are in this population"
@@ -3037,6 +3042,8 @@ def subfinding_pairs_full(p: dict[str, Any]) -> dict[str, str]:
 
 SP_SPLIT = {
     "sp_densest_range": ["034 at n=14 down to 211 at"],
+    "sp_notread": ["45 families with two or more manuscripts are not read, carrying 165 manuscripts: 37 at 3-4",
+                   "manuscripts (119) and 8 at 5 or more (46). The page covers 122 of the 167."],
 }
 
 
