@@ -1,0 +1,25 @@
+tex files 8007 bytes 135108224  abstract rows 372
+fts rows 8379  build wall 1.69 s  landed .qwen/cache/records/bf3ec052280e312d1c4ededf117ab7ef/index.db bytes 202760192
+  manifold       hits   727  wall 0.0004 s
+  amenable       hits    61  wall 0.0000 s
+  eigenvalue     hits   666  wall 0.0000 s
+  Ricci flow     hits    22  wall 0.0000 s
+  Turan          hits     1  wall 0.0000 s
+  Jiang-Su       hits    24  wall 0.0000 s
+  Landau-Siegel  hits     2  wall 0.0000 s
+  semidefinite   hits   325  wall 0.0000 s
+  Schoenflies    hits    32  wall 0.0000 s
+  Laughlin       hits    12  wall 0.0000 s
+query wall total 0.0005 s
+[probe] target exit code: 0
+[probe2] target notes/scripts/build_index_db.py 
+[probe2] wall 1.95  opens 8043  distinct 8039  repeats 4
+[probe2] rchar MB 551.9  read_bytes MB 0.1
+[probe2] buckets:
+          preprints/                 8007
+          abs/other                  22
+          notes/scripts/             9
+          other                      5
+[probe2] notes/ paths (count  modes  path):
+[probe2] write-mode paths outside notes/:
+              1  w .qwen/cache/records/bf3ec052280e312d1c4ededf117ab7ef/.fts.json.tmp

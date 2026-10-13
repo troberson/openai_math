@@ -66,7 +66,12 @@ def corpus() -> list[tuple[str, str, str, str, str]]:
 
 
 def insert(conn: sqlite3.Connection, rows: list[tuple[str, str, str, str, str]]) -> None:
-    """Create the FTS5 table, load every row, and merge the segments."""
+    """Create the FTS5 table, load every row, and merge the segments.
+
+    A rebuild under a key that already landed drops the table first, so re-running the writer against
+    an unchanged corpus is idempotent.
+    """
+    conn.execute("DROP TABLE IF EXISTS docs")
     conn.execute(SCHEMA)
     conn.executemany("INSERT INTO docs(path, dir, fam, kind, body) VALUES (?,?,?,?,?)", rows)
     conn.commit()
