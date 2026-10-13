@@ -109,6 +109,58 @@ def first_group(pattern: str | re.Pattern[str], text: str) -> str:
     return m.group(1) if m else ""
 
 
+NUM_RUN = re.compile(r"\d[\d,]*(?:\.\d+)?")
+
+
+def flex(phrase: str) -> re.Pattern[str]:
+    """Regex for a phrase whose spaces may be any whitespace run, and whose numbers may differ.
+
+    A template is built from HEAD's committed page, so the number a slot carries in HEAD is the
+    *previous* measurement, and a split prefix transcribed from HEAD is the previous number too.
+    Matching numbers flexibly keeps the slot in the template, and keeps the prefix check in the split
+    valid, when a count moves: the render writes the measured value into the slot, so a page whose
+    count changed needs no hand sweep and no second commit. A phrase matched on its exact number is
+    NOT FOUND on HEAD's stale bytes, the template keeps the literal, and the render writes HEAD's
+    literal back into the page.
+    """
+    if NUM_RUN.fullmatch(phrase):
+        # A needle that is nothing but a number carries no literal anchor, so relaxing its digits
+        # makes it match the first number anywhere in HEAD's page — the bare "719" needle for the
+        # sources-row count matched "A 2-line ... 40-line construction" and slotted the row count into
+        # a sentence that never names rows. A number-only needle must match exactly, so a writer that
+        # wants a drifting count to stay slotted supplies the count with its words.
+        return re.compile(re.escape(phrase))
+    toks = []
+    for tok in phrase.split(" "):
+        out, pos = "", 0
+        for m in NUM_RUN.finditer(tok):
+            out += re.escape(tok[pos:m.start()]) + NUM_RUN.pattern
+            pos = m.end()
+        toks.append(out + re.escape(tok[pos:]))
+    return re.compile(r"\s+".join(toks))
+
+
+def apply_split(label: str, phrase: str, prefixes: list[str]) -> dict[str, str]:
+    """Split a measured phrase at the page's recorded line-break prefixes.
+
+    Each prefix is matched number-flexibly against the start of the remainder, and the part emitted
+    is the measured span, not the prefix. A prefix transcribed from HEAD carries HEAD's number, so an
+    exact `startswith` raises the moment a count moves; matching flexibly and emitting the measured
+    text keeps the split table valid across a drift, and the page keeps its own line breaks.
+    """
+    out: dict[str, str] = {}
+    rest = phrase
+    for i, pre in enumerate(prefixes):
+        rest = rest.lstrip()
+        m = flex(pre).match(rest)
+        if m is None:
+            raise ValueError(f"slot {label!r}: page wrap {pre!r} is not a prefix of {rest!r}")
+        out[f"{label} {'abcdefghij'[i]}"] = rest[:m.end()]
+        rest = rest[m.end():]
+    out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
+    return out
+
+
 def first_match(pattern: str | re.Pattern[str], text: str) -> str:
     """The whole match of `pattern` in `text`, or `""` when the pattern does not fire.
 

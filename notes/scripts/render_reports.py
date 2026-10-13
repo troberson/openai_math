@@ -63,7 +63,7 @@ import measure_names as MN
 import measure_proof_density as PD
 import measure_templates as MTPL
 import measure_topics as MT
-from catlib import bib, ledger, overview, preprints, records, tsv
+from catlib import bib, ledger, overview, preprints, records, text as TX, tsv
 from catlib import quotes as Q
 from catlib import yaml as Y
 from catlib.atomic import Staging
@@ -723,16 +723,7 @@ def index_phrases(p: dict[str, Any]) -> dict[str, str]:
             out[label] = phrase
             continue
         rest = phrase
-        for i, pre in enumerate(prefixes):
-            # The whitespace at each page break lives in the template, so a part never carries it:
-            # fold it out of the remainder before matching the next recorded prefix.
-            rest = rest.lstrip()
-            if not rest.startswith(pre):
-                msg = f"slot {label!r}: page wrap {pre!r} is not a prefix of {rest!r}"
-                raise ValueError(msg)
-            out[f"{label} {'abcdefghij'[i]}"] = pre
-            rest = rest[len(pre):]
-        out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
+        out.update(TX.apply_split(label, rest, prefixes))
     return out
 
 
@@ -780,6 +771,8 @@ INDEX_SPLIT = {
                                        ("373. The brace-qualified substring reads **17** and "
                                        "**372** only because each definition writes")],
     "superseded estimate": ["superseded by the measured **2,560**"],
+    "all-TSV byte total": ["every"],
+    "index tree bytes": ["the index tree"],
 }
 
 
@@ -1360,14 +1353,7 @@ def index_links_phrases(p: dict[str, Any]) -> dict[str, str]:
             out[label] = phrase
             continue
         rest = phrase
-        for i, pre in enumerate(prefixes):
-            rest = rest.lstrip()
-            if not rest.startswith(pre):
-                msg = f"slot {label!r}: page wrap {pre!r} is not a prefix of {rest!r}"
-                raise ValueError(msg)
-            out[f"{label} {'abcdefghij'[i]}"] = pre
-            rest = rest[len(pre):]
-        out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
+        out.update(TX.apply_split(label, rest, prefixes))
     return out
 
 
@@ -1681,14 +1667,7 @@ def links_phrases(p: dict[str, Any]) -> dict[str, str]:
             out[label] = val
             continue
         rest = val
-        for i, pre in enumerate(prefixes):
-            rest = rest.lstrip()
-            if not rest.startswith(pre):
-                msg = f"slot {label!r}: page wrap {pre!r} is not a prefix of {rest!r}"
-                raise ValueError(msg)
-            out[f"{label} {'abcdefghij'[i]}"] = pre
-            rest = rest[len(pre):]
-        out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
+        out.update(TX.apply_split(label, rest, prefixes))
     return out
 
 
@@ -2037,14 +2016,7 @@ def drift_phrases(p: dict[str, Any]) -> dict[str, str]:
             out[label] = val
             continue
         rest = val
-        for i, pre in enumerate(prefixes):
-            rest = rest.lstrip()
-            if not rest.startswith(pre):
-                msg = f"slot {label!r}: page wrap {pre!r} is not a prefix of {rest!r}"
-                raise ValueError(msg)
-            out[f"{label} {'abcdefghij'[i]}"] = pre
-            rest = rest[len(pre):]
-        out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
+        out.update(TX.apply_split(label, rest, prefixes))
     return out
 
 
@@ -2254,14 +2226,7 @@ def verification_dirs_phrases(v: dict[str, Any]) -> dict[str, str]:
             out[label] = val
             continue
         rest = val
-        for i, pre in enumerate(prefixes):
-            rest = rest.lstrip()
-            if not rest.startswith(pre):
-                msg = f"slot {label!r}: page wrap {pre!r} is not a prefix of {rest!r}"
-                raise ValueError(msg)
-            out[f"{label} {'abcdefghij'[i]}"] = pre
-            rest = rest[len(pre):]
-        out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
+        out.update(TX.apply_split(label, rest, prefixes))
     return out
 
 
@@ -2364,13 +2329,7 @@ def scope_exclusions_phrases(p: dict[str, str]) -> dict[str, str]:
     for label, prefixes in EX_SPLIT.items():
         base = out.pop(label)
         rest = base
-        for i, pre in enumerate(prefixes):
-            rest = rest.lstrip()
-            if not rest.startswith(pre):
-                raise ValueError(f"slot {label!r}: page wrap {pre!r} is not a prefix of {base!r}")
-            out[f"{label} {'abcdefghij'[i]}"] = pre
-            rest = rest[len(pre):]
-        out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
+        out.update(TX.apply_split(label, rest, prefixes))
     return out
 
 
@@ -2630,13 +2589,7 @@ def fleet_phrases(v: dict[str, Any]) -> dict[str, str]:
     for label, prefixes in FLEET_SPLIT.items():
         base = out.pop(label)
         rest = base
-        for i, pre in enumerate(prefixes):
-            rest = rest.lstrip()
-            if not rest.startswith(pre):
-                raise ValueError(f"slot {label!r}: page wrap {pre!r} is not a prefix of {base!r}")
-            out[f"{label} {'abcdefghij'[i]}"] = pre
-            rest = rest[len(pre):]
-        out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
+        out.update(TX.apply_split(label, rest, prefixes))
     return out
 
 
@@ -2745,13 +2698,7 @@ def topics_phrases(p: dict[str, str]) -> dict[str, str]:
     for label, prefixes in TP_SPLIT.items():
         base = out.pop(label)
         rest = base
-        for i, pre in enumerate(prefixes):
-            rest = rest.lstrip()
-            if not rest.startswith(pre):
-                raise ValueError(f"slot {label!r}: page wrap {pre!r} is not a prefix of {base!r}")
-            out[f"{label} {'abcdefghij'[i]}"] = pre
-            rest = rest[len(pre):]
-        out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
+        out.update(TX.apply_split(label, rest, prefixes))
     return out
 
 
@@ -2855,7 +2802,6 @@ TC_SPLIT = {
     "tc_firstpass": ["Of the",
                      ("**35** at T0, **8** were read in the first pass (004, 006, 018, 019, 029, 046, "
                      "059, 209), so **27**")],
-    "tc_268sig": ["**2**: 147 carries a summary page; 268 carries a verification bundle."],
     "tc_trueof": ["That is true of"],
     "tc_edges": ["Over **372** families"],
     "tc_cw": ["fires on **9**",
@@ -2878,13 +2824,7 @@ def t0_chains_phrases(p: dict[str, Any]) -> dict[str, str]:
     for label, prefixes in TC_SPLIT.items():
         base = out.pop(label)
         rest = base
-        for i, pre in enumerate(prefixes):
-            rest = rest.lstrip()
-            if not rest.startswith(pre):
-                raise ValueError(f"slot {label!r}: page wrap {pre!r} is not a prefix of {base!r}")
-            out[f"{label} {'abcdefghij'[i]}"] = pre
-            rest = rest[len(pre):]
-        out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
+        out.update(TX.apply_split(label, rest, prefixes))
     return out
 
 
@@ -3076,13 +3016,7 @@ def subfinding_pairs_phrases(p: dict[str, Any]) -> dict[str, str]:
     for label, prefixes in SP_SPLIT.items():
         base = out.pop(label)
         rest = base
-        for i, pre in enumerate(prefixes):
-            rest = rest.lstrip()
-            if not rest.startswith(pre):
-                raise ValueError(f"slot {label!r}: page wrap {pre!r} is not a prefix of {base!r}")
-            out[f"{label} {'abcdefghij'[i]}"] = pre
-            rest = rest[len(pre):]
-        out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
+        out.update(TX.apply_split(label, rest, prefixes))
     return out
 
 
@@ -3272,6 +3206,9 @@ def readme_full(p: dict[str, Any]) -> dict[str, str]:
                         f"**{scan['file_links']:,}** to a file"
     out["pairings"] = f"{sum(1 for r in rows if int(r['summary']))} of 372 summary pairings"
     b = build_index_report()
+    # The disk-check sentence names the registry surplus on the line after the count run, so the
+    # surplus is its own slot: the writer measures it, the page does not carry a stale literal.
+    out["surplus phrase"] = f"the {f(len(scan['links']) - b['checked'])}-link difference being registry"
     out["registry_links"] = f"Fresh report: **{b['checked']}** relative"
     out["seed_line"] = (f"the {seed['spans']} quoted spans the {seed['pages']} summaries pages carry: "
                         f"{seed['raw']} raw-equal, {seed['folded']} fold-equal, {seed['none']} not "
@@ -3287,6 +3224,9 @@ README_SPLIT: dict[str, list[str]] = {
     "tier_flag": ["86 of the 130 are flagged, including 11 of the 19 families with no shape"],
     "cc_gaps": ["Of the **52** configs their scope notes link, **24** have no entry: **12** in **8** T3"],
     "cw_fire": ["fires on"],
+    # The disk-check sentence wraps: the count run ends one page line, the surplus clause the next.
+    "scan_links": ["**66,111** links, **0** broken, **17,700** of"],
+    "surplus phrase": ["the 18,095-link difference being registry"],
     "trace_fams": ["(007, 017, 087, 102,"],
 }
 
@@ -3296,13 +3236,7 @@ def readme_phrases(p: dict[str, str]) -> dict[str, str]:
     for label, prefixes in README_SPLIT.items():
         base = out.pop(label)
         rest = base
-        for i, pre in enumerate(prefixes):
-            rest = rest.lstrip()
-            if not rest.startswith(pre):
-                raise ValueError(f"slot {label!r}: page wrap {pre!r} is not a prefix of {base!r}")
-            out[f"{label} {'abcdefghij'[i]}"] = pre
-            rest = rest[len(pre):]
-        out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
+        out.update(TX.apply_split(label, rest, prefixes))
     return out
 
 
@@ -3481,13 +3415,7 @@ def crosscheck_phrases(p: dict[str, Any]) -> dict[str, str]:
     for label, prefixes in CC_SPLIT.items():
         base = out.pop(label)
         rest = base
-        for i, pre in enumerate(prefixes):
-            rest = rest.lstrip()
-            if not rest.startswith(pre):
-                raise ValueError(f"slot {label!r}: page wrap {pre!r} is not a prefix of {base!r}")
-            out[f"{label} {'abcdefghij'[i]}"] = pre
-            rest = rest[len(pre):]
-        out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
+        out.update(TX.apply_split(label, rest, prefixes))
     return out
 
 
@@ -3596,13 +3524,7 @@ def faithfulness_phrases(p: dict[str, Any]) -> dict[str, str]:
     for label, prefixes in FAITH_SPLIT.items():
         base = out.pop(label)
         rest = base
-        for i, pre in enumerate(prefixes):
-            rest = rest.lstrip()
-            if not rest.startswith(pre):
-                raise ValueError(f"slot {label!r}: page wrap {pre!r} is not a prefix of {rest!r}")
-            out[f"{label} {'abcdefghij'[i]}"] = pre
-            rest = rest[len(pre):]
-        out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
+        out.update(TX.apply_split(label, rest, prefixes))
     return out
 
 

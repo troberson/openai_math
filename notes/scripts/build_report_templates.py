@@ -15,11 +15,11 @@ checker's needle list, which is wider - renders slots the writer never supplies,
 unknown key as the empty string: the page silently loses text. The page's checker needles are read
 too, and reported as coverage (slotted / left literal), never as the slot source.
 
-The registry (page -> checker), the writer's per-page slot dicts and the needle derivation are in
-`catlib/templates.py`, so the builder, `measure_checker_needles.py` and `measure_templates.py` read
-one registry. What stays here is the writer path: the whitespace-flexible locate, the split at the
-page's own line breaks, the raw-block wrapping, and the `git show HEAD:<page>` read - a revision,
-which the package does not own.
+The registry (page -> checker), the writer's per-page slot dicts, the needle derivation and the
+number-flexible matcher `flex` are in `catlib/templates.py`, so the builder, the writer's split
+tables, `measure_checker_needles.py` and `measure_templates.py` read one rule. What stays here is
+the writer path: the locate, the split at the page's own line breaks, the raw-block wrapping, and
+the `git show HEAD:<page>` read - a revision, which the package does not own.
 
 Each phrase is located with a whitespace-flexible regex over the WHOLE page (the page wraps phrases
 across lines), all matches collected, sorted, and rejected on overlap, then replaced from the end so
@@ -58,6 +58,7 @@ import subprocess
 import sys
 
 from catlib import templates as T
+from catlib import text as TX
 from catlib.atomic import Staging
 from catlib.promote import key_for
 
@@ -84,11 +85,6 @@ def committed_page(page_rel: str) -> str:
                           capture_output=True, text=True, check=True).stdout
 
 
-def flex(phrase: str) -> re.Pattern[str]:
-    """Regex for a phrase whose spaces may be any whitespace run, because the page wraps."""
-    return re.compile(r"\s+".join(re.escape(t) for t in phrase.split(" ")))
-
-
 def split_parts(matched: str, phrase: str) -> tuple[list[str], list[str]]:
     """Split the matched span at the page's line breaks, keeping each break's exact whitespace."""
     runs = list(WS_RUN.finditer(matched))
@@ -102,7 +98,7 @@ def split_parts(matched: str, phrase: str) -> tuple[list[str], list[str]]:
         seps.append(r.group(0))
         pos = r.end()
     parts.append(matched[pos:].lstrip(" \t"))
-    if " ".join(parts) != phrase:
+    if not TX.flex(phrase).fullmatch(" ".join(parts)):
         print(f"SPLIT MISMATCH for {phrase!r}\n  parts: {parts}")
         sys.exit(1)
     return parts, seps
@@ -167,12 +163,16 @@ def build(page_rel: str, checker_name: str) -> tuple[int, list[str], pathlib.Pat
     hits: list[tuple[int, int, str, list[tuple[str, str]]]] = []
     for base, parts in groups.items():
         needle = " ".join(v for _, v in parts)
-        found = list(flex(needle).finditer(text))
+        found = list(TX.flex(needle).finditer(text))
         if not found:
             lines.append(f"NOT FOUND ({base}): {needle!r}")
             return 1, lines, pathlib.Path(""), ""
         hits.extend((m.start(), m.end(), base, parts) for m in found)
-    hits.sort()
+    # Sort widest-first at each start: a label whose phrase nests inside a wider phrase is
+    # slotted by the wider span, and the "covered by" branch only fires for a span that ends
+    # inside the kept one. A number-flexible needle makes nesting common — "**12** scripts"
+    # and "**12** scripts and **18** catlib modules" are the same region on HEAD's stale bytes.
+    hits.sort(key=lambda h: (h[0], -h[1]))
     kept: list[tuple[int, int, str, list[tuple[str, str]]]] = []
     for h in hits:
         if kept and h[0] < kept[-1][1]:
