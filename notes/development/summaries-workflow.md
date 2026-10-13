@@ -378,3 +378,25 @@ issue.
   fires on more than one distinct span is left literal and reported as a weak needle, because a slot is
   one place in the page. Revisit when the weak-needle list is non-empty: the fix is widening the writer's
   label value, not loosening the matcher.
+
+- **The two Theoretical CS pages close the shard, and the sweep found two real defects.** Landed
+  2026-10-13: families 109 (*Integer multiplication below $n\log n$*) and 136 (*The quasilinear
+  PCP-for-PPAD conjecture*), one manuscript each. The tree moves 25 family pages to 27, the ledger's
+  summary column to 27 families / 64 manuscripts, `quotes.tsv` to 1,906 specs, and the index gains two
+  summary-pairing links (66,113 links, 48,413 file-resolving, 2,294,676 B over 25 TSVs, 11,530,829 B
+  index tree). Two defects the sweep exposed, both fixed: the README's per-family page count had no
+  writer label, so the render could not move it — it is a label now; and the fleet-design byte figure
+  was a weak needle (a bare number plus "bytes" matched every `**N** bytes` phrase in HEAD's page), so
+  the label gained the `cat notes/tables/*.tsv | wc -c` command that makes it one span. The weak-needle
+  list is **not** empty: the builder reports weak needles for the table-row labels in
+  `index-links.md`, `names.md`, `proof-density.md`, `subfinding-pairs.md`, `topics.md`,
+  `verification-dirs.md`, `dependency-drift.md`, `abstracts.md` and `fleet-design.md`. Those rows are
+  rendered from the writer, so HEAD's literal equals the measured value and the render is byte-identical;
+  a future drift in one of them will not land, and the fix is widening the label, per the rule above.
+  The lint trio was **not** green at HEAD as AGENTS.md claims: 16 ruff errors and one pylint
+  redefinition, the load-bearing one being `build_report_templates.py` initializing `ambiguous` twice,
+  so the second initialization wiped the weak-needle list the first collected and the builder printed 0
+  for a page that had weak needles. All 17 are fixed; the driver exits 0 for all three tools. Gate:
+  **78 rows, 0 failures**, empty head diff, cache promotion 0 problems, `verify_page_sync.py --both` 0
+  problems with 5 of 5 mutants caught. `math-ckd.3`'s remaining set is **72 families over 111
+  manuscripts**; the tree ends at **99** family pages plus the index page.
