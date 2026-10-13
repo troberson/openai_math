@@ -148,3 +148,17 @@ issue.
 - **Push cadence.** Push at bead boundaries, not per commit: the standing grant is "push to git after
   every batch of commits (approximately one bead)". Revisit if a bead's work spans several sittings —
   then push at each commit batch, not at the bead close.
+- **Move ordering: `.3` → `.4` → `.6` → `.5`.** Chosen 2026-10-12. `math-faz.3` moves
+  `index-design.md` and `index-links.md` (and `build_index.py`'s 137 + 1 links to them), `math-faz.4`
+  moves `names.md` and `topics.md` (552 + 2 links), and `math-faz.6` — the index TSVs into
+  `notes/tables/` — sweeps those same pages, so sweeping each page once at its final path requires the
+  page moves first. `math-faz.5` rewrites the entry point, which names all three directories, so it
+  runs last. Revisit if a move is found to be independent of the index render.
+- **The summaries index page is link-only.** `notes/summaries/README.md` is a page under
+  `notes/summaries/`, so `verify_summaries.py`'s pass D and `check_summary_manuscripts.py` see it; pass
+  D maps a page to the catalog by the family number in its **filename**, so a README reports
+  `NO FAMILY NUMBER` as a problem. Chosen 2026-10-12: the page is checked for link resolution and
+  exempted from the family-keyed passes, in the same commit as the page. It also grows the
+  shared-basename set index ∩ summaries from **13** to **14** (`notes/index/README.md` exists), so the
+  same commit re-targets `verify_script_ownership.py`'s shared-basename rule. Revisit if the page gains
+  prose that needs a family-keyed check.
