@@ -28,7 +28,7 @@ the page it started from, and each needle is the problem string the pass that ow
 fires for every fault, so no needle is that line.
 
 The clean test asserts the passes are silent and pins the counts they report: 32 anchors, 24 count
-and probe phrases, 0 sync problems, 2 atomicity matches over 65 scripts and 18 catlib modules, 12
+and probe phrases, 0 sync problems, 2 atomicity matches over 66 scripts and 18 catlib modules, 12
 sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 25 TSVs at 2,233,628 bytes, 631M
 `preprints/`, 1,740M `lean/OAI/`, 12M `notes/index/`, 78 gate rows, 11 writer rows, 1 env hit, 8
 purity scripts,
