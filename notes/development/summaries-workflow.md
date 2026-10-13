@@ -333,3 +333,20 @@ issue.
   and the index README template's baseline line was swept. Gate: **78 rows, 0 failures**, empty
   head diff, cache promotion 0 problems. `math-ckd.3`'s remaining set is **77 families over
   117 manuscripts**; the tree ends at **99** family pages plus the index page.
+- **Family 226's page is landed and its sweep is landed; the needle list is the sweep's last surface.**
+  Chosen 2026-10-13 on `math-ckd.3`. The page carries **48** marker positions and **30** quoted spans,
+  `verify_summaries.py` reports **0** problems, and the tree reads **24** pages (**23** family pages)
+  over **3,825** marker positions and **1,020** quoted spans with **0** problems. The counts the page
+  moved are swept across the census (24 pages, 1,153 notes files, 15 probe records), the seed
+  classification (1,020 spans: 949 raw, 56 folded, 15 not located, 324 single-line, 681 across 2 to 26
+  lines), the disk scan (66,109 links, 48,409 file-resolving), the registry (48,014 links), the index
+  tree (11,530,284 B), the all-TSV total (2,261,480 B over 25 TSVs), the pairings (23 of 372 families,
+  59 manuscripts), the notes-doc targets (27), the family-page gap (949), and `quotes.tsv` (1,774 rows
+  at 365,925 B). The lesson: a swept page is not enough. The writer's needle list, the hand-written
+  index README template, and every mutant needle that keys on the swept figure must move in the same
+  pass, because the builder locates the needle in HEAD, a render writes the template's literal back
+  into the page, and a needle absent from the page is an inert mutant. `seed_quotes.py`'s tracked probe
+  record also had to be re-taken: the L1 exactness pass compares the registry's summaries-tree entry
+  against the newest record, and the record taken over 22 pages could not name the 23rd. Gate: **78
+  rows, 0 failures**, empty head diff, cache promotion 0 problems. `math-ckd.3`'s remaining set is
+  **76 families over 116 manuscripts**; the tree ends at **99** family pages plus the index page.
