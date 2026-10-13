@@ -74,7 +74,7 @@ MUTANTS = [
      lambda t: t.replace("the whole ledger set is **297,050** B",
                          "the whole ledger set is **2,174,703** B", 1)),
     ("all-TSV total altered", "count mismatch (all-TSV byte total)",
-     lambda t: t.replace("together totals **2252773** B", "together totals **297050** B", 1)),
+     lambda t: t.replace("together totals **2261480** B", "together totals **297050** B", 1)),
     ("index tree byte total altered", "count mismatch (index tree byte total)",
      lambda t: t.replace("carries **11530284** B", "carries **11529933** B", 1)),
     ("disk link count", "count mismatch (disk link check)",
@@ -114,7 +114,7 @@ def test_clean_page(mod, text):
     assert (p["traces"], p["trace_files"], p["ver_dirs"], p["bib_files"], p["bib_entries"],
             p["bib_hrefs"]) == (10, 11, 30, 521, 13802, 393), f"traces {p['traces']}, bib {p['bib_files']}"
     assert (p["ledger_set_bytes"], p["all_tsv_bytes"], p["disk_links"], p["disk_broken"],
-            p["disk_dirs"], p["rawbib_kib"]) == (297050, 2252773, 66109, 0, 17700, 2021), \
+            p["disk_dirs"], p["rawbib_kib"]) == (297050, 2261480, 66109, 0, 17700, 2021), \
         f"ledger set {p['ledger_set_bytes']}, all TSV {p['all_tsv_bytes']}, links {p['disk_links']}"
     assert (p["index_bytes"], p["index_pages"]) == (11530284, 1033), \
         f"index tree {p['index_bytes']} B over {p['index_pages']} pages"
