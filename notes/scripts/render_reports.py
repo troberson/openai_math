@@ -1148,8 +1148,8 @@ IL_SPLIT = {
                         "linked only from the entry")],
     "prose_latexsource": [("`latex-source` 719 = the `main_tex` of each of the 719 manuscripts, "
                           "all 719 present in")],
-    "prose_notesdoc": ["`notes-doc` 26 targets = `notes/reports/names.md` (552 links: one from each of the",
-                       ("551 name pages and one from the entry point), the 22 `notes/summaries/` "
+    "prose_notesdoc": ["`notes-doc` 27 targets = `notes/reports/names.md` (552 links: one from each of the",
+                       ("551 name pages and one from the entry point), the 23 `notes/summaries/` "
                        "pages family pages link,"),
                        ("and the 4 notes docs the entry point links (`index-design.md`, `names.md`, "
                        "`topics.md`,")],
