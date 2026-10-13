@@ -279,7 +279,7 @@ def check(text: str) -> tuple[list, dict]:
     """-> (problems, measured), the sync pass included. The self-tests call this with page text."""
     inputs = load_inputs()
     _, _, _, counts, _ = inputs
-    population, probe, probe_all, multi, band = population_of(counts)
+    population, probe, probe_all, multi, _band = population_of(counts)
     problems, measured = passes(text, inputs, population, probe, probe_all, multi)
     problems.extend(RD.sync_problems(PAGE, text))
     return problems, measured
