@@ -111,6 +111,10 @@ L1: dict[str, tuple[str, ...]] = {
     # registry module it reads the page set from. The registry entry is hashed, not compared: the
     # probe's printed scope excludes `notes/scripts/`.
     "measure_templates.py": ("notes/templates/", "notes/index/", "notes/scripts/catlib/templates.py"),
+    # The FTS builder reads only the corpus: every `.tex` under `preprints/` and `overview.tex`, both
+    # inside the hashed trees. It opens no `notes/` file, so its L1 is empty and the probe scope
+    # (which excludes `notes/scripts/`) has nothing to compare.
+    "build_index_db.py": (),
 }
 
 ARTIFACTS: dict[str, tuple[str, ...]] = {
@@ -133,6 +137,9 @@ ARTIFACTS: dict[str, tuple[str, ...]] = {
     # no tracked bytes to compare and the L1 pass is what proves their read surface.
     "extract_named_results.py": (),
     "measure_templates.py": (),
+    # The FTS database is untracked by the bead's rule — gitignored, rebuilt by script, never
+    # committed — so there are no tracked bytes to compare, and the L1 pass proves its read surface.
+    "build_index_db.py": (),
 }
 
 
@@ -159,6 +166,9 @@ ARGS: dict[str, tuple[str, ...]] = {
     # with no args and a `--check-only` run reads the record the plain run landed.
     "extract_named_results.py": (),
     "measure_templates.py": (),
+    # The plain run lands the database; `--check-only` builds in memory and lands nothing, so the
+    # canonical key is the plain run's.
+    "build_index_db.py": (),
 }
 
 # The writers table names one writer the protocol deliberately excludes: `measure_open_probe.py`'s

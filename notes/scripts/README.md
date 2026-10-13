@@ -9,10 +9,10 @@ is per file, and the checker exits 1 on a file no rule owns.
 It is also the script inventory. Every script under `notes/scripts/` is listed once, in one of three
 classes — writer, report-only, checker — with what it writes and the command the gate runs for it, and
 the fourth class, the scratch a session writes outside the tree, is recorded by rule rather than by
-file. The classes partition the **67** scripts: **14** writers, **30** report-only, **22** checkers,
+file. The classes partition the **67** scripts: **15** writers, **30** report-only, **22** checkers,
 and `verify_script_ownership.py` itself, which is the 23rd checker and is not listed in its own table.
 
-## The split: 14 write, 52 write nothing
+## The split: 15 write, 52 write nothing
 
 The writer set is derived from the scripts' own source, not from this page: a script is a writer when
 a path constant rooted at `notes/` appears on the left of `.open(..., "w")` or `.write_text(...)`,
@@ -33,7 +33,7 @@ self-test: a module-level
 `mutants` / `mutant_test` / `selftest` body is blanked before the write calls are read, because a
 self-test writes the page it checks only to mutate it and restores the bytes it read in the `finally`
 — `verify_script_ownership.py` does exactly that, in three branches (the page it checks, `notes/scripts/README.md`, and `notes/development/templates.md`), so its normal run writes nothing and it stays in the checker class. `check_index_links.py` and `measure_proof_density.py` were this rule's examples; `math-o3a.3` moved their sync pass into `verify_page_sync.py`, which mutates page text in memory, so neither script carries a write call any more. That rule
-finds **14** writers over **66** scripts.
+finds **15** writers over **67** scripts.
 
 ### Writers
 
@@ -53,6 +53,7 @@ finds **14** writers over **66** scripts.
 | `measure_templates.py` | `.qwen/cache/records/<key>/templates.json` | plain; no tracked artifact, so the promote-and-verify assertion compares no bytes for it — `verify_cache_promotion.py` proves its L1 against the probe record and the cache check reads no tracked path | `notes/development/templates.md` — the writer, `render_reports.py` and `build_report_templates.py`'s floor page read the same record |
 | `measure_open_probe.py` | `notes/development/probe` | not in `gate.py` — a record carries a wall time per target, so a run-1/run-2 byte diff of a record is a timing artifact, not a proof; run explicitly over the purity and amplification targets, appending stdout to build a multi-target record | the two probe records `verify_fleet_design.py` parses |
 | `seed_quotes.py` | `notes/tables/quotes.tsv` | single run; cached bytes == promoted bytes under the key | `notes/reports/subfinding-pairs.md` and `notes/summaries/**` — the two surfaces whose quotes it seeds; `render_reports.py` reads the pair rows back for the pair page, and `notes/scripts/tests/test_quotes.py` reads the whole table back |
+| `build_index_db.py` | `.qwen/cache/records/<key>/fts.json` and `.qwen/cache/records/<key>/index.db` | not in `gate.py` — the report carries a build wall and a per-term query wall, so a run-1/run-2 byte diff is a timing artifact; the record itself carries only counts, and the database is untracked by the `.qwen/*` rule | the SQLite FTS5 layer over the 8,007 `.tex` files and the 372 abstracts, the layer `notes/development/index-design.md`'s schema decision leaves out |
 
 Seven writers emit one TSV each. `build_index.py` is the one-to-many case: it renders **1,049** files —
 **1,033** `.md` pages and **0** `.tsv` tables in `notes/index/`, plus the **16** `.tsv` tables it stages
@@ -461,8 +462,8 @@ registry — `ALL_PAGES`, the writer's per-page `POPULATIONS` and `LABELS` slot 
 script run as `python3 notes/scripts/foo.py` has `notes/scripts` on `sys.path`, so it imports them as
 `from catlib import ...` with no path boilerplate.
 
-**60** of the **67** scripts call the package, measured by the rule `^[ \t]*(from|import) catlib` over
-each script's own source: **11** `extract_` (all of them), **4** `build_` (all), **12** `measure_`
+**61** of the **67** scripts call the package, measured by the rule `^[ \t]*(from|import) catlib` over
+each script's own source: **11** `extract_` (all of them), **5** `build_` (all), **12** `measure_`
 (all 17 but `measure_proof_density.py`, `measure_topics.py` and the three render probes, which reach
 `render_reports` directly), **2** `check_` (`check_index_links.py` and `check_summary_manuscripts.py`),
 **23** `verify_` scripts (all of them), plus `render_reports.py`, `seed_quotes.py`, `triage_t0.py`,
@@ -585,8 +586,9 @@ excludes the checker-verified pages, allowing formatting only on the pages no ch
 
 ## Naming coverage
 
-`notes/README.md`'s command block named **34** of the 66 scripts before this pass. Thirty-two are named
-nowhere in the repo at the pinned baseline: `build_report_templates.py`, `check_summary_manuscripts.py`,
+`notes/README.md`'s command block named **34** of the 67 scripts before this pass. Thirty-three are named
+nowhere in the repo at the pinned baseline: `build_report_templates.py`, `build_index_db.py`,
+`check_summary_manuscripts.py`,
 `extract_citations.py`, `gate.py`, `locate_summary_quotes.py`, `measure_anchor_blocks.py`,
 `measure_checker_needles.py`, `measure_faithfulness.py`, `measure_import_layout.py`,
 `measure_links_phases.py`, `measure_move_surface.py`, `measure_open_probe.py`,
@@ -605,8 +607,8 @@ measurements whose checker no document named; `verify_upstream_history.py` is th
 `notes/development/upstream_history/`, the pages that record each upstream merge, which moved under `notes/` on
 2026-10-10 and are inside this page's census; `measure_templates.py` is the census behind `notes/development/templates.md`, added by
 the pass that added that page; `measure_checker_needles.py` is the per-checker needle probe the
-checker-coverage bead promoted; `dump_template_slots.py` is the slot dump that prints the same dict the census measures, promoted by `math-a0r.7`; `verify_fleet_design.py` is the checker for `notes/development/fleet-design.md`, promoted by `math-o3a.1` together with the two probe records it parses; `verify_page_sync.py` is the checker `math-o3a.3` created when the five sync passes left the writer fleet, so the pinned baseline predates it; `measure_open_probe.py` is the audit-hook probe `math-o3a.3.4` promoted from `.qwen/tmp/a11_open_probe2.py`, so the pinned baseline predates it too; `measure_faithfulness.py` is the faithfulness measurement promoted from `.qwen/tmp/faith_probe.py` by the pass that added `notes/reports/formalization-faithfulness.md`, and `verify_faithfulness.py` is that page's checker, so the pinned baseline predates both; `render_reports.py` is the renderer for the nineteen report-fed pages; `verify_cache_promotion.py` is the checker `math-o3a.6.1` created for the promotion protocol, so the pinned baseline predates it; `measure_anchor_blocks.py` and `measure_move_surface.py` are the two notes-move probes `math-faz.1` promoted from `.qwen/tmp/notes_block_probe.py` and `.qwen/tmp/notes_move_probe.py`, which price a directory move before it happens and re-check the mention counts after it, so the pinned baseline predates both; and `gate.py` is the dependency scheduler `math-unv` wrote to replace `notes/scripts/gate.sh`, so the pinned baseline predates it; `seed_quotes.py` is the quote-spec seeder this pass promoted from `.qwen/tmp/seed_quotes4.py`, which seeds `notes/tables/quotes.tsv` from `notes/reports/subfinding-pairs.md`'s pair lines and resolves each spec back against `overview.tex`, so the pinned baseline predates it; `run_tests.py` is the seam that runs the extracted checker self-tests through the venv's pytest, promoted by the pass that extracted `verify_scope_exclusions.py`'s, so the pinned baseline predates it; `measure_summaries_seed.py` is the quote-spec classification this pass promoted from `.qwen/tmp/measure_summaries_seed.py`, which measures the 925 spans the 21 summaries pages carry and the class each seeded spec round-trips in, so the pinned baseline predates it.
-All 61 are named here and in the command
+checker-coverage bead promoted; `dump_template_slots.py` is the slot dump that prints the same dict the census measures, promoted by `math-a0r.7`; `verify_fleet_design.py` is the checker for `notes/development/fleet-design.md`, promoted by `math-o3a.1` together with the two probe records it parses; `verify_page_sync.py` is the checker `math-o3a.3` created when the five sync passes left the writer fleet, so the pinned baseline predates it; `measure_open_probe.py` is the audit-hook probe `math-o3a.3.4` promoted from `.qwen/tmp/a11_open_probe2.py`, so the pinned baseline predates it too; `measure_faithfulness.py` is the faithfulness measurement promoted from `.qwen/tmp/faith_probe.py` by the pass that added `notes/reports/formalization-faithfulness.md`, and `verify_faithfulness.py` is that page's checker, so the pinned baseline predates both; `render_reports.py` is the renderer for the nineteen report-fed pages; `verify_cache_promotion.py` is the checker `math-o3a.6.1` created for the promotion protocol, so the pinned baseline predates it; `measure_anchor_blocks.py` and `measure_move_surface.py` are the two notes-move probes `math-faz.1` promoted from `.qwen/tmp/notes_block_probe.py` and `.qwen/tmp/notes_move_probe.py`, which price a directory move before it happens and re-check the mention counts after it, so the pinned baseline predates both; and `gate.py` is the dependency scheduler `math-unv` wrote to replace `notes/scripts/gate.sh`, so the pinned baseline predates it; `seed_quotes.py` is the quote-spec seeder this pass promoted from `.qwen/tmp/seed_quotes4.py`, which seeds `notes/tables/quotes.tsv` from `notes/reports/subfinding-pairs.md`'s pair lines and resolves each spec back against `overview.tex`, so the pinned baseline predates it; `run_tests.py` is the seam that runs the extracted checker self-tests through the venv's pytest, promoted by the pass that extracted `verify_scope_exclusions.py`'s, so the pinned baseline predates it; `measure_summaries_seed.py` is the quote-spec classification this pass promoted from `.qwen/tmp/measure_summaries_seed.py`, which measures the 925 spans the 21 summaries pages carry and the class each seeded spec round-trips in, so the pinned baseline predates it; `build_index_db.py` is the SQLite FTS5 builder `math-u41.6` wrote, which lands the keyed record and the untracked database, so the pinned baseline predates it.
+All 62 are named here and in the command
 block. "Before this pass" is
 pinned to the commit that created this page, read at its parent, not to `HEAD`: `HEAD` moves every
 time this page is edited, so a check keyed to it re-pins the baseline on each edit, and the naming
