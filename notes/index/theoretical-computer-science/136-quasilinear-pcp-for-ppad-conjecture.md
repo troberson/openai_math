@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [complexity-theory](../topics/complexity-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [136-quasilinear-pcp-for-ppad-conjecture.md](../../../notes/summaries/theoretical-computer-science/136-quasilinear-pcp-for-ppad-conjecture.md) |
 
 ## Manuscripts
 

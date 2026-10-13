@@ -13,7 +13,7 @@
 | Claim shapes | resolution, counterexample |
 | Topics | [algorithms](../topics/algorithms.md) · [computability](../topics/computability.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [109-integer-multiplication-below-n-n.md](../../../notes/summaries/theoretical-computer-science/109-integer-multiplication-below-n-n.md) |
 
 ## Manuscripts
 
