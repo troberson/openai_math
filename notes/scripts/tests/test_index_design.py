@@ -31,7 +31,7 @@ lines, 82 count and byte phrases, 0 sync problems, 2,560 nodes over 3,415 resolv
 manuscripts, 242 scope notes, 416 configs, 200 `main_results` entries over 189 configs, 172 formalized,
 749 preprint dirs, 122,458 `.lean` files, 559 module dirs, 17 disciplines against 23 Lean dirs, 10
 traces in 11 files, 30 verification bundles, 521 `.bib` files with 13,802 entries and 393 hrefs, the
-ledger set at 297,050 B against the all-TSV 2,252,773 B, 66,109 disk links with 0 broken and 17,700
+ledger set at 297,050 B against the all-TSV 2,261,480 B, 66,109 disk links with 0 broken and 17,700
 resolving to a directory, and the substring counts 18 / 373 against the brace-qualified 17 / 372. A
 page with fewer anchors, block lines or phrases is a pass that stopped checking, not a pass that
 passed.
@@ -78,7 +78,7 @@ MUTANTS = [
     ("index tree byte total altered", "count mismatch (index tree byte total)",
      lambda t: t.replace("carries **11530284** B", "carries **11529933** B", 1)),
     ("disk link count", "count mismatch (disk link check)",
-     lambda t: t.replace("covers **66,108** links", "covers **66,109** links", 1)),
+     lambda t: t.replace("covers **66,109** links", "covers **66,110** links", 1)),
     # Prose the count passes never read: the schema table's byte column is not in count_phrases()
     # or size_phrases(). Only the render diff can see it.
     ("schema byte column", "size mismatch (catalog.tsv measured size)",

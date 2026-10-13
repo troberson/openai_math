@@ -39,7 +39,7 @@ whole-tree counts are printed in the report and are not written to the TSV.
 | bibliography entry→keywords field | **0** | Negative: bibliographies carry no topic vocabulary |
 | manuscript→`\keywords` macro | **12** of 719 | 98% of manuscripts define no keyword list |
 | manuscript→verification bundle | **30** | A certificate bundle, not a theorem check |
-| family→notes summary page | **22** | Our artifact, not part of the release |
+| family→notes summary page | **23** | Our artifact, not part of the release |
 
 ## 426 vs 416: link occurrences, not missing files
 
