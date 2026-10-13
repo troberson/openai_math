@@ -57,6 +57,9 @@ from catlib.paths import (
 from catlib.text import first_group, strip_markup
 from catlib.tsv import read_rows
 
+import extract_subfinding_pairs as ep
+import verify_subfinding_pairs as SP
+
 PAGE = NOTES / "reports" / "findings.md"
 TRACES = REASONING_TRACES
 INDEX = INDEX_DIR
@@ -70,6 +73,26 @@ SPAN = re.compile(r"[“\"]([^”\"]{8,})[”\"]|`([^`]{8,})`")
 QUOTE = re.compile(r"[“\"]([^”\"]{8,})[”\"]")
 CODE = re.compile(r"`([^`]{8,})`")
 PRE_GAP, POST_GAP = 2, 12  # adjacency windows around a marker
+
+
+@cache
+def s25_figures():
+    """The figures the findings page quotes from the pairing page, measured from the pairing rule and
+    the page's own blocks. The checker does not carry them: a carried figure goes stale the day the
+    population grows, which is exactly what happened when band 1 was added.
+    """
+    v = ep.population()
+    pop = v["pop"]
+    mss = sum(v["counts"][f] for f in pop)
+    blocks = SP.parse_page(SP.PAGE.read_text(encoding="utf-8"), [])
+    clause = sum(1 for b in blocks for p in b["pairs"] if p["kind"] == "clause" and p["target"])
+    head = sum(1 for b in blocks for p in b["pairs"] if p["kind"] == "main" and p["target"])
+    unmatched = sum(1 for b in blocks for p in b["pairs"] if p["kind"] == "clause" and not p["target"])
+    claimed = sum(len(b["claimed"]) for b in blocks)
+    unclaimed = sum(len(b["unclaimed"]) for b in blocks)
+    return [str(claimed), str(unclaimed), str(clause), str(head), str(unmatched),
+            str(len(pop)), str(mss), "10"]
+
 
 # Counts the page takes from a record rather than re-measuring. Each must appear in that record.
 RECORD = {
@@ -94,7 +117,7 @@ RECORD = {
     "S21": ["6 of 419", "0 of 197", "225"],
     "S23": ["5,842", "551", "5,291", "9,819", "232"],
     "S24": ["92", "978"],
-    "S25": ["109", "94", "62", "47", "18", "51", "49", "203", "10"],
+    "S25": s25_figures(),
     "S26": ["724", "719", "749", "20,341", "21,288", "21,203", "717", "5"],
     "S27": ["1,033", "66,107"],
     "S28": ["160,187", "734", "v4.34.1", "1.3"],
@@ -109,8 +132,10 @@ REPORTS = [
      "the 5-phrase narrow list hits **5** of 242"),
     ("extract_scope_notes.py", "broad list: 24 phrases, 44 of 242 docs hit",
      "the 24-phrase broad list hits **44**"),
-    ("extract_subfinding_pairs.py", "POPULATION 49 families, 203 manuscripts",
-     "**49 families over 203 manuscripts**"),
+    ("extract_subfinding_pairs.py", f"POPULATION {len(ep.population()['pop'])} families, "
+     f"{sum(ep.population()['counts'][f] for f in ep.population()['pop'])} manuscripts",
+     f"**{len(ep.population()['pop'])} families over "
+     f"{sum(ep.population()['counts'][f] for f in ep.population()['pop'])} manuscripts**"),
     ("measure_proof_density.py",
      "proofs per manuscript    counterex_broad  n= 74 AUC=0.356 p=1.22e-04",
      "AUC **0.356**, p **1.22e-04**"),

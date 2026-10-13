@@ -161,9 +161,9 @@ declaration names — a fact about the release, not an extractor gap [S23].
 **0** families are uncovered, and **4** terms have no hit and are kept as measured negatives [S24].
 A term is quoted with its per-layer counts: a yield of 24 can be 2 titles and 16 scope notes.
 
-**Multi-claim families pair unevenly.** The reading population is **49 families over 203
-manuscripts** [S25:10]. Of the titles the release displays, **109** are claimed by an abstract
-clause and **94** by none; **62** sub-finding clause pairs and **47** headline clause pairs were
+**Multi-claim families pair unevenly.** The reading population is **122 families over 349
+manuscripts** [S25:10]. Of the titles the release displays, **253** are claimed by an abstract
+clause and **96** by none; **133** sub-finding clause pairs and **120** headline clause pairs were
 accepted, and 18 clauses were recorded unmatched [S25].
 
 **The LaTeX surface has no single convention.** **724** `\documentclass` roots over **719** listed
@@ -202,9 +202,9 @@ been run, so the tiers are a prior-based ranking, not a finding about the releas
 Six counts in this repo's own beads were quoted before anyone wrote down the rule that yields them,
 and each one is now reproducible or recorded as not reproducible: the counterexample figures **74 /
 30**, which no stem variant of the quoted vocabulary reproduces and which the written phrase rule does
-[S7]; the sub-finding population **51**, which does not reproduce — the recorded rule yields **49**
-families over 203 manuscripts, and nine of the ten named densest families sit outside the probe's own
-40 [S25:15]; the "14 of 372 family titles in the `.bib` files" figure, which reproduces under a 6-token
+[S7]; the sub-finding population **51**, which does not reproduce — the recorded rule yields **122**
+families over 349 manuscripts, and nine of the ten named densest families sit outside the probe's own
+40 [S25:32]; the "14 of 372 family titles in the `.bib` files" figure, which reproduces under a 6-token
 lowercased title prefix over 417 of 500 files while its conclusion (that the manuscripts do not cite
 each other) does not follow from it [S13]; the preprint root counts **717 / 5**, which the line-start
 rule answers as **715 / 4** over the 719 dirs the release lists today — the substring rule over the same
@@ -244,7 +244,7 @@ not survive a re-run.
 | S22 | [`notes/scripts/extract_citations.py`](../scripts/extract_citations.py) | 257 | The citation extractor and its coverage report |
 | S23 | [`notes/reports/names.md`](names.md) | 269 | The six-layer name measurement and the subject/citation split |
 | S24 | [`notes/reports/topics.md`](topics.md) | 327 | The curated topic vocabulary and its per-layer counts |
-| S25 | [`notes/reports/subfinding-pairs.md`](subfinding-pairs.md) | 623 | The abstract-clause to display-title pairing, 49 families |
+| S25 | [`notes/reports/subfinding-pairs.md`](subfinding-pairs.md) | 1215 | The abstract-clause to display-title pairing, 122 families |
 | S26 | [`notes/reports/sources.md`](sources.md) | 144 | The per-manuscript LaTeX surface: roots, main files, environments |
 | S27 | [`notes/development/index-links.md`](../development/index-links.md) | 235 | The rendered index link check |
 | S28 | [`notes/reports/dependency-drift.md`](dependency-drift.md) | 221 | Pinned commits, patches, toolchain normalisation |
