@@ -9,13 +9,14 @@ the source must change together. The point is to price a directory move, and the
 after each pass.
 
 Two patterns, because one pattern cannot be comparable across the move. A single pattern that allows
-`/` reads 298 mentions today, 16 of them naming directories the reorg leaves in place
-(`notes/scripts/README.md`, `notes/index/names.tsv`, `notes/development/upstream_history/…`). A single
-pattern that forbids `/` reads 282 today and 0 after the move. So the probe prints three counts:
+`/` reads 350 mentions over the 29 pages after the move, 25 of them naming locations the reorg leaves
+in place (`notes/scripts/README.md`, `notes/tables/names.tsv`, `notes/development/upstream_history/…`).
+A single pattern that forbids `/` reads 282 before the move and 304 after. So the probe prints three
+counts:
 
 - **moved, top level** — `notes/<page>.md|tsv`: 282 before the move, 0 after;
 - **moved, in the new directories** — `notes/reports/…`, `notes/development/…`, `notes/tables/…`:
-  0 before, 282 after. The two moved counts must agree; that is the comparability test;
+  0 before, 304 after. The two moved counts must agree; that is the comparability test;
 - **stable** — mentions under `scripts/`, `index/`, `summaries/`, `development/probe/`,
   `development/upstream_history/`, plus `notes/README.md` and the six paths the sweep records as
   deleted or pre-move: 17 before `.3`, 25 after, and must not change across a pass. The two
