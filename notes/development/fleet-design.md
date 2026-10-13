@@ -9,9 +9,9 @@ the rest is measured 2026-10-10 and re-checked by `verify_fleet_design.py`.
 | layer | what it is | who writes it | keyed by |
 |---|---|---|---|
 | **L0** | the release tree: `preprints/**`, `lean/**`, `overview.tex`, `CONTENTS.md`, `reasoning_traces/**` | upstream, via the merge commits | the git **tree digest** of each path |
-| **L1** | the hand-authored inputs: `notes/tables/topics.tsv`, `notes/tables/conjecture-standing.tsv`, the **10** hand-written `notes/*.md` pages (of the **29** top-level pages — the other **19** are report-fed, so they are L3) | a human, in a commit | the file's content hash |
-| **L2** | the derived records: the **8** `notes/tables/*.tsv` present on disk, `notes/index/**` (1,049 files), `notes/summaries/**`, `notes/development/probe/**`, and the untracked keyed store `.qwen/cache/records/**` | the 11 writers | (L0 digests, script-source hash, L1 hashes, args) |
-| **L3** | the tracked output pages: the 19 report-fed `notes/*.md` | `render_reports.py` alone — `math-o3a.3` moved the two checkers' page writes into `verify_page_sync.py`, which mutates page text in memory | the same key |
+| **L1** | the hand-authored inputs: `notes/tables/topics.tsv`, `notes/tables/conjecture-standing.tsv`, the **10** hand-written prose pages — `notes/README.md` as the entry point and the **9** hand-written `notes/reports/*.md` pages (the other **14** report pages are generated, so they are L3) | a human, in a commit | the file's content hash |
+| **L2** | the derived records: the **25** `notes/tables/*.tsv` present on disk (9 from the ledger scripts, 16 rendered by `build_index.py` since `math-faz.6`), `notes/index/**` (1,033 files), `notes/summaries/**`, `notes/development/probe/**`, and the untracked keyed store `.qwen/cache/records/**` | the 11 writers | (L0 digests, script-source hash, L1 hashes, args) |
+| **L3** | the tracked output pages: the 19 report-fed `notes/reports/*.md` | `render_reports.py` alone — `math-o3a.3` moved the two checkers' page writes into `verify_page_sync.py`, which mutates page text in memory | the same key |
 
 ## The purity rule, stated precisely
 
@@ -290,10 +290,10 @@ and the key is computed from the current `git rev-parse HEAD:<path>` tree digest
 longer matches HEAD makes its records missing and the row fails. The driver keeps the md5 and
 `git status` snapshots raw and prints the assertion row. `notes/scripts/gate.py` carries
 **78** invocations as `ROWS` entries, each a (spec, needs, writes) triple over the generated
-artifacts: the **10** writers declare what they write, every checker needs `pages`,
+artifacts: the **11** writers declare what they write, every checker needs `pages`,
 `check_index_links.py` and `measure_index_sizes.py` need `index`, and the two summary readers need
 `summaries`. A row starts as soon as every row that writes its `needs` has finished, so counting the
-tuples in the `ROWS` block is the row count. Non-determinism sources in the **10** writers,
+tuples in the `ROWS` block is the row count. Non-determinism sources in the **11** writers,
 by class:
 
 - **Time / random / env:** **1 hit** — `render_reports.py:1184` sets
