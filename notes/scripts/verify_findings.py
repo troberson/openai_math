@@ -35,6 +35,8 @@ from collections import Counter
 from functools import cache
 from pathlib import Path
 
+import extract_subfinding_pairs as ep
+import verify_subfinding_pairs as SP
 from catlib import yaml as Y
 from catlib.ledger import (
     counterex_broad,
@@ -56,9 +58,6 @@ from catlib.paths import (
 )
 from catlib.text import first_group, strip_markup
 from catlib.tsv import read_rows
-
-import extract_subfinding_pairs as ep
-import verify_subfinding_pairs as SP
 
 PAGE = NOTES / "reports" / "findings.md"
 TRACES = REASONING_TRACES
@@ -132,10 +131,11 @@ REPORTS = [
      "the 5-phrase narrow list hits **5** of 242"),
     ("extract_scope_notes.py", "broad list: 24 phrases, 44 of 242 docs hit",
      "the 24-phrase broad list hits **44**"),
-    ("extract_subfinding_pairs.py", f"POPULATION {len(ep.population()['pop'])} families, "
-     f"{sum(ep.population()['counts'][f] for f in ep.population()['pop'])} manuscripts",
-     f"**{len(ep.population()['pop'])} families over "
-     f"{sum(ep.population()['counts'][f] for f in ep.population()['pop'])} manuscripts**"),
+    ("extract_subfinding_pairs.py",
+     (f"POPULATION {len(ep.population()['pop'])} families, "
+      f"{sum(ep.population()['counts'][f] for f in ep.population()['pop'])} manuscripts"),
+     (f"**{len(ep.population()['pop'])} families over "
+      f"{sum(ep.population()['counts'][f] for f in ep.population()['pop'])} manuscripts**")),
     ("measure_proof_density.py",
      "proofs per manuscript    counterex_broad  n= 74 AUC=0.356 p=1.22e-04",
      "AUC **0.356**, p **1.22e-04**"),
@@ -484,7 +484,8 @@ def check(page):
     # The disk link scan's count is read from its own report, so a scan that drifts moves
     # the required page phrase without this file carrying a number.
     n = int(first_group(r"links extracted\s+(\d+)", outs["check_index_links.py"]))
-    for script, report, shown in list(REPORTS) + [
+    for script, report, shown in [
+            *REPORTS,
             ("check_index_links.py", f"links extracted        {n}",
              f"**{n:,}** links with **0** broken")]:
         if report not in outs[script]:

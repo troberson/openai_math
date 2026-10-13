@@ -201,7 +201,9 @@ def build(page_rel: str, checker_name: str) -> tuple[int, list[str], pathlib.Pat
     slots: dict[str, str] = {}
     nslots = 0
     wrapped: list[str] = []
-    ambiguous: list[str] = []
+    # `ambiguous` is initialized before the needle loop; re-initializing here would discard
+    # the weak needles collected there, and the report line would print 0 for a page that has
+    # weak needles.
     for start, end, base, parts in reversed(hits):
         matched = text[start:end]
         if len(parts) == 1:

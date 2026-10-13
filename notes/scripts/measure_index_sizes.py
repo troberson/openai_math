@@ -27,7 +27,8 @@ import csv
 import pathlib
 import re
 
-from catlib import text as TX, yaml as Y
+from catlib import text as TX
+from catlib import yaml as Y
 from catlib.paths import (
     COMPARATOR_DIR as CHAL,
 )

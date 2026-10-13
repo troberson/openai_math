@@ -15,10 +15,10 @@ import time
 from collections import Counter
 from pathlib import Path
 
-from catlib.paths import OAI_DIR as SOURCE, PREPRINTS
-
 import build_catalog as bc
 import extract_links as E
+from catlib.paths import OAI_DIR as SOURCE
+from catlib.paths import PREPRINTS
 
 listed = {Path(p).parts[1] for ps in bc.parse_contents().values() for p in ps}
 tex_files = [p for p in sorted(PREPRINTS.glob("**/*.tex")) if E.owner(p) in listed]
@@ -103,7 +103,7 @@ for x in texts:
 t_pre = time.perf_counter() - t
 print(f"MSC scan     bare {t_msc:6.2f} s  prefilter {t_pre:6.2f} s  hits {h1} vs {h2}")
 
-blob = E.Blob({E.owner(p): " ".join(n) for p, n in zip(tex_files, n1)})
+blob = E.Blob({E.owner(p): " ".join(n) for p, n in zip(tex_files, n1, strict=True)})
 titles = {r["fam"]: r["title"] for r in E.ledger_rows()}
 phrases = sorted({E.norm(t2) for t2 in titles.values() if E.norm(t2)})
 t = time.perf_counter()

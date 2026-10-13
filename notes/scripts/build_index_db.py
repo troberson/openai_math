@@ -103,8 +103,8 @@ def population(rows: list[tuple[str, str, str, str, str]], size: int,
 def report(pop: dict, wall: float, qwall: float, where: str,
            per_term: list[tuple[str, int, float]]) -> list[str]:
     """The report lines: the counts, the build wall, and the per-term query wall."""
-    lines = [f"tex files {pop['tex_files']} bytes {pop['tex_bytes']}  "
-             f"abstract rows {pop['abstract_rows']}",
+    lines = [(f"tex files {pop['tex_files']} bytes {pop['tex_bytes']}  "
+              f"abstract rows {pop['abstract_rows']}"),
              f"fts rows {pop['fts_rows']}  build wall {wall:.2f} s  landed {where} bytes {pop['db_bytes']}"]
     for term, n, w in per_term:
         lines.append(f"  {term:14} hits {n:5}  wall {w:.4f} s")

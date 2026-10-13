@@ -385,7 +385,7 @@ def check(text):
     # A script can write more than one target (`build_index.py` stages the index pages and the 16
     # generated tables), so the writers table takes the sorted first target and the TSV rule reads
     # the whole list.
-    derived = {k: sorted(v)[0] for k, v in wr.items()}
+    derived = {k: min(v) for k, v in wr.items()}
 
     # A. writers: derived set == page table
     page_writers = {}

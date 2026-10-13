@@ -12,10 +12,10 @@ import re
 import time
 from pathlib import Path
 
-from catlib.paths import OAI_DIR as SOURCE, PREPRINTS
-
 import build_catalog as bc
 import extract_links as E
+from catlib.paths import OAI_DIR as SOURCE
+from catlib.paths import PREPRINTS
 
 t0 = time.perf_counter()
 marks: list[tuple[str, float]] = []
@@ -39,7 +39,7 @@ t = time.perf_counter()
 pat = re.compile(r"^\s*import\s+([A-Za-z_][A-Za-z0-9_.]*)", re.MULTILINE)
 tot = 0
 for txt in txts:
-    for root in pat.findall(txt):
+    for _root in pat.findall(txt):
         tot += 1
 mark(f"import-root findall over the read texts ({tot} hits)")
 
@@ -63,7 +63,7 @@ normed = [E.norm(t2) for t2 in tex_txts]
 mark("norm() over the .tex texts")
 
 t = time.perf_counter()
-blob = E.Blob({E.owner(p): " ".join(n) for p, n in zip(tex_files, normed)})
+blob = E.Blob({E.owner(p): " ".join(n) for p, n in zip(tex_files, normed, strict=True)})
 mark("blob build")
 
 titles = {r["fam"]: r["title"] for r in E.ledger_rows()}

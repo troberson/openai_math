@@ -29,7 +29,6 @@ Usage: python3 notes/scripts/verify_subfinding_pairs.py
 import re
 import sys
 from functools import cache
-from typing import Optional
 
 import build_catalog as bc
 import extract_subfinding_pairs as ep
@@ -91,7 +90,7 @@ def population_of(counts):
 def parse_page(text, problems):
     """-> family blocks. A line that is neither a pair line nor a partition line is prose."""
     blocks: list = []
-    current: Optional[dict] = None
+    current: dict | None = None
     for n, line in enumerate(text.splitlines(), 1):
         h = HEADER.match(line)
         if h:
