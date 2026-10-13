@@ -538,8 +538,8 @@ The generated TSVs are the seven writer targets. The two hand-authored tables ar
 | `notes/tables/topics.tsv` | The curated topic vocabulary. `measure_topics.py --check` re-measures its 92 rows and exits 1 when a recorded count drifts; `build_index.py` reads it and renders `notes/index/topics-rendered.tsv`. A generated file inside `notes/index/` is overwritten by the next render, which is why the vocabulary lives outside that tree. |
 | `notes/tables/conjecture-standing.tsv` | The training-data prior. Its `standing_prior_2025` column is the assistant's memory at an early-2025 cutoff, self-rated by `prior_confidence`; no script can derive a memory, and `verify_conjecture_standing.py` checks the rows against the ledger and `overview.tex` rather than regenerating them. |
 
-Across the **24** prose pages — the 23 report pages and the entry point — **19** with a checker,
-**5** without. The 5 pages with no checker are `notes/README.md`,
+Across the **24** prose pages — the 23 report pages and the entry point — **19** with a checker, **5** without.
+The 5 pages with no checker are `notes/README.md`,
 `notes/reports/conjecture-standing.md`,
 `notes/reports/counterexample-tag.md`, `notes/reports/resolution-tag.md` and `notes/reports/t0-triage.md`. Their counts
 are reproduced by the report-only
