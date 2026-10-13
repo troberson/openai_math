@@ -5,7 +5,7 @@ template text plus the writer's registry). Lines and bytes are of the template f
 is a `{{ ` occurrence counted over the whole file. No `lake`, `lean`, `lake exe cache get`, or
 comparator run.
 
-**Headline, with the rule that yields it:** report tree: **19** templates, **8,176** lines, **518,658** bytes, **1,601** slots; index tree: **5** templates, **209** lines, **14,981** bytes, **103** slots; all **24** templates: **8,385** lines, **533,639** bytes, **1,704** slots.
+**Headline, with the rule that yields it:** report tree: **19** templates, **8,150** lines, **497,368** bytes, **1,695** slots; index tree: **5** templates, **209** lines, **14,981** bytes, **103** slots; all **24** templates: **8,359** lines, **512,349** bytes, **1,798** slots.
 
 ## The report tree
 
@@ -16,7 +16,7 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 
 | Template | Lines | Bytes | Slots | Page | Checker | Needles |
 |---|---|---|---|---|---|---|
-| `README.md.j2` | 770 | 74,195 | 71 | `notes/README.md` | `verify_script_ownership.py` | NOT DERIVED |
+| `README.md.j2` | 771 | 74,307 | 71 | `notes/README.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `abstracts.md.j2` | 406 | 32,517 | 42 | `notes/reports/abstracts.md` | `verify_abstracts.py` | 45 |
 | `counterexample-crosscheck.md.j2` | 1,089 | 45,859 | 87 | `notes/reports/counterexample-crosscheck.md` | `verify_counterexample_crosscheck.py` | 20 |
 | `dependency-drift.md.j2` | 229 | 11,558 | 95 | `notes/reports/dependency-drift.md` | `verify_dependency_drift.py` | NOT DERIVED |
@@ -30,12 +30,12 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `proof-density.md.j2` | 122 | 8,661 | 66 | `notes/reports/proof-density.md` | `measure_proof_density.py` | NOT DERIVED |
 | `scope-exclusions.md.j2` | 328 | 26,788 | 19 | `notes/reports/scope-exclusions.md` | `verify_scope_exclusions.py` | NOT DERIVED |
 | `sources.md.j2` | 156 | 9,400 | 29 | `notes/reports/sources.md` | `verify_sources.py` | 31 |
-| `subfinding-pairs.md.j2` | 1,579 | 77,741 | 309 | `notes/reports/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |
+| `subfinding-pairs.md.j2` | 1,552 | 56,339 | 403 | `notes/reports/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |
 | `t0-chains.md.j2` | 569 | 34,078 | 62 | `notes/reports/t0-chains.md` | `verify_t0_chains.py` | 12 |
 | `templates.md.j2` | 107 | 5,071 | 45 | `notes/development/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `topics.md.j2` | 335 | 23,082 | 117 | `notes/reports/topics.md` | `measure_topics.py` | NOT DERIVED |
 | `verification-dirs.md.j2` | 408 | 37,952 | 44 | `notes/reports/verification-dirs.md` | `verify_verification_dirs.py` | 16 |
-| **report tree** | **19** | **8,176** | **518,658** | **1,601** | | |
+| **report tree** | **19** | **8,150** | **497,368** | **1,695** | | |
 
 ## The index tree
 
