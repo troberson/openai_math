@@ -3019,9 +3019,12 @@ def subfinding_pairs_full(p: dict[str, Any]) -> dict[str, str]:
                         f"sub-finding pair, and")
     out["sp_b_claimed"] = f"{claimed_total} of the {mss} titles are claimed by a clause"
     out["sp_b_unmatched"] = f"{unmatched} clauses in {with_unmatched} families state a result no"
+    band_in = len(set(noprobe) & set(p["v"]["band"]))
+    dens_out = sorted(f for f in noprobe if f in ep.DENSEST)
     out["sp_b_noprobe"] = f"{len(noprobe)} families pair sub-findings with no probe hit at"
-    out["sp_b_noprobe_list"] = (f"all ({', '.join(noprobe)}) — {NUM_WORDS[len(noprobe)]} of the bead's "
-                                f"{NUM_WORDS[len(ep.DENSEST)]} named densest targets —")
+    out["sp_b_noprobe_list"] = (f"all — {band_in} of them are band 1, which the rule defines by the "
+                                f"absence of a probe word, and {len(dens_out)} ({', '.join(dens_out)}) "
+                                f"are bead densest targets outside the probe —")
     out["sp_b_fp"] = f"{len(fp_probe)} of the {len(probe)} probe hits"
     out["sp_notread"] = (f"{len(multi) - len(pop)} families with two or more manuscripts are not read. "
                          f"The page covers {len(pop)} of the {len(multi)}.")
