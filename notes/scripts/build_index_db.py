@@ -26,7 +26,6 @@ import json
 import sqlite3
 import sys
 import time
-from pathlib import Path
 
 from catlib.atomic import RECORDS_ROOT
 from catlib.overview import parse_overview
