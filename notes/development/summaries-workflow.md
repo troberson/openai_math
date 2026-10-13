@@ -307,3 +307,16 @@ issue.
   The summaries checker's pass C matched `scope: "Partial progress."` inside a backticked code span as a
   prose quotation needing a citation, and pass B read `<preprints-dir>` as stray HTML. A link-only page
   must carry neither angle brackets nor a quoted phrase.
+- **`math-ckd.3`'s acceptance was re-measured, and its ordering rule is inert for this population.**
+  Chosen 2026-10-13 on `math-ckd.3`. The acceptance read "All 83 pages pass `verify_summaries.py
+  --mutant` with 0 problems and both mutants flagged"; the checker reads no argv, so the flag does nothing,
+  and the page count is not 83. Measured from the current ledger: 86 T0 families with
+  `resolves_named = 1` over 139 manuscripts, 8 of them already written (001, 004, 006, 011, 016, 018,
+  019, 032), so the batch is **78 families over 118 manuscripts** and the tree ends at **99 family
+  pages** plus the index page. The acceptance now names the checker's 0 problems, the 7 passing tests in
+  `notes/scripts/tests/test_summaries.py`, the gate's 78 rows, and the cache assertion. The bead's
+  ordering rule — "families with a scope note and with formalized manuscripts first" — selects nothing:
+  every one of the 78 carries `scope_note 0`, `chal 0` and `paps_form 0`, because T0 is the tier with no
+  Lean. Ordering inside a shard is by ascending manuscript count, the Tier C rule already recorded.
+  Revisit if a family in this set gains a scope note, which means upstream formalized it and the tier
+  moved.
