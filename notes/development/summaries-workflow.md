@@ -167,3 +167,11 @@ issue.
   rule pointed at a page that does not exist. The rule now records the blocked family here with the
   reason and leaves its `summary` row 0. Revisit if the blocked set grows past a few families and a
   table is cheaper than prose.
+- **A checker that reads every writer's cache needs every writer's artifact.** Chosen 2026-10-12 on
+  `math-faz.3`: the first gate pass after the move printed `cache entry missing: seed_quotes.py
+  notes/tables/quotes.tsv`, because `verify_cache_promotion.py` compares cached bytes with disk bytes
+  for all 14 writers while its `needs` named only the artifacts that existed before `seed_quotes.py`
+  and `refresh_summary_line_counts.py` had run. The row now names `quotes` and `summaries`, so it
+  starts after both writers. The gate prints rows 78 failures 0. Revisit if a writer lands a tracked
+  artifact outside the ten artifacts the row names — the race is invisible until a record key changes,
+  which is exactly what a directory move does.
