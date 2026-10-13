@@ -7,11 +7,13 @@ and which display title names it. Each pair is quoted with the line it was verif
 that state a sub-finding no title names are recorded as unmatched rather than forced onto the nearest
 title.
 
-Population: **159 families over 468 manuscripts**. The rule is the bead's own two signals unioned with
+Population: **167 families over 514 manuscripts**. The rule is the bead's own two signals unioned with
 its named targets — abstracts containing a multi-claim phrase **and** at least two manuscripts, plus
 the ten densest families it names — and band 1, the families with exactly 2 manuscripts and no probe
-word, which `math-el4.9` added, and band 2, the families with 3-4 manuscripts and no probe word, which
-`math-el4.10` added. The bead states 51 families for the intersection; that number does
+word, which `math-el4.9` added, band 2, the families with 3-4 manuscripts and no probe word, which
+`math-el4.10` added, and band 3, the families with 5 or more manuscripts and no probe word, which
+`math-el4.11` added. The three bands cover every multi-manuscript family the probe filter left, so the
+population is the multi set. The bead states 51 families for the intersection; that number does
 not reproduce, and the gap is the first thing this page records.
 
 ## The population, and why it is not the bead's 51
@@ -41,12 +43,14 @@ is the counterexample 74 / 30 case recorded in `notes/reports/counterexample-tag
 
 **Decision, recorded 2026-10-07, extended 2026-10-13.** Population = (probe ∩ multi) ∪ the bead's ten
 named densest families ∪ band 1 (exactly 2 manuscripts and no probe word) ∪ band 2 (3-4 manuscripts and
-no probe word) = **159 families, 468 manuscripts** (206 before the 2026-10-07 upstream merge; family 032
-lost three manuscripts to the withdrawal and stayed in the population). The union is chosen over the
-intersection because the bead's named targets are the point of the task — 034 at n=14 down to 211 at
-n=7 — and the probe is the point of its vocabulary warning. Band 1 is added by `math-el4.9` and band 2
-by `math-el4.10` because the bead's remaining set is the no-signalling-word set, and the bands are its
-densest slices.
+no probe word) ∪ band 3 (5 or more manuscripts and no probe word) = **167 families, 514 manuscripts**
+(206 before the 2026-10-07 upstream merge; family 032 lost three manuscripts to the withdrawal and
+stayed in the population). The union is chosen over the intersection because the bead's named targets
+are the point of the task — 034 at n=14 down to 211 at n=7 — and the probe is the point of its
+vocabulary warning. Band 1 is added by `math-el4.9`, band 2 by `math-el4.10`, and band 3 by
+`math-el4.11` because the bead's remaining set is the no-signalling-word set, and the bands are its
+densest slices. The three bands together cover every multi-manuscript family, so the population is the
+multi set and the ten named targets are inside it.
 Revisit condition: if a later pass finds a
 phrase rule that yields 51, re-measure the population before extending the page; the rework is a re-run
 of `notes/scripts/extract_subfinding_pairs.py` plus blocks for the families the new rule adds, which is
@@ -199,6 +203,14 @@ manuscript of family NNN in `notes/tables/subfindings.tsv`, whose `title` column
   algebraicity result — were withdrawn on 2026-10-06 and their clauses are gone from the overview
   abstract, so the family lost two accepted pairs and three manuscripts. See
   `notes/development/upstream_history/2026-10-07_3014888.md`.
+
+## 033 · `overview.tex:144` · n=5 · T2
+
+- main: "Proves Campana's orbifold Iitaka subadditivity conjecture for smooth Fujiki-class-$\mathcal C$ manifolds with rational simple-normal-crossing boundaries." (`overview.tex:144`) -> "Orbifold and logarithmic subadditivity" (`overview.tex:144`) [033:1]
+- clause: "proves Popa's inequality $\bar\kappa(U)\ge\kappa(F)+\max\{\bar\kappa(V),\operatorname{Var}(f)\}$, where variation measures the whole geometric generic fiber" (`overview.tex:144`) -> "Whole-fiber variation" (`overview.tex:144`) [033:2]
+- claimed: 033:1 033:2
+- unclaimed: 033:3 033:4 033:5
+- note: The abstract states two theorems; three titles name machinery the abstract does not state — the reverse inequality, the projective Hodge lines, and the K"ahler b-semiampleness input.
 
 ## 034 · `overview.tex:146` · n=14 · T0
 
@@ -630,6 +642,14 @@ manuscript of family NNN in `notes/tables/subfindings.tsv`, whose `title` column
 - unclaimed:
 - note: The second title names the space bound; the abstract states the per-execution and probability guarantees, not the space. The pairing is weak.
 
+## 140 · `overview.tex:357` · n=6 · T3
+
+- main: "a one-pass learner with $Ad^2$ persistent bits needs $\Omega_A(d\log(1/\epsilon))$ noiseless Gaussian samples to recover a unit vector to angular error $0<\epsilon\le1/10$ with probability $2/3$" (`overview.tex:357`) -> "Memory and precision" (`overview.tex:357`) [140:1]
+- clause: "Computation and randomized updates are unrestricted, but output uses only the terminal state, stopping index and fresh randomness." (`overview.tex:357`) -> "Localization costs" (`overview.tex:357`) [140:3]
+- claimed: 140:1 140:3
+- unclaimed: 140:2 140:4 140:5 140:6
+- note: One theorem and one output constraint; the four remaining titles name the estimator machinery the abstract does not state.
+
 ## 143 · `overview.tex:365` · n=2 · T3
 
 - main: "Resolves the uniform boundedness assertion in Hilbert's sixteenth problem: the number of isolated periodic orbits of a real planar polynomial vector field is bounded by a finite constant depending only on its degree." (`overview.tex:365`) -> "Uniform limit-cycle bounds" (`overview.tex:365`) [143:1]
@@ -862,6 +882,16 @@ manuscript of family NNN in `notes/tables/subfindings.tsv`, whose `title` column
 - note: "O(3) isolated particle pole" and "O(4) mass bounds" ship with no clause; the mass-gap phrase in
   the headline is the closest the abstract comes to either.
 
+## 216 · `overview.tex:515` · n=6 · T0
+
+- main: "proves critical axis correlations $C_{\beta_c}(r)\sim Ar^{-1/4}(\log r)^{1/8}$" (`overview.tex:515`) -> "The critical logarithmic correction for the planar XY model" (`overview.tex:515`) [216:1]
+- clause: "the Berezinskii--Kosterlitz--Thouless essential singularity $\sqrt{\beta_c-\beta}\log\xi(\beta)\to B$, with $A,B>0$ after the free-box thermodynamic limit" (`overview.tex:515`) -> "Essential Singularity of the Correlation Length in the Planar XY Model" (`overview.tex:515`) [216:4]
+- clause: "discrete Gaussian heights converge to Gaussian fields throughout the rough phase, including its threshold, along geometric torus sizes" (`overview.tex:515`) -> "Height and spin-field universality" (`overview.tex:515`) [216:6]
+- clause: "Critical center-magnetization and spin-field conclusions retain their stated height, renormalization, and field-input assumptions." (`overview.tex:515`) -> "Critical Center Magnetization in the Planar XY Model" (`overview.tex:515`) [216:2]
+- claimed: 216:1 216:2 216:4 216:6
+- unclaimed: 216:3 216:5
+- note: The abstract names six conclusions in three sentences. The correlation-exponent title restates the headline clause, which the first title claims, so it is unclaimed.
+
 ## 217 · `overview.tex:517` · n=2 · T0
 
 - main: "For every fixed inverse temperature $\beta>1$, determines the fluctuation scale and limiting law of the zero-field Gaussian Sherrington--Kirkpatrick log partition function." (`overview.tex:517`) -> "Fluctuation scale" (`overview.tex:517`) [217:2]
@@ -869,6 +899,15 @@ manuscript of family NNN in `notes/tables/subfindings.tsv`, whose `title` column
 - claimed: 217:1 217:2
 - unclaimed:
 - note: The headline names both halves; the clause is the limiting-law half stated as a convergence.
+
+## 218 · `overview.tex:519` · n=6 · T2
+
+- main: "Weak finite-range square-symmetric even multispin perturbations of the square-lattice Ising model preserve critical bulk spin and energy limits" (`overview.tex:519`) -> "Bulk correlation universality" (`overview.tex:519`) [218:4]
+- clause: "weak square-symmetric contour interactions also yield chordal $\mathrm{SLE}_3$ interface limits" (`overview.tex:519`) -> "$\mathrm{SLE}_3$ universality" (`overview.tex:519`) [218:5]
+- clause: "With sufficiently weak iid bond disorder of any fixed bounded nondegenerate mean-zero law, critical spin interfaces converge to the same law in probability over environments." (`overview.tex:519`) -> "Quenched $\mathrm{SLE}_3$ limits for general weak random-bond Ising models" (`overview.tex:519`) [218:1]
+- claimed: 218:1 218:4 218:5
+- unclaimed: 218:2 218:3 218:6
+- note: The quenched title pairs with the iid-disorder clause. The second quenched title is a variant of the same result, so the abstract's one disorder clause claims only one of them.
 
 ## 219 · `overview.tex:521` · n=2 · T0
 
@@ -896,6 +935,15 @@ manuscript of family NNN in `notes/tables/subfindings.tsv`, whose `title` column
 - claimed: 222:1 222:2 222:3 222:4
 - unclaimed: 
 - note: Margin $-1$ is the jamming regime the second title names.
+
+## 223 · `overview.tex:529` · n=6 · T0
+
+- main: "Proves chordal $\mathrm{SLE}_\kappa$ limits for critical square-lattice random-cluster interfaces for $0<q\le4$, with $\kappa=4\pi/\arccos(-\sqrt q/2)$" (`overview.tex:529`) -> "Conformal Limits of Critical Square-Lattice Random-Cluster Interfaces" (`overview.tex:529`) [223:6]
+- clause: "bounded Jordan domains are allowed for $q\ge1$" (`overview.tex:529`) -> "FK interfaces and nested loops ($1\le q<4$)" (`overview.tex:529`) [223:1]
+- clause: "smooth Jordan domains for $q<1$" (`overview.tex:529`) -> "Self-dual interfaces ($q<1$)" (`overview.tex:529`) [223:2]
+- claimed: 223:1 223:2 223:6
+- unclaimed: 223:3 223:4 223:5
+- note: The headline clause claims the general conformal-limit title; the two domain clauses claim the q-split titles. The quenched, thermal, and occupation-measure titles name results the abstract does not state.
 
 ## 224 · `overview.tex:531` · n=3 · T0
 
@@ -1295,6 +1343,15 @@ manuscript of family NNN in `notes/tables/subfindings.tsv`, whose `title` column
 - unclaimed:
 - note: The clause names the explicit example, which is the second title.
 
+## 318 · `overview.tex:730` · n=5 · T0
+
+- main: "Disproves strong chromatic splitting at height three for primes $p\ge5$, and weak splitting for the derived $p$-completed sphere at heights $p$ ($p\ge5$) and $p+1$ ($p\ge7$)." (`overview.tex:730`) -> "Weak chromatic splitting counterexamples" (`overview.tex:730`) [318:5]
+- clause: "for $n\ge1$ and $p>n+1$, the overlap $L_{n-1}L_{K(n)}S_p^\wedge$ admits a $2^n$-stage filtration by the predicted localized-sphere pieces" (`overview.tex:730`) -> "Filtered splitting at generic primes" (`overview.tex:730`) [318:1]
+- clause: "At height three and prime three, even finite assembly from such pieces fails in the category of $E(2)$-local modules over the derived completed sphere." (`overview.tex:730`) -> "Finite-assembly failure at prime three" (`overview.tex:730`) [318:4]
+- claimed: 318:1 318:4 318:5
+- unclaimed: 318:2 318:3
+- note: The rational-obstruction title restates the headline clause, which the counterexample title claims, so it is unclaimed.
+
 ## 324 · `overview.tex:744` · n=2 · T3
 
 - main: "Constructs separable real Banach spaces that are globally bi-Lipschitz equivalent but not linearly isomorphic, resolving the separable Lipschitz-isomorphism problem negatively." (`overview.tex:744`) -> "Lipschitz equivalence without linear isomorphism" (`overview.tex:744`) [324:1]
@@ -1312,6 +1369,14 @@ manuscript of family NNN in `notes/tables/subfindings.tsv`, whose `title` column
 - note: The family ships **two proofs of one theorem**, so its display titles name a method
   ("Direct proof", "Structural proof") rather than a sub-finding; the pairing is degenerate by
   construction. Probe hit only: "independent of the matrix size".
+
+## 331 · `overview.tex:758` · n=7 · T3
+
+- main: "Constructs a real reflexive Banach space with an asymptotically midpoint uniformly convex norm but no equivalent asymptotically uniformly convex norm, extending Baudier's separation to reflexive spaces." (`overview.tex:758`) -> "Reflexive tree-space example" (`overview.tex:758`) [331:1]
+- clause: "In the same space, depth-$k$ countably branching diamonds require distortion at least $\sqrt{1+k/12}$, so midpoint uniform convexity does not force uniformly bounded diamond distortion even under reflexivity." (`overview.tex:758`) -> "Midpoint and tree energies" (`overview.tex:758`) [331:3]
+- claimed: 331:1 331:3
+- unclaimed: 331:2 331:4 331:5 331:6 331:7
+- note: Two sentences, seven titles. The five unclaimed titles name the lens, Daugavet, potential, product, and recursive constructions the abstract does not state.
 
 ## 335 · `overview.tex:768` · n=2 · T0
 
@@ -1344,6 +1409,14 @@ manuscript of family NNN in `notes/tables/subfindings.tsv`, whose `title` column
 - clause: "On round spheres, the family also proves almost-everywhere regularity: the singular set has zero $m$-dimensional Hausdorff measure." (`overview.tex:790`) -> "Almost-everywhere regularity of stationary integral varifolds" (`overview.tex:790`) [346:2]
 - claimed: 346:1 346:2
 - unclaimed:
+
+## 347 · `overview.tex:792` · n=5 · T3
+
+- main: "Disproves stable-Morse lower bounds for nondegenerate Hamiltonian fixed points: on simply connected closed K\"ahler manifolds of real dimension $22$, the deficit below the stable Morse number is unbounded." (`overview.tex:792`) -> "Hamiltonian Fixed Points Below the Stable Morse Number in Dimension Twenty-Two" (`overview.tex:792`) [347:1]
+- clause: "A separate Hamiltonian diffeomorphism of the complex quadric threefold has exactly three fixed points, fewer than the four critical points required of every smooth function." (`overview.tex:792`) -> "Three fixed points on the symplectic quadric threefold" (`overview.tex:792`) [347:5]
+- claimed: 347:1 347:5
+- unclaimed: 347:2 347:3 347:4
+- note: The dimension-free title restates the headline clause, which the dimension-22 title claims. The Floer-bound title names a bound the abstract does not state.
 
 ## 348 · `overview.tex:794` · n=3 · T2
 
@@ -1461,21 +1534,21 @@ manuscript of family NNN in `notes/tables/subfindings.tsv`, whose `title` column
 
 | measure | value |
 |---|---|
-| families read | 159 |
-| manuscripts in the population | 468 |
-| sub-finding clause pairs accepted | 190 |
-| headline clause pairs accepted | 157 |
+| families read | 167 |
+| manuscripts in the population | 514 |
+| sub-finding clause pairs accepted | 203 |
+| headline clause pairs accepted | 165 |
 | clauses recorded unmatched | 18 |
-| titles claimed by a clause | 347 |
-| titles claimed by no clause | 121 |
-| families with >=1 accepted sub-finding pair | 145 |
+| titles claimed by a clause | 368 |
+| titles claimed by no clause | 146 |
+| families with >=1 accepted sub-finding pair | 153 |
 | families with >=1 clause recorded unmatched | 17 |
-| families with an accepted sub-finding pair and no probe hit | 111 |
+| families with an accepted sub-finding pair and no probe hit | 119 |
 
 ## What the pairing shows
 
-- **Most families pair cleanly.** 145 of 159 families have at least one accepted sub-finding pair, and
-  347 of the 468 titles are claimed by a clause. The catalog's own link text is a usable index of what
+- **Most families pair cleanly.** 153 of 167 families have at least one accepted sub-finding pair, and
+  368 of the 514 titles are claimed by a clause. The catalog's own link text is a usable index of what
   each family proves, for the families where the abstract was written as a list.
 - **The densest families are the worst paired.** 034 states 4 results over 14 manuscripts; 238 states 1
   over 12; 237 states 2 over 13 and its headline is named by no title; 260 states 4 over 13 and nine of
@@ -1489,23 +1562,23 @@ manuscript of family NNN in `notes/tables/subfindings.tsv`, whose `title` column
   119, 238, 239; the Sakoda--Sipser attribution in 129; the star-height uniformity in 134; the MaxCut
   consequence in 281; the Crouzeix sharpness in 325; and the CAT$(0)$ rigidity in 337. Recording them is
   the point of the "do not force a pairing" instruction.
-- **The probe vocabulary is a floor, not a reading.** 111 families pair sub-findings with no probe hit at
-  all — 71 of them are band 1 and 34 are band 2, which the rule defines by the absence of a probe word,
-  and 6 (014, 211, 227, 237, 260, 376) are bead densest targets outside the probe — because the six
-  densest clauses are a second bare declarative sentence with no connective at all: "Over global
+- **The probe vocabulary is a floor, not a reading.** 119 families pair sub-findings with no probe hit at
+  all — 71 of them are band 1, 34 are band 2, 8 are band 3, which the rule defines by the absence of a
+  probe word, and 6 (014, 211, 227, 237, 260, 376) are bead densest targets outside the probe — because
+  the six densest clauses are a second bare declarative sentence with no connective at all: "Over global
   function fields, proves Ramanujan at every place …", "Its local mass and covering numbers have
   exponent $4/3$.", "Charged upper-area bounds treat dyonic three-dimensional data;", "mixing time
   $n^{2/3+o(1)}$ at $\beta=1$", "A terminating compiler turns a Turing machine and input into a finite
   program for the force", and 211's "this also gives" — none of it is a phrase the bead's four probes
-  list. The 128 band clauses do use connectives, and the list misses every one: "A companion"
-  (256, 268, 270, 307, 364, 003, 197), "A separate" (046, 162, 243), "Separately" (036, 285),
+  list. The 147 band clauses do use connectives, and the list misses every one: "A companion"
+  (256, 268, 270, 307, 364, 003, 197), "A separate" (046, 162, 243, 347), "Separately" (036, 285),
   "More generally" (205, 290), "Moreover" (206), "Pairing with a third input" (082), "An application
   proves" (175), "A spherical extension" (222), "Counterexamples show" (289), "In contrast" (365),
   "Further" (107), and "also" with a verb the list does not pair it with — "also gives" (115, 293),
   "also recovers" (286), "also pass" (065), "also admit" (265, 116), "also holds" (212, 182),
   "also applies" (186), "also equivalent" (251), "also suffices" (147), "also constructs" (055, 305),
   "also minimizes" (090), "also contain" (250), "also have" (336), "also EXPTIME-complete" (133),
-  "The algebraic companion proves" (207). 91 of the 128 band clauses are bare declarative. 13 of the
+  "The algebraic companion proves" (207). 108 of the 147 band clauses are bare declarative. 13 of the
   40 probe hits are technical uses of the same words. A pass that probes only the bead's second list
   finds nothing, which is how the bead's own first probe of this question produced a false negative.
 - **A display title is not the manuscript's title.** The `preprints/` directory name carries the full
@@ -1524,12 +1597,12 @@ manuscript of family NNN in `notes/tables/subfindings.tsv`, whose `title` column
 - The pairing is a reading call on the abstract and the link text only. Manuscripts were not opened to
   confirm that a claimed title's paper contains the clause it is paired to, and an unclaimed title's
   paper may well prove a result the abstract omits — 260 and 238 are the cases that make that likely.
-- The population rule is provisional. The bead's 51 does not reproduce; the recorded rule yields 159
-  families over 468 manuscripts, and the revisit condition is in the population section.
-- 8 families with two or more manuscripts are not read, carrying 46 manuscripts: 0 at 3-4
-  manuscripts (0) and 8 at 5 or more (46). The page covers 159 of the 167.
+- The population rule is provisional. The bead's 51 does not reproduce; the recorded rule yields 167
+  families over 514 manuscripts, and the revisit condition is in the population section.
+- Every family with two or more manuscripts is read: the page covers 167 of the 167, carrying 514
+  manuscripts.
 - The 426 comparator-link rows in `notes/tables/subfindings.tsv` are not paired; only the 719 manuscript rows
-  are eligible, and only 468 of those are in this population.
+  are eligible, and all 514 of those are in this population.
 - Clause boundaries were chosen by reading, not by a parser: a clause is a sentence, or a sentence
   fragment when one sentence states two results (039, 227, 271). Two clauses are quoted twice because
   each names two manuscripts (102, 267).
