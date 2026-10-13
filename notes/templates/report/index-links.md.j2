@@ -178,8 +178,8 @@ so the injected hrefs live only in the test file. The page's own prose is not mu
 `verify_page_sync.py` owns that check and mutates in memory, so neither script writes the page.
 The sixth test pins the basename pass — both set sizes (1,027 index basenames, 25 table basenames),
 the 6 intra-tree duplicates, 0 collisions, and a collision injected by handing the pass a shared
-name. The seventh test asserts the scan baseline this page quotes — 1,033 pages, 66,108 links, 0
-broken, 17,700 resolving to a directory and 48,408 to a file — so a scan that drifts moves the page
+name. The seventh test asserts the scan baseline this page quotes — 1,033 pages, 66,109 links, 0
+broken, 17,700 resolving to a directory and 48,409 to a file — so a scan that drifts moves the page
 and fails the test together. The self-test earned its keep on the first run, catching two real
 defects:
 
