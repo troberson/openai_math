@@ -286,3 +286,13 @@ issue.
 - **A prose needle names the mutated value, not the original.** Chosen 2026-10-13 on `math-el4.5`. The
   render-diff line reports the page's mutated line, so a needle keyed to the pre-mutation text never
   fires. The existing rejected-rule needle already names `(57)`, the value the mutation writes.
+- **The FTS layer is cheap, and the TSV index is blunt exactly where the bead said it is.** Measured
+  2026-10-13 on `math-u41.6` with `notes/scripts/build_index_db.py`: **8,007** `.tex` files
+  (**135,108,224** B) plus the **372** abstracts build an FTS5 index of **8,379** rows in **1.65 s**,
+  landing **202,760,192** B (193 MB) under the keyed record. Every probe term answers in under **1 ms**
+  — `manifold` 727 hits, `eigenvalue` 666, `semidefinite` 325, `Schoenflies` 32, `Jiang-Su` 24,
+  `Ricci flow` 22, `Laughlin` 12, `amenable` 61, `Landau-Siegel` 2, `Turan` 1. The index's four texts
+  are title, abstract, scope note and derived Lean paths, so a body term is not reachable at all; the
+  layer is worth recommending as routine. The wall times are a property of a run, not of the digest, so
+  they are recorded here as a dated observation and the database stays untracked. Revisit if the corpus
+  grows: the build is linear in bytes and the database is 1.5x the corpus.
