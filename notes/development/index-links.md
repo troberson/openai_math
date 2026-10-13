@@ -143,17 +143,39 @@ a subset that passes; the disk check is the full set and also passes. The 18,095
 all verified by the disk scan, and 16,989 of them (94%) sit on name pages, which is where the
 tables repeat targets.
 
+## The basename invariant the table move made
+
+`math-faz.6` moved the 16 generated tables from `notes/index/` into `notes/tables/` so every TSV in
+the repo sits in one directory. The invariant that keeps that move safe is that the two trees share
+no file basename: an index page links a table by relative path, so a bare basename is ambiguous when
+both trees carry it, and a link that looks like it resolves can resolve into the wrong tree. The
+checker prints the pass with its rule:
+
+```
+basename collisions (notes/index vs notes/tables)  0  over 1027 index basenames and 25 table basenames
+```
+
+The index tree carries 1,027 distinct file basenames over 1,033 pages and `notes/tables/` carries
+25; the pass reports 0 shared, and 6 basenames are shared *inside* the index tree — 6 discipline
+names are also topic terms, so `disciplines/differential-geometry.md` and
+`topics/differential-geometry.md` share a basename. That is benign: links are relative, so there is
+no ambiguity, and it is why the pass is scoped to the two trees rather than to the index alone. The
+self-test pins both set sizes and injects a collision by handing the pass a shared name, so a pass
+that reports 0 because a set is empty is not a pass.
+
 ## Self-test
 
-`notes/scripts/tests/test_index_links.py` injects 20 broken hrefs — one per category the
-checker classifies, so a checker that only walks manuscript paths fails — and requires 7 real
-hrefs to resolve. The 6 tests run through `python3 notes/scripts/run_tests.py
+`notes/scripts/tests/test_index_links.py` injects 21 broken hrefs — one per category the
+checker classifies, so a checker that only walks manuscript paths fails — and requires 8 real
+hrefs to resolve. The 7 tests run through `python3 notes/scripts/run_tests.py
 notes/scripts/tests/test_index_links.py -q`; the checker's own run takes no `--mutant` argument,
 so the injected hrefs live only in the test file. The page's own prose is not mutated here:
 `verify_page_sync.py` owns that check and mutates in memory, so neither script writes the page.
-The sixth test asserts the scan baseline this page quotes — 1,033 pages, 66,107 links, 0 broken,
-17,700 resolving to a directory and 48,407 to a file — so a scan that drifts moves the page and
-fails the test together. The self-test earned its keep on the first run, catching two real
+The sixth test pins the basename pass — both set sizes (1,027 index basenames, 25 table basenames),
+the 6 intra-tree duplicates, 0 collisions, and a collision injected by handing the pass a shared
+name. The seventh test asserts the scan baseline this page quotes — 1,033 pages, 66,107 links, 0
+broken, 17,700 resolving to a directory and 48,407 to a file — so a scan that drifts moves the page
+and fails the test together. The self-test earned its keep on the first run, catching two real
 defects:
 
 - `notes/index/names/` is a directory, and the classifier tagged it `index-table` because it
