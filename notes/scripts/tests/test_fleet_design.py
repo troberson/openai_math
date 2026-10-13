@@ -30,7 +30,7 @@ fires for every fault, so no needle is that line.
 The clean test asserts the passes are silent and pins the counts they report: 32 anchors, 24 count
 and probe phrases, 0 sync problems, 2 atomicity matches over 65 scripts and 18 catlib modules, 12
 sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 25 TSVs at 2,174,703 bytes, 631M
-`preprints/`, 1,740M `lean/OAI/`, 12M `notes/index/`, 78 gate rows, 10 writer rows, 1 env hit, 8
+`preprints/`, 1,740M `lean/OAI/`, 12M `notes/index/`, 78 gate rows, 11 writer rows, 1 env hit, 8
 purity scripts,
 the sites at `atomic.py:42` / `atomic.py:84`, `render_reports.py:1184`
 and `build_catalog.py:128` / `build_index.py:591`, and the probe row the amplification table quotes
@@ -81,11 +81,12 @@ MUTANTS = [
                          "`render_reports.py:1184` `notes/development/fleet-design.md:9999`", 1)),
     ("prose count in the size argument", "count phrase not in the page: **2,174,703** bytes",
      lambda t: t.replace("**2,174,703** bytes", "**2,174,702** bytes", 1)),
-    # The TSV count and the writer-row count are measured from the fleet's own tree and the ROWS block,
-    # so a page that names a count the measurement contradicts is caught by the count pass. The tree
-    # carries 25 TSVs since `math-faz.6` moved the 16 generated tables into it.
+    # The TSV count is measured from the fleet's own tree, but the L2 row that carries it is literal
+    # template text, not a slot, so the count pass never reads it: the needle is the page line the
+    # render diff names. The tree carries 25 TSVs since `math-faz.6` moved the 16 generated tables
+    # into it.
     ("TSV count understated",
-     "count phrase not in the page: **25** `notes/tables/*.tsv` present on disk",
+     "page line 13: page '| **L2** | the derived records: the **24**",
      lambda t: t.replace("**25** `notes/tables/*.tsv` present on disk",
                          "**24** `notes/tables/*.tsv` present on disk", 1)),
     # The probe-record count is measured from the tracked record tree, so a page that names a record
@@ -95,12 +96,12 @@ MUTANTS = [
      "count phrase not in the page: The tracked records are **12**:",
      lambda t: t.replace("The tracked records are **12**:", "The tracked records are **11**:", 1)),
     ("writer-row count in the gate paragraph",
-     "count phrase not in the page: the **10** writers declare what they write",
-     lambda t: t.replace("the **10** writers declare what they write",
-                         "the **9** writers declare what they write", 1)),
+     "count phrase not in the page: the **11** writers declare what they write",
+     lambda t: t.replace("the **11** writers declare what they write",
+                         "the **10** writers declare what they write", 1)),
     ("writer-row count in the non-determinism sentence",
-     "count phrase not in the page: Non-determinism sources in the **10** writers, by class:",
-     lambda t: t.replace("Non-determinism sources in the **10** writers",
+     "count phrase not in the page: Non-determinism sources in the **11** writers, by class:",
+     lambda t: t.replace("Non-determinism sources in the **11** writers",
                          "Non-determinism sources in the **9** writers", 1)),
     # A measured site shifted to a line that exists in its file passes the anchor pass and the count
     # pass, so only the site comparison can catch it. One fault per list the comparison reads.
@@ -154,7 +155,7 @@ def test_clean_page(mod, text):
         f"digests {p['digests']}, ignored {p['ignored']}, tsv {p['tsv_bytes']}"
     assert (p["du"]["preprints"], p["du"]["oai"], p["du"]["index"]) == (631, 1740, 12), \
         f"du {p['du']}"
-    assert (p["gate_rows"], p["writer_rows"], p["env_hits"], len(p["purity"])) == (78, 10, 1, 8), (
+    assert (p["gate_rows"], p["writer_rows"], p["env_hits"], len(p["purity"])) == (78, 11, 1, 8), (
         f"gate rows {p['gate_rows']}, writer rows {p['writer_rows']}, env hits {p['env_hits']}, "
         f"purity {len(p['purity'])}")
     assert sorted(p["atomic_sites"]) == ["atomic.py:42", "atomic.py:84"], p["atomic_sites"]
