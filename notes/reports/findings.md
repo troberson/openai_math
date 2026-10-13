@@ -244,7 +244,7 @@ not survive a re-run.
 | S22 | [`notes/scripts/extract_citations.py`](../scripts/extract_citations.py) | 257 | The citation extractor and its coverage report |
 | S23 | [`notes/reports/names.md`](names.md) | 269 | The six-layer name measurement and the subject/citation split |
 | S24 | [`notes/reports/topics.md`](topics.md) | 327 | The curated topic vocabulary and its per-layer counts |
-| S25 | [`notes/reports/subfinding-pairs.md`](subfinding-pairs.md) | 1215 | The abstract-clause to display-title pairing, 122 families |
+| S25 | [`notes/reports/subfinding-pairs.md`](subfinding-pairs.md) | 1216 | The abstract-clause to display-title pairing, 122 families |
 | S26 | [`notes/reports/sources.md`](sources.md) | 144 | The per-manuscript LaTeX surface: roots, main files, environments |
 | S27 | [`notes/development/index-links.md`](../development/index-links.md) | 235 | The rendered index link check |
 | S28 | [`notes/reports/dependency-drift.md`](dependency-drift.md) | 221 | Pinned commits, patches, toolchain normalisation |
