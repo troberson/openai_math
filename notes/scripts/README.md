@@ -126,8 +126,11 @@ after it, **6** print a wall or a candidate comparison that no page's counts com
 phase, pool and fresh-process probes, the links phase and scan-candidate probes, and the Lean import
 layout probe), and `gate.py` prints the gate report itself.
 The Gate column is the invocation the gate list runs: `notes/scripts/gate.py`, which runs **78**
-invocations — the **10** gated writers (the two writers it does not run are `build_report_templates.py`
-and `measure_open_probe.py`, each for the reason in its own row), the 45 gated report-only rows (including `check_summary_manuscripts.py`
+invocations — the **11** gated writers (the four writers it does not run as writer rows are
+`build_report_templates.py` and `measure_open_probe.py`, each for the reason in its own row, and
+`measure_names.py` and `extract_named_results.py`, which run as `--check-only` rows; the eleventh
+writer row is `refresh_summary_line_counts.py`, a checker that rewrites the summaries pages), the 44
+gated report-only rows (including `check_summary_manuscripts.py`
 and `locate_summary_quotes.py`, `check_index_links.py` plain and its extracted self-tests row, and
 the twenty-five extracted self-tests rows, `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q`,
 `run_tests.py notes/scripts/tests/test_conjecture_standing.py -q`,
@@ -237,7 +240,7 @@ argument, so a gate run over it would read one manuscript chosen by the list rat
 writes nothing, so it sits here rather than in the checker table, which lists scripts that verify a
 page's text. `math-o3a.3` removed its sync pass on `notes/development/index-links.md` — the page is compared with
 `render_reports.py`'s render of it by `verify_page_sync.py`, which mutates the page in memory — and
-the pass that extracted its self-tests removed its `--mutant` branch: the 20 injected hrefs live in
+the pass that extracted its self-tests removed its `--mutant` branch: the 21 injected hrefs live in
 `notes/scripts/tests/test_index_links.py`, and the prose mutant `math-a0r.6.2` added is
 `verify_page_sync.py`'s. `trap()` stays in the checker because `render_reports.py` renders its two
 rows into the page's scanner table.
@@ -418,7 +421,7 @@ added `measure_checker_needles.py`, so the count is **78** after `math-o3a.1` ad
 scheduler and `math-o3a.5.2`'s `--both` collapse added took the list to what the `ROWS` array
 carries. That `--mutant` row is now the `run_tests.py` row for `notes/scripts/tests/test_index_links.py`,
 and the prose mutant is `verify_page_sync.py`'s, so the row count did not move. The count is read
-from the array, not from the history: **10** writer rows, **45**
+from the array, not from the history: **11** writer rows, **44**
 report-only rows, **23** checker invocations.
 
 `verify_script_ownership.py` — this page's own checker — is not in the table: a checker cannot list
