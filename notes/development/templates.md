@@ -22,7 +22,7 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `dependency-drift.md.j2` | 229 | 11,558 | 95 | `notes/reports/dependency-drift.md` | `verify_dependency_drift.py` | NOT DERIVED |
 | `fleet-design.md.j2` | 467 | 40,555 | 35 | `notes/development/fleet-design.md` | `verify_fleet_design.py` | 20 |
 | `formalization-faithfulness.md.j2` | 265 | 11,818 | 65 | `notes/reports/formalization-faithfulness.md` | `verify_faithfulness.py` | 13 |
-| `index-design.md.j2` | 245 | 14,250 | 106 | `notes/development/index-design.md` | `verify_index_design.py` | 82 |
+| `index-design.md.j2` | 245 | 14,250 | 106 | `notes/development/index-design.md` | `verify_index_design.py` | 83 |
 | `index-links.md.j2` | 240 | 14,283 | 86 | `notes/development/index-links.md` | `check_index_links.py` | NOT DERIVED |
 | `links.md.j2` | 224 | 12,314 | 110 | `notes/reports/links.md` | `extract_links.py` | NOT DERIVED |
 | `named-results.md.j2` | 368 | 25,311 | 83 | `notes/reports/named-results.md` | `verify_named_results.py` | 65 |
