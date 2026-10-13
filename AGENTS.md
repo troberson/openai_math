@@ -681,11 +681,12 @@ lives in this file and nowhere else.
   every quoted title to be verbatim on that line, requires each `[fam:seq]` to resolve to a manuscript
   row of the block's own family, requires `claimed` and `unclaimed` to be disjoint and to cover the
   family's full `1..n` exactly once, and re-measures the ten Summary-table numbers from the parsed
-  lines. The eight injected mutants live in the test file (a paraphrase dressed as a quote, a clause
+  lines. The nine injected mutants live in the test file (a paraphrase dressed as a quote, a clause
   anchor on the wrong line, a title id borrowed from another family, an id in both partitions, a title
   dropped from the partition, a stale Summary-table count, a block for a family outside the population,
-  and a rejected-rule yield in prose altered), each asserted against the pass that owns it; the last is
-  keyed to the page line the render diff names, because the counts pass never parses that sentence.
+  a rejected-rule yield in prose altered, and the filter-cost clause count in prose altered), each
+  asserted against the pass that owns it; the last two are keyed to the page line the render diff names,
+  because the counts pass never parses those sentences.
   `main()` reads no argv, so `--mutant` is inert in the checker. `load_inputs()` is under
   `functools.cache` (`:54`), so the row pays the `overview.tex`, `subfindings.tsv` and ledger walk once.
   Its clean test pins the population the passes report: 167 blocks over 514 manuscripts, 203 clause

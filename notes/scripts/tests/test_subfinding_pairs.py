@@ -12,7 +12,7 @@ the tail pass; and the render diff against `render_reports.py`.
 
 Each fault below mutates the page text in memory, so no page is written. `verify_subfinding_pairs.py`'s
 `load_inputs()` is under `functools.cache` (`:54`): the checker writes nothing and the tests mutate page
-text, so a second call in the same process cannot see a different corpus, and the nine `check()` calls
+text, so a second call in the same process cannot see a different corpus, and the ten `check()` calls
 this file makes pay the `overview.tex`, `subfindings.tsv` and ledger walk once.
 
 Run: `python3 notes/scripts/run_tests.py notes/scripts/tests/test_subfinding_pairs.py -q`
@@ -66,6 +66,10 @@ MUTANTS = [
      "page line 39: page 'tried and rejected: `also` (57)",
      lambda p: p.replace("tried and rejected: `also` (56)",
                          "tried and rejected: `also` (57)", 1)),
+    ("the filter-cost clause count in prose altered",
+     "page line 1587: page '  densest targets. Reading it yields **141** accepted clause pairs",
+     lambda p: p.replace("Reading it yields **141** accepted clause pairs",
+                         "Reading it yields **140** accepted clause pairs", 1)),
 ]
 
 
