@@ -30,7 +30,7 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `proof-density.md.j2` | 122 | 8,661 | 66 | `notes/reports/proof-density.md` | `measure_proof_density.py` | NOT DERIVED |
 | `scope-exclusions.md.j2` | 328 | 26,788 | 19 | `notes/reports/scope-exclusions.md` | `verify_scope_exclusions.py` | NOT DERIVED |
 | `sources.md.j2` | 156 | 9,400 | 29 | `notes/reports/sources.md` | `verify_sources.py` | 31 |
-| `subfinding-pairs.md.j2` | 1,552 | 56,339 | 403 | `notes/reports/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |
+| `subfinding-pairs.md.j2` | 1,626 | 59,482 | 422 | `notes/reports/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |
 | `t0-chains.md.j2` | 569 | 34,078 | 62 | `notes/reports/t0-chains.md` | `verify_t0_chains.py` | 12 |
 | `templates.md.j2` | 107 | 5,071 | 45 | `notes/development/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `topics.md.j2` | 335 | 23,082 | 117 | `notes/reports/topics.md` | `measure_topics.py` | NOT DERIVED |
