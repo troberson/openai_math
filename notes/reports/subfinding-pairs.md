@@ -38,11 +38,14 @@ prove-verbs in the abstract (33), two or more sentences containing a prove-verb 
 sentences (73). None yields 51, and the same shape of gap — a quoted count with no reproducible rule —
 is the counterexample 74 / 30 case recorded in `notes/reports/counterexample-tag.md`.
 
-**Decision, recorded 2026-10-07.** Population = (probe ∩ multi) ∪ the bead's ten named densest
-families = **49 families, 203 manuscripts** (206 before the 2026-10-07 upstream merge; family 032 lost
+**Decision, recorded 2026-10-07, extended 2026-10-13.** Population = (probe ∩ multi) ∪ the bead's ten
+named densest families ∪ band 1 (exactly 2 manuscripts and no probe word) =
+**122 families, 349 manuscripts** (206 before the 2026-10-07 upstream merge; family 032 lost
 three manuscripts to the withdrawal and stayed in the population). The union is chosen over the
 intersection because the bead's named targets are the point of the task — 034 at n=14 down to 211 at
-n=7 — and the probe is the point of its vocabulary warning. Revisit condition: if a later pass finds a
+n=7 — and the probe is the point of its vocabulary warning. Band 1 is added by `math-el4.9` because
+the bead's remaining set is the no-signalling-word set, and band 1 is its densest slice.
+Revisit condition: if a later pass finds a
 phrase rule that yields 51, re-measure the population before extending the page; the rework is a re-run
 of `notes/scripts/extract_subfinding_pairs.py` plus blocks for the families the new rule adds, which is
 cheap, so this bead keeps the task.
