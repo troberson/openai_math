@@ -226,3 +226,16 @@ issue.
   `build_report_templates.py` → `render_reports.py` → prove `git status --porcelain` empty, and the
   template commit and the re-rendered `notes/development/templates.md` commit are part of the same
   batch. Revisit if the census page gains a template.
+- **The not-checked line is a measured slot, so a band split belongs in the writer.** Chosen
+  2026-10-13 on `math-el4.9`. The pairing page's not-checked bullet is the `sp_notread` slot, so the
+  manuscript counts the bullet carries must come from `population()` — the remaining set is
+  `multi - pop`, split at 3-4 and 5+ manuscripts — not from prose. A hand-edited slot line makes the
+  builder report `NOT FOUND` against the recorded wrap, so the slot and its recorded prefix in
+  `SP_SPLIT` are updated together, then the template is rebuilt from HEAD. Revisit if the remaining
+  set is read: the bullet shrinks and the split moves.
+- **A bead acceptance that names an inert flag is rewritten, not left.** Chosen 2026-10-13 on
+  `math-el4.9`. The acceptance read `verify_subfinding_pairs.py --mutant` reports 0 problems with all
+  mutants caught; the checker reads no argv, so the flag does nothing and the criterion was
+  unsatisfiable as written. It now names the two rows that actually measure the page: the checker's
+  0 problems and the extracted test file's 9 passing tests. Revisit when a bead is written for a
+  checker that still carries its own mutant branch.
