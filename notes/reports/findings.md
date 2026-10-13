@@ -78,7 +78,7 @@ claim-to-evidence gap in the ledger: 46 families claiming named-target resolutio
 artefact behind them.
 Absence of formalization is not a weakness signal — 547 of 719 manuscripts are unformalized [S11].
 Within T0, **35** families ship exactly two manuscripts; **27** of them are the second-pass reading
-population, carrying **54** manuscripts, and "no coverage signal" holds for **26** of the 27 and fails
+population, carrying **54** manuscripts, and "no coverage signal" holds for **25** of the 27 and fails
 for 268, which carries `verification = 2` [S12].
 
 ## What the evidence layers show
@@ -111,7 +111,7 @@ README naming the command and its success criteria; **18** ship no README [S14].
 
 **The remaining layers are small.** **10** reasoning traces, all attributed to families by `README.md`
 [S15], 0 unattributed, shipping in 11 files (the Mézard–Parisi trace ships as both `.pdf` and `.tex`).
-**24** of 372 families have a summary page, covering **60** manuscripts [S2].
+**25** of 372 families have a summary page, covering **62** manuscripts [S2].
 
 **The counterexample families are the best-evidenced and the thinnest-evidenced at once.** The
 reading population is the counterexample tag intersected with tier ≠ T0: **28** families (19 T3,
@@ -174,7 +174,7 @@ directory** [S26]. Proof environments total **20,341**; statement environments t
 declared rule and **21,203** by the six-name list, the 85 gap being `assumption`, `foundation`,
 `auxproposition`, `hypothesis`, `auxlemma` and 10 names at ≤5 [S26].
 
-**The rendered index is link-clean.** **1,033** pages carry **66,110** links with **0** broken [S27].
+**The rendered index is link-clean.** **1,033** pages carry **66,111** links with **0** broken [S27].
 
 ## The dependency record
 
@@ -231,7 +231,7 @@ not survive a re-run.
 | S9 | [`notes/reports/abstracts.md`](abstracts.md) | 381 | The overview-abstract vs manuscript-abstract comparison |
 | S10 | [`notes/scripts/compare_abstracts.py`](../scripts/compare_abstracts.py) | 462 | The generator of that comparison |
 | S11 | [`notes/reports/t0-triage.md`](t0-triage.md) | 897 | The 130-family T0 reading pass: buckets, counts, unread remainder |
-| S12 | [`notes/reports/t0-chains.md`](t0-chains.md) | 542 | The 27 two-manuscript T0 families and their coverage signal |
+| S12 | [`notes/reports/t0-chains.md`](t0-chains.md) | 541 | The 27 two-manuscript T0 families and their coverage signal |
 | S13 | [`notes/reports/links.md`](links.md) | 217 | The typed-edge inventory: scope-note links, citation edges |
 | S14 | [`notes/reports/verification-dirs.md`](verification-dirs.md) | 400 | The 30 verification bundles and what each ships |
 | S15 | [`README.md`](../../README.md) | 51 | The release's own trace attributions |
@@ -272,6 +272,6 @@ not survive a re-run.
   inferred from their file names, not from a stated criterion.
 - **Not measured:** proof density per discipline (only per tier and per shape); the 101 families with
   no titled headline (why the manuscript names no headline is a reading question); the 225
-  manuscripts invisible to the citation method; the 4 topics with no hit; the 24 of 372 families that
+  manuscripts invisible to the citation method; the 4 topics with no hit; the 25 of 372 families that
   have a summary page, which is a coverage fraction, not a coverage claim.
 

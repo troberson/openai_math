@@ -114,7 +114,7 @@ def test_clean_page(mod, text):
     assert (p["traces"], p["trace_files"], p["ver_dirs"], p["bib_files"], p["bib_entries"],
             p["bib_hrefs"]) == (10, 11, 30, 521, 13802, 393), f"traces {p['traces']}, bib {p['bib_files']}"
     assert (p["ledger_set_bytes"], p["all_tsv_bytes"], p["disk_links"], p["disk_broken"],
-            p["disk_dirs"], p["rawbib_kib"]) == (297050, 2268990, 66110, 0, 17700, 2021), \
+            p["disk_dirs"], p["rawbib_kib"]) == (297050, 2268990, 66111, 0, 17700, 2021), \
         f"ledger set {p['ledger_set_bytes']}, all TSV {p['all_tsv_bytes']}, links {p['disk_links']}"
     assert (p["index_bytes"], p["index_pages"]) == (11530557, 1033), \
         f"index tree {p['index_bytes']} B over {p['index_pages']} pages"

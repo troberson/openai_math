@@ -11,8 +11,8 @@ comparison is; math whose `<` and `>` make the folded line lose text the raw lin
 that wraps across lines.
 
 The clean test pins the population the seeder reports for the two surfaces: **1,792** specs, **754**
-from the pair page and **1038** from the summaries pages; **1,777** seeded and **15** measured negatives
-(the spans the cited file does not carry, seeded to `start` 0); **1,089** single-line and **688** range
+from the pair page and **1,052** from the summaries pages; **1,791** seeded and **15** measured negatives
+(the spans the cited file does not carry, seeded to `start` 0); **1,092** single-line and **699** range
 specs; **262** heads widened past three words; **448** whole-quote specs; the `mode` split **1,720**
 raw, **57** folded, **15** not located; **0** round-trip failures. The seeded table on disk must
 reproduce every page quote, in its own class — byte-for-byte for `raw`, fold-equal for `folded` — so a
@@ -116,15 +116,15 @@ def test_clean_page(page_rows, summary_rows):
     all_rows = page_rows + summary_rows
     seeded = [s for s, _q in all_rows if s["start"] != "0"]
     assert len(page_rows) == 754
-    assert len(summary_rows) == 1038
-    assert len(all_rows) == 1792
-    assert len(seeded) == 1777
-    assert sum(1 for s in seeded if s["start"] == s["end"]) == 1089
-    assert sum(1 for s in seeded if s["start"] != s["end"]) == 688
+    assert len(summary_rows) == 1052
+    assert len(all_rows) == 1806
+    assert len(seeded) == 1791
+    assert sum(1 for s in seeded if s["start"] == s["end"]) == 1092
+    assert sum(1 for s in seeded if s["start"] != s["end"]) == 699
     assert sum(1 for s in seeded if len(s["head"].split()) > 3) == 262
     assert sum(1 for s in seeded if s["tail"] == "") == 448
     modes = Counter(s["mode"] for s, _q in all_rows)
-    assert (modes["raw"], modes["folded"], modes["none"]) == (1720, 57, 15), modes
+    assert (modes["raw"], modes["folded"], modes["none"]) == (1734, 57, 15), modes
     # Every seeded spec must reproduce its quote in its own class, so a spec that resolves to text the
     # page does not quote is a failure, not a pass.
     cache: dict[str, list[str]] = {}

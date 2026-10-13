@@ -106,7 +106,7 @@ RECORD = {
             "86 of these 130", "21 of these 130", "547 of 719", "44 families",
             "134 manuscripts", "93 families, 121 manuscripts", "21 families",
             "34 manuscripts", "the whole body of evidence"],
-    "S12": ["**26** of the 27", "`verification = 2`", "**27** families carrying **54** manuscripts"],
+    "S12": ["**25** of the 27", "`verification = 2`", "**27** families carrying **54** manuscripts"],
     "S13": ["393", "391", "156", "104", "417", "500", "14", "426", "416", "not** typed"],
     "S14": ["**30 dirs over 22 families**", "**12 of 30**", "**18 ship no README**",
             "finite-arithmetic certificate", "counts 4 `INPUTS.md`",
