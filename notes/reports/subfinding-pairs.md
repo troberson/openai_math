@@ -7,9 +7,10 @@ and which display title names it. Each pair is quoted with the line it was verif
 that state a sub-finding no title names are recorded as unmatched rather than forced onto the nearest
 title.
 
-Population: **49 families over 203 manuscripts**. The rule is the bead's own two signals unioned with
+Population: **122 families over 349 manuscripts**. The rule is the bead's own two signals unioned with
 its named targets — abstracts containing a multi-claim phrase **and** at least two manuscripts, plus
-the ten densest families it names. The bead states 51 families for the intersection; that number does
+the ten densest families it names — and band 1, the families with exactly 2 manuscripts and no probe
+word, which `math-el4.9` added. The bead states 51 families for the intersection; that number does
 not reproduce, and the gap is the first thing this page records.
 
 ## The population, and why it is not the bead's 51
