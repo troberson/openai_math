@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify notes/index-design.md against the tree it describes.
+"""Verify notes/development/index-design.md against the tree it describes.
 
 Report-only; writes nothing. Three passes over the page:
 
@@ -39,7 +39,7 @@ from catlib import render as RD
 from catlib import yaml as Y
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-PAGE = ROOT / "notes" / "index-design.md"
+PAGE = ROOT / "notes" / "development" / "index-design.md"
 
 ANCHOR = re.compile(r"`([\w./+-]+?\.(?:py|md|tex|json|tsv|yaml)):(\d+)`")
 # Any backticked path:line shape, so a mistyped extension is a failure and not a skip.

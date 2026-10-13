@@ -29,7 +29,7 @@
 | [QACParity](../../../lean/ComparatorChallenges/QACParity.json) | `OAI.QAC.parity_lower_bound` | [Parity.lean](../../../lean/OAI/InformationTheory/QuantumCircuit/Parity.lean) | [`OAI/InformationTheory/QuantumCircuit`](../../../lean/OAI/InformationTheory/QuantumCircuit/) |
 | [RegularParity](../../../lean/ComparatorChallenges/RegularParity.json) | `OAI.QAC.parity_lower_bound_polynomial_size` | [Main.lean](../../../lean/OAI/InformationTheory/QuantumCircuit/Main.lean) | [`OAI/InformationTheory/QuantumCircuit`](../../../lean/OAI/InformationTheory/QuantumCircuit/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

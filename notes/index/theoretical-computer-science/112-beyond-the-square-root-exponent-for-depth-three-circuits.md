@@ -27,7 +27,7 @@
 |---|---|---|---|
 | [DepthThree](../../../lean/ComparatorChallenges/DepthThree.json) | `OAI.DepthThreeLowerBound.exists_polynomial_time_language_depth_three_lower_bound` | [Main.lean](../../../lean/OAI/Computability/DepthThree/Main.lean) | [`OAI/Computability/DepthThree`](../../../lean/OAI/Computability/DepthThree/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

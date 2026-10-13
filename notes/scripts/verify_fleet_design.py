@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check `notes/fleet-design.md` — the four-layer design and its measured inventory.
+"""Check `notes/development/fleet-design.md` — the four-layer design and its measured inventory.
 
 Report-only; writes nothing. Seven passes:
 
@@ -52,9 +52,10 @@ from typing import TypedDict
 from catlib import render as RD
 
 ROOT = Path(__file__).resolve().parents[2]
-PAGE = ROOT / "notes" / "fleet-design.md"
+PAGE = ROOT / "notes" / "development" / "fleet-design.md"
 SCRIPTS = ROOT / "notes" / "scripts"
-PROBE = [ROOT / "notes/probe/2026-10-11_writers.txt", ROOT / "notes/probe/2026-10-11_checkers.txt"]
+PROBE = [ROOT / "notes/development/probe/2026-10-11_writers.txt",
+         ROOT / "notes/development/probe/2026-10-11_checkers.txt"]
 DIGEST_PATHS = ["HEAD:preprints", "HEAD:lean", "HEAD:overview.tex", "HEAD:CONTENTS.md",
                 "HEAD:reasoning_traces"]
 HAND = {"topics.tsv", "conjecture-standing.tsv"}
@@ -181,7 +182,8 @@ def population() -> Pop:
                              "preprints", "lean", "overview.tex", "CONTENTS.md",
                              "reasoning_traces").splitlines() if l.strip()]
     tsvs = sorted((ROOT / "notes" / "tables").glob("*.tsv"))
-    probe_records = len([p for p in (ROOT / "notes" / "probe").iterdir() if p.is_file()])
+    probe_records = len([p for p in (ROOT / "notes" / "development" / "probe").iterdir()
+                         if p.is_file()])
     tsv_bytes = sum(len(p.read_bytes()) for p in tsvs)
     du: dict[str, int] = {}
     for name, rel in (("preprints", "preprints"), ("oai", "lean/OAI"), ("index", "notes/index")):
@@ -432,7 +434,7 @@ def main() -> int:
     page = PAGE.read_text(encoding="utf-8")
     pop = population()
     problems, n_anchor, n_phrases, n_sync = check(page)
-    print("=== notes/fleet-design.md check ===")
+    print("=== notes/development/fleet-design.md check ===")
     print(f"atomicity grep: {pop['atomic']} match{'es' if pop['atomic'] != 1 else ''} "
           f"over {pop['scripts']} scripts "
           f"(the two needle-carrying scripts excluded) + "
@@ -440,7 +442,7 @@ def main() -> int:
     print(f"sync pass: {pop['sync']} scripts ({pop['sync_verify']} verify_, {pop['sync_other']} not)")
     print(f"tree digests: {pop['digests']}  ignored lines: {pop['ignored']}")
     print(f"notes/tables/*.tsv: {pop['tsv_count']} files, {pop['tsv_bytes']} bytes")
-    print(f"notes/probe/ records: {pop['probe_records']}")
+    print(f"notes/development/probe/ records: {pop['probe_records']}")
     print(f"gate rows: {pop['gate_rows']}  env hits: {pop['env_hits']}")
     for label, sites in (("atomic sites", pop["atomic_sites"]), ("env sites", pop["env_sites"]),
                          ("set sites", pop["set_sites"])):

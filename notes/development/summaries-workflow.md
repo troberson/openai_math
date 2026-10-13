@@ -86,8 +86,8 @@ confirm the destination with `git push --dry-run`.
 - **Stop the batch** when a gate fails twice on the same page. Two failures mean the checker or the
   format is wrong, not the page; fix that first, in its own commit.
 - **Stop the run** when a P1/P2 issue becomes ready. Summaries are P4 and rank below them.
-- **Never write an ungroundable page.** Record the family in `notes/summaries-blocked.md` with the
-  specific reason (what the sources do not state) and leave its `summary` row 0.
+- **Never write an ungroundable page.** Record the family in the Decision points section below with
+  the specific reason (what the sources do not state) and leave its `summary` row 0.
 - **Ambiguity:** record the decision point below with the provisional choice and what would force a
   revisit, then keep going. If it is critical, or fixing it later means rewriting pages, claim a
   different bead and come back.
@@ -162,3 +162,8 @@ issue.
   shared-basename set index ∩ summaries from **13** to **14** (`notes/index/README.md` exists), so the
   same commit re-targets `verify_script_ownership.py`'s shared-basename rule. Revisit if the page gains
   prose that needs a family-keyed check.
+- **Blocked families go in this log, not a page.** Chosen 2026-10-12 on `math-faz.3`: the stop rule
+  named `notes/summaries-blocked.md`, which was never created — `git log` on that path is empty, so the
+  rule pointed at a page that does not exist. The rule now records the blocked family here with the
+  reason and leaves its `summary` row 0. Revisit if the blocked set grows past a few families and a
+  table is cheaper than prose.

@@ -206,7 +206,7 @@ manuscript-level flag.
   identical report — but no page was read for prose quality, and the byte cost of the rendered tree
   was not measured. The render-time figure is the registry's own subset: the disk check
   (`notes/scripts/check_index_links.py`) covers **66,107** links over the same 1,033 pages, also with
-  **0** broken, and **17,700** of them resolve to a directory. `notes/index-links.md` carries that
+  **0** broken, and **17,700** of them resolve to a directory. `notes/development/index-links.md` carries that
   measurement; the prose-quality and byte-cost exclusions above are unchanged by it.
 - The **13,802** bib entries are counted by `^\s*@\w+\s*{`; commented-out entries are included and
   none was checked to parse as a BibTeX entry.

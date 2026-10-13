@@ -1,6 +1,6 @@
 """The self-tests for `notes/scripts/verify_index_design.py`.
 
-The checker verifies `notes/index-design.md` against the tree it describes. Anchors: every
+The checker verifies `notes/development/index-design.md` against the tree it describes. Anchors: every
 backticked `path:line` shape must name a file that exists and a line inside it, so a mistyped
 extension fails instead of being skipped, and every fenced block is attributed to its nearest
 preceding anchor and matched at consecutive lines. Counts: all 82 count and byte phrases are rebuilt

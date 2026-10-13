@@ -10,8 +10,10 @@ protocol deliberately excludes, equals the writers table in `notes/scripts/READM
 its own output, so a write would invalidate the record it just landed); and every L1 file is on disk.
 
 **B. L1 exactness.** The audit-hook open-mode records at
-`notes/probe/2026-10-12_rr_fleet.txt`, `notes/probe/2026-10-12_seed_quotes.txt`,
-`notes/probe/2026-10-11_writers.txt` and `notes/probe/2026-10-10_writers.txt` list every `notes/`
+`notes/development/probe/2026-10-12_rr_fleet.txt`,
+`notes/development/probe/2026-10-12_seed_quotes.txt`,
+`notes/development/probe/2026-10-11_writers.txt` and
+`notes/development/probe/2026-10-10_writers.txt` list every `notes/`
 path each target opened, with its mode. The registry's L1 must equal that set with the writer's own
 outputs removed: a file the writer reads that the key does not name is a cache that can serve stale
 bytes, which is the failure mode L1 exists to prevent, and a file the key names that the writer never
@@ -61,13 +63,13 @@ from catlib.promote import (
 # is what makes the registry's `notes/tables/catalog.tsv` provable.
 # `2026-10-12_measure_templates` is the census producer's record: it names the 1,049-file index tree
 # the census counts renders into and the 24-file template tree it reads, which no earlier record does.
-PROBES = (ROOT / "notes" / "probe" / "2026-10-12_extract_named_results.txt",
-          ROOT / "notes" / "probe" / "2026-10-12_measure_templates.txt",
-          ROOT / "notes" / "probe" / "2026-10-12_seed_quotes_summaries.txt",
-          ROOT / "notes" / "probe" / "2026-10-12_rr_fleet.txt",
-          ROOT / "notes" / "probe" / "2026-10-12_seed_quotes.txt",
-          ROOT / "notes" / "probe" / "2026-10-11_writers.txt",
-          ROOT / "notes" / "probe" / "2026-10-10_writers.txt")
+PROBES = (ROOT / "notes" / "development" / "probe" / "2026-10-12_extract_named_results.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-12_measure_templates.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-12_seed_quotes_summaries.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-12_rr_fleet.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-12_seed_quotes.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-11_writers.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-10_writers.txt")
 README = ROOT / "notes" / "scripts" / "README.md"
 CACHE = ROOT / ".qwen" / "cache" / "records"
 
@@ -151,14 +153,15 @@ def check(artifacts: dict[str, tuple[str, ...]], l1: dict[str, tuple[str, ...]],
             continue
         # The probe record prints its `notes/` bucket, so the exactness check is scoped to that
         # bucket. A registry entry outside `notes/` (the root README.md) is proved by the source, not
-        # by the record. The record omits `notes/scripts/` and `notes/probe/` from its printed paths
-        # (the probe's own rule), so the comparison uses the same scope: a registry entry naming the
-        # script tree hashes the sources the writer scans, and the record cannot name them.
+        # by the record. The record omits `notes/scripts/` and `notes/development/probe/` from its
+        # printed paths (the probe's own rule), so the comparison uses the same scope: a registry entry
+        # naming the script tree hashes the sources the writer scans, and the record cannot name them.
         want = {path for path in reads[name]
                 if not any(path.startswith(own) for own in artifacts[name])}
         got = {str(pp.relative_to(ROOT)) for entry in entries for pp in expand(entry)
                if str(pp.relative_to(ROOT)).startswith("notes/")
-               and not str(pp.relative_to(ROOT)).startswith(("notes/scripts/", "notes/probe/"))}
+               and not str(pp.relative_to(ROOT)).startswith(("notes/scripts/",
+                                                             "notes/development/probe/"))}
         if want != got:
             p.append(f"L1 drift {name}: probe names {sorted(want - got)}, "
                      f"registry names {sorted(got - want)}")

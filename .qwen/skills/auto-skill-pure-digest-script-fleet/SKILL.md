@@ -135,7 +135,7 @@ reads / unsorted `iterdir`/`rglob`). Here: 0 nondeterministic calls (no `datetim
 `uuid` / `getpid` / `platform` in any writer), **2** env reads (the two `RENDER_REPORTS_CHILD`
 children), 2 set-iteration sites consumed as `len(set(...))`, **9 in the writers + 9 in `catlib`**
 unsorted directory walks consumed as a length or dict keys — i.e. **deterministic by consumption, not
-by construction**; the current site list is in `notes/fleet-design.md`. Fix it by sorting at the
+by construction**; the current site list is in `notes/development/fleet-design.md`. Fix it by sorting at the
 collection boundary.
 Do **not** pin `PYTHONHASHSEED` as the fix.
 
@@ -147,7 +147,7 @@ Do **not** pin `PYTHONHASHSEED` as the fix.
 - **One process, many passes.** The biggest writer re-parsed the release tex 58× and re-read the
   ledger 36× because each checker shells out to it (pre-record-store measure). Post-store, the same
   writer measures **75,394** opens with **63,075** repeats — the repeats are the record-store reads,
-  not corpus walks. Current figures: `notes/fleet-design.md` options table.
+  not corpus walks. Current figures: `notes/development/fleet-design.md` options table.
 - **One writer per artifact.** One generated page had two writers (a renderer and a checker); pick the
   owner (recommendation: the renderer owns, the checker only checks).
 - **Split measure from render** so a page's numbers are measured, and the page-vs-writer diff proves

@@ -41,7 +41,7 @@
 | [ThorpRouting](../../../lean/ComparatorChallenges/ThorpRouting.json) | `OAI.ThorpNine.main` | [Main.lean](../../../lean/OAI/Probability/ThorpRouting/Main.lean) | [`OAI/Probability/ThorpRouting`](../../../lean/OAI/Probability/ThorpRouting/) |
 | [ThorpWeightedCompatibility](../../../lean/ComparatorChallenges/ThorpWeightedCompatibility.json) | `OAI.ThorpCompatibility.weightedCompatibility_main` | [Main.lean](../../../lean/OAI/Probability/ThorpCompatibility/Main.lean) | [`OAI/Probability/ThorpCompatibility`](../../../lean/OAI/Probability/ThorpCompatibility/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

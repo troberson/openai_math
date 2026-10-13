@@ -32,7 +32,7 @@
 | [QuasiRiemannHypothesis](../../../lean/ComparatorChallenges/QuasiRiemannHypothesis.json) | `OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re` | [Nonvanishing.lean](../../../lean/OAI/NumberTheory/DirichletL/Nonvanishing.lean) | [`OAI/NumberTheory/DirichletL`](../../../lean/OAI/NumberTheory/DirichletL/) |
 | [SiegelZeros](../../../lean/ComparatorChallenges/SiegelZeros.json) | `OAI.SiegelZeros.WeightedTorusJets.exists_absolute_real_zero_gap` | [Theorem.lean](../../../lean/OAI/NumberTheory/SiegelZeros/Conclusions/Theorem.lean) | [`OAI/NumberTheory/SiegelZeros/Conclusions`](../../../lean/OAI/NumberTheory/SiegelZeros/Conclusions/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

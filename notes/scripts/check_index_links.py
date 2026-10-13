@@ -24,7 +24,7 @@ Coverage is reconciled against a fresh build_catalog.py parse: 719 manuscript PD
 10 reasoning traces in 11 files, 30 verification dirs, 192 Lean files named by the
 yaml over 183 module dirs. CONTENTS.md is checked as the shipped-surface baseline in
 the same pass. Links are also counted per page group (names, families, topics,
-disciplines, entry point), which is what the coverage gap in notes/index-links.md
+disciplines, entry point), which is what the coverage gap in notes/development/index-links.md
 quotes: the render-time registry total minus the scanned total, attributed per group.
 
 Run: python3 notes/scripts/check_index_links.py [--contents]
@@ -35,10 +35,10 @@ the broken hrefs, requires the real hrefs to resolve, and asserts the paren-bala
 the CAT(0) path whole where `[^)]*` truncates it. `trap()` stays in this file because
 `render_reports.py` renders its two rows into the page's scanner table.
 
-The page check is not here: `notes/index-links.md` is compared with `render_reports.py`'s render of
-it by `verify_page_sync.py`, which owns that pass and mutates the page in memory. The scan proves
-the counts are measured; it proves nothing about the sentences around them, and the page's tables
-are prose in the template, not report output.
+The page check is not here: `notes/development/index-links.md` is compared with `render_reports.py`'s
+render of it by `verify_page_sync.py`, which owns that pass and mutates the page in memory. The scan
+proves the counts are measured; it proves nothing about the sentences around them, and the page's
+tables are prose in the template, not report output.
 """
 from __future__ import annotations
 
@@ -174,8 +174,8 @@ def resolve(page_rel, href):
 def trap():
     """The paren-balanced scanner demonstrated on the line that breaks `[^)]*`.
 
-    `render_reports.py` renders these two rows into `notes/index-links.md`, so the trap stays
-    demonstrated rather than recorded: the naive pattern truncates at `(0)`, the truncated target
+    `render_reports.py` renders these two rows into `notes/development/index-links.md`, so the trap
+    stays demonstrated rather than recorded: the naive pattern truncates at `(0)`, the truncated target
     does not exist, and a checker built on `[^)]*` reports a broken link that is not there.
     """
     line = f"[paper](../../../{CAT_DIR}/paper.pdf)"
@@ -230,8 +230,8 @@ def contents_links():
 def measure() -> dict[str, Any]:
     """Every number the report prints, as data.
 
-    `notes/index-links.md` is rendered from this dict by `render_reports.py`, which imports this
-    module; `main()` prints the same dict. The page and the report share one measurement, so the
+    `notes/development/index-links.md` is rendered from this dict by `render_reports.py`, which imports
+    this module; `main()` prints the same dict. The page and the report share one measurement, so the
     report stays the page's source and the two cannot drift apart.
     """
     links = check_index()

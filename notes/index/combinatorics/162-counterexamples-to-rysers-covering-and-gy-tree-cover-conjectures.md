@@ -29,7 +29,7 @@
 | [RyserCovering](../../../lean/ComparatorChallenges/RyserCovering.json) | `OAI.RyserCoveringCounterexample.exists_prime_eventually_counterexampleRank` | [Main.lean](../../../lean/OAI/Combinatorics/Ryser/Construction/Main.lean) | [`OAI/Combinatorics/Ryser/Construction`](../../../lean/OAI/Combinatorics/Ryser/Construction/) |
 | [RyserOddExtensions](../../../lean/ComparatorChallenges/RyserOddExtensions.json) | `OAI.RyserOdd.eventualOddFailures_and_infinite` | [OddExtensions.lean](../../../lean/OAI/Combinatorics/Ryser/OddExtensions.lean) | [`OAI/Combinatorics/Ryser`](../../../lean/OAI/Combinatorics/Ryser/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

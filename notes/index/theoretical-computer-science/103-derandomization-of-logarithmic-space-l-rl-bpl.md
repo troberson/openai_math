@@ -27,7 +27,7 @@
 |---|---|---|---|
 | [LogspaceEquality](../../../lean/ComparatorChallenges/LogspaceEquality.json) | `OAI.ExactDerandomization.exact_logarithmic_space_derandomization` | [Equality.lean](../../../lean/OAI/Computability/Logspace/Equality.lean) | [`OAI/Computability/Logspace`](../../../lean/OAI/Computability/Logspace/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

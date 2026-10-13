@@ -27,7 +27,7 @@
 |---|---|---|---|
 | [PerfectCompleteness](../../../lean/ComparatorChallenges/PerfectCompleteness.json) | `OAI.PerfectCompleteness.Theorem11.exists_reduction` | [Theorem11.lean](../../../lean/OAI/Computability/PerfectCompleteness/Theorem11.lean) | [`OAI/Computability/PerfectCompleteness`](../../../lean/OAI/Computability/PerfectCompleteness/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

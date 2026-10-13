@@ -24,7 +24,7 @@ needs a human to say "continue". Say this explicitly when the user frames it as 
 
 ## 2. Write the handoff file before the first batch, not after the first loss
 
-Name it after the work, in the tracked docs dir: `notes/summaries-workflow.md`. Contents, in order:
+Name it after the work, in the tracked docs dir: `notes/development/summaries-workflow.md`. Contents, in order:
 
 1. **Loop shape** — one sentence on who does the work (see step 6).
 2. **Per-item steps, numbered** — the exact sequence for one page/record, ending at the commit.
@@ -117,7 +117,7 @@ parallel design that the hardware forbids.
 
 Self-paced wakeups beat a timer — a timer fires mid-item. Keep the prompt short and stateless:
 
-> Read `notes/summaries-workflow.md`. Run the gates. Take the next ready P4 issue under `math-ckd`,
+> Read `notes/development/summaries-workflow.md`. Run the gates. Take the next ready P4 issue under `math-ckd`,
 > claim it, write one batch, commit, close. Stop if a P1/P2 issue is ready.
 
 Every clause earns its place: read the protocol (state), run gates (verification), next ready issue

@@ -29,7 +29,7 @@
 | [EgyptianFractions](../../../lean/ComparatorChallenges/EgyptianFractions.json) | `OAI.Problem337.main_double_log_order` | [Main.lean](../../../lean/OAI/NumberTheory/EgyptianFractions/Main.lean) | [`OAI/NumberTheory/EgyptianFractions`](../../../lean/OAI/NumberTheory/EgyptianFractions/) |
 | [EgyptianFractions](../../../lean/ComparatorChallenges/EgyptianFractions.json) | `OAI.Problem337.prescribed_denominator_corollary` | [Main.lean](../../../lean/OAI/NumberTheory/EgyptianFractions/Main.lean) | [`OAI/NumberTheory/EgyptianFractions`](../../../lean/OAI/NumberTheory/EgyptianFractions/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

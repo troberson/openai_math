@@ -32,7 +32,7 @@
 | [KaplanskyFinitelyPresented](../../../lean/ComparatorChallenges/KaplanskyFinitelyPresented.json) | `OAI.KaplanskyCounterexample.finitelyPresented_counterexample` | [FinitelyPresented.lean](../../../lean/OAI/RingTheory/DirectFiniteness/FinitelyPresented.lean) | [`OAI/RingTheory/DirectFiniteness`](../../../lean/OAI/RingTheory/DirectFiniteness/) |
 | [OddKaplansky](../../../lean/ComparatorChallenges/OddKaplansky.json) | `OAI.OddKaplansky.main_theorem` | [Main.lean](../../../lean/OAI/Algebra/OddKaplansky/Main.lean) | [`OAI/Algebra/OddKaplansky`](../../../lean/OAI/Algebra/OddKaplansky/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

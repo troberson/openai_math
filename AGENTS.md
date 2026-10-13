@@ -474,7 +474,7 @@ lives in this file and nowhere else.
   **12** rows, sized by measured RSS (6.1 Gi available with the model server loaded, the two heaviest
   rows peak at 415 MB), not by core count; `GATE_POOL=1`
   runs everything serially — that is the baseline the pooled report is diffed against. A row in the
-  pool must spawn no writer: the render of `notes/index-links.md` runs `build_index.py` as a child,
+  pool must spawn no writer: the render of `notes/development/index-links.md` runs `build_index.py` as a child,
   so the render children run with `--check-only`. Run it once: the driver snapshots the md5 of every
   generated artifact and `git status` raw, and prints the promote-and-verify assertion the gate's own
   `verify_cache_promotion.py` row carries — for every tracked artifact, the bytes landed under the
@@ -608,11 +608,11 @@ lives in this file and nowhere else.
   bytes cached under its key equal the bytes on the TSV.
 - Run `python3 notes/scripts/extract_subfinding_pairs.py` twice and diff: the report must be identical.
 - Run `python3 notes/scripts/measure_index_sizes.py` twice and diff: the report must be identical. It
-  writes nothing, and every count in `notes/index-design.md` comes from it. It prints two byte sums
+  writes nothing, and every count in `notes/development/index-design.md` comes from it. It prints two byte sums
   that are not interchangeable — `ledger set bytes (5 named TSVs)` **297050** and
   `all notes/tables/*.tsv bytes` **907744** — and an INDEX section whose table row counts are read from the
   generated files under `notes/index/`, not derived from the upstream counts they were built from.
-- Check `notes/index-design.md` with `python3 notes/scripts/verify_index_design.py` before quoting the
+- Check `notes/development/index-design.md` with `python3 notes/scripts/verify_index_design.py` before quoting the
   schema — it resolves every backticked `path:line` anchor of any extension (a mistyped
   extension fails, it is not skipped), matches each fenced block against the nearest preceding anchor,
   and re-derives all 82 count and byte phrases from `measure_index_sizes.population()` (schema-table row
@@ -885,7 +885,7 @@ lives in this file and nowhere else.
   demoted to the promoted level, a verdict word, a citation truncated before its `\end`, a citation
   whose path is not on disk) and asserts the pass that owns each one reports it. The checker measures,
   the test file injects; the checker no longer carries its own `--mutant` branch. It writes nothing.
-- Check the three `notes/upstream_history/` pages with `python3 notes/scripts/verify_upstream_history.py`
+- Check the three `notes/development/upstream_history/` pages with `python3 notes/scripts/verify_upstream_history.py`
   and its extracted self-tests with
   `python3 notes/scripts/run_tests.py notes/scripts/tests/test_upstream_history.py -q` before quoting
   any of their counts — `path:line` and `path:a-b` anchors resolve, `…suffix` and bare `:N` anchors
@@ -952,7 +952,7 @@ lives in this file and nowhere else.
   0-broken scan baseline the page quotes — **6** tests, all passing. `trap()` stays in the checker
   because `render_reports.py` renders its two rows into the page's scanner table. The prose mutant
   lives in `verify_page_sync.py --mutant`, which owns the page check and mutates in memory, so
-  neither script writes the page. Findings: `notes/index-links.md`.
+  neither script writes the page. Findings: `notes/development/index-links.md`.
 - Run `python3 notes/scripts/measure_names.py` before quoting a name count: it re-derives every figure
   in `notes/names.md` from the corpus (7,240 `.tex` files, 16,889 titled statement environments,
   13,581 `.bib` entries over 5,809 author keys, 3,407 title candidates, 2,850 rejections by bucket).
@@ -994,7 +994,7 @@ lives in this file and nowhere else.
   22. Its self-tests are extracted to `notes/scripts/tests/test_script_ownership.py` and run by the
   gate's `run_tests.py` row: **18** injected faults — eleven in the census page's text, one prose
   count in the generated `notes/README.md` (which only the render diff can see), four in
-  `notes/templates.md`, and two writer-source faults that move a write target out of the derived
+  `notes/development/templates.md`, and two writer-source faults that move a write target out of the derived
   writer set — each asserted against the check it targets. Passes G and H take page text as an
   argument, so neither the checker nor the tests write a page. **19** tests, all passing.
 - Check the promotion protocol with `python3 notes/scripts/verify_cache_promotion.py` and its
@@ -1003,15 +1003,15 @@ lives in this file and nowhere else.
   any cache figure — it re-derives the `catlib/promote.py` registry three ways: the writer set
   (`ARTIFACTS` plus the one writer the protocol excludes, `measure_open_probe.py`, whose record carries
   a wall time) against the writers table in `notes/scripts/README.md`; each writer's `L1` list against
-  the audit-hook open-mode records in `notes/probe/`, newest record per target, with the writer's own
+  the audit-hook open-mode records in `notes/development/probe/`, newest record per target, with the writer's own
   outputs excluded and the check scoped to the `notes/` bucket the record prints — which excludes
-  `notes/scripts/` and `notes/probe/`, so an `L1` tree entry naming the script tree hashes the sources
+  `notes/scripts/` and `notes/development/probe/`, so an `L1` tree entry naming the script tree hashes the sources
   a census scans without demanding the record name them; and every tracked
   artifact's bytes against the cache entry under the key the registry recomputes with the canonical gate
   args. `build_report_templates.py` is exempt from the probe check because it reads pages with
   `git show HEAD:`, a subprocess read the `open` event cannot see — and `key_for()` hashes **that**
   writer's `L1` from HEAD for the same reason: it reads HEAD, so the key must hash HEAD. Its own output
-  feeds one `L1` entry (`notes/templates.md` tabulates the template bytes), so a render after the builder
+  feeds one `L1` entry (`notes/development/templates.md` tabulates the template bytes), so a render after the builder
   moves that page and a working-tree key stops matching the key the builder used — measured 2026-10-12,
   **18** problems with the working-tree read, **0** with the HEAD read. The test file injects eight
   faults, one per pass: five in the registry structures the passes take as arguments (a removed `L1`
@@ -1020,7 +1020,7 @@ lives in this file and nowhere else.
   deleted, corrupted again on a second artifact), each asserted against the pass that owns it and
   undone by writing the disk bytes back, so the run leaves the cache as it found it and no fault
   touches a tracked file. Run the checker twice and diff — the report is identical.
-- Check `notes/fleet-design.md` with `python3 notes/scripts/verify_fleet_design.py` before
+- Check `notes/development/fleet-design.md` with `python3 notes/scripts/verify_fleet_design.py` before
   quoting any of its counts — it re-derives the atomicity grep (over the fleet's own sources, the **two**
   needle-carrying scripts excluded: the checker, whose count pass embeds the pattern, and
   `render_reports.py`, whose `FLEET_ATOMIC` constant is it), the sync-pass census (the same two
@@ -1029,7 +1029,7 @@ lives in this file and nowhere else.
   the five hashed paths, the `notes/tables/*.tsv` byte sum, the three `du -sk` sizes, the gate row count from
   `gate.py`'s `ROWS` block, the three site counts (atomicity, env, set iteration), the probe table's
   wall/opens/distinct/repeats figures, and the **10** audit-hook records **tracked under
-  `notes/probe/`** (the checker parses the two 2026-10-11 records, written by
+  `notes/development/probe/`** (the checker parses the two 2026-10-11 records, written by
   `notes/scripts/measure_open_probe.py` over **9** targets, for its probe table; the tree's other
   records — the 2026-10-10 pair, the single-target `render_reports.py` after-record, the two
   2026-10-12 `seed_quotes.py` records, the 2026-10-12 `render_reports.py` record that captures the
@@ -1071,7 +1071,7 @@ lives in this file and nowhere else.
   identical.
 - Check the five sync pages with `python3 notes/scripts/verify_page_sync.py --both` before reporting
   them green — it is the render diff for `notes/links.md`, `notes/names.md`, `notes/topics.md`,
-  `notes/proof-density.md` and `notes/index-links.md`: each page's bytes on disk against the bytes
+  `notes/proof-density.md` and `notes/development/index-links.md`: each page's bytes on disk against the bytes
   `render_reports.py` renders for it. `math-o3a.3` moved this pass out of `extract_links.py`,
   `measure_names.py`, `measure_topics.py`, `measure_proof_density.py` and `check_index_links.py`, so the
   writer fleet reads only what it is allowed to read and the page check has one owner. `math-o3a.5.2`'s
@@ -1079,7 +1079,7 @@ lives in this file and nowhere else.
   report in one process: `catlib.render.rendered` is cached **per process**, so two rows paid the corpus
   walk twice. `--mutant`
   mutates each page's prose **in memory** and compares the mutated text with the render — it never
-  writes a page, so the two pages that had a second writer in a mutant branch (`notes/index-links.md`,
+  writes a page, so the two pages that had a second writer in a mutant branch (`notes/development/index-links.md`,
   `notes/proof-density.md`) have one writer each. A needle absent from its page is reported as a
   problem: an inert mutant is not a pass. It writes nothing; run `--both` twice and diff — the report
   is identical (**0 problems**, **5 of 5** caught).

@@ -28,7 +28,7 @@
 | [EuclideanRamsey](../../../lean/ComparatorChallenges/EuclideanRamsey.json) | `OAI.EuclideanRamsey.classification` | [Main.lean](../../../lean/OAI/Combinatorics/EuclideanRamsey/Main.lean) | [`OAI/Combinatorics/EuclideanRamsey`](../../../lean/OAI/Combinatorics/EuclideanRamsey/) |
 | [GrahamSpherical](../../../lean/ComparatorChallenges/GrahamSpherical.json) | `OAI.GrahamSpherical.full_main` | [Main.lean](../../../lean/OAI/Combinatorics/SphericalRamsey/Main.lean) | [`OAI/Combinatorics/SphericalRamsey`](../../../lean/OAI/Combinatorics/SphericalRamsey/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

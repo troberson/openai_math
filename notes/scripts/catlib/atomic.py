@@ -1,7 +1,7 @@
 """Atomic write: a crash must never leave a partial file in the tracked tree.
 
-The rule `notes/fleet-design.md` measures: the atomicity grep over `notes/scripts/*.py` and
-`notes/scripts/catlib/*.py`, excluding `verify_fleet_design.py` (which carries the pattern as a
+The rule `notes/development/fleet-design.md` measures: the atomicity grep over `notes/scripts/*.py`
+and `notes/scripts/catlib/*.py`, excluding `verify_fleet_design.py` (which carries the pattern as a
 needle), read **0** matches before this module. Every writer opened its tracked target directly, so
 a crash mid-write left a half-written tracked file.
 

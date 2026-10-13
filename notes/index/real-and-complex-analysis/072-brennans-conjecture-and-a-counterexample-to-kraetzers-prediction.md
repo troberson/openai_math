@@ -30,7 +30,7 @@
 | [BrennanSharp](../../../lean/ComparatorChallenges/BrennanSharp.json) | `OAI.Brennan.Sharp.sharp_endpoints` | [SharpEndpoints.lean](../../../lean/OAI/Analysis/IntegralMeans/SharpEndpoints.lean) | [`OAI/Analysis/IntegralMeans`](../../../lean/OAI/Analysis/IntegralMeans/) |
 | [StrictMeans](../../../lean/ComparatorChallenges/StrictMeans.json) | `OAI.StrictInverseFirstPower.main` | [Main.lean](../../../lean/OAI/Analysis/StrictMeans/Main.lean) | [`OAI/Analysis/StrictMeans`](../../../lean/OAI/Analysis/StrictMeans/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

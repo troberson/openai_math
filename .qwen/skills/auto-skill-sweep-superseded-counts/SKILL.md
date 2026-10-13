@@ -209,12 +209,12 @@ handoff file.
 
 Checkers read the **working tree**, not the index, so a hunk-split commit is a commit no checker can
 verify. Here four docs (`AGENTS.md`, `notes/README.md`, `notes/findings.md`,
-`notes/index-design.md`) each carried figures from two or three of the three sweeps, so splitting by
+`notes/development/index-design.md`) each carried figures from two or three of the three sweeps, so splitting by
 purpose needed hunk-level staging and produced unverifiable intermediate commits. Ship one sweep
 commit and record the reason in the body:
 
 > The three sweeps ship as one commit: AGENTS.md, notes/README.md, notes/findings.md and
-> notes/index-design.md each carry figures from more than one sweep, so splitting by purpose needs
+> notes/development/index-design.md each carry figures from more than one sweep, so splitting by purpose needs
 > hunk-level staging and would leave intermediate commits that no checker can verify — the checkers
 > read the working tree, not the index.
 
@@ -232,7 +232,7 @@ deferred item; leave the epic open and state why.
 
 ## 6a. The same sweep shape applies to a moved directory
 
-Worked 2026-10-10 on `upstream_history/` → `notes/upstream_history/` (3 pages). A move is a count
+Worked 2026-10-10 on `upstream_history/` → `notes/development/upstream_history/` (3 pages). A move is a count
 sweep in disguise: the path string is the literal, and every reader of it — checker path constants,
 docs, the ownership census, generated templates, mutant needles — goes red at once. The standing rule
 is that a doc naming the old path is a **defect of the move**, not a follow-up, so it lands in the
@@ -276,9 +276,9 @@ Order that worked:
    its page commits are in HEAD. Sequence: commit the pages → commit the doc sweep →
    `build_report_templates.py` → `measure_templates.py` → `dump_template_slots.py` →
    `render_reports.py` → commit the templates plus the page that tabulates their bytes
-   (`notes/templates.md`: 6,279 lines unchanged, 412,921 → **412,933** report tree, 427,740 →
+   (`notes/development/templates.md`: 6,279 lines unchanged, 412,921 → **412,933** report tree, 427,740 →
    **427,752** over all 22 — the +12 is exactly the two `notes/` prefixes). Re-measured 2026-10-11
-   from `notes/templates.md`: **18** report templates / **6,708** lines / **440,523** bytes, and
+   from `notes/development/templates.md`: **18** report templates / **6,708** lines / **440,523** bytes, and
    **455,342** bytes over all **23** (the 5 hand-written index skeletons are in the total). The
    template count moves with the fleet, so quote the page's headline, not this pair. Never hand-edit
    `notes/templates/report/*.j2`; the builder regenerates them from HEAD.
@@ -339,7 +339,7 @@ The chain, in the order that worked:
    A `×` in a comment trips ruff `RUF003`.
 8. **A checker that parses a record requires that record on disk.** The probe records the page quotes
    lived in `.qwen/tmp/` (gitignored), so the gate row would be vacuous in a fresh clone. Track them
-   (`notes/probe/`), give the ownership checker a rule for the new directory, add the census row, and
+   (`notes/development/probe/`), give the ownership checker a rule for the new directory, add the census row, and
    keep the absence guard that exits 1 when a record is missing.
 
 Commit order: the code (page + checker + tracked evidence) as one commit, then the inventory sweep,
@@ -391,6 +391,6 @@ Quote each figure with the rule that yields it and the fresh report line it came
 move and why, and close with what is not checked. The 2026-10-08 gap "a doc with no checker
 (`notes/links.md`)" is **closed**: `verify_page_sync.py --both` is the render diff for
 `notes/links.md`, `notes/names.md`, `notes/topics.md`, `notes/proof-density.md` and
-`notes/index-links.md`, so those five pages are compared with the writer's render. What remains:
+`notes/development/index-links.md`, so those five pages are compared with the writer's render. What remains:
 citation checkers that verify quotations and not claims, and nothing in
 `lean/` built, so no formalization is elaboration-verified.

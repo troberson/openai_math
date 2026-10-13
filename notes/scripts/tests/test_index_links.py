@@ -52,7 +52,7 @@ MUTANTS = [
 
 # Real hrefs taken from the rendered pages: a checker that flags everything is useless.
 CONTROLS = [
-    ("README.md", "../index-design.md"),
+    ("README.md", "../development/index-design.md"),
     ("README.md", "../tables/topics.tsv"),
     ("README.md", "names/"),
     ("names/cauchy.md", "../names.tsv"),

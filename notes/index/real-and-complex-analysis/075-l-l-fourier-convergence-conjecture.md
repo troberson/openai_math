@@ -27,7 +27,7 @@
 |---|---|---|---|
 | [FourierLLogL](../../../lean/ComparatorChallenges/FourierLLogL.json) | `OAI.FourierLLogL.paperMain` | [PaperMain.lean](../../../lean/OAI/Analysis/FourierLLogL/PaperMain.lean) | [`OAI/Analysis/FourierLLogL`](../../../lean/OAI/Analysis/FourierLLogL/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

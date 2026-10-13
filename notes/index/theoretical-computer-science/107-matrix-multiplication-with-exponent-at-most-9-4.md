@@ -32,7 +32,7 @@
 | [MatrixMultiplication](../../../lean/ComparatorChallenges/MatrixMultiplication.json) | `OAI.MatrixMultiplication.complex_omega_le_nine_quarters` | [Main.lean](../../../lean/OAI/LinearAlgebra/MatrixMultiplication/Main.lean) | [`OAI/LinearAlgebra/MatrixMultiplication`](../../../lean/OAI/LinearAlgebra/MatrixMultiplication/) |
 | [MatrixMultiplication](../../../lean/ComparatorChallenges/MatrixMultiplication.json) | `OAI.MatrixMultiplication.complex_rectangular_omega_lt_523_div_250` | [Main.lean](../../../lean/OAI/LinearAlgebra/MatrixMultiplication/Main.lean) | [`OAI/LinearAlgebra/MatrixMultiplication`](../../../lean/OAI/LinearAlgebra/MatrixMultiplication/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

@@ -189,7 +189,7 @@ pass that compares the page's anchors with the measured **set**. Two passes are 
 
 So the pass must require `sorted(page anchors in the paragraph) == sorted(measured sites)`, and the
 report must print the measured sites with their line numbers so the page's numbers are checkable.
-Measured 2026-10-12 on `notes/fleet-design.md`: the checker printed `set sites 2` with line numbers and
+Measured 2026-10-12 on `notes/development/fleet-design.md`: the checker printed `set sites 2` with line numbers and
 reported `problems 0` against a page naming two stale lines.
 
 **The duplication trap.** A presence check ("every measured site appears in the checker-section

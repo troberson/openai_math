@@ -28,7 +28,7 @@
 | [EuclideanFiveColor](../../../lean/ComparatorChallenges/EuclideanFiveColor.json) | `OAI.EuclideanFiveColor.no_proper_five_coloring` | [Five.lean](../../../lean/OAI/Geometry/PlaneColoring/Five.lean) | [`OAI/Geometry/PlaneColoring`](../../../lean/OAI/Geometry/PlaneColoring/) |
 | [PlaneColoring](../../../lean/ComparatorChallenges/PlaneColoring.json) | `OAI.Problem160.properColoring_seven` | [Seven.lean](../../../lean/OAI/Geometry/PlaneColoring/Seven.lean) | [`OAI/Geometry/PlaneColoring`](../../../lean/OAI/Geometry/PlaneColoring/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

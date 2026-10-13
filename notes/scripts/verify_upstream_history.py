@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the notes/upstream_history/ pages against git, the release files, and disk.
+"""Verify the notes/development/upstream_history/ pages against git, the release files, and disk.
 
 Report-only: writes nothing. Run twice and diff — the report must be identical.
 
@@ -51,12 +51,12 @@ from catlib.text import collapse_ws, fold_apostrophe
 from catlib.tsv import read_rows_from_text
 
 PAGES = [
-    "notes/upstream_history/README.md",
-    "notes/upstream_history/2026-10-07_3014888.md",
-    "notes/upstream_history/2026-10-07_fd4aeeb.md",
+    "notes/development/upstream_history/README.md",
+    "notes/development/upstream_history/2026-10-07_3014888.md",
+    "notes/development/upstream_history/2026-10-07_fd4aeeb.md",
 ]
-PAGE_301 = "notes/upstream_history/2026-10-07_3014888.md"
-PAGE_FD = "notes/upstream_history/2026-10-07_fd4aeeb.md"
+PAGE_301 = "notes/development/upstream_history/2026-10-07_3014888.md"
+PAGE_FD = "notes/development/upstream_history/2026-10-07_fd4aeeb.md"
 BASE = "adc7f1241"  # merge-base: the release as we mirrored it
 UP = "301488868"  # the upstream commit the 3014888 page discusses
 PRE = "9b68bc538"  # our last pre-merge commit: the "Before" column of the ledger table

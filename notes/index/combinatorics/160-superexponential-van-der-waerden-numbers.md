@@ -27,7 +27,7 @@
 |---|---|---|---|
 | [QuantitativeVanDerWaerden](../../../lean/ComparatorChallenges/QuantitativeVanDerWaerden.json) | `OAI.QuantitativeVanDerWaerden.uniform_lower_bound` | [Main.lean](../../../lean/OAI/Combinatorics/ProgressionColoring/Main.lean) | [`OAI/Combinatorics/ProgressionColoring`](../../../lean/OAI/Combinatorics/ProgressionColoring/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

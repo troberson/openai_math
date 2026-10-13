@@ -30,7 +30,7 @@
 {% for c, d, f in decls %}{{ [link(c, UP ~ "lean/ComparatorChallenges/" ~ c ~ ".json"), "`" ~ d ~ "`", link(f | base, UP ~ "lean/" ~ f), link("`" ~ f | dirname ~ "`", UP ~ "lean/" ~ f | dirname ~ "/")] | row }}
 {% endfor %}
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 {% else %}No `main_results` declaration reaches this family{% if r.chal %}: its scope note links {{ r.chal }} comparator config{{ "" if r.chal == 1 else "s" }}, none of them in `main_results`.
 {% else %}, and no scope note links a comparator config.
 {% endif %}

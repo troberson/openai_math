@@ -2,7 +2,8 @@
 
 Three scripts key on this machinery: `build_report_templates.py` builds the 17 report templates
 from it, `measure_checker_needles.py` prices the needle derivation, and `measure_templates.py`
-measures the census `notes/templates.md` quotes. It lives here so the three read one registry,
+measures the census `notes/development/templates.md` quotes. It lives here so the three read one
+registry,
 not three routes to one builder.
 
 The slot set is the writer's, because the writer's slot dict *is* the template's slot set:
@@ -41,10 +42,10 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
     "notes/sources.md": R.measure,
     "notes/abstracts.md": R.CA.measure,
     "notes/named-results.md": R.en.population,
-    "notes/index-design.md": R.M.population,
+    "notes/development/index-design.md": R.M.population,
     "notes/names.md": R.names_population,
     "notes/proof-density.md": R.proof_density_population,
-    "notes/index-links.md": R.index_links_population,
+    "notes/development/index-links.md": R.index_links_population,
     # Both links pages read the SAME cached population. render_reports.py:3262 builds its topics
     # population from population_of("links"), and population_of is @cache'd, so the links walk is paid
     # once per process. Calling R.links_population() directly here made notes/topics.md re-run the
@@ -73,11 +74,11 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
     # grep, the sync census, the digests, the du sizes, the gate rows, the three site lists, the probe
     # parse. The page's checker measures the same figures with its own reads: a checker that compared
     # the page with the writer's numbers would prove nothing about them.
-    "notes/fleet-design.md": R.fleet_population,
+    "notes/development/fleet-design.md": R.fleet_population,
     # templates.md's census is measure_templates.population(); the page also compares a template's slot
     # count with the writer's label count, so the abstracts label count travels inside the population —
     # the same CA.measure() call abstracts_page() makes.
-    "notes/templates.md": lambda: R.templates_population(len(R.abstracts_phrases(R.CA.measure()))),
+    "notes/development/templates.md": lambda: R.templates_population(len(R.abstracts_phrases(R.CA.measure()))),
 }
 # The writer's own slot dict per page. These are the calls render_reports.py makes when it renders,
 # so the labels and phrase strings the template gets are the writer's by construction.
@@ -85,10 +86,12 @@ LABELS: dict[str, Callable[[], dict[str, str]]] = {
     "notes/sources.md": lambda: R.phrases(POPULATIONS["notes/sources.md"]()),
     "notes/abstracts.md": lambda: R.abstracts_phrases(POPULATIONS["notes/abstracts.md"]()),
     "notes/named-results.md": lambda: R.named_results_phrases(POPULATIONS["notes/named-results.md"]()),
-    "notes/index-design.md": lambda: R.index_phrases(POPULATIONS["notes/index-design.md"]()),
+    "notes/development/index-design.md": lambda: R.index_phrases(
+        POPULATIONS["notes/development/index-design.md"]()),
     "notes/names.md": lambda: R.names_phrases(POPULATIONS["notes/names.md"]()),
     "notes/proof-density.md": lambda: R.proof_density_phrases(POPULATIONS["notes/proof-density.md"]()),
-    "notes/index-links.md": lambda: R.index_links_phrases(POPULATIONS["notes/index-links.md"]()),
+    "notes/development/index-links.md": lambda: R.index_links_phrases(
+        POPULATIONS["notes/development/index-links.md"]()),
     # links.md prints the MSC/keywords/bibliography figures formatted (**8,206**, 13,802), while
     # links_full also carries each as an unformatted string for the topics page, which prints them
     # bare (render_reports.py:2412). Requiring a raw label in the links page aborts the build with
@@ -109,14 +112,16 @@ LABELS: dict[str, Callable[[], dict[str, str]]] = {
         POPULATIONS["notes/counterexample-crosscheck.md"]()),
     "notes/formalization-faithfulness.md": lambda: R.faithfulness_phrases(
         POPULATIONS["notes/formalization-faithfulness.md"]()),
-    "notes/fleet-design.md": lambda: R.fleet_phrases(POPULATIONS["notes/fleet-design.md"]()),
-    "notes/templates.md": lambda: R.templates_phrases(POPULATIONS["notes/templates.md"]()),
+    "notes/development/fleet-design.md": lambda: R.fleet_phrases(
+        POPULATIONS["notes/development/fleet-design.md"]()),
+    "notes/development/templates.md": lambda: R.templates_phrases(
+        POPULATIONS["notes/development/templates.md"]()),
 }
 PHRASE_FNS = ("count_phrases", "size_phrases")
 ALL_PAGES = {
     "notes/abstracts.md": "verify_abstracts.py",
-    "notes/index-links.md": "check_index_links.py",
-    "notes/index-design.md": "verify_index_design.py",
+    "notes/development/index-links.md": "check_index_links.py",
+    "notes/development/index-design.md": "verify_index_design.py",
     # links.md has no page checker: its counts come from the gated writer extract_links.py, which
     # prints its report and writes notes/tables/links.tsv and carries no count_phrases/size_phrases, so
     # the builder reports this coverage as NOT DERIVED.
@@ -166,13 +171,13 @@ ALL_PAGES = {
     # needle list from the checker itself. The page's dated observations (the free -h line, the wall
     # times, the cold/warm swing) are deliberately NOT slots: a writer that recomputed them would move
     # the page the day the machine changed, so they stay literal in the template.
-    "notes/fleet-design.md": "verify_fleet_design.py",
+    "notes/development/fleet-design.md": "verify_fleet_design.py",
     # templates.md has no page checker of its own: its census comes from the gated report-only
     # measure_templates.py, and the script that checks any part of it is verify_script_ownership.py,
     # which verifies the census rows and carries no count_phrases/size_phrases, so the builder reports
     # this coverage as NOT DERIVED. The page is proven by the twice-render byte-identity diff plus that
     # checker's plain run and its mutants.
-    "notes/templates.md": "verify_script_ownership.py",
+    "notes/development/templates.md": "verify_script_ownership.py",
 }
 
 

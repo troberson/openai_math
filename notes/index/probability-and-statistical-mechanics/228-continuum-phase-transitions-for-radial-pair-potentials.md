@@ -29,7 +29,7 @@
 | [ContinuumTransition](../../../lean/ComparatorChallenges/ContinuumTransition.json) | `OAI.ContinuumTemperature.main_theorem` | [Main.lean](../../../lean/OAI/Probability/ContinuumTransition/Main.lean) | [`OAI/Probability/ContinuumTransition`](../../../lean/OAI/Probability/ContinuumTransition/) |
 | [RadialTransition](../../../lean/ComparatorChallenges/RadialTransition.json) | `OAI.RadialTransition.main` | [Main.lean](../../../lean/OAI/Probability/RadialTransition/Main.lean) | [`OAI/Probability/RadialTransition`](../../../lean/OAI/Probability/RadialTransition/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

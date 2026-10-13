@@ -5,7 +5,7 @@ The census derives the writer set from the scripts' own source, re-measures ever
 command block, and compares the generated `notes/README.md` with the writer's render of it. This
 file injects eighteen faults, one per check form the page uses, and asserts each is caught by the
 pass that owns it: eleven faults in the census page's text, one prose count in the generated ledger
-readme (which only the render diff can see), four faults in `notes/templates.md`, and two faults in
+readme (which only the render diff can see), four faults in `notes/development/templates.md`, and two faults in
 the writer sources that move a write target out of the derived writer set.
 
 Every fault is built from a real row, a real count, and a real line of a real file, so a checker
@@ -137,7 +137,7 @@ def test_readme_prose_count_altered(mod):
 
 @pytest.mark.parametrize("label,needle,mut", TPL_CASES)
 def test_templates_page_faults(mod, tpl, label, needle, mut):
-    """A row, a slot count, or the registry sentence in notes/templates.md, altered in memory."""
+    """A row, a slot count, or the registry sentence in notes/development/templates.md, altered in memory."""
     cand = mut(tpl)
     assert cand != tpl, f"{label}: mutation changed nothing"
     found = mod.templates_problems(cand)

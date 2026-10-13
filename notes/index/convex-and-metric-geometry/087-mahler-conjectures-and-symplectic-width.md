@@ -31,7 +31,7 @@
 | [SymmetricMahlerEquality](../../../lean/ComparatorChallenges/SymmetricMahlerEquality.json) | `OAI.SymmetricMahler.symmetric_mahler_equality` | [Classification.lean](../../../lean/OAI/Analysis/Mahler/Classification.lean) | [`OAI/Analysis/Mahler`](../../../lean/OAI/Analysis/Mahler/) |
 | [SymmetricPolar](../../../lean/ComparatorChallenges/SymmetricPolar.json) | `OAI.SymmetricPolar.symmetric_polar_main` | [Main.lean](../../../lean/OAI/Geometry/PolarProducts/Main.lean) | [`OAI/Geometry/PolarProducts`](../../../lean/OAI/Geometry/PolarProducts/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

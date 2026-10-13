@@ -30,7 +30,7 @@
 | [TwoWayComplementation](../../../lean/ComparatorChallenges/TwoWayComplementation.json) | `OAI.TwoWayComplementation.complementation_lower_bound_finite` | [Main.lean](../../../lean/OAI/Combinatorics/TwoWayAutomata/Main.lean) | [`OAI/Combinatorics/TwoWayAutomata`](../../../lean/OAI/Combinatorics/TwoWayAutomata/) |
 | [TwoWayDeterminization](../../../lean/ComparatorChallenges/TwoWayDeterminization.json) | `OAI.TwoWayComplementation.explicit_family_main` | [ExplicitFamily.lean](../../../lean/OAI/Combinatorics/TwoWayAutomata/ExplicitFamily.lean) | [`OAI/Combinatorics/TwoWayAutomata`](../../../lean/OAI/Combinatorics/TwoWayAutomata/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

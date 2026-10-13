@@ -14,11 +14,11 @@ notes/index/
 notes/*.md
 notes/scripts/**/*.md
 notes/summaries/**/*.md
-notes/upstream_history/*.md
+notes/development/upstream_history/*.md
 !notes/conjecture-standing.md
 !notes/links.md
 !notes/proof-density.md
-!notes/summaries-workflow.md
+!notes/development/summaries-workflow.md
 
 # Release mirror - this fork mirrors the release byte-for-byte.
 # history.md is the release's own changelog, added by upstream 3014888.

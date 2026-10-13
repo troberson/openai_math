@@ -12,7 +12,7 @@ parse_yaml() `sources:`, family -> config from parse_docs() (scope-note links), 
 declaration + file from the formalization.yaml triples, family -> trace from parse_traces()
 (the README.md trace table). The ledger supplies the derived claim-shape columns.
 
-Rules this generator encodes, all of them stated in notes/index-design.md:
+Rules this generator encodes, all of them stated in notes/development/index-design.md:
 
 - **No manuscript -> Lean edge exists.** `sources:` is a flat list of manuscript paths and
   `main_results:` is a flat list of config/declaration/file triples; nothing joins them. The
@@ -702,7 +702,7 @@ def main():
     for b in broken[:10]:
         print(f"  BROKEN {b}")
     # Registered links per page group, the same grouping check_index_links.py reports for the
-    # scanned set, so the coverage gap in notes/index-links.md is measurable per group.
+    # scanned set, so the coverage gap in notes/development/index-links.md is measurable per group.
     reg = collections.Counter(
         {"names": "name pages", "topics": "topic pages",
          "disciplines": "discipline pages"}.get(p.split("/")[0],
@@ -713,8 +713,8 @@ def main():
         f"{g} {reg[g]}" for g in ("name pages", "family pages", "topic pages",
                                   "discipline pages", "entry point")))
     # Registered links per category, classified by the checker's own rule (importing it is safe:
-    # check_index_links.py has no module-scope work), so notes/index-links.md can state the
-    # scanned-minus-registered gap per category from two reports rather than from prose.
+    # check_index_links.py has no module-scope work), so notes/development/index-links.md can state
+    # the scanned-minus-registered gap per category from two reports rather than from prose.
     regcat = collections.Counter(CL.category(CL.resolve(p, h)) for p, h in links)
     print("registered by category " + "  ".join(
         f"{c} {regcat[c]}" for c in sorted(regcat, key=lambda k: (-regcat[k], k))))

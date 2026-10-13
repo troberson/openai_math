@@ -28,7 +28,7 @@
 |---|---|---|---|
 | [PinnedDistances](../../../lean/ComparatorChallenges/PinnedDistances.json) | `OAI.WeakPinned.main` | [Main.lean](../../../lean/OAI/Geometry/PinnedDistances/Main.lean) | [`OAI/Geometry/PinnedDistances`](../../../lean/OAI/Geometry/PinnedDistances/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

@@ -1,7 +1,7 @@
 # Quotation and citation traps, measured on the shipped pages
 
 Each bullet is a defect a real page produced and the checker caught, with the fix that closed it.
-Moved from `notes/summaries-workflow.md` on 2026-10-12: the state carrier carries state, the method
+Moved from `notes/development/summaries-workflow.md` on 2026-10-12: the state carrier carries state, the method
 lives here. The family number names the page the trap came from.
 
 - **Batch findings (`math-ckd.2`), for reuse:**

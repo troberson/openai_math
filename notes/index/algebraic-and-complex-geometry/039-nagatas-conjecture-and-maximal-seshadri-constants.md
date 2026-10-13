@@ -31,7 +31,7 @@
 | [MaximalSeshadriConstants](../../../lean/ComparatorChallenges/MaximalSeshadriConstants.json) | `OAI.MaximalSeshadri.Geometry.maximalSeshadriConstants` | [Main.lean](../../../lean/OAI/AlgebraicGeometry/Seshadri/Main.lean) | [`OAI/AlgebraicGeometry/Seshadri`](../../../lean/OAI/AlgebraicGeometry/Seshadri/) |
 | [Nagata](../../../lean/ComparatorChallenges/Nagata.json) | `OAI.Nagata.nagata_conjecture` | [Nagata.lean](../../../lean/OAI/AlgebraicGeometry/PlaneCurves/Nagata.lean) | [`OAI/AlgebraicGeometry/PlaneCurves`](../../../lean/OAI/AlgebraicGeometry/PlaneCurves/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

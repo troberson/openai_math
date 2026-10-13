@@ -46,8 +46,8 @@ prints in sorted page order and stages in sorted page order - the slot numbering
 (`len(self._targets)`) is the serial numbering, and the report is the bytes a serial run prints. A
 worker writes nothing: staging is one writer's approval, and 18 workers writing the same slot `0000`
 is not it. The pages share caches per process (`measure_names.measure()` is `@cache`d), so a pool
-multiplies the corpus walk it needs - the floor is the slowest page, `notes/templates.md`, whose
-population runs the needle derivation for all 18 checkers.
+multiplies the corpus walk it needs - the floor is the slowest page, `notes/development/templates.md`,
+whose population runs the needle derivation for all 18 checkers.
 """
 from __future__ import annotations
 
@@ -65,14 +65,15 @@ ROOT = pathlib.Path(__file__).resolve().parents[2]
 TPL_DIR = ROOT / "notes" / "templates" / "report"
 # The builder reads each page from HEAD, so its L1 is the page set, and `key_for` hashes that L1 from
 # HEAD for this writer: the key is a function of the bytes it reads, not of the working tree. Its own
-# output feeds one L1 entry — notes/templates.md tabulates the template bytes — so a render after the
-# builder moves that page and a working-tree key would stop matching the key this run used.
+# output feeds one L1 entry — notes/development/templates.md tabulates the template bytes — so a
+# render after the builder moves that page and a working-tree key would stop matching the key this run
+# used.
 KEY = key_for("build_report_templates.py", tuple(sys.argv[1:]))
 ST = Staging("build_report_templates", KEY)
 WS_RUN = re.compile(r"[ \t]*\n[ \t]*")
-# Measured 2026-10-11: the pool wall equals the slowest page (notes/templates.md, 71 s cold), so 6
-# workers reach the floor (69.34 s) and 12 and 18 do not beat it (66.56 s / 68.71 s). 6 keeps the
-# concurrent peak at ~600 MB of the 847 MB the 18 isolated pages measure.
+# Measured 2026-10-11: the pool wall equals the slowest page (notes/development/templates.md, 71 s
+# cold), so 6 workers reach the floor (69.34 s) and 12 and 18 do not beat it (66.56 s / 68.71 s); 6
+# keeps the concurrent peak at ~600 MB of the 847 MB the 18 isolated pages measure.
 POOL = 6
 
 # The registry, the writer's slot dicts and the needle derivation are in catlib/templates.py;

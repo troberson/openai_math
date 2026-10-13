@@ -33,7 +33,7 @@
 | [UniqueGamesTheorem](../../../lean/ComparatorChallenges/UniqueGamesTheorem.json) | `OAI.UniqueGamesTheorem.theorem11` | [Theorem.lean](../../../lean/OAI/Computability/UniqueGames/Theorem.lean) | [`OAI/Computability/UniqueGames`](../../../lean/OAI/Computability/UniqueGames/) |
 | [VertexCover](../../../lean/ComparatorChallenges/VertexCover.json) | `OAI.VertexCover.every_fixed_factor_below_two` | [Main.lean](../../../lean/OAI/Computability/VertexCover/Main.lean) | [`OAI/Computability/VertexCover`](../../../lean/OAI/Computability/VertexCover/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

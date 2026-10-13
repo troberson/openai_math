@@ -2,12 +2,12 @@
 """The open-event probe: every open() a script performs, with its mode, recorded to a tracked file.
 
 Usage:
-  python3 notes/scripts/measure_open_probe.py --record <name> <target.py> [args...]   # writes notes/probe/<name>.txt
+  python3 notes/scripts/measure_open_probe.py --record <name> <target.py> [args...]   # writes notes/development/probe/<name>.txt
   python3 notes/scripts/measure_open_probe.py <target.py> [args...]                   # stdout only
 
 A multi-target record is built by redirecting stdout and appending, which is how the tracked
-`notes/probe/2026-10-10_writers.txt` and `_checkers.txt` were made. The gate does not run this
-script: its record carries a wall time per target, so a run-1/run-2 byte diff of a record is a
+`notes/development/probe/2026-10-10_writers.txt` and `_checkers.txt` were made. The gate does not run
+this script: its record carries a wall time per target, so a run-1/run-2 byte diff of a record is a
 timing artifact, not a proof.
 
 Rule: `sys.addaudithook` on the `open` event records the path and the mode string per path, parent
@@ -15,9 +15,10 @@ process only. A path is a write only if a recorded mode contains `w`, `a` or `x`
 a name to a call context and does **not** track branches, so a `write_text` that lives only in a
 `--mutant` path is reported as a write in every mode — the probe's mode strings are the authority.
 
-The records are what `notes/fleet-design.md`'s purity table and amplification table are measured
-from, and `verify_fleet_design.py` parses them. The probe's own record write is dropped from the
-printed lists: `notes/probe/` is the record's destination, not one of the target's opens.
+The records are what `notes/development/fleet-design.md`'s purity table and amplification table are
+measured from, and `verify_fleet_design.py` parses them. The probe's own record write is dropped from
+the printed lists: `notes/development/probe/` is the record's destination, not one of the target's
+opens.
 """
 from __future__ import annotations
 
@@ -32,7 +33,7 @@ from pathlib import Path
 from catlib.atomic import write_atomic
 from catlib.paths import ROOT
 
-PROBE_DIR = ROOT / "notes" / "probe"
+PROBE_DIR = ROOT / "notes" / "development" / "probe"
 
 READ_MODES = {"r", "rb", "r+", "rb+"}
 WRITE_MODES = {"w", "wb", "a", "ab", "x", "xb", "w+", "wb+", "a+", "ab+", "x+", "xb+"}
@@ -98,7 +99,8 @@ def block(target: str, args: list[str], wall: float, before: dict[str, int],
     out.append("[probe2] notes/ paths (count  modes  path):")
     for p in sorted(opens):
         r = rel(p)
-        if r.startswith("notes/") and not r.startswith("notes/scripts/") and not r.startswith("notes/probe/"):
+        if r.startswith("notes/") and not r.startswith("notes/scripts/") \
+                and not r.startswith("notes/development/probe/"):
             shown = ",".join(sorted(modes.get(p, set())) or ["?"])
             out.append(f"          {opens[p]:5}  {shown:8} {r}")
     out.append("[probe2] write-mode paths outside notes/:")
@@ -120,7 +122,8 @@ def main() -> int:
         record = argv[1]
         argv = argv[2:]
     if not argv:
-        print("usage: measure_open_probe.py [--record notes/probe/<file>.txt] <target.py> [args...]")
+        print("usage: measure_open_probe.py [--record notes/development/probe/<file>.txt] <target.py> "
+              "[args...]")
         return 2
     target, rest = argv[0], argv[1:]
     sys.addaudithook(hook)

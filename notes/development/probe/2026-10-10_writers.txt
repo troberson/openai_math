@@ -2759,8 +2759,8 @@ checker needles NOT DERIVED (verify_script_ownership.py) - coverage unverified
     'tpl_row_02': '| `abstracts.md.j2` | 406 | 32,445 | 42 | `notes/abstracts.md` | `verify_abstracts.py` | 45 |',
     'tpl_row_03': '| `counterexample-crosscheck.md.j2` | 1,089 | 45,827 | 87 | `notes/counterexample-crosscheck.md` | `verify_counterexample_crosscheck.py` | 20 |',
     'tpl_row_04': '| `dependency-drift.md.j2` | 229 | 11,520 | 95 | `notes/dependency-drift.md` | `verify_dependency_drift.py` | NOT DERIVED |',
-    'tpl_row_05': '| `index-design.md.j2` | 231 | 13,228 | 99 | `notes/index-design.md` | `verify_index_design.py` | 82 |',
-    'tpl_row_06': '| `index-links.md.j2` | 208 | 12,184 | 85 | `notes/index-links.md` | `check_index_links.py` | NOT DERIVED |',
+    'tpl_row_05': '| `index-design.md.j2` | 231 | 13,228 | 99 | `notes/development/index-design.md` | `verify_index_design.py` | 82 |',
+    'tpl_row_06': '| `index-links.md.j2` | 208 | 12,184 | 85 | `notes/development/index-links.md` | `check_index_links.py` | NOT DERIVED |',
     'tpl_row_07': '| `links.md.j2` | 224 | 12,284 | 110 | `notes/links.md` | `extract_links.py` | NOT DERIVED |',
     'tpl_row_08': '| `named-results.md.j2` | 367 | 25,209 | 83 | `notes/named-results.md` | `verify_named_results.py` | 66 |',
     'tpl_row_09': '| `names.md.j2` | 276 | 13,727 | 130 | `notes/names.md` | `measure_names.py` | NOT DERIVED |',
@@ -2769,7 +2769,7 @@ checker needles NOT DERIVED (verify_script_ownership.py) - coverage unverified
     'tpl_row_12': '| `sources.md.j2` | 156 | 9,349 | 29 | `notes/sources.md` | `verify_sources.py` | 31 |',
     'tpl_row_13': '| `subfinding-pairs.md.j2` | 675 | 57,519 | 38 | `notes/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |',
     'tpl_row_14': '| `t0-chains.md.j2` | 569 | 34,007 | 62 | `notes/t0-chains.md` | `verify_t0_chains.py` | 12 |',
-    'tpl_row_15': '| `templates.md.j2` | 105 | 5,003 | 43 | `notes/templates.md` | `verify_script_ownership.py` | NOT DERIVED |',
+    'tpl_row_15': '| `templates.md.j2` | 105 | 5,003 | 43 | `notes/development/templates.md` | `verify_script_ownership.py` | NOT DERIVED |',
     'tpl_row_16': '| `topics.md.j2` | 335 | 23,046 | 117 | `notes/topics.md` | `measure_topics.py` | NOT DERIVED |',
     'tpl_row_17': '| `verification-dirs.md.j2` | 258 | 24,980 | 44 | `notes/verification-dirs.md` | `verify_verification_dirs.py` | 16 |',
 template written: notes/templates/report/topics.md.j2
@@ -2965,7 +2965,7 @@ checker needles 16 slotted 14 literal 2
               5  r        notes/conjecture-standing.tsv
               1  r        notes/formalization-deps.md
               7  r        notes/formalization-deps.tsv
-              6  r,w      notes/index-links.md
+              6  r,w      notes/development/index-links.md
               7  r        notes/index/README.md
               7  r        notes/index/algebra/193-serres-intersection-multiplicity-conjecture.md
               7  r        notes/index/algebra/194-lechs-multiplicity-conjecture.md
@@ -4090,8 +4090,8 @@ slots  sources 31  abstracts 41  named-results 82  index-design 98  names 129  p
               2  r,w      notes/dependency-drift.md
               1  r        notes/formalization-deps.md
               5  r        notes/formalization-deps.tsv
-              2  r,w      notes/index-design.md
-              8  r,w      notes/index-links.md
+              2  r,w      notes/development/index-design.md
+              8  r,w      notes/development/index-links.md
               5  r        notes/index/README.md
               5  r        notes/index/algebra/193-serres-intersection-multiplicity-conjecture.md
               5  r        notes/index/algebra/194-lechs-multiplicity-conjecture.md
@@ -5153,7 +5153,7 @@ slots  sources 31  abstracts 41  named-results 82  index-design 98  names 129  p
              13  r        notes/subfindings.tsv
               2  r,w      notes/t0-chains.md
               2  r        notes/t0-triage.md
-              2  r,w      notes/templates.md
+              2  r,w      notes/development/templates.md
               2  r        notes/templates/discipline.md.j2
               2  r        notes/templates/family.md.j2
               2  r        notes/templates/index-readme.md.j2

@@ -30,7 +30,7 @@
 | [DirectCrouzeix](../../../lean/ComparatorChallenges/DirectCrouzeix.json) | `OAI.DirectCrouzeix.complete_crouzeix` | [CompleteBound.lean](../../../lean/OAI/Analysis/DirectCrouzeix/CompleteBound.lean) | [`OAI/Analysis/DirectCrouzeix`](../../../lean/OAI/Analysis/DirectCrouzeix/) |
 | [StructuralCrouzeix](../../../lean/ComparatorChallenges/StructuralCrouzeix.json) | `OAI.StructuralCrouzeixReference.challenge` | [Endpoint.lean](../../../lean/OAI/Analysis/StructuralCrouzeix/Endpoint.lean) | [`OAI/Analysis/StructuralCrouzeix`](../../../lean/OAI/Analysis/StructuralCrouzeix/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

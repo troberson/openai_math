@@ -41,8 +41,8 @@ slots  sources 31  abstracts 41  named-results 82  index-design 98  names 129  p
               1  r        notes/dependency-drift.md
               1  r        notes/formalization-deps.md
               5  r        notes/formalization-deps.tsv
-              1  r        notes/index-design.md
-              1  r        notes/index-links.md
+              1  r        notes/development/index-design.md
+              1  r        notes/development/index-links.md
               4  r        notes/index/README.md
               4  r        notes/index/algebra/193-serres-intersection-multiplicity-conjecture.md
               4  r        notes/index/algebra/194-lechs-multiplicity-conjecture.md
@@ -1104,7 +1104,7 @@ slots  sources 31  abstracts 41  named-results 82  index-design 98  names 129  p
              12  r        notes/subfindings.tsv
               1  r        notes/t0-chains.md
               2  r        notes/t0-triage.md
-              1  r        notes/templates.md
+              1  r        notes/development/templates.md
               2  r        notes/templates/discipline.md.j2
               2  r        notes/templates/family.md.j2
               2  r        notes/templates/index-readme.md.j2

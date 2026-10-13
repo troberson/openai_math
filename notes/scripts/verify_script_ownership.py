@@ -14,8 +14,8 @@ Passes:
      with notes/scripts/render_reports.py's render of it. notes/scripts/README.md is hand-authored, so
      it has no render to compare with; the generated ledger readme does, and its prose is not covered
      by any count phrase here.
-  H. notes/templates.md -- the census of the two template trees. Lines, bytes and slot counts are
-     re-measured here from the template files, the page<->checker pairing is re-read from the
+  H. notes/development/templates.md -- the census of the two template trees. Lines, bytes and slot
+     counts are re-measured here from the template files, the page<->checker pairing is re-read from the
      ALL_PAGES literal in `catlib/templates.py`, and the index tree's render counts are re-counted
      from notes/index/. The pass re-measures rather than importing measure_templates.py: a checker
      that re-derives a count through the same code the page's writer calls proves only that the code
@@ -38,11 +38,12 @@ from catlib.paths import NOTES, ROOT, SCRIPTS, read_text
 PAGE = SCRIPTS / "README.md"
 SELF = "verify_script_ownership.py"
 README = NOTES / "README.md"
-TEMPLATES_PAGE = NOTES / "templates.md"
+TEMPLATES_PAGE = NOTES / "development" / "templates.md"
 TPL_DIR = NOTES / "templates"
 REPORT_TPL_DIR = TPL_DIR / "report"
 INDEX_DIR = NOTES / "index"
-PROBE_DIR = NOTES / "probe"
+PROBE_DIR = NOTES / "development" / "probe"
+DEV_DIR = NOTES / "development"
 TABLES_DIR = NOTES / "tables"
 SLOT_MARK = "{{ "
 # The record-store target the writers table carries. A record's directory is the digest key, which the
@@ -262,7 +263,8 @@ def census_rows(text):
 def template_measure():
     """Re-measure both template trees: name -> tree, lines, bytes, slots.
 
-    A slot is a `{{ ` occurrence counted over the whole file, the same rule notes/templates.md quotes,
+    A slot is a `{{ ` occurrence counted over the whole file, the same rule
+    notes/development/templates.md quotes,
     read here from the bytes rather than from measure_templates.py.
     """
     out = {}
@@ -313,7 +315,7 @@ def template_table_rows(text):
 
 
 def templates_problems(text):
-    """Pass H: notes/templates.md against the template files, the registry, and notes/index/."""
+    """Pass H: notes/development/templates.md against the template files, the registry, and notes/index/."""
     p = []
     cen = template_measure()
     reg, anchor = registry_pairs()
@@ -330,9 +332,12 @@ def templates_problems(text):
         if cells[1:4] != [f"{v['lines']:,}", f"{v['bytes']:,}", str(v["slots"])]:
             p.append(f"template row {n}: page {cells[1:4]}, disk "
                      f"{[f'{v['lines']:,}', f'{v['bytes']:,}', str(v['slots'])]}")
-        page = f"notes/{n[: -len('.j2')]}"
+        # The page a report template renders is the registry's key, not `notes/<stem>`: four pages
+        # live under `notes/development/`, so the mechanical name would demand a cell naming a file
+        # that is not there.
+        page = {pg.rsplit("/", 1)[-1] + ".j2": pg for pg in reg}.get(n, f"notes/{n[: -len('.j2')]}")
         if cell_paths(cells[4]) != [page]:
-            p.append(f"template row {n}: page cell {cells[4]!r}, disk template name says {page!r}")
+            p.append(f"template row {n}: page cell {cells[4]!r}, registry names {page!r}")
         checker = cell_paths(cells[5])
         if checker and checker[0] != reg.get(page, "-"):
             p.append(f"template row {n}: page checker {checker[0]!r}, registry says {reg.get(page)!r}")
@@ -430,8 +435,10 @@ def check(text):
     uphist = [f for f in files if "upstream_history" in f.parts]
     probe = [f for f in files if "probe" in f.parts]
     tables = [f for f in files if "tables" in f.parts]
+    dev = [f for f in files if f.parent == DEV_DIR]
     top = [f for f in files if f.parent == NOTES]
-    owned = set(index) | set(summaries) | set(templates) | set(uphist) | set(probe) | set(tables) | set(top)
+    owned = (set(index) | set(summaries) | set(templates) | set(uphist) | set(probe) | set(tables)
+             | set(dev) | set(top))
     for f in files:
         if f not in owned:
             p.append(f"file under notes/ owned by no rule: {f.relative_to(ROOT)}")
@@ -449,10 +456,11 @@ def check(text):
     checked = set()
     for cells in table_rows(parts.get("checkers", [])):
         checked.update(cell_paths(cells[1]))
-    # Pass H checks notes/templates.md, and this checker is not a row in its own table, so the
-    # table-derived credit cannot see it. A page checked by the checker measuring it is checked.
-    checked.add("notes/templates.md")
+    # Pass H checks notes/development/templates.md, and this checker is not a row in its own table, so
+    # the table-derived credit cannot see it. A page checked by the checker measuring it is checked.
+    checked.add("notes/development/templates.md")
     top_md = sorted(f.name for f in top if f.suffix == ".md")
+    dev_md = sorted(f.name for f in dev if f.suffix == ".md")
     md_checked = sorted(n for n in top_md if f"notes/{n}" in checked)
     md_free = sorted(n for n in top_md if f"notes/{n}" not in checked)
     census = census_rows(text)
@@ -460,8 +468,9 @@ def check(text):
         "notes/index/": len(index),
         "notes/summaries/": len(summaries),
         "notes/templates/": len(templates),
-        "notes/upstream_history/": len(uphist),
-        "notes/probe/": len(probe),
+        "notes/development/*.md": len(dev_md),
+        "notes/development/upstream_history/": len(uphist),
+        "notes/development/probe/": len(probe),
         "notes/tables/*.tsv": len(tables_tsv),
         "notes/*.md": len(top_md),
         "notes/": len(files),
@@ -584,8 +593,8 @@ def main():
     print(f"top-level ∩ index basenames: {shared}")
     print(f"index ∩ summaries slugs: {len({f.name for f in index} & {f.name for f in summaries})}")
     tpl = templates_problems(read_text(TEMPLATES_PAGE))
-    print(f"templates census (notes/templates.md): {len(template_measure())} templates on disk, "
-          f"{len(tpl)} problems")
+    print(f"templates census (notes/development/templates.md): {len(template_measure())} templates "
+          f"on disk, {len(tpl)} problems")
     p = check(text)
     sync = sync_problems(README, read_text(README))
     for x in p + tpl + sync:

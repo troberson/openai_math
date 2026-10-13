@@ -10,14 +10,16 @@ after each pass.
 
 Two patterns, because one pattern cannot be comparable across the move. A single pattern that allows
 `/` reads 298 mentions today, 16 of them naming directories the reorg leaves in place
-(`notes/scripts/README.md`, `notes/index/names.tsv`, `notes/upstream_history/…`). A single pattern
-that forbids `/` reads 282 today and 0 after the move. So the probe prints three counts:
+(`notes/scripts/README.md`, `notes/index/names.tsv`, `notes/development/upstream_history/…`). A single
+pattern that forbids `/` reads 282 today and 0 after the move. So the probe prints three counts:
 
 - **moved, top level** — `notes/<page>.md|tsv`: 282 before the move, 0 after;
 - **moved, in the new directories** — `notes/reports/…`, `notes/development/…`, `notes/tables/…`:
   0 before, 282 after. The two moved counts must agree; that is the comparability test;
-- **stable** — mentions under `scripts/`, `index/`, `summaries/`, `probe/`, `upstream_history/`:
-  16, and must not change across any pass.
+- **stable** — mentions under `scripts/`, `index/`, `summaries/`, `development/probe/`,
+  `development/upstream_history/`: 16, and must not change across any pass. The two `development/`
+  buckets are directories the reorg moved *into*, so a mention naming them is stable, not moved:
+  `MOVED_NEW` requires a filename directly after `development/`, and the probe records are `.txt`.
 
 Scope is the 30 pages the reorg moves: the top-level `notes/*.md`, plus `notes/reports/*.md` and
 `notes/development/*.md` once those directories exist. Report-only: writes nothing.
@@ -33,7 +35,7 @@ from catlib.paths import ROOT
 
 MOVED_TOP = re.compile(r"notes/[A-Za-z0-9._+-]*\.(?:md|tsv)")
 MOVED_NEW = re.compile(r"notes/(?:reports|development|tables)/[A-Za-z0-9._+-]*\.(?:md|tsv)")
-STABLE = re.compile(r"notes/(?:scripts|index|summaries|probe|upstream_history)"
+STABLE = re.compile(r"notes/(?:scripts|index|summaries|development/probe|development/upstream_history)"
                     r"/[A-Za-z0-9._+/-]*\.(?:md|tsv)")
 ANCHORED = re.compile(r"notes/(?:(?:reports|development|tables)/)?[A-Za-z0-9._+-]*\.(?:md|tsv):\d+")
 QUOTE = re.compile(r'\*[^*]*["“][^"”]*["”][^*]*\*')

@@ -1,6 +1,6 @@
 """The self-tests for `notes/scripts/verify_fleet_design.py`.
 
-The checker verifies `notes/fleet-design.md` against the fleet it describes. Anchors: every
+The checker verifies `notes/development/fleet-design.md` against the fleet it describes. Anchors: every
 backticked `path:line` (or `path:a-b`) resolves against the file, a prefixed path under the repo
 root, a bare script name under `notes/scripts/`, and a span fits inside the file. Counts: every
 count phrase is re-derived by running the command the page names — the atomicity grep, the
@@ -77,9 +77,9 @@ MUTANTS = [
     # The page ships no notes-page anchor, so the resolver's notes/ branch is inert on a clean page.
     # This fault injects one with a line past the file's end, which is the only way the branch is
     # proven to fire.
-    ("notes-page anchor outside the file", "anchor line outside file: `notes/fleet-design.md:9999`",
+    ("notes-page anchor outside the file", "anchor line outside file: `notes/development/fleet-design.md:9999`",
      lambda t: t.replace("`render_reports.py:1162`",
-                         "`render_reports.py:1162` `notes/fleet-design.md:9999`", 1)),
+                         "`render_reports.py:1162` `notes/development/fleet-design.md:9999`", 1)),
     ("prose count in the size argument", "count phrase not in the page: **907,744** bytes",
      lambda t: t.replace("**907,744** bytes", "**907,743** bytes", 1)),
     # The TSV count and the writer-row count are measured from the fleet's own tree and the ROWS block,

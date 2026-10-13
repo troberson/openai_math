@@ -13,7 +13,8 @@ unchanged.
 `L1` and `ARTIFACTS` are the registry: one list per writer, read by the writer (through `key_for`)
 and by `verify_cache_promotion.py`, so a writer and its verifier cannot drift into two implementations
 of the same join. The L1 lists are derived from the audit-hook open-mode records at
-`notes/probe/2026-10-11_writers.txt` and `notes/probe/2026-10-10_writers.txt`, with each writer's own
+`notes/development/probe/2026-10-11_writers.txt` and
+`notes/development/probe/2026-10-10_writers.txt`, with each writer's own
 outputs excluded: a file the writer reads that the key does not name is a cache that can serve stale
 bytes, which is the failure mode the exactness check exists to catch.
 
@@ -36,8 +37,8 @@ from catlib.records import key as digest_key
 # The nineteen report-fed pages, in the order the registry in `catlib/templates.py` lists them.
 REPORT_PAGES = (
     "notes/abstracts.md",
-    "notes/index-links.md",
-    "notes/index-design.md",
+    "notes/development/index-links.md",
+    "notes/development/index-design.md",
     "notes/links.md",
     "notes/dependency-drift.md",
     "notes/named-results.md",
@@ -51,8 +52,8 @@ REPORT_PAGES = (
     "notes/subfinding-pairs.md",
     "notes/counterexample-crosscheck.md",
     "notes/formalization-faithfulness.md",
-    "notes/fleet-design.md",
-    "notes/templates.md",
+    "notes/development/fleet-design.md",
+    "notes/development/templates.md",
     "notes/README.md",
 )
 
@@ -83,8 +84,8 @@ L1: dict[str, tuple[str, ...]] = {
                           # since moved. The top-level `notes/*.md` pages are NOT here — the fleet
                           # population globs their names, it does not open them, and the audit-hook
                           # record names only opens.
-                          "notes/scripts/", "notes/probe/2026-10-11_writers.txt",
-                          "notes/probe/2026-10-11_checkers.txt"),
+                          "notes/scripts/", "notes/development/probe/2026-10-11_writers.txt",
+                          "notes/development/probe/2026-10-11_checkers.txt"),
     "build_report_templates.py": REPORT_PAGES,
     # The names measurement is a record producer, not a page writer: its only tracked input is the
     # ledger, which the probe records as the single notes/ path it opens read-only. Its record is the
@@ -94,7 +95,7 @@ L1: dict[str, tuple[str, ...]] = {
     # The seeder reads one page, one source, the 21 summaries pages, and the notes pages those pages
     # declare as sources. `overview.tex` is inside a hashed tree, so the key already covers it; the
     # pair page, the summaries tree and the three cited notes pages are not, so the L1 names them. The
-    # probe record `notes/probe/2026-10-12_seed_quotes_summaries.txt` is the read that justifies this
+    # probe record `notes/development/probe/2026-10-12_seed_quotes_summaries.txt` justifies this
     # list: it is the first record that names the summaries tree, and the three notes pages appear
     # because a Sources cell can point at a notes page, not only at a manuscript file.
     "seed_quotes.py": ("notes/subfinding-pairs.md", "notes/summaries/", "notes/counterexample-tag.md",
@@ -173,9 +174,10 @@ PAGE_EXTRA = frozenset({"refresh_summary_line_counts.py"})
 PROBE_EXEMPT = frozenset({"build_report_templates.py"})
 
 # The same writer's L1 must be hashed from HEAD, not from the working tree, because that is what it
-# reads. Its own output feeds one of the L1 entries: `notes/templates.md` tabulates the template bytes,
-# so a render after the builder moves that page's bytes and a working-tree key stops matching the key
-# the builder used. Hashing the read surface the writer actually reads makes the key a function of HEAD.
+# reads. Its own output feeds one of the L1 entries: `notes/development/templates.md` tabulates the
+# template bytes, so a render after the builder moves that page's bytes and a working-tree key stops
+# matching the key the builder used. Hashing the read surface the writer actually reads makes the key
+# a function of HEAD.
 L1_HEAD = frozenset({"build_report_templates.py"})
 
 

@@ -37,7 +37,7 @@
 | [ProjectionMoments](../../../lean/ComparatorChallenges/ProjectionMoments.json) | `OAI.ProjectionMoments.main` | [Main.lean](../../../lean/OAI/Probability/ProjectionMoments/Main.lean) | [`OAI/Probability/ProjectionMoments`](../../../lean/OAI/Probability/ProjectionMoments/) |
 | [SubsphereCurrent](../../../lean/ComparatorChallenges/SubsphereCurrent.json) | `OAI.SubsphereCurrent.full_current_main_scope` | [Main.lean](../../../lean/OAI/Probability/Subsphere/Main.lean) | [`OAI/Probability/Subsphere`](../../../lean/OAI/Probability/Subsphere/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

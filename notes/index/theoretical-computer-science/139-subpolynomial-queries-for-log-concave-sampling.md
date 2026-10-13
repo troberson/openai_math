@@ -27,7 +27,7 @@
 |---|---|---|---|
 | [LogConcaveQuery](../../../lean/ComparatorChallenges/LogConcaveQuery.json) | `OAI.LogConcaveSampling.exact_source_main` | [Main.lean](../../../lean/OAI/Probability/LogConcave/Main.lean) | [`OAI/Probability/LogConcave`](../../../lean/OAI/Probability/LogConcave/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

@@ -27,7 +27,7 @@
 |---|---|---|---|
 | [GotsmanLinial](../../../lean/ComparatorChallenges/GotsmanLinial.json) | `OAI.LeanBlast.GotsmanLinial.gotsmanLinialStatement` | [Main.lean](../../../lean/OAI/Combinatorics/GotsmanLinial/Main.lean) | [`OAI/Combinatorics/GotsmanLinial`](../../../lean/OAI/Combinatorics/GotsmanLinial/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

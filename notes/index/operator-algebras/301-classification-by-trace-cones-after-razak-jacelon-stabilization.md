@@ -29,7 +29,7 @@
 | [TraceIdealTransportSupport](../../../lean/ComparatorChallenges/TraceIdealTransportSupport.json) | `OAI.TraceConeClassification.TraceConeEquiv.idealOrderIso_zeroIdeal` | [IdealTransport.lean](../../../lean/OAI/Analysis/TraceCone/IdealTransport.lean) | [`OAI/Analysis/TraceCone`](../../../lean/OAI/Analysis/TraceCone/) |
 | [TraceIdealTransportSupport](../../../lean/ComparatorChallenges/TraceIdealTransportSupport.json) | `OAI.TraceConeClassification.closed_ideal_weight_exists` | [FiniteIdeal.lean](../../../lean/OAI/Analysis/TraceCone/FiniteIdeal.lean) | [`OAI/Analysis/TraceCone`](../../../lean/OAI/Analysis/TraceCone/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

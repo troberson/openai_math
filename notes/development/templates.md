@@ -20,10 +20,10 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `abstracts.md.j2` | 406 | 32,501 | 42 | `notes/abstracts.md` | `verify_abstracts.py` | 45 |
 | `counterexample-crosscheck.md.j2` | 1,089 | 45,827 | 87 | `notes/counterexample-crosscheck.md` | `verify_counterexample_crosscheck.py` | 20 |
 | `dependency-drift.md.j2` | 229 | 11,534 | 95 | `notes/dependency-drift.md` | `verify_dependency_drift.py` | NOT DERIVED |
-| `fleet-design.md.j2` | 459 | 39,483 | 34 | `notes/fleet-design.md` | `verify_fleet_design.py` | 20 |
+| `fleet-design.md.j2` | 459 | 39,483 | 34 | `notes/development/fleet-design.md` | `verify_fleet_design.py` | 20 |
 | `formalization-faithfulness.md.j2` | 265 | 11,802 | 65 | `notes/formalization-faithfulness.md` | `verify_faithfulness.py` | 13 |
-| `index-design.md.j2` | 232 | 13,356 | 101 | `notes/index-design.md` | `verify_index_design.py` | 82 |
-| `index-links.md.j2` | 215 | 12,823 | 81 | `notes/index-links.md` | `check_index_links.py` | NOT DERIVED |
+| `index-design.md.j2` | 232 | 13,356 | 101 | `notes/development/index-design.md` | `verify_index_design.py` | 82 |
+| `index-links.md.j2` | 215 | 12,823 | 81 | `notes/development/index-links.md` | `check_index_links.py` | NOT DERIVED |
 | `links.md.j2` | 224 | 12,298 | 110 | `notes/links.md` | `extract_links.py` | NOT DERIVED |
 | `named-results.md.j2` | 368 | 25,287 | 83 | `notes/named-results.md` | `verify_named_results.py` | 65 |
 | `names.md.j2` | 277 | 13,865 | 130 | `notes/names.md` | `measure_names.py` | NOT DERIVED |
@@ -32,7 +32,7 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `sources.md.j2` | 156 | 9,392 | 29 | `notes/sources.md` | `verify_sources.py` | 31 |
 | `subfinding-pairs.md.j2` | 636 | 26,862 | 165 | `notes/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |
 | `t0-chains.md.j2` | 569 | 34,014 | 62 | `notes/t0-chains.md` | `verify_t0_chains.py` | 12 |
-| `templates.md.j2` | 107 | 5,047 | 45 | `notes/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
+| `templates.md.j2` | 107 | 5,047 | 45 | `notes/development/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `topics.md.j2` | 335 | 23,074 | 117 | `notes/topics.md` | `measure_topics.py` | NOT DERIVED |
 | `verification-dirs.md.j2` | 408 | 37,944 | 44 | `notes/verification-dirs.md` | `verify_verification_dirs.py` | 16 |
 | **report tree** | **19** | **7,175** | **462,134** | **1,446** | | |
@@ -95,5 +95,5 @@ other: template-without-page **0**, page-without-template **0**.
 - No template is executed here: the census is text measurement. Proof that a template renders its
   page is `render_reports.py` run twice with the pages byte-identical, plus each page's own checker.
 - The index-tree templates are counted and their output is counted; `build_index.py`'s own report
-  (links, canonical counts, stale sweep) is not re-checked here — see `notes/index-design.md`.
+  (links, canonical counts, stale sweep) is not re-checked here — see `notes/development/index-design.md`.
 - Needle coverage for the **10** NOT-DERIVED pages is unverified by the builder, by its own report line.

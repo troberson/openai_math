@@ -29,7 +29,7 @@
 | [C0Absorption](../../../lean/ComparatorChallenges/C0Absorption.json) | `OAI.C0Absorption.main_result` | [Main.lean](../../../lean/OAI/Analysis/C0Absorption/Main.lean) | [`OAI/Analysis/C0Absorption`](../../../lean/OAI/Analysis/C0Absorption/) |
 | [LipschitzEquivalence](../../../lean/ComparatorChallenges/LipschitzEquivalence.json) | `OAI.LipschitzCounterexample.main` | [Main.lean](../../../lean/OAI/Analysis/LipschitzEquivalence/Main.lean) | [`OAI/Analysis/LipschitzEquivalence`](../../../lean/OAI/Analysis/LipschitzEquivalence/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

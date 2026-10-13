@@ -27,7 +27,7 @@
 |---|---|---|---|
 | [CharacterCriterion](../../../lean/ComparatorChallenges/CharacterCriterion.json) | `OAI.KirchbergRordam.character_criterion` | [Main.lean](../../../lean/OAI/Analysis/CharacterCriterion/Main.lean) | [`OAI/Analysis/CharacterCriterion`](../../../lean/OAI/Analysis/CharacterCriterion/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

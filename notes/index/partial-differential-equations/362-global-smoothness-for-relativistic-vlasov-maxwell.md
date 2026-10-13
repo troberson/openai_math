@@ -27,7 +27,7 @@
 |---|---|---|---|
 | [VlasovMaxwell](../../../lean/ComparatorChallenges/VlasovMaxwell.json) | `OAI.RVM.global_classical_solution` | [Main.lean](../../../lean/OAI/Analysis/VlasovMaxwell/Main.lean) | [`OAI/Analysis/VlasovMaxwell`](../../../lean/OAI/Analysis/VlasovMaxwell/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

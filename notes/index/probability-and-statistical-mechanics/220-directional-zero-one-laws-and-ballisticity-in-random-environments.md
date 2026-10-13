@@ -29,7 +29,7 @@
 |---|---|---|---|
 | [DirectionalBallisticity](../../../lean/ComparatorChallenges/DirectionalBallisticity.json) | `OAI.DirectionalTransience.directional_transience_implies_ballisticity` | [Main.lean](../../../lean/OAI/Probability/Ballisticity/Main.lean) | [`OAI/Probability/Ballisticity`](../../../lean/OAI/Probability/Ballisticity/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

@@ -30,7 +30,7 @@
 | [CommutingDerivations](../../../lean/ComparatorChallenges/CommutingDerivations.json) | `OAI.AbhyankarSathaye.CommutingDerivations.commuting_derivations_with_ordinary_extras` | [OrdinaryExtraMain.lean](../../../lean/OAI/AlgebraicGeometry/CommutingDerivations/OrdinaryExtraMain.lean) | [`OAI/AlgebraicGeometry/CommutingDerivations`](../../../lean/OAI/AlgebraicGeometry/CommutingDerivations/) |
 | [StableCoordinateFour](../../../lean/ComparatorChallenges/StableCoordinateFour.json) | `OAI.StableCoordinate.principal_package` | [Principal.lean](../../../lean/OAI/AlgebraicGeometry/StableCoordinate/Principal.lean) | [`OAI/AlgebraicGeometry/StableCoordinate`](../../../lean/OAI/AlgebraicGeometry/StableCoordinate/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

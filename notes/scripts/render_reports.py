@@ -97,10 +97,10 @@ TSV = ROOT / "notes" / "tables" / "sources.tsv"
 SOURCES_MD = ROOT / "notes" / "sources.md"
 ABSTRACTS_MD = ROOT / "notes" / "abstracts.md"
 NAMED_RESULTS_MD = ROOT / "notes" / "named-results.md"
-INDEX_DESIGN_MD = ROOT / "notes" / "index-design.md"
+INDEX_DESIGN_MD = ROOT / "notes" / "development" / "index-design.md"
 NAMES_MD = ROOT / "notes" / "names.md"
 PROOF_DENSITY_MD = ROOT / "notes" / "proof-density.md"
-INDEX_LINKS_MD = ROOT / "notes" / "index-links.md"
+INDEX_LINKS_MD = ROOT / "notes" / "development" / "index-links.md"
 LINKS_MD = ROOT / "notes" / "links.md"
 LINKS_TSV = ROOT / "notes" / "tables" / "links.tsv"
 DRIFT_MD = ROOT / "notes" / "dependency-drift.md"
@@ -115,8 +115,8 @@ SP_MD = ROOT / "notes" / "subfinding-pairs.md"
 README_MD = ROOT / "notes" / "README.md"
 CROSSCHECK_MD = ROOT / "notes" / "counterexample-crosscheck.md"
 FAITH_MD = ROOT / "notes" / "formalization-faithfulness.md"
-TEMPLATES_MD = ROOT / "notes" / "templates.md"
-FLEET_MD = ROOT / "notes" / "fleet-design.md"
+TEMPLATES_MD = ROOT / "notes" / "development" / "templates.md"
+FLEET_MD = ROOT / "notes" / "development" / "fleet-design.md"
 VPOS = preprints.bundle_of(PREPRINTS / "Positively-curved-Einstein-four-manifolds-September-23-2026")
 VZERO = preprints.bundle_of(PREPRINTS / "Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026")
 FOCK = PREPRINTS / "A-Fock-space-inequality-and-the-Laughlin-spectral-gap-September-24-2026"
@@ -560,7 +560,7 @@ def builds_on_anchor() -> int:
 
 
 def index_full(p: dict[str, Any]) -> dict[str, str]:
-    """label -> the exact phrase notes/index-design.md must carry.
+    """label -> the exact phrase notes/development/index-design.md must carry.
 
     These are the needles notes/scripts/verify_index_design.py builds from
     measure_index_sizes.population(); the formulas are copied here on the writer side so the
@@ -713,7 +713,7 @@ def index_full(p: dict[str, Any]) -> dict[str, str]:
 
 
 def index_phrases(p: dict[str, Any]) -> dict[str, str]:
-    """Slot dict for notes/index-design.md: full phrases, split at the page's own line breaks."""
+    """Slot dict for notes/development/index-design.md: full phrases, split at the page's own line breaks."""
     out: dict[str, str] = {}
     for label, phrase in index_full(p).items():
         prefixes = INDEX_SPLIT.get(label)
@@ -734,7 +734,7 @@ def index_phrases(p: dict[str, Any]) -> dict[str, str]:
     return out
 
 
-# Where notes/index-design.md wraps a phrase across lines, the prefix the page's first line ends
+# Where notes/development/index-design.md wraps a phrase across lines, the prefix the page's first line ends
 # with. Transcribed from the page bytes, not invented: a prefix that stops matching the measured
 # phrase raises ValueError here rather than reflowing the page.
 INDEX_SPLIT = {
@@ -767,7 +767,7 @@ INDEX_SPLIT = {
 
 
 def index_page(p: dict[str, Any]) -> str:
-    """notes/index-design.md, rendered from measure_index_sizes.population()."""
+    """notes/development/index-design.md, rendered from measure_index_sizes.population()."""
     return ENV.get_template("index-design.md.j2").render(p=index_phrases(p))
 
 
@@ -1093,7 +1093,7 @@ def proof_density_page(p: dict[str, str]) -> str:
     return ENV.get_template("proof-density.md.j2").render(p=p)
 
 
-# --- notes/index-links.md --------------------------------------------------------------
+# --- notes/development/index-links.md --------------------------------------------------------------
 # The page quotes two reports. check_index_links.py is imported (it does no work at module scope),
 # so the writer reads its measurement as data. build_index.py is run as a subprocess: it calls
 # main() at module scope, so importing it would run the 45-second index build inside every render.
@@ -1112,7 +1112,7 @@ IL_GROUP_CELL = {"name pages": "name pages", "family pages": "family pages",
 # Categories whose scanned count exceeds the render-time registered count, in the page's row order.
 IL_GAP_CATS = ["index-page", "manuscript-dir", "notes-doc", "index-table", "config-json",
                "verification-dir", "index-dir"]
-# Where notes/index-links.md wraps a phrase across lines, the prefix its first line ends with.
+# Where notes/development/index-links.md wraps a phrase across lines, the prefix its first line ends with.
 IL_SPLIT = {
     "hl_canon": ["719",
                  ("manuscript PDFs, 719 `build/` trees, 719 `README.md` stubs, 242 scope notes, "
@@ -1201,7 +1201,7 @@ def build_index_report() -> dict[str, Any]:
 
 
 def index_links_population() -> dict[str, Any]:
-    """The two reports notes/index-links.md quotes.
+    """The two reports notes/development/index-links.md quotes.
 
     The build runs first so the disk scan reads the index the same render just produced. The
     self-test counts are not here: the injected hrefs live in
@@ -1212,7 +1212,7 @@ def index_links_population() -> dict[str, Any]:
 
 
 def index_links_full(p: dict[str, Any]) -> dict[str, str]:
-    """label → full measured phrase, for notes/index-links.md."""
+    """label → full measured phrase, for notes/development/index-links.md."""
     s, b = p["scan"], p["build"]
     cats, canon, reg = s["cats"], s["canon"], b["reg"]
     tg = {c: len(v) for c, v in s["targets"].items()}
@@ -1316,7 +1316,7 @@ def index_links_full(p: dict[str, Any]) -> dict[str, str]:
 
 
 def index_links_phrases(p: dict[str, Any]) -> dict[str, str]:
-    """Slot dict for notes/index-links.md: full phrases, split at the page's own line breaks."""
+    """Slot dict for notes/development/index-links.md: full phrases, split at the page's own line breaks."""
     out: dict[str, str] = {}
     for label, phrase in index_links_full(p).items():
         prefixes = IL_SPLIT.get(label)
@@ -2407,8 +2407,8 @@ def templates_page(p: dict[str, str]) -> str:
     return ENV.get_template("templates.md.j2").render(p=p)
 
 
-FLEET_PROBE = [ROOT / "notes/probe/2026-10-11_writers.txt",
-               ROOT / "notes/probe/2026-10-11_checkers.txt"]
+FLEET_PROBE = [ROOT / "notes/development/probe/2026-10-11_writers.txt",
+               ROOT / "notes/development/probe/2026-10-11_checkers.txt"]
 FLEET_DIGESTS = ["HEAD:preprints", "HEAD:lean", "HEAD:overview.tex", "HEAD:CONTENTS.md",
                  "HEAD:reasoning_traces"]
 FLEET_HAND = {"topics.tsv", "conjecture-standing.tsv"}
@@ -2476,7 +2476,7 @@ def fleet_probe_wall() -> dict[str, float]:
 
 
 def fleet_population() -> dict[str, Any]:
-    """Every derived figure on `notes/fleet-design.md`, measured from the fleet's own sources.
+    """Every derived figure on `notes/development/fleet-design.md`, measured from the fleet's own sources.
 
     The writer's measurement is deliberately its own: the page's checker re-derives the same figures
     with its own reads, and a checker that compared the page with the writer's numbers would prove
@@ -2509,7 +2509,7 @@ def fleet_population() -> dict[str, Any]:
                                    "preprints", "lean", "overview.tex", "CONTENTS.md",
                                    "reasoning_traces").splitlines() if l.strip()]
     tsvs = sorted((ROOT / "notes/tables").glob("*.tsv"))
-    probe = sorted(p.name for p in (ROOT / "notes/probe").iterdir() if p.is_file())
+    probe = sorted(p.name for p in (ROOT / "notes/development/probe").iterdir() if p.is_file())
     gate = (ROOT / "notes/scripts/gate.py").read_text(encoding="utf-8")
     rows_block = gate[gate.index("ROWS = ["):]
     set_sites: list[str] = []
@@ -2551,7 +2551,7 @@ def fleet_population() -> dict[str, Any]:
     }
 
 
-# Where notes/fleet-design.md wraps a phrase across lines, the prefix the page's first line ends
+# Where notes/development/fleet-design.md wraps a phrase across lines, the prefix the page's first line ends
 # with. Transcribed from the page bytes, not invented: a prefix that stops matching the measured
 # phrase raises ValueError here rather than reflowing the page.
 FLEET_SPLIT = {

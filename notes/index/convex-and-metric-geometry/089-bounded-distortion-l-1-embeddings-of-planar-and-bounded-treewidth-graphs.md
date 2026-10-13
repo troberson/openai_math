@@ -29,7 +29,7 @@
 | [BoundedTreewidthL1](../../../lean/ComparatorChallenges/BoundedTreewidthL1.json) | `OAI.BoundedTreewidthL1.main_theorem` | [Main.lean](../../../lean/OAI/Combinatorics/TreewidthL1/Main.lean) | [`OAI/Combinatorics/TreewidthL1`](../../../lean/OAI/Combinatorics/TreewidthL1/) |
 | [PlanarL1](../../../lean/ComparatorChallenges/PlanarL1.json) | `OAI.PlanarL1.planar_graph_metrics_embed_L1` | [Embedding.lean](../../../lean/OAI/Combinatorics/PlanarL1/Embedding.lean) | [`OAI/Combinatorics/PlanarL1`](../../../lean/OAI/Combinatorics/PlanarL1/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

@@ -29,7 +29,7 @@
 | [BiholderTransport](../../../lean/ComparatorChallenges/BiholderTransport.json) | `OAI.WeakMTWTransport.uniform_biHolder_transport` | [Main.lean](../../../lean/OAI/Analysis/BiholderTransport/Main.lean) | [`OAI/Analysis/BiholderTransport`](../../../lean/OAI/Analysis/BiholderTransport/) |
 | [WeakMTWGlobalSupport](../../../lean/ComparatorChallenges/WeakMTWGlobalSupport.json) | `OAI.WeakMTWGlobalSupport.current_main_convexity` | [Convexity.lean](../../../lean/OAI/Geometry/WeakMTW/Convexity.lean) | [`OAI/Geometry/WeakMTW`](../../../lean/OAI/Geometry/WeakMTW/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

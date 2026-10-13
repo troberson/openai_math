@@ -27,7 +27,7 @@
 |---|---|---|---|
 | [PowerFreeValues](../../../lean/ComparatorChallenges/PowerFreeValues.json) | `OAI.QuarticPowerFree.allDegrees` | [Main.lean](../../../lean/OAI/NumberTheory/PowerFree/Main.lean) | [`OAI/NumberTheory/PowerFree`](../../../lean/OAI/NumberTheory/PowerFree/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

@@ -1,6 +1,6 @@
 """The self-tests for `notes/scripts/verify_upstream_history.py`.
 
-The checker verifies the three `notes/upstream_history/` pages against git, the release files, and
+The checker verifies the three `notes/development/upstream_history/` pages against git, the release files, and
 disk: anchors resolve, quotations match the anchored lines verbatim, fenced blocks match their
 nearest anchor, every date-suffixed slug exists as a `preprints/` directory, every markdown link
 resolves, the per-anchor needles carry the content they claim, every count phrase is re-derived from
@@ -29,8 +29,8 @@ import pytest
 
 pytestmark = pytest.mark.mutant
 
-PAGE_301 = "notes/upstream_history/2026-10-07_3014888.md"
-PAGE_FD = "notes/upstream_history/2026-10-07_fd4aeeb.md"
+PAGE_301 = "notes/development/upstream_history/2026-10-07_3014888.md"
+PAGE_FD = "notes/development/upstream_history/2026-10-07_fd4aeeb.md"
 
 # Faults in the pages' own text, each keyed to the problem string the pass that owns it prints.
 MUTANTS = [
@@ -69,7 +69,7 @@ MUTANTS = [
      lambda t: t.replace("Nothing. `git diff",
                          'Nothing. *"a quotation with no anchor at all"* `git diff')),
     ("link that does not resolve", PAGE_301, "does not exist",
-     lambda t: t.replace("[`history.md`](../../history.md)", "[`history.md`](../../historyx.md)")),
+     lambda t: t.replace("[`history.md`](../../../history.md)", "[`history.md`](../../../historyx.md)")),
 ]
 
 

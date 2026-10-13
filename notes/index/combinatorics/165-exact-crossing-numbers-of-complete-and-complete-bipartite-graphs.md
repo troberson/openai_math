@@ -29,7 +29,7 @@
 | [BipartiteCrossing](../../../lean/ComparatorChallenges/BipartiteCrossing.json) | `OAI.Zarankiewicz.mainTarget_proof` | [Main.lean](../../../lean/OAI/Combinatorics/Crossing/Main.lean) | [`OAI/Combinatorics/Crossing`](../../../lean/OAI/Combinatorics/Crossing/) |
 | [CompleteCrossing](../../../lean/ComparatorChallenges/CompleteCrossing.json) | `OAI.Paper170.complete_graph_crossing_number` | [Main.lean](../../../lean/OAI/Combinatorics/CompleteCrossing/Main.lean) | [`OAI/Combinatorics/CompleteCrossing`](../../../lean/OAI/Combinatorics/CompleteCrossing/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

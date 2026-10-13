@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Measure the node and edge population an index over this release would carry.
 
-Report-only; writes nothing and runs nothing. Every count in notes/index-design.md comes from
-population() here, so the design record quotes numbers a command reproduces.
+Report-only; writes nothing and runs nothing. Every count in notes/development/index-design.md comes
+from population() here, so the design record quotes numbers a command reproduces.
 
 Rules stated where they matter:
 
@@ -15,10 +15,10 @@ Rules stated where they matter:
 - Family→config is counted per family as a set, which is why it reads 416 here and 426 in
   notes/tables/links.tsv, where 7 scope notes link one config twice.
 - Manuscript ownership is the path component after `preprints`, never `parts[-2]`.
-- "The whole ledger set" is the five tracked TSVs notes/index-design.md tabulates, named in
-  LEDGER_SET below. The sum over *every* notes/tables/*.tsv is reported separately as `all_tsv_bytes`: it
-  grew from 296,283 B to 541,463 B when `sources.tsv` and `topics.tsv` were added, so quoting it as
-  the ledger set would move a number the page states under a narrower rule.
+- "The whole ledger set" is the five tracked TSVs notes/development/index-design.md tabulates, named
+  in LEDGER_SET below. The sum over *every* notes/tables/*.tsv is reported separately as
+  `all_tsv_bytes`: it grew from 296,283 B to 541,463 B when `sources.tsv` and `topics.tsv` were
+  added, so quoting it as the ledger set would move a number the page states under a narrower rule.
 - Index table row counts are read from the generated files under `notes/index/`, not derived from
   the upstream counts they were built from, so a build that drops rows shows as a mismatch.
 """
@@ -42,7 +42,7 @@ from catlib.paths import (
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 IDX = ROOT / "notes" / "index"
 
-# The five TSVs notes/index-design.md tabulates as "the whole ledger set".
+# The five TSVs notes/development/index-design.md tabulates as "the whole ledger set".
 LEDGER_SET = ("catalog.tsv", "conjecture-standing.tsv", "formalization-deps.tsv", "links.tsv",
               "subfindings.tsv")
 
@@ -116,7 +116,7 @@ def population():
     index_rows = {p.name: rows_of(p) for p in sorted(IDX.rglob("*.tsv"))}
     index_pages = len(list(IDX.rglob("*.md")))
 
-    # The disk link check notes/index-design.md quotes, re-derived here so the page's
+    # The disk link check notes/development/index-design.md quotes, re-derived here so the page's
     # figures are checked against a scan and not against prose.
     import check_index_links as CL
     dlinks = CL.check_index()

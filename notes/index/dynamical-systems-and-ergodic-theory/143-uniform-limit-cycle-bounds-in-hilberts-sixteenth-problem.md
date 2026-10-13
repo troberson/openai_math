@@ -28,7 +28,7 @@
 |---|---|---|---|
 | [QuinticLienard](../../../lean/ComparatorChallenges/QuinticLienard.json) | `OAI.QuinticLienard.main` | [Main.lean](../../../lean/OAI/Analysis/LienardCycles/Main.lean) | [`OAI/Analysis/LienardCycles`](../../../lean/OAI/Analysis/LienardCycles/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

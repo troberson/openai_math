@@ -27,7 +27,7 @@
 |---|---|---|---|
 | [RieszQuantitative](../../../lean/ComparatorChallenges/RieszQuantitative.json) | `OAI.RieszRectifiability.quantitative_higher_codimension_riesz_rectifiability` | [Rectifiability.lean](../../../lean/OAI/Analysis/RieszRectifiability/Uniformity/Rectifiability.lean) | [`OAI/Analysis/RieszRectifiability/Uniformity`](../../../lean/OAI/Analysis/RieszRectifiability/Uniformity/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

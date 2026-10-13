@@ -1179,8 +1179,8 @@ writers derived from source: 10
   writes extract_formalization_deps.py: notes/tables/formalization-deps.tsv
   writes extract_links.py: notes/tables/links.tsv
   writes extract_subfindings.py: notes/tables/subfindings.tsv
-  writes measure_open_probe.py: notes/probe
-  writes render_reports.py: notes/README.md, notes/abstracts.md, notes/counterexample-crosscheck.md, notes/dependency-drift.md, notes/formalization-faithfulness.md, notes/index-design.md, notes/index-links.md, notes/links.md, notes/named-results.md, notes/names.md, notes/proof-density.md, notes/scope-exclusions.md, notes/sources.md, notes/subfinding-pairs.md, notes/t0-chains.md, notes/templates.md, notes/topics.md, notes/verification-dirs.md
+  writes measure_open_probe.py: notes/development/probe
+  writes render_reports.py: notes/README.md, notes/abstracts.md, notes/counterexample-crosscheck.md, notes/dependency-drift.md, notes/formalization-faithfulness.md, notes/development/index-design.md, notes/development/index-links.md, notes/links.md, notes/named-results.md, notes/names.md, notes/proof-density.md, notes/scope-exclusions.md, notes/sources.md, notes/subfinding-pairs.md, notes/t0-chains.md, notes/development/templates.md, notes/topics.md, notes/verification-dirs.md
 index tree: 1049 (1033 md + 16 tsv)
 summaries: 21
 templates: 23
@@ -1188,7 +1188,7 @@ top-level: 0 tsv + 30 md
 notes/ total (scripts excluded): 1139
 top-level ∩ index basenames: ['README.md']
 index ∩ summaries slugs: 13
-templates census (notes/templates.md): 23 templates on disk, 0 problems
+templates census (notes/development/templates.md): 23 templates on disk, 0 problems
 sync problems (notes/README.md): 0
 reconciliation: writers == page True
 reconciliation: census rows == disk True
@@ -1211,7 +1211,7 @@ reconciliation: templates page == disk True
               4  r        notes/tables/catalog.tsv
               1  r        notes/tables/sources.tsv
               1  r        notes/tables/topics.tsv
-              1  r        notes/templates.md
+              1  r        notes/development/templates.md
               2  r        notes/templates/discipline.md.j2
               2  r        notes/templates/family.md.j2
               2  r        notes/templates/index-readme.md.j2

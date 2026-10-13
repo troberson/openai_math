@@ -30,7 +30,7 @@
 | [MatchingEntropy](../../../lean/ComparatorChallenges/MatchingEntropy.json) | `OAI.MatchingEntropy.entropy_main` | [Main.lean](../../../lean/OAI/Combinatorics/PerfectMatching/Main.lean) | [`OAI/Combinatorics/PerfectMatching`](../../../lean/OAI/Combinatorics/PerfectMatching/) |
 | [SingletonLoopMatching](../../../lean/ComparatorChallenges/SingletonLoopMatching.json) | `OAI.LoopMatching.fullEndpoint` | [Main.lean](../../../lean/OAI/Computability/LoopMatching/Main.lean) | [`OAI/Computability/LoopMatching`](../../../lean/OAI/Computability/LoopMatching/) |
 
-The release ships no manuscript→Lean edge (`notes/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
+The release ships no manuscript→Lean edge (`notes/development/index-design.md`): `sources:` and `main_results:` are two flat lists that nothing joins, so the table above is a family-level link and the formalized count above is a manuscript-level flag.
 
 ## Comparator configs
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Report-only: measure notes/templates/ — every count notes/templates.md quotes.
+"""Report-only: measure notes/templates/ — every count notes/development/templates.md quotes.
 
 Writes nothing, and reads only template text plus the writer's registry. Two trees:
 notes/templates/report/*.j2 render the report pages under notes/ through render_reports.py;
@@ -120,7 +120,7 @@ def rec_key() -> str:
 
 
 def population() -> dict[str, Any]:
-    """Every measured value notes/templates.md quotes, read from the keyed record.
+    """Every measured value notes/development/templates.md quotes, read from the keyed record.
 
     The walk is paid once per key: this script, `render_reports.py`, the builder's floor page and the
     gate row read the same bytes. `coverage()`'s tuple values round-trip as 2-element lists, which is
@@ -141,8 +141,12 @@ def measure() -> dict[str, Any]:
     cov = coverage()
     missing, extra = registry_gap()
     renders = index_renders()
+    # The page a report template renders is the registry's key, not a `notes/<stem>` guess: four of
+    # the nineteen pages live under `notes/development/`, so the mechanical name would name a file
+    # that is not there and the registry lookup would miss.
+    tpl2page = {pathlib.Path(page).name + ".j2": page for page in b.ALL_PAGES}
     for r in rep:
-        page = f"notes/{r['name'][: -len('.j2')]}"
+        page = tpl2page.get(r["name"], f"notes/{r['name'][: -len('.j2')]}")
         checker, needles = cov.get(page, ("-", 0))
         r["page"] = page
         r["checker"] = checker
