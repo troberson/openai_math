@@ -7,7 +7,7 @@
 Built 2026-10-07 by `notes/scripts/measure_names.py` (measurement — a writer: it lands the
 population as the keyed record `.qwen/cache/records/<key>/names.json`, and `--check-only` prints the
 report without landing it) and `notes/scripts/build_index.py` (writes `notes/index/names/`,
-`notes/index/names.tsv`, `notes/index/edges/family-name.tsv`). Every count below is from a fresh run
+`notes/tables/names.tsv`, `notes/tables/family-name.tsv`). Every count below is from a fresh run
 of those two scripts; the rule that yields each count is stated beside it.
 
 `"Cauchy-related"` is a name query. Names sit in four places in this release, and they do not
@@ -27,7 +27,7 @@ mean the same thing:
 {{ p['names_subject b'] }} (`F`, `M`, `E`) or in a declaration (`D`) — those are the
 **subject** names, and each gets a page at `notes/index/names/<name>.md`. {{ p['names_citation a'] }}
 {{ p['names_citation b'] }} (`b`) or in a bibliography (`B`) — those are **citation** names, and they
-are rows in `notes/index/names.tsv` with `role=citation` and an empty `page` cell, not pages.
+are rows in `notes/tables/names.tsv` with `role=citation` and an empty `page` cell, not pages.
 {{ p['names_edges'] }}. {{ p['names_zero a'] }}
 {{ p['names_zero b'] }}, {{ p['names_allfams a'] }}
 {{ p['names_allfams b'] }}, and {{ p['names_traces'] }}.
@@ -239,7 +239,7 @@ declaration, no title hit), `urysohn` (two manuscript directory titles), `woodin
 
 - **Family pages do not link name pages.** {{ p['avg_family'] }}; that is
   a table, not a header row. The link direction is name → family, and
-  `notes/index/edges/family-name.tsv` carries the family → name side with layer flags.
+  `notes/tables/family-name.tsv` carries the family → name side with layer flags.
 - **Citation-only names get no page** {{ p['citation_no_page'] }}. They are rows with `role=citation` and an
   empty `page` cell, so a query can find them and a page cannot overstate them.
 - **Theorem-environment titles are capped at 8 per page** (`env_hits`), verbatim after folding.
