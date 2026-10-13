@@ -257,3 +257,21 @@ issue.
   the all-TSV sum to 2,228,751 B, but the ledger set stays 297,050 B because `quotes.tsv` is not one
   of the five TSVs `notes/development/index-design.md` tabulates. The two sums answer different
   questions, so sweep both with their own rule. Revisit when a re-seed touches one of the five.
+- **Band 3 closes the population, and the band rule overlaps the named densest targets.** Chosen
+  2026-10-13 on `math-el4.11`. Band 3 (`n >= 5` and no probe word) reads **17 families over 128
+  manuscripts**, 10 of them already the bead's named densest targets, so the reading pass added **8
+  families over 46 manuscripts**. The three bands together cover every multi-manuscript family, so the
+  population is the whole multi set: **167 families, 514 manuscripts**. The noprobe slot must count band
+  3 **minus** the densest targets, because the bullet names the densest separately — a naive
+  `noprobe ∩ band3` read 14 where the correct disjoint count is 8.
+- **A band block's pair lines are template slots fed by the quote table, so the re-seed must precede
+  the template rebuild.** Chosen 2026-10-13 on `math-el4.11`. `render_reports.py` builds
+  `sp_line_NNN_seq` from `notes/tables/quotes.tsv` rows parsed against the page, and the builder
+  locates each slot's phrase in `git show HEAD:<page>`. A block that is not in HEAD has no slot, so the
+  builder reports no NOT FOUND and the render silently drops the block: the template stayed at 159 blocks
+  while the page had 167. Order is commit the page → re-seed → rebuild the template → render.
+- **A generated page's row is committed before the builder can locate it.** Chosen 2026-10-13 on
+  `math-el4.11`. `notes/development/templates.md` tabulates the template bytes, and the builder reads
+  HEAD's page to build its template, so the row for a rebuilt template has to be committed first. The
+  slot-count rule is `text.count("{{ ")` over the whole file, which includes the header comment's literal
+  `{{ }}`, so the row carries 423 for a template the builder reports as 422 exprs.
