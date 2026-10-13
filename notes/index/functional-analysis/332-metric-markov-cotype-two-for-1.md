@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [functional-analysis](../topics/functional-analysis.md) · [banach-spaces](../topics/banach-spaces.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [332-metric-markov-cotype-two-for-l1.md](../../../notes/summaries/functional-analysis/332-metric-markov-cotype-two-for-l1.md) |
 
 ## Manuscripts
 
