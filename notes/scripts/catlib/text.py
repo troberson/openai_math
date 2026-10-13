@@ -130,11 +130,26 @@ def flex(phrase: str) -> re.Pattern[str]:
         # a sentence that never names rows. A number-only needle must match exactly, so a writer that
         # wants a drifting count to stay slotted supplies the count with its words.
         return re.compile(re.escape(phrase))
+    if len(NUM_RUN.sub("", phrase)) < 2:
+        # A needle relaxes its digits only when it carries literal context. "719" has none, so relaxing
+        # it matched "A 2-line ... 40-line construction" and slotted the sources-row count into a
+        # sentence that never names rows; "631M" has one character, so relaxing it turned the needle
+        # into "any number followed by M" and the preprints size also matched "1740M" and "14M",
+        # rendering all three surfaces as 631M. A needle with two literal characters — "**342**",
+        # "147.8 B/row", a template row's `README.md.j2` — is anchored by its words, so its numbers
+        # can move with HEAD's stale measurement.
+        return re.compile(re.escape(phrase))
     toks = []
     for tok in phrase.split(" "):
         out, pos = "", 0
         for m in NUM_RUN.finditer(tok):
-            out += re.escape(tok[pos:m.start()]) + NUM_RUN.pattern
+            out += re.escape(tok[pos:m.start()])
+            # A digit run relaxes only when neither neighbour inside the token is a letter. "631M" has
+            # a letter after, so relaxing it reads "any number followed by M"; "README.md.j2" has a
+            # letter before the 2, so the template's filename would match a sibling suffix.
+            prev = tok[m.start() - 1] if m.start() else " "
+            nxt = tok[m.end()] if m.end() < len(tok) else " "
+            out += re.escape(m.group(0)) if prev.isalpha() or nxt.isalpha() else NUM_RUN.pattern
             pos = m.end()
         toks.append(out + re.escape(tok[pos:]))
     return re.compile(r"\s+".join(toks))

@@ -161,12 +161,23 @@ def build(page_rel: str, checker_name: str) -> tuple[int, list[str], pathlib.Pat
 
     text = committed_page(page_rel)
     hits: list[tuple[int, int, str, list[tuple[str, str]]]] = []
+    ambiguous: list[str] = []
     for base, parts in groups.items():
         needle = " ".join(v for _, v in parts)
         found = list(TX.flex(needle).finditer(text))
         if not found:
             lines.append(f"NOT FOUND ({base}): {needle!r}")
             return 1, lines, pathlib.Path(""), ""
+        spans = {" ".join(text[m.start():m.end()].split()) for m in found}
+        if len(spans) > 1:
+            # A slot is one place in the page. A needle that fires on more than one *different* span is
+            # ambiguous, so it is left literal and reported: the "631M" needle for the preprints size
+            # also matched "**1740M**" and "**14M**", which rendered all three du surfaces as 631M.
+            # Repeated identical spans are fine — the README states the family-342 coverage gap twice,
+            # once wrapped — so the test is span identity, not match count. A weak needle is the
+            # writer's work list: widen the label value until it names its own words.
+            ambiguous.append(base)
+            continue
         hits.extend((m.start(), m.end(), base, parts) for m in found)
     # Sort widest-first at each start: a label whose phrase nests inside a wider phrase is
     # slotted by the wider span, and the "covered by" branch only fires for a span that ends
@@ -190,6 +201,7 @@ def build(page_rel: str, checker_name: str) -> tuple[int, list[str], pathlib.Pat
     slots: dict[str, str] = {}
     nslots = 0
     wrapped: list[str] = []
+    ambiguous: list[str] = []
     for start, end, base, parts in reversed(hits):
         matched = text[start:end]
         if len(parts) == 1:
@@ -233,6 +245,12 @@ def build(page_rel: str, checker_name: str) -> tuple[int, list[str], pathlib.Pat
     lines.append(f"template written: {out.relative_to(ROOT)}")
     lines.append(f"labels {len(labels)} groups {len(groups)} hits {len(hits)} slots {nslots} exprs {total}")
     lines.append(f"template lines {len(full.splitlines())} bytes {len(full.encode())}")
+    if ambiguous:
+        # A needle that matches more than one distinct span on HEAD's bytes is not landed: the page
+        # keeps HEAD's literal and the writer's measured value is not written. This is the work list
+        # for widening the label value, the same shape as the split work list below.
+        lines.append(f"weak needles {len(ambiguous)} (needle matches >1 distinct span, left literal): "
+                     + " ".join(sorted(ambiguous)))
     if wrapped:
         # A phrase the page breaks across lines stays literal unless the writer supplies it as split
         # labels. This list is the work list for the writer's split table (INDEX_SPLIT / NR_SPLIT).
