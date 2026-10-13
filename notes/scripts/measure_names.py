@@ -394,7 +394,9 @@ def build_records() -> str:
 
     def famset(k):
         s = set(fam_title.get(k, ())) | {f for f, _ in ms_title.get(k, ())}
-        s |= set(env_title.get(k, ())) | body.get(k, set()) | bib.get(k, set())
+        # A layer can carry a name hit from a .tex file outside a manuscript dir, whose family is
+        # None; the family set is built from owners, so the None is dropped here, not stored.
+        s |= {f for f in set(env_title.get(k, ())) | body.get(k, set()) | bib.get(k, set()) if f}
         for stem, _d, _fp in decl.get(k, ()):
             s |= {f for f, r in LEDGER.items() if stem in r["chal"].split("|")}
         return {f for f in s if f}

@@ -105,7 +105,8 @@ def marker_after(text, end):
     between the quote and its marker; anything else means the quotation is unanchored.
     """
     gap = re.match(r"[ \t\r\n)]*", text[end:end + 12])
-    return MARKER.match(text[end + gap.end():end + gap.end() + 6])
+    tail = text[end + gap.end():end + gap.end() + 6] if gap else text[end:end + 6]
+    return MARKER.match(tail) if tail else None
 
 
 def parse_table(lines):

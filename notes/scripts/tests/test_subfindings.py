@@ -124,7 +124,7 @@ def test_comparator_row_deleted(mod, text, comp_row):
 def test_two_rows_swapped_in_one_family(mod, text):
     """The row set is unchanged, only the order is wrong, so this is the only mutant that exercises
     the seq check. It needs a family with more than one manuscript."""
-    counts = {}
+    counts: dict = {}
     for l in text:
         if l.startswith("manuscript\t"):
             counts[l.split("\t")[1]] = counts.get(l.split("\t")[1], 0) + 1

@@ -119,6 +119,15 @@ def ratio(ov, ms):
     return difflib.SequenceMatcher(None, ov.lower(), ms.lower()).ratio()
 
 
+def best_of(ov, found):
+    """The (relpath, text) whose abstract is closest to `ov`.
+
+    The key is a closure over `ov`, not a lambda carrying `ov` as a default argument: mypy cannot
+    infer the type of a lambda with a default, and the closure captures the same value.
+    """
+    return max(found, key=lambda x: ratio(ov, x[1]))
+
+
 def bucket(r):
     return (">=0.90" if r >= 0.90 else "0.70-0.90" if r >= 0.70 else
             "0.50-0.70" if r >= 0.50 else "0.30-0.50" if r >= 0.30 else "<0.30")
@@ -154,7 +163,7 @@ def measure():
         if len(found) > 1:
             multi_dirs.append((r["fam"], r["dir"], len(found)))
         ov = norm(fams[r["fam"]]["abstract"])
-        best = max(found, key=lambda x, ov=ov: ratio(ov, x[1]))
+        best = best_of(ov, found)
         man.append({"fam": r["fam"], "dir": r["dir"], "file": best[0],
                     "ratio": ratio(ov, best[1]), "relation": relation(ov, best[1]),
                     "ov": fams[r["fam"]]["abstract"], "ms": best[1]})

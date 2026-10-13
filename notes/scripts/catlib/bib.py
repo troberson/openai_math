@@ -21,6 +21,7 @@ import os
 import re
 import unicodedata
 from collections.abc import Iterable, Mapping
+from typing import Any
 
 from catlib.paths import PREPRINTS, SUBFINDINGS_TSV, rel
 from catlib.tsv import read_rows
@@ -37,8 +38,12 @@ CLUSTER_K = (1, 5, 10)
 TOP_N = 20
 
 
-def ranked(counter: Mapping[str, int], n: int | None = None) -> list[tuple[str, int]]:
-    """most_common with ties broken by key, so the report is byte-stable."""
+def ranked(counter: Mapping[Any, int], n: int | None = None) -> list[tuple[Any, int]]:
+    """most_common with ties broken by key, so the report is byte-stable.
+
+    The key is a string for the discipline and work counters and a tuple for the discipline-pair
+    histogram; the tie-break only needs the keys to be comparable within one call.
+    """
     items = sorted(counter.items(), key=lambda kv: (-kv[1], kv[0]))
     return items if n is None else items[:n]
 

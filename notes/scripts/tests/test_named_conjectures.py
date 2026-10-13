@@ -44,7 +44,7 @@ def pop(mod, rows):
 
 def problems(mod, lines, expected, pop, rows):
     """The five passes, run on page lines, returning the problems they report."""
-    out = []
+    out: list = []
     anchors, verdicts = mod.check_quotes(lines, out)
     cites = mod.check_citations(lines, out)
     mod.check_entry_set(lines, pop, rows, out)

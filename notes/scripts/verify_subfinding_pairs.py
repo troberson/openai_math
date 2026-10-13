@@ -29,12 +29,19 @@ Usage: python3 notes/scripts/verify_subfinding_pairs.py
 import re
 import sys
 from functools import cache
+from typing import Optional
 
 import build_catalog as bc
 import extract_subfinding_pairs as ep
 from catlib import overview, tsv
 from catlib import render as RD
 from catlib.paths import LEDGER_TSV, NOTES, OVERVIEW_TEX, ROOT, SUBFINDINGS_TSV
+
+
+def new_block(fam: str, line: int, n: int, tier: str) -> dict:
+    """A parsed block: the header fields, the pair list, and the two id partitions."""
+    return {"fam": fam, "line": line, "n": n, "tier": tier,
+            "pairs": [], "claimed": None, "unclaimed": None}
 
 PAGE = NOTES / "subfinding-pairs.md"
 
@@ -79,8 +86,8 @@ def population_of(counts):
 
 def parse_page(text, problems):
     """-> family blocks. A line that is neither a pair line nor a partition line is prose."""
-    blocks = []
-    current = None
+    blocks: list = []
+    current: Optional[dict] = None
     for n, line in enumerate(text.splitlines(), 1):
         h = HEADER.match(line)
         if h:

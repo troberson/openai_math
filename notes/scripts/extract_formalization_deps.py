@@ -207,10 +207,10 @@ def main():
             problems.append(f"yaml {r['url']}: no lakefile require")
 
     # Every alias must resolve to a declared library.
-    for root, url in ALIAS.items():
+    for alias_root, url in ALIAS.items():
         key = url_key(url)
         if key not in by_norm_url:
-            problems.append(f"alias {root}: {url} is not declared in the lakefile")
+            problems.append(f"alias {alias_root}: {url} is not declared in the lakefile")
 
     # Every imported external root must be aliased, or recorded as undeclared.
     external = {r: c for r, c in imports.items() if r not in CORE_ROOTS}
@@ -237,15 +237,15 @@ def main():
                 "patch_lines": patch_lines,
             }
         )
-    for root in undeclared_roots:
+    for ext_root in undeclared_roots:
         rows.append(
             {
-                "library": root,
+                "library": ext_root,
                 "repo_url": "none",
                 "pinned_commit": "none",
                 "lakefile_declared": "n",
                 "yaml_relationship": "none",
-                "direct_imports": imports[root],
+                "direct_imports": imports[ext_root],
                 "patch_file": "none",
                 "patch_lines": 0,
             }

@@ -57,6 +57,9 @@ def refresh(path, write):
         drift.append(f"{sid} ({rel}) says {declared}, file has {want}")
         if write:
             m = ROW.match(out[n - 1])
+            if m is None:
+                drift.append(f"{sid} row line {n} is not a table row")
+                continue
             out[n - 1] = f"| {m.group(1)} | {m.group(2)} | {want} | {m.group(4)} |"
     body = "\n".join(out)
     if not body.endswith("\n"):

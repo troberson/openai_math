@@ -69,8 +69,8 @@ def inject(text, start, end, span):
 def inline_targets(text):
     """Inline quotations the mutant can be built from, split by whether the span is wrapped across
     source lines. The checker takes the first of each form per page; the tests mirror that."""
-    single = []
-    wrapped = []
+    single: list = []
+    wrapped: list = []
     for m in QUOTE.finditer(text):
         span = m.group(1) or m.group(2)
         if len(span) < 12 or PRIOR in span:

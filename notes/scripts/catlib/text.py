@@ -94,3 +94,26 @@ def url_key(url: str) -> str:
 def fmt_counter(counter: Mapping[str, int]) -> str:
     """Counter -> 'name n, name n, ...' sorted by count desc, then name — the report form."""
     return ", ".join(f"{n} {c}" for n, c in sorted(counter.items(), key=lambda kv: (-kv[1], kv[0])))
+
+
+def first_group(pattern: str | re.Pattern[str], text: str) -> str:
+    """The first capture group of `pattern` in `text`, or `""` when the pattern does not fire.
+
+    A checker that reads a report line with `re.search(...).group(1)` crashes with AttributeError on
+    the exact defect it is looking for — a report that no longer prints the line. Returning `""` lets
+    the caller report the absence; a count read from `""` is 0, which the page's count comparison
+    flags, so the missing line becomes a finding instead of a traceback. `pattern` may be a compiled
+    pattern, which is what a checker that already carries one passes.
+    """
+    m = re.search(pattern, text)
+    return m.group(1) if m else ""
+
+
+def first_match(pattern: str | re.Pattern[str], text: str) -> str:
+    """The whole match of `pattern` in `text`, or `""` when the pattern does not fire.
+
+    The `group(0)` companion of `first_group`, for a pattern with no capture group — the manuscript
+    path pattern in `build_catalog`, which a page's path set is compared against.
+    """
+    m = re.search(pattern, text)
+    return m.group(0) if m else ""

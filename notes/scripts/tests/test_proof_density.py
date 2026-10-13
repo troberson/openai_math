@@ -85,7 +85,7 @@ def test_clean_population(mod, sources, ledger):
         f"proofs sum {sum(int(r['proofs']) for r in sources)}"
     assert sum(int(r["thms"]) for r in sources) == 21288, \
         f"thms sum {sum(int(r['thms']) for r in sources)}"
-    tiers = {}
+    tiers: dict = {}
     for d in fams.values():
         tiers[d["tier"]] = tiers.get(d["tier"], 0) + 1
     assert (tiers.get("T3", 0), tiers.get("T2", 0), tiers.get("T1", 0), tiers.get("T0", 0)) == \

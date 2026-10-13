@@ -155,6 +155,7 @@ def test_seed_faults(src, quote, start, end, expected, label):
     if got is not None:
         s, e, head, tail = got
         span = resolve(src, s, e, head, tail)
+        assert span is not None, f"{label}: the seeded spec does not resolve to a span"
         # A page quote that carries markup the source does not is equal to the raw span only after
         # the checker's normalizer; the raw span is the record, so fold-equality is the honest test.
         assert span == quote or norm(span) == norm(quote), label

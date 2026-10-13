@@ -42,7 +42,7 @@ from catlib.bib import release_bib_edges
 from catlib.ledger import chain_edges, companion_word_fams
 from catlib.paths import NOTES, ROOT, owner
 from catlib.preprints import listed_dirs_from_contents
-from catlib.text import collapse_ws
+from catlib.text import collapse_ws, first_group
 
 PAGE = NOTES / "t0-chains.md"
 ANCHOR = anchors.anchor_pattern(anchors.EXT_MAN)
@@ -301,14 +301,14 @@ def check_family_blocks(lines, m, problems):
         stop = heads[idx + 1][1] if idx + 1 < len(heads) else len(lines)
         body = [l for l in lines[start:stop] if not l.startswith("## ")]
         bullets = [(BULLET.match(l), k) for k, l in enumerate(body) if BULLET.match(l)]
-        targets = [TARGET.match(l).group(1) for l in body if TARGET.match(l)]
+        targets = [first_group(TARGET, l) for l in body if TARGET.match(l)]
         if len(bullets) != 2:
             problems.append(f"{fam}: {len(bullets)} manuscript bullets, expected 2")
             continue
         if len(targets) != 2:
             problems.append(f"{fam}: {len(targets)} manuscript paths, expected 2")
         for (b, k), want in zip(bullets, m["mss"][fam], strict=False):
-            seq, anchor, title = b.groups()
+            seq, anchor, title = b.groups() if b else ("", "", "")
             if seq != want["seq"]:
                 problems.append(f"{fam}: bullet seq {seq} != subfindings seq {want['seq']}")
             if int(anchor) != m["lines"][fam]:

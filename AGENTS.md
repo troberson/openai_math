@@ -894,9 +894,9 @@ lives in this file and nowhere else.
   against its nearest preceding anchor (a block with no preceding anchor is skipped), the **14**
   backticked `preprints/` slugs on `2026-10-07_3014888.md` each exist as a directory, and the links,
   both tables, and every count phrase are re-measured; the report prints the slug count and a run
-  that matches **0** is reported as a vacuous needle, not as green. The test file injects thirteen
+  that matches **0** is reported as a vacuous needle, not as green. The test file injects fourteen
   faults, one per form the page uses (two moved count phrases, a deleted table row, an altered
-  quotation word, a paraphrase dressed as a quote, a shifted anchor, a dead anchor path, a renamed
+  quotation word, a quotation cell whose closing quote is removed, a paraphrase dressed as a quote, a shifted anchor, a dead anchor path, a renamed
   slug, a truncated tier list, an altered config name, a moved entry count, a quotation with no
   anchor, a dead link), each asserted against the pass that owns it, and the clean test requires the
   slug pass to be non-vacuous. Run the checker twice and diff — the report must be identical. It

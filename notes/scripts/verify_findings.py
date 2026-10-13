@@ -54,7 +54,7 @@ from catlib.paths import (
     SCRIPTS,
     SUMMARIES_DIR,
 )
-from catlib.text import strip_markup
+from catlib.text import first_group, strip_markup
 from catlib.tsv import read_rows
 
 PAGE = NOTES / "findings.md"
@@ -225,8 +225,8 @@ def measured():
     # The disk link scan is the source of the page's index-link figure, so it is measured here
     # rather than written as a literal the page has to stay in step with by hand.
     ci = run("check_index_links.py")
-    disk_links = int(re.search(r"links extracted\s+(\d+)", ci).group(1))
-    disk_broken = int(re.search(r"broken links\s+(\d+)", ci).group(1))
+    disk_links = int(first_group(r"links extracted\s+(\d+)", ci) or 0)
+    disk_broken = int(first_group(r"broken links\s+(\d+)", ci) or 0)
 
     # The yaml `sources:` list is the only place the release names a formalized manuscript, so the
     # gap between it and the overview's own manuscript list is measured, not quoted.
@@ -235,7 +235,7 @@ def measured():
     yaml_extra = sorted(p for p in yaml_paths if p not in listed)
 
     # Cross-family citation count comes from the links table's own detail field.
-    bib_cross = int(re.search(r"(\d+) cross-family", bib).group(1))
+    bib_cross = int(first_group(r"(\d+) cross-family", bib) or 0)
 
     return {
         "fams": fams,
@@ -293,10 +293,10 @@ def measured():
         "pins": sum(1 for r in deps if r["lakefile_declared"] == "y"),
         "patches": sum(1 for r in deps if r["patch_file"] not in ("", "none")),
         "patch_lines": sum(int(r["patch_lines"]) for r in deps if r["patch_lines"]),
-        "scope_configs": int(re.search(r"(\d+) distinct configs",
-                                       lk["scope note->comparator statement"]["detail"]).group(1)),
-        "bib_edges": int(re.search(r"(\d+) resolved edges", bib).group(1)),
-        "bib_fams": int(re.search(r"over (\d+) of \d+ families", bib).group(1)),
+        "scope_configs": int(first_group(r"(\d+) distinct configs",
+                                         lk["scope note->comparator statement"]["detail"]) or 0),
+        "bib_edges": int(first_group(r"(\d+) resolved edges", bib) or 0),
+        "bib_fams": int(first_group(r"over (\d+) of \d+ families", bib) or 0),
         "bib_cross": bib_cross,
         "chal_files": len(files),
         "sorry_total": sum(sorries),

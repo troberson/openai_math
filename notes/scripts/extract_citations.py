@@ -100,8 +100,8 @@ def main():
             if "OpenAI Math Release" in body:
                 release_entries += 1
                 release_count[man] += 1
-                for m in RELEASE_HREF.finditer(body):
-                    release[man].add(m.group(1))
+                for h in RELEASE_HREF.finditer(body):
+                    release[man].add(h.group(1))
 
     men = sorted(titles)
     # A .bib can sit in a superseded manuscript dir that the ledger does not list; those owners
@@ -127,8 +127,8 @@ def main():
         for _ty, key, _body, _line in entries(read(p2)):
             keymen[key].add(owner(p2))
     print("top keys by owning manuscripts:")
-    for k, _s2 in ranked({k: len(v) for k, v in keymen.items() if len(v) > 1}, 10):
-        print("  %2d  %s" % (len(keymen[k]), k))
+    for wk, _s2 in ranked({k: len(v) for k, v in keymen.items() if len(v) > 1}, 10):
+        print("  %2d  %s" % (len(keymen[wk]), wk))
 
     # ---- cited, not just listed -------------------------------------------
     all_keys = sum(len(v) for v in entry_keys.values())
@@ -172,25 +172,25 @@ def main():
     # ---- pairs ------------------------------------------------------------
     pairs = pair_counts(shared.values())
     disc = {m: led[man2fam[m]]["discipline"] for m in men}
-    fam = {m: man2fam[m] for m in men}
+    famof = {m: man2fam[m] for m in men}
     for k in THRESHOLDS:
         ps = [(a, b, v) for (a, b), v in pairs.items() if v >= k]
         print("pairs sharing >=%d titles: %d  same-family %d  cross-discipline %d"
-              % (k, len(ps), sum(1 for a, b, v in ps if fam[a] == fam[b]),
+              % (k, len(ps), sum(1 for a, b, v in ps if famof[a] == famof[b]),
                  sum(1 for a, b, v in ps if disc[a] != disc[b])))
     print("max pair overlap: %d shared titles" % max(pairs.values()))
     print("manuscripts sharing >=1 title with a manuscript of another family: %d of %d"
-          % (len({m for (a, b) in pairs if fam[a] != fam[b] for m in (a, b)}), len(men)))
+          % (len({m for (a, b) in pairs if famof[a] != famof[b] for m in (a, b)}), len(men)))
     print("top pairs by shared titles:")
     for (a, b), v in sorted(pairs.items(), key=lambda kv: (-kv[1], kv[0][0], kv[0][1]))[:12]:
         print("  %2d  %s(%s) x %s(%s) %s"
-              % (v, fam[a], disc[a][:28], fam[b], disc[b][:28],
-                 "same-family" if fam[a] == fam[b] else "cross-family"))
+              % (v, famof[a], disc[a][:28], famof[b], disc[b][:28],
+                 "same-family" if famof[a] == famof[b] else "cross-family"))
     cross = [(a, b, v) for (a, b), v in pairs.items() if v >= 5 and disc[a] != disc[b]]
     print("cross-discipline pairs at >=5 shared titles: %d over %d families"
-          % (len(cross), len({fam[a] for a, b, v in cross} | {fam[b] for a, b, v in cross})))
+          % (len(cross), len({famof[a] for a, b, v in cross} | {famof[b] for a, b, v in cross})))
     for a, b, v in sorted(cross, key=lambda t: (-t[2], t[0], t[1])):
-        print("  %2d  %s(%s) x %s(%s)" % (v, fam[a], disc[a], fam[b], disc[b]))
+        print("  %2d  %s(%s) x %s(%s)" % (v, famof[a], disc[a], famof[b], disc[b]))
     hist = collections.Counter(tuple(sorted((disc[a], disc[b])))
                                for (a, b), v in pairs.items() if v >= 1)
     print("discipline pairs for >=1 shared title (top 10):")
@@ -206,7 +206,7 @@ def main():
               % (k, len(comps), len(multi), max((len(c) for c in multi), default=0),
                  sum(1 for c in multi if len({disc[m] for m in c}) > 1)))
         for c in multi[:12]:
-            fams = sorted({fam[m] for m in c})
+            fams = sorted({famof[m] for m in c})
             ds = collections.Counter(disc[m] for m in c)
             print("  n=%2d fams=%2d disciplines=%d  %s  |  %s"
                   % (len(c), len(fams), len(ds), " ".join(fams),
@@ -215,12 +215,12 @@ def main():
     # ---- release-internal layer -------------------------------------------
     rinv = collections.defaultdict(set)
     for m, s in release.items():
-        if m not in fam:
+        if m not in famof:
             continue
         for d in s:
             rinv[d].add(m)
     rpairs = pair_counts(rinv.values())
-    rel_owned = sum(v for m, v in release_count.items() if m in fam)
+    rel_owned = sum(v for m, v in release_count.items() if m in famof)
     print("release-labelled entries: %d (%d in ledger-listed manuscripts)  "
           "manuscripts citing >=1 release work: %d  "
           "distinct release targets: %d  targets cited by >=2 manuscripts: %d"
@@ -228,7 +228,7 @@ def main():
              sum(1 for s in rinv.values() if len(s) >= 2)))
     print("pairs sharing a cited release work: %d  sharing >=2: %d  cross-family: %d"
           % (len(rpairs), sum(1 for v in rpairs.values() if v >= 2),
-             sum(1 for (a, b) in rpairs if fam[a] != fam[b])))
+             sum(1 for (a, b) in rpairs if famof[a] != famof[b])))
     print("top release targets by citing manuscripts:")
     for d, s in sorted(rinv.items(), key=lambda kv: (-len(kv[1]), kv[0]))[:10]:
         print("  %2d  %s" % (len(s), d))

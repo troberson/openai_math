@@ -27,7 +27,7 @@ import csv
 import pathlib
 import re
 
-from catlib import yaml as Y
+from catlib import text as TX, yaml as Y
 from catlib.paths import (
     COMPARATOR_DIR as CHAL,
 )
@@ -99,9 +99,10 @@ def population():
     kc = collections.Counter(r["kind"] for r in sf)
     links = {r["edge"]: r for r in tsv(LINKS_TSV)}
     bibrow = links["manuscript->corpus manuscript (bib href)"]
-    resolved = int(re.search(r"(\d+) resolved edges", bibrow["detail"]).group(1))
-    cross = int(re.search(r"(\d+) cross-family", bibrow["detail"]).group(1))
-    msc_scanned = int(re.search(r"files scanned: (\d+)", links["family->MSC code"]["detail"]).group(1))
+    resolved = int(TX.first_group(r"(\d+) resolved edges", bibrow["detail"]) or 0)
+    cross = int(TX.first_group(r"(\d+) cross-family", bibrow["detail"]) or 0)
+    msc_scanned = int(TX.first_group(r"files scanned: (\d+)",
+                                     links["family->MSC code"]["detail"]) or 0)
     kw_dirs = int(links["manuscript->\\keywords macro"]["count"])
 
     sizes = {}

@@ -80,7 +80,7 @@ def population(rows):
 
 def measure(rows):
     t0, first, second, pop = population(rows)
-    out = {
+    out: dict = {
         "t0_families": len(t0),
         "t0_manuscripts": sum(int(r["paps"]) for r in t0),
         "first_families": len(first),

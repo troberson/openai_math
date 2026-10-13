@@ -107,8 +107,8 @@ def measure(normfn):
             if "OpenAI Math Release" in body:
                 release_entries += 1
                 release_count[man] += 1
-                for m in RELEASE_HREF.finditer(body):
-                    release[man].add(m.group(1))
+                for h in RELEASE_HREF.finditer(body):
+                    release[man].add(h.group(1))
 
     # A .bib can sit in a superseded manuscript dir the ledger does not list; those owners carry no
     # family, so they are excluded from every family/discipline join (the extractor reports them).
@@ -435,7 +435,6 @@ def passes(page, M, M2):
             fails.append("sensitivity row %r absent" % label)
             continue
         got = (int(m.group(1).replace(",", "")), int(m.group(2).replace(",", "")), m.group(3))
-        want = (guarded, ung, cell)
         if got[0] != guarded:
             fails.append("sensitivity %r: guarded column %s, measured %d" % (label, got[0], guarded))
         if got[1] != ung:

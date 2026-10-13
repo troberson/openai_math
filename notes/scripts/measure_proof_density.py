@@ -236,7 +236,8 @@ def report(fams, ledger, sources):
             gb = [d[key] for d in fams.values() if d["tier"] == pair[1]]
             auc, _, pval = auc_p(ga, gb)
             if auc >= AUC_MIN and pval < P_MAX:
-                if scale[key] and abs(auc - control[(pair, scale[key])]) <= SIZE_TOLERANCE:
+                sc = scale[key]
+                if sc and abs(auc - control[(pair, sc)]) <= SIZE_TOLERANCE:
                     verdict = "SIZE-EXPLAINED"
                 else:
                     verdict = "SEPARATES"

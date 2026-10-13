@@ -27,12 +27,12 @@ family — each asserted against the pass that owns it. This script measures; it
 Usage: python3 notes/scripts/verify_subfindings.py
 """
 import csv
-import re
 import sys
 
 import build_catalog as bc
 import extract_subfindings as ex
 from catlib import yaml as Y
+from catlib.text import first_match
 
 ROOT = bc.ROOT
 TSV = ROOT / "notes" / "tables" / "subfindings.tsv"
@@ -56,7 +56,7 @@ def truth():
         tiers[fam] = "T3" if [c for c in cfgs if c in main_results] else (
             "T2" if cfgs else ("T1" if fam in docs else "T0"))
     hrefs = {f: ex.href_pairs(body) for f, body in ex.resultentry_link_fields().items()}
-    paths = {f: [re.search(bc.PAP, t).group(0) for t, _ in h] for f, h in hrefs.items()}
+    paths = {f: [first_match(bc.PAP, t) for t, _ in h] for f, h in hrefs.items()}
     ledger = {r["fam"]: r for r in csv.DictReader(
         LEDGER.read_text(encoding="utf-8").splitlines(), delimiter="\t")}
     tables = {}

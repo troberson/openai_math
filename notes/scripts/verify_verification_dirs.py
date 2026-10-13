@@ -103,8 +103,7 @@ def measure():
     # COVERAGE.md names artifacts both as code spans (`verify.py`) and as markdown links ([README.md](...)).
     named = re.findall(r"`([\w.]+\.(?:py|json|md))`", cov) + \
         re.findall(r"\[([\w.]+\.(?:py|json|md))\]\(", cov)
-    seen: set = set()
-    named = [n for n in named if n not in seen and not seen.add(n)]
+    named = list(dict.fromkeys(named))
     present = [n for n in named if (VPOS / n).exists() and (VZERO / n).exists()]
     return {
         "cov_named": len(named),

@@ -132,7 +132,7 @@ def ls_leaf(rev, prefix, suffix):
 
 
 def measure():
-    p = {}
+    p: dict = {}
     status = git("diff", "--name-status", BASE, UP).splitlines()
     p["added"] = sum(1 for l in status if l.startswith("A"))
     p["deleted"] = sum(1 for l in status if l.startswith("D"))
@@ -228,10 +228,11 @@ def measure():
                    "abs_pre": len(fams_pre["032"]["abstract"]), "abs_post": len(fams_post["032"]["abstract"]),
                    "links_pre": len(fams_pre["032"]["tex_paps"]), "links_post": len(fams_post["032"]["tex_paps"])}
 
-    p["config_fam"] = {}
-    for fam, d in cy.parse_docs().items():
-        for cfg in d["configs"]:
-            p["config_fam"][cfg] = fam
+    config_fam: dict = {}
+    for fam, doc in cy.parse_docs().items():
+        for cfg in doc["configs"]:
+            config_fam[cfg] = fam
+    p["config_fam"] = config_fam
     p["owner"] = owner
     return p
 
@@ -483,7 +484,11 @@ def check_tables(name, text, p, problems):
             problems.append(f"table: row {fam} anchor path {rel} != its own directory")
             continue
         note = read_text(ROOT / rel).split("\n")[int(ln) - 1]
-        quote = ws(re.search(r'\*"([^"]*?)"\*', cells[2]).group(1))
+        qm = re.search(r'\*"([^"]*?)"\*', cells[2])
+        if qm is None:
+            problems.append(f'table: row {fam} quotation cell carries no *"…"* span')
+            continue
+        quote = ws(qm.group(1))
         if quote not in ws(note):
             problems.append(f"table: row {fam} quotation is not on {rel}:{ln}")
     cfg_rows = [l for l in lines if re.match(r"^\| \d{3} \| `[A-Za-z0-9]+` \| \d+ \|", l)]

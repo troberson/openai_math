@@ -466,10 +466,10 @@ def check(text):
         "notes/*.md": len(top_md),
         "notes/": len(files),
     }
-    for key, want in expect.items():
+    for key, expect_val in expect.items():
         got = census.get(key)
-        if got != want:
-            p.append(f"census row {key}: page says {got}, disk says {want}")
+        if got != expect_val:
+            p.append(f"census row {key}: page says {got}, disk says {expect_val}")
     md = sum(1 for f in index if f.suffix == ".md")
     tsv = sum(1 for f in index if f.suffix == ".tsv")
     stated = re.search(r"\*\*([\d,]+)\*\* `\.md` pages and \*\*([\d,]+)\*\* `\.tsv` tables", text)

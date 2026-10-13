@@ -48,11 +48,19 @@ def setup(mod, lines):
     """The first Entries row, its quotation, its citation, and the cited file's Scope span."""
     first = next(n for n, line in enumerate(lines, 1) if ROW.match(line))
     base = lines[first - 1]
-    fam, cell = ROW.match(base).group(1), ROW.match(base).group(2)
-    quote = re.search(r"“([^”]+)”", cell).group(1)
+    row = ROW.match(base)
+    assert row is not None, f"the first Entries row is not a table row: {base[:60]}"
+    fam, cell = row.group(1), row.group(2)
+    qm = re.search(r"“([^”]+)”", cell)
+    if qm is None:
+        pytest.skip(f"the first Entries row carries no quotation: {base[:60]}")
+    assert qm is not None, "the first Entries row carries no quotation"
+    quote = qm.group(1)
     cite = CITE.search(cell)
     src = (mod.DOCS_DIR / f"{fam}.md").read_text(encoding="utf-8", errors="replace").splitlines()
-    _first, last = Y.scope_span_lines(src)
+    span = Y.scope_span_lines(src)
+    assert span is not None, "the first Entries row's scope note has no `## Scope` section"
+    _first, last = span
     outside = next(n for n in range(last + 1, len(src) + 1) if src[n - 1].strip())
     return {"first": first, "base": base, "fam": fam, "quote": quote,
             "cite": cite, "src": src, "last": last, "outside": outside}

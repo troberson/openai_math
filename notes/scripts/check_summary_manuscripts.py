@@ -45,6 +45,10 @@ def main():
     for path in pages:
         fam = page_fam(path.name)
         dirs, root = page_dirs(path)
+        if fam is None:
+            stale_pages += 1
+            print(f"===== {path.relative_to(ROOT)}  [no family id in the page name]")
+            continue
         total_dirs += len(dirs)
         bad = []
         for d in dirs:

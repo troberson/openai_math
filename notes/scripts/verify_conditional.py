@@ -83,8 +83,8 @@ def check(text):
             problems.append(f"prose quote not found in {rel}: {quote[:70]!r}")
 
     for m in INLINE.finditer(text):
-        span, rel, at = (m.group(1), m.group(2), m.group(3)) if m.group(1) \
-            else (m.group(4), m.group(5), m.group(6))
+        span, rel, at = (m.group(1), m.group(2), int(m.group(3))) if m.group(1) \
+            else (m.group(4), m.group(5), int(m.group(6)))
         f = ROOT / rel
         if not f.exists():
             problems.append(f"inline anchor file {rel} does not exist (citing {span[:50]!r})")

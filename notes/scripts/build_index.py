@@ -455,9 +455,9 @@ def main():
             links.append((page, c.split("](")[1][:-1]))
 
     for c in sorted(cfg2fams):
-        famset = sorted(cfg2fams[c])
+        famlist = sorted(cfg2fams[c])
         config_rows.append({
-            "config": c, "fam": "|".join(famset),
+            "config": c, "fam": "|".join(famlist),
             "json": "1" if (CHAL / f"{c}.json").exists() else "0",
             "lean": "1" if (CHAL / f"{c}.lean").exists() else "0",
             "theorems": challenges[c]["theorems"], "definitions": challenges[c]["definitions"],
@@ -465,7 +465,7 @@ def main():
             "decl_count": len(cfg2decls.get(c, [])),
             "declarations": "|".join(x[0] for x in cfg2decls.get(c, [])),
             "files": "|".join(x[1] for x in cfg2decls.get(c, [])),
-            "page": page_of[famset[0]],
+            "page": page_of[famlist[0]],
         })
     for c, d, f in triples:
         edges["edges/config-declaration.tsv"].append(

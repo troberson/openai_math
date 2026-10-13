@@ -68,12 +68,12 @@ def measured():
     texts = {p: p.read_text(encoding="utf-8", errors="replace").splitlines()
              for p in Y.doc_files()}
     spans = {p: Y.scope_span_lines(t) for p, t in texts.items()}
-    counts = [last - first + 1 for first, last in spans.values() if first]
+    counts = [last - first + 1 for first, last in (sp for sp in spans.values() if sp)]
 
     def hits(phrases):
         # The section text, not the whole file: the same rule the extractor reports.
-        return sum(1 for p, (first, last) in spans.items() if first
-                   and any(phrase in " ".join(texts[p][first - 1:last]).lower()
+        return sum(1 for p, sp in spans.items() if sp
+                   and any(phrase in " ".join(texts[p][sp[0] - 1:sp[1]]).lower()
                            for phrase in phrases))
 
     return {
@@ -149,7 +149,8 @@ def check(lines):
             if norm(quote) not in norm(src[cited_line - 1]):
                 problems.append(f"{fam} row at doc line {n}: quotation not on {path.name}:{cited_line}")
 
-    stated = [int(x) for x in COUNTS.search("\n".join(lines)).groups()] if COUNTS.search("\n".join(lines)) else None
+    hits = COUNTS.search("\n".join(lines))
+    stated = [int(x) for x in hits.groups()] if hits else None
     if stated is None:
         problems.append("prose count line for exclusions not found")
     else:

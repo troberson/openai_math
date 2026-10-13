@@ -87,8 +87,8 @@ def measure():
         rootdist[len(roots)] += 1
         main, rule = preprints.main_tex_of(roots)
         outcomes["single-root" if rule == "single-root" else
-                 "flagged" if rule == "flagged" else main.name] += 1
-        if rule == "single-root":
+                 "flagged" if rule == "flagged" else main.name if main else "none"] += 1
+        if rule == "single-root" and main:
             single_names[main.name] += 1
     main_no_dc = sum(1 for d in dirs for f in d.rglob("main.tex")
                      if not preprints.DOCCLASS.search(f.read_text(encoding="utf-8",

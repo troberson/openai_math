@@ -54,7 +54,8 @@ def target(mod, page, table):
              and table.get(mod.marker_after(page, m.end()).group(1), "").endswith(".tex")
              and "prove" in m.group(1))
     mk = mod.marker_after(page, q.end())
-    gap = re.match(r"[ \t\r\n)]*", page[q.end():q.end() + 12]).end()
+    gap_m = re.match(r"[ \t\r\n)]*", page[q.end():q.end() + 12])
+    gap = gap_m.end() if gap_m else 0
     start = q.end() + gap
     return q, start, start + len(mk.group(0))
 

@@ -202,7 +202,7 @@ def pass_c(page):
             hit = None
             for sid, a, b in cands:
                 src = page.lines_of(sid)
-                haystack = norm(" ".join(src[a - 1:max(a, b)]) if a else " ".join(src))
+                haystack = norm(" ".join(src[a - 1:max(a, b or a)]) if a else " ".join(src))
                 if norm(span) in haystack:
                     hit = (sid, a, b)
                     break

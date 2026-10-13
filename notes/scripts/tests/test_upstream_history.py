@@ -4,11 +4,12 @@ The checker verifies the three `notes/upstream_history/` pages against git, the 
 disk: anchors resolve, quotations match the anchored lines verbatim, fenced blocks match their
 nearest anchor, every date-suffixed slug exists as a `preprints/` directory, every markdown link
 resolves, the per-anchor needles carry the content they claim, every count phrase is re-derived from
-git + disk, and both tables are checked row by row. This file injects thirteen faults, one per form
+git + disk, and both tables are checked row by row. This file injects fourteen faults, one per form
 the page uses, and asserts each fires the pass that owns it: a count phrase moved, a table row
-deleted, a quotation word changed, a paraphrase dressed as a quote, an anchor shifted, an anchor
+deleted, a quotation word changed, a quotation cell whose closing quote is removed, a paraphrase
+dressed as a quote, an anchor shifted, an anchor
 path that is not a file, a slug renamed, a tier list truncated, a config name altered, an entry count
-moved, a quotation inserted with no anchor in its paragraph, and a link that does not resolve.
+moved, a directory count moved, a quotation inserted with no anchor in its paragraph, and a link that does not resolve.
 
 The slug needle is the SLUG pass only — the table pass reports the same fact as "table: '…' is not a
 preprints/ directory" — so the needle here is `": slug '"`, which the table pass cannot print.
@@ -42,6 +43,9 @@ MUTANTS = [
     ("quotation word altered", PAGE_301, "not verbatim in its anchored lines",
      lambda t: t.replace("supplies the annulus proof of the circuit estimate",
                          "supplies the annulus proof of the bound estimate")),
+    ("quotation cell emptied", PAGE_301, "quotation cell carries no",
+     lambda t: t.replace("including the projected-force and pressure bounds\"*",
+                         "including the projected-force and pressure bounds*")),
     ("paraphrase dressed as a quote", PAGE_301, "not verbatim in its anchored lines",
      lambda t: t.replace('The resulting count is therefore"*',
                          'so the count is therefore nonzero"*')),
@@ -86,7 +90,7 @@ def pages(mod):
 
 def test_clean_pages(mod, p, pages):
     """The three page passes, the needle pass, and the slug count are all silent on the committed pages."""
-    problems = []
+    problems: list = []
     hits = 0
     for name in mod.PAGES:
         hits += len(mod.SLUG.findall(pages[name]))
@@ -104,7 +108,7 @@ def test_injected_faults(mod, p, pages, label, page, needle, mut):
     pass that owns that form prints, so a pass that fires on something else is not a pass."""
     cand = mut(pages[page])
     assert cand != pages[page], f"{label}: mutation changed nothing"
-    found = []
+    found: list = []
     mod.check_page(page, cand, p, found)
     mod.check_counts(page, cand, p, found)
     mod.check_tables(page, cand, p, found)

@@ -36,7 +36,7 @@ from functools import cache
 from catlib import anchors
 from catlib import render as RD
 from catlib.paths import DOCS_DIR, LEAN, NOTES, PREPRINTS, ROOT
-from catlib.text import collapse_ws
+from catlib.text import collapse_ws, first_group
 
 PAGE = NOTES / "formalization-faithfulness.md"
 ANCHOR = anchors.anchor_pattern(anchors.EXT_YAML, ranges=True)
@@ -149,7 +149,7 @@ def fams_manuscripts():
     fam = None
     for ln in read(OVERVIEW_TEX).splitlines():
         if ln.startswith("\\resultentry"):
-            fam = re.search(r"\{\s*(\d{3})\s*\}", ln).group(1)
+            fam = first_group(r"\{\s*(\d{3})\s*\}", ln)
         for m in re.finditer(r"preprints/(?:[^\s(){}\\]|\([0-9]+\))*\.pdf", ln):
             parts = m.group(0).split("/")
             if fam and len(parts) > 1:
@@ -402,9 +402,9 @@ def check(text):
                 int(m.group(5))) for ln in lines if (m := AEROW.match(ln))]
     if ae_rows != v["ae_table"]:
         problems.append(f"a.e. table has {len(ae_rows)} rows, recomputation has {len(v['ae_table'])}")
-        for w, g in zip(v["ae_table"], ae_rows, strict=False):
-            if w != g:
-                problems.append(f"a.e. row {g[0]}: {g} != {w}")
+        for w, a in zip(v["ae_table"], ae_rows, strict=False):
+            if w != a:
+                problems.append(f"a.e. row {a[0]}: {a} != {w}")
 
     problems.extend(RD.sync_problems(PAGE, text))
     return problems, n_anchor, n_block, n_quote, len(RD.sync_problems(PAGE, text)), v
