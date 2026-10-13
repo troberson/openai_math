@@ -1039,14 +1039,17 @@ lives in this file and nowhere else.
   `git rev-parse HEAD:<path>` tree digests, the `git status --porcelain --ignored=matching` check over
   the five hashed paths, the `notes/tables/*.tsv` byte sum, the three `du -sk` sizes, the gate row count from
   `gate.py`'s `ROWS` block, the three site counts (atomicity, env, set iteration), the probe table's
-  wall/opens/distinct/repeats figures, and the **10** audit-hook records **tracked under
+  wall/opens/distinct/repeats figures, and the **16** audit-hook records **tracked under
   `notes/development/probe/`** (the checker parses the two 2026-10-11 records, written by
   `notes/scripts/measure_open_probe.py` over **9** targets, for its probe table; the tree's other
   records — the 2026-10-10 pair, the single-target `render_reports.py` after-record, the two
   2026-10-12 `seed_quotes.py` records, the 2026-10-12 `render_reports.py` record that captures the
-  fleet census, and the two 2026-10-12 records for the keyed-record producers
-  `extract_named_results.py` and `measure_templates.py` — are the records
-  `verify_cache_promotion.py` reads (**seven** of them, for its L1 exactness pass) and the records
+  fleet census, the two 2026-10-12 records for the keyed-record producers
+  `extract_named_results.py` and `measure_templates.py`, the 2026-10-13 `render_reports.py` record
+  that captures the fleet census after the sweep, and the three 2026-10-13 `seed_quotes.py` records
+  that prove the summaries tree L1 names the tree's link-only index page, the family 226 page, and
+  the family 332 page — are the records
+  `verify_cache_promotion.py` reads (**nine** of them, for its L1 exactness pass) and the records
   the page's amplification deltas are measured against), which the checker requires on disk. It resolves
   every backticked `path:line` anchor, bare script names included (a bare
   name resolves under `notes/scripts/`), matches the purity table — **8** rows, the set the probe parse

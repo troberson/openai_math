@@ -1,0 +1,59 @@
+quotes in the pages: 1792
+  pair-line specs (notes/reports/subfinding-pairs.md): 754
+  summaries specs (24 pages): 1038
+  specs seeded: 1777   measured negatives (start 0): 15
+  single-line spec: 1089   range spec: 688
+  head widened past 3 words: 262
+  whole-quote spec (no boundary): 448
+  mode: raw 1720  folded 57  not located 15
+  resolver reproduces the page quote: 1777 of 1777
+  round-trip failures: 0
+[probe] target exit code: 0
+[probe2] target notes/scripts/seed_quotes.py 
+[probe2] wall 23.54  opens 604  distinct 313  repeats 291
+[probe2] rchar MB 27.9  read_bytes MB 0.2
+[probe2] buckets:
+          preprints/                 378
+          notes/summaries/           50
+          other                      42
+          lean/OAI/                  35
+          notes/                     22
+          lean/ComparatorChallenges/ 22
+          abs/other                  19
+          lean/docs/                 16
+          notes/scripts/             13
+          top-level                  5
+          reasoning_traces/          2
+[probe2] notes/ paths (count  modes  path):
+              3  r        notes/reports/counterexample-tag.md
+              2  r        notes/reports/subfinding-pairs.md
+              8  r        notes/reports/t0-triage.md
+              2  r        notes/summaries/README.md
+              2  r        notes/summaries/algebra/197-nonsofic-groups-and-group-ring-counterexamples.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/032-the-rational-hodge-conjecture-for-cm-abelian-varieties.md
+              2  r        notes/summaries/combinatorics/159-quasipolynomial-bounds-for-arithmetic-progressions.md
+              2  r        notes/summaries/convex-and-metric-geometry/087-the-mahler-conjectures-and-symplectic-width.md
+              2  r        notes/summaries/convex-and-metric-geometry/101-the-sharp-simplex-conjecture-for-isotropic-constants.md
+              2  r        notes/summaries/functional-analysis/332-metric-markov-cotype-two-for-l1.md
+              2  r        notes/summaries/mathematical-physics/271-blochs-law-and-spontaneous-ferromagnetic-order.md
+              2  r        notes/summaries/number-theory/001-milnes-rationality-conjecture.md
+              2  r        notes/summaries/number-theory/002-full-birch-swinnerton-dyer-formula-from-low-selmer-corank.md
+              2  r        notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md
+              2  r        notes/summaries/number-theory/006-goldfelds-conjecture.md
+              2  r        notes/summaries/number-theory/007-two-point-chowla-and-the-corrected-binary-elliott-conjecture.md
+              2  r        notes/summaries/number-theory/010-fontaine-mazur-modularity-at-the-prime-2.md
+              2  r        notes/summaries/number-theory/011-the-ford-konyagin-luca-conjecture-on-prime-predecessors.md
+              2  r        notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md
+              2  r        notes/summaries/number-theory/016-zilber-pink-in-abelian-varieties-and-the-siegel-threefold.md
+              2  r        notes/summaries/number-theory/017-the-irrationality-exponent-of-pi-is-2.md
+              2  r        notes/summaries/number-theory/018-margulis-platonov-conjecture-over-global-fields.md
+              2  r        notes/summaries/number-theory/019-p-adic-section-conjecture.md
+              2  r        notes/summaries/operator-algebras/287-all-nonabelian-free-group-factors-are-isomorphic.md
+              2  r        notes/summaries/partial-differential-equations/362-global-smoothness-for-relativistic-vlasov-maxwell.md
+              2  r        notes/summaries/probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md
+              2  r        notes/summaries/probability-and-statistical-mechanics/226-the-curve-scaling-limit-of-half-plane-double-dimers.md
+              2  r        notes/summaries/theoretical-computer-science/102-unique-games-conjecture-and-optimal-approximation-thresholds.md
+              1  w        notes/tables/.quotes.tsv.tmp
+              8  r        notes/tables/catalog.tsv
+[probe2] write-mode paths outside notes/:
+              1  w .qwen/cache/records/821211a63b98c8244d86e7cbd5097bd6/notes/tables/.quotes.tsv.tmp

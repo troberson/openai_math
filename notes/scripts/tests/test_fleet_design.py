@@ -93,8 +93,8 @@ MUTANTS = [
     # the tree does not carry is caught by the count pass. The tree carries 14 records, so the needle
     # names 14 and the fault understates that.
     ("probe record count understated",
-     "count phrase not in the page: The tracked records are **15**:",
-     lambda t: t.replace("The tracked records are **15**:", "The tracked records are **14**:", 1)),
+     "count phrase not in the page: The tracked records are **16**:",
+     lambda t: t.replace("The tracked records are **16**:", "The tracked records are **15**:", 1)),
     ("writer-row count in the gate paragraph",
      "count phrase not in the page: the **11** writers declare what they write",
      lambda t: t.replace("the **11** writers declare what they write",
