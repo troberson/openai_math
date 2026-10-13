@@ -350,3 +350,19 @@ issue.
   against the newest record, and the record taken over 22 pages could not name the 23rd. Gate: **78
   rows, 0 failures**, empty head diff, cache promotion 0 problems. `math-ckd.3`'s remaining set is
   **76 families over 116 manuscripts**; the tree ends at **99** family pages plus the index page.
+- **Family 332's page is landed and its sweep is landed.** Chosen 2026-10-13 on `math-ckd.3`, as the
+  cheapest shard (Functional analysis, 1 manuscript). The page carries **35** marker positions and
+  **18** quoted spans, `verify_summaries.py` reports **0** problems across passes B, C, D and E, and the
+  tree reads **25** pages (**24** family pages) over **3,860** marker positions and **1,038** quoted
+  spans with **0** problems. The counts the page moved are swept across the census (25 summaries pages,
+  1,155 notes files, 16 probe records), the seed classification (1,038 spans: 966 raw, 57 folded, 15 not
+  located, 335 single-line, 688 across 2 to 26 lines), the disk scan (66,110 links, 48,410
+  file-resolving), the registry (48,015 links), the index tree (11,530,406 B), the all-TSV total
+  (2,265,274 B over 25 TSVs), the pairings (24 of 372 families, 60 manuscripts), the notes-doc targets
+  (28), the family-page gap (948), the typed-edge summary row (24), and `quotes.tsv` (1,792 rows at
+  369,719 B). Two facts the page records: the release's blurb and the overview both say the extension
+  reaches "the whole space", while the manuscript abstract names "the whole Hilbert space" — the page
+  quotes each in its own words. And the blurb writes the target with the Unicode `ℓ1`, so a page that
+  quotes `$\ell_1$` is not verbatim. Gate: **78 rows, 0 failures**, empty head diff, cache promotion 0
+  problems. `math-ckd.3`'s remaining set is **75 families over 115 manuscripts**; the tree ends at
+  **99** family pages plus the index page.
