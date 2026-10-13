@@ -1,13 +1,16 @@
 """The self-tests for `notes/scripts/check_index_links.py`.
 
-The checker scans the rendered index and reports broken links; this file injects the breaks. 20
+The checker scans the rendered index and reports broken links; this file injects the breaks. 21
 injected hrefs — one per category the checker classifies, so a checker that only walks manuscript
-paths fails — must not resolve and must classify as the category each claims; 7 real hrefs taken
+paths fails — must not resolve and must classify as the category each claims; 8 real hrefs taken
 from the rendered pages must resolve, because a checker that flags everything is useless; the
 paren-balanced scanner must keep the CAT(0) path whole where `[^)]*` truncates it; and what the
-classifier tags as a directory must be a directory on disk. The clean test asserts the scan
-baseline the page quotes: 1,033 pages, 66,107 links, 0 broken, 17,700 resolving to a directory
-and 48,407 to a file.
+classifier tags as a directory must be a directory on disk. The basename pass is the invariant
+`math-faz.6` moved the 16 generated tables on: the index tree and `notes/tables/` share no
+basename, so the two sets are pinned at 1,027 and 25 and a collision is injected by handing the
+pass a shared name — a pass that returns 0 because a set is empty is not a pass. The clean test
+asserts the scan baseline the page quotes: 1,033 pages, 66,107 links, 0 broken, 17,700 resolving to
+a directory and 48,407 to a file.
 
 The page's own prose is not mutated here: `verify_page_sync.py` owns the page check and mutates
 the page in memory, so nothing in this file writes an index page. Every injected href is built
@@ -24,6 +27,7 @@ pytestmark = pytest.mark.mutant
 MUTANTS = [
     ("README.md", "disciplines/no-such.md", "index-page"),
     ("README.md", "no-such-table.tsv", "index-table"),
+    ("README.md", "../tables/no-such-table.tsv", "tables-tsv"),
     ("README.md", "no-such-dir/", "index-dir"),
     ("README.md", "../no-such-note.md", "notes-doc"),
     ("names/cauchy.md", "../number-theory/999-no-such-family.md", "index-page"),
@@ -54,8 +58,9 @@ MUTANTS = [
 CONTROLS = [
     ("README.md", "../development/index-design.md"),
     ("README.md", "../tables/topics.tsv"),
+    ("README.md", "../tables/names.tsv"),
     ("README.md", "names/"),
-    ("names/cauchy.md", "../names.tsv"),
+    ("names/cauchy.md", "../../tables/names.tsv"),
     ("names/cauchy.md", "../../../lean/docs/003.md"),
     ("differential-geometry/337-cartan-hadamard-isoperimetry-and-cat-0-fillings.md",
      "../../../preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/paper.pdf"),
@@ -71,6 +76,7 @@ CLASSIFIED = [
     ("lean/OAI/Combinatorics", "dir"),
     ("notes/index/names/", "dir"),
     ("notes/reports/names.md", "file"),
+    ("notes/tables/names.tsv", "file"),
 ]
 
 
@@ -88,7 +94,7 @@ def test_injected_hrefs_do_not_resolve(mod):
         if (mod.ROOT / rel).exists():
             inert.append(f"{page} -> {href}: injected target resolves, the test is inert")
     assert not inert, inert
-    assert len(MUTANTS) == 20, f"{len(MUTANTS)} injected hrefs, expected 20"
+    assert len(MUTANTS) == 21, f"{len(MUTANTS)} injected hrefs, expected 21"
 
 
 def test_injected_hrefs_classify_as_the_category_they_claim(mod):
@@ -111,7 +117,7 @@ def test_real_hrefs_resolve(mod):
         if not (mod.ROOT / rel).exists():
             absent.append(f"{page} -> {href}: resolves to {rel}, which is absent")
     assert not absent, absent
-    assert len(CONTROLS) == 7, f"{len(CONTROLS)} controls, expected 7"
+    assert len(CONTROLS) == 8, f"{len(CONTROLS)} controls, expected 8"
 
 
 def test_paren_balanced_scanner_keeps_the_cat0_path_whole(mod):
@@ -144,6 +150,27 @@ def test_directory_categories_match_disk(mod):
     assert not missed, missed
 
 
+def test_basename_collision_pass_is_nonvacuous(mod):
+    """The invariant `math-faz.6` moved the 16 generated tables on: the index tree and
+    `notes/tables/` share no file basename. A pass that reports 0 because one of the sets is empty
+    is not a pass, so both sets are pinned and a collision is injected by handing the pass a shared
+    name. `README.md` is the realistic shape: `notes/index/README.md` is the index entry point, and a
+    `notes/tables/README.md` would make a bare `README.md` reference ambiguous between the trees. The
+    pass is scoped to the two trees, not to the index alone: inside the index, 6 discipline names are
+    also topic terms, so `disciplines/differential-geometry.md` and `topics/differential-geometry.md`
+    share a basename, which is why the index set reads 1,027 over 1,033 files."""
+    idx = mod.basenames(mod.IDX)
+    tab = mod.basenames(mod.TABLES)
+    assert len(idx) == 1027, f"{len(idx)} index basenames, expected 1,027"
+    assert len(tab) == 25, f"{len(tab)} table basenames, expected 25"
+    assert len(mod.basename_dupes(mod.IDX)) == 6, \
+        f"{len(mod.basename_dupes(mod.IDX))} shared basenames inside the index, expected 6"
+    clean = mod.basename_overlap(idx, tab)
+    assert clean == [], f"basename collisions: {clean[:3]}"
+    injected = mod.basename_overlap(idx, tab | {"README.md"})
+    assert injected == ["README.md"], f"injected collision read {injected}"
+
+
 def test_clean_scan_baseline(mod):
     """The scan the page quotes: every link in every rendered page resolves. The counts are the
     page's own figures, so a scan that drifts moves the page and fails this test together."""
@@ -153,4 +180,5 @@ def test_clean_scan_baseline(mod):
     assert not m["broken"], list(m["broken"][:5])
     assert m["dir_links"] == 17700, f"{m['dir_links']} directory-resolving links, expected 17,700"
     assert m["file_links"] == 48407, f"{m['file_links']} file-resolving links, expected 48,407"
+    assert m["collisions"] == [], f"basename collisions: {m['collisions'][:3]}"
     assert m["contents_broken"] == [], m["contents_broken"][:5]

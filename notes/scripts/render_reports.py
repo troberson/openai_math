@@ -672,6 +672,8 @@ def index_full(p: dict[str, Any]) -> dict[str, str]:
         "family-name.tsv rows": f"`family-name.tsv` | **{ir('family-name.tsv')}**",
         "rendered page/table totals": f"**{p['index_pages']:,}** pages and "
                                       f"**{p['index_tables']}** tables in total",
+        "index tree bytes": f"the index tree carries **{p['index_bytes']}** B over the "
+                            f"**{p['index_pages']:,}** pages",
         "names.tsv key count": f"has one row per folded name key (**{ir('names.tsv')}**)",
         "page count": f"Pages: `notes/index/<discipline>/<NNN>-<name>.md`, **{fam}** of them",
         "raw-bib projection": f"**{be}** rows at the measured **150** B/row is **{rawkib}** KiB",
@@ -739,11 +741,26 @@ def index_phrases(p: dict[str, Any]) -> dict[str, str]:
 # phrase raises ValueError here rather than reflowing the page.
 INDEX_SPLIT = {
     "MSC hit count": ["family → MSC code"],
-    "added TSV byte figures": ["`notes/tables/abstracts.tsv`",
-                               ("(**89476** B over **372** rows), `notes/tables/quotes.tsv` "
-                                "(**279148** B over **1161** rows),"),
-                               ("`notes/tables/sources.tsv` (**221463** B over **719** rows) and "
-                                "`notes/tables/topics.tsv` (**22631** B")],
+    "added TSV byte figures": [
+        ("`notes/tables/abstracts.tsv` (**89476** B over **372** rows), "
+         "`notes/tables/citation.tsv` (**64092** B over **391** rows),"),
+        ("`notes/tables/config-declaration.tsv` (**27385** B over **200** rows), "
+         "`notes/tables/configs.tsv` (**65761** B over **416** rows),"),
+        ("`notes/tables/families.tsv` (**108550** B over **372** rows), "
+         "`notes/tables/family-config.tsv` (**8893** B over **416** rows),"),
+        ("`notes/tables/family-lean.tsv` (**21287** B over **200** rows), "
+         "`notes/tables/family-manuscript.tsv` (**135963** B over **719** rows),"),
+        ("`notes/tables/family-name.tsv` (**136769** B over **9819** rows), "
+         "`notes/tables/family-topic.tsv` (**23682** B over **978** rows),"),
+        ("`notes/tables/family-trace.tsv` (**855** B over **10** rows), "
+         "`notes/tables/lean-dirs.tsv` (**41937** B over **559** rows),"),
+        ("`notes/tables/manuscripts.tsv` (**277805** B over **719** rows), "
+         "`notes/tables/names.tsv` (**304513** B over **5842** rows),"),
+        ("`notes/tables/quotes.tsv` (**279148** B over **1161** rows), "
+         "`notes/tables/scope-notes.tsv` (**26677** B over **242** rows),"),
+        ("`notes/tables/sources.tsv` (**221463** B over **719** rows), "
+         "`notes/tables/topics-rendered.tsv` (**19127** B over **92** rows), "
+         "`notes/tables/topics.tsv` (**22631** B over **92** rows) and")],
     "bib keywords count": ["bibliography entry → `keywords` field **0** over **13,802**"],
     "builds-on declaration count": ["(**30** `builds-on` declarations at"],
     "derivable lean reach": [("config → file (yaml: **189** configs, all **189** of them also "
@@ -887,7 +904,7 @@ def names_phrases(mp: dict[str, Any]) -> dict[str, str]:
     p["wang_zhang a"] = (f"`wang` is a subject name in {len(wang['fams'])} families' records and a "
                          f"bibliography author in {len(wang['bib_fams'])} of")
     p["wang_zhang b"] = f"them; `zhang` in {len(zhang['fams'])} and {len(zhang['bib_fams'])}"
-    p["tsv_rows"] = f"`notes/index/names.tsv` carries all {f(len(rows))} rows with a `role` column"
+    p["tsv_rows"] = f"`notes/tables/names.tsv` carries all {f(len(rows))} rows with a `role` column"
     p["spellings"] = (f"{mp['spellings']} of the {f(len(subject))} subject names are spelled "
                       f"more than one way in prose alone")
     p["spellings_count"] = f"the count of names with >1 prose spelling is {mp['spellings']}"
@@ -1110,7 +1127,7 @@ IL_GROUP_CELL = {"name pages": "name pages", "family pages": "family pages",
                  "topic pages": "topic pages", "discipline pages": "discipline pages",
                  "entry point": "entry point (`notes/index/README.md`)"}
 # Categories whose scanned count exceeds the render-time registered count, in the page's row order.
-IL_GAP_CATS = ["index-page", "manuscript-dir", "notes-doc", "index-table", "config-json",
+IL_GAP_CATS = ["index-page", "manuscript-dir", "notes-doc", "tables-tsv", "config-json",
                "verification-dir", "index-dir"]
 # Where notes/development/index-links.md wraps a phrase across lines, the prefix its first line ends with.
 IL_SPLIT = {
@@ -1131,11 +1148,19 @@ IL_SPLIT = {
                         "linked only from the entry")],
     "prose_latexsource": [("`latex-source` 719 = the `main_tex` of each of the 719 manuscripts, "
                           "all 719 present in")],
-    "prose_notesdoc": ["`notes-doc` 26 targets = `notes/reports/names.md` (552 links: one from each of the",
+    "prose_notesdoc": ["`notes-doc` 25 targets = `notes/reports/names.md` (552 links: one from each of the",
                        ("551 name pages and one from the entry point), the 21 `notes/summaries/` "
                        "pages family pages link,"),
-                       ("and the 5 notes docs the entry point links (`index-design.md`, `names.md`, "
+                       ("and the 4 notes docs the entry point links (`index-design.md`, `names.md`, "
                        "`topics.md`,")],
+    "prose_tablestsv": [("`tables-tsv` 2 targets = `notes/tables/names.tsv` (553 links: one from "
+                        "each of the 551 name"),
+                        ("pages and 2 from the entry point) and `notes/tables/topics.tsv`"),
+                        "(1 link, the entry point)"],
+    "prose_basenames": [("The index tree carries 1,027 distinct file basenames over 1,033 pages "
+                        "and `notes/tables/` carries"),
+                        ("25; the pass reports 0 shared, and 6 basenames are shared *inside* the "
+                        "index tree")],
     "prose_regchecked": ["**48,012 links checked, 0"],
     "prose_tracefiles": ["`reasoning_traces/` ships **11 files"],
     "prose_fresh": ["**20 injected, 20 caught, 0 missed; 7 controls, 7"],
@@ -1288,8 +1313,20 @@ def index_links_full(p: dict[str, Any]) -> dict[str, str]:
                              f"pages and one from the entry point), the {summaries} "
                              f"`notes/summaries/` pages family pages link, and the {entry_docs} "
                              f"notes docs the entry point links (`index-design.md`, `names.md`, "
-                             f"`topics.md`, `topics.tsv`, `scripts/measure_names.py`)")
-    out["prose_indextable"] = f"`index-table` {tg['index-table']} target = `notes/index/names.tsv`"
+                             f"`topics.md`, `scripts/measure_names.py`)")
+    out["prose_tablestsv"] = (f"`tables-tsv` {tg['tables-tsv']} targets = `notes/tables/names.tsv` "
+                              f"({cats['tables-tsv'] - 1} links: one from each of the "
+                              f"{gp['name pages']} name pages and "
+                              f"{cats['tables-tsv'] - 1 - gp['name pages']} from the entry point) "
+                              f"and `notes/tables/topics.tsv` (1 link, the entry point)")
+    out["line_basenames"] = (f"basename collisions (notes/index vs notes/tables)  "
+                             f"{len(s['collisions'])}  over {s['idx_basenames']} index basenames "
+                             f"and {s['tab_basenames']} table basenames")
+    out["prose_basenames"] = (f"The index tree carries {f(s['idx_basenames'])} distinct file "
+                              f"basenames over {f(npages)} pages and `notes/tables/` carries "
+                              f"{s['tab_basenames']}; the pass reports {len(s['collisions'])} "
+                              f"shared, and {s['idx_dupes']} basenames are shared *inside* the "
+                              f"index tree")
     out["prose_traces"] = (f"Traces: {len(s['trace_stems'])} stems attributed, "
                            f"{len(s['trace_disk'])} on disk, {len(s['trace_unlisted'])} unattributed.")
     out["prose_tracefiles"] = (f"`reasoning_traces/` ships **{s['trace_files']} files over "

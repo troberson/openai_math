@@ -433,7 +433,7 @@ lives in this file and nowhere else.
   prior) — and regenerating either destroys the file. `notes/index/` is generated wholesale: edit
   `build_index.py` and re-render, never format or hand-edit a page. The only basename shared between
   `notes/` and `notes/index/` is `README.md` — the ledger readme and the index entry point. The
-  rendered topic table is `notes/index/topics-rendered.tsv`, renamed from `topics.tsv` because the
+  rendered topic table is `notes/tables/topics-rendered.tsv`, renamed from `topics.tsv` because the
   vocabulary's header ends `status  note` where the render's ends `status  page`, which made a
   reference to `topics.tsv` without its directory ambiguous.
 - Lint `notes/scripts/` with `notes/scripts/lint_scripts.sh`, which runs `.venv/bin/ruff check

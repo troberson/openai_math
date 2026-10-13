@@ -2,7 +2,7 @@
 
 28 families · subject name · 3 carried by a title or a declaration · 28 by prose · 7 by bibliography author
 
-A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../names.tsv) with `role = citation`.
+A name page exists because a **title** layer (a family title in `overview.tex`, a manuscript directory name, the optional title of a statement environment) or a `main_results` **declaration** name carries this name. Those hits make it a subject. The prose and bibliography columns are listed as citation evidence: a body paragraph that mentions a name says the manuscript cites it, not that the result is about it. A name that never reaches a title layer has no page — it is a row in [`../names.tsv`](../../tables/names.tsv) with `role = citation`.
 
 Prose counts: 199 capitalized occurrences, 171 of them mid-sentence, 29 lowercase. The mid-sentence count is what separates a surname from an English word; the rule and its measurements live in [`notes/reports/names.md`](../../reports/names.md).
 

@@ -27,6 +27,12 @@ the same pass. Links are also counted per page group (names, families, topics,
 disciplines, entry point), which is what the coverage gap in notes/development/index-links.md
 quotes: the render-time registry total minus the scanned total, attributed per group.
 
+The basename pass is the invariant `math-faz.6` moved the 16 generated tables on: the index tree
+and `notes/tables/` must share no file basename. A page links a table by relative path, so a bare
+basename is ambiguous when both trees carry it, and a link that looks like it resolves can resolve
+to the wrong tree. The pass takes the two basename sets as arguments so the self-tests can inject a
+collision without writing a file.
+
 Run: python3 notes/scripts/check_index_links.py [--contents]
 --contents adds the CONTENTS.md link check (it is on by default in the report).
 
@@ -56,6 +62,7 @@ from catlib import yaml as Y
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 
 IDX = ROOT / "notes" / "index"
+TABLES = ROOT / "notes" / "tables"
 SCHEME = re.compile(r"^[a-zA-Z][a-zA-Z0-9+.-]*:")
 # The main_results triples come from the package reader; build_index.py calls main() at module
 # scope, so importing it would run the build.
@@ -148,6 +155,8 @@ def category(rel):
         if last.endswith(".tsv"):
             return "index-table"
         return "index-dir"
+    if p[0] == "notes" and len(p) >= 2 and p[1] == "tables":
+        return "tables-tsv" if p[-1].endswith(".tsv") else "notes-doc"
     if p[0] == "notes":
         return "notes-doc"
     return "release-surface"
@@ -226,6 +235,35 @@ def contents_links():
     return out
 
 
+def basenames(d: pathlib.Path) -> set[str]:
+    """Every file basename under a directory, as a set."""
+    return {p.name for p in d.rglob("*") if p.is_file()}
+
+
+def basename_dupes(d: pathlib.Path) -> list[str]:
+    """Basenames that appear more than once under a directory, in sorted order.
+
+    Inside the index tree, 6 discipline names are also topic terms, so `disciplines/X.md` and
+    `topics/X.md` share a basename. That is benign — links are relative, so there is no ambiguity —
+    and it is why the collision pass is scoped to the two trees rather than to the index alone.
+    """
+    c = collections.Counter(p.name for p in d.rglob("*") if p.is_file())
+    return sorted(n for n, k in c.items() if k > 1)
+
+
+def basename_overlap(idx: set[str], tab: set[str]) -> list[str]:
+    """Basenames shared by the index tree and `notes/tables/`, in sorted order.
+
+    `math-faz.6` moved the 16 generated tables out of `notes/index/` into `notes/tables/` so every
+    TSV in the repo sits in one directory. The invariant that keeps that move safe is that the two
+    trees share no basename: an index page links a table by relative path, so a page that names a
+    bare basename is ambiguous when both trees carry it, and a link that appears to resolve can
+    resolve into the wrong tree. The pass takes the two sets as arguments so the self-tests can
+    inject a collision without writing a file.
+    """
+    return sorted(set(idx) & set(tab))
+
+
 @cache
 def measure() -> dict[str, Any]:
     """Every number the report prints, as data.
@@ -273,6 +311,10 @@ def measure() -> dict[str, Any]:
 
     pages = sorted(p.relative_to(IDX).as_posix() for p in IDX.rglob("*.md"))
     gp = collections.Counter(page_group(r) for r in pages)
+    idx_names = basenames(IDX)
+    tab_names = basenames(TABLES)
+    collide = basename_overlap(idx_names, tab_names)
+    idx_dupes = basename_dupes(IDX)
     canon = {
         "manuscript-pdf": len(pdf_paths),
         "manuscript-dir": paps,
@@ -312,6 +354,10 @@ def measure() -> dict[str, Any]:
         "extra_dirs": extra_dirs,
         "extra_dirs_on_disk": sum(1 for d in extra_dirs if (ROOT / d).is_dir()),
         "extra_dir_links": sum(1 for _p, _h, rel in links if rel in set(extra_dirs)),
+        "idx_basenames": len(idx_names),
+        "tab_basenames": len(tab_names),
+        "idx_dupes": len(idx_dupes),
+        "collisions": collide,
         "trap": trap(),
         "dir_links": sum(v for (c, k), v in kind.items() if k == "dir"),
         "dir_cats": sorted({c for (c, k) in kind if k == "dir"}),
@@ -351,6 +397,11 @@ def main():
     print()
     print(f"directory-resolving links  {m['dir_links']} over {m['dir_cats']}")
     print(f"file-resolving links       {m['file_links']}")
+    print(f"basename collisions (notes/index vs notes/tables)  {len(m['collisions'])}  "
+          f"over {m['idx_basenames']} index basenames and {m['tab_basenames']} table basenames")
+    for b in m["collisions"]:
+        print(f"  COLLISION {b}")
+    print(f"index basenames shared inside the index tree  {m['idx_dupes']}")
     print(f"manuscript dirs linked outside the release set  {len(m['extra_dirs'])}  on disk "
           f"{m['extra_dirs_on_disk']}  "
           f"links {m['extra_dir_links']}")
@@ -362,7 +413,7 @@ def main():
           f"broken {len(m['contents_broken'])}")
     for b in m["contents_broken"][:10]:
         print(f"  BROKEN {b}")
-    return 1 if (broken or m["contents_broken"]) else 0
+    return 1 if (broken or m["contents_broken"] or m["collisions"]) else 0
 
 
 if __name__ == "__main__":

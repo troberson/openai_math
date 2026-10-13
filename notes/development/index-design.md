@@ -5,8 +5,8 @@ Decided 2026-10-07 for `math-u41.1`. Every count here comes from
 nothing, and prints the same report on two consecutive runs.
 `python3 notes/scripts/verify_index_design.py --mutant` re-derives those counts, resolves every
 anchor on this page, and flags fourteen injected mutations. Rendering has since shipped —
-`notes/index/` carries **1,033** pages and **16** tables, and the schema tables' row counts below are
-read from those generated files.
+`notes/index/` carries **1,033** pages and the **16** generated tables live in `notes/tables/`, and
+the schema tables' row counts below are read from those generated files.
 
 ## The population
 
@@ -65,10 +65,10 @@ The five tracked TSVs, measured on disk:
 | `links.tsv` | **7280** | **22** |
 | `subfindings.tsv` | **169216** | **1145** |
 
-Those five named files are the ledger set the **297,050** B figure covers. `notes/tables/abstracts.tsv`
-(**89476** B over **372** rows), `notes/tables/quotes.tsv` (**279148** B over **1161** rows),
-`notes/tables/sources.tsv` (**221463** B over **719** rows) and `notes/tables/topics.tsv` (**22631** B
-over **92** rows) are tracked TSVs too, and every `notes/tables/*.tsv` together totals **909768** B —
+Those five named files are the ledger set the **297,050** B figure covers. `notes/tables/abstracts.tsv` (**89476** B over **372** rows), `notes/tables/citation.tsv` (**64092** B over **391** rows),
+`notes/tables/config-declaration.tsv` (**27385** B over **200** rows), `notes/tables/configs.tsv` (**65761** B over **416** rows),
+`notes/tables/families.tsv` (**108550** B over **372** rows), `notes/tables/family-config.tsv` (**8893** B over **416** rows),
+`notes/tables/family-lean.tsv` (**21287** B over **200** rows), `notes/tables/family-manuscript.tsv` (**135963** B over **719** rows), are tracked TSVs too, and every `notes/tables/*.tsv` together totals **2174703** B —
 quote the set with the figure, since the two sums answer different questions.
 
 ## 2. Location — `notes/index/`
@@ -133,7 +133,7 @@ a mismatch.
 
 ## Schema
 
-Node tables, one row per node, in `notes/index/`:
+Node tables, one row per node, in `notes/tables/`:
 
 | Table | Rows | Key |
 |---|---|---|
@@ -146,7 +146,7 @@ Node tables, one row per node, in `notes/index/`:
 | `topics-rendered.tsv` | **92** | term |
 | `names.tsv` | **5,842** | folded name key |
 
-Edge tables, in `notes/index/edges/`:
+Edge tables, also in `notes/tables/`:
 
 | Table | Rows | Edge |
 |---|---|---|
@@ -163,7 +163,11 @@ Pages: `notes/index/<discipline>/<NNN>-<name>.md`, **372** of them, each renderi
 that name its family; `notes/index/topics/<term>.md`, **92** of them, one per vocabulary term
 including the **4** with no hit; `notes/index/names/<name>.md`, **551** of them, one per subject
 name; **17** discipline pages; and `notes/index/README.md` as the entry
-point. **1,033** pages and **16** tables in total.
+point. **1,033** pages and **16** tables in total — the pages under `notes/index/`, the tables under
+`notes/tables/`, which is where `math-faz.6` moved them so every TSV in the repo sits in one
+directory. The invariant that keeps the move safe is that the two trees share no file basename;
+`notes/scripts/check_index_links.py` checks it and `notes/development/index-links.md` carries the
+measurement.
 
 Rejected: a raw bibliography edge table. **13,802** rows at the measured **150** B/row is
 **2,021** KiB of generated text for the release's own reference lists, while the resolved
@@ -203,11 +207,12 @@ manuscript-level flag.
 - The **150** B/row byte figures are projections from measured TSVs, not measurements of index files.
   The index itself is rendered — **1,033** pages, **16** tables, `links checked 48012 broken 0`, and a
   two-run determinism check in which all **1,049** generated files were byte-identical with an
-  identical report — but no page was read for prose quality, and the byte cost of the rendered tree
-  was not measured. The render-time figure is the registry's own subset: the disk check
+  identical report — but no page was read for prose quality. The byte cost is measured: the index tree
+  carries **11529933** B over the **1,033** pages, and the 16 tables are counted in the
+  `notes/tables/*.tsv` sum. The render-time figure is the registry's own subset: the disk check
   (`notes/scripts/check_index_links.py`) covers **66,107** links over the same 1,033 pages, also with
-  **0** broken, and **17,700** of them resolve to a directory. `notes/development/index-links.md` carries that
-  measurement; the prose-quality and byte-cost exclusions above are unchanged by it.
+  **0** broken, and **17,700** of them resolve to a directory. `notes/development/index-links.md` carries
+  that measurement; the prose-quality exclusion above is unchanged by it.
 - The **13,802** bib entries are counted by `^\s*@\w+\s*{`; commented-out entries are included and
   none was checked to parse as a BibTeX entry.
 - The **136**-family Lean reach is computed from scope-note links and yaml triples. No `.lean` file

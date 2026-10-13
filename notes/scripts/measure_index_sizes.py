@@ -45,6 +45,14 @@ IDX = ROOT / "notes" / "index"
 # The five TSVs notes/development/index-design.md tabulates as "the whole ledger set".
 LEDGER_SET = ("catalog.tsv", "conjecture-standing.tsv", "formalization-deps.tsv", "links.tsv",
               "subfindings.tsv")
+# The 16 tables build_index.py renders. `math-faz.6` moved them from `notes/index/` into
+# `notes/tables/`, so the schema-table row counts are read from the tables directory, and the
+# index tree's own `*.tsv` glob is empty — which is the post-move state the page reports.
+INDEX_TABLES = ("families.tsv", "manuscripts.tsv", "configs.tsv", "lean-dirs.tsv",
+                "scope-notes.tsv", "traces.tsv", "topics-rendered.tsv", "names.tsv",
+                "citation.tsv", "family-lean.tsv", "family-trace.tsv", "family-manuscript.tsv",
+                "family-name.tsv", "family-config.tsv", "family-topic.tsv",
+                "config-declaration.tsv")
 
 
 def tsv(path):
@@ -113,7 +121,8 @@ def population():
     def rows_of(p):
         return len([l for l in p.read_text(encoding="utf-8").split("\n") if l.strip()]) - 1
 
-    index_rows = {p.name: rows_of(p) for p in sorted(IDX.rglob("*.tsv"))}
+    index_rows = {p.name: rows_of(p) for p in sorted((ROOT / "notes" / "tables").glob("*.tsv"))
+                  if p.name in INDEX_TABLES}
     index_pages = len(list(IDX.rglob("*.md")))
 
     # The disk link check notes/development/index-design.md quotes, re-derived here so the page's
@@ -192,6 +201,9 @@ def population():
         "index_rows": index_rows,
         "index_pages": index_pages,
         "index_tables": len(index_rows),
+        # The index tree's own bytes. `math-faz.6` moved the 16 generated tables out, so the tree
+        # is pages only; the sum is measured over the files on disk, not over the page count.
+        "index_bytes": sum(p.stat().st_size for p in IDX.rglob("*") if p.is_file()),
         "rawbib_kib": bib_entries * 150 // 1024,
         "res_kib": resolved * 150 // 1024,
         "kw_pct": 100.0 * kw_dirs / sum(paps),
@@ -239,6 +251,7 @@ def main():
     print("INDEX (generated files under notes/index/, row counts read from the files)")
     print(f"  pages (.md)                       {p['index_pages']}")
     print(f"  tables (.tsv)                     {p['index_tables']}")
+    print(f"  index tree bytes                  {p['index_bytes']}")
     for name, n in sorted(p["index_rows"].items()):
         print(f"  {name:28} {n:6} rows")
     print("DISK LINK CHECK (notes/scripts/check_index_links.py over notes/index/**/*.md)")

@@ -3,7 +3,7 @@
 Built 2026-10-07 by `notes/scripts/measure_names.py` (measurement — a writer: it lands the
 population as the keyed record `.qwen/cache/records/<key>/names.json`, and `--check-only` prints the
 report without landing it) and `notes/scripts/build_index.py` (writes `notes/index/names/`,
-`notes/index/names.tsv`, `notes/index/edges/family-name.tsv`). Every count below is from a fresh run
+`notes/tables/names.tsv`, `notes/tables/family-name.tsv`). Every count below is from a fresh run
 of those two scripts; the rule that yields each count is stated beside it.
 
 `"Cauchy-related"` is a name query. Names sit in four places in this release, and they do not
@@ -22,7 +22,7 @@ mean the same thing:
 them appear in a title layer (`F`, `M`, `E`) or in a declaration (`D`) — those are the
 **subject** names, and each gets a page at `notes/index/names/<name>.md`. The other 5,291 are
 found only in prose (`b`) or in a bibliography (`B`) — those are **citation** names, and they
-are rows in `notes/index/names.tsv` with `role=citation` and an empty `page` cell, not pages.
+are rows in `notes/tables/names.tsv` with `role=citation` and an empty `page` cell, not pages.
 The subject names produce 9,819 family-name edges over all 372 families. No name resolves to
 zero families (0), every family has a subject-name hit (372 of 372, so 0 families with no name
 hit), and all 10 published reasoning-trace families are covered by subject names.
@@ -64,7 +64,7 @@ reported on the page in their own row, never merged into the subject claim.
 
 So the gate for a page is a title-or-declaration hit, and every page states its provenance by
 source in a table, with the per-layer family counts, before it lists any family. Pages are
-sorted by family count; `notes/index/names.tsv` carries all 5,842 rows with a `role` column.
+sorted by family count; `notes/tables/names.tsv` carries all 5,842 rows with a `role` column.
 
 ## Normalization
 
@@ -231,7 +231,7 @@ environments under a wider pattern; `notes/reports/sources.md` states both rules
 
 - **Family pages do not link name pages.** The average family carries 26.4 subject names; that is
   a table, not a header row. The link direction is name → family, and
-  `notes/index/edges/family-name.tsv` carries the family → name side with layer flags.
+  `notes/tables/family-name.tsv` carries the family → name side with layer flags.
 - **Citation-only names get no page** (5,291 of them). They are rows with `role=citation` and an
   empty `page` cell, so a query can find them and a page cannot overstate them.
 - **Theorem-environment titles are capped at 8 per page** (`env_hits`), verbatim after folding.

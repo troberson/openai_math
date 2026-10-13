@@ -73,17 +73,18 @@ L1: dict[str, tuple[str, ...]] = {
                        "notes/templates/discipline.md.j2", "notes/templates/family.md.j2",
                        "notes/templates/index-readme.md.j2", "notes/templates/name.md.j2",
                        "notes/templates/topic.md.j2"),
-    "render_reports.py": ("README.md", "notes/tables/abstracts.tsv", "notes/tables/catalog.tsv",
-                          "notes/tables/conjecture-standing.tsv", "notes/reports/formalization-deps.md",
-                          "notes/tables/formalization-deps.tsv", "notes/tables/links.tsv",
-                          "notes/tables/sources.tsv", "notes/tables/subfindings.tsv", "notes/reports/t0-triage.md",
-                          "notes/tables/topics.tsv", "notes/templates/", "notes/index/",
+    "render_reports.py": ("README.md", "notes/tables/",
+                          "notes/reports/formalization-deps.md", "notes/reports/t0-triage.md",
+                          "notes/templates/", "notes/index/",
                           # The fleet page's population scans the fleet's own sources and the two
                           # tracked probe records, so the key must hash them: a key that did not could
                           # serve a page whose site list was measured against a script tree that has
                           # since moved. The top-level `notes/*.md` pages are NOT here — the fleet
                           # population globs their names, it does not open them, and the audit-hook
-                          # record names only opens.
+                          # record names only opens. The `notes/tables/` entry is a tree, not the
+                          # eight TSVs the writer used to name: `math-faz.6` moved the 16 generated
+                          # tables into that directory, the writer opens all 25, and a tree entry is
+                          # the set the audit-hook record names.
                           "notes/scripts/", "notes/development/probe/2026-10-11_writers.txt",
                           "notes/development/probe/2026-10-11_checkers.txt"),
     "build_report_templates.py": REPORT_PAGES,

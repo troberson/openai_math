@@ -127,7 +127,7 @@ Topics are a curated keyword vocabulary in [`notes/tables/topics.tsv`](../tables
 
 ## Names
 
-Names are measured over six layers by [`notes/scripts/measure_names.py`](../scripts/measure_names.py) and recorded in [`notes/reports/names.md`](../reports/names.md): four title layers (family titles, manuscript directory names, the optional titles of statement environments, the `main_results` declaration names) and two body layers (manuscript prose with the bibliography stripped, and the author fields of the shipped `.bib` files). A name is a **subject** when a title layer or a declaration carries it and a **citation** when only prose or a bibliography does, so only subject names get a page: 551 pages in [`names/`](names/) over 5842 measured names. The other 5291 are bibliography surnames that never reach a title layer — rows in [`names.tsv`](names.tsv) with `role = citation`, not pages. 9819 family-name edges cover 372 of 372 families; 0 names resolve to no family. Each page states, per source, which layer produced the hit: a name in a body paragraph is a citation, not a subject.
+Names are measured over six layers by [`notes/scripts/measure_names.py`](../scripts/measure_names.py) and recorded in [`notes/reports/names.md`](../reports/names.md): four title layers (family titles, manuscript directory names, the optional titles of statement environments, the `main_results` declaration names) and two body layers (manuscript prose with the bibliography stripped, and the author fields of the shipped `.bib` files). A name is a **subject** when a title layer or a declaration carries it and a **citation** when only prose or a bibliography does, so only subject names get a page: 551 pages in [`names/`](names/) over 5842 measured names. The other 5291 are bibliography surnames that never reach a title layer — rows in [`names.tsv`](../tables/names.tsv) with `role = citation`, not pages. 9819 family-name edges cover 372 of 372 families; 0 names resolve to no family. Each page states, per source, which layer produced the hit: a name in a body paragraph is a citation, not a subject.
 
 | Name | Families | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
@@ -172,7 +172,7 @@ Names are measured over six layers by [`notes/scripts/measure_names.py`](../scri
 | [haar](names/haar.md) | 60 | 0 | 0 | 12 | 0 | 60 | 0 |
 | [serre](names/serre.md) | 57 | 1 | 0 | 0 | 0 | 54 | 20 |
 
-The 40 subject names that reach the most families; [`names.tsv`](names.tsv) carries all 5842. Column letters are the layers of the name pages: `F` family title, `M` manuscript directory, `E` theorem-environment title, `D` declaration, `b` prose, `B` bib author.
+The 40 subject names that reach the most families; [`names.tsv`](../tables/names.tsv) carries all 5842. Column letters are the layers of the name pages: `F` family title, `M` manuscript directory, `E` theorem-environment title, `D` declaration, `b` prose, `B` bib author.
 
 ## Tables
 

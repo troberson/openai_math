@@ -78,6 +78,7 @@ from jinja2 import Environment, FileSystemLoader
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 IDX = ROOT / "notes" / "index"
+TABLES = ROOT / "notes" / "tables"
 LEDGER = ROOT / "notes" / "tables" / "catalog.tsv"
 SRC = ROOT / "notes" / "tables" / "sources.tsv"
 # The builder's L1, read from the audit-hook open record: the three ledger TSVs and the page
@@ -186,10 +187,17 @@ def write(relpath, text):
 
 
 def write_tsv(relpath, cols, rows):
+    """The generated tables live in notes/tables/, so every TSV in the repo sits in one directory.
+
+    The `edges/` prefix is dropped: the table name is the basename, which is what keeps the
+    basename-overlap invariant between `notes/tables/` and the index tree.
+    """
     lines = ["\t".join(cols)]
     for r in rows:
         lines.append("\t".join(str(r[c]).replace("\t", " ").replace("\n", " ") for c in cols))
-    write(relpath, "\n".join(lines) + "\n")
+    target = posixpath.basename(relpath)
+    ST.stage(TABLES / target, "\n".join(lines) + "\n")
+    WRITTEN.add(TABLES / target)
 
 
 def row(cells):
@@ -799,7 +807,8 @@ def main():
     print(f"stale swept         {len(stale)} files {sorted(p.relative_to(IDX).as_posix() for p in stale)}  "
           f"empty dirs removed {empty_dirs}")
     print(f"written             {len(pages) + len(disc_pages) + len(topic_pages) + len(name_pages) + 1} "
-          f"pages + {8 + len(EDGE_TABLES)} tables -> {IDX.relative_to(ROOT)}/")
+          f"pages -> {IDX.relative_to(ROOT)}/  "
+          f"{8 + len(EDGE_TABLES)} tables -> {TABLES.relative_to(ROOT)}/")
 
 
 main()

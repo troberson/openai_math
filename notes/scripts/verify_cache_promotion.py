@@ -61,12 +61,14 @@ from catlib.promote import (
 # `2026-10-12_extract_named_results` is the run that proves the population producer's L1: the older
 # record for that target names `notes/catalog.tsv`, the ledger's pre-`tables/` path, so the new record
 # is what makes the registry's `notes/tables/catalog.tsv` provable.
-# `2026-10-12_measure_templates` is the census producer's record: it names the 1,049-file index tree
-# the census counts renders into and the 24-file template tree it reads, which no earlier record does.
+# `2026-10-12_measure_templates_tables` and `2026-10-12_rr_tables` are the post-`math-faz.6` records:
+# the 16 generated tables moved out of `notes/index/` into `notes/tables/`, so the index tree these two
+# writers read is 1,033 pages, not 1,049 files, and the older records for those targets name the 16 TSVs
+# under the path the writers no longer open.
 PROBES = (ROOT / "notes" / "development" / "probe" / "2026-10-12_extract_named_results.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-12_measure_templates.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-12_measure_templates_tables.txt",
           ROOT / "notes" / "development" / "probe" / "2026-10-12_seed_quotes_summaries.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-12_rr_fleet.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-12_rr_tables.txt",
           ROOT / "notes" / "development" / "probe" / "2026-10-12_seed_quotes.txt",
           ROOT / "notes" / "development" / "probe" / "2026-10-11_writers.txt",
           ROOT / "notes" / "development" / "probe" / "2026-10-10_writers.txt")

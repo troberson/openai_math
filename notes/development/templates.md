@@ -5,7 +5,7 @@ template text plus the writer's registry). Lines and bytes are of the template f
 is a `{{ ` occurrence counted over the whole file. No `lake`, `lean`, `lake exe cache get`, or
 comparator run.
 
-**Headline, with the rule that yields it:** report tree: **19** templates, **7,175** lines, **463,506** bytes, **1,446** slots; index tree: **5** templates, **209** lines, **14,951** bytes, **103** slots; all **24** templates: **7,384** lines, **478,457** bytes, **1,549** slots.
+**Headline, with the rule that yields it:** report tree: **19** templates, **7,175** lines, **463,506** bytes, **1,446** slots; index tree: **5** templates, **209** lines, **14,981** bytes, **103** slots; all **24** templates: **7,384** lines, **478,487** bytes, **1,549** slots.
 
 ## The report tree
 
@@ -46,10 +46,10 @@ the count of pages on disk that the template produced, read from the tree it wri
 |---|---|---|---|---|
 | `discipline.md.j2` | 12 | 876 | 13 | 17 discipline pages |
 | `family.md.j2` | 60 | 3,699 | 28 | 372 family pages |
-| `index-readme.md.j2` | 61 | 5,681 | 24 | 1 entry point |
-| `name.md.j2` | 62 | 3,576 | 27 | 551 name pages |
+| `index-readme.md.j2` | 61 | 5,701 | 24 | 1 entry point |
+| `name.md.j2` | 62 | 3,586 | 27 | 551 name pages |
 | `topic.md.j2` | 14 | 1,119 | 11 | 92 topic pages |
-| **index tree** | **5** | **209** | **14,951** | **103** | |
+| **index tree** | **5** | **209** | **14,981** | **103** | |
 
 ## The slot rule
 
