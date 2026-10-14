@@ -231,7 +231,7 @@ not survive a re-run.
 | S9 | [`notes/reports/abstracts.md`](abstracts.md) | 381 | The overview-abstract vs manuscript-abstract comparison |
 | S10 | [`notes/scripts/compare_abstracts.py`](../scripts/compare_abstracts.py) | 462 | The generator of that comparison |
 | S11 | [`notes/reports/t0-triage.md`](t0-triage.md) | 897 | The 130-family T0 reading pass: buckets, counts, unread remainder |
-| S12 | [`notes/reports/t0-chains.md`](t0-chains.md) | 541 | The 27 two-manuscript T0 families and their coverage signal |
+| S12 | [`notes/reports/t0-chains.md`](t0-chains.md) | 544 | The 27 two-manuscript T0 families and their coverage signal |
 | S13 | [`notes/reports/links.md`](links.md) | 217 | The typed-edge inventory: scope-note links, citation edges |
 | S14 | [`notes/reports/verification-dirs.md`](verification-dirs.md) | 400 | The 30 verification bundles and what each ships |
 | S15 | [`README.md`](../../README.md) | 51 | The release's own trace attributions |

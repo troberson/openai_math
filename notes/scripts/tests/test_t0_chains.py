@@ -46,12 +46,12 @@ def pad_table(p):
 # fire on the clean page.
 MUTANTS = [
     ("paraphrase dressed as a quotation",
-     ("quote at page line 378 is not on overview.tex:629: 'The unique threshold bound state for the "
+     ("quote at page line 381 is not on overview.tex:629: 'The unique threshold bound state for the "
       "SU(N) BFSS model'"),
      lambda p: p.replace('*"The unique threshold bound state of the SU(N) BFSS model"*',
                          '*"The unique threshold bound state for the SU(N) BFSS model"*')),
     ("title swap",
-     ("quote at page line 367 is not on overview.tex:625: 'Positive eigenvalues of the relative SU(2) "
+     ("quote at page line 370 is not on overview.tex:625: 'Positive eigenvalues of the relative SU(2) "
       "BFSS Hamiltonian'"),
      lambda p: p.replace('*"Boundary-field gap"*',
                          '*"Positive eigenvalues of the relative SU(2) BFSS Hamiltonian"*')),
@@ -64,7 +64,7 @@ MUTANTS = [
      lambda p: p.replace("**15** of the 27 cite their sibling",
                          "**16** of the 27 cite their sibling")),
     ("anchor line out of range",
-     "anchor line out of range: overview.tex:9999 (file has 860 lines, page line 70)",
+     "anchor line out of range: overview.tex:9999 (file has 860 lines, page line 73)",
      lambda p: p.replace("(`overview.tex:716`)", "(`overview.tex:9999`)")),
     ("block for a family outside the population",
      "301: block for a family outside the population",
@@ -89,7 +89,7 @@ MUTANTS = [
      lambda p: p.replace("The mutual pairs are 041, 077, 217, 265, 268, 286, 302, 368.",
                          "The mutual pairs are 077, 217, 265, 268, 286, 302, 368.")),
     ("fenced block line",
-     ("block at page line 96 does not match preprints/Stabilizer-Orbits-and-Thick-Tensor-Ideals-of-"
+     ("block at page line 99 does not match preprints/Stabilizer-Orbits-and-Thick-Tensor-Ideals-of-"
       "Dualizable-Kn-Local-Spectra-September-24-2026/build/refere"),
      lambda p: p.replace("  journal = {Selecta Mathematica. New Series},",
                          "  journal = {Selecta Math.},")),
@@ -108,7 +108,7 @@ MUTANTS = [
     # the population guard fires; the tolerant `\s*` pattern reads the rows, so the only problems are
     # the render diff, whose first changed line is the padded chain-table header.
     ("padded table cells",
-     "page line 51: page '| Fam  |",
+     "page line 54: page '| Fam  |",
      pad_table),
 ]
 
