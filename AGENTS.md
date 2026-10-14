@@ -1004,7 +1004,7 @@ lives in this file and nowhere else.
   (`git log --format=%H --reverse -- notes/scripts/README.md`) — **not** from `HEAD`, which moves
   every time the command block is edited and would read the gap as empty the moment the naming
   lands — and recomputes the shared-basename sets
-  (**1** top-level ∩ index: `README.md`; **14** index ∩ summaries slugs). It excludes
+  (**1** top-level ∩ index: `README.md`; **18** index ∩ summaries slugs). It excludes
   itself from the population, so the page's **68** scripts and **23** checkers are the run's **68** and
   22. Its self-tests are extracted to `notes/scripts/tests/test_script_ownership.py` and run by the
   gate's `run_tests.py` row: **18** injected faults — eleven in the census page's text, one prose
