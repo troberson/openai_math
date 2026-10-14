@@ -99,6 +99,14 @@ def violation_needle(_c, _v, m):
            f"{'%d entries violate' % len(m['violations'])!r}"
 
 
+def anchor_needle(_c, _v, _m, line):
+    """The out-of-range anchor problem: the mutated page's anchor line against the length of the
+    file the anchor names, so the line count is measured at run time, not recorded."""
+    total = len(pathlib.Path("lean/lakefile.lean")
+                .read_text(encoding="utf-8", errors="replace").splitlines())
+    return f"anchor lean/lakefile.lean:{line} out of range ({total} lines)"
+
+
 # (label, needle, mutation). A needle is a function of the mutated page, the loaded checker and the
 # measured dict; a mutation is a function of the page.
 MUTANTS = [
@@ -107,7 +115,7 @@ MUTANTS = [
      lambda p: p.replace("compatibility patch was lost during dependency resolution.",
                          "compatibility patch was lost by dependency resolution.", 1)),
     ("anchor out of range",
-     "anchor lean/lakefile.lean:486 out of range (335 lines)",
+     lambda c, v, m: anchor_needle(c, v, m, 486),
      lambda p: p.replace("`lean/lakefile.lean:10`–`:86`", "`lean/lakefile.lean:10`–`:486`", 1)),
     ("table row count shifted",
      lambda c, v, m: table_needle(c, v, m, "PrimeNumberTheoremAnd"),

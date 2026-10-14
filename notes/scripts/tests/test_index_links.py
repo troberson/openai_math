@@ -24,7 +24,7 @@ import pytest
 pytestmark = pytest.mark.mutant
 
 # Injected hrefs that must all be reported broken, one per category the checker classifies.
-MUTANTS = [
+INPUTS = [
     ("README.md", "disciplines/no-such.md", "index-page"),
     ("README.md", "no-such-table.tsv", "index-table"),
     ("README.md", "../tables/no-such-table.tsv", "tables-tsv"),
@@ -89,12 +89,12 @@ def test_injected_hrefs_do_not_resolve(mod):
     """An injected target that exists on disk makes the test inert, so the checker would be
     reporting nothing while the self-test printed a pass."""
     inert = []
-    for page, href, _cat in MUTANTS:
+    for page, href, _cat in INPUTS:
         rel = mod.resolve(page, href)
         if (mod.ROOT / rel).exists():
             inert.append(f"{page} -> {href}: injected target resolves, the test is inert")
     assert not inert, inert
-    assert len(MUTANTS) == 21, f"{len(MUTANTS)} injected hrefs, expected 21"
+    assert len(INPUTS) == 21, f"{len(INPUTS)} injected hrefs, expected 21"
 
 
 def test_injected_hrefs_classify_as_the_category_they_claim(mod):
@@ -102,7 +102,7 @@ def test_injected_hrefs_classify_as_the_category_they_claim(mod):
     were originally written with hrefs that left `notes/index/` and classified as `notes-doc`, so
     the mutants, not the checker, were the defect."""
     wrong = []
-    for page, href, cat in MUTANTS:
+    for page, href, cat in INPUTS:
         rel = mod.resolve(page, href)
         if not (mod.ROOT / rel).exists() and mod.category(rel) != cat:
             wrong.append(f"{page} -> {href}: broken but classified {mod.category(rel)}, "
