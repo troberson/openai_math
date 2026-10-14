@@ -55,6 +55,7 @@ import re
 import sys
 from pathlib import Path
 
+from catlib import anchors
 from catlib.paths import ROOT, SUMMARIES_DIR, read_text
 from catlib.summaries import (
     ENTITY,
@@ -143,16 +144,17 @@ def pass_b(page):
             a = int(m.group(2))
             b = int(m.group(3)) if m.group(3) else a
             text = page.lines_of(sid)
-            for pos in ({a} if a == b else {a, b}):
+            out, blank, rev = anchors.range_facts(a, b, len(text), text)
+            for pos in sorted({a} if a == b else {a, b}):
                 checked += 1
-                if not 0 < pos <= len(text):
+                if pos in out:
                     problems += 1
                     print(f"OUT OF RANGE {sid}:{pos} -> {rel} (file has {len(text)} lines) "
                           f"[doc line {n}]")
-                elif not text[pos - 1].strip():
+                elif pos in blank:
                     problems += 1
                     print(f"BLANK {sid}:{pos} -> {rel} [doc line {n}]")
-            if a > b:
+            if rev:
                 problems += 1
                 print(f"REVERSED RANGE {sid}:{a}–{b} [doc line {n}]")
             span = " ".join(text[a - 1:max(a, b)]).strip()

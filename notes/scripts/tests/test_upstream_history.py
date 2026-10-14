@@ -25,6 +25,8 @@ writes nothing and the tests write nothing.
 The checker measures; this file injects. Run:
   python3 notes/scripts/run_tests.py notes/scripts/tests/test_upstream_history.py -q
 """
+from catlib.anchors import range_facts
+
 import pytest
 
 pytestmark = pytest.mark.mutant
@@ -142,3 +144,20 @@ def test_padded_table_cells_are_dropped(mod, p, pages):
     ignore = mod.read_text(mod.ROOT / ".prettierignore").splitlines()
     assert "notes/development/upstream_history/*.md" in ignore, \
         "the upstream-history pages are not prettier-ignored, so a format pass would pad them"
+
+
+def start_only(a, n):
+    """The narrowed rule: check only the start position, which is what a single-line anchor read does."""
+    return [] if 0 < a <= n else [a]
+
+
+def test_range_facts_flags_a_range_past_the_end():
+    """The anchor pass checks **both** ends of a `path:a-b` anchor through `catlib.anchors.range_facts`,
+    so a range whose end runs past the file is a problem; a rule that checks only the start position
+    misses it. The line count is synthetic — no file is read."""
+    n = 1784
+    out, blank, rev = range_facts(684, 1900, n)
+    assert out == [1900], f"the shipped rule read {out}, so the end position is not checked"
+    assert not blank and not rev, f"the shipped rule reported {blank} / {rev}"
+    assert not start_only(684, n), \
+        "the start-only rule flags the past-end range, so it is not the rule that misses it"

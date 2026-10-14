@@ -67,3 +67,23 @@ def nearest_anchor(lines, before, pattern, window=8):
         if found:
             return found[-1]
     return None
+
+
+def range_facts(a, b, n, lines=None):
+    """-> (out_of_range, blank, reversed) for a `path:a-b` anchor against a file of `n` lines.
+
+    Three shapes the pages ship: a position outside the file, a blank line inside the range, and a
+    reversed range (`a > b`). Only `verify_summaries.py` flags the reversed shape; the anchor passes
+    accept a reversed range when both ends sit inside the file, so the flag is returned and the caller
+    decides whether it is a problem. A rule that checks only the start position misses a range whose
+    end runs past the file, which is the shape the anchor passes have to catch. The blank shape is
+    checked only when the file's own `lines` are passed — `verify_upstream_history.py` reads a window
+    around the anchor, not the whole file, so it has the line count and not the lines.
+    """
+    out, blank = [], []
+    for pos in sorted({a} if a == b else {a, b}):
+        if not 0 < pos <= n:
+            out.append(pos)
+        elif lines is not None and not lines[pos - 1].strip():
+            blank.append(pos)
+    return out, blank, a > b

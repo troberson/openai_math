@@ -37,6 +37,7 @@ from collections import Counter
 
 from catlib import overview as cov
 from catlib import yaml as cy
+from catlib.anchors import range_facts
 from catlib.ledger import read_ledger
 from catlib.paths import (
     DOCS_DIR,
@@ -308,7 +309,8 @@ def check_page(name, text, _p, problems):
                 if not path.startswith("…"):
                     last_explicit = rel
                 text_src, n = src(rel, start, end)
-                if start < 1 or end > n:
+                out, _blank, _rev = range_facts(start, end, n)
+                if out:
                     problems.append(f"{where}: anchor {rel}:{start}-{end} is outside the file ({n} lines)")
                     continue
                 anchors.append((a, rel, start, end, text_src))

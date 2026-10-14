@@ -341,7 +341,8 @@ def check(text):
         src = read(f).split("\n")
         n_anchor += 1
         hi = int(m.group(3)) if m.group(3) else at
-        if not 1 <= at <= len(src) or not 1 <= hi <= len(src):
+        out, _blank, _rev = anchors.range_facts(at, hi, len(src), src)
+        if out:
             problems.append(f"anchor {rel}:{at}-{hi} is outside the file ({len(src)} lines)")
 
     for i, blk in anchors.fenced_blocks(lines, dedent=True):

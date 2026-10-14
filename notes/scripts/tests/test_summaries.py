@@ -25,6 +25,7 @@ import io
 import re
 
 import pytest
+from catlib.anchors import range_facts
 from catlib.paths import SUMMARIES_DIR, read_text
 from catlib.summaries import (
     MARKER,
@@ -296,3 +297,26 @@ def test_citation_stripping_keeps_a_bracketed_note():
         f"the widened rule read {narrow.sub('', src)!r}, so it does not swallow the note"
     assert narrow.sub("", src).startswith("the bound in "), \
         "the widened rule removed text outside the citation"
+
+
+def test_range_facts_flags_a_blank_line_at_the_end_of_a_range():
+    """Pass B flags a blank line inside a cited range, so `[S4:2–3]` naming a file whose third line is
+    empty is a problem. A rule that checks only that the positions are inside the file reports nothing.
+    The line list is synthetic — no manuscript is read."""
+    lines = ["first line", "second line", ""]
+    out, blank, rev = range_facts(2, 3, len(lines), lines)
+    assert not out and blank == [3], f"the shipped rule read out {out}, blank {blank}"
+    assert not rev, "a forward range reported a reversed range"
+    assert [p for p in (2, 3) if 0 < p <= len(lines)] == [2, 3], \
+        "the inside-the-file rule must see no problem for the same range"
+
+
+def test_range_facts_flags_a_reversed_range():
+    """Pass B flags `[S4:29–12]` — a reversed range — and the flag comes from the shared rule. A rule
+    that checks only that both positions sit inside the file accepts it. The line list is synthetic."""
+    lines = [f"line {i}" for i in range(1, 31)]
+    out, blank, rev = range_facts(29, 12, len(lines), lines)
+    assert rev is True, "the shipped rule does not report the reversed range"
+    assert not out and not blank, f"the shipped rule read out {out}, blank {blank}"
+    assert all(0 < p <= len(lines) for p in (29, 12)), \
+        "the inside-the-file rule rejects the reversed range, so it is not the rule that accepts it"

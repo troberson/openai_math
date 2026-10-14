@@ -398,3 +398,33 @@ def test_statement_rule_allows_the_qualified_name():
     plain = "theorem main :"
     assert re.match(pat, plain) and bare.match(plain), \
         "the shipped rule does not read the bare-tail form, so the two rules are not the same rule"
+
+
+def start_only(a, _b, n):
+    """The narrowed rule: check only the start position, which is what a single-line anchor read does."""
+    return [] if 0 < a <= n else [a]
+
+
+def test_range_facts_flags_a_range_past_the_end():
+    """The shared range rule (`catlib.anchors.range_facts`) checks **both** ends, so a range whose end
+    runs past the file is a problem; a rule that checks only the start position misses it. The line list
+    is synthetic — no file is read."""
+    n = 5
+    out, blank, rev = anchors.range_facts(2, 10, n)
+    assert out == [10], f"the shipped rule read {out}, so the end position is not checked"
+    assert not blank and not rev, f"the shipped rule reported {blank} / {rev} for a range inside the file"
+    assert not start_only(2, 10, n), \
+        "the narrowed rule flags the past-end range, so it is not the rule that misses it"
+
+
+def test_range_facts_flags_a_reversed_range_and_the_anchor_pass_accepts_it():
+    """The shared rule returns the reversed flag; `verify_faithfulness.py` does not treat it as a
+    problem, which is what the page records: only `verify_summaries.py` flags a reversed range. A rule
+    that checks only positions reports no problem when both ends sit inside the file. The line list is
+    synthetic — no file is read."""
+    n = 5
+    out, blank, rev = anchors.range_facts(5, 2, n)
+    assert rev is True, "the shipped rule does not report the reversed range"
+    assert not out and not blank, f"the shipped rule read {out} / {blank} for two inside positions"
+    assert not start_only(5, 2, n), \
+        "the narrowed rule flags the reversed range, so it is not the rule that misses it"
