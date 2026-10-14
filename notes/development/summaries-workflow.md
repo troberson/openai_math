@@ -1459,3 +1459,22 @@ Not checked: the read_file line-label offset case; the citation-stripping case f
 findings checkers, which use the same fold; the blank-line shape for the two anchor passes that do not
 check blank lines inside a range (they read a window, not the file's lines); bead `.2`'s prettier
 decision, which is the user's.
+
+## 2026-10-14 — bead `math-ckd.4` claimed; the superseded `--mutant` sentence swept out of the pages
+
+Ten of the 30 summary pages carried a sentence naming `python3 notes/scripts/verify_summaries.py
+--mutant`, a flag the checker no longer carries: the mutants moved to
+`notes/scripts/tests/test_summaries.py` under the "extract the testing" directive, and the checker
+reads no argv, so `--mutant` is inert. Each page now names the checker (which measures) and the test
+file (which injects), with the command that runs it. Measured after the sweep: `verify_summaries.py`
+reports **30 pages, 4,414 marker positions, 1,243 quoted spans, 0 problems**, and the extracted
+self-tests report **11 passed**.
+
+`git grep` over the tracked tree finds the flag in **no** file outside `.beads/issues.jsonl`. The
+closed beads' bodies and close reasons name it because it was the command at the time they closed —
+rewriting a closed bead's record is not a sweep, so they are left as written. The **open** bead
+`math-ckd.4` is swept: its acceptance criteria now name the test row, and the bead is claimed.
+
+Not checked: the pages the bead still has to write (the group is 132 families; 29 pages exist across
+all tiers, 0 in differential geometry); the closed beads' historical `--mutant` wording, left
+deliberately.
