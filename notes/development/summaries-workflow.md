@@ -1011,3 +1011,31 @@ mutation's own inputs (invented hrefs, invented paths, rewritten phrases), which
 rule keeps literal. `test_subfinding_pairs.py` already derives its measured values.
 The **309** clean pins are still literals (phase 2), and there is one synthetic-rule
 test file (`test_quotes.py`) against 14 checkers (phase 3).
+
+## Phase 0 extends to `verify_counterexample_crosscheck.py`, and the padding test is proven both ways
+
+The padding mutant existed only for `verify_t0_chains.py`. It now covers the
+crosscheck checker's three tables: every cell of every `|`-delimited row gains two
+spaces, and the test asserts the table passes report **no** table problem and the
+same row counts.
+
+**The discriminator is the row-count line, not the render diff.** The render diff
+fires for the padding either way, so it cannot be the test. A row regex that required
+exact spacing drops every padded row, and the pass then reports
+`summary table table has 0 rows, the bundle count is 28`-shaped trouble — the row
+count is what shows it.
+
+Proven both ways, as the standing rule requires: against the tolerant regexes the
+padding test passes with **0** table problems; against a strict row regex
+(`^\|(\d{3})\|(T\d)\|(\d+)\|(\d+)\|(\d+)\|`) it fails with
+`summary table row 1: ('<none>',) != ('047', 'T3', 1, 1, 0)`. A test that passed
+against both would be a needle that fires for both states.
+
+Measured: **16** tests pass; lint trio **0 / 0 / 0**; census unchanged (the padding
+test is not a needle fault). Gate **79** rows, **0** failures; head diff empty;
+promote-and-verify assertion green.
+
+Not checked: the padding mutant now covers **2** of the 14 checkers that read tables
+(`verify_t0_chains.py`, `verify_counterexample_crosscheck.py`); the rest are unprobed.
+The **309** clean pins are still literals (phase 2), and there is one synthetic-rule
+test file (`test_quotes.py`) against 14 checkers (phase 3).
