@@ -180,12 +180,12 @@ and no certificate ships with it.
 
 | ID | File | Lines | What it carries |
 |---|---|---|---|
-| S1 | `CONTENTS.md` | 9,142 | The release's blurb for family 332 at line 8104. |
-| S2 | `overview.tex` | 859 | The catalog abstract at line 760. |
-| S3 | `README.md` | 51 | The repo readme, which attributes no reasoning trace to this family. |
-| S4 | `preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/README.md` | 18 | Citation-only manuscript readme: the result, the method, the scope, no provenance. |
-| S5 | `preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/build/main.tex` | 648 | The abstract, the definition, the theorem, the mechanism, the three sections, the remark, and the two corollaries. |
-| S6 | `preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/build/references.bib` | 50 | The bibliography: Ball, Mendel–Naor, Deza–Laurent, Naor–Young, Cheng–Wang–Xiang. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | The release's blurb for family 332 at line 8104. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 760. |
+| S3 | [`README.md`](../../../README.md) | 51 | The repo readme, which attributes no reasoning trace to this family. |
+| S4 | [`preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/README.md`](../../../preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/README.md) | 18 | Citation-only manuscript readme: the result, the method, the scope, no provenance. |
+| S5 | [`preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/build/main.tex`](../../../preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/build/main.tex) | 648 | The abstract, the definition, the theorem, the mechanism, the three sections, the remark, and the two corollaries. |
+| S6 | [`preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/build/references.bib`](../../../preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/build/references.bib) | 50 | The bibliography: Ball, Mendel–Naor, Deza–Laurent, Naor–Young, Cheng–Wang–Xiang. |
 
 The manuscript ships [S4:1–16] as a citation-only record: the result, the
 method, the scope, and the bibliography, with no provenance, no run command,
