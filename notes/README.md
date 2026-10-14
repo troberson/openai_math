@@ -17,7 +17,7 @@ gain anything from this file? `notes/reports/formalization-deps.md` is about a t
 gains from it, so it is a report, not development.
 
 `notes/index/` is the generated index — **1,033** pages, no tables; the **16** generated tables the index
-renders land in `notes/tables/`. `notes/summaries/` is **28** hand-written per-family pages.
+renders land in `notes/tables/`. `notes/summaries/` is **29** hand-written per-family pages.
 `notes/scripts/` is the **67**-script fleet, `notes/templates/` the **24** page skeletons the renderers
 read, and `notes/scripts/README.md` the ownership manifest that says whose bytes every file under `notes/`
 is. This file is the single entry point: no `README.md` sits inside `reports/` or `development/`.
@@ -499,7 +499,7 @@ rendered on **six of the seven** coverage counts (372 / 719 / 242 / 416 / 10 / 3
 the yaml `sources:` entry whose manuscript is not in the ledger; `vs ledger` diffs of 0 on tier,
 `mainres`, `chal`, `paps`, `paps_form`; ledger and overview family sets equal with **372 pages and 0
 absent on disk**; 11 trace files over 10 attributed stems; **0** configs linked by more than one family;
-**0** page collisions (max slug length 93); 28 of 372 summary pairings; manuscript links resolving 719 of
+**0** page collisions (max slug length 93); 29 of 372 summary pairings; manuscript links resolving 719 of
 719 for main file, `build/` and `README.md`; **drift vs `notes/tables/topics.tsv` 0**; names 5,842 measured /
 551 subject pages / 5,291 citation-only / 9,819 edges over 372 families / **0** names with no family /
 **10 of 10** trace families covered by a subject name.
@@ -551,7 +551,7 @@ no name-to-name edge is built.
 | `companions` | `result NNN` cross-refs in the abstract | |
 | `companion_word` | abstract says "companion" | 9 families |
 | `versions` | manuscripts sharing a date-stripped dir slug | 2 families, 4 dated re-issues (003, 056) |
-| `summary` | a page exists at `notes/summaries/<discipline>/<NNN>-*.md` | Filesystem fact, not a derived claim; 28 of 372 families, 65 manuscripts behind them |
+| `summary` | a page exists at `notes/summaries/<discipline>/<NNN>-*.md` | Filesystem fact, not a derived claim; 29 of 372 families, 67 manuscripts behind them |
 
 ## Coverage tracks exposure, not importance
 
