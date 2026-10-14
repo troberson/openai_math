@@ -19,13 +19,14 @@ The summaries are a fifth layer, and it is the thinnest: **21** of **372** famil
 
 ## The summaries layer
 
-**21** pages, **4,501** lines, over **57** manuscript directories carrying **10.1 MB** of LaTeX source.
-The checker measures **3,635** `[Sn:line]` marker positions and **925** quoted spans across the 21 pages,
-and reports **0** problems.
+**28** family pages, **5,904** lines, over **69** manuscript directories carrying **12.4 MB** of
+LaTeX source. The checker measures **4,235** `[Sn:line]` marker positions and **1,184** quoted spans
+across the **29** pages it reads (the 28 family pages and this link-only index page), and reports
+**0** problems.
 
 The cost model is the reading pass, not a build. Each page cites the files it read, so the cost per page
-is the manuscript LaTeX its Sources table names: the median page cites **23** declared sources and the
-largest cites **63**. The checker runs over all 21 pages in **0.77 s** — it walks the cited files and
+is the manuscript LaTeX its Sources table names: the median page cites **20** declared sources and the
+largest cites **63**. The checker runs over all 29 pages in **1.05 s** — it walks the cited files and
 compares each marker and each quotation against the bytes the file carries, and it runs nothing.
 
 The pages are not a build target: no Lean, no lake, no comparator runs here. A page states what the
