@@ -937,3 +937,35 @@ Not checked: **5** files still carry recorded needles with numeric values —
 `test_index_design.py` **1**, `test_abstracts.py` **1** — **25** numeric in all. The
 **309** clean pins are still literals (phase 2), and there is one synthetic-rule test
 file (`test_quotes.py`) against 14 checkers (phase 3).
+
+## Phase 1 takes `test_sources.py`, and the anchor fault is a block fault
+
+Two needles are rebuilt. The block needle re-runs the pass's own fence walk on the
+mutated page and keys to the byte the mutation touched, so the block it reports is
+the block the fault sits in. Nine needles stay literal — the renamed anchor file, the
+renamed directory slug, the prose figure, and the six count labels, which carry no
+measured figure.
+
+**The anchor-shifted fault is really a block fault.** The shifted line `1176` is
+**inside** `pgfmanual-en-macros.tex`, so the anchor pass is silent and the pass that
+fires is the block pass, attributing the block to the anchor the mutated page
+carries. A needle that named the clean page's anchor line would have been the string
+the pass printed **before** the mutation, and the first needle I wrote did exactly
+that — it demanded `anchor …:1176 is outside the file`, which the pass never prints.
+
+Measured: the layout shift breaks **0** of the 12 needles; specificity **0**
+cross-fires; **13** tests pass.
+
+The census moves: recorded needles **76 → 74**, numeric **25 → 23**, derived
+**137 → 139**, clean pins **309** unchanged. Needle digits stayed **159** — the
+derived needles carry digits too (`block line 0 != …:1176`), so the digit count is
+not a pure measure of derivation.
+
+Gate **79** rows, **0** failures; head diff empty; promote-and-verify assertion
+green; lint trio **0 / 0 / 0**.
+
+Not checked: **4** files still carry recorded needles with numeric values —
+`test_index_links.py` **3**, `test_fleet_design.py` **3**, `test_index_design.py`
+**1**, `test_abstracts.py` **1** — **23** numeric in all. The **309** clean pins are
+still literals (phase 2), and there is one synthetic-rule test file
+(`test_quotes.py`) against 14 checkers (phase 3).
