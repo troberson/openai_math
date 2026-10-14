@@ -865,3 +865,43 @@ Not checked: **7** files still carry recorded needles with numeric values —
 `test_index_design.py` **1**, `test_abstracts.py` **1** — **40** numeric in all. The
 **309** clean pins are still literals (phase 2), and there is one synthetic-rule test
 file (`test_quotes.py`) against 14 checkers (phase 3).
+
+## Phase 1 takes `test_counterexample_crosscheck.py`, and a first-mismatch needle cross-fires
+
+Eleven needles are rebuilt: the three table needles read the mutated page's own rows
+against the recomputation, the three block needles read the anchor the mutated page
+attributes the block to and the block line the mutation touched, the two quote needles
+read the anchor on the line the quote starts on, and the statement needle reads the
+true statement line from the file, so it reports the anchor the page no longer
+carries rather than the line the page now names. Three needles stay literal — the
+invented anchor file, the `sorry` label, the prose denominator label.
+
+**A needle that reports the first mismatch cross-fires when two faults share a pass.**
+The summary pass reports the first row that differs, so a first-mismatch needle built
+from the mutated page gives the same string for the tier fault and the config-count
+fault. Keying it to the family the mutation touched makes each fire for its own row.
+The two carrier-block faults cross-fired for a second reason: the paraphrased line
+`Nonempty (A ≃ₐ[ℂ] …)` is a substring of the line it was paraphrased from
+(`¬ Nonempty (A ≃ₐ[ℂ] …)`), so the paraphrase needle found the word fault's page
+too. Keying to the block line the mutation touched fixes both.
+
+Two derivations needed the checker's own byte conventions: the population stores the
+Lean path **without** the `lean/` prefix, so the needle must add it once, not twice;
+and a quote wraps across page lines, so the mutated word is not always on the line
+the anchor sits on — the needle is keyed to the quote's start line.
+
+Measured: the layout shift breaks **0** of the 14 needles; specificity **0**
+cross-fires; **15** tests pass.
+
+The census moves: recorded needles **91 → 80**, numeric **40 → 29**, derived
+**122 → 133**, needle digits **181 → 167**, clean pins **309** unchanged.
+
+Gate **79** rows, **0** failures; head diff empty; promote-and-verify assertion
+green; lint trio **0 / 0 / 0**.
+
+Not checked: **6** files still carry recorded needles with numeric values —
+`test_named_results.py` **5**, `test_sources.py` **4**, `test_index_links.py` **3**,
+`test_fleet_design.py` **3**, `test_index_design.py` **1**, `test_abstracts.py` **1**
+— **29** numeric in all. The **309** clean pins are still literals (phase 2), and
+there is one synthetic-rule test file (`test_quotes.py`) against 14 checkers
+(phase 3).
