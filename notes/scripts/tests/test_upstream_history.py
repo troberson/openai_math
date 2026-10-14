@@ -113,3 +113,32 @@ def test_injected_faults(mod, p, pages, label, page, needle, mut):
     mod.check_counts(page, cand, p, found)
     mod.check_tables(page, cand, p, found)
     assert any(needle in x for x in found), f"{label}: NOT caught by {needle!r} ({found[:2]})"
+
+
+def pad_cells(t):
+    """Pad every table cell with two spaces."""
+    out = []
+    for ln in t.split("\n"):
+        if ln.startswith("|") and ln.endswith("|"):
+            cells = ln[1:-1].split("|")
+            ln = "|" + "|".join("  " + c.strip() + "  " for c in cells) + "|"
+        out.append(ln)
+    return "\n".join(out)
+
+
+def test_padded_table_cells_are_dropped(mod, p, pages):
+    """The opposite direction from the padding-tolerant checkers: `check_tables` (`:468`, `:494`)
+    matches rows with byte-exact single-space regexes, so padding must drop every row, not be
+    tolerated. The page is prettier-ignored, so the padding never reaches the tracked tree — the test
+    asserts the contract, not a formatter's behaviour."""
+    cand = pad_cells(pages[mod.PAGE_301])
+    assert cand != pages[mod.PAGE_301], "padding changed nothing"
+    found: list = []
+    mod.check_tables(mod.PAGE_301, cand, p, found)
+    assert any("0 fixes rows" in x for x in found), \
+        f"padding did not drop the fixes rows: {found[:2]}"
+    assert any("configs in the table []" in x for x in found), \
+        f"padding did not drop the config rows: {found[:2]}"
+    ignore = mod.read_text(mod.ROOT / ".prettierignore").splitlines()
+    assert "notes/development/upstream_history/*.md" in ignore, \
+        "the upstream-history pages are not prettier-ignored, so a format pass would pad them"
