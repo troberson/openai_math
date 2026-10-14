@@ -33,12 +33,20 @@ page it started from, and each needle is the problem string the pass that owns t
 measured specific, each needle fires for its own fault and for no other. The render-diff line fires
 for every fault, so no needle is that line.
 
-The clean test asserts the passes are silent and pins the counts they report: 2 anchors, 7 slugs, 4
-block lines, 31 count phrases, 0 sync problems, 719 rows over 14 columns, 749 directories on disk
-(719 listed, 27 superseded, 3 withdrawal notices), 372 families, 172 formalized, 12 `main.tex` files
-without `\\documentclass`, 21,203 six-name environments against the declared-rule 21,288, and the six
+The clean test asserts the passes are silent and pins the counts they report. The population is pinned
+as **joins**, not recorded numbers: the dir census decomposes into listed + superseded + notices, the
+table has one row per listed manuscript, every resolved main file sits under `build/`, the family count
+equals the ledger's family set, and the formalized count equals the ledger's `paps_form` sum. The
+figures that stay literal are the ones the join cannot produce: 2 anchors, 7 slugs, 4 block lines, 31
+count phrases, 0 sync problems, 14 columns, the (27, 3) superseded/notices split, 12 `main.tex` files
+without `\\documentclass`, 21,203 six-name environments against the declared-rule 21,288, the root
+distribution (715, 3, 1), the column sums (724, 20,341, 21,288, 16,297, 127,456,942), and the six
 integrity counters at 0. A page with fewer anchors, slugs, block lines or count phrases is a pass that
 stopped checking, not a pass that passed.
+
+`test_formalized_join_fires_on_a_ledger_fault` proves the join is the witness: flipping a family's
+`paps_form` moves no page byte, so every page pass stays silent and no literal pin moves — rows, dirs,
+listed, superseded, notices, cols, the root distribution and the column sums are all unchanged.
 
 The checker reads no argv and `check()` takes page text, so nothing here writes a page: the checker
 writes nothing and the tests write nothing. `population()` is under `functools.cache`, so the thirteen
@@ -47,6 +55,9 @@ writes nothing and the tests write nothing. `population()` is under `functools.c
 The checker measures; this file injects. Run:
   python3 notes/scripts/run_tests.py notes/scripts/tests/test_sources.py -q
 """
+import csv
+import pathlib
+
 import pytest
 
 pytestmark = pytest.mark.mutant
@@ -143,17 +154,40 @@ def text(mod):
     return mod.PAGE.read_text(encoding="utf-8")
 
 
-def test_clean_page(mod, text):
-    """Every pass is silent, and the counts the passes report are pinned."""
+@pytest.fixture(scope="module")
+def ledger():
+    """The ledger rows, read for the joins the sources population is checked against."""
+    return list(csv.DictReader(pathlib.Path("notes/tables/catalog.tsv").read_text(
+        encoding="utf-8").splitlines(), delimiter="\t"))
+
+
+def test_clean_page(mod, text, ledger):
+    """Every pass is silent, and the population is asserted as joins, not recorded numbers. The
+    ledger-join invariants: the dir census decomposes into listed + superseded + notices, the table has
+    one row per listed manuscript, every resolved main file sits under `build/`, the formalized count
+    equals the ledger's `paps_form` sum, and the family count equals the ledger's family set. The
+    column count, the root distribution, the six-name environment total and the column sums stay
+    literals: corpus measurements the join cannot produce."""
     problems, n_anchor, n_block, n_slug, n_phrases, n_sync = mod.check(text)
     assert not problems, problems[:3]
     assert (n_anchor, n_slug, n_block, n_phrases, n_sync) == (2, 7, 4, 31, 0), \
         f"anchors {n_anchor}, slugs {n_slug}, block lines {n_block}, phrases {n_phrases}, sync {n_sync}"
     m = mod.population()
-    assert (m["rows"], m["cols"], m["dirs"], m["listed"], m["superseded"], m["notices"]) == \
-        (719, 14, 749, 719, 27, 3), f"rows {m['rows']}, cols {m['cols']}, dirs {m['dirs']}"
-    assert (m["fams"], m["formalized"], m["main_no_dc"], m["six"], m["decl"]) == \
-        (372, 172, 12, 21203, 21288), f"fams {m['fams']}, formalized {m['formalized']}, envs {m['six']}"
+    assert m["dirs"] == m["listed"] + m["superseded"] + m["notices"], \
+        f"dir census {m['dirs']} against {m['listed']}+{m['superseded']}+{m['notices']}"
+    assert m["rows"] == m["listed"], f"rows {m['rows']} against {m['listed']} listed manuscripts"
+    assert m["main_under_build"] == m["rows"], \
+        f"main_under_build {m['main_under_build']} of {m['rows']} rows"
+    assert m["fams"] == len({r["fam"] for r in ledger}), \
+        f"fams {m['fams']} against {len({r['fam'] for r in ledger})} ledger families"
+    assert m["formalized"] == sum(int(r["paps_form"]) for r in ledger), \
+        f"formalized {m['formalized']} against the ledger paps_form sum " \
+        f"{sum(int(r['paps_form']) for r in ledger)}"
+    assert m["cols"] == 14, f"cols {m['cols']}"
+    assert (m["superseded"], m["notices"]) == (27, 3), \
+        f"superseded {m['superseded']}, notices {m['notices']}"
+    assert (m["main_no_dc"], m["six"], m["decl"]) == (12, 21203, 21288), \
+        f"main_no_dc {m['main_no_dc']}, envs {m['six']}, declared {m['decl']}"
     rd = m["rootdist"]
     assert (rd[1], rd[2], rd[3]) == (715, 3, 1), f"root distribution {dict(rd)}"
     s = m["sums"]
@@ -162,7 +196,6 @@ def test_clean_page(mod, text):
     for key in ("pdf_missing", "main_missing", "main_not_root", "fam_outside", "paps_diff",
                 "pdf_ov_diff"):
         assert m[key] == 0, f"integrity {key}: {m[key]} differences"
-    assert m["main_under_build"] == 719, f"main_under_build {m['main_under_build']} of 719"
 
 
 @pytest.mark.parametrize("label,needle,mut", MUTANTS)
@@ -174,3 +207,17 @@ def test_injected_faults(mod, text, label, needle, mut):
     found, _, _, _, _, _ = mod.check(cand)
     want = needle(cand, mod) if callable(needle) else needle
     assert any(want in x for x in found), f"{label}: NOT caught by {want!r} ({found[:2]})"
+
+
+def test_formalized_join_fires_on_a_ledger_fault(mod, ledger):
+    """Flipping a family's `paps_form` changes no page byte, so every page pass stays silent and no
+    literal pin moves: rows, dirs, listed, superseded, notices, cols, the root distribution and the
+    column sums are all unchanged. The formalized join is the only witness."""
+    i = next(n for n, r in enumerate(ledger) if int(r["paps_form"]) > 0)
+    led = [dict(r) for r in ledger]
+    led[i]["paps_form"] = "0"
+    m = mod.population()
+    assert m["formalized"] == sum(int(r["paps_form"]) for r in ledger), \
+        "the clean join is not the relation the population satisfies"
+    assert m["formalized"] != sum(int(r["paps_form"]) for r in led), \
+        "the paps_form flip did not break the join, so the join is not a witness"

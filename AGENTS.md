@@ -557,12 +557,16 @@ lives in this file and nowhere else.
   shifted by one, a paraphrase dressed as a quotation, and a per-command count in the headline-begins
   row that no count phrase reads — the last is caught only by comparing the page with the writer's
   render of it. Each needle is measured specific: it fires for its own fault and for no other. The
-  clean test pins the population the passes report: 61 anchors, 15 bare anchors, 17 table rows, 61
-  quotations, 65 count phrases, 0 sync problems; 7,679 `.tex` files, 719 manuscript dirs, 2,410
+  clean test pins the population the passes report, **as joins where the ledger can produce the
+  figure**: `ndirs` equals the ledger `paps` sum, and the prose sentence and window counts equal the
+  ledger's family count. The rest stay literal: 61 anchors, 15 bare anchors, 17 table rows, 61
+  quotations, 65 count phrases, 0 sync problems; 7,679 `.tex` files, 2,410
   headline begins, 1,609 titled per line (1,619 whole-text), 373 target-named titles, 76 families with
   no headline, 248 `resolves_named`, 275 title-union, 15 additions, 6 core, 76 directory-name, 5
-  abstract-only, 207 prose hits, 551 subject keys, 17 targets, 0 generic, 372 prose sentences and
-  windows, and the per-command split 2,405 `theorem` / 4 `maintheorem` / 1 `thm`. `main()` reads no
+  abstract-only, 207 prose hits, 551 subject keys, 17 targets, 0 generic, and the per-command split
+  2,405 `theorem` / 4 `maintheorem` / 1 `thm`. `test_ledger_joins_fire_on_faults_the_literals_miss`
+  proves a `paps` decrement and a dropped family row break the joins while every page pass stays
+  silent. `main()` reads no
   argv, so `--mutant` is inert, and `population()` is under `functools.cache`, so the fourteen
   `check()` calls the row makes pay the 7,240-file walk once. It writes nothing; run it twice
   and diff — the report is identical. Quote a quotation's anchor as the checker pins it: a manuscript
@@ -579,7 +583,13 @@ lives in this file and nowhere else.
   flipped, a dir row duplicated, a negative proofs count) and asserts each needle fires for its own
   fault and for no other; the tier needle is `'T0': 129` rather than the whole dict, because the gate
   prints the tier counts in set-iteration order, which is not stable across processes. The clean test
-  pins the population the gates report. The page check is **not** here: `verify_page_sync.py` owns the
+  pins the population the gates report, **as joins where the ledger can produce the figure**: distinct
+  dirs equals rows, the ledger `paps` sum equals rows, the family sets are equal on both sides, each
+  family appears once in the ledger, the tier counts sum to the family count, and the formalized join
+  compares the `formalization.yaml` `sources:` set with each family's `paps_form`. The proofs and
+  statements sums stay literal. `test_formalized_invariant_catches_what_the_literals_miss` proves a
+  `paps_form` flip leaves every literal pin and every gate silent, so the join is the only witness.
+  The page check is **not** here: `verify_page_sync.py` owns the
   render diff and mutates the page in memory, so this script never writes `notes/reports/proof-density.md` and
   `main()` reads no argv, making `--mutant` and `--quiet` inert. It writes nothing; run it twice and
   diff — the report must be identical. Ties score 0.5, so `([1,2,3],[0,1,2])` is **7/9**, not 6/9, and the ranks
@@ -633,15 +643,19 @@ lives in this file and nowhere else.
   count or size phrase covers — the last is visible only in the diff against the writer's render. Each
   needle is measured specific: it fires for its own fault and for no other, and the render-diff line
   fires for every fault, so no needle is that line. The clean test pins the population the passes
-  report: 9 anchors, 3 block lines, 83 count and byte phrases, 0 sync problems, 2,560 nodes over 3,415
+  report, **as joins where the ledger can produce the figure**: families equals the ledger family set,
+  manuscripts equals the ledger `paps` sum, formalized equals the ledger `paps_form` sum, the two
+  comparator surfaces count the same configs, and the `main_results` entry count exceeds the unique
+  config count. The rest stay literal: 9 anchors, 3 block lines, 83 count and byte phrases, 0 sync
+  problems, 2,560 nodes over 3,415
   resolved edges (17,217 raw), 391 citation edges over 104 cross-family, 1,033 index pages and 16
-  tables, 372 families over 719 manuscripts, 242 scope notes, 416 configs, 200 `main_results` entries
-  over 189 configs, 172 formalized, 749 preprint dirs, 122,458 `.lean` files, 559 module dirs, 17
+  tables, 242 scope notes, 749 preprint dirs, 122,458 `.lean` files, 559 module dirs, 17
   disciplines against 23 Lean dirs, 10 traces in 11 files, 30 verification bundles, 521 `.bib` files
-  with 13,802 entries and 393 hrefs, the ledger set at 297,050 B against the all-TSV 2,252,773 B, the
-  index tree at 11,530,406 B over 1,033 pages, 66,110
+  with 13,802 entries and 393 hrefs, the ledger set at 297,050 B against the all-TSV 2,316,386 B, the
+  index tree at 11,531,073 B over 1,033 pages, 66,115
   disk links with 0 broken and 17,700 resolving to a directory, and the substring counts 18 / 373
-  against the brace-qualified 17 / 372. `main()` reads no argv, so `--mutant` is inert, and
+  against the brace-qualified 17 / 372. `test_ledger_joins_fire_on_faults_the_literals_miss` proves a
+  `paps_form` and a `paps` decrement break the joins while every page pass stays silent. `main()` reads no argv, so `--mutant` is inert, and
   `population()` is under `functools.cache` (`:66`), so the fifteen `check()` calls the row makes pay
   the index-tree walk once. It writes nothing.
 - Run `python3 notes/scripts/build_sources.py` once: `verify_cache_promotion.py` asserts that the bytes
@@ -668,10 +682,14 @@ lives in this file and nowhere else.
   census, the formalized share, and a prose count no count phrase covers — the last is visible only in
   the diff against the writer's render. Each needle is measured specific: it fires for its own fault
   and for no other, and the render-diff line fires for every fault, so no needle is that line. The
-  clean test pins the population the passes report: 2 anchors, 7 slugs, 4 block lines, 31 count
-  phrases, 0 sync problems, 719 rows over 14 columns, 749 dirs on disk (719 listed, 27 superseded, 3
-  withdrawal notices), 372 families, 172 formalized, 12 `main.tex` without `\documentclass`, 21,203
-  six-name environments against the declared-rule 21,288. `main()` reads no argv, so `--mutant` is
+  clean test pins the population the passes report, **as joins where the ledger can produce the
+  figure**: rows equals listed manuscripts, dirs equals listed + superseded + notices, every resolved
+  main file sits under `build/`, fams equals the ledger family set, and formalized equals the ledger
+  `paps_form` sum. The rest stay literal: 2 anchors, 7 slugs, 4 block lines, 31 count
+  phrases, 0 sync problems, 14 columns, the (27, 3) superseded/notices split, 12 `main.tex` without `\documentclass`, 21,203
+  six-name environments against the declared-rule 21,288, the root distribution (715, 3, 1) and the
+  column sums. `test_formalized_join_fires_on_a_ledger_fault` proves a `paps_form` flip moves no page
+  byte and no literal pin, so the join is the only witness. `main()` reads no argv, so `--mutant` is
   inert, and `population()` is under `functools.cache` (`:152`), so the thirteen `check()` calls the
   row makes pay the corpus walk once. It writes nothing.
 - Check `notes/reports/subfinding-pairs.md` with `python3 notes/scripts/verify_subfinding_pairs.py` and its

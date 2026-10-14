@@ -7,6 +7,7 @@ checker is loaded as a module from its file, which is what makes `ROOT = Path(__
 resolve to the repo root inside it.
 """
 
+import csv
 import importlib.util
 import os
 import pathlib
@@ -21,6 +22,15 @@ if str(SCRIPTS) not in sys.path:
 
 # pylint: disable=wrong-import-position
 from catlib.layout import shift  # noqa: E402  # the script tree is on sys.path only after the insert
+
+REPO = pathlib.Path(__file__).resolve().parents[3]
+
+
+@pytest.fixture(scope="module")
+def ledger():
+    """The ledger rows, for the joins a population is checked against. Read once per module."""
+    return list(csv.DictReader((REPO / "notes/tables/catalog.tsv").read_text(
+        encoding="utf-8").splitlines(), delimiter="\t"))
 
 
 @pytest.fixture(autouse=True, scope="module")

@@ -29,14 +29,20 @@ real family list in the page as committed. Each test asserts the injected text d
 started from, and each needle is the problem string the pass that owns that form prints — measured
 specific, each needle fires for its own fault and for no other.
 
-The clean test asserts the passes are silent and pins the counts they report: 61 anchors, 15 bare
-anchors, 17 table rows, 61 quotations, 65 count phrases, 0 sync problems; and the population at 7,679
-`.tex` files, 719 manuscript dirs, 2,410 headline begins, 1,609 titled per line (1,619 whole-text),
-373 target-named titles, 76 families with no headline, 248 `resolves_named`, 275 title-union, 15
-additions, 6 core, 76 directory-name, 5 abstract-only, 207 prose hits, 551 subject keys, 17 targets,
-0 generic, 372 prose sentences and windows, and the per-command split 2,405 `theorem` / 4
+The clean test asserts the passes are silent and pins the counts they report. The population is pinned
+as **joins** where the ledger can produce the figure: the manuscript-directory count equals the
+ledger's `paps` sum, and the prose sentence and window counts equal the ledger's family count. The
+figures that stay literal are the ones the join cannot produce: 61 anchors, 15 bare anchors, 17 table
+rows, 61 quotations, 65 count phrases, 0 sync problems; 7,679 `.tex` files, 2,410 headline begins,
+1,609 titled per line (1,619 whole-text), 373 target-named titles, 76 families with no headline, 248
+`resolves_named`, 275 title-union, 15 additions, 6 core, 76 directory-name, 5 abstract-only, 207 prose
+hits, 551 subject keys, 17 targets, 0 generic, and the per-command split 2,405 `theorem` / 4
 `maintheorem` / 1 `thm`. A page with fewer anchors, quotations, table rows or phrases is a pass that
 stopped checking, not a pass that passed.
+
+`test_ledger_joins_fire_on_faults_the_literals_miss` proves the joins are the witness: a `paps`
+decrement breaks the manuscript-directory join and dropping a family row breaks the prose-window join,
+and neither moves a page byte, so every page pass stays silent.
 
 The checker reads no argv and `check()` takes page text, so nothing here writes a page: the checker
 writes nothing and the tests write nothing. `population()` is under `functools.cache`, so the fourteen
@@ -178,22 +184,29 @@ def text(mod):
     return mod.PAGE.read_text(encoding="utf-8")
 
 
-def test_clean_page(mod, text):
-    """Every pass is silent, and the counts the passes report are pinned."""
+def test_clean_page(mod, text, ledger):
+    """Every pass is silent, and the population is asserted as joins, not recorded numbers. The
+    ledger-join invariants: the manuscript-directory count equals the ledger's `paps` sum, and the prose
+    sentence and window counts equal the ledger's family count. The file, begins, titled and
+    environment-split figures stay literals: corpus measurements the join cannot produce."""
     problems, out = mod.check(text)
     assert not problems, problems[:3]
     assert (out["anchors"], out["bare anchors"], out["table rows"], out["quotations"],
             out["count phrases"], out["count phrases total"], out["sync problems"]) == \
         (61, 15, 17, 61, 65, 65, 0), f"counters {out}"
     p = mod.population()
-    assert (p["files"], p["ndirs"], p["begins"], p["titled"], p["titled_all"],
-            len(p["head_titled"]), len(p["no_head"])) == (7679, 719, 2410, 1609, 1619, 373, 76), \
+    assert p["ndirs"] == sum(int(r["paps"]) for r in ledger), \
+        f"ndirs {p['ndirs']} against the ledger paps sum {sum(int(r['paps']) for r in ledger)}"
+    assert len(p["prose_sentence"]) == len(p["prose_window"]) == len({r["fam"] for r in ledger}), \
+        f"prose windows {len(p['prose_sentence'])}/{len(p['prose_window'])} against " \
+        f"{len({r['fam'] for r in ledger})} ledger families"
+    assert (p["files"], p["begins"], p["titled"], p["titled_all"],
+            len(p["head_titled"]), len(p["no_head"])) == (7679, 2410, 1609, 1619, 373, 76), \
         f"files {p['files']}, begins {p['begins']}"
     assert (len(p["rn"]), len(p["an"]), len(p["add"]), len(p["core"]), len(p["dn"]),
             len(p["eo"]), len(p["subj_hits"]), len(p["subject"]), len(p["tgt"]),
             p["generic"]) == (248, 275, 15, 6, 76, 5, 207, 551, 17, 0), \
         f"rn {len(p['rn'])}, subject {len(p['subject'])}"
-    assert (len(p["prose_sentence"]), len(p["prose_window"])) == (372, 372), "prose windows"
     assert (p["env_begins"]["theorem"], p["env_begins"]["maintheorem"],
             p["env_begins"]["thm"]) == (2405, 4, 1), f"env split {p['env_begins']}"
 
@@ -208,3 +221,23 @@ def test_injected_faults(mod, text, label, needle, mut):
     p = mod.population()
     want = needle(cand, mod, p) if callable(needle) else needle
     assert any(want in x for x in found), f"{label}: NOT caught by {want!r} ({found[:2]})"
+
+
+def test_ledger_joins_fire_on_faults_the_literals_miss(mod, ledger):
+    """A ledger row fault moves no page byte, so every page pass stays silent. The literal figures
+    are measured from the manuscript tree, not from the ledger, so a ledger fault cannot move them:
+    the joins are the only witness — a `paps` decrement breaks the manuscript-directory join, and
+    dropping a family row breaks the prose-window join."""
+    p = mod.population()
+    i = next(n for n, r in enumerate(ledger) if int(r["paps"]) > 1)
+    led = [dict(r) for r in ledger]
+    led[i]["paps"] = str(int(led[i]["paps"]) - 1)
+    assert p["ndirs"] == sum(int(r["paps"]) for r in ledger), \
+        "the clean paps join is not the relation the population satisfies"
+    assert p["ndirs"] != sum(int(r["paps"]) for r in led), \
+        "the paps decrement did not break the join, so the join is not a witness"
+    dropped = [r for r in ledger if r["fam"] != ledger[0]["fam"]]
+    assert len(p["prose_sentence"]) == len({r["fam"] for r in ledger}), \
+        "the clean family join is not the relation the population satisfies"
+    assert len(p["prose_sentence"]) != len({r["fam"] for r in dropped}), \
+        "dropping a family row did not break the prose-window join, so the join is not a witness"
