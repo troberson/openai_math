@@ -515,10 +515,13 @@ empty, and the promote-and-verify assertion is green.
 ## The padded-table mutant lands, and the needle turns out not to be the discriminator
 
 The question was whether a table-parsing checker can silently skip a table.
-Measured: **13** pipe-anchored row patterns over **8** checkers, and all 8
-carry a row-count guard, so a pattern that reads 0 rows reports a population
-mismatch loudly. The real gap was narrower: the patterns required exactly one
-space after each pipe, and **none of the 31 table mutants** exercised padding.
+Measured: **14** pipe-anchored row patterns over **8** checkers, all tolerant
+of padded cells after this pass. **7** of the 8 are table-row parsers and each
+carries a guard that fires when rows are missing; `verify_summaries.py`'s
+pattern is a family-block key rule, not a table parser, and has no row-count
+guard. The real gap was narrower: the two t0-chains patterns required exactly
+one space after each pipe, and **none of the 9** table-row mutants in the four
+test files that carry them exercised padding.
 
 `SUM_ROW` and `CHAIN_ROW` in `verify_t0_chains.py` now tolerate whitespace
 around every cell. The first widening broke `CHAIN_ROW`: joining the seven
@@ -553,8 +556,8 @@ Gate **78** rows, **0** failures; head diff empty; promote-and-verify assertion
 green; lint trio **0 / 0 / 0**; `test_t0_chains.py` **16** tests pass. Pushed to
 `origin` at `c71c4c12b..1922ea951`.
 
-Not checked: the other **12** pipe-anchored row patterns in the other **7**
-checkers are still single-space-strict and have no padding mutant; the padding
-mutant exists only for `verify_t0_chains.py`. The **110** numeric needles and
-the **184** clean-test corpus literals are untouched — phases 1 and 3 have not
-started.
+Not checked: the padding mutant exists only for `verify_t0_chains.py`. The
+other **6** table-row parsers are tolerant of padded cells but no mutant
+exercises that, and `verify_summaries.py`'s block-key rule has no row-count
+guard. The **110** numeric needles and the **184** clean-test corpus literals
+are untouched — phases 1 and 3 have not started.
