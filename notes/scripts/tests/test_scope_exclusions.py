@@ -150,3 +150,31 @@ def test_prose_count_outside_the_measured_tables(mod, lines, page):
     assert cand != lines, "the mutation changed nothing"
     assert flagged(mod, cand, page, "page is not the writer's render"), \
         "the render diff did not flag the prose count"
+
+
+def pad_cells(t):
+    """Pad every table cell with two spaces. The row regexes allow whitespace, so padding must read
+    the same rows; a regex that required exact spacing would drop every row and the pass would report
+    no row for each family, so the row count is the discriminator, not the render diff."""
+    out = []
+    for ln in t.split("\n"):
+        if ln.startswith("|") and ln.endswith("|"):
+            cells = ln[1:-1].split("|")
+            ln = "|" + "|".join("  " + c.strip() + "  " for c in cells) + "|"
+        out.append(ln)
+    return "\n".join(out)
+
+
+def row_count(mod, t):
+    """Rows the pass's row regex matches in the page text."""
+    return sum(1 for ln in t.splitlines() if mod.ROW.match(ln))
+
+
+def test_padded_table_cells_are_still_read(mod, page):
+    cand = pad_cells(page)
+    assert cand != page, "padding changed nothing"
+    assert row_count(mod, cand) == row_count(mod, page), \
+        f"padded table reads {row_count(mod, cand)} rows, clean page {row_count(mod, page)}"
+    assert mod.check(cand.splitlines()) == mod.check(page.splitlines()), \
+        f"padded page reports {mod.check(cand.splitlines())} problems, clean page " \
+        f"{mod.check(page.splitlines())}"
