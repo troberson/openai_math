@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [noncommutative-algebra](../topics/noncommutative-algebra.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [258-gerstens-conjecture-for-one-relator-groups.md](../../../notes/summaries/group-theory/258-gerstens-conjecture-for-one-relator-groups.md) |
 
 ## Manuscripts
 
