@@ -335,7 +335,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 339	Differential geometry	Katok's entropy rigidity conjecture	1	0	T0	0	0	0	0	0	0	0		classification	0	1	0		0	0	0
 340	Differential geometry	A counterexample to the nearby Lagrangian conjecture	1	0	T0	0	0	0	0	0	0	0		resolution|counterexample	0	1	1		0	0	0
 341	Differential geometry	Donaldson's hypersymplectic deformation conjecture	1	0	T0	0	0	0	0	0	0	0			0	1	0		0	0	0
-342	Differential geometry	Donaldson's tamed-to-compatible conjecture	1	0	T3	1	1	1	380	0	0	0			0	1	0		0	0	0
+342	Differential geometry	Donaldson's tamed-to-compatible conjecture	1	0	T3	1	1	1	380	0	0	0			0	1	0		0	0	1
 343	Differential geometry	Sharp symplectic ball-packing criteria in higher dimensions	1	0	T2	2	0	1	545	0	0	0		resolution|uniform	0	1	0		0	0	0
 344	Differential geometry	The metric Blaschke conjecture	1	0	T0	0	0	0	0	0	0	0		resolution	0	1	0		0	0	0
 345	Differential geometry	Infinitely many closed geodesics on spheres and three-manifolds	1	0	T0	0	0	0	0	0	0	0			0	0	0		0	0	0
