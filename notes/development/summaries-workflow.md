@@ -1039,3 +1039,23 @@ Not checked: the padding mutant now covers **2** of the 14 checkers that read ta
 (`verify_t0_chains.py`, `verify_counterexample_crosscheck.py`); the rest are unprobed.
 The **309** clean pins are still literals (phase 2), and there is one synthetic-rule
 test file (`test_quotes.py`) against 14 checkers (phase 3).
+
+## Phase 0 extends to `verify_faithfulness.py`, and the padding test is proven both ways again
+
+The same shape: every `|`-delimited cell of the disjoint, overlap and `a.e.` tables
+gains two spaces, and the test asserts the table passes report **no** table problem
+and the same three row counts.
+
+Proven both ways: against the tolerant regexes the test passes with **0** table
+problems; against strict regexes it fails with `disjoint table [] != [...]` and
+`overlap table has 0 rows, recomputation has 15`. The row-count line is the
+discriminator; the render diff fires for the padding either way.
+
+Measured: **17** tests pass; lint trio **0 / 0 / 0**; census unchanged. Gate **79**
+rows, **0** failures; head diff empty; promote-and-verify assertion green.
+
+Not checked: the padding mutant now covers **3** of the 14 checkers that read tables
+(`verify_t0_chains.py`, `verify_counterexample_crosscheck.py`,
+`verify_faithfulness.py`); the rest are unprobed. The **309** clean pins are still
+literals (phase 2), and there is one synthetic-rule test file (`test_quotes.py`)
+against 14 checkers (phase 3).
