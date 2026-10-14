@@ -471,3 +471,43 @@ across the 28 pages — first label `ID` (16), `#` (4), `S#` (3), `Src` (2),
 is` (3). The skill fixes `| # | File | Lines | Role |`, which **4** pages
 use. No checker parses the header, so normalizing it is a formatting pass
 the user has not asked for.
+
+## The group-theory page for 258 lands, and the sweep finds two stale figures
+
+Family 258 — *Gersten's conjecture for one-relator groups* — is the second
+Group theory page, so that shard is complete. The two manuscripts cite each
+other: the hyperbolicity paper's `references.bib:295` names the specialness
+paper, and the specialness paper's `references.tex:356` names the hyperbolicity
+paper. The measured `.bib` layer records **1** intra-family edge, not 2,
+because the second manuscript ships a `\bibitem` list, not a `.bib` file — the
+known bibliography-shape trap, and the page states both directions.
+
+**The overview anchor carried in the handoff was wrong.** The handoff recorded
+`overview.tex:296` for family 258; that line is family 109's `\resultentry`.
+The real anchor is **`overview.tex:603`**. A handoff anchor is a transcription,
+not a measurement: locate the entry by its family key before quoting it.
+
+**Two recorded figures were not reproducible.** The summaries README carried
+**69** manuscript directories for the 28-page tree. The rule that yields the
+12.4 MB LaTeX figure — the directories named by the pages, all `.tex` under
+them — gives **65** for that tree, so 69 was a transcription error in the
+previous sweep, not a different rule. Re-measured for 29 pages: **67**
+directories, **13.2 MB**. The script census carried **17** shared page slugs;
+the checker's intersection includes `README.md`, which each tree carries as its
+own entry point, so the figure is **18**.
+
+**A new page moves the coverage-signal framing.** `notes/reports/t0-chains.md`
+says "no coverage signal" holds for 25 of the 27 second-pass families. The
+signal includes the summary flag, so adding a page for 258 moves it to **24**,
+and the exceptions are now 147, 258 and 268. `verify_findings.py` carries that
+phrase as a needle in its records pass, so the needle retargets in the same
+pass as the page.
+
+Page: **30** declared sources, **179** marker positions, **59** quoted spans,
+**0** problems. Tree: **29** family pages, **6,028** lines, **4,414** marker
+positions, **1,243** quoted spans, median **21** sources, checker **1.14 s**.
+Index links **66,114 → 66,115**, file-resolving **48,414 → 48,415**; all-TSV
+**2,301,027 → 2,316,386** B; index tree **11,530,936 → 11,531,073** B;
+`quotes.tsv` **1,938 → 1,997** specs; probe records **19 → 20**. Six test pins
+retargeted. The gate runs **78** rows with **0** failures, the head diff is
+empty, and the promote-and-verify assertion is green.
