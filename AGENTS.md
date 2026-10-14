@@ -763,18 +763,22 @@ lives in this file and nowhere else.
   re-derives the 12 count phrases and the 4 named family lists, requires the 27-row summary table and
   the 5-row chain table to equal the ledger, and requires each of the 27 blocks to carry exactly 2
   manuscript bullets whose title is verbatim on the family's `\resultentry` line and whose path exists
-  on disk. The thirteen injected mutants live in the test file (a paraphrase dressed as a quotation, a
+  on disk. The fourteen injected mutants live in the test file (a paraphrase dressed as a quotation, a
   title swap, a chain-table tier, an edge count, an anchor line out of range, a block for a family
   outside the population, a table `.bib` count, a manuscript path not on disk, a population count
-  phrase, a mutual-pairs list, a fenced block line, a citation-layer count, and a prose count outside
-  the phrase list), each asserted against the pass that owns it; the last is keyed to the page line the
-  render diff names, because the render diff truncates both sides. `main()` reads no argv, so
+  phrase, a mutual-pairs list, a fenced block line, a citation-layer count, a prose count outside
+  the phrase list, and a padded table), each asserted against the pass that owns it; the prose fault is
+  keyed to the page line the render diff names, because the render diff truncates both sides. The
+  padding fault is the one that tests the row pattern itself: a pattern requiring exactly one space
+  after each pipe reads 0 rows from the padded page, so `test_padded_table_is_read_by_the_tolerant_pattern`
+  pins the row count the tolerant `\s*` pattern reads. `main()` reads no argv, so
   `--mutant` is inert in the checker. `population()` is under `functools.cache` (`:118`), so the row
   pays the ledger, `subfindings.tsv`, `notes/reports/t0-triage.md` and `.bib` walk once. It writes nothing.
   Run `python3 notes/scripts/extract_t0_chains.py` twice and diff:
-  the report must be identical — 27 families over 54 manuscripts, 26 with zero coverage signal, 2 chain
-  edges over 372 families, 9 `companion_word` families carrying 0 edges, 15 families citing their
-  sibling (8 mutual, 7 one-way), and 8 reconciliation lines reading True.
+  the report must be identical — 27 families over 54 manuscripts, 24 with zero coverage signal and
+  **3** with one (147 258 268), 2 chain edges over 372 families, 9 `companion_word` families
+  carrying 0 edges, 15 families citing their sibling (8 mutual, 7 one-way), and 8 reconciliation
+  lines reading True.
 - Measure the verification bundles with `python3 notes/scripts/extract_verification_dirs.py` (the 30
   bundles, which README section names them, and each bundle's entry point) and
   `python3 notes/scripts/extract_verification_348.py` (the family-348 pair); run each twice and diff:

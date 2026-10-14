@@ -1,4 +1,4 @@
-"""The extracted self-tests for `notes/scripts/verify_t0_chains.py` and `notes/reports/t0-chains.md`.
+r"""The extracted self-tests for `notes/scripts/verify_t0_chains.py` and `notes/reports/t0-chains.md`.
 
 The checker's passes are: the anchor pass (every backticked `path:line` resolves to a file that
 exists with the line in range); the fenced-block pass (each block attributed to the nearest preceding
@@ -12,8 +12,13 @@ family-268 verification-directory pass; and the render diff against `render_repo
 
 Each fault below mutates the page text in memory, so no page is written. `verify_t0_chains.py`'s
 `population()` is under `functools.cache` (`:118`): the checker writes nothing and the tests mutate
-page text, so a second call in the same process cannot see a different corpus, and the fourteen
+page text, so a second call in the same process cannot see a different corpus, and the fifteen
 `check()` calls this file makes pay the corpus walk once.
+
+The last fault is not a content change: it pads the table cells. A row pattern that requires exactly
+one space after each pipe reads **0** rows from the padded page, so the table pass is silently
+skipped; the tolerant `\s*` form reads the same rows it reads from the clean page. `test_padded_table`
+pins the row count, which is the assertion that distinguishes the two patterns.
 
 Run: `python3 notes/scripts/run_tests.py notes/scripts/tests/test_t0_chains.py -q`
 """
@@ -23,6 +28,19 @@ import pathlib
 import pytest
 
 PAGE = pathlib.Path("notes/reports/t0-chains.md")
+
+
+def pad_table(p):
+    r"""Pads every cell of every pipe-delimited table row with two spaces. The strict single-space
+    row pattern reads 0 rows from this text; the tolerant `\s*` pattern reads the same rows it reads
+    from the clean page."""
+    out = []
+    for line in p.split("\n"):
+        if line.startswith("|"):
+            cells = [c.strip() for c in line.strip().strip("|").split("|")]
+            line = "| " + "  |  ".join(cells) + "  |"
+        out.append(line)
+    return "\n".join(out)
 
 # (label, needle, mutation). A needle must fire for its own fault and for no other, and must not
 # fire on the clean page.
@@ -86,6 +104,12 @@ MUTANTS = [
     ("prose count outside the phrase list",
      "page line 7: page 'the remaining 94 families",
      lambda p: p.replace("the remaining 93 families", "the remaining 94 families")),
+    # Not a content change: the table is padded. A strict single-space row pattern reads 0 rows and
+    # the population guard fires; the tolerant `\s*` pattern reads the rows, so the only problems are
+    # the render diff, whose first changed line is the padded chain-table header.
+    ("padded table cells",
+     "page line 51: page '| Fam  |",
+     pad_table),
 ]
 
 
@@ -102,6 +126,21 @@ def test_clean_page(load, text):
         (120, 3, 61, 12, 0)
     assert (res["sum_rows"], res["chain_rows"], res["heads"], res["bullets"],
             res["lists"], res["files"]) == (27, 5, 27, 54, 4, 2)
+
+
+def test_padded_table_is_read_by_the_tolerant_pattern(load, text):
+    r"""The discriminating assertion for the padding fault: the padded page must yield the same row
+    counts as the clean page. A row pattern that requires exactly one space after each pipe reads 0
+    summary rows and 0 chain rows from the padded text, so the table pass reports nothing about the
+    table and the page reads clean apart from the population guard; the tolerant `\s*` pattern reads
+    the rows. Measured 2026-10-13: 0 / 0 against the pre-fix pattern, 27 / 5 against the fixed one."""
+    v = load("verify_t0_chains")
+    clean = v.check(text)
+    res = v.check(pad_table(text))
+    assert res["sum_rows"] == clean["sum_rows"] == 27, \
+        f"{res['sum_rows']} summary rows read from the padded table"
+    assert res["chain_rows"] == clean["chain_rows"] == 5, \
+        f"{res['chain_rows']} chain rows read from the padded table"
 
 
 @pytest.mark.parametrize("label,needle,mut", MUTANTS)

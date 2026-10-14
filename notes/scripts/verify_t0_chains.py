@@ -25,9 +25,12 @@ Checks, in order:
      count phrase covers cannot drift from the writer's template. Check 4 proves the numbers are
      measured; it proves nothing about the sentences around them.
 
-The self-tests are in notes/scripts/tests/test_t0_chains.py: that file injects the thirteen page
-faults — one per check family plus a prose count no count phrase reads (visible only to check 9) —
-and asserts each fires the pass that owns it. `main()` reads no argv, so `--mutant` is inert here.
+The self-tests are in notes/scripts/tests/test_t0_chains.py: that file injects the fourteen page
+faults — one per check family, plus a prose count no count phrase reads (visible only to check 9),
+plus a padded table — and asserts each fires the pass that owns it. The row patterns tolerate
+whitespace around each cell (`\s*`), so a padded table is read; a single-space pattern reads 0 rows
+from it and the population guard fires, which is what the padding fault and its row-count assertion
+test. `main()` reads no argv, so `--mutant` is inert here.
 """
 from __future__ import annotations
 
@@ -51,9 +54,9 @@ HEAD = re.compile(r"^### (\d{3}) — ")
 BULLET = re.compile(r'^- \*\*(\d)\*\* \(`overview\.tex:(\d+)`\) — \*"(.+)"\*$')
 TARGET = re.compile(r"^  → `([^`]+)`$")
 CITE = re.compile(r"Citation layer: (\d+) `\.bib` file[s]?, (\d+) intra-family edges?, (\d+) mutual pair")
-SUM_ROW = re.compile(r"^\| (\d{3}) \| (.+?) \| (.+?) \| (\d+) \| (\d+) \| (\d+) \| `overview\.tex:(\d+)` \|$")
-CHAIN_ROW = re.compile(r"^\| (\d{3}) \| (T\d) \| " + r" \| ".join([r"(\d+)"] * 7)
-                       + r" \| (.+?) \|$")
+SUM_ROW = re.compile(r"^\|\s*(\d{3})\s*\|\s*(.+?)\s*\|\s*(.+?)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*`overview\.tex:(\d+)`\s*\|$")
+CHAIN_ROW = re.compile(r"^\|\s*(\d{3})\s*\|\s*(T\d)\s*\|\s*" + r"\s*\|\s*".join([r"(\d+)"] * 7)
+                       + r"\s*\|\s*(.+?)\s*\|$")
 LIST_LINE = "The {} are {}."
 WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty"]
 DISC = {

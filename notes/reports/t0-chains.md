@@ -14,10 +14,13 @@ remain. The bead's "no coverage signal" framing holds for **24** of the 27 and f
 Regenerate with `python3 notes/scripts/extract_t0_chains.py` — report-only, it writes nothing and runs
 nothing; `lake`, `lean`, `lake exe cache get`, and `comparator` are never invoked here, so nothing on
 this page means "a proof was checked". Run it twice and diff: the report must be identical. Check this
-page with `python3 notes/scripts/verify_t0_chains.py --mutant` before quoting any of its counts — it
+page with `python3 notes/scripts/verify_t0_chains.py` before quoting any of its counts — it
 re-derives every number from the ledger, `overview.tex`, `notes/tables/subfindings.tsv` and the `.bib` files
-on disk, resolves every `file:line` anchor, matches every fenced block and quotation, and flags thirteen
-injected mutations. It writes nothing.
+on disk, resolves every `file:line` anchor, matches every fenced block and quotation, and re-measures
+every count. It writes nothing. The fourteen injected mutations live in
+`notes/scripts/tests/test_t0_chains.py`, run with
+`python3 notes/scripts/run_tests.py notes/scripts/tests/test_t0_chains.py -q`; the last pads the table
+cells, which the tolerant row pattern reads and a single-space pattern does not.
 
 ## The chains the release records
 
