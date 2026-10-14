@@ -602,3 +602,48 @@ untouched — `test_fleet_design.py` **19**, `test_index_design.py` **15**,
 `test_findings.py` **4**. The **184** clean-test corpus literals are untouched
 — phase 2 has not started, and the pilot's own clean pins
 (**120, 3, 61, 12, 0** and **27, 5, 27, 54, 4, 2**) are still literals.
+
+## Phase 1 takes two more files, and the census is promoted
+
+`test_findings.py` and `test_conditional.py` now derive their needles. In
+findings, the ledger-count needle is the tier phrase `needles(measured())`
+builds and the aged-line needle is the targeted row's real file length minus
+one; the mutation is derived too, so `shift_tier` moves the counts the measured
+phrase carries. In conditional, every needle asks the checker's own
+`nearest_anchor` rule which anchor the pass attributes the mutated block, quote
+or citation to. Recorded numeric needles go **4 → 0** in each file. Specificity
+re-measured: **0** cross-fires, **0** needles firing on the clean page, and a
+two-line layout shift breaks **0** needles in both files.
+
+`measure_needles.py` is promoted to a gated report-only row, because phase 1
+spans 11 files and the census is re-run at each step. Its baseline: **213**
+faults, **160** recorded needles (**92** numeric, **68** structural), **53**
+derived, **309** clean pins. The derived/recorded split is the honest progress
+metric — the digit count inside a needle expression includes the strings a
+derivation uses to locate its mutation, so counting digits overstates what a
+needle records.
+
+The sweep moves: scripts **67 → 68**, report-only **30 → 31**, write-nothing
+**52 → 53**, non-importers **7 → 8** (the census parses test files with `ast`
+and reads no corpus), gate rows **78 → 79**, the naming sentence to **34** of
+**68**, and the gap list gains the census. The fleet pins retarget: scripts
+**66 → 67**, gate rows **78 → 79**; the atomicity and writer censuses are
+unaffected, because the new script imports no catlib and carries no write call.
+
+**The trap is the generated page.** `notes/README.md` is rendered from a
+template built at HEAD, so running `render_reports.py` before the commit
+reverted the command-block edit and the commit landed 5 of the 6 staged files.
+The re-applied edit had to be committed, then the template rebuilt from HEAD,
+then the page re-rendered.
+
+Gate **79** rows, **0** failures; head diff empty; promote-and-verify assertion
+green; lint trio **0 / 0 / 0**. Pushed to `origin` at `a851febcf..fcb39763a`.
+
+Not checked: **10** files still carry recorded numeric needles —
+`test_fleet_design.py` **20**, `test_index_design.py` **15**,
+`test_faithfulness.py` **15**, `test_verification_dirs.py` **14**,
+`test_counterexample_crosscheck.py` **14**, `test_sources.py` **12**,
+`test_named_results.py` **10**, `test_dependency_drift.py` **10**,
+`test_citations.py` **9**, `test_subfinding_pairs.py` **9**,
+`test_proof_density.py` **8**. Phase 2 (invariants for the **309** clean pins)
+and phase 3 (synthetic rule tests) have not started.
