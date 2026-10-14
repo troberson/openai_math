@@ -76,6 +76,19 @@ def summary_rows(c):
     return out
 
 
+def pad_cells(t):
+    """Pad every table cell with two spaces. The row regexes allow whitespace, so the passes must read
+    the same rows; a regex that required exact spacing would drop rows, and the row-count line is what
+    would show it."""
+    out = []
+    for ln in t.split("\n"):
+        if ln.startswith("|") and ln.endswith("|"):
+            cells = ln[1:-1].split("|")
+            ln = "|" + "|".join("  " + c.strip() + "  " for c in cells) + "|"
+        out.append(ln)
+    return "\n".join(out)
+
+
 def summary_needle(c, _mod, v, fam):
     """The summary-table problem, keyed to the family the mutation touched. The pass reports the first
     mismatch, which is the same string for any two faults in this table, so keying to the row the
@@ -254,3 +267,20 @@ def test_injected_faults(mod, text, label, needle, mut):
     found, _, _, _, _, v = mod.check(cand)
     want = needle(cand, mod, v) if callable(needle) else needle
     assert any(want in x for x in found), f"{label}: NOT caught by {want!r} ({found[:2]})"
+
+
+def test_padded_table_cells_are_still_read(mod, text):
+    """Padding every table cell must not change what the passes read. The row regexes allow whitespace,
+    so a padded page must report no table problem and the same row counts. A regex that required exact
+    spacing would drop rows, and the row-count line is what would show it — that is the discriminator,
+    not the render diff, which fires for the padding either way."""
+    cand = pad_cells(text)
+    assert cand != text, "padding changed nothing"
+    found, _, _, _, _, v = mod.check(cand)
+    table = [p for p in found if "table" in p]
+    assert not table, f"padded rows are not read: {table[:2]}"
+    assert len(summary_rows(cand)) == len(v["pop"]), \
+        f"padded summary table reads {len(summary_rows(cand))} rows, population {len(v['pop'])}"
+    t2 = [m.group(1) for ln in cand.split("\n") if (m := mod.T2ROW.match(ln))]
+    assert t2 == [f for f in v["pop"] if v["per"][f]["tier"] == "T2"], \
+        f"padded T2 table reads {t2}"
