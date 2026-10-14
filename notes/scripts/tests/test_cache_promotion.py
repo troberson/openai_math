@@ -105,3 +105,36 @@ def test_injected_cache_faults(mod, reg, label, rel, needle, mut):
     finally:
         path.write_bytes((mod.ROOT / rel).read_bytes())
     assert path.read_bytes() == (mod.ROOT / rel).read_bytes(), f"{label}: restore did not land"
+
+
+def pad_cells(t):
+    """Pad every table cell with two spaces."""
+    out = []
+    for ln in t.split("\n"):
+        if ln.startswith("|") and ln.endswith("|"):
+            cells = ln[1:-1].split("|")
+            ln = "|" + "|".join("  " + c.strip() + "  " for c in cells) + "|"
+        out.append(ln)
+    return "\n".join(out)
+
+
+def test_padded_table_cells_are_still_read(mod):
+    r"""The writers-table reader (`:126`) splits each row and strips every cell, so padding must read
+    the same 15 rows. The byte-exact baseline is the row shape with exactly one space around each cell
+    (`^\\| \`([^`]+\\.py)\` \\| \`([^`]+)\` \\|`): it reads 42 table rows on the clean page and 0 on the
+    padded page. The reader takes no text argument, so the padded text is fed by swapping the module's
+    README path for a shim — no file is written."""
+    text = mod.README.read_text(encoding="utf-8")
+    cand = pad_cells(text)
+    assert cand != text, "padding changed nothing"
+    clean = mod.writers_table()
+    real = mod.README
+
+    class Shim:
+        def read_text(self, *args, **kwargs):
+            return cand
+
+    mod.README = Shim()
+    padded = mod.writers_table()
+    mod.README = real
+    assert padded == clean, f"padded writers table reads {len(padded)} rows, clean page {len(clean)}"
