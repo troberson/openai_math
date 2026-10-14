@@ -20,6 +20,17 @@ quote, an entry-section anchor, the `rows.txt` size, a table row's family, the r
 the entry-section ledger sum, a deleted table row, and a script line count inside an entry-point cell
 that no count phrase reads — the last is visible only to the render diff.
 
+**The needles that name a measured figure are derived at run time, not recorded.** The count, ledger
+and entry-point needles are rebuilt from the checker's own `count_phrases()`, `ledger_phrases()` and
+`entry_phrases()` applied to the measured population; the two table needles read the mutated page's
+own rows against the recomputation; the block needle is keyed to the byte the mutation touched, so it
+reports the block the fault sits in — the two block faults share a block, and a needle that scans
+every block and reports the first mismatch is the same function for both; the quote needles re-run the
+checker's anchor-selection rule on the mutated page, so the anchor a quote is pinned to comes from the
+page, not from a recorded string; and the render needle reads the mutated page's line number plus the
+clip the render diff prints. The needles that stay literal are the mutation's own inputs — the renamed
+anchor file and the abbreviated anchor.
+
 Every fault is built from a real anchor, a real block line, a real quotation, a real count phrase, a
 real ledger value, a real table row and a real entry cell in the page as committed. Each test asserts
 the injected text differs from the page it started from, and each needle is the problem string the
@@ -56,60 +67,184 @@ POS = "preprints/Positively-curved-Einstein-four-manifolds-September-23-2026"
 ZERO = "preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026"
 HEIS = "preprints/A-boundary-field-gap-for-the-spin-one-Heisenberg-chain-September-24-2026"
 
+
+def row_of(c, sub):
+    """The 1-based page line carrying `sub`; a sub on two lines makes the needle ambiguous."""
+    lines = c.split("\n")
+    hits = [i + 1 for i, line in enumerate(lines) if sub in line]
+    assert len(hits) == 1, f"{sub!r} appears on {len(hits)} lines of the mutated page"
+    return hits[0]
+
+
+def _clip(line):
+    return repr(line if len(line) <= 80 else line[:80] + "…")
+
+
+def render_needle(c, sub):
+    """The render-diff sample line for the mutated line: the page's 1-based line number and the clip
+    the diff prints for it, both read from the mutated page."""
+    n = row_of(c, sub)
+    return f"page line {n}: page {_clip(c.split(chr(10))[n - 1])}"
+
+
+def phrase_needle(kind, label, phrases):
+    """A count needle: the phrase the pass demands for `label`, rebuilt from the measured population."""
+    def f(_c, mod, ctx):
+        want = next(p for p, lab in phrases(mod, ctx) if lab == label)
+        return f"{kind} ({label}): page does not contain {want!r}"
+    return f
+
+
+def entry_join_needle(_c, _mod, ctx):
+    """The entry-section ledger join, rebuilt from the checker's own ledger claims."""
+    lv = ctx["lv"]
+    want = f"sums to {lv['dirs']} dirs over {lv['fams']} families"
+    return f"entry-point count mismatch (entry-section ledger join): page does not contain {want!r}"
+
+
+def table_rows(c, mod):
+    """The mutated page's entry-point table families, read the way the pass reads them."""
+    return re.findall(r"^\| (\d{3}) \|", mod.section_bodies(c)[0][1], re.MULTILINE)
+
+
+def family_needle(c, mod, ctx):
+    """The table family-order problem: the mutated page's rows against the recomputed slug order. The
+    pass reports the 1-based row index, so the needle reports the same index."""
+    rows = table_rows(c, mod)
+    want = ctx["e"]["table"]
+    bad = [f"{i + 1}: {rows[i]} != {want[i]}" for i in range(min(len(rows), len(want))) if rows[i] != want[i]]
+    return f"entry-point table family order: {'; '.join(bad)}"
+
+
+def deleted_row_needle(c, mod, ctx):
+    """The table-omission problem: the mutated page's row count against the bundle count."""
+    return f"entry-point table has {len(table_rows(c, mod))} rows, the bundle count is {ctx['e']['dirs']}"
+
+
+def block_needle(c, mod, sub):
+    """The fenced-block problem, keyed to the byte the mutation touched. The two block faults sit in
+    the same block, so a needle that scans every block and reports the first mismatch is the same
+    function for both and cross-fires. Keying on the mutated byte — the shifted anchor, or the altered
+    block line — selects the block the pass reports, and the anchor and the first mismatching line are
+    read from that block."""
+    for _, body in mod.section_bodies(c):
+        if sub not in body:
+            continue
+        lines = body.split("\n")
+        for i, blk in mod.anchors.fenced_blocks(lines, dedent=True):
+            anchor = mod.anchors.nearest_anchor(lines, i, mod.ANCHOR, window=9)
+            if anchor is None:
+                continue
+            rel, at = anchor[0], int(anchor[1])
+            if sub not in f"{rel}:{at}" and not any(sub in ln for ln in blk):
+                continue
+            src = (mod.ROOT / rel).read_text(encoding="utf-8", errors="replace").split("\n")
+            for n, want in enumerate(blk):
+                got = src[at - 1 + n] if at - 1 + n < len(src) else "<past end of file>"
+                if got != want:
+                    return f"block line {n} != {rel}:{at + n}"
+    raise AssertionError(f"no block carries {sub!r} in the mutated page")
+
+
+def quote_needle(c, mod, sub):
+    """The quote problem for a mutated quote: the anchor the pass pins it to, re-derived from the
+    mutated page by the checker's own rule — the anchor in the quote's line, else the first anchor in
+    the four lines below it."""
+    lines = c.split("\n")
+    idx = row_of(c, sub) - 1
+    row = lines[idx]
+    span = row.find(sub)
+    found = mod.ANCHOR.findall(row[span:])[:1] or mod.ANCHOR.findall(row[:span])[-1:]
+    if not found:
+        found = next(mod.ANCHOR.findall(ln) for ln in lines[idx + 1:idx + 5])
+    assert found, f"no anchor on or below the line carrying {sub!r}"
+    return f"quote not found in {found[0][0]}"
+
+
+def row_quote_needle(c, mod, sub):
+    """The row-quote problem for a shifted anchor: the anchor the mutated table row carries."""
+    row = c.split("\n")[row_of(c, sub) - 1]
+    found = mod.ANCHOR.findall(row)
+    assert found, f"no anchor on the row carrying {sub!r}"
+    return f"row quote anchored at {found[0][0]}:{found[0][1]}"
+
+
+COUNT = phrase_needle("count mismatch", "passed-record count", lambda mod, ctx: mod.count_phrases(ctx["v"]))
+NEGATIVE = phrase_needle("count mismatch", "portability check counts",
+                         lambda mod, ctx: mod.count_phrases(ctx["v"]))
+COVERAGE = phrase_needle("count mismatch", "coverage-file artifact presence",
+                         lambda mod, ctx: mod.count_phrases(ctx["v"]))
+CLASSES = phrase_needle("entry-point count mismatch", "entry-point class counts",
+                        lambda mod, ctx: mod.entry_phrases(ctx["e"]))
+UNNAMED = phrase_needle("entry-point count mismatch", "unnamed bundle count",
+                        lambda mod, ctx: mod.entry_phrases(ctx["e"]))
+ROWS = phrase_needle("entry-point count mismatch", "rows.txt size and identity",
+                     lambda mod, ctx: mod.entry_phrases(ctx["e"]))
+RULE4 = phrase_needle("entry-point count mismatch", "rule 4 firing count",
+                      lambda mod, ctx: mod.entry_phrases(ctx["e"]))
+LEDGER = phrase_needle("ledger claim mismatch", "family 348 verification value",
+                       lambda mod, ctx: mod.ledger_phrases(ctx["lv"]))
+
 # Faults in the page's own text, each keyed to the problem string the pass that owns it prints.
 MUTANTS = [
-    ("anchor line shifted", f"block line 0 != {POS}/verification/verify.py:495",
+    ("anchor line shifted",
+     lambda c, mod, ctx: block_needle(c, mod, f"{POS}/verification/verify.py:495"),
      lambda t: t.replace(f"`{POS}/verification/verify.py:496`",
                          f"`{POS}/verification/verify.py:495`", 1)),
     ("anchor file renamed", "06-certificates.tex does not exist",
      lambda t: t.replace("September-23-2026/build/sections/07-certificates.tex:14",
                          "September-23-2026/build/sections/06-certificates.tex:14", 1)),
-    ("block line altered", f"block line 1 != {POS}/verification/verify.py:497",
+    ("block line altered",
+     lambda c, mod, ctx: block_needle(c, mod, '"Recomputed results differ from bundled results.json'),
      lambda t: t.replace('"Recomputed exact results differ from bundled results.json")',
                          '"Recomputed results differ from bundled results.json")', 1)),
-    ("prose quote altered", f"quote not found in {ZERO}/verification/check_scalar_certificates.py",
+    ("prose quote altered",
+     lambda c, mod, ctx: quote_needle(c, mod, "calculus, Jacobi comparison, and Sobolev estimates"),
      lambda t: t.replace("calculus, Jacobi comparison, and Sobolev arguments",
                          "calculus, Jacobi comparison, and Sobolev estimates", 1)),
-    ("count altered", "count mismatch (passed-record count)",
+    ("count altered", COUNT,
      lambda t: t.replace("**151** such occurrences", "**150** such occurrences", 1)),
-    ("negative-test count altered", "count mismatch (portability check counts)",
+    ("negative-test count altered", NEGATIVE,
      lambda t: t.replace("ships **11** checks, **8** of them negative",
                          "ships **11** checks, **7** of them negative", 1)),
-    ("ledger value altered", "ledger claim mismatch (family 348 verification value)",
+    ("ledger value altered", LEDGER,
      lambda t: t.replace("`verification` value of 2 for family 348",
                          "`verification` value of 1 for family 348", 1)),
     ("abbreviated anchor", "anchor file .../verification/verify.py does not exist",
      lambda t: t.replace(f"`{POS}/verification/verify.py:477`", "`.../verification/verify.py:477`", 1)),
-    ("coverage artifact presence overstated", "count mismatch (coverage-file artifact presence)",
+    ("coverage artifact presence overstated", COVERAGE,
      lambda t: t.replace("all four are present in both directories",
                          "all five are present in both directories", 1)),
-    ("entry class count altered", "entry-point count mismatch (entry-point class counts)",
+    ("entry class count altered", CLASSES,
      lambda t: t.replace("**12** top-level `README.md`", "**13** top-level `README.md`", 1)),
-    ("unnamed bundle count altered", "entry-point count mismatch (unnamed bundle count)",
+    ("unnamed bundle count altered", UNNAMED,
      lambda t: t.replace("**2** bundles ship a `verification/` tree",
                          "**3** bundles ship a `verification/` tree", 1)),
-    ("entry-section quote altered", f"quote not found in {HEIS}/verification/README.md",
+    ("entry-section quote altered",
+     lambda c, mod, ctx: quote_needle(c, mod, "not the analytic argument"),
      lambda t: t.replace("*\"They verify finite scalar, thermal, and trial calculations, "
                          "not the analytic proof.\"*",
                          "*\"They verify finite scalar, thermal, and trial calculations, "
                          "not the analytic argument.\"*", 1)),
-    ("entry-section anchor shifted", f"row quote anchored at {HEIS}/verification/README.md:53",
+    ("entry-section anchor shifted",
+     lambda c, mod, ctx: row_quote_needle(c, mod, "chain-September-24-2026/verification/README.md:53"),
      lambda t: t.replace("chain-September-24-2026/verification/README.md:54`",
                          "chain-September-24-2026/verification/README.md:53`", 1)),
-    ("rows.txt size altered", "entry-point count mismatch (rows.txt size and identity)",
+    ("rows.txt size altered", ROWS,
      lambda t: t.replace("20 lines and 1436 bytes", "20 lines and 1437 bytes", 1)),
-    ("table row family altered", "entry-point table family order: 18: 372 != 371",
+    ("table row family altered", family_needle,
      lambda t: t.replace("| 371 | `Stable-Self-Similar", "| 372 | `Stable-Self-Similar", 1)),
-    ("rule 4 firing count altered", "entry-point count mismatch (rule 4 firing count)",
+    ("rule 4 firing count altered", RULE4,
      lambda t: t.replace("Rule 4 fires for **0** bundles", "Rule 4 fires for **1** bundles", 1)),
-    ("entry-section ledger sum altered", "entry-point count mismatch (entry-section ledger join)",
+    ("entry-section ledger sum altered", entry_join_needle,
      lambda t: t.replace("sums to 30 dirs over 22 families", "sums to 31 dirs over 22 families", 1)),
-    ("table row deleted", "entry-point table has 29 rows, the bundle count is 30",
+    ("table row deleted", deleted_row_needle,
      lambda t: re.sub(r"^\| 371 \| .*$\n", "", t, count=1, flags=re.MULTILINE)),
     # Prose no count phrase reads: the script's line count inside the family-067 entry-point cell.
     # The table check reads only the family column, so only the render diff can see it, and the
     # render-diff line truncates the cell, so the needle is the page line the diff names.
-    ("entry cell line count altered", "page line 114",
+    ("entry cell line count altered",
+     lambda c, mod, ctx: render_needle(c, "a 168-line script"),
      lambda t: t.replace("a 167-line script", "a 168-line script", 1)),
 ]
 
@@ -155,4 +290,7 @@ def test_injected_faults(mod, text, label, needle, mut):
     cand = mut(text)
     assert cand != text, f"{label}: mutation changed nothing"
     found, _ = mod.check(cand, cand)
-    assert any(needle in x for x in found), f"{label}: NOT caught by {needle!r} ({found[:2]})"
+    ctx = {"mod": mod, "v": mod.population(), "lv": mod.ledger_claims(mod.ledger_rows()),
+           "e": mod.entry_measure()}
+    want = needle(cand, mod, ctx) if callable(needle) else needle
+    assert any(want in x for x in found), f"{label}: NOT caught by {want!r} ({found[:2]})"
