@@ -188,3 +188,28 @@ def test_injected_faults(load, text, label, needle, mut):
     M = v.measure(v.norm_title)
     want = needle(cand, v, M) if callable(needle) else needle
     assert any(want in p for p in probs), f"{label}: needle did not fire\n{probs}"
+
+
+def pad_cells(t):
+    """Pad every table cell with two spaces. The checker reads four page tables with whitespace-flexible
+    row patterns (`verify_citations.py:244` work, `:306` pair, `:349` cluster, `:378` release — 20, 6,
+    12 and 10 rows on the clean page), so padding must read the same rows. A byte-exact single-space
+    pattern drops every row and the pass prints five row-count problems ("work table has 0 rows,
+    expected 20" and the three table-count lines), so the pass's own problem list is the discriminator,
+    not the render diff. The test compares the list, not its length, so a padding fault that adds a
+    problem is caught."""
+    out = []
+    for ln in t.split("\n"):
+        if ln.startswith("|") and ln.endswith("|"):
+            cells = ln[1:-1].split("|")
+            ln = "|" + "|".join("  " + c.strip() + "  " for c in cells) + "|"
+        out.append(ln)
+    return "\n".join(out)
+
+
+def test_padded_table_cells_are_still_read(load, text):
+    v = load("verify_citations")
+    cand = pad_cells(text)
+    assert cand != text, "padding changed nothing"
+    assert v.check(cand) == v.check(text), \
+        f"padded page reports {v.check(cand)}, clean page {v.check(text)}"
