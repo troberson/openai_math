@@ -830,3 +830,38 @@ Not checked: **8** files still carry recorded needles with numeric values —
 `test_abstracts.py` **1** — **45** numeric in all. The **309** clean pins are still
 literals (phase 2), and there is one synthetic-rule test file (`test_quotes.py`)
 against 14 checkers (phase 3).
+
+## Phase 1 takes `test_verification_dirs.py`, and two block faults share a block
+
+Eight needles are rebuilt from the checker's own phrase builders: `count_phrases()`,
+`ledger_phrases()` and `entry_phrases()` applied to the measured population, the
+measured ledger claims and the measured entry recomputation. The two table needles
+read the mutated page's own rows against the recomputation — the family-order needle
+keyed to the row the mutation touched, the omission needle to the row count the
+pass compares. The quote needles re-run the checker's anchor-selection rule on the
+mutated page: the anchor in the quote's line, else the first anchor in the four
+lines below it. The prose quote's anchor is on the **line after** the quote, so a
+needle that read the anchor from the quote's own line had nothing to read.
+
+**The two block faults sit in the same fenced block.** A needle that scans every
+block and returns the first mismatch is the same function for both faults, so both
+needles fired for both faults. The fix is to key the needle to the byte the mutation
+touched — the shifted anchor, or the altered block line — which selects the block
+the pass is reporting. After that, 0 cross-fires.
+
+Measured: the layout shift breaks **0** of the 19 needles; specificity **0**
+cross-fires; **20** tests pass. Recorded needles in the file **14 → 2**, numeric
+**6 → 1**.
+
+The census moves: recorded needles **103 → 91**, numeric **45 → 40**, derived
+**110 → 122**, needle digits **188 → 181**, clean pins **309** unchanged.
+
+Gate **79** rows, **0** failures; head diff empty; promote-and-verify assertion
+green; lint trio **0 / 0 / 0**.
+
+Not checked: **7** files still carry recorded needles with numeric values —
+`test_counterexample_crosscheck.py` **6**, `test_named_results.py` **5**,
+`test_sources.py` **4**, `test_index_links.py` **3**, `test_fleet_design.py` **3**,
+`test_index_design.py` **1**, `test_abstracts.py` **1** — **40** numeric in all. The
+**309** clean pins are still literals (phase 2), and there is one synthetic-rule test
+file (`test_quotes.py`) against 14 checkers (phase 3).
