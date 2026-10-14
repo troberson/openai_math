@@ -756,3 +756,40 @@ Not checked: **10** files still carry recorded needles — `test_index_links.py`
 `test_abstracts.py` **1** — **58** of them numeric. The **309** clean pins are
 still literals (phase 2), and there is one synthetic-rule test file
 (`test_quotes.py`) against 14 checkers (phase 3).
+
+## Phase 1 takes `test_dependency_drift.py`, and `test_index_design.py` turns out to need nothing
+
+Eighth file. Nine of its ten needles carried a page count: the patch-line total,
+the phase count, the ordering-violation count, a table row, the zero-import name
+list, the omitted table row, the blockquote anchor, the code-span page line, and
+the render-diff line. All are rebuilt at run time — the counts from the checker's
+own `measure()` dict, the table needle from the mutated page's row against the TSV
+value, the name-list needle from the checker's own `name_list()` read of the
+mutated page, the omitted-row needle from the measured patched set minus the
+mutated table, the blockquote needle from the anchor the mutated blockquote
+carries, the code-span needle from the page line the mutated span sits on. One
+needle stays literal: the anchor line written out of range.
+
+`test_index_design.py` was next on the list and needs **nothing**: its 15 needles
+are pass labels (`count mismatch (population totals)`) plus mutation inputs. A
+label needle names the pass that owns the fault, not a corpus figure, so there is
+no recorded count to derive. The census counts it as 15 recorded strings, which is
+the census's blind spot — it counts needle *form*, and a label needle is a string.
+The honest reading is that the file is already phase-1 shaped.
+
+Measured for the drift file: the layout shift breaks **0** of the 10 needles;
+specificity **0** cross-fires. Recorded needles in the file **10 → 1**.
+
+The census moves: recorded needles **125 → 116**, numeric **58 → 51**, derived
+**88 → 97**, needle digits **211 → 201**, clean pins **309** unchanged.
+
+Gate **79** rows, **0** failures; head diff empty; promote-and-verify assertion
+green; lint trio **0 / 0 / 0**. Pushed to `origin` at `4916f6724..4d9f06eaa`.
+
+Not checked: **9** files still carry recorded needles with numeric values —
+`test_faithfulness.py` **10**, `test_verification_dirs.py` **6**,
+`test_counterexample_crosscheck.py` **6**, `test_named_results.py` **5**,
+`test_sources.py` **4**, `test_index_links.py` **3**, `test_fleet_design.py` **3**,
+`test_index_design.py` **1**, `test_abstracts.py` **1** — **51** numeric in all.
+The **309** clean pins are still literals (phase 2), and there is one synthetic-rule
+test file (`test_quotes.py`) against 14 checkers (phase 3).
