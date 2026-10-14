@@ -1475,6 +1475,23 @@ closed beads' bodies and close reasons name it because it was the command at the
 rewriting a closed bead's record is not a sweep, so they are left as written. The **open** bead
 `math-ckd.4` is swept: its acceptance criteria now name the test row, and the bead is claimed.
 
-Not checked: the pages the bead still has to write (the group is 132 families; 29 pages exist across
-all tiers, 0 in differential geometry); the closed beads' historical `--mutant` wording, left
+Not checked: the pages the bead still has to write (the group is 132 families; 30 pages exist across
+all tiers, 1 in differential geometry); the closed beads' historical `--mutant` wording, left
 deliberately.
+
+- **The seeder's L1 is a tree, so a new page is probe drift the old record cannot name.** Chosen
+  2026-10-14 on `math-ckd.4`: the family 342 page landed, `catlib/promote.py` names
+  `notes/summaries/` as a tree in `seed_quotes.py`'s L1, the checker expands the tree to the pages on
+  disk, and the newest probe record predates the page, so the promotion check reported L1 drift. The
+  fix is a re-probe, not a narrowed L1: `measure_open_probe.py --record <name> notes/scripts/seed_quotes.py`
+  run **plain** (the probe's own `--check-only` suppresses the record write) lands the record that
+  names the page, and the checker's `PROBES` tuple gains it newest-first. Revisit when the next page
+  lands — the same drift recurs, and the record is a tracked file, so it is committed with the sweep.
+- **A shell preview is not a file read.** Measured the same day: the first draft of the 342 page quoted
+  a Donaldson entry as a 1990 *Journal of Differential Geometry* article, a coercivity theorem at
+  `01-introduction.tex:147`, a cone-characterization sentence at `08-cones.tex:22–24`, and a
+  `theorem main` wrapper in the comparator stub. All four were fabricated by a truncated shell preview;
+  the real file has an *Inspired by S. S. Chern* incollection, no coercivity statement, the
+  characterization inside the corollary's proof, and a stub that restates the theorem with its own
+  definitions and ends in `sorry`. The checker caught all six. Re-read with `read_file` before quoting;
+  the checker's `NOT VERBATIM` line is the authority, not a preview.
