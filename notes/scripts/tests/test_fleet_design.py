@@ -253,3 +253,29 @@ def test_injected_faults(mod, text, label, needle, mut):
     p = mod.population()
     want = needle(cand, mod, p) if callable(needle) else needle
     assert any(want in x for x in found), f"{label}: NOT caught by {want!r} ({found[:2]})"
+
+
+def pad_cells(t):
+    """Pad every table cell with two spaces. The purity row pattern (`verify_fleet_design.py:362`)
+    allows whitespace around the script cell, so padding must read the same 8 rows. The page is
+    report-fed, so padding always breaks the render diff; `check()` appends the sync problems last, so
+    the criterion is the non-sync problem list, and the sync count must rise."""
+    out = []
+    for ln in t.split("\n"):
+        if ln.startswith("|") and ln.endswith("|"):
+            cells = ln[1:-1].split("|")
+            ln = "|" + "|".join("  " + c.strip() + "  " for c in cells) + "|"
+        out.append(ln)
+    return "\n".join(out)
+
+
+def test_padded_table_cells_are_still_read(mod, text):
+    cand = pad_cells(text)
+    assert cand != text, "padding changed nothing"
+    clean_problems, _a, _p, clean_sync = mod.check(text)
+    pad_problems, _a, _p, pad_sync = mod.check(cand)
+    assert pad_problems[:len(pad_problems) - pad_sync] == \
+        clean_problems[:len(clean_problems) - clean_sync], \
+        f"padded page reports non-sync problems {pad_problems[:len(pad_problems) - pad_sync]}, " \
+        f"clean page {clean_problems[:len(clean_problems) - clean_sync]}"
+    assert pad_sync > clean_sync, "padding did not change the bytes the render diff compares"
