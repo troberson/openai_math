@@ -647,3 +647,35 @@ Not checked: **10** files still carry recorded numeric needles —
 `test_citations.py` **9**, `test_subfinding_pairs.py` **9**,
 `test_proof_density.py` **8**. Phase 2 (invariants for the **309** clean pins)
 and phase 3 (synthetic rule tests) have not started.
+
+## Phase 1 takes `test_proof_density.py` and `test_subfinding_pairs.py`
+
+`test_proof_density.py` derives its row-count, proofs-sum, thms-sum and tier
+needles from the committed TSVs and the mutated rows; recorded numeric needles
+go **6 → 3**, the 3 that stay being structural messages whose count is the
+fault's own shape. `test_subfinding_pairs.py` derives its block-header line from
+the mutated page and its Summary-table value from the checker's own `measured`
+dict; recorded numeric needles go **7 → 4**.
+
+The census moves: recorded needles **160 → 149**, numeric **92 → 81**, derived
+**53 → 64**, needle digits **309 → 259**, clean pins **309** unchanged. The
+census is the progress metric, and it is the reason the script was promoted.
+
+Two derivation traps, both caught by the uniqueness check rather than by a
+silent pass. The subfinding-pairs pass reports the **clause line**, not the
+block header, so the needle keys on the clause line. And the borrowed id `010:3`
+already exists in family 010's block, so the locating sub has to carry the
+clause's closing text — a sub appearing on two lines makes the derivation
+assert, which is the loud failure the check is built for.
+
+Specificity re-measured in both files: **0** cross-fires, **0** needles firing
+on the clean population. Gate **79** rows, **0** failures; head diff empty;
+promote-and-verify assertion green; lint trio **0 / 0 / 0**. Pushed to `origin`
+at `c65f2c6e2..077534245`.
+
+Not checked: **9** files still carry recorded numeric needles —
+`test_fleet_design.py` **20**, `test_index_design.py` **15**,
+`test_faithfulness.py` **15**, `test_verification_dirs.py` **14**,
+`test_counterexample_crosscheck.py` **14**, `test_sources.py` **12**,
+`test_named_results.py` **10**, `test_dependency_drift.py` **10**,
+`test_citations.py` **9**. Phase 2 and phase 3 have not started.
