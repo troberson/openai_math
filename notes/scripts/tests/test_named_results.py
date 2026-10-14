@@ -15,6 +15,15 @@ past the file's end, an anchor path that does not exist, a table tier, the appli
 bare anchor shifted by one, a paraphrase dressed as a quotation, and a per-command count in the
 headline-begins row that no count phrase reads — the last is visible only to the render diff.
 
+**The needles that name a measured figure are derived at run time, not recorded.** The six quote
+needles re-run the checker's own window rule on the mutated page — the quote's row, the anchors after
+it inside the row, the anchor in its own line, the anchor earlier in its row, then the anchors in the
+three lines above — so the anchor a quote is pinned to is read from the page, not recorded. The table
+needle reads the mutated row against the ledger, keyed to the family the mutation touched. The bare
+needle reads the mutated page's bare anchor for that family against the population's overview line.
+The needles that stay literal are the mutation's own inputs — the anchor line written out of range,
+the anchor path renamed, and the count labels, which carry no measured figure.
+
 Every fault is built from a real count phrase, a real quotation, a real anchor, a real table row and a
 real family list in the page as committed. Each test asserts the injected text differs from the page it
 started from, and each needle is the problem string the pass that owns that form prints — measured
@@ -36,6 +45,8 @@ writes nothing and the tests write nothing. `population()` is under `functools.c
 The checker measures; this file injects. Run:
   python3 notes/scripts/run_tests.py notes/scripts/tests/test_named_results.py -q
 """
+import bisect
+
 import pytest
 
 pytestmark = pytest.mark.mutant
@@ -43,6 +54,72 @@ pytestmark = pytest.mark.mutant
 CENTER = "preprints/An-Endpoint-Gradient-Bound-for-the-Centered-Disk-Maximal-Operator-September-26-2026"
 ELASTIC = ("preprints/Global-Uniqueness-for-the-Smooth-Isotropic-Elasticity-Inverse-Problem"
            "-September-24-2026")
+
+
+def quote_needle(c, mod, sub):
+    """The quote problem, keyed to the mutated quote. The anchor a quote is pinned to is the one the
+    pass finds by its own window rule, so the rule is re-run on the mutated page: the anchors after the
+    quote inside its row, then the anchor in the quote's own line, then the anchor earlier in the row,
+    then the anchors in the three lines above. A recorded anchor string is a fact about the page before
+    the mutation, not about the page the pass is checking."""
+    lines = c.splitlines()
+    starts = mod.line_starts(lines)
+    ids = mod.row_ids(lines)
+    anchors = [(m.start(), m.group(1), int(m.group(2)),
+                ids[bisect.bisect_right(starts, m.start()) - 1]) for m in mod.ANCHOR.finditer(c)]
+    m = next(m for m in mod.QUOTE.finditer(c) if sub in m.group(1))
+    ql = bisect.bisect_right(starts, m.start()) - 1
+    row = ids[ql]
+    limit = len(lines)
+    for i in range(ql + 1, len(lines)):
+        if ids[i] != row or lines[i].lstrip().startswith(("- ", "| ")):
+            limit = i
+            break
+    wend = starts[limit] if limit < len(lines) else len(c)
+    after = [a for a in anchors if m.end() <= a[0] < wend]
+    own = [a for a in anchors if starts[ql] <= a[0] < m.start() and a[0] < starts[ql] + len(lines[ql])]
+    row_before = [a for a in anchors if a[3] == row and a[0] < m.start()]
+    if after:
+        rel, ln = min(after, key=lambda a: a[0])[1:3]
+    elif own:
+        rel, ln = max(own, key=lambda a: a[0])[1:3]
+    elif row_before:
+        rel, ln = max(row_before, key=lambda a: a[0])[1:3]
+    else:
+        rel = ln = None
+        for r in range(row - 1, row - 4, -1):
+            above = [a for a in anchors if a[3] == r]
+            if above:
+                rel, ln = max(above, key=lambda a: a[0])[1:3]
+                break
+    assert rel is not None, f"no anchor pins the quote carrying {sub!r}"
+    return f"QUOTE not in {rel}:{ln}"
+
+
+def table_needle(c, mod, p, fam):
+    """The table-tier problem, keyed to the family the mutation touched: the mutated row's tier against
+    the ledger. The pass reports every differing row, so keying to the edited row keeps the needle
+    specific to this fault."""
+    for m in mod.ROW.finditer(c):
+        f, tier, _rn, _rel, _ln, _title = m.groups()
+        if f == fam:
+            led = p["ledger"][fam]
+            if tier != led["tier"]:
+                return f"TABLE tier for {fam}: page {tier}, ledger {led['tier']}"
+    raise AssertionError(f"the mutated table carries no tier mismatch for {fam}")
+
+
+def bare_needle(c, mod, p, fam):
+    """The bare-anchor problem, keyed to the family the mutation touched: the mutated page's bare anchor
+    against the population's overview line for that family."""
+    for m in mod.BARE.finditer(c):
+        f, ln = m.group(1), int(m.group(2))
+        if f == fam:
+            want = p["famline"].get(fam)
+            if want != ln:
+                return f"BARE anchor :{ln} is not family {fam}'s overview line ({want})"
+    raise AssertionError(f"the mutated page carries no bare anchor for family {fam}")
+
 
 # Faults in the page's own text, each keyed to the problem string the pass that owns it prints.
 MUTANTS = [
@@ -54,26 +131,32 @@ MUTANTS = [
                          "| titled headline begins | 1,619 |")),
     ("family list: layer-1 drops 372", "COUNT missing (layer 1)",
      lambda t: t.replace("are not: 354 365 372.", "are not: 354 365.")),
-    ("inline quotation", f"QUOTE not in {CENTER}/build/main.tex:51: 'This gives a positive s",
+    ("inline quotation",
+     lambda c, mod, p: quote_needle(c, mod, "This gives a positive solution of the planar"),
      lambda t: t.replace("This gives a positive resolution of the planar",
                          "This gives a positive solution of the planar")),
-    ("overview quotation", "QUOTE not in overview.tex:453: 'Settles the Snaky achievement question'",
+    ("overview quotation",
+     lambda c, mod, p: quote_needle(c, mod, "Settles the Snaky achievement question"),
      lambda t: t.replace('*"Settles the Snaky achievement problem"*',
                          '*"Settles the Snaky achievement question"*')),
-    ("invented quotation", "QUOTE not in notes/reports/names.md:1",
+    ("invented quotation",
+     lambda c, mod, p: quote_needle(c, mod, "We prove the Riemann hypothesis for every finite abelian category"),
      lambda t: t + '\n*"We prove the Riemann hypothesis for every finite abelian category."*'
                    ' (`notes/reports/names.md:1`)\n'),
     ("anchor line out of range", f"ANCHOR line out of range: {CENTER}/build/main.tex:99999",
      lambda t: t.replace(f"{CENTER}/build/main.tex:51", f"{CENTER}/build/main.tex:99999")),
     ("anchor path absent", "ANCHOR path absent",
      lambda t: t.replace(f"{CENTER}/build/main.tex", f"{CENTER}/build/mainn.tex")),
-    ("table tier", "TABLE tier for 006: page T3, ledger T0",
+    ("table tier",
+     lambda c, mod, p: table_needle(c, mod, p, "006"),
      lambda t: t.replace("| 006 | T0 | 1 |", "| 006 | T3 | 1 |")),
     ("count: column", "COUNT missing (union figure)",
      lambda t: t.replace("so the column reads **248**", "so the column reads **247**")),
-    ("bare anchor", "BARE anchor :157 is not family 039's overview line (156)",
+    ("bare anchor",
+     lambda c, mod, p: bare_needle(c, mod, p, "039"),
      lambda t: t.replace("039 (`:156`)", "039 (`:157`)")),
-    ("paraphrase dressed as a quotation", f"QUOTE not in {ELASTIC}/build/main.tex:46",
+    ("paraphrase dressed as a quotation",
+     lambda c, mod, p: quote_needle(c, mod, "This resolves the elastic Calder"),
      lambda t: t.replace(
          r'*"This resolves the smooth three-dimensional isotropic elastic Calder\'on uniqueness '
          r'problem under these positivity assumptions."*',
@@ -122,4 +205,6 @@ def test_injected_faults(mod, text, label, needle, mut):
     cand = mut(text)
     assert cand != text, f"{label}: mutation changed nothing"
     found, _ = mod.check(cand)
-    assert any(needle in x for x in found), f"{label}: NOT caught by {needle!r} ({found[:2]})"
+    p = mod.population()
+    want = needle(cand, mod, p) if callable(needle) else needle
+    assert any(want in x for x in found), f"{label}: NOT caught by {want!r} ({found[:2]})"
