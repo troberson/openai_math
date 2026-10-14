@@ -1,4 +1,4 @@
-"""The self-tests for `notes/scripts/check_index_links.py`.
+r"""The self-tests for `notes/scripts/check_index_links.py`.
 
 The checker scans the rendered index and reports broken links; this file injects the breaks. 21
 injected hrefs — one per category the checker classifies, so a checker that only walks manuscript
@@ -13,6 +13,12 @@ pass. The clean test asserts the scan baseline as the resolution invariant, not 
 extracted link resolves to exactly one of directory or file, so the two counts sum to the link count
 and nothing is broken, over a page set and a link set that are both non-empty.
 
+Two cases feed the scanner a string, not the corpus, so they test the rule itself: a markdown target
+containing parentheses must be kept whole by the paren-balanced scan where `[^)]*` truncates it at the
+first `)`, and two adjacent `\href` targets must read as two paths under the shipped `catlib.overview.PAP`
+class, which excludes `{`, `}` and `\`, where a class excluding only whitespace and parentheses glues them
+into one string that is not a file. Neither case names a file on disk.
+
 The page's own prose is not mutated here: `verify_page_sync.py` owns the page check and mutates
 the page in memory, so nothing in this file writes an index page. Every injected href is built
 from a real page path, so a checker that only re-reads its own regexes cannot pass.
@@ -20,6 +26,10 @@ from a real page path, so a checker that only re-reads its own regexes cannot pa
 The checker measures; this file injects. Run:
   python3 notes/scripts/run_tests.py notes/scripts/tests/test_index_links.py -q
 """
+import re
+
+from catlib import overview
+
 import pytest
 
 pytestmark = pytest.mark.mutant
@@ -188,3 +198,28 @@ def test_clean_scan_baseline(mod):
         f"{m['dir_links']} dir + {m['file_links']} file against {len(m['links'])} links"
     assert m["collisions"] == [], f"basename collisions: {m['collisions'][:3]}"
     assert m["contents_broken"] == [], m["contents_broken"][:5]
+
+
+def test_scanner_is_paren_balanced_on_synthetic_text(mod):
+    """The rule fed a string, not a corpus. A markdown target containing parentheses must be kept whole;
+    `[^)]*` truncates at the first `)`, which is what invents a broken link. The synthetic line names no
+    file, so nothing here touches disk."""
+    line = "[paper](preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/paper.pdf)"
+    whole = "preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/paper.pdf"
+    assert mod.md_links(line) == [whole], f"the balanced scan returned {mod.md_links(line)}"
+    naive = re.findall(r"\]\(([^)]*)\)", line)
+    assert naive == ["preprints/Sharp-integral-fillings-in-CAT(0"], \
+        f"the naive scan read {naive}, so it does not truncate at the first paren"
+
+
+def test_strict_pdf_class_does_not_glue_adjacent_targets():
+    r"""The rule fed a string, not a corpus. Two adjacent `\href` targets: the shipped class excludes `{`,
+    `}` and `\`, so it finds two paths; a class that excludes only whitespace and parentheses glues the
+    two targets into one string that is not a file. The shipped pattern is `catlib.overview.PAP`, not a
+    copy of it."""
+    s = r"\href{preprints/A.pdf}{\href{preprints/B.pdf}{x}}"
+    strict = re.findall(overview.PAP, s)
+    loose = re.findall(r"preprints/[^\s()]*\.pdf", s)
+    assert strict == ["preprints/A.pdf", "preprints/B.pdf"], f"the shipped class read {strict}"
+    assert len(loose) == 1 and loose[0] not in strict, \
+        f"the loose class read {loose}, so it did not glue the two targets"
