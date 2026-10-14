@@ -48,6 +48,19 @@ def row_of(c, sub):
     return hits[0]
 
 
+def pad_cells(t):
+    """Pad every table cell with two spaces. The row regex allows whitespace, so the pass must read the
+    same rows; a regex that required exact spacing would drop rows, and the missing-row line is what
+    would show it."""
+    out = []
+    for ln in t.split("\n"):
+        if ln.startswith("|") and ln.endswith("|"):
+            cells = ln[1:-1].split("|")
+            ln = "|" + "|".join("  " + c.strip() + "  " for c in cells) + "|"
+        out.append(ln)
+    return "\n".join(out)
+
+
 # (label, needle, mutation). A needle is a function of the mutated page, the loaded checker and the
 # measured dict; a mutation is a function of the page.
 MUTANTS = [
@@ -136,3 +149,21 @@ def test_injected_faults(load, text, label, needle, mut):
     probs, measured = v.check(cand)
     want = needle(cand, v, measured) if callable(needle) else needle
     assert any(want in p for p in probs), f"{label}: needle did not fire\n{probs}"
+
+
+def test_padded_table_cells_are_still_read(load, text):
+    """Padding every Summary-table cell must not change what the pass reads. The row regex allows
+    whitespace, so a padded page must report no missing row and the same ten values. A regex that
+    required exact spacing would drop rows, and the missing-row line is what would show it — that is the
+    discriminator, not the render diff, which fires for the padding either way."""
+    v = load("verify_subfinding_pairs")
+    cand = pad_cells(text)
+    assert cand != text, "padding changed nothing"
+    probs, measured = v.check(cand)
+    missing = [p for p in probs if "Summary table" in p]
+    assert not missing, f"padded rows are not read: {missing[:2]}"
+    got = {m.group("label"): int(m.group("num")) for ln in cand.split("\n")
+           if (m := v.TABLE_ROW.match(ln.strip())) and m.group("label") in measured}
+    assert len(got) == 10, f"padded page reads {len(got)} Summary rows, the page carries 10"
+    assert all(got[k] == measured[k] for k in got), \
+        f"padded table values differ: {[k for k in got if got[k] != measured[k]]}"
