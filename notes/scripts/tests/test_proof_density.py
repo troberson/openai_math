@@ -23,8 +23,14 @@ proofs-sum, thms-sum and tier needles are built from the committed tables (`real
 mutated rows, so a corpus change moves the needle with the measurement. The tier needle is the T0 count
 the mutated rows and ledger join to, which is why it stays specific: the problem line prints the tier
 counts in set-iteration order, which is not stable across processes, so the needle names one count.
-The three needles that stay strings are structural messages whose count is the fault's own shape — one
-row dropped, one row duplicated, one negative value — not a measured figure.
+The `tex_bytes` and negative-count needles are rebuilt from the mutated rows, the way the gate computes
+them. The row-count and column-sum needles are keyed to the **delta the mutation introduces** —
+`R['rows'] - 1`, `R['proofs'] + 1` — not to the mutated table. A needle that reads the mutated table
+produces the pass's own line for **any** fault that perturbs that count, so the drop-row needle fired on
+the duplicate-row fault and the proofs-sum needle fired on the negative-proofs fault. Keying to the
+delta makes each needle the line the pass prints for its own fault and for no other. The family-set
+needle names the delta `1, 1`, which is only true when the renamed family has exactly one source row, so
+the mutation targets `one_row_index` — a layout-dependent needle needs a layout-independent target.
 
 The clean test asserts the gates are silent and pins the population they report: 719 sources rows over
 719 distinct dirs, 372 families on both sides, 20,341 proofs, 21,288 statements, tiers
@@ -59,29 +65,41 @@ def tier_of(mod, rows, led, key):
     return tiers.get(key, 0)
 
 
+def one_row_index(rows, led):
+    """The first row whose family has exactly one source row. Renaming a multi-row family leaves it in
+    the ledger, so the family-set delta is layout-dependent; renaming a single-row family always leaves
+    exactly one sources-only and one ledger-only family."""
+    paps = {l["fam"]: int(l["paps"]) for l in led}
+    return next(i for i, r in enumerate(rows) if paps.get(r["fam"]) == 1)
+
+
 # (label, needle, mutation). A needle is a function of the mutated rows, the mutated ledger, the
 # loaded checker and the committed population.
 MUTANTS = [
     ("drop a sources row",
-     lambda rows, led, mod, R: f"sources rows {len(rows)} != {R['rows']}",
+     lambda rows, led, mod, R: f"sources rows {R['rows'] - 1} != {R['rows']}",
      lambda r, l: r.pop(0)),
     ("proofs +1 on one row",
-     lambda rows, led, mod, R: f"proofs sum {sum(int(r['proofs']) for r in rows)} != {R['proofs']}",
+     lambda rows, led, mod, R: f"proofs sum {R['proofs'] + 1} != {R['proofs']}",
      lambda r, l: r[0].__setitem__("proofs", str(int(r[0]["proofs"]) + 1))),
     ("thms +1 on one row",
-     lambda rows, led, mod, R: f"thms sum {sum(int(r['thms']) for r in rows)} != {R['thms']}",
+     lambda rows, led, mod, R: f"thms sum {R['thms'] + 1} != {R['thms']}",
      lambda r, l: r[0].__setitem__("thms", str(int(r[0]["thms"]) + 1))),
-    ("rename a family", "family sets differ: sources-only 1, ledger-only 1",
-     lambda r, l: r[0].__setitem__("fam", "999")),
-    ("zero tex_bytes", "1 rows with tex_bytes <= 0",
+    ("rename a family",
+     lambda rows, led, mod, R: "family sets differ: sources-only 1, ledger-only 1",
+     lambda r, l: r[one_row_index(r, l)].__setitem__("fam", "999")),
+    ("zero tex_bytes",
+     lambda rows, led, mod, R: f"{sum(1 for r in rows if int(r['tex_bytes']) <= 0)} rows with tex_bytes <= 0",
      lambda r, l: r[0].__setitem__("tex_bytes", "0")),
     ("flip a tier label",
      lambda rows, led, mod, R: f"'T0': {tier_of(mod, rows, led, 'T0')}",
      lambda r, l: l[0].__setitem__("tier", "T2")),
     ("duplicate a dir row",
-     lambda rows, led, mod, R: f"sources rows {len(rows)} != {R['rows']}",
+     lambda rows, led, mod, R: f"sources rows {R['rows'] + 1} != {R['rows']}",
      lambda r, l: r.append(dict(r[0]))),
-    ("negative proofs", "1 rows with negative proofs/thms",
+    ("negative proofs",
+     lambda rows, led, mod, R: f"{sum(1 for r in rows if int(r['proofs']) < 0 or int(r['thms']) < 0)} "
+                                "rows with negative proofs/thms",
      lambda r, l: r[0].__setitem__("proofs", "-3")),
 ]
 
