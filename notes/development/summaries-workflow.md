@@ -1231,3 +1231,36 @@ recorded rather than asked:
 
 Not checked: the decision is open; the **309** clean pins are literals; the synthetic-rule tests are
 one file against **14** checkers.
+
+## Bead `math-4nn.3` replaces the ledger-join clean pins with invariants
+
+Chosen 2026-10-14. A literal pin records what the corpus measured when the test was written, so it
+stays silent when the ledger changes under it. The four files whose population is joined to the ledger
+now assert the join, not the number: `test_sources.py` (rows = listed, dirs = listed + superseded +
+notices, every main file under `build/`, fams = ledger family set, formalized = `paps_form` sum),
+`test_index_design.py` (families = family set, manuscripts = `paps` sum, formalized = `paps_form` sum,
+`chal_json` = `chal_lean`, `mr_configs` < `mr_entries`), `test_named_results.py` (`ndirs` = `paps` sum,
+prose sentences and windows = family count), `test_proof_density.py` (distinct dirs = rows, `paps` sum
+= rows, family sets equal, one row per family, tier counts sum to the family count, the
+`formalization.yaml` `sources:` set against each family's `paps_form`). Figures the join cannot
+produce stay literal — nodes, edges, bytes, pages, environment counts, the root distribution, the
+column sums, the `.tex` file count, the headline-begins split.
+
+**The acceptance criterion is the fault, not the relation.** Each file carries a test that flips a
+ledger row and shows the join is the only witness: a `paps_form` flip, a `paps` decrement, or a dropped
+family row moves no page byte, so every page pass stays silent and no literal pin moves. The formalized
+join is the one that sees it. `measure_proof_density.py` gained `yaml_dirs()` for that join — the set
+is read from the yaml, not recorded as a count.
+
+Two things the pass fixed on the way: the shared `ledger` fixture resolved to `notes/` (`parents[2]`)
+and now resolves to the repo root (`parents[3]`); and `S19` in `notes/reports/findings.md` declared 304
+lines for `measure_proof_density.py` when the file had 317, which `verify_findings.py` flagged.
+
+AGENTS.md is swept in the same commit: the clean-test pins it quotes for sources, index-design and
+named-results, the index-design all-TSV (2,252,773 → 2,316,386 B), index-tree (11,530,406 → 11,531,073 B)
+and disk-link (66,110 → 66,115) figures that had drifted, and the proof-density pin description. Gate:
+**79 rows, 0 failures**, empty head diff, cache promotion 0 problems, lint 0/0/0. Tests: sources 14,
+named-results 15, index-design 17, proof-density 11.
+
+Not checked: the three layout-sensitive clean pins (`dependency_drift`, `subfinding_pairs`,
+`t0_chains`) are still literals; the remaining clean pins are literals; beads `.4`–`.7` are unwritten.
