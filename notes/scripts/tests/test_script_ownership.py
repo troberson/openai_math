@@ -168,3 +168,26 @@ def test_record_store_write_retargeted(mod):
     assert want in mod.writer_targets(src), "the clean source does not carry the target"
     assert want not in mod.writer_targets(cand), \
         f"record-store write retargeted: NOT caught ({mod.writer_targets(cand)[:4]})"
+
+
+def pad_cells(t):
+    """Pad every table cell with two spaces. The census and writers readers split each row and strip
+    every cell, so padding must read the same rows; a byte-exact single-space row regex reads 9 of the
+    10 clean census rows and 0 padded ones, and the pass then reports a census row for every target
+    with `page says None`, so the problem list is the discriminator."""
+    out = []
+    for ln in t.split("\n"):
+        if ln.startswith("|") and ln.endswith("|"):
+            cells = ln[1:-1].split("|")
+            ln = "|" + "|".join("  " + c.strip() + "  " for c in cells) + "|"
+        out.append(ln)
+    return "\n".join(out)
+
+
+def test_padded_table_cells_are_still_read(mod, page):
+    cand = pad_cells(page)
+    assert cand != page, "padding changed nothing"
+    assert mod.census_rows(cand) == mod.census_rows(page), \
+        f"padded census reads {mod.census_rows(cand)}, clean page {mod.census_rows(page)}"
+    assert mod.check(cand) == mod.check(page), \
+        f"padded page reports {mod.check(cand)}, clean page {mod.check(page)}"
