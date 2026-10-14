@@ -1059,3 +1059,28 @@ Not checked: the padding mutant now covers **3** of the 14 checkers that read ta
 `verify_faithfulness.py`); the rest are unprobed. The **309** clean pins are still
 literals (phase 2), and there is one synthetic-rule test file (`test_quotes.py`)
 against 14 checkers (phase 3).
+
+## Phase 0 extends to `verify_subfinding_pairs.py`, and the padding test must scope to the table it reads
+
+The same shape: every `|`-delimited Summary-table cell gains two spaces, and the test
+asserts the pass reports no missing row and reads the same values.
+
+**The padding test must scope to the rows the pass reads.** My first version compared
+every `|`-delimited row on the page against the measured dict. The page carries **16**
+table-shaped rows and the pass measures **13** keys, of which the Summary table
+carries **10** — so the comparison failed on the clean page, not on the padding. The
+test now compares only the labels the Summary table carries.
+
+Proven both ways: against the tolerant regex the test passes with **0** Summary
+problems and reads all 10 rows; against a strict regex it fails with
+`Summary table has no row for: families read` and
+`Summary table has no row for: manuscripts in the population`.
+
+Measured: **11** tests pass; lint trio **0 / 0 / 0**; census unchanged. Gate **79**
+rows, **0** failures; head diff empty; promote-and-verify assertion green.
+
+Not checked: the padding mutant now covers **4** of the 14 checkers that read tables
+(`verify_t0_chains.py`, `verify_counterexample_crosscheck.py`,
+`verify_faithfulness.py`, `verify_subfinding_pairs.py`); the rest are unprobed. The
+**309** clean pins are still literals (phase 2), and there is one synthetic-rule test
+file (`test_quotes.py`) against 14 checkers (phase 3).
