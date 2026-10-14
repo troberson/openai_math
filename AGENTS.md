@@ -65,7 +65,7 @@ lives in this file and nowhere else.
 ## Dev environment tips
 
 - Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `atomic`, `promote`, `overview`, `ledger`, `preprints`,
-  `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries`, `templates`, `records`, `quotes` (18 modules). Import them (`from catlib import yaml as Y`);
+  `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries`, `templates`, `records`, `quotes`, `layout` (19 modules). Import them (`from catlib import yaml as Y`);
   do not re-implement a join in an extractor. **61** of the **68** scripts do — the rule is
   `^[ \t]*(from|import) catlib`, so a deferred import inside a function counts — including all **23**
   checkers; the eight non-importers are `dump_template_slots.py`, which reaches the slot dict
@@ -1078,7 +1078,8 @@ lives in this file and nowhere else.
   catch it. Each needle is measured specific: it fires for its own fault and for no other, and the
   render-diff line fires for every fault, so no needle is that line. The clean test pins the population
   the passes report: 32 anchors, 24 count and probe phrases, 0 sync problems, 2 atomicity matches over
-  65 scripts and 18 catlib modules, 12 sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 25
+  65 scripts and 19 catlib modules (the module count is the walk over `catlib/`, not a recorded 18),
+  12 sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 25
   TSVs at 2,207,042 bytes, 631M `preprints/`, 1,740M `lean/OAI/`, 12M `notes/index/`, 78 gate rows, 11
   writer rows, 1 env hit, 8 purity scripts, the sites at `atomic.py:42` / `atomic.py:84`,
   `render_reports.py:1184` and `build_catalog.py:128` /

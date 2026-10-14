@@ -1133,3 +1133,39 @@ checker and an independent basename set both measure.
 Not checked: the two formatable pages are not prettier-clean, so a format pass over
 them is still open; the padding mutant covers **4** of the 14 table-reading checkers
 and the other 10 are unprobed; the **309** clean pins are still literals.
+
+### 2026-10-14 — the needle-input rule and the layout probe make the recorded/literal split checkable
+
+`measure_needles.py` gained two columns. **Synthetic rule inputs**: `test_index_links.py`'s
+list is 21 invented hrefs the scanner must classify, not page mutations, so its needle slot
+is the test's own input by construction; the list is renamed `INPUTS` and the census counts
+it separately. **Not inputs**: for every recorded needle, the digits it carries are compared
+with the string constants its own mutation writes; a needle whose digits all appear there is
+an input, and one carrying a digit the mutation never writes is a measured figure phase 1
+missed. The rule found **one** real miss — `test_dependency_drift.py`'s out-of-range anchor
+needle carried `335`, the line count of `lean/lakefile.lean`, which no mutation writes; the
+needle now reads the file and derives the count. It also found two needles whose digits are
+**locators** (`layer 1`, `065/2`) — the pass prints them from the row it flags, not from the
+mutation — so the rule strips `layer[ -]N` and `NNN/N` before comparing. The census reports
+**not inputs 0**.
+
+The layout probe is a mode of the suite: `LAYOUT_SHIFT=1` makes `Path.read_text` return the
+page with two lines inserted after its first `## ` heading, so the fixture that hands a test
+its page and the checker's own page read shift together and the population the needle derives
+from them shifts with the page. For the four table fixtures the analogue is a row swap, which
+preserves every count. `test_cache_promotion.py` is excluded: its pass compares cached bytes
+with the bytes on the tracked path, so shifting a page makes every page differ and the pass
+reports the first mismatch, which is not a layout finding. Measured: **309 passed, 3 failed**,
+and all three failures are clean-page pins (`dependency_drift`, `subfinding_pairs`,
+`t0_chains`) — literals pinned to the page as committed. **0 needles break.** The same run
+found one inert mutant: `test_subfindings.py` picked the first manuscript row, whose path is
+not `paper.pdf`, so the path mutant replaced nothing; the fixture now picks by path.
+
+Fresh census: faults **192**, recorded **49** (numeric **16**, structural **33**), derived
+**143**, needle digits **160**, synthetic inputs **21**, clean pins **309**, not inputs **0**.
+The census's own row in the ownership manifest names the two new columns.
+
+Not checked: the three layout-sensitive clean pins are still literals — that is phase 2's
+target list, now measured; the **10** unprobed table-reading checkers still have no padding
+test; the needle-input rule compares digits, so a recorded needle with **no** digits is
+unjudged by it and is judged only by the layout probe.
