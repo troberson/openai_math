@@ -593,6 +593,12 @@ Measured 2026-10-14, the rule reached top-level `notes/*.md`, `notes/scripts/**`
 and the two negations that un-ignored `notes/reports/links.md` and
 `notes/reports/proof-density.md` are removed; the same check reports 2 files.
 
+The enumeration is measured, not asserted: **25** checker-parsed pages, **2** formatable pages under `notes/`.
+The 25 are the `PAGE` and `PAGES` constants of every `verify_*.py`, read from each checker by
+loading it — a source parse reads docstring prose as well, so the constants are the enumeration. The 2
+formatable pages are the two negations: `notes/reports/conjecture-standing.md` and
+`notes/development/summaries-workflow.md`. Pass G flags a checker-parsed page the rule does not cover.
+
 ## Naming coverage
 
 `notes/README.md`'s command block named **34** of the 68 scripts before this pass. Thirty-four are named
