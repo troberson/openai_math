@@ -718,3 +718,41 @@ Not checked: **8** files still carry recorded numeric needles —
 `test_named_results.py` **10**, `test_dependency_drift.py` **10**. The **309**
 clean pins are still literals (phase 2), and there is one synthetic-rule test
 file (`test_quotes.py`) against 14 checkers (phase 3).
+
+## Phase 1 takes `test_fleet_design.py`, and a fault must not disturb a needle it is not testing
+
+Seventh file. Seventeen of its twenty needles carried a page count: the atomicity
+count, the sync split, the purity heading count, the digest count, a probe figure,
+the TSV byte sum, the probe-record count, the writer-row count twice, the TSV file
+count, and the six site anchors. All are rebuilt at run time — the counts from the
+checker's own `population()` dict, the site needles from the paragraph the checker
+scans **in the mutated page** plus the measured site set, the purity needle from the
+mutated page's own table rows against the probe parse, and the render needle from
+the mutated page's line number plus the clip the render diff prints. Three needles
+stay literal: the anchor line written past the file's end, the injected notes-page
+anchor, and the dated observation's new value.
+
+The first probe run reported **1** cross-fire, and it is the general lesson: the two
+anchor-outside faults moved `render_reports.py:1180`, which is the measured env
+**site**, so the env-bullet needle fired on pages those faults were not testing. A
+fault must not disturb the byte a needle reads. The faults now move
+`render_reports.py:2043`, an anchor that is not a measured site, so the anchor pass
+is the only pass that fires.
+
+Measured: the layout shift breaks **0** of the 20 needles; specificity **0**
+cross-fires between faults. Recorded needles in the file **20 → 3**.
+
+The census moves: recorded needles **142 → 125**, numeric **74 → 58**, derived
+**71 → 88**, needle digits **231 → 211**, clean pins **309** unchanged.
+
+Gate **79** rows, **0** failures; head diff empty; promote-and-verify assertion
+green; lint trio **0 / 0 / 0**. Pushed to `origin` at `a3e9aa940..68a79b268`.
+
+Not checked: **10** files still carry recorded needles — `test_index_links.py`
+**21**, `test_faithfulness.py` **15**, `test_index_design.py` **15**,
+`test_verification_dirs.py` **14**, `test_counterexample_crosscheck.py` **14**,
+`test_sources.py` **12**, `test_dependency_drift.py` **10**,
+`test_named_results.py` **10**, `test_fleet_design.py` **3**,
+`test_abstracts.py` **1** — **58** of them numeric. The **309** clean pins are
+still literals (phase 2), and there is one synthetic-rule test file
+(`test_quotes.py`) against 14 checkers (phase 3).
