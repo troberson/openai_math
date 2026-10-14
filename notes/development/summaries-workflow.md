@@ -1368,3 +1368,56 @@ shipped rule, not assumed.
 Not checked: the range-rule cases for `test_named_results.py`, `test_counterexample_crosscheck.py`,
 `test_upstream_history.py`, `test_sources.py`, `test_faithfulness.py`; the read_file line-label offset
 case; bead `.7` (synthetic LaTeX/carrier rule tests).
+
+## 2026-10-14 — bead `math-4nn.7`: the byte-form rules are fed strings
+
+Seven rule classes, each with a case that passes against the shipped rule and fails against the
+narrowed variant, and no case reads the corpus. Measured, not assumed:
+
+- **Accent fold** (`measure_names.fold`): `K\"ahler` and `Kähler` fold to one key, so a name the
+  release spells two ways is one name page. A rule that strips only Unicode diacritics leaves the
+  escape in the string, so the two spellings stay two keys. `test_named_results.py`, which is the
+  checker that builds its quote pattern from `fold(quote)`.
+- **Accent guard** (`catlib.bib.ACCENT`'s `(?![a-zA-Z])`): an escape applied to a letter (`\'a`) is
+  **not** folded, so `norm_title` splits `Gy\'arf\'as's` into `gy arf as s`, while the checker's
+  no-guard variant folds it into `gyarfas s`. The guard is what makes the two normalizations disagree,
+  which is the row the page records as a sensitivity measure. `test_citations.py`.
+- **Apostrophe fold** (`catlib.text.fold_apostrophe`): a U+2019 title and an ASCII title are one key;
+  a rule that strips only diacritics keeps them distinct. `test_citations.py`.
+- **Verbatim is bytes**: `collapse_ws` leaves the accent escape in place, so a quote that de-LaTeXes
+  `Gy\'arf\'as's` fails against the bytes `overview.tex:405` ships, while the accent fold accepts it.
+  `test_counterexample_crosscheck.py` (the checker's `norm`) and `test_subfinding_pairs.py` (the raw
+  substring test on the `\resultentry` line).
+- **`\documentclass` at line start**: a macro that *mentions* the command is not a root, so the
+  line-start rule reads 0 from it and the substring rule reads 1 — the mechanism behind 715/3/1
+  against the substring 714/4/1. `test_sources.py`.
+- **`\newtheorem` declared rule**: `declared_envs` is the declared set **minus** `NON_STATEMENT`, so a
+  dir declaring `assumption` and `definition` declares `{"assumption"}` and counts 2 begins, the
+  six-name list counts 1, and a rule that skips the subtraction counts 3 — the shape of 21,288 against
+  21,203. `test_sources.py`.
+- **Carrier rule**: allows `noncomputable`, so `noncomputable def MainClaim : Prop := by` is found; a
+  `private|protected`-only rule misses it. `test_faithfulness.py` and `test_counterexample_crosscheck.py`.
+- **Statement rule**: matches the qualified name minus `OAI.` as well as the bare tail, so `theorem
+  ThorpNine.main :` is found for `OAI.ThorpNine.main`; the checker's own bare-tail rule
+  (`verify_counterexample_crosscheck.py:266`) reads 188 of 189 and misses this line. Both rules read
+  `theorem main :`. `test_faithfulness.py` and `test_counterexample_crosscheck.py`.
+- **Citation stripping**: `strip_markup`'s citation rule requires the brace to follow `\cite`
+  directly, so a bracketed note is not swallowed and its word survives the fold; a rule that allows the
+  optional `[...]` argument strips the whole citation. The fold also strips a theorem **number** after
+  the word (the deliberate rule that lets a page write "Theorem 1" for a source `\ref{thm:main}`), so
+  the word, not the number, is what the comparison sees. `test_summaries.py` — the rule is used by the
+  summaries quote pass, so the case lives with that checker, not in the bead's six-file list.
+
+**The statement rule moved to `catlib/yaml.py` as `stmt_pattern`** because it is the yaml
+declaration's source-side match rule and two checkers carried identical copies; a test cannot reach it
+while it is built inside a function that reads a Lean file. `verify_faithfulness.py`'s dead `STMT`
+constant is removed. Both checkers report identical bytes after the rewiring — measured, not assumed.
+
+Test counts after the bead: sources 17, named-results 18, index-design 17, proof-density 11,
+index-links 9, faithfulness 21, crosscheck 20, summaries 9, upstream-history 16, citations 13,
+verification-dirs 21, subfinding-pairs 12. Gate: **79 rows, 0 failures**, head diff empty, cache
+promotion 0 problems, lint 0/0/0.
+
+Not checked: the range-rule cases, still blocked on extracting range validation into `catlib` (bead
+`.6` open); the read_file line-label offset case; the citation-stripping case for the abstracts and
+findings checkers, which use the same fold; bead `.2`'s prettier decision, which is the user's.

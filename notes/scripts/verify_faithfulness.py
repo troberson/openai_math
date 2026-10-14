@@ -8,7 +8,9 @@ was checked". The release's review status is `unchecked`.
 The checker's recomputation is its own: it carries its own declaration, carrier, environment and
 literal rules, so a count the page asserts is proved against a second implementation, not against
 `measure_faithfulness.py`'s. The two rules the page names as widenings (a qualified declaration
-name, a `noncomputable` carrier) are in the checker too, so a mutant that removes one is caught.
+name, a `noncomputable` carrier) are applied here too, so a mutant that removes one is caught: the
+carrier rule is this file's `CARR`, and the qualified-name rule is `catlib.yaml.stmt_pattern`, which
+`extract_counterexample_crosscheck.py` calls as well, so the two checkers read one rule.
 
 1. Population. The entry and config counts, the resolved-declaration count, the carrier-typed and
    resolved-carrier counts, the carrier body sizes, the literal census, the four pairing classes,
