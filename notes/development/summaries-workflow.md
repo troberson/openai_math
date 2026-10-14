@@ -1340,3 +1340,31 @@ index-design 17, citations 11, verification-dirs 20.
 
 Not checked: beads `.6` and `.7` are unwritten; the environment counts stay literal for the reason
 above; the three layout-sensitive clean pins stay literal.
+
+## Bead `math-4nn.6` is partly done: the scanner cases landed, the range cases need a rule function
+
+Claimed 2026-10-14, **left open**. Two synthetic cases landed in
+`notes/scripts/tests/test_index_links.py`: the paren-balanced scan keeps a `CAT(0)` target whole where
+`[^)]*` truncates at the first `)`, and two adjacent `\href` targets read as two paths under the shipped
+`catlib.overview.PAP` class, which excludes braces and backslash, where a class excluding only whitespace
+and parentheses glues them into one string that is not a file. Both feed the rule a string; neither names
+a file on disk. The module docstring became raw — `\href` in a non-raw docstring is an invalid escape and
+`python3 -W error::SyntaxWarning` reports it.
+
+**The range cases are blocked on a design change, not on effort.** The bead's cases are blank line at the
+end of a range, reversed range, and range past end. The parsing is a shipped pattern
+(`catlib.anchors.anchor_pattern(..., ranges=True)`) and a synthetic string tests it. The **validation** —
+the three cases the bead names — lives inside each checker's `check()`, which resolves the anchor against
+a file read from disk. A synthetic page cannot be validated without a synthetic file on disk, so a case
+that does not read the corpus cannot reach the validation through the shipped code. Making it reachable
+means extracting the range validation into `catlib` as a function of `(anchor, file lines)`, which is a
+change to five checkers and their needles. That is a design decision, not a continuation, so it is
+recorded here and the bead stays open.
+
+The reversed-range check exists in one checker only: `verify_summaries.py:157` flags `a > b`. The other
+range passes accept a reversed range as long as both ends sit inside the file — measured against the
+shipped rule, not assumed.
+
+Not checked: the range-rule cases for `test_named_results.py`, `test_counterexample_crosscheck.py`,
+`test_upstream_history.py`, `test_sources.py`, `test_faithfulness.py`; the read_file line-label offset
+case; bead `.7` (synthetic LaTeX/carrier rule tests).
