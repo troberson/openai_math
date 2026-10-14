@@ -905,3 +905,35 @@ Not checked: **6** files still carry recorded needles with numeric values —
 — **29** numeric in all. The **309** clean pins are still literals (phase 2), and
 there is one synthetic-rule test file (`test_quotes.py`) against 14 checkers
 (phase 3).
+
+## Phase 1 takes `test_named_results.py`, and the quote anchor is a rule, not a string
+
+Six needles are rebuilt. The quote needles re-run the checker's own anchor-selection
+rule on the mutated page: the quote's row, the anchors after the quote inside that
+row, the anchor in the quote's own line, the anchor earlier in the row, then the
+anchors in the three lines above. The table needle reads the mutated row against the
+ledger, keyed to the family the mutation touched; the bare needle reads the mutated
+page's bare anchor against the population's overview line for that family. Five
+needles stay literal — the anchor line written out of range, the renamed anchor path,
+and three count labels, which carry no measured figure.
+
+**A recorded anchor string is a fact about the page before the mutation.** The quote
+pass picks an anchor by a rule with four fallbacks, so a needle that names the anchor
+the clean page carried is not the string the pass prints for a page whose anchor
+moved. Re-running the rule on the mutated page is what makes the needle the pass's
+own output.
+
+Measured: the layout shift breaks **0** of the 13 needles; specificity **0**
+cross-fires; **14** tests pass.
+
+The census moves: recorded needles **80 → 76**, numeric **29 → 25**, derived
+**133 → 137**, needle digits **167 → 159**, clean pins **309** unchanged.
+
+Gate **79** rows, **0** failures; head diff empty; promote-and-verify assertion
+green; lint trio **0 / 0 / 0**.
+
+Not checked: **5** files still carry recorded needles with numeric values —
+`test_sources.py` **4**, `test_index_links.py` **3**, `test_fleet_design.py` **3**,
+`test_index_design.py` **1**, `test_abstracts.py` **1** — **25** numeric in all. The
+**309** clean pins are still literals (phase 2), and there is one synthetic-rule test
+file (`test_quotes.py`) against 14 checkers (phase 3).
