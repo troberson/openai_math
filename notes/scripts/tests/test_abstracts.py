@@ -178,3 +178,29 @@ def test_prose_count_outside_the_phrase_list(mod, page, table, counts):
     assert cand != page, "the prose count is gone from the page"
     hits = flagged(mod, cand, table, counts, "page is not the writer's render")
     assert hits, "a prose count outside the phrase list was not flagged by the sync pass"
+
+
+def pad_cells(t):
+    """Pad every table cell with two spaces. The row regex allows whitespace, so the marker pass must
+    read the same rows; a regex that required exact spacing would drop rows, and the render diff fires
+    for the padding either way, so the row set is the discriminator, not the render line."""
+    out = []
+    for ln in t.split("\n"):
+        if ln.startswith("|") and ln.endswith("|"):
+            cells = ln[1:-1].split("|")
+            ln = "|" + "|".join("  " + c.strip() + "  " for c in cells) + "|"
+        out.append(ln)
+    return "\n".join(out)
+
+
+def test_padded_table_cells_are_still_read(mod, page, counts):
+    cand = pad_cells(page)
+    assert cand != page, "padding changed nothing"
+    padded, dupes = mod.parse_table(cand.splitlines())
+    clean, _ = mod.parse_table(page.splitlines())
+    assert not dupes, f"padded rows duplicate a source: {dupes}"
+    assert len(padded) == len(clean), \
+        f"padded table reads {len(padded)} rows, clean page {len(clean)}"
+    found, _ = mod.check(cand, padded, counts)
+    marker = [p for p in found if "table" in p or "marker" in p]
+    assert not marker, f"padded rows are not read: {marker[:2]}"
