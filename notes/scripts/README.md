@@ -585,6 +585,13 @@ carries as its own entry point.
 `notes/index/` is excluded from prettier for this reason and the byte-exactness contract:
 `.prettierignore` names the tree with the instruction to edit `build_index.py` and re-render, and
 excludes the checker-verified pages, allowing formatting only on the pages no checker parses.
+Measured 2026-10-14, the rule reached top-level `notes/*.md`, `notes/scripts/**`,
+`notes/summaries/**` and `notes/development/upstream_history/*` only, so
+`prettier --check "notes/**/*.md"` reported 28 pages as needing a rewrite — 23 under
+`notes/reports/` and 5 under `notes/development/`, 5 of them render-diffed by
+`verify_page_sync.py`. The rule now names `notes/reports/*.md` and `notes/development/*.md`,
+and the two negations that un-ignored `notes/reports/links.md` and
+`notes/reports/proof-density.md` are removed; the same check reports 2 files.
 
 ## Naming coverage
 

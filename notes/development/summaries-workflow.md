@@ -1107,3 +1107,29 @@ of the remaining 10 are now known to be padding-fragile (`verify_named_results.p
 `verify_verification_dirs.py`), and the other 8 are unprobed. The **309** clean pins
 are still literals (phase 2), and there is one synthetic-rule test file
 (`test_quotes.py`) against 14 checkers (phase 3).
+
+### 2026-10-14 — the padding-fragile boundary is a coverage gap, not a regex fork
+
+The user chose option 2: extend `.prettierignore` to the checker-verified tree rather
+than widen the two byte-exact row regexes to `\s*`. Measured before the change,
+`prettier --check "notes/**/*.md"` reported **28** pages as needing a rewrite — 23 under
+`notes/reports/` and 5 under `notes/development/` — because the rule named top-level
+`notes/*.md`, `notes/scripts/**`, `notes/summaries/**` and
+`notes/development/upstream_history/*` and reached none of them. Those 28 carry **1,495**
+table rows, **1,213** of them single-space-padded, and **236** `*"…"` markers. Widening
+the two regexes fixes the cells on 2 pages and leaves the markers on 28, so the padding
+fork is partial: prettier's `*"…"` → `_"…"` rewrite is not configurable and no row
+regex can absorb it. **5** of the 28 are render-diffed by `verify_page_sync.py`, so the
+two negations that un-ignored `notes/reports/links.md` and `notes/reports/proof-density.md`
+named pages a checker does parse; they are removed. The rule now names
+`notes/reports/*.md` and `notes/development/*.md`; the same check reports **2** files —
+the two pages no checker parses, `notes/reports/conjecture-standing.md` and
+`notes/development/summaries-workflow.md` — and all 28 previously exposed pages are
+ignored. No checker reads `.prettierignore`, so the fix is config and docs only, and the
+two byte-exact row regexes stay as they are: they are the contract, not a bug. The same
+pass swept `AGENTS.md`'s index ∩ summaries slug figure from **14** to **18**, which the
+checker and an independent basename set both measure.
+
+Not checked: the two formatable pages are not prettier-clean, so a format pass over
+them is still open; the padding mutant covers **4** of the 14 table-reading checkers
+and the other 10 are unprobed; the **309** clean pins are still literals.
