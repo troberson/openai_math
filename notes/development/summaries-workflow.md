@@ -1201,3 +1201,33 @@ Not checked: the three layout-sensitive clean pins (`dependency_drift`, `subfind
 one file (`test_index_links.py`) against **14** checkers; the two formatable pages
 (`notes/reports/conjecture-standing.md`, `notes/development/summaries-workflow.md`) are not
 prettier-clean.
+
+- **The format-boundary enumeration is a checker pass, not a prose claim.** Chosen 2026-10-14 on
+  `math-4nn.2`. Pass I of `verify_script_ownership.py` loads every `verify_*.py` and reads its own
+  `PAGE` and `PAGES` constants, because a source parse reads docstring prose as well: measured **25**
+  checker-parsed pages, **0** outside the ignore rule, **2** formatable pages under `notes/`. The
+  matcher is gitignore-correct, which is what made the enumeration honest: a trailing slash means the
+  directory and everything below (`notes/index/` covers the whole tree), `**` is zero or more
+  directories (`notes/scripts/**/*.md` covers a page sitting directly in `notes/scripts/`), and a
+  leading slash anchors at the repo root. My first matcher got all three wrong and reported 1,095
+  formatable pages. The population is cached, so the 23 module loads are paid once per process, and
+  the loader is `importlib.util`, not the deprecated `load_module`. Two mutants: a stale count in the
+  page's sentence, and the `notes/reports/*.md` rule dropped in memory.
+
+The prettier decision for the two formatable pages is the user's, and the bead says so. The options,
+recorded rather than asked:
+
+1. **Leave them formatable.** The two pages are prose the checkers read with byte-exact quotation
+   forms (`*"…"` markers in `notes/reports/conjecture-standing.md`, the append-only log's own
+   headings). Prettier rewrites `*x*` to `_x_` and pads table rows, so formatting them breaks the
+   quotation passes. This is the current state: the pages are formatable, not formatted, and nothing
+   runs prettier over them.
+2. **Move the quotation forms out of the byte-exact shape.** Change the checker's needle pattern to
+   accept `_…_` as well as `*…*`, then prettier-format the two pages. This makes the tree uniformly
+   formatable at the cost of widening a checker's byte contract.
+3. **Negate the negations.** Put both pages back under the ignore rule, so the formatable set is
+   empty and the enumeration reports **0**. The two pages then carry no prettier guarantee at all,
+   which is what the negations were added to give them.
+
+Not checked: the decision is open; the **309** clean pins are literals; the synthetic-rule tests are
+one file against **14** checkers.

@@ -20,6 +20,12 @@ Passes:
      from notes/index/. The pass re-measures rather than importing measure_templates.py: a checker
      that re-derives a count through the same code the page's writer calls proves only that the code
      agrees with itself.
+  I. Format boundary. Load every `verify_*.py` and read its own `PAGE` and `PAGES` constants -- a
+     source parse reads docstring prose as well -- and require each markdown page the checkers parse
+     to be covered by `.prettierignore`. The matcher is gitignore-correct: a trailing slash means the
+     directory and everything below, `**` is zero or more directories, a leading slash anchors at the
+     repo root, and a negation un-ignores what an earlier rule ignored. The page carries the measured
+     counts: checker-parsed pages and the formatable set under `notes/`.
 
 The self-tests are not here: they live in `notes/scripts/tests/test_script_ownership.py`, which
 mutates page text in memory and asserts each fault is caught by the check that owns it. Passes H
@@ -672,7 +678,7 @@ def check(text):
     if "## Not checked" not in text:
         p.append("no '## Not checked' section")
 
-    # G. format boundary: every page a checker parses is prettier-ignored, and the page carries the counts
+    # I. format boundary: every page a checker parses is prettier-ignored, and the page carries the counts
     p.extend(format_problems(text))
     return p
 

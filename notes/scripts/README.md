@@ -597,7 +597,7 @@ The enumeration is measured, not asserted: **25** checker-parsed pages, **2** fo
 The 25 are the `PAGE` and `PAGES` constants of every `verify_*.py`, read from each checker by
 loading it — a source parse reads docstring prose as well, so the constants are the enumeration. The 2
 formatable pages are the two negations: `notes/reports/conjecture-standing.md` and
-`notes/development/summaries-workflow.md`. Pass G flags a checker-parsed page the rule does not cover.
+`notes/development/summaries-workflow.md`. Pass I flags a checker-parsed page the rule does not cover.
 
 ## Naming coverage
 

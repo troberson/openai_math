@@ -1006,12 +1006,20 @@ lives in this file and nowhere else.
   lands — and recomputes the shared-basename sets
   (**1** top-level ∩ index: `README.md`; **18** index ∩ summaries slugs). It excludes
   itself from the population, so the page's **68** scripts and **23** checkers are the run's **68** and
-  22. Its self-tests are extracted to `notes/scripts/tests/test_script_ownership.py` and run by the
-  gate's `run_tests.py` row: **18** injected faults — eleven in the census page's text, one prose
+  22. Pass I loads every `verify_*.py` and reads its own `PAGE` and `PAGES` constants — a source parse
+  reads docstring prose as well — and requires each markdown page the checkers parse to be covered by
+  `.prettierignore`: **25** checker-parsed pages, **0** outside the rule, **2** formatable pages under
+  `notes/`. The matcher is gitignore-correct: a trailing slash means the directory and everything
+  below, `**` is zero or more directories (so `notes/scripts/**/*.md` covers a page sitting directly
+  in `notes/scripts/`), a leading slash anchors at the repo root, and a negation un-ignores what an
+  earlier rule ignored. The population is cached, so the 23 module loads are paid once per process.
+  Its self-tests are extracted to `notes/scripts/tests/test_script_ownership.py` and run by the
+  gate's `run_tests.py` row: **20** injected faults — eleven in the census page's text, one prose
   count in the generated `notes/README.md` (which only the render diff can see), four in
-  `notes/development/templates.md`, and two writer-source faults that move a write target out of the derived
-  writer set — each asserted against the check it targets. Passes G and H take page text as an
-  argument, so neither the checker nor the tests write a page. **19** tests, all passing.
+  `notes/development/templates.md`, two writer-source faults that move a write target out of the derived
+  writer set, and two in the format boundary (a stale count in the page's sentence, and the
+  `notes/reports/*.md` rule dropped in memory) — each asserted against the check it targets. Passes G and H take page text as an
+  argument, so neither the checker nor the tests write a page. **22** tests, all passing.
 - Check the promotion protocol with `python3 notes/scripts/verify_cache_promotion.py` and its
   extracted self-tests with
   `python3 notes/scripts/run_tests.py notes/scripts/tests/test_cache_promotion.py -q` before quoting
