@@ -1084,3 +1084,26 @@ Not checked: the padding mutant now covers **4** of the 14 checkers that read ta
 `verify_faithfulness.py`, `verify_subfinding_pairs.py`); the rest are unprobed. The
 **309** clean pins are still literals (phase 2), and there is one synthetic-rule test
 file (`test_quotes.py`) against 14 checkers (phase 3).
+
+## Two row regexes are padding-fragile, and that is the formatter boundary
+
+Probing the padding against the two checkers whose row regexes I had not touched:
+`verify_named_results.py:54` is `^\| (\d{3}) \| (T\d) \| (\d) \| \`([^`]+):(\d+)\` \| \*"([^"]*)"\* \|$`
+— **single** spaces, not `\s*` — and `verify_verification_dirs.py` reads the entry-point
+table the same way. Padding every cell breaks both: the clean pages report **0**
+problems, the padded pages report `TABLE rows 0, extractor measured 17 statements`
+and `entry-point table has 0 rows, the bundle count is 30`.
+
+**This is the formatter boundary, not a bug to fix.** The two pages must keep exact
+single-space table formatting, because the checkers key on the byte form. A formatter
+pass over `notes/reports/named-results.md` or `notes/reports/verification-dirs.md`
+would silence the table pass by dropping every row — the same failure mode the prettier
+probe recorded for the other byte-keyed checkers. The tolerant regexes (`\s*`) are
+padding-safe; these two are not, and the difference is a property of the checker, not
+of the page.
+
+Not checked: the padding mutant covers **4** of the 14 table-reading checkers; **2**
+of the remaining 10 are now known to be padding-fragile (`verify_named_results.py`,
+`verify_verification_dirs.py`), and the other 8 are unprobed. The **309** clean pins
+are still literals (phase 2), and there is one synthetic-rule test file
+(`test_quotes.py`) against 14 checkers (phase 3).
