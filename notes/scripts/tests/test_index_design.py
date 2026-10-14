@@ -123,11 +123,11 @@ MUTANTS = [
      lambda t: t.replace("the whole ledger set is **297,050** B",
                          "the whole ledger set is **2,174,703** B", 1)),
     ("all-TSV total altered", "count mismatch (all-TSV byte total)",
-     lambda t: t.replace("together totals **2316386** B", "together totals **297050** B", 1)),
+     lambda t: t.replace("together totals **2324003** B", "together totals **297050** B", 1)),
     ("index tree byte total altered", "count mismatch (index tree byte total)",
-     lambda t: t.replace("carries **11531073** B", "carries **11530405** B", 1)),
+     lambda t: t.replace("carries **11531217** B", "carries **11530405** B", 1)),
     ("disk link count", "count mismatch (disk link check)",
-     lambda t: t.replace("covers **66,115** links", "covers **66,112** links", 1)),
+     lambda t: t.replace("covers **66,116** links", "covers **66,112** links", 1)),
     # Prose the count passes never read: the schema table's byte column is not in count_phrases()
     # or size_phrases(). Only the render diff can see it.
     ("schema byte column", "size mismatch (catalog.tsv measured size)",
@@ -186,7 +186,7 @@ def test_clean_page(mod, text, ledger):
     assert (p["ver_dirs"], p["bib_files"], p["bib_entries"],
             p["bib_hrefs"]) == (30, 521, 13802, 393), f"ver dirs {p['ver_dirs']}, bib {p['bib_files']}"
     assert (p["ledger_set_bytes"], p["all_tsv_bytes"], p["disk_links"], p["disk_broken"],
-            p["disk_dirs"], p["rawbib_kib"]) == (297050, 2316386, 66115, 0, 17700, 2021), \
+            p["disk_dirs"], p["rawbib_kib"]) == (297050, 2324003, 66116, 0, 17700, 2021), \
         f"ledger set {p['ledger_set_bytes']}, all TSV {p['all_tsv_bytes']}, links {p['disk_links']}"
     assert p["index_pages"] == len(tree_index_pages()) > 0, \
         f"index pages {p['index_pages']} against {len(tree_index_pages())} .md files walked under notes/index/"

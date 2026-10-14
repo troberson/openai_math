@@ -117,15 +117,15 @@ def test_clean_page(page_rows, summary_rows):
     all_rows = page_rows + summary_rows
     seeded = [s for s, _q in all_rows if s["start"] != "0"]
     assert len(page_rows) == 754
-    assert len(summary_rows) == 1243
-    assert len(all_rows) == 1997
-    assert len(seeded) == 1981
-    assert sum(1 for s in seeded if s["start"] == s["end"]) == 1145
-    assert sum(1 for s in seeded if s["start"] != s["end"]) == 836
-    assert sum(1 for s in seeded if len(s["head"].split()) > 3) == 274
-    assert sum(1 for s in seeded if s["tail"] == "") == 464
+    assert len(summary_rows) == 1273
+    assert len(all_rows) == 2027
+    assert len(seeded) == 2011
+    assert sum(1 for s in seeded if s["start"] == s["end"]) == 1149
+    assert sum(1 for s in seeded if s["start"] != s["end"]) == 862
+    assert sum(1 for s in seeded if len(s["head"].split()) > 3) == 277
+    assert sum(1 for s in seeded if s["tail"] == "") == 467
     modes = Counter(s["mode"] for s, _q in all_rows)
-    assert (modes["raw"], modes["folded"], modes["none"]) == (1922, 59, 16), modes
+    assert (modes["raw"], modes["folded"], modes["none"]) == (1950, 61, 16), modes
     # Every seeded spec must reproduce its quote in its own class, so a spec that resolves to text the
     # page does not quote is a failure, not a pass.
     cache: dict[str, list[str]] = {}

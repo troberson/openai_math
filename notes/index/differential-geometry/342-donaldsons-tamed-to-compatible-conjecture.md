@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [manifolds](../topics/manifolds.md) · [riemannian-geometry](../topics/riemannian-geometry.md) · [symplectic-geometry](../topics/symplectic-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [342-donaldsons-tamed-to-compatible-conjecture.md](../../../notes/summaries/differential-geometry/342-donaldsons-tamed-to-compatible-conjecture.md) |
 
 ## Manuscripts
 
