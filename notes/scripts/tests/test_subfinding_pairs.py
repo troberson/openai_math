@@ -15,31 +15,56 @@ Each fault below mutates the page text in memory, so no page is written. `verify
 text, so a second call in the same process cannot see a different corpus, and the ten `check()` calls
 this file makes pay the `overview.tex`, `subfindings.tsv` and ledger walk once.
 
+**The needles that name a page line or a measured count are derived at run time, not recorded.** The
+block-header line for a family is found in the mutated page, so a band shift moves the needle with the
+layout; the Summary-table needle's measured value comes from the checker's own `measured` dict. The
+needles that stay literal are the mutation's own inputs — the anchor written, the id borrowed, the id
+duplicated, the id dropped, the family inserted, the count written.
+
 Run: `python3 notes/scripts/run_tests.py notes/scripts/tests/test_subfinding_pairs.py -q`
 """
 
 import pathlib
+import re
 
 import pytest
 
 PAGE = pathlib.Path("notes/reports/subfinding-pairs.md")
 
-# (label, needle, mutation). A needle must fire for its own fault and for no other, and must not
-# fire on the clean page.
+
+def block_head(c, fam):
+    """The 1-based page line of the block header for `fam`, and the `overview.tex` anchor it names."""
+    for i, line in enumerate(c.split("\n")):
+        m = re.match(rf"^## {fam} · `overview\.tex:(\d+)`", line)
+        if m:
+            return i + 1, int(m.group(1))
+    raise AssertionError(f"no block header for {fam}")
+
+
+def row_of(c, sub):
+    """The 1-based page line carrying `sub`; a sub on more than one line makes the needle ambiguous."""
+    hits = [i + 1 for i, line in enumerate(c.split("\n")) if sub in line]
+    assert len(hits) == 1, f"{sub!r} appears on {len(hits)} lines of the mutated page"
+    return hits[0]
+
+
+# (label, needle, mutation). A needle is a function of the mutated page, the loaded checker and the
+# measured dict; a mutation is a function of the page.
 MUTANTS = [
-    # The band-2 and band-3 blocks shifted the page's line numbers, so each 009 needle names the
-    # block's new line.
     ("paraphrase dressed as a quote",
-     ("009: page:111: quoted clause is not verbatim on overview.tex:94: "
-      "Also proves Bogomolov-Pop reconstruction from abelian-by-cen"),
+     lambda c, v, m: (f"009: page:{row_of(c, 'Also proves Bogomolov-Pop reconstruction')}: quoted "
+                      f"clause is not verbatim on overview.tex:{block_head(c, '009')[1]}: Also "
+                      "proves Bogomolov-Pop reconstruction from abelian-by-cen"),
      lambda p: p.replace('"Also proves Bogomolov--Pop reconstruction',
                          '"Also proves Bogomolov-Pop reconstruction', 1)),
     ("clause anchor on the wrong line",
-     "009: page:111: clause anchor overview.tex:95 differs from the block anchor 94",
+     lambda c, v, m: (f"009: page:{row_of(c, '`overview.tex:95`) -> \"The Bogomolov-Pop')}: clause "
+                      f"anchor overview.tex:95 differs from the block anchor {block_head(c, '009')[1]}"),
      lambda p: p.replace("`overview.tex:94`) -> \"The Bogomolov-Pop",
                          "`overview.tex:95`) -> \"The Bogomolov-Pop", 1)),
     ("title id borrowed from another family",
-     "009: page:111: target id 010:3 is from another family",
+     lambda c, v, m: (f"009: page:{row_of(c, 'reconstruction theorem\" (`overview.tex:94`) [010:3]')}: "
+                      "target id 010:3 is from another family"),
      lambda p: p.replace("[009:3]", "[010:3]", 1)),
     ("an id in both partitions",
      "041: ids in both claimed and unclaimed: ['041:1']",
@@ -50,7 +75,8 @@ MUTANTS = [
      lambda p: p.replace("- unclaimed: 034:3 034:5 034:6",
                          "- unclaimed: 034:5 034:6", 1)),
     ("a stale Summary-table count",
-     "Summary table: titles claimed by no clause states 60, measured 146",
+     lambda c, v, m: (f"Summary table: titles claimed by no clause states 60, "
+                      f"measured {m['titles claimed by no clause']}"),
      lambda p: p.replace("| titles claimed by no clause | 146 |",
                          "| titles claimed by no clause | 60 |", 1)),
     ("a block outside the population",
@@ -63,11 +89,12 @@ MUTANTS = [
     # Prose the counts pass never parses: the rejected-rule yields are narrative, not a
     # Summary-table row. Only the render diff can see them, so the needle is the page line it names.
     ("a rejected-rule yield in prose altered",
-     "page line 39: page 'tried and rejected: `also` (57)",
+     lambda c, v, m: f"page line {row_of(c, 'tried and rejected: `also` (57)')}: page 'tried and rejected: `also` (57)",
      lambda p: p.replace("tried and rejected: `also` (56)",
                          "tried and rejected: `also` (57)", 1)),
     ("the filter-cost clause count in prose altered",
-     "page line 1587: page '  densest targets. Reading it yields **140** accepted clause pairs",
+     lambda c, v, m: (f"page line {row_of(c, 'Reading it yields **140** accepted clause pairs')}: "
+                      "page '  densest targets. Reading it yields **140** accepted clause pairs"),
      lambda p: p.replace("Reading it yields **141** accepted clause pairs",
                          "Reading it yields **140** accepted clause pairs", 1)),
 ]
@@ -106,5 +133,6 @@ def test_injected_faults(load, text, label, needle, mut):
     v = load("verify_subfinding_pairs")
     cand = mut(text)
     assert cand != text, f"{label}: the page text changed, the needle is stale"
-    probs = v.check(cand)[0]
-    assert any(needle in p for p in probs), f"{label}: needle did not fire\n{probs}"
+    probs, measured = v.check(cand)
+    want = needle(cand, v, measured) if callable(needle) else needle
+    assert any(want in p for p in probs), f"{label}: needle did not fire\n{probs}"
