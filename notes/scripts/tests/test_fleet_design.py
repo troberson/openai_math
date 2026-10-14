@@ -148,7 +148,7 @@ MUTANTS = [
                          "`render_reports.py:2043` `notes/development/fleet-design.md:9999`", 1)),
     ("prose count in the size argument",
      lambda c, mod, p: f"count phrase not in the page: **{p['tsv_bytes']:,}** bytes",
-     lambda t: t.replace("**2,316,386** bytes", "**2,233,627** bytes", 1)),
+     lambda t: t.replace("**2,324,003** bytes", "**2,233,627** bytes", 1)),
     # The TSV count is measured from the fleet's own tree, but the L2 row that carries it is literal
     # template text, not a slot, so the count pass never reads it: the needle is the page line the
     # render diff names. The tree carries 25 TSVs since `math-faz.6` moved the 16 generated tables
@@ -162,7 +162,7 @@ MUTANTS = [
     ("probe record count understated",
      lambda c, mod, p: (f"count phrase not in the page: The tracked records are "
                         f"**{p['probe_records']}**:"),
-     lambda t: t.replace("The tracked records are **20**:", "The tracked records are **15**:", 1)),
+     lambda t: t.replace("The tracked records are **21**:", "The tracked records are **15**:", 1)),
     ("writer-row count in the gate paragraph",
      lambda c, mod, p: (f"count phrase not in the page: the **{p['writer_rows']}** writers "
                         "declare what they write"),
@@ -227,7 +227,7 @@ def test_clean_page(mod, text):
         f"atomic {p['atomic']}, scripts {p['scripts']}, modules {p['modules']} (walk {modules})"
     assert (p["sync"], p["sync_verify"], p["sync_other"]) == (12, 12, 0), \
         f"sync {p['sync']}, verify_ {p['sync_verify']}, not {p['sync_other']}"
-    assert (p["digests"], p["ignored"], p["tsv_count"], p["tsv_bytes"]) == (5, 1, 25, 2316386), \
+    assert (p["digests"], p["ignored"], p["tsv_count"], p["tsv_bytes"]) == (5, 1, 25, 2324003), \
         f"digests {p['digests']}, ignored {p['ignored']}, tsv {p['tsv_bytes']}"
     assert (p["du"]["preprints"], p["du"]["oai"], p["du"]["index"]) == (631, 1740, 12), \
         f"du {p['du']}"
