@@ -28,9 +28,9 @@ the page it started from, and each needle is the problem string the pass that ow
 fires for every fault, so no needle is that line.
 
 The clean test asserts the passes are silent and pins the counts they report: 32 anchors, 24 count
-and probe phrases, 0 sync problems, 2 atomicity matches over 66 scripts and 18 catlib modules, 12
+and probe phrases, 0 sync problems, 2 atomicity matches over 67 scripts and 18 catlib modules, 12
 sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 25 TSVs at 2,316,386 bytes, 631M
-`preprints/`, 1,740M `lean/OAI/`, 12M `notes/index/`, 78 gate rows, 11 writer rows, 1 env hit, 8
+`preprints/`, 1,740M `lean/OAI/`, 12M `notes/index/`, 79 gate rows, 11 writer rows, 1 env hit, 8
 purity scripts,
 the sites at `atomic.py:42` / `atomic.py:84`, `render_reports.py:1180`
 and `build_catalog.py:128` / `build_index.py:591`, and the probe row the amplification table quotes
@@ -147,7 +147,7 @@ def test_clean_page(mod, text):
     assert (n_anchor, n_phrases, n_sync) == (32, 24, 0), \
         f"anchors {n_anchor}, phrases {n_phrases}, sync {n_sync}"
     p = mod.population()
-    assert (p["atomic"], p["scripts"], p["modules"]) == (2, 66, 18), \
+    assert (p["atomic"], p["scripts"], p["modules"]) == (2, 67, 18), \
         f"atomic {p['atomic']}, scripts {p['scripts']}, modules {p['modules']}"
     assert (p["sync"], p["sync_verify"], p["sync_other"]) == (12, 12, 0), \
         f"sync {p['sync']}, verify_ {p['sync_verify']}, not {p['sync_other']}"
@@ -155,7 +155,7 @@ def test_clean_page(mod, text):
         f"digests {p['digests']}, ignored {p['ignored']}, tsv {p['tsv_bytes']}"
     assert (p["du"]["preprints"], p["du"]["oai"], p["du"]["index"]) == (631, 1740, 12), \
         f"du {p['du']}"
-    assert (p["gate_rows"], p["writer_rows"], p["env_hits"], len(p["purity"])) == (78, 11, 1, 8), (
+    assert (p["gate_rows"], p["writer_rows"], p["env_hits"], len(p["purity"])) == (79, 11, 1, 8), (
         f"gate rows {p['gate_rows']}, writer rows {p['writer_rows']}, env hits {p['env_hits']}, "
         f"purity {len(p['purity'])}")
     assert sorted(p["atomic_sites"]) == ["atomic.py:42", "atomic.py:84"], p["atomic_sites"]
