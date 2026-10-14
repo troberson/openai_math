@@ -1264,3 +1264,41 @@ named-results 15, index-design 17, proof-density 11.
 
 Not checked: the three layout-sensitive clean pins (`dependency_drift`, `subfinding_pairs`,
 `t0_chains`) are still literals; the remaining clean pins are literals; beads `.4`–`.7` are unwritten.
+
+## Bead `math-4nn.4` replaces the resolution literals with 0-unresolved plus non-vacuity floors
+
+Chosen 2026-10-14. A clean test that pins "172 anchors, 295 block lines, 38 quotations" records what
+the page carried when the test was written. A pass that reports 0 problems on a page carrying nothing
+passes, and the pin is silent. The pin becomes the pass's own population, read off the page by the
+pass's own rule, required non-zero: 0 problems then means every shape the page carries resolved.
+
+Six files converted. `test_sources.py` (anchor shapes, slugs), `test_named_results.py` (anchors, bare
+anchors, table rows, quotations), `test_faithfulness.py` (anchors, fenced-block lines, quotations, plus
+the formalization relations: every unique config resolves, every carrier-typed statement has a resolved
+carrier, entries exceed configs), `test_counterexample_crosscheck.py` (anchors, fenced-block lines,
+quotations), `test_index_links.py` (every extracted link resolves to exactly one of directory or file,
+so the two counts sum to the link count; the basename pass keeps 0 collisions with both sets non-empty
+and the index required to contain collisions), `test_summaries.py` (the page set is the tree, required
+non-empty, and each page must carry markers). `test_upstream_history.py` already carried the floor
+(`hits > 0`, "the pass is vacuous, not passing") and needed no change.
+
+**The anchor pass counts distinct `(path, line)` pairs, not shapes** — the page repeats anchors and the
+pass resolves each pair once — so the floor is the pass's rule, not a looser regex count. Measured: 61
+counted against 66 shapes.
+
+Each converted file carries a strip test that makes the floor non-vacuous: removing every anchor shape
+drives the anchor pass to 0 and the block and quotation passes with it (a block with no preceding anchor
+and a quote with no anchor in its line are skipped), while the page still carries blocks and quotations
+— so the pass counts less than the page carries and the equality fails. That failure is what the floor
+is designed to catch.
+
+AGENTS.md is swept in the same commits: the pins it quotes for sources, named-results, index-design,
+faithfulness and crosscheck, the index-links injected/control counts it carried as 20 and 7 against the
+file's 21 and 8, and the `check()`-call counts for sources, named-results and faithfulness. Gate:
+**79 rows, 0 failures**, empty head diff, lint 0/0/0. Tests: sources 15, named-results 16,
+index-design 17, proof-density 11, index-links 7, faithfulness 19, crosscheck 17, summaries 8,
+upstream-history 16.
+
+Not checked: the population literals that are not resolution results (28 families, 2,560 nodes, the
+corpus byte sums, the environment counts) stay literal; the three layout-sensitive clean pins stay
+literal; beads `.5`–`.7` are unwritten.
