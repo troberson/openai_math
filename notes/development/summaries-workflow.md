@@ -511,3 +511,50 @@ Index links **66,114 → 66,115**, file-resolving **48,414 → 48,415**; all-TSV
 `quotes.tsv` **1,938 → 1,997** specs; probe records **19 → 20**. Six test pins
 retargeted. The gate runs **78** rows with **0** failures, the head diff is
 empty, and the promote-and-verify assertion is green.
+
+## The padded-table mutant lands, and the needle turns out not to be the discriminator
+
+The question was whether a table-parsing checker can silently skip a table.
+Measured: **13** pipe-anchored row patterns over **8** checkers, and all 8
+carry a row-count guard, so a pattern that reads 0 rows reports a population
+mismatch loudly. The real gap was narrower: the patterns required exactly one
+space after each pipe, and **none of the 31 table mutants** exercised padding.
+
+`SUM_ROW` and `CHAIN_ROW` in `verify_t0_chains.py` now tolerate whitespace
+around every cell. The first widening broke `CHAIN_ROW`: joining the seven
+digit groups with `\s*\|\s*` left no `\s*` after the pipe closing `(T\d)`, so
+the chain table read 0 rows on the clean page. The prefix has to end with
+`\|\s*` too.
+
+**The needle is not the discriminating assertion.** The padding mutant's needle
+is the render-diff line, and the render diff fires against the pre-fix pattern
+too — the padded page differs from the writer's render either way. I confirmed
+the new tests fail against the pre-fix code by swapping in `git show HEAD:`'s
+version: the padded page read **0** summary rows and **0** chain rows, against
+**27 / 5** after the fix. The row-count test is what distinguishes the two
+patterns; the needle alone would have printed a pass on the unfixed code. A
+needle that fires for the fixed and the unfixed code cannot prove the fix, so
+the padding fault carries a second test.
+
+**The retarget burden is the measured cost of a page-line needle.** The sweep
+added three lines to the page's checker section, and five needles moved by
+three: the paraphrase quote 378→381, the title swap 367→370, the out-of-range
+anchor 70→73, the fenced block 96→99, and the padded-table render line 51→54.
+The findings Sources row declares the page's length, so S12 moved 541→544.
+Nine hand-measured values for one paragraph edit — this is the number the
+runtime-derived-needle pass is meant to remove.
+
+**AGENTS.md carried a stale coverage-signal figure.** It read **26** families
+with zero coverage signal; the fresh `extract_t0_chains.py` report reads **24**
+with **3** exceptions (147 258 268), the figure the page carries after family
+258's page landed. The `companion_word` figure (9 families, 0 edges) checks out.
+
+Gate **78** rows, **0** failures; head diff empty; promote-and-verify assertion
+green; lint trio **0 / 0 / 0**; `test_t0_chains.py` **16** tests pass. Pushed to
+`origin` at `c71c4c12b..1922ea951`.
+
+Not checked: the other **12** pipe-anchored row patterns in the other **7**
+checkers are still single-space-strict and have no padding mutant; the padding
+mutant exists only for `verify_t0_chains.py`. The **110** numeric needles and
+the **184** clean-test corpus literals are untouched — phases 1 and 3 have not
+started.
