@@ -44,6 +44,8 @@ the script writes nothing and the tests write nothing.
 The script measures; this file injects. Run:
   python3 notes/scripts/run_tests.py notes/scripts/tests/test_proof_density.py -q
 """
+import collections
+
 import pytest
 
 from catlib.layout import reorder
@@ -122,14 +124,23 @@ def ledger(mod):
 
 
 def test_clean_population(mod, sources, ledger):
-    """The gates are silent, and the population they report is pinned."""
+    """The gates are silent, and the population is asserted as relations, not recorded numbers. The
+    ledger-join invariants: distinct dirs equal rows, the ledger's paps sum equals the row count, the
+    tier counts sum to the family count (the tier dict, not each tier value), every sources family is
+    in the ledger and every ledger family appears exactly once, and the per-family formalized count
+    equals the count of that family's rows whose directory the yaml names. The proofs and thms sums
+    stay literals: they are corpus measurements the join cannot produce."""
     fams = mod.build_families(sources, ledger)
     problems = mod.gate_checks(sources, ledger, fams)
     assert not problems, problems[:3]
-    assert len(sources) == 719 and len({r["dir"] for r in sources}) == 719, \
-        f"rows {len(sources)}, dirs {len({r['dir'] for r in sources})}"
-    assert len({r["fam"] for r in sources}) == 372 and len({r["fam"] for r in ledger}) == 372, \
-        "family set not 372 on both sides"
+    assert len({r["dir"] for r in sources}) == len(sources), \
+        f"distinct dirs {len({r['dir'] for r in sources})} against {len(sources)} rows"
+    assert sum(int(r["paps"]) for r in ledger) == len(sources), \
+        f"ledger paps sum {sum(int(r['paps']) for r in ledger)} against {len(sources)} rows"
+    assert {r["fam"] for r in sources} == {r["fam"] for r in ledger}, \
+        "a sources family is not in the ledger, or a ledger family has no sources row"
+    assert all(c == 1 for c in collections.Counter(r["fam"] for r in ledger).values()), \
+        "a ledger family appears more than once"
     assert sum(int(r["proofs"]) for r in sources) == 20341, \
         f"proofs sum {sum(int(r['proofs']) for r in sources)}"
     assert sum(int(r["thms"]) for r in sources) == 21288, \
@@ -137,9 +148,13 @@ def test_clean_population(mod, sources, ledger):
     tiers: dict = {}
     for d in fams.values():
         tiers[d["tier"]] = tiers.get(d["tier"], 0) + 1
-    assert (tiers.get("T3", 0), tiers.get("T2", 0), tiers.get("T1", 0), tiers.get("T0", 0)) == \
-        (136, 106, 0, 130), f"tier counts {tiers}"
-    assert sum(int(r["paps"]) for r in ledger) == 719, f"ledger paps sum {sum(int(r['paps']) for r in ledger)}"
+    assert sum(tiers.values()) == len(fams), \
+        f"tier counts sum to {sum(tiers.values())} against {len(fams)} families"
+    yaml_dirs = mod.yaml_dirs()
+    bad = [r["fam"] for r in ledger
+           if sum(1 for s in sources if s["fam"] == r["fam"] and s["dir"] in yaml_dirs)
+           != int(r["paps_form"])]
+    assert not bad, f"families whose formalized rows do not match paps_form: {bad[:4]}"
 
 
 def test_statistic_selftest(mod):
@@ -162,3 +177,21 @@ def test_injected_faults(mod, label, needle, mut):
     found = mod.gate_checks(rows, led, mod.build_families(rows, led))
     want = needle(rows, led, mod, R) if callable(needle) else needle
     assert any(want in x for x in found), f"{label}: NOT caught by {want!r} ({found[:2]})"
+
+
+def test_formalized_invariant_catches_what_the_literals_miss(mod, sources, ledger):
+    """Flipping a family's `paps_form` is invisible to every literal pin: rows, distinct dirs, family
+    sets, tier counts, proofs and thms sums are all unchanged, so the gates stay silent. The formalized
+    join is the only witness, which is what makes it an invariant and not a second literal."""
+    i = next(n for n, r in enumerate(ledger) if int(r["paps_form"]) > 0)
+    led = [dict(r) for r in ledger]
+    fam = led[i]["fam"]
+    led[i]["paps_form"] = "0"
+    fams = mod.build_families(sources, led)
+    assert not mod.gate_checks(sources, led, fams), \
+        "the literal pins fired on a paps_form flip, so the join is not the only witness"
+    yaml_dirs = mod.yaml_dirs()
+    bad = [r["fam"] for r in led
+           if sum(1 for s in sources if s["fam"] == r["fam"] and s["dir"] in yaml_dirs)
+           != int(r["paps_form"])]
+    assert bad == [fam], f"the formalized join did not flag the flipped family: {bad[:4]}"

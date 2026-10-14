@@ -25,13 +25,16 @@ faults and asserts each fires the gate that owns it. `main()` reads no argv, so 
 """
 
 import csv
+import functools
 import math
 import pathlib
+import re
 from typing import Any
 
 REPO = pathlib.Path(__file__).resolve().parents[2]
 SOURCES = REPO / "notes" / "tables" / "sources.tsv"
 LEDGER = REPO / "notes" / "tables" / "catalog.tsv"
+YAML = REPO / "lean" / "formalization.yaml"
 
 # Totals recorded in beads math-hqd.3 and in notes/reports/sources.md, re-measured 2026-10-09 after the
 # upstream merge (719 manuscripts / 20,341 proofs / 21,288 statements / tiers 136-106-0-130).
@@ -94,6 +97,16 @@ def median(vals):
     if not n:
         return None
     return s[n // 2] if n % 2 else (s[n // 2 - 1] + s[n // 2]) / 2.0
+
+
+@functools.cache
+def yaml_dirs():
+    """The manuscript directories `formalization.yaml` names in its `sources:` list. The formalized
+    invariant is a join between this set and the ledger's per-family `paps_form`, so the set is read
+    from the yaml, not from a recorded count."""
+    block = YAML.read_text(encoding="utf-8", errors="replace").split("\nsources:\n")[1] \
+        .split("\nmain_results:")[0]
+    return set(re.findall(r"^\s+id:\s*\.\./preprints/([^/]+)/", block, re.MULTILINE))
 
 
 def build_families(sources, ledger):
