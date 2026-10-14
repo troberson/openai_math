@@ -1169,3 +1169,35 @@ Not checked: the three layout-sensitive clean pins are still literals — that i
 target list, now measured; the **10** unprobed table-reading checkers still have no padding
 test; the needle-input rule compares digits, so a recorded needle with **no** digits is
 unjudged by it and is judged only by the layout probe.
+
+- **Padding tests: tolerant where the reader allows whitespace, boundary where it does not.**
+  Chosen 2026-10-14 on `math-4nn.1`. Fifteen checkers now carry a padding test, one commit each:
+  the tolerant direction (`test_padded_table_cells_are_still_read`) for the readers that split and
+  strip, or match rows with `\s*` — `verify_abstracts.py`, `verify_findings.py`, `verify_summaries.py`,
+  `verify_scope_exclusions.py`, `verify_citations.py`, `verify_fleet_design.py`,
+  `verify_script_ownership.py`, `verify_cache_promotion.py`, plus the four from phase 0; the boundary
+  direction (`test_padded_table_cells_are_dropped`) for the readers that are byte-exact by contract —
+  `verify_upstream_history.py` (`^\| \d{3} \| \`[^`]+-2026\` \| \*"`), `verify_dependency_drift.py`
+  (`startswith("| The ")`), `verify_verification_dirs.py` (`^\| (\d{3}) \|`). Each tolerant test is
+  proven against the pre-fix code: the checker's row pattern is swapped for its single-space form in
+  memory and the padded rows must vanish. Measured drops: abstracts 35→0, findings 31→0, summaries 671
+  rows, scope-exclusions 242→0, citations 48→0 (20 work, 6 pair, 12 cluster, 10 release),
+  fleet-design 8→0, ownership 10→0, cache-promotion 42 table rows→0. Each boundary test is proven the
+  other way: the byte-exact pattern reads the clean page (upstream-history 14 fixes + 11 configs,
+  dependency-drift 6 check rows, verification-dirs 30 rows) and 0 padded rows. Three rules this pass
+  established. **The criterion is the pass's own problem list, never a private copy of the row
+  regex** — a test that counts rows with its own pattern proves nothing about the checker. **For a
+  report-fed page the render diff fires on padding either way**, so the criterion is the non-sync
+  problems; `verify_fleet_design.py`'s `check()` appends the sync problems last, which is what makes
+  that split exact. **A boundary test asserts the ignore rule too**: every checker page is under
+  `notes/reports/*.md`, `notes/development/*.md`, `notes/*.md` or `notes/scripts/**/*.md`, all
+  prettier-ignored, so padding never reaches the tracked tree and the byte-exact contract holds.
+  `verify_index_design.py` gets no padding test: it has no row regex, it builds expected row strings
+  and requires the page to contain them verbatim, so padding is a boundary the ignore rule already
+  covers. Gate: **79 rows, 0 failures**, empty head diff, tree clean after builder → render.
+
+Not checked: the three layout-sensitive clean pins (`dependency_drift`, `subfinding_pairs`,
+`t0_chains`) are still literals; the **309** clean pins are literals; the synthetic-rule tests are
+one file (`test_index_links.py`) against **14** checkers; the two formatable pages
+(`notes/reports/conjecture-standing.md`, `notes/development/summaries-workflow.md`) are not
+prettier-clean.
