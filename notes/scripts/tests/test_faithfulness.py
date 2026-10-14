@@ -62,6 +62,19 @@ def row_of(c, sub):
     return hits[0]
 
 
+def pad_cells(t):
+    """Pad every table cell with two spaces. The row regexes allow whitespace, so the passes must read
+    the same rows; a regex that required exact spacing would drop rows, and the row-count line is what
+    would show it."""
+    out = []
+    for ln in t.split("\n"):
+        if ln.startswith("|") and ln.endswith("|"):
+            cells = ln[1:-1].split("|")
+            ln = "|" + "|".join("  " + c.strip() + "  " for c in cells) + "|"
+        out.append(ln)
+    return "\n".join(out)
+
+
 def count_needle(label, phrase):
     """A count needle: the phrase the pass demands, built from the measured population."""
     def f(_c, _mod, v):
@@ -266,3 +279,21 @@ def test_injected_faults(mod, text, label, needle, mut):
     found, _, _, _, _, v = mod.check(cand)
     want = needle(cand, mod, v) if callable(needle) else needle
     assert any(want in x for x in found), f"{label}: NOT caught by {want!r} ({found[:2]})"
+
+
+def test_padded_table_cells_are_still_read(mod, text):
+    """Padding every table cell must not change what the passes read. The three row regexes allow
+    whitespace, so a padded page must report no table problem and the same three row counts. A regex
+    that required exact spacing would drop rows, and the row-count line is what would show it — that is
+    the discriminator, not the render diff, which fires for the padding either way."""
+    cand = pad_cells(text)
+    assert cand != text, "padding changed nothing"
+    found, _, _, _, _, v = mod.check(cand)
+    table = [p for p in found if "table" in p]
+    assert not table, f"padded rows are not read: {table[:2]}"
+    counts = (len(table_rows(cand, mod, mod.AEROW, [False, True, True, True, True])),
+              len(table_rows(cand, mod, mod.DISROW, [False, False, False])),
+              len(table_rows(cand, mod, mod.OVROW, [False, False, False, False])))
+    assert counts == (len(v["ae_table"]), len(v["disjoint"]), len(v["overlap"])), \
+        f"padded tables read {counts}, population {len(v['ae_table'])}, " \
+        f"{len(v['disjoint'])}, {len(v['overlap'])}"
