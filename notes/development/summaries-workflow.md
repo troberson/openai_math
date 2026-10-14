@@ -793,3 +793,40 @@ Not checked: **9** files still carry recorded needles with numeric values —
 `test_index_design.py` **1**, `test_abstracts.py` **1** — **51** numeric in all.
 The **309** clean pins are still literals (phase 2), and there is one synthetic-rule
 test file (`test_quotes.py`) against 14 checkers (phase 3).
+
+## Phase 1 takes `test_faithfulness.py`, and a table needle must key on the row it mutated
+
+Ninth file. Thirteen of its fifteen needles carried a page count: six count
+phrases, three table needles, the block anchor, the quote anchor, and the two
+needles that stay literal (the carrier-rule wording and the comparator-sorry
+prose line, both written by the mutation). The counts are rebuilt from the
+checker's own `population()` dict, the table needles from the mutated page's rows
+against the recomputation, the block needle from the anchor the mutated page
+attributes the block to, the quote needle from the anchor the mutated quote line
+carries.
+
+The first probe run reported **2** cross-fires, and the cause is the pass's own
+message structure: the `a.e.` table pass reports the length difference for **any**
+table difference, so a length needle fires for both the deleted-row fault and the
+shifted-count fault; and deleting a row shifts every row after it, so a
+first-mismatch needle fires for both as well. The fix is to key each needle to the
+row the mutation touched — the count needle to the mutated row's own mismatch, the
+deletion needle to the recomputation row for the deleted family. After that, 0
+cross-fires.
+
+Measured: the layout shift breaks **0** of the 15 needles; specificity **0**
+cross-fires. Recorded needles in the file **15 → 2**.
+
+The census moves: recorded needles **116 → 103**, numeric **51 → 45**, derived
+**97 → 110**, needle digits **201 → 188**, clean pins **309** unchanged.
+
+Gate **79** rows, **0** failures; head diff empty; promote-and-verify assertion
+green; lint trio **0 / 0 / 0**. Pushed to `origin` at `c7d364f27..d5dc32066`.
+
+Not checked: **8** files still carry recorded needles with numeric values —
+`test_verification_dirs.py` **6**, `test_counterexample_crosscheck.py` **6**,
+`test_named_results.py` **5**, `test_sources.py` **4**, `test_index_links.py` **3**,
+`test_fleet_design.py` **3**, `test_index_design.py` **1**,
+`test_abstracts.py` **1** — **45** numeric in all. The **309** clean pins are still
+literals (phase 2), and there is one synthetic-rule test file (`test_quotes.py`)
+against 14 checkers (phase 3).
