@@ -36,19 +36,27 @@ started from, and each needle is the problem string the pass that owns that form
 specific, each needle fires for its own fault and for no other. The render-diff line fires for every
 fault, so no needle is that line.
 
-The clean test asserts the passes are silent and pins the counts they report: 10 anchors, 30 block
-lines, 1 quotation, 0 sync problems, 200 entries over 189 configs, 189 resolved declarations, 61
-carrier-typed statements, 61 resolved carriers, the six pairing classes, 2,288 theorem environments
-with 48 `a.e.` hits over 32 families, and the 32-row `a.e.` table. A page with fewer anchors, block
-lines or quotations is a pass that stopped checking, not a pass that passed.
+The clean test asserts the passes are silent and pins the counts they report. The resolution passes are
+pinned as **derived floors**: each pass counted exactly the population its own rule reads off the page —
+the anchor pattern, the fenced-block walk, the quotation pattern — and each population is required
+non-zero, so 0 problems means every anchor, block line and quotation resolved. The formalization
+resolution is pinned as **relations**: every unique config resolves, every carrier-typed statement has a
+resolved carrier, and the entry count exceeds the unique config count. The corpus measurements stay
+literal: 0 sync problems, the six pairing classes, 2,288 theorem environments with 48 `a.e.` hits over
+32 families, and the 32-row `a.e.` table. `test_resolution_floors_fire_on_a_page_that_carries_nothing`
+strips every anchor shape and shows the anchor equality holds at 0 while the block and quotation
+counters fall below the populations the page still carries — the floor is what keeps each pass honest.
+A page with fewer count phrases is a pass that stopped checking, not a pass that passed.
 
 The checker reads no argv and `check()` takes page text, so nothing here writes a page: the checker
-writes nothing and the tests write nothing. `population()` is under `functools.cache`, so the sixteen
+writes nothing and the tests write nothing. `population()` is under `functools.cache`, so the seventeen
 `check()` calls the row makes pay the yaml/docs/OAI/preprints walk once.
 
 The checker measures; this file injects. Run:
   python3 notes/scripts/run_tests.py notes/scripts/tests/test_faithfulness.py -q
 """
+from catlib import anchors
+
 import pytest
 
 pytestmark = pytest.mark.mutant
@@ -252,13 +260,29 @@ def text(mod):
 
 
 def test_clean_page(mod, text):
-    """Every pass is silent, and the counts the passes report are pinned."""
+    """Every pass is silent, and the counts the passes report are pinned as derived floors: each pass
+    counted exactly the population its own rule reads off the page (the anchor pattern, the fenced-block
+    walk, the quotation pattern), so 0 problems means every anchor, block line and quotation resolved,
+    and a page carrying none fails the floor. The formalization resolution is pinned as relations:
+    every unique config resolves, every carrier-typed statement has a resolved carrier, and the entry
+    count exceeds the unique config count. The corpus measurements stay literal."""
     problems, n_anchor, n_block, n_quote, n_sync, v = mod.check(text)
     assert not problems, problems[:3]
-    assert (n_anchor, n_block, n_quote, n_sync) == (10, 30, 1, 0), \
-        f"anchors {n_anchor}, block lines {n_block}, quotations {n_quote}, sync {n_sync}"
-    assert (v["entries"], v["unique"], v["resolved"], v["typed"], v["carriers_ok"]) == \
-        (200, 189, 189, 61, 61), f"entries {v['entries']}, unique {v['unique']}, resolved {v['resolved']}, typed {v['typed']}, carriers {v['carriers_ok']}"
+    lines = text.split("\n")
+    assert n_anchor == len(mod.ANCHOR.findall(text)) > 0, \
+        f"anchors {n_anchor} against {len(mod.ANCHOR.findall(text))} shapes the page carries"
+    blocks = sum(len(blk) for _i, blk in anchors.fenced_blocks(lines, dedent=True))
+    assert n_block == blocks > 0, \
+        f"block lines {n_block} against {blocks} block lines the page carries"
+    assert n_quote == len(mod.QUOTE.findall(text)) > 0, \
+        f"quotations {n_quote} against {len(mod.QUOTE.findall(text))} quotations the page carries"
+    assert n_sync == 0, f"sync problems {n_sync}"
+    assert v["resolved"] == v["unique"] > 0, \
+        f"{v['resolved']} resolved declarations against {v['unique']} unique configs"
+    assert v["carriers_ok"] == v["typed"] > 0, \
+        f"{v['carriers_ok']} resolved carriers against {v['typed']} carrier-typed statements"
+    assert v["entries"] > v["unique"] > 0, \
+        f"{v['entries']} entries over {v['unique']} configs"
     pr = v["pair"]
     assert (pr["exact"], pr["subset"], pr["overlap"], pr["disjoint"],
             pr["carrier_no_literal"], pr["no_headline_literal"], pr["no_family"]) == \
@@ -323,3 +347,20 @@ def test_layout_shift_is_invisible(mod, text):
         if not any(want in x for x in found):
             broken.append(f"{label}: {want!r}")
     assert not broken, f"layout shift breaks {len(broken)} needles: {broken[:3]}"
+
+
+def test_resolution_floors_fire_on_a_page_that_carries_nothing(mod, text):
+    """Stripping every anchor shape from the page drives the anchor pass to 0, and the block and
+    quotation passes with it — a block with no preceding anchor is skipped, a quote with no anchor in
+    its line is skipped. The page still carries blocks and quotations, so the pass counts less than the
+    page carries: the equality the clean test asserts fails, which is what makes the floor non-vacuous."""
+    cand = mod.ANCHOR.sub("", text)
+    _p, n_anchor, n_block, n_quote, _s, _v = mod.check(cand)
+    blocks = sum(len(blk) for _i, blk in anchors.fenced_blocks(cand.split("\n"), dedent=True))
+    quotes = len(mod.QUOTE.findall(cand))
+    assert n_anchor == len(mod.ANCHOR.findall(cand)) == 0, \
+        f"the anchor pass counted {n_anchor} on a page with no anchors"
+    assert n_block == 0 < blocks, \
+        f"the block pass counted {n_block} of {blocks} block lines once the anchors were stripped"
+    assert n_quote == 0 < quotes, \
+        f"the quotation pass counted {n_quote} of {quotes} quotations once the anchors were stripped"

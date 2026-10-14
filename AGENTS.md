@@ -772,11 +772,16 @@ lives in this file and nowhere else.
   the literal census, a pairing class count, a disjoint table family, an overlap table's extra literal,
   the `a.e.` census, a deleted `a.e.` row, an `a.e.` row count, a statement anchor shifted, the carrier
   rule narrowed, a quote anchor shifted, and a prose count visible only to the render diff) and asserts
-  each needle fires for its own fault and for no other; the clean test pins 10 anchors, 30 block lines,
-  1 quotation, 0 sync problems, 200 entries over 189 configs, 189 resolved declarations, 61
-  carrier-typed statements, 61 resolved carriers, the six pairing classes, 2,288 theorem environments
+  each needle fires for its own fault and for no other; the clean test pins the resolution passes as
+  **derived floors** — each pass counted exactly the population its own rule reads off the page (the
+  anchor pattern, the fenced-block walk, the quotation pattern), each required non-zero — and the
+  formalization resolution as **relations**: every unique config resolves, every carrier-typed statement
+  has a resolved carrier, and the entry count exceeds the unique config count. The strip test
+  `test_resolution_floors_fire_on_a_page_that_carries_nothing` shows the anchor equality holds at 0
+  while the block and quotation counters fall below the populations the page still carries. The corpus
+  measurements stay literal: 0 sync problems, the six pairing classes, 2,288 theorem environments
   with 48 `a.e.` hits over 32 families, and the 32-row `a.e.` table. `population()` is under
-  `functools.cache`, so the sixteen `check()` calls the row makes pay the corpus walk once. The checker
+  `functools.cache`, so the seventeen `check()` calls the row makes pay the corpus walk once. The checker
   reads no argv, so `--mutant` is inert, and writes nothing. Quote a count from
   `python3 notes/scripts/measure_faithfulness.py`'s report, which is the writer's source for every
   number on the page.
