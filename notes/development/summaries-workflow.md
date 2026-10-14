@@ -969,3 +969,45 @@ Not checked: **4** files still carry recorded needles with numeric values —
 **1**, `test_abstracts.py` **1** — **23** numeric in all. The **309** clean pins are
 still literals (phase 2), and there is one synthetic-rule test file
 (`test_quotes.py`) against 14 checkers (phase 3).
+
+## Phase 1 takes `test_proof_density.py`, and a global-count needle must be keyed to the delta
+
+Eight needles are now functions of the mutated rows, the mutated ledger and the
+committed population. The row-count and column-sum needles are keyed to the **delta
+the mutation introduces** — `R['rows'] - 1`, `R['proofs'] + 1`, `R['thms'] + 1` —
+not to the mutated table.
+
+**A needle that reads the mutated table produces the pass's own line for any fault
+that perturbs that count.** The drop-row needle fired on the duplicate-row fault, the
+proofs-sum needle fired on the negative-proofs fault, the thms-sum needle fired on
+drop and duplicate, and the family-set needle fired on drop. Keying to the delta
+makes each needle the line the pass prints for its own fault and for no other: the
+drop needle asks for `718 != 719`, which the duplicate candidate never prints.
+
+The family-set needle names the delta `1, 1`, which is only true when the renamed
+family has exactly one source row. The layout probe caught that: renaming `rows[0]`
+after a reorder renames a multi-row family, and the needle stopped firing. The
+mutation now targets `one_row_index` — **a layout-dependent needle needs a
+layout-independent target.**
+
+The layout analogue for a TSV is a **reorder that preserves every measured count**
+(`sorted` by `dir` descending). The row-insert analogue broke **5** needles; the
+reorder breaks **0**.
+
+Measured: specificity **0** cross-fires; reorder **0** breaks; **10** tests pass.
+
+The census moves: recorded needles **74 → 71**, numeric **23 → 20**, derived
+**139 → 142**, clean pins **309** unchanged. Needle digits **159 → 166** — the
+delta-keyed needles carry `R['rows']` expressions, so the digit count is not a
+measure of derivation.
+
+Gate **79** rows, **0** failures; head diff empty; promote-and-verify assertion
+green; lint trio **0 / 0 / 0**.
+
+Not checked: **4** files still carry recorded needles with numeric values —
+`test_index_links.py` **3**, `test_fleet_design.py` **3**, `test_index_design.py`
+**1**, `test_abstracts.py` **1** — **23** numeric in all, and all four are the
+mutation's own inputs (invented hrefs, invented paths, rewritten phrases), which the
+rule keeps literal. `test_subfinding_pairs.py` already derives its measured values.
+The **309** clean pins are still literals (phase 2), and there is one synthetic-rule
+test file (`test_quotes.py`) against 14 checkers (phase 3).
