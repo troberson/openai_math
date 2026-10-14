@@ -17,6 +17,13 @@ this file makes pay the 521-file walk once. The file count is pinned as a **walk
 walks `preprints/` for `.bib` files itself and the population's count must equal the walk, so a
 bibliography added to a manuscript moves the walk, not the recorded number.
 
+Two cases feed the accent rules a string, not the corpus. The shipped `catlib.bib.ACCENT` guard leaves
+an escape applied to a letter (`\'a`) unfolded, so `norm_title` splits `Gy\'arf\'as's` into pieces,
+while the checker's no-guard variant folds it into one word — the guard is what makes the two
+normalizations disagree, and the page's sensitivity row is measured against that difference. The
+apostrophe case: `catlib.text.fold_apostrophe` makes a U+2019 title and an ASCII title one key, where a
+rule that strips only Unicode diacritics keeps the two spellings distinct.
+
 **The needles that name a measured figure are derived at run time, not recorded.** The pair-layer
 phrase, the headline crossing count, the cluster membership, the cluster composition, the work count
 and the release-target count are rebuilt from the checker's own `measure()` dict, and the block-line
@@ -30,6 +37,10 @@ Run: `python3 notes/scripts/run_tests.py notes/scripts/tests/test_citations.py -
 import collections
 import pathlib
 import re
+import unicodedata
+
+from catlib import bib
+from catlib.text import fold_apostrophe
 
 import pytest
 
@@ -226,3 +237,37 @@ def test_padded_table_cells_are_still_read(load, text):
     assert cand != text, "padding changed nothing"
     assert v.check(cand) == v.check(text), \
         f"padded page reports {v.check(cand)}, clean page {v.check(text)}"
+
+
+def test_accent_guard_leaves_an_escape_applied_to_a_letter(load):
+    """The shipped `catlib.bib.ACCENT` guard `(?![a-zA-Z])` means an escape applied to a letter (`\\'a`)
+    is not folded, so `norm_title` splits `Gy\\'arf\\'as's` into pieces, while the checker's no-guard
+    variant folds it into one word. The guard is what makes the two normalizations disagree, and the
+    page's sensitivity row is measured against that difference. Neither string is read from the corpus."""
+    v = load("verify_citations")
+    s = r"Gy\'arf\'as's Conjecture"
+    assert bib.ACCENT.findall(s) == [], f"the guarded rule folded {bib.ACCENT.findall(s)}"
+    assert v.ACCENT_NOGUARD.findall(s) == ["a", "a"], \
+        f"the no-guard rule read {v.ACCENT_NOGUARD.findall(s)}"
+    assert v.norm_title(s) == "gy arf as s conjecture", \
+        f"the guarded rule normalized to {v.norm_title(s)!r}"
+    assert v.norm_noguard(s) == "gyarfas s conjecture", \
+        f"the no-guard rule normalized to {v.norm_noguard(s)!r}"
+    assert v.norm_title(s) != v.norm_noguard(s), \
+        "the two rules agree, so the guard is inert and the sensitivity row measures nothing"
+
+
+def test_apostrophe_fold_makes_the_two_title_spellings_one_key():
+    """`catlib.text.fold_apostrophe` folds U+2019 to ASCII before matching, so a title the release
+    writes with a typographic apostrophe and one written with ASCII are one key. A rule that strips
+    only Unicode diacritics leaves U+2019 in place, so the two spellings stay distinct. Neither string
+    is read from the corpus."""
+    uni, ascii_ = "Erd\u2019s Conjecture", "Erd's Conjecture"
+    assert fold_apostrophe(uni) == ascii_, f"the fold read {fold_apostrophe(uni)!r}"
+
+    def no_fold(s):
+        decomposed = unicodedata.normalize("NFD", s)
+        return "".join(c for c in decomposed if not unicodedata.combining(c))
+
+    assert no_fold(uni) != no_fold(ascii_), \
+        "the narrowed rule joins the two spellings, so it is not the fold that separates them"

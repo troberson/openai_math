@@ -27,6 +27,7 @@ Run: `python3 notes/scripts/run_tests.py notes/scripts/tests/test_subfinding_pai
 import pathlib
 import re
 
+import measure_names as M
 import pytest
 
 PAGE = pathlib.Path("notes/reports/subfinding-pairs.md")
@@ -167,3 +168,15 @@ def test_padded_table_cells_are_still_read(load, text):
     assert len(got) == 10, f"padded page reads {len(got)} Summary rows, the page carries 10"
     assert all(got[k] == measured[k] for k in got), \
         f"padded table values differ: {[k for k in got if got[k] != measured[k]]}"
+
+
+def test_verbatim_quote_is_the_raw_bytes():
+    """The pairs checker compares a quoted clause as a raw substring of the family's `\\resultentry`
+    line, so a quote that de-LaTeXes `Gy\\'arf\\'as's` to `Gyárfás's` fails against the bytes
+    `overview.tex:405` ships. The accent fold (`measure_names.fold`) accepts the same quote, so the
+    byte rule is the stricter rule. Neither string is read from the corpus."""
+    line = r"Gy\'arf\'as's conjecture is false for k = 5"
+    quote = "Gy\xe1rf\xe1s's"
+    assert quote not in line, "the raw substring test accepted the de-LaTeXed quote"
+    assert M.fold(quote) in M.fold(line), \
+        f"the accent fold read {M.fold(line)!r}, so it does not accept the de-LaTeXed quote"

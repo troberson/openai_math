@@ -62,6 +62,7 @@ The checker measures; this file injects. Run:
 """
 import bisect
 import pathlib
+import unicodedata
 
 import pytest
 
@@ -309,3 +310,33 @@ def test_resolution_floors_fire_on_a_page_that_carries_nothing(mod, text):
     for key, pop in resolution(mod):
         assert out[key] == pop(cand) == 0, \
             f"{key}: pass counted {out[key]} on a page with no {key}"
+
+
+def unicode_only(s):
+    """The narrowed rule: strip Unicode diacritics only, with no LaTeX accent-escape rule."""
+    decomposed = unicodedata.normalize("NFD", s)
+    return "".join(c for c in decomposed if not unicodedata.combining(c))
+
+
+def test_accent_fold_joins_the_latex_and_unicode_spellings(mod):
+    """The shipped fold (`measure_names.fold`) is what makes `K\\"ahler` and `Kähler` one key, so a name
+    the release spells two ways is one name page. A rule that strips only Unicode diacritics leaves the
+    escape in the string, so the two spellings stay two keys. Neither string is read from the corpus."""
+    latex, uni = r"K\"ahler", "K\xe4hler"
+    assert mod.M.fold(latex) == mod.M.fold(uni) == "Kahler", \
+        f"the fold read {mod.M.fold(latex)!r} and {mod.M.fold(uni)!r}"
+    assert mod.M.key(latex) == mod.M.key(uni), \
+        f"the key read {mod.M.key(latex)!r} and {mod.M.key(uni)!r}"
+    assert unicode_only(latex) != unicode_only(uni), \
+        "the narrowed rule joins the two spellings, so the escape is not what splits them"
+
+
+def test_quote_pattern_matches_the_folded_source_line(mod):
+    """The quote pass compares `fold(quote)` against `fold(line)`, so a page quoting the Unicode
+    spelling matches a manuscript line that writes the LaTeX escape. The narrowed fold leaves the escape
+    in the line, so the pattern's word sequence does not occur. Neither string is read from the corpus."""
+    pat = mod.quote_pattern("K\xe4hler")
+    line = r"the K\"ahler--Einstein manifold"
+    assert pat.search(mod.M.fold(line)), f"the shipped fold gives {mod.M.fold(line)!r}"
+    assert not pat.search(unicode_only(line)), \
+        f"the narrowed fold matched {unicode_only(line)!r}, so the escape is not the obstacle"

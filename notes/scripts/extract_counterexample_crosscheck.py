@@ -80,9 +80,7 @@ def declaration_statement(decl, rel):
     if not p.is_file():
         return None, []
     lines = p.read_text(encoding="utf-8", errors="replace").splitlines()
-    tail = decl.split(".")[-1]
-    full = decl.removeprefix("OAI.")
-    pat = rf"^\s*(theorem|lemma|proposition|corollary|def|example)\s+(?:{re.escape(full)}|{re.escape(tail)})\b"
+    pat = Y.stmt_pattern(decl)
     for i, ln in enumerate(lines, start=1):
         if re.match(pat, ln):
             block = [ln.strip()]

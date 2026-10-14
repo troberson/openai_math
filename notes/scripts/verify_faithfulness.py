@@ -35,6 +35,7 @@ from functools import cache
 
 from catlib import anchors
 from catlib import render as RD
+from catlib import yaml as Y
 from catlib.paths import DOCS_DIR, LEAN, NOTES, PREPRINTS, ROOT
 from catlib.text import collapse_ws, first_group
 
@@ -45,7 +46,6 @@ KEY = re.compile(r"comparator_config:\s*ComparatorChallenges/([A-Za-z0-9_]+)\.js
 DECL = re.compile(r"^\s*declaration:\s*(\S+)")
 FILE = re.compile(r"^\s*file:\s*(\S+)")
 LINK = re.compile(r"\.\./ComparatorChallenges/([A-Za-z0-9_]+)\.lean")
-STMT = re.compile(r"^\s*(theorem|lemma|proposition|corollary|def|example)\s+")
 TYPE = re.compile(r":\s*([A-Z][A-Za-z0-9_.]*(?:\.\{[^}]*\})?)\s*:=")
 CARR = re.compile(r"^\s*(?:private\s+|protected\s+|noncomputable\s+)?(?:def|abbrev|structure)\s+"
                   r"([A-Za-z0-9_.]+)\s*:\s*(?:Prop\s*)?[:=]")
@@ -101,8 +101,7 @@ def stmt_line(decl, rel):
     if not p.is_file():
         return None
     lines = read(p).splitlines()
-    tail, full = decl.split(".")[-1], decl.removeprefix("OAI.")
-    pat = rf"^\s*(theorem|lemma|proposition|corollary|def|example)\s+(?:{re.escape(full)}|{re.escape(tail)})\b"
+    pat = Y.stmt_pattern(decl)
     for i, ln in enumerate(lines, 1):
         if re.match(pat, ln):
             return i

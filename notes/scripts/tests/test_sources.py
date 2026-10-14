@@ -1,4 +1,4 @@
-"""The self-tests for `notes/scripts/verify_sources.py`.
+r"""The self-tests for `notes/scripts/verify_sources.py`.
 
 The checker verifies `notes/reports/sources.md` and `notes/tables/sources.tsv` against the manuscript trees on
 disk. TSV integrity: 719 rows over the shipped header, every `pdf` on disk and non-empty, every
@@ -18,6 +18,13 @@ that owns it: an anchor line shifted, an anchor file renamed, a block line alter
 byte figure, the six-name count, the gap breakdown, a manuscript directory name, the root
 distribution, the disk census, the formalized share, and a prose count no count phrase covers — the
 last is visible only to the render diff.
+
+Two cases feed the byte-form rules a string, not the corpus. `\documentclass` **at line start** is the
+rule the root census uses, so a macro that *mentions* the command is not a root and the substring rule
+reads it as one — the mechanism behind the 715/3/1 root distribution against the substring 714/4/1. The
+declared-environment rule counts a name the six-name list omits (`assumption`), and the
+`NON_STATEMENT` subtraction is what keeps a `definition` environment out of the count — the shape of
+the 21,288 against 21,203 gap. Neither case names a file on disk.
 
 **The needles that name a measured figure are derived at run time, not recorded.** The block needle is
 keyed to the byte the mutation touched: the block carrying that byte is the block the pass reports, and
@@ -260,3 +267,46 @@ def test_resolution_floors_fire_on_a_page_that_carries_nothing(mod, text):
     _p, _a, _b, n_slug, _ph, _sy = mod.check(no_slug)
     assert n_slug == len(mod.SLUG.findall(no_slug)) == 0, \
         f"the slug pass counted {n_slug} on a page with no slugs"
+
+
+def test_documentclass_rule_is_line_start(mod):
+    """The rule the root census uses: `\\documentclass` at line start. A macro that *mentions* the
+    command is not a root, so the line-start rule reads 0 from it and the substring rule reads 1 — the
+    mechanism behind the 715/3/1 root distribution against the substring 714/4/1, which is the one
+    directory that differs. Neither string is a file on disk."""
+    root = "\\documentclass[11pt]{article}\n\\begin{document}"
+    macro = r"\newcommand{\dc}{\documentclass}"
+    assert mod.preprints.DOCCLASS.search(root) is not None, \
+        "the line-start rule does not read a real root line, so the census is not this rule"
+    assert mod.preprints.DOCCLASS.search(macro) is None, \
+        "the line-start rule read a macro that only mentions the command"
+    assert "\\documentclass" in macro, \
+        "the substring rule must read the macro line, so the gap is the rule, not the file"
+
+
+def test_declared_env_rule_counts_a_name_the_six_name_list_omits(mod):
+    """The declared rule against the six-name list: a directory that declares `assumption` and uses it
+    twice counts 2 under the declared rule and 1 under the six-name list, which is the shape of the
+    21,288 against 21,203 gap. `declared_envs` is the declared set **minus** `NON_STATEMENT`, so
+    `definition` is declared and excluded; a rule that skips the subtraction keeps it in and counts 3
+    begins. The string is not a file on disk."""
+    text = (r"\newtheorem{assumption}{Assumption}" "\n"
+            r"\begin{assumption}" "\n" r"\begin{assumption}" "\n"
+            r"\newtheorem{definition}{Definition}" "\n"
+            r"\begin{definition}" "\n" r"\begin{theorem}")
+    declared = mod.preprints.declared_envs([text])
+    assert declared == {"assumption"}, f"the declared rule's set read {sorted(declared)}"
+    assert mod.preprints.env_counts([text], declared)["thms"] == 2, \
+        f"the declared rule counted {mod.preprints.env_counts([text], declared)['thms']}"
+    assert mod.preprints.six_count([text]) == 1, \
+        f"the six-name list counted {mod.preprints.six_count([text])}"
+    no_sub = set(mod.preprints.NEWTHEOREM.findall(text))
+    assert no_sub - declared == {"definition"}, \
+        f"the rule without the NON_STATEMENT subtraction declares {sorted(no_sub)}, so the " \
+        "subtraction is not what excludes definition"
+    assert sum(1 for m in mod.preprints.BEGIN.findall(text) if m in no_sub) == 3, \
+        "the rule without the subtraction does not count the definition environment"
+    assert "definition" in mod.preprints.NON_STATEMENT, \
+        "definition is not in NON_STATEMENT, so the subtraction cannot be what excludes it"
+    assert "assumption" not in mod.preprints.NON_STATEMENT, \
+        "assumption is in NON_STATEMENT, so the declared rule would not count it"

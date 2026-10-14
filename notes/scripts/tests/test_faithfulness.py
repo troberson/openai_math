@@ -55,7 +55,9 @@ writes nothing and the tests write nothing. `population()` is under `functools.c
 The checker measures; this file injects. Run:
   python3 notes/scripts/run_tests.py notes/scripts/tests/test_faithfulness.py -q
 """
-from catlib import anchors
+import re
+
+from catlib import anchors, yaml as Y
 
 import pytest
 
@@ -364,3 +366,35 @@ def test_resolution_floors_fire_on_a_page_that_carries_nothing(mod, text):
         f"the block pass counted {n_block} of {blocks} block lines once the anchors were stripped"
     assert n_quote == 0 < quotes, \
         f"the quotation pass counted {n_quote} of {quotes} quotations once the anchors were stripped"
+
+
+def test_carrier_rule_allows_noncomputable(mod):
+    """The shipped carrier rule allows `noncomputable`, so `noncomputable def MainClaim : Prop := by`
+    (`lean/OAI/Computability/MeanPayoff/Model.lean:113`) is found. A rule that allows only
+    `private|protected` misses it — that is the 1-of-61 gap the page records. Neither string is a file
+    on disk."""
+    line = "noncomputable def MainClaim : Prop := by"
+    assert mod.CARR.match(line), "the shipped carrier rule does not read a noncomputable carrier"
+    narrow = re.compile(r"^\s*(?:private\s+|protected\s+)?(?:def|abbrev|structure)\s+"
+                        r"([A-Za-z0-9_.]+)\s*:\s*(?:Prop\s*)?[:=]")
+    assert not narrow.match(line), \
+        "the narrowed rule reads the same line, so `noncomputable` is not what it excludes"
+    assert narrow.match("private def MainClaim : Prop := by"), \
+        "the narrowed rule does not read the private form it is built for"
+
+
+def test_statement_rule_allows_the_qualified_name():
+    """The shipped statement rule matches the qualified name minus `OAI.` as well as the bare tail, so
+    `theorem ThorpNine.main :` (`lean/OAI/Probability/ThorpRouting/Main.lean:13`) is found for the
+    declaration `OAI.ThorpNine.main`. A bare-tail rule reads 188 of the 189 declarations, so it misses
+    this one. Both rules read `theorem main :`. Neither string is a file on disk."""
+    decl = "OAI.ThorpNine.main"
+    qualified = "theorem ThorpNine.main :"
+    pat = Y.stmt_pattern(decl)
+    bare = re.compile(r"^\s*(theorem|lemma|proposition|corollary|def|example)\s+main\b")
+    assert re.match(pat, qualified), f"the shipped rule does not read {qualified!r}"
+    assert not bare.match(qualified), \
+        f"the bare-tail rule reads {qualified!r}, so the qualified branch is not what widens the read"
+    plain = "theorem main :"
+    assert re.match(pat, plain) and bare.match(plain), \
+        "the shipped rule does not read the bare-tail form, so the two rules are not the same rule"

@@ -22,6 +22,7 @@ The checker measures; this file injects. Run:
 """
 import contextlib
 import io
+import re
 
 import pytest
 from catlib.paths import SUMMARIES_DIR, read_text
@@ -35,6 +36,7 @@ from catlib.summaries import (
     superseded_dir,
     units,
 )
+from catlib.text import strip_markup
 
 pytestmark = pytest.mark.mutant
 
@@ -275,3 +277,22 @@ def test_padded_table_cells_are_still_read(mod, pages):
         if problems != clean:
             bad.append(f"{page.path.name}: {problems} problems against {clean}")
     assert not bad, f"padded rows are not read: {bad[:3]}"
+
+
+def test_citation_stripping_keeps_a_bracketed_note():
+    r"""The quote pass folds a source line with `catlib.text.strip_markup`, whose citation rule
+    `\cite[tp]*\{[^}]*\}` requires the brace to follow `\cite` directly, so a bracketed note
+    (`\cite[Theorem~1.2]{X}`) is not swallowed: the note's word survives the fold and a page quoting it
+    matches. A rule that allows the optional `[...]` argument strips the whole citation, so the note's
+    word is gone and the same quote fails. The fold also strips a theorem number after the word (the
+    deliberate rule that lets a page write "Theorem 1" for a source `\ref{thm:main}`), so the word, not
+    the number, is what the comparison sees. Neither string is read from the corpus."""
+    src = r"the bound in \cite[Theorem~1.2]{X} is sharp"
+    quote = "Theorem"
+    assert quote in strip_markup(src), f"the shipped fold read {strip_markup(src)!r}"
+    narrow = re.compile(r"\\(?:ref|eqref|label|autoref|Cref|cref|cite[tp]*(?:\[[^\]]*\])?|"
+                        r"citeauthor|citeyear)\{[^}]*\}")
+    assert quote not in narrow.sub("", src), \
+        f"the widened rule read {narrow.sub('', src)!r}, so it does not swallow the note"
+    assert narrow.sub("", src).startswith("the bound in "), \
+        "the widened rule removed text outside the citation"

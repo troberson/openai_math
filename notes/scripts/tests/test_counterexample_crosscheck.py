@@ -56,8 +56,9 @@ The checker measures; this file injects. Run:
 """
 import re
 
-from catlib import anchors
+from catlib import anchors, yaml as Y
 
+import measure_names as M
 import pytest
 
 pytestmark = pytest.mark.mutant
@@ -320,3 +321,48 @@ def test_resolution_floors_fire_on_a_page_that_carries_nothing(mod, text):
         f"the block pass counted {n_block} of {blocks} block lines once the anchors were stripped"
     assert n_quote == 0 < quotes, \
         f"the quotation pass counted {n_quote} of {quotes} quotations once the anchors were stripped"
+
+
+def test_verbatim_is_the_bytes_not_a_de_latexed_form(mod):
+    """The quotation pass compares `collapse_ws` bytes, which fold whitespace and markup but not accents,
+    so a quote that de-LaTeXes `Gy\\'arf\\'as's` to `Gyárfás's` fails against the bytes `overview.tex:405`
+    ships. A rule that folds accents before comparing accepts the same quote. Neither string is read from
+    the corpus."""
+    line = r"Gy\'arf\'as's conjecture is false"
+    quote = "Gy\xe1rf\xe1s's"
+    assert mod.norm(line) == line, "collapse_ws changed the accent escape, so it is not the byte rule"
+    assert quote not in mod.norm(line), \
+        f"the byte rule accepted the de-LaTeXed quote against {mod.norm(line)!r}"
+    assert M.fold(quote) in M.fold(line), \
+        f"the accent-folding rule read {M.fold(line)!r}, so it does not accept the de-LaTeXed quote"
+
+
+def test_carrier_rule_allows_noncomputable(mod):
+    """The extractor's carrier rule allows `noncomputable`, so `noncomputable def MainClaim : Prop := by`
+    is found; a rule that allows only `private|protected` misses 1 of the 61 carriers. Neither string is
+    a file on disk."""
+    line = "noncomputable def MainClaim : Prop := by"
+    assert mod.cx.CARRIER_DEF.match(line), "the shipped carrier rule does not read a noncomputable carrier"
+    narrow = re.compile(r"^\s*(?:private\s+|protected\s+)?(?:def|abbrev|structure)\s+"
+                        r"([A-Za-z0-9_.]+)\s*:\s*(?:Prop\s*)?[:=]")
+    assert not narrow.match(line), \
+        "the narrowed rule reads the same line, so `noncomputable` is not what it excludes"
+    assert narrow.match("private def MainClaim : Prop := by"), \
+        "the narrowed rule does not read the private form it is built for"
+
+
+def test_statement_rule_allows_the_qualified_name():
+    """The extractor's statement rule matches the qualified name minus `OAI.` as well as the bare tail,
+    so `theorem ThorpNine.main :` is found for `OAI.ThorpNine.main`. The checker's own rule
+    (`verify_counterexample_crosscheck.py:266`) is the bare-tail rule, which reads 188 of the 189
+    declarations and misses this line. Both rules read `theorem main :`. Neither string is a file on disk."""
+    decl = "OAI.ThorpNine.main"
+    qualified = "theorem ThorpNine.main :"
+    pat = Y.stmt_pattern(decl)
+    bare = re.compile(r"^\s*(theorem|lemma|proposition|corollary|def|example)\s+main\b")
+    assert re.match(pat, qualified), f"the extractor's rule does not read {qualified!r}"
+    assert not bare.match(qualified), \
+        f"the checker's bare-tail rule reads {qualified!r}, so the qualified branch is not what widens it"
+    plain = "theorem main :"
+    assert re.match(pat, plain) and bare.match(plain), \
+        "the extractor's rule does not read the bare-tail form, so the two rules are not the same rule"

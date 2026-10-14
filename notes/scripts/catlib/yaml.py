@@ -35,6 +35,19 @@ DOC_CONFIG = re.compile(r"\.\./ComparatorChallenges/([A-Za-z0-9_]+)\.lean")
 DOC_PAP = re.compile(r"\]\(\.\./\.\./(preprints/(?:[^\s(){}\\]|\([0-9]+\))*\.pdf)\)")
 SCOPE_SPAN = re.compile(r"^## Scope\n(.*?)(?=^## |\Z)", re.MULTILINE | re.DOTALL)
 TRACE_ROW = re.compile(r"^\|\s*(\d{3})\s*\|\s*\[[^\]]*\]\(reasoning_traces/([^)]+?)\.(?:pdf|tex)\)", re.MULTILINE)
+STMT_KEYWORD = re.compile(r"^\s*(theorem|lemma|proposition|corollary|def|example)\s+")
+
+
+def stmt_pattern(decl: str) -> str:
+    """-> the regex a declaration's statement line must match: the qualified name minus `OAI.`, or the bare tail.
+
+    A file usually writes the last component (`theorem main_theorem :` for `OAI.Brennan.main_theorem`),
+    which the tail branch reads. `lean/OAI/Probability/ThorpRouting/Main.lean:13` writes the qualified
+    name, `theorem ThorpNine.main :`, which a bare-tail rule reads as NOT FOUND: a bare-tail rule reads
+    188 of the 189 resolved declarations, so the qualified branch is what makes the read complete.
+    """
+    tail, full = decl.split(".")[-1], decl.removeprefix("OAI.")
+    return STMT_KEYWORD.pattern + rf"(?:{re.escape(full)}|{re.escape(tail)})\b"
 
 
 def parse_yaml_text(text: str) -> tuple[set[str], Counter]:
