@@ -39,9 +39,14 @@ phrase in the page as committed. Each test asserts the injected text differs fro
 from, and each needle is the problem string the pass that owns that form prints — measured specific,
 each needle fires for its own fault and for no other.
 
-The clean test asserts the passes are silent and pins the four population counts they report: 172
-anchors, 295 block lines, 38 quotations and 0 sync problems. A page with fewer anchors, block lines or
-quotations is a pass that stopped checking, not a pass that passed.
+The clean test asserts the passes are silent and pins the resolution counts as **derived floors**: each
+pass counted exactly the population its own rule reads off the page — every anchor shape, every line of
+every fenced block with a preceding anchor, every quotation with an anchor in its line — and each
+population is required non-zero, so 0 problems means every anchor, block line and quotation resolved.
+The 28-family population stays literal: it is the ledger rule the checker measures, not a relation the
+page can express. `test_resolution_floors_fire_on_a_page_that_carries_nothing` strips every anchor shape
+and shows the anchor equality holds at 0 while the block and quotation counters fall below the
+populations the page still carries — the floor is what keeps each pass honest.
 
 The checker reads no argv and `check()` takes page text, so nothing here writes a page: the checker
 writes nothing and the tests write nothing.
@@ -50,6 +55,8 @@ The checker measures; this file injects. Run:
   python3 notes/scripts/run_tests.py notes/scripts/tests/test_counterexample_crosscheck.py -q
 """
 import re
+
+from catlib import anchors
 
 import pytest
 
@@ -250,11 +257,23 @@ def text(mod):
 
 
 def test_clean_page(mod, text):
-    """Every pass is silent, and the four population counts the passes report are pinned."""
+    """Every pass is silent, and the resolution counts are pinned as derived floors: each pass counted
+    exactly the population its own rule reads off the page — every anchor shape, every line of every
+    fenced block with a preceding anchor, every quotation with an anchor in its line — and each
+    population is required non-zero, so 0 problems means every anchor, block line and quotation
+    resolved. The 28-family population stays literal: it is the ledger rule the checker measures, not a
+    relation the page can express."""
     problems, n_anchor, n_block, n_quote, n_sync, v = mod.check(text)
     assert not problems, problems[:3]
-    assert (n_anchor, n_block, n_quote, n_sync) == (172, 295, 38, 0), \
-        f"anchors {n_anchor}, block lines {n_block}, quotations {n_quote}, sync {n_sync}"
+    lines = text.split("\n")
+    assert n_anchor == len(mod.ANCHOR.findall(text)) > 0, \
+        f"anchors {n_anchor} against {len(mod.ANCHOR.findall(text))} shapes the page carries"
+    blocks = sum(len(blk) for _i, blk in anchors.fenced_blocks(lines, dedent=True))
+    assert n_block == blocks > 0, \
+        f"block lines {n_block} against {blocks} block lines the page carries"
+    assert n_quote == len(mod.QUOTE.findall(text)) > 0, \
+        f"quotations {n_quote} against {len(mod.QUOTE.findall(text))} quotations the page carries"
+    assert n_sync == 0, f"sync problems {n_sync}"
     assert len(v["pop"]) == 28, f"population {len(v['pop'])}, not 28"
 
 
@@ -284,3 +303,20 @@ def test_padded_table_cells_are_still_read(mod, text):
     t2 = [m.group(1) for ln in cand.split("\n") if (m := mod.T2ROW.match(ln))]
     assert t2 == [f for f in v["pop"] if v["per"][f]["tier"] == "T2"], \
         f"padded T2 table reads {t2}"
+
+
+def test_resolution_floors_fire_on_a_page_that_carries_nothing(mod, text):
+    """Stripping every anchor shape drives the anchor pass to 0 and the block and quotation passes with
+    it — a block with no preceding anchor is skipped, a quote with no anchor in its line is skipped. The
+    page still carries blocks and quotations, so the pass counts less than the page carries: the
+    equality the clean test asserts fails, which is what makes each floor non-vacuous."""
+    cand = mod.ANCHOR.sub("", text)
+    _p, n_anchor, n_block, n_quote, _s, _v = mod.check(cand)
+    blocks = sum(len(blk) for _i, blk in anchors.fenced_blocks(cand.split("\n"), dedent=True))
+    quotes = len(mod.QUOTE.findall(cand))
+    assert n_anchor == len(mod.ANCHOR.findall(cand)) == 0, \
+        f"the anchor pass counted {n_anchor} on a page with no anchors"
+    assert n_block == 0 < blocks, \
+        f"the block pass counted {n_block} of {blocks} block lines once the anchors were stripped"
+    assert n_quote == 0 < quotes, \
+        f"the quotation pass counted {n_quote} of {quotes} quotations once the anchors were stripped"

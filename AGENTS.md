@@ -752,9 +752,15 @@ lives in this file and nowhere else.
   test file injects fourteen faults (a tier swapped, a config count moved, a statement anchor shifted, a
   carrier body word, a claim quote word, a yaml anchor shifted, a gap row family, a `sorry` count, a
   deleted T2 row, a T2 config taken from another family, a carrier paraphrase, an absent anchor file, a
-  quote moved to another family's line, and a prose count only the render diff can see) and pins the four
-  population counts the passes report — 172 anchors, 295 block lines, 38 quotations, 0 sync problems.
-  Each needle is measured specific: it fires for its own fault and for no other. Both write nothing.
+  quote moved to another family's line, and a prose count only the render diff can see) and pins the
+  resolution counts as **derived floors** — each pass counted exactly the population its own rule reads
+  off the page (every anchor shape, every line of every fenced block with a preceding anchor, every
+  quotation with an anchor in its line), each required non-zero, so 0 problems means every anchor, block
+  line and quotation resolved — plus the 28-family population as a literal, which is the ledger rule the
+  checker measures. `test_resolution_floors_fire_on_a_page_that_carries_nothing` strips every anchor
+  shape and shows the anchor equality holds at 0 while the block and quotation counters fall below the
+  populations the page still carries. Each needle is measured specific: it fires for its own fault and
+  for no other. Both write nothing.
   Run `python3 notes/scripts/extract_counterexample_crosscheck.py` twice and diff:
   the report must be identical.
 - Check `notes/reports/formalization-faithfulness.md` with `python3 notes/scripts/verify_faithfulness.py`
