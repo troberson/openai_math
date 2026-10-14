@@ -16,9 +16,15 @@ zeroed, a tier label flipped, a dir row duplicated, and a negative proofs count.
 
 Every fault is built from a real row of the two tables as committed. Each test asserts the mutated
 rows differ from the rows they started from, and each needle is the gate problem string the pass that
-owns that form prints — measured specific, each needle fires for its own fault and for no other. The
-tier needle is `'T0': 129` rather than the whole dict, because the problem line prints the tier counts
-in set-iteration order, which is not stable across processes.
+owns that form prints — measured specific, each needle fires for its own fault and for no other.
+
+**The needles that quote a population figure are derived at run time, not recorded.** The row-count,
+proofs-sum, thms-sum and tier needles are built from the committed tables (`real()`) and from the
+mutated rows, so a corpus change moves the needle with the measurement. The tier needle is the T0 count
+the mutated rows and ledger join to, which is why it stays specific: the problem line prints the tier
+counts in set-iteration order, which is not stable across processes, so the needle names one count.
+The three needles that stay strings are structural messages whose count is the fault's own shape — one
+row dropped, one row duplicated, one negative value — not a measured figure.
 
 The clean test asserts the gates are silent and pins the population they report: 719 sources rows over
 719 distinct dirs, 372 families on both sides, 20,341 proofs, 21,288 statements, tiers
@@ -36,21 +42,44 @@ import pytest
 
 pytestmark = pytest.mark.mutant
 
-# Faults in the TSV rows, each keyed to the gate problem string the pass that owns it prints.
+
+def real(mod):
+    """The population figures the committed tables carry: row count, proofs sum, thms sum."""
+    src = list(mod.read_tsv(mod.SOURCES))
+    return {"rows": len(src), "proofs": sum(int(r["proofs"]) for r in src),
+            "thms": sum(int(r["thms"]) for r in src)}
+
+
+def tier_of(mod, rows, led, key):
+    """The count of `key` among the tiers the mutated rows and ledger join to."""
+    fams = mod.build_families(rows, led)
+    tiers = {}
+    for d in fams.values():
+        tiers[d["tier"]] = tiers.get(d["tier"], 0) + 1
+    return tiers.get(key, 0)
+
+
+# (label, needle, mutation). A needle is a function of the mutated rows, the mutated ledger, the
+# loaded checker and the committed population.
 MUTANTS = [
-    ("drop a sources row", "sources rows 718 != 719",
+    ("drop a sources row",
+     lambda rows, led, mod, R: f"sources rows {len(rows)} != {R['rows']}",
      lambda r, l: r.pop(0)),
-    ("proofs +1 on one row", "proofs sum 20342 != 20341",
+    ("proofs +1 on one row",
+     lambda rows, led, mod, R: f"proofs sum {sum(int(r['proofs']) for r in rows)} != {R['proofs']}",
      lambda r, l: r[0].__setitem__("proofs", str(int(r[0]["proofs"]) + 1))),
-    ("thms +1 on one row", "thms sum 21289 != 21288",
+    ("thms +1 on one row",
+     lambda rows, led, mod, R: f"thms sum {sum(int(r['thms']) for r in rows)} != {R['thms']}",
      lambda r, l: r[0].__setitem__("thms", str(int(r[0]["thms"]) + 1))),
     ("rename a family", "family sets differ: sources-only 1, ledger-only 1",
      lambda r, l: r[0].__setitem__("fam", "999")),
     ("zero tex_bytes", "1 rows with tex_bytes <= 0",
      lambda r, l: r[0].__setitem__("tex_bytes", "0")),
-    ("flip a tier label", "'T0': 129",
+    ("flip a tier label",
+     lambda rows, led, mod, R: f"'T0': {tier_of(mod, rows, led, 'T0')}",
      lambda r, l: l[0].__setitem__("tier", "T2")),
-    ("duplicate a dir row", "sources rows 720 != 719",
+    ("duplicate a dir row",
+     lambda rows, led, mod, R: f"sources rows {len(rows)} != {R['rows']}",
      lambda r, l: r.append(dict(r[0]))),
     ("negative proofs", "1 rows with negative proofs/thms",
      lambda r, l: r[0].__setitem__("proofs", "-3")),
@@ -106,8 +135,10 @@ def test_injected_faults(mod, label, needle, mut):
     rows = [dict(r) for r in mod.read_tsv(mod.SOURCES)]
     led = [dict(r) for r in mod.read_tsv(mod.LEDGER)]
     before = [dict(r) for r in rows]
+    R = real(mod)
     mut(rows, led)
     assert rows != before or led != [dict(r) for r in mod.read_tsv(mod.LEDGER)], \
         f"{label}: mutation changed nothing"
     found = mod.gate_checks(rows, led, mod.build_families(rows, led))
-    assert any(needle in x for x in found), f"{label}: NOT caught by {needle!r} ({found[:2]})"
+    want = needle(rows, led, mod, R) if callable(needle) else needle
+    assert any(want in x for x in found), f"{label}: NOT caught by {want!r} ({found[:2]})"
