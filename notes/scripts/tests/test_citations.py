@@ -15,21 +15,112 @@ Each fault below mutates the page text in memory, so no page is written. `verify
 text, so a second call in the same process cannot see a different corpus, and the ten `check()` calls
 this file makes pay the 521-file walk once.
 
+**The needles that name a measured figure are derived at run time, not recorded.** The pair-layer
+phrase, the headline crossing count, the cluster membership, the cluster composition, the work count
+and the release-target count are rebuilt from the checker's own `measure()` dict, and the block-line
+needle is rebuilt from the anchor the mutated page carries above the mutated block, so a band shift
+moves the needle with the layout. The needles that stay literal are the mutation's own inputs — the
+invented anchor path and the anchor line moved by one.
+
 Run: `python3 notes/scripts/run_tests.py notes/scripts/tests/test_citations.py -q`
 """
 
+import collections
 import pathlib
+import re
 
 import pytest
 
 PAGE = pathlib.Path("notes/reports/citations.md")
 
-# (label, needle, mutation). A needle must fire for its own fault and for no other, and must not
-# fire on the clean page.
+
+def bib_blocks(c):
+    """The fenced bibtex blocks of the mutated page, in order."""
+    return re.findall(r"```bibtex\n(.*?)```", c, re.DOTALL)
+
+
+def block_needle(c, sub):
+    """The block-line problem the pass prints for the mutated line `sub`. The block's anchor is the
+    last `preprints/...bib:line` above it, so the anchor is read from the mutated page, not recorded."""
+    blk = next(b for b in bib_blocks(c) if sub in b)
+    anch = re.findall(r"`(preprints/[^`]+?\.bib):(\d+)`", c[:c.index(blk)])
+    assert anch, f"no anchor above the block carrying {sub!r}"
+    path, line = anch[-1]
+    plines = [l for l in blk.split("\n") if l.strip()]
+    idx = next(i for i, l in enumerate(plines) if sub in l)
+    return f"block line {idx + 1} does not match {path}:{int(line) + idx}"
+
+
+def cluster_rows(c):
+    """The >=5 cluster table of the mutated page: (mss, fams, disciplines, membership, composition)."""
+    return re.findall(r"^\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*([0-9 ]+)\|\s*([^|]+)\|\s*$",
+                      c, re.MULTILINE)
+
+
+def cluster_needle(c, v, M, cell, col):
+    """The membership (col 3) or composition (col 4) problem for the row whose mutated cell is `cell`.
+    The row's measured cluster is the same index of the checker's top-12 >=5 list, which is what the
+    pass zips the table against."""
+    rows = cluster_rows(c)
+    hits = [i for i, r in enumerate(rows) if r[col].strip() == cell]
+    assert len(hits) == 1, f"{cell!r} matches {len(hits)} cluster rows of the mutated page"
+    idx = hits[0]
+    clus = v.clusters(M["pairs"], 5)[:12]
+    fams = rows[idx][3].strip()
+    if col == 3:
+        return f"cluster row {cell!r}: measured membership {' '.join(sorted({M['fam'][m] for m in clus[idx]}))}"
+    cd = collections.Counter(M["disc"][m] for m in clus[idx])
+    want = ", ".join("%s %d" % (d, n) for d, n in v.ranked(cd))
+    return f"cluster row {fams}: composition {cell!r}, measured {want!r}"
+
+
+def work_needle(c, v, M, title):
+    """The work-count problem for the row carrying `title`: the page's count is read from the mutated
+    row, the measured count from the checker's inverted index."""
+    rows = re.findall(r"^\|\s*(\d+)\s*\|\s*`([^`]+)`\s*\|\s*`([^`]+?):(\d+)`\s*\|\s*$", c, re.MULTILINE)
+    hits = [r for r in rows if r[1] == title]
+    assert len(hits) == 1, f"{title!r} matches {len(hits)} work rows of the mutated page"
+    cnt = hits[0][0]
+    return f"work {title!r}: page says {cnt} manuscripts, measured {len(M['inv'][v.norm_title(title)])}"
+
+
+def release_needle(c, _v, M, name):
+    """The release-row problem for the target `name`: the page's row is read from the mutated page and
+    measured against the same index of the checker's top-10 release targets, which is what the pass
+    zips the table against. The measured name is the target the checker pairs the row with."""
+    rows = re.findall(r"^\|\s*(\d+)\s*\|\s*`([^`]+)`\s*\|\s*$", c, re.MULTILINE)
+    hits = [i for i, r in enumerate(rows) if r[1] == name]
+    assert len(hits) == 1, f"{name!r} matches {len(hits)} release rows of the mutated page"
+    idx = hits[0]
+    top = sorted(M["rinv"].items(), key=lambda kv: (-len(kv[1]), kv[0]))[:10]
+    d, s = top[idx]
+    return f"release row {name!r} at {rows[idx][0]}, measured {d!r} at {len(s)}"
+
+
+def pair_needle(_c, _v, M, k):
+    """The pair-layer phrase the count pass demands at threshold `k`, rebuilt from the measured pairs."""
+    ps = [(a, b, n) for (a, b), n in M["pairs"].items() if n >= k]
+    cb = "**" if k >= 5 else ""
+    phrase = ("| \u2265%d | **%s** | %d | %s%s%s |"
+              % (k, format(len(ps), ","), sum(1 for a, b, n in ps if M["fam"][a] == M["fam"][b]),
+                 cb, format(sum(1 for a, b, n in ps if M["disc"][a] != M["disc"][b]), ","), cb))
+    return f"pair layer >={k}: page does not contain {phrase!r}"
+
+
+def headline_needle(_c, _v, M, k):
+    """The crossing-count phrase the count pass demands at threshold `k`: the crossing count and the
+    pair count at that threshold, both rebuilt from the measured pairs."""
+    cross = sum(1 for (a, b), n in M["pairs"].items() if n >= k and M["disc"][a] != M["disc"][b])
+    p5 = sum(1 for n in M["pairs"].values() if n >= k)
+    return ("headline crossing count: page does not contain '%d of %s pairs at \u2265%d shared titles "
+            "cross a discipline boundary'" % (cross, format(p5, ","), k))
+
+
+# (label, needle, mutation). A needle is a function of the mutated page, the loaded checker and the
+# measured dict; a mutation is a function of the page.
 MUTANTS = [
     ("paraphrase dressed as a quotation",
-     ("block line 2 does not match preprints/A-conditional-abelianity-theorem-for-special-fourfold-"
-      "pairs-with-a-half-weight-divisor-October-5-2026/build/source/references.bib"),
+     lambda c, v, M: block_needle(c, "author = {{The Stacks Project editors}}"),
      lambda p: p.replace("author = {{The Stacks Project Authors}}",
                          "author = {{The Stacks Project editors}}")),
     ("invented anchor file",
@@ -43,26 +134,26 @@ MUTANTS = [
      lambda p: p.replace("half-weight-divisor-October-5-2026/build/source/references.bib:106`",
                          "half-weight-divisor-October-5-2026/build/source/references.bib:105`")),
     ("count drift in the pair table",
-     "pair layer >=5: page does not contain '| \u22655 | **419** | 296 | **6** |'",
+     lambda _c, _v, M: pair_needle(_c, _v, M, 5),
      lambda p: p.replace("| \u22655 | **419** |", "| \u22655 | **418** |")),
     ("headline crossing count",
-     ("headline crossing count: page does not contain '6 of 419 pairs at \u22655 shared titles "
-      "cross a discipline boundary'"),
+     lambda _c, _v, M: headline_needle(_c, _v, M, 5),
      lambda p: p.replace("6 of 419 pairs at \u22655", "7 of 419 pairs at \u22655")),
     ("cluster membership swap",
-     ("cluster row '033 034 039 036 037 046 051 054 056 057 058 065 066 068': measured membership "
-      "033 034 035 036 037 046 051 054 056 057 058 065 066 068"),
+     lambda c, v, M: cluster_needle(c, v, M,
+                                    "033 034 039 036 037 046 051 054 056 057 058 065 066 068", 3),
      lambda p: p.replace("033 034 035 036 037 046 051 054 056 057 058 065 066 068",
                          "033 034 039 036 037 046 051 054 056 057 058 065 066 068")),
     ("work count drift",
-     "work 'The {Stacks Project}': page says 43 manuscripts, measured 42",
+     lambda c, v, M: work_needle(c, v, M, "The {Stacks Project}"),
      lambda p: p.replace("| 42 | `The {Stacks Project}`", "| 43 | `The {Stacks Project}`")),
     ("cluster discipline composition",
-     "cluster row 260 335 336 346: composition 'Mathematical physics 12, Differential geometry 3'",
+     lambda c, v, M: cluster_needle(c, v, M,
+                                    "Mathematical physics 12, Differential geometry 3", 4),
      lambda p: p.replace("Mathematical physics 11, Differential geometry 4",
                          "Mathematical physics 12, Differential geometry 3")),
     ("release-target count",
-     "release row 'Log-abundance-in-characteristic-zero-September-24-2026' at 12, measured",
+     lambda c, v, M: release_needle(c, v, M, "Log-abundance-in-characteristic-zero-September-24-2026"),
      lambda p: p.replace("| 11 | `Log-abundance-in-characteristic-zero-September-24-2026`",
                          "| 12 | `Log-abundance-in-characteristic-zero-September-24-2026`")),
 ]
@@ -94,4 +185,6 @@ def test_injected_faults(load, text, label, needle, mut):
     cand = mut(text)
     assert cand != text, f"{label}: the page text changed, the needle is stale"
     probs = v.check(cand)
-    assert any(needle in p for p in probs), f"{label}: needle did not fire\n{probs}"
+    M = v.measure(v.norm_title)
+    want = needle(cand, v, M) if callable(needle) else needle
+    assert any(want in p for p in probs), f"{label}: needle did not fire\n{probs}"
