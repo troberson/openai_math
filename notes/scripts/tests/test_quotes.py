@@ -28,6 +28,7 @@ import pytest
 from catlib.paths import ROOT
 from catlib.quotes import resolve, seed
 from catlib.text import strip_markup as norm
+from catlib.layout import reorder
 
 PAGE = ROOT / "notes" / "reports" / "subfinding-pairs.md"
 SRC = ROOT / "overview.tex"
@@ -102,7 +103,7 @@ SEEDS = [
 @pytest.fixture(scope="module")
 def page_rows():
     import seed_quotes as S
-    return S.rows(S.SRC.read_text(encoding="utf-8").splitlines())
+    return reorder(S.rows(S.SRC.read_text(encoding="utf-8").splitlines()))
 
 
 @pytest.fixture(scope="module")

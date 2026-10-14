@@ -23,6 +23,8 @@ import csv
 
 import pytest
 
+from catlib.layout import reorder
+
 pytestmark = pytest.mark.mutant
 
 
@@ -33,13 +35,16 @@ def mod(load):
 
 @pytest.fixture(scope="module")
 def text(mod):
-    return mod.TSV.read_text(encoding="utf-8").splitlines()
+    return reorder(mod.TSV.read_text(encoding="utf-8").splitlines())
 
 
 @pytest.fixture(scope="module")
 def man_row(text):
-    """The first manuscript row, as fields, and the family it belongs to."""
-    idx = next(i for i, l in enumerate(text) if l.startswith("manuscript\t"))
+    """The first manuscript row whose path is a `paper.pdf`, as fields, and the family it belongs
+    to. The path mutant replaces the file name, so a row whose path is not `paper.pdf` makes the
+    mutation inert — picking by path keeps the mutant effective when the row order moves."""
+    idx = next(i for i, line in enumerate(text)
+               if line.startswith("manuscript\t") and line.split("\t")[4].endswith("paper.pdf"))
     fields = text[idx].split("\t")
     return idx, fields, fields[1]
 

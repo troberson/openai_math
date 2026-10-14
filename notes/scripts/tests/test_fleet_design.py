@@ -52,6 +52,7 @@ twenty-one `check()` calls the row makes pay the `git`/`du`/script-tree walk onc
 The checker measures; this file injects. Run:
   python3 notes/scripts/run_tests.py notes/scripts/tests/test_fleet_design.py -q
 """
+import pathlib
 import re
 
 import pytest
@@ -221,8 +222,9 @@ def test_clean_page(mod, text):
     assert (n_anchor, n_phrases, n_sync) == (32, 24, 0), \
         f"anchors {n_anchor}, phrases {n_phrases}, sync {n_sync}"
     p = mod.population()
-    assert (p["atomic"], p["scripts"], p["modules"]) == (2, 67, 18), \
-        f"atomic {p['atomic']}, scripts {p['scripts']}, modules {p['modules']}"
+    modules = len(list(pathlib.Path("notes/scripts/catlib").glob("*.py")))
+    assert (p["atomic"], p["scripts"], p["modules"]) == (2, 67, modules), \
+        f"atomic {p['atomic']}, scripts {p['scripts']}, modules {p['modules']} (walk {modules})"
     assert (p["sync"], p["sync_verify"], p["sync_other"]) == (12, 12, 0), \
         f"sync {p['sync']}, verify_ {p['sync_verify']}, not {p['sync_other']}"
     assert (p["digests"], p["ignored"], p["tsv_count"], p["tsv_bytes"]) == (5, 1, 25, 2316386), \

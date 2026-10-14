@@ -8,6 +8,7 @@ resolve to the repo root inside it.
 """
 
 import importlib.util
+import os
 import pathlib
 import sys
 
@@ -17,6 +18,39 @@ SCRIPTS = pathlib.Path(__file__).resolve().parents[1]
 
 if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
+
+from catlib.layout import shift  # noqa: E402  # the script tree is on sys.path only after the insert
+
+
+@pytest.fixture(autouse=True, scope="module")
+def layout_shift(request):
+    """When `LAYOUT_SHIFT` is set, the pages the checkers verify are read shifted.
+
+    The patch is the probe: the fixture that hands a test its page and the checker's own page read
+    both go through `Path.read_text`, so the page and the population the needle derives from it
+    shift together. A needle that re-derives its anchor from the mutated page moves with the page;
+    a needle that recorded the anchor as committed fires a message the shifted page never prints.
+    The scope is the page tree the checkers verify — `notes/reports/` and `notes/development/` —
+    not the index, the summaries, the manuscripts, or the Lean source, so the corpus the
+    population is measured from is unchanged. `test_cache_promotion.py` is excluded: its pass
+    compares cached bytes with the bytes on the tracked path, so shifting a page makes every page
+    differ and the pass reports the first mismatch, which is not a layout finding.
+    """
+    if not os.environ.get("LAYOUT_SHIFT") or request.node.module.__name__.endswith("cache_promotion"):
+        yield
+        return
+    orig = pathlib.Path.read_text
+    pages = (pathlib.Path("notes/reports"), pathlib.Path("notes/development"))
+
+    def read_text(self, *args, **kwargs):
+        text = orig(self, *args, **kwargs)
+        if self.suffix == ".md" and any(p in self.parents for p in pages):
+            return shift(text)
+        return text
+
+    pathlib.Path.read_text = read_text
+    yield
+    pathlib.Path.read_text = orig
 
 
 @pytest.fixture(scope="session")

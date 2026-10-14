@@ -46,6 +46,8 @@ The script measures; this file injects. Run:
 """
 import pytest
 
+from catlib.layout import reorder
+
 pytestmark = pytest.mark.mutant
 
 
@@ -111,7 +113,7 @@ def mod(load):
 
 @pytest.fixture(scope="module")
 def sources(mod):
-    return [dict(r) for r in mod.read_tsv(mod.SOURCES)]
+    return reorder([dict(r) for r in mod.read_tsv(mod.SOURCES)])
 
 
 @pytest.fixture(scope="module")

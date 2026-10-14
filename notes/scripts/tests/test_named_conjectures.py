@@ -14,6 +14,8 @@ The checker measures; this file injects. Run:
 """
 import pytest
 
+from catlib.layout import reorder
+
 pytestmark = pytest.mark.mutant
 
 
@@ -29,7 +31,7 @@ def base(mod):
 
 @pytest.fixture(scope="module")
 def rows(mod):
-    return mod.ledger_rows()
+    return reorder(mod.ledger_rows())
 
 
 @pytest.fixture(scope="module")

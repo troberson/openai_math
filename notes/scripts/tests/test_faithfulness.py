@@ -297,3 +297,29 @@ def test_padded_table_cells_are_still_read(mod, text):
     assert counts == (len(v["ae_table"]), len(v["disjoint"]), len(v["overlap"])), \
         f"padded tables read {counts}, population {len(v['ae_table'])}, " \
         f"{len(v['disjoint'])}, {len(v['overlap'])}"
+
+
+def shift(text):
+    """Two lines inserted after the page's first `## ` heading — a layout change that moves every
+    line number below it and changes no measured count."""
+    lines = text.splitlines(keepends=True)
+    for i, line in enumerate(lines):
+        if line.startswith("## "):
+            return "".join(lines[:i + 1]) + "<!-- band shift -->\n\n" + "".join(lines[i + 1:])
+    raise AssertionError("the page has no ## heading to shift")
+
+
+def test_layout_shift_is_invisible(mod, text):
+    """A page-line shift must not break a needle. A needle built from the mutated page re-derives
+    the anchor its mutation touches, so it moves with the page; a needle that recorded the anchor
+    string from the page as committed fires a message the shifted page never prints, and this test
+    names it."""
+    base = shift(text)
+    broken = []
+    for label, needle, mut in MUTANTS:
+        cand = mut(base)
+        found, _, _, _, _, v = mod.check(cand)
+        want = needle(cand, mod, v) if callable(needle) else needle
+        if not any(want in x for x in found):
+            broken.append(f"{label}: {want!r}")
+    assert not broken, f"layout shift breaks {len(broken)} needles: {broken[:3]}"
