@@ -1,8 +1,8 @@
 ---
 name: notes-page-checker-traps
-description: Author and maintain a script that verifies a notes/markdown page (numbered source markers, anchored quotations, quoted counts) — the traps that make a checker report green while checking nothing. Use when writing a page verifier, adding a mutant to one, or trusting a checker you did not write.
+description: "Author and maintain a script that verifies a notes/markdown page (numbered source markers, anchored quotations, quoted counts) — the traps that make a checker report green while checking nothing, and the needle-design rules that keep a mutant honest: derive needles from the mutated page and the checker's population, and never let a needle that fires for both the fixed and unfixed code be the proof. Use when writing a page verifier, adding a mutant to one, converting literal needles, widening a table row pattern, or trusting a checker you did not write."
 source: auto-skill
-extracted_at: '2026-10-08T06:34:04.344Z'
+extracted_at: '2026-10-14T07:05:46.252Z'
 ---
 
 # Writing a checker for a notes page
@@ -233,7 +233,35 @@ When the page's anchors move (a lint autofix shifts a line number), **re-target 
 the same pass** — a needle matching pre-sweep bytes is an inert mutant. Full sweep procedure:
 `sweep-superseded-counts`.
 
-## 8. Report
+## 8. Needle design: a needle that fires for both states cannot prove the fix
+
+Three rules, each from a measured case:
+
+- **Derive the needle from the mutated page and the checker's measured population.** A needle that
+  quotes a page line has to be re-measured by hand whenever the page's layout moves. Measured
+  2026-10-13: one three-line paragraph edit moved five needles and a declared line count. Make the
+  needle a function of the mutated text (find the line carrying the mutation's own byte) and of
+  `population()` / `needles(measured())` for the corpus figures. Numeric literals in the needles go
+  46 → 21 on `test_t0_chains.py` and 11 → 4 on `test_findings.py`; what remains is the mutation's own
+  input (a family id, the value written, a decrement), not a measured figure.
+- **Prove it with a layout shift.** Insert two lines into the page in memory and run every fault.
+  Measured on `test_t0_chains.py`: literal needles break on **6** faults, derived needles break on
+  **0**. A needle that survives a shift is a needle that carries no page line.
+- **A needle that fires for the fixed and the unfixed code is not the proof.** The padding mutant's
+  needle is the render-diff line, and the render diff fires against the pre-fix pattern too — the
+  padded page differs from the writer's render either way. The discriminating assertion was the row
+  count the pattern reads (**0** pre-fix, **27** post-fix), so the fault carried a second test. Confirm
+  a new test fails against `git show HEAD:`'s checker before claiming coverage.
+
+Two derivation traps. Key on the line the **pass reports**, not the line you mutated: the fenced-block
+needle keys on the opening fence (the pass names 99; the mutated line is 103). And key on the
+mutation's own byte when the page repeats prose — the first title-swap needle asserted on a substring
+appearing on two lines.
+
+Re-measure specificity after converting: no needle fires on another fault's page, and no needle fires on
+the clean page.
+
+## 9. Report
 
 Quote the final run's report lines verbatim, the render-diff result (the page's bytes on disk against
 the bytes its writer renders), and the mutant block including the `clean page: clean (0 problems)`
