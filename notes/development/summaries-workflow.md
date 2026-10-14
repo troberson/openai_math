@@ -679,3 +679,42 @@ Not checked: **9** files still carry recorded numeric needles —
 `test_counterexample_crosscheck.py` **14**, `test_sources.py` **12**,
 `test_named_results.py` **10**, `test_dependency_drift.py` **10**,
 `test_citations.py` **9**. Phase 2 and phase 3 have not started.
+
+## Phase 1 takes `test_citations.py`, and the block anchor is read from the page
+
+Sixth file. Seven of its nine needles carried a corpus count: the pair-layer
+phrase `| ≥5 | **419** | 296 | **6** |`, the headline crossing count, the
+cluster membership, the cluster composition, the work count, the release-target
+count, and the block anchor. All seven are rebuilt at run time from the
+checker's own `measure()` dict — the pair phrase from `M["pairs"]` with the
+`**` bolding rule the pass applies at threshold ≥5, the crossing count from the
+discipline map, the cluster membership and composition from the **same index**
+of the top-12 ≥5 list the pass zips the table against, the work count from
+`M["inv"]` through `norm_title`, the release count from the top-10 release
+targets.
+
+The block-line needle is the interesting one: the pass attributes a fenced block
+to the **last** `preprints/...bib:line` anchor above it, so the needle reads that
+anchor out of the mutated page. A band shift moves the anchor with the layout and
+the needle moves with it. Two needles stay literal, and they are the mutation's
+own inputs — the invented anchor path and the anchor line moved by one. That is
+the rule, not an exception: a needle whose value is what the mutation wrote has
+nothing to be derived from.
+
+Measured: the layout shift breaks **0** of the 9 needles; specificity **0**
+cross-fires; **0** needles fire on the clean page. Recorded numeric needles in
+the file **9 → 2**.
+
+The census moves: recorded needles **149 → 142**, numeric **81 → 74**, derived
+**64 → 71**, needle digits **259 → 231**, clean pins **309** unchanged.
+
+Gate **79** rows, **0** failures; head diff empty; promote-and-verify assertion
+green; lint trio **0 / 0 / 0**. Pushed to `origin` at `e8fde07f4..a3e9aa940`.
+
+Not checked: **8** files still carry recorded numeric needles —
+`test_fleet_design.py` **20**, `test_index_design.py` **15**,
+`test_faithfulness.py` **15**, `test_verification_dirs.py` **14**,
+`test_counterexample_crosscheck.py` **14**, `test_sources.py` **12**,
+`test_named_results.py` **10**, `test_dependency_drift.py` **10**. The **309**
+clean pins are still literals (phase 2), and there is one synthetic-rule test
+file (`test_quotes.py`) against 14 checkers (phase 3).
