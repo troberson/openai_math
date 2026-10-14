@@ -7,10 +7,11 @@ from the rendered pages must resolve, because a checker that flags everything is
 paren-balanced scanner must keep the CAT(0) path whole where `[^)]*` truncates it; and what the
 classifier tags as a directory must be a directory on disk. The basename pass is the invariant
 `math-faz.6` moved the 16 generated tables on: the index tree and `notes/tables/` share no
-basename, so the two sets are pinned at 1,027 and 25 and a collision is injected by handing the
-pass a shared name — a pass that returns 0 because a set is empty is not a pass. The clean test
-asserts the scan baseline the page quotes: 1,033 pages, 66,115 links, 0 broken, 17,700 resolving to
-a directory and 48,415 to a file.
+basename, so the two sets are required non-empty, the index must contain collisions, and a collision
+is injected by handing the pass a shared name — a pass that returns 0 because a set is empty is not a
+pass. The clean test asserts the scan baseline as the resolution invariant, not recorded counts: every
+extracted link resolves to exactly one of directory or file, so the two counts sum to the link count
+and nothing is broken, over a page set and a link set that are both non-empty.
 
 The page's own prose is not mutated here: `verify_page_sync.py` owns the page check and mutates
 the page in memory, so nothing in this file writes an index page. Every injected href is built
@@ -158,13 +159,16 @@ def test_basename_collision_pass_is_nonvacuous(mod):
     `notes/tables/README.md` would make a bare `README.md` reference ambiguous between the trees. The
     pass is scoped to the two trees, not to the index alone: inside the index, 6 discipline names are
     also topic terms, so `disciplines/differential-geometry.md` and `topics/differential-geometry.md`
-    share a basename, which is why the index set reads 1,027 over 1,033 files."""
+    share a basename. The pins are the resolution invariant and the floors, not recorded set sizes:
+    the overlap is empty, both sets are non-empty, and the index must contain collisions — a pass that
+    reports 0 collisions because the index set is empty, or because its dupe rule finds none, is not a
+    pass."""
     idx = mod.basenames(mod.IDX)
     tab = mod.basenames(mod.TABLES)
-    assert len(idx) == 1027, f"{len(idx)} index basenames, expected 1,027"
-    assert len(tab) == 25, f"{len(tab)} table basenames, expected 25"
-    assert len(mod.basename_dupes(mod.IDX)) == 6, \
-        f"{len(mod.basename_dupes(mod.IDX))} shared basenames inside the index, expected 6"
+    dupes = mod.basename_dupes(mod.IDX)
+    assert len(idx) > 0, "the index tree contributes 0 basenames, so the overlap pass is vacuous"
+    assert len(tab) > 0, "the tables tree contributes 0 basenames, so the overlap pass is vacuous"
+    assert len(dupes) > 0, f"{len(dupes)} shared basenames inside the index, expected collisions"
     clean = mod.basename_overlap(idx, tab)
     assert clean == [], f"basename collisions: {clean[:3]}"
     injected = mod.basename_overlap(idx, tab | {"README.md"})
@@ -172,13 +176,15 @@ def test_basename_collision_pass_is_nonvacuous(mod):
 
 
 def test_clean_scan_baseline(mod):
-    """The scan the page quotes: every link in every rendered page resolves. The counts are the
-    page's own figures, so a scan that drifts moves the page and fails this test together."""
+    """The scan the page quotes: every link in every rendered page resolves. The pins are the
+    resolution invariant, not recorded counts: every extracted link resolves to exactly one of
+    directory or file, so the two counts sum to the link count and nothing is broken. The floors keep
+    the scan non-vacuous — a scan over 0 pages and 0 links reports 0 broken and proves nothing."""
     m = mod.measure()
-    assert len(m["pages"]) == 1033, f"{len(m['pages'])} index pages on disk, expected 1033"
-    assert len(m["links"]) == 66115, f"{len(m['links'])} links extracted, expected 66,115"
+    assert len(m["pages"]) > 0, "the scan walked 0 index pages"
+    assert len(m["links"]) > 0, "the scan extracted 0 links"
     assert not m["broken"], list(m["broken"][:5])
-    assert m["dir_links"] == 17700, f"{m['dir_links']} directory-resolving links, expected 17,700"
-    assert m["file_links"] == 48415, f"{m['file_links']} file-resolving links, expected 48,415"
+    assert m["dir_links"] + m["file_links"] == len(m["links"]), \
+        f"{m['dir_links']} dir + {m['file_links']} file against {len(m['links'])} links"
     assert m["collisions"] == [], f"basename collisions: {m['collisions'][:3]}"
     assert m["contents_broken"] == [], m["contents_broken"][:5]

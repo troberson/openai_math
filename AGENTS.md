@@ -987,10 +987,13 @@ lives in this file and nowhere else.
   report 0 broken. Link scanning must be paren-balanced: `[^)]*` truncates
   `preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/paper.pdf` and invents a broken
   link, so the baseline is 0 broken links, not 1. Its self-tests are extracted to
-  `notes/scripts/tests/test_index_links.py` and run by the gate's `run_tests.py` row: 20 injected
-  broken hrefs (one per category the checker classifies), 7 real hrefs that must resolve, the
+  `notes/scripts/tests/test_index_links.py` and run by the gate's `run_tests.py` row: 21 injected
+  broken hrefs (one per category the checker classifies), 8 real hrefs that must resolve, the
   paren-balanced scanner against `[^)]*`, the directory set against what is on disk, and the
-  0-broken scan baseline the page quotes — **6** tests, all passing. `trap()` stays in the checker
+  0-broken scan baseline as the **resolution invariant** — every extracted link resolves to exactly one
+  of directory or file, so the two counts sum to the link count, over a page set and a link set that are
+  both non-empty — plus the basename pass's floors (both sets non-empty, the index must contain
+  collisions) — **6** tests, all passing. `trap()` stays in the checker
   because `render_reports.py` renders its two rows into the page's scanner table. The prose mutant
   lives in `verify_page_sync.py --mutant`, which owns the page check and mutates in memory, so
   neither script writes the page. Findings: `notes/development/index-links.md`.
