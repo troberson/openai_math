@@ -1421,3 +1421,41 @@ promotion 0 problems, lint 0/0/0.
 Not checked: the range-rule cases, still blocked on extracting range validation into `catlib` (bead
 `.6` open); the read_file line-label offset case; the citation-stripping case for the abstracts and
 findings checkers, which use the same fold; bead `.2`'s prettier decision, which is the user's.
+
+## 2026-10-14 — bead `math-4nn.6`: range validation moves to `catlib`, the range cases become testable
+
+The blocker was structural, not effort: the range checks lived inside each checker's `check()`, which
+resolves anchors against files read from disk, so a no-corpus case could not reach them.
+`catlib.anchors.range_facts(a, b, n, lines)` returns the three facts — out-of-range positions, blank
+positions, the reversed flag — and each checker formats its own message, so a test can feed the rule a
+line count and a synthetic line list.
+
+**Measured, not assumed: the range shape exists in three checkers, not the five the bead named.**
+`verify_summaries.py` flags out-of-range, blank and reversed (`[S4:29–12]` is a problem);
+`verify_faithfulness.py` and `verify_upstream_history.py` check **both** ends of a `path:a-b` anchor
+against the file's line count and accept a reversed range, so the reversed flag is returned and the
+caller decides. `verify_named_results.py`, `verify_counterexample_crosscheck.py` and
+`verify_sources.py` carry `path:line` anchors only, so a range case cannot apply to them — that is the
+finding that closes the bead's five-file list.
+
+The upstream pass reads a window around the anchor, not the whole file, so the line count is a
+parameter (`n`) and the blank check is optional (`lines`). All three checkers report identical bytes
+after the rewiring: summaries 30 pages / 4,414 marker positions / 1,243 quoted spans / 0 problems;
+faithfulness anchors 10, block lines 30, quotations 1, 0 problems; upstream-history RESULT green.
+
+Cases landed: blank line at the end of a range and reversed range in `test_summaries.py` (the checker
+that flags both); range past the end and reversed range in `test_faithfulness.py` (the checker that
+accepts reversed); range past the end in `test_upstream_history.py`. Each is paired with the narrowed
+rule that misses it — a rule that checks only the start position reports no problem for a range whose
+end runs past the file, and a rule that checks only that both positions sit inside the file accepts a
+reversed range.
+
+Test counts after the bead: sources 17, named-results 18, index-design 17, proof-density 11,
+index-links 9, faithfulness 23, crosscheck 20, summaries 11, upstream-history 17, citations 13,
+verification-dirs 21, subfinding-pairs 12. Gate: **79 rows, 0 failures**, head diff 0 bytes, cache
+promotion 0 problems, lint 0/0/0.
+
+Not checked: the read_file line-label offset case; the citation-stripping case for the abstracts and
+findings checkers, which use the same fold; the blank-line shape for the two anchor passes that do not
+check blank lines inside a range (they read a window, not the file's lines); bead `.2`'s prettier
+decision, which is the user's.
