@@ -64,7 +64,7 @@ What is not a consequence: BSD for a fixed curve, BSD for a positive proportion 
 
 Sources are numbered and cited in the body as [S2:31] for one line or [S2:31–44] for a range; the file names appear only here. The two manuscript roots are `preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/` and `preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/`; the first ships 14 section files and 9,448 lines of LaTeX, the second 7 section files and 3,138 lines.
 
-| S# | File | Lines | What it is |
+| # | File | Lines | Role |
 |---|---|---|---|
 | S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Family entry at 141; manuscript blurbs at 150 and 159; family 002's entry at 32, which names 006 |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | The `\resultentry` at 88: the release's own abstract and its two display titles, “Analytic density and 2-converse” [S2:88] and Mean analytic rank |

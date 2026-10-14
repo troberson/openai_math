@@ -78,7 +78,7 @@ What is not a consequence: the congruence subgroup problem in general, Serre's f
 
 Sources are numbered and cited in the body as [S2:31] for one line or [S2:31–44] for a range; the file names appear only here. The two manuscript roots are `preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/` and `preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/`; the first ships 15 LaTeX files and 6,134 lines, the second 11 LaTeX files and 6,071 lines.
 
-| S# | File | Lines | What it is |
+| # | File | Lines | Role |
 |---|---|---|---|
 | S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Family entry at 504; the function-field blurb at 513; the number-field blurb at 522 |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | The `\resultentry{018}` at 112: the release's own abstract and its two display titles |

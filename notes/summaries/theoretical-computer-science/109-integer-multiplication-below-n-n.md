@@ -211,8 +211,8 @@ machine's transition table is finite but astronomically large.
 
 ## Sources
 
-| # | File | Lines | What it is |
-|---|------|-------|------------|
+| # | File | Lines | Role |
+|---|---|---|---|
 | S1 | [`preprints/Integer-multiplication-below-n-log-n-September-23-2026/README.md`](../../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/README.md) | 17 | release title, author, date, citation |
 | S2 | [`preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/main.tex`](../../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/main.tex) | 51 | abstract |
 | S3 | [`preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/00-introduction.tex`](../../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/00-introduction.tex) | 216 | main theorem, corollary, proof outline |

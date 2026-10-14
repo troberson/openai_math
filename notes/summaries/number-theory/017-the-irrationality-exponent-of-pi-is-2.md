@@ -197,8 +197,8 @@ results on logarithms at algebraic arguments are in the same list [S10:70–79].
 
 ## Sources
 
-| ID | File | Lines | Role |
-| --- | --- | --- | --- |
+| # | File | Lines | Role |
+|---|---|---|---|
 | S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Release blurb, at line 488 |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | Catalog entry, at line 110 |
 | S3 | [`README.md`](../../../README.md) | 51 | Trace attribution, at line 28 |

@@ -63,7 +63,7 @@ Nothing. The ledger records tier T0 for this family, with no scope note, no comp
 
 ## Sources
 
-| ID | File | Lines | What it carries |
+| # | File | Lines | Role |
 |---|---|---|---|
 | S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | The release's blurb for family 259 at line 6383, and the PDF link at line 6381. |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 605. |

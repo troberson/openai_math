@@ -69,7 +69,7 @@ The release presents the two as one family, and in the first edition both were d
 
 Both manuscript roots: `preprints/Etale-covers-with-a-prescribed-exterior-sheet-September-24-2026/` (6 LaTeX files, 486 lines) and `preprints/The-p-adic-section-conjecture-October-6-2026/` (10 LaTeX files, 1,766 lines). Every manuscript file below sits under the manuscript's `build/` directory, which is where this release puts its LaTeX.
 
-| ID | File | Lines | Role |
+| # | File | Lines | Role |
 |---|---|---|---|
 | S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Family 019 entry at 529; manuscript blurbs at 538 and 547 |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 019 `\resultentry` at 114 |

@@ -199,8 +199,8 @@ Every path in the File column is repository-relative and every link resolves fro
 directory. Line numbers are 1-based as shipped. The CONTENTS.md blurb is quoted verbatim; its
 inline HTML link was rewritten to a relative one so it resolves from this page.
 
-| Src | File | Lines | Role |
-| --- | --- | --- | --- |
+| # | File | Lines | Role |
+|---|---|---|---|
 | S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Release blurb, family 102 at line 2502 |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | LaTeX entry `\resultentry{102}`, line 282 |
 | S3 | [`README.md`](../../../README.md) | 51 | Trace attribution, line 31 |

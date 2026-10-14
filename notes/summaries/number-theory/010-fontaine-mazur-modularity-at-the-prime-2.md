@@ -125,7 +125,7 @@ What the family gives the rest of the release is a dyadic modularity theorem wit
 
 The three manuscript roots are `preprints/Unrestricted-pro-modularity-at-the-prime-two-October-6-2026/` (8 LaTeX and bibliography files, 2,530 lines), `preprints/The-Dimension-of-the-Two-Adic-Hecke-Algebra-at-Odd-Level-October-5-2026/` (2 files, 1,040 lines) and `preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/` (10 files, 6,278 lines). Manuscripts A and C keep their LaTeX in `build/source/` and `build/sections/`; manuscript B is a single 806-line `build/main.tex` with no section files. Every manuscript file below sits under the manuscript's `build/` directory, which is where this release puts its LaTeX.
 
-| ID | File | Lines | Role |
+| # | File | Lines | Role |
 |---|---|---|---|
 | S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Family 010 entry at 232; manuscript blurbs at 241, 250 and 259 |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 010 `\resultentry` at 96 |

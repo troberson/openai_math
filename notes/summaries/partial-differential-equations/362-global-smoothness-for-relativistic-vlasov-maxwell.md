@@ -533,8 +533,8 @@ Section map, read from the manuscript's own include list [S3:49–58]:
 - `build/sections/continuation.tex` — local theory and the continuation criterion [S13]
 - `build/references.bib` — the 32-entry bibliography [S14]
 
-| ID | File | Lines | Role |
-| --- | --- | --- | --- |
+| # | File | Lines | Role |
+|---|---|---|---|
 | S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Release blurb, manuscript link, abstract |
 | S2 | [`preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/README.md`](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/README.md) | 18 | Manuscript README and bibtex key |
 | S3 | [`build/main.tex`](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/main.tex) | 61 | Title, abstract, section include list |

@@ -120,7 +120,7 @@ What the family gives the rest of the release is a smooth-shifted-prime count wi
 
 The three manuscript roots are `preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/` (12 text files, 5,399 lines), `preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/` (15 text files, 5,823 lines) and `preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/` (10 text files, 3,461 lines). Manuscripts A and B keep their LaTeX in `build/sections/` with a shared `build/preamble.tex`; manuscript C keeps its sections in `build/sections/` and its bibliography inline in `build/references.tex`, which is a `thebibliography` block and not a BibTeX file. Every manuscript file below sits under the manuscript's `build/` directory, which is where this release puts its LaTeX.
 
-| ID | File | Lines | Role |
+| # | File | Lines | Role |
 |---|---|---|---|
 | S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Family 011 entry at 266; manuscript blurbs at 275, 284 and 293 |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 011 `\resultentry` at 98 |

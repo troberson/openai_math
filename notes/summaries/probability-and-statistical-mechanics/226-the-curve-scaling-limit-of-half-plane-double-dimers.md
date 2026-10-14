@@ -170,7 +170,7 @@ certificate ships with it.
 
 ## Sources
 
-| ID | File | Lines | What it carries |
+| # | File | Lines | Role |
 |---|---|---|---|
 | S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | The release's blurb for family 226 at line 5403. |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 535. |

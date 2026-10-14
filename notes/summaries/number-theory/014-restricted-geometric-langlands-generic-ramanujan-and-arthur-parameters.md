@@ -122,7 +122,7 @@ What is left open is stated by the manuscripts themselves. Manuscript 1 does not
 
 The eight manuscript roots are `preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/` (2 text files, 5,483 lines), `preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/` (11 text files, 3,438 lines), `preprints/Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026/` (10 text files, 5,526 lines), `preprints/Temperedness-at-ramified-places-for-globally-generic-exceptional-groups-October-5-2026/` (9 text files, 1,608 lines), `preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/` (12 text files, 3,477 lines), `preprints/Constructible-tame-Hecke-eigensheaves-in-positive-characteristic-October-5-2026/` (12 text files, 4,254 lines), `preprints/Tame-Hecke-Eigensheaves-with-Several-Marked-Points-October-5-2026/` (12 text files, 3,083 lines) and `preprints/Frobenius-Structures-on-Tame-Hecke-Eigensheaves-October-5-2026/` (10 text files, 2,220 lines). Each root holds a `README.md`, a `build/` directory and the manuscript PDF; manuscript 1 ships two additional figure PDFs under `build/figures/`. Every manuscript file below sits under the manuscript's `build/` directory, which is where this release puts its LaTeX, and each PDF sits at the top of its root.
 
-| ID | File | Lines | Role |
+| # | File | Lines | Role |
 |---|---|---|---|
 | S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Family entry at 332; manuscript blurbs at 341, 350, 359, 368, 377, 386, 395, 404 |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | Family `\resultentry` at 104 |

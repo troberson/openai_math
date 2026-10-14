@@ -178,7 +178,7 @@ and no certificate ships with it.
 
 ## Sources
 
-| ID | File | Lines | What it carries |
+| # | File | Lines | Role |
 |---|---|---|---|
 | S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | The release's blurb for family 332 at line 8104. |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 760. |

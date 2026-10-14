@@ -223,8 +223,8 @@ geometry arguments, and it is not a Lean check.
 
 ## Sources
 
-| Source | File | Lines | What it carries |
-| --- | --- | --- | --- |
+| # | File | Lines | Role |
+|---|---|---|---|
 | S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Family 101's block, at line 2486 |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 101's `\resultentry`, at line 278 |
 | S3 | [`preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/README.md`](../../../preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/README.md) | 30 | The verification bundle's run command and scope |

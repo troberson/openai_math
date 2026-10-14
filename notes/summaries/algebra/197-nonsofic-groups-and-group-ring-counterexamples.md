@@ -78,7 +78,7 @@ Manuscript root: `preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Fi
 
 The compiled manuscripts ship as PDFs [S21] [S22] [S23] [S24]; the reasoning trace ships as a PDF [S36].
 
-| ID | File | Lines | Role |
+| # | File | Lines | Role |
 |---|---|---|---|
 | S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Release blurb and the four manuscript sub-entries |
 | S2 | [`preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/README.md`](../../../preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/README.md) | 17 | Manuscript tree 1 build notes and release date |

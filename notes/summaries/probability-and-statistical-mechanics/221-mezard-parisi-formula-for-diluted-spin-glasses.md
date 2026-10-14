@@ -73,8 +73,8 @@ Two gaps are worth recording. The ledger reports `paps_form 0` and `mainres 0` f
 
 Manuscript root: `preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/`.
 
-| ID | File | Lines | Role |
-| --- | --- | --- | --- |
+| # | File | Lines | Role |
+|---|---|---|---|
 | S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Release contents listing: blurb and abstract |
 | S2 | [`preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/README.md`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/README.md) | 18 | Manuscript README: date and citation key |
 | S3 | [`preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/main.tex`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/main.tex) | 75 | Manuscript main file: abstract and section order |

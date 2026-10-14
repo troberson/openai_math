@@ -144,7 +144,7 @@ What it does not buy: effectivity, uniformity, or a bound. Manuscript A gives no
 
 The four manuscript roots are `preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/` (15 text files, 3,639 lines), `preprints/The-E-times-CM-Component-of-Zilber-Pink-for-Curves-in-A2-September-24-2026/` (2 text files, 1,263 lines), `preprints/Quaternionic-Division-Points-on-Curves-in-the-Siegel-Threefold-September-24-2026/` (11 text files, 3,777 lines) and `preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/` (15 text files, 5,150 lines). Each root holds a `README.md`, a `build/` directory and `paper.pdf`. Manuscripts A, C and D keep their body in `build/sections/` with a shared preamble; manuscript B is a single self-contained `build/paper.tex` whose bibliography is an inline `thebibliography` block, so it has no `.bib` file and its Sources rows are a driver row and a PDF row only. Manuscript C keeps its bibliography nested at `build/references/references.bib`. Every manuscript file below sits under the manuscript's `build/` directory, which is where this release puts its LaTeX.
 
-| ID | File | Lines | Role |
+| # | File | Lines | Role |
 |---|---|---|---|
 | S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Family 016 entry at 445; manuscript blurbs at 454, 463, 472 and 481 |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 016 `\resultentry` at 108 |

@@ -277,7 +277,7 @@ Its README gives the release date [S3:5]: "Date: September 23, 2026".
 
 Manuscript root: `preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026`.
 
-| ID | File | Lines | Role |
+| # | File | Lines | Role |
 |---|---|---|---|
 | S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Release blurb and manuscript sub-entry |
 | S2 | [`build/main.tex`](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/main.tex) | 37 | Manuscript source: title, abstract, section order |

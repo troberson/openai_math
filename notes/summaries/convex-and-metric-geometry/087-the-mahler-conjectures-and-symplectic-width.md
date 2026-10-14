@@ -71,7 +71,7 @@ Two gaps follow from the formalization record rather than from the mathematics. 
 ## Sources
 
 | # | File | Lines | Role |
-| --- | --- | --- | --- |
+|---|---|---|---|
 | S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Release entry and sub-entries for family 087 |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | Release's own family list |
 | S3 | [`README.md`](../../../README.md) | 51 | Trace attribution |

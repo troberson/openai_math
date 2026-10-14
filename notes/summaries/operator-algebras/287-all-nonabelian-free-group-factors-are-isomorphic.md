@@ -309,8 +309,8 @@ The manuscript directory's README gives the release date [S2:5] and the bibtex k
 
 Section map, read from the manuscript's own include list [S3:109–114]. The manuscript ships 12 files: the README [S2], the PDF [S12], `build/main.tex` [S3], the six sections `preliminaries` [S4], `flow` [S5], `cocycle` [S6], `generation` [S7], `amplification` [S8], `entropy-dimensions` [S9], the bibliography [S10], and the iteration figure drawn in TikZ [S11]. The Lean side is 77 files in two trees; the ones cited above are `Main.lean` [S19], `FiniteRank.lean` [S20], `Interpolation.lean` [S34], and `NormalTransport.lean` [S35], and the rest of the construction is carried by `Generation.lean` [S21], `InfiniteGeneration.lean` [S22], `FiniteActive.lean` [S23], `SmallCocycle.lean` [S24], `Cocycles.lean` [S25], `TraceCocycle.lean` [S26], `PolynomialFlow.lean` [S27], `MomentFlow.lean` [S28], `FreeSum.lean` [S29], `RankTwoCounting.lean` [S30], `RankTwoCoefficients.lean` [S31], `RankTwoWords.lean` [S32], `Model.lean` [S33], `Basic.lean` [S36], `Haar.lean` [S37], `Stabilization.lean` [S38], `Scaling.lean` [S39], `GroupBridge.lean` [S40], `Fock.lean` [S41], and `Rerouting.lean` [S42]. The published trace is the PDF cited above [S18], and the ledger row is in `notes/tables/catalog.tsv` [S17].
 
-| ID | File | Lines | Role |
-| --- | --- | --- | --- |
+| # | File | Lines | Role |
+|---|---|---|---|
 | S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Catalog entry: blurb, manuscript link, abstract |
 | S2 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/README.md`](../../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/README.md) | 18 | Manuscript README: date and bibtex key |
 | S3 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/main.tex`](../../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/main.tex) | 118 | Manuscript: abstract, introduction, theorems |

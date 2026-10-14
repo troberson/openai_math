@@ -261,8 +261,8 @@ inline link was rewritten to a relative one so it resolves from this page, and t
 HTML for the exponent's positivity is quoted around rather than transcribed, because this page
 carries no raw HTML.
 
-| Src | File | Lines | Role |
-| --- | --- | --- | --- |
+| # | File | Lines | Role |
+|---|---|---|---|
 | S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Release blurb, family 007 at line 166 |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | LaTeX entry `\resultentry{007}`, line 90 |
 | S3 | [`README.md`](../../../README.md) | 51 | Trace attribution, line 28 |

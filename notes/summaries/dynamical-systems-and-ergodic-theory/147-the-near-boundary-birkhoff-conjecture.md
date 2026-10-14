@@ -192,7 +192,7 @@ in the Lean library reaches it, and no certificate ships with it.
 
 ## Sources
 
-| ID | File | Lines | What it carries |
+| # | File | Lines | Role |
 |---|---|---|---|
 | S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | The release's blurb for family 147 at line 3516. |
 | S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 373. |
