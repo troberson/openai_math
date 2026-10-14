@@ -441,3 +441,33 @@ quote population, and the ownership needle. Gate: **78 rows, 0 failures**, empty
 diff, cache promotion 0 problems, lint trio 0/0/0. `math-ckd.3`'s remaining set is
 **71 families over 110 manuscripts**; the tree ends at **98** family pages plus the
 index page.
+
+### 2026-10-13 — Six pages named files without links; the Sources header has seven forms
+
+The user noticed that some summary pages' file names are links and others
+are not. Measured over the 28 family pages: **22** pages had every
+Sources-table File cell as a backticked repo-relative path **with** a
+relative href; **6** pages (109, 136, 147, 226, 259, 332 — the last three
+batches) had the backticked path and **no href**, 62 rows in total, and
+families 109 and 136 carried no markdown link anywhere on the page.
+
+The skill fixes both rules, so the 22-page form is the authoritative one:
+"Write every File cell as a repo-relative path, in backticks" **and**
+"Every row gets a link, built with `os.path.relpath(target, page_dir)`".
+The fix is mechanical — the paths were already repo-relative, so the href
+is computed from the page directory. Two assertions: the target is on
+disk, and the href carries no parenthesis, because `LINK` in
+`catlib/summaries.py` is `]\(([^)\s]+)\)` — **not paren-balanced** — so a
+path like `Sharp-integral-fillings-in-CAT(0)-spaces` would be truncated
+into a reported dead link. No cell in the six pages has a parenthesis.
+
+Pages with every source row linked: **22 → 28**. Markdown links in the
+family pages: **706 → 768**. `verify_summaries.py` reports 0 problems on
+all 29 pages; the gate runs 78 rows with 0 failures.
+
+**Left open, not fixed:** the Sources-table header row has **seven** forms
+across the 28 pages — first label `ID` (16), `#` (4), `S#` (3), `Src` (2),
+`Source` (1), and last label `Role` (18), `What it carries` (7), `What it
+is` (3). The skill fixes `| # | File | Lines | Role |`, which **4** pages
+use. No checker parses the header, so normalizing it is a formatting pass
+the user has not asked for.
