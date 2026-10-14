@@ -175,3 +175,34 @@ def test_injected_faults(load, text, label, needle, mut):
     m = v.measure()
     want = needle(cand, v, m) if callable(needle) else needle
     assert any(want in p for p in probs), f"{label}: needle did not fire\n{probs}"
+
+
+def pad_cells(t):
+    """Pad every table cell with two spaces."""
+    out = []
+    for ln in t.split("\n"):
+        if ln.startswith("|") and ln.endswith("|"):
+            cells = ln[1:-1].split("|")
+            ln = "|" + "|".join("  " + c.strip() + "  " for c in cells) + "|"
+        out.append(ln)
+    return "\n".join(out)
+
+
+def test_padded_table_cells_are_dropped(load, text):
+    """The opposite direction from the padding-tolerant checkers: the check-table reader (`:259`)
+    matches rows with `startswith("| The ")`, so padding must drop every row, not be tolerated.
+    Measured: 6 check rows on the clean page, 0 on the padded page, and the pass reports the row count
+    against the prose figure. The patch-table reader (`:253`) splits and strips, so its 23 rows must
+    survive padding. The page is prettier-ignored, so the padding never reaches the tracked tree; the
+    test asserts the ignore rule too."""
+    v = load("verify_dependency_drift")
+    cand = pad_cells(text)
+    assert cand != text, "padding changed nothing"
+    assert len(v.table_rows(text)) == len(v.table_rows(cand)), \
+        "the patch-table reader is strip-based, so padding must keep its rows"
+    probs = v.check(cand)[0]
+    assert any("drift table has 0 check rows" in p for p in probs), \
+        f"padding did not drop the check rows: {probs[:3]}"
+    ignore = pathlib.Path(".prettierignore").read_text(encoding="utf-8").splitlines()
+    assert "notes/reports/*.md" in ignore, \
+        "the dependency-drift page is not prettier-ignored, so a format pass would pad it"
