@@ -19,6 +19,14 @@ byte figure, the six-name count, the gap breakdown, a manuscript directory name,
 distribution, the disk census, the formalized share, and a prose count no count phrase covers — the
 last is visible only to the render diff.
 
+**The needles that name a measured figure are derived at run time, not recorded.** The block needle is
+keyed to the byte the mutation touched: the block carrying that byte is the block the pass reports, and
+the reported line is the line the byte sits on. The anchor-shifted fault is keyed to the shifted anchor
+for the same reason — the line the page names is **inside** the file, so the anchor pass is silent and
+the block pass is what fires, attributing the block to the anchor the mutated page carries. The needles
+that stay literal are the mutation's own inputs — the renamed anchor file, the renamed directory slug,
+the prose figure — and the count labels, which carry no measured figure.
+
 Every fault is built from a real anchor, a real block line, a real count phrase, a real directory slug
 and a real prose line in the page as committed. Each test asserts the injected text differs from the
 page it started from, and each needle is the problem string the pass that owns that form prints —
@@ -43,13 +51,63 @@ import pytest
 
 pytestmark = pytest.mark.mutant
 
+
+def row_of(c, sub):
+    """The 1-based page line carrying `sub`; a sub on two lines makes the needle ambiguous."""
+    lines = c.split("\n")
+    hits = [i + 1 for i, line in enumerate(lines) if sub in line]
+    assert len(hits) == 1, f"{sub!r} appears on {len(hits)} lines of the mutated page"
+    return hits[0]
+
+
+def block_needle(c, mod, sub):
+    """The fenced-block problem, keyed to the byte the mutation touched. The block carrying `sub` is the
+    block the pass reports, and the reported line is the line `sub` sits on. The pass walks the page's
+    own fences and reads the anchor in the nine lines above, so the walk is re-run here."""
+    lines = c.split("\n")
+    i = 0
+    while i < len(lines):
+        if lines[i].lstrip().startswith("```"):
+            indent = lines[i][: len(lines[i]) - len(lines[i].lstrip())]
+            j = i + 1
+            blk = []
+            while j < len(lines) and not lines[j].lstrip().startswith("```"):
+                ln = lines[j]
+                blk.append(ln[len(indent):] if ln.startswith(indent) and ln.strip() else ln)
+                j += 1
+            anchor = None
+            for k in range(i - 1, max(i - 9, -1), -1):
+                found = mod.ANCHOR.findall(lines[k])
+                if found:
+                    anchor = (found[-1][0], int(found[-1][1]))
+                    break
+            if anchor is not None:
+                rel, at = anchor
+                n = next((k for k, ln in enumerate(blk) if sub in ln), None)
+                if n is None:
+                    if sub not in f"{rel}:{at}":
+                        i = j + 1
+                        continue
+                    n = 0
+                src = (mod.ROOT / rel).read_text(encoding="utf-8", errors="replace").split("\n")
+                got = src[at - 1 + n] if at - 1 + n < len(src) else "<past end of file>"
+                if got != blk[n]:
+                    return f"block line {n} != {rel}:{at + n}"
+            i = j + 1
+        else:
+            i += 1
+    raise AssertionError(f"no block carries {sub!r} in the mutated page")
+
+
 # Faults in the page's own text, each keyed to the problem string the pass that owns it prints.
 MUTANTS = [
-    ("anchor line shifted", "pgfmanual-en-macros.tex:1176",
+    ("anchor line shifted",
+     lambda c, mod: block_needle(c, mod, "pgfmanual-en-macros.tex:1176"),
      lambda t: t.replace("pgfmanual-en-macros.tex:1177", "pgfmanual-en-macros.tex:1176", 1)),
     ("anchor file renamed", "build/paper.yml does not exist",
      lambda t: t.replace("build/paper.tex:1", "build/paper.yml:1", 1)),
-    ("block line altered", "#1#3",
+    ("block line altered",
+     lambda c, mod: block_needle(c, mod, "\\def\\extractclass#1#3@{"),
      lambda t: t.replace("\\def\\extractclass#1#2@{%", "\\def\\extractclass#1#3@{%", 1)),
     ("column count", "count mismatch (subsection count)",
      lambda t: t.replace("**16,297**", "**16,290**", 1)),
@@ -114,4 +172,5 @@ def test_injected_faults(mod, text, label, needle, mut):
     cand = mut(text)
     assert cand != text, f"{label}: mutation changed nothing"
     found, _, _, _, _, _ = mod.check(cand)
-    assert any(needle in x for x in found), f"{label}: NOT caught by {needle!r} ({found[:2]})"
+    want = needle(cand, mod) if callable(needle) else needle
+    assert any(want in x for x in found), f"{label}: NOT caught by {want!r} ({found[:2]})"
