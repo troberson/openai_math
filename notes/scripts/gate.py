@@ -75,6 +75,7 @@ ROWS = [
     # the keyed record: two processes writing the same record key is the race that made this row fail.
     ("dump_template_slots.py", ("templates",), ()),
     ("measure_checker_needles.py", (), ()),
+    ("measure_needles.py", (), ()),
     ("run_tests.py notes/scripts/tests/test_proof_density.py -q", ("pages",), ()),
     ("verify_summaries.py", ("pages", "summaries"), ()),
     ("run_tests.py notes/scripts/tests/test_summaries.py -q", ("pages", "summaries"), ()),

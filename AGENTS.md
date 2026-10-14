@@ -66,11 +66,11 @@ lives in this file and nowhere else.
 
 - Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `atomic`, `promote`, `overview`, `ledger`, `preprints`,
   `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries`, `templates`, `records`, `quotes` (18 modules). Import them (`from catlib import yaml as Y`);
-  do not re-implement a join in an extractor. **61** of the **67** scripts do — the rule is
+  do not re-implement a join in an extractor. **61** of the **68** scripts do — the rule is
   `^[ \t]*(from|import) catlib`, so a deferred import inside a function counts — including all **23**
-  checkers; the seven non-importers are `dump_template_slots.py`, which reaches the slot dict
+  checkers; the eight non-importers are `dump_template_slots.py`, which reaches the slot dict
   through `render_reports.py` and never touches the registry, `gate.py`, which spawns rows and reads
-  no corpus,
+  no corpus, `measure_needles.py`, which parses the test files with `ast` and reads no corpus,
   `measure_proof_density.py` and `measure_topics.py`, which were this rule's two-importers-today
   case until `math-o3a.3`: each carried `from catlib import render as RD` as its only package import,
   and the sync pass that used it moved to `verify_page_sync.py`; and the three render probes
@@ -408,8 +408,8 @@ lives in this file and nowhere else.
   manifest is `notes/scripts/README.md`, and it is the only place that answers "whose bytes are
   this". It is also the script inventory: every script under `notes/scripts/` is listed once as
   writer, report-only or checker, with what it writes and the gate command the gate list runs for it
-  — **15** writers, **30** report-only, **22** checkers, plus the page's own checker as the 23rd
-  checker and 68th script — and the fourth class, scratch, is recorded by rule: **scratch lives under
+  — **15** writers, **31** report-only, **22** checkers, plus the page's own checker as the 23rd
+  checker and 69th script — and the fourth class, scratch, is recorded by rule: **scratch lives under
   `.qwen/tmp/`, a permanent script lives under `notes/scripts/`**, so a probe that a later pass
   re-runs is promoted and gets a table row before it gets a gate command. `math-o3a.3.4` is that rule
   realized: the audit-hook probe moved from `.qwen/tmp/a11_open_probe2.py` to
@@ -421,11 +421,11 @@ lives in this file and nowhere else.
   by hand before and after each move. The quote-spec probe is the rule realized a third time:
   `measure_summaries_seed.py` moved from `.qwen/tmp/measure_summaries_seed.py` and the gate does run
   it, because its report is a function of the pages on disk.
-  Scripts and generated files are **not** 1-to-1: of the **67** scripts, **15** write
+  Scripts and generated files are **not** 1-to-1: of the **68** scripts, **15** write
   (`build_catalog.py`, `build_sources.py`, `build_index.py`, `compare_abstracts.py` — with `--tsv`
   only — `extract_formalization_deps.py`, `extract_links.py`, `extract_subfindings.py`,
   `render_reports.py`, `build_report_templates.py`, `measure_open_probe.py`, `measure_names.py`,
-  `seed_quotes.py`, `extract_named_results.py`, `measure_templates.py`, `build_index_db.py`) and **52**
+  `seed_quotes.py`, `extract_named_results.py`, `measure_templates.py`, `build_index_db.py`) and **53**
   write nothing, and `build_index.py` alone renders **1,049** files. **Three** of the writers are
   record producers: `measure_names.py` lands `names.json`, `extract_named_results.py` lands
   `named_results.json`, `measure_templates.py` lands `templates.json`, all under
@@ -463,9 +463,9 @@ lives in this file and nowhere else.
   nothing. Prove the mode by running a writer plain, then with the flag, diffing the two reports (the
   write announcement is the only line allowed to differ) and confirming `git status --porcelain` is
   unchanged by the flagged run. The read-only gate pool is the block that runs rows with this flag.
-- The whole-tree test is the gate list at `notes/scripts/gate.py`: **78** invocations — the **10**
+- The whole-tree test is the gate list at `notes/scripts/gate.py`: **79** invocations — the **10**
   gated writers (`build_report_templates.py` and `measure_open_probe.py` are the writers it does not
-  run), the 45 gated report-only rows (including `check_summary_manuscripts.py`,
+  run), the 46 gated report-only rows (including `check_summary_manuscripts.py`,
   `locate_summary_quotes.py` and `measure_summaries_seed.py`, `check_index_links.py` plain and its extracted self-tests row, and the
   twenty-five extracted self-tests rows, from
   `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q` to
@@ -1005,7 +1005,7 @@ lives in this file and nowhere else.
   every time the command block is edited and would read the gap as empty the moment the naming
   lands — and recomputes the shared-basename sets
   (**1** top-level ∩ index: `README.md`; **14** index ∩ summaries slugs). It excludes
-  itself from the population, so the page's **67** scripts and **23** checkers are the run's **67** and
+  itself from the population, so the page's **68** scripts and **23** checkers are the run's **68** and
   22. Its self-tests are extracted to `notes/scripts/tests/test_script_ownership.py` and run by the
   gate's `run_tests.py` row: **18** injected faults — eleven in the census page's text, one prose
   count in the generated `notes/README.md` (which only the render diff can see), four in

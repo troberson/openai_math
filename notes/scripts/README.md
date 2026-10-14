@@ -9,10 +9,10 @@ is per file, and the checker exits 1 on a file no rule owns.
 It is also the script inventory. Every script under `notes/scripts/` is listed once, in one of three
 classes — writer, report-only, checker — with what it writes and the command the gate runs for it, and
 the fourth class, the scratch a session writes outside the tree, is recorded by rule rather than by
-file. The classes partition the **67** scripts: **15** writers, **30** report-only, **22** checkers,
+file. The classes partition the **68** scripts: **15** writers, **31** report-only, **22** checkers,
 and `verify_script_ownership.py` itself, which is the 23rd checker and is not listed in its own table.
 
-## The split: 15 write, 52 write nothing
+## The split: 15 write, 53 write nothing
 
 The writer set is derived from the scripts' own source, not from this page: a script is a writer when
 a path constant rooted at `notes/` appears on the left of `.open(..., "w")` or `.write_text(...)`,
@@ -33,7 +33,7 @@ self-test: a module-level
 `mutants` / `mutant_test` / `selftest` body is blanked before the write calls are read, because a
 self-test writes the page it checks only to mutate it and restores the bytes it read in the `finally`
 — `verify_script_ownership.py` does exactly that, in three branches (the page it checks, `notes/scripts/README.md`, and `notes/development/templates.md`), so its normal run writes nothing and it stays in the checker class. `check_index_links.py` and `measure_proof_density.py` were this rule's examples; `math-o3a.3` moved their sync pass into `verify_page_sync.py`, which mutates page text in memory, so neither script carries a write call any more. That rule
-finds **15** writers over **67** scripts.
+finds **15** writers over **68** scripts.
 
 ### Writers
 
@@ -119,18 +119,18 @@ Editing a join in `build_catalog.py` can move rows in six artifacts.
 
 ### Report-only
 
-The other **52** scripts write nothing. **30** of them print a report: **19** print the report a page's
+The other **53** scripts write nothing. **31** of them print a report: **19** print the report a page's
 counts come from, **1** prints the quote-spec classification the seeded `notes/tables/quotes.tsv` is
 measured against, **1** prints the pytest report for the extracted checker self-tests
 (`run_tests.py`), **2** print the notes-move surface `math-faz` prices before a pass and re-checks
-after it, **6** print a wall or a candidate comparison that no page's counts come from (the render
-phase, pool and fresh-process probes, the links phase and scan-candidate probes, and the Lean import
-layout probe), and `gate.py` prints the gate report itself.
-The Gate column is the invocation the gate list runs: `notes/scripts/gate.py`, which runs **78**
+after it, **7** print a wall, a candidate comparison, or a fleet census that no page's counts come from
+(the render phase, pool and fresh-process probes, the links phase and scan-candidate probes, the Lean
+import layout probe, and the needle census), and `gate.py` prints the gate report itself.
+The Gate column is the invocation the gate list runs: `notes/scripts/gate.py`, which runs **79**
 invocations — the **11** gated writers (the four writers it does not run as writer rows are
 `build_report_templates.py` and `measure_open_probe.py`, each for the reason in its own row, and
 `measure_names.py` and `extract_named_results.py`, which run as `--check-only` rows; the eleventh
-writer row is `refresh_summary_line_counts.py`, a checker that rewrites the summaries pages), the 44
+writer row is `refresh_summary_line_counts.py`, a checker that rewrites the summaries pages), the 45
 gated report-only rows (including `check_summary_manuscripts.py`
 and `locate_summary_quotes.py`, `check_index_links.py` plain and its extracted self-tests row, and
 the twenty-five extracted self-tests rows, `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q`,
@@ -220,6 +220,7 @@ had to wait for the serial chain to finish.
 | `measure_import_layout.py` | `extract_links.py`'s import header rule — the Lean files whose first command is a doc-comment opener (`/-`), a bare `module` line, or a `public import` line, which is the evidence the widened `HEADER_SKIP` rule was written from | **not gated** — walks 122,458 files; run by hand when the header rule changes |
 | `measure_links_phases.py` | `extract_links.py`'s phases — the wall each read and scan takes, attributed by wrapping the script's own reads, because cProfile totals attribute cost to functions, not phases | **not gated** — a phase wall is a function of a run |
 | `measure_move_surface.py` | `math-faz` — the moved/stable path-mention split over the 29 pages the reorg moved, by context; the bead re-runs it after each pass | **not gated** |
+| `measure_needles.py` | `notes/scripts/tests/` — the needle fleet: faults per file, needles recorded as a string versus derived as a callable, recorded needles split numeric versus structural, needle digits, and the numeric literals in each clean test's asserted tuples | plain |
 | `measure_proof_density.py` | `notes/reports/proof-density.md` | the self-tests are in `notes/scripts/tests/test_proof_density.py`, run by the `run_tests.py` row; the plain run is not gated, because `render_reports.py` imports the module and calls `build_families()` rather than running the script |
 | `measure_render_phases.py` | `render_reports.py`'s phase wall with concurrent children — cumulative, in `main()` call order | **not gated** — a phase wall is a function of a run |
 | `measure_render_pool.py` | whether pooling the 15 child-free populations lowers the render wall; measured 2026-10-12 and the answer was no (22.16 s pooled against 16.78 s unpooled, because pool results never reach the parent's cached `population_of`) | **not gated** — a wall is a function of a run |
@@ -416,13 +417,13 @@ so its six mutants were never run by the gate. Measured 2026-10-09 by hand — `
 62; the pass that extracted its self-tests removed that invocation again. `math-a0r.6.2` added
 `check_index_links.py --mutant` for the same reason — its 21st mutant is a mutation of
 `notes/development/index-links.md`'s own prose, which only a self-test can catch — and `math-3la`
-added `measure_checker_needles.py`, so the count is **78** after `math-o3a.1` added
+added `measure_checker_needles.py`, so the count is **79** after `math-o3a.1` added
 `verify_fleet_design.py` plain and with `--mutant`, `math-o3a.6.1` added
 `verify_cache_promotion.py` plain and with `--mutant`, and the rows `math-unv`'s
 scheduler and `math-o3a.5.2`'s `--both` collapse added took the list to what the `ROWS` array
 carries. That `--mutant` row is now the `run_tests.py` row for `notes/scripts/tests/test_index_links.py`,
 and the prose mutant is `verify_page_sync.py`'s, so the row count did not move. The count is read
-from the array, not from the history: **11** writer rows, **44**
+from the array, not from the history: **11** writer rows, **45**
 report-only rows, **23** checker invocations.
 
 `verify_script_ownership.py` — this page's own checker — is not in the table: a checker cannot list
@@ -587,12 +588,12 @@ excludes the checker-verified pages, allowing formatting only on the pages no ch
 
 ## Naming coverage
 
-`notes/README.md`'s command block named **34** of the 67 scripts before this pass. Thirty-three are named
+`notes/README.md`'s command block named **34** of the 68 scripts before this pass. Thirty-four are named
 nowhere in the repo at the pinned baseline: `build_report_templates.py`, `build_index_db.py`,
 `check_summary_manuscripts.py`,
 `extract_citations.py`, `gate.py`, `locate_summary_quotes.py`, `measure_anchor_blocks.py`,
 `measure_checker_needles.py`, `measure_faithfulness.py`, `measure_import_layout.py`,
-`measure_links_phases.py`, `measure_move_surface.py`, `measure_open_probe.py`,
+`measure_links_phases.py`, `measure_move_surface.py`, `measure_needles.py`, `measure_open_probe.py`,
 `measure_render_phases.py`, `measure_render_pool.py`, `measure_render_processes.py`,
 `measure_scan_candidates.py`, `measure_summaries_seed.py`, `measure_templates.py`,
 `read_manuscript.py`,
