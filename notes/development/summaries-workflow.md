@@ -560,4 +560,45 @@ Not checked: the padding mutant exists only for `verify_t0_chains.py`. The
 other **6** table-row parsers are tolerant of padded cells but no mutant
 exercises that, and `verify_summaries.py`'s block-key rule has no row-count
 guard. The **110** numeric needles and the **184** clean-test corpus literals
-are untouched — phases 1 and 3 have not started.
+were untouched at this point; phase 1 has since started, on that file.
+
+## Phase 1 pilots on `test_t0_chains.py`, and the layout shift is the test
+
+Every needle in that file is now a function of the mutated page and the
+checker's cached `population()`: the page line is found in the mutated text,
+the ledger tier and the recomputed citation-layer triple come from the
+population, the count phrases come from `count_phrases()`. The runner accepts
+a needle as a string **or** a callable, so the 22 structural needles stay as
+strings.
+
+**The discriminating measurement is a layout shift.** Inserting two lines into
+the page in memory and running all 14 faults: the literal needles break on
+**6** faults, the derived needles break on **0**. That is the property the pass
+buys — a needle that quotes a page line is re-measured by hand every time the
+page's layout moves, and the padded-table sweep had just shown that.
+
+Numeric literals in the needles go **46 → 21**. The 21 that remain are the
+mutation's own inputs — a family id, the value the mutation writes, a date
+inside a manuscript path — not measured corpus figures.
+
+Two derivations needed care. The fenced-block needle keys on the **opening
+fence**, not the mutated line inside the block, because the pass reports the
+fence line (measured: the mutated line is 103, the pass names 99). The quote
+needle keys on the mutation's own byte plus the anchor on the same line,
+because the prose the page repeats is not unique — the first version of the
+title-swap needle asserted on a substring that appears on two lines.
+
+Specificity is re-measured, not assumed: **0** needles fire on another fault's
+page, **0** fire on the clean page. Gate **78** rows, **0** failures; head diff
+empty; promote-and-verify assertion green; lint trio **0 / 0 / 0**. Pushed to
+`origin` at `f67ac3d1b..9935c6761`.
+
+Not checked: the **11** other test files that carry numeric needles are
+untouched — `test_fleet_design.py` **19**, `test_index_design.py` **15**,
+`test_faithfulness.py` **15**, `test_verification_dirs.py` **15**,
+`test_counterexample_crosscheck.py` **14**, `test_script_ownership.py` **12**,
+`test_sources.py` **12**, `test_upstream_history.py` **12**,
+`test_named_results.py` **8**, `test_conditional.py` **6**,
+`test_findings.py` **4**. The **184** clean-test corpus literals are untouched
+— phase 2 has not started, and the pilot's own clean pins
+(**120, 3, 61, 12, 0** and **27, 5, 27, 54, 4, 2**) are still literals.
