@@ -1,6 +1,6 @@
 # Family summary pages
 
-Twenty-one extended summaries, one per family, each built from the manuscript's own LaTeX and verified
+Twenty-nine extended summaries, one per family, each built from the manuscript's own LaTeX and verified
 by script. The pages are hand-written; the checker measures them and writes nothing.
 
 ## Coverage, as four layers
@@ -15,18 +15,18 @@ nothing. The numbers are the ledger's, quoted with the rule that yields each:
 | Comparator challenges | **416** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub**: 539 `sorry` occurrences, 415 files with at least one, the zero-`sorry` exception being `HarmonicGrowth.lean`. The scope notes link **426** occurrences; the 10-gap is one config linked twice inside each of 7 docs. |
 | `main_results` entries | **200** entries over **189** unique configs, reaching **136** of 372 families | `lean/formalization.yaml`'s `main_results:` list. The yaml carries no family key, so family-to-config comes only from the scope notes' links. |
 
-The summaries are a fifth layer, and it is the thinnest: **21** of **372** families have a page.
+The summaries are a fifth layer, and it is the thinnest: **29** of **372** families have a page.
 
 ## The summaries layer
 
-**28** family pages, **5,904** lines, over **69** manuscript directories carrying **12.4 MB** of
-LaTeX source. The checker measures **4,235** `[Sn:line]` marker positions and **1,184** quoted spans
-across the **29** pages it reads (the 28 family pages and this link-only index page), and reports
+**29** family pages, **6,028** lines, over **67** manuscript directories carrying **13.2 MB** of
+LaTeX source. The checker measures **4,414** `[Sn:line]` marker positions and **1,243** quoted spans
+across the **30** pages it reads (the 29 family pages and this link-only index page), and reports
 **0** problems.
 
 The cost model is the reading pass, not a build. Each page cites the files it read, so the cost per page
-is the manuscript LaTeX its Sources table names: the median page cites **20** declared sources and the
-largest cites **63**. The checker runs over all 29 pages in **1.05 s** — it walks the cited files and
+is the manuscript LaTeX its Sources table names: the median page cites **21** declared sources and the
+largest cites **63**. The checker runs over all 30 pages in **1.14 s** — it walks the cited files and
 compares each marker and each quotation against the bytes the file carries, and it runs nothing.
 
 The pages are not a build target: no Lean, no lake, no comparator runs here. A page states what the
@@ -41,6 +41,7 @@ manuscript says and where it sits, with a `file:line` anchor the checker resolve
 - [101 — The sharp simplex conjecture for isotropic constants](convex-and-metric-geometry/101-the-sharp-simplex-conjecture-for-isotropic-constants.md)
 - [147 — The near-boundary Birkhoff conjecture](dynamical-systems-and-ergodic-theory/147-the-near-boundary-birkhoff-conjecture.md)
 - [332 — Metric Markov cotype two for $\ell_1$](functional-analysis/332-metric-markov-cotype-two-for-l1.md)
+- [258 — Gersten's conjecture for one-relator groups](group-theory/258-gerstens-conjecture-for-one-relator-groups.md)
 - [259 — A group without fixed price](group-theory/259-a-group-without-fixed-price.md)
 - [271 — Bloch's law and spontaneous ferromagnetic order](mathematical-physics/271-blochs-law-and-spontaneous-ferromagnetic-order.md)
 - [001 — Milne's rationality conjecture](number-theory/001-milnes-rationality-conjecture.md)
@@ -87,7 +88,7 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **344 families have no summary page.** The 28 pages cover 28 of 372 families; the rest are recorded in
+- **343 families have no summary page.** The 29 pages cover 29 of 372 families; the rest are recorded in
   the ledger and the index, not summarized.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not

@@ -29,7 +29,7 @@ fires for every fault, so no needle is that line.
 
 The clean test asserts the passes are silent and pins the counts they report: 32 anchors, 24 count
 and probe phrases, 0 sync problems, 2 atomicity matches over 66 scripts and 18 catlib modules, 12
-sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 25 TSVs at 2,301,027 bytes, 631M
+sync scripts all `verify_*`, 5 tree digests, 1 ignored line, 25 TSVs at 2,316,386 bytes, 631M
 `preprints/`, 1,740M `lean/OAI/`, 12M `notes/index/`, 78 gate rows, 11 writer rows, 1 env hit, 8
 purity scripts,
 the sites at `atomic.py:42` / `atomic.py:84`, `render_reports.py:1180`
@@ -79,8 +79,8 @@ MUTANTS = [
     ("notes-page anchor outside the file", "anchor line outside file: `notes/development/fleet-design.md:9999`",
      lambda t: t.replace("`render_reports.py:1180`",
                          "`render_reports.py:1180` `notes/development/fleet-design.md:9999`", 1)),
-    ("prose count in the size argument", "count phrase not in the page: **2,301,027** bytes",
-     lambda t: t.replace("**2,301,027** bytes", "**2,233,627** bytes", 1)),
+    ("prose count in the size argument", "count phrase not in the page: **2,316,386** bytes",
+     lambda t: t.replace("**2,316,386** bytes", "**2,233,627** bytes", 1)),
     # The TSV count is measured from the fleet's own tree, but the L2 row that carries it is literal
     # template text, not a slot, so the count pass never reads it: the needle is the page line the
     # render diff names. The tree carries 25 TSVs since `math-faz.6` moved the 16 generated tables
@@ -93,8 +93,8 @@ MUTANTS = [
     # the tree does not carry is caught by the count pass. The tree carries 14 records, so the needle
     # names 14 and the fault understates that.
     ("probe record count understated",
-     "count phrase not in the page: The tracked records are **19**:",
-     lambda t: t.replace("The tracked records are **19**:", "The tracked records are **15**:", 1)),
+     "count phrase not in the page: The tracked records are **20**:",
+     lambda t: t.replace("The tracked records are **20**:", "The tracked records are **15**:", 1)),
     ("writer-row count in the gate paragraph",
      "count phrase not in the page: the **11** writers declare what they write",
      lambda t: t.replace("the **11** writers declare what they write",
@@ -151,7 +151,7 @@ def test_clean_page(mod, text):
         f"atomic {p['atomic']}, scripts {p['scripts']}, modules {p['modules']}"
     assert (p["sync"], p["sync_verify"], p["sync_other"]) == (12, 12, 0), \
         f"sync {p['sync']}, verify_ {p['sync_verify']}, not {p['sync_other']}"
-    assert (p["digests"], p["ignored"], p["tsv_count"], p["tsv_bytes"]) == (5, 1, 25, 2301027), \
+    assert (p["digests"], p["ignored"], p["tsv_count"], p["tsv_bytes"]) == (5, 1, 25, 2316386), \
         f"digests {p['digests']}, ignored {p['ignored']}, tsv {p['tsv_bytes']}"
     assert (p["du"]["preprints"], p["du"]["oai"], p["du"]["index"]) == (631, 1740, 12), \
         f"du {p['du']}"

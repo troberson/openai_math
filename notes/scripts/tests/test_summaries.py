@@ -92,7 +92,7 @@ def blockquote_targets(page):
 
 
 def test_clean_pages(mod, pages):
-    assert len(pages) == 29, f"{len(pages)} summary pages on disk, expected 29"
+    assert len(pages) == 30, f"{len(pages)} summary pages on disk, expected 30"
     for page in pages:
         _positions, _sources, _links, problems = mod.pass_b(page)
         _spans, misses = mod.pass_c(page)
