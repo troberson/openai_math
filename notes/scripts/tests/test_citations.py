@@ -13,7 +13,9 @@ unmeasured).
 Each fault below mutates the page text in memory, so no page is written. `verify_citations.py`'s
 `measure()` is under `functools.cache` (`:75`): the checker writes nothing and the tests mutate page
 text, so a second call in the same process cannot see a different corpus, and the ten `check()` calls
-this file makes pay the 521-file walk once.
+this file makes pay the 521-file walk once. The file count is pinned as a **walk equality**: the test
+walks `preprints/` for `.bib` files itself and the population's count must equal the walk, so a
+bibliography added to a manuscript moves the walk, not the recorded number.
 
 **The needles that name a measured figure are derived at run time, not recorded.** The pair-layer
 phrase, the headline crossing count, the cluster membership, the cluster composition, the work count
@@ -32,6 +34,15 @@ import re
 import pytest
 
 PAGE = pathlib.Path("notes/reports/citations.md")
+
+REPO = pathlib.Path(__file__).resolve().parents[3]
+
+
+def tree_bib():
+    """The `.bib` files under `preprints/`, walked by the test rather than counted by the checker. The
+    population's file count is the census; this is the tree, so the equality is the invariant: the census
+    counted every bibliography the corpus carries, and a `.bib` added to a manuscript moves the walk."""
+    return list((REPO / "preprints").rglob("*.bib"))
 
 
 def bib_blocks(c):
@@ -169,8 +180,10 @@ def test_clean_page(load, text):
     assert v.check(text) == []
     m = v.measure(v.norm_title)
     m2 = v.measure(v.norm_noguard)
-    assert (len(m["files"]), len(m["owners"]), m["n_entries"], len(m["inv"]),
-            len(m["shared"]), len(m["pairs"])) == (521, 513, 13802, 8775, 2251, 3668)
+    assert len(m["files"]) == len(tree_bib()) > 0, \
+        f"bib files {len(m['files'])} against {len(tree_bib())} .bib files walked under preprints/"
+    assert (len(m["owners"]), m["n_entries"], len(m["inv"]),
+            len(m["shared"]), len(m["pairs"])) == (513, 13802, 8775, 2251, 3668)
     assert (len(m2["inv"]), len(m2["shared"]), len(m2["pairs"])) == (8765, 2254, 3676)
     assert (m2["all_keys"], m2["cited"], len(m2["depth"]), m2["discs"], m2["fams"],
             len(m2["led"]), len(m2["man2fam"]), len(m2["titles"])) == (13797, 13058, 4, 17, 299,

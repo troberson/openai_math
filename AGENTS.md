@@ -562,8 +562,10 @@ lives in this file and nowhere else.
   ledger's family count. The resolution passes are pinned as **derived floors**: each pass counted
   exactly the population its own rule reads off the page — the anchor pass counts distinct
   `(path, line)` pairs, the bare-anchor, table-row and quotation passes count every shape their regex
-  finds — and each population is required non-zero, so 0 problems means every shape resolved. The rest
-  stay literal: 65 count phrases, 0 sync problems; 7,679 `.tex` files, 2,410
+  finds — and each population is required non-zero, so 0 problems means every shape resolved. The `.tex`
+  file count is pinned as a **walk equality**: the test walks `preprints/` at glob depths 1-4 itself,
+  measuring depth relative to `preprints/` so the root prefix does not shift every file past the bound.
+  The rest stay literal: 65 count phrases, 0 sync problems; 2,410
   headline begins, 1,609 titled per line (1,619 whole-text), 373 target-named titles, 76 families with
   no headline, 248 `resolves_named`, 275 title-union, 15 additions, 6 core, 76 directory-name, 5
   abstract-only, 207 prose hits, 551 subject keys, 17 targets, 0 generic, and the per-command split
@@ -650,11 +652,15 @@ lives in this file and nowhere else.
   report, **as joins where the ledger can produce the figure**: families equals the ledger family set,
   manuscripts equals the ledger `paps` sum, formalized equals the ledger `paps_form` sum, the two
   comparator surfaces count the same configs, and the `main_results` entry count exceeds the unique
-  config count. The rest stay literal: 9 anchors, 3 block lines, 83 count and byte phrases, 0 sync
+  config count. The census counts are pinned as **walk equalities**: the test walks `preprints/`,
+  `lean/OAI/`, `notes/index/`, `notes/tables/` and `reasoning_traces/` itself, and the population's count
+  must equal the walk — 749 preprint dirs, 122,458 `.lean` files, 1,033 index pages, 16 index tables,
+  11 trace files folding to 10 distinct stems. The rest stay literal: 9 anchors, 3 block lines, 83 count
+  and byte phrases, 0 sync
   problems, 2,560 nodes over 3,415
-  resolved edges (17,217 raw), 391 citation edges over 104 cross-family, 1,033 index pages and 16
-  tables, 242 scope notes, 749 preprint dirs, 122,458 `.lean` files, 559 module dirs, 17
-  disciplines against 23 Lean dirs, 10 traces in 11 files, 30 verification bundles, 521 `.bib` files
+  resolved edges (17,217 raw), 391 citation edges over 104 cross-family, 242 scope notes, 559 module dirs,
+  17
+  disciplines against 23 Lean dirs, 30 verification bundles, 521 `.bib` files
   with 13,802 entries and 393 hrefs, the ledger set at 297,050 B against the all-TSV 2,316,386 B, the
   index tree at 11,531,073 B over 1,033 pages, 66,115
   disk links with 0 broken and 17,700 resolving to a directory, and the substring counts 18 / 373

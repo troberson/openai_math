@@ -44,10 +44,13 @@ phrases, 30 table rows, 0 sync problems; the bundle population at 4 named `COVER
 present, 9 shared, 7 identical, 2 differing, 8 entries, 0 mismatches, 53 identities, 21 interval
 rows, 15 reported, 6 supplementary, 12 triangle rows, 9 determinant floors, 24 exact, 41
 subintervals, 504 lines, 6 check functions, 9 printed keys, 13 `require` calls, 151 passed-record
-occurrences, 11 checks with 8 negative and 7 ending `rejected`; and the entry recomputation at 30
-bundles over 22 families, 28 named by a README section, 27 by a `## Verification` heading and 1 by
+occurrences, 11 checks with 8 negative and 7 ending `rejected`; and the entry recomputation over 22
+families, 28 named by a README section, 27 by a `## Verification` heading and 1 by
 the other heading, 6 with no entry point, 0 rule-4 firings, 2 declaring READMEs, and the two
-`rows.txt` files at 20 lines and 1,436 bytes, byte-identical. A page with fewer anchors, quotes,
+`rows.txt` files at 20 lines and 1,436 bytes, byte-identical. The bundle count is pinned as a **walk
+equality**: the test walks `preprints/` for directories carrying a `verification/` directory itself and
+the entry pass's count must equal the walk, so a bundle added to the corpus moves the walk, not the
+recorded number. A page with fewer anchors, quotes,
 phrases or rows is a pass that stopped checking, not a pass that passed.
 
 The checker reads no argv and `check()` takes page text, so nothing here writes a page: the checker
@@ -57,11 +60,22 @@ writes nothing and the tests write nothing. `population()` and `entry_measure()`
 The checker measures; this file injects. Run:
   python3 notes/scripts/run_tests.py notes/scripts/tests/test_verification_dirs.py -q
 """
+import pathlib
 import re
 
 import pytest
 
 pytestmark = pytest.mark.mutant
+
+REPO = pathlib.Path(__file__).resolve().parents[3]
+
+
+def tree_bundles():
+    """The manuscript directories under `preprints/` that carry a `verification/` directory, walked by
+    the test. The entry pass's dir count is the census; this is the tree, so the equality is the
+    invariant: the pass counted every bundle on disk, and a bundle added to the corpus moves the walk."""
+    return [d for d in (REPO / "preprints").iterdir()
+            if d.is_dir() and (d / "verification").is_dir()]
 
 POS = "preprints/Positively-curved-Einstein-four-manifolds-September-23-2026"
 ZERO = "preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026"
@@ -274,9 +288,11 @@ def test_clean_page(mod, text):
             p["checks"], p["negative"], p["ends_rejected"]) == (6, 9, 13, 151, 11, 8, 7), \
         f"passed {p['passed']}"
     e = mod.entry_measure()
-    assert (e["dirs"], e["fams"], e["named"], e["ver"], e["run"], e["no_entry"],
-            e["rule4"], e["declaring"]) == (30, 22, 28, 27, 1, 6, 0, 2), \
-        f"entry dirs {e['dirs']}, named {e['named']}, no_entry {e['no_entry']}"
+    assert e["dirs"] == len(tree_bundles()) > 0, \
+        f"entry dirs {e['dirs']} against {len(tree_bundles())} bundles walked under preprints/"
+    assert (e["fams"], e["named"], e["ver"], e["run"], e["no_entry"],
+            e["rule4"], e["declaring"]) == (22, 28, 27, 1, 6, 0, 2), \
+        f"named {e['named']}, no_entry {e['no_entry']}"
     assert e["classes"] == {"none": 6, "top-level README.md": 12, "top-level script by name": 5,
                             "subdirectory README.md": 6, "subdirectory README.txt": 1}, e["classes"]
     assert (e["rows_lines"], e["rows_bytes"], e["rows_identical"]) == (20, 1436, True), \

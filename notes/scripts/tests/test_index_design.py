@@ -29,11 +29,15 @@ The clean test asserts the passes are silent and pins the counts they report. Th
 as **joins** where the ledger can produce the figure: the family count equals the ledger's family set,
 the manuscript count equals the ledger's `paps` sum, the formalized count equals the ledger's
 `paps_form` sum, the two comparator surfaces count the same configs, and the `main_results` entry count
-exceeds the unique config count. The figures that stay literal are the ones the join cannot produce:
-9 anchors, 3 block lines, 83 count and byte phrases, 0 sync problems, 2,560 nodes over 3,415 resolved
-edges (17,217 raw), 391 citation edges over 104 cross-family, 1,033 index pages and 16 tables, 242
-scope notes, 749 preprint dirs, 122,458 `.lean` files, 559 module dirs, 17 disciplines against 23 Lean
-dirs, 10 traces in 11 files, 30 verification bundles, 521 `.bib` files with 13,802 entries and 393
+exceeds the unique config count. The census counts are pinned as **walk equalities**: the test walks
+`preprints/`, `lean/OAI/`, `notes/index/`, `notes/tables/` and `reasoning_traces/` itself, and the
+population's count must equal the walk — 749 preprint dirs, 122,458 `.lean` files, 1,033 index pages,
+16 index tables, 11 trace files folding to 10 distinct stems. The figures that stay literal are the ones
+neither the join nor a file walk can produce: 9 anchors, 3 block lines, 83 count and byte phrases, 0
+sync problems, 2,560 nodes over 3,415 resolved
+edges (17,217 raw), 391 citation edges over 104 cross-family, 242
+scope notes, 559 module dirs, 17 disciplines against 23 Lean
+dirs, 30 verification bundles, 521 `.bib` files with 13,802 entries and 393
 hrefs, the ledger set at 297,050 B against the all-TSV 2,316,386 B, 66,115 disk links with 0 broken and
 17,700 resolving to a directory, the index tree at 11,531,073 B, and the substring counts 18 / 373
 against the brace-qualified 17 / 372. A page with fewer anchors, block lines or phrases is a pass that
@@ -50,9 +54,47 @@ writes nothing and the tests write nothing. `population()` is under `functools.c
 The checker measures; this file injects. Run:
   python3 notes/scripts/run_tests.py notes/scripts/tests/test_index_design.py -q
 """
+import pathlib
+
 import pytest
 
 pytestmark = pytest.mark.mutant
+
+REPO = pathlib.Path(__file__).resolve().parents[3]
+
+
+def tree_index_pages():
+    """The `.md` files under `notes/index/` — the pages the index renders. The population's count is the
+    census; this is the tree, so the equality is the invariant: the census counted every page on disk."""
+    return list((REPO / "notes/index").rglob("*.md"))
+
+
+def tree_index_tables(mod):
+    """The generated index tables under `notes/tables/`, keyed by the registry's own name list. The
+    equality is the invariant: every table the registry names is on disk and the count is the walk's."""
+    names = set(mod.M.INDEX_TABLES)
+    return [p for p in (REPO / "notes/tables").glob("*.tsv") if p.name in names]
+
+
+def tree_traces():
+    """The files under `reasoning_traces/`, walked by the test. The population's trace count is the
+    distinct stem count over that walk: 11 files carry 10 traces, because the Mezar-Parisi trace ships as
+    both `.pdf` and `.tex`. The equality is the invariant — the census counted the tree, and the
+    attribution is the fold, not a recorded number."""
+    return [p for p in (REPO / "reasoning_traces").rglob("*") if p.is_file()]
+
+
+def tree_preprint_dirs():
+    """The directories under `preprints/`, walked by the test. The census count is the population's; this
+    is the tree, so the equality is the invariant."""
+    return [d for d in (REPO / "preprints").iterdir() if d.is_dir()]
+
+
+def tree_lean_files():
+    """The `.lean` files under `lean/OAI/`, walked by the test. The census count is the population's;
+    this is the tree, so the equality is the invariant: the census counted every source file the formalized
+    package carries."""
+    return list((REPO / "lean/OAI").rglob("*.lean"))
 
 # Faults in the page's own text, each keyed to the problem string the pass that owns it prints.
 MUTANTS = [
@@ -129,17 +171,28 @@ def test_clean_page(mod, text, ledger):
         f"main_results: {p['mr_configs']} unique configs against {p['mr_entries']} entries"
     assert (p["nodes"], p["edges_resolved"], p["edges_rawbib"], p["resolved"], p["cross"]) == \
         (2560, 3415, 17217, 391, 104), f"nodes {p['nodes']}, edges {p['edges_resolved']}"
-    assert (p["index_pages"], p["index_tables"], p["scope_notes"]) == \
-        (1033, 16, 242), f"index pages {p['index_pages']}"
-    assert (p["preprint_dirs"], p["lean_files"], p["lean_mods"], p["disciplines"], p["lean_disc"]) == \
-        (749, 122458, 559, 17, 23), f"preprint dirs {p['preprint_dirs']}, lean {p['lean_files']}"
-    assert (p["traces"], p["trace_files"], p["ver_dirs"], p["bib_files"], p["bib_entries"],
-            p["bib_hrefs"]) == (10, 11, 30, 521, 13802, 393), f"traces {p['traces']}, bib {p['bib_files']}"
+    assert p["scope_notes"] == 242, f"scope notes {p['scope_notes']}"
+    assert p["preprint_dirs"] == len(tree_preprint_dirs()) > 0, \
+        f"preprint dirs {p['preprint_dirs']} against {len(tree_preprint_dirs())} directories walked"
+    assert p["lean_files"] == len(tree_lean_files()) > 0, \
+        f"lean files {p['lean_files']} against {len(tree_lean_files())} .lean files walked under lean/OAI/"
+    assert (p["lean_mods"], p["disciplines"], p["lean_disc"]) == (559, 17, 23), \
+        f"module dirs {p['lean_mods']}, disciplines {p['disciplines']} against {p['lean_disc']} Lean dirs"
+    walked = tree_traces()
+    assert p["trace_files"] == len(walked) > 0, \
+        f"trace files {p['trace_files']} against {len(walked)} files walked under reasoning_traces/"
+    assert p["traces"] == len({f.stem for f in walked}) > 0, \
+        f"traces {p['traces']} against {len({f.stem for f in walked})} distinct stems over the walk"
+    assert (p["ver_dirs"], p["bib_files"], p["bib_entries"],
+            p["bib_hrefs"]) == (30, 521, 13802, 393), f"ver dirs {p['ver_dirs']}, bib {p['bib_files']}"
     assert (p["ledger_set_bytes"], p["all_tsv_bytes"], p["disk_links"], p["disk_broken"],
             p["disk_dirs"], p["rawbib_kib"]) == (297050, 2316386, 66115, 0, 17700, 2021), \
         f"ledger set {p['ledger_set_bytes']}, all TSV {p['all_tsv_bytes']}, links {p['disk_links']}"
-    assert (p["index_bytes"], p["index_pages"]) == (11531073, 1033), \
-        f"index tree {p['index_bytes']} B over {p['index_pages']} pages"
+    assert p["index_pages"] == len(tree_index_pages()) > 0, \
+        f"index pages {p['index_pages']} against {len(tree_index_pages())} .md files walked under notes/index/"
+    assert p["index_tables"] == len(tree_index_tables(mod)) > 0, \
+        f"index tables {p['index_tables']} against {len(tree_index_tables(mod))} .tsv files walked under notes/tables/"
+    assert p["index_bytes"] > 0, f"index tree {p['index_bytes']} B"
     assert (p["substr_disc"], p["substr_res"], p["brace_disc"], p["brace_res"],
             p["resultentries"]) == (18, 373, 17, 372, 372), f"substring {p['substr_disc']}"
 

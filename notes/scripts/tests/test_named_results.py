@@ -35,9 +35,11 @@ ledger's `paps` sum, and the prose sentence and window counts equal the ledger's
 resolution passes are pinned as **derived floors**: each pass counted exactly the population its own
 rule reads off the page — the anchor pass counts distinct `(path, line)` pairs, the bare-anchor,
 table-row and quotation passes count every shape their regex finds — and each population is required
-non-zero, so 0 problems means every anchor, bare anchor, table row and quotation resolved. The figures
-that stay literal are the ones the join cannot produce: 65 count phrases, 0 sync problems; 7,679
-`.tex` files, 2,410 headline begins,
+non-zero, so 0 problems means every anchor, bare anchor, table row and quotation resolved. The `.tex`
+file count is pinned as a **walk equality**: the test walks `preprints/` at glob depths 1-4 itself,
+measuring depth relative to `preprints/` so the root prefix does not shift every file past the bound,
+and the population's count must equal the walk. The figures that stay literal are the ones the join
+cannot produce: 65 count phrases, 0 sync problems; 2,410 headline begins,
 1,609 titled per line (1,619 whole-text), 373 target-named titles, 76 families with no headline, 248
 `resolves_named`, 275 title-union, 15 additions, 6 core, 76 directory-name, 5 abstract-only, 207 prose
 hits, 551 subject keys, 17 targets, 0 generic, and the per-command split 2,405 `theorem` / 4
@@ -59,10 +61,23 @@ The checker measures; this file injects. Run:
   python3 notes/scripts/run_tests.py notes/scripts/tests/test_named_results.py -q
 """
 import bisect
+import pathlib
 
 import pytest
 
 pytestmark = pytest.mark.mutant
+
+REPO = pathlib.Path(__file__).resolve().parents[3]
+
+
+def tree_tex():
+    """The `.tex` files under `preprints/` at glob depths 1-4 — the scope the population counts. Depth is
+    measured relative to `preprints/`, not on the absolute path, so the root prefix does not shift every
+    file past the bound. The walk is the test's own, so the equality is the invariant: the population
+    counted every file the tree carries at that depth, and a manuscript added to the corpus moves the
+    walk, not the recorded number."""
+    pre = REPO / "preprints"
+    return [p for p in pre.rglob("*.tex") if len(p.relative_to(pre).parts) - 1 <= 4]
 
 CENTER = "preprints/An-Endpoint-Gradient-Bound-for-the-Centered-Disk-Maximal-Operator-September-26-2026"
 ELASTIC = ("preprints/Global-Uniqueness-for-the-Smooth-Isotropic-Elasticity-Inverse-Problem"
@@ -238,9 +253,11 @@ def test_clean_page(mod, text, ledger):
     assert len(p["prose_sentence"]) == len(p["prose_window"]) == len({r["fam"] for r in ledger}), \
         f"prose windows {len(p['prose_sentence'])}/{len(p['prose_window'])} against " \
         f"{len({r['fam'] for r in ledger})} ledger families"
-    assert (p["files"], p["begins"], p["titled"], p["titled_all"],
-            len(p["head_titled"]), len(p["no_head"])) == (7679, 2410, 1609, 1619, 373, 76), \
-        f"files {p['files']}, begins {p['begins']}"
+    assert p["files"] == len(tree_tex()) > 0, \
+        f"files {p['files']} against {len(tree_tex())} .tex files walked at depth 1-4 under preprints/"
+    assert (p["begins"], p["titled"], p["titled_all"],
+            len(p["head_titled"]), len(p["no_head"])) == (2410, 1609, 1619, 373, 76), \
+        f"begins {p['begins']}, titled {p['titled']}"
     assert (len(p["rn"]), len(p["an"]), len(p["add"]), len(p["core"]), len(p["dn"]),
             len(p["eo"]), len(p["subj_hits"]), len(p["subject"]), len(p["tgt"]),
             p["generic"]) == (248, 275, 15, 6, 76, 5, 207, 551, 17, 0), \

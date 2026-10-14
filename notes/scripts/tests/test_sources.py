@@ -36,8 +36,10 @@ for every fault, so no needle is that line.
 The clean test asserts the passes are silent and pins the counts they report. The population is pinned
 as **joins**, not recorded numbers: the dir census decomposes into listed + superseded + notices, the
 table has one row per listed manuscript, every resolved main file sits under `build/`, the family count
-equals the ledger's family set, and the formalized count equals the ledger's `paps_form` sum. The
-figures that stay literal are the ones the join cannot produce: 4 block lines, 31 count
+equals the ledger's family set, and the formalized count equals the ledger's `paps_form` sum. The dir
+census is also pinned as a **walk equality**: the test walks `preprints/` itself and the census must
+equal the number of directories on disk, so a dir added to the corpus moves the walk, not the recorded
+number. The figures that stay literal are the ones the join cannot produce: 4 block lines, 31 count
 phrases, 0 sync problems, 14 columns, the (27, 3) superseded/notices split, 12 `main.tex` files
 without `\\documentclass`, 21,203 six-name environments against the declared-rule 21,288, the root
 distribution (715, 3, 1), the column sums (724, 20,341, 21,288, 16,297, 127,456,942), and the six
@@ -66,6 +68,15 @@ import pathlib
 import pytest
 
 pytestmark = pytest.mark.mutant
+
+REPO = pathlib.Path(__file__).resolve().parents[3]
+
+
+def tree_dirs():
+    """The directories under `preprints/`, walked by the test rather than counted by the checker. The
+    census count is the population's; this is the tree. The equality is the invariant: the census
+    counted every directory on disk, so a dir added to `preprints/` moves the walk and not the census."""
+    return [d for d in (REPO / "preprints").iterdir() if d.is_dir()]
 
 
 def row_of(c, sub):
@@ -185,6 +196,8 @@ def test_clean_page(mod, text, ledger):
     assert (n_block, n_phrases, n_sync) == (4, 31, 0), \
         f"block lines {n_block}, phrases {n_phrases}, sync {n_sync}"
     m = mod.population()
+    assert m["dirs"] == len(tree_dirs()) > 0, \
+        f"dir census {m['dirs']} against {len(tree_dirs())} directories walked under preprints/"
     assert m["dirs"] == m["listed"] + m["superseded"] + m["notices"], \
         f"dir census {m['dirs']} against {m['listed']}+{m['superseded']}+{m['notices']}"
     assert m["rows"] == m["listed"], f"rows {m['rows']} against {m['listed']} listed manuscripts"
