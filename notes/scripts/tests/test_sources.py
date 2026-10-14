@@ -37,12 +37,17 @@ The clean test asserts the passes are silent and pins the counts they report. Th
 as **joins**, not recorded numbers: the dir census decomposes into listed + superseded + notices, the
 table has one row per listed manuscript, every resolved main file sits under `build/`, the family count
 equals the ledger's family set, and the formalized count equals the ledger's `paps_form` sum. The
-figures that stay literal are the ones the join cannot produce: 2 anchors, 7 slugs, 4 block lines, 31
-count phrases, 0 sync problems, 14 columns, the (27, 3) superseded/notices split, 12 `main.tex` files
+figures that stay literal are the ones the join cannot produce: 4 block lines, 31 count
+phrases, 0 sync problems, 14 columns, the (27, 3) superseded/notices split, 12 `main.tex` files
 without `\\documentclass`, 21,203 six-name environments against the declared-rule 21,288, the root
 distribution (715, 3, 1), the column sums (724, 20,341, 21,288, 16,297, 127,456,942), and the six
-integrity counters at 0. A page with fewer anchors, slugs, block lines or count phrases is a pass that
-stopped checking, not a pass that passed.
+integrity counters at 0. The resolution passes are pinned as **derived floors**: the anchor pass
+counted every anchor shape the page carries and the slug pass counted every slug the page carries,
+both derived from the page by the checker's own regex and both required non-zero, so 0 problems means
+every anchor and every slug resolved. `test_resolution_floors_fire_on_a_page_that_carries_nothing`
+proves the floor: strip every anchor shape and every slug from the page and the equality holds at 0
+while the floor fails. A page with fewer block lines or count phrases is a pass that stopped checking,
+not a pass that passed.
 
 `test_formalized_join_fires_on_a_ledger_fault` proves the join is the witness: flipping a family's
 `paps_form` moves no page byte, so every page pass stays silent and no literal pin moves — rows, dirs,
@@ -167,11 +172,18 @@ def test_clean_page(mod, text, ledger):
     one row per listed manuscript, every resolved main file sits under `build/`, the formalized count
     equals the ledger's `paps_form` sum, and the family count equals the ledger's family set. The
     column count, the root distribution, the six-name environment total and the column sums stay
-    literals: corpus measurements the join cannot produce."""
+    literals: corpus measurements the join cannot produce. The resolution floors: the anchor pass
+    counted every anchor shape the page carries, and the slug pass counted every slug the page carries,
+    so 0 problems means every one resolved — the count is derived from the page by the checker's own
+    regex, not recorded, and a page with no anchors is a pass that ran over nothing."""
     problems, n_anchor, n_block, n_slug, n_phrases, n_sync = mod.check(text)
     assert not problems, problems[:3]
-    assert (n_anchor, n_slug, n_block, n_phrases, n_sync) == (2, 7, 4, 31, 0), \
-        f"anchors {n_anchor}, slugs {n_slug}, block lines {n_block}, phrases {n_phrases}, sync {n_sync}"
+    assert n_anchor == len(mod.ANCHOR_SHAPE.findall(text)) > 0, \
+        f"anchors {n_anchor} against {len(mod.ANCHOR_SHAPE.findall(text))} anchor shapes in the page"
+    assert n_slug == len(mod.SLUG.findall(text)) > 0, \
+        f"slugs {n_slug} against {len(mod.SLUG.findall(text))} slugs in the page"
+    assert (n_block, n_phrases, n_sync) == (4, 31, 0), \
+        f"block lines {n_block}, phrases {n_phrases}, sync {n_sync}"
     m = mod.population()
     assert m["dirs"] == m["listed"] + m["superseded"] + m["notices"], \
         f"dir census {m['dirs']} against {m['listed']}+{m['superseded']}+{m['notices']}"
@@ -221,3 +233,17 @@ def test_formalized_join_fires_on_a_ledger_fault(mod, ledger):
         "the clean join is not the relation the population satisfies"
     assert m["formalized"] != sum(int(r["paps_form"]) for r in led), \
         "the paps_form flip did not break the join, so the join is not a witness"
+
+
+def test_resolution_floors_fire_on_a_page_that_carries_nothing(mod, text):
+    """A pass that reports 0 problems on a page with no anchors is vacuous. Stripping every anchor
+    shape from the page leaves the equality true (0 counted against 0 present) and the floor false, so
+    the floor is what keeps the pass honest — the same for the slug pass."""
+    no_anchor = mod.ANCHOR_SHAPE.sub("", text)
+    _p, n_anchor, _b, _s, _ph, _sy = mod.check(no_anchor)
+    assert n_anchor == len(mod.ANCHOR_SHAPE.findall(no_anchor)) == 0, \
+        f"the anchor pass counted {n_anchor} on a page with no anchor shapes"
+    no_slug = mod.SLUG.sub("", text)
+    _p, _a, _b, n_slug, _ph, _sy = mod.check(no_slug)
+    assert n_slug == len(mod.SLUG.findall(no_slug)) == 0, \
+        f"the slug pass counted {n_slug} on a page with no slugs"

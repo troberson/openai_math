@@ -559,15 +559,19 @@ lives in this file and nowhere else.
   render of it. Each needle is measured specific: it fires for its own fault and for no other. The
   clean test pins the population the passes report, **as joins where the ledger can produce the
   figure**: `ndirs` equals the ledger `paps` sum, and the prose sentence and window counts equal the
-  ledger's family count. The rest stay literal: 61 anchors, 15 bare anchors, 17 table rows, 61
-  quotations, 65 count phrases, 0 sync problems; 7,679 `.tex` files, 2,410
+  ledger's family count. The resolution passes are pinned as **derived floors**: each pass counted
+  exactly the population its own rule reads off the page — the anchor pass counts distinct
+  `(path, line)` pairs, the bare-anchor, table-row and quotation passes count every shape their regex
+  finds — and each population is required non-zero, so 0 problems means every shape resolved. The rest
+  stay literal: 65 count phrases, 0 sync problems; 7,679 `.tex` files, 2,410
   headline begins, 1,609 titled per line (1,619 whole-text), 373 target-named titles, 76 families with
   no headline, 248 `resolves_named`, 275 title-union, 15 additions, 6 core, 76 directory-name, 5
   abstract-only, 207 prose hits, 551 subject keys, 17 targets, 0 generic, and the per-command split
   2,405 `theorem` / 4 `maintheorem` / 1 `thm`. `test_ledger_joins_fire_on_faults_the_literals_miss`
   proves a `paps` decrement and a dropped family row break the joins while every page pass stays
-  silent. `main()` reads no
-  argv, so `--mutant` is inert, and `population()` is under `functools.cache`, so the fourteen
+  silent, and `test_resolution_floors_fire_on_a_page_that_carries_nothing` strips every shape each pass
+  reads and shows the equality holds at 0 while the floor fails. `main()` reads no
+  argv, so `--mutant` is inert, and `population()` is under `functools.cache`, so the fifteen
   `check()` calls the row makes pay the 7,240-file walk once. It writes nothing; run it twice
   and diff — the report is identical. Quote a quotation's anchor as the checker pins it: a manuscript
   sentence wraps across 1–4 source lines, so the anchor is the **prose-coordinate** line the extractor
@@ -685,12 +689,16 @@ lives in this file and nowhere else.
   clean test pins the population the passes report, **as joins where the ledger can produce the
   figure**: rows equals listed manuscripts, dirs equals listed + superseded + notices, every resolved
   main file sits under `build/`, fams equals the ledger family set, and formalized equals the ledger
-  `paps_form` sum. The rest stay literal: 2 anchors, 7 slugs, 4 block lines, 31 count
+  `paps_form` sum. The resolution passes are pinned as **derived floors**: the anchor pass counted
+  every anchor shape the page carries and the slug pass counted every slug the page carries, derived
+  from the page by the checker's own regex and required non-zero, so 0 problems means every one
+  resolved; `test_resolution_floors_fire_on_a_page_that_carries_nothing` strips the page and shows the
+  equality holds at 0 while the floor fails. The rest stay literal: 4 block lines, 31 count
   phrases, 0 sync problems, 14 columns, the (27, 3) superseded/notices split, 12 `main.tex` without `\documentclass`, 21,203
   six-name environments against the declared-rule 21,288, the root distribution (715, 3, 1) and the
   column sums. `test_formalized_join_fires_on_a_ledger_fault` proves a `paps_form` flip moves no page
   byte and no literal pin, so the join is the only witness. `main()` reads no argv, so `--mutant` is
-  inert, and `population()` is under `functools.cache` (`:152`), so the thirteen `check()` calls the
+  inert, and `population()` is under `functools.cache` (`:152`), so the fifteen `check()` calls the
   row makes pay the corpus walk once. It writes nothing.
 - Check `notes/reports/subfinding-pairs.md` with `python3 notes/scripts/verify_subfinding_pairs.py` and its
   extracted self-tests with

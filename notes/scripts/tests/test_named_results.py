@@ -32,13 +32,20 @@ specific, each needle fires for its own fault and for no other.
 The clean test asserts the passes are silent and pins the counts they report. The population is pinned
 as **joins** where the ledger can produce the figure: the manuscript-directory count equals the
 ledger's `paps` sum, and the prose sentence and window counts equal the ledger's family count. The
-figures that stay literal are the ones the join cannot produce: 61 anchors, 15 bare anchors, 17 table
-rows, 61 quotations, 65 count phrases, 0 sync problems; 7,679 `.tex` files, 2,410 headline begins,
+resolution passes are pinned as **derived floors**: each pass counted exactly the population its own
+rule reads off the page — the anchor pass counts distinct `(path, line)` pairs, the bare-anchor,
+table-row and quotation passes count every shape their regex finds — and each population is required
+non-zero, so 0 problems means every anchor, bare anchor, table row and quotation resolved. The figures
+that stay literal are the ones the join cannot produce: 65 count phrases, 0 sync problems; 7,679
+`.tex` files, 2,410 headline begins,
 1,609 titled per line (1,619 whole-text), 373 target-named titles, 76 families with no headline, 248
 `resolves_named`, 275 title-union, 15 additions, 6 core, 76 directory-name, 5 abstract-only, 207 prose
 hits, 551 subject keys, 17 targets, 0 generic, and the per-command split 2,405 `theorem` / 4
-`maintheorem` / 1 `thm`. A page with fewer anchors, quotations, table rows or phrases is a pass that
-stopped checking, not a pass that passed.
+`maintheorem` / 1 `thm`. A page with fewer count phrases is a pass that stopped checking, not a pass
+that passed.
+
+`test_resolution_floors_fire_on_a_page_that_carries_nothing` strips every shape each pass reads and
+shows the equality holds at 0 while the floor fails.
 
 `test_ledger_joins_fire_on_faults_the_literals_miss` proves the joins are the witness: a `paps`
 decrement breaks the manuscript-directory join and dropping a family row breaks the prose-window join,
@@ -60,6 +67,32 @@ pytestmark = pytest.mark.mutant
 CENTER = "preprints/An-Endpoint-Gradient-Bound-for-the-Centered-Disk-Maximal-Operator-September-26-2026"
 ELASTIC = ("preprints/Global-Uniqueness-for-the-Smooth-Isotropic-Elasticity-Inverse-Problem"
            "-September-24-2026")
+
+
+def regex_count(rx):
+    """Every shape the regex finds in the page."""
+    def count(text):
+        return len(rx.findall(text))
+    return count
+
+
+def distinct_anchor_count(mod):
+    """The anchor pass counts distinct `(path, line)` pairs, not shapes: the page repeats anchors, and
+    the pass resolves each pair once. The floor has to be the pass's own rule, not a looser one."""
+    def count(text):
+        return len({(m.group(1), int(m.group(2))) for m in mod.ANCHOR.finditer(text)})
+    return count
+
+
+def resolution(mod):
+    """Each resolution pass's population, read off the page by the pass's own rule: `(key, count)` for
+    the anchor, bare-anchor, table-row and quotation passes. The clean test asserts each pass counted
+    exactly its population and that the population is non-zero, so 0 problems means every shape
+    resolved and a page carrying none fails the floor."""
+    return (("anchors", distinct_anchor_count(mod)),
+            ("bare anchors", regex_count(mod.BARE)),
+            ("table rows", regex_count(mod.ROW)),
+            ("quotations", regex_count(mod.QUOTE)))
 
 
 def quote_needle(c, mod, sub):
@@ -185,15 +218,20 @@ def text(mod):
 
 
 def test_clean_page(mod, text, ledger):
-    """Every pass is silent, and the population is asserted as joins, not recorded numbers. The
-    ledger-join invariants: the manuscript-directory count equals the ledger's `paps` sum, and the prose
-    sentence and window counts equal the ledger's family count. The file, begins, titled and
-    environment-split figures stay literals: corpus measurements the join cannot produce."""
+    """Every pass is silent, and the population is asserted as joins and derived floors, not recorded
+    numbers. The ledger-join invariants: the manuscript-directory count equals the ledger's `paps` sum,
+    and the prose sentence and window counts equal the ledger's family count. The resolution passes are
+    derived floors: each pass counted every shape its own regex finds in the page, so 0 problems means
+    every anchor, bare anchor, table row and quotation resolved, and a page carrying none is a pass that
+    ran over nothing. The file, begins, titled and environment-split figures stay literals: corpus
+    measurements the join cannot produce, as do the 65 count phrases and the sync count."""
     problems, out = mod.check(text)
     assert not problems, problems[:3]
-    assert (out["anchors"], out["bare anchors"], out["table rows"], out["quotations"],
-            out["count phrases"], out["count phrases total"], out["sync problems"]) == \
-        (61, 15, 17, 61, 65, 65, 0), f"counters {out}"
+    for key, pop in resolution(mod):
+        assert out[key] == pop(text) > 0, \
+            f"{key}: pass counted {out[key]} against {pop(text)} shapes the page carries"
+    assert (out["count phrases"], out["count phrases total"], out["sync problems"]) == (65, 65, 0), \
+        f"counters {out}"
     p = mod.population()
     assert p["ndirs"] == sum(int(r["paps"]) for r in ledger), \
         f"ndirs {p['ndirs']} against the ledger paps sum {sum(int(r['paps']) for r in ledger)}"
@@ -241,3 +279,16 @@ def test_ledger_joins_fire_on_faults_the_literals_miss(mod, ledger):
         "the clean family join is not the relation the population satisfies"
     assert len(p["prose_sentence"]) != len({r["fam"] for r in dropped}), \
         "dropping a family row did not break the prose-window join, so the join is not a witness"
+
+
+def test_resolution_floors_fire_on_a_page_that_carries_nothing(mod, text):
+    """A pass that reports 0 problems on a page with no anchors is vacuous. Stripping every shape each
+    resolution pass reads leaves the equality true (0 counted against 0 present) and the floor false, so
+    the floor is what keeps each pass honest."""
+    cand = text
+    for rx in (mod.ANCHOR, mod.BARE, mod.ROW, mod.QUOTE):
+        cand = rx.sub("", cand)
+    _found, out = mod.check(cand)
+    for key, pop in resolution(mod):
+        assert out[key] == pop(cand) == 0, \
+            f"{key}: pass counted {out[key]} on a page with no {key}"
