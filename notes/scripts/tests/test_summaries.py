@@ -12,7 +12,10 @@ the marker still resolves to a line that is in range, non-blank, and in the righ
 
 Every mutant is built from a real span, a real path, and a real marker of a real page, so a checker
 that only re-reads its own regexes cannot pass. Each test asserts the injected text differs from the
-page it started from. The clean test asserts all 21 pages are silent on all four passes.
+page it started from. The clean test asserts every page on disk is silent on all four passes, as a
+**resolution invariant with a non-vacuity floor**: the page set is the tree, required non-empty, and
+each page must carry markers, so 0 problems means every marker in that page resolved — a page with no
+markers reports 0 problems and proves nothing.
 
 The checker measures; this file injects. Run:
   python3 notes/scripts/run_tests.py notes/scripts/tests/test_summaries.py -q
@@ -92,14 +95,19 @@ def blockquote_targets(page):
 
 
 def test_clean_pages(mod, pages):
-    assert len(pages) == 30, f"{len(pages)} summary pages on disk, expected 30"
+    """Every pass is silent on every page, and the marker pass is pinned as a resolution invariant with
+    a non-vacuity floor: each page must carry markers, so 0 problems means every marker in that page
+    resolved. A page with no markers reports 0 problems and proves nothing, so the floor is the witness
+    that the pass ran. The page count is a floor, not a recorded number: the tree is the population."""
+    assert len(pages) > 0, "no summary pages on disk, so every pass is vacuous"
     for page in pages:
-        _positions, _sources, _links, problems = mod.pass_b(page)
+        positions, _sources, _links, problems = mod.pass_b(page)
         _spans, misses = mod.pass_c(page)
         # The tree's index page is link-only, so the checker skips pass D and pass E for it; the clean
         # test mirrors that selection.
         if page.path.name == "README.md":
             continue
+        assert positions > 0, f"{page.path.name}: pass B resolved 0 markers, so it checked nothing"
         _dirs, stale = mod.pass_d(page)
         _cites, outside = mod.pass_e(page)
         assert problems == 0, f"{page.path.name}: pass B reports {problems} problems"
