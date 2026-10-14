@@ -1302,3 +1302,41 @@ upstream-history 16.
 Not checked: the population literals that are not resolution results (28 families, 2,560 nodes, the
 corpus byte sums, the environment counts) stay literal; the three layout-sensitive clean pins stay
 literal; beads `.5`–`.7` are unwritten.
+
+## Bead `math-4nn.5` replaces the census clean pins with walk-equality invariants
+
+Chosen 2026-10-14. A clean test that pins 7,679 `.tex` files, 122,458 `.lean` files, 749 preprint dirs,
+30 bundles, 521 `.bib` files, 1,033 index pages and 16 tables records what the tree measured when the
+test was written. The pin becomes the tree: each test walks the corpus with its own `rglob` and the
+population's count must equal the walk, so a manuscript, bundle, bibliography or rendered page added to
+the corpus moves the walk and the equality fails — what a recorded number can never see.
+
+Five files converted: `test_sources.py` (preprint dirs), `test_named_results.py` (`.tex` at glob depths
+1-4), `test_index_design.py` (preprint dirs, `lean/OAI/` `.lean` files, index pages, index tables, trace
+files and stems), `test_citations.py` (`.bib` files), `test_verification_dirs.py` (directories carrying a
+`verification/` directory).
+
+**Two traps the pass fixed on the way.** Depth must be measured relative to `preprints/`, not on the
+absolute path: the root prefix shifts every file past the glob bound and the walk read 0. And the
+checker's depth-1-4 scope counts the manuscript dir as level 1, so the bound is relative parts minus one
+— measured 7,240 at the naive bound against the population's 7,679.
+
+**The remaining literals, named not counted** (the bead's requirement): the counts a file walk cannot
+produce — 2,560 nodes, 3,415 resolved edges, 17,217 raw bib edges, 391 citation edges over 104
+cross-family, the ledger set at 297,050 B, the all-TSV 2,316,386 B, the index tree at 11,531,073 B, 66,115
+disk links with 17,700 resolving to a directory, 559 module dirs, 17 disciplines against 23 Lean dirs,
+242 scope notes, 30 verification bundles, 521 `.bib` files with 13,802 entries and 393 hrefs, the
+substring counts 18 / 373 against the brace-qualified 17 / 372, the theorem-environment counts (2,410
+begins, 1,609 titled per line, 1,619 whole-text, the 2,405 / 4 / 1 split, 2,288 environments with 48
+`a.e.` hits over 32 families), the 28-family counterexample population, the 139-row conjecture prior,
+the 79 gate rows, the pool cap 12, the 5 tree digests, and the three layout-sensitive clean pins
+(`dependency_drift`, `subfinding_pairs`, `t0_chains`). The faithfulness environment count stays literal
+because the population exposes no file set to walk against — reproducing the checker's environment rule
+in the test would be re-deriving a count through the writer's code, which proves nothing.
+
+AGENTS.md is swept in the same commit: the census pins it quotes for index-design and named-results.
+Gate: **79 rows, 0 failures**, empty head diff, lint 0/0/0. Tests: sources 15, named-results 16,
+index-design 17, citations 11, verification-dirs 20.
+
+Not checked: beads `.6` and `.7` are unwritten; the environment counts stay literal for the reason
+above; the three layout-sensitive clean pins stay literal.
