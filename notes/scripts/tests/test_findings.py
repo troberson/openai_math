@@ -124,3 +124,26 @@ def test_injected_faults(mod, page, label, needle, mut):
     found, m, _, _ = mod.check(cand)
     want = needle(cand, mod, m)
     assert any(want in x for x in found), f"{label}: NOT caught by {want!r} ({found[:2]})"
+
+
+def pad_cells(t):
+    """Pad every table cell with two spaces. The row regex allows whitespace, so the sources pass must
+    read the same rows; a regex that required exact spacing would drop rows, and the render diff fires
+    for the padding either way, so the row count is the discriminator."""
+    out = []
+    for ln in t.split("\n"):
+        if ln.startswith("|") and ln.endswith("|"):
+            cells = ln[1:-1].split("|")
+            ln = "|" + "|".join("  " + c.strip() + "  " for c in cells) + "|"
+        out.append(ln)
+    return "\n".join(out)
+
+
+def test_padded_table_cells_are_still_read(mod, page):
+    cand = pad_cells(page)
+    assert cand != page, "padding changed nothing"
+    problems, _m, table, _q = mod.check(cand)
+    src = [p for p in problems if "Sources" in p]
+    assert not src, f"padded rows are not read: {src[:2]}"
+    assert table == mod.check(page)[2], \
+        f"padded table reads {table} rows, clean page {mod.check(page)[2]}"
