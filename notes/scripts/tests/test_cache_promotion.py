@@ -131,7 +131,9 @@ def test_padded_table_cells_are_still_read(mod):
     real = mod.README
 
     class Shim:
-        def read_text(self, *args, **kwargs):
+        """A path stand-in that returns the padded page text."""
+
+        def read_text(self, *_args, **_kwargs):
             return cand
 
     mod.README = Shim()
