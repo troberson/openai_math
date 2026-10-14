@@ -239,3 +239,31 @@ def test_bare_locator_moved_out_of_the_family_block(mod, pages):
             if hits:
                 break
     assert hits > 0, "no page carries a bare locator cite into a family-keyed file"
+
+
+def pad_cells(t):
+    """Pad every table cell with two spaces. The row regex allows whitespace, so the marker pass must
+    read the same rows; a regex that required exact spacing would drop rows and print UNKNOWN SOURCE
+    for every marker whose row vanished, so the row count and the pass's problem count are the
+    discriminators, not the render diff."""
+    out = []
+    for ln in t.split("\n"):
+        if ln.startswith("|") and ln.endswith("|"):
+            cells = ln[1:-1].split("|")
+            ln = "|" + "|".join("  " + c.strip() + "  " for c in cells) + "|"
+        out.append(ln)
+    return "\n".join(out)
+
+
+def test_padded_table_cells_are_still_read(mod, pages):
+    bad = []
+    for page in pages:
+        cand = Page(page.path, pad_cells("\n".join(page.lines)).splitlines())
+        if len(cand.rows) != len(page.rows):
+            bad.append(f"{page.path.name}: {len(cand.rows)} rows against {len(page.rows)}")
+            continue
+        _pos, _src, _links, problems = mod.pass_b(cand)
+        clean = mod.pass_b(page)[3]
+        if problems != clean:
+            bad.append(f"{page.path.name}: {problems} problems against {clean}")
+    assert not bad, f"padded rows are not read: {bad[:3]}"
