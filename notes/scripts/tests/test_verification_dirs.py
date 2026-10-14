@@ -294,3 +294,31 @@ def test_injected_faults(mod, text, label, needle, mut):
            "e": mod.entry_measure()}
     want = needle(cand, mod, ctx) if callable(needle) else needle
     assert any(want in x for x in found), f"{label}: NOT caught by {want!r} ({found[:2]})"
+
+
+def pad_cells(t):
+    """Pad every table cell with two spaces."""
+    out = []
+    for ln in t.split("\n"):
+        if ln.startswith("|") and ln.endswith("|"):
+            cells = ln[1:-1].split("|")
+            ln = "|" + "|".join("  " + c.strip() + "  " for c in cells) + "|"
+        out.append(ln)
+    return "\n".join(out)
+
+
+def test_padded_table_cells_are_dropped(mod, text):
+    """The opposite direction from the padding-tolerant checkers: the entry-point table reader
+    (`:405`) matches rows with the byte-exact `^\\| (\\d{3}) \\|`, so padding must drop every row, not
+    be tolerated. Measured: 30 rows on the clean page, 0 on the padded page, and the pass reports the
+    row count against the bundle count. The page is prettier-ignored, so the padding never reaches the
+    tracked tree; the test asserts the ignore rule too."""
+    cand = pad_cells(text)
+    assert cand != text, "padding changed nothing"
+    found, counters = mod.check(cand, cand)
+    assert counters[8] == 0, f"the padded page still reads {counters[8]} entry-point rows"
+    assert any("entry-point table has 0 rows, the bundle count is 30" in x for x in found), \
+        f"padding did not drop the entry-point rows: {found[:3]}"
+    ignore = (mod.PAGE.parents[2] / ".prettierignore").read_text(encoding="utf-8").splitlines()
+    assert "notes/reports/*.md" in ignore, \
+        "the verification-dirs page is not prettier-ignored, so a format pass would pad it"
