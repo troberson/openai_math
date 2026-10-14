@@ -1,0 +1,65 @@
+quotes in the pages: 2027
+  pair-line specs (notes/reports/subfinding-pairs.md): 754
+  summaries specs (30 pages): 1273
+  specs seeded: 2011   measured negatives (start 0): 16
+  single-line spec: 1149   range spec: 862
+  head widened past 3 words: 277
+  whole-quote spec (no boundary): 467
+  mode: raw 1950  folded 61  not located 16
+  resolver reproduces the page quote: 2011 of 2011
+  round-trip failures: 0
+[probe] target exit code: 0
+[probe2] target notes/scripts/seed_quotes.py 
+[probe2] wall 26.13  opens 741  distinct 378  repeats 363
+[probe2] rchar MB 35.1  read_bytes MB 0.6
+[probe2] buckets:
+          preprints/                 480
+          notes/summaries/           62
+          other                      56
+          lean/OAI/                  37
+          lean/ComparatorChallenges/ 26
+          notes/                     22
+          abs/other                  19
+          lean/docs/                 18
+          notes/scripts/             13
+          top-level                  6
+          reasoning_traces/          2
+[probe2] notes/ paths (count  modes  path):
+              3  r        notes/reports/counterexample-tag.md
+              2  r        notes/reports/subfinding-pairs.md
+              8  r        notes/reports/t0-triage.md
+              2  r        notes/summaries/README.md
+              2  r        notes/summaries/algebra/197-nonsofic-groups-and-group-ring-counterexamples.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/032-the-rational-hodge-conjecture-for-cm-abelian-varieties.md
+              2  r        notes/summaries/combinatorics/159-quasipolynomial-bounds-for-arithmetic-progressions.md
+              2  r        notes/summaries/convex-and-metric-geometry/087-the-mahler-conjectures-and-symplectic-width.md
+              2  r        notes/summaries/convex-and-metric-geometry/101-the-sharp-simplex-conjecture-for-isotropic-constants.md
+              2  r        notes/summaries/differential-geometry/342-donaldsons-tamed-to-compatible-conjecture.md
+              2  r        notes/summaries/dynamical-systems-and-ergodic-theory/147-the-near-boundary-birkhoff-conjecture.md
+              2  r        notes/summaries/functional-analysis/332-metric-markov-cotype-two-for-l1.md
+              2  r        notes/summaries/group-theory/258-gerstens-conjecture-for-one-relator-groups.md
+              2  r        notes/summaries/group-theory/259-a-group-without-fixed-price.md
+              2  r        notes/summaries/mathematical-physics/271-blochs-law-and-spontaneous-ferromagnetic-order.md
+              2  r        notes/summaries/number-theory/001-milnes-rationality-conjecture.md
+              2  r        notes/summaries/number-theory/002-full-birch-swinnerton-dyer-formula-from-low-selmer-corank.md
+              2  r        notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md
+              2  r        notes/summaries/number-theory/006-goldfelds-conjecture.md
+              2  r        notes/summaries/number-theory/007-two-point-chowla-and-the-corrected-binary-elliott-conjecture.md
+              2  r        notes/summaries/number-theory/010-fontaine-mazur-modularity-at-the-prime-2.md
+              2  r        notes/summaries/number-theory/011-the-ford-konyagin-luca-conjecture-on-prime-predecessors.md
+              2  r        notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md
+              2  r        notes/summaries/number-theory/016-zilber-pink-in-abelian-varieties-and-the-siegel-threefold.md
+              2  r        notes/summaries/number-theory/017-the-irrationality-exponent-of-pi-is-2.md
+              2  r        notes/summaries/number-theory/018-margulis-platonov-conjecture-over-global-fields.md
+              2  r        notes/summaries/number-theory/019-p-adic-section-conjecture.md
+              2  r        notes/summaries/operator-algebras/287-all-nonabelian-free-group-factors-are-isomorphic.md
+              2  r        notes/summaries/partial-differential-equations/362-global-smoothness-for-relativistic-vlasov-maxwell.md
+              2  r        notes/summaries/probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md
+              2  r        notes/summaries/probability-and-statistical-mechanics/226-the-curve-scaling-limit-of-half-plane-double-dimers.md
+              2  r        notes/summaries/theoretical-computer-science/102-unique-games-conjecture-and-optimal-approximation-thresholds.md
+              2  r        notes/summaries/theoretical-computer-science/109-integer-multiplication-below-n-n.md
+              2  r        notes/summaries/theoretical-computer-science/136-quasilinear-pcp-for-ppad-conjecture.md
+              1  w        notes/tables/.quotes.tsv.tmp
+              8  r        notes/tables/catalog.tsv
+[probe2] write-mode paths outside notes/:
+              1  w .qwen/cache/records/63c9b1b176299e8fa3da9c52e71e0e8a/notes/tables/.quotes.tsv.tmp

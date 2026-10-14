@@ -138,7 +138,7 @@ only) lists every `notes/` path each script opens. A path is a write only if a m
 `w`, `a` or `x`. The AST census maps a name to a call context and does **not** track branches, so a
 `write_text` that lives only in a `--mutant` path is reported as a write in every mode — the probe's
 mode strings are the authority. The probe is `notes/scripts/measure_open_probe.py`, promoted from
-`.qwen/tmp/a11_open_probe2.py` by `math-o3a.3.4`. The tracked records are **20**:
+`.qwen/tmp/a11_open_probe2.py` by `math-o3a.3.4`. The tracked records are **21**:
 `notes/development/probe/2026-10-10_writers.txt`, `notes/development/probe/2026-10-10_checkers.txt`,
 `notes/development/probe/2026-10-11_writers.txt`, `notes/development/probe/2026-10-11_checkers.txt`,
 `notes/development/probe/2026-10-11_rr_after.txt` (the single-target `render_reports.py` record taken mid-pass,
@@ -160,9 +160,11 @@ the 16 index tables out, which names the 1,033-page index tree),
 `notes/development/probe/2026-10-13_build_index_db.txt` (the FTS builder's run, which proves its L1 is empty
 and names its one write-mode path outside `notes/` — the keyed record's staging file) and
 `notes/development/probe/2026-10-13_seed_quotes_summaries.txt` (the `seed_quotes.py` run after `math-ckd.6`
-added the summaries tree's link-only index page, which names that page).
+added the summaries tree's link-only index page, which names that page) and
+`notes/development/probe/2026-10-14_seed_quotes_pages.txt` (the `seed_quotes.py` run after the family 342
+page landed, which names that page and the 30 quote specs it seeds).
 `verify_fleet_design.py` parses the two 2026-10-11 records; `verify_cache_promotion.py` reads all
-fourteen records for its L1 exactness pass; the
+fifteen records for its L1 exactness pass; the
 2026-10-10 pair is the **before** state the amplification table's deltas are measured against.
 
 | script | write modes | generated reads, and whether any points backwards |
