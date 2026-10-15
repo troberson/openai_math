@@ -13,7 +13,7 @@
 | Claim shapes | counterexample, bound, uniform |
 | Topics | [manifolds](../topics/manifolds.md) · [riemannian-geometry](../topics/riemannian-geometry.md) · [ricci-flow](../topics/ricci-flow.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [351-scalar-curvature-detects-four-dimensional-ricci-flow-singularities.md](../../../notes/summaries/differential-geometry/351-scalar-curvature-detects-four-dimensional-ricci-flow-singularities.md) |
 
 ## Manuscripts
 
