@@ -110,8 +110,8 @@ unlinked. `CONTENTS.md`'s 720 `.pdf` links are the 719 manuscript PDFs plus `ove
 
 ## Coverage: the disk scan is a superset of the render-time check
 
-`build_index.py` checks its own links as it renders and reports **48,027 links checked, 0
-broken** (fresh run). The disk scan finds **66,122 links, 0 broken**. The 18,095-link difference
+`build_index.py` checks its own links as it renders and reports **48,028 links checked, 0
+broken** (fresh run). The disk scan finds **66,122 links, 0 broken**. The 18,094-link difference
 is not a discrepancy about existence — both report zero — it is the render-time registry
 under-covering the pages it writes. The registry appends one href per registered relationship
 (an edge, a canonical file); the rendered bodies emit the same target again in other tables, and
@@ -123,7 +123,7 @@ Attributed two ways, each summing to 18,094:
 | Page group | Pages | Scanned | Registered | Gap |
 |---|---|---|---|---|
 | name pages | 551 | 57,888 | 40,899 | 16,989 |
-| family pages | 372 | 6,727 | 5,778 | 949 |
+| family pages | 372 | 6,727 | 5,779 | 948 |
 | topic pages | 92 | 978 | 978 | 0 |
 | discipline pages | 17 | 372 | 372 | 0 |
 | entry point (`notes/index/README.md`) | 1 | 157 | 0 | 157 |
@@ -139,7 +139,7 @@ Attributed two ways, each summing to 18,094:
 | `index-dir` | 1 | 0 | 1 | the entry point's link to `names/`. |
 
 Every other category has gap 0: scanned links equal registered links. So the render-time check is
-a subset that passes; the disk check is the full set and also passes. The 18,095 surplus links are
+a subset that passes; the disk check is the full set and also passes. The 18,094 surplus links are
 all verified by the disk scan, and 16,989 of them (94%) sit on name pages, which is where the
 tables repeat targets.
 
