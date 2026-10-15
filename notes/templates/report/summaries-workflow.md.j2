@@ -15,12 +15,12 @@ measured quotation traps) lives in `.qwen/skills/auto-skill-family-summary-citat
 - {{ p['green'] }} {{ p['sum_totals'] }} {{ p['ms_counts'] }} {{ p['ms_preprint'] }}
 - {{ p['pages_done'] }} {{ p['disc'] }}
 - **Next batch:** `math-ckd.4` is claimed and in progress — tier C group 1. The differential-geometry families with `summary = 0`, sorted by `paps`: 353, 354, 355, 356, 357, 358, 359, 360, 361, 350. Steps 1–10 per page. Check `bd ready` first: summaries are P4 and any ready P1/P2 outranks this batch.
-- **Last gate run (2026-10-15):** `bash notes/scripts/gate_driver.sh` — {{ p['gate'] }}, head diff 0 bytes. Reconciliations: {{ p['recon'] }}, both `overview.tex` ↔ `CONTENTS.md` cross-checks 0. `verify_cache_promotion.py`: {{ p['cache'] }}. `check_index_links.py`: {{ p['idx'] }}. Lint trio (`notes/scripts/lint_scripts.sh`) exits 0.
-- **Push state:** `origin/notes` at `86f705d2c`, pushed 2026-10-15 — the workflow page's template and its twelve writer slots, the `PROBES` list moved from the cache checker into `catlib/promote.py` so the writer's target count and the checker's L1 pass read one list, the re-probe of `measure_templates.py` for the template its L1 gained, the three mutants re-targeted to the moved template-tree, registry, and probe-record counts, and the dead probe-dirs read removed. The gate run reported **79 rows, 0 failures**, `verify_cache_promotion.py` reported **0 problems** at the pushed HEAD, and the linters exit 0.
-- **Queue check (2026-10-15):** `bd ready` lists {{ p['queue'] }}: `math-95a`, `math-4nn`,
-  `math-ckd.5`, and `math-ckd`. `math-4nn.9` is claimed and in progress, and `math-ckd.4` is
-  claimed and in progress, so neither is in the ready list. Bead `.2`'s prettier decision is
-  resolved: prettier is dropped from the repo, so the formatable set is gone.
+- **Last gate run (2026-10-15):** `bash notes/scripts/gate_driver.sh` — {{ p['gate'] }}, head diff 0 bytes. Reconciliations: {{ p['recon'] }}, both `overview.tex` ↔ `CONTENTS.md` cross-checks 0. `verify_cache_promotion.py`: {{ p['cache'] }}. `check_index_links.py`: {{ p['idx'] }}. The gate does not run the lint trio; `bash notes/scripts/lint_scripts.sh` measured separately at HEAD: **ruff exit 0, mypy exit 0, pylint exit 0**.
+- **Push state:** `origin/notes` at `4f3ce3c8e`, pushed 2026-10-15 — the ruff gate made green (10 autofixes, 11 `pad_cells` rewrites for PLW2901, 7 ISC001 joins, 1 `noqa` move, ISC002 exempted with its 9 sites and the reason), the env site anchor the ruff fix moved landed at `render_reports.py:1221`, and the beads store close of `math-95a`. The gate run reported **79 rows, 0 failures**, `verify_cache_promotion.py` reported **0 problems** at the pushed HEAD, and the lint trio measured separately exits 0 on all three tools.
+- **Queue check (2026-10-15):** `bd ready` lists {{ p['queue'] }}: `math-ckd.5` and `math-ckd`.
+  `math-95a` and `math-4nn` are closed; `math-6wg` (the lint trio) is claimed and in progress, so
+  it is not in the ready list, and `math-ckd.4` is claimed and in progress. Bead `.2`'s prettier
+  decision is resolved: prettier is dropped from the repo, so the formatable set is gone.
 
 ## Loop shape
 
