@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [manifolds](../topics/manifolds.md) · [riemannian-geometry](../topics/riemannian-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [345-infinitely-many-closed-geodesics-on-spheres-and-three-manifolds.md](../../../notes/summaries/differential-geometry/345-infinitely-many-closed-geodesics-on-spheres-and-three-manifolds.md) |
 
 ## Manuscripts
 
