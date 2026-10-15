@@ -13,7 +13,7 @@
 | Claim shapes | bound |
 | Topics | [convex-geometry](../topics/convex-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [088-pettys-projection-volume-conjecture-and-simplex-counterexamples.md](../../../notes/summaries/convex-and-metric-geometry/088-pettys-projection-volume-conjecture-and-simplex-counterexamples.md) |
 
 ## Manuscripts
 

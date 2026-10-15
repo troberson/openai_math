@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, uniform |
 | Topics | [graph-theory](../topics/graph-theory.md) · [metric-geometry](../topics/metric-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [089-planar-and-bounded-treewidth-metrics-embed-into-l1.md](../../../notes/summaries/convex-and-metric-geometry/089-planar-and-bounded-treewidth-metrics-embed-into-l1.md) |
 
 ## Manuscripts
 
