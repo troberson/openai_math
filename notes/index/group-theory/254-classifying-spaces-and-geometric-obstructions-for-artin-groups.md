@@ -13,7 +13,7 @@
 | Claim shapes | uniform |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [group-theory](../topics/group-theory.md) · [metric-geometry](../topics/metric-geometry.md) · [arithmetic-geometry](../topics/arithmetic-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md](../../../notes/summaries/group-theory/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md) |
 
 ## Manuscripts
 
