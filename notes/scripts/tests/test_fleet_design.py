@@ -180,8 +180,8 @@ MUTANTS = [
      lambda t: t.replace("build_index.py:591", "build_index.py:592", 1)),
     ("set-site anchor shifted in the checker list",
      lambda c, mod, p: missing_site_needle(c, mod, sorted(p["set_sites"])),
-     lambda t: t.replace("`build_index.py:591`, `render_reports.py:1214`",
-                         "`build_index.py:592`, `render_reports.py:1214`", 1)),
+     lambda t: t.replace("`build_index.py:591`, `render_reports.py:1215`",
+                         "`build_index.py:592`, `render_reports.py:1215`", 1)),
     ("atomicity anchor shifted in the paragraph",
      lambda c, mod, p: site_needle(c, mod, mod.ATOMIC_PARA, "atomicity paragraph",
                                    sorted(p["atomic_sites"])),
@@ -192,11 +192,11 @@ MUTANTS = [
                          "`catlib/atomic.py:43`, `catlib/atomic.py:84`", 1)),
     ("env anchor shifted in the bullet",
      lambda c, mod, p: site_needle(c, mod, mod.ENV_BULLET, "env bullet", sorted(p["env_sites"])),
-     lambda t: t.replace("`render_reports.py:1214` sets", "`render_reports.py:1215` sets", 1)),
+     lambda t: t.replace("`render_reports.py:1215` sets", "`render_reports.py:1216` sets", 1)),
     ("env anchor shifted in the checker list",
      lambda c, mod, p: missing_site_needle(c, mod, sorted(p["env_sites"])),
-     lambda t: t.replace("`render_reports.py:1214`, `render_reports.py:2043`",
-                         "`render_reports.py:1215`, `render_reports.py:2043`", 1)),
+     lambda t: t.replace("`render_reports.py:1215`, `render_reports.py:2043`",
+                         "`render_reports.py:1216`, `render_reports.py:2043`", 1)),
     # A dated observation the writer deliberately does not slot. The count pass, the anchor pass and
     # the site pass all ignore it, so only the render diff can see the page is no longer the writer's
     # bytes — which is the pass this page gained when it became report-fed.
@@ -235,7 +235,7 @@ def test_clean_page(mod, text):
         f"gate rows {p['gate_rows']}, writer rows {p['writer_rows']}, env hits {p['env_hits']}, "
         f"purity {len(p['purity'])}")
     assert sorted(p["atomic_sites"]) == ["atomic.py:42", "atomic.py:84"], p["atomic_sites"]
-    assert sorted(p["env_sites"]) == ["render_reports.py:1214"], p["env_sites"]
+    assert sorted(p["env_sites"]) == ["render_reports.py:1215"], p["env_sites"]
     assert sorted(p["set_sites"]) == ["build_catalog.py:128", "build_index.py:591"], p["set_sites"]
     r = p["rows"]["render_reports.py"]
     assert (r["wall"], r["opens"], r["distinct"], r["repeats"]) == (151.32, 117360, 18935, 98425), \

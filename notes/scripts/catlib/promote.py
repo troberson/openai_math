@@ -56,6 +56,7 @@ REPORT_PAGES = (
     "notes/development/templates.md",
     "notes/README.md",
     "notes/scripts/README.md",
+    "notes/reports/findings.md",
 )
 
 L1: dict[str, tuple[str, ...]] = {

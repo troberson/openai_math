@@ -49,7 +49,7 @@ PAGE_CASES = [
     ("summaries count altered", "census row notes/summaries/",
      lambda t: t.replace("| `notes/summaries/` | **40** |", "| `notes/summaries/` | **25** |")),
     ("templates count altered", "census row notes/templates/",
-     lambda t: t.replace("| `notes/templates/` | **25** |", "| `notes/templates/` | **3** |")),
+     lambda t: t.replace("| `notes/templates/` | **26** |", "| `notes/templates/` | **3** |")),
 ]
 
 def shift_slot_cell(t):
@@ -71,7 +71,7 @@ TPL_CASES = [
                          if not l.startswith("| `templates.md.j2`"))),
     ("template slot count shifted", "template row README.md.j2", shift_slot_cell),
     ("registry count altered", "registry sentence",
-     lambda t: t.replace("registry: **20** entries", "registry: **17** entries", 1)),
+     lambda t: t.replace("registry: **21** entries", "registry: **17** entries", 1)),
 ]
 
 
