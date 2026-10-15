@@ -27,7 +27,9 @@ so it is a measurement of a run, not a function of a digest, and a cache would s
 
 from __future__ import annotations
 
+import re
 import subprocess
+from collections.abc import Callable
 from pathlib import Path
 
 from catlib.atomic import RECORDS_ROOT, cache_text, write_atomic
@@ -57,6 +59,7 @@ REPORT_PAGES = (
     "notes/README.md",
     "notes/scripts/README.md",
     "notes/reports/findings.md",
+    "notes/development/summaries-workflow.md",
 )
 
 L1: dict[str, tuple[str, ...]] = {
@@ -75,7 +78,9 @@ L1: dict[str, tuple[str, ...]] = {
                        "notes/templates/discipline.md.j2", "notes/templates/family.md.j2",
                        "notes/templates/index-readme.md.j2", "notes/templates/name.md.j2",
                        "notes/templates/topic.md.j2"),
-    "render_reports.py": ("README.md", "notes/tables/",
+    # The workflow page counts the summaries tree through `catlib.summaries`, so the writer opens
+    # every page it counts and the key hashes the tree.
+    "render_reports.py": ("README.md", "notes/tables/", "notes/summaries/",
                           "notes/reports/formalization-deps.md", "notes/reports/t0-triage.md",
                           "notes/templates/", "notes/index/",
                           # The fleet page's population scans the fleet's own sources and the two
@@ -212,6 +217,25 @@ def l1_paths(name: str) -> list[Path]:
     return [p for entry in L1[name] for p in expand(entry)]
 
 
+RUN_ARGS: dict[str, Callable[[], tuple[str, ...]]] = {
+    # The workflow page renders the fork's head and the ready-queue length, both read through a
+    # subprocess the `open` audit event never sees and no tree digest covers. Putting them in the
+    # key makes a push, or a bead close, invalidate the record the way a file change does.
+    "render_reports.py": lambda: (git_short("origin/notes"), bd_ready_count()),
+}
+
+
+def git_short(ref: str) -> str:
+    return subprocess.run(["git", "-C", str(ROOT), "rev-parse", "--short", ref],
+                          check=True, capture_output=True).stdout.decode("utf-8").strip()
+
+
+def bd_ready_count() -> int:
+    """The ready-queue length, read from the tally line bd prints for itself."""
+    out = subprocess.run(["bd", "ready"], check=True, capture_output=True).stdout.decode("utf-8")
+    return int(re.search(r"Ready: (\d+) issues", out).group(1))
+
+
 def key_for(name: str, args: tuple[str, ...] = ()) -> str:
     """The builder's cache key: tree digests, the builder's source, its L1 inputs, its args."""
     script = SCRIPTS / name
@@ -221,7 +245,9 @@ def key_for(name: str, args: tuple[str, ...] = ()) -> str:
                       for p in l1_paths(name))
     else:
         texts = tuple(p.read_text(encoding="utf-8") for p in l1_paths(name))
-    return digest_key(script.read_text(encoding="utf-8"), texts, args)
+    fn = RUN_ARGS.get(name)
+    extra = () if fn is None else (fn(),)
+    return digest_key(script.read_text(encoding="utf-8"), texts, tuple(args) + extra)
 
 
 def artifact_of(path: Path) -> str:

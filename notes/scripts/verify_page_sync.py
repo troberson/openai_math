@@ -53,6 +53,11 @@ PAGES = [
     (ROOT / "notes" / "reports" / "findings.md",
      "**39** of 372 families have a summary page",
      "**40** of 372 families have a summary page"),
+    # The workflow page's live counts are writer slots, so the render diff is the pass that proves
+    # them: a page whose Pages-done count is hand-written is not the writer's measurement.
+    (ROOT / "notes" / "development" / "summaries-workflow.md",
+     "**Pages done (39):**",
+     "**Pages done (40):**"),
 ]
 
 
