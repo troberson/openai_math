@@ -82,7 +82,7 @@ from catlib.paths import (
     SUBFINDINGS_TSV,
     owner,
 )
-from catlib.promote import ARTIFACTS, NON_CACHED, bd_ready_count, key_for
+from catlib.promote import ARTIFACTS, NON_CACHED, PROBES, bd_ready_count, key_for
 from jinja2 import Environment, FileSystemLoader
 
 TPL = ROOT / "notes" / "templates" / "report"
@@ -2649,7 +2649,7 @@ def workflow_population() -> dict[str, Any]:
     fleet = population_of("fleet-design")
     entries = Y.main_results_entries()
     targets = {line.split()[2].split("/")[-1]
-               for f in PROBE_DIR.iterdir()
+               for f in PROBES
                for line in f.read_text(encoding="utf-8").splitlines()
                if line.startswith("[probe2] target notes/scripts/")}
     return {

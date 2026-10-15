@@ -42,6 +42,7 @@ from catlib import templates as T
 from catlib.paths import ROOT
 from catlib.promote import (
     ARGS,
+    PROBES,
     ARTIFACTS,
     L1,
     NON_CACHED,
@@ -65,38 +66,8 @@ from catlib.promote import (
 # the 16 generated tables moved out of `notes/index/` into `notes/tables/`, so the index tree these two
 # writers read is 1,033 pages, not 1,049 files, and the older records for those targets name the 16 TSVs
 # under the path the writers no longer open.
-PROBES = (ROOT / "notes" / "development" / "probe" / "2026-10-15_rr_workflow.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-15_rr_findings.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-15_mt_findings.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-15_rr_census.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-15_mt_census.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-15_rr_fold.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-15_mt_fold.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-14_seed_quotes_352.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-14_seed_quotes_351.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-14_seed_quotes_349.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-14_seed_quotes_348.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-14_seed_quotes_347.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-14_seed_quotes_346.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-14_seed_quotes_345.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-14_seed_quotes_344.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-14_seed_quotes_334.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-14_seed_quotes_pages.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-13_seed_quotes_258.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-13_seed_quotes_259.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-13_seed_quotes_156.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-13_seed_quotes_147.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-13_seed_quotes_332.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-13_seed_quotes_pages.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-13_seed_quotes_summaries.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-13_build_index_db.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-12_extract_named_results.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-12_measure_templates_tables.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-12_seed_quotes_summaries.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-12_rr_tables.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-12_seed_quotes.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-11_writers.txt",
-          ROOT / "notes" / "development" / "probe" / "2026-10-10_writers.txt")
+PROBES = PROBES
+
 README = ROOT / "notes" / "scripts" / "README.md"
 CACHE = ROOT / ".qwen" / "cache" / "records"
 

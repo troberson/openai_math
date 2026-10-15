@@ -217,6 +217,42 @@ def l1_paths(name: str) -> list[Path]:
     return [p for entry in L1[name] for p in expand(entry)]
 
 
+PROBES = (
+
+ROOT / "notes" / "development" / "probe" / "2026-10-15_rr_workflow.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-15_rr_findings.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-15_mt_findings.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-15_rr_census.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-15_mt_census.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-15_rr_fold.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-15_mt_fold.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-14_seed_quotes_352.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-14_seed_quotes_351.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-14_seed_quotes_349.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-14_seed_quotes_348.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-14_seed_quotes_347.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-14_seed_quotes_346.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-14_seed_quotes_345.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-14_seed_quotes_344.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-14_seed_quotes_334.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-14_seed_quotes_pages.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-13_seed_quotes_258.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-13_seed_quotes_259.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-13_seed_quotes_156.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-13_seed_quotes_147.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-13_seed_quotes_332.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-13_seed_quotes_pages.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-13_seed_quotes_summaries.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-13_build_index_db.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-12_extract_named_results.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-12_measure_templates_tables.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-12_seed_quotes_summaries.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-12_rr_tables.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-12_seed_quotes.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-11_writers.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-10_writers.txt")
+
+
 RUN_ARGS: dict[str, Callable[[], tuple[str, ...]]] = {
     # The workflow page renders the fork's head and the ready-queue length, both read through a
     # subprocess the `open` audit event never sees and no tree digest covers. Putting them in the
