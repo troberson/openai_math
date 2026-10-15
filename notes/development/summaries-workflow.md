@@ -7,28 +7,28 @@ measured quotation traps) lives in `.qwen/skills/auto-skill-family-summary-citat
 
 ## Current state (rewritten at every batch boundary, 2026-10-14)
 
-- **All 38 pages are green.** `verify_summaries.py` over the 39 files in `notes/summaries/`:
-  **5,468 marker positions, 1,487 quoted spans, 0 problems**; `check_summary_manuscripts.py`:
-  **39 pages, 0 with an off-family manuscript, 85 manuscript dirs named, 0 unnamed-on-catalog,
+- **All 39 pages are green.** `verify_summaries.py` over the 40 files in `notes/summaries/`:
+  **5,638 marker positions, 1,511 quoted spans, 0 problems**; `check_summary_manuscripts.py`:
+  **40 pages, 0 with an off-family manuscript, 86 manuscript dirs named, 0 unnamed-on-catalog,
   0 named-by-another-family**; 749 preprint dirs on disk, 719 named by `overview.tex`, 30 on disk
   and unnamed, 0 named and absent. `test_summaries.py`: **11 tests pass**.
-- **Pages done (38):** 001, 002, 004, 006, 007, 010, 011, 014, 016, 017, 018, 019, 032, 087, 101,
+- **Pages done (39):** 001, 002, 004, 006, 007, 010, 011, 014, 016, 017, 018, 019, 032, 087, 101,
   102, 109, 136, 147, 159, 197, 221, 226, 258, 259, 271, 287, 332, 334, 342, 344, 345, 346, 347,
-  348, 349, 351, 362. The ledger's `summary` column is 1 for those; the generator reports
-  "summary pages 38 of 372 families, 85 manuscripts behind them". By discipline: Number theory 12,
-  differential geometry 9, theoretical computer science 3, convex and metric geometry 2, probability
+  348, 349, 351, 352, 362. The ledger's `summary` column is 1 for those; the generator reports
+  "summary pages 39 of 372 families, 86 manuscripts behind them". By discipline: Number theory 12,
+  differential geometry 10, theoretical computer science 3, convex and metric geometry 2, probability
   and statistical mechanics 2, group theory 2, and one each in algebraic and complex geometry,
   dynamical systems and ergodic theory, combinatorics, algebra, mathematical physics, operator
   algebras, functional analysis, and partial differential equations.
 - **Next batch:** `math-ckd.4` is claimed and in progress — tier C group 1. The differential-geometry
-  families with `summary = 0`, sorted by `paps`: 352, 353, 354,
+  families with `summary = 0`, sorted by `paps`: 353, 354,
   355, 356, 357, 358, 359, 360, 361, 350. Steps 1–10 per page. Check `bd ready` first: summaries are
   P4 and any ready P1/P2 outranks this batch.
 - **Last gate run (2026-10-14):** `bash notes/scripts/gate_driver.sh` — **rows 71, failures 0**, head
   diff 0 bytes. Reconciliations: 372 families, 719 manuscripts, **173** formalized (`formalized
   (yaml)`), 242 scope notes, 416 challenges, 200 `main_results` over 189 configs, both
   `overview.tex` ↔ `CONTENTS.md` cross-checks 0. `verify_cache_promotion.py`: **writers 15 +
-  non-cached 1, probed targets 16, problems 0**. `check_index_links.py`: **1,033 pages, 66,124
+  non-cached 1, probed targets 16, problems 0**. `check_index_links.py`: **1,033 pages, 66,125
   links, 0 broken**. Lint trio (`notes/scripts/lint_scripts.sh`) exits 0.
 - **Push state:** `origin/notes` at `d53d60b50`, pushed 2026-10-14, through the family 351 batch —
   the family 351 page, its count sweep, the retargeted needles in the quotes, index-design,
@@ -1649,3 +1649,18 @@ deliberately.
   page commit, `verify_cache_promotion.py` reported 1,095 problems. The fix is the recorded order:
   commit the sweep, rebuild templates, re-render, commit the render, then re-run builder and render at
   the new HEAD until `git status --porcelain` is empty.
+- **A LaTeX accent escape inside a page manufactures a bogus quotation.** `K\"ahler` puts a literal
+  `"` in the page text, and `verify_summaries.py`'s quotation regex treats the region between two such
+  `"` as a quoted span, so a prose line carrying a citation gets checked against the cited window and
+  fails NOT VERBATIM. The rule: fold accents to Unicode in prose, keep the raw LaTeX bytes inside a
+  block quote that quotes a `.tex` file, and match the byte form the file you are quoting actually
+  ships — `CONTENTS.md` writes `Kähler`, `introduction.tex` writes `K\"ahler`.
+- **A shell dump whose result text was cleared from context is not a read, and reconstructing it from
+  memory is fabrication.** On family 352 the reconstruction invented five section titles, the profile's
+  expansion at infinity, the compact realization's bound, the provenance paragraph, and a line of the
+  obstruction lemma that the file does not contain. The authoritative reads are the checker's
+  `line says` column and a fresh dump printed with `repr()` into a file read with `read_file`.
+- **The render's cache key is the working-tree digest, so the render must run at the committed HEAD.**
+  After the sweep commit, `verify_cache_promotion.py` reported 19 missing entries for
+  `render_reports.py`: the render had written its entries under the key computed before the commit.
+  Re-running the render at the committed HEAD lands them under the key the checker recomputes.
