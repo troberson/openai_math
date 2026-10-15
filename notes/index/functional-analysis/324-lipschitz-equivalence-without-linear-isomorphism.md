@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [metric-geometry](../topics/metric-geometry.md) · [functional-analysis](../topics/functional-analysis.md) · [banach-spaces](../topics/banach-spaces.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [324-lipschitz-equivalence-without-linear-isomorphism.md](../../../notes/summaries/functional-analysis/324-lipschitz-equivalence-without-linear-isomorphism.md) |
 
 ## Manuscripts
 
