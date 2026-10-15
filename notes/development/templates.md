@@ -5,7 +5,7 @@ template text plus the writer's registry). Lines and bytes are of the template f
 is a `{{ ` occurrence counted over the whole file. No `lake`, `lean`, `lake exe cache get`, or
 comparator run.
 
-**Headline, with the rule that yields it:** report tree: **22** templates, **9,450** lines, **608,822** bytes, **1,637** slots; index tree: **5** templates, **209** lines, **14,981** bytes, **103** slots; all **27** templates: **9,659** lines, **623,803** bytes, **1,740** slots.
+**Headline, with the rule that yields it:** report tree: **22** templates, **9,450** lines, **608,898** bytes, **1,641** slots; index tree: **5** templates, **209** lines, **14,981** bytes, **103** slots; all **27** templates: **9,659** lines, **623,879** bytes, **1,744** slots.
 
 ## The report tree
 
@@ -30,7 +30,7 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `names.md.j2` | 277 | 13,869 | 129 | `notes/reports/names.md` | `measure_names.py` | NOT DERIVED |
 | `proof-density.md.j2` | 122 | 8,531 | 55 | `notes/reports/proof-density.md` | `measure_proof_density.py` | NOT DERIVED |
 | `scope-exclusions.md.j2` | 328 | 26,788 | 19 | `notes/reports/scope-exclusions.md` | `verify_scope_exclusions.py` | NOT DERIVED |
-| `scripts-README.md.j2` | 734 | 70,206 | 23 | `notes/scripts/README.md` | `verify_script_ownership.py` | NOT DERIVED |
+| `scripts-README.md.j2` | 734 | 70,282 | 27 | `notes/scripts/README.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `sources.md.j2` | 157 | 9,313 | 22 | `notes/reports/sources.md` | `verify_sources.py` | 31 |
 | `subfinding-pairs.md.j2` | 1,634 | 60,295 | 422 | `notes/reports/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |
 | `summaries-workflow.md.j2` | 154 | 11,075 | 12 | `notes/development/summaries-workflow.md` | `verify_page_sync.py` | NOT DERIVED |
@@ -38,7 +38,7 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `templates.md.j2` | 110 | 5,137 | 48 | `notes/development/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `topics.md.j2` | 335 | 23,082 | 117 | `notes/reports/topics.md` | `measure_topics.py` | NOT DERIVED |
 | `verification-dirs.md.j2` | 408 | 37,952 | 44 | `notes/reports/verification-dirs.md` | `verify_verification_dirs.py` | 16 |
-| **report tree** | **22** | **9,450** | **608,822** | **1,637** | | |
+| **report tree** | **22** | **9,450** | **608,898** | **1,641** | | |
 
 ## The index tree
 
@@ -59,8 +59,8 @@ the count of pages on disk that the template produced, read from the tree it wri
 A slot is a `{{ ` occurrence in the template file, counted over the whole file. Slot expressions
 are not required to be unique. The gap between `{{ ... }}` expressions and distinct expressions,
 over the **27** committed templates, is
-**24** repeat expressions over **6** templates —
-`fleet-design.md.j2` (2 repeats); `proof-density.md.j2` (2 repeats); `scripts-README.md.j2` (11 repeats); `templates.md.j2` (1 repeat); `index-readme.md.j2` (5 repeats); `name.md.j2` (3 repeats) —
+**28** repeat expressions over **6** templates —
+`fleet-design.md.j2` (2 repeats); `proof-density.md.j2` (2 repeats); `scripts-README.md.j2` (15 repeats); `templates.md.j2` (1 repeat); `index-readme.md.j2` (5 repeats); `name.md.j2` (3 repeats) —
 where a table row is emitted from the same label more than once. Each report template also carries
 a generated header comment whose closing line holds one literal `{{ }}`, so the header contributes
 exactly 1 slot to every report template; the header comment is **4** lines and the index templates

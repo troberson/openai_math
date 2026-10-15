@@ -343,7 +343,7 @@ re-ran the whole check once per injected fault, so a checker whose plain run is 
 it again per mutant.
 `verify_findings.py` is the subprocess case: its Pass E runs the fast extractors as subprocesses inside
 `check()` (`:459`, the subprocess call at `:140`), so a plain run pays five of them. The pass that
-extracted its self-tests put `run()` under `functools.cache` (`:132`) — every script in `REPORTS` is
+extracted its self-tests put `run()` under `functools.cache` (`:1{{ p['slug_share'] }}`) — every script in `REPORTS` is
 report-only, so a second call in the same process cannot see a different stdout — and that is why the
 `run_tests.py` row measures **4.1 s** where the `--mutant` row took **{{ p['slug_share'] }}.7 s** before that row was
 replaced: the seven `check()` calls the row makes (the clean page plus each of the six faults) pay the
@@ -442,7 +442,7 @@ modules, not scripts: `paths.py` (the repo-root constants, `rel()`, `owner()`, `
 registry, `key_for()` for the builder's digest key, `promote()` which caches the bytes under the key
 and then writes the same bytes onto the tracked path, and `cached_text()`), `records.py` (the
 digest-keyed record store — `key()` over the five `git rev-parse HEAD:<path>` tree digests, the
-builder's source, its L1 texts and its args, truncated to 32 hex; `manuscript_store()` reads the
+builder's source, its L1 texts and its args, truncated to {{ p['slug_share'] }} hex; `manuscript_store()` reads the
 749-row per-manuscript record set under `.qwen/cache/records/<key>/`, and `cached(KEY, "name",
 builder)` builds a record once, lands it atomically, and reads it back), `atomic.py` (the atomic write primitive —
 `write_atomic()` writes through a sibling temp name, fsyncs, then moves the temp onto the target, so
@@ -651,7 +651,7 @@ conditional-anchor checker `check_conditional_anchors.py`, and the single-purpos
 `find_core_only.py`, `cand_closure.py`, `gen_axioms.py`, `lint_anchors.py`, `port_nc.py`,
 `drop_syspath.py`, `build_scope_page.py`, `fix_topics.py`, `fix_topics_md.py`), together with
 `elab.sh` and the **12** probe outputs it left behind (`axioms.lean`, `axioms.log`, `axioms.olean`,
-`check.lean`, `check.olean`, `elab.log`, `hqd5_quotes.json`, `names.json`, `leanout.tmp.168{{ p['slug_share'] }}32`,
+`check.lean`, `check.olean`, `elab.log`, `hqd5_quotes.json`, `names.json`, `leanout.tmp.168{{ p['slug_share'] }}{{ p['slug_share'] }}`,
 `0h2_skel.err`, `cit1.err`, `cx2a.err`). The four `/tmp` trees `stage5/`, `portcheck/`,
 `portcheck2/`, `pprobe/` and the six `/tmp` one-offs `e402_probe.py`, `e402_probe2.py`,
 `lint_anchors_scratch.py`, `lint_stage4.txt`, `lint_stage4b.txt`, `port_check2.sh` are deleted too —
@@ -697,7 +697,7 @@ tracked files under `notes/` before the bead that produced them closes.
 - `build_index.py` sweeps its own tree: it tracks every path its `write()` helper emits and, at the end
   of `main()`, unlinks any `notes/index/**.md` or `**.tsv` it did not write, then removes empty
   directories and prints `stale swept N files [...]`. The realized case is the 2026-10-07 merge: family
-  032's title changed, so its old-slug page survived as an orphan whose manuscript table pointed at the
+  0{{ p['slug_share'] }}'s title changed, so its old-slug page survived as an orphan whose manuscript table pointed at the
   three withdrawn directories — 6 broken links, found only by `check_index_links.py`. Two name pages
   (`cech`, `kunneth`) went the same way; the sweep removed 3 files. Renaming the rendered topic table is
   the older case — `notes/index/topics.tsv` survived the rename and was deleted by hand. Page counts are
