@@ -2582,15 +2582,20 @@ def ownership_page(p: dict[str, str]) -> str:
     return ENV.get_template("scripts-README.md.j2").render(p=p)
 
 
+FINDINGS_FOUR = ("147", "258", "268", "346")
+
+
 def findings_population() -> dict[str, Any]:
     """The counts notes/reports/findings.md quotes that move when a summary page is added: the families
-    with a page and the manuscripts behind them, and the index page/link/broken census. The index scan is
-    the cached index-links population, so the walk is paid once per render, not once per page."""
+    with a page and the manuscripts behind them, the index page/link/broken census, and how many of the
+    four families the page names by hand have a page. The index scan is the cached index-links
+    population, so the walk is paid once per render, not once per page."""
     fams = {q.name.split("-")[0] for q in SUM_DIR.rglob("*.md") if q.name != "README.md"}
     rows = ledger.read_ledger()
     s = population_of("index-links")["scan"]
     return {"sum_fams": len(fams), "families": len(rows),
             "sum_paps": sum(int(r["paps"]) for r in rows if r["fam"] in fams),
+            "sum_four": sum(1 for f in FINDINGS_FOUR if f in fams),
             "idx_pages": len(s["pages"]), "idx_links": len(s["links"]), "idx_broken": len(s["broken"])}
 
 
@@ -2601,6 +2606,8 @@ def findings_phrases(p: dict[str, Any]) -> dict[str, str]:
                          f"covering **{p['sum_paps']}** manuscripts [S2].",
         "index_links": f"**{p['idx_pages']:,}** pages carry **{p['idx_links']:,}** links with "
                        f"**{p['idx_broken']}** broken [S27].",
+        "summary_four": f"{['zero', 'one', 'two', 'three', 'four'][p['sum_four']]} of "
+                        "these now carry summary pages",
     }
 
 
