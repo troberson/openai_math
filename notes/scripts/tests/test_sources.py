@@ -71,10 +71,24 @@ The checker measures; this file injects. Run:
 """
 import csv
 import pathlib
+import re
 
 import pytest
 
 pytestmark = pytest.mark.mutant
+
+def bump(t, pat, delta):
+    """Change the page's own count at `pat` by `delta`, keeping its comma formatting. The mutation's
+    input is the page as it stands, so a measured count that moves does not need a hand-edit here."""
+    m = re.search(pat, t)
+    assert m, f"{pat!r} not in the page"
+    raw = m.group(1)
+    n = int(raw.replace(",", ""))
+    new = f"{n + delta:,}" if "," in raw else str(n + delta)
+    span = m.group(0)
+    return t[:m.start()] + span.replace(raw, new, 1) + t[m.end():]
+
+
 
 REPO = pathlib.Path(__file__).resolve().parents[3]
 
@@ -144,26 +158,26 @@ MUTANTS = [
      lambda c, mod: block_needle(c, mod, "\\def\\extractclass#1#3@{"),
      lambda t: t.replace("\\def\\extractclass#1#2@{%", "\\def\\extractclass#1#3@{%", 1)),
     ("column count", "count mismatch (subsection count)",
-     lambda t: t.replace("**16,297**", "**16,290**", 1)),
+     lambda t: bump(t, r"`subsections`.*?\*\*([\d,]+)\*\*", -7)),
     ("byte figure", "count mismatch (tex bytes)",
-     lambda t: t.replace("**127,456,942**", "**127,000,000**", 1)),
+     lambda t: bump(t, r"\*\*([\d,]+)\*\* \(mean", -456942)),
     ("six-name count", "count mismatch (six-name count)",
-     lambda t: t.replace("quotes **21,203** for", "quotes **21,288** for", 1)),
+     lambda t: bump(t, r"quotes \*\*([\d,]+)\*\* for", 85)),
     ("gap breakdown", "count mismatch (env gap breakdown)",
-     lambda t: t.replace("`assumption` 22, `foundation` 13", "`assumption` 21, `foundation` 13", 1)),
+     lambda t: bump(t, r"`assumption` (\d+), `foundation`", -1)),
     ("directory name", "October-6-2026 is not a preprints/ directory",
      lambda t: t.replace("`Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-5-2026`",
                          "`Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-6-2026`", 1)),
     ("root distribution", "count mismatch (roots distribution)",
-     lambda t: t.replace("715 with 1, 3 with 2, 1 with 3", "716 with 1, 2 with 2, 1 with 3", 1)),
+     lambda t: bump(t, r"(\d+) with 1, \d+ with 2", 1)),
     ("disk census", "count mismatch (disk census)",
-     lambda t: t.replace("the **719** the release lists", "the **720** the release lists", 1)),
+     lambda t: bump(t, r"the \*\*(\d+)\*\* the release lists", 1)),
     ("formalized share", "count mismatch (formalized share)",
-     lambda t: t.replace("at **172** of 719 manuscripts", "at **173** of 719 manuscripts", 1)),
+     lambda t: bump(t, r"at \*\*(\d+)\*\* of \d+ manuscripts", 1)),
     # Prose the count pass never reads: 717 is the bead's substring figure, quoted for the record,
     # not a measured needle. Only the render diff can see it.
     ("prose count", "718 dirs",
-     lambda t: t.replace("measures 717 dirs", "measures 718 dirs", 1)),
+     lambda t: bump(t, r"measures (\d+) dirs", 1)),
 ]
 
 
