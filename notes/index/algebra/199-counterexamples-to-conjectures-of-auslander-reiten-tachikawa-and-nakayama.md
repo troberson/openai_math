@@ -13,7 +13,7 @@
 | Claim shapes | resolution, counterexample, classification |
 | Topics | [number-fields](../topics/number-fields.md) · [analytic-number-theory](../topics/analytic-number-theory.md) · [commutative-algebra](../topics/commutative-algebra.md) · [galois-theory](../topics/galois-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [199-counterexamples-to-conjectures-of-auslander-reiten-and-tachikawa.md](../../../notes/summaries/algebra/199-counterexamples-to-conjectures-of-auslander-reiten-and-tachikawa.md) |
 
 ## Manuscripts
 
