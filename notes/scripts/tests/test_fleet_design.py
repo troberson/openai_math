@@ -162,7 +162,7 @@ MUTANTS = [
     ("probe record count understated",
      lambda c, mod, p: (f"count phrase not in the page: The tracked records are "
                         f"**{p['probe_records']}**:"),
-     lambda t: t.replace("The tracked records are **36**:", "The tracked records are **15**:", 1)),
+     lambda t: t.replace("The tracked records are **38**:", "The tracked records are **15**:", 1)),
     ("writer-row count in the gate paragraph",
      lambda c, mod, p: (f"count phrase not in the page: the **{p['writer_rows']}** writers "
                         "declare what they write"),
