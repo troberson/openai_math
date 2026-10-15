@@ -62,7 +62,7 @@ def real(mod):
 def tier_of(mod, rows, led, key):
     """The count of `key` among the tiers the mutated rows and ledger join to."""
     fams = mod.build_families(rows, led)
-    tiers = {}
+    tiers: dict[str, int] = {}
     for d in fams.values():
         tiers[d["tier"]] = tiers.get(d["tier"], 0) + 1
     return tiers.get(key, 0)

@@ -35,6 +35,7 @@ The checker measures; this file injects. Run:
 import re
 
 import pytest
+from catlib.text import first_group
 
 pytestmark = pytest.mark.mutant
 
@@ -66,8 +67,8 @@ def tier_phrase(mod, m):
 def shift_tier(text, phrase):
     """Move the two tier counts the measured phrase carries, so the page states counts the
     measurement does not support. The numbers come from the phrase, not from a recorded literal."""
-    t3 = int(re.search(r"T3 (\d+)", phrase).group(1))
-    t2 = int(re.search(r"T2 (\d+)", phrase).group(1))
+    t3 = int(first_group(r"T3 (\d+)", phrase))
+    t2 = int(first_group(r"T2 (\d+)", phrase))
     return text.replace(phrase, phrase.replace(f"T3 {t3}", f"T3 {t3 + 1}")
                         .replace(f"T2 {t2}", f"T2 {t2 - 1}"), 1)
 

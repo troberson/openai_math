@@ -29,6 +29,7 @@ import re
 
 import measure_names as M
 import pytest
+from catlib.text import first_group
 
 PAGE = pathlib.Path("notes/reports/subfinding-pairs.md")
 
@@ -62,12 +63,12 @@ def bump(t, pat, delta):
 
 def new_also(c):
     """The `also` yield the mutated page states — the value the mutation wrote, read back."""
-    return re.search(r"tried and rejected: `also` \((\d+)\)", c).group(1)
+    return first_group(r"tried and rejected: `also` \((\d+)\)", c)
 
 
 def new_pairs(c):
     """The accepted-clause-pairs count the mutated page states."""
-    return re.search(r"Reading it yields \*\*(\d+)\*\* accepted clause pairs", c).group(1)
+    return first_group(r"Reading it yields \*\*(\d+)\*\* accepted clause pairs", c)
 
 
 def pad_cells(t):

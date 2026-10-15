@@ -36,10 +36,11 @@ def needle_slots(tree):
     out = []
     for mod in tree.body:
         if isinstance(mod, ast.Assign) and getattr(mod.targets[0], "id", "") == "MUTANTS":
-            for el in mod.value.elts:
-                if isinstance(el, ast.Tuple) and len(el.elts) >= 3:
-                    label = el.elts[0].value if isinstance(el.elts[0], ast.Constant) else "?"
-                    out.append((label, el.elts[1], el.elts[2]))
+            if isinstance(mod.value, ast.Tuple):
+                for el in mod.value.elts:
+                    if isinstance(el, ast.Tuple) and len(el.elts) >= 3:
+                        label = el.elts[0].value if isinstance(el.elts[0], ast.Constant) else "?"
+                        out.append((label, el.elts[1], el.elts[2]))
     return out
 
 
@@ -52,9 +53,10 @@ def input_slots(tree):
     out = []
     for mod in tree.body:
         if isinstance(mod, ast.Assign) and getattr(mod.targets[0], "id", "") == "INPUTS":
-            for el in mod.value.elts:
-                if isinstance(el, ast.Tuple):
-                    out.append(el)
+            if isinstance(mod.value, ast.Tuple):
+                for el in mod.value.elts:
+                    if isinstance(el, ast.Tuple):
+                        out.append(el)
     return out
 
 
@@ -111,7 +113,7 @@ def main():
         # A recorded needle that carries a digit is a measured figure re-measured by hand; one that
         # carries no digit is a structural message and stays a string.
         rn = sum(1 for _, n, _m in slots
-                 if isinstance(n, ast.Constant) and re.search(r"\d", n.value))
+                 if isinstance(n, ast.Constant) and isinstance(n.value, str) and re.search(r"\d", n.value))
         rs = r - rn
         n = sum(len(re.findall(r"\d+", ast.unparse(_x))) for _, _x, _m in slots)
         p = clean_pins(tree)

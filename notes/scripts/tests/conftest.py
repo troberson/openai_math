@@ -61,9 +61,12 @@ def layout_shift(request):
             return shift(text)
         return text
 
-    pathlib.Path.read_text = read_text
+    # The fixture is the monkeypatch: it swaps Path.read_text for the shifting reader and restores
+    # it on teardown. A method assignment is not type-safe, so mypy is right about the shape; the
+    # swap is the point of the fixture and cannot be typed, so the code is named on each side.
+    pathlib.Path.read_text = read_text  # type: ignore[method-assign]
     yield
-    pathlib.Path.read_text = orig
+    pathlib.Path.read_text = orig  # type: ignore[method-assign]
 
 
 @pytest.fixture(scope="session")

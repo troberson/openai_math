@@ -37,7 +37,7 @@ import re
 
 import pytest
 import verify_t0_chains as v
-from catlib.text import first_match
+from catlib.text import first_group, first_match
 
 PAGE = pathlib.Path("notes/reports/t0-chains.md")
 
@@ -68,7 +68,7 @@ def row_of(text, sub):
 
 def anchor_of(text, n):
     """The `overview.tex:NNN` anchor on page line n."""
-    return int(re.search(r"overview\.tex:(\d+)", text.split("\n")[n - 1]).group(1))
+    return int(first_group(r"overview\.tex:(\d+)", text.split("\n")[n - 1]))
 
 
 def block_start(text, n):
