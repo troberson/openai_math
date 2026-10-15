@@ -327,7 +327,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 331	Functional analysis	Asymptotic midpoint uniform convexity without asymptotically uniformly convex renorming	7	7	T3	7	7	1	5449	0	0	0		bound|uniform	0	0	0		0	0	0
 332	Functional analysis	Metric Markov cotype two for $\ell_1$	1	0	T0	0	0	0	0	0	0	0		resolution|uniform	0	1	0		0	0	1
 333	Differential geometry	Smooth isometric immersions of surfaces into $\mathbb R^4$	1	0	T2	1	0	1	310	0	0	0		resolution|uniform	0	1	0		0	0	0
-334	Differential geometry	A smooth surface metric with no local immersion in $\mathbb R^3$	1	1	T3	1	1	1	387	0	0	0			0	1	1		0	0	0
+334	Differential geometry	A smooth surface metric with no local immersion in $\mathbb R^3$	1	1	T3	1	1	1	387	0	0	0			0	1	1		0	0	1
 335	Differential geometry	Gromov's integral scalar-curvature inequality	2	0	T0	0	0	0	0	0	0	0		resolution|uniform	0	1	0		0	0	0
 336	Differential geometry	Spectral scalar curvature and codimension-two width	3	0	T0	0	0	0	0	0	0	0		bound|partial|uniform	0	0	0		0	0	0
 337	Differential geometry	Cartan--Hadamard isoperimetry and CAT$(0)$ fillings	2	0	T2	2	0	1	686	0	0	0		bound|partial|uniform	0	0	0		0	0	0
