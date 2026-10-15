@@ -220,8 +220,10 @@ def pad_cells(t):
     for ln in t.split("\n"):
         if ln.startswith("|") and ln.endswith("|"):
             cells = ln[1:-1].split("|")
-            ln = "|" + "|".join("  " + c.strip() + "  " for c in cells) + "|"
-        out.append(ln)
+            padded = "|" + "|".join("  " + c.strip() + "  " for c in cells) + "|"
+        else:
+            padded = ln
+        out.append(padded)
     return "\n".join(out)
 
 

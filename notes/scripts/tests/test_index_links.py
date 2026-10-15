@@ -28,9 +28,8 @@ The checker measures; this file injects. Run:
 """
 import re
 
-from catlib import overview
-
 import pytest
+from catlib import overview
 
 pytestmark = pytest.mark.mutant
 

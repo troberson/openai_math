@@ -49,8 +49,10 @@ def pad_table(p):
     for line in p.split("\n"):
         if line.startswith("|"):
             cells = [c.strip() for c in line.strip().strip("|").split("|")]
-            line = "| " + "  |  ".join(cells) + "  |"
-        out.append(line)
+            padded = "| " + "  |  ".join(cells) + "  |"
+        else:
+            padded = line
+        out.append(padded)
     return "\n".join(out)
 
 
@@ -105,7 +107,7 @@ def cell_set(p, key, idx, new):
     """Rewrite one cell of the table row carrying `key`, keeping the pipe-delimited form."""
     line = next(l for l in p.split("\n") if l.startswith("|") and key in l)
     cells = line.split("|")
-    return p.replace(line, "|".join(cells[:idx] + [f" {new} "] + cells[idx + 1:]), 1)
+    return p.replace(line, "|".join([*cells[:idx], f" {new} ", *cells[idx + 1:]]), 1)
 
 
 def first_fam():

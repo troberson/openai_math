@@ -304,10 +304,10 @@ def test_declared_env_rule_counts_a_name_the_six_name_list_omits(mod):
     21,288 against 21,203 gap. `declared_envs` is the declared set **minus** `NON_STATEMENT`, so
     `definition` is declared and excluded; a rule that skips the subtraction keeps it in and counts 3
     begins. The string is not a file on disk."""
-    text = (r"\newtheorem{assumption}{Assumption}" "\n"
-            r"\begin{assumption}" "\n" r"\begin{assumption}" "\n"
-            r"\newtheorem{definition}{Definition}" "\n"
-            r"\begin{definition}" "\n" r"\begin{theorem}")
+    text = (r"\newtheorem{assumption}{Assumption}\n"
+            r"\begin{assumption}\n\begin{assumption}\n"
+            r"\newtheorem{definition}{Definition}\n"
+            r"\begin{definition}\n\begin{theorem}")
     declared = mod.preprints.declared_envs([text])
     assert declared == {"assumption"}, f"the declared rule's set read {sorted(declared)}"
     assert mod.preprints.env_counts([text], declared)["thms"] == 2, \

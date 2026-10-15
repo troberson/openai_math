@@ -42,12 +42,12 @@ from catlib import templates as T
 from catlib.paths import ROOT
 from catlib.promote import (
     ARGS,
-    PROBES,
     ARTIFACTS,
     L1,
     NON_CACHED,
     PAGE_EXTRA,
     PROBE_EXEMPT,
+    PROBES,
     REPORT_PAGES,
     expand,
     key_for,

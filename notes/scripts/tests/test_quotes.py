@@ -25,10 +25,10 @@ import pathlib
 from collections import Counter
 
 import pytest
+from catlib.layout import reorder
 from catlib.paths import ROOT
 from catlib.quotes import resolve, seed
 from catlib.text import strip_markup as norm
-from catlib.layout import reorder
 
 PAGE = ROOT / "notes" / "reports" / "subfinding-pairs.md"
 SRC = ROOT / "overview.tex"

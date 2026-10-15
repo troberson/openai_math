@@ -22,7 +22,6 @@ The checker measures; this file injects. Run:
 import csv
 
 import pytest
-
 from catlib.layout import reorder
 
 pytestmark = pytest.mark.mutant

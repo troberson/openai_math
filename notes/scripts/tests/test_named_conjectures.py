@@ -13,7 +13,6 @@ The checker measures; this file injects. Run:
   python3 notes/scripts/run_tests.py notes/scripts/tests/test_named_conjectures.py -q
 """
 import pytest
-
 from catlib.layout import reorder
 
 pytestmark = pytest.mark.mutant

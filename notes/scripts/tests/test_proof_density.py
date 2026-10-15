@@ -47,7 +47,6 @@ The script measures; this file injects. Run:
 import collections
 
 import pytest
-
 from catlib.layout import reorder
 
 pytestmark = pytest.mark.mutant

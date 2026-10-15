@@ -63,8 +63,9 @@ import measure_names as MN
 import measure_proof_density as PD
 import measure_templates as MTPL
 import measure_topics as MT
-from catlib import bib, ledger, overview, preprints, records, summaries as SM, tsv
+from catlib import bib, ledger, overview, preprints, records, tsv
 from catlib import quotes as Q
+from catlib import summaries as SM
 from catlib import text as TX
 from catlib import yaml as Y
 from catlib.atomic import Staging
@@ -2681,7 +2682,7 @@ def workflow_phrases(p: dict[str, Any]) -> dict[str, str]:
     top = [f"{n} {k}" for n, k in p["disc"] if k > 1]
     top = [top[0]] + [x.lower() for x in top[1:]]
     one = [n.lower() for n, k in p["disc"] if k == 1]
-    out = {
+    return {
         "green": (f"**All {p['pages']} pages are green.** `verify_summaries.py` over the "
                   f"{p['files']} files in `notes/summaries/`:"),
         "sum_totals": (f"**{p['markers']:,} marker positions, {p['spans']:,} quoted spans, "
@@ -2707,7 +2708,6 @@ def workflow_phrases(p: dict[str, Any]) -> dict[str, str]:
         "idx": f"**{p['idx_pages']:,} pages, {p['idx_links']:,} links, {p['idx_broken']} broken**",
         "queue": f"**{p['ready']}** issues",
     }
-    return out
 
 
 def workflow_page(p: dict[str, str]) -> str:

@@ -57,6 +57,12 @@ ignore = [
     # `prev: tuple[int, int, str] | None` does not change that (measured on a copy). The nested form
     # is what keeps both linters quiet, so the rule is ignored rather than the guard split.
     "SIM102",
+    # 9 sites, measured 2026-10-15, all under notes/scripts/tests/. Each is a needle string that
+    # mirrors the page's own text, split at the page's line breaks so the needle is readable against
+    # the page it targets. Joining the literals into one line exceeds the line-length limit the same
+    # config enforces, and a needle that cannot be read against its page is not a test worth keeping.
+    # ISC001 (same-line concatenation) stays enabled: its 7 sites were joined, not exempted.
+    "ISC002",
 ]
 
 [lint.per-file-ignores]

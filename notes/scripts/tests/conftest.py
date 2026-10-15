@@ -21,7 +21,9 @@ if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 
 # pylint: disable=wrong-import-position
-from catlib.layout import shift  # noqa: E402  # the script tree is on sys.path only after the insert
+from catlib.layout import (  # noqa: E402  # the script tree is on sys.path only after the insert
+    shift,
+)
 
 REPO = pathlib.Path(__file__).resolve().parents[3]
 
