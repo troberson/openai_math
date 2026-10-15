@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [surfaces](../topics/surfaces.md) · [differential-geometry](../topics/differential-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [334-a-smooth-surface-metric-with-no-local-immersion-in-r-3.md](../../../notes/summaries/differential-geometry/334-a-smooth-surface-metric-with-no-local-immersion-in-r-3.md) |
 
 ## Manuscripts
 
