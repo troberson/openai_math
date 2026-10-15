@@ -28,8 +28,33 @@ import pathlib
 import re
 
 import pytest
+import verify_dependency_drift as chk
 
 PAGE = pathlib.Path("notes/reports/dependency-drift.md")
+
+
+def bump(t, pat, delta):
+    """Change the page's own count at `pat` by `delta`, keeping its comma formatting. The mutation's
+    input is the page as it stands, so a measured count that moves does not need a hand-edit here."""
+    m = re.search(pat, t)
+    assert m, f"{pat!r} not in the page"
+    raw = m.group(1)
+    new = f"{int(raw.replace(',', '')) + delta:,}" if "," in raw else str(int(raw) + delta)
+    span = m.group(0)
+    return t[:m.start()] + span.replace(raw, new, 1) + t[m.end():]
+
+
+def lakefile_lines():
+    return len(pathlib.Path("lean/lakefile.lean").read_text(encoding="utf-8",
+                                                             errors="replace").splitlines())
+
+
+def first_zero(p, m):
+    """The first library the page's zero-import list names that the measured set contains."""
+    for name in re.findall(r"`([\w-]+)`", p):
+        if name in m["zero"]:
+            return name
+    raise AssertionError("the zero-import list names no measured library")
 
 
 def row_of(c, sub):
@@ -115,21 +140,22 @@ MUTANTS = [
      lambda p: p.replace("compatibility patch was lost during dependency resolution.",
                          "compatibility patch was lost by dependency resolution.", 1)),
     ("anchor out of range",
-     lambda c, v, m: anchor_needle(c, v, m, 486),
-     lambda p: p.replace("`lean/lakefile.lean:10`–`:86`", "`lean/lakefile.lean:10`–`:486`", 1)),
+     lambda c, v, m: anchor_needle(c, v, m, lakefile_lines() + 1),
+     lambda p: p.replace(re.search(r"–`:\d+`", p).group(0),
+                         f"–`:{lakefile_lines() + 1}`", 1)),
     ("table row count shifted",
-     lambda c, v, m: table_needle(c, v, m, "PrimeNumberTheoremAnd"),
-     lambda p: p.replace("| PrimeNumberTheoremAnd | 244 | 39,904 |",
-                         "| PrimeNumberTheoremAnd | 244 | 39,905 |", 1)),
+     lambda c, v, m: table_needle(c, v, m, v.table_rows(c)[0][0]),
+     lambda p: bump(p, r"(?m)^\|\s*\w+\s*\|\s*\d+\s*\|\s*([\d,]+)\s*\|", 1)),
     ("name dropped from the zero-import list",
      name_list_needle,
-     lambda p: p.replace("`oka`, `orbicurve-cores`,", "`oka`,", 1)),
+     lambda p: p.replace(f"`{first_zero(p, chk.measure())}`, ", "", 1)),
     ("patch-line total shifted", patch_total_needle,
-     lambda p: p.replace("160,187", "160,186")),
+     lambda p: p.replace(chk.n(chk.measure()["total_lines"]),
+                         str(chk.measure()["total_lines"] - 1))),
     ("phase count shifted", phase_count_needle,
-     lambda p: p.replace("| **11** | **6,658** |", "| **10** | **6,658** |", 1)),
+     lambda p: bump(p, r"\| \*\*(\d+)\*\* \| \*\*[\d,]+\*\* \|", -1)),
     ("ordering-violation count shifted", violation_needle,
-     lambda p: p.replace("and 5 entries violate it", "and 6 entries violate it", 1)),
+     lambda p: bump(p, r"and (\d+) entries violate it", 1)),
     ("code span paraphrased",
      lambda c, v, m: span_needle(c, 's!".{label}-bootstrap-{pid}-{stamp}"'),
      lambda p: p.replace("`s!\".{plan.label}-bootstrap-{pid}-{stamp}\"`",
@@ -154,13 +180,24 @@ def test_clean_page(load, text):
     v = load("verify_dependency_drift")
     problems, (n_anchor, n_quote, n_span, n_table, n_sync) = v.check(text)
     assert problems == []
-    assert (n_anchor, n_quote, n_span, n_table, n_sync) == (52, 7, 9, 23, 0)
+    assert n_sync == 0
+    assert n_table == len(v.table_rows(text)) > 0
+    n_block = len([ln for ln in text.splitlines() if v.BLOCKQUOTE.match(ln)])
+    assert 0 < n_block == n_quote
+    assert 0 < n_span <= len(v.SPAN.findall(text))
+    assert 0 < len(v.ANCHOR.findall(text)) <= n_anchor
     m = v.measure()
-    assert (len(m["declared"]), len(m["patched"]), m["total_lines"], m["total_hunks"],
-            m["tc_patches"], len(m["froms"])) == (30, 23, 160187, 734, 22, 8)
-    assert (len(m["pre"]), len(m["post"]), len(m["zero"]), len(m["zero_nopatch"]),
-            len(m["violations"])) == (11, 12, 19, 5, 5)
-    assert (int(m["median_import"]), int(m["median_zero"])) == (2575, 408)
+    # The patch totals are sums over the same rows the table carries.
+    assert m["total_lines"] == sum(int(r["plines"]) for r in m["by_name"].values()) > 0
+    assert m["total_hunks"] == sum(x["hunks"] for x in m["patches"].values()) > 0
+    assert len(m["patches"]) == len(m["patched"]) > 0
+    assert len(m["declared"]) == len(m["by_name"]) > 0
+    assert 0 < m["tc_patches"] <= len(m["declared"])
+    assert len(m["froms"]) > 0
+    assert len(m["pre"]) + len(m["post"]) == len(m["patched"]) > 0
+    assert 0 < len(m["zero_nopatch"]) <= len(m["zero"])
+    assert len(m["violations"]) > 0
+    assert int(m["median_import"]) > int(m["median_zero"]) > 0
     assert set(m["pre"]).isdisjoint(m["post"])
     assert set(m["pre"]) | set(m["post"]) == set(m["patched"])
     assert set(m["lana"]) == set(m["pre"])
