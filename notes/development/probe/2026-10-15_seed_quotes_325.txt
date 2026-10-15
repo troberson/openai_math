@@ -1,0 +1,80 @@
+quotes in the pages: 2342
+  pair-line specs (notes/reports/subfinding-pairs.md): 754
+  summaries specs (45 pages): 1588
+  specs seeded: 2323   measured negatives (start 0): 19
+  single-line spec: 1250   range spec: 1073
+  head widened past 3 words: 334
+  whole-quote spec (no boundary): 529
+  mode: raw 2228  folded 95  not located 19
+  resolver reproduces the page quote: 2323 of 2323
+  round-trip failures: 0
+[probe] target exit code: 0
+[probe2] target notes/scripts/seed_quotes.py 
+[probe2] wall 50.34  opens 1019  distinct 510  repeats 509
+[probe2] rchar MB 48.3  read_bytes MB 0.0
+[probe2] buckets:
+          preprints/                 687
+          notes/summaries/           92
+          other                      78
+          lean/OAI/                  39
+          lean/docs/                 30
+          lean/ComparatorChallenges/ 30
+          notes/                     22
+          abs/other                  19
+          notes/scripts/             13
+          top-level                  7
+          reasoning_traces/          2
+[probe2] notes/ paths (count  modes  path):
+              3  r        notes/reports/counterexample-tag.md
+              2  r        notes/reports/subfinding-pairs.md
+              8  r        notes/reports/t0-triage.md
+              2  r        notes/summaries/README.md
+              2  r        notes/summaries/algebra/197-nonsofic-groups-and-group-ring-counterexamples.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/032-the-rational-hodge-conjecture-for-cm-abelian-varieties.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/039-nagatas-conjecture-and-maximal-seshadri-constants.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/042-oka-classification-for-k3-surfaces-and-other-compact-complex-surfaces.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/049-a-stable-coordinate-counterexample-in-four-variables.md
+              2  r        notes/summaries/combinatorics/159-quasipolynomial-bounds-for-arithmetic-progressions.md
+              2  r        notes/summaries/convex-and-metric-geometry/087-the-mahler-conjectures-and-symplectic-width.md
+              2  r        notes/summaries/convex-and-metric-geometry/101-the-sharp-simplex-conjecture-for-isotropic-constants.md
+              2  r        notes/summaries/differential-geometry/334-a-smooth-surface-metric-with-no-local-immersion-in-r-3.md
+              2  r        notes/summaries/differential-geometry/342-donaldsons-tamed-to-compatible-conjecture.md
+              2  r        notes/summaries/differential-geometry/344-metric-blaschke-conjecture.md
+              2  r        notes/summaries/differential-geometry/345-infinitely-many-closed-geodesics-on-spheres-and-three-manifolds.md
+              2  r        notes/summaries/differential-geometry/346-sharp-singular-set-bounds-for-stationary-integral-varifolds.md
+              2  r        notes/summaries/differential-geometry/347-counterexamples-to-stable-morse-fixed-point-bounds.md
+              2  r        notes/summaries/differential-geometry/348-einstein-four-manifold-classification-and-l2-gap.md
+              2  r        notes/summaries/differential-geometry/349-the-solomon-yau-least-volume-conjecture.md
+              2  r        notes/summaries/differential-geometry/351-scalar-curvature-detects-four-dimensional-ricci-flow-singularities.md
+              2  r        notes/summaries/differential-geometry/352-finite-time-singularity-of-calabi-flow.md
+              2  r        notes/summaries/dynamical-systems-and-ergodic-theory/147-the-near-boundary-birkhoff-conjecture.md
+              2  r        notes/summaries/functional-analysis/325-complete-crouzeix-conjecture.md
+              2  r        notes/summaries/functional-analysis/331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md
+              2  r        notes/summaries/functional-analysis/332-metric-markov-cotype-two-for-l1.md
+              2  r        notes/summaries/group-theory/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md
+              2  r        notes/summaries/group-theory/258-gerstens-conjecture-for-one-relator-groups.md
+              2  r        notes/summaries/group-theory/259-a-group-without-fixed-price.md
+              2  r        notes/summaries/mathematical-physics/271-blochs-law-and-spontaneous-ferromagnetic-order.md
+              2  r        notes/summaries/number-theory/001-milnes-rationality-conjecture.md
+              2  r        notes/summaries/number-theory/002-full-birch-swinnerton-dyer-formula-from-low-selmer-corank.md
+              2  r        notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md
+              2  r        notes/summaries/number-theory/006-goldfelds-conjecture.md
+              2  r        notes/summaries/number-theory/007-two-point-chowla-and-the-corrected-binary-elliott-conjecture.md
+              2  r        notes/summaries/number-theory/010-fontaine-mazur-modularity-at-the-prime-2.md
+              2  r        notes/summaries/number-theory/011-the-ford-konyagin-luca-conjecture-on-prime-predecessors.md
+              2  r        notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md
+              2  r        notes/summaries/number-theory/016-zilber-pink-in-abelian-varieties-and-the-siegel-threefold.md
+              2  r        notes/summaries/number-theory/017-the-irrationality-exponent-of-pi-is-2.md
+              2  r        notes/summaries/number-theory/018-margulis-platonov-conjecture-over-global-fields.md
+              2  r        notes/summaries/number-theory/019-p-adic-section-conjecture.md
+              2  r        notes/summaries/operator-algebras/287-all-nonabelian-free-group-factors-are-isomorphic.md
+              2  r        notes/summaries/partial-differential-equations/362-global-smoothness-for-relativistic-vlasov-maxwell.md
+              2  r        notes/summaries/probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md
+              2  r        notes/summaries/probability-and-statistical-mechanics/226-the-curve-scaling-limit-of-half-plane-double-dimers.md
+              2  r        notes/summaries/theoretical-computer-science/102-unique-games-conjecture-and-optimal-approximation-thresholds.md
+              2  r        notes/summaries/theoretical-computer-science/109-integer-multiplication-below-n-n.md
+              2  r        notes/summaries/theoretical-computer-science/136-quasilinear-pcp-for-ppad-conjecture.md
+              1  w        notes/tables/.quotes.tsv.tmp
+              8  r        notes/tables/catalog.tsv
+[probe2] write-mode paths outside notes/:
+              1  w .qwen/cache/records/407cfa01876260d25c447045fe6086f0/notes/tables/.quotes.tsv.tmp
