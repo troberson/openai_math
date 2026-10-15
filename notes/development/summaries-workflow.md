@@ -1557,3 +1557,15 @@ deliberately.
   before it was committed. **A manuscript read is only trustworthy when the checker agrees with it.**
   Re-read every quoted region with a direct read, and treat a `read_file` window that no checker
   confirms as unverified.
+- **Tool output describing manuscript bytes is not evidence.** Measured 2026-10-14 on family 346:
+  a shell dump of `01-introduction.tex` lines 1–60 and a second dump of lines 20–46 returned text
+  that the file does not contain — the theorem I recorded as `Let $m,n\ge1$ and let $V$ be a
+  stationary integral $m$-varifold in an open subset of $\R^{m+n}$` is on disk
+  `For every stationary integral $m$-varifold $V$ in an open set $U\subset\R^{m+n}$, where
+  $m,n\ge1$`, and the sharpness sentence I recorded ("The bound is sharp. The theorem does not say
+  that the singular set is finite…") is on disk "The estimate is sharp: the sum of the varifolds of
+  two distinct $m$-planes meeting along an $(m-1)$-plane is stationary, and its singular set is
+  exactly that intersection." The two CONTENTS.md abstracts I quoted were also fabricated. The page
+  reported **29 checker problems** and was deleted before it was committed. **The checker's
+  `line says` column is the only trustworthy copy of a quoted region.** Write the quote from what
+  the checker reports, not from any read output.
