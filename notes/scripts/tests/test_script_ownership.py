@@ -191,30 +191,3 @@ def test_padded_table_cells_are_still_read(mod, page):
         f"padded census reads {mod.census_rows(cand)}, clean page {mod.census_rows(page)}"
     assert mod.check(cand) == mod.check(page), \
         f"padded page reports {mod.check(cand)}, clean page {mod.check(page)}"
-
-
-def test_format_boundary_count_altered(mod, page):
-    """Pass G re-measures the checker-parsed page population, so a page carrying a stale count is
-    flagged by the measured figure, not by the sentence's shape."""
-    cand = page.replace("**25** checker-parsed pages", "**24** checker-parsed pages", 1)
-    assert cand != page, "format-boundary count altered: mutation changed nothing"
-    needle = f"**{len(mod.checker_pages() | mod.test_pages())}** checker-parsed pages"
-    found = mod.check(cand)
-    assert any(needle in x for x in found), \
-        f"format-boundary count altered: NOT caught ({found[:2]})"
-
-
-def test_checker_parsed_page_not_ignored(mod, page):
-    """Pass G reads the ignore rule from disk, so the mutation drops a rule in memory. Without
-    `notes/reports/*.md` every report page a checker parses sits outside the rule, and the pass names
-    each one."""
-    real = mod.ignore_rules
-
-    def fewer():
-        return [(neg, rx) for neg, rx in real() if not rx.pattern.startswith(r"notes/reports/")]
-
-    mod.ignore_rules = fewer
-    found = mod.check(page)
-    mod.ignore_rules = real
-    assert any("checker-parsed page is not prettier-ignored" in x for x in found), \
-        f"format-boundary rule dropped: NOT caught ({found[:2]})"

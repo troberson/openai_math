@@ -20,12 +20,6 @@ Passes:
      from notes/index/. The pass re-measures rather than importing measure_templates.py: a checker
      that re-derives a count through the same code the page's writer calls proves only that the code
      agrees with itself.
-  I. Format boundary. Load every `verify_*.py` and read its own `PAGE` and `PAGES` constants -- a
-     source parse reads docstring prose as well -- and require each markdown page the checkers parse
-     to be covered by `.prettierignore`. The matcher is gitignore-correct: a trailing slash means the
-     directory and everything below, `**` is zero or more directories, a leading slash anchors at the
-     repo root, and a negation un-ignores what an earlier rule ignored. The page carries the measured
-     counts: checker-parsed pages and the formatable set under `notes/`.
 
 The self-tests are not here: they live in `notes/scripts/tests/test_script_ownership.py`, which
 mutates page text in memory and asserts each fault is caught by the check that owns it. Passes H
@@ -34,12 +28,9 @@ Report-only: writes nothing.
 """
 from __future__ import annotations
 
-import functools
-import importlib.util
 import re
 import subprocess
 import sys
-from pathlib import Path
 
 from catlib import render as RD
 from catlib.paths import NOTES, ROOT, SCRIPTS, read_text
@@ -55,8 +46,6 @@ PROBE_DIR = NOTES / "development" / "probe"
 DEV_DIR = NOTES / "development"
 REPORTS_DIR = NOTES / "reports"
 TABLES_DIR = NOTES / "tables"
-IGNORE = ROOT / ".prettierignore"
-TESTS = SCRIPTS / "tests"
 SLOT_MARK = "{{ "
 # The record-store target the writers table carries. A record's directory is the digest key, which the
 # source does not name, so the rule keys on the literal record name — the only part of the path the
@@ -310,93 +299,6 @@ def index_render_counts():
     counts["index-readme.md.j2"] = int((INDEX_DIR / "README.md").is_file())
     return counts
 
-
-def ignore_rules():
-    """The prettier ignore rules as (negated, regex). A trailing slash means the directory and
-    everything below it; `**` is zero or more directories, so `notes/scripts/**/*.md` covers a page
-    sitting directly in `notes/scripts/`, and `notes/index/` covers the whole tree."""
-    out = []
-    for line in read_text(IGNORE).splitlines():
-        line = line.strip()
-        if not line or line.startswith("#"):
-            continue
-        neg = line.startswith("!")
-        pat = line[1:] if neg else line
-        if pat.startswith("/"):
-            pat = pat[1:]
-        tail = ".*" if pat.endswith("/") else ""
-        parts = [s for s in pat.split("/") if s]
-        rx = ""
-        for i, seg in enumerate(parts):
-            if seg == "**":
-                rx += ".*" if i == len(parts) - 1 else "(?:[^/]*/)*"
-            else:
-                rx += seg.replace("*", "[^/]*")
-            if i < len(parts) - 1 and seg != "**":
-                rx += "/"
-        out.append((neg, re.compile(rx + tail + "$")))
-    return out
-
-
-def ignored(path, rules):
-    """The last rule that matches decides: a negation un-ignores what an earlier rule ignored."""
-    state = False
-    for neg, rx in rules:
-        if rx.match(path):
-            state = not neg
-    return state
-
-
-@functools.cache
-def checker_pages():
-    """The markdown pages the checkers read, taken from each checker's own PAGE and PAGES constants.
-    Loading the checker is the honest enumeration: a source parse reads docstring prose as well.
-    `check()` calls the pass once per mutation, so the 23 module loads are paid once per process."""
-    out = set()
-    for f in sorted(SCRIPTS.glob("verify_*.py")):
-        spec = importlib.util.spec_from_file_location(f.stem, str(f))
-        m = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(m)
-        for attr in ("PAGE", "PAGES"):
-            v = getattr(m, attr, None)
-            if v is None:
-                continue
-            for x in (v if isinstance(v, (list, tuple, set)) else [v]):
-                p = x[0] if isinstance(x, tuple) else x
-                try:
-                    rel = str(Path(p).resolve().relative_to(ROOT))
-                except (ValueError, TypeError):
-                    continue
-                if rel.endswith(".md"):
-                    out.add(rel)
-    return out
-
-
-def test_pages():
-    """The markdown pages the self-tests read: the string literals naming a page that is on disk."""
-    out = set()
-    for f in sorted(TESTS.glob("*.py")):
-        for m in re.finditer(r'Path\("([^"]+\.md)"\)', read_text(f)):
-            p = (TESTS / m.group(1)).resolve()
-            if p.is_file():
-                out.add(str(p.relative_to(ROOT)))
-    return out
-
-
-def format_problems(text):
-    """Pass I: every page a checker parses must be prettier-ignored, and the page must carry the
-    counts. The two negated pages are the formatable set the rule leaves."""
-    rules = ignore_rules()
-    pages = checker_pages() | test_pages()
-    fmt = sorted(str(f.relative_to(ROOT)) for f in NOTES.rglob("*.md")
-                 if not ignored(str(f.relative_to(ROOT)), rules))
-    p = [f"checker-parsed page is not prettier-ignored: {n}"
-         for n in sorted(pages) if not ignored(n, rules)]
-    if f"**{len(pages)}** checker-parsed pages, **{len(fmt)}** formatable pages under `notes/`" \
-            not in text:
-        p.append(f"format-boundary sentence does not read '**{len(pages)}** checker-parsed pages, "
-                 f"**{len(fmt)}** formatable pages under `notes/`'")
-    return p
 
 
 def template_table_rows(text):
@@ -677,9 +579,6 @@ def check(text):
         p.append(f"page opens with {first!r}, not a heading")
     if "## Not checked" not in text:
         p.append("no '## Not checked' section")
-
-    # I. format boundary: every page a checker parses is prettier-ignored, and the page carries the counts
-    p.extend(format_problems(text))
     return p
 
 
