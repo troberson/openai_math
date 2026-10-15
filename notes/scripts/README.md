@@ -56,7 +56,7 @@ finds **15** writers over **68** scripts.
 | `build_index_db.py` | `.qwen/cache/records/<key>/fts.json` and `.qwen/cache/records/<key>/index.db` | not in `gate.py` — the report carries a build wall and a per-term query wall, so a run-1/run-2 byte diff is a timing artifact; the record itself carries only counts, and the database is untracked by the `.qwen/*` rule | the SQLite FTS5 layer over the 8,007 `.tex` files and the 372 abstracts, the layer `notes/development/index-design.md`'s schema decision leaves out |
 
 Seven writers emit one TSV each. `build_index.py` is the one-to-many case: it renders **1,049** files —
-**1,033** `.md` pages and **0** `.tsv` tables in `notes/index/`, plus the **16** `.tsv` tables it stages
+**1,034** `.md` pages and **0** `.tsv` tables in `notes/index/`, plus the **16** `.tsv` tables it stages
 into `notes/tables/`. `render_reports.py` renders the nineteen report-fed pages
 from the templates `build_report_templates.py` builds from the committed page and the slot dict that
 writer supplies. `compare_abstracts.py` is the conditional case: its
@@ -219,7 +219,7 @@ had to wait for the serial chain to finish.
 | `measure_index_sizes.py` | `notes/development/index-design.md` | plain |
 | `measure_import_layout.py` | `extract_links.py`'s import header rule — the Lean files whose first command is a doc-comment opener (`/-`), a bare `module` line, or a `public import` line, which is the evidence the widened `HEADER_SKIP` rule was written from | **not gated** — walks 122,458 files; run by hand when the header rule changes |
 | `measure_links_phases.py` | `extract_links.py`'s phases — the wall each read and scan takes, attributed by wrapping the script's own reads, because cProfile totals attribute cost to functions, not phases | **not gated** — a phase wall is a function of a run |
-| `measure_move_surface.py` | `math-faz` — the moved/stable path-mention split over the 33 pages the reorg moved, by context; the bead re-runs it after each pass | **not gated** |
+| `measure_move_surface.py` | `math-faz` — the moved/stable path-mention split over the 34 pages the reorg moved, by context; the bead re-runs it after each pass | **not gated** |
 | `measure_needles.py` | `notes/scripts/tests/` — the needle fleet: faults per file, needles recorded as a string versus derived as a callable, recorded needles split numeric versus structural, needle digits, synthetic rule inputs, the numeric literals in each clean test's asserted tuples, and the recorded needles whose digits their own mutation never writes | plain |
 | `measure_proof_density.py` | `notes/reports/proof-density.md` | the self-tests are in `notes/scripts/tests/test_proof_density.py`, run by the `run_tests.py` row; the plain run is not gated, because `render_reports.py` imports the module and calls `build_families()` rather than running the script |
 | `measure_render_phases.py` | `render_reports.py`'s phase wall with concurrent children — cumulative, in `main()` call order | **not gated** — a phase wall is a function of a run |
@@ -339,9 +339,9 @@ re-ran the whole check once per injected fault, so a checker whose plain run is 
 it again per mutant.
 `verify_findings.py` is the subprocess case: its Pass E runs the fast extractors as subprocesses inside
 `check()` (`:459`, the subprocess call at `:140`), so a plain run pays five of them. The pass that
-extracted its self-tests put `run()` under `functools.cache` (`:133`) — every script in `REPORTS` is
+extracted its self-tests put `run()` under `functools.cache` (`:134`) — every script in `REPORTS` is
 report-only, so a second call in the same process cannot see a different stdout — and that is why the
-`run_tests.py` row measures **4.1 s** where the `--mutant` row took **33.7 s** before that row was
+`run_tests.py` row measures **4.1 s** where the `--mutant` row took **34.7 s** before that row was
 replaced: the seven `check()` calls the row makes (the clean page plus each of the six faults) pay the
 five subprocesses once.
 `verify_faithfulness.py` is the same case with a corpus walk instead of subprocesses: `population()`
@@ -401,7 +401,7 @@ to **40.6 s**, measured 2026-10-12 as the sum of the wall times the gate printed
 pooled run, each Cost cell re-checked cell-by-cell against that run (0
 mismatches over the 22 checkers with Cost cells behind them; `verify_script_ownership.py` is not a row
 above, so it has no cell to check); the full 78-row gate ran in **1 min 25 s** wall
-(09:33:44–09:33:09 local) and its 78 row times sum to **202.5 s**, so the 12-row pool brings the wall
+(09:34:44–09:34:09 local) and its 78 row times sum to **202.5 s**, so the 12-row pool brings the wall
 to 42% of the sum. The writers are the tail: `render_reports.py` 17.0 s (the gate row is
 `--check-only`; the plain render ran 16.983 s), `extract_links.py` 14.8 s,
 `extract_formalization_deps.py` 6.0 s (the 122,458-file walk under
@@ -438,7 +438,7 @@ modules, not scripts: `paths.py` (the repo-root constants, `rel()`, `owner()`, `
 registry, `key_for()` for the builder's digest key, `promote()` which caches the bytes under the key
 and then writes the same bytes onto the tracked path, and `cached_text()`), `records.py` (the
 digest-keyed record store — `key()` over the five `git rev-parse HEAD:<path>` tree digests, the
-builder's source, its L1 texts and its args, truncated to 33 hex; `manuscript_store()` reads the
+builder's source, its L1 texts and its args, truncated to 34 hex; `manuscript_store()` reads the
 749-row per-manuscript record set under `.qwen/cache/records/<key>/`, and `cached(KEY, "name",
 builder)` builds a record once, lands it atomically, and reads it back), `atomic.py` (the atomic write primitive —
 `write_atomic()` writes through a sibling temp name, fsyncs, then moves the temp onto the target, so
@@ -527,7 +527,7 @@ excludes them with the script tree, so they are not scripts.
 | Population | Files | Owner |
 |---|---|---|
 | `notes/index/` | **1,033** | generated — `build_index.py`; the 16 tables it renders land in `notes/tables/` |
-| `notes/summaries/` | **47** | hand-written — the reading record: 46 family pages and the link-only index page `README.md` |
+| `notes/summaries/` | **48** | hand-written — the reading record: 47 family pages and the link-only index page `README.md` |
 | `notes/templates/` | **27** | **5** hand-written index skeletons + **22** report templates built by `build_report_templates.py` |
 | `notes/development/*.md` | **5** | hand-written in part: `summaries-workflow.md` is the resume protocol; `fleet-design.md`, `index-design.md` and `index-links.md` are report-fed pages `render_reports.py` renders and `templates.md` is generated by `build_report_templates.py`. `math-faz.3` moved them here from the top level. |
 | `notes/development/upstream_history/` | **3** | hand-written — the record of each upstream merge, checked by `verify_upstream_history.py` |
@@ -535,7 +535,7 @@ excludes them with the script tree, so they are not scripts.
 | `notes/tables/*.tsv` | **25** | **23** generated, **2** hand-authored — 7 written by the ledger scripts and 16 rendered by `build_index.py` since `math-faz.6` |
 | `notes/reports/*.md` | **23** | **15** generated — the report-fed pages `render_reports.py` renders; **8** hand-written. **11** with a checker, **12** without. `math-faz.4` moved them here from the top level. |
 | `notes/*.md` | **1** | `notes/README.md`, the entry point — hand-written, no checker |
-| `notes/` total, scripts excluded | **1,216** | — |
+| `notes/` total, scripts excluded | **1,217** | — |
 
 The generated TSVs are the **23** the writer set writes: the 7 named writer targets and the 16 tables
 `build_index.py` stages into `notes/tables/`. The two hand-authored tables are:
@@ -578,7 +578,7 @@ and a `notes/**/topics.tsv` glob read both. The rendered table is now
 `notes/tables/` on 2026-10-11, so the two names cannot collide again. `measure_topics.py` and
 `AGENTS.md` both name the vocabulary; `build_index.py` reads it and writes the rendered table.
 
-The index tree and the summaries tree share **33** page slugs — the families that carry both a rendered
+The index tree and the summaries tree share **34** page slugs — the families that carry both a rendered
 page and a reading summary, which is the pairing the index reports, plus `README.md`, which each tree
 carries as its own entry point.
 
@@ -622,11 +622,11 @@ git, so nothing in the scratch tree is tracked and no checker here reads it. A p
 question stays where it is and is deleted; a probe that a later bead re-runs is promoted, gets a row
 in the tables above, and only then gets a gate command.
 
-Measured 2026-10-09 over `.qwen/tmp/` **after** the `math-8ou` cleanup: **335** top-level files,
+Measured 2026-10-09 over `.qwen/tmp/` **after** the `math-8ou` cleanup: **345** top-level files,
 **7,121** files including subdirectories, **14** subdirectories. By top-level suffix: **222** `.txt`,
 **43** `.md`, **19** `.tsv`, **1** `.py`, and **0** in every other suffix — the tree is now reports,
 drafts, baselines and index snapshots, with one script left in it. The largest trees are gate and
-render snapshots — `reports/` **331**, `idx_pre_sweep/`, `idx_run1/` and `idx_run2/` at **1,052** each,
+render snapshots — `reports/` **341**, `idx_pre_sweep/`, `idx_run1/` and `idx_run2/` at **1,052** each,
 `index-run1/` **1,049**, `index_run1/` and `index_run2/` at **1,050** each, `lon2/` **85**, `msgs/`
 **65**, `lon1/` **63**, `leanout/` **38**.
 
@@ -645,7 +645,7 @@ conditional-anchor checker `check_conditional_anchors.py`, and the single-purpos
 `find_core_only.py`, `cand_closure.py`, `gen_axioms.py`, `lint_anchors.py`, `port_nc.py`,
 `drop_syspath.py`, `build_scope_page.py`, `fix_topics.py`, `fix_topics_md.py`), together with
 `elab.sh` and the **12** probe outputs it left behind (`axioms.lean`, `axioms.log`, `axioms.olean`,
-`check.lean`, `check.olean`, `elab.log`, `hqd5_quotes.json`, `names.json`, `leanout.tmp.1683333`,
+`check.lean`, `check.olean`, `elab.log`, `hqd5_quotes.json`, `names.json`, `leanout.tmp.1683434`,
 `0h2_skel.err`, `cit1.err`, `cx2a.err`). The four `/tmp` trees `stage5/`, `portcheck/`,
 `portcheck2/`, `pprobe/` and the six `/tmp` one-offs `e402_probe.py`, `e402_probe2.py`,
 `lint_anchors_scratch.py`, `lint_stage4.txt`, `lint_stage4b.txt`, `port_check2.sh` are deleted too —
@@ -653,7 +653,7 @@ conditional-anchor checker `check_conditional_anchors.py`, and the single-purpos
 whose outputs cannot be re-measured.
 
 Measured 2026-10-10 over `.qwen/tmp/` **after** the `math-3la` cleanup: **403** top-level files,
-**136,180** files including subdirectories, **5** subdirectories. By top-level suffix: **334** `.txt`,
+**136,180** files including subdirectories, **5** subdirectories. By top-level suffix: **344** `.txt`,
 **52** `.md`, **20** `.out`, **19** `.tsv`, **3** `.md5`, **2** `.log` and **1** each `.patch`,
 `.pat`, `.diff` — **0** `.sh` and **0** `.py`, which is the rule's own endpoint: a driver a later pass
 re-runs lives under `notes/scripts/`, and the scratch tree keeps outputs. The file total is one
@@ -691,11 +691,11 @@ tracked files under `notes/` before the bead that produced them closes.
 - `build_index.py` sweeps its own tree: it tracks every path its `write()` helper emits and, at the end
   of `main()`, unlinks any `notes/index/**.md` or `**.tsv` it did not write, then removes empty
   directories and prints `stale swept N files [...]`. The realized case is the 2026-10-07 merge: family
-  033's title changed, so its old-slug page survived as an orphan whose manuscript table pointed at the
+  034's title changed, so its old-slug page survived as an orphan whose manuscript table pointed at the
   three withdrawn directories — 6 broken links, found only by `check_index_links.py`. Two name pages
   (`cech`, `kunneth`) went the same way; the sweep removed 3 files. Renaming the rendered topic table is
   the older case — `notes/index/topics.tsv` survived the rename and was deleted by hand. Page counts are
-  measured consistent: **1,033** `.md` on disk against the **1,033** the render report claims.
+  measured consistent: **1,034** `.md` on disk against the **1,034** the render report claims.
 - The sweep is probe-verified on both branches (2026-10-09, `math-a0r.1`): a planted
   `notes/index/names/zzz-sweep-probe.md` prints `stale swept 1 files ['names/zzz-sweep-probe.md']` and
   is gone after the run; a planted page inside a new directory prints `empty dirs removed 1` and the
@@ -716,7 +716,7 @@ tracked files under `notes/` before the bead that produced them closes.
 - **A needle can match nothing and the run stays green.** `verify_upstream_history.py`'s `SLUG`
   pattern required a trailing `/` inside the backticks **and** a 3-letter month, while the corpus
   writes full month names only (`September` 576, `October` 172 over the **749** `preprints/` dirs), so
-  it matched **0** tokens on the three pages it checks — `notes/development/upstream_history/2026-10-07_3314888.md`
+  it matched **0** tokens on the three pages it checks — `notes/development/upstream_history/2026-10-07_3414888.md`
   carries **14** backticked manuscript-slug tokens of that shape, written without the slash. The run
   exited 0 because nothing was asserted, and a slug renamed to one the release does not name was not
   caught. `math-lon.2.5` ported the file and left the pattern as it is, because its acceptance is

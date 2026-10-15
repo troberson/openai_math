@@ -13,7 +13,7 @@
 | Claim shapes | counterexample, conditional |
 | Topics | [logic](../topics/logic.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [244-partition-principle-does-not-imply-choice.md](../../../notes/summaries/mathematical-logic/244-partition-principle-does-not-imply-choice.md) |
 
 ## Manuscripts
 
