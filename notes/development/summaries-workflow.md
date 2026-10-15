@@ -7,33 +7,33 @@ measured quotation traps) lives in `.qwen/skills/auto-skill-family-summary-citat
 
 ## Current state (rewritten at every batch boundary, 2026-10-14)
 
-- **All 37 pages are green.** `verify_summaries.py` over the 38 files in `notes/summaries/`:
-  **5,251 marker positions, 1,457 quoted spans, 0 problems**; `check_summary_manuscripts.py`:
-  **38 pages, 0 with an off-family manuscript, 82 manuscript dirs named, 0 unnamed-on-catalog,
+- **All 38 pages are green.** `verify_summaries.py` over the 39 files in `notes/summaries/`:
+  **5,468 marker positions, 1,487 quoted spans, 0 problems**; `check_summary_manuscripts.py`:
+  **39 pages, 0 with an off-family manuscript, 85 manuscript dirs named, 0 unnamed-on-catalog,
   0 named-by-another-family**; 749 preprint dirs on disk, 719 named by `overview.tex`, 30 on disk
   and unnamed, 0 named and absent. `test_summaries.py`: **11 tests pass**.
-- **Pages done (35):** 001, 002, 004, 006, 007, 010, 011, 014, 016, 017, 018, 019, 032, 087, 101,
-  102, 109, 136, 147, 159, 197, 221, 226, 258, 259, 271, 287, 332, 334, 342, 344, 345, 346, 347, 348, 349, 362.
-  The ledger's `summary` column is 1 for those; the generator reports "summary pages 37 of 372
-  families, 82 manuscripts behind them". By discipline: Number theory 12, theoretical computer
-  science 3, convex and metric geometry 2, probability and statistical mechanics 2, group theory 2,
-  differential geometry 8, and one each in algebraic and complex geometry, dynamical systems and
-  ergodic theory, combinatorics, algebra, mathematical physics, operator algebras, functional
-  analysis, and partial differential equations.
+- **Pages done (38):** 001, 002, 004, 006, 007, 010, 011, 014, 016, 017, 018, 019, 032, 087, 101,
+  102, 109, 136, 147, 159, 197, 221, 226, 258, 259, 271, 287, 332, 334, 342, 344, 345, 346, 347,
+  348, 349, 351, 362. The ledger's `summary` column is 1 for those; the generator reports
+  "summary pages 38 of 372 families, 85 manuscripts behind them". By discipline: Number theory 12,
+  differential geometry 9, theoretical computer science 3, convex and metric geometry 2, probability
+  and statistical mechanics 2, group theory 2, and one each in algebraic and complex geometry,
+  dynamical systems and ergodic theory, combinatorics, algebra, mathematical physics, operator
+  algebras, functional analysis, and partial differential equations.
 - **Next batch:** `math-ckd.4` is claimed and in progress — tier C group 1. The differential-geometry
-  families with `summary = 0`, sorted by `paps`: 351, 352, 353, 354,
+  families with `summary = 0`, sorted by `paps`: 352, 353, 354,
   355, 356, 357, 358, 359, 360, 361, 350. Steps 1–10 per page. Check `bd ready` first: summaries are
   P4 and any ready P1/P2 outranks this batch.
-- **Last gate run (2026-10-14):** `bash notes/scripts/gate_driver.sh` — **rows 79, failures 0**, head
+- **Last gate run (2026-10-14):** `bash notes/scripts/gate_driver.sh` — **rows 71, failures 0**, head
   diff 0 bytes. Reconciliations: 372 families, 719 manuscripts, **173** formalized (`formalized
   (yaml)`), 242 scope notes, 416 challenges, 200 `main_results` over 189 configs, both
   `overview.tex` ↔ `CONTENTS.md` cross-checks 0. `verify_cache_promotion.py`: **writers 15 +
-  non-cached 1, probed targets 21, problems 0**. `check_index_links.py`: **1,033 pages, 66,123
+  non-cached 1, probed targets 16, problems 0**. `check_index_links.py`: **1,033 pages, 66,124
   links, 0 broken**. Lint trio (`notes/scripts/lint_scripts.sh`) exits 0.
-- **Push state:** `origin/notes` at `cefed1110`, pushed 2026-10-14, through the family 349 batch —
-  the family 348 and 349 pages, their count sweeps, the retargeted needles in the quotes,
-  index-design, script-ownership and fleet tests, and the links sweep on top. Both batches' gate
-  runs reported **79 rows, 0 failures** with a **0-byte** head diff, and the linters exit 0.
+- **Push state:** `origin/notes` at `d53d60b50`, pushed 2026-10-14, through the family 351 batch —
+  the family 351 page, its count sweep, the retargeted needles in the quotes, index-design,
+  script-ownership and fleet tests, the links sweep, and the index link count on top. The gate run
+  reported **71 rows, 0 failures** with a **0-byte** head diff, and the linters exit 0.
 - **Queue check (2026-10-14):** `bd ready` lists **3** issues: `math-4nn` (the epic, open through
   `.2`, whose prettier decision is the user's), `math-ckd.5`, and `math-ckd`. `math-ckd.4` is
   claimed and in progress, so it is not in the ready list.
@@ -1627,3 +1627,25 @@ deliberately.
   prints `BLANK S6:27` and `BLANK S10:18` for windows whose first line is empty. The README of the L2
   gap manuscript has 18 lines and line 18 is blank, so the citation is `[S10:17]`. Measure the window
   against the last line that carries text.
+- **A truncated shell dump plus memory is fabrication, and it recurred on family 351 in four forms.**
+  The first 351 draft named manuscript A's sections as `02-analysis.tex`, `03-geometry.tex`,
+  `04-reaction.tex`, `05-barriers.tex`, `06-construction.tex` and manuscript C's as
+  `04-weights.tex`, `05-assembly.tex`, `06-refs.tex`; the measured tree names
+  `02-construction.tex`, `04-cap.tex`, `05-reaction.tex` for A and `04-family.tex`,
+  `05-tails.tex`, `06-length.tex`, `07-observables.tex` for C. It stated the Wang bibliography entry
+  as "Scalar curvature and Ricci flow in dimension three, Journal of the European Mathematical
+  Institute"; the real entry is "On the conditions to extend Ricci flow (II), IMRN 2012". It stated
+  the reaction bounds as a two-sided `(2q-2)/(q-1) <= c <= (2q+2)/(q+1)` and the rate corollary as
+  power laws over a set `E`; the real bounds are `c <= (2(q-1)+C sqrt q)/r^2` and `c <= C_*/theta^2`,
+  and the real corollary builds the exponent `2k/d_q` from
+  `d_q = (q+1-sqrt((q+1)(q-7)))/2` over sufficiently large even `k`. `verify_summaries.py` reported
+  NOT VERBATIM for each. The rule is: dump the window to a file and read the file with `read_file`,
+  then write the quote from the file's bytes. A dump printed with `[:150]` or `[:260]` is not a read.
+- **A report-fed page's literal list is built from HEAD, so a hand edit must be committed before the
+  builder runs.** The fleet page's record list ended with the family 349 probe; the render reverted
+  the edit that added the family 351 record. Commit the page edit, run `build_report_templates.py`,
+  then `render_reports.py`.
+- **The cache key is the HEAD tree digest, so a commit invalidates every cached record.** After the
+  page commit, `verify_cache_promotion.py` reported 1,095 problems. The fix is the recorded order:
+  commit the sweep, rebuild templates, re-render, commit the render, then re-run builder and render at
+  the new HEAD until `git status --porcelain` is empty.
