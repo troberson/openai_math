@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [manifolds](../topics/manifolds.md) · [riemannian-geometry](../topics/riemannian-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [348-einstein-four-manifold-classification-and-l2-gap.md](../../../notes/summaries/differential-geometry/348-einstein-four-manifold-classification-and-l2-gap.md) |
 
 ## Manuscripts
 
