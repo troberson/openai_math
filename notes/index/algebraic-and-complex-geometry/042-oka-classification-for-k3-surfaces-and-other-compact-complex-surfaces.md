@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [complex-geometry](../topics/complex-geometry.md) · [surfaces](../topics/surfaces.md) · [abelian-varieties](../topics/abelian-varieties.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [042-oka-classification-for-k3-surfaces-and-other-compact-complex-surfaces.md](../../../notes/summaries/algebraic-and-complex-geometry/042-oka-classification-for-k3-surfaces-and-other-compact-complex-surfaces.md) |
 
 ## Manuscripts
 
