@@ -18,9 +18,27 @@ tests write nothing.
 The checker measures; this file injects. Run:
   python3 notes/scripts/run_tests.py notes/scripts/tests/test_script_ownership.py -q
 """
+import re
+
 import pytest
 
 pytestmark = pytest.mark.mutant
+
+
+def bump(t, pat, delta=1):
+    """Find the page's own count phrase by shape and change its number. The mutation's input is the
+    page as it stands, not a transcription of a measured value, so a count that moves with the corpus
+    does not require a hand-edit here."""
+    m = re.search(pat, t)
+    assert m, f"{pat!r} not in the page"
+    raw = m.group(1)
+    n = int(raw.replace(",", ""))
+    new = f"{n + delta:,}" if "," in raw else str(n + delta)
+    span = t[m.start():m.end()]
+    assert f"**{raw}**" in span, f"no bolded {raw!r} in the matched span"
+    return t[:m.start()] + span.replace(f"**{raw}**", f"**{new}**", 1) + t[m.end():]
+
+
 
 # Faults in the census page's own text, each keyed to the problem string the check prints.
 PAGE_CASES = [
@@ -31,13 +49,11 @@ PAGE_CASES = [
      lambda t: t.replace("| `extract_links.py` | `notes/tables/links.tsv` | single run; cached "
                          "bytes == promoted bytes under the key | `notes/reports/links.md` |\n", "")),
     ("generated TSV count understated", "tsv census cell",
-     lambda t: t.replace("**23** generated, **2** hand-authored",
-                         "**22** generated, **2** hand-authored")),
+     lambda t: bump(t, r"\*\*(\d+)\*\* generated, \*\*\d+\*\* hand-authored", -1)),
     ("index file count altered", "census row notes/index/",
-     lambda t: t.replace("| `notes/index/` | **1,033** |", "| `notes/index/` | **1,034** |")),
+     lambda t: bump(t, r"\| `notes/index/` \| \*\*([\d,]+)\*\* \|", 1)),
     ("collision name altered", "collision sentence",
-     lambda t: t.replace("**1** shared basename — `README.md`",
-                         "**2** shared basenames — `README.md` and `topics.tsv`")),
+     lambda t: bump(t, r"\*\*(\d+)\*\* shared basename", 1)),
     ("checker name altered", "non-writers",
      lambda t: t.replace("| `verify_sources.py` |", "| `verify_sources2.py` |")),
     ("unchecked page claimed as checked", "md census cell",
@@ -47,9 +63,9 @@ PAGE_CASES = [
     ("Not checked section deleted", "no '## Not checked' section",
      lambda t: t.replace("## Not checked", "## Checked")),
     ("summaries count altered", "census row notes/summaries/",
-     lambda t: t.replace("| `notes/summaries/` | **40** |", "| `notes/summaries/` | **25** |")),
+     lambda t: bump(t, r"\| `notes/summaries/` \| \*\*(\d+)\*\* \|", -15)),
     ("templates count altered", "census row notes/templates/",
-     lambda t: t.replace("| `notes/templates/` | **27** |", "| `notes/templates/` | **3** |")),
+     lambda t: bump(t, r"\| `notes/templates/` \| \*\*(\d+)\*\* \|", -24)),
 ]
 
 def shift_slot_cell(t):
@@ -71,7 +87,7 @@ TPL_CASES = [
                          if not l.startswith("| `templates.md.j2`"))),
     ("template slot count shifted", "template row README.md.j2", shift_slot_cell),
     ("registry count altered", "registry sentence",
-     lambda t: t.replace("registry: **22** entries", "registry: **17** entries", 1)),
+     lambda t: bump(t, r"registry: \*\*(\d+)\*\* entries", -5)),
 ]
 
 
@@ -176,11 +192,13 @@ def pad_cells(t):
     10 clean census rows and 0 padded ones, and the pass then reports a census row for every target
     with `page says None`, so the problem list is the discriminator."""
     out = []
-    for ln in t.split("\n"):
-        if ln.startswith("|") and ln.endswith("|"):
-            cells = ln[1:-1].split("|")
-            ln = "|" + "|".join("  " + c.strip() + "  " for c in cells) + "|"
-        out.append(ln)
+    for row in t.split("\n"):
+        if row.startswith("|") and row.endswith("|"):
+            cells = row[1:-1].split("|")
+            padded = "|" + "|".join("  " + c.strip() + "  " for c in cells) + "|"
+        else:
+            padded = row
+        out.append(padded)
     return "\n".join(out)
 
 
