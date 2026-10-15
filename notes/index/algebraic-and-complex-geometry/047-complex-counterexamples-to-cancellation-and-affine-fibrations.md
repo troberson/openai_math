@@ -13,7 +13,7 @@
 | Claim shapes | resolution, counterexample |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [commutative-algebra](../topics/commutative-algebra.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [047-complex-counterexamples-to-cancellation-and-affine-fibrations.md](../../../notes/summaries/algebraic-and-complex-geometry/047-complex-counterexamples-to-cancellation-and-affine-fibrations.md) |
 
 ## Manuscripts
 
