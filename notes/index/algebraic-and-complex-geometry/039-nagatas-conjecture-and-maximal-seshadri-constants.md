@@ -13,7 +13,7 @@
 | Claim shapes | bound, classification, uniform |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [curves](../topics/curves.md) · [partial-differential-equations](../topics/partial-differential-equations.md) · [surfaces](../topics/surfaces.md) · [abelian-varieties](../topics/abelian-varieties.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [039-nagatas-conjecture-and-maximal-seshadri-constants.md](../../../notes/summaries/algebraic-and-complex-geometry/039-nagatas-conjecture-and-maximal-seshadri-constants.md) |
 
 ## Manuscripts
 

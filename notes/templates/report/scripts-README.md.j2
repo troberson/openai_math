@@ -223,7 +223,7 @@ had to wait for the serial chain to finish.
 | `measure_index_sizes.py` | `notes/development/index-design.md` | plain |
 | `measure_import_layout.py` | `extract_links.py`'s import header rule — the Lean files whose first command is a doc-comment opener (`/-`), a bare `module` line, or a `public import` line, which is the evidence the widened `HEADER_SKIP` rule was written from | **not gated** — walks 122,458 files; run by hand when the header rule changes |
 | `measure_links_phases.py` | `extract_links.py`'s phases — the wall each read and scan takes, attributed by wrapping the script's own reads, because cProfile totals attribute cost to functions, not phases | **not gated** — a phase wall is a function of a run |
-| `measure_move_surface.py` | `math-faz` — the moved/stable path-mention split over the 29 pages the reorg moved, by context; the bead re-runs it after each pass | **not gated** |
+| `measure_move_surface.py` | `math-faz` — the moved/stable path-mention split over the {{ p['slug_share'] }} pages the reorg moved, by context; the bead re-runs it after each pass | **not gated** |
 | `measure_needles.py` | `notes/scripts/tests/` — the needle fleet: faults per file, needles recorded as a string versus derived as a callable, recorded needles split numeric versus structural, needle digits, synthetic rule inputs, the numeric literals in each clean test's asserted tuples, and the recorded needles whose digits their own mutation never writes | plain |
 | `measure_proof_density.py` | `notes/reports/proof-density.md` | the self-tests are in `notes/scripts/tests/test_proof_density.py`, run by the `run_tests.py` row; the plain run is not gated, because `render_reports.py` imports the module and calls `build_families()` rather than running the script |
 | `measure_render_phases.py` | `render_reports.py`'s phase wall with concurrent children — cumulative, in `main()` call order | **not gated** — a phase wall is a function of a run |
@@ -345,7 +345,7 @@ it again per mutant.
 `check()` (`:459`, the subprocess call at `:140`), so a plain run pays five of them. The pass that
 extracted its self-tests put `run()` under `functools.cache` (`:132`) — every script in `REPORTS` is
 report-only, so a second call in the same process cannot see a different stdout — and that is why the
-`run_tests.py` row measures **4.1 s** where the `--mutant` row took **29.7 s** before that row was
+`run_tests.py` row measures **4.1 s** where the `--mutant` row took **{{ p['slug_share'] }}.7 s** before that row was
 replaced: the seven `check()` calls the row makes (the clean page plus each of the six faults) pay the
 five subprocesses once.
 `verify_faithfulness.py` is the same case with a corpus walk instead of subprocesses: `population()`
