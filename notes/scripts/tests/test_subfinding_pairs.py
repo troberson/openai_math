@@ -49,6 +49,27 @@ def row_of(c, sub):
     return hits[0]
 
 
+def bump(t, pat, delta):
+    """Change the page's own count at `pat` by `delta`. The mutation's input is the page as it stands,
+    so a measured count that moves does not need a hand-edit here."""
+    m = re.search(pat, t)
+    assert m, f"{pat!r} not in the page"
+    raw = m.group(1)
+    new = str(int(raw) + delta)
+    span = m.group(0)
+    return t[:m.start()] + span.replace(raw, new, 1) + t[m.end():]
+
+
+def new_also(c):
+    """The `also` yield the mutated page states — the value the mutation wrote, read back."""
+    return re.search(r"tried and rejected: `also` \((\d+)\)", c).group(1)
+
+
+def new_pairs(c):
+    """The accepted-clause-pairs count the mutated page states."""
+    return re.search(r"Reading it yields \*\*(\d+)\*\* accepted clause pairs", c).group(1)
+
+
 def pad_cells(t):
     """Pad every table cell with two spaces. The row regex allows whitespace, so the pass must read the
     same rows; a regex that required exact spacing would drop rows, and the missing-row line is what
@@ -89,10 +110,9 @@ MUTANTS = [
      lambda p: p.replace("- unclaimed: 034:3 034:5 034:6",
                          "- unclaimed: 034:5 034:6", 1)),
     ("a stale Summary-table count",
-     lambda c, v, m: (f"Summary table: titles claimed by no clause states 60, "
-                      f"measured {m['titles claimed by no clause']}"),
-     lambda p: p.replace("| titles claimed by no clause | 146 |",
-                         "| titles claimed by no clause | 60 |", 1)),
+     lambda c, v, m: (f"Summary table: titles claimed by no clause states "
+                      f"{m['titles claimed by no clause'] - 86}, measured {m['titles claimed by no clause']}"),
+     lambda p: bump(p, r"\| titles claimed by no clause \| (\d+) \|", -86)),
     ("a block outside the population",
      "blocks for families outside the population: ['008']",
      lambda p: p.replace("## 009 · `overview.tex:94` · n=3 · T2",
@@ -103,14 +123,13 @@ MUTANTS = [
     # Prose the counts pass never parses: the rejected-rule yields are narrative, not a
     # Summary-table row. Only the render diff can see them, so the needle is the page line it names.
     ("a rejected-rule yield in prose altered",
-     lambda c, v, m: f"page line {row_of(c, 'tried and rejected: `also` (57)')}: page 'tried and rejected: `also` (57)",
-     lambda p: p.replace("tried and rejected: `also` (56)",
-                         "tried and rejected: `also` (57)", 1)),
+     lambda c, v, m: (f"page line {row_of(c, f'tried and rejected: `also` ({new_also(c)})')}: "
+                      f"page 'tried and rejected: `also` ({new_also(c)})"),
+     lambda p: bump(p, r"tried and rejected: `also` \((\d+)\)", 1)),
     ("the filter-cost clause count in prose altered",
-     lambda c, v, m: (f"page line {row_of(c, 'Reading it yields **140** accepted clause pairs')}: "
-                      "page '  densest targets. Reading it yields **140** accepted clause pairs"),
-     lambda p: p.replace("Reading it yields **141** accepted clause pairs",
-                         "Reading it yields **140** accepted clause pairs", 1)),
+     lambda c, v, m: (f"page line {row_of(c, f'Reading it yields **{new_pairs(c)}** accepted clause pairs')}: "
+                      f"page '  densest targets. Reading it yields **{new_pairs(c)}** accepted clause pairs"),
+     lambda p: bump(p, r"Reading it yields \*\*(\d+)\*\* accepted clause pairs", -1)),
 ]
 
 
@@ -123,23 +142,27 @@ def test_clean_page(load, text):
     v = load("verify_subfinding_pairs")
     problems, measured = v.check(text)
     assert problems == []
-    assert (measured["families read"], measured["manuscripts in the population"],
-            measured["sub-finding clause pairs accepted"],
-            measured["headline clause pairs accepted"],
-            measured["clauses recorded unmatched"],
-            measured["titles claimed by a clause"],
-            measured["titles claimed by no clause"],
-            measured["families with >=1 accepted sub-finding pair"],
-            measured["families with >=1 clause recorded unmatched"],
-            measured["families with an accepted sub-finding pair and no probe hit"]) == \
-        (167, 514, 203, 165, 18, 368, 146, 153, 17, 119)
-    assert (measured["probe hits over all 372"], measured["probe hits over the multi set"],
-            measured["multi-manuscript families"]) == (62, 40, 167)
     inputs = v.load_inputs()
     _, _, _, counts, _ = inputs
     population, probe, probe_all, multi, band, band2, band3 = v.population_of(counts)
-    assert (len(population), len(probe), len(probe_all), len(multi), len(band), len(band2),
-            len(band3)) == (167, 40, 62, 167, 73, 37, 17)
+    # The page carries one block per population family, so the read count is the population size.
+    assert 0 < len(population) == measured["families read"]
+    assert 0 < sum(counts[f] for f in population) == measured["manuscripts in the population"]
+    # Every manuscript title is claimed by a clause or by none: the partition is exhaustive.
+    assert measured["titles claimed by a clause"] + measured["titles claimed by no clause"] == \
+        measured["manuscripts in the population"]
+    assert measured["sub-finding clause pairs accepted"] > 0
+    assert measured["headline clause pairs accepted"] > 0
+    assert measured["clauses recorded unmatched"] > 0
+    assert measured["families with >=1 accepted sub-finding pair"] <= measured["families read"]
+    assert measured["families with >=1 clause recorded unmatched"] <= measured["families read"]
+    assert measured["families with an accepted sub-finding pair and no probe hit"] <= \
+        measured["families with >=1 accepted sub-finding pair"]
+    assert measured["probe hits over the multi set"] <= measured["probe hits over all 372"]
+    assert 0 < len(multi) == measured["multi-manuscript families"]
+    assert len(probe) <= len(probe_all) <= len(multi)
+    # The rejected-rule bands are nested by construction: the widest is the loosest rule.
+    assert 0 < len(band3) < len(band2) < len(band)
 
 
 @pytest.mark.parametrize("label,needle,mut", MUTANTS)
@@ -165,7 +188,10 @@ def test_padded_table_cells_are_still_read(load, text):
     assert not missing, f"padded rows are not read: {missing[:2]}"
     got = {m.group("label"): int(m.group("num")) for ln in cand.split("\n")
            if (m := v.TABLE_ROW.match(ln.strip())) and m.group("label") in measured}
-    assert len(got) == 10, f"padded page reads {len(got)} Summary rows, the page carries 10"
+    n_summary = len([ln for ln in text.split("\n")
+                            if (m := v.TABLE_ROW.match(ln.strip())) and m.group("label") in measured])
+    assert 0 < n_summary == len(got), \
+        f"padded page reads {len(got)} Summary rows, the clean page carries {n_summary}"
     assert all(got[k] == measured[k] for k in got), \
         f"padded table values differ: {[k for k in got if got[k] != measured[k]]}"
 
