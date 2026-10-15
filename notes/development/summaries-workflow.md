@@ -5,29 +5,34 @@ so it states what to do and what not to re-derive. The method (page format, cita
 measured quotation traps) lives in `.qwen/skills/auto-skill-family-summary-citation-verified/` —
 `references/quotation-traps.md` carries the 21 shipped pages' defects.
 
-## Current state (rewritten at every batch boundary, 2026-10-12)
+## Current state (rewritten at every batch boundary, 2026-10-14)
 
-- **All 21 pages are green.** `math-n5d.1` (P1, sweep the current pages to the post-merge sources)
-  closed 2026-10-09 at `bb4e81799`. `verify_summaries.py` over all 21 pages: **3,635 marker
-  positions, 925 quoted spans, 0 problems**; `check_summary_manuscripts.py`: **21 pages, 0 with an
-  off-family manuscript, 57 manuscript dirs named, 0 unnamed-on-catalog, 0 named-by-another-family**,
-  749 preprint dirs on disk, 719 named by `overview.tex`, 30 on disk and unnamed, 0 named and absent.
-- **Pages done (24):** 001, 002, 004, 006, 007, 010, 011, 014, 016, 017, 018, 019, 032, 087, 101,
-  102, 159, 197, 221, 226, 271, 287, 332, 362. The ledger's `summary` column is 1 for those; the
-  generator reports "summary pages 24 of 372 families, 60 manuscripts behind them".
-- **Next batch:** `math-ckd.3` — tier B, the 78 remaining T0 families with `resolves_named = 1`
-  (118 manuscripts, re-measured from the current ledger 2026-10-12). `bd update math-ckd.3 --claim`,
-  then steps 1–10 per page. Check `bd ready` first: summaries are P4 and any ready P1/P2 outranks
-  this batch. `math-ckd.6` (the `notes/summaries/README.md` index page) is the cheapest single item.
-- **Last gate run (2026-10-12):** `bash notes/scripts/gate_driver.sh` — **rows 78, failures 0**, wall
-  1 min 25 s. Reconciliations: 372 families, 719 manuscripts, **173** formalized (`formalized (yaml)`),
-  242 scope notes, 416 challenges, 200 `main_results` over 189 configs, both `overview.tex` ↔
-  `CONTENTS.md` cross-checks 0. `verify_cache_promotion.py`: `writers 14 + non-cached 1 probed targets
-  15 problems 0`. Lint trio (`notes/scripts/lint_scripts.sh`) exits 0.
-- **Push state:** `origin/notes` at `651b373c2`, pushed 2026-10-12. Nothing unpushed.
-- **Queue check (2026-10-12):** `bd ready` lists **11** issues, no P1. P2: `math-8su` (mypy
-  strict-probe backlog), `math-faz.3` + epic `math-faz` (moving the development pages), `math-el4.9` +
-  epic `math-el4`, `math-u41`. P4: `math-ckd.5`, `math-ckd.6`, `math-ckd.3`, `math-ckd.4`, `math-ckd`.
+- **All 31 pages are green.** `verify_summaries.py` over the 32 files in `notes/summaries/`:
+  **4,658 marker positions, 1,303 quoted spans, 0 problems**; `check_summary_manuscripts.py`:
+  **32 pages, 0 with an off-family manuscript, 69 manuscript dirs named, 0 unnamed-on-catalog,
+  0 named-by-another-family**; 749 preprint dirs on disk, 719 named by `overview.tex`, 30 on disk
+  and unnamed, 0 named and absent. `test_summaries.py`: **11 tests pass**.
+- **Pages done (31):** 001, 002, 004, 006, 007, 010, 011, 014, 016, 017, 018, 019, 032, 087, 101,
+  102, 109, 136, 147, 159, 197, 221, 226, 258, 259, 271, 287, 332, 334, 342, 362. The ledger's
+  `summary` column is 1 for those; the generator reports "summary pages 31 of 372 families, 69
+  manuscripts behind them". By discipline: Number theory 12, theoretical computer science 3, convex
+  and metric geometry 2, probability and statistical mechanics 2, group theory 2, differential
+  geometry 2, and one each in algebraic and complex geometry, dynamical systems and ergodic theory,
+  combinatorics, algebra, mathematical physics, operator algebras, functional analysis, and partial
+  differential equations.
+- **Next batch:** `math-ckd.4` is claimed and in progress — tier C group 1. The differential-geometry
+  families with `summary = 0`, sorted by `paps`: 344, 345, 346, 347, 348, 349, 351, 352, 353, 354,
+  355, 356, 357, 358, 359, 360, 361, 350. Steps 1–10 per page. Check `bd ready` first: summaries are
+  P4 and any ready P1/P2 outranks this batch.
+- **Last gate run (2026-10-14):** `bash notes/scripts/gate_driver.sh` — **rows 79, failures 0**, head
+  diff 0 bytes. Reconciliations: 372 families, 719 manuscripts, **173** formalized (`formalized
+  (yaml)`), 242 scope notes, 416 challenges, 200 `main_results` over 189 configs, both
+  `overview.tex` ↔ `CONTENTS.md` cross-checks 0. `verify_cache_promotion.py`: **writers 15 +
+  non-cached 1, probed targets 16, problems 0**. Lint trio (`notes/scripts/lint_scripts.sh`) exits 0.
+- **Push state:** `origin/notes` at `b970add53`, pushed 2026-10-14. Nothing unpushed.
+- **Queue check (2026-10-14):** `bd ready` lists **3** issues: `math-4nn` (the epic, open through
+  `.2`, whose prettier decision is the user's), `math-ckd.5`, and `math-ckd`. `math-ckd.4` is
+  claimed and in progress, so it is not in the ready list.
 
 ## Loop shape
 
@@ -1495,3 +1500,28 @@ deliberately.
   characterization inside the corollary's proof, and a stub that restates the theorem with its own
   definitions and ends in `sorry`. The checker caught all six. Re-read with `read_file` before quoting;
   the checker's `NOT VERBATIM` line is the authority, not a preview.
+- **A Sources-table File cell must be the full repo-relative path in backticks.** Chosen 2026-10-14
+  on `math-ckd.4`: the family 334 page's S3 cell was `[`README.md`](../../../preprints/<slug>/README.md)`,
+  and `catlib/summaries.py`'s `CELL` takes the **first backticked span**, so the path the checker
+  resolves is `README.md` — which exists under both the declared manuscript root and the repo root.
+  Pass B counts a cell that resolves under both roots ambiguous, and pass E then applies the
+  `README.md` block rule (the `| NNN |` row rule) to the manuscript README, which has no such rows,
+  so every line citation into S3 was reported outside the family's block. The convention the green
+  pages already use is the full path in the cell. Revisit if the checker ever reads the href.
+- **A blurb quotation is the whole CONTENTS.md line, in the source's own glyph form.** Measured the
+  same day: the first draft quoted the blurb from "Constructs" onward, then added a closing `**` at
+  the end. `strip_markup` removes a `**…**` span **with its content**, so a bold span that covers the
+  whole quotation folds to the empty string. The source closes the bold after the title, and its body
+  writes `ℝ<sup>3</sup>` (Unicode), not `$\mathbb R^3$` — the LaTeX form folds to `$ R^3$` and does
+  not match. Write the line verbatim, with the superscript as the source carries it.
+- **The comparator JSON carries no tier, no paper title, and no file list.** The first draft of the
+  334 page invented `name`, `tier`, `domain`, `paper`, `source`, `challenge`, `proof`,
+  `comparator_config`, and `comparator_lean` keys. The real keys are `challenge_module`,
+  `solution_module`, `theorem_names`, `definition_names`, `permitted_axioms`, and `enable_nanoda`.
+  The tier is a ledger and `main_results` fact, not a JSON field. The checker caught it as
+  `NOT VERBATIM`; the rule that caught it is the same one that catches a fabricated quotation.
+- **A partial read does not satisfy the edit tool's prior-read gate on a file created by `write_file`
+  in the same session.** Measured 2026-10-14: four `read_file` calls with `offset`/`limit` covering
+  the target line were each rejected, and a full-file read satisfied the gate. For the census page,
+  where the full read is truncated, the exact-string python replacement was used. Revisit if the gate
+  starts accepting partial reads.
