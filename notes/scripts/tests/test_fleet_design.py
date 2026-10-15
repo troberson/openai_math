@@ -148,7 +148,7 @@ MUTANTS = [
                          "`render_reports.py:2043` `notes/development/fleet-design.md:9999`", 1)),
     ("prose count in the size argument",
      lambda c, mod, p: f"count phrase not in the page: **{p['tsv_bytes']:,}** bytes",
-     lambda t: t.replace("**2,355,362** bytes", "**2,233,627** bytes", 1)),
+     lambda t: t.replace("**2,362,982** bytes", "**2,233,627** bytes", 1)),
     # The TSV count is measured from the fleet's own tree, but the L2 row that carries it is literal
     # template text, not a slot, so the count pass never reads it: the needle is the page line the
     # render diff names. The tree carries 25 TSVs since `math-faz.6` moved the 16 generated tables
@@ -162,7 +162,7 @@ MUTANTS = [
     ("probe record count understated",
      lambda c, mod, p: (f"count phrase not in the page: The tracked records are "
                         f"**{p['probe_records']}**:"),
-     lambda t: t.replace("The tracked records are **24**:", "The tracked records are **15**:", 1)),
+     lambda t: t.replace("The tracked records are **25**:", "The tracked records are **15**:", 1)),
     ("writer-row count in the gate paragraph",
      lambda c, mod, p: (f"count phrase not in the page: the **{p['writer_rows']}** writers "
                         "declare what they write"),

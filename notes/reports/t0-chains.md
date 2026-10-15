@@ -9,7 +9,7 @@ the remaining 93 families` heading through the line before `## What the triage s
 
 Repo-wide there are **96** families with exactly 2 manuscripts, split `T0:35`, `T2:20`, `T3:41`. Of the
 **35** at T0, **8** were read in the first pass (004, 006, 018, 019, 029, 046, 059, 209), so **27**
-remain. The bead's "no coverage signal" framing holds for **24** of the 27 and fails for **3**: 147 carries a summary page; 258 carries a summary page; 268 carries a verification bundle.
+remain. The bead's "no coverage signal" framing holds for **23** of the 27 and fails for **4**: 147 carries a summary page; 258 carries a summary page; 268 carries a verification bundle; 346 carries a summary page.
 
 Regenerate with `python3 notes/scripts/extract_t0_chains.py` — report-only, it writes nothing and runs
 nothing; `lake`, `lean`, `lake exe cache get`, and `comparator` are never invoked here, so nothing on
@@ -160,7 +160,7 @@ line in `overview.tex`.
 | 364 | PDE | bound, density, uniform | 2 | 0 | 0 | `overview.tex:828` |
 | 368 | PDE | resolution, bound, uniform | 2 | 2 | 1 | `overview.tex:837` |
 
-All 27 are T0, all 54 manuscripts carry `formalized = 0`, and 24 of 27 carry no coverage signal at all.
+All 27 are T0, all 54 manuscripts carry `formalized = 0`, and 23 of 27 carry no coverage signal at all.
 
 ## The 27 families
 
@@ -511,7 +511,7 @@ the two manuscripts share no bibliography edge.
 ## The 268 exception to "no coverage signal"
 
 The bead describes the 27 as "the group with two manuscripts and no coverage signal". That is true of
-**24**; 268 carries `verification = 2`. Both of its manuscripts ship a `verification/` directory:
+**23**; 268 carries `verification = 2`. Both of its manuscripts ship a `verification/` directory:
 `preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/verification/` and
 `preprints/A-boundary-field-gap-for-the-spin-one-Heisenberg-chain-September-24-2026/verification/`.
 The second carries a README, two Python checkers, and four JSON result files.

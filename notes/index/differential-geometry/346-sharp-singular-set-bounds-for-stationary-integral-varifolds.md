@@ -13,7 +13,7 @@
 | Claim shapes | bound, partial |
 | Topics | [partial-differential-equations](../topics/partial-differential-equations.md) · [fractal-geometry](../topics/fractal-geometry.md) · [geometric-measure-theory](../topics/geometric-measure-theory.md) · [minimal-surfaces](../topics/minimal-surfaces.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [346-sharp-singular-set-bounds-for-stationary-integral-varifolds.md](../../../notes/summaries/differential-geometry/346-sharp-singular-set-bounds-for-stationary-integral-varifolds.md) |
 
 ## Manuscripts
 
