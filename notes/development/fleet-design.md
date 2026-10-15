@@ -174,9 +174,11 @@ page landed, which names that page and the 27 quote specs it seeds) and
 `notes/development/probe/2026-10-14_seed_quotes_347.txt` (the `seed_quotes.py` run after the family 347
 page landed, which names that page and the 34 quote specs it seeds) and
 `notes/development/probe/2026-10-14_seed_quotes_348.txt` (the `seed_quotes.py` run after the family
-348 page landed, which names that page and the 26 quote specs it seeds).
+348 page landed, which names that page and the 26 quote specs it seeds) and
+`notes/development/probe/2026-10-14_seed_quotes_349.txt` (the `seed_quotes.py` run after the family
+349 page landed, which names that page and the 17 quote specs it seeds).
 `verify_fleet_design.py` parses the two 2026-10-11 records; `verify_cache_promotion.py` reads all
-twenty records for its L1 exactness pass; the
+twenty-one records for its L1 exactness pass; the
 2026-10-10 pair is the **before** state the amplification table's deltas are measured against.
 
 | script | write modes | generated reads, and whether any points backwards |
