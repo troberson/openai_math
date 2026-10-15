@@ -7,30 +7,31 @@ measured quotation traps) lives in `.qwen/skills/auto-skill-family-summary-citat
 
 ## Current state (rewritten at every batch boundary, 2026-10-14)
 
-- **All 33 pages are green.** `verify_summaries.py` over the 34 files in `notes/summaries/`:
-  **4,886 marker positions, 1,357 quoted spans, 0 problems**; `check_summary_manuscripts.py`:
-  **34 pages, 0 with an off-family manuscript, 71 manuscript dirs named, 0 unnamed-on-catalog,
+- **All 34 pages are green.** `verify_summaries.py` over the 35 files in `notes/summaries/`:
+  **4,965 marker positions, 1,380 quoted spans, 0 problems**; `check_summary_manuscripts.py`:
+  **35 pages, 0 with an off-family manuscript, 73 manuscript dirs named, 0 unnamed-on-catalog,
   0 named-by-another-family**; 749 preprint dirs on disk, 719 named by `overview.tex`, 30 on disk
   and unnamed, 0 named and absent. `test_summaries.py`: **11 tests pass**.
-- **Pages done (33):** 001, 002, 004, 006, 007, 010, 011, 014, 016, 017, 018, 019, 032, 087, 101,
-  102, 109, 136, 147, 159, 197, 221, 226, 258, 259, 271, 287, 332, 334, 342, 344, 345, 362. The
-  ledger's `summary` column is 1 for those; the generator reports "summary pages 33 of 372
-  families, 71 manuscripts behind them". By discipline: Number theory 12, theoretical computer
+- **Pages done (34):** 001, 002, 004, 006, 007, 010, 011, 014, 016, 017, 018, 019, 032, 087, 101,
+  102, 109, 136, 147, 159, 197, 221, 226, 258, 259, 271, 287, 332, 334, 342, 344, 345, 346, 362. The
+  ledger's `summary` column is 1 for those; the generator reports "summary pages 34 of 372
+  families, 73 manuscripts behind them". By discipline: Number theory 12, theoretical computer
   science 3, convex and metric geometry 2, probability and statistical mechanics 2, group theory 2,
-  differential geometry 4, and one each in algebraic and complex geometry, dynamical systems and
+  differential geometry 5, and one each in algebraic and complex geometry, dynamical systems and
   ergodic theory, combinatorics, algebra, mathematical physics, operator algebras, functional
   analysis, and partial differential equations.
 - **Next batch:** `math-ckd.4` is claimed and in progress — tier C group 1. The differential-geometry
-  families with `summary = 0`, sorted by `paps`: 346, 347, 348, 349, 351, 352, 353, 354,
+  families with `summary = 0`, sorted by `paps`: 347, 348, 349, 351, 352, 353, 354,
   355, 356, 357, 358, 359, 360, 361, 350. Steps 1–10 per page. Check `bd ready` first: summaries are
   P4 and any ready P1/P2 outranks this batch.
 - **Last gate run (2026-10-14):** `bash notes/scripts/gate_driver.sh` — **rows 79, failures 0**, head
   diff 0 bytes. Reconciliations: 372 families, 719 manuscripts, **173** formalized (`formalized
   (yaml)`), 242 scope notes, 416 challenges, 200 `main_results` over 189 configs, both
   `overview.tex` ↔ `CONTENTS.md` cross-checks 0. `verify_cache_promotion.py`: **writers 15 +
-  non-cached 1, probed targets 17, problems 0**. Lint trio (`notes/scripts/lint_scripts.sh`) exits 0.
-- **Push state:** `origin/notes` at `930b60dc0`, pushed 2026-10-14, with the family 345 page, its
-  count sweep, the census sweep, the re-rendered report pages and the link census on top, unpushed.
+  non-cached 1, probed targets 18, problems 0**. `check_index_links.py`: **1,033 pages, 66,120
+  links, 0 broken**. Lint trio (`notes/scripts/lint_scripts.sh`) exits 0.
+- **Push state:** `origin/notes` at `0d598102d`, pushed 2026-10-14, with the family 346 page, its
+  count sweep, the rebuilt fleet template, the retargeted fleet needle and the link census on top.
 - **Queue check (2026-10-14):** `bd ready` lists **3** issues: `math-4nn` (the epic, open through
   `.2`, whose prettier decision is the user's), `math-ckd.5`, and `math-ckd`. `math-ckd.4` is
   claimed and in progress, so it is not in the ready list.
@@ -1569,3 +1570,19 @@ deliberately.
   reported **29 checker problems** and was deleted before it was committed. **The checker's
   `line says` column is the only trustworthy copy of a quoted region.** Write the quote from what
   the checker reports, not from any read output.
+
+- **A citation window must cover its quote exactly and must not open on a blank line.** Measured
+  2026-10-14 on family 346: `verify_summaries.py` compares a quote with the **joined** lines of the
+  window it cites, so a quote that ends mid-line fails, and a window whose first line is blank is
+  reported as a problem. Three citations moved for this: the opening quote needed `S11:3–7` (the
+  sentence continues onto line 7), the Simon paragraph needed `S11:65–70` (its last line ends
+  "…in Conjecture~1.3:"), and the sharpness quote needed `S6:40–45` because line 39 is blank. The
+  checker's `BLANK S6:39` line is a problem, not a note.
+- **A citation that names two sources is checked against one.** A quote carried
+  `[S6:3–8] [S11:3–6]` and failed `NOT VERBATIM` because the text belongs to one file. Cite the
+  file the quote is from; put the other source in the prose, not in the same bracket.
+- **Tier and claim-shape claims come from the live ledger, not from a snapshot.** The ledger row I
+  read at the start of the batch said family 346 was T3 with shapes `resolution` and
+  `resolves_named` 1. The regenerated row says **T0**, shapes `bound|partial`, `resolves_named` 0.
+  The page's header and its "Inside the release" paragraph were corrected to the live row before the
+  commit. Quote a tier from `notes/tables/catalog.tsv` as it reads after `build_catalog.py` runs.
