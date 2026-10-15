@@ -2612,10 +2612,6 @@ WORKFLOW_MD = DEV_DIR / "summaries-workflow.md"
 WORKFLOW_TOTAL = re.compile(r"TOTAL (\d+) page\(s\): (\d+) marker positions, (\d+) quoted spans, (\d+) problems")
 WORKFLOW_MS = re.compile(r"pages (\d+)  pages with an off-family manuscript (\d+)  manuscript dirs named (\d+)"
                          r"  unnamed-on-catalog (\d+)  named-by-another-family (\d+)")
-WORKFLOW_DIRS = re.compile(r"preprint dirs on disk (\d+)  distinct dirs named by overview.tex (\d+)"
-                           r"  on disk and unnamed (\d+)  named and absent (\d+)")
-
-
 def workflow_population() -> dict[str, Any]:
     """Every live count on notes/development/summaries-workflow.md.
 
@@ -2632,7 +2628,6 @@ def workflow_population() -> dict[str, Any]:
     """
     total = WORKFLOW_TOTAL.search(child_out("verify_summaries")).groups()
     ms = WORKFLOW_MS.search(child_out("check_summary_manuscripts")).groups()
-    dirs = WORKFLOW_DIRS.search(child_out("check_summary_manuscripts")).groups()
     rows = population_of("README")["rows"]
     pages = [q for q in sorted(SUM_DIR.rglob("*.md")) if q.name != "README.md"]
     fams = sorted(q.name.split("-")[0] for q in pages)

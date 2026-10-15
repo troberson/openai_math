@@ -66,8 +66,6 @@ from catlib.promote import (
 # the 16 generated tables moved out of `notes/index/` into `notes/tables/`, so the index tree these two
 # writers read is 1,033 pages, not 1,049 files, and the older records for those targets name the 16 TSVs
 # under the path the writers no longer open.
-PROBES = PROBES
-
 README = ROOT / "notes" / "scripts" / "README.md"
 CACHE = ROOT / ".qwen" / "cache" / "records"
 
