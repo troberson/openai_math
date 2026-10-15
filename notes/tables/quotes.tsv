@@ -1287,6 +1287,16 @@ notes/summaries/functional-analysis/332-metric-markov-cotype-two-for-l1.md	332	1
 notes/summaries/functional-analysis/332-metric-markov-cotype-two-for-l1.md	332	16	inline	preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/build/main.tex	122	124	need not belong	uses this freedom.	raw
 notes/summaries/functional-analysis/332-metric-markov-cotype-two-for-l1.md	332	17	inline	preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/build/main.tex	147	148	metric cotype and	are different invariants.	raw
 notes/summaries/functional-analysis/332-metric-markov-cotype-two-for-l1.md	332	18	inline	README.md	24	24	We are also	the following results:	raw
+notes/summaries/group-theory/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md	254	1	block	overview.tex	595	595	The Salvetti complex	group is aspherical	raw
+notes/summaries/group-theory/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md	254	2	block	overview.tex	595	595	Artin $K(\pi,1)$		raw
+notes/summaries/group-theory/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md	254	3	inline	preprints/Harmonic-heights-and-the-Artin-K-pi-1-conjecture-September-23-2026/build/main.tex	47	48	We prove that	generators is aspherical.	raw
+notes/summaries/group-theory/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md	254	4	inline	preprints/An-Artin-group-with-no-geometric-CAT-0-action-September-23-2026/build/main.tex	9	10	We construct an	proper CAT(0) space.	raw
+notes/summaries/group-theory/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md	254	5	inline	preprints/Parabolic-intersections-in-Artin-groups-September-23-2026/build/paper.tex	52	53	We prove that	labels, is parabolic.	raw
+notes/summaries/group-theory/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md	254	6	inline	lean/docs/254.md	13	13	to every Coxeter	empty and disconnected	raw
+notes/summaries/group-theory/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md	254	7	inline	lean/docs/254.md	17	17	It admits no	in any dimension.	raw
+notes/summaries/group-theory/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md	254	8	inline	lean/docs/254.md	13	13	to every Coxeter	empty and disconnected	raw
+notes/summaries/group-theory/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md	254	9	inline	lean/docs/254.md	17	17	It admits no	in any dimension.	raw
+notes/summaries/group-theory/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md	254	10	inline	lean/docs/254.md	19	19	The formalization proves	of a finite	raw
 notes/summaries/group-theory/258-gerstens-conjecture-for-one-relator-groups.md	258	1	block	CONTENTS.md	6349	6349	Proves Gersten's conjecture:	virtually compact special.	raw
 notes/summaries/group-theory/258-gerstens-conjecture-for-one-relator-groups.md	258	2	block	CONTENTS.md	6358	6358	We prove Gersten's	for nonzero integers	raw
 notes/summaries/group-theory/258-gerstens-conjecture-for-one-relator-groups.md	258	3	block	CONTENTS.md	6367	6367	We prove that	have infinite rank.	raw
