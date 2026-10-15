@@ -254,10 +254,11 @@ PROBES = (
 
 
 RUN_ARGS: dict[str, Callable[[], tuple[str, ...]]] = {
-    # The workflow page renders the fork's head and the ready-queue length, both read through a
-    # subprocess the `open` audit event never sees and no tree digest covers. Putting them in the
-    # key makes a push, or a bead close, invalidate the record the way a file change does.
-    "render_reports.py": lambda: (git_short("origin/notes"), str(bd_ready_count())),
+    # The workflow page renders the ready-queue length, read through a subprocess the `open`
+    # audit event never sees and no tree digest covers, so a bead close invalidates the record the
+    # way a file change does. The fork head is not read: the page records it as a dated literal,
+    # because the commit that lands a measured head moves the head the next measurement names.
+    "render_reports.py": lambda: (str(bd_ready_count()),)
 }
 
 

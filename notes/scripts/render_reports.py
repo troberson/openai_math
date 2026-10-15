@@ -2663,7 +2663,6 @@ def workflow_population() -> dict[str, Any]:
         "notes": sum(int(r["scope_note"]) for r in rows), "chal": sum(int(r["chal"]) for r in rows),
         "entries": len(entries), "configs": len({e["config"] for e in entries}),
         "writers": len(ARTIFACTS), "non_cached": len(NON_CACHED), "targets": len(targets),
-        "sha": fleet_sh("git", "rev-parse", "--short", "origin/notes").strip(),
         "ready": bd_ready_count(),
     }
 
@@ -2699,7 +2698,6 @@ def workflow_phrases(p: dict[str, Any]) -> dict[str, str]:
         "cache": (f"**writers {p['writers']} + non-cached {p['non_cached']}, probed targets "
                   f"{p['targets']}, problems 0**"),
         "idx": f"**{p['idx_pages']:,} pages, {p['idx_links']:,} links, {p['idx_broken']} broken**",
-        "push_sha": f"`{p['sha']}`",
         "queue": f"**{p['ready']}** issues",
     }
     return out
