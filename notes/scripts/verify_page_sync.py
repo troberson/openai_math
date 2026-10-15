@@ -25,6 +25,7 @@ reports, so the gate carries one row. The check stays independent — the render
 run in this process, not bytes read from the writer's cache.
 """
 
+import re
 import sys
 
 from catlib import render as RD
@@ -32,6 +33,23 @@ from catlib.paths import ROOT
 
 # (page, needle, replacement). Each needle is prose the page carries verbatim, not a count phrase:
 # a count is re-derived by the page's own count pass, so mutating one proves that pass, not this.
+def _count(pattern: str):
+    """Return the needle/repl pair the page's own count phrase carries.
+
+    The count is a writer slot, so it moves when a summary page lands. Deriving the needle from the
+    page at run time keeps the mutant live; a needle that recorded the count as committed reports the
+    needle absent, which is the inert-mutant finding, not a pass.
+    """
+    def build(text: str) -> tuple[str, str] | None:
+        m = re.search(pattern, text)
+        if m is None:
+            return None
+        n = int(m.group(1))
+        repl = pattern.replace(r"\d+", str(n + 1))
+        return m.group(0), repl
+    return build
+
+
 PAGES = [
     (ROOT / "notes" / "reports" / "links.md",
      "A directory walk would count a superseded edition's bibliography a second time.",
@@ -49,16 +67,33 @@ PAGES = [
      "demonstrated rather than recorded.",
      "demonstrated rather than written down."),
     # The summary-page counts are writer slots, so the render diff is the pass that proves them: a page
-    # that carries a hand-written family count is not the writer's measurement.
+    # that carries a hand-written family count is not the writer's measurement. The needle is derived
+    # from the page's own count, because the slot moves whenever a summary page lands — a needle that
+    # recorded the count as committed is inert the moment the count moves.
     (ROOT / "notes" / "reports" / "findings.md",
-     "**39** of 372 families have a summary page",
-     "**40** of 372 families have a summary page"),
-    # The workflow page's live counts are writer slots, so the render diff is the pass that proves
-    # them: a page whose Pages-done count is hand-written is not the writer's measurement.
+     _count(r"\*\*(\d+)\*\* of 372 families have a summary page"),
+     None),
     (ROOT / "notes" / "development" / "summaries-workflow.md",
-     "**Pages done (39):**",
-     "**Pages done (40):**"),
+     _count(r"\*\*Pages done \((\d+)\):\*\*"),
+     None),
 ]
+
+
+def _count(pattern: str):
+    """Return the needle/repl pair the page's own count phrase carries.
+
+    The count is a writer slot, so it moves when a summary page lands. Deriving the needle from the
+    page at run time keeps the mutant live; a needle that recorded the count as committed reports the
+    needle absent, which is the inert-mutant finding, not a pass.
+    """
+    def build(text: str) -> tuple[str, str] | None:
+        m = re.search(pattern, text)
+        if m is None:
+            return None
+        n = int(m.group(1))
+        repl = pattern.replace(r"\d+", str(n + 1))
+        return m.group(0), repl
+    return build
 
 
 def check() -> list[str]:
@@ -77,6 +112,12 @@ def mutant_problems() -> tuple[int, int, list[str]]:
     problems: list[str] = []
     for page, needle, repl in PAGES:
         text = page.read_text(encoding="utf-8")
+        if callable(needle):
+            pair = needle(text)
+            if pair is None:
+                problems.append(f"{page.name}: count phrase absent — the mutant is inert")
+                continue
+            needle, repl = pair
         if needle not in text:
             problems.append(f"{page.name}: needle {needle!r} absent — the mutant is inert")
             continue
