@@ -35,9 +35,10 @@ measured quotation traps) lives in `.qwen/skills/auto-skill-family-summary-citat
   index-design, script-ownership and fleet tests, the links sweep, the render, and the index link
   count on top. The gate run reported **79 rows, 0 failures** with a **0-byte** head diff, the
   cache-promotion checker reported **0 problems** at the pushed HEAD, and the linters exit 0.
-- **Queue check (2026-10-14):** `bd ready` lists **3** issues: `math-4nn` (the epic, open through
-  `.2`, whose prettier decision is the user's), `math-ckd.5`, and `math-ckd`. `math-ckd.4` is
-  claimed and in progress, so it is not in the ready list.
+- **Queue check (2026-10-15):** `bd ready` lists **4** issues: `math-4nn.9`, `math-4nn`,
+  `math-ckd.5`, and `math-ckd`. `math-ckd.4` is claimed and in progress, so it is not in the ready
+  list. Bead `.2`'s prettier decision is resolved: prettier is dropped from the repo, so the
+  formatable set is gone.
 
 ## Loop shape
 
@@ -1488,6 +1489,30 @@ rewriting a closed bead's record is not a sweep, so they are left as written. Th
 Not checked: the pages the bead still has to write (the group is 132 families; 30 pages exist across
 all tiers, 1 in differential geometry); the closed beads' historical `--mutant` wording, left
 deliberately.
+
+## 2026-10-15 — prettier is dropped, and the format boundary goes with it
+
+The user's decision, verbatim: "let's just drop any pretense of supporting prettier." The measured case
+for it: `prettier --check "notes/**/*.md"` reported **2** pages as needing a rewrite, so the formatable
+set was a failing check, not a guarantee. Formatting `notes/development/summaries-workflow.md` damages
+content, not layout — prettier rewrites escaped backticks inside inline code spans, so the regexes the
+page quotes lose their `*` and their spaces (`\s*` reads `\s_`), and it deletes the spaces around code
+spans. Formatting `notes/reports/conjecture-standing.md` is clean (3 changes: two `*x*` → `_x_`, one
+padded table), and no checker parses either page, so formatting them needed no checker change at all.
+
+Removed: `.prettierrc`, `.prettierignore`, `package.json`, `package-lock.json` — all four existed only
+for prettier — the gitignore comment naming the install, `verify_script_ownership.py` pass I with its
+gitignore matcher and its checker-page and test-page enumerations, its two tests, the census page's two
+prettier paragraphs, and the AGENTS.md pass-I paragraph. The three padding tests stay: they prove the
+tolerant row regexes accept padded cells and the byte-exact readers drop them, which is a property of
+the checker, not of a formatter; their ignore-rule assertions go.
+
+Counts after: ownership **18** injected faults and **20** tests, all passing; gate **79 rows, 0
+failures** with a **0-byte** head diff; lint 0/0/0.
+
+Not checked: the project skill `auto-skill-format-machine-verified-markdown` is kept as the method
+record for deciding formatter scope, and it still names prettier; the bead store's prettier entries are
+append-only history, left deliberately.
 
 - **The seeder's L1 is a tree, so a new page is probe drift the old record cannot name.** Chosen
   2026-10-14 on `math-ckd.4`: the family 342 page landed, `catlib/promote.py` names
