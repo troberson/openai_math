@@ -6,7 +6,7 @@ measured quotation traps) lives in `.qwen/skills/auto-skill-family-summary-citat
 `references/quotation-traps.md` carries the 39 shipped pages' defects, the last section being the
 2026-10-14 batch.
 
-## Current state (rewritten at every batch boundary, 2026-10-14)
+## Current state (rewritten at every batch boundary, 2026-10-15)
 
 - **All 39 pages are green.** `verify_summaries.py` over the 40 files in `notes/summaries/`:
   **5,638 marker positions, 1,511 quoted spans, 0 problems**; `check_summary_manuscripts.py`:
@@ -31,11 +31,11 @@ measured quotation traps) lives in `.qwen/skills/auto-skill-family-summary-citat
   `overview.tex` ↔ `CONTENTS.md` cross-checks 0. `verify_cache_promotion.py`: **writers 15 +
   non-cached 1, probed targets 16, problems 0**. `check_index_links.py`: **1,033 pages, 66,125
   links, 0 broken**. Lint trio (`notes/scripts/lint_scripts.sh`) exits 0.
-- **Push state:** `origin/notes` at `4c8ede817`, pushed 2026-10-15, through the family 352 batch —
-  the family 351 and 352 pages, their count sweeps, the retargeted needles in the quotes,
-  index-design, script-ownership and fleet tests, the links sweep, the render, and the index link
-  count on top. The gate run reported **79 rows, 0 failures** with a **0-byte** head diff, the
-  cache-promotion checker reported **0 problems** at the pushed HEAD, and the linters exit 0.
+- **Push state:** `origin/notes` at `6362df244`, pushed 2026-10-15 — prettier dropped from the repo
+  (config, manifest, lock, the format-boundary pass and its two tests, the padding-test rewording, the
+  docs sweep), the `QUOTE` lookbehind with its accent test, the two skill updates, and this page cut.
+  The gate run reported **79 rows, 0 failures** with a **0-byte** head diff,
+  `verify_cache_promotion.py` reported **0 problems** at the pushed HEAD, and the linters exit 0.
 - **Queue check (2026-10-15):** `bd ready` lists **4** issues: `math-4nn.9`, `math-4nn`,
   `math-ckd.5`, and `math-ckd`. `math-ckd.4` is claimed and in progress, so it is not in the ready
   list. Bead `.2`'s prettier decision is resolved: prettier is dropped from the repo, so the
