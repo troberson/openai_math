@@ -131,8 +131,8 @@ def pad_cells(t):
 def test_padded_table_cells_are_dropped(mod, p, pages):
     """The opposite direction from the padding-tolerant checkers: `check_tables` (`:468`, `:494`)
     matches rows with byte-exact single-space regexes, so padding must drop every row, not be
-    tolerated. The page is prettier-ignored, so the padding never reaches the tracked tree — the test
-    asserts the contract, not a formatter's behaviour."""
+    tolerated. The tree is not formatted, so a padded cell can only arrive by hand; the test asserts
+    the checker's byte-form contract."""
     cand = pad_cells(pages[mod.PAGE_301])
     assert cand != pages[mod.PAGE_301], "padding changed nothing"
     found: list = []
@@ -141,9 +141,6 @@ def test_padded_table_cells_are_dropped(mod, p, pages):
         f"padding did not drop the fixes rows: {found[:2]}"
     assert any("configs in the table []" in x for x in found), \
         f"padding did not drop the config rows: {found[:2]}"
-    ignore = mod.read_text(mod.ROOT / ".prettierignore").splitlines()
-    assert "notes/development/upstream_history/*.md" in ignore, \
-        "the upstream-history pages are not prettier-ignored, so a format pass would pad them"
 
 
 def start_only(a, n):
