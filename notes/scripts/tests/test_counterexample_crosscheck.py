@@ -56,14 +56,82 @@ The checker measures; this file injects. Run:
 """
 import re
 
-from catlib import anchors, yaml as Y
-
 import measure_names as M
 import pytest
+from catlib import anchors
+from catlib import yaml as Y
 
 pytestmark = pytest.mark.mutant
 
+def row_line(t, key, needle=""):
+    """The table row whose first cell is `key`, and whose text carries `needle` when one is given —
+    the same family appears in the summary table and in the gap tables, so the cell alone is not
+    enough to pick the row the mutation touches."""
+    line = next((l for l in t.split("\n")
+                 if l.startswith("|") and l.split("|")[1].strip() == key and needle in l), None)
+    assert line, f"row {key!r} with {needle!r} absent from the page"
+    return line
+
+
+def t3_first(v):
+    return next(f for f in v["pop"] if v["per"][f]["tier"] == "T3")
+
+
+def t3_widest(v):
+    return max((f for f in v["pop"] if v["per"][f]["tier"] == "T3"),
+               key=lambda f: len(v["per"][f]["configs"]))
+
+
+def t2_first(v):
+    return next(f for f in v["pop"] if v["per"][f]["tier"] == "T2")
+
+
+def bump(t, pat, delta):
+    """Change the page's own count at `pat` by `delta`, keeping its comma formatting."""
+    m = re.search(pat, t)
+    assert m, f"{pat!r} not in the page"
+    raw = m.group(1)
+    n = int(raw.replace(",", ""))
+    new = f"{n + delta:,}" if "," in raw else str(n + delta)
+    span = m.group(0)
+    return t[:m.start()] + span.replace(raw, new, 1) + t[m.end():]
+
+
+
 ROW = re.compile(r"^\|\s*(\d{3})\s*\|\s*(T\d)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*\|")
+
+
+def _swap_tier(t, fam):
+    line = row_line(t, fam, "|")
+    cells = line.split("|")
+    cells[2] = " T2 " if cells[2].strip() == "T3" else " T3 "
+    return t.replace(line, "|".join(cells), 1)
+
+
+def _row_cells(t, fam, changes):
+    line = row_line(t, fam, "|")
+    cells = line.split("|")
+    for idx, delta in changes:
+        cells[idx] = str(int(cells[idx]) + delta)
+    return t.replace(line, "|".join(cells), 1)
+
+
+def _gap_row_swap(t, cfg, v):
+    """Move a T3 gap row's family to a family that does not carry that config, so the gap table no
+    longer equals the recomputation. Both the row and the target family come from the page and the
+    population, not from a recorded pair."""
+    line = next((l for l in t.split("\n") if l.startswith("|") and f"`{cfg}`" in l), None)
+    assert line, f"gap row for {cfg!r} absent from the page"
+    other = next(f for f in v["pop"] if cfg not in v["per"][f]["gaps"])
+    return t.replace(line, line.replace(f"| {line.split('|')[2].strip()} |", f"| {other} |"), 1)
+
+
+def _t2_config_swap(t, fam, v):
+    """Replace a T2 row's config with one that family does not carry."""
+    line = row_line(t, fam, "lean/docs/")
+    cfgs = v["per"][fam]["gaps"]
+    other = next(c for c in v["mr"] if c not in cfgs)
+    return t.replace(line, line.replace(f"`{cfgs[0]}`", f"`{other}`"), 1)
 
 
 def row_of(c, sub):
@@ -89,11 +157,13 @@ def pad_cells(t):
     the same rows; a regex that required exact spacing would drop rows, and the row-count line is what
     would show it."""
     out = []
-    for ln in t.split("\n"):
-        if ln.startswith("|") and ln.endswith("|"):
-            cells = ln[1:-1].split("|")
-            ln = "|" + "|".join("  " + c.strip() + "  " for c in cells) + "|"
-        out.append(ln)
+    for row in t.split("\n"):
+        if row.startswith("|") and row.endswith("|"):
+            cells = row[1:-1].split("|")
+            padded = "|" + "|".join("  " + c.strip() + "  " for c in cells) + "|"
+        else:
+            padded = row
+        out.append(padded)
     return "\n".join(out)
 
 
@@ -199,51 +269,48 @@ def statement_needle(c, mod, v, sub):
 # Faults in the page's own text, each keyed to the problem string the pass that owns it prints.
 MUTANTS = [
     ("tier swapped in the summary table",
-     lambda c, mod, v: summary_needle(c, mod, v, "047"),
-     lambda t: t.replace("| 047 | T3 | 1 | 1 | 0 |", "| 047 | T2 | 1 | 1 | 0 |", 1)),
+     lambda c, mod, v: summary_needle(c, mod, v, t3_first(v)),
+     lambda t, v: _swap_tier(t, t3_first(v))),
     ("config count moved",
-     lambda c, mod, v: summary_needle(c, mod, v, "172"),
-     lambda t: t.replace("| 172 | T3 | 7 | 2 | 5 |", "| 172 | T3 | 6 | 2 | 4 |", 1)),
+     lambda c, mod, v: summary_needle(c, mod, v, t3_widest(v)),
+     lambda t, v: _row_cells(t, t3_widest(v), [(3, -1), (5, -1)])),
     ("statement anchor shifted",
      lambda c, mod, v: statement_needle(c, mod, v, "lean/OAI/Algebra/AffineCancellation/Main.lean:33"),
-     lambda t: t.replace("`lean/OAI/Algebra/AffineCancellation/Main.lean:32`",
-                         "`lean/OAI/Algebra/AffineCancellation/Main.lean:33`", 1)),
+     lambda t, v: t.replace("`lean/OAI/Algebra/AffineCancellation/Main.lean:32`",
+                            "`lean/OAI/Algebra/AffineCancellation/Main.lean:33`", 1)),
     ("carrier body word",
      lambda c, mod, v: block_needle(c, mod, "ringKrullDim A = 5"),
-     lambda t: t.replace("ringKrullDim A = 4", "ringKrullDim A = 5", 1)),
+     lambda t, v: t.replace("ringKrullDim A = 4", "ringKrullDim A = 5", 1)),
     ("claim quote word",
      lambda c, mod, v: quote_needle(c, mod, "Claim 2 (`overview.tex:170`) — *\"It also disproves the Dolgachev"),
-     lambda t: t.replace("disproving affine-space cancellation", "disproving affine-space duality", 1)),
+     lambda t, v: t.replace("disproving affine-space cancellation", "disproving affine-space duality", 1)),
     ("yaml anchor shifted",
      lambda c, mod, v: block_needle(c, mod, "lean/formalization.yaml:1042"),
-     lambda t: t.replace("`lean/formalization.yaml:1041`", "`lean/formalization.yaml:1042`", 1)),
+     lambda t, v: t.replace("`lean/formalization.yaml:1041`", "`lean/formalization.yaml:1042`", 1)),
     ("gap row family", gap_needle,
-     lambda t: t.replace("| `BalancedRyser` | 162 |", "| `BalancedRyser` | 185 |", 1)),
+     lambda t, v: _gap_row_swap(t, v["t3_gaps"][0], v)),
     ("sorry count moved", "count mismatch (stub sorries)",
-     lambda t: t.replace("carrying **55** `sorry` occurrences",
-                         "carrying **57** `sorry` occurrences", 1)),
+     lambda t, v: bump(t, r"carrying \*\*(\d+)\*\* `sorry` occurrences", 2)),
     ("T2 row deleted", t2_families_needle,
-     lambda t: t.replace("| 151 | `C1EntropyCounterexample` | `lean/docs/151.md:15` |\n", "", 1)),
+     lambda t, v: t.replace(row_line(t, t2_first(v), "lean/docs/") + "\n", "", 1)),
     ("T2 config from another family",
-     lambda c, mod, v: t2_config_needle(c, mod, v, "151"),
-     lambda t: t.replace("`C1EntropyCounterexample` | `lean/docs/151.md:15`",
-                         "`Naimark` | `lean/docs/151.md:15`", 1)),
+     lambda c, mod, v: t2_config_needle(c, mod, v, t2_first(v)),
+     lambda t, v: _t2_config_swap(t, t2_first(v), v)),
     ("carrier paraphrase",
      lambda c, mod, v: block_needle(c, mod, "Nonempty (A ≃ₐ[ℂ] MvPolynomial (Fin 4) ℂ)"),
-     lambda t: t.replace("¬ Nonempty (A ≃ₐ[ℂ] MvPolynomial (Fin 4) ℂ)",
-                         "Nonempty (A ≃ₐ[ℂ] MvPolynomial (Fin 4) ℂ)", 1)),
+     lambda t, v: t.replace("¬ Nonempty (A ≃ₐ[ℂ] MvPolynomial (Fin 4) ℂ)",
+                            "Nonempty (A ≃ₐ[ℂ] MvPolynomial (Fin 4) ℂ)", 1)),
     ("anchor file absent", "anchor file lean/OAI/Geometry/Arnold/Nope.lean does not exist",
-     lambda t: t.replace("`lean/OAI/Geometry/Arnold/Main.lean:14`",
-                         "`lean/OAI/Geometry/Arnold/Nope.lean:14`", 1)),
+     lambda t, v: t.replace("`lean/OAI/Geometry/Arnold/Main.lean:14`",
+                            "`lean/OAI/Geometry/Arnold/Nope.lean:14`", 1)),
     ("quote moved to another family",
      lambda c, mod, v: quote_needle(c, mod, "Claim 2 (`overview.tex:218`) — *\"It also disproves the Dolgachev"),
-     lambda t: t.replace("Claim 2 (`overview.tex:170`) — *\"It also disproves the Dolgachev",
-                         "Claim 2 (`overview.tex:218`) — *\"It also disproves the Dolgachev", 1)),
+     lambda t, v: t.replace("Claim 2 (`overview.tex:170`) — *\"It also disproves the Dolgachev",
+                            "Claim 2 (`overview.tex:218`) — *\"It also disproves the Dolgachev", 1)),
     # Prose no count phrase reads: the formalized-manuscript denominator in the population
     # paragraph. Only the render diff can see it.
     ("prose count", "count mismatch (ledger paps_form/paps)",
-     lambda t: t.replace("formalized manuscripts out of **50**.",
-                         "formalized manuscripts out of **51**.", 1)),
+     lambda t, v: bump(t, r"formalized manuscripts out of \*\*(\d+)\*\*", 1)),
 ]
 
 
@@ -282,7 +349,7 @@ def test_clean_page(mod, text):
 def test_injected_faults(mod, text, label, needle, mut):
     """A fault in each of the check forms, injected in memory. The needle is the problem string the
     pass that owns that form prints, so a pass that fires on something else is not a pass."""
-    cand = mut(text)
+    cand = mut(text, mod.population())
     assert cand != text, f"{label}: mutation changed nothing"
     found, _, _, _, _, v = mod.check(cand)
     want = needle(cand, mod, v) if callable(needle) else needle
