@@ -111,7 +111,7 @@ README naming the command and its success criteria; **18** ship no README [S14].
 
 **The remaining layers are small.** **10** reasoning traces, all attributed to families by `README.md`
 [S15], 0 unattributed, shipping in 11 files (the Mézard–Parisi trace ships as both `.pdf` and `.tex`).
-**54** of 372 families have a summary page, covering **121** manuscripts [S2].
+**55** of 372 families have a summary page, covering **122** manuscripts [S2].
 
 **The counterexample families are the best-evidenced and the thinnest-evidenced at once.** The
 reading population is the counterexample tag intersected with tier ≠ T0: **28** families (19 T3,
