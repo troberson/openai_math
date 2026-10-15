@@ -22,7 +22,7 @@ Prose counts: 29 capitalized occurrences, 27 of them mid-sentence, 0 lowercase. 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
 | [144](../dynamical-systems-and-ergodic-theory/144-banachs-simple-lebesgue-spectrum-problem.md) | Banach's simple Lebesgue-spectrum problem | — | — | — | — | yes | yes |
-| [166](../combinatorics/166-higher-dimensional-erdos-distinct-distances-conjecture.md) | The higher-dimensional Erd\H{o}s distinct-distances conjecture | — | — | — | — | yes | — |
+| [166](../combinatorics/166-higher-dimensional-erdos-distinct-distances-conjecture.md) | The higher-dimensional Erdős distinct-distances conjecture | — | — | — | — | yes | — |
 | [251](../group-theory/251-amenability-unitarizability-and-ulam-stability.md) | Amenability, unitarizability, and Ulam stability | yes | yes | — | — | yes | — |
 | [289](../operator-algebras/289-strong-kadison-kastler-conjecture.md) | The strong Kadison--Kastler conjecture | — | — | — | — | yes | — |
 | [322](../functional-analysis/322-tingleys-sphere-isometry-problem.md) | Tingley's sphere-isometry problem | — | — | — | — | yes | — |

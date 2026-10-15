@@ -21,7 +21,7 @@ Prose counts: 13 capitalized occurrences, 9 of them mid-sentence, 0 lowercase. T
 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
-| [159](../combinatorics/159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemer-bounds.md) | Erd\H{o}s's reciprocal-sum conjecture and quasipolynomial Szemer\'edi bounds | — | — | — | — | yes | — |
+| [159](../combinatorics/159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemeredi-bounds.md) | Erdős's reciprocal-sum conjecture and quasipolynomial Szemerédi bounds | — | — | — | — | yes | — |
 | [160](../combinatorics/160-superexponential-van-der-waerden-numbers.md) | Superexponential van der Waerden numbers | yes | yes | — | yes | yes | — |
 | [164](../combinatorics/164-hindmans-finite-sums-and-products-conjecture.md) | Hindman's finite sums and products conjecture | — | — | — | — | yes | — |
 
@@ -31,7 +31,7 @@ Prose counts: 13 capitalized occurrences, 9 of them mid-sentence, 0 lowercase. T
 |---|---|---|---|
 | [`Monochromatic-finite-sums-and-products-in-the-positive-integers-September-23-2026`](../../../preprints/Monochromatic-finite-sums-and-products-in-the-positive-integers-September-23-2026/) | [164](../combinatorics/164-hindmans-finite-sums-and-products-conjecture.md) | prose | [paper.pdf](../../../preprints/Monochromatic-finite-sums-and-products-in-the-positive-integers-September-23-2026/paper.pdf) |
 | [`Quantitative-Superexponential-Bounds-for-van-der-Waerden-Numbers-September-23-2026`](../../../preprints/Quantitative-Superexponential-Bounds-for-van-der-Waerden-Numbers-September-23-2026/) | [160](../combinatorics/160-superexponential-van-der-waerden-numbers.md) | prose + title | [paper.pdf](../../../preprints/Quantitative-Superexponential-Bounds-for-van-der-Waerden-Numbers-September-23-2026/paper.pdf) |
-| [`Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026`](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/) | [159](../combinatorics/159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemer-bounds.md) | prose | [paper.pdf](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/paper.pdf) |
+| [`Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026`](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/) | [159](../combinatorics/159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemeredi-bounds.md) | prose | [paper.pdf](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/paper.pdf) |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.
 

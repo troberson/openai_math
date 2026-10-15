@@ -21,16 +21,16 @@ Prose counts: 16 capitalized occurrences, 11 of them mid-sentence, 3 lowercase. 
 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
-| [162](../combinatorics/162-counterexamples-to-rysers-covering-and-gy-tree-cover-conjectures.md) | Counterexamples to Ryser's covering and Gy\'arf\'as's tree-cover conjectures | — | — | — | — | yes | yes |
-| [181](../combinatorics/181-erdos-gallai-cycle-decomposition-conjecture.md) | The Erd\H{o}s--Gallai cycle-decomposition conjecture | — | — | yes | — | yes | yes |
+| [162](../combinatorics/162-counterexamples-to-rysers-covering-and-gyarfass-tree-cover-conjectures.md) | Counterexamples to Ryser's covering and Gyárfás's tree-cover conjectures | — | — | — | — | yes | yes |
+| [181](../combinatorics/181-erdos-gallai-cycle-decomposition-conjecture.md) | The Erdős--Gallai cycle-decomposition conjecture | — | — | yes | — | yes | yes |
 
 ## Manuscripts
 
 | Dir | Family | Where the name appears | PDF |
 |---|---|---|---|
-| [`A-Counterexample-to-Rysers-Covering-Conjecture-September-23-2026`](../../../preprints/A-Counterexample-to-Rysers-Covering-Conjecture-September-23-2026/) | [162](../combinatorics/162-counterexamples-to-rysers-covering-and-gy-tree-cover-conjectures.md) | prose | [paper.pdf](../../../preprints/A-Counterexample-to-Rysers-Covering-Conjecture-September-23-2026/paper.pdf) |
+| [`A-Counterexample-to-Rysers-Covering-Conjecture-September-23-2026`](../../../preprints/A-Counterexample-to-Rysers-Covering-Conjecture-September-23-2026/) | [162](../combinatorics/162-counterexamples-to-rysers-covering-and-gyarfass-tree-cover-conjectures.md) | prose | [paper.pdf](../../../preprints/A-Counterexample-to-Rysers-Covering-Conjecture-September-23-2026/paper.pdf) |
 | [`A-linear-cycle-and-edge-decomposition-of-every-graph-September-24-2026`](../../../preprints/A-linear-cycle-and-edge-decomposition-of-every-graph-September-24-2026/) | [181](../combinatorics/181-erdos-gallai-cycle-decomposition-conjecture.md) | prose | [main.pdf](../../../preprints/A-linear-cycle-and-edge-decomposition-of-every-graph-September-24-2026/main.pdf) |
-| [`Balanced-Counterexamples-to-Rysers-Conjecture-at-Prime-Orders-September-27-2026`](../../../preprints/Balanced-Counterexamples-to-Rysers-Conjecture-at-Prime-Orders-September-27-2026/) | [162](../combinatorics/162-counterexamples-to-rysers-covering-and-gy-tree-cover-conjectures.md) | prose | [paper.pdf](../../../preprints/Balanced-Counterexamples-to-Rysers-Conjecture-at-Prime-Orders-September-27-2026/paper.pdf) |
+| [`Balanced-Counterexamples-to-Rysers-Conjecture-at-Prime-Orders-September-27-2026`](../../../preprints/Balanced-Counterexamples-to-Rysers-Conjecture-at-Prime-Orders-September-27-2026/) | [162](../combinatorics/162-counterexamples-to-rysers-covering-and-gyarfass-tree-cover-conjectures.md) | prose | [paper.pdf](../../../preprints/Balanced-Counterexamples-to-Rysers-Conjecture-at-Prime-Orders-September-27-2026/paper.pdf) |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.
 

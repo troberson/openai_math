@@ -24,7 +24,7 @@ Prose counts: 33 capitalized occurrences, 27 of them mid-sentence, 0 lowercase. 
 | [010](../number-theory/010-fontaine-mazur-modularity-at-the-prime-2-and-2-adic-pro-modularity.md) | Fontaine--Mazur modularity at the prime $2$ and $2$-adic pro-modularity | — | — | — | — | — | yes |
 | [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties.md) | The rational Hodge conjecture for CM abelian varieties | — | — | — | — | yes | — |
 | [034](../algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md) | Log abundance and effective Iitaka fibrations | — | — | — | — | yes | — |
-| [041](../algebraic-and-complex-geometry/041-hyperk-ahler-syz-and-projective-space-bases.md) | Hyperk\"ahler SYZ and projective-space bases | — | — | — | — | — | yes |
+| [041](../algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) | Hyperkähler SYZ and projective-space bases | — | — | — | — | — | yes |
 | [285](../operator-algebras/285-counterexamples-to-baum-connes-and-kadison-kaplansky.md) | Counterexamples to Baum--Connes and Kadison--Kaplansky | yes | yes | — | — | yes | yes |
 | [307](../topology/307-failure-of-rational-injectivity-for-maximal-coarse-assembly.md) | Failure of rational injectivity for maximal coarse assembly | — | — | — | — | yes | — |
 

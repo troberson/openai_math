@@ -143,8 +143,10 @@ lives in this file and nowhere else.
   config (scope-note links) → declaration → file, 200 declarations over 189 configs reaching 136 of
   372 families — and keeps formalization a per-manuscript flag. A family whose scope note links configs
   that no `main_results` entry names renders as *absent*, never as unformalized. Page slugs are
-  mechanical (NFKD, strip combining marks, drop `$`/apostrophes/`\command`, lowercase, non-alphanumerics
-  → `-`, leading `the-` dropped): 0 collisions, max length 93. Index↔summary pairing is by family
+  mechanical (the title is accent-folded first, then NFKD, strip combining marks, drop
+  `$`/apostrophes/`\command`, lowercase, non-alphanumerics → `-`, leading `the-` dropped): 0 collisions,
+  max length 93. Folding first is what makes the slug read as the name: `Kollár` → `kollar`, not
+  `koll-pardon`; the 10 slugs that carried an escape fragment were renamed by the fold. Index↔summary pairing is by family
   number only — 24 of 372 families have a summary page.
 - Names are a measured layer, not a curated one: `python3 notes/scripts/measure_names.py` (a writer —
   it lands the population as the record `.qwen/cache/records/<key>/names.json`; cold ~42 s, a warm run
@@ -163,7 +165,7 @@ lives in this file and nowhere else.
   measure it with `python3 notes/scripts/measure_topics.py` (`--check` re-measures all 92 rows and
   exits 1 when a recorded count has drifted). Keep that file **outside** `notes/index/`: the index
   tree is fully generated and a hand-edited file inside it is overwritten by the next build. A family
-  carries **zero or more** topics (median 2, mean 2.63 over 978 assignments) — topics are a label on
+  carries **zero or more** topics (median 2, mean 2.63 over 980 assignments) — topics are a label on
   top of the 17 disciplines, which stay the partition — and a term with no hit is kept as a measured
   negative (4 of 92), not deleted. A listing is a keyword floor over four texts (title, abstract,
   scope note, derived Lean paths); quote per-layer counts, never just the yield.
@@ -977,7 +979,7 @@ lives in this file and nowhere else.
   child with `RENDER_REPORTS_CHILD`, where the pass is inert by design.
 - Run `python3 notes/scripts/build_index.py` once: `verify_cache_promotion.py` asserts that the bytes
   cached under its key equal the bytes on all **1,049** index files. Its report reconciles 372 family pages + 17 discipline pages + 92 topic pages
-  + 551 name pages + 1 entry point (**1,033** pages, 16 tables), **48,012** relative links with 0
+  + 551 name pages + 1 entry point (**1,033** pages, 16 tables), **48,034** relative links with 0
   broken, canonical == rendered on families 372 / manuscripts 719 / scope notes 242 / challenges 416 /
   traces 10 / verification dirs 30, and canonical **173** against rendered **172** on formalized — the
   1-gap is `formalization.yaml` naming the superseded
@@ -996,7 +998,7 @@ lives in this file and nowhere else.
   re-render rather than editing a page.
 - Check the rendered index against the shipped files with
   `python3 notes/scripts/check_index_links.py` — report-only, ~1 s, exits non-zero on a broken link.
-  It re-derives the check from disk: **1,033** pages, **66,110** links, 0 broken, of which **17,700**
+  It re-derives the check from disk: **1,033** pages, **66,129** links, 0 broken, of which **17,700**
   resolve to a directory (`manuscript-dir`, `latex-build-tree`, `lean-dir`, `verification-dir`,
   `index-dir`) and **48,410** to a file, every shipped-file category equal to a fresh
   `build_catalog.py` count. The render report's **48,015** links are the registry's subset; the
@@ -1027,8 +1029,8 @@ lives in this file and nowhere else.
   `notes/reports/topics.md` disagrees with `render_reports.py`'s render of it — the sync pass prints
   `sync problems (notes/reports/topics.md) N` in both the `--check` branch and the plain report, and the plain
   report exits 1 on a nonzero N. Its
-  report yields 92 terms over 372 families, 4 unassigned terms, 372 of 372 families covered, 978
-  assignments, and the per-family topic histogram `1:93 2:103 3:87 4:51 5:21 6:13 7:2 8:1 9:1`. Quote a
+  report yields 92 terms over 372 families, 4 unassigned terms, 372 of 372 families covered, 980
+  assignments, and the per-family topic histogram `1:92 2:102 3:89 4:51 5:22 6:12 7:2 8:1 9:1`. Quote a
   term with its per-layer counts, not its yield alone — a yield of 24 can be 2 titles and 16 scope
   notes.
 - Check `notes/scripts/README.md` with `python3 notes/scripts/verify_script_ownership.py`

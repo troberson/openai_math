@@ -22,7 +22,7 @@ Prose counts: 8 capitalized occurrences, 6 of them mid-sentence, 0 lowercase. Th
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
 | [011](../number-theory/011-ford-konyagin-luca-conjecture-on-prime-predecessors.md) | The Ford--Konyagin--Luca conjecture on prime predecessors | — | — | — | — | yes | — |
-| [025](../number-theory/025-erdoss-short-egyptian-fraction-conjecture.md) | Erd\H{o}s’s short Egyptian-fraction conjecture | — | — | — | — | yes | — |
+| [025](../number-theory/025-erdoss-short-egyptian-fraction-conjecture.md) | Erdős’s short Egyptian-fraction conjecture | — | — | — | — | yes | — |
 | [145](../dynamical-systems-and-ergodic-theory/145-rokhlins-multiple-mixing-problem.md) | Rokhlin's multiple-mixing problem | — | — | — | — | yes | — |
 | [154](../dynamical-systems-and-ergodic-theory/154-pointwise-multiple-ergodic-averages-for-mixing-transformations.md) | Pointwise multiple ergodic averages for mixing transformations | — | — | yes | — | yes | — |
 | [158](../combinatorics/158-euclidean-plane-cannot-be-colored-with-five-colors.md) | The Euclidean plane cannot be colored with five colors | — | — | — | — | yes | — |

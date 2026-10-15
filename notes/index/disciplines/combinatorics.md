@@ -10,13 +10,13 @@ Tier: T3 18 · T2 15 · T1 0 · T0 4
 | [156](../combinatorics/156-borsuks-conjecture-fails-in-dimension-nine.md) | Borsuk's conjecture fails in dimension nine | T3 | 1 | 1 | yes | 1 | — |
 | [157](../combinatorics/157-counterexamples-to-the-hadwiger-and-colin-de-verdi-ere-conjectures.md) | Counterexamples to the Hadwiger and Colin de Verdi\`ere conjectures | T3 | 3 | 1 | yes | 2 | — |
 | [158](../combinatorics/158-euclidean-plane-cannot-be-colored-with-five-colors.md) | The Euclidean plane cannot be colored with five colors | T3 | 1 | 1 | yes | 2 | — |
-| [159](../combinatorics/159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemer-bounds.md) | Erd\H{o}s's reciprocal-sum conjecture and quasipolynomial Szemer\'edi bounds | T2 | 1 | 0 | yes | 1 | yes |
+| [159](../combinatorics/159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemeredi-bounds.md) | Erdős's reciprocal-sum conjecture and quasipolynomial Szemerédi bounds | T2 | 1 | 0 | yes | 1 | yes |
 | [160](../combinatorics/160-superexponential-van-der-waerden-numbers.md) | Superexponential van der Waerden numbers | T3 | 1 | 1 | yes | 1 | — |
 | [161](../combinatorics/161-counterexamples-to-sidorenkos-conjecture-and-the-forcing-conjecture.md) | Counterexamples to Sidorenko's conjecture and the forcing conjecture | T2 | 1 | 0 | yes | 1 | — |
-| [162](../combinatorics/162-counterexamples-to-rysers-covering-and-gy-tree-cover-conjectures.md) | Counterexamples to Ryser's covering and Gy\'arf\'as's tree-cover conjectures | T3 | 2 | 1 | yes | 3 | — |
+| [162](../combinatorics/162-counterexamples-to-rysers-covering-and-gyarfass-tree-cover-conjectures.md) | Counterexamples to Ryser's covering and Gyárfás's tree-cover conjectures | T3 | 2 | 1 | yes | 3 | — |
 | [164](../combinatorics/164-hindmans-finite-sums-and-products-conjecture.md) | Hindman's finite sums and products conjecture | T0 | 1 | 0 | — | 0 | — |
 | [165](../combinatorics/165-exact-crossing-numbers-of-complete-and-complete-bipartite-graphs.md) | Exact crossing numbers of complete and complete bipartite graphs | T3 | 2 | 2 | yes | 2 | — |
-| [166](../combinatorics/166-higher-dimensional-erdos-distinct-distances-conjecture.md) | The higher-dimensional Erd\H{o}s distinct-distances conjecture | T0 | 1 | 0 | — | 0 | — |
+| [166](../combinatorics/166-higher-dimensional-erdos-distinct-distances-conjecture.md) | The higher-dimensional Erdős distinct-distances conjecture | T0 | 1 | 0 | — | 0 | — |
 | [167](../combinatorics/167-pinned-distances-and-a-power-saving-for-planar-unit-distances.md) | Pinned distances and a power saving for planar unit distances | T3 | 2 | 1 | yes | 2 | — |
 | [168](../combinatorics/168-combinatorial-invariance-of-kazhdan-lusztig-polynomials.md) | Combinatorial invariance of Kazhdan--Lusztig polynomials | T2 | 1 | 0 | yes | 1 | — |
 | [169](../combinatorics/169-shareshian-wachs-e-positivity-conjecture.md) | The Shareshian--Wachs $e$-positivity conjecture | T2 | 1 | 0 | yes | 1 | — |
@@ -31,7 +31,7 @@ Tier: T3 18 · T2 15 · T1 0 · T0 4
 | [178](../combinatorics/178-deterministic-nonbipartite-ramanujan-graphs-in-every-fixed-degree.md) | Deterministic nonbipartite Ramanujan graphs in every fixed degree | T0 | 1 | 0 | — | 0 | — |
 | [179](../combinatorics/179-circulant-hadamard-conjecture.md) | The circulant Hadamard conjecture | T3 | 1 | 1 | yes | 2 | — |
 | [180](../combinatorics/180-barnettes-hamiltonian-cycle-conjecture.md) | Barnette's Hamiltonian-cycle conjecture | T2 | 1 | 0 | yes | 1 | — |
-| [181](../combinatorics/181-erdos-gallai-cycle-decomposition-conjecture.md) | The Erd\H{o}s--Gallai cycle-decomposition conjecture | T3 | 1 | 1 | yes | 1 | — |
+| [181](../combinatorics/181-erdos-gallai-cycle-decomposition-conjecture.md) | The Erdős--Gallai cycle-decomposition conjecture | T3 | 1 | 1 | yes | 1 | — |
 | [182](../combinatorics/182-power-savings-for-polynomial-difference-free-sets.md) | Power savings for polynomial-difference-free sets | T2 | 3 | 0 | yes | 1 | — |
 | [183](../combinatorics/183-power-savings-for-planar-halving-lines-and-k-sets.md) | Power savings for planar halving lines and $k$-sets | T2 | 1 | 0 | yes | 1 | — |
 | [184](../combinatorics/184-coloring-and-independence-in-graphs-with-forbidden-subgraphs.md) | Coloring and independence in graphs with forbidden subgraphs | T3 | 2 | 1 | yes | 1 | — |

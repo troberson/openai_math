@@ -21,7 +21,7 @@ Prose counts: 18 capitalized occurrences, 15 of them mid-sentence, 0 lowercase. 
 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
-| [041](../algebraic-and-complex-geometry/041-hyperk-ahler-syz-and-projective-space-bases.md) | Hyperk\"ahler SYZ and projective-space bases | — | — | — | — | — | yes |
+| [041](../algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) | Hyperkähler SYZ and projective-space bases | — | — | — | — | — | yes |
 | [087](../convex-and-metric-geometry/087-mahler-conjectures-and-symplectic-width.md) | The Mahler conjectures and symplectic width | — | — | — | — | — | yes |
 | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | Spacetime Penrose inequalities and rigidity | — | — | — | — | — | yes |
 | [335](../differential-geometry/335-gromovs-integral-scalar-curvature-inequality.md) | Gromov's integral scalar-curvature inequality | — | — | yes | — | yes | yes |

@@ -15,6 +15,7 @@ from collections import defaultdict
 from typing import Any
 
 from catlib.paths import CONTENTS_MD, OVERVIEW_TEX, read_text
+from catlib.text import fold_accents
 
 # Paren-aware: preprints/Sharp-integral-fillings-in-CAT(0)-spaces-.../paper.pdf
 # Braces and backslashes must stay out of the class, or a greedy match in overview.tex
@@ -57,6 +58,10 @@ def parse_overview_text(text: str) -> tuple[list[str], dict[str, dict[str, Any]]
     """-> (families ordered, {fam: {discipline,title,abstract,links}}) for a **string**.
 
     The text-level core `parse_overview()` delegates to; `links` is the raw 4th brace group.
+    Only the title is accent-folded: the release writes `K\"ahler` and `Gy\'arf\'as`, and a markdown
+    page renders the escape literally, so the folded name is what a page can show. The abstract and the
+    display text stay raw — pages quote them, and the quotation passes compare raw bytes:
+    `test_counterexample_crosscheck.py` asserts that `collapse_ws` does not fold accents.
     A checker that compares two revisions of the release parses both from a
     `git show <rev>:overview.tex` string, so the traversal must not be disk-bound; the disk
     read lives in the wrapper.
@@ -82,7 +87,7 @@ def parse_overview_text(text: str) -> tuple[list[str], dict[str, dict[str, Any]]
         fam, title, abstract, links = args[0], args[1], args[2], args[3]
         fams[fam] = {
             "discipline": discipline,
-            "title": title.strip(),
+            "title": fold_accents(title.strip()),
             "abstract": abstract.strip(),
             "links": links,
         }

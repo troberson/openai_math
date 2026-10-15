@@ -118,20 +118,20 @@ MUTANTS = [
     ("projected size", "count mismatch (raw-bib projection)",
      lambda t: t.replace("**2,021** KiB", "**2,000** KiB", 1)),
     ("rendered row count", "count mismatch (family-topic.tsv rows)",
-     lambda t: t.replace("`family-topic.tsv` | **978**", "`family-topic.tsv` | **977**", 1)),
+     lambda t: t.replace("`family-topic.tsv` | **980**", "`family-topic.tsv` | **977**", 1)),
     ("ledger set widened to all TSVs", "count mismatch (ledger set byte total)",
-     lambda t: t.replace("the whole ledger set is **297,050** B",
+     lambda t: t.replace("the whole ledger set is **297,024** B",
                          "the whole ledger set is **2,174,703** B", 1)),
     ("all-TSV total altered", "count mismatch (all-TSV byte total)",
-     lambda t: t.replace("together totals **2408089** B", "together totals **297050** B", 1)),
+     lambda t: t.replace("together totals **2408219** B", "together totals **297050** B", 1)),
     ("index tree byte total altered", "count mismatch (index tree byte total)",
-     lambda t: t.replace("carries **11532661** B", "carries **11531689** B", 1)),
+     lambda t: t.replace("carries **11533236** B", "carries **11531689** B", 1)),
     ("disk link count", "count mismatch (disk link check)",
-     lambda t: t.replace("covers **66,125** links", "covers **66,120** links", 1)),
+     lambda t: t.replace("covers **66,129** links", "covers **66,120** links", 1)),
     # Prose the count passes never read: the schema table's byte column is not in count_phrases()
     # or size_phrases(). Only the render diff can see it.
     ("schema byte column", "size mismatch (catalog.tsv measured size)",
-     lambda t: t.replace("| `catalog.tsv` | **49213** |", "| `catalog.tsv` | **49214** |", 1)),
+     lambda t: t.replace("| `catalog.tsv` | **49187** |", "| `catalog.tsv` | **49214** |", 1)),
 ]
 
 
@@ -186,7 +186,7 @@ def test_clean_page(mod, text, ledger):
     assert (p["ver_dirs"], p["bib_files"], p["bib_entries"],
             p["bib_hrefs"]) == (30, 521, 13802, 393), f"ver dirs {p['ver_dirs']}, bib {p['bib_files']}"
     assert (p["ledger_set_bytes"], p["all_tsv_bytes"], p["disk_links"], p["disk_broken"],
-            p["disk_dirs"], p["rawbib_kib"]) == (297050, 2408089, 66125, 0, 17700, 2021), \
+            p["disk_dirs"], p["rawbib_kib"]) == (297024, 2408219, 66129, 0, 17700, 2021), \
         f"ledger set {p['ledger_set_bytes']}, all TSV {p['all_tsv_bytes']}, links {p['disk_links']}"
     assert p["index_pages"] == len(tree_index_pages()) > 0, \
         f"index pages {p['index_pages']} against {len(tree_index_pages())} .md files walked under notes/index/"

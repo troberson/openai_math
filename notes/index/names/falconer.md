@@ -22,7 +22,7 @@ Prose counts: 16 capitalized occurrences, 12 of them mid-sentence, 0 lowercase. 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
 | [073](../real-and-complex-analysis/073-falconer-distance-conjecture.md) | The Falconer distance conjecture | yes | yes | — | yes | yes | yes |
-| [084](../real-and-complex-analysis/084-geometric-case-of-the-erdos-similarity-conjecture.md) | The geometric case of the Erd\H{o}s similarity conjecture | — | — | — | — | yes | yes |
+| [084](../real-and-complex-analysis/084-geometric-case-of-the-erdos-similarity-conjecture.md) | The geometric case of the Erdős similarity conjecture | — | — | — | — | yes | yes |
 | [158](../combinatorics/158-euclidean-plane-cannot-be-colored-with-five-colors.md) | The Euclidean plane cannot be colored with five colors | — | — | — | — | yes | yes |
 
 ## Manuscripts

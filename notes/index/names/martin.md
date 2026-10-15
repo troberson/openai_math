@@ -22,9 +22,9 @@ Prose counts: 100 capitalized occurrences, 80 of them mid-sentence, 0 lowercase.
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
 | [014](../number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md) | Restricted geometric Langlands, generic Ramanujan and Arthur parameters | — | — | — | — | yes | — |
-| [025](../number-theory/025-erdoss-short-egyptian-fraction-conjecture.md) | Erd\H{o}s’s short Egyptian-fraction conjecture | — | — | — | — | yes | yes |
+| [025](../number-theory/025-erdoss-short-egyptian-fraction-conjecture.md) | Erdős’s short Egyptian-fraction conjecture | — | — | — | — | yes | yes |
 | [027](../number-theory/027-integral-density-on-curve-character-varieties.md) | Integral density on curve character varieties | — | — | — | — | — | yes |
-| [041](../algebraic-and-complex-geometry/041-hyperk-ahler-syz-and-projective-space-bases.md) | Hyperk\"ahler SYZ and projective-space bases | — | — | — | — | — | yes |
+| [041](../algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) | Hyperkähler SYZ and projective-space bases | — | — | — | — | — | yes |
 | [071](../real-and-complex-analysis/071-koebes-circle-domain-conjecture-and-circle-domain-rigidity.md) | Koebe's circle-domain conjecture and circle-domain rigidity | — | — | — | — | — | yes |
 | [112](../theoretical-computer-science/112-beyond-the-square-root-exponent-for-depth-three-circuits.md) | Beyond the square-root exponent for depth-three circuits | — | — | — | — | yes | — |
 | [113](../theoretical-computer-science/113-approximate-counting-and-the-perfect-matching-entropy-conjecture.md) | Approximate counting and the perfect-matching entropy conjecture | — | — | — | — | yes | — |

@@ -14,5 +14,5 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | [304](../topology/304-hilbert-smith-conjecture-in-every-dimension.md) | The Hilbert--Smith conjecture in every dimension | — | yes | — | — |
 | [346](../differential-geometry/346-sharp-singular-set-bounds-for-stationary-integral-varifolds.md) | Sharp singular-set bounds for stationary integral varifolds | — | yes | — | — |
 | [350](../differential-geometry/350-yaus-nodal-conjecture-surfaces-and-counterexamples.md) | Yau's nodal conjecture: surfaces and counterexamples | — | — | yes | — |
-| [371](../partial-differential-equations/371-stable-blowup-for-a-defocusing-schr-odinger-equation.md) | Stable blowup for a defocusing Schr\"odinger equation | — | — | yes | — |
+| [371](../partial-differential-equations/371-stable-blowup-for-a-defocusing-schrodinger-equation.md) | Stable blowup for a defocusing Schrödinger equation | — | — | yes | — |
 

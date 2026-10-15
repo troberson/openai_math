@@ -15,11 +15,11 @@ Tier: T3 7 · T2 3 · T1 0 · T0 6
 | [077](../real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md) | Fourier restriction for positively curved surfaces | T0 | 2 | 0 | — | 0 | — |
 | [078](../real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md) | The three-dimensional Bochner--Riesz conjecture | T0 | 1 | 0 | — | 0 | — |
 | [079](../real-and-complex-analysis/079-sogges-local-smoothing-conjecture-in-dimension-three.md) | Sogge's local smoothing conjecture in dimension three | T0 | 1 | 0 | — | 0 | — |
-| [080](../real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schr-odinger-convergence-problem.md) | The Sobolev endpoint in Carleson's Schr\"odinger convergence problem | T0 | 2 | 0 | — | 0 | — |
+| [080](../real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md) | The Sobolev endpoint in Carleson's Schrödinger convergence problem | T0 | 2 | 0 | — | 0 | — |
 | [081](../real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md) | The David--Semmes Riesz-transform problem in higher codimension | T3 | 1 | 1 | yes | 1 | — |
 | [082](../real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md) | Maximal and variational bounds for the triangular Hilbert transform | T3 | 3 | 1 | yes | 1 | — |
 | [083](../real-and-complex-analysis/083-steins-conjecture-for-hilbert-transforms-along-lipschitz-directions.md) | Stein's conjecture for Hilbert transforms along Lipschitz directions | T2 | 1 | 0 | yes | 1 | — |
-| [084](../real-and-complex-analysis/084-geometric-case-of-the-erdos-similarity-conjecture.md) | The geometric case of the Erd\H{o}s similarity conjecture | T2 | 2 | 0 | yes | 1 | — |
+| [084](../real-and-complex-analysis/084-geometric-case-of-the-erdos-similarity-conjecture.md) | The geometric case of the Erdős similarity conjecture | T2 | 2 | 0 | yes | 1 | — |
 | [085](../real-and-complex-analysis/085-endpoint-regularity-of-the-planar-centered-maximal-function.md) | Endpoint regularity of the planar centered maximal function | T3 | 1 | 1 | yes | 2 | — |
 | [086](../real-and-complex-analysis/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md) | An $L^3$ bound for the trilinear Hilbert transform | T0 | 1 | 0 | — | 0 | — |
 

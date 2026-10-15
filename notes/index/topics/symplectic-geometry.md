@@ -6,7 +6,7 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 
 | Family | Title | T | A | S | P |
 |---|---|---|---|---|---|
-| [041](../algebraic-and-complex-geometry/041-hyperk-ahler-syz-and-projective-space-bases.md) | Hyperk\"ahler SYZ and projective-space bases | — | yes | — | — |
+| [041](../algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) | Hyperkähler SYZ and projective-space bases | — | yes | — | — |
 | [062](../algebraic-and-complex-geometry/062-lebrun-salamon-conjecture-and-projective-contact-classification.md) | The LeBrun--Salamon conjecture and projective contact classification | yes | yes | — | — |
 | [087](../convex-and-metric-geometry/087-mahler-conjectures-and-symplectic-width.md) | The Mahler conjectures and symplectic width | yes | — | yes | — |
 | [180](../combinatorics/180-barnettes-hamiltonian-cycle-conjecture.md) | Barnette's Hamiltonian-cycle conjecture | yes | yes | yes | — |

@@ -1,4 +1,4 @@
-# 080 — The Sobolev endpoint in Carleson's Schr\"odinger convergence problem
+# 080 — The Sobolev endpoint in Carleson's Schrödinger convergence problem
 
 |  |  |
 |---|---|
@@ -11,7 +11,7 @@
 | Verification bundles | 0 |
 | Cited by / cites | 1 in · 1 out |
 | Claim shapes | bound, uniform |
-| Topics | [harmonic-analysis](../topics/harmonic-analysis.md) |
+| Topics | [harmonic-analysis](../topics/harmonic-analysis.md) · [partial-differential-equations](../topics/partial-differential-equations.md) · [quantum-theory](../topics/quantum-theory.md) |
 | Companion families | — |
 | Summary page | — |
 

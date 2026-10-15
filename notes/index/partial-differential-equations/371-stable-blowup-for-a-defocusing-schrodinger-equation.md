@@ -1,4 +1,4 @@
-# 371 — Stable blowup for a defocusing Schr\"odinger equation
+# 371 — Stable blowup for a defocusing Schrödinger equation
 
 |  |  |
 |---|---|

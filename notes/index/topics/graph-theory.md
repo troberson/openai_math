@@ -29,7 +29,7 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | [177](../combinatorics/177-bounded-degree-coboundary-expanders-in-every-dimension.md) | Bounded-degree coboundary expanders in every dimension | — | yes | yes | — |
 | [178](../combinatorics/178-deterministic-nonbipartite-ramanujan-graphs-in-every-fixed-degree.md) | Deterministic nonbipartite Ramanujan graphs in every fixed degree | yes | yes | — | — |
 | [180](../combinatorics/180-barnettes-hamiltonian-cycle-conjecture.md) | Barnette's Hamiltonian-cycle conjecture | yes | yes | yes | — |
-| [181](../combinatorics/181-erdos-gallai-cycle-decomposition-conjecture.md) | The Erd\H{o}s--Gallai cycle-decomposition conjecture | — | yes | yes | — |
+| [181](../combinatorics/181-erdos-gallai-cycle-decomposition-conjecture.md) | The Erdős--Gallai cycle-decomposition conjecture | — | yes | yes | — |
 | [184](../combinatorics/184-coloring-and-independence-in-graphs-with-forbidden-subgraphs.md) | Coloring and independence in graphs with forbidden subgraphs | yes | yes | yes | yes |
 | [186](../combinatorics/186-friedgut-kalai-graph-and-hypergraph-threshold-conjectures.md) | The Friedgut--Kalai graph and hypergraph threshold conjectures | yes | yes | yes | — |
 | [188](../combinatorics/188-sharp-constant-in-random-triangle-removal.md) | The sharp constant in random triangle removal | — | yes | yes | — |

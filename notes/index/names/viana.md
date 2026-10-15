@@ -23,7 +23,7 @@ Prose counts: 8 capitalized occurrences, 5 of them mid-sentence, 0 lowercase. Th
 |---|---|---|---|---|---|---|---|
 | [151](../dynamical-systems-and-ergodic-theory/151-a-c-1-counterexample-to-shubs-entropy-conjecture.md) | A $C^1$ counterexample to Shub’s entropy conjecture | — | — | — | — | yes | yes |
 | [183](../combinatorics/183-power-savings-for-planar-halving-lines-and-k-sets.md) | Power savings for planar halving lines and $k$-sets | — | — | — | — | — | yes |
-| [221](../probability-and-statistical-mechanics/221-m-parisi-formula-for-diluted-spin-glasses.md) | The M\'ezard--Parisi formula for diluted spin glasses | — | — | yes | — | yes | yes |
+| [221](../probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md) | The Mézard--Parisi formula for diluted spin glasses | — | — | yes | — | yes | yes |
 | [349](../differential-geometry/349-solomon-yau-least-volume-conjecture.md) | The Solomon--Yau least-volume conjecture | — | — | — | — | yes | yes |
 
 ## Manuscripts
@@ -31,7 +31,7 @@ Prose counts: 8 capitalized occurrences, 5 of them mid-sentence, 0 lowercase. Th
 | Dir | Family | Where the name appears | PDF |
 |---|---|---|---|
 | [`A-C1-Counterexample-to-the-Entropy-Conjecture-September-25-2026`](../../../preprints/A-C1-Counterexample-to-the-Entropy-Conjecture-September-25-2026/) | [151](../dynamical-systems-and-ergodic-theory/151-a-c-1-counterexample-to-shubs-entropy-conjecture.md) | prose | [article.pdf](../../../preprints/A-C1-Counterexample-to-the-Entropy-Conjecture-September-25-2026/article.pdf) |
-| [`The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/) | [221](../probability-and-statistical-mechanics/221-m-parisi-formula-for-diluted-spin-glasses.md) | prose | [paper.pdf](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/paper.pdf) |
+| [`The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/) | [221](../probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md) | prose | [paper.pdf](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/paper.pdf) |
 | [`The-Solomon-Yau-least-volume-theorem-September-23-2026`](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/) | [349](../differential-geometry/349-solomon-yau-least-volume-conjecture.md) | prose | [paper.pdf](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/paper.pdf) |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.
@@ -46,7 +46,7 @@ Up to 8 of the statement-environment titles that carry the name, verbatim with a
 
 | Family | Environment title |
 |---|---|
-| [221](../probability-and-statistical-mechanics/221-m-parisi-formula-for-diluted-spin-glasses.md) | Viana--Bray and diluted even-spin models |
+| [221](../probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md) | Viana--Bray and diluted even-spin models |
 
 ## Spelling variants
 

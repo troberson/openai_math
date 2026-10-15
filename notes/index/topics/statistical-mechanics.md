@@ -10,7 +10,7 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | [216](../probability-and-statistical-mechanics/216-critical-logarithmic-corrections-and-bkt-scaling-for-the-planar-xy-model.md) | Critical logarithmic corrections and BKT scaling for the planar XY model | yes | yes | — | — |
 | [217](../probability-and-statistical-mechanics/217-low-temperature-sherrington-kirkpatrick-fluctuation-law.md) | The low-temperature Sherrington--Kirkpatrick fluctuation law | yes | yes | — | — |
 | [218](../probability-and-statistical-mechanics/218-conformal-universality-for-weakly-interacting-and-disordered-ising-models.md) | Conformal universality for weakly interacting and disordered Ising models | yes | yes | yes | — |
-| [221](../probability-and-statistical-mechanics/221-m-parisi-formula-for-diluted-spin-glasses.md) | The M\'ezard--Parisi formula for diluted spin glasses | — | yes | yes | — |
+| [221](../probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md) | The Mézard--Parisi formula for diluted spin glasses | — | yes | yes | — |
 | [222](../probability-and-statistical-mechanics/222-perceptron-free-energies-and-microscopic-jamming.md) | Perceptron free energies and microscopic jamming | — | yes | yes | — |
 | [225](../probability-and-statistical-mechanics/225-gaussian-free-field-limits-for-the-balanced-six-vertex-model.md) | Gaussian free field limits for the balanced six-vertex model | yes | yes | — | — |
 | [226](../probability-and-statistical-mechanics/226-double-dimer-cle-4-conjecture-in-the-half-plane.md) | The double-dimer $\mathrm{CLE}_4$ conjecture in the half-plane | yes | yes | — | — |

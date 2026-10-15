@@ -1,4 +1,4 @@
-# 058 — The Koll\'ar--Pardon universal-cover conjecture
+# 058 — The Kollár--Pardon universal-cover conjecture
 
 |  |  |
 |---|---|

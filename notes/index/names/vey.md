@@ -21,13 +21,13 @@ Prose counts: 18 capitalized occurrences, 7 of them mid-sentence, 2 lowercase. T
 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
-| [058](../algebraic-and-complex-geometry/058-koll-pardon-universal-cover-conjecture.md) | The Koll\'ar--Pardon universal-cover conjecture | — | — | yes | — | yes | — |
+| [058](../algebraic-and-complex-geometry/058-kollar-pardon-universal-cover-conjecture.md) | The Kollár--Pardon universal-cover conjecture | — | — | yes | — | yes | — |
 
 ## Manuscripts
 
 | Dir | Family | Where the name appears | PDF |
 |---|---|---|---|
-| [`Symmetry-of-semialgebraic-bounded-domains-with-compact-quotient-September-24-2026`](../../../preprints/Symmetry-of-semialgebraic-bounded-domains-with-compact-quotient-September-24-2026/) | [058](../algebraic-and-complex-geometry/058-koll-pardon-universal-cover-conjecture.md) | prose | [paper.pdf](../../../preprints/Symmetry-of-semialgebraic-bounded-domains-with-compact-quotient-September-24-2026/paper.pdf) |
+| [`Symmetry-of-semialgebraic-bounded-domains-with-compact-quotient-September-24-2026`](../../../preprints/Symmetry-of-semialgebraic-bounded-domains-with-compact-quotient-September-24-2026/) | [058](../algebraic-and-complex-geometry/058-kollar-pardon-universal-cover-conjecture.md) | prose | [paper.pdf](../../../preprints/Symmetry-of-semialgebraic-bounded-domains-with-compact-quotient-September-24-2026/paper.pdf) |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.
 
@@ -41,7 +41,7 @@ Up to 8 of the statement-environment titles that carry the name, verbatim with a
 
 | Family | Environment title |
 |---|---|
-| [058](../algebraic-and-complex-geometry/058-koll-pardon-universal-cover-conjecture.md) | Vey |
+| [058](../algebraic-and-complex-geometry/058-kollar-pardon-universal-cover-conjecture.md) | Vey |
 
 ## Spelling variants
 

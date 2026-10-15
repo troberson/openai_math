@@ -22,7 +22,7 @@ Prose counts: 16 capitalized occurrences, 5 of them mid-sentence, 0 lowercase. T
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
 | [034](../algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md) | Log abundance and effective Iitaka fibrations | — | — | — | — | yes | yes |
-| [041](../algebraic-and-complex-geometry/041-hyperk-ahler-syz-and-projective-space-bases.md) | Hyperk\"ahler SYZ and projective-space bases | — | — | yes | — | yes | yes |
+| [041](../algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) | Hyperkähler SYZ and projective-space bases | — | — | yes | — | yes | yes |
 | [048](../algebraic-and-complex-geometry/048-a-characteristic-zero-counterexample-to-lipman-zariski.md) | A characteristic-zero counterexample to Lipman--Zariski | — | — | — | — | yes | — |
 | [055](../algebraic-and-complex-geometry/055-todas-gepner-conjecture-and-large-volume-stability.md) | Toda's Gepner conjecture and large-volume stability | — | — | — | — | — | yes |
 | [056](../algebraic-and-complex-geometry/056-termination-of-fourfold-minimal-model-programs.md) | Termination of fourfold minimal model programs | — | — | — | — | yes | — |
@@ -35,7 +35,7 @@ Prose counts: 16 capitalized occurrences, 5 of them mid-sentence, 0 lowercase. T
 | [`A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026`](../../../preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/) | [048](../algebraic-and-complex-geometry/048-a-characteristic-zero-counterexample-to-lipman-zariski.md) | prose | [paper.pdf](../../../preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/paper.pdf) |
 | [`Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-5-2026`](../../../preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-5-2026/) | — | prose | — |
 | [`Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026`](../../../preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026/) | [056](../algebraic-and-complex-geometry/056-termination-of-fourfold-minimal-model-programs.md) | prose | [termination-generalized-terminal-flips-compact-kahler-fourfolds.pdf](../../../preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026/termination-generalized-terminal-flips-compact-kahler-fourfolds.pdf) |
-| [`The-Strong-Hyperkahler-SYZ-Conjecture-September-23-2026`](../../../preprints/The-Strong-Hyperkahler-SYZ-Conjecture-September-23-2026/) | [041](../algebraic-and-complex-geometry/041-hyperk-ahler-syz-and-projective-space-bases.md) | prose | [main.pdf](../../../preprints/The-Strong-Hyperkahler-SYZ-Conjecture-September-23-2026/main.pdf) |
+| [`The-Strong-Hyperkahler-SYZ-Conjecture-September-23-2026`](../../../preprints/The-Strong-Hyperkahler-SYZ-Conjecture-September-23-2026/) | [041](../algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) | prose | [main.pdf](../../../preprints/The-Strong-Hyperkahler-SYZ-Conjecture-September-23-2026/main.pdf) |
 | [`Uniform-Pluricanonical-Iitaka-Fibrations-October-3-2026`](../../../preprints/Uniform-Pluricanonical-Iitaka-Fibrations-October-3-2026/) | [034](../algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md) | prose | [paper.pdf](../../../preprints/Uniform-Pluricanonical-Iitaka-Fibrations-October-3-2026/paper.pdf) |
 | [`Uniform-effective-log-Iitaka-fibrations-for-fourfolds-September-26-2026`](../../../preprints/Uniform-effective-log-Iitaka-fibrations-for-fourfolds-September-26-2026/) | [034](../algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md) | prose | [paper.pdf](../../../preprints/Uniform-effective-log-Iitaka-fibrations-for-fourfolds-September-26-2026/paper.pdf) |
 | [`Uniform-log-Iitaka-fibrations-and-bounded-moduli-denominators-October-4-2026`](../../../preprints/Uniform-log-Iitaka-fibrations-and-bounded-moduli-denominators-October-4-2026/) | [034](../algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md) | prose | [uniform-log-iitaka.pdf](../../../preprints/Uniform-log-Iitaka-fibrations-and-bounded-moduli-denominators-October-4-2026/uniform-log-iitaka.pdf) |
@@ -52,7 +52,7 @@ Up to 8 of the statement-environment titles that carry the name, verbatim with a
 
 | Family | Environment title |
 |---|---|
-| [041](../algebraic-and-complex-geometry/041-hyperk-ahler-syz-and-projective-space-bases.md) | Greb--Lehn--Rollenske \cite[Theorem~4.1 |
+| [041](../algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) | Greb--Lehn--Rollenske \cite[Theorem~4.1 |
 
 ## Spelling variants
 

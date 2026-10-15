@@ -34,7 +34,7 @@ Prose counts: 119 capitalized occurrences, 96 of them mid-sentence, 6 lowercase.
 | [036](../algebraic-and-complex-geometry/036-numerical-semiampleness-and-generalized-minimal-models.md) | Numerical semiampleness and generalized minimal models | — | — | — | — | yes | — |
 | [037](../algebraic-and-complex-geometry/037-sharp-ordinary-double-point-volume-gap.md) | The sharp ordinary-double-point volume gap | — | — | — | — | yes | — |
 | [040](../algebraic-and-complex-geometry/040-blochs-conjecture-for-complex-surfaces.md) | Bloch's conjecture for complex surfaces | — | — | — | — | yes | — |
-| [041](../algebraic-and-complex-geometry/041-hyperk-ahler-syz-and-projective-space-bases.md) | Hyperk\"ahler SYZ and projective-space bases | — | — | — | — | — | yes |
+| [041](../algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) | Hyperkähler SYZ and projective-space bases | — | — | — | — | — | yes |
 | [044](../algebraic-and-complex-geometry/044-equivariant-cohomological-hikita-conjecture-for-quivers.md) | The equivariant cohomological Hikita conjecture for quivers | — | — | — | — | yes | — |
 | [046](../algebraic-and-complex-geometry/046-counterexamples-to-shafarevich-holomorphic-convexity.md) | Counterexamples to Shafarevich holomorphic convexity | — | — | — | — | yes | — |
 | [053](../algebraic-and-complex-geometry/053-a-counterexample-to-pixtons-original-completeness-conjecture.md) | A counterexample to Pixton's original completeness conjecture | — | — | — | — | yes | — |

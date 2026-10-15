@@ -26,7 +26,7 @@ Prose counts: 352 capitalized occurrences, 301 of them mid-sentence, 37 lowercas
 | [035](../algebraic-and-complex-geometry/035-threefold-log-abundance-in-numerical-dimension-one-in-characteristic-p-3.md) | Threefold log abundance in numerical dimension one in characteristic $p>3$ | — | — | — | — | yes | yes |
 | [036](../algebraic-and-complex-geometry/036-numerical-semiampleness-and-generalized-minimal-models.md) | Numerical semiampleness and generalized minimal models | — | yes | — | — | yes | yes |
 | [037](../algebraic-and-complex-geometry/037-sharp-ordinary-double-point-volume-gap.md) | The sharp ordinary-double-point volume gap | — | — | — | — | yes | yes |
-| [041](../algebraic-and-complex-geometry/041-hyperk-ahler-syz-and-projective-space-bases.md) | Hyperk\"ahler SYZ and projective-space bases | — | — | — | — | — | yes |
+| [041](../algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) | Hyperkähler SYZ and projective-space bases | — | — | — | — | — | yes |
 | [052](../algebraic-and-complex-geometry/052-tangent-bundle-splittings-and-universal-covers.md) | Tangent-bundle splittings and universal covers | — | — | — | — | yes | — |
 | [054](../algebraic-and-complex-geometry/054-counterexamples-to-kuznetsovs-rationality-conjecture.md) | Counterexamples to Kuznetsov's rationality conjecture | — | — | yes | — | yes | — |
 | [056](../algebraic-and-complex-geometry/056-termination-of-fourfold-minimal-model-programs.md) | Termination of fourfold minimal model programs | — | — | yes | — | yes | yes |

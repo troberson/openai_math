@@ -22,15 +22,15 @@ Prose counts: 7 capitalized occurrences, 3 of them mid-sentence, 0 lowercase. Th
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
 | [157](../combinatorics/157-counterexamples-to-the-hadwiger-and-colin-de-verdi-ere-conjectures.md) | Counterexamples to the Hadwiger and Colin de Verdi\`ere conjectures | — | — | — | — | yes | yes |
-| [162](../combinatorics/162-counterexamples-to-rysers-covering-and-gy-tree-cover-conjectures.md) | Counterexamples to Ryser's covering and Gy\'arf\'as's tree-cover conjectures | yes | — | — | — | yes | yes |
+| [162](../combinatorics/162-counterexamples-to-rysers-covering-and-gyarfass-tree-cover-conjectures.md) | Counterexamples to Ryser's covering and Gyárfás's tree-cover conjectures | yes | — | — | — | yes | yes |
 
 ## Manuscripts
 
 | Dir | Family | Where the name appears | PDF |
 |---|---|---|---|
-| [`A-Counterexample-to-Rysers-Covering-Conjecture-September-23-2026`](../../../preprints/A-Counterexample-to-Rysers-Covering-Conjecture-September-23-2026/) | [162](../combinatorics/162-counterexamples-to-rysers-covering-and-gy-tree-cover-conjectures.md) | prose | [paper.pdf](../../../preprints/A-Counterexample-to-Rysers-Covering-Conjecture-September-23-2026/paper.pdf) |
+| [`A-Counterexample-to-Rysers-Covering-Conjecture-September-23-2026`](../../../preprints/A-Counterexample-to-Rysers-Covering-Conjecture-September-23-2026/) | [162](../combinatorics/162-counterexamples-to-rysers-covering-and-gyarfass-tree-cover-conjectures.md) | prose | [paper.pdf](../../../preprints/A-Counterexample-to-Rysers-Covering-Conjecture-September-23-2026/paper.pdf) |
 | [`A-counterexample-to-Hadwigers-conjecture-September-23-2026`](../../../preprints/A-counterexample-to-Hadwigers-conjecture-September-23-2026/) | [157](../combinatorics/157-counterexamples-to-the-hadwiger-and-colin-de-verdi-ere-conjectures.md) | prose | [paper.pdf](../../../preprints/A-counterexample-to-Hadwigers-conjecture-September-23-2026/paper.pdf) |
-| [`Balanced-Counterexamples-to-Rysers-Conjecture-at-Prime-Orders-September-27-2026`](../../../preprints/Balanced-Counterexamples-to-Rysers-Conjecture-at-Prime-Orders-September-27-2026/) | [162](../combinatorics/162-counterexamples-to-rysers-covering-and-gy-tree-cover-conjectures.md) | prose | [paper.pdf](../../../preprints/Balanced-Counterexamples-to-Rysers-Conjecture-at-Prime-Orders-September-27-2026/paper.pdf) |
+| [`Balanced-Counterexamples-to-Rysers-Conjecture-at-Prime-Orders-September-27-2026`](../../../preprints/Balanced-Counterexamples-to-Rysers-Conjecture-at-Prime-Orders-September-27-2026/) | [162](../combinatorics/162-counterexamples-to-rysers-covering-and-gyarfass-tree-cover-conjectures.md) | prose | [paper.pdf](../../../preprints/Balanced-Counterexamples-to-Rysers-Conjecture-at-Prime-Orders-September-27-2026/paper.pdf) |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.
 

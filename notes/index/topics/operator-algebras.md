@@ -7,7 +7,7 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | Family | Title | T | A | S | P |
 |---|---|---|---|---|---|
 | [033](../algebraic-and-complex-geometry/033-campanas-orbifold-iitaka-conjecture-and-logarithmic-subadditivity.md) | Campana's orbifold Iitaka conjecture and logarithmic subadditivity | — | yes | — | — |
-| [084](../real-and-complex-analysis/084-geometric-case-of-the-erdos-similarity-conjecture.md) | The geometric case of the Erd\H{o}s similarity conjecture | yes | yes | yes | — |
+| [084](../real-and-complex-analysis/084-geometric-case-of-the-erdos-similarity-conjecture.md) | The geometric case of the Erdős similarity conjecture | yes | yes | yes | — |
 | [197](../algebra/197-nonsofic-groups-and-group-ring-counterexamples.md) | Nonsofic groups and group-ring counterexamples | — | yes | yes | — |
 | [273](../mathematical-physics/273-entropy-photon-number-inequality.md) | The entropy photon-number inequality | — | — | yes | — |
 | [280](../mathematical-physics/280-strong-locality-for-strongly-rational-unitary-vertex-operator-algebras.md) | Strong locality for strongly rational unitary vertex operator algebras | yes | yes | yes | — |

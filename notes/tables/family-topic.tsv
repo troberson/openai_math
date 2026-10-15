@@ -186,6 +186,8 @@ fam	topic	layers
 079	harmonic-analysis	TA
 079	partial-differential-equations	A
 080	harmonic-analysis	TA
+080	partial-differential-equations	T
+080	quantum-theory	T
 081	harmonic-analysis	AS
 081	measure-theory	A
 081	geometric-measure-theory	A
@@ -958,7 +960,7 @@ fam	topic	layers
 369	spectral-theory	TAS
 370	partial-differential-equations	TA
 371	partial-differential-equations	TAS
-371	quantum-theory	S
+371	quantum-theory	TS
 371	fractal-geometry	S
 372	algorithms	S
 372	convex-geometry	TS

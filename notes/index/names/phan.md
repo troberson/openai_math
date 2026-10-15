@@ -21,13 +21,13 @@ Prose counts: 12 capitalized occurrences, 8 of them mid-sentence, 2 lowercase. T
 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
-| [370](../partial-differential-equations/370-subcritical-lane-emden-and-h-lane-emden-conjectures.md) | The subcritical Lane--Emden and H\'enon--Lane--Emden conjectures | — | — | yes | — | yes | yes |
+| [370](../partial-differential-equations/370-subcritical-lane-emden-and-henon-lane-emden-conjectures.md) | The subcritical Lane--Emden and Hénon--Lane--Emden conjectures | — | — | yes | — | yes | yes |
 
 ## Manuscripts
 
 | Dir | Family | Where the name appears | PDF |
 |---|---|---|---|
-| [`The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026`](../../../preprints/The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026/) | [370](../partial-differential-equations/370-subcritical-lane-emden-and-h-lane-emden-conjectures.md) | prose | [paper.pdf](../../../preprints/The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026/paper.pdf) |
+| [`The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026`](../../../preprints/The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026/) | [370](../partial-differential-equations/370-subcritical-lane-emden-and-henon-lane-emden-conjectures.md) | prose | [paper.pdf](../../../preprints/The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026/paper.pdf) |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.
 
@@ -41,7 +41,7 @@ Up to 8 of the statement-environment titles that carry the name, verbatim with a
 
 | Family | Environment title |
 |---|---|
-| [370](../partial-differential-equations/370-subcritical-lane-emden-and-h-lane-emden-conjectures.md) | Henon--Lane--Emden classification; Phan's Conjecture C |
+| [370](../partial-differential-equations/370-subcritical-lane-emden-and-henon-lane-emden-conjectures.md) | Henon--Lane--Emden classification; Phan's Conjecture C |
 
 ## Spelling variants
 

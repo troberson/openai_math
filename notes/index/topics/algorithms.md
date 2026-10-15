@@ -8,7 +8,7 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 |---|---|---|---|---|---|
 | [004](../number-theory/004-hilberts-tenth-problem-over-q.md) | Hilbert's tenth problem over $\mathbb Q$ | — | yes | — | — |
 | [076](../real-and-complex-analysis/076-ultraflat-real-littlewood-polynomials.md) | Ultraflat real Littlewood polynomials | — | — | yes | — |
-| [097](../convex-and-metric-geometry/097-euclidean-steinitz-bergstr-om-conjecture.md) | The Euclidean Steinitz--Bergstr\"om conjecture | — | — | yes | — |
+| [097](../convex-and-metric-geometry/097-euclidean-steinitz-bergstrom-conjecture.md) | The Euclidean Steinitz--Bergström conjecture | — | — | yes | — |
 | [102](../theoretical-computer-science/102-unique-games-conjecture-and-optimal-approximation-thresholds.md) | The Unique Games Conjecture and optimal approximation thresholds | — | — | yes | — |
 | [104](../theoretical-computer-science/104-quasipolynomial-algorithms-for-mean-payoff-stochastic-and-parity-games.md) | Quasipolynomial algorithms for mean-payoff, stochastic and parity games | — | — | yes | — |
 | [109](../theoretical-computer-science/109-integer-multiplication-below-n-n.md) | Integer multiplication below $n\log n$ | yes | — | — | — |

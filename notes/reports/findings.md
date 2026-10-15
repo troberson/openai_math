@@ -157,7 +157,7 @@ resolve to **551** subject names and **5,291** citation-only rows over **9,819**
 [S23]. `cauchy` reaches the prose of **232** families and appears in **0** of the 200 `main_results`
 declaration names — a fact about the release, not an extractor gap [S23].
 
-**Topics are curated, not derived.** **92** terms carry **978** assignments over the 372 families,
+**Topics are curated, not derived.** **92** terms carry **980** assignments over the 372 families,
 **0** families are uncovered, and **4** terms have no hit and are kept as measured negatives [S24].
 A term is quoted with its per-layer counts: a yield of 24 can be 2 titles and 16 scope notes.
 
@@ -174,7 +174,7 @@ directory** [S26]. Proof environments total **20,341**; statement environments t
 declared rule and **21,203** by the six-name list, the 85 gap being `assumption`, `foundation`,
 `auxproposition`, `hypothesis`, `auxlemma` and 10 names at ≤5 [S26].
 
-**The rendered index is link-clean.** **1,033** pages carry **66,125** links with **0** broken [S27].
+**The rendered index is link-clean.** **1,033** pages carry **66,129** links with **0** broken [S27].
 
 ## The dependency record
 

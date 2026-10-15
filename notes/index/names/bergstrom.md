@@ -21,13 +21,13 @@ Prose counts: 6 capitalized occurrences, 5 of them mid-sentence, 0 lowercase. Th
 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
-| [097](../convex-and-metric-geometry/097-euclidean-steinitz-bergstr-om-conjecture.md) | The Euclidean Steinitz--Bergstr\"om conjecture | yes | yes | yes | yes | yes | yes |
+| [097](../convex-and-metric-geometry/097-euclidean-steinitz-bergstrom-conjecture.md) | The Euclidean Steinitz--Bergström conjecture | yes | yes | yes | yes | yes | yes |
 
 ## Manuscripts
 
 | Dir | Family | Where the name appears | PDF |
 |---|---|---|---|
-| [`The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026`](../../../preprints/The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026/) | [097](../convex-and-metric-geometry/097-euclidean-steinitz-bergstr-om-conjecture.md) | prose + title | [The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026.pdf](../../../preprints/The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026/The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026.pdf) |
+| [`The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026`](../../../preprints/The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026/) | [097](../convex-and-metric-geometry/097-euclidean-steinitz-bergstrom-conjecture.md) | prose + title | [The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026.pdf](../../../preprints/The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026/The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026.pdf) |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.
 
@@ -35,7 +35,7 @@ Prose counts: 6 capitalized occurrences, 5 of them mid-sentence, 0 lowercase. Th
 
 | Config | Declaration | File | Family |
 |---|---|---|---|
-| [SteinitzBergstrom](../../../lean/ComparatorChallenges/SteinitzBergstrom.json) | `OAI.EuclideanSteinitzBergstrom.main` | [Main.lean](../../../lean/OAI/Analysis/Steinitz/Main.lean) | [097](../convex-and-metric-geometry/097-euclidean-steinitz-bergstr-om-conjecture.md) |
+| [SteinitzBergstrom](../../../lean/ComparatorChallenges/SteinitzBergstrom.json) | `OAI.EuclideanSteinitzBergstrom.main` | [Main.lean](../../../lean/OAI/Analysis/Steinitz/Main.lean) | [097](../convex-and-metric-geometry/097-euclidean-steinitz-bergstrom-conjecture.md) |
 
 ## Theorem-environment titles
 
@@ -43,7 +43,7 @@ Up to 8 of the statement-environment titles that carry the name, verbatim with a
 
 | Family | Environment title |
 |---|---|
-| [097](../convex-and-metric-geometry/097-euclidean-steinitz-bergstr-om-conjecture.md) | Euclidean Steinitz--Bergstrom bound |
+| [097](../convex-and-metric-geometry/097-euclidean-steinitz-bergstrom-conjecture.md) | Euclidean Steinitz--Bergstrom bound |
 
 ## Spelling variants
 

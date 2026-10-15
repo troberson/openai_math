@@ -36,7 +36,7 @@ Prose counts: 85 capitalized occurrences, 83 of them mid-sentence, 7 lowercase. 
 | [343](../differential-geometry/343-sharp-symplectic-ball-packing-criteria-in-higher-dimensions.md) | Sharp symplectic ball-packing criteria in higher dimensions | — | — | — | — | yes | — |
 | [352](../differential-geometry/352-finite-time-singularity-of-calabi-flow.md) | Finite-time singularity of Calabi flow | — | — | — | — | yes | — |
 | [353](../differential-geometry/353-sharp-dimension-threshold-for-affine-bernstein-rigidity.md) | The sharp dimension threshold for affine Bernstein rigidity | — | — | — | — | yes | — |
-| [359](../differential-geometry/359-negative-k-ahler-curvature-without-bounded-holomorphic-coordinates.md) | Negative K\"ahler curvature without bounded holomorphic coordinates | — | — | yes | — | yes | — |
+| [359](../differential-geometry/359-negative-kahler-curvature-without-bounded-holomorphic-coordinates.md) | Negative Kähler curvature without bounded holomorphic coordinates | — | — | yes | — | yes | — |
 | [361](../differential-geometry/361-counterexamples-to-yaus-harmonic-dimension-bound.md) | Counterexamples to Yau's harmonic dimension bound | — | — | — | — | yes | — |
 
 ## Manuscripts
@@ -58,7 +58,7 @@ Prose counts: 85 capitalized occurrences, 83 of them mid-sentence, 7 lowercase. 
 | [`Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026`](../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026/) | — | prose | — |
 | [`Marked-polygon-correlations-and-one-arc-bounds-September-26-2026`](../../../preprints/Marked-polygon-correlations-and-one-arc-bounds-September-26-2026/) | [237](../probability-and-statistical-mechanics/237-three-quarter-diameter-exponent-for-honeycomb-walks.md) | prose | [main.pdf](../../../preprints/Marked-polygon-correlations-and-one-arc-bounds-September-26-2026/main.pdf) |
 | [`No-percolation-at-criticality-on-quasi-transitive-graphs-September-24-2026`](../../../preprints/No-percolation-at-criticality-on-quasi-transitive-graphs-September-24-2026/) | [213](../probability-and-statistical-mechanics/213-no-infinite-critical-clusters-on-quasi-transitive-graphs.md) | prose | [paper.pdf](../../../preprints/No-percolation-at-criticality-on-quasi-transitive-graphs-September-24-2026/paper.pdf) |
-| [`One-sided-negative-sectional-curvature-and-the-holomorphic-Liouville-property-September-25-2026`](../../../preprints/One-sided-negative-sectional-curvature-and-the-holomorphic-Liouville-property-September-25-2026/) | [359](../differential-geometry/359-negative-k-ahler-curvature-without-bounded-holomorphic-coordinates.md) | prose | [paper.pdf](../../../preprints/One-sided-negative-sectional-curvature-and-the-holomorphic-Liouville-property-September-25-2026/paper.pdf) |
+| [`One-sided-negative-sectional-curvature-and-the-holomorphic-Liouville-property-September-25-2026`](../../../preprints/One-sided-negative-sectional-curvature-and-the-holomorphic-Liouville-property-September-25-2026/) | [359](../differential-geometry/359-negative-kahler-curvature-without-bounded-holomorphic-coordinates.md) | prose | [paper.pdf](../../../preprints/One-sided-negative-sectional-curvature-and-the-holomorphic-Liouville-property-September-25-2026/paper.pdf) |
 | [`Primitive-roots-for-every-admissible-integer-base-October-4-2026`](../../../preprints/Primitive-roots-for-every-admissible-integer-base-October-4-2026/) | [029](../number-theory/029-artins-primitive-root-conjecture-infinitude-for-every-base.md) | prose | [primitive-roots-all-integer-bases.pdf](../../../preprints/Primitive-roots-for-every-admissible-integer-base-October-4-2026/primitive-roots-all-integer-bases.pdf) |
 | [`Symplectic-Ball-Packings-in-Higher-Dimensions-September-23-2026`](../../../preprints/Symplectic-Ball-Packings-in-Higher-Dimensions-September-23-2026/) | [343](../differential-geometry/343-sharp-symplectic-ball-packing-criteria-in-higher-dimensions.md) | prose | [paper.pdf](../../../preprints/Symplectic-Ball-Packings-in-Higher-Dimensions-September-23-2026/paper.pdf) |
 | [`The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026`](../../../preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/) | [087](../convex-and-metric-geometry/087-mahler-conjectures-and-symplectic-width.md) | prose | [paper.pdf](../../../preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/paper.pdf) |
@@ -83,7 +83,7 @@ Up to 8 of the statement-environment titles that carry the name, verbatim with a
 
 | Family | Environment title |
 |---|---|
-| [359](../differential-geometry/359-negative-k-ahler-curvature-without-bounded-holomorphic-coordinates.md) | Metric and regularity of the Legendre transform |
+| [359](../differential-geometry/359-negative-kahler-curvature-without-bounded-holomorphic-coordinates.md) | Metric and regularity of the Legendre transform |
 
 ## Spelling variants
 

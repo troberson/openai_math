@@ -1,4 +1,4 @@
-# 162 — Counterexamples to Ryser's covering and Gy\'arf\'as's tree-cover conjectures
+# 162 — Counterexamples to Ryser's covering and Gyárfás's tree-cover conjectures
 
 |  |  |
 |---|---|

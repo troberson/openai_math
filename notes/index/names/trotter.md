@@ -22,7 +22,7 @@ Prose counts: 10 capitalized occurrences, 7 of them mid-sentence, 2 lowercase. T
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
 | [106](../theoretical-computer-science/106-hardness-of-coloring-three-colorable-graphs.md) | Hardness of coloring three-colorable graphs | — | — | — | — | — | yes |
-| [166](../combinatorics/166-higher-dimensional-erdos-distinct-distances-conjecture.md) | The higher-dimensional Erd\H{o}s distinct-distances conjecture | — | — | yes | — | yes | yes |
+| [166](../combinatorics/166-higher-dimensional-erdos-distinct-distances-conjecture.md) | The higher-dimensional Erdős distinct-distances conjecture | — | — | yes | — | yes | yes |
 | [167](../combinatorics/167-pinned-distances-and-a-power-saving-for-planar-unit-distances.md) | Pinned distances and a power saving for planar unit distances | — | — | — | — | yes | yes |
 | [171](../combinatorics/171-hypercube-ramsey-conjecture.md) | The hypercube Ramsey conjecture | — | — | — | — | yes | — |
 | [271](../mathematical-physics/271-blochs-law-and-spontaneous-ferromagnetic-order.md) | Bloch's law and spontaneous ferromagnetic order | — | — | — | — | yes | yes |

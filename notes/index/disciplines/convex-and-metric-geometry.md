@@ -16,7 +16,7 @@ Tier: T3 10 · T2 3 · T1 0 · T0 2
 | [094](../convex-and-metric-geometry/094-subpolynomial-dimension-reduction-in-l-p.md) | Subpolynomial dimension reduction in $L_p$ | T3 | 1 | 1 | yes | 1 | — |
 | [095](../convex-and-metric-geometry/095-hyperbolicity-cones-without-semidefinite-lifts.md) | Hyperbolicity cones without semidefinite lifts | T3 | 3 | 1 | yes | 1 | — |
 | [096](../convex-and-metric-geometry/096-gaussian-propeller-conjecture.md) | The Gaussian propeller conjecture | T3 | 1 | 1 | yes | 1 | — |
-| [097](../convex-and-metric-geometry/097-euclidean-steinitz-bergstr-om-conjecture.md) | The Euclidean Steinitz--Bergstr\"om conjecture | T3 | 1 | 1 | yes | 1 | — |
+| [097](../convex-and-metric-geometry/097-euclidean-steinitz-bergstrom-conjecture.md) | The Euclidean Steinitz--Bergström conjecture | T3 | 1 | 1 | yes | 1 | — |
 | [098](../convex-and-metric-geometry/098-a-negative-answer-to-the-lang-plaut-problem.md) | A negative answer to the Lang--Plaut problem | T3 | 1 | 1 | yes | 2 | — |
 | [099](../convex-and-metric-geometry/099-sharp-distortion-of-edit-distance-into-1.md) | The sharp distortion of edit distance into $\ell_1$ | T2 | 3 | 0 | yes | 4 | — |
 | [100](../convex-and-metric-geometry/100-a-counterexample-to-bangs-cylinder-covering-bound.md) | A counterexample to Bang's cylinder-covering bound | T2 | 4 | 0 | yes | 3 | — |

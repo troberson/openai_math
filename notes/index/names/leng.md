@@ -23,7 +23,7 @@ Prose counts: 19 capitalized occurrences, 9 of them mid-sentence, 1 lowercase. T
 |---|---|---|---|---|---|---|---|
 | [086](../real-and-complex-analysis/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md) | An $L^3$ bound for the trilinear Hilbert transform | — | — | yes | — | yes | yes |
 | [154](../dynamical-systems-and-ergodic-theory/154-pointwise-multiple-ergodic-averages-for-mixing-transformations.md) | Pointwise multiple ergodic averages for mixing transformations | — | — | — | — | yes | yes |
-| [159](../combinatorics/159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemer-bounds.md) | Erd\H{o}s's reciprocal-sum conjecture and quasipolynomial Szemer\'edi bounds | — | — | — | — | yes | — |
+| [159](../combinatorics/159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemeredi-bounds.md) | Erdős's reciprocal-sum conjecture and quasipolynomial Szemerédi bounds | — | — | — | — | yes | — |
 | [160](../combinatorics/160-superexponential-van-der-waerden-numbers.md) | Superexponential van der Waerden numbers | — | — | — | — | yes | yes |
 
 ## Manuscripts
@@ -32,7 +32,7 @@ Prose counts: 19 capitalized occurrences, 9 of them mid-sentence, 1 lowercase. T
 |---|---|---|---|
 | [`An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026`](../../../preprints/An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026/) | [086](../real-and-complex-analysis/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md) | prose | [paper.pdf](../../../preprints/An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026/paper.pdf) |
 | [`Quantitative-Superexponential-Bounds-for-van-der-Waerden-Numbers-September-23-2026`](../../../preprints/Quantitative-Superexponential-Bounds-for-van-der-Waerden-Numbers-September-23-2026/) | [160](../combinatorics/160-superexponential-van-der-waerden-numbers.md) | prose | [paper.pdf](../../../preprints/Quantitative-Superexponential-Bounds-for-van-der-Waerden-Numbers-September-23-2026/paper.pdf) |
-| [`Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026`](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/) | [159](../combinatorics/159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemer-bounds.md) | prose | [paper.pdf](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/paper.pdf) |
+| [`Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026`](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/) | [159](../combinatorics/159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemeredi-bounds.md) | prose | [paper.pdf](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/paper.pdf) |
 | [`Triple-ergodic-averages-with-distinct-integer-slopes-October-4-2026`](../../../preprints/Triple-ergodic-averages-with-distinct-integer-slopes-October-4-2026/) | [154](../dynamical-systems-and-ergodic-theory/154-pointwise-multiple-ergodic-averages-for-mixing-transformations.md) | prose | [triple-ergodic-distinct-slopes.pdf](../../../preprints/Triple-ergodic-averages-with-distinct-integer-slopes-October-4-2026/triple-ergodic-distinct-slopes.pdf) |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.

@@ -12,5 +12,5 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | [176](../combinatorics/176-second-kahn-kalai-conjecture.md) | The second Kahn--Kalai conjecture | yes | yes | yes | — |
 | [186](../combinatorics/186-friedgut-kalai-graph-and-hypergraph-threshold-conjectures.md) | The Friedgut--Kalai graph and hypergraph threshold conjectures | yes | yes | yes | — |
 | [188](../combinatorics/188-sharp-constant-in-random-triangle-removal.md) | The sharp constant in random triangle removal | yes | — | yes | — |
-| [221](../probability-and-statistical-mechanics/221-m-parisi-formula-for-diluted-spin-glasses.md) | The M\'ezard--Parisi formula for diluted spin glasses | — | yes | yes | — |
+| [221](../probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md) | The Mézard--Parisi formula for diluted spin glasses | — | yes | yes | — |
 

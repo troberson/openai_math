@@ -10,7 +10,7 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | [034](../algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md) | Log abundance and effective Iitaka fibrations | — | yes | — | — |
 | [036](../algebraic-and-complex-geometry/036-numerical-semiampleness-and-generalized-minimal-models.md) | Numerical semiampleness and generalized minimal models | — | yes | — | — |
 | [040](../algebraic-and-complex-geometry/040-blochs-conjecture-for-complex-surfaces.md) | Bloch's conjecture for complex surfaces | yes | yes | — | — |
-| [041](../algebraic-and-complex-geometry/041-hyperk-ahler-syz-and-projective-space-bases.md) | Hyperk\"ahler SYZ and projective-space bases | yes | yes | — | — |
+| [041](../algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) | Hyperkähler SYZ and projective-space bases | yes | yes | — | — |
 | [042](../algebraic-and-complex-geometry/042-oka-classification-for-k3-surfaces-and-other-compact-complex-surfaces.md) | Oka classification for K3 surfaces and other compact complex surfaces | yes | yes | — | — |
 | [046](../algebraic-and-complex-geometry/046-counterexamples-to-shafarevich-holomorphic-convexity.md) | Counterexamples to Shafarevich holomorphic convexity | — | yes | — | — |
 | [048](../algebraic-and-complex-geometry/048-a-characteristic-zero-counterexample-to-lipman-zariski.md) | A characteristic-zero counterexample to Lipman--Zariski | — | yes | — | — |
@@ -26,5 +26,5 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | [341](../differential-geometry/341-donaldsons-hypersymplectic-deformation-conjecture.md) | Donaldson's hypersymplectic deformation conjecture | — | yes | — | — |
 | [347](../differential-geometry/347-counterexamples-to-strong-forms-of-arnolds-fixed-point-conjecture.md) | Counterexamples to strong forms of Arnold's fixed-point conjecture | — | yes | — | — |
 | [352](../differential-geometry/352-finite-time-singularity-of-calabi-flow.md) | Finite-time singularity of Calabi flow | — | yes | — | — |
-| [359](../differential-geometry/359-negative-k-ahler-curvature-without-bounded-holomorphic-coordinates.md) | Negative K\"ahler curvature without bounded holomorphic coordinates | yes | yes | yes | yes |
+| [359](../differential-geometry/359-negative-kahler-curvature-without-bounded-holomorphic-coordinates.md) | Negative Kähler curvature without bounded holomorphic coordinates | yes | yes | yes | yes |
 

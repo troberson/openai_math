@@ -24,7 +24,7 @@ Prose counts: 13 capitalized occurrences, 8 of them mid-sentence, 0 lowercase. T
 | [011](../number-theory/011-ford-konyagin-luca-conjecture-on-prime-predecessors.md) | The Ford--Konyagin--Luca conjecture on prime predecessors | yes | — | — | — | yes | yes |
 | [013](../number-theory/013-ostmanns-inverse-goldbach-conjecture.md) | Ostmann's inverse Goldbach conjecture | — | — | — | — | — | yes |
 | [021](../number-theory/021-a-quadratic-bound-for-jacobsthals-function.md) | A quadratic bound for Jacobsthal's function | — | — | — | — | yes | yes |
-| [025](../number-theory/025-erdoss-short-egyptian-fraction-conjecture.md) | Erd\H{o}s’s short Egyptian-fraction conjecture | — | — | — | — | yes | yes |
+| [025](../number-theory/025-erdoss-short-egyptian-fraction-conjecture.md) | Erdős’s short Egyptian-fraction conjecture | — | — | — | — | yes | yes |
 | [026](../number-theory/026-positive-lower-density-of-large-prime-gaps.md) | Positive lower density of large prime gaps | — | — | — | — | yes | yes |
 
 ## Manuscripts

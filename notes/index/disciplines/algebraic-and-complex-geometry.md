@@ -15,7 +15,7 @@ Tier: T3 7 · T2 1 · T1 0 · T0 28
 | [038](../algebraic-and-complex-geometry/038-fujitas-freeness-conjecture.md) | Fujita's freeness conjecture | T0 | 1 | 0 | — | 0 | — |
 | [039](../algebraic-and-complex-geometry/039-nagatas-conjecture-and-maximal-seshadri-constants.md) | Nagata's conjecture and maximal Seshadri constants | T3 | 4 | 2 | yes | 2 | — |
 | [040](../algebraic-and-complex-geometry/040-blochs-conjecture-for-complex-surfaces.md) | Bloch's conjecture for complex surfaces | T0 | 1 | 0 | — | 0 | — |
-| [041](../algebraic-and-complex-geometry/041-hyperk-ahler-syz-and-projective-space-bases.md) | Hyperk\"ahler SYZ and projective-space bases | T0 | 2 | 0 | — | 0 | — |
+| [041](../algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) | Hyperkähler SYZ and projective-space bases | T0 | 2 | 0 | — | 0 | — |
 | [042](../algebraic-and-complex-geometry/042-oka-classification-for-k3-surfaces-and-other-compact-complex-surfaces.md) | Oka classification for K3 surfaces and other compact complex surfaces | T0 | 1 | 0 | — | 0 | — |
 | [043](../algebraic-and-complex-geometry/043-p-w-for-fixed-determinant-moduli-spaces.md) | $P=W$ for fixed-determinant moduli spaces | T0 | 1 | 0 | — | 0 | — |
 | [044](../algebraic-and-complex-geometry/044-equivariant-cohomological-hikita-conjecture-for-quivers.md) | The equivariant cohomological Hikita conjecture for quivers | T0 | 1 | 0 | — | 0 | — |
@@ -31,7 +31,7 @@ Tier: T3 7 · T2 1 · T1 0 · T0 28
 | [055](../algebraic-and-complex-geometry/055-todas-gepner-conjecture-and-large-volume-stability.md) | Toda's Gepner conjecture and large-volume stability | T0 | 2 | 0 | — | 0 | — |
 | [056](../algebraic-and-complex-geometry/056-termination-of-fourfold-minimal-model-programs.md) | Termination of fourfold minimal model programs | T0 | 5 | 0 | — | 0 | — |
 | [057](../algebraic-and-complex-geometry/057-campanas-abelianity-conjecture-and-special-varieties.md) | Campana's abelianity conjecture and special varieties | T0 | 3 | 0 | — | 0 | — |
-| [058](../algebraic-and-complex-geometry/058-koll-pardon-universal-cover-conjecture.md) | The Koll\'ar--Pardon universal-cover conjecture | T3 | 2 | 1 | yes | 1 | — |
+| [058](../algebraic-and-complex-geometry/058-kollar-pardon-universal-cover-conjecture.md) | The Kollár--Pardon universal-cover conjecture | T3 | 2 | 1 | yes | 1 | — |
 | [059](../algebraic-and-complex-geometry/059-counterexamples-to-zariskis-multiplicity-conjecture.md) | Counterexamples to Zariski's multiplicity conjecture | T0 | 2 | 0 | — | 0 | — |
 | [060](../algebraic-and-complex-geometry/060-global-spherical-shell-conjecture.md) | The Global Spherical Shell conjecture | T0 | 1 | 0 | — | 0 | — |
 | [062](../algebraic-and-complex-geometry/062-lebrun-salamon-conjecture-and-projective-contact-classification.md) | The LeBrun--Salamon conjecture and projective contact classification | T0 | 1 | 0 | — | 0 | — |

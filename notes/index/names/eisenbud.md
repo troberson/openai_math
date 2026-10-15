@@ -28,7 +28,7 @@ Prose counts: 40 capitalized occurrences, 27 of them mid-sentence, 0 lowercase. 
 | [194](../algebra/194-lechs-multiplicity-conjecture.md) | Lech's multiplicity conjecture | — | — | — | — | yes | — |
 | [195](../algebra/195-a-counterexample-to-the-small-cohen-macaulay-module-conjecture.md) | A counterexample to the small Cohen--Macaulay module conjecture | — | — | — | — | — | yes |
 | [200](../algebra/200-eisenbud-green-harris-and-lex-plus-powers-in-characteristic-zero.md) | Eisenbud--Green--Harris and lex-plus-powers in characteristic zero | yes | yes | yes | — | yes | — |
-| [359](../differential-geometry/359-negative-k-ahler-curvature-without-bounded-holomorphic-coordinates.md) | Negative K\"ahler curvature without bounded holomorphic coordinates | — | — | — | — | — | yes |
+| [359](../differential-geometry/359-negative-kahler-curvature-without-bounded-holomorphic-coordinates.md) | Negative Kähler curvature without bounded holomorphic coordinates | — | — | — | — | — | yes |
 
 ## Manuscripts
 

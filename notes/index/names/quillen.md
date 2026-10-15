@@ -21,7 +21,7 @@ Prose counts: 85 capitalized occurrences, 60 of them mid-sentence, 1 lowercase. 
 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
-| [041](../algebraic-and-complex-geometry/041-hyperk-ahler-syz-and-projective-space-bases.md) | Hyperk\"ahler SYZ and projective-space bases | — | — | — | — | — | yes |
+| [041](../algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) | Hyperkähler SYZ and projective-space bases | — | — | — | — | — | yes |
 | [047](../algebraic-and-complex-geometry/047-complex-counterexamples-to-cancellation-and-affine-fibrations.md) | Complex counterexamples to cancellation and affine fibrations | — | — | — | — | yes | — |
 | [209](../algebra/209-integral-counterexamples-to-gerstens-conjecture.md) | Integral counterexamples to Gersten’s conjecture | — | — | — | — | yes | yes |
 | [254](../group-theory/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md) | Classifying spaces and geometric obstructions for Artin groups | — | — | — | — | yes | yes |

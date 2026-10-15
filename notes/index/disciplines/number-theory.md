@@ -30,7 +30,7 @@ Tier: T3 7 · T2 10 · T1 0 · T0 14
 | [022](../number-theory/022-weak-inhomogeneous-duffin-schaeffer-conjecture.md) | The weak inhomogeneous Duffin--Schaeffer conjecture | T0 | 1 | 0 | — | 0 | — |
 | [023](../number-theory/023-pattersons-first-moment-for-cubic-gauss-sums.md) | Patterson’s first moment for cubic Gauss sums | T2 | 1 | 0 | yes | 1 | — |
 | [024](../number-theory/024-an-asymptotic-formula-for-the-number-of-totients.md) | An asymptotic formula for the number of totients | T2 | 1 | 0 | yes | 2 | — |
-| [025](../number-theory/025-erdoss-short-egyptian-fraction-conjecture.md) | Erd\H{o}s’s short Egyptian-fraction conjecture | T3 | 1 | 1 | yes | 2 | — |
+| [025](../number-theory/025-erdoss-short-egyptian-fraction-conjecture.md) | Erdős’s short Egyptian-fraction conjecture | T3 | 1 | 1 | yes | 2 | — |
 | [026](../number-theory/026-positive-lower-density-of-large-prime-gaps.md) | Positive lower density of large prime gaps | T2 | 1 | 0 | yes | 1 | — |
 | [027](../number-theory/027-integral-density-on-curve-character-varieties.md) | Integral density on curve character varieties | T3 | 1 | 1 | yes | 1 | — |
 | [028](../number-theory/028-gaussian-moat-conjecture.md) | The Gaussian moat conjecture | T3 | 1 | 1 | yes | 1 | — |

@@ -1,4 +1,4 @@
-# 359 — Negative K\"ahler curvature without bounded holomorphic coordinates
+# 359 — Negative Kähler curvature without bounded holomorphic coordinates
 
 |  |  |
 |---|---|

@@ -1,4 +1,4 @@
-# 181 — The Erd\H{o}s--Gallai cycle-decomposition conjecture
+# 181 — The Erdős--Gallai cycle-decomposition conjecture
 
 |  |  |
 |---|---|

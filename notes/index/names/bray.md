@@ -23,7 +23,7 @@ Prose counts: 63 capitalized occurrences, 33 of them mid-sentence, 5 lowercase. 
 |---|---|---|---|---|---|---|---|
 | [018](../number-theory/018-margulis-platonov-conjecture-over-global-fields.md) | The Margulis--Platonov conjecture over global fields | — | — | — | — | yes | — |
 | [206](../algebra/206-finite-lattice-representation-counterexamples-and-undecidability.md) | Finite lattice representation: counterexamples and undecidability | — | — | — | — | — | yes |
-| [221](../probability-and-statistical-mechanics/221-m-parisi-formula-for-diluted-spin-glasses.md) | The M\'ezard--Parisi formula for diluted spin glasses | — | — | yes | — | yes | yes |
+| [221](../probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md) | The Mézard--Parisi formula for diluted spin glasses | — | — | yes | — | yes | yes |
 | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | Spacetime Penrose inequalities and rigidity | — | — | — | — | yes | yes |
 
 ## Manuscripts
@@ -39,7 +39,7 @@ Prose counts: 63 capitalized occurrences, 33 of them mid-sentence, 5 lowercase. 
 | [`Spacetime-Penrose-inequalities-enclosing-area-charge-and-rigidity-October-5-2026`](../../../preprints/Spacetime-Penrose-inequalities-enclosing-area-charge-and-rigidity-October-5-2026/) | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | prose | [paper.pdf](../../../preprints/Spacetime-Penrose-inequalities-enclosing-area-charge-and-rigidity-October-5-2026/paper.pdf) |
 | [`The-Kerr-Newman-Penrose-Inequality-for-Axisymmetric-Electrovacuum-Exteriors-October-5-2026`](../../../preprints/The-Kerr-Newman-Penrose-Inequality-for-Axisymmetric-Electrovacuum-Exteriors-October-5-2026/) | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | prose | [paper.pdf](../../../preprints/The-Kerr-Newman-Penrose-Inequality-for-Axisymmetric-Electrovacuum-Exteriors-October-5-2026/paper.pdf) |
 | [`The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026`](../../../preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/) | [018](../number-theory/018-margulis-platonov-conjecture-over-global-fields.md) | prose | [paper.pdf](../../../preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/paper.pdf) |
-| [`The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/) | [221](../probability-and-statistical-mechanics/221-m-parisi-formula-for-diluted-spin-glasses.md) | prose | [paper.pdf](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/paper.pdf) |
+| [`The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/) | [221](../probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md) | prose | [paper.pdf](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/paper.pdf) |
 | [`The-Penrose-inequality-for-maximal-asymptotically-hyperbolic-initial-data-October-5-2026`](../../../preprints/The-Penrose-inequality-for-maximal-asymptotically-hyperbolic-initial-data-October-5-2026/) | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | prose | [paper.pdf](../../../preprints/The-Penrose-inequality-for-maximal-asymptotically-hyperbolic-initial-data-October-5-2026/paper.pdf) |
 | [`The-nonmaximal-anti-de-Sitter-Penrose-Inequality-and-original-data-rigidity-October-5-2026`](../../../preprints/The-nonmaximal-anti-de-Sitter-Penrose-Inequality-and-original-data-rigidity-October-5-2026/) | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | prose | [paper.pdf](../../../preprints/The-nonmaximal-anti-de-Sitter-Penrose-Inequality-and-original-data-rigidity-October-5-2026/paper.pdf) |
 | [`The-spacetime-Penrose-inequality-and-enclosing-area-September-27-2026`](../../../preprints/The-spacetime-Penrose-inequality-and-enclosing-area-September-27-2026/) | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | prose | [paper.pdf](../../../preprints/The-spacetime-Penrose-inequality-and-enclosing-area-September-27-2026/paper.pdf) |
@@ -57,7 +57,7 @@ Up to 8 of the statement-environment titles that carry the name, verbatim with a
 
 | Family | Environment title |
 |---|---|
-| [221](../probability-and-statistical-mechanics/221-m-parisi-formula-for-diluted-spin-glasses.md) | Viana--Bray and diluted even-spin models |
+| [221](../probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md) | Viana--Bray and diluted even-spin models |
 
 ## Spelling variants
 

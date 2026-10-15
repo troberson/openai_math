@@ -21,7 +21,7 @@ Prose counts: 19 capitalized occurrences, 10 of them mid-sentence, 1 lowercase. 
 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
-| [025](../number-theory/025-erdoss-short-egyptian-fraction-conjecture.md) | Erd\H{o}s’s short Egyptian-fraction conjecture | — | — | — | — | yes | yes |
+| [025](../number-theory/025-erdoss-short-egyptian-fraction-conjecture.md) | Erdős’s short Egyptian-fraction conjecture | — | — | — | — | yes | yes |
 | [037](../algebraic-and-complex-geometry/037-sharp-ordinary-double-point-volume-gap.md) | The sharp ordinary-double-point volume gap | — | — | — | — | — | yes |
 | [053](../algebraic-and-complex-geometry/053-a-counterexample-to-pixtons-original-completeness-conjecture.md) | A counterexample to Pixton's original completeness conjecture | — | — | — | — | yes | — |
 | [113](../theoretical-computer-science/113-approximate-counting-and-the-perfect-matching-entropy-conjecture.md) | Approximate counting and the perfect-matching entropy conjecture | — | — | — | — | — | yes |

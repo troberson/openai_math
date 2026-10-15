@@ -28,7 +28,7 @@ Prose counts: 303 capitalized occurrences, 272 of them mid-sentence, 6 lowercase
 | [035](../algebraic-and-complex-geometry/035-threefold-log-abundance-in-numerical-dimension-one-in-characteristic-p-3.md) | Threefold log abundance in numerical dimension one in characteristic $p>3$ | — | — | — | — | yes | — |
 | [036](../algebraic-and-complex-geometry/036-numerical-semiampleness-and-generalized-minimal-models.md) | Numerical semiampleness and generalized minimal models | — | — | — | — | yes | — |
 | [037](../algebraic-and-complex-geometry/037-sharp-ordinary-double-point-volume-gap.md) | The sharp ordinary-double-point volume gap | — | — | — | — | yes | — |
-| [041](../algebraic-and-complex-geometry/041-hyperk-ahler-syz-and-projective-space-bases.md) | Hyperk\"ahler SYZ and projective-space bases | — | — | — | — | — | yes |
+| [041](../algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) | Hyperkähler SYZ and projective-space bases | — | — | — | — | — | yes |
 | [048](../algebraic-and-complex-geometry/048-a-characteristic-zero-counterexample-to-lipman-zariski.md) | A characteristic-zero counterexample to Lipman--Zariski | — | — | — | — | yes | — |
 | [056](../algebraic-and-complex-geometry/056-termination-of-fourfold-minimal-model-programs.md) | Termination of fourfold minimal model programs | — | — | — | — | yes | — |
 | [059](../algebraic-and-complex-geometry/059-counterexamples-to-zariskis-multiplicity-conjecture.md) | Counterexamples to Zariski's multiplicity conjecture | — | — | — | — | yes | — |
@@ -38,7 +38,7 @@ Prose counts: 303 capitalized occurrences, 272 of them mid-sentence, 6 lowercase
 | [103](../theoretical-computer-science/103-derandomization-of-logarithmic-space-l-rl-bpl.md) | Derandomization of logarithmic space: $\mathsf L=\mathsf{RL}=\mathsf{BPL}$ | — | — | — | — | yes | yes |
 | [110](../theoretical-computer-science/110-optimal-order-randomized-k-server-on-arbitrary-metrics.md) | Optimal-order randomized $k$-server on arbitrary metrics | — | — | — | — | — | yes |
 | [125](../theoretical-computer-science/125-approximation-threshold-for-metric-k-median.md) | The approximation threshold for metric $k$-median | — | — | — | — | yes | — |
-| [166](../combinatorics/166-higher-dimensional-erdos-distinct-distances-conjecture.md) | The higher-dimensional Erd\H{o}s distinct-distances conjecture | — | — | — | — | yes | — |
+| [166](../combinatorics/166-higher-dimensional-erdos-distinct-distances-conjecture.md) | The higher-dimensional Erdős distinct-distances conjecture | — | — | — | — | yes | — |
 | [178](../combinatorics/178-deterministic-nonbipartite-ramanujan-graphs-in-every-fixed-degree.md) | Deterministic nonbipartite Ramanujan graphs in every fixed degree | — | — | — | — | yes | — |
 | [191](../combinatorics/191-a-power-improvement-in-the-heilbronn-triangle-problem.md) | A power improvement in the Heilbronn triangle problem | — | — | — | — | yes | yes |
 | [193](../algebra/193-serres-intersection-multiplicity-conjecture.md) | Serre's intersection-multiplicity conjecture | — | — | — | — | yes | — |

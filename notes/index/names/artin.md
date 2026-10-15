@@ -32,14 +32,14 @@ Prose counts: 404 capitalized occurrences, 319 of them mid-sentence, 36 lowercas
 | [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties.md) | The rational Hodge conjecture for CM abelian varieties | — | — | — | — | yes | — |
 | [034](../algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md) | Log abundance and effective Iitaka fibrations | — | — | — | — | yes | yes |
 | [035](../algebraic-and-complex-geometry/035-threefold-log-abundance-in-numerical-dimension-one-in-characteristic-p-3.md) | Threefold log abundance in numerical dimension one in characteristic $p>3$ | — | — | — | — | yes | — |
-| [041](../algebraic-and-complex-geometry/041-hyperk-ahler-syz-and-projective-space-bases.md) | Hyperk\"ahler SYZ and projective-space bases | — | — | — | — | — | yes |
+| [041](../algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) | Hyperkähler SYZ and projective-space bases | — | — | — | — | — | yes |
 | [043](../algebraic-and-complex-geometry/043-p-w-for-fixed-determinant-moduli-spaces.md) | $P=W$ for fixed-determinant moduli spaces | — | — | — | — | yes | — |
 | [048](../algebraic-and-complex-geometry/048-a-characteristic-zero-counterexample-to-lipman-zariski.md) | A characteristic-zero counterexample to Lipman--Zariski | — | — | — | — | yes | — |
 | [053](../algebraic-and-complex-geometry/053-a-counterexample-to-pixtons-original-completeness-conjecture.md) | A counterexample to Pixton's original completeness conjecture | — | — | — | — | yes | — |
 | [056](../algebraic-and-complex-geometry/056-termination-of-fourfold-minimal-model-programs.md) | Termination of fourfold minimal model programs | — | — | — | — | yes | yes |
 | [068](../algebraic-and-complex-geometry/068-anticanonical-nonvanishing-under-smooth-semipositivity.md) | Anticanonical nonvanishing under smooth semipositivity | — | — | — | — | — | yes |
 | [069](../algebraic-and-complex-geometry/069-quantum-geometric-langlands-at-irrational-level.md) | Quantum geometric Langlands at irrational level | — | — | — | — | yes | — |
-| [166](../combinatorics/166-higher-dimensional-erdos-distinct-distances-conjecture.md) | The higher-dimensional Erd\H{o}s distinct-distances conjecture | — | — | — | — | yes | — |
+| [166](../combinatorics/166-higher-dimensional-erdos-distinct-distances-conjecture.md) | The higher-dimensional Erdős distinct-distances conjecture | — | — | — | — | yes | — |
 | [194](../algebra/194-lechs-multiplicity-conjecture.md) | Lech's multiplicity conjecture | — | — | — | — | yes | — |
 | [198](../algebra/198-a-counterexample-to-the-little-finitistic-dimension-conjecture.md) | A counterexample to the little finitistic-dimension conjecture | — | — | — | — | yes | — |
 | [199](../algebra/199-counterexamples-to-conjectures-of-auslander-reiten-tachikawa-and-nakayama.md) | Counterexamples to conjectures of Auslander--Reiten, Tachikawa, and Nakayama | — | — | — | — | yes | — |

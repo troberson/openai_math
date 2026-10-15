@@ -1,4 +1,4 @@
-# 041 — Hyperk\"ahler SYZ and projective-space bases
+# 041 — Hyperkähler SYZ and projective-space bases
 
 |  |  |
 |---|---|

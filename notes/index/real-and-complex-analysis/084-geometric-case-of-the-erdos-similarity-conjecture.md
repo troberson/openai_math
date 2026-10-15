@@ -1,4 +1,4 @@
-# 084 — The geometric case of the Erd\H{o}s similarity conjecture
+# 084 — The geometric case of the Erdős similarity conjecture
 
 |  |  |
 |---|---|

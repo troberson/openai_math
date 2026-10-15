@@ -14,7 +14,7 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | [155](../combinatorics/155-a-counterexample-to-periodic-tiling-in-dimension-three.md) | A counterexample to periodic tiling in dimension three | yes | yes | yes | — |
 | [156](../combinatorics/156-borsuks-conjecture-fails-in-dimension-nine.md) | Borsuk's conjecture fails in dimension nine | yes | yes | yes | yes |
 | [165](../combinatorics/165-exact-crossing-numbers-of-complete-and-complete-bipartite-graphs.md) | Exact crossing numbers of complete and complete bipartite graphs | yes | yes | yes | — |
-| [166](../combinatorics/166-higher-dimensional-erdos-distinct-distances-conjecture.md) | The higher-dimensional Erd\H{o}s distinct-distances conjecture | — | yes | — | — |
+| [166](../combinatorics/166-higher-dimensional-erdos-distinct-distances-conjecture.md) | The higher-dimensional Erdős distinct-distances conjecture | — | yes | — | — |
 | [167](../combinatorics/167-pinned-distances-and-a-power-saving-for-planar-unit-distances.md) | Pinned distances and a power saving for planar unit distances | yes | — | yes | — |
 | [183](../combinatorics/183-power-savings-for-planar-halving-lines-and-k-sets.md) | Power savings for planar halving lines and $k$-sets | yes | — | yes | — |
 | [191](../combinatorics/191-a-power-improvement-in-the-heilbronn-triangle-problem.md) | A power improvement in the Heilbronn triangle problem | yes | yes | yes | — |

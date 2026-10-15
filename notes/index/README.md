@@ -28,7 +28,7 @@ The schema is decided in [notes/development/index-design.md](../development/inde
 
 ## Topics
 
-Topics are a curated keyword vocabulary in [`notes/tables/topics.tsv`](../tables/topics.tsv) (the hand-written source of truth, with the reading verdict for each term in [`notes/reports/topics.md`](../reports/topics.md)), measured over four texts per family: title, abstract, scope note, and the derived Lean file paths. A family carries zero or more topics, so this is a label on top of the discipline partition, not a replacement for it. 92 terms, 978 assignments, 4 terms with no hit.
+Topics are a curated keyword vocabulary in [`notes/tables/topics.tsv`](../tables/topics.tsv) (the hand-written source of truth, with the reading verdict for each term in [`notes/reports/topics.md`](../reports/topics.md)), measured over four texts per family: title, abstract, scope note, and the derived Lean file paths. A family carries zero or more topics, so this is a label on top of the discipline partition, not a replacement for it. 92 terms, 980 assignments, 4 terms with no hit.
 
 | Topic | Families | Title | Abstract | Scope | Path |
 |---|---|---|---|---|---|
@@ -47,19 +47,19 @@ Topics are a curated keyword vocabulary in [`notes/tables/topics.tsv`](../tables
 | [mathematical-physics](topics/mathematical-physics.md) | 21 | 16 | 19 | 8 | 2 |
 | [statistical-mechanics](topics/statistical-mechanics.md) | 21 | 15 | 19 | 9 | 2 |
 | [convex-geometry](topics/convex-geometry.md) | 20 | 12 | 12 | 16 | 3 |
+| [partial-differential-equations](topics/partial-differential-equations.md) | 18 | 15 | 12 | 8 | 0 |
 | [curves](topics/curves.md) | 17 | 2 | 17 | 3 | 1 |
 | [harmonic-analysis](topics/harmonic-analysis.md) | 17 | 13 | 13 | 11 | 1 |
 | [measure-theory](topics/measure-theory.md) | 17 | 2 | 10 | 10 | 0 |
-| [partial-differential-equations](topics/partial-differential-equations.md) | 17 | 14 | 12 | 8 | 0 |
 | [disordered-systems](topics/disordered-systems.md) | 16 | 10 | 11 | 12 | 1 |
 | [functional-analysis](topics/functional-analysis.md) | 16 | 5 | 11 | 13 | 1 |
 | [surfaces](topics/surfaces.md) | 16 | 8 | 13 | 7 | 1 |
 | [spectral-theory](topics/spectral-theory.md) | 15 | 2 | 9 | 9 | 0 |
+| [quantum-theory](topics/quantum-theory.md) | 14 | 8 | 12 | 8 | 1 |
 | [banach-spaces](topics/banach-spaces.md) | 13 | 10 | 13 | 11 | 2 |
 | [discrete-geometry](topics/discrete-geometry.md) | 13 | 11 | 10 | 11 | 2 |
 | [logic](topics/logic.md) | 13 | 7 | 13 | 10 | 2 |
 | [planar-maps-and-lattice-models](topics/planar-maps-and-lattice-models.md) | 13 | 9 | 13 | 4 | 1 |
-| [quantum-theory](topics/quantum-theory.md) | 13 | 6 | 12 | 8 | 1 |
 | [symplectic-geometry](topics/symplectic-geometry.md) | 12 | 8 | 10 | 6 | 1 |
 | [condensed-matter](topics/condensed-matter.md) | 11 | 9 | 10 | 6 | 1 |
 | [conformal-universality](topics/conformal-universality.md) | 11 | 11 | 9 | 3 | 0 |
@@ -192,7 +192,7 @@ The 40 subject names that reach the most families; [`names.tsv`](../tables/names
 | `edges/family-lean.tsv` | 200 | `fam` + config | The derived family→Lean-file reach: 200 declarations over 136 families. There is no manuscript→Lean edge to carry. |
 | `edges/citation.tsv` | 391 | citing dir + target dir | manuscript→corpus manuscript from release-marked `.bib` hrefs; untyped. |
 | `edges/family-trace.tsv` | 10 | `fam` + stem | Family→trace attribution as README.md tabulates it. |
-| `edges/family-topic.tsv` | 978 | `fam` + topic | Family→topic assignments from the curated vocabulary, with the layers that hit (T/A/S/P). Multi-label: a family appears once per topic it carries. |
+| `edges/family-topic.tsv` | 980 | `fam` + topic | Family→topic assignments from the curated vocabulary, with the layers that hit (T/A/S/P). Multi-label: a family appears once per topic it carries. |
 | `edges/family-name.tsv` | 9819 | `fam` + name | Family→subject-name edges, with the layers that hit (F/M/E/D/b/B). Subject names only: a citation-only name has no family edge, only a `names.tsv` row. |
 
 ## Reconciliation
@@ -209,7 +209,7 @@ The 40 subject names that reach the most families; [`names.tsv`](../tables/names
 | family pages | 372 | 372 |
 | discipline pages | 17 | 17 |
 | topic pages | 92 | 92 |
-| topic assignments | 978 | 978 |
+| topic assignments | 980 | 980 |
 | families with a topic | 372 | 372 |
 | name pages | 551 | 551 |
 | names measured | 5842 | 5842 |

@@ -32,7 +32,7 @@ Tier: T3 9 · T2 6 · T1 0 · T0 14
 | [356](../differential-geometry/356-giglis-characterization-of-alexandrov-curvature.md) | Gigli's characterization of Alexandrov curvature | T3 | 2 | 1 | yes | 1 | — |
 | [357](../differential-geometry/357-bi-lipschitz-coordinates-at-every-regular-rcd-point.md) | Bi-Lipschitz coordinates at every regular RCD point | T0 | 1 | 0 | — | 0 | — |
 | [358](../differential-geometry/358-a-three-manifold-with-no-conjugate-points-and-no-nonpositively-curved-metric.md) | A three-manifold with no conjugate points and no nonpositively curved metric | T3 | 1 | 1 | yes | 1 | — |
-| [359](../differential-geometry/359-negative-k-ahler-curvature-without-bounded-holomorphic-coordinates.md) | Negative K\"ahler curvature without bounded holomorphic coordinates | T3 | 2 | 1 | yes | 1 | — |
+| [359](../differential-geometry/359-negative-kahler-curvature-without-bounded-holomorphic-coordinates.md) | Negative Kähler curvature without bounded holomorphic coordinates | T3 | 2 | 1 | yes | 1 | — |
 | [360](../differential-geometry/360-villanis-convexity-conjecture-and-regular-optimal-transport.md) | Villani’s convexity conjecture and regular optimal transport | T3 | 2 | 2 | yes | 2 | — |
 | [361](../differential-geometry/361-counterexamples-to-yaus-harmonic-dimension-bound.md) | Counterexamples to Yau's harmonic dimension bound | T3 | 2 | 1 | yes | 1 | — |
 

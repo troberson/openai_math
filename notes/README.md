@@ -490,10 +490,10 @@ and `main_results:` (config/declaration/file triples) as two flat lists with not
 the family→Lean reach the index shows is *derived* — family → config (the scope note's comparator
 links) → declaration → file — 200 declarations over 189 configs reaching **136 of 372** families, and
 formalization stays a per-manuscript flag. The 106 T2 families, whose scope notes link configs that no
-`main_results` entry names, render as *absent*, never as unformalized. Fresh report: **48030** relative
+`main_results` entry names, render as *absent*, never as unformalized. Fresh report: **48034** relative
 links with **0** broken — that is the render-time registry, and `notes/scripts/check_index_links.py`
-re-derives the check from disk over every rendered page: **66,125** links, **0** broken, **17,700** of
-them resolving to a directory and **48,425** to a file, the 18,095-link difference being registry
+re-derives the check from disk over every rendered page: **66,129** links, **0** broken, **17,700** of
+them resolving to a directory and **48,429** to a file, the 18,095-link difference being registry
 under-coverage rather than a disagreement about existence (`notes/development/index-links.md`); canonical ==
 rendered on **six of the seven** coverage counts (372 / 719 / 242 / 416 / 10 / 30) and **not** on
 `formalized`, where canonical reads **173** and the rendered pages **172** — the one-path difference is
@@ -507,10 +507,16 @@ absent on disk**; 11 trace files over 10 attributed stems; **0** configs linked 
 Topics are a curated vocabulary in `notes/tables/topics.tsv` (92 terms, hand-authored, with the reading
 verdict per term in `notes/reports/topics.md`), measured by `notes/scripts/measure_topics.py` over four texts
 per family — title, abstract, scope note, and the derived Lean file paths. A family carries **zero or
-more** topics: 978 assignments, median 2 per family, mean 2.63, 372 of 372 families covered, and **4**
+more** topics: 980 assignments, median 2 per family, mean 2.63, 372 of 372 families covered, and **4**
 terms with no hit at all (`automorphic-forms`, `cluster-algebras`, `machine-learning`,
 `tropical-geometry`), kept as measured negatives. Topics are a label on top of the 17 disciplines,
-which stay the partition; a listing is a keyword floor, not a judgement.
+which stay the partition; a listing is a keyword floor, not a judgement. The four texts are
+accent-folded before matching, so a pattern naming an accented name has to be written against the
+folded text. The `galois-theory` pattern carries `etale`, which matches the release's raw `\'etale` as a
+substring; after the fold the text reads `étale` and `etale` is not a substring of it, so the term's
+yield is **4** families. The recorded counts are measured against the folded title and the raw
+abstract, so a pattern that wants the accented form in the title must say `[eé]tale`; `etale` alone
+reaches only the abstract.
 Names are measured, not curated: `notes/scripts/measure_names.py` reads six layers — family titles,
 manuscript directory names, the optional titles of **16,889** statement environments, `main_results`
 declaration names, capitalized prose tokens, and `.bib` author surnames — and `notes/reports/names.md` states the

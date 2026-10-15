@@ -21,7 +21,7 @@ Prose counts: 13 capitalized occurrences, 11 of them mid-sentence, 0 lowercase. 
 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
-| [041](../algebraic-and-complex-geometry/041-hyperk-ahler-syz-and-projective-space-bases.md) | Hyperk\"ahler SYZ and projective-space bases | — | — | yes | — | yes | yes |
+| [041](../algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) | Hyperkähler SYZ and projective-space bases | — | — | yes | — | yes | yes |
 | [042](../algebraic-and-complex-geometry/042-oka-classification-for-k3-surfaces-and-other-compact-complex-surfaces.md) | Oka classification for K3 surfaces and other compact complex surfaces | — | — | — | — | yes | yes |
 | [133](../theoretical-computer-science/133-complexity-of-weisfeiler-leman-refinement.md) | The complexity of Weisfeiler--Leman refinement | — | — | — | — | yes | — |
 
@@ -30,7 +30,7 @@ Prose counts: 13 capitalized occurrences, 11 of them mid-sentence, 0 lowercase. 
 | Dir | Family | Where the name appears | PDF |
 |---|---|---|---|
 | [`Every-complex-K3-surface-is-Oka-September-23-2026`](../../../preprints/Every-complex-K3-surface-is-Oka-September-23-2026/) | [042](../algebraic-and-complex-geometry/042-oka-classification-for-k3-surfaces-and-other-compact-complex-surfaces.md) | prose | [paper.pdf](../../../preprints/Every-complex-K3-surface-is-Oka-September-23-2026/paper.pdf) |
-| [`The-Strong-Hyperkahler-SYZ-Conjecture-September-23-2026`](../../../preprints/The-Strong-Hyperkahler-SYZ-Conjecture-September-23-2026/) | [041](../algebraic-and-complex-geometry/041-hyperk-ahler-syz-and-projective-space-bases.md) | prose | [main.pdf](../../../preprints/The-Strong-Hyperkahler-SYZ-Conjecture-September-23-2026/main.pdf) |
+| [`The-Strong-Hyperkahler-SYZ-Conjecture-September-23-2026`](../../../preprints/The-Strong-Hyperkahler-SYZ-Conjecture-September-23-2026/) | [041](../algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) | prose | [main.pdf](../../../preprints/The-Strong-Hyperkahler-SYZ-Conjecture-September-23-2026/main.pdf) |
 | [`The-complexity-of-identifying-a-graph-by-Weisfeiler-Leman-refinement-September-25-2026`](../../../preprints/The-complexity-of-identifying-a-graph-by-Weisfeiler-Leman-refinement-September-25-2026/) | [133](../theoretical-computer-science/133-complexity-of-weisfeiler-leman-refinement.md) | prose | [paper.pdf](../../../preprints/The-complexity-of-identifying-a-graph-by-Weisfeiler-Leman-refinement-September-25-2026/paper.pdf) |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.
@@ -45,7 +45,7 @@ Up to 8 of the statement-environment titles that carry the name, verbatim with a
 
 | Family | Environment title |
 |---|---|
-| [041](../algebraic-and-complex-geometry/041-hyperk-ahler-syz-and-projective-space-bases.md) | Soldatenkov--Verbitsky \cite[Theorem~3.7(v) |
+| [041](../algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) | Soldatenkov--Verbitsky \cite[Theorem~3.7(v) |
 
 ## Spelling variants
 

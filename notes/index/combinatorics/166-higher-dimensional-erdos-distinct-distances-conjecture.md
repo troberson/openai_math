@@ -1,4 +1,4 @@
-# 166 — The higher-dimensional Erd\H{o}s distinct-distances conjecture
+# 166 — The higher-dimensional Erdős distinct-distances conjecture
 
 |  |  |
 |---|---|

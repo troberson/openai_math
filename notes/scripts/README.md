@@ -578,7 +578,7 @@ and a `notes/**/topics.tsv` glob read both. The rendered table is now
 `notes/tables/` on 2026-10-11, so the two names cannot collide again. `measure_topics.py` and
 `AGENTS.md` both name the vocabulary; `build_index.py` reads it and writes the rendered table.
 
-The index tree and the summaries tree share **25** page slugs — the families that carry both a rendered
+The index tree and the summaries tree share **26** page slugs — the families that carry both a rendered
 page and a reading summary, which is the pairing the index reports, plus `README.md`, which each tree
 carries as its own entry point.
 

@@ -16,7 +16,7 @@ Tier: T3 9 · T2 10 · T1 0 · T0 10
 | [218](../probability-and-statistical-mechanics/218-conformal-universality-for-weakly-interacting-and-disordered-ising-models.md) | Conformal universality for weakly interacting and disordered Ising models | T2 | 6 | 0 | yes | 1 | — |
 | [219](../probability-and-statistical-mechanics/219-goe-universality-for-random-regular-graphs-with-weak-disorder.md) | GOE universality for random regular graphs with weak disorder | T0 | 2 | 0 | — | 0 | — |
 | [220](../probability-and-statistical-mechanics/220-directional-zero-one-laws-and-ballisticity-in-random-environments.md) | Directional zero--one laws and ballisticity in random environments | T3 | 3 | 1 | yes | 3 | — |
-| [221](../probability-and-statistical-mechanics/221-m-parisi-formula-for-diluted-spin-glasses.md) | The M\'ezard--Parisi formula for diluted spin glasses | T2 | 1 | 0 | yes | 1 | yes |
+| [221](../probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md) | The Mézard--Parisi formula for diluted spin glasses | T2 | 1 | 0 | yes | 1 | yes |
 | [222](../probability-and-statistical-mechanics/222-perceptron-free-energies-and-microscopic-jamming.md) | Perceptron free energies and microscopic jamming | T2 | 4 | 0 | yes | 3 | — |
 | [223](../probability-and-statistical-mechanics/223-conformal-limits-of-square-lattice-random-cluster-interfaces.md) | Conformal limits of square-lattice random-cluster interfaces | T0 | 6 | 0 | — | 0 | — |
 | [224](../probability-and-statistical-mechanics/224-critical-and-near-critical-universality-for-voronoi-percolation.md) | Critical and near-critical universality for Voronoi percolation | T0 | 3 | 0 | — | 0 | — |

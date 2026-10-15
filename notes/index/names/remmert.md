@@ -27,7 +27,7 @@ Prose counts: 20 capitalized occurrences, 12 of them mid-sentence, 1 lowercase. 
 | [046](../algebraic-and-complex-geometry/046-counterexamples-to-shafarevich-holomorphic-convexity.md) | Counterexamples to Shafarevich holomorphic convexity | — | — | — | — | yes | yes |
 | [048](../algebraic-and-complex-geometry/048-a-characteristic-zero-counterexample-to-lipman-zariski.md) | A characteristic-zero counterexample to Lipman--Zariski | — | — | — | — | yes | — |
 | [056](../algebraic-and-complex-geometry/056-termination-of-fourfold-minimal-model-programs.md) | Termination of fourfold minimal model programs | — | — | — | — | yes | — |
-| [058](../algebraic-and-complex-geometry/058-koll-pardon-universal-cover-conjecture.md) | The Koll\'ar--Pardon universal-cover conjecture | — | — | yes | — | yes | — |
+| [058](../algebraic-and-complex-geometry/058-kollar-pardon-universal-cover-conjecture.md) | The Kollár--Pardon universal-cover conjecture | — | — | yes | — | yes | — |
 | [067](../algebraic-and-complex-geometry/067-campana-peternell-conjecture-in-dimension-six.md) | The Campana--Peternell conjecture in dimension six | — | — | — | — | yes | — |
 
 ## Manuscripts
@@ -44,7 +44,7 @@ Prose counts: 20 capitalized occurrences, 12 of them mid-sentence, 1 lowercase. 
 | [`Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-September-24-2026`](../../../preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-September-24-2026/) | [056](../algebraic-and-complex-geometry/056-termination-of-fourfold-minimal-model-programs.md) | prose | [paper.pdf](../../../preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-September-24-2026/paper.pdf) |
 | [`Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-4-2026`](../../../preprints/Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-4-2026/) | — | prose | — |
 | [`Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-6-2026`](../../../preprints/Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-6-2026/) | [036](../algebraic-and-complex-geometry/036-numerical-semiampleness-and-generalized-minimal-models.md) | prose | [numerical-generalized-abundance.pdf](../../../preprints/Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-6-2026/numerical-generalized-abundance.pdf) |
-| [`Semialgebraic-universal-covers-of-normal-projective-varieties-September-24-2026`](../../../preprints/Semialgebraic-universal-covers-of-normal-projective-varieties-September-24-2026/) | [058](../algebraic-and-complex-geometry/058-koll-pardon-universal-cover-conjecture.md) | prose | [paper.pdf](../../../preprints/Semialgebraic-universal-covers-of-normal-projective-varieties-September-24-2026/paper.pdf) |
+| [`Semialgebraic-universal-covers-of-normal-projective-varieties-September-24-2026`](../../../preprints/Semialgebraic-universal-covers-of-normal-projective-varieties-September-24-2026/) | [058](../algebraic-and-complex-geometry/058-kollar-pardon-universal-cover-conjecture.md) | prose | [paper.pdf](../../../preprints/Semialgebraic-universal-covers-of-normal-projective-varieties-September-24-2026/paper.pdf) |
 | [`The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026`](../../../preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/) | [067](../algebraic-and-complex-geometry/067-campana-peternell-conjecture-in-dimension-six.md) | prose | [main.pdf](../../../preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/main.pdf) |
 | [`Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026`](../../../preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/) | [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties.md) | prose | [paper.pdf](../../../preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/paper.pdf) |
 | [`Weil-classes-and-Hodge-classes-on-abelian-powers-September-30-2026`](../../../preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-September-30-2026/) | — | prose | — |
@@ -61,7 +61,7 @@ Up to 8 of the statement-environment titles that carry the name, verbatim with a
 
 | Family | Environment title |
 |---|---|
-| [058](../algebraic-and-complex-geometry/058-koll-pardon-universal-cover-conjecture.md) | Remmert reduction of semialgebraic covers |
+| [058](../algebraic-and-complex-geometry/058-kollar-pardon-universal-cover-conjecture.md) | Remmert reduction of semialgebraic covers |
 
 ## Spelling variants
 

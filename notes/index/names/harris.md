@@ -26,7 +26,7 @@ Prose counts: 101 capitalized occurrences, 54 of them mid-sentence, 2 lowercase.
 | [030](../number-theory/030-modularity-over-imaginary-quadratic-fields.md) | Modularity over imaginary quadratic fields | — | — | — | — | yes | yes |
 | [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties.md) | The rational Hodge conjecture for CM abelian varieties | — | — | — | — | yes | — |
 | [034](../algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md) | Log abundance and effective Iitaka fibrations | — | — | — | — | yes | yes |
-| [041](../algebraic-and-complex-geometry/041-hyperk-ahler-syz-and-projective-space-bases.md) | Hyperk\"ahler SYZ and projective-space bases | — | — | — | — | — | yes |
+| [041](../algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) | Hyperkähler SYZ and projective-space bases | — | — | — | — | — | yes |
 | [054](../algebraic-and-complex-geometry/054-counterexamples-to-kuznetsovs-rationality-conjecture.md) | Counterexamples to Kuznetsov's rationality conjecture | — | — | — | — | yes | yes |
 | [056](../algebraic-and-complex-geometry/056-termination-of-fourfold-minimal-model-programs.md) | Termination of fourfold minimal model programs | — | — | — | — | yes | yes |
 | [092](../convex-and-metric-geometry/092-optimal-order-of-convex-body-covering-density.md) | The optimal order of convex-body covering density | — | — | — | — | yes | yes |
@@ -43,7 +43,7 @@ Prose counts: 101 capitalized occurrences, 54 of them mid-sentence, 2 lowercase.
 | [238](../probability-and-statistical-mechanics/238-optimal-logarithmic-mixing-of-the-thorp-shuffle.md) | Optimal logarithmic mixing of the Thorp shuffle | — | — | — | — | yes | — |
 | [287](../operator-algebras/287-all-nonabelian-free-group-factors-are-isomorphic.md) | All nonabelian free group factors are isomorphic | — | — | — | — | — | yes |
 | [296](../operator-algebras/296-generator-problem-for-finite-factors.md) | The generator problem for finite factors | — | — | — | — | — | yes |
-| [359](../differential-geometry/359-negative-k-ahler-curvature-without-bounded-holomorphic-coordinates.md) | Negative K\"ahler curvature without bounded holomorphic coordinates | — | — | — | — | — | yes |
+| [359](../differential-geometry/359-negative-kahler-curvature-without-bounded-holomorphic-coordinates.md) | Negative Kähler curvature without bounded holomorphic coordinates | — | — | — | — | — | yes |
 | [363](../partial-differential-equations/363-boltzmann-nonuniqueness-with-exact-local-conservation.md) | Boltzmann nonuniqueness with exact local conservation | — | — | — | — | — | yes |
 
 ## Manuscripts

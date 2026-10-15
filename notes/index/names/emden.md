@@ -22,14 +22,14 @@ Prose counts: 8 capitalized occurrences, 5 of them mid-sentence, 2 lowercase. Th
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
 | [348](../differential-geometry/348-nonnegatively-curved-einstein-four-manifolds-and-a-topological-gap.md) | Nonnegatively curved Einstein four-manifolds and a topological gap | — | — | — | — | yes | — |
-| [370](../partial-differential-equations/370-subcritical-lane-emden-and-h-lane-emden-conjectures.md) | The subcritical Lane--Emden and H\'enon--Lane--Emden conjectures | yes | yes | yes | yes | yes | — |
+| [370](../partial-differential-equations/370-subcritical-lane-emden-and-henon-lane-emden-conjectures.md) | The subcritical Lane--Emden and Hénon--Lane--Emden conjectures | yes | yes | yes | yes | yes | — |
 
 ## Manuscripts
 
 | Dir | Family | Where the name appears | PDF |
 |---|---|---|---|
 | [`Positively-curved-Einstein-four-manifolds-September-23-2026`](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/) | [348](../differential-geometry/348-nonnegatively-curved-einstein-four-manifolds-and-a-topological-gap.md) | prose | [paper.pdf](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/paper.pdf) |
-| [`The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026`](../../../preprints/The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026/) | [370](../partial-differential-equations/370-subcritical-lane-emden-and-h-lane-emden-conjectures.md) | prose + title | [paper.pdf](../../../preprints/The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026/paper.pdf) |
+| [`The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026`](../../../preprints/The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026/) | [370](../partial-differential-equations/370-subcritical-lane-emden-and-henon-lane-emden-conjectures.md) | prose + title | [paper.pdf](../../../preprints/The-Subcritical-Henon-Lane-Emden-Conjecture-September-24-2026/paper.pdf) |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.
 
@@ -37,7 +37,7 @@ Prose counts: 8 capitalized occurrences, 5 of them mid-sentence, 2 lowercase. Th
 
 | Config | Declaration | File | Family |
 |---|---|---|---|
-| [HenonEmden](../../../lean/ComparatorChallenges/HenonEmden.json) | `OAI.HenonLaneEmden.main_nonexistence` | [Main.lean](../../../lean/OAI/Analysis/HenonEmden/Main.lean) | [370](../partial-differential-equations/370-subcritical-lane-emden-and-h-lane-emden-conjectures.md) |
+| [HenonEmden](../../../lean/ComparatorChallenges/HenonEmden.json) | `OAI.HenonLaneEmden.main_nonexistence` | [Main.lean](../../../lean/OAI/Analysis/HenonEmden/Main.lean) | [370](../partial-differential-equations/370-subcritical-lane-emden-and-henon-lane-emden-conjectures.md) |
 
 ## Theorem-environment titles
 
@@ -45,8 +45,8 @@ Up to 8 of the statement-environment titles that carry the name, verbatim with a
 
 | Family | Environment title |
 |---|---|
-| [370](../partial-differential-equations/370-subcritical-lane-emden-and-h-lane-emden-conjectures.md) | Unweighted Lane--Emden conjecture |
-| [370](../partial-differential-equations/370-subcritical-lane-emden-and-h-lane-emden-conjectures.md) | Henon--Lane--Emden classification; Phan's Conjecture C |
+| [370](../partial-differential-equations/370-subcritical-lane-emden-and-henon-lane-emden-conjectures.md) | Unweighted Lane--Emden conjecture |
+| [370](../partial-differential-equations/370-subcritical-lane-emden-and-henon-lane-emden-conjectures.md) | Henon--Lane--Emden classification; Phan's Conjecture C |
 
 ## Spelling variants
 

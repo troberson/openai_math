@@ -12,7 +12,7 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | [077](../real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md) | Fourier restriction for positively curved surfaces | yes | — | — | — |
 | [078](../real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md) | The three-dimensional Bochner--Riesz conjecture | yes | yes | — | — |
 | [079](../real-and-complex-analysis/079-sogges-local-smoothing-conjecture-in-dimension-three.md) | Sogge's local smoothing conjecture in dimension three | yes | yes | — | — |
-| [080](../real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schr-odinger-convergence-problem.md) | The Sobolev endpoint in Carleson's Schr\"odinger convergence problem | yes | yes | — | — |
+| [080](../real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md) | The Sobolev endpoint in Carleson's Schrödinger convergence problem | yes | yes | — | — |
 | [081](../real-and-complex-analysis/081-david-semmes-riesz-transform-problem-in-higher-codimension.md) | The David--Semmes Riesz-transform problem in higher codimension | — | yes | yes | — |
 | [082](../real-and-complex-analysis/082-maximal-and-variational-bounds-for-the-triangular-hilbert-transform.md) | Maximal and variational bounds for the triangular Hilbert transform | yes | yes | yes | — |
 | [083](../real-and-complex-analysis/083-steins-conjecture-for-hilbert-transforms-along-lipschitz-directions.md) | Stein's conjecture for Hilbert transforms along Lipschitz directions | yes | yes | yes | — |

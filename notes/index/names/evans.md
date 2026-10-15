@@ -23,7 +23,7 @@ Prose counts: 28 capitalized occurrences, 15 of them mid-sentence, 0 lowercase. 
 |---|---|---|---|---|---|---|---|
 | [085](../real-and-complex-analysis/085-endpoint-regularity-of-the-planar-centered-maximal-function.md) | Endpoint regularity of the planar centered maximal function | — | — | — | — | — | yes |
 | [091](../convex-and-metric-geometry/091-logarithmic-brunn-minkowski-conjecture.md) | The logarithmic Brunn--Minkowski conjecture | — | — | — | — | yes | — |
-| [166](../combinatorics/166-higher-dimensional-erdos-distinct-distances-conjecture.md) | The higher-dimensional Erd\H{o}s distinct-distances conjecture | — | — | — | — | yes | — |
+| [166](../combinatorics/166-higher-dimensional-erdos-distinct-distances-conjecture.md) | The higher-dimensional Erdős distinct-distances conjecture | — | — | — | — | yes | — |
 | [167](../combinatorics/167-pinned-distances-and-a-power-saving-for-planar-unit-distances.md) | Pinned distances and a power saving for planar unit distances | — | — | — | — | — | yes |
 | [200](../algebra/200-eisenbud-green-harris-and-lex-plus-powers-in-characteristic-zero.md) | Eisenbud--Green--Harris and lex-plus-powers in characteristic zero | — | — | — | — | yes | — |
 | [229](../probability-and-statistical-mechanics/229-sharp-three-and-four-state-reconstruction-thresholds.md) | Sharp three- and four-state reconstruction thresholds | — | — | — | — | yes | yes |

@@ -32,7 +32,7 @@ Prose counts: 74 capitalized occurrences, 64 of them mid-sentence, 15 lowercase.
 | [066](../algebraic-and-complex-geometry/066-bounded-klt-complements-for-fano-contractions.md) | Bounded klt complements for Fano contractions | — | — | — | — | yes | — |
 | [069](../algebraic-and-complex-geometry/069-quantum-geometric-langlands-at-irrational-level.md) | Quantum geometric Langlands at irrational level | — | — | — | — | yes | — |
 | [134](../theoretical-computer-science/134-generalized-star-height-at-most-three.md) | Generalized star height at most three | — | — | — | — | yes | — |
-| [166](../combinatorics/166-higher-dimensional-erdos-distinct-distances-conjecture.md) | The higher-dimensional Erd\H{o}s distinct-distances conjecture | — | — | — | — | yes | — |
+| [166](../combinatorics/166-higher-dimensional-erdos-distinct-distances-conjecture.md) | The higher-dimensional Erdős distinct-distances conjecture | — | — | — | — | yes | — |
 | [194](../algebra/194-lechs-multiplicity-conjecture.md) | Lech's multiplicity conjecture | — | — | — | — | yes | — |
 | [254](../group-theory/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md) | Classifying spaces and geometric obstructions for Artin groups | — | — | — | — | yes | yes |
 | [313](../topology/313-finite-generation-for-the-k-n-local-sphere.md) | Finite generation for the $K(n)$-local sphere | — | — | — | — | yes | — |

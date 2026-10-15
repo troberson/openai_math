@@ -24,7 +24,7 @@ Prose counts: 15 capitalized occurrences, 12 of them mid-sentence, 3 lowercase. 
 | [090](../convex-and-metric-geometry/090-universal-optimality-of-the-triangular-lattice.md) | Universal optimality of the triangular lattice | — | — | — | — | yes | — |
 | [237](../probability-and-statistical-mechanics/237-three-quarter-diameter-exponent-for-honeycomb-walks.md) | The three-quarter diameter exponent for honeycomb walks | — | — | yes | — | yes | — |
 | [265](../mathematical-physics/265-two-dimensional-gapped-area-law.md) | The two-dimensional gapped area law | — | — | — | — | yes | — |
-| [371](../partial-differential-equations/371-stable-blowup-for-a-defocusing-schr-odinger-equation.md) | Stable blowup for a defocusing Schr\"odinger equation | — | — | yes | — | yes | — |
+| [371](../partial-differential-equations/371-stable-blowup-for-a-defocusing-schrodinger-equation.md) | Stable blowup for a defocusing Schrödinger equation | — | — | yes | — | yes | — |
 
 ## Manuscripts
 
@@ -34,7 +34,7 @@ Prose counts: 15 capitalized occurrences, 12 of them mid-sentence, 3 lowercase. 
 | [`A-two-dimensional-area-law-from-a-global-spectral-gap-September-24-2026`](../../../preprints/A-two-dimensional-area-law-from-a-global-spectral-gap-September-24-2026/) | [265](../mathematical-physics/265-two-dimensional-gapped-area-law.md) | prose | [paper.pdf](../../../preprints/A-two-dimensional-area-law-from-a-global-spectral-gap-September-24-2026/paper.pdf) |
 | [`Critical-strip-crossing-mass-on-the-honeycomb-lattice-September-26-2026`](../../../preprints/Critical-strip-crossing-mass-on-the-honeycomb-lattice-September-26-2026/) | [237](../probability-and-statistical-mechanics/237-three-quarter-diameter-exponent-for-honeycomb-walks.md) | prose | [main.pdf](../../../preprints/Critical-strip-crossing-mass-on-the-honeycomb-lattice-September-26-2026/main.pdf) |
 | [`Cylinder-amplitudes-and-logarithmic-bridge-length-windows-on-the-honeycomb-lattice-September-26-2026`](../../../preprints/Cylinder-amplitudes-and-logarithmic-bridge-length-windows-on-the-honeycomb-lattice-September-26-2026/) | [237](../probability-and-statistical-mechanics/237-three-quarter-diameter-exponent-for-honeycomb-walks.md) | prose | [main.pdf](../../../preprints/Cylinder-amplitudes-and-logarithmic-bridge-length-windows-on-the-honeycomb-lattice-September-26-2026/main.pdf) |
-| [`Stable-Self-Similar-Blowup-for-a-Supercritical-Defocusing-Schrodinger-Equation-on-the-Torus-September-24-2026`](../../../preprints/Stable-Self-Similar-Blowup-for-a-Supercritical-Defocusing-Schrodinger-Equation-on-the-Torus-September-24-2026/) | [371](../partial-differential-equations/371-stable-blowup-for-a-defocusing-schr-odinger-equation.md) | prose | [paper.pdf](../../../preprints/Stable-Self-Similar-Blowup-for-a-Supercritical-Defocusing-Schrodinger-Equation-on-the-Torus-September-24-2026/paper.pdf) |
+| [`Stable-Self-Similar-Blowup-for-a-Supercritical-Defocusing-Schrodinger-Equation-on-the-Torus-September-24-2026`](../../../preprints/Stable-Self-Similar-Blowup-for-a-Supercritical-Defocusing-Schrodinger-Equation-on-the-Torus-September-24-2026/) | [371](../partial-differential-equations/371-stable-blowup-for-a-defocusing-schrodinger-equation.md) | prose | [paper.pdf](../../../preprints/Stable-Self-Similar-Blowup-for-a-Supercritical-Defocusing-Schrodinger-Equation-on-the-Torus-September-24-2026/paper.pdf) |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.
 
@@ -49,7 +49,7 @@ Up to 8 of the statement-environment titles that carry the name, verbatim with a
 | Family | Environment title |
 |---|---|
 | [237](../probability-and-statistical-mechanics/237-three-quarter-diameter-exponent-for-honeycomb-walks.md) | Laguerre normalization and coordinate bounds |
-| [371](../partial-differential-equations/371-stable-blowup-for-a-defocusing-schr-odinger-equation.md) | Laguerre recurrence |
+| [371](../partial-differential-equations/371-stable-blowup-for-a-defocusing-schrodinger-equation.md) | Laguerre recurrence |
 
 ## Spelling variants
 

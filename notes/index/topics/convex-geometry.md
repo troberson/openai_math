@@ -7,7 +7,7 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | Family | Title | T | A | S | P |
 |---|---|---|---|---|---|
 | [018](../number-theory/018-margulis-platonov-conjecture-over-global-fields.md) | The Margulis--Platonov conjecture over global fields | — | yes | — | — |
-| [041](../algebraic-and-complex-geometry/041-hyperk-ahler-syz-and-projective-space-bases.md) | Hyperk\"ahler SYZ and projective-space bases | — | yes | — | — |
+| [041](../algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) | Hyperkähler SYZ and projective-space bases | — | yes | — | — |
 | [087](../convex-and-metric-geometry/087-mahler-conjectures-and-symplectic-width.md) | The Mahler conjectures and symplectic width | yes | yes | yes | yes |
 | [088](../convex-and-metric-geometry/088-pettys-projection-volume-conjecture-and-simplex-counterexamples.md) | Petty's projection-volume conjecture and simplex counterexamples | yes | yes | yes | — |
 | [091](../convex-and-metric-geometry/091-logarithmic-brunn-minkowski-conjecture.md) | The logarithmic Brunn--Minkowski conjecture | yes | yes | yes | — |
@@ -15,7 +15,7 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | [093](../convex-and-metric-geometry/093-dimension-free-logarithmic-sobolev-inequality-for-subgaussian-log-concave-measures.md) | Dimension-free logarithmic Sobolev inequality for subgaussian log-concave measures | yes | yes | — | — |
 | [094](../convex-and-metric-geometry/094-subpolynomial-dimension-reduction-in-l-p.md) | Subpolynomial dimension reduction in $L_p$ | yes | — | yes | — |
 | [096](../convex-and-metric-geometry/096-gaussian-propeller-conjecture.md) | The Gaussian propeller conjecture | yes | — | yes | yes |
-| [097](../convex-and-metric-geometry/097-euclidean-steinitz-bergstr-om-conjecture.md) | The Euclidean Steinitz--Bergstr\"om conjecture | yes | — | yes | yes |
+| [097](../convex-and-metric-geometry/097-euclidean-steinitz-bergstrom-conjecture.md) | The Euclidean Steinitz--Bergström conjecture | yes | — | yes | yes |
 | [098](../convex-and-metric-geometry/098-a-negative-answer-to-the-lang-plaut-problem.md) | A negative answer to the Lang--Plaut problem | — | — | yes | — |
 | [100](../convex-and-metric-geometry/100-a-counterexample-to-bangs-cylinder-covering-bound.md) | A counterexample to Bang's cylinder-covering bound | yes | yes | yes | — |
 | [101](../convex-and-metric-geometry/101-sharp-simplex-conjecture-for-isotropic-constants.md) | The sharp simplex conjecture for isotropic constants | yes | yes | — | — |

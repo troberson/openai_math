@@ -21,7 +21,7 @@ Prose counts: 21 capitalized occurrences, 19 of them mid-sentence, 0 lowercase. 
 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
-| [041](../algebraic-and-complex-geometry/041-hyperk-ahler-syz-and-projective-space-bases.md) | Hyperk\"ahler SYZ and projective-space bases | — | — | — | — | — | yes |
+| [041](../algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) | Hyperkähler SYZ and projective-space bases | — | — | — | — | — | yes |
 | [193](../algebra/193-serres-intersection-multiplicity-conjecture.md) | Serre's intersection-multiplicity conjecture | — | — | — | — | yes | — |
 | [194](../algebra/194-lechs-multiplicity-conjecture.md) | Lech's multiplicity conjecture | — | — | yes | — | yes | — |
 

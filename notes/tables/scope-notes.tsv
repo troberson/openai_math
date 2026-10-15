@@ -22,7 +22,7 @@ fam	configs	paps	scope_chars	path	page
 049	3	2	1141	lean/docs/049.md	algebraic-and-complex-geometry/049-a-stable-coordinate-counterexample-in-four-variables.md
 050	1	1	560	lean/docs/050.md	algebraic-and-complex-geometry/050-a-counterexample-to-griffiths-positivity-conjecture.md
 052	2	2	1131	lean/docs/052.md	algebraic-and-complex-geometry/052-tangent-bundle-splittings-and-universal-covers.md
-058	1	1	394	lean/docs/058.md	algebraic-and-complex-geometry/058-koll-pardon-universal-cover-conjecture.md
+058	1	1	394	lean/docs/058.md	algebraic-and-complex-geometry/058-kollar-pardon-universal-cover-conjecture.md
 066	1	1	767	lean/docs/066.md	algebraic-and-complex-geometry/066-bounded-klt-complements-for-fano-contractions.md
 071	1	2	890	lean/docs/071.md	real-and-complex-analysis/071-koebes-circle-domain-conjecture-and-circle-domain-rigidity.md
 072	3	2	1077	lean/docs/072.md	real-and-complex-analysis/072-brennans-conjecture-and-a-counterexample-to-kraetzers-prediction.md
@@ -43,7 +43,7 @@ fam	configs	paps	scope_chars	path	page
 094	1	1	563	lean/docs/094.md	convex-and-metric-geometry/094-subpolynomial-dimension-reduction-in-l-p.md
 095	1	1	384	lean/docs/095.md	convex-and-metric-geometry/095-hyperbolicity-cones-without-semidefinite-lifts.md
 096	1	1	515	lean/docs/096.md	convex-and-metric-geometry/096-gaussian-propeller-conjecture.md
-097	1	1	464	lean/docs/097.md	convex-and-metric-geometry/097-euclidean-steinitz-bergstr-om-conjecture.md
+097	1	1	464	lean/docs/097.md	convex-and-metric-geometry/097-euclidean-steinitz-bergstrom-conjecture.md
 098	2	1	424	lean/docs/098.md	convex-and-metric-geometry/098-a-negative-answer-to-the-lang-plaut-problem.md
 099	4	3	1653	lean/docs/099.md	convex-and-metric-geometry/099-sharp-distortion-of-edit-distance-into-1.md
 100	3	4	2568	lean/docs/100.md	convex-and-metric-geometry/100-a-counterexample-to-bangs-cylinder-covering-bound.md
@@ -94,10 +94,10 @@ fam	configs	paps	scope_chars	path	page
 156	1	1	435	lean/docs/156.md	combinatorics/156-borsuks-conjecture-fails-in-dimension-nine.md
 157	2	2	849	lean/docs/157.md	combinatorics/157-counterexamples-to-the-hadwiger-and-colin-de-verdi-ere-conjectures.md
 158	2	1	396	lean/docs/158.md	combinatorics/158-euclidean-plane-cannot-be-colored-with-five-colors.md
-159	1	1	481	lean/docs/159.md	combinatorics/159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemer-bounds.md
+159	1	1	481	lean/docs/159.md	combinatorics/159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemeredi-bounds.md
 160	1	1	459	lean/docs/160.md	combinatorics/160-superexponential-van-der-waerden-numbers.md
 161	1	1	415	lean/docs/161.md	combinatorics/161-counterexamples-to-sidorenkos-conjecture-and-the-forcing-conjecture.md
-162	3	2	1084	lean/docs/162.md	combinatorics/162-counterexamples-to-rysers-covering-and-gy-tree-cover-conjectures.md
+162	3	2	1084	lean/docs/162.md	combinatorics/162-counterexamples-to-rysers-covering-and-gyarfass-tree-cover-conjectures.md
 165	2	2	781	lean/docs/165.md	combinatorics/165-exact-crossing-numbers-of-complete-and-complete-bipartite-graphs.md
 167	2	2	906	lean/docs/167.md	combinatorics/167-pinned-distances-and-a-power-saving-for-planar-unit-distances.md
 168	1	1	375	lean/docs/168.md	combinatorics/168-combinatorial-invariance-of-kazhdan-lusztig-polynomials.md
@@ -140,7 +140,7 @@ fam	configs	paps	scope_chars	path	page
 215	1	1	474	lean/docs/215.md	probability-and-statistical-mechanics/215-massive-continuum-limits-and-exact-mass-asymptotics-for-planar-o-n-models.md
 218	1	1	585	lean/docs/218.md	probability-and-statistical-mechanics/218-conformal-universality-for-weakly-interacting-and-disordered-ising-models.md
 220	3	2	1277	lean/docs/220.md	probability-and-statistical-mechanics/220-directional-zero-one-laws-and-ballisticity-in-random-environments.md
-221	1	1	439	lean/docs/221.md	probability-and-statistical-mechanics/221-m-parisi-formula-for-diluted-spin-glasses.md
+221	1	1	439	lean/docs/221.md	probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md
 222	3	2	1064	lean/docs/222.md	probability-and-statistical-mechanics/222-perceptron-free-energies-and-microscopic-jamming.md
 227	5	4	2748	lean/docs/227.md	probability-and-statistical-mechanics/227-dynamical-phase-transition-in-the-sherrington-kirkpatrick-model.md
 228	3	2	1045	lean/docs/228.md	probability-and-statistical-mechanics/228-continuum-phase-transitions-for-radial-pair-potentials.md
@@ -227,7 +227,7 @@ fam	configs	paps	scope_chars	path	page
 354	1	1	500	lean/docs/354.md	differential-geometry/354-isoperimetric-regions-in-the-cubic-three-torus.md
 356	1	1	611	lean/docs/356.md	differential-geometry/356-giglis-characterization-of-alexandrov-curvature.md
 358	1	1	542	lean/docs/358.md	differential-geometry/358-a-three-manifold-with-no-conjugate-points-and-no-nonpositively-curved-metric.md
-359	1	1	474	lean/docs/359.md	differential-geometry/359-negative-k-ahler-curvature-without-bounded-holomorphic-coordinates.md
+359	1	1	474	lean/docs/359.md	differential-geometry/359-negative-kahler-curvature-without-bounded-holomorphic-coordinates.md
 360	2	2	1118	lean/docs/360.md	differential-geometry/360-villanis-convexity-conjecture-and-regular-optimal-transport.md
 361	1	1	575	lean/docs/361.md	differential-geometry/361-counterexamples-to-yaus-harmonic-dimension-bound.md
 362	1	1	519	lean/docs/362.md	partial-differential-equations/362-global-smoothness-for-relativistic-vlasov-maxwell.md
@@ -235,8 +235,8 @@ fam	configs	paps	scope_chars	path	page
 365	1	1	444	lean/docs/365.md	partial-differential-equations/365-joint-metric-and-connection-recovery-from-one-boundary-patch.md
 367	1	1	437	lean/docs/367.md	partial-differential-equations/367-critical-dimension-for-the-one-phase-bernoulli-problem.md
 369	1	1	514	lean/docs/369.md	partial-differential-equations/369-hot-spots-conjecture-for-simply-connected-planar-domains.md
-370	1	1	453	lean/docs/370.md	partial-differential-equations/370-subcritical-lane-emden-and-h-lane-emden-conjectures.md
-371	1	1	685	lean/docs/371.md	partial-differential-equations/371-stable-blowup-for-a-defocusing-schr-odinger-equation.md
+370	1	1	453	lean/docs/370.md	partial-differential-equations/370-subcritical-lane-emden-and-henon-lane-emden-conjectures.md
+371	1	1	685	lean/docs/371.md	partial-differential-equations/371-stable-blowup-for-a-defocusing-schrodinger-equation.md
 372	1	1	432	lean/docs/372.md	partial-differential-equations/372-global-uniqueness-in-smooth-isotropic-elasticity.md
 373	1	1	619	lean/docs/373.md	partial-differential-equations/373-nonattainment-in-three-marginal-coulomb-transport.md
 374	1	1	657	lean/docs/374.md	partial-differential-equations/374-sharp-one-third-stability-of-optimal-transport-maps.md

@@ -21,15 +21,15 @@ Prose counts: 27 capitalized occurrences, 9 of them mid-sentence, 0 lowercase. T
 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
-| [058](../algebraic-and-complex-geometry/058-koll-pardon-universal-cover-conjecture.md) | The Koll\'ar--Pardon universal-cover conjecture | yes | — | yes | — | yes | yes |
+| [058](../algebraic-and-complex-geometry/058-kollar-pardon-universal-cover-conjecture.md) | The Kollár--Pardon universal-cover conjecture | yes | — | yes | — | yes | yes |
 | [304](../topology/304-hilbert-smith-conjecture-in-every-dimension.md) | The Hilbert--Smith conjecture in every dimension | — | — | — | — | yes | yes |
 
 ## Manuscripts
 
 | Dir | Family | Where the name appears | PDF |
 |---|---|---|---|
-| [`Semialgebraic-universal-covers-of-normal-projective-varieties-September-24-2026`](../../../preprints/Semialgebraic-universal-covers-of-normal-projective-varieties-September-24-2026/) | [058](../algebraic-and-complex-geometry/058-koll-pardon-universal-cover-conjecture.md) | prose | [paper.pdf](../../../preprints/Semialgebraic-universal-covers-of-normal-projective-varieties-September-24-2026/paper.pdf) |
-| [`Symmetry-of-semialgebraic-bounded-domains-with-compact-quotient-September-24-2026`](../../../preprints/Symmetry-of-semialgebraic-bounded-domains-with-compact-quotient-September-24-2026/) | [058](../algebraic-and-complex-geometry/058-koll-pardon-universal-cover-conjecture.md) | prose | [paper.pdf](../../../preprints/Symmetry-of-semialgebraic-bounded-domains-with-compact-quotient-September-24-2026/paper.pdf) |
+| [`Semialgebraic-universal-covers-of-normal-projective-varieties-September-24-2026`](../../../preprints/Semialgebraic-universal-covers-of-normal-projective-varieties-September-24-2026/) | [058](../algebraic-and-complex-geometry/058-kollar-pardon-universal-cover-conjecture.md) | prose | [paper.pdf](../../../preprints/Semialgebraic-universal-covers-of-normal-projective-varieties-September-24-2026/paper.pdf) |
+| [`Symmetry-of-semialgebraic-bounded-domains-with-compact-quotient-September-24-2026`](../../../preprints/Symmetry-of-semialgebraic-bounded-domains-with-compact-quotient-September-24-2026/) | [058](../algebraic-and-complex-geometry/058-kollar-pardon-universal-cover-conjecture.md) | prose | [paper.pdf](../../../preprints/Symmetry-of-semialgebraic-bounded-domains-with-compact-quotient-September-24-2026/paper.pdf) |
 | [`The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026`](../../../preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/) | [304](../topology/304-hilbert-smith-conjecture-in-every-dimension.md) | prose | [paper.pdf](../../../preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/paper.pdf) |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.
@@ -44,7 +44,7 @@ Up to 8 of the statement-environment titles that carry the name, verbatim with a
 
 | Family | Environment title |
 |---|---|
-| [058](../algebraic-and-complex-geometry/058-koll-pardon-universal-cover-conjecture.md) | The Kollar--Pardon classification |
+| [058](../algebraic-and-complex-geometry/058-kollar-pardon-universal-cover-conjecture.md) | The Kollar--Pardon classification |
 
 ## Spelling variants
 

@@ -32,7 +32,7 @@ Prose counts: 119 capitalized occurrences, 82 of them mid-sentence, 19 lowercase
 | [171](../combinatorics/171-hypercube-ramsey-conjecture.md) | The hypercube Ramsey conjecture | — | — | yes | — | yes | — |
 | [175](../combinatorics/175-talagrands-conjectures-and-graph-decompositions-at-expectation-thresholds.md) | Talagrand's conjectures and graph decompositions at expectation thresholds | — | — | — | — | yes | yes |
 | [178](../combinatorics/178-deterministic-nonbipartite-ramanujan-graphs-in-every-fixed-degree.md) | Deterministic nonbipartite Ramanujan graphs in every fixed degree | — | — | — | — | yes | — |
-| [181](../combinatorics/181-erdos-gallai-cycle-decomposition-conjecture.md) | The Erd\H{o}s--Gallai cycle-decomposition conjecture | — | — | — | — | yes | — |
+| [181](../combinatorics/181-erdos-gallai-cycle-decomposition-conjecture.md) | The Erdős--Gallai cycle-decomposition conjecture | — | — | — | — | yes | — |
 | [200](../algebra/200-eisenbud-green-harris-and-lex-plus-powers-in-characteristic-zero.md) | Eisenbud--Green--Harris and lex-plus-powers in characteristic zero | — | — | — | — | yes | — |
 | [204](../algebra/204-tensor-saturation-for-even-spin-groups.md) | Tensor saturation for even spin groups | — | — | — | — | yes | yes |
 | [205](../algebra/205-saxls-conjecture-and-universal-tensor-squares.md) | Saxl's conjecture and universal tensor squares | — | — | — | — | yes | — |

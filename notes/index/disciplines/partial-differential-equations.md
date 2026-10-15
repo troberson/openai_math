@@ -14,8 +14,8 @@ Tier: T3 3 · T2 8 · T1 0 · T0 5
 | [367](../partial-differential-equations/367-critical-dimension-for-the-one-phase-bernoulli-problem.md) | The critical dimension for the one-phase Bernoulli problem | T2 | 1 | 0 | yes | 1 | — |
 | [368](../partial-differential-equations/368-three-dimensional-ball-evans-approximation-problem.md) | The three-dimensional Ball--Evans approximation problem | T0 | 2 | 0 | — | 0 | — |
 | [369](../partial-differential-equations/369-hot-spots-conjecture-for-simply-connected-planar-domains.md) | The hot spots conjecture for simply connected planar domains | T2 | 1 | 0 | yes | 1 | — |
-| [370](../partial-differential-equations/370-subcritical-lane-emden-and-h-lane-emden-conjectures.md) | The subcritical Lane--Emden and H\'enon--Lane--Emden conjectures | T3 | 1 | 1 | yes | 1 | — |
-| [371](../partial-differential-equations/371-stable-blowup-for-a-defocusing-schr-odinger-equation.md) | Stable blowup for a defocusing Schr\"odinger equation | T2 | 1 | 0 | yes | 1 | — |
+| [370](../partial-differential-equations/370-subcritical-lane-emden-and-henon-lane-emden-conjectures.md) | The subcritical Lane--Emden and Hénon--Lane--Emden conjectures | T3 | 1 | 1 | yes | 1 | — |
+| [371](../partial-differential-equations/371-stable-blowup-for-a-defocusing-schrodinger-equation.md) | Stable blowup for a defocusing Schrödinger equation | T2 | 1 | 0 | yes | 1 | — |
 | [372](../partial-differential-equations/372-global-uniqueness-in-smooth-isotropic-elasticity.md) | Global uniqueness in smooth isotropic elasticity | T2 | 1 | 0 | yes | 1 | — |
 | [373](../partial-differential-equations/373-nonattainment-in-three-marginal-coulomb-transport.md) | Nonattainment in three-marginal Coulomb transport | T2 | 1 | 0 | yes | 1 | — |
 | [374](../partial-differential-equations/374-sharp-one-third-stability-of-optimal-transport-maps.md) | Sharp one-third stability of optimal transport maps | T2 | 1 | 0 | yes | 1 | — |

@@ -12,6 +12,6 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | [039](../algebraic-and-complex-geometry/039-nagatas-conjecture-and-maximal-seshadri-constants.md) | Nagata's conjecture and maximal Seshadri constants | — | yes | yes | — |
 | [042](../algebraic-and-complex-geometry/042-oka-classification-for-k3-surfaces-and-other-compact-complex-surfaces.md) | Oka classification for K3 surfaces and other compact complex surfaces | yes | yes | — | — |
 | [054](../algebraic-and-complex-geometry/054-counterexamples-to-kuznetsovs-rationality-conjecture.md) | Counterexamples to Kuznetsov's rationality conjecture | — | yes | — | — |
-| [058](../algebraic-and-complex-geometry/058-koll-pardon-universal-cover-conjecture.md) | The Koll\'ar--Pardon universal-cover conjecture | — | yes | — | — |
+| [058](../algebraic-and-complex-geometry/058-kollar-pardon-universal-cover-conjecture.md) | The Kollár--Pardon universal-cover conjecture | — | yes | — | — |
 | [063](../algebraic-and-complex-geometry/063-generalized-mukai-conjecture.md) | The generalized Mukai conjecture | — | yes | — | — |
 

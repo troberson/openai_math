@@ -7,7 +7,7 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | Family | Title | T | A | S | P |
 |---|---|---|---|---|---|
 | [033](../algebraic-and-complex-geometry/033-campanas-orbifold-iitaka-conjecture-and-logarithmic-subadditivity.md) | Campana's orbifold Iitaka conjecture and logarithmic subadditivity | — | yes | — | — |
-| [041](../algebraic-and-complex-geometry/041-hyperk-ahler-syz-and-projective-space-bases.md) | Hyperk\"ahler SYZ and projective-space bases | — | yes | — | — |
+| [041](../algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) | Hyperkähler SYZ and projective-space bases | — | yes | — | — |
 | [051](../algebraic-and-complex-geometry/051-kobayashis-canonical-ampleness-conjecture.md) | Kobayashi's canonical-ampleness conjecture | — | yes | — | — |
 | [052](../algebraic-and-complex-geometry/052-tangent-bundle-splittings-and-universal-covers.md) | Tangent-bundle splittings and universal covers | — | yes | yes | — |
 | [057](../algebraic-and-complex-geometry/057-campanas-abelianity-conjecture-and-special-varieties.md) | Campana's abelianity conjecture and special varieties | — | yes | — | — |

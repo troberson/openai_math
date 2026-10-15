@@ -18,7 +18,7 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | [038](../algebraic-and-complex-geometry/038-fujitas-freeness-conjecture.md) | Fujita's freeness conjecture | yes | yes | — | — |
 | [039](../algebraic-and-complex-geometry/039-nagatas-conjecture-and-maximal-seshadri-constants.md) | Nagata's conjecture and maximal Seshadri constants | yes | yes | yes | yes |
 | [040](../algebraic-and-complex-geometry/040-blochs-conjecture-for-complex-surfaces.md) | Bloch's conjecture for complex surfaces | yes | yes | — | — |
-| [041](../algebraic-and-complex-geometry/041-hyperk-ahler-syz-and-projective-space-bases.md) | Hyperk\"ahler SYZ and projective-space bases | — | yes | — | — |
+| [041](../algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) | Hyperkähler SYZ and projective-space bases | — | yes | — | — |
 | [043](../algebraic-and-complex-geometry/043-p-w-for-fixed-determinant-moduli-spaces.md) | $P=W$ for fixed-determinant moduli spaces | yes | yes | — | — |
 | [044](../algebraic-and-complex-geometry/044-equivariant-cohomological-hikita-conjecture-for-quivers.md) | The equivariant cohomological Hikita conjecture for quivers | yes | yes | — | — |
 | [046](../algebraic-and-complex-geometry/046-counterexamples-to-shafarevich-holomorphic-convexity.md) | Counterexamples to Shafarevich holomorphic convexity | yes | yes | — | — |

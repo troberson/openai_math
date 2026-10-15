@@ -1,4 +1,4 @@
-# 025 — Erd\H{o}s’s short Egyptian-fraction conjecture
+# 025 — Erdős’s short Egyptian-fraction conjecture
 
 |  |  |
 |---|---|

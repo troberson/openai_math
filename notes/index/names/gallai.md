@@ -21,7 +21,7 @@ Prose counts: 4 capitalized occurrences, 4 of them mid-sentence, 0 lowercase. Th
 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
-| [181](../combinatorics/181-erdos-gallai-cycle-decomposition-conjecture.md) | The Erd\H{o}s--Gallai cycle-decomposition conjecture | yes | — | — | yes | yes | — |
+| [181](../combinatorics/181-erdos-gallai-cycle-decomposition-conjecture.md) | The Erdős--Gallai cycle-decomposition conjecture | yes | — | — | yes | yes | — |
 
 ## Manuscripts
 

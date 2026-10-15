@@ -24,7 +24,7 @@ Prose counts: 95 capitalized occurrences, 67 of them mid-sentence, 6 lowercase. 
 | [014](../number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md) | Restricted geometric Langlands, generic Ramanujan and Arthur parameters | — | — | — | — | yes | — |
 | [032](../algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties.md) | The rational Hodge conjecture for CM abelian varieties | — | — | yes | — | yes | — |
 | [033](../algebraic-and-complex-geometry/033-campanas-orbifold-iitaka-conjecture-and-logarithmic-subadditivity.md) | Campana's orbifold Iitaka conjecture and logarithmic subadditivity | — | — | — | — | yes | yes |
-| [041](../algebraic-and-complex-geometry/041-hyperk-ahler-syz-and-projective-space-bases.md) | Hyperk\"ahler SYZ and projective-space bases | — | — | — | — | — | yes |
+| [041](../algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) | Hyperkähler SYZ and projective-space bases | — | — | — | — | — | yes |
 | [046](../algebraic-and-complex-geometry/046-counterexamples-to-shafarevich-holomorphic-convexity.md) | Counterexamples to Shafarevich holomorphic convexity | — | — | — | — | yes | yes |
 | [057](../algebraic-and-complex-geometry/057-campanas-abelianity-conjecture-and-special-varieties.md) | Campana's abelianity conjecture and special varieties | — | — | — | — | yes | yes |
 | [060](../algebraic-and-complex-geometry/060-global-spherical-shell-conjecture.md) | The Global Spherical Shell conjecture | — | — | — | — | yes | — |

@@ -1,12 +1,13 @@
 # Topic: quantum-theory
 
-13 families · pattern `quantum|schr[oö]dinger|qubit|entanglement|bell inequality|mutually unbiased` · hits by layer: title 6 · abstract 12 · scope 8 · path 1
+14 families · pattern `quantum|schr[oö]dinger|qubit|entanglement|bell inequality|mutually unbiased` · hits by layer: title 8 · abstract 12 · scope 8 · path 1
 
 A family is listed when the pattern hits its title, its abstract, its scope note, or the Lean file paths reached from its comparator configs. The match is a keyword floor, not a judgement: read the family page before treating a listing as a claim about what the result is about.
 
 | Family | Title | T | A | S | P |
 |---|---|---|---|---|---|
 | [069](../algebraic-and-complex-geometry/069-quantum-geometric-langlands-at-irrational-level.md) | Quantum geometric Langlands at irrational level | yes | yes | — | — |
+| [080](../real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md) | The Sobolev endpoint in Carleson's Schrödinger convergence problem | yes | — | — | — |
 | [211](../probability-and-statistical-mechanics/211-geometry-diffusion-and-spectra-of-random-planar-maps.md) | Geometry, diffusion, and spectra of random planar maps | — | yes | — | — |
 | [266](../mathematical-physics/266-exactly-three-mutually-unbiased-bases-in-dimension-six.md) | Exactly three mutually unbiased bases in dimension six | yes | yes | yes | — |
 | [267](../mathematical-physics/267-positive-temperature-bose-einstein-condensation-and-quantum-depletion.md) | Positive-temperature Bose--Einstein condensation and quantum depletion | yes | yes | yes | — |
@@ -18,5 +19,5 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | [279](../mathematical-physics/279-exact-quantum-factoring-over-a-fixed-finite-gate-set.md) | Exact quantum factoring over a fixed finite gate set | yes | yes | yes | — |
 | [283](../mathematical-physics/283-polynomial-time-constant-error-unitary-synthesis-from-a-boolean-oracle.md) | Polynomial-time, constant-error unitary synthesis from a Boolean oracle | — | yes | — | — |
 | [284](../mathematical-physics/284-optimal-randomized-quantum-query-exponent.md) | The optimal randomized--quantum query exponent | yes | yes | — | — |
-| [371](../partial-differential-equations/371-stable-blowup-for-a-defocusing-schr-odinger-equation.md) | Stable blowup for a defocusing Schr\"odinger equation | — | — | yes | — |
+| [371](../partial-differential-equations/371-stable-blowup-for-a-defocusing-schrodinger-equation.md) | Stable blowup for a defocusing Schrödinger equation | yes | — | yes | — |
 

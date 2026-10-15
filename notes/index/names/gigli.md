@@ -21,7 +21,7 @@ Prose counts: 35 capitalized occurrences, 27 of them mid-sentence, 0 lowercase. 
 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
-| [041](../algebraic-and-complex-geometry/041-hyperk-ahler-syz-and-projective-space-bases.md) | Hyperk\"ahler SYZ and projective-space bases | — | — | — | — | — | yes |
+| [041](../algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) | Hyperkähler SYZ and projective-space bases | — | — | — | — | — | yes |
 | [257](../group-theory/257-a-hyperbolic-group-with-no-geometric-cat-0-action.md) | A hyperbolic group with no geometric CAT(0) action | — | — | — | — | yes | yes |
 | [356](../differential-geometry/356-giglis-characterization-of-alexandrov-curvature.md) | Gigli's characterization of Alexandrov curvature | yes | — | yes | — | yes | yes |
 | [357](../differential-geometry/357-bi-lipschitz-coordinates-at-every-regular-rcd-point.md) | Bi-Lipschitz coordinates at every regular RCD point | — | — | — | — | yes | yes |

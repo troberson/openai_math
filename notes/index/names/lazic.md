@@ -23,7 +23,7 @@ Prose counts: 32 capitalized occurrences, 14 of them mid-sentence, 0 lowercase. 
 |---|---|---|---|---|---|---|---|
 | [034](../algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md) | Log abundance and effective Iitaka fibrations | — | — | yes | — | yes | yes |
 | [036](../algebraic-and-complex-geometry/036-numerical-semiampleness-and-generalized-minimal-models.md) | Numerical semiampleness and generalized minimal models | — | — | — | — | yes | yes |
-| [041](../algebraic-and-complex-geometry/041-hyperk-ahler-syz-and-projective-space-bases.md) | Hyperk\"ahler SYZ and projective-space bases | — | — | — | — | yes | yes |
+| [041](../algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) | Hyperkähler SYZ and projective-space bases | — | — | — | — | yes | yes |
 | [056](../algebraic-and-complex-geometry/056-termination-of-fourfold-minimal-model-programs.md) | Termination of fourfold minimal model programs | — | — | — | — | — | yes |
 | [068](../algebraic-and-complex-geometry/068-anticanonical-nonvanishing-under-smooth-semipositivity.md) | Anticanonical nonvanishing under smooth semipositivity | — | — | — | — | — | yes |
 | [104](../theoretical-computer-science/104-quasipolynomial-algorithms-for-mean-payoff-stochastic-and-parity-games.md) | Quasipolynomial algorithms for mean-payoff, stochastic and parity games | — | — | — | — | yes | yes |
@@ -43,7 +43,7 @@ Prose counts: 32 capitalized occurrences, 14 of them mid-sentence, 0 lowercase. 
 | [`Numerical-Semiampleness-of-Nef-Adjoint-Divisors-October-3-2026`](../../../preprints/Numerical-Semiampleness-of-Nef-Adjoint-Divisors-October-3-2026/) | [036](../algebraic-and-complex-geometry/036-numerical-semiampleness-and-generalized-minimal-models.md) | prose | [paper.pdf](../../../preprints/Numerical-Semiampleness-of-Nef-Adjoint-Divisors-October-3-2026/paper.pdf) |
 | [`Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-4-2026`](../../../preprints/Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-4-2026/) | — | prose | — |
 | [`Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-6-2026`](../../../preprints/Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-6-2026/) | [036](../algebraic-and-complex-geometry/036-numerical-semiampleness-and-generalized-minimal-models.md) | prose | [numerical-generalized-abundance.pdf](../../../preprints/Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-6-2026/numerical-generalized-abundance.pdf) |
-| [`The-Strong-Hyperkahler-SYZ-Conjecture-September-23-2026`](../../../preprints/The-Strong-Hyperkahler-SYZ-Conjecture-September-23-2026/) | [041](../algebraic-and-complex-geometry/041-hyperk-ahler-syz-and-projective-space-bases.md) | prose | [main.pdf](../../../preprints/The-Strong-Hyperkahler-SYZ-Conjecture-September-23-2026/main.pdf) |
+| [`The-Strong-Hyperkahler-SYZ-Conjecture-September-23-2026`](../../../preprints/The-Strong-Hyperkahler-SYZ-Conjecture-September-23-2026/) | [041](../algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) | prose | [main.pdf](../../../preprints/The-Strong-Hyperkahler-SYZ-Conjecture-September-23-2026/main.pdf) |
 
 `title` means the name is in the manuscript directory name; `prose` means it appears capitalized in that manuscript's body text with its bibliography stripped. A `prose`-only row is a citation.
 

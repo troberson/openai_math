@@ -1,4 +1,4 @@
-# 370 — The subcritical Lane--Emden and H\'enon--Lane--Emden conjectures
+# 370 — The subcritical Lane--Emden and Hénon--Lane--Emden conjectures
 
 |  |  |
 |---|---|

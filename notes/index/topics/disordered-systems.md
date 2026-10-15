@@ -11,7 +11,7 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | [217](../probability-and-statistical-mechanics/217-low-temperature-sherrington-kirkpatrick-fluctuation-law.md) | The low-temperature Sherrington--Kirkpatrick fluctuation law | yes | yes | — | — |
 | [218](../probability-and-statistical-mechanics/218-conformal-universality-for-weakly-interacting-and-disordered-ising-models.md) | Conformal universality for weakly interacting and disordered Ising models | yes | yes | — | — |
 | [219](../probability-and-statistical-mechanics/219-goe-universality-for-random-regular-graphs-with-weak-disorder.md) | GOE universality for random regular graphs with weak disorder | yes | yes | — | — |
-| [221](../probability-and-statistical-mechanics/221-m-parisi-formula-for-diluted-spin-glasses.md) | The M\'ezard--Parisi formula for diluted spin glasses | yes | yes | yes | — |
+| [221](../probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md) | The Mézard--Parisi formula for diluted spin glasses | yes | yes | yes | — |
 | [222](../probability-and-statistical-mechanics/222-perceptron-free-energies-and-microscopic-jamming.md) | Perceptron free energies and microscopic jamming | yes | yes | yes | — |
 | [227](../probability-and-statistical-mechanics/227-dynamical-phase-transition-in-the-sherrington-kirkpatrick-model.md) | The dynamical phase transition in the Sherrington--Kirkpatrick model | yes | yes | yes | — |
 | [228](../probability-and-statistical-mechanics/228-continuum-phase-transitions-for-radial-pair-potentials.md) | Continuum phase transitions for radial pair potentials | yes | — | yes | — |

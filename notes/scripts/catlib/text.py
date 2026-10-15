@@ -1,4 +1,4 @@
-"""Text normalizers, named by what they are for.
+r"""Text normalizers, named by what they are for.
 
 `norm` is not one join in this corpus: the same name covers six different rules, so the package
 ships them under distinct names and a caller says which one it means.
@@ -9,6 +9,9 @@ ships them under distinct names and a caller says which one it means.
                   `\\ref` are markup, not words, so they are removed before the substring test
   fold_apostrophe U+2019/U+2018 -> ASCII, because overview.tex is inconsistent (76 titles use
                   ASCII ' and 8 use U+2019), so an ASCII pattern misses a title silently
+  fold_accents    LaTeX accent escapes -> Unicode: `K\"ahler`, `Erd\H{o}s`, `Gy\'arf\'as`, `\v{s}`.
+                  A markdown page renders the escape literally, so a folded name is the one that
+                  renders; the release's own files keep the escapes
   title_key       lowercase alphanumerics, leading 'the' and possessives dropped (title joins)
   library_key     lowercase alphanumerics with the lean4/lean and trailing-digit suffixes stripped
                   (lakefile <-> deps <-> yaml joins)
@@ -37,6 +40,9 @@ def strip_markup(s: str) -> str:
     Moved verbatim from verify_summaries.py, where it is the checker's quotation rule;
     locate_summary_quotes.py and verify_findings.py call the same rule, so it lives here.
     """
+    # An accent escape is markup, not a word: `Gy\'arf\'as` and `Gyárfás` are the same name, so
+    # the fold runs first — the command strip cannot match `\"`, the quote is not in its class.
+    s = fold_accents(s)
     s = s.replace("’", "'").replace("‘", "'").replace("“", '"').replace("”", '"')
     s = s.replace("**", "").replace("`", "").replace("*", "")
     s = s.replace("&emsp;", " ").replace("&thinsp;", " ").replace("&mdash;", "-")
@@ -57,6 +63,46 @@ def strip_markup(s: str) -> str:
     s = re.sub(r"[{}]", " ", s)
     s = re.sub(r"\s+([.,;:!?])", r"\1", s)
     return collapse_ws(s)
+
+
+ACCENT = {
+    '"': {"a": "\u00e4", "o": "\u00f6", "u": "\u00fc", "i": "\u00ef",
+           "e": "\u00eb", "y": "\u00ff", "A": "\u00c4", "O": "\u00d6",
+           "U": "\u00dc", "I": "\u00cf", "E": "\u00cb", "Y": "\u0178"},
+    "'": {"a": "\u00e1", "e": "\u00e9", "i": "\u00ed", "o": "\u00f3",
+           "u": "\u00fa", "y": "\u00fd", "A": "\u00c1", "E": "\u00c9",
+           "I": "\u00cd", "O": "\u00d3", "U": "\u00da", "Y": "\u00dd"},
+    "H": {"o": "\u0151", "u": "\u0171", "O": "\u0150", "U": "\u0170"},
+    "v": {"c": "\u010d", "r": "\u0159", "s": "\u0161", "z": "\u017e",
+           "a": "\u0103", "e": "\u011b", "i": "\u01d0", "o": "\u01d2",
+           "u": "\u01d4", "C": "\u010c", "R": "\u0158", "S": "\u0164",
+           "Z": "\u017d"},
+    "c": {"c": "\u00e7", "C": "\u00c7"},
+    "k": {"a": "\u0105", "e": "\u0119", "u": "\u0173", "A": "\u0104",
+           "E": "\u0118", "U": "\u0172"},
+    "u": {"a": "\u0103", "g": "\u011f", "o": "\u014f", "u": "\u0163",
+           "A": "\u0102", "G": "\u011e", "O": "\u014e", "U": "\u0162"},
+    "d": {"z": "\u017c", "Z": "\u017b"},
+    "r": {"a": "\u00e5", "A": "\u00c5"},
+}
+COMB = {'"': "\u0308", "'": "\u0301", "H": "\u030b", "v": "\u030c",
+        "c": "\u0327", "k": "\u0328", "u": "\u0306", "d": "\u0307",
+        "r": "\u030a"}
+
+
+def fold_accents(s: str) -> str:
+    r"""LaTeX accent escapes folded to Unicode, precomposed where a code point exists.
+
+    The release writes `K\"ahler`, `Erd\H{o}s`, `Gy\'arf\'as`, `\v{s}`; a markdown page
+    renders the escape literally, so the page shows markup where a name belongs. The release's
+    own files keep the escapes: this is the rule for the text we write, and for comparing a
+    page quotation against the line it cites.
+    """
+    def one(m):
+        cmd, letter = m.group(1), m.group(2)
+        return ACCENT.get(cmd, {}).get(letter, letter + COMB.get(cmd, ""))
+    s = re.sub(r'\\(["\'])([A-Za-z])', one, s)
+    return re.sub(r"\\([Hvckudr])\{([A-Za-z])\}", one, s)
 
 
 def fold_apostrophe(s: str) -> str:

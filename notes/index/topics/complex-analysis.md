@@ -8,5 +8,5 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 |---|---|---|---|---|---|
 | [071](../real-and-complex-analysis/071-koebes-circle-domain-conjecture-and-circle-domain-rigidity.md) | Koebe's circle-domain conjecture and circle-domain rigidity | yes | yes | yes | — |
 | [072](../real-and-complex-analysis/072-brennans-conjecture-and-a-counterexample-to-kraetzers-prediction.md) | Brennan's conjecture and a counterexample to Kraetzer's prediction | yes | yes | yes | — |
-| [359](../differential-geometry/359-negative-k-ahler-curvature-without-bounded-holomorphic-coordinates.md) | Negative K\"ahler curvature without bounded holomorphic coordinates | yes | yes | yes | — |
+| [359](../differential-geometry/359-negative-kahler-curvature-without-bounded-holomorphic-coordinates.md) | Negative Kähler curvature without bounded holomorphic coordinates | yes | yes | yes | — |
 

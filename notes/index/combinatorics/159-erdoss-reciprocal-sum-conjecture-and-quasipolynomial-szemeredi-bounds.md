@@ -1,4 +1,4 @@
-# 159 — Erd\H{o}s's reciprocal-sum conjecture and quasipolynomial Szemer\'edi bounds
+# 159 — Erdős's reciprocal-sum conjecture and quasipolynomial Szemerédi bounds
 
 |  |  |
 |---|---|

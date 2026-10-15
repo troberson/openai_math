@@ -1,4 +1,4 @@
-# 221 — The M\'ezard--Parisi formula for diluted spin glasses
+# 221 — The Mézard--Parisi formula for diluted spin glasses
 
 |  |  |
 |---|---|

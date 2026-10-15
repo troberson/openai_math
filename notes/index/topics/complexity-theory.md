@@ -27,7 +27,7 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | [137](../theoretical-computer-science/137-one-tape-time-simulation-in-two-fifths-power-space.md) | One-tape time simulation in two-fifths-power space | — | — | yes | — |
 | [138](../theoretical-computer-science/138-subset-sum-in-o-2-0-49n-time.md) | Subset Sum in $O(2^{0.49n})$ time | yes | yes | — | — |
 | [141](../theoretical-computer-science/141-existential-theory-of-the-reals-and-existential-universal-sentences-in-the-counting-hierarchy.md) | The existential theory of the reals and existential--universal sentences in the counting hierarchy | — | yes | — | — |
-| [159](../combinatorics/159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemer-bounds.md) | Erd\H{o}s's reciprocal-sum conjecture and quasipolynomial Szemer\'edi bounds | yes | — | yes | — |
+| [159](../combinatorics/159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemeredi-bounds.md) | Erdős's reciprocal-sum conjecture and quasipolynomial Szemerédi bounds | yes | — | yes | — |
 | [164](../combinatorics/164-hindmans-finite-sums-and-products-conjecture.md) | Hindman's finite sums and products conjecture | — | yes | — | — |
 | [238](../probability-and-statistical-mechanics/238-optimal-logarithmic-mixing-of-the-thorp-shuffle.md) | Optimal logarithmic mixing of the Thorp shuffle | — | — | yes | — |
 | [274](../mathematical-physics/274-moores-parity-conjecture-for-qac-0.md) | Moore's parity conjecture for $\mathrm{QAC}^0$ | — | yes | yes | yes |

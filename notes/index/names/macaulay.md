@@ -33,7 +33,7 @@ Prose counts: 212 capitalized occurrences, 211 of them mid-sentence, 0 lowercase
 | [059](../algebraic-and-complex-geometry/059-counterexamples-to-zariskis-multiplicity-conjecture.md) | Counterexamples to Zariski's multiplicity conjecture | — | — | — | — | yes | — |
 | [062](../algebraic-and-complex-geometry/062-lebrun-salamon-conjecture-and-projective-contact-classification.md) | The LeBrun--Salamon conjecture and projective contact classification | — | — | — | — | yes | — |
 | [064](../algebraic-and-complex-geometry/064-constant-problem-for-surface-singularities.md) | The $\mu$-constant problem for surface singularities | — | — | — | — | yes | — |
-| [166](../combinatorics/166-higher-dimensional-erdos-distinct-distances-conjecture.md) | The higher-dimensional Erd\H{o}s distinct-distances conjecture | — | — | — | — | yes | — |
+| [166](../combinatorics/166-higher-dimensional-erdos-distinct-distances-conjecture.md) | The higher-dimensional Erdős distinct-distances conjecture | — | — | — | — | yes | — |
 | [193](../algebra/193-serres-intersection-multiplicity-conjecture.md) | Serre's intersection-multiplicity conjecture | — | — | — | — | yes | — |
 | [194](../algebra/194-lechs-multiplicity-conjecture.md) | Lech's multiplicity conjecture | — | — | — | — | yes | — |
 | [195](../algebra/195-a-counterexample-to-the-small-cohen-macaulay-module-conjecture.md) | A counterexample to the small Cohen--Macaulay module conjecture | yes | yes | — | — | yes | — |

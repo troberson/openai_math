@@ -33,7 +33,7 @@ whole-tree counts are printed in the report and are not written to the TSV.
 | abstract→"companion" wording | **9** | A word, creating no edge |
 | family→reasoning trace | **10** | Release attribution, not evidence the trace is the proof |
 | named-in-title | **153** of 372 | A property of catalog prose, not of the literature |
-| cited-in-bib | **12** of 372 | A title-phrase proxy; a miss is not evidence of no impact |
+| cited-in-bib | **11** of 372 | A title-phrase proxy; a miss is not evidence of no impact |
 | mentioned-in-body | **11** of 372 | A shared phrase can be not-a-reference |
 | family→MSC code | **0** | Negative: no classification vocabulary exists to read |
 | bibliography entry→keywords field | **0** | Negative: bibliographies carry no topic vocabulary |
@@ -115,10 +115,10 @@ All three normalize the family title the same way — lowercase alphanumerics, s
 | Relation | Text searched | Cross-family | Including own-family |
 |---|---|---|---|
 | named-in-title | `overview.tex` `\resultentry` arg 2 | **153** of 372 | — |
-| cited-in-bib | `preprints/**/*.bib` | **12** of 372 | 23 |
-| mentioned-in-body | `preprints/**/*.tex` | **11** of 372 | 113 |
+| cited-in-bib | `preprints/**/*.bib` | **11** of 372 | 21 |
+| mentioned-in-body | `preprints/**/*.tex` | **11** of 372 | 108 |
 
-`cited-in-bib`: **001, 003, 006, 038, 066, 086, 109, 145, 166, 202, 231, 312**. Each was read and
+`cited-in-bib`: **001, 003, 006, 038, 066, 086, 109, 145, 202, 231, 312**. Each was read and
 validated as a genuine citation — the entry reads e.g. `{Milne's rationality conjecture for abelian
 varieties}}, howpublished = {OpenAI Math Release preprint \href{https://github.com/openai/…`. The
 merge changed no member of this list.
@@ -126,7 +126,7 @@ merge changed no member of this list.
 `mentioned-in-body`: **003, 006, 032, 086, 094, 109, 145, 176, 194, 202, 299**. **6** of these 11
 (003, 006, 086, 109, 145, 202) also appear in `cited-in-bib`, which is the signature of a real
 reference; the **5** that do not — **032, 094, 176, 194, 299** — are the ones to read before
-believing, and 6 of the 12 `cited-in-bib` families (001, 038, 066, 166, 231, 312) are cited in a
+believing, and 5 of the 11 `cited-in-bib` families (001, 038, 066, 231, 312) are cited in a
 bibliography without the title phrase appearing in any body text. **032** is new to this list after
 the 2026-10-07 merge: its title was rewritten when three of its manuscripts were withdrawn, and the
 new phrase is what matches. It has not been read.
@@ -145,7 +145,7 @@ The count is a measurement of a rule, and the rule has two defects that the pros
 - **Scope.** The two globs reach **417 of the 500** listed-manuscript `.bib` files; the 83 at depth 4
   (`preprints/*/*/*/*.bib`) are outside it.
 - **No ownership test.** It counts a title appearing in *any* bibliography, including the owning
-  family's own. Under the same title rule over all 500 listed files: **17** families, **12**
+  family's own. Under the same title rule over all 500 listed files: **16** families, **11**
   cross-family.
 
 Measured 2026-10-08 over the listed scope, all three knobs at once (title rule × corpus text × file
@@ -153,27 +153,27 @@ scope):
 
 | Title rule | Corpus text | `.bib` scope | Any family | Cross-family |
 |---|---|---|---|---|
-| 6-token prefix | lowercased | 417 (depth ≤3) | **14** ← the recorded figure | 10 |
-| 6-token prefix | lowercased | 500 (all listed) | 17 | 12 |
+| 6-token prefix | lowercased | 417 (depth ≤3) | **13** ← the recorded figure | 9 |
+| 6-token prefix | lowercased | 500 (all listed) | 16 | 11 |
 | 6-token prefix | normalized | 417 | 2 | 1 |
 | 6-token prefix | normalized | 500 | 2 | 1 |
 | normalized full title | lowercased | 417 | 4 | 3 |
 | normalized full title | lowercased | 500 | 5 | 4 |
 | normalized full title | normalized | 417 | 20 | 10 |
-| normalized full title | normalized | 500 | **23** | **12** ← shipped `cited-in-bib` |
+| normalized full title | normalized | 500 | **21** | **11** ← shipped `cited-in-bib` |
 
 The last row is the rule shipped in `notes/tables/links.tsv`; the first row is the recorded 14. Normalizing
 the corpus is the dominant knob — it is what turns punctuation-bearing titles into matchable phrases,
-taking 5 to 23 — which is why a stem-style variant is not interchangeable with a normalized one.
+taking 5 to 21 — which is why a stem-style variant is not interchangeable with a normalized one.
 Other variants measured over the 500 listed `.bib` files: title-core (trailing noun dropped) over a
 lowercased corpus 10 / 9; verbatim case-sensitive over the raw corpus 12 / 9; verbatim case-insensitive
 15 / 11; verbatim ci with `the` stripped 7 / 5; normalized with `the` kept 6 / 4; `title={}` field
 only (brace-balanced), verbatim ci 15 / 11; `title={}` field only, normalized 23 / 12.
 
 So the recorded figure is not a phantom, and the conclusion drawn from it is unchanged: the
-title-phrase layer reaches 12 cross-family families while the href layer reaches 104 so the proxy
-under-counts citations by an order of magnitude. What changes is the reason to give. Quote 14 with its
-rule and its 417-file scope, and quote 12 with the normalized rule and the 500-file scope.
+title-phrase layer reaches 11 cross-family families while the href layer reaches 104 so the proxy
+under-counts citations by an order of magnitude. What changes is the reason to give. Quote 13 with its
+rule and its 417-file scope, and quote 11 with the normalized rule and the 500-file scope.
 
 ## Negatives, stated as measurements
 
@@ -194,7 +194,7 @@ rule and its 417-file scope, and quote 12 with the normalized rule and the 500-f
 
 - **No citation was read past its entry.** The 393 release-labelled entries were matched by string
   and their hrefs resolved against disk; none was checked for a correct author, year, title, or venue,
-  and the 12 validated `cited-in-bib` cases were read as entry text, not verified against the work.
+  and the 11 validated `cited-in-bib` cases were read as entry text, not verified against the work.
 - The 104 cross-family citation edges are **not** typed. Why a manuscript cites another — builds-on,
   contrasts-with, refutes, acknowledges — is not recorded anywhere in the release, and this inventory
   does not infer it.

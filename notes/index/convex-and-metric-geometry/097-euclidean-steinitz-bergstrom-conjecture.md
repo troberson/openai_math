@@ -1,4 +1,4 @@
-# 097 — The Euclidean Steinitz--Bergstr\"om conjecture
+# 097 — The Euclidean Steinitz--Bergström conjecture
 
 |  |  |
 |---|---|

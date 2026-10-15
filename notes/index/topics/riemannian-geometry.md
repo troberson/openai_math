@@ -31,7 +31,7 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | [354](../differential-geometry/354-isoperimetric-regions-in-the-cubic-three-torus.md) | Isoperimetric regions in the cubic three-torus | yes | yes | yes | — |
 | [356](../differential-geometry/356-giglis-characterization-of-alexandrov-curvature.md) | Gigli's characterization of Alexandrov curvature | — | yes | yes | — |
 | [358](../differential-geometry/358-a-three-manifold-with-no-conjugate-points-and-no-nonpositively-curved-metric.md) | A three-manifold with no conjugate points and no nonpositively curved metric | yes | yes | yes | — |
-| [359](../differential-geometry/359-negative-k-ahler-curvature-without-bounded-holomorphic-coordinates.md) | Negative K\"ahler curvature without bounded holomorphic coordinates | — | yes | yes | — |
+| [359](../differential-geometry/359-negative-kahler-curvature-without-bounded-holomorphic-coordinates.md) | Negative Kähler curvature without bounded holomorphic coordinates | — | yes | yes | — |
 | [360](../differential-geometry/360-villanis-convexity-conjecture-and-regular-optimal-transport.md) | Villani’s convexity conjecture and regular optimal transport | — | yes | yes | — |
 | [361](../differential-geometry/361-counterexamples-to-yaus-harmonic-dimension-bound.md) | Counterexamples to Yau's harmonic dimension bound | — | yes | yes | — |
 | [376](../partial-differential-equations/376-universal-computation-in-forced-navier-stokes-flows.md) | Universal computation in forced Navier--Stokes flows | — | — | yes | — |

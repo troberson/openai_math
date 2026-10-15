@@ -22,7 +22,7 @@ Prose counts: 9 capitalized occurrences, 7 of them mid-sentence, 0 lowercase. Th
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
 | [156](../combinatorics/156-borsuks-conjecture-fails-in-dimension-nine.md) | Borsuk's conjecture fails in dimension nine | yes | — | — | yes | yes | yes |
-| [166](../combinatorics/166-higher-dimensional-erdos-distinct-distances-conjecture.md) | The higher-dimensional Erd\H{o}s distinct-distances conjecture | — | — | — | — | yes | — |
+| [166](../combinatorics/166-higher-dimensional-erdos-distinct-distances-conjecture.md) | The higher-dimensional Erdős distinct-distances conjecture | — | — | — | — | yes | — |
 
 ## Manuscripts
 

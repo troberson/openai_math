@@ -10,7 +10,7 @@ drift. Pages are rendered by `python3 notes/scripts/build_index.py` into `notes/
 `lake`, `lean`, `lake exe cache get`, or comparator run.
 
 Headline, with the rule that yields it: **92 patterns matched case-insensitively against the title,
-abstract, scope-note text, and derived Lean file paths of the 372 catalogued families → 978
+abstract, scope-note text, and derived Lean file paths of the 372 catalogued families → 980
 family-topic assignments over 372 families, 0 families uncovered, 4 terms with no hit.**
 
 ## What a topic is, and what it is not
@@ -77,7 +77,7 @@ the 372 families, as printed by `python3 notes/scripts/measure_topics.py`.
 | curves | 17 | 2 | 17 | 3 | 1 |
 | harmonic-analysis | 17 | 13 | 13 | 11 | 1 |
 | measure-theory | 17 | 2 | 10 | 10 | 0 |
-| partial-differential-equations | 17 | 14 | 12 | 8 | 0 |
+| partial-differential-equations | 18 | 15 | 12 | 8 | 0 |
 | disordered-systems | 16 | 10 | 11 | 12 | 1 |
 | functional-analysis | 16 | 5 | 11 | 13 | 1 |
 | surfaces | 16 | 8 | 13 | 7 | 1 |
@@ -86,7 +86,7 @@ the 372 families, as printed by `python3 notes/scripts/measure_topics.py`.
 | discrete-geometry | 13 | 11 | 10 | 11 | 2 |
 | logic | 13 | 7 | 13 | 10 | 2 |
 | planar-maps-and-lattice-models | 13 | 9 | 13 | 4 | 1 |
-| quantum-theory | 13 | 6 | 12 | 8 | 1 |
+| quantum-theory | 14 | 8 | 12 | 8 | 1 |
 | symplectic-geometry | 12 | 8 | 10 | 6 | 1 |
 | condensed-matter | 11 | 9 | 10 | 6 | 1 |
 | conformal-universality | 11 | 11 | 9 | 3 | 0 |
@@ -169,14 +169,14 @@ the 372 families, as printed by `python3 notes/scripts/measure_topics.py`.
   covering 113 and 115; that is false. 113 ("Approximate counting and the perfect-matching entropy
   conjecture") carries 7 topics and 115 ("Sampling and counting contingency tables with arbitrary
   margins") carries 2, none of them `algebraic-geometry`.
-- **topics per family 1:93 2:103 3:87 4:51 5:21 6:13 7:2 8:1 9:1** — median **2**, mean 2.63, so a
-  family typically sits on the boundary of two of these terms. 93 families carry exactly one topic.
+- **topics per family 1:92 2:103 3:88 4:51 5:21 6:13 7:2 8:1 9:1** — median **2**, mean 2.63, so a
+  family typically sits on the boundary of two of these terms. 92 families carry exactly one topic.
   The 9-topic family is **211** ("Geometry, diffusion, and spectra of random planar maps":
   graph-theory, metric-geometry, statistical-mechanics, spectral-theory, surfaces,
   planar-maps-and-lattice-models, quantum-theory, probability, fractal-geometry) and the 8-topic
   family is **281** ("QAOA optimality for the SK model").
-- **yield histogram 0:4 1:5 2:3 3:5 4:9 5:4 6:5 7:8 8:6 9:6 10:2 11:6 12:1 13:5 15:1 16:3 17:4
-  20:1 21:3 23:1 24:2 25:1 27:1 28:1 29:1 31:1 35:1 42:1 43:1.** **17** terms have a yield of 3 or less
+- **yield histogram 0:4 1:5 2:3 3:5 4:9 5:4 6:5 7:8 8:6 9:6 10:2 11:6 12:1 13:4 14:1 15:1 16:3
+  17:3 18:1 20:1 21:3 23:1 24:2 25:1 27:1 28:1 29:1 31:1 35:1 42:1 43:1.** **17** terms have a yield of 3 or less
   and 9 have a yield of 1 or less; those are thin topics, kept and labelled as thin, not merged
   away.
 
@@ -253,7 +253,7 @@ them.
    analytic-number-theory, graph-coloring, commutative-algebra, extremal-combinatorics. The narrowings
    have now been applied for real, and the notes rewritten to match the code.
 3. **`overview.tex` apostrophes are inconsistent, and ASCII-apostrophe patterns miss titles
-   silently.** Over the 372 titles, **76 use ASCII `'` and 8 use U+2019** — 023 Patterson’s, 025
+   silently.** Over the 372 titles, **73 use ASCII `'` and 8 use U+2019** — 023 Patterson’s, 025
    `Erd\H{o}s’s`, 151 Shub’s, 209 Gersten’s, 210 Foulkes’, 298 Voiculescu’s, 316 Curtis’s, 360
    Villani’s. **16 patterns contain an ASCII apostrophe**, so 209 "Integral counterexamples to
    Gersten’s conjecture" was uncovered while `gersten's conjecture` sat in the pattern. Fixed by
