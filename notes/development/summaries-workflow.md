@@ -7,30 +7,30 @@ measured quotation traps) lives in `.qwen/skills/auto-skill-family-summary-citat
 
 ## Current state (rewritten at every batch boundary, 2026-10-14)
 
-- **All 32 pages are green.** `verify_summaries.py` over the 33 files in `notes/summaries/`:
-  **4,782 marker positions, 1,328 quoted spans, 0 problems**; `check_summary_manuscripts.py`:
-  **33 pages, 0 with an off-family manuscript, 70 manuscript dirs named, 0 unnamed-on-catalog,
+- **All 33 pages are green.** `verify_summaries.py` over the 34 files in `notes/summaries/`:
+  **4,886 marker positions, 1,357 quoted spans, 0 problems**; `check_summary_manuscripts.py`:
+  **34 pages, 0 with an off-family manuscript, 71 manuscript dirs named, 0 unnamed-on-catalog,
   0 named-by-another-family**; 749 preprint dirs on disk, 719 named by `overview.tex`, 30 on disk
   and unnamed, 0 named and absent. `test_summaries.py`: **11 tests pass**.
-- **Pages done (32):** 001, 002, 004, 006, 007, 010, 011, 014, 016, 017, 018, 019, 032, 087, 101,
-  102, 109, 136, 147, 159, 197, 221, 226, 258, 259, 271, 287, 332, 334, 342, 344, 362. The ledger's
-  `summary` column is 1 for those; the generator reports "summary pages 32 of 372 families, 70
-  manuscripts behind them". By discipline: Number theory 12, theoretical computer science 3, convex
-  and metric geometry 2, probability and statistical mechanics 2, group theory 2, differential
-  geometry 3, and one each in algebraic and complex geometry, dynamical systems and ergodic theory,
-  combinatorics, algebra, mathematical physics, operator algebras, functional analysis, and partial
-  differential equations.
+- **Pages done (33):** 001, 002, 004, 006, 007, 010, 011, 014, 016, 017, 018, 019, 032, 087, 101,
+  102, 109, 136, 147, 159, 197, 221, 226, 258, 259, 271, 287, 332, 334, 342, 344, 345, 362. The
+  ledger's `summary` column is 1 for those; the generator reports "summary pages 33 of 372
+  families, 71 manuscripts behind them". By discipline: Number theory 12, theoretical computer
+  science 3, convex and metric geometry 2, probability and statistical mechanics 2, group theory 2,
+  differential geometry 4, and one each in algebraic and complex geometry, dynamical systems and
+  ergodic theory, combinatorics, algebra, mathematical physics, operator algebras, functional
+  analysis, and partial differential equations.
 - **Next batch:** `math-ckd.4` is claimed and in progress — tier C group 1. The differential-geometry
-  families with `summary = 0`, sorted by `paps`: 345, 346, 347, 348, 349, 351, 352, 353, 354,
+  families with `summary = 0`, sorted by `paps`: 346, 347, 348, 349, 351, 352, 353, 354,
   355, 356, 357, 358, 359, 360, 361, 350. Steps 1–10 per page. Check `bd ready` first: summaries are
   P4 and any ready P1/P2 outranks this batch.
 - **Last gate run (2026-10-14):** `bash notes/scripts/gate_driver.sh` — **rows 79, failures 0**, head
   diff 0 bytes. Reconciliations: 372 families, 719 manuscripts, **173** formalized (`formalized
   (yaml)`), 242 scope notes, 416 challenges, 200 `main_results` over 189 configs, both
   `overview.tex` ↔ `CONTENTS.md` cross-checks 0. `verify_cache_promotion.py`: **writers 15 +
-  non-cached 1, probed targets 16, problems 0**. Lint trio (`notes/scripts/lint_scripts.sh`) exits 0.
-- **Push state:** `origin/notes` at `77be36cd6`, pushed 2026-10-14, with the family 344 page, its
-  count sweep, the re-rendered report pages and the link census on top, unpushed.
+  non-cached 1, probed targets 17, problems 0**. Lint trio (`notes/scripts/lint_scripts.sh`) exits 0.
+- **Push state:** `origin/notes` at `930b60dc0`, pushed 2026-10-14, with the family 345 page, its
+  count sweep, the census sweep, the re-rendered report pages and the link census on top, unpushed.
 - **Queue check (2026-10-14):** `bd ready` lists **3** issues: `math-4nn` (the epic, open through
   `.2`, whose prettier decision is the user's), `math-ckd.5`, and `math-ckd`. `math-ckd.4` is
   claimed and in progress, so it is not in the ready list.
