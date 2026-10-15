@@ -46,7 +46,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 046	Algebraic and complex geometry	Counterexamples to Shafarevich holomorphic convexity	2	0	T0	0	0	0	0	0	0	0		counterexample	0	0	1		0	0	0
 047	Algebraic and complex geometry	Complex counterexamples to cancellation and affine fibrations	1	1	T3	1	1	1	450	0	0	0		resolution|counterexample	0	1	1		0	0	0
 048	Algebraic and complex geometry	A characteristic-zero counterexample to Lipman--Zariski	1	0	T0	0	0	0	0	0	0	0		classification	0	1	1		0	0	0
-049	Algebraic and complex geometry	A stable-coordinate counterexample in four variables	2	2	T3	3	3	1	1141	0	0	0			0	1	1		0	0	0
+049	Algebraic and complex geometry	A stable-coordinate counterexample in four variables	2	2	T3	3	3	1	1141	0	0	0			0	1	1		0	0	1
 050	Algebraic and complex geometry	A counterexample to Griffiths' positivity conjecture	1	1	T3	1	1	1	560	0	0	0			0	1	1		0	0	0
 051	Algebraic and complex geometry	Kobayashi's canonical-ampleness conjecture	1	0	T0	0	0	0	0	0	0	0			0	1	0		0	0	0
 052	Algebraic and complex geometry	Tangent-bundle splittings and universal covers	2	1	T3	2	1	1	1131	0	0	0			0	1	0		0	0	0
