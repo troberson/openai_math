@@ -5,7 +5,7 @@ template text plus the writer's registry). Lines and bytes are of the template f
 is a `{{ ` occurrence counted over the whole file. No `lake`, `lean`, `lake exe cache get`, or
 comparator run.
 
-**Headline, with the rule that yields it:** report tree: **22** templates, **9,473** lines, **609,603** bytes, **1,617** slots; index tree: **5** templates, **209** lines, **14,981** bytes, **103** slots; all **27** templates: **9,682** lines, **624,584** bytes, **1,720** slots.
+**Headline, with the rule that yields it:** report tree: **22** templates, **9,450** lines, **608,469** bytes, **1,625** slots; index tree: **5** templates, **209** lines, **14,981** bytes, **103** slots; all **27** templates: **9,659** lines, **623,450** bytes, **1,728** slots.
 
 ## The report tree
 
@@ -33,12 +33,12 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `scripts-README.md.j2` | 734 | 69,978 | 11 | `notes/scripts/README.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `sources.md.j2` | 157 | 9,313 | 22 | `notes/reports/sources.md` | `verify_sources.py` | 31 |
 | `subfinding-pairs.md.j2` | 1,634 | 60,295 | 422 | `notes/reports/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |
-| `summaries-workflow.md.j2` | 154 | 10,935 | 12 | `notes/development/summaries-workflow.md` | `verify_page_sync.py` | NOT DERIVED |
+| `summaries-workflow.md.j2` | 154 | 10,935 | 13 | `notes/development/summaries-workflow.md` | `verify_page_sync.py` | NOT DERIVED |
 | `t0-chains.md.j2` | 571 | 34,913 | 40 | `notes/reports/t0-chains.md` | `verify_t0_chains.py` | 12 |
-| `templates.md.j2` | 109 | 5,115 | 47 | `notes/development/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
+| `templates.md.j2` | 110 | 5,137 | 48 | `notes/development/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `topics.md.j2` | 335 | 23,082 | 117 | `notes/reports/topics.md` | `measure_topics.py` | NOT DERIVED |
 | `verification-dirs.md.j2` | 408 | 37,952 | 44 | `notes/reports/verification-dirs.md` | `verify_verification_dirs.py` | 16 |
-| **report tree** | **22** | **9,473** | **609,603** | **1,617** | | |
+| **report tree** | **22** | **9,450** | **608,469** | **1,625** | | |
 
 ## The index tree
 
