@@ -14,8 +14,8 @@ measured quotation traps) lives in `.qwen/skills/auto-skill-family-summary-citat
 - **Last gate run (2026-10-15):** `bash notes/scripts/gate_driver.sh` — **rows 79, failures 0**, head diff 0 bytes. Reconciliations: 372 families, 719 manuscripts, **173** formalized (`formalized (yaml)`), 242 scope notes, 416 challenges, 200 `main_results` over 189 configs, both `overview.tex` ↔ `CONTENTS.md` cross-checks 0. `verify_cache_promotion.py`: **writers 15 + non-cached 1, probed targets 16, problems 0**. `check_index_links.py`: **1,033 pages, 66,129 links, 0 broken**. The gate does not run the lint trio; `bash notes/scripts/lint_scripts.sh` measured separately at HEAD: **ruff exit 0, mypy exit 0, pylint exit 0**.
 - **Push state:** `origin/notes` at `4f3ce3c8e`, pushed 2026-10-15 — the ruff gate made green (10 autofixes, 11 `pad_cells` rewrites for PLW2901, 7 ISC001 joins, 1 `noqa` move, ISC002 exempted with its 9 sites and the reason), the env site anchor the ruff fix moved landed at `render_reports.py:1221`, and the beads store close of `math-95a`. The gate run reported **79 rows, 0 failures**, `verify_cache_promotion.py` reported **0 problems** at the pushed HEAD, and the lint trio measured separately exits 0 on all three tools.
 - **Queue check (2026-10-15):** `bd ready` lists **2** issues: `math-ckd.5` and `math-ckd`.
-  `math-95a` and `math-4nn` are closed; `math-6wg` (the lint trio) is claimed and in progress, so
-  it is not in the ready list, and `math-ckd.4` is claimed and in progress. Bead `.2`'s prettier
+  `math-95a`, `math-4nn` and `math-6wg` (the lint trio) are closed, so none is in the ready list;
+  `math-ckd.4` is claimed and in progress. Bead `.2`'s prettier
   decision is resolved: prettier is dropped from the repo, so the formatable set is gone.
 
 ## Loop shape
