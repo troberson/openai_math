@@ -248,12 +248,12 @@ def test_clean_page(load, text):
     assert len(m2["inv"]) <= len(m["inv"]), "the unguarded rule splits more works than the guarded one"
     assert len(m2["shared"]) >= len(m["shared"]), "the unguarded rule merges fewer shared works"
     assert len(m2["pairs"]) >= len(m["pairs"]), "the unguarded rule finds fewer sharing pairs"
-    assert m2["cited"] > 0 and m2["cited"] <= m2["all_keys"] <= m["n_entries"]
-    assert m2["discs"] > 0 and m2["discs"] <= len(m2["led"])
-    assert m2["fams"] > 0 and m2["fams"] <= len(m2["led"])
+    assert 0 < m2["cited"] <= m2["all_keys"] <= m["n_entries"]
+    assert 0 < m2["discs"] <= len(m2["led"])
+    assert 0 < m2["fams"] <= len(m2["led"])
     assert len(m2["titles"]) > 0 and len(m2["titles"]) <= len(m2["man2fam"])
     assert len(m2["depth"]) > 0
-    assert m2["release_listed"] > 0 and m2["release_listed"] <= m2["release_entries"]
+    assert 0 < m2["release_listed"] <= m2["release_entries"]
     assert len(m2["rinv"]) > 0 and len(m2["rinv"]) <= m2["release_listed"]
     assert len(m2["rpairs"]) > 0 and len(m2["rpairs"]) <= len(m2["rinv"])
 

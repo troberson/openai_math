@@ -29,6 +29,7 @@ import re
 
 import pytest
 import verify_dependency_drift as chk
+from catlib.text import first_match
 
 PAGE = pathlib.Path("notes/reports/dependency-drift.md")
 
@@ -141,7 +142,7 @@ MUTANTS = [
                          "compatibility patch was lost by dependency resolution.", 1)),
     ("anchor out of range",
      lambda c, v, m: anchor_needle(c, v, m, lakefile_lines() + 1),
-     lambda p: p.replace(re.search(r"–`:\d+`", p).group(0),
+     lambda p: p.replace(first_match(r"–`:\d+`", p),
                          f"–`:{lakefile_lines() + 1}`", 1)),
     ("table row count shifted",
      lambda c, v, m: table_needle(c, v, m, v.table_rows(c)[0][0]),

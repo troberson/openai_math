@@ -27,7 +27,6 @@ so it is a measurement of a run, not a function of a digest, and a cache would s
 
 from __future__ import annotations
 
-import re
 import subprocess
 from collections.abc import Callable
 from pathlib import Path
@@ -35,6 +34,7 @@ from pathlib import Path
 from catlib.atomic import RECORDS_ROOT, cache_text, write_atomic
 from catlib.paths import ROOT, SCRIPTS
 from catlib.records import key as digest_key
+from catlib.text import first_group
 
 # The nineteen report-fed pages, in the order the registry in `catlib/templates.py` lists them.
 REPORT_PAGES = (
@@ -270,7 +270,7 @@ def git_short(ref: str) -> str:
 def bd_ready_count() -> int:
     """The ready-queue length, read from the tally line bd prints for itself."""
     out = subprocess.run(["bd", "ready"], check=True, capture_output=True).stdout.decode("utf-8")
-    return int(re.search(r"Ready: (\d+) issues", out).group(1))
+    return int(first_group(r"Ready: (\d+) issues", out) or 0)
 
 
 def key_for(name: str, args: tuple[str, ...] = ()) -> str:

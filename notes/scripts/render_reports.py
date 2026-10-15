@@ -2634,8 +2634,12 @@ def workflow_population() -> dict[str, Any]:
     `catlib.promote.RUN_ARGS` puts both in the key so a push cannot leave a cached page naming the
     commit it superseded.
     """
-    total = WORKFLOW_TOTAL.search(child_out("verify_summaries")).groups()
-    ms = WORKFLOW_MS.search(child_out("check_summary_manuscripts")).groups()
+    mt = WORKFLOW_TOTAL.search(child_out("verify_summaries"))
+    assert mt is not None, "the verify_summaries report has no total line"
+    total = mt.groups()
+    ms_mt = WORKFLOW_MS.search(child_out("check_summary_manuscripts"))
+    assert ms_mt is not None, "the check_summary_manuscripts report has no page line"
+    ms = ms_mt.groups()
     rows = population_of("README")["rows"]
     pages = [q for q in sorted(SUM_DIR.rglob("*.md")) if q.name != "README.md"]
     fams = sorted(q.name.split("-")[0] for q in pages)
@@ -2645,7 +2649,8 @@ def workflow_population() -> dict[str, Any]:
     for q in pages:
         d = set(SM.page_dirs(q)[0])
         seen |= d
-        stale += len(d - named.get(SM.page_fam(q.name), set()))
+        fam = SM.page_fam(q.name)
+        stale += len(d - (named.get(fam, set()) if fam is not None else set()))
     disk = {q.name for q in PREPRINTS.iterdir() if q.is_dir()}
     disc = collections.Counter(r["discipline"] for r in rows if r["fam"] in set(fams)).most_common()
     s = population_of("index-links")["scan"]

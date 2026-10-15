@@ -37,6 +37,7 @@ import re
 
 import pytest
 import verify_t0_chains as v
+from catlib.text import first_match
 
 PAGE = pathlib.Path("notes/reports/t0-chains.md")
 
@@ -167,7 +168,7 @@ MUTANTS = [
      lambda c, v: (f"anchor line out of range: overview.tex:9999 (file has "
                    f"{len(v.population()['overview'])} lines, page line "
                    f"{row_of(c, '(`overview.tex:9999`)')}"),
-     lambda p: p.replace(re.search(r"\(`overview\.tex:\d+\`\)", p).group(0),
+     lambda p: p.replace(first_match(r"\(`overview\.tex:\d+\`\)", p),
                          "(`overview.tex:9999`)", 1)),
     ("block for a family outside the population",
      lambda c, v: f"{outside_fam()}: block for a family outside the population",

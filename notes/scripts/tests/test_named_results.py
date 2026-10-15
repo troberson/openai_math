@@ -269,7 +269,7 @@ def test_clean_page(mod, text, ledger):
     assert p["files"] == len(tree_tex()) > 0, \
         f"files {p['files']} against {len(tree_tex())} .tex files walked at depth 1-4 under preprints/"
     # The titled counts are subsets of the begins count, and the per-command split sums to it.
-    assert p["titled"] > 0 and p["titled"] <= p["begins"]
+    assert 0 < p["titled"] <= p["begins"]
     assert p["titled_all"] >= p["titled"]
     assert len(p["head_titled"]) > 0 and len(p["head_titled"]) <= p["begins"]
     assert len(p["no_head"]) > 0 and len(p["no_head"]) <= len({r["fam"] for r in ledger})
