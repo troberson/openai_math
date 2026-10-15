@@ -236,7 +236,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 240	Mathematical logic	Shelah's eventual categoricity conjecture	2	1	T3	1	1	1	584	0	0	0		bound|uniform|conditional	1	1	0		0	0	0
 241	Mathematical logic	Rigidity of the Turing degrees	1	1	T3	1	1	1	375	0	0	0		resolution	0	1	0		0	0	0
 242	Mathematical logic	Single-fold Diophantine representations	1	1	T3	1	1	1	502	0	0	0		resolution|undecidability	0	1	0		0	0	0
-243	Mathematical logic	Choiceless counting does not capture polynomial time	2	1	T3	2	1	1	857	0	0	0		uniform	0	1	0		0	0	0
+243	Mathematical logic	Choiceless counting does not capture polynomial time	2	1	T3	2	1	1	857	0	0	0		uniform	0	1	0		0	0	1
 244	Mathematical logic	The partition principle does not imply choice	1	1	T3	2	1	1	674	0	0	0		counterexample|conditional	1	0	1		0	0	0
 245	Mathematical logic	The $\beta$-Barendregt--Geuvers--Klop conjecture	1	0	T2	1	0	1	397	0	0	0		resolution|uniform	0	1	0		0	0	0
 246	Group theory	Cannon's conjecture	1	0	T2	1	0	1	428	0	0	0		bound	0	1	0		0	0	0
