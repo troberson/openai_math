@@ -11,9 +11,6 @@ __pycache__/
 # Project venv for the script linters (math-e8k); uv-managed, never tracked
 .venv/
 
-# Prettier install; the manifest above is tracked, the tree is not
-node_modules/
-
 # Beads / Dolt files (added by bd init)
 .dolt/
 *.db
