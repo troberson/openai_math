@@ -144,12 +144,23 @@ def test_deleted_family_row(mod, lines, setup, page):
 def test_prose_count_outside_the_measured_tables(mod, lines, page):
     """How many scope notes a merge added is not a Measurements row and not one of the prose counts
     Pass D reads. Only the render diff can see it."""
-    prose = next(n for n, line in enumerate(lines) if line.startswith("plus the 7 that the 2026-10-07"))
+    prose = next(n for n, line in enumerate(lines) if re.match(r"plus the \d+ that the 2026-10-07", line))
     cand = list(lines)
-    cand[prose] = cand[prose].replace("plus the 7 that", "plus the 8 that", 1)
+    cand[prose] = bump(cand[prose], r"plus the (\d+) that", 1)
     assert cand != lines, "the mutation changed nothing"
     assert flagged(mod, cand, page, "page is not the writer's render"), \
         "the render diff did not flag the prose count"
+
+
+def bump(t, pat, delta):
+    """Change the page's own count at `pat` by `delta`. The mutation's input is the page as it stands,
+    so a measured count that moves does not need a hand-edit here."""
+    m = re.search(pat, t)
+    assert m, f"{pat!r} not in the page"
+    raw = m.group(1)
+    new = str(int(raw) + delta)
+    span = m.group(0)
+    return t[:m.start()] + span.replace(raw, new, 1) + t[m.end():]
 
 
 def pad_cells(t):
