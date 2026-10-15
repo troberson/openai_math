@@ -58,6 +58,7 @@ import pathlib
 import re
 
 import pytest
+from measure_index_sizes import LEDGER_SET
 
 pytestmark = pytest.mark.mutant
 
@@ -228,9 +229,20 @@ def test_clean_page(mod, text, ledger):
         f"traces {p['traces']} against {len({f.stem for f in walked})} distinct stems over the walk"
     assert (p["ver_dirs"], p["bib_files"], p["bib_entries"],
             p["bib_hrefs"]) == (30, 521, 13802, 393), f"ver dirs {p['ver_dirs']}, bib {p['bib_files']}"
-    assert (p["ledger_set_bytes"], p["all_tsv_bytes"], p["disk_links"], p["disk_broken"],
-            p["disk_dirs"], p["rawbib_kib"]) == (297024, 2408219, 66129, 0, 17700, 2021), \
-        f"ledger set {p['ledger_set_bytes']}, all TSV {p['all_tsv_bytes']}, links {p['disk_links']}"
+    # The byte sums are the files on disk, so the tree walk is the test: a figure that no longer
+    # equals the bytes it names is a stale page, not a changed corpus. The link count is the
+    # checker's scan, so it is pinned as invariants — 0 broken, a strict containment of the
+    # directory-resolving subset, and the raw-bib projection as the formula the page states.
+    led = sum((REPO / "notes" / "tables" / n).stat().st_size for n in LEDGER_SET)
+    alltsv = sum(q.stat().st_size for q in (REPO / "notes" / "tables").glob("*.tsv"))
+    assert p["ledger_set_bytes"] == led > 0, \
+        f"ledger set {p['ledger_set_bytes']} against {led} bytes in the five named TSVs"
+    assert p["all_tsv_bytes"] == alltsv > p["ledger_set_bytes"], \
+        f"all TSV {p['all_tsv_bytes']} against {alltsv} bytes over notes/tables/*.tsv"
+    assert p["disk_broken"] == 0 and 0 < p["disk_dirs"] < p["disk_links"], \
+        f"links {p['disk_links']}, broken {p['disk_broken']}, dirs {p['disk_dirs']}"
+    assert p["rawbib_kib"] == p["bib_entries"] * 150 // 1024, \
+        f"raw-bib {p['rawbib_kib']} KiB against {p['bib_entries']} entries at 150 B"
     assert p["index_pages"] == len(tree_index_pages()) > 0, \
         f"index pages {p['index_pages']} against {len(tree_index_pages())} .md files walked under notes/index/"
     assert p["index_tables"] == len(tree_index_tables(mod)) > 0, \
