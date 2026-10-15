@@ -55,10 +55,42 @@ The checker measures; this file injects. Run:
   python3 notes/scripts/run_tests.py notes/scripts/tests/test_index_design.py -q
 """
 import pathlib
+import re
 
 import pytest
 
 pytestmark = pytest.mark.mutant
+
+def count_at(t, pat):
+    """The number the page carries at the shape `pat`, with the digits captured in group 1."""
+    m = re.search(pat, t)
+    assert m, f"{pat!r} not in the page"
+    return m.group(1)
+
+
+def set_count(t, pat, new):
+    """Replace the page's own count at `pat` with `new`, keeping the surrounding text byte-exact."""
+    m = re.search(pat, t)
+    assert m, f"{pat!r} not in the page"
+    raw = m.group(1)
+    assert raw in m.group(0), f"no {raw!r} inside the matched span"
+    span = m.group(0)
+    return t[:m.start()] + span.replace(raw, new, 1) + t[m.end():]
+
+
+def bump(t, pat, delta):
+    """Change the page's count at `pat` by `delta`, keeping its comma formatting."""
+    raw = count_at(t, pat)
+    n = int(raw.replace(",", ""))
+    return set_count(t, pat, f"{n + delta:,}" if "," in raw else str(n + delta))
+
+
+def swap(t, pat_a, pat_b):
+    """Move the count the page carries at `pat_b` into the phrase at `pat_a` — the byte-total faults,
+    where both totals are measured and the page's two sentences must end up disagreeing."""
+    return set_count(t, pat_a, count_at(t, pat_b))
+
+
 
 REPO = pathlib.Path(__file__).resolve().parents[3]
 
@@ -106,32 +138,32 @@ MUTANTS = [
      lambda t: t.replace("      declaration: OAI.GAD.main",
                          "      declaration: OAI.AmplitudeDamping.main", 1)),
     ("node total", "count mismatch (population totals)",
-     lambda t: t.replace("**2,560** index nodes", "**2,700** index nodes", 1)),
+     lambda t: bump(t, r"\*\*([\d,]+)\*\* index nodes", 140)),
     ("namespace disagreement count", "count mismatch (namespace disagreement count)",
-     lambda t: t.replace("is wrong **150** times", "is wrong **149** times", 1)),
+     lambda t: bump(t, r"is wrong \*\*(\d+)\*\* times", -1)),
     ("citation edge count", "count mismatch (citation edge counts)",
-     lambda t: t.replace("**391** resolved", "**392** resolved", 1)),
+     lambda t: bump(t, r"\*\*([\d,]+)\*\* resolved", 1)),
     ("abbreviated anchor", "anchor file .../overview.tex does not exist",
      lambda t: t.replace("`overview.tex:28`", "`.../overview.tex:28`", 1)),
     ("substring-rule counts", "count mismatch (substring vs line-start counts)",
-     lambda t: t.replace("of the command name reads 18 and", "of the command name reads 17 and", 1)),
+     lambda t: bump(t, r"of the command name reads (\d+) and", -1)),
     ("projected size", "count mismatch (raw-bib projection)",
-     lambda t: t.replace("**2,021** KiB", "**2,000** KiB", 1)),
+     lambda t: bump(t, r"\*\*([\d,]+)\*\* KiB", -21)),
     ("rendered row count", "count mismatch (family-topic.tsv rows)",
-     lambda t: t.replace("`family-topic.tsv` | **980**", "`family-topic.tsv` | **977**", 1)),
+     lambda t: bump(t, r"`family-topic\.tsv` \| \*\*(\d+)\*\*", -3)),
     ("ledger set widened to all TSVs", "count mismatch (ledger set byte total)",
-     lambda t: t.replace("the whole ledger set is **297,024** B",
-                         "the whole ledger set is **2,174,703** B", 1)),
+     lambda t: swap(t, r"the whole ledger set is \*\*([\d,]+)\*\* B",
+                r"together totals \*\*(\d+)\*\* B")),
     ("all-TSV total altered", "count mismatch (all-TSV byte total)",
-     lambda t: t.replace("together totals **2408219** B", "together totals **297050** B", 1)),
+     lambda t: swap(t, r"together totals \*\*(\d+)\*\* B", r"ledger set is \*\*([\d,]+)\*\* B")),
     ("index tree byte total altered", "count mismatch (index tree byte total)",
-     lambda t: t.replace("carries **11533236** B", "carries **11531689** B", 1)),
+     lambda t: bump(t, r"carries \*\*(\d+)\*\* B", -547)),
     ("disk link count", "count mismatch (disk link check)",
-     lambda t: t.replace("covers **66,129** links", "covers **66,120** links", 1)),
+     lambda t: bump(t, r"covers \*\*([\d,]+)\*\* links", -9)),
     # Prose the count passes never read: the schema table's byte column is not in count_phrases()
     # or size_phrases(). Only the render diff can see it.
     ("schema byte column", "size mismatch (catalog.tsv measured size)",
-     lambda t: t.replace("| `catalog.tsv` | **49187** |", "| `catalog.tsv` | **49214** |", 1)),
+     lambda t: bump(t, r"\| `catalog\.tsv` \| \*\*(\d+)\*\* \|", 27)),
 ]
 
 
@@ -154,9 +186,20 @@ def test_clean_page(mod, text, ledger):
     figures stay literals: corpus measurements the join cannot produce."""
     problems, n_anchor, n_block, n_phrases, n_sync = mod.check(text)
     assert not problems, problems[:3]
-    assert (n_anchor, n_block, n_phrases, n_sync) == (9, 3, 83, 0), \
-        f"anchors {n_anchor}, block lines {n_block}, phrases {n_phrases}, sync {n_sync}"
+    # Each pass is proven non-vacuous against what the page carries, not against a recorded
+    # count: the anchor count is the anchor shapes the page ships, the phrase count is the
+    # writer's two phrase builders over the population, and the block count is the fenced lines
+    # the page has. A pass that reads nothing fails.
+    carried = len(mod.ANCHOR_SHAPE.findall(text))
     p = mod.population()
+    want = len(mod.count_phrases(p)) + len(mod.size_phrases(p))
+    fence = sum(len(b.split("\n")) for b in re.findall(r"```[^`]*```", text))
+    assert n_sync == 0, f"the render diff reports {n_sync} problems on the committed page"
+    assert 0 < carried == n_anchor, f"pass A resolved {n_anchor} of {carried} page anchors"
+    assert 0 < want == n_phrases, f"pass B read {n_phrases} of {want} phrases"
+    # The pass attributes a fenced block to its nearest preceding anchor and skips a block with
+    # none, so the invariant is containment: every line it matched is a line the page ships.
+    assert 0 < n_block <= fence, f"pass C matched {n_block} lines against {fence} fenced lines"
     assert p["families"] == len({r["fam"] for r in ledger}), \
         f"families {p['families']} against {len({r['fam'] for r in ledger})} ledger families"
     assert p["manuscripts"] == sum(int(r["paps"]) for r in ledger), \
