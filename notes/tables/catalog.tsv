@@ -341,7 +341,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 345	Differential geometry	Infinitely many closed geodesics on spheres and three-manifolds	1	0	T0	0	0	0	0	0	0	0			0	0	0		0	0	1
 346	Differential geometry	Sharp singular-set bounds for stationary integral varifolds	2	0	T0	0	0	0	0	0	0	0		bound|partial	0	0	0		0	0	1
 347	Differential geometry	Counterexamples to strong forms of Arnold's fixed-point conjecture	5	1	T3	1	1	1	479	0	0	0		counterexample|bound	0	1	1		0	0	1
-348	Differential geometry	Nonnegatively curved Einstein four-manifolds and a topological gap	3	0	T2	1	0	1	414	2	0	2			0	0	0		0	0	0
+348	Differential geometry	Nonnegatively curved Einstein four-manifolds and a topological gap	3	0	T2	1	0	1	414	2	0	2			0	0	0		0	0	1
 349	Differential geometry	The Solomon--Yau least-volume conjecture	1	0	T0	0	0	0	0	0	0	0		resolution|uniform	0	1	0		0	0	0
 350	Differential geometry	Yau's nodal conjecture: surfaces and counterexamples	3	2	T3	3	2	1	1402	0	0	0		counterexample|bound|partial	0	1	1		0	0	0
 351	Differential geometry	Scalar curvature detects four-dimensional Ricci-flow singularities	3	0	T0	0	0	0	0	0	0	0		counterexample|bound|uniform	0	1	1		0	0	0
