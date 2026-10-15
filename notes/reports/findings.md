@@ -174,7 +174,7 @@ directory** [S26]. Proof environments total **20,341**; statement environments t
 declared rule and **21,203** by the six-name list, the 85 gap being `assumption`, `foundation`,
 `auxproposition`, `hypothesis`, `auxlemma` and 10 names at ≤5 [S26].
 
-**The rendered index is link-clean.** **1,033** pages carry **66,132** links with **0** broken [S27].
+**The rendered index is link-clean.** **1,033** pages carry **66,133** links with **0** broken [S27].
 
 ## The dependency record
 
