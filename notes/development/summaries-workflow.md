@@ -31,12 +31,12 @@ measured quotation traps) lives in `.qwen/skills/auto-skill-family-summary-citat
   `overview.tex` ↔ `CONTENTS.md` cross-checks 0. `verify_cache_promotion.py`: **writers 15 +
   non-cached 1, probed targets 16, problems 0**. `check_index_links.py`: **1,033 pages, 66,125
   links, 0 broken**. Lint trio (`notes/scripts/lint_scripts.sh`) exits 0.
-- **Push state:** `origin/notes` at `e22f38511`, pushed 2026-10-15 — the accent fold for the titles we
-  render (`fold_accents`, the title-only parse fold, the 10 renamed index slugs, the byte/link/topic
-  sweep), the template rebuild that the fold invalidated, the summary-page count sweep (29 to 39 pages),
-  the two re-probes for the writers whose L1 names the renamed tree, and the census rows the new records
-  move. The gate run reported **79 rows, 0 failures**, `verify_cache_promotion.py` reported **0 problems**
-  at the pushed HEAD, and the linters exit 0.
+- **Push state:** `origin/notes` at `7041ad57d`, pushed 2026-10-15 — the findings-page template, its
+  render-diff entry, and its two writer slots, the census template's findings slot, the two re-probes
+  for the writers whose L1 names the findings template, the `REPORT_PAGES` entry, and the fleet mutants
+  re-targeted to the rendered probe count and the moved env anchor. The gate run reported **79 rows, 0
+  failures**, `verify_cache_promotion.py` reported **0 problems** at the pushed HEAD, and the linters
+  exit 0.
 - **Queue check (2026-10-15):** `bd ready` lists **4** issues: `math-4nn.9`, `math-4nn`,
   `math-ckd.5`, and `math-ckd`. `math-ckd.4` is claimed and in progress, so it is not in the ready
   list. Bead `.2`'s prettier decision is resolved: prettier is dropped from the repo, so the
