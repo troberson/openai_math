@@ -39,7 +39,7 @@ from catlib.paths import PREPRINTS, ROOT
 ROW = re.compile(r"^\|\s*(S\d+)\s*\|\s*(.+?)\s*\|\s*([\d,]+|—)\s*\|\s*(.*?)\s*\|\s*$")
 CELL = re.compile(r"`([^`]+)`")
 MARKER = re.compile(r"\[S(\d+)(?::(\d+)(?:[–-](\d+))?)?\]")
-QUOTE = re.compile(r"“([^”]{6,})”|\"([^\"]{6,})\"")
+QUOTE = re.compile(r"“([^”]{6,})”|(?<!\\)\"([^\"]{6,})\"")
 LINK = re.compile(r"\]\(([^)\s]+)\)")
 ENTITY = re.compile(r"&(#[0-9]+|[a-zA-Z][a-zA-Z0-9]*);")
 TAG = re.compile(r"<[a-zA-Z/][^>]*>")

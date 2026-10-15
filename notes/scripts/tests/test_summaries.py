@@ -320,3 +320,17 @@ def test_range_facts_flags_a_reversed_range():
     assert not out and not blank, f"the shipped rule read out {out}, blank {blank}"
     assert all(0 < p <= len(lines) for p in (29, 12)), \
         "the inside-the-file rule rejects the reversed range, so it is not the rule that accepts it"
+
+
+def test_accent_escape_is_not_a_quotation_opener():
+    r"""A LaTeX accent escape (`K\"ahler`) puts a literal `"` in a prose line, and the quote pass's
+    ASCII branch treats any `"` pair of 6+ chars as a span, so the text between the accent's `"` and the
+    next real quote becomes a quotation the page never wrote. The lookbehind makes `\"` not an opener, so
+    only the real span is read. The string is synthetic — no manuscript is read."""
+    line = r'K\"ahler metrics appear in `build/sections/introduction.tex:11` and "scalar curvature" is real.'
+    spans = [m.group(1) or m.group(2) for m in QUOTE.finditer(line)]
+    assert spans == ["scalar curvature"], f"the shipped rule read {spans}"
+    loose = re.compile(r"“([^”]{6,})”|\"([^\"]{6,})\"")
+    bogus = [m.group(1) or m.group(2) for m in loose.finditer(line)]
+    assert bogus != spans, f"the rule without the lookbehind read {bogus}, which is not the real span"
+    assert bogus[0].startswith("ahler"), f"the widened rule read {bogus}"
