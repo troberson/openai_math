@@ -122,14 +122,14 @@ All three normalize the family title the same way — lowercase alphanumerics, s
 {{ p['namerow_cited'] }}
 {{ p['namerow_mentioned'] }}
 
-`cited-in-bib`: **{{ p['cited_list'] }}**. Each was read and
+`cited-in-bib`: **001, 003, 006, 038, 066, 086, 109, 145, 202, 231, 312**. Each was read and
 {% raw %}validated as a genuine citation — the entry reads e.g. `{Milne's rationality conjecture for abelian
 varieties}}, howpublished = {OpenAI Math Release preprint \href{https://github.com/openai/…`. The
 {% endraw %}
 merge changed no member of this list.
 
 `mentioned-in-body`: **003, 006, 032, 086, 094, 109, 145, 176, 194, 202, 299**. {{ p['inter_count'] }}
-(003, 006, 086, 109, 145, 202) also appear in `cited-in-bib`, which is the signature of a real
+{{ p['inter_list'] }} also appear in `cited-in-bib`, which is the signature of a real
 reference; {{ p['mentonly_count'] }} — {{ p['mentonly_list'] }} — are the ones to read before
 believing, and {{ p['citedonly'] }} are cited in a
 bibliography without the title phrase appearing in any body text. **032** is new to this list after
