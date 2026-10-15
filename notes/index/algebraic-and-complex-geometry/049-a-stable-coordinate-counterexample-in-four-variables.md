@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [geometric-measure-theory](../topics/geometric-measure-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [049-a-stable-coordinate-counterexample-in-four-variables.md](../../../notes/summaries/algebraic-and-complex-geometry/049-a-stable-coordinate-counterexample-in-four-variables.md) |
 
 ## Manuscripts
 
