@@ -37,7 +37,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 036	Algebraic and complex geometry	Numerical semiampleness and generalized minimal models	4	0	T0	0	0	0	0	0	0	0		classification	0	0	0		0	0	0
 037	Algebraic and complex geometry	The sharp ordinary-double-point volume gap	2	0	T0	0	0	0	0	0	0	0		resolution|bound|partial	0	1	0		0	0	0
 038	Algebraic and complex geometry	Fujita's freeness conjecture	1	0	T0	0	0	0	0	0	0	0		bound|uniform	0	1	0		0	0	0
-039	Algebraic and complex geometry	Nagata's conjecture and maximal Seshadri constants	4	2	T3	2	2	1	1231	0	0	0		bound|classification|uniform	0	1	0		0	0	0
+039	Algebraic and complex geometry	Nagata's conjecture and maximal Seshadri constants	4	2	T3	2	2	1	1231	0	0	0		bound|classification|uniform	0	1	0		0	0	1
 040	Algebraic and complex geometry	Bloch's conjecture for complex surfaces	1	0	T0	0	0	0	0	0	0	0		uniform	0	1	0		0	0	0
 041	Algebraic and complex geometry	Hyperkähler SYZ and projective-space bases	2	0	T0	0	0	0	0	0	0	0		resolution	0	1	0		0	0	0
 042	Algebraic and complex geometry	Oka classification for K3 surfaces and other compact complex surfaces	1	0	T0	0	0	0	0	0	0	0			0	0	0		0	0	1
