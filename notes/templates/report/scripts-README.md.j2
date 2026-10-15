@@ -405,7 +405,7 @@ to **40.6 s**, measured 2026-10-12 as the sum of the wall times the gate printed
 pooled run, each Cost cell re-checked cell-by-cell against that run (0
 mismatches over the 22 checkers with Cost cells behind them; `verify_script_ownership.py` is not a row
 above, so it has no cell to check); the full 78-row gate ran in **1 min 25 s** wall
-(09:{{ p['slug_share'] }}:44–09:30:09 local) and its 78 row times sum to **202.5 s**, so the 12-row pool brings the wall
+(09:{{ p['slug_share'] }}:44–09:{{ p['slug_share'] }}:09 local) and its 78 row times sum to **202.5 s**, so the 12-row pool brings the wall
 to 42% of the sum. The writers are the tail: `render_reports.py` 17.0 s (the gate row is
 `--check-only`; the plain render ran 16.983 s), `extract_links.py` 14.8 s,
 `extract_formalization_deps.py` 6.0 s (the 122,458-file walk under
@@ -659,7 +659,7 @@ conditional-anchor checker `check_conditional_anchors.py`, and the single-purpos
 whose outputs cannot be re-measured.
 
 Measured 2026-10-10 over `.qwen/tmp/` **after** the `math-3la` cleanup: **403** top-level files,
-**136,180** files including subdirectories, **5** subdirectories. By top-level suffix: **304** `.txt`,
+**136,180** files including subdirectories, **5** subdirectories. By top-level suffix: **{{ p['slug_share'] }}4** `.txt`,
 **52** `.md`, **20** `.out`, **19** `.tsv`, **3** `.md5`, **2** `.log` and **1** each `.patch`,
 `.pat`, `.diff` — **0** `.sh` and **0** `.py`, which is the rule's own endpoint: a driver a later pass
 re-runs lives under `notes/scripts/`, and the scratch tree keeps outputs. The file total is one
@@ -722,7 +722,7 @@ tracked files under `notes/` before the bead that produced them closes.
 - **A needle can match nothing and the run stays green.** `verify_upstream_history.py`'s `SLUG`
   pattern required a trailing `/` inside the backticks **and** a 3-letter month, while the corpus
   writes full month names only (`September` 576, `October` 172 over the **749** `preprints/` dirs), so
-  it matched **0** tokens on the three pages it checks — `notes/development/upstream_history/2026-10-07_3014888.md`
+  it matched **0** tokens on the three pages it checks — `notes/development/upstream_history/2026-10-07_{{ p['slug_share'] }}14888.md`
   carries **14** backticked manuscript-slug tokens of that shape, written without the slash. The run
   exited 0 because nothing was asserted, and a slug renamed to one the release does not name was not
   caught. `math-lon.2.5` ported the file and left the pattern as it is, because its acceptance is
