@@ -30,10 +30,11 @@ measured quotation traps) lives in `.qwen/skills/auto-skill-family-summary-citat
   `overview.tex` ↔ `CONTENTS.md` cross-checks 0. `verify_cache_promotion.py`: **writers 15 +
   non-cached 1, probed targets 16, problems 0**. `check_index_links.py`: **1,033 pages, 66,125
   links, 0 broken**. Lint trio (`notes/scripts/lint_scripts.sh`) exits 0.
-- **Push state:** `origin/notes` at `d53d60b50`, pushed 2026-10-14, through the family 351 batch —
-  the family 351 page, its count sweep, the retargeted needles in the quotes, index-design,
-  script-ownership and fleet tests, the links sweep, and the index link count on top. The gate run
-  reported **71 rows, 0 failures** with a **0-byte** head diff, and the linters exit 0.
+- **Push state:** `origin/notes` at `4c8ede817`, pushed 2026-10-15, through the family 352 batch —
+  the family 351 and 352 pages, their count sweeps, the retargeted needles in the quotes,
+  index-design, script-ownership and fleet tests, the links sweep, the render, and the index link
+  count on top. The gate run reported **79 rows, 0 failures** with a **0-byte** head diff, the
+  cache-promotion checker reported **0 problems** at the pushed HEAD, and the linters exit 0.
 - **Queue check (2026-10-14):** `bd ready` lists **3** issues: `math-4nn` (the epic, open through
   `.2`, whose prettier decision is the user's), `math-ckd.5`, and `math-ckd`. `math-ckd.4` is
   claimed and in progress, so it is not in the ready list.
