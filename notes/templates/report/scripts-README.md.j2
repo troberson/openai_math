@@ -584,7 +584,7 @@ and a `notes/**/topics.tsv` glob read both. The rendered table is now
 `notes/tables/` on 2026-10-11, so the two names cannot collide again. `measure_topics.py` and
 `AGENTS.md` both name the vocabulary; `build_index.py` reads it and writes the rendered table.
 
-The index tree and the summaries tree share **26** page slugs — the families that carry both a rendered
+The index tree and the summaries tree share **{{ p['slug_share'] }}** page slugs — the families that carry both a rendered
 page and a reading summary, which is the pairing the index reports, plus `README.md`, which each tree
 carries as its own entry point.
 
@@ -632,7 +632,7 @@ Measured 2026-10-09 over `.qwen/tmp/` **after** the `math-8ou` cleanup: **285** 
 **7,121** files including subdirectories, **14** subdirectories. By top-level suffix: **222** `.txt`,
 **43** `.md`, **19** `.tsv`, **1** `.py`, and **0** in every other suffix — the tree is now reports,
 drafts, baselines and index snapshots, with one script left in it. The largest trees are gate and
-render snapshots — `reports/` **271**, `idx_pre_sweep/`, `idx_run1/` and `idx_run2/` at **1,052** each,
+render snapshots — `reports/` **{{ p['slug_share'] }}1**, `idx_pre_sweep/`, `idx_run1/` and `idx_run2/` at **1,052** each,
 `index-run1/` **1,049**, `index_run1/` and `index_run2/` at **1,050** each, `lon2/` **85**, `msgs/`
 **65**, `lon1/` **63**, `leanout/` **38**.
 
