@@ -37,7 +37,7 @@ measured quotation traps) lives in `.qwen/skills/auto-skill-family-summary-citat
   re-targeted to the rendered probe count and the moved env anchor. The gate run reported **79 rows, 0
   failures**, `verify_cache_promotion.py` reported **0 problems** at the pushed HEAD, and the linters
   exit 0.
-- **Queue check (2026-10-15):** `bd ready` lists **4** issues: `math-4nn.9`, `math-4nn`,
+- **Queue check (2026-10-15):** `bd ready` lists **3** issues: `math-4nn.9`, `math-4nn`,
   `math-ckd.5`, and `math-ckd`. `math-ckd.4` is claimed and in progress, so it is not in the ready
   list. Bead `.2`'s prettier decision is resolved: prettier is dropped from the repo, so the
   formatable set is gone.
