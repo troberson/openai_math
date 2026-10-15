@@ -57,11 +57,68 @@ The checker measures; this file injects. Run:
 """
 import re
 
-from catlib import anchors, yaml as Y
-
 import pytest
+from catlib import anchors
+from catlib import yaml as Y
 
 pytestmark = pytest.mark.mutant
+
+def bump(t, pat, delta):
+    """Change the page's own count at `pat` by `delta`, keeping its comma formatting. The mutation's
+    input is the page as it stands, so a measured count that moves does not need a hand-edit here."""
+    m = re.search(pat, t)
+    assert m, f"{pat!r} not in the page"
+    raw = m.group(1)
+    n = int(raw.replace(",", ""))
+    new = f"{n + delta:,}" if "," in raw else str(n + delta)
+    span = m.group(0)
+    return t[:m.start()] + span.replace(raw, new, 1) + t[m.end():]
+
+
+def row_line(t, key):
+    line = next((l for l in t.split("\n") if l.startswith("|") and key in l), None)
+    assert line, f"row {key!r} absent from the page"
+    return line
+
+
+def row_cells(t, key, changes):
+    """The table row carrying `key`, with each `(idx, delta)` cell changed."""
+    line = row_line(t, key)
+    cells = line.split("|")
+    for idx, delta in changes:
+        cells[idx] = str(int(cells[idx]) + delta)
+    return t.replace(line, "|".join(cells), 1)
+
+
+def multi_cell_row(t, idx):
+    """The first table row whose `idx`-th cell is a comma list of more than one item — the row the
+    overlap fault can shorten. Derived from the page's own rows, not from a recorded config name."""
+    for line in t.split("\n"):
+        if line.startswith("|"):
+            cells = line.split("|")
+            if len(cells) > idx and len(cells[idx].strip().split(", ")) > 1:
+                return cells[1].strip()
+    raise AssertionError(f"no row with a multi-item cell {idx}")
+
+
+def drop_last_item(t, key, idx):
+    """Drop the last item of a comma-list cell, so the page's row no longer carries a literal the
+    population measures."""
+    line = row_line(t, key)
+    cells = line.split("|")
+    items = cells[idx].strip().split(", ")
+    assert len(items) > 1, f"row {key!r} cell {idx} carries one item"
+    cells[idx] = " " + ", ".join(items[:-1]) + " "
+    return t.replace(line, "|".join(cells), 1)
+
+
+def delete_row(t, key):
+    line = next((l for l in t.split("\n")
+                 if l.startswith("|") and l.split("|")[1].strip() == key), None)
+    assert line, f"row {key!r} absent from the page"
+    return t.replace(line + "\n", "", 1)
+
+
 
 
 def row_of(c, sub):
@@ -77,11 +134,13 @@ def pad_cells(t):
     the same rows; a regex that required exact spacing would drop rows, and the row-count line is what
     would show it."""
     out = []
-    for ln in t.split("\n"):
-        if ln.startswith("|") and ln.endswith("|"):
-            cells = ln[1:-1].split("|")
-            ln = "|" + "|".join("  " + c.strip() + "  " for c in cells) + "|"
-        out.append(ln)
+    for row in t.split("\n"):
+        if row.startswith("|") and row.endswith("|"):
+            cells = row[1:-1].split("|")
+            padded = "|" + "|".join("  " + c.strip() + "  " for c in cells) + "|"
+        else:
+            padded = row
+        out.append(padded)
     return "\n".join(out)
 
 
@@ -206,48 +265,43 @@ def ae_census_phrase(v):
 # Faults in the page's own text, each keyed to the problem string the pass that owns it prints.
 MUTANTS = [
     ("entries count", count_needle("entries", entries_phrase),
-     lambda t: t.replace("Over the **200** `main_results` entries",
-                         "Over the **201** `main_results` entries", 1)),
+     lambda t, v: bump(t, r"Over the \*\*(\d+)\*\* `main_results` entries", 1)),
     ("resolved count", count_needle("resolved", resolved_phrase),
-     lambda t: t.replace("**189** of the 189 declarations resolve",
-                         "**188** of the 189 declarations resolve", 1)),
+     lambda t, v: bump(t, r"\*\*(\d+)\*\* of the \d+ declarations resolve", -1)),
     ("carrier-typed count", count_needle("carrier-typed", typed_phrase),
-     lambda t: t.replace("**61** of the 189 statements are opaque",
-                         "**60** of the 189 statements are opaque", 1)),
+     lambda t, v: bump(t, r"\*\*(\d+)\*\* of the \d+ statements are opaque", -1)),
     ("median body size", count_needle("body sizes", sizes_phrase),
-     lambda t: t.replace("median **6**, max **17**", "median **7**, max **17**", 1)),
+     lambda t, v: bump(t, r"median \*\*(\d+)\*\*, max", 1)),
     ("literal census", count_needle("literals", literals_phrase),
-     lambda t: t.replace("**126** distinct literals in total",
-                         "**127** distinct literals in total", 1)),
+     lambda t, v: bump(t, r"\*\*(\d+)\*\* distinct literals in total", 1)),
     ("pairing class count", count_needle("pairing a", pair_a_phrase),
-     lambda t: t.replace("**31** lean-subset,", "**32** lean-subset,", 1)),
+     lambda t, v: bump(t, r"\*\*(\d+)\*\* lean-subset,", 1)),
     ("disjoint family", disjoint_needle,
-     lambda t: t.replace("| `AuslanderReiten` | 199 | 2 |",
-                         "| `AuslanderReiten` | 198 | 2 |", 1)),
+     lambda t, v: row_cells(t, f"`{v['disjoint'][0][0]}`", [(2, -1)])),
     ("overlap extra literal", overlap_needle,
-     lambda t: t.replace("| `GrahamSpherical` | 172 | 2, 12, 50 | 0, 1 |",
-                         "| `GrahamSpherical` | 172 | 2, 12 | 0, 1 |", 1)),
+     lambda t, v: drop_last_item(t, multi_cell_row(t, 3), 3)),
     ("a.e. census", count_needle("a.e. census", ae_census_phrase),
-     lambda t: t.replace("**2,288** theorem environments", "**2,289** theorem environments", 1)),
-    ("a.e. row deleted", lambda c, mod, v: ae_deleted_needle(c, mod, v, "154"),
-     lambda t: t.replace("| 154 | 6 | 0 | 0 | 0 |\n", "", 1)),
-    ("a.e. row count", lambda c, mod, v: ae_count_needle(c, mod, v, "238"),
-     lambda t: t.replace("| 238 | 1 | 13 | 4 | 9 |", "| 238 | 1 | 12 | 4 | 8 |", 1)),
+     lambda t, v: bump(t, r"\*\*([\d,]+)\*\* theorem environments", 1)),
+    ("a.e. row deleted",
+     lambda c, mod, v: ae_deleted_needle(c, mod, v, str(v["ae_table"][0][0])),
+     lambda t, v: delete_row(t, str(v["ae_table"][0][0]))),
+    ("a.e. row count",
+     lambda c, mod, v: ae_count_needle(c, mod, v, str(max(v["ae_table"], key=lambda r: r[1])[0])),
+     lambda t, v: row_cells(t, str(max(v["ae_table"], key=lambda r: r[1])[0]), [(3, 1), (5, 1)])),
     ("statement anchor shifted",
      lambda c, mod, v: block_needle(c, mod, "IntegralMeans/Model.lean:34"),
-     lambda t: t.replace("`lean/OAI/Analysis/IntegralMeans/Model.lean:33`",
-                         "`lean/OAI/Analysis/IntegralMeans/Model.lean:34`", 1)),
+     lambda t, v: t.replace("`lean/OAI/Analysis/IntegralMeans/Model.lean:33`",
+                            "`lean/OAI/Analysis/IntegralMeans/Model.lean:34`", 1)),
     ("carrier rule narrowed", "A carrier rule that allows `private` and `protected` only",
-     lambda t: t.replace("allows `private` and `protected` but not `noncomputable`",
-                         "allows `private` and `protected` only", 1)),
+     lambda t, v: t.replace("allows `private` and `protected` but not `noncomputable`",
+                            "allows `private` and `protected` only", 1)),
     ("quote anchor shifted",
      lambda c, mod, v: quote_needle(c, mod, "lean/docs/260.md:10"),
-     lambda t: t.replace("`lean/docs/260.md:11`", "`lean/docs/260.md:10`", 1)),
+     lambda t, v: t.replace("`lean/docs/260.md:11`", "`lean/docs/260.md:10`", 1)),
     # Prose no count phrase reads: the comparator-sorry figure in the limitations list.
     # Only the render diff can see it.
     ("prose count", "The 416 comparator files carry 540 `sorry`s",
-     lambda t: t.replace("The 416 comparator files carry 539 `sorry`s",
-                         "The 416 comparator files carry 540 `sorry`s", 1)),
+     lambda t, v: bump(t, r"The \d+ comparator files carry (\d+) `sorry`s", 1)),
 ]
 
 
@@ -300,7 +354,7 @@ def test_clean_page(mod, text):
 def test_injected_faults(mod, text, label, needle, mut):
     """A fault in each of the check forms, injected in memory. The needle is the problem string the
     pass that owns that form prints, so a pass that fires on something else is not a pass."""
-    cand = mut(text)
+    cand = mut(text, mod.population())
     assert cand != text, f"{label}: mutation changed nothing"
     found, _, _, _, _, v = mod.check(cand)
     want = needle(cand, mod, v) if callable(needle) else needle
@@ -342,8 +396,9 @@ def test_layout_shift_is_invisible(mod, text):
     names it."""
     base = shift(text)
     broken = []
+    v = mod.population()
     for label, needle, mut in MUTANTS:
-        cand = mut(base)
+        cand = mut(base, v)
         found, _, _, _, _, v = mod.check(cand)
         want = needle(cand, mod, v) if callable(needle) else needle
         if not any(want in x for x in found):
