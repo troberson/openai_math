@@ -1,4 +1,4 @@
-# Index link integrity — 66,142 links checked against the shipped files, 0 broken
+# Index link integrity — 66,143 links checked against the shipped files, 0 broken
 
 Built 2026-10-07 by `notes/scripts/check_index_links.py` (report-only: it writes nothing and
 exits non-zero if any link is broken). Every count below is from a fresh run of that script, of
@@ -7,8 +7,8 @@ exits non-zero if any link is broken). Every count below is from a fresh run of 
 `lake exe cache get`, or comparator run.
 
 **Headline, with the rule that yields it:** all 1,033 rendered index pages read from disk →
-66,142 markdown links extracted with a paren-balanced target scanner, each resolved against its
-page's directory → **0 broken**. Of those links, **17,700 resolve to a directory and 48,442 to a
+66,143 markdown links extracted with a paren-balanced target scanner, each resolved against its
+page's directory → **0 broken**. Of those links, **17,700 resolve to a directory and 48,443 to a
 file**. Every shipped-file category reconciles with a fresh `build_catalog.py` parse: 719
 manuscript PDFs, 719 `build/` trees, 719 `README.md` stubs, 242 scope notes, 416 comparator
 configs (JSON and Lean side by side), 192 Lean files named by `formalization.yaml` over 183
@@ -36,7 +36,7 @@ the balanced scan resolves, so the trap stays demonstrated rather than recorded.
 
 ## A link to a directory is not a link to a file
 
-17,700 of the 66,142 links resolve to a directory. They are deliberate: the index links a
+17,700 of the 66,143 links resolve to a directory. They are deliberate: the index links a
 manuscript's LaTeX tree, a verification bundle, and a Lean module directory because those are
 trees, not documents, and the index's job is to get a reader to the tree. The report separates
 them per category and names them:
@@ -49,7 +49,7 @@ them per category and names them:
 | `verification-dir` | 60 | 30 | `preprints/<dir>/verification/` — certificate bundles |
 | `index-dir` | 1 | 1 | `notes/index/names/`, linked from the entry point |
 
-The remaining 48,442 links resolve to files. `verification-dir` counts 60 links over 30 dirs
+The remaining 48,443 links resolve to files. `verification-dir` counts 60 links over 30 dirs
 because each bundle is linked twice on family pages — once in the Manuscripts table, once in the
 verification section — and the registry appends one of the two; `lean-dir` counts 200 links over
 183 dirs because 14 dirs host more than one `main_results` declaration (max 3), and 6 files host
@@ -68,7 +68,7 @@ manuscript dirs linked outside the release set  27  on disk 27  links 1100
 
 ## Category table, reconciled with a fresh parse
 
-From `python3 notes/scripts/check_index_links.py` (1,033 pages, 66,142 links, 0 broken):
+From `python3 notes/scripts/check_index_links.py` (1,033 pages, 66,143 links, 0 broken):
 
 | Category | Links | Targets | file | dir | canonical |
 |---|---|---|---|---|---|
@@ -79,7 +79,7 @@ From `python3 notes/scripts/check_index_links.py` (1,033 pages, 66,142 links, 0 
 | `latex-source` | 719 | 719 | 719 | 0 | — |
 | `manuscript-readme` | 719 | 719 | 719 | 0 | 719 = canonical |
 | `config-json` | 705 | 416 | 705 | 0 | 416 = canonical |
-| `notes-doc` | 607 | 56 | 607 | 0 | — |
+| `notes-doc` | 608 | 57 | 608 | 0 | — |
 | `tables-tsv` | 554 | 2 | 554 | 0 | — |
 | `config-lean` | 416 | 416 | 416 | 0 | 416 = canonical |
 | `lean-file` | 289 | 192 | 289 | 0 | 192 = canonical |
@@ -95,8 +95,8 @@ canonical column are index-internal. `index-page` 521 targets = 372 family pages
 pages + 17 discipline pages + 40 name pages, and the 40 name pages are linked only from the entry
 point — family pages link no name page, the direction recorded in `notes/reports/names.md`.
 `latex-source` 719 = the `main_tex` of each of the 719 manuscripts, all 719 present in
-`notes/tables/sources.tsv`. `notes-doc` 56 targets = `notes/reports/names.md` (552 links: one from each of the
-551 name pages and one from the entry point), the 52 `notes/summaries/` pages family pages link,
+`notes/tables/sources.tsv`. `notes-doc` 57 targets = `notes/reports/names.md` (552 links: one from each of the
+551 name pages and one from the entry point), the 53 `notes/summaries/` pages family pages link,
 and the 4 notes docs the entry point links (`index-design.md`, `names.md`, `topics.md`,
 `scripts/measure_names.py`). `tables-tsv` 2 targets = `notes/tables/names.tsv` (553 links: one from each of the 551 name
 pages and 2 from the entry point) and `notes/tables/topics.tsv`
@@ -111,7 +111,7 @@ unlinked. `CONTENTS.md`'s 720 `.pdf` links are the 719 manuscript PDFs plus `ove
 ## Coverage: the disk scan is a superset of the render-time check
 
 `build_index.py` checks its own links as it renders and reports **48,048 links checked, 0
-broken** (fresh run). The disk scan finds **66,142 links, 0 broken**. The 18,094-link difference
+broken** (fresh run). The disk scan finds **66,143 links, 0 broken**. The 18,095-link difference
 is not a discrepancy about existence — both report zero — it is the render-time registry
 under-covering the pages it writes. The registry appends one href per registered relationship
 (an edge, a canonical file); the rendered bodies emit the same target again in other tables, and
@@ -123,7 +123,7 @@ Attributed two ways, each summing to 18,094:
 | Page group | Pages | Scanned | Registered | Gap |
 |---|---|---|---|---|
 | name pages | 551 | 57,888 | 40,899 | 16,989 |
-| family pages | 372 | 6,745 | 5,797 | 948 |
+| family pages | 372 | 6,746 | 5,797 | 949 |
 | topic pages | 92 | 980 | 980 | 0 |
 | discipline pages | 17 | 372 | 372 | 0 |
 | entry point (`notes/index/README.md`) | 1 | 157 | 0 | 157 |
@@ -139,7 +139,7 @@ Attributed two ways, each summing to 18,094:
 | `index-dir` | 1 | 0 | 1 | the entry point's link to `names/`. |
 
 Every other category has gap 0: scanned links equal registered links. So the render-time check is
-a subset that passes; the disk check is the full set and also passes. The 18,094 surplus links are
+a subset that passes; the disk check is the full set and also passes. The 18,095 surplus links are
 all verified by the disk scan, and 16,989 of them (94%) sit on name pages, which is where the
 tables repeat targets.
 
