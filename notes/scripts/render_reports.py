@@ -115,6 +115,40 @@ T0_CHAINS_MD = ROOT / "notes" / "reports" / "t0-chains.md"
 SP_MD = ROOT / "notes" / "reports" / "subfinding-pairs.md"
 README_MD = ROOT / "notes" / "README.md"
 CROSSCHECK_MD = ROOT / "notes" / "reports" / "counterexample-crosscheck.md"
+
+# The census trees notes/scripts/README.md tabulates. The page's checker walks them with its own rule;
+# the writer walks them here, so the census counts on the page are the writer's measurement and the
+# render diff proves the page is those bytes.
+NOTES_DIR = ROOT / "notes"
+SCRIPTS_DIR = NOTES_DIR / "scripts"
+DEV_DIR = NOTES_DIR / "development"
+UPSTREAM_DIR = DEV_DIR / "upstream_history"
+PROBE_DIR = DEV_DIR / "probe"
+REPORTS_DIR = NOTES_DIR / "reports"
+SKEL_DIR = NOTES_DIR / "templates"
+INDEX_DIR = NOTES_DIR / "index"
+SUM_DIR = NOTES_DIR / "summaries"
+TABLES_DIR = NOTES_DIR / "tables"
+OWNERSHIP_MD = SCRIPTS_DIR / "README.md"
+# The two TSVs the page records as hand-authored, and the seven the ledger scripts write. The census
+# row splits the table tree into generated and hand-authored, so the writer names both sets.
+OWN_HAND_TSV = {"topics.tsv", "conjecture-standing.tsv"}
+OWN_LEDGER_TSV = {"catalog.tsv", "sources.tsv", "subfindings.tsv", "links.tsv", "abstracts.tsv",
+                  "quotes.tsv", "formalization-deps.tsv"}
+# The records the page describes in prose the writer cannot derive — the write-mode pair, the render
+# after-record, the purity pair, the fleet census record, and the two keyed-record producers. The
+# seed_quotes records are described mechanically from what each one names, so a new summary page
+# needs no hand-edit of this page.
+OWN_PROBE_PREFIX = (
+    "the 2026-10-10 pair that proves the fleet's write modes, the 2026-10-11 writers/checkers pair that "
+    "measures the purity population, the 2026-10-11 `render_reports.py` after-record that proves the "
+    "render writes nothing, the 2026-10-12 `render_reports.py` record that captures the fleet census, "
+    "the 2026-10-12 `render_reports.py` record that proves the writer's L1 names `notes/tables/` as a "
+    "tree after `math-faz.6` moved the tables out, the 2026-10-12 `extract_named_results.py` record that "
+    "proves its L1 names the ledger at its `tables/` path, the 2026-10-12 `measure_templates.py` record "
+    "that proves the census L1 names the index tree at its pre-move 1,049-file size, the 2026-10-12 "
+    "`measure_templates.py` record that proves the census L1 names the 1,033-page index tree after the "
+    "move, and the 2026-10-13 `build_index_db.py` record that proves the FTS builder's L1 is empty")
 FAITH_MD = ROOT / "notes" / "reports" / "formalization-faithfulness.md"
 TEMPLATES_MD = ROOT / "notes" / "development" / "templates.md"
 FLEET_MD = ROOT / "notes" / "development" / "fleet-design.md"
@@ -2399,6 +2433,142 @@ def templates_phrases(p: dict[str, Any]) -> dict[str, str]:
     return out
 
 
+def probe_reads(record: pathlib.Path) -> set[str]:
+    """The paths a record opened read-only under `notes/` — the same read the promotion checker makes,
+    so the writer sees what a record proves the tree names."""
+    out: set[str] = set()
+    sec = None
+    for line in record.read_text(encoding="utf-8").splitlines():
+        m = re.match(r"\[probe2\] (\S+) paths", line)
+        if m:
+            sec = m.group(1)
+            continue
+        m = re.match(r"\s+(\d+)\s+(\w+)\s+(\S+)$", line)
+        if m and sec == "notes/" and m.group(2) == "r":
+            out.add(m.group(3))
+    return out
+
+
+def ownership_population() -> dict[str, Any]:
+    """The census the scripts README tabulates, measured by walking the trees, plus the probe records
+    described mechanically: each `seed_quotes.py` record is named for the pages its L1 tree carries that
+    the previous seed record did not, which is what a new summary page adds."""
+    # catlib/templates.py imports this module at module level, so the registry is read inside the
+    # function: a module-level import here is a circular import.
+    from catlib.templates import ALL_PAGES
+    recs = sorted(p for p in PROBE_DIR.iterdir() if p.is_file())
+    added: list[tuple[str, list[str]]] = []
+    prev: set[str] = set()
+    for p in recs:
+        if "seed_quotes" not in p.name:
+            continue
+        paths = probe_reads(p)
+        added.append((p.name.split("_")[0], sorted(paths - prev)))
+        prev |= paths
+    tsvs = [p.name for p in TABLES_DIR.glob("*.tsv")]
+    index_tables = len([n for n in tsvs if n in M.INDEX_TABLES])
+    reports_md = list(REPORTS_DIR.glob("*.md"))
+    reports_gen = len([p for p in PAGE_RENDERERS if p.parent == REPORTS_DIR])
+    checked = len([n for n in ALL_PAGES if n.startswith("notes/reports/")])
+    return {
+        "index_pages": len(list(INDEX_DIR.rglob("*.md"))),
+        "index_tables": index_tables,
+        "sum_pages": len(list(SUM_DIR.rglob("*.md"))),
+        "skels": len(list(SKEL_DIR.glob("*.j2"))),
+        "report_tpls": len(list(TPL.glob("*.j2"))),
+        "dev_md": len(list(DEV_DIR.glob("*.md"))),
+        "upstream": len([p for p in UPSTREAM_DIR.iterdir() if p.is_file()]),
+        "probe_records": len(recs),
+        "probe_prose": probe_prose(added),
+        "tsv_count": len(tsvs),
+        "tsv_ledger": len(OWN_LEDGER_TSV),
+        "tsv_gen": len(OWN_LEDGER_TSV) + index_tables,
+        "tsv_hand": len(OWN_HAND_TSV),
+        "reports_md": len(reports_md),
+        "reports_gen": reports_gen,
+        "reports_hand": len(reports_md) - reports_gen,
+        "reports_checked": checked,
+        "notes_md": len(list(NOTES_DIR.glob("*.md"))),
+        "notes_total": len([p for p in NOTES_DIR.rglob("*") if p.is_file()
+                            and "scripts" not in p.parts]),
+    }
+
+
+# The records the writer cannot name mechanically: the two 2026-10-15 records that name the accent-folded
+# index tree. The seed_quotes records are generated by probe_prose, so a new summary page needs no edit here.
+OWN_PROBE_SUFFIX = ("the 2026-10-15 `render_reports.py` and `measure_templates.py` records that name the "
+                    "accent-folded index tree")
+
+
+def probe_prose(added: list[tuple[str, list[str]]]) -> str:
+    """The seed-prose the census row prints. A day's `seed_quotes.py` records are named for the summary
+    pages their read sets carry that no earlier seed record carried, so a new summary page adds a clause
+    here and the census row needs no hand-edit."""
+    fams: dict[str, list[str]] = {}
+    extra: dict[str, list[str]] = {}
+    nrec: dict[str, int] = {}
+    for date, pages in added:
+        nrec[date] = nrec.get(date, 0) + 1
+        for q in pages:
+            if q == "notes/summaries/README.md":
+                continue
+            if q.startswith("notes/summaries/"):
+                fams.setdefault(date, []).append(q.split("/")[-1].split("-")[0])
+            elif not q.startswith("notes/summaries/"):
+                extra.setdefault(date, []).append(q)
+    clauses: list[str] = []
+    for date in sorted(nrec):
+        named = sorted(set(fams.get(date, [])))
+        parts: list[str] = []
+        if extra.get(date):
+            parts.append(", ".join(f"`{q}`" for q in sorted(set(extra[date]))))
+        if named:
+            parts.append(f"the family {', '.join(named)} page" + ("s" if len(named) > 1 else ""))
+        if not parts:
+            continue
+        word, verb = ("records", "name") if nrec[date] > 1 else ("record", "names")
+        clauses.append(f"the {date} `seed_quotes.py` {word} that {verb} " + " and ".join(parts))
+    return ", ".join(clauses[:-1]) + ", and " + clauses[-1]
+
+
+def ownership_phrases(p: dict[str, Any]) -> dict[str, str]:
+    """The census table, one slot per row. Each row is one line, so the writer supplies the whole row."""
+    return {
+        "census_index": f"| `notes/index/` | **{p['index_pages']:,}** | generated — `build_index.py`; the "
+                        f"{p['index_tables']} tables it renders land in `notes/tables/` |",
+        "census_summaries": f"| `notes/summaries/` | **{p['sum_pages']}** | hand-written — the reading "
+                            f"record: {p['sum_pages'] - 1} family pages and the link-only index page "
+                            "`README.md` |",
+        "census_templates": f"| `notes/templates/` | **{p['skels'] + p['report_tpls']}** | **{p['skels']}** "
+                            f"hand-written index skeletons + **{p['report_tpls']}** report templates built "
+                            "by `build_report_templates.py` |",
+        "census_dev": f"| `notes/development/*.md` | **{p['dev_md']}** | hand-written in part: "
+                      "`summaries-workflow.md` is the resume protocol; `fleet-design.md`, `index-design.md` "
+                      "and `index-links.md` are report-fed pages `render_reports.py` renders and "
+                      "`templates.md` is generated by `build_report_templates.py`. `math-faz.3` moved them "
+                      "here from the top level. |",
+        "census_upstream": f"| `notes/development/upstream_history/` | **{p['upstream']}** | hand-written — "
+                           "the record of each upstream merge, checked by `verify_upstream_history.py` |",
+        "census_probe": f"| `notes/development/probe/` | **{p['probe_records']}** | the audit-hook probe "
+                        f"records: {OWN_PROBE_PREFIX}, {p['probe_prose']}, {OWN_PROBE_SUFFIX} |",
+        "census_tables": f"| `notes/tables/*.tsv` | **{p['tsv_count']}** | **{p['tsv_gen']}** generated, "
+                         f"**{p['tsv_hand']}** hand-authored — {p['tsv_ledger']} written by the ledger "
+                         f"scripts and {p['index_tables']} rendered by `build_index.py` since `math-faz.6` |",
+        "census_reports": f"| `notes/reports/*.md` | **{p['reports_md']}** | **{p['reports_gen']}** "
+                          f"generated — the report-fed pages `render_reports.py` renders; "
+                          f"**{p['reports_hand']}** hand-written. **{p['reports_checked']}** with a "
+                          f"checker, **{p['reports_md'] - p['reports_checked']}** without. `math-faz.4` "
+                          "moved them here from the top level. |",
+        "census_notes_md": f"| `notes/*.md` | **{p['notes_md']}** | `notes/README.md`, the entry point — "
+                           "hand-written, no checker |",
+        "census_total": f"| `notes/` total, scripts excluded | **{p['notes_total']:,}** | — |",
+    }
+
+
+def ownership_page(p: dict[str, str]) -> str:
+    return ENV.get_template("scripts-README.md.j2").render(p=p)
+
+
 def templates_page(p: dict[str, str]) -> str:
     return ENV.get_template("templates.md.j2").render(p=p)
 
@@ -3578,6 +3748,9 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
     # page compares a template's slot count with the writer's label count, so the abstracts label count
     # travels inside its population — CA.measure() is the call abstracts_page() makes.
     "templates": lambda: templates_population(len(abstracts_phrases(CA.measure()))),
+    # notes/scripts/README.md's census is the writer's own tree walk. The page's checker walks the
+    # same trees with its own rule, so the two measurements are independent by construction.
+    "scripts-README": ownership_population,
 }
 
 
@@ -3601,6 +3774,7 @@ PAGE_RENDERERS: dict[pathlib.Path, Callable[[], str]] = {
     FAITH_MD: lambda: faithfulness_page(faithfulness_phrases(population_of("formalization-faithfulness"))),
     FLEET_MD: lambda: fleet_page(fleet_phrases(population_of("fleet-design"))),
     TEMPLATES_MD: lambda: templates_page(templates_phrases(population_of("templates"))),
+    OWNERSHIP_MD: lambda: ownership_page(ownership_phrases(population_of("scripts-README"))),
 }
 
 

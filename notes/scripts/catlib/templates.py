@@ -79,6 +79,9 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
     # count with the writer's label count, so the abstracts label count travels inside the population —
     # the same CA.measure() call abstracts_page() makes.
     "notes/development/templates.md": lambda: R.templates_population(len(R.abstracts_phrases(R.CA.measure()))),
+    # notes/scripts/README.md's census is the writer's own tree walk. The page's checker walks the same
+    # trees with its own rule, so the two measurements are independent by construction.
+    "notes/scripts/README.md": R.ownership_population,
 }
 # The writer's own slot dict per page. These are the calls render_reports.py makes when it renders,
 # so the labels and phrase strings the template gets are the writer's by construction.
@@ -116,6 +119,7 @@ LABELS: dict[str, Callable[[], dict[str, str]]] = {
         POPULATIONS["notes/development/fleet-design.md"]()),
     "notes/development/templates.md": lambda: R.templates_phrases(
         POPULATIONS["notes/development/templates.md"]()),
+    "notes/scripts/README.md": lambda: R.ownership_phrases(POPULATIONS["notes/scripts/README.md"]()),
 }
 PHRASE_FNS = ("count_phrases", "size_phrases")
 ALL_PAGES = {
@@ -178,7 +182,16 @@ ALL_PAGES = {
     # this coverage as NOT DERIVED. The page is proven by the twice-render byte-identity diff plus that
     # checker's plain run and its mutants.
     "notes/development/templates.md": "verify_script_ownership.py",
+    # notes/scripts/README.md is the script census. Its checker, verify_script_ownership.py, derives the
+    # writer set from the scripts' own sources and compares the census count cells with the trees on disk;
+    # it carries no count_phrases/size_phrases, so the builder reports this coverage as NOT DERIVED. The
+    # page is proven by the render diff plus that checker's plain run and its extracted mutants.
+    "notes/scripts/README.md": "verify_script_ownership.py",
 }
+# The template file name per page. The builder names a template by the page's basename, so the two
+# README.md pages collide: notes/README.md owns README.md.j2 and the scripts census takes
+# scripts-README.md.j2. The writer's page function reads the same name from here.
+TEMPLATE_NAME = {"notes/scripts/README.md": "scripts-README.md.j2"}
 
 
 def checker_needles(checker: pathlib.Path) -> list[tuple[str, str]]:
