@@ -260,3 +260,54 @@ lives here. The family number names the page the trap came from.
     files / 89,993 lines) → 23 sources, 109 markers, 38 quoted spans, green on the second checker
     run. A one-manuscript family with a mid-size tree is the cheapest shape measured so far.
 
+## Traps measured on the 2026-10-14 batch (families 334, 342, 344, 345, 346, 347, 348, 349, 351, 352)
+
+- **A shell dump is not a read.** The dominant failure of this batch: six pages (342, 344, 345, 346,
+  347, 348/349, 351, 352) shipped quotations the manuscript does not contain, each built from a
+  `[:260]` preview plus memory, and the checker reported NOT VERBATIM for every one. The rule: dump the
+  window to a file under `.qwen/tmp/`, read that file with `read_file`, and write the quote from the
+  checker's `line says` column — the column prints the source line the window covers, so it is the only
+  copy of a quoted region guaranteed to be the file's bytes. Print with `repr()` when byte-exactness
+  matters.
+- **A `read_file` window can return bytes the file does not contain.** Measured on family 345: a window
+  read reported a sentence the manuscript does not have, and the checker flagged the quote built from
+  it. A read is trustworthy only when the checker agrees with it.
+- **A block quote cannot span a multi-anchor citation.** Measured on family 344: pass C attributes a
+  block quote to the citation in the prose line two lines above, so a citation naming two sources
+  attributes the whole block to one file. One prose line and one block per anchor.
+- **A citation window must cover the quote exactly, and must not open on a blank line.** Measured on
+  family 346: `[S10:176–188]` quoting lines 177–188 reported `BLANK S8:177` and NOT VERBATIM. A window
+  that includes a blank line is a problem, not a note.
+- **A citation naming two sources is checked against one.** Measured on family 346: `[S5] [S17]`
+  quoting one sentence from S17 reported NOT VERBATIM against S5. A citation names one source.
+- **A blurb quotation is the whole `CONTENTS.md` line, in the source's glyph form.** Measured on family
+  342: `strip_markup` removes `**…**` with its content, so a blurb quote wrapped in bold folds to
+  empty. Quote the line as the release writes it, accents included.
+- **A LaTeX accent escape is not a quotation opener.** Measured on family 352: `K\"ahler` in a prose
+  line put a literal `"` in the page, and the quote pass read the text between it and the next real
+  quote as a quotation, so the page reported NOT VERBATIM for text it never wrote. The fix is the
+  lookbehind in `catlib/summaries.py`'s `QUOTE`, committed 2026-10-15. Prose folds accents to Unicode;
+  block quotes keep the raw `.tex` bytes.
+- **A `Lines` cell is measured, never transcribed.** Measured on family 344: a cell carried 188 for a
+  file of 189 and the checker reported LINES. `refresh_summary_line_counts.py` prints the true counts.
+- **A manuscript `README.md` names no file list.** Measured on family 347: the README names no file, so
+  a page claiming it lists the verification files is false. The file list comes from
+  `catlib.preprints.bundle_files`.
+- **The headline theorem comes from the theorem environment, not the abstract.** Measured on family
+  348: the abstract's summary sentence is not the theorem, and the constants the theorem names are in
+  the statement.
+- **Tier and claim-shape claims come from the live ledger.** Measured on family 346: the tier sentence
+  must be read from `notes/tables/catalog.tsv` after `build_catalog.py` runs.
+- **A release-inconsistency claim needs the measured bytes behind each side.** Measured on family 347:
+  the claim that the blurb and the theorem disagree is two quotations, one from `CONTENTS.md` and one
+  from the manuscript, and both must be verbatim.
+- **The comparator JSON's real keys.** Measured on family 334: `challenge_module`, `solution_module`,
+  `theorem_names`, `definition_names`, `permitted_axioms`, `enable_nanoda` — there is no tier, no paper
+  title, and no file list.
+- **A Sources-table `File` cell is the full repo-relative path in backticks.** Measured on family 334:
+  the checker's `CELL` rule takes the first backtick, so a page-relative cell resolves under the wrong
+  root.
+- **The inline mutation detects only when the page's first inline target sits in a block-quote unit.**
+  Measured on family 352: `read_text` returns a str, so the test's joined page is char-per-line and the
+  prose-unit checks go silent. Give the page a genuine 12+ character quoted span in a block quote
+  before the first stray `"`.

@@ -19,9 +19,10 @@ The writing is the easy half. **The verification loop is the skill** — a first
 contained 12 citation errors, all found by script, none found by reading. Budget most of the effort for
 step 5.
 
-Before the first page of a batch, read `references/quotation-traps.md` — the 21 shipped pages'
+Before the first page of a batch, read `references/quotation-traps.md` — the 39 shipped pages'
 measured defects, each with the fix that closed it (range endpoints, block-quote attribution, the
-`README.md` root collision, PDF rows, precomposed accents, marker placement).
+`README.md` root collision, PDF rows, precomposed accents, marker placement, the shell-dump failure,
+the citation-window rules, the accent-escape fix). The last section is the 2026-10-14 batch.
 
 ## 0. Pick the source layer from the ledger row first
 
