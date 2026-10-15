@@ -40,7 +40,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 039	Algebraic and complex geometry	Nagata's conjecture and maximal Seshadri constants	4	2	T3	2	2	1	1231	0	0	0		bound|classification|uniform	0	1	0		0	0	0
 040	Algebraic and complex geometry	Bloch's conjecture for complex surfaces	1	0	T0	0	0	0	0	0	0	0		uniform	0	1	0		0	0	0
 041	Algebraic and complex geometry	Hyperkähler SYZ and projective-space bases	2	0	T0	0	0	0	0	0	0	0		resolution	0	1	0		0	0	0
-042	Algebraic and complex geometry	Oka classification for K3 surfaces and other compact complex surfaces	1	0	T0	0	0	0	0	0	0	0			0	0	0		0	0	0
+042	Algebraic and complex geometry	Oka classification for K3 surfaces and other compact complex surfaces	1	0	T0	0	0	0	0	0	0	0			0	0	0		0	0	1
 043	Algebraic and complex geometry	$P=W$ for fixed-determinant moduli spaces	1	0	T0	0	0	0	0	0	0	0			0	1	0		0	0	0
 044	Algebraic and complex geometry	The equivariant cohomological Hikita conjecture for quivers	1	0	T0	0	0	0	0	0	0	0		uniform	0	1	0		0	0	0
 046	Algebraic and complex geometry	Counterexamples to Shafarevich holomorphic convexity	2	0	T0	0	0	0	0	0	0	0		counterexample	0	0	1		0	0	0
