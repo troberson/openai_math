@@ -261,6 +261,19 @@ appearing on two lines.
 Re-measure specificity after converting: no needle fires on another fault's page, and no needle fires on
 the clean page.
 
+**The inline mutation detects only when the page's first inline target sits in a block-quote unit.** The
+test joins `read_text()` with `"\n".join(...)`, and `read_text` returns a **str**, so the joined page is
+one character per line: markers split and the prose-unit checks go silent. Measured 2026-10-14 on family
+352 — the page's first inline target was a bogus span made by a LaTeX accent escape inside a block
+quote, so the pass printed nothing and the mutation went undetected. Give the page a genuine 12+
+character quoted span in a block quote **before** the first stray `"`, and confirm the pass prints the
+needle.
+
+**A clean assertion pins one count, not two.** Measured 2026-10-14 on family 347: the fleet test's clean
+assertion pinned the TSV file count, and a new probe record moved the record count, so the test failed on
+a figure it never measured. Pin the count the pass owns; a count a sibling pass measures belongs to that
+pass's row.
+
 ## 9. Report
 
 Quote the final run's report lines verbatim, the render-diff result (the page's bytes on disk against
