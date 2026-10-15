@@ -162,6 +162,8 @@ and names its one write-mode path outside `notes/` — the keyed record's stagin
 `notes/development/probe/2026-10-13_seed_quotes_summaries.txt` (the `seed_quotes.py` run after `math-ckd.6`
 added the summaries tree's link-only index page, which names that page) and
 `notes/development/probe/2026-10-14_seed_quotes_pages.txt` (the `seed_quotes.py` run after the family 342
+page landed, which names that page and the 30 quote specs it seeds) and
+`notes/development/probe/2026-10-14_seed_quotes_334.txt` (the `seed_quotes.py` run after the family 334
 page landed, which names that page and the 30 quote specs it seeds).
 `verify_fleet_design.py` parses the two 2026-10-11 records; `verify_cache_promotion.py` reads all
 fifteen records for its L1 exactness pass; the
