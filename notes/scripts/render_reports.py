@@ -2680,7 +2680,7 @@ def workflow_phrases(p: dict[str, Any]) -> dict[str, str]:
     top = [f"{n} {k}" for n, k in p["disc"] if k > 1]
     top = [top[0]] + [x.lower() for x in top[1:]]
     one = [n.lower() for n, k in p["disc"] if k == 1]
-    return {
+    out = {
         "green": (f"**All {p['pages']} pages are green.** `verify_summaries.py` over the "
                   f"{p['files']} files in `notes/summaries/`:"),
         "sum_totals": (f"**{p['markers']:,} marker positions, {p['spans']:,} quoted spans, "
@@ -2707,6 +2707,7 @@ def workflow_phrases(p: dict[str, Any]) -> dict[str, str]:
         "push_sha": f"`{p['sha']}`",
         "queue": f"**{p['ready']}** issues",
     }
+    return out
 
 
 def workflow_page(p: dict[str, str]) -> str:
@@ -3985,6 +3986,7 @@ def main() -> None:
     ST.stage(OWNERSHIP_MD, render_page(OWNERSHIP_MD))
     # The findings page's index-link slot reads the cached index-links population, so it is staged last.
     ST.stage(FINDINGS_MD, render_page(FINDINGS_MD))
+    ST.stage(WORKFLOW_MD, render_page(WORKFLOW_MD))
     staged = ST.staged()
     texts = ST.staged_texts()
     if "--check-only" not in sys.argv[1:]:

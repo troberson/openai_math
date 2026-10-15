@@ -221,7 +221,7 @@ RUN_ARGS: dict[str, Callable[[], tuple[str, ...]]] = {
     # The workflow page renders the fork's head and the ready-queue length, both read through a
     # subprocess the `open` audit event never sees and no tree digest covers. Putting them in the
     # key makes a push, or a bead close, invalidate the record the way a file change does.
-    "render_reports.py": lambda: (git_short("origin/notes"), bd_ready_count()),
+    "render_reports.py": lambda: (git_short("origin/notes"), str(bd_ready_count())),
 }
 
 
@@ -246,7 +246,7 @@ def key_for(name: str, args: tuple[str, ...] = ()) -> str:
     else:
         texts = tuple(p.read_text(encoding="utf-8") for p in l1_paths(name))
     fn = RUN_ARGS.get(name)
-    extra = () if fn is None else (fn(),)
+    extra = () if fn is None else fn()
     return digest_key(script.read_text(encoding="utf-8"), texts, tuple(args) + extra)
 
 
