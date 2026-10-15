@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, uniform |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [complexity-theory](../topics/complexity-theory.md) · [disordered-systems](../topics/disordered-systems.md) · [quantum-theory](../topics/quantum-theory.md) · [quantum-information](../topics/quantum-information.md) · [quantum-computing](../topics/quantum-computing.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [274-moores-parity-conjecture-for-qac0.md](../../../notes/summaries/mathematical-physics/274-moores-parity-conjecture-for-qac0.md) |
 
 ## Manuscripts
 
