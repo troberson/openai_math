@@ -1586,3 +1586,26 @@ deliberately.
   `resolves_named` 1. The regenerated row says **T0**, shapes `bound|partial`, `resolves_named` 0.
   The page's header and its "Inside the release" paragraph were corrected to the live row before the
   commit. Quote a tier from `notes/tables/catalog.tsv` as it reads after `build_catalog.py` runs.
+
+- **A truncated preview plus memory is a fabricated quotation.** Measured 2026-10-14 on family 347:
+  the first draft's blurb and all five manuscript abstracts were transcribed from shell dumps that
+  printed only the first 260 characters of each `CONTENTS.md` line, and the bibtex titles were
+  written from the directory names. `verify_summaries.py` reported **15 problems**, five of them
+  `NOT VERBATIM` on the abstracts. The real degenerate bibtex title is
+  `{{Three fixed points on the symplectic quadric threefold}}`, not the directory name. The real
+  companion abstract states real dimension 3332, not 1412. Read the **full** line before writing a
+  quote, and write it from the checker's `line says` column.
+- **A claim about a release inconsistency is a claim about the source.** The first 347 draft said
+  the release is inconsistent about the companion manuscript's dimension. It is not: its
+  `CONTENTS.md` abstract, its `build/main.tex` abstract, and its theorem agree on real 3332
+  (complex 1666). The paragraph was deleted. A discrepancy sentence needs the measured bytes behind
+  each side of it, in the page, before the sentence is written.
+- **The fleet test's clean assertion pins the TSV file count, not the probe record count.** After
+  the family 347 probe record landed, the tracked records under `notes/development/probe/` went to
+  **26** and the fleet page rendered that number; I set the clean assertion's `tsv_count` to 26 as
+  well and the clean test failed with `25 != 26`. `notes/tables/*.tsv` is **25** files. Two
+  different counts, one needle.
+- **A manuscript README names no file list.** The five family-347 READMEs carry a heading, an
+  author, a date, and a bibtex block — nothing else. The file inventory the page states comes from
+  `ls` of the manuscript root, not from the README. The earlier note that "all five READMEs name
+  `build/references.bib`" is false; only the companion ships that name, and no README names it.
