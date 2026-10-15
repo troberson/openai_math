@@ -67,6 +67,52 @@ import pytest
 
 pytestmark = pytest.mark.mutant
 
+def bump(t, pat, delta):
+    """Change the page's own count at `pat` by `delta`. The mutation's input is the page as it stands,
+    so a measured count that moves does not need a hand-edit here."""
+    m = re.search(pat, t)
+    assert m, f"{pat!r} not in the page"
+    raw = m.group(1)
+    n = int(raw.replace(",", ""))
+    new = f"{n + delta:,}" if "," in raw else str(n + delta)
+    span = m.group(0)
+    return t[:m.start()] + span.replace(raw, new, 1) + t[m.end():]
+
+
+def slug_row(t, slug):
+    """The entry-point table row carrying `slug`, found by the slug the page itself names."""
+    line = next((l for l in t.split("\n") if l.startswith("|") and slug in l), None)
+    assert line, f"row for {slug!r} absent from the page"
+    return line
+
+
+def _row_bump(t, key, pat, delta):
+    """Bump the count at `pat` inside the table row carrying `key`, so the fault lands on the row the
+    needle reads rather than on the first phrase of that shape in the page."""
+    line = next((l for l in t.split("\n") if l.startswith("|") and key in l), None)
+    assert line, f"row {key!r} absent from the page"
+    return t.replace(line, bump(line, pat, delta), 1)
+
+
+def _row_family_swap(t, slug):
+    """Swap a row's family cell with the previous row's, so the mutated table still carries one row
+    per bundle and the family-order pass is the pass that fires."""
+    rows = [l for l in t.split("\n") if l.startswith("|") and l.split("|")[1].strip().isdigit()]
+    i = next((i for i, l in enumerate(rows) if slug in l), None)
+    assert i and i > 0, f"{slug!r} is not a table row with a predecessor"
+    a, b = rows[i].split("|")[1], rows[i - 1].split("|")[1]
+    return t.replace(rows[i], rows[i].replace(f"|{a}|", f"|{b}|", 1), 1)
+
+
+def _row_family(t, slug, delta):
+    """The entry-point row carrying `slug`, with its family cell moved by `delta`."""
+    line = slug_row(t, slug)
+    cells = line.split("|")
+    cells[1] = str(int(cells[1]) + delta)
+    return t.replace(line, "|".join(cells), 1)
+
+
+
 REPO = pathlib.Path(__file__).resolve().parents[3]
 
 
@@ -203,63 +249,60 @@ LEDGER = phrase_needle("ledger claim mismatch", "family 348 verification value",
 MUTANTS = [
     ("anchor line shifted",
      lambda c, mod, ctx: block_needle(c, mod, f"{POS}/verification/verify.py:495"),
-     lambda t: t.replace(f"`{POS}/verification/verify.py:496`",
+     lambda t, ctx: t.replace(f"`{POS}/verification/verify.py:496`",
                          f"`{POS}/verification/verify.py:495`", 1)),
     ("anchor file renamed", "06-certificates.tex does not exist",
-     lambda t: t.replace("September-23-2026/build/sections/07-certificates.tex:14",
+     lambda t, ctx: t.replace("September-23-2026/build/sections/07-certificates.tex:14",
                          "September-23-2026/build/sections/06-certificates.tex:14", 1)),
     ("block line altered",
      lambda c, mod, ctx: block_needle(c, mod, '"Recomputed results differ from bundled results.json'),
-     lambda t: t.replace('"Recomputed exact results differ from bundled results.json")',
+     lambda t, ctx: t.replace('"Recomputed exact results differ from bundled results.json")',
                          '"Recomputed results differ from bundled results.json")', 1)),
     ("prose quote altered",
      lambda c, mod, ctx: quote_needle(c, mod, "calculus, Jacobi comparison, and Sobolev estimates"),
-     lambda t: t.replace("calculus, Jacobi comparison, and Sobolev arguments",
+     lambda t, ctx: t.replace("calculus, Jacobi comparison, and Sobolev arguments",
                          "calculus, Jacobi comparison, and Sobolev estimates", 1)),
     ("count altered", COUNT,
-     lambda t: t.replace("**151** such occurrences", "**150** such occurrences", 1)),
+     lambda t, ctx: bump(t, r"\*\*(\d+)\*\* such occurrences", -1)),
     ("negative-test count altered", NEGATIVE,
-     lambda t: t.replace("ships **11** checks, **8** of them negative",
-                         "ships **11** checks, **7** of them negative", 1)),
+     lambda t, ctx: bump(t, r"ships \*\*\d+\*\* checks, \*\*(\d+)\*\* of them negative", -1)),
     ("ledger value altered", LEDGER,
-     lambda t: t.replace("`verification` value of 2 for family 348",
-                         "`verification` value of 1 for family 348", 1)),
+     lambda t, ctx: bump(t, r"`verification` value of (\d+) for family \d+", -1)),
     ("abbreviated anchor", "anchor file .../verification/verify.py does not exist",
-     lambda t: t.replace(f"`{POS}/verification/verify.py:477`", "`.../verification/verify.py:477`", 1)),
+     lambda t, ctx: t.replace(f"`{POS}/verification/verify.py:477`", "`.../verification/verify.py:477`", 1)),
     ("coverage artifact presence overstated", COVERAGE,
-     lambda t: t.replace("all four are present in both directories",
+     lambda t, ctx: t.replace("all four are present in both directories",
                          "all five are present in both directories", 1)),
     ("entry class count altered", CLASSES,
-     lambda t: t.replace("**12** top-level `README.md`", "**13** top-level `README.md`", 1)),
+     lambda t, ctx: bump(t, r"\*\*(\d+)\*\* top-level `README\.md`", 1)),
     ("unnamed bundle count altered", UNNAMED,
-     lambda t: t.replace("**2** bundles ship a `verification/` tree",
-                         "**3** bundles ship a `verification/` tree", 1)),
+     lambda t, ctx: bump(t, r"\*\*(\d+)\*\* bundles ship a `verification/` tree", 1)),
     ("entry-section quote altered",
      lambda c, mod, ctx: quote_needle(c, mod, "not the analytic argument"),
-     lambda t: t.replace("*\"They verify finite scalar, thermal, and trial calculations, "
+     lambda t, ctx: t.replace("*\"They verify finite scalar, thermal, and trial calculations, "
                          "not the analytic proof.\"*",
                          "*\"They verify finite scalar, thermal, and trial calculations, "
                          "not the analytic argument.\"*", 1)),
     ("entry-section anchor shifted",
      lambda c, mod, ctx: row_quote_needle(c, mod, "chain-September-24-2026/verification/README.md:53"),
-     lambda t: t.replace("chain-September-24-2026/verification/README.md:54`",
+     lambda t, ctx: t.replace("chain-September-24-2026/verification/README.md:54`",
                          "chain-September-24-2026/verification/README.md:53`", 1)),
     ("rows.txt size altered", ROWS,
-     lambda t: t.replace("20 lines and 1436 bytes", "20 lines and 1437 bytes", 1)),
+     lambda t, ctx: bump(t, r"\d+ lines and (\d+) bytes", 1)),
     ("table row family altered", family_needle,
-     lambda t: t.replace("| 371 | `Stable-Self-Similar", "| 372 | `Stable-Self-Similar", 1)),
+     lambda t, ctx: _row_family_swap(t, "Stable-Self-Similar")),
     ("rule 4 firing count altered", RULE4,
-     lambda t: t.replace("Rule 4 fires for **0** bundles", "Rule 4 fires for **1** bundles", 1)),
+     lambda t, ctx: bump(t, r"Rule 4 fires for \*\*(\d+)\*\* bundles", 1)),
     ("entry-section ledger sum altered", entry_join_needle,
-     lambda t: t.replace("sums to 30 dirs over 22 families", "sums to 31 dirs over 22 families", 1)),
+     lambda t, ctx: bump(t, r"sums to (\d+) dirs over \d+ families", 1)),
     ("table row deleted", deleted_row_needle,
-     lambda t: re.sub(r"^\| 371 \| .*$\n", "", t, count=1, flags=re.MULTILINE)),
+     lambda t, ctx: t.replace(slug_row(t, "Stable-Self-Similar") + "\n", "", 1)),
     # Prose no count phrase reads: the script's line count inside the family-067 entry-point cell.
     # The table check reads only the family column, so only the render diff can see it, and the
     # render-diff line truncates the cell, so the needle is the page line the diff names.
     ("entry cell line count altered",
      lambda c, mod, ctx: render_needle(c, "a 168-line script"),
-     lambda t: t.replace("a 167-line script", "a 168-line script", 1)),
+     lambda t, ctx: _row_bump(t, "The-Campana-Peternell", r"a (\d+)-line script", 1)),
 ]
 
 
@@ -303,7 +346,7 @@ def test_clean_page(mod, text):
 def test_injected_faults(mod, text, label, needle, mut):
     """A fault in each of the check forms, injected in memory. The needle is the problem string the
     pass that owns that form prints, so a pass that fires on something else is not a pass."""
-    cand = mut(text)
+    cand = mut(text, mod.population())
     assert cand != text, f"{label}: mutation changed nothing"
     found, _ = mod.check(cand, cand)
     ctx = {"mod": mod, "v": mod.population(), "lv": mod.ledger_claims(mod.ledger_rows()),
@@ -315,11 +358,13 @@ def test_injected_faults(mod, text, label, needle, mut):
 def pad_cells(t):
     """Pad every table cell with two spaces."""
     out = []
-    for ln in t.split("\n"):
-        if ln.startswith("|") and ln.endswith("|"):
-            cells = ln[1:-1].split("|")
-            ln = "|" + "|".join("  " + c.strip() + "  " for c in cells) + "|"
-        out.append(ln)
+    for row in t.split("\n"):
+        if row.startswith("|") and row.endswith("|"):
+            cells = row[1:-1].split("|")
+            padded = "|" + "|".join("  " + c.strip() + "  " for c in cells) + "|"
+        else:
+            padded = row
+        out.append(padded)
     return "\n".join(out)
 
 
