@@ -1610,3 +1610,19 @@ deliberately.
   author, a date, and a bibtex block — nothing else. The file inventory the page states comes from
   `ls` of the manuscript root, not from the README. The earlier note that "all five READMEs name
   `build/references.bib`" is false; only the companion ships that name, and no README names it.
+
+- **The truncated-preview failure recurred on families 348 and 349.** On both, the blurb and the
+  manuscript abstracts were transcribed from shell dumps that printed only the first 260 characters of
+  each `CONTENTS.md` line, and `verify_summaries.py` reported `NOT VERBATIM` on each. The real family
+  348 blurb names an "L2 topological gap" and a product of equal round two-spheres; the real family
+  349 abstract is two sentences, not the paragraph the preview suggested. Read the full
+  `CONTENTS.md` line with `read_file` before writing a blurb or abstract quote.
+- **A page's headline theorem must come from the theorem environment, not the abstract.** The first
+  348 draft stated the zero-plane manuscript's theorem as the three-model classification. Its real
+  `thm:main` is that one zero-curvature plane forces the universal cover to be
+  $S^2(1/\sqrt3)\times S^2(1/\sqrt3)$; the three-model statement is a separate corollary. The abstract
+  summarizes; the theorem block is the claim.
+- **A citation window that opens on a blank line is a problem, not a note.** `verify_summaries.py`
+  prints `BLANK S6:27` and `BLANK S10:18` for windows whose first line is empty. The README of the L2
+  gap manuscript has 18 lines and line 18 is blank, so the citation is `[S10:17]`. Measure the window
+  against the last line that carries text.
