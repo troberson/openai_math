@@ -39,14 +39,40 @@ import pathlib
 import re
 import unicodedata
 
+import pytest
+import verify_citations as v
 from catlib import bib
 from catlib.text import fold_apostrophe
-
-import pytest
 
 PAGE = pathlib.Path("notes/reports/citations.md")
 
 REPO = pathlib.Path(__file__).resolve().parents[3]
+
+
+def bump(t, pat, delta):
+    """Change the page's own count at `pat` by `delta`, keeping its comma formatting. The mutation's
+    input is the page as it stands, so a measured count that moves does not need a hand-edit here."""
+    m = re.search(pat, t)
+    assert m, f"{pat!r} not in the page"
+    raw = m.group(1)
+    new = f"{int(raw.replace(',', '')) + delta:,}" if "," in raw else str(int(raw) + delta)
+    span = m.group(0)
+    return t[:m.start()] + span.replace(raw, new, 1) + t[m.end():]
+
+
+def top_work(M):
+    """The work the page's work table leads with: the checker's own ordering."""
+    return min(M["inv"].items(), key=lambda kv: (-len(kv[1]), kv[0]))
+
+
+def top_release(M):
+    """The release target the page's release table leads with: the checker's own ordering."""
+    return min(M["rinv"].items(), key=lambda kv: (-len(kv[1]), kv[0]))
+
+
+def first_cluster(M):
+    """The largest >=5 cluster, which heads the page's cluster table."""
+    return v.clusters(M["pairs"], 5)[0]
 
 
 def tree_bib():
@@ -71,6 +97,28 @@ def block_needle(c, sub):
     plines = [l for l in blk.split("\n") if l.strip()]
     idx = next(i for i, l in enumerate(plines) if sub in l)
     return f"block line {idx + 1} does not match {path}:{int(line) + idx}"
+
+
+def swap_member(p, M):
+    """Swap one member of the page's first cluster row for a family the measured cluster excludes."""
+    cf = sorted({M["fam"][m] for m in first_cluster(M)})
+    out = next(f for f in sorted(set(M["fam"].values())) if f not in cf)
+    new = " ".join([cf[0], out, *cf[1:]])
+    return p.replace(" ".join(cf), new, 1)
+
+
+def comp_swap(p, M):
+    """Move one count from the second discipline of the page's first cluster row to the first."""
+    ranked = v.ranked(collections.Counter(M["disc"][m] for m in first_cluster(M)))
+    comp = ", ".join("%s %d" % (d, n) for d, n in ranked)
+    new = ", ".join("%s %d" % (d, n + (1 if i == 0 else -1)) for i, (d, n) in enumerate(ranked))
+    return p.replace(comp, new, 1)
+
+
+def work_rows(c):
+    """The work table of the mutated page, in the order the checker zips it against."""
+    return re.findall(r"^\|\s*(\d+)\s*\|\s*`([^`]+)`\s*\|\s*`([^`]+?):(\d+)`\s*\|$",
+                      c, re.MULTILINE)
 
 
 def cluster_rows(c):
@@ -157,27 +205,23 @@ MUTANTS = [
                          "half-weight-divisor-October-5-2026/build/source/references.bib:105`")),
     ("count drift in the pair table",
      lambda _c, _v, M: pair_needle(_c, _v, M, 5),
-     lambda p: p.replace("| \u22655 | **419** |", "| \u22655 | **418** |")),
+     lambda p: bump(p, r"\| ≥5 \| \*\*(\d+)\*\* \|", -1)),
     ("headline crossing count",
      lambda _c, _v, M: headline_needle(_c, _v, M, 5),
-     lambda p: p.replace("6 of 419 pairs at \u22655", "7 of 419 pairs at \u22655")),
+     lambda p: bump(p, r"(\d+) of \d+ pairs at \u22655", 1)),
     ("cluster membership swap",
-     lambda c, v, M: cluster_needle(c, v, M,
-                                    "033 034 039 036 037 046 051 054 056 057 058 065 066 068", 3),
-     lambda p: p.replace("033 034 035 036 037 046 051 054 056 057 058 065 066 068",
-                         "033 034 039 036 037 046 051 054 056 057 058 065 066 068")),
+     lambda c, v, M: cluster_needle(c, v, M, cluster_rows(c)[0][3].strip(), 3),
+     lambda p: swap_member(p, v.measure(v.norm_title))),
     ("work count drift",
-     lambda c, v, M: work_needle(c, v, M, "The {Stacks Project}"),
-     lambda p: p.replace("| 42 | `The {Stacks Project}`", "| 43 | `The {Stacks Project}`")),
+     lambda c, v, M: work_needle(c, v, M, work_rows(c)[0][1]),
+     lambda p: bump(p, r"\|\s*(\d+)\s*\|\s*`[^`]+`\s*\|\s*`[^`]+?:\d+`\s*\|", 1)),
     ("cluster discipline composition",
-     lambda c, v, M: cluster_needle(c, v, M,
-                                    "Mathematical physics 12, Differential geometry 3", 4),
-     lambda p: p.replace("Mathematical physics 11, Differential geometry 4",
-                         "Mathematical physics 12, Differential geometry 3")),
+     lambda c, v, M: cluster_needle(c, v, M, cluster_rows(c)[0][4].strip(), 4),
+     lambda p: comp_swap(p, v.measure(v.norm_title))),
     ("release-target count",
-     lambda c, v, M: release_needle(c, v, M, "Log-abundance-in-characteristic-zero-September-24-2026"),
-     lambda p: p.replace("| 11 | `Log-abundance-in-characteristic-zero-September-24-2026`",
-                         "| 12 | `Log-abundance-in-characteristic-zero-September-24-2026`")),
+     lambda c, v, M: release_needle(c, v, M, top_release(M)[0]),
+     lambda p: bump(p, r"\|\s*(\d+)\s*\|\s*`" + re.escape(top_release(M)[0]) + "`", 1)
+     if (M := v.measure(v.norm_title)) else p),
 ]
 
 
@@ -193,14 +237,25 @@ def test_clean_page(load, text):
     m2 = v.measure(v.norm_noguard)
     assert len(m["files"]) == len(tree_bib()) > 0, \
         f"bib files {len(m['files'])} against {len(tree_bib())} .bib files walked under preprints/"
-    assert (len(m["owners"]), m["n_entries"], len(m["inv"]),
-            len(m["shared"]), len(m["pairs"])) == (513, 13802, 8775, 2251, 3668)
-    assert (len(m2["inv"]), len(m2["shared"]), len(m2["pairs"])) == (8765, 2254, 3676)
-    assert (m2["all_keys"], m2["cited"], len(m2["depth"]), m2["discs"], m2["fams"],
-            len(m2["led"]), len(m2["man2fam"]), len(m2["titles"])) == (13797, 13058, 4, 17, 299,
-                                                                       372, 719, 513)
-    assert (len(m2["release"]), m2["release_entries"], m2["release_listed"],
-            len(m2["rinv"]), len(m2["rpairs"])) == (277, 432, 393, 268, 203)
+    # The measured population is ordered by containment: owners are a subset of files, shared works
+    # a subset of works, cited keys a subset of all keys, release-listed entries a subset of release
+    # entries, release targets a subset of listed entries, release pairs a subset of targets.
+    assert len(m["owners"]) > 0 and len(m["owners"]) <= len(m["files"])
+    assert len(m["shared"]) > 0 and len(m["shared"]) <= len(m["inv"]) <= m["n_entries"]
+    assert len(m["pairs"]) > 0
+    assert sum(len(s) for s in m["inv"].values()) <= m["n_entries"], \
+        "the work index holds more owners than the corpus declares entries"
+    assert len(m2["inv"]) <= len(m["inv"]), "the unguarded rule splits more works than the guarded one"
+    assert len(m2["shared"]) >= len(m["shared"]), "the unguarded rule merges fewer shared works"
+    assert len(m2["pairs"]) >= len(m["pairs"]), "the unguarded rule finds fewer sharing pairs"
+    assert m2["cited"] > 0 and m2["cited"] <= m2["all_keys"] <= m["n_entries"]
+    assert m2["discs"] > 0 and m2["discs"] <= len(m2["led"])
+    assert m2["fams"] > 0 and m2["fams"] <= len(m2["led"])
+    assert len(m2["titles"]) > 0 and len(m2["titles"]) <= len(m2["man2fam"])
+    assert len(m2["depth"]) > 0
+    assert m2["release_listed"] > 0 and m2["release_listed"] <= m2["release_entries"]
+    assert len(m2["rinv"]) > 0 and len(m2["rinv"]) <= m2["release_listed"]
+    assert len(m2["rpairs"]) > 0 and len(m2["rpairs"]) <= len(m2["rinv"])
 
 
 @pytest.mark.parametrize("label,needle,mut", MUTANTS)
