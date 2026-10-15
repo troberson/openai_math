@@ -7,32 +7,32 @@ measured quotation traps) lives in `.qwen/skills/auto-skill-family-summary-citat
 
 ## Current state (rewritten at every batch boundary, 2026-10-14)
 
-- **All 35 pages are green.** `verify_summaries.py` over the 36 files in `notes/summaries/`:
-  **5,095 marker positions, 1,414 quoted spans, 0 problems**; `check_summary_manuscripts.py`:
-  **36 pages, 0 with an off-family manuscript, 78 manuscript dirs named, 0 unnamed-on-catalog,
+- **All 37 pages are green.** `verify_summaries.py` over the 38 files in `notes/summaries/`:
+  **5,251 marker positions, 1,457 quoted spans, 0 problems**; `check_summary_manuscripts.py`:
+  **38 pages, 0 with an off-family manuscript, 82 manuscript dirs named, 0 unnamed-on-catalog,
   0 named-by-another-family**; 749 preprint dirs on disk, 719 named by `overview.tex`, 30 on disk
   and unnamed, 0 named and absent. `test_summaries.py`: **11 tests pass**.
 - **Pages done (35):** 001, 002, 004, 006, 007, 010, 011, 014, 016, 017, 018, 019, 032, 087, 101,
-  102, 109, 136, 147, 159, 197, 221, 226, 258, 259, 271, 287, 332, 334, 342, 344, 345, 346, 347, 362.
-  The ledger's `summary` column is 1 for those; the generator reports "summary pages 35 of 372
-  families, 78 manuscripts behind them". By discipline: Number theory 12, theoretical computer
+  102, 109, 136, 147, 159, 197, 221, 226, 258, 259, 271, 287, 332, 334, 342, 344, 345, 346, 347, 348, 349, 362.
+  The ledger's `summary` column is 1 for those; the generator reports "summary pages 37 of 372
+  families, 82 manuscripts behind them". By discipline: Number theory 12, theoretical computer
   science 3, convex and metric geometry 2, probability and statistical mechanics 2, group theory 2,
-  differential geometry 6, and one each in algebraic and complex geometry, dynamical systems and
+  differential geometry 8, and one each in algebraic and complex geometry, dynamical systems and
   ergodic theory, combinatorics, algebra, mathematical physics, operator algebras, functional
   analysis, and partial differential equations.
 - **Next batch:** `math-ckd.4` is claimed and in progress — tier C group 1. The differential-geometry
-  families with `summary = 0`, sorted by `paps`: 348, 349, 351, 352, 353, 354,
+  families with `summary = 0`, sorted by `paps`: 351, 352, 353, 354,
   355, 356, 357, 358, 359, 360, 361, 350. Steps 1–10 per page. Check `bd ready` first: summaries are
   P4 and any ready P1/P2 outranks this batch.
 - **Last gate run (2026-10-14):** `bash notes/scripts/gate_driver.sh` — **rows 79, failures 0**, head
   diff 0 bytes. Reconciliations: 372 families, 719 manuscripts, **173** formalized (`formalized
   (yaml)`), 242 scope notes, 416 challenges, 200 `main_results` over 189 configs, both
   `overview.tex` ↔ `CONTENTS.md` cross-checks 0. `verify_cache_promotion.py`: **writers 15 +
-  non-cached 1, probed targets 19, problems 0**. `check_index_links.py`: **1,033 pages, 66,121
+  non-cached 1, probed targets 21, problems 0**. `check_index_links.py`: **1,033 pages, 66,123
   links, 0 broken**. Lint trio (`notes/scripts/lint_scripts.sh`) exits 0.
-- **Push state:** `origin/notes` at `fb87cab5a`, pushed 2026-10-14, with the family 347 page, its
-  count sweep, the four citation-rule decisions, the retargeted needles in the quotes, index-design,
-  script-ownership and fleet tests, and the links sweep on top.
+- **Push state:** `origin/notes` at `fb87cab5a`, pushed 2026-10-14, through the family 347 batch. The
+  family 348 and 349 batches, their count sweeps, and the retargeted needles are committed and not
+  yet pushed.
 - **Queue check (2026-10-14):** `bd ready` lists **3** issues: `math-4nn` (the epic, open through
   `.2`, whose prettier decision is the user's), `math-ckd.5`, and `math-ckd`. `math-ckd.4` is
   claimed and in progress, so it is not in the ready list.
