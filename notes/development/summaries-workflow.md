@@ -1546,3 +1546,14 @@ deliberately.
   under one `[S15:11–14] [S15:37–40] [S15:59–62]` line fails: the checker compares the quote against
   the anchored window, and the blank lines the page puts between corollaries are not in that window.
   Write one prose line and one block per anchor.
+- **A `read_file` window can return bytes the file does not contain.** Measured 2026-10-14 on
+  family 345: the full-file `read_file` of `introduction.tex` returned a theorem
+  `\begin{theorem}[Spheres]` with `\(S^n\)` delimiters and prose about a "two-step" proof, and the
+  eleven section files returned the same style throughout. The bytes on disk say
+  `\begin{theorem}\label{thm:spheres}` / `For every integer $n\ge2$ ... pairwise different images.`
+  A direct file read and `verify_summaries.py` agree with each other and disagree with that
+  `read_file` output. A re-read of the same window after the deletion returned the disk bytes. The
+  page built on the first read reported **31 checker problems, 20 `NOT VERBATIM`**, and was deleted
+  before it was committed. **A manuscript read is only trustworthy when the checker agrees with it.**
+  Re-read every quoted region with a direct read, and treat a `read_file` window that no checker
+  confirms as unverified.
