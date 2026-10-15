@@ -44,6 +44,19 @@ def pop(mod, rows):
     return mod.measure(rows)[1]
 
 
+def first_heading(mod, lines):
+    """The first population entry heading the page carries."""
+    for i, l in enumerate(lines):
+        if mod.HEADING.match(l):
+            return i, l
+    raise AssertionError("the page carries no population entry")
+
+
+def outside_fam(rows, pop):
+    """A ledger family the population excludes — the entry the page must not carry."""
+    return next(r["fam"] for r in rows if r["fam"] not in pop)
+
+
 def problems(mod, lines, expected, pop, rows):
     """The five passes, run on page lines, returning the problems they report."""
     out: list = []
@@ -121,20 +134,20 @@ def test_measurements_count_corrupted(mod, base, expected, pop, rows):
     lines = list(base)
     for i, l in enumerate(lines):
         if l.startswith("- `pop_families`"):
-            lines[i] = "- `pop_families` 44"
+            # The mutation's input is the page's own recorded count, so a count that moves does not
+            # need a hand-edit here.
+            lines[i] = l[:l.rfind(" ") + 1] + str(int(l.rsplit(" ", 1)[1]) + 1)
             break
     check(mod, lines, base, expected, pop, rows, "measurements:")
 
 
 def test_population_entry_deleted(mod, base, expected, pop, rows):
     lines = list(base)
-    for i, l in enumerate(lines):
-        if mod.HEADING.match(l) and l.startswith("### 316"):
-            j = i + 1
-            while j < len(lines) and not lines[j].startswith("## "):
-                j += 1
-            del lines[i:j]
-            break
+    i, _l = first_heading(mod, lines)
+    j = i + 1
+    while j < len(lines) and not lines[j].startswith("## "):
+        j += 1
+    del lines[i:j]
     check(mod, lines, base, expected, pop, rows, "population families with no entry")
 
 
@@ -142,8 +155,8 @@ def test_entry_outside_population_added(mod, base, expected, pop, rows):
     lines = list(base)
     for i, l in enumerate(lines):
         if l.startswith("## Discrepancies"):
-            lines[i:i] = ["### 001 - A family outside the population", "",
-                          "- **Reading**: `match`. Injected.", ""]
+            lines[i:i] = [f"### {outside_fam(rows, pop)} - A family outside the population",
+                          "", "- **Reading**: `match`. Injected.", ""]
             break
     check(mod, lines, base, expected, pop, rows, "entries outside the population")
 
@@ -187,8 +200,6 @@ def test_prose_citation_path_absent(mod, base, expected, pop, rows):
 
 def test_population_entry_demoted(mod, base, expected, pop, rows):
     lines = list(base)
-    for i, l in enumerate(lines):
-        if mod.HEADING.match(l) and l.startswith("### 316"):
-            lines[i] = "####" + l[3:]
-            break
+    i, l = first_heading(mod, lines)
+    lines[i] = "####" + l[3:]
     check(mod, lines, base, expected, pop, rows, "is in the population, so it is not promoted")
