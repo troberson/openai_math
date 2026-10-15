@@ -9,7 +9,7 @@ is per file, and the checker exits 1 on a file no rule owns.
 It is also the script inventory. Every script under `notes/scripts/` is listed once, in one of three
 classes — writer, report-only, checker — with what it writes and the command the gate runs for it, and
 the fourth class, the scratch a session writes outside the tree, is recorded by rule rather than by
-file. The classes partition the **68** scripts: **15** writers, **32** report-only, **22** checkers,
+file. The classes partition the **68** scripts: **15** writers, **31** report-only, **22** checkers,
 and `verify_script_ownership.py` itself, which is the 23rd checker and is not listed in its own table.
 
 ## The split: 15 write, 53 write nothing
@@ -119,7 +119,7 @@ Editing a join in `build_catalog.py` can move rows in six artifacts.
 
 ### Report-only
 
-The other **53** scripts write nothing. **32** of them print a report: **19** print the report a page's
+The other **53** scripts write nothing. **31** of them print a report: **19** print the report a page's
 counts come from, **1** prints the quote-spec classification the seeded `notes/tables/quotes.tsv` is
 measured against, **1** prints the pytest report for the extracted checker self-tests
 (`run_tests.py`), **2** print the notes-move surface `math-faz` prices before a pass and re-checks
