@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, uniform |
 | Topics | [functional-analysis](../topics/functional-analysis.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [325-complete-crouzeix-conjecture.md](../../../notes/summaries/functional-analysis/325-complete-crouzeix-conjecture.md) |
 
 ## Manuscripts
 
