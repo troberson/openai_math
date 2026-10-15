@@ -13,7 +13,7 @@
 | Claim shapes | counterexample, bound |
 | Topics | [graph-theory](../topics/graph-theory.md) · [manifolds](../topics/manifolds.md) · [complex-geometry](../topics/complex-geometry.md) · [symplectic-geometry](../topics/symplectic-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [347-counterexamples-to-stable-morse-fixed-point-bounds.md](../../../notes/summaries/differential-geometry/347-counterexamples-to-stable-morse-fixed-point-bounds.md) |
 
 ## Manuscripts
 
