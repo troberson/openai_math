@@ -72,7 +72,7 @@ blind.
 ## The size argument
 
 Rule: `du -sk` per surface, divided by 1024. `preprints/` is **631M**, `lean/OAI/` is **1740M**
-(122,458 files), `notes/index/` is **12M**. `cat notes/tables/*.tsv | wc -c` = **2,408,219** bytes over the
+(122,458 files), `notes/index/` is **12M**. `cat notes/tables/*.tsv | wc -c` = **2,409,134** bytes over the
 **25** `notes/tables/*.tsv` present on disk. `free -h` reported **7.2 GiB available of 60 GiB** on 2026-10-10, with the
 model server resident — a dated observation, not a re-derivable count.
 
@@ -138,7 +138,7 @@ only) lists every `notes/` path each script opens. A path is a write only if a m
 `w`, `a` or `x`. The AST census maps a name to a call context and does **not** track branches, so a
 `write_text` that lives only in a `--mutant` path is reported as a write in every mode — the probe's
 mode strings are the authority. The probe is `notes/scripts/measure_open_probe.py`, promoted from
-`.qwen/tmp/a11_open_probe2.py` by `math-o3a.3.4`. The tracked records are **38**:
+`.qwen/tmp/a11_open_probe2.py` by `math-o3a.3.4`. The tracked records are **39**:
 `notes/development/probe/2026-10-10_writers.txt`, `notes/development/probe/2026-10-10_checkers.txt`,
 `notes/development/probe/2026-10-11_writers.txt`, `notes/development/probe/2026-10-11_checkers.txt`,
 `notes/development/probe/2026-10-11_rr_after.txt` (the single-target `render_reports.py` record taken mid-pass,
