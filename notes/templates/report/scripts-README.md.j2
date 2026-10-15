@@ -405,7 +405,7 @@ to **40.6 s**, measured 2026-10-12 as the sum of the wall times the gate printed
 pooled run, each Cost cell re-checked cell-by-cell against that run (0
 mismatches over the 22 checkers with Cost cells behind them; `verify_script_ownership.py` is not a row
 above, so it has no cell to check); the full 78-row gate ran in **1 min 25 s** wall
-(09:28:44–09:30:09 local) and its 78 row times sum to **202.5 s**, so the 12-row pool brings the wall
+(09:{{ p['slug_share'] }}:44–09:30:09 local) and its 78 row times sum to **202.5 s**, so the 12-row pool brings the wall
 to 42% of the sum. The writers are the tail: `render_reports.py` 17.0 s (the gate row is
 `--check-only`; the plain render ran 16.983 s), `extract_links.py` 14.8 s,
 `extract_formalization_deps.py` 6.0 s (the 122,458-file walk under
@@ -628,7 +628,7 @@ git, so nothing in the scratch tree is tracked and no checker here reads it. A p
 question stays where it is and is deleted; a probe that a later bead re-runs is promoted, gets a row
 in the tables above, and only then gets a gate command.
 
-Measured 2026-10-09 over `.qwen/tmp/` **after** the `math-8ou` cleanup: **285** top-level files,
+Measured 2026-10-09 over `.qwen/tmp/` **after** the `math-8ou` cleanup: **{{ p['slug_share'] }}5** top-level files,
 **7,121** files including subdirectories, **14** subdirectories. By top-level suffix: **222** `.txt`,
 **43** `.md`, **19** `.tsv`, **1** `.py`, and **0** in every other suffix — the tree is now reports,
 drafts, baselines and index snapshots, with one script left in it. The largest trees are gate and
@@ -651,7 +651,7 @@ conditional-anchor checker `check_conditional_anchors.py`, and the single-purpos
 `find_core_only.py`, `cand_closure.py`, `gen_axioms.py`, `lint_anchors.py`, `port_nc.py`,
 `drop_syspath.py`, `build_scope_page.py`, `fix_topics.py`, `fix_topics_md.py`), together with
 `elab.sh` and the **12** probe outputs it left behind (`axioms.lean`, `axioms.log`, `axioms.olean`,
-`check.lean`, `check.olean`, `elab.log`, `hqd5_quotes.json`, `names.json`, `leanout.tmp.1682832`,
+`check.lean`, `check.olean`, `elab.log`, `hqd5_quotes.json`, `names.json`, `leanout.tmp.168{{ p['slug_share'] }}32`,
 `0h2_skel.err`, `cit1.err`, `cx2a.err`). The four `/tmp` trees `stage5/`, `portcheck/`,
 `portcheck2/`, `pprobe/` and the six `/tmp` one-offs `e402_probe.py`, `e402_probe2.py`,
 `lint_anchors_scratch.py`, `lint_stage4.txt`, `lint_stage4b.txt`, `port_check2.sh` are deleted too —

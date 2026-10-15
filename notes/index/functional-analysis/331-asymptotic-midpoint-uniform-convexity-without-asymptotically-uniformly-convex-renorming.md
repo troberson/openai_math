@@ -13,7 +13,7 @@
 | Claim shapes | bound, uniform |
 | Topics | [graph-theory](../topics/graph-theory.md) · [algebraic-topology](../topics/algebraic-topology.md) · [metric-geometry](../topics/metric-geometry.md) · [banach-spaces](../topics/banach-spaces.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md](../../../notes/summaries/functional-analysis/331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md) |
 
 ## Manuscripts
 
