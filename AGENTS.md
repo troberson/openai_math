@@ -147,7 +147,7 @@ lives in this file and nowhere else.
   `$`/apostrophes/`\command`, lowercase, non-alphanumerics → `-`, leading `the-` dropped): 0 collisions,
   max length 93. Folding first is what makes the slug read as the name: `Kollár` → `kollar`, not
   `koll-pardon`; the 10 slugs that carried an escape fragment were renamed by the fold. Index↔summary pairing is by family
-  number only — 24 of 372 families have a summary page.
+  number only — 39 of 372 families have a summary page.
 - Names are a measured layer, not a curated one: `python3 notes/scripts/measure_names.py` (a writer —
   it lands the population as the record `.qwen/cache/records/<key>/names.json`; cold ~42 s, a warm run
   reads the store; `--json` dumps the rows, `--check-only` prints the report without landing the record)
@@ -988,7 +988,7 @@ lives in this file and nowhere else.
   `paps_form`, ledger↔overview family sets equal with 372 pages and 0 pages absent on disk, 11 trace
   files over 10 attributed stems, **391** citation edges (104 cross-family over 156 target families),
   **200** family-lean rows over **136** families, **416** configs (json 416, lean 416, **189** with a
-  declaration, 0 linked by more than one family), **559** module dirs, **21** of 372 summary pairings,
+  declaration, 0 linked by more than one family), **559** module dirs, **39** of 372 summary pairings,
   0 page collisions, manuscript links resolving for **719 of 719** on main file, `build/` and
   `README.md`, `drift vs notes/tables/topics.tsv 0`, `stale swept 0 files` (the sweep deletes pages whose
   family or slug no longer exists), and the names line — **5,842** measured, **551** subject (551

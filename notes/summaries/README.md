@@ -1,6 +1,6 @@
 # Family summary pages
 
-Twenty-nine extended summaries, one per family, each built from the manuscript's own LaTeX and verified
+Thirty-nine extended summaries, one per family, each built from the manuscript's own LaTeX and verified
 by script. The pages are hand-written; the checker measures them and writes nothing.
 
 ## Coverage, as four layers
@@ -15,18 +15,18 @@ nothing. The numbers are the ledger's, quoted with the rule that yields each:
 | Comparator challenges | **416** distinct configs | `lean/ComparatorChallenges/*.lean` files, each a challenge **stub**: 539 `sorry` occurrences, 415 files with at least one, the zero-`sorry` exception being `HarmonicGrowth.lean`. The scope notes link **426** occurrences; the 10-gap is one config linked twice inside each of 7 docs. |
 | `main_results` entries | **200** entries over **189** unique configs, reaching **136** of 372 families | `lean/formalization.yaml`'s `main_results:` list. The yaml carries no family key, so family-to-config comes only from the scope notes' links. |
 
-The summaries are a fifth layer, and it is the thinnest: **29** of **372** families have a page.
+The summaries are a fifth layer, and it is the thinnest: **39** of **372** families have a page.
 
 ## The summaries layer
 
-**29** family pages, **6,028** lines, over **67** manuscript directories carrying **13.2 MB** of
-LaTeX source. The checker measures **4,414** `[Sn:line]` marker positions and **1,243** quoted spans
-across the **30** pages it reads (the 29 family pages and this link-only index page), and reports
+**39** family pages, **9,220** lines, over **86** manuscript directories carrying **15.4 MB** of
+LaTeX source. The checker measures **5,638** `[Sn:line]` marker positions and **1,511** quoted spans
+across the **40** pages it reads (the 39 family pages and this link-only index page), and reports
 **0** problems.
 
 The cost model is the reading pass, not a build. Each page cites the files it read, so the cost per page
-is the manuscript LaTeX its Sources table names: the median page cites **21** declared sources and the
-largest cites **63**. The checker runs over all 30 pages in **1.14 s** — it walks the cited files and
+is the manuscript LaTeX its Sources table names: the median page cites **20** declared sources and the
+largest cites **63**. The checker runs over all 40 pages in **1.40 s** — it walks the cited files and
 compares each marker and each quotation against the bytes the file carries, and it runs nothing.
 
 The pages are not a build target: no Lean, no lake, no comparator runs here. A page states what the
@@ -39,6 +39,16 @@ manuscript says and where it sits, with a `file:line` anchor the checker resolve
 - [159 — Quasipolynomial bounds for arithmetic progressions](combinatorics/159-quasipolynomial-bounds-for-arithmetic-progressions.md)
 - [087 — The Mahler conjectures and symplectic width](convex-and-metric-geometry/087-the-mahler-conjectures-and-symplectic-width.md)
 - [101 — The sharp simplex conjecture for isotropic constants](convex-and-metric-geometry/101-the-sharp-simplex-conjecture-for-isotropic-constants.md)
+- [334 — A smooth surface metric with no local immersion in $\mathbb R^3$](differential-geometry/334-a-smooth-surface-metric-with-no-local-immersion-in-r-3.md)
+- [342 — Donaldson's tamed-to-compatible conjecture](differential-geometry/342-donaldsons-tamed-to-compatible-conjecture.md)
+- [344 — The metric Blaschke conjecture](differential-geometry/344-metric-blaschke-conjecture.md)
+- [345 — Infinitely many closed geodesics on spheres and three-manifolds](differential-geometry/345-infinitely-many-closed-geodesics-on-spheres-and-three-manifolds.md)
+- [346 — Sharp singular-set bounds for stationary integral varifolds](differential-geometry/346-sharp-singular-set-bounds-for-stationary-integral-varifolds.md)
+- [347 — Counterexamples to strong forms of Arnold's fixed-point conjecture](differential-geometry/347-counterexamples-to-stable-morse-fixed-point-bounds.md)
+- [348 — Einstein four-manifold classification and L2 gap](differential-geometry/348-einstein-four-manifold-classification-and-l2-gap.md)
+- [349 — The Solomon–Yau least-volume conjecture](differential-geometry/349-the-solomon-yau-least-volume-conjecture.md)
+- [351 — Scalar curvature detects four-dimensional Ricci-flow singularities](differential-geometry/351-scalar-curvature-detects-four-dimensional-ricci-flow-singularities.md)
+- [352 — Finite-time singularity of Calabi flow](differential-geometry/352-finite-time-singularity-of-calabi-flow.md)
 - [147 — The near-boundary Birkhoff conjecture](dynamical-systems-and-ergodic-theory/147-the-near-boundary-birkhoff-conjecture.md)
 - [332 — Metric Markov cotype two for $\ell_1$](functional-analysis/332-metric-markov-cotype-two-for-l1.md)
 - [258 — Gersten's conjecture for one-relator groups](group-theory/258-gerstens-conjecture-for-one-relator-groups.md)
@@ -88,7 +98,7 @@ checker's manuscript-directory pass and its family-citation pass skip it. Its li
 
 ## Not checked
 
-- **343 families have no summary page.** The 29 pages cover 29 of 372 families; the rest are recorded in
+- **333 families have no summary page.** The 39 pages cover 39 of 372 families; the rest are recorded in
   the ledger and the index, not summarized.
 - **The coverage counts are the release's own.** The yaml's `scope`, `automation` and `review` fields
   state partial progress, the agent method, and an unchecked review — those are the release's claims, not
