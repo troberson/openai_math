@@ -13,7 +13,7 @@
 | Claim shapes | counterexample, bound, uniform |
 | Topics | [complex-analysis](../topics/complex-analysis.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [072-brennans-conjecture-and-a-counterexample-to-kraetzers-prediction.md](../../../notes/summaries/real-and-complex-analysis/072-brennans-conjecture-and-a-counterexample-to-kraetzers-prediction.md) |
 
 ## Manuscripts
 
