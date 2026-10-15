@@ -164,9 +164,11 @@ added the summaries tree's link-only index page, which names that page) and
 `notes/development/probe/2026-10-14_seed_quotes_pages.txt` (the `seed_quotes.py` run after the family 342
 page landed, which names that page and the 30 quote specs it seeds) and
 `notes/development/probe/2026-10-14_seed_quotes_334.txt` (the `seed_quotes.py` run after the family 334
-page landed, which names that page and the 30 quote specs it seeds).
+page landed, which names that page and the 30 quote specs it seeds) and
+`notes/development/probe/2026-10-14_seed_quotes_344.txt` (the `seed_quotes.py` run after the family 344
+page landed, which names that page and the 34 quote specs it seeds).
 `verify_fleet_design.py` parses the two 2026-10-11 records; `verify_cache_promotion.py` reads all
-fifteen records for its L1 exactness pass; the
+sixteen records for its L1 exactness pass; the
 2026-10-10 pair is the **before** state the amplification table's deltas are measured against.
 
 | script | write modes | generated reads, and whether any points backwards |

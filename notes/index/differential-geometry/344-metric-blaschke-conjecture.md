@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [manifolds](../topics/manifolds.md) · [riemannian-geometry](../topics/riemannian-geometry.md) · [metric-geometry](../topics/metric-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [344-metric-blaschke-conjecture.md](../../../notes/summaries/differential-geometry/344-metric-blaschke-conjecture.md) |
 
 ## Manuscripts
 
