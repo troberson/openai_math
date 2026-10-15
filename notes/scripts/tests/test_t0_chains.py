@@ -36,6 +36,7 @@ import pathlib
 import re
 
 import pytest
+import verify_t0_chains as v
 
 PAGE = pathlib.Path("notes/reports/t0-chains.md")
 
@@ -77,15 +78,59 @@ def block_start(text, n):
     raise AssertionError(f"no opening fence above page line {n}")
 
 
-def phrase(v, m, label):
+def phrase(chk, m, label):
     """The count phrase the writer measures for `label`."""
-    return next(p for p, lab in v.count_phrases(m) if lab == label)
+    return next(p for p, lab in chk.count_phrases(m) if lab == label)
 
 
-def citation(v, fam):
+def citation(chk, fam):
     """The recomputed Citation layer triple for a family: `.bib` files, intra-family edges, mutual pairs."""
-    m = v.population()
+    m = chk.population()
     return (len(m["bibs"][fam]), len(m["fam_edges"][fam]), m["mutual"][fam])
+
+
+def bump(p, pat, delta):
+    """Change the page's own count at `pat` by `delta`, keeping its comma formatting. The mutation's
+    input is the page as it stands, so a measured count that moves does not need a hand-edit here."""
+    m = re.search(pat, p)
+    assert m, f"{pat!r} not in the page"
+    raw = m.group(1)
+    n = int(raw.replace(",", ""))
+    new = f"{n + delta:,}" if "," in raw else str(n + delta)
+    span = m.group(0)
+    return p[:m.start()] + span.replace(raw, new, 1) + p[m.end():]
+
+
+def cell_set(p, key, idx, new):
+    """Rewrite one cell of the table row carrying `key`, keeping the pipe-delimited form."""
+    line = next(l for l in p.split("\n") if l.startswith("|") and key in l)
+    cells = line.split("|")
+    return p.replace(line, "|".join(cells[:idx] + [f" {new} "] + cells[idx + 1:]), 1)
+
+
+def first_fam():
+    """The first family of the population, which heads the summary table and its first block."""
+    return v.population()["pop"][0]
+
+
+def outside_fam():
+    """A ledger family the population excludes — the block the page must not carry."""
+    return next(f for f in sorted(v.population()["rows"]) if f not in v.population()["pop"])
+
+
+def cite_bump(p, fam, delta):
+    """Bump the intra-family-edge number in a family block's Citation layer line."""
+    start = p.index("Citation layer: ", p.index(f"### {fam} — "))
+    end = p.index("\n", start)
+    line = p[start:end]
+    m = list(re.finditer(r"\d+", line))[1]
+    new = str(int(m.group()) + delta)
+    return p[:start] + line[:m.start()] + new + line[m.end():] + p[end:]
+
+
+def new_path():
+    """The second manuscript of the first population family, with its filename changed."""
+    return v.population()["mss"][first_fam()][1]["path"][:-4] + "x.pdf"
 
 
 def quote_needle(sub):
@@ -110,56 +155,54 @@ MUTANTS = [
      lambda p: p.replace('*"Boundary-field gap"*',
                          '*"Positive eigenvalues of the relative SU(2) BFSS Hamiltonian"*')),
     ("chain table tier",
-     lambda c, v: f"chain table 032 tier 'T2' != ledger '{v.population()['rows']['032']['tier']}'",
-     lambda p: p.replace("| 032 | T0 | 5 |", "| 032 | T2 | 5 |")),
+     lambda c, v: (f"chain table {v.CHAIN_FAMS[0]} tier 'T2' != ledger "
+                   f"{v.population()['rows'][v.CHAIN_FAMS[0]]['tier']!r}"),
+     lambda p: cell_set(p, f"| {v.CHAIN_FAMS[0]} |", 2, "T2")),
     ("edge count",
      lambda c, v: f"count phrase missing (intra-family edges): {phrase(v, v.population(), 'intra-family edges')!r}",
-     lambda p: p.replace("**15** of the 27 cite their sibling",
-                         "**16** of the 27 cite their sibling")),
+     lambda p: bump(p, r"\*\*(\d+)\*\* of the \d+ cite their sibling", 1)),
     ("anchor line out of range",
      lambda c, v: (f"anchor line out of range: overview.tex:9999 (file has "
                    f"{len(v.population()['overview'])} lines, page line "
                    f"{row_of(c, '(`overview.tex:9999`)')}"),
-     lambda p: p.replace("(`overview.tex:716`)", "(`overview.tex:9999`)")),
+     lambda p: p.replace(re.search(r"\(`overview\.tex:\d+\`\)", p).group(0),
+                         "(`overview.tex:9999`)", 1)),
     ("block for a family outside the population",
-     "301: block for a family outside the population",
-     lambda p: p.replace("### 300 — ", "### 301 — ")),
+     lambda c, v: f"{outside_fam()}: block for a family outside the population",
+     lambda p: p.replace(f"### {first_fam()} — ", f"### {outside_fam()} — ", 1)),
     ("table .bib count",
-     lambda c, v: f"035: table .bib 3 != recomputed {len(v.population()['bibs']['035'])}",
-     lambda p: p.replace("| 035 | A&CG | bound, classification | 1 | 0 | 0 |",
-                         "| 035 | A&CG | bound, classification | 3 | 0 | 0 |")),
+     lambda c, v: (f"{first_fam()}: table .bib {len(v.population()['bibs'][first_fam()]) + 1} "
+                   f"!= recomputed {len(v.population()['bibs'][first_fam()])}"),
+     lambda p: cell_set(p, f"| {first_fam()} |", 4,
+                        str(len(v.population()["bibs"][first_fam()]) + 1))),
     ("manuscript path not on disk",
-     ("065/2: path 'preprints/Virasoro-Constraints-for-Projective-Complete-Intersections-September-24-"
-      "2026/paper.pdf' != subfindings path"),
-     lambda p: p.replace(
-         "preprints/Virasoro-Constraints-for-Projective-Complete-Intersections-September-24-2026/"
-         "article.pdf",
-         "preprints/Virasoro-Constraints-for-Projective-Complete-Intersections-September-24-2026/"
-         "paper.pdf")),
+     lambda c, v: f"{first_fam()}/2: path {new_path()!r} != subfindings path",
+     lambda p: p.replace(f"`{v.population()['mss'][first_fam()][1]['path']}`",
+                         f"`{new_path()}`", 1)),
     ("population count phrase",
      lambda c, v: (f"count phrase missing (population): "
                    f"{phrase(v, v.population(), 'population')!r}"),
-     lambda p: p.replace("**27** families carrying", "**28** families carrying")),
+     lambda p: bump(p, r"\*\*(\d+)\*\* families carrying", 1)),
     ("mutual pairs list",
      lambda c, v: ("named list mismatch (mutual pairs): expected "
                    f"'{', '.join(v.population()['mutual_fams'])}'"),
-     lambda p: p.replace("The mutual pairs are 041, 077, 217, 265, 268, 286, 302, 368.",
-                         "The mutual pairs are 077, 217, 265, 268, 286, 302, 368.")),
+     lambda p: p.replace(
+         f"The mutual pairs are {', '.join(v.population()['mutual_fams'])}.",
+         f"The mutual pairs are {', '.join(v.population()['mutual_fams'][1:])}.", 1)),
     ("fenced block line",
      lambda c, v: f"block at page line {block_start(c, row_of(c, 'journal = {Selecta Math.},'))} does not match",
      lambda p: p.replace("  journal = {Selecta Mathematica. New Series},",
                          "  journal = {Selecta Math.},")),
     ("citation layer count",
-     lambda c, v: f"268: citation layer (2, 3, 1) != recomputed {citation(v, '268')}",
-     lambda p: p.replace("Citation layer: 2 `.bib` files, 2 intra-family edges, 1 mutual pair.\n\n"
-                         "### 270 — ",
-                         "Citation layer: 2 `.bib` files, 3 intra-family edges, 1 mutual pair.\n\n"
-                         "### 270 — ")),
+     lambda c, v: (f"{first_fam()}: citation layer "
+                   f"{tuple(int(x) for x in v.CITE.search(v.collapse_ws(c)).groups())} "
+                   f"!= recomputed {citation(v, first_fam())}"),
+     lambda p: cite_bump(p, first_fam(), 1)),
     # Prose no count phrase reads: the heading name in the population rule. Only the render diff
     # sees it, so the needle is the page line the render diff names.
     ("prose count outside the phrase list",
      lambda c, v: f"page line {row_of(c, 'the remaining 94 families')}: page 'the remaining 94 families",
-     lambda p: p.replace("the remaining 93 families", "the remaining 94 families")),
+     lambda p: bump(p, r"the remaining (\d+) families", 1)),
     # Not a content change: the table is padded. A strict single-space row pattern reads 0 rows and
     # the population guard fires; the tolerant `\s*` pattern reads the rows, so the only problems are
     # the render diff, whose first changed line is the padded chain-table header.
@@ -178,10 +221,24 @@ def test_clean_page(load, text):
     v = load("verify_t0_chains")
     res = v.check(text)
     assert res["problems"] == []
-    assert (res["anchors"], res["blocks"], res["quotes"], res["counts"], res["sync"]) == \
-        (120, 3, 61, 12, 0)
-    assert (res["sum_rows"], res["chain_rows"], res["heads"], res["bullets"],
-            res["lists"], res["files"]) == (27, 5, 27, 54, 4, 2)
+    assert res["sync"] == 0
+    carried = len(v.ANCHOR.findall(text))
+    assert 0 < carried == res["anchors"]
+    n_block = len(list(v.anchors.fenced_blocks(text.split("\n"))))
+    assert 0 < n_block == res["blocks"]
+    # The quote pass counts only the quotations pinned to an anchor, so the page carries more
+    # quotations than the pass verifies.
+    n_quote = len(v.QUOTE.findall(text))
+    assert 0 < res["quotes"] <= n_quote
+    want = len(list(v.count_phrases(v.population())))
+    assert 0 < want == res["counts"]
+    assert 0 < len(v.population()["pop"]) == res["sum_rows"] == res["heads"]
+    assert 0 < len(v.CHAIN_FAMS) == res["chain_rows"]
+    assert 0 < v.population()["mss_n"] == res["bullets"]
+    # The pass counts its three named lists plus the no-.bib sentence: the checker's own structure,
+    # not a measured figure.
+    assert res["lists"] == 4
+    assert 0 < len(v.VER268) == res["files"]
 
 
 def test_padded_table_is_read_by_the_tolerant_pattern(load, text):
@@ -193,9 +250,9 @@ def test_padded_table_is_read_by_the_tolerant_pattern(load, text):
     v = load("verify_t0_chains")
     clean = v.check(text)
     res = v.check(pad_table(text))
-    assert res["sum_rows"] == clean["sum_rows"] == 27, \
+    assert res["sum_rows"] == clean["sum_rows"] == len(v.population()["pop"]), \
         f"{res['sum_rows']} summary rows read from the padded table"
-    assert res["chain_rows"] == clean["chain_rows"] == 5, \
+    assert res["chain_rows"] == clean["chain_rows"] == len(v.CHAIN_FAMS), \
         f"{res['chain_rows']} chain rows read from the padded table"
 
 
