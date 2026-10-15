@@ -492,8 +492,8 @@ links) → declaration → file — 200 declarations over 189 configs reaching *
 formalization stays a per-manuscript flag. The 106 T2 families, whose scope notes link configs that no
 `main_results` entry names, render as *absent*, never as unformalized. Fresh report: **48039** relative
 links with **0** broken — that is the render-time registry, and `notes/scripts/check_index_links.py`
-re-derives the check from disk over every rendered page: **66,133** links, **0** broken, **17,700** of
-them resolving to a directory and **48,433** to a file, the 18,094-link difference being registry
+re-derives the check from disk over every rendered page: **66,134** links, **0** broken, **17,700** of
+them resolving to a directory and **48,434** to a file, the 18,095-link difference being registry
 under-coverage rather than a disagreement about existence (`notes/development/index-links.md`); canonical ==
 rendered on **six of the seven** coverage counts (372 / 719 / 242 / 416 / 10 / 30) and **not** on
 `formalized`, where canonical reads **173** and the rendered pages **172** — the one-path difference is
