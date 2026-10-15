@@ -174,8 +174,11 @@ def flex(phrase: str) -> re.Pattern[str]:
         # makes it match the first number anywhere in HEAD's page — the bare "719" needle for the
         # sources-row count matched "A 2-line ... 40-line construction" and slotted the row count into
         # a sentence that never names rows. A number-only needle must match exactly, so a writer that
-        # wants a drifting count to stay slotted supplies the count with its words.
-        return re.compile(re.escape(phrase))
+        # wants a drifting count to stay slotted supplies the count with its words. It must also match
+        # a whole number run: the bare "34" needle for the naming-coverage count matched inside
+        # "**1,034**" in the index split sentence, and the template rendered that page's page count as
+        # "1,0" plus the naming count.
+        return re.compile(r"(?<![\d,.])" + re.escape(phrase) + r"(?![\d,.])")
     if len(NUM_RUN.sub("", phrase)) < 2:
         # A needle relaxes its digits only when it carries literal context. "719" has none, so relaxing
         # it matched "A 2-line ... 40-line construction" and slotted the sources-row count into a
@@ -183,8 +186,9 @@ def flex(phrase: str) -> re.Pattern[str]:
         # into "any number followed by M" and the preprints size also matched "1740M" and "14M",
         # rendering all three surfaces as 631M. A needle with two literal characters — "**342**",
         # "147.8 B/row", a template row's `README.md.j2` — is anchored by its words, so its numbers
-        # can move with HEAD's stale measurement.
-        return re.compile(re.escape(phrase))
+        # can move with HEAD's stale measurement. The whole-number-run guard applies here too:
+        # "631M" is a substring of "1631M".
+        return re.compile(r"(?<![\d,.])" + re.escape(phrase) + r"(?![\d,.])")
     toks = []
     for tok in phrase.split(" "):
         out, pos = "", 0
