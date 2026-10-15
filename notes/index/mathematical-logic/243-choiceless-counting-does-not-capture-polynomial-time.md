@@ -13,7 +13,7 @@
 | Claim shapes | uniform |
 | Topics | [computability](../topics/computability.md) · [logic](../topics/logic.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [243-choiceless-counting-does-not-capture-polynomial-time.md](../../../notes/summaries/mathematical-logic/243-choiceless-counting-does-not-capture-polynomial-time.md) |
 
 ## Manuscripts
 
