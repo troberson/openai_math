@@ -7,21 +7,21 @@ measured quotation traps) lives in `.qwen/skills/auto-skill-family-summary-citat
 
 ## Current state (rewritten at every batch boundary, 2026-10-14)
 
-- **All 31 pages are green.** `verify_summaries.py` over the 32 files in `notes/summaries/`:
-  **4,658 marker positions, 1,303 quoted spans, 0 problems**; `check_summary_manuscripts.py`:
-  **32 pages, 0 with an off-family manuscript, 69 manuscript dirs named, 0 unnamed-on-catalog,
+- **All 32 pages are green.** `verify_summaries.py` over the 33 files in `notes/summaries/`:
+  **4,782 marker positions, 1,328 quoted spans, 0 problems**; `check_summary_manuscripts.py`:
+  **33 pages, 0 with an off-family manuscript, 70 manuscript dirs named, 0 unnamed-on-catalog,
   0 named-by-another-family**; 749 preprint dirs on disk, 719 named by `overview.tex`, 30 on disk
   and unnamed, 0 named and absent. `test_summaries.py`: **11 tests pass**.
-- **Pages done (31):** 001, 002, 004, 006, 007, 010, 011, 014, 016, 017, 018, 019, 032, 087, 101,
-  102, 109, 136, 147, 159, 197, 221, 226, 258, 259, 271, 287, 332, 334, 342, 362. The ledger's
-  `summary` column is 1 for those; the generator reports "summary pages 31 of 372 families, 69
+- **Pages done (32):** 001, 002, 004, 006, 007, 010, 011, 014, 016, 017, 018, 019, 032, 087, 101,
+  102, 109, 136, 147, 159, 197, 221, 226, 258, 259, 271, 287, 332, 334, 342, 344, 362. The ledger's
+  `summary` column is 1 for those; the generator reports "summary pages 32 of 372 families, 70
   manuscripts behind them". By discipline: Number theory 12, theoretical computer science 3, convex
   and metric geometry 2, probability and statistical mechanics 2, group theory 2, differential
-  geometry 2, and one each in algebraic and complex geometry, dynamical systems and ergodic theory,
+  geometry 3, and one each in algebraic and complex geometry, dynamical systems and ergodic theory,
   combinatorics, algebra, mathematical physics, operator algebras, functional analysis, and partial
   differential equations.
 - **Next batch:** `math-ckd.4` is claimed and in progress — tier C group 1. The differential-geometry
-  families with `summary = 0`, sorted by `paps`: 344, 345, 346, 347, 348, 349, 351, 352, 353, 354,
+  families with `summary = 0`, sorted by `paps`: 345, 346, 347, 348, 349, 351, 352, 353, 354,
   355, 356, 357, 358, 359, 360, 361, 350. Steps 1–10 per page. Check `bd ready` first: summaries are
   P4 and any ready P1/P2 outranks this batch.
 - **Last gate run (2026-10-14):** `bash notes/scripts/gate_driver.sh` — **rows 79, failures 0**, head
@@ -29,7 +29,8 @@ measured quotation traps) lives in `.qwen/skills/auto-skill-family-summary-citat
   (yaml)`), 242 scope notes, 416 challenges, 200 `main_results` over 189 configs, both
   `overview.tex` ↔ `CONTENTS.md` cross-checks 0. `verify_cache_promotion.py`: **writers 15 +
   non-cached 1, probed targets 16, problems 0**. Lint trio (`notes/scripts/lint_scripts.sh`) exits 0.
-- **Push state:** `origin/notes` at `b970add53`, pushed 2026-10-14. Nothing unpushed.
+- **Push state:** `origin/notes` at `77be36cd6`, pushed 2026-10-14, with the family 344 page, its
+  count sweep, the re-rendered report pages and the link census on top, unpushed.
 - **Queue check (2026-10-14):** `bd ready` lists **3** issues: `math-4nn` (the epic, open through
   `.2`, whose prettier decision is the user's), `math-ckd.5`, and `math-ckd`. `math-ckd.4` is
   claimed and in progress, so it is not in the ready list.
@@ -1525,3 +1526,23 @@ deliberately.
   the target line were each rejected, and a full-file read satisfied the gate. For the census page,
   where the full read is truncated, the exact-string python replacement was used. Revisit if the gate
   starts accepting partial reads.
+- **A block quote transcribed from a previous `read_file` is a fabricated quote.** Measured
+  2026-10-14 on the family 344 page: the first draft carried **11 `NOT VERBATIM`** problems, every
+  one a statement block written from memory of an earlier read. The real bytes differed in kind as
+  well as content — `lag:determinant` and `lag:schur` are `proposition`s, not `lemma`s;
+  `weighted:scalar` is a `lemma` about a weighted integral inequality against the model density, not
+  a scalar identity; `rig:polar` is a `lemma`; `inc:pontryagin` states the **total** Pontryagin class;
+  `sig:coefficient` states $|s|=1$ and $p_1=\pm2e$, not a signature formula. Re-read every block with
+  `read_file` at the `grep_search` line numbers immediately before writing it, and rewrite the prose
+  to match what the block actually says.
+- **A `Lines` cell is measured, never transcribed.** The same page reported **10** stale `Lines`
+  values, all taken from a truncated shell preview of the manuscript tree. The true counts are
+  `len(text.splitlines())` per file: README 16, `01-geometric-inputs.tex` 114, `02-lagrangian.tex`
+  657, `03-weighted-comparison.tex` 334, `04-global-comparison.tex` 112, `05-incidence.tex` 273,
+  `06-signature.tex` 200, `07-geodesic-space.tex` 768, `08-volume-algebra.tex` 442,
+  `09-classification.tex` 94. The ten section files carry 3,197 lines, not 2,444.
+- **A block quote cannot span a multi-anchor citation.** The three classification corollaries sit at
+  `09-classification.tex` lines 11–14, 37–40 and 59–62, with proofs between them. Quoting all three
+  under one `[S15:11–14] [S15:37–40] [S15:59–62]` line fails: the checker compares the quote against
+  the anchored window, and the blank lines the page puts between corollaries are not in that window.
+  Write one prose line and one block per anchor.
