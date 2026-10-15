@@ -53,6 +53,10 @@ The corollary covers the spherical space forms [S6:73]:
 
 > This includes real projective spaces and smooth spherical space forms.
 
+The proof bounds the fiber. [S15:32–35] closes it: "Since every downstairs prime image has at
+most $r$ preimages in this set, there are infinitely many downstairs prime
+images as well."
+
 The second corollary settles dimension three, using geometrization for the finite-fundamental-group case [S6:84–88]:
 
 > \begin{corollary}[Closed three-manifolds]\label{cor:three-manifolds}
