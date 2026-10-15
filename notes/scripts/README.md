@@ -219,7 +219,7 @@ had to wait for the serial chain to finish.
 | `measure_index_sizes.py` | `notes/development/index-design.md` | plain |
 | `measure_import_layout.py` | `extract_links.py`'s import header rule — the Lean files whose first command is a doc-comment opener (`/-`), a bare `module` line, or a `public import` line, which is the evidence the widened `HEADER_SKIP` rule was written from | **not gated** — walks 122,458 files; run by hand when the header rule changes |
 | `measure_links_phases.py` | `extract_links.py`'s phases — the wall each read and scan takes, attributed by wrapping the script's own reads, because cProfile totals attribute cost to functions, not phases | **not gated** — a phase wall is a function of a run |
-| `measure_move_surface.py` | `math-faz` — the moved/stable path-mention split over the 37 pages the reorg moved, by context; the bead re-runs it after each pass | **not gated** |
+| `measure_move_surface.py` | `math-faz` — the moved/stable path-mention split over the 38 pages the reorg moved, by context; the bead re-runs it after each pass | **not gated** |
 | `measure_needles.py` | `notes/scripts/tests/` — the needle fleet: faults per file, needles recorded as a string versus derived as a callable, recorded needles split numeric versus structural, needle digits, synthetic rule inputs, the numeric literals in each clean test's asserted tuples, and the recorded needles whose digits their own mutation never writes | plain |
 | `measure_proof_density.py` | `notes/reports/proof-density.md` | the self-tests are in `notes/scripts/tests/test_proof_density.py`, run by the `run_tests.py` row; the plain run is not gated, because `render_reports.py` imports the module and calls `build_families()` rather than running the script |
 | `measure_render_phases.py` | `render_reports.py`'s phase wall with concurrent children — cumulative, in `main()` call order | **not gated** — a phase wall is a function of a run |
@@ -401,12 +401,12 @@ to **40.6 s**, measured 2026-10-12 as the sum of the wall times the gate printed
 pooled run, each Cost cell re-checked cell-by-cell against that run (0
 mismatches over the 22 checkers with Cost cells behind them; `verify_script_ownership.py` is not a row
 above, so it has no cell to check); the full 78-row gate ran in **1 min 25 s** wall
-(09:37:44–09:37:09 local) and its 78 row times sum to **202.5 s**, so the 12-row pool brings the wall
+(09:38:44–09:38:09 local) and its 78 row times sum to **202.5 s**, so the 12-row pool brings the wall
 to 42% of the sum. The writers are the tail: `render_reports.py` 17.0 s (the gate row is
 `--check-only`; the plain render ran 16.983 s), `extract_links.py` 14.8 s,
 `extract_formalization_deps.py` 6.0 s (the 122,458-file walk under
 `lean/OAI/` is paid once per cache key, so a warm run reads records), `build_index.py` 5.8 s. The
-65-invocation gate took **37 min** and **38 min** on its two runs measured 2026-10-10
+65-invocation gate took **38 min** and **38 min** on its two runs measured 2026-10-10
 (10:48–11:23 and 11:23–12:01 UTC) and the 64-invocation list took **62 min** the same morning
 (05:49–06:51 UTC) — the pre-cache figures, which the 2026-10-11 promote-and-key work is what
 replaced.
@@ -438,7 +438,7 @@ modules, not scripts: `paths.py` (the repo-root constants, `rel()`, `owner()`, `
 registry, `key_for()` for the builder's digest key, `promote()` which caches the bytes under the key
 and then writes the same bytes onto the tracked path, and `cached_text()`), `records.py` (the
 digest-keyed record store — `key()` over the five `git rev-parse HEAD:<path>` tree digests, the
-builder's source, its L1 texts and its args, truncated to 37 hex; `manuscript_store()` reads the
+builder's source, its L1 texts and its args, truncated to 38 hex; `manuscript_store()` reads the
 749-row per-manuscript record set under `.qwen/cache/records/<key>/`, and `cached(KEY, "name",
 builder)` builds a record once, lands it atomically, and reads it back), `atomic.py` (the atomic write primitive —
 `write_atomic()` writes through a sibling temp name, fsyncs, then moves the temp onto the target, so
@@ -527,7 +527,7 @@ excludes them with the script tree, so they are not scripts.
 | Population | Files | Owner |
 |---|---|---|
 | `notes/index/` | **1,033** | generated — `build_index.py`; the 16 tables it renders land in `notes/tables/` |
-| `notes/summaries/` | **54** | hand-written — the reading record: 53 family pages and the link-only index page `README.md` |
+| `notes/summaries/` | **55** | hand-written — the reading record: 54 family pages and the link-only index page `README.md` |
 | `notes/templates/` | **27** | **5** hand-written index skeletons + **22** report templates built by `build_report_templates.py` |
 | `notes/development/*.md` | **5** | hand-written in part: `summaries-workflow.md` is the resume protocol; `fleet-design.md`, `index-design.md` and `index-links.md` are report-fed pages `render_reports.py` renders and `templates.md` is generated by `build_report_templates.py`. `math-faz.3` moved them here from the top level. |
 | `notes/development/upstream_history/` | **3** | hand-written — the record of each upstream merge, checked by `verify_upstream_history.py` |
@@ -535,7 +535,7 @@ excludes them with the script tree, so they are not scripts.
 | `notes/tables/*.tsv` | **25** | **23** generated, **2** hand-authored — 7 written by the ledger scripts and 16 rendered by `build_index.py` since `math-faz.6` |
 | `notes/reports/*.md` | **23** | **15** generated — the report-fed pages `render_reports.py` renders; **8** hand-written. **11** with a checker, **12** without. `math-faz.4` moved them here from the top level. |
 | `notes/*.md` | **1** | `notes/README.md`, the entry point — hand-written, no checker |
-| `notes/` total, scripts excluded | **1,231** | — |
+| `notes/` total, scripts excluded | **1,232** | — |
 
 The generated TSVs are the **23** the writer set writes: the 7 named writer targets and the 16 tables
 `build_index.py` stages into `notes/tables/`. The two hand-authored tables are:
@@ -578,13 +578,13 @@ and a `notes/**/topics.tsv` glob read both. The rendered table is now
 `notes/tables/` on 2026-10-11, so the two names cannot collide again. `measure_topics.py` and
 `AGENTS.md` both name the vocabulary; `build_index.py` reads it and writes the rendered table.
 
-The index tree and the summaries tree share **37** page slugs — the families that carry both a rendered
+The index tree and the summaries tree share **38** page slugs — the families that carry both a rendered
 page and a reading summary, which is the pairing the index reports, plus `README.md`, which each tree
 carries as its own entry point.
 
 ## Naming coverage
 
-`notes/README.md`'s command block named **37** of the 68 scripts before this pass. Thirty-four are named
+`notes/README.md`'s command block named **38** of the 68 scripts before this pass. Thirty-four are named
 nowhere in the repo at the pinned baseline: `build_report_templates.py`, `build_index_db.py`,
 `check_summary_manuscripts.py`,
 `extract_citations.py`, `gate.py`, `locate_summary_quotes.py`, `measure_anchor_blocks.py`,
@@ -665,7 +665,7 @@ it the tree is **1,003** files. The working trees are `reports/` **438** (gate a
 `math-a0r.7` cleanup deleted **49** one-shot entries and **20** trees (`proof_v6`–`proof_v10`,
 `render_proof_cc`, `render_proof_readme`, `idx_pre_sweep`, `idx_run1`, `idx_run2`, `index-run1`,
 `index_run1`, `index_run2`, `leanout`, `lon1`, `lon2`, `head`, `esp`, `close`, `a0r5`,
-`__pycache__`) and the **37** superseded probes the promotion replaced — `a63_two_renders.sh` and
+`__pycache__`) and the **38** superseded probes the promotion replaced — `a63_two_renders.sh` and
 `a63_dump_slots.py` by `two_render_proof.sh` and `dump_template_slots.py`, `a63_lint.sh` by
 `notes/scripts/lint_scripts.sh`, `a64_demo.sh` and `a64_sed.txt` by `simulate_ledger_bump.sh`,
 `a63_measure_templates*.py` by `notes/scripts/measure_templates.py`, and `a62_lines_probe.py`, which
