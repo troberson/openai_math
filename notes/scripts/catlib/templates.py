@@ -82,6 +82,9 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
     # notes/scripts/README.md's census is the writer's own tree walk. The page's checker walks the same
     # trees with its own rule, so the two measurements are independent by construction.
     "notes/scripts/README.md": R.ownership_population,
+    # findings.md's summary-page and index-link counts move when a summary page is added, so the page's
+    # slots are the writer's measurement of the summaries tree, the ledger, and the cached index scan.
+    "notes/reports/findings.md": R.findings_population,
 }
 # The writer's own slot dict per page. These are the calls render_reports.py makes when it renders,
 # so the labels and phrase strings the template gets are the writer's by construction.
@@ -120,6 +123,7 @@ LABELS: dict[str, Callable[[], dict[str, str]]] = {
     "notes/development/templates.md": lambda: R.templates_phrases(
         POPULATIONS["notes/development/templates.md"]()),
     "notes/scripts/README.md": lambda: R.ownership_phrases(POPULATIONS["notes/scripts/README.md"]()),
+    "notes/reports/findings.md": lambda: R.findings_phrases(POPULATIONS["notes/reports/findings.md"]()),
 }
 PHRASE_FNS = ("count_phrases", "size_phrases")
 ALL_PAGES = {
@@ -187,6 +191,11 @@ ALL_PAGES = {
     # it carries no count_phrases/size_phrases, so the builder reports this coverage as NOT DERIVED. The
     # page is proven by the render diff plus that checker's plain run and its extracted mutants.
     "notes/scripts/README.md": "verify_script_ownership.py",
+    # findings.md is the reading synthesis. Its checker, verify_findings.py, runs seven passes over the
+    # page's sources, quotations, ledger rows, tables, report lines, records and closing block; the
+    # summary-page and index-link counts are now writer slots, so the render diff is the pass that proves
+    # them. The checker carries no count_phrases/size_phrases, so the builder reports NOT DERIVED.
+    "notes/reports/findings.md": "verify_findings.py",
 }
 # The template file name per page. The builder names a template by the page's basename, so the two
 # README.md pages collide: notes/README.md owns README.md.j2 and the scripts census takes

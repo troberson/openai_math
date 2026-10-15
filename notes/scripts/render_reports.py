@@ -152,6 +152,7 @@ OWN_PROBE_PREFIX = (
 FAITH_MD = ROOT / "notes" / "reports" / "formalization-faithfulness.md"
 TEMPLATES_MD = ROOT / "notes" / "development" / "templates.md"
 FLEET_MD = ROOT / "notes" / "development" / "fleet-design.md"
+FINDINGS_MD = REPORTS_DIR / "findings.md"
 VPOS = preprints.bundle_of(PREPRINTS / "Positively-curved-Einstein-four-manifolds-September-23-2026")
 VZERO = preprints.bundle_of(PREPRINTS / "Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026")
 FOCK = PREPRINTS / "A-Fock-space-inequality-and-the-Laughlin-spectral-gap-September-24-2026"
@@ -2577,6 +2578,32 @@ def ownership_page(p: dict[str, str]) -> str:
     return ENV.get_template("scripts-README.md.j2").render(p=p)
 
 
+def findings_population() -> dict[str, Any]:
+    """The counts notes/reports/findings.md quotes that move when a summary page is added: the families
+    with a page and the manuscripts behind them, and the index page/link/broken census. The index scan is
+    the cached index-links population, so the walk is paid once per render, not once per page."""
+    fams = {q.name.split("-")[0] for q in SUM_DIR.rglob("*.md") if q.name != "README.md"}
+    rows = ledger.read_ledger()
+    s = population_of("index-links")["scan"]
+    return {"sum_fams": len(fams), "families": len(rows),
+            "sum_paps": sum(int(r["paps"]) for r in rows if r["fam"] in fams),
+            "idx_pages": len(s["pages"]), "idx_links": len(s["links"]), "idx_broken": len(s["broken"])}
+
+
+def findings_phrases(p: dict[str, Any]) -> dict[str, str]:
+    """label → full measured phrase, for notes/reports/findings.md."""
+    return {
+        "summary_pages": f"**{p['sum_fams']}** of {p['families']} families have a summary page, "
+                         f"covering **{p['sum_paps']}** manuscripts [S2].",
+        "index_links": f"**{p['idx_pages']:,}** pages carry **{p['idx_links']:,}** links with "
+                       f"**{p['idx_broken']}** broken [S27].",
+    }
+
+
+def findings_page(p: dict[str, str]) -> str:
+    return ENV.get_template("findings.md.j2").render(p=p)
+
+
 def templates_page(p: dict[str, str]) -> str:
     return ENV.get_template("templates.md.j2").render(p=p)
 
@@ -3759,6 +3786,9 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
     # notes/scripts/README.md's census is the writer's own tree walk. The page's checker walks the
     # same trees with its own rule, so the two measurements are independent by construction.
     "scripts-README": ownership_population,
+    # findings.md's summary and index-link counts move when a summary page is added, so the page's
+    # slots are the writer's measurement of the summaries tree, the ledger, and the cached index scan.
+    "findings": findings_population,
 }
 
 
@@ -3783,6 +3813,7 @@ PAGE_RENDERERS: dict[pathlib.Path, Callable[[], str]] = {
     FLEET_MD: lambda: fleet_page(fleet_phrases(population_of("fleet-design"))),
     TEMPLATES_MD: lambda: templates_page(templates_phrases(population_of("templates"))),
     OWNERSHIP_MD: lambda: ownership_page(ownership_phrases(population_of("scripts-README"))),
+    FINDINGS_MD: lambda: findings_page(findings_phrases(population_of("findings"))),
 }
 
 
@@ -3841,6 +3872,8 @@ def main() -> None:
     ST.stage(TEMPLATES_MD, render_page(TEMPLATES_MD))
     # The census page counts the report templates on disk, so it is staged after the templates census.
     ST.stage(OWNERSHIP_MD, render_page(OWNERSHIP_MD))
+    # The findings page's index-link slot reads the cached index-links population, so it is staged last.
+    ST.stage(FINDINGS_MD, render_page(FINDINGS_MD))
     staged = ST.staged()
     texts = ST.staged_texts()
     if "--check-only" not in sys.argv[1:]:

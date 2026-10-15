@@ -48,6 +48,11 @@ PAGES = [
     (ROOT / "notes" / "development" / "index-links.md",
      "demonstrated rather than recorded.",
      "demonstrated rather than written down."),
+    # The summary-page counts are writer slots, so the render diff is the pass that proves them: a page
+    # that carries a hand-written family count is not the writer's measurement.
+    (ROOT / "notes" / "reports" / "findings.md",
+     "**39** of 372 families have a summary page",
+     "**40** of 372 families have a summary page"),
 ]
 
 
