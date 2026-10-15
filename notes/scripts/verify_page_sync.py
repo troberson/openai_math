@@ -31,6 +31,7 @@ import sys
 from catlib import render as RD
 from catlib.paths import ROOT
 
+
 # (page, needle, replacement). Each needle is prose the page carries verbatim, not a count phrase:
 # a count is re-derived by the page's own count pass, so mutating one proves that pass, not this.
 def _count(pattern: str):
@@ -79,23 +80,6 @@ PAGES = [
 ]
 
 
-def _count(pattern: str):
-    """Return the needle/repl pair the page's own count phrase carries.
-
-    The count is a writer slot, so it moves when a summary page lands. Deriving the needle from the
-    page at run time keeps the mutant live; a needle that recorded the count as committed reports the
-    needle absent, which is the inert-mutant finding, not a pass.
-    """
-    def build(text: str) -> tuple[str, str] | None:
-        m = re.search(pattern, text)
-        if m is None:
-            return None
-        n = int(m.group(1))
-        repl = pattern.replace(r"\d+", str(n + 1))
-        return m.group(0), repl
-    return build
-
-
 def check() -> list[str]:
     """Sync problems for each page: its bytes on disk against the writer's render."""
     out: list[str] = []
@@ -117,11 +101,13 @@ def mutant_problems() -> tuple[int, int, list[str]]:
             if pair is None:
                 problems.append(f"{page.name}: count phrase absent — the mutant is inert")
                 continue
-            needle, repl = pair
-        if needle not in text:
-            problems.append(f"{page.name}: needle {needle!r} absent — the mutant is inert")
+            n, r = pair
+        else:
+            n, r = needle, repl
+        if n not in text:
+            problems.append(f"{page.name}: needle {n!r} absent — the mutant is inert")
             continue
-        mutated = text.replace(needle, repl, 1)
+        mutated = text.replace(n, r, 1)
         probs = RD.diff_problems(mutated, RD.rendered(page))
         if probs:
             caught += 1
