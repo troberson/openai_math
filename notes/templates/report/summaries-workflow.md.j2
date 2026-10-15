@@ -17,10 +17,10 @@ measured quotation traps) lives in `.qwen/skills/auto-skill-family-summary-citat
 - **Next batch:** `math-ckd.4` is claimed and in progress — tier C group 1. The differential-geometry families with `summary = 0`, sorted by `paps`: 353, 354, 355, 356, 357, 358, 359, 360, 361, 350. Steps 1–10 per page. Check `bd ready` first: summaries are P4 and any ready P1/P2 outranks this batch.
 - **Last gate run (2026-10-15):** `bash notes/scripts/gate_driver.sh` — {{ p['gate'] }}, head diff 0 bytes. Reconciliations: {{ p['recon'] }}, both `overview.tex` ↔ `CONTENTS.md` cross-checks 0. `verify_cache_promotion.py`: {{ p['cache'] }}. `check_index_links.py`: {{ p['idx'] }}. Lint trio (`notes/scripts/lint_scripts.sh`) exits 0.
 - **Push state:** `origin/notes` at `86f705d2c`, pushed 2026-10-15 — the workflow page's template and its twelve writer slots, the `PROBES` list moved from the cache checker into `catlib/promote.py` so the writer's target count and the checker's L1 pass read one list, the re-probe of `measure_templates.py` for the template its L1 gained, the three mutants re-targeted to the moved template-tree, registry, and probe-record counts, and the dead probe-dirs read removed. The gate run reported **79 rows, 0 failures**, `verify_cache_promotion.py` reported **0 problems** at the pushed HEAD, and the linters exit 0.
-- **Queue check (2026-10-15):** `bd ready` lists {{ p['queue'] }}: `math-4nn`, `math-ckd.5`, and
-  `math-ckd`. `math-4nn.9` is claimed and in progress, and `math-ckd.4` is claimed and in
-  progress, so neither is in the ready list. Bead `.2`'s prettier decision is resolved: prettier
-  is dropped from the repo, so the formatable set is gone.
+- **Queue check (2026-10-15):** `bd ready` lists {{ p['queue'] }}: `math-95a`, `math-4nn`,
+  `math-ckd.5`, and `math-ckd`. `math-4nn.9` is claimed and in progress, and `math-ckd.4` is
+  claimed and in progress, so neither is in the ready list. Bead `.2`'s prettier decision is
+  resolved: prettier is dropped from the repo, so the formatable set is gone.
 
 ## Loop shape
 
