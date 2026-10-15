@@ -2485,6 +2485,10 @@ def ownership_population() -> dict[str, Any]:
         "index_pages": len(list(INDEX_DIR.rglob("*.md"))),
         "index_tables": index_tables,
         "sum_pages": len(list(SUM_DIR.rglob("*.md"))),
+        # The checker compares the two trees by basename, so the shared-slug count is the
+        # intersection of the basenames, not of the families: each tree carries its own README.md.
+        "slug_share": len({q.name for q in INDEX_DIR.rglob("*.md")}
+                          & {q.name for q in SUM_DIR.rglob("*.md")}),
         "skels": len(list(SKEL_DIR.glob("*.j2"))),
         "report_tpls": len(list(TPL.glob("*.j2"))),
         "dev_md": len(list(DEV_DIR.glob("*.md"))),
@@ -2576,6 +2580,10 @@ def ownership_phrases(p: dict[str, Any]) -> dict[str, str]:
         "census_notes_md": f"| `notes/*.md` | **{p['notes_md']}** | `notes/README.md`, the entry point — "
                            "hand-written, no checker |",
         "census_total": f"| `notes/` total, scripts excluded | **{p['notes_total']:,}** | — |",
+        # The shared-slug sentence is a count the checker compares with its own basename
+        # intersection, so the writer supplies it: a page that carries a hand-written slug count is
+        # not the measurement.
+        "slug_share": str(p["slug_share"]),
     }
 
 
