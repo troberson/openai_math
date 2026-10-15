@@ -25,9 +25,11 @@ writes nothing and the tests write nothing.
 The checker measures; this file injects. Run:
   python3 notes/scripts/run_tests.py notes/scripts/tests/test_upstream_history.py -q
 """
-from catlib.anchors import range_facts
+import re
 
 import pytest
+import verify_upstream_history as chk
+from catlib.anchors import range_facts
 
 pytestmark = pytest.mark.mutant
 
@@ -37,8 +39,7 @@ PAGE_FD = "notes/development/upstream_history/2026-10-07_fd4aeeb.md"
 # Faults in the pages' own text, each keyed to the problem string the pass that owns it prints.
 MUTANTS = [
     ("count phrase moved", PAGE_301, "phrase absent from page",
-     lambda t: t.replace("**1135 files added, 31 deleted, 19 modified**",
-                         "**1134 files added, 31 deleted, 19 modified**")),
+     lambda t: bump(t, r"\*\*(\d+) files added, \d+ deleted, \d+ modified\*\*", -1)),
     ("table row deleted", PAGE_301, "fixes rows",
      lambda t: "\n".join(l for l in t.split("\n")
                          if not l.startswith("| 376 | `Incompressible-Box-Transport"))),
@@ -60,13 +61,13 @@ MUTANTS = [
      lambda t: t.replace("`Taming-implies-compatibility-on-four-manifolds-October-6-2026`",
                          "`Taming-implies-compatibility-on-four-manifolds-October-5-2026`")),
     ("tier list truncated", PAGE_301, "phrase absent from page",
-     lambda t: t.replace("for 027 066 075 103 137 195 301", "for 027 066 075 103 137 301")),
+     lambda t: drop_tier(t, r"for ((?:\d{3} )+\d{3})")),
     ("config name altered", PAGE_301, "new configs",
      lambda t: t.replace("`FourierLLogL`", "`FourierLLogL2`")),
     ("entry count moved", PAGE_301, "main_results entries",
-     lambda t: t.replace("| 137 | `OneTapeSpace` | 2 |", "| 137 | `OneTapeSpace` | 1 |")),
+     lambda t: entry_bump(t, chk)),
     ("directory count moved", PAGE_301, "phrase absent from page",
-     lambda t: t.replace("**749** directories", "**748** directories")),
+     lambda t: bump(t, r"\*\*(\d+)\*\* directories", -1)),
     ("quotation with no anchor", PAGE_FD, "no anchor in its paragraph",
      lambda t: t.replace("Nothing. `git diff",
                          'Nothing. *"a quotation with no anchor at all"* `git diff')),
@@ -115,6 +116,37 @@ def test_injected_faults(mod, p, pages, label, page, needle, mut):
     mod.check_counts(page, cand, p, found)
     mod.check_tables(page, cand, p, found)
     assert any(needle in x for x in found), f"{label}: NOT caught by {needle!r} ({found[:2]})"
+
+
+def entry_bump(t, chk):
+    """Bump the first config row whose count the measured population confirms and whose count is above
+    1, so the row the table pass reads disagrees with the release."""
+    p = chk.measure()
+    for m in re.finditer(r"(?m)^\|\s*\d{3}\s*\|\s*`\w+`\s*\|\s*(\d+)\s*\|", t):
+        n = int(m.group(1))
+        if 1 < n == p["main_post"].get(m.group(0).split("`")[1]):
+            return t[:m.start()] + m.group(0).replace(m.group(1), str(n - 1), 1) + t[m.end():]
+    raise AssertionError("no confirmed config row with a count above 1")
+
+
+def bump(t, pat, delta):
+    """Change the page's own count at `pat` by `delta`. The mutation's input is the page as it stands,
+    so a measured count that moves does not need a hand-edit here."""
+    m = re.search(pat, t)
+    assert m, f"{pat!r} not in the page"
+    raw = m.group(1)
+    new = f"{int(raw.replace(',', '')) + delta:,}" if "," in raw else str(int(raw) + delta)
+    span = m.group(0)
+    return t[:m.start()] + span.replace(raw, new, 1) + t[m.end():]
+
+
+def drop_tier(t, pat):
+    """Drop one family from the page's own tier list, keeping the phrase form."""
+    m = re.search(pat, t)
+    assert m, "no tier list in the page"
+    fams = m.group(1).split()
+    new = " ".join(fams[:-2] + fams[-1:])
+    return t.replace(m.group(0), f"for {new}", 1)
 
 
 def pad_cells(t):
