@@ -60,6 +60,17 @@ def target(mod, page, table):
     return q, start, start + len(mk.group(0))
 
 
+def bump(t, pat, delta):
+    """Change the page's own count at `pat` by `delta`. The mutation's input is the page as it stands,
+    so a measured count that moves does not need a hand-edit here."""
+    m = re.search(pat, t)
+    assert m, f"{pat!r} not in the page"
+    raw = m.group(1)
+    new = f"{int(raw.replace(',', '')) + delta:,}" if "," in raw else str(int(raw) + delta)
+    span = m.group(0)
+    return t[:m.start()] + span.replace(raw, new, 1) + t[m.end():]
+
+
 def problems(mod, cand, table, counts):
     return mod.check(cand, table, counts)[0]
 
@@ -69,7 +80,9 @@ def flagged(mod, cand, table, counts, needle):
 
 
 def test_clean_page(mod, page, table, counts):
-    assert len(table) == 35, f"the Sources table has {len(table)} rows, expected 35"
+    # Every table row is cited and every cited marker has a row, so the row count is the marker count.
+    n_marker = len(set(mod.MARKER.findall(page)))
+    assert 0 < n_marker == len(table), f"the Sources table has {len(table)} rows, the page cites {n_marker}"
     assert problems(mod, page, table, counts) == [], "the real page must be silent"
 
 
@@ -174,7 +187,7 @@ def test_multi_abstract_directory_renamed(mod, page, table, counts):
 def test_prose_count_outside_the_phrase_list(mod, page, table, counts):
     """The count pass never reads 692 — it is prose, in no phrase `count_phrases()` names. Only the
     sync pass, which compares the page with the writer's render, can see it."""
-    cand = page.replace("The 692 manuscript", "The 693 manuscript", 1)
+    cand = bump(page, r"The (\d+) manuscript", 1)
     assert cand != page, "the prose count is gone from the page"
     hits = flagged(mod, cand, table, counts, "page is not the writer's render")
     assert hits, "a prose count outside the phrase list was not flagged by the sync pass"
