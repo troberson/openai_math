@@ -77,13 +77,21 @@ def coverage() -> dict[str, tuple[str, int]]:
             for page, checker in sorted(b.ALL_PAGES.items())}
 
 
+def tpl_name(page: str) -> str:
+    """The template file a registry page renders. The builder names a template by the page basename, so
+    the two README.md pages collide: notes/README.md owns README.md.j2 and the scripts census takes
+    scripts-README.md.j2 from the registry's TEMPLATE_NAME map. The writer's page function reads the
+    same map, so the name the census prints and the name the render opens are one name."""
+    return registry().TEMPLATE_NAME.get(page, pathlib.Path(page).name + ".j2")
+
+
 def registry_gap() -> tuple[list[str], list[str]]:
     """(templates named by the registry with no file on disk, files on disk with no registry entry)."""
     b = registry()
-    pages = {pathlib.Path(page).name for page in b.ALL_PAGES}
+    pages = {tpl_name(page) for page in b.ALL_PAGES}
     templates = {t.name for t in REPORT_DIR.glob("*.j2")}
-    missing = sorted(f"{name}.j2" for name in pages if f"{name}.j2" not in templates)
-    extra = sorted(t for t in templates if t[: -len(".j2")] not in pages)
+    missing = sorted(t for t in pages if t not in templates)
+    extra = sorted(t for t in templates if t not in pages)
     return missing, extra
 
 
@@ -144,7 +152,7 @@ def measure() -> dict[str, Any]:
     # The page a report template renders is the registry's key, not a `notes/<stem>` guess: four of
     # the nineteen pages live under `notes/development/`, so the mechanical name would name a file
     # that is not there and the registry lookup would miss.
-    tpl2page = {pathlib.Path(page).name + ".j2": page for page in b.ALL_PAGES}
+    tpl2page = {tpl_name(page): page for page in b.ALL_PAGES}
     for r in rep:
         page = tpl2page.get(r["name"], f"notes/{r['name'][: -len('.j2')]}")
         checker, needles = cov.get(page, ("-", 0))

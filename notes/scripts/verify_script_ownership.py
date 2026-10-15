@@ -280,15 +280,24 @@ def template_measure():
 
 
 def registry_pairs():
-    """The template registry's page -> checker pairs, and the line its ALL_PAGES literal opens on."""
+    """The template registry's page -> checker pairs, its page -> template-file map, and the line its
+    ALL_PAGES literal opens on. Both literals are parsed from the registry's bytes, which is what keeps
+    this comparison independent of the writer's code."""
     lines = read_text(SCRIPTS / "catlib" / "templates.py").splitlines()
     start = next((i for i, l in enumerate(lines, start=1) if l.startswith("ALL_PAGES")), 0)
     if not start:
-        return {}, 0
+        return {}, {}, 0
     block = "\n".join(lines[start - 1:])
     end = block.find("\n}")
     pairs = re.findall(r'"(notes/[^"]+\.md)"\s*:\s*"([A-Za-z0-9_]+\.py)"', block[:end] if end >= 0 else block)
-    return dict(pairs), start
+    tstart = next((i for i, l in enumerate(lines, start=1) if l.startswith("TEMPLATE_NAME")), 0)
+    names: dict[str, str] = {}
+    if tstart:
+        tblock = "\n".join(lines[tstart - 1:])
+        tend = tblock.find("\n}")
+        names = dict(re.findall(r'"(notes/[^"]+\.md)"\s*:\s*"([A-Za-z0-9_.-]+\.j2)"',
+                                tblock[:tend] if tend >= 0 else tblock))
+    return dict(pairs), names, start
 
 
 def index_render_counts():
@@ -320,7 +329,7 @@ def templates_problems(text):
     """Pass H: notes/development/templates.md against the template files, the registry, and notes/index/."""
     p = []
     cen = template_measure()
-    reg, anchor = registry_pairs()
+    reg, names, anchor = registry_pairs()
     renders = index_render_counts()
     rows, idx_rows = template_table_rows(text)
 
@@ -337,7 +346,8 @@ def templates_problems(text):
         # The page a report template renders is the registry's key, not `notes/<stem>`: four pages
         # live under `notes/development/`, so the mechanical name would demand a cell naming a file
         # that is not there.
-        page = {pg.rsplit("/", 1)[-1] + ".j2": pg for pg in reg}.get(n, f"notes/{n[: -len('.j2')]}")
+        page = {names.get(pg, pg.rsplit("/", 1)[-1] + ".j2"): pg for pg in reg}.get(
+            n, f"notes/{n[: -len('.j2')]}")
         if cell_paths(cells[4]) != [page]:
             p.append(f"template row {n}: page cell {cells[4]!r}, registry names {page!r}")
         checker = cell_paths(cells[5])
@@ -369,9 +379,11 @@ def templates_problems(text):
     if f"registry: **{len(reg)}** entries at `catlib/templates.py:{anchor}`" not in text:
         p.append(f"registry sentence does not read 'registry: **{len(reg)}** entries at "
                  f"`catlib/templates.py:{anchor}`'")
-    pages = {pg.rsplit("/", 1)[-1] for pg in reg}
-    missing = sorted(f"{n}.j2" for n in pages if not (REPORT_TPL_DIR / f"{n}.j2").is_file())
-    extra = sorted(t.name for t in REPORT_TPL_DIR.glob("*.j2") if t.name[: -len(".j2")] not in pages)
+    # The registry's name map is part of the gap: the scripts census renders scripts-README.md.j2, which
+    # the basename rule cannot produce, so the page set is the map's values, not the basenames.
+    pageset = {names.get(pg, pg.rsplit("/", 1)[-1] + ".j2") for pg in reg}
+    missing = sorted(t for t in pageset if not (REPORT_TPL_DIR / t).is_file())
+    extra = sorted(t.name for t in REPORT_TPL_DIR.glob("*.j2") if t.name not in pageset)
     want = f"template-without-page **{len(missing)}**, page-without-template **{len(extra)}**"
     if want not in text:
         p.append(f"registry gap sentence does not read {want!r} (disk: {missing + extra})")

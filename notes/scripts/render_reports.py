@@ -2469,7 +2469,11 @@ def ownership_population() -> dict[str, Any]:
     index_tables = len([n for n in tsvs if n in M.INDEX_TABLES])
     reports_md = list(REPORTS_DIR.glob("*.md"))
     reports_gen = len([p for p in PAGE_RENDERERS if p.parent == REPORTS_DIR])
-    checked = len([n for n in ALL_PAGES if n.startswith("notes/reports/")])
+    # A registry entry names the script that checks a page, and for four reports pages that script is a
+    # report-only generator (extract_links.py, measure_topics.py, measure_names.py,
+    # measure_proof_density.py), so the row counts the entries that name a checker.
+    checked = len([p for p in ALL_PAGES if p.startswith("notes/reports/")
+                   and ALL_PAGES[p].startswith(("verify_", "check_"))])
     return {
         "index_pages": len(list(INDEX_DIR.rglob("*.md"))),
         "index_tables": index_tables,
@@ -3831,6 +3835,8 @@ def main() -> None:
     ST.stage(FAITH_MD, render_page(FAITH_MD))
     ST.stage(FLEET_MD, render_page(FLEET_MD))
     ST.stage(TEMPLATES_MD, render_page(TEMPLATES_MD))
+    # The census page counts the report templates on disk, so it is staged after the templates census.
+    ST.stage(OWNERSHIP_MD, render_page(OWNERSHIP_MD))
     staged = ST.staged()
     texts = ST.staged_texts()
     if "--check-only" not in sys.argv[1:]:
