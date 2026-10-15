@@ -72,7 +72,7 @@ blind.
 ## The size argument
 
 Rule: `du -sk` per surface, divided by 1024. `preprints/` is **631M**, `lean/OAI/` is **1740M**
-(122,458 files), `notes/index/` is **12M**. `cat notes/tables/*.tsv | wc -c` = **2,397,309** bytes over the
+(122,458 files), `notes/index/` is **12M**. `cat notes/tables/*.tsv | wc -c` = **2,408,089** bytes over the
 **25** `notes/tables/*.tsv` present on disk. `free -h` reported **7.2 GiB available of 60 GiB** on 2026-10-10, with the
 model server resident — a dated observation, not a re-derivable count.
 
@@ -176,9 +176,11 @@ page landed, which names that page and the 34 quote specs it seeds) and
 `notes/development/probe/2026-10-14_seed_quotes_348.txt` (the `seed_quotes.py` run after the family
 348 page landed, which names that page and the 26 quote specs it seeds) and
 `notes/development/probe/2026-10-14_seed_quotes_349.txt` (the `seed_quotes.py` run after the family
-349 page landed, which names that page and the 17 quote specs it seeds).
+349 page landed, which names that page and the 17 quote specs it seeds) and
+`notes/development/probe/2026-10-14_seed_quotes_352.txt` (the `seed_quotes.py` run after the family
+352 page landed, which names that page and the 24 quote specs it seeds).
 `verify_fleet_design.py` parses the two 2026-10-11 records; `verify_cache_promotion.py` reads all
-twenty-nine records for its L1 exactness pass; the
+thirty records for its L1 exactness pass; the
 2026-10-10 pair is the **before** state the amplification table's deltas are measured against.
 
 | script | write modes | generated reads, and whether any points backwards |

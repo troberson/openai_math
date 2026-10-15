@@ -13,7 +13,7 @@
 | Claim shapes | counterexample |
 | Topics | [complex-geometry](../topics/complex-geometry.md) · [symplectic-geometry](../topics/symplectic-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [352-finite-time-singularity-of-calabi-flow.md](../../../notes/summaries/differential-geometry/352-finite-time-singularity-of-calabi-flow.md) |
 
 ## Manuscripts
 

@@ -1,7 +1,7 @@
 r"""The self-tests for `notes/scripts/catlib/quotes.py` and `notes/scripts/seed_quotes.py`.
 
 The resolver resolves a `(path, start, end, head, tail)` spec to the verbatim source span; the seeder
-seeds the specs for `notes/reports/subfinding-pairs.md` and the 24 summaries pages and requires each to
+seeds the specs for `notes/reports/subfinding-pairs.md` and the 39 summaries pages and requires each to
 reproduce the page's quote. This file injects the faults the locator must catch: a head absent from the
 window; a tail that occurs only before the head; a line number past the file's end; a window whose start
 is after its end; a head that is unique in the line and still bounds a span running to a later
@@ -10,11 +10,11 @@ word the page spells without markup, where the raw span is NOT the page quote an
 comparison is; math whose `<` and `>` make the folded line lose text the raw line keeps; and a quote
 that wraps across lines.
 
-The clean test pins the population the seeder reports for the two surfaces: **2,134** specs, **754**
-from the pair page and **1,487** from the summaries pages; **2,223** seeded and **18** measured negatives
-(the spans the cited file does not carry, seeded to `start` 0); **1,190** single-line and **1,033** range
-specs; **317** heads widened past three words; **506** whole-quote specs; the `mode` split **2,137**
-raw, **86** folded, **18** not located; **0** round-trip failures. The seeded table on disk must
+The clean test pins the population the seeder reports for the two surfaces: **2,265** specs, **754**
+from the pair page and **1,511** from the summaries pages; **2,247** seeded and **18** measured negatives
+(the spans the cited file does not carry, seeded to `start` 0); **1,198** single-line and **1,049** range
+specs; **329** heads widened past three words; **519** whole-quote specs; the `mode` split **2,152**
+raw, **95** folded, **18** not located; **0** round-trip failures. The seeded table on disk must
 reproduce every page quote, in its own class — byte-for-byte for `raw`, fold-equal for `folded` — so a
 resolver that passes its synthetic cases and fails the corpus is caught.
 
@@ -117,15 +117,15 @@ def test_clean_page(page_rows, summary_rows):
     all_rows = page_rows + summary_rows
     seeded = [s for s, _q in all_rows if s["start"] != "0"]
     assert len(page_rows) == 754
-    assert len(summary_rows) == 1487
-    assert len(all_rows) == 2241
-    assert len(seeded) == 2223
-    assert sum(1 for s in seeded if s["start"] == s["end"]) == 1190
-    assert sum(1 for s in seeded if s["start"] != s["end"]) == 1033
-    assert sum(1 for s in seeded if len(s["head"].split()) > 3) == 317
-    assert sum(1 for s in seeded if s["tail"] == "") == 506
+    assert len(summary_rows) == 1511
+    assert len(all_rows) == 2265
+    assert len(seeded) == 2247
+    assert sum(1 for s in seeded if s["start"] == s["end"]) == 1198
+    assert sum(1 for s in seeded if s["start"] != s["end"]) == 1049
+    assert sum(1 for s in seeded if len(s["head"].split()) > 3) == 329
+    assert sum(1 for s in seeded if s["tail"] == "") == 519
     modes = Counter(s["mode"] for s, _q in all_rows)
-    assert (modes["raw"], modes["folded"], modes["none"]) == (2137, 86, 18), modes
+    assert (modes["raw"], modes["folded"], modes["none"]) == (2152, 95, 18), modes
     # Every seeded spec must reproduce its quote in its own class, so a spec that resolves to text the
     # page does not quote is a failure, not a pass.
     cache: dict[str, list[str]] = {}
