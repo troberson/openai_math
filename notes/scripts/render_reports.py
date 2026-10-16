@@ -2693,7 +2693,10 @@ def cost_prose(c: dict[str, Any]) -> dict[str, str]:
                           f"**{sum(float(r['seconds']) for r in checker_rows):.1f} s**")
     out["row_sum"] = (f"its {len(c['rows'])} row times sum to "
                       f"**{sum(float(r['seconds']) for r in c['rows']):.1f} s**")
-    heaviest = max(float(r["seconds"]) for r in checker_rows if r["spec"] in COST_CHECKS)
+    # The heaviest row with a Cost cell is the max of the Cost column. The checker rows include
+    # `verify_script_ownership.py`, which the page says is not a row above, so a max over the
+    # checker rows reads a row that has no Cost cell.
+    heaviest = max(float(c["cells"][COST_SPEC.get(n, n)]) for n in COST_CHECKS)
     out["heaviest_cell"] = f"**{heaviest:.1f} s** is the heaviest row with a Cost cell"
     out["heaviest_checker"] = (f"the heaviest checker row at "
                               f"**{c['cells']['verify_script_ownership.py']} s**")
