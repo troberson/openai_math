@@ -73,6 +73,16 @@ read-only; confirm with `git push --dry-run`.
   under `.qwen/tmp/count_check_calls.py`; a revisit that wants the counts gated promotes it to
   `notes/scripts/` with a census row and a gate row.
 
+- **2026-10-16 — the Cost section is swept again to the second 81-row run, and the builder sweep
+  runs after the commit.** The gate run that fixed the cache-key ordering measured **230.69 s** wall
+  (00:35:57–00:39:47 local), **582.4 s** row-time sum, **39.6%** of the sum, 24 checker invocations
+  summing **115.9 s**. 18 of 23 Cost cells moved and every one is lower. The `check()`-count
+  sentences stay swept: they are probe-measured, not gate-measured, so a gate run does not supersede
+  them. **The ordering lesson:** `notes/development/templates.md` is in the builder's L1, so a commit
+  that moves it moves HEAD; a builder sweep run *before* the commit lands records under a key the
+  checker can no longer match — the gate's first run reported 18 `cache entry missing` problems for
+  exactly that reason.
+
 ## Pointers
 
 - Method, format, citation grammar, quotation traps: `.qwen/skills/auto-skill-family-summary-citation-verified/`.
