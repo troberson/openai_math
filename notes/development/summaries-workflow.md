@@ -83,6 +83,18 @@ read-only; confirm with `git push --dry-run`.
   checker can no longer match — the gate's first run reported 18 `cache entry missing` problems for
   exactly that reason.
 
+- **2026-10-16 — the Cost section is swept to the third run; the "sweep once" decision is
+  superseded.** I argued the Cost column is a floor from one measurement, not a benchmark, so
+  re-sweeping after every gate run is a treadmill; the direction was to sweep each green run. The
+  third green run measured **244.54 s** wall (00:59:04–01:03:09 local), **610.8 s** row-time sum,
+  **40.0%** of the sum, 24 checker invocations summing **122.6 s**. 10 of 23 Cost cells moved, the
+  writer tail, the heaviest-row claim, and 9 of 11 `run_tests.py` figures; 13 cells, the
+  `sources`/`verification_dirs` rows and the date stamp did not. **The Cost cells and the
+  `check()`-count sentences are template literals with no checker** — the census checker does not
+  measure them, so drift between runs is visible only by comparing the gate report with the page by
+  hand. A sweep is now a per-green-run step, and the page's Cost section is the record of the last
+  green run, not a stable benchmark.
+
 ## Pointers
 
 - Method, format, citation grammar, quotation traps: `.qwen/skills/auto-skill-family-summary-citation-verified/`.
