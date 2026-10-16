@@ -116,6 +116,20 @@ read-only; confirm with `git push --dry-run`.
   sentences remain template literals with no checker** — beads `math-rui.3` and `.4` make them slots
   measured by the writer, which is the fix for the treadmill this sweep is.
 
+- **2026-10-16 — `math-rui.1` lands the gate-row table, and the render has to run after the last
+  commit that moves HEAD.** `notes/scripts/measure_gate_rows.py` reads the driver's report for the
+  last completed run and lands `notes/tables/gate-rows.tsv` (81 rows: `spec`, `seconds`) through the
+  promote registry, reconciled against `gate.py`'s `ROWS` block: 81 rows in list order, 594.7 s of
+  row time, 0 non-zero exits, every spec once. It is not a gate row — the driver truncates the report
+  at run start, so a gate row would read the previous run's bytes. Its `L1` names the report, outside
+  the `notes/` bucket the probe record prints, so it joins `PROBE_EXEMPT`. **Two drifts the checker
+  caught, not the page:** the render's cache key hashes the git tree digests, so a render run *before*
+  a commit lands records under a key the checker can no longer match (21 `cache entry missing`); and
+  the writer's `L1` expands `notes/tables/` to the nine TSVs, so the newest probe record for
+  `render_reports.py` had to be re-landed and `PROBES` gained `2026-10-16_rr_fleet.txt`. The census
+  page, `notes/README.md`, `index-design.md`'s TSV inventory (21 tracked, 2,567,565 B), the fleet page
+  and `templates.md` all moved with the new table, and the promote checker ends at `problems 0`.
+
 ## Pointers
 
 - Method, format, citation grammar, quotation traps: `.qwen/skills/auto-skill-family-summary-citation-verified/`.
