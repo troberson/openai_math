@@ -28,12 +28,16 @@ Report-only: writes nothing.
 """
 from __future__ import annotations
 
+import csv
+import json
 import re
 import subprocess
 import sys
 
 from catlib import render as RD
-from catlib.paths import NOTES, ROOT, SCRIPTS, read_text
+from catlib.atomic import RECORDS_ROOT
+from catlib.paths import GATE_ROWS_TSV, NOTES, ROOT, SCRIPTS, read_text
+from catlib.promote import key_for
 
 PAGE = SCRIPTS / "README.md"
 SELF = "verify_script_ownership.py"
@@ -599,6 +603,132 @@ def sync_problems(page, text) -> list[str]:
     return RD.sync_problems(page, text)
 
 
+def gate_rows() -> dict[str, str]:
+    """The gate's measured row times, read from the TSV the gate run lands."""
+    return {r["spec"]: r["seconds"] for r in csv.DictReader(
+        read_text(GATE_ROWS_TSV).splitlines(), delimiter="\t")}
+
+
+def check_calls() -> dict[str, int]:
+    """The probe's measured check()-call counts, read from the keyed record the probe lands."""
+    return json.loads((RECORDS_ROOT / key_for("measure_check_calls.py", ())
+                       / "check_calls.json").read_text(encoding="utf-8"))
+
+
+def cost_problems(text: str) -> list[str]:
+    """Pass I: the Cost cells, the self-test row figures, and the check()-count sentences.
+
+    Every figure is measured: a Cost cell is the gate row time for the spec that names the checker,
+    a self-test figure is the gate row time for the `run_tests.py` row that names the test file, and
+    a count is the probe's record. The pass carries none of these numbers.
+
+    Nothing is exempted. The page wraps lines, so every sentence is matched on the block with its
+    whitespace folded — a line break inside a phrase is one space. The checker name is normalized
+    from the record's bare key by adding the extension the page uses, and the test file is the
+    checker name with `verify_` dropped. The floors are the populations the TSV and the record name,
+    so a page that drops a figure is flagged rather than skipped.
+    """
+    p = []
+    rows = gate_rows()
+    calls = check_calls()
+    folded = re.sub(r"\s+", " ", text)
+    cost = re.findall(r"^\| `([a-z0-9_]+\.py)` \|.*\| ([0-9.]+) \|$", text, re.MULTILINE)
+    if not cost:
+        return ["no Cost table rows read"]
+    for name, cell in cost:
+        spec = next((s for s in rows if s.startswith(name)), None)
+        if spec is None:
+            p.append(f"no gate row names {name}")
+            continue
+        want = "0" if rows[spec] == "0.0" else rows[spec]
+        if cell != want:
+            p.append(f"Cost cell for {name}: page {cell}, gate row {spec} measured {want}")
+    # The prose paragraphs, keyed by the checker each names. Table blocks are not prose.
+    blocks = [re.sub(r"\s+", " ", b) for b in text.split("\n\n")
+              if not b.lstrip().startswith("|")]
+    # The page's own claims are the population. The pass reads every figure the page states about
+    # a self-test row, keys it to the checker named before it in the same paragraph, and checks it
+    # against the gate row that names that checker's test file. A row the page never discusses is
+    # not a defect, so no checker is exempted by name.
+    claims = 0
+    for b in blocks:
+        for m in re.finditer(r"`run_tests\.py` row measures \*\*([0-9.]+) s\*\*", b):
+            head = b[:m.start()]
+            # The closest preceding checker, by position in the paragraph. The Cost table's order is
+            # alphabetical, so taking the last name in that order hands every later figure in a
+            # multi-checker paragraph to the alphabetically last checker.
+            pos = [(head.index(f"`{n}`"), n) for n, _ in cost if f"`{n}`" in head]
+            if not pos:
+                p.append(f"the self-test figure {m.group(1)} s is not keyed to a checker")
+                continue
+            name = max(pos)[1]
+            stem = name.removeprefix("verify_").removesuffix(".py")
+            spec = f"run_tests.py notes/scripts/tests/test_{stem}.py -q"
+            claims += 1
+            if rows.get(spec) != m.group(1):
+                p.append(f"{name}: the page says {m.group(1)} s, the gate row measured {rows.get(spec)}")
+    # The count sentence must sit in the paragraph that begins with the checker's own name. The Cost
+    # prose is one block, so a block-level test lets a count belonging to a neighbouring checker
+    # satisfy this checker's requirement — the sources paragraph's count carried named_results.
+    lines = text.split("\n")
+    starts = [k for k, l in enumerate(lines) if l.startswith("`verify_")]
+    paras: dict[str, list[str]] = {}
+    for i, k in enumerate(starts):
+        head = re.match(r"`([a-z0-9_]+\.py)`", lines[k])
+        if head is None:
+            continue
+        end = starts[i + 1] if i + 1 < len(starts) else len(lines)
+        paras.setdefault(head.group(1), []).append(
+            re.sub(r"\s+", " ", "\n".join(lines[k:end])))
+    counts = 0
+    for checker, n in calls.items():
+        name = checker if checker.endswith(".py") else f"{checker}.py"
+        want = f"the {n} `check()` calls"
+        if any(want in s for s in paras.get(name, [])):
+            counts += 1
+        else:
+            p.append(f"{checker}: the check() count is not {n}")
+    checker_rows = [s for s in rows if s.startswith("verify_")]
+    csum = sum(float(rows[s]) for s in checker_rows)
+    if f"The {len(checker_rows)} checker invocations sum to **{csum:.1f} s**" not in folded:
+        p.append(f"the checker sum is not {len(checker_rows)} invocations at {csum:.1f} s")
+    rsum = sum(float(v) for v in rows.values())
+    if f"its {len(rows)} row times sum to **{rsum:.1f} s**" not in folded:
+        p.append(f"the row sum is not {len(rows)} rows at {rsum:.1f} s")
+    heaviest = max(float(cell) for _, cell in cost)
+    if f"**{heaviest:.1f} s** is the heaviest row with a Cost cell" not in folded:
+        p.append(f"the heaviest row with a Cost cell is not {heaviest:.1f} s")
+    if f"the heaviest checker row at **{rows[SELF]} s**" not in folded:
+        p.append(f"the heaviest checker row is not {rows[SELF]} s")
+    # Every writer figure the page names is checked against the gate row that names that writer.
+    # The tail is the page's own claim, so the pass reads it from the page, not from a list.
+    tail = re.findall(r"`([a-z0-9_]+\.py)` ([0-9.]+) s", folded)
+    for name, val in tail:
+        if rows.get(name) != val:
+            p.append(f"the tail names {name} at {val} s, the gate row measured {rows.get(name)}")
+    # Every checker row must be accounted for: a Cost cell in the table, or the page's own
+    # declaration that the checker is not a row above. The exemption is read from that sentence, so
+    # a checker is not exempted by name — a page-wide "not a row above" excuses every row.
+    exempt = set(re.findall(r"`([a-z0-9_]+\.py)`[^.]*not a row above", folded))
+    named = dict(cost)
+    for spec in checker_rows:
+        name = spec.split()[0]
+        if name in named:
+            continue
+        if name in exempt:
+            continue
+        p.append(f"{name} is a checker row the Cost table does not carry and the page does not account for")
+    # The floors keep the pass from reporting green on a page that carries nothing. The record
+    # names every checker whose count the page must state, so the count floor is the record's
+    # population. The claim and tail floors are the page's own claims, which the pass reads off
+    # the page; a gate row the page never discusses is not a defect.
+    if not claims or not tail:
+        p.append(f"the pass read {claims} self-test figures and {len(tail)} tail figures")
+    if counts < len(calls):
+        p.append(f"the pass read {counts} counts, below {len(calls)} recorded checkers")
+    return p
+
+
 def main():
     text = read_text(PAGE)
     print("=== notes/scripts/README.md ownership check ===")
@@ -628,15 +758,18 @@ def main():
     print(f"templates census (notes/development/templates.md): {len(template_measure())} templates "
           f"on disk, {len(tpl)} problems")
     p = check(text)
+    cost = cost_problems(text)
     sync = sync_problems(README, read_text(README))
-    for x in p + tpl + sync:
+    for x in p + tpl + cost + sync:
         print(f"PROBLEM: {x}")
+    print(f"Cost pass (Cost cells, self-test row figures, check() counts): {len(cost)} problems")
     print(f"sync problems (notes/README.md): {len(sync)}")
     print(f"reconciliation: writers == page {not any('writer' in x for x in p)}")
     print(f"reconciliation: census rows == disk {not any('census' in x for x in p)}")
     print(f"reconciliation: naming complete {not any('named' in x for x in p)}")
     print(f"reconciliation: templates page == disk {not tpl}")
-    sys.exit(1 if p + tpl + sync else 0)
+    print(f"reconciliation: Cost figures measured {not cost}")
+    sys.exit(1 if p + tpl + cost + sync else 0)
 
 
 if __name__ == "__main__":
