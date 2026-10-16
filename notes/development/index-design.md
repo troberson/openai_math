@@ -216,9 +216,9 @@ manuscript-level flag.
   The index itself is rendered — **1,033** pages, **16** tables, `links checked 48012 broken 0`, and a
   two-run determinism check in which all **1,049** generated files were byte-identical with an
   identical report — but no page was read for prose quality. The byte cost is measured: the index tree
-  carries **11536312** B over the **1,033** pages, and the 16 tables are counted in the
+  carries **11536454** B over the **1,033** pages, and the 16 tables are counted in the
   `notes/tables/*.tsv` sum. The render-time figure is the registry's own subset: the disk check
-  (`notes/scripts/check_index_links.py`) covers **66,147** links over the same 1,033 pages, also with
+  (`notes/scripts/check_index_links.py`) covers **66,148** links over the same 1,033 pages, also with
   **0** broken, and **17,700** of them resolve to a directory. `notes/development/index-links.md` carries
   that measurement; the prose-quality exclusion above is unchanged by it.
 - The **13,802** bib entries are counted by `^\s*@\w+\s*{`; commented-out entries are included and
