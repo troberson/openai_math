@@ -59,9 +59,19 @@ read-only; confirm with `git push --dry-run`.
   cells, the checker-invocation sum, the wall/sum/percentage, the writer tail, the page_sync
   "heaviest row" claim, and the 11 `run_tests.py` row figures. Kept as history: the `--mutant`
   comparisons, the "before the record" figures, and the pre-cache 65/64-invocation times. **Not
-  swept, because the gate does not measure them:** the per-checker `check()`-call counts
-  (six/seven/ten/eleven/fourteen/fifteen/sixteen/seventeen/twenty/nine/thirteen) and "the 59-script
-  scan". A revisit needs a scan of `notes/scripts/tests/`, not a gate row.
+  swept in that pass:** the per-checker `check()`-call counts and "the 59-script scan" — swept by
+  the 2026-10-16 probe below.
+
+- **2026-10-16 — the `check()`-call counts are swept by a probe, not by the gate.** The probe wraps
+  `check` at load time (the conftest builds each checker through `spec_from_file_location`, so
+  patching that function wraps the module the tests actually call) and counts real calls during each
+  row's pytest run: findings 7→9, faithfulness 16→33, sources 13→15, index_design 15→16,
+  fleet_design 17→23, verification_dirs 20→21, named_results 14→15, citations 10→12, t0_chains
+  14→17, dependency_drift 11→12, subfinding_pairs 9→11, and the 59-script scan → 68. **These
+  sentences are template literals with no checker**: the census checker does not measure them, so
+  the sweep lands bytes the writer reproduces, not bytes any pass verifies. The probe is scratch
+  under `.qwen/tmp/count_check_calls.py`; a revisit that wants the counts gated promotes it to
+  `notes/scripts/` with a census row and a gate row.
 
 ## Pointers
 
