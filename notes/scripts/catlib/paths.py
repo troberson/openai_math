@@ -39,13 +39,20 @@ DEPS_TSV = TABLES / "formalization-deps.tsv"
 STANDING_TSV = TABLES / "conjecture-standing.tsv"
 TOPICS_TSV = TABLES / "topics.tsv"
 QUOTES_TSV = TABLES / "quotes.tsv"
+GATE_ROWS_TSV = TABLES / "gate-rows.tsv"
 INDEX_DIR = NOTES / "index"
 SUMMARIES_DIR = NOTES / "summaries"
 
-# The eight TSVs the proof gate hashes; the gate's snapshot rule is this list plus every
+# The gate driver's report for the last completed run. It is untracked scratch, truncated at run
+# start, so a writer reading it sees the previous completed run — which is what the census page
+# records, and why the writer is not a gate row.
+GATE_REPORT = ROOT / ".qwen" / "tmp" / "reports" / "gate_run1.txt"
+
+# The nine TSVs the proof gate hashes; the gate's snapshot rule is this list plus every
 # file under INDEX_DIR. The snapshot used to name a ninth, notes/named-results.tsv, which
 # no writer produces — the named-result page is report-fed, not table-fed — so the phantom
-# entry and the 2>/dev/null that hid it are gone together.
+# entry and the 2>/dev/null that hid it are gone together. `gate-rows.tsv` is the ninth real
+# entry: the per-row wall times of the last completed gate run.
 GATE_TSVS = (
     LEDGER_TSV,
     SOURCES_TSV,
@@ -55,6 +62,7 @@ GATE_TSVS = (
     DEPS_TSV,
     STANDING_TSV,
     TOPICS_TSV,
+    GATE_ROWS_TSV,
 )
 
 

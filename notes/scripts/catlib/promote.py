@@ -121,6 +121,10 @@ L1: dict[str, tuple[str, ...]] = {
     # inside the hashed trees. It opens no `notes/` file, so its L1 is empty and the probe scope
     # (which excludes `notes/scripts/`) has nothing to compare.
     "build_index_db.py": (),
+    # The gate-row table is a function of the driver's report for the last completed run. The report is
+    # untracked scratch under `.qwen/`, so the key hashes its bytes directly; the probe record prints
+    # the `notes/` bucket, which cannot name it, so this writer is probe-exempt.
+    "measure_gate_rows.py": (".qwen/tmp/reports/gate_run1.txt",),
 }
 
 ARTIFACTS: dict[str, tuple[str, ...]] = {
@@ -146,6 +150,9 @@ ARTIFACTS: dict[str, tuple[str, ...]] = {
     # The FTS database is untracked by the bead's rule — gitignored, rebuilt by script, never
     # committed — so there are no tracked bytes to compare, and the L1 pass proves its read surface.
     "build_index_db.py": (),
+    # The gate-row table is the ninth entry in `catlib.paths.GATE_TSVS`: the per-row wall times of the
+    # last completed gate run, landed from the driver's report.
+    "measure_gate_rows.py": ("notes/tables/gate-rows.tsv",),
 }
 
 
@@ -175,6 +182,9 @@ ARGS: dict[str, tuple[str, ...]] = {
     # The plain run lands the database; `--check-only` builds in memory and lands nothing, so the
     # canonical key is the plain run's.
     "build_index_db.py": (),
+    # The canonical run is the plain run, which lands the TSV; `--check-only` measures the report and
+    # lands nothing, so it does not share the plain run's record.
+    "measure_gate_rows.py": (),
 }
 
 # The writers table names one writer the protocol deliberately excludes: `measure_open_probe.py`'s
@@ -185,10 +195,12 @@ NON_CACHED = frozenset({"measure_open_probe.py"})
 # the checkers: `refresh_summary_line_counts.py` rewrites the `Lines` cell of the summaries pages.
 PAGE_EXTRA = frozenset({"refresh_summary_line_counts.py"})
 
-# One writer's L1 cannot be proved against the audit-hook record: `build_report_templates.py` reads
+# Two writers' L1 cannot be proved against the audit-hook record. `build_report_templates.py` reads
 # each page with `git show HEAD:<page>`, a subprocess read the `open` audit event never sees, so the
-# record for it carries only the reads its imports perform. Its L1 is the page set its own source names.
-PROBE_EXEMPT = frozenset({"build_report_templates.py"})
+# record for it carries only the reads its imports perform; its L1 is the page set its own source names.
+# `measure_gate_rows.py` reads the gate driver's report under `.qwen/`, outside the `notes/` bucket the
+# record prints, so the exactness pass has nothing to compare it with.
+PROBE_EXEMPT = frozenset({"build_report_templates.py", "measure_gate_rows.py"})
 
 # The same writer's L1 must be hashed from HEAD, not from the working tree, because that is what it
 # reads. Its own output feeds one of the L1 entries: `notes/development/templates.md` tabulates the
