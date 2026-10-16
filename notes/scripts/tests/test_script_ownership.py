@@ -106,9 +106,136 @@ def tpl(mod):
     return mod.read_text(mod.TEMPLATES_PAGE)
 
 
+def cost_row(t, name):
+    """The Cost table's own row for a checker."""
+    return next(l for l in t.splitlines() if l.startswith(f"| `{name}`"))
+
+
+def shift_cost_cell(t, name, delta=1.0):
+    """Shift the Cost cell of a checker's row. The cell is measured from the gate run, so the fault is
+    built from the row as it stands, not from a transcription of the measured time."""
+    row = cost_row(t, name)
+    cells = row.split("|")
+    cells[-2] = f" {float(cells[-2]) + delta:.1f} "
+    return t.replace(row, "|".join(cells), 1)
+
+
+def delete_cost_row(t, name):
+    """Delete a checker's Cost row. The checker stays a gate row, so the page must account for it."""
+    return t.replace(cost_row(t, name) + "\n", "", 1)
+
+
+def cost_para(t, name):
+    """The Cost-section paragraph for a checker: the line range beginning with the checker's name in
+    backticks, ending at the next checker-name paragraph. A continuation line can begin with a
+    backtick, so the boundary is the next paragraph naming a checker, not the next backtick."""
+    lines = t.split("\n")
+    starts = [k for k, l in enumerate(lines) if l.startswith("`verify_")]
+    for i, k in enumerate(starts):
+        if not lines[k].startswith(f"`{name}`"):
+            continue
+        end = starts[i + 1] if i + 1 < len(starts) else len(lines)
+        seg = "\n".join(lines[k:end])
+        if re.search(r"`run_tests\.py` row measures\s+\*\*[0-9.]+ s\*\*", seg):
+            off = sum(len(x) + 1 for x in lines[:k])
+            return off, off + sum(len(x) + 1 for x in lines[k:end])
+    raise AssertionError(f"no Cost paragraph carries {name}'s run_tests figure")
+
+
+def selftest_span(t, name):
+    """The span of the page's `run_tests.py` figure inside the checker's own Cost paragraph."""
+    lo, hi = cost_para(t, name)
+    m = re.search(r"`run_tests\.py` row measures\s+\*\*([0-9.]+) s\*\*", t[lo:hi])
+    assert m, f"no run_tests figure in the Cost paragraph for {name}"
+    return lo + m.start(), lo + m.end(), m.group(1)
+
+
+def bump_selftest(t, name, delta=1.0):
+    s, e, raw = selftest_span(t, name)
+    new = f"{float(raw) + delta:.1f}"
+    return t[:s] + t[s:e].replace(raw, new, 1) + t[e:]
+
+
+def rekey_selftest(t, donor, target):
+    """Move the donor checker's row figure into the target checker's Cost paragraph. A pass that
+    pairs a figure with the alphabetically last checker named in the block, rather than the closest
+    preceding one, reports this as the donor's figure."""
+    _, _, donor_fig = selftest_span(t, donor)
+    s, e, target_fig = selftest_span(t, target)
+    return t[:s] + t[s:e].replace(target_fig, donor_fig, 1) + t[e:]
+
+
+def bump_calls(t, name, delta=1):
+    """Change the `check()` count inside the checker's own Cost paragraph."""
+    lo, hi = cost_para(t, name)
+    m = re.search(r"the\s+(\d+)\s+`check\(\)`\s+calls", t[lo:hi])
+    assert m, f"no check() count in the Cost paragraph for {name}"
+    raw = m.group(1)
+    new = str(int(raw) + delta)
+    s, e = lo + m.start(), lo + m.end()
+    return t[:s] + t[s:e].replace(raw, new, 1) + t[e:]
+
+
+def delete_para(t, name):
+    """Delete the checker's Cost paragraph."""
+    lo, hi = cost_para(t, name)
+    return t[:lo] + t[hi:]
+
+
+def bump_num(t, pat, delta=1.0):
+    """Find the page's own count phrase by shape and change its number, so a figure that moves with
+    the gate run does not require a hand-edit here."""
+    m = re.search(pat, t)
+    assert m, f"{pat!r} not in the page"
+    raw = m.group(1)
+    new = f"{float(raw) + delta:.1f}"
+    span = t[m.start():m.end()]
+    return t[:m.start()] + span.replace(raw, new, 1) + t[m.end():]
+
+
+# Faults in the Cost section, each keyed to the pass that owns it. Every figure the pass compares is
+# measured: the Cost cells and the row figures come from notes/tables/gate-rows.tsv, the check()
+# counts from the keyed check_calls.json record.
+COST_CASES = [
+    ("Cost cell altered", "Cost cell for verify_findings.py",
+     lambda t: shift_cost_cell(t, "verify_findings.py")),
+    ("Cost row deleted", "is a checker row the Cost table does not carry",
+     lambda t: delete_cost_row(t, "verify_findings.py")),
+    ("self-test figure altered", "verify_findings.py: the page says",
+     lambda t: bump_selftest(t, "verify_findings.py")),
+    ("self-test figure re-keyed", "verify_subfinding_pairs.py: the page says",
+     lambda t: rekey_selftest(t, "verify_named_results.py", "verify_subfinding_pairs.py")),
+    ("check() count altered", "verify_named_results: the check() count is not 15",
+     lambda t: bump_calls(t, "verify_named_results.py")),
+    ("check() sentence deleted", "verify_citations: the check() count is not 12",
+     lambda t: delete_para(t, "verify_citations.py")),
+    ("checker sum altered", "the checker sum is not",
+     lambda t: bump_num(t, r"The\s+\d+\s+checker\s+invocations\s+sum\s+to\s+\*\*([0-9.]+)\s+s\*\*")),
+    ("row sum altered", "the row sum is not",
+     lambda t: bump_num(t, r"row\s+times\s+sum\s+to\s+\*\*([0-9.]+)\s+s\*\*")),
+    ("heaviest-row claim altered", "the heaviest row with a Cost cell is not",
+     lambda t: bump_num(t, r"\*\*([0-9.]+)\s+s\*\*\s+is\s+the\s+heaviest\s+row\s+with\s+a\s+Cost\s+cell")),
+    ("tail figure altered", "the tail names render_reports.py",
+     lambda t: bump_num(t, r"`render_reports\.py`\s+([0-9.]+)\s+s")),
+]
+
+
+@pytest.mark.parametrize("label,needle,mut", COST_CASES)
+def test_cost_section_faults(mod, page, label, needle, mut):
+    """A Cost cell, a row, a row figure, a check() count, or a sum in the Cost section, altered in
+    memory. The pass re-derives every figure from the gate row TSV and the keyed record, so a checker
+    that carried the numbers would report green on all ten."""
+    cand = mut(page)
+    assert cand != page, f"{label}: mutation changed nothing"
+    found = mod.cost_problems(cand)
+    assert any(needle in x for x in found), f"{label}: NOT caught by {needle!r} ({found[:2]})"
+
+
 def test_clean_pages(mod):
     """The census page, the templates census, and the generated ledger readme are all silent."""
     assert mod.check(mod.read_text(mod.PAGE)) == [], mod.check(mod.read_text(mod.PAGE))[:3]
+    assert mod.cost_problems(mod.read_text(mod.PAGE)) == [], \
+        mod.cost_problems(mod.read_text(mod.PAGE))[:3]
     assert mod.templates_problems(mod.read_text(mod.TEMPLATES_PAGE)) == [], \
         mod.templates_problems(mod.read_text(mod.TEMPLATES_PAGE))[:3]
     assert mod.sync_problems(mod.README, mod.read_text(mod.README)) == [], \
