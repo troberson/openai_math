@@ -394,7 +394,7 @@ the walk once.
 `verify_subfinding_pairs.py` is the same case with `overview.tex`, `notes/tables/subfindings.tsv` and the
 ledger: `load_inputs()` is under `functools.cache` (`:54`), so its `run_tests.py` row measures **1.9 s**
 where the `--mutant` row took **0.1 s** — the 11 `check()` calls the row makes pay the walk once.
-`verify_page_sync.py --both` at **12.5 s** is the heaviest row with a Cost cell. `verify_script_ownership.py`,
+`verify_page_sync.py --both` at **28.0 s** is the heaviest row with a Cost cell. `verify_script_ownership.py`,
 this page's own checker, is the heaviest checker row at **64.7 s** and is not a row
 above.
 `verify_page_sync.py`'s Cost is one number, not a pair: `--both`
