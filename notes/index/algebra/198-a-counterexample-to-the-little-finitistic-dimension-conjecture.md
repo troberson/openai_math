@@ -13,7 +13,7 @@
 | Claim shapes | resolution, counterexample |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [commutative-algebra](../topics/commutative-algebra.md) · [category-theory](../topics/category-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [198-a-counterexample-to-the-little-finitistic-dimension-conjecture.md](../../../notes/summaries/algebra/198-a-counterexample-to-the-little-finitistic-dimension-conjecture.md) |
 
 ## Manuscripts
 
