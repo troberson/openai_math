@@ -146,6 +146,20 @@ read-only; confirm with `git push --dry-run`.
   page's gate paragraph moved to 82 invocations: the writer measures that count off `gate.py`'s `ROWS`
   block, so the row had to be committed before the render could measure it.
 
+- **2026-10-16 — `math-rui.3` slots the Cost prose, and two figures stay literal because the gate
+  driver prints no wall time.** The checker-invocation count and sum, the row-time sum, the heaviest
+  row with a Cost cell, and the four writer tail times are all readable from
+  `notes/tables/gate-rows.tsv`, so the writer renders each whole sentence: 24 checker invocations
+  summing to 121.7 s, 81 row times summing to 594.7 s, the heaviest Cost row at 64.7 s. The gate wall
+  and its percentage of the serial baseline are **not** in the TSV — the driver prints per-row times
+  only, never a total — so those two stay template literals with no checker. **A generator expression
+  cannot be split across two f-string literals:** the first `{` is never closed and all three linters
+  report the same 47 syntax errors rooted at that line. The cost is not local: the broken writer makes
+  the pytest rows that import it fail, so the probe read `total check calls 21` with 9 baseline
+  disagreements instead of 184 with 0. **The record key moves with the writer:**
+  `measure_check_calls.py`'s `L1` is the script tree, so editing `render_reports.py` invalidates the
+  record the render reads, and the probe must run cold before the builder and render.
+
 ## Pointers
 
 - Method, format, citation grammar, quotation traps: `.qwen/skills/auto-skill-family-summary-citation-verified/`.
