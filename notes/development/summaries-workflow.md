@@ -95,6 +95,17 @@ read-only; confirm with `git push --dry-run`.
   hand. A sweep is now a per-green-run step, and the page's Cost section is the record of the last
   green run, not a stable benchmark.
 
+- **2026-10-16 — the Cost section is swept to the fourth green run, and the builder sweep runs
+  after every commit that moves `templates.md`, not just after the page commit.** The fourth green
+  run measured **239.30 s** wall (04:53:47–04:57:46 local), **604.9 s** row-time sum, **39.6%** of
+  the sum, 24 checker invocations summing **125.0 s**. 11 of 23 Cost cells moved, the writer tail,
+  the heaviest-row claim, and 7 of 11 `run_tests.py` figures. **The ordering refinement:** the
+  earlier rule said "builder sweep after the commit", which covered only the page commit. The
+  template commit also moves `notes/development/templates.md`, which is in the builder's L1, so the
+  builder must run again after it. The gate's sixth run failed 2 rows — 21 `cache entry missing`
+  for `build_report_templates.py` — for exactly that reason; the re-run took the promote checker to
+  `problems 0`.
+
 ## Pointers
 
 - Method, format, citation grammar, quotation traps: `.qwen/skills/auto-skill-family-summary-citation-verified/`.
