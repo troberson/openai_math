@@ -109,10 +109,6 @@ def count_calls(targets: list[str]) -> dict[str, int]:
     return counts
 
 
-def write(counts: dict[str, int]) -> None:
-    cached(KEY, "check_calls.json", lambda: json.dumps(counts, indent=1))
-
-
 def report(counts: dict[str, int]) -> None:
     bad = [t for t in TARGETS if counts[t] != BASELINE[t]]
     print(f"record key {KEY}")
@@ -125,9 +121,16 @@ def report(counts: dict[str, int]) -> None:
 
 
 def main() -> int:
-    counts = count_calls(TARGETS)
-    if "--check-only" not in sys.argv[1:]:
-        write(counts)
+    def build() -> str:
+        return json.dumps(count_calls(TARGETS), indent=1)
+
+    # A warm run reads the record: the key hashes the script tree, so a run that changes nothing
+    # reads the bytes the first run landed and pays no pytest rows. --check-only builds without
+    # landing, so the measurement is the same and the store is untouched.
+    if "--check-only" in sys.argv[1:]:
+        counts = json.loads(build())
+    else:
+        counts = json.loads(cached(KEY, "check_calls.json", build))
     report(counts)
     return 1 if any(counts[t] < 0 for t in TARGETS) else 0
 
