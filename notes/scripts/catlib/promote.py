@@ -205,12 +205,14 @@ NON_CACHED = frozenset({"measure_open_probe.py"})
 # the checkers: `refresh_summary_line_counts.py` rewrites the `Lines` cell of the summaries pages.
 PAGE_EXTRA = frozenset({"refresh_summary_line_counts.py"})
 
-# Two writers' L1 cannot be proved against the audit-hook record. `build_report_templates.py` reads
+# Three writers' L1 cannot be proved against the audit-hook record. `build_report_templates.py` reads
 # each page with `git show HEAD:<page>`, a subprocess read the `open` audit event never sees, so the
 # record for it carries only the reads its imports perform; its L1 is the page set its own source names.
 # `measure_gate_rows.py` reads the gate driver's report under `.qwen/`, outside the `notes/` bucket the
-# record prints, so the exactness pass has nothing to compare it with.
-PROBE_EXEMPT = frozenset({"build_report_templates.py", "measure_gate_rows.py"})
+# record prints, so the exactness pass has nothing to compare it with. `measure_check_calls.py` names
+# the script tree, which the record's printed scope excludes, so its entry is hashed and never compared.
+PROBE_EXEMPT = frozenset({"build_report_templates.py", "measure_gate_rows.py",
+                          "measure_check_calls.py"})
 
 # The same writer's L1 must be hashed from HEAD, not from the working tree, because that is what it
 # reads. Its own output feeds one of the L1 entries: `notes/development/templates.md` tabulates the
