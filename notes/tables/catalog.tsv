@@ -93,7 +93,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 095	Convex and metric geometry	Hyperbolicity cones without semidefinite lifts	3	1	T3	1	1	1	384	0	0	0		resolution|counterexample	0	1	1		0	0	0
 096	Convex and metric geometry	The Gaussian propeller conjecture	1	1	T3	1	1	1	515	0	0	0		bound|partial	0	1	0		0	0	0
 097	Convex and metric geometry	The Euclidean Steinitz--Bergström conjecture	1	1	T3	1	1	1	464	0	0	0		bound|partial	0	1	0		0	0	0
-098	Convex and metric geometry	A negative answer to the Lang--Plaut problem	1	1	T3	2	2	1	424	0	0	0			0	1	1		0	0	0
+098	Convex and metric geometry	A negative answer to the Lang--Plaut problem	1	1	T3	2	2	1	424	0	0	0			0	1	1		0	0	1
 099	Convex and metric geometry	The sharp distortion of edit distance into $\ell_1$	3	0	T2	4	0	1	1653	0	0	0		bound|partial|uniform	0	0	0		0	0	0
 100	Convex and metric geometry	A counterexample to Bang's cylinder-covering bound	4	0	T2	3	0	1	2568	0	0	0		counterexample|bound	0	1	1		0	0	0
 101	Convex and metric geometry	The sharp simplex conjecture for isotropic constants	1	0	T0	0	0	0	0	1	0	0		resolution|bound	0	1	0		0	0	1
