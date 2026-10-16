@@ -378,7 +378,7 @@ once.
 calls the row makes pay the 749-directory bundle scan and the ledger join once.
 `verify_named_results.py` is the keyed-record case, not the in-process-cache case: its `population()`
 reads `named_results.json` under the producer's key, so the plain row is **0.6 s** and the
-`run_tests.py` row measures **7.6 s** — the 15 `check()` calls pay the 7,240-file walk once,
+`run_tests.py` row measures **7.6 s** — {{ p['calls_named_results'] }},
 under the key the producer landed, not inside the checker. Before the record the plain row was 18.9 s
 and the test row 23.8 s. The remaining cost is the per-`check()` read of 61 anchors and 61 quotations,
 which a mutant does multiply.
