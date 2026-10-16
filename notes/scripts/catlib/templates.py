@@ -85,7 +85,6 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
     # findings.md's summary-page and index-link counts move when a summary page is added, so the page's
     # slots are the writer's measurement of the summaries tree, the ledger, and the cached index scan.
     "notes/reports/findings.md": R.findings_population,
-    "notes/development/summaries-workflow.md": R.workflow_population,
 }
 # The writer's own slot dict per page. These are the calls render_reports.py makes when it renders,
 # so the labels and phrase strings the template gets are the writer's by construction.
@@ -125,8 +124,6 @@ LABELS: dict[str, Callable[[], dict[str, str]]] = {
         POPULATIONS["notes/development/templates.md"]()),
     "notes/scripts/README.md": lambda: R.ownership_phrases(POPULATIONS["notes/scripts/README.md"]()),
     "notes/reports/findings.md": lambda: R.findings_phrases(POPULATIONS["notes/reports/findings.md"]()),
-    "notes/development/summaries-workflow.md": lambda: R.workflow_phrases(
-        POPULATIONS["notes/development/summaries-workflow.md"]()),
 }
 PHRASE_FNS = ("count_phrases", "size_phrases")
 ALL_PAGES = {
@@ -199,9 +196,6 @@ ALL_PAGES = {
     # summary-page and index-link counts are now writer slots, so the render diff is the pass that proves
     # them. The checker carries no count_phrases/size_phrases, so the builder reports NOT DERIVED.
     "notes/reports/findings.md": "verify_findings.py",
-    # The workflow page has no measurement checker of its own; its render diff is the pass that
-    # owns it, so the registry names the sync checker, the same way the five sync pages are named.
-    "notes/development/summaries-workflow.md": "verify_page_sync.py",
 }
 # The template file name per page. The builder names a template by the page's basename, so the two
 # README.md pages collide: notes/README.md owns README.md.j2 and the scripts census takes

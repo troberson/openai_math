@@ -65,7 +65,6 @@ import measure_templates as MTPL
 import measure_topics as MT
 from catlib import bib, ledger, overview, preprints, records, tsv
 from catlib import quotes as Q
-from catlib import summaries as SM
 from catlib import text as TX
 from catlib import yaml as Y
 from catlib.atomic import Staging
@@ -84,7 +83,7 @@ from catlib.paths import (
     SUBFINDINGS_TSV,
     owner,
 )
-from catlib.promote import ARTIFACTS, NON_CACHED, PROBES, bd_ready_count, key_for
+from catlib.promote import key_for
 from jinja2 import Environment, FileSystemLoader
 
 TPL = ROOT / "notes" / "templates" / "report"
@@ -1201,11 +1200,6 @@ CHILDREN: dict[str, list[str]] = {
     "extract_links": [sys.executable, str(ROOT / "notes" / "scripts" / "extract_links.py"), "--check-only"],
     "measure_summaries_seed": [sys.executable, str(ROOT / "notes" / "scripts" / "measure_summaries_seed.py"),
                             "--check-only"],
-    # The two summaries checkers, for the workflow page's live counts. Both write nothing, so the
-    # gate rule that a pooled row spawns no writer holds; the page's marker and quotation counts
-    # are the checker's own report, parsed, not the writer's re-implementation of pass B.
-    "verify_summaries": [sys.executable, str(ROOT / "notes" / "scripts" / "verify_summaries.py"), "--quiet"],
-    "check_summary_manuscripts": [sys.executable, str(ROOT / "notes" / "scripts" / "check_summary_manuscripts.py")],
 }
 # A thread, not a `Popen` we hold: `subprocess.run` owns its process as a context manager, so the
 # launch site carries no open resource, and the thread blocks in the kernel wait, which releases the GIL.
@@ -2648,109 +2642,6 @@ def findings_page(p: dict[str, str]) -> str:
     return ENV.get_template("findings.md.j2").render(p=p)
 
 
-WORKFLOW_MD = DEV_DIR / "summaries-workflow.md"
-WORKFLOW_TOTAL = re.compile(r"TOTAL (\d+) page\(s\): (\d+) marker positions, (\d+) quoted spans, (\d+) problems")
-WORKFLOW_MS = re.compile(r"pages (\d+)  pages with an off-family manuscript (\d+)  manuscript dirs named (\d+)"
-                         r"  unnamed-on-catalog (\d+)  named-by-another-family (\d+)")
-def workflow_population() -> dict[str, Any]:
-    """Every live count on notes/development/summaries-workflow.md.
-
-    `verify_summaries.py` runs as a child and the page's marker and quotation counts are its
-    report, parsed. The manuscript counts are the writer's own walk of the summaries tree through
-    `catlib.summaries`, the same join the checker uses, so the writer opens every page it counts
-    and the key hashes the tree: a new summary page must invalidate the record, not serve a page
-    whose Pages-done list names the family it superseded. The gate failures, the head diff, the
-    lint exit, and the test pass count are results of a run, not functions of a digest, so the
-    page carries them as dated observations the way notes/development/fleet-design.md carries its
-    wall times. The push state and the ready-queue count are live state read through a subprocess;
-    `catlib.promote.RUN_ARGS` puts both in the key so a push cannot leave a cached page naming the
-    commit it superseded.
-    """
-    mt = WORKFLOW_TOTAL.search(child_out("verify_summaries"))
-    assert mt is not None, "the verify_summaries report has no total line"
-    total = mt.groups()
-    ms_mt = WORKFLOW_MS.search(child_out("check_summary_manuscripts"))
-    assert ms_mt is not None, "the check_summary_manuscripts report has no page line"
-    ms = ms_mt.groups()
-    rows = population_of("README")["rows"]
-    pages = [q for q in sorted(SUM_DIR.rglob("*.md")) if q.name != "README.md"]
-    fams = sorted(q.name.split("-")[0] for q in pages)
-    named = SM.named_dirs()
-    seen: set[str] = set()
-    stale = 0
-    for q in pages:
-        d = set(SM.page_dirs(q)[0])
-        seen |= d
-        fam = SM.page_fam(q.name)
-        stale += len(d - (named.get(fam, set()) if fam is not None else set()))
-    disk = {q.name for q in PREPRINTS.iterdir() if q.is_dir()}
-    disc = collections.Counter(r["discipline"] for r in rows if r["fam"] in set(fams)).most_common()
-    s = population_of("index-links")["scan"]
-    fleet = population_of("fleet-design")
-    entries = Y.main_results_entries()
-    targets = {line.split()[2].split("/")[-1]
-               for f in PROBES
-               for line in f.read_text(encoding="utf-8").splitlines()
-               if line.startswith("[probe2] target notes/scripts/")}
-    return {
-        "files": len(pages) + 1,
-        "markers": int(total[1]), "spans": int(total[2]), "problems": int(total[3]),
-        "ms_pages": int(ms[0]), "ms_stale": int(ms[1]), "ms_dirs": int(ms[2]),
-        "ms_unnamed": int(ms[3]), "ms_foreign": int(ms[4]),
-        "disk": len(disk), "named": len(named), "disk_unnamed": len(disk - set(named)),
-        "named_absent": len(set(named) - disk),
-        "pages": len(fams), "paps": sum(int(r["paps"]) for r in rows if r["fam"] in set(fams)),
-        "fams": fams, "disc": disc,
-        "idx_pages": len(s["pages"]), "idx_links": len(s["links"]), "idx_broken": len(s["broken"]),
-        "gate_rows": fleet["gate_rows"],
-        "families": len(rows), "paps_all": sum(int(r["paps"]) for r in rows),
-        "form_paths": len(Y.SOURCE_ID.findall(FORMALIZATION_YAML.read_text(encoding="utf-8"))),
-        "notes": sum(int(r["scope_note"]) for r in rows), "chal": sum(int(r["chal"]) for r in rows),
-        "entries": len(entries), "configs": len({e["config"] for e in entries}),
-        "writers": len(ARTIFACTS), "non_cached": len(NON_CACHED), "targets": len(targets),
-        "ready": bd_ready_count(),
-    }
-
-
-def workflow_phrases(p: dict[str, Any]) -> dict[str, str]:
-    """label → full measured phrase, for notes/development/summaries-workflow.md. The dated
-    narrative bullets in the page are template literals, not slots: they record what a batch
-    observed, and recomputing them would rewrite the record."""
-    top = [f"{n} {k}" for n, k in p["disc"] if k > 1]
-    top = [top[0]] + [x.lower() for x in top[1:]]
-    one = [n.lower() for n, k in p["disc"] if k == 1]
-    return {
-        "green": (f"**All {p['pages']} pages are green.** `verify_summaries.py` over the "
-                  f"{p['files']} files in `notes/summaries/`:"),
-        "sum_totals": (f"**{p['markers']:,} marker positions, {p['spans']:,} quoted spans, "
-                       f"{p['problems']} problems**; `check_summary_manuscripts.py`:"),
-        "ms_counts": (f"**{p['ms_pages']} pages, {p['ms_stale']} with an off-family manuscript, "
-                      f"{p['ms_dirs']} manuscript dirs named, {p['ms_unnamed']} unnamed-on-catalog, "
-                      f"{p['ms_foreign']} named-by-another-family**;"),
-        "ms_preprint": (f"{p['disk']} preprint dirs on disk, {p['named']} named by `overview.tex`, "
-                        f"{p['disk_unnamed']} on disk and unnamed, {p['named_absent']} named and absent. "
-                        f"`test_summaries.py`: **12 tests pass**."),
-        "pages_done": (f"**Pages done ({p['pages']}):** {', '.join(p['fams'])}. The ledger's "
-                       f"`summary` column is 1 for those; the generator reports "
-                       f"\"summary pages {p['pages']} of {p['families']} families, "
-                       f"{p['paps']} manuscripts behind them\"."),
-        "disc": ("By discipline: " + ", ".join(top) + ", and one each in "
-                 + ", ".join(one[:-1]) + ", and " + one[-1] + "."),
-        "gate": f"**rows {p['gate_rows']}, failures 0**",
-        "recon": (f"{p['families']} families, {p['paps_all']} manuscripts, **{p['form_paths']}** "
-                  f"formalized (`formalized (yaml)`), {p['notes']} scope notes, {p['chal']} "
-                  f"challenges, {p['entries']} `main_results` over {p['configs']} configs"),
-        "cache": (f"**writers {p['writers']} + non-cached {p['non_cached']}, probed targets "
-                  f"{p['targets']}, problems 0**"),
-        "idx": f"**{p['idx_pages']:,} pages, {p['idx_links']:,} links, {p['idx_broken']} broken**",
-        "queue": f"**{p['ready']}** issues",
-    }
-
-
-def workflow_page(p: dict[str, str]) -> str:
-    return ENV.get_template("summaries-workflow.md.j2").render(p=p)
-
-
 def templates_page(p: dict[str, str]) -> str:
     return ENV.get_template("templates.md.j2").render(p=p)
 
@@ -3936,7 +3827,6 @@ POPULATIONS: dict[str, Callable[[], Any]] = {
     # findings.md's summary and index-link counts move when a summary page is added, so the page's
     # slots are the writer's measurement of the summaries tree, the ledger, and the cached index scan.
     "findings": findings_population,
-    "summaries-workflow": workflow_population,
 }
 
 
@@ -3962,7 +3852,6 @@ PAGE_RENDERERS: dict[pathlib.Path, Callable[[], str]] = {
     TEMPLATES_MD: lambda: templates_page(templates_phrases(population_of("templates"))),
     OWNERSHIP_MD: lambda: ownership_page(ownership_phrases(population_of("scripts-README"))),
     FINDINGS_MD: lambda: findings_page(findings_phrases(population_of("findings"))),
-    WORKFLOW_MD: lambda: workflow_page(workflow_phrases(population_of("summaries-workflow"))),
 }
 
 
@@ -4023,7 +3912,6 @@ def main() -> None:
     ST.stage(OWNERSHIP_MD, render_page(OWNERSHIP_MD))
     # The findings page's index-link slot reads the cached index-links population, so it is staged last.
     ST.stage(FINDINGS_MD, render_page(FINDINGS_MD))
-    ST.stage(WORKFLOW_MD, render_page(WORKFLOW_MD))
     staged = ST.staged()
     texts = ST.staged_texts()
     if "--check-only" not in sys.argv[1:]:
