@@ -311,3 +311,43 @@ lives here. The family number names the page the trap came from.
   Measured on family 352: `read_text` returns a str, so the test's joined page is char-per-line and the
   prose-unit checks go silent. Give the page a genuine 12+ character quoted span in a block quote
   before the first stray `"`.
+
+## The normalizer contract (the template renderer, 2026-10-16)
+
+The renderer resolves a quote spec `(path, start, end)` through one math-mode-aware parser. The contract
+is what the parser must do. The numbers are floors measured over the corpus, not censuses.
+
+- **The quote pass is a substring test, not an equality test.** Pass C compares `norm(span)` with
+  `norm(" ".join(lines[a-1:b]))` using `in`, so a **prefix** of the window passes. A window that opens
+  before the quote is not caught by the quote pass — it is caught by the `BLANK` endpoint rule, so the
+  endpoints must be the quote's own first and last lines.
+- **A bare `"` in a page is a quotation opener.** MathJax needs `$` to emit, so `\"a` renders as
+  nothing, and the literal `"` it leaves in the page is read as an unpaired quote mark. Prose accents go
+  to unicode; math keeps the raw LaTeX.
+- **GitHub's parser bans these macros, and MathJax will not render them:** `\operatorname`,
+  `\colorbox`, `\fcolorbox`, `\style`, `\class`, `\cssId`, `\bbox`, `\mmlToken`, `\usepackage`,
+  `\input`, `\include`, `\catcode`. Map `\operatorname{X}` to `\mathrm{X}`; a span containing a macro
+  the table cannot make safe is emitted in a fenced code block, where MathJax does not run.
+- **Macro bodies diverge per manuscript, so a global table is wrong.** Read the manuscript's preamble.
+  Measured over the dirs that define them: `\F` has 10 distinct bodies over 86 dirs, `\R` 9, `\C` 5,
+  `\kk` 7. Floors: 673 of 749 dirs define `\newcommand`, 937 distinct macros. The read is a line-start
+  regex, so `\def`, `\let`, multi-line bodies and `\newenvironment` are missed.
+- **Parameterized macros need argument substitution.** 103 parameterized macros, 545 occurrences.
+  `\norm` is `{\lVert #1\rVert}` (a vector norm, `‖x‖`), `\abs` is `{\lvert#1\rvert}`, `\ip` is
+  `{\langle #1,#2\rangle}`, `\ket` is `{\lvert #1\rangle}`. Three bodies expand **into** banned macros:
+  `\Ext` → `{\operatorname{Ext}}`, `\Spec` → `{\operatorname{Spec}}`, `\poly` →
+  `{\operatorname{poly}}` — expanding them is what surfaces the ban.
+- **A statement environment is a lead-in, not the start of the quote.** 120 of the 2,022 located
+  windows contain a `\begin{X}` line (equation 69, theorem 43, proposition 17, lemma 11, corollary 10,
+  align 4, hypothesis 3, enumerate 2, align* 2, and 1 each for maintheorem, definition, assumption,
+  center, quote, abstract). When `\begin{X}` is the window's first line, emit the statement name as a
+  markdown bold lead-in **before** the quote and start the quote at the next line. The vocabulary
+  splits: statement = theorem, lemma, proposition, corollary, maintheorem, definition, assumption,
+  hypothesis; layout = equation, align, align*, center, quote, enumerate, abstract.
+- **`\cite[Theorem~1.1]{X}` is not stripped.** `norm()` deletes only the brace form, so the bracket
+  form must be copied verbatim.
+- **The renderer is the witness, so the proof is not a text witness.** A checker that re-implements the
+  normalizer proves nothing. The independent witness is the **provenance pass** — path exists, window in
+  range, endpoints non-blank, every declared source cited, every cited source declared — plus the render
+  diff and a human read of the rendered page.
+
