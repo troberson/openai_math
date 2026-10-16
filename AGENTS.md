@@ -66,8 +66,8 @@ lives in this file and nowhere else.
 
 - Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `atomic`, `promote`, `overview`, `ledger`, `preprints`,
   `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries`, `templates`, `records`, `quotes`, `layout` (19 modules). Import them (`from catlib import yaml as Y`);
-  do not re-implement a join in an extractor. **61** of the **68** scripts do — the rule is
-  `^[ \t]*(from|import) catlib`, so a deferred import inside a function counts — including all **23**
+  do not re-implement a join in an extractor. **62** of the **69** scripts do — the rule is
+  `^[ \t]*(from|import) catlib`, so a deferred import inside a function counts — including all **24**
   checkers; the eight non-importers are `dump_template_slots.py`, which reaches the slot dict
   through `render_reports.py` and never touches the registry, `gate.py`, which spawns rows and reads
   no corpus, `measure_needles.py`, which parses the test files with `ast` and reads no corpus,
@@ -357,9 +357,10 @@ lives in this file and nowhere else.
   verbatim** — 57 of the 1038 summaries spans are fold-equal, not raw-equal, so a writer that rendered
   raw bytes would change those 57 quotes' text; 15 of the 1038 are not located (LaTeX accent escapes and math
   pattern's `MARK` set does not tolerate), and they are seeded to `start` 0 as measured negatives, not
-  deleted. **The join-form reader is the inverse of the join-form writer:** `rows_text` does not quote a
-  cell, so `csv.DictReader` strips the quotes off a `head` that begins with `"` — a page's block quote of
-  a JSON source — which is why `catlib.tsv.read_join_rows` splits on tabs. `--check-only` measures and
+  deleted. **The TSVs are csv-written and csv-read:** `csv_text` quotes a cell containing a quote
+  character per RFC 4180, so `csv.DictReader` reads the field back verbatim, and
+  `verify_tsv_quoting.py` flags a `"` that is not at a field start — the rule GitHub's TSV viewer
+  applies, and the one Python's lenient reader never reports. `--check-only` measures and
   writes nothing; the gate runs the writer row and the `run_tests.py` row for
   `notes/scripts/tests/test_quotes.py` (**16** tests).
 - Compare the two abstracts a family ships with `python3 notes/scripts/compare_abstracts.py` — report
@@ -423,11 +424,11 @@ lives in this file and nowhere else.
   by hand before and after each move. The quote-spec probe is the rule realized a third time:
   `measure_summaries_seed.py` moved from `.qwen/tmp/measure_summaries_seed.py` and the gate does run
   it, because its report is a function of the pages on disk.
-  Scripts and generated files are **not** 1-to-1: of the **68** scripts, **15** write
+  Scripts and generated files are **not** 1-to-1: of the **69** scripts, **15** write
   (`build_catalog.py`, `build_sources.py`, `build_index.py`, `compare_abstracts.py` — with `--tsv`
   only — `extract_formalization_deps.py`, `extract_links.py`, `extract_subfindings.py`,
   `render_reports.py`, `build_report_templates.py`, `measure_open_probe.py`, `measure_names.py`,
-  `seed_quotes.py`, `extract_named_results.py`, `measure_templates.py`, `build_index_db.py`) and **53**
+  `seed_quotes.py`, `extract_named_results.py`, `measure_templates.py`, `build_index_db.py`) and **54**
   write nothing, and `build_index.py` alone renders **1,049** files. **Three** of the writers are
   record producers: `measure_names.py` lands `names.json`, `extract_named_results.py` lands
   `named_results.json`, `measure_templates.py` lands `templates.json`, all under
@@ -465,15 +466,15 @@ lives in this file and nowhere else.
   nothing. Prove the mode by running a writer plain, then with the flag, diffing the two reports (the
   write announcement is the only line allowed to differ) and confirming `git status --porcelain` is
   unchanged by the flagged run. The read-only gate pool is the block that runs rows with this flag.
-- The whole-tree test is the gate list at `notes/scripts/gate.py`: **79** invocations — the **10**
+- The whole-tree test is the gate list at `notes/scripts/gate.py`: **81** invocations — the **10**
   gated writers (`build_report_templates.py` and `measure_open_probe.py` are the writers it does not
   run), the 46 gated report-only rows (including `check_summary_manuscripts.py`,
   `locate_summary_quotes.py` and `measure_summaries_seed.py`, `check_index_links.py` plain and its extracted self-tests row, and the
-  twenty-five extracted self-tests rows, from
+  twenty-six extracted self-tests rows, from
   `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q` to
   `run_tests.py notes/scripts/tests/test_quotes.py -q` — the full list is in
-  `notes/scripts/README.md`; `read_manuscript.py` is the one script it does not run), and **23**
-  checker invocations: `verify_page_sync.py --both` (**1**) and **22** plain-only rows for the
+  `notes/scripts/README.md`; `read_manuscript.py` is the one script it does not run), and **24**
+  checker invocations: `verify_page_sync.py --both` (**1**) and **23** plain-only rows for the
   checkers whose self-tests are extracted. No checker carries a `--mutant` branch any more.
   The list is one array, `ROWS`, of (spec, needs, writes) triples over the
   generated artifacts: a row starts as soon as every row that writes its `needs` has finished, each
@@ -1053,8 +1054,8 @@ lives in this file and nowhere else.
   every time the command block is edited and would read the gap as empty the moment the naming
   lands — and recomputes the shared-basename sets
   (**1** top-level ∩ index: `README.md`; **18** index ∩ summaries slugs). It excludes
-  itself from the population, so the page's **68** scripts and **23** checkers are the run's **68** and
-  22. Its self-tests are extracted to `notes/scripts/tests/test_script_ownership.py` and run by the
+  itself from the population, so the page's **69** scripts and **24** checkers are the run's **69** and
+  23. Its self-tests are extracted to `notes/scripts/tests/test_script_ownership.py` and run by the
   gate's `run_tests.py` row: **18** injected faults — eleven in the census page's text, one prose
   count in the generated `notes/README.md` (which only the render diff can see), four in
   `notes/development/templates.md`, and two writer-source faults that move a write target out of the

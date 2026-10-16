@@ -17,7 +17,7 @@ gain anything from this file? `notes/reports/formalization-deps.md` is about a t
 gains from it, so it is a report, not development.
 
 `notes/index/` is the generated index — **1,033** pages, no tables; the **16** generated tables the index
-renders land in `notes/tables/`. `notes/summaries/` is **59** hand-written per-family pages.
+renders land in `notes/tables/`. `notes/summaries/` is **60** hand-written per-family pages.
 `notes/scripts/` is the **67**-script fleet, `notes/templates/` the **24** page skeletons the renderers
 read, and `notes/scripts/README.md` the ownership manifest that says whose bytes every file under `notes/`
 is. This file is the single entry point: no `README.md` sits inside `reports/` or `development/`.
@@ -55,7 +55,7 @@ python3 notes/scripts/extract_subfinding_pairs.py  # lays out the pairing popula
 python3 notes/scripts/verify_subfinding_pairs.py  # checks notes/reports/subfinding-pairs.md against overview.tex
 python3 notes/scripts/run_tests.py notes/scripts/tests/test_subfinding_pairs.py -q  # the extracted self-tests: 8 injected faults (a paraphrase dressed as a quote, a clause anchor on the wrong line, a title id borrowed from another family, an id in both partitions, a title dropped from the partition, a stale Summary-table count, a block for a family outside the population, and a rejected-rule yield in prose altered), each asserted against the pass that owns it
 python3 notes/scripts/seed_quotes.py  # seeds notes/tables/quotes.tsv with the (path, start, end, head, tail, mode) spec for every pair-line quote in notes/reports/subfinding-pairs.md and every quoted span the 23 summaries pages carry, and resolves each spec back to the file its path names; --tsv prints the table, --check-only writes nothing
-python3 notes/scripts/measure_summaries_seed.py  # classifies the 2058 quoted spans the 60 summaries pages carry: 1912 raw-equal, 110 fold-equal, 36 not located, 657 single-line and 1365 across 2 to 26 lines; report-only, writes nothing
+python3 notes/scripts/measure_summaries_seed.py  # classifies the 2094 quoted spans the 61 summaries pages carry: 1948 raw-equal, 110 fold-equal, 36 not located, 661 single-line and 1397 across 2 to 26 lines; report-only, writes nothing
 python3 notes/scripts/run_tests.py notes/scripts/tests/test_quotes.py -q  # the extracted self-tests: 8 resolve faults (a head absent from the window, a tail that occurs only before the head, a line past the file's end, a window whose start is after its end, a unique head that bounds too long a span, a trailing `\qquad` that must join to one space, a tag inside a word the page spells plain, math the fold loses), 5 seed cases, the pinned two-surface population (236 pair specs, 925 summaries specs, 1,147 seeded, 14 measured negatives, the raw/folded/not-located split), and the seeded table on disk reproducing every page quote in its own class
 python3 notes/scripts/verify_conditional.py  # checks notes/reports/conditional.md against the Lean source it cites; report-only, writes nothing
 python3 notes/scripts/run_tests.py notes/scripts/tests/test_conditional.py -q  # the extracted self-tests: 6 injected faults (2 fenced-block faults, a dropped block anchor, a renamed anchor file, an altered prose quote, an altered inline citation), each asserted against the pass that owns it
@@ -120,6 +120,8 @@ python3 notes/scripts/verify_fleet_design.py  # checks notes/development/fleet-d
 python3 notes/scripts/run_tests.py notes/scripts/tests/test_fleet_design.py -q  # the extracted self-tests: 20 injected faults (shifted atomicity count, altered sync split, deleted purity row, widened purity heading count, widened digest count, altered probe figure, anchor shifted outside its file, notes-page anchor past its file's end, prose count, understated TSV count, understated probe-record count, understated writer-row count in each of the two sentences that name it, a site anchor shifted to a neighbouring line in each of the six lists the site pass reads — the atomicity paragraph, the env bullet, the set-iteration bullet, and the checker-section anchor list for each of the three classes — and a dated observation the writer leaves literal, which only the render diff can see), each asserted against the pass that owns it
 python3 notes/scripts/verify_cache_promotion.py  # checks catlib/promote.py: the registry against the writers table, the L1 lists against the audit-hook records, and the cached bytes against every tracked artifact under its key; report-only, writes nothing
 python3 notes/scripts/run_tests.py notes/scripts/tests/test_cache_promotion.py -q  # the extracted self-tests: 8 injected faults (5 in the registry structures the passes read, 3 in the cache entries under the untracked key: corrupted, deleted, corrupted again), each asserted against the pass that owns it and undone after the check
+python3 notes/scripts/verify_tsv_quoting.py  # checks every notes/tables/*.tsv against the RFC 4180 rule: a field that does not start with a quote carries no quote at all, and a field that opens a quoted field must close inside the field with every interior quote doubled; report-only, writes nothing
+python3 notes/scripts/run_tests.py notes/scripts/tests/test_tsv_quoting.py -q  # the extracted self-tests: 6 injected faults (a quote moved off the field start, a quoted field that does not close, an undoubled interior quote, an extra field), each asserted against the rule that owns it
 python3 notes/scripts/verify_script_ownership.py  # checks notes/scripts/README.md: the derived writer set, the file census, naming coverage, shared basenames; report-only, writes nothing
 python3 notes/scripts/run_tests.py notes/scripts/tests/test_script_ownership.py -q  # the extracted self-tests: 18 injected faults (11 in the census page, 1 prose count in notes/README.md, 4 in notes/development/templates.md, 2 writer-source write retargets), each asserted against the check it targets
 python3 notes/scripts/verify_page_sync.py --both  # checks the render diff for notes/reports/links.md, notes/reports/names.md, notes/reports/topics.md, notes/reports/proof-density.md, notes/development/index-links.md — the page's bytes against what render_reports.py renders, and self-tests it with 5 injected prose edits, one per page, applied in memory; both passes run in one process so the corpus walk is paid once; report-only, writes nothing
@@ -490,17 +492,17 @@ and `main_results:` (config/declaration/file triples) as two flat lists with not
 the family→Lean reach the index shows is *derived* — family → config (the scope note's comparator
 links) → declaration → file — 200 declarations over 189 configs reaching **136 of 372** families, and
 formalization stays a per-manuscript flag. The 106 T2 families, whose scope notes link configs that no
-`main_results` entry names, render as *absent*, never as unformalized. Fresh report: **48054** relative
+`main_results` entry names, render as *absent*, never as unformalized. Fresh report: **48055** relative
 links with **0** broken — that is the render-time registry, and `notes/scripts/check_index_links.py`
-re-derives the check from disk over every rendered page: **66,149** links, **0** broken, **17,700** of
-them resolving to a directory and **48,449** to a file, the 18,095-link difference being registry
+re-derives the check from disk over every rendered page: **66,150** links, **0** broken, **17,700** of
+them resolving to a directory and **48,450** to a file, the 18,095-link difference being registry
 under-coverage rather than a disagreement about existence (`notes/development/index-links.md`); canonical ==
 rendered on **six of the seven** coverage counts (372 / 719 / 242 / 416 / 10 / 30) and **not** on
 `formalized`, where canonical reads **173** and the rendered pages **172** — the one-path difference is
 the yaml `sources:` entry whose manuscript is not in the ledger; `vs ledger` diffs of 0 on tier,
 `mainres`, `chal`, `paps`, `paps_form`; ledger and overview family sets equal with **372 pages and 0
 absent on disk**; 11 trace files over 10 attributed stems; **0** configs linked by more than one family;
-**0** page collisions (max slug length 93); 59 of 372 summary pairings; manuscript links resolving 719 of
+**0** page collisions (max slug length 93); 60 of 372 summary pairings; manuscript links resolving 719 of
 719 for main file, `build/` and `README.md`; **drift vs `notes/tables/topics.tsv` 0**; names 5,842 measured /
 551 subject pages / 5,291 citation-only / 9,819 edges over 372 families / **0** names with no family /
 **10 of 10** trace families covered by a subject name.
@@ -558,7 +560,7 @@ no name-to-name edge is built.
 | `companions` | `result NNN` cross-refs in the abstract | |
 | `companion_word` | abstract says "companion" | 9 families |
 | `versions` | manuscripts sharing a date-stripped dir slug | 2 families, 4 dated re-issues (003, 056) |
-| `summary` | a page exists at `notes/summaries/<discipline>/<NNN>-*.md` | Filesystem fact, not a derived claim; 59 of 372 families, 127 manuscripts behind them |
+| `summary` | a page exists at `notes/summaries/<discipline>/<NNN>-*.md` | Filesystem fact, not a derived claim; 60 of 372 families, 128 manuscripts behind them |
 
 ## Coverage tracks exposure, not importance
 
