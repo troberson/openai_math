@@ -174,6 +174,14 @@ read-only; confirm with `git push --dry-run`.
   own declaration:** a page-wide test excused every checker row, so a deleted Cost row passed.
   Patterns for the sums tolerate line breaks; a claim that wraps across a newline matches zero times.
 
+- `math-rui.5` (2026-10-16): the builder ran after the census page commit, so it read HEAD's bytes.
+  The template is unchanged (49 slots, 164 literal bold phrases), the render produces no diff on
+  `notes/scripts/README.md`, the promote checker reports `problems 0`, the census checker reports
+  `sync problems 0`, and 30 self-tests pass. **The 164 literals stay because the writer supplies no
+  value for them** — a slot exists only when the writer's value appears in HEAD's page bytes, so the
+  literals become slots when the writer measures them, which is bead `.7`'s measuring pass, not a
+  builder run.
+
 ## Pointers
 
 - Method, format, citation grammar, quotation traps: `.qwen/skills/auto-skill-family-summary-citation-verified/`.
