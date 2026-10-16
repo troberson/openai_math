@@ -160,6 +160,20 @@ read-only; confirm with `git push --dry-run`.
   `measure_check_calls.py`'s `L1` is the script tree, so editing `render_reports.py` invalidates the
   record the render reads, and the probe must run cold before the builder and render.
 
+- `math-rui.4` (2026-10-16): the Cost pass measures the Cost cells, the self-test row figures, the
+  `check()` counts, the two sums, the heaviest-row claim, and the tail figures from
+  `notes/tables/gate-rows.tsv` and the keyed `check_calls.json` record; the checker carries none of
+  them. **Pair a row figure with the closest preceding checker named in the paragraph, not the last
+  name in Cost-table order:** the table is alphabetical, so `verify_verification_dirs.py` swallowed
+  the five figures of the checkers named after it in the same paragraph. **Key a `check()` count to
+  the paragraph that begins with the checker's own name:** the Cost prose is one blank-line block, so
+  a block-level test let the sources paragraph's "the 15 `check()` calls" satisfy named_results.
+  **The paragraph boundary is the next checker-name paragraph, not the next backtick** — a
+  continuation line can begin with a backtick, and the first paragraph naming a checker is a
+  writers-table row, not the Cost paragraph. **Read the "not a row above" exemption from the page's
+  own declaration:** a page-wide test excused every checker row, so a deleted Cost row passed.
+  Patterns for the sums tolerate line breaks; a claim that wraps across a newline matches zero times.
+
 ## Pointers
 
 - Method, format, citation grammar, quotation traps: `.qwen/skills/auto-skill-family-summary-citation-verified/`.
