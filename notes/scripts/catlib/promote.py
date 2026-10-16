@@ -36,7 +36,7 @@ from catlib.paths import ROOT, SCRIPTS
 from catlib.records import key as digest_key
 from catlib.text import first_group
 
-# The nineteen report-fed pages, in the order the registry in `catlib/templates.py` lists them.
+# The 21 report-fed pages, in the order the registry in `catlib/templates.py` lists them.
 REPORT_PAGES = (
     "notes/reports/abstracts.md",
     "notes/development/index-links.md",
@@ -59,7 +59,6 @@ REPORT_PAGES = (
     "notes/README.md",
     "notes/scripts/README.md",
     "notes/reports/findings.md",
-    "notes/development/summaries-workflow.md",
 )
 
 L1: dict[str, tuple[str, ...]] = {
