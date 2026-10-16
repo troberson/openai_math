@@ -2656,6 +2656,10 @@ TEST_STEMS = ["findings", "faithfulness", "sources", "index_design", "fleet_desi
 # Two sentences say "the row measures", the rest say "its row measures".
 TEST_PREFIX = {"findings": "the", "named_results": "the"}
 
+# The four writer rows the Cost prose names as the gate's tail, in the order the sentence lists them.
+TAIL_NAMES = ["render_reports.py", "extract_links.py", "extract_formalization_deps.py",
+              "build_index.py"]
+
 # Each check()-count sentence carries the record's count inside the page's own prose, and the prose
 # differs where the sentence names what the calls pay for.
 CALLS_PHRASES = {
@@ -2681,6 +2685,20 @@ def cost_prose(c: dict[str, Any]) -> dict[str, str]:
                                 f"measures **{c['cells'][spec]} s**")
     for checker, phrase in CALLS_PHRASES.items():
         out["calls_" + checker.removeprefix("verify_")] = phrase.format(c["calls"][checker])
+    # The sums and the tail. The checker sum is the checker rows, the row sum is every row. The wall
+    # the prose quotes is not in the TSV — the gate driver prints no wall time — so the wall and the
+    # percentage it divides by stay literal.
+    checker_rows = [r for r in c["rows"] if r["spec"].startswith("verify_")]
+    out["checker_sum"] = (f"The {len(checker_rows)} checker invocations sum to "
+                          f"**{sum(float(r['seconds']) for r in checker_rows):.1f} s**")
+    out["row_sum"] = (f"its {len(c['rows'])} row times sum to "
+                      f"**{sum(float(r['seconds']) for r in c['rows']):.1f} s**")
+    heaviest = max(float(r["seconds"]) for r in checker_rows if r["spec"] in COST_CHECKS)
+    out["heaviest_cell"] = f"**{heaviest:.1f} s** is the heaviest row with a Cost cell"
+    out["heaviest_checker"] = (f"the heaviest checker row at "
+                              f"**{c['cells']['verify_script_ownership.py']} s**")
+    for name in TAIL_NAMES:
+        out["tail_" + name.removesuffix(".py")] = f"`{name}` {c['cells'][name]} s"
     return out
 
 
