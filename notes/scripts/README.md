@@ -584,7 +584,7 @@ carries as its own entry point.
 
 ## Naming coverage
 
-`notes/README.md`'s command block named **38** of the 68 scripts before this pass. Thirty-four are named
+`notes/README.md`'s command block named **34** of the 68 scripts before this pass. Thirty-four are named
 nowhere in the repo at the pinned baseline: `build_report_templates.py`, `build_index_db.py`,
 `check_summary_manuscripts.py`,
 `extract_citations.py`, `gate.py`, `locate_summary_quotes.py`, `measure_anchor_blocks.py`,

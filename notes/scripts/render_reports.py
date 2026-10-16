@@ -80,6 +80,7 @@ from catlib.paths import (
     PREPRINTS,
     QUOTES_TSV,
     ROOT,
+    SCRIPTS,
     SUBFINDINGS_TSV,
     owner,
 )
@@ -2456,6 +2457,25 @@ def probe_reads(record: pathlib.Path) -> set[str]:
     return out
 
 
+def named_before() -> int:
+    """The naming baseline the census pins: the scripts named in `notes/README.md` and `AGENTS.md`
+    at the commit that created the census page. The baseline commit is fixed, so the figure moves
+    only when the script set grows."""
+    names = sorted(q.name for q in SCRIPTS.glob("*.py")
+                   if q.name != "verify_script_ownership.py")
+    base = subprocess.run(["git", "log", "--format=%H", "--reverse", "--",
+                           "notes/scripts/README.md"], capture_output=True,
+                          text=True, cwd=ROOT).stdout.split()
+    if not base:
+        return 0
+    head_readme = subprocess.run(["git", "show", base[0] + "^:notes/README.md"],
+                                 capture_output=True, text=True, cwd=ROOT).stdout
+    head_agents = subprocess.run(["git", "show", base[0] + "^:AGENTS.md"],
+                                 capture_output=True, text=True, cwd=ROOT).stdout
+    gaps = [n for n in names if n not in head_readme and n not in head_agents]
+    return len(names) - len(gaps)
+
+
 def ownership_population() -> dict[str, Any]:
     """The census the scripts README tabulates, measured by walking the trees, plus the probe records
     described mechanically: each `seed_quotes.py` record is named for the pages its L1 tree carries that
@@ -2489,6 +2509,7 @@ def ownership_population() -> dict[str, Any]:
         # intersection of the basenames, not of the families: each tree carries its own README.md.
         "slug_share": len({q.name for q in INDEX_DIR.rglob("*.md")}
                           & {q.name for q in SUM_DIR.rglob("*.md")}),
+        "named_before": named_before(),
         "skels": len(list(SKEL_DIR.glob("*.j2"))),
         "report_tpls": len(list(TPL.glob("*.j2"))),
         "dev_md": len(list(DEV_DIR.glob("*.md"))),
@@ -2584,6 +2605,7 @@ def ownership_phrases(p: dict[str, Any]) -> dict[str, str]:
         # intersection, so the writer supplies it: a page that carries a hand-written slug count is
         # not the measurement.
         "slug_share": str(p["slug_share"]),
+        "named_before": str(p["named_before"]),
     }
 
 
