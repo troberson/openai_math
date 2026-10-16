@@ -2465,13 +2465,15 @@ def named_before() -> int:
                    if q.name != "verify_script_ownership.py")
     base = subprocess.run(["git", "log", "--format=%H", "--reverse", "--",
                            "notes/scripts/README.md"], capture_output=True,
-                          text=True, cwd=ROOT).stdout.split()
+                          text=True, cwd=ROOT, check=True).stdout.split()
     if not base:
         return 0
     head_readme = subprocess.run(["git", "show", base[0] + "^:notes/README.md"],
-                                 capture_output=True, text=True, cwd=ROOT).stdout
+                                 capture_output=True, text=True, cwd=ROOT,
+                                 check=True).stdout
     head_agents = subprocess.run(["git", "show", base[0] + "^:AGENTS.md"],
-                                 capture_output=True, text=True, cwd=ROOT).stdout
+                                 capture_output=True, text=True, cwd=ROOT,
+                                 check=True).stdout
     gaps = [n for n in names if n not in head_readme and n not in head_agents]
     return len(names) - len(gaps)
 
