@@ -781,14 +781,15 @@ INDEX_SPLIT = {
         ("`notes/tables/family-name.tsv` (**136769** B over **9819** rows), "
          "`notes/tables/family-topic.tsv` (**23682** B over **978** rows),"),
         ("`notes/tables/family-trace.tsv` (**855** B over **10** rows), "
-         "`notes/tables/lean-dirs.tsv` (**41937** B over **559** rows),"),
-        ("`notes/tables/manuscripts.tsv` (**277805** B over **719** rows), "
-         "`notes/tables/names.tsv` (**304513** B over **5842** rows),"),
-        ("`notes/tables/quotes.tsv` (**373435** B over **1806** rows), "
-         "`notes/tables/scope-notes.tsv` (**26677** B over **242** rows),"),
-        ("`notes/tables/sources.tsv` (**221463** B over **719** rows), "
+         "`notes/tables/gate-rows.tsv` (**3157** B over **81** rows),"),
+        ("`notes/tables/lean-dirs.tsv` (**41937** B over **559** rows), "
+         "`notes/tables/manuscripts.tsv` (**277825** B over **719** rows),"),
+        ("`notes/tables/names.tsv` (**304513** B over **5842** rows), "
+         "`notes/tables/quotes.tsv` (**668704** B over **2848** rows),"),
+        ("`notes/tables/scope-notes.tsv` (**26694** B over **242** rows), "
+         "`notes/tables/sources.tsv` (**221463** B over **719** rows), "
          "`notes/tables/topics-rendered.tsv` (**19127** B over **92** rows), "
-         "`notes/tables/topics.tsv` (**22631** B over **92** rows) and")],
+         "`notes/tables/topics.tsv` (**22650** B over **92** rows) and")],
     "bib keywords count": ["bibliography entry → `keywords` field **0** over **13,802**"],
     "builds-on declaration count": ["(**30** `builds-on` declarations at"],
     "derivable lean reach": [("config → file (yaml: **189** configs, all **189** of them also "
