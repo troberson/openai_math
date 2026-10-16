@@ -72,6 +72,7 @@ from catlib.paths import (
     COMPARATOR_DIR,
     DEPS_TSV,
     FORMALIZATION_YAML,
+    GATE_ROWS_TSV,
     LAKE_MANIFEST,
     LAKEFILE,
     LEDGER_TSV,
@@ -2567,9 +2568,89 @@ def probe_prose(added: list[tuple[str, list[str]]]) -> str:
     return ", ".join(clauses[:-1]) + ", and " + clauses[-1]
 
 
+# The Cost table's 23 checker rows. The Checks column is the page's prose; the Cost cell is the wall
+# time the gate printed for that row, read from notes/tables/gate-rows.tsv, so the row line is a slot
+# the writer supplies. The Gate column is the self-tests sentence for every row but page_sync.
+COST_CHECKS = {
+    "verify_abstracts.py": "`notes/reports/abstracts.md`",
+    "verify_cache_promotion.py": "`catlib/promote.py` — the registry shape against the writers table, "
+        "the L1 lists against the audit-hook records, and the cached bytes against every tracked "
+        "artifact under its key",
+    "verify_citations.py": "`notes/reports/citations.md`",
+    "verify_conditional.py": "`notes/reports/conditional.md`",
+    "verify_conjecture_standing.py": "`notes/tables/conjecture-standing.tsv`",
+    "verify_counterexample_crosscheck.py": "`notes/reports/counterexample-crosscheck.md`",
+    "verify_dependency_drift.py": "`notes/reports/dependency-drift.md`, "
+        "`notes/reports/formalization-deps.md`",
+    "verify_faithfulness.py": "`notes/reports/formalization-faithfulness.md` — anchors, the count "
+        "phrases re-derived by its own `main_results`/declaration/carrier/closure walk (not the "
+        "writer's), the disjoint and overlap pairing tables, the `a.e.` table, and the render diff",
+    "verify_findings.py": "`notes/reports/findings.md`",
+    "verify_fleet_design.py": "`notes/development/fleet-design.md` — anchors, the count phrases "
+        "re-derived from `git`/`du`/the probe records, each of the three site paragraphs (atomicity, "
+        "env, set iteration) and the checker-section anchor list compared with the measured "
+        "`name:line` set, the purity and amplification tables, and the page against "
+        "`render_reports.py`'s render of it",
+    "verify_index_design.py": "`notes/development/index-design.md`",
+    "verify_named_conjectures.py": "`notes/reports/named-conjectures.md`",
+    "verify_named_results.py": "`notes/reports/named-results.md`",
+    "verify_page_sync.py": "`notes/reports/links.md`, `notes/reports/names.md`, "
+        "`notes/reports/topics.md`, `notes/reports/proof-density.md`, "
+        "`notes/development/index-links.md` — the render diff for the five pages whose sync pass "
+        "used to live in a writer; the mutants mutate page prose in memory, so no page is written",
+    "verify_scope_exclusions.py": "`notes/reports/scope-exclusions.md`",
+    "verify_sources.py": "`notes/reports/sources.md`",
+    "verify_subfinding_pairs.py": "`notes/reports/subfinding-pairs.md`",
+    "verify_subfindings.py": "`notes/tables/subfindings.tsv`",
+    "verify_summaries.py": "`notes/summaries/`",
+    "verify_t0_chains.py": "`notes/reports/t0-chains.md`",
+    "verify_tsv_quoting.py": "`notes/tables/*.tsv` — the RFC 4180 rule: a field that does not start "
+        "with a quote carries no quote at all, and a field that opens a quoted field must close "
+        "inside the field with every interior quote doubled",
+    "verify_upstream_history.py": "`notes/development/upstream_history/` — the three pages",
+    "verify_verification_dirs.py": "`notes/reports/verification-dirs.md`",
+}
+
+# The one row whose Gate column is not the self-tests sentence.
+COST_GATE = {"verify_page_sync.py": "`--both` — plain and mutant in one process"}
+
+# The Cost table names the script; the gate row names the script and its flag, so the TSV spec is not
+# the table's name for that row.
+COST_SPEC = {"verify_page_sync.py": "verify_page_sync.py --both"}
+
+
+@cache
+def cost_population() -> dict[str, Any]:
+    """The gate's measured wall time per row and the check()-call counts, read once per render.
+
+    The TSV is the gate driver's report landed by `measure_gate_rows.py`; the record is the
+    `check_calls.json` the check()-count probe lands under its key. Both are read once, so a render
+    pays one TSV parse and one record read, not one per slot. A record that is not landed raises —
+    the render cannot quote a count the probe never measured.
+    """
+    rows = list(csv.DictReader(GATE_ROWS_TSV.read_text(encoding="utf-8").splitlines(),
+                               delimiter="\t"))
+    cells = {r["spec"]: ("0" if r["seconds"] == "0.0" else r["seconds"]) for r in rows}
+    path = records.RECORDS_ROOT / key_for("measure_check_calls.py", ()) / "check_calls.json"
+    return {"cells": cells, "calls": json.loads(path.read_text(encoding="utf-8")), "rows": rows}
+
+
+def cost_phrases(c: dict[str, Any]) -> dict[str, str]:
+    out = {}
+    for name, checks in COST_CHECKS.items():
+        # The self-test file is the checker name with `verify_` dropped, not the full name.
+        stem = name.removeprefix("verify_").removesuffix(".py")
+        gate = COST_GATE.get(name) or (
+            f"plain; the self-tests are in `notes/scripts/tests/test_{stem}.py`, "
+            "run by the `run_tests.py` row")
+        out["cost_" + stem] = (f"| `{name}` | {checks} | {gate} | "
+                                f"{c['cells'][COST_SPEC.get(name, name)]} |")
+    return out
+
+
 def ownership_phrases(p: dict[str, Any]) -> dict[str, str]:
     """The census table, one slot per row. Each row is one line, so the writer supplies the whole row."""
-    return {
+    out = {
         "census_index": f"| `notes/index/` | **{p['index_pages']:,}** | generated — `build_index.py`; the "
                         f"{p['index_tables']} tables it renders land in `notes/tables/` |",
         "census_summaries": f"| `notes/summaries/` | **{p['sum_pages']}** | hand-written — the reading "
@@ -2604,6 +2685,10 @@ def ownership_phrases(p: dict[str, Any]) -> dict[str, str]:
         "slug_share": str(p["slug_share"]),
         "named_before": str(p["named_before"]),
     }
+    # The Cost table's 23 checker rows: the Cost cell is the gate's measured wall time for that row,
+    # so the row line is a slot the writer supplies from the TSV.
+    out.update(cost_phrases(cost_population()))
+    return out
 
 
 def ownership_page(p: dict[str, str]) -> str:
