@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [metric-geometry](../topics/metric-geometry.md) · [convex-geometry](../topics/convex-geometry.md) · [functional-analysis](../topics/functional-analysis.md) · [banach-spaces](../topics/banach-spaces.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [098-a-negative-answer-to-the-lang-plaut-problem.md](../../../notes/summaries/convex-and-metric-geometry/098-a-negative-answer-to-the-lang-plaut-problem.md) |
 
 ## Manuscripts
 
