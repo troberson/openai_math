@@ -69,9 +69,10 @@ read-only; confirm with `git push --dry-run`.
   fleet_design 17→23, verification_dirs 20→21, named_results 14→15, citations 10→12, t0_chains
   14→17, dependency_drift 11→12, subfinding_pairs 9→11, and the 59-script scan → 68. **These
   sentences are template literals with no checker**: the census checker does not measure them, so
-  the sweep lands bytes the writer reproduces, not bytes any pass verifies. The probe is scratch
-  under `.qwen/tmp/count_check_calls.py`; a revisit that wants the counts gated promotes it to
-  `notes/scripts/` with a census row and a gate row.
+  the sweep lands bytes the writer reproduces, not bytes any pass verifies. The probe is promoted to
+  `notes/scripts/measure_check_calls.py` (2026-10-16, bead `math-rui.2`): a gate row that starts
+  after the render, a census writer row, and the record `check_calls.json` under the keyed store, so
+  the baseline the script carries is re-measured every pass and a drift prints as a disagreement.
 
 - **2026-10-16 — the Cost section is swept again to the second 81-row run, and the builder sweep
   runs after the commit.** The gate run that fixed the cache-key ordering measured **230.69 s** wall
@@ -129,6 +130,21 @@ read-only; confirm with `git push --dry-run`.
   `render_reports.py` had to be re-landed and `PROBES` gained `2026-10-16_rr_fleet.txt`. The census
   page, `notes/README.md`, `index-design.md`'s TSV inventory (21 tracked, 2,567,565 B), the fleet page
   and `templates.md` all moved with the new table, and the promote checker ends at `problems 0`.
+
+- **2026-10-16 — `math-rui.2` promotes the `check()`-count probe to a gate row, and a registry edit
+  moves the render's key.** `notes/scripts/measure_check_calls.py` patches
+  `importlib.util.spec_from_file_location` (the conftest's `load` fixture uses exactly that call),
+  wraps each loaded checker's `check`, and runs one pytest row per checker: 11 checkers, 184 calls,
+  every baseline reproduced. The record `check_calls.json` lands under the keyed store keyed by the
+  script tree's git digest, so there is no tracked artifact and the census names the record. The gate
+  row starts after the render, because each checker reads the pages its own self-tests verify. **Two
+  drifts the checker caught, not the page:** the writer's `L1` names `notes/scripts/`, which the probe
+  record's printed scope excludes, so the entry joins `PROBE_EXEMPT` — without the exemption the
+  exactness pass reports a problem it cannot fix; and because the key hashes `notes/scripts/` from the
+  working tree, editing `promote.py` moved `render_reports.py`'s key, so the render had to run again to
+  land its records under the current key (21 `cache entry missing` before the re-render). The fleet
+  page's gate paragraph moved to 82 invocations: the writer measures that count off `gate.py`'s `ROWS`
+  block, so the row had to be committed before the render could measure it.
 
 ## Pointers
 
