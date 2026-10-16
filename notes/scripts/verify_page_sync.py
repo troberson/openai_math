@@ -74,9 +74,6 @@ PAGES = [
     (ROOT / "notes" / "reports" / "findings.md",
      _count(r"\*\*(\d+)\*\* of 372 families have a summary page"),
      None),
-    (ROOT / "notes" / "development" / "summaries-workflow.md",
-     _count(r"\*\*Pages done \((\d+)\):\*\*"),
-     None),
 ]
 
 
