@@ -2648,6 +2648,42 @@ def cost_phrases(c: dict[str, Any]) -> dict[str, str]:
     return out
 
 
+# The 11 self-test rows the Cost prose quotes, keyed by the gate spec that names the test file.
+TEST_STEMS = ["findings", "faithfulness", "sources", "index_design", "fleet_design",
+              "verification_dirs", "named_results", "citations", "t0_chains",
+              "dependency_drift", "subfinding_pairs"]
+
+# Two sentences say "the row measures", the rest say "its row measures".
+TEST_PREFIX = {"findings": "the", "named_results": "the"}
+
+# Each check()-count sentence carries the record's count inside the page's own prose, and the prose
+# differs where the sentence names what the calls pay for.
+CALLS_PHRASES = {
+    "verify_findings": "the {} `check()` calls the row makes",
+    "verify_faithfulness": "the {} `check()` calls the row makes",
+    "verify_sources": "the {} `check()` calls the row makes",
+    "verify_index_design": "the {} `check()` calls the row makes",
+    "verify_fleet_design": "the {} `check()` calls the row makes",
+    "verify_verification_dirs": "the {} `check()` calls",
+    "verify_named_results": "the {} `check()` calls pay the 7,240-file walk once",
+    "verify_citations": "the {} `check()` calls the row makes pay the two",
+    "verify_t0_chains": "the {} `check()` calls the row makes",
+    "verify_dependency_drift": "the {} `check()` calls the row makes pay",
+    "verify_subfinding_pairs": "the {} `check()` calls the row makes",
+}
+
+
+def cost_prose(c: dict[str, Any]) -> dict[str, str]:
+    out = {}
+    for stem in TEST_STEMS:
+        spec = f"run_tests.py notes/scripts/tests/test_{stem}.py -q"
+        out["tests_" + stem] = (f"{TEST_PREFIX.get(stem, 'its')} `run_tests.py` row "
+                                f"measures **{c['cells'][spec]} s**")
+    for checker, phrase in CALLS_PHRASES.items():
+        out["calls_" + checker.removeprefix("verify_")] = phrase.format(c["calls"][checker])
+    return out
+
+
 def ownership_phrases(p: dict[str, Any]) -> dict[str, str]:
     """The census table, one slot per row. Each row is one line, so the writer supplies the whole row."""
     out = {
@@ -2688,6 +2724,9 @@ def ownership_phrases(p: dict[str, Any]) -> dict[str, str]:
     # The Cost table's 23 checker rows: the Cost cell is the gate's measured wall time for that row,
     # so the row line is a slot the writer supplies from the TSV.
     out.update(cost_phrases(cost_population()))
+    # The self-test row figures and the check()-count sentences: the seconds come from the TSV, the
+    # counts from the record.
+    out.update(cost_prose(cost_population()))
     return out
 
 
