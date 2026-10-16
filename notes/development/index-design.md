@@ -66,10 +66,10 @@ The five tracked TSVs, measured on disk:
 | `subfindings.tsv` | **169216** | **1145** |
 
 Those five named files are the ledger set the **297,043** B figure covers. The 21 tracked TSVs outside it — `notes/tables/abstracts.tsv` (**89476** B over **372** rows), `notes/tables/citation.tsv` (**64092** B over **391** rows),
-`notes/tables/config-declaration.tsv` (**27385** B over **200** rows), `notes/tables/configs.tsv` (**65761** B over **416** rows),
-`notes/tables/families.tsv` (**108550** B over **372** rows), `notes/tables/family-config.tsv` (**8893** B over **416** rows),
+`notes/tables/config-declaration.tsv` (**27385** B over **200** rows), `notes/tables/configs.tsv` (**65790** B over **416** rows),
+`notes/tables/families.tsv` (**108554** B over **372** rows), `notes/tables/family-config.tsv` (**8893** B over **416** rows),
 `notes/tables/family-lean.tsv` (**21287** B over **200** rows), `notes/tables/family-manuscript.tsv` (**135963** B over **719** rows),
-`notes/tables/family-name.tsv` (**136769** B over **9819** rows), `notes/tables/family-topic.tsv` (**23682** B over **978** rows),
+`notes/tables/family-name.tsv` (**136769** B over **9819** rows), `notes/tables/family-topic.tsv` (**23741** B over **980** rows),
 `notes/tables/family-trace.tsv` (**855** B over **10** rows), `notes/tables/gate-rows.tsv` (**3157** B over **81** rows),
 `notes/tables/lean-dirs.tsv` (**41937** B over **559** rows), `notes/tables/manuscripts.tsv` (**277825** B over **719** rows),
 `notes/tables/names.tsv` (**304513** B over **5842** rows), `notes/tables/quotes.tsv` (**668704** B over **2848** rows),
