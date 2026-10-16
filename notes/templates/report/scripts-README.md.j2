@@ -13,7 +13,7 @@ is per file, and the checker exits 1 on a file no rule owns.
 It is also the script inventory. Every script under `notes/scripts/` is listed once, in one of three
 classes — writer, report-only, checker — with what it writes and the command the gate runs for it, and
 the fourth class, the scratch a session writes outside the tree, is recorded by rule rather than by
-file. The classes partition the **68** scripts: **15** writers, **31** report-only, **22** checkers,
+file. The classes partition the **69** scripts: **15** writers, **31** report-only, **23** checkers,
 and `verify_script_ownership.py` itself, which is the 23rd checker and is not listed in its own table.
 
 ## The split: 15 write, 53 write nothing
@@ -37,7 +37,7 @@ self-test: a module-level
 `mutants` / `mutant_test` / `selftest` body is blanked before the write calls are read, because a
 self-test writes the page it checks only to mutate it and restores the bytes it read in the `finally`
 — `verify_script_ownership.py` does exactly that, in three branches (the page it checks, `notes/scripts/README.md`, and `notes/development/templates.md`), so its normal run writes nothing and it stays in the checker class. `check_index_links.py` and `measure_proof_density.py` were this rule's examples; `math-o3a.3` moved their sync pass into `verify_page_sync.py`, which mutates page text in memory, so neither script carries a write call any more. That rule
-finds **15** writers over **68** scripts.
+finds **15** writers over **69** scripts.
 
 ### Writers
 
@@ -123,7 +123,7 @@ Editing a join in `build_catalog.py` can move rows in six artifacts.
 
 ### Report-only
 
-The other **53** scripts write nothing. **31** of them print a report: **19** print the report a page's
+The other **54** scripts write nothing. **31** of them print a report: **19** print the report a page's
 counts come from, **1** prints the quote-spec classification the seeded `notes/tables/quotes.tsv` is
 measured against, **1** prints the pytest report for the extracted checker self-tests
 (`run_tests.py`), **2** print the notes-move surface `math-faz` prices before a pass and re-checks
@@ -161,7 +161,7 @@ the twenty-five extracted self-tests rows, `run_tests.py notes/scripts/tests/tes
 `run_tests.py notes/scripts/tests/test_t0_chains.py -q` and
 `run_tests.py notes/scripts/tests/test_dependency_drift.py -q` and
 `run_tests.py notes/scripts/tests/test_subfinding_pairs.py -q` and
-`run_tests.py notes/scripts/tests/test_quotes.py -q`), and **23** checker
+`run_tests.py notes/scripts/tests/test_quotes.py -q`), and **24** checker
 invocations:
 `verify_page_sync.py --both` (**1**) — both passes in one process, because `catlib.render.rendered`
 is cached per process and two rows pay the corpus walk twice — plus `verify_script_ownership.py` plain
@@ -215,7 +215,7 @@ had to wait for the serial chain to finish.
 | `extract_t0_chains.py` | `notes/reports/t0-chains.md` | plain |
 | `extract_verification_348.py` | `notes/reports/verification-dirs.md` | plain |
 | `extract_verification_dirs.py` | `notes/reports/verification-dirs.md` | plain |
-| `gate.py` | none — the gate list itself: 78 rows as a dependency graph, printing one line per row in list order | **the list** — run by `gate_driver.sh` |
+| `gate.py` | none — the gate list itself: 81 rows as a dependency graph, printing one line per row in list order | **the list** — run by `gate_driver.sh` |
 | `locate_summary_quotes.py` | `notes/summaries/` — the lines a page should cite when a quotation stops matching | plain, no page argument |
 | `measure_anchor_blocks.py` | `math-faz` — the fenced blocks and quotations in the moved pages attributed to a notes-page anchor; the bead re-runs it after each pass | **not gated** |
 | `measure_checker_needles.py` | `notes/development/templates.md` — the per-checker needle inventory behind its Needles column | plain |
@@ -253,9 +253,9 @@ rows into the page's scanner table.
 
 ### Checkers
 
-The remaining **22** scripts verify a page or a table. Each exits non-zero when what it checks has
+The remaining **23** scripts verify a page or a table. Each exits non-zero when what it checks has
 drifted; **0** take `--mutant` — after the twenty-fourth extraction no checker carries a mutant
-branch any more — and **22** —
+branch any more — and **23** —
 `verify_scope_exclusions.py`, `verify_conjecture_standing.py`, `verify_abstracts.py`,
 `verify_named_conjectures.py`, `verify_subfindings.py`, `verify_summaries.py` and
 `verify_script_ownership.py`, `verify_conditional.py`, `verify_upstream_history.py`,
@@ -264,11 +264,11 @@ branch any more — and **22** —
 `verify_fleet_design.py`, `verify_verification_dirs.py`,
 `verify_named_results.py`,
 `verify_citations.py`,
-`verify_t0_chains.py` and
-`verify_dependency_drift.py` — have their
+`verify_t0_chains.py`, `verify_dependency_drift.py` and
+`verify_tsv_quoting.py` — have their
 self-tests extracted to `notes/scripts/tests/`, so the checker measures and the test file injects.
 The gate runs each one plain —
-**23** of the 78 invocations: **1** for
+**24** of the 81 invocations: **1** for
 `verify_page_sync.py --both`, which runs both passes in one process, **1** plain for
 `verify_script_ownership.py` (the 23rd checker, not listed in its own table), **1** plain for
 `verify_scope_exclusions.py`, **1** plain for `verify_conjecture_standing.py`, **1** plain for
@@ -288,7 +288,8 @@ The gate runs each one plain —
 **1** plain for `verify_faithfulness.py` and
 **1** plain for `verify_citations.py` and
 **1** plain for `verify_t0_chains.py` and
-**1** plain for `verify_dependency_drift.py`. The extracted
+**1** plain for `verify_dependency_drift.py` and
+**1** plain for `verify_tsv_quoting.py`. The extracted
 self-tests rows are report-only rows, not checker invocations:
 `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q`,
 `run_tests.py notes/scripts/tests/test_conjecture_standing.py -q`,
@@ -307,7 +308,8 @@ self-tests rows are report-only rows, not checker invocations:
 `run_tests.py notes/scripts/tests/test_index_design.py -q` and
 `run_tests.py notes/scripts/tests/test_fleet_design.py -q` and
 `run_tests.py notes/scripts/tests/test_verification_dirs.py -q` and
-`run_tests.py notes/scripts/tests/test_named_results.py -q`.
+`run_tests.py notes/scripts/tests/test_named_results.py -q` and
+`run_tests.py notes/scripts/tests/test_tsv_quoting.py -q`.
 
 | Checker | Checks | Gate | Cost (s) |
 |---|---|---|---|
@@ -331,6 +333,7 @@ self-tests rows are report-only rows, not checker invocations:
 | `verify_subfindings.py` | `notes/tables/subfindings.tsv` | plain; the self-tests are in `notes/scripts/tests/test_subfindings.py`, run by the `run_tests.py` row | 0 |
 | `verify_summaries.py` | `notes/summaries/` | plain; the self-tests are in `notes/scripts/tests/test_summaries.py`, run by the `run_tests.py` row | 0.8 |
 | `verify_t0_chains.py` | `notes/reports/t0-chains.md` | plain; the self-tests are in `notes/scripts/tests/test_t0_chains.py`, run by the `run_tests.py` row | 1.4 |
+| `verify_tsv_quoting.py` | `notes/tables/*.tsv` — the RFC 4180 rule: a field that does not start with a quote carries no quote at all, and a field that opens a quoted field must close inside the field with every interior quote doubled | plain; the self-tests are in `notes/scripts/tests/test_tsv_quoting.py`, run by the `run_tests.py` row | 0 |
 | `verify_upstream_history.py` | `notes/development/upstream_history/` — the three pages | plain; the self-tests are in `notes/scripts/tests/test_upstream_history.py`, run by the `run_tests.py` row | 0.5 |
 | `verify_verification_dirs.py` | `notes/reports/verification-dirs.md` | plain; the self-tests are in `notes/scripts/tests/test_verification_dirs.py`, run by the `run_tests.py` row | 0.1 |
 
@@ -428,7 +431,7 @@ scheduler and `math-o3a.5.2`'s `--both` collapse added took the list to what the
 carries. That `--mutant` row is now the `run_tests.py` row for `notes/scripts/tests/test_index_links.py`,
 and the prose mutant is `verify_page_sync.py`'s, so the row count did not move. The count is read
 from the array, not from the history: **11** writer rows, **45**
-report-only rows, **23** checker invocations.
+report-only rows, **24** checker invocations.
 
 `verify_script_ownership.py` — this page's own checker — is not in the table: a checker cannot list
 itself as its input. It is the 23rd checker and the 67th script; the run counts **65** scripts
@@ -473,7 +476,7 @@ script run as `python3 notes/scripts/foo.py` has `notes/scripts` on `sys.path`, 
 each script's own source: **11** `extract_` (all of them), **5** `build_` (all), **12** `measure_`
 (all 17 but `measure_proof_density.py`, `measure_topics.py` and the three render probes, which reach
 `render_reports` directly), **2** `check_` (`check_index_links.py` and `check_summary_manuscripts.py`),
-**23** `verify_` scripts (all of them), plus `render_reports.py`, `seed_quotes.py`, `triage_t0.py`,
+**24** `verify_` scripts (all of them), plus `render_reports.py`, `seed_quotes.py`, `triage_t0.py`,
 `read_manuscript.py`, `compare_abstracts.py`, `locate_summary_quotes.py`,
 `refresh_summary_line_counts.py` and `run_tests.py`. The seven
 scripts that do not are `dump_template_slots.py`, which reaches the slot dict through
@@ -590,8 +593,9 @@ carries as its own entry point.
 
 ## Naming coverage
 
-`notes/README.md`'s command block named **{{ p['named_before'] }}** of the 68 scripts before this pass. Thirty-four are named
+`notes/README.md`'s command block named **{{ p['named_before'] }}** of the 69 scripts before this pass. Thirty-four are named
 nowhere in the repo at the pinned baseline: `build_report_templates.py`, `build_index_db.py`,
+`verify_tsv_quoting.py`,
 `check_summary_manuscripts.py`,
 `extract_citations.py`, `gate.py`, `locate_summary_quotes.py`, `measure_anchor_blocks.py`,
 `measure_checker_needles.py`, `measure_faithfulness.py`, `measure_import_layout.py`,
