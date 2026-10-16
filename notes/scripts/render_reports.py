@@ -131,11 +131,11 @@ INDEX_DIR = NOTES_DIR / "index"
 SUM_DIR = NOTES_DIR / "summaries"
 TABLES_DIR = NOTES_DIR / "tables"
 OWNERSHIP_MD = SCRIPTS_DIR / "README.md"
-# The two TSVs the page records as hand-authored, and the seven the ledger scripts write. The census
+# The two TSVs the page records as hand-authored, and the eight the ledger scripts write. The census
 # row splits the table tree into generated and hand-authored, so the writer names both sets.
 OWN_HAND_TSV = {"topics.tsv", "conjecture-standing.tsv"}
 OWN_LEDGER_TSV = {"catalog.tsv", "sources.tsv", "subfindings.tsv", "links.tsv", "abstracts.tsv",
-                  "quotes.tsv", "formalization-deps.tsv"}
+                  "quotes.tsv", "formalization-deps.tsv", "gate-rows.tsv"}
 # The records the page describes in prose the writer cannot derive — the write-mode pair, the render
 # after-record, the purity pair, the fleet census record, and the two keyed-record producers. The
 # seed_quotes records are described mechanically from what each one names, so a new summary page
