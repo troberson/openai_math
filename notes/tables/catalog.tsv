@@ -188,7 +188,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 192	Combinatorics	A counterexample to the Gopalan--Servedio conjecture	1	0	T2	1	0	1	467	0	0	0		counterexample|bound|uniform	0	1	1		0	0	0
 193	Algebra	Serre's intersection-multiplicity conjecture	1	0	T0	0	0	0	0	0	0	0		resolution|classification	0	1	0		0	0	0
 194	Algebra	Lech's multiplicity conjecture	1	0	T2	1	0	1	598	0	0	0		resolution|classification|uniform	0	1	0		0	0	0
-195	Algebra	A counterexample to the small Cohen--Macaulay module conjecture	1	1	T3	1	1	1	511	0	0	0			0	1	1		0	0	0
+195	Algebra	A counterexample to the small Cohen--Macaulay module conjecture	1	1	T3	1	1	1	511	0	0	0			0	1	1		0	0	1
 196	Algebra	A counterexample to Kaplansky's zero-divisor conjecture	1	1	T3	1	1	1	378	0	0	0			0	1	1		0	0	0
 197	Algebra	Nonsofic groups and group-ring counterexamples	4	3	T3	4	3	1	2249	0	0	0	kaplansky-direct-finiteness-characteristic-two	counterexample	0	1	1		1	0	1
 198	Algebra	A counterexample to the little finitistic-dimension conjecture	1	1	T3	2	2	1	634	0	0	0		resolution|counterexample	0	1	1		0	0	0
