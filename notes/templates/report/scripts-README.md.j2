@@ -398,8 +398,8 @@ the walk once.
 `verify_subfinding_pairs.py` is the same case with `overview.tex`, `notes/tables/subfindings.tsv` and the
 ledger: `load_inputs()` is under `functools.cache` (`:54`), so its `run_tests.py` row measures **1.9 s**
 where the `--mutant` row took **0.1 s** — the 11 `check()` calls the row makes pay the walk once.
-`verify_page_sync.py --both` at **28.0 s** is the heaviest row with a Cost cell. `verify_script_ownership.py`,
-this page's own checker, is the heaviest checker row at **64.7 s** and is not a row
+`verify_page_sync.py --both` at {{ p['heaviest_cell'] }}. `verify_script_ownership.py`,
+this page's own checker, is {{ p['heaviest_checker'] }} and is not a row
 above.
 `verify_page_sync.py`'s Cost is one number, not a pair: `--both`
 runs the plain pass and the mutant loop in one process, so `catlib.render.rendered` is walked once
@@ -410,11 +410,11 @@ to **121.7 s**, measured 2026-10-16 as the sum of the wall times the gate printe
 pooled run, each Cost cell re-checked cell-by-cell against that run (0
 mismatches over the 24 checkers with Cost cells behind them; `verify_script_ownership.py` is not a row
 above, so it has no cell to check); the full 81-row gate ran in **232.97 s** wall
-(05:47:37–05:51:30 local) and its 81 row times sum to **594.7 s**, so the 12-row pool brings the wall
-to 39.2% of the sum. The writers are the tail: `render_reports.py` 54.8 s, the plain render as
-the gate row, `extract_links.py` 18.1 s,
-`extract_formalization_deps.py` 10.9 s (the 122,458-file walk under
-`lean/OAI/` is paid once per cache key, so a warm run reads records), `build_index.py` 6.4 s. The
+(05:47:37–05:51:30 local) and {{ p['row_sum'] }}, so the 12-row pool brings the wall
+to 39.2% of the sum. The writers are the tail: {{ p['tail_render_reports'] }}, the plain render as
+the gate row, {{ p['tail_extract_links'] }},
+{{ p['tail_extract_formalization_deps'] }} (the 122,458-file walk under
+`lean/OAI/` is paid once per cache key, so a warm run reads records), {{ p['tail_build_index'] }}. The
 65-invocation gate took **{{ p['slug_share'] }} min** and **{{ p['slug_share'] }} min** on its two runs measured 2026-10-10
 (10:48–11:23 and 11:23–12:01 UTC) and the 64-invocation list took **62 min** the same morning
 (05:49–06:51 UTC) — the pre-cache figures, which the 2026-10-11 promote-and-key work is what
