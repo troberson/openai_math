@@ -51,6 +51,18 @@ read-only; confirm with `git push --dry-run`.
 - **Ambiguity:** record the provisional choice and what would force a revisit, then keep going. If
   fixing it later means rewriting pages, claim a different bead and come back.
 
+## Decision points
+
+- **2026-10-15 — the Cost section is swept to one fresh 81-row run, not to the two dated sentences
+  alone.** The measurement: **234.05 s** wall (23:43:07–23:47:01 local), **622.0 s** row-time sum,
+  **37.6%** of the sum, 24 checker invocations summing **132.8 s**. Swept in one pass: the 24 Cost
+  cells, the checker-invocation sum, the wall/sum/percentage, the writer tail, the page_sync
+  "heaviest row" claim, and the 11 `run_tests.py` row figures. Kept as history: the `--mutant`
+  comparisons, the "before the record" figures, and the pre-cache 65/64-invocation times. **Not
+  swept, because the gate does not measure them:** the per-checker `check()`-call counts
+  (six/seven/ten/eleven/fourteen/fifteen/sixteen/seventeen/twenty/nine/thirteen) and "the 59-script
+  scan". A revisit needs a scan of `notes/scripts/tests/`, not a gate row.
+
 ## Pointers
 
 - Method, format, citation grammar, quotation traps: `.qwen/skills/auto-skill-family-summary-citation-verified/`.
