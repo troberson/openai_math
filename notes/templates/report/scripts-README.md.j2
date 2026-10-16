@@ -13,10 +13,10 @@ is per file, and the checker exits 1 on a file no rule owns.
 It is also the script inventory. Every script under `notes/scripts/` is listed once, in one of three
 classes — writer, report-only, checker — with what it writes and the command the gate runs for it, and
 the fourth class, the scratch a session writes outside the tree, is recorded by rule rather than by
-file. The classes partition the **70** scripts: **16** writers, **31** report-only, **23** checkers,
+file. The classes partition the **71** scripts: **17** writers, **31** report-only, **23** checkers,
 and `verify_script_ownership.py` itself, which is the 23rd checker and is not listed in its own table.
 
-## The split: 16 write, 54 write nothing
+## The split: 17 write, 54 write nothing
 
 The writer set is derived from the scripts' own source, not from this page: a script is a writer when
 a path constant rooted at `notes/` appears on the left of `.open(..., "w")` or `.write_text(...)`,
@@ -37,7 +37,7 @@ self-test: a module-level
 `mutants` / `mutant_test` / `selftest` body is blanked before the write calls are read, because a
 self-test writes the page it checks only to mutate it and restores the bytes it read in the `finally`
 — `verify_script_ownership.py` does exactly that, in three branches (the page it checks, `notes/scripts/README.md`, and `notes/development/templates.md`), so its normal run writes nothing and it stays in the checker class. `check_index_links.py` and `measure_proof_density.py` were this rule's examples; `math-o3a.3` moved their sync pass into `verify_page_sync.py`, which mutates page text in memory, so neither script carries a write call any more. That rule
-finds **16** writers over **70** scripts.
+finds **17** writers over **71** scripts.
 
 ### Writers
 
@@ -59,6 +59,7 @@ finds **16** writers over **70** scripts.
 | `seed_quotes.py` | `notes/tables/quotes.tsv` | single run; cached bytes == promoted bytes under the key | `notes/reports/subfinding-pairs.md` and `notes/summaries/**` — the two surfaces whose quotes it seeds; `render_reports.py` reads the pair rows back for the pair page, and `notes/scripts/tests/test_quotes.py` reads the whole table back |
 | `build_index_db.py` | `.qwen/cache/records/<key>/fts.json` and `.qwen/cache/records/<key>/index.db` | not in `gate.py` — the report carries a build wall and a per-term query wall, so a run-1/run-2 byte diff is a timing artifact; the record itself carries only counts, and the database is untracked by the `.qwen/*` rule | the SQLite FTS5 layer over the 8,007 `.tex` files and the 372 abstracts, the layer `notes/development/index-design.md`'s schema decision leaves out |
 | `measure_gate_rows.py` | `notes/tables/gate-rows.tsv` | not in `gate.py` — it reads the driver's report for the last completed run, which the driver truncates at run start, so a gate row would read the previous run's bytes; run explicitly after a gate pass | none yet — beads `math-rui.3` and `math-rui.4` give the writer a slot and the census checker a needle |
+| `measure_check_calls.py` | `.qwen/cache/records/<key>/check_calls.json` | a gate row; the record is the population the `check()` sentences in this page quote, and there are no tracked bytes for the promote assertion to compare | the eleven `check()` sentences in this page |
 
 Eight writers emit one TSV each. `build_index.py` is the one-to-many case: it renders **1,049** files —
 **1,033** `.md` pages and **0** `.tsv` tables in `notes/index/`, plus the **16** `.tsv` tables it stages
@@ -74,7 +75,7 @@ store, not to a tracked path: `measure_names.py`'s consumers (`render_reports.py
 `measure_templates.py`'s (`render_reports.py` and `build_report_templates.py`'s floor page) read it
 through `population()`, so each walk is paid once per key instead of once per process.
 
-All **16** writers take `--check-only`: the run does its full measurement, prints its report, and writes
+All **17** writers take `--check-only`: the run does its full measurement, prints its report, and writes
 nothing. Measured 2026-10-11 by running each writer plain and then with the flag — the report is
 identical in both runs (the write announcement is the only line that differs) and
 `git status --porcelain` is unchanged by the flagged run. The three record producers are the case where
@@ -82,7 +83,7 @@ the flagged run's proof is the report identity alone: their write lands in the u
 `git status` is clean for them plain and flagged alike. `gate.py` runs the writers plain; the read-only
 rows `math-o3a.5.2` pooled are the rows that run with the flag, which is why the flag comes first.
 
-All fifteen writers reach `write_atomic()` in `catlib/atomic.py`, so a crash never leaves a
+All sixteen writers reach `write_atomic()` in `catlib/atomic.py`, so a crash never leaves a
 half-written tracked file. The single-file writers use `write_atomic()`, which lands bytes on a sibling
 temp name in the same directory, fsyncs, and moves the temp onto the target. The three multi-file
 writers (`build_index.py`, `render_reports.py`, `build_report_templates.py`) use `Staging(name)`:
@@ -594,7 +595,7 @@ carries as its own entry point.
 
 ## Naming coverage
 
-`notes/README.md`'s command block named **{{ p['named_before'] }}** of the 70 scripts before this pass. Thirty-six are named
+`notes/README.md`'s command block named **{{ p['named_before'] }}** of the 71 scripts before this pass. 37 are named
 nowhere in the repo at the pinned baseline: `build_report_templates.py`, `build_index_db.py`,
 `verify_tsv_quoting.py`,
 `check_summary_manuscripts.py`,
@@ -606,7 +607,7 @@ nowhere in the repo at the pinned baseline: `build_report_templates.py`, `build_
 `read_manuscript.py`,
 `refresh_summary_line_counts.py`, `render_reports.py`, `seed_quotes.py`, `verify_citations.py`, `verify_faithfulness.py`, `verify_findings.py`,
 `verify_fleet_design.py`, `verify_named_conjectures.py`, `verify_page_sync.py`, `verify_upstream_history.py`,
-`dump_template_slots.py`, `verify_cache_promotion.py`, `measure_gate_rows.py` and `run_tests.py`. The first four are the report-template
+`dump_template_slots.py`, `verify_cache_promotion.py`, `measure_gate_rows.py`, `measure_check_calls.py` and `run_tests.py`. The first four are the report-template
 builder this pass promoted plus the `notes/summaries/` reading tooling and the citation extractor, so
 the summaries tree and `notes/reports/citations.md` carried measurements whose generating command no document
 named; `read_manuscript.py` and `refresh_summary_line_counts.py` are the rest of that reading tooling;
