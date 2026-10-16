@@ -106,6 +106,16 @@ read-only; confirm with `git push --dry-run`.
   for `build_report_templates.py` — for exactly that reason; the re-run took the promote checker to
   `problems 0`.
 
+- **2026-10-16 — the Cost section is swept to the fifth green run, the first gate pass over a swept
+  census page.** The fifth green run measured **232.97 s** wall (05:47:37–05:51:30 local), **594.7 s**
+  row-time sum, **39.2%** of the sum, 24 checker invocations summing **121.7 s**. 9 of 23 Cost cells
+  moved, the writer tail, the heaviest-row claim, and 7 of 11 `run_tests.py` figures. The sweep, the
+  builder sweep after the page commit, the render, the census checker, its 20 self-tests, the template
+  commit, the builder sweep after *that* commit, and the promote checker all ran in the recorded
+  ordering and produced no diff on the page and `problems 0`. **The Cost cells and the `check()`-count
+  sentences remain template literals with no checker** — beads `math-rui.3` and `.4` make them slots
+  measured by the writer, which is the fix for the treadmill this sweep is.
+
 ## Pointers
 
 - Method, format, citation grammar, quotation traps: `.qwen/skills/auto-skill-family-summary-citation-verified/`.
