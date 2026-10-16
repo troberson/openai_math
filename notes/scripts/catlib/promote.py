@@ -125,6 +125,10 @@ L1: dict[str, tuple[str, ...]] = {
     # untracked scratch under `.qwen/`, so the key hashes its bytes directly; the probe record prints
     # the `notes/` bucket, which cannot name it, so this writer is probe-exempt.
     "measure_gate_rows.py": (".qwen/tmp/reports/gate_run1.txt",),
+    # The check()-count probe reads the script tree: the eleven checker sources it loads and the eleven
+    # test files it runs, both under `notes/scripts/`. The probe scope excludes that tree, so the entry
+    # is hashed, not compared, and the writer is probe-exempt.
+    "measure_check_calls.py": ("notes/scripts/",),
 }
 
 ARTIFACTS: dict[str, tuple[str, ...]] = {
@@ -153,6 +157,9 @@ ARTIFACTS: dict[str, tuple[str, ...]] = {
     # The gate-row table is the ninth entry in `catlib.paths.GATE_TSVS`: the per-row wall times of the
     # last completed gate run, landed from the driver's report.
     "measure_gate_rows.py": ("notes/tables/gate-rows.tsv",),
+    # The check()-count probe is a record producer: its record is the population the census page's
+    # check() sentences quote, and there are no tracked bytes to compare.
+    "measure_check_calls.py": (),
 }
 
 
@@ -185,6 +192,9 @@ ARGS: dict[str, tuple[str, ...]] = {
     # The canonical run is the plain run, which lands the TSV; `--check-only` measures the report and
     # lands nothing, so it does not share the plain run's record.
     "measure_gate_rows.py": (),
+    # The plain run lands the record; `--check-only` runs the same pytest rows in memory and lands
+    # nothing, so the canonical key is the plain run's.
+    "measure_check_calls.py": (),
 }
 
 # The writers table names one writer the protocol deliberately excludes: `measure_open_probe.py`'s

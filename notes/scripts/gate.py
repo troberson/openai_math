@@ -118,6 +118,9 @@ ROWS = [
     ("run_tests.py notes/scripts/tests/test_fleet_design.py -q", ("pages",), ()),
     ("verify_faithfulness.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_faithfulness.py -q", ("pages",), ()),
+    # The check()-count probe runs one pytest row per checker, so it starts after the render: each
+    # checker reads the pages its own self-tests verify.
+    ("measure_check_calls.py", ("pages",), ()),
     ("verify_page_sync.py --both", ("pages",), ()),
     # The checker compares the cache bytes with the disk bytes for every writer, so it must start
     # after every writer that lands a tracked artifact — `quotes` and `summaries` included. A row
