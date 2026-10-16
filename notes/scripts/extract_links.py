@@ -653,7 +653,7 @@ def main():
     )
 
     if "--check-only" not in sys.argv[1:]:
-        promote(OUT, KEY, tsv.sanitized_text(FIELDS, rows_out))
+        promote(OUT, KEY, tsv.csv_text(FIELDS, rows_out))
 
     for line in report:
         print(line)

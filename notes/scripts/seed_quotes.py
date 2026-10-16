@@ -44,7 +44,7 @@ from catlib.promote import key_for, promote
 from catlib.quotes import ANCH, resolve, seed, seed_page
 from catlib.summaries import Page
 from catlib.text import strip_markup
-from catlib.tsv import rows_text
+from catlib.tsv import csv_text, rows_text
 
 PAGE = ROOT / "notes" / "reports" / "subfinding-pairs.md"
 SRC = ROOT / "overview.tex"
@@ -166,7 +166,7 @@ def main() -> int:
     if "--check-only" in args:
         print("[check-only] nothing written")
     else:
-        promote(OUT, key_for("seed_quotes.py", args), rows_text(COLS, specs))
+        promote(OUT, key_for("seed_quotes.py", args), csv_text(COLS, specs))
     return 1 if bad else 0
 
 

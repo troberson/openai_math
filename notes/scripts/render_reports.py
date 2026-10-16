@@ -3226,7 +3226,7 @@ def sp_pair_lines() -> list[tuple[str, str]]:
     # tuple — pylint reports E0633 on unpacking an Optional.
     pending = ("", 0, "")
     unmatched: dict[str, int] = {}
-    for r in tsv.read_join_rows(QUOTES_TSV):
+    for r in tsv.read_rows(QUOTES_TSV):
         if r["page"] != str(SP_MD.relative_to(ROOT)):
             continue
         fam, seq, which = r["fam"], r["seq"], r["which"]

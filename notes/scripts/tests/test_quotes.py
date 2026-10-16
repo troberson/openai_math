@@ -178,8 +178,8 @@ def test_seeded_table_reproduces_the_page(page_rows, summary_rows):
     tsv = ROOT / "notes" / "tables" / "quotes.tsv"
     if not tsv.is_file():
         pytest.skip("notes/tables/quotes.tsv has not been written yet")
-    from catlib.tsv import read_join_rows
-    rows = read_join_rows(tsv)
+    from catlib.tsv import read_rows
+    rows = read_rows(tsv)
     keyed = {(r["page"], r["fam"], r["seq"], r["which"]): r for r in rows}
     assert len(keyed) == len(page_rows) + len(summary_rows)
     cache: dict[str, list[str]] = {}
