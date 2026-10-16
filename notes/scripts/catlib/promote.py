@@ -218,6 +218,8 @@ def l1_paths(name: str) -> list[Path]:
 
 
 PROBES = (
+          ROOT / "notes" / "development" / "probe" / "2026-10-15_rr_098.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-15_seed_quotes_098.txt",
           ROOT / "notes" / "development" / "probe" / "2026-10-15_rr_196.txt",
           ROOT / "notes" / "development" / "probe" / "2026-10-15_seed_quotes_196.txt",
           ROOT / "notes" / "development" / "probe" / "2026-10-15_rr_195.txt",
