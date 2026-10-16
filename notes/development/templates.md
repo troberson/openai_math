@@ -5,7 +5,7 @@ template text plus the writer's registry). Lines and bytes are of the template f
 is a `{{ ` occurrence counted over the whole file. No `lake`, `lean`, `lake exe cache get`, or
 comparator run.
 
-**Headline, with the rule that yields it:** report tree: **22** templates, **9,456** lines, **609,866** bytes, **1,634** slots; index tree: **5** templates, **209** lines, **14,981** bytes, **103** slots; all **27** templates: **9,665** lines, **624,847** bytes, **1,737** slots.
+**Headline, with the rule that yields it:** report tree: **21** templates, **9,302** lines, **598,877** bytes, **1,621** slots; index tree: **5** templates, **209** lines, **14,981** bytes, **103** slots; all **26** templates: **9,511** lines, **613,858** bytes, **1,724** slots.
 
 ## The report tree
 
@@ -16,7 +16,7 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 
 | Template | Lines | Bytes | Slots | Page | Checker | Needles |
 |---|---|---|---|---|---|---|
-| `README.md.j2` | 786 | 76,283 | 79 | `notes/README.md` | `verify_script_ownership.py` | NOT DERIVED |
+| `README.md.j2` | 786 | 76,258 | 79 | `notes/README.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `abstracts.md.j2` | 408 | 32,441 | 33 | `notes/reports/abstracts.md` | `verify_abstracts.py` | 45 |
 | `counterexample-crosscheck.md.j2` | 1,089 | 46,439 | 68 | `notes/reports/counterexample-crosscheck.md` | `verify_counterexample_crosscheck.py` | 20 |
 | `dependency-drift.md.j2` | 229 | 11,558 | 95 | `notes/reports/dependency-drift.md` | `verify_dependency_drift.py` | NOT DERIVED |
@@ -33,12 +33,11 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `scripts-README.md.j2` | 738 | 70,674 | 21 | `notes/scripts/README.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `sources.md.j2` | 157 | 9,313 | 22 | `notes/reports/sources.md` | `verify_sources.py` | 31 |
 | `subfinding-pairs.md.j2` | 1,634 | 60,295 | 422 | `notes/reports/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |
-| `summaries-workflow.md.j2` | 154 | 11,075 | 12 | `notes/development/summaries-workflow.md` | `verify_page_sync.py` | NOT DERIVED |
 | `t0-chains.md.j2` | 571 | 34,913 | 40 | `notes/reports/t0-chains.md` | `verify_t0_chains.py` | 12 |
-| `templates.md.j2` | 110 | 5,137 | 48 | `notes/development/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
+| `templates.md.j2` | 110 | 5,248 | 47 | `notes/development/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `topics.md.j2` | 335 | 23,082 | 117 | `notes/reports/topics.md` | `measure_topics.py` | NOT DERIVED |
 | `verification-dirs.md.j2` | 408 | 37,952 | 44 | `notes/reports/verification-dirs.md` | `verify_verification_dirs.py` | 16 |
-| **report tree** | **22** | **9,456** | **609,866** | **1,634** | | |
+| **report tree** | **21** | **9,302** | **598,877** | **1,621** | | |
 
 ## The index tree
 
@@ -58,7 +57,7 @@ the count of pages on disk that the template produced, read from the tree it wri
 
 A slot is a `{{ ` occurrence in the template file, counted over the whole file. Slot expressions
 are not required to be unique. The gap between `{{ ... }}` expressions and distinct expressions,
-over the **27** committed templates, is
+over the **26** committed templates, is
 **20** repeat expressions over **6** templates —
 `fleet-design.md.j2` (2 repeats); `proof-density.md.j2` (1 repeat); `scripts-README.md.j2` (8 repeats); `templates.md.j2` (1 repeat); `index-readme.md.j2` (5 repeats); `name.md.j2` (3 repeats) —
 where a table row is emitted from the same label more than once. Each report template also carries
@@ -80,14 +79,14 @@ writer supplies it as split labels; a phrase the writer supplies as one string i
 which is why every count on this page is a per-row slot: a report template carries no Jinja loop,
 so a census that grows grows the slot set.
 
-Needle coverage is reported, not assumed: **9** of **22** pages have a checker whose needle list the
+Needle coverage is reported, not assumed: **9** of **21** pages have a checker whose needle list the
 builder can derive, and the per-page counts are the Needles column of the report-tree table above.
-For the other **13** the builder prints `checker needles NOT DERIVED (<checker>) - coverage
+For the other **12** the builder prints `checker needles NOT DERIVED (<checker>) - coverage
 unverified`, and those pages are proven by the render diff plus their own checkers.
 
 ## Registry
 
-registry: **22** entries at `catlib/templates.py:132` — page → checker, with the writer's
+registry: **21** entries at `catlib/templates.py:129` — page → checker, with the writer's
 population and slot dict recorded beside it. The registry and the tree are checked against each
 other: template-without-page **0**, page-without-template **0**.
 
@@ -99,4 +98,4 @@ other: template-without-page **0**, page-without-template **0**.
   page is `render_reports.py` run twice with the pages byte-identical, plus each page's own checker.
 - The index-tree templates are counted and their output is counted; `build_index.py`'s own report
   (links, canonical counts, stale sweep) is not re-checked here — see `notes/development/index-design.md`.
-- Needle coverage for the **13** NOT-DERIVED pages is unverified by the builder, by its own report line.
+- Needle coverage for the **12** NOT-DERIVED pages is unverified by the builder, by its own report line.
