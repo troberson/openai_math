@@ -13,10 +13,10 @@ is per file, and the checker exits 1 on a file no rule owns.
 It is also the script inventory. Every script under `notes/scripts/` is listed once, in one of three
 classes — writer, report-only, checker — with what it writes and the command the gate runs for it, and
 the fourth class, the scratch a session writes outside the tree, is recorded by rule rather than by
-file. The classes partition the **71** scripts: **17** writers, **31** report-only, **23** checkers,
+file. The classes partition the **72** scripts: **17** writers, **31** report-only, **23** checkers,
 and `verify_script_ownership.py` itself, which is the 23rd checker and is not listed in its own table.
 
-## The split: 17 write, 54 write nothing
+## The split: 17 write, 55 write nothing
 
 The writer set is derived from the scripts' own source, not from this page: a script is a writer when
 a path constant rooted at `notes/` appears on the left of `.open(..., "w")` or `.write_text(...)`,
@@ -37,7 +37,7 @@ self-test: a module-level
 `mutants` / `mutant_test` / `selftest` body is blanked before the write calls are read, because a
 self-test writes the page it checks only to mutate it and restores the bytes it read in the `finally`
 — `verify_script_ownership.py` does exactly that, in three branches (the page it checks, `notes/scripts/README.md`, and `notes/development/templates.md`), so its normal run writes nothing and it stays in the checker class. `check_index_links.py` and `measure_proof_density.py` were this rule's examples; `math-o3a.3` moved their sync pass into `verify_page_sync.py`, which mutates page text in memory, so neither script carries a write call any more. That rule
-finds **17** writers over **71** scripts.
+finds **17** writers over **72** scripts.
 
 ### Writers
 
@@ -125,7 +125,7 @@ Editing a join in `build_catalog.py` can move rows in six artifacts.
 
 ### Report-only
 
-The other **54** scripts write nothing. **31** of them print a report: **19** print the report a page's
+The other **55** scripts write nothing. **32** of them print a report: **19** print the report a page's
 counts come from, **1** prints the quote-spec classification the seeded `notes/tables/quotes.tsv` is
 measured against, **1** prints the pytest report for the extracted checker self-tests
 (`run_tests.py`), **2** print the notes-move surface `math-faz` prices before a pass and re-checks
@@ -207,6 +207,7 @@ had to wait for the serial chain to finish.
 
 | Script | Report feeds | Gate |
 |---|---|---|
+| `check_gate_budget.py` | none — the budget assertion `wall < 300 s`, the row-time sum, and the three heaviest rows | **not gated** — the driver runs it post-gate, because the wall it reads is landed by the run itself |
 | `check_index_links.py` | `notes/development/index-links.md` | plain; the self-tests are in `notes/scripts/tests/test_index_links.py`, run by the `run_tests.py` row |
 | `check_summary_manuscripts.py` | `notes/summaries/` — which manuscripts each page reads, and whether the release still names them | plain |
 | `dump_template_slots.py` | `notes/development/templates.md` — the writer's slot labels with their values | plain |
@@ -399,17 +400,16 @@ the walk once.
 ledger: `load_inputs()` is under `functools.cache` (`:54`), so its `run_tests.py` row measures **1.9 s**
 where the `--mutant` row took **0.1 s** — the 11 `check()` calls the row makes pay the walk once.
 `verify_page_sync.py --both` at {{ p['heaviest_cell'] }}. `verify_script_ownership.py`,
-this page's own checker, is {{ p['heaviest_checker'] }} and is not a row
-above.
+this page's own checker, is not a row above, so it has no Cost cell.
 `verify_page_sync.py`'s Cost is one number, not a pair: `--both`
 runs the plain pass and the mutant loop in one process, so `catlib.render.rendered` is walked once
 (123.4 s plain + 122.9 s mutant as two rows, against 125.2 s in one, measured 2026-10-10; the same
 single walk measured **25.1 s** in the 2026-10-12 run, because the render-diff reads the cached
-records the writers promote rather than re-walking the corpus). {{ p['checker_sum_a'] }}
-to **52.5 s**, measured 2026-10-16 as the sum of the wall times the gate printed for its rows in one
+records the writers promote rather than re-walking the corpus). {{ p['checker_sum a'] }}
+{{ p['checker_sum b'] }}, measured 2026-10-16 as the sum of the wall times the gate printed for its rows in one
 pooled run, each Cost cell re-checked cell-by-cell against that run (0
 mismatches over the 24 checkers with Cost cells behind them; `verify_script_ownership.py` is not a row
-above, so it has no cell to check); the full 81-row gate ran in **232.97 s** wall
+above, so it has no cell to check); the full 82-row gate ran in **232.97 s** wall
 (05:47:37–05:51:30 local) and {{ p['row_sum'] }}, so the 12-row pool brings the wall
 to 39.2% of the sum. The writers are the tail: {{ p['tail_render_reports'] }}, the plain render as
 the gate row, {{ p['tail_extract_links'] }},
@@ -595,10 +595,10 @@ carries as its own entry point.
 
 ## Naming coverage
 
-`notes/README.md`'s command block named **{{ p['named_before'] }}** of the 71 scripts before this pass. 37 are named
+`notes/README.md`'s command block named **{{ p['named_before'] }}** of the 72 scripts before this pass. 37 are named
 nowhere in the repo at the pinned baseline: `build_report_templates.py`, `build_index_db.py`,
 `verify_tsv_quoting.py`,
-`check_summary_manuscripts.py`,
+`check_summary_manuscripts.py`, `check_gate_budget.py`,
 `extract_citations.py`, `gate.py`, `locate_summary_quotes.py`, `measure_anchor_blocks.py`,
 `measure_checker_needles.py`, `measure_faithfulness.py`, `measure_import_layout.py`,
 `measure_links_phases.py`, `measure_move_surface.py`, `measure_needles.py`, `measure_open_probe.py`,
