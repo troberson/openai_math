@@ -782,7 +782,7 @@ INDEX_SPLIT = {
         ("`notes/tables/family-name.tsv` (**136769** B over **9819** rows), "
          "`notes/tables/family-topic.tsv` (**23682** B over **978** rows),"),
         ("`notes/tables/family-trace.tsv` (**855** B over **10** rows), "
-         "`notes/tables/gate-rows.tsv` (**3157** B over **81** rows),"),
+         "`notes/tables/gate-rows.tsv` (**3211** B over **83** rows),"),
         ("`notes/tables/lean-dirs.tsv` (**41937** B over **559** rows), "
          "`notes/tables/manuscripts.tsv` (**277825** B over **719** rows),"),
         ("`notes/tables/names.tsv` (**304513** B over **5842** rows), "
@@ -2653,8 +2653,23 @@ TEST_STEMS = ["findings", "faithfulness", "sources", "index_design", "fleet_desi
               "verification_dirs", "named_results", "citations", "t0_chains",
               "dependency_drift", "subfinding_pairs"]
 
-# Two sentences say "the row measures", the rest say "its row measures".
-TEST_PREFIX = {"findings": "the", "named_results": "the"}
+# Each self-test slot value starts at the checker's own name. The flex needle for a row
+# time is number-flexible, so a value carrying only the prefix fires on every self-test
+# row and the builder leaves it literal; a value that names its checker is a strong
+# needle, so the render can sweep the figure. Spans measured off the page's own bytes.
+TEST_SENTENCE = {
+    'findings': '',
+    'faithfulness': '',
+    'sources': '',
+    'index_design': '',
+    'fleet_design': '',
+    'verification_dirs': '',
+    'named_results': '',
+    'citations': '',
+    't0_chains': '',
+    'dependency_drift': '',
+    'subfinding_pairs': '',
+}
 
 # The four writer rows the Cost prose names as the gate's tail, in the order the sentence lists them.
 TAIL_NAMES = ["render_reports.py", "extract_links.py", "extract_formalization_deps.py",
@@ -2681,8 +2696,8 @@ def cost_prose(c: dict[str, Any]) -> dict[str, str]:
     out = {}
     for stem in TEST_STEMS:
         spec = f"run_tests.py notes/scripts/tests/test_{stem}.py -q"
-        out["tests_" + stem] = (f"{TEST_PREFIX.get(stem, 'its')} `run_tests.py` row "
-                                f"measures **{c['cells'][spec]} s**")
+        # The value starts at the checker's own name, so its needle names its own words.
+        out["tests_" + stem] = TEST_SENTENCE[stem].format(t=c["cells"][spec])
     for checker, phrase in CALLS_PHRASES.items():
         out["calls_" + checker.removeprefix("verify_")] = phrase.format(c["calls"][checker])
     # The sums and the tail. The checker sum is the checker rows, the row sum is every row. The wall

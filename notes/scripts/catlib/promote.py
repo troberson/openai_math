@@ -125,10 +125,14 @@ L1: dict[str, tuple[str, ...]] = {
     # untracked scratch under `.qwen/`, so the key hashes its bytes directly; the probe record prints
     # the `notes/` bucket, which cannot name it, so this writer is probe-exempt.
     "measure_gate_rows.py": (".qwen/tmp/reports/gate_run1.txt",),
-    # The check()-count probe reads the script tree: the eleven checker sources it loads and the eleven
-    # test files it runs, both under `notes/scripts/`. The probe scope excludes that tree, so the entry
-    # is hashed, not compared, and the writer is probe-exempt.
-    "measure_check_calls.py": ("notes/scripts/",),
+    # The check()-count probe reads the whole `notes/` tree, not just the script tree. It loads the
+    # eleven checker sources and runs the eleven test files under `notes/scripts/`, and each checker
+    # reads the page it verifies, so a measured count is a function of the page bytes too. A key that
+    # hashed only `notes/scripts/` served a stale record after a page sweep: the probe measured `-1`
+    # for `verify_fleet_design` while the fleet page carried a superseded gate-row count, and the
+    # cached record kept serving that `-1` after the render swept the page. The probe scope excludes
+    # `notes/scripts/`, so the entry is hashed, not compared, and the writer is probe-exempt.
+    "measure_check_calls.py": ("notes/",),
 }
 
 ARTIFACTS: dict[str, tuple[str, ...]] = {

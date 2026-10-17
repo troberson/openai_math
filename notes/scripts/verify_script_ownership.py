@@ -603,10 +603,14 @@ def sync_problems(page, text) -> list[str]:
     return RD.sync_problems(page, text)
 
 
-def gate_rows() -> dict[str, str]:
-    """The gate's measured row times, read from the TSV the gate run lands."""
-    return {r["spec"]: r["seconds"] for r in csv.DictReader(
-        read_text(GATE_ROWS_TSV).splitlines(), delimiter="\t")}
+def gate_rows() -> list[dict[str, str]]:
+    """The gate's measured rows, read from the TSV the gate run lands.
+
+    A list, not a dict keyed by spec: `measure_check_calls.py` is a gate row on both sides of
+    the render, so the TSV carries that spec twice and a dict drops one row from the count
+    and the sum.
+    """
+    return list(csv.DictReader(read_text(GATE_ROWS_TSV).splitlines(), delimiter="\t"))
 
 
 def check_calls() -> dict[str, int]:
@@ -629,7 +633,8 @@ def cost_problems(text: str) -> list[str]:
     so a page that drops a figure is flagged rather than skipped.
     """
     p = []
-    rows = gate_rows()
+    rows_list = gate_rows()
+    rows = {r["spec"]: r["seconds"] for r in rows_list}
     calls = check_calls()
     folded = re.sub(r"\s+", " ", text)
     cost = re.findall(r"^\| `([a-z0-9_]+\.py)` \|.*\| ([0-9.]+) \|$", text, re.MULTILINE)
@@ -688,13 +693,13 @@ def cost_problems(text: str) -> list[str]:
             counts += 1
         else:
             p.append(f"{checker}: the check() count is not {n}")
-    checker_rows = [s for s in rows if s.startswith("verify_")]
+    checker_rows = [r["spec"] for r in rows_list if r["spec"].startswith("verify_")]
     csum = sum(float(rows[s]) for s in checker_rows)
     if f"The {len(checker_rows)} checker invocations sum to **{csum:.1f} s**" not in folded:
         p.append(f"the checker sum is not {len(checker_rows)} invocations at {csum:.1f} s")
-    rsum = sum(float(v) for v in rows.values())
-    if f"its {len(rows)} row times sum to **{rsum:.1f} s**" not in folded:
-        p.append(f"the row sum is not {len(rows)} rows at {rsum:.1f} s")
+    rsum = sum(float(r["seconds"]) for r in rows_list)
+    if f"its {len(rows_list)} row times sum to **{rsum:.1f} s**" not in folded:
+        p.append(f"the row sum is not {len(rows_list)} rows at {rsum:.1f} s")
     heaviest = max(float(cell) for _, cell in cost)
     if f"**{heaviest:.1f} s** is the heaviest row with a Cost cell" not in folded:
         p.append(f"the heaviest row with a Cost cell is not {heaviest:.1f} s")

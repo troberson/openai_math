@@ -59,6 +59,10 @@ ROWS = [
     ("extract_subfinding_pairs.py", ("catalog",), ()),
     ("extract_scope_notes.py", (), ()),
     ("extract_citations.py", (), ()),
+    # The render reads the keyed check() record, so the probe has to land it before the render.
+    # The render writes notes/scripts/README.md, which is inside the tree the probe's key hashes,
+    # so the probe runs a second time after the render, before the census checker.
+    ("measure_check_calls.py", (), ()),
     ("render_reports.py",
      ("catalog", "sources", "links", "subfindings", "abstracts", "deps", "index"), ("pages",)),
     ("seed_quotes.py", ("pages",), ("quotes",)),
@@ -106,6 +110,10 @@ ROWS = [
     ("run_tests.py notes/scripts/tests/test_verification_dirs.py -q", ("pages",), ()),
     ("verify_dependency_drift.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_dependency_drift.py -q", ("pages",), ()),
+    # The census checker's Cost pass reads the keyed check() record, so the probe has to land it
+    # before the checker runs. The render writes notes/scripts/README.md, which is inside the tree
+    # the probe's key hashes, so the probe also starts after the render.
+    ("measure_check_calls.py", ("pages",), ()),
     ("verify_script_ownership.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_script_ownership.py -q", ("pages",), ()),
     ("verify_findings.py", ("pages",), ()),
@@ -118,9 +126,6 @@ ROWS = [
     ("run_tests.py notes/scripts/tests/test_fleet_design.py -q", ("pages",), ()),
     ("verify_faithfulness.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_faithfulness.py -q", ("pages",), ()),
-    # The check()-count probe runs one pytest row per checker, so it starts after the render: each
-    # checker reads the pages its own self-tests verify.
-    ("measure_check_calls.py", ("pages",), ()),
     ("verify_page_sync.py --both", ("pages",), ()),
     # The checker compares the cache bytes with the disk bytes for every writer, so it must start
     # after every writer that lands a tracked artifact — `quotes` and `summaries` included. A row

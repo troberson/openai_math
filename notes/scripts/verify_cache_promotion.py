@@ -163,6 +163,12 @@ def check(artifacts: dict[str, tuple[str, ...]], l1: dict[str, tuple[str, ...]],
                      f"registry names {sorted(got - want)}")
 
     for name, outs in artifacts.items():
+        if l1.get(name) and all(e.startswith(".qwen/tmp/") for e in l1[name]):
+            # The same reason as the probe exemption, read off the L1 rather than a name list:
+            # this writer's key hashes a file the gate driver writes during the run, so the key
+            # Pass C recomputes at gate time is the key the post-gate writer lands its record
+            # under. A record under that key cannot exist while the gate runs.
+            continue
         key = key_for(name, args.get(name, ()))
         bad = 0
         total = 0
