@@ -5,16 +5,16 @@ citation grammar, the normalizer contract, the measured quotation traps — live
 `.qwen/skills/auto-skill-family-summary-citation-verified/`. Nothing here is a task list; `bd ready` is
 the only tracker.
 
-## Current state (rewritten at every batch boundary, 2026-10-16)
+## Current state (rewritten at every batch boundary, 2026-10-17)
 
-- **Live pages: 61** in `notes/summaries/`. The last page landed is family 198, committed `d23b1fb74`;
-  the ledger's `summary` column is 1 for those 61 families.
-- **Queue:** epic `math-cgv` (P2, *Render summary pages from jinja2 templates with quotes resolved
-  from `quotes.tsv`*) with 11 children in a linear dependency chain; `math-cgv.1` is the ready row.
-  Epic `math-ckd` (P4) stays open; `math-ckd.5` is claimed and in progress — Tier C group 2, 100 pages
-  scoped, 32 landed.
-- **Git:** HEAD `0db3ba71a` (the beads store recording `math-cgv`), `origin/notes` at `7a3310c00` —
-  `d23b1fb74` and `0db3ba71a` are unpushed.
+- **Live pages: 60** family pages in `notes/summaries/` plus the index `README.md` (61 files). The last
+  page landed is family 198, committed `d23b1fb74`; the ledger's `summary` column is 1 for those 60.
+- **Queue:** epic `math-rui` (P2, *Generate the census page's Cost and check()-count figures as writer
+  slots*) — children `.1`–`.5` closed, `.6` claimed and in progress, `.7` open. Epic `math-cgv` (P2)
+  with `math-cgv.1` ready. Epic `math-ckd` (P4) open; `math-ckd.5` claimed — Tier C group 2: **71** Tier C
+  families in the twelve disciplines, **23 landed, 39 remaining** (measured from the ledger 2026-10-17;
+  the bead body's 99 families / 179 manuscripts is stale).
+- **Git:** HEAD `75dae5cea`, `origin/notes` at `75dae5cea` — the batch is pushed.
 - **Loop:** cleared 2026-10-15. Continuation is human-driven; do not re-arm without a fresh instruction.
 
 ## Next batch
@@ -181,6 +181,39 @@ read-only; confirm with `git push --dry-run`.
   value for them** — a slot exists only when the writer's value appears in HEAD's page bytes, so the
   literals become slots when the writer measures them, which is bead `.7`'s measuring pass, not a
   builder run.
+
+- **2026-10-17 — the census checker's three problems were one row in the wrong table.** The checker
+  keys table rows by `### ` heading, so the writers table is compared against the derived writer set
+  and the report-only plus checkers tables form the non-writer partition. `check_gate_budget.py` writes
+  nothing, so its row in the writers table was invisible to the partition (the checker reported it
+  missing from the non-writers) and inflated the writers table; its 4 cells also mismatched the
+  4-column writers header. The row now sits alphabetically first in the 3-cell report-only table, and
+  the counts the checker measures swept: 71 to 72 scripts, 31 to 32 report-only, 54 to 55 write nothing,
+  and the stale 81-row gate to the measured 82. The checker reports 0 problems, all reconciliations
+  True, sync 0, and the probe's baseline disagreements 0.
+
+- **2026-10-17 — the two self-test figure mutants were stale, not failing.** The Cost pass dropped the
+  self-test row figures: a run-dependent time cannot live in a template keyed to HEAD, so the page
+  carries no row figure and the needle `verify_findings.py: the page says` no longer exists. The two
+  mutants keyed to that needle reported failures. Removing them and their three helpers leaves 28 tests,
+  all passing.
+
+- **2026-10-17 — the driver on disk had no post-gate section, so the Cost cells recorded the previous
+  run.** The handoff claimed the wall, the row times, the render, the probe, the census checker, and the
+  budget assertion were committed; the driver ended at `GATE_DONE`. The post-gate section now lands
+  `gate-rows.tsv` from the report this run printed, renders the pages from it, commits the swept pages,
+  rebuilds the templates from the committed pages, commits them, then runs the probe, the census checker,
+  and the budget assertion. The probe runs after the builder because both write inside the tree the
+  probe's key hashes. The driver stops before the sweep if the gate printed any failure, and commits the
+  beads store on its own path so the tree ends clean.
+
+- **2026-10-17 — the gate ran green for the first time: 82 rows, 0 failures.** The three failures the
+  handoff carried were diagnosed individually. `verify_cache_promotion.py` reported 21 `cache entry
+  missing` for `build_report_templates.py` because the commits moved HEAD and the builder's key hashes
+  HEAD, so the builder had to run for all pages. `test_cache_promotion.py` passes 10 once the records are
+  under the current key. `test_tsv_quoting.py`'s clean test asserted a stale literal 25 TSVs and 26727
+  rows — `gate-rows.tsv` is the 26th table under `notes/tables/` and its 82 rows move the sum to 26809.
+  The budget assertion ran green: wall 261.86 s inside the 300 s budget.
 
 ## Pointers
 
