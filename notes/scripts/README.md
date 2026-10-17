@@ -56,6 +56,7 @@ finds **17** writers over **71** scripts.
 | `build_index_db.py` | `.qwen/cache/records/<key>/fts.json` and `.qwen/cache/records/<key>/index.db` | not in `gate.py` — the report carries a build wall and a per-term query wall, so a run-1/run-2 byte diff is a timing artifact; the record itself carries only counts, and the database is untracked by the `.qwen/*` rule | the SQLite FTS5 layer over the 8,007 `.tex` files and the 372 abstracts, the layer `notes/development/index-design.md`'s schema decision leaves out |
 | `measure_gate_rows.py` | `notes/tables/gate-rows.tsv` | not in `gate.py` — it reads the driver's report for the last completed run, which the driver truncates at run start, so a gate row would read the previous run's bytes; run explicitly after a gate pass | none yet — beads `math-rui.3` and `math-rui.4` give the writer a slot and the census checker a needle |
 | `measure_check_calls.py` | `.qwen/cache/records/<key>/check_calls.json` | a gate row; the record is the population the `check()` sentences in this page quote, and there are no tracked bytes for the promote assertion to compare | the eleven `check()` sentences in this page |
+| `check_gate_budget.py` | none | not in `gate.py` — it reads the wall the driver lands in `.qwen/tmp/reports/gate_wall.txt`, which the driver writes during the run, so a gate row would read the previous run's wall; the driver runs it post-gate | the budget assertion `wall < 300 s` |
 
 Eight writers emit one TSV each. `build_index.py` is the one-to-many case: it renders **1,049** files —
 **1,033** `.md` pages and **0** `.tsv` tables in `notes/index/`, plus the **16** `.tsv` tables it stages
@@ -389,7 +390,7 @@ above.
 runs the plain pass and the mutant loop in one process, so `catlib.render.rendered` is walked once
 (123.4 s plain + 122.9 s mutant as two rows, against 125.2 s in one, measured 2026-10-10; the same
 single walk measured **25.1 s** in the 2026-10-12 run, because the render-diff reads the cached
-records the writers promote rather than re-walking the corpus). The 24 checker invocations sum
+records the writers promote rather than re-walking the corpus). 
 to **52.5 s**, measured 2026-10-16 as the sum of the wall times the gate printed for its rows in one
 pooled run, each Cost cell re-checked cell-by-cell against that run (0
 mismatches over the 24 checkers with Cost cells behind them; `verify_script_ownership.py` is not a row
