@@ -346,43 +346,55 @@ it again per mutant.
 `verify_findings.py` is the subprocess case: its Pass E runs the fast extractors as subprocesses inside
 `check()` (`:459`, the subprocess call at `:140`), so a plain run pays five of them. The pass that
 extracted its self-tests put `run()` under `functools.cache` (`:134`) — every script in `REPORTS` is
-report-only, so a second call in the same process cannot see a different stdout — and that is why the 9 `check()` calls the row makes (the clean page, each of the six faults, and the padded-table test's two) pay the
+report-only, so a second call in the same process cannot see a different stdout — and that is why the
+`run_tests.py` row measures **15.6 s** where the `--mutant` row took **34.7 s** before that row was
+replaced: the 9 `check()` calls the row makes (the clean page, each of the six faults, and the padded-table test's two) pay the
 five subprocesses once.
 `verify_faithfulness.py` is the same case with a corpus walk instead of subprocesses: `population()`
 is under `functools.cache` (`:187`) — the checker writes nothing and the tests mutate page text in
-memory, so a second call in the same process cannot see a different corpus — and that is why the 33 `check()` calls the row makes pay the yaml/docs/OAI/preprints walk once.
+memory, so a second call in the same process cannot see a different corpus — and that is why its
+`run_tests.py` row measures **1.7 s** where the `--mutant` row took **12.8 s** before that row was
+replaced: the 33 `check()` calls the row makes pay the yaml/docs/OAI/preprints walk once.
 `verify_sources.py` is the same case with a wider walk: `population()` is under `functools.cache`
 (`:152`) — the checker writes nothing and the tests mutate page text in memory, so a second call in the
-same process cannot see a different corpus — and that is why the 15 `check()` calls the
+same process cannot see a different corpus — and that is why its `run_tests.py` row measures **1.2 s**
+where the `--mutant` row took **12.9 s** before that row was replaced: the 15 `check()` calls the
 row makes pay the preprints/overview walk once.
 `verify_index_design.py` is the same case with the index tree: `population()` is under
-`functools.cache` (`:66`) and delegates to `measure_index_sizes.population()`, so the
+`functools.cache` (`:66`) and delegates to `measure_index_sizes.population()`, so its `run_tests.py`
+row measures **5.5 s** where the `--mutant` row took **20.3 s** before that row was replaced: the
 16 `check()` calls the row makes pay the `notes/index/` walk once.
 `verify_fleet_design.py` is the same case with the `git`/`du`/script-tree walk: `population()` is under
-`functools.cache` (`:151`), so the 23 `check()` calls the row makes pay the five
+`functools.cache` (`:151`), so its `run_tests.py` row measures **0.7 s** where the `--mutant` row took
+**0.8 s** before that row was replaced: the 23 `check()` calls the row makes pay the five
 `git rev-parse` calls, the `--ignored=matching` check, the three `du -sk` calls and the 68-script scan
 once.
 `verify_verification_dirs.py` is the same case with two walks: `population()` (`:138`) and
-`entry_measure()` (`:149`) are both under `functools.cache`, so the 21 `check()`
+`entry_measure()` (`:149`) are both under `functools.cache`, so its `run_tests.py` row measures
+**0.4 s** where the `--mutant` row took **1.8 s** before that row was replaced: the 21 `check()`
 calls the row makes pay the 749-directory bundle scan and the ledger join once.
 `verify_named_results.py` is the keyed-record case, not the in-process-cache case: its `population()`
-reads `named_results.json` under the producer's key, so the 15 `check()` calls pay the 7,240-file walk once,
+reads `named_results.json` under the producer's key, so the plain row is **0.6 s** and the
+`run_tests.py` row measures **7.2 s** — the 15 `check()` calls pay the 7,240-file walk once,
 under the key the producer landed, not inside the checker. Before the record the plain row was 18.9 s
 and the test row 23.8 s. The remaining cost is the per-`check()` read of 61 anchors and 61 quotations,
 which a mutant does multiply.
 `verify_citations.py` is the same case with the `.bib` walk: `measure()` is under `functools.cache`
-(`:75`), so the
+(`:75`), so its `run_tests.py` row measures **4.7 s** where the `--mutant` row took **3.0 s** — the
 12 `check()` calls the row makes pay the two normalizations once. The cache persists only because the
 test loader memoizes: a loader that re-executed the module per test gave each test an empty cache, and
 the row measured **16.9 s** before the loader was memoized.
 `verify_t0_chains.py` is the same case with the ledger, `subfindings.tsv`, `notes/reports/t0-triage.md` and the
-`.bib` layer: `population()` is under `functools.cache` (`:118`), so the 17 `check()` calls the row makes pay the
+`.bib` layer: `population()` is under `functools.cache` (`:118`), so its `run_tests.py` row measures
+**2.9 s** where the `--mutant` row took **1.4 s** — the 17 `check()` calls the row makes pay the
 walk once.
 `verify_dependency_drift.py` is the same case with the TSV, `lean/lakefile.lean`, `lean/formalization.yaml`
-and the 23 patch files: `measure()` is under `functools.cache` (`:185`), so the 12 `check()` calls the row makes pay
+and the 23 patch files: `measure()` is under `functools.cache` (`:185`), so its `run_tests.py` row
+measures **2.4 s** where the `--mutant` row took **2.0 s** — the 12 `check()` calls the row makes pay
 the walk once.
 `verify_subfinding_pairs.py` is the same case with `overview.tex`, `notes/tables/subfindings.tsv` and the
-ledger: `load_inputs()` is under `functools.cache` (`:54`), so the 11 `check()` calls the row makes pay the walk once.
+ledger: `load_inputs()` is under `functools.cache` (`:54`), so its `run_tests.py` row measures **1.9 s**
+where the `--mutant` row took **0.1 s** — the 11 `check()` calls the row makes pay the walk once.
 `verify_page_sync.py --both` at **29.9 s** is the heaviest row with a Cost cell. `verify_script_ownership.py`,
 this page's own checker, is the heaviest checker row at **77.9 s** and is not a row
 above.
