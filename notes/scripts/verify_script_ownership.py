@@ -620,11 +620,15 @@ def check_calls() -> dict[str, int]:
 
 
 def cost_problems(text: str) -> list[str]:
-    """Pass I: the Cost cells, the self-test row figures, and the check()-count sentences.
+    """Pass I: the Cost cells, the tail figures, the sums, and the check()-count sentences.
 
     Every figure is measured: a Cost cell is the gate row time for the spec that names the checker,
-    a self-test figure is the gate row time for the `run_tests.py` row that names the test file, and
-    a count is the probe's record. The pass carries none of these numbers.
+    and a count is the probe's record. The pass carries none of these numbers.
+
+    The self-test row times are not in the page. A run-dependent figure cannot live in a template
+    keyed to HEAD, so quoting one forced a hand-sweep every run: the gate lands a new TSV, the
+    template's literal is the previous run's figure, and the pass reported the page stale. The
+    prose carries the caching claim; the numbers stay in the Cost table and the TSV.
 
     Nothing is exempted. The page wraps lines, so every sentence is matched on the block with its
     whitespace folded — a line break inside a phrase is one space. The checker name is normalized
@@ -648,30 +652,6 @@ def cost_problems(text: str) -> list[str]:
         want = "0" if rows[spec] == "0.0" else rows[spec]
         if cell != want:
             p.append(f"Cost cell for {name}: page {cell}, gate row {spec} measured {want}")
-    # The prose paragraphs, keyed by the checker each names. Table blocks are not prose.
-    blocks = [re.sub(r"\s+", " ", b) for b in text.split("\n\n")
-              if not b.lstrip().startswith("|")]
-    # The page's own claims are the population. The pass reads every figure the page states about
-    # a self-test row, keys it to the checker named before it in the same paragraph, and checks it
-    # against the gate row that names that checker's test file. A row the page never discusses is
-    # not a defect, so no checker is exempted by name.
-    claims = 0
-    for b in blocks:
-        for m in re.finditer(r"`run_tests\.py` row measures \*\*([0-9.]+) s\*\*", b):
-            head = b[:m.start()]
-            # The closest preceding checker, by position in the paragraph. The Cost table's order is
-            # alphabetical, so taking the last name in that order hands every later figure in a
-            # multi-checker paragraph to the alphabetically last checker.
-            pos = [(head.index(f"`{n}`"), n) for n, _ in cost if f"`{n}`" in head]
-            if not pos:
-                p.append(f"the self-test figure {m.group(1)} s is not keyed to a checker")
-                continue
-            name = max(pos)[1]
-            stem = name.removeprefix("verify_").removesuffix(".py")
-            spec = f"run_tests.py notes/scripts/tests/test_{stem}.py -q"
-            claims += 1
-            if rows.get(spec) != m.group(1):
-                p.append(f"{name}: the page says {m.group(1)} s, the gate row measured {rows.get(spec)}")
     # The count sentence must sit in the paragraph that begins with the checker's own name. The Cost
     # prose is one block, so a block-level test lets a count belonging to a neighbouring checker
     # satisfy this checker's requirement — the sources paragraph's count carried named_results.
@@ -727,8 +707,8 @@ def cost_problems(text: str) -> list[str]:
     # names every checker whose count the page must state, so the count floor is the record's
     # population. The claim and tail floors are the page's own claims, which the pass reads off
     # the page; a gate row the page never discusses is not a defect.
-    if not claims or not tail:
-        p.append(f"the pass read {claims} self-test figures and {len(tail)} tail figures")
+    if not tail:
+        p.append(f"the pass read {len(tail)} tail figures")
     if counts < len(calls):
         p.append(f"the pass read {counts} counts, below {len(calls)} recorded checkers")
     return p

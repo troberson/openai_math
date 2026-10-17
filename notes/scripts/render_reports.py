@@ -2648,28 +2648,7 @@ def cost_phrases(c: dict[str, Any]) -> dict[str, str]:
     return out
 
 
-# The 11 self-test rows the Cost prose quotes, keyed by the gate spec that names the test file.
-TEST_STEMS = ["findings", "faithfulness", "sources", "index_design", "fleet_design",
-              "verification_dirs", "named_results", "citations", "t0_chains",
-              "dependency_drift", "subfinding_pairs"]
 
-# Each self-test slot value starts at the checker's own name. The flex needle for a row
-# time is number-flexible, so a value carrying only the prefix fires on every self-test
-# row and the builder leaves it literal; a value that names its checker is a strong
-# needle, so the render can sweep the figure. Spans measured off the page's own bytes.
-TEST_SENTENCE = {
-    'findings': '',
-    'faithfulness': '',
-    'sources': '',
-    'index_design': '',
-    'fleet_design': '',
-    'verification_dirs': '',
-    'named_results': '',
-    'citations': '',
-    't0_chains': '',
-    'dependency_drift': '',
-    'subfinding_pairs': '',
-}
 
 # The four writer rows the Cost prose names as the gate's tail, in the order the sentence lists them.
 TAIL_NAMES = ["render_reports.py", "extract_links.py", "extract_formalization_deps.py",
@@ -2694,18 +2673,20 @@ CALLS_PHRASES = {
 
 def cost_prose(c: dict[str, Any]) -> dict[str, str]:
     out = {}
-    for stem in TEST_STEMS:
-        spec = f"run_tests.py notes/scripts/tests/test_{stem}.py -q"
-        # The value starts at the checker's own name, so its needle names its own words.
-        out["tests_" + stem] = TEST_SENTENCE[stem].format(t=c["cells"][spec])
+    # No self-test row-time slots: the page carries the caching claim, not the number. A
+    # run-dependent figure cannot live in a template keyed to HEAD, and a value the page
+    # wraps across lines stays literal, so the render cannot sweep it.
     for checker, phrase in CALLS_PHRASES.items():
         out["calls_" + checker.removeprefix("verify_")] = phrase.format(c["calls"][checker])
     # The sums and the tail. The checker sum is the checker rows, the row sum is every row. The wall
     # the prose quotes is not in the TSV — the gate driver prints no wall time — so the wall and the
     # percentage it divides by stay literal.
     checker_rows = [r for r in c["rows"] if r["spec"].startswith("verify_")]
-    out["checker_sum"] = (f"The {len(checker_rows)} checker invocations sum to "
-                          f"**{sum(float(r['seconds']) for r in checker_rows):.1f} s**")
+    # Split labels, not one string: the builder leaves a single-part value literal when its
+    # matched span contains a newline, and the page breaks this sentence at "sum / to **X s**".
+    # The split carries the break as the separator, which is what makes the span slotable.
+    out["checker_sum_a"] = f"The {len(checker_rows)} checker invocations sum"
+    out["checker_sum_b"] = (f"to **{sum(float(r['seconds']) for r in checker_rows):.1f} s**")
     out["row_sum"] = (f"its {len(c['rows'])} row times sum to "
                       f"**{sum(float(r['seconds']) for r in c['rows']):.1f} s**")
     # The heaviest row with a Cost cell is the max of the Cost column. The checker rows include
