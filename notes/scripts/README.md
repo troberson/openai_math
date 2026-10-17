@@ -311,28 +311,28 @@ self-tests rows are report-only rows, not checker invocations:
 
 | Checker | Checks | Gate | Cost (s) |
 |---|---|---|---|
-| `verify_abstracts.py` | `notes/reports/abstracts.md` | plain; the self-tests are in `notes/scripts/tests/test_abstracts.py`, run by the `run_tests.py` row | 0.7 |
-| `verify_cache_promotion.py` | `catlib/promote.py` — the registry shape against the writers table, the L1 lists against the audit-hook records, and the cached bytes against every tracked artifact under its key | plain; the self-tests are in `notes/scripts/tests/test_cache_promotion.py`, run by the `run_tests.py` row | 0.8 |
+| `verify_abstracts.py` | `notes/reports/abstracts.md` | plain; the self-tests are in `notes/scripts/tests/test_abstracts.py`, run by the `run_tests.py` row | 0.8 |
+| `verify_cache_promotion.py` | `catlib/promote.py` — the registry shape against the writers table, the L1 lists against the audit-hook records, and the cached bytes against every tracked artifact under its key | plain; the self-tests are in `notes/scripts/tests/test_cache_promotion.py`, run by the `run_tests.py` row | 0.7 |
 | `verify_citations.py` | `notes/reports/citations.md` | plain; the self-tests are in `notes/scripts/tests/test_citations.py`, run by the `run_tests.py` row | 1.7 |
 | `verify_conditional.py` | `notes/reports/conditional.md` | plain; the self-tests are in `notes/scripts/tests/test_conditional.py`, run by the `run_tests.py` row | 0 |
 | `verify_conjecture_standing.py` | `notes/tables/conjecture-standing.tsv` | plain; the self-tests are in `notes/scripts/tests/test_conjecture_standing.py`, run by the `run_tests.py` row | 0 |
-| `verify_counterexample_crosscheck.py` | `notes/reports/counterexample-crosscheck.md` | plain; the self-tests are in `notes/scripts/tests/test_counterexample_crosscheck.py`, run by the `run_tests.py` row | 0.3 |
+| `verify_counterexample_crosscheck.py` | `notes/reports/counterexample-crosscheck.md` | plain; the self-tests are in `notes/scripts/tests/test_counterexample_crosscheck.py`, run by the `run_tests.py` row | 0.4 |
 | `verify_dependency_drift.py` | `notes/reports/dependency-drift.md`, `notes/reports/formalization-deps.md` | plain; the self-tests are in `notes/scripts/tests/test_dependency_drift.py`, run by the `run_tests.py` row | 0.3 |
-| `verify_faithfulness.py` | `notes/reports/formalization-faithfulness.md` — anchors, the count phrases re-derived by its own `main_results`/declaration/carrier/closure walk (not the writer's), the disjoint and overlap pairing tables, the `a.e.` table, and the render diff | plain; the self-tests are in `notes/scripts/tests/test_faithfulness.py`, run by the `run_tests.py` row | 1.6 |
-| `verify_findings.py` | `notes/reports/findings.md` | plain; the self-tests are in `notes/scripts/tests/test_findings.py`, run by the `run_tests.py` row | 12.5 |
-| `verify_fleet_design.py` | `notes/development/fleet-design.md` — anchors, the count phrases re-derived from `git`/`du`/the probe records, each of the three site paragraphs (atomicity, env, set iteration) and the checker-section anchor list compared with the measured `name:line` set, the purity and amplification tables, and the page against `render_reports.py`'s render of it | plain; the self-tests are in `notes/scripts/tests/test_fleet_design.py`, run by the `run_tests.py` row | 0.5 |
-| `verify_index_design.py` | `notes/development/index-design.md` | plain; the self-tests are in `notes/scripts/tests/test_index_design.py`, run by the `run_tests.py` row | 3.1 |
+| `verify_faithfulness.py` | `notes/reports/formalization-faithfulness.md` — anchors, the count phrases re-derived by its own `main_results`/declaration/carrier/closure walk (not the writer's), the disjoint and overlap pairing tables, the `a.e.` table, and the render diff | plain; the self-tests are in `notes/scripts/tests/test_faithfulness.py`, run by the `run_tests.py` row | 1.7 |
+| `verify_findings.py` | `notes/reports/findings.md` | plain; the self-tests are in `notes/scripts/tests/test_findings.py`, run by the `run_tests.py` row | 13.2 |
+| `verify_fleet_design.py` | `notes/development/fleet-design.md` — anchors, the count phrases re-derived from `git`/`du`/the probe records, each of the three site paragraphs (atomicity, env, set iteration) and the checker-section anchor list compared with the measured `name:line` set, the purity and amplification tables, and the page against `render_reports.py`'s render of it | plain; the self-tests are in `notes/scripts/tests/test_fleet_design.py`, run by the `run_tests.py` row | 0.6 |
+| `verify_index_design.py` | `notes/development/index-design.md` | plain; the self-tests are in `notes/scripts/tests/test_index_design.py`, run by the `run_tests.py` row | 3.4 |
 | `verify_named_conjectures.py` | `notes/reports/named-conjectures.md` | plain; the self-tests are in `notes/scripts/tests/test_named_conjectures.py`, run by the `run_tests.py` row | 0 |
-| `verify_named_results.py` | `notes/reports/named-results.md` | plain; the self-tests are in `notes/scripts/tests/test_named_results.py`, run by the `run_tests.py` row | 0.6 |
-| `verify_page_sync.py` | `notes/reports/links.md`, `notes/reports/names.md`, `notes/reports/topics.md`, `notes/reports/proof-density.md`, `notes/development/index-links.md` — the render diff for the five pages whose sync pass used to live in a writer; the mutants mutate page prose in memory, so no page is written | `--both` — plain and mutant in one process | 28.0 |
-| `verify_scope_exclusions.py` | `notes/reports/scope-exclusions.md` | plain; the self-tests are in `notes/scripts/tests/test_scope_exclusions.py`, run by the `run_tests.py` row | 0 |
-| `verify_sources.py` | `notes/reports/sources.md` | plain; the self-tests are in `notes/scripts/tests/test_sources.py`, run by the `run_tests.py` row | 1.1 |
-| `verify_subfinding_pairs.py` | `notes/reports/subfinding-pairs.md` | plain; the self-tests are in `notes/scripts/tests/test_subfinding_pairs.py`, run by the `run_tests.py` row | 1.2 |
+| `verify_named_results.py` | `notes/reports/named-results.md` | plain; the self-tests are in `notes/scripts/tests/test_named_results.py`, run by the `run_tests.py` row | 0.7 |
+| `verify_page_sync.py` | `notes/reports/links.md`, `notes/reports/names.md`, `notes/reports/topics.md`, `notes/reports/proof-density.md`, `notes/development/index-links.md` — the render diff for the five pages whose sync pass used to live in a writer; the mutants mutate page prose in memory, so no page is written | `--both` — plain and mutant in one process | 29.9 |
+| `verify_scope_exclusions.py` | `notes/reports/scope-exclusions.md` | plain; the self-tests are in `notes/scripts/tests/test_scope_exclusions.py`, run by the `run_tests.py` row | 0.1 |
+| `verify_sources.py` | `notes/reports/sources.md` | plain; the self-tests are in `notes/scripts/tests/test_sources.py`, run by the `run_tests.py` row | 1.2 |
+| `verify_subfinding_pairs.py` | `notes/reports/subfinding-pairs.md` | plain; the self-tests are in `notes/scripts/tests/test_subfinding_pairs.py`, run by the `run_tests.py` row | 1.4 |
 | `verify_subfindings.py` | `notes/tables/subfindings.tsv` | plain; the self-tests are in `notes/scripts/tests/test_subfindings.py`, run by the `run_tests.py` row | 0.1 |
-| `verify_summaries.py` | `notes/summaries/` | plain; the self-tests are in `notes/scripts/tests/test_summaries.py`, run by the `run_tests.py` row | 2.1 |
-| `verify_t0_chains.py` | `notes/reports/t0-chains.md` | plain; the self-tests are in `notes/scripts/tests/test_t0_chains.py`, run by the `run_tests.py` row | 1.5 |
+| `verify_summaries.py` | `notes/summaries/` | plain; the self-tests are in `notes/scripts/tests/test_summaries.py`, run by the `run_tests.py` row | 2.3 |
+| `verify_t0_chains.py` | `notes/reports/t0-chains.md` | plain; the self-tests are in `notes/scripts/tests/test_t0_chains.py`, run by the `run_tests.py` row | 1.8 |
 | `verify_tsv_quoting.py` | `notes/tables/*.tsv` — the RFC 4180 rule: a field that does not start with a quote carries no quote at all, and a field that opens a quoted field must close inside the field with every interior quote doubled | plain; the self-tests are in `notes/scripts/tests/test_tsv_quoting.py`, run by the `run_tests.py` row | 0 |
-| `verify_upstream_history.py` | `notes/development/upstream_history/` — the three pages | plain; the self-tests are in `notes/scripts/tests/test_upstream_history.py`, run by the `run_tests.py` row | 0.8 |
+| `verify_upstream_history.py` | `notes/development/upstream_history/` — the three pages | plain; the self-tests are in `notes/scripts/tests/test_upstream_history.py`, run by the `run_tests.py` row | 0.5 |
 | `verify_verification_dirs.py` | `notes/reports/verification-dirs.md` | plain; the self-tests are in `notes/scripts/tests/test_verification_dirs.py`, run by the `run_tests.py` row | 0.1 |
 
 Cost is plain seconds, measured 2026-10-16 as the wall time the gate printed for
@@ -346,22 +346,22 @@ it again per mutant.
 `check()` (`:459`, the subprocess call at `:140`), so a plain run pays five of them. The pass that
 extracted its self-tests put `run()` under `functools.cache` (`:134`) — every script in `REPORTS` is
 report-only, so a second call in the same process cannot see a different stdout — and that is why the
-`run_tests.py` row measures **16.2 s** where the `--mutant` row took **34.7 s** before that row was
+`run_tests.py` row measures **15.6 s** where the `--mutant` row took **34.7 s** before that row was
 replaced: the 9 `check()` calls the row makes (the clean page, each of the six faults, and the padded-table test's two) pay the
 five subprocesses once.
 `verify_faithfulness.py` is the same case with a corpus walk instead of subprocesses: `population()`
 is under `functools.cache` (`:187`) — the checker writes nothing and the tests mutate page text in
 memory, so a second call in the same process cannot see a different corpus — and that is why its
-`run_tests.py` row measures **1.8 s** where the `--mutant` row took **12.8 s** before that row was
+`run_tests.py` row measures **1.7 s** where the `--mutant` row took **12.8 s** before that row was
 replaced: the 33 `check()` calls the row makes pay the yaml/docs/OAI/preprints walk once.
 `verify_sources.py` is the same case with a wider walk: `population()` is under `functools.cache`
 (`:152`) — the checker writes nothing and the tests mutate page text in memory, so a second call in the
-same process cannot see a different corpus — and that is why its `run_tests.py` row measures **1.3 s**
+same process cannot see a different corpus — and that is why its `run_tests.py` row measures **1.2 s**
 where the `--mutant` row took **12.9 s** before that row was replaced: the 15 `check()` calls the
 row makes pay the preprints/overview walk once.
 `verify_index_design.py` is the same case with the index tree: `population()` is under
 `functools.cache` (`:66`) and delegates to `measure_index_sizes.population()`, so its `run_tests.py`
-row measures **5.7 s** where the `--mutant` row took **20.3 s** before that row was replaced: the
+row measures **5.5 s** where the `--mutant` row took **20.3 s** before that row was replaced: the
 16 `check()` calls the row makes pay the `notes/index/` walk once.
 `verify_fleet_design.py` is the same case with the `git`/`du`/script-tree walk: `population()` is under
 `functools.cache` (`:151`), so its `run_tests.py` row measures **0.7 s** where the `--mutant` row took
@@ -374,12 +374,12 @@ once.
 calls the row makes pay the 749-directory bundle scan and the ledger join once.
 `verify_named_results.py` is the keyed-record case, not the in-process-cache case: its `population()`
 reads `named_results.json` under the producer's key, so the plain row is **0.6 s** and the
-`run_tests.py` row measures **7.6 s** — the 15 `check()` calls pay the 7,240-file walk once,
+`run_tests.py` row measures **7.2 s** — the 15 `check()` calls pay the 7,240-file walk once,
 under the key the producer landed, not inside the checker. Before the record the plain row was 18.9 s
 and the test row 23.8 s. The remaining cost is the per-`check()` read of 61 anchors and 61 quotations,
 which a mutant does multiply.
 `verify_citations.py` is the same case with the `.bib` walk: `measure()` is under `functools.cache`
-(`:75`), so its `run_tests.py` row measures **4.8 s** where the `--mutant` row took **3.0 s** — the
+(`:75`), so its `run_tests.py` row measures **4.7 s** where the `--mutant` row took **3.0 s** — the
 12 `check()` calls the row makes pay the two normalizations once. The cache persists only because the
 test loader memoizes: a loader that re-executed the module per test gave each test an empty cache, and
 the row measured **16.9 s** before the loader was memoized.
@@ -394,23 +394,23 @@ the walk once.
 `verify_subfinding_pairs.py` is the same case with `overview.tex`, `notes/tables/subfindings.tsv` and the
 ledger: `load_inputs()` is under `functools.cache` (`:54`), so its `run_tests.py` row measures **1.9 s**
 where the `--mutant` row took **0.1 s** — the 11 `check()` calls the row makes pay the walk once.
-`verify_page_sync.py --both` at **28.0 s** is the heaviest row with a Cost cell. `verify_script_ownership.py`,
-this page's own checker, is the heaviest checker row at **64.7 s** and is not a row
+`verify_page_sync.py --both` at **29.9 s** is the heaviest row with a Cost cell. `verify_script_ownership.py`,
+this page's own checker, is the heaviest checker row at **77.9 s** and is not a row
 above.
 `verify_page_sync.py`'s Cost is one number, not a pair: `--both`
 runs the plain pass and the mutant loop in one process, so `catlib.render.rendered` is walked once
 (123.4 s plain + 122.9 s mutant as two rows, against 125.2 s in one, measured 2026-10-10; the same
 single walk measured **25.1 s** in the 2026-10-12 run, because the render-diff reads the cached
 records the writers promote rather than re-walking the corpus). The 24 checker invocations sum
-to **121.7 s**, measured 2026-10-16 as the sum of the wall times the gate printed for its rows in one
+to **52.5 s**, measured 2026-10-16 as the sum of the wall times the gate printed for its rows in one
 pooled run, each Cost cell re-checked cell-by-cell against that run (0
 mismatches over the 24 checkers with Cost cells behind them; `verify_script_ownership.py` is not a row
 above, so it has no cell to check); the full 81-row gate ran in **232.97 s** wall
-(05:47:37–05:51:30 local) and its 81 row times sum to **594.7 s**, so the 12-row pool brings the wall
-to 39.2% of the sum. The writers are the tail: `render_reports.py` 54.8 s, the plain render as
-the gate row, `extract_links.py` 18.1 s,
-`extract_formalization_deps.py` 10.9 s (the 122,458-file walk under
-`lean/OAI/` is paid once per cache key, so a warm run reads records), `build_index.py` 6.4 s. The
+(05:47:37–05:51:30 local) and its 83 row times sum to **654.9 s**, so the 12-row pool brings the wall
+to 39.2% of the sum. The writers are the tail: `render_reports.py` 54.4 s, the plain render as
+the gate row, `extract_links.py` 15.6 s,
+`extract_formalization_deps.py` 6.8 s (the 122,458-file walk under
+`lean/OAI/` is paid once per cache key, so a warm run reads records), `build_index.py` 6.1 s. The
 65-invocation gate took **40 min** and **40 min** on its two runs measured 2026-10-10
 (10:48–11:23 and 11:23–12:01 UTC) and the 64-invocation list took **62 min** the same morning
 (05:49–06:51 UTC) — the pre-cache figures, which the 2026-10-11 promote-and-key work is what

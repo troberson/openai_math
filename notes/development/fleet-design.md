@@ -72,7 +72,7 @@ blind.
 ## The size argument
 
 Rule: `du -sk` per surface, divided by 1024. `preprints/` is **631M**, `lean/OAI/` is **1740M**
-(122,458 files), `notes/index/` is **12M**. `cat notes/tables/*.tsv | wc -c` = **2,567,565** bytes over the
+(122,458 files), `notes/index/` is **12M**. `cat notes/tables/*.tsv | wc -c` = **2,567,619** bytes over the
 **26** `notes/tables/*.tsv` present on disk. `free -h` reported **7.2 GiB available of 60 GiB** on 2026-10-10, with the
 model server resident — a dated observation, not a re-derivable count.
 
@@ -315,7 +315,7 @@ every tracked artifact, the bytes the writer landed under its key equal the byte
 and the key is computed from the current `git rev-parse HEAD:<path>` tree digests, so a key that no
 longer matches HEAD makes its records missing and the row fails. The driver keeps the md5 and
 `git status` snapshots raw and prints the assertion row. `notes/scripts/gate.py` carries
-**82** invocations as `ROWS` entries, each a (spec, needs, writes) triple over the generated
+**83** invocations as `ROWS` entries, each a (spec, needs, writes) triple over the generated
 artifacts: the **11** writers declare what they write, every checker needs `pages`,
 `check_index_links.py` and `measure_index_sizes.py` need `index`, and the two summary readers need
 `summaries`. A row starts as soon as every row that writes its `needs` has finished, so counting the
