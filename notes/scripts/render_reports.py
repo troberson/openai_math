@@ -2685,8 +2685,8 @@ def cost_prose(c: dict[str, Any]) -> dict[str, str]:
     # Split labels, not one string: the builder leaves a single-part value literal when its
     # matched span contains a newline, and the page breaks this sentence at "sum / to **X s**".
     # The split carries the break as the separator, which is what makes the span slotable.
-    out["checker_sum_a"] = f"The {len(checker_rows)} checker invocations sum"
-    out["checker_sum_b"] = (f"to **{sum(float(r['seconds']) for r in checker_rows):.1f} s**")
+    out["checker_sum a"] = f"The {len(checker_rows)} checker invocations sum"
+    out["checker_sum b"] = (f"to **{sum(float(r['seconds']) for r in checker_rows):.1f} s**")
     out["row_sum"] = (f"its {len(c['rows'])} row times sum to "
                       f"**{sum(float(r['seconds']) for r in c['rows']):.1f} s**")
     # The heaviest row with a Cost cell is the max of the Cost column. The checker rows include
