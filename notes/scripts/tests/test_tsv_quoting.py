@@ -118,8 +118,8 @@ def test_clean(mod):
         rows += n
         quoted += q
     assert not problems, problems[:6]
-    assert len(files) == 25, len(files)
-    assert rows == 26727, rows
+    assert len(files) == 26, len(files)
+    assert rows == 26809, rows
     assert quoted == 23, quoted
 
 
