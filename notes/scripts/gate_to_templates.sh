@@ -69,12 +69,23 @@ converge() {
 converge
 
 start=$(date -u +%s.%N)
-step "gate (83 rows, timed)" bash notes/scripts/gate_driver.sh
+step "gate (82 rows, timed)" bash notes/scripts/gate_driver.sh
 end=$(date -u +%s.%N)
-python3 -c "print('wall %.2f s' % ($end - $start))"
+wall=$(python3 -c "print('%.2f' % ($end - $start))")
+echo "wall $wall s"
+# The wall is the driver's own measurement, landed as a record so the budget checker reads the
+# number this run produced, not a log the invoker redirected.
+echo "wall $wall s" > "$R/gate_wall.txt"
 
 step "land gate row times" python3 notes/scripts/measure_gate_rows.py
 converge
+
+# The census checker is not a gate row: its Cost pass compares the page's Cost cells with the gate
+# row TSV, and the gate's own run lands a new TSV, so the page it reads is stale at gate time by
+# construction. Here it runs after the render that swept the page to this run's TSV.
+step "verify script ownership (post-gate, after the render swept the page)" \
+  python3 notes/scripts/verify_script_ownership.py
+step "assert the gate ran inside the budget" python3 notes/scripts/check_gate_budget.py
 
 commit "Land the measured figures the gate run produced
 

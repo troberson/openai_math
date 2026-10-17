@@ -110,11 +110,12 @@ ROWS = [
     ("run_tests.py notes/scripts/tests/test_verification_dirs.py -q", ("pages",), ()),
     ("verify_dependency_drift.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_dependency_drift.py -q", ("pages",), ()),
-    # The census checker's Cost pass reads the keyed check() record, so the probe has to land it
-    # before the checker runs. The render writes notes/scripts/README.md, which is inside the tree
-    # the probe's key hashes, so the probe also starts after the render.
+    # The census checker is NOT a row: its Cost pass compares the page's Cost cells with the gate
+    # row TSV, and the gate's own run lands a new TSV, so the page the checker reads is stale at
+    # gate time by construction. The driver runs it after the render that sweeps the page to the
+    # TSV this run produced. The probe stays a row: it lands the keyed check() record the
+    # post-gate checker reads, and the render writes inside the tree the probe's key hashes.
     ("measure_check_calls.py", ("pages",), ()),
-    ("verify_script_ownership.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_script_ownership.py -q", ("pages",), ()),
     ("verify_findings.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_findings.py -q", ("pages",), ()),
