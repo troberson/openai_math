@@ -83,6 +83,9 @@ converge
 # The census checker is not a gate row: its Cost pass compares the page's Cost cells with the gate
 # row TSV, and the gate's own run lands a new TSV, so the page it reads is stale at gate time by
 # construction. Here it runs after the render that swept the page to this run's TSV.
+# The probe runs again after the render: the render writes inside the tree the probe's key hashes,
+# so the record the checker reads must be landed under the post-render key.
+step "probe the check() calls (post-render, so the key matches)" python3 notes/scripts/measure_check_calls.py
 step "verify script ownership (post-gate, after the render swept the page)" \
   python3 notes/scripts/verify_script_ownership.py
 step "assert the gate ran inside the budget" python3 notes/scripts/check_gate_budget.py
