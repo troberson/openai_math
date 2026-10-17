@@ -683,8 +683,8 @@ def cost_problems(text: str) -> list[str]:
     heaviest = max(float(cell) for _, cell in cost)
     if f"**{heaviest:.1f} s** is the heaviest row with a Cost cell" not in folded:
         p.append(f"the heaviest row with a Cost cell is not {heaviest:.1f} s")
-    if f"the heaviest checker row at **{rows[SELF]} s**" not in folded:
-        p.append(f"the heaviest checker row is not {rows[SELF]} s")
+    # No heaviest-checker needle: the census checker is not a gate row, so the gate row TSV has no
+    # Cost cell for it. A needle that reads a cell the TSV no longer carries raises KeyError.
     # Every writer figure the page names is checked against the gate row that names that writer.
     # The tail is the page's own claim, so the pass reads it from the page, not from a list.
     tail = re.findall(r"`([a-z0-9_]+\.py)` ([0-9.]+) s", folded)

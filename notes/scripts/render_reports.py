@@ -2694,8 +2694,8 @@ def cost_prose(c: dict[str, Any]) -> dict[str, str]:
     # checker rows reads a row that has no Cost cell.
     heaviest = max(float(c["cells"][COST_SPEC.get(n, n)]) for n in COST_CHECKS)
     out["heaviest_cell"] = f"**{heaviest:.1f} s** is the heaviest row with a Cost cell"
-    out["heaviest_checker"] = (f"the heaviest checker row at "
-                              f"**{c['cells']['verify_script_ownership.py']} s**")
+    # No heaviest-checker slot: the census checker is not a gate row, so it has no Cost cell to
+    # quote. A slot that reads a cell the TSV no longer carries raises KeyError in the render.
     for name in TAIL_NAMES:
         out["tail_" + name.removesuffix(".py")] = f"`{name}` {c['cells'][name]} s"
     return out
