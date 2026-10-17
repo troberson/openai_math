@@ -91,7 +91,7 @@ Rule: `grep -cE 'os\.replace|os\.rename|shutil\.move|NamedTemporaryFile'` over `
 and `notes/scripts/catlib/*.py`, **excluding `verify_fleet_design.py` and `render_reports.py`** — the
 checker carries the pattern in its count pass and the writer carries it as its `FLEET_ATOMIC` constant,
 so counting either would read a needle as a site and the rule would be about the censuses, not the
-fleet. Over **70** scripts and **19** catlib modules the count is **2 matches**, both in
+fleet. Over **71** scripts and **19** catlib modules the count is **2 matches**, both in
 `catlib/atomic.py`: the `os.replace` at `catlib/atomic.py:42`, which promotes the sibling temp onto
 the target, and the one at `catlib/atomic.py:84`, which promotes a staged slot onto its tracked path.
 Before `math-o3a.2.1` the count was **0 matches** over **49** scripts and **14** modules: every writer
@@ -259,7 +259,7 @@ walk `measure()` used to run is gone: it is `@cache`d and reads the record store
 the process is a cache hit, and `build_sources.py`'s row fell from 39,083 opens to **71** for the same
 reason. What remains is the extractors the renderer imports, each walking the corpus once per process.
 `catlib/paths.read_text` is the uncached reader behind those opens (**230** `read_text(` call sites over
-the **70** scripts and **19** catlib modules, counted as occurrences over both globs on 2026-10-11; the
+the **71** scripts and **19** catlib modules, counted as occurrences over both globs on 2026-10-11; the
 page read **217** over **55** scripts before the two `math-faz` probes landed); the caches in catlib are `render.rendered`, keyed by page
 name, `records.manuscript_store`, keyed by the store digest, and `promote.cached_text`, keyed by the
 builder's key.
@@ -315,7 +315,7 @@ every tracked artifact, the bytes the writer landed under its key equal the byte
 and the key is computed from the current `git rev-parse HEAD:<path>` tree digests, so a key that no
 longer matches HEAD makes its records missing and the row fails. The driver keeps the md5 and
 `git status` snapshots raw and prints the assertion row. `notes/scripts/gate.py` carries
-**83** invocations as `ROWS` entries, each a (spec, needs, writes) triple over the generated
+**82** invocations as `ROWS` entries, each a (spec, needs, writes) triple over the generated
 artifacts: the **11** writers declare what they write, every checker needs `pages`,
 `check_index_links.py` and `measure_index_sizes.py` need `index`, and the two summary readers need
 `summaries`. A row starts as soon as every row that writes its `needs` has finished, so counting the
