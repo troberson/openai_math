@@ -12,7 +12,7 @@ the fourth class, the scratch a session writes outside the tree, is recorded by 
 file. The classes partition the **72** scripts: **17** writers, **31** report-only, **23** checkers,
 and `verify_script_ownership.py` itself, which is the 23rd checker and is not listed in its own table.
 
-## The split: 17 write, 54 write nothing
+## The split: 17 write, 55 write nothing
 
 The writer set is derived from the scripts' own source, not from this page: a script is a writer when
 a path constant rooted at `notes/` appears on the left of `.open(..., "w")` or `.write_text(...)`,
@@ -33,7 +33,7 @@ self-test: a module-level
 `mutants` / `mutant_test` / `selftest` body is blanked before the write calls are read, because a
 self-test writes the page it checks only to mutate it and restores the bytes it read in the `finally`
 — `verify_script_ownership.py` does exactly that, in three branches (the page it checks, `notes/scripts/README.md`, and `notes/development/templates.md`), so its normal run writes nothing and it stays in the checker class. `check_index_links.py` and `measure_proof_density.py` were this rule's examples; `math-o3a.3` moved their sync pass into `verify_page_sync.py`, which mutates page text in memory, so neither script carries a write call any more. That rule
-finds **17** writers over **71** scripts.
+finds **17** writers over **72** scripts.
 
 ### Writers
 
@@ -56,7 +56,6 @@ finds **17** writers over **71** scripts.
 | `build_index_db.py` | `.qwen/cache/records/<key>/fts.json` and `.qwen/cache/records/<key>/index.db` | not in `gate.py` — the report carries a build wall and a per-term query wall, so a run-1/run-2 byte diff is a timing artifact; the record itself carries only counts, and the database is untracked by the `.qwen/*` rule | the SQLite FTS5 layer over the 8,007 `.tex` files and the 372 abstracts, the layer `notes/development/index-design.md`'s schema decision leaves out |
 | `measure_gate_rows.py` | `notes/tables/gate-rows.tsv` | not in `gate.py` — it reads the driver's report for the last completed run, which the driver truncates at run start, so a gate row would read the previous run's bytes; run explicitly after a gate pass | none yet — beads `math-rui.3` and `math-rui.4` give the writer a slot and the census checker a needle |
 | `measure_check_calls.py` | `.qwen/cache/records/<key>/check_calls.json` | a gate row; the record is the population the `check()` sentences in this page quote, and there are no tracked bytes for the promote assertion to compare | the eleven `check()` sentences in this page |
-| `check_gate_budget.py` | none | not in `gate.py` — it reads the wall the driver lands in `.qwen/tmp/reports/gate_wall.txt`, which the driver writes during the run, so a gate row would read the previous run's wall; the driver runs it post-gate | the budget assertion `wall < 300 s` |
 
 Eight writers emit one TSV each. `build_index.py` is the one-to-many case: it renders **1,049** files —
 **1,033** `.md` pages and **0** `.tsv` tables in `notes/index/`, plus the **16** `.tsv` tables it stages
@@ -122,7 +121,7 @@ Editing a join in `build_catalog.py` can move rows in six artifacts.
 
 ### Report-only
 
-The other **55** scripts write nothing. **31** of them print a report: **19** print the report a page's
+The other **55** scripts write nothing. **32** of them print a report: **19** print the report a page's
 counts come from, **1** prints the quote-spec classification the seeded `notes/tables/quotes.tsv` is
 measured against, **1** prints the pytest report for the extracted checker self-tests
 (`run_tests.py`), **2** print the notes-move surface `math-faz` prices before a pass and re-checks
@@ -204,6 +203,7 @@ had to wait for the serial chain to finish.
 
 | Script | Report feeds | Gate |
 |---|---|---|
+| `check_gate_budget.py` | none — the budget assertion `wall < 300 s`, the row-time sum, and the three heaviest rows | **not gated** — the driver runs it post-gate, because the wall it reads is landed by the run itself |
 | `check_index_links.py` | `notes/development/index-links.md` | plain; the self-tests are in `notes/scripts/tests/test_index_links.py`, run by the `run_tests.py` row |
 | `check_summary_manuscripts.py` | `notes/summaries/` — which manuscripts each page reads, and whether the release still names them | plain |
 | `dump_template_slots.py` | `notes/development/templates.md` — the writer's slot labels with their values | plain |
@@ -396,8 +396,7 @@ the walk once.
 ledger: `load_inputs()` is under `functools.cache` (`:54`), so its `run_tests.py` row measures **1.9 s**
 where the `--mutant` row took **0.1 s** — the 11 `check()` calls the row makes pay the walk once.
 `verify_page_sync.py --both` at **26.3 s** is the heaviest row with a Cost cell. `verify_script_ownership.py`,
-this page's own checker, is  and is not a row
-above.
+this page's own checker, is not a row above, so it has no Cost cell.
 `verify_page_sync.py`'s Cost is one number, not a pair: `--both`
 runs the plain pass and the mutant loop in one process, so `catlib.render.rendered` is walked once
 (123.4 s plain + 122.9 s mutant as two rows, against 125.2 s in one, measured 2026-10-10; the same
@@ -406,7 +405,7 @@ records the writers promote rather than re-walking the corpus). The 23 checker i
 to **57.2 s**, measured 2026-10-16 as the sum of the wall times the gate printed for its rows in one
 pooled run, each Cost cell re-checked cell-by-cell against that run (0
 mismatches over the 24 checkers with Cost cells behind them; `verify_script_ownership.py` is not a row
-above, so it has no cell to check); the full 81-row gate ran in **232.97 s** wall
+above, so it has no cell to check); the full 82-row gate ran in **232.97 s** wall
 (05:47:37–05:51:30 local) and its 82 row times sum to **568.1 s**, so the 12-row pool brings the wall
 to 39.2% of the sum. The writers are the tail: `render_reports.py` 59.4 s, the plain render as
 the gate row, `extract_links.py` 16.4 s,
