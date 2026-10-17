@@ -142,29 +142,6 @@ def cost_para(t, name):
     raise AssertionError(f"no Cost paragraph carries {name}'s run_tests figure")
 
 
-def selftest_span(t, name):
-    """The span of the page's `run_tests.py` figure inside the checker's own Cost paragraph."""
-    lo, hi = cost_para(t, name)
-    m = re.search(r"`run_tests\.py` row measures\s+\*\*([0-9.]+) s\*\*", t[lo:hi])
-    assert m, f"no run_tests figure in the Cost paragraph for {name}"
-    return lo + m.start(), lo + m.end(), m.group(1)
-
-
-def bump_selftest(t, name, delta=1.0):
-    s, e, raw = selftest_span(t, name)
-    new = f"{float(raw) + delta:.1f}"
-    return t[:s] + t[s:e].replace(raw, new, 1) + t[e:]
-
-
-def rekey_selftest(t, donor, target):
-    """Move the donor checker's row figure into the target checker's Cost paragraph. A pass that
-    pairs a figure with the alphabetically last checker named in the block, rather than the closest
-    preceding one, reports this as the donor's figure."""
-    _, _, donor_fig = selftest_span(t, donor)
-    s, e, target_fig = selftest_span(t, target)
-    return t[:s] + t[s:e].replace(target_fig, donor_fig, 1) + t[e:]
-
-
 def bump_calls(t, name, delta=1):
     """Change the `check()` count inside the checker's own Cost paragraph."""
     lo, hi = cost_para(t, name)
@@ -194,17 +171,14 @@ def bump_num(t, pat, delta=1.0):
 
 
 # Faults in the Cost section, each keyed to the pass that owns it. Every figure the pass compares is
-# measured: the Cost cells and the row figures come from notes/tables/gate-rows.tsv, the check()
-# counts from the keyed check_calls.json record.
+# measured: the Cost cells come from notes/tables/gate-rows.tsv, the check() counts from the keyed
+# check_calls.json record. The self-test row times are not in the page — a run-dependent figure
+# cannot live in a template keyed to HEAD — so there is no row-figure mutant to inject.
 COST_CASES = [
     ("Cost cell altered", "Cost cell for verify_findings.py",
      lambda t: shift_cost_cell(t, "verify_findings.py")),
     ("Cost row deleted", "is a checker row the Cost table does not carry",
      lambda t: delete_cost_row(t, "verify_findings.py")),
-    ("self-test figure altered", "verify_findings.py: the page says",
-     lambda t: bump_selftest(t, "verify_findings.py")),
-    ("self-test figure re-keyed", "verify_subfinding_pairs.py: the page says",
-     lambda t: rekey_selftest(t, "verify_named_results.py", "verify_subfinding_pairs.py")),
     ("check() count altered", "verify_named_results: the check() count is not 15",
      lambda t: bump_calls(t, "verify_named_results.py")),
     ("check() sentence deleted", "verify_citations: the check() count is not 12",
