@@ -205,24 +205,75 @@ def flex(phrase: str) -> re.Pattern[str]:
     return re.compile(r"\s+".join(toks))
 
 
-def apply_split(label: str, phrase: str, prefixes: list[str]) -> dict[str, str]:
-    """Split a measured phrase at the page's recorded line-break prefixes.
+def flex_part(part: str, sep: str = r"\s+") -> re.Pattern[str]:
+    r"""Anchored pattern for one recorded part of a split phrase: every digit run relaxes.
 
-    Each prefix is matched number-flexibly against the start of the remainder, and the part emitted
-    is the measured span, not the prefix. A prefix transcribed from HEAD carries HEAD's number, so an
-    exact `startswith` raises the moment a count moves; matching flexibly and emitting the measured
-    text keeps the split table valid across a drift, and the page keeps its own line breaks.
+    `flex` refuses to relax a number-only needle because a needle searched anywhere in a page has no
+    literal anchor — the bare "719" needle matched an unrelated sentence. A recorded part is matched
+    only at the start of the remainder, so it cannot land on the wrong number and its digits can move
+    freely. Measured 2026-10-18: 201 of the 1,069 recorded parts are number-only, so an exact match
+    there raises the moment the count drifts.
+
+    `sep` is how the part's tokens are joined. The default requires them adjacent, which is the honest
+    rule when the recorded part is the whole span. `apply_split` passes `r"[\s\S]*?"` instead: the
+    recorded parts are boundaries transcribed from a committed page, and a measured phrase can grow
+    *inside* a run after the recording, so a part has to match as an ordered subsequence. Only the
+    first token stays anchored at position 0 — content landing at a boundary still raises, which is
+    what keeps the wider rule a boundary rule and not a licence to reorder the page.
+    """
+    toks = []
+    for tok in part.split(" "):
+        out, pos = "", 0
+        for m in NUM_RUN.finditer(tok):
+            out += re.escape(tok[pos:m.start()]) + NUM_RUN.pattern
+            pos = m.end()
+        toks.append(out + re.escape(tok[pos:]))
+    return re.compile(sep.join(toks))
+
+
+def part_label(label: str, i: int) -> str:
+    """The slot name for part i of a split label — the name the template expression and the render share."""
+    return f"{label} {PART_LETTERS[i]}"
+
+
+PART_LETTERS = "abcdefghij"
+
+
+def apply_split(label: str, phrase: str, prefixes: list[str]) -> dict[str, str]:
+    """Split a measured phrase at the page's recorded boundaries, one slot per boundary plus the remainder.
+
+    Each recorded part is matched number-flexibly as an ordered subsequence at the start of the
+    remainder, and the value emitted is the measured span, not the recorded part. A recorded part
+    carries HEAD's number, so an exact `startswith` raises the moment a count moves; matching with
+    `flex_part` and emitting the measured text keeps the table valid across a drift, and the page keeps
+    its own line breaks. The subsequence form is what keeps it valid when the phrase grows *inside* a
+    recorded run: the table records the boundaries as a committed page was broken, and a measured
+    phrase that gains an item between two recorded boundaries gains it inside a run, not at a boundary,
+    so a prefix rule raises on a phrase the table still describes correctly. The span emitted is
+    through the part's last token, so the inserted content lands in that part's slot.
+
+    The recorded parts are the boundaries, not the whole phrase: the last slot is whatever remains after
+    the last boundary, so a phrase the page breaks at n places has n recorded parts and n + 1 slots. A
+    phrase the page does not break has no recorded boundary and is one slot.
     """
     out: dict[str, str] = {}
     rest = phrase
-    for i, pre in enumerate(prefixes):
+    for i, part in enumerate(prefixes):
         rest = rest.lstrip()
-        m = flex(pre).match(rest)
+        m = flex_part(part, r"[\s\S]*?").match(rest)
         if m is None:
-            raise ValueError(f"slot {label!r}: page wrap {pre!r} is not a prefix of {rest!r}")
-        out[f"{label} {'abcdefghij'[i]}"] = rest[:m.end()]
+            raise ValueError(f"slot {label!r}: recorded part {part!r} does not occur in order "
+                             f"at the start of {rest!r}")
+        out[part_label(label, i)] = rest[:m.end()]
         rest = rest[m.end():]
-    out[f"{label} {'abcdefghij'[len(prefixes)]}"] = rest.lstrip()
+    # The separator the page used at the break is the template's literal text between expressions, so
+    # a slot value must not carry it: a part match consumes only its own internal whitespace, leaving
+    # the break's whitespace run at the start of the remainder. Without this strip the last slot comes
+    # back with a leading space, and a needle joined from the slots reads a double space that `flex`
+    # cannot match across a single line break.
+    rest = rest.lstrip()
+    if rest:
+        out[part_label(label, len(prefixes))] = rest
     return out
 
 
