@@ -59,6 +59,7 @@ import extract_t0_chains as tc
 import extract_verification_dirs as evd
 import measure_faithfulness as FA
 import measure_index_sizes as M
+import measure_move_surface as MS
 import measure_names as MN
 import measure_proof_density as PD
 import measure_templates as MTPL
@@ -660,6 +661,7 @@ def index_full(p: dict[str, Any]) -> dict[str, str]:
         "ledger set byte total": f"the whole ledger set is **{setb}** B",
         "ledger set scope sentence": f"the ledger set the **{setb}** B figure covers",
         "all-TSV byte total": f"every `notes/tables/*.tsv` together totals **{p['all_tsv_bytes']}** B",
+        "tracked TSVs outside the set count": f"The {len(added)} tracked TSVs outside it",
         "added TSV byte figures": added_list,
         "builds-on declaration count": f"(**{p['builds_on']}** `builds-on` declarations at "
                                        f"`lean/formalization.yaml:{builds_on_anchor()}`)",
@@ -2507,6 +2509,12 @@ def ownership_population() -> dict[str, Any]:
         # intersection of the basenames, not of the families: each tree carries its own README.md.
         "slug_share": len({q.name for q in INDEX_DIR.rglob("*.md")}
                           & {q.name for q in SUM_DIR.rglob("*.md")}),
+        # The two facts the page quotes that a producer can re-measure: the reorg scope is
+        # `measure_move_surface.py`'s own `pages()`, and the key length is `records.py`'s own
+        # `KEY_LEN`. A fact with no producer cannot be a label, so the page's other historical
+        # counts are literals, not slots.
+        "reorg_pages": len(MS.pages()),
+        "key_hex": records.KEY_LEN,
         "named_before": named_before(),
         "skels": len(list(SKEL_DIR.glob("*.j2"))),
         "report_tpls": len(list(TPL.glob("*.j2"))),
@@ -2676,7 +2684,11 @@ def cost_prose(c: dict[str, Any]) -> dict[str, str]:
     # No self-test row-time slots: the page carries the caching claim, not the number. A
     # run-dependent figure cannot live in a template keyed to HEAD, and a value the page
     # wraps across lines stays literal, so the render cannot sweep it.
+    # A negative count is a sentinel meaning "no call observed". A sentinel cannot be located in a
+    # page, so it cannot be a label: the phrase is not emitted and the page keeps its literal.
     for checker, phrase in CALLS_PHRASES.items():
+        if c["calls"][checker] < 0:
+            continue
         out["calls_" + checker.removeprefix("verify_")] = phrase.format(c["calls"][checker])
     # The sums and the tail. The checker sum is the checker rows, the row sum is every row. The wall
     # the prose quotes is not in the TSV — the gate driver prints no wall time — so the wall and the
@@ -2686,7 +2698,7 @@ def cost_prose(c: dict[str, Any]) -> dict[str, str]:
     # matched span contains a newline, and the page breaks this sentence at "sum / to **X s**".
     # The split carries the break as the separator, which is what makes the span slotable.
     out["checker_sum a"] = f"The {len(checker_rows)} checker invocations sum"
-    out["checker_sum b"] = (f"to **{sum(float(r['seconds']) for r in checker_rows):.1f} s**")
+    out["checker_sum b"] = f"to **{sum(float(r['seconds']) for r in checker_rows):.1f} s**"
     out["row_sum"] = (f"its {len(c['rows'])} row times sum to "
                       f"**{sum(float(r['seconds']) for r in c['rows']):.1f} s**")
     # The heaviest row with a Cost cell is the max of the Cost column. The checker rows include
@@ -2734,8 +2746,12 @@ def ownership_phrases(p: dict[str, Any]) -> dict[str, str]:
         "census_total": f"| `notes/` total, scripts excluded | **{p['notes_total']:,}** | — |",
         # The shared-slug sentence is a count the checker compares with its own basename
         # intersection, so the writer supplies it: a page that carries a hand-written slug count is
-        # not the measurement.
-        "slug_share": str(p["slug_share"]),
+        # not the measurement. Each value names its own words, not the number alone — a bare number
+        # is a needle that matches every other span in the page reading the same number, and the
+        # builder then slots the wrong fact under this label.
+        "slug_share": f"share **{p['slug_share']}** page slugs",
+        "reorg_pages": f"over the {p['reorg_pages']} pages the reorg moved",
+        "key_hex": f"truncated to {p['key_hex']} hex",
         "named_before": str(p["named_before"]),
     }
     # The Cost table's 23 checker rows: the Cost cell is the gate's measured wall time for that row,
@@ -2936,6 +2952,7 @@ def fleet_population() -> dict[str, Any]:
 # with. Transcribed from the page bytes, not invented: a prefix that stops matching the measured
 # phrase raises ValueError here rather than reflowing the page.
 FLEET_SPLIT = {
+    "gate_rows": ["carries"],
     "gate_writers_class": ["Non-determinism sources in the **11** writers,"],
 }
 
@@ -2959,7 +2976,7 @@ def fleet_phrases(v: dict[str, Any]) -> dict[str, str]:
         "du_preprints": f"**{du['preprints']}M**",
         "du_oai": f"**{du['oai']}M**",
         "du_index": f"**{du['index']}M**",
-        "gate_rows": f"**{v['gate_rows']}** invocations",
+        "gate_rows": f"carries **{v['gate_rows']}** invocations as `ROWS` entries",
         "gate_writers": f"the **{v['writer_rows']}** writers declare what they write",
         "gate_writers_class": f"Non-determinism sources in the **{v['writer_rows']}** writers, by class:",
         "set_sites": f"**{len(v['set_sites'])} sites**",
@@ -2974,15 +2991,15 @@ def fleet_phrases(v: dict[str, Any]) -> dict[str, str]:
     # builder leaves HEAD's anchor literal, so a site that moves leaves the page stale.
     out["checker_sites"] = ("(" + ", ".join(f"`{s}`" for s in v["set_sites"] + v["env_sites"])
                             + ", `render_reports.py:2043`)")
-    SITE_CTX = {"atomic": (["the `os.replace` at ", "the one at "], ""),
-                "set": (["**2 sites** — ", ", "], ""),
-                "env": (["— "], " sets")}
+    SITE_CTX = {"atomic": (["the `os.replace` at ", "the one at "], ["", ""]),
+                "set": (["**2 sites** — ", ", "], ["", ", both"]),
+                "env": (["— "], [" sets"])}
     for key, sites in (("atomic", v["atomic_sites"]), ("set", v["set_sites"]),
                        ("env", v["env_sites"])):
         pre, suf = SITE_CTX[key]
         for i, site in enumerate(sites):
             name, ln = site.split(":")
-            out[f"{key}_site_{i}"] = pre[i] + f"`{name}:{ln}`" + suf
+            out[f"{key}_site_{i}"] = pre[i] + f"`{name}:{ln}`" + suf[i]
     for label, prefixes in FLEET_SPLIT.items():
         base = out.pop(label)
         rest = base

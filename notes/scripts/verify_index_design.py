@@ -25,7 +25,7 @@ Report-only; writes nothing. Three passes over the page:
 Whitespace runs are collapsed on both sides of every comparison: line-wrapping in the page is
 markup, not part of the text (see the ruling recorded for the summaries pages).
 
-The self-tests are in notes/scripts/tests/test_index_design.py: that file injects the fourteen page
+The self-tests are in notes/scripts/tests/test_index_design.py: that file injects the sixteen page
 faults and asserts each fires the pass that owns it. `main()` reads no argv, so `--mutant` is inert
 here.
 """
@@ -138,6 +138,7 @@ def count_phrases(p):
         (f"the ledger set the **{setb}** B figure covers", "ledger set scope sentence"),
         (f"every `notes/tables/*.tsv` together totals **{p['all_tsv_bytes']}** B", "all-TSV byte total"),
         (f"the index tree carries **{p['index_bytes']}** B over the **{p['index_pages']:,}** pages", "index tree byte total"),
+        (f"The {len(added)} tracked TSVs outside it", "tracked TSVs outside the set count"),
         (added_list, "added TSV byte figures"),
         ((f"(**{p['builds_on']}** `builds-on` declarations at "
          f"`lean/formalization.yaml:{builds_on_anchor()}`)"),

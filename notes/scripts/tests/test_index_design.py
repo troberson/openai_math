@@ -3,20 +3,22 @@
 The checker verifies `notes/development/index-design.md` against the tree it describes. Anchors: every
 backticked `path:line` shape must name a file that exists and a line inside it, so a mistyped
 extension fails instead of being skipped, and every fenced block is attributed to its nearest
-preceding anchor and matched at consecutive lines. Counts: all 83 count and byte phrases are rebuilt
+preceding anchor and matched at consecutive lines. Counts: all 84 count and byte phrases are rebuilt
 from `measure_index_sizes.population()` — the node and edge totals, the citation-edge counts, the
 schema tables' row counts read from the generated files under `notes/index/`, the substring-versus-
-line-start command counts, the ledger-set and all-TSV byte sums, the index tree byte total, the disk link check, and the raw-bib
+line-start command counts, the ledger-set and all-TSV byte sums, the index tree byte total, the
+tracked-TSVs-outside-the-set count, the disk link check, and the raw-bib
 projection. Byte sizes: the five TSVs the page tabulates are re-read from disk. The page is compared
 with `render_reports.py`'s render of it. The schema tables' row counts come from the rendered files,
 so a table that drops rows is a mismatch, not a phrase built from the upstream count it was derived
 from.
 
-This file injects fifteen faults, one per check form the page uses, and asserts each fires the pass
+This file injects sixteen faults, one per check form the page uses, and asserts each fires the pass
 that owns it: an anchor line shifted, an anchor file renamed, a block line altered, the node total,
 the namespace disagreement count, the citation-edge count, an abbreviated anchor, the substring-rule
 counts, the raw-bib projection, a rendered schema row count, the ledger-set byte total widened to the
-all-TSV sum, the all-TSV total swapped with the ledger set, the index tree byte total, the disk link count, and a schema-table
+all-TSV sum, the all-TSV total swapped with the ledger set, the index tree byte total, the tracked-TSVs
+count, the disk link count, and a schema-table
 byte column no count or size phrase covers — the last is visible only to the render diff.
 
 Every fault is built from a real anchor, a real block line, a real count phrase, a real byte phrase
@@ -33,7 +35,7 @@ exceeds the unique config count. The census counts are pinned as **walk equaliti
 `preprints/`, `lean/OAI/`, `notes/index/`, `notes/tables/` and `reasoning_traces/` itself, and the
 population's count must equal the walk — 749 preprint dirs, 122,458 `.lean` files, 1,033 index pages,
 16 index tables, 11 trace files folding to 10 distinct stems. The figures that stay literal are the ones
-neither the join nor a file walk can produce: 9 anchors, 3 block lines, 83 count and byte phrases, 0
+neither the join nor a file walk can produce: 9 anchors, 3 block lines, 84 count and byte phrases, 0
 sync problems, 2,560 nodes over 3,415 resolved
 edges (17,217 raw), 391 citation edges over 104 cross-family, 242
 scope notes, 559 module dirs, 17 disciplines against 23 Lean
@@ -48,8 +50,9 @@ decrement breaks the formalized join and a `paps` decrement breaks the manuscrip
 moves a page byte, so every page pass stays silent.
 
 The checker reads no argv and `check()` takes page text, so nothing here writes a page: the checker
-writes nothing and the tests write nothing. `population()` is under `functools.cache`, so the fifteen
-`check()` calls the row makes pay the index-tree walk once.
+writes nothing and the tests write nothing. `population()` is under `functools.cache`, so the seventeen
+`check()` calls the row makes (the clean page plus each of the sixteen faults) pay the index-tree walk
+once.
 
 The checker measures; this file injects. Run:
   python3 notes/scripts/run_tests.py notes/scripts/tests/test_index_design.py -q
@@ -159,6 +162,8 @@ MUTANTS = [
      lambda t: swap(t, r"together totals \*\*(\d+)\*\* B", r"ledger set is \*\*([\d,]+)\*\* B")),
     ("index tree byte total altered", "count mismatch (index tree byte total)",
      lambda t: bump(t, r"carries \*\*(\d+)\*\* B", -547)),
+    ("tracked TSVs outside the set count", "count mismatch (tracked TSVs outside the set count)",
+     lambda t: bump(t, r"The (\d+) tracked TSVs outside it", 1)),
     ("disk link count", "count mismatch (disk link check)",
      lambda t: bump(t, r"covers \*\*([\d,]+)\*\* links", -9)),
     # Prose the count passes never read: the schema table's byte column is not in count_phrases()
