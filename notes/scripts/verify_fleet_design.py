@@ -256,7 +256,7 @@ def count_phrases(pop: Pop) -> list[tuple[str, str]]:
         (f"**{du['preprints']}M**", "du_preprints"),
         (f"**{du['oai']}M**", "du_oai"),
         (f"**{du['index']}M**", "du_index"),
-        (f"**{pop['gate_rows']}** invocations", "gate_rows"),
+        (f"carries **{pop['gate_rows']}** invocations as `ROWS` entries", "gate_rows"),
         (f"the **{pop['writer_rows']}** writers declare what they write", "gate_writers"),
         (f"Non-determinism sources in the **{pop['writer_rows']}** writers, by class:",
          "gate_writers_class"),

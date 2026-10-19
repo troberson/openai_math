@@ -2,14 +2,20 @@
 
 The checker applies GitHub's TSV quoting rule: a `"` is legal only at a field start, and a quoted
 field must close inside the field with every interior quote doubled. Python's csv reader is lenient,
-so this class is invisible to every other checker in the repo — GitHub is the only witness.
+so this class is invisible to every other checker in the repo - GitHub is the only witness.
 
 The faults are injected into table text in memory; the checker reads no argv and writes nothing, so
 no tracked file is touched. Each fault is asserted against the pass that owns it, and the needles are
 checked to be specific: a quote fault must not report a row-length problem.
 
+The clean test asserts no recorded count. Its three totals are what the pass measures, so
+pinning them grades the checker against itself; what it can assert is a non-empty population,
+non-zero totals, and one join against an independent rule - the repo's canonical reader.
+
 Run: python3 notes/scripts/run_tests.py notes/scripts/tests/test_tsv_quoting.py -q
 """
+import csv
+
 import pytest
 from catlib.paths import TABLES
 
@@ -108,19 +114,34 @@ def needle(kind, problems):
 
 
 def test_clean(mod):
+    """The corpus is clean, the population is non-vacuous, and the row count has an
+    independent witness.
+
+    The three totals are not pinned: they are what the pass measures, so a pin here grades
+    the checker against itself and breaks on every table added - which is how this test
+    failed when notes/tables/splits.tsv landed. What the clean test can assert is that the
+    pass read a non-empty population, that the totals are non-zero, and that its per-file
+    row count agrees with the repo's canonical reader (csv.DictReader, tab delimiter). The
+    two rules can disagree only when a quoted field contains a newline, which the checker's
+    line-splitting rule counts as two rows; the join fires on an injected newline inside a
+    quoted field, so the agreement on the clean corpus is a measurement, not a tautology.
+    """
+    files = sorted(TABLES.glob("*.tsv"))
+    assert files, "no TSV under notes/tables/ - the pass read nothing"
     problems = []
     rows = 0
     quoted = 0
-    files = sorted(TABLES.glob("*.tsv"))
     for p in files:
-        pr, n, q = mod.check(p.read_text(encoding="utf-8"), p.name)
+        text = p.read_text(encoding="utf-8")
+        pr, n, q = mod.check(text, p.name)
         problems.extend(pr)
         rows += n
         quoted += q
+        reader = len(list(csv.DictReader(text.splitlines(), delimiter="\t")))
+        assert n == reader, (p.name, n, reader)
     assert not problems, problems[:6]
-    assert len(files) == 26, len(files)
-    assert rows == 26809, rows
-    assert quoted == 23, quoted
+    assert rows > 0, rows
+    assert quoted > 0, quoted
 
 
 def test_mid_field_quote(mod, targets):
@@ -155,3 +176,21 @@ def test_needles_are_specific(mod, targets):
         assert needle(kind, pr), (kind, pr[:4])
         if kind != "EXTRA FIELD":
             assert not needle("EXTRA FIELD", pr), (kind, needle("EXTRA FIELD", pr)[:2])
+
+
+def test_row_join_fires_on_a_field_that_spans_a_line(mod, targets):
+    """The clean test's join has teeth.
+
+    A quoted field carrying a newline is one record to csv.DictReader and two lines to the
+    checker's line-splitting rule, so the two rules can disagree. On the clean corpus they
+    agree for every file, which is why the join alone proves nothing - this fault is the
+    witness that the join is a real comparison, not a tautology.
+    """
+    topics, q = targets["topics"], targets["q"]
+    f = _rows(topics)[q[0]].split("\t")[q[1]]
+    assert len(f) > 12, f"the target field is too short to split inside: {f[:40]}"
+    text = _set_field(topics, q[0], q[1], f[:10] + "\n" + f[10:])
+    pr, n, _ = mod.check(text, "topics.tsv")
+    reader = len(list(csv.DictReader(text.splitlines(), delimiter="\t")))
+    assert n != reader, (n, reader)
+    assert needle("UNCLOSED QUOTED FIELD", pr), pr[:4]

@@ -38,16 +38,16 @@ Run it from a clean checkout of the page it rebuilds: it reads HEAD, not the wor
 after any rebuild is the render - `python3 notes/scripts/render_reports.py` twice, pages
 byte-identical to HEAD. Prints the label -> phrase-part dict the writer supplies. Touches no page.
 
-The 18 pages are built in a fork pool, because the wall is the per-page measurement, not the page
+The 21 pages are built in a fork pool, because the wall is the per-page measurement, not the page
 loop: measured 2026-10-11, `build_report_templates.py --check-only` runs 190.45 s with user 182.585 s
 (one core), of which 173.02 s is the writer measurement, 15.08 s the needle derivation, 0.10 s the
 `git show` calls and the regex locate. `build()` is pure and returns its report lines, so the PARENT
 prints in sorted page order and stages in sorted page order - the slot numbering `Staging` gives
 (`len(self._targets)`) is the serial numbering, and the report is the bytes a serial run prints. A
-worker writes nothing: staging is one writer's approval, and 18 workers writing the same slot `0000`
+worker writes nothing: staging is one writer's approval, and 21 workers writing the same slot `0000`
 is not it. The pages share caches per process (`measure_names.measure()` is `@cache`d), so a pool
 multiplies the corpus walk it needs - the floor is the slowest page, `notes/development/templates.md`,
-whose population runs the needle derivation for all 18 checkers.
+whose population runs the needle derivation for all 19 distinct checkers.
 """
 from __future__ import annotations
 
@@ -57,9 +57,12 @@ import re
 import subprocess
 import sys
 
+from catlib import splits as SP
 from catlib import templates as T
 from catlib import text as TX
+from catlib import tsv as TSV
 from catlib.atomic import Staging
+from catlib.paths import SPLIT_TSV
 from catlib.promote import key_for
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
@@ -85,8 +88,15 @@ def committed_page(page_rel: str) -> str:
                           capture_output=True, text=True, check=True).stdout
 
 
-def split_parts(matched: str, phrase: str) -> tuple[list[str], list[str]]:
-    """Split the matched span at the page's line breaks, keeping each break's exact whitespace."""
+def split_parts(matched: str, label: str, phrase: str) -> tuple[list[str], list[str]]:
+    """Split the matched span at the page's line breaks, keeping each break's exact whitespace.
+
+    The parts are validated with `catlib.text.apply_split` - the render's own rule - not with a second
+    matcher here. `flex` refuses to relax a number-only needle because a needle searched anywhere in a
+    page has no literal anchor, but a recorded part is matched only at the start of the remainder, so its
+    digits can move freely; 201 of the 1,069 recorded parts are number-only and would raise on a drift
+    under the exact rule.
+    """
     runs = list(WS_RUN.finditer(matched))
     if not runs:
         return [matched], [" "]
@@ -98,8 +108,10 @@ def split_parts(matched: str, phrase: str) -> tuple[list[str], list[str]]:
         seps.append(r.group(0))
         pos = r.end()
     parts.append(matched[pos:].lstrip(" \t"))
-    if not TX.flex(phrase).fullmatch(" ".join(parts)):
-        print(f"SPLIT MISMATCH for {phrase!r}\n  parts: {parts}")
+    try:
+        TX.apply_split(label, phrase, parts)
+    except ValueError as exc:
+        print(f"SPLIT MISMATCH for {phrase!r}\n  parts: {parts}\n  {exc}")
         sys.exit(1)
     return parts, seps
 
@@ -142,20 +154,23 @@ def raw_wrap(text: str) -> str:
     return "\n".join(out)
 
 
-def build(page_rel: str, checker_name: str) -> tuple[int, list[str], pathlib.Path, str]:
-    """One page's template, built without writing: (rc, report lines, template path, template text).
+def build(page_rel: str, checker_name: str) -> tuple[int, list[str], pathlib.Path, str, list[dict[str, str]]]:
+    """One page's template, built without writing: (rc, report lines, template path, template text, rows).
 
     The per-page work is pure — `git show HEAD:<page>`, the writer's slot dict, the regex locate, the
     needle derivation, the string replacement — so it runs in a pool worker. Staging is NOT here: the
     parent stages, in sorted page order, which is what makes the slot numbering the serial numbering.
     Every line this function would have printed is returned in `lines` so the parent prints the report
     in page order.
+
+    `rows` is this page's part of `notes/tables/splits.tsv`: one row per recorded part, in the page's
+    own order, for a label the page breaks. A label the page does not break is one slot and has no row.
     """
     lines: list[str] = []
     label_fn = T.LABELS.get(page_rel)
     if label_fn is None:
         lines.append(f"no writer slot dict recorded for {page_rel}")
-        return 1, lines, pathlib.Path(""), ""
+        return 1, lines, pathlib.Path(""), "", []
     labels = label_fn()
     groups = T.group_labels(labels)
 
@@ -167,7 +182,15 @@ def build(page_rel: str, checker_name: str) -> tuple[int, list[str], pathlib.Pat
         found = list(TX.flex(needle).finditer(text))
         if not found:
             lines.append(f"NOT FOUND ({base}): {needle!r}")
-            return 1, lines, pathlib.Path(""), ""
+            return 1, lines, pathlib.Path(""), "", []
+        exact = [m for m in found if " ".join(text[m.start():m.end()].split()) == needle]
+        if exact:
+            # The needle names its own words, so it lands in exactly one place: `flex` relaxes digits
+            # only when the phrase carries literal characters, so an exact span is the label's own
+            # place in the page. Locate it first and slot it; the ambiguity test below is the fallback
+            # for a needle that has no exact span at all.
+            hits.extend((m.start(), m.end(), base, parts) for m in exact)
+            continue
         spans = {" ".join(text[m.start():m.end()].split()) for m in found}
         if len(spans) > 1:
             # A slot is one place in the page. A needle that fires on more than one *different* span is
@@ -194,13 +217,16 @@ def build(page_rel: str, checker_name: str) -> tuple[int, list[str], pathlib.Pat
                 continue
             lines.append(f"OVERLAP: {kept[-1][2]!r} [{kept[-1][0]}:{kept[-1][1]}] vs "
                          f"{h[2]!r} [{h[0]}:{h[1]}]")
-            return 1, lines, pathlib.Path(""), ""
+            return 1, lines, pathlib.Path(""), "", []
         kept.append(h)
     hits = kept
 
     slots: dict[str, str] = {}
     nslots = 0
     wrapped: list[str] = []
+    # (start, base, part): the replacement loop runs `reversed(hits)` to keep offsets valid, which would
+    # otherwise record a page's parts backwards, so the start is kept and the rows sorted at the end.
+    rows: list[tuple[int, str, str]] = []
     # `ambiguous` is initialized before the needle loop; re-initializing here would discard
     # the weak needles collected there, and the report line would print 0 for a page that has
     # weak needles.
@@ -220,15 +246,16 @@ def build(page_rel: str, checker_name: str) -> tuple[int, list[str], pathlib.Pat
             rendered = "{{ p['" + lab + "'] }}"
             nslots += 1
         else:
-            split, seps = split_parts(matched, " ".join(v for _, v in parts))
+            split, seps = split_parts(matched, base, " ".join(v for _, v in parts))
             if len(split) != len(parts):
                 lines.append(f"WRAP MISMATCH ({base}): page splits into {len(split)}, "
                              f"writer has {len(parts)}")
-                return 1, lines, pathlib.Path(""), ""
+                return 1, lines, pathlib.Path(""), "", []
+            rows.extend((start, base, p) for p in split[:-1])
             exprs = []
-            for (lab, _), part in zip(parts, split, strict=True):
-                slots[lab] = part
-                exprs.append("{{ p['" + lab + "'] }}")
+            for i in range(len(split)):
+                slots[TX.part_label(base, i)] = split[i]
+                exprs.append("{{ p['" + TX.part_label(base, i) + "'] }}")
             rendered = exprs[0]
             for i in range(1, len(exprs)):
                 rendered += seps[i - 1] + exprs[i]
@@ -274,10 +301,10 @@ def build(page_rel: str, checker_name: str) -> tuple[int, list[str], pathlib.Pat
     lines.append("\n# writer slots (label -> phrase part)")
     for k, v in sorted(slots.items()):
         lines.append(f"    {k!r}: {v!r},")
-    return 0, lines, out, full
+    return 0, lines, out, full, [{"page": page_rel, "label": b, "part": p} for _, b, p in sorted(rows)]
 
 
-def worker(page_checker: tuple[str, str]) -> tuple[int, list[str], pathlib.Path, str]:
+def worker(page_checker: tuple[str, str]) -> tuple[int, list[str], pathlib.Path, str, list[dict[str, str]]]:
     """`build` as a pool task: a `sys.exit(1)` from `split_parts` becomes rc 1, not a traceback.
 
     `split_parts` exits the process on a SPLIT MISMATCH; in a worker that would raise SystemExit
@@ -288,7 +315,7 @@ def worker(page_checker: tuple[str, str]) -> tuple[int, list[str], pathlib.Path,
     try:
         return build(page, checker)
     except SystemExit:
-        return 1, [], pathlib.Path(""), ""
+        return 1, [], pathlib.Path(""), "", []
 
 
 def main(argv: list[str]) -> int:
@@ -298,23 +325,32 @@ def main(argv: list[str]) -> int:
         pages = sorted(T.ALL_PAGES.items())
         with mp.Pool(POOL) as pool:
             results = pool.map(worker, pages)
-        for rc, lines, out, text in results:
+        rows: list[dict[str, str]] = []
+        for rc, lines, out, text, page_rows in results:
             for line in lines:
                 print(line)
             if rc:
                 return rc
+            rows.extend(page_rows)
             if not check_only:
                 ST.stage(out, text)
         if not check_only:
+            # Staged after the pages, so the slot numbering stays the serial numbering. `pool.map`
+            # preserves the order of `sorted(T.ALL_PAGES.items())`, so the table's row order is the page
+            # order the render reads.
+            ST.stage(SPLIT_TSV, TSV.csv_text(SP.COLS, rows))
             ST.promote()
+        print(f"split table rows {len(rows)}")
         return 0
     if len(argv) != 2:
         print("usage: build_report_templates.py [<notes/page.md> <verify_page.py>]")
         return 2
-    rc, lines, out, text = build(argv[0], argv[1])
+    rc, lines, out, text, _ = build(argv[0], argv[1])
     for line in lines:
         print(line)
     if rc == 0 and not check_only:
+        # A single-page run does not write the table: the table is the whole registry's, and one page's
+        # rows would replace it.
         ST.stage(out, text)
         ST.promote()
     return rc

@@ -98,8 +98,8 @@ bibliographies included) the same scan {{ p['mm_tree a'] }}
 {{ p['mm_tree b'] }}. The superseded-target citations live only inside superseded editions, which is
 why scoping the inventory to listed manuscripts loses nothing and removes a double count.
 
-Most-cited target families (bib href edges): **034** (19), **260** (18), **068** (14), **033** (12),
-**227** (11), **238** (10), **376** (9), **331** (7), **215** (6), **090** (6).
+Most-cited target families (bib href edges): {{ p['top_034'] }}, {{ p['top_260'] }}, {{ p['top_068'] }}, {{ p['top_033'] }},
+{{ p['top_227'] }}, {{ p['top_238'] }}, {{ p['top_376'] }}, {{ p['top_331'] }}, {{ p['top_215'] }}, {{ p['top_090'] }}.
 
 This is the measurement that makes intra-release consequence measurable. `notes/reports/conjecture-standing.md`,
 the `AGENTS.md` dev tip, and the `corpus-finding-surprise-ranking` skill all conclude from
@@ -122,13 +122,13 @@ All three normalize the family title the same way — lowercase alphanumerics, s
 {{ p['namerow_cited'] }}
 {{ p['namerow_mentioned'] }}
 
-`cited-in-bib`: **001, 003, 006, 038, 066, 086, 109, 145, 202, 231, 312**. Each was read and
+`cited-in-bib`: **{{ p['cited_list'] }}**. Each was read and
 {% raw %}validated as a genuine citation — the entry reads e.g. `{Milne's rationality conjecture for abelian
 varieties}}, howpublished = {OpenAI Math Release preprint \href{https://github.com/openai/…`. The
 {% endraw %}
 merge changed no member of this list.
 
-`mentioned-in-body`: **003, 006, 032, 086, 094, 109, 145, 176, 194, 202, 299**. {{ p['inter_count'] }}
+`mentioned-in-body`: **{{ p['mentioned_list'] }}**. {{ p['inter_count'] }}
 {{ p['inter_list'] }} also appear in `cited-in-bib`, which is the signature of a real
 reference; {{ p['mentonly_count'] }} — {{ p['mentonly_list'] }} — are the ones to read before
 believing, and {{ p['citedonly'] }} are cited in a

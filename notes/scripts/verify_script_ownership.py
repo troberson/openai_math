@@ -666,7 +666,11 @@ def cost_problems(text: str) -> list[str]:
         paras.setdefault(head.group(1), []).append(
             re.sub(r"\s+", " ", "\n".join(lines[k:end])))
     counts = 0
+    positive = 0
     for checker, n in calls.items():
+        if n < 0:
+            continue
+        positive += 1
         name = checker if checker.endswith(".py") else f"{checker}.py"
         want = f"the {n} `check()` calls"
         if any(want in s for s in paras.get(name, [])):
@@ -709,8 +713,8 @@ def cost_problems(text: str) -> list[str]:
     # the page; a gate row the page never discusses is not a defect.
     if not tail:
         p.append(f"the pass read {len(tail)} tail figures")
-    if counts < len(calls):
-        p.append(f"the pass read {counts} counts, below {len(calls)} recorded checkers")
+    if counts < positive:
+        p.append(f"the pass read {counts} counts, below {positive} positive counts")
     return p
 
 

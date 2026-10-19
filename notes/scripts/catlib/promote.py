@@ -145,7 +145,10 @@ ARTIFACTS: dict[str, tuple[str, ...]] = {
     "refresh_summary_line_counts.py": ("notes/summaries/",),
     "build_index.py": ("notes/index/",),
     "render_reports.py": REPORT_PAGES,
-    "build_report_templates.py": ("notes/templates/report/",),
+    # The template tree plus the split table the builder derives from HEAD's page bytes. The table is
+    # the render's input, so the render's L1 names it through the `notes/tables/` tree entry; the
+    # builder's own output cannot be part of its own read surface, so it appears only here.
+    "build_report_templates.py": ("notes/templates/report/", "notes/tables/splits.tsv"),
     # A record producer has no tracked artifact: its bytes land under the keyed store, which the
     # `.qwen/*` rule keeps untracked. The empty tuple is what makes the cache check read it as
     # "no tracked bytes to compare" and the L1 check still prove its inputs.

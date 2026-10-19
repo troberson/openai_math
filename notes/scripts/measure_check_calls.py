@@ -49,7 +49,7 @@ BASELINE = {
     "verify_findings": 9,
     "verify_faithfulness": 33,
     "verify_sources": 15,
-    "verify_index_design": 16,
+    "verify_index_design": 17,
     "verify_fleet_design": 23,
     "verify_verification_dirs": 21,
     "verify_named_results": 15,

@@ -36,6 +36,11 @@ DIGEST_PATHS = ["HEAD:preprints", "HEAD:lean", "HEAD:overview.tex", "HEAD:CONTEN
 
 RECORDS_ROOT = ROOT / ".qwen" / "cache" / "records"
 
+# The key is the full sha256 cut to this many hex characters. The census page quotes the length, so
+# the length lives in one constant that `key()` uses: a page carrying the figure as prose could
+# disagree with the code that does the truncating and nothing would notice.
+KEY_LEN = 32
+
 
 def tree_digests() -> list[str]:
     """The five git tree digests, in DIGEST_PATHS order. One `git rev-parse` call, ~0.002 s."""
@@ -58,7 +63,7 @@ def key(source: str, l1: tuple[str, ...] = (), args: tuple[str, ...] = ()) -> st
     plain run do not share a record.
     """
     parts = tree_digests() + [sha(source)] + [sha(t) for t in l1] + list(args)
-    return sha("\n".join(parts))[:32]
+    return sha("\n".join(parts))[:KEY_LEN]
 
 
 def store_dir(k: str) -> Path:

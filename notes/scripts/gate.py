@@ -148,6 +148,12 @@ ROWS = [
     ("check_summary_manuscripts.py", ("summaries",), ()),
     ("locate_summary_quotes.py", ("summaries",), ()),
     ("measure_summaries_seed.py", ("summaries",), ()),
+    # The read-surface probe runs every other row in a fresh process, so it is the one row that is not
+    # a measurement of the corpus but a measurement of the fleet. It writes one tracked record and that
+    # record carries no wall time, so a re-run lands the same bytes and the tree stays clean -- the
+    # reason it can be a row at all when measure_open_probe.py cannot. It needs the render because its
+    # children read the pages.
+    ("measure_checker_reads.py", ("pages",), ()),
 ]
 
 

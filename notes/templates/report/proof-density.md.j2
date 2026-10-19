@@ -37,8 +37,8 @@ writes the page.
 
 | Signal | T0 | T2 | T3 |
 |---|---|---|---|
-| proofs per family | 44.0 | 25.0 | 27.0 |
-| statements per family | 48.5 | 26.5 | 27.0 |
+| proofs per family | {{ p['medrow_proofs'] }} |
+| statements per family | {{ p['medrow_thms'] }} |
 | proofs per manuscript | {{ p['med_proofs_per_man_T0'] }} | {{ p['med_proofs_per_man_T2'] }} | {{ p['med_proofs_per_man_T3'] }} |
 | proofs per statement | {{ p['med_proofs_per_thm_T0'] }} | {{ p['med_proofs_per_thm_T2'] }} | {{ p['med_proofs_per_thm_T3'] }} |
 | proofs per tex KB | {{ p['med_proofs_per_kb_T0'] }} | {{ p['med_proofs_per_kb_T2'] }} | {{ p['med_proofs_per_kb_T3'] }} |
@@ -60,12 +60,12 @@ KB per manuscript gates proofs per manuscript. The report prints both control ro
 | proofs per statement | {{ p['sep_proofs_per_thm_T0T2'] }} | {{ p['sep_proofs_per_thm_T0T3'] }} | {{ p['sep_proofs_per_thm_T2T3'] }} |
 | proofs per tex KB | {{ p['sep_proofs_per_kb_T0T2'] }} | {{ p['sep_proofs_per_kb_T0T3'] }} | {{ p['sep_proofs_per_kb_T2T3'] }} |
 | tex KB per manuscript (control) | {{ p['ctlman'] }} |
-| tex KB per family (control) | 0.658 | 0.677 | 0.534 |
+| tex KB per family (control) | {{ p['ctlfam'] }} |
 
 Two facts decide it. Raw proof count and raw statement count now clear the bar on **both** T0 pairs
-(0.667 / 0.674 and 0.671 / 0.676) and sit within 0.03 of the per-family control (0.658 / 0.677) on each
+({{ p['fact_proofs'] }} and {{ p['fact_thms'] }}) and sit within 0.03 of the per-family control ({{ p['fact_ctl_fam'] }}) on each
 — a proof count is a **document-length proxy**, not a density. Proofs per manuscript clears the same two
-pairs (0.709 / 0.770) and is within 0.03 of the per-manuscript control (0.705 / 0.769). And the two
+pairs ({{ p['fact_man'] }}) and is within 0.03 of the per-manuscript control ({{ p['fact_ctl_man'] }}). And the two
 genuine density measures (proofs per statement, proofs per KB) separate nothing at all: the
 proof-to-statement ratio is ≈0.97 across the whole corpus, tier-independent. T2 vs T3 — the two
 formalized tiers — is NULL for every signal.
@@ -80,9 +80,9 @@ terse writeups, not about proof density.
 
 | Flag | proofs/man | proofs/statement | proofs/KB |
 |---|---|---|---|
-| `conditional` (n=5) | {{ p['flag_conditional_man'] }} | {{ p['flag_conditional_thm'] }} | {{ p['flag_conditional_kb'] }} |
-| `resolves_named` (n=248) | {{ p['flag_resolves_named_man'] }} | {{ p['flag_resolves_named_thm'] }} | **{{ p['flag_resolves_named_kb'] }}** |
-| `counterex_broad` (n=74) | **{{ p['flag_counterex_broad_man'] }}** | {{ p['flag_counterex_broad_thm'] }} | {{ p['flag_counterex_broad_kb'] }} |
+| `conditional` ({{ p['flag_conditional_n'] }}) | {{ p['flag_conditional_man'] }} | {{ p['flag_conditional_thm'] }} | {{ p['flag_conditional_kb'] }} |
+| `resolves_named` ({{ p['flag_resolves_named_n'] }}) | {{ p['flag_resolves_named_man'] }} | {{ p['flag_resolves_named_thm'] }} | **{{ p['flag_resolves_named_kb'] }}** |
+| `counterex_broad` ({{ p['flag_counterex_broad_n'] }}) | **{{ p['flag_counterex_broad_man'] }}** | {{ p['flag_counterex_broad_thm'] }} | {{ p['flag_counterex_broad_kb'] }} |
 
 `counterex_broad` is the strongest result in the whole measurement and it is inverse: families that use
 counterexample language have markedly **fewer** proofs per manuscript (P(a T0-style family has more
