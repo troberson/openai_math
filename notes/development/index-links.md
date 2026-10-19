@@ -152,11 +152,11 @@ both trees carry it, and a link that looks like it resolves can resolve into the
 checker prints the pass with its rule:
 
 ```
-basename collisions (notes/index vs notes/tables)  0  over 1027 index basenames and 26 table basenames
+basename collisions (notes/index vs notes/tables)  0  over 1027 index basenames and 27 table basenames
 ```
 
 The index tree carries 1,027 distinct file basenames over 1,033 pages and `notes/tables/` carries
-26; the pass reports 0 shared, and 6 basenames are shared *inside* the index tree — 6 discipline
+27; the pass reports 0 shared, and 6 basenames are shared *inside* the index tree — 6 discipline
 names are also topic terms, so `disciplines/differential-geometry.md` and
 `topics/differential-geometry.md` share a basename. That is benign: links are relative, so there is
 no ambiguity, and it is why the pass is scoped to the two trees rather than to the index alone. The

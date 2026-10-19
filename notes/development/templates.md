@@ -5,7 +5,7 @@ template text plus the writer's registry). Lines and bytes are of the template f
 is a `{{ ` occurrence counted over the whole file. No `lake`, `lean`, `lake exe cache get`, or
 comparator run.
 
-**Headline, with the rule that yields it:** report tree: **21** templates, **9,306** lines, **595,774** bytes, **1,651** slots; index tree: **5** templates, **209** lines, **14,981** bytes, **103** slots; all **26** templates: **9,515** lines, **610,755** bytes, **1,754** slots.
+**Headline, with the rule that yields it:** report tree: **21** templates, **9,299** lines, **594,252** bytes, **1,775** slots; index tree: **5** templates, **209** lines, **14,981** bytes, **103** slots; all **26** templates: **9,508** lines, **609,233** bytes, **1,878** slots.
 
 ## The report tree
 
@@ -16,28 +16,28 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 
 | Template | Lines | Bytes | Slots | Page | Checker | Needles |
 |---|---|---|---|---|---|---|
-| `README.md.j2` | 789 | 77,008 | 79 | `notes/README.md` | `verify_script_ownership.py` | NOT DERIVED |
-| `abstracts.md.j2` | 408 | 32,441 | 33 | `notes/reports/abstracts.md` | `verify_abstracts.py` | 45 |
-| `counterexample-crosscheck.md.j2` | 1,089 | 46,439 | 68 | `notes/reports/counterexample-crosscheck.md` | `verify_counterexample_crosscheck.py` | 20 |
+| `README.md.j2` | 789 | 76,981 | 78 | `notes/README.md` | `verify_script_ownership.py` | NOT DERIVED |
+| `abstracts.md.j2` | 406 | 32,517 | 42 | `notes/reports/abstracts.md` | `verify_abstracts.py` | 45 |
+| `counterexample-crosscheck.md.j2` | 1,089 | 45,859 | 87 | `notes/reports/counterexample-crosscheck.md` | `verify_counterexample_crosscheck.py` | 20 |
 | `dependency-drift.md.j2` | 229 | 11,558 | 95 | `notes/reports/dependency-drift.md` | `verify_dependency_drift.py` | NOT DERIVED |
 | `findings.md.j2` | 283 | 21,578 | 4 | `notes/reports/findings.md` | `verify_findings.py` | NOT DERIVED |
-| `fleet-design.md.j2` | 485 | 41,940 | 26 | `notes/development/fleet-design.md` | `verify_fleet_design.py` | 20 |
-| `formalization-faithfulness.md.j2` | 265 | 11,796 | 33 | `notes/reports/formalization-faithfulness.md` | `verify_faithfulness.py` | 13 |
+| `fleet-design.md.j2` | 485 | 41,953 | 31 | `notes/development/fleet-design.md` | `verify_fleet_design.py` | 20 |
+| `formalization-faithfulness.md.j2` | 265 | 11,818 | 65 | `notes/reports/formalization-faithfulness.md` | `verify_faithfulness.py` | 13 |
 | `index-design.md.j2` | 245 | 14,254 | 110 | `notes/development/index-design.md` | `verify_index_design.py` | 83 |
-| `index-links.md.j2` | 240 | 14,328 | 79 | `notes/development/index-links.md` | `check_index_links.py` | NOT DERIVED |
-| `links.md.j2` | 224 | 12,308 | 98 | `notes/reports/links.md` | `extract_links.py` | NOT DERIVED |
-| `named-results.md.j2` | 368 | 25,324 | 81 | `notes/reports/named-results.md` | `verify_named_results.py` | 65 |
-| `names.md.j2` | 277 | 13,869 | 129 | `notes/reports/names.md` | `measure_names.py` | NOT DERIVED |
-| `proof-density.md.j2` | 122 | 8,519 | 54 | `notes/reports/proof-density.md` | `measure_proof_density.py` | NOT DERIVED |
+| `index-links.md.j2` | 240 | 14,303 | 84 | `notes/development/index-links.md` | `check_index_links.py` | NOT DERIVED |
+| `links.md.j2` | 224 | 12,312 | 110 | `notes/reports/links.md` | `extract_links.py` | NOT DERIVED |
+| `named-results.md.j2` | 368 | 25,308 | 83 | `notes/reports/named-results.md` | `verify_named_results.py` | 65 |
+| `names.md.j2` | 277 | 13,873 | 130 | `notes/reports/names.md` | `measure_names.py` | NOT DERIVED |
+| `proof-density.md.j2` | 122 | 8,649 | 65 | `notes/reports/proof-density.md` | `measure_proof_density.py` | NOT DERIVED |
 | `scope-exclusions.md.j2` | 328 | 26,788 | 19 | `notes/reports/scope-exclusions.md` | `verify_scope_exclusions.py` | NOT DERIVED |
-| `scripts-README.md.j2` | 740 | 66,954 | 51 | `notes/scripts/README.md` | `verify_script_ownership.py` | NOT DERIVED |
-| `sources.md.j2` | 157 | 9,313 | 22 | `notes/reports/sources.md` | `verify_sources.py` | 31 |
-| `subfinding-pairs.md.j2` | 1,634 | 60,295 | 422 | `notes/reports/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |
-| `t0-chains.md.j2` | 571 | 34,913 | 40 | `notes/reports/t0-chains.md` | `verify_t0_chains.py` | 12 |
+| `scripts-README.md.j2` | 736 | 66,449 | 52 | `notes/scripts/README.md` | `verify_script_ownership.py` | NOT DERIVED |
+| `sources.md.j2` | 156 | 9,400 | 29 | `notes/reports/sources.md` | `verify_sources.py` | 31 |
+| `subfinding-pairs.md.j2` | 1,634 | 60,252 | 422 | `notes/reports/subfinding-pairs.md` | `verify_subfinding_pairs.py` | NOT DERIVED |
+| `t0-chains.md.j2` | 571 | 34,251 | 61 | `notes/reports/t0-chains.md` | `verify_t0_chains.py` | 12 |
 | `templates.md.j2` | 109 | 5,115 | 47 | `notes/development/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `topics.md.j2` | 335 | 23,082 | 117 | `notes/reports/topics.md` | `measure_topics.py` | NOT DERIVED |
 | `verification-dirs.md.j2` | 408 | 37,952 | 44 | `notes/reports/verification-dirs.md` | `verify_verification_dirs.py` | 16 |
-| **report tree** | **21** | **9,306** | **595,774** | **1,651** | | |
+| **report tree** | **21** | **9,299** | **594,252** | **1,775** | | |
 
 ## The index tree
 
@@ -58,15 +58,15 @@ the count of pages on disk that the template produced, read from the tree it wri
 A slot is a `{{ ` occurrence in the template file, counted over the whole file. Slot expressions
 are not required to be unique. The gap between `{{ ... }}` expressions and distinct expressions,
 over the **26** committed templates, is
-**18** repeat expressions over **6** templates —
-`fleet-design.md.j2` (2 repeats); `proof-density.md.j2` (1 repeat); `scripts-README.md.j2` (6 repeats); `templates.md.j2` (1 repeat); `index-readme.md.j2` (5 repeats); `name.md.j2` (3 repeats) —
+**12** repeat expressions over **5** templates —
+`fleet-design.md.j2` (2 repeats); `proof-density.md.j2` (1 repeat); `templates.md.j2` (1 repeat); `index-readme.md.j2` (5 repeats); `name.md.j2` (3 repeats) —
 where a table row is emitted from the same label more than once. Each report template also carries
 a generated header comment whose closing line holds one literal `{{ }}`, so the header contributes
 exactly 1 slot to every report template; the header comment is **4** lines and the index templates
 have none.
 
 The builder's report line prints a *label* count, which is a different measure from the `{{ `
-occurrences in the file it wrote: **41** writer labels against **33** slots in `abstracts.md.j2`,
+occurrences in the file it wrote: **41** writer labels against **42** slots in `abstracts.md.j2`,
 the 1-slot difference being the header. Quote a slot count with the rule that yields it.
 
 ## What the builder can prove, and what it cannot
