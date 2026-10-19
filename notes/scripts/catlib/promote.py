@@ -227,15 +227,18 @@ L1_HEAD = frozenset({"build_report_templates.py"})
 
 
 def expand(entry: str) -> list[Path]:
-    """A repo-relative file, or every file under a repo-relative tree when the entry ends in `/`.
+    """A repo-relative file, or the tracked files under a repo-relative tree when the entry ends in `/`.
 
-    A tree entry names the source surface the writer reads, so the compiled caches Python writes under
-    `__pycache__` are not part of it: they are not UTF-8, they are a function of the source the key
-    already hashes, and the audit-hook record does not name them.
+    A tree entry names the tracked source surface the writer reads, so a scratch probe under the tree
+    moves no key: a key a clone cannot reproduce moves for every writer whose L1 names that tree. The
+    compiled caches Python writes under `__pycache__` are not tracked, so they are not part of it. An
+    explicit file entry stays as declared — `measure_gate_rows.py` names the gate driver's untracked
+    report under `.qwen/` by path, and the one-rule form keeps that working.
     """
     if entry.endswith("/"):
-        return sorted(p for p in (ROOT / entry).rglob("*")
-                      if p.is_file() and "__pycache__" not in p.parts)
+        out = subprocess.run(["git", "-C", str(ROOT), "ls-files", "-z", "--", entry],
+                             check=True, capture_output=True).stdout.decode("utf-8")
+        return sorted(ROOT / rel for rel in out.split("\0") if rel and (ROOT / rel).is_file())
     return [ROOT / entry]
 
 

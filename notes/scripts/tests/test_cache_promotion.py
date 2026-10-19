@@ -142,3 +142,33 @@ def test_padded_table_cells_are_still_read(mod):
     padded = mod.writers_table()
     mod.README = real
     assert padded == clean, f"padded writers table reads {len(padded)} rows, clean page {len(clean)}"
+
+
+def test_tree_entries_hash_only_tracked_files(monkeypatch):
+    """A tree L1 entry expands to the tracked files, so an untracked file under the tree
+    moves neither the expansion nor the writer's key: the record is a function of the
+    tracked read surface, and a scratch probe under the tree is not part of it. The proof
+    is the writer's own key — `render_reports.py` names `notes/tables/` as a tree, and the
+    key is identical with an untracked file sitting in that tree. RUN_ARGS carries a live
+    bd count for this writer, so it is pinned to a constant and both reads see the same
+    count; the only thing that may move is the surface. An explicit file entry is
+    unaffected by the rule: `measure_gate_rows.py` names its untracked driver report by path.
+    """
+    from catlib import promote as PR
+
+    scratch = PR.ROOT / "notes" / "tables" / ".expansion-scratch.txt"
+    assert not scratch.exists(), "a stale scratch file would move the before key too"
+    monkeypatch.setitem(PR.RUN_ARGS, "render_reports.py", lambda: ())
+    before_exp = PR.expand("notes/tables/")
+    before_key = PR.key_for("render_reports.py", ())
+    assert PR.expand("README.md") == [PR.ROOT / "README.md"], "an explicit file entry must stay as declared"
+    scratch.write_text("scratch\n")
+    try:
+        mid_exp = PR.expand("notes/tables/")
+        mid_key = PR.key_for("render_reports.py", ())
+    finally:
+        scratch.unlink()
+    after_key = PR.key_for("render_reports.py", ())
+    extra = {str(p) for p in mid_exp} - {str(p) for p in before_exp}
+    assert mid_exp == before_exp, f"an untracked file in the tree entered the expansion: {sorted(extra)}"
+    assert before_key == mid_key == after_key, "the key moved while an untracked file sat in the tree"
