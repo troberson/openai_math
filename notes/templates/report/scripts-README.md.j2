@@ -51,10 +51,10 @@ finds **18** writers over **73** scripts.
 | `extract_links.py` | `notes/tables/links.tsv` | single run; cached bytes == promoted bytes under the key | `notes/reports/links.md` |
 | `extract_subfindings.py` | `notes/tables/subfindings.tsv` | single run; cached bytes == promoted bytes under the key | `notes/reports/subfinding-pairs.md` |
 | `render_reports.py` | `notes/README.md`, `notes/reports/abstracts.md`, `notes/reports/dependency-drift.md`, `notes/development/index-design.md`, `notes/development/index-links.md`, `notes/reports/links.md`, `notes/reports/named-results.md`, `notes/reports/names.md`, `notes/reports/proof-density.md`, `notes/reports/sources.md`, `notes/reports/verification-dirs.md`, `notes/reports/scope-exclusions.md`, `notes/reports/topics.md`, `notes/reports/t0-chains.md`, `notes/reports/subfinding-pairs.md`, `notes/reports/counterexample-crosscheck.md`, `notes/reports/formalization-faithfulness.md`, `notes/development/fleet-design.md`, `notes/development/templates.md` | single run; cached bytes == promoted bytes for all 19 pages | the nineteen report-fed pages |
-| `build_report_templates.py` | `notes/templates/report` | not in `gate.py` — it reads each page with `git show HEAD:`, so a gate run would rewrite templates from committed bytes; run explicitly with 0 args (all nineteen pages) or 2 (one page) after a writer's slot dict changes | the nineteen page templates; the registry, slot dicts and needle derivation it reads are in `catlib/templates.py` |
+| `build_report_templates.py` | `notes/tables/splits.tsv`, `notes/templates/report` | not in `gate.py` — it reads each page with `git show HEAD:`, so a gate run would rewrite templates from committed bytes; run explicitly with 0 args (all nineteen pages) or 2 (one page) after a writer's slot dict changes | the nineteen page templates; the registry, slot dicts and needle derivation it reads are in `catlib/templates.py` |
 | `measure_names.py` | `.qwen/cache/records/<key>/names.json` | plain; no tracked artifact, so the promote-and-verify assertion compares no bytes for it — `verify_cache_promotion.py` proves its L1 against the probe record and the cache check reads no tracked path | `notes/reports/names.md`, and the 551 name pages `build_index.py` renders from `--json` |
 | `extract_named_results.py` | `.qwen/cache/records/<key>/named_results.json` | plain; no tracked artifact, so the promote-and-verify assertion compares no bytes for it — `verify_cache_promotion.py` proves its L1 against the probe record and the cache check reads no tracked path | `notes/reports/named-results.md` — the writer, `verify_named_results.py` and `notes/scripts/tests/test_named_results.py` read the same record, so the 7,240-file `.tex` walk is paid once per key, not once per process |
-| `measure_templates.py` | `.qwen/cache/records/<key>/templates.json` | plain; no tracked artifact, so the promote-and-verify assertion compares no bytes for it — `verify_cache_promotion.py` proves its L1 against the probe record and the cache check reads no tracked path | `notes/development/templates.md` — the writer, `render_reports.py` and `build_report_templates.py`'s floor page read the same record |
+| `measure_templates.py` | `.qwen/cache/records/<key>/templates.json`
 | `measure_checker_reads.py` | `notes/development/probe` | not in `gate.py` — it runs the whole fleet with an audit hook, so a gate run inside a gate run would contaminate its own record; run explicitly after a writer's L1 changes | the probe record the census's L1-exactness pass reads, and the per-row read graph `notes/development/probe/checker_reads.txt` carries |
 | `measure_open_probe.py` | `notes/development/probe` | not in `gate.py` — a record carries a wall time per target, so a run-1/run-2 byte diff of a record is a timing artifact, not a proof; run explicitly over the purity and amplification targets, appending stdout to build a multi-target record | the two probe records `verify_fleet_design.py` parses |
 | `seed_quotes.py` | `notes/tables/quotes.tsv` | single run; cached bytes == promoted bytes under the key | `notes/reports/subfinding-pairs.md` and `notes/summaries/**` — the two surfaces whose quotes it seeds; `render_reports.py` reads the pair rows back for the pair page, and `notes/scripts/tests/test_quotes.py` reads the whole table back |
@@ -222,7 +222,7 @@ had to wait for the serial chain to finish.
 | `gate.py` | none — the gate list itself: 81 rows as a dependency graph, printing one line per row in list order | **the list** — run by `gate_driver.sh` |
 | `locate_summary_quotes.py` | `notes/summaries/` — the lines a page should cite when a quotation stops matching | plain, no page argument |
 | `measure_anchor_blocks.py` | `math-faz` — the fenced blocks and quotations in the moved pages attributed to a notes-page anchor; the bead re-runs it after each pass | **not gated** |
-| `measure_checker_needles.py` | `notes/development/templates.md` — the per-checker needle inventory behind its Needles column | plain |
+| `measure_checker_needles.py`, `measure_checker_reads.py`` | `notes/development/templates.md` — the per-checker needle inventory behind its Needles column | plain |
 | `measure_faithfulness.py` | `notes/reports/formalization-faithfulness.md` | plain |
 | `measure_index_sizes.py` | `notes/development/index-design.md` | plain |
 | `measure_import_layout.py` | `extract_links.py`'s import header rule — the Lean files whose first command is a doc-comment opener (`/-`), a bare `module` line, or a `public import` line, which is the evidence the widened `HEADER_SKIP` rule was written from | **not gated** — walks 122,458 files; run by hand when the header rule changes |
@@ -391,7 +391,7 @@ test loader memoizes: a loader that re-executed the module per test gave each te
 the row measured **16.9 s** before the loader was memoized.
 `verify_t0_chains.py` is the same case with the ledger, `subfindings.tsv`, `notes/reports/t0-triage.md` and the
 `.bib` layer: `population()` is under `functools.cache` (`:118`), so its `run_tests.py` row measures
-**2.9 s** where the `--mutant` row took **1.4 s** — {{ p['calls_t0_chains'] }} pay the
+**2.9 s** where the `--mutant` row took **1.4 s** — {{ p['calls_index_design'] }} pay the
 walk once.
 `verify_dependency_drift.py` is the same case with the TSV, `lean/lakefile.lean`, `lean/formalization.yaml`
 and the 23 patch files: `measure()` is under `functools.cache` (`:185`), so its `run_tests.py` row
@@ -423,7 +423,7 @@ so its six mutants were never run by the gate. Measured 2026-10-09 by hand — `
 62; the pass that extracted its self-tests removed that invocation again. `math-a0r.6.2` added
 `check_index_links.py --mutant` for the same reason — its 21st mutant is a mutation of
 `notes/development/index-links.md`'s own prose, which only a self-test can catch — and `math-3la`
-added `measure_checker_needles.py`, so the count is **79** after `math-o3a.1` added
+added `measure_checker_needles.py`, `measure_checker_reads.py``, so the count is **79** after `math-o3a.1` added
 `verify_fleet_design.py` plain and with `--mutant`, `math-o3a.6.1` added
 `verify_cache_promotion.py` plain and with `--mutant`, and the rows `math-unv`'s
 scheduler and `math-o3a.5.2`'s `--both` collapse added took the list to what the `ROWS` array
@@ -512,7 +512,7 @@ remove, and the one cycle that leaves the cyclic-import count — while `triage_
 `triage_t0.py`: the order and the tags are a join, the wording is the report's labels.
 `math-6s7.5` put the report-template registry in `catlib/templates.py` — `ALL_PAGES` (page →
 checker, 17 entries), the writer's per-page `POPULATIONS` and `LABELS` dicts, `checker_needles`,
-`group_labels` and `SPLIT_LABEL` — so `build_report_templates.py`, `measure_checker_needles.py` and
+`group_labels` and `SPLIT_LABEL` — so `build_report_templates.py`, `measure_checker_needles.py`, `measure_checker_reads.py`` and
 `measure_templates.py` read one registry instead of three routes to the builder, and
 `measure_templates.py`'s `all_pages_anchor()` points at the package. What stays in the builder is
 the writer path: the whitespace-flexible locate, the split at the page's own line breaks, the
@@ -597,7 +597,7 @@ nowhere in the repo at the pinned baseline: `build_report_templates.py`, `build_
 `verify_tsv_quoting.py`,
 `check_summary_manuscripts.py`, `check_gate_budget.py`,
 `extract_citations.py`, `gate.py`, `locate_summary_quotes.py`, `measure_anchor_blocks.py`,
-`measure_checker_needles.py`, `measure_faithfulness.py`, `measure_import_layout.py`,
+`measure_checker_needles.py`, `measure_checker_reads.py``, `measure_faithfulness.py`, `measure_import_layout.py`,
 `measure_links_phases.py`, `measure_move_surface.py`, `measure_needles.py`, `measure_open_probe.py`,
 `measure_render_phases.py`, `measure_render_pool.py`, `measure_render_processes.py`,
 `measure_scan_candidates.py`, `measure_summaries_seed.py`, `measure_templates.py`,
@@ -613,7 +613,7 @@ named; `read_manuscript.py` and `refresh_summary_line_counts.py` are the rest of
 measurements whose checker no document named; `verify_upstream_history.py` is the tooling behind
 `notes/development/upstream_history/`, the pages that record each upstream merge, which moved under `notes/` on
 2026-10-10 and are inside this page's census; `measure_templates.py` is the census behind `notes/development/templates.md`, added by
-the pass that added that page; `measure_checker_needles.py` is the per-checker needle probe the
+the pass that added that page; `measure_checker_needles.py`, `measure_checker_reads.py`` is the per-checker needle probe the
 checker-coverage bead promoted; `dump_template_slots.py` is the slot dump that prints the same dict the census measures, promoted by `math-a0r.7`; `verify_fleet_design.py` is the checker for `notes/development/fleet-design.md`, promoted by `math-o3a.1` together with the two probe records it parses; `verify_page_sync.py` is the checker `math-o3a.3` created when the five sync passes left the writer fleet, so the pinned baseline predates it; `measure_open_probe.py` is the audit-hook probe `math-o3a.3.4` promoted from `.qwen/tmp/a11_open_probe2.py`, so the pinned baseline predates it too; `measure_faithfulness.py` is the faithfulness measurement promoted from `.qwen/tmp/faith_probe.py` by the pass that added `notes/reports/formalization-faithfulness.md`, and `verify_faithfulness.py` is that page's checker, so the pinned baseline predates both; `render_reports.py` is the renderer for the nineteen report-fed pages; `verify_cache_promotion.py` is the checker `math-o3a.6.1` created for the promotion protocol, so the pinned baseline predates it; `measure_anchor_blocks.py` and `measure_move_surface.py` are the two notes-move probes `math-faz.1` promoted from `.qwen/tmp/notes_block_probe.py` and `.qwen/tmp/notes_move_probe.py`, which price a directory move before it happens and re-check the mention counts after it, so the pinned baseline predates both; and `gate.py` is the dependency scheduler `math-unv` wrote to replace `notes/scripts/gate.sh`, so the pinned baseline predates it; `seed_quotes.py` is the quote-spec seeder this pass promoted from `.qwen/tmp/seed_quotes4.py`, which seeds `notes/tables/quotes.tsv` from `notes/reports/subfinding-pairs.md`'s pair lines and resolves each spec back against `overview.tex`, so the pinned baseline predates it; `run_tests.py` is the seam that runs the extracted checker self-tests through the venv's pytest, promoted by the pass that extracted `verify_scope_exclusions.py`'s, so the pinned baseline predates it; `measure_summaries_seed.py` is the quote-spec classification this pass promoted from `.qwen/tmp/measure_summaries_seed.py`, which measures the 1038 spans the 25 summaries pages carry and the class each seeded spec round-trips in, so the pinned baseline predates it; `build_index_db.py` is the SQLite FTS5 builder `math-u41.6` wrote, which lands the keyed record and the untracked database, so the pinned baseline predates it.
 All 62 are named here and in the command
 block. "Before this pass" is
@@ -681,7 +681,7 @@ it the tree is **1,003** files. The working trees are `reports/` **438** (gate a
 the bead rejects — plus the `a64_copy/` demo tree. The `math-3la` cleanup deleted **10** more: the
 seven `a7_*` one-shots (`a7_apply.sh`, `a7_bump_run.sh`, `a7_il2_waiter.sh`, `a7_il_fix2.sh`,
 `a7_promoted_run.sh`, `a7_proof.sh`, `a7_tpl_rebuild.sh`), `a8_lint.sh` by
-`notes/scripts/lint_scripts.sh`, `a8_probe.py` by `notes/scripts/measure_checker_needles.py`, and
+`notes/scripts/lint_scripts.sh`, `a8_probe.py` by `notes/scripts/measure_checker_needles.py`, `measure_checker_reads.py``, and
 `a8_proof_chain.sh`, deleted only after its run printed `CHAIN_DONE`. The top-level count falls by
 **10** while the file total falls by **8**, because two of the deleted files were hardlinks whose
 twins live in `ledger_bump_copy/`.
