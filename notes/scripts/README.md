@@ -364,7 +364,7 @@ row makes pay the preprints/overview walk once.
 `verify_index_design.py` is the same case with the index tree: `population()` is under
 `functools.cache` (`:66`) and delegates to `measure_index_sizes.population()`, so its `run_tests.py`
 row measures **5.5 s** where the `--mutant` row took **20.3 s** before that row was replaced: the
-16 `check()` calls the row makes pay the `notes/index/` walk once.
+17 `check()` calls the row makes pay the `notes/index/` walk once.
 `verify_fleet_design.py` is the same case with the `git`/`du`/script-tree walk: `population()` is under
 `functools.cache` (`:151`), so its `run_tests.py` row measures **0.7 s** where the `--mutant` row took
 **0.8 s** before that row was replaced: the 23 `check()` calls the row makes pay the five

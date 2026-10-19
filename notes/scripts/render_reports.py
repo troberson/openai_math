@@ -2668,12 +2668,18 @@ CALLS_PHRASES = {
     "verify_findings": "the {} `check()` calls the row makes",
     "verify_faithfulness": "the {} `check()` calls the row makes",
     "verify_sources": "the {} `check()` calls the row makes",
-    "verify_index_design": "the {} `check()` calls the row makes",
+    # Its needle must carry the paragraph's tail: the bare "the {n} `check()` calls the
+    # row makes" is shared by six rows, so when two carried the same value the builder
+    # slotted one into the other's paragraph, leaving this count a stale literal.
+    "verify_index_design": "the {} `check()` calls the row makes pay the `notes/index/` walk once",
     "verify_fleet_design": "the {} `check()` calls the row makes",
     "verify_verification_dirs": "the {} `check()` calls",
     "verify_named_results": "the {} `check()` calls pay the 7,240-file walk once",
     "verify_citations": "the {} `check()` calls the row makes pay the two",
-    "verify_t0_chains": "the {} `check()` calls the row makes",
+    # Its needle must carry the paragraph's tail too: the bare form is now a prefix
+    # substring of `verify_index_design`'s, so the two collide again when both
+    # carry the same value.
+    "verify_t0_chains": "the {} `check()` calls the row makes pay the walk once",
     "verify_dependency_drift": "the {} `check()` calls the row makes pay",
     "verify_subfinding_pairs": "the {} `check()` calls the row makes",
 }
