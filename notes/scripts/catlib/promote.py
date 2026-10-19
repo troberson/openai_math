@@ -226,7 +226,7 @@ PROBE_EXEMPT = frozenset({"build_report_templates.py", "measure_gate_rows.py",
 # template bytes, so a render after the builder moves that page's bytes and a working-tree key stops
 # matching the key the builder used. Hashing the read surface the writer actually reads makes the key
 # a function of HEAD.
-L1_HEAD = frozenset({"build_report_templates.py"})
+L1_HEAD = frozenset({"build_report_templates.py", "measure_check_calls.py"})
 
 
 def expand(entry: str) -> list[Path]:
