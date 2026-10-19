@@ -79,7 +79,34 @@ L1: dict[str, tuple[str, ...]] = {
                        "notes/templates/topic.md.j2"),
     # The workflow page counts the summaries tree through `catlib.summaries`, so the writer opens
     # every page it counts and the key hashes the tree.
-    "render_reports.py": ("README.md", "notes/tables/", "notes/summaries/",
+    "render_reports.py": ("README.md",
+                          "notes/tables/abstracts.tsv",
+                          "notes/tables/catalog.tsv",
+                          "notes/tables/citation.tsv",
+                          "notes/tables/config-declaration.tsv",
+                          "notes/tables/configs.tsv",
+                          "notes/tables/conjecture-standing.tsv",
+                          "notes/tables/families.tsv",
+                          "notes/tables/family-config.tsv",
+                          "notes/tables/family-lean.tsv",
+                          "notes/tables/family-manuscript.tsv",
+                          "notes/tables/family-name.tsv",
+                          "notes/tables/family-topic.tsv",
+                          "notes/tables/family-trace.tsv",
+                          "notes/tables/formalization-deps.tsv",
+                          "notes/tables/gate-rows.tsv",
+                          "notes/tables/lean-dirs.tsv",
+                          "notes/tables/links.tsv",
+                          "notes/tables/manuscripts.tsv",
+                          "notes/tables/names.tsv",
+                          "notes/tables/quotes.tsv",
+                          "notes/tables/scope-notes.tsv",
+                          "notes/tables/sources.tsv",
+                          "notes/tables/subfindings.tsv",
+                          "notes/tables/topics-rendered.tsv",
+                          "notes/tables/topics.tsv",
+                          "notes/tables/traces.tsv",
+                          "notes/summaries/",
                           "notes/reports/formalization-deps.md", "notes/reports/t0-triage.md",
                           "notes/templates/", "notes/index/",
                           # The fleet page's population scans the fleet's own sources and the two
@@ -87,10 +114,11 @@ L1: dict[str, tuple[str, ...]] = {
                           # serve a page whose site list was measured against a script tree that has
                           # since moved. The top-level `notes/*.md` pages are NOT here — the fleet
                           # population globs their names, it does not open them, and the audit-hook
-                          # record names only opens. The `notes/tables/` entry is a tree, not the
-                          # eight TSVs the writer used to name: `math-faz.6` moved the 16 generated
-                          # tables into that directory, the writer opens all 25, and a tree entry is
-                          # the set the audit-hook record names.
+                          # record names only opens. The `notes/tables/` entries are the 26 files the
+                          # audit-hook record names, not a tree: `splits.tsv` is tracked and would
+                          # expand a tree entry to 27, but the writer counts it (OWN_LEDGER_TSV), it
+                          # does not open it — it is `build_report_templates.py`'s output, not this
+                          # writer's read surface, so a tree entry over-names the set the probe names.
                           "notes/scripts/", "notes/development/probe/2026-10-11_writers.txt",
                           "notes/development/probe/2026-10-11_checkers.txt"),
     "build_report_templates.py": REPORT_PAGES,
@@ -206,7 +234,7 @@ ARGS: dict[str, tuple[str, ...]] = {
 
 # The writers table names one writer the protocol deliberately excludes: `measure_open_probe.py`'s
 # record carries a wall time per target, so it is a measurement of a run, not a function of a digest.
-NON_CACHED = frozenset({"measure_open_probe.py"})
+NON_CACHED = frozenset({"measure_open_probe.py", "measure_checker_reads.py"})
 
 # The registry covers one writer the page lists as a checker, because its gate row runs first among
 # the checkers: `refresh_summary_line_counts.py` rewrites the `Lines` cell of the summaries pages.
