@@ -137,7 +137,7 @@ OWNERSHIP_MD = SCRIPTS_DIR / "README.md"
 # row splits the table tree into generated and hand-authored, so the writer names both sets.
 OWN_HAND_TSV = {"topics.tsv", "conjecture-standing.tsv"}
 OWN_LEDGER_TSV = {"catalog.tsv", "sources.tsv", "subfindings.tsv", "links.tsv", "abstracts.tsv",
-                  "quotes.tsv", "formalization-deps.tsv", "gate-rows.tsv"}
+                  "quotes.tsv", "formalization-deps.tsv", "gate-rows.tsv", "splits.tsv"}
 # The records the page describes in prose the writer cannot derive — the write-mode pair, the render
 # after-record, the purity pair, the fleet census record, and the two keyed-record producers. The
 # seed_quotes records are described mechanically from what each one names, so a new summary page
