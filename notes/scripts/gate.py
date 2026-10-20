@@ -127,6 +127,7 @@ ROWS = [
     ("run_tests.py notes/scripts/tests/test_fleet_design.py -q", ("pages",), ()),
     ("verify_faithfulness.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_faithfulness.py -q", ("pages",), ()),
+    ("run_tests.py notes/scripts/tests/test_prune_stale.py -q", (), ()),
     ("verify_page_sync.py --both", ("pages",), ()),
     # The checker compares the cache bytes with the disk bytes for every writer, so it must start
     # after every writer that lands a tracked artifact — `quotes` and `summaries` included. A row
