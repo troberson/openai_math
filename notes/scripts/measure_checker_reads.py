@@ -51,6 +51,7 @@ deterministic record under a fixed name is byte-identical on a re-run.
 
 Invoke as: python3 notes/scripts/measure_checker_reads.py
 """
+import json
 import re
 import subprocess
 import sys
@@ -69,6 +70,7 @@ ROOT = P.ROOT
 SCRIPTS = P.SCRIPTS
 PROBE_DIR = ROOT / "notes" / "development" / "probe"
 RECORD = "checker_reads.txt"
+SURFACE_RECORD = "checker_reads.json"
 HASHED = tuple(p.split(":", 1)[1] for p in RC.DIGEST_PATHS)
 READ = {"r", "rb", "r+", "rb+"}
 SELF = Path(__file__).name
@@ -428,8 +430,14 @@ def main() -> int:
 
     text = record_text(rows, t, pk)
     atomic.write_atomic(PROBE_DIR / RECORD, text)
+    # The machine-readable surface: each checker's full derived_l1 and keyability, the value
+    # CHECKER_L1 records and the checker pass compares. The text record above is a human view
+    # (bucket + imports only); this JSON is the full derived_l1 including outside-notes/ reads.
+    surface = {row["name"]: {"l1": row["l1"], "keyable": row["keyable"]} for row in cs}
+    atomic.write_atomic(PROBE_DIR / SURFACE_RECORD, json.dumps(surface, indent=2) + "\n")
     print()
     print(f"record landed: {P.rel(PROBE_DIR / RECORD)}")
+    print(f"surface landed: {P.rel(PROBE_DIR / SURFACE_RECORD)}")
     return 0
 
 

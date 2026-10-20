@@ -34,6 +34,7 @@ Usage: python3 notes/scripts/verify_cache_promotion.py
 """
 from __future__ import annotations
 
+import json
 import re
 import sys
 from itertools import pairwise
@@ -43,6 +44,7 @@ from catlib.paths import ROOT
 from catlib.promote import (
     ARGS,
     ARTIFACTS,
+    CHECKER_L1,
     L1,
     NON_CACHED,
     PAGE_EXTRA,
@@ -68,6 +70,7 @@ from catlib.promote import (
 # under the path the writers no longer open.
 README = ROOT / "notes" / "scripts" / "README.md"
 CACHE = ROOT / ".qwen" / "cache" / "records"
+SURFACE = ROOT / "notes" / "development" / "probe" / "checker_reads.json"
 
 
 def probe_reads() -> dict[str, set[str]]:
@@ -118,10 +121,40 @@ def writers_table() -> dict[str, set[str]]:
     return rows
 
 
+def checker_pass(checker_l1: dict[str, tuple[str, ...]] | None = None) -> list[str]:
+    """D. Checker registry: each keyable checker's derived surface equals its CHECKER_L1 entry.
+
+    The surface is read from the probe's JSON record (checker_reads.json), which
+    measure_checker_reads.py lands as a gate row before this checker runs. A missing record is a
+    problem: the probe row is unkeyable (it reads an untracked probe dir) and always runs, so a
+    missing record means the probe has not run in this tree state.
+    """
+    if checker_l1 is None:
+        checker_l1 = CHECKER_L1
+    if not SURFACE.is_file():
+        return [f"surface record missing: {SURFACE.relative_to(ROOT)} (run measure_checker_reads.py)"]
+    surface = json.loads(SURFACE.read_text(encoding="utf-8"))
+    keyable = {n: tuple(v["l1"]) for n, v in surface.items() if v["keyable"]}
+    p: list[str] = []
+    if set(checker_l1) != set(keyable):
+        p.append(f"CHECKER_L1 keys != keyable checkers: "
+                 f"missing {sorted(set(keyable) - set(checker_l1))}, "
+                 f"extra {sorted(set(checker_l1) - set(keyable))}")
+    for name in sorted(set(checker_l1) & set(keyable)):
+        want = tuple(sorted(checker_l1[name]))
+        got = keyable[name]
+        if want != got:
+            p.append(f"CHECKER_L1 drift {name}: "
+                     f"recorded {sorted(set(want) - set(got))}, "
+                     f"derived {sorted(set(got) - set(want))}")
+    return p
+
+
 def check(artifacts: dict[str, tuple[str, ...]], l1: dict[str, tuple[str, ...]],
          pages: tuple[str, ...], args: dict[str, tuple[str, ...]],
-         non_cached: frozenset[str], page_extra: frozenset[str]) -> list[str]:
-    """The three measurement passes; returns the problem lines, printing the per-writer counts."""
+         non_cached: frozenset[str], page_extra: frozenset[str],
+         checker_l1: dict[str, tuple[str, ...]] | None = None) -> list[str]:
+    """The measurement passes; returns the problem lines, printing the per-writer counts."""
     p: list[str] = []
     reads = probe_reads()
 
@@ -187,6 +220,8 @@ def check(artifacts: dict[str, tuple[str, ...]], l1: dict[str, tuple[str, ...]],
                     bad += 1
                     p.append(f"cache != disk: {name} {path.relative_to(ROOT)}")
         print(f"{name}: key {key} artifacts {total} problems {bad}")
+
+    p.extend(checker_pass(checker_l1))
     return p
 
 
@@ -194,8 +229,10 @@ def main() -> int:
     problems = check(ARTIFACTS, L1, REPORT_PAGES, ARGS, NON_CACHED, PAGE_EXTRA)
     for line in problems:
         print(f"PROBLEM: {line}")
+    keyable_n = len(CHECKER_L1)
     print(f"\nwriters {len(ARTIFACTS)} + non-cached {len(NON_CACHED)}  "
-          f"probed targets {len(probe_reads())}  problems {len(problems)}")
+          f"probed targets {len(probe_reads())}  checkers {keyable_n} keyable  "
+          f"problems {len(problems)}")
     return 1 if problems else 0
 
 

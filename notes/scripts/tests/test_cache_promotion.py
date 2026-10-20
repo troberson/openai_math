@@ -1,20 +1,23 @@
 """The self-tests for `notes/scripts/verify_cache_promotion.py`.
 
-The checker proves the promotion protocol in three passes: the registry shape (the writer set against
+The checker proves the promotion protocol in four passes: the registry shape (the writer set against
 the writers table, `L1` against `ARTIFACTS`, `REPORT_PAGES` against the templates registry, no L1
-self-read, every L1 file on disk), the L1 exactness against the audit-hook records, and cache-equals-
-disk for every artifact under the key the registry recomputes. This file injects eight faults, one per
-pass, and asserts each fires the pass that owns it.
+self-read, every L1 file on disk), the L1 exactness against the audit-hook records, cache-equals-
+disk for every artifact under the key the registry recomputes, and the checker registry (each
+keyable checker's derived surface against its `CHECKER_L1` entry). This file injects twelve faults:
+five in the writer registry, three in the cache, and four in the checker registry.
 
 Five faults are injected in the registry structures the passes take as arguments: an L1 entry the
 probe names removed, an L1 entry added that is a self-output, a writer dropped from `ARTIFACTS`, a
 `REPORT_PAGES` entry altered, and a writer's canonical args shifted. Three corrupt the cache under
 `.qwen/cache/`, which is untracked: a cached page corrupted, a cached page deleted, and a second
 cached page corrupted on a different writer's artifact. Each is undone by writing the disk bytes back,
-so the run leaves the cache as it found it. No fault touches a tracked file.
+so the run leaves the cache as it found it. Four are injected in the `CHECKER_L1` registry the
+checker pass reads: a key removed, a key added, a path drifted in one entry, and the surface record
+pointed at a missing file. No fault touches a tracked file.
 
-The clean test asserts the three passes are silent on the registry as committed. Each fault asserts
-the needle is the problem string the pass that owns it prints.
+The clean test asserts the four passes are silent on the registry as committed and the surface record
+on disk. Each fault asserts the needle is the problem string the pass that owns it prints.
 
 The checker reads no argv and the passes take the registry as arguments, so nothing here writes a
 tracked file: the checker writes nothing and the tests write only untracked cache entries.
@@ -53,6 +56,20 @@ CACHE_CASES = [
      "cache != disk: render_reports.py notes/reports/proof-density.md", lambda text: text + "MUTANT\n"),
 ]
 
+# Faults in the CHECKER_L1 registry the checker pass reads, each keyed to the problem string it prints.
+CHECKER_CASES = [
+    ("CHECKER_L1 key removed", "CHECKER_L1 keys != keyable",
+     lambda c: {k: v for k, v in c.items() if k != "verify_abstracts.py"}),
+    ("CHECKER_L1 key added", "CHECKER_L1 keys != keyable",
+     lambda c: {**c, "verify_invented.py": ("notes/reports/sources.md",)}),
+    ("CHECKER_L1 path drifted", "CHECKER_L1 drift verify_subfindings.py",
+     lambda c: {**c, "verify_subfindings.py":
+                (*[p for p in c["verify_subfindings.py"] if p != "notes/tables/subfindings.tsv"],
+                 "notes/tables/invented.tsv")}),
+    ("surface record missing", "surface record missing",
+     None),
+]
+
 
 @pytest.fixture(scope="module")
 def mod(load):
@@ -66,7 +83,7 @@ def reg(mod):
 
 def clean(mod, reg):
     a, l, pg, ar = reg
-    return mod.check(a, l, pg, ar, mod.NON_CACHED, mod.PAGE_EXTRA)
+    return mod.check(a, l, pg, ar, mod.NON_CACHED, mod.PAGE_EXTRA, mod.CHECKER_L1)
 
 
 def cache_path(mod, rel):
@@ -74,7 +91,7 @@ def cache_path(mod, rel):
 
 
 def test_clean_registry(mod, reg):
-    """All three passes are silent on the registry as committed."""
+    """All four passes are silent on the registry as committed and the surface record on disk."""
     problems = clean(mod, reg)
     assert not problems, problems[:3]
 
@@ -85,7 +102,7 @@ def test_injected_registry_faults(mod, reg, label, needle, mut):
     a, l, pg, ar = reg
     cand = mut(a, l, pg, ar)
     assert cand != (a, l, pg, ar), f"{label}: mutation changed nothing"
-    found = mod.check(cand[0], cand[1], cand[2], cand[3], mod.NON_CACHED, mod.PAGE_EXTRA)
+    found = mod.check(cand[0], cand[1], cand[2], cand[3], mod.NON_CACHED, mod.PAGE_EXTRA, mod.CHECKER_L1)
     assert any(needle in x for x in found), f"{label}: NOT caught by {needle!r} ({found[:2]})"
 
 
@@ -105,6 +122,21 @@ def test_injected_cache_faults(mod, reg, label, rel, needle, mut):
     finally:
         path.write_bytes((mod.ROOT / rel).read_bytes())
     assert path.read_bytes() == (mod.ROOT / rel).read_bytes(), f"{label}: restore did not land"
+
+
+@pytest.mark.parametrize("label,needle,mut", CHECKER_CASES)
+def test_injected_checker_faults(mod, monkeypatch, label, needle, mut):
+    """A CHECKER_L1 registry entry altered in memory, or the surface record pointed at a missing file.
+    The checker pass is the pass that owns this, so the needle names the problem it prints."""
+    if mut is None:
+        # Surface record missing: point the module's SURFACE at a path that does not exist.
+        monkeypatch.setattr(mod, "SURFACE", mod.ROOT / "notes" / "development" / "probe" / "nonexistent.json")
+        found = mod.checker_pass(mod.CHECKER_L1)
+    else:
+        cand = mut(mod.CHECKER_L1)
+        assert cand != mod.CHECKER_L1, f"{label}: mutation changed nothing"
+        found = mod.checker_pass(cand)
+    assert any(needle in x for x in found), f"{label}: NOT caught by {needle!r} ({found[:2]})"
 
 
 def pad_cells(t):
