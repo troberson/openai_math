@@ -126,14 +126,30 @@ def import_counts():
 
     The root is the first token after `import`, so `import all Mathlib` is rooted
     at `all` and is not counted as a Mathlib import.
+
+    The per-file read and regex are independent, so they run over a thread pool:
+    the walk is I/O-bound and a Counter merge is order-independent, so the result
+    is byte-identical to the serial run.
     """
+    import os
+    from concurrent.futures import ThreadPoolExecutor
+
     pat = re.compile(r"^\s*import\s+([A-Za-z_][A-Za-z0-9_.]*)", re.MULTILINE)
+    paths = sorted(SOURCE.glob("**/*.lean"))
+    workers = min(os.cpu_count() or 1, 32)
+
+    def scan(p: Path) -> tuple[int, collections.Counter[str]]:
+        c: collections.Counter[str] = collections.Counter()
+        for root in pat.findall(p.read_text(encoding="utf-8", errors="replace")):
+            c[root.split(".")[0]] += 1
+        return 1, c
+
     counts: collections.Counter[str] = collections.Counter()
     files = 0
-    for p in sorted(SOURCE.glob("**/*.lean")):
-        files += 1
-        for root in pat.findall(p.read_text(encoding="utf-8", errors="replace")):
-            counts[root.split(".")[0]] += 1
+    with ThreadPoolExecutor(max_workers=workers) as ex:
+        for n, c in ex.map(scan, paths):
+            files += n
+            counts.update(c)
     return counts, files
 
 
