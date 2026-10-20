@@ -1789,6 +1789,33 @@ def test_row_key(test_path: str, checker: str, args: tuple[str, ...] = ()) -> st
     return digest_key(test_src + "\n" + checker_src + "\n" + conftest_src, l1_texts, args)
 
 
+def row_key(spec: str) -> tuple[str, list[str]] | None:
+    """The keyable gate row's (cache_key, surface), or None for a non-keyable row.
+
+    A checker row keys on its CHECKER_L1 surface. A test row keys on the test file,
+    the checker source, conftest.py, and the checker's L1. The gate and the TSV
+    writer (`measure_gate_rows.py`) both use this, so the two producers agree on
+    which rows are keyable and on the surface each carries.
+    """
+    a = spec.split()
+    name = a[0]
+    if name in CHECKER_L1:
+        return checker_key(name), list(CHECKER_L1[name])
+    if name == "run_tests.py" and len(a) >= 2:
+        test_path = a[1]
+        base = test_path.rsplit("/", 1)[-1]
+        if base.startswith("test_") and base.endswith(".py"):
+            checker = "verify_" + base[len("test_"):]
+            if checker in CHECKER_L1:
+                args = tuple(a[2:])
+                surface = sorted({
+                    test_path, f"notes/scripts/{checker}", "notes/scripts/tests/conftest.py",
+                    *CHECKER_L1[checker]
+                })
+                return test_row_key(test_path, checker, args), surface
+    return None
+
+
 def artifact_of(path: Path) -> str:
     """The cache artifact name: the repo-relative path, so pages in sibling dirs never collide."""
     return str(path.relative_to(ROOT))
