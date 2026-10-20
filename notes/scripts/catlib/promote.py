@@ -1764,6 +1764,17 @@ def key_for(name: str, args: tuple[str, ...] = ()) -> str:
     return digest_key(script.read_text(encoding="utf-8"), texts, tuple(args) + extra)
 
 
+def checker_key(name: str, args: tuple[str, ...] = ()) -> str:
+    """The checker row's cache key: tree digests, the checker's source, its CHECKER_L1 inputs, its args.
+
+    Mirrors `measure_checker_reads.py`'s `RC.key(src, l1_texts, args)` formula so the gate and
+    the probe compute the same key for the same row.
+    """
+    src = (SCRIPTS / name).read_text(encoding="utf-8")
+    texts = tuple((ROOT / p).read_text(encoding="utf-8", errors="replace") for p in CHECKER_L1[name])
+    return digest_key(src, texts, args)
+
+
 def artifact_of(path: Path) -> str:
     """The cache artifact name: the repo-relative path, so pages in sibling dirs never collide."""
     return str(path.relative_to(ROOT))
@@ -1796,6 +1807,11 @@ def prune_stale() -> int:
     for w in sorted(set(ARTIFACTS) | NON_CACHED):
         with contextlib.suppress(Exception):
             current.add(key_for(w, ARGS.get(w, ())))
+    # The gate lands each keyable checker's record under its own key (math-eij.4), and the gate is
+    # the producer: a writer row that prunes must not rmtree a key the gate owns.
+    for c in sorted(CHECKER_L1):
+        with contextlib.suppress(Exception):
+            current.add(checker_key(c))
     removed = 0
     for d in sorted(RECORDS_ROOT.iterdir()):
         if d.is_dir() and d.name not in current:

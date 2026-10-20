@@ -28,11 +28,16 @@ writes pages and nothing else.
 Invoke as: python3 notes/scripts/gate.py  (from anywhere; it cds to the repo root).
 """
 
+import json
 import os
 import re
 import subprocess
 import time
 from concurrent.futures import FIRST_COMPLETED, Future, ThreadPoolExecutor, wait
+
+from catlib.atomic import write_atomic
+from catlib.promote import CHECKER_L1, checker_key
+from catlib.records import store_dir
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 S = "notes/scripts"
@@ -174,9 +179,19 @@ def run(spec: str) -> None:
                             stderr=subprocess.STDOUT, check=False).returncode
     w = int((time.time() - t0) * 10)
     with open(report, "rb") as f:
-        head = f.read(200).decode("utf-8", "replace").replace("\n", " ").rstrip()
+        raw = f.read()
+    head = raw[:200].decode("utf-8", "replace").replace("\n", " ").rstrip()
     with open(f"{R}/gate_{tag}.line", "w", encoding="utf-8") as f:
         f.write(f"exit {rc} :: {spec} :: {head} in {w // 10}.{w % 10}s\n")
+    if a[0] in CHECKER_L1:
+        # The gate is the producer of the checker row's record (math-eij.4): a checker that read
+        # its own record would be a self-read outside its L1. The record carries the report, the
+        # exit, and the derived surface, so a skipped row (math-eij.5) still names its surface.
+        k = checker_key(a[0])
+        payload = {"report": raw.decode("utf-8", "replace"), "exit": rc,
+                   "surface": list(CHECKER_L1[a[0]])}
+        write_atomic(store_dir(k) / "row.json",
+                     json.dumps(payload, ensure_ascii=False, indent=2) + "\n")
 
 
 def main() -> int:
