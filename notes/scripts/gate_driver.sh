@@ -33,6 +33,11 @@ step() {
   shift
   echo "== $label"
   "$@"
+  local rc=$?
+  if [ $rc -ne 0 ]; then
+    echo "STEP FAILED: $label (exit $rc)"
+    exit $rc
+  fi
 }
 start=$(date -u +%s.%N)
 python3 "$G" > "$R/gate_run1.txt" 2>&1
@@ -65,8 +70,10 @@ printf '%s\n' "Rebuild the templates from the committed swept pages" "" \
   "for this run, and the templates page is the builder's own measurement of the new files." > "$R/msg_templates.txt"
 step "commit the templates" git commit -F "$R/msg_templates.txt" notes/templates/report \
   notes/development/templates.md
+step "verify script ownership (post-render, so the page is swept)" python3 notes/scripts/verify_script_ownership.py
 step "probe the check() calls (post-render, so the key matches)" python3 notes/scripts/measure_check_calls.py
-step "verify script ownership (post-gate, after the render swept the page)" python3 notes/scripts/verify_script_ownership.py
+step "build the templates again (the template commit moved templates.md, which is in the builder L1)" python3 notes/scripts/build_report_templates.py
+step "verify cache promotion (expect problems 0)" python3 notes/scripts/verify_cache_promotion.py
 step "assert the gate ran inside the budget" python3 notes/scripts/check_gate_budget.py
 if git status --porcelain .beads/issues.jsonl | grep -q .; then
   printf '%s\n' "Record the gate run in the tracked beads store" "" \
