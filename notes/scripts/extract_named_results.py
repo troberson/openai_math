@@ -35,6 +35,7 @@ import measure_names as M
 from catlib import ledger, overview
 from catlib.paths import owner
 from catlib.promote import key_for
+from catlib.promote import prune_stale
 from catlib.records import cached
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
@@ -147,7 +148,9 @@ def population() -> dict:
     the shape its rule reads.
     """
     key = rec_key()
-    return decode(cached(key, "named_results.json", lambda: encode(measure())))
+    rec = cached(key, "named_results.json", lambda: encode(measure()))
+    prune_stale()
+    return decode(rec)
 
 
 def measure() -> dict:

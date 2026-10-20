@@ -26,6 +26,7 @@ from typing import Any
 
 from catlib import paths as P
 from catlib.promote import key_for
+from catlib.promote import prune_stale
 from catlib.records import cached
 
 TEMPLATES = P.NOTES / "templates"
@@ -137,8 +138,10 @@ def population() -> dict[str, Any]:
     `cached(<name>, "record")`, and `cached(rec_key(), …)` is not the shape its rule reads.
     """
     key = rec_key()
-    return json.loads(cached(key, "templates.json",
-                             lambda: json.dumps(measure(), ensure_ascii=False)))
+    d = cached(key, "templates.json",
+                          lambda: json.dumps(measure(), ensure_ascii=False))
+    prune_stale()
+    return json.loads(d)
 
 
 def measure() -> dict[str, Any]:

@@ -26,6 +26,7 @@ import sys
 import pytest
 from catlib.paths import SCRIPTS
 from catlib.promote import key_for
+from catlib.promote import prune_stale
 from catlib.records import cached
 
 KEY = key_for("measure_check_calls.py", tuple(sys.argv[1:]))
@@ -131,6 +132,7 @@ def main() -> int:
         counts = json.loads(build())
     else:
         counts = json.loads(cached(KEY, "check_calls.json", build))
+        prune_stale()
     report(counts)
     return 1 if any(counts[t] < 0 for t in TARGETS) else 0
 

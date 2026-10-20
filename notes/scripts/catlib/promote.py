@@ -27,6 +27,7 @@ so it is a measurement of a run, not a function of a digest, and a cache would s
 
 from __future__ import annotations
 
+import shutil
 import subprocess
 from collections.abc import Callable
 from pathlib import Path
@@ -401,3 +402,28 @@ def cached_text(path: Path, key: str) -> str | None:
     """The cached bytes for a tracked path under this key, or None when the cache has no entry."""
     p = RECORDS_ROOT / key / artifact_of(path)
     return p.read_text(encoding="utf-8") if p.is_file() else None
+
+
+def prune_stale() -> int:
+    """Delete key dirs under RECORDS_ROOT that no current producer owns.
+
+    The key is a function of HEAD tree digests, so every commit orphans the
+    previous key dir. This derives the current key set from the registry
+    (ARTIFACTS | NON_CACHED via key_for, deterministic) and removes any key
+    dir not in the set. The store is untracked (.qwen/*), so the removal is
+    safe. Returns the number of dirs removed.
+    """
+    if not RECORDS_ROOT.is_dir():
+        return 0
+    current = set()
+    for w in sorted(set(ARTIFACTS) | NON_CACHED):
+        try:
+            current.add(key_for(w, ARGS.get(w, ())))
+        except Exception:
+            pass
+    removed = 0
+    for d in sorted(RECORDS_ROOT.iterdir()):
+        if d.is_dir() and d.name not in current:
+            shutil.rmtree(d)
+            removed += 1
+    return removed

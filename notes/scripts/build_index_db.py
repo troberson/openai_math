@@ -31,6 +31,7 @@ from catlib.atomic import RECORDS_ROOT
 from catlib.overview import parse_overview
 from catlib.paths import ROOT, owner, rel
 from catlib.promote import key_for
+from catlib.promote import prune_stale
 from catlib.records import cached
 
 PREPRINTS = ROOT / "preprints"
@@ -137,6 +138,7 @@ def measure(check_only: bool) -> list[str]:
     conn.close()
     pop = population(rows, db.stat().st_size, per_term)
     cached(key, "fts.json", lambda: json.dumps(pop, sort_keys=True))
+    prune_stale()
     return report(pop, wall, qwall, rel(db), per_term)
 
 

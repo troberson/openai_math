@@ -71,6 +71,7 @@ from catlib import yaml as Y
 from catlib.paths import PREPRINTS as PRE
 from catlib.paths import owner
 from catlib.promote import key_for
+from catlib.promote import prune_stale
 from catlib.records import cached
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
@@ -456,6 +457,7 @@ def measure() -> tuple[list, dict]:
     so a corpus change invalidates it and a consumer change does not.
     """
     d = json.loads(cached(KEY, "names.json", build_records))
+    prune_stale()
     return d["rows"], d["meta"]
 
 
