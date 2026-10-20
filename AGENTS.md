@@ -466,7 +466,7 @@ lives in this file and nowhere else.
   nothing. Prove the mode by running a writer plain, then with the flag, diffing the two reports (the
   write announcement is the only line allowed to differ) and confirming `git status --porcelain` is
   unchanged by the flagged run. The read-only gate pool is the block that runs rows with this flag.
-- The whole-tree test is the gate list at `notes/scripts/gate.py`: **81** invocations — the **10**
+- The whole-tree test is the gate list at `notes/scripts/gate.py`: **89** invocations — the **10**
   gated writers (`build_report_templates.py` and `measure_open_probe.py` are the writers it does not
   run), the 46 gated report-only rows (including `check_summary_manuscripts.py`,
   `locate_summary_quotes.py` and `measure_summaries_seed.py`, `check_index_links.py` plain and its extracted self-tests row, and the
