@@ -33,7 +33,7 @@ def wall_of(log: Path) -> float | None:
 def rows_of(tsv: Path) -> dict[str, float]:
     out = {}
     for line in tsv.read_text(encoding="utf-8").splitlines()[1:]:
-        spec, seconds = line.split("\t")[:2]
+        spec, _cold, seconds = line.split("\t")[:3]
         out[spec] = float(seconds)
     return out
 

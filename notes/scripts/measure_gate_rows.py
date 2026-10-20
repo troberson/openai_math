@@ -25,18 +25,20 @@ Usage: python3 notes/scripts/measure_gate_rows.py [--check-only]
 from __future__ import annotations
 
 import ast
+import json
 import re
 import sys
 from datetime import datetime
 
+from catlib.atomic import RECORDS_ROOT
 from catlib.paths import GATE_REPORT, GATE_ROWS_TSV, SCRIPTS, read_text
-from catlib.promote import key_for, promote
+from catlib.promote import key_for, promote, row_key
 from catlib.tsv import csv_text
 
 OUT = GATE_ROWS_TSV
 GATE_PY = SCRIPTS / "gate.py"
 KEY = key_for("measure_gate_rows.py", tuple(sys.argv[1:]))
-COLUMNS = ["spec", "seconds"]
+COLUMNS = ["spec", "cold", "seconds"]
 
 
 def gate_rows() -> list[tuple[str, str, str]]:
@@ -64,8 +66,28 @@ def parse_report(text: str) -> list[dict[str, str]]:
     return rows
 
 
+def cold_of(spec: str, seconds: str) -> str:
+    """The cold cost: the wall the row's subprocess last paid.
+
+    A keyable row's record carries that wall, so a skipped row (this run's wall ~0) still
+    names what the last real run cost. A non-keyable row always runs, so this run's wall is
+    its cold cost. The figure names its rule: cold is the last actual run, seconds is this run.
+    """
+    rk = row_key(spec)
+    if rk is None:
+        return seconds
+    rec_path = RECORDS_ROOT / rk[0] / "row.json"
+    if rec_path.is_file():
+        wall = json.loads(rec_path.read_text(encoding="utf-8")).get("wall")
+        if wall is not None:
+            return f"{float(wall):.1f}"
+    return seconds
+
+
 def write(rows: list[dict[str, str]]) -> None:
-    promote(OUT, KEY, csv_text(COLUMNS, [{"spec": r["spec"], "seconds": r["seconds"]} for r in rows]))
+    promote(OUT, KEY, csv_text(COLUMNS,
+            [{"spec": r["spec"], "cold": cold_of(r["spec"], r["seconds"]),
+              "seconds": r["seconds"]} for r in rows]))
 
 
 def report(rows: list[dict[str, str]], specs: list[str]) -> None:
