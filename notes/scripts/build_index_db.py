@@ -30,8 +30,7 @@ import time
 from catlib.atomic import RECORDS_ROOT
 from catlib.overview import parse_overview
 from catlib.paths import ROOT, owner, rel
-from catlib.promote import key_for
-from catlib.promote import prune_stale
+from catlib.promote import key_for, prune_stale
 from catlib.records import cached
 
 PREPRINTS = ROOT / "preprints"

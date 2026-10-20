@@ -25,8 +25,7 @@ from functools import cache
 from typing import Any
 
 from catlib import paths as P
-from catlib.promote import key_for
-from catlib.promote import prune_stale
+from catlib.promote import key_for, prune_stale
 from catlib.records import cached
 
 TEMPLATES = P.NOTES / "templates"

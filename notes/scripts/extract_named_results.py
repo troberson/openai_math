@@ -34,8 +34,7 @@ from functools import cache
 import measure_names as M
 from catlib import ledger, overview
 from catlib.paths import owner
-from catlib.promote import key_for
-from catlib.promote import prune_stale
+from catlib.promote import key_for, prune_stale
 from catlib.records import cached
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]

@@ -27,6 +27,7 @@ so it is a measurement of a run, not a function of a digest, and a cache would s
 
 from __future__ import annotations
 
+import contextlib
 import shutil
 import subprocess
 from collections.abc import Callable
@@ -417,10 +418,8 @@ def prune_stale() -> int:
         return 0
     current = set()
     for w in sorted(set(ARTIFACTS) | NON_CACHED):
-        try:
+        with contextlib.suppress(Exception):
             current.add(key_for(w, ARGS.get(w, ())))
-        except Exception:
-            pass
     removed = 0
     for d in sorted(RECORDS_ROOT.iterdir()):
         if d.is_dir() and d.name not in current:

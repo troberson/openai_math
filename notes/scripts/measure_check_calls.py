@@ -25,8 +25,7 @@ import sys
 
 import pytest
 from catlib.paths import SCRIPTS
-from catlib.promote import key_for
-from catlib.promote import prune_stale
+from catlib.promote import key_for, prune_stale
 from catlib.records import cached
 
 KEY = key_for("measure_check_calls.py", tuple(sys.argv[1:]))

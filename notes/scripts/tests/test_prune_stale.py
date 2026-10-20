@@ -12,6 +12,8 @@ temp dir, so no real cache entry is touched.
 Run:
   python3 notes/scripts/run_tests.py notes/scripts/tests/test_prune_stale.py -q
 """
+import contextlib
+
 import pytest
 
 pytestmark = pytest.mark.mutant
@@ -30,10 +32,8 @@ def _live_keys():
     from catlib import promote as P
     keys = set()
     for w in sorted(set(P.ARTIFACTS) | P.NON_CACHED):
-        try:
+        with contextlib.suppress(Exception):
             keys.add(P.key_for(w, P.ARGS.get(w, ())))
-        except Exception:
-            pass
     return keys
 
 
