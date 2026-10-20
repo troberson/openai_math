@@ -639,19 +639,23 @@ def cost_problems(text: str) -> list[str]:
     p = []
     rows_list = gate_rows()
     rows = {r["spec"]: r["seconds"] for r in rows_list}
+    cold = {r["spec"]: r.get("cold", "0.0") for r in rows_list}
     calls = check_calls()
     folded = re.sub(r"\s+", " ", text)
-    cost = re.findall(r"^\| `([a-z0-9_]+\.py)` \|.*\| ([0-9.]+) \|$", text, re.MULTILINE)
+    cost = re.findall(r"^\| `([a-z0-9_]+\.py)` \|.*\| ([0-9.]+) \| ([0-9.]+) \|$", text, re.MULTILINE)
     if not cost:
         return ["no Cost table rows read"]
-    for name, cell in cost:
+    for name, cold_cell, cell in cost:
         spec = next((s for s in rows if s.startswith(name)), None)
         if spec is None:
             p.append(f"no gate row names {name}")
             continue
         want = "0" if rows[spec] == "0.0" else rows[spec]
+        want_cold = "0" if cold[spec] == "0.0" else cold[spec]
         if cell != want:
-            p.append(f"Cost cell for {name}: page {cell}, gate row {spec} measured {want}")
+            p.append(f"Wall cell for {name}: page {cell}, gate row {spec} measured {want}")
+        if cold_cell != want_cold:
+            p.append(f"Cold cell for {name}: page {cold_cell}, gate row {spec} measured {want_cold}")
     # The count sentence must sit in the paragraph that begins with the checker's own name. The Cost
     # prose is one block, so a block-level test lets a count belonging to a neighbouring checker
     # satisfy this checker's requirement — the sources paragraph's count carried named_results.
@@ -684,9 +688,9 @@ def cost_problems(text: str) -> list[str]:
     rsum = sum(float(r["seconds"]) for r in rows_list)
     if f"its {len(rows_list)} row times sum to **{rsum:.1f} s**" not in folded:
         p.append(f"the row sum is not {len(rows_list)} rows at {rsum:.1f} s")
-    heaviest = max(float(cell) for _, cell in cost)
-    if f"**{heaviest:.1f} s** is the heaviest row with a Cost cell" not in folded:
-        p.append(f"the heaviest row with a Cost cell is not {heaviest:.1f} s")
+    heaviest = max(float(cell) for *_rest, cell in cost)
+    if f"**{heaviest:.1f} s** is the heaviest row with a Wall cell" not in folded:
+        p.append(f"the heaviest row with a Wall cell is not {heaviest:.1f} s")
     # No heaviest-checker needle: the census checker is not a gate row, so the gate row TSV has no
     # Cost cell for it. A needle that reads a cell the TSV no longer carries raises KeyError.
     # Every writer figure the page names is checked against the gate row that names that writer.
@@ -699,7 +703,7 @@ def cost_problems(text: str) -> list[str]:
     # declaration that the checker is not a row above. The exemption is read from that sentence, so
     # a checker is not exempted by name — a page-wide "not a row above" excuses every row.
     exempt = set(re.findall(r"`([a-z0-9_]+\.py)`[^.]*not a row above", folded))
-    named = dict(cost)
+    named = {name: cell for name, _cold, cell in cost}
     for spec in checker_rows:
         name = spec.split()[0]
         if name in named:

@@ -112,7 +112,7 @@ def cost_row(t, name):
 
 
 def shift_cost_cell(t, name, delta=1.0):
-    """Shift the Cost cell of a checker's row. The cell is measured from the gate run, so the fault is
+    """Shift the Wall cell of a checker's row. The cell is measured from the gate run, so the fault is
     built from the row as it stands, not from a transcription of the measured time."""
     row = cost_row(t, name)
     cells = row.split("|")
@@ -171,11 +171,11 @@ def bump_num(t, pat, delta=1.0):
 
 
 # Faults in the Cost section, each keyed to the pass that owns it. Every figure the pass compares is
-# measured: the Cost cells come from notes/tables/gate-rows.tsv, the check() counts from the keyed
-# check_calls.json record. The self-test row times are not in the page — a run-dependent figure
+# measured: the Cold and Wall cells come from notes/tables/gate-rows.tsv, the check() counts from the
+# keyed check_calls.json record. The self-test row times are not in the page — a run-dependent figure
 # cannot live in a template keyed to HEAD — so there is no row-figure mutant to inject.
 COST_CASES = [
-    ("Cost cell altered", "Cost cell for verify_findings.py",
+    ("Wall cell altered", "Wall cell for verify_findings.py",
      lambda t: shift_cost_cell(t, "verify_findings.py")),
     ("Cost row deleted", "is a checker row the Cost table does not carry",
      lambda t: delete_cost_row(t, "verify_findings.py")),
@@ -187,8 +187,8 @@ COST_CASES = [
      lambda t: bump_num(t, r"The\s+\d+\s+checker\s+invocations\s+sum\s+to\s+\*\*([0-9.]+)\s+s\*\*")),
     ("row sum altered", "the row sum is not",
      lambda t: bump_num(t, r"row\s+times\s+sum\s+to\s+\*\*([0-9.]+)\s+s\*\*")),
-    ("heaviest-row claim altered", "the heaviest row with a Cost cell is not",
-     lambda t: bump_num(t, r"\*\*([0-9.]+)\s+s\*\*\s+is\s+the\s+heaviest\s+row\s+with\s+a\s+Cost\s+cell")),
+    ("heaviest-row claim altered", "the heaviest row with a Wall cell is not",
+     lambda t: bump_num(t, r"\*\*([0-9.]+)\s+s\*\*\s+is\s+the\s+heaviest\s+row\s+with\s+a\s+Wall\s+cell")),
     ("tail figure altered", "the tail names render_reports.py",
      lambda t: bump_num(t, r"`render_reports\.py`\s+([0-9.]+)\s+s")),
 ]
@@ -196,7 +196,7 @@ COST_CASES = [
 
 @pytest.mark.parametrize("label,needle,mut", COST_CASES)
 def test_cost_section_faults(mod, page, label, needle, mut):
-    """A Cost cell, a row, a row figure, a check() count, or a sum in the Cost section, altered in
+    """A Wall cell, a row, a row figure, a check() count, or a sum in the Cost section, altered in
     memory. The pass re-derives every figure from the gate row TSV and the keyed record, so a checker
     that carried the numbers would report green on all ten."""
     cand = mut(page)

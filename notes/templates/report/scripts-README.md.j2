@@ -315,8 +315,8 @@ self-tests rows are report-only rows, not checker invocations:
 `run_tests.py notes/scripts/tests/test_named_results.py -q` and
 `run_tests.py notes/scripts/tests/test_tsv_quoting.py -q`.
 
-| Checker | Checks | Gate | Cost (s) |
-|---|---|---|---|
+| Checker | Checks | Gate | Cold (s) | Wall (s) |
+|---|---|---|---|---|
 {{ p['cost_abstracts'] }}
 {{ p['cost_cache_promotion'] }}
 {{ p['cost_citations'] }}
@@ -341,13 +341,11 @@ self-tests rows are report-only rows, not checker invocations:
 {{ p['cost_upstream_history'] }}
 {{ p['cost_verification_dirs'] }}
 
-Cost is plain seconds, measured 2026-10-16 as the wall time the gate printed for
-each row in one pooled run with the local model server loaded — a floor from one measurement, not a
-benchmark. The column used to carry `plain / --mutant`; after the twenty-fourth extraction no checker
-takes `--mutant`, so each cell is one number and the self-tests' cost is the wall time the
-`run_tests.py` row prints. The spread between the two columns was structural, not noise: `--mutant`
-re-ran the whole check once per injected fault, so a checker whose plain run is a full measurement paid
-it again per mutant.
+Cold is the wall the row's subprocess last paid (from the gate record for keyable rows, this
+run's wall for non-keyable rows that always run); Wall is this run's wall as printed by the gate.
+A skipped keyable row's Wall is the key computation (~0 s) and its Cold is the last real run —
+the two name different rules, not one number for both. Measured 2026-10-16 with the local model
+server loaded; a floor from one measurement, not a benchmark.
 `verify_findings.py` is the subprocess case: its Pass E runs the fast extractors as subprocesses inside
 `check()` (`:459`, the subprocess call at `:140`), so a plain run pays five of them. The pass that
 extracted its self-tests put `run()` under `functools.cache` (`:134`) — every script in `REPORTS` is
@@ -408,9 +406,9 @@ runs the plain pass and the mutant loop in one process, so `catlib.render.render
 single walk measured **25.1 s** in the 2026-10-12 run, because the render-diff reads the cached
 records the writers promote rather than re-walking the corpus). {{ p['checker_sum a'] }}
 {{ p['checker_sum b'] }}, measured 2026-10-16 as the sum of the wall times the gate printed for its rows in one
-pooled run, each Cost cell re-checked cell-by-cell against that run (0
-mismatches over the 24 checkers with Cost cells behind them; `verify_script_ownership.py` is not a row
-above, so it has no cell to check); the full 82-row gate ran in **232.97 s** wall
+pooled run, each Wall cell re-checked cell-by-cell against that run (0
+mismatches over the 23 Cost-table rows; `verify_script_ownership.py` is not a row
+above, so it has no cell to check); the full 84-row gate ran in **232.97 s** wall
 (05:47:37–05:51:30 local) and {{ p['row_sum'] }}, so the 12-row pool brings the wall
 to 39.2% of the sum. The writers are the tail: {{ p['tail_render_reports'] }}, the plain render as
 the gate row, {{ p['tail_extract_links'] }},

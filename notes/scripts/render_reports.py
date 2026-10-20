@@ -2639,8 +2639,10 @@ def cost_population() -> dict[str, Any]:
     rows = list(csv.DictReader(GATE_ROWS_TSV.read_text(encoding="utf-8").splitlines(),
                                delimiter="\t"))
     cells = {r["spec"]: ("0" if r["seconds"] == "0.0" else r["seconds"]) for r in rows}
+    cold = {r["spec"]: ("0" if r.get("cold", "0.0") == "0.0" else r.get("cold", "0.0")) for r in rows}
     path = records.RECORDS_ROOT / key_for("measure_check_calls.py", ()) / "check_calls.json"
-    return {"cells": cells, "calls": json.loads(path.read_text(encoding="utf-8")), "rows": rows}
+    return {"cells": cells, "cold": cold, "calls": json.loads(path.read_text(encoding="utf-8")),
+            "rows": rows}
 
 
 def cost_phrases(c: dict[str, Any]) -> dict[str, str]:
@@ -2651,8 +2653,9 @@ def cost_phrases(c: dict[str, Any]) -> dict[str, str]:
         gate = COST_GATE.get(name) or (
             f"plain; the self-tests are in `notes/scripts/tests/test_{stem}.py`, "
             "run by the `run_tests.py` row")
+        spec = COST_SPEC.get(name, name)
         out["cost_" + stem] = (f"| `{name}` | {checks} | {gate} | "
-                                f"{c['cells'][COST_SPEC.get(name, name)]} |")
+                                f"{c['cold'][spec]} | {c['cells'][spec]} |")
     return out
 
 
@@ -2707,12 +2710,12 @@ def cost_prose(c: dict[str, Any]) -> dict[str, str]:
     out["checker_sum b"] = f"to **{sum(float(r['seconds']) for r in checker_rows):.1f} s**"
     out["row_sum"] = (f"its {len(c['rows'])} row times sum to "
                       f"**{sum(float(r['seconds']) for r in c['rows']):.1f} s**")
-    # The heaviest row with a Cost cell is the max of the Cost column. The checker rows include
+    # The heaviest row with a Wall cell is the max of the Wall column. The checker rows include
     # `verify_script_ownership.py`, which the page says is not a row above, so a max over the
-    # checker rows reads a row that has no Cost cell.
+    # checker rows reads a row that has no Wall cell.
     heaviest = max(float(c["cells"][COST_SPEC.get(n, n)]) for n in COST_CHECKS)
-    out["heaviest_cell"] = f"**{heaviest:.1f} s** is the heaviest row with a Cost cell"
-    # No heaviest-checker slot: the census checker is not a gate row, so it has no Cost cell to
+    out["heaviest_cell"] = f"**{heaviest:.1f} s** is the heaviest row with a Wall cell"
+    # No heaviest-checker slot: the census checker is not a gate row, so it has no Wall cell to
     # quote. A slot that reads a cell the TSV no longer carries raises KeyError in the render.
     for name in TAIL_NAMES:
         out["tail_" + name.removesuffix(".py")] = f"`{name}` {c['cells'][name]} s"
