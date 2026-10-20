@@ -23,6 +23,7 @@ from __future__ import annotations
 import hashlib
 import json
 import subprocess
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -40,6 +41,17 @@ RECORDS_ROOT = ROOT / ".qwen" / "cache" / "records"
 # the length lives in one constant that `key()` uses: a page carrying the figure as prose could
 # disagree with the code that does the truncating and nothing would notice.
 KEY_LEN = 32
+
+
+def _no_cache() -> bool:
+    """True when `--no-cache` is in the consumer's command line.
+
+    A lazy check so no consumer needs to import this or call a setup function:
+    passing `--no-cache` on the command line is enough to skip the record store.
+    The flag is for testing a script's cold-path performance without deleting
+    `.qwen/cache/records/` between runs.
+    """
+    return "--no-cache" in sys.argv
 
 
 def tree_digests() -> list[str]:
@@ -80,6 +92,8 @@ def cached(k: str, name: str, builder) -> str:
     through `write_atomic`, and returns the same text, so the first run and the second run of a
     consumer see identical bytes.
     """
+    if _no_cache():
+        return builder()
     path = RECORDS_ROOT / k / name
     if path.is_file():
         return path.read_text(encoding="utf-8")
@@ -141,6 +155,10 @@ def manuscript_store() -> dict[str, dict[str, Any]]:
     the listed set cannot reproduce its counts. A consumer that wants the manuscript list filters
     the store by the `overview.tex` slug set, which is the same filter `build_sources.py` uses.
     """
+    if _no_cache():
+        dirs = sorted(p for p in PREPRINTS.iterdir() if p.is_dir())
+        rows = (json.loads(json.dumps(record_for(d), ensure_ascii=False)) for d in dirs)
+        return {r["dir"]: r for r in rows}
     path = RECORDS_ROOT / store_key() / "manuscripts.jsonl"
     if not path.is_file():
         dirs = sorted(p for p in PREPRINTS.iterdir() if p.is_dir())
