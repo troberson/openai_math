@@ -72,6 +72,63 @@ def script_names():
     return sorted(p.name for p in SCRIPTS.glob("*.py") if p.name != SELF)
 
 
+def catlib_census():
+    """The catlib import census the census page's read-surface sentence names.
+
+    The rule the page quotes — `^[ \\t]*(from|import) catlib` over each script's own source, a
+    deferred import inside a function counts — over the census population (every top-level script
+    but this page's own checker). Returns (total, importers, non_importers, per_prefix): the
+    importers and the sorted non-importers, and per_prefix the importer count per script name
+    prefix (extract_/build_/measure_/check_/verify_), with `plus` for the importers that carry
+    none of those prefixes.
+    """
+    rule = re.compile(r"^[ \t]*(from|import) catlib", re.MULTILINE)
+    names = script_names()
+    imp: list[str] = []
+    non: list[str] = []
+    for n in names:
+        (imp if rule.search(read_text(SCRIPTS / n)) else non).append(n)
+    per_prefix = {"extract_": 0, "build_": 0, "measure_": 0, "check_": 0, "verify_": 0, "plus": 0}
+    for n in imp:
+        pre = next((k for k in per_prefix if k != "plus" and n.startswith(k)), "plus")
+        per_prefix[pre] += 1
+    return len(names), imp, sorted(non), per_prefix
+
+
+def importer_problems(text):
+    """The census page's catlib read-surface sentence: N of M scripts import, per the rule the page
+    names, with every non-importer named. The page carries the rule, the pass carries the numbers, so
+    the sentence is witnessed — a literal the pass re-derives from the scripts' own sources, not a
+    hand-swept count. The non-importer list is checked name-for-name (the anchors behind the count),
+    not by the count alone."""
+    p = []
+    total, imp, non, per_prefix = catlib_census()
+    if f"**{len(imp)}** of the **{total}** scripts call the package" not in text:
+        p.append(
+            f"importer sentence does not read '**{len(imp)}** of the **{total}** scripts call the package'"
+        )
+    for pre, n in per_prefix.items():
+        if pre == "plus":
+            continue
+        if f"**{n}** `{pre}`" not in text:
+            p.append(f"the {pre} importer count is not {n}")
+    folded = re.sub(r"\s+", " ", text)
+    m = re.search(r"scripts that do not are (.*?)(?= The )", folded)
+    if not m:
+        p.append("no non-importer sentence")
+    else:
+        # The list is one clause per ';' — `<head names>, which <reason>`. A non-importer's reason
+        # can name an importer (`dump_template_slots.py` reaches the slot dict
+        # through `render_reports.py`), so a findall over the whole span picks up the embedded name.
+        # Each clause's head names precede its "which"; the reason follows it.
+        named: set[str] = set()
+        for piece in m.group(1).split("; "):
+            named.update(re.findall(r"`([a-z_]+\.py)`", piece.split(" which")[0]))
+        if sorted(named) != non:
+            p.append(f"non-importer list: page names {sorted(named)}, measured {non}")
+    return p
+
+
 def path_constants():
     """The notes/-rooted path constants the shared package defines: name -> repo-relative path.
 
@@ -758,17 +815,20 @@ def main():
           f"on disk, {len(tpl)} problems")
     p = check(text)
     cost = cost_problems(text)
+    importers = importer_problems(text)
     sync = sync_problems(README, read_text(README))
-    for x in p + tpl + cost + sync:
+    for x in p + tpl + cost + importers + sync:
         print(f"PROBLEM: {x}")
     print(f"Cost pass (Cost cells, self-test row figures, check() counts): {len(cost)} problems")
+    print(f"importer pass (catlib read-surface sentence): {len(importers)} problems")
     print(f"sync problems (notes/README.md): {len(sync)}")
     print(f"reconciliation: writers == page {not any('writer' in x for x in p)}")
     print(f"reconciliation: census rows == disk {not any('census' in x for x in p)}")
     print(f"reconciliation: naming complete {not any('named' in x for x in p)}")
     print(f"reconciliation: templates page == disk {not tpl}")
     print(f"reconciliation: Cost figures measured {not cost}")
-    sys.exit(1 if p + tpl + cost + sync else 0)
+    print(f"reconciliation: importer sentence measured {not importers}")
+    sys.exit(1 if p + tpl + cost + importers + sync else 0)
 
 
 if __name__ == "__main__":

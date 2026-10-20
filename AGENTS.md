@@ -65,17 +65,22 @@ lives in this file and nowhere else.
 ## Dev environment tips
 
 - Shared joins live in `notes/scripts/catlib/` — `paths`, `tsv`, `atomic`, `promote`, `overview`, `ledger`, `preprints`,
-  `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries`, `templates`, `records`, `quotes`, `layout` (19 modules). Import them (`from catlib import yaml as Y`);
-  do not re-implement a join in an extractor. **62** of the **69** scripts do — the rule is
-  `^[ \t]*(from|import) catlib`, so a deferred import inside a function counts — including all **24**
-  checkers; the eight non-importers are `dump_template_slots.py`, which reaches the slot dict
-  through `render_reports.py` and never touches the registry, `gate.py`, which spawns rows and reads
-  no corpus, `measure_needles.py`, which parses the test files with `ast` and reads no corpus,
-  `measure_proof_density.py` and `measure_topics.py`, which were this rule's two-importers-today
-  case until `math-o3a.3`: each carried `from catlib import render as RD` as its only package import,
-  and the sync pass that used it moved to `verify_page_sync.py`; and the three render probes
+  `text`, `yaml`, `anchors`, `bib`, `measure`, `render`, `summaries`, `templates`, `records`, `quotes`, `layout`, `splits`, `normalizer` (20 modules). Import them (`from catlib import yaml as Y`);
+  do not re-implement a join in an extractor. **65** of the **73** scripts do — the rule is
+  `^[ \t]*(from|import) catlib`, so a deferred import inside a function counts — including all **23**
+  checkers; the eight non-importers are `check_gate_budget.py`, which reads the gate wall log and the
+  gate row TSV directly, `dump_template_slots.py`, which reaches the slot dict
+  through `render_reports.py` and never touches the registry, `measure_needles.py`, which parses the
+  test files with `ast` and reads no corpus, `measure_proof_density.py` and `measure_topics.py`,
+  which were this rule's two-importers-today case until `math-o3a.3`: each carried
+  `from catlib import render as RD` as its only package import, and the sync pass that used it moved to
+  `verify_page_sync.py`; and the three render probes
   `measure_render_phases.py`, `measure_render_pool.py` and `measure_render_processes.py`, which import
-  `render_reports` and get the joins through it. `verify_fleet_design.py` is no longer
+  `render_reports` and get the joins through it. The gate row keying follows the same
+  discipline as the record key: a row is keyable iff every path it reads is named by its L1 list or
+  sits inside the five hashed trees, and it performs no read that is not an `open()` — a key names
+  only tracked bytes, so a row that reads off-tracked state cannot be keyed and runs every gate.
+  `verify_fleet_design.py` is no longer
   on this list: the pass that added its fleet census gave it `from catlib import render as RD` for the
   render diff, so the page it checks is compared through the writer's own code.
   `measure.py` is the writer-side
@@ -424,11 +429,12 @@ lives in this file and nowhere else.
   by hand before and after each move. The quote-spec probe is the rule realized a third time:
   `measure_summaries_seed.py` moved from `.qwen/tmp/measure_summaries_seed.py` and the gate does run
   it, because its report is a function of the pages on disk.
-  Scripts and generated files are **not** 1-to-1: of the **69** scripts, **15** write
+  Scripts and generated files are **not** 1-to-1: of the **73** scripts, **18** write
   (`build_catalog.py`, `build_sources.py`, `build_index.py`, `compare_abstracts.py` — with `--tsv`
   only — `extract_formalization_deps.py`, `extract_links.py`, `extract_subfindings.py`,
   `render_reports.py`, `build_report_templates.py`, `measure_open_probe.py`, `measure_names.py`,
-  `seed_quotes.py`, `extract_named_results.py`, `measure_templates.py`, `build_index_db.py`) and **54**
+  `seed_quotes.py`, `extract_named_results.py`, `measure_templates.py`, `build_index_db.py`,
+  `measure_checker_reads.py`, `measure_gate_rows.py` and `measure_check_calls.py`) and **55**
   write nothing, and `build_index.py` alone renders **1,049** files. **Three** of the writers are
   record producers: `measure_names.py` lands `names.json`, `extract_named_results.py` lands
   `named_results.json`, `measure_templates.py` lands `templates.json`, all under
@@ -1054,13 +1060,16 @@ lives in this file and nowhere else.
   every time the command block is edited and would read the gap as empty the moment the naming
   lands — and recomputes the shared-basename sets
   (**1** top-level ∩ index: `README.md`; **18** index ∩ summaries slugs). It excludes
-  itself from the population, so the page's **69** scripts and **24** checkers are the run's **69** and
-  23. Its self-tests are extracted to `notes/scripts/tests/test_script_ownership.py` and run by the
-  gate's `run_tests.py` row: **18** injected faults — eleven in the census page's text, one prose
-  count in the generated `notes/README.md` (which only the render diff can see), four in
-  `notes/development/templates.md`, and two writer-source faults that move a write target out of the
-  derived writer set — each asserted against the check it targets. Passes G and H take page text as an
-  argument, so neither the checker nor the tests write a page. **20** tests, all passing.
+  itself from the population, so the tree's **74** scripts and **24** checkers read as the page's
+  **73** scripts and **23** checkers in the run. Its self-tests are extracted to
+  `notes/scripts/tests/test_script_ownership.py` and run by the
+  gate's `run_tests.py` row: **31** injected faults — ten in the census page's text, nine in the
+  Cost section, four in the catlib read-surface sentence, four in
+  `notes/development/templates.md`, the writer split, one prose count in the generated
+  `notes/README.md` (which only the render diff can see), and two writer-source faults that move a
+  write target out of the derived writer set — each asserted against the check it targets. Passes G
+  and H take page text as an argument, so neither the checker nor the tests write a page. **33**
+  tests, all passing.
 - Check the promotion protocol with `python3 notes/scripts/verify_cache_promotion.py` and its
   extracted self-tests with
   `python3 notes/scripts/run_tests.py notes/scripts/tests/test_cache_promotion.py -q` before quoting

@@ -206,6 +206,24 @@ COST_CASES = [
      lambda t: bump_num(t, r"`render_reports\.py`\s+([0-9.]+)\s+s")),
 ]
 
+# Faults in the catlib read-surface sentence, each keyed to the needle the importer pass prints. The
+# census page's importer figure is a literal the pass re-derives from the scripts' own sources (the
+# rule the page names), so every figure is witnessed, not hand-swept. The count mutants are live
+# because the page's literal agrees with the measurement; the non-importer faults move the anchors
+# behind the count, not the count alone.
+IMPORTER_CASES = [
+    ("importer count altered", "importer sentence does not read",
+     lambda t: bump(t, r"\*\*(\d+)\*\* of the \*\*\d+\*\* scripts call the package", -1)),
+    ("measure_ count altered", "the measure_ importer count is not",
+     lambda t: bump(t, r"\*\*(\d+)\*\* `measure_`", -1)),
+    ("non-importer dropped", "non-importer list: page names",
+     lambda t: t.replace("`measure_proof_density.py` and `measure_topics.py`, which",
+                         "`measure_proof_density.py`, which", 1)),
+    ("non-importer added", "non-importer list: page names",
+     lambda t: t.replace("`check_gate_budget.py`, which reads",
+                         "`check_gate_budget.py`, `zz_invented.py`, which reads", 1)),
+]
+
 
 @pytest.mark.parametrize("label,needle,mut", COST_CASES)
 def test_cost_section_faults(mod, page, label, needle, mut):
@@ -215,6 +233,17 @@ def test_cost_section_faults(mod, page, label, needle, mut):
     cand = mut(page)
     assert cand != page, f"{label}: mutation changed nothing"
     found = mod.cost_problems(cand)
+    assert any(needle in x for x in found), f"{label}: NOT caught by {needle!r} ({found[:2]})"
+
+
+@pytest.mark.parametrize("label,needle,mut", IMPORTER_CASES)
+def test_importer_sentence_faults(mod, page, label, needle, mut):
+    """The importer count, a per-prefix count, or a non-importer name in the read-surface sentence,
+    altered in memory. The pass re-derives the census from the scripts' own sources, so a page that
+    carried the numbers would report green on all four."""
+    cand = mut(page)
+    assert cand != page, f"{label}: mutation changed nothing"
+    found = mod.importer_problems(cand)
     assert any(needle in x for x in found), f"{label}: NOT caught by {needle!r} ({found[:2]})"
 
 

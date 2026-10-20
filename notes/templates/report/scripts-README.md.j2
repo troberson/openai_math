@@ -468,18 +468,21 @@ registry — `ALL_PAGES`, the writer's per-page `POPULATIONS` and `LABELS` slot 
 script run as `python3 notes/scripts/foo.py` has `notes/scripts` on `sys.path`, so it imports them as
 `from catlib import ...` with no path boilerplate.
 
-{% raw %}**61** of the **67** scripts call the package, measured by the rule `^[ \t]*(from|import) catlib` over
+{% raw %}**65** of the **73** scripts call the package, measured by the rule `^[ \t]*(from|import) catlib` over
 {% endraw %}
-each script's own source: **11** `extract_` (all of them), **5** `build_` (all), **12** `measure_`
-(all 17 but `measure_proof_density.py`, `measure_topics.py` and the three render probes, which reach
-`render_reports` directly), **2** `check_` (`check_index_links.py` and `check_summary_manuscripts.py`),
-**24** `verify_` scripts (all of them), plus `render_reports.py`, `seed_quotes.py`, `triage_t0.py`,
+each script's own source: **11** `extract_` (all of them), **5** `build_` (all), **15** `measure_`
+(all 21 but `measure_needles.py`, `measure_proof_density.py`, `measure_topics.py` and the three render
+probes, which reach `render_reports` directly), **2** `check_` (`check_index_links.py` and
+`check_summary_manuscripts.py`),
+**23** `verify_` scripts (all of them), plus `render_reports.py`, `seed_quotes.py`, `triage_t0.py`,
 `read_manuscript.py`, `compare_abstracts.py`, `locate_summary_quotes.py`,
-`refresh_summary_line_counts.py` and `run_tests.py`. The seven
-scripts that do not are `dump_template_slots.py`, which reaches the slot dict through
-`render_reports.py` and never touches the registry; `gate.py`, which spawns rows and reads no corpus;
-`measure_proof_density.py` and `measure_topics.py`, which read the Sources table and the vocabulary
-directly; and `measure_render_phases.py`, `measure_render_pool.py` and `measure_render_processes.py`,
+`refresh_summary_line_counts.py`, `run_tests.py` and `gate.py`. The eight
+scripts that do not are `check_gate_budget.py`, which reads the gate wall log and the gate row TSV
+directly; `dump_template_slots.py`, which reaches the slot dict through
+`render_reports.py` and never touches the registry; `measure_needles.py`, which parses the test files
+with `ast` and reads no corpus; `measure_proof_density.py` and `measure_topics.py`, which read the
+Sources table and the vocabulary directly; and `measure_render_phases.py`, `measure_render_pool.py`
+and `measure_render_processes.py`,
 which import `render_reports` and get the joins through it. The three summary-page readers
 `check_summary_manuscripts.py`, `locate_summary_quotes.py` and `refresh_summary_line_counts.py` were
 moved off `verify_summaries.py` onto `catlib/summaries.py` by `math-6s7.1` — a checker serving as a
