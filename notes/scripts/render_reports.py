@@ -85,7 +85,7 @@ from catlib.paths import (
     SUBFINDINGS_TSV,
     owner,
 )
-from catlib.promote import key_for
+from catlib.promote import CHECKER_L1, key_for
 from jinja2 import Environment, FileSystemLoader
 
 TPL = ROOT / "notes" / "templates" / "report"
@@ -2654,7 +2654,11 @@ def cost_phrases(c: dict[str, Any]) -> dict[str, str]:
             f"plain; the self-tests are in `notes/scripts/tests/test_{stem}.py`, "
             "run by the `run_tests.py` row")
         spec = COST_SPEC.get(name, name)
-        out["cost_" + stem] = (f"| `{name}` | {checks} | {gate} | "
+        # The read surface is the checker's CHECKER_L1 entry — the files it reads outside the five
+        # hashed trees. A checker the key cannot name (an untracked read) has no entry, so its cell
+        # is a dash: an unkeyable row, not a zero.
+        read = len(CHECKER_L1[name]) if name in CHECKER_L1 else "—"
+        out["cost_" + stem] = (f"| `{name}` | {checks} | {gate} | {read} | "
                                 f"{c['cold'][spec]} | {c['cells'][spec]} |")
     return out
 

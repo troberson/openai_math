@@ -311,31 +311,31 @@ self-tests rows are report-only rows, not checker invocations:
 `run_tests.py notes/scripts/tests/test_named_results.py -q` and
 `run_tests.py notes/scripts/tests/test_tsv_quoting.py -q`.
 
-| Checker | Checks | Gate | Cold (s) | Wall (s) |
-|---|---|---|---|---|
-| `verify_abstracts.py` | `notes/reports/abstracts.md` | plain; the self-tests are in `notes/scripts/tests/test_abstracts.py`, run by the `run_tests.py` row | 0.7 | 0.7 |
-| `verify_cache_promotion.py` | `catlib/promote.py` — the registry shape against the writers table, the L1 lists against the audit-hook records, and the cached bytes against every tracked artifact under its key | plain; the self-tests are in `notes/scripts/tests/test_cache_promotion.py`, run by the `run_tests.py` row | 0.6 | 0.6 |
-| `verify_citations.py` | `notes/reports/citations.md` | plain; the self-tests are in `notes/scripts/tests/test_citations.py`, run by the `run_tests.py` row | 1.5 | 1.5 |
-| `verify_conditional.py` | `notes/reports/conditional.md` | plain; the self-tests are in `notes/scripts/tests/test_conditional.py`, run by the `run_tests.py` row | 0 | 0 |
-| `verify_conjecture_standing.py` | `notes/tables/conjecture-standing.tsv` | plain; the self-tests are in `notes/scripts/tests/test_conjecture_standing.py`, run by the `run_tests.py` row | 0 | 0 |
-| `verify_counterexample_crosscheck.py` | `notes/reports/counterexample-crosscheck.md` | plain; the self-tests are in `notes/scripts/tests/test_counterexample_crosscheck.py`, run by the `run_tests.py` row | 0.3 | 0.3 |
-| `verify_dependency_drift.py` | `notes/reports/dependency-drift.md`, `notes/reports/formalization-deps.md` | plain; the self-tests are in `notes/scripts/tests/test_dependency_drift.py`, run by the `run_tests.py` row | 0.3 | 0.3 |
-| `verify_faithfulness.py` | `notes/reports/formalization-faithfulness.md` — anchors, the count phrases re-derived by its own `main_results`/declaration/carrier/closure walk (not the writer's), the disjoint and overlap pairing tables, the `a.e.` table, and the render diff | plain; the self-tests are in `notes/scripts/tests/test_faithfulness.py`, run by the `run_tests.py` row | 1.6 | 1.6 |
-| `verify_findings.py` | `notes/reports/findings.md` | plain; the self-tests are in `notes/scripts/tests/test_findings.py`, run by the `run_tests.py` row | 16.2 | 16.2 |
-| `verify_fleet_design.py` | `notes/development/fleet-design.md` — anchors, the count phrases re-derived from `git`/`du`/the probe records, each of the three site paragraphs (atomicity, env, set iteration) and the checker-section anchor list compared with the measured `name:line` set, the purity and amplification tables, and the page against `render_reports.py`'s render of it | plain; the self-tests are in `notes/scripts/tests/test_fleet_design.py`, run by the `run_tests.py` row | 0.5 | 0.5 |
-| `verify_index_design.py` | `notes/development/index-design.md` | plain; the self-tests are in `notes/scripts/tests/test_index_design.py`, run by the `run_tests.py` row | 3.0 | 3.0 |
-| `verify_named_conjectures.py` | `notes/reports/named-conjectures.md` | plain; the self-tests are in `notes/scripts/tests/test_named_conjectures.py`, run by the `run_tests.py` row | 0 | 0 |
-| `verify_named_results.py` | `notes/reports/named-results.md` | plain; the self-tests are in `notes/scripts/tests/test_named_results.py`, run by the `run_tests.py` row | 0.6 | 0.6 |
-| `verify_page_sync.py` | `notes/reports/links.md`, `notes/reports/names.md`, `notes/reports/topics.md`, `notes/reports/proof-density.md`, `notes/development/index-links.md` — the render diff for the five pages whose sync pass used to live in a writer; the mutants mutate page prose in memory, so no page is written | `--both` — plain and mutant in one process | 30.7 | 30.7 |
-| `verify_scope_exclusions.py` | `notes/reports/scope-exclusions.md` | plain; the self-tests are in `notes/scripts/tests/test_scope_exclusions.py`, run by the `run_tests.py` row | 0.1 | 0.1 |
-| `verify_sources.py` | `notes/reports/sources.md` | plain; the self-tests are in `notes/scripts/tests/test_sources.py`, run by the `run_tests.py` row | 1.2 | 1.2 |
-| `verify_subfinding_pairs.py` | `notes/reports/subfinding-pairs.md` | plain; the self-tests are in `notes/scripts/tests/test_subfinding_pairs.py`, run by the `run_tests.py` row | 1.2 | 1.2 |
-| `verify_subfindings.py` | `notes/tables/subfindings.tsv` | plain; the self-tests are in `notes/scripts/tests/test_subfindings.py`, run by the `run_tests.py` row | 0.1 | 0.1 |
-| `verify_summaries.py` | `notes/summaries/` | plain; the self-tests are in `notes/scripts/tests/test_summaries.py`, run by the `run_tests.py` row | 2.2 | 2.2 |
-| `verify_t0_chains.py` | `notes/reports/t0-chains.md` | plain; the self-tests are in `notes/scripts/tests/test_t0_chains.py`, run by the `run_tests.py` row | 1.6 | 1.6 |
-| `verify_tsv_quoting.py` | `notes/tables/*.tsv` — the RFC 4180 rule: a field that does not start with a quote carries no quote at all, and a field that opens a quoted field must close inside the field with every interior quote doubled | plain; the self-tests are in `notes/scripts/tests/test_tsv_quoting.py`, run by the `run_tests.py` row | 0 | 0 |
-| `verify_upstream_history.py` | `notes/development/upstream_history/` — the three pages | plain; the self-tests are in `notes/scripts/tests/test_upstream_history.py`, run by the `run_tests.py` row | 0.8 | 0.8 |
-| `verify_verification_dirs.py` | `notes/reports/verification-dirs.md` | plain; the self-tests are in `notes/scripts/tests/test_verification_dirs.py`, run by the `run_tests.py` row | 0.1 | 0.1 |
+| Checker | Checks | Gate | Read (files) | Cold (s) | Wall (s) |
+|---|---|---|---|---|---|
+| `verify_abstracts.py` | `notes/reports/abstracts.md` | plain; the self-tests are in `notes/scripts/tests/test_abstracts.py`, run by the `run_tests.py` row | 11 | 0.7 | 0.7 |
+| `verify_cache_promotion.py` | `catlib/promote.py` — the registry shape against the writers table, the L1 lists against the audit-hook records, and the cached bytes against every tracked artifact under its key | plain; the self-tests are in `notes/scripts/tests/test_cache_promotion.py`, run by the `run_tests.py` row | — | 0.6 | 0.6 |
+| `verify_citations.py` | `notes/reports/citations.md` | plain; the self-tests are in `notes/scripts/tests/test_citations.py`, run by the `run_tests.py` row | 4 | 1.5 | 1.5 |
+| `verify_conditional.py` | `notes/reports/conditional.md` | plain; the self-tests are in `notes/scripts/tests/test_conditional.py`, run by the `run_tests.py` row | 2 | 0 | 0 |
+| `verify_conjecture_standing.py` | `notes/tables/conjecture-standing.tsv` | plain; the self-tests are in `notes/scripts/tests/test_conjecture_standing.py`, run by the `run_tests.py` row | 3 | 0 | 0 |
+| `verify_counterexample_crosscheck.py` | `notes/reports/counterexample-crosscheck.md` | plain; the self-tests are in `notes/scripts/tests/test_counterexample_crosscheck.py`, run by the `run_tests.py` row | 11 | 0.3 | 0.3 |
+| `verify_dependency_drift.py` | `notes/reports/dependency-drift.md`, `notes/reports/formalization-deps.md` | plain; the self-tests are in `notes/scripts/tests/test_dependency_drift.py`, run by the `run_tests.py` row | 13 | 0.3 | 0.3 |
+| `verify_faithfulness.py` | `notes/reports/formalization-faithfulness.md` — anchors, the count phrases re-derived by its own `main_results`/declaration/carrier/closure walk (not the writer's), the disjoint and overlap pairing tables, the `a.e.` table, and the render diff | plain; the self-tests are in `notes/scripts/tests/test_faithfulness.py`, run by the `run_tests.py` row | 11 | 1.6 | 1.6 |
+| `verify_findings.py` | `notes/reports/findings.md` | plain; the self-tests are in `notes/scripts/tests/test_findings.py`, run by the `run_tests.py` row | 37 | 16.2 | 16.2 |
+| `verify_fleet_design.py` | `notes/development/fleet-design.md` — anchors, the count phrases re-derived from `git`/`du`/the probe records, each of the three site paragraphs (atomicity, env, set iteration) and the checker-section anchor list compared with the measured `name:line` set, the purity and amplification tables, and the page against `render_reports.py`'s render of it | plain; the self-tests are in `notes/scripts/tests/test_fleet_design.py`, run by the `run_tests.py` row | — | 0.5 | 0.5 |
+| `verify_index_design.py` | `notes/development/index-design.md` | plain; the self-tests are in `notes/scripts/tests/test_index_design.py`, run by the `run_tests.py` row | 1068 | 3.0 | 3.0 |
+| `verify_named_conjectures.py` | `notes/reports/named-conjectures.md` | plain; the self-tests are in `notes/scripts/tests/test_named_conjectures.py`, run by the `run_tests.py` row | 3 | 0 | 0 |
+| `verify_named_results.py` | `notes/reports/named-results.md` | plain; the self-tests are in `notes/scripts/tests/test_named_results.py`, run by the `run_tests.py` row | — | 0.6 | 0.6 |
+| `verify_page_sync.py` | `notes/reports/links.md`, `notes/reports/names.md`, `notes/reports/topics.md`, `notes/reports/proof-density.md`, `notes/development/index-links.md` — the render diff for the five pages whose sync pass used to live in a writer; the mutants mutate page prose in memory, so no page is written | `--both` — plain and mutant in one process | — | 30.7 | 30.7 |
+| `verify_scope_exclusions.py` | `notes/reports/scope-exclusions.md` | plain; the self-tests are in `notes/scripts/tests/test_scope_exclusions.py`, run by the `run_tests.py` row | 11 | 0.1 | 0.1 |
+| `verify_sources.py` | `notes/reports/sources.md` | plain; the self-tests are in `notes/scripts/tests/test_sources.py`, run by the `run_tests.py` row | 13 | 1.2 | 1.2 |
+| `verify_subfinding_pairs.py` | `notes/reports/subfinding-pairs.md` | plain; the self-tests are in `notes/scripts/tests/test_subfinding_pairs.py`, run by the `run_tests.py` row | 13 | 1.2 | 1.2 |
+| `verify_subfindings.py` | `notes/tables/subfindings.tsv` | plain; the self-tests are in `notes/scripts/tests/test_subfindings.py`, run by the `run_tests.py` row | 6 | 0.1 | 0.1 |
+| `verify_summaries.py` | `notes/summaries/` | plain; the self-tests are in `notes/scripts/tests/test_summaries.py`, run by the `run_tests.py` row | 68 | 2.2 | 2.2 |
+| `verify_t0_chains.py` | `notes/reports/t0-chains.md` | plain; the self-tests are in `notes/scripts/tests/test_t0_chains.py`, run by the `run_tests.py` row | 13 | 1.6 | 1.6 |
+| `verify_tsv_quoting.py` | `notes/tables/*.tsv` — the RFC 4180 rule: a field that does not start with a quote carries no quote at all, and a field that opens a quoted field must close inside the field with every interior quote doubled | plain; the self-tests are in `notes/scripts/tests/test_tsv_quoting.py`, run by the `run_tests.py` row | 28 | 0 | 0 |
+| `verify_upstream_history.py` | `notes/development/upstream_history/` — the three pages | plain; the self-tests are in `notes/scripts/tests/test_upstream_history.py`, run by the `run_tests.py` row | — | 0.8 | 0.8 |
+| `verify_verification_dirs.py` | `notes/reports/verification-dirs.md` | plain; the self-tests are in `notes/scripts/tests/test_verification_dirs.py`, run by the `run_tests.py` row | 11 | 0.1 | 0.1 |
 
 Cold is the wall the row's subprocess last paid (from the gate record for keyable rows, this
 run's wall for non-keyable rows that always run); Wall is this run's wall as printed by the gate.
@@ -365,7 +365,7 @@ row measures **5.5 s** where the `--mutant` row took **20.3 s** before that row 
 17 `check()` calls the row makes pay the `notes/index/` walk once.
 `verify_fleet_design.py` is the same case with the `git`/`du`/script-tree walk: `population()` is under
 `functools.cache` (`:151`), so its `run_tests.py` row measures **0.7 s** where the `--mutant` row took
-**0.8 s** before that row was replaced:  pay the five
+**0.8 s** before that row was replaced: the 23 `check()` calls the row makes pay the five
 `git rev-parse` calls, the `--ignored=matching` check, the three `du -sk` calls and the 68-script scan
 once.
 `verify_verification_dirs.py` is the same case with two walks: `population()` (`:138`) and

@@ -120,6 +120,17 @@ def shift_cost_cell(t, name, delta=1.0):
     return t.replace(row, "|".join(cells), 1)
 
 
+def shift_read_cell(t, name, delta=1):
+    """Shift the Read cell of a checker's row. The cell is the checker's CHECKER_L1 entry length, so
+    the fault is built from the row as it stands. A dash (an unkeyable row) cannot be shifted."""
+    row = cost_row(t, name)
+    cells = row.split("|")
+    if cells[-4].strip() == "—":
+        raise AssertionError(f"no numeric Read cell to shift on {name}'s row")
+    cells[-4] = f" {int(cells[-4]) + delta} "
+    return t.replace(row, "|".join(cells), 1)
+
+
 def delete_cost_row(t, name):
     """Delete a checker's Cost row. The checker stays a gate row, so the page must account for it."""
     return t.replace(cost_row(t, name) + "\n", "", 1)
@@ -177,6 +188,8 @@ def bump_num(t, pat, delta=1.0):
 COST_CASES = [
     ("Wall cell altered", "Wall cell for verify_findings.py",
      lambda t: shift_cost_cell(t, "verify_findings.py")),
+    ("Read cell altered", "Read cell for verify_findings.py",
+     lambda t: shift_read_cell(t, "verify_findings.py")),
     ("Cost row deleted", "is a checker row the Cost table does not carry",
      lambda t: delete_cost_row(t, "verify_findings.py")),
     ("check() count altered", "verify_named_results: the check() count is not 15",

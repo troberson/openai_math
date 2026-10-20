@@ -37,7 +37,7 @@ import sys
 from catlib import render as RD
 from catlib.atomic import RECORDS_ROOT
 from catlib.paths import GATE_ROWS_TSV, NOTES, ROOT, SCRIPTS, read_text
-from catlib.promote import key_for
+from catlib.promote import CHECKER_L1, key_for
 
 PAGE = SCRIPTS / "README.md"
 SELF = "verify_script_ownership.py"
@@ -642,10 +642,11 @@ def cost_problems(text: str) -> list[str]:
     cold = {r["spec"]: r.get("cold", "0.0") for r in rows_list}
     calls = check_calls()
     folded = re.sub(r"\s+", " ", text)
-    cost = re.findall(r"^\| `([a-z0-9_]+\.py)` \|.*\| ([0-9.]+) \| ([0-9.]+) \|$", text, re.MULTILINE)
+    cost = re.findall(r"^\| `([a-z0-9_]+\.py)` \|.*\| ([0-9]+|—) \| ([0-9.]+) \| ([0-9.]+) \|$",
+                      text, re.MULTILINE)
     if not cost:
         return ["no Cost table rows read"]
-    for name, cold_cell, cell in cost:
+    for name, read_cell, cold_cell, cell in cost:
         spec = next((s for s in rows if s.startswith(name)), None)
         if spec is None:
             p.append(f"no gate row names {name}")
@@ -656,6 +657,11 @@ def cost_problems(text: str) -> list[str]:
             p.append(f"Wall cell for {name}: page {cell}, gate row {spec} measured {want}")
         if cold_cell != want_cold:
             p.append(f"Cold cell for {name}: page {cold_cell}, gate row {spec} measured {want_cold}")
+        # The read surface is the checker's CHECKER_L1 entry — the files it reads outside the five
+        # hashed trees. A checker the key cannot name has no entry, so its cell is a dash.
+        want_read = str(len(CHECKER_L1[name])) if name in CHECKER_L1 else "—"
+        if read_cell != want_read:
+            p.append(f"Read cell for {name}: page {read_cell}, CHECKER_L1 has {want_read}")
     # The count sentence must sit in the paragraph that begins with the checker's own name. The Cost
     # prose is one block, so a block-level test lets a count belonging to a neighbouring checker
     # satisfy this checker's requirement — the sources paragraph's count carried named_results.
@@ -703,7 +709,7 @@ def cost_problems(text: str) -> list[str]:
     # declaration that the checker is not a row above. The exemption is read from that sentence, so
     # a checker is not exempted by name — a page-wide "not a row above" excuses every row.
     exempt = set(re.findall(r"`([a-z0-9_]+\.py)`[^.]*not a row above", folded))
-    named = {name: cell for name, _cold, cell in cost}
+    named = {name: cell for name, _read, _cold, cell in cost}
     for spec in checker_rows:
         name = spec.split()[0]
         if name in named:
