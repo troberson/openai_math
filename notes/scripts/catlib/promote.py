@@ -1775,6 +1775,20 @@ def checker_key(name: str, args: tuple[str, ...] = ()) -> str:
     return digest_key(src, texts, args)
 
 
+def test_row_key(test_path: str, checker: str, args: tuple[str, ...] = ()) -> str:
+    """The test row's cache key: test file + checker source + conftest.py + checker's L1.
+
+    A test row's mutants target page content, so a page change can flip a test
+    result. The key must name all four inputs that determine the test's outcome.
+    """
+    test_src = (ROOT / test_path).read_text(encoding="utf-8")
+    checker_src = (SCRIPTS / checker).read_text(encoding="utf-8")
+    conftest_src = (SCRIPTS / "tests" / "conftest.py").read_text(encoding="utf-8")
+    l1_texts = tuple((ROOT / p).read_text(encoding="utf-8", errors="replace")
+                     for p in CHECKER_L1[checker])
+    return digest_key(test_src + "\n" + checker_src + "\n" + conftest_src, l1_texts, args)
+
+
 def artifact_of(path: Path) -> str:
     """The cache artifact name: the repo-relative path, so pages in sibling dirs never collide."""
     return str(path.relative_to(ROOT))

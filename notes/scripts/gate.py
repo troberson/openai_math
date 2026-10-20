@@ -35,8 +35,8 @@ import subprocess
 import time
 from concurrent.futures import FIRST_COMPLETED, Future, ThreadPoolExecutor, wait
 
-from catlib.atomic import write_atomic
-from catlib.promote import CHECKER_L1, checker_key
+from catlib.atomic import RECORDS_ROOT, write_atomic
+from catlib.promote import CHECKER_L1, checker_key, test_row_key
 from catlib.records import store_dir
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -169,10 +169,52 @@ def tag_of(spec: str) -> str:
     return re.sub(r"[^A-Za-z0-9]", "_", spec + "\n")
 
 
+def row_key(spec: str) -> tuple[str, list[str]] | None:
+    """The keyable row's (cache_key, surface), or None for a non-keyable row.
+
+    A checker row keys on its CHECKER_L1 surface. A test row keys on the test file,
+    the checker source, conftest.py, and the checker's L1 — because the mutants target
+    page content, so a page change can flip a test result.
+    """
+    a = spec.split()
+    name = a[0]
+    if name in CHECKER_L1:
+        return checker_key(name), list(CHECKER_L1[name])
+    if name == "run_tests.py" and len(a) >= 2:
+        test_path = a[1]
+        base = test_path.rsplit("/", 1)[-1]
+        if base.startswith("test_") and base.endswith(".py"):
+            checker = "verify_" + base[len("test_"):]
+            if checker in CHECKER_L1:
+                args = tuple(a[2:])
+                surface = sorted({
+                    test_path, f"notes/scripts/{checker}", "notes/scripts/tests/conftest.py",
+                    *CHECKER_L1[checker]
+                })
+                return test_row_key(test_path, checker, args), surface
+    return None
+
+
 def run(spec: str) -> None:
     tag = tag_of(spec)
     a = spec.split()
     report = f"{R}/gate_{tag}.txt"
+    rk = row_key(spec)
+    if rk is not None:
+        key, _ = rk
+        rec_path = RECORDS_ROOT / key / "row.json"
+        if rec_path.is_file():
+            rec = json.loads(rec_path.read_text(encoding="utf-8"))
+            raw = rec["report"].encode("utf-8")
+            rc = rec["exit"]
+            with open(report, "wb") as f:
+                f.write(raw)
+            head = raw[:200].decode("utf-8", "replace").replace("\n", " ").rstrip()
+            t0 = time.time()
+            w = int((time.time() - t0) * 10)
+            with open(f"{R}/gate_{tag}.line", "w", encoding="utf-8") as f:
+                f.write(f"exit {rc} :: {spec} :: {head} in {w // 10}.{w % 10}s\n")
+            return
     t0 = time.time()
     with open(report, "wb") as out:
         rc = subprocess.run(["python3", f"{S}/{a[0]}", *a[1:]], stdout=out,
@@ -183,14 +225,10 @@ def run(spec: str) -> None:
     head = raw[:200].decode("utf-8", "replace").replace("\n", " ").rstrip()
     with open(f"{R}/gate_{tag}.line", "w", encoding="utf-8") as f:
         f.write(f"exit {rc} :: {spec} :: {head} in {w // 10}.{w % 10}s\n")
-    if a[0] in CHECKER_L1:
-        # The gate is the producer of the checker row's record (math-eij.4): a checker that read
-        # its own record would be a self-read outside its L1. The record carries the report, the
-        # exit, and the derived surface, so a skipped row (math-eij.5) still names its surface.
-        k = checker_key(a[0])
-        payload = {"report": raw.decode("utf-8", "replace"), "exit": rc,
-                   "surface": list(CHECKER_L1[a[0]])}
-        write_atomic(store_dir(k) / "row.json",
+    if rk is not None:
+        key, surface = rk
+        payload = {"report": raw.decode("utf-8", "replace"), "exit": rc, "surface": surface}
+        write_atomic(store_dir(key) / "row.json",
                      json.dumps(payload, ensure_ascii=False, indent=2) + "\n")
 
 
