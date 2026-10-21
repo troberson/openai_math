@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import os
 import shutil
+import tempfile
 from pathlib import Path
 
 from catlib.paths import ROOT
@@ -31,15 +32,26 @@ RECORDS_ROOT = ROOT / ".qwen" / "cache" / "records"
 
 
 def write_atomic(path: Path, text: str) -> None:
-    """Write text to path through a sibling temp name, fsync, then an atomic move onto the target."""
+    """Write text to path through a sibling temp name, fsync, then an atomic move onto the target.
+
+    The temp name is unique per call (`mkstemp`), not fixed to `.{name}.tmp`: two concurrent writers to
+    the same directory (the two build_index children build_report_templates.py spawns) must not share a
+    temp, or one child's move consumes it before the other's and the second raises
+    FileNotFoundError. The `mkstemp` prefix keeps it dotted, so it stays out of a page census and the
+    atomicity grep; the suffix carries no extension a checker keys on. math-9vt.
+    """
     parent = path.parent
     parent.mkdir(parents=True, exist_ok=True)
-    tmp = parent / f".{path.name}.tmp"
-    with tmp.open("w", encoding="utf-8") as fh:
-        fh.write(text)
-        fh.flush()
-        os.fsync(fh.fileno())
-    os.replace(tmp, path)
+    fd, tmpname = tempfile.mkstemp(prefix=f".{path.name}.", dir=parent)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as fh:
+            fh.write(text)
+            fh.flush()
+            os.fsync(fh.fileno())
+        os.replace(tmpname, path)
+    except BaseException:
+        os.unlink(tmpname)
+        raise
 
 
 def cache_text(key: str, artifact: str, text: str) -> None:
