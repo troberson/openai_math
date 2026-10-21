@@ -1,0 +1,81 @@
+{# summary.md.j2 — the skeleton for notes/summaries/<discipline>/<NNN>-<slug>.md
+
+   One hand-written skeleton owns the entire mechanical surface; a per-family body
+   (notes/templates/summaries/<NNN>/summary.j2) supplies only the prose bodies. The
+   renderer (math-cgv.4) composes them from quotes.tsv.
+
+   The canonical surface this template fixes across every page:
+   - the title line carries an em dash: `# <NNN> — <Title>`
+   - the breadcrumbs link "Family <NNN>" to the family's index page, making the
+     summary<->index edge bidirectional (60 index pages already link to the summary)
+   - one prose heading set: the 30 distinct strings the hand-written pages carried
+     collapse to the five core sections below, each rendered only when the family
+     has a body for it
+   - the Sources table is four columns with one separator byte form
+   - a Links section on every page, generated from the Sources rows
+   - a Bibliography section after Links (math-cgv.8)
+
+   Every {{ }} slot is a label the renderer supplies. Rendering uses trim_blocks and
+   lstrip_blocks, so the {% if %}/{% endif %} and {% for %}/{% endfor %} lines emit
+   nothing and the body lines emit verbatim. #}
+Notes / Summaries / {{ p['discipline'] }} / [Family {{ p['fam'] }}](../../index/{{ p['discipline'] }}/{{ p['fam'] }}-{{ p['slug'] }}.md)
+
+# {{ p['fam'] }} — {{ p['title'] }}
+{% if p['contents'] %}
+
+## Original CONTENTS.md summary
+
+{{ p['contents'] }}
+{% endif %}
+{% if p['undergraduate'] %}
+
+## Undergraduate summary
+
+{{ p['undergraduate'] }}
+{% endif %}
+{% if p['graduate'] %}
+
+## Graduate summary
+
+{{ p['graduate'] }}
+{% endif %}
+{% if p['history'] %}
+
+## History of the conjecture
+
+{{ p['history'] }}
+{% endif %}
+{% if p['consequences'] %}
+
+## Consequences
+
+{{ p['consequences'] }}
+{% endif %}
+{% if p['section_skeleton'] %}
+
+## Section skeleton
+
+{{ p['section_skeleton'] }}
+{% endif %}
+{% if p['formalized'] %}
+
+## Comparison with the formalized statement
+
+{{ p['formalized'] }}
+{% endif %}
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+{{ p['sources_rows'] }}
+
+## Links
+
+{% for label, path in p['links'] %}
+- [{{ label }}]({{ path }})
+{% endfor %}
+
+## Bibliography
+
+{{ p['bibliography'] }}
