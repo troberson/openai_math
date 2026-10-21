@@ -256,7 +256,11 @@ PROBE_EXEMPT = frozenset({"build_report_templates.py", "measure_gate_rows.py",
 # template bytes, so a render after the builder moves that page's bytes and a working-tree key stops
 # matching the key the builder used. Hashing the read surface the writer actually reads makes the key
 # a function of HEAD.
-L1_HEAD = frozenset({"build_report_templates.py", "measure_check_calls.py"})
+#
+# Only writers whose own output feeds an L1 entry belong here — a writer that reads the working tree
+# (like `measure_check_calls.py`, whose record is a function of the working-tree pages it runs) must
+# hash the working tree, so a page sweep invalidates its record. math-544.
+L1_HEAD = frozenset({"build_report_templates.py"})
 
 
 # CHECKER_L1 is the checkers' read surface, a separate registry from L1. A checker writes
