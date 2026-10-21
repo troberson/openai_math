@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-r"""Seed the quote-spec table for the pair-line page and the 24 summaries pages, and prove the resolver
-reproduces every quote.
+r"""Seed the quote-spec table for the pair-line page and the 24 summaries pages, and prove the
+resolved span reproduces every quote.
 
-A spec is `(page, fam, seq, which, path, start, end, head, tail, mode)`: the source file, the line window
-the quote sits on, the first words of the quote widened until they are unique inside that window, the last
-three words, and the round-trip class. `catlib/quotes.py` resolves the spec back to the source bytes. This
-script seeds the specs from pages that already carry their quotes, then resolves each one and requires the
-resolved span to be the page's quote -- so a seeded table is a round-trip, not a transcription.
+A spec is `(page, fam, seq, which, path, start, end, span)`: the source file, the line window
+the quote sits on, and the verbatim source span the seeder resolved. The renderer reads `span`
+directly and feeds it to the normalizer; it never re-resolves. `head`/`tail` are seeder-internal:
+the seeder uses them once, at seed time, to bound a span inside the window, then discards them.
+`mode` (raw/folded/none) is not stored: for a generated page there is no independent quote to
+classify.
 
 **The two page grammars are two seeders.** `notes/reports/subfinding-pairs.md` cites by anchor:
 
@@ -21,14 +22,7 @@ A summaries page cites by a `[Sn:line]` marker, so the window is the range the m
 is needed. The span set, the attribution and the classification are the shared rules
 (`catlib.summaries.spans_of`, `catlib.summaries.candidates`, `catlib.quotes.seed_page`), so the specs seeded
 here are exactly the spans `verify_summaries.py` pass C checks. `which` is `inline` or `block`; `seq` is the
-span's index in the page. `mode` is `raw` when the resolved span is the page's quote byte-for-byte, `folded`
-when it is equal only after `catlib.text.strip_markup` (the page dropped markup the source carries), and
-`none` when the cited file does not carry the span.
-
-Measured 2026-10-13: **1,792** specs over the two surfaces -- **754** pair-line specs, all raw, and **1038**
-summaries specs, **966** raw, **57** folded, **15** not located. The 15 are seeded with `start` 0 and kept
-as measured negatives: the table records that the cited file does not carry the span, and they do not fail
-the round-trip.
+span's index in the page, which is also the slot key the per-family template's quote slots join to.
 
 The table lands at `notes/tables/quotes.tsv` through the promote registry, so the cached bytes and the
 tracked bytes are the same bytes. `--check-only` runs the full measurement and writes nothing.
@@ -37,7 +31,6 @@ Usage: python3 notes/scripts/seed_quotes.py [--tsv] [--check-only]
 """
 import re
 import sys
-from collections import Counter
 
 from catlib.paths import ROOT, SUMMARIES_DIR
 from catlib.promote import key_for, promote
@@ -51,7 +44,7 @@ SRC = ROOT / "overview.tex"
 OUT = ROOT / "notes" / "tables" / "quotes.tsv"
 PAGES = str(PAGE.relative_to(ROOT))
 
-COLS = ("page", "fam", "seq", "which", "path", "start", "end", "head", "tail", "mode")
+COLS = ("page", "fam", "seq", "which", "path", "start", "end", "span")
 
 # The widest window the pair-line seeder widens a spec to. Measured 2026-10-12: every pair-line quote
 # sits on the anchored line, and the summaries spans, seeded against the range their own marker names,
@@ -73,7 +66,7 @@ def anchor(text: str) -> tuple[str, int, int]:
 
 
 def rows(lines: list[str]) -> list[tuple[dict[str, str], str]]:
-    """Every pair-line quote in the page, seeded to a spec, with the quote it must reproduce."""
+    """Every pair-line quote in the page, seeded to a spec with its resolved span."""
     out: list[tuple[dict[str, str], str]] = []
     fam = ""
     for ln in PAGE.read_text(encoding="utf-8").splitlines():
@@ -93,31 +86,37 @@ def rows(lines: list[str]) -> list[tuple[dict[str, str], str]]:
             got = seed(lines, q, start, end + MAXW - 1)
             if got is None:
                 out.append(({"page": PAGES, "fam": fam, "seq": seq, "which": which, "path": path,
-                             "start": "0", "end": "0", "head": "", "tail": "", "mode": "none"}, q))
+                             "start": "0", "end": "0", "span": ""}, q))
                 continue
             s, e, head, tail = got
+            span = resolve(lines, s, e, head, tail) or ""
             out.append(({"page": PAGES, "fam": fam, "seq": seq, "which": which, "path": path,
-                         "start": str(s), "end": str(e), "head": head, "tail": tail or "",
-                         "mode": "raw"}, q))
+                         "start": str(s), "end": str(e), "span": span}, q))
     return out
 
 
 def summary_rows() -> list[tuple[dict[str, str], str]]:
-    """Every quoted span the 24 summaries pages carry, seeded to a spec, with the quote it must reproduce.
+    """Every quoted span the 24 summaries pages carry, seeded to a spec with its resolved span.
 
-    `path` is the file the page's `[Sn]` row resolves to, repo-relative, so a row names a file the round-trip
-    can read without knowing the manuscript root. A span with no usable citation, or one the cited file does
-    not carry, is seeded to `start` 0 with `mode` `none`.
+    `path` is the file the page's `[Sn]` row resolves to, repo-relative, so a row names a file the
+    renderer can read without knowing the manuscript root. A span with no usable citation, or one the
+    cited file does not carry, is seeded to `start` 0 with `span` empty (a measured negative).
     """
     out: list[tuple[dict[str, str], str]] = []
     for p in sorted(SUMMARIES_DIR.rglob("*.md")):
         page = Page(p, p.read_text(encoding="utf-8").splitlines())
         for n, (sid, which, span, start, end, head, tail, mode) in enumerate(seed_page(page), 1):
             src = page.table.get(sid, ("", None))[1]
+            if mode == "none" or src is None:
+                span_cell = ""
+            else:
+                # `span` is the page's quote; store the resolved SOURCE text the normalizer
+                # renders, which is `span` byte-for-byte for raw and carries the markup the
+                # page dropped for folded.
+                span_cell = resolve(page.lines_of(sid), start, end, head, tail or None) or ""
             out.append(({"page": str(p.relative_to(ROOT)), "fam": page.fam or "", "seq": str(n),
                          "which": which, "path": str(src.relative_to(ROOT)) if src else "",
-                         "start": str(start), "end": str(end), "head": head, "tail": tail or "",
-                         "mode": mode}, span))
+                         "start": str(start), "end": str(end), "span": span_cell}, span))
     return out
 
 
@@ -126,37 +125,37 @@ def main() -> int:
     lines = SRC.read_text(encoding="utf-8").splitlines()
     all_rows = rows(lines) + summary_rows()
     specs = [s for s, _q in all_rows]
-    cache: dict[str, list[str]] = {"overview.tex": lines}
+    # The round-trip is span-vs-page-quote: the seeder stored the resolved source text, so a row
+    # passes when that text is the page's quote byte-for-byte (raw) or equal after the checker's
+    # normalizer (folded, the page dropped markup the source carries). A `span` that is neither
+    # resolves to text the page does not quote, which is the failure. No re-resolution is needed:
+    # the span is the resolved bytes, and `head`/`tail` are seeder-internal.
     bad: list[tuple[str, str, str]] = []
     for spec, q in all_rows:
-        if spec["mode"] == "none":
-            # A measured negative: the cited file does not carry the span, so there is no spec to resolve.
+        span = spec["span"]
+        if span == "":
+            # A measured negative: the cited file does not carry the span.
             continue
-        key = spec["path"]
-        if key not in cache:
-            f = ROOT / key
-            cache[key] = (f.read_text(encoding="utf-8", errors="replace").splitlines()
-                          if f.is_file() else [])
-        src = cache[key]
-        got = resolve(src, int(spec["start"]), int(spec["end"]), spec["head"], spec["tail"] or None)
-        ok = got == q if spec["mode"] == "raw" else got is not None and strip_markup(got) == strip_markup(q)
+        ok = span == q or strip_markup(span) == strip_markup(q)
         if not ok:
             bad.append((f"{spec['page']} [{spec['fam']}:{spec['seq']} {spec['which']}]",
-                        spec["head"][:30], f"resolved {str(got)[:44]!r} vs quote {q[:44]!r}"))
+                        span[:30], f"span {span[:44]!r} vs quote {q[:44]!r}"))
     seeded = [s for s in specs if s["start"] != "0"]
     pair = [s for s in specs if s["page"] == PAGES]
     summ = [s for s in specs if s["page"] != PAGES]
-    modes = Counter(s["mode"] for s in specs)
+    # The raw/folded split is derived from the stored span, not a recorded column: raw when the span
+    # is the page quote byte-for-byte, folded when it is equal only after the normalizer.
+    raw = sum(1 for s, q in all_rows if s["span"] != "" and s["span"] == q)
+    folded = (sum(1 for s, q in all_rows if s["span"] != ""
+                  and s["span"] != q and strip_markup(s["span"]) == strip_markup(q)))
     print(f"quotes in the pages: {len(specs)}")
     print(f"  pair-line specs ({PAGES}): {len(pair)}")
     print(f"  summaries specs ({len({s['page'] for s in summ})} pages): {len(summ)}")
     print(f"  specs seeded: {len(seeded)}   measured negatives (start 0): {len(specs) - len(seeded)}")
     print(f"  single-line spec: {sum(1 for s in seeded if s['start'] == s['end'])}"
           f"   range spec: {sum(1 for s in seeded if s['start'] != s['end'])}")
-    print(f"  head widened past 3 words: {sum(1 for s in seeded if len(s['head'].split()) > 3)}")
-    print(f"  whole-quote spec (no boundary): {sum(1 for s in seeded if s['tail'] == '')}")
-    print(f"  mode: raw {modes['raw']}  folded {modes['folded']}  not located {modes['none']}")
-    print(f"  resolver reproduces the page quote: {len(seeded) - len(bad)} of {len(seeded)}")
+    print(f"  class: raw {raw}  folded {folded}  not located {len(specs) - len(seeded)}")
+    print(f"  span reproduces the page quote: {len(seeded) - len(bad)} of {len(seeded)}")
     print(f"  round-trip failures: {len(bad)}")
     for where, head, why in bad:
         print(f"    [{where}] {head}  -- {why}")

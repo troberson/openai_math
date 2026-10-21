@@ -65,7 +65,6 @@ import measure_proof_density as PD
 import measure_templates as MTPL
 import measure_topics as MT
 from catlib import bib, ledger, overview, preprints, records, tsv
-from catlib import quotes as Q
 from catlib import text as TX
 from catlib import yaml as Y
 from catlib.atomic import Staging
@@ -77,7 +76,6 @@ from catlib.paths import (
     LAKE_MANIFEST,
     LAKEFILE,
     LEDGER_TSV,
-    OVERVIEW_TEX,
     PREPRINTS,
     QUOTES_TSV,
     ROOT,
@@ -788,7 +786,7 @@ INDEX_SPLIT = {
         ("`notes/tables/lean-dirs.tsv` (**41937** B over **559** rows), "
          "`notes/tables/manuscripts.tsv` (**277825** B over **719** rows),"),
         ("`notes/tables/names.tsv` (**304513** B over **5842** rows), "
-         "`notes/tables/quotes.tsv` (**668704** B over **2848** rows),"),
+         "`notes/tables/quotes.tsv` (**985428** B over **2848** rows),"),
         ("`notes/tables/scope-notes.tsv` (**26694** B over **242** rows), "
          "`notes/tables/sources.tsv` (**221463** B over **719** rows), "
          "`notes/tables/topics-rendered.tsv` (**19127** B over **92** rows), "
@@ -3284,7 +3282,6 @@ def sp_pair_lines() -> list[tuple[str, str]]:
     be. A spec that does not resolve raises: a page whose quote moved must fail the writer, not render a
     quote the source does not carry.
     """
-    lines = OVERVIEW_TEX.read_text(encoding="utf-8").splitlines()
     out: list[tuple[str, str]] = []
     # A clause row is always followed by its title row, so the pending clause is never missing when a
     # title arrives. The empty head is the "nothing pending" state, which keeps the value a plain
@@ -3295,9 +3292,9 @@ def sp_pair_lines() -> list[tuple[str, str]]:
         if r["page"] != str(SP_MD.relative_to(ROOT)):
             continue
         fam, seq, which = r["fam"], r["seq"], r["which"]
-        start, end = int(r["start"]), int(r["end"])
-        span = Q.resolve(lines, start, end, r["head"], r["tail"] or None)
-        if span is None:
+        start = int(r["start"])
+        span = r["span"]
+        if span == "":
             raise ValueError(f"quote spec {fam}:{seq} {which} does not resolve")
         if which == "title":
             head, cstart, cwhich = pending

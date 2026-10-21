@@ -40,7 +40,7 @@ sync problems, 2,560 nodes over 3,415 resolved
 edges (17,217 raw), 391 citation edges over 104 cross-family, 242
 scope notes, 559 module dirs, 17 disciplines against 23 Lean
 dirs, 30 verification bundles, 521 `.bib` files with 13,802 entries and 393
-hrefs, the ledger set at 297,050 B against the all-TSV 2,316,386 B, 66,115 disk links with 0 broken and
+hrefs, the ledger set at 297,043 B against the all-TSV 2,902,943 B, 66,115 disk links with 0 broken and
 17,700 resolving to a directory, the index tree at 11,531,073 B, and the substring counts 18 / 373
 against the brace-qualified 17 / 372. A page with fewer anchors, block lines or phrases is a pass that
 stopped checking, not a pass that passed.

@@ -32,11 +32,12 @@ lives in this file and nowhere else.
   note says its formalization leaves out), `subfindings.tsv` (1145 rows — 719 manuscript rows and 426
   comparator rows, typed by a `kind` column) with `subfinding-pairs.md` (167 families, 514 manuscripts —
   the reading pass that pairs abstract clauses with display titles) beside it,
-  `quotes.tsv` (1,792 rows, 10 columns — the `(path, start, end, head, tail, mode)` spec for every
-  pair-line quote in `subfinding-pairs.md` and every quoted span the 24 summaries pages carry, seeded by
-  `seed_quotes.py` and resolved back to the source bytes by `catlib/quotes.py`, which shares the pair
-  page's anchor grammar with `catlib/anchors.py` and the summaries span and attribution rules with
-  `catlib/summaries.py`),
+  `quotes.tsv` (2,848 rows, 8 columns — the `(page, fam, seq, which, path, start, end, span)` spec for
+  every pair-line quote in `subfinding-pairs.md` and every quoted span the 60 summaries pages carry,
+  where `span` is the resolved source text the renderer feeds the normalizer; `head`/`tail` are
+  seeder-internal and `mode` is not stored, seeded by `seed_quotes.py` and located by `catlib/quotes.py`,
+  which shares the pair page's anchor grammar with `catlib/anchors.py` and the summaries span and
+  attribution rules with `catlib/summaries.py`),
   `index-design.md` (the index schema decision — store, location, granularity, topic vocabulary — with
   the measured node and edge population that justifies it), `index/` (the rendered index, all of it
   generated: 372 family pages in 17 discipline dirs, 17 discipline pages, 92 topic pages, 551 name
@@ -347,25 +348,26 @@ lives in this file and nowhere else.
   ≥2 sentences with a prove-verb (32), ≥3 sentences (73). Same shape as the counterexample 74 / 30 case;
   see `notes/reports/counterexample-tag.md` and the population section of `notes/reports/subfinding-pairs.md`.
 - Seed the quote-spec table with `python3 notes/scripts/seed_quotes.py` — a writer that lands
-  `notes/tables/quotes.tsv` (1,679 rows, 10 columns) through the promote registry and resolves every spec
-  back against the file its `path` names, requiring the resolved span to be the page's quote in its own
-  class. A spec is `(page, fam, seq, which, path, start, end, head, tail, mode)`: it names a span
-  **without containing it** — the line window the quote sits on, the first words widened until they are
-  unique inside that window, the last three words, and the round-trip class. **Page breaks inside a
-  quote are the common case, not the edge:** measured 2026-10-13 over the 24 summaries pages, 688 of the
-  1020 quoted spans `verify_summaries.py` pass C checks sit across 2 to 26 source lines and 324 in one, so
-  the spec names a window and the resolver joins it as a LaTeX paragraph — a line break is one space, and
-  a line's own trailing space is not a second. **Locate on raw bytes, never on the folded line:**
-  `catlib.text.strip_markup` is lossy on math, `overview.tex:505` folds to `for $04$, establishing` and
-  the clause is gone. The shortest-span rule is load-bearing: first-head-then-first-tail fails 6 of 754
-  (families 018, 114, 150, 247, 262, 336), shortest-span fails 0. **The page's quotes are normalized, not
-  verbatim** — 57 of the 1038 summaries spans are fold-equal, not raw-equal, so a writer that rendered
-  raw bytes would change those 57 quotes' text; 15 of the 1038 are not located (LaTeX accent escapes and math
-  pattern's `MARK` set does not tolerate), and they are seeded to `start` 0 as measured negatives, not
-  deleted. **The TSVs are csv-written and csv-read:** `csv_text` quotes a cell containing a quote
-  character per RFC 4180, so `csv.DictReader` reads the field back verbatim, and
-  `verify_tsv_quoting.py` flags a `"` that is not at a field start — the rule GitHub's TSV viewer
-  applies, and the one Python's lenient reader never reports. `--check-only` measures and
+  `notes/tables/quotes.tsv` (2,848 rows, 8 columns) through the promote registry and resolves every spec
+  against the file its `path` names, requiring the stored span to be the page's quote in its own
+  class. A spec is `(page, fam, seq, which, path, start, end, span)`: it names the source file, the
+  line window the quote sits on, and **the resolved source text itself** — the `span` the renderer feeds
+  the normalizer. `head`/`tail` are seeder-internal: the locator widens the head until it is unique in
+  the window and bounds the span with the tail, then discards both; `mode` is not stored (a generated
+  page has no independent quote to classify — the class is derived from the stored span, raw when it is
+  the page quote byte-for-byte, folded when equal only after `catlib.text.strip_markup`). **Page breaks
+  inside a quote are the common case, not the edge:** a spec names a window and the locator joins it as a
+  LaTeX paragraph — a line break is one space, and a line's own trailing space is not a second. **Locate on
+  raw bytes, never on the folded line:** `catlib.text.strip_markup` is lossy on math, `overview.tex:505`
+  folds to `for $04$, establishing` and the clause is gone. The shortest-span rule is load-bearing:
+  first-head-then-first-tail fails 6 of 754 (families 018, 114, 150, 247, 262, 336), shortest-span fails 0.
+  **The page's quotes are normalized, not verbatim** — some summaries spans are fold-equal, not
+  raw-equal, so the stored `span` carries the source markup the page drops; the 36 unlocated rows
+  (LaTeX accent escapes and math the locator's `MARK` set does not tolerate) are seeded to `start` 0 with
+  an empty `span` as measured negatives, not deleted. **The TSVs are csv-written and csv-read:**
+  `csv_text` quotes a cell containing a quote character per RFC 4180, so `csv.DictReader` reads the field
+  back verbatim, and `verify_tsv_quoting.py` flags a `"` that is not at a field start — the rule GitHub's
+  TSV viewer applies, and the one Python's lenient reader never reports. `--check-only` measures and
   writes nothing; the gate runs the writer row and the `run_tests.py` row for
   `notes/scripts/tests/test_quotes.py` (**16** tests).
 - Compare the two abstracts a family ships with `python3 notes/scripts/compare_abstracts.py` — report
@@ -640,8 +642,8 @@ lives in this file and nowhere else.
 - Run `python3 notes/scripts/extract_subfinding_pairs.py` twice and diff: the report must be identical.
 - Run `python3 notes/scripts/measure_index_sizes.py` twice and diff: the report must be identical. It
   writes nothing, and every count in `notes/development/index-design.md` comes from it. It prints two byte sums
-  that are not interchangeable — `ledger set bytes (5 named TSVs)` **297050** and
-  `all notes/tables/*.tsv bytes` **907744** — and an INDEX section whose table row counts are read from the
+  that are not interchangeable — `ledger set bytes (5 named TSVs)` **297043** and
+  `all notes/tables/*.tsv bytes` **2902943** — and an INDEX section whose table row counts are read from the
   generated files under `notes/index/`, not derived from the upstream counts they were built from.
 - Check `notes/development/index-design.md` with `python3 notes/scripts/verify_index_design.py` before quoting the
   schema — it resolves every backticked `path:line` anchor of any extension (a mistyped
@@ -670,7 +672,7 @@ lives in this file and nowhere else.
   resolved edges (17,217 raw), 391 citation edges over 104 cross-family, 242 scope notes, 559 module dirs,
   17
   disciplines against 23 Lean dirs, 30 verification bundles, 521 `.bib` files
-  with 13,802 entries and 393 hrefs, the ledger set at 297,050 B against the all-TSV 2,316,386 B, the
+  with 13,802 entries and 393 hrefs, the ledger set at 297,043 B against the all-TSV 2,902,943 B, the
   index tree at 11,531,073 B over 1,033 pages, 66,115
   disk links with 0 broken and 17,700 resolving to a directory, and the substring counts 18 / 373
   against the brace-qualified 17 / 372. `test_ledger_joins_fire_on_faults_the_literals_miss` proves a
