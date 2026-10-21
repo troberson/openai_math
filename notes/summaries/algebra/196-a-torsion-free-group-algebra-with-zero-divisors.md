@@ -1,13 +1,12 @@
-# 196 - A torsion-free group algebra with zero divisors
+Notes / Summaries / Algebra / [Family 196](../../index/algebra/196-a-torsion-free-group-algebra-with-zero-divisors.md)
+
+# 196 — A counterexample to Kaplansky's zero-divisor conjecture
 
 ## Original CONTENTS.md summary
 
 [S1:473] carries the family entry:
 
-> Constructs a finitely presented torsion-free group $G$ whose group
-> algebra $\mathbb F_2[G]$ has nonzero zero divisors, disproving
-> Kaplansky's zero-divisor conjecture. The group has a finite
-> two-dimensional classifying space.
+> Constructs a finitely presented torsion-free group $G$ whose group algebra $\mathbb F_2[G]$ has nonzero zero divisors, disproving Kaplansky's zero-divisor conjecture. The group has a finite two-dimensional classifying space.
 
 The entry names the manuscript "A Torsion-Free Group Algebra with Zero Divisors" [S1:473].
 
@@ -31,7 +30,7 @@ The conjecture is stated. [S3:50–50] states it: "Kaplansky's zero-divisor conj
 
 The elementary obstruction is recorded. [S3:60] records it: "Finite-order elements give elementary zero divisors: if \(g\) has order \(m>1\), then \((1-g)(1+g+\cdots+g^{m-1})=0\). The conjecture asks whether removing this obstruction suffices."
 
-The unique-product property is defined. [S3:64] defines it: "A group has the \emph{unique-product property} if, for every pair of finite nonempty subsets \(P,Q\), some element of \(PQ\) has exactly one expression \(pq\) with \(p\in P\), \(q\in Q\). Applying this property to the supports of two nonzero group-algebra elements gives a nonzero product coefficient."
+The unique-product property is defined. [S3:64] defines it: "A group has the _unique-product property_ if, for every pair of finite nonempty subsets \(P,Q\), some element of \(PQ\) has exactly one expression \(pq\) with \(p\in P\), \(q\in Q\). Applying this property to the supports of two nonzero group-algebra elements gives a nonzero product coefficient."
 
 The gap is stated. [S3:64] states it: "Failure of unique product alone does not produce a zero divisor: over \(\mathbb F_2\), the relevant representation counts must be even, not merely greater than one."
 
@@ -53,31 +52,31 @@ and by [S3:92]: "Distinguishing genuinely different graph lifts from coincident 
 
 and by [S3:92]: "Here the prescribed vertex types and repeated traversals require a separate probability estimate, and the needed topology is proved directly by cone-picture surgery. We do not invoke a small-cancellation or \(\mathrm{CAT}(0)\) criterion for these graphs."
 
-The conventions are recorded. [S3:96] records them: "All graphs are finite unless stated otherwise. A graph may initially have loops or parallel edges; both are counted in its girth. A signed alphabet \(T\) has a fixed-point-free involution \(t\mapsto\bar t\), with \(\bar t\) denoting the inverse letter. The rose \(F\) has one vertex and one unoriented edge for each inverse pair. A labelled graph maps immersively to \(F\) when each outgoing label occurs at most once at each vertex. An \emph{immersed path} is an edge path with no immediate reversal; a closed path is \emph{cyclically immersed} if this also holds at its last/first junction. Length always counts edge traversals, including repetitions."
+The conventions are recorded. [S3:96] records them: "All graphs are finite unless stated otherwise. A graph may initially have loops or parallel edges; both are counted in its girth. A signed alphabet \(T\) has a fixed-point-free involution \(t\mapsto\bar t\), with \(\bar t\) denoting the inverse letter. The rose \(F\) has one vertex and one unoriented edge for each inverse pair. A labelled graph maps immersively to \(F\) when each outgoing label occurs at most once at each vertex. An _immersed path_ is an edge path with no immediate reversal; a closed path is _cyclically immersed_ if this also holds at its last/first junction. Length always counts edge traversals, including repetitions."
 
-The types section opens with the design. [S4:3–8] opens it: "We construct the two immersed graphs so that their outgoing-label sets have odd cross-intersections, the condition needed for cancellation. The same vertex types also provide a squared-word decay estimate. Conditioning the matchings on large girth will preserve enough control to prove a diameter bound and, in \Cref{sec:bounded-pattern}, exclude the path configurations that could defeat the geometric safeguards."
+The types section opens with the design. [S4:3–8] opens it: "We construct the two immersed graphs so that their outgoing-label sets have odd cross-intersections, the condition needed for cancellation. The same vertex types also provide a squared-word decay estimate. Conditioning the matchings on large girth will preserve enough control to prove a diameter bound and, in  , exclude the path configurations that could defeat the geometric safeguards."
 
-The entropy section opens. [S5:4–7] opens it: "All probabilities in this section refer to the distribution conditioned on \(\operatorname{girth}(\Gamma)\ge L\).  We retain the predetermined vertices \(x_A\) and \(x_B\). The possible rooted interval will accommodate a null-homotopy of a root-to-vertex path in \Cref{sec:topology}."
+The entropy section opens. [S5:4–7] opens it: "All probabilities in this section refer to the distribution conditioned on \(\operatorname{girth}(\Gamma)\ge L\).  We retain the predetermined vertices \(x_A\) and \(x_B\). The possible rooted interval will accommodate a null-homotopy of a root-to-vertex path in  ."
 
 The bounded-pattern estimate is given. [S5:30–34] gives it: "There is a constant \(\varepsilon>0\), depending only on the fixed types and turn weights, with the following property.  For every fixed positive integer \(K\), fixed real \(C\ge1\), and fixed nonnegative integer \(I\), the conditional probability tends to zero that there exists a system as above having at most \(K\) paths, total length \(H\) with"
 
-The planar section opens. [S6:4–8] opens it: "Proposition~\ref{prop:bounded-pattern} controls systems of bounded size. We now show that any spherical arrangement of the kind needed for the topological argument contains such a system.  The number of disks in the arrangement is unrestricted.  Throughout this section, probability is taken in the distribution conditioned on girth at least $L$."
+The planar section opens. [S6:4–8] opens it: "Proposition~  controls systems of bounded size. We now show that any spherical arrangement of the kind needed for the topological argument contains such a system.  The number of disks in the arrangement is unrestricted.  Throughout this section, probability is taken in the distribution conditioned on girth at least $L$."
 
-The arrangement exclusion is given. [S6:254–258] gives it: "With probability $1-o(1)$, $\Gamma$ admits no reduced spherical arrangement.  In particular, for all sufficiently large admissible $n$ there exist graphs of the prescribed types, with girth at least $L$ and the diameter bound of Lemma~\ref{lem:diameter}, admitting no such arrangement."
+The arrangement exclusion is given. [S6:254–258] gives it: "With probability $1-o(1)$, $\Gamma$ admits no reduced spherical arrangement.  In particular, for all sufficiently large admissible $n$ there exist graphs of the prescribed types, with girth at least $L$ and the diameter bound of Lemma~ , admitting no such arrangement."
 
-The topology section opens. [S7:3] opens it: "Fix graphs supplied by \Cref{prop:no-arrangements}. Attach to the rose \(F\), for each connected component \(\Lambda\) of \(\Gamma\), its abstract cone \(K_\Lambda\) along the labelled map \(\Lambda\to F\). Denote the resulting finite two-dimensional CW complex by \(X\), and put \(G=\pi_1(X)\), based at the rose vertex. In particular, labels of all closed walks in \(\Gamma\) are trivial in \(G\)."
+The topology section opens. [S7:3] opens it: "Fix graphs supplied by  . Attach to the rose \(F\), for each connected component \(\Lambda\) of \(\Gamma\), its abstract cone \(K_\Lambda\) along the labelled map \(\Lambda\to F\). Denote the resulting finite two-dimensional CW complex by \(X\), and put \(G=\pi_1(X)\), based at the rose vertex. In particular, labels of all closed walks in \(\Gamma\) are trivial in \(G\)."
 
 The asphericity conclusion is given. [S7:6] gives it: "The complex \(X\) satisfies \(\pi_2(X)=0\). Moreover, if a path in \(\Gamma\) starts at \(x_A\) or \(x_B\) and ends at a different vertex, its label is nontrivial in \(G\)."
 
 The method is stated. [S7:9] states it: "We prove the two conclusions together, using minimal surface pictures. The proof keeps track of the actual boundary lifts in \(\Gamma\). Removing overlaps with coincident graph lifts is also central to the graphical-diagram arguments of Gruber and Bereznyuk"
 
-and by [S7:9]: "Their hypotheses are not imported here: we give the cone-picture reduction needed for \Cref{prop:no-arrangements} directly, without a graphical small-cancellation condition."
+and by [S7:9]: "Their hypotheses are not imported here: we give the cone-picture reduction needed for   directly, without a graphical small-cancellation condition."
 
-The factors section opens. [S8:4] opens it: "Use the graphs of \Cref{prop:no-arrangements} and the complex \(X\) constructed in \Cref{sec:topology}. It is finite and two-dimensional. By \Cref{cor:torsion-free}, it is a classifying space for the torsion-free group \(G=\pi_1(X)\), which is finitely presented."
+The factors section opens. [S8:4] opens it: "Use the graphs of   and the complex \(X\) constructed in  . It is finite and two-dimensional. By  , it is a classifying space for the torsion-free group \(G=\pi_1(X)\), which is finitely presented."
 
-The factors' nonvanishing is stated. [S8:14] states it: "Both sums are finite. The root contributes the identity to each. By \Cref{prop:topology}, no other vertex contributes identity, so its coefficient is one in each factor. Thus \(\alpha\ne0\) and \(\beta\ne0\). No assertion about equality between two non-root labels is needed."
+The factors' nonvanishing is stated. [S8:14] states it: "Both sums are finite. The root contributes the identity to each. By  , no other vertex contributes identity, so its coefficient is one in each factor. Thus \(\alpha\ne0\) and \(\beta\ne0\). No assertion about equality between two non-root labels is needed."
 
-The cancellation step is stated. [S8:26] states it: "The reverse step has label \(\bar t\). Since full components are used, the degree at \((x,y)\) is the entire number \(|S_x\cap S_y|\), which is odd by \eqref{eq:odd-intersections}. The girth condition excludes loops for the chosen large \(n\); parallel edges would not affect the degree-sum argument."
+The cancellation step is stated. [S8:26] states it: "The reverse step has label \(\bar t\). Since full components are used, the degree at \((x,y)\) is the entire number \(|S_x\cap S_y|\), which is odd by  . The girth condition excludes loops for the chosen large \(n\); parallel edges would not affect the degree-sum argument."
 
 ## Section skeleton
 

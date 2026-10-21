@@ -1,4 +1,6 @@
-# 004 — Hilbert's tenth problem over ℚ (Number theory, 2 manuscripts, tier T0)
+Notes / Summaries / Number theory / [Family 004](../../index/number-theory/004-hilberts-tenth-problem-over-q.md)
+
+# 004 — Hilbert's tenth problem over $\mathbb Q$
 
 ## Original CONTENTS.md summary
 
@@ -12,7 +14,7 @@ The family ships two manuscripts, and the release describes them as two differen
 
 The second [S1:118]:
 
-> We prove a pointwise 2-converse for elliptic curves over $`\mathbf Q`$ with nonzero rational two-torsion: if the $`2^\infty`$-Selmer corank is zero or one, then the analytic rank and Mordell–Weil rank equal that corank, and the Shafarevich–Tate group is finite. The result allows arbitrary reduction at 2.
+> We prove a pointwise $2$-converse for elliptic curves over $\mathbf Q$ with nonzero rational two-torsion: if the $2^\infty$-Selmer corank is zero or one, then the analytic rank and Mordell--Weil rank equal that corank, and the Shafarevich--Tate group is finite. The result allows arbitrary reduction at $2$.
 
 The pairing is not two versions of one claim. The undecidability manuscript is the headline; the elliptic-curve manuscript is an arithmetic input that headline's proof consumes. The roadmap says so — "its passage from two-descent data to rational points uses the pointwise $2$-converse" [S5:232–234] — and the undecidability manuscript carries that result in its own bibliography, under the key `PointwiseTwoConverse` [S7:16–23].
 
@@ -20,7 +22,7 @@ The pairing is not two versions of one claim. The undecidability manuscript is t
 
 Hilbert's tenth problem asks for an algorithm that, given a polynomial with integer coefficients, decides whether it has an integer solution. That question was closed in 1970: no such algorithm exists. Family 004 answers the rational version — same input, same question, with a solution in ℚ replacing a solution in ℤ. The manuscript states its result as [S5:8–10]:
 
-> There is no algorithm which, given a polynomial $f\in\Z[X_1,\ldots,X_n]$, with $n$ part of the input, decides whether $f$ has a zero in $\Q^n$.
+> There is no algorithm which, given a polynomial $f\in\mathbb Z[X_1,\ldots,X_n]$, with $n$ part of the input, decides whether $f$ has a zero in $\mathbb Q^n$.
 
 The clause "with $n$ part of the input" [S5:8–10] is load-bearing. If the number of variables were fixed in advance, the question would be a different one; the theorem is about the full problem, where the polynomial arrives with any number of variables attached.
 
@@ -46,7 +48,7 @@ The arithmetic that makes the height bound uniform is a 2-converse statement abo
 
 **The moves, as the paper organises them.**
 
-1. **The finite-test interface.** The reduction is stated as an interface, not as a definition of ℤ inside ℚ: "For each nonconstant integral polynomial \(f\), we construct an effectively generated sequence of finite tests" [S5:173–174], and the interface is the equivalence "f\text{ has an integer zero}" ⟺ "every test succeeds" [S5:176–180], each test answerable by finitely many rational-solvability queries.
+1. **The finite-test interface.** The reduction is stated as an interface, not as a definition of ℤ inside ℚ: "For each nonconstant integral polynomial \(f\), we construct an effectively generated sequence of finite tests" [S5:173–174], and the interface is the equivalence "f has an integer zero" ⟺ "every test succeeds" [S5:176–180], each test answerable by finitely many rational-solvability queries.
 2. **The parity step.** Section 3 of the manuscript proves the pole-parity condition, and its passage from two-descent data to rational points is the pointwise 2-converse [S5:232–234], paired with the Cassels–Tate pairing. This is the family's internal dependency: the headline proof consumes the family's second manuscript.
 3. **The height step.** Section 4 proves the five-point height estimate, and "Its modularity step uses the odd regular Fontaine--Mazur theorem at $2$" [S5:236–237], "whose statement has no hypothesis on the residual image" [S5:238–239]. Both inputs are inside the release: the 2-converse is this family's own second manuscript [S7:16–23], the Goldfeld-form 2-converse is family 006 [S7:24–31], and the Fontaine–Mazur theorem at 2 is family 010 [S7:32–39].
 4. **The quantitative core.** Two parameters carry the contradiction: \(\delta=f(\eta(a_1),\ldots,\eta(a_n))\) and \(B=\max(1,|\eta(a_1)|,\ldots,|\eta(a_n)|)\) are set at [S5:208–212], and the paper states what \(\delta\) is worth — "Otherwise \(\delta\) is a nonzero ambient integer whose size is bounded by a fixed polynomial in \(B\)" [S5:213] — and what the collision is — "the two bounds give \(B^2\ll_f B\)" [S5:225]. The left side is the canonical height of the attached point, growing quadratically in $|\eta(a_j)|$; the right side is the reduction's uniform height bound.
@@ -56,17 +58,17 @@ The arithmetic that makes the height bound uniform is a 2-converse statement abo
 
 6. **The exact complexity.** The consequences section fixes the Turing degree [S6:9–12]:
 
-> With the usual effective coding, let \(\mathrm{H10}(\Q)\) be the set of integral polynomials having a rational zero, with the number of variables part of the input. Then \(\mathrm{H10}(\Q)\) has Turing degree \(0'\), the degree of the halting problem.
+> With the usual effective coding, let \(\mathrm{H10}(\mathbb Q)\) be the set of integral polynomials having a rational zero, with the number of variables part of the input. Then \(\mathrm{H10}(\mathbb Q)\) has Turing degree \(0'\), the degree of the halting problem.
 
 The proof of that corollary runs in both directions: $\mathrm{H10}(\Z)\le_T\mathrm{H10}(\Q)$ from the reduction, and the converse from enumerability — "Rational solvability is also computably enumerable" [S6:49] — and it ends by normalising the presentation to degree four, "The expanded polynomial has integral coefficients and total degree at most four" [S6:95–96].
 
 **The companion theorem.** The second manuscript's headline is a pointwise 2-converse [S10:23–29]:
 
-> Let $E/\Q$ be an elliptic curve with $E(\Q)[2]\ne0$ and $s_2(E)\in\{0,1\}$. Then \[ \ord_{s=1}L(E,s)=\rank_{\Z}E(\Q)=s_2(E), \qquad \Sha(E/\Q)\text{ is finite}. \]
+> Let $E/\mathbb Q$ be an elliptic curve with $E(\mathbb Q)[2]\ne0$ and $s_2(E)\in\{0,1\}$. Then \[ \ord_{s=1}L(E,s)=\rank_{\mathbb Z}E(\mathbb Q)=s_2(E), \qquad \operatorname{Sha}(E/\mathbb Q) is finite. \]
 
 Its abstract states the same claim in prose [S9:60–64]:
 
-> We prove a pointwise $2$-converse for elliptic curves over $\mathbf Q$ with nonzero rational two-torsion: if the $2^\infty$-Selmer corank is zero or one, then the analytic rank and Mordell--Weil rank equal that corank, and the Shafarevich--Tate group is finite. The result allows arbitrary reduction at $2$.
+> We prove a pointwise 2-converse for elliptic curves over $`\mathbf Q`$ with nonzero rational two-torsion: if the $`2^\infty`$-Selmer corank is zero or one, then the analytic rank and Mordell–Weil rank equal that corank, and the Shafarevich–Tate group is finite. The result allows arbitrary reduction at 2.
 
 Its scope is stated as a range, not as a hypothesis on the curve [S10:32–37]:
 
@@ -80,9 +82,9 @@ So the dependency inside family 004 runs one way: the undecidability manuscript 
 
 **What the pair does not say.** The undecidability result is a negative answer, not an exhibited object, and the release's own reading record says so: "004 is a negative *resolution* of Hilbert's tenth problem over **Q**, not an exhibited object" [S14:534]. The corollary section is equally explicit about its own limits [S6:100–107]:
 
-> The many-one reduction to the restricted problems starts from \(\mathrm{H10}(\Q)\); the reduction from \(\mathrm{H10}(\Z)\) remains a Turing reduction. This argument does not establish many-one completeness of \(\mathrm{H10}(\Q)\). The list in (ii) is supplied as part of the input, so no recognition of sum-of-squares presentations is needed. The construction supplies no bound on the number of variables or coefficient heights, and it gives no single existential definition of \(\Z\) in \(\Q\).
+> The many-one reduction to the restricted problems starts from \(\mathrm{H10}(\mathbb Q)\); the reduction from \(\mathrm{H10}(\mathbb Z)\) remains a Turing reduction. This argument does not establish many-one completeness of \(\mathrm{H10}(\mathbb Q)\). The list in (ii) is supplied as part of the input, so no recognition of sum-of-squares presentations is needed. The construction supplies no bound on the number of variables or coefficient heights, and it gives no single existential definition of \(\mathbb Z\) in \(\mathbb Q\).
 
-That last clause is the one to hold onto: this proof does not produce an existential definition of ℤ in ℚ, which is the route the number-field results take [S5:129–134], and the manuscript says plainly that ℚ is outside the class of rings those results cover — "The field \(\mathbb Q\) is not a finitely generated \(\mathbb Z\)-algebra" [S5:141–143]. On the elliptic-curve side, the companion theorem bounds its own claim [S10:34–37]: "It is a $2$-converse in this residual range. It does not assert the full Birch--Swinnerton-Dyer leading-coefficient formula, nor does a bound $\rank E(\Q)\le1$ alone imply its Selmer hypothesis."
+That last clause is the one to hold onto: this proof does not produce an existential definition of ℤ in ℚ, which is the route the number-field results take [S5:129–134], and the manuscript says plainly that ℚ is outside the class of rings those results cover — "The field \(\mathbb Q\) is not a finitely generated \(\mathbb Z\)-algebra" [S5:141–143]. On the elliptic-curve side, the companion theorem bounds its own claim [S10:34–37]: "It is a $2$-converse in this residual range. It does not assert the full Birch--Swinnerton-Dyer leading-coefficient formula, nor does a bound $\rank E(\mathbb Q)\le1$ alone imply its Selmer hypothesis."
 
 **Formalization status.** The ledger row for 004 records 2 manuscripts, 0 formalized, no scope note, no comparator challenge, no `main_results` config, no verification directory, no reasoning trace, tier T0 [S15:5]. Nothing about this family is machine-checked. It is the only T0 family carrying the `undecidability` claim-shape tag [S14:117–118], and it is one of the six T0 families that the narrow counterexample tag misses and the wider phrase rule catches [S16:145–146]. The rule matches the release's own wording — "resolving Hilbert's tenth problem over $\mathbb Q$ negatively" [S2:84] — and the reading verdict recorded for the family is "a negative resolution, not an exhibited object" [S16:65–67].
 
@@ -102,7 +104,7 @@ On the elliptic-curve side, the 2-converse has its own history, and the companio
 
 > These results already treat individual curves in their stated ranges; the theorem here includes non-CM curves with rational two-torsion and imposes no reduction condition at $2$.
 
-## Consequences now that the proof has been found
+## Consequences
 
 **The complexity is pinned, not just the undecidability.** The corollary fixes the exact degree [S6:9–12] — $\mathrm{H10}(\Q)$ has Turing degree $0'$ — and the same corollary recasts the problem in a bounded-degree form, with the caveat attached [S6:21–22]: "No bound is imposed on the number of variables, the number of summands in (ii), or the coefficient heights." The caveats paragraph is the honest boundary of the whole construction [S6:100–107], quoted above: no many-one completeness, no single existential definition of ℤ in ℚ.
 
@@ -115,28 +117,39 @@ On the elliptic-curve side, the 2-converse has its own history, and the companio
 ## Sources
 
 | # | File | Lines | Role |
-|---|---|---|---|
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Release entry for family 004 (100); manuscript blurbs (109, 118) |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | `\resultentry{004}` — title, abstract, manuscript paths (84) |
-| S3 | [`preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/README.md`](../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/README.md) | 21 | Provenance: author (3), date (5), citation block (9–17), version note (19–21) naming the superseded directory |
-| S4 | [`preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/build/main.tex`](../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/build/main.tex) | 81 | Title (58), date (60), abstract (63–67), section inputs (71–77) |
-| S5 | [`preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/build/sections/01-introduction.tex`](../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/build/sections/01-introduction.tex) | 250 | Theorem (7–11); history (13–169); proof strategy (171–243) |
-| S6 | [`preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/build/sections/07-consequences.tex`](../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/build/sections/07-consequences.tex) | 108 | Turing-degree and quartic corollary (8–23) and its proof (25–108) |
-| S7 | [`preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/build/references/references.bib`](../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/build/references/references.bib) | 1,078 | Intra-corpus entries: `PointwiseTwoConverse` (16–23), `UnrestrictedTwoConverse` (24–31), `OddRegularFontaineMazurAtTwo` (32–39) |
-| S8 | [`preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/README.md`](../../../preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/README.md) | 21 | Provenance: author (3), date (5), citation block (9–17), version note (19–21) naming the superseded directory |
-| S9 | [`preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/build/paper.tex`](../../../preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/build/paper.tex) | 80 | Title (54), date (56), abstract (59–65), section inputs (69–77) |
-| S10 | [`preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/build/sections/introduction.tex`](../../../preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/build/sections/introduction.tex) | 173 | Theorem 1.1 (22–29); scope (32–37); companion (39–43); history (45–76); method (78–171) |
-| S11 | [`preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/build/references.bib`](../../../preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/build/references.bib) | 355 | `OpenAIGoldfeldTwoConverse2026` — family 006 (349–355) |
-| S12 | [`preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf`](../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf) | — | Typeset manuscript, 701,017 bytes |
-| S13 | [`preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/paper.pdf`](../../../preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/paper.pdf) | — | Typeset manuscript, 893,027 bytes |
-| S14 | [`notes/reports/t0-triage.md`](../../reports/t0-triage.md) | 897 | Bucket entry (117–118); flag-only reading (534) |
-| S15 | [`notes/tables/catalog.tsv`](../../tables/catalog.tsv) | 373 | Ledger row 5 — tier, counts, claim-shape tags |
-| S16 | [`notes/reports/counterexample-tag.md`](../../reports/counterexample-tag.md) | 203 | Phrase rule (39–44); 004 catch (53–55); 004 verdict (65–67); T0 counts (183–184) |
+| --- | --- | --- | --- |
+| S1 | `CONTENTS.md` | 9142 | Release entry for family 004 (100); manuscript blurbs (109, 118) |
+| S2 | `overview.tex` | 859 | `\resultentry{004}` — title, abstract, manuscript paths (84) |
+| S3 | `preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/README.md` | 21 | Provenance: author (3), date (5), citation block (9–17), version note (19–21) naming the superseded directory |
+| S4 | `preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/build/main.tex` | 81 | Title (58), date (60), abstract (63–67), section inputs (71–77) |
+| S5 | `preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/build/sections/01-introduction.tex` | 250 | Theorem (7–11); history (13–169); proof strategy (171–243) |
+| S6 | `preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/build/sections/07-consequences.tex` | 108 | Turing-degree and quartic corollary (8–23) and its proof (25–108) |
+| S7 | `preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/build/references/references.bib` | 1078 | Intra-corpus entries: `PointwiseTwoConverse` (16–23), `UnrestrictedTwoConverse` (24–31), `OddRegularFontaineMazurAtTwo` (32–39) |
+| S8 | `preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/README.md` | 21 | Provenance: author (3), date (5), citation block (9–17), version note (19–21) naming the superseded directory |
+| S9 | `preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/build/paper.tex` | 80 | Title (54), date (56), abstract (59–65), section inputs (69–77) |
+| S10 | `preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/build/sections/introduction.tex` | 173 | Theorem 1.1 (22–29); scope (32–37); companion (39–43); history (45–76); method (78–171) |
+| S11 | `preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/build/references.bib` | 355 | `OpenAIGoldfeldTwoConverse2026` — family 006 (349–355) |
+| S12 | `preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf` | 20041 | Typeset manuscript, 701,017 bytes |
+| S13 | `preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/paper.pdf` | 25738 | Typeset manuscript, 893,027 bytes |
+| S14 | `notes/reports/t0-triage.md` | 897 | Bucket entry (117–118); flag-only reading (534) |
+| S15 | `notes/tables/catalog.tsv` | 373 | Ledger row 5 — tier, counts, claim-shape tags |
+| S16 | `notes/reports/counterexample-tag.md` | 203 | Phrase rule (39–44); 004 catch (53–55); 004 verdict (65–67); T0 counts (183–184) |
 
-Both manuscripts ship their LaTeX source under a `build/` tree and their PDF at the directory root; the provenance blocks [S3:9–17], [S8:9–17] give the citation keys, and the typeset PDFs are [S12] and [S13]. The release's own entry for the family is [S2:84], which names both manuscript paths.
+## Links
 
-Both are re-issues, and each README's version note names its predecessor [S3:19–21] [S8:19–21]: manuscript 1 replaces `Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026/` and manuscript 2 replaces `A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-September-24-2026/`. The release names only the newer directory; the superseded one stays on disk and git-tracked. The re-issues are citation refreshes, not new mathematics: manuscript 1's `build/main.tex` differs from its predecessor only in its `\date` line, and its `build/references/references.bib` only in the three `\href`s repointing this family's own sibling, family 006 and family 010; manuscript 2's `build/paper.tex` differs only in its `\date` line and its `build/references.bib` only in the one `\href` repointing family 006. No file in either adds or removes a line, so every line anchor on this page resolves in both versions.
-
-Checked with `python3 notes/scripts/verify_summaries.py`, which resolves every `[S#:line]` marker against the shipped file, matches every quotation against the lines it cites, and writes nothing. The injected mutants live in `notes/scripts/tests/test_summaries.py`, run with `python3 notes/scripts/run_tests.py notes/scripts/tests/test_summaries.py -q`: a real quotation corrupted in each form the page uses (inline, wrapped across lines, block quote), one fabricated quotation, the manuscript root retargeted to its superseded sibling, and a bare locator citation moved above the family's own block. The checker measures; the test file injects.
-
-Absent by construction (T0): `lean/docs/004.md`, any `lean/OAI/**` file, any `lean/ComparatorChallenges/` entry, any `main_results` config, any verification directory, any reasoning trace.
+- [S1](../../../CONTENTS.md)
+- [S2](../../../overview.tex)
+- [S3](../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/README.md)
+- [S4](../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/build/main.tex)
+- [S5](../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/build/sections/01-introduction.tex)
+- [S6](../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/build/sections/07-consequences.tex)
+- [S7](../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/build/references/references.bib)
+- [S8](../../../preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/README.md)
+- [S9](../../../preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/build/paper.tex)
+- [S10](../../../preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/build/sections/introduction.tex)
+- [S11](../../../preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/build/references.bib)
+- [S12](../../../preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf)
+- [S13](../../../preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/paper.pdf)
+- [S14](../../../notes/reports/t0-triage.md)
+- [S15](../../../notes/tables/catalog.tsv)
+- [S16](../../../notes/reports/counterexample-tag.md)

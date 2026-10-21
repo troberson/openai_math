@@ -1,15 +1,12 @@
-# 072 - Brennan's conjecture and a counterexample to Kraetzer's prediction
+Notes / Summaries / Real and complex analysis / [Family 072](../../index/real-and-complex-analysis/072-brennans-conjecture-and-a-counterexample-to-kraetzers-prediction.md)
+
+# 072 — Brennan's conjecture and a counterexample to Kraetzer's prediction
 
 ## Original CONTENTS.md summary
 
 [S1:218] carries the family entry:
 
-> Proves Brennan's conjecture: for every conformal bijection $\phi$ from a
-> simply connected plane domain onto the disk, $|\phi'|^s$ is area-integrable
-> for $4/3<s<4$. The sharp universal integral-means identity is
-> $B_{\mathcal S}(t)=|t|-1$ for $t\le-2$. A strict bound $B_b(-1)<1/4$ for
-> bounded univalent functions disproves Kraetzer's prediction at that
-> parameter.
+> Proves Brennan's conjecture: for every conformal bijection $\phi$ from a simply connected plane domain onto the disk, $|\phi'|^s$ is area-integrable for $4/3<s<4$. The sharp universal integral-means identity is $B_{\mathcal S}(t)=|t|-1$ for $t\le-2$. A strict bound $B_b(-1)<1/4$ for bounded univalent functions disproves Kraetzer's prediction at that parameter.
 
 The entry links the two manuscripts as "Brennan’s conjecture" and "Strict
 inverse-first-power bound" [S1:218].
@@ -170,7 +167,7 @@ endpoint theorem needs.
 prior on Brennan's conjecture's standing is not recorded in the release's own
 reading. The claim in the entry is the record.
 
-## Consequences now that the proof has been found
+## Consequences
 
 Brennan's conjecture is settled for the full class, with no boundary
 regularity and no boundedness, and the open interval cannot be widened. The
@@ -225,7 +222,7 @@ claims exist and names their declarations; the three comparator configs carry
 | S28 | `lean/ComparatorChallenges/BrennanSharp.lean` | 44 | Stub, `sorry` at line 37 |
 | S29 | `lean/ComparatorChallenges/StrictMeans.lean` | 45 | Stub, `sorry` at line 41 |
 
-The manuscript roots are `preprints/Brennans-conjecture-and-sharp-inverse-square-integral-means-September-24-2026/` and `preprints/A-strict-inverse-first-power-bound-for-univalent-functions-September-24-2026/`, enumerated on disk: each carries `README.md`, `paper.pdf`, and `build/` with `figures/`, `main.tex`, `references/references.bib`, and `sections/`. Every File cell above is the repo-relative path; the links below are relative to this page.
+## Links
 
 - [S1](../../../overview.tex)
 - [S2](../../../preprints/Brennans-conjecture-and-sharp-inverse-square-integral-means-September-24-2026/README.md)

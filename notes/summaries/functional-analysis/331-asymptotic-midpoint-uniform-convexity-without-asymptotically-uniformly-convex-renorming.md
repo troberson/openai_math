@@ -1,12 +1,12 @@
-# 331 - Asymptotic midpoint uniform convexity without asymptotically uniformly convex renorming
+Notes / Summaries / Functional analysis / [Family 331](../../index/functional-analysis/331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md)
+
+# 331 — Asymptotic midpoint uniform convexity without asymptotically uniformly convex renorming
 
 ## Original CONTENTS.md summary
 
 [S1:758] carries the family entry:
 
-> Constructs a real reflexive Banach space with an asymptotically midpoint uniformly
-> convex norm but no equivalent asymptotically uniformly convex norm, extending
-> Baudier's separation to reflexive spaces.
+> Constructs a real reflexive Banach space with an asymptotically midpoint uniformly convex norm but no equivalent asymptotically uniformly convex norm, extending Baudier's separation to reflexive spaces.
 
 [S1:758] carries the first manuscript entry as link text:
 
@@ -65,7 +65,7 @@ The diamond-graph side comes from the countably branching diamond and the tree-s
 
 The Daugavet companion sits in the Daugavet-property literature: the manuscript states its exact modulus formulas for the class of closed infinite-dimensional subspaces of $L_1[0,1]$ with precompact unit ball in measure, and the citation record in the manuscript's README names the citation key `DaugavetExactModuli`. [S11:37–45]
 
-## Consequences now that the proof has been found
+## Consequences
 
 The consequence the manuscript states for itself is a negative answer to a recorded problem: a reflexive space whose midpoint geometry is asymptotically convex at every scale, and whose diamond distortion is unbounded in depth, with the metric obstruction invariant under equivalent renorming and the numerical constants tied to the specified dual norm. [S3:110–111]
 
@@ -76,7 +76,7 @@ The formalization's own limits are part of the record: the forest results do not
 ## Sources
 
 | # | File | Lines | Role |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | S1 | `overview.tex` | 859 | Family entry, line 758 |
 | S2 | `preprints/Asymptotic-midpoint-uniform-convexity-and-unbounded-diamond-distortion-in-a-reflexive-tree-space-September-27-2026/build/main.tex` | 27 | Abstract, lines 6--14 |
 | S3 | `preprints/Asymptotic-midpoint-uniform-convexity-and-unbounded-diamond-distortion-in-a-reflexive-tree-space-September-27-2026/build/sections/introduction.tex` | 144 | Main theorem 99--108, negative answer 110--113, Girardi 93--97 |
@@ -96,7 +96,7 @@ The formalization's own limits are part of the record: the forest results do not
 | S17 | `preprints/Midpoint-convexity-from-two-recursive-potentials-September-27-2026/build/sections/foundations.tex` | 203 | Recursive-potential theorem, lines 65--77 |
 | S18 | `lean/docs/331.md` | 53 | Scope note: formalized claims and retained hypotheses |
 
-The manuscript roots are `preprints/Asymptotic-midpoint-uniform-convexity-and-unbounded-diamond-distortion-in-a-reflexive-tree-space-September-27-2026/`, `preprints/Midpoint-lenses-in-segment-spaces-September-27-2026/`, `preprints/Diamond-distortion-from-midpoint-and-tree-energies-September-27-2026/`, `preprints/Exact-asymptotic-moduli-in-a-Daugavet-subspace-of-L1-September-27-2026/`, `preprints/Midpoint-convexity-from-bounded-tree-potentials-and-path-costs-September-27-2026/`, `preprints/Independent-products-in-real-L1-asymptotic-midpoint-convexity-without-AUC-renormings-September-27-2026/` and `preprints/Midpoint-convexity-from-two-recursive-potentials-September-27-2026/`, enumerated on disk: each carries `README.md`, `manuscript.pdf`, and `build/` with `figures/`, `main.tex`, `references.bib` and `sections/`; the first two also carry `preamble.tex`. Every File cell above is the repo-relative path; the links below are relative to this page.
+## Links
 
 - [S1](../../../overview.tex)
 - [S2](../../../preprints/Asymptotic-midpoint-uniform-convexity-and-unbounded-diamond-distortion-in-a-reflexive-tree-space-September-27-2026/build/main.tex)

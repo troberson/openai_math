@@ -1,4 +1,6 @@
-# 087 — The Mahler conjectures and symplectic width (Convex and metric geometry, 3 manuscripts, tier T3)
+Notes / Summaries / Convex and metric geometry / [Family 087](../../index/convex-and-metric-geometry/087-the-mahler-conjectures-and-symplectic-width.md)
+
+# 087 — The Mahler conjectures and symplectic width
 
 ## Original CONTENTS.md summary
 
@@ -58,7 +60,7 @@ Symplectic side. Bourgain and Milman's asymptotic reverse Santaló inequality gi
 
 Two boundary conditions in that history matter for reading the result. The unrestricted Viterbo conjecture was answered negatively by a four-dimensional counterexample built from a regular pentagon and a rotated partner [S26:52–54], and the manuscript records why that does not touch its theorem: "the pentagon is not centrally symmetric" [S26:54–55], and its theorem concerns the particular Lagrangian product of a symmetric body and its polar, making no assertion for arbitrary convex domains in phase space [S26:55–57]. The planar coordinate in the construction is Gross's uniform-distribution map from the conformal Skorokhod construction, rotated in source and target [S26:59–60].
 
-## Consequences now that the proof has been found
+## Consequences
 
 The symmetric case is settled, so the open question moves to the sharpness of the functional constants. The geometric theorem implies the functional one, and the implication is one-directional: the limiting implication does not transfer equality cases, so the geometric classification of minimizers does not classify the even potentials for which equality holds [S6:249–251] [S18:46–49]. The two constants are now ordered: 4^n for even potentials, from the symmetric companion, and e^n for general log-concave functions [S18:50–51] [S6:253–255]. The entropy–transport consequence carries additive constant −3n through Gozlan's equivalence [S18:78] [S18:83–87], and the symmetric functional form carries the corresponding constant −n log(4e²) [S6:280].
 
@@ -71,49 +73,93 @@ Two gaps follow from the formalization record rather than from the mathematics. 
 ## Sources
 
 | # | File | Lines | Role |
-|---|---|---|---|
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Release entry and sub-entries for family 087 |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | Release's own family list |
-| S3 | [`README.md`](../../../README.md) | 51 | Trace attribution |
-| S4 | [`preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/README.md`](../../../preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/README.md) | 18 | Symmetric manuscript root |
-| S5 | [`preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/main.tex`](../../../preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/main.tex) | 59 | Symmetric abstract |
-| S6 | [`preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/introduction.tex`](../../../preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/introduction.tex) | 296 | Symmetric theorem, history, proof chain, functional corollary |
-| S7 | [`preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/lens.tex`](../../../preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/lens.tex) | 175 | Conformal lens construction |
-| S8 | [`preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/median.tex`](../../../preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/median.tex) | 230 | Metric medians and Hanner classification |
-| S9 | [`preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/holomorphic-mass.tex`](../../../preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/holomorphic-mass.tex) | 192 | Holomorphic mass estimate |
-| S10 | [`preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/simplex.tex`](../../../preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/simplex.tex) | 220 | Simplex integral over the polar body |
-| S11 | [`preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/feasibility.tex`](../../../preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/feasibility.tex) | 187 | Feasibility sum bound |
-| S12 | [`preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/zero-deficit.tex`](../../../preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/zero-deficit.tex) | 242 | Missing-volume and equality argument |
-| S13 | [`preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/references.bib`](../../../preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/references.bib) | 358 | Symmetric bibliography, including the general companion |
-| S14 | [`preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/README.md`](../../../preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/README.md) | 32 | General manuscript root and verification instructions |
-| S15 | [`preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/build/abstract.tex`](../../../preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/build/abstract.tex) | 5 | General abstract |
-| S16 | [`preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/build/main.tex`](../../../preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/build/main.tex) | 57 | General manuscript assembly |
-| S17 | [`preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/build/sections/00-introduction.tex`](../../../preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/build/sections/00-introduction.tex) | 201 | General theorem, history, strategy, functional bound |
-| S18 | [`preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/build/sections/09-consequences.tex`](../../../preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/build/sections/09-consequences.tex) | 88 | Functional and entropy–transport consequences |
-| S19 | [`preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/build/references.bib`](../../../preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/build/references.bib) | 306 | General bibliography, including the symmetric companion |
-| S20 | [`preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/verification/README.md`](../../../preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/verification/README.md) | 48 | Verification bundle instructions and scope |
-| S21 | [`preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/verification/reproduce.py`](../../../preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/verification/reproduce.py) | 130 | Verification driver |
-| S22 | [`preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/verification/requirements.txt`](../../../preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/verification/requirements.txt) | 3 | Pinned dependency |
-| S23 | [`preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/README.md`](../../../preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/README.md) | 18 | Symplectic manuscript root |
-| S24 | [`preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/main.tex`](../../../preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/main.tex) | 61 | Symplectic abstract |
-| S25 | [`preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/sections/introduction.tex`](../../../preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/sections/introduction.tex) | 112 | Width theorem, scope, packings |
-| S26 | [`preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/sections/history.tex`](../../../preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/sections/history.tex) | 80 | Viterbo program and prior cases |
-| S27 | [`preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/sections/approximation.tex`](../../../preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/sections/approximation.tex) | 249 | Limit theorem, sharpness, packing corollary |
-| S28 | [`preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/references.bib`](../../../preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/references.bib) | 230 | Symplectic bibliography, including the symmetric companion and the ball-packing family |
-| S29 | [`lean/docs/087.md`](../../../lean/docs/087.md) | 30 | Release scope note and comparator table |
-| S30 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1,783 | Release bibliography and `main_results` index |
-| S31 | [`lean/ComparatorChallenges/MahlerConjecture.lean`](../../../lean/ComparatorChallenges/MahlerConjecture.lean) | 26 | Symmetric challenge statement |
-| S32 | [`lean/ComparatorChallenges/MahlerConjecture.json`](../../../lean/ComparatorChallenges/MahlerConjecture.json) | 14 | Symmetric challenge record |
-| S33 | [`lean/ComparatorChallenges/SymmetricMahlerEquality.lean`](../../../lean/ComparatorChallenges/SymmetricMahlerEquality.lean) | 54 | Equality challenge statement |
-| S34 | [`lean/ComparatorChallenges/SymmetricMahlerEquality.json`](../../../lean/ComparatorChallenges/SymmetricMahlerEquality.json) | 17 | Equality challenge record |
-| S35 | [`lean/ComparatorChallenges/GeneralMahler.lean`](../../../lean/ComparatorChallenges/GeneralMahler.lean) | 38 | General challenge statement |
-| S36 | [`lean/ComparatorChallenges/GeneralMahler.json`](../../../lean/ComparatorChallenges/GeneralMahler.json) | 14 | General challenge record |
-| S37 | [`lean/ComparatorChallenges/SymmetricPolar.lean`](../../../lean/ComparatorChallenges/SymmetricPolar.lean) | 49 | Polar-product challenge statement |
-| S38 | [`lean/ComparatorChallenges/SymmetricPolar.json`](../../../lean/ComparatorChallenges/SymmetricPolar.json) | 14 | Polar-product challenge record |
-| S39 | [`lean/OAI/Analysis/Mahler/MainTheorem.lean`](../../../lean/OAI/Analysis/Mahler/MainTheorem.lean) | 28 | Symmetric solution |
-| S40 | [`lean/OAI/Analysis/Mahler/Classification.lean`](../../../lean/OAI/Analysis/Mahler/Classification.lean) | 546 | Equality classification solution |
-| S41 | [`lean/OAI/Geometry/Convex/GeneralMahler/Theorem.lean`](../../../lean/OAI/Geometry/Convex/GeneralMahler/Theorem.lean) | 39 | General solution |
-| S42 | [`lean/OAI/Geometry/PolarProducts/Main.lean`](../../../lean/OAI/Geometry/PolarProducts/Main.lean) | 19 | Polar-product width solution |
-| S43 | [`reasoning_traces/symmetric-and-general-mahler-conjectures.pdf`](../../../reasoning_traces/symmetric-and-general-mahler-conjectures.pdf) | — | Published reasoning trace |
+| --- | --- | --- | --- |
+| S1 | `CONTENTS.md` | 9142 | Release entry and sub-entries for family 087 |
+| S2 | `overview.tex` | 859 | Release's own family list |
+| S3 | `README.md` | 51 | Trace attribution |
+| S4 | `preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/README.md` | 18 | Symmetric manuscript root |
+| S5 | `preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/main.tex` | 59 | Symmetric abstract |
+| S6 | `preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/introduction.tex` | 296 | Symmetric theorem, history, proof chain, functional corollary |
+| S7 | `preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/lens.tex` | 175 | Conformal lens construction |
+| S8 | `preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/median.tex` | 230 | Metric medians and Hanner classification |
+| S9 | `preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/holomorphic-mass.tex` | 192 | Holomorphic mass estimate |
+| S10 | `preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/simplex.tex` | 220 | Simplex integral over the polar body |
+| S11 | `preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/feasibility.tex` | 187 | Feasibility sum bound |
+| S12 | `preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/zero-deficit.tex` | 242 | Missing-volume and equality argument |
+| S13 | `preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/references.bib` | 358 | Symmetric bibliography, including the general companion |
+| S14 | `preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/README.md` | 32 | General manuscript root and verification instructions |
+| S15 | `preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/build/abstract.tex` | 5 | General abstract |
+| S16 | `preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/build/main.tex` | 57 | General manuscript assembly |
+| S17 | `preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/build/sections/00-introduction.tex` | 201 | General theorem, history, strategy, functional bound |
+| S18 | `preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/build/sections/09-consequences.tex` | 88 | Functional and entropy–transport consequences |
+| S19 | `preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/build/references.bib` | 306 | General bibliography, including the symmetric companion |
+| S20 | `preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/verification/README.md` | 48 | Verification bundle instructions and scope |
+| S21 | `preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/verification/reproduce.py` | 130 | Verification driver |
+| S22 | `preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/verification/requirements.txt` | 3 | Pinned dependency |
+| S23 | `preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/README.md` | 18 | Symplectic manuscript root |
+| S24 | `preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/main.tex` | 61 | Symplectic abstract |
+| S25 | `preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/sections/introduction.tex` | 112 | Width theorem, scope, packings |
+| S26 | `preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/sections/history.tex` | 80 | Viterbo program and prior cases |
+| S27 | `preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/sections/approximation.tex` | 249 | Limit theorem, sharpness, packing corollary |
+| S28 | `preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/references.bib` | 230 | Symplectic bibliography, including the symmetric companion and the ball-packing family |
+| S29 | `lean/docs/087.md` | 30 | Release scope note and comparator table |
+| S30 | `lean/formalization.yaml` | 1783 | Release bibliography and `main_results` index |
+| S31 | `lean/ComparatorChallenges/MahlerConjecture.lean` | 26 | Symmetric challenge statement |
+| S32 | `lean/ComparatorChallenges/MahlerConjecture.json` | 14 | Symmetric challenge record |
+| S33 | `lean/ComparatorChallenges/SymmetricMahlerEquality.lean` | 54 | Equality challenge statement |
+| S34 | `lean/ComparatorChallenges/SymmetricMahlerEquality.json` | 17 | Equality challenge record |
+| S35 | `lean/ComparatorChallenges/GeneralMahler.lean` | 38 | General challenge statement |
+| S36 | `lean/ComparatorChallenges/GeneralMahler.json` | 14 | General challenge record |
+| S37 | `lean/ComparatorChallenges/SymmetricPolar.lean` | 49 | Polar-product challenge statement |
+| S38 | `lean/ComparatorChallenges/SymmetricPolar.json` | 14 | Polar-product challenge record |
+| S39 | `lean/OAI/Analysis/Mahler/MainTheorem.lean` | 28 | Symmetric solution |
+| S40 | `lean/OAI/Analysis/Mahler/Classification.lean` | 546 | Equality classification solution |
+| S41 | `lean/OAI/Geometry/Convex/GeneralMahler/Theorem.lean` | 39 | General solution |
+| S42 | `lean/OAI/Geometry/PolarProducts/Main.lean` | 19 | Polar-product width solution |
+| S43 | `reasoning_traces/symmetric-and-general-mahler-conjectures.pdf` | 8747 | Published reasoning trace |
 
-The published trace [S43] covers the symmetric and general problems only, not the symplectic manuscript. Its preamble describes three parts, and Part II takes the symmetric lower bound as a supplied premise and seeks the Hanner equality classification in Part I. The symmetric prompt asks for the bound for every n at least 4, and the general prompt asks for the simplex bound for every n at least 2, while the published theorems are stated for every n at least 1. These are source-level observations about the published trace prompts, not criticisms of the proofs.
+## Links
+
+- [S1](../../../CONTENTS.md)
+- [S2](../../../overview.tex)
+- [S3](../../../README.md)
+- [S4](../../../preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/README.md)
+- [S5](../../../preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/main.tex)
+- [S6](../../../preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/introduction.tex)
+- [S7](../../../preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/lens.tex)
+- [S8](../../../preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/median.tex)
+- [S9](../../../preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/holomorphic-mass.tex)
+- [S10](../../../preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/simplex.tex)
+- [S11](../../../preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/feasibility.tex)
+- [S12](../../../preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/sections/zero-deficit.tex)
+- [S13](../../../preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/build/references.bib)
+- [S14](../../../preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/README.md)
+- [S15](../../../preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/build/abstract.tex)
+- [S16](../../../preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/build/main.tex)
+- [S17](../../../preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/build/sections/00-introduction.tex)
+- [S18](../../../preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/build/sections/09-consequences.tex)
+- [S19](../../../preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/build/references.bib)
+- [S20](../../../preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/verification/README.md)
+- [S21](../../../preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/verification/reproduce.py)
+- [S22](../../../preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/verification/requirements.txt)
+- [S23](../../../preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/README.md)
+- [S24](../../../preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/main.tex)
+- [S25](../../../preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/sections/introduction.tex)
+- [S26](../../../preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/sections/history.tex)
+- [S27](../../../preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/sections/approximation.tex)
+- [S28](../../../preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/build/references.bib)
+- [S29](../../../lean/docs/087.md)
+- [S30](../../../lean/formalization.yaml)
+- [S31](../../../lean/ComparatorChallenges/MahlerConjecture.lean)
+- [S32](../../../lean/ComparatorChallenges/MahlerConjecture.json)
+- [S33](../../../lean/ComparatorChallenges/SymmetricMahlerEquality.lean)
+- [S34](../../../lean/ComparatorChallenges/SymmetricMahlerEquality.json)
+- [S35](../../../lean/ComparatorChallenges/GeneralMahler.lean)
+- [S36](../../../lean/ComparatorChallenges/GeneralMahler.json)
+- [S37](../../../lean/ComparatorChallenges/SymmetricPolar.lean)
+- [S38](../../../lean/ComparatorChallenges/SymmetricPolar.json)
+- [S39](../../../lean/OAI/Analysis/Mahler/MainTheorem.lean)
+- [S40](../../../lean/OAI/Analysis/Mahler/Classification.lean)
+- [S41](../../../lean/OAI/Geometry/Convex/GeneralMahler/Theorem.lean)
+- [S42](../../../lean/OAI/Geometry/PolarProducts/Main.lean)
+- [S43](../../../reasoning_traces/symmetric-and-general-mahler-conjectures.pdf)

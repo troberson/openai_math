@@ -1,6 +1,6 @@
-# 346 — Sharp singular-set bounds for stationary integral varifolds (Differential geometry, 2 manuscripts, tier T0)
+Notes / Summaries / Differential geometry / [Family 346](../../index/differential-geometry/346-sharp-singular-set-bounds-for-stationary-integral-varifolds.md)
 
-Two manuscripts. The October 5, 2026 codimension-one bound [S3:5] ships `varifold-singular-dimension.pdf` [S4], `build/main.tex` [S5], eight section files, `build/macros.tex`, and `build/references.bib` [S7]. The September 23, 2026 almost-everywhere regularity paper [S8:5] ships `paper.pdf` [S9], `build/paper.tex` [S10], nine section files, `build/macros.tex`, and `build/references.bib` [S12]. Neither README carries a version note, so both are first editions [S3:1–17] [S8:1–17]. The family is at tier T0: the release formalizes neither manuscript, and ships no scope note, comparator challenge, `main_results` entry, verification bundle, or reasoning trace [S13:342].
+# 346 — Sharp singular-set bounds for stationary integral varifolds
 
 ## Original CONTENTS.md summary
 
@@ -10,7 +10,7 @@ The release's blurb for family 346 [S1:8372]:
 
 The first manuscript's abstract [S1:8381]:
 
-> The singular set of every stationary integral m-varifold in an open Euclidean set has Hausdorff dimension at most $m-1$, in every positive dimension and codimension. This sharp bound proves the Euclidean singular-set conjecture recorded by Brena, Decio, and De Lellis.
+> Brena, Decio, and De Lellis \cite[Conjectures~1.1 and~1.2]{BDD2025} separate the dimension bound from the weaker assertion $\Hh^m(\Sing V)=0$. The latter Euclidean assertion is proved in _Almost-everywhere regularity of stationary integral varifolds_  , which we henceforth call AE. Our proof uses AE's signed-excess theorem and local estimates from its fitting and frequency arguments.
 
 The second manuscript's abstract [S1:8390]:
 
@@ -34,18 +34,11 @@ and [S8:10–13]:
 
 A stationary integral varifold is a measure-theoretic minimal surface with integer multiplicity: a countably $m$-rectifiable set carrying a positive integer weight whose first variation of area vanishes under every compactly supported ambient deformation. Its tangent plane exists almost everywhere, but a tangent plane alone need not describe an entire neighborhood [S11:3–7]:
 
-> A stationary integral varifold is a measure-theoretic minimal surface with
-> integer multiplicity. Its tangent plane exists almost everywhere, but a tangent
-> plane alone need not describe an entire neighborhood. The basic regularity
-> question is whether the points without a smooth minimal neighborhood can carry
-> positive measure. We prove that they have zero $m$-dimensional measure.
+> A stationary integral varifold is a measure-theoretic minimal surface with integer multiplicity. Its tangent plane exists almost everywhere, but a tangent plane alone need not describe an entire neighborhood. The basic regularity question is whether the points without a smooth minimal neighborhood can carry positive measure. We prove that they have zero $m$-dimensional measure.
 
 A point is regular when a neighborhood of it contains a smooth embedded minimal submanifold whose support equals the varifold's support there and whose weight is a constant integer multiple; the remaining support points are the singular set [S11:21–24]:
 
-> A point $p\in\spt\mu\cap U$ is \emph{regular} if there are a neighborhood
-> $W$ of $p$, a smooth embedded minimal $m$-submanifold $\Sigma\subset W$, and
-> an integer $q\geq1$ such that the restriction of the varifold to $W$ is
-> $q|\Sigma|$. The remaining support points form $\operatorname{Sing}V$.
+> A point $p\in\spt\mu\cap U$ is _regular_ if some neighborhood $W$ of $p$ contains a smooth embedded minimal $m$-submanifold $\Sigma$, without boundary in $W$, such that $\spt\mu\cap W=\Sigma$ and $V\llcorner W=q|\Sigma|$ for a positive integer $q$. We denote the remaining support points by $\Sing V$. Thus regularity includes equality of the local support with one embedded submanifold, not merely a smooth parametrization on a set of full measure.
 
 The second manuscript proves the measure-zero statement [S11:26–33]:
 
@@ -60,14 +53,7 @@ The second manuscript proves the measure-zero statement [S11:26–33]:
 
 The first manuscript proves the sharp dimension bound, and its regularity definition is stronger: regularity requires equality of the local support with one embedded submanifold, not merely a smooth parametrization on a set of full measure [S6:21–28]:
 
-> A point $p\in\spt\mu\cap U$ is \emph{regular} if some neighborhood $W$
-> of $p$ contains a smooth embedded minimal $m$-submanifold $\Sigma$,
-> without boundary in $W$, such that $\spt\mu\cap W=\Sigma$ and
-> $V\llcorner W=q|\Sigma|$ for a positive integer $q$.
-> We denote the remaining support points by
-> $\Sing V$. Thus regularity includes equality of the local support with
-> one embedded submanifold, not merely a smooth parametrization on a set
-> of full measure.
+> A point $p\in\spt\mu\cap U$ is _regular_ if there are a neighborhood $W$ of $p$, a smooth embedded minimal $m$-submanifold $\Sigma\subset W$, and an integer $q\geq1$ such that the restriction of the varifold to $W$ is $q|\Sigma|$. The remaining support points form $\mathrm{Sing}V$.
 
 The main theorem is the dimension bound [S6:32–38]:
 
@@ -81,12 +67,7 @@ The main theorem is the dimension bound [S6:32–38]:
 
 The bound is sharp, and the manuscript names the example that attains it [S6:40–45]:
 
-> Theorem~\ref{thm:main} proves the Euclidean conjecture recorded as
-> Conjecture~1.1 by Brena, Decio, and De Lellis \cite{BDD2025}.
-> There is no stability, minimizing, orientability, density-upper-bound,
-> or codimension hypothesis. The estimate is sharp: the sum of the
-> varifolds of two distinct $m$-planes meeting along an $(m-1)$-plane is
-> stationary, and its singular set is exactly that intersection.
+> Theorem~  proves the Euclidean conjecture recorded as Conjecture~1.1 by Brena, Decio, and De Lellis  . There is no stability, minimizing, orientability, density-upper-bound, or codimension hypothesis. The estimate is sharp: the sum of the varifolds of two distinct $m$-planes meeting along an $(m-1)$-plane is stationary, and its singular set is exactly that intersection.
 
 The second manuscript also settles the spherical case, where the classical theory needs a mass bound [S11:35–47]:
 
@@ -108,12 +89,7 @@ The second manuscript also settles the spherical case, where the classical theor
 
 The two manuscripts name the same conjecture. Brena, Decio, and De Lellis separate the dimension bound from the weaker assertion that the singular set has zero $m$-dimensional measure; the first manuscript proves the dimension bound and cites the second for the measure-zero statement, and the second manuscript proves the measure-zero statement as Conjecture 1.2 [S11:65–70]:
 
-> Simon's 2018 notes already record the question whether the singular set
-> must be $\HH^m$-null even when the generalized mean curvature is zero
-> \cite[Chapter~5, Remark~6.4]{Simon2018}. The measure-zero singular-set
-> assertion is Conjecture~1.2 of Brena, Decio,
-> and De Lellis~\cite{BDD2025}. \Cref{thm:main} proves this conjecture in its
-> full Euclidean scope. They isolate a local criterion in Conjecture~1.3:
+> Simon's 2018 notes already record the question whether the singular set must be $\mathcal H^m$-null even when the generalized mean curvature is zero \cite[Chapter~5, Remark~6.4]{Simon2018}. The measure-zero singular-set assertion is Conjecture~1.2 of Brena, Decio, and De Lellis~ .   proves this conjecture in its full Euclidean scope. They isolate a local criterion in Conjecture~1.3:
 
 The first manuscript separates the two assertions and cites the second manuscript for the measure-zero one [S6:104–109]:
 
@@ -126,105 +102,37 @@ The first manuscript separates the two assertions and cites the second manuscrip
 
 The first manuscript states that the almost-everywhere conclusion is not an input to its proof [S6:110–114]:
 
-> The elliptic correction of the averaged graph in
-> \cite[Sections~6.3--6.4]{BDLF2025} is an antecedent of this fitting
-> construction. The almost-everywhere
-> regularity conclusion itself is not an input: a set can have zero
-> $\Hh^m$ measure and still have Hausdorff dimension greater than $m-1$.
+> The elliptic correction of the averaged graph in \cite[Sections~6.3--6.4]{BDLF2025} is an antecedent of this fitting construction. The almost-everywhere regularity conclusion itself is not an input: a set can have zero $\Hh^m$ measure and still have Hausdorff dimension greater than $m-1$.
 
 The prior literature is the Allard–Federer–Simon tradition. Allard's compactness and regularity theory gives a relatively open dense regular set; the dimension-reduction method leads to the classical stratification by translation symmetries of tangent cones, and for stationary integral varifolds the set of points admitting no planar tangent has dimension at most $m-1$. Naber and Valtorta proved rectifiability of these strata for integral varifolds with bounded mean curvature, so the remaining difficulty is the singular set at higher-multiplicity planar tangents, where Allard's multiplicity-one theorem does not apply [S6:47–58]. For area-minimizing integral currents, Almgren gives the $m-2$ bound in arbitrary codimension, and De Lellis–Spadaro's multiple-valued, center-manifold, frequency analysis explains subtracting a well-chosen smooth center before normalizing the height — but their theorems do not apply to arbitrary stationary integral varifolds, and the crossing example prevents the same bound in this setting [S6:59–68]. The manuscript names Hirsch–Spolaor's $m-1$ bound for two-valued stationary Lipschitz graphs and their almost-everywhere regularity for stationary codimension-one integral currents with density at most two, Krummel–Minter–Wickramasekera's bounds at controlled densities under an explicit epsilon-regularity assumption, Brakke's $C^{1,\alpha}$ rectifiability, Menne's second-order rectifiability, Brena–De Lellis–Franceschini's smooth rectifiability and Kolasiński's independent proof, and De Lellis–Hirsch–Lihn–Spolaor's stationary varifolds with planar tangents and infinite local topology in non-Euclidean metrics [S6:72–102].
 
 The first manuscript's proof runs by contradiction on the dimension bound [S6:120–135]:
 
-> Suppose that $\dim_{\Hh}\Sing V>m-1$ and choose an exponent $s$ strictly
-> between these two numbers. A first dimension-reduction argument produces
-> a singular point, placed at the origin, an integer $Q$, and radii
-> $L_i\downarrow0$ for which the rescaled varifolds converge to the
-> multiplicity-$Q$ plane. At these same scales there are nonzero measures
-> $\sigma_i$ carried by density-$Q$ points in a fixed compact ball, with
-> mass bounded above and away from zero and the estimate
-> \[
->  \sigma_i(\mathbf B_r(x))\le Cr^s.
-> \]
-> Here $\mathbf B_r(x)$ is an ambient Euclidean ball. The limiting measure
-> of centers cannot be carried by an $(m-1)$-plane. This first reduction,
-> proved in Section~\ref{sec:flat-scales}, is the familiar geometric
-> starting point of dimension reduction; the challenge is to retain
-> these centers in a further, height-normalized limit.
+> Suppose that $\dim_{\Hh}\Sing V>m-1$ and choose an exponent $s$ strictly between these two numbers. A first dimension-reduction argument produces a singular point, placed at the origin, an integer $Q$, and radii $L_i\downarrow0$ for which the rescaled varifolds converge to the multiplicity-$Q$ plane. At these same scales there are nonzero measures $\sigma_i$ carried by density-$Q$ points in a fixed compact ball, with mass bounded above and away from zero and the estimate \[ \sigma_i(\mathbf B_r(x))\le Cr^s. \] Here $\mathbf B_r(x)$ is an ambient Euclidean ball. The limiting measure of centers cannot be carried by an $(m-1)$-plane. This first reduction, proved in Section~ , is the familiar geometric starting point of dimension reduction; the challenge is to retain these centers in a further, height-normalized limit.
 
 The four further stages are the new parts [S6:137–148] [S6:150–157] [S6:159–171] [S6:173–179]:
 
-> The proof has four further stages. First, we construct smooth
-> reference graphs at the prescribed scales $L_i$. AE's minimal fitting
-> gives intervals of radii on which a centered height admits frequency
-> control. Section~\ref{sec:fitting} proves that these intervals cover
-> every sufficiently small prescribed flat scale, including their
-> transition regions. Section~\ref{sec:centered-blowup} then normalizes
-> the height by numbers $a_i\downarrow0$. The normalized second moment
-> is nonzero, the first moment tends to zero, and the reference graphs'
-> mean curvature and its first derivative are $o(a_i)$.
-> Both moment conclusions are needed: subtracting a reference graph
-> must neither remove the entire limit nor leave an arbitrary translation
-> in it.
+> The proof has four further stages. First, we construct smooth reference graphs at the prescribed scales $L_i$. AE's minimal fitting gives intervals of radii on which a centered height admits frequency control. Section~  proves that these intervals cover every sufficiently small prescribed flat scale, including their transition regions. Section~  then normalizes the height by numbers $a_i\downarrow0$. The normalized second moment is nonzero, the first moment tends to zero, and the reference graphs' mean curvature and its first derivative are $o(a_i)$. Both moment conclusions are needed: subtracting a reference graph must neither remove the entire limit nor leave an arbitrary translation in it.
 
 Second, the linearized-measures section passes the first variations and signed excess to measures on the limiting plane [S6:150–157]:
 
-> Second, Section~\ref{sec:linearized} passes the first variations and
-> signed excess to measures on the limiting plane. The resulting data
-> consist of a nonnegative height measure, a positive-semidefinite tilt
-> measure, a mixed height--tilt measure, and a signed mass measure.
-> They satisfy linear first-variation identities, a positive-semidefinite
-> block inequality, and a one-sided comparison of mass and tilt. This
-> formulation avoids assuming that the limiting sheets can be globally
-> labeled or represented by a single-valued function.
+> Second, Section~  passes the first variations and signed excess to measures on the limiting plane. The resulting data consist of a nonnegative height measure, a positive-semidefinite tilt measure, a mixed height--tilt measure, and a signed mass measure. They satisfy linear first-variation identities, a positive-semidefinite block inequality, and a one-sided comparison of mass and tilt. This formulation avoids assuming that the limiting sheets can be globally labeled or represented by a single-valued function.
 
 Third, the density-centers section supplies the curvature-corrected comparison [S6:159–171]:
 
-> Third, the density of the points carrying $\sigma_i$ must still be visible
-> after division by $a_i^2$. Ordinary uncorrected radial comparison
-> does not provide that precision on curved reference graphs.
-> Section~\ref{sec:density-centers} uses geodesic radial fields weighted by
-> the inverse reference-volume density. The resulting curvature error
-> can be averaged against $\sigma_i$ at every radius down to zero. For a
-> fixed $l>0$, its decisive integral is
-> \[
->  \int_0^l t^{s-m}\,\dd t<\infty,
-> \]
-> which holds exactly when $s>m-1$. The centered first-moment estimate
-> then removes the translation terms and yields a density comparison
-> at every limiting center.
+> Third, the density of the points carrying $\sigma_i$ must still be visible after division by $a_i^2$. Ordinary uncorrected radial comparison does not provide that precision on curved reference graphs. Section~  uses geodesic radial fields weighted by the inverse reference-volume density. The resulting curvature error can be averaged against $\sigma_i$ at every radius down to zero. For a fixed $l>0$, its decisive integral is \[ \int_0^l t^{s-m}\,\dd t<\infty, \] which holds exactly when $s>m-1$. The centered first-moment estimate then removes the translation terms and yields a density comparison at every limiting center.
 
 Finally, the dimension-reduction section closes the contradiction [S6:173–179]:
 
-> Finally, Section~\ref{sec:dimension-reduction} isolates an abstract
-> dimension-reduction statement for these measures. Its frequency is
-> monotone at the retained centers. A second blow-up makes that frequency
-> constant at enough independent centers. Equality in the
-> positive-semidefinite inequality then forces the height measure to
-> vanish, contrary to its normalization. This is the contradiction that
-> proves Theorem~\ref{thm:main}.
+> Finally, Section~  isolates an abstract dimension-reduction statement for these measures. Its frequency is monotone at the retained centers. A second blow-up makes that frequency constant at enough independent centers. Equality in the positive-semidefinite inequality then forces the height measure to vanish, contrary to its normalization. This is the contradiction that proves Theorem~ .
 
 The manuscript names which parts are new [S6:181–183]:
 
-> The prescribed-scale construction, the averaged curved radial
-> comparison, and the final measure-valued reduction are the parts needed
-> to strengthen AE's almost-everywhere conclusion to a dimension bound.
+> The prescribed-scale construction, the averaged curved radial comparison, and the final measure-valued reduction are the parts needed to strengthen AE's almost-everywhere conclusion to a dimension bound.
 
 The second manuscript's engine is a signed-excess estimate. With $\pi$ projection onto the first factor, $Q$ a positive integer, and $P_{vv}$ the vertical block of the tangent projection, it defines the signed mass measure $M$ and the tilt measure $D$ and keeps the sign in the comparison [S11:124–136]:
 
-> Here $|M|$ denotes the total variation of the signed measure $M$, and
-> $\tau=|M|+D$ is the positive excess measure in this flat setting.
-> When $\tau$ has mass at most $d$ on a fixed enlarged ball, we prove an
-> interior bound of the form
-> \begin{equation}\label{eq:intro-signed}
->  \int w(2M-D)
->  \leq d\exp\!\left[-F_Q\!\left(\log\frac1d\right)\right]
-> \end{equation}
-> for nonnegative Lipschitz weights with fixed bounds. The explicit function
-> $F_Q$ grows faster than every fixed power of $\log T$ as $T\to\infty$.
-> \Cref{sx:signed} gives the precise statement, including the curvature error
-> for a reference surface of sufficiently high finite regularity. Retaining the sign permits a substantially
-> smaller error than an absolute-value estimate.
+> Here $|M|$ denotes the total variation of the signed measure $M$, and $\tau=|M|+D$ is the positive excess measure in this flat setting. When $\tau$ has mass at most $d$ on a fixed enlarged ball, we prove an interior bound of the form \begin{equation}  \int w(2M-D) \leq d\exp\!\left[-F_Q\!\left(\log\frac1d\right)\right] \end{equation} for nonnegative Lipschitz weights with fixed bounds. The explicit function $F_Q$ grows faster than every fixed power of $\log T$ as $T\to\infty$.   gives the precise statement, including the curvature error for a reference surface of sufficiently high finite regularity. Retaining the sign permits a substantially smaller error than an absolute-value estimate.
 
 The manuscript's own organization paragraph names the section files and what each proves [S11:213–224]:
 
@@ -245,7 +153,7 @@ The section files on disk are `introduction.tex`, `local.tex`, `signed-statement
 
 **Prior (my training data, not this repo).** The almost-everywhere regularity conjecture for stationary integral varifolds — that the singular set has zero $m$-dimensional Hausdorff measure — was, as of my cutoff, open in general codimension. Allard's theory gives regularity at density-one points, and the codimension-one dimension bound was known for stable varifolds (Schoen–Simon) and under density bounds. The unconditional measure-zero statement for arbitrary dimension and codimension is what I recall as open. The prior is a training-data recollection at an early-2025 cutoff, self-rated, and the repo supplies only the manuscripts' citations.
 
-## Consequences now that the proof has been found
+## Consequences
 
 The direct consequence is the conjecture's resolution in its full Euclidean scope: the singular set of a stationary integral varifold has zero $m$-dimensional measure, with no stability, minimizing, orientability, density-bound, or codimension-one hypothesis [S11:26–33] [S1:8390]. The dimension bound is sharp, and the manuscript names the two-plane crossing that attains it [S6:40–45].
 
@@ -257,18 +165,34 @@ What has not been checked: no Lean, lake, or comparator run was performed, and f
 
 ## Sources
 
-| ID | File | Lines | What it carries |
+| # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Release blurb, manuscript links, both manuscript abstracts |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 346's `\resultentry`, at line 790 |
-| S3 | [`preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/README.md`](../../../preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/README.md) | 18 | First manuscript README, date, bibtex key |
-| S4 | [`preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/varifold-singular-dimension.pdf`](../../../preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/varifold-singular-dimension.pdf) | — | First manuscript PDF |
-| S5 | [`preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/build/main.tex`](../../../preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/build/main.tex) | 28 | Preamble, theorem environments, section include list |
-| S6 | [`preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/build/sections/01-introduction.tex`](../../../preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/build/sections/01-introduction.tex) | 200 | Main theorem, regularity definition, sharpness, antecedents, proof stages |
-| S7 | [`preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/build/references.bib`](../../../preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/build/references.bib) | 251 | First manuscript bibliography |
-| S8 | [`preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/README.md`](../../../preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/README.md) | 18 | Second manuscript README, date, bibtex key |
-| S9 | [`preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/paper.pdf`](../../../preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/paper.pdf) | — | Second manuscript PDF |
-| S10 | [`preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/build/paper.tex`](../../../preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/build/paper.tex) | 71 | Preamble, theorem environments, section include list |
-| S11 | [`preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/build/sections/introduction.tex`](../../../preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/build/sections/introduction.tex) | 237 | Main theorem, regularity definition, spherical corollary, the named conjecture |
-| S12 | [`preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/build/references.bib`](../../../preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/build/references.bib) | 222 | Second manuscript bibliography |
-| S13 | [`notes/tables/catalog.tsv`](../../../notes/tables/catalog.tsv) | 373 | Reading ledger row for family 346 |
+| S1 | `CONTENTS.md` | 9142 | Release blurb, manuscript links, both manuscript abstracts |
+| S2 | `overview.tex` | 859 | Family 346's `\resultentry`, at line 790 |
+| S3 | `preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/README.md` | 18 | First manuscript README, date, bibtex key |
+| S4 | `preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/varifold-singular-dimension.pdf` | 15834 | First manuscript PDF |
+| S5 | `preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/build/main.tex` | 28 | Preamble, theorem environments, section include list |
+| S6 | `preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/build/sections/01-introduction.tex` | 200 | Main theorem, regularity definition, sharpness, antecedents, proof stages |
+| S7 | `preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/build/references.bib` | 251 | First manuscript bibliography |
+| S8 | `preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/README.md` | 18 | Second manuscript README, date, bibtex key |
+| S9 | `preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/paper.pdf` | 22614 | Second manuscript PDF |
+| S10 | `preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/build/paper.tex` | 71 | Preamble, theorem environments, section include list |
+| S11 | `preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/build/sections/introduction.tex` | 237 | Main theorem, regularity definition, spherical corollary, the named conjecture |
+| S12 | `preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/build/references.bib` | 222 | Second manuscript bibliography |
+| S13 | `notes/tables/catalog.tsv` | 373 | Reading ledger row for family 346 |
+
+## Links
+
+- [S1](../../../CONTENTS.md)
+- [S2](../../../overview.tex)
+- [S3](../../../preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/README.md)
+- [S4](../../../preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/varifold-singular-dimension.pdf)
+- [S5](../../../preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/build/main.tex)
+- [S6](../../../preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/build/sections/01-introduction.tex)
+- [S7](../../../preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/build/references.bib)
+- [S8](../../../preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/README.md)
+- [S9](../../../preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/paper.pdf)
+- [S10](../../../preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/build/paper.tex)
+- [S11](../../../preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/build/sections/introduction.tex)
+- [S12](../../../preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/build/references.bib)
+- [S13](../../../notes/tables/catalog.tsv)

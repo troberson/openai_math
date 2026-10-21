@@ -1,13 +1,12 @@
-# 042 - Oka classification for K3 surfaces and other compact complex surfaces
+Notes / Summaries / Algebraic and complex geometry / [Family 042](../../index/algebraic-and-complex-geometry/042-oka-classification-for-k3-surfaces-and-other-compact-complex-surfaces.md)
+
+# 042 — Oka classification for K3 surfaces and other compact complex surfaces
 
 ## Original CONTENTS.md summary
 
 [S1:162] carries the family entry and the manuscript entry:
 
-> Proves that every complex K3 surface is Oka, including nonprojective surfaces. More
-> generally, every connected minimal compact complex surface of Kodaira dimension zero is Oka; a
-> connected minimal compact complex surface of class VII is Oka exactly when it is a Hopf or Enoki
-> surface.
+> Proves that every complex K3 surface is Oka, including nonprojective surfaces. More generally, every connected minimal compact complex surface of Kodaira dimension zero is Oka; a connected minimal compact complex surface of class VII is Oka exactly when it is a Hopf or Enoki surface.
 
 [S1:162] carries the manuscript entry as link text:
 
@@ -47,7 +46,7 @@ The class-VII half leans on the global spherical shell theorem, cited to a manus
 
 The K3 Oka conjecture is listed among the problems in Forstneric's book, which the manuscript cites as `ForstnericBook`. [S7:11–14] The Oka-property machinery the paper uses is Forstneric's: CAP as the characterization of Oka manifolds, cited to `ForstnericCAP` and `Forstneric`. [S3:11–18] The class-VII classification rests on the global spherical shell theorem, which the release itself supplies as family 060. [S7:42–47] The Zariski-density conclusion for projective K3 surfaces confirms the K3 case of Campana's prediction of Zariski-dense entire curves on special projective manifolds, cited as `Campana`. [S3:54–58]
 
-## Consequences now that the proof has been found
+## Consequences
 
 The dense-entire-curve corollary is the consequence the manuscript states for itself: through every point and every nonzero tangent vector of a K3 surface there is a holomorphic immersion of the plane whose image is dense in the surface, and for a projective K3 surface the image is Zariski dense, which is the K3 case of Campana's prediction. [S3:43–52] The classification corollary extends the Oka property across the Kodaira-zero class by covering the Enriques case through the K3 double cover, and settles the class-VII case as a biconditional. [S4:108–114]
 
@@ -56,7 +55,7 @@ The consequence for the catalog is a citation edge, not a recorded dependency: t
 ## Sources
 
 | # | File | Lines | Role |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | S1 | `overview.tex` | 859 | The release's family entry and manuscript entry, line 162 |
 | S2 | `preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/paper.tex` | 68 | Manuscript abstract, lines 47–50 |
 | S3 | `preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/sections/introduction.tex` | 229 | Main theorem 20–29, dense corollary 43–52, CAP 11–18, organization 54–58 |
@@ -66,7 +65,7 @@ The consequence for the catalog is a citation edge, not a recorded dependency: t
 | S7 | `preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/references.bib` | 181 | `ForstnericBook` 11–14, `OpenAIGSS` 42–47 |
 | S8 | `preprints/Every-complex-K3-surface-is-Oka-September-23-2026/README.md` | 18 | The manuscript's own build and run note |
 
-The manuscript root is `preprints/Every-complex-K3-surface-is-Oka-September-23-2026/`, enumerated on disk: `README.md`, `paper.pdf`, and `build/` carrying `figures/`, `paper.tex`, `references.bib` and `sections/`. Every File cell above is the repo-relative path; the links below are relative to this page.
+## Links
 
 - [S1](../../../overview.tex)
 - [S2](../../../preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/paper.tex)

@@ -68,10 +68,15 @@ ROWS = [
     # The render writes notes/scripts/README.md, which is inside the tree the probe's key hashes,
     # so the probe runs a second time after the render, before the census checker.
     ("measure_check_calls.py", (), ()),
+    # The summary renderer is a root: it reads only the hand-maintained data files and the skeleton,
+    # so it reads no artifact any other row writes. seed_quotes reads the rendered pages (to re-seed
+    # the quote provenance record), so it needs `summaries`; render_reports reads both the pages and
+    # the quotes, so it runs after the two. This is the chain that used to be a cycle
+    # (seed -> pages -> quotes -> pages) broken by moving the quote span into the data file.
+    ("build_summaries.py", (), ("summaries",)),
     ("render_reports.py",
      ("catalog", "sources", "links", "subfindings", "abstracts", "deps", "index"), ("pages",)),
-    ("seed_quotes.py", ("pages",), ("quotes",)),
-    ("refresh_summary_line_counts.py", (), ("summaries",)),
+    ("seed_quotes.py", ("summaries",), ("quotes",)),
     ("triage_t0.py", ("catalog",), ()),
     ("measure_topics.py --check", ("pages",), ()),
     ("measure_index_sizes.py", ("index",), ()),

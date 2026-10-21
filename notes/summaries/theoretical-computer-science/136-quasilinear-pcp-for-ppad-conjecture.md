@@ -1,8 +1,8 @@
+Notes / Summaries / Theoretical computer science / [Family 136](../../index/theoretical-computer-science/136-quasilinear-pcp-for-ppad-conjecture.md)
+
 # 136 — The quasilinear PCP-for-PPAD conjecture
 
-Theoretical computer science · T0 · 1 manuscript · no formalization · no trace
-
-## Undergraduate explanation
+## Undergraduate summary
 
 PPAD is the class of search problems whose solutions are guaranteed by a
 parity argument: in a directed graph where every node has at most one
@@ -42,7 +42,7 @@ $\delta$ fraction of gates still decodes to a solution. "The conclusion
 about $D$ is universal over the locations and values of the failed
 gates." [S3:174-176]
 
-## Graduate explanation
+## Graduate summary
 
 **The definitions.** End-of-Line is a pair of Boolean circuits $S, P$ with
 $P(0^n) = 0^n$, $S(0^n) \ne 0^n$, $P(S(0^n)) = 0^n$; a solution is a string
@@ -145,7 +145,7 @@ Margulis--Gabber--Galil bound supplies the local and replica walks"
 [S3:374-375]. The inner fields and groups are introduced afresh and are
 distinct from the outer construction's. [S3:376-377]
 
-## History and context
+## History of the conjecture
 
 The conjecture's authors are the same people who established the hardness it
 was meant to strengthen. Papadimitriou's 1994 paper defined PPAD
@@ -232,11 +232,21 @@ fixed-port composition." [S3:363-364]
 ## Sources
 
 | # | File | Lines | Role |
-|---|---|---|---|
-| S1 | [`preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/README.md`](../../../preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/README.md) | 18 | release title, author, date, citation |
-| S2 | [`preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/main.tex`](../../../preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/main.tex) | 78 | abstract |
-| S3 | [`preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/sections/01-introduction.tex`](../../../preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/sections/01-introduction.tex) | 393 | definitions, main theorem, proof strategy, consequences |
-| S4 | [`preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/sections/11-weak-nash.tex`](../../../preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/sections/11-weak-nash.tex) | 785 | circuit preparation and the equilibrium corollaries |
-| S5 | [`preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/references.bib`](../../../preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/references.bib) | 466 | the prior literature cited |
-| S6 | [`overview.tex`](../../../overview.tex) | 859 | the release's own entry |
-| S7 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's own index line |
+| --- | --- | --- | --- |
+| S1 | `preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/README.md` | 18 | release title, author, date, citation |
+| S2 | `preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/main.tex` | 78 | abstract |
+| S3 | `preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/sections/01-introduction.tex` | 393 | definitions, main theorem, proof strategy, consequences |
+| S4 | `preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/sections/11-weak-nash.tex` | 785 | circuit preparation and the equilibrium corollaries |
+| S5 | `preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/references.bib` | 466 | the prior literature cited |
+| S6 | `overview.tex` | 859 | the release's own entry |
+| S7 | `CONTENTS.md` | 9142 | the release's own index line |
+
+## Links
+
+- [S1](../../../preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/README.md)
+- [S2](../../../preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/main.tex)
+- [S3](../../../preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/sections/01-introduction.tex)
+- [S4](../../../preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/sections/11-weak-nash.tex)
+- [S5](../../../preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/references.bib)
+- [S6](../../../overview.tex)
+- [S7](../../../CONTENTS.md)

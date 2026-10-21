@@ -1,14 +1,12 @@
-# 325 - The complete Crouzeix conjecture
+Notes / Summaries / Functional analysis / [Family 325](../../index/functional-analysis/325-complete-crouzeix-conjecture.md)
+
+# 325 — The complete Crouzeix conjecture
 
 ## Original CONTENTS.md summary
 
 [S1:746] carries the family entry:
 
-> Resolves the complete Crouzeix conjecture: for every bounded operator $A$
-> on a complex Hilbert space and every finite matrix-valued polynomial $P$,
-> one has $\lVert P[A]\rVert\le2\sup_{z\in W(A)}\lVert P(z)\rVert$, where
-> $W(A)$ is the numerical range. The constant $2$ is sharp, independent of
-> the matrix size, and valid in infinite dimensions.
+> Resolves the complete Crouzeix conjecture: for every bounded operator $A$ on a complex Hilbert space and every finite matrix-valued polynomial $P$, one has $\lVert P[A]\rVert\le2\sup_{z\in W(A)}\lVert P(z)\rVert$, where $W(A)$ is the numerical range. The constant $2$ is sharp, independent of the matrix size, and valid in infinite dimensions.
 
 The entry links the two manuscripts as "Direct proof" and "Structural proof" [S1:746].
 
@@ -140,7 +138,7 @@ figure of the numerical range and its conformal image, [S5:1] and [S9:1].
 prior on the conjecture's standing is not recorded in the release's own
 reading. The claim in the entry is the record.
 
-## Consequences now that the proof has been found
+## Consequences
 
 The constant is sharp and dimension-free. [S3:65] proves the bound cannot be
 lowered uniformly, and [S7:1084] states the constant's independence of the two
@@ -186,3 +184,24 @@ claims exist and names their declarations; the five comparator configs carry
 | S16 | `lean/ComparatorChallenges/StructuralCrouzeix.lean` | 216 | Stub, `sorry` at line 212 |
 | S17 | `lean/ComparatorChallenges/CrouzeixHilbert.lean` | 158 | Stub, `sorry` at line 152 |
 | S18 | `lean/ComparatorChallenges/HilbertCrouzeix.lean` | 143 | Stub, `sorry` at line 118 |
+
+## Links
+
+- [S1](../../../overview.tex)
+- [S2](../../../preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/README.md)
+- [S3](../../../preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/build/main.tex)
+- [S4](../../../preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/build/references.tex)
+- [S5](../../../preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/build/figures/normal.tex)
+- [S6](../../../preprints/The-complete-Crouzeix-theorem-September-23-2026/README.md)
+- [S7](../../../preprints/The-complete-Crouzeix-theorem-September-23-2026/build/main.tex)
+- [S8](../../../preprints/The-complete-Crouzeix-theorem-September-23-2026/build/references.tex)
+- [S9](../../../preprints/The-complete-Crouzeix-theorem-September-23-2026/build/figures/coordinates.tex)
+- [S10](../../../lean/docs/325.md)
+- [S11](../../../lean/OAI/Analysis/NumericalRange/Main.lean)
+- [S12](../../../lean/OAI/Analysis/DirectCrouzeix/CompleteBound.lean)
+- [S13](../../../lean/OAI/Analysis/StructuralCrouzeix/Endpoint.lean)
+- [S14](../../../lean/ComparatorChallenges/DirectCrouzeix.lean)
+- [S15](../../../lean/ComparatorChallenges/CompleteCrouzeix.lean)
+- [S16](../../../lean/ComparatorChallenges/StructuralCrouzeix.lean)
+- [S17](../../../lean/ComparatorChallenges/CrouzeixHilbert.lean)
+- [S18](../../../lean/ComparatorChallenges/HilbertCrouzeix.lean)

@@ -1,16 +1,12 @@
-# 274 - Moore's parity conjecture for QAC0
+Notes / Summaries / Mathematical physics / [Family 274](../../index/mathematical-physics/274-moores-parity-conjecture-for-qac0.md)
+
+# 274 — Moore's parity conjecture for $\mathrm{QAC}^0$
 
 ## Original CONTENTS.md summary
 
 [S1:637] carries the family entry:
 
-> Resolves Moore's parity conjecture in the measured-output model:
-> constant-depth quantum circuits with arbitrary one-qubit gates,
-> unbounded-arity Toffoli gates and polynomially many total qubits cannot
-> compute parity with any fixed positive worst-case advantage. Ancillas
-> start in zero, one output qubit is measured, and all other registers may
-> be discarded. Xu--Li's reductions give the same bounded-error obstruction
-> for strict majority.
+> Resolves Moore's parity conjecture in the measured-output model: constant-depth quantum circuits with arbitrary one-qubit gates, unbounded-arity Toffoli gates and polynomially many total qubits cannot compute parity with any fixed positive worst-case advantage. Ancillas start in zero, one output qubit is measured, and all other registers may be discarded. Xu--Li's reductions give the same bounded-error obstruction for strict majority.
 
 The entry links the two manuscripts as "Product-projection localization"
 and "Regular trajectories and pruning" [S1:637].
@@ -214,7 +210,7 @@ needed for its proof are established below."
 the prior on the conjecture's standing is not recorded in the release's
 own reading. The claim in the entry is the record.
 
-## Consequences now that the proof has been found
+## Consequences
 
 Moore's conjecture is settled in the measured-output model, and the two
 manuscripts give independent proofs of the same theorem [S3:10–15] and
@@ -268,7 +264,7 @@ elaborates.
 | S27 | `lean/ComparatorChallenges/QACParity.lean` | 76 | Stub, `sorry` at line 72 |
 | S28 | `lean/ComparatorChallenges/RegularParity.lean` | 75 | Stub, `sorry` at line 69 |
 
-The manuscript roots are `preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/` and `preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/`, enumerated on disk: the first carries `README.md`, `paper.pdf`, and `build/` with `main.tex`, `preamble.tex`, `references.tex`, and a `sections/` directory; the second carries `README.md`, `paper.pdf`, and `build/` with `paper.tex`, `references.bib`, a `figures/` directory, and a `sections/` directory. Every File cell above is the repo-relative path; the links below are relative to this page.
+## Links
 
 - [S1](../../../overview.tex)
 - [S2](../../../preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/README.md)

@@ -1,15 +1,15 @@
 {# summary.md.j2 — the skeleton for notes/summaries/<discipline>/<NNN>-<slug>.md
 
-   One hand-written skeleton owns the entire mechanical surface; a per-family body
-   (notes/templates/summaries/<NNN>/summary.j2) supplies only the prose bodies. The
-   renderer (math-cgv.4) composes them from quotes.tsv.
+   One hand-written skeleton owns the entire mechanical surface; a per-family data
+   file (notes/data/summaries/<NNN>.md) supplies the prose bodies with quote
+   tokens. The renderer (build_summaries.py) composes them from quotes.tsv.
 
    The canonical surface this template fixes across every page:
    - the title line carries an em dash: `# <NNN> — <Title>`
    - the breadcrumbs link "Family <NNN>" to the family's index page, making the
      summary<->index edge bidirectional (60 index pages already link to the summary)
    - one prose heading set: the 30 distinct strings the hand-written pages carried
-     collapse to the five core sections below, each rendered only when the family
+     collapse to the canonical sections below, each rendered only when the family
      has a body for it
    - the Sources table is four columns with one separator byte form
    - a Links section on every page, generated from the Sources rows
@@ -18,7 +18,7 @@
    Every {{ }} slot is a label the renderer supplies. Rendering uses trim_blocks and
    lstrip_blocks, so the {% if %}/{% endif %} and {% for %}/{% endfor %} lines emit
    nothing and the body lines emit verbatim. #}
-Notes / Summaries / {{ p['discipline'] }} / [Family {{ p['fam'] }}](../../index/{{ p['discipline'] }}/{{ p['fam'] }}-{{ p['slug'] }}.md)
+Notes / Summaries / {{ p['discipline'] }} / [Family {{ p['fam'] }}](../../index/{{ p['disc_slug'] }}/{{ p['fam'] }}-{{ p['slug'] }}.md)
 
 # {{ p['fam'] }} — {{ p['title'] }}
 {% if p['contents'] %}
@@ -26,6 +26,12 @@ Notes / Summaries / {{ p['discipline'] }} / [Family {{ p['fam'] }}](../../index/
 ## Original CONTENTS.md summary
 
 {{ p['contents'] }}
+{% endif %}
+{% if p['headline'] %}
+
+## Headline theorem
+
+{{ p['headline'] }}
 {% endif %}
 {% if p['undergraduate'] %}
 
@@ -63,6 +69,12 @@ Notes / Summaries / {{ p['discipline'] }} / [Family {{ p['fam'] }}](../../index/
 
 {{ p['formalized'] }}
 {% endif %}
+{% if p['coverage'] %}
+
+## Coverage
+
+{{ p['coverage'] }}
+{% endif %}
 
 ## Sources
 
@@ -75,7 +87,9 @@ Notes / Summaries / {{ p['discipline'] }} / [Family {{ p['fam'] }}](../../index/
 {% for label, path in p['links'] %}
 - [{{ label }}]({{ path }})
 {% endfor %}
+{% if p['bibliography'] %}
 
 ## Bibliography
 
 {{ p['bibliography'] }}
+{% endif %}

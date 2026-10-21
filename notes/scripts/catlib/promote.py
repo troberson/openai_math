@@ -73,8 +73,6 @@ L1: dict[str, tuple[str, ...]] = {
     "extract_subfindings.py": ("notes/tables/catalog.tsv",),
     "extract_formalization_deps.py": (),
     "compare_abstracts.py": ("notes/tables/catalog.tsv", "notes/tables/sources.tsv"),
-    "refresh_summary_line_counts.py": ("notes/tables/catalog.tsv", "notes/reports/counterexample-tag.md",
-                                       "notes/reports/sources.md", "notes/reports/t0-triage.md"),
     "build_index.py": ("README.md", "notes/tables/catalog.tsv", "notes/tables/sources.tsv", "notes/tables/topics.tsv",
                        "notes/templates/discipline.md.j2", "notes/templates/family.md.j2",
                        "notes/templates/index-readme.md.j2", "notes/templates/name.md.j2",
@@ -163,6 +161,13 @@ L1: dict[str, tuple[str, ...]] = {
     # cached record kept serving that `-1` after the render swept the page. The probe scope excludes
     # `notes/scripts/`, so the entry is hashed, not compared, and the writer is probe-exempt.
     "measure_check_calls.py": ("notes/",),
+    # The summary renderer reads the data files, the skeleton, and README.md (through
+    # build_catalog's trace attribution). The quote spans come from the data file's quotes block,
+    # not from quotes.tsv, so the renderer is a root: it reads only hand-maintained data. The
+    # manuscript store reads preprints/ (inside a hashed tree), so no L1 entry for it.
+    # Probe record pending: the writer is new and the audit-hook probe has not been re-run over it.
+    "build_summaries.py": ("README.md", "notes/data/summaries/",
+                           "notes/templates/summaries/summary.md.j2"),
 }
 
 ARTIFACTS: dict[str, tuple[str, ...]] = {
@@ -172,7 +177,6 @@ ARTIFACTS: dict[str, tuple[str, ...]] = {
     "extract_subfindings.py": ("notes/tables/subfindings.tsv",),
     "extract_formalization_deps.py": ("notes/tables/formalization-deps.tsv",),
     "compare_abstracts.py": ("notes/tables/abstracts.tsv",),
-    "refresh_summary_line_counts.py": ("notes/summaries/",),
     "build_index.py": ("notes/index/",),
     "render_reports.py": REPORT_PAGES,
     # The template tree plus the split table the builder derives from HEAD's page bytes. The table is
@@ -197,6 +201,8 @@ ARTIFACTS: dict[str, tuple[str, ...]] = {
     # The check()-count probe is a record producer: its record is the population the census page's
     # check() sentences quote, and there are no tracked bytes to compare.
     "measure_check_calls.py": (),
+    # The summary renderer writes the 60 family pages and passes the index README through.
+    "build_summaries.py": ("notes/summaries/",),
 }
 
 
@@ -209,7 +215,6 @@ ARGS: dict[str, tuple[str, ...]] = {
     "extract_subfindings.py": (),
     "extract_formalization_deps.py": (),
     "compare_abstracts.py": ("--tsv",),
-    "refresh_summary_line_counts.py": (),
     "build_index.py": (),
     "render_reports.py": (),
     "build_report_templates.py": (),
@@ -232,15 +237,20 @@ ARGS: dict[str, tuple[str, ...]] = {
     # The plain run lands the record; `--check-only` runs the same pytest rows in memory and lands
     # nothing, so the canonical key is the plain run's.
     "measure_check_calls.py": (),
+    # The plain run renders the 60 pages and passes the README through; `--check-only` measures
+    # without writing, so the canonical key is the plain run's.
+    "build_summaries.py": (),
 }
 
 # The writers table names one writer the protocol deliberately excludes: `measure_open_probe.py`'s
 # record carries a wall time per target, so it is a measurement of a run, not a function of a digest.
 NON_CACHED = frozenset({"measure_open_probe.py", "measure_checker_reads.py"})
 
-# The registry covers one writer the page lists as a checker, because its gate row runs first among
-# the checkers: `refresh_summary_line_counts.py` rewrites the `Lines` cell of the summaries pages.
-PAGE_EXTRA = frozenset({"refresh_summary_line_counts.py"})
+# The registry names no writer the page lists as a checker: the one that used to —
+# `refresh_summary_line_counts.py`, which rewrote the `Lines` cell of the summaries pages and ran
+# first among the checkers — is retired by the summary renderer, which renders the whole page
+# (Line cells included) from the data files.
+PAGE_EXTRA = frozenset()
 
 # Three writers' L1 cannot be proved against the audit-hook record. `build_report_templates.py` reads
 # each page with `git show HEAD:<page>`, a subprocess read the `open` audit event never sees, so the
@@ -249,7 +259,7 @@ PAGE_EXTRA = frozenset({"refresh_summary_line_counts.py"})
 # record prints, so the exactness pass has nothing to compare it with. `measure_check_calls.py` names
 # the script tree, which the record's printed scope excludes, so its entry is hashed and never compared.
 PROBE_EXEMPT = frozenset({"build_report_templates.py", "measure_gate_rows.py",
-                          "measure_check_calls.py"})
+                          "measure_check_calls.py", "build_summaries.py"})
 
 # The same writer's L1 must be hashed from HEAD, not from the working tree, because that is what it
 # reads. Its own output feeds one of the L1 entries: `notes/development/templates.md` tabulates the

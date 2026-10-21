@@ -1,4 +1,6 @@
-# 018 — The Margulis–Platonov conjecture over global fields (Number theory, 2 manuscripts, tier T0)
+Notes / Summaries / Number theory / [Family 018](../../index/number-theory/018-margulis-platonov-conjecture-over-global-fields.md)
+
+# 018 — The Margulis--Platonov conjecture over global fields
 
 ## Original CONTENTS.md summary
 
@@ -8,11 +10,11 @@
 
 [S1:513] (the function-field manuscript entry):
 
-> We prove the Margulis–Platonov conjecture over every global function field, including characteristic two. For an absolutely almost simple simply connected algebraic group, every noncentral abstract normal subgroup of its rational points is the inverse image of an open normal subgroup of the finite product of its anisotropic local groups.
+> We prove the Margulis–Platonov conjecture over number fields. For an absolutely almost simple simply connected group, every noncentral abstract normal subgroup of its rational points is the inverse image of an open normal subgroup of the product of its anisotropic nonarchimedean local groups.
 
 [S1:522] (the number-field manuscript entry):
 
-> We prove the Margulis–Platonov conjecture over number fields. For an absolutely almost simple simply connected group, every noncentral abstract normal subgroup of its rational points is the inverse image of an open normal subgroup of the product of its anisotropic nonarchimedean local groups.
+> We prove the Margulis–Platonov conjecture over every global function field, including characteristic two. For an absolutely almost simple simply connected algebraic group, every noncentral abstract normal subgroup of its rational points is the inverse image of an open normal subgroup of the finite product of its anisotropic local groups.
 
 Both manuscript blurbs are the manuscripts' own abstracts, with the en dash that CONTENTS.md uses: the function-field abstract is [S4:9–13] and the number-field abstract is [S10:8–12], and in the LaTeX both open with “We prove the Margulis--Platonov conjecture” in the source's double-hyphen spelling. The release's two display titles in the family's `\resultentry` are the two manuscript titles themselves [S2:112].
 
@@ -64,7 +66,7 @@ The state of the problem immediately before these two manuscripts is stated prec
 
 Prior (my training data, not this repo.) The Margulis–Platonov conjecture was, as of my cutoff, a long-standing open problem in the arithmetic theory of algebraic groups, with the inner type-*A* case settled by Rapinchuk–Segev–Seitz and the remaining anisotropic outer forms of type *A*, together with *D*₄ and *E*₆, open; the function-field case was generally treated as accessible relative to the number-field case because Harder's classification narrows the anisotropic groups. A proof covering both field types, with characteristic two included and with abstract normal subgroups and no finite-generation hypothesis, is the kind of result that closes a problem the field had treated as a named open conjecture for decades. That paragraph is my prior, not a repo claim; the repo's own history is the citations above.
 
-## Consequences now that the proof has been found
+## Consequences
 
 The family's two manuscripts are a chain, and the chain is recorded inside the corpus. The function-field manuscript's bibliography opens with an entry keyed `MPNF` whose title is “The Margulis--Platonov conjecture over number fields” [S7:1–7] — the number-field manuscript of this same family, cited by its release href — and its introduction names it as “The immediate predecessor is the number-field theorem of” that entry [S5:94–97]. The dependency is one-way: the number-field manuscript's bibliography is 293 lines and contains no entry for the function-field manuscript and no OpenAI-preprint entry at all [S13], which is consistent with its earlier date. So within family 018 the October manuscript builds on the September one, and the number-field result is an input to the function-field proof rather than a consequence of it.
 
@@ -76,29 +78,40 @@ What is not a consequence: the congruence subgroup problem in general, Serre's f
 
 ## Sources
 
-Sources are numbered and cited in the body as [S2:31] for one line or [S2:31–44] for a range; the file names appear only here. The two manuscript roots are `preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/` and `preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/`; the first ships 15 LaTeX files and 6,134 lines, the second 11 LaTeX files and 6,071 lines.
-
 | # | File | Lines | Role |
-|---|---|---|---|
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Family entry at 504; the function-field blurb at 513; the number-field blurb at 522 |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The `\resultentry{018}` at 112: the release's own abstract and its two display titles |
-| S3 | [`preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/README.md`](../../../preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/README.md) | 18 | Author line at 3, date line at 5; the release's own bibtex key at 10–16 |
-| S4 | [`preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/build/main.tex`](../../../preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/build/main.tex) | 30 | Title at 3, date at 5, abstract at 9–13; the ten section inputs and appendix at 16–27 |
-| S5 | [`preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/build/paper/01-introduction.tex`](../../../preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/build/paper/01-introduction.tex) | 211 | Setup at 3–16; theorem at 18–27; empty-product and finite-index paragraphs at 29–36; history at 38–91; relation to the number-field proof at 92–126; characteristic-two changes at 128–143; the argument at 145–211 |
-| S6 | [`preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/build/paper/10-conclusion.tex`](../../../preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/build/paper/10-conclusion.tex) | 29 | The proof of the main theorem, from the reductions at 4–7 to the empty-product case at 27–28 |
-| S7 | [`preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/build/paper/references.bib`](../../../preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/build/paper/references.bib) | 386 | The intra-corpus entry `MPNF` at 1–7, with an href into the number-field manuscript's `paper.pdf`; Margulis1979 at 9–16 |
-| S8 | [`preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/margulis-platonov-global-function-fields.pdf`](../../../preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/margulis-platonov-global-function-fields.pdf) | — | The compiled function-field manuscript, 797,463 bytes |
-| S9 | [`preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/README.md`](../../../preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/README.md) | 18 | Author line at 3, date line at 5; the release's own bibtex key at 10–16 |
-| S10 | [`preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/build/paper.tex`](../../../preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/build/paper.tex) | 25 | Title at 2, date at 4, abstract at 8–12; the eight section inputs at 16–23 |
-| S11 | [`preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/build/sections/introduction.tex`](../../../preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/build/sections/introduction.tex) | 226 | Setup at 3–13; the abstract-subgroup statement at 15–19; theorem at 21–29; scope at 31–34; background at 36–88; CSP corollary at 90–131; the finite obstruction at 133–158; odd degree at 160–206; completion at 208–226 |
-| S12 | [`preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/build/sections/foundations.tex`](../../../preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/build/sections/foundations.tex) | 859 | The shared tools: Known cases of (MP) at 65; Finite-defect reduction at 116; Avoidance along a line at 275; Power-factor approximation at 405; Cyclic detection at 615; A central sign element at 667; the norm-torus theorem at 720 |
-| S13 | [`preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/build/references.tex`](../../../preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/build/references.tex) | 293 | The number-field manuscript's bibliography; no entry for the function-field manuscript and no OpenAI-preprint entry |
-| S14 | [`preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/paper.pdf`](../../../preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/paper.pdf) | — | The compiled number-field manuscript, 773,917 bytes |
-| S15 | [`notes/reports/t0-triage.md`](../../reports/t0-triage.md) | 897 | The 018 entry at 135 |
-| S16 | [`notes/tables/catalog.tsv`](../../tables/catalog.tsv) | 373 | Row 19 is family 018: tier, manuscript count, claim-shape tags, and the zero evidence columns |
+| --- | --- | --- | --- |
+| S1 | `CONTENTS.md` | 9142 | Family entry at 504; the function-field blurb at 513; the number-field blurb at 522 |
+| S2 | `overview.tex` | 859 | The `\resultentry{018}` at 112: the release's own abstract and its two display titles |
+| S3 | `preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/README.md` | 18 | Author line at 3, date line at 5; the release's own bibtex key at 10–16 |
+| S4 | `preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/build/main.tex` | 30 | Title at 3, date at 5, abstract at 9–13; the ten section inputs and appendix at 16–27 |
+| S5 | `preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/build/paper/01-introduction.tex` | 211 | Setup at 3–16; theorem at 18–27; empty-product and finite-index paragraphs at 29–36; history at 38–91; relation to the number-field proof at 92–126; characteristic-two changes at 128–143; the argument at 145–211 |
+| S6 | `preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/build/paper/10-conclusion.tex` | 29 | The proof of the main theorem, from the reductions at 4–7 to the empty-product case at 27–28 |
+| S7 | `preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/build/paper/references.bib` | 386 | The intra-corpus entry `MPNF` at 1–7, with an href into the number-field manuscript's `paper.pdf`; Margulis1979 at 9–16 |
+| S8 | `preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/margulis-platonov-global-function-fields.pdf` | 22881 | The compiled function-field manuscript, 797,463 bytes |
+| S9 | `preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/README.md` | 18 | Author line at 3, date line at 5; the release's own bibtex key at 10–16 |
+| S10 | `preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/build/paper.tex` | 25 | Title at 2, date at 4, abstract at 8–12; the eight section inputs at 16–23 |
+| S11 | `preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/build/sections/introduction.tex` | 226 | Setup at 3–13; the abstract-subgroup statement at 15–19; theorem at 21–29; scope at 31–34; background at 36–88; CSP corollary at 90–131; the finite obstruction at 133–158; odd degree at 160–206; completion at 208–226 |
+| S12 | `preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/build/sections/foundations.tex` | 859 | The shared tools: Known cases of (MP) at 65; Finite-defect reduction at 116; Avoidance along a line at 275; Power-factor approximation at 405; Cyclic detection at 615; A central sign element at 667; the norm-torus theorem at 720 |
+| S13 | `preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/build/references.tex` | 293 | The number-field manuscript's bibliography; no entry for the function-field manuscript and no OpenAI-preprint entry |
+| S14 | `preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/paper.pdf` | 22049 | The compiled number-field manuscript, 773,917 bytes |
+| S15 | `notes/reports/t0-triage.md` | 897 | The 018 entry at 135 |
+| S16 | `notes/tables/catalog.tsv` | 373 | Row 19 is family 018: tier, manuscript count, claim-shape tags, and the zero evidence columns |
 
-Links are relative to this page's directory: `../../../` is the repository root and `../../` is `notes/`. The upstream copies are [CONTENTS.md](../../../CONTENTS.md), [overview.tex](../../../overview.tex), the function-field [manuscript PDF](../../../preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/margulis-platonov-global-function-fields.pdf), the number-field [manuscript PDF](../../../preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/paper.pdf), [notes/reports/t0-triage.md](../../reports/t0-triage.md) and [notes/tables/catalog.tsv](../../tables/catalog.tsv). The chain partner inside this family is the number-field manuscript, whose page is this page's own S10–S14; the T0 pages already written are [001 — Milne's rationality conjecture](001-milnes-rationality-conjecture.md), [002 — The full Birch–Swinnerton-Dyer formula in Selmer coranks zero and one](002-full-birch-swinnerton-dyer-formula-from-low-selmer-corank.md) and [006 — Goldfeld's conjecture](006-goldfelds-conjecture.md).
+## Links
 
-This page is checked by [notes/scripts/verify_summaries.py](../../scripts/verify_summaries.py), which resolves every marker against the shipped file, checks every quotation verbatim against the lines it cites, and writes nothing. The injected mutants live in `notes/scripts/tests/test_summaries.py`, run with `python3 notes/scripts/run_tests.py notes/scripts/tests/test_summaries.py -q`: a real quotation corrupted in each form the page uses (inline, wrapped across lines, block quote), one fabricated quotation, the manuscript root retargeted to its superseded sibling, and a bare locator citation moved above the family's own block. The checker measures; the test file injects.
-
-Absent by construction (T0): `lean/docs/018.md`, any `lean/OAI/**` file, any `lean/ComparatorChallenges/` entry, any `main_results` config, any verification directory, any reasoning trace.
+- [S1](../../../CONTENTS.md)
+- [S2](../../../overview.tex)
+- [S3](../../../preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/README.md)
+- [S4](../../../preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/build/main.tex)
+- [S5](../../../preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/build/paper/01-introduction.tex)
+- [S6](../../../preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/build/paper/10-conclusion.tex)
+- [S7](../../../preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/build/paper/references.bib)
+- [S8](../../../preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/margulis-platonov-global-function-fields.pdf)
+- [S9](../../../preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/README.md)
+- [S10](../../../preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/build/paper.tex)
+- [S11](../../../preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/build/sections/introduction.tex)
+- [S12](../../../preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/build/sections/foundations.tex)
+- [S13](../../../preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/build/references.tex)
+- [S14](../../../preprints/The-Margulis-Platonov-conjecture-over-number-fields-September-23-2026/paper.pdf)
+- [S15](../../../notes/reports/t0-triage.md)
+- [S16](../../../notes/tables/catalog.tsv)

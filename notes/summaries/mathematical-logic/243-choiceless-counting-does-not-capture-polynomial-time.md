@@ -1,15 +1,12 @@
-# 243 - Choiceless counting does not capture polynomial time
+Notes / Summaries / Mathematical logic / [Family 243](../../index/mathematical-logic/243-choiceless-counting-does-not-capture-polynomial-time.md)
+
+# 243 — Choiceless counting does not capture polynomial time
 
 ## Original CONTENTS.md summary
 
 [S1:571] carries the family entry:
 
-> consistency of a linear system over $\mathbb F_3$ defines a polynomial-time
-> query on unordered finite structures that choiceless polynomial time with
-> counting cannot express. A separate result shows that adding witnessed
-> symmetric choice strictly increases expressive power. Both separations hold
-> for the full counting formalism, allowing hereditarily finite sets of
-> arbitrary finite rank.
+> consistency of a linear system over $\mathbb F_3$ defines a polynomial-time query on unordered finite structures that choiceless polynomial time with counting cannot express. A separate result shows that adding witnessed symmetric choice strictly increases expressive power. Both separations hold for the full counting formalism, allowing hereditarily finite sets of arbitrary finite rank.
 
 The entry links the two manuscripts as "Failure to capture polynomial time"
 and "Witnessed symmetric choice" [S1:571].
@@ -52,7 +49,7 @@ occurrence defines a Boolean query on every finite input that is not definable
 in the original counting formalism."
 
 The separation is stated as a strict inclusion. [S13:44] states the half that
-matters: "no \(\CPT\) sentence over \(\tau\) has the same true-model class."
+matters: "no \(\mathrm{CPT}\) sentence over \(\tau\) has the same true-model class."
 
 The choiceless side keeps its full power. [S13:46–47] says: "The \(\CPT\) sentences in \textup{(ii)} may use counting
 and hereditarily finite sets of unrestricted finite rank."
@@ -133,7 +130,7 @@ introduction opens by naming the expressiveness question the theorem answers.
 prior on the conjecture's standing is not recorded in the release's own
 reading. The claim in the entry is the record.
 
-## Consequences now that the proof has been found
+## Consequences
 
 The noncapture result closes the counting extension of the formalism.
 [S6:81–86] proves the query is polynomial-time and not definable, and the
@@ -179,3 +176,26 @@ claims exist and names their declarations; the two comparator configs carry
 | S18 | `lean/OAI/Computability/WitnessedChoice/Model.lean` | 604 | `MainStatement` carrier |
 | S19 | `lean/ComparatorChallenges/ChoicelessPolynomialTime.lean` | 560 | Stub, `sorry` at line 554 |
 | S20 | `lean/ComparatorChallenges/WitnessedChoice.lean` | 474 | Stub, `sorry` at line 470 |
+
+## Links
+
+- [S1](../../../overview.tex)
+- [S2](../../../preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/README.md)
+- [S3](../../../preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/main.tex)
+- [S4](../../../preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/references.bib)
+- [S5](../../../preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/figures/proof-map.tex)
+- [S6](../../../preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/sections/00-introduction.tex)
+- [S7](../../../preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/sections/01-history.tex)
+- [S8](../../../preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/sections/07-separation.tex)
+- [S9](../../../preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/README.md)
+- [S10](../../../preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/build/main.tex)
+- [S11](../../../preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/build/references.bib)
+- [S12](../../../preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/build/figures/grid-cycle.tex)
+- [S13](../../../preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/build/sections/00-introduction.tex)
+- [S14](../../../preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/build/sections/08-cpt-lower-bound.tex)
+- [S15](../../../lean/docs/243.md)
+- [S16](../../../lean/OAI/ModelTheory/Choiceless/Separation.lean)
+- [S17](../../../lean/OAI/Computability/WitnessedChoice/Main.lean)
+- [S18](../../../lean/OAI/Computability/WitnessedChoice/Model.lean)
+- [S19](../../../lean/ComparatorChallenges/ChoicelessPolynomialTime.lean)
+- [S20](../../../lean/ComparatorChallenges/WitnessedChoice.lean)

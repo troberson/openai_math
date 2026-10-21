@@ -1,4 +1,6 @@
-# 342 — Donaldson's tamed-to-compatible conjecture (Differential geometry, 1 manuscript, tier T3)
+Notes / Summaries / Differential geometry / [Family 342](../../index/differential-geometry/342-donaldsons-tamed-to-compatible-conjecture.md)
+
+# 342 — Donaldson's tamed-to-compatible conjecture
 
 ## Original CONTENTS.md summary
 
@@ -6,39 +8,25 @@ The catalog's blurb is two sentences and a scope-note link: "Proves Donaldson's 
 
 The manuscript's abstract says the same thing and adds a second result the blurb leaves out [S4:9–13]:
 
-> We prove that every smooth almost complex structure on a closed four-manifold
-> which is tamed by a symplectic form is compatible with a symplectic form.
-> This gives a positive solution to Donaldson's tamed-to-compatible conjecture.
-> We also characterize the compatible cone by strict intersection positivity
-> on the closure of the invariant part of the taming cone.
+> We prove that every smooth almost complex structure on a closed four-manifold which is tamed by a symplectic form is compatible with a symplectic form. This gives a positive solution to Donaldson's tamed-to-compatible conjecture. We also characterize the compatible cone by strict intersection positivity on the closure of the invariant part of the taming cone.
 
 ## Undergraduate summary
 
 The manuscript fixes the two conditions in the introduction. A symplectic form is a closed nondegenerate two-form; it tames an almost complex structure `J` when it pairs positively with the `J`-rotated vector, and it is compatible when the form is also invariant under `J` [S6:7–10]:
 
-> \emph{tames} \(J\) if \(\omega(v,Jv)>0\) for every nonzero tangent
-> vector \(v\). It is \emph{compatible} with \(J\) if, in addition,
-> \(\omega(Ju,Jv)=\omega(u,v)\). A taming form is automatically
-> nondegenerate; thus a closed taming form is symplectic.
+> _tames_ \(J\) if \(\omega(v,Jv)>0\) for every nonzero tangent vector \(v\). It is _compatible_ with \(J\) if, in addition, \(\omega(Ju,Jv)=\omega(u,v)\). A taming form is automatically nondegenerate; thus a closed taming form is symplectic.
 
 Compatibility is therefore taming plus invariance, and the manuscript notes that a taming form is already nondegenerate, so a closed taming form is symplectic. The question Donaldson posed is recorded in one sentence, with the citation attached [S6:12–14]:
 
-> Donaldson asked whether the existence of a taming symplectic form
-> on a closed four-manifold implies the existence of a compatible
-> one \cite[Section~5.2, Question~2]{Donaldson2006}.
+> Donaldson asked whether the existence of a taming symplectic form on a closed four-manifold implies the existence of a compatible one \cite[Section~5.2, Question~2]{Donaldson2006}.
 
 The answer the manuscript gives is yes. Its main theorem is stated at the top of the introduction [S6:24–26]:
 
-> Suppose that a smooth almost complex structure \(J\) on a closed
-> connected smooth real four-manifold \(X\) is tamed by a symplectic
-> form. Then there is a smooth symplectic form compatible with \(J\).
+> Suppose that a smooth almost complex structure \(J\) on a closed connected smooth real four-manifold \(X\) is tamed by a symplectic form. Then there is a smooth symplectic form compatible with \(J\).
 
 The blurb's second sentence is the manuscript's own caveat, stated immediately after the theorem [S6:29–32]:
 
-> The almost complex structure in Theorem~\ref{thm:main} is the given
-> one. The conclusion imposes no condition on the cohomology class of
-> the compatible form. In particular, it does not assert that an
-> arbitrary taming class contains a compatible representative.
+> The almost complex structure in Theorem~  is the given one. The conclusion imposes no condition on the cohomology class of the compatible form. In particular, it does not assert that an arbitrary taming class contains a compatible representative.
 
 So the form found need not live in the taming form's class. The cone machinery says how much room the class has to move, and the corollary gives the case where there is no room at all: when the positive index of the intersection form is 1, "every taming class has a smooth compatible symplectic representative." [S6:68–69]
 
@@ -51,15 +39,7 @@ The restriction in the corollary is not decoration. The manuscript records that 
 
 The result is used by a second manuscript in the release. The introduction defines the hypersymplectic triple and names the companion's theorem [S6:207–215]:
 
-> A triple of closed two-forms on an oriented four-manifold is
-> \emph{hypersymplectic} if every nonzero real linear combination is
-> symplectic and induces the given orientation. The companion
-> \cite[Theorem~1.1]{OpenAIHypersymplectic2026} combines the current
-> estimates above with additional prescribed-class and deformation
-> arguments to deform hypersymplectic triples normalized by
-> \(\int_X\omega_i\wedge\omega_j=\delta_{ij}\) on closed connected oriented
-> smooth four-manifolds to hyperk\"ahler triples, while fixing each class
-> \([\omega_i]\in H^2(X;\R)\).
+> A triple of closed two-forms on an oriented four-manifold is _hypersymplectic_ if every nonzero real linear combination is symplectic and induces the given orientation. The companion \cite[Theorem~1.1]{OpenAIHypersymplectic2026} combines the current estimates above with additional prescribed-class and deformation arguments to deform hypersymplectic triples normalized by \(\int_X\omega_i\wedge\omega_j=\delta_{ij}\) on closed connected oriented smooth four-manifolds to hyperkähler triples, while fixing each class \([\omega_i]\in H^2(X;\R)\).
 
 ## Graduate summary
 
@@ -67,70 +47,35 @@ The cone theorem is the structural result, stated at [S6:37–58]. It fixes the 
 
 The proof runs through positive currents, not through forms. The introduction sets out the mechanism in one paragraph [S6:135–142]:
 
-> Fix an auxiliary \(J\)-Hermitian metric. If no compatible form
-> exists, separation produces a nonzero positive current \(P\)
-> that annihilates closed invariant forms. An elliptic correction
-> gives \(T=P+Q\), which annihilates every closed two-form, with
-> \(Q\) initially an anti-invariant distribution. Represent \(P\)
-> as a positive weighted average of unit complex-line bivectors,
-> and let \(\mu\) be the resulting measure on \(X\), its trace measure.
-> Corrected radial test functions give \(\mu(B_r(x))\le Cr^2\).
+> Fix an auxiliary \(J\)-Hermitian metric. If no compatible form exists, separation produces a nonzero positive current \(P\) that annihilates closed invariant forms. An elliptic correction gives \(T=P+Q\), which annihilates every closed two-form, with \(Q\) initially an anti-invariant distribution. Represent \(P\) as a positive weighted average of unit complex-line bivectors, and let \(\mu\) be the resulting measure on \(X\), its trace measure. Corrected radial test functions give \(\mu(B_r(x))\le Cr^2\).
 
 The quadratic mass bound `μ(B_r(x)) ≤ C r²` is the estimate the paragraph names, and the angular estimate is `O(r⁴)` for pairs of complex lines whose base points are less than `r` apart [S6:143–147]. The principal step is the density-splitting theorem, and the manuscript is explicit that it does not need the annihilation property [S6:157–162]:
 
-> Existence of the limit is part of the argument. The principal
-> step, Theorem~\ref{thm:splitting}, proves that the restriction
-> \(P_E=\ind_E P\) is closed. It applies to any closed current
-> \(P+Q\) with an anti-invariant \(L^2\) correction and the stated
-> mass and angular bounds; annihilation of all closed forms is
-> not needed for this step.
+> Existence of the limit is part of the argument. The principal step, Theorem~ , proves that the restriction \(P_E=\ind_E P\) is closed. It applies to any closed current \(P+Q\) with an anti-invariant \(L^2\) correction and the stated mass and angular bounds; annihilation of all closed forms is not needed for this step.
 
 The closing estimate is a balance between two errors, and the manuscript writes the balance out [S6:177–181]:
 
-> where the two factors are the square roots of the angular and
-> transverse moments. The \(L^2\) bound controls the correction's
-> cutoff error separately. Together these estimates prove closedness
-> of the density restriction without requiring a quantitative rate
-> for tangent measure convergence.
+> where the two factors are the square roots of the angular and transverse moments. The \(L^2\) bound controls the correction's cutoff error separately. Together these estimates prove closedness of the density restriction without requiring a quantitative rate for tangent measure convergence.
 
 The dimensionality is stated as a fact about the estimates, not as a limitation of the theorem: "The regularized pairing estimates use the four-dimensional fact that anti-invariant two-forms are self-dual." [S6:194–195] The roadmap the introduction gives for the sections is [S6:196–205]:
 
-> Sections~\ref{sec:currents} and \ref{sec:mass} construct the
-> separating current and prove its mass bound.
-> Section~\ref{sec:energy} establishes the regularization and
-> angular estimates. Section~\ref{sec:density} proves density
-> existence and the planar tangent description;
-> Section~\ref{sec:splitting} uses them to control cutoff boundaries
-> and prove closedness of \(P_E\).
-> Section~\ref{sec:conclusion} completes the existence argument.
-> Section~\ref{sec:cones} develops the prescribed-class separation
-> and proves the cone description.
+> Sections~  and   construct the separating current and prove its mass bound. Section~  establishes the regularization and angular estimates. Section~  proves density existence and the planar tangent description; Section~  uses them to control cutoff boundaries and prove closedness of \(P_E\). Section~  completes the existence argument. Section~  develops the prescribed-class separation and proves the cone description.
 
 The sections carry that roadmap: separation at `02-currents.tex:88`, quadratic mass growth at `03-mass.tex:7`, the energy proposition at `04-energy.tex:219`, the density-splitting theorem at `05-density.tex:8`, its proof in `06-splitting.tex`, the proof of the main theorem at `07-conclusion.tex:3`, and the cone theory in `08-cones.tex`. The density-splitting theorem is the single most referenced label in the manuscript: it is defined at `05-density.tex:8` and used at `05-density.tex:40`, `05-density.tex:149`, `06-splitting.tex:4`, `07-conclusion.tex:9`, `08-cones.tex:222`, `01-introduction.tex:158` and `01-introduction.tex:193`. The introduction contains exactly three statement environments — the main theorem, the cone theorem, and the corollary — and no named analytic theorem; the analytic estimates are stated in the sections.
 
 The conclusion's closing step pairs the current with a residual current rather than with itself, and ends by intersecting two cones [S12:67–70]:
 
-> The positive cone and the subspace of closed invariant
-> smooth forms therefore intersect. Any form in their
-> intersection is the required smooth compatible
-> symplectic form for \(J\).
+> The positive cone and the subspace of closed invariant smooth forms therefore intersect. Any form in their intersection is the required smooth compatible symplectic form for \(J\).
 
 The strict-inclusion example is proved in the cone section, and the corollary's proof explains why the hypothesis `h_J^- = b₂⁺ − 1` is what makes the duality condition automatic [S13:364–366]:
 
-> of its positive-square cone. Every element of that component pairs
-> strictly positively with every nonzero element of its closure,
-> by Cauchy--Schwarz in coordinates of signature
+> of its positive-square cone. Every element of that component pairs strictly positively with every nonzero element of its closure, by Cauchy--Schwarz in coordinates of signature
 
-The example itself is the four-torus at [S13:375–418], and the example's closing sentence says which test fails: "In Theorem~\ref{thm:taming-cones}, the class \([U+V_0]\) fails the strict positivity test against \([U-V_0]\in\mathcal C\), and conversely." [S13:415–417]
+The example itself is the four-torus at [S13:375–418], and the example's closing sentence says which test fails: "In Theorem~ , the class \([U+V_0]\) fails the strict positivity test against \([U-V_0]\in\mathcal C\), and conversely." [S13:415–417]
 
 The formalization is the single-class statement, not the cone characterization. The scope note states the shape [S16:9]:
 
-> Donaldson's tamed-to-compatible conjecture asks whether an almost-complex
-> structure tamed by a symplectic form also admits a compatible symplectic
-> form. The formalized result establishes this for every closed connected
-> smooth four-manifold, keeping the almost-complex structure fixed. No
-> integrability assumption or prescribed cohomology class for the compatible
-> form is required.
+> Donaldson's tamed-to-compatible conjecture asks whether an almost-complex structure tamed by a symplectic form also admits a compatible symplectic form. The formalized result establishes this for every closed connected smooth four-manifold, keeping the almost-complex structure fixed. No integrability assumption or prescribed cohomology class for the compatible form is required.
 
 The declaration is `OAI/Geometry/TamingCompatibility/Main.lean`, 56 lines, with the statement at [S20:30–34]:
 
@@ -168,8 +113,7 @@ The stub is 68 lines and the `sorry` is at line 63, so the comparator states the
 
 The formalization record names the September edition of the manuscript as its source, not the October edition the catalog lists [S17:682–683]:
 
-> - title: "Taming implies compatibility on four-manifolds"
->   authors: ["OpenAI"]
+> - title: “Taming implies compatibility on four-manifolds” authors: [“OpenAI”]
 
 The scope note names the same September edition [S16:5]. The `main_results` entry names the declaration, the comparator config, and the file [S17:1677–1679]:
 
@@ -219,7 +163,7 @@ The paper has two editions in the release. The October 6, 2026 edition is the on
 
 The release's update log gives the reason for re-issuing both papers in this pair: "Taming and hypersymplectic deformation (2 manuscripts): corrected the cone-equality claim in Taming implies compatibility, added a strict-inclusion example, and removed an unnecessary cone-comparison dependency from the hypersymplectic paper." [S21:23] The October edition's corollary is the one that carries the `h_J^- = b₂⁺ − 1` hypothesis, and the strict-inclusion four-torus example is its addition [S6:60–70] [S13:375–418].
 
-## Consequences now that the proof has been found
+## Consequences
 
 The direct consequence inside the release is the companion paper. The introduction cites the companion's theorem by number, verbatim, in the passage quoted in the undergraduate section, and the companion's bibliography entry is the last in the manuscript's file [S6:207–215] [S14:289–292]:
 
@@ -236,46 +180,52 @@ The formalization consequence is a gap, not a coverage. The declaration proves t
 
 ## Sources
 
-Manuscript root: `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026`.
-
-The manuscript ships a `README.md` [S3:1–21] whose citation block gives the release bibtex key [S3:9–16] and whose last line is the version note [S3:21]. The scope note [S16:1–15] names the September edition as the source [S16:5] and states the formalized shape [S16:9]. The shipped PDF of the manuscript is [S15]; it is binary and is cited here by whole-file marker only. The ledger row for this family is [S22].
-
-Section map, read from the manuscript's own include list [S4:16–23]:
-
-- `build/sections/01-introduction.tex` — conjecture, definitions, main theorem, cone theorem, corollary, mechanism, companion paper [S6]
-- `build/sections/02-currents.tex` — separation proposition [S7:88]
-- `build/sections/03-mass.tex` — quadratic mass growth proposition [S8:7]
-- `build/sections/04-energy.tex` — energy proposition [S9:219]
-- `build/sections/05-density.tex` — density-splitting theorem [S10:8]
-- `build/sections/06-splitting.tex` — proof of the density-splitting theorem [S11:1]
-- `build/sections/07-conclusion.tex` — proof of the main theorem [S12:3]
-- `build/sections/08-cones.tex` — cone theory, class estimates, strict-inclusion example [S13:22]
-- `build/preamble.tex` — the manuscript's macro preamble [S5:1–54]
-- `build/references.bib` — the 25-entry bibliography, Donaldson first, the intra-corpus entry last [S14:1–295]
-
 | # | File | Lines | Role |
-|---|---|---|---|
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Release blurb, manuscript link, abstract |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family entry in the release's entry list |
-| S3 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/README.md`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/README.md) | 21 | Title, date, bibtex key, version note |
-| S4 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/main.tex`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/main.tex) | 28 | Abstract and include list |
-| S5 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/preamble.tex`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/preamble.tex) | 54 | Macro preamble |
-| S6 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/01-introduction.tex`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/01-introduction.tex) | 215 | Conjecture, definitions, theorems, mechanism, companion |
-| S7 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/02-currents.tex`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/02-currents.tex) | 164 | Separation proposition |
-| S8 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/03-mass.tex`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/03-mass.tex) | 150 | Quadratic mass growth proposition |
-| S9 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/04-energy.tex`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/04-energy.tex) | 270 | Energy proposition |
-| S10 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/05-density.tex`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/05-density.tex) | 278 | Density-splitting theorem |
-| S11 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/06-splitting.tex`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/06-splitting.tex) | 271 | Proof of the density-splitting theorem |
-| S12 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/07-conclusion.tex`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/07-conclusion.tex) | 71 | Proof of the main theorem |
-| S13 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/08-cones.tex`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/08-cones.tex) | 418 | Cone theory, class estimates, strict-inclusion example |
-| S14 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/references.bib`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/references.bib) | 295 | Bibliography, Donaldson 2006, intra-corpus entry |
-| S15 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/paper.pdf`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/paper.pdf) | — | Shipped manuscript PDF |
-| S16 | [`lean/docs/342.md`](../../../lean/docs/342.md) | 15 | Scope note |
-| S17 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1,783 | Source, status, main_results, automation, review |
-| S18 | [`lean/ComparatorChallenges/TamingCompatibility.json`](../../../lean/ComparatorChallenges/TamingCompatibility.json) | 14 | Challenge record |
-| S19 | [`lean/ComparatorChallenges/TamingCompatibility.lean`](../../../lean/ComparatorChallenges/TamingCompatibility.lean) | 68 | Comparator stub, definitions, target, `sorry` |
-| S20 | [`lean/OAI/Geometry/TamingCompatibility/Main.lean`](../../../lean/OAI/Geometry/TamingCompatibility/Main.lean) | 56 | Formalized declaration |
-| S21 | [`history.md`](../../../history.md) | 31 | Release update log |
-| S22 | [`notes/tables/catalog.tsv`](../../../notes/tables/catalog.tsv) | 373 | Ledger row for family 342 |
+| --- | --- | --- | --- |
+| S1 | `CONTENTS.md` | 9142 | Release blurb, manuscript link, abstract |
+| S2 | `overview.tex` | 859 | Family entry in the release's entry list |
+| S3 | `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/README.md` | 21 | Title, date, bibtex key, version note |
+| S4 | `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/main.tex` | 28 | Abstract and include list |
+| S5 | `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/preamble.tex` | 54 | Macro preamble |
+| S6 | `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/01-introduction.tex` | 215 | Conjecture, definitions, theorems, mechanism, companion |
+| S7 | `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/02-currents.tex` | 164 | Separation proposition |
+| S8 | `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/03-mass.tex` | 150 | Quadratic mass growth proposition |
+| S9 | `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/04-energy.tex` | 270 | Energy proposition |
+| S10 | `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/05-density.tex` | 278 | Density-splitting theorem |
+| S11 | `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/06-splitting.tex` | 271 | Proof of the density-splitting theorem |
+| S12 | `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/07-conclusion.tex` | 71 | Proof of the main theorem |
+| S13 | `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/08-cones.tex` | 418 | Cone theory, class estimates, strict-inclusion example |
+| S14 | `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/references.bib` | 295 | Bibliography, Donaldson 2006, intra-corpus entry |
+| S15 | `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/paper.pdf` | 7145 | Shipped manuscript PDF |
+| S16 | `lean/docs/342.md` | 15 | Scope note |
+| S17 | `lean/formalization.yaml` | 1783 | Source, status, main_results, automation, review |
+| S18 | `lean/ComparatorChallenges/TamingCompatibility.json` | 14 | Challenge record |
+| S19 | `lean/ComparatorChallenges/TamingCompatibility.lean` | 68 | Comparator stub, definitions, target, `sorry` |
+| S20 | `lean/OAI/Geometry/TamingCompatibility/Main.lean` | 56 | Formalized declaration |
+| S21 | `history.md` | 31 | Release update log |
+| S22 | `notes/tables/catalog.tsv` | 373 | Ledger row for family 342 |
 
-What has not been checked: no Lean, lake, or comparator run was performed, so nothing here proves the declaration elaborates, that the proof body at `Main.lean:35–50` closes, that the comparator's `sorry` at line 63 is the whole gap, or that the release's `review: status: unchecked` block has ever been read by a reviewer. The September 23, 2026 edition's LaTeX was not read, so the cone-equality claim the update log says was corrected was not compared line by line between the two editions. The manuscript PDF was not opened. The analytic sections 02–06 were read at heading and label level, not proof by proof, so the quadratic mass bound, the angular estimate, the density existence argument, and the density-splitting proof are not assessed. The cone section's proofs of the cone theorem, the corollary, and the four-torus example were read at statement level, not line by line. The companion family 341 was read only from its ledger row, not from its manuscript. The Donaldson paper itself was not read, so the manuscript's attribution of the question to Section 5.2, Question 2 of that paper is taken from the manuscript. The 25-entry bibliography was counted, not checked for entries the manuscript cites but does not list. The ledger's `shapes` column for this family is empty, so no claim-shape tag was applied, and the `resolves_named` flag was not tested against the manuscript's statement text.
+## Links
+
+- [S1](../../../CONTENTS.md)
+- [S2](../../../overview.tex)
+- [S3](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/README.md)
+- [S4](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/main.tex)
+- [S5](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/preamble.tex)
+- [S6](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/01-introduction.tex)
+- [S7](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/02-currents.tex)
+- [S8](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/03-mass.tex)
+- [S9](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/04-energy.tex)
+- [S10](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/05-density.tex)
+- [S11](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/06-splitting.tex)
+- [S12](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/07-conclusion.tex)
+- [S13](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/08-cones.tex)
+- [S14](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/references.bib)
+- [S15](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/paper.pdf)
+- [S16](../../../lean/docs/342.md)
+- [S17](../../../lean/formalization.yaml)
+- [S18](../../../lean/ComparatorChallenges/TamingCompatibility.json)
+- [S19](../../../lean/ComparatorChallenges/TamingCompatibility.lean)
+- [S20](../../../lean/OAI/Geometry/TamingCompatibility/Main.lean)
+- [S21](../../../history.md)
+- [S22](../../../notes/tables/catalog.tsv)

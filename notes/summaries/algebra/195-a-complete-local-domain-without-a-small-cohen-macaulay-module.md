@@ -1,14 +1,12 @@
-# 195 - A complete local domain without a small Cohen-Macaulay module
+Notes / Summaries / Algebra / [Family 195](../../index/algebra/195-a-complete-local-domain-without-a-small-cohen-macaulay-module.md)
+
+# 195 — A counterexample to the small Cohen--Macaulay module conjecture
 
 ## Original CONTENTS.md summary
 
 [S1:471] carries the family entry:
 
-> Constructs a three-dimensional complete Noetherian normal local domain
-> over $\mathbb C$ with no nonzero finitely generated maximal
-> Cohen--Macaulay module. A three-dimensional local domain essentially of
-> finite type over $\mathbb C$ has the same property, disproving the
-> domain form of the small Cohen--Macaulay module conjecture.
+> Constructs a three-dimensional complete Noetherian normal local domain over $\mathbb C$ with no nonzero finitely generated maximal Cohen--Macaulay module. A three-dimensional local domain essentially of finite type over $\mathbb C$ has the same property, disproving the domain form of the small Cohen--Macaulay module conjecture.
 
 The entry names the manuscript "A Complete Local Domain without a Small Cohen–Macaulay Module" [S1:471].
 
@@ -20,15 +18,15 @@ The README dates it 2026-09-23 [S2:5].
 
 A small Cohen--Macaulay module over a Noetherian local ring is a nonzero finitely generated module whose depth equals the ring's dimension. The domain form of the conjecture asks whether every complete Noetherian local domain has one.
 
-The manuscript's abstract states the counterexample. [S3:38–41] says: "We construct a three-dimensional complete Noetherian normal local domain containing $\C$, with residue field $\C$, that has no nonzero finitely generated maximal Cohen--Macaulay module. This disproves the domain form of the small Cohen--Macaulay module conjecture."
+The manuscript's abstract states the counterexample. [S3:38–41] says: "We construct a three-dimensional complete Noetherian normal local domain containing $\mathbb C$, with residue field $\mathbb C$, that has no nonzero finitely generated maximal Cohen--Macaulay module. This disproves the domain form of the small Cohen--Macaulay module conjecture."
 
-The main theorem names the ring. [S3:55–57] gives it: "There exists a three-dimensional complete Noetherian normal local domain $R$ containing $\C$, with residue field $\C$, such that no nonzero finitely generated $R$-module has depth three."
+The main theorem names the ring. [S3:55–57] gives it: "There exists a three-dimensional complete Noetherian normal local domain $R$ containing $\mathbb C$, with residue field $\mathbb C$, such that no nonzero finitely generated $R$-module has depth three."
 
 The proof starts from a smooth projective surface and its section ring, completes the cone at the vertex, and shows that any finite module of full depth would force a Chern-character inequality that the chosen surface violates.
 
 ## Graduate summary
 
-The conjecture is stated. [S3:47–51] states it: "A \emph{small Cohen--Macaulay module} over a Noetherian local ring $(R,\mathfrak m)$ is a nonzero finitely generated $R$-module $M$ such that $\depth_R M=\dim R$. Such a module is also called a maximal Cohen--Macaulay module. The domain form of the small Cohen--Macaulay module conjecture asks whether every complete Noetherian local domain has one."
+The conjecture is stated. [S3:47–51] states it: "A _small Cohen--Macaulay module_ over a Noetherian local ring $(R,\mathfrak m)$ is a nonzero finitely generated $R$-module $M$ such that $\depth_R M=\dim R$. Such a module is also called a maximal Cohen--Macaulay module. The domain form of the small Cohen--Macaulay module conjecture asks whether every complete Noetherian local domain has one."
 
 The module-versus-algebra distinction is stated. [S3:60–62] states it: "The distinction between modules and algebras matters here. A module-finite extension domain $R\subseteq B$ that is Cohen--Macaulay supplies such a module, but the converse need not hold. Our obstruction applies to every finite module; it requires neither a grading nor an algebra structure."
 
@@ -36,7 +34,7 @@ Hochster's problem is recorded. [S3:63–64] records it: "Hochster formulated th
 
 The low-dimensional cases are recorded. [S3:65–67] records them: "In dimensions at most two, a complete local domain has a small Cohen--Macaulay module: its finite normalization is Cohen--Macaulay"
 
-The big-module results are recorded. [S3:78–81] records them: "Dropping finite generation changes the problem. In the balanced convention, a \emph{big Cohen--Macaulay module} is a possibly infinitely generated module on which every system of parameters is a regular sequence and whose quotient by the maximal ideal is nonzero."
+The big-module results are recorded. [S3:78–81] records them: "Dropping finite generation changes the problem. In the balanced convention, a _big Cohen--Macaulay module_ is a possibly infinitely generated module on which every system of parameters is a regular sequence and whose quotient by the maximal ideal is nonzero."
 
 Hochster's existence theorem is recorded. [S3:81–82] records it: "quotient by the maximal ideal is nonzero. Hochster proved existence in equal characteristic"
 
@@ -54,17 +52,17 @@ The asymptotic substitutes are recorded. [S3:95–97] records them: "Neither obs
 
 The open-problem statement is recorded. [S3:98–100] records it: "describes the existence problem as open even for local rings at maximal ideals of affine three-dimensional domains over algebraically closed fields"
 
-The geometric input is defined. [S3:102–104] defines it: "The geometric input is a smooth integral projective surface $X$ over $\C$ with an ample globally generated line bundle $\cO_X(H)$. Write"
+The geometric input is defined. [S3:102–104] defines it: "The geometric input is a smooth integral projective surface $X$ over $\mathbb C$ with an ample globally generated line bundle $\mathcal O_X(H)$. Write"
 
-The completed ring and the affine-local corollary are stated. [S3:109–116] states them: "Here the hat denotes completion at the maximal ideal. We write $K_X$ for the canonical divisor and $c_2(X)$ for the second Chern number. For the specific pair $(X,H)$ used for Theorem~\ref{thm:main}, the uncompleted vertex localization $T(X,H)_{T(X,H)_{>0}}$ also has no small Cohen--Macaulay module (Corollary~\ref{cor:affine-local}). It is a three-dimensional local domain essentially of finite type over $\C$, so this supplies a counterexample in the affine-local class just described. The deduction uses faithful flatness of completion."
+The completed ring and the affine-local corollary are stated. [S3:109–116] states them: "Here the hat denotes completion at the maximal ideal. We write $K_X$ for the canonical divisor and $c_2(X)$ for the second Chern number. For the specific pair $(X,H)$ used for Theorem~ , the uncompleted vertex localization $T(X,H)_{T(X,H)_{>0}}$ also has no small Cohen--Macaulay module (Corollary~ ). It is a three-dimensional local domain essentially of finite type over $\mathbb C$, so this supplies a counterexample in the affine-local class just described. The deduction uses faithful flatness of completion."
 
-The obstruction theorem is the load-bearing statement. [S3:120–125] gives it: "Let $X$ be a smooth integral projective surface over $\C$, and let $H$ be an ample globally generated divisor. If $R(X,H)$ admits a small Cohen--Macaulay module, then \begin{equation}\label{eq:obstruction} K_X^2-2c_2(X)\leq 6H^2. \end{equation}"
+The obstruction theorem is the load-bearing statement. [S3:120–125] gives it: "Let $X$ be a smooth integral projective surface over $\mathbb C$, and let $H$ be an ample globally generated divisor. If $R(X,H)$ admits a small Cohen--Macaulay module, then \begin{equation}  K_X^2-2c_2(X)\leq 6H^2. \end{equation}"
 
-The Ulrich route is recorded. [S3:128–130] records it: "A numerical obstruction for Ulrich sheaves on surfaces follows from Bogomolov's inequality and the Hodge index theorem. Beauville presented this route for surfaces of N\'eron--Severi rank one"
+The Ulrich route is recorded. [S3:128–130] records it: "A numerical obstruction for Ulrich sheaves on surfaces follows from Bogomolov's inequality and the Hodge index theorem. Beauville presented this route for surfaces of Néron--Severi rank one"
 
-The rank restriction is removed. [S3:131–132] states it: "Anghel gives the surface inequality without that N\'eron--Severi rank restriction"
+The rank restriction is removed. [S3:131–132] states it: "Anghel gives the surface inequality without that Néron--Severi rank restriction"
 
-The Ulrich triviality is recorded. [S3:134–135] records it: "For a projective surface, an Ulrich sheaf has trivial vector-bundle pushforward under a finite linear projection to $\PP^2$"
+The Ulrich triviality is recorded. [S3:134–135] records it: "For a projective surface, an Ulrich sheaf has trivial vector-bundle pushforward under a finite linear projection to $\mathbb P^2$"
 
 The replacement is stated. [S3:136–142] states it: "The argument here replaces that triviality condition by a comparison of coherent extensions across the exceptional divisor of a completed cone. A module over the completed local ring need not carry a grading. We therefore retain its actual vector bundle on the punctured spectrum, rather than assume it descends to an Ulrich sheaf on $X$. It is this comparison that permits arbitrary nongraded modules."
 
@@ -76,33 +74,33 @@ The overlapping work is recorded. [S3:148–152] records it: "Anghel's September
 
 The scope of that statement is stated. [S3:153–154] states it: "That statement does not assert nonexistence of arbitrary modules over the vertex completion. Chen's September~21, 2026 preprint proposes a"
 
-Chen's bound is recorded. [S3:155–159] records it: "quantitative local-cohomology bound for every nonzero finite reflexive module over a completed cone when $K_X\equiv4H$ and $15H^2/8-\chi(\cO_X)>0$, and obtains a proposed completed-local counterexample from the exponent-six cover"
+Chen's bound is recorded. [S3:155–159] records it: "quantitative local-cohomology bound for every nonzero finite reflexive module over a completed cone when $K_X\equiv4H$ and $15H^2/8-\chi(\mathcal O_X)>0$, and obtains a proposed completed-local counterexample from the exponent-six cover"
 
 The overlap and the difference are stated. [S3:160–163] states them: "Thus the existential completed-module claim overlaps with that work. Our obstruction applies without the proportionality hypothesis on $K_X$ and $H$; the exponent-seven polarization used below has $K_X\equiv5H$."
 
-The first proof step is stated. [S3:169–175] states it: "Choose a finite morphism $f:X\to\PP^2$ with $f^*\cO_{\PP^2}(1)=\cO_X(H)$, and put $h=H^2=\deg f$. The completed cone is finite over the regular local ring $A=\C[[x_0,x_1,x_2]]$. A small Cohen--Macaulay module is free over $A$. Its restriction to the punctured cone is a vector bundle, which extends to a coherent sheaf $\cE$ on a regular model $W\to\Spec R(X,H)$ that is an isomorphism away from the exceptional surface $X$."
+The first proof step is stated. [S3:169–175] states it: "Choose a finite morphism $f:X\to\mathbb P^2$ with $f^*\mathcal O_{\mathbb P^2}(1)=\mathcal O_X(H)$, and put $h=H^2=\deg f$. The completed cone is finite over the regular local ring $A=\mathbb C[[x_0,x_1,x_2]]$. A small Cohen--Macaulay module is free over $A$. Its restriction to the punctured cone is a vector bundle, which extends to a coherent sheaf $\mathcal E$ on a regular model $W\to\Spec R(X,H)$ that is an isomorphism away from the exceptional surface $X$."
 
-The slope normalization is defined. [S3:177–184] defines it: "For a nonzero torsion-free sheaf $B$ on $X$, its normalized slope is \[ \mu(B)=\frac{c_1(B)\cdot H}{\rk(B)H^2}. \] It is slope-semistable if no nonzero subsheaf of smaller rank has larger slope. Its Harder--Narasimhan filtration has torsion-free semistable factors with decreasing slopes. We choose $\cE$ with torsion-free restriction $P=\cE|_X$."
+The slope normalization is defined. [S3:177–184] defines it: "For a nonzero torsion-free sheaf $B$ on $X$, its normalized slope is \[ \mu(B)=\frac{c_1(B)\cdot H}{\rk(B)H^2}. \] It is slope-semistable if no nonzero subsheaf of smaller rank has larger slope. Its Harder--Narasimhan filtration has torsion-free semistable factors with decreasing slopes. We choose $\mathcal E$ with torsion-free restriction $P=\mathcal E|_X$."
 
-The two analytic steps are stated. [S3:185–191] states them: "First, elementary modifications of $\cE$ along $X$ arrange that the slopes of the Harder--Narasimhan factors of $P$ lie in an interval of length at most one. These modifications preserve the bundle away from $X$. Second, that bundle comes from an $A$-free module. Comparing the pushforward of $\cE$ with a trivial sheaf on the blowup of $\Spec A$ gives, for $F=f_*P$ of rank $N$, the inequality $2N\ch_2(F)\geq c_1(F)^2$, with Chern characters evaluated on $\PP^2$."
+The two analytic steps are stated. [S3:185–191] states them: "First, elementary modifications of $\mathcal E$ along $X$ arrange that the slopes of the Harder--Narasimhan factors of $P$ lie in an interval of length at most one. These modifications preserve the bundle away from $X$. Second, that bundle comes from an $A$-free module. Comparing the pushforward of $\mathcal E$ with a trivial sheaf on the blowup of $\Spec A$ gives, for $F=f_*P$ of rank $N$, the inequality $2N\ch_2(F)\geq c_1(F)^2$, with Chern characters evaluated on $\mathbb P^2$."
 
-The surface-theory comparison is stated. [S3:192–201] states it: "Bogomolov's inequality for the semistable factors bounds the same normalized Chern expression above. More precisely, if $r=\rk P$, then $N=rh$ and the two comparisons give \[ 0\leq \frac{2\ch_2(f_*P)}{N} -\left(\frac{c_1(f_*P)}{N}\right)^2 \leq\frac12-\frac{K_X^2-2c_2(X)}{12H^2}. \] This yields \eqref{eq:obstruction}. Neither $P$ nor $f_*P$ is assumed semistable or Ulrich."
+The surface-theory comparison is stated. [S3:192–201] states it: "Bogomolov's inequality for the semistable factors bounds the same normalized Chern expression above. More precisely, if $r=\rk P$, then $N=rh$ and the two comparisons give \[ 0\leq \frac{2\ch_2(f_*P)}{N} -\left(\frac{c_1(f_*P)}{N}\right)^2 \leq\frac12-\frac{K_X^2-2c_2(X)}{12H^2}. \] This yields  . Neither $P$ nor $f_*P$ is assumed semistable or Ulrich."
 
-The organization is recorded. [S3:203–208] records it: "Section~\ref{sec:cone} constructs the resolution and extends an arbitrary module. Section~\ref{sec:balancing} proves the slope modification lemma. Section~\ref{sec:lattice} establishes the Chern-character inequality, and Section~\ref{sec:numerical} combines it with surface theory. Finally, Section~\ref{sec:surface} constructs a surface with $K_X^2-2c_2(X)>6H^2$."
+The organization is recorded. [S3:203–208] records it: "Section~  constructs the resolution and extends an arbitrary module. Section~  proves the slope modification lemma. Section~  establishes the Chern-character inequality, and Section~  combines it with surface theory. Finally, Section~  constructs a surface with $K_X^2-2c_2(X)>6H^2$."
 
-The cone section opens with the model. [S3:211–214] opens it: "Throughout this section, $X$ and $H$ satisfy the hypotheses of Theorem~\ref{thm:obstruction}. We construct a regular model of the completed cone and explain how a small Cohen--Macaulay module produces a sheaf on it. We also prove that the completed ring is normal."
+The cone section opens with the model. [S3:211–214] opens it: "Throughout this section, $X$ and $H$ satisfy the hypotheses of Theorem~ . We construct a regular model of the completed cone and explain how a small Cohen--Macaulay module produces a sheaf on it. We also prove that the completed ring is normal."
 
-The finite map is constructed. [S3:217–227] constructs it: "Global generation supplies sections $s_0,s_1,s_2$ of $\cO_X(H)$ with no common zero. Indeed, choose $s_0\ne0$, then $s_1$ avoiding the components of its zero divisor, and then $s_2$ nonvanishing at their finitely many common zeros. The resulting morphism \[ f:X\longrightarrow D:=\PP^2,\qquad f^*\cO_D(1)=\cO_X(H), \] is finite and surjective. A positive-dimensional fiber would contain a curve on which $H$ is both ample and trivial, which is impossible. Properness then gives finiteness, and the intersection formula gives $\deg f=h:=H^2$."
+The finite map is constructed. [S3:217–227] constructs it: "Global generation supplies sections $s_0,s_1,s_2$ of $\mathcal O_X(H)$ with no common zero. Indeed, choose $s_0\ne0$, then $s_1$ avoiding the components of its zero divisor, and then $s_2$ nonvanishing at their finitely many common zeros. The resulting morphism \[ f:X\longrightarrow D:=\mathbb P^2,\qquad f^*\mathcal O_D(1)=\mathcal O_X(H), \] is finite and surjective. A positive-dimensional fiber would contain a curve on which $H$ is both ample and trivial, which is impossible. Properness then gives finiteness, and the intersection formula gives $\deg f=h:=H^2$."
 
-The regular model is defined. [S3:267–273] defines it: "Let $V_0=\Tot(\cO_D(-1))$, the blowup of $\Spec S$ at the origin, and let \[ W_0=X\times_D V_0=\Tot(\cO_X(-H)). \] The map $W_0\to V_0$ is finite. Evaluation of homogeneous sections gives $W_0\to\Spec T$. It is an isomorphism off the zero section."
+The regular model is defined. [S3:267–273] defines it: "Let $V_0=\Tot(\mathcal O_D(-1))$, the blowup of $\Spec S$ at the origin, and let \[ W_0=X\times_D V_0=\Tot(\mathcal O_X(-H)). \] The map $W_0\to V_0$ is finite. Evaluation of homogeneous sections gives $W_0\to\Spec T$. It is an isomorphism off the zero section."
 
 The module is made free. [S3:332–334] states it: "Suppose that $M$ is a small Cohen--Macaulay $R$-module. The parameters $x_0,x_1,x_2$ form an $M$-regular sequence, so $M$ has depth three over $A$."
 
-The Auslander--Buchsbaum conclusion is stated. [S3:336–339] states it: "shows that \begin{equation}\label{eq:A-free} M\simeq A^N\quad\text{as an $A$-module},\qquad N>0. \end{equation}"
+The Auslander--Buchsbaum conclusion is stated. [S3:336–339] states it: "shows that \begin{equation}  M\simeq A^N\quad\text{as an $A$-module},\qquad N>0. \end{equation}"
 
 The support is stated. [S3:340–342] states it: "The localization $R\otimes_A\Frac(A)$ is a finite-dimensional domain over a field, hence a field. Thus $M$ has positive generic rank over $R$ and full support."
 
-The balancing step is stated. [S3:378–381] states it: "We now modify the extension along $X$ so that its restriction has Harder--Narasimhan slopes in an interval of length at most one. Recall the normalization $\mu(B)=c_1(B)\cdot H/(\rk(B)h)$, where $h=H^2$. Tensoring with $\cO_X(H)$ increases slope by one."
+The balancing step is stated. [S3:378–381] states it: "We now modify the extension along $X$ so that its restriction has Harder--Narasimhan slopes in an interval of length at most one. Recall the normalization $\mu(B)=c_1(B)\cdot H/(\rk(B)h)$, where $h=H^2$. Tensoring with $\mathcal O_X(H)$ increases slope by one."
 
 The antecedent is recorded. [S3:383–384] records it: "Elementary modification to constrain the slopes of exceptional-divisor restrictions has an antecedent in Chen--Sun's optimal extensions of"
 
@@ -112,7 +110,7 @@ The filtration is constructed. [S3:390–398] constructs it: "We recall briefly 
 
 The lattice section is stated. [S3:454–456] states it: "The pushforward of our extension agrees with a trivial bundle away from $D$. We show that this agreement forces a nonnegative expression in the Chern characters of its restriction to $D$."
 
-The variance expression is stated. [S3:463–465] states it: "For $F=\bigoplus_{i=1}^N\cO_D(a_i)$, this is the ordinary variance of the integers $a_i$. It need not be nonnegative for arbitrary sheaves. The expression is unchanged by twisting $F$ by $\cO_D(b)$."
+The variance expression is stated. [S3:463–465] states it: "For $F=\bigoplus_{i=1}^N\mathcal O_D(a_i)$, this is the ordinary variance of the integers $a_i$. It need not be nonnegative for arbitrary sheaves. The expression is unchanged by twisting $F$ by $\mathcal O_D(b)$."
 
 The numerical section opens. [S3:543] opens it: "We first compute the contribution of one semistable factor."
 
@@ -126,11 +124,11 @@ The proposition is the numerical target. [S4:13–17] gives it: "For each prime 
 
 The method is stated. [S4:20–21] states it: "We prove the proposition by constructing the cover, checking its local coordinates, and then finding sections of the required polarization." [S4:22] adds: "The covering construction goes back to Hirzebruch's work on line"
 
-The counterexample is instantiated. [S3:633–638] instantiates it: "Take the surface and polarization of Proposition~\ref{prop:surface} with $n=7$. Their invariants are \[ H^2=5\cdot7^3=1715,\qquad K_X^2-2c_2(X)=39\cdot7^3=13377>10290=6H^2. \]"
+The counterexample is instantiated. [S3:633–638] instantiates it: "Take the surface and polarization of Proposition~  with $n=7$. Their invariants are \[ H^2=5\cdot7^3=1715,\qquad K_X^2-2c_2(X)=39\cdot7^3=13377>10290=6H^2. \]"
 
-The deduction is stated. [S3:639–643] states it: "The ring $R(X,H)$ is a complete Noetherian normal local domain of dimension three, with residue field $\C$, by Section~\ref{sec:cone}. If it had a nonzero finite module of depth three, Theorem~\ref{thm:obstruction} would give the opposite numerical inequality. Thus it has no such module."
+The deduction is stated. [S3:639–643] states it: "The ring $R(X,H)$ is a complete Noetherian normal local domain of dimension three, with residue field $\mathbb C$, by Section~ . If it had a nonzero finite module of depth three, Theorem~  would give the opposite numerical inequality. Thus it has no such module."
 
-The affine-local corollary is given. [S3:647–655] gives it: "Let $X$ and $H$ be the surface and polarization constructed in Proposition~\ref{prop:surface} for $n=7$, and put \[ T=T(X,H),\qquad \mathfrak n=T_{>0}. \] Then $T$ is a finitely generated graded three-dimensional $\C$-domain, $\mathfrak n$ is maximal with $T/\mathfrak n=\C$, and the three-dimensional local domain $T_{\mathfrak n}$ has no nonzero finitely generated maximal Cohen--Macaulay module."
+The affine-local corollary is given. [S3:647–655] gives it: "Let $X$ and $H$ be the surface and polarization constructed in Proposition~  for $n=7$, and put \[ T=T(X,H),\qquad \mathfrak n=T_{>0}. \] Then $T$ is a finitely generated graded three-dimensional $\mathbb C$-domain, $\mathfrak n$ is maximal with $T/\mathfrak n=\mathbb C$, and the three-dimensional local domain $T_{\mathfrak n}$ has no nonzero finitely generated maximal Cohen--Macaulay module."
 
 The corollary proof is stated. [S3:670–674] states it: "Suppose that $M$ is a nonzero finite $R_0$-module of depth three, and choose an $M$-regular sequence $z_1,z_2,z_3$ in the maximal ideal of $R_0$. The completion map $R_0\to R$ is faithfully flat, and, since $M$ is finite, its completion satisfies $\widehat M\cong M\otimes_{R_0}R$"
 

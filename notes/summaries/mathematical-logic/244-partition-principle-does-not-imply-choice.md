@@ -1,15 +1,12 @@
-# 244 - The partition principle does not imply choice
+Notes / Summaries / Mathematical logic / [Family 244](../../index/mathematical-logic/244-partition-principle-does-not-imply-choice.md)
+
+# 244 — The partition principle does not imply choice
 
 ## Original CONTENTS.md summary
 
 [S1:573] carries the family entry:
 
-> Assuming ZF is consistent, constructs a model in which every surjective
-> image of a set injects into that set, yet the axiom of choice fails. Choice
-> for ordinal-indexed families still holds. From any countable transitive
-> model of ZFC, a separate construction gives a transitive symmetric
-> extension with these properties and no new countable sequences of
-> ground-model elements.
+> Assuming ZF is consistent, constructs a model in which every surjective image of a set injects into that set, yet the axiom of choice fails. Choice for ordinal-indexed families still holds. From any countable transitive model of ZFC, a separate construction gives a transitive symmetric extension with these properties and no new countable sequences of ground-model elements.
 
 The entry links the manuscript as "The Partition Principle does not imply
 Choice" [S1:573].
@@ -111,7 +108,7 @@ recorded.
 prior on the Partition Principle's standing is not recorded in the release's
 own reading. The claim in the entry is the record.
 
-## Consequences now that the proof has been found
+## Consequences
 
 The separation is a consistency result, not a theorem of ZF. [S4:23–25]
 states it in the relative form, and [S10:9] records that the formalization
@@ -148,3 +145,19 @@ claim exists and names its declaration; the two comparator configs carry
 | S11 | `lean/OAI/SetTheory/PartitionPrinciple/Models/Separation.lean` | 51 | The transitive-model declaration |
 | S12 | `lean/ComparatorChallenges/PartitionPrinciple.lean` | 277 | Stub, `sorry` at line 273 |
 | S13 | `lean/ComparatorChallenges/PartitionConsistency.lean` | 324 | Stub, `sorry` at line 320 |
+
+## Links
+
+- [S1](../../../overview.tex)
+- [S2](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/README.md)
+- [S3](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/main.tex)
+- [S4](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/introduction.tex)
+- [S5](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/monoid.tex)
+- [S6](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/forcing.tex)
+- [S7](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/quotients.tex)
+- [S8](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/conclusion.tex)
+- [S9](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/metatheory.tex)
+- [S10](../../../lean/docs/244.md)
+- [S11](../../../lean/OAI/SetTheory/PartitionPrinciple/Models/Separation.lean)
+- [S12](../../../lean/ComparatorChallenges/PartitionPrinciple.lean)
+- [S13](../../../lean/ComparatorChallenges/PartitionConsistency.lean)

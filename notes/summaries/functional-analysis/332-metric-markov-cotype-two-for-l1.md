@@ -1,14 +1,12 @@
-# 332 — Metric Markov cotype two for $\ell_1$ (Functional analysis, 1 manuscript, tier T0)
+Notes / Summaries / Functional analysis / [Family 332](../../index/functional-analysis/332-metric-markov-cotype-two-for-l1.md)
+
+# 332 — Metric Markov cotype two for $\ell_1$
 
 ## Original CONTENTS.md summary
 
 The release's blurb [S1:8104]:
 
-> Proves that real ℓ1 has metric Markov cotype two, answering Mendel and
-> Naor's question. Consequently, every Lipschitz map from an arbitrary
-> subset of a real Hilbert space into ℓ1 extends to the whole space with a
-> universal multiplicative loss in its Lipschitz constant, resolving Ball's
-> extension problem for this target.
+> Proves that real ℓ1 has metric Markov cotype two, answering Mendel and Naor's question. Consequently, every Lipschitz map from an arbitrary subset of a real Hilbert space into ℓ1 extends to the whole space with a universal multiplicative loss in its Lipschitz constant, resolving Ball's extension problem for this target.
 
 The manuscript's own abstract [S5:42–46] states the same result in one
 sentence: "We prove that the real Banach space" ℓ1 "has metric Markov
@@ -100,7 +98,7 @@ The remark after the martingale section says the reversibility is used only
 through the stationarity of the stationary law, so the argument extends to
 any stationary Markov chain, not only to reversible ones. [S5:399–401]
 
-## History and prior work
+## History of the conjecture
 
 Ball introduced Markov type and cotype in his study of Lipschitz extension,
 and his Banach-space cotype condition prescribes linear averages; the space
@@ -139,7 +137,7 @@ for Hilbert-to-ℓ1 maps following formally once the question was answered.
 The manuscript's own citations are the record; this paragraph is my prior on
 the conjecture's standing, and the manuscript does not state it.
 
-## Consequences and open directions
+## Consequences
 
 The extension consequence is the headline. Because the cotype constant is
 finite, a Lipschitz map from any subset of a real Hilbert space into the
@@ -164,7 +162,7 @@ and the remark that reversibility is used only through stationarity widens
 the class of chains the argument covers, which is a strengthening the
 manuscript states rather than a limitation.
 
-## What is formalized
+## Comparison with the formalized statement
 
 Nothing. The ledger records tier T0 for this family, with no scope note, no
 comparator challenge, no `main_results` entry, no reasoning trace, and no
@@ -179,18 +177,19 @@ and no certificate ships with it.
 ## Sources
 
 | # | File | Lines | Role |
-|---|---|---|---|
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | The release's blurb for family 332 at line 8104. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 760. |
-| S3 | [`README.md`](../../../README.md) | 51 | The repo readme, which attributes no reasoning trace to this family. |
-| S4 | [`preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/README.md`](../../../preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/README.md) | 18 | Citation-only manuscript readme: the result, the method, the scope, no provenance. |
-| S5 | [`preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/build/main.tex`](../../../preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/build/main.tex) | 648 | The abstract, the definition, the theorem, the mechanism, the three sections, the remark, and the two corollaries. |
-| S6 | [`preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/build/references.bib`](../../../preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/build/references.bib) | 50 | The bibliography: Ball, Mendel–Naor, Deza–Laurent, Naor–Young, Cheng–Wang–Xiang. |
+| --- | --- | --- | --- |
+| S1 | `CONTENTS.md` | 9142 | The release's blurb for family 332 at line 8104. |
+| S2 | `overview.tex` | 859 | The catalog abstract at line 760. |
+| S3 | `README.md` | 51 | The repo readme, which attributes no reasoning trace to this family. |
+| S4 | `preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/README.md` | 18 | Citation-only manuscript readme: the result, the method, the scope, no provenance. |
+| S5 | `preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/build/main.tex` | 648 | The abstract, the definition, the theorem, the mechanism, the three sections, the remark, and the two corollaries. |
+| S6 | `preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/build/references.bib` | 50 | The bibliography: Ball, Mendel–Naor, Deza–Laurent, Naor–Young, Cheng–Wang–Xiang. |
 
-The manuscript ships [S4:1–16] as a citation-only record: the result, the
-method, the scope, and the bibliography, with no provenance, no run command,
-and no verification bundle. The manuscript directory is
-`preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/`, its PDF is
-[S1:8104](../../../preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/l1-markov-cotype.pdf),
-and its main file is
-[S5:1](../../../preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/build/main.tex).
+## Links
+
+- [S1](../../../CONTENTS.md)
+- [S2](../../../overview.tex)
+- [S3](../../../README.md)
+- [S4](../../../preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/README.md)
+- [S5](../../../preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/build/main.tex)
+- [S6](../../../preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/build/references.bib)

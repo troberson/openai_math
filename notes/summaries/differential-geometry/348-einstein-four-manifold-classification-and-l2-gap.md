@@ -1,8 +1,6 @@
-# 348 — Einstein four-manifold classification and L2 gap (Differential geometry, 3 manuscripts, tier T2)
+Notes / Summaries / Differential geometry / [Family 348](../../index/differential-geometry/348-einstein-four-manifold-classification-and-l2-gap.md)
 
-Three manuscripts. The October 4, 2026 zero-plane rigidity manuscript [S3:5] ships `einstein-boundary.pdf` [S4], `build/paper.tex` [S5], `build/sections/01-introduction.tex` [S6], `build/references.tex` [S7], and a `verification/` bundle with `README.md` [S8], `COVERAGE.md` [S9], `verify.py`, `polynomial.py`, `check_scalar_certificates.py`, `dependencies.json`, `manifest.json`, `portability_check.py`, `portability-results.json`, and `results.json`. The October 5, 2026 L2 gap manuscript [S10:5] ships `einstein-gap.pdf` [S11], `build/source/main.tex` [S12], and `build/source/references.bib` [S13]; it has no verification bundle. The September 23, 2026 positively-curved manuscript [S14:3] ships `paper.pdf` [S15], `build/paper.tex` [S16], `build/sections/01-introduction.tex` [S17], `build/references.tex` [S18], and a `verification/` bundle with `README.md` [S19], `COVERAGE.md` [S20], `verify.py`, `polynomial.py`, `dependencies.json`, `manifest.json`, `portability_check.py`, `portability-results.json`, and `results.json`. No README carries a version note, so all three are first editions [S3:1–33] [S10:1–17] [S14:1–27].
-
-The two verification bundles are byte-identical in `COVERAGE.md` and in `verify.py`; the zero-plane bundle ships one extra file, `check_scalar_certificates.py`, which the positively-curved bundle does not [S8:24] [S9] [S20]. The ledger records `verification` 2, `covmd` 2, `inputs` 0, `chal` 1, `mainres` 0, `scope_note` 1, `scope_chars` 414, no trace, no claim shape, no companion edge, and no broad counterexample flag [S23:344].
+# 348 — Nonnegatively curved Einstein four-manifolds and a topological gap
 
 ## Original CONTENTS.md summary
 
@@ -47,9 +45,7 @@ and the positively-curved manuscript's [S14:8–11]:
 
 The zero-plane manuscript's hypothesis is one plane, at one point. Its introduction states the result [S6:10–12]:
 
-> factor have zero curvature. We prove that, for a closed Einstein
-> four-manifold with positive Einstein constant, a single zero-curvature
-> plane already forces this product geometry on the universal cover.
+> factor have zero curvature. We prove that, for a closed Einstein four-manifold with positive Einstein constant, a single zero-curvature plane already forces this product geometry on the universal cover.
 
 Its theorem is the rigidity [S6:14–26]:
 
@@ -69,16 +65,11 @@ Its theorem is the rigidity [S6:14–26]:
 
 The normalization fixes only the scale [S6:28–32]:
 
-> Here $S^2(r)$ denotes the round sphere of radius $r$, and closed means
-> compact without boundary. No orientation, symmetry, or topological
-> condition is assumed on $M$. The Einstein normalization only fixes the
-> scale: for $\operatorname{Ric}=\lambda g$ with $\lambda>0$, the two
-> radii are $1/\sqrt\lambda$.
+> Here $S^2(r)$ denotes the round sphere of radius $r$, and closed means compact without boundary. No orientation, symmetry, or topological condition is assumed on $M$. The Einstein normalization only fixes the scale: for $\mathrm{Ric}=\lambda g$ with $\lambda>0$, the two radii are $1/\sqrt\lambda$.
 
 The same paper also gives the full classification under nonnegative sectional curvature, as a corollary [S6:76–77]:
 
-> The argument also gives the full classification under nonnegative
-> sectional curvature.
+> The argument also gives the full classification under nonnegative sectional curvature.
 
 The corollary is the three-model statement [S6:79–85]:
 
@@ -130,164 +121,53 @@ The premise it assumes is the zero-plane manuscript's corollary [S12:74–83]:
 
 The L2 gap manuscript states the premise is used only for an exactly Einstein metric, and that no auxiliary bound is needed [S12:101–105]:
 
-> There are no auxiliary bounds on curvature, volume, diameter, injectivity
-> radius, Sobolev constants, or curvature derivatives. The conclusion is
-> about the underlying smooth manifold, rather than the original metric.
-> This distinction matters because small $L^2$ error does not itself give
-> pointwise curvature control.
+> There are no auxiliary bounds on curvature, volume, diameter, injectivity radius, Sobolev constants, or curvature derivatives. The conclusion is about the underlying smooth manifold, rather than the original metric. This distinction matters because small $L^2$ error does not itself give pointwise curvature control.
 
 ## Graduate summary
 
 The zero-plane manuscript's reduction is to the two Weyl blocks. Its introduction sets up the variables [S6:95–109]:
 
-> Choose an orientation and let $\Lambda^+$ and $\Lambda^-$ be the
-> rank-three eigenspaces of the Hodge star on two-forms. The Einstein
-> curvature operator has blocks $\operatorname{Id}+T$ and
-> $\operatorname{Id}+U$, where $T,U$ are symmetric and trace-free.
-> They are the self-dual and anti-self-dual Weyl blocks. Set
-> \[
->  v=\frac{|T|}{\sqrt6},\qquad b=\frac{|U|}{\sqrt6},\qquad
->  x=-\lambda_{\min}(T),\qquad y=-\lambda_{\min}(U).
-> \]
-> All matrix norms are Hilbert--Schmidt norms. As proved in
-> Lemma~\ref{lem:curvature-blocks}, the smallest sectional curvature is
-> $1-(x+y)/2$, and
-> \[
->  v\le x\le2v,\qquad b\le y\le2b,\qquad x+y\le2.
-> \]
+> Choose an orientation and let $\Lambda^+$ and $\Lambda^-$ be the rank-three eigenspaces of the Hodge star on two-forms. The Einstein curvature operator has blocks $\mathrm{Id}+T$ and $\mathrm{Id}+U$, where $T,U$ are symmetric and trace-free. They are the self-dual and anti-self-dual Weyl blocks. Set \[ v=\frac{|T|}{\sqrt6},\qquad b=\frac{|U|}{\sqrt6},\qquad x=-\lambda_{\min}(T),\qquad y=-\lambda_{\min}(U). \] All matrix norms are Hilbert--Schmidt norms. As proved in Lemma~ , the smallest sectional curvature is $1-(x+y)/2$, and \[ v\le x\le2v,\qquad b\le y\le2b,\qquad x+y\le2. \]
 
 The zero-plane hypothesis is used only in the reduction, not in the estimates [S6:113–123]:
 
-> If one Weyl block vanished identically, the metric would be
-> half-conformally flat. The classical compact positive-scalar Einstein
-> classification of Hitchin~\cite{Hitchin1981}, with conformal Einstein
-> rigidity~\cite{Obata1962}, would identify our simply connected cover
-> with the standard $S^4$ or $\mathbb{CP}^2$ up to scale; see also
-> \cite[Remark~7]{Derdzinski1983}. Both have strictly positive sectional
-> curvature. We may therefore assume throughout the remaining proof that
-> neither block vanishes identically. The zero-plane hypothesis is used
-> only in this reduction: the remaining estimates assume only nonnegative
-> sectional curvature and that neither block vanishes identically.
-> Individual blocks may still vanish at some points.
+> If one Weyl block vanished identically, the metric would be half-conformally flat. The classical compact positive-scalar Einstein classification of Hitchin~ , with conformal Einstein rigidity~ , would identify our simply connected cover with the standard $S^4$ or $\mathbb{CP}^2$ up to scale; see also \cite[Remark~7]{Derdzinski1983}. Both have strictly positive sectional curvature. We may therefore assume throughout the remaining proof that neither block vanishes identically. The zero-plane hypothesis is used only in this reduction: the remaining estimates assume only nonnegative sectional curvature and that neither block vanishes identically. Individual blocks may still vanish at some points.
 
 The proof has three stages [S6:125–137]:
 
-> Write $\mathbf E f$ for the integral of $f$ divided by the volume of $M$.
-> The proof now has three stages.
-> First, the separate gaps $\mathbf E v^2,\mathbf E b^2\ge1$,
-> a weighted variance inequality, and an upper volume deficit force
-> \[
->  \mathbf E v^2=\mathbf E b^2.
-> \]
-> Second, a weighted Hessian identity and explicit polynomial inequalities
-> couple the two blocks and force $dv=db=0$ almost everywhere.
-> Third, the gaps and $v+b\le2$ give $v=b=1$. The weak norm equations
-> then imply that both Weyl blocks are parallel, each with spectrum
-> $(2,-1,-1)$. Their simple eigenlines produce the parallel tangent
-> splitting.
+> Write $\mathbf E f$ for the integral of $f$ divided by the volume of $M$. The proof now has three stages. First, the separate gaps $\mathbf E v^2,\mathbf E b^2\ge1$, a weighted variance inequality, and an upper volume deficit force \[ \mathbf E v^2=\mathbf E b^2. \] Second, a weighted Hessian identity and explicit polynomial inequalities couple the two blocks and force $dv=db=0$ almost everywhere. Third, the gaps and $v+b\le2$ give $v=b=1$. The weak norm equations then imply that both Weyl blocks are parallel, each with spectrum $(2,-1,-1)$. Their simple eigenlines produce the parallel tangent splitting.
 
 The boundary case is the point. Three features let the estimates reach it [S6:139–148]:
 
-> Three features allow these estimates to reach the boundary. The upper
-> volume estimate integrates over the domain before the first conjugate
-> point and needs no lower bound on the injectivity radius. The weighted
-> Hessian identity needs a nonnegative quadratic form, so it remains valid
-> when that form has a kernel. At a zero of one Weyl block, the pointwise
-> algebraic estimates are obtained by introducing a small nonzero block
-> and shrinking the opposite block while keeping its derivative data fixed.
-> The decisive strictness then comes from the fact that the gradient of a
-> Lipschitz function vanishes almost everywhere on a level set. This forces
-> constant Weyl norms without requiring strict sectional positivity.
+> Three features allow these estimates to reach the boundary. The upper volume estimate integrates over the domain before the first conjugate point and needs no lower bound on the injectivity radius. The weighted Hessian identity needs a nonnegative quadratic form, so it remains valid when that form has a kernel. At a zero of one Weyl block, the pointwise algebraic estimates are obtained by introducing a small nonzero block and shrinking the opposite block while keeping its derivative data fixed. The decisive strictness then comes from the fact that the gradient of a Lipschitz function vanishes almost everywhere on a level set. This forces constant Weyl norms without requiring strict sectional positivity.
 
 The organization names five sections and an appendix of exact polynomial certificates [S6:150–157]:
 
-> Section~\ref{sec:preliminaries} develops the curvature identities,
-> including the weak norm equations at zeros. Sections~\ref{sec:analytic}
-> and~\ref{sec:volume} establish the scalar estimates and moment balance.
-> Sections~\ref{sec:hessian} and~\ref{sec:coupling} give the Hessian and
-> coupling inequalities. Section~\ref{sec:classification} resolves their
-> equality case and proves Theorem~\ref{thm:main}.
-> Appendix~\ref{sec:certificates} supplies the exact polynomial
-> certificates, including all boundary faces.
+> Section~  develops the curvature identities, including the weak norm equations at zeros. Sections~  and~  establish the scalar estimates and moment balance. Sections~  and~  give the Hessian and coupling inequalities. Section~  resolves their equality case and proves Theorem~ . Appendix~  supplies the exact polynomial certificates, including all boundary faces.
 
 The L2 gap manuscript's energy is the trace-free Ricci energy, scale-invariant in dimension four [S12:59–69]:
 
-> For a Riemannian four-manifold $(M,g)$, let
-> \[
->  E_g=\Ric_g-\frac{\Scal_g}{4}g,
->  \qquad \mathcal D(g)=\int_M |E_g|_g^2\,d\mu_g.
-> \]
-> The tensor $E_g$ vanishes precisely when $g$ is Einstein, provided that
-> $M$ is connected. The energy $\mathcal D$ is unchanged by constant
-> rescaling in dimension four. It is therefore natural to ask whether a
-> classification of Einstein metrics remains valid at the level of smooth
-> manifolds when $\mathcal D$ is small. We address this question under
-> nonnegative sectional curvature.
+> For a Riemannian four-manifold $(M,g)$, let \[ E_g=\Ric_g-\frac{\Scal_g}{4}g, \qquad \mathcal D(g)=\int_M |E_g|_g^2\,d\mu_g. \] The tensor $E_g$ vanishes precisely when $g$ is Einstein, provided that $M$ is connected. The energy $\mathcal D$ is unchanged by constant rescaling in dimension four. It is therefore natural to ask whether a classification of Einstein metrics remains valid at the level of smooth manifolds when $\mathcal D$ is small. We address this question under nonnegative sectional curvature.
 
 Its method is a smoothing argument that does not assume sectional curvature survives the flow [S12:164–171]:
 
-> A second point concerns sectional curvature. Its nonnegativity is not
-> assumed to persist under the flow. Instead, we bound the integral of its
-> negative part by $Ct$. The limit is an exactly Einstein shrinking flow,
-> and its explicit scaling converts this weak defect estimate into
-> nonnegative sectional curvature of the fixed Einstein metric. This gives
-> the classification-independent compactness statement of
-> Proposition~\ref{prop:limit}; classification then identifies the limiting
-> manifold.
+> A second point concerns sectional curvature. Its nonnegativity is not assumed to persist under the flow. Instead, we bound the integral of its negative part by $Ct$. The limit is an exactly Einstein shrinking flow, and its explicit scaling converts this weak defect estimate into nonnegative sectional curvature of the fixed Einstein metric. This gives the classification-independent compactness statement of Proposition~ ; classification then identifies the limiting manifold.
 
 Its smoothing step isolates a globally small high part of the curvature [S12:148–162]:
 
-> Smoothing from small critical curvature concentration was developed,
-> in particular, by Chan, Chen, and Lee \cite{ChanChenLee}. The formulation
-> used here isolates a globally small \emph{high part} of the curvature.
-> Consider a sequence $(M_j,g_j)$ satisfying the geometric hypotheses of
-> Theorem~\ref{thm:gap} with $\mathcal D(g_j)\to0$. After normalization,
-> nonnegative sectional curvature gives, for a fixed threshold $K_0$,
-> \[
->  \norm{(|\Rm_{g_j}|-K_0)_+}_{L^2(g_j)}\longrightarrow0.
-> \]
-> A moving threshold propagates this estimate. It yields both a uniform
-> Sobolev inequality and noncollapse along each existing flow; a
-> curvature-concentration contradiction then establishes a common
-> lifespan. The same tail bound controls the evolving Einstein error.
-> Thus the high-part formulation supplies both the regularization and
-> the defect estimate needed for the gap argument.
+> Smoothing from small critical curvature concentration was developed, in particular, by Chan, Chen, and Lee  . The formulation used here isolates a globally small _high part_ of the curvature. Consider a sequence $(M_j,g_j)$ satisfying the geometric hypotheses of Theorem~  with $\mathcal D(g_j)\to0$. After normalization, nonnegative sectional curvature gives, for a fixed threshold $K_0$, \[ \left\lVert (|\Rm_{g_j}|-K_0)_+\right\rVert_{L^2(g_j)}\longrightarrow0. \] A moving threshold propagates this estimate. It yields both a uniform Sobolev inequality and noncollapse along each existing flow; a curvature-concentration contradiction then establishes a common lifespan. The same tail bound controls the evolving Einstein error. Thus the high-part formulation supplies both the regularization and the defect estimate needed for the gap argument.
 
 The L2 gap manuscript names the prior work it does not use, and names the companion as its premise [S12:109–118]:
 
-> The exact Einstein problem has been studied under several additional
-> hypotheses. Gursky and LeBrun obtained the Fubini--Study conclusion for
-> nonnegative sectional curvature and a nonzero positive-definite
-> intersection form \cite{GurskyLeBrun}. Cao and Tran established
-> sectional-pinching criteria \cite{CaoTran}, and Liu classified the
-> $T^2$-invariant case on closed simply connected four-manifolds
-> \cite{Liu}. Here the classification premise is supplied by
-> \emph{Zero-Plane Rigidity for Einstein Four-Manifolds}
-> \cite[Corollary~1.2]{ZeroPlane}. Our problem is instead to transfer
-> that exact classification to metrics with small critical Ricci error.
+> The exact Einstein problem has been studied under several additional hypotheses. Gursky and LeBrun obtained the Fubini--Study conclusion for nonnegative sectional curvature and a nonzero positive-definite intersection form  . Cao and Tran established sectional-pinching criteria  , and Liu classified the $T^2$-invariant case on closed simply connected four-manifolds  . Here the classification premise is supplied by _Zero-Plane Rigidity for Einstein Four-Manifolds_ \cite[Corollary~1.2]{ZeroPlane}. Our problem is instead to transfer that exact classification to metrics with small critical Ricci error.
 
 The zero-plane manuscript's context paragraph names the antecedents it builds on [S6:36–51]:
 
-> The classification of positively curved Einstein four-manifolds has a
-> long history. Berger's rigidity under strict quarter pinching
-> \cite{Berger1961} was followed by quantitative curvature conditions of
-> Yang, Costa, and Cao--Tran
-> \cite{Yang2000,Costa2004,CaoTran2018}. Gursky--LeBrun obtained the
-> Fubini--Study conclusion under nonnegative sectional curvature and a
-> nonzero positive-definite intersection form
-> \cite[Theorem~A]{GurskyLeBrun1999}. Their separate Weyl-norm gaps and
-> analysis of the two Weyl blocks are important antecedents of the
-> argument here. Scalar combinations of the two Weyl norms also appear in
-> Yang's coupling argument~\cite[Section~6]{Yang2000} and in
-> Cao--Tran~\cite[Proposition~2.2]{CaoTran2018}. Under nonnegative isotropic curvature, which is a
-> different curvature condition, the Einstein local-symmetry theorem in
-> dimension four is due to Micallef--Wang
-> \cite[Theorem~4.4]{MicallefWang1993}; Brendle established the analogous
-> rigidity in higher dimensions~\cite[Theorem~1]{Brendle2010}.
+> The classification of positively curved Einstein four-manifolds has a long history. Berger's rigidity under strict quarter pinching   was followed by quantitative curvature conditions of Yang, Costa, and Cao--Tran  . Gursky--LeBrun obtained the Fubini--Study conclusion under nonnegative sectional curvature and a nonzero positive-definite intersection form \cite[Theorem~A]{GurskyLeBrun1999}. Their separate Weyl-norm gaps and analysis of the two Weyl blocks are important antecedents of the argument here. Scalar combinations of the two Weyl norms also appear in Yang's coupling argument~\cite[Section~6]{Yang2000} and in Cao--Tran~\cite[Proposition~2.2]{CaoTran2018}. Under nonnegative isotropic curvature, which is a different curvature condition, the Einstein local-symmetry theorem in dimension four is due to Micallef--Wang \cite[Theorem~4.4]{MicallefWang1993}; Brendle established the analogous rigidity in higher dimensions~\cite[Theorem~1]{Brendle2010}.
 
 **Prior (my training data, not this repo).** As of my early-2025 cutoff, the classification of closed Einstein four-manifolds with positive sectional curvature is not a theorem I recall; the Hitchin-Thorpe inequality is classical, and the signs of the Euler characteristic and signature constrain Einstein four-manifolds. I recall LeBrun's 11/8 theorem for the Fubini-Study case under a positive intersection form, and the Micallef–Wang local-symmetry theorem under nonnegative isotropic curvature. I do not recall a rigidity theorem that uses a single zero-curvature plane at a single point to force a product-of-spheres universal cover, nor a scale-invariant L2 gap for the trace-free Ricci tensor that transfers a classification to the level of diffeomorphism type. The prior is a training-data recollection, self-rated, and the repo supplies only the manuscripts' citations.
 
-## Consequences now that the proof has been found
+## Consequences
 
 The direct consequence is that one zero-curvature plane at one point, added to the Einstein condition and nonnegative sectional curvature, forces the universal cover to be a product of two equal round spheres [S6:14–26], and the same argument yields the full three-model classification under nonnegative curvature [S6:79–85]. The positively-curved manuscript's consequence is the classification conjecture under strict positivity, with no orientability assumption [S17:13–19]. The L2 gap manuscript's consequence is weaker and deliberately so: a small trace-free Ricci energy pins the diffeomorphism type, not the metric, and it reaches that by assuming the classification as a premise [S12:88–99] [S12:101–105].
 
@@ -297,28 +177,54 @@ What has not been checked: no Lean, lake, or comparator run was performed, and t
 
 ## Sources
 
-| ID | File | Lines | What it carries |
+| # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Release blurb, three manuscript links, three manuscript abstracts |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 348's `\resultentry`, at line 794 |
-| S3 | [`preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/README.md`](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/README.md) | 33 | Zero-plane README: date, bibtex key, verification command and record |
-| S4 | [`preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/einstein-boundary.pdf`](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/einstein-boundary.pdf) | — | Zero-plane manuscript PDF |
-| S5 | [`preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/build/paper.tex`](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/build/paper.tex) | 54 | Zero-plane preamble, theorem environments, abstract |
-| S6 | [`preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/build/sections/01-introduction.tex`](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/build/sections/01-introduction.tex) | 157 | Main theorem, the corollary, the Weyl-block reduction, the three stages, the boundary argument, the organization |
-| S7 | [`preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/build/references.tex`](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/build/references.tex) | 100 | Zero-plane bibliography |
-| S8 | [`preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/verification/README.md`](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/verification/README.md) | 24 | Verification entry point and the file list, including the optional scalar check |
-| S9 | [`preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/verification/COVERAGE.md`](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/verification/COVERAGE.md) | 8 | Scope of the finite arithmetic checks |
-| S10 | [`preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/README.md`](../../../preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/README.md) | 18 | L2 gap README: date, bibtex key, no verification section |
-| S11 | [`preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/einstein-gap.pdf`](../../../preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/einstein-gap.pdf) | — | L2 gap manuscript PDF |
-| S12 | [`preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/build/source/main.tex`](../../../preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/build/source/main.tex) | 863 | Abstract, classification assumption, gap theorem, the smoothing and defect arguments |
-| S13 | [`preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/build/source/references.bib`](../../../preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/build/source/references.bib) | 191 | L2 gap bibliography |
-| S14 | [`preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/README.md`](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/README.md) | 27 | Positively-curved README: date, bibtex key, verification command and record |
-| S15 | [`preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/paper.pdf`](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/paper.pdf) | — | Positively-curved manuscript PDF |
-| S16 | [`preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/build/paper.tex`](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/build/paper.tex) | 56 | Positively-curved preamble, theorem environments, abstract |
-| S17 | [`preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/build/sections/01-introduction.tex`](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/build/sections/01-introduction.tex) | 180 | Classification theorem, the three models, the proof ingredients |
-| S18 | [`preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/build/references.tex`](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/build/references.tex) | 142 | Positively-curved bibliography |
-| S19 | [`preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/verification/README.md`](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/verification/README.md) | 23 | Verification entry point and the file list, without the optional scalar check |
-| S20 | [`preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/verification/COVERAGE.md`](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/verification/COVERAGE.md) | 8 | Scope of the finite arithmetic checks, byte-identical to S9 |
-| S21 | [`lean/docs/348.md`](../../../lean/docs/348.md) | 15 | Scope note: what the formalization covers, the comparator, the status |
-| S22 | [`lean/ComparatorChallenges/EinsteinFour.lean`](../../../lean/ComparatorChallenges/EinsteinFour.lean) | 222 | Comparator stub: the classification targets, with three `sorry` |
-| S23 | [`notes/tables/catalog.tsv`](../../../notes/tables/catalog.tsv) | 373 | Reading ledger row for family 348 |
+| S1 | `CONTENTS.md` | 9142 | Release blurb, three manuscript links, three manuscript abstracts |
+| S2 | `overview.tex` | 859 | Family 348's `\resultentry`, at line 794 |
+| S3 | `preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/README.md` | 33 | Zero-plane README: date, bibtex key, verification command and record |
+| S4 | `preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/einstein-boundary.pdf` | 16656 | Zero-plane manuscript PDF |
+| S5 | `preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/build/paper.tex` | 54 | Zero-plane preamble, theorem environments, abstract |
+| S6 | `preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/build/sections/01-introduction.tex` | 157 | Main theorem, the corollary, the Weyl-block reduction, the three stages, the boundary argument, the organization |
+| S7 | `preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/build/references.tex` | 100 | Zero-plane bibliography |
+| S8 | `preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/verification/README.md` | 24 | Verification entry point and the file list, including the optional scalar check |
+| S9 | `preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/verification/COVERAGE.md` | 8 | Scope of the finite arithmetic checks |
+| S10 | `preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/README.md` | 18 | L2 gap README: date, bibtex key, no verification section |
+| S11 | `preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/einstein-gap.pdf` | 9643 | L2 gap manuscript PDF |
+| S12 | `preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/build/source/main.tex` | 863 | Abstract, classification assumption, gap theorem, the smoothing and defect arguments |
+| S13 | `preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/build/source/references.bib` | 191 | L2 gap bibliography |
+| S14 | `preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/README.md` | 27 | Positively-curved README: date, bibtex key, verification command and record |
+| S15 | `preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/paper.pdf` | 20242 | Positively-curved manuscript PDF |
+| S16 | `preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/build/paper.tex` | 56 | Positively-curved preamble, theorem environments, abstract |
+| S17 | `preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/build/sections/01-introduction.tex` | 180 | Classification theorem, the three models, the proof ingredients |
+| S18 | `preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/build/references.tex` | 142 | Positively-curved bibliography |
+| S19 | `preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/verification/README.md` | 23 | Verification entry point and the file list, without the optional scalar check |
+| S20 | `preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/verification/COVERAGE.md` | 8 | Scope of the finite arithmetic checks, byte-identical to S9 |
+| S21 | `lean/docs/348.md` | 15 | Scope note: what the formalization covers, the comparator, the status |
+| S22 | `lean/ComparatorChallenges/EinsteinFour.lean` | 222 | Comparator stub: the classification targets, with three `sorry` |
+| S23 | `notes/tables/catalog.tsv` | 373 | Reading ledger row for family 348 |
+
+## Links
+
+- [S1](../../../CONTENTS.md)
+- [S2](../../../overview.tex)
+- [S3](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/README.md)
+- [S4](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/einstein-boundary.pdf)
+- [S5](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/build/paper.tex)
+- [S6](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/build/sections/01-introduction.tex)
+- [S7](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/build/references.tex)
+- [S8](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/verification/README.md)
+- [S9](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/verification/COVERAGE.md)
+- [S10](../../../preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/README.md)
+- [S11](../../../preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/einstein-gap.pdf)
+- [S12](../../../preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/build/source/main.tex)
+- [S13](../../../preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/build/source/references.bib)
+- [S14](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/README.md)
+- [S15](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/paper.pdf)
+- [S16](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/build/paper.tex)
+- [S17](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/build/sections/01-introduction.tex)
+- [S18](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/build/references.tex)
+- [S19](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/verification/README.md)
+- [S20](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/verification/COVERAGE.md)
+- [S21](../../../lean/docs/348.md)
+- [S22](../../../lean/ComparatorChallenges/EinsteinFour.lean)
+- [S23](../../../notes/tables/catalog.tsv)

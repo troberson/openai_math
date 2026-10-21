@@ -1,12 +1,12 @@
-# 049 - A stable-coordinate counterexample in four variables
+Notes / Summaries / Algebraic and complex geometry / [Family 049](../../index/algebraic-and-complex-geometry/049-a-stable-coordinate-counterexample-in-four-variables.md)
+
+# 049 — A stable-coordinate counterexample in four variables
 
 ## Original CONTENTS.md summary
 
 [S1:174] carries the family entry:
 
-> Constructs a polynomial in four complex variables that is not a coordinate
-> but becomes one after adjoining a single variable, disproving the Stable
-> Coordinate conjecture in four variables.
+> Constructs a polynomial in four complex variables that is not a coordinate but becomes one after adjoining a single variable, disproving the Stable Coordinate conjecture in four variables.
 
 [S1:174] names the family's two manuscripts: "A stable coordinate that is not
 a coordinate in four variables" and "An explicit noncoordinate polynomial with
@@ -167,7 +167,7 @@ adapts that paper's construction. The second manuscript's bibliography is a
 prior on the Stable Coordinate conjecture's standing is not recorded in the
 release's own reading. The claim in the entry is the record.
 
-## Consequences now that the proof has been found
+## Consequences
 
 The counterexample is not confined to four variables. [S11:116–120] states the
 extension: "For every integer $n\ge4$, there is a polynomial
@@ -220,3 +220,24 @@ claims exist and names their declarations; the comparator configs carry
 | S16 | `lean/ComparatorChallenges/AbhyankarSathaye.lean` | 21 | Stub, `sorry` at line 17 |
 | S17 | `lean/ComparatorChallenges/CommutingDerivations.lean` | 75 | Stub, `sorry` at line 67 |
 | S18 | `lean/ComparatorChallenges/StableCoordinateFour.lean` | 54 | Stub, `sorry` at line 50 |
+
+## Links
+
+- [S1](../../../overview.tex)
+- [S2](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/README.md)
+- [S3](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/main.tex)
+- [S4](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/01-introduction.tex)
+- [S5](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/refs.bib)
+- [S6](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/02-construction.tex)
+- [S7](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/03-filtration.tex)
+- [S8](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/04-bundle.tex)
+- [S9](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/05-rigidity.tex)
+- [S10](../../../preprints/An-explicit-noncoordinate-polynomial-with-affine-three-space-zero-fibre-September-24-2026/README.md)
+- [S11](../../../preprints/An-explicit-noncoordinate-polynomial-with-affine-three-space-zero-fibre-September-24-2026/build/paper.tex)
+- [S12](../../../lean/docs/049.md)
+- [S13](../../../lean/OAI/AlgebraicGeometry/AbhyankarSathaye/Counterexample.lean)
+- [S14](../../../lean/OAI/AlgebraicGeometry/StableCoordinate/Principal.lean)
+- [S15](../../../lean/OAI/AlgebraicGeometry/CommutingDerivations/OrdinaryExtraMain.lean)
+- [S16](../../../lean/ComparatorChallenges/AbhyankarSathaye.lean)
+- [S17](../../../lean/ComparatorChallenges/CommutingDerivations.lean)
+- [S18](../../../lean/ComparatorChallenges/StableCoordinateFour.lean)

@@ -1,0 +1,308 @@
+#!/usr/bin/env python3
+"""Render notes/summaries/ from the skeleton template and per-family data files.
+
+Reads:
+- notes/templates/summaries/summary.md.j2 (the skeleton)
+- notes/data/summaries/<NNN>.md (per-family prose with {{seq}} tokens and a quotes block)
+- preprints/<dir>/build/<main>.tex preamble (for macro expansion)
+- overview.tex (family discipline, title)
+
+Writes: notes/summaries/<discipline>/<NNN>-<slug>.md (60 pages)
+
+The renderer is pure over its digest key: it reads the working-tree templates and data
+files, resolves each quote through the normalizer, and stages the rendered pages. A second
+run with the same inputs produces identical bytes.
+
+Usage: python3 notes/scripts/build_summaries.py [--check-only]
+"""
+from __future__ import annotations
+
+import pathlib
+import re
+import sys
+
+ROOT = pathlib.Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "notes" / "scripts"))
+
+import build_catalog as B  # noqa: E402
+from catlib import normalizer  # noqa: E402
+from catlib.atomic import Staging  # noqa: E402
+from catlib.paths import ROOT as REPO  # noqa: E402
+from catlib.promote import key_for  # noqa: E402
+from catlib.records import manuscript_store  # noqa: E402
+from jinja2 import Environment, FileSystemLoader  # noqa: E402
+
+TPL_DIR = ROOT / "notes" / "templates" / "summaries"
+DATA_DIR = ROOT / "notes" / "data" / "summaries"
+SUMM_DIR = ROOT / "notes" / "summaries"
+
+KEY = key_for("build_summaries.py", tuple(sys.argv[1:]))
+ST = Staging("build_summaries", KEY)
+
+ENV = Environment(loader=FileSystemLoader(str(TPL_DIR)),
+                  keep_trailing_newline=True,
+                  trim_blocks=True, lstrip_blocks=True, autoescape=False)
+
+
+def slugify(title: str) -> str:
+    """The index page's mechanical slug for a family title."""
+    t = title
+    t = re.sub(r"\\[A-Za-z]{1,2}\{([^{}]*)\}", r"\1", t)
+    t = t.replace("$", "").replace("'", "").replace("\u2019", "")
+    t = re.sub(r"\\[A-Za-z]+\*?", "", t)
+    import unicodedata
+    t = unicodedata.normalize("NFKD", t)
+    t = "".join(c for c in t if not unicodedata.combining(c))
+    t = re.sub(r"[^a-z0-9]+", "-", t.lower()).strip("-")
+    return t.removeprefix("the-")
+
+
+def disc_slug(discipline: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", discipline.lower()).strip("-")
+
+
+PREAMBLES: dict[str, str] = {}
+
+
+def get_preamble(rel_path: str) -> str:
+    """The manuscript preamble (text before \\begin{document}) for macro expansion.
+
+    For non-LaTeX sources (README, .md, .lean, .bib, overview.tex), the preamble is
+    empty — no macros to expand.
+    """
+    if rel_path in PREAMBLES:
+        return PREAMBLES[rel_path]
+    p = REPO / rel_path
+    if not p.is_file() or p.suffix != ".tex":
+        PREAMBLES[rel_path] = ""
+        return ""
+    # Use the main .tex in the same manuscript dir for the macro table.
+    if "preprints/" in rel_path:
+        parts = rel_path.split("/")
+        ms_dir = parts[1]
+        store = manuscript_store()
+        rec = store.get(ms_dir)
+        if rec and rec["main"]:
+            main_path = REPO / rec["main"]
+            if main_path.is_file():
+                text = main_path.read_text(encoding="utf-8", errors="replace")
+                m = re.search(r"\\begin\{document\}", text)
+                PREAMBLES[rel_path] = text[:m.start()] if m else ""
+                return PREAMBLES[rel_path]
+    text = p.read_text(encoding="utf-8", errors="replace")
+    m = re.search(r"\\begin\{document\}", text)
+    PREAMBLES[rel_path] = text[:m.start()] if m else ""
+    return PREAMBLES[rel_path]
+
+
+def resolve_token(token: str, quotes: dict[int, dict]) -> str:
+    """Resolve a {{seq}} token to its normalized quote text.
+
+    The span comes from the data file's quotes block, not from quotes.tsv: the data file is the
+    quote source, so the renderer reads no artifact any other writer produces. That is what breaks
+    the seed->render cycle (the renderer is a root, depending only on hand-maintained data).
+    """
+    row = quotes.get(int(token))
+    if row is None:
+        return token  # Unresolvable: leave the token as-is
+    span = row["span"]
+    if not span:
+        return ""
+    preamble = get_preamble(row["path"])
+    return normalizer.normalize_window(span, preamble)
+
+
+def parse_data_file(text: str) -> tuple[list[tuple[str, str, str]], dict[str, str], str, dict[int, dict]]:
+    """Parse a data file into (sources, sections, slug, quotes).
+
+    Returns:
+    - sources: list of (sid, path, role)
+    - sections: dict of canonical_name -> body text
+    - slug: the page's slug, carried from the committed page filename (the data
+      file's ``<!-- slug ... -->`` line), not recomputed from the overview title.
+    - quotes: dict of seq -> {which, path, start, end, span}, the data file's
+      ``<!-- quotes`` block with each row's ``sid`` resolved to its source path.
+    """
+    sources: list[tuple[str, str, str]] = []
+    sections: dict[str, str] = {}
+    slug = ""
+    quotes: dict[int, dict] = {}
+
+    lines = text.split("\n")
+    i = 0
+    # Parse the sources block.
+    if i < len(lines) and lines[i].strip() == "<!-- sources":
+        i += 1
+        while i < len(lines) and lines[i].strip() != "-->":
+            parts = lines[i].split("\t")
+            if len(parts) >= 3:
+                sources.append((parts[0], parts[1], parts[2]))
+            i += 1
+        i += 1  # skip -->
+    # Skip the blank line the extractor emits between blocks; a strict next-line check would
+    # miss the quotes block and every token would render as its bare number.
+    while i < len(lines) and lines[i].strip() == "":
+        i += 1
+    # Parse the quotes block, which follows the sources block: one row per quote token,
+    # `seq  which  sid  start  end  span`. The `sid` resolves to a source path below.
+    if i < len(lines) and lines[i].strip() == "<!-- quotes":
+        i += 1
+        while i < len(lines) and lines[i].strip() != "-->":
+            parts = lines[i].split("\t")
+            if len(parts) >= 6:
+                try:
+                    seq = int(parts[0])
+                except ValueError:
+                    i += 1
+                    continue
+                quotes[seq] = {"which": parts[1], "sid": parts[2],
+                               "start": parts[3], "end": parts[4], "span": "\t".join(parts[5:])}
+            i += 1
+        i += 1  # skip -->
+    # Parse the slug line, which sits between the family line and the sections.
+    for line in lines:
+        m = re.match(r"^<!-- slug (.+?) -->$", line.strip())
+        if m:
+            slug = m.group(1)
+            break
+
+    # Resolve each quote's sid to its source path.
+    sid2path = {sid: path for sid, path, _role in sources}
+    for row in quotes.values():
+        row["path"] = sid2path.get(row["sid"], "")
+
+    # Parse sections.
+    current_key = ""
+    current_lines: list[str] = []
+    for line in lines[i:]:
+        m = re.match(r"^## (\S+)$", line)
+        if m:
+            if current_key:
+                sections[current_key] = "\n".join(current_lines).strip()
+            current_key = m.group(1)
+            current_lines = []
+        elif line.strip() == "<!-- family" or line.strip() == "":
+            if current_key:
+                current_lines.append(line)
+        elif current_key:
+            current_lines.append(line)
+    if current_key:
+        sections[current_key] = "\n".join(current_lines).strip()
+
+    return sources, sections, slug, quotes
+
+
+def lines_of(path: str) -> str:
+    """The line count of a file as a string, or '—' if it doesn't exist."""
+    p = REPO / path
+    if not p.is_file():
+        return "—"
+    return str(len(p.read_text(encoding="utf-8", errors="replace").splitlines()))
+
+
+def render_page(fam: str, info: dict, data_text: str) -> tuple[str, str]:
+    """Render one family's summary page. Returns (page_text, slug).
+
+    The quote spans come from the data file's quotes block (parsed inside
+    ``parse_data_file``), so the renderer reads no artifact any other writer
+    produces — it is a root, and the seed->render cycle it used to form is gone.
+    """
+    discipline = info["discipline"]
+    title = info["title"]
+    ds = disc_slug(discipline)
+
+    sources, sections, slug, quotes = parse_data_file(data_text)
+    if not slug:
+        slug = slugify(title)
+
+    # Resolve quote tokens in each section body.
+    resolved: dict[str, str] = {}
+    for key, body in sections.items():
+        def _replace(m: re.Match[str]) -> str:
+            return resolve_token(m.group(1), quotes)
+        resolved[key] = re.sub(r"\{\{(\d+)\}\}", _replace, body)
+
+    # Build the Sources table rows.
+    src_rows: list[str] = []
+    for sid, path, role in sources:
+        lc = lines_of(path)
+        src_rows.append(f"| {sid} | `{path}` | {lc} | {role} |")
+
+    # Build the Links section.
+    links: list[tuple[str, str]] = []
+    up = "../../../"
+    for sid, path, _ in sources:
+        links.append((sid, f"{up}{path}"))
+
+    # Render through the skeleton.
+    template = ENV.get_template("summary.md.j2")
+    page_text = template.render(p={
+        "discipline": discipline,
+        "disc_slug": ds,
+        "fam": fam,
+        "slug": slug,
+        "title": title,
+        "contents": resolved.get("contents", ""),
+        "headline": resolved.get("headline", ""),
+        "undergraduate": resolved.get("undergraduate", ""),
+        "graduate": resolved.get("graduate", ""),
+        "history": resolved.get("history", ""),
+        "consequences": resolved.get("consequences", ""),
+        "section_skeleton": resolved.get("section_skeleton", ""),
+        "formalized": resolved.get("formalized", ""),
+        "coverage": resolved.get("coverage", ""),
+        "sources_rows": "\n".join(src_rows),
+        "links": links,
+        "bibliography": "",
+    })
+    return page_text, slug
+
+
+def main() -> int:
+    check_only = "--check-only" in sys.argv
+
+    _order, fams = B.parse_overview()
+
+    # Find all family pages that have a data file.
+    data_files = sorted(DATA_DIR.glob("*.md"))
+    print(f"data files: {len(data_files)}")
+
+    problems = 0
+    pages_written = 0
+    for df in data_files:
+        fam = df.stem  # e.g. "195"
+        if fam not in fams:
+            print(f"  {fam}: NOT IN OVERVIEW")
+            problems += 1
+            continue
+        info = fams[fam]
+        data_text = df.read_text(encoding="utf-8")
+        page_text, slug = render_page(fam, info, data_text)
+        out = SUMM_DIR / disc_slug(info["discipline"]) / f"{fam}-{slug}.md"
+        if not check_only:
+            ST.stage(out, page_text)
+        pages_written += 1
+        # Quick sanity: count unresolved tokens.
+        unresolved = len(re.findall(r"\{\{\d+\}\}", page_text))
+        if unresolved:
+            print(f"  {fam}: {unresolved} UNRESOLVED TOKENS")
+            problems += 1
+
+    # The artifact tree is notes/summaries/, which also carries the index README. It is not a
+    # family page, so the renderer passes it through unchanged: a cache entry for it must exist
+    # (verify_cache_promotion.py Pass C) and its bytes must equal the tracked bytes.
+    readme = SUMM_DIR / "README.md"
+    if readme.is_file():
+        if not check_only:
+            ST.stage(readme, readme.read_text(encoding="utf-8"))
+
+    if not check_only:
+        ST.promote()
+
+    print(f"pages rendered: {pages_written}")
+    print(f"problems: {problems}")
+    return 1 if problems else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

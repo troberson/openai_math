@@ -1,4 +1,6 @@
-# 271 — Bloch's law and spontaneous ferromagnetic order (Mathematical physics, 4 manuscripts, tier T2)
+Notes / Summaries / Mathematical physics / [Family 271](../../index/mathematical-physics/271-blochs-law-and-spontaneous-ferromagnetic-order.md)
+
+# 271 — Bloch's law and spontaneous ferromagnetic order
 
 ## Original CONTENTS.md summary
 
@@ -125,19 +127,13 @@ The selection step is described as follows: the pin estimate yields a macroscopi
 
 The formalization covers this root paper and nothing else in the family. Its headline theorem is [S59:60–65]
 
-> theorem spontaneous_magnetization (d ℓ : ℕ) (hd : 3≤d) (hℓ : 1≤ℓ) :
->     DynamicsConverges d ℓ ∧
->       ∃ β₀ : ℝ,0<β₀ ∧ ∀ β : ℝ,β₀≤β →
->         ∃ ω : State d ℓ,TranslationInvariant ω ∧ IsKMS β ω ∧
->           (ω.functional (spinZ d ℓ 0)).im=0 ∧
->           (ℓ:ℝ)/8≤(ω.functional (spinZ d ℓ 0)).re := by
+> theorem spontaneous_magnetization (d ℓ : ℕ) (hd : 3≤d) (hℓ : 1≤ℓ) : DynamicsConverges d ℓ ∧ ∃ β₀ : ℝ,0<β₀ ∧ ∀ β : ℝ,β₀≤β → ∃ ω : State d ℓ,TranslationInvariant ω ∧ IsKMS β ω ∧ (ω.functional (spinZ d ℓ 0)).im=0 ∧ (ℓ:ℝ)/8≤(ω.functional (spinZ d ℓ 0)).re := by
 
 The formalized statement is the manuscript's statement in the slot parameter: the site Hilbert space is built as `abbrev Level (ℓ : ℕ) := Fin (ℓ + 1)` [S60:55], so a spin-*S* system is ℓ = 2*S*, and the formal bound ℓ/8 is exactly the manuscript's *S*/4 rather than a weaker encoding of it. The formalized version adds that the selected observable has zero imaginary part, and it conjoins convergence of the finite-volume dynamics to the infinite-volume dynamics. The scope note states both [S56:9–11]:
 
-> The formalization proves spontaneous magnetization for the nearest-neighbor isotropic quantum Heisenberg ferromagnet on $\mathbb Z^d$ for every $d\ge3$ and every spin $S\in\{\tfrac12,1,\tfrac32,\ldots\}$. At every sufficiently low positive temperature, it constructs a translation-invariant equilibrium state satisfying the KMS condition for the zero-field dynamics and having magnetization at least $S/4$.
-> It also proves convergence of the finite-volume dynamics to the infinite-volume dynamics used in the KMS statement.
+> The formalization proves spontaneous magnetization for the nearest-neighbor isotropic quantum Heisenberg ferromagnet on $\mathbb Z^d$ for every $d\ge3$ and every spin $S\in\{\tfrac12,1,\tfrac32,\ldots\}$. At every sufficiently low positive temperature, it constructs a translation-invariant equilibrium state satisfying the KMS condition for the zero-field dynamics and having magnetization at least $S/4$. It also proves convergence of the finite-volume dynamics to the infinite-volume dynamics used in the KMS statement.
 
-## History of the conjecture (if known)
+## History of the conjecture
 
 The magnetization side begins with "Bloch derived the $T^{3/2}$ reduction from long-wavelength spin waves" in 1930, followed by the Holstein–Primakoff bosonic representation and Dyson's interaction expansion [S4:87–90]. Dyson's own numbers are the historical benchmark that manuscript B is calibrated against: in his expansion "the terms of orders \(T^{5/2}\) and \(T^{7/2}\) in the magnetization already arise from the lattice dispersion of independent magnons" and "the leading interaction contribution is of order \(T^4\)" [S15:73–76], and manuscript A records the limit of what Dyson claimed: "his estimates of the remaining higher-order terms were not a rigorous fixed-spin proof of the asymptotic law" [S4:92–93]. Effective-field-theory calculations retain the same distinction [S15:78–79].
 
@@ -147,7 +143,7 @@ The ordering side is where the open problem sits. "Mermin and Wagner excluded po
 
 The spherical law has named antecedents. Ueltschi's survey of three-dimensional loop models derives the same sinh transform for the spin-½ ferromagnet, "conditional on a conjectured Poisson--Dirichlet law for macroscopic loops" [S30:87–89], and Björnberg, Fröhlich, and Ueltschi prove the spherical transform for the complete-graph model at arbitrary fixed spin. Manuscript C's contribution is the lattice case: "We prove its magnetization law without assuming a distribution for macroscopic loop lengths." [S30:93–94] The probabilistic machinery the family shares is older than any of it: Tóth's cycle representation for spin ½, Nachtergaele's realization of spin *S* inside the symmetric tensor product of 2*S* spin-½ spaces, the Borcea–Brändén–Liggett stable-polynomial approach to negative dependence, and Nash's energy method [S4:126–131] [S15:96–99]. Field selection goes back to Griffiths 1966 and the first section of Dyson–Lieb–Simon [S51:113–116], and the boson reading of the result follows Matsubara and Matsuda [S44:241].
 
-## Consequences now that the proof has been found
+## Consequences
 
 The family's own stated consequence is a hard-core boson statement. The Matsubara–Matsuda correspondence "turns the ordered state into a state with averaged off-diagonal long-range order." [S44:242–243] For *S* = ½, writing *b*_*x* = *S*_*x*^− and *n*_*x* = *b*_*x*^†*b*_*x* = *S*_*x*^z + ½ makes the Hamiltonian "This is the particle--hole-symmetric attractive hard-core hopping model." [S44:254] Rotating the mean spin vector to the *x* direction commutes with the zero-field dynamics and with translations, so the rotated state ν is again translation-invariant and β-KMS, and "It satisfies $\nu(b_x)=r\ge1/8$ and $\nu(n_x)=1/2$, where $r$ is the length of the original mean-spin vector." [S44:260–262] Positivity then gives [S44:271–276]
 
@@ -170,72 +166,134 @@ The reasoning trace is the September-24 paper's trace and ships as a PDF only, w
 
 ## Sources
 
-Manuscript root: `preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/`. Every path below is repo-relative; the four manuscript trees each ship a README with their bibtex entry [S2] [S13] [S28] [S42], a LaTeX source tree, and the compiled PDF, and the release links the PDFs from the family block [S1:6829] [S1:6838] [S1:6847] [S1:6856].
-
-Section map, read from each manuscript's own include list. Manuscript A includes seven sections and a bibliography file [S3:53–60]: the introduction, then the slot and pin algebra [S5], the lattice geometry [S6], the finite-range pin bootstrap [S7], the bound on arbitrarily late returns [S8], the ideal kernel that fixes the coefficient [S9], the pressure step [S10], and the bibliography [S11]; its compiled PDF is [S12]. Manuscript B includes nine sections and a bibliography [S14:60–69]: the introduction, the exchange-loop representation [S16], the joint snapshot pin bounds and path estimates [S17], the capacity criterion [S18], the free trial potential [S19], the signed cancellation and Duhamel identities [S20], the scalar residual pairing [S21], the residuals against Dirichlet energy [S22], the pressure step and the expansion corollary [S23], and the bibliography [S26], with two figure sources [S24] [S25] and the compiled PDF [S27]. Manuscript C includes eight sections [S29:64–71]: the introduction, the exchange representation on the torus [S31], the sparse pin estimates [S32], the local-to-global squared-magnetization comparison [S33], the zero-field magnetization distribution [S34], the equilibrium and ergodic-state step [S35], the matrix-product perturbations and zero-freeness [S36], the global spin limit [S37], with two figure sources [S38] [S39], the bibliography [S40], and the compiled PDF [S41]. Manuscript D includes eight sections [S43:53–60]: the introduction, the exchange-path representation and spectral law [S45], the stable multiaffine pin test [S46], the exposure, determinant, and conditional first moment [S47], the sparse anchors and obstacle components [S48], the routed finite-energy flows [S49], the heat leakage and quadratic loss [S50], the vanishing-field selection and KMS verification [S51], with two figure sources [S52] [S53], the bibliography [S54], and the compiled PDF [S55].
-
 | # | File | Lines | Role |
-|---|---|---|---|
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Release contents: family 271 blurb and the four manuscript links |
-| S2 | [`preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/README.md`](../../../preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/README.md) | 18 | Manuscript A README and bibtex entry |
-| S3 | [`preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/main.tex`](../../../preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/main.tex) | 61 | Manuscript A title, date, abstract, section list |
-| S4 | [`preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/01-introduction.tex`](../../../preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/01-introduction.tex) | 210 | Manuscript A model, theorem, history, inputs |
-| S5 | [`preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/02-pins.tex`](../../../preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/02-pins.tex) | 719 | Slot and pin algebra |
-| S6 | [`preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/03-geometry.tex`](../../../preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/03-geometry.tex) | 532 | Lattice geometry for the pin estimates |
-| S7 | [`preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/04-bootstrap.tex`](../../../preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/04-bootstrap.tex) | 565 | Finite-range pin bootstrap |
-| S8 | [`preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/05-returns.tex`](../../../preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/05-returns.tex) | 214 | Long-return bound |
-| S9 | [`preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/06-ideal.tex`](../../../preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/06-ideal.tex) | 411 | Ideal kernel and the Bloch coefficient |
-| S10 | [`preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/07-pressure.tex`](../../../preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/07-pressure.tex) | 194 | Field as extra pins; pressure step |
-| S11 | [`preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/references.tex`](../../../preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/references.tex) | 117 | Manuscript A bibliography, including the companion entry |
-| S12 | [`preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/bloch-law-heisenberg.pdf`](../../../preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/bloch-law-heisenberg.pdf) | — | Manuscript A compiled PDF |
-| S13 | [`preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/README.md`](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/README.md) | 18 | Manuscript B README and bibtex entry |
-| S14 | [`preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/main.tex`](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/main.tex) | 70 | Manuscript B title, date, abstract, section list |
-| S15 | [`preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/01-introduction.tex`](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/01-introduction.tex) | 156 | Manuscript B model, theorem, corollary, history, companions |
-| S16 | [`preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/02-loops.tex`](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/02-loops.tex) | 198 | Exchange-loop representation |
-| S17 | [`preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/03-geometry.tex`](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/03-geometry.tex) | 552 | Joint snapshot pin bounds; path and heat-kernel estimates |
-| S18 | [`preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/04-capacity.tex`](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/04-capacity.tex) | 150 | Capacity criterion |
-| S19 | [`preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/04-profiles.tex`](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/04-profiles.tex) | 239 | Free trial potential |
-| S20 | [`preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/05-sources.tex`](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/05-sources.tex) | 315 | Signed cancellation and Duhamel identities |
-| S21 | [`preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/06-scalar.tex`](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/06-scalar.tex) | 337 | Scalar residual pairing |
-| S22 | [`preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/07-energy.tex`](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/07-energy.tex) | 485 | Residuals against Dirichlet energy |
-| S23 | [`preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/08-pressure.tex`](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/08-pressure.tex) | 300 | Right derivative of the pressure; corollary |
-| S24 | [`preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/figures/isolated-surgery.tex`](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/figures/isolated-surgery.tex) | 44 | Manuscript B figure source |
-| S25 | [`preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/figures/period-averaging.tex`](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/figures/period-averaging.tex) | 32 | Manuscript B figure source |
-| S26 | [`preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/references.tex`](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/references.tex) | 98 | Manuscript B bibliography, including both companion entries |
-| S27 | [`preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/first-lattice-correction-bloch-law.pdf`](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/first-lattice-correction-bloch-law.pdf) | — | Manuscript B compiled PDF |
-| S28 | [`preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/README.md`](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/README.md) | 18 | Manuscript C README and bibtex entry |
-| S29 | [`preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/main.tex`](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/main.tex) | 74 | Manuscript C title, date, abstract, section list |
-| S30 | [`preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/01-introduction.tex`](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/01-introduction.tex) | 223 | Manuscript C model, theorem, antecedents, strategy |
-| S31 | [`preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/02-exchange.tex`](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/02-exchange.tex) | 480 | Exchange representation on the torus |
-| S32 | [`preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/03-sparse-pins.tex`](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/03-sparse-pins.tex) | 693 | Sparse pin estimates |
-| S33 | [`preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/04-spatial-comparison.tex`](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/04-spatial-comparison.tex) | 734 | Local-to-global squared-magnetization comparison |
-| S34 | [`preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/05-zero-field.tex`](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/05-zero-field.tex) | 281 | Zero-field magnetization distribution |
-| S35 | [`preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/06-equilibrium.tex`](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/06-equilibrium.tex) | 276 | Equilibrium and ergodic states |
-| S36 | [`preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/07-pressure.tex`](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/07-pressure.tex) | 560 | Matrix-product perturbations; zero-freeness |
-| S37 | [`preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/08-global-spin.tex`](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/08-global-spin.tex) | 138 | Global spin and the spherical limit |
-| S38 | [`preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/figures/holes-comparison.tex`](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/figures/holes-comparison.tex) | 72 | Manuscript C figure source |
-| S39 | [`preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/figures/sparse-ghost.tex`](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/figures/sparse-ghost.tex) | 19 | Manuscript C figure source |
-| S40 | [`preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/references.bib`](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/references.bib) | 275 | Manuscript C bibliography, including both companion entries |
-| S41 | [`preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/spherical-magnetization.pdf`](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/spherical-magnetization.pdf) | — | Manuscript C compiled PDF |
-| S42 | [`preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/README.md`](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/README.md) | 18 | Manuscript D README and bibtex entry |
-| S43 | [`preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/main.tex`](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/main.tex) | 63 | Manuscript D title, date, abstract, section list |
-| S44 | [`preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/00-introduction.tex`](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/00-introduction.tex) | 295 | Manuscript D theorem, history, strategy, boson consequence |
-| S45 | [`preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/01-loops.tex`](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/01-loops.tex) | 397 | Exchange-path representation and spectral law |
-| S46 | [`preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/02-pin-test.tex`](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/02-pin-test.tex) | 443 | Stable multiaffine pin test |
-| S47 | [`preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/03-exposure.tex`](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/03-exposure.tex) | 644 | Exposure, determinant, conditional first moment |
-| S48 | [`preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/04-sparse-geometry.tex`](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/04-sparse-geometry.tex) | 499 | Sparse anchors and obstacle components |
-| S49 | [`preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/05-flows.tex`](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/05-flows.tex) | 418 | Routed finite-energy flows |
-| S50 | [`preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/06-leakage.tex`](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/06-leakage.tex) | 612 | Heat leakage and the quadratic loss |
-| S51 | [`preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/07-kms.tex`](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/07-kms.tex) | 493 | Vanishing-field selection; KMS verification |
-| S52 | [`preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/figures/exposure-first-moment.tex`](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/figures/exposure-first-moment.tex) | 38 | Manuscript D figure source |
-| S53 | [`preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/figures/hull-routing.tex`](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/figures/hull-routing.tex) | 91 | Manuscript D figure source |
-| S54 | [`preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/references.bib`](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/references.bib) | 382 | Manuscript D bibliography: 36 entries, no OpenAI self-citation |
-| S55 | [`preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/paper.pdf`](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/paper.pdf) | — | Manuscript D compiled PDF, the one the scope note links |
-| S56 | [`lean/docs/271.md`](../../../lean/docs/271.md) | 17 | Scope note: scope statement and comparator links |
-| S57 | [`lean/ComparatorChallenges/Heisenberg.lean`](../../../lean/ComparatorChallenges/Heisenberg.lean) | 218 | Comparator challenge statement |
-| S58 | [`lean/ComparatorChallenges/Heisenberg.json`](../../../lean/ComparatorChallenges/Heisenberg.json) | 14 | Challenge configuration: theorem, modules, axioms |
-| S59 | [`lean/OAI/MathematicalPhysics/Heisenberg/Main.lean`](../../../lean/OAI/MathematicalPhysics/Heisenberg/Main.lean) | 75 | Formal headline theorem |
-| S60 | [`lean/OAI/MathematicalPhysics/Heisenberg/Model.lean`](../../../lean/OAI/MathematicalPhysics/Heisenberg/Model.lean) | 261 | Slot model: site, level, configuration, operators |
-| S61 | [`lean/OAI/MathematicalPhysics/Heisenberg/SpinAveragedKMS.lean`](../../../lean/OAI/MathematicalPhysics/Heisenberg/SpinAveragedKMS.lean) | 88 | KMS layer imported by the headline theorem |
-| S62 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1,783 | Release results index: no entry naming Heisenberg |
-| S63 | [`reasoning_traces/spontaneous-magnetization-quantum-heisenberg-ferromagnet.pdf`](../../../reasoning_traces/spontaneous-magnetization-quantum-heisenberg-ferromagnet.pdf) | — | Published reasoning trace for manuscript D |
+| --- | --- | --- | --- |
+| S1 | `CONTENTS.md` | 9142 | Release contents: family 271 blurb and the four manuscript links |
+| S2 | `preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/README.md` | 18 | Manuscript A README and bibtex entry |
+| S3 | `preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/main.tex` | 61 | Manuscript A title, date, abstract, section list |
+| S4 | `preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/01-introduction.tex` | 210 | Manuscript A model, theorem, history, inputs |
+| S5 | `preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/02-pins.tex` | 719 | Slot and pin algebra |
+| S6 | `preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/03-geometry.tex` | 532 | Lattice geometry for the pin estimates |
+| S7 | `preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/04-bootstrap.tex` | 565 | Finite-range pin bootstrap |
+| S8 | `preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/05-returns.tex` | 214 | Long-return bound |
+| S9 | `preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/06-ideal.tex` | 411 | Ideal kernel and the Bloch coefficient |
+| S10 | `preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/07-pressure.tex` | 194 | Field as extra pins; pressure step |
+| S11 | `preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/references.tex` | 117 | Manuscript A bibliography, including the companion entry |
+| S12 | `preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/bloch-law-heisenberg.pdf` | 17335 | Manuscript A compiled PDF |
+| S13 | `preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/README.md` | 18 | Manuscript B README and bibtex entry |
+| S14 | `preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/main.tex` | 70 | Manuscript B title, date, abstract, section list |
+| S15 | `preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/01-introduction.tex` | 156 | Manuscript B model, theorem, corollary, history, companions |
+| S16 | `preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/02-loops.tex` | 198 | Exchange-loop representation |
+| S17 | `preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/03-geometry.tex` | 552 | Joint snapshot pin bounds; path and heat-kernel estimates |
+| S18 | `preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/04-capacity.tex` | 150 | Capacity criterion |
+| S19 | `preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/04-profiles.tex` | 239 | Free trial potential |
+| S20 | `preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/05-sources.tex` | 315 | Signed cancellation and Duhamel identities |
+| S21 | `preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/06-scalar.tex` | 337 | Scalar residual pairing |
+| S22 | `preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/07-energy.tex` | 485 | Residuals against Dirichlet energy |
+| S23 | `preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/08-pressure.tex` | 300 | Right derivative of the pressure; corollary |
+| S24 | `preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/figures/isolated-surgery.tex` | 44 | Manuscript B figure source |
+| S25 | `preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/figures/period-averaging.tex` | 32 | Manuscript B figure source |
+| S26 | `preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/references.tex` | 98 | Manuscript B bibliography, including both companion entries |
+| S27 | `preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/first-lattice-correction-bloch-law.pdf` | 14826 | Manuscript B compiled PDF |
+| S28 | `preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/README.md` | 18 | Manuscript C README and bibtex entry |
+| S29 | `preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/main.tex` | 74 | Manuscript C title, date, abstract, section list |
+| S30 | `preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/01-introduction.tex` | 223 | Manuscript C model, theorem, antecedents, strategy |
+| S31 | `preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/02-exchange.tex` | 480 | Exchange representation on the torus |
+| S32 | `preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/03-sparse-pins.tex` | 693 | Sparse pin estimates |
+| S33 | `preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/04-spatial-comparison.tex` | 734 | Local-to-global squared-magnetization comparison |
+| S34 | `preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/05-zero-field.tex` | 281 | Zero-field magnetization distribution |
+| S35 | `preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/06-equilibrium.tex` | 276 | Equilibrium and ergodic states |
+| S36 | `preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/07-pressure.tex` | 560 | Matrix-product perturbations; zero-freeness |
+| S37 | `preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/08-global-spin.tex` | 138 | Global spin and the spherical limit |
+| S38 | `preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/figures/holes-comparison.tex` | 72 | Manuscript C figure source |
+| S39 | `preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/figures/sparse-ghost.tex` | 19 | Manuscript C figure source |
+| S40 | `preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/references.bib` | 275 | Manuscript C bibliography, including both companion entries |
+| S41 | `preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/spherical-magnetization.pdf` | 18836 | Manuscript C compiled PDF |
+| S42 | `preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/README.md` | 18 | Manuscript D README and bibtex entry |
+| S43 | `preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/main.tex` | 63 | Manuscript D title, date, abstract, section list |
+| S44 | `preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/00-introduction.tex` | 295 | Manuscript D theorem, history, strategy, boson consequence |
+| S45 | `preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/01-loops.tex` | 397 | Exchange-path representation and spectral law |
+| S46 | `preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/02-pin-test.tex` | 443 | Stable multiaffine pin test |
+| S47 | `preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/03-exposure.tex` | 644 | Exposure, determinant, conditional first moment |
+| S48 | `preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/04-sparse-geometry.tex` | 499 | Sparse anchors and obstacle components |
+| S49 | `preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/05-flows.tex` | 418 | Routed finite-energy flows |
+| S50 | `preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/06-leakage.tex` | 612 | Heat leakage and the quadratic loss |
+| S51 | `preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/07-kms.tex` | 493 | Vanishing-field selection; KMS verification |
+| S52 | `preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/figures/exposure-first-moment.tex` | 38 | Manuscript D figure source |
+| S53 | `preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/figures/hull-routing.tex` | 91 | Manuscript D figure source |
+| S54 | `preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/references.bib` | 382 | Manuscript D bibliography: 36 entries, no OpenAI self-citation |
+| S55 | `preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/paper.pdf` | 21787 | Manuscript D compiled PDF, the one the scope note links |
+| S56 | `lean/docs/271.md` | 17 | Scope note: scope statement and comparator links |
+| S57 | `lean/ComparatorChallenges/Heisenberg.lean` | 218 | Comparator challenge statement |
+| S58 | `lean/ComparatorChallenges/Heisenberg.json` | 14 | Challenge configuration: theorem, modules, axioms |
+| S59 | `lean/OAI/MathematicalPhysics/Heisenberg/Main.lean` | 75 | Formal headline theorem |
+| S60 | `lean/OAI/MathematicalPhysics/Heisenberg/Model.lean` | 261 | Slot model: site, level, configuration, operators |
+| S61 | `lean/OAI/MathematicalPhysics/Heisenberg/SpinAveragedKMS.lean` | 88 | KMS layer imported by the headline theorem |
+| S62 | `lean/formalization.yaml` | 1783 | Release results index: no entry naming Heisenberg |
+| S63 | `reasoning_traces/spontaneous-magnetization-quantum-heisenberg-ferromagnet.pdf` | 2407 | Published reasoning trace for manuscript D |
+
+## Links
+
+- [S1](../../../CONTENTS.md)
+- [S2](../../../preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/README.md)
+- [S3](../../../preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/main.tex)
+- [S4](../../../preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/01-introduction.tex)
+- [S5](../../../preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/02-pins.tex)
+- [S6](../../../preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/03-geometry.tex)
+- [S7](../../../preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/04-bootstrap.tex)
+- [S8](../../../preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/05-returns.tex)
+- [S9](../../../preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/06-ideal.tex)
+- [S10](../../../preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/sections/07-pressure.tex)
+- [S11](../../../preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/build/references.tex)
+- [S12](../../../preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/bloch-law-heisenberg.pdf)
+- [S13](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/README.md)
+- [S14](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/main.tex)
+- [S15](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/01-introduction.tex)
+- [S16](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/02-loops.tex)
+- [S17](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/03-geometry.tex)
+- [S18](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/04-capacity.tex)
+- [S19](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/04-profiles.tex)
+- [S20](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/05-sources.tex)
+- [S21](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/06-scalar.tex)
+- [S22](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/07-energy.tex)
+- [S23](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/sections/08-pressure.tex)
+- [S24](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/figures/isolated-surgery.tex)
+- [S25](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/figures/period-averaging.tex)
+- [S26](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/build/references.tex)
+- [S27](../../../preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/first-lattice-correction-bloch-law.pdf)
+- [S28](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/README.md)
+- [S29](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/main.tex)
+- [S30](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/01-introduction.tex)
+- [S31](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/02-exchange.tex)
+- [S32](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/03-sparse-pins.tex)
+- [S33](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/04-spatial-comparison.tex)
+- [S34](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/05-zero-field.tex)
+- [S35](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/06-equilibrium.tex)
+- [S36](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/07-pressure.tex)
+- [S37](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/sections/08-global-spin.tex)
+- [S38](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/figures/holes-comparison.tex)
+- [S39](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/figures/sparse-ghost.tex)
+- [S40](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/build/references.bib)
+- [S41](../../../preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/spherical-magnetization.pdf)
+- [S42](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/README.md)
+- [S43](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/main.tex)
+- [S44](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/00-introduction.tex)
+- [S45](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/01-loops.tex)
+- [S46](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/02-pin-test.tex)
+- [S47](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/03-exposure.tex)
+- [S48](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/04-sparse-geometry.tex)
+- [S49](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/05-flows.tex)
+- [S50](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/06-leakage.tex)
+- [S51](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/sections/07-kms.tex)
+- [S52](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/figures/exposure-first-moment.tex)
+- [S53](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/figures/hull-routing.tex)
+- [S54](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/build/source/references.bib)
+- [S55](../../../preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/paper.pdf)
+- [S56](../../../lean/docs/271.md)
+- [S57](../../../lean/ComparatorChallenges/Heisenberg.lean)
+- [S58](../../../lean/ComparatorChallenges/Heisenberg.json)
+- [S59](../../../lean/OAI/MathematicalPhysics/Heisenberg/Main.lean)
+- [S60](../../../lean/OAI/MathematicalPhysics/Heisenberg/Model.lean)
+- [S61](../../../lean/OAI/MathematicalPhysics/Heisenberg/SpinAveragedKMS.lean)
+- [S62](../../../lean/formalization.yaml)
+- [S63](../../../reasoning_traces/spontaneous-magnetization-quantum-heisenberg-ferromagnet.pdf)

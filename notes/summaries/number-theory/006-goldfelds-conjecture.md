@@ -1,4 +1,6 @@
-# 006 — Goldfeld's conjecture (Number theory, 2 manuscripts, tier T0)
+Notes / Summaries / Number theory / [Family 006](../../index/number-theory/006-goldfelds-conjecture.md)
+
+# 006 — Goldfeld's conjecture
 
 ## Original CONTENTS.md summary
 
@@ -50,7 +52,7 @@ The converse problem itself has a long history, and the density manuscript situa
 
 Prior (my training data, not this repo.) The 2-power Selmer side of this story is dominated by Smith's 2024 Annals paper on the 2^∞-Selmer group of quadratic twists, and the analytic side by the Iwaniec–Luo–Sarnak and Perelli–Pomykała line of moment results; the mean-rank conjecture was generally regarded as out of reach unconditionally, with the strongest results conditional on GRH. A proof of the density statement for every rational curve, at the prime 2, with no restrictions, is the kind of result that would have been listed as a major open problem a decade earlier. That paragraph is my prior, not a repo claim; the repo's own history is the two citations above.
 
-## Consequences now that the proof has been found
+## Consequences
 
 The family's own bibliography records the intra-corpus edges, and they point at family 002 in both directions. The density manuscript cites the mean manuscript as the companion that supplies the tail estimate and the mean [S7:1054–1060], cites the all-prime Selmer converse [S7:899–905] and says of it: “Its proof uses the $2$-converse and analytic twist densities established here.” [S5:87–88] That companion is family 002's Selmer-converse manuscript. It cites the two-primary BSD manuscript [S7:891–897] and derives a joint consequence: combined with the Selmer-corank densities, the two-primary formula holds on a density-one set of signed squarefree twists [S5:92–99]. Family 002's own entry states the same pairing from the other side: “With result 006, this gives full BSD for a density-one set of quadratic twists of every elliptic curve over ℚ.” [S1:32] So the chain 002 ↔ 006 is recorded by the release in both directions, and the triage ledger lists it as one of the three cross-family chains inside T0: “Cross-family chains inside T0: 001↔032, 002↔006, and 311⇒Hovey–Strickland.” [S14:858] “A chain is only as strong as its weakest, unformalized link.” [S14:858–859]
 
@@ -62,30 +64,38 @@ What is not a consequence: BSD for a fixed curve, BSD for a positive proportion 
 
 ## Sources
 
-Sources are numbered and cited in the body as [S2:31] for one line or [S2:31–44] for a range; the file names appear only here. The two manuscript roots are `preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/` and `preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/`; the first ships 14 section files and 9,448 lines of LaTeX, the second 7 section files and 3,138 lines.
-
 | # | File | Lines | Role |
-|---|---|---|---|
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Family entry at 141; manuscript blurbs at 150 and 159; family 002's entry at 32, which names 006 |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The `\resultentry` at 88: the release's own abstract and its two display titles, “Analytic density and 2-converse” [S2:88] and Mean analytic rank |
-| S3 | [`preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/README.md`](../../../preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/README.md) | 21 | Provenance: author (3), date (5), citation block (9–17), version note (19–21) naming the superseded directory |
-| S4 | [`preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/main.tex`](../../../preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/main.tex) | 108 | Title at 76, date at 78, abstract at 82–89 |
-| S5 | [`preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/sections/00-introduction.tex`](../../../preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/sections/00-introduction.tex) | 336 | The 2-converse at 14–19; scope at 21–23; density theorem at 35–46; finite-descent corollary at 61–67; companion paragraphs at 75–99; Smith history at 150–160; converse history at 165–232; proof strategy at 234–265 |
-| S6 | [`preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/sections/11-conclusions.tex`](../../../preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/sections/11-conclusions.tex) | 85 | Proofs of the converse, the finite-descent corollary, the squarefree density lemma at 28–64, and the density theorem at 66–85 |
-| S7 | [`preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/references.bib`](../../../preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/references.bib) | 1,093 | Goldfeld1979 at 1–14; Smith2025 at 16–25; the three intra-corpus edges at 891–897, 899–905 and 1054–1060, each with an href into `preprints/` |
-| S8 | [`preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/README.md`](../../../preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/README.md) | 21 | Provenance: author (3), date (5), citation block (9–17), version note (19–21) naming the superseded directory |
-| S9 | [`preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/build/main.tex`](../../../preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/build/main.tex) | 62 | Title at 39, date at 41, abstract at 45–51 |
-| S10 | [`preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/build/sections/introduction.tex`](../../../preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/build/sections/introduction.tex) | 275 | Mean theorem at 22–28; scope at 30–32; density input at 34–43; tail theorem at 50–58; moment corollary at 75–99; history at 101–170; analytic argument at 172–230 |
-| S11 | [`preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/build/references.bib`](../../../preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/build/references.bib) | 257 | Goldfeld1979 at 1–14; Hanners2026 at 17–25; KoymansSmith2026 at 27–37; Smith2025 at 39–49; the intra-corpus edge OpenAIAnalyticDensityV2 at 51–58, with note Theorem 1.2 |
-| S12 | [`preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/paper.pdf`](../../../preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/paper.pdf) | — | The compiled density manuscript, 1,087,540 bytes |
-| S13 | [`preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/paper.pdf`](../../../preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/paper.pdf) | — | The compiled mean manuscript, 549,633 bytes |
-| S14 | [`notes/reports/t0-triage.md`](../../reports/t0-triage.md) | 897 | Bucket legend at 17–25; the 006 entry at 119–120; the cross-family chain list at 858–859 |
-| S15 | [`notes/tables/catalog.tsv`](../../tables/catalog.tsv) | 373 | Row 7 is family 006: tier, manuscript count, claim-shape tags, and the zero evidence columns |
+| --- | --- | --- | --- |
+| S1 | `CONTENTS.md` | 9142 | Family entry at 141; manuscript blurbs at 150 and 159; family 002's entry at 32, which names 006 |
+| S2 | `overview.tex` | 859 | The `\resultentry` at 88: the release's own abstract and its two display titles, “Analytic density and 2-converse” [S2:88] and Mean analytic rank |
+| S3 | `preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/README.md` | 21 | Provenance: author (3), date (5), citation block (9–17), version note (19–21) naming the superseded directory |
+| S4 | `preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/main.tex` | 108 | Title at 76, date at 78, abstract at 82–89 |
+| S5 | `preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/sections/00-introduction.tex` | 336 | The 2-converse at 14–19; scope at 21–23; density theorem at 35–46; finite-descent corollary at 61–67; companion paragraphs at 75–99; Smith history at 150–160; converse history at 165–232; proof strategy at 234–265 |
+| S6 | `preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/sections/11-conclusions.tex` | 85 | Proofs of the converse, the finite-descent corollary, the squarefree density lemma at 28–64, and the density theorem at 66–85 |
+| S7 | `preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/references.bib` | 1093 | Goldfeld1979 at 1–14; Smith2025 at 16–25; the three intra-corpus edges at 891–897, 899–905 and 1054–1060, each with an href into `preprints/` |
+| S8 | `preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/README.md` | 21 | Provenance: author (3), date (5), citation block (9–17), version note (19–21) naming the superseded directory |
+| S9 | `preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/build/main.tex` | 62 | Title at 39, date at 41, abstract at 45–51 |
+| S10 | `preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/build/sections/introduction.tex` | 275 | Mean theorem at 22–28; scope at 30–32; density input at 34–43; tail theorem at 50–58; moment corollary at 75–99; history at 101–170; analytic argument at 172–230 |
+| S11 | `preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/build/references.bib` | 257 | Goldfeld1979 at 1–14; Hanners2026 at 17–25; KoymansSmith2026 at 27–37; Smith2025 at 39–49; the intra-corpus edge OpenAIAnalyticDensityV2 at 51–58, with note Theorem 1.2 |
+| S12 | `preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/paper.pdf` | 31185 | The compiled density manuscript, 1,087,540 bytes |
+| S13 | `preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/paper.pdf` | 15380 | The compiled mean manuscript, 549,633 bytes |
+| S14 | `notes/reports/t0-triage.md` | 897 | Bucket legend at 17–25; the 006 entry at 119–120; the cross-family chain list at 858–859 |
+| S15 | `notes/tables/catalog.tsv` | 373 | Row 7 is family 006: tier, manuscript count, claim-shape tags, and the zero evidence columns |
 
-Both are re-issues, and each README's version note names its predecessor [S3:19–21] [S8:19–21]: the density manuscript replaces `Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-September-23-2026/` and the mean manuscript replaces `The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-September-23-2026/`. The release names only the newer directory; the superseded one stays on disk and git-tracked. The re-issues are citation refreshes, not new mathematics: the density `build/main.tex` differs from its predecessor only in its `\date` line, and its `build/references.bib` only in the three `\href`s at 895, 903 and 1058, which repoint family 002's two-primary BSD manuscript, family 002's Selmer-converse manuscript, and this family's own mean companion; the mean `build/main.tex` differs only in its `\date` line, and its `build/references.bib` only in the one `\href` at 55 repointing this family's density companion. No file in either adds or removes a line, so every line anchor on this page resolves in both versions.
+## Links
 
-Links are relative to this page's directory: `../../../` is the repository root and `../../` is `notes/`. The upstream copies are [CONTENTS.md](../../../CONTENTS.md), [overview.tex](../../../overview.tex), the density [manuscript PDF](../../../preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/paper.pdf), the mean [manuscript PDF](../../../preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/paper.pdf), [notes/reports/t0-triage.md](../../reports/t0-triage.md) and [notes/tables/catalog.tsv](../../tables/catalog.tsv). The companion page is [002 — The full Birch–Swinnerton-Dyer formula in Selmer coranks zero and one](002-full-birch-swinnerton-dyer-formula-from-low-selmer-corank.md), and the chain partner of family 001 is [001 — Milne's rationality conjecture](001-milnes-rationality-conjecture.md).
-
-Checked with `python3 notes/scripts/verify_summaries.py`, which resolves every `[S#:line]` marker against the shipped file, matches every quotation against the lines it cites, and writes nothing. The injected mutants live in `notes/scripts/tests/test_summaries.py`, run with `python3 notes/scripts/run_tests.py notes/scripts/tests/test_summaries.py -q`: a real quotation corrupted in each form the page uses (inline, wrapped across lines, block quote), one fabricated quotation, the manuscript root retargeted to its superseded sibling, and a bare locator citation moved above the family's own block. The checker measures; the test file injects.
-
-Absent by construction (T0): `lean/docs/006.md`, any `lean/OAI/**` file, any `lean/ComparatorChallenges/` entry, any `main_results` config, any verification directory, any reasoning trace.
+- [S1](../../../CONTENTS.md)
+- [S2](../../../overview.tex)
+- [S3](../../../preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/README.md)
+- [S4](../../../preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/main.tex)
+- [S5](../../../preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/sections/00-introduction.tex)
+- [S6](../../../preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/sections/11-conclusions.tex)
+- [S7](../../../preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/build/references.bib)
+- [S8](../../../preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/README.md)
+- [S9](../../../preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/build/main.tex)
+- [S10](../../../preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/build/sections/introduction.tex)
+- [S11](../../../preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/build/references.bib)
+- [S12](../../../preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/paper.pdf)
+- [S13](../../../preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/paper.pdf)
+- [S14](../../../notes/reports/t0-triage.md)
+- [S15](../../../notes/tables/catalog.tsv)

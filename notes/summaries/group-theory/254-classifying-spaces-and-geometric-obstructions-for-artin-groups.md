@@ -1,4 +1,6 @@
-# 254 - Classifying spaces and geometric obstructions for Artin groups
+Notes / Summaries / Group theory / [Family 254](../../index/group-theory/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md)
+
+# 254 — Classifying spaces and geometric obstructions for Artin groups
 
 ## Original CONTENTS.md summary
 
@@ -53,7 +55,7 @@ The Artin $K(\pi,1)$ conjecture is the standard statement that the Salvetti comp
 
 The CAT(0) side sits in the geometric-action literature: the manuscript's README records the citation key `ArtinNoCAT0`, and the theorem is stated as a nonexistence over all nonempty proper CAT(0) spaces, in any dimension. [S9:11–12]
 
-## Consequences now that the proof has been found
+## Consequences
 
 The consequence the manuscripts state for themselves is that two long-standing structural statements are settled across the full class: asphericity for every finite-rank Artin group, and closure of parabolic subgroups under arbitrary intersections with arbitrary labels. [S2:46–50]
 
@@ -64,7 +66,7 @@ The formalization's record adds what the manuscripts' statements do not: the asp
 ## Sources
 
 | # | File | Lines | Role |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | S1 | `overview.tex` | 859 | Family entry, line 595 |
 | S2 | `preprints/Harmonic-heights-and-the-Artin-K-pi-1-conjecture-September-23-2026/build/main.tex` | 67 | Abstract, lines 46–50 |
 | S3 | `preprints/Harmonic-heights-and-the-Artin-K-pi-1-conjecture-September-23-2026/build/sections/introduction.tex` | 255 | Main theorem, lines 21–30 |
@@ -82,7 +84,7 @@ The formalization's record adds what the manuscripts' statements do not: the asp
 | S15 | `lean/ComparatorChallenges/ArtinCAT0.lean` | 77 | Challenge stub, `sorry` at line 73 |
 | S16 | `lean/ComparatorChallenges/ArtinParabolicIntersections.lean` | 129 | Challenge stubs, `sorry` at lines 103 and 111 |
 
-The manuscript roots are `preprints/Harmonic-heights-and-the-Artin-K-pi-1-conjecture-September-23-2026/`, `preprints/An-Artin-group-with-no-geometric-CAT-0-action-September-23-2026/` and `preprints/Parabolic-intersections-in-Artin-groups-September-23-2026/`, enumerated on disk: each carries `README.md`, `paper.pdf`, and `build/` with `figures/`, `main.tex` (the third ships `paper.tex`), references, and `sections/`. The second ships `macros.tex` and a `references.tex` file rather than a `.bib`. Every File cell above is the repo-relative path; the links below are relative to this page.
+## Links
 
 - [S1](../../../overview.tex)
 - [S2](../../../preprints/Harmonic-heights-and-the-Artin-K-pi-1-conjecture-September-23-2026/build/main.tex)

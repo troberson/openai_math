@@ -1,16 +1,12 @@
-# 199 - Counterexamples to conjectures of Auslander--Reiten, Tachikawa, and Nakayama
+Notes / Summaries / Algebra / [Family 199](../../index/algebra/199-counterexamples-to-conjectures-of-auslander-reiten-and-tachikawa.md)
+
+# 199 — Counterexamples to conjectures of Auslander--Reiten, Tachikawa, and Nakayama
 
 ## Original CONTENTS.md summary
 
 [S1:479] carries the family entry:
 
-> Constructs finite-dimensional algebras over a characteristic-two
-> rational-function field that disprove the Auslander--Reiten and
-> Gorenstein-projective conjectures, and Tachikawa's second conjecture. An
-> associated endomorphism algebra also disproves the classical, generalized
-> and strong Nakayama conjectures, the Auslander--Gorenstein conjecture, and
-> the Wakamatsu tilting conjecture. The counterexamples persist under every
-> extension of the base field.
+> Constructs finite-dimensional algebras over a characteristic-two rational-function field that disprove the Auslander--Reiten and Gorenstein-projective conjectures, and Tachikawa's second conjecture. An associated endomorphism algebra also disproves the classical, generalized and strong Nakayama conjectures, the Auslander--Gorenstein conjecture, and the Wakamatsu tilting conjecture. The counterexamples persist under every extension of the base field.
 
 The entry links the two manuscripts as "Auslander–Reiten counterexample"
 and "Tachikawa’s second conjecture" [S1:479].
@@ -186,7 +182,7 @@ each is a stub. [S29:71] carries `sorry`; [S30:33] carries `sorry`. The
 scope note's comparator table links `AuslanderReiten.lean` and
 `Tachikawa.lean`, one per formalized result.
 
-## History of the conjectures
+## History of the conjecture
 
 The Auslander--Reiten conjecture was proved in several classes before this
 result. [S4:71–73] records the first: "Huneke and Leuschke proved the
@@ -215,7 +211,7 @@ The reduction between the conjectures is recorded in both manuscripts, at
 the prior on the conjectures' standing is not recorded in the release's own
 reading. The claim in the entry is the record.
 
-## Consequences now that the counterexamples exist
+## Consequences
 
 Both conjectures fail for Artin algebras. [S4:40–42] states the reach:
 "Thus both conjectures fail for Artin algebras, including finite-dimensional
@@ -277,7 +273,7 @@ elaborates.
 | S29 | `lean/ComparatorChallenges/AuslanderReiten.lean` | 77 | Stub, `sorry` at line 71 |
 | S30 | `lean/ComparatorChallenges/Tachikawa.lean` | 39 | Stub, `sorry` at line 33 |
 
-The manuscript roots are `preprints/An-explicit-counterexample-to-the-Auslander-Reiten-conjecture-September-23-2026/` and `preprints/A-counterexample-to-Tachikawas-second-conjecture-September-23-2026/`, enumerated on disk: the first carries `README.md`, `paper.pdf`, and `build/` with `main.tex`, `refs.bib`, and numbered section files at the `build/` level; the second carries `README.md`, `paper.pdf`, and `build/` with `paper.tex`, `refs.bib`, and a `sections/` directory. Every File cell above is the repo-relative path; the links below are relative to this page.
+## Links
 
 - [S1](../../../overview.tex)
 - [S2](../../../preprints/An-explicit-counterexample-to-the-Auslander-Reiten-conjecture-September-23-2026/README.md)

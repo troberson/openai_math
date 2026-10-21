@@ -1,15 +1,12 @@
-# 088 - Petty's projection-volume conjecture and simplex counterexamples
+Notes / Summaries / Convex and metric geometry / [Family 088](../../index/convex-and-metric-geometry/088-pettys-projection-volume-conjecture-and-simplex-counterexamples.md)
+
+# 088 — Petty's projection-volume conjecture and simplex counterexamples
 
 ## Original CONTENTS.md summary
 
 [S1:252] carries the family entry:
 
-> Proves Petty's projection-volume conjecture in the remaining dimensions
-> $n\ge4$: ellipsoids uniquely minimize projection-body volume at fixed body
-> volume. Also establishes the full Lutwak--Petty projection inequalities. In
-> contrast, products of simplices exceed Brannen's proposed simplex maximum
-> for normalized projection-body volume by an exponential factor in every
-> sufficiently large dimension.
+> Proves Petty's projection-volume conjecture in the remaining dimensions $n\ge4$: ellipsoids uniquely minimize projection-body volume at fixed body volume. Also establishes the full Lutwak--Petty projection inequalities. In contrast, products of simplices exceed Brannen's proposed simplex maximum for normalized projection-body volume by an exponential factor in every sufficiently large dimension.
 
 The entry links the two manuscripts as "Petty’s projection-volume conjecture"
 and "Product counterexample to simplex maximum" [S1:252].
@@ -159,7 +156,7 @@ questions."
 prior on Petty's conjecture's standing is not recorded in the release's own
 reading. The claim in the entry is the record.
 
-## Consequences now that the proof has been found
+## Consequences
 
 Petty's conjecture is settled from dimension four up, with the equality case
 named: the minimizers are exactly the ellipsoids [S4:42–43], and the theorem
@@ -206,7 +203,7 @@ claims exist and names their declarations; the three comparator configs carry
 | S20 | `lean/ComparatorChallenges/ProjectionCounterexample.lean` | 45 | Stub, `sorry` at line 39 |
 | S21 | `lean/ComparatorChallenges/ProjectionVolume.lean` | 61 | Stub, `sorry` at line 55 |
 
-The manuscript roots are `preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/` and `preprints/A-product-counterexample-to-the-simplex-maximum-for-projection-body-volume-September-24-2026/`, enumerated on disk: the first carries `README.md`, `paper.pdf`, and `build/latex/` with `main.tex`, `bibliography.tex`, and `sections/`; the second carries `README.md`, `paper.pdf`, and `build/` with `main.tex` and `references.tex`. Every File cell above is the repo-relative path; the links below are relative to this page.
+## Links
 
 - [S1](../../../overview.tex)
 - [S2](../../../preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/README.md)

@@ -1,4 +1,6 @@
-# 039 - Nagata's conjecture and maximal Seshadri constants
+Notes / Summaries / Algebraic and complex geometry / [Family 039](../../index/algebraic-and-complex-geometry/039-nagatas-conjecture-and-maximal-seshadri-constants.md)
+
+# 039 — Nagata's conjecture and maximal Seshadri constants
 
 ## Original CONTENTS.md summary
 
@@ -53,7 +55,7 @@ Nagata's conjecture is a classical statement in the polynomial-division regime: 
 
 The manuscript READMEs record the citation keys the papers use: `NagataPlaneCurves` for the plane-curve paper, `MaximalSeshadriConstants` for the surface paper, `MaximalMultipointSeshadriHigher` for the higher-dimensional paper, and `MaximalMultipointSeshadriCharP` for the positive-characteristic paper. [S10:11–12]
 
-## Consequences now that the proof has been found
+## Consequences
 
 The consequence the manuscripts state for themselves is that the qualitative form of the conjecture is settled in the ranges they cover: the strict plane-curve inequality, the maximal constant for surfaces, and the maximal constant in dimension at least 3 over the complex numbers and in positive characteristic. [S6:49–56]
 
@@ -64,7 +66,7 @@ The two October manuscripts are the part of the family with no formalization and
 ## Sources
 
 | # | File | Lines | Role |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | S1 | `overview.tex` | 859 | Family entry, line 156 |
 | S2 | `preprints/Nagatas-Conjecture-for-Plane-Curves-September-23-2026/build/main.tex` | 50 | Abstract, lines 35–41 |
 | S3 | `preprints/Nagatas-Conjecture-for-Plane-Curves-September-23-2026/build/sections/introduction.tex` | 143 | Main theorem, lines 31–40 |
@@ -82,7 +84,7 @@ The two October manuscripts are the part of the family with no formalization and
 | S15 | `lean/OAI/AlgebraicGeometry/PlaneCurves/Nagata.lean` | 169 | `nagata_conjecture` declaration, line 148 |
 | S16 | `lean/OAI/AlgebraicGeometry/Seshadri/Main.lean` | 42 | `maximalSeshadriConstants` declaration, line 25 |
 
-The manuscript roots are `preprints/Nagatas-Conjecture-for-Plane-Curves-September-23-2026/`, `preprints/Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026/`, `preprints/Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-5-2026/` and `preprints/Maximal-multipoint-Seshadri-constants-in-positive-characteristic-October-5-2026/`, enumerated on disk: each carries `README.md`, `manuscript.pdf`, and `build/` with `figures/`, `main.tex`, `references.bib` and `sections/`. The fourth ships a nested `build/build/` tree, and its README links a PDF named `seshadri-positive-characteristic.pdf`, which is not the shipped filename. Every File cell above is the repo-relative path; the links below are relative to this page.
+## Links
 
 - [S1](../../../overview.tex)
 - [S2](../../../preprints/Nagatas-Conjecture-for-Plane-Curves-September-23-2026/build/main.tex)

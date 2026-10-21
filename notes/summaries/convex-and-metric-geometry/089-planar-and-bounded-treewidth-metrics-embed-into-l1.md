@@ -1,15 +1,12 @@
-# 089 - Planar and bounded-treewidth metrics embed into L1
+Notes / Summaries / Convex and metric geometry / [Family 089](../../index/convex-and-metric-geometry/089-planar-and-bounded-treewidth-metrics-embed-into-l1.md)
+
+# 089 — Bounded-distortion $L_1$ embeddings of planar and bounded-treewidth graphs
 
 ## Original CONTENTS.md summary
 
 [S1:254] carries the family entry:
 
-> Resolves the planar and bounded-treewidth cases of the Gupta--Newman--Rabinovich--Sinclair
-> conjecture. Shortest-path metrics of finite connected graphs with arbitrary
-> positive edge lengths embed into real $L_1$ with universal distortion for
-> planar graphs, and distortion depending only on treewidth for
-> bounded-treewidth graphs. The corresponding multicommodity flow--cut gaps
-> are uniformly bounded.
+> Resolves the planar and bounded-treewidth cases of the Gupta--Newman--Rabinovich--Sinclair conjecture. Shortest-path metrics of finite connected graphs with arbitrary positive edge lengths embed into real $L_1$ with universal distortion for planar graphs, and distortion depending only on treewidth for bounded-treewidth graphs. The corresponding multicommodity flow--cut gaps are uniformly bounded.
 
 The entry links the two manuscripts as "Planar graph embeddings" and
 "Bounded-treewidth embeddings" [S1:254].
@@ -185,7 +182,7 @@ pathwidth."
 prior on the conjecture's standing is not recorded in the release's own
 reading. The claim in the entry is the record.
 
-## Consequences now that the proof has been found
+## Consequences
 
 The planar case is settled with a universal constant, and the flow--cut
 consequence follows from the identity Gupta et al. established [S4:58–62].
@@ -243,7 +240,7 @@ claims exist and names their declarations; the two comparator configs carry
 | S32 | `lean/ComparatorChallenges/PlanarL1.lean` | 51 | Stub, `sorry` at line 47 |
 | S33 | `lean/ComparatorChallenges/BoundedTreewidthL1.lean` | 50 | Stub, `sorry` at line 44 |
 
-The manuscript roots are `preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/` and `preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/`, enumerated on disk: the first carries `README.md`, `paper.pdf`, and `build/` with `main.tex`, `references.bib`, `figures/` (three figures), and `sections/`; the second carries `README.md`, `paper.pdf`, and `build/` with `main.tex`, `bibliography.tex`, one figure, and numbered section files at the `build/` level. Every File cell above is the repo-relative path; the links below are relative to this page.
+## Links
 
 - [S1](../../../overview.tex)
 - [S2](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/README.md)

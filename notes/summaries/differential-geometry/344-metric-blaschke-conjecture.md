@@ -1,6 +1,6 @@
-# 344 — The metric Blaschke conjecture (Differential geometry, 1 manuscript, tier T0)
+Notes / Summaries / Differential geometry / [Family 344](../../index/differential-geometry/344-metric-blaschke-conjecture.md)
 
-Manuscript root: `preprints/The-metric-Blaschke-theorem-September-23-2026` [S4]. The manuscript is dated September 23, 2026 [S3:4] and ships `build/paper.tex` [S5], ten section files [S6–S15], and `build/references.bib` [S16]. The README carries no version note, so this is the release's first and only edition [S3:1–16]. The family is at tier T0: the release formalizes none of its manuscript, and ships no scope note, comparator challenge, `main_results` entry, verification bundle, or reasoning trace [S17:340].
+# 344 — The metric Blaschke conjecture
 
 ## Original CONTENTS.md summary
 
@@ -10,10 +10,7 @@ The release's blurb for family 344 [S1:8340]:
 
 The catalog abstract in `overview.tex` [S2:786] is the same sentence. The manuscript's own abstract [S6:2–5]:
 
-> We prove the metric Blaschke conjecture: every connected closed smooth
-> Riemannian manifold of positive dimension whose global injectivity radius
-> equals its diameter is, up to scale, a standard compact rank-one symmetric
-> space.
+> We prove the metric Blaschke conjecture: every connected closed smooth Riemannian manifold of positive dimension whose global injectivity radius equals its diameter is, up to scale, a standard compact rank-one symmetric space.
 
 The bibtex key the release ships [S3:9–12]:
 
@@ -26,37 +23,16 @@ The bibtex key the release ships [S3:9–12]:
 
 The conjecture starts from a property the round sphere has, and that the standard projective spaces and the Cayley plane also have [S6:11–16]:
 
-> On a round sphere, every geodesic minimizes from its starting point to
-> the antipode, at a distance equal to the diameter. The standard real,
-> complex and quaternionic projective spaces and the Cayley plane have
-> the same common minimizing-distance property. The metric Blaschke
-> conjecture asks whether this property characterizes these compact
-> rank-one symmetric spaces.
+> On a round sphere, every geodesic minimizes from its starting point to the antipode, at a distance equal to the diameter. The standard real, complex and quaternionic projective spaces and the Cayley plane have the same common minimizing-distance property. The metric Blaschke conjecture asks whether this property characterizes these compact rank-one symmetric spaces.
 
 The manuscript turns the property into a metric equality. For a connected closed smooth Riemannian manifold, the global injectivity radius is the infimum over points of the radius on whose open tangent balls the exponential map is a diffeomorphism, and the diameter is the largest distance between two points. A Blaschke manifold is one of positive dimension where the two are equal [S6:18–29]:
 
-> For a connected closed smooth Riemannian manifold $(M,g)$, write
-> \[
->  \inj(M,g)=\inf_{p\in M}\inj_p(M,g),
->  \qquad
->  \diam(M,g)=\sup_{p,q\in M}d_g(p,q).
-> \]
-> Here $\inj_p(M,g)$ is the supremum of the radii on whose open tangent
-> balls $\exp_p$ is a diffeomorphism onto its image. We call $M$ a
-> \emph{Blaschke manifold} if it has positive dimension and
-> $\inj(M,g)=\diam(M,g)$. The global equality implies that every
-> unit-speed geodesic minimizes precisely up to the common diameter;
-> we give the short deduction in Lemma~\ref{geom:cut-time}.
+> For a connected closed smooth Riemannian manifold $(M,g)$, write \[ \inj(M,g)=\inf_{p\in M}\inj_p(M,g), \qquad \diam(M,g)=\sup_{p,q\in M}d_g(p,q). \] Here $\inj_p(M,g)$ is the supremum of the radii on whose open tangent balls $\exp_p$ is a diffeomorphism onto its image. We call $M$ a _Blaschke manifold_ if it has positive dimension and $\inj(M,g)=\diam(M,g)$. The global equality implies that every unit-speed geodesic minimizes precisely up to the common diameter; we give the short deduction in Lemma~ .
 
 The main theorem is the classification [S6:31–37]:
 
-> \begin{theorem}[The metric Blaschke theorem]\label{thm:blaschke}
-> Let $(M,g)$ be a connected closed smooth Riemannian manifold of
-> positive dimension. If $\inj(M,g)=\diam(M,g)$, then $(M,g)$ is
-> isometric, up to multiplication of the metric by a positive constant,
-> to a round sphere, a standard real, complex or quaternionic projective
-> space, or the Cayley plane.
-> \end{theorem}
+> **theorem**
+
 
 The proof is a volume argument in two directions. Every Blaschke manifold has volume at least its model's, and the quaternionic cases have volume at most their model's; the two bounds meet at the model, so equality forces isometry [S6:104–116]:
 
@@ -76,14 +52,7 @@ The proof is a volume argument in two directions. Every Blaschke manifold has vo
 
 The classification covers every quaternionic dimension, and the hypothesis is the global equality, not a curvature bound [S6:39–46]:
 
-> The classification includes every quaternionic dimension. Its hypothesis
-> is the global equality just defined. Classical Blaschke structure
-> associates to $M$ a compact rank-one symmetric \emph{model} $M_0$ by
-> its cut-locus and integral cohomology type. Throughout the volume
-> comparisons, the standard metric $g_0$ on $M_0$ is scaled to have
-> the same diameter as $(M,g)$. Prime geodesics have length twice
-> the diameter, so fixing the diameter is equivalent to fixing
-> their prime period.
+> The classification includes every quaternionic dimension. Its hypothesis is the global equality just defined. Classical Blaschke structure associates to $M$ a compact rank-one symmetric _model_ $M_0$ by its cut-locus and integral cohomology type. Throughout the volume comparisons, the standard metric $g_0$ on $M_0$ is scaled to have the same diameter as $(M,g)$. Prime geodesics have length twice the diameter, so fixing the diameter is equivalent to fixing their prime period.
 
 ## Graduate summary
 
@@ -189,36 +158,13 @@ The scalar estimate is a weighted integral inequality against the model density.
 
 The comparison on each geodesic is the integral inequality over the square of two times along the geodesic [S9:126–143]:
 
-> \begin{theorem}[Comparison on each geodesic]\label{weighted:geodesic}
-> In the normalized intermediate case of Proposition~\ref{geom:structure},
-> let $f(x,y)$ be the Jacobi determinant of any fixed unit-speed geodesic,
-> as in Proposition~\ref{lag:determinant}.  Put
-> \[
->  \mathcal R=(0,T)^2,\qquad
->  w(z)=(\sin z)^m\left|\frac{\sin(2z)}2\right|^k
->  \quad(0\leq z\leq T).
-> \]
-> Then
-> \begin{equation}
->  \int_{\mathcal R}f(x,y)\,dx\,dy
->   \ \geq\ \int_{\mathcal R}w(|y-x|)\,dx\,dy.
->   \label{weighted:comparison}
-> \end{equation}
-> Equality holds if and only if
-> $f(x,y)=w(|y-x|)$ for every $(x,y)\in[0,T]^2$.
-> \end{theorem}
+> **theorem**
+
 
 Integrating the radial density over the unit tangent bundle at each point gives the volume [S10:20–28]:
 
-> \begin{lemma}[Polar integration over a full period]
-> \label{rig:polar}
-> For every $p\in M$,
-> \[
->  \int_{S_pM}\int_0^D J(\xi,t)\,dt\,d\sigma_p(\xi)=V,
->  \qquad
->  \int_{S_pM}\int_0^T J(\xi,t)\,dt\,d\sigma_p(\xi)=2V.
-> \]
-> \end{lemma}
+> **lemma**
+
 
 The quaternionic upper bound comes from characteristic classes. Pairs of points at the cut distance form a smooth incidence manifold, and the rank of the complement of two direction planes forces the total Pontryagin class [S11:175–183]:
 
@@ -257,42 +203,8 @@ The geodesic space carries the arithmetic. The period-normalized contact form ex
 
 The first negative bundle of the free-loop energy transfers the incidence coefficient to the geodesic space [S13:265–300]:
 
-> \begin{proposition}[The first attachment and its coefficient]
-> \label{geo:attachment}
-> There is an oriented rank-three vector bundle $E\to B$ and an
-> attaching map
-> \[
->  f:S(E)\longrightarrow M.
-> \]
-> Let $p:S(E)\to B$ and put $x=f^*u\in H^4(S(E);\Z)$.
-> The following properties hold:
-> \begin{enumerate}[label=\textup{(\roman*)}]
-> \item The pullback $\rho^*E$ is the first negative bundle for the
->       free-loop energy.  It is isomorphic as a real vector bundle
->       to the rank-three bundle $K\to U$ with fiber
->       \[
->        K_w=\{a\in w^\perp:
->           J_a(D)=0\},
->        \quad J_a(0)=0,\quad J_a'(0)=a,
->       \]
->       where $J_a$ is the normal Jacobi field along $\gamma_w$.
-> \item Let $\widetilde p:S(\rho^*E)\to U$ and
->       $\widehat\rho:S(\rho^*E)\to S(E)$ be the pullback square.
->       Then
->       \begin{equation}\label{geo:attachment-pullback}
->        \widehat\rho^*x=\widetilde p^*z.
->       \end{equation}
-> \item After choosing the orientation of $E$, one has
->       \begin{equation}\label{geo:primitive-boundary}
->        p_!x=e.
->       \end{equation}
->       With either orientation its coefficient is $\pm1$.
-> \item The actual negative bundle satisfies
->       \begin{equation}\label{geo:negative-pontryagin}
->        \rho^*p_1(E)=4z.
->       \end{equation}
-> \end{enumerate}
-> \end{proposition}
+> **proposition**
+
 
 The complete-intersection calculation turns the characteristic number into the sharp upper bound [S14:351–361]:
 
@@ -317,10 +229,8 @@ Complex-projective type closes through Yang's volume theorem [S15:11–14]:
 
 The projective planes close through the classification of smooth topological projective planes and the weak Blaschke volume theorem [S15:37–40]:
 
-> \begin{corollary}[Quaternionic and Cayley planes]\label{rig:planes}
-> A Blaschke manifold with model $\HP^2$ or $\OP^2$ is isometric
-> to that model at the same diameter.
-> \end{corollary}
+> **corollary**
+
 
 Quaternionic type closes through the sharp bound and the contact formula [S15:59–62]:
 
@@ -331,42 +241,11 @@ Quaternionic type closes through the sharp bound and the contact formula [S15:59
 
 The manuscript states the route through the proof [S6:118–130]:
 
-> After the circle, sphere and real-projective cases are separated,
-> the analytic comparison in each remaining type starts along one
-> closed geodesic. Normal Jacobi fields that vanish at a specified
-> time form a Lagrangian plane in the symplectic space of Jacobi
-> fields. A fixed graph chart separates the determinant of their
-> endpoint pairing into a regular factor and a Schur-complement
-> factor. The size of the Schur block is the dimension of the space
-> of normal Jacobi fields vanishing at both the starting point and
-> its cut point; the regular block has the complementary normal
-> dimension. Both determinant factors can be bounded by scalar
-> interval integrals, including when the actual endpoint order is
-> reversed. This construction uses the cut-time intersection pattern;
-> it does not require parallel eigenspaces of the curvature operator.
+> After the circle, sphere and real-projective cases are separated, the analytic comparison in each remaining type starts along one closed geodesic. Normal Jacobi fields that vanish at a specified time form a Lagrangian plane in the symplectic space of Jacobi fields. A fixed graph chart separates the determinant of their endpoint pairing into a regular factor and a Schur-complement factor. The size of the Schur block is the dimension of the space of normal Jacobi fields vanishing at both the starting point and its cut point; the regular block has the complementary normal dimension. Both determinant factors can be bounded by scalar interval integrals, including when the actual endpoint order is reversed. This construction uses the cut-time intersection pattern; it does not require parallel eigenspaces of the curvature operator.
 
 The arithmetic step is where the integral structure matters [S6:160–179]:
 
-> Next consider the space of oriented geodesics, forgetting the
-> marked starting point. The period-normalized contact form expresses
-> volume as a top power of the Euler class of its geodesic-circle
-> bundle. Integral Gysin sequences first determine the lattice of
-> classes and the determinant of a middle pairing. The first negative
-> bundle of the free-loop energy transfers the incidence coefficient
-> to this space. This step uses the
-> fixed-endpoint Morse index theorem of \citet{Milnor1963} and the
-> equivariant negative-bundle attachment developed in closed-geodesic
-> Morse theory; we use the formulation of
-> \citet[Section~7]{OttosenBokstedt2007}, following
-> \citet{Klingenberg1978}. The required primitive attaching coefficient
-> is established over every prime field. The attaching map from
-> the sphere bundle of the descended negative bundle to $M$ also
-> pulls back its cohomology generator; the vanishing of the
-> $(r+1)$st power supplies the relations for the final algebraic
-> calculation. Finally, a complete-intersection calculation turns
-> the middle determinant
-> into the sharp upper volume bound. Rational cohomology
-> alone would not retain the arithmetic that normalizes this bound.
+> Next consider the space of oriented geodesics, forgetting the marked starting point. The period-normalized contact form expresses volume as a top power of the Euler class of its geodesic-circle bundle. Integral Gysin sequences first determine the lattice of classes and the determinant of a middle pairing. The first negative bundle of the free-loop energy transfers the incidence coefficient to this space. This step uses the fixed-endpoint Morse index theorem of   and the equivariant negative-bundle attachment developed in closed-geodesic Morse theory; we use the formulation of \citet[Section~7]{OttosenBokstedt2007}, following  . The required primitive attaching coefficient is established over every prime field. The attaching map from the sphere bundle of the descended negative bundle to $M$ also pulls back its cohomology generator; the vanishing of the $(r+1)$st power supplies the relations for the final algebraic calculation. Finally, a complete-intersection calculation turns the middle determinant into the sharp upper volume bound. Rational cohomology alone would not retain the arithmetic that normalizes this bound.
 
 ## History of the conjecture
 
@@ -376,26 +255,17 @@ The sphere and real-projective metric cases came through Berger, Kazdan, Weinste
 
 The manuscript names the hypotheses it does not use [S6:192–198]:
 
-> There are also rigidity theorems with additional geometric hypotheses.
-> Shankar, Spatzier and Wilking treat an upper sectional-curvature bound
-> \citep[Proposition~2.1]{ShankarSpatzierWilking2005}, and Su, Sun and
-> Wang prove the corresponding normalized lower-curvature result
-> \citep{SuSunWang2016}. Connell, Islam, Nguyen and Spatzier obtain
-> rigidity under curvature bounds and agreement with a model away
-> from a prescribed convex set \citep{ConnellIslamNguyenSpatzier2026}.
+> There are also rigidity theorems with additional geometric hypotheses. Shankar, Spatzier and Wilking treat an upper sectional-curvature bound \citep[Proposition~2.1]{ShankarSpatzierWilking2005}, and Su, Sun and Wang prove the corresponding normalized lower-curvature result  . Connell, Islam, Nguyen and Spatzier obtain rigidity under curvature bounds and agreement with a model away from a prescribed convex set  .
 
 It also names the nearest concurrent result [S6:200–203]:
 
-> Song's September 2026 preprint proves Blaschke metric rigidity
-> assuming an adapted complex structure on the entire tangent bundle
-> \citep[Theorem~1.3]{Song2026}. This entire-extension hypothesis is
-> additional to the Blaschke condition.
+> Song's September 2026 preprint proves Blaschke metric rigidity assuming an adapted complex structure on the entire tangent bundle \citep[Theorem~1.3]{Song2026}. This entire-extension hypothesis is additional to the Blaschke condition.
 
 The entries are Shankar–Spatzier–Wilking 2005 [S16:309–319], Su–Sun–Wang 2016 [S16:331–341], Connell–Islam–Nguyen–Spatzier 2026 [S16:343–352], and Song 2026 [S16:354–361].
 
 **Prior (my training data, not this repo).** The metric Blaschke conjecture is the conjecture that a Riemannian manifold whose injectivity radius equals its diameter is a compact rank-one symmetric space. The surface case is classical, and the higher-dimensional cases were open: the sphere case was settled by Berger's isoembolic inequality route, the complex projective case by Yang under a homotopy-type hypothesis, and the quaternionic cases by Reznikov and Wilking under homeomorphism and period hypotheses. The full metric classification, including every quaternionic dimension, is what I recall as open. The prior is a training-data recollection at an early-2025 cutoff, self-rated, and the repo supplies only the manuscript's citations.
 
-## Consequences now that the proof has been found
+## Consequences
 
 The direct consequence is the classification the release states: the Blaschke condition characterizes the round sphere, the standard real, complex and quaternionic projective spaces, and the Cayley plane, up to scaling [S1:8340] [S2:786]. The manuscript's own statement covers every quaternionic dimension [S6:39–46], which is the part the earlier projective results did not reach.
 
@@ -409,22 +279,42 @@ What has not been checked: no Lean, lake, or comparator run was performed, and f
 
 ## Sources
 
-| ID | File | Lines | What it carries |
+| # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | Release blurb, manuscript link, manuscript abstract |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 344's `\resultentry`, at line 786 |
-| S3 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/README.md`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/README.md) | 16 | Manuscript README and bibtex key |
-| S4 | [`paper.pdf`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/paper.pdf) | — | Manuscript PDF |
-| S5 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/paper.tex`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/paper.tex) | 68 | Preamble, theorem environments, section include list |
-| S6 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/00-introduction.tex`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/00-introduction.tex) | 203 | Abstract, Blaschke definition, main theorem, predecessors, proof route |
-| S7 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/01-geometric-inputs.tex`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/01-geometric-inputs.tex) | 114 | Cut-time lemma, classical Blaschke structure |
-| S8 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/02-lagrangian.tex`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/02-lagrangian.tex) | 657 | Lagrangian setup, determinant normalization, Schur-complement bounds |
-| S9 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/03-weighted-comparison.tex`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/03-weighted-comparison.tex) | 334 | Weighted scalar identity, geodesic comparison |
-| S10 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/04-global-comparison.tex`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/04-global-comparison.tex) | 112 | Polar integration over a full period |
-| S11 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/05-incidence.tex`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/05-incidence.tex) | 273 | Incidence manifold, total Pontryagin class |
-| S12 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/06-signature.tex`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/06-signature.tex) | 200 | The signature coefficient and the sign of $s$ |
-| S13 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/07-geodesic-space.tex`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/07-geodesic-space.tex) | 768 | Contact volume, Gysin sequences, negative-bundle attachment |
-| S14 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/08-volume-algebra.tex`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/08-volume-algebra.tex) | 442 | Complete-intersection calculation, sharp upper bound |
-| S15 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/09-classification.tex`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/09-classification.tex) | 94 | The three rigidity corollaries |
-| S16 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/references.bib`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/references.bib) | 369 | Bibliography |
-| S17 | [`notes/tables/catalog.tsv`](../../../notes/tables/catalog.tsv) | 373 | Reading ledger row for family 344 |
+| S1 | `CONTENTS.md` | 9142 | Release blurb, manuscript link, manuscript abstract |
+| S2 | `overview.tex` | 859 | Family 344's `\resultentry`, at line 786 |
+| S3 | `preprints/The-metric-Blaschke-theorem-September-23-2026/README.md` | 16 | Manuscript README and bibtex key |
+| S4 | `paper.pdf` | — | Manuscript PDF |
+| S5 | `preprints/The-metric-Blaschke-theorem-September-23-2026/build/paper.tex` | 68 | Preamble, theorem environments, section include list |
+| S6 | `preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/00-introduction.tex` | 203 | Abstract, Blaschke definition, main theorem, predecessors, proof route |
+| S7 | `preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/01-geometric-inputs.tex` | 114 | Cut-time lemma, classical Blaschke structure |
+| S8 | `preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/02-lagrangian.tex` | 657 | Lagrangian setup, determinant normalization, Schur-complement bounds |
+| S9 | `preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/03-weighted-comparison.tex` | 334 | Weighted scalar identity, geodesic comparison |
+| S10 | `preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/04-global-comparison.tex` | 112 | Polar integration over a full period |
+| S11 | `preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/05-incidence.tex` | 273 | Incidence manifold, total Pontryagin class |
+| S12 | `preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/06-signature.tex` | 200 | The signature coefficient and the sign of $s$ |
+| S13 | `preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/07-geodesic-space.tex` | 768 | Contact volume, Gysin sequences, negative-bundle attachment |
+| S14 | `preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/08-volume-algebra.tex` | 442 | Complete-intersection calculation, sharp upper bound |
+| S15 | `preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/09-classification.tex` | 94 | The three rigidity corollaries |
+| S16 | `preprints/The-metric-Blaschke-theorem-September-23-2026/build/references.bib` | 369 | Bibliography |
+| S17 | `notes/tables/catalog.tsv` | 373 | Reading ledger row for family 344 |
+
+## Links
+
+- [S1](../../../CONTENTS.md)
+- [S2](../../../overview.tex)
+- [S3](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/README.md)
+- [S4](../../../paper.pdf)
+- [S5](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/paper.tex)
+- [S6](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/00-introduction.tex)
+- [S7](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/01-geometric-inputs.tex)
+- [S8](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/02-lagrangian.tex)
+- [S9](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/03-weighted-comparison.tex)
+- [S10](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/04-global-comparison.tex)
+- [S11](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/05-incidence.tex)
+- [S12](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/06-signature.tex)
+- [S13](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/07-geodesic-space.tex)
+- [S14](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/08-volume-algebra.tex)
+- [S15](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/09-classification.tex)
+- [S16](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/references.bib)
+- [S17](../../../notes/tables/catalog.tsv)

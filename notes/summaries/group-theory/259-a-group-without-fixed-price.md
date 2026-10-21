@@ -1,15 +1,12 @@
-# 259 — A group without fixed price (Group theory, 1 manuscript, tier T0)
+Notes / Summaries / Group theory / [Family 259](../../index/group-theory/259-a-group-without-fixed-price.md)
+
+# 259 — A group without fixed price
 
 ## Original CONTENTS.md summary
 
 The release's blurb [S1:6383]:
 
-> We construct a finitely generated group with two essentially free
-> probability-measure-preserving actions of different costs. This gives a
-> negative answer to Gaboriau's general fixed-price problem. The group is
-> an amalgam of a free group of rank 100 with a direct product. Its
-> Bernoulli action has cost bounded away from one, whereas finite height
-> extensions have costs tending to one.
+> We construct a finitely generated group with two essentially free probability-measure-preserving actions of different costs. This gives a negative answer to Gaboriau's general fixed-price problem. The group is an amalgam of a free group of rank 100 with a direct product. Its Bernoulli action has cost bounded away from one, whereas finite height extensions have costs tending to one.
 
 The overview's paraphrase [S2:605] says the same: "Constructs a finitely generated group with two essentially free probability-measure-preserving actions of different costs, answering the general fixed-price problem negatively. Its Bernoulli action has cost bounded away from one, while a sequence of finite height extensions has costs tending to one." The manuscript's own title is "A group without fixed price" [S4:1], and its scope note names the problem the paper answers: "This manuscript concerns Gaboriau's general fixed-price problem for countably infinite groups, using a rank-100 amalgam construction. This is distinct from the fixed-price-one question restricted to groups with property (T)." [S5:3–5]
 
@@ -21,7 +18,7 @@ The manuscript supplies a finitely generated group for which this fails. "We giv
 
 Two actions of this one group have different costs. The first is the Bernoulli action on the product space $[0,1]^\Gamma$. The second is a height extension: take the Bernoulli space, add a coordinate in $\mathbb Z/M\mathbb Z$, and let each group element shift the height by $\chi(g)$, where $\chi$ is the homomorphism to $\mathbb Z$ with $\chi(a)=1$ and $\chi(b_i)=\chi(t)=0$. The theorem states the two bounds: "In particular, choosing an integer $M>\max\{100,99/\eta\}$ gives two essentially free p.m.p. actions of the same finitely generated group with strictly different costs. Thus the general fixed-price assertion is false." [S7:77–80]
 
-The upper bound is cheap because the height coordinate is finite. "The upper bound uses the finite height coordinate. All $t$-edges, together with the generators of $J$ on a small set meeting every $t$-orbit, generate the $J\times\langle t\rangle$ relation at cost arbitrarily close to one. It remains to add $a$-edges." [S7:85–88] "The relation $w=ab_1\cdots ab_{99}a$ propagates $a$-edges from any $99$ consecutive heights to the next height, so an initial cost $99/M$ is enough." [S7:88–91] The proposition states the bound: "For every integer $M>100$, the free p.m.p. action $\Gamma\curvearrowright(Y_M,\nu_M)$ of \eqref{actions:product-action} satisfies" a cost of at most $1+99/M$. [S8:208–211]
+The upper bound is cheap because the height coordinate is finite. "The upper bound uses the finite height coordinate. All $t$-edges, together with the generators of $J$ on a small set meeting every $t$-orbit, generate the $J\times\langle t\rangle$ relation at cost arbitrarily close to one. It remains to add $a$-edges." [S7:85–88] "The relation $w=ab_1\cdots ab_{99}a$ propagates $a$-edges from any $99$ consecutive heights to the next height, so an initial cost $99/M$ is enough." [S7:88–91] The proposition states the bound: "For every integer $M>100$, the free p.m.p. action $\Gamma\curvearrowright(Y_M,\nu_M)$ of   satisfies" a cost of at most $1+99/M$. [S8:208–211]
 
 The lower bound is the hard part. It says the cost of the whole amalgam is at least one plus the cost of generating the $A$-relation when the $J$-relation is supplied for free. "Let $\Gamma=A*_J B$ be finitely generated, let $J$ be infinite, and let $\Gamma$ act essentially freely and p.m.p. on a standard probability space $(X,\mu)$." [S10:23–29] The relative quantity $\delta_X$ is the infimum cost of graphings that generate $\mathcal R_A$ together with the supplied $\mathcal R_J$, and the conclusion is $\operatorname{Cost}(\mathcal R_\Gamma)\geq1+\delta_X$. [S10:30–32]
 
@@ -33,7 +30,7 @@ The manuscript's own decomposition. "The proof isolates three estimates beyond t
 
 **Deployment.** "We next turn a graphing of an amalgamated product action into a graphing of one factor with the amalgamating relation supplied for free." [S10:4–5] The construction is Gaboriau's, specialized to finitely many sheets, and "The compression lemma accounts for its cost." [S10:8] Amalgam normal form then gives the relative lower bound. [S10:108–110] "We prove the proposition using graphings at finite stages. The only limit will concern the sizes of increasing equivalence classes." [S10:35–36]
 
-**Finite models.** The transfer turns a graphing question into a group-theoretic one. "Let $V_k$ be finite exact right $A$-sets, with $n_k=|V_k|\to\infty$, such that for every fixed $g\in A\setminus\{1\}$," the fixed-point proportion tends to zero, and then $\delta_X$ is at least the limsup of $\operatorname{rk}(D_{V_k})/n_k$. [S11:24–26] The relators are the rows $x_vx_{vu_1}\cdots x_{vu_{99}}=1$, so the word $w$ is trivial in this encoding. [S11:35–37] The sequence the manuscript builds has strong expansion: "There exists a sequence of finite exact right $A$-sets $V_k$, with $n_k=|V_k|\to\infty$, satisfying \eqref{models:fixed-points} and" $|N(T)|>96|T|$ for every $T$ of size at most $\alpha n_k$. [S11:210–211]
+**Finite models.** The transfer turns a graphing question into a group-theoretic one. "Let $V_k$ be finite exact right $A$-sets, with $n_k=|V_k|\to\infty$, such that for every fixed $g\in A\setminus\{1\}$," the fixed-point proportion tends to zero, and then $\delta_X$ is at least the limsup of $\operatorname{rk}(D_{V_k})/n_k$. [S11:24–26] The relators are the rows $x_vx_{vu_1}\cdots x_{vu_{99}}=1$, so the word $w$ is trivial in this encoding. [S11:35–37] The sequence the manuscript builds has strong expansion: "There exists a sequence of finite exact right $A$-sets $V_k$, with $n_k=|V_k|\to\infty$, satisfying   and" $|N(T)|>96|T|$ for every $T$ of size at most $\alpha n_k$. [S11:210–211]
 
 **The rank bound.** The rank theorem is a statement about a system of 100-letter relators. "Call a row $t$ bad if it has a repeated column, or if it shares at least two distinct columns with another row, and let $b$ be the number of bad rows." [S13:25–27] Under the expansion hypothesis $|N(T)|>96|T|$ and the sparsity bound $100b\le\alpha n$, "Then the minimum size of a generating set of $D$ satisfies" a linear lower bound. [S13:37–38] The method is Arzhantseva–Ol'shanskii, with two additions. [S7:136–137]
 
@@ -41,7 +38,7 @@ The manuscript's own decomposition. "The proof isolates three estimates beyond t
 
 **The conclusion.** "We now combine the measurable and finite arguments on the same group and the same Bernoulli action." [S14:4–5] The constant $\eta$ comes from the rank bound, and the height-extension bound is uniform in $M$: "An integer $M>\max\{100,99/\eta\}$ exists and satisfies $1+99/M<1+\eta$. The two costs are therefore strictly different, which proves the theorem." [S14:47–49]
 
-## History and prior work
+## History of the conjecture
 
 Cost was introduced by Levitt, and Gaboriau developed its connections with group theory and the fixed-price problem; his work shows that free groups have fixed price equal to their rank, and establishes fixed price one for many groups with commuting or amenable structure. [S7:22–26] The manuscript names the recent results it answers: the fixed-price-one theorem for products of two infinite countable groups, metric and infinite-measure action criteria, and a criterion based on small product neighborhoods of finite subsets. [S7:26–31] Its bibliography carries the Levitt 1995 and Gaboriau 2000 papers, the Khezeli 2026, Slutsky 2026, and Bevilacqua–Bowen 2025 papers, and the Arzhantseva–Ol'shanskii 1996 and Kapovich–Schupp 2002 references behind the shortening argument. [S15:1–88] The deployment construction follows Gaboriau's deployment of a graphing, sections IV.28–IV.32. [S10:6–7]
 
@@ -49,7 +46,7 @@ The scope note separates two questions the literature treats separately: the gen
 
 Prior (my training data, not the manuscript's record): Gaboriau's fixed-price problem was the central open question in the cost theory of p.m.p. actions — whether every countable group has fixed price. Fixed price one was known for amenable groups, for free groups the price is the rank, and products of infinite groups were known to have fixed price one. A finitely generated counterexample was, as far as my prior goes, the outstanding case: no finitely generated group was known to fail fixed price. The manuscript's own citations are the record; this paragraph is my prior on the problem's standing, and the manuscript does not state it.
 
-## Consequences and open directions
+## Consequences
 
 The general fixed-price assertion is false: there is a finitely generated group with two essentially free p.m.p. actions of different costs. [S7:79–80] The consequence for cost theory is that cost is not a group invariant: it is a property of an action, and the same group can realize two costs. The manuscript's own statement of the result is the theorem, and the closing line is the arithmetic that makes the two costs strictly different. [S14:47–49]
 
@@ -57,33 +54,44 @@ The three auxiliary estimates are stated for their own inputs, not as a black bo
 
 Open directions the manuscript leaves: the rank-100 threshold is built into the construction, so the smallest rank at which a counterexample exists is not addressed; the lower bound is for the Bernoulli action and the height extension, so the cost of an arbitrary action of this group is not determined; the coefficient group in the planar lemma is not assumed finitely presented, which is a widening the manuscript states as part of its construction, not as a proved classification; and the scope note's own caveat is that the manuscript "was developed from an intermediate source argument" and "The available source record does not establish that it was the final revision of that argument." [S5:7–9]
 
-## What is formalized
+## Comparison with the formalized statement
 
 Nothing. The ledger records tier T0 for this family, with no scope note, no comparator challenge, no `main_results` entry, no reasoning trace, and no verification bundle. The manuscript's LaTeX is the only source, and the release's `formalized` flag is 0. The repo readme's reasoning-summary table, "We are also releasing abridged summaries of the model's reasoning, covering the following results:" [S3:24], lists ten families and 259 is not among them. The manuscript ships one input record, `INPUTS.md`, which states the scope and the provenance caveat [S5:1–10]; there is no run command and no certificate. The claim is a construction of a group and two actions; nothing in the Lean library reaches it.
 
 ## Sources
 
 | # | File | Lines | Role |
-|---|---|---|---|
-| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9,142 | The release's blurb for family 259 at line 6383, and the PDF link at line 6381. |
-| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 605. |
-| S3 | [`README.md`](../../../README.md) | 51 | The repo readme, which attributes no reasoning trace to this family. |
-| S4 | [`preprints/A-group-without-fixed-price-October-5-2026/README.md`](../../../preprints/A-group-without-fixed-price-October-5-2026/README.md) | 18 | Citation-only manuscript readme: the title, the author, the date, the BibTeX block, no provenance. |
-| S5 | [`preprints/A-group-without-fixed-price-October-5-2026/INPUTS.md`](../../../preprints/A-group-without-fixed-price-October-5-2026/INPUTS.md) | 10 | The scope note: the problem addressed, the distinction from property (T), and the provenance caveat. |
-| S6 | [`preprints/A-group-without-fixed-price-October-5-2026/build/paper.tex`](../../../preprints/A-group-without-fixed-price-October-5-2026/build/paper.tex) | 44 | The main file: the abstract and the section order. |
-| S7 | [`preprints/A-group-without-fixed-price-October-5-2026/build/introduction.tex`](../../../preprints/A-group-without-fixed-price-October-5-2026/build/introduction.tex) | 152 | Cost and fixed price defined, the group, the two actions, the main theorem, the three-step proof outline, and the three isolated estimates. |
-| S8 | [`preprints/A-group-without-fixed-price-October-5-2026/build/group-actions.tex`](../../../preprints/A-group-without-fixed-price-October-5-2026/build/group-actions.tex) | 254 | The amalgam, the free basis of $J$, the two probability spaces, the height extension, the small-cost graphing, and the low-cost proposition. |
-| S9 | [`preprints/A-group-without-fixed-price-October-5-2026/build/compression.tex`](../../../preprints/A-group-without-fixed-price-October-5-2026/build/compression.tex) | 296 | Compression relative to a supplied relation, Borel selections, small complete sets, and the cost-at-least-one corollary. |
-| S10 | [`preprints/A-group-without-fixed-price-October-5-2026/build/deployment.tex`](../../../preprints/A-group-without-fixed-price-October-5-2026/build/deployment.tex) | 257 | Gaboriau's deployment specialized to finitely many sheets, and the relative cost lower bound. |
-| S11 | [`preprints/A-group-without-fixed-price-October-5-2026/build/finite-models.tex`](../../../preprints/A-group-without-fixed-price-October-5-2026/build/finite-models.tex) | 327 | Bernoulli graphings, finite permutation models, the transfer inequality, and the expanding sequence. |
-| S12 | [`preprints/A-group-without-fixed-price-October-5-2026/build/planar.tex`](../../../preprints/A-group-without-fixed-price-October-5-2026/build/planar.tex) | 257 | The planar word lemma over an arbitrary coefficient group. |
-| S13 | [`preprints/A-group-without-fixed-price-October-5-2026/build/rank-surgery.tex`](../../../preprints/A-group-without-fixed-price-October-5-2026/build/rank-surgery.tex) | 288 | The rank theorem, the minimal labelled graph, saturation, and the shortening. |
-| S14 | [`preprints/A-group-without-fixed-price-October-5-2026/build/conclusion.tex`](../../../preprints/A-group-without-fixed-price-October-5-2026/build/conclusion.tex) | 50 | The cost comparison and the arithmetic that makes the two costs strictly different. |
-| S15 | [`preprints/A-group-without-fixed-price-October-5-2026/build/references.bib`](../../../preprints/A-group-without-fixed-price-October-5-2026/build/references.bib) | 88 | The bibliography: Levitt, Gaboriau, Arzhantseva–Ol'shanskii, Kapovich–Schupp, Khezeli, Slutsky, Bevilacqua–Bowen, Greendlinger. |
+| --- | --- | --- | --- |
+| S1 | `CONTENTS.md` | 9142 | The release's blurb for family 259 at line 6383, and the PDF link at line 6381. |
+| S2 | `overview.tex` | 859 | The catalog abstract at line 605. |
+| S3 | `README.md` | 51 | The repo readme, which attributes no reasoning trace to this family. |
+| S4 | `preprints/A-group-without-fixed-price-October-5-2026/README.md` | 18 | Citation-only manuscript readme: the title, the author, the date, the BibTeX block, no provenance. |
+| S5 | `preprints/A-group-without-fixed-price-October-5-2026/INPUTS.md` | 10 | The scope note: the problem addressed, the distinction from property (T), and the provenance caveat. |
+| S6 | `preprints/A-group-without-fixed-price-October-5-2026/build/paper.tex` | 44 | The main file: the abstract and the section order. |
+| S7 | `preprints/A-group-without-fixed-price-October-5-2026/build/introduction.tex` | 152 | Cost and fixed price defined, the group, the two actions, the main theorem, the three-step proof outline, and the three isolated estimates. |
+| S8 | `preprints/A-group-without-fixed-price-October-5-2026/build/group-actions.tex` | 254 | The amalgam, the free basis of $J$, the two probability spaces, the height extension, the small-cost graphing, and the low-cost proposition. |
+| S9 | `preprints/A-group-without-fixed-price-October-5-2026/build/compression.tex` | 296 | Compression relative to a supplied relation, Borel selections, small complete sets, and the cost-at-least-one corollary. |
+| S10 | `preprints/A-group-without-fixed-price-October-5-2026/build/deployment.tex` | 257 | Gaboriau's deployment specialized to finitely many sheets, and the relative cost lower bound. |
+| S11 | `preprints/A-group-without-fixed-price-October-5-2026/build/finite-models.tex` | 327 | Bernoulli graphings, finite permutation models, the transfer inequality, and the expanding sequence. |
+| S12 | `preprints/A-group-without-fixed-price-October-5-2026/build/planar.tex` | 257 | The planar word lemma over an arbitrary coefficient group. |
+| S13 | `preprints/A-group-without-fixed-price-October-5-2026/build/rank-surgery.tex` | 288 | The rank theorem, the minimal labelled graph, saturation, and the shortening. |
+| S14 | `preprints/A-group-without-fixed-price-October-5-2026/build/conclusion.tex` | 50 | The cost comparison and the arithmetic that makes the two costs strictly different. |
+| S15 | `preprints/A-group-without-fixed-price-October-5-2026/build/references.bib` | 88 | The bibliography: Levitt, Gaboriau, Arzhantseva–Ol'shanskii, Kapovich–Schupp, Khezeli, Slutsky, Bevilacqua–Bowen, Greendlinger. |
 
-The manuscript ships [S4:1–16] as a citation-only record: the title, the author, the date, and the BibTeX block, with no run command and no verification bundle. The manuscript directory is
-`preprints/A-group-without-fixed-price-October-5-2026/`;
-its PDF is
-[S1:6381](../../../preprints/A-group-without-fixed-price-October-5-2026/unequal-costs-rank-100-amalgam.pdf)
-and its main file is
-[S6:1](../../../preprints/A-group-without-fixed-price-October-5-2026/build/paper.tex).
+## Links
+
+- [S1](../../../CONTENTS.md)
+- [S2](../../../overview.tex)
+- [S3](../../../README.md)
+- [S4](../../../preprints/A-group-without-fixed-price-October-5-2026/README.md)
+- [S5](../../../preprints/A-group-without-fixed-price-October-5-2026/INPUTS.md)
+- [S6](../../../preprints/A-group-without-fixed-price-October-5-2026/build/paper.tex)
+- [S7](../../../preprints/A-group-without-fixed-price-October-5-2026/build/introduction.tex)
+- [S8](../../../preprints/A-group-without-fixed-price-October-5-2026/build/group-actions.tex)
+- [S9](../../../preprints/A-group-without-fixed-price-October-5-2026/build/compression.tex)
+- [S10](../../../preprints/A-group-without-fixed-price-October-5-2026/build/deployment.tex)
+- [S11](../../../preprints/A-group-without-fixed-price-October-5-2026/build/finite-models.tex)
+- [S12](../../../preprints/A-group-without-fixed-price-October-5-2026/build/planar.tex)
+- [S13](../../../preprints/A-group-without-fixed-price-October-5-2026/build/rank-surgery.tex)
+- [S14](../../../preprints/A-group-without-fixed-price-October-5-2026/build/conclusion.tex)
+- [S15](../../../preprints/A-group-without-fixed-price-October-5-2026/build/references.bib)

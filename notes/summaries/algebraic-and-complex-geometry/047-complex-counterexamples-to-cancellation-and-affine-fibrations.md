@@ -1,15 +1,12 @@
-# 047 - Complex counterexamples to cancellation and affine fibrations
+Notes / Summaries / Algebraic and complex geometry / [Family 047](../../index/algebraic-and-complex-geometry/047-complex-counterexamples-to-cancellation-and-affine-fibrations.md)
+
+# 047 — Complex counterexamples to cancellation and affine fibrations
 
 ## Original CONTENTS.md summary
 
 [S1:170] carries the family entry:
 
-> Constructs an integral complex affine fourfold $X\not\cong\mathbb A^4$
-> with $X\times\mathbb A^1\cong\mathbb A^5$, disproving affine-space
-> cancellation over $\mathbb C$ in dimension four. It also disproves the
-> Dolgachev--Weisfeiler affine-fibration conjecture: smooth surjections
-> $X\to\mathbb A^1$ and $\mathbb A^5\to\mathbb A^2$ have every residue-field
-> fiber isomorphic to affine three-space but are not Zariski-locally trivial.
+> Constructs an integral complex affine fourfold $X\not\cong\mathbb A^4$ with $X\times\mathbb A^1\cong\mathbb A^5$, disproving affine-space cancellation over $\mathbb C$ in dimension four. It also disproves the Dolgachev--Weisfeiler affine-fibration conjecture: smooth surjections $X\to\mathbb A^1$ and $\mathbb A^5\to\mathbb A^2$ have every residue-field fiber isomorphic to affine three-space but are not Zariski-locally trivial.
 
 The entry links the manuscript as "An explicit failure of complex affine-space cancellation" [S1:170].
 
@@ -23,7 +20,7 @@ The Zariski cancellation problem asks whether an affine variety is determined by
 
 The manuscript's abstract states the answer. [S3:9–17] says: "We construct an explicit integral complex affine fourfold $X$ with $X\times\mathbb A^1\cong\mathbb A^5$ but $X\not\cong\mathbb A^4$. This gives a negative answer to Zariski's affine-space cancellation problem over $\mathbb C$ in dimension four. The same construction disproves the Stable Coordinate Conjecture in ambient dimension five and yields smooth $\mathbb A^3$-fibrations over $\mathbb A^1$ and $\mathbb A^2$ that are not Zariski-locally trivial. These fibrations disprove the Dolgachev--Weisfeiler affine-fibration conjecture over these bases."
 
-The main theorem names the algebra. [S6:61–69] gives it: "The algebra $A$ in \eqref{eq:example} is an integral complex algebra of dimension four. For an independent variable $w$, \[ A[w]\simeq\kk\poly5, \qquad A\not\simeq\kk\poly4. \] Consequently the Zariski cancellation problem over the complex numbers has a negative answer in dimension four."
+The main theorem names the algebra. [S6:61–69] gives it: "The algebra $A$ in   is an integral complex algebra of dimension four. For an independent variable $w$, \[ A[w]\simeq\kk\poly5, \qquad A\not\simeq\kk\poly4. \] Consequently the Zariski cancellation problem over the complex numbers has a negative answer in dimension four."
 
 The stabilizing variable is the one adjoined in the theorem. [S6:42–46] states its role: "over $\mathbb C$ for $n=4$. The defining polynomial also gives a negative answer to the Stable Coordinate Conjecture over $\kk$ in ambient dimension five, already after adjoining one variable."
 
@@ -41,23 +38,23 @@ Cancellation for the affine line is settled. [S6:22–23] records it: "Cancellat
 
 The characteristic-zero problem in higher dimension is listed as open. [S6:37–38] records it: "The characteristic-zero problem in dimensions at least three is still listed as open in Gaifullin--Petrov's July 2026"
 
-The stabilization belongs to the theory of residual and stable coordinates. [S6:73–79] states it: "The stabilization belongs to the theory of residual and stable coordinates. A polynomial in $\kk[p]\poly4$ is a \emph{residual coordinate} if its image is a polynomial coordinate over the residue field of every prime of $\kk[p]$; it is \emph{one-stably a coordinate} if it becomes a coordinate after adjoining one variable. Our $H$ is a residual coordinate: it is a coordinate after inverting $p$, while a linear change in $F,J$ makes its reduction at $p=0$ a coordinate."
+The stabilization belongs to the theory of residual and stable coordinates. [S6:73–79] states it: "The stabilization belongs to the theory of residual and stable coordinates. A polynomial in $\kk[p]\poly4$ is a _residual coordinate_ if its image is a polynomial coordinate over the residue field of every prime of $\kk[p]$; it is _one-stably a coordinate_ if it becomes a coordinate after adjoining one variable. Our $H$ is a residual coordinate: it is a coordinate after inverting $p$, while a linear change in $F,J$ makes its reduction at $p=0$ a coordinate."
 
 The Stable Coordinate Conjecture is stated. [S6:84–86] states it: "The Stable Coordinate Conjecture asks whether a polynomial $f\in\kk\poly n$ that becomes a coordinate in $\kk\poly{n+1}$ after adjoining one variable must already be a coordinate in $\kk\poly n$"
 
-The polynomial $H$ is the counterexample. [S6:92–95] states it: "The polynomial $H$ in \eqref{eq:example} is not a coordinate of $P=\kk[p,s,u,F,J]$, but it is a coordinate of $P[w]$ for one independent variable $w$. Thus the Stable Coordinate Conjecture over $\kk$ fails in ambient dimension five after one stabilization."
+The polynomial $H$ is the counterexample. [S6:92–95] states it: "The polynomial $H$ in   is not a coordinate of $P=\kk[p,s,u,F,J]$, but it is a coordinate of $P[w]$ for one independent variable $w$. Thus the Stable Coordinate Conjecture over $\kk$ fails in ambient dimension five after one stabilization."
 
-The stabilization method is exponential. [S6:112–118] describes it: "A derivation $D$ is \emph{locally nilpotent} if every element is killed by some iterate of $D$; over $\kk$, its exponential is an algebraic action of the additive group $\Ga$. We make the stabilization method explicit. A locally nilpotent derivation of $P$ sends $H$ to $p^3$. Exponentiating it converts $H$ into $H+p^3w$, and a coordinate calculation identifies the resulting quotient with a polynomial ring. This exponential-shift argument follows the method of"
+The stabilization method is exponential. [S6:112–118] describes it: "A derivation $D$ is _locally nilpotent_ if every element is killed by some iterate of $D$; over $\kk$, its exponential is an algebraic action of the additive group $\Ga$. We make the stabilization method explicit. A locally nilpotent derivation of $P$ sends $H$ to $p^3$. Exponentiating it converts $H$ into $H+p^3w$, and a coordinate calculation identifies the resulting quotient with a polynomial ring. This exponential-shift argument follows the method of"
 
 The affine-fibration term is defined. [S6:125–126] defines it: "An $\Aff^3$-fibration is a morphism of complex affine varieties whose base change to every geometric point of the target is affine three-space."
 
 The Dolgachev–Weisfeiler assertion is stated. [S6:127–130] states it: "The affine-fibration assertion of Dolgachev and Weisfeiler predicts that an affine morphism to a normal locally noetherian integral base is Zariski-locally a product with affine $r$-space if every fiber is affine $r$-space over its residue field"
 
-Both maps are smooth fibrations that are not locally trivial. [S6:138–141] states it: "Both maps are smooth $\Aff^3$-fibrations, but neither is a Zariski-locally trivial $\Aff^3$-bundle. \Cref{sec:affine-fibrations} proves this consequence using the locally-polynomial-algebra theorem"
+Both maps are smooth fibrations that are not locally trivial. [S6:138–141] states it: "Both maps are smooth $\Aff^3$-fibrations, but neither is a Zariski-locally trivial $\Aff^3$-bundle.   proves this consequence using the locally-polynomial-algebra theorem"
 
 The main work is proving $A$ is not polynomial. [S6:145–148] states it: "The main work is to prove that $A$ itself is not polynomial. Additive actions have long served to distinguish affine varieties from affine space: Makar-Limanov used them to show that the Russell cubic is not affine three-space"
 
-The valuation degree is defined. [S6:165–168] defines it: "The order $\ord_p$ along $p=0$ in $S$ applies to every nonzero element of $A$. Its negative defines the \emph{valuation degree} $\deg h=-\ord_p(h)$ and a filtration of $A$. We prove the exact"
+The valuation degree is defined. [S6:165–168] defines it: "The order $\ord_p$ along $p=0$ in $S$ applies to every nonzero element of $A$. Its negative defines the _valuation degree_ $\deg h=-\ord_p(h)$ and a filtration of $A$. We prove the exact"
 
 The graded identification is an affine modification. [S6:173–179] states it: "Here $\tau$ is an indeterminate representing the initial form of $p$, and the right-hand side is generated by $R$, $\tau$, and all $i/\tau^2$ with $i\in I$. The coefficient inclusion is the one induced by $S\subset A$: the residue of $b\in S$ corresponds to its degree-zero class. This is an affine modification of $R[\tau]$ in the sense of Kaliman--Zaidenberg, and it is smooth."
 
@@ -75,13 +72,13 @@ The highest component is constrained. [S6:229–232] states it: "A highest compo
 
 The inequality forces a contradiction. [S6:233–236] forces it: "The Mason--Stothers polynomial $abc$ inequality and the nonsquareness of $-u^3$ in $\Frac\Rt$ force $E'$ to fix $a,d,u$. The determinant relation then forces positive fiber weight, contradicting the sign obtained in the preceding stage."
 
-## History and context
+## History of the conjecture
 
 The characteristic-zero problem in higher dimension is listed as open. [S6:37–38] records it: "The characteristic-zero problem in dimensions at least three is still listed as open in Gaifullin--Petrov's July 2026"
 
 Additive actions have long served to distinguish affine varieties from affine space. [S6:145–148] records it: "The main work is to prove that $A$ itself is not polynomial. Additive actions have long served to distinguish affine varieties from affine space: Makar-Limanov used them to show that the Russell cubic is not affine three-space"
 
-The organization of the proof is recorded. [S6:263–271] records it: "\Cref{tab:ring-dictionary} records the rings used in the argument. \Cref{sec:construction} proves the stabilization. \Cref{sec:degeneration} constructs the filtration and identifies $G$. \Cref{sec:bundle} describes the torus bundle and proves the lifting statement. \Cref{sec:reduction} extracts the constrained derivation on $\Rt$, and \Cref{sec:rigidity} excludes it and completes the proof of \Cref{thm:main}. \Cref{sec:affine-fibrations} derives the two nontrivial affine-space fibrations. All locally nilpotent derivations and algebraic group actions in the proof are defined over $\kk$."
+The organization of the proof is recorded. [S6:263–271] records it: "records the rings used in the argument.   proves the stabilization.   constructs the filtration and identifies $G$.   describes the torus bundle and proves the lifting statement.   extracts the constrained derivation on $\Rt$, and   excludes it and completes the proof of  .   derives the two nontrivial affine-space fibrations. All locally nilpotent derivations and algebraic group actions in the proof are defined over $\kk$."
 
 ## Section skeleton
 
