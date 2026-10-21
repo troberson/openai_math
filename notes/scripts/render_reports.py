@@ -1207,15 +1207,39 @@ CHILDREN: dict[str, list[str]] = {
 # launch site carries no open resource, and the thread blocks in the kernel wait, which releases the GIL.
 _POOL = ThreadPoolExecutor(max_workers=len(CHILDREN))
 _RUNNING: dict[str, Future] = {}
+_PREWARMED: dict[str, str] = {}
+
+
+def _run_child(name: str) -> str:
+    """Run one render child and return its stdout.
+
+    The single place the child's env is built: the fleet census counts `RENDER_REPORTS_CHILD` env
+    literals as sites, so a second caller spelling the env inline would read two against one prefix.
+    """
+    return subprocess.run(CHILDREN[name], capture_output=True, text=True,
+                          check=True, cwd=ROOT,
+                          env={**os.environ, "RENDER_REPORTS_CHILD": "1"}).stdout
+
+
+def prewarm() -> None:
+    """Run every render child once in the parent, synchronously, and cache its stdout.
+
+    A fork (`mp.Pool`) copies the parent's address space; a `ThreadPoolExecutor`'s threads do not
+    survive the fork, so a future submitted to `_POOL` before the fork is lost in every worker.
+    A plain dict of strings (`_PREWARMED`) does survive: it is just data. `child_out` returns the
+    cached bytes without launching, so no worker spawns a child. `render_reports.main()` uses
+    `launch()` (the thread path) in a single process, where it is correct; `build_report_templates`
+    calls `prewarm()` before its `mp.Pool` fork. math-gyd.
+    """
+    for name in CHILDREN:
+        _PREWARMED[name] = _run_child(name)
 
 
 def launch(name: str) -> Future:
     """Launch a render child once. `--check-only` means it writes nothing, so several can run at once."""
     fut = _RUNNING.get(name)
     if fut is None:
-        fut = _POOL.submit(lambda: subprocess.run(CHILDREN[name], capture_output=True, text=True,
-                                                  check=True, cwd=ROOT,
-                                                  env={**os.environ, "RENDER_REPORTS_CHILD": "1"}).stdout)
+        fut = _POOL.submit(lambda: _run_child(name))
         _RUNNING[name] = fut
     return fut
 
@@ -1228,6 +1252,8 @@ def child_out(name: str) -> str:
     this module and calls a population gets the same report from a lazy launch, and the same
     `CalledProcessError` a `check=True` `subprocess.run` raises.
     """
+    if name in _PREWARMED:
+        return _PREWARMED[name]
     return launch(name).result()
 
 
@@ -2975,6 +3001,10 @@ def fleet_phrases(v: dict[str, Any]) -> dict[str, str]:
     out: dict[str, str] = {
         "atomic_count": f"**{v['atomic']} match{'es' if v['atomic'] != 1 else ''}**",
         "atomic_sites_count": f"**{len(v['atomic_sites'])}** sites",
+        # The checker-section paragraph names the atomic anchors as the two the four do not carry.
+        # A slot, not a literal: a site that moves (math-9vt moved them 42/84 -> 51/96) must re-render,
+        # not be swept by hand.
+        "atomic_anchors": ", ".join(f"`{s}`" for s in v["atomic_sites"]),
         "fleet_sizes": f"**{v['scripts']}** scripts and **{v['modules']}** catlib modules",
         "sync_scripts": f"**{v['sync']}** scripts",
         "sync_verify": f"**{v['sync_verify']}** are `verify_*`",

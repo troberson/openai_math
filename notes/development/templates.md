@@ -5,7 +5,7 @@ template text plus the writer's registry). Lines and bytes are of the template f
 is a `{{ ` occurrence counted over the whole file. No `lake`, `lean`, `lake exe cache get`, or
 comparator run.
 
-**Headline, with the rule that yields it:** report tree: **21** templates, **9,302** lines, **594,807** bytes, **1,776** slots; index tree: **5** templates, **209** lines, **14,981** bytes, **103** slots; all **26** templates: **9,511** lines, **609,788** bytes, **1,879** slots.
+**Headline, with the rule that yields it:** report tree: **21** templates, **9,302** lines, **594,788** bytes, **1,777** slots; index tree: **5** templates, **209** lines, **14,981** bytes, **103** slots; all **26** templates: **9,511** lines, **609,769** bytes, **1,880** slots.
 
 ## The report tree
 
@@ -21,7 +21,7 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `counterexample-crosscheck.md.j2` | 1,089 | 45,859 | 87 | `notes/reports/counterexample-crosscheck.md` | `verify_counterexample_crosscheck.py` | 20 |
 | `dependency-drift.md.j2` | 229 | 11,558 | 95 | `notes/reports/dependency-drift.md` | `verify_dependency_drift.py` | NOT DERIVED |
 | `findings.md.j2` | 283 | 21,578 | 4 | `notes/reports/findings.md` | `verify_findings.py` | NOT DERIVED |
-| `fleet-design.md.j2` | 485 | 41,953 | 31 | `notes/development/fleet-design.md` | `verify_fleet_design.py` | 20 |
+| `fleet-design.md.j2` | 485 | 41,934 | 32 | `notes/development/fleet-design.md` | `verify_fleet_design.py` | 20 |
 | `formalization-faithfulness.md.j2` | 265 | 11,818 | 65 | `notes/reports/formalization-faithfulness.md` | `verify_faithfulness.py` | 13 |
 | `index-design.md.j2` | 245 | 14,269 | 111 | `notes/development/index-design.md` | `verify_index_design.py` | 84 |
 | `index-links.md.j2` | 240 | 14,303 | 84 | `notes/development/index-links.md` | `check_index_links.py` | NOT DERIVED |
@@ -37,7 +37,7 @@ of (phrase, label) pairs the builder can derive from that page's checker source 
 | `templates.md.j2` | 109 | 5,115 | 47 | `notes/development/templates.md` | `verify_script_ownership.py` | NOT DERIVED |
 | `topics.md.j2` | 335 | 23,082 | 117 | `notes/reports/topics.md` | `measure_topics.py` | NOT DERIVED |
 | `verification-dirs.md.j2` | 408 | 37,952 | 44 | `notes/reports/verification-dirs.md` | `verify_verification_dirs.py` | 16 |
-| **report tree** | **21** | **9,302** | **594,807** | **1,776** | | |
+| **report tree** | **21** | **9,302** | **594,788** | **1,777** | | |
 
 ## The index tree
 

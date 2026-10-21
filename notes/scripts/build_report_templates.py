@@ -57,6 +57,7 @@ import re
 import subprocess
 import sys
 
+import render_reports as R  # prewarm() before the fork; see main()
 from catlib import splits as SP
 from catlib import templates as T
 from catlib import text as TX
@@ -323,7 +324,11 @@ def main(argv: list[str]) -> int:
     argv = [a for a in argv if a != "--check-only"]
     if not argv:
         pages = sorted(T.ALL_PAGES.items())
-        with mp.Pool(POOL) as pool:
+        R.prewarm()
+        # fork, not the Python 3.14 default (forkserver): the workers must inherit the parent's
+        # _PREWARMED dict so child_out returns cached bytes without spawning a second child.
+        # math-gyd.
+        with mp.get_context("fork").Pool(POOL) as pool:
             results = pool.map(worker, pages)
         rows: list[dict[str, str]] = []
         for rc, lines, out, text, page_rows in results:
