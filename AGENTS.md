@@ -1188,6 +1188,13 @@ travels with the `notes` branch like any other tracked file. Prefix is `math`.
 - The beads git hooks are active (`core.hooksPath` = `.beads/hooks`); the pre-commit hook re-exports
   `.beads/issues.jsonl` and stages it, so the tracked store is current in the commit whose work it
   records. By hand: `bd export -o .beads/issues.jsonl`.
+- That auto-export only works when the index lock is free, and `git commit -- <path>` holds the
+  lock for the hook's whole run (`git add <path>` then a bare `git commit` does not — measured by
+  probing `.git/index.lock` inside the hook). So stage with `git add` and commit **without** a
+  pathspec: `git commit -- <path>` lands the commit *without* the re-exported store, which then
+  shows as modified. The pathspec form was the "index.lock race" (6+ recurrences by 2026-10-09);
+  it is deterministic given the commit form, not a flaky race. If it ever happens anyway, re-export
+  and `git commit --amend --no-edit` (never `--no-verify`).
 - `bd`'s `prepare-commit-msg` hook appends an agent identity trailer. A user section **outside** the
   beads markers in `.beads/hooks/prepare-commit-msg` deletes every `Co-authored-by:` line from the
   message file, so this repo's commits carry none. The section is outside the markers because
