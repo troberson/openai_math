@@ -72,7 +72,7 @@ blind.
 ## The size argument
 
 Rule: `du -sk` per surface, divided by 1024. `preprints/` is **631M**, `lean/OAI/` is **1740M**
-(122,458 files), `notes/index/` is **12M**. `cat notes/tables/*.tsv | wc -c` = **2,760,819** bytes over the
+(122,458 files), `notes/index/` is **12M**. `cat notes/tables/*.tsv | wc -c` = **2,793,116** bytes over the
 **27** `notes/tables/*.tsv` present on disk. `free -h` reported **7.2 GiB available of 60 GiB** on 2026-10-10, with the
 model server resident — a dated observation, not a re-derivable count.
 
