@@ -114,10 +114,10 @@ corrupted in each form the page uses, one fabricated quotation, a manuscript roo
 superseded sibling, and a bare locator citation moved above the family's own block.
 
 Three more tools read the pages: `check_summary_manuscripts.py` reports which manuscripts each page
-reads and whether the release still names them, `locate_summary_quotes.py <page.md>` reports where
-a quotation's text actually sits when the checker flags a miss, and `read_manuscript.py` takes a
-`preprints/` directory name and prints the abstract, the section skeleton and the titled statement
-environments with anchors. All three write nothing.
+reads and whether the release still names them, `locate_summary_quotes.py` (takes a page path)
+reports where a quotation's text actually sits when the checker flags a miss, and
+`read_manuscript.py` takes a `preprints/` directory name and prints the abstract, the section
+skeleton and the titled statement environments with anchors. All three write nothing.
 
 This page is link-only: it names no manuscript directory and cites no family-keyed file, so the
 checker's manuscript-directory pass and its family-citation pass skip it. Its links are checked.
