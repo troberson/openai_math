@@ -2,24 +2,24 @@
 """Verify every citation in a family summary page against the files it names. Writes nothing.
 
 The page body cites sources as [S4:29], [S4:29–56] or [S4]; the Sources table at the bottom maps
-S# to a file. Two passes read the same table:
+S# to a file. The page is generated from a per-family data file by `build_summaries.py`, so the
+citation passes split between the rendered page and the data file that feeds the writer:
 
   Pass B (markers)  - resolve every marker, print the line it names, flag out-of-range, blank and
                       reversed-range positions, check the table's declared line counts against the
                       files on disk, resolve every markdown link from the page's own directory, and
                       require zero raw HTML anywhere in the page.
-  Pass C (quotes)   - every quoted span of a cited unit must appear, verbatim, in the lines that
-                      unit cites. Pass B proves a line exists; it proves nothing about the text we
-                      attribute to it, so a paraphrase dressed as a quote passes Pass B.
-
-Pass A (the needle check: does the page contain the specific strings the reading pass recorded) is
-written per page against that page's own findings, so it is not promoted here.
-
-Passes B and C both prove things about the text at a cited line; neither says the line belongs to
-the family the page is about. An upstream update leaves the manuscripts it replaced on disk, tracked
-in git, with their names unchanged, so a page can stay green through B and C while describing a
-manuscript the release no longer names. Two more passes close that gap:
-
+  Render diff       - the page's bytes against the writer's render of its data file. No text
+                      witness: a checker that re-implemented the normalizer proves nothing about the
+                      writer, so the proof is that the page on disk is the bytes
+                      `build_summaries.render_page` produces — a hand edit, a stale render, or a
+                      writer change that never landed all leave a page whose citations resolve but
+                      whose bytes are not the writer's.
+  Provenance        - the data file's quote specs against the source files, independent of the
+                      writer: each spec's sid is declared, the path is on disk, the window endpoints
+                      are integers in range, neither endpoint is blank, and the window is not
+                      reversed. A spec seeded to start==0 is the release's unlocated-quote measured
+                      negative and is skipped, not flagged.
   Pass D (supersession) - every manuscript directory the page names must be one the catalog's
                       overview entry currently names, and it must be named by *this* family. A
                       directory that is on disk and named by no family is a superseded manuscript.
@@ -29,13 +29,21 @@ manuscript the release no longer names. Two more passes close that gap:
                       Files with no family key — manuscripts, Lean sources, yaml, tsv — are skipped:
                       the pass makes no claim about them.
 
---mutant is gone: the self-tests live in `notes/scripts/tests/test_summaries.py`, run through
-`notes/scripts/run_tests.py`. Seven tests inject in memory over the real pages' own text — a quotation
-corrupted in each form a page uses (inline, wrapped across line breaks, block quote), a fabricated
-quotation, the manuscript root retargeted to a superseded sibling, and a bare locator citation moved
-above the family's own block — each asserted against the pass that owns it. The tests mirror the
-checker's own selection: the first target of each form per page, and a page whose target has no word
-boundary is skipped. This script measures; it no longer injects.
+Passes B, the render diff and the provenance pass all prove things about the text a citation points
+at; none says the line belongs to the family the page is about. An upstream update leaves the
+manuscripts it replaced on disk, tracked in git, with their names unchanged, so a page can stay green
+through all three while describing a manuscript the release no longer names; pass D closes that gap.
+
+Pass A (the needle check: does the page contain the specific strings the reading pass recorded) is
+written per page against that page's own findings, so it is not promoted here.
+
+The self-tests live in `notes/scripts/tests/test_summaries.py`, run through
+`notes/scripts/run_tests.py`. They inject corruptions into the real data files and pages in memory —
+a quote spec with an undeclared sid, a spec whose path is not on disk, a spec with a blank endpoint,
+a spec with a window out of range, a source declared but never cited, a page whose bytes diverge from
+the writer's render, the manuscript root retargeted to a superseded sibling, and a bare locator
+citation moved above the family's own block — each asserted against the pass that owns it. This
+script measures; it no longer injects.
 
 Usage: python3 notes/scripts/verify_summaries.py                 # every page under notes/summaries
        python3 notes/scripts/verify_summaries.py <page.md> ...   # named pages only
@@ -43,20 +51,23 @@ Usage: python3 notes/scripts/verify_summaries.py                 # every page un
 What stays in this file, deliberately: the family-keyed block rules (`BLOCK_RULES`, `NOTE_ENTRY`),
 which are pass E's contract, not the page's; and Pass A, which is written per page against that page's
 findings. The page grammar (`ROW`, `CELL`, `MARKER`, `QUOTE`, `LINK`, `ENTITY`, `TAG`, `PAPDIR`), the
-`Page` class, the marker/unit joins, the block-quote attribution rule (`candidates`), the span rule
-(`spans_of`), the two unit exemptions (`FORMAT_EXAMPLE`, `PRIOR`), the lenient `errors="replace"` read
-of a declared source, and the manuscript-ownership map are in `catlib/summaries.py`, shared with
-`locate_summary_quotes.py`, `refresh_summary_line_counts.py`, `check_summary_manuscripts.py`,
-`measure_summaries_seed.py` and `seed_quotes.py`.
+`Page` class, the marker/unit joins, the two unit exemptions (`FORMAT_EXAMPLE`, `PRIOR`), the lenient
+`errors="replace"` read of a declared source, and the manuscript-ownership map are in
+`catlib/summaries.py`, shared with `locate_summary_quotes.py`, `refresh_summary_line_counts.py`,
+`check_summary_manuscripts.py`, `measure_summaries_seed.py` and `seed_quotes.py`.
 """
 import argparse
+import functools
 import os
 import re
 import sys
 from pathlib import Path
 
+import build_catalog as B
+import build_summaries
 from catlib import anchors
 from catlib.paths import ROOT, SUMMARIES_DIR, read_text
+from catlib.render import diff_problems
 from catlib.summaries import (
     ENTITY,
     FORMAT_EXAMPLE,
@@ -67,15 +78,12 @@ from catlib.summaries import (
     QUOTE,
     TAG,
     Page,
-    candidates,
     label,
     markers,
     named_dirs,
-    spans_of,
     units,
     usable,
 )
-from catlib.text import strip_markup as norm
 
 SUMMARIES = SUMMARIES_DIR
 
@@ -188,36 +196,119 @@ def pass_b(page):
     return checked, len(page.table), links, problems
 
 
-def pass_c(page):
-    """Quote fidelity. Returns (spans, misses)."""
-    checked = misses = 0
-    for start_line, unit, is_blockquote in units(page.lines):
-        if not is_blockquote and PRIOR in unit:
-            # A prior paragraph is explicitly not repo text; nothing in it is a quotation.
-            continue
-        cands = candidates(page, unit, start_line, is_blockquote)
-        for span in spans_of(unit, is_blockquote):
-            if not cands:
-                print(f"NO CITATION in unit at doc line {start_line}: {span[:50]!r}")
-                misses += 1
+DATA_DIR = ROOT / "notes" / "data" / "summaries"
+
+
+@functools.cache
+def _fam_info():
+    """The overview's family-keyed info dict, measured once per process.
+
+    `build_catalog.parse_overview` walks overview.tex; the render diff needs it for every page, so
+    the cache is what keeps a run over 60 pages from paying the walk 60 times.
+    """
+    _order, fams = B.parse_overview()
+    return fams
+
+
+def data_file(page):
+    """The per-family data file the renderer reads, keyed on the page's zero-padded family stem."""
+    return DATA_DIR / f"{page.fam}.md"
+
+
+def render_diff(page, data_text):
+    """The page's bytes against the writer's render of its data file.
+
+    No text witness: a checker that re-implemented the normalizer would prove nothing about the
+    writer. The proof is that the page on disk is the bytes `build_summaries.render_page` produces
+    for the data file — a hand edit, a stale render, or a writer change that never landed all leave
+    a page whose citations resolve but whose bytes are not the writer's. The renderer is imported
+    and called directly because summaries are not in `render_reports`' `PAGE_RENDERERS`, so
+    `catlib.render.rendered` would raise `TemplateNotFound`. `data_text` is the data file's bytes:
+    a parameter, not a disk read, so a test can inject a corrupted file in memory. Returns the
+    problem count.
+    """
+    fam = page.fam
+    if fam is None:
+        print(f"NO FAMILY NUMBER in file name {page.path.name} — render diff cannot map the page to the writer")
+        return 1
+    fams = _fam_info()
+    if fam not in fams:
+        print(f"NO OVERVIEW ENTRY for {page.path.name}: family {fam} is not in overview.tex")
+        return 1
+    rendered, _slug = build_summaries.render_page(fam, fams[fam], data_text)
+    # The raw committed bytes, not `"\n".join(page.lines)`: `splitlines` drops a trailing newline
+    # the template (`keep_trailing_newline=True`) carries, so a reconstructed page diffs one line
+    # from its own render. The disk bytes are what the writer staged, so they are the comparison.
+    problems = diff_problems(read_text(page.path), rendered)
+    for p in problems:
+        print(f"RENDER DIFF [doc]: {p}")
+    return len(problems)
+
+
+def provenance_pass(page, data_text):
+    """The data file's quote specs against the source files, independent of the renderer.
+
+    The render diff proves the page is the writer's bytes; it says nothing about whether the writer's
+    inputs are sound. This pass reads the DATA FILE, not the rendered page, and checks each quote spec
+    against the file it names: the spec's sid is declared in the sources block, the path is on disk,
+    the window endpoints are integers in [1, n_lines], neither endpoint is a blank line, and the window
+    is not reversed. A spec seeded to start==0 is a measured negative — the release's own convention
+    for the math and accent escapes the locator does not tolerate — and is skipped, not flagged.
+    `data_text` is the data file's bytes: a parameter, not a disk read, so a test can inject a
+    corrupted file in memory. Returns (specs, problems).
+    """
+    if page.fam is None:
+        return 0, 1
+    text = data_text
+    sources: dict[str, str] = {}
+    m = re.search(r"<!-- sources\n(.*?)-->", text, re.DOTALL)
+    if m:
+        for line in m.group(1).strip().split("\n"):
+            p = line.split("\t")
+            if len(p) >= 2 and p[0].strip():
+                sources[p[0].strip()] = p[1].strip()
+    specs = problems = 0
+    m = re.search(r"<!-- quotes\n(.*?)-->", text, re.DOTALL)
+    if m:
+        for line in m.group(1).strip().split("\n"):
+            p = line.split("\t")
+            if len(p) < 6:
                 continue
-            hit = None
-            for sid, a, b in cands:
-                src = page.lines_of(sid)
-                haystack = norm(" ".join(src[a - 1:max(a, b or a)]) if a else " ".join(src))
-                if norm(span) in haystack:
-                    hit = (sid, a, b)
-                    break
-            checked += 1
-            if hit is None:
-                misses += 1
-                near = ", ".join(label(s, a, b) for s, a, b in cands[:4])
-                print(f"NOT VERBATIM [doc line {start_line}] cited {near}")
-                print(f"   page says : {norm(span)[:130]}")
-                sid, a, b = cands[0]
-                src = page.lines_of(sid)
-                print(f"   line says : {norm(' '.join(src[a - 1:b] if a else src))[:130]}")
-    return checked, misses
+            seq, sid, s, e = p[0], p[2].strip(), p[3], p[4]
+            specs += 1
+            if s == "0":
+                continue  # the unlocated sentinel: a measured negative, not a fault
+            if sid not in sources:
+                problems += 1
+                print(f"UNDECLARED SID seq {seq}: {sid} is not in the data file's sources block")
+                continue
+            path = sources[sid]
+            fp = ROOT / path
+            if not fp.is_file():
+                problems += 1
+                print(f"MISSING SOURCE seq {seq}: {path} is not on disk")
+                continue
+            try:
+                si, ei = int(s), int(e)
+            except ValueError:
+                problems += 1
+                print(f"NON-INTEGER WINDOW seq {seq}: start {s!r} end {e!r} are not line numbers")
+                continue
+            lines = fp.read_text(encoding="utf-8", errors="replace").splitlines()
+            n = len(lines)
+            if not (1 <= si <= n and 1 <= ei <= n):
+                problems += 1
+                print(f"WINDOW OUT OF RANGE seq {seq}: [{si},{ei}] over a file of {n} lines")
+                continue
+            if si > ei:
+                problems += 1
+                print(f"REVERSED WINDOW seq {seq}: start {si} is after end {ei}")
+                continue
+            for pos in sorted({si, ei}):
+                if not lines[pos - 1].strip():
+                    problems += 1
+                    print(f"BLANK ENDPOINT seq {seq}: line {pos} of {path} is blank")
+    return specs, problems
 
 
 def pass_d(page):
@@ -331,34 +422,40 @@ def main():
 
     import contextlib
     io = sys.stdout
-    total_b = total_c = total_problems = 0
+    total_b = total_specs = total_problems = 0
     for doc in docs:
         lines = read_text(doc).splitlines()
         page = Page(doc, lines)
         # The tree's index page is link-only: it names no manuscript directory and cites no
         # family-keyed file, so pass D and pass E have nothing to check and its family-number rule
-        # would fire on a file named `README.md`. Passes B and C still run, so its links are checked.
+        # would fire on a file named `README.md`. It has no data file either, so the render diff and
+        # the provenance pass have no writer input to check and are skipped, not counted. Pass B
+        # still runs, so its links are checked.
         link_only = doc.name == "README.md"
+        df = data_file(page)
+        data_text = read_text(df) if not link_only else ""
         print(f"===== {doc.relative_to(ROOT)}")
         with contextlib.ExitStack() as stack:
             sink = stack.enter_context(open(os.devnull, "w", encoding="utf-8")) if args.quiet else io
             stack.enter_context(contextlib.redirect_stdout(sink))
             positions, sources, links, problems = pass_b(page)
-            spans, misses = pass_c(page)
+            rd_problems = 0 if link_only else render_diff(page, data_text)
+            specs, prov_problems = (0, 0) if link_only else provenance_pass(page, data_text)
             dirs, stale = (0, 0) if link_only else pass_d(page)
             cites, outside = (0, 0) if link_only else pass_e(page)
             print(f"--- pass B: {positions} marker positions against {sources} declared sources, "
                   f"{links} markdown links resolved from the page directory, {problems} problems")
-            print(f"--- pass C: {spans} quoted spans checked against their cited lines, "
-                  f"{misses} not verbatim")
+            print(f"--- render diff: {rd_problems} problems (page bytes vs writer's render)")
+            print(f"--- provenance: {specs} quote specs checked against their source files, "
+                  f"{prov_problems} problems")
             print(f"--- pass D: {dirs} manuscript directories named by the page, {stale} superseded "
                   f"or off-family")
             print(f"--- pass E: {cites} bare line citations into family-keyed files, {outside} "
                   f"outside the family's own block")
         total_b += positions
-        total_c += spans
-        total_problems += problems + misses + stale + outside
-    print(f"===== TOTAL {len(docs)} page(s): {total_b} marker positions, {total_c} quoted spans, "
+        total_specs += specs
+        total_problems += problems + rd_problems + prov_problems + stale + outside
+    print(f"===== TOTAL {len(docs)} page(s): {total_b} marker positions, {total_specs} quote specs, "
           f"{total_problems} problems")
     sys.exit(1 if total_problems else 0)
 

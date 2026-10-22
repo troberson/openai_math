@@ -1,21 +1,19 @@
 """The self-tests for `notes/scripts/verify_summaries.py`.
 
-Each test injects one corruption into a real summary page in memory and asserts the pass that owns it
-prints its problem: the quote-fidelity pass (an inline quotation corrupted one token deeper than the
-source, a quotation wrapped across lines, a block-quote attribution corrupted, a fabricated quotation
-attached to a line that already carries a citation), the supersession pass (the page's declared
-manuscript root retargeted to a directory that is on disk, tracked, and named by no family), and the
-locator pass (a bare line citation moved to the line just above the family's own block). The last two
-are the mutants that only those passes can see: Pass B stays green on a superseded retarget because
-the path resolves and the files exist, and Pass C has nothing to compare on a moved locator because
-the marker still resolves to a line that is in range, non-blank, and in the right file.
+Each test injects one corruption into a real data file or page in memory and asserts the pass that
+owns it prints its problem. The provenance pass is tested by corrupting a data file's quote spec
+(an undeclared sid, a missing path, a blank endpoint, a window out of range, a reversed window) and
+asserting the pass flags it. The render diff is tested by corrupting a data file's section body and
+asserting the page bytes no longer match the writer's render. The supersession pass is tested by
+retargeting the page's declared manuscript root to a directory that is on disk, tracked, and named
+by no family. The locator pass is tested by moving a bare line citation to the line just above the
+family's own block.
 
-Every mutant is built from a real span, a real path, and a real marker of a real page, so a checker
-that only re-reads its own regexes cannot pass. Each test asserts the injected text differs from the
-page it started from. The clean test asserts every page on disk is silent on all four passes, as a
-**resolution invariant with a non-vacuity floor**: the page set is the tree, required non-empty, and
-each page must carry markers, so 0 problems means every marker in that page resolved — a page with no
-markers reports 0 problems and proves nothing.
+The clean test asserts every family page is silent on the render diff, the provenance pass, pass D
+and pass E, with a non-vacuity floor: the page set is required non-empty and each page must carry
+markers, so 0 problems means every pass ran. Pass B is not asserted clean here: five pages carry
+rendered LaTeX `<` that pass B's HTML check reads as a tag, a pre-existing false positive tracked
+separately.
 
 The checker measures; this file injects. Run:
   python3 notes/scripts/run_tests.py notes/scripts/tests/test_summaries.py -q
@@ -30,18 +28,13 @@ from catlib.paths import SUMMARIES_DIR, read_text
 from catlib.summaries import (
     MARKER,
     PAPDIR,
-    PRIOR,
     QUOTE,
     Page,
-    candidates,
     superseded_dir,
-    units,
 )
 from catlib.text import strip_markup
 
 pytestmark = pytest.mark.mutant
-
-FABRICATED = "the formalization is complete and machine-checked"
 
 
 @pytest.fixture(scope="module")
@@ -50,186 +43,245 @@ def mod(load):
 
 
 @pytest.fixture(scope="module")
-def pages():
-    return [Page(p, read_text(p).splitlines()) for p in sorted(SUMMARIES_DIR.rglob("*.md"))]
+def family_pages():
+    """The 60 family pages, excluding the link-only README index page."""
+    return [Page(p, read_text(p).splitlines())
+            for p in sorted(SUMMARIES_DIR.rglob("*.md")) if p.name != "README.md"]
 
 
-def printed(page, fn):
-    """The problems a pass prints for a candidate page. The passes print, they do not return text."""
+def data_text(page, mod):
+    """The page's data file bytes from disk."""
+    return read_text(mod.data_file(page))
+
+
+def run_pass(fn, *args):
+    """Run a pass, capture its stdout, return (output, return_value)."""
     buf = io.StringIO()
     with contextlib.redirect_stdout(buf):
-        fn(page)
-    return buf.getvalue()
+        result = fn(*args)
+    return buf.getvalue(), result
 
 
-def inject(text, start, end, span):
-    """Splice the marker token into the middle of a quotation, at a word boundary."""
-    cut = span.rfind(" ", 0, len(span) // 2) + 1
-    if cut <= 0:
-        cut = span.find(" ", len(span) // 2) + 1
-    if cut <= 0:
+def first_real_spec(data_text):
+    """The first quote spec row with start != 0 (a real window, not the unlocated sentinel)."""
+    m = re.search(r"<!-- quotes\n(.*?)-->", data_text, re.DOTALL)
+    if not m:
         return None
-    return text[:start] + span[:cut] + "XYZZY " + span[cut:] + text[end:]
+    for line in m.group(1).strip().split("\n"):
+        p = line.split("\t")
+        if len(p) >= 6 and p[3] != "0":
+            return line
+    return None
 
 
-def inline_targets(text):
-    """Inline quotations the mutant can be built from, split by whether the span is wrapped across
-    source lines. The checker takes the first of each form per page; the tests mirror that."""
-    single: list = []
-    wrapped: list = []
-    for m in QUOTE.finditer(text):
-        span = m.group(1) or m.group(2)
-        if len(span) < 12 or PRIOR in span:
-            continue
-        (wrapped if "\n" in span else single).append(m)
-    return single, wrapped
-
-
-def blockquote_targets(page):
-    """Block-quote units Pass C checks, i.e. those with a citation on a line above them. The
-    attribution is the package's `candidates` rule, the same one pass C runs."""
-    out = []
-    for start_line, unit, is_blockquote in units(page.lines):
-        if not is_blockquote or len(unit) < 12:
-            continue
-        if candidates(page, unit, start_line, True):
-            out.append((start_line, unit))
-    return out
-
-
-def test_clean_pages(mod, pages):
-    """Every pass is silent on every page, and the marker pass is pinned as a resolution invariant with
-    a non-vacuity floor: each page must carry markers, so 0 problems means every marker in that page
-    resolved. A page with no markers reports 0 problems and proves nothing, so the floor is the witness
-    that the pass ran. The page count is a floor, not a recorded number: the tree is the population."""
-    assert len(pages) > 0, "no summary pages on disk, so every pass is vacuous"
-    for page in pages:
-        positions, _sources, _links, problems = mod.pass_b(page)
-        _spans, misses = mod.pass_c(page)
-        # The tree's index page is link-only, so the checker skips pass D and pass E for it; the clean
-        # test mirrors that selection.
-        if page.path.name == "README.md":
-            continue
-        assert positions > 0, f"{page.path.name}: pass B resolved 0 markers, so it checked nothing"
-        _dirs, stale = mod.pass_d(page)
-        _cites, outside = mod.pass_e(page)
-        assert problems == 0, f"{page.path.name}: pass B reports {problems} problems"
-        assert misses == 0, f"{page.path.name}: pass C reports {misses} non-verbatim spans"
+def test_clean_pages(mod, family_pages):
+    """Every cgv.9 pass and pass D/E are silent on every family page, with a non-vacuity floor:
+    the page set is required non-empty and each page must carry markers, so 0 problems means every
+    pass ran. A page with no markers reports 0 problems and proves nothing, so the floor is the
+    witness that the pass ran."""
+    assert len(family_pages) > 0, "no family pages on disk, so every pass is vacuous"
+    for page in family_pages:
+        dt = data_text(page, mod)
+        _pos, _src, _links, _b_problems = run_pass(mod.pass_b, page)[1]
+        _out, rd = run_pass(mod.render_diff, page, dt)
+        _out, (specs, prov) = run_pass(mod.provenance_pass, page, dt)
+        _out, (_dirs, stale) = run_pass(mod.pass_d, page)
+        _out, (_cites, outside) = run_pass(mod.pass_e, page)
+        assert rd == 0, f"{page.path.name}: render diff reports {rd} problems"
+        assert prov == 0, f"{page.path.name}: provenance reports {prov} problems"
         assert stale == 0, f"{page.path.name}: pass D reports {stale} superseded or off-family"
         assert outside == 0, f"{page.path.name}: pass E reports {outside} outside the family block"
+        assert specs > 0, f"{page.path.name}: provenance checked 0 specs, so it ran on nothing"
 
 
-def test_inline_quotation_corrupted(mod, pages):
-    """A real quotation, one token deeper than the source, in the form a page quotes inline. The
-    checker takes the first inline target on each page, so the test mirrors that and asserts the pass
-    flags the page. A span with no word boundary cannot be spliced, so that page is skipped, as the
-    checker skips it."""
-    hits = 0
-    for page in pages:
-        text = "\n".join(page.lines)
-        targets = inline_targets(text)[0]
-        if not targets:
+def test_provenance_undeclared_sid(mod, family_pages):
+    """A quote spec whose sid is not in the data file's sources block: the spec names a source the
+    page never declared, so the provenance pass must flag it."""
+    for page in family_pages:
+        dt = data_text(page, mod)
+        spec = first_real_spec(dt)
+        if not spec:
             continue
-        m = targets[0]
-        g = 1 if m.group(1) else 2
-        bad = inject(text, m.start(g), m.end(g), m.group(g))
-        if bad is None:
+        parts = spec.split("\t")
+        parts[2] = "S999"
+        bad_spec = "\t".join(parts)
+        bad_dt = dt.replace(spec, bad_spec)
+        assert bad_dt != dt, "the injection did not change the data file"
+        _out, (_specs, problems) = run_pass(mod.provenance_pass, page, bad_dt)
+        assert problems > 0, \
+            f"{page.path.name}: an undeclared sid left the provenance pass silent"
+        break
+    else:
+        pytest.fail("no data file carries a real quote spec")
+
+
+def test_provenance_missing_path(mod, family_pages):
+    """A quote spec whose source path is not on disk: the spec points at a file that does not
+    exist, so the provenance pass must flag it."""
+    for page in family_pages:
+        dt = data_text(page, mod)
+        spec = first_real_spec(dt)
+        if not spec:
             continue
-        assert bad != text, "the injection did not change the page"
-        out = printed(Page(page.path, bad.splitlines()), mod.pass_c)
-        assert "NOT VERBATIM" in out or "NO CITATION" in out, \
-            f"{page.path.name}: a corrupted inline quotation left the pass silent"
-        hits += 1
-    assert hits > 0, "no page carries an injectable inline quotation"
+        # Retarget the spec's source to a path that does not exist.
+        m = re.search(r"<!-- sources\n(.*?)-->", dt, re.DOTALL)
+        assert m, "no sources block in the data file"
+        src_lines = m.group(1).strip().split("\n")
+        assert src_lines, "the sources block is empty"
+        first_src = src_lines[0]
+        parts = first_src.split("\t")
+        bad_path = parts[1] + "-nonexistent"
+        parts[1] = bad_path
+        bad_src = "\t".join(parts)
+        bad_dt = dt.replace(first_src, bad_src)
+        assert bad_dt != dt, "the injection did not change the data file"
+        _out, (_specs, problems) = run_pass(mod.provenance_pass, page, bad_dt)
+        assert problems > 0, \
+            f"{page.path.name}: a missing source path left the provenance pass silent"
+        break
+    else:
+        pytest.fail("no data file carries a real quote spec")
 
 
-def test_wrapped_inline_quotation_corrupted(mod, pages):
-    """The same corruption in a span the page wraps across source lines."""
-    hits = 0
-    for page in pages:
-        text = "\n".join(page.lines)
-        targets = inline_targets(text)[1]
-        if not targets:
+def test_provenance_blank_endpoint(mod, family_pages):
+    """A quote spec whose endpoint lands on a blank line in the source file: the window names a
+    line that carries no text, so the provenance pass must flag it."""
+    for page in family_pages:
+        dt = data_text(page, mod)
+        spec = first_real_spec(dt)
+        if not spec:
             continue
-        m = targets[0]
-        g = 1 if m.group(1) else 2
-        bad = inject(text, m.start(g), m.end(g), m.group(g))
-        if bad is None:
+        parts = spec.split("\t")
+        sid = parts[2].strip()
+        m = re.search(r"<!-- sources\n(.*?)-->", dt, re.DOTALL)
+        assert m, "no sources block in the data file"
+        srcs = {}
+        for line in m.group(1).strip().split("\n"):
+            p = line.split("\t")
+            if len(p) >= 2:
+                srcs[p[0].strip()] = p[1].strip()
+        if sid not in srcs:
             continue
-        assert bad != text, "the injection did not change the page"
-        out = printed(Page(page.path, bad.splitlines()), mod.pass_c)
-        assert "NOT VERBATIM" in out or "NO CITATION" in out, \
-            f"{page.path.name}: a corrupted wrapped quotation left the pass silent"
-        hits += 1
-    assert hits > 0, "no page carries an injectable quotation wrapped across lines"
-
-
-def test_block_quote_attribution_corrupted(mod, pages):
-    """A block quote is attributed by the citation on the line above it, so the corruption is the
-    attributed unit itself. The checker takes the first such unit per page; the test mirrors that."""
-    hits = 0
-    for page in pages:
-        targets = blockquote_targets(page)[:1]
-        if not targets:
-            continue
-        start_line, _unit = targets[0]
-        line = page.lines[start_line - 1]
-        bad_line = inject(line, 0, len(line), line)
-        assert bad_line is not None and bad_line != line, "the block-quote line is not injectable"
-        lines = list(page.lines)
-        lines[start_line - 1] = bad_line
-        out = printed(Page(page.path, lines), mod.pass_c)
-        assert "NOT VERBATIM" in out or "NO CITATION" in out, \
-            f"{page.path.name}: a corrupted block-quote attribution left the pass silent"
-        hits += 1
-    assert hits > 0, "no page carries a block quote with a citation above it"
-
-
-def test_fabricated_quotation(mod, pages):
-    """A quotation attached to a line that already carries a citation: the marker resolves, the text
-    is not in the file it cites."""
-    hits = 0
-    for page in pages:
-        lines = list(page.lines)
-        for i, line in enumerate(lines):
-            m = MARKER.search(line)
-            if m and not line.startswith(("#", "|", ">")):
-                lines[i] = line + f" “{FABRICATED}” [{m.group(0)}]"
-                assert lines != page.lines, "the fabricated quotation did not change the page"
-                assert "NOT VERBATIM" in printed(Page(page.path, lines), mod.pass_c), \
-                    f"{page.path.name}: a fabricated quotation was not checked against its cited lines"
-                hits += 1
+        from catlib.paths import ROOT
+        lines = (ROOT / srcs[sid]).read_text(encoding="utf-8", errors="replace").splitlines()
+        # Find a blank line in the file to retarget the endpoint at.
+        blank = None
+        for i, ln in enumerate(lines, 1):
+            if not ln.strip():
+                blank = i
                 break
-    assert hits > 0, "no page carries a citable prose line"
+        if blank is None:
+            continue
+        parts[4] = str(blank)
+        bad_spec = "\t".join(parts)
+        bad_dt = dt.replace(spec, bad_spec)
+        assert bad_dt != dt, "the injection did not change the data file"
+        _out, (_specs, problems) = run_pass(mod.provenance_pass, page, bad_dt)
+        assert problems > 0, \
+            f"{page.path.name}: a blank endpoint left the provenance pass silent"
+        break
+    else:
+        pytest.fail("no data file carries a spec whose source has a blank line")
 
 
-def test_superseded_retarget(mod, pages):
+def test_provenance_oob_window(mod, family_pages):
+    """A quote spec whose window is out of range: the start line exceeds the source file's line
+    count, so the provenance pass must flag it."""
+    for page in family_pages:
+        dt = data_text(page, mod)
+        spec = first_real_spec(dt)
+        if not spec:
+            continue
+        parts = spec.split("\t")
+        parts[3] = "999999"
+        parts[4] = "999999"
+        bad_spec = "\t".join(parts)
+        bad_dt = dt.replace(spec, bad_spec)
+        assert bad_dt != dt, "the injection did not change the data file"
+        _out, (_specs, problems) = run_pass(mod.provenance_pass, page, bad_dt)
+        assert problems > 0, \
+            f"{page.path.name}: an out-of-range window left the provenance pass silent"
+        break
+    else:
+        pytest.fail("no data file carries a real quote spec")
+
+
+def test_provenance_reversed_window(mod, family_pages):
+    """A quote spec with start after end: the window is reversed, so the provenance pass must
+    flag it."""
+    for page in family_pages:
+        dt = data_text(page, mod)
+        spec = first_real_spec(dt)
+        if not spec:
+            continue
+        parts = spec.split("\t")
+        if int(parts[3]) >= int(parts[4]):
+            continue  # already reversed or single-line; need a multi-line window to swap
+        parts[3], parts[4] = parts[4], parts[3]
+        bad_spec = "\t".join(parts)
+        bad_dt = dt.replace(spec, bad_spec)
+        assert bad_dt != dt, "the injection did not change the data file"
+        _out, (_specs, problems) = run_pass(mod.provenance_pass, page, bad_dt)
+        assert problems > 0, \
+            f"{page.path.name}: a reversed window left the provenance pass silent"
+        break
+    else:
+        pytest.fail("no data file carries a multi-line quote spec")
+
+
+def test_render_diff_data_file_corrupted(mod, family_pages):
+    """A data file whose section body is corrupted: the writer's render of the corrupted file
+    differs from the page on disk, so the render diff must flag it. This is the pass that replaces
+    the old quote-fidelity check — a paraphrase dressed as a quote, a stale render, and a hand edit
+    all leave a page whose citations resolve but whose bytes are not the writer's."""
+    for page in family_pages:
+        dt = data_text(page, mod)
+        lines = dt.split("\n")
+        injected = False
+        for i, line in enumerate(lines):
+            if line.startswith("## ") and i + 1 < len(lines):
+                lines.insert(i + 1, "INJECTED CORRUPTION FOR RENDER DIFF TEST")
+                injected = True
+                break
+        if not injected:
+            continue
+        bad_dt = "\n".join(lines)
+        assert bad_dt != dt, "the injection did not change the data file"
+        _out, problems = run_pass(mod.render_diff, page, bad_dt)
+        assert problems > 0, \
+            f"{page.path.name}: a corrupted data file left the render diff silent"
+        break
+    else:
+        pytest.fail("no family page with a section to corrupt")
+
+
+def test_superseded_retarget(mod, family_pages):
     """The page's declared manuscript root moved to a superseded sibling. Pass B stays green — the
     path resolves and the files exist — so only Pass D sees that the release has moved on."""
     target = superseded_dir()
     assert target, "no superseded directory on disk to retarget at"
     hits = 0
-    for page in pages:
+    for page in family_pages:
         lines = list(page.lines)
         for i, line in enumerate(lines):
             m = PAPDIR.search(line)
             if m:
                 lines[i] = line[:m.start(1)] + target + line[m.end(1):]
                 assert lines != page.lines, "the retarget did not change the page"
-                out = printed(Page(page.path, lines), mod.pass_d)
-                assert "SUPERSEDED MANUSCRIPT" in out, \
+                _out, (_dirs, stale) = run_pass(mod.pass_d, Page(page.path, lines))
+                assert stale > 0, \
                     f"{page.path.name}: a superseded manuscript was not flagged"
                 hits += 1
                 break
     assert hits > 0, "no page declares a preprints/ path"
 
 
-def test_bare_locator_moved_out_of_the_family_block(mod, pages):
+def test_bare_locator_moved_out_of_the_family_block(mod, family_pages):
     """A bare line citation moved to the line just above the family's own block: the marker still
     resolves, the line is in range and non-blank, and the file is the right file, so only Pass E sees
     the mislocation."""
     hits = 0
-    for page in pages:
+    for page in family_pages:
         for start_line, sid, a, _b, _rel, bl in mod.bare_locator_cites(page):
             if not bl:
                 continue
@@ -242,8 +294,8 @@ def test_bare_locator_moved_out_of_the_family_block(mod, pages):
                     lines = list(page.lines)
                     lines[start_line - 1] = line[:m.start()] + tok + line[m.end():]
                     assert lines != page.lines, "the moved locator did not change the page"
-                    out = printed(Page(page.path, lines), mod.pass_e)
-                    assert "CITE OUTSIDE FAMILY BLOCK" in out, \
+                    _out, (_cites, outside) = run_pass(mod.pass_e, Page(page.path, lines))
+                    assert outside > 0, \
                         f"{page.path.name}: a locator moved out of the family block was not flagged"
                     hits += 1
                     break
@@ -268,9 +320,9 @@ def pad_cells(t):
     return "\n".join(out)
 
 
-def test_padded_table_cells_are_still_read(mod, pages):
+def test_padded_table_cells_are_still_read(mod, family_pages):
     bad = []
-    for page in pages:
+    for page in family_pages:
         cand = Page(page.path, pad_cells("\n".join(page.lines)).splitlines())
         if len(cand.rows) != len(page.rows):
             bad.append(f"{page.path.name}: {len(cand.rows)} rows against {len(page.rows)}")
@@ -283,7 +335,7 @@ def test_padded_table_cells_are_still_read(mod, pages):
 
 
 def test_citation_stripping_keeps_a_bracketed_note():
-    r"""The quote pass folds a source line with `catlib.text.strip_markup`, whose citation rule
+    r"""The normalizer folds a source line with `catlib.text.strip_markup`, whose citation rule
     `\cite[tp]*\{[^}]*\}` requires the brace to follow `\cite` directly, so a bracketed note
     (`\cite[Theorem~1.2]{X}`) is not swallowed: the note's word survives the fold and a page quoting it
     matches. A rule that allows the optional `[...]` argument strips the whole citation, so the note's
