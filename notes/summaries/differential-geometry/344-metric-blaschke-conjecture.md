@@ -284,7 +284,7 @@ What has not been checked: no Lean, lake, or comparator run was performed, and f
 | S1 | `CONTENTS.md` | 9142 | Release blurb, manuscript link, manuscript abstract |
 | S2 | `overview.tex` | 859 | Family 344's `\resultentry`, at line 786 |
 | S3 | `preprints/The-metric-Blaschke-theorem-September-23-2026/README.md` | 16 | Manuscript README and bibtex key |
-| S4 | `paper.pdf` | — | Manuscript PDF |
+| S4 | `preprints/The-metric-Blaschke-theorem-September-23-2026/paper.pdf` | 16839 | Manuscript PDF |
 | S5 | `preprints/The-metric-Blaschke-theorem-September-23-2026/build/paper.tex` | 68 | Preamble, theorem environments, section include list |
 | S6 | `preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/00-introduction.tex` | 203 | Abstract, Blaschke definition, main theorem, predecessors, proof route |
 | S7 | `preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/01-geometric-inputs.tex` | 114 | Cut-time lemma, classical Blaschke structure |
@@ -304,7 +304,7 @@ What has not been checked: no Lean, lake, or comparator run was performed, and f
 - [S1](../../../CONTENTS.md)
 - [S2](../../../overview.tex)
 - [S3](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/README.md)
-- [S4](../../../paper.pdf)
+- [S4](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/paper.pdf)
 - [S5](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/paper.tex)
 - [S6](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/00-introduction.tex)
 - [S7](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/01-geometric-inputs.tex)

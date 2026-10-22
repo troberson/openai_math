@@ -206,18 +206,18 @@ Its README gives the release date [S3:5]: "Date: September 23, 2026".
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
 | S1 | `CONTENTS.md` | 9142 | Release blurb and manuscript sub-entry |
-| S2 | `build/main.tex` | — | Manuscript source: title, abstract, section order |
+| S2 | `preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/main.tex` | 37 | Manuscript source: title, abstract, section order |
 | S3 | `preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/README.md` | 18 | Manuscript build notes and release date |
-| S4 | `build/sections/00-introduction.tex` | — | Theorem statement, prior work, proof outline |
-| S5 | `build/sections/01-setup.tex` | — | Triangular cells, budget rule, patch rank |
-| S6 | `build/sections/04-scalar.tex` | — | Forward mass and rank-stop budget |
-| S7 | `build/sections/07-extraction.tex` | — | Extraction: weights preserved at passive layers |
-| S8 | `build/sections/08-iteration.tex` | — | Iteration closure and proof of the main theorem |
-| S9 | `build/sections/09-consequences.tex` | — | Weighted sums, polylog bound, Green–Tao recovery |
-| S10 | `build/references.tex` | — | Bibliography, including the companion paper |
-| S11 | `build/figures/proof-route.tex` | — | Proof-route diagram |
-| S12 | `build/foundations/00-preface.tex` | — | Appendix preface and interface table |
-| S13 | `paper.pdf` | — | Compiled manuscript |
+| S4 | `preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/00-introduction.tex` | 343 | Theorem statement, prior work, proof outline |
+| S5 | `preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/01-setup.tex` | 377 | Triangular cells, budget rule, patch rank |
+| S6 | `preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/04-scalar.tex` | 299 | Forward mass and rank-stop budget |
+| S7 | `preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/07-extraction.tex` | 535 | Extraction: weights preserved at passive layers |
+| S8 | `preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/08-iteration.tex` | 440 | Iteration closure and proof of the main theorem |
+| S9 | `preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/09-consequences.tex` | 192 | Weighted sums, polylog bound, Green–Tao recovery |
+| S10 | `preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/references.tex` | 257 | Bibliography, including the companion paper |
+| S11 | `preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/figures/proof-route.tex` | 35 | Proof-route diagram |
+| S12 | `preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/foundations/00-preface.tex` | 80 | Appendix preface and interface table |
+| S13 | `preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/paper.pdf` | 43640 | Compiled manuscript |
 | S14 | `lean/docs/159.md` | 17 | Scope note: comparator target and exclusion |
 | S15 | `lean/ComparatorChallenges/ErdosReciprocal.lean` | 36 | Challenge statement |
 | S16 | `lean/ComparatorChallenges/ErdosReciprocal.json` | 14 | Challenge metadata: module, theorem names |
@@ -234,18 +234,18 @@ Its README gives the release date [S3:5]: "Date: September 23, 2026".
 ## Links
 
 - [S1](../../../CONTENTS.md)
-- [S2](../../../build/main.tex)
+- [S2](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/main.tex)
 - [S3](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/README.md)
-- [S4](../../../build/sections/00-introduction.tex)
-- [S5](../../../build/sections/01-setup.tex)
-- [S6](../../../build/sections/04-scalar.tex)
-- [S7](../../../build/sections/07-extraction.tex)
-- [S8](../../../build/sections/08-iteration.tex)
-- [S9](../../../build/sections/09-consequences.tex)
-- [S10](../../../build/references.tex)
-- [S11](../../../build/figures/proof-route.tex)
-- [S12](../../../build/foundations/00-preface.tex)
-- [S13](../../../paper.pdf)
+- [S4](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/00-introduction.tex)
+- [S5](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/01-setup.tex)
+- [S6](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/04-scalar.tex)
+- [S7](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/07-extraction.tex)
+- [S8](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/08-iteration.tex)
+- [S9](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/09-consequences.tex)
+- [S10](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/references.tex)
+- [S11](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/figures/proof-route.tex)
+- [S12](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/foundations/00-preface.tex)
+- [S13](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/paper.pdf)
 - [S14](../../../lean/docs/159.md)
 - [S15](../../../lean/ComparatorChallenges/ErdosReciprocal.lean)
 - [S16](../../../lean/ComparatorChallenges/ErdosReciprocal.json)
@@ -258,3 +258,18 @@ Its README gives the release date [S3:5]: "Date: September 23, 2026".
 - [S23](../../../lean/OAI/Combinatorics/Progressions/Estimates/UniformRelativePatchSource.lean)
 - [S24](../../../overview.tex)
 - [S25](../../../reasoning_traces/quasipolynomial-arithmetic-progressions.pdf)
+
+## Bibliography
+
+**48 entries** from `references.tex`:
+- [Behrend1946] F. A. Behrend, \emph{On sets of integers which contain no three terms in arithmetical progression}, Proc. Nat. Acad. Sci…
+- [BergelsonHostKra2005] V. Bergelson, B. Host and B. Kra, \emph{Multiple recurrence and nilsequences}, with an appendix by I. Z. Ruzsa, Invent. …
+- [BergelsonLeibman2007] V. Bergelson and A. Leibman, \emph{Distribution of values of bounded generalized polynomials}, Acta Math. \textbf{198} (…
+- [Bloom2016] T. F. Bloom, \emph{A quantitative improvement for Roth's theorem on arithmetic progressions}, J. London Math. Soc. (2) \…
+- [BloomSisask2019] T. F. Bloom and O. Sisask, \emph{Logarithmic bounds for Roth's theorem via almost-periodicity}, Discrete Anal. \textbf{2…
+- [BloomSisask2020] T. F. Bloom and O. Sisask, \emph{Breaking the logarithmic barrier in Roth's theorem on arithmetic progressions}, arXiv:2…
+- [BloomSisaskImprovement2023] T. F. Bloom and O. Sisask, \emph{An improvement to the Kelley--Meka bounds on three-term arithmetic progressions}, arXiv…
+- [BloomSisaskKelleyMeka] T. F. Bloom and O. Sisask, \emph{The Kelley--Meka bounds for sets free of three-term arithmetic progressions}, Essential…
+- [Bourgain1999] J. Bourgain, \emph{On triples in arithmetic progression}, Geom. Funct. Anal. \textbf{9} (1999), no.~5, 968--984. \url{ht…
+- [Bourgain2008] J. Bourgain, \emph{Roth's theorem on progressions revisited}, J. Anal. Math. \textbf{104} (2008), 155--192. \url{https:/…
+- … and 38 more

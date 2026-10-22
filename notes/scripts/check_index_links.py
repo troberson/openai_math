@@ -62,6 +62,7 @@ from catlib import yaml as Y
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 
 IDX = ROOT / "notes" / "index"
+SUMM = ROOT / "notes" / "summaries"
 TABLES = ROOT / "notes" / "tables"
 SCHEME = re.compile(r"^[a-zA-Z][a-zA-Z0-9+.-]*:")
 # The main_results triples come from the package reader; build_index.py calls main() at module
@@ -174,10 +175,15 @@ CAT_DIR = "preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026"
 CAT_PAGE = "differential-geometry/337-cartan-hadamard-isoperimetry-and-cat-0-fillings.md"
 
 
+def resolve_in(tree, page_rel, href):
+    """Resolve an href found on a page under `tree` to a repo-relative path."""
+    base = (tree / page_rel).parent
+    return posixpath.normpath(posixpath.join(base.relative_to(ROOT).as_posix(), href))
+
+
 def resolve(page_rel, href):
     """Resolve an href found on an index page to a repo-relative path."""
-    base = (IDX / page_rel).parent
-    return posixpath.normpath(posixpath.join(base.relative_to(ROOT).as_posix(), href))
+    return resolve_in(IDX, page_rel, href)
 
 
 def trap():
@@ -194,19 +200,35 @@ def trap():
             for label, target in (("naive [^)]*", naive), ("paren-balanced", balanced))]
 
 
-def check_index():
-    """Every link in every rendered index page, resolved against the page's directory."""
+def check_tree(tree, rel_root):
+    """Every link in every rendered page under `tree`, resolved against the page's directory.
+
+    `rel_root` is the tree's path relative to ROOT, so the relative page path resolves against
+    the tree, not the repo. The index and the summaries tree are the two callers; both share the
+    paren-balanced scanner and the same href skipping rules.
+    """
+    del rel_root  # kept for signature symmetry with resolve_in's base read
     links = []
-    for page in sorted(IDX.rglob("*.md")):
-        rel_page = page.relative_to(IDX).as_posix()
+    for page in sorted(tree.rglob("*.md")):
+        rel_page = page.relative_to(tree).as_posix()
         for href in md_links(page.read_text(encoding="utf-8", errors="replace")):
             if not href or href.startswith("#") or SCHEME.match(href):
                 continue
             target = href.split("#")[0]
             if not target:
                 continue
-            links.append((rel_page, target, resolve(rel_page, target)))
+            links.append((rel_page, target, resolve_in(tree, rel_page, target)))
     return links
+
+
+def check_index():
+    """Every link in every rendered index page, resolved against the page's directory."""
+    return check_tree(IDX, "notes/index")
+
+
+def check_summaries():
+    """Every link in every rendered summary page, resolved against the page's directory."""
+    return check_tree(SUMM, "notes/summaries")
 
 
 def page_group(rel_page: str) -> str:
@@ -368,6 +390,49 @@ def measure() -> dict[str, Any]:
     }
 
 
+@cache
+def measure_summaries() -> dict[str, Any]:
+    """Every number the summaries-tree report prints, as data.
+
+    The summaries tree (`notes/summaries/`) is where `build_summaries.py` renders the 60 family
+    pages and keeps the link-only README. It is a second page tree with its own links — breadcrumb
+    to the index, manuscript PDFs and LaTeX, `CONTENTS.md`, `overview.tex` — and those links have
+    no checker of their own: `verify_summaries.py` resolves a page's markdown links only relative to
+    the page's directory and does not reconcile them against the release, and it is being retired by
+    the renderer pass. `measure()` stays index-scoped because the index page's canonical comparisons
+    are index facts; this dict is the summaries tree's own scan, kept separate so the two trees
+    report their counts under their own names. `main()` prints both and folds the summaries broken
+    links into the exit code.
+    """
+    links = check_summaries()
+    broken: list[str] = []
+    cats: collections.Counter[str] = collections.Counter()
+    kind: collections.Counter[tuple[str, str]] = collections.Counter()
+    targets = collections.defaultdict(set)
+    for page, href, rel in links:
+        c = category(rel)
+        cats[c] += 1
+        targets[c].add(rel)
+        p = ROOT / rel
+        if not p.exists():
+            broken.append(f"{page} -> {href}")
+        elif p.is_dir():
+            kind[(c, "dir")] += 1
+        else:
+            kind[(c, "file")] += 1
+    pages = sorted(p.relative_to(SUMM).as_posix() for p in SUMM.rglob("*.md"))
+    return {
+        "pages": pages,
+        "links": links,
+        "broken": broken,
+        "cats": cats,
+        "kind": kind,
+        "targets": targets,
+        "dir_links": sum(v for (c, k), v in kind.items() if k == "dir"),
+        "file_links": sum(v for (c, k), v in kind.items() if k == "file"),
+    }
+
+
 def main():
     m = measure()
     links, broken, cats, kind, groups, targets = (m["links"], m["broken"], m["cats"], m["kind"],
@@ -413,7 +478,17 @@ def main():
           f"broken {len(m['contents_broken'])}")
     for b in m["contents_broken"][:10]:
         print(f"  BROKEN {b}")
-    return 1 if (broken or m["contents_broken"] or m["collisions"]) else 0
+
+    s = measure_summaries()
+    print()
+    print(f"summaries pages scanned  {len(s['pages'])}")
+    print(f"summaries links          {len(s['links'])}")
+    print(f"summaries broken links   {len(s['broken'])}")
+    for b in s["broken"]:
+        print(f"  BROKEN {b}")
+    print(f"summaries dir links      {s['dir_links']}   file links {s['file_links']}")
+
+    return 1 if (broken or s["broken"] or m["contents_broken"] or m["collisions"]) else 0
 
 
 if __name__ == "__main__":

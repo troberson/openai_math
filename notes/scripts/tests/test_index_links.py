@@ -78,6 +78,23 @@ CONTROLS = [
      "../../../preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/build/"),
 ]
 
+# The summaries tree is a second page set with its own links. A summary page sits three levels
+# down (notes/summaries/<discipline>/<NNN>-<slug>.md), so a manuscript link is `../../../…`, like
+# the index's. These cases resolve against SUMM, not IDX — `resolve` is index-scoped — so they use
+# `resolve_in(SUMM, …)`. One broken href per direction the summaries tree links (a manuscript PDF,
+# and a breadcrumb into the index) and one real href that must resolve.
+SUMM_INPUTS = [
+    ("number-theory/001-milnes-rationality-conjecture.md",
+     "../../../preprints/No-Such-Summary-Manuscript/paper.pdf", "manuscript-pdf"),
+    ("number-theory/001-milnes-rationality-conjecture.md",
+     "../../index/number-theory/999-no-such-family.md", "index-page"),
+]
+
+SUMM_CONTROLS = [
+    ("number-theory/001-milnes-rationality-conjecture.md",
+     "../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/paper.pdf"),
+]
+
 # What the classifier tags, against what is on disk: the directory set must be the directories.
 CLASSIFIED = [
     ("preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/build/", "dir"),
@@ -197,6 +214,41 @@ def test_clean_scan_baseline(mod):
         f"{m['dir_links']} dir + {m['file_links']} file against {len(m['links'])} links"
     assert m["collisions"] == [], f"basename collisions: {m['collisions'][:3]}"
     assert m["contents_broken"] == [], m["contents_broken"][:5]
+
+
+def test_summaries_injected_hrefs_do_not_resolve(mod):
+    """A deliberately broken summary-page link must be flagged. `resolve` is index-scoped, so the
+    summaries hrefs resolve through `resolve_in(SUMM, …)` — the same function the checker's
+    `check_summaries()` uses. A target that exists on disk would make the test inert."""
+    inert = []
+    for page, href, _cat in SUMM_INPUTS:
+        rel = mod.resolve_in(mod.SUMM, page, href)
+        if (mod.ROOT / rel).exists():
+            inert.append(f"{page} -> {href}: injected target resolves, the test is inert")
+    assert not inert, inert
+
+
+def test_summaries_real_hrefs_resolve(mod):
+    """A real summary-page link must resolve, so a checker that flags everything is useless."""
+    absent = []
+    for page, href in SUMM_CONTROLS:
+        rel = mod.resolve_in(mod.SUMM, page, href)
+        if not (mod.ROOT / rel).exists():
+            absent.append(f"{page} -> {href}: resolves to {rel}, which is absent")
+    assert not absent, absent
+    assert len(SUMM_CONTROLS) == 1, f"{len(SUMM_CONTROLS)} summary controls, expected 1"
+
+
+def test_summaries_scan_clean_baseline(mod):
+    """The summaries-tree scan the checker now runs: every link in every summary page resolves. The
+    floors keep the scan non-vacuous — a scan over 0 pages and 0 links reports 0 broken and proves
+    nothing, so both are pinned non-empty and the two resolution counts sum to the link count."""
+    s = mod.measure_summaries()
+    assert len(s["pages"]) > 0, "the summaries scan walked 0 pages"
+    assert len(s["links"]) > 0, "the summaries scan extracted 0 links"
+    assert not s["broken"], list(s["broken"][:5])
+    assert s["dir_links"] + s["file_links"] == len(s["links"]), \
+        f"{s['dir_links']} dir + {s['file_links']} file against {len(s['links'])} links"
 
 
 def test_scanner_is_paren_balanced_on_synthetic_text(mod):

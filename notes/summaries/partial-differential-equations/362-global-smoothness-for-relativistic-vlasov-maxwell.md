@@ -45,7 +45,7 @@ The field class is the load-bearing choice. `C_b^∞` bounds every spatial deriv
 
 The admissible datum, and the meaning of the field class [S4:27–35]:
 
-> A _smooth admissible datum_ is a triple $(f_0,E_0,B_0)$ satisfying \begin{equation}  \begin{gathered} f_0\in C_c^\infty(\R^3_x\times\R^3_v),\qquad f_0\ge0,\\ E_0,B_0\in C_b^\infty(\R^3;\R^3)\cap L^2(\R^3;\R^3),\\ \nabla_x\cdot E_0=\rho_{f_0},\qquad \nabla_x\cdot B_0=0. \end{gathered} \end{equation} Here $C_b^\infty$ means that every spatial derivative is bounded.
+> A _smooth admissible datum_ is a triple $(f_0,E_0,B_0)$ satisfying \begin{equation}  \begin{gathered} f_0\in C_c^\infty(\mathbb R^3_x\times\mathbb R^3_v),\qquad f_0\ge0,\\ E_0,B_0\in C_b^\infty(\mathbb R^3;\mathbb R^3)\cap L^2(\mathbb R^3;\mathbb R^3),\\ \nabla_x\cdot E_0=\rho_{f_0},\qquad \nabla_x\cdot B_0=0. \end{gathered} \end{equation} Here $C_b^\infty$ means that every spatial derivative is bounded.
 
 The theorem, stated in full [S4:42–52]:
 
@@ -357,17 +357,17 @@ What has not been checked: nothing here is a machine-checked verification of the
 | --- | --- | --- | --- |
 | S1 | `CONTENTS.md` | 9142 | Release blurb, manuscript link, abstract |
 | S2 | `preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/README.md` | 18 | Manuscript README and bibtex key |
-| S3 | `build/main.tex` | — | Title, abstract, section include list |
-| S4 | `build/sections/introduction.tex` | — | Model, theorem, history, strategy |
-| S5 | `build/sections/setup.tex` | — | Bootstrap and momentum doubling |
-| S6 | `build/sections/retarded.tex` | — | Retarded field representation |
-| S7 | `build/sections/occupation.tex` | — | Occupation of retarded bins |
-| S8 | `build/sections/direct.tex` | — | Direct integrated force bounds |
-| S9 | `build/sections/cancellation.tex` | — | Weighted signed formula |
-| S10 | `build/sections/direction.tex` | — | Direction-change lemma |
-| S11 | `build/sections/selection.tex` | — | Selection and weighted estimate |
-| S12 | `build/sections/closure.tex` | — | Bootstrap closure |
-| S13 | `build/sections/continuation.tex` | — | Local theory, continuation criterion |
+| S3 | `preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/main.tex` | 61 | Title, abstract, section include list |
+| S4 | `preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/introduction.tex` | 227 | Model, theorem, history, strategy |
+| S5 | `preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/setup.tex` | 140 | Bootstrap and momentum doubling |
+| S6 | `preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/retarded.tex` | 428 | Retarded field representation |
+| S7 | `preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/occupation.tex` | 416 | Occupation of retarded bins |
+| S8 | `preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/direct.tex` | 428 | Direct integrated force bounds |
+| S9 | `preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/cancellation.tex` | 382 | Weighted signed formula |
+| S10 | `preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/direction.tex` | 377 | Direction-change lemma |
+| S11 | `preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/selection.tex` | 488 | Selection and weighted estimate |
+| S12 | `preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/closure.tex` | 87 | Bootstrap closure |
+| S13 | `preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/continuation.tex` | 490 | Local theory, continuation criterion |
 | S14 | `preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/references.bib` | 372 | Bibliography |
 | S15 | `lean/docs/362.md` | 15 | Scope note |
 | S16 | `lean/ComparatorChallenges/VlasovMaxwell.lean` | 112 | Comparator challenge |
@@ -377,23 +377,23 @@ What has not been checked: nothing here is a machine-checked verification of the
 | S20 | `lean/formalization.yaml` | 1783 | Release index of papers and results |
 | S21 | `notes/tables/catalog.tsv` | 373 | Reading ledger row for family 362 |
 | S22 | `reasoning_traces/relativistic-vlasov-maxwell.pdf` | 1908 | Published reasoning trace |
-| S23 | `paper.pdf` | — | Manuscript PDF |
+| S23 | `preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/paper.pdf` | 17129 | Manuscript PDF |
 
 ## Links
 
 - [S1](../../../CONTENTS.md)
 - [S2](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/README.md)
-- [S3](../../../build/main.tex)
-- [S4](../../../build/sections/introduction.tex)
-- [S5](../../../build/sections/setup.tex)
-- [S6](../../../build/sections/retarded.tex)
-- [S7](../../../build/sections/occupation.tex)
-- [S8](../../../build/sections/direct.tex)
-- [S9](../../../build/sections/cancellation.tex)
-- [S10](../../../build/sections/direction.tex)
-- [S11](../../../build/sections/selection.tex)
-- [S12](../../../build/sections/closure.tex)
-- [S13](../../../build/sections/continuation.tex)
+- [S3](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/main.tex)
+- [S4](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/introduction.tex)
+- [S5](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/setup.tex)
+- [S6](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/retarded.tex)
+- [S7](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/occupation.tex)
+- [S8](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/direct.tex)
+- [S9](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/cancellation.tex)
+- [S10](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/direction.tex)
+- [S11](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/selection.tex)
+- [S12](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/closure.tex)
+- [S13](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/sections/continuation.tex)
 - [S14](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/references.bib)
 - [S15](../../../lean/docs/362.md)
 - [S16](../../../lean/ComparatorChallenges/VlasovMaxwell.lean)
@@ -403,7 +403,7 @@ What has not been checked: nothing here is a machine-checked verification of the
 - [S20](../../../lean/formalization.yaml)
 - [S21](../../../notes/tables/catalog.tsv)
 - [S22](../../../reasoning_traces/relativistic-vlasov-maxwell.pdf)
-- [S23](../../../paper.pdf)
+- [S23](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/paper.pdf)
 
 ## Bibliography
 

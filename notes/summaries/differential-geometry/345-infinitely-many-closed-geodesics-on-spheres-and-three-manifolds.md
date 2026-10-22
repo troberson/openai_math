@@ -220,7 +220,7 @@ What has not been checked: no Lean, lake, or comparator run was performed, and f
 | S1 | `CONTENTS.md` | 9142 | Release blurb, manuscript link, manuscript abstract |
 | S2 | `overview.tex` | 859 | Family 345's `\resultentry`, at line 788 |
 | S3 | `preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/README.md` | 18 | Manuscript README, date, bibtex key |
-| S4 | `paper.pdf` | — | Manuscript PDF |
+| S4 | `preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/paper.pdf` | 17715 | Manuscript PDF |
 | S5 | `preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/build/paper.tex` | 69 | Preamble, theorem environments, section include list |
 | S6 | `preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/build/sections/introduction.tex` | 211 | Main theorem, corollaries, proof idea, prior work, objections to prior proofs |
 | S7 | `preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/build/sections/setup.tex` | 69 | Energy, length, sublevels, the O(2) and Klein-group actions |
@@ -241,7 +241,7 @@ What has not been checked: no Lean, lake, or comparator run was performed, and f
 - [S1](../../../CONTENTS.md)
 - [S2](../../../overview.tex)
 - [S3](../../../preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/README.md)
-- [S4](../../../paper.pdf)
+- [S4](../../../preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/paper.pdf)
 - [S5](../../../preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/build/paper.tex)
 - [S6](../../../preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/build/sections/introduction.tex)
 - [S7](../../../preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/build/sections/setup.tex)
