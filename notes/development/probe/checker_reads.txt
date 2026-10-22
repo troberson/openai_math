@@ -13,6 +13,75 @@
               1  r        notes/scripts/verify_abstracts.py
 [probe2] target notes/scripts/verify_cache_promotion.py
 [probe2] notes/ paths (count  modes  path):
+              1  r        notes/README.md
+              1  r        notes/data/summaries/001.md
+              1  r        notes/data/summaries/002.md
+              1  r        notes/data/summaries/004.md
+              1  r        notes/data/summaries/006.md
+              1  r        notes/data/summaries/007.md
+              1  r        notes/data/summaries/010.md
+              1  r        notes/data/summaries/011.md
+              1  r        notes/data/summaries/014.md
+              1  r        notes/data/summaries/016.md
+              1  r        notes/data/summaries/017.md
+              1  r        notes/data/summaries/018.md
+              1  r        notes/data/summaries/019.md
+              1  r        notes/data/summaries/032.md
+              1  r        notes/data/summaries/039.md
+              1  r        notes/data/summaries/042.md
+              1  r        notes/data/summaries/047.md
+              1  r        notes/data/summaries/049.md
+              1  r        notes/data/summaries/050.md
+              1  r        notes/data/summaries/052.md
+              1  r        notes/data/summaries/072.md
+              1  r        notes/data/summaries/087.md
+              1  r        notes/data/summaries/088.md
+              1  r        notes/data/summaries/089.md
+              1  r        notes/data/summaries/098.md
+              1  r        notes/data/summaries/101.md
+              1  r        notes/data/summaries/102.md
+              1  r        notes/data/summaries/109.md
+              1  r        notes/data/summaries/136.md
+              1  r        notes/data/summaries/147.md
+              1  r        notes/data/summaries/159.md
+              1  r        notes/data/summaries/195.md
+              1  r        notes/data/summaries/196.md
+              1  r        notes/data/summaries/197.md
+              1  r        notes/data/summaries/198.md
+              1  r        notes/data/summaries/199.md
+              1  r        notes/data/summaries/221.md
+              1  r        notes/data/summaries/226.md
+              1  r        notes/data/summaries/243.md
+              1  r        notes/data/summaries/244.md
+              1  r        notes/data/summaries/254.md
+              1  r        notes/data/summaries/258.md
+              1  r        notes/data/summaries/259.md
+              1  r        notes/data/summaries/271.md
+              1  r        notes/data/summaries/274.md
+              1  r        notes/data/summaries/287.md
+              1  r        notes/data/summaries/324.md
+              1  r        notes/data/summaries/325.md
+              1  r        notes/data/summaries/331.md
+              1  r        notes/data/summaries/332.md
+              1  r        notes/data/summaries/334.md
+              1  r        notes/data/summaries/342.md
+              1  r        notes/data/summaries/344.md
+              1  r        notes/data/summaries/345.md
+              1  r        notes/data/summaries/346.md
+              1  r        notes/data/summaries/347.md
+              1  r        notes/data/summaries/348.md
+              1  r        notes/data/summaries/349.md
+              1  r        notes/data/summaries/351.md
+              1  r        notes/data/summaries/352.md
+              1  r        notes/data/summaries/362.md
+              1  r        notes/development/fleet-design.md
+              1  r        notes/development/index-design.md
+              1  r        notes/development/index-links.md
+              1  r        notes/development/summaries-workflow.md
+              1  r        notes/development/templates.md
+              1  r        notes/development/upstream_history/2026-10-07_3014888.md
+              1  r        notes/development/upstream_history/2026-10-07_fd4aeeb.md
+              1  r        notes/development/upstream_history/README.md
               1  r        notes/index/README.md
               1  r        notes/index/algebra/193-serres-intersection-multiplicity-conjecture.md
               1  r        notes/index/algebra/194-lechs-multiplicity-conjecture.md
@@ -1046,11 +1115,29 @@
               1  r        notes/index/topology/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md
               1  r        notes/index/topology/320-a-four-dimensional-counterexample-to-borel-rigidity.md
               1  r        notes/index/topology/321-a-counterexample-to-walls-finite-d-2-conjecture.md
+              1  r        notes/reports/abstracts.md
+              1  r        notes/reports/citations.md
+              1  r        notes/reports/conditional.md
+              1  r        notes/reports/conjecture-standing.md
+              1  r        notes/reports/counterexample-crosscheck.md
               1  r        notes/reports/counterexample-tag.md
+              1  r        notes/reports/dependency-drift.md
+              1  r        notes/reports/findings.md
               1  r        notes/reports/formalization-deps.md
+              1  r        notes/reports/formalization-faithfulness.md
+              1  r        notes/reports/links.md
+              1  r        notes/reports/named-conjectures.md
+              1  r        notes/reports/named-results.md
+              1  r        notes/reports/names.md
+              1  r        notes/reports/proof-density.md
+              1  r        notes/reports/resolution-tag.md
+              1  r        notes/reports/scope-exclusions.md
               1  r        notes/reports/sources.md
               1  r        notes/reports/subfinding-pairs.md
+              1  r        notes/reports/t0-chains.md
               1  r        notes/reports/t0-triage.md
+              1  r        notes/reports/topics.md
+              1  r        notes/reports/verification-dirs.md
               1  r        notes/summaries/README.md
               1  r        notes/summaries/algebra/195-a-complete-local-domain-without-a-small-cohen-macaulay-module.md
               1  r        notes/summaries/algebra/196-a-torsion-free-group-algebra-with-zero-divisors.md
@@ -1134,6 +1221,7 @@
               1  r        notes/tables/quotes.tsv
               1  r        notes/tables/scope-notes.tsv
               1  r        notes/tables/sources.tsv
+              1  r        notes/tables/splits.tsv
               1  r        notes/tables/subfindings.tsv
               1  r        notes/tables/topics-rendered.tsv
               1  r        notes/tables/topics.tsv
@@ -1163,6 +1251,7 @@
               1  r        notes/templates/report/templates.md.j2
               1  r        notes/templates/report/topics.md.j2
               1  r        notes/templates/report/verification-dirs.md.j2
+              1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
               1  r        notes/scripts/.gitignore
@@ -1172,6 +1261,7 @@
               1  r        notes/scripts/build_index_db.py
               1  r        notes/scripts/build_report_templates.py
               1  r        notes/scripts/build_sources.py
+              1  r        notes/scripts/build_summaries.py
               1  r        notes/scripts/catlib/__init__.py
               1  r        notes/scripts/catlib/anchors.py
               1  r        notes/scripts/catlib/atomic.py
@@ -1206,6 +1296,7 @@
               1  r        notes/scripts/extract_scope_notes.py
               1  r        notes/scripts/extract_subfinding_pairs.py
               1  r        notes/scripts/extract_subfindings.py
+              1  r        notes/scripts/extract_summary_data.py
               1  r        notes/scripts/extract_t0_chains.py
               1  r        notes/scripts/extract_verification_348.py
               1  r        notes/scripts/extract_verification_dirs.py
@@ -1237,7 +1328,6 @@
               1  r        notes/scripts/measure_templates.py
               1  r        notes/scripts/measure_topics.py
               1  r        notes/scripts/read_manuscript.py
-              1  r        notes/scripts/refresh_summary_line_counts.py
               1  r        notes/scripts/render_reports.py
               1  r        notes/scripts/run_tests.py
               1  r        notes/scripts/seed_quotes.py
@@ -1245,6 +1335,7 @@
               1  r        notes/scripts/tests/conftest.py
               1  r        notes/scripts/tests/probes/test_split_subsequence.py
               1  r        notes/scripts/tests/test_abstracts.py
+              1  r        notes/scripts/tests/test_atomic.py
               1  r        notes/scripts/tests/test_cache_promotion.py
               1  r        notes/scripts/tests/test_citations.py
               1  r        notes/scripts/tests/test_conditional.py
@@ -1433,6 +1524,7 @@
               1  r        notes/scripts/build_index_db.py
               1  r        notes/scripts/build_report_templates.py
               1  r        notes/scripts/build_sources.py
+              1  r        notes/scripts/build_summaries.py
               1  r        notes/scripts/catlib/__init__.py
               1  r        notes/scripts/catlib/anchors.py
               1  r        notes/scripts/catlib/atomic.py
@@ -1467,6 +1559,7 @@
               1  r        notes/scripts/extract_scope_notes.py
               1  r        notes/scripts/extract_subfinding_pairs.py
               1  r        notes/scripts/extract_subfindings.py
+              1  r        notes/scripts/extract_summary_data.py
               1  r        notes/scripts/extract_t0_chains.py
               1  r        notes/scripts/extract_verification_348.py
               1  r        notes/scripts/extract_verification_dirs.py
@@ -1494,7 +1587,6 @@
               1  r        notes/scripts/measure_templates.py
               1  r        notes/scripts/measure_topics.py
               1  r        notes/scripts/read_manuscript.py
-              1  r        notes/scripts/refresh_summary_line_counts.py
               1  r        notes/scripts/render_reports.py
               1  r        notes/scripts/run_tests.py
               1  r        notes/scripts/seed_quotes.py
@@ -2601,6 +2693,75 @@
               1  r        notes/scripts/verify_named_conjectures.py
 [probe2] target notes/scripts/verify_named_results.py
 [probe2] notes/ paths (count  modes  path):
+              1  r        notes/README.md
+              1  r        notes/data/summaries/001.md
+              1  r        notes/data/summaries/002.md
+              1  r        notes/data/summaries/004.md
+              1  r        notes/data/summaries/006.md
+              1  r        notes/data/summaries/007.md
+              1  r        notes/data/summaries/010.md
+              1  r        notes/data/summaries/011.md
+              1  r        notes/data/summaries/014.md
+              1  r        notes/data/summaries/016.md
+              1  r        notes/data/summaries/017.md
+              1  r        notes/data/summaries/018.md
+              1  r        notes/data/summaries/019.md
+              1  r        notes/data/summaries/032.md
+              1  r        notes/data/summaries/039.md
+              1  r        notes/data/summaries/042.md
+              1  r        notes/data/summaries/047.md
+              1  r        notes/data/summaries/049.md
+              1  r        notes/data/summaries/050.md
+              1  r        notes/data/summaries/052.md
+              1  r        notes/data/summaries/072.md
+              1  r        notes/data/summaries/087.md
+              1  r        notes/data/summaries/088.md
+              1  r        notes/data/summaries/089.md
+              1  r        notes/data/summaries/098.md
+              1  r        notes/data/summaries/101.md
+              1  r        notes/data/summaries/102.md
+              1  r        notes/data/summaries/109.md
+              1  r        notes/data/summaries/136.md
+              1  r        notes/data/summaries/147.md
+              1  r        notes/data/summaries/159.md
+              1  r        notes/data/summaries/195.md
+              1  r        notes/data/summaries/196.md
+              1  r        notes/data/summaries/197.md
+              1  r        notes/data/summaries/198.md
+              1  r        notes/data/summaries/199.md
+              1  r        notes/data/summaries/221.md
+              1  r        notes/data/summaries/226.md
+              1  r        notes/data/summaries/243.md
+              1  r        notes/data/summaries/244.md
+              1  r        notes/data/summaries/254.md
+              1  r        notes/data/summaries/258.md
+              1  r        notes/data/summaries/259.md
+              1  r        notes/data/summaries/271.md
+              1  r        notes/data/summaries/274.md
+              1  r        notes/data/summaries/287.md
+              1  r        notes/data/summaries/324.md
+              1  r        notes/data/summaries/325.md
+              1  r        notes/data/summaries/331.md
+              1  r        notes/data/summaries/332.md
+              1  r        notes/data/summaries/334.md
+              1  r        notes/data/summaries/342.md
+              1  r        notes/data/summaries/344.md
+              1  r        notes/data/summaries/345.md
+              1  r        notes/data/summaries/346.md
+              1  r        notes/data/summaries/347.md
+              1  r        notes/data/summaries/348.md
+              1  r        notes/data/summaries/349.md
+              1  r        notes/data/summaries/351.md
+              1  r        notes/data/summaries/352.md
+              1  r        notes/data/summaries/362.md
+              1  r        notes/development/fleet-design.md
+              1  r        notes/development/index-design.md
+              1  r        notes/development/index-links.md
+              1  r        notes/development/summaries-workflow.md
+              1  r        notes/development/templates.md
+              1  r        notes/development/upstream_history/2026-10-07_3014888.md
+              1  r        notes/development/upstream_history/2026-10-07_fd4aeeb.md
+              1  r        notes/development/upstream_history/README.md
               1  r        notes/index/README.md
               1  r        notes/index/algebra/193-serres-intersection-multiplicity-conjecture.md
               1  r        notes/index/algebra/194-lechs-multiplicity-conjecture.md
@@ -3634,12 +3795,29 @@
               1  r        notes/index/topology/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md
               1  r        notes/index/topology/320-a-four-dimensional-counterexample-to-borel-rigidity.md
               1  r        notes/index/topology/321-a-counterexample-to-walls-finite-d-2-conjecture.md
+              1  r        notes/reports/abstracts.md
+              1  r        notes/reports/citations.md
+              1  r        notes/reports/conditional.md
+              1  r        notes/reports/conjecture-standing.md
+              1  r        notes/reports/counterexample-crosscheck.md
               1  r        notes/reports/counterexample-tag.md
+              1  r        notes/reports/dependency-drift.md
+              1  r        notes/reports/findings.md
               1  r        notes/reports/formalization-deps.md
+              1  r        notes/reports/formalization-faithfulness.md
+              1  r        notes/reports/links.md
+              1  r        notes/reports/named-conjectures.md
               1  r        notes/reports/named-results.md
+              1  r        notes/reports/names.md
+              1  r        notes/reports/proof-density.md
+              1  r        notes/reports/resolution-tag.md
+              1  r        notes/reports/scope-exclusions.md
               1  r        notes/reports/sources.md
               1  r        notes/reports/subfinding-pairs.md
+              1  r        notes/reports/t0-chains.md
               1  r        notes/reports/t0-triage.md
+              1  r        notes/reports/topics.md
+              1  r        notes/reports/verification-dirs.md
               1  r        notes/summaries/README.md
               1  r        notes/summaries/algebra/195-a-complete-local-domain-without-a-small-cohen-macaulay-module.md
               1  r        notes/summaries/algebra/196-a-torsion-free-group-algebra-with-zero-divisors.md
@@ -3723,6 +3901,7 @@
               1  r        notes/tables/quotes.tsv
               1  r        notes/tables/scope-notes.tsv
               1  r        notes/tables/sources.tsv
+              1  r        notes/tables/splits.tsv
               1  r        notes/tables/subfindings.tsv
               1  r        notes/tables/topics-rendered.tsv
               1  r        notes/tables/topics.tsv
@@ -3752,6 +3931,7 @@
               1  r        notes/templates/report/templates.md.j2
               1  r        notes/templates/report/topics.md.j2
               1  r        notes/templates/report/verification-dirs.md.j2
+              1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
               1  r        notes/scripts/.gitignore
@@ -3761,6 +3941,7 @@
               1  r        notes/scripts/build_index_db.py
               1  r        notes/scripts/build_report_templates.py
               1  r        notes/scripts/build_sources.py
+              1  r        notes/scripts/build_summaries.py
               1  r        notes/scripts/catlib/__init__.py
               1  r        notes/scripts/catlib/anchors.py
               1  r        notes/scripts/catlib/atomic.py
@@ -3795,6 +3976,7 @@
               1  r        notes/scripts/extract_scope_notes.py
               1  r        notes/scripts/extract_subfinding_pairs.py
               1  r        notes/scripts/extract_subfindings.py
+              1  r        notes/scripts/extract_summary_data.py
               1  r        notes/scripts/extract_t0_chains.py
               1  r        notes/scripts/extract_verification_348.py
               1  r        notes/scripts/extract_verification_dirs.py
@@ -3826,7 +4008,6 @@
               1  r        notes/scripts/measure_templates.py
               1  r        notes/scripts/measure_topics.py
               1  r        notes/scripts/read_manuscript.py
-              1  r        notes/scripts/refresh_summary_line_counts.py
               1  r        notes/scripts/render_reports.py
               1  r        notes/scripts/run_tests.py
               1  r        notes/scripts/seed_quotes.py
@@ -3834,6 +4015,7 @@
               1  r        notes/scripts/tests/conftest.py
               1  r        notes/scripts/tests/probes/test_split_subsequence.py
               1  r        notes/scripts/tests/test_abstracts.py
+              1  r        notes/scripts/tests/test_atomic.py
               1  r        notes/scripts/tests/test_cache_promotion.py
               1  r        notes/scripts/tests/test_citations.py
               1  r        notes/scripts/tests/test_conditional.py
@@ -3889,7 +4071,75 @@
               1  r        notes/scripts/verify_verification_dirs.py
 [probe2] target notes/scripts/verify_page_sync.py
 [probe2] notes/ paths (count  modes  path):
+              1  r        notes/README.md
+              1  r        notes/data/summaries/001.md
+              1  r        notes/data/summaries/002.md
+              1  r        notes/data/summaries/004.md
+              1  r        notes/data/summaries/006.md
+              1  r        notes/data/summaries/007.md
+              1  r        notes/data/summaries/010.md
+              1  r        notes/data/summaries/011.md
+              1  r        notes/data/summaries/014.md
+              1  r        notes/data/summaries/016.md
+              1  r        notes/data/summaries/017.md
+              1  r        notes/data/summaries/018.md
+              1  r        notes/data/summaries/019.md
+              1  r        notes/data/summaries/032.md
+              1  r        notes/data/summaries/039.md
+              1  r        notes/data/summaries/042.md
+              1  r        notes/data/summaries/047.md
+              1  r        notes/data/summaries/049.md
+              1  r        notes/data/summaries/050.md
+              1  r        notes/data/summaries/052.md
+              1  r        notes/data/summaries/072.md
+              1  r        notes/data/summaries/087.md
+              1  r        notes/data/summaries/088.md
+              1  r        notes/data/summaries/089.md
+              1  r        notes/data/summaries/098.md
+              1  r        notes/data/summaries/101.md
+              1  r        notes/data/summaries/102.md
+              1  r        notes/data/summaries/109.md
+              1  r        notes/data/summaries/136.md
+              1  r        notes/data/summaries/147.md
+              1  r        notes/data/summaries/159.md
+              1  r        notes/data/summaries/195.md
+              1  r        notes/data/summaries/196.md
+              1  r        notes/data/summaries/197.md
+              1  r        notes/data/summaries/198.md
+              1  r        notes/data/summaries/199.md
+              1  r        notes/data/summaries/221.md
+              1  r        notes/data/summaries/226.md
+              1  r        notes/data/summaries/243.md
+              1  r        notes/data/summaries/244.md
+              1  r        notes/data/summaries/254.md
+              1  r        notes/data/summaries/258.md
+              1  r        notes/data/summaries/259.md
+              1  r        notes/data/summaries/271.md
+              1  r        notes/data/summaries/274.md
+              1  r        notes/data/summaries/287.md
+              1  r        notes/data/summaries/324.md
+              1  r        notes/data/summaries/325.md
+              1  r        notes/data/summaries/331.md
+              1  r        notes/data/summaries/332.md
+              1  r        notes/data/summaries/334.md
+              1  r        notes/data/summaries/342.md
+              1  r        notes/data/summaries/344.md
+              1  r        notes/data/summaries/345.md
+              1  r        notes/data/summaries/346.md
+              1  r        notes/data/summaries/347.md
+              1  r        notes/data/summaries/348.md
+              1  r        notes/data/summaries/349.md
+              1  r        notes/data/summaries/351.md
+              1  r        notes/data/summaries/352.md
+              1  r        notes/data/summaries/362.md
+              1  r        notes/development/fleet-design.md
+              1  r        notes/development/index-design.md
               1  r        notes/development/index-links.md
+              1  r        notes/development/summaries-workflow.md
+              1  r        notes/development/templates.md
+              1  r        notes/development/upstream_history/2026-10-07_3014888.md
+              1  r        notes/development/upstream_history/2026-10-07_fd4aeeb.md
+              1  r        notes/development/upstream_history/README.md
               1  r        notes/index/README.md
               1  r        notes/index/algebra/193-serres-intersection-multiplicity-conjecture.md
               1  r        notes/index/algebra/194-lechs-multiplicity-conjecture.md
@@ -4923,15 +5173,29 @@
               1  r        notes/index/topology/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md
               1  r        notes/index/topology/320-a-four-dimensional-counterexample-to-borel-rigidity.md
               1  r        notes/index/topology/321-a-counterexample-to-walls-finite-d-2-conjecture.md
+              1  r        notes/reports/abstracts.md
+              1  r        notes/reports/citations.md
+              1  r        notes/reports/conditional.md
+              1  r        notes/reports/conjecture-standing.md
+              1  r        notes/reports/counterexample-crosscheck.md
               1  r        notes/reports/counterexample-tag.md
+              1  r        notes/reports/dependency-drift.md
+              1  r        notes/reports/findings.md
               1  r        notes/reports/formalization-deps.md
+              1  r        notes/reports/formalization-faithfulness.md
               1  r        notes/reports/links.md
+              1  r        notes/reports/named-conjectures.md
+              1  r        notes/reports/named-results.md
               1  r        notes/reports/names.md
               1  r        notes/reports/proof-density.md
+              1  r        notes/reports/resolution-tag.md
+              1  r        notes/reports/scope-exclusions.md
               1  r        notes/reports/sources.md
               1  r        notes/reports/subfinding-pairs.md
+              1  r        notes/reports/t0-chains.md
               1  r        notes/reports/t0-triage.md
               1  r        notes/reports/topics.md
+              1  r        notes/reports/verification-dirs.md
               1  r        notes/summaries/README.md
               1  r        notes/summaries/algebra/195-a-complete-local-domain-without-a-small-cohen-macaulay-module.md
               1  r        notes/summaries/algebra/196-a-torsion-free-group-algebra-with-zero-divisors.md
@@ -5015,6 +5279,7 @@
               1  r        notes/tables/quotes.tsv
               1  r        notes/tables/scope-notes.tsv
               1  r        notes/tables/sources.tsv
+              1  r        notes/tables/splits.tsv
               1  r        notes/tables/subfindings.tsv
               1  r        notes/tables/topics-rendered.tsv
               1  r        notes/tables/topics.tsv
@@ -5044,6 +5309,7 @@
               1  r        notes/templates/report/templates.md.j2
               1  r        notes/templates/report/topics.md.j2
               1  r        notes/templates/report/verification-dirs.md.j2
+              1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
               1  r        notes/scripts/.gitignore
@@ -5053,6 +5319,7 @@
               1  r        notes/scripts/build_index_db.py
               1  r        notes/scripts/build_report_templates.py
               1  r        notes/scripts/build_sources.py
+              1  r        notes/scripts/build_summaries.py
               1  r        notes/scripts/catlib/__init__.py
               1  r        notes/scripts/catlib/anchors.py
               1  r        notes/scripts/catlib/atomic.py
@@ -5087,6 +5354,7 @@
               1  r        notes/scripts/extract_scope_notes.py
               1  r        notes/scripts/extract_subfinding_pairs.py
               1  r        notes/scripts/extract_subfindings.py
+              1  r        notes/scripts/extract_summary_data.py
               1  r        notes/scripts/extract_t0_chains.py
               1  r        notes/scripts/extract_verification_348.py
               1  r        notes/scripts/extract_verification_dirs.py
@@ -5118,7 +5386,6 @@
               1  r        notes/scripts/measure_templates.py
               1  r        notes/scripts/measure_topics.py
               1  r        notes/scripts/read_manuscript.py
-              1  r        notes/scripts/refresh_summary_line_counts.py
               1  r        notes/scripts/render_reports.py
               1  r        notes/scripts/run_tests.py
               1  r        notes/scripts/seed_quotes.py
@@ -5126,6 +5393,7 @@
               1  r        notes/scripts/tests/conftest.py
               1  r        notes/scripts/tests/probes/test_split_subsequence.py
               1  r        notes/scripts/tests/test_abstracts.py
+              1  r        notes/scripts/tests/test_atomic.py
               1  r        notes/scripts/tests/test_cache_promotion.py
               1  r        notes/scripts/tests/test_citations.py
               1  r        notes/scripts/tests/test_conditional.py
@@ -5195,7 +5463,74 @@
 [probe2] target notes/scripts/verify_script_ownership.py
 [probe2] notes/ paths (count  modes  path):
               1  r        notes/README.md
+              1  r        notes/data/summaries/001.md
+              1  r        notes/data/summaries/002.md
+              1  r        notes/data/summaries/004.md
+              1  r        notes/data/summaries/006.md
+              1  r        notes/data/summaries/007.md
+              1  r        notes/data/summaries/010.md
+              1  r        notes/data/summaries/011.md
+              1  r        notes/data/summaries/014.md
+              1  r        notes/data/summaries/016.md
+              1  r        notes/data/summaries/017.md
+              1  r        notes/data/summaries/018.md
+              1  r        notes/data/summaries/019.md
+              1  r        notes/data/summaries/032.md
+              1  r        notes/data/summaries/039.md
+              1  r        notes/data/summaries/042.md
+              1  r        notes/data/summaries/047.md
+              1  r        notes/data/summaries/049.md
+              1  r        notes/data/summaries/050.md
+              1  r        notes/data/summaries/052.md
+              1  r        notes/data/summaries/072.md
+              1  r        notes/data/summaries/087.md
+              1  r        notes/data/summaries/088.md
+              1  r        notes/data/summaries/089.md
+              1  r        notes/data/summaries/098.md
+              1  r        notes/data/summaries/101.md
+              1  r        notes/data/summaries/102.md
+              1  r        notes/data/summaries/109.md
+              1  r        notes/data/summaries/136.md
+              1  r        notes/data/summaries/147.md
+              1  r        notes/data/summaries/159.md
+              1  r        notes/data/summaries/195.md
+              1  r        notes/data/summaries/196.md
+              1  r        notes/data/summaries/197.md
+              1  r        notes/data/summaries/198.md
+              1  r        notes/data/summaries/199.md
+              1  r        notes/data/summaries/221.md
+              1  r        notes/data/summaries/226.md
+              1  r        notes/data/summaries/243.md
+              1  r        notes/data/summaries/244.md
+              1  r        notes/data/summaries/254.md
+              1  r        notes/data/summaries/258.md
+              1  r        notes/data/summaries/259.md
+              1  r        notes/data/summaries/271.md
+              1  r        notes/data/summaries/274.md
+              1  r        notes/data/summaries/287.md
+              1  r        notes/data/summaries/324.md
+              1  r        notes/data/summaries/325.md
+              1  r        notes/data/summaries/331.md
+              1  r        notes/data/summaries/332.md
+              1  r        notes/data/summaries/334.md
+              1  r        notes/data/summaries/342.md
+              1  r        notes/data/summaries/344.md
+              1  r        notes/data/summaries/345.md
+              1  r        notes/data/summaries/346.md
+              1  r        notes/data/summaries/347.md
+              1  r        notes/data/summaries/348.md
+              1  r        notes/data/summaries/349.md
+              1  r        notes/data/summaries/351.md
+              1  r        notes/data/summaries/352.md
+              1  r        notes/data/summaries/362.md
+              1  r        notes/development/fleet-design.md
+              1  r        notes/development/index-design.md
+              1  r        notes/development/index-links.md
+              1  r        notes/development/summaries-workflow.md
               1  r        notes/development/templates.md
+              1  r        notes/development/upstream_history/2026-10-07_3014888.md
+              1  r        notes/development/upstream_history/2026-10-07_fd4aeeb.md
+              1  r        notes/development/upstream_history/README.md
               1  r        notes/index/README.md
               1  r        notes/index/algebra/193-serres-intersection-multiplicity-conjecture.md
               1  r        notes/index/algebra/194-lechs-multiplicity-conjecture.md
@@ -6229,10 +6564,117 @@
               1  r        notes/index/topology/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md
               1  r        notes/index/topology/320-a-four-dimensional-counterexample-to-borel-rigidity.md
               1  r        notes/index/topology/321-a-counterexample-to-walls-finite-d-2-conjecture.md
+              1  r        notes/reports/abstracts.md
+              1  r        notes/reports/citations.md
+              1  r        notes/reports/conditional.md
+              1  r        notes/reports/conjecture-standing.md
+              1  r        notes/reports/counterexample-crosscheck.md
+              1  r        notes/reports/counterexample-tag.md
+              1  r        notes/reports/dependency-drift.md
+              1  r        notes/reports/findings.md
+              1  r        notes/reports/formalization-deps.md
+              1  r        notes/reports/formalization-faithfulness.md
+              1  r        notes/reports/links.md
+              1  r        notes/reports/named-conjectures.md
+              1  r        notes/reports/named-results.md
+              1  r        notes/reports/names.md
+              1  r        notes/reports/proof-density.md
+              1  r        notes/reports/resolution-tag.md
+              1  r        notes/reports/scope-exclusions.md
+              1  r        notes/reports/sources.md
+              1  r        notes/reports/subfinding-pairs.md
+              1  r        notes/reports/t0-chains.md
+              1  r        notes/reports/t0-triage.md
+              1  r        notes/reports/topics.md
+              1  r        notes/reports/verification-dirs.md
+              1  r        notes/summaries/README.md
+              1  r        notes/summaries/algebra/195-a-complete-local-domain-without-a-small-cohen-macaulay-module.md
+              1  r        notes/summaries/algebra/196-a-torsion-free-group-algebra-with-zero-divisors.md
+              1  r        notes/summaries/algebra/197-nonsofic-groups-and-group-ring-counterexamples.md
+              1  r        notes/summaries/algebra/198-a-counterexample-to-the-little-finitistic-dimension-conjecture.md
+              1  r        notes/summaries/algebra/199-counterexamples-to-conjectures-of-auslander-reiten-and-tachikawa.md
+              1  r        notes/summaries/algebraic-and-complex-geometry/032-the-rational-hodge-conjecture-for-cm-abelian-varieties.md
+              1  r        notes/summaries/algebraic-and-complex-geometry/039-nagatas-conjecture-and-maximal-seshadri-constants.md
+              1  r        notes/summaries/algebraic-and-complex-geometry/042-oka-classification-for-k3-surfaces-and-other-compact-complex-surfaces.md
+              1  r        notes/summaries/algebraic-and-complex-geometry/047-complex-counterexamples-to-cancellation-and-affine-fibrations.md
+              1  r        notes/summaries/algebraic-and-complex-geometry/049-a-stable-coordinate-counterexample-in-four-variables.md
+              1  r        notes/summaries/algebraic-and-complex-geometry/050-counterexample-to-griffiths-positivity-conjecture.md
+              1  r        notes/summaries/algebraic-and-complex-geometry/052-integrability-of-split-tangent-bundles.md
+              1  r        notes/summaries/combinatorics/159-quasipolynomial-bounds-for-arithmetic-progressions.md
+              1  r        notes/summaries/convex-and-metric-geometry/087-the-mahler-conjectures-and-symplectic-width.md
+              1  r        notes/summaries/convex-and-metric-geometry/088-pettys-projection-volume-conjecture-and-simplex-counterexamples.md
+              1  r        notes/summaries/convex-and-metric-geometry/089-planar-and-bounded-treewidth-metrics-embed-into-l1.md
+              1  r        notes/summaries/convex-and-metric-geometry/098-a-negative-answer-to-the-lang-plaut-problem.md
+              1  r        notes/summaries/convex-and-metric-geometry/101-the-sharp-simplex-conjecture-for-isotropic-constants.md
+              1  r        notes/summaries/differential-geometry/334-a-smooth-surface-metric-with-no-local-immersion-in-r-3.md
+              1  r        notes/summaries/differential-geometry/342-donaldsons-tamed-to-compatible-conjecture.md
+              1  r        notes/summaries/differential-geometry/344-metric-blaschke-conjecture.md
+              1  r        notes/summaries/differential-geometry/345-infinitely-many-closed-geodesics-on-spheres-and-three-manifolds.md
+              1  r        notes/summaries/differential-geometry/346-sharp-singular-set-bounds-for-stationary-integral-varifolds.md
+              1  r        notes/summaries/differential-geometry/347-counterexamples-to-stable-morse-fixed-point-bounds.md
+              1  r        notes/summaries/differential-geometry/348-einstein-four-manifold-classification-and-l2-gap.md
+              1  r        notes/summaries/differential-geometry/349-the-solomon-yau-least-volume-conjecture.md
+              1  r        notes/summaries/differential-geometry/351-scalar-curvature-detects-four-dimensional-ricci-flow-singularities.md
+              1  r        notes/summaries/differential-geometry/352-finite-time-singularity-of-calabi-flow.md
+              1  r        notes/summaries/dynamical-systems-and-ergodic-theory/147-the-near-boundary-birkhoff-conjecture.md
+              1  r        notes/summaries/functional-analysis/324-lipschitz-equivalence-without-linear-isomorphism.md
+              1  r        notes/summaries/functional-analysis/325-complete-crouzeix-conjecture.md
+              1  r        notes/summaries/functional-analysis/331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md
+              1  r        notes/summaries/functional-analysis/332-metric-markov-cotype-two-for-l1.md
+              1  r        notes/summaries/group-theory/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md
+              1  r        notes/summaries/group-theory/258-gerstens-conjecture-for-one-relator-groups.md
+              1  r        notes/summaries/group-theory/259-a-group-without-fixed-price.md
+              1  r        notes/summaries/mathematical-logic/243-choiceless-counting-does-not-capture-polynomial-time.md
+              1  r        notes/summaries/mathematical-logic/244-partition-principle-does-not-imply-choice.md
+              1  r        notes/summaries/mathematical-physics/271-blochs-law-and-spontaneous-ferromagnetic-order.md
+              1  r        notes/summaries/mathematical-physics/274-moores-parity-conjecture-for-qac0.md
+              1  r        notes/summaries/number-theory/001-milnes-rationality-conjecture.md
+              1  r        notes/summaries/number-theory/002-full-birch-swinnerton-dyer-formula-from-low-selmer-corank.md
+              1  r        notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md
+              1  r        notes/summaries/number-theory/006-goldfelds-conjecture.md
+              1  r        notes/summaries/number-theory/007-two-point-chowla-and-the-corrected-binary-elliott-conjecture.md
+              1  r        notes/summaries/number-theory/010-fontaine-mazur-modularity-at-the-prime-2.md
+              1  r        notes/summaries/number-theory/011-the-ford-konyagin-luca-conjecture-on-prime-predecessors.md
+              1  r        notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md
+              1  r        notes/summaries/number-theory/016-zilber-pink-in-abelian-varieties-and-the-siegel-threefold.md
+              1  r        notes/summaries/number-theory/017-the-irrationality-exponent-of-pi-is-2.md
+              1  r        notes/summaries/number-theory/018-margulis-platonov-conjecture-over-global-fields.md
+              1  r        notes/summaries/number-theory/019-p-adic-section-conjecture.md
+              1  r        notes/summaries/operator-algebras/287-all-nonabelian-free-group-factors-are-isomorphic.md
+              1  r        notes/summaries/partial-differential-equations/362-global-smoothness-for-relativistic-vlasov-maxwell.md
+              1  r        notes/summaries/probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md
+              1  r        notes/summaries/probability-and-statistical-mechanics/226-the-curve-scaling-limit-of-half-plane-double-dimers.md
+              1  r        notes/summaries/real-and-complex-analysis/072-brennans-conjecture-and-a-counterexample-to-kraetzers-prediction.md
+              1  r        notes/summaries/theoretical-computer-science/102-unique-games-conjecture-and-optimal-approximation-thresholds.md
+              1  r        notes/summaries/theoretical-computer-science/109-integer-multiplication-below-n-n.md
+              1  r        notes/summaries/theoretical-computer-science/136-quasilinear-pcp-for-ppad-conjecture.md
+              1  r        notes/tables/abstracts.tsv
               1  r        notes/tables/catalog.tsv
+              1  r        notes/tables/citation.tsv
+              1  r        notes/tables/config-declaration.tsv
+              1  r        notes/tables/configs.tsv
+              1  r        notes/tables/conjecture-standing.tsv
+              1  r        notes/tables/families.tsv
+              1  r        notes/tables/family-config.tsv
+              1  r        notes/tables/family-lean.tsv
+              1  r        notes/tables/family-manuscript.tsv
+              1  r        notes/tables/family-name.tsv
+              1  r        notes/tables/family-topic.tsv
+              1  r        notes/tables/family-trace.tsv
+              1  r        notes/tables/formalization-deps.tsv
               1  r        notes/tables/gate-rows.tsv
+              1  r        notes/tables/lean-dirs.tsv
+              1  r        notes/tables/links.tsv
+              1  r        notes/tables/manuscripts.tsv
+              1  r        notes/tables/names.tsv
+              1  r        notes/tables/quotes.tsv
+              1  r        notes/tables/scope-notes.tsv
               1  r        notes/tables/sources.tsv
+              1  r        notes/tables/splits.tsv
+              1  r        notes/tables/subfindings.tsv
+              1  r        notes/tables/topics-rendered.tsv
               1  r        notes/tables/topics.tsv
+              1  r        notes/tables/traces.tsv
               1  r        notes/templates/discipline.md.j2
               1  r        notes/templates/family.md.j2
               1  r        notes/templates/index-readme.md.j2
@@ -6258,16 +6700,38 @@
               1  r        notes/templates/report/templates.md.j2
               1  r        notes/templates/report/topics.md.j2
               1  r        notes/templates/report/verification-dirs.md.j2
+              1  r        notes/templates/summaries/summary.md.j2
               1  r        notes/templates/topic.md.j2
 [probe2] scripts paths (count  modes  path):
+              1  r        notes/scripts/.gitignore
               1  r        notes/scripts/README.md
               1  r        notes/scripts/build_catalog.py
               1  r        notes/scripts/build_index.py
               1  r        notes/scripts/build_index_db.py
               1  r        notes/scripts/build_report_templates.py
               1  r        notes/scripts/build_sources.py
+              1  r        notes/scripts/build_summaries.py
+              1  r        notes/scripts/catlib/__init__.py
+              1  r        notes/scripts/catlib/anchors.py
+              1  r        notes/scripts/catlib/atomic.py
+              1  r        notes/scripts/catlib/bib.py
+              1  r        notes/scripts/catlib/layout.py
+              1  r        notes/scripts/catlib/ledger.py
+              1  r        notes/scripts/catlib/measure.py
+              1  r        notes/scripts/catlib/normalizer.py
+              1  r        notes/scripts/catlib/overview.py
               1  r        notes/scripts/catlib/paths.py
+              1  r        notes/scripts/catlib/preprints.py
+              1  r        notes/scripts/catlib/promote.py
+              1  r        notes/scripts/catlib/quotes.py
+              1  r        notes/scripts/catlib/records.py
+              1  r        notes/scripts/catlib/render.py
+              1  r        notes/scripts/catlib/splits.py
+              1  r        notes/scripts/catlib/summaries.py
               1  r        notes/scripts/catlib/templates.py
+              1  r        notes/scripts/catlib/text.py
+              1  r        notes/scripts/catlib/tsv.py
+              1  r        notes/scripts/catlib/yaml.py
               1  r        notes/scripts/check_gate_budget.py
               1  r        notes/scripts/check_index_links.py
               1  r        notes/scripts/check_summary_manuscripts.py
@@ -6281,13 +6745,18 @@
               1  r        notes/scripts/extract_scope_notes.py
               1  r        notes/scripts/extract_subfinding_pairs.py
               1  r        notes/scripts/extract_subfindings.py
+              1  r        notes/scripts/extract_summary_data.py
               1  r        notes/scripts/extract_t0_chains.py
               1  r        notes/scripts/extract_verification_348.py
               1  r        notes/scripts/extract_verification_dirs.py
               1  r        notes/scripts/gate.py
+              1  r        notes/scripts/gate_driver.sh
+              1  r        notes/scripts/gate_to_templates.sh
+              1  r        notes/scripts/lint_scripts.sh
               1  r        notes/scripts/locate_summary_quotes.py
               1  r        notes/scripts/measure_anchor_blocks.py
               1  r        notes/scripts/measure_check_calls.py
+              1  r        notes/scripts/measure_checker_costs.sh
               1  r        notes/scripts/measure_checker_needles.py
               1  r        notes/scripts/measure_checker_reads.py
               1  r        notes/scripts/measure_faithfulness.py
@@ -6308,11 +6777,43 @@
               1  r        notes/scripts/measure_templates.py
               1  r        notes/scripts/measure_topics.py
               1  r        notes/scripts/read_manuscript.py
-              1  r        notes/scripts/refresh_summary_line_counts.py
               1  r        notes/scripts/render_reports.py
               1  r        notes/scripts/run_tests.py
               1  r        notes/scripts/seed_quotes.py
+              1  r        notes/scripts/simulate_ledger_bump.sh
+              1  r        notes/scripts/tests/conftest.py
+              1  r        notes/scripts/tests/probes/test_split_subsequence.py
+              1  r        notes/scripts/tests/test_abstracts.py
+              1  r        notes/scripts/tests/test_atomic.py
+              1  r        notes/scripts/tests/test_cache_promotion.py
+              1  r        notes/scripts/tests/test_citations.py
+              1  r        notes/scripts/tests/test_conditional.py
+              1  r        notes/scripts/tests/test_conjecture_standing.py
+              1  r        notes/scripts/tests/test_counterexample_crosscheck.py
+              1  r        notes/scripts/tests/test_dependency_drift.py
+              1  r        notes/scripts/tests/test_faithfulness.py
+              1  r        notes/scripts/tests/test_findings.py
+              1  r        notes/scripts/tests/test_fleet_design.py
+              1  r        notes/scripts/tests/test_index_design.py
+              1  r        notes/scripts/tests/test_index_links.py
+              1  r        notes/scripts/tests/test_named_conjectures.py
+              1  r        notes/scripts/tests/test_named_results.py
+              1  r        notes/scripts/tests/test_normalizer.py
+              1  r        notes/scripts/tests/test_proof_density.py
+              1  r        notes/scripts/tests/test_prune_stale.py
+              1  r        notes/scripts/tests/test_quotes.py
+              1  r        notes/scripts/tests/test_scope_exclusions.py
+              1  r        notes/scripts/tests/test_script_ownership.py
+              1  r        notes/scripts/tests/test_sources.py
+              1  r        notes/scripts/tests/test_subfinding_pairs.py
+              1  r        notes/scripts/tests/test_subfindings.py
+              1  r        notes/scripts/tests/test_summaries.py
+              1  r        notes/scripts/tests/test_t0_chains.py
+              1  r        notes/scripts/tests/test_tsv_quoting.py
+              1  r        notes/scripts/tests/test_upstream_history.py
+              1  r        notes/scripts/tests/test_verification_dirs.py
               1  r        notes/scripts/triage_t0.py
+              1  r        notes/scripts/two_render_proof.sh
               1  r        notes/scripts/verify_abstracts.py
               1  r        notes/scripts/verify_cache_promotion.py
               1  r        notes/scripts/verify_citations.py

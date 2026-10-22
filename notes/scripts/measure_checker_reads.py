@@ -224,7 +224,7 @@ def import_closure(name: str) -> set[str]:
             continue
         seen.add(rel)
         src = script_path(cur).read_text(encoding="utf-8")
-        for m in re.finditer(r"^[ \t]*(?:from|import)\s+([\w.]+)(?:\s+import\s+(.+))?", src,
+        for m in re.finditer(r"^[ \t]*(?:from|import)\s+([\w.]+)(?:\s+import\s+([^\n#]+))?", src,
                              re.MULTILINE):
             pkg, names = m.group(1), m.group(2)
             # `from catlib import records as RC` names the package, not the module: the module is the
