@@ -18,7 +18,7 @@ gains from it, so it is a report, not development.
 
 `notes/index/` is the generated index — **1,033** pages, no tables; the **16** generated tables the index
 renders land in `notes/tables/`. `notes/summaries/` is **60** hand-written per-family pages.
-`notes/scripts/` is the **67**-script fleet, `notes/templates/` the **24** page skeletons the renderers
+`notes/scripts/` is the **74**-script fleet, `notes/templates/` the **27** page skeletons the renderers
 read, and `notes/scripts/README.md` the ownership manifest that says whose bytes every file under `notes/`
 is. This file is the single entry point: no `README.md` sits inside `reports/` or `development/`.
 
@@ -31,7 +31,8 @@ python3 notes/scripts/verify_summaries.py   # checks every citation in notes/sum
 python3 notes/scripts/run_tests.py notes/scripts/tests/test_summaries.py -q  # the extracted self-tests: 6 injected page corruptions, each asserted against the pass that owns it
 python3 notes/scripts/check_summary_manuscripts.py  # which manuscripts each summaries page reads, and whether the release still names them; report-only
 python3 notes/scripts/locate_summary_quotes.py <page.md> [page.md ...]  # where a quotation's text actually sits, when verify_summaries.py reports a miss; report-only
-python3 notes/scripts/refresh_summary_line_counts.py  # rewrites the Lines column of the Sources table in every summaries page
+python3 notes/scripts/extract_summary_data.py  # one-time bootstrap: reads the 60 family pages and writes the notes/data/summaries/ data files the summary renderer renders from; not a gate row — re-running would clobber the hand-edited prose
+python3 notes/scripts/build_summaries.py  # renders notes/summaries/ from the notes/data/summaries/ data files and the skeleton; a gate row, before seed_quotes.py so the render chain stays acyclic
 python3 notes/scripts/read_manuscript.py <preprints-dir>  # prints a manuscript's abstract, section skeleton and titled statement environments with file:line anchors (--limit N, --all, --sections-only)
 python3 notes/scripts/verify_conjecture_standing.py  # checks notes/tables/conjecture-standing.tsv against the ledger and overview.tex
 python3 notes/scripts/run_tests.py notes/scripts/tests/test_conjecture_standing.py -q  # the extracted self-tests: 6 injected defects in table text, each asserted against the pass that owns it
@@ -55,7 +56,7 @@ python3 notes/scripts/extract_subfinding_pairs.py  # lays out the pairing popula
 python3 notes/scripts/verify_subfinding_pairs.py  # checks notes/reports/subfinding-pairs.md against overview.tex
 python3 notes/scripts/run_tests.py notes/scripts/tests/test_subfinding_pairs.py -q  # the extracted self-tests: 8 injected faults (a paraphrase dressed as a quote, a clause anchor on the wrong line, a title id borrowed from another family, an id in both partitions, a title dropped from the partition, a stale Summary-table count, a block for a family outside the population, and a rejected-rule yield in prose altered), each asserted against the pass that owns it
 python3 notes/scripts/seed_quotes.py  # seeds notes/tables/quotes.tsv with the (path, start, end, head, tail, mode) spec for every pair-line quote in notes/reports/subfinding-pairs.md and every quoted span the 23 summaries pages carry, and resolves each spec back to the file its path names; --tsv prints the table, --check-only writes nothing
-python3 notes/scripts/measure_summaries_seed.py  # classifies the 2094 quoted spans the 61 summaries pages carry: 1948 raw-equal, 110 fold-equal, 36 not located, 661 single-line and 1397 across 2 to 26 lines; report-only, writes nothing
+python3 notes/scripts/measure_summaries_seed.py  # classifies the 2080 quoted spans the 61 summaries pages carry: 1538 raw-equal, 164 fold-equal, 378 not located, 604 single-line and 1098 across 2 to 26 lines; report-only, writes nothing
 python3 notes/scripts/run_tests.py notes/scripts/tests/test_quotes.py -q  # the extracted self-tests: 8 resolve faults (a head absent from the window, a tail that occurs only before the head, a line past the file's end, a window whose start is after its end, a unique head that bounds too long a span, a trailing `\qquad` that must join to one space, a tag inside a word the page spells plain, math the fold loses), 5 seed cases, the pinned two-surface population (236 pair specs, 925 summaries specs, 1,147 seeded, 14 measured negatives, the raw/folded/not-located split), and the seeded table on disk reproducing every page quote in its own class
 python3 notes/scripts/verify_conditional.py  # checks notes/reports/conditional.md against the Lean source it cites; report-only, writes nothing
 python3 notes/scripts/run_tests.py notes/scripts/tests/test_conditional.py -q  # the extracted self-tests: 6 injected faults (2 fenced-block faults, a dropped block anchor, a renamed anchor file, an altered prose quote, an altered inline citation), each asserted against the pass that owns it
