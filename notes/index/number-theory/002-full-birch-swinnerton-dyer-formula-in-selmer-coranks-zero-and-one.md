@@ -13,7 +13,7 @@
 | Claim shapes | density, uniform |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [curves](../topics/curves.md) · [arithmetic-geometry](../topics/arithmetic-geometry.md) · [elliptic-curves](../topics/elliptic-curves.md) |
 | Companion families | [006](../number-theory/006-goldfelds-conjecture.md) |
-| Summary page | [002-full-birch-swinnerton-dyer-formula-from-low-selmer-corank.md](../../../notes/summaries/number-theory/002-full-birch-swinnerton-dyer-formula-from-low-selmer-corank.md) |
+| Summary page | [002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md](../../../notes/summaries/number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md) |
 
 ## Manuscripts
 

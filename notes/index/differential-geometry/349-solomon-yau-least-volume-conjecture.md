@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [riemannian-geometry](../topics/riemannian-geometry.md) · [minimal-surfaces](../topics/minimal-surfaces.md) |
 | Companion families | — |
-| Summary page | [349-the-solomon-yau-least-volume-conjecture.md](../../../notes/summaries/differential-geometry/349-the-solomon-yau-least-volume-conjecture.md) |
+| Summary page | [349-solomon-yau-least-volume-conjecture.md](../../../notes/summaries/differential-geometry/349-solomon-yau-least-volume-conjecture.md) |
 
 ## Manuscripts
 

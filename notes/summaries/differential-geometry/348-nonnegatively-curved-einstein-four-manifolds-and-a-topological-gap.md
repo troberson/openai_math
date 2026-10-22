@@ -1,4 +1,4 @@
-Notes / Summaries / Differential geometry / [Family 348](../../index/differential-geometry/348-einstein-four-manifold-classification-and-l2-gap.md)
+Notes / Summaries / Differential geometry / [Family 348](../../index/differential-geometry/348-nonnegatively-curved-einstein-four-manifolds-and-a-topological-gap.md)
 
 # 348 — Nonnegatively curved Einstein four-manifolds and a topological gap
 

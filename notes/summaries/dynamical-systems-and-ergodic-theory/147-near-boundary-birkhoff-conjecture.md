@@ -1,4 +1,4 @@
-Notes / Summaries / Dynamical systems and ergodic theory / [Family 147](../../index/dynamical-systems-and-ergodic-theory/147-the-near-boundary-birkhoff-conjecture.md)
+Notes / Summaries / Dynamical systems and ergodic theory / [Family 147](../../index/dynamical-systems-and-ergodic-theory/147-near-boundary-birkhoff-conjecture.md)
 
 # 147 — The near-boundary Birkhoff conjecture
 

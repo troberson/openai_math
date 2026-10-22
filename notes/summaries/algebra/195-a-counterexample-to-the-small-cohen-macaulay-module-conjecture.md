@@ -1,4 +1,4 @@
-Notes / Summaries / Algebra / [Family 195](../../index/algebra/195-a-complete-local-domain-without-a-small-cohen-macaulay-module.md)
+Notes / Summaries / Algebra / [Family 195](../../index/algebra/195-a-counterexample-to-the-small-cohen-macaulay-module-conjecture.md)
 
 # 195 — A counterexample to the small Cohen--Macaulay module conjecture
 

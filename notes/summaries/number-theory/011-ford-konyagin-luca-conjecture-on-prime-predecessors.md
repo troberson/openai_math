@@ -1,4 +1,4 @@
-Notes / Summaries / Number theory / [Family 011](../../index/number-theory/011-the-ford-konyagin-luca-conjecture-on-prime-predecessors.md)
+Notes / Summaries / Number theory / [Family 011](../../index/number-theory/011-ford-konyagin-luca-conjecture-on-prime-predecessors.md)
 
 # 011 — The Ford--Konyagin--Luca conjecture on prime predecessors
 

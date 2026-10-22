@@ -1,4 +1,4 @@
-Notes / Summaries / Differential geometry / [Family 349](../../index/differential-geometry/349-the-solomon-yau-least-volume-conjecture.md)
+Notes / Summaries / Differential geometry / [Family 349](../../index/differential-geometry/349-solomon-yau-least-volume-conjecture.md)
 
 # 349 — The Solomon--Yau least-volume conjecture
 

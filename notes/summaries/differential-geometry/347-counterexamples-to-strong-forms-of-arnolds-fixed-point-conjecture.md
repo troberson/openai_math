@@ -1,4 +1,4 @@
-Notes / Summaries / Differential geometry / [Family 347](../../index/differential-geometry/347-counterexamples-to-stable-morse-fixed-point-bounds.md)
+Notes / Summaries / Differential geometry / [Family 347](../../index/differential-geometry/347-counterexamples-to-strong-forms-of-arnolds-fixed-point-conjecture.md)
 
 # 347 — Counterexamples to strong forms of Arnold's fixed-point conjecture
 

@@ -1,4 +1,4 @@
-Notes / Summaries / Functional analysis / [Family 332](../../index/functional-analysis/332-metric-markov-cotype-two-for-l1.md)
+Notes / Summaries / Functional analysis / [Family 332](../../index/functional-analysis/332-metric-markov-cotype-two-for-1.md)
 
 # 332 — Metric Markov cotype two for $\ell_1$
 

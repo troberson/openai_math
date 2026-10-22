@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [manifolds](../topics/manifolds.md) · [complex-geometry](../topics/complex-geometry.md) |
 | Companion families | — |
-| Summary page | [052-integrability-of-split-tangent-bundles.md](../../../notes/summaries/algebraic-and-complex-geometry/052-integrability-of-split-tangent-bundles.md) |
+| Summary page | [052-tangent-bundle-splittings-and-universal-covers.md](../../../notes/summaries/algebraic-and-complex-geometry/052-tangent-bundle-splittings-and-universal-covers.md) |
 
 ## Manuscripts
 

@@ -13,7 +13,7 @@
 | Claim shapes | uniform |
 | Topics | [diophantine-equations](../topics/diophantine-equations.md) |
 | Companion families | — |
-| Summary page | [017-the-irrationality-exponent-of-pi-is-2.md](../../../notes/summaries/number-theory/017-the-irrationality-exponent-of-pi-is-2.md) |
+| Summary page | [017-irrationality-exponent-of-is-2.md](../../../notes/summaries/number-theory/017-irrationality-exponent-of-is-2.md) |
 
 ## Manuscripts
 

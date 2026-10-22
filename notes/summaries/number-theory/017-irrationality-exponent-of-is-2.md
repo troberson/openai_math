@@ -1,4 +1,4 @@
-Notes / Summaries / Number theory / [Family 017](../../index/number-theory/017-the-irrationality-exponent-of-pi-is-2.md)
+Notes / Summaries / Number theory / [Family 017](../../index/number-theory/017-irrationality-exponent-of-is-2.md)
 
 # 017 — The irrationality exponent of $\pi$ is $2$
 

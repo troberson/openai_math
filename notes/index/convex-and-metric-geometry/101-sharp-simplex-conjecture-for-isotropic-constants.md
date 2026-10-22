@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound |
 | Topics | [convex-geometry](../topics/convex-geometry.md) |
 | Companion families | — |
-| Summary page | [101-the-sharp-simplex-conjecture-for-isotropic-constants.md](../../../notes/summaries/convex-and-metric-geometry/101-the-sharp-simplex-conjecture-for-isotropic-constants.md) |
+| Summary page | [101-sharp-simplex-conjecture-for-isotropic-constants.md](../../../notes/summaries/convex-and-metric-geometry/101-sharp-simplex-conjecture-for-isotropic-constants.md) |
 
 ## Manuscripts
 

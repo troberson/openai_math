@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [group-theory](../topics/group-theory.md) · [noncommutative-algebra](../topics/noncommutative-algebra.md) |
 | Companion families | — |
-| Summary page | [196-a-torsion-free-group-algebra-with-zero-divisors.md](../../../notes/summaries/algebra/196-a-torsion-free-group-algebra-with-zero-divisors.md) |
+| Summary page | [196-a-counterexample-to-kaplanskys-zero-divisor-conjecture.md](../../../notes/summaries/algebra/196-a-counterexample-to-kaplanskys-zero-divisor-conjecture.md) |
 
 ## Manuscripts
 

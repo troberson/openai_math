@@ -1,4 +1,4 @@
-Notes / Summaries / Mathematical physics / [Family 274](../../index/mathematical-physics/274-moores-parity-conjecture-for-qac0.md)
+Notes / Summaries / Mathematical physics / [Family 274](../../index/mathematical-physics/274-moores-parity-conjecture-for-qac-0.md)
 
 # 274 — Moore's parity conjecture for $\mathrm{QAC}^0$
 

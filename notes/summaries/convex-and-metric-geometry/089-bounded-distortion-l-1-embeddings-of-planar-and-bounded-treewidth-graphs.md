@@ -1,4 +1,4 @@
-Notes / Summaries / Convex and metric geometry / [Family 089](../../index/convex-and-metric-geometry/089-planar-and-bounded-treewidth-metrics-embed-into-l1.md)
+Notes / Summaries / Convex and metric geometry / [Family 089](../../index/convex-and-metric-geometry/089-bounded-distortion-l-1-embeddings-of-planar-and-bounded-treewidth-graphs.md)
 
 # 089 — Bounded-distortion $L_1$ embeddings of planar and bounded-treewidth graphs
 

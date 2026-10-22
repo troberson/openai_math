@@ -13,7 +13,7 @@
 | Claim shapes | partial |
 | Topics | [complexity-theory](../topics/complexity-theory.md) · [additive-combinatorics](../topics/additive-combinatorics.md) |
 | Companion families | — |
-| Summary page | [159-quasipolynomial-bounds-for-arithmetic-progressions.md](../../../notes/summaries/combinatorics/159-quasipolynomial-bounds-for-arithmetic-progressions.md) |
+| Summary page | [159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemeredi-bounds.md](../../../notes/summaries/combinatorics/159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemeredi-bounds.md) |
 
 ## Manuscripts
 

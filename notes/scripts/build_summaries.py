@@ -45,14 +45,21 @@ ENV = Environment(loader=FileSystemLoader(str(TPL_DIR)),
 
 
 def slugify(title: str) -> str:
-    """The index page's mechanical slug for a family title."""
-    t = title
+    """The index page's mechanical slug for a family title.
+
+    The order matters: NFKD before brace expansion, so that an escaped
+    character like `\\'e` is decomposed to `e` + combining accent, the
+    combining mark is stripped, and only then does the brace rule see the
+    clean letter. `build_index.slug` carries the same order; a summary
+    page whose slug diverges from the index page's slug is a dead
+    breadcrumb link.
+    """
+    import unicodedata
+    t = unicodedata.normalize("NFKD", title)
+    t = "".join(c for c in t if not unicodedata.combining(c))
     t = re.sub(r"\\[A-Za-z]{1,2}\{([^{}]*)\}", r"\1", t)
     t = t.replace("$", "").replace("'", "").replace("\u2019", "")
     t = re.sub(r"\\[A-Za-z]+\*?", "", t)
-    import unicodedata
-    t = unicodedata.normalize("NFKD", t)
-    t = "".join(c for c in t if not unicodedata.combining(c))
     t = re.sub(r"[^a-z0-9]+", "-", t.lower()).strip("-")
     return t.removeprefix("the-")
 
@@ -211,9 +218,12 @@ def render_page(fam: str, info: dict, data_text: str) -> tuple[str, str]:
     title = info["title"]
     ds = disc_slug(discipline)
 
-    sources, sections, slug, quotes = parse_data_file(data_text)
-    if not slug:
-        slug = slugify(title)
+    sources, sections, _stored_slug, quotes = parse_data_file(data_text)
+    # The slug is always derived from the ledger title, never from the data file's stored
+    # line: the data file's slug is a transcription and drifts from the index page's slug
+    # the moment the title changes. The index uses build_index.slug (NFKD-first); this
+    # slugify carries the same order, so a summary page's filename is its index page's.
+    slug = slugify(title)
 
     # Resolve quote tokens in each section body.
     resolved: dict[str, str] = {}
@@ -269,6 +279,7 @@ def main() -> int:
 
     problems = 0
     pages_written = 0
+    written: set[pathlib.Path] = set()
     for df in data_files:
         fam = df.stem  # e.g. "195"
         if fam not in fams:
@@ -281,6 +292,7 @@ def main() -> int:
         out = SUMM_DIR / disc_slug(info["discipline"]) / f"{fam}-{slug}.md"
         if not check_only:
             ST.stage(out, page_text)
+        written.add(out)
         pages_written += 1
         # Quick sanity: count unresolved tokens.
         unresolved = len(re.findall(r"\{\{\d+\}\}", page_text))
@@ -295,9 +307,21 @@ def main() -> int:
     if readme.is_file():
         if not check_only:
             ST.stage(readme, readme.read_text(encoding="utf-8"))
+        written.add(readme)
 
     if not check_only:
         ST.promote()
+        # A page whose title changed is written under a new slug, so the old page survives on
+        # disk and its breadcrumb link is dead. The tree is generated, so anything this build
+        # did not write is stale and is removed (the same sweep build_index.py runs over its tree).
+        stale = sorted(p for p in SUMM_DIR.rglob("*.md") if p not in written)
+        for p in stale:
+            p.unlink()
+        for d in sorted((x for x in SUMM_DIR.rglob("*") if x.is_dir()),
+                        key=lambda x: -len(x.parts)):
+            if not any(d.iterdir()):
+                d.rmdir()
+        print(f"stale swept       {len(stale)} files")
 
     print(f"pages rendered: {pages_written}")
     print(f"problems: {problems}")

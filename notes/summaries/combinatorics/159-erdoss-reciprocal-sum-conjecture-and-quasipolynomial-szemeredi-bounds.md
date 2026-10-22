@@ -1,4 +1,4 @@
-Notes / Summaries / Combinatorics / [Family 159](../../index/combinatorics/159-quasipolynomial-bounds-for-arithmetic-progressions.md)
+Notes / Summaries / Combinatorics / [Family 159](../../index/combinatorics/159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemeredi-bounds.md)
 
 # 159 — Erdős's reciprocal-sum conjecture and quasipolynomial Szemerédi bounds
 

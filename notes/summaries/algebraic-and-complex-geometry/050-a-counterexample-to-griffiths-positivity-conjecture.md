@@ -1,4 +1,4 @@
-Notes / Summaries / Algebraic and complex geometry / [Family 050](../../index/algebraic-and-complex-geometry/050-counterexample-to-griffiths-positivity-conjecture.md)
+Notes / Summaries / Algebraic and complex geometry / [Family 050](../../index/algebraic-and-complex-geometry/050-a-counterexample-to-griffiths-positivity-conjecture.md)
 
 # 050 — A counterexample to Griffiths' positivity conjecture
 

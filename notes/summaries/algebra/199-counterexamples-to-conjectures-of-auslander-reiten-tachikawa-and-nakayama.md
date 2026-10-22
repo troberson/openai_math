@@ -1,4 +1,4 @@
-Notes / Summaries / Algebra / [Family 199](../../index/algebra/199-counterexamples-to-conjectures-of-auslander-reiten-and-tachikawa.md)
+Notes / Summaries / Algebra / [Family 199](../../index/algebra/199-counterexamples-to-conjectures-of-auslander-reiten-tachikawa-and-nakayama.md)
 
 # 199 — Counterexamples to conjectures of Auslander--Reiten, Tachikawa, and Nakayama
 

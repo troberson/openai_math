@@ -1,4 +1,4 @@
-Notes / Summaries / Algebra / [Family 196](../../index/algebra/196-a-torsion-free-group-algebra-with-zero-divisors.md)
+Notes / Summaries / Algebra / [Family 196](../../index/algebra/196-a-counterexample-to-kaplanskys-zero-divisor-conjecture.md)
 
 # 196 — A counterexample to Kaplansky's zero-divisor conjecture
 

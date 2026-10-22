@@ -1,4 +1,4 @@
-Notes / Summaries / Number theory / [Family 002](../../index/number-theory/002-full-birch-swinnerton-dyer-formula-from-low-selmer-corank.md)
+Notes / Summaries / Number theory / [Family 002](../../index/number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md)
 
 # 002 — The full Birch--Swinnerton-Dyer formula in Selmer coranks zero and one
 

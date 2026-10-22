@@ -1,4 +1,4 @@
-Notes / Summaries / Algebraic and complex geometry / [Family 032](../../index/algebraic-and-complex-geometry/032-the-rational-hodge-conjecture-for-cm-abelian-varieties.md)
+Notes / Summaries / Algebraic and complex geometry / [Family 032](../../index/algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties.md)
 
 # 032 — The rational Hodge conjecture for CM abelian varieties
 

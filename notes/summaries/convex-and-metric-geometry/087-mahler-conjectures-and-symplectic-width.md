@@ -1,4 +1,4 @@
-Notes / Summaries / Convex and metric geometry / [Family 087](../../index/convex-and-metric-geometry/087-the-mahler-conjectures-and-symplectic-width.md)
+Notes / Summaries / Convex and metric geometry / [Family 087](../../index/convex-and-metric-geometry/087-mahler-conjectures-and-symplectic-width.md)
 
 # 087 — The Mahler conjectures and symplectic width
 

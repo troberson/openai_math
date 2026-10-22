@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [surfaces](../topics/surfaces.md) |
 | Companion families | — |
-| Summary page | [050-counterexample-to-griffiths-positivity-conjecture.md](../../../notes/summaries/algebraic-and-complex-geometry/050-counterexample-to-griffiths-positivity-conjecture.md) |
+| Summary page | [050-a-counterexample-to-griffiths-positivity-conjecture.md](../../../notes/summaries/algebraic-and-complex-geometry/050-a-counterexample-to-griffiths-positivity-conjecture.md) |
 
 ## Manuscripts
 

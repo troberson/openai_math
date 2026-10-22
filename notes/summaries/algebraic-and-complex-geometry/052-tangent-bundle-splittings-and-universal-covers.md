@@ -1,4 +1,4 @@
-Notes / Summaries / Algebraic and complex geometry / [Family 052](../../index/algebraic-and-complex-geometry/052-integrability-of-split-tangent-bundles.md)
+Notes / Summaries / Algebraic and complex geometry / [Family 052](../../index/algebraic-and-complex-geometry/052-tangent-bundle-splittings-and-universal-covers.md)
 
 # 052 — Tangent-bundle splittings and universal covers
 

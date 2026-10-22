@@ -1,4 +1,4 @@
-Notes / Summaries / Probability and statistical mechanics / [Family 226](../../index/probability-and-statistical-mechanics/226-the-curve-scaling-limit-of-half-plane-double-dimers.md)
+Notes / Summaries / Probability and statistical mechanics / [Family 226](../../index/probability-and-statistical-mechanics/226-double-dimer-cle-4-conjecture-in-the-half-plane.md)
 
 # 226 — The double-dimer $\mathrm{CLE}_4$ conjecture in the half-plane
 

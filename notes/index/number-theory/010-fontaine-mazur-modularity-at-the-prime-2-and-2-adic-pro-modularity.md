@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [primes](../topics/primes.md) · [representation-theory](../topics/representation-theory.md) · [modularity](../topics/modularity.md) |
 | Companion families | — |
-| Summary page | [010-fontaine-mazur-modularity-at-the-prime-2.md](../../../notes/summaries/number-theory/010-fontaine-mazur-modularity-at-the-prime-2.md) |
+| Summary page | [010-fontaine-mazur-modularity-at-the-prime-2-and-2-adic-pro-modularity.md](../../../notes/summaries/number-theory/010-fontaine-mazur-modularity-at-the-prime-2-and-2-adic-pro-modularity.md) |
 
 ## Manuscripts
 
