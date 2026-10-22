@@ -98,7 +98,7 @@ Before `math-o3a.2.1` the count was **0 matches** over **49** scripts and **14**
 opened its tracked target directly, so a crash mid-write left a half-written tracked file. Atomic
 promotion is now **2** sites, both in the package, and every writer's write goes through them —
 `catlib/tsv.py`'s four TSV writers, `catlib/promote.py`'s `promote()`, `build_index.py`'s page writer,
-`render_reports.py`'s 19 page writes, `build_report_templates.py`, `refresh_summary_line_counts.py` and
+`render_reports.py`'s 19 page writes, `build_report_templates.py` and
 `compare_abstracts.py --tsv` — so the count stays small by construction: two primitives, and no writer
 carries its own move.
 

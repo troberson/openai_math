@@ -53,8 +53,8 @@ which are pass E's contract, not the page's; and Pass A, which is written per pa
 findings. The page grammar (`ROW`, `CELL`, `MARKER`, `QUOTE`, `LINK`, `ENTITY`, `TAG`, `PAPDIR`), the
 `Page` class, the marker/unit joins, the two unit exemptions (`FORMAT_EXAMPLE`, `PRIOR`), the lenient
 `errors="replace"` read of a declared source, and the manuscript-ownership map are in
-`catlib/summaries.py`, shared with `locate_summary_quotes.py`, `refresh_summary_line_counts.py`,
-`check_summary_manuscripts.py`, `measure_summaries_seed.py` and `seed_quotes.py`.
+`catlib/summaries.py`, shared with `locate_summary_quotes.py`, `check_summary_manuscripts.py`
+and `seed_quotes.py`.
 """
 import argparse
 import functools

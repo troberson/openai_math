@@ -1200,8 +1200,6 @@ IL_SPLIT = {
 CHILDREN: dict[str, list[str]] = {
     "build_index": [sys.executable, str(ROOT / "notes" / "scripts" / "build_index.py"), "--check-only"],
     "extract_links": [sys.executable, str(ROOT / "notes" / "scripts" / "extract_links.py"), "--check-only"],
-    "measure_summaries_seed": [sys.executable, str(ROOT / "notes" / "scripts" / "measure_summaries_seed.py"),
-                            "--check-only"],
 }
 # A thread, not a `Popen` we hold: `subprocess.run` owns its process as a context manager, so the
 # launch site carries no open resource, and the thread blocks in the kernel wait, which releases the GIL.
@@ -3650,19 +3648,10 @@ def readme_full(p: dict[str, Any]) -> dict[str, str]:
         out[f"disc_row_{i + 1:02d}"] = (f"| {d} | {b['fams']} | {b['notes']} | {b['paps']} | "
                                         f"{b['form']} |")
     out["disc_sum"] = f"The columns sum to {fams} / {notes} / {paps} / {form}."
-    # The notes readme quotes the disk link scan, the render-time registry surplus, the summary
-    # pairings and the seed probe's span classification. Each is measured here so the page's
-    # numbers are the writer's, not literals the template carries.
+    # The notes readme quotes the disk link scan, the render-time registry surplus, and the summary
+    # pairings. Each is measured here so the page's numbers are the writer's, not literals the
+    # template carries.
     scan = CI.measure()
-    seed = {"pages": 0, "spans": 0, "raw": 0, "folded": 0, "none": 0, "single": 0, "multi": 0}
-    for ln in child_out("measure_summaries_seed").splitlines():
-        m = re.match(r"pages (\d+)  spans (\d+)  raw (\d+)  folded (\d+)  not located (\d+)", ln)
-        if m:
-            seed.update(pages=int(m.group(1)), spans=int(m.group(2)), raw=int(m.group(3)),
-                        folded=int(m.group(4)), none=int(m.group(5)))
-        m = re.match(r"single-line (\d+)  multi-line (\d+)", ln)
-        if m:
-            seed.update(single=int(m.group(1)), multi=int(m.group(2)))
     out["scan_links"] = (f"**{len(scan['links']):,}** links, **{len(scan['broken'])}** broken, "
                          f"**{scan['dir_links']:,}** of them resolving to a directory and "
                          f"**{scan['file_links']:,}** to a file")
@@ -3674,9 +3663,6 @@ def readme_full(p: dict[str, Any]) -> dict[str, str]:
     # surplus is its own slot: the writer measures it, the page does not carry a stale literal.
     out["surplus phrase"] = f"the {f(len(scan['links']) - b['checked'])}-link difference being registry"
     out["registry_links"] = f"Fresh report: **{b['checked']}** relative"
-    out["seed_line"] = (f"the {seed['spans']} quoted spans the {seed['pages']} summaries pages carry: "
-                        f"{seed['raw']} raw-equal, {seed['folded']} fold-equal, {seed['none']} not "
-                        f"located, {seed['single']} single-line and {seed['multi']} across 2 to 26 lines")
     out["trace_fams"] = "(" + ", ".join(tr) + ")"
     return out
 

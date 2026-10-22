@@ -205,7 +205,7 @@ def candidates(page: Page, unit: str, start_line: int, is_bq: bool) -> list[tupl
     A block quote is attributed by the citation on the line **above** it, walking back at most three
     lines and taking the first line that carries a usable citation; a prose unit is attributed by the
     markers inside it. A citation whose source is not in the table, or resolves to no file, is not a
-    candidate. This is the rule `verify_summaries.py` pass C, `locate_summary_quotes.py` and
+    candidate. This is the rule `verify_summaries.py`, `locate_summary_quotes.py` and
     `seed_quotes.py` all run, so a span one of them attributes is the span the others attribute.
     """
     if is_bq:

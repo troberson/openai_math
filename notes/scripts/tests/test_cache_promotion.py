@@ -31,9 +31,9 @@ pytestmark = pytest.mark.mutant
 
 # Faults in the registry structures the passes read, each keyed to the problem string it prints.
 REGISTRY_CASES = [
-    ("L1 entry the probe names removed", "L1 drift refresh_summary_line_counts.py",
-     lambda a, l, pg, ar: (a, {**l, "refresh_summary_line_counts.py":
-                               tuple(e for e in l["refresh_summary_line_counts.py"]
+    ("L1 entry the probe names removed", "L1 drift seed_quotes.py",
+     lambda a, l, pg, ar: (a, {**l, "seed_quotes.py":
+                               tuple(e for e in l["seed_quotes.py"]
                                    if e != "notes/reports/t0-triage.md")}, pg, ar)),
     ("L1 entry added that is a self-output", "L1 self-read: build_index.py",
      lambda a, l, pg, ar: (a, {**l, "build_index.py": l["build_index.py"] + ("notes/index/",)}, pg, ar)),

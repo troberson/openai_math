@@ -428,9 +428,7 @@ lives in this file and nowhere else.
   realized twice: the two notes-move probes moved from `.qwen/tmp/notes_move_probe.py` and
   `.qwen/tmp/notes_block_probe.py` to `notes/scripts/measure_move_surface.py` and
   `notes/scripts/measure_anchor_blocks.py`, and the gate does not run them because a pass re-runs them
-  by hand before and after each move. The quote-spec probe is the rule realized a third time:
-  `measure_summaries_seed.py` moved from `.qwen/tmp/measure_summaries_seed.py` and the gate does run
-  it, because its report is a function of the pages on disk.
+  by hand before and after each move.
   Scripts and generated files are **not** 1-to-1: of the **73** scripts, **18** write
   (`build_catalog.py`, `build_sources.py`, `build_index.py`, `compare_abstracts.py` — with `--tsv`
   only — `extract_formalization_deps.py`, `extract_links.py`, `extract_subfindings.py`,
@@ -474,10 +472,10 @@ lives in this file and nowhere else.
   nothing. Prove the mode by running a writer plain, then with the flag, diffing the two reports (the
   write announcement is the only line allowed to differ) and confirming `git status --porcelain` is
   unchanged by the flagged run. The read-only gate pool is the block that runs rows with this flag.
-- The whole-tree test is the gate list at `notes/scripts/gate.py`: **89** invocations — the **10**
+- The whole-tree test is the gate list at `notes/scripts/gate.py`: **87** invocations — the **10**
   gated writers (`build_report_templates.py` and `measure_open_probe.py` are the writers it does not
-  run), the 46 gated report-only rows (including `check_summary_manuscripts.py`,
-  `locate_summary_quotes.py` and `measure_summaries_seed.py`, `check_index_links.py` plain and its extracted self-tests row, and the
+  run), the 44 gated report-only rows (including `check_summary_manuscripts.py`,
+  `locate_summary_quotes.py`, `check_index_links.py` plain and its extracted self-tests row, and the
   twenty-six extracted self-tests rows, from
   `run_tests.py notes/scripts/tests/test_scope_exclusions.py -q` to
   `run_tests.py notes/scripts/tests/test_quotes.py -q` — the full list is in
@@ -498,8 +496,7 @@ lives in this file and nowhere else.
   builder's key must equal the bytes on the tracked path, and the key is computed from the current
   `git rev-parse HEAD:<path>` tree digests, so a key that no longer matches HEAD makes its records
   missing and the row fails. `notes/scripts/README.md` carries
-  the gate command for every row. `refresh_summary_line_counts.py` runs first among the checkers
-  because `verify_summaries.py` flags a stale `Lines` cell. One driver at a time, and stop it by
+  the gate command for every row. One driver at a time, and stop it by
   process group, never by PID. `notes/scripts/gate_driver.sh` runs the list once and writes the
   report, the md5 and `git status` snapshots, the failures file, the assertion row and the head diff
   under `.qwen/tmp/reports/`.
@@ -973,11 +970,9 @@ lives in this file and nowhere else.
 - The summaries pages carry three tools beyond `verify_summaries.py`: `check_summary_manuscripts.py`
   (which manuscripts each page reads, and whether the release still names them),
   `locate_summary_quotes.py <page.md>` (where a quotation's text actually sits, when
-  `verify_summaries.py` reports a miss), and `refresh_summary_line_counts.py` (rewrites the `Lines`
-  column of every page's Sources table after a manuscript changes — the realized case of the
-  computed-path rule above). `read_manuscript.py <preprints-dir>` prints a manuscript's abstract,
-  section skeleton, and titled statement environments with `file:line` anchors, and is the reading
-  entry point for a manuscript. All four write nothing.
+  `verify_summaries.py` reports a miss). `read_manuscript.py <preprints-dir>` prints a manuscript's
+  abstract, section skeleton, and titled statement environments with `file:line` anchors, and is
+  the reading entry point for a manuscript. All three write nothing.
 - Run `python3 notes/scripts/extract_links.py` once: `verify_cache_promotion.py` asserts that the bytes
   cached under its key equal the bytes on the TSV. Its report reconciles 22 rows, 426 link occurrences over 416 distinct configs,
   200 `main_results` entries over 189 unique configs in 136 families, 393 release-labelled bib
