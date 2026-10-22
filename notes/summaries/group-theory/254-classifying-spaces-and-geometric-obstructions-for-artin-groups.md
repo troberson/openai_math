@@ -2,6 +2,8 @@ Notes / Summaries / Group theory / [Family 254](../../index/group-theory/254-cla
 
 # 254 — Classifying spaces and geometric obstructions for Artin groups
 
+[Index page](../../index/group-theory/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md)
+
 ## Original CONTENTS.md summary
 
 [S1:595] carries the family entry:

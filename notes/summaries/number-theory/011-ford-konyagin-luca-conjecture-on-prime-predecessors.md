@@ -2,6 +2,8 @@ Notes / Summaries / Number theory / [Family 011](../../index/number-theory/011-f
 
 # 011 — The Ford--Konyagin--Luca conjecture on prime predecessors
 
+[Index page](../../index/number-theory/011-ford-konyagin-luca-conjecture-on-prime-predecessors.md)
+
 ## Original CONTENTS.md summary
 
 The release's own entry for this family reads [S1:266]:

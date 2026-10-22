@@ -2,6 +2,8 @@ Notes / Summaries / Probability and statistical mechanics / [Family 221](../../i
 
 # 221 — The Mézard--Parisi formula for diluted spin glasses
 
+[Index page](../../index/probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md)
+
 ## Original CONTENTS.md summary
 
 **221. The Mézard–Parisi formula for diluted spin glasses.** Proves the Mézard–Parisi hierarchical cavity formula for Poisson-diluted even-arity Ising models satisfying the Panchenko–Talagrand factorization and positivity assumptions, with only first-moment integrability. The limiting free energy equals the infimum over finite-depth hierarchical trial laws. This includes the Viana–Bray model, symmetric diluted even-spin models, and weighted soft even-*K* satisfiability. ([Lean](../../../lean/docs/221.md))

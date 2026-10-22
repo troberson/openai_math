@@ -2,6 +2,8 @@ Notes / Summaries / Algebra / [Family 196](../../index/algebra/196-a-counterexam
 
 # 196 — A counterexample to Kaplansky's zero-divisor conjecture
 
+[Index page](../../index/algebra/196-a-counterexample-to-kaplanskys-zero-divisor-conjecture.md)
+
 ## Original CONTENTS.md summary
 
 [S1:473] carries the family entry:

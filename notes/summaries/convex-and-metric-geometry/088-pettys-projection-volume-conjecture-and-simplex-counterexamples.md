@@ -2,6 +2,8 @@ Notes / Summaries / Convex and metric geometry / [Family 088](../../index/convex
 
 # 088 — Petty's projection-volume conjecture and simplex counterexamples
 
+[Index page](../../index/convex-and-metric-geometry/088-pettys-projection-volume-conjecture-and-simplex-counterexamples.md)
+
 ## Original CONTENTS.md summary
 
 [S1:252] carries the family entry:

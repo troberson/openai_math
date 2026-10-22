@@ -2,6 +2,8 @@ Notes / Summaries / Algebra / [Family 195](../../index/algebra/195-a-counterexam
 
 # 195 — A counterexample to the small Cohen--Macaulay module conjecture
 
+[Index page](../../index/algebra/195-a-counterexample-to-the-small-cohen-macaulay-module-conjecture.md)
+
 ## Original CONTENTS.md summary
 
 [S1:471] carries the family entry:

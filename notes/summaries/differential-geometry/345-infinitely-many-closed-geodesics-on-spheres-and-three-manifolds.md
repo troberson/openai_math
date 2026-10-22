@@ -2,6 +2,8 @@ Notes / Summaries / Differential geometry / [Family 345](../../index/differentia
 
 # 345 — Infinitely many closed geodesics on spheres and three-manifolds
 
+[Index page](../../index/differential-geometry/345-infinitely-many-closed-geodesics-on-spheres-and-three-manifolds.md)
+
 ## Original CONTENTS.md summary
 
 The release's blurb for family 345 [S1:8356]:

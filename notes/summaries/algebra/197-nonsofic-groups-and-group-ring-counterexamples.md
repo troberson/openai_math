@@ -2,6 +2,8 @@ Notes / Summaries / Algebra / [Family 197](../../index/algebra/197-nonsofic-grou
 
 # 197 — Nonsofic groups and group-ring counterexamples
 
+[Index page](../../index/algebra/197-nonsofic-groups-and-group-ring-counterexamples.md)
+
 ## Original CONTENTS.md summary
 
 **197. A torsion-free group algebra that is not directly finite.** Constructs a finitely presented torsion-free nonsofic group whose group algebra over 𝔽_2 is not directly finite, disproving Kaplansky's conjecture even without torsion. Companion examples give injective nonsurjective cellular automata on all configurations, refuting Gottschalk's surjunctivity conjecture. Another counterexample is an integral group-ring matrix, invertible over the rational group ring, with Fuglede–Kadison determinant strictly between zero and one, disproving the unrestricted Determinant Conjecture. ([Lean](../../../lean/docs/197.md))

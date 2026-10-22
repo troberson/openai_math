@@ -2,6 +2,8 @@ Notes / Summaries / Differential geometry / [Family 342](../../index/differentia
 
 # 342 — Donaldson's tamed-to-compatible conjecture
 
+[Index page](../../index/differential-geometry/342-donaldsons-tamed-to-compatible-conjecture.md)
+
 ## Original CONTENTS.md summary
 
 The catalog's blurb is two sentences and a scope-note link: "Proves Donaldson's tamed-to-compatible conjecture: every smooth almost complex structure on a closed four-manifold that is tamed by a symplectic form admits a compatible symplectic form. The almost complex structure stays fixed; the form's cohomology class may change." [S1:8304] The release's own entry list carries the identical two sentences, word for word, as the family's abstract text [S2:782].

@@ -2,6 +2,8 @@ Notes / Summaries / Number theory / [Family 006](../../index/number-theory/006-g
 
 # 006 — Goldfeld's conjecture
 
+[Index page](../../index/number-theory/006-goldfelds-conjecture.md)
+
 ## Original CONTENTS.md summary
 
 [S1:141] (family entry):

@@ -2,6 +2,8 @@ Notes / Summaries / Number theory / [Family 018](../../index/number-theory/018-m
 
 # 018 — The Margulis--Platonov conjecture over global fields
 
+[Index page](../../index/number-theory/018-margulis-platonov-conjecture-over-global-fields.md)
+
 ## Original CONTENTS.md summary
 
 [S1:504] (family entry):

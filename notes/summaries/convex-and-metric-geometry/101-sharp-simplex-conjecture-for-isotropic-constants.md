@@ -2,6 +2,8 @@ Notes / Summaries / Convex and metric geometry / [Family 101](../../index/convex
 
 # 101 — The sharp simplex conjecture for isotropic constants
 
+[Index page](../../index/convex-and-metric-geometry/101-sharp-simplex-conjecture-for-isotropic-constants.md)
+
 ## Original CONTENTS.md summary
 
 The release's blurb [S1:2486]:

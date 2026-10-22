@@ -2,6 +2,8 @@ Notes / Summaries / Differential geometry / [Family 351](../../index/differentia
 
 # 351 — Scalar curvature detects four-dimensional Ricci-flow singularities
 
+[Index page](../../index/differential-geometry/351-scalar-curvature-detects-four-dimensional-ricci-flow-singularities.md)
+
 ## Headline theorem
 
 The counterexample manuscript's main theorem is the flow itself [S7:69–78]:

@@ -2,6 +2,8 @@ Notes / Summaries / Number theory / [Family 007](../../index/number-theory/007-t
 
 # 007 — Two-point Chowla and the corrected binary Elliott conjecture
 
+[Index page](../../index/number-theory/007-two-point-chowla-and-the-corrected-binary-elliott-conjecture.md)
+
 ## Original CONTENTS.md summary
 
 [S1:166] (the family entry, first half):

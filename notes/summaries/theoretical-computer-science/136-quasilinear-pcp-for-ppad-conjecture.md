@@ -2,6 +2,8 @@ Notes / Summaries / Theoretical computer science / [Family 136](../../index/theo
 
 # 136 — The quasilinear PCP-for-PPAD conjecture
 
+[Index page](../../index/theoretical-computer-science/136-quasilinear-pcp-for-ppad-conjecture.md)
+
 ## Undergraduate summary
 
 PPAD is the class of search problems whose solutions are guaranteed by a

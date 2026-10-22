@@ -2,6 +2,8 @@ Notes / Summaries / Number theory / [Family 017](../../index/number-theory/017-i
 
 # 017 — The irrationality exponent of $\pi$ is $2$
 
+[Index page](../../index/number-theory/017-irrationality-exponent-of-is-2.md)
+
 ## Original CONTENTS.md summary
 
 The release lists one manuscript, dated September 24, 2026 [S4:5], and attributes a reasoning trace

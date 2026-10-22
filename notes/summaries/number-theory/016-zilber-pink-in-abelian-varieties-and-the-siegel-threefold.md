@@ -2,6 +2,8 @@ Notes / Summaries / Number theory / [Family 016](../../index/number-theory/016-z
 
 # 016 — Zilber--Pink in abelian varieties and the Siegel threefold
 
+[Index page](../../index/number-theory/016-zilber-pink-in-abelian-varieties-and-the-siegel-threefold.md)
+
 ## Original CONTENTS.md summary
 
 The release entry for the family is two sentences, and the second is quoted here in full [S1:445]: "It also proves the full curve case in the Siegel threefold". The entry names four manuscripts; the triage record files the family as a four-paper resolution [S22:129–130], and the release overview carries the same entry with the four manuscript links [S2:108].

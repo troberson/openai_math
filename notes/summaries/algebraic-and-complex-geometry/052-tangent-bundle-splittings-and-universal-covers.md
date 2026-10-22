@@ -2,6 +2,8 @@ Notes / Summaries / Algebraic and complex geometry / [Family 052](../../index/al
 
 # 052 — Tangent-bundle splittings and universal covers
 
+[Index page](../../index/algebraic-and-complex-geometry/052-tangent-bundle-splittings-and-universal-covers.md)
+
 ## Original CONTENTS.md summary
 
 [S1:180] carries the family entry:

@@ -2,6 +2,8 @@ Notes / Summaries / Number theory / [Family 019](../../index/number-theory/019-p
 
 # 019 — The $p$-adic section conjecture
 
+[Index page](../../index/number-theory/019-p-adic-section-conjecture.md)
+
 ## Original CONTENTS.md summary
 
 [S1:529]

@@ -2,6 +2,8 @@ Notes / Summaries / Functional analysis / [Family 324](../../index/functional-an
 
 # 324 — Lipschitz equivalence without linear isomorphism
 
+[Index page](../../index/functional-analysis/324-lipschitz-equivalence-without-linear-isomorphism.md)
+
 ## Original CONTENTS.md summary
 
 [S1:744] carries the family entry:

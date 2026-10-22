@@ -2,6 +2,8 @@ Notes / Summaries / Differential geometry / [Family 352](../../index/differentia
 
 # 352 — Finite-time singularity of Calabi flow
 
+[Index page](../../index/differential-geometry/352-finite-time-singularity-of-calabi-flow.md)
+
 ## Headline theorem
 
 The manuscript's main theorem is the counterexample itself [S8:20–28]:

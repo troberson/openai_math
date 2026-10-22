@@ -2,6 +2,8 @@ Notes / Summaries / Algebraic and complex geometry / [Family 050](../../index/al
 
 # 050 — A counterexample to Griffiths' positivity conjecture
 
+[Index page](../../index/algebraic-and-complex-geometry/050-a-counterexample-to-griffiths-positivity-conjecture.md)
+
 ## Original CONTENTS.md summary
 
 [S1:176] carries the family entry:

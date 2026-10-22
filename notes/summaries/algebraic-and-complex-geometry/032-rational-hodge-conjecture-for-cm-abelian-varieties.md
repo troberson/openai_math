@@ -2,6 +2,8 @@ Notes / Summaries / Algebraic and complex geometry / [Family 032](../../index/al
 
 # 032 — The rational Hodge conjecture for CM abelian varieties
 
+[Index page](../../index/algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties.md)
+
 ## Original CONTENTS.md summary
 
 [S1:755] (family entry):

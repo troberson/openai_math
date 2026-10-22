@@ -2,6 +2,8 @@ Notes / Summaries / Algebra / [Family 199](../../index/algebra/199-counterexampl
 
 # 199 — Counterexamples to conjectures of Auslander--Reiten, Tachikawa, and Nakayama
 
+[Index page](../../index/algebra/199-counterexamples-to-conjectures-of-auslander-reiten-tachikawa-and-nakayama.md)
+
 ## Original CONTENTS.md summary
 
 [S1:479] carries the family entry:

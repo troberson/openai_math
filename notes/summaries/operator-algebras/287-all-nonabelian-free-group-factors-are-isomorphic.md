@@ -2,6 +2,8 @@ Notes / Summaries / Operator algebras / [Family 287](../../index/operator-algebr
 
 # 287 — All nonabelian free group factors are isomorphic
 
+[Index page](../../index/operator-algebras/287-all-nonabelian-free-group-factors-are-isomorphic.md)
+
 ## Original CONTENTS.md summary
 
 **287. Isomorphism of the free group factors.** Resolves the free group factor isomorphism problem: $`L(\mathbb F_2)\cong L(\mathbb F_3)`$, and hence all interpolated free group factors, including $`L(\mathbb F_\infty)`$, are isomorphic. Their common factor has fundamental group $`\mathbb R_{\gt 0}`$. ([Lean](../../../lean/docs/287.md))

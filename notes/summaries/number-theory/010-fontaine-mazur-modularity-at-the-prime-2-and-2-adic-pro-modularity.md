@@ -2,6 +2,8 @@ Notes / Summaries / Number theory / [Family 010](../../index/number-theory/010-f
 
 # 010 — Fontaine--Mazur modularity at the prime $2$ and $2$-adic pro-modularity
 
+[Index page](../../index/number-theory/010-fontaine-mazur-modularity-at-the-prime-2-and-2-adic-pro-modularity.md)
+
 ## Original CONTENTS.md summary
 
 [S1:232]

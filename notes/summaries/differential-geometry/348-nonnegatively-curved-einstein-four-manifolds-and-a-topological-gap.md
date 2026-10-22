@@ -2,6 +2,8 @@ Notes / Summaries / Differential geometry / [Family 348](../../index/differentia
 
 # 348 — Nonnegatively curved Einstein four-manifolds and a topological gap
 
+[Index page](../../index/differential-geometry/348-nonnegatively-curved-einstein-four-manifolds-and-a-topological-gap.md)
+
 ## Original CONTENTS.md summary
 
 The release's blurb for family 348 [S1:8449]:

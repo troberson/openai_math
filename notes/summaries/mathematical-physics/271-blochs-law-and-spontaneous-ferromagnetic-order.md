@@ -2,6 +2,8 @@ Notes / Summaries / Mathematical physics / [Family 271](../../index/mathematical
 
 # 271 — Bloch's law and spontaneous ferromagnetic order
 
+[Index page](../../index/mathematical-physics/271-blochs-law-and-spontaneous-ferromagnetic-order.md)
+
 ## Original CONTENTS.md summary
 
 **271. Bloch's law, its lattice correction, and the spherical magnetization law.** Proves Bloch's *T*^(3/2) law with its exact coefficient for three-dimensional quantum Heisenberg ferromagnets at every positive quantum spin, allowing nonnegative symmetric finite-range couplings whose support generates ℤ^3. The thermodynamic limit precedes the zero-field derivative and low-temperature limit. The family also proves spontaneous magnetization for nearest-neighbor models in every dimension *d* ≥ 3 and determines the first lattice correction for three-dimensional nearest-neighbor couplings. ([Lean](../../../lean/docs/271.md))

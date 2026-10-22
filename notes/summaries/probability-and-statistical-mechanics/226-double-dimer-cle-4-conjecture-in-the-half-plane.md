@@ -2,6 +2,8 @@ Notes / Summaries / Probability and statistical mechanics / [Family 226](../../i
 
 # 226 — The double-dimer $\mathrm{CLE}_4$ conjecture in the half-plane
 
+[Index page](../../index/probability-and-statistical-mechanics/226-double-dimer-cle-4-conjecture-in-the-half-plane.md)
+
 ## Original CONTENTS.md summary
 
 The release's blurb [S1:5403]:

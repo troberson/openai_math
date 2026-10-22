@@ -2,6 +2,8 @@ Notes / Summaries / Differential geometry / [Family 344](../../index/differentia
 
 # 344 — The metric Blaschke conjecture
 
+[Index page](../../index/differential-geometry/344-metric-blaschke-conjecture.md)
+
 ## Original CONTENTS.md summary
 
 The release's blurb for family 344 [S1:8340]:

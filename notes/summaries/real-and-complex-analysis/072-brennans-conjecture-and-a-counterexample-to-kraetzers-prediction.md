@@ -2,6 +2,8 @@ Notes / Summaries / Real and complex analysis / [Family 072](../../index/real-an
 
 # 072 — Brennan's conjecture and a counterexample to Kraetzer's prediction
 
+[Index page](../../index/real-and-complex-analysis/072-brennans-conjecture-and-a-counterexample-to-kraetzers-prediction.md)
+
 ## Original CONTENTS.md summary
 
 [S1:218] carries the family entry:

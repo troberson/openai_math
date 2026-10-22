@@ -2,6 +2,8 @@ Notes / Summaries / Algebraic and complex geometry / [Family 049](../../index/al
 
 # 049 — A stable-coordinate counterexample in four variables
 
+[Index page](../../index/algebraic-and-complex-geometry/049-a-stable-coordinate-counterexample-in-four-variables.md)
+
 ## Original CONTENTS.md summary
 
 [S1:174] carries the family entry:

@@ -2,6 +2,8 @@ Notes / Summaries / Functional analysis / [Family 331](../../index/functional-an
 
 # 331 — Asymptotic midpoint uniform convexity without asymptotically uniformly convex renorming
 
+[Index page](../../index/functional-analysis/331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md)
+
 ## Original CONTENTS.md summary
 
 [S1:758] carries the family entry:

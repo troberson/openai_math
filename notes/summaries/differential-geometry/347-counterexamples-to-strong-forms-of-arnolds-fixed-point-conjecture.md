@@ -2,6 +2,8 @@ Notes / Summaries / Differential geometry / [Family 347](../../index/differentia
 
 # 347 — Counterexamples to strong forms of Arnold's fixed-point conjecture
 
+[Index page](../../index/differential-geometry/347-counterexamples-to-strong-forms-of-arnolds-fixed-point-conjecture.md)
+
 ## Original CONTENTS.md summary
 
 The release's blurb for family 347 [S1:8397]:

@@ -2,6 +2,8 @@ Notes / Summaries / Group theory / [Family 259](../../index/group-theory/259-a-g
 
 # 259 — A group without fixed price
 
+[Index page](../../index/group-theory/259-a-group-without-fixed-price.md)
+
 ## Original CONTENTS.md summary
 
 The release's blurb [S1:6383]:

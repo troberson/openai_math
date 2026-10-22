@@ -2,6 +2,8 @@ Notes / Summaries / Number theory / [Family 002](../../index/number-theory/002-f
 
 # 002 — The full Birch--Swinnerton-Dyer formula in Selmer coranks zero and one
 
+[Index page](../../index/number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md)
+
 ## Original CONTENTS.md summary
 
 The release's family entry, verbatim [S1:32]:

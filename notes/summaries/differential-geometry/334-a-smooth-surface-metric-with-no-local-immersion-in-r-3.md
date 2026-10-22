@@ -2,6 +2,8 @@ Notes / Summaries / Differential geometry / [Family 334](../../index/differentia
 
 # 334 — A smooth surface metric with no local immersion in $\mathbb R^3$
 
+[Index page](../../index/differential-geometry/334-a-smooth-surface-metric-with-no-local-immersion-in-r-3.md)
+
 ## Original CONTENTS.md summary
 
 The release's blurb for family 334 [S1:8136]:

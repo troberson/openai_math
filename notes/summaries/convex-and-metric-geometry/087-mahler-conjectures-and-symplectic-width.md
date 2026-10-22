@@ -2,6 +2,8 @@ Notes / Summaries / Convex and metric geometry / [Family 087](../../index/convex
 
 # 087 — The Mahler conjectures and symplectic width
 
+[Index page](../../index/convex-and-metric-geometry/087-mahler-conjectures-and-symplectic-width.md)
+
 ## Original CONTENTS.md summary
 
 The release entry is one paragraph long and names three results at once. Its opening sentence [S1:2127]:

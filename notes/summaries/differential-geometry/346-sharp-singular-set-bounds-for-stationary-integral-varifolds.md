@@ -2,6 +2,8 @@ Notes / Summaries / Differential geometry / [Family 346](../../index/differentia
 
 # 346 — Sharp singular-set bounds for stationary integral varifolds
 
+[Index page](../../index/differential-geometry/346-sharp-singular-set-bounds-for-stationary-integral-varifolds.md)
+
 ## Original CONTENTS.md summary
 
 The release's blurb for family 346 [S1:8372]:

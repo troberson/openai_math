@@ -2,6 +2,8 @@ Notes / Summaries / Mathematical logic / [Family 244](../../index/mathematical-l
 
 # 244 — The partition principle does not imply choice
 
+[Index page](../../index/mathematical-logic/244-partition-principle-does-not-imply-choice.md)
+
 ## Original CONTENTS.md summary
 
 [S1:573] carries the family entry:

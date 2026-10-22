@@ -2,6 +2,8 @@ Notes / Summaries / Algebraic and complex geometry / [Family 042](../../index/al
 
 # 042 — Oka classification for K3 surfaces and other compact complex surfaces
 
+[Index page](../../index/algebraic-and-complex-geometry/042-oka-classification-for-k3-surfaces-and-other-compact-complex-surfaces.md)
+
 ## Original CONTENTS.md summary
 
 [S1:162] carries the family entry and the manuscript entry:

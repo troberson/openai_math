@@ -2,6 +2,8 @@ Notes / Summaries / Algebra / [Family 198](../../index/algebra/198-a-counterexam
 
 # 198 — A counterexample to the little finitistic-dimension conjecture
 
+[Index page](../../index/algebra/198-a-counterexample-to-the-little-finitistic-dimension-conjecture.md)
+
 ## Original CONTENTS.md summary
 
 [S1:477] carries the family entry:

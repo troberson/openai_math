@@ -2,6 +2,8 @@ Notes / Summaries / Convex and metric geometry / [Family 089](../../index/convex
 
 # 089 — Bounded-distortion $L_1$ embeddings of planar and bounded-treewidth graphs
 
+[Index page](../../index/convex-and-metric-geometry/089-bounded-distortion-l-1-embeddings-of-planar-and-bounded-treewidth-graphs.md)
+
 ## Original CONTENTS.md summary
 
 [S1:254] carries the family entry:

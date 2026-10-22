@@ -2,6 +2,8 @@ Notes / Summaries / Number theory / [Family 004](../../index/number-theory/004-h
 
 # 004 — Hilbert's tenth problem over $\mathbb Q$
 
+[Index page](../../index/number-theory/004-hilberts-tenth-problem-over-q.md)
+
 ## Original CONTENTS.md summary
 
 The release entry for the family reads [S1:100]:

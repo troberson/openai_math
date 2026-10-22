@@ -2,6 +2,8 @@ Notes / Summaries / Number theory / [Family 014](../../index/number-theory/014-r
 
 # 014 — Restricted geometric Langlands, generic Ramanujan and Arthur parameters
 
+[Index page](../../index/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md)
+
 ## Original CONTENTS.md summary
 
 The release names the family "Restricted geometric Langlands, global Arthur enhancements, and generic Ramanujan" [S1:332]; the ledger title is the shorter "Restricted geometric Langlands, generic Ramanujan and Arthur parameters" [S43:15]. The entry opens [S1:332]:

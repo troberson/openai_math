@@ -2,6 +2,8 @@ Notes / Summaries / Functional analysis / [Family 325](../../index/functional-an
 
 # 325 — The complete Crouzeix conjecture
 
+[Index page](../../index/functional-analysis/325-complete-crouzeix-conjecture.md)
+
 ## Original CONTENTS.md summary
 
 [S1:746] carries the family entry:

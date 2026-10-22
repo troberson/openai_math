@@ -2,6 +2,8 @@ Notes / Summaries / Functional analysis / [Family 332](../../index/functional-an
 
 # 332 — Metric Markov cotype two for $\ell_1$
 
+[Index page](../../index/functional-analysis/332-metric-markov-cotype-two-for-1.md)
+
 ## Original CONTENTS.md summary
 
 The release's blurb [S1:8104]:

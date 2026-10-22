@@ -2,6 +2,8 @@ Notes / Summaries / Convex and metric geometry / [Family 098](../../index/convex
 
 # 098 — A negative answer to the Lang--Plaut problem
 
+[Index page](../../index/convex-and-metric-geometry/098-a-negative-answer-to-the-lang-plaut-problem.md)
+
 ## Original CONTENTS.md summary
 
 [S1:272] carries the family entry:

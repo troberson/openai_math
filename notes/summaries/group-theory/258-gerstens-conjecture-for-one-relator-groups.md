@@ -2,6 +2,8 @@ Notes / Summaries / Group theory / [Family 258](../../index/group-theory/258-ger
 
 # 258 — Gersten's conjecture for one-relator groups
 
+[Index page](../../index/group-theory/258-gerstens-conjecture-for-one-relator-groups.md)
+
 ## Original CONTENTS.md summary
 
 The release's blurb [S1:6349]:

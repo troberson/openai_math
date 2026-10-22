@@ -2,6 +2,8 @@ Notes / Summaries / Partial differential equations / [Family 362](../../index/pa
 
 # 362 — Global smoothness for relativistic Vlasov--Maxwell
 
+[Index page](../../index/partial-differential-equations/362-global-smoothness-for-relativistic-vlasov-maxwell.md)
+
 ## Original CONTENTS.md summary
 
 **362. Global smoothness for relativistic Vlasov–Maxwell.** Proves large-data global existence and uniqueness for the three-dimensional, one-species relativistic Vlasov–Maxwell system. Smooth admissible initial data may be arbitrary provided the particle density is compactly supported and the electromagnetic fields have finite energy and bounded derivatives of every order; the solution remains smooth on every finite time interval. ([Lean](../../../lean/docs/362.md))

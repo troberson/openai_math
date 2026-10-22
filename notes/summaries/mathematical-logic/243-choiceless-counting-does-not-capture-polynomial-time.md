@@ -2,6 +2,8 @@ Notes / Summaries / Mathematical logic / [Family 243](../../index/mathematical-l
 
 # 243 — Choiceless counting does not capture polynomial time
 
+[Index page](../../index/mathematical-logic/243-choiceless-counting-does-not-capture-polynomial-time.md)
+
 ## Original CONTENTS.md summary
 
 [S1:571] carries the family entry:

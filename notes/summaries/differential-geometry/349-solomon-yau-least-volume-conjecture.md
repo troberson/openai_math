@@ -2,6 +2,8 @@ Notes / Summaries / Differential geometry / [Family 349](../../index/differentia
 
 # 349 — The Solomon--Yau least-volume conjecture
 
+[Index page](../../index/differential-geometry/349-solomon-yau-least-volume-conjecture.md)
+
 ## Original CONTENTS.md summary
 
 The release's blurb for family 349 [S1:8483]:

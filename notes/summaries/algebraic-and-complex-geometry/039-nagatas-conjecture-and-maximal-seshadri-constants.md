@@ -2,6 +2,8 @@ Notes / Summaries / Algebraic and complex geometry / [Family 039](../../index/al
 
 # 039 — Nagata's conjecture and maximal Seshadri constants
 
+[Index page](../../index/algebraic-and-complex-geometry/039-nagatas-conjecture-and-maximal-seshadri-constants.md)
+
 ## Original CONTENTS.md summary
 
 [S1:156] carries the family entry:

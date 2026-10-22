@@ -2,6 +2,8 @@ Notes / Summaries / Algebraic and complex geometry / [Family 047](../../index/al
 
 # 047 — Complex counterexamples to cancellation and affine fibrations
 
+[Index page](../../index/algebraic-and-complex-geometry/047-complex-counterexamples-to-cancellation-and-affine-fibrations.md)
+
 ## Original CONTENTS.md summary
 
 [S1:170] carries the family entry:

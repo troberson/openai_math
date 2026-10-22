@@ -2,6 +2,8 @@ Notes / Summaries / Number theory / [Family 001](../../index/number-theory/001-m
 
 # 001 — Milne's rationality conjecture
 
+[Index page](../../index/number-theory/001-milnes-rationality-conjecture.md)
+
 ## Original CONTENTS.md summary
 
 [S1:16] (family entry):
