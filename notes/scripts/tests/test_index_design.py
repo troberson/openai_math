@@ -36,14 +36,14 @@ exceeds the unique config count. The census counts are pinned as **walk equaliti
 population's count must equal the walk — 749 preprint dirs, 122,458 `.lean` files, 1,033 index pages,
 16 index tables, 11 trace files folding to 10 distinct stems. The figures that stay literal are the ones
 neither the join nor a file walk can produce: 9 anchors, 3 block lines, 84 count and byte phrases, 0
-sync problems, 2,560 nodes over 3,415 resolved
-edges (17,217 raw), 391 citation edges over 104 cross-family, 242
-scope notes, 559 module dirs, 17 disciplines against 23 Lean
-dirs, 30 verification bundles, 521 `.bib` files with 13,802 entries and 393
-hrefs, the ledger set at 297,043 B against the all-TSV 2,902,943 B, 66,115 disk links with 0 broken and
-17,700 resolving to a directory, the index tree at 11,531,073 B, and the substring counts 18 / 373
-against the brace-qualified 17 / 372. A page with fewer anchors, block lines or phrases is a pass that
-stopped checking, not a pass that passed.
+sync problems, 2,560 nodes over 3,415 resolved edges (17,217 raw), 391 citation edges over
+104 cross-family, 242 scope notes, 559 module dirs, 17 disciplines against 23 Lean dirs, 30
+verification bundles, 521 `.bib` files with 13,802 entries and 393 hrefs, 66,115 disk links with 0
+broken and 17,700 resolving to a directory, over 1,033 index pages, and the substring counts 18 / 373
+against the brace-qualified 17 / 372. The byte sums are not literals: the test re-derives the
+ledger-set and all-TSV totals by walking `notes/tables/*.tsv` on disk and requires the index-tree
+total to be positive, so they move with a re-seed and the disk walk is the test. A page with fewer
+anchors, block lines or phrases is a pass that stopped checking, not a pass that passed.
 
 `test_ledger_joins_fire_on_faults_the_literals_miss` proves the joins are the witness: a `paps_form`
 decrement breaks the formalized join and a `paps` decrement breaks the manuscript join, and neither

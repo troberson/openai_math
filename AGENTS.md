@@ -142,7 +142,8 @@ lives in this file and nowhere else.
   `notes/README.md` comes from.
 - Render the index with `python3 notes/scripts/build_index.py` — it imports the joins from
   `build_catalog.py` and the name measurement from `measure_names.py`, writes `notes/index/`
-  (1,033 pages + 16 tables, 15M), and prints the report every count in it comes from. There is
+  (1,033 pages + 16 tables; the tree's byte total is in the report, not transcribed here), and
+  prints the report every count in it comes from. There is
   **no manuscript→Lean edge in the release**: `formalization.yaml`
   carries `sources:` (manuscripts) and `main_results:` (config/declaration/file triples) as two flat
   lists with nothing linking them, so the index renders the chain the yaml does support — family →
@@ -639,9 +640,10 @@ lives in this file and nowhere else.
 - Run `python3 notes/scripts/extract_subfinding_pairs.py` twice and diff: the report must be identical.
 - Run `python3 notes/scripts/measure_index_sizes.py` twice and diff: the report must be identical. It
   writes nothing, and every count in `notes/development/index-design.md` comes from it. It prints two byte sums
-  that are not interchangeable — `ledger set bytes (5 named TSVs)` **297043** and
-  `all notes/tables/*.tsv bytes` **2902943** — and an INDEX section whose table row counts are read from the
-  generated files under `notes/index/`, not derived from the upstream counts they were built from.
+  that are not interchangeable — `ledger set bytes (5 named TSVs)` and
+  `all notes/tables/*.tsv bytes` — quoted with the rule, never as a value in this doc: a TSV re-seed moves
+  them, and only the report and the page carry the figure. Its INDEX section reads its table row counts from
+  the generated files under `notes/index/`, not from the upstream counts they were built from.
 - Check `notes/development/index-design.md` with `python3 notes/scripts/verify_index_design.py` before quoting the
   schema — it resolves every backticked `path:line` anchor of any extension (a mistyped
   extension fails, it is not skipped), matches each fenced block against the nearest preceding anchor,
@@ -668,11 +670,11 @@ lives in this file and nowhere else.
   problems, 2,560 nodes over 3,415
   resolved edges (17,217 raw), 391 citation edges over 104 cross-family, 242 scope notes, 559 module dirs,
   17
-  disciplines against 23 Lean dirs, 30 verification bundles, 521 `.bib` files
-  with 13,802 entries and 393 hrefs, the ledger set at 297,043 B against the all-TSV 2,902,943 B, the
-  index tree at 11,531,073 B over 1,033 pages, 66,115
-  disk links with 0 broken and 17,700 resolving to a directory, and the substring counts 18 / 373
-  against the brace-qualified 17 / 372. `test_ledger_joins_fire_on_faults_the_literals_miss` proves a
+  disciplines against 23 Lean dirs, 30 verification bundles, 521 `.bib` files with 13,802 entries and
+  393 hrefs, over 1,033 index pages; the two byte sums (ledger set and all-TSV) and the index tree
+  total are re-derived by a disk walk in the test, not pinned here; 66,115 disk links with 0 broken
+  and 17,700 resolving to a directory, and the substring counts 18 / 373 against the brace-qualified
+  17 / 372. `test_ledger_joins_fire_on_faults_the_literals_miss` proves a
   `paps_form` and a `paps` decrement break the joins while every page pass stays silent. `main()` reads no argv, so `--mutant` is inert, and
   `population()` is under `functools.cache` (`:66`), so the fifteen `check()` calls the row makes pay
   the index-tree walk once. It writes nothing.
