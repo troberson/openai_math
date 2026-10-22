@@ -218,16 +218,44 @@ def writer_targets(src: str) -> list[str]:
     consts = path_constants()
     scan = strip_selftest(src)
     targets = set()
+    trees = set()
+
+    def hop_base(var: str) -> str | None:
+        """Resolve `var = BASE / ...` to BASE's notes-const.
+
+        The receiver may build the path by a single join (`out = TPL_DIR / (name)`) or by a run of
+        joins (`out = SUMM_DIR / disc_slug(...) / f"{fam}-{slug}.md"`). The base is the first
+        component; a further `/` in the tail means the writer stages a TREE under the base, so the
+        target is the directory form. Requiring a `(` immediately after the first `/` (the old rule)
+        reads the two-join case as a write of nothing — the gap the summary renderer exposed.
+        """
+        m = re.search(rf"^\s*{var}\s*=\s*([A-Za-z_]\w*)\s*/(.*)$", src, re.MULTILINE)
+        if not m:
+            return None
+        base = notes_const(src, m.group(1))
+        if base and "/" in m.group(2):
+            trees.add(base)
+        return base
+
     for var in re.findall(r'([A-Za-z_]\w*)\.(?:open\([^)]*"w"[^)]*\)|write_text\()', scan):
         direct = notes_const(src, var)
         if direct:
             targets.add(direct)
             continue
-        hop = re.search(rf"^\s*{var}\s*=\s*([A-Za-z_]\w*)\s*/\s*\(", src, re.MULTILINE)
-        if hop:
-            base = notes_const(src, hop.group(1))
-            if base:
-                targets.add(base)
+        base = hop_base(var)
+        if base:
+            targets.add(base)
+    # The receiver bound to a name first (`out = TPL_DIR / (name)`) is covered above; this is the
+    # inline constructed path — `(DATA_DIR / f"{fam}.md").write_text(...)` — where the write target
+    # is a join, not a name. The base is the first identifier inside the parentheses, and a further
+    # `/` after it means the writer stages files under the base's directory, so the target is the tree.
+    for base in re.findall(
+        r'\(\s*([A-Za-z_]\w*)\s*/[^)]*\)\s*\.(?:open\([^)]*"w"[^)]*\)|write_text\()', scan
+    ):
+        path = notes_const(src, base)
+        if path:
+            targets.add(path)
+            trees.add(path)
     for const in re.findall(r'\b\w+\.write_\w+\(\s*([A-Za-z_]\w*)\b', src):
         # The script may define the constant itself (`OUT = ROOT / "notes" / "tables" / "catalog.tsv"`), alias
         # the package constant (`OUT = SOURCES_TSV`), or name a package constant directly.
@@ -252,20 +280,20 @@ def writer_targets(src: str) -> list[str]:
         if consts.get(key):
             targets.add(consts[key])
             continue
-        hop = re.search(rf"^\s*{var}\s*=\s*([A-Za-z_]\w*)\s*/\s*\(", src, re.MULTILINE)
-        if hop:
-            base = notes_const(src, hop.group(1))
-            if base:
-                targets.add(base)
+        base = hop_base(var)
+        if base:
+            targets.add(base)
     for rec in re.findall(r'\bcached\(\s*[A-Za-z_]\w*\s*,\s*"([^"]+)"', scan):
         targets.add(RECORD_PREFIX + rec)
     if re.search(r'^\w+\s*=\s*\w+\s*/\s*"notes"\s*/\s*"index"', src, re.MULTILINE) and re.search(
         r"^def write\(", src, re.MULTILINE
     ):
-        targets.add("notes/index/")
-    # The index tree is one target: the constant reads `notes/index` and the tree rule reads
-    # `notes/index/`, and the page's writers table carries the directory form.
-    return sorted({"notes/index/" if t == "notes/index" else t for t in targets})
+        # The index tree is one target: the constant reads `notes/index` and the page's writers
+        # table carries the directory form, so the base is flagged a tree.
+        targets.add("notes/index")
+        trees.add("notes/index")
+    # A base the writer stages a tree under is the directory: notes/summaries -> notes/summaries/.
+    return sorted(t + "/" if t in trees else t for t in targets)
 
 
 def writers():
@@ -508,7 +536,12 @@ def check(text):
     # B/C. census
     files = population()
     index = [f for f in files if "index" in f.parts]
-    summaries = [f for f in files if "summaries" in f.parts]
+    # `summaries` keys on the notes/-relative first part, not a substring over all parts: the
+    # data files under notes/data/summaries/ carry the name in a deeper part, and the template
+    # under notes/templates/summaries/ is owned by `templates`, so a substring rule over-matches
+    # both. `data` is the renderer's hand-maintained input tree, a rule of its own.
+    summaries = [f for f in files if f.relative_to(NOTES).parts[:1] == ("summaries",)]
+    data = [f for f in files if f.relative_to(NOTES).parts[:1] == ("data",)]
     templates = [f for f in files if "templates" in f.parts]
     uphist = [f for f in files if "upstream_history" in f.parts]
     probe = [f for f in files if "probe" in f.parts]
@@ -516,8 +549,8 @@ def check(text):
     dev = [f for f in files if f.parent == DEV_DIR]
     reports = [f for f in files if f.parent == REPORTS_DIR]
     top = [f for f in files if f.parent == NOTES]
-    owned = (set(index) | set(summaries) | set(templates) | set(uphist) | set(probe) | set(tables)
-             | set(dev) | set(reports) | set(top))
+    owned = (set(index) | set(summaries) | set(data) | set(templates) | set(uphist) | set(probe)
+             | set(tables) | set(dev) | set(reports) | set(top))
     for f in files:
         if f not in owned:
             p.append(f"file under notes/ owned by no rule: {f.relative_to(ROOT)}")
@@ -559,6 +592,7 @@ def check(text):
     expect = {
         "notes/index/": len(index),
         "notes/summaries/": len(summaries),
+        "notes/data/": len(data),
         "notes/templates/": len(templates),
         "notes/development/*.md": len(dev_md),
         "notes/development/upstream_history/": len(uphist),

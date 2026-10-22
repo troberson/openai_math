@@ -2529,6 +2529,9 @@ def ownership_population() -> dict[str, Any]:
         "index_pages": len(list(INDEX_DIR.rglob("*.md"))),
         "index_tables": index_tables,
         "sum_pages": len(list(SUM_DIR.rglob("*.md"))),
+        # The renderer's hand-maintained input tree, one data file per family page. Its own census
+        # rule, distinct from notes/summaries/ (the pages it renders) and notes/templates/.
+        "data_files": len([p for p in (NOTES_DIR / "data").rglob("*") if p.is_file()]),
         # The checker compares the two trees by basename, so the shared-slug count is the
         # intersection of the basenames, not of the families: each tree carries its own README.md.
         "slug_share": len({q.name for q in INDEX_DIR.rglob("*.md")}
@@ -2540,7 +2543,9 @@ def ownership_population() -> dict[str, Any]:
         "reorg_pages": len(MS.pages()),
         "key_hex": records.KEY_LEN,
         "named_before": named_before(),
-        "skels": len(list(SKEL_DIR.glob("*.j2"))),
+        # All template files outside report/: the 5 index skeletons plus the summaries skeleton
+        # under summaries/. A top-level glob misses the subdirectory entries.
+        "skels": len([p for p in SKEL_DIR.rglob("*.j2") if p.parent != TPL]),
         "report_tpls": len(list(TPL.glob("*.j2"))),
         "dev_md": len(list(DEV_DIR.glob("*.md"))),
         "upstream": len([p for p in UPSTREAM_DIR.iterdir() if p.is_file()]),
@@ -2758,6 +2763,9 @@ def ownership_phrases(p: dict[str, Any]) -> dict[str, str]:
         "census_summaries": f"| `notes/summaries/` | **{p['sum_pages']}** | hand-written — the reading "
                             f"record: {p['sum_pages'] - 1} family pages and the link-only index page "
                             "`README.md` |",
+        "census_data": f"| `notes/data/` | **{p['data_files']}** | the summary renderer's input: one "
+                       f"data file per family page — the sources, quote spans and sections "
+                       "`build_summaries.py` renders `notes/summaries/` from |",
         "census_templates": f"| `notes/templates/` | **{p['skels'] + p['report_tpls']}** | **{p['skels']}** "
                             f"hand-written index skeletons + **{p['report_tpls']}** report templates built "
                             "by `build_report_templates.py` |",
