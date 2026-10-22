@@ -1,4 +1,4 @@
-Notes / Summaries / Algebraic and complex geometry / [Family 047](../../index/algebraic-and-complex-geometry/047-complex-counterexamples-to-cancellation-and-affine-fibrations.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Algebraic and complex geometry](../../index/disciplines/algebraic-and-complex-geometry.md) / [Family 047](../../index/algebraic-and-complex-geometry/047-complex-counterexamples-to-cancellation-and-affine-fibrations.md)
 
 # 047 — Complex counterexamples to cancellation and affine fibrations
 
@@ -8,7 +8,7 @@ Notes / Summaries / Algebraic and complex geometry / [Family 047](../../index/al
 
 [S1:170] carries the family entry:
 
-> Constructs an integral complex affine fourfold $X\not\cong\mathbb A^4$ with $X\times\mathbb A^1\cong\mathbb A^5$, disproving affine-space cancellation over $\mathbb C$ in dimension four. It also disproves the Dolgachev--Weisfeiler affine-fibration conjecture: smooth surjections $X\to\mathbb A^1$ and $\mathbb A^5\to\mathbb A^2$ have every residue-field fiber isomorphic to affine three-space but are not Zariski-locally trivial.
+> Constructs an integral complex affine fourfold $X\not\cong\mathbb A^4$ with $X\times\mathbb A^1\cong\mathbb A^5$, disproving affine-space cancellation over $\mathbb C$ in dimension four. It also disproves the Dolgachev–Weisfeiler affine-fibration conjecture: smooth surjections $X\to\mathbb A^1$ and $\mathbb A^5\to\mathbb A^2$ have every residue-field fiber isomorphic to affine three-space but are not Zariski-locally trivial.
 
 The entry links the manuscript as "An explicit failure of complex affine-space cancellation" [S1:170].
 
@@ -20,7 +20,7 @@ The README dates it September 23, 2026 [S2:5].
 
 The Zariski cancellation problem asks whether an affine variety is determined by its cylinder. Over the complex numbers, the algebraic form is: if adjoining one polynomial variable turns a finitely generated algebra $A$ into a polynomial ring, is $A$ itself a polynomial ring?
 
-The manuscript's abstract states the answer. [S3:9–17] says: "We construct an explicit integral complex affine fourfold $X$ with $X\times\mathbb A^1\cong\mathbb A^5$ but $X\not\cong\mathbb A^4$. This gives a negative answer to Zariski's affine-space cancellation problem over $\mathbb C$ in dimension four. The same construction disproves the Stable Coordinate Conjecture in ambient dimension five and yields smooth $\mathbb A^3$-fibrations over $\mathbb A^1$ and $\mathbb A^2$ that are not Zariski-locally trivial. These fibrations disprove the Dolgachev--Weisfeiler affine-fibration conjecture over these bases."
+The manuscript's abstract states the answer. [S3:9–17] says: "We construct an explicit integral complex affine fourfold $X$ with $X\times\mathbb A^1\cong\mathbb A^5$ but $X\not\cong\mathbb A^4$. This gives a negative answer to Zariski's affine-space cancellation problem over $\mathbb C$ in dimension four. The same construction disproves the Stable Coordinate Conjecture in ambient dimension five and yields smooth $\mathbb A^3$-fibrations over $\mathbb A^1$ and $\mathbb A^2$ that are not Zariski-locally trivial. These fibrations disprove the Dolgachev–Weisfeiler affine-fibration conjecture over these bases."
 
 The main theorem names the algebra. [S6:61–69] gives it: "The algebra $A$ in   is an integral complex algebra of dimension four. For an independent variable $w$, \[ A[w]\simeq\kk\poly5, \qquad A\not\simeq\kk\poly4. \] Consequently the Zariski cancellation problem over the complex numbers has a negative answer in dimension four."
 
@@ -38,7 +38,7 @@ An isomorphism of cylinders need not respect the projection. [S6:18–20] states
 
 Cancellation for the affine line is settled. [S6:22–23] records it: "Cancellation for the affine line follows from the work of Abhyankar, Heinzer, and Eakin"
 
-The characteristic-zero problem in higher dimension is listed as open. [S6:37–38] records it: "The characteristic-zero problem in dimensions at least three is still listed as open in Gaifullin--Petrov's July 2026"
+The characteristic-zero problem in higher dimension is listed as open. [S6:37–38] records it: "The characteristic-zero problem in dimensions at least three is still listed as open in Gaifullin–Petrov's July 2026"
 
 The stabilization belongs to the theory of residual and stable coordinates. [S6:73–79] states it: "The stabilization belongs to the theory of residual and stable coordinates. A polynomial in $\kk[p]\poly4$ is a _residual coordinate_ if its image is a polynomial coordinate over the residue field of every prime of $\kk[p]$; it is _one-stably a coordinate_ if it becomes a coordinate after adjoining one variable. Our $H$ is a residual coordinate: it is a coordinate after inverting $p$, while a linear change in $F,J$ makes its reduction at $p=0$ a coordinate."
 
@@ -58,7 +58,7 @@ The main work is proving $A$ is not polynomial. [S6:145–148] states it: "The m
 
 The valuation degree is defined. [S6:165–168] defines it: "The order $\ord_p$ along $p=0$ in $S$ applies to every nonzero element of $A$. Its negative defines the _valuation degree_ $\deg h=-\ord_p(h)$ and a filtration of $A$. We prove the exact"
 
-The graded identification is an affine modification. [S6:173–179] states it: "Here $\tau$ is an indeterminate representing the initial form of $p$, and the right-hand side is generated by $R$, $\tau$, and all $i/\tau^2$ with $i\in I$. The coefficient inclusion is the one induced by $S\subset A$: the residue of $b\in S$ corresponds to its degree-zero class. This is an affine modification of $R[\tau]$ in the sense of Kaliman--Zaidenberg, and it is smooth."
+The graded identification is an affine modification. [S6:173–179] states it: "Here $\tau$ is an indeterminate representing the initial form of $p$, and the right-hand side is generated by $R$, $\tau$, and all $i/\tau^2$ with $i\in I$. The coefficient inclusion is the one induced by $S\subset A$: the residue of $b\in S$ corresponds to its degree-zero class. This is an affine modification of $R[\tau]$ in the sense of Kaliman–Zaidenberg, and it is smooth."
 
 The polynomial assumption yields an action. [S6:181–187] yields it: "If $A$ were polynomial, some polynomial coordinate would have positive valuation degree: otherwise all of $A$ would have nonpositive degree, contrary to $\deg F=2$. Differentiation in a different coordinate fixes that positive-degree coordinate. The exact graded identification then induces a nonzero homogeneous locally nilpotent derivation of $G$ with a nonzero homogeneous invariant of positive degree. This is the action the remaining two stages exclude."
 
@@ -72,11 +72,11 @@ The lift constrains the derivation. [S6:225–226] states it: "Thus the lift con
 
 The highest component is constrained. [S6:229–232] states it: "A highest component $E'$ for an auxiliary grading remains a nonzero locally nilpotent derivation with the same fiber weight. The grading separates the two parts of $v$ so that $(E')^2(d^2+a^2u^3)=0$. The polynomial orbit of $d^2+a^2u^3$ therefore has degree at most one."
 
-The inequality forces a contradiction. [S6:233–236] forces it: "The Mason--Stothers polynomial $abc$ inequality and the nonsquareness of $-u^3$ in $\Frac\Rt$ force $E'$ to fix $a,d,u$. The determinant relation then forces positive fiber weight, contradicting the sign obtained in the preceding stage."
+The inequality forces a contradiction. [S6:233–236] forces it: "The Mason–Stothers polynomial $abc$ inequality and the nonsquareness of $-u^3$ in $\Frac\Rt$ force $E'$ to fix $a,d,u$. The determinant relation then forces positive fiber weight, contradicting the sign obtained in the preceding stage."
 
 ## History of the conjecture
 
-The characteristic-zero problem in higher dimension is listed as open. [S6:37–38] records it: "The characteristic-zero problem in dimensions at least three is still listed as open in Gaifullin--Petrov's July 2026"
+The characteristic-zero problem in higher dimension is listed as open. [S6:37–38] records it: "The characteristic-zero problem in dimensions at least three is still listed as open in Gaifullin–Petrov's July 2026"
 
 Additive actions have long served to distinguish affine varieties from affine space. [S6:145–148] records it: "The main work is to prove that $A$ itself is not polynomial. Additive actions have long served to distinguish affine varieties from affine space: Makar-Limanov used them to show that the Russell cubic is not affine three-space"
 
@@ -125,15 +125,29 @@ The declaration is `OAI.ComplexCancellation.main` [S14:32]. The comparator stub 
 
 ## Bibliography
 
-**26 entries** from `references.tex`:
-- [AEH] S.~S. Abhyankar, W. Heinzer, and P. Eakin, \emph{On the uniqueness of the coefficient ring in a polynomial ring}, J. Alg…
-- [Asanuma] T. Asanuma, \emph{Polynomial fibre rings of algebras over Noetherian rings}, Invent. Math. \textbf{87} (1987), 101--127.…
-- [BassConnellWright] H. Bass, E.~H. Connell, and D.~L. Wright, \emph{Locally polynomial algebras are symmetric}, Bull. Amer. Math. Soc. \text…
-- [BlancVanSanten] J. Blanc and I. van Santen, \emph{Embeddings of affine spaces into quadrics}, Trans. Amer. Math. Soc. \textbf{371} (2019…
-- [Brion] M. Brion, \emph{On linearization of line bundles}, J. Math. Sci. Univ. Tokyo \textbf{22} (2015), no.~1, 113--147. \url{h…
-- [DuttaLahiri] A.~K. Dutta and A. Lahiri, \emph{On residual and stable coordinates}, J. Pure Appl. Algebra \textbf{225} (2021), no.~10,…
-- [EdoVenereau] E. Edo and S. V\'en\'ereau, \emph{Length $2$ variables of $A[x,y]$ and transfer}, Ann. Polon. Math. \textbf{76} (2001), …
-- [ElKahouiOuali] M. El Kahoui and M. Ouali, \emph{A note on residual coordinates of polynomial rings}, J. Commut. Algebra \textbf{10} (20…
-- [FinstonMaubach] D. Finston and S. Maubach, \emph{Constructing (almost) rigid rings and a UFD having infinitely generated Derksen and Mak…
-- [Fujita] T. Fujita, \emph{On Zariski problem}, Proc. Japan Acad. Ser. A Math. Sci. \textbf{55} (1979), no.~3, 106--110. \url{http…
-- … and 16 more
+- S. S. Abhyankar, W. Heinzer, and P. Eakin, _On the uniqueness of the coefficient ring in a polynomial ring_, J. Algebra **23** (1972), no. 2, 310–342.  .
+- T. Asanuma, _Polynomial fibre rings of algebras over Noetherian rings_, Invent. Math. **87** (1987), 101–127.  .
+- The Stacks Project Authors, _The Stacks Project_, accessed September 23, 2026.  .
+- H. Bass, E. H. Connell, and D. L. Wright, _Locally polynomial algebras are symmetric_, Bull. Amer. Math. Soc. **82** (1976), no. 5, 719–720.  .
+- M. Brion, _On linearization of line bundles_, J. Math. Sci. Univ. Tokyo **22** (2015), no. 1, 113–147.  .
+- \begingroup\raggedright B. Yu. Weisfeiler and I. V. Dolgachev, _Unipotent group schemes over integral rings_, Math. USSR-Izv. **8** (1974), no. 4, 761–800.  . \par\endgroup
+- T. Fujita, _On Zariski problem_, Proc. Japan Acad. Ser. A Math. Sci. **55** (1979), no. 3, 106–110.  .
+- N. Gupta, _On the cancellation problem for the affine space $\mathbb A^3$ in characteristic $p$_, Invent. Math. **195** (2014), no. 1, 279–288.  .
+- \begingroup\raggedright N. Gupta, _On Zariski's cancellation problem in positive characteristic_, Adv. Math. **264** (2014), 296–307.  . Preprint: arXiv:1309.1368v1. \par\endgroup
+- N. Gupta, _The Zariski cancellation problem and related problems in affine algebraic geometry_, in _Proceedings of the International Congress of Mathematicians 2022_, vol. 3, EMS Press, Berlin, 2023, 1578–1598.  .
+- A. K. Dutta and A. Lahiri, _On residual and stable coordinates_, J. Pure Appl. Algebra **225** (2021), no. 10, article 106707.  . Preprint: arXiv:1908.03549v1.
+- Sh. Kaliman and L. Makar-Limanov, _AK-invariant of affine domains_, in _Affine Algebraic Geometry_, Osaka University Press, Osaka, 2007, 231–255.  .
+- L. Makar-Limanov, _On the hypersurface $x+x^2y+z^2+t^3=0$ in $\mathbb C^4$ or a $\mathbb C^3$-like threefold which is not $\mathbb C^3$_, Israel J. Math. **96** (1996), 419–429.  .
+- L. Makar-Limanov, P. van Rossum, V. Shpilrain, and J.-T. Yu, _The stable equivalence and cancellation problems_, Comment. Math. Helv. **79** (2004), no. 2, 341–349.  .
+- R. C. Mason, _Diophantine Equations over Function Fields_, London Mathematical Society Lecture Note Series **96**, Cambridge University Press, Cambridge, 1984.  .
+- D. Finston and S. Maubach, _Constructing (almost) rigid rings and a UFD having infinitely generated Derksen and Makar-Limanov invariants_, Canad. Math. Bull. **53** (2010), no. 1, 77–86.  .
+- S. Maubach, _The commuting derivation conjecture_, J. Pure Appl. Algebra **179** (2003), nos. 1–2, 159–168.  .
+- M. El Kahoui and M. Ouali, _A note on residual coordinates of polynomial rings_, J. Commut. Algebra **10** (2018), no. 3, 317–326.  .
+- S. Gaifullin and M. Petrov, _Non-cancellative varieties, maximal tori, and the Makar-Limanov invariant_, preprint, 15 July 2026. arXiv:2607.13593v1.
+- J. Blanc and I. van Santen, _Embeddings of affine spaces into quadrics_, Trans. Amer. Math. Soc. **371** (2019), no. 12, 8429–8465.  .
+- W. W. Stothers, _Polynomial identities and Hauptmoduln_, Quart. J. Math. Oxford Ser. (2) **32** (1981), no. 3, 349–370.  .
+- M. Miyanishi and T. Sugie, _Affine surfaces containing cylinderlike open sets_, J. Math. Kyoto Univ. **20** (1980), no. 1, 11–42.  .
+- A. A. Suslin, _Projective modules over a polynomial ring are free_, Dokl. Akad. Nauk SSSR **229** (1976), no. 5, 1063–1066.  .
+- C. Traverso, _Seminormality and Picard group_, Ann. Scuola Norm. Sup. Pisa Cl. Sci. (3) **24** (1970), no. 4, 585–595.  .
+- E. Edo and S. Vénéreau, _Length $2$ variables of $A[x,y]$ and transfer_, Ann. Polon. Math. **76** (2001), nos. 1–2, 67–76.  .
+- Sh. Kaliman and M. Zaidenberg, _Affine modifications and affine hypersurfaces with a very transitive automorphism group_, Transform. Groups **4** (1999), no. 1, 53–95.  .

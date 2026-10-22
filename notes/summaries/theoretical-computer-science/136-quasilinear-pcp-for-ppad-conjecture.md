@@ -1,4 +1,4 @@
-Notes / Summaries / Theoretical computer science / [Family 136](../../index/theoretical-computer-science/136-quasilinear-pcp-for-ppad-conjecture.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Theoretical computer science](../../index/disciplines/theoretical-computer-science.md) / [Family 136](../../index/theoretical-computer-science/136-quasilinear-pcp-for-ppad-conjecture.md)
 
 # 136 — The quasilinear PCP-for-PPAD conjecture
 
@@ -245,15 +245,38 @@ fixed-port composition." [S3:363-364]
 
 ## Bibliography
 
-**35 entries** from `references.bib`:
-- Babichenko, Yakov, Papadimitriou, Christos H., Rubinstein, Aviad. *Can Almost Everybody be Almost Happy?*. (2016) [BPR2016]
-- Argyrios Deligkas, John Fearnley, Alexandros Hollender, Themistoklis Melissourgos. *Fisher Markets with Approximately Optimal Bundles and the Need for a {PCP} Theorem for {PPAD}*. (2026) [Fisher2026]
-- Deligkas, Argyrios, Fearnley, John, Hollender, Alexandros, Melissourgos, Themistoklis. *{Pure-Circuit}: Tight Inapproximability for {PPAD}*. (2024) [DFHM2024]
-- Dinur, Irit, Evra, Shai, Livne, Ron, Lubotzky, Alexander, Mozes, Shahar. *Locally Testable Codes with Constant Rate, Distance, and Locality*. (2022) [DEL+2022]
-- Friedl, Katalin, Sudan, Madhu. *Some Improvements to Total Degree Tests*. (2013) [FS1995]
-- Ershov, Mikhail, Jaikin-Zapirain, Andrei. *Property {(T)} for Noncommutative Universal Lattices*. (2010) [EJZ2010]
-- Shalom, Yehuda. *Bounded Generation and {Kazhdan}'s Property {(T)}*. (1999) [Shalom1999]
-- Helfgott, H. A.. *The Ternary {Goldbach} Conjecture Is True*. (2013) [Helfgott2013]
-- Xylouris, Triantafyllos. *On {Linnik}'s Constant*. (2009) [Xylouris2011]
-- Bourgain, Jean, Gamburd, Alex. *Uniform Expansion Bounds for {Cayley} Graphs of {$\mathrm{SL}_2(\mathbb{F}_p)$}*. (2008) [BG2008]
-- … and 25 more
+- Amireddy, Prashanth, Behera, Amik Raj, Srinivasan, Srikanth, Sudan, Madhu, Willumsgaard, Sophus Valentin, A Simple Algebraic Proof of the PCP Theorem (2026)
+- Babichenko, Yakov, Papadimitriou, Christos H., Rubinstein, Aviad, Can Almost Everybody be Almost Happy? (2016)
+- Bennett, C. H., Logical Reversibility of Computation (1973)
+- Blum, Manuel, Luby, Michael, Rubinfeld, Ronitt, Self-Testing/Correcting with Applications to Numerical Problems (1993)
+- Bourgain, Jean, Gamburd, Alex, Uniform Expansion Bounds for Cayley Graphs of $\mathrm{SL}_2(\mathbb{F}_p)$ (2008)
+- Braverman, Mark, Liu, Jingyi, Xue, Eric, Zhou, Chenghan, Hardness of Approximate Hylland–Zeckhauser Equilibria (2026)
+- Brouwer, L. E. J., {Ü}ber Abbildung von Mannigfaltigkeiten (1911)
+- Budish, Eric, The Combinatorial Assignment Problem: Approximate Competitive Equilibrium from Equal Incomes (2011)
+- Chen, Xi, Deng, Xiaotie, Teng, Shang-Hua, Settling the Complexity of Computing Two-Player Nash Equilibria (2007)
+- Cooley, James W., Tukey, John W., An Algorithm for the Machine Calculation of Complex Fourier Series (1965)
+- Daskalakis, Constantinos, Goldberg, Paul W., Papadimitriou, Christos H., The Complexity of Computing a Nash Equilibrium (2009)
+- Daskalakis, Constantinos, Golowich, Noah, Zhang, Kaiqing, The Complexity of Markov Equilibrium in Stochastic Games (2023)
+- Argyrios Deligkas, John Fearnley, Alexandros Hollender, Themistoklis Melissourgos, Fisher Markets with Approximately Optimal Bundles and the Need for a PCP Theorem for PPAD (2026)
+- Deligkas, Argyrios, Fearnley, John, Hollender, Alexandros, Melissourgos, Themistoklis, {Pure-Circuit}: Tight Inapproximability for PPAD (2024)
+- Dinur, Irit, Evra, Shai, Livne, Ron, Lubotzky, Alexander, Mozes, Shahar, Locally Testable Codes with Constant Rate, Distance, and Locality (2022)
+- Ershov, Mikhail, Jaikin-Zapirain, Andrei, Property {(T)} for Noncommutative Universal Lattices (2010)
+- Farina, Gabriele, Kontogiannis, Andreas, Panageas, Ioannis, Pollatos, Vasilis, The Complexity of Computing Coarse Correlated Equilibria in Markov Games with a Single Controller (2026)
+- Friedl, Katalin, Sudan, Madhu, Some Improvements to Total Degree Tests (2013)
+- Gabber, O., Galil, Z., Explicit Constructions of Linear-Sized Superconcentrators (1981)
+- Gemmell, Peter, Sudan, Madhu, Highly Resilient Correctors for Polynomials (1992)
+- Golowich, Noah, The Fine-Grained Complexity of Approximate Nash Equilibrium and Free Games (2026)
+- Helfgott, H. A., The Ternary Goldbach Conjecture Is True (2013)
+- Hoory, Shlomo, Linial, Nathan, Wigderson, Avi, Expander Graphs and Their Applications (2006)
+- Karayel, Emin, Expander Graphs (2023)
+- Margulis, G. A., Explicit Constructions of Concentrators (1973)
+- Z{é}mor, Gilles, On Expander Codes (2001)
+- Othman, Abraham, Papadimitriou, Christos H., Rubinstein, Aviad, The Complexity of Fairness through Equilibrium (2016)
+- Papadimitriou, Christos H., On the Complexity of the Parity Argument and Other Inefficient Proofs of Existence (1994)
+- Park, Chanwoo, Zhang, Kaiqing, Ozdaglar, Asuman, Multi-Player Zero-Sum Markov Games with Networked Separable Interactions (2023)
+- Rubinstein, Aviad, Inapproximability of Nash Equilibrium (2018)
+- Rubinstein, Aviad, Settling the Complexity of Computing Approximate Two-Player Nash Equilibria (2016)
+- Schuldenzucker, Steffen, Seuken, Sven, Monotonic and Non-Monotonic Solution Concepts for Generalized Circuits (2019)
+- Shalom, Yehuda, Bounded Generation and Kazhdan's Property {(T)} (1999)
+- Xylouris, Triantafyllos, On Linnik's Constant (2009)
+- Bene{š}, V. E., Permutation Groups, Complexes, and Rearrangeable Connecting Networks (1964)

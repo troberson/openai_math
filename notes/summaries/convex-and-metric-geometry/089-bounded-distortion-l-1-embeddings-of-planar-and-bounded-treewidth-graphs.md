@@ -1,4 +1,4 @@
-Notes / Summaries / Convex and metric geometry / [Family 089](../../index/convex-and-metric-geometry/089-bounded-distortion-l-1-embeddings-of-planar-and-bounded-treewidth-graphs.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Convex and metric geometry](../../index/disciplines/convex-and-metric-geometry.md) / [Family 089](../../index/convex-and-metric-geometry/089-bounded-distortion-l-1-embeddings-of-planar-and-bounded-treewidth-graphs.md)
 
 # 089 — Bounded-distortion $L_1$ embeddings of planar and bounded-treewidth graphs
 
@@ -8,7 +8,7 @@ Notes / Summaries / Convex and metric geometry / [Family 089](../../index/convex
 
 [S1:254] carries the family entry:
 
-> Resolves the planar and bounded-treewidth cases of the Gupta--Newman--Rabinovich--Sinclair conjecture. Shortest-path metrics of finite connected graphs with arbitrary positive edge lengths embed into real $L_1$ with universal distortion for planar graphs, and distortion depending only on treewidth for bounded-treewidth graphs. The corresponding multicommodity flow--cut gaps are uniformly bounded.
+> Resolves the planar and bounded-treewidth cases of the Gupta–Newman–Rabinovich–Sinclair conjecture. Shortest-path metrics of finite connected graphs with arbitrary positive edge lengths embed into real $L_1$ with universal distortion for planar graphs, and distortion depending only on treewidth for bounded-treewidth graphs. The corresponding multicommodity flow–cut gaps are uniformly bounded.
 
 The entry links the two manuscripts as "Planar graph embeddings" and
 "Bounded-treewidth embeddings" [S1:254].
@@ -244,28 +244,40 @@ claims exist and names their declarations; the two comparator configs carry
 
 ## Bibliography
 
-**19 entries** from `references.bib`:
-- Linial, Nathan, London, Eran, Rabinovich, Yuri. *The geometry of graphs and some of its algorithmic applications*. (1995) [LLR95]
-- Gupta, Anupam, Newman, Ilan, Rabinovich, Yuri, Sinclair, Alistair. *Cuts, Trees and {$\ell_1$}-Embeddings of Graphs*. (2004) [GNRS04]
-- Rao, Satish. *Small distortion and volume preserving embeddings for planar and {Euclidean} metrics*. (1999) [Rao99]
-- Okamura, Haruko, Seymour, Paul D.. *Multicommodity flows in planar graphs*. (1981) [OS81]
-- Chakrabarti, Amit, Jaffe, Alexander, Lee, James R., Vincent, Justin. *Embeddings of topological graphs: Lossy invariants, linearization, and 2-sums*. (2008) [CJLV08]
-- Sidiropoulos, Anastasios. *Non-positive curvature and the planar embedding conjecture*. (2013) [Sidiropoulos13]
-- Filtser, Arnold. *A Face Cover Perspective to {$\ell_1$} Embeddings of Planar Graphs*. (2025) [Filtser25]
-- Aumann, Yonatan, Rabani, Yuval. *An {$O(\log k)$} Approximate Min-Cut Max-Flow Theorem and Approximation Algorithm*. (1998) [AR98]
-- Klein, Philip N., Plotkin, Serge A., Rao, Satish. *Excluded Minors, Network Decomposition, and Multicommodity Flow*. (1993) [KPR93]
-- Chekuri, Chandra, Gupta, Anupam, Newman, Ilan, Rabinovich, Yuri, Sinclair, Alistair. *Embedding {$k$}-Outerplanar Graphs into {$\ell_1$}*. (2006) [CGNRS06]
-- … and 9 more
-
-**18 entries** from `bibliography.tex`:
-- [AFGN22] Ittai Abraham, Arnold Filtser, Anupam Gupta, and Ofer Neiman. Metric embedding via shortest path decompositions. \emph{S…
-- [AR98] Yonatan Aumann and Yuval Rabani. An $O(\log k)$ approximate min-cut max-flow theorem and approximation algorithm. \emph{…
-- [CJLV08] Amit Chakrabarti, Alexander Jaffe, James R. Lee, and Justin Vincent. Embeddings of topological graphs: Lossy invariants,…
-- [ChalermsookEtAl] Parinya Chalermsook, Matthias Kaul, Matthias Mnich, Joachim Spoerhase, Sumedha Uniyal, and Daniel Vaz. Approximating spa…
-- [CGNRS06] Chandra Chekuri, Anupam Gupta, Ilan Newman, Yuri Rabinovich, and Alistair Sinclair. Embedding $k$-outerplanar graphs int…
-- [CKR] Eden Chlamt{\'a}{\v c}, Robert Krauthgamer, and Prasad Raghavendra. Approximating sparsest cut in graphs of bounded tree…
-- [CohenAddadMomkeVerdugo] Vincent Cohen-Addad, Tobias M{\"o}mke, and Victor Verdugo. A 2-approximation for the bounded treewidth sparsest cut prob…
-- [ConroyFiltser25] Jonathan Conroy and Arnold Filtser. How to protect yourself from threatening skeletons: Optimal padded decompositions fo…
-- [FiltserEtAl] Arnold Filtser, Tobias Friedrich, Davis Issac, Nikhil Kumar, Hung Le, Nadym Mallek, and Ziena Zeif. Optimal padded decom…
-- [GNRS] Anupam Gupta, Ilan Newman, Yuri Rabinovich, and Alistair Sinclair. Cuts, trees and $\ell_1$-embeddings of graphs. \emph{…
-- … and 8 more
+- Yonatan Aumann and Yuval Rabani. An $O(\log k)$ approximate min-cut max-flow theorem and approximation algorithm. _SIAM Journal on Computing_ **27**(1):291–301, 1998. doi:10.1137/S0097539794285983.
+- James R. Lee and Prasad Raghavendra. Coarse differentiation and multi-flows in planar graphs. _Discrete & Computational Geometry_ **43**(2):346–362, 2010. doi:10.1007/s00454-009-9172-4.
+- Abraham, Ittai, Filtser, Arnold, Gupta, Anupam, Neiman, Ofer, Metric Embedding via Shortest Path Decompositions (2022)
+- Ittai Abraham, Arnold Filtser, Anupam Gupta, and Ofer Neiman. Metric embedding via shortest path decompositions. _SIAM Journal on Computing_ **51**(2):290–314, 2022. doi:10.1137/19M1296021.
+- Aumann, Yonatan, Rabani, Yuval, An $O(\log k)$ Approximate Min-Cut Max-Flow Theorem and Approximation Algorithm (1998)
+- Eden Chlamt{á}{\v c}, Robert Krauthgamer, and Prasad Raghavendra. Approximating sparsest cut in graphs of bounded treewidth. In _APPROX/RANDOM 2010_, Lecture Notes in Computer Science, vol. 6302, pp. 124–137. Springer, 2010. doi:10.1007/978-3-642-15369-3\_10. Full version: arXiv:1006.3970v2.
+- Chakrabarti, Amit, Jaffe, Alexander, Lee, James R., Vincent, Justin, Embeddings of topological graphs: Lossy invariants, linearization, and 2-sums (2008)
+- Amit Chakrabarti, Alexander Jaffe, James R. Lee, and Justin Vincent. Embeddings of topological graphs: Lossy invariants, linearization, and 2-sums. In _49th Annual IEEE Symposium on Foundations of Computer Science_, pp. 761–770. IEEE, 2008. doi:10.1109/FOCS.2008.79.
+- Parinya Chalermsook, Matthias Kaul, Matthias Mnich, Joachim Spoerhase, Sumedha Uniyal, and Daniel Vaz. Approximating sparsest cut in low-treewidth graphs via combinatorial diameter. _ACM Transactions on Algorithms_ **20**(1), Article 6, pp. 1–20, 2024. doi:10.1145/3632623.
+- Chalopin, J{é}r{é}mie, Chepoi, Victor, Naves, Guyslain, Isometric Embedding of Busemann Surfaces into $L_1$ (2015)
+- Chekuri, Chandra, Gupta, Anupam, Newman, Ilan, Rabinovich, Yuri, Sinclair, Alistair, Embedding $k$-Outerplanar Graphs into $\ell_1$ (2006)
+- Chandra Chekuri, Anupam Gupta, Ilan Newman, Yuri Rabinovich, and Alistair Sinclair. Embedding $k$-outerplanar graphs into $\ell_1$. _SIAM Journal on Discrete Mathematics_ **20**(1):119–136, 2006. doi:10.1137/S0895480102417379.
+- Vincent Cohen-Addad, Tobias M{ö}mke, and Victor Verdugo. A 2-approximation for the bounded treewidth sparsest cut problem in FPT time. _Mathematical Programming_ **206**:479–495, 2024. doi:10.1007/s10107-023-02044-1.
+- Jonathan Conroy and Arnold Filtser. How to protect yourself from threatening skeletons: Optimal padded decompositions for minor-free graphs. In _57th Annual ACM Symposium on Theory of Computing_, pp. 2281–2292. ACM, 2025. doi:10.1145/3717823.3718252.
+- James R. Lee and Anastasios Sidiropoulos. On the geometry of graphs with a forbidden minor. In _41st Annual ACM Symposium on Theory of Computing_, pp. 245–254. ACM, 2009. doi:10.1145/1536414.1536450.
+- Filtser, Arnold, A Face Cover Perspective to $\ell_1$ Embeddings of Planar Graphs (2025)
+- Arnold Filtser, Tobias Friedrich, Davis Issac, Nikhil Kumar, Hung Le, Nadym Mallek, and Ziena Zeif. Optimal padded decomposition for bounded treewidth graphs. _TheoretiCS_ **4**, Article 22, pp. 1–39, 2025. doi:10.46298/theoretics.25.22.
+- James R. Lee and Daniel E. Poore. On the 2-sum embedding conjecture. In _29th Annual Symposium on Computational Geometry_, pp. 197–206. ACM, 2013. doi:10.1145/2462356.2492436.
+- Gupta, Anupam, Newman, Ilan, Rabinovich, Yuri, Sinclair, Alistair, Cuts, Trees and $\ell_1$-Embeddings of Graphs (2004)
+- Anupam Gupta, Ilan Newman, Yuri Rabinovich, and Alistair Sinclair. Cuts, trees and $\ell_1$-embeddings of graphs. _Combinatorica_ **24**(2):233–269, 2004. doi:10.1007/s00493-004-0015-x. Author manuscript.
+- Anupam Gupta, Kunal Talwar, and David Witmer. Sparsest cut on bounded treewidth graphs: Algorithms and hardness results. In _45th Annual ACM Symposium on Theory of Computing_, pp. 281–290. ACM, 2013. doi:10.1145/2488608.2488644. Full version: arXiv:1305.1347.
+- Hurkens, C. A. J., Schrijver, Alexander, Tardos, {É}va, On Fractional Multicommodity Flows and Distance Functions (1988)
+- Klein, Philip N., Plotkin, Serge A., Rao, Satish, Excluded Minors, Network Decomposition, and Multicommodity Flow (1993)
+- Krauthgamer, Robert, Lee, James R., Rika, Havana, Flow-Cut Gaps and Face Covers in Planar Graphs (2019)
+- Kumar, Nikhil, An Approximate Generalization of the Okamura–Seymour Theorem (2025)
+- Lee, James R., Raghavendra, Prasad, Coarse Differentiation and Multi-flows in Planar Graphs (2010)
+- Lee, James R., Sidiropoulos, Anastasios, On the Geometry of Graphs with a Forbidden Minor (2009)
+- Linial, Nathan, London, Eran, Rabinovich, Yuri, The geometry of graphs and some of its algorithmic applications (1995)
+- Nathan Linial, Eran London, and Yuri Rabinovich. The geometry of graphs and some of its algorithmic applications. _Combinatorica_ **15**(2):215–245, 1995. doi:10.1007/BF01200757.
+- Newman, Ilan, Rabinovich, Yuri, A Lower Bound on the Distortion of Embedding Planar Metrics into Euclidean Space (2003)
+- OpenAI. Planar Graph Metrics Embed into $L_1$ with Constant Distortion. OpenAI Math Release preprint OAI:Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026, 2026.
+- Okamura, Haruko, Seymour, Paul D., Multicommodity flows in planar graphs (1981)
+- OpenAI, {$L_1$ Embeddings of Graphs of Bounded Treewidth} (2026)
+- James R. Lee and Anastasios Sidiropoulos. Pathwidth, trees, and random embeddings. _Combinatorica_ **33**(3):349–374, 2013. doi:10.1007/s00493-013-2685-8.
+- Rao, Satish, Small distortion and volume preserving embeddings for planar and Euclidean metrics (1999)
+- Sidiropoulos, Anastasios, Non-positive curvature and the planar embedding conjecture (2013)
+- Neil Robertson and P. D. Seymour. Graph minors. V. Excluding a planar graph. _Journal of Combinatorial Theory, Series B_ **41**(1):92–114, 1986. doi:10.1016/0095-8956(86)90030-4.

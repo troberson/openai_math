@@ -1,4 +1,4 @@
-Notes / Summaries / Functional analysis / [Family 332](../../index/functional-analysis/332-metric-markov-cotype-two-for-1.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Functional analysis](../../index/disciplines/functional-analysis.md) / [Family 332](../../index/functional-analysis/332-metric-markov-cotype-two-for-1.md)
 
 # 332 — Metric Markov cotype two for $\ell_1$
 
@@ -189,9 +189,8 @@ and no certificate ships with it.
 
 ## Bibliography
 
-**5 entries** from `references.bib`:
-- Ball, Keith. *{Markov} chains, {Riesz} transforms and {Lipschitz} maps*. (1992) [Ball92]
-- Mendel, Manor, Naor, Assaf. *Spectral calculus and {Lipschitz} extension for barycentric metric spaces*. (2013) [MendelNaor13]
-- Deza, Michel Marie, Laurent, Monique. *Geometry of Cuts and Metrics*. (1997) [DezaLaurent97]
-- Naor, Assaf, Young, Robert. *Foliated corona decompositions*. (2022) [NaorYoung22]
-- Cheng, Qingjin, Wang, Yue, Xiang, Bo. *Sharp metric cotype inequalities for {$L_1$} via nonlinear cut smoothing*. (2026) [ChengWangXiang26]
+- Ball, Keith, Markov chains, Riesz transforms and Lipschitz maps (1992)
+- Cheng, Qingjin, Wang, Yue, Xiang, Bo, Sharp metric cotype inequalities for $L_1$ via nonlinear cut smoothing (2026)
+- Deza, Michel Marie, Laurent, Monique, Geometry of Cuts and Metrics (1997)
+- Mendel, Manor, Naor, Assaf, Spectral calculus and Lipschitz extension for barycentric metric spaces (2013)
+- Naor, Assaf, Young, Robert, Foliated corona decompositions (2022)

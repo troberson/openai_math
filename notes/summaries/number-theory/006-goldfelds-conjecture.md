@@ -1,4 +1,4 @@
-Notes / Summaries / Number theory / [Family 006](../../index/number-theory/006-goldfelds-conjecture.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Number theory](../../index/disciplines/number-theory.md) / [Family 006](../../index/number-theory/006-goldfelds-conjecture.md)
 
 # 006 — Goldfeld's conjecture
 
@@ -34,13 +34,13 @@ The mean theorem needs a different kind of control. Knowing that ranks 0 and 1 e
 
 ## Graduate summary
 
-The family ships two manuscripts, and each states its own headline theorem. In the analytic-density manuscript, the pointwise result is Theorem 1, the 2-converse [S5:14–19]: for every elliptic curve *E*/ℚ with 2-power Selmer corank *c*₂(*E*) in {0,1}, one has *a*(*E*) = *r*(*E*) = *c*₂(*E*) and Sha(*E*/ℚ) finite. Its scope paragraph is explicit about what is not assumed — “There is no restriction on reduction type, complex multiplication, rational torsion, or rational isogenies” [S5:21–22] — and about what the hypothesis really is: “a Mordell--Weil rank bound alone does not give it.” [S5:23] The density theorem is Theorem 2 [S5:35–46], and its two consequences are stated inside the theorem environment: “Consequently the twists of analytic rank at least two have density zero.” [S5:42] and “For a density-one set of signed squarefree parameters $d$, the analytic and Mordell--Weil ranks of $E^{(d)}$ agree and its whole Tate--Shafarevich group is finite.” [S5:43–45] The paper is candid about the division of labour: “The main work of this paper is the pointwise converse.” [S5:52]
+The family ships two manuscripts, and each states its own headline theorem. In the analytic-density manuscript, the pointwise result is Theorem 1, the 2-converse [S5:14–19]: for every elliptic curve *E*/ℚ with 2-power Selmer corank *c*₂(*E*) in {0,1}, one has *a*(*E*) = *r*(*E*) = *c*₂(*E*) and Sha(*E*/ℚ) finite. Its scope paragraph is explicit about what is not assumed — “There is no restriction on reduction type, complex multiplication, rational torsion, or rational isogenies” [S5:21–22] — and about what the hypothesis really is: “a Mordell–Weil rank bound alone does not give it.” [S5:23] The density theorem is Theorem 2 [S5:35–46], and its two consequences are stated inside the theorem environment: “Consequently the twists of analytic rank at least two have density zero.” [S5:42] and “For a density-one set of signed squarefree parameters $d$, the analytic and Mordell–Weil ranks of $E^{(d)}$ agree and its whole Tate–Shafarevich group is finite.” [S5:43–45] The paper is candid about the division of labour: “The main work of this paper is the pointwise converse.” [S5:52]
 
 The deduction is short and is given in the conclusions section. Smith's unrestricted theorem gives the corank-zero and corank-one counts as *X*/2 + *o*(*X*) [S6:67–72]; a density lemma turns an infinite set of integers into a density-one subset of squarefree integers [S6:28–29], proved by the Möbius sum ∑*μ*(*m*)/*m*² = 1/*ζ*(2) [S6:44–64]; and the two counts are then identified: “The analytic-rank counts therefore equal the corresponding corank counts exactly.” [S6:80–81] The complement, “the twists of analytic rank at least two, has density zero” [S6:81–82], and the rank and finiteness assertions on the density-one union come from the pointwise converse and the density-one corank count [S6:77–79]. A corollary worth knowing separately is the finite-descent criterion [S5:61–67]: if the 2-descent quantity *d*₂(*E*) is 0 or 1, then *a* = *r* = *c*₂ = *d*₂, Sha is finite, and Sha[*2*^∞] = 0, so a finite 2-descent certifies the analytic rank and kills the whole 2-primary Tate–Shafarevich group. The proof passes from *d*₂ to the full corank through the alternating Cassels–Tate pairing [S5:71–73].
 
-The mean manuscript's headline is Theorem 1 [S10:22–28]: the average analytic rank over the signed squarefree family tends to 1/2. Its input from the companion is a single equation — the density statement for ranks 0 and 1 — and the paper says so: “A zero-density exceptional family can still contribute to a rank-weighted average.” [S10:45–46] The new assertion is the tail estimate, Theorem 2 [S10:50–58], whose proof is independent of the density input. The scope sentence is the same shape as the companion's: “It applies without restrictions on complex multiplication, rational torsion, rational isogenies, or reduction type.” [S10:31–33] The algebraic-rank moment corollary [S10:79–91] gives exp(*t*·*r*) mean (1+e^*t*)/2 and *r*^*m* mean 1/2, and its non-claims are listed: “The corollary concerns algebraic ranks only: it gives no higher analytic-rank moments, no uniformity for parameters varying with \(Y\), and no moment limit for thin polynomial subfamilies.” [S10:97–99] The analytic assumptions are stated once and clearly: “The proof invokes neither the Birch--Swinnerton-Dyer conjecture nor the generalized Riemann hypothesis.” [S10:165–166] Modularity supplies the continuation and functional equation for every curve in the argument [S10:162–163].
+The mean manuscript's headline is Theorem 1 [S10:22–28]: the average analytic rank over the signed squarefree family tends to 1/2. Its input from the companion is a single equation — the density statement for ranks 0 and 1 — and the paper says so: “A zero-density exceptional family can still contribute to a rank-weighted average.” [S10:45–46] The new assertion is the tail estimate, Theorem 2 [S10:50–58], whose proof is independent of the density input. The scope sentence is the same shape as the companion's: “It applies without restrictions on complex multiplication, rational torsion, rational isogenies, or reduction type.” [S10:31–33] The algebraic-rank moment corollary [S10:79–91] gives exp(*t*·*r*) mean (1+e^*t*)/2 and *r*^*m* mean 1/2, and its non-claims are listed: “The corollary concerns algebraic ranks only: it gives no higher analytic-rank moments, no uniformity for parameters varying with \(Y\), and no moment limit for thin polynomial subfamilies.” [S10:97–99] The analytic assumptions are stated once and clearly: “The proof invokes neither the Birch–Swinnerton-Dyer conjecture nor the generalized Riemann hypothesis.” [S10:165–166] Modularity supplies the continuation and functional equation for every curve in the argument [S10:162–163].
 
-What the family does not say is as important as what it says. It does not prove the Birch–Swinnerton-Dyer leading-coefficient formula: the density manuscript states that “The rank and finiteness assertions are distinct from the Birch--Swinnerton-Dyer leading-coefficient formula.” [S5:90–91] — the leading-coefficient part is family 002's, and the two combine (see [002 — The full Birch–Swinnerton-Dyer formula in Selmer coranks zero and one](002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md)). It proves no analytic-rank moments beyond the mean. It does not claim the mean over thin polynomial subfamilies, nor uniformity in parameters that grow with the height. It does not claim the density statement in Goldfeld's original discriminant ordering; both manuscripts count signed squarefree integers, and the mean manuscript flags the difference explicitly [S10:106–110]. It uses no claim from the Hanners preprint, and says why: “Hanners claims the full Birch--Swinnerton-Dyer conjecture for every rational elliptic curve” [S10:155–156], “This is not a refutation of the claimed theorem.” [S10:160] The preprint is a bibliography entry of the mean manuscript [S11:17–25].
+What the family does not say is as important as what it says. It does not prove the Birch–Swinnerton-Dyer leading-coefficient formula: the density manuscript states that “The rank and finiteness assertions are distinct from the Birch–Swinnerton-Dyer leading-coefficient formula.” [S5:90–91] — the leading-coefficient part is family 002's, and the two combine (see [002 — The full Birch–Swinnerton-Dyer formula in Selmer coranks zero and one](002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md)). It proves no analytic-rank moments beyond the mean. It does not claim the mean over thin polynomial subfamilies, nor uniformity in parameters that grow with the height. It does not claim the density statement in Goldfeld's original discriminant ordering; both manuscripts count signed squarefree integers, and the mean manuscript flags the difference explicitly [S10:106–110]. It uses no claim from the Hanners preprint, and says why: “Hanners claims the full Birch–Swinnerton-Dyer conjecture for every rational elliptic curve” [S10:155–156], “This is not a refutation of the claimed theorem.” [S10:160] The preprint is a bibliography entry of the mean manuscript [S11:17–25].
 
 On formalization status: the ledger records 2 manuscripts, tier T0, 0 formalized manuscripts, no scope note, no comparator challenge, no `main_results` config, no verification directory, and no reasoning trace [S15:7]. Nothing about this family is machine-checked. In the triage ledger it is the only family in the O bucket, whose legend line reads “density, partial, undecidability — tagged, no bucket above” [S14:24], and whose entry reads “006 (2p, O)” [S14:119] for “Goldfeld's conjecture for quadratic twists of every elliptic curve over Q (ranks 0 and 1 each of density 1/2, mean rank → 1/2), twists ordered by absolute value” [S14:119–120]. Both manuscripts ship the same provenance block shape — author OpenAI [S3:3] [S8:3], each with its own date: October 7, 2026 for the density manuscript [S3:5] and October 6, 2026 for the mean [S8:5] — and the compiled PDFs are 1,087,540 bytes for the density manuscript [S12] and 549,633 for the mean [S13].
 
@@ -86,29 +86,122 @@ What is not a consequence: BSD for a fixed curve, BSD for a positive proportion 
 
 ## Bibliography
 
-**96 entries** from `references.bib`:
-- Goldfeld, Dorian. *Conjectures on elliptic curves over quadratic fields*. (1979) [Goldfeld1979]
-- Smith, Alexander. *The {Birch} and {Swinnerton-Dyer} conjecture implies {Goldfeld}'s conjecture*. (2025) [Smith2025]
-- Cai, Li, Shu, Jie, Tian, Ye. *Explicit {Gross--Zagier} and {Waldspurger} formulae*. (2014) [CaiShuTian2014]
-- Kato, Kazuya. *{$p$}-adic {Hodge} theory and values of zeta functions of modular forms*. (2004) [Kato2004]
-- Burungale, Ashay A., Tian, Ye. *A rank zero {$p$}-converse to a theorem of {Gross--Zagier}, {Kolyvagin} and {Rubin}*. (2026) [BurungaleTian2026]
-- Cassels, J. W. S.. *Arithmetic on curves of genus 1. {VIII}. {On} conjectures of {Birch} and {Swinnerton-Dyer}*. (1965) [Cassels1965]
-- Neukirch, J\"urgen. *Algebraic Number Theory*. (1999) [Neukirch1999]
-- Radziwi{\l}{\l}, Maksym, Soundararajan, K.. *Moments and distribution of central {$L$}-values of quadratic twists of elliptic curves*. (2015) [RadziwillSoundararajan2015]
-- Iwaniec, Henryk. *On the order of vanishing of modular {$L$}-functions at the critical point*. (1990) [Iwaniec1990]
-- Heath-Brown, D. R.. *A mean value estimate for real character sums*. (1995) [HeathBrown1995]
-- … and 86 more
-
-**21 entries** from `references.bib`:
-- Goldfeld, Dorian. *Conjectures on elliptic curves over quadratic fields*. (1979) [Goldfeld1979]
-- Hanners, Michael. *Resolution of the {Birch and Swinnerton-Dyer} Conjecture*. (2026) [Hanners2026]
-- Koymans, Peter, Smith, Alexander. *{Tamagawa} Ratios and Unbounded {Selmer} Moments*. (2026) [KoymansSmith2026]
-- Smith, Alexander. *The {Birch} and {Swinnerton-Dyer} conjecture implies {Goldfeld}'s conjecture*. (2025) [Smith2025]
-- {OpenAI}. *{Goldfeld's analytic density conjecture and the $2$-converse for elliptic curves}*. (2026) [OpenAIAnalyticDensityV2]
-- Breuil, Christophe, Conrad, Brian, Diamond, Fred, Taylor, Richard. *On the modularity of elliptic curves over {$\mathbb{Q}$}:
-             Wild {$3$}-adic exercises*. (2001) [BreuilConradDiamondTaylor2001]
-- Li, Xiannan. *Moments of quadratic twists of modular {$L$}-functions*. (2024) [Li2022]
-- Heath-Brown, D. R.. *A mean value estimate for real character sums*. (1995) [HeathBrown1995]
-- Heath-Brown, D. R.. *The average analytic rank of elliptic curves*. (2004) [HeathBrown2003]
-- Soundararajan, Kannan. *Nonvanishing of quadratic {Dirichlet} {$L$}-functions at {$s=\frac{1}{2}$}*. (2000) [Soundararajan2000]
-- … and 11 more
+- Pomyka{\l}a, Jacek, Non-vanishing of $n$-th derivatives of twisted elliptic
+           $L$-functions in the critical point (1997)
+- Atkin, A. O. L., Li, Wen Ch'ing, Twists of newforms and pseudo-eigenvalues of $W$-operators (1978)
+- Barrios, Alexander J., Roy, Manami, Sahajpal, Nandita, Tallana, Darwin, Tobin, Bella, Wiersema, Hanneke, Local data of elliptic curves under quadratic twist (2025)
+- Berger, Laurent, Bloch and Kato's exponential map: three explicit formulas (2003)
+- Birch, Bryan J., Swinnerton-Dyer, H. P. F., Notes on elliptic curves. II (1965)
+- Bloch, Spencer, Kato, Kazuya, L-functions and Tamagawa numbers of motives (1990)
+- Bogomolov, Fedor, Sur l'alg{é}bricit{é} des repr{é}sentations $l$-adiques (1980)
+- Bogomolov, Fedor A., Points of finite order on an Abelian variety (1981)
+- Bosch, Siegfried, Lütkebohmert, Werner, Raynaud, Michel, Néron Models (1990)
+- Breuil, Christophe, Conrad, Brian, Diamond, Fred, Taylor, Richard, On the modularity of elliptic curves over $\mathbf Q$: wild $3$-adic exercises (2001)
+- Breuil, Christophe, Conrad, Brian, Diamond, Fred, Taylor, Richard, On the modularity of elliptic curves over $\mathbb{Q}$:
+             Wild $3$-adic exercises (2001)
+- Bump, Daniel, Friedberg, Solomon, Hoffstein, Jeffrey, Nonvanishing theorems for $L$-functions of modular forms and their derivatives (1990)
+- Burungale, Ashay A., Tian, Ye, A rank zero $p$-converse to a theorem of Gross–Zagier, Kolyvagin and Rubin (2026)
+- Burungale, Ashay A., Tian, Ye, $p$-converse to a theorem of Gross–Zagier, Kolyvagin and Rubin (2020)
+- Burungale, Ashay, Castella, Francesc, Skinner, Christopher, Tian, Ye, $p^\infty$-Selmer groups and rational points on CM elliptic curves (2022)
+- Burungale, Ashay, Skinner, Christopher, A $p$-converse theorem for CM elliptic curves (2024)
+- Burungale, Ashay A., Castella, Francesc, Skinner, Christopher, Base change and Iwasawa main conjectures for $\mathrm{GL}_2$ (2025)
+- Cai, Li, Shu, Jie, Tian, Ye, Explicit Gross–Zagier and Waldspurger formulae (2014)
+- Carayol, Henri, Sur les représentations $\ell$-adiques associées aux formes modulaires de Hilbert (1986)
+- Cassels, J. W. S., Arithmetic on curves of genus 1. VIII. On conjectures of Birch and {Swinnerton-Dyer} (1965)
+- Cassels, J. W. S., Arithmetic on curves of genus 1. IV. Proof of the Hauptvermutung (1962)
+- Castella, Francesc, Wan, Xin, {Perrin-Riou}'s main conjecture for elliptic curves at supersingular primes (2024)
+- Castella, Francesc, Grossi, Giada, Lee, Jaehoon, Skinner, Christopher, On the anticyclotomic Iwasawa theory of rational elliptic curves at Eisenstein primes (2022)
+- Chaiken, Seth, A combinatorial proof of the all minors matrix tree theorem (1982)
+- Chevalley, Claude, D{é}monstration d'une hypoth{\`e}se de {M. Artin} (1935)
+- Cornut, Christophe, Jetchev, Dimitar, Liftings of reduction maps for quaternion algebras (2013)
+- Crainic, Marius, On the perturbation lemma, and deformations (2004)
+- Deligne, Pierre, Formes modulaires et représentations $\ell$-adiques (1971)
+- Deuring, Max, Die Typen der Multiplikatorenringe elliptischer {Funktionenkörper} (1941)
+- Dokchitser, Tim, Dokchitser, Vladimir, Root numbers and parity of ranks of elliptic curves (2011)
+- Dokchitser, Tim, Dokchitser, Vladimir, On the {Birch–Swinnerton-Dyer} quotients modulo squares (2010)
+- Dokchitser, Vladimir, Anni, Samuele, $\ell$-adic representations and their associated invariants (2014)
+- Drinfeld, V. G., Two theorems on modular curves (1973)
+- Faltings, Gerd, Endlichkeitss{ä}tze f{ü}r abelsche {Variet{ä}ten} {ü}ber {Zahlk{ö}rpern} (1983)
+- Feng, Keqin, Xiong, Maosheng, On elliptic curves $y^2=x^3-n^2x$ with rank zero (2004)
+- Ferrero, Bruce, Washington, Lawrence C., The Iwasawa invariant $\mu_p$ vanishes for abelian number fields (1979)
+- Fiorilli, Daniel, A conditional determination of the average rank of elliptic curves (2016)
+- Friedlander, John, Iwaniec, Henryk, Opera de cribro (2010)
+- Gelbart, Stephen, Jacquet, Herv{é}, A relation between automorphic representations of $\mathrm{GL}(2)$ and $\mathrm{GL}(3)$ (1978)
+- Goldfeld, Dorian, Conjectures on elliptic curves over quadratic fields (1979)
+- Goldfeld, Dorian, Conjectures on elliptic curves over quadratic fields (1979)
+- Gross, Benedict H., Zagier, Don B., Heegner points and derivatives of $L$-series (1986)
+- Hanners, Michael, Resolution of the {Birch and Swinnerton-Dyer} Conjecture (2026)
+- Heath-Brown, D. R., A mean value estimate for real character sums (1995)
+- Heath-Brown, D. R., A mean value estimate for real character sums (1995)
+- Heath-Brown, D. R., The average analytic rank of elliptic curves (2004)
+- Hoffstein, Jeffrey, Luo, Wenzhi, Nonvanishing of $L$-series and the combinatorial sieve (1997)
+- Howard, Benjamin, The Heegner point Kolyvagin system (2004)
+- {\v C}esnavi{\v c}ius, K{\k e}stutis, Imai, Naoki, The remaining cases of the Kramer–Tunnell conjecture (2016)
+- Iwaniec, Henryk, On the order of vanishing of modular $L$-functions at the critical point (1990)
+- Iwaniec, Henryk, Kowalski, Emmanuel, Analytic Number Theory (2004)
+- James, Kevin, $L$-series with nonzero central critical value (1998)
+- Jetchev, Dimitar, Kane, Ben, Equidistribution of Heegner points and ternary quadratic forms (2011)
+- Kato, Kazuya, $p$-adic Hodge theory and values of zeta functions of modular forms (2004)
+- Keller, Timo, Yin, Mulun, $p$-converse theorems for elliptic curves of potentially good ordinary reduction at Eisenstein primes (2024)
+- Kolyvagin, V. A., Euler systems (1990)
+- Kowalski, Emmanuel, Michel, Philippe, VanderKam, Jeffrey, Non-vanishing of high derivatives of automorphic $L$-functions at the center of the critical strip (2000)
+- Koymans, Peter, Smith, Alexander, Tamagawa Ratios and Unbounded Selmer Moments (2026)
+- Kramer, Kenneth, Arithmetic of elliptic curves upon quadratic extension (1981)
+- Kriz, Daniel, Supersingular main conjectures, Sylvester's conjecture and Goldfeld's conjecture (2022)
+- Kriz, Daniel, Li, Chao, Goldfeld's conjecture and congruences between Heegner points (2019)
+- Kriz, Daniel, Nordentoft, Asbj{\o}rn Christian, Horizontal $p$-adic $L$-functions (2025)
+- Kumar, Sumit, Mallesham, Kummari, Sharma, Prahlad, Singh, Saurabh Kumar, Moments of derivatives of modular $L$-functions (2024)
+- Radziwi{\l}{\l}, Maksym, Soundararajan, K., Moments and distribution of central $L$-values of quadratic twists of elliptic curves (2015)
+- Radziwi{\l}{\l}, Maksym, Soundararajan, Kannan, Moments and distribution of central $L$-values of quadratic twists of elliptic curves (2015)
+- Lang, Serge, Algebraic Groups Over Finite Fields (1956)
+- Li, Xiannan, Moments of quadratic twists of modular $L$-functions (2024)
+- Miller, Steven J., Wong, Siman, Moments of the rank of elliptic curves (2012)
+- Milne, J. S., Arithmetic Duality Theorems (2006)
+- Milne, J. S., Elliptic Curves (2021)
+- Milne, J. S., Class Field Theory (2020)
+- Milne, J. S., Algebraic Number Theory (2020)
+- Monsky, Paul, Generalizing the Birch–Stephens theorem. I. Modular curves (1996)
+- Murty, M. Ram, Murty, V. Kumar, Mean values of derivatives of modular $L$-series (1991)
+- Neukirch, Jürgen, Algebraic Number Theory (1999)
+- Ono, Ken, Skinner, Christopher, Non-vanishing of quadratic twists of modular $L$-functions (1998)
+- OpenAI, {The two-primary Birch–Swinnerton-Dyer formula in Selmer corank at most one} (2026)
+- OpenAI, The Selmer converse for elliptic curves at every prime (2026)
+- OpenAI, The mean analytic rank of quadratic twists of elliptic curves (2026)
+- OpenAI, {Goldfeld's analytic density conjecture and the $2$-converse for elliptic curves} (2026)
+- Pal, Aprameyo, de Vera-Piquero, Carlos, Pullbacks of Saito–Kurokawa lifts and a central value formula for degree 6 $L$-series (2019)
+- Perelli, Alberto, Pomyka{\l}a, Jacek, Averages of twisted elliptic $L$-functions (1997)
+- Perelli, Alberto, Pomyka{\l}a, Jacek, Averages of twisted elliptic $L$-functions (1997)
+- Purkait, Soma, On Shimura's decomposition (2013)
+- Nekov{á}{\v r}, Jan, Selmer complexes (2006)
+- Rohrlich, David E., On $L$-functions of elliptic curves and cyclotomic towers (1984)
+- Rohrlich, David E., $L$-functions and division towers (1988)
+- Rohrlich, David E., Nonvanishing of $L$-functions for $\mathrm{GL}(2)$ (1989)
+- Erd{ő}s, Paul, Kac, Mark, The Gaussian law of errors in the theory of additive number theoretic functions (1940)
+- Erd{ő}s, Paul, Beweis eines Satzes von Tschebyschef (1932)
+- Serre, Jean-Pierre, Abelian $\ell$-adic representations and elliptic curves (1968)
+- Serre, Jean-Pierre, Propriétés galoisiennes des points d'ordre fini des courbes elliptiques (1972)
+- Sharifi, Romyar, Iwasawa Theory (n.d.)
+- Shimura, Goro, The critical values of certain zeta functions associated with modular forms of half-integral weight (1981)
+- Silverman, Joseph H., The Arithmetic of Elliptic Curves (2009)
+- Skinner, Christopher, A converse to a theorem of Gross, Zagier, and Kolyvagin (2020)
+- Skinner, Christopher, Urban, Eric, The Iwasawa main conjectures for $\mathrm{GL}_2$ (2014)
+- Smith, Alexander, The Birch and {Swinnerton-Dyer} conjecture implies Goldfeld's conjecture (2025)
+- Smith, Alexander, $2^\infty$-Selmer groups, $2^\infty$-class groups, and Goldfeld's conjecture (2017)
+- Smith, Alexander, The distribution of $\ell^\infty$-Selmer groups in degree $\ell$ twist families I (2026)
+- Smith, Alexander, The distribution of $\ell^\infty$-Selmer groups in degree $\ell$ twist families II (2026)
+- Smith, Alexander, The congruent numbers have positive natural density (2016)
+- Smith, Alexander, The Birch and {Swinnerton-Dyer} conjecture implies Goldfeld's conjecture (2025)
+- Soundararajan, Kannan, Nonvanishing of quadratic Dirichlet $L$-functions at $s=\frac{1}{2}$ (2000)
+- Soundararajan, Kannan, Young, Matthew P., The second moment of quadratic twists of modular $L$-functions (2010)
+- Tate, John, On the conjectures of Birch and {Swinnerton-Dyer} and a geometric analog (1966)
+- Tian, Ye, Congruent numbers and Heegner points (2014)
+- Tian, Ye, Yuan, Xinyi, Zhang, Shou-Wu, Genus periods, genus points and congruent number problem (2017)
+- Vatsal, Vinayak, Rank-one twists of a certain elliptic curve (1998)
+- Waldspurger, Jean-Loup, Correspondance de Shimura (1980)
+- Waldspurger, Jean-Loup, Sur les coefficients de Fourier des formes modulaires de poids demi-entier (1981)
+- Waldspurger, Jean-Loup, Correspondances de Shimura (1984)
+- Warning, Ewald, Bemerkung zur vorstehenden Arbeit (1935)
+- Wei, Tong, Zhai, Shuai, On the coefficients of the Taylor expansion of $L$-functions of elliptic curves (2026)
+- Weil, André, Sur certains groupes d'opérateurs unitaires (1964)
+- Yu, Qiyao, $p$-Converse to a Theorem of Gross–Zagier, Kolyvagin, and Rubin for Small Primes (2021)
+- Zhang, Wei, Selmer groups and the indivisibility of Heegner points (2014)

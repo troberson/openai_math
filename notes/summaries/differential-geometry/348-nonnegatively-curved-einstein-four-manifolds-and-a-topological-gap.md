@@ -1,4 +1,4 @@
-Notes / Summaries / Differential geometry / [Family 348](../../index/differential-geometry/348-nonnegatively-curved-einstein-four-manifolds-and-a-topological-gap.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Differential geometry](../../index/disciplines/differential-geometry.md) / [Family 348](../../index/differential-geometry/348-nonnegatively-curved-einstein-four-manifolds-and-a-topological-gap.md)
 
 # 348 — Nonnegatively curved Einstein four-manifolds and a topological gap
 
@@ -129,11 +129,11 @@ The L2 gap manuscript states the premise is used only for an exactly Einstein me
 
 The zero-plane manuscript's reduction is to the two Weyl blocks. Its introduction sets up the variables [S6:95–109]:
 
-> Choose an orientation and let $\Lambda^+$ and $\Lambda^-$ be the rank-three eigenspaces of the Hodge star on two-forms. The Einstein curvature operator has blocks $\mathrm{Id}+T$ and $\mathrm{Id}+U$, where $T,U$ are symmetric and trace-free. They are the self-dual and anti-self-dual Weyl blocks. Set \[ v=\frac{|T|}{\sqrt6},\qquad b=\frac{|U|}{\sqrt6},\qquad x=-\lambda_{\min}(T),\qquad y=-\lambda_{\min}(U). \] All matrix norms are Hilbert--Schmidt norms. As proved in Lemma~ , the smallest sectional curvature is $1-(x+y)/2$, and \[ v\le x\le2v,\qquad b\le y\le2b,\qquad x+y\le2. \]
+> Choose an orientation and let $\Lambda^+$ and $\Lambda^-$ be the rank-three eigenspaces of the Hodge star on two-forms. The Einstein curvature operator has blocks $\mathrm{Id}+T$ and $\mathrm{Id}+U$, where $T,U$ are symmetric and trace-free. They are the self-dual and anti-self-dual Weyl blocks. Set \[ v=\frac{|T|}{\sqrt6},\qquad b=\frac{|U|}{\sqrt6},\qquad x=-\lambda_{\min}(T),\qquad y=-\lambda_{\min}(U). \] All matrix norms are Hilbert–Schmidt norms. As proved in Lemma  , the smallest sectional curvature is $1-(x+y)/2$, and \[ v\le x\le2v,\qquad b\le y\le2b,\qquad x+y\le2. \]
 
 The zero-plane hypothesis is used only in the reduction, not in the estimates [S6:113–123]:
 
-> If one Weyl block vanished identically, the metric would be half-conformally flat. The classical compact positive-scalar Einstein classification of Hitchin~ , with conformal Einstein rigidity~ , would identify our simply connected cover with the standard $S^4$ or $\mathbb{CP}^2$ up to scale; see also \cite[Remark~7]{Derdzinski1983}. Both have strictly positive sectional curvature. We may therefore assume throughout the remaining proof that neither block vanishes identically. The zero-plane hypothesis is used only in this reduction: the remaining estimates assume only nonnegative sectional curvature and that neither block vanishes identically. Individual blocks may still vanish at some points.
+> If one Weyl block vanished identically, the metric would be half-conformally flat. The classical compact positive-scalar Einstein classification of Hitchin  , with conformal Einstein rigidity  , would identify our simply connected cover with the standard $S^4$ or $\mathbb{CP}^2$ up to scale; see also \cite[Remark 7]Derdzinski1983. Both have strictly positive sectional curvature. We may therefore assume throughout the remaining proof that neither block vanishes identically. The zero-plane hypothesis is used only in this reduction: the remaining estimates assume only nonnegative sectional curvature and that neither block vanishes identically. Individual blocks may still vanish at some points.
 
 The proof has three stages [S6:125–137]:
 
@@ -145,27 +145,27 @@ The boundary case is the point. Three features let the estimates reach it [S6:13
 
 The organization names five sections and an appendix of exact polynomial certificates [S6:150–157]:
 
-> Section~  develops the curvature identities, including the weak norm equations at zeros. Sections~  and~  establish the scalar estimates and moment balance. Sections~  and~  give the Hessian and coupling inequalities. Section~  resolves their equality case and proves Theorem~ . Appendix~  supplies the exact polynomial certificates, including all boundary faces.
+> Section   develops the curvature identities, including the weak norm equations at zeros. Sections   and   establish the scalar estimates and moment balance. Sections   and   give the Hessian and coupling inequalities. Section   resolves their equality case and proves Theorem  . Appendix   supplies the exact polynomial certificates, including all boundary faces.
 
 The L2 gap manuscript's energy is the trace-free Ricci energy, scale-invariant in dimension four [S12:59–69]:
 
-> For a Riemannian four-manifold $(M,g)$, let \[ E_g=\Ric_g-\frac{\Scal_g}{4}g, \qquad \mathcal D(g)=\int_M |E_g|_g^2\,d\mu_g. \] The tensor $E_g$ vanishes precisely when $g$ is Einstein, provided that $M$ is connected. The energy $\mathcal D$ is unchanged by constant rescaling in dimension four. It is therefore natural to ask whether a classification of Einstein metrics remains valid at the level of smooth manifolds when $\mathcal D$ is small. We address this question under nonnegative sectional curvature.
+> For a Riemannian four-manifold $(M,g)$, let \[ E_g=\Ric_g-\frac{\Scal_g}4g, \qquad \mathcal D(g)=\int_M |E_g|_g^2\,d\mu_g. \] The tensor $E_g$ vanishes precisely when $g$ is Einstein, provided that $M$ is connected. The energy $\mathcal D$ is unchanged by constant rescaling in dimension four. It is therefore natural to ask whether a classification of Einstein metrics remains valid at the level of smooth manifolds when $\mathcal D$ is small. We address this question under nonnegative sectional curvature.
 
 Its method is a smoothing argument that does not assume sectional curvature survives the flow [S12:164–171]:
 
-> A second point concerns sectional curvature. Its nonnegativity is not assumed to persist under the flow. Instead, we bound the integral of its negative part by $Ct$. The limit is an exactly Einstein shrinking flow, and its explicit scaling converts this weak defect estimate into nonnegative sectional curvature of the fixed Einstein metric. This gives the classification-independent compactness statement of Proposition~ ; classification then identifies the limiting manifold.
+> A second point concerns sectional curvature. Its nonnegativity is not assumed to persist under the flow. Instead, we bound the integral of its negative part by $Ct$. The limit is an exactly Einstein shrinking flow, and its explicit scaling converts this weak defect estimate into nonnegative sectional curvature of the fixed Einstein metric. This gives the classification-independent compactness statement of Proposition  ; classification then identifies the limiting manifold.
 
 Its smoothing step isolates a globally small high part of the curvature [S12:148–162]:
 
-> Smoothing from small critical curvature concentration was developed, in particular, by Chan, Chen, and Lee  . The formulation used here isolates a globally small _high part_ of the curvature. Consider a sequence $(M_j,g_j)$ satisfying the geometric hypotheses of Theorem~  with $\mathcal D(g_j)\to0$. After normalization, nonnegative sectional curvature gives, for a fixed threshold $K_0$, \[ \left\lVert (|\Rm_{g_j}|-K_0)_+\right\rVert_{L^2(g_j)}\longrightarrow0. \] A moving threshold propagates this estimate. It yields both a uniform Sobolev inequality and noncollapse along each existing flow; a curvature-concentration contradiction then establishes a common lifespan. The same tail bound controls the evolving Einstein error. Thus the high-part formulation supplies both the regularization and the defect estimate needed for the gap argument.
+> Smoothing from small critical curvature concentration was developed, in particular, by Chan, Chen, and Lee  . The formulation used here isolates a globally small _high part_ of the curvature. Consider a sequence $(M_j,g_j)$ satisfying the geometric hypotheses of Theorem   with $\mathcal D(g_j)\to0$. After normalization, nonnegative sectional curvature gives, for a fixed threshold $K_0$, \[ \left\lVert (|\Rm_{g_j}|-K_0)_+\right\rVert_{L^2(g_j)}\longrightarrow0. \] A moving threshold propagates this estimate. It yields both a uniform Sobolev inequality and noncollapse along each existing flow; a curvature-concentration contradiction then establishes a common lifespan. The same tail bound controls the evolving Einstein error. Thus the high-part formulation supplies both the regularization and the defect estimate needed for the gap argument.
 
 The L2 gap manuscript names the prior work it does not use, and names the companion as its premise [S12:109–118]:
 
-> The exact Einstein problem has been studied under several additional hypotheses. Gursky and LeBrun obtained the Fubini--Study conclusion for nonnegative sectional curvature and a nonzero positive-definite intersection form  . Cao and Tran established sectional-pinching criteria  , and Liu classified the $T^2$-invariant case on closed simply connected four-manifolds  . Here the classification premise is supplied by _Zero-Plane Rigidity for Einstein Four-Manifolds_ \cite[Corollary~1.2]{ZeroPlane}. Our problem is instead to transfer that exact classification to metrics with small critical Ricci error.
+> The exact Einstein problem has been studied under several additional hypotheses. Gursky and LeBrun obtained the Fubini–Study conclusion for nonnegative sectional curvature and a nonzero positive-definite intersection form  . Cao and Tran established sectional-pinching criteria  , and Liu classified the $T^2$-invariant case on closed simply connected four-manifolds  . Here the classification premise is supplied by _Zero-Plane Rigidity for Einstein Four-Manifolds_ \cite[Corollary 1.2]ZeroPlane. Our problem is instead to transfer that exact classification to metrics with small critical Ricci error.
 
 The zero-plane manuscript's context paragraph names the antecedents it builds on [S6:36–51]:
 
-> The classification of positively curved Einstein four-manifolds has a long history. Berger's rigidity under strict quarter pinching   was followed by quantitative curvature conditions of Yang, Costa, and Cao--Tran  . Gursky--LeBrun obtained the Fubini--Study conclusion under nonnegative sectional curvature and a nonzero positive-definite intersection form \cite[Theorem~A]{GurskyLeBrun1999}. Their separate Weyl-norm gaps and analysis of the two Weyl blocks are important antecedents of the argument here. Scalar combinations of the two Weyl norms also appear in Yang's coupling argument~\cite[Section~6]{Yang2000} and in Cao--Tran~\cite[Proposition~2.2]{CaoTran2018}. Under nonnegative isotropic curvature, which is a different curvature condition, the Einstein local-symmetry theorem in dimension four is due to Micallef--Wang \cite[Theorem~4.4]{MicallefWang1993}; Brendle established the analogous rigidity in higher dimensions~\cite[Theorem~1]{Brendle2010}.
+> The classification of positively curved Einstein four-manifolds has a long history. Berger's rigidity under strict quarter pinching   was followed by quantitative curvature conditions of Yang, Costa, and Cao–Tran  . Gursky–LeBrun obtained the Fubini–Study conclusion under nonnegative sectional curvature and a nonzero positive-definite intersection form \cite[Theorem A]GurskyLeBrun1999. Their separate Weyl-norm gaps and analysis of the two Weyl blocks are important antecedents of the argument here. Scalar combinations of the two Weyl norms also appear in Yang's coupling argument \cite[Section 6]Yang2000 and in Cao–Tran \cite[Proposition 2.2]CaoTran2018. Under nonnegative isotropic curvature, which is a different curvature condition, the Einstein local-symmetry theorem in dimension four is due to Micallef–Wang \cite[Theorem 4.4]MicallefWang1993; Brendle established the analogous rigidity in higher dimensions \cite[Theorem 1]Brendle2010.
 
 **Prior (my training data, not this repo).** As of my early-2025 cutoff, the classification of closed Einstein four-manifolds with positive sectional curvature is not a theorem I recall; the Hitchin-Thorpe inequality is classical, and the signs of the Euler characteristic and signature constrain Einstein four-manifolds. I recall LeBrun's 11/8 theorem for the Fubini-Study case under a positive intersection form, and the Micallef–Wang local-symmetry theorem under nonnegative isotropic curvature. I do not recall a rigidity theorem that uses a single zero-curvature plane at a single point to force a product-of-spheres universal cover, nor a scale-invariant L2 gap for the trace-free Ricci tensor that transfers a classification to the level of diffeomorphism type. The prior is a training-data recollection, self-rated, and the repo supplies only the manuscripts' citations.
 
@@ -207,41 +207,75 @@ What has not been checked: no Lean, lake, or comparator run was performed, and t
 
 ## Bibliography
 
-**22 entries** from `references.tex`:
-- [Berger1961] M.~Berger, \emph{Sur quelques vari\'et\'es d'Einstein compactes}, Ann. Mat. Pura Appl. \textbf{53} (1961), 89--95. \href…
-- [BoudaoudCarusoRoy2008] F.~Boudaoud, F.~Caruso, and M.-F.~Roy, \emph{Certificates of Positivity in the Bernstein Basis}, Discrete Comput. Geom. …
-- [Brendle2010] S.~Brendle, \emph{Einstein manifolds with nonnegative isotropic curvature are locally symmetric}, Duke Math. J. \textbf{…
-- [CalderbankGauduchonHerzlich2000] D.~M.~J.~Calderbank, P.~Gauduchon, and M.~Herzlich, \emph{Refined Kato inequalities and conformal weights in Riemannian …
-- [CaoTran2018] X.~Cao and H.~Tran, \emph{Einstein four-manifolds of pinched sectional curvature}, Adv. Math. \textbf{335} (2018), 322--…
-- [Cheng2026] L.~Cheng, \emph{On Positively Curved Einstein Four-Manifolds with Euler Characteristic at Most Three}, \href{https://arx…
-- [Costa2004] E.~Costa, \emph{On Einstein four-manifolds}, J. Geom. Phys. \textbf{51} (2004), no.~2, 244--255. \href{https://doi.org/1…
-- [Derdzinski1983] A.~Derdzi\'nski, \emph{Self-dual K\"ahler manifolds and Einstein manifolds of dimension four}, Compositio Math. \textbf{…
-- [deRham1952] G.~de~Rham, \emph{Sur la r\'eductibilit\'e d'un espace de Riemann}, Comment. Math. Helv. \textbf{26} (1952), 328--344. \…
-- [DiCerbo2026] L.~F.~Di Cerbo, \emph{A rigidity theorem for Einstein 4-manifolds with sectional curvature of a fixed sign, and its cons…
-- … and 12 more
-
-**18 entries** from `references.bib`:
-- De Lellis, Camillo, Topping, Peter M.. *Almost-{Schur} lemma*. (2012) [DeLellisTopping]
-- Cheeger, Jeff, Colding, Tobias H.. *Lower bounds on {Ricci} curvature and the almost rigidity of warped products*. (1996) [CheegerColding]
-- Petersen, Peter, Sprouse, Chadwick. *Integral curvature bounds, distance estimates and applications*. (1998) [PetersenSprouse]
-- Sprouse, Chadwick. *Integral curvature bounds and bounded diameter*. (2000) [Sprouse]
-- Perelman, Grisha. *The entropy formula for the {Ricci} flow and its geometric applications*. (2002) [Perelman]
-- Ye, Rugang. *The logarithmic {Sobolev} and {Sobolev} inequalities along the {Ricci} flow*. (2015) [Ye]
-- Zhang, Qi S.. *A uniform {Sobolev} inequality under {Ricci} flow*. (2007) [Zhang]
-- Shi, Wan-Xiong. *Deforming the metric on complete {Riemannian} manifolds*. (1989) [Shi]
-- Morgan, John, Tian, Gang. *{Ricci} Flow and the {Poincar\'e} Conjecture*. (2007) [MorganTian]
-- Hamilton, Richard S.. *Three-manifolds with positive {Ricci} curvature*. (1982) [HamiltonRF]
-- … and 8 more
-
-**32 entries** from `references.tex`:
-- [AbreschMeyer1997] U.~Abresch and W.~T.~Meyer, \emph{Injectivity Radius Estimates and Sphere Theorems}, in \emph{Comparison Geometry}, MSRI…
-- [Ambrose1956] W.~Ambrose, \emph{Parallel Translation of Riemannian Curvature}, Ann. of Math. (2) \textbf{64} (1956), no.~2, 337--363. …
-- [Berger1961] M.~Berger, \emph{Sur quelques vari\'et\'es d'Einstein compactes}, Ann. Mat. Pura Appl. \textbf{53} (1961), 89--95. \href…
-- [BidautVeronVeron] M.-F.~Bidaut-V\'eron and L.~V\'eron, \emph{Nonlinear elliptic equations on compact Riemannian manifolds and asymptotics …
-- [BoudaoudCarusoRoy2008] F.~Boudaoud, F.~Caruso, and M.-F.~Roy, \emph{Certificates of Positivity in the Bernstein Basis}, Discrete Comput. Geom. …
-- [Brendle2010] S.~Brendle, \emph{Einstein manifolds with nonnegative isotropic curvature are locally symmetric}, Duke Math. J. \textbf{…
-- [CalderbankGauduchonHerzlich2000] D.~M.~J.~Calderbank, P.~Gauduchon, and M.~Herzlich, \emph{Refined Kato inequalities and conformal weights in Riemannian …
-- [CaoTran2018] X.~Cao and H.~Tran, \emph{Einstein four-manifolds of pinched sectional curvature}, Adv. Math. \textbf{335} (2018), 322--…
-- [CatinoDameno2026] G.~Catino and D.~Dameno, \emph{Conformal K\"ahler rigidity of Einstein four-manifolds}, 2026, \href{https://arxiv.org/ab…
-- [Cheng2026] L.~Cheng, \emph{On Positively Curved Einstein Four-Manifolds with Euler Characteristic at Most Three}, \href{https://arx…
-- … and 22 more
+- W. Ambrose, _Parallel Translation of Riemannian Curvature_, Ann. of Math. (2) **64** (1956), no. 2, 337–363. doi:10.2307/1969978.
+- M. Berger, _Sur quelques variétés d'Einstein compactes_, Ann. Mat. Pura Appl. **53** (1961), 89–95. doi:10.1007/BF02417787.
+- M. Berger, _Sur quelques variétés d'Einstein compactes_, Ann. Mat. Pura Appl. **53** (1961), 89–95. doi:10.1007/BF02417787.
+- F. Boudaoud, F. Caruso, and M.-F. Roy, _Certificates of Positivity in the Bernstein Basis_, Discrete Comput. Geom. **39** (2008), no. 4, 639–655. doi:10.1007/s00454-007-9042-x.
+- F. Boudaoud, F. Caruso, and M.-F. Roy, _Certificates of Positivity in the Bernstein Basis_, Discrete Comput. Geom. **39** (2008), no. 4, 639–655. doi:10.1007/s00454-007-9042-x.
+- S. Brendle, _Einstein manifolds with nonnegative isotropic curvature are locally symmetric_, Duke Math. J. **151** (2010), no. 1, 1–21. doi:10.1215/00127094-2009-061.
+- S. Brendle, _Einstein manifolds with nonnegative isotropic curvature are locally symmetric_, Duke Math. J. **151** (2010), no. 1, 1–21. doi:10.1215/00127094-2009-061.
+- D. M. J. Calderbank, P. Gauduchon, and M. Herzlich, _Refined Kato inequalities and conformal weights in Riemannian geometry_, J. Funct. Anal. **173** (2000), no. 1, 214–255. doi:10.1006/jfan.2000.3563.
+- D. M. J. Calderbank, P. Gauduchon, and M. Herzlich, _Refined Kato inequalities and conformal weights in Riemannian geometry_, J. Funct. Anal. **173** (2000), no. 1, 214–255. doi:10.1006/jfan.2000.3563.
+- Cao, Xiaodong, Tran, Hung, Einstein four-manifolds of pinched sectional curvature (2018)
+- L. F. Di Cerbo, _A rigidity theorem for Einstein 4-manifolds with sectional curvature of a fixed sign, and its consequences_, Math. Ann. **396** (2026), article 11. doi:10.1007/s00208-026-03547-w. Author version: arXiv:2503.09570v3.
+- L. F. Di Cerbo, _A rigidity theorem for Einstein 4-manifolds with sectional curvature of a fixed sign, and its consequences_, Math. Ann. **396** (2026), article 11. doi:10.1007/s00208-026-03547-w. Author version: arXiv:2503.09570v3.
+- Chan, Pak-Yeung, Chen, Eric, Lee, Man-Chun, Small curvature concentration and Ricci flow smoothing (2022)
+- Cheeger, Jeff, Colding, Tobias H., Lower bounds on Ricci curvature and the almost rigidity of warped products (1996)
+- Cheeger, Jeff, Gromov, Mikhail, Taylor, Michael, Finite propagation speed, kernel estimates for functions of the Laplace operator, and the geometry of complete Riemannian manifolds (1982)
+- L. Cheng, _On Positively Curved Einstein Four-Manifolds with Euler Characteristic at Most Three_, arXiv:2609.23337v1 [math.DG], September 20, 2026.
+- L. Cheng, _On Positively Curved Einstein Four-Manifolds with Euler Characteristic at Most Three_, arXiv:2609.23337v1 [math.DG], September 20, 2026.
+- E. Costa, _On Einstein four-manifolds_, J. Geom. Phys. **51** (2004), no. 2, 244–255. doi:10.1016/j.geomphys.2003.10.013.
+- E. Costa, _On Einstein four-manifolds_, J. Geom. Phys. **51** (2004), no. 2, 244–255. doi:10.1016/j.geomphys.2003.10.013.
+- G. Catino and D. Dameno, _Conformal Kähler rigidity of Einstein four-manifolds_, 2026, arXiv:2607.21538v1 [math.DG].
+- D. Dameno, _A note on Einstein metrics and Riemannian twistor spaces_, Math. Z. **313** (2026), article 86. doi:10.1007/s00209-026-04100-w.
+- A. Derdziński, _Self-dual Kähler manifolds and Einstein manifolds of dimension four_, Compositio Math. **49** (1983), no. 3, 405–433. Journal archive.
+- A. Derdziński, _Self-dual Kähler manifolds and Einstein manifolds of dimension four_, Compositio Math. **49** (1983), no. 3, 405–433. Journal archive.
+- P. B. Gilkey, _Invariance Theory, the Heat Equation, and the Atiyah–Singer Index Theorem_, Publish or Perish, 1984. Author-hosted electronic reprint, 1996.
+- P. B. Gilkey, _Invariance Theory, the Heat Equation, and the Atiyah–Singer Index Theorem_, Publish or Perish, 1984. Author-hosted electronic reprint, 1996.
+- Gursky, Matthew J., LeBrun, Claude, On Einstein manifolds of positive sectional curvature (1999)
+- Hamilton, Richard S., Three-manifolds with positive Ricci curvature (1982)
+- Hamilton, Richard S., A compactness property for solutions of the Ricci flow (1995)
+- A. Hatcher, _Algebraic Topology_, Cambridge University Press, Cambridge, 2002. Author-hosted text.
+- N. J. Hitchin, _Kählerian twistor spaces_, Proc. London Math. Soc. (3) **43** (1981), no. 1, 133–150. doi:10.1112/plms/s3-43.1.133.
+- N. J. Hitchin, _Kählerian twistor spaces_, Proc. London Math. Soc. (3) **43** (1981), no. 1, 133–150. doi:10.1112/plms/s3-43.1.133.
+- S. Ilias, _Constantes explicites pour les inégalités de Sobolev sur les variétés riemanniennes compactes_, Ann. Inst. Fourier (Grenoble) **33** (1983), no. 2, 151–165. doi:10.5802/aif.921.
+- S. Ilias, _Constantes explicites pour les inégalités de Sobolev sur les variétés riemanniennes compactes_, Ann. Inst. Fourier (Grenoble) **33** (1983), no. 2, 151–165. doi:10.5802/aif.921.
+- W. Klingenberg, _Contributions to Riemannian Geometry in the Large_, Ann. of Math. (2) **69** (1959), no. 3, 654–666. doi:10.2307/1970029.
+- C. Koca, _Einstein Hermitian metrics of positive sectional curvature_, Proc. Amer. Math. Soc. **142** (2014), no. 6, 2119–2122. doi:10.1090/S0002-9939-2014-11929-0. Author version: arXiv:1112.4181v3.
+- Th. Friedrich and H. Kurke, _Compact four-dimensional self-dual Einstein manifolds with positive scalar curvature_, Math. Nachr. **106** (1982), no. 1, 271–299. doi:10.1002/mana.19821060124.
+- M. J. Gursky and C. LeBrun, _On Einstein manifolds of positive sectional curvature_, Ann. Global Anal. Geom. **17** (1999), no. 4, 315–328. doi:10.1023/A:1006597912184.
+- M. J. Gursky and C. LeBrun, _On Einstein manifolds of positive sectional curvature_, Ann. Global Anal. Geom. **17** (1999), no. 4, 315–328. doi:10.1023/A:1006597912184.
+- De Lellis, Camillo, Topping, Peter M., Almost-Schur lemma (2012)
+- T. Liu, _Toric Einstein 4-manifolds with non-negative sectional curvature_, Ann. Global Anal. Geom. **67** (2025), article 14. doi:10.1007/s10455-025-09990-3.
+- Liu, Tianyue, Toric Einstein 4-manifolds with non-negative sectional curvature (2025)
+- M. J. Gursky and A. Malchiodi, _Einstein four-manifolds of positive sectional curvature and ADM mass_, arXiv:2609.30803v1 [math.DG], submitted September 25, 2026.
+- M. J. Gursky and A. Malchiodi, _Einstein four-manifolds of positive sectional curvature and ADM mass_, arXiv:2609.30803v1 [math.DG], submitted September 25, 2026.
+- H. P. McKean, Jr., and I. M. Singer, _Curvature and the eigenvalues of the Laplacian_, J. Differential Geom. **1** (1967), 43–69. doi:10.4310/jdg/1214427880.
+- U. Abresch and W. T. Meyer, _Injectivity Radius Estimates and Sphere Theorems_, in _Comparison Geometry_, MSRI Publications **30**, Cambridge University Press, 1997, 1–47. Publisher-hosted text.
+- Morgan, John, Tian, Gang, Ricci Flow and the {Poincaré} Conjecture (2007)
+- S. B. Myers, _Riemannian manifolds with positive mean curvature_, Duke Math. J. **8** (1941), no. 2, 401–404. doi:10.1215/S0012-7094-41-00832-3.
+- S. B. Myers, _Riemannian manifolds with positive mean curvature_, Duke Math. J. **8** (1941), no. 2, 401–404. doi:10.1215/S0012-7094-41-00832-3.
+- B. O'Neill, _The fundamental equations of a submersion_, Michigan Math. J. **13** (1966), no. 4, 459–469. doi:10.1307/mmj/1028999604.
+- M. Obata, _Certain conditions for a Riemannian manifold to be isometric with a sphere_, J. Math. Soc. Japan **14** (1962), no. 3, 333–340. doi:10.2969/jmsj/01430333.
+- M. Obata, _Certain conditions for a Riemannian manifold to be isometric with a sphere_, J. Math. Soc. Japan **14** (1962), no. 3, 333–340. doi:10.2969/jmsj/01430333.
+- OpenAI, _Positively curved Einstein four-manifolds_, OpenAI Math Release preprint OAI:Positively-curved-Einstein-four-manifolds-September-23-2026, 2026.
+- OpenAI, {Zero-Plane Rigidity for Einstein Four-Manifolds} (2026)
+- Perelman, Grisha, The entropy formula for the Ricci flow and its geometric applications (2002)
+- Petersen, Peter, Sprouse, Chadwick, Integral curvature bounds, distance estimates and applications (1998)
+- G. de Rham, _Sur la réductibilité d'un espace de Riemann_, Comment. Math. Helv. **26** (1952), 328–344. doi:10.1007/BF02564308.
+- M.-F. Roy, _Certificates of Positivity in the Bernstein basis_, Oberwolfach Reports, report 14/2007, 800–804. Report on joint work with F. Boudaoud, F. Caruso, and R. Leroy. Report.
+- M.-F. Roy, _Certificates of Positivity in the Bernstein basis_, Oberwolfach Reports, report 14/2007, 800–804. Report on joint work with F. Boudaoud, F. Caruso, and R. Leroy. Report.
+- Shi, Wan-Xiong, Deforming the metric on complete Riemannian manifolds (1989)
+- Sprouse, Chadwick, Integral curvature bounds and bounded diameter (2000)
+- J. L. Synge, _On the Connectivity of Spaces of Positive Curvature_, Quart. J. Math. Oxford Ser. **7** (1936), 316–320. doi:10.1093/qmath/os-7.1.316.
+- Topping, Peter M., Remarks on {Hamilton's} compactness theorem for Ricci flow (2014)
+- X. Cao and H. Tran, _Einstein four-manifolds of pinched sectional curvature_, Adv. Math. **335** (2018), 322–342. doi:10.1016/j.aim.2018.07.003. Author version: arXiv:1612.06023v2.
+- X. Cao and H. Tran, _Einstein four-manifolds of pinched sectional curvature_, Adv. Math. **335** (2018), 322–342. doi:10.1016/j.aim.2018.07.003. Author version: arXiv:1612.06023v2.
+- D. Gilbarg and N. S. Trudinger, _Elliptic Partial Differential Equations of Second Order_, Classics in Mathematics, Springer, Berlin, 2001, reprint of the 1998 edition. doi:10.1007/978-3-642-61798-0.
+- M.-F. Bidaut-Véron and L. Véron, _Nonlinear elliptic equations on compact Riemannian manifolds and asymptotics of Emden equations_, Invent. Math. **106** (1991), 489–539. doi:10.1007/BF01243922. Erratum, Invent. Math. **112** (1993), no. 2, 445. doi:10.1007/BF01232442.
+- M. J. Micallef and M. Y. Wang, _Metrics with nonnegative isotropic curvature_, Duke Math. J. **72** (1993), no. 3, 649–672. doi:10.1215/S0012-7094-93-07224-9.
+- M. J. Micallef and M. Y. Wang, _Metrics with nonnegative isotropic curvature_, Duke Math. J. **72** (1993), no. 3, 649–672. doi:10.1215/S0012-7094-93-07224-9.
+- D. Yang, _Rigidity of Einstein 4-manifolds with positive curvature_, Invent. Math. **142** (2000), no. 2, 435–450. doi:10.1007/PL00005792.
+- D. Yang, _Rigidity of Einstein 4-manifolds with positive curvature_, Invent. Math. **142** (2000), no. 2, 435–450. doi:10.1007/PL00005792.
+- Ye, Rugang, The logarithmic Sobolev and Sobolev inequalities along the Ricci flow (2015)
+- Zhang, Qi S., A uniform Sobolev inequality under Ricci flow (2007)

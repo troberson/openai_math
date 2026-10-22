@@ -1,4 +1,4 @@
-Notes / Summaries / Number theory / [Family 014](../../index/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Number theory](../../index/disciplines/number-theory.md) / [Family 014](../../index/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md)
 
 # 014 — Restricted geometric Langlands, generic Ramanujan and Arthur parameters
 
@@ -54,21 +54,21 @@ The geometric cluster is built around existence. The automorphic side of the cor
 
 ## Graduate summary
 
-**The decomposition, and the Ramanujan corollary.** Manuscript 3 fixes a curve over a finite field, a split semisimple group, a level $D$ and a coefficient field, and writes $C_D$ for the space of cuspidal automorphic functions at that level. Its main theorem is the direct-sum statement [S13:108–118]: "For every \(X,G,D,\ell\) as above, the natural addition maps" the orbit-indexed sums into $C_D$, and those maps "are isomorphisms. The sums range over the nilpotent orbits of \(\Gd\)." [S13:117] Taking the trivial level settles the conjectures it was written for: "Taking \(D=0\) resolves Conjecture~3.4.6 of Gaitsgory--Lafforgue--Raskin positively, as well as its equivalent rational form, Conjecture~3.4.5." [S13:120–122] The Ramanujan statement is a corollary, not the theorem [S13:141–152]: "In particular, every globally generic cuspidal automorphic representation of \(G(\mathbb A_F)\) is tempered at every unramified place." [S13:149–151] Its scope is stated with the same care: "Here unramified means spherical for a hyperspecial maximal compact subgroup. The conclusion is only about these local components." [S13:154–155]
+**The decomposition, and the Ramanujan corollary.** Manuscript 3 fixes a curve over a finite field, a split semisimple group, a level $D$ and a coefficient field, and writes $C_D$ for the space of cuspidal automorphic functions at that level. Its main theorem is the direct-sum statement [S13:108–118]: "For every \(X,G,D,\ell\) as above, the natural addition maps" the orbit-indexed sums into $C_D$, and those maps "are isomorphisms. The sums range over the nilpotent orbits of \(\Gd\)." [S13:117] Taking the trivial level settles the conjectures it was written for: "Taking \(D=0\) resolves Conjecture 3.4.6 of Gaitsgory–Lafforgue–Raskin positively, as well as its equivalent rational form, Conjecture 3.4.5." [S13:120–122] The Ramanujan statement is a corollary, not the theorem [S13:141–152]: "In particular, every globally generic cuspidal automorphic representation of \(G(\mathbb A_F)\) is tempered at every unramified place." [S13:149–151] Its scope is stated with the same care: "Here unramified means spherical for a hyperspecial maximal compact subgroup. The conclusion is only about these local components." [S13:154–155]
 
-**The enhancement, and what it assumes.** Manuscript 1 states its main theorem under a hypothesis imported from manuscript 3, quoted in its own environment title as "Finite-level Ramanujan--Arthur decomposition" [S4:155]. The hypothesis says "For every occurring excursion character $\nu$, there is a unique nilpotent $L$-orbit" [S4:157–158] governing the local Arthur form of the parameter, with "The same orbit occurs at every $x$." [S4:170–171] Manuscript 1 is explicit about the gap between that hypothesis and its conclusion: "The theorem is a statement about good-place semisimple classes." [S4:174] and "Our result supplies the global homomorphism and retains the specified character $\nu$." [S4:177–178] Its theorem opens "Assume Theorem~ ." [S4:181] and produces an algebraic homomorphism from $\SL_{2,k}$ into the $L$-group together with a continuous homomorphism from the Weil group into the centralizer of its image, both defined over a finite extension of $\Q_\ell$, subject to "The Zariski closure of $\tau_\nu(\Gamma)$ is reductive." [S4:198], an absolute-value-one condition on the eigenvalues at closed points, and a diagonal specialization identity recovering $\sigma_\nu$ for every element of $\Gamma$. The environment closes "The centralizer is the full algebraic centralizer; it may be disconnected." [S4:211–212]
+**The enhancement, and what it assumes.** Manuscript 1 states its main theorem under a hypothesis imported from manuscript 3, quoted in its own environment title as "Finite-level Ramanujan–Arthur decomposition" [S4:155]. The hypothesis says "For every occurring excursion character $\nu$, there is a unique nilpotent $L$-orbit" [S4:157–158] governing the local Arthur form of the parameter, with "The same orbit occurs at every $x$." [S4:170–171] Manuscript 1 is explicit about the gap between that hypothesis and its conclusion: "The theorem is a statement about good-place semisimple classes." [S4:174] and "Our result supplies the global homomorphism and retains the specified character $\nu$." [S4:177–178] Its theorem opens "Assume Theorem  ." [S4:181] and produces an algebraic homomorphism from $\SL_{2,k}$ into the $L$-group together with a continuous homomorphism from the Weil group into the centralizer of its image, both defined over a finite extension of $\Q_\ell$, subject to "The Zariski closure of $\tau_\nu(\Gamma)$ is reductive." [S4:198], an absolute-value-one condition on the eigenvalues at closed points, and a diagonal specialization identity recovering $\sigma_\nu$ for every element of $\Gamma$. The environment closes "The centralizer is the full algebraic centralizer; it may be disconnected." [S4:211–212]
 
-**Rationality of the filtration.** Manuscript 2 works under four Lie-theoretic hypotheses, "The following four conditions hold." [S8:42] — an invariant nondegenerate form on the Lie algebra, an isomorphism of invariant rings for each Levi and maximal torus, "The scheme-theoretic centralizer in $H$ of every semisimple element of $\mathfrak h$ is a Levi subgroup." [S8:55–56], and a parabolic containment condition for nilpotents over every extension. Its theorem [S8:118–127] begins "Under Assumption~ , for every prime $\ell\ne\mathrm{char}(\mathbb F_q)$ and every closed invariant $Y\subset\Nhat$, the natural map" [S8:119–121] and ends "is an isomorphism. The intersection is taken inside $\cA_E$." [S8:126] What it does not assume is listed: "No Hecke-finiteness or cuspidality condition is imposed." [S8:129] and "The theorem does not require $X(\mathbb F_q)$ to be nonempty." [S8:129–130] Where the two clusters meet is the cuspidal subspace: the filtration "identifies this filtration with the sums of the rational cuspidal Arthur summands of" manuscript 3, indexed by the orbit labels in $Y$ [S8:134–136].
+**Rationality of the filtration.** Manuscript 2 works under four Lie-theoretic hypotheses, "The following four conditions hold." [S8:42] — an invariant nondegenerate form on the Lie algebra, an isomorphism of invariant rings for each Levi and maximal torus, "The scheme-theoretic centralizer in $H$ of every semisimple element of $\mathfrak h$ is a Levi subgroup." [S8:55–56], and a parabolic containment condition for nilpotents over every extension. Its theorem [S8:118–127] begins "Under Assumption  , for every prime $\ell\ne\mathrm{char}(\mathbb F_q)$ and every closed invariant $Y\subset\Nhat$, the natural map" [S8:119–121] and ends "is an isomorphism. The intersection is taken inside $\cA_E$." [S8:126] What it does not assume is listed: "No Hecke-finiteness or cuspidality condition is imposed." [S8:129] and "The theorem does not require $X(\mathbb F_q)$ to be nonempty." [S8:129–130] Where the two clusters meet is the cuspidal subspace: the filtration "identifies this filtration with the sums of the rational cuspidal Arthur summands of" manuscript 3, indexed by the orbit labels in $Y$ [S8:134–136].
 
-**Temperedness at ramified places.** Manuscript 4 removes the unramified-only restriction for the exceptional types [S18:23–30]: "Let $G/F$ be split connected adjoint absolutely simple of type $G_2$, $F_4$, $E_6$, $E_7$, or $E_8$." [S18:24–25] and "If $\pi=\bigotimes'_v\pi_v$ is a complex globally generic cuspidal automorphic representation of $G(\mathbb A_F)$, then $\pi_v$ is tempered for every place $v$." [S18:26–28] The scope sentence is unusually strong: "There is no restriction on the characteristic of $F$, the ramification depth, or the local representation type." [S18:28–29] It extends the unramified result of manuscript 3 — "Ramanujan theorem of the companion paper \cite[Corollary~1.2]{UnramifiedRamanujan}." [S18:21] — and names the obstruction it has to clear: "The distinction between spherical and ramified components is substantial." [S18:32–33] because "at a ramified place a Weil--Deligne parameter also contains a nilpotent monodromy operator." [S18:34–35]
+**Temperedness at ramified places.** Manuscript 4 removes the unramified-only restriction for the exceptional types [S18:23–30]: "Let $G/F$ be split connected adjoint absolutely simple of type $G_2$, $F_4$, $E_6$, $E_7$, or $E_8$." [S18:24–25] and "If $\pi=\bigotimes'_v\pi_v$ is a complex globally generic cuspidal automorphic representation of $G(\mathbb A_F)$, then $\pi_v$ is tempered for every place $v$." [S18:26–28] The scope sentence is unusually strong: "There is no restriction on the characteristic of $F$, the ramification depth, or the local representation type." [S18:28–29] It extends the unramified result of manuscript 3 — "Ramanujan theorem of the companion paper \cite[Corollary 1.2]UnramifiedRamanujan." [S18:21] — and names the obstruction it has to clear: "The distinction between spherical and ramified components is substantial." [S18:32–33] because "at a ramified place a Weil–Deligne parameter also contains a nilpotent monodromy operator." [S18:34–35]
 
-**The equivalence, and its two regimes.** Manuscript 5 imposes four Lie-theoretic conditions under the heading "Common characteristic assumptions" [S23:117], stating "The following conditions hold for $G/k$." [S23:118]: a nondegenerate $G$-invariant form whose restriction to every Levi center is nondegenerate, Chevalley restriction as an isomorphism for every Levi, "The scheme-theoretic centralizer in $G$ of every semisimple element of $\mathfrak g$ is a Levi subgroup." [S23:129–130], and a parabolic containment condition for nilpotents over every extension. It locates them precisely: "The first three conditions are those of \cite[\S14.4.1]{AGKRRV}; the last is the additional condition of \cite[\S D.1.1]{AGKRRV}. These are the assumptions referenced by \cite[\S0.1.9]{GR}." [S23:137–139] The theorem is then proved in two regimes with different hypotheses. Regime A, titled "Regime A: finite-field descent" [S23:143], requires a model over $\mathbb F_q$ and says "No additional restriction on the order of the Weyl group is imposed in this regime." [S23:152–153] Regime B, titled "Regime B: arbitrary algebraically closed base" [S23:156], drops the descent and adds the characteristic restrictions: "The field $k$ is any algebraically closed field of characteristic $p>0$. Hypothesis~  holds, $p$ is very good for $G$, and $p\nmid |W_G|$. No finite-field descent of $X$ is assumed." [S23:158–160] The manuscript spells out very good — "for type $A_n$, $p\nmid n+1$; for $B_n,C_n,D_n$, $p\ne2$; for $G_2,F_4,E_6,E_7$, $p\ne2,3$; and for $E_8$, $p\ne2,3,5$, on every irreducible factor. A torus has no such exclusions." [S23:163–166] — and refuses to merge the regimes: "The two regimes have distinct proofs of the needed Lie-theoretic statement; neither is used as a substitute for the other." [S23:168–170]
+**The equivalence, and its two regimes.** Manuscript 5 imposes four Lie-theoretic conditions under the heading "Common characteristic assumptions" [S23:117], stating "The following conditions hold for $G/k$." [S23:118]: a nondegenerate $G$-invariant form whose restriction to every Levi center is nondegenerate, Chevalley restriction as an isomorphism for every Levi, "The scheme-theoretic centralizer in $G$ of every semisimple element of $\mathfrak g$ is a Levi subgroup." [S23:129–130], and a parabolic containment condition for nilpotents over every extension. It locates them precisely: "The first three conditions are those of \cite[\S14.4.1]AGKRRV; the last is the additional condition of \cite[\S D.1.1]AGKRRV. These are the assumptions referenced by \cite[\S0.1.9]GR." [S23:137–139] The theorem is then proved in two regimes with different hypotheses. Regime A, titled "Regime A: finite-field descent" [S23:143], requires a model over $\mathbb F_q$ and says "No additional restriction on the order of the Weyl group is imposed in this regime." [S23:152–153] Regime B, titled "Regime B: arbitrary algebraically closed base" [S23:156], drops the descent and adds the characteristic restrictions: "The field $k$ is any algebraically closed field of characteristic $p>0$. Hypothesis   holds, $p$ is very good for $G$, and $p\nmid |W_G|$. No finite-field descent of $X$ is assumed." [S23:158–160] The manuscript spells out very good — "for type $A_n$, $p\nmid n+1$; for $B_n,C_n,D_n$, $p\ne2$; for $G_2,F_4,E_6,E_7$, $p\ne2,3$; and for $E_8$, $p\ne2,3,5$, on every irreducible factor. A torus has no such exclusions." [S23:163–166] — and refuses to merge the regimes: "The two regimes have distinct proofs of the needed Lie-theoretic statement; neither is used as a substitute for the other." [S23:168–170]
 
-The theorem itself is the full-support statement, titled "Full support" [S23:186]: "Under either Hypothesis~  or Hypothesis~ , the inclusion" [S23:187–188] $Y'\subset Y$ "is equality as spectral prestacks. Consequently the given functor is a $\QCoh(Y)$-linear equivalence" [S23:188–190] between the sheaves on $\Bun_G$ with nilpotent singular support and $\IndCoh_{\Nilp}(Y)$. Its relation to the conjecture it resolves is bounded in the next paragraph: "This proves Conjecture~1.3.10 of   in the two displayed regimes." [S23:198–199] and "The present theorem concerns the restricted theory with its stated characteristic hypotheses." [S23:202–203]
+The theorem itself is the full-support statement, titled "Full support" [S23:186]: "Under either Hypothesis   or Hypothesis  , the inclusion" [S23:187–188] $Y'\subset Y$ "is equality as spectral prestacks. Consequently the given functor is a $\QCoh(Y)$-linear equivalence" [S23:188–190] between the sheaves on $\Bun_G$ with nilpotent singular support and $\IndCoh_{\Nilp}(Y)$. Its relation to the conjecture it resolves is bounded in the next paragraph: "This proves Conjecture 1.3.10 of   in the two displayed regimes." [S23:198–199] and "The present theorem concerns the restricted theory with its stated characteristic hypotheses." [S23:202–203]
 
 A second theorem moves the statement to rational coefficients, titled "Rational spectral support" [S23:240]: "For the rational datum just specified, every nonempty open-and-closed substack $U\subset Y_0$ has" nonvanishing tensor product [S23:241–242], so "Consequently, if $Y'_0\subset Y_0$ is an open-and-closed support union whose complementary structure idempotent acts by zero on $\mathcal C_0$, then $Y'_0=Y_0$" [S23:246–248] as spectral prestacks. Its scope sentence is the sharpest boundary in the cluster: "The conclusion concerns the entire rational spectral prestack, without identifying its components with rational points." [S23:253–254] and "No rational extension of regime B is asserted here." [S23:258–259]
 
-**The eigensheaf existence theorem.** Manuscript 6 is the root of the constructive half and reuses the same four Lie-theoretic conditions, including "The scheme-theoretic centralizer in $G$ of every semisimple element of $\mathfrak g$ is a Levi subgroup." [S28:37–38] It defines the two terms it quantifies over — "Here semisimple means geometrically conjugate into a toral Lie algebra, and nilpotent means that the geometric adjoint-orbit closure contains zero." [S28:44–45] — and states what it does not require: "We impose no additional condition that $p$ be prime to the order of a Weyl group." [S28:46–47] Its main theorem [S28:105–123] asserts existence under those hypotheses: "Assume  -- . For every Zariski-dense parameter   satisfying  , there is a nonzero locally constructible perverse geometric $E$-adic sheaf $M$ on $\cA$ such that" [S28:106–109] its singular support lies in the parabolic nilpotent cone, and "For every finite set $I$ and every family $(V_i)_{i\in I}$, it carries isomorphisms" [S28:113–114] identifying the Hecke transform with the external tensor product built from the parameter, "natural in the representations and coherently compatible with the tensor unit, convolution, permutations of legs, and fusion along every collision diagonal." [S28:120–122] The eigenstructure is required for every collision diagonal at once, which is the content of the coherence clause and the reason the construction is not a one-leg statement.
+**The eigensheaf existence theorem.** Manuscript 6 is the root of the constructive half and reuses the same four Lie-theoretic conditions, including "The scheme-theoretic centralizer in $G$ of every semisimple element of $\mathfrak g$ is a Levi subgroup." [S28:37–38] It defines the two terms it quantifies over — "Here semisimple means geometrically conjugate into a toral Lie algebra, and nilpotent means that the geometric adjoint-orbit closure contains zero." [S28:44–45] — and states what it does not require: "We impose no additional condition that $p$ be prime to the order of a Weyl group." [S28:46–47] Its main theorem [S28:105–123] asserts existence under those hypotheses: "Assume  – . For every Zariski-dense parameter   satisfying  , there is a nonzero locally constructible perverse geometric $E$-adic sheaf $M$ on $\cA$ such that" [S28:106–109] its singular support lies in the parabolic nilpotent cone, and "For every finite set $I$ and every family $(V_i)_{i\in I}$, it carries isomorphisms" [S28:113–114] identifying the Hecke transform with the external tensor product built from the parameter, "natural in the representations and coherently compatible with the tensor unit, convolution, permutations of legs, and fusion along every collision diagonal." [S28:120–122] The eigenstructure is required for every collision diagonal at once, which is the content of the coherence clause and the reason the construction is not a one-leg statement.
 
 **Several marked points, and how the hypotheses loosen.** Manuscript 7 specializes to $G=\SL_n$ and tightens the characteristic inequality: "Let $n\ge2$, let $k=\overline{\mathbb F}_q$ have characteristic $p>n$, and fix a prime $\ell\ne p$." [S33:6] It fixes $s$ marked points, "Set $G=\SL_n$ and $\check G=\PGL_{n,E}$, and let $B\subset G$ be the upper-triangular Borel subgroup." [S33:10] takes a Zariski-dense parameter into $\PGL_n(L)$ that kills wild inertia at each marked point and is unipotent on inertia via a chosen tame quotient, and is explicit that the nilpotent monodromy data need not be nonzero: "No regularity is assumed for $N_i$; it may be zero." [S33:21] Its theorem [S33:40–52] gives "For every parameter   satisfying the preceding hypotheses, there is a nonzero locally constructible perverse geometric $E$-adic sheaf $M$ on $\mathcal A$ with" [S33:41] singular support in the parabolic nilpotent cone $\Lambda_D$, plus "For every finite set $I$ and every family $(V_i)_{i\in I}$, it has isomorphisms" [S33:45] of the Hecke transform with the external product, "natural in the representations and coherent for the tensor unit, convolution, permutations, and fusion on every collision diagonal." [S33:51] The scope note is the reason manuscript 8 exists: "The parameter and eigensheaf are geometric: the statement does not require a Frobenius structure." [S33:54]
 
@@ -81,14 +81,14 @@ A second theorem moves the statement to rational coefficients, titled "Rational 
 3. Build the enhancement under the decomposition. Manuscript 1 takes the orbit unicity as a hypothesis, then constructs one algebraic $\SL_{2,k}$ and one commuting Weil-centralizer map whose diagonal specialization recovers the parameter on all of $\Gamma$, inertia included [S4:180–213].
 4. Make the filtration rational. Manuscript 2 proves the rational isomorphism under the four Lie-theoretic conditions and identifies the cuspidal part with manuscript 3's rational Arthur summands, which is what makes the orbit labelling available over $\mathbb Q$ and not only over $\overline{\mathbb Q}_\ell$ [S8:118–136].
 5. Remove the unramified restriction. Manuscript 4 treats the ramified case for the exceptional types, where the Weil--Deligne parameter carries nilpotent monodromy that the spherical Satake picture does not see [S18:23–35].
-6. Degenerate the curve to create level. Manuscript 6 "first constructs an eigensheaf with Borel level in characteristic zero, and then specializes it to the curve of Theorem~ ." [S28:185–186] and inside that construction "a degeneration to a separating node creates the level structure." [S28:188] Two copies of a pointed curve are joined at their marked points, a parameter with inverse boundary monodromy is placed on the second component, and the compatible finite quotients glue on twisted nodal models and lift to the smooth generic curve; "Their inverse limit is an unramified dense parameter there, to which we apply the characteristic-zero unramified correspondence." [S28:196–197]
+6. Degenerate the curve to create level. Manuscript 6 "first constructs an eigensheaf with Borel level in characteristic zero, and then specializes it to the curve of Theorem  ." [S28:185–186] and inside that construction "a degeneration to a separating node creates the level structure." [S28:188] Two copies of a pointed curve are joined at their marked points, a parameter with inverse boundary monodromy is placed on the second component, and the compatible finite quotients glue on twisted nodal models and lift to the smooth generic curve; "Their inverse limit is an unramified dense parameter there, to which we apply the characteristic-zero unramified correspondence." [S28:196–197]
 7. Slice with enhanced flags. "The special fiber introduces enhanced flags." [S28:201] The stack $\cA^+$ of bundles with an $R_u(B)$-reduction maps to $\cA$ as "a $T$-torsor" [S28:203], and "Nearby cycles, pullback to the product, and restriction to one enhanced factor give a nonzero eigencomplex on $\cA_1^+$." [S28:208–209] Pushing forward and truncating gives the eigensheaf: "Taking a nonzero perverse cohomology, applying $q_!$, and taking perverse cohomology once more produce the ordinary-flag perverse eigensheaf." [S28:209–211]
 8. Detect, and keep nonzero. Manuscript 7 states the two arguments that the several-point case needs: "A local calculation with two Hecke modifications detects covectors outside the nilpotent cone." [S33:72] and, because "nearby cycles of a nonzero complex can vanish" [S33:60], the same calculation over a trait proves nonvanishing when the closure of the nonzero generic stalks meets the special fiber. Exactness of the fixed-point Hecke functors near a dense parameter is what lets perverse cohomology preserve the tensor and collision comparisons [S33:72].
 9. Descend, then make Frobenius-equivariant. The curve with its marked points is lifted over the Witt ring $W(k)$ so the finite quotients of the parameter extend over root stacks [S33:74]. Manuscript 8 then names what equivariance costs: "There are two extra difficulties in making the geometric construction equivariant. First, an invariant parameter need not make an arbitrarily chosen geometric eigenobject visibly invariant. Second, the two boundary parameters at a separating node must be glued by a conjugation that preserves both Frobenius and compact image." [S39:136–140]
 
-**What the family does not say.** Manuscript 1 states its own boundary: "The result does not assert ellipticity, Arthur-packet classification, or a multiplicity formula." [S1:341] It also situates itself against a stronger announced result — "A global enhancement in the everywhere unramified setting has already been announced by Raskin as part of joint work with Gaitsgory and Lafforgue" [S4:271–273] — so its contribution is the full finite level with the excursion character retained, not the unramified case. Manuscript 5 proves the restricted equivalence, not the full one: the full characteristic-zero equivalence and the general linear groups are inputs, "established inputs from Main Theorem~1.3.9 of that paper." [S23:201] Manuscripts 6, 7 and 8 construct eigensheaves; they do not prove the correspondence, and manuscript 7 is explicit that its object carries no Frobenius structure [S33:54]. Manuscript 4 is restricted to split adjoint absolutely simple exceptional groups, and manuscript 3's Ramanujan corollary reaches only the unramified components [S13:154–155].
+**What the family does not say.** Manuscript 1 states its own boundary: "The result does not assert ellipticity, Arthur-packet classification, or a multiplicity formula." [S1:341] It also situates itself against a stronger announced result — "A global enhancement in the everywhere unramified setting has already been announced by Raskin as part of joint work with Gaitsgory and Lafforgue" [S4:271–273] — so its contribution is the full finite level with the excursion character retained, not the unramified case. Manuscript 5 proves the restricted equivalence, not the full one: the full characteristic-zero equivalence and the general linear groups are inputs, "established inputs from Main Theorem 1.3.9 of that paper." [S23:201] Manuscripts 6, 7 and 8 construct eigensheaves; they do not prove the correspondence, and manuscript 7 is explicit that its object carries no Frobenius structure [S33:54]. Manuscript 4 is restricted to split adjoint absolutely simple exceptional groups, and manuscript 3's Ramanujan corollary reaches only the unramified components [S13:154–155].
 
-**The conditional tag, and the absence of a named resolution.** The ledger records this family with `conditional=1` and `resolves_named=0` [S43:15], and the triage record explains the first from the manuscript text: the enhancements are constructed "assuming the finite-level Ramanujan–Arthur decomposition" — "The `conditional` tag is genuine here." [S42:127–132] Manuscript 1's own theorem opens "Assume Theorem~ ." [S4:181], and the theorem it assumes is manuscript 3's: the statement is `\cite[Theorem~1.1]{Parent}` inside manuscript 1's finite-level Ramanujan--Arthur decomposition theorem [S4:155–156], and the `Parent` bibliography entry is a release link to manuscript 3's directory [S4:5420–5424]. So the family contains an unconditional Ramanujan statement for the exceptional groups and an enhancement result that is conditional on a theorem proved elsewhere in the same family. Nothing in the family is presented as resolving a named conjecture of the literature: the conjectures it settles are Gaitsgory–Lafforgue–Raskin 3.4.5 and 3.4.6 [S13:120–122] and Gaitsgory–Raskin's full-support conjecture [S23:198–199], and the release blurb for the enhancement paper names no conjecture at all [S1:341]. Nothing about this family is machine-checked: the ledger records 0 of 8 manuscripts formalized, no scope note, no comparator challenge, and no `main_results` entry [S43:15].
+**The conditional tag, and the absence of a named resolution.** The ledger records this family with `conditional=1` and `resolves_named=0` [S43:15], and the triage record explains the first from the manuscript text: the enhancements are constructed "assuming the finite-level Ramanujan–Arthur decomposition" — "The `conditional` tag is genuine here." [S42:127–132] Manuscript 1's own theorem opens "Assume Theorem  ." [S4:181], and the theorem it assumes is manuscript 3's: the statement is `\cite[Theorem~1.1]{Parent}` inside manuscript 1's finite-level Ramanujan--Arthur decomposition theorem [S4:155–156], and the `Parent` bibliography entry is a release link to manuscript 3's directory [S4:5420–5424]. So the family contains an unconditional Ramanujan statement for the exceptional groups and an enhancement result that is conditional on a theorem proved elsewhere in the same family. Nothing in the family is presented as resolving a named conjecture of the literature: the conjectures it settles are Gaitsgory–Lafforgue–Raskin 3.4.5 and 3.4.6 [S13:120–122] and Gaitsgory–Raskin's full-support conjecture [S23:198–199], and the release blurb for the enhancement paper names no conjecture at all [S1:341]. Nothing about this family is machine-checked: the ledger records 0 of 8 manuscripts formalized, no scope note, no comparator challenge, and no `main_results` entry [S43:15].
 
 ## History of the conjecture
 
@@ -96,19 +96,19 @@ Arthur's conjectures are the origin of the arithmetic half of the family. "Arthu
 
 Function fields supplied the inputs. "Over function fields, Drinfeld's work for $\mathrm{GL}_2$ and Laurent Lafforgue's work for $\mathrm{GL}_n$ realized the Langlands correspondence in the cohomology of shtukas" [S4:239–241] "Laurent Lafforgue's purity theorem for irreducible lisse sheaves with finite-order determinant supplies the weight input used here" [S4:243–244] "Vincent Lafforgue subsequently constructed excursion operators and attached semisimple global parameters to cuspidal automorphic functions for reductive groups at arbitrary finite level" [S4:246–248] "These operators retain invariants of tuples of Galois elements, so the resulting parameter contains more information than its individual unramified Frobenius classes." [S4:250–252] Vincent Lafforgue's own Arthur conjecture "asks that each occurring parameter arise from an elliptic global Arthur parameter." [S4:254–255] Manuscript 1 does not prove that conjecture; it proves the existence half of a related statement and says so.
 
-The conjecture the family settles is the one in Gaitsgory–Lafforgue–Raskin. "In the everywhere unramified setting, Gaitsgory--Lafforgue--Raskin formulate the Ramanujan--Arthur decomposition by requiring the same nilpotent-orbit spectral type at every unramified place" [S4:257–260] "They distinguish this condition from support on global Arthur parameters, which is formulated separately in \cite[Section~3.6]{history:GLR}." [S4:262–264] "The finite-level theorem of \cite[Theorem~1.1]{Parent}, recalled in Theorem~ , supplies the former condition for arbitrary full level." [S4:265–267] "Passing from that condition to one commuting pair requires compatibility with the complete excursion parameter," [S4:267–268] The decomposition theorem is manuscript 3's, and manuscript 1's enhancement theorem is stated under it, which is the whole content of the family's `conditional` tag.
+The conjecture the family settles is the one in Gaitsgory–Lafforgue–Raskin. "In the everywhere unramified setting, Gaitsgory–Lafforgue–Raskin formulate the Ramanujan–Arthur decomposition by requiring the same nilpotent-orbit spectral type at every unramified place" [S4:257–260] "They distinguish this condition from support on global Arthur parameters, which is formulated separately in \cite[Section 3.6]{history:GLR}." [S4:262–264] "The finite-level theorem of \cite[Theorem 1.1]Parent, recalled in Theorem  , supplies the former condition for arbitrary full level." [S4:265–267] "Passing from that condition to one commuting pair requires compatibility with the complete excursion parameter," [S4:267–268] The decomposition theorem is manuscript 3's, and manuscript 1's enhancement theorem is stated under it, which is the whole content of the family's `conditional` tag.
 
 Prior (my training data, not this repo). Before this release, the Ramanujan conjecture for function-field cuspidal automorphic forms was open outside the general linear groups: Lafforgue's purity theorem gave weights for $\GL_n$, and the spectral-type formulation in Gaitsgory–Lafforgue–Raskin's 2025 preprint was a set of conjectures, not a theorem. The Beilinson–Drinfeld quantization of the Hitchin system gave eigensheaves for semisimple groups over $\mathbb C$ at unramified level, and the five-paper Geometric Langlands collaboration had established the categorical unramified correspondence in characteristic zero. A positive-characteristic eigensheaf with prescribed ramification at marked points, at finite level, with nilpotent monodromy, was not something I can name a precedent for.
 
-The announced comparison sits at the end of manuscript 1's history section. "That announcement recovers the specified cuspidal excursion parameter from a commuting $W_X\times\mathrm{SL}_2$ parameter and asserts irreducibility of the latter, under the standing characteristic hypotheses of its Section~1.1.1." [S4:275–278] "Theorem~  treats arbitrary full finite level under the finite-level decomposition hypothesis." [S4:279–280] The comparison is stated as a difference of scope, not as a competition.
+The announced comparison sits at the end of manuscript 1's history section. "That announcement recovers the specified cuspidal excursion parameter from a commuting $W_X\times\mathrm{SL}_2$ parameter and asserts irreducibility of the latter, under the standing characteristic hypotheses of its Section 1.1.1." [S4:275–278] "Theorem   treats arbitrary full finite level under the finite-level decomposition hypothesis." [S4:279–280] The comparison is stated as a difference of scope, not as a competition.
 
-The eigensheaf half has its own genealogy, recorded in manuscript 7's history section. "The eigensheaf problem originates in Drinfeld's rank-two construction and Laumon's geometric formulation for general linear groups" [S34:1–2] "Frenkel, Gaitsgory, and Vilonen reduced unramified $\GL_n$ eigensheaf existence to a vanishing conjecture" [S34:3–4] "Geometric Satake identifies the local Hecke kernels with representations of the dual group and supplies their tensor and fusion structure" [S34:5–7] "For semisimple groups over $\mathbb C$, Beilinson and Drinfeld constructed eigensheaves from opers by quantizing the Hitchin system" [S34:19–20] "Arinkin, Gaitsgory, Kazhdan, Raskin, Rozenblyum, and Varshavsky introduced the stack of local systems with restricted variation and its action on sheaves with nilpotent singular support" [S34:23–25] "Gaitsgory and Raskin use this framework to formulate the geometric adic correspondence and compare characteristic zero with positive characteristic" [S34:26–27] "The input needed here is the characteristic-zero restricted equivalence \cite[Main Theorem~1.3.9(ii)]{GR}, through the unramified eigencomplex construction of \cite[Lemma~8.1]{CT}." "Thus the categorical theory enters on a smooth projective curve before level structures are introduced." [S34:28–32]
+The eigensheaf half has its own genealogy, recorded in manuscript 7's history section. "The eigensheaf problem originates in Drinfeld's rank-two construction and Laumon's geometric formulation for general linear groups" [S34:1–2] "Frenkel, Gaitsgory, and Vilonen reduced unramified $\GL_n$ eigensheaf existence to a vanishing conjecture" [S34:3–4] "Geometric Satake identifies the local Hecke kernels with representations of the dual group and supplies their tensor and fusion structure" [S34:5–7] "For semisimple groups over $\mathbb C$, Beilinson and Drinfeld constructed eigensheaves from opers by quantizing the Hitchin system" [S34:19–20] "Arinkin, Gaitsgory, Kazhdan, Raskin, Rozenblyum, and Varshavsky introduced the stack of local systems with restricted variation and its action on sheaves with nilpotent singular support" [S34:23–25] "Gaitsgory and Raskin use this framework to formulate the geometric adic correspondence and compare characteristic zero with positive characteristic" [S34:26–27] "The input needed here is the characteristic-zero restricted equivalence \cite[Main Theorem 1.3.9(ii)]GR, through the unramified eigencomplex construction of \cite[Lemma 8.1]CT." "Thus the categorical theory enters on a smooth projective curve before level structures are introduced." [S34:28–32]
 
-Manuscript 7 states precisely what it inherits and what it adds. "Our immediate antecedent is \cite[Theorem~1.1]{CT}, whose main theorem has one marked point and regular-unipotent monodromy for a broader class of groups." [S34:11–13] "Here the group is $\SL_n$ with $p>n$, there are several marked points, and every nilpotent boundary logarithm is allowed." [S34:13–14] The chain inside the family runs the same way: manuscript 5 proves the restricted equivalence, manuscript 6 constructs the eigensheaf under it, manuscripts 7 and 8 extend that construction to several points and to a Frobenius structure, and each of them cites manuscript 6 as its antecedent.
+Manuscript 7 states precisely what it inherits and what it adds. "Our immediate antecedent is \cite[Theorem 1.1]CT, whose main theorem has one marked point and regular-unipotent monodromy for a broader class of groups." [S34:11–13] "Here the group is $\SL_n$ with $p>n$, there are several marked points, and every nilpotent boundary logarithm is allowed." [S34:13–14] The chain inside the family runs the same way: manuscript 5 proves the restricted equivalence, manuscript 6 constructs the eigensheaf under it, manuscripts 7 and 8 extend that construction to several points and to a Frobenius structure, and each of them cites manuscript 6 as its antecedent.
 
 ## Consequences
 
-Manuscript 5 lists its own consequences, and they are the load-bearing ones for the geometric half of the family. "Section~  records three consequences." [S23:205] "Localizing the given functor at any spectral component gives the corresponding nonzero ind-coherent category." [S23:205–207] "In regime A, the known primed trace formula becomes the full arithmetic formula using derived geometric Frobenius fixed points." [S23:207–209] "For an arbitrary parameter, spectral linearity produces a nonzero Hecke eigenobject with coherent tensor and fusion compatibilities." [S23:209–211] "Its asserted category is ind-constructible and nilpotent; no bounded constructibility or perversity assertion is needed." [S23:211–212]
+Manuscript 5 lists its own consequences, and they are the load-bearing ones for the geometric half of the family. "Section   records three consequences." [S23:205] "Localizing the given functor at any spectral component gives the corresponding nonzero ind-coherent category." [S23:205–207] "In regime A, the known primed trace formula becomes the full arithmetic formula using derived geometric Frobenius fixed points." [S23:207–209] "For an arbitrary parameter, spectral linearity produces a nonzero Hecke eigenobject with coherent tensor and fusion compatibilities." [S23:209–211] "Its asserted category is ind-constructible and nilpotent; no bounded constructibility or perversity assertion is needed." [S23:211–212]
 
 The first is structural: no component of the spectral side is empty. "every connected component \(Z\subset Y\) has a nonzero localized automorphic category." [S44:32–34] "The restriction of the given spectral-linear Langlands functor induces an equivalence" [S44:34–35] Between them these say that the automorphic side has a summand for every spectral component, and the equivalence restricts to it, so the correspondence is not vacuous on any part of the stack.
 
@@ -118,7 +118,7 @@ The third is the existence of eigenobjects without any finiteness proviso. "ever
 
 The arithmetic half pays out differently. Manuscript 3's corollary is the Ramanujan statement for the exceptional groups at unramified places, with the Arthur spectral type fixed across all of them [S13:141–155]; manuscript 4 moves that statement to ramified places, where the parameter has nilpotent monodromy [S18:23–35]; manuscript 2 makes the filtration that carries the decomposition rational, so the labelling exists over $\mathbb Q$ [S8:118–136]; and manuscript 1 attaches the enhancement, under manuscript 3's decomposition as a hypothesis [S4:180–213]. Read together, the four give a Ramanujan-and-Arthur picture for split adjoint exceptional groups over function fields whose enhancement layer is conditional on a theorem inside the same family.
 
-The eigensheaf half pays out as method. Manuscript 6 says plainly where its arguments come from: "The two-Hecke and projective slicing methods follow \cite[Sections~3--7]{OpenAIFullSupport2026}; we prove their versions for ordinary and enhanced Borel level and the simultaneous torus quotient," [S28:263–266] and the hard part is keeping the Hecke system intact through the specialization: "Preserving the Hecke system requires more than commuting nearby cycles with a fixed-point operator." [S28:269–270] "The comparison must retain all moving legs, including collisions, and the maps expressing convolution and fusion." [S28:270–271] Manuscripts 7 and 8 inherit that machinery and extend it, manuscript 7 to several marked points and arbitrary nilpotent boundary logarithms [S34:13–14], manuscript 8 to a Frobenius structure [S39:36–52].
+The eigensheaf half pays out as method. Manuscript 6 says plainly where its arguments come from: "The two-Hecke and projective slicing methods follow \cite[Sections 3–7]OpenAIFullSupport2026; we prove their versions for ordinary and enhanced Borel level and the simultaneous torus quotient," [S28:263–266] and the hard part is keeping the Hecke system intact through the specialization: "Preserving the Hecke system requires more than commuting nearby cycles with a fixed-point operator." [S28:269–270] "The comparison must retain all moving legs, including collisions, and the maps expressing convolution and fusion." [S28:270–271] Manuscripts 7 and 8 inherit that machinery and extend it, manuscript 7 to several marked points and arbitrary nilpotent boundary logarithms [S34:13–14], manuscript 8 to a Frobenius structure [S39:36–52].
 
 What is left open is stated by the manuscripts themselves. Manuscript 1 does not prove ellipticity, packet classification, or a multiplicity formula [S1:341], so Vincent Lafforgue's Conjecture 12.7 is untouched here [S4:254–255]. Manuscript 5 proves the restricted equivalence under two hypotheses, and the full equivalence is an input rather than a conclusion [S23:201]. Manuscripts 6, 7 and 8 construct eigenobjects and do not prove the correspondence, and manuscript 7's object has no Frobenius structure [S33:54]. None of these consequences is machine-checked: the ledger records 0 of 8 manuscripts formalized for this family, no scope note, no comparator challenge, and no `main_results` entry [S43:15].
 
@@ -173,109 +173,256 @@ What is left open is stated by the manuscripts themselves. Manuscript 1 does not
 
 ## Bibliography
 
-**29 entries** from `manuscript.tex`:
-- [Enh:AB] Sergey Arkhipov and Roman Bezrukavnikov. \newblock Perverse sheaves on affine flags and {Langlands} dual group. \newbloc…
-- [history:Arthur1984] James Arthur. \newblock On some problems suggested by the trace formula. \newblock In Rebecca Herb, Stephen Kudla, Ronal…
-- [history:Arthur1989] James Arthur. \newblock Unipotent automorphic representations: conjectures. \newblock In {\em Orbites unipotentes et rep…
-- [global:BMR] Michael Bate, Benjamin Martin, and Gerhard R{\"o}hrle. \newblock A geometric approach to complete reducibility. \newbloc…
-- [global:BMRSemisimplification] Michael Bate, Benjamin Martin, and Gerhard R{\"o}hrle. \newblock Semisimplification for subgroups of reductive algebraic…
-- [global:BMRT] Michael Bate, Benjamin Martin, Gerhard R{\"o}hrle, and Rudolf Tange. \newblock Closed orbits and uniform {$S$}-instabili…
-- [Enh:BBD] Alexander~A. Beilinson, Joseph Bernstein, and Pierre Deligne. \newblock {\em Faisceaux pervers}, volume 100 of {\em Ast{…
-- [Local:BZCHN] David Ben-Zvi, Harrison Chen, David Helm, and David Nadler. \newblock Coherent {Springer} theory and the categorical {De…
-- [global:BMYJM] Alexander {Bertoloni Meli}, Naoki Imai, and Alex Youcis. \newblock The {Jacobson--Morozov} morphism for {Langlands} para…
-- [Enh:Bezrukavnikov] Roman Bezrukavnikov. \newblock On two geometric realizations of an affine {Hecke} algebra. \newblock {\em Publications M…
-- … and 19 more
-
-**30 entries** from `references.tex`:
-- [AdamsTaibi] Jeffrey Adams and Olivier Ta\"ibi, \emph{Galois and Cartan cohomology of real groups}, arXiv:1611.05956v2, 21 November 2…
-- [ArinkinGaitsgorySingularSupport] Dima Arinkin and Dennis Gaitsgory, \emph{Singular support of coherent sheaves and the geometric Langlands conjecture}, S…
-- [AGKRRV1] Dima Arinkin, Dennis Gaitsgory, David Kazhdan, Sam Raskin, Nick Rozenblyum, and Yakov Varshavsky, \emph{The stack of loc…
-- [AGKRRV2] Dima Arinkin, Dennis Gaitsgory, David Kazhdan, Sam Raskin, Nick Rozenblyum, and Yakov Varshavsky, \emph{Duality for auto…
-- [AGKRRV3] Dima Arinkin, Dennis Gaitsgory, David Kazhdan, Sam Raskin, Nick Rozenblyum, and Yakov Varshavsky, \emph{Automorphic func…
-- [Arthur1989] James Arthur, \emph{Unipotent automorphic representations: conjectures}, Ast\'erisque \textbf{171--172} (1989), 13--71. …
-- [Atiyah] Michael F.~Atiyah, \emph{Riemann surfaces and spin structures}, Annales scientifiques de l'\'Ecole Normale Sup\'erieure …
-- [BZSV] David Ben-Zvi, Yiannis Sakellaridis, and Akshay Venkatesh, \emph{Relative Langlands duality}, arXiv:2409.04677v1, 7 Sept…
-- [Brion] Michel Brion, \emph{Invariant Hilbert schemes}, arXiv:1102.0198v2, 21 April 2011. \url{https://arxiv.org/abs/1102.0198v2…
-- [Deligne] Pierre Deligne, \emph{La conjecture de Weil: II}, Publications Math\'ematiques de l'IH\'ES \textbf{52} (1980), 137--252.…
-- … and 20 more
-
-**52 entries** from `references.bib`:
-- Gaitsgory, Dennis, Lafforgue, Vincent, Raskin, Sam. *Tempered vs generic automorphic functions and the canonical filtration on automorphic functions*. (2026) [GLR]
-- {OpenAI}. *{Rationality of the Canonical Unramified Arthur Filtration}*. (2026) [ArthurRationality]
-- Lafforgue, Vincent. *Introduction to chtoucas for reductive groups and to the global {Langlands} parameterization*. (2017) [VLafforgue]
-- Lafforgue, Laurent. *Chtoucas de {Drinfeld} et correspondance de {Langlands}*. (2002) [LLafforgue]
-- Deligne, Pierre. *La conjecture de {Weil}. {II}*. (1980) [DeligneII]
-- Mirkovi{\'c}, Ivan, Vilonen, Kari. *Geometric {Langlands} duality and representations of algebraic groups over commutative rings*. (2007) [MV]
-- Bezrukavnikov, Roman, Finkelberg, Michael. *Equivariant {Satake} category and {Kostant--Whittaker} reduction*. (2008) [BF]
-- Gaitsgory, Dennis. *Construction of central elements in the affine {Hecke} algebra via nearby cycles*. (2001) [GaitsgoryCentral]
-- Arkhipov, Sergey, Bezrukavnikov, Roman. *Perverse sheaves on affine flags and {Langlands} dual group*. (2009) [AB]
-- Arkhipov, Sergey, Bezrukavnikov, Roman, Ginzburg, Victor. *Quantum groups, the loop {Grassmannian}, and the {Springer} resolution*. (2004) [ABG]
-- … and 42 more
-
-**27 entries** from `bibliography.tex`:
-- [Arthur1989] J.~Arthur, \emph{Unipotent automorphic representations: conjectures}, Ast\'erisque \textbf{171--172} (1989), 13--71.
-- [BernsteinZelevinsky] I.~N. Bernstein and A.~V. Zelevinsky, \emph{Induced representations of reductive $p$-adic groups. I}, Ann. Sci. \'Ecole …
-- [CH26] D.~Ciubotaru and M.~Harris, \emph{On the generalized Ramanujan and Arthur conjectures over function fields}, Ann. of Mat…
-- [CDFZ2025] C.~Cunningham, S.~Dijols, A.~Fiori, and Q.~Zhang, \emph{Whittaker normalization of $p$-adic ABV-packets and Vogan's conj…
-- [DHKMFiniteness2024] J.-F. Dat, D.~Helm, R.~Kurinczuk, and G.~Moss, \emph{Finiteness for Hecke algebras of $p$-adic groups}, J. Amer. Math. S…
-- [DHKM2026] J.-F. Dat, D.~Helm, R.~Kurinczuk, and G.~Moss, \emph{Local Langlands in families: The banal case}, J. Reine Angew. Math.…
-- [DCHL] H.~del Castillo, G.~Henniart, and L.~Lomel\'i, \emph{On generic representations of quasi-split reductive groups over loc…
-- [DeligneConstants] P.~Deligne, \emph{Les constantes des \'equations fonctionnelles des fonctions $L$}, in \emph{Modular Functions of One Va…
-- [DeligneWeilII] P.~Deligne, \emph{La conjecture de Weil. II}, Publ. Math. Inst. Hautes \'Etudes Sci. \textbf{52} (1980), 137--252. \href…
-- [Dri88] V.~G. Drinfeld, \emph{Proof of the Petersson conjecture for $\mathrm{GL}(2)$ over a global field of characteristic $p$},…
-- … and 17 more
-
-**24 entries** from `refs.bib`:
-- Gaitsgory, Dennis, Raskin, Sam. *Geometric {Langlands} in positive characteristic from characteristic zero*. (2025) [GR]
+- Vladimir G. Drinfeld. \newblock Langlands' conjecture for $\mathrm{GL}(2)$ over functional fields. \newblock In {\em Proceedings of the International Congress of Mathematicians (Helsinki, 1978)}, volume 2, pages 565–574. Academia Scientiarum Fennica, Helsinki, 1980.
+- Cong Xue. \newblock Smoothness of cohomology sheaves of stacks of shtukas. \newblock arXiv:\allowbreak 2012.12833v1, 2020.
+- Abramovich, Dan, Vistoli, Angelo, Compactifying the space of stable maps (2002)
+- Adams, Jeffrey, Taibi, Olivier, Galois and Cartan cohomology of real groups (2016)
+- Cong Xue. \newblock Finiteness of cohomology groups of stacks of shtukas as modules over Hecke algebras, and applications. \newblock {\em {É}pijournal de G{é}om{é}trie Alg{é}brique}, 4, 2020. \newblock Article 6, 42 pp.
+- Domingo Luna. \newblock Slices étales. \newblock In {\em Sur les groupes algébriques}, number 33 in Bulletin de la Société Mathématique de France. Mémoire, pages 81–105. Société Mathématique de France, 1973.
+- Sam Raskin. \newblock Conjectures of Arthur and Ramanujan for unramified automorphic forms: announcement, 2026. \newblock Contribution to the 2026 ICM Proceedings; manuscript dated October 12, 2025, updated March 10, 2026.
+- Dima Arinkin, Dennis Gaitsgory, David Kazhdan, Sam Raskin, Nick Rozenblyum, and Yakov Varshavsky, _The stack of local systems with restricted variation and geometric Langlands theory with nilpotent singular support_, arXiv:2010.01906v2, 6 April 2022.  .
+- Dima Arinkin, Dennis Gaitsgory, David Kazhdan, Sam Raskin, Nick Rozenblyum, and Yakov Varshavsky, _Duality for automorphic sheaves with nilpotent singular support_, arXiv:2012.07665v2, 17 May 2022.  .
+- Dima Arinkin, Dennis Gaitsgory, David Kazhdan, Sam Raskin, Nick Rozenblyum, and Yakov Varshavsky, _Automorphic functions as the trace of Frobenius_, arXiv:2102.07906v2, 3 June 2022.  .
 - Arinkin, Dima, Gaitsgory, Dennis, Kazhdan, David and
-            Raskin, Sam, Rozenblyum, Nick, Varshavsky, Yakov. *The stack of local systems with restricted variation and geometric
-           {Langlands} theory with nilpotent singular support*. (2022) [AGKRRV]
+            Raskin, Sam, Rozenblyum, Nick, Varshavsky, Yakov, The stack of local systems with restricted variation and geometric
+           Langlands theory with nilpotent singular support (2022)
 - Arinkin, Dima, Gaitsgory, Dennis, Kazhdan, David and
-            Raskin, Sam, Rozenblyum, Nick, Varshavsky, Yakov. *Automorphic functions as the trace of {Frobenius}*. (2022) [AGKRRVTrace]
-- Richarz, Timo, Scholbach, Jakob. *The motivic {Satake} equivalence*. (2021) [RicharzScholbach]
-- Richarz, Timo. *A new approach to the geometric {Satake} equivalence*. (2014) [Richarz]
-- Beauville, Arnaud, Laszlo, Yves. *Un lemme de descente*. (1995) [BeauvilleLaszlo]
-- Drinfeld, V. G., Simpson, Carlos. *{$B$}-structures on {$G$}-bundles and local triviality*. (1995) [DrinfeldSimpson]
-- Springer, T. A.. *Linear Algebraic Groups*. (1998) [Springer]
-- {The Stacks Project Authors}. *The {Stacks} Project*. (2026) [Stacks]
-- Hansen, David, Scholze, Peter. *Relative perversity*. (2023) [HansenScholze]
-- … and 14 more
-
-**33 entries** from `references.bib`:
-- Drinfeld, Vladimir G.. *Two-dimensional {$\ell$}-adic representations of the fundamental group of a curve over a finite field and automorphic forms on {$\mathrm{GL}(2)$}*. (1983) [Drinfeld]
-- Laumon, G{\'e}rard. *Correspondance de {Langlands} g{\'e}om{\'e}trique pour les corps de fonctions*. (1987) [Laumon]
-- Frenkel, Edward, Gaitsgory, Dennis, Vilonen, Kari. *On the geometric {Langlands} conjecture*. (2002) [FGV]
-- Gaitsgory, Dennis. *On a vanishing conjecture appearing in the geometric {Langlands} correspondence*. (2004) [GaitsgoryVanishing]
-- Beilinson, Alexander, Drinfeld, Vladimir. *Quantization of {Hitchin}'s integrable system and {Hecke} eigensheaves*. [BD]
-- Yun, Zhiwei. *Rigidity in automorphic representations and local systems*. (2014) [YunRigidity]
-- F{\ae}rgeman, Joakim. *Motivic realization of rigid {$G$}-local systems on curves and tamely ramified geometric {Langlands}*. (2024) [Faergeman]
-- Gaitsgory, Dennis, Raskin, Sam. *Geometric {Langlands} in positive characteristic from characteristic zero*. (2025) [GR]
-- Gaitsgory, Dennis, Raskin, Sam. *Proof of the geometric {Langlands} conjecture {I}: construction of the functor*. (2024) [GLCI]
-- Arinkin, Dima, Gaitsgory, Dennis, Kazhdan, David, Raskin, Sam, Rozenblyum, Nick, Varshavsky, Yakov. *The stack of local systems with restricted variation and geometric {Langlands} theory with nilpotent singular support*. (2020) [AGKRRV]
-- … and 23 more
-
-**31 entries** from `references.tex`:
-- [AGKRRV] D. Arinkin, D. Gaitsgory, D. Kazhdan, S. Raskin, N. Rozenblyum, and Y. Varshavsky, \emph{The stack of local systems with…
-- [AB] S. Arkhipov and R. Bezrukavnikov, \emph{Perverse sheaves on affine flags and Langlands dual group}, with an appendix by …
-- [Barrett] O. Barrett, \emph{The singular support of an $\ell$-adic sheaf}, Tunisian J. Math. \textbf{6} (2024), no.~4, 703--734. \…
-- [Beilinson] A. Beilinson, \emph{Constructible sheaves are holonomic}, Selecta Math. (N.S.) \textbf{22} (2016), no.~4, 1797--1819. \h…
-- [BD] A. Beilinson and V. Drinfeld, \emph{Quantization of Hitchin's integrable system and Hecke eigensheaves}, preprint. \href…
-- [DT] G. Dhillon and J. Taylor, \emph{The universal monodromic Arkhipov--Bezrukavnikov equivalence}, preprint, 2025, \href{htt…
-- [DTLocal] G. Dhillon and J. Taylor, \emph{Tame local Betti geometric Langlands}, preprint, 2025, \href{https://arxiv.org/abs/2501.…
-- [Drinfeld] V. G. Drinfeld, \emph{Two-dimensional $\ell$-adic representations of the fundamental group of a curve over a finite fiel…
-- [Faergeman] J. F{\ae}rgeman, \emph{Motivic realization of rigid $G$-local systems on curves and tamely ramified geometric Langlands}…
-- [Faltings] G. Faltings, \emph{Stable $G$-bundles and projective connections}, J. Algebraic Geom. \textbf{2} (1993), no.~3, 507--568…
-- … and 21 more
-
-**23 entries** from `references.tex`:
-- [AbramovichVistoli] D.~Abramovich and A.~Vistoli, \emph{Compactifying the space of stable maps}, J. Amer. Math. Soc. \textbf{15} (2002), no.…
-- [AGKRRV] D.~Arinkin, D.~Gaitsgory, D.~Kazhdan, S.~Raskin, N.~Rozenblyum, and Y.~Varshavsky, \emph{The stack of local systems with…
-- [Barrett] O.~Barrett, \emph{The singular support of an $\ell$-adic sheaf}, Tunisian J. Math. \textbf{6} (2024), no.~4, 703--734.
-- [Beilinson] A.~Beilinson, \emph{Constructible sheaves are holonomic}, Selecta Math. (N.S.) \textbf{22} (2016), no.~4, 1797--1819.
-- [BBD] A.~A.~Beilinson, J.~Bernstein, and P.~Deligne, \emph{Faisceaux pervers}, in \emph{Analyse et topologie sur les espaces s…
-- [BelkaleFakhruddin] P.~Belkale and N.~Fakhruddin, \emph{Triviality properties of principal bundles on singular curves}, Algebraic Geometry \…
-- [Drinfeld] V.~G.~Drinfeld, \emph{Two-dimensional $\ell$-adic representations of the fundamental group of a curve over a finite fiel…
-- [DrinfeldSimpson] V.~G.~Drinfeld and C.~Simpson, \emph{$B$-structures on $G$-bundles and local triviality}, Math. Res. Lett. \textbf{2} (1…
-- [Faergeman] J.~F\ae rgeman, \emph{Motivic realization of rigid $G$-local systems on curves and tamely ramified geometric Langlands},…
-- [FGV] E.~Frenkel, D.~Gaitsgory, and K.~Vilonen, \emph{On the geometric Langlands conjecture}, J. Amer. Math. Soc. \textbf{15} …
-- … and 13 more
+            Raskin, Sam, Rozenblyum, Nick, Varshavsky, Yakov, Automorphic functions as the trace of Frobenius (2022)
+- Arinkin, Dima, Gaitsgory, Dennis, Singular support of coherent sheaves, and the geometric Langlands conjecture (2015)
+- Arinkin, Dima, Gaitsgory, Dennis, Kazhdan, David, Raskin, Sam, Rozenblyum, Nick, Varshavsky, Yakov, The stack of local systems with restricted variation and geometric Langlands theory with nilpotent singular support (2020)
+- D. Arinkin, D. Gaitsgory, D. Kazhdan, S. Raskin, N. Rozenblyum, and Y. Varshavsky, _The stack of local systems with restricted variation and geometric Langlands theory with nilpotent singular support_, preprint, 2020, revised 2022, arXiv:2010.01906v2.
+- D. Arinkin, D. Gaitsgory, D. Kazhdan, S. Raskin, N. Rozenblyum, and Y. Varshavsky, _The stack of local systems with restricted variation and geometric Langlands theory with nilpotent singular support_, arXiv:2010.01906v2, April 6, 2022.
+- Arkhipov, Sergey, Bezrukavnikov, Roman, Perverse sheaves on affine flags and Langlands dual group (2009)
+- Arkhipov, Sergey, Bezrukavnikov, Roman, Ginzburg, Victor, Quantum groups, the loop Grassmannian, and the Springer resolution (2004)
+- Arkhipov, Sergey, Bezrukavnikov, Roman, Perverse sheaves on affine flags and Langlands dual group (2009)
+- James Arthur, _Unipotent automorphic representations: conjectures_, Astérisque **171–172** (1989), 13–71.  .
+- Arthur, James, Unipotent automorphic representations: conjectures (1989)
+- J. Arthur, _Unipotent automorphic representations: conjectures_, Astérisque **171–172** (1989), 13–71.
+- Tasho Kaletha. \newblock Supercuspidal $L$-packets. \newblock arXiv:1912.03274v2, 2021.
+- Arnaud Eteve and Cong Xue. \newblock Nearby cycles commute with proper direct image on stacks of shtukas. \newblock arXiv:2409.16474v1, 2024.
+- Michael F. Atiyah, _Riemann surfaces and spin structures_, Annales scientifiques de l'École Normale Supérieure (4) **4** (1971), no. 1, 47–62.  .
+- The Stacks Project Authors, _The Stacks Project_, 2026, Tags 00MA, 00IP, 0A06, and 0BKH, accessed 18 September 2026.
+- The Stacks Project Authors, The Stacks Project (2026)
+- The Stacks Project Authors, Stacks Project (2026)
+- The Stacks Project Authors, _Stacks Project_, 2026.  .
+- Barrett, Owen, The singular support of an $\ell$-adic sheaf (2024)
+- O. Barrett, _The singular support of an $\ell$-adic sheaf_, Tunisian J. Math. **6** (2024), no. 4, 703–734. doi:10.2140/tunis.2024.6.703.
+- O. Barrett, _The singular support of an $\ell$-adic sheaf_, Tunisian J. Math. **6** (2024), no. 4, 703–734.
+- Michael Bate, Benjamin Martin, and Gerhard R{ö}hrle. \newblock A geometric approach to complete reducibility. \newblock {\em Inventiones Mathematicae}, 161(1):177–218, 2005.
+- Michael Bate, Benjamin Martin, and Gerhard R{ö}hrle. \newblock Semisimplification for subgroups of reductive algebraic groups. \newblock {\em Forum of Mathematics, Sigma}, 8, 2020. \newblock e43, 10 pp.
+- Michael Bate, Benjamin Martin, Gerhard R{ö}hrle, and Rudolf Tange. \newblock Closed orbits and uniform $S$-instability in geometric invariant theory. \newblock {\em Transactions of the American Mathematical Society}, 365(7):3643–3673, 2013.
+- Beauville, Arnaud, Laszlo, Yves, Un lemme de descente (1995)
+- Beauville, Arnaud, Laszlo, Yves, Un lemme de descente (1995)
+- Alexander A. Beilinson, Joseph Bernstein, and Pierre Deligne. \newblock {\em Faisceaux pervers}, volume 100 of {\em Ast{é}risque}. \newblock Soci{é}t{é} Math{é}matique de France, Paris, 1982.
+- Beilinson, A. A., On the derived category of perverse sheaves (1987)
+- Beilinson, Alexander, Constructible sheaves are holonomic (2017)
+- Beilinson, Alexander, Drinfeld, Vladimir, Quantization of Hitchin's integrable system and Hecke eigensheaves
+- Beilinson, Alexander, Constructible sheaves are holonomic (2016)
+- A. Beilinson, _Constructible sheaves are holonomic_, Selecta Math. (N.S.) **22** (2016), no. 4, 1797–1819. doi:10.1007/s00029-016-0260-z.
+- A. Beilinson, _Constructible sheaves are holonomic_, Selecta Math. (N.S.) **22** (2016), no. 4, 1797–1819.
+- A. A. Beilinson, J. Bernstein, and P. Deligne, _Faisceaux pervers_, in _Analyse et topologie sur les espaces singuliers I_, Astérisque **100** (1982), 5–171.
+- Belkale, Prakash, Fakhruddin, Najmuddin, Triviality properties of principal bundles on singular curves (2019)
+- David Ben-Zvi, Harrison Chen, David Helm, and David Nadler. \newblock Coherent Springer theory and the categorical Deligne–Langlands correspondence. \newblock {\em Inventiones Mathematicae}, 235:255–344, 2024.
+- David Ben-Zvi, Yiannis Sakellaridis, and Akshay Venkatesh, _Relative Langlands duality_, arXiv:2409.04677v1, 7 September 2024.  .
+- Ben-Zvi, David, Francis, John, Nadler, David, Integral transforms and Drinfeld centers in derived algebraic geometry (2010)
+- Ben-Zvi, David, Sakellaridis, Yiannis, Venkatesh, Akshay, Relative Langlands duality (2024)
+- Beraldo, Dario, Lin, Kevin, Reeves, Wyatt, Coherent sheaves, sheared D-modules, and Hochschild cochains (2024)
+- Bernstein, Joseph, Lapid, Erez, On the meromorphic continuation of Eisenstein series (2024)
+- Bezrukavnikov, Roman, Finkelberg, Michael, Equivariant Satake category and Kostant–Whittaker reduction (2008)
+- S. Arkhipov and R. Bezrukavnikov, _Perverse sheaves on affine flags and Langlands dual group_, with an appendix by R. Bezrukavnikov and I. Mirković, Israel J. Math. **170** (2009), 135–183. doi:10.1007/s11856-009-0024-y.
+- N. uit de Bos, _An explicit geometric Langlands correspondence for the projective line minus four points_, Int. Math. Res. Not. IMRN **2022**, no. 24, 19690–19746. doi:10.1093/imrn/rnab218.
+- Michel Brion, _Invariant Hilbert schemes_, arXiv:1102.0198v2, 21 April 2011.  .
+- Broer, Bram, Line bundles on the cotangent bundle of the flag variety (1993)
+- Caprace, Pierre-Emmanuel, Ciobotaru, Corina, Gelfand pairs and strong transitivity for Euclidean buildings (2015)
+- Cass, Robert, van den Hove, Thibaud, Scholbach, Jakob, Central motives on parahoric flag varieties (2025)
+- H. del Castillo, G. Henniart, and L. Lomelí, _On generic representations of quasi-split reductive groups over local fields of positive characteristic_, preprint, 2024, arXiv:2412.00229.
+- Mark Andrea de Cataldo, Thomas J. Haines, and Li Li. \newblock Frobenius semisimplicity for convolution morphisms. \newblock {\em Mathematische Zeitschrift}, 289(1–2):119–169, 2018. \newblock Theorem locators refer to arXiv version 3.
+- de Cataldo, Mark Andrea, Haines, Thomas J., Li, Li, Frobenius semisimplicity for convolution morphisms (2018)
+- Ciubotaru, Dan, Harris, Michael, On the generalized Ramanujan and Arthur conjectures over function fields (2023)
+- Conrad, Brian, Reductive group schemes (2014)
+- Conrad, Brian, Reductive group schemes (2014)
+- C. Cunningham, S. Dijols, A. Fiori, and Q. Zhang, _Whittaker normalization of $p$-adic ABV-packets and Vogan's conjecture for tempered representations_, Int. Math. Res. Not. IMRN **2025** (2025), no. 20, rnaf316. doi:10.1093/imrn/rnaf316.
+- Mirkovi{ć}, Ivan, Vilonen, Kari, Geometric Langlands duality and representations of algebraic groups over commutative rings (2007)
+- Mirkovi{ć}, I., Vilonen, K., Geometric Langlands duality and representations of algebraic
+           groups over commutative rings (2018)
+- Mirkovi{ć}, Ivan, Vilonen, Kari, Geometric Langlands duality and representations of algebraic groups over commutative rings (2007)
+- J.-F. Dat, D. Helm, R. Kurinczuk, and G. Moss, _Finiteness for Hecke algebras of $p$-adic groups_, J. Amer. Math. Soc. **37** (2024), 929–949. doi:10.1090/jams/1034.
+- J.-F. Dat, D. Helm, R. Kurinczuk, and G. Moss, _Local Langlands in families: The banal case_, J. Reine Angew. Math., published online 2026. doi:10.1515/crelle-2026-0034.
+- Pierre Deligne, _La conjecture de Weil: II_, Publications Mathématiques de l'IHÉS **52** (1980), 137–252.  .
+- Deligne, Pierre, La conjecture de Weil. II (1980)
+- P. Deligne, _Les constantes des équations fonctionnelles des fonctions $L$_, in _Modular Functions of One Variable II_, Lecture Notes in Mathematics **349**, Springer, Berlin, 1973, 501–597. doi:10.1007/978-3-540-37855-6\_7.
+- P. Deligne, _La conjecture de Weil. II_, Publ. Math. Inst. Hautes Études Sci. **52** (1980), 137–252. doi:10.1007/BF02684780.
+- Dhillon, Gurbir, Taylor, Jeremy, The universal monodromic Arkhipov–Bezrukavnikov equivalence (2025)
+- Dhillon, Gurbir, Taylor, Jeremy, Tame local Betti geometric Langlands (2025)
+- V. G. Drinfeld, _Proof of the Petersson conjecture for $\mathrm{GL}(2)$ over a global field of characteristic $p$_, Funct. Anal. Appl. **22** (1988), no. 1, 28–43. doi:10.1007/BF01077720.
+- Drinfeld, V. G., Simpson, Carlos, $B$-structures on $G$-bundles and local triviality (1995)
+- Drinfeld, Vladimir G., Two-dimensional $\ell$-adic representations of the fundamental group of a curve over a finite field and automorphic forms on $\mathrm{GL}(2)$ (1983)
+- Drinfeld, Vladimir G., Simpson, Carlos, $B$-structures on $G$-bundles and local triviality (1995)
+- A. Beilinson and V. Drinfeld, _Quantization of Hitchin's integrable system and Hecke eigensheaves_, preprint. Authors' manuscript.
+- V. G. Drinfeld, _Two-dimensional $\ell$-adic representations of the fundamental group of a curve over a finite field and automorphic forms on $\GL(2)$_, Amer. J. Math. **105** (1983), no. 1, 85–114. doi:10.2307/2374382.
+- V. G. Drinfeld, _Two-dimensional $\ell$-adic representations of the fundamental group of a curve over a finite field and automorphic forms on $\mathrm{GL}(2)$_, Amer. J. Math. **105** (1983), no. 1, 85–114.
+- Eberhardt, Jens Niklas, Scholbach, Jakob, Integral motivic sheaves and geometric representation theory (2023)
+- P. Belkale and N. Fakhruddin, _Triviality properties of principal bundles on singular curves_, Algebraic Geometry **6** (2019), no. 2, 234–259.
+- Faltings, Gerd, Stable $G$-bundles and projective connections (1993)
+- G. Faltings, _Stable $G$-bundles and projective connections_, J. Algebraic Geom. **2** (1993), no. 3, 507–568.
+- Flath, Daniel, Decomposition of representations into tensor products (1979)
+- Frenkel, E., Gaitsgory, D., Vilonen, K., On the geometric Langlands conjecture (2001)
+- Frenkel, Edward, Gaitsgory, Dennis, Vilonen, Kari, On the geometric Langlands conjecture (2002)
+- E. Frenkel, D. Gaitsgory, and K. Vilonen, _On the geometric Langlands conjecture_, J. Amer. Math. Soc. **15** (2002), no. 2, 367–417. doi:10.1090/S0894-0347-01-00388-5.
+- E. Frenkel, D. Gaitsgory, and K. Vilonen, _On the geometric Langlands conjecture_, J. Amer. Math. Soc. **15** (2002), no. 2, 367–417.
+- Dennis Gaitsgory, Vincent Lafforgue, and Sam Raskin. \newblock Tempered vs generic automorphic functions and the canonical filtration on automorphic functions, 2026. \newblock Version 2, April 14, 2026.
+- Dima Arinkin and Dennis Gaitsgory, _Singular support of coherent sheaves and the geometric Langlands conjecture_, Selecta Mathematica, New Series **21** (2015), no. 1, 1–199.  . Introduction locators refer to arXiv:1201.6343v4.  .
+- Vladimir Drinfeld and Dennis Gaitsgory, _On some finiteness questions for algebraic stacks_, Geometric and Functional Analysis **23** (2013), 149–294; arXiv:1108.5351v3, 26 October 2012.  .
+- Dennis Gaitsgory, _Ind-coherent sheaves_, arXiv:1105.4857v7, 22 September 2012.  .
+- Dennis Gaitsgory, Vincent Lafforgue, and Sam Raskin, _Tempered vs generic automorphic functions and the canonical filtration on automorphic functions_, arXiv:2603.26925v2, 2026.  .
+- Gaitsgory, Dennis, Lafforgue, Vincent, Raskin, Sam, Tempered vs generic automorphic functions and the canonical filtration on automorphic functions (2026)
+- Gaitsgory, Dennis, Construction of central elements in the affine Hecke algebra via nearby cycles (2001)
+- Gaitsgory, Dennis, Raskin, Sam, Geometric Langlands in positive characteristic from characteristic zero (2025)
+- Gaitsgory, D., Kazhdan, D., Rozenblyum, N., Varshavsky, Y., A toy model for the Drinfeld–Lafforgue shtuka construction (2022)
+- Gaitsgory, Dennis, Raskin, Sam, Proof of the geometric Langlands conjecture I: construction of the functor (2025)
+- Gaitsgory, Dennis, Raskin, Sam, Proof of the geometric Langlands conjecture V: the multiplicity one theorem (2026)
+- Gaitsgory, Dennis, On a vanishing conjecture appearing in the geometric Langlands correspondence (2004)
+- Gaitsgory, Dennis, On a vanishing conjecture appearing in the geometric Langlands correspondence (2004)
+- Gaitsgory, Dennis, Raskin, Sam, Geometric Langlands in positive characteristic from characteristic zero (2025)
+- Gaitsgory, Dennis, Raskin, Sam, Proof of the geometric Langlands conjecture I: construction of the functor (2024)
+- Gaitsgory, Dennis, Construction of central elements in the affine Hecke algebra via nearby cycles (2001)
+- D. Gaitsgory, _Construction of central elements in the affine Hecke algebra via nearby cycles_, Invent. Math. **144** (2001), no. 2, 253–280. doi:10.1007/s002220100122.
+- D. Gaitsgory, _On a vanishing conjecture appearing in the geometric Langlands correspondence_, Ann. of Math. (2) **160** (2004), no. 2, 617–682. doi:10.4007/annals.2004.160.617.
+- D. Gaitsgory, _Construction of central elements in the affine Hecke algebra via nearby cycles_, Invent. Math. **144** (2001), no. 2, 253–280.
+- D. Gaitsgory, _On a vanishing conjecture appearing in the geometric Langlands correspondence_, Ann. of Math. (2) **160** (2004), no. 2, 617–682.
+- D. Gaitsgory, D. Kazhdan, N. Rozenblyum, and Y. Varshavsky, _A toy model for the Drinfeld–Lafforgue shtuka construction_, arXiv:1908.05420v5, February 7, 2022.
+- W. T. Gan, M. Harris, and W. Sawin, with an appendix by R. Beuzart-Plessis, _Local parameters of supercuspidal representations_, Forum Math. Pi **12** (2024), e13, 1–41. doi:10.1017/fmp.2024.10.
+- Ginzburg, Victor, Perverse sheaves on a loop group and Langlands' duality (2000)
+- Ginzburg, Victor, The global nilpotent variety is Lagrangian (2001)
+- V. Ginzburg, _The global nilpotent variety is Lagrangian_, Duke Math. J. **109** (2001), no. 3, 511–519. doi:10.1215/S0012-7094-01-10933-2.
+- M{\oe}glin, Colette, Waldspurger, Jean-Loup, Spectral Decomposition and Eisenstein Series: A Paraphrase of the Scriptures (1995)
+- Haines, Thomas J., Cellular pavings of fibers of convolution morphisms (2025)
+- Haines, Thomas J., Kottwitz, Robert E., Prasad, Amritanshu, Iwahori–Hecke algebras (2009)
+- Hall, Jack, Rydh, David, Coherent Tannaka duality and algebraicity of Hom-stacks (2019)
+- Hall, Jack, Rydh, David, Coherent Tannaka duality and algebraicity of Hom-stacks (2019)
+- Hansen, David, Scholze, Peter, Relative perversity (2023)
+- Hansen, David, Scholze, Peter, Relative perversity (2023)
+- D. Ciubotaru and M. Harris, _On the generalized Ramanujan and Arthur conjectures over function fields_, Ann. of Math. (2) **204** (2026), no. 2, 545–601. doi:10.4007/annals.2026.204.2.3.
+- Hemo, Tamir, Richarz, Timo, Scholbach, Jakob, Constructible sheaves on schemes (2023)
+- James Arthur. \newblock On some problems suggested by the trace formula. \newblock In Rebecca Herb, Stephen Kudla, Ronald Lipsman, and Jonathan Rosenberg, editors, {\em Lie Group Representations II}, volume 1041 of {\em Lecture Notes in Mathematics}, pages 1–49. Springer, Berlin, 1984.
+- Hoffmann, Norbert, On moduli stacks of $G$-bundles over a curve (2010)
+- Marc Hoyois, Sarah Scherotzke, and Nicol\`o Sibilla, _Higher traces, noncommutative motives, and the categorified Chern character_, arXiv:1511.03589v3.  .
+- The Stacks project authors. \newblock The stacks project. \newblock  , 2026. \newblock Tag 0A6A, Lemma 15.101.2(3). Accessed October 3, 2026.
+- W. T. Gan and A. Ichino, _The Gross–Prasad conjecture and local theta correspondence_, Invent. Math. **206** (2016), 705–799. doi:10.1007/s00222-016-0662-8.
+- Javanpeykar, Ariyan, Kr{ä}mer, Thomas, Lehn, Christian, Maculan, Marco, The monodromy of families of subvarieties on abelian varieties (2025)
+- Jordan, Bruce W., Ribet, Kenneth A., Scholl, Anthony J., Modular curves and {N{é}ron} models of generalized Jacobians (2024)
+- Roman Bezrukavnikov and Michael Finkelberg. \newblock Equivariant Satake category and Kostant–Whittaker reduction. \newblock {\em Moscow Mathematical Journal}, 8(1):39–72, 2008.
+- Bernhard Keller, _A-infinity algebras, modules and functor categories_, arXiv:math/0510508v3, 12 February 2006.  .
+- Lafforgue, Vincent, Introduction to chtoucas for reductive groups and to the global Langlands parameterization (2017)
+- Lafforgue, Laurent, Chtoucas de Drinfeld et correspondance de Langlands (2002)
+- Lafforgue, Laurent, Noyaux du transfert automorphe de Langlands et formules de Poisson non lin{é}aires (2013)
+- A. Genestier and V. Lafforgue, _Chtoucas restreints pour les groupes réductifs et paramétrisation de Langlands locale_, preprint, 2017, revised July 30, 2026, arXiv:1709.00978v3.
+- L. Lafforgue, _Chtoucas de Drinfeld et correspondance de Langlands_, Invent. Math. **147** (2002), no. 1, 1–241. doi:10.1007/s002220100174.
+- V. Lafforgue, _Chtoucas pour les groupes réductifs et paramétrisation de Langlands globale_, J. Amer. Math. Soc. **31** (2018), no. 3, 719–891. doi:10.1090/jams/897.
+- Lang, Serge, Algebraic groups over finite fields (1956)
+- Laszlo, Yves, Olsson, Martin, Perverse $t$-structure on Artin stacks (2009)
+- Laszlo, Yves, Olsson, Martin, The six operations for sheaves on Artin stacks. II: Adic coefficients (2008)
+- Laumon, G{é}rard, Correspondance de Langlands g{é}om{é}trique pour les corps de fonctions (1987)
+- Laumon, G{é}rard, Un analogue global du c{\^o}ne nilpotent (1988)
+- G. Laumon, _Correspondance de Langlands géométrique pour les corps de fonctions_, Duke Math. J. **54** (1987), no. 2, 309–359. doi:10.1215/S0012-7094-87-05418-4.
+- G. Laumon, _Un analogue global du c\^one nilpotent_, Duke Math. J. **57** (1988), no. 2, 647–671. doi:10.1215/S0012-7094-88-05729-8.
+- G. Laumon, _Correspondance de Langlands géométrique pour les corps de fonctions_, Duke Math. J. **54** (1987), no. 2, 309–359.
+- Lee, Ting-Yu, Adjoint quotients of reductive groups (2015)
+- Lieblich, Max, Olsson, Martin, Generators and relations for the {é}tale fundamental group (2010)
+- Liu, Yifeng, Zheng, Weizhe, Enhanced six operations and base change theorem for higher Artin stacks (2024)
+- W. T. Gan and L. Lomelí, _Globalization of supercuspidal representations over function fields and applications_, J. Eur. Math. Soc. **20** (2018), no. 11, 2813–2858. doi:10.4171/JEMS/825.
+- L. A. Lomelí, _Functoriality for the classical groups over function fields_, Int. Math. Res. Not. IMRN **2009** (2009), no. 22, 4271–4335. doi:10.1093/imrn/rnp089.
+- L. A. Lomelí, _The Langlands–Shahidi method over function fields: Ramanujan Conjecture and Riemann Hypothesis for the unitary groups_, preprint, 2015, arXiv:1507.03625.
+- L. A. Lomelí, _Rationality and holomorphy of Langlands–Shahidi $L$-functions over function fields_, Math. Z. **291** (2019), 711–739. doi:10.1007/s00209-018-2100-7.
+- Lu, Qing, Zheng, Weizhe, Categorical traces and a relative Lefschetz–Verdier formula (2022)
+- Andrew Salmon. \newblock Unipotent nearby cycles and the cohomology of shtukas. \newblock {\em Compositio Mathematica}, 159(3):590–615, 2023. \newblock  . \newblock Preprint version consulted: arXiv:2106.04768v3.
+- R. W. Thomason. \newblock The classification of triangulated subcategories. \newblock {\em Compositio Mathematica}, 105(1):1–27, 1997.
+- Dennis Gaitsgory. \newblock Construction of central elements in the affine Hecke algebra via nearby cycles. \newblock {\em Inventiones Mathematicae}, 144(2):253–280, 2001.
+- Laurent Lafforgue. \newblock Chtoucas de Drinfeld et correspondance de Langlands. \newblock {\em Inventiones Mathematicae}, 147(1):1–241, 2002.
+- Sergey Arkhipov and Roman Bezrukavnikov. \newblock Perverse sheaves on affine flags and Langlands dual group. \newblock {\em Israel Journal of Mathematics}, 170:135–183, 2009. \newblock Section and equation locators refer to arXiv version 6.
+- Ivan Mirkovi{ć} and Kari Vilonen. \newblock Geometric Langlands duality and representations of algebraic groups over commutative rings. \newblock {\em Annals of Mathematics}, 166(1):95–143, 2007.
+- Alexander Bertoloni Meli, Naoki Imai, and Alex Youcis. \newblock The Jacobson–Morozov morphism for Langlands parameters in the relative setting. \newblock {\em International Mathematics Research Notices}, 2024(6):5100–5165, 2024. \newblock Statement numbering as in arXiv:2203.01768v3.
+- Bertoloni Meli, Alexander, Imai, Naoki, Youcis, Alex, The Jacobson–Morozov morphism for Langlands parameters in the relative setting (2024)
+- William M. Goldman and John J. Millson, _The deformation theory of representations of fundamental groups of compact Kähler manifolds_, Publications Mathématiques de l'IHÉS **67** (1988), 43–96.  .
+- J. S. Milne, _Algebraic Groups: The Theory of Group Schemes of Finite Type over a Field_, Cambridge University Press, 2017.  .
+- Milne, James S., Algebraic Groups: The Theory of Group Schemes of Finite Type over a Field (2017)
+- Milne, J. S., Algebraic Groups: The Theory of Group Schemes of Finite Type over a Field (2022)
+- Milne, J. S., Lectures on {É}tale Cohomology (2013)
+- Morris, L. E., Eisenstein series for reductive groups over global function fields. I: The cusp form case (1982)
+- Morris, L. E., Eisenstein series for reductive groups over global function fields. II: The general case (1982)
+- David Mumford, _Theta characteristics of an algebraic curve_, Annales scientifiques de l'École Normale Supérieure (4) **4** (1971), no. 2, 181–192.  .
+- Nadler, David, Yun, Zhiwei, Spectral action in Betti geometric Langlands (2019)
+- Nadler, David, Yun, Zhiwei, Automorphic gluing functor in Betti geometric Langlands (2021)
+- Yoshinori Namikawa, _Birational geometry for nilpotent orbits_, arXiv:1002.2821v2, 10 March 2010; Handbook of Moduli, vol. III, Advanced Lectures in Mathematics **26** (2013), 1–38.  .
+- OpenAI. \newblock Ramanujan–Arthur Decompositions of Cuspidal Functions at Full Finite Level. \newblock OpenAI Math Release preprint OAI:Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026, 2026.
+- David Kazhdan and Andrei Okounkov, _On the unramified Eisenstein spectrum_, arXiv:2203.03486v3.  . Section and equation locators refer to this version.
+- Olsson, Martin C., (Log) twisted curves (2007)
+- M. Lieblich and M. Olsson, _Generators and relations for the étale fundamental group_, Pure Appl. Math. Q. **6** (2010), no. 1, 209–243. doi:10.4310/PAMQ.2010.v6.n1.a6.
+- M. C. Olsson, _(Log) twisted curves_, Compos. Math. **143** (2007), no. 2, 476–494. doi:10.1112/S0010437X06002442.
+- M. Lieblich and M. Olsson, _Generators and relations for the étale fundamental group_, Pure Appl. Math. Q. **6** (2010), no. 1, 209–243.
+- M. C. Olsson, _(Log) twisted curves_, Compos. Math. **143** (2007), no. 2, 476–494.
+- OpenAI, _Ramanujan–Arthur Decompositions of Cuspidal Functions at Full Finite Level_, OpenAI Math Release preprint OAI:Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026, 2026.
+- OpenAI, _The Restricted Geometric Langlands Equivalence in Positive Characteristic_, OpenAI Math Release preprint OAI:The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026, 2026.
+- OpenAI, Rationality of the Canonical Unramified Arthur Filtration (2026)
+- OpenAI, _Ramanujan–Arthur Decompositions of Cuspidal Functions at Full Finite Level_, OpenAI Math Release preprint OAI:Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026, 2026.
+- OpenAI, The Restricted Geometric Langlands Equivalence in Positive Characteristic (2026)
+- OpenAI, _Constructible tame Hecke eigensheaves in positive characteristic_, OpenAI Math Release preprint OAI:Constructible-tame-Hecke-eigensheaves-in-positive-characteristic-October-5-2026, 2026.
+- OpenAI, _Constructible tame Hecke eigensheaves in positive characteristic_, OpenAI Math Release preprint OAI:Constructible-tame-Hecke-eigensheaves-in-positive-characteristic-October-5-2026, 2026.
+- Pappas, George, Zhu, Xinwen, Local models of Shimura varieties and a conjecture of Kottwitz (2013)
+- Prasad, Amritanshu, On Bernstein's presentation of Iwahori–Hecke algebras and representations of split reductive groups over non-Archimedean local fields (2005)
+- B. H. Gross and D. Prasad, _On the decomposition of a representation of $\mathrm{SO}_n$ when restricted to $\mathrm{SO}_{n-1}$_, Canad. J. Math. **44** (1992), no. 5, 974–1002. doi:10.4153/CJM-1992-060-8.
+- J. P. Pridham, _The deformation theory of representations of the fundamental group of a smooth variety_, arXiv:math/0401344v2, revised 3 July 2019.  .
+- Ram, Arun, Affine Hecke algebras and generalized standard Young tableaux (2003)
+- Dennis Gaitsgory and Sam Raskin, _Geometric Langlands in positive characteristic from characteristic zero_, arXiv:2508.02237v1, 4 August 2025.  .
+- Sam Raskin, _Conjectures of Arthur and Ramanujan for unramified automorphic forms: announcement_, ICM 2026 contribution, 12 October 2025, updated 10 March 2026.  .
+- D. Gaitsgory and S. Raskin, _Proof of the geometric Langlands conjecture I: construction of the functor_, preprint, 2024, revised 2025, arXiv:2405.03599v3.
+- D. Gaitsgory and S. Raskin, _Proof of the geometric Langlands conjecture V: the multiplicity one theorem_, preprint, 2024, revised 2026, arXiv:2409.09856v3.
+- D. Gaitsgory and S. Raskin, _Geometric Langlands in positive characteristic from characteristic zero_, preprint, 2025, arXiv:2508.02237v1.
+- D. Gaitsgory and S. Raskin, _Geometric Langlands in positive characteristic from characteristic zero_, arXiv:2508.02237v1, August 4, 2025.
+- D. Renard, _Représentations des groupes réductifs $p$-adiques_, Cours spécialisés **17**, Société Mathématique de France, Paris, 2010.
+- F{\ae}rgeman, Joakim, Motivic realization of rigid $G$-local systems on curves and tamely ramified geometric Langlands (2024)
+- J. F{\ae}rgeman, _Motivic realization of rigid $G$-local systems on curves and tamely ramified geometric Langlands_, preprint, 2024, arXiv:2405.18268v2.
+- J. F\ae rgeman, _Motivic realization of rigid $G$-local systems on curves and tamely ramified geometric Langlands_, arXiv:2405.18268v2, July 28, 2024; to appear in Selecta Mathematica.
+- Richarz, Timo, Scholbach, Jakob, The motivic Satake equivalence (2021)
+- Richarz, Timo, Scholbach, Jakob, The motivic Satake equivalence (2021)
+- Richarz, Timo, A new approach to the geometric Satake equivalence (2014)
+- F. Rodier, _Mod\`eles de Whittaker des représentations admissibles des groupes réductifs $p$-adiques quasi-déployés_, author manuscript, revised 1975. Author's archival manuscript. The published summary appears in _Harmonic Analysis on Homogeneous Spaces_, Proc. Sympos. Pure Math. **26**, American Mathematical Society, Providence, RI, 1973, 425–430.
+- Dennis Gaitsgory and Nick Rozenblyum, _DG indschemes_, arXiv:1108.1738v8, 19 March 2023.  .
+- Rydh, David, Compactification of stacks and extending stackiness across the boundary (2014)
+- J. Hall and D. Rydh, _Coherent Tannaka duality and algebraicity of Hom-stacks_, Algebra Number Theory **13** (2019), no. 7, 1633–1675. doi:10.2140/ant.2019.13.1633.
+- D. Rydh, _Compactification of stacks and extending stackiness across the boundary_, preprint, September 16, 2014. Author's manuscript.
+- J. Hall and D. Rydh, _Coherent Tannaka duality and algebraicity of Hom-stacks_, Algebra Number Theory **13** (2019), no. 7, 1633–1675.
+- D. Rydh, _Compactification of stacks and extending stackiness across the boundary_, preprint, September 16, 2014.
+- James Arthur. \newblock Unipotent automorphic representations: conjectures. \newblock In {\em Orbites unipotentes et représentations – II. Groupes $p$-adiques et réels}, number 171–172 in Astérisque, pages 13–71. Société mathématique de France, 1989.
+- Roman Bezrukavnikov. \newblock On two geometric realizations of an affine Hecke algebra. \newblock {\em Publications Math{é}matiques de l'IH{É}S}, 123:1–67, 2016.
+- Sawin, Will, Templier, Nicolas, On the Ramanujan conjecture for automorphic forms over function fields I. Geometry (2021)
+- Schieder, Simon, The Harder–Narasimhan stratification of the moduli stack of $G$-bundles via Drinfeld's compactifications (2015)
+- Timo Richarz and Jakob Scholbach, _The motivic Satake equivalence_, Mathematische Annalen **380** (2021), 1595–1653, published 15 May 2021.  .
+- D. Hansen and P. Scholze, _Relative perversity_, Commun. Amer. Math. Soc. **3** (2023), 631–668. doi:10.1090/cams/21.
+- D. Hansen and P. Scholze, _Relative perversity_, Commun. Amer. Math. Soc. **3** (2023), 631–668.
+- F. Shahidi, _Arthur packets and the Ramanujan conjecture_, Kyoto J. Math. **51** (2011), no. 1, 1–23. doi:10.1215/0023608X-2010-018.
+- S. Shen, _Tamely ramified geometric Langlands correspondence in positive characteristic_, Int. Math. Res. Not. IMRN **2024**, no. 7, 6176–6208. doi:10.1093/imrn/rnae005.
+- V. G. Drinfeld and C. Simpson, _$B$-structures on $G$-bundles and local triviality_, Math. Res. Lett. **2** (1995), no. 6, 823–829.
+- Fran{\c c}ois Digne and Jean Michel. \newblock Quasi-semisimple elements. \newblock {\em Proceedings of the London Mathematical Society}, 116:1301–1328, 2018.
+- Vincent Lafforgue. \newblock Chtoucas pour les groupes r{é}ductifs et param{é}trisation de Langlands globale. \newblock {\em Journal of the American Mathematical Society}, 31(3):719–891, 2018.
+- Springer, T. A., Linear Algebraic Groups (1998)
+- Sun, Shenghao, $L$-series of Artin stacks over finite fields (2012)
+- Sun, Shenghao, Generic base change, Artin's comparison theorem, and the decomposition theorem for complex Artin stacks (2017)
+- G. Dhillon and J. Taylor, _The universal monodromic Arkhipov–Bezrukavnikov equivalence_, preprint, 2025, arXiv:2501.14156v1.
+- G. Dhillon and J. Taylor, _Tame local Betti geometric Langlands_, preprint, 2025, arXiv:2501.14157v1.
+- Jeffrey Adams and Olivier Taïbi, _Galois and Cartan cohomology of real groups_, arXiv:1611.05956v2, 21 November 2016.  .
+- W. Sawin and N. Templier, _On the Ramanujan conjecture for automorphic forms over function fields I. Geometry_, J. Amer. Math. Soc. **34** (2021), no. 3, 653–746. doi:10.1090/jams/968.
+- Tits, Jacques, Reductive groups over local fields (1979)
+- Tudor Pădurariu and Yukinobu Toda, _The categorical DT/PT correspondence and quasi-BPS categories for local surfaces_, Moduli **3** (2026), e1, 1–44.  .
+- Yukinobu Toda, _Categorical Donaldson–Thomas theory for local surfaces_, arXiv:1907.09076v4, 10 June 2021.  .
+- Varshavsky, Yakov, Lefschetz–Verdier trace formula and a generalization of a theorem of Fujiwara (2007)
+- I. Mirković and K. Vilonen, _Geometric Langlands duality and representations of algebraic groups over commutative rings_, Ann. of Math. (2) **166** (2007), no. 1, 95–143. doi:10.4007/annals.2007.166.95.
+- I. Mirković and K. Vilonen, _Geometric Langlands duality and representations of algebraic groups over commutative rings_, Ann. of Math. (2) **166** (2007), no. 1, 95–143; corrected version arXiv:math/0401222v5, February 13, 2018.
+- D. Abramovich and A. Vistoli, _Compactifying the space of stable maps_, J. Amer. Math. Soc. **15** (2002), no. 1, 27–75.
+- J.-L. Waldspurger, _La formule de Plancherel pour les groupes $p$-adiques, d'apr\`es Harish-Chandra_, J. Inst. Math. Jussieu **2** (2003), no. 2, 235–333. doi:10.1017/S1474748003000082.
+- R. Taylor and T. Yoshida, _Compatibility of local and global Langlands correspondences_, J. Amer. Math. Soc. **20** (2007), no. 2, 467–493. doi:10.1090/S0894-0347-06-00542-X.
+- Yun, Zhiwei, Rigidity in automorphic representations and local systems (2014)
+- D. Nadler and Z. Yun, _Spectral action in Betti geometric Langlands_, Israel J. Math. **232** (2019), 299–349. doi:10.1007/s11856-019-1871-9.
+- D. Nadler and Z. Yun, _Automorphic gluing functor in Betti geometric Langlands_, preprint, 2021, revised 2023, arXiv:2105.12318v3.
+- D. Nadler and Z. Yun, _Automorphic gluing functor in Betti geometric Langlands_, arXiv:2105.12318v3, June 6, 2023.
+- I. N. Bernstein and A. V. Zelevinsky, _Induced representations of reductive $p$-adic groups. I_, Ann. Sci. École Norm. Sup. (4) **10** (1977), no. 4, 441–472. doi:10.24033/asens.1333.

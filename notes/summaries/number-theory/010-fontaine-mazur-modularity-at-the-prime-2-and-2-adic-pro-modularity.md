@@ -1,6 +1,6 @@
-Notes / Summaries / Number theory / [Family 010](../../index/number-theory/010-fontaine-mazur-modularity-at-the-prime-2-and-2-adic-pro-modularity.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Number theory](../../index/disciplines/number-theory.md) / [Family 010](../../index/number-theory/010-fontaine-mazur-modularity-at-the-prime-2-and-2-adic-pro-modularity.md)
 
-# 010 — Fontaine--Mazur modularity at the prime $2$ and $2$-adic pro-modularity
+# 010 — Fontaine–Mazur modularity at the prime $2$ and $2$-adic pro-modularity
 
 [Index page](../../index/number-theory/010-fontaine-mazur-modularity-at-the-prime-2-and-2-adic-pro-modularity.md)
 
@@ -32,7 +32,7 @@ The family attacks that gap from three directions, and its three manuscripts pro
 
 The second proves a theorem about the size of that algebra: every irreducible component of its spectrum has Krull dimension exactly four, and the manuscript stresses that [S14:96–97] “the theorem does not require a residual Galois representation to be irreducible, nonscalar, or distinguished at $2$.” The third proves the classical modularity statement at $2$ itself, with no residual hypothesis at all.
 
-Read together: the representation lives in the completed Hecke algebra (manuscript A); that algebra is exactly the right size, component by component (manuscript B); and under the dyadic de Rham hypothesis it is a modular form up to Tate twist (manuscript C). The dimension theorem is not decoration — manuscript A uses it as the input that closes its proof [S5:122–124] “The final passage uses the dimension theorem of \cite[Theorem~1.1]{Dim} and the adjoint Selmer vanishing theorem of Newton and Thorne \cite[Theorem~5.4]{NewtonThorne2023}.”
+Read together: the representation lives in the completed Hecke algebra (manuscript A); that algebra is exactly the right size, component by component (manuscript B); and under the dyadic de Rham hypothesis it is a modular form up to Tate twist (manuscript C). The dimension theorem is not decoration — manuscript A uses it as the input that closes its proof [S5:122–124] “The final passage uses the dimension theorem of \cite[Theorem 1.1]Dim and the adjoint Selmer vanishing theorem of Newton and Thorne \cite[Theorem 5.4]NewtonThorne2023.”
 
 **Proof sketch (the pro-modularity manuscript).** Twist the target representation by a continuous cyclotomic family and place it inside a fixed-determinant trace family of dimension at least three. Choose the base-change field so that it splits completely at $2$; then all dyadic restrictions of the family share one local Galois parameter, and a local comparison builds a one-factor object out of an admissible representation of the product of dyadic groups. Force maximal growth along a chain of prime specializations to obtain a point that is regular and de Rham, hence classical by the regular Fontaine--Mazur theorem. At that point the global deformation ring with determinant allowed to vary has tangent dimension at most three, while a dimension-four integral Hecke component has local dimension three; equality makes the ambient local ring regular, its Hecke kernel vanishes at the point, and since the trace family is a domain through it, the kernel vanishes everywhere on the family. The original representation is therefore on Hecke support.
 
@@ -60,7 +60,7 @@ Read together: the representation lives in the completed Hecke algebra (manuscri
 > \]
 > \end{theorem}
 
-The conclusion gets its name in the next paragraph [S5:51–54] “We call this conclusion *pro-modularity*. No condition on the semisimplified reduction of $r$ is imposed. In particular, the theorem includes scalar residual representations.” The tame level is not pinned to the ramification set: auxiliary odd primes are allowed, which is the point on which the manuscript distinguishes its theorem from the formulation it cites [S5:65–68] “That formulation prescribes the allowed tame primes. Theorem~  proves dyadic occurrence for absolutely irreducible representations while allowing auxiliary primes in the tame level.”
+The conclusion gets its name in the next paragraph [S5:51–54] “We call this conclusion *pro-modularity*. No condition on the semisimplified reduction of $r$ is imposed. In particular, the theorem includes scalar residual representations.” The tame level is not pinned to the ramification set: auxiliary odd primes are allowed, which is the point on which the manuscript distinguishes its theorem from the formulation it cites [S5:65–68] “That formulation prescribes the allowed tame primes. Theorem   proves dyadic occurrence for absolutely irreducible representations while allowing auxiliary primes in the tame level.”
 
 **Dimension (manuscript B).**
 
@@ -71,7 +71,7 @@ The conclusion gets its name in the next paragraph [S5:51–54] “We call this 
 > $\Spec T_2(N)$ has dimension exactly $4$.
 > \end{theorem}
 
-The algebra is the inverse limit over all weights, Eisenstein series included [S14:93–95] “This is the $p=2$ case of Emerton's Conjecture~2.9  . The algebra in   retains all weights, all Eisenstein systems, and all residual systems of eigenvalues.”
+The algebra is the inverse limit over all weights, Eisenstein series included [S14:93–95] “This is the $p=2$ case of Emerton's Conjecture 2.9  . The algebra in   retains all weights, all Eisenstein systems, and all residual systems of eigenvalues.”
 
 **Classicality (manuscript C).**
 
@@ -89,18 +89,18 @@ The algebra is the inverse limit over all weights, Eisenstein series included [S
 > with a classical cuspidal eigenform.
 > \end{theorem}
 
-The manuscript states the scope of that statement itself [S19:32–35] “Thus Theorem~  resolves the odd, regular two-dimensional Fontaine--Mazur conjecture over \(\mathbb Q\) at \(2\). Its scope includes every semisimple residual representation, including scalar and reducible ones.” The abstract of the same manuscript states the same conclusion in one sentence [S18:66–71] “We prove that every continuous, irreducible, odd two-dimensional \(2\)-adic representation of \(G_{\mathbb Q}\), unramified outside finitely many primes and de Rham at \(2\) with distinct Hodge--Tate weights, is modular up to Tate twist.”
+The manuscript states the scope of that statement itself [S19:32–35] “Thus Theorem   resolves the odd, regular two-dimensional Fontaine–Mazur conjecture over \(\mathbb Q\) at \(2\). Its scope includes every semisimple residual representation, including scalar and reducible ones.” The abstract of the same manuscript states the same conclusion in one sentence [S18:66–71] “We prove that every continuous, irreducible, odd two-dimensional \(2\)-adic representation of \(G_{\mathbb Q}\), unramified outside finitely many primes and de Rham at \(2\) with distinct Hodge–Tate weights, is modular up to Tate twist.”
 
 **The moves.**
 
 1. **Trace family.** Manuscript A begins [S5:95–97] “After a continuous cyclotomic twist, we place the original representation in a fixed-determinant trace family $D$ of dimension at least three.” The base-change and connectedness machinery that puts such a family on Hecke support sits in `sections/family.tex` [S6].
 2. **Diagonal block equivalence.** [S5:103–106] “We choose the base-change field to split completely at $2$, so that all dyadic restrictions of the family have the same local Galois parameter.” The block-equivalence comparison is `sections/diagonal.tex` [S7], and the manuscript notes [S5:112] “This comparison includes scalar residual blocks.”
-3. **A regular de Rham point.** [S5:113–117] “Section~  then uses a chain of prime specializations in $D$ to force maximal growth, and hence positive Iwasawa rank, for the one-factor object. Polynomial approximation detects a locally algebraic depth-zero supercuspidal type, yielding a regular de Rham point $x$.” The construction is `sections/regular-point.tex` [S8].
-4. **Classicality of the auxiliary point.** [S5:117–120] “The regular Fontaine--Mazur theorem \cite[Theorem~1.1]{FM2} makes $x$ classical up to Tate twist, and Section~  puts its classical packet and continuous cyclotomic twists in the precise algebra  .” The Hecke-algebra bookkeeping is `sections/hecke.tex` [S9].
-5. **Tangent bound at the classical point.** The closing section proves the adjoint Selmer bound and its deformation-ring consequence, and states what the bound tolerates [S10:31–32] “Both assertions permit scalar or reducible semisimplified residual data and finite extension of the coefficient ring.” The global input is the Selmer vanishing theorem quoted where it is used [S10:55–58] “Newton--Thorne's theorem \cite[Theorem~5.4]{NewtonThorne2023}, specialized to $\GL_2/\mathbb Q$, states that for a regular algebraic cuspidal automorphic representation $\pi$ and any prime $p$,”.
+3. **A regular de Rham point.** [S5:113–117] “Section   then uses a chain of prime specializations in $D$ to force maximal growth, and hence positive Iwasawa rank, for the one-factor object. Polynomial approximation detects a locally algebraic depth-zero supercuspidal type, yielding a regular de Rham point $x$.” The construction is `sections/regular-point.tex` [S8].
+4. **Classicality of the auxiliary point.** [S5:117–120] “The regular Fontaine–Mazur theorem \cite[Theorem 1.1]FM2 makes $x$ classical up to Tate twist, and Section   puts its classical packet and continuous cyclotomic twists in the precise algebra  .” The Hecke-algebra bookkeeping is `sections/hecke.tex` [S9].
+5. **Tangent bound at the classical point.** The closing section proves the adjoint Selmer bound and its deformation-ring consequence, and states what the bound tolerates [S10:31–32] “Both assertions permit scalar or reducible semisimplified residual data and finite extension of the coefficient ring.” The global input is the Selmer vanishing theorem quoted where it is used [S10:55–58] “Newton–Thorne's theorem \cite[Theorem 5.4]NewtonThorne2023, specialized to $\GL_2/\mathbb Q$, states that for a regular algebraic cuspidal automorphic representation $\pi$ and any prime $p$,”.
 6. **Kernel vanishing on the whole domain.** [S5:125–130] “At $x$, the global deformation problem with varying determinant has tangent dimension at most three, while a dimension-four integral Hecke component has local dimension three. Equality makes the ambient local ring regular and forces its Hecke kernel to vanish there. Since $D$ is a domain through $x$, the same kernel vanishes on all of $D$.”
-7. **How the dimension theorem is proved.** Manuscript B works at characteristic-zero points [S14:131–132] “The proof works at characteristic-zero points, even on components whose residual systems are reducible or scalar.” Its tangent step is [S14:139–142] “the tangent space at such a point has dimension at most $3$: the Newton--Thorne theorem annihilates the global finite Selmer group, and the only nonzero local quotient has dimension $3$ at $2$.” Two passages are advertised as reusable, and the manuscript is explicit that [S14:151–152] “Neither passage assumes residual irreducibility.”
-8. **The dyadic local input.** Manuscript C's local ingredient is [S19:113–115] “The local input is the \(p\)-adic Langlands correspondence of Colmez~ , in the all-prime form of Colmez, Dospinescu and Pašk\=unas~ .” The obstacle it leaves is stated plainly [S19:119–120] “a trace does not record a residual extension class, and globally reducible families can be too large for a direct connectedness argument.”
+7. **How the dimension theorem is proved.** Manuscript B works at characteristic-zero points [S14:131–132] “The proof works at characteristic-zero points, even on components whose residual systems are reducible or scalar.” Its tangent step is [S14:139–142] “the tangent space at such a point has dimension at most $3$: the Newton–Thorne theorem annihilates the global finite Selmer group, and the only nonzero local quotient has dimension $3$ at $2$.” Two passages are advertised as reusable, and the manuscript is explicit that [S14:151–152] “Neither passage assumes residual irreducibility.”
+8. **The dyadic local input.** Manuscript C's local ingredient is [S19:113–115] “The local input is the \(p\)-adic Langlands correspondence of Colmez  , in the all-prime form of Colmez, Dospinescu and Pašk\=unas  .” The obstacle it leaves is stated plainly [S19:119–120] “a trace does not record a residual extension class, and globally reducible families can be too large for a direct connectedness argument.”
 9. **Classical vectors, then descent.** Manuscript C's locally reducible branch ends [S19:183–184] “This last step avoids assuming that algebraic vectors commute with specialization.”, and its final stage is [S19:191–192] “Descent is applied only after classicality has been established; no descent statement for pro-modular loci is needed.” The eight sections of that manuscript are preliminaries [S20], the deformation problem [S21], completed definite forms [S22], patching [S23], controlled fields [S24], transverse connectedness [S25], and classicality [S26].
 
 **What the family does not say.** Manuscript A's theorem is an occurrence statement and its abstract refuses the stronger reading [S4:61–63] “This is a completed-Hecke occurrence result, with no de Rham hypothesis; it does not assert classical modularity.” Manuscript B says nothing about Galois representations being modular; it bounds the Krull dimension of a Hecke algebra. Manuscript C's theorem is stated for irreducible representations with the dyadic de Rham hypothesis imposed, and it is that hypothesis manuscript A drops. The release blurb's phrase *resolving the dyadic Fontaine–Mazur case* is keyed to the family-level paraphrase in `overview.tex` [S2:96], which merges the three manuscripts into one sentence; the ledger records the family as claim shape `resolution` with `resolves_named` 0, so the page states a resolution of the dyadic case as the manuscripts state it, not as a named-conjecture resolution beyond their own wording.
@@ -111,17 +111,17 @@ The manuscript states the scope of that statement itself [S19:32–35] “Thus T
 
 Prior (my training data, not this repo). Fontaine and Mazur formulated their conjecture in the mid-1990s, in a volume in honour of Jean-Pierre Serre; the odd two-dimensional case over $\mathbb Q$ is the form that modularity-lifting attacks. The long run of results before this release runs through Wiles and Taylor–Wiles patching, the residual-irreducibility and odd-prime hypotheses of the classical lifting theorems, the potential modularity arguments of Harris, Shepherd-Barron, Taylor and Thorne, and the $p$-adic Langlands correspondence at $p=2$ of Colmez, extended by Colmez–Dospinescu–Paškus. The dyadic case is where the residual hypotheses are hardest to remove.
 
-The manuscripts give the corpus-side record. Manuscript C opens with the conjecture itself [S19:3–5] “The Fontaine--Mazur conjecture predicts that irreducible \(p\)-adic Galois representations satisfying suitable finiteness and local conditions arise from algebraic geometry  .” Manuscript A records the pro-modularity expectation it is answering [S5:64–65] “Emerton records this expectation for the full varying-weight algebra in \cite[Conjecture~2.12]{Emerton2011Families}.”, and the shape of the earlier theorems [S5:70–76] “Skinner and Wiles developed pro-modularity arguments through ordinary families in the residually reducible setting \cite[Introduction and Section~4.1]{SkinnerWiles1999}. Emerton's local--global compatibility work separates pro-modularity from the production of classical vectors \cite[Section~1.2]{Emerton2011}; the pro-modularity theorem recorded there assumes $p>2$, residual irreducibility, and local residual restrictions.”
+The manuscripts give the corpus-side record. Manuscript C opens with the conjecture itself [S19:3–5] “The Fontaine–Mazur conjecture predicts that irreducible \(p\)-adic Galois representations satisfying suitable finiteness and local conditions arise from algebraic geometry  .” Manuscript A records the pro-modularity expectation it is answering [S5:64–65] “Emerton records this expectation for the full varying-weight algebra in \cite[Conjecture 2.12]Emerton2011Families.”, and the shape of the earlier theorems [S5:70–76] “Skinner and Wiles developed pro-modularity arguments through ordinary families in the residually reducible setting \cite[Introduction and Section 4.1]SkinnerWiles1999. Emerton's local–global compatibility work separates pro-modularity from the production of classical vectors \cite[Section 1.2]Emerton2011; the pro-modularity theorem recorded there assumes $p>2$, residual irreducibility, and local residual restrictions.”
 
-The odd-prime route is described in both manuscripts. Manuscript A: [S5:77–81] “Pan extends the family method to the residually reducible nonordinary setting at odd primes: ordinary loci supply modular points, and patching at one-dimensional primes propagates Hecke support \cite[Introduction and Theorem~4.1.7]{Pan2022}. His classical modularity theorems retain regular de Rham hypotheses.” Manuscript C gives the sequence of removals [S19:75–77] “At odd primes, Pan's work treats the residually reducible case and, together with preceding modularity lifting theorems, establishes the regular conjecture apart from one local residual configuration at~$3$” and [S19:78–83] “Zhang removes that configuration, obtaining the stated odd, regular theorem for every odd prime \cite[Theorem~1.0.2]{Zhang2025}. At~$2$, Tung removes the remaining local restriction in a modularity lifting theorem whose global residual image is nonsolvable \cite[Theorem~A]{Tung2021Dyadic}.”, drawing the distinction the family turns on [S19:83–86] “Thus local scalar residual behavior and a globally scalar residual representation must be distinguished: a local theorem covering the former does not by itself settle the latter.”
+The odd-prime route is described in both manuscripts. Manuscript A: [S5:77–81] “Pan extends the family method to the residually reducible nonordinary setting at odd primes: ordinary loci supply modular points, and patching at one-dimensional primes propagates Hecke support \cite[Introduction and Theorem 4.1.7]Pan2022. His classical modularity theorems retain regular de Rham hypotheses.” Manuscript C gives the sequence of removals [S19:75–77] “At odd primes, Pan's work treats the residually reducible case and, together with preceding modularity lifting theorems, establishes the regular conjecture apart from one local residual configuration at $3$” and [S19:78–83] “Zhang removes that configuration, obtaining the stated odd, regular theorem for every odd prime \cite[Theorem 1.0.2]Zhang2025. At $2$, Tung removes the remaining local restriction in a modularity lifting theorem whose global residual image is nonsolvable \cite[Theorem A]Tung2021Dyadic.”, drawing the distinction the family turns on [S19:83–86] “Thus local scalar residual behavior and a globally scalar residual representation must be distinguished: a local theorem covering the former does not by itself settle the latter.”
 
-The two inputs the dyadic proofs lean on are named where they are used. Manuscript C: [S19:100–103] “Thorne's theorem supplies an essential set of classical points: ordinary, potentially crystalline representations of weights $\{0,1\}$ are modular at every prime, without a residual irreducibility hypothesis \cite[Theorem~D]{Thorne2026}.” Manuscript B, on the Selmer input: [S14:119–121] “proved the vanishing theorem used here without the residual restrictions that would obstruct its application to all components at $2$.”
+The two inputs the dyadic proofs lean on are named where they are used. Manuscript C: [S19:100–103] “Thorne's theorem supplies an essential set of classical points: ordinary, potentially crystalline representations of weights $\{0,1\}$ are modular at every prime, without a residual irreducibility hypothesis \cite[Theorem D]Thorne2026.” Manuscript B, on the Selmer input: [S14:119–121] “proved the vanishing theorem used here without the residual restrictions that would obstruct its application to all components at $2$.”
 
 ## Consequences
 
-The family has one edge that leaves it, and it points at family 004. Manuscript C states the dependency [S19:40–44] “Theorem~ , in particular its absence of a residual-image hypothesis, supplies the weight-two modularity input in the height argument of *Hilbert's tenth problem over the rational numbers* \cite[Section~4]{OpenAIH10Q2026}, whose undecidability proof also uses substantial additional arithmetic and logical constructions.” The bibliography entry is a release entry [S27:723–730], whose title line reads [S27:725] “title = {{Hilbert's tenth problem over the rational numbers}},” and whose note field is [S27:729] “note = {Section~4}”, pointing at `Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/`. So the consequence runs 010 → 004: the dyadic modularity theorem is an input to the undecidability proof, and family 004 is T0 as well, so the edge is a reading dependency between two unformalized families, not a machine-checked one. See [004 — Hilbert's tenth problem over ℚ](004-hilberts-tenth-problem-over-q.md).
+The family has one edge that leaves it, and it points at family 004. Manuscript C states the dependency [S19:40–44] “Theorem  , in particular its absence of a residual-image hypothesis, supplies the weight-two modularity input in the height argument of *Hilbert's tenth problem over the rational numbers* \cite[Section 4]OpenAIH10Q2026, whose undecidability proof also uses substantial additional arithmetic and logical constructions.” The bibliography entry is a release entry [S27:723–730], whose title line reads [S27:725] “title = {{Hilbert's tenth problem over the rational numbers}},” and whose note field is [S27:729] “note = Section 4”, pointing at `Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/`. So the consequence runs 010 → 004: the dyadic modularity theorem is an input to the undecidability proof, and family 004 is T0 as well, so the edge is a reading dependency between two unformalized families, not a machine-checked one. See [004 — Hilbert's tenth problem over ℚ](004-hilberts-tenth-problem-over-q.md).
 
-The other two edges are inside the family. Manuscript A cites both of its siblings as release preprints: the key `FM2` is the manuscript C entry [S11:230–236], titled [S11:232] “title = {{Fontaine--Mazur modularity at the prime 2}},”, and the key `Dim` is the manuscript B entry [S11:238–244], titled [S11:240] “title = {{The Dimension of the Two-Adic Hecke Algebra at Odd Level}},”. Manuscript B cites nothing in the corpus: its 19-entry bibliography carries no release key [S15]. The dependency structure inside the family is therefore one-directional — manuscript A is the consumer, citing the regular theorem of C and the dimension theorem of B — which is why the three manuscripts read as one result with two supporting theorems rather than as three independent papers.
+The other two edges are inside the family. Manuscript A cites both of its siblings as release preprints: the key `FM2` is the manuscript C entry [S11:230–236], titled [S11:232] “title = {Fontaine–Mazur modularity at the prime 2},”, and the key `Dim` is the manuscript B entry [S11:238–244], titled [S11:240] “title = {{The Dimension of the Two-Adic Hecke Algebra at Odd Level}},”. Manuscript B cites nothing in the corpus: its 19-entry bibliography carries no release key [S15]. The dependency structure inside the family is therefore one-directional — manuscript A is the consumer, citing the regular theorem of C and the dimension theorem of B — which is why the three manuscripts read as one result with two supporting theorems rather than as three independent papers.
 
 What the family gives the rest of the release is a dyadic modularity theorem with no residual hypothesis, and a dimension theorem for the full two-adic Hecke algebra. Both are stated at $\mathbb Q$; neither is stated for a general totally real field, and the corpus contains no formalization in which either is used, so the downstream consequences are the ones the manuscripts themselves record. The triage record lists this family in the T0 opening [S29:121–124]. Related T0 number-theory pages: [002 — The full Birch–Swinnerton-Dyer formula in Selmer coranks zero and one](002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md), [006 — Goldfeld's conjecture](006-goldfelds-conjecture.md), [018 — The Margulis–Platonov conjecture over global fields](018-margulis-platonov-conjecture-over-global-fields.md) and [019 — The $p$-adic section conjecture](019-p-adic-section-conjecture.md).
 
@@ -162,41 +162,115 @@ What the family gives the rest of the release is a dyadic modularity theorem wit
 
 ## Bibliography
 
-**28 entries** from `refs.bib`:
-- Fontaine, Jean-Marc, Mazur, Barry. *Geometric {Galois} representations*. (1995) [FM1995]
-- Pan, Lue. *The {Fontaine--Mazur} conjecture in the residually reducible case*. (2022) [Pan2022]
-- Zhang, Xinyao. *On the {Fontaine--Mazur} conjecture for {$p=3$}*. (2025) [Zhang2025]
-- Pa{\v s}k{\=u}nas, Vytautas, Tung, Shen-Ning. *Finiteness properties of the category of mod {$p$} representations of {$\mathrm{GL}_2(\mathbf Q_p)$}*. (2021) [PaskunasTung2021]
-- Chenevier, Ga{\"e}tan. *The {$p$}-adic analytic space of pseudocharacters of a profinite group and pseudorepresentations over arbitrary rings*. (2014) [Chenevier2014]
-- Colmez, Pierre, Dospinescu, Gabriel, Pa{\v s}k{\=u}nas, Vytautas. *The {$p$}-adic local {Langlands} correspondence for {$\mathrm{GL}_2(\mathbf Q_p)$}*. (2014) [CDP2014]
-- Colmez, Pierre. *Repr{\'e}sentations de {$\mathrm{GL}_2(\mathbf Q_p)$} et {$(\varphi,\Gamma)$}-modules*. (2010) [Colmez2010]
-- Katz, Nicholas M.. *{$p$}-adic properties of modular schemes and modular forms*. (1973) [Katz1973]
-- Katz, Nicholas M., Mazur, Barry. *Arithmetic Moduli of Elliptic Curves*. (1985) [KatzMazur1985]
-- Bloch, Spencer, Kato, Kazuya. *{$L$}-functions and {Tamagawa} numbers of motives*. (1990) [BlochKato1990]
-- … and 18 more
-
-**19 entries** from `references.bib`:
-- Emerton, Matthew. *{$p$-adic families of modular forms [after Hida, Coleman, and Mazur]}*. (2011) [Emerton11]
-- Chenevier, Ga{\"e}tan. *The {$p$}-adic analytic space of pseudocharacters of a profinite group and pseudorepresentations over arbitrary rings*. (2014) [Chenevier14]
-- Newton, James, Thorne, Jack A.. *Adjoint {Selmer} groups of automorphic {Galois} representations of unitary type*. (2023) [NewtonThorne23]
-- Allen, Patrick B.. *Deformations of polarized automorphic {Galois} representations and adjoint {Selmer} groups*. (2016) [Allen16]
-- Kisin, Mark. *Geometric deformations of modular {Galois} representations*. (2004) [Kisin04]
-- Barnet-Lamb, Thomas, Gee, Toby, Geraghty, David, Taylor, Richard. *Potential automorphy and change of weight*. (2014) [BLGGT14]
-- Bloch, Spencer, Kato, Kazuya. *{$L$}-functions and {Tamagawa} numbers of motives*. (1990) [BlochKato90]
-- Carayol, Henri. *Sur les repr{\'e}sentations {$l$}-adiques associ{\'e}es aux formes modulaires de {Hilbert}*. (1986) [Carayol86]
-- Deligne, Pierre. *Formes modulaires et repr{\'e}sentations {$\ell$}-adiques*. (1971) [Deligne71]
-- Deligne, Pierre, Serre, Jean-Pierre. *Formes modulaires de poids 1*. (1974) [DeligneSerre74]
-- … and 9 more
-
-**64 entries** from `references.bib`:
-- Fontaine, Jean-Marc, Mazur, Barry. *Geometric {Galois} representations*. (1995) [FM1995]
-- Pan, Lue. *The {Fontaine--Mazur} conjecture in the residually reducible case*. (2022) [Pan2022]
-- Zhang, Xinyao. *On the {Fontaine--Mazur} conjecture for {$p=3$}*. (2025) [Zhang2025]
-- Thorne, Jack A.. *Towards the {Fontaine--Mazur} conjecture for {$\mathrm{GL}_2$}*. (2026) [Thorne2026]
-- B{\"o}ckle, Gebhard, Iyengar, Ashwin, Pa{\v s}k{\=u}nas, Vytautas. *On local {Galois} deformation rings*. (2023) [BIP]
-- Chenevier, Ga{\"e}tan. *The {$p$}-adic analytic space of pseudocharacters of a profinite group and pseudorepresentations over arbitrary rings*. (2014) [Chenevier2014]
-- Wang-Erickson, Carl. *Algebraic families of {Galois} representations and potentially semi-stable pseudodeformation rings*. (2018) [WangErickson2018]
-- Labute, John P.. *Classification of {Demushkin} Groups*. (1967) [Demushkin]
-- Grothendieck, Alexander. *Cohomologie locale des faisceaux coh{\'e}rents et th{\'e}or{\`e}mes de {Lefschetz} locaux et globaux ({SGA} 2)*. (2005) [SGA2]
-- Milne, J. S.. *Arithmetic Duality Theorems*. (2006) [Milne2006]
-- … and 54 more
+- Taba{\^a}, Mohamed, On the completed tensor product of two algebras on a field (2020)
+- Gouv{\^e}a, Fernando Q., Mazur, Barry, On the density of modular representations (1998)
+- Allen, Patrick B., Deformations of polarized automorphic Galois representations and adjoint Selmer groups (2016)
+- Allen, Patrick B., Deformations of polarized automorphic Galois representations and adjoint Selmer groups (2016)
+- Allen, Patrick B., Modularity of nearly ordinary 2-adic residually dihedral Galois representations (2014)
+- Arthur, James, Clozel, Laurent, Simple Algebras, Base Change, and the Advanced Theory of the Trace Formula (1989)
+- Aubert, Anne-Marie, Baum, Paul, Plymen, Roger, Solleveld, Maarten, Depth and the local Langlands correspondence (2016)
+- The Stacks Project Authors, The Stacks Project (2026)
+- Barnet-Lamb, Thomas, Gee, Toby, Geraghty, David, Taylor, Richard, Potential automorphy and change of weight (2014)
+- Barnet-Lamb, Thomas, Gee, Toby, Geraghty, David, Taylor, Richard, Potential Automorphy and Change of Weight (2014)
+- Barnet-Lamb, Thomas, Gee, Toby, Geraghty, David, Taylor, Richard, Local-Global Compatibility for $l=p$, II (2014)
+- Barthel, Laure, Livn{é}, Ron, Irreducible modular representations of $\mathrm{GL}_2$ of a local field (1994)
+- Barthel, Laure, Livn{é}, Ron, Modular representations of $\mathrm{GL}_2$ of a local field: the ordinary, unramified case (1995)
+- Berger, Laurent, Breuil, Christophe, Sur quelques repr{é}sentations potentiellement cristallines de $\mathrm{GL}_2(\mathbf Q_p)$ (2010)
+- Berger, Laurent, Repr{é}sentations $p$-adiques et {é}quations diff{é}rentielles (2002)
+- Billerey, Nicolas, Menares, Ricardo, On the modularity of reducible mod $l$ Galois representations (2016)
+- Bloch, Spencer, Kato, Kazuya, $L$-functions and Tamagawa numbers of motives (1990)
+- Bloch, Spencer, Kato, Kazuya, $L$-functions and Tamagawa numbers of motives (1990)
+- Bloch, Spencer, Kato, Kazuya, $L$-functions and Tamagawa numbers of motives (1990)
+- Breuil, Christophe, Emerton, Matthew, Repr{é}sentations $p$-adiques ordinaires de $\mathrm{GL}_2(\mathbf Q_p)$ et compatibilit{é} local-global (2010)
+- Breuil, Christophe, M{é}zard, Ariane, Multiplicit{é}s modulaires et repr{é}sentations de $\mathrm{GL}_2(\mathbf Z_p)$ et de $\mathrm{Gal}(\overline{\mathbf Q}_p/\mathbf Q_p)$ en $\ell=p$ (2002)
+- Breuil, Christophe, Sur quelques repr{é}sentations modulaires et $p$-adiques de $\mathrm{GL}_2(\mathbf Q_p)$. I (2003)
+- Brumer, Armand, On the units of algebraic number fields (1967)
+- Carayol, Henri, Sur les repr{é}sentations $l$-adiques associ{é}es aux formes modulaires de Hilbert (1986)
+- Carayol, Henri, Sur les repr{é}sentations $l$-adiques associ{é}es aux formes modulaires de Hilbert (1986)
+- Chenevier, Ga{ë}tan, The $p$-adic analytic space of pseudocharacters of a profinite group and pseudorepresentations over arbitrary rings (2014)
+- Chenevier, Ga{ë}tan, The $p$-adic analytic space of pseudocharacters of a profinite group and pseudorepresentations over arbitrary rings (2014)
+- Chenevier, Ga{ë}tan, The $p$-adic analytic space of pseudocharacters of a profinite group and pseudorepresentations over arbitrary rings (2014)
+- B{ö}ckle, Gebhard, Iyengar, Ashwin, Pa{\v s}k{\=u}nas, Vytautas, On local Galois deformation rings (2023)
+- Cohen, Henri, Oesterl{é}, Joseph, Dimensions des espaces de formes modulaires (1977)
+- Coleman, Robert F., Mazur, Barry, The eigencurve (1998)
+- Colmez, Pierre, Dospinescu, Gabriel, Pa{\v s}k{\=u}nas, Vytautas, The $p$-adic local Langlands correspondence for $\mathrm{GL}_2(\mathbf Q_p)$ (2014)
+- Colmez, Pierre, Repr{é}sentations de $\mathrm{GL}_2(\mathbf Q_p)$ et $(\varphi,\Gamma)$-modules (2010)
+- Colmez, Pierre, Dospinescu, Gabriel, Pa{\v s}k{\=u}nas, Vytautas, The $p$-adic local Langlands correspondence for $\mathrm{GL}_2(\mathbf Q_p)$ (2014)
+- Colmez, Pierre, Repr{é}sentations de $\mathrm{GL}_2(\mathbf Q_p)$ et $(\varphi,\Gamma)$-modules (2010)
+- Conrad, Brian, Arithmetic moduli of generalized elliptic curves (2007)
+- Deligne, Pierre, Formes modulaires et repr{é}sentations $\ell$-adiques (1971)
+- Deligne, Pierre, Serre, Jean-Pierre, Formes modulaires de poids 1 (1974)
+- Deligne, Pierre, Formes modulaires et repr{é}sentations $\ell$-adiques (1971)
+- Deligne, Pierre, Serre, Jean-Pierre, Formes modulaires de poids 1 (1974)
+- Emerton, Matthew, Local-global compatibility in the $p$-adic Langlands programme for $\mathrm{GL}_2/\mathbf Q$ (2011)
+- Emerton, Matthew, {$p$-adic families of modular forms [after Hida, Coleman, and Mazur]} (2011)
+- Emerton, Matthew, {$p$-adic families of modular forms [after Hida, Coleman, and Mazur]} (2011)
+- Emerton, Matthew, Ordinary parts of admissible representations of $p$-adic reductive groups I. Definition and first properties (2010)
+- Emerton, Matthew, Gee, Toby, Pan, Lue, Zhu, Xinwen, Prescribed lifts of $2$-dimensional representations (2026)
+- Emerton, Matthew, Local-global compatibility in the $p$-adic Langlands programme for $\mathrm{GL}_2/\mathbf Q$ (2011)
+- Fontaine, Jean-Marc, Mazur, Barry, Geometric Galois representations (1995)
+- Fontaine, Jean-Marc, Mazur, Barry, Geometric Galois representations (1995)
+- Fresnel, Jean, Rang $p$-adique du groupe des unit{é}s d'un corps de nombres (1968–1969)
+- Gee, Toby, Newton, James, Patching and the completed homology of locally symmetric spaces (2022)
+- Grothendieck, Alexander, Cohomologie locale des faisceaux coh{é}rents et th{é}or{\`e}mes de Lefschetz locaux et globaux (SGA 2) (2005)
+- Henniart, Guy, Sur l'unicit{é} des types pour GL$_2$ (2002)
+- Hida, Haruzo, Galois representations into $\mathrm{GL}_2(\mathbf{Z}_p[[X]])$ attached to ordinary cusp forms (1986)
+- Jacquet, Herv{é}, Langlands, Robert P., Automorphic Forms on GL(2) (1970)
+- Jochnowitz, Naomi, Congruences between systems of eigenvalues of modular forms (1982)
+- Kato, Kazuya, $p$-adic Hodge theory and values of zeta functions of modular forms (2004)
+- Katz, Nicholas M., $p$-adic properties of modular schemes and modular forms (1973)
+- Katz, Nicholas M., Mazur, Barry, Arithmetic Moduli of Elliptic Curves (1985)
+- Katz, Nicholas M., $p$-adic properties of modular schemes and modular forms (1973)
+- Katz, Nicholas M., Mazur, Barry, Arithmetic Moduli of Elliptic Curves (1985)
+- Khare, Chandrashekhar, Wintenberger, Jean-Pierre, Serre's Modularity Conjecture (I) (2009)
+- Khare, Chandrashekhar, Wintenberger, Jean-Pierre, Serre's Modularity Conjecture (II) (2009)
+- Kisin, Mark, Geometric deformations of modular Galois representations (2004)
+- Kisin, Mark, Modularity of $2$-Adic Barsotti–Tate Representations (2009)
+- Kisin, Mark, Modularity of $2$-Dimensional Galois Representations (2007)
+- Kisin, Mark, Moduli of finite flat group schemes, and modularity (2009)
+- Kisin, Mark, The Fontaine–Mazur conjecture for $\mathrm{GL}_2$ (2009)
+- Labute, John P., Classification of Demushkin Groups (1967)
+- Langlands, Robert P., Base Change for GL(2) (1980)
+- Lazard, Michel, Groupes analytiques $p$-adiques (1965)
+- Mazur, Barry, Deforming Galois representations (1989)
+- Mazur, Barry, Deforming Galois representations (1989)
+- Mazur, Barry, Deforming Galois representations (1989)
+- Milne, J. S., Arithmetic Duality Theorems (2006)
+- Milne, J. S., Class Field Theory (2020)
+- Milne, J. S., Algebraic Number Theory (2020)
+- Milne, J. S., Algebraic Groups: The Theory of Group Schemes of Finite Type over a Field (2022)
+- Pa{\v s}k{\=u}nas, Vytautas, Tung, Shen-Ning, Finiteness properties of the category of mod $p$ representations of $\mathrm{GL}_2(\mathbf Q_p)$ (2021)
+- Pa{\v s}k{\=u}nas, Vytautas, Tung, Shen-Ning, Finiteness properties of the category of mod $p$ representations of $\mathrm{GL}_2(\mathbf Q_p)$ (2021)
+- Pa{\v s}k{\=u}nas, Vytautas, Extensions for supersingular representations of $\mathrm{GL}_2(\mathbf Q_p)$ (2010)
+- Neukirch, J{ü}rgen, Schmidt, Alexander, Wingberg, Kay, Cohomology of Number Fields (2008)
+- Newton, James, Thorne, Jack A., Adjoint Selmer groups of automorphic Galois representations of unitary type (2023)
+- Newton, James, Thorne, Jack A., Adjoint Selmer groups of automorphic Galois representations of unitary type (2023)
+- OpenAI, Fontaine–Mazur modularity at the prime 2 (2026)
+- OpenAI, {The Dimension of the Two-Adic Hecke Algebra at Odd Level} (2026)
+- OpenAI, {Hilbert's tenth problem over the rational numbers} (2026)
+- Pan, Lue, The Fontaine–Mazur conjecture in the residually reducible case (2022)
+- Pan, Lue, The Fontaine–Mazur conjecture in the residually reducible case (2022)
+- Pan, Lue, On locally analytic vectors of the completed cohomology of modular curves II (2026)
+- Ramakrishna, Ravi, Deforming Galois representations and the conjectures of Serre and Fontaine–Mazur (2002)
+- Ribet, Kenneth A., Galois representations attached to eigenforms with Nebentypus (1977)
+- Ribet, Kenneth A., Galois representations attached to eigenforms with Nebentypus (1977)
+- Saito, Takeshi, Modular forms and $p$-adic Hodge theory (1997)
+- Schneider, Peter, Teitelbaum, Jeremy, Banach space representations and Iwasawa theory (2002)
+- Serre, Jean-Pierre, Abelian $l$-adic Representations and Elliptic Curves (1989)
+- Serre, Jean-Pierre, Sur les repr{é}sentations modulaires de degr{é} 2 de
+    $\mathrm{Gal}(\overline{\mathbf Q}/\mathbf Q)$ (1987)
+- Serre, Jean-Pierre, Structure de certains pro-$p$-groupes (1964)
+- Skinner, Christopher M., Wiles, Andrew J., Residually reducible representations and modular forms (1999)
+- Skinner, Christopher M., Wiles, Andrew J., Nearly ordinary deformations of irreducible residual representations (2001)
+- Skinner, Christopher M., Wiles, Andrew J., Residually reducible representations and modular forms (1999)
+- Skinner, Christopher M., Wiles, Andrew J., Nearly ordinary deformations of irreducible residual representations (2001)
+- Tang, Shiang, Algebraic monodromy groups of $l$-adic representations of $\mathrm{Gal}(\overline{\mathbb Q}/\mathbb Q)$ (2019)
+- Taylor, Richard, Wiles, Andrew, Ring-theoretic properties of certain Hecke algebras (1995)
+- Thorne, Jack A., Towards the Fontaine–Mazur conjecture for $\mathrm{GL}_2$ (2026)
+- Tung, Shen-Ning, On the modularity of $2$-adic potentially semi-stable deformation rings (2021)
+- Venjakob, Otmar, On the structure theory of the Iwasawa algebra of a $p$-adic Lie group (2002)
+- Voight, John, Quaternion Algebras (2021)
+- Wang-Erickson, Carl, Algebraic families of Galois representations and potentially semi-stable pseudodeformation rings (2018)
+- Wiles, Andrew, Modular elliptic curves and Fermat's last theorem (1995)
+- Zhang, Xinyao, On the Fontaine–Mazur conjecture for $p=3$ (2025)
+- Zhang, Xinyao, On the Fontaine–Mazur conjecture for $p=3$ (2025)

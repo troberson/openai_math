@@ -1,6 +1,6 @@
-Notes / Summaries / Convex and metric geometry / [Family 098](../../index/convex-and-metric-geometry/098-a-negative-answer-to-the-lang-plaut-problem.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Convex and metric geometry](../../index/disciplines/convex-and-metric-geometry.md) / [Family 098](../../index/convex-and-metric-geometry/098-a-negative-answer-to-the-lang-plaut-problem.md)
 
-# 098 — A negative answer to the Lang--Plaut problem
+# 098 — A negative answer to the Lang–Plaut problem
 
 [Index page](../../index/convex-and-metric-geometry/098-a-negative-answer-to-the-lang-plaut-problem.md)
 
@@ -8,7 +8,7 @@ Notes / Summaries / Convex and metric geometry / [Family 098](../../index/convex
 
 [S1:272] carries the family entry:
 
-> Every infinite-dimensional real Banach space contains a compact doubling set that admits no bi-Lipschitz embedding into any finite-dimensional normed space. The doubling constant is universal. This answers the Lang--Plaut problem negatively, even for compact subsets of Hilbert space.
+> Every infinite-dimensional real Banach space contains a compact doubling set that admits no bi-Lipschitz embedding into any finite-dimensional normed space. The doubling constant is universal. This answers the Lang–Plaut problem negatively, even for compact subsets of Hilbert space.
 
 The entry names the manuscript "A doubling Hilbert subset with no finite-dimensional bi-Lipschitz embedding" [S1:272].
 
@@ -20,7 +20,7 @@ The README dates it September 25, 2026 [S2:5].
 
 A metric space is doubling when every ball meeting it can be covered by a bounded number of half-radius balls, with centers inside the set. Lang and Plaut asked whether a doubling subset of Hilbert space must sit, up to bi-Lipschitz distortion, inside some finite-dimensional Euclidean space.
 
-The manuscript's abstract states the negative answer. [S3:28] states it: "Every infinite-dimensional real Banach space contains a compact doubling subset that admits no bi-Lipschitz embedding into any finite-dimensional real normed space. The doubling constant has a universal bound, independent of the ambient Banach space. This answers the Lang--Plaut problem negatively, even for compact subsets of Hilbert space."
+The manuscript's abstract states the negative answer. [S3:28] states it: "Every infinite-dimensional real Banach space contains a compact doubling subset that admits no bi-Lipschitz embedding into any finite-dimensional real normed space. The doubling constant has a universal bound, independent of the ambient Banach space. This answers the Lang–Plaut problem negatively, even for compact subsets of Hilbert space."
 
 The main theorem names the set and its constant. [S3:48] gives it: "There is a fixed subset $S$ of real $\ell_2$, equipped with its induced Hilbert distance, whose doubling constant is at most $76800$ and which admits no bi-Lipschitz embedding into $\mathbb R^k$ for any positive integer $k$, at any finite distortion."
 
@@ -28,7 +28,7 @@ The set is a plane plus countably many finite-dimensional layers, at scales shri
 
 ## Graduate summary
 
-The doubling notion and the distortion bound are defined. [S3:33] defines them: "A metric space $(X,d)$ is \emph{doubling with constant at most $\lambda$} if every ball in $X$ is covered by at most $\lambda$ balls of half its radius, with centers in $X$. A map $f:X\to\mathbb R^k$ is a \emph{bi-Lipschitz embedding with distortion at most $D$} if there is a scale $a>0$ such that"
+The doubling notion and the distortion bound are defined. [S3:33] defines them: "A metric space $(X,d)$ is _doubling with constant at most $\lambda$_ if every ball in $X$ is covered by at most $\lambda$ balls of half its radius, with centers in $X$. A map $f:X\to\mathbb R^k$ is a _bi-Lipschitz embedding with distortion at most $D$_ if there is a scale $a>0$ such that"
 
 and by [S3:38]: "Both the target dimension $k$ and the distortion $D$ are required to be finite."
 
@@ -42,7 +42,7 @@ and by [S3:42]: "The distortion bound still depends on the snowflake exponent."
 
 The finite Hilbert case is recorded. [S3:42] records it: "For finite Hilbert subsets, Gottlieb and Krauthgamer obtained embeddings of snowflakes with distortion arbitrarily close to one, with dimension depending on the doubling constant, exponent, and permitted distortion"
 
-and by [S3:42]: "The Lang--Plaut question concerns the original distance $d$, even when arbitrary finite dimension and distortion are allowed."
+and by [S3:42]: "The Lang–Plaut question concerns the original distance $d$, even when arbitrary finite dimension and distortion are allowed."
 
 The exponents above two are recorded. [S3:44] records them: "For exponents $p>2$, Lafforgue and Naor constructed doubling subsets of $L_p$ admitting no bi-Lipschitz embedding into any finite-dimensional Euclidean space"
 
@@ -86,29 +86,29 @@ The compactness lemma is stated. [S3:178–185] states it: "Let $D>0$, let $K\su
 
 The energy estimates are stated. [S3:208] states them: "The output of this section is small variation of the added-sheet offsets: a horizontal estimate strong enough for increasingly long rows, and a vertical estimate for columns of fixed normalized height. The compact set $K$ and the embedding are already fixed."
 
-The vertical selection is explained. [S3:278] explains it: "For the vertical selection, we first average the horizontal derivative over strips of width $nr$. Dividing the same endpoint error $2Dr$ by this wider strip width makes the selected horizontal mean approach $u$. The selected derivative has squared norm at most $A$ almost everywhere, so its mean squared norm must then approach $A$. Lemma~  will control the mean vertical squared norm without requiring a rate."
+The vertical selection is explained. [S3:278] explains it: "For the vertical selection, we first average the horizontal derivative over strips of width $nr$. Dividing the same endpoint error $2Dr$ by this wider strip width makes the selected horizontal mean approach $u$. The selected derivative has squared norm at most $A$ almost everywhere, so its mean squared norm must then approach $A$. Lemma   will control the mean vertical squared norm without requiring a rate."
 
 The variance limit is closed. [S3:309] closes it: "The upper bound has limsup at most zero, so the nonnegative variance tends to zero. In particular, convergence of the vectors $v$ themselves is unnecessary. Combining this with   proves  ."
 
 The crossing section states its plan. [S3:314] states it: "We use the two energy estimates to find one line of every color in each direction on a common period block. Their intersections will supply the separated vectors needed for the Euclidean packing bound."
 
-The period block is chosen. [S3:320] chooses it: "is no greater than its mean on $Q$. Denote its mean on $P$ by $\varepsilon_n$. Proposition~  gives $\varepsilon_n\to0$. The block has width $Nnr$ and height $Nr$, and contains exactly one row and one column of each color."
+The period block is chosen. [S3:320] chooses it: "is no greater than its mean on $Q$. Denote its mean on $P$ by $\varepsilon_n$. Proposition   gives $\varepsilon_n\to0$. The block has width $Nnr$ and height $Nr$, and contains exactly one row and one column of each color."
 
 The crossing separation is obtained. [S3:369] obtains it: "For $i\ne m$, both added labels $re_{j,i}$ and $re_{j,m}$ are permitted at $(x_m,y_i)$: the first by row $i$, the second by column $m$. The corresponding source points have distance exactly $\sqrt2\,r$, so   gives"
 
 The packing bound closes the proof. [S3:379] closes it: "We have obtained $N$ points in the radius-$D$ ball of $\mathbb R^k$ with pairwise distances greater than one. Their open radius-$1/2$ balls are disjoint and contained in the radius-$(D+1/2)$ ball. Comparing Euclidean volumes gives"
 
-and by [S3:383]: "contrary to  . No map satisfying   exists. Together with Proposition~ , this proves Theorem~ ."
+and by [S3:383]: "contrary to  . No map satisfying   exists. Together with Proposition  , this proves Theorem  ."
 
-The $L_p$ consequence is stated. [S3:390] states it: "For every real $1\le p<\infty$, the fixed metric space $S$ of Theorem~  is isometric to a subset $S_p$ of $L_p([0,1];\mathbb R)$, where $[0,1]$ carries Lebesgue measure. With its induced $L_p$ metric, $S_p$ has doubling constant at most $76800$ and admits no bi-Lipschitz embedding into any finite-dimensional real normed space at any finite distortion."
+The $L_p$ consequence is stated. [S3:390] states it: "For every real $1\le p<\infty$, the fixed metric space $S$ of Theorem   is isometric to a subset $S_p$ of $L_p([0,1];\mathbb R)$, where $[0,1]$ carries Lebesgue measure. With its induced $L_p$ metric, $S_p$ has doubling constant at most $76800$ and admits no bi-Lipschitz embedding into any finite-dimensional real normed space at any finite distortion."
 
-The relation to the earlier $L_p$ work is recorded. [S3:408] records it: "Lafforgue and Naor proved the qualitative fixed-set obstruction with Euclidean targets for $p>2$ and, in the paragraph following their Theorem~1.1, recorded the corresponding question for $1<p\le2$ as open at that time, while noting stronger known results for $p=1$ \cite[Theorem 1.1 and the following paragraph]{LN}. Theorem~  treats $p=2$, and Corollary~  answers that qualitative fixed-set question with finite-dimensional Euclidean targets when $1<p<2$. This transfer adds no new metric construction."
+The relation to the earlier $L_p$ work is recorded. [S3:408] records it: "Lafforgue and Naor proved the qualitative fixed-set obstruction with Euclidean targets for $p>2$ and, in the paragraph following their Theorem 1.1, recorded the corresponding question for $1<p\le2$ as open at that time, while noting stronger known results for $p=1$ \cite[Theorem 1.1 and the following paragraph]LN. Theorem   treats $p=2$, and Corollary   answers that qualitative fixed-set question with finite-dimensional Euclidean targets when $1<p<2$. This transfer adds no new metric construction."
 
 The finite-set contrast is recorded. [S3:410–411] records it: "Finite-set dimension reduction in $L_p$, for $1<p<\infty$ and $p\ne2$, allows the target dimension to depend on cardinality"
 
-and by [S3:412]: "unlike the fixed infinite-set obstruction of Corollary~ ."
+and by [S3:412]: "unlike the fixed infinite-set obstruction of Corollary  ."
 
-The Banach reduction is described. [S3:416] describes it: "Finite witnesses to Theorem~  can be placed in any infinite-dimensional real Banach space by the classical Dvoretzky theorem. A geometrically shrinking union of these finite clusters, with its limit point adjoined, is compact and retains a uniform doubling bound."
+The Banach reduction is described. [S3:416] describes it: "Finite witnesses to Theorem   can be placed in any infinite-dimensional real Banach space by the classical Dvoretzky theorem. A geometrically shrinking union of these finite clusters, with its limit point adjoined, is compact and retains a uniform doubling bound."
 
 The compact Banach consequence is stated. [S3:419] states it: "There is a universal constant $\Lambda$ such that every infinite-dimensional real Banach space $B$ contains a compact subset $K_B$ whose doubling constant is at most $\Lambda$ and which admits no bi-Lipschitz embedding into any finite-dimensional real normed space at any finite distortion. The subset $K_B$ may depend on $B$, but is chosen independently of the target dimension and distortion."
 
@@ -156,15 +156,19 @@ The comparator stubs carry `sorry` at `lean/ComparatorChallenges/DoublingHilbert
 
 ## Bibliography
 
-**16 entries** from `main.tex`:
-- [Assouad] P. Assouad, \emph{Plongements lipschitziens dans $\R^n$}, Bulletin de la Soci\'et\'e Math\'ematique de France \textbf{11…
-- [BGN] Y. Bartal, L.-A. Gottlieb, and O. Neiman, \emph{On the impossibility of dimension reduction for doubling subsets of $\el…
-- [BSS] F. P. Baudier, K. \'Swi\k{e}cicki, and A. Swift, \emph{No dimension reduction for doubling subsets of $\ell_q$ when $q>2…
-- [COO] F. Catrina, S. Ostrovska, and M. I. Ostrovskii, \emph{Dvoretzky-type theorem for locally finite subsets of a Hilbert spa…
-- [Cheeger] J. Cheeger, \emph{Differentiability of Lipschitz functions on metric measure spaces}, Geometric and Functional Analysis …
-- [Dvoretzky] A. Dvoretzky, \emph{Some results on convex bodies and Banach spaces}, in Proceedings of the International Symposium on L…
-- [GK] L.-A. Gottlieb and R. Krauthgamer, \emph{A nonlinear approach to dimension reduction}, Discrete \& Computational Geometr…
-- [GKL] A. Gupta, R. Krauthgamer, and J. R. Lee, \emph{Bounded geometries, fractals, and low-distortion embeddings}, Proceedings…
-- [Heinonen] J. Heinonen, \emph{Lectures on Lipschitz Analysis}, Report 100, Department of Mathematics and Statistics, University of …
-- [Laakso] T. J. Laakso, \emph{Ahlfors $Q$-regular spaces with arbitrary $Q>1$ admitting weak Poincar\'e inequality}, Geometric and…
-- … and 6 more
+- P. Assouad, _Plongements lipschitziens dans $\R^n$_, Bulletin de la Société Mathématique de France **111** (1983), 429–448. doi:10.24033/bsmf.1997.
+- Y. Bartal, L.-A. Gottlieb, and O. Neiman, _On the impossibility of dimension reduction for doubling subsets of $\ell_p$_, SIAM Journal on Discrete Mathematics **29** (2015), 1207–1222. doi:10.1137/140977655.
+- F. P. Baudier, K. Święcicki, and A. Swift, _No dimension reduction for doubling subsets of $\ell_q$ when $q>2$ revisited_, Journal of Mathematical Analysis and Applications **504** (2021), no. 2, 125407. doi:10.1016/j.jmaa.2021.125407.
+- F. Catrina, S. Ostrovska, and M. I. Ostrovskii, _Dvoretzky-type theorem for locally finite subsets of a Hilbert space_, Annales de l'Institut Fourier **75** (2025), no. 6, 2565–2607. doi:10.5802/aif.3672.
+- J. Cheeger, _Differentiability of Lipschitz functions on metric measure spaces_, Geometric and Functional Analysis **9** (1999), no. 3, 428–517. doi:10.1007/s000390050094.
+- A. Dvoretzky, _Some results on convex bodies and Banach spaces_, in Proceedings of the International Symposium on Linear Spaces (Jerusalem, 1960), Jerusalem Academic Press, Jerusalem; Pergamon Press, Oxford, 1961, 123–160.
+- A. Gupta, R. Krauthgamer, and J. R. Lee, _Bounded geometries, fractals, and low-distortion embeddings_, Proceedings of the 44th Annual IEEE Symposium on Foundations of Computer Science (2003), 534–543. doi:10.1109/SFCS.2003.1238226.
+- J. Heinonen, _Lectures on Lipschitz Analysis_, Report 100, Department of Mathematics and Statistics, University of Jyväskylä, 2005.
+- L.-A. Gottlieb and R. Krauthgamer, _A nonlinear approach to dimension reduction_, Discrete & Computational Geometry **54** (2015), no. 2, 291–315. doi:10.1007/s00454-015-9707-9.
+- T. J. Laakso, _Ahlfors $Q$-regular spaces with arbitrary $Q>1$ admitting weak Poincaré inequality_, Geometric and Functional Analysis **10** (2000), no. 1, 111–123. doi:10.1007/s000390050003. Erratum: ibid.\ **12** (2002), no. 3, 650.
+- V. Lafforgue and A. Naor, _A doubling subset of $L_p$ for $p>2$ that is inherently infinite dimensional_, Geometriae Dedicata **172** (2014), 387–398. doi:10.1007/s10711-013-9924-4.
+- A. Naor and O. Neiman, _Assouad's theorem with dimension independent of the snowflaking_, Revista Matemática Iberoamericana **28** (2012), no. 4, 1123–1142. doi:10.4171/RMI/706.
+- OpenAI, _Subpolynomial dimension reduction in $L_p$_, OpenAI Math Release preprint OAI:Subpolynomial-dimension-reduction-in-Lp-September-23-2026, 2026.
+- U. Lang and C. Plaut, _Bilipschitz embeddings of metric spaces into space forms_, Geometriae Dedicata **87** (2001), 285–307. doi:10.1023/A:1012093209450.
+- A. Schioppa, _An example of a doubling ``inherently'' infinite-dimensional subset of $l_2$_, withdrawn preprint, 2017; withdrawal posted April 22, 2017. arXiv:1703.10265.
+- T. Tao, _245A, Notes 5: Differentiation theorems_, 16 October 2010,  .

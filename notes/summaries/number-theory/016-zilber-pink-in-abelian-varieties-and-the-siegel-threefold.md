@@ -1,6 +1,6 @@
-Notes / Summaries / Number theory / [Family 016](../../index/number-theory/016-zilber-pink-in-abelian-varieties-and-the-siegel-threefold.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Number theory](../../index/disciplines/number-theory.md) / [Family 016](../../index/number-theory/016-zilber-pink-in-abelian-varieties-and-the-siegel-threefold.md)
 
-# 016 — Zilber--Pink in abelian varieties and the Siegel threefold
+# 016 — Zilber–Pink in abelian varieties and the Siegel threefold
 
 [Index page](../../index/number-theory/016-zilber-pink-in-abelian-varieties-and-the-siegel-threefold.md)
 
@@ -52,7 +52,7 @@ Manuscript B states its component as a theorem about curves in $\mathcal A_2$ [S
 
 Manuscript C states the quaternionic component with the endomorphism condition stated as equality of the full algebra [S13:11–20]:
 
-> Let \(C\subset\Acal_{2,\Qbar}\) be a reduced irreducible closed Hodge-generic algebraic curve. Then \[ \Sigma_{\mathrm{QM}}(C)= \bigl\{s\in C(\Qbar): \End^0(A_s) is an indefinite quaternion division algebra over \Q \bigr\} \] is finite.
+> Let \(C\subset\Acal_{2,\Qbar}\) be a reduced irreducible closed Hodge-generic algebraic curve. Then \[ \Sigma_{\mathrmQM}(C)= \bigl\{s\in C(\Qbar): \End^0(A_s) is an indefinite quaternion division algebra over \Q \bigr\} \] is finite.
 
 Manuscript D proves the remaining branch [S18:24–28]:
 
@@ -60,7 +60,7 @@ Manuscript D proves the remaining branch [S18:24–28]:
 
 and then combines the three branches into the full curve case [S18:66–76]:
 
-> For every nonempty reduced irreducible closed Hodge-generic curve $C\subset\A_2$ over $\Qbar$, the set \[ \Sigma(C)=C(\Qbar)\cap \bigcup_{\substack{Z\subset\A_2\ \mathrm{special}\mathstrut\\ \dim Z\le 1}} Z(\Qbar) \] is finite.
+> For every nonempty reduced irreducible closed Hodge-generic curve $C\subset\A_2$ over $\Qbar$, the set \[ \Sigma(C)=C(\Qbar)\cap \bigcup_{\substack{Z\subset\A_2\ \mathrmspecial\mathstrut\\ \dim Z\le 1}} Z(\Qbar) \] is finite.
 
 The numbered moves, as the manuscripts describe them:
 
@@ -75,25 +75,25 @@ The numbered moves, as the manuscripts describe them:
 
 What the hypotheses exclude is part of the claim. Manuscript A imposes nothing on the ambient variety: "No bound on the degrees or heights of the intersection points is assumed, and no simplicity, endomorphism, or complex multiplication hypothesis is imposed on $A$." [S5:52–54] It also states its limits: "it gives no effective or uniform bound for the number of maximal atypical subvarieties." [S5:55–57] Manuscript B states that "There is no assumption on the boundary of \(C\), on an integral base point, or on reduction at any finite prime." [S9:94–99] Manuscript C states that "No condition is imposed on the boundary of \(C\), and the points are counted across all quaternionic special curves at once." [S13:22] Manuscript D states that "No condition is imposed on the closure of $C$ at the boundary of a compactification. In particular, the theorem includes complete curves." [S18:30–31]
 
-The named resolutions the manuscripts assert are explicit. Manuscript B: "Theorem~  resolves positively the \(E\times\mathrm{CM}\) component of Zilber--Pink for Hodge-generic curves in \(\mathcal A_2\)." [S9:100–101] Manuscript C: "Thus   resolves affirmatively the quaternionic-division component of the Zilber--Pink conjecture for curves in \(\Acal_2\)." [S13:22] Manuscript D: "resolves positively the Hodge-generic-curve case of the Zilber--Pink conjecture in $\A_2$ over $\Qbar$." [S18:78–79] Manuscript A's title is the abelian conjecture itself, and its abstract states the proof of it [S4:9–12].
+The named resolutions the manuscripts assert are explicit. Manuscript B: "Theorem   resolves positively the \(E\times\mathrmCM\) component of Zilber–Pink for Hodge-generic curves in \(\mathcal A_2\)." [S9:100–101] Manuscript C: "Thus   resolves affirmatively the quaternionic-division component of the Zilber–Pink conjecture for curves in \(\Acal_2\)." [S13:22] Manuscript D: "resolves positively the Hodge-generic-curve case of the Zilber–Pink conjecture in $\A_2$ over $\Qbar$." [S18:78–79] Manuscript A's title is the abelian conjecture itself, and its abstract states the proof of it [S4:9–12].
 
 The four manuscripts' own abstracts are the release's summary of each paper [S4:9–12] [S9:53–56] [S12:20–24] [S17:9–15]; the four citation blocks are the release's citation entries [S3] [S8] [S11] [S16], and the bibliographies are external to the release except where noted below [S6] [S14].
 
-Manuscript D's independence claim is stated twice and is load-bearing for how the family should be read. In the introduction: "Theorem~  and its proof are independent of the two companion results." [S18:82–83] In the finiteness section: "The two companion branch theorems enter only in the final proof of the full Zilber--Pink theorem." [S19:6–7] The companion theorems enter at the last step, as Theorem 1.1 of each companion restated as items (A) and (B) of manuscript D's own branch theorem [S19:346–349], and the union of the three finite sets with the finite set of special points is what closes the proof [S19:355–356]. The argument survives a complete curve because "none of these steps requires a point of its closure on a compactification boundary" [S19:363–364].
+Manuscript D's independence claim is stated twice and is load-bearing for how the family should be read. In the introduction: "Theorem   and its proof are independent of the two companion results." [S18:82–83] In the finiteness section: "The two companion branch theorems enter only in the final proof of the full Zilber–Pink theorem." [S19:6–7] The companion theorems enter at the last step, as Theorem 1.1 of each companion restated as items (A) and (B) of manuscript D's own branch theorem [S19:346–349], and the union of the three finite sets with the finite set of special points is what closes the proof [S19:355–356]. The argument survives a complete curve because "none of these steps requires a point of its closure on a compactification boundary" [S19:363–364].
 
-Manuscript B's one release-to-release use is an effectivity input, and it is quarantined. Its remark on the CM bound begins "The Dirichlet assertion of \cite[Theorem~1.1]{OpenAIQuasiRH2026}" [S9:361] and ends "This concerns only the CM discriminant estimate: it does not assert effective Galois-orbit constants or effective finiteness in Theorems~  and~ ." [S9:372–374] The manuscript separately states that "we make no effectivity claim for the constants in Theorem~" [S9:185–189].
+Manuscript B's one release-to-release use is an effectivity input, and it is quarantined. Its remark on the CM bound begins "The Dirichlet assertion of \cite[Theorem 1.1]OpenAIQuasiRH2026" [S9:361] and ends "This concerns only the CM discriminant estimate: it does not assert effective Galois-orbit constants or effective finiteness in Theorems   and  ." [S9:372–374] The manuscript separately states that "we make no effectivity claim for the constants in Theorem" [S9:185–189].
 
 Nothing about this family is machine-checked. The ledger records 4 manuscripts and 0 formalized for family 016, with no scope note, no comparator challenge, no `main_results` config, no verification directory, and no reasoning trace [S23:17]. Every statement above is a reading of the manuscript text, not a checked proof.
 
 ## History of the conjecture
 
-The abelian line begins with a theorem about torsion points. Manuscript A places it there: "The torsion-point case belongs to the Manin--Mumford theorem of Raynaud" [S5:113]. Allowing the torsion cosets to vary in positive dimension is what makes the intersections atypical, and the manuscript notes that "the maximality condition in Theorem~  accounts for this possibility" [S5:118–119].
+The abelian line begins with a theorem about torsion points. Manuscript A places it there: "The torsion-point case belongs to the Manin–Mumford theorem of Raynaud" [S5:113]. Allowing the torsion cosets to vary in positive dimension is what makes the intersections atypical, and the manuscript notes that "the maximality condition in Theorem   accounts for this possibility" [S5:118–119].
 
-The curve case in abelian varieties was settled earlier and in stages. Manuscript A records it: "For curves in powers of a CM elliptic curve, Viada proved codimension-two finiteness under the hypothesis that the curve lies in no translate of a proper algebraic subgroup" [S5:121–123], then Habegger and Pila proved finiteness for curves in arbitrary abelian varieties over number fields [S5:126–128], and Dogra and Pandit recently obtained bounded-degree results for smooth curves whose Jacobians surject onto the ambient abelian variety [S5:132–134]. The manuscript's own comparison with the prior higher-dimensional results is the sentence that states its position: "Theorem~  treats arbitrary abelian varieties and all codimensions, without the additional quotient-dimension or height restrictions." [S5:165–167]
+The curve case in abelian varieties was settled earlier and in stages. Manuscript A records it: "For curves in powers of a CM elliptic curve, Viada proved codimension-two finiteness under the hypothesis that the curve lies in no translate of a proper algebraic subgroup" [S5:121–123], then Habegger and Pila proved finiteness for curves in arbitrary abelian varieties over number fields [S5:126–128], and Dogra and Pandit recently obtained bounded-degree results for smooth curves whose Jacobians surject onto the ambient abelian variety [S5:132–134]. The manuscript's own comparison with the prior higher-dimensional results is the sentence that states its position: "Theorem   treats arbitrary abelian varieties and all codimensions, without the additional quotient-dimension or height restrictions." [S5:165–167]
 
-The Siegel line is organized around a boundary hypothesis. Manuscript C states the prior state precisely: "Daw and Orr proved the conclusion when the closure of the curve meets the zero-dimensional boundary stratum of the Baily--Borel compactification" [S13:39], and "Their reduction for an arbitrary curve assumes a large-Galois-orbit estimate" [S13:39]. Manuscript C's claim against that background is one sentence: "We prove a height estimate independent of the number of supersingular proximity places." [S13:41] Manuscript D states the same boundary condition for the quaternionic locus and then separates its own input from it: "the orbit-to-finiteness implication we use has no such hypothesis." [S18:120–121] Manuscript D's comparison with the most recent product case is equally explicit: "The present height estimate permits bad reduction of the center and does not bound that number of places." [S18:140–141]
+The Siegel line is organized around a boundary hypothesis. Manuscript C states the prior state precisely: "Daw and Orr proved the conclusion when the closure of the curve meets the zero-dimensional boundary stratum of the Baily–Borel compactification" [S13:39], and "Their reduction for an arbitrary curve assumes a large-Galois-orbit estimate" [S13:39]. Manuscript C's claim against that background is one sentence: "We prove a height estimate independent of the number of supersingular proximity places." [S13:41] Manuscript D states the same boundary condition for the quaternionic locus and then separates its own input from it: "the orbit-to-finiteness implication we use has no such hypothesis." [S18:120–121] Manuscript D's comparison with the most recent product case is equally explicit: "The present height estimate permits bad reduction of the center and does not bound that number of places." [S18:140–141]
 
-Manuscript D also names the arithmetic hypothesis it is supplying. "For the elliptic-square locus, the implication we use is Daw--Orr's \cite[Theorem~1.3]{DawOrr2022}: a suitable polynomial lower bound for Galois orbits in terms of the endomorphism-order discriminant implies finiteness." [S18:143–146] Its own contribution is the proof of that bound: "We prove the required bound for the entire elliptic-square locus before applying that theorem. The constants may depend on $C$; effectivity is not required." [S18:147–149]
+Manuscript D also names the arithmetic hypothesis it is supplying. "For the elliptic-square locus, the implication we use is Daw–Orr's \cite[Theorem 1.3]DawOrr2022: a suitable polynomial lower bound for Galois orbits in terms of the endomorphism-order discriminant implies finiteness." [S18:143–146] Its own contribution is the proof of that bound: "We prove the required bound for the entire elliptic-square locus before applying that theorem. The constants may depend on $C$; effectivity is not required." [S18:147–149]
 
 Prior (my training data, not this repo). Before this release, the curve case of Zilber–Pink in $\mathcal A_2$ was the flagship open case of the unlikely-intersection program: Daw–Orr had the $E\times\mathrm{CM}$ locus unconditionally under a boundary hypothesis, Pila–Tsimerman had André–Oort for $\mathcal A_2$, and the elliptic-square branch was the one where the needed Galois-orbit lower bound was out of reach with then-available height technology. The abelian Zilber–Pink conjecture in full generality — all dimensions, no simplicity or CM hypothesis, maximal atypical subvarieties — was not on my list of open problems I expected to close in this decade, and the Barroero–Dill optimal-subvariety machinery was the recent ingredient that made a non-density statement strong enough to finish it. I rate this prior as medium confidence for the Siegel line and lower for the abelian line, and the repo supplies only the claims quoted above, not the standing of the problem.
 
@@ -142,54 +142,149 @@ What it does not buy: effectivity, uniformity, or a bound. Manuscript A gives no
 
 ## Bibliography
 
-**32 entries** from `references.bib`:
-- Habegger, Philipp, Pila, Jonathan. *O-minimality and certain atypical intersections*. (2016) [HabeggerPila2016]
-- Dogra, Netan, Pandit, Sudip. *A {Buium--Coleman} bound for the {Zilber--Pink} conjecture for curves inside abelian varieties*. (2026) [DograPandit2026]
-- R\'{e}mond, Ga\"{e}l. *Intersection de sous-groupes et de sous-vari\'{e}t\'{e}s {III}*. (2009) [Remond2009]
-- Habegger, Philipp. *Intersecting subvarieties of abelian varieties with algebraic subgroups of complementary dimension*. (2009) [Habegger2009]
-- Viada, Evelina. *Nondense Subsets of Varieties in a Power of an Elliptic Curve*. (2009) [Viada2009]
-- Ax, James. *Some topics in differential algebraic geometry. {I}. {Analytic} subgroups of algebraic groups*. (1972) [Ax1972]
-- Evertse, Jan-Hendrik. *An explicit version of {Faltings}' {Product Theorem} and an improvement of {Roth}'s lemma*. (1995) [Evertse1995Product]
-- Dill, Gabriel A.. *Generalized {Vojta--R\'emond} inequality*. (2020) [Dill2020]
-- Basu, Saugata. *Algorithms in Real Algebraic Geometry: A Survey*. (2017) [Basu2017]
-- Zhang, Shouwu. *Small points and adelic metrics*. (1995) [Zhang1995]
-- … and 22 more
-
-**24 entries** from `paper.tex`:
-- [Chen2007] Y.-G. Chen, \emph{On the Siegel--Tatuzawa--Hoffstein theorem}, Acta Arith. \textbf{130} (2007), 361--367. \href{https://…
-- [Cox] D. A. Cox, \emph{Primes of the Form \(x^2+ny^2\): Fermat, Class Field Theory, and Complex Multiplication}, second ed., J…
-- [DO] C. Daw and M. Orr, \emph{Unlikely intersections with \(E\times\CM\) curves in \(\A_2\)}, Ann. Sc. Norm. Super. Pisa Cl. …
-- [DOMultiplicative] C. Daw and M. Orr, \emph{The large Galois orbits conjecture under multiplicative degeneration}, \href{https://arxiv.org/…
-- [FC] G. Faltings and C.-L. Chai, \emph{Degeneration of Abelian Varieties}, Ergebnisse der Mathematik und ihrer Grenzgebiete (…
-- [GR] \'E. Gaudron and G. R\'emond, \emph{Th\'eor\`eme des p\'eriodes et degr\'es minimaux d'isog\'enies}, Comment. Math. Helv…
-- [SGA7] A. Grothendieck, \emph{Mod\`eles de N\'eron et monodromie}, with an appendix by M. Raynaud, Expos\'e IX in \emph{Groupes…
-- [Lan] K.-W. Lan, \emph{Arithmetic Compactifications of PEL-Type Shimura Varieties}, London Mathematical Society Monographs Ser…
-- [Lobrich] S. L\"obrich, \emph{A gap in the spectrum of the Faltings height}, J. Th\'eor. Nombres Bordeaux \textbf{29} (2017), 289-…
-- [MW] D. W. Masser and G. W\"ustholz, \emph{Periods and minimal abelian subvarieties}, Ann. of Math. (2) \textbf{137} (1993), …
-- … and 14 more
-
-**42 entries** from `references.bib`:
-- Andr{\'e}, Yves. *{Mumford--Tate} groups of mixed {Hodge} structures and the theorem of the fixed part*. (1992) [Andre1992]
-- Katz, Nicholas M.. *Nilpotent connections and the monodromy theorem: applications of a result of {Turrittin}*. (1970) [Katz1970]
-- Masser, David W., W{\"u}stholz, Gisbert. *Endomorphism estimates for abelian varieties*. (1994) [MW1994]
-- Matthews, C. R., Vaserstein, L. N., Weisfeiler, B.. *Congruence properties of {Zariski}-dense subgroups {I}*. (1984) [MVW1984]
-- Berthelot, Pierre, Ogus, Arthur. *{$F$}-isocrystals and de {Rham} cohomology. {I}*. (1983) [BO1983]
-- Ogus, Arthur. *{$F$}-isocrystals and de {Rham} cohomology {II}---Convergent isocrystals*. (1984) [Ogus1984]
-- Papas, Georgios. *On the {$v$}-adic values of {$G$}-functions {I}: Splittings in {$\mathcal A_2$}*. (2025) [PapasI2025]
-- Papas, Georgios. *On the {$v$}-adic values of {$G$}-functions {III}: {QM} points in {$\mathcal A_2$}*. (2025) [PapasIII2025]
-- Daw, Christopher, Orr, Martin. *Quantitative reduction theory and unlikely intersections*. (2022) [DawOrr2022]
-- Daw, Christopher, Orr, Martin. *The large {Galois} orbits conjecture under multiplicative degeneration*. (2025) [DawOrrMultiplicative2025]
-- … and 32 more
-
-**45 entries** from `references.bib`:
-- Pink, Richard. *A Common Generalization of the Conjectures of {Andr\'e--Oort}, {Manin--Mumford}, and {Mordell--Lang}*. (2005) [Pink2005]
-- Daw, Christopher, Orr, Martin. *Quantitative Reduction Theory and Unlikely Intersections*. (2022) [DawOrr2022]
-- Daw, Christopher, Orr, Martin. *Unlikely intersections with {$E\times\mathrm{CM}$} curves in {$\mathcal A_2$}*. (2021) [DawOrrECM2021]
-- Pila, Jonathan, Tsimerman, Jacob. *The {Andr\'e--Oort} conjecture for the moduli space of abelian surfaces*. (2013) [PilaTsimerman2013]
-- Masser, David W., W{\"u}stholz, Gisbert. *Endomorphism estimates for abelian varieties*. (1994) [MasserWustholz1994]
-- Pazuki, Fabien. *Theta height and {Faltings} height*. (2012) [Pazuki2012]
-- Andr\'e, Yves. *{Mumford--Tate} groups of mixed {Hodge} structures and the theorem of the fixed part*. (1992) [Andre1992]
-- Matthews, Colin R., Vaserstein, Leonid N., Weisfeiler, Boris. *Congruence Properties of {Zariski}-Dense Subgroups {I}*. (1984) [MVW1984]
-- Schmid, Wilfried. *Variation of {Hodge} Structure: The Singularities of the Period Mapping*. (1973) [Schmid1973]
-- Deligne, Pierre. *\'Equations diff\'erentielles \`a points singuliers r\'eguliers*. (1970) [Deligne1970]
-- … and 35 more
+- Abhinandan, Youcis, Alex, An integral comparison of crystalline and de Rham cohomology (2025)
+- André, Yves, G-Functions and Geometry (1989)
+- André, Yves, Théorie des motifs et interprétation géométrique des valeurs $p$-adiques de G-functions (une introduction) (1995)
+- André, Yves, Mumford–Tate groups of mixed Hodge structures and the theorem of the fixed part (1992)
+- André, Yves, G-Functions and Geometry (1989)
+- André, Yves, Théorie des motifs et interprétation géométrique des valeurs $p$-adiques de G-functions (une introduction) (1995)
+- André, Yves, G-functions, motives, and unlikely intersections—old and new (2025)
+- Aschenbrenner, Matthias, Ideal membership in polynomial rings over the integers (2004)
+- Aschenbrenner, Matthias, Ideal Membership in Polynomial Rings over the Integers (2004)
+- The Stacks Project Authors, The Stacks Project (2026)
+- Ax, James, Some topics in differential algebraic geometry. I. Analytic subgroups of algebraic groups (1972)
+- Barroero, Fabrizio, Dill, Gabriel A., On the Zilber–Pink conjecture for complex abelian varieties (2022)
+- Barroero, Fabrizio, Kühne, Lars, Schmidt, Harry, Unlikely intersections of curves with algebraic subgroups in semiabelian varieties (2023)
+- Basu, Saugata, Algorithms in Real Algebraic Geometry: A Survey (2017)
+- Berthelot, Pierre, Ogus, Arthur, $F$-isocrystals and de Rham cohomology. I (1983)
+- Berthelot, Pierre, Géométrie rigide et cohomologie des variétés algébriques de caractéristique $p$ (1981–1982)
+- Berthelot, Pierre, Ogus, Arthur, $F$-isocrystals and de Rham cohomology. I (1983)
+- Bertrand, Daniel, Beukers, Frits, Équations différentielles linéaires et majorations de multiplicités (1985)
+- Bertrand, Daniel, Beukers, Frits, Équations différentielles linéaires et majorations de multiplicités (1985)
+- Bombieri, Enrico, On G-functions (1981)
+- Bombieri, Enrico, On G-functions (1981)
+- Bosch, Siegfried, L{ü}tkebohmert, Werner, Raynaud, Michel, {N{é}ron} Models (1990)
+- Bosch, Siegfried, L{ü}tkebohmert, Werner, Raynaud, Michel, Néron Models (1990)
+- Bost, Jean-Beno\^it, Gillet, Henri, Soulé, Christophe, Heights of projective varieties and positive Green forms (1994)
+- Cais, Bryden, Canonical extensions of {Néron} models of Jacobians (2010)
+- G. Faltings and C.-L. Chai, _Degeneration of Abelian Varieties_, Ergebnisse der Mathematik und ihrer Grenzgebiete (3), vol. 22, Springer-Verlag, Berlin, 1990.
+- Chai, Ching-Li, Compactification of Siegel Moduli Schemes (1985)
+- Checcoli, Sara, Veneziano, Francesco, Viada, Evelina, On torsion anomalous intersections (2014)
+- Y.-G. Chen, _On the Siegel–Tatuzawa–Hoffstein theorem_, Acta Arith. **130** (2007), 361–367. Publisher's PDF.
+- D. A. Cox, _Primes of the Form \(x^2+ny^2\): Fermat, Class Field Theory, and Complex Multiplication_, second ed., John Wiley & Sons, Hoboken, NJ, 2013. doi:10.1002/9781118400722.
+- Daw, Christopher, Orr, Martin, Quantitative reduction theory and unlikely intersections (2022)
+- Daw, Christopher, Orr, Martin, The large Galois orbits conjecture under multiplicative degeneration (2025)
+- Daw, Christopher, Orr, Martin, Quantitative Reduction Theory and Unlikely Intersections (2022)
+- Daw, Christopher, Orr, Martin, Unlikely intersections with $E\times\mathrm{CM}$ curves in $\mathcal A_2$ (2021)
+- Daw, Christopher, Orr, Martin, The large Galois orbits conjecture under multiplicative degeneration (2025)
+- Daw, Christopher, Orr, Martin, Zilber–Pink in a product of modular curves assuming multiplicative degeneration (2025)
+- Daw, Christopher, Orr, Martin, Papas, Georgios, Some new cases of Zilber–Pink in $Y(1)^3$ (2026)
+- Deligne, Pierre, Équations différentielles \`a points singuliers réguliers (1970)
+- Dill, Gabriel A., Generalized {Vojta–Rémond} inequality (2020)
+- Dogra, Netan, Pandit, Sudip, A Buium–Coleman bound for the Zilber–Pink conjecture for curves inside abelian varieties (2026)
+- van den Dries, Lou, Macintyre, Angus, Marker, David, The elementary theory of restricted analytic fields with exponentiation (1994)
+- Dubé, Thomas W., The Structure of Polynomial Ideals and {Gr{ö}bner} Bases (1990)
+- Edixhoven, Bas, Lido, Guido, Geometric quadratic Chabauty (2023)
+- Elman, Richard, Karpenko, Nikita, Merkurjev, Alexander, The Algebraic and Geometric Theory of Quadratic Forms (2008)
+- Evertse, Jan-Hendrik, An explicit version of Faltings' Product Theorem and an improvement of Roth's lemma (1995)
+- Faltings, Gerd, Diophantine approximation on abelian varieties (1991)
+- Faltings, Gerd, Chai, Ching-Li, Degeneration of Abelian Varieties (1990)
+- Faltings, Gerd, Chai, Ching-Li, Degeneration of Abelian Varieties (1990)
+- Fulton, William, Intersection Theory (1998)
+- Genestier, Alain, Ng{\^o}, Bao Ch{\^a}u, Lectures on Shimura varieties (2009)
+- A. Grothendieck, _Mod\`eles de Néron et monodromie_, with an appendix by M. Raynaud, Exposé IX in _Groupes de monodromie en géométrie algébrique_ (SGA 7 I), Lecture Notes in Mathematics, vol. 288, Springer, Berlin, 1972, 313–523. doi:10.1007/BFb0068694.
+- Grothendieck, Alexander, On the de Rham cohomology of algebraic varieties (1966)
+- Habegger, Philipp, Pila, Jonathan, O-minimality and certain atypical intersections (2016)
+- Habegger, Philipp, Intersecting subvarieties of abelian varieties with algebraic subgroups of complementary dimension (2009)
+- Habegger, Philipp, Pila, Jonathan, O-minimality and certain atypical intersections (2016)
+- Hermann, Grete, Die Frage der endlich vielen Schritte in der Theorie der Polynomideale (1926)
+- Hubschmid, Patrik, Viada, Evelina, An Addendum to the elliptic torsion anomalous conjecture in codimension 2 (2019)
+- Katz, Nicholas M., Nilpotent connections and the monodromy theorem: applications of a result of Turrittin (1970)
+- Katz, Nicholas M., Oda, Tadao, On the differentiation of De Rham cohomology classes with respect to parameters (1968)
+- Katz, Nicholas M., Nilpotent connections and the monodromy theorem: Applications of a result of Turrittin (1970)
+- Krick, Teresa, Pardo, Luis Miguel, Sombra, Mart{í}n, Sharp estimates for the arithmetic Nullstellensatz (2001)
+- Krick, Teresa, Pardo, Luis Miguel, Sombra, Martín, Sharp estimates for the arithmetic Nullstellensatz (2001)
+- Kubrak, Dmitry, Prikhodko, Artem, Rational $p$-adic Hodge theory for $d$-de Rham-proper stacks (2022)
+- K.-W. Lan, _Arithmetic Compactifications of PEL-Type Shimura Varieties_, London Mathematical Society Monographs Series, vol. 36, Princeton University Press, Princeton, 2013. Numbered references use the revised dissertation version (14 March 2021).
+- Lan, Kai-Wen, Arithmetic Compactifications of PEL-Type Shimura Varieties (2013)
+- Lawrence, Brian, Venkatesh, Akshay, Diophantine problems and $p$-adic period mappings (2020)
+- S. Löbrich, _A gap in the spectrum of the Faltings height_, J. Théor. Nombres Bordeaux **29** (2017), 289–305. doi:10.5802/jtnb.980.
+- Masser, David W., W{ü}stholz, Gisbert, Endomorphism estimates for abelian varieties (1994)
+- Masser, David W., W{ü}stholz, Gisbert, Endomorphism estimates for abelian varieties (1994)
+- Matthews, C. R., Vaserstein, L. N., Weisfeiler, B., Congruence properties of Zariski-dense subgroups I (1984)
+- Matthews, Colin R., Vaserstein, Leonid N., Weisfeiler, Boris, Congruence Properties of Zariski-Dense Subgroups I (1984)
+- Maulik, Davesh, Poonen, Bjorn, {N{é}ron–Severi} groups under specialization (2012)
+- Mazur, Barry, Messing, William, Universal Extensions and One Dimensional Crystalline Cohomology (1974)
+- Milne, James S., Abelian Varieties (2008)
+- Milne, James S., Abelian varieties (1986)
+- Milne, James S., Shimura Varieties: The Geometric Side of the Zeta Function (1995)
+- Milne, James S., Introduction to Shimura Varieties (2005)
+- Milne, James S., Shimura varieties and moduli (2013)
+- Milne, James S., Abelian Varieties (1986)
+- Milne, James S., Shimura Varieties: The Geometric Side of the Zeta Function (1995)
+- Milne, James S., Shimura varieties and moduli (2013)
+- Moonen, Ben, Zarhin, Yuri G., Hodge classes on abelian varieties of low dimension (1999)
+- W{\l}odarczyk, Jaros{\l}aw, Simple Hironaka resolution in characteristic zero (2005)
+- Ogus, Arthur, $F$-isocrystals and de Rham cohomology II—Convergent isocrystals (1984)
+- \begingroup\raggedright OpenAI, _The Quasi-Riemann Hypothesis: A Zero-Free Half-Plane \(\mathrmRe(s)>7/8\)_, OpenAI Math Release preprint OAI:The-Quasi-Riemann-Hypothesis-September-30-2026, 2026. \par\endgroup
+- OpenAI, {The $E\times\mathrm{CM}$ component of Zilber–Pink for curves in $\mathcal A_2$} (2026)
+- OpenAI, Quaternionic division points on curves in the Siegel threefold (2026)
+- C. Daw and M. Orr, _Unlikely intersections with \(E\times\CM\) curves in \(\A_2\)_, Ann. Sc. Norm. Super. Pisa Cl. Sci. (5) **22** (2021), 1705–1745. doi:10.2422/2036-2145.202006\_014. We use the corrected preprint, arXiv:1902.10483v4 (28 May 2021).
+- C. Daw and M. Orr, _The large Galois orbits conjecture under multiplicative degeneration_, arXiv:2306.13463v2, revised 15 May 2025.
+- Orr, Martin, Galois conjugates of special points and special subvarieties
+           in Shimura varieties (2021)
+- G. Papas, _On the \(v\)-adic values of \(G\)-functions I: Splittings in \(\A_2\)_, arXiv:2510.11806v1, 13 October 2025.
+- Papas, Georgios, On the $v$-adic values of $G$-functions I: Splittings in $\mathcal A_2$ (2025)
+- Papas, Georgios, On the $v$-adic values of $G$-functions III: QM points in $\mathcal A_2$ (2025)
+- Papas, Georgios, Some cases of the Zilber–Pink conjecture for curves in $\mathcal A_g$ (2024)
+- Papas, Georgios, On the $v$-adic values of G-functions I: Splittings in $\mathcal A_2$ (2025)
+- F. Pazuki, _Theta height and Faltings height_, Bull. Soc. Math. France **140** (2012), 19–49. doi:10.24033/bsmf.2623.
+- Pazuki, Fabien, Theta height and Faltings height (2012)
+- Pazuki, Fabien, Theta height and Faltings height (2012)
+- Petrequin, Denis, Classes de Chern et classes de cycles en cohomologie rigide (2003)
+- Pila, Jonathan, Wilkie, Alex J., The rational points of a definable set (2006)
+- Pila, Jonathan, O-minimality and the {André–Oort} conjecture for $\mathbb C^n$ (2011)
+- Pila, Jonathan, Zannier, Umberto, Rational points in periodic analytic sets and the Manin–Mumford conjecture (2008)
+- Pila, Jonathan, Tsimerman, Jacob, The {André–Oort} conjecture for the moduli space of abelian surfaces (2013)
+- Pila, Jonathan, Wilkie, Alex J., The rational points of a definable set (2006)
+- Pila, Jonathan, Zannier, Umberto, Rational points in periodic analytic sets and the Manin–Mumford conjecture (2008)
+- Pink, Richard, A common generalization of the conjectures of
+    {André–Oort}, Manin–Mumford, and Mordell–Lang (2005)
+- R. Pink, _A common generalization of the conjectures of André–Oort, Manin–Mumford, and Mordell–Lang_, preprint, April 17, 2005. Author's manuscript.
+- Pink, Richard, A common generalization of the conjectures of
+    {André–Oort}, Manin–Mumford, and Mordell–Lang (2005)
+- Pink, Richard, A Common Generalization of the Conjectures of {André–Oort}, Manin–Mumford, and Mordell–Lang (2005)
+- Raynaud, Michel, Sous-variétés d'une variété abélienne et points de torsion (1983)
+- Rémond, Gaël, Intersection de sous-groupes et de sous-variétés III (2009)
+- Rémond, Gaël, Inégalité de Vojta généralisée (2005)
+- Rémond, Gaël, Viada, Evelina, Probl\`eme de Mordell–Lang modulo certaines sous-variétés abéliennes (2003)
+- É. Gaudron and G. Rémond, _Théor\`eme des périodes et degrés minimaux d'isogénies_, Comment. Math. Helv. **89** (2014), 343–403. doi:10.4171/CMH/322.
+- Schmid, Wilfried, Variation of Hodge structure: The singularities of the period mapping (1973)
+- Schmid, Wilfried, Variation of Hodge Structure: The Singularities of the Period Mapping (1973)
+- M. Orr and C. Schnell, _Correction to the article Height bounds and the Siegel property_, Algebra Number Theory **17** (2023), 1231–1237. doi:10.2140/ant.2023.17.1231.
+- Schulze-Pillot, Rainer, Lecture notes on quadratic forms and their arithmetic (2020)
+- C. L. Siegel, _Über die Classenzahl quadratischer Zahlkörper_, Acta Arith. **1** (1935), 83–86. doi:10.4064/aa-1-1-83-86.
+- J. H. Silverman, _Heights and elliptic curves_, in _Arithmetic Geometry_ (G. Cornell and J. H. Silverman, eds.), Springer, New York, 1986, 253–265. doi:10.1007/978-1-4613-8655-1\_10.
+- Szpiro, Lucien, Ullmo, Emmanuel, Zhang, Shou-Wu, Équirépartition des petits points (1997)
+- J.-P. Serre and J. Tate, _Good reduction of abelian varieties_, Ann. of Math. (2) **88** (1968), 492–517. doi:10.2307/1970722.
+- J. Tate, _A review of non-Archimedean elliptic functions_, in _Elliptic Curves, Modular Forms, & Fermat's Last Theorem_ (Hong Kong, 1993), Series in Number Theory, vol. I, International Press, Cambridge, MA, 1995, 162–184. Author's reprint.
+- J. Pila and J. Tsimerman, _The André–Oort conjecture for the moduli space of abelian surfaces_, Compos. Math. **149** (2013), 204–216. doi:10.1112/S0010437X12000589.
+- J. Tsimerman, _The André–Oort conjecture for \(\A_g\)_, Ann. of Math. (2) **187** (2018), 379–390. doi:10.4007/annals.2018.187.2.2.
+- Ullmo, Emmanuel, Positivité et discrétion des points algébriques des courbes (1998)
+- Viada, Evelina, Nondense Subsets of Varieties in a Power of an Elliptic Curve (2009)
+- Viada, Evelina, The intersection of a curve with algebraic subgroups in a product of elliptic curves (2003)
+- Vojta, Paul, Siegel's theorem in the compact case (1991)
+- J. Pila and A. J. Wilkie, _The rational points of a definable set_, Duke Math. J. **133** (2006), 591–616. doi:10.1215/S0012-7094-06-13336-7.
+- D. W. Masser and G. Wüstholz, _Periods and minimal abelian subvarieties_, Ann. of Math. (2) **137** (1993), 407–458. doi:10.2307/2946542.
+- Yuan, Xinyi, Zhang, Shou-Wu, Adelic Line Bundles on Quasi-projective Varieties (2025)
+- Yuan, Xinyi, Big line bundles over arithmetic varieties (2008)
+- J. Pila and U. Zannier, _Rational points in periodic analytic sets and the Manin–Mumford conjecture_, Rend. Lincei Mat. Appl. (9) **19** (2008), 149–162. doi:10.4171/RLM/514.
+- Zhang, Shouwu, Small points and adelic metrics (1995)
+- Zhang, Shou-Wu, Equidistribution of small points on abelian varieties (1998)
+- Zhang, Shou-Wu, Small points and Arakelov theory (1998)
+- Zilber, Boris, Exponential sums equations and the Schanuel conjecture (2002)
+- B. Zilber, _Exponential sums equations and the Schanuel conjecture_, J. London Math. Soc. (2) **65** (2002), 27–44. doi:10.1112/S0024610701002861.
+- Zilber, Boris, Exponential sums equations and the Schanuel conjecture (2002)
+- Zilber, Boris, Exponential sums equations and the Schanuel conjecture (2002)
+- Andr{é}, Yves, Mumford–Tate groups of mixed Hodge structures and the theorem of the fixed part (1992)
+- Dub{é}, Thomas W., The structure of polynomial ideals and {Gr{ö}bner} bases (1990)

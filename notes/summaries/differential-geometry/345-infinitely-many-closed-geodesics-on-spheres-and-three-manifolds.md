@@ -1,4 +1,4 @@
-Notes / Summaries / Differential geometry / [Family 345](../../index/differential-geometry/345-infinitely-many-closed-geodesics-on-spheres-and-three-manifolds.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Differential geometry](../../index/disciplines/differential-geometry.md) / [Family 345](../../index/differential-geometry/345-infinitely-many-closed-geodesics-on-spheres-and-three-manifolds.md)
 
 # 345 — Infinitely many closed geodesics on spheres and three-manifolds
 
@@ -63,11 +63,11 @@ The second corollary settles dimension three, using geometrization for the finit
 
 The proof splits on the fundamental group [S6:91–98]:
 
-> It suffices to work on one connected component, so assume that $M$ is connected. If $\pi_1(M)$ is infinite, Rademacher and Taimanov \cite[Theorem~2]{RademacherTaimanov2018} give infinitely many geometrically distinct closed geodesics for the given metric. Their Riemannian convention identifies geodesics exactly when their images coincide \cite[Section~3]{RademacherTaimanov2018}. Taking the least positive period gives a prime representative with the same image. Their theorem includes the nonorientable case.
+> It suffices to work on one connected component, so assume that $M$ is connected. If $\pi_1(M)$ is infinite, Rademacher and Taimanov \cite[Theorem 2]RademacherTaimanov2018 give infinitely many geometrically distinct closed geodesics for the given metric. Their Riemannian convention identifies geodesics exactly when their images coincide \cite[Section 3]RademacherTaimanov2018. Taking the least positive period gives a prime representative with the same image. Their theorem includes the nonorientable case.
 
 The corollary carries no length count in the finite case [S6:109–111]:
 
-> This corollary uses only the infinitude conclusion from Rademacher--Taimanov. It carries no quantitative length-counting assertion for the finite-fundamental-group case.
+> This corollary uses only the infinitude conclusion from Rademacher–Taimanov. It carries no quantitative length-counting assertion for the finite-fundamental-group case.
 
 ## Graduate summary
 
@@ -120,7 +120,7 @@ The ordinary death theorem is the uniform filling statement: a cycle below squar
 
 The introduction states the same input in prose [S6:123–128]:
 
-> The ordinary homological input is a uniform filling statement for every metric, independent of the finite-prime assumption. Square-root energy is the $L^2$-norm of the velocity of a period-one loop. There is a constant $D$ such that a cycle below square-root energy $a$ which bounds in the full loop space already bounds below $a+D$, in every degree (Theorem~ ).
+> The ordinary homological input is a uniform filling statement for every metric, independent of the finite-prime assumption. Square-root energy is the $L^2$-norm of the velocity of a period-one loop. There is a constant $D$ such that a cycle below square-root energy $a$ which bounds in the full loop space already bounds below $a+D$, in every degree (Theorem  ).
 
 The fixed-degree filling proposition is the degree-dependent version that the cut operation lowers into a fixed range [S14:351–356]:
 
@@ -149,7 +149,7 @@ The filtered cut–join identity is the essential comparison [S12:303–310] [S6
 
 The introduction names the same comparison as the essential step [S6:151–158]:
 
-> The essential comparison is the filtered cut--join identity of Theorem~ . Its chain constructions build on the string-topology models of Hingston and Wahl~ . The comparison uses an absolute cut with a diagonal-relative Thom cocycle; its value on a suitable power is the constant-loop fundamental class, the unit for the loop product (Proposition~ ). We prove both the identity and this unit statement, including their filtration bounds.
+> The essential comparison is the filtered cut–join identity of Theorem  . Its chain constructions build on the string-topology models of Hingston and Wahl  . The comparison uses an absolute cut with a diagonal-relative Thom cocycle; its value on a suitable power is the constant-loop fundamental class, the unit for the loop product (Proposition  ). We prove both the identity and this unit statement, including their filtration bounds.
 
 The absolute unit proposition says the cut of the power is the constant-loop fundamental class [S12:560–566]:
 
@@ -158,7 +158,7 @@ The absolute unit proposition says the cut of the power is the constant-loop fun
 
 The transient count $T(a)$ is the number of extra reflection classes at a sublevel, and it is uniformly bounded under the finite-prime assumption [S6:160–176] [S13:29–35]:
 
-> The remaining argument uses reflection of loops and translation by half a period. With coefficients in $\mathbb F_2$, let $B_a$ denote reflection-equivariant cohomology below square-root energy $a$, relative to constant loops, and let $B_\infty$ denote the corresponding global group. Define \[ T(a)=\dim\coker(B_\infty\longrightarrow B_a), \] where the dimension is summed over all degrees. Thus $T(a)$ counts the extra reflection classes at that sublevel. Theorem~  shows that $T(a)$ is uniformly bounded under the finite-prime assumption. The proof compares two filtrations on the half-translation fixed locus: the actual equivariant degree and the degree of its half-length root. An exact-sequence calculation bounds their total discrepancy by $O(a)$ (Theorem~ ). A long string of extra classes would give $\Omega(a^2)$ discrepancy. The ordinary filling estimate excludes the remaining possibilities.
+> The remaining argument uses reflection of loops and translation by half a period. With coefficients in $\mathbb F_2$, let $B_a$ denote reflection-equivariant cohomology below square-root energy $a$, relative to constant loops, and let $B_\infty$ denote the corresponding global group. Define \[ T(a)=\dim\coker(B_\infty\longrightarrow B_a), \] where the dimension is summed over all degrees. Thus $T(a)$ counts the extra reflection classes at that sublevel. Theorem   shows that $T(a)$ is uniformly bounded under the finite-prime assumption. The proof compares two filtrations on the half-translation fixed locus: the actual equivariant degree and the degree of its half-length root. An exact-sequence calculation bounds their total discrepancy by $O(a)$ (Theorem  ). A long string of extra classes would give $\Omega(a^2)$ discrepancy. The ordinary filling estimate excludes the remaining possibilities.
 
 The transient bound is the theorem that closes the count [S13:29–35]:
 
@@ -186,7 +186,7 @@ The doubling inequality and its equality condition close the argument [S10:107�
 
 The doubling inequality closes the argument [S6:178–192]:
 
-> Finally, the full orthogonal-group action gives \[ T(2a)\ge T(a). \] At each stage of the round-metric filtration, the global basis has a lower-degree family, called the bottoms, and a second family obtained by cup product with the sphere class pulled back by evaluation at time zero. The equality case requires every nonzero bottom restriction from an odd round-filtration stage to have a partner whose restriction is independent modulo all bottom restrictions in its degree (Theorem~ ). Because $T$ is a bounded integer, an interval where it attains its maximum propagates to arbitrarily large intervals under doubling. A bottom generator must first appear at some crossing in such an interval. Evaluation cup vanishes on that local crossing, so its partner is still zero. This contradicts the equality case.
+> Finally, the full orthogonal-group action gives \[ T(2a)\ge T(a). \] At each stage of the round-metric filtration, the global basis has a lower-degree family, called the bottoms, and a second family obtained by cup product with the sphere class pulled back by evaluation at time zero. The equality case requires every nonzero bottom restriction from an odd round-filtration stage to have a partner whose restriction is independent modulo all bottom restrictions in its degree (Theorem  ). Because $T$ is a bounded integer, an interval where it attains its maximum propagates to arbitrarily large intervals under doubling. A bottom generator must first appear at some crossing in such an interval. Evaluation cup vanishes on that local crossing, so its partner is still zero. This contradicts the equality case.
 
 The global generators are the classes the filtration leaves behind [S16:151–157]:
 
@@ -195,7 +195,7 @@ The global generators are the classes the filtration leaves behind [S16:151–15
 
 The manuscript names the prior proofs it objects to, and says the objections are to the proofs, not to the conclusions [S6:56–65]:
 
-> Earlier infinitude claims also require care. Asselle and Mazzucchelli~\cite[Introduction]{AsselleMazzucchelli2018} identify the proof in Klingenberg's monograph~  as erroneous. Charles~\cite[Theorem 6.14]{Charles2019} later claimed infinitude on every closed Riemannian manifold. We identify two unsupported steps in that argument: the boundary-rank equality in Equation~(53) requires maximal ranks not established there, and the constant-ball modification in Equation~(54) does not provide the nondegenerate Morse critical points used in the conclusion. These are objections to the proofs, not counterexamples to their conclusions.
+> Earlier infinitude claims also require care. Asselle and Mazzucchelli \cite[Introduction]AsselleMazzucchelli2018 identify the proof in Klingenberg's monograph   as erroneous. Charles \cite[Theorem 6.14]Charles2019 later claimed infinitude on every closed Riemannian manifold. We identify two unsupported steps in that argument: the boundary-rank equality in Equation (53) requires maximal ranks not established there, and the constant-ball modification in Equation (54) does not provide the nondegenerate Morse critical points used in the conclusion. These are objections to the proofs, not counterexamples to their conclusions.
 
 ## History of the conjecture
 
@@ -240,15 +240,31 @@ What has not been checked: no Lean, lake, or comparator run was performed, and f
 
 ## Bibliography
 
-**28 entries** from `references.bib`:
-- Hingston, Nancy, Rademacher, Hans-Bert. *Resonance for loop homology of spheres*. (2013) [HingstonRademacher2013]
-- Hingston, Nancy, Wahl, Nathalie. *Product and coproduct in string topology*. (2023) [HingstonWahl2023]
-- Bangert, Victor. *On the existence of closed geodesics on two-spheres*. (1993) [Bangert1993]
-- Franks, John. *Geodesics on {$S^2$} and periodic points of annulus homeomorphisms*. (1992) [Franks1992]
-- Hingston, Nancy. *On the growth of the number of closed geodesics on the two-sphere*. (1993) [Hingston1993]
-- De Philippis, Guido, Marini, Michele, Mazzucchelli, Marco, Suhr, Stefan. *Closed geodesics on reversible {Finsler} 2-spheres*. (2022) [DePhilippisMariniMazzucchelliSuhr2022]
-- Contreras, Gonzalo, Mazzucchelli, Marco. *Closed geodesics and the first {Betti} number*. (2025) [ContrerasMazzucchelli2025]
-- Hatcher, Allen. *Vector Bundles \& {K}-Theory*. (2017) [HatcherVBKT2017]
-- Bott, Raoul. *On the iteration of closed geodesics and the {Sturm} intersection theory*. (1956) [Bott1956Iteration]
-- Gromoll, Detlef, Meyer, Wolfgang. *Periodic geodesics on compact {Riemannian} manifolds*. (1969) [GromollMeyer1969]
-- … and 18 more
+- Vigu{é}-Poirrier, Micheline, Sullivan, Dennis, The homology theory of the closed geodesic problem (1976)
+- Albach, Bernhard, Quadratic growth of geodesics on the two-sphere (2026)
+- Asselle, Luca, Mazzucchelli, Marco, Closed geodesics with local homology in maximal degree on non-compact manifolds (2018)
+- Bangert, Victor, On the existence of closed geodesics on two-spheres (1993)
+- Birkhoff, George D., Dynamical systems with two degrees of freedom (1917)
+- Block, Jonathan, Manin, Fedor, Weinberger, Shmuel, Persistent homology of function spaces (2025)
+- Bott, Raoul, On the iteration of closed geodesics and the Sturm intersection theory (1956)
+- Charles, Sergio, The Existence of Infinitely Many Geometrically Distinct Non-Constant Prime Closed Geodesics on Riemannian Manifolds (2019)
+- Chas, Moira, Sullivan, Dennis, String topology (1999)
+- Cieliebak, Kai, Hingston, Nancy, Oancea, Alexandru, Loop coproduct in Morse and Floer homology (2023)
+- Cieliebak, Kai, Oancea, Alexandru, Shelukhin, Egor, Resonances and string point invertibility for compact rank one symmetric spaces (2026)
+- Cohen, Ralph L., Jones, John D. S., A homotopy theoretic realization of string topology (2002)
+- Contreras, Gonzalo, Mazzucchelli, Marco, Closed geodesics and the first Betti number (2025)
+- Franks, John, Geodesics on $S^2$ and periodic points of annulus homeomorphisms (1992)
+- Goresky, Mark, Hingston, Nancy, Loop products and closed geodesics (2009)
+- Gromoll, Detlef, Meyer, Wolfgang, Periodic geodesics on compact Riemannian manifolds (1969)
+- Hatcher, Allen, Vector Bundles & K-Theory (2017)
+- Hingston, Nancy, Rademacher, Hans-Bert, Resonance for loop homology of spheres (2013)
+- Hingston, Nancy, Wahl, Nathalie, Product and coproduct in string topology (2023)
+- Hingston, Nancy, On the growth of the number of closed geodesics on the two-sphere (1993)
+- Klingenberg, Wilhelm, Lectures on closed geodesics (1978)
+- Long, Yiming, Duan, Huagui, Multiple closed geodesics on 3-spheres (2009)
+- Lyusternik, Lazar A., Fet, Abram I., Variational problems on closed manifolds (1951)
+- Morgan, John W., Tian, Gang, Ricci Flow and the Poincar{é} Conjecture (2007)
+- Nabutovsky, Alexander, Rotman, Regina, Length of geodesics and quantitative Morse theory on loop spaces (2013)
+- De Philippis, Guido, Marini, Michele, Mazzucchelli, Marco, Suhr, Stefan, Closed geodesics on reversible Finsler 2-spheres (2022)
+- Rademacher, Hans-Bert, On a generic property of geodesic flows (1994)
+- Rademacher, Hans-Bert, Taimanov, Iskander A., Closed geodesics on connected sums and 3-manifolds (2022)

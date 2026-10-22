@@ -1,4 +1,4 @@
-Notes / Summaries / Number theory / [Family 007](../../index/number-theory/007-two-point-chowla-and-the-corrected-binary-elliott-conjecture.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Number theory](../../index/disciplines/number-theory.md) / [Family 007](../../index/number-theory/007-two-point-chowla-and-the-corrected-binary-elliott-conjecture.md)
 
 # 007 — Two-point Chowla and the corrected binary Elliott conjecture
 
@@ -283,15 +283,24 @@ only published derivation artifact for this family.
 
 ## Bibliography
 
-**21 entries** from `refs.bib`:
-- Matom{\"a}ki, Kaisa, Radziwi{\l}{\l}, Maksym, Tao, Terence. *An averaged form of {Chowla}'s conjecture*. (2015) [MRT15]
-- Matom{\"a}ki, Kaisa, Radziwi{\l}{\l}, Maksym. *Multiplicative functions in short intervals*. (2016) [MR16]
-- Tao, Terence. *The logarithmically averaged {Chowla} and {Elliott} conjectures for two-point correlations*. (2016) [Tao16]
-- Tao, Terence, Ter{\"a}v{\"a}inen, Joni. *The structure of correlations of multiplicative functions at almost all scales, with applications to the {Chowla} and {Elliott} conjectures*. (2019) [TT19]
-- Tao, Terence, Ter{\"a}v{\"a}inen, Joni. *Quantitative correlations and some problems on prime factors of consecutive integers*. (2026) [TT26]
-- Helfgott, Harald Andr{\'e}s, Radziwi{\l}{\l}, Maksym. *Expansion, divisibility and parity*. (2021) [HR21]
-- Pilatte, C{\'e}dric. *Improved bounds for the two-point logarithmic {Chowla} conjecture*. (2026) [Pilatte26]
-- Braverman, Mark. *Polylogarithmic independence fools {$AC^0$} circuits*. (2010) [Braverman10]
-- Koukoulopoulos, Dimitris. *The Distribution of Prime Numbers*. (2019) [Koukoulopoulos19]
-- Chowla, Sarvadaman. *The {Riemann} Hypothesis and {Hilbert}'s Tenth Problem*. (1965) [Chowla65]
-- … and 11 more
+- Alon, Noga, Goldreich, Oded, Mansour, Yishay, Almost $k$-wise independence versus $k$-wise independence (2003)
+- Bazzi, Louay M. J., Polylogarithmic independence can fool DNF formulas (2009)
+- Braverman, Mark, Polylogarithmic independence fools $AC^0$ circuits (2010)
+- Chowla, Sarvadaman, The Riemann Hypothesis and Hilbert's Tenth Problem (1965)
+- Elliott, P. D. T. A., On the correlation of multiplicative functions (1992)
+- Granville, Andrew, Soundararajan, K., Large character sums: pretentious characters and the {P{ó}lya–Vinogradov} theorem (2007)
+- Granville, Andrew, Harper, Adam J., Soundararajan, K., A new proof of {Hal{á}sz}'s theorem, and its consequences (2019)
+- Helfgott, Harald Andr{é}s, Radziwi{\l}{\l}, Maksym, Expansion, divisibility and parity (2021)
+- Matom{ä}ki, Kaisa, Radziwi{\l}{\l}, Maksym, Tao, Terence, An averaged form of Chowla's conjecture (2015)
+- Matom{ä}ki, Kaisa, Radziwi{\l}{\l}, Maksym, Multiplicative functions in short intervals (2016)
+- Klurman, Oleksiy, Mangerel, Alexander P., Ter{ä}v{ä}inen, Joni, On Elliott's conjecture and applications (2023)
+- Koukoulopoulos, Dimitris, The Distribution of Prime Numbers (2019)
+- Linial, Nathan, Nisan, Noam, Approximate inclusion-exclusion (1990)
+- Pilatte, C{é}dric, Improved bounds for the two-point logarithmic Chowla conjecture (2026)
+- Razborov, Alexander A., A simple proof of Bazzi's theorem (2008)
+- Rota, Gian-Carlo, On the foundations of combinatorial theory. I. Theory of {Möbius} functions (1964)
+- Erd{\H o}s, Paul, Szekeres, George, A combinatorial problem in geometry (1935)
+- Hal{á}sz, G{á}bor, On the distribution of additive and the mean values of multiplicative arithmetic functions (1971)
+- Tao, Terence, The logarithmically averaged Chowla and Elliott conjectures for two-point correlations (2016)
+- Tao, Terence, Ter{ä}v{ä}inen, Joni, The structure of correlations of multiplicative functions at almost all scales, with applications to the Chowla and Elliott conjectures (2019)
+- Tao, Terence, Ter{ä}v{ä}inen, Joni, Quantitative correlations and some problems on prime factors of consecutive integers (2026)

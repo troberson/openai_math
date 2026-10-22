@@ -1,4 +1,4 @@
-Notes / Summaries / Convex and metric geometry / [Family 088](../../index/convex-and-metric-geometry/088-pettys-projection-volume-conjecture-and-simplex-counterexamples.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Convex and metric geometry](../../index/disciplines/convex-and-metric-geometry.md) / [Family 088](../../index/convex-and-metric-geometry/088-pettys-projection-volume-conjecture-and-simplex-counterexamples.md)
 
 # 088 — Petty's projection-volume conjecture and simplex counterexamples
 
@@ -8,7 +8,7 @@ Notes / Summaries / Convex and metric geometry / [Family 088](../../index/convex
 
 [S1:252] carries the family entry:
 
-> Proves Petty's projection-volume conjecture in the remaining dimensions $n\ge4$: ellipsoids uniquely minimize projection-body volume at fixed body volume. Also establishes the full Lutwak--Petty projection inequalities. In contrast, products of simplices exceed Brannen's proposed simplex maximum for normalized projection-body volume by an exponential factor in every sufficiently large dimension.
+> Proves Petty's projection-volume conjecture in the remaining dimensions $n\ge4$: ellipsoids uniquely minimize projection-body volume at fixed body volume. Also establishes the full Lutwak–Petty projection inequalities. In contrast, products of simplices exceed Brannen's proposed simplex maximum for normalized projection-body volume by an exponential factor in every sufficiently large dimension.
 
 The entry links the two manuscripts as "Petty’s projection-volume conjecture"
 and "Product counterexample to simplex maximum" [S1:252].
@@ -207,24 +207,31 @@ claims exist and names their declarations; the three comparator configs carry
 
 ## Bibliography
 
-**21 entries** from `bibliography.tex`:
-- [Brouwer1911] L.~E.~J. Brouwer, \"Uber Abbildung von Mannigfaltigkeiten, \emph{Math. Ann.} \textbf{71} (1911), 97--115. \url{https://d…
-- [ChenEtAl2026] S.~Chen, Y.~Feng, Y.~Li, D.~Xi, and L.~Xu, \emph{Petty's conjectured projection inequality in dimension three}, preprint…
-- [Gardner2002] R.~J. Gardner, The Brunn--Minkowski inequality, \emph{Bull. Amer. Math. Soc. (N.S.)} \textbf{39} (2002), no.~3, 355--405…
-- [Haddad2020] J.~E. Haddad, A convex body associated to the Busemann random simplex inequality and the Petty conjecture, \emph{J. Func…
-- [HuangLutwakYangZhang2016] Y.~Huang, E.~Lutwak, D.~Yang, and G.~Zhang, Geometric measures in the dual Brunn--Minkowski theory and their associated …
-- [HuangLutwakYangZhang2018] Y.~Huang, E.~Lutwak, D.~Yang, and G.~Zhang, The $L_p$-Aleksandrov problem for $L_p$-integral curvature, \emph{J. Differe…
-- [HuangZhao2018] Y.~Huang and Y.~Zhao, On the $L_p$ dual Minkowski problem, \emph{Adv. Math.} \textbf{332} (2018), 57--84. \url{https://d…
-- [Ivaki2018] M.~N. Ivaki, A local uniqueness theorem for minimizers of Petty's conjectured projection inequality, \emph{Mathematika} …
-- [Ludwig2002] M.~Ludwig, Projection bodies and valuations, \emph{Adv. Math.} \textbf{172} (2002), no.~2, 158--168. \url{https://dmg.tu…
-- [Lutwak1990] E.~Lutwak, On quermassintegrals of mixed projection bodies, \emph{Geom. Dedicata} \textbf{33} (1990), no.~1, 51--58. \ur…
-- … and 11 more
-
-**7 entries** from `references.tex`:
-- [Brannen] N.~S.~Brannen, \emph{Volumes of projection bodies}, Mathematika \textbf{43} (1996), no.~2, 255--264. \href{https://doi.o…
-- [ChenEtAl] S.~Chen, Y.~Feng, Y.~Li, D.~Xi, and L.~Xu, \emph{Petty's conjectured projection inequality in dimension three}, preprint…
-- [FengEtAl] Y.~Feng, S.~Hu, W.~Liu, and L.~Xu, \emph{On the reverse projection inequality}, preprint, 2026, MathSciDoc:2608.23002. \…
-- [Henk] M.~Henk, \emph{Note on projection bodies of zonotopes with \(n+1\) generators}, Acta Mathematica Scientia \textbf{45} (2…
-- [Ludwig] M.~Ludwig, \emph{Projection bodies and valuations}, Advances in Mathematics \textbf{172} (2002), no.~2, 158--168. \href{…
-- [Petty] C.~M.~Petty, \emph{Projection bodies}, in \emph{Proceedings of the Colloquium on Convexity (Copenhagen, 1965)}, K\o benh…
-- [Saroglou] C.~Saroglou, \emph{On the shape of a convex body with respect to its second projection body}, Advances in Applied Mathem…
+- N. S. Brannen, _Volumes of projection bodies_, Mathematika **43** (1996), no. 2, 255–264. doi:10.1112/S002557930001175X.
+- L. E. J. Brouwer, Über Abbildung von Mannigfaltigkeiten, _Math. Ann._ **71** (1911), 97–115.  .
+- S. Chen, Y. Feng, Y. Li, D. Xi, and L. Xu, _Petty's conjectured projection inequality in dimension three_, preprint, 7 August 2026, MathSciDoc:2608.23001, 20 pp.  .
+- S. Chen, Y. Feng, Y. Li, D. Xi, and L. Xu, _Petty's conjectured projection inequality in dimension three_, preprint, 2026, MathSciDoc:2608.23001. Full text.
+- Y. Feng, S. Hu, W. Liu, and L. Xu, _On the reverse projection inequality_, preprint, 2026, MathSciDoc:2608.23002. Full text.
+- R. J. Gardner, The Brunn–Minkowski inequality, _Bull. Amer. Math. Soc. (N.S.)_ **39** (2002), no. 3, 355–405.  .
+- J. E. Haddad, A convex body associated to the Busemann random simplex inequality and the Petty conjecture, _J. Funct. Anal._ **281** (2021), no. 7, 109118.  . Preprint: arXiv:1904.10427v6, 10 January 2020.  .
+- M. Henk, _Note on projection bodies of zonotopes with \(n+1\) generators_, Acta Mathematica Scientia **45** (2025), 96–103. doi:10.1007/s10473-025-0107-9.
+- Y. Huang, E. Lutwak, D. Yang, and G. Zhang, Geometric measures in the dual Brunn–Minkowski theory and their associated Minkowski problems, _Acta Math._ **216** (2016), 325–388.  .
+- Y. Huang, E. Lutwak, D. Yang, and G. Zhang, The $L_p$-Aleksandrov problem for $L_p$-integral curvature, _J. Differential Geom._ **110** (2018), no. 1, 1–29.  .
+- M. N. Ivaki, A local uniqueness theorem for minimizers of Petty's conjectured projection inequality, _Mathematika_ **64** (2018), no. 1, 1–19.  . Preprint:  .
+- M. Ludwig, Projection bodies and valuations, _Adv. Math._ **172** (2002), no. 2, 158–168.  .
+- M. Ludwig, _Projection bodies and valuations_, Advances in Mathematics **172** (2002), no. 2, 158–168. doi:10.1016/S0001-8708(02)00021-X.
+- E. Lutwak, On quermassintegrals of mixed projection bodies, _Geom. Dedicata_ **33** (1990), no. 1, 51–58.  .
+- E. Lutwak, On a conjectured projection inequality of Petty, in _Integral Geometry and Tomography_ (Arcata, CA, 1989), Contemporary Mathematics **113**, American Mathematical Society, Providence, RI, 1990, pp. 171–182.
+- F. Mielke-Sulz, _The Petty conjecture for convex bodies of revolution_, preprint, arXiv:2609.13517v1, 11 September 2026.  .
+- H. Martini and Z. Mustafaev, Extensions of a Bonnesen-style inequality to Minkowski spaces, _Math. Inequal. Appl._ **11** (2008), no. 4, 739–748.  .
+- C. M. Petty, Isoperimetric problems, in _Proceedings of the Conference on Convexity and Combinatorial Geometry_ (University of Oklahoma, Norman, 1971), Department of Mathematics, University of Oklahoma, pp. 26–41.
+- C. M. Petty, _Projection bodies_, in _Proceedings of the Colloquium on Convexity (Copenhagen, 1965)_, K\o benhavns Universitet Matematiske Institut, Copenhagen, 1967, pp. 234–241.
+- C. Saroglou, On the shape of a convex body with respect to its second projection body, _Adv. Appl. Math._ **67** (2015), 55–74.  . Preprint:  .
+- C. Saroglou, _On the shape of a convex body with respect to its second projection body_, Advances in Applied Mathematics **67** (2015), 55–74. doi:10.1016/j.aam.2015.03.004. Preprint: arXiv:1409.4347v2.
+- O. Ortega-Moreno and F. E. Schuster, Fixed points of Minkowski valuations, _Adv. Math._ **392** (2021), 108017.  . Author version:  .
+- D. Spector, Simple proofs of some results of Reshetnyak, _Proc. Amer. Math. Soc._ **139** (2011), no. 5, 1681–1690.  . Author version:  .
+- G. Zhang, The affine Sobolev inequality, _J. Differential Geom._ **53** (1999), no. 1, 183–202.
+- Y. Huang and Y. Zhao, On the $L_p$ dual Minkowski problem, _Adv. Math._ **332** (2018), 57–84.  .
+- H. Wang and J. Zhou, Uniqueness and continuity of the solution to $L_p$ dual Minkowski problem, _Commun. Math. Stat._ **14** (2026), no. 1, 105–140.  . Preprint:  .
+- C. Saroglou and A. Zvavitch, Iterations of the projection body operator and a remark on Petty's conjectured projection inequality, _J. Funct. Anal._ **272** (2017), no. 2, 613–630.  .
+- G. Ólafsson, A. Pasquale, and B. Rubin, Analytic and group-theoretic aspects of the cosine transform, in _Geometric Analysis and Integral Geometry_, Contemporary Mathematics **598**, American Mathematical Society, Providence, RI, 2013, pp. 167–188.  . Preprint:  .

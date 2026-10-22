@@ -1,4 +1,4 @@
-Notes / Summaries / Group theory / [Family 259](../../index/group-theory/259-a-group-without-fixed-price.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Group theory](../../index/disciplines/group-theory.md) / [Family 259](../../index/group-theory/259-a-group-without-fixed-price.md)
 
 # 259 — A group without fixed price
 
@@ -82,12 +82,11 @@ Nothing. The ledger records tier T0 for this family, with no scope note, no comp
 
 ## Bibliography
 
-**8 entries** from `references.bib`:
-- Levitt, Gilbert. *On the cost of generating an equivalence relation*. (1995) [levitt-1995]
-- Gaboriau, Damien. *Co{\^u}t des relations d'{\'e}quivalence et des groupes*. (2000) [gaboriau-2000]
-- Arzhantseva, G. N., Ol'shanskii, A. Yu.. *The class of groups all of whose subgroups with lesser number of generators are free is generic*. (1996) [arzhantseva-olshanskii-1996]
-- Kapovich, Ilya, Schupp, Paul. *Genericity, the {Arzhantseva--Ol'shanskii} method and the Isomorphism Problem for One-Relator Groups*. (2002) [kapovich-schupp-2002]
-- Khezeli, Ali. *Products of Infinite Countable Groups Have Fixed Price One*. (2026) [khezeli-2026-v4]
-- Slutsky, Raz. *A Product-Neighbourhood Criterion for Fixed Price One*. (2026) [slutsky-2026-v1]
-- Bevilacqua, Erin, Bowen, Lewis. *Metric criteria for fixed price of countable groups*. (2025) [bevilacqua-bowen-2025-v1]
-- Greendlinger, Martin. *Dehn's algorithm for the word problem*. (1960) [greendlinger-1960]
+- Arzhantseva, G. N., Ol'shanskii, A. Yu., The class of groups all of whose subgroups with lesser number of generators are free is generic (1996)
+- Bevilacqua, Erin, Bowen, Lewis, Metric criteria for fixed price of countable groups (2025)
+- Gaboriau, Damien, Co{\^u}t des relations d'{é}quivalence et des groupes (2000)
+- Greendlinger, Martin, Dehn's algorithm for the word problem (1960)
+- Kapovich, Ilya, Schupp, Paul, Genericity, the {Arzhantseva–Ol'shanskii} method and the Isomorphism Problem for One-Relator Groups (2002)
+- Khezeli, Ali, Products of Infinite Countable Groups Have Fixed Price One (2026)
+- Levitt, Gilbert, On the cost of generating an equivalence relation (1995)
+- Slutsky, Raz, A Product-Neighbourhood Criterion for Fixed Price One (2026)

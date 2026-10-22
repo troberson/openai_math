@@ -1,6 +1,6 @@
-Notes / Summaries / Algebra / [Family 199](../../index/algebra/199-counterexamples-to-conjectures-of-auslander-reiten-tachikawa-and-nakayama.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Algebra](../../index/disciplines/algebra.md) / [Family 199](../../index/algebra/199-counterexamples-to-conjectures-of-auslander-reiten-tachikawa-and-nakayama.md)
 
-# 199 — Counterexamples to conjectures of Auslander--Reiten, Tachikawa, and Nakayama
+# 199 — Counterexamples to conjectures of Auslander–Reiten, Tachikawa, and Nakayama
 
 [Index page](../../index/algebra/199-counterexamples-to-conjectures-of-auslander-reiten-tachikawa-and-nakayama.md)
 
@@ -8,7 +8,7 @@ Notes / Summaries / Algebra / [Family 199](../../index/algebra/199-counterexampl
 
 [S1:479] carries the family entry:
 
-> Constructs finite-dimensional algebras over a characteristic-two rational-function field that disprove the Auslander--Reiten and Gorenstein-projective conjectures, and Tachikawa's second conjecture. An associated endomorphism algebra also disproves the classical, generalized and strong Nakayama conjectures, the Auslander--Gorenstein conjecture, and the Wakamatsu tilting conjecture. The counterexamples persist under every extension of the base field.
+> Constructs finite-dimensional algebras over a characteristic-two rational-function field that disprove the Auslander–Reiten and Gorenstein-projective conjectures, and Tachikawa's second conjecture. An associated endomorphism algebra also disproves the classical, generalized and strong Nakayama conjectures, the Auslander–Gorenstein conjecture, and the Wakamatsu tilting conjecture. The counterexamples persist under every extension of the base field.
 
 The entry links the two manuscripts as "Auslander–Reiten counterexample"
 and "Tachikawa’s second conjecture" [S1:479].
@@ -277,30 +277,65 @@ elaborates.
 
 ## Bibliography
 
-**25 entries** from `refs.bib`:
-- Luo, Rong, Huang, Zhaoyong. *When are torsionless modules projective?*. (2008) [LuoHuang2008]
-- Enomoto, Haruhisa. *{Tachikawa}'s second conjecture implies the {Auslander--Reiten} conjecture*. (2026) [Enomoto2026]
-- Zhang, Xiaojin, Zhou, Panyue. *{Igusa--Todorov} algebras and the {Auslander--Reiten} conjecture*. (2026) [ZhangZhouIgusaTodorov2026]
-- Xia, Weiheng. *The {Auslander--Reiten} conjecture for quantum complete intersections*. (2026) [Xia2026]
-- Diveris, Kosmas, Purin, Marju. *Vanishing of self-extensions over symmetric algebras*. (2014) [DiverisPurin2014]
-- Erdmann, Karin. *{Ext}-finite modules for weakly symmetric algebras with radical cube zero*. (2017) [Erdmann2017]
-- {OpenAI}. *{A counterexample to Tachikawa's second conjecture}*. (2026) [OpenAITachikawa2026]
+- Auslander, Maurice, Reiten, Idun, On a generalized version of the Nakayama conjecture (1975)
+- Auslander, Maurice, Ding, Songqing, Solberg, {\O}yvind, Liftings and weak liftings of modules (1993)
+- Auslander, Maurice, Reiten, Idun, On a generalized version of the Nakayama conjecture (1975)
+- Bessenrodt, Christine, Holm, Thorsten, Zimmermann, Alexander, Generalized Reynolds ideals for non-symmetric algebras (2007)
+- Buan, Aslak Bakke, Solberg, {\O}yvind, Relative cotilting theory and almost complete cotilting modules (1998)
+- Buchweitz, Ragnar-Olaf, Maximal Cohen–Macaulay Modules and Tate Cohomology (2021)
+- Chen, Hongxing, Fang, Ming, Xi, Changchang, Tachikawa's second conjecture, derived recollements, and gendo-symmetric algebras (2024)
+- Chen, Hongxing, Xi, Changchang, Homological theory of self-orthogonal modules (2025)
+- Chen, Hongxing, Xi, Changchang, Virtually Gorenstein algebras of infinite dominant dimension (2026)
+- Christensen, Lars Winther, Holm, Henrik, Algebras that satisfy {Auslander's} condition on vanishing of cohomology (2010)
+- Cibils, Claude, Marcos, Eduardo, Redondo, Mar{í}a Julia, Solotar, Andrea, Cohomology of split algebras and of trivial extensions (2003)
+- Divaani-Aazar, Kamran, Mahin Fallah, Ali, Tousi, Massoud, On the Wakamatsu tilting conjecture (2025)
+- Diveris, Kosmas, Purin, Marju, Vanishing of self-extensions over symmetric algebras (2014)
+- Diveris, Kosmas, Purin, Marju, The generalized Auslander–Reiten condition for the bounded derived category (2012)
+- Diveris, Kosmas, Purin, Marju, The generalized Auslander–Reiten condition for the bounded derived category (2012)
+- Diveris, Kosmas, Purin, Marju, Vanishing of self-extensions over symmetric algebras (2014)
+- Enomoto, Haruhisa, Tachikawa's second conjecture implies the Auslander–Reiten conjecture (2026)
+- Enomoto, Haruhisa, Marczinzik, Ren{é}, On the homological conjectures for Artin algebras (2026)
+- Erdmann, Karin, Ext-finite modules for weakly symmetric algebras with radical cube zero (2017)
 - Erdmann, Karin, Holloway, Miles, Snashall, Nicole and
-            Solberg, {\O}yvind, Taillefer, Rachel. *Support varieties for selfinjective algebras*. (2004) [ErdmannEtAl2003]
-- Auslander, Maurice, Reiten, Idun. *On a generalized version of the {Nakayama} conjecture*. (1975) [AuslanderReiten1975]
-- Huneke, Craig, Leuschke, Graham J.. *On a conjecture of {Auslander} and {Reiten}*. (2004) [HunekeLeuschke2004]
-- … and 15 more
-
-**32 entries** from `refs.bib`:
-- Mueller, Bruno J.. *The classification of algebras by dominant dimension*. (1968) [Mueller1968]
-- Zhang, Yingying. *Excellent extensions and homological conjectures*. (2018) [Zhang2018HomologicalConjectures]
-- Divaani-Aazar, Kamran, Mahin Fallah, Ali, Tousi, Massoud. *On the {Wakamatsu} tilting conjecture*. (2025) [DivaaniAazarMahinFallahTousi2025]
-- Huang, Zhaoyong. *{Wakamatsu} tilting modules, {$U$}-dominant dimension,
-           and {$k$}-{Gorenstein} modules*. (2006) [Huang2006]
-- Chen, Hongxing, Fang, Ming, Xi, Changchang. *{Tachikawa}'s second conjecture, derived recollements, and gendo-symmetric algebras*. (2024) [ChenFangXi2024]
-- Auslander, Maurice, Reiten, Idun. *On a generalized version of the {Nakayama} conjecture*. (1975) [AuslanderReiten1975]
-- Schulz, Rainer. *A non-projective module without self-extensions*. (1994) [Schulz1994]
-- Schulz, Rainer. *Finite generation of the extension algebra {$\operatorname{Ext}^{*}_{R}(M,M)$}*. (1995) [Schulz1995]
-- Enomoto, Haruhisa, Marczinzik, Ren{\'e}. *On the homological conjectures for {Artin} algebras*. (2026) [Enomoto2026]
-- Zhang, Xiaojin, Zhou, Panyue. *{Igusa--Todorov} algebras and the {Auslander--Reiten} conjecture*. (2026) [ZhangZhouIgusaTodorov2026]
-- … and 22 more
+            Solberg, {\O}yvind, Taillefer, Rachel, Support varieties for selfinjective algebras (2004)
+- Erdmann, Karin, Ext-finite modules for weakly symmetric algebras with radical cube zero (2017)
+- Erdmann, Karin, Holloway, Miles, Snashall, Nicole and
+            Solberg, {\O}yvind, Taillefer, Rachel, Support varieties for selfinjective algebras (2003)
+- Eshraghi, Hossein, Hafezi, Rasool, Salarian, Shokrollah, Li, Z. W., Gorenstein projective modules over triangular matrix rings (2014)
+- Eshraghi, Hossein, Hafezi, Rasool, Salarian, Shokrollah
+           , Li, Z. W., Gorenstein Projective Modules Over Triangular Matrix Rings (2014)
+- Hattori, Akira, Rank element of a projective module (1965)
+- B{ö}hmler, Bernhard, Marczinzik, Ren{é}, Tor and Ext vanishing results for commutative Artinian rings (2026)
+- B{ö}hmler, Bernhard, Marczinzik, Ren{é}, Tor and Ext vanishing results for commutative Artinian rings (2026)
+- Huang, Zhaoyong, Wakamatsu tilting modules, $U$-dominant dimension,
+           and $k$-Gorenstein modules (2006)
+- Huneke, Craig, Leuschke, Graham J., On a conjecture of Auslander and Reiten (2004)
+- Huneke, Craig, {Ş}ega, Liana M., Vraciu, Adela N., Vanishing of Ext and Tor over Cohen–Macaulay local rings (2004)
+- Keller, Bernhard, Deriving DG categories (1994)
+- Linckelmann, Markus, Tate duality and transfer in Hochschild cohomology (2013)
+- Linckelmann, Markus, Tate duality and transfer in Hochschild cohomology (2013)
+- Liu, Yuming, Zhou, Guodong, Zimmermann, Alexander, Higman ideal, stable Hochschild homology and
+           {Auslander-Reiten} conjecture (2012)
+- Lowen, Wendy, Hochschild cohomology, the characteristic morphism and derived deformations (2008)
+- Luo, Rong, Huang, Zhaoyong, When are torsionless modules projective? (2008)
+- Mueller, Bruno J., The classification of algebras by dominant dimension (1968)
+- OpenAI, {A counterexample to Tachikawa's second conjecture} (2026)
+- OpenAI, An explicit counterexample to the Auslander–Reiten conjecture (2026)
+- OpenAI, An algebra of infinite little finitistic dimension (2026)
+- Ringel, Claus Michael, Zhang, Pu, Gorenstein-projective modules over short local algebras (2022)
+- Schulz, Rainer, A non-projective module without self-extensions (1994)
+- Schulz, Rainer, Finite generation of the extension algebra Ext(M, M) (1995)
+- Schulz, Rainer, A non-projective module without self-extensions (1994)
+- Schulz, Rainer, Finite generation of the extension algebra $\mathrm{Ext}^{*}_{R}(M,M)$ (1995)
+- Spaltenstein, Nicolas, Resolutions of unbounded complexes (1988)
+- Tachikawa, Hiroyuki, Quasi-Frobenius Rings and Generalizations: {QF-3} and {QF-1} Rings (1973)
+- Veliche, Oana, Gorenstein projective dimension for complexes (2006)
+- Xia, Weiheng, The Auslander–Reiten conjecture for quantum complete intersections (2026)
+- Xia, Weiheng, The Auslander–Reiten conjecture for quantum complete intersections (2026)
+- Xiong, Bao-Lin, Zhang, Pu, Gorenstein-projective modules over triangular matrix Artin algebras (2012)
+- Zhang, Xiaojin, Zhou, Panyue, Igusa–Todorov algebras and the Auslander–Reiten conjecture (2026)
+- Zhang, Xiaojin, Zhou, Panyue, The Auslander–Reiten conjecture for algebras with radical cube zero (2026)
+- Zhang, Yingying, Excellent extensions and homological conjectures (2018)
+- Zhang, Xiaojin, Zhou, Panyue, Igusa–Todorov algebras and the Auslander–Reiten conjecture (2026)
+- Zhang, Xiaojin, Zhou, Panyue, The Auslander–Reiten conjecture for algebras with radical cube zero (2026)
+- Brou{é}, Michel, Higman's criterion revisited (2009)

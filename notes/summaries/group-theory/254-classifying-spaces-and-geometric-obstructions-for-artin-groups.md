@@ -1,4 +1,4 @@
-Notes / Summaries / Group theory / [Family 254](../../index/group-theory/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Group theory](../../index/disciplines/group-theory.md) / [Family 254](../../index/group-theory/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md)
 
 # 254 — Classifying spaces and geometric obstructions for Artin groups
 

@@ -1,4 +1,4 @@
-Notes / Summaries / Theoretical computer science / [Family 102](../../index/theoretical-computer-science/102-unique-games-conjecture-and-optimal-approximation-thresholds.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Theoretical computer science](../../index/disciplines/theoretical-computer-science.md) / [Family 102](../../index/theoretical-computer-science/102-unique-games-conjecture-and-optimal-approximation-thresholds.md)
 
 # 102 — The Unique Games Conjecture and optimal approximation thresholds
 

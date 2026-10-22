@@ -1,6 +1,6 @@
-Notes / Summaries / Partial differential equations / [Family 362](../../index/partial-differential-equations/362-global-smoothness-for-relativistic-vlasov-maxwell.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Partial differential equations](../../index/disciplines/partial-differential-equations.md) / [Family 362](../../index/partial-differential-equations/362-global-smoothness-for-relativistic-vlasov-maxwell.md)
 
-# 362 — Global smoothness for relativistic Vlasov--Maxwell
+# 362 — Global smoothness for relativistic Vlasov–Maxwell
 
 [Index page](../../index/partial-differential-equations/362-global-smoothness-for-relativistic-vlasov-maxwell.md)
 
@@ -47,7 +47,7 @@ The field class is the load-bearing choice. `C_b^∞` bounds every spatial deriv
 
 The admissible datum, and the meaning of the field class [S4:27–35]:
 
-> A _smooth admissible datum_ is a triple $(f_0,E_0,B_0)$ satisfying \begin{equation}  \begin{gathered} f_0\in C_c^\infty(\mathbb R^3_x\times\mathbb R^3_v),\qquad f_0\ge0,\\ E_0,B_0\in C_b^\infty(\mathbb R^3;\mathbb R^3)\cap L^2(\mathbb R^3;\mathbb R^3),\\ \nabla_x\cdot E_0=\rho_{f_0},\qquad \nabla_x\cdot B_0=0. \end{gathered} \end{equation} Here $C_b^\infty$ means that every spatial derivative is bounded.
+> A _smooth admissible datum_ is a triple $(f_0,E_0,B_0)$ satisfying \beginequation  \begingathered f_0\in C_c^\infty(\mathbb R^3_x\times\mathbb R^3_v),\qquad f_0\ge0,\\ E_0,B_0\in C_b^\infty(\mathbb R^3;\mathbb R^3)\cap L^2(\mathbb R^3;\mathbb R^3),\\ \nabla_x\cdot E_0=\rho_{f_0},\qquad \nabla_x\cdot B_0=0. \endgathered \endequation Here $C_b^\infty$ means that every spatial derivative is bounded.
 
 The theorem, stated in full [S4:42–52]:
 
@@ -65,7 +65,7 @@ The theorem, stated in full [S4:42–52]:
 
 What the theorem does not assume, from the paragraph immediately after it [S4:54–60]:
 
-> Theorem~  resolves the large-data global classical regularity problem for this one-species model in three spatial and three momentum dimensions. The data have no size or symmetry restriction. The field
+> Theorem   resolves the large-data global classical regularity problem for this one-species model in three spatial and three momentum dimensions. The data have no size or symmetry restriction. The field
 
 The proof is split into a kinetic half and a PDE half. The kinetic half is a single bootstrap on signed momentum increments, uniform over all compact classical time intervals.
 
@@ -96,11 +96,11 @@ The Sobolev hypotheses of the cited criterion are manufactured rather than assum
 
 The finite-horizon field modification, described where the proposition is introduced [S5:59–67]:
 
-> The proof is given in the final section. It combines the Glassey--Strauss bounded-momentum criterion in the $H^5$ formulation quoted by Luk and Strain~\cite[Theorem~1.1 and Footnote~1, arXiv version]{LukStrain2014Continuation} with a finite-horizon modification of the initial fields. The modification retains the initial Coulomb field and cuts off vector potentials for the divergence-free remainders. The removed part evolves as a vacuum Maxwell field that vanishes throughout the particle region for the chosen horizon. This supplies Sobolev field data for the continuation theorem while preserving the original particle dynamics.
+> The proof is given in the final section. It combines the Glassey–Strauss bounded-momentum criterion in the $H^5$ formulation quoted by Luk and Strain \cite[Theorem 1.1 and Footnote 1, arXiv version]LukStrain2014Continuation with a finite-horizon modification of the initial fields. The modification retains the initial Coulomb field and cuts off vector potentials for the divergence-free remainders. The removed part evolves as a vacuum Maxwell field that vanishes throughout the particle region for the chosen horizon. This supplies Sobolev field data for the continuation theorem while preserving the original particle dynamics.
 
 The criterion itself, quoted where it is used [S13:444–451]:
 
-> The continuation input is the Glassey--Strauss criterion in \cite[Theorem~1.1 and Footnote~1, arXiv version]{LukStrain2014Continuation}. In its normalization, nonnegative compactly supported $H^5$ particle data and $H^5$ field data satisfying the constraints have the following property: a unique classical solution on $[0,T)$, $T<\infty$, extends uniquely as a $C^1$ solution past $T$ if there is a bounded continuous function $\kappa:[0,T)\to(0,\infty)$ such that $f(t,x,v)=0$ whenever $|v|\ge\kappa(t)$.
+> The continuation input is the Glassey–Strauss criterion in \cite[Theorem 1.1 and Footnote 1, arXiv version]LukStrain2014Continuation. In its normalization, nonnegative compactly supported $H^5$ particle data and $H^5$ field data satisfying the constraints have the following property: a unique classical solution on $[0,T)$, $T<\infty$, extends uniquely as a $C^1$ solution past $T$ if there is a bounded continuous function $\kappa:[0,T)\to(0,\infty)$ such that $f(t,x,v)=0$ whenever $|v|\ge\kappa(t)$.
 
 The kinetic estimate is a light-cone argument. Fields are represented by integrating the source along the backward light cone of the receiving particle, split into dyadic bins of momentum, distance, and angle; the force kernel carries the source acceleration evaluated at the retarded point.
 
@@ -200,7 +200,7 @@ The weighted signed estimate, with no `sqrt(w)` [S11:447–454]:
 
 The coefficient bound that pays for the loss [S11:478–482]:
 
-> For the receiver terms, Lemmas   and   give, at every receiver time, \[ \sum_{\mathrm{selected}}CU\le Cw^{-1/2}. \]
+> For the receiver terms, Lemmas   and   give, at every receiver time, \[ \sum_{\mathrmselected}CU\le Cw^{-1/2}. \]
 
 The strategy section says exactly what that factor buys [S4:205–207]:
 
@@ -210,21 +210,21 @@ The weighted estimate vanishes at interval endpoints, so short endpoint interval
 
 The uniform improvement, and the continuity argument that closes the bootstrap [S12:56–59]:
 
-> Thus every bootstrap interval satisfies the uniform improvement \begin{equation}  |V_X(t_2)-V_X(t_1)|\le\tfrac12\mathcal B_w(t_2-t_1). \end{equation}
+> Thus every bootstrap interval satisfies the uniform improvement \beginequation  |V_X(t_2)-V_X(t_1)|\le\tfrac12\mathcal B_w(t_2-t_1). \endequation
 
 The end of the continuity argument [S12:81–82]:
 
-> This proves relative openness. Hence $\mathcal T=[0,t_*]$ and Proposition~  follows.
+> This proves relative openness. Hence $\mathcal T=[0,t_*]$ and Proposition   follows.
 
 The bookkeeping that keeps the bootstrap usable in the doubling argument [S12:84–87]:
 
-> The compact-time force bound $C_*$ was used only to propagate the bootstrap for a fixed $P$. It does not enter $M,A$ or $P_0$. This distinction preserves the uniformity needed in the momentum-doubling argument of Section~ .
+> The compact-time force bound $C_*$ was used only to propagate the bootstrap for a fixed $P$. It does not enter $M,A$ or $P_0$. This distinction preserves the uniformity needed in the momentum-doubling argument of Section  .
 
 With the bootstrap in hand, the conclusion is a divergent series. Doubling momentum from `2^(n-1)` to `2ⁿ` takes time at least `c / log(2 + 1024·2ⁿ)`, and the sum over `n` diverges, so the doubling times cannot accumulate below a finite `T_max`.
 
 The momentum-doubling step, verbatim [S5:95–102]:
 
-> At least one term on the right is at least $2^{n-2}$. Consequently \[ t_n-t_{n-1}\ge\Delta_n \ge \frac{c}{\log(2+1024\cdot2^n)} \] for a fixed $c>0$. The sum of these lower bounds diverges, contradicting $t_n<T_{\max}$. Thus $T_{\max}=\infty$.
+> At least one term on the right is at least $2^{n-2}$. Consequently \[ t_n-t_{n-1}\ge\Delta_n \ge \fracc{\log(2+1024\cdot2^n)} \] for a fixed $c>0$. The sum of these lower bounds diverges, contradicting $t_n<T_{\max}$. Thus $T_{\max}=\infty$.
 
 Smoothness is then propagated by restarting a Sobolev construction near an alleged first loss and identifying the restart with the classical solution by uniqueness; persistence at every Sobolev order follows on the same lifespan, and the equations give all time derivatives.
 
@@ -232,11 +232,11 @@ Smoothness is then propagated by restarting a Sobolev construction near an alleg
 
 The paper's own account of the problem starts from the gap between weak existence and classical regularity [S4:63–70]:
 
-> The distinction between weak existence and classical regularity has shaped the Cauchy problem for Vlasov--Maxwell. Wollman established local existence and uniqueness for classical solutions~ . DiPerna and Lions developed global weak existence for large data~ ; a direct formulation for the relativistic one-species system is given by Rein~ . These weak existence results do not furnish the regularity and uniqueness asserted in Theorem~ .
+> The distinction between weak existence and classical regularity has shaped the Cauchy problem for Vlasov–Maxwell. Wollman established local existence and uniqueness for classical solutions  . DiPerna and Lions developed global weak existence for large data  ; a direct formulation for the relativistic one-species system is given by Rein  . These weak existence results do not furnish the regularity and uniqueness asserted in Theorem  .
 
 The continuation criterion and the pre-existing global classical results, with the restrictions they used [S4:72–88]:
 
-> For classical solutions, Glassey and Strauss identified bounded momentum support as a continuation condition~  and proved global existence for initially dilute plasmas~ . Global classical existence was also established by Glassey and Schaeffer in dimensional reductions: one and one-half dimensions, two and one-half dimensions, and the planar problem~ . For the spherically symmetric electrostatic reduction, Glassey and Schaeffer proved global classical existence for the repulsive relativistic Vlasov--Poisson system~ . Rein proved persistence of global existence under small perturbations of suitably decaying global reference solutions, including nearly symmetric configurations~ . These results use restrictions on size, dimension, or the reference configuration.
+> For classical solutions, Glassey and Strauss identified bounded momentum support as a continuation condition   and proved global existence for initially dilute plasmas  . Global classical existence was also established by Glassey and Schaeffer in dimensional reductions: one and one-half dimensions, two and one-half dimensions, and the planar problem  . For the spherically symmetric electrostatic reduction, Glassey and Schaeffer proved global classical existence for the repulsive relativistic Vlasov–Poisson system  . Rein proved persistence of global existence under small perturbations of suitably decaying global reference solutions, including nearly symmetric configurations  . These results use restrictions on size, dimension, or the reference configuration.
 
 The criterion's title in the literature it comes from [S14:30–41]:
 
@@ -252,15 +252,15 @@ The criterion's title in the literature it comes from [S14:30–41]:
 
 The continuation theory then generated its own methods, and the version used here is Luk–Strain's Theorem 1.1 [S4:90–104]:
 
-> The continuation theory also led to new methods. Klainerman and Staffilani gave a Fourier-based proof of the bounded-momentum criterion~ , while Bouchut, Golse and Pallard gave a physical-space proof using a division lemma for wave kernels~ . Luk and Strain showed that it suffices to control the momentum support after projection onto a fixed two-dimensional plane~\cite[Theorem~1.2]{LukStrain2014Continuation}. Moment and spatial-density conditions for continuation were developed by Pallard~ , Sospedra--Alfonso and Illner~ , and Luk and Strain~ . We use the Glassey--Strauss criterion as stated in Luk and Strain~\cite[Theorem~1.1]{LukStrain2014Continuation}; Section~  verifies its hypotheses for the normalization and initial field class considered here.
+> The continuation theory also led to new methods. Klainerman and Staffilani gave a Fourier-based proof of the bounded-momentum criterion  , while Bouchut, Golse and Pallard gave a physical-space proof using a division lemma for wave kernels  . Luk and Strain showed that it suffices to control the momentum support after projection onto a fixed two-dimensional plane \cite[Theorem 1.2]LukStrain2014Continuation. Moment and spatial-density conditions for continuation were developed by Pallard  , Sospedra–Alfonso and Illner  , and Luk and Strain  . We use the Glassey–Strauss criterion as stated in Luk and Strain \cite[Theorem 1.1]LukStrain2014Continuation; Section   verifies its hypotheses for the normalization and initial field class considered here.
 
 The small-data line, which relaxes compact momentum support but keeps a particle-smallness hypothesis [S4:106–125]:
 
-> Small-data theory also developed beyond compact momentum support. Schaeffer allowed a rapidly decaying momentum tail, retaining compact spatial support and a suitable smallness condition~ . Using a vector-field method with modified commutators, Bigorgne obtained global existence and sharp asymptotic estimates under weighted smallness assumptions~ . His result permits nonzero charge and noncompact particle data. Wang proved a small-data result without compact support using vector-field and Fourier methods~ . Wei and Yang allow arbitrarily large Maxwell fields with suitable spatial decay while requiring a sufficiently small weighted particle density~ . Bigorgne subsequently proved global existence and modified scattering with a small distribution function and a large Maxwell field~ . These theorems preserve a particle-smallness hypothesis. By prescribing asymptotic data and choosing a sufficiently late starting time, Bigorgne also constructs particular global solutions with large particle and field norms~ . This construction does not prescribe arbitrary Cauchy data.
+> Small-data theory also developed beyond compact momentum support. Schaeffer allowed a rapidly decaying momentum tail, retaining compact spatial support and a suitable smallness condition  . Using a vector-field method with modified commutators, Bigorgne obtained global existence and sharp asymptotic estimates under weighted smallness assumptions  . His result permits nonzero charge and noncompact particle data. Wang proved a small-data result without compact support using vector-field and Fourier methods  . Wei and Yang allow arbitrarily large Maxwell fields with suitable spatial decay while requiring a sufficiently small weighted particle density  . Bigorgne subsequently proved global existence and modified scattering with a small distribution function and a large Maxwell field  . These theorems preserve a particle-smallness hypothesis. By prescribing asymptotic data and choosing a sufficiently late starting time, Bigorgne also constructs particular global solutions with large particle and field norms  . This construction does not prescribe arbitrary Cauchy data.
 
 The nearest concurrent work is a July 2026 pair of papers by Wang on cylindrically symmetric large data. The paper states the difference in data classes explicitly, and declines to identify the two results [S4:127–136]:
 
-> Wang's July 2026 two-paper treatment establishes global existence for large cylindrically symmetric data~ . The first paper develops an iterative smoothing construction and the second supplies pointwise estimates. Their Theorem~1.1 assumes $H^s$ fields, $s\ge6$, a weighted $H^s$ particle density, and covariance of the data under rotations about a fixed axis. It allows localized noncompact particle data and has no smallness requirement. The theorem here instead concerns arbitrary compatible compactly supported particle data, without symmetry, and fields in the class  . Thus the two data classes should not be identified.
+> Wang's July 2026 two-paper treatment establishes global existence for large cylindrically symmetric data  . The first paper develops an iterative smoothing construction and the second supplies pointwise estimates. Their Theorem 1.1 assumes $H^s$ fields, $s\ge6$, a weighted $H^s$ particle density, and covariance of the data under rotations about a fixed axis. It allows localized noncompact particle data and has no smallness requirement. The theorem here instead concerns arbitrary compatible compactly supported particle data, without symmetry, and fields in the class  . Thus the two data classes should not be identified.
 
 The two concurrent papers as the bibliography records them [S14:85–107]:
 
@@ -290,7 +290,7 @@ The two concurrent papers as the bibliography records them [S14:85–107]:
 
 The antecedents of the formulas themselves, which are classical [S4:138–150]:
 
-> The formulas used below have several classical antecedents. The retarded-field representation goes back to Glassey and Strauss  . Luk and Strain organize its most singular terms using electromagnetic components controlled by energy flux through light cones~\cite[Proposition~2.2 and Section~3]{LukStrain2014Continuation}; Pallard also uses the orthogonality of the acceleration kernel to the cone's spatial normal~\cite[Lemma~2.1 and Section~2.3]{Pallard2015Refined}. The change from retarded phase points to initial particle labels appears in Lazarovici~\cite[Lemma~9.2]{Lazarovici2016}. The moving-characteristic cone change of variables is used by Pallard  ; its proof is also given by Luk and Strain \cite[Proposition~5.2]{LukStrain2014Continuation}. We derive the required formulas in the normalization~ .
+> The formulas used below have several classical antecedents. The retarded-field representation goes back to Glassey and Strauss  . Luk and Strain organize its most singular terms using electromagnetic components controlled by energy flux through light cones \cite[Proposition 2.2 and Section 3]LukStrain2014Continuation; Pallard also uses the orthogonality of the acceleration kernel to the cone's spatial normal \cite[Lemma 2.1 and Section 2.3]Pallard2015Refined. The change from retarded phase points to initial particle labels appears in Lazarovici \cite[Lemma 9.2]Lazarovici2016. The moving-characteristic cone change of variables is used by Pallard  ; its proof is also given by Luk and Strain \cite[Proposition 5.2]LukStrain2014Continuation. We derive the required formulas in the normalization  .
 
 Prior (my training data, not repo text): as of my cutoff the open problem was stated as global classical solvability for the full three-dimensional relativistic Vlasov–Maxwell system with arbitrary smooth data of the standard class; Glassey–Strauss 1986 is the standard continuation criterion, Luk–Strain 2014 the standard modern formulation, and the known unconditional global classical results were restricted to symmetry reductions (notably the spherically symmetric Vlasov–Poisson case) plus small-data regimes. A full large-data, no-symmetry, no-smallness global classical theorem for the one-species Maxwell system would have been, at my cutoff, the headline open problem in kinetic PDE, so the claim as stated is a maximal-strength resolution of a long-standing problem rather than a refinement of an existing theorem.
 
@@ -302,7 +302,7 @@ The stated consequence is closure of the problem in the form the literature pose
 
 The paper's own framing of the same claim, with the dimensional specification [S4:54–56]:
 
-> Theorem~  resolves the large-data global classical regularity problem for this one-species model in three spatial and three momentum dimensions. The data have no size or symmetry restriction. The field assumptions allow a nonzero total charge and its Coulomb tail; they do not require square-integrability of all field derivatives. The momentum support bound is on each finite time interval and may grow with that interval.
+> Theorem   resolves the large-data global classical regularity problem for this one-species model in three spatial and three momentum dimensions. The data have no size or symmetry restriction. The field assumptions allow a nonzero total charge and its Coulomb tail; they do not require square-integrability of all field derivatives. The momentum support bound is on each finite time interval and may grow with that interval.
 
 Two consequences are visible inside the release, and one is a caution.
 
@@ -383,23 +383,49 @@ What has not been checked: nothing here is a machine-checked verification of the
 
 ## Bibliography
 
-**29 entries** from `references.bib`:
-- Pfaffelmoser, K.. *Global classical solutions of the {Vlasov--Poisson} system in three
-           dimensions for general initial data*. (1992) [Pfaffelmoser1992]
-- Luk, Jonathan, Strain, Robert M.. *A new continuation criterion for the relativistic
-                   {Vlasov--Maxwell} system*. (2014) [LukStrain2014Continuation]
-- Glassey, Robert T., Strauss, Walter A.. *Singularity formation in a collisionless plasma could
-             occur only at high velocities*. (1986) [GlasseyStrauss1986]
-- Glassey, Robert T., Strauss, Walter A.. *Absence of Shocks in an Initially Dilute Collisionless Plasma*. (1987) [GlasseyStrauss1987]
-- Wei, Dongyi, Yang, Shiwu. *On the {3D} Relativistic {Vlasov--Maxwell} System
-           with Large {Maxwell} Field*. (2021) [WeiYang2021]
-- Bigorgne, L{\'e}o. *Sharp Asymptotic Behavior of Solutions of the {3d}
-           {Vlasov--Maxwell} System with Small Data*. (2020) [Bigorgne2020]
-- Wang, Xuecheng. *Large Data Global Solution of the {3D RVM} System with
-           Cylindrical Symmetry {I}: Iterative Smoothing Scheme*. (2026) [Wang2026I]
-- Wang, Xuecheng. *Large Data Global Solution of the {3D RVM} System with
-           Cylindrical Symmetry {II}: Pointwise Estimates*. (2026) [Wang2026II]
-- Pallard, Christophe. *On the boundedness of the momentum support of solutions to the
-             relativistic {Vlasov--Maxwell} system*. (2005) [Pallard2005]
-- Wollman, Stephen. *An existence and uniqueness theorem for the {Vlasov--Maxwell} system*. (1984) [Wollman1984]
-- … and 19 more
+- Bigorgne, L{é}o, Sharp Asymptotic Behavior of Solutions of the 3d
+           Vlasov–Maxwell System with Small Data (2020)
+- Bigorgne, L{é}o, Global existence and modified scattering for the solutions to the
+           Vlasov–Maxwell system with a small distribution function (2025)
+- Bigorgne, L{é}o, Scattering map for the Vlasov–Maxwell system around
+           source-free electromagnetic fields (2023)
+- Bouchut, Fran{\c c}ois, Golse, Fran{\c c}ois, Pallard, Christophe, Classical solutions and the Glassey–Strauss theorem for the 3D Vlasov–Maxwell system (2003)
+- DiPerna, Ronald J., Lions, Pierre-Louis, Global weak solutions of Vlasov–Maxwell systems (1989)
+- Glassey, Robert T., Strauss, Walter A., Singularity formation in a collisionless plasma could
+             occur only at high velocities (1986)
+- Glassey, Robert T., Strauss, Walter A., Absence of Shocks in an Initially Dilute Collisionless Plasma (1987)
+- Glassey, Robert, Schaeffer, Jack, On the ``one and one-half dimensional'' relativistic Vlasov–Maxwell system (1990)
+- Glassey, R., Schaeffer, J., The ``Two and One-Half Dimensional'' Relativistic Vlasov Maxwell System (1997)
+- Glassey, Robert T., Schaeffer, Jack, The Relativistic {Vlasov-Maxwell} System in Two Space Dimensions: Part I (1998)
+- Glassey, Robert T., Schaeffer, Jack, The Relativistic {Vlasov-Maxwell} System in Two Space Dimensions: Part II (1998)
+- Glassey, Robert T., Schaeffer, Jack, On symmetric solutions of the relativistic Vlasov–Poisson system (1985)
+- Klainerman, Sergiu, Staffilani, Gigliola, A new approach to study the Vlasov–Maxwell system (2002)
+- Lazarovici, Dustin, A particle approximation for the relativistic
+           Vlasov–Maxwell dynamics (2016)
+- Luk, Jonathan, Strain, Robert M., A new continuation criterion for the relativistic
+                   Vlasov–Maxwell system (2014)
+- Luk, Jonathan, Strain, Robert M., Strichartz estimates and moment bounds for the relativistic
+           Vlasov–Maxwell system (2016)
+- Nirenberg, Louis, On elliptic partial differential equations (1959)
+- Pallard, Christophe, On the boundedness of the momentum support of solutions to the
+             relativistic Vlasov–Maxwell system (2005)
+- Pallard, Christophe, A refined existence criterion for the relativistic
+           Vlasov–Maxwell system (2015)
+- Pfaffelmoser, K., Global classical solutions of the Vlasov–Poisson system in three
+           dimensions for general initial data (1992)
+- Rein, Gerhard, Global weak solutions to the relativistic Vlasov–Maxwell system revisited (2004)
+- Rein, Gerhard, Generic global solutions of the relativistic {Vlasov-Maxwell} system of plasma physics (1990)
+- Schaeffer, Jack, A small data theorem for collisionless plasma that includes
+             high velocity particles (2004)
+- Sospedra-Alfonso, Reinel, Illner, Reinhard, Classical solvability of the relativistic Vlasov–Maxwell
+           system with bounded spatial density (2010)
+- Wang, Xuecheng, Large Data Global Solution of the 3D RVM System with
+           Cylindrical Symmetry I: Iterative Smoothing Scheme (2026)
+- Wang, Xuecheng, Large Data Global Solution of the 3D RVM System with
+           Cylindrical Symmetry II: Pointwise Estimates (2026)
+- Wang, Xuecheng, Propagation of regularity and long time behavior of the
+           3D massive relativistic transport equation II:
+           Vlasov–Maxwell system (2022)
+- Wei, Dongyi, Yang, Shiwu, On the 3D Relativistic Vlasov–Maxwell System
+           with Large Maxwell Field (2021)
+- Wollman, Stephen, An existence and uniqueness theorem for the Vlasov–Maxwell system (1984)

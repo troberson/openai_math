@@ -1,4 +1,4 @@
-Notes / Summaries / Differential geometry / [Family 347](../../index/differential-geometry/347-counterexamples-to-strong-forms-of-arnolds-fixed-point-conjecture.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Differential geometry](../../index/disciplines/differential-geometry.md) / [Family 347](../../index/differential-geometry/347-counterexamples-to-strong-forms-of-arnolds-fixed-point-conjecture.md)
 
 # 347 — Counterexamples to strong forms of Arnold's fixed-point conjecture
 
@@ -79,7 +79,7 @@ The Arnold fixed-point problem asks how many fixed points a Hamiltonian diffeomo
 
 The proposed bound is that a Hamiltonian whose fixed points are all nondegenerate must have at least that many fixed points [S16:20–24]:
 
-> This counts distinct initial points, with no multiplicity from choices of capping disks. The stable Morse version of the fixed-point bound asks whether \begin{equation}  #\Fix_0(\phi_H^1;H)\geq\SM(M) \end{equation} holds whenever every fixed point is nondegenerate. The following theorem disproves this unrestricted assertion.
+> This counts distinct initial points, with no multiplicity from choices of capping disks. The stable Morse version of the fixed-point bound asks whether \beginequation  #\Fix_0(\phi_H^1;H)\geq\SM(M) \endequation holds whenever every fixed point is nondegenerate. The following theorem disproves this unrestricted assertion.
 
 The base manuscript disproves it in real dimension 1412 [S16:26–32]:
 
@@ -160,7 +160,7 @@ The stable Morse number is a minimum over actual smooth functions, and the base 
 
 The geometric lower bound is $\lambda(W)=b(W)+2\sum_i t_i(W)$, where $b$ is the total integral homology rank and $t_i$ is the minimum number of generators of the torsion in degree $i$ [S16:37–41]:
 
-> For a closed manifold $W$, let $b(W)$ be its total integral homology rank, and let $t_i(W)$ be the minimum number of generators of $\Tor H_i(W;\mathbb Z)$. The quantity \[ \lambda(W)=b(W)+2\sum_i t_i(W) \] is a lower bound for $\SM(W)$. For simply connected manifolds of the dimensions used here, Smale's theorem gives an ordinary Morse function attaining this bound. We prove the geometric lower bound in Section~  and recall a handle proof of attainment in Appendix~ .
+> For a closed manifold $W$, let $b(W)$ be its total integral homology rank, and let $t_i(W)$ be the minimum number of generators of $\Tor H_i(W;\mathbb Z)$. The quantity \[ \lambda(W)=b(W)+2\sum_i t_i(W) \] is a lower bound for $\SM(W)$. For simply connected manifolds of the dimensions used here, Smale's theorem gives an ordinary Morse function attaining this bound. We prove the geometric lower bound in Section   and recall a handle proof of attainment in Appendix  .
 
 The dynamical ingredient is the same in the three October 5 manuscripts: a Kähler surface $Y$ obtained by blowing up the four points $\{0,\infty\}\times\{0,\infty\}$ of $\CP^1\times\CP^1$, whose half-turn diagonal circle action lifts to a Hamiltonian involution with four exceptional projective lines as its fixed set [S16:43]:
 
@@ -176,43 +176,43 @@ The dimension-twenty-two manuscript's generator count combines primes by a maxim
 
 It embeds $m$ copies of two projective surfaces, with torsion $(\Z/2)^2$ and $\Z/3$ in degrees 1 and 2, disjointly into $\CP^9$ and blows them up [S21:128–136]:
 
-> To arrange the needed homology, take two projective surfaces whose torsion groups are respectively $(\mathbf Z/2)^2$ and $\mathbf Z/3$ in degrees $1$ and $2$. The blow-up centers are the first surface and the product of the second with $\mathbf{CP}^1\times\mathbf{CP}^1$, of complex dimensions $2$ and $4$. Section~  embeds $m$ copies of each disjointly into $\mathbf{CP}^9$ and blows them up to obtain a simply connected Kähler manifold $X_m$. The projection argument applies more generally to every finite collection of smooth projective varieties of dimension at most $d$, using one ambient $\mathbf{CP}^{2d+1}$.
+> To arrange the needed homology, take two projective surfaces whose torsion groups are respectively $(\mathbf Z/2)^2$ and $\mathbf Z/3$ in degrees $1$ and $2$. The blow-up centers are the first surface and the product of the second with $\mathbf{CP}^1\times\mathbf{CP}^1$, of complex dimensions $2$ and $4$. Section   embeds $m$ copies of each disjointly into $\mathbf{CP}^9$ and blows them up to obtain a simply connected Kähler manifold $X_m$. The projection argument applies more generally to every finite collection of smooth projective varieties of dimension at most $d$, using one ambient $\mathbf{CP}^{2d+1}$.
 
 The count that separates the two numbers is $\lambda(X_m\times Y)-4\lambda(X_m\times\CP^1)=16m$ [S21:148–157]:
 
-> Products with $\mathbf{CP}^1$ and $Y$ combine the torsion in nearby degrees with different multiplicities. Taking the maximum of the two primary multiplicities in each degree then gives different savings in the number of generators. Section~  computes \[ \lambda(X_m\times Y)-4\lambda(X_m\times\mathbf{CP}^1)=16m \] and completes the proof. This separates the stable Morse count from the Hamiltonian count without any distinction between ordinary and stable Morse theory on the simply connected manifolds in the construction.
+> Products with $\mathbf{CP}^1$ and $Y$ combine the torsion in nearby degrees with different multiplicities. Taking the maximum of the two primary multiplicities in each degree then gives different savings in the number of generators. Section   computes \[ \lambda(X_m\times Y)-4\lambda(X_m\times\mathbfCP^1)=16m \] and completes the proof. This separates the stable Morse count from the Hamiltonian count without any distinction between ordinary and stable Morse theory on the simply connected manifolds in the construction.
 
 The companion manuscript's mechanism is degree-sensitive: the 3-primary multiplicities dominate the 2-primary after convolution with the free ranks of $\CP^1$ (1,1), but not after convolution with those of $Y$ (1,6,1) [S26:121–136]:
 
-> It remains to arrange \[ 4\lambda(C)=\beta_{\mathbb Z}^{\mathrm{cyc}}(M) <\lambda(M). \] The free even homology of $\mathbb {CP}^1$ and $Y$ has ranks $(1,1)$ and $(1,6,1)$, respectively. Multiplication by these spaces convolves the torsion multiplicities of $X$ with these two sequences. We choose $X$ so that the $3$-primary multiplicities dominate the $2$-primary multiplicities after convolution with $(1,1)$, but not after convolution with $(1,6,1)$. Blow-ups along seven disjoint products of elliptic-curve quotients and projective spaces realize the required multiplicities. This degree-sensitive choice is the mechanism that makes the cyclic count sharp while preserving a positive degreewise gap. It is expressed entirely in finite sequences and can be separated from the geometric realization.
+> It remains to arrange \[ 4\lambda(C)=\beta_{\mathbb Z}^{\mathrmcyc}(M) <\lambda(M). \] The free even homology of $\mathbb {CP}^1$ and $Y$ has ranks $(1,1)$ and $(1,6,1)$, respectively. Multiplication by these spaces convolves the torsion multiplicities of $X$ with these two sequences. We choose $X$ so that the $3$-primary multiplicities dominate the $2$-primary multiplicities after convolution with $(1,1)$, but not after convolution with $(1,6,1)$. Blow-ups along seven disjoint products of elliptic-curve quotients and projective spaces realize the required multiplicities. This degree-sensitive choice is the mechanism that makes the cyclic count sharp while preserving a positive degreewise gap. It is expressed entirely in finite sequences and can be separated from the geometric realization.
 
 The nondegenerate manuscript's mechanism is algebraic: generation of a group versus generation of a module over its group ring. Cossey, Gruenberg and Kovács proved that the augmentation-ideal generator number stays constant under direct powers of nontrivial perfect finite groups while the group generator number is unbounded [S11:85–90]:
 
-> The algebraic distinction used here is classical and particularly sharp for direct powers of nontrivial perfect finite groups. Cossey, Gruenberg and Kovács proved that the augmentation-ideal generator number remains constant under these direct powers, while the group generator number is unbounded~\cite[Theorems~1--2]{CGK1974}; see also \cite[Sections~1--2]{GruenbergLinnell}.
+> The algebraic distinction used here is classical and particularly sharp for direct powers of nontrivial perfect finite groups. Cossey, Gruenberg and Kovács proved that the augmentation-ideal generator number remains constant under these direct powers, while the group generator number is unbounded \cite[Theorems 1–2]CGK1974; see also \cite[Sections 1–2]GruenbergLinnell.
 
 The construction places the same small-time return map in sixteen caps of a product of four spheres, and the two counts separate [S11:149–159] [S11:161–169]:
 
-> The closed symplectic manifold is $M=X\times(S^2)^4$. Sixteen disjoint product-cap neighborhoods correspond to the north/south choices on the four sphere factors. We place the same small-time return map of the constructed Morse function in each cap. The main gluing issue is to match the local _endpoint_ with product rotations at both poles while excluding fixed points outside the caps. The resulting smooth one-periodic Hamiltonian satisfies \begin{equation}  #\Fix(\phi_H^1)=16\bigl(\chi(X)+4b\bigr) =\chi(M)+128. \end{equation}
+> The closed symplectic manifold is $M=X\times(S^2)^4$. Sixteen disjoint product-cap neighborhoods correspond to the north/south choices on the four sphere factors. We place the same small-time return map of the constructed Morse function in each cap. The main gluing issue is to match the local _endpoint_ with product rotations at both poles while excluding fixed points outside the caps. The resulting smooth one-periodic Hamiltonian satisfies \beginequation  #\Fix(\phi_H^1)=16\bigl(\chi(X)+4b\bigr) =\chi(M)+128. \endequation
 
 On the other side of the inequality, the fundamental group bounds every Morse function [S11:161–169]:
 
-> On the other hand, the fundamental group forces every Morse function on $M$ to have at least $d(G)$ critical points in each of indices one and eleven. Euler's identity gives \begin{equation}  \Morse(M)\ge\chi(M)+4d(G). \end{equation} Since $d(A_5^k)$ is unbounded while $b$ is fixed, these two estimates give the strict inequality and the arbitrary deficits. Figure~  separates the two roles of the fundamental group.
+> On the other hand, the fundamental group forces every Morse function on $M$ to have at least $d(G)$ critical points in each of indices one and eleven. Euler's identity gives \beginequation  \Morse(M)\ge\chi(M)+4d(G). \endequation Since $d(A_5^k)$ is unbounded while $b$ is fixed, these two estimates give the strict inequality and the arbitrary deficits. Figure   separates the two roles of the fundamental group.
 
 The manuscript names the claim it contradicts: Ma's preprint asserts that the minimum number of fixed points of a nondegenerate Hamiltonian diffeomorphism always equals the ordinary Morse number [S11:118–121]:
 
-> Ma's preprint asserts that the minimum number of fixed points of a nondegenerate Hamiltonian diffeomorphism always equals the ordinary Morse number~\cite[Theorem~1.5]{Ma2013}. Theorem~  contradicts that unrestricted assertion.
+> Ma's preprint asserts that the minimum number of fixed points of a nondegenerate Hamiltonian diffeomorphism always equals the ordinary Morse number \cite[Theorem 1.5]Ma2013. Theorem   contradicts that unrestricted assertion.
 
 The positive results the manuscripts cite are conditional. Dimitroglou Rizell and Golovko prove the stable Morse number as a lower bound for nondegenerate Hamiltonian fixed points on closed symplectic manifolds where both the symplectic area class and the first Chern class vanish on $\pi_2(M)$ [S11:100–103]:
 
-> For closed symplectic manifolds on which both $[\omega]$ and $c_1(TM)$ vanish on $\pi_2(M)$, Dimitroglou Rizell and Golovko prove the stable Morse number as a lower bound for nondegenerate Hamiltonian fixed points~\cite[Corollary~1.3]{DRG2017}.
+> For closed symplectic manifolds on which both $[\omega]$ and $c_1(TM)$ vanish on $\pi_2(M)$, Dimitroglou Rizell and Golovko prove the stable Morse number as a lower bound for nondegenerate Hamiltonian fixed points \cite[Corollary 1.3]DRG2017.
 
 The dimension-22 manuscript names the conjecture, the positive results, and why its examples escape the hypothesis [S21:75–84]:
 
-> The stable Morse formulation is stated explicitly in \cite[Conjecture~1.2]{Golovko2020}. Damian showed that ordinary and stable Morse numbers need not agree~ . Positive results for the stable bound include the theorem of Dimitroglou Rizell and Golovko for generic Hamiltonians when both the symplectic area class and the first Chern class vanish on $\pi_2(M)$~\cite[Corollary~1.4]{DRG2017}; Pöder Balkest\aa hl obtained an independent proof using the simple homotopy type of the Hamiltonian Floer complex~\cite[Corollary~1.2]{PoderBalkestahl2021}. These hypotheses do not hold for the projective blow-ups used here.
+> The stable Morse formulation is stated explicitly in \cite[Conjecture 1.2]Golovko2020. Damian showed that ordinary and stable Morse numbers need not agree  . Positive results for the stable bound include the theorem of Dimitroglou Rizell and Golovko for generic Hamiltonians when both the symplectic area class and the first Chern class vanish on $\pi_2(M)$ \cite[Corollary 1.4]DRG2017; Pöder Balkest\aa hl obtained an independent proof using the simple homotopy type of the Hamiltonian Floer complex \cite[Corollary 1.2]PoderBalkestahl2021. These hypotheses do not hold for the projective blow-ups used here.
 
 The dimension-22 manuscript contrasts the two bounds directly [S21:68–73]:
 
-> More recent work gives lower bounds over arbitrary fields and over the integers~ . The integral Floer bound uses homology with a cyclic grading determined by the first Chern class. The stable Morse number retains the integer grading, and these yield different bounds for the examples below; the comparison is computed in Remark~ .
+> More recent work gives lower bounds over arbitrary fields and over the integers  . The integral Floer bound uses homology with a cyclic grading determined by the first Chern class. The stable Morse number retains the integer grading, and these yield different bounds for the examples below; the comparison is computed in Remark  .
 
 The degenerate manuscript's argument is a finite-order transfer that turns a critical-point count on a fixed submanifold into a fixed-point count [S6:116–136]:
 
@@ -292,67 +292,115 @@ What has not been checked: no Lean, lake, or comparator run was performed, and t
 
 ## Bibliography
 
-**20 entries** from `references.tex`:
-- [Arnold1986] V.~I.~Arnol'd, \emph{First steps in symplectic topology}, Russian Mathematical Surveys \textbf{41} (1986), no.~6, 1--21.…
-- [BHS2018] L.~Buhovsky, V.~Humili\`ere, and S.~Seyfaddini, \emph{A $C^0$ counterexample to the Arnold conjecture}, Inventiones Math…
-- [ConleyZehnder1983] C.~C.~Conley and E.~Zehnder, \emph{The Birkhoff--Lewis fixed point theorem and a conjecture of V.~I.~Arnold}, Inventione…
-- [Floer1989] A.~Floer, \emph{Symplectic fixed points and holomorphic spheres}, Communications in Mathematical Physics \textbf{120} (1…
-- [Fortune1985] B.~Fortune, \emph{A symplectic fixed point theorem for $\CP^n$}, Inventiones Mathematicae \textbf{81} (1985), no.~1, 29-…
-- [FukayaOno1999] K.~Fukaya and K.~Ono, \emph{Arnold conjecture and Gromov--Witten invariant}, Topology \textbf{38} (1999), no.~5, 933--10…
-- [Golovko2020] R.~Golovko, \emph{On variants of Arnold conjecture}, Archivum Mathematicum \textbf{56} (2020), no.~5, 277--286. \href{ht…
-- [Gong2025] W.~Gong, \emph{Degenerate symplectic fixed points and Gromov--Witten invariants}, \href{https://arxiv.org/abs/2507.04191…
-- [Hofer1988] H.~Hofer, \emph{Lusternik--Schnirelman-theory for Lagrangian intersections}, Annales de l'Institut Henri Poincar\'e C, A…
-- [Jiao2026] H.~Jiao, \emph{A smooth Hamiltonian diffeomorphism with two fixed points on $S^2\times S^2$}, \href{https://arxiv.org/ab…
-- … and 10 more
-
-**26 entries** from `refs.bib`:
-- Gompf, Robert E.. *Some new symplectic 4-manifolds*. (1992) [Gompf1992]
-- Gompf, Robert E.. *A new construction of symplectic manifolds*. (1995) [Gompf1995]
-- Damian, Mihai. *On the stable {Morse} number of a closed manifold*. (2002) [Damian2002]
-- Milnor, John. *Lectures on the {$h$}-Cobordism Theorem*. (1965) [Milnor1965]
-- Ranicki, Andrew. *Algebraic and Geometric Surgery*. (2002) [Ranicki2002]
-- Laudenbach, Fran\c{c}ois. *A proof of {Morse}'s theorem about the cancellation of critical points*. (2013) [Laudenbach2013]
-- Morgan, John. *Lecture {IV}: {$K_0$}, {$K_1$}, {Whitehead} torsion, and the {$s$}-cobordism theorem*. (2020) [Morgan2020]
-- Bass, Hyman. *{$K$}-theory and stable algebra*. (1964) [Bass]
-- Gruenberg, Karl W., Linnell, Peter A.. *Generation gaps and abelianized defects of free products*. (2008) [GruenbergLinnell]
-- Cossey, John, Gruenberg, Karl W., Kov{\'a}cs, L. G.. *The presentation rank of a direct product of finite groups*. (1974) [CGK1974]
-- … and 16 more
-
-**24 entries** from `references.tex`:
-- [AbouzaidBlumberg2021] M.~Abouzaid and A.~J. Blumberg, \emph{Arnold conjecture and Morava $K$-theory}, preprint (2021), \href{https://arxiv.org…
-- [Arnold1986] V.~I. Arnol'd, \emph{First steps in symplectic topology}, Russian Math. Surveys \textbf{41} (1986), no.~6, 1--21. \href{…
-- [BaiXu2022] S.~Bai and G.~Xu, \emph{Arnold conjecture over integers}, preprint (2022), \href{https://arxiv.org/abs/2209.08599}{arXiv…
-- [BaiXu2026] S.~Bai and G.~Xu, \emph{Integral Hamiltonian Floer theory: Foundations}, preprint (2026), \href{https://arxiv.org/abs/26…
-- [Blomme2025] T.~Blomme, \emph{Gromov--Witten invariants of bielliptic surfaces}, J. London Math. Soc. (2) \textbf{111} (2025), no.~2,…
-- [ConleyZehnder1983] C.~C. Conley and E.~Zehnder, \emph{The Birkhoff--Lewis fixed point theorem and a conjecture of V.~I. Arnold}, Invent. Ma…
-- [Damian2002] M.~Damian, \emph{On the stable Morse number of a closed manifold}, Bull. London Math. Soc. \textbf{34} (2002), no.~4, 42…
-- [DRG2017] G.~Dimitroglou Rizell and R.~Golovko, \emph{The number of Hamiltonian fixed points on symplectically aspherical manifold…
-- [DuanLi2009] H.~Duan and B.~Li, \emph{Topology of blow-ups and enumerative geometry}, preprint (2009), revised 2016, \href{https://ar…
-- [Floer1989] A.~Floer, \emph{Symplectic fixed points and holomorphic spheres}, Comm. Math. Phys. \textbf{120} (1989), no.~4, 575--611…
-- … and 14 more
-
-**24 entries** from `references.tex`:
-- [AbouzaidBlumberg2021] M.~Abouzaid and A.~J. Blumberg, \emph{Arnold conjecture and Morava $K$-theory}, preprint (2021), \href{https://arxiv.org…
-- [Arnold1986] V.~I. Arnol'd, \emph{First steps in symplectic topology}, Russian Math. Surveys \textbf{41} (1986), no.~6, 1--21. \href{…
-- [BaiXu2022] S.~Bai and G.~Xu, \emph{Arnold conjecture over integers}, preprint (2022), \href{https://arxiv.org/abs/2209.08599}{arXiv…
-- [BaiXu2026] S.~Bai and G.~Xu, \emph{Integral Hamiltonian Floer theory: Foundations}, preprint (2026), \href{https://arxiv.org/abs/26…
-- [Blomme2025] T.~Blomme, \emph{Gromov--Witten invariants of bielliptic surfaces}, J. London Math. Soc. (2) \textbf{111} (2025), no.~2,…
-- [ConleyZehnder1983] C.~C. Conley and E.~Zehnder, \emph{The Birkhoff--Lewis fixed point theorem and a conjecture of V.~I. Arnold}, Invent. Ma…
-- [Damian2002] M.~Damian, \emph{On the stable Morse number of a closed manifold}, Bull. London Math. Soc. \textbf{34} (2002), no.~4, 42…
-- [DRG2017] G.~Dimitroglou Rizell and R.~Golovko, \emph{The number of Hamiltonian fixed points on symplectically aspherical manifold…
-- [DuanLi2009] H.~Duan and B.~Li, \emph{Topology of blow-ups and enumerative geometry}, preprint (2009), revised 2016, \href{https://ar…
-- [Floer1989] A.~Floer, \emph{Symplectic fixed points and holomorphic spheres}, Comm. Math. Phys. \textbf{120} (1989), no.~4, 575--611…
-- … and 14 more
-
-**18 entries** from `references.bib`:
-- Arnol'd, Vladimir I.. *First steps in symplectic topology*. (1986) [Arnold1986]
-- Conley, Charles C., Zehnder, Eduard. *The {Birkhoff--Lewis} fixed point theorem and a conjecture of {V. I. Arnold}*. (1983) [ConleyZehnder1983]
-- Floer, Andreas. *Symplectic fixed points and holomorphic spheres*. (1989) [Floer1989]
-- Damian, Mihai. *On the stable {Morse} number of a closed manifold*. (2002) [Damian2002]
-- {Dimitroglou Rizell}, Georgios, Golovko, Roman. *The number of {Hamiltonian} fixed points on symplectically aspherical manifolds*. (2017) [DRG2017]
-- Golovko, Roman. *On variants of {Arnold} conjecture*. (2020) [Golovko2020]
-- Abouzaid, Mohammed, Blumberg, Andrew J.. *{Arnold} conjecture and {Morava} {$K$}-theory*. (2021) [AbouzaidBlumberg2021]
-- Bai, Shaoyun, Xu, Guangbo. *{Arnold} conjecture over integers*. (2022) [BaiXu2022]
-- Bai, Shaoyun, Xu, Guangbo. *Integral {Hamiltonian Floer} theory: Foundations*. (2026) [BaiXu2026]
-- {P{\"o}der Balkest{\aa}hl}, Sebastian. *Simple homotopy type of the {Hamiltonian Floer} complex*. (2021) [PoderBalkestahl2021]
-- … and 8 more
+- Abouzaid, Mohammed, Blumberg, Andrew J., Arnold conjecture and Morava $K$-theory (2021)
+- Bai, Shaoyun, Xu, Guangbo, Arnold conjecture over integers (2022)
+- Bai, Shaoyun, Xu, Guangbo, Integral Hamiltonian Floer theory: Foundations (2026)
+- Bai, Shaoyun, Xu, Guangbo, Arnold conjecture over integers (2022)
+- Bai, Shaoyun, Xu, Guangbo, Integral Hamiltonian Floer theory: Foundations (2026)
+- Barraud, Jean-Fran{\c c}ois, A Floer fundamental group (2018)
+- Bass, Hyman, $K$-theory and stable algebra (1964)
+- T. Blomme, _Gromov–Witten invariants of bielliptic surfaces_, J. London Math. Soc. (2) **111** (2025), no. 2, e70081. doi:10.1112/jlms.70081.
+- T. Blomme, _Gromov–Witten invariants of bielliptic surfaces_, J. London Math. Soc. (2) **111** (2025), no. 2, e70081. doi:10.1112/jlms.70081.
+- Blomme, Thomas, Gromov–Witten invariants of bielliptic surfaces (2025)
+- M. Abouzaid and A. J. Blumberg, _Arnold conjecture and Morava $K$-theory_, preprint (2021), arXiv:2103.01507.
+- M. Abouzaid and A. J. Blumberg, _Arnold conjecture and Morava $K$-theory_, preprint (2021), arXiv:2103.01507.
+- L. Buhovsky, V. Humili\`ere, and S. Seyfaddini, _A $C^0$ counterexample to the Arnold conjecture_, Inventiones Mathematicae **213** (2018), no. 2, 759–809. doi:10.1007/s00222-018-0797-x.
+- Cerf, Jean, Travaux de Smale sur la structure des vari{é}t{é}s (1962)
+- Conley, Charles C., Zehnder, Eduard, The Birkhoff–Lewis fixed point theorem and a conjecture of {V. I. Arnold} (1983)
+- Conley, Charles C., Zehnder, Eduard, The Birkhoff–Lewis fixed point theorem and a conjecture of {V. I. Arnold} (1983)
+- Cossey, John, Gruenberg, Karl W., Kov{á}cs, L. G., The presentation rank of a direct product of finite groups (1974)
+- V. I. Arnol'd, _First steps in symplectic topology_, Russian Mathematical Surveys **41** (1986), no. 6, 1–21. doi:10.1070/RM1986v041n06ABEH004221.
+- Arnol'd, Vladimir I., First steps in symplectic topology (1986)
+- V. I. Arnol'd, _First steps in symplectic topology_, Russian Math. Surveys **41** (1986), no. 6, 1–21. doi:10.1070/RM1986v041n06ABEH004221.
+- V. I. Arnol'd, _First steps in symplectic topology_, Russian Math. Surveys **41** (1986), no. 6, 1–21. doi:10.1070/RM1986v041n06ABEH004221.
+- Arnol'd, Vladimir I., First steps in symplectic topology (1986)
+- Damian, Mihai, On the stable Morse number of a closed manifold (2002)
+- M. Damian, _On the stable Morse number of a closed manifold_, Bull. London Math. Soc. **34** (2002), no. 4, 420–430. doi:10.1112/S0024609301008955.
+- M. Damian, _On the stable Morse number of a closed manifold_, Bull. London Math. Soc. **34** (2002), no. 4, 420–430. doi:10.1112/S0024609301008955.
+- Damian, Mihai, On the stable Morse number of a closed manifold (2002)
+- Duan, Haibao, Li, Banghe, Topology of blow-ups and enumerative geometry (2009)
+- Eliashberg, Yakov, Gromov, Mikhail, Lagrangian intersection theory: finite-dimensional approach (1998)
+- A. Floer, _Symplectic fixed points and holomorphic spheres_, Communications in Mathematical Physics **120** (1989), no. 4, 575–611. doi:10.1007/BF01260388.
+- Floer, Andreas, Symplectic fixed points and holomorphic spheres (1989)
+- A. Floer, _Symplectic fixed points and holomorphic spheres_, Comm. Math. Phys. **120** (1989), no. 4, 575–611. doi:10.1007/BF01260388.
+- A. Floer, _Symplectic fixed points and holomorphic spheres_, Comm. Math. Phys. **120** (1989), no. 4, 575–611. doi:10.1007/BF01260388.
+- Floer, Andreas, Symplectic fixed points and holomorphic spheres (1989)
+- B. Fortune, _A symplectic fixed point theorem for $\CP^n$_, Inventiones Mathematicae **81** (1985), no. 1, 29–46. doi:10.1007/BF01388770.
+- Fukaya, Kenji, Ono, Kaoru, Arnold conjecture and Gromov–Witten invariant (1999)
+- R. Golovko, _On variants of Arnold conjecture_, Archivum Mathematicum **56** (2020), no. 5, 277–286. doi:10.5817/AM2020-5-277.
+- Golovko, Roman, On variants of Arnold conjecture (2020)
+- G. Dimitroglou Rizell and R. Golovko, _The number of Hamiltonian fixed points on symplectically aspherical manifolds_, in _Proceedings of the Gökova Geometry-Topology Conference 2016_, International Press, 2017, pp. 138–150. arXiv:1609.04776v2.
+- R. Golovko, _On variants of Arnold conjecture_, Arch. Math. (Brno) **56** (2020), no. 5, 277–286. doi:10.5817/AM2020-5-277.
+- G. Dimitroglou Rizell and R. Golovko, _The number of Hamiltonian fixed points on symplectically aspherical manifolds_, in _Proceedings of the Gökova Geometry-Topology Conference 2016_, Gökova Geometry-Topology Conference (GGT), Gökova, 2017, pp. 138–150. arXiv:1609.04776v2.
+- R. Golovko, _On variants of Arnold conjecture_, Arch. Math. (Brno) **56** (2020), no. 5, 277–286. doi:10.5817/AM2020-5-277.
+- Golovko, Roman, On variants of Arnold conjecture (2020)
+- Gompf, Robert E., Some new symplectic 4-manifolds (1992)
+- Gompf, Robert E., A new construction of symplectic manifolds (1995)
+- W. Gong, _Degenerate symplectic fixed points and Gromov–Witten invariants_, arXiv:2507.04191v5, December 21, 2025.
+- Gruenberg, Karl W., Linnell, Peter A., Generation gaps and abelianized defects of free products (2008)
+- R. Hartshorne, _Algebraic Geometry_, Graduate Texts in Mathematics, vol. 52, Springer-Verlag, New York–Heidelberg, 1977. doi:10.1007/978-1-4757-3849-0.
+- S. Pöder Balkest\aa hl, _Simple homotopy type of the Hamiltonian Floer complex_, preprint (2021), arXiv:2110.10592.
+- S. Pöder Balkest\aa hl, _Simple homotopy type of the Hamiltonian Floer complex_, preprint (2021), arXiv:2110.10592.
+- {P{ö}der Balkest{\aa}hl}, Sebastian, Simple homotopy type of the Hamiltonian Floer complex (2021)
+- H. Hofer, _Lusternik–Schnirelman-theory for Lagrangian intersections_, Annales de l'Institut Henri Poincaré C, Analyse non linéaire **5** (1988), no. 5, 465–499. doi:10.1016/S0294-1449(16)30339-0.
+- H. Jiao, _A smooth Hamiltonian diffeomorphism with two fixed points on $S^2\times S^2$_, arXiv:2609.33626v1, September 27, 2026.
+- Laudenbach, François, A proof of Morse's theorem about the cancellation of critical points (2013)
+- H. Duan and B. Li, _Topology of blow-ups and enumerative geometry_, preprint (2009), revised 2016, arXiv:0906.4152v7.
+- H. Duan and B. Li, _Topology of blow-ups and enumerative geometry_, preprint (2009), revised 2016, arXiv:0906.4152v7.
+- Liu, Gang, Tian, Gang, Floer homology and Arnold conjecture (1998)
+- R. Ma, _Proofs on Arnold conjectures_, arXiv:0808.0613v7, July 5, 2013.
+- Ma, Renyi, Proofs on Arnold conjectures (2013)
+- A.-L. Mare, _Topology of isotropy orbits_, doctoral dissertation, Universität Augsburg, 1997. Author-hosted text.
+- Milnor, John, Lectures on the $h$-Cobordism Theorem (1965)
+- J. Milnor, _Morse Theory_, Annals of Mathematics Studies, vol. 51, Princeton University Press, Princeton, NJ, 1963.
+- J. Milnor, _Lectures on the $h$-Cobordism Theorem_, notes by L. Siebenmann and J. Sondow, Princeton University Press, Princeton, NJ, 1965.
+- J. Milnor, _Morse Theory_, Annals of Mathematics Studies, vol. 51, Princeton University Press, Princeton, NJ, 1963.
+- J. Milnor, _Lectures on the $h$-Cobordism Theorem_, notes by L. Siebenmann and J. Sondow, Princeton University Press, Princeton, NJ, 1965.
+- Milnor, John, Morse Theory (1963)
+- Milnor, John, Lectures on the $h$-Cobordism Theorem (1965)
+- Morgan, John, Lecture IV: $K_0$, $K_1$, Whitehead torsion, and the $s$-cobordism theorem (2020)
+- K. Fukaya and K. Ono, _Arnold conjecture and Gromov–Witten invariant_, Topology **38** (1999), no. 5, 933–1048. doi:10.1016/S0040-9383(98)00042-1.
+- Ono, Kaoru, Pajitnov, Andrei, On the fixed points of a Hamiltonian diffeomorphism in presence of fundamental group (2016)
+- K. Fukaya and K. Ono, _Arnold conjecture and Gromov–Witten invariant_, Topology **38** (1999), no. 5, 933–1048. doi:10.1016/S0040-9383(98)00042-1.
+- K. Ono, _On the Arnold conjecture for weakly monotone symplectic manifolds_, Invent. Math. **119** (1995), 519–537. doi:10.1007/BF01245191.
+- K. Fukaya and K. Ono, _Arnold conjecture and Gromov–Witten invariant_, Topology **38** (1999), no. 5, 933–1048. doi:10.1016/S0040-9383(98)00042-1.
+- K. Ono, _On the Arnold conjecture for weakly monotone symplectic manifolds_, Invent. Math. **119** (1995), 519–537. doi:10.1007/BF01245191.
+- OpenAI, _A nondegenerate counterexample to the Morse-number Arnold bound_, OpenAI Math Release preprint OAI:A-nondegenerate-counterexample-to-the-Morse-number-Arnold-bound-September-23-2026, 2026.
+- OpenAI, _Hamiltonian Fixed Points Below the Stable Morse Number_, OpenAI Math Release preprint OAI:Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026, 2026.
+- OpenAI, Hamiltonian Fixed Points Below the Stable Morse Number (2026)
+- Y. B. Rudyak and J. Oprea, _On the Lusternik–Schnirelmann category of symplectic manifolds and the Arnold conjecture_, Mathematische Zeitschrift **230** (1999), no. 4, 673–678. doi:10.1007/PL00004709.
+- R. S. Palais, _The principle of symmetric criticality_, Communications in Mathematical Physics **69** (1979), no. 1, 19–30. doi:10.1007/BF01941322.
+- Ranicki, Andrew, Algebraic and Geometric Surgery (2002)
+- Dimitroglou Rizell, Georgios, Golovko, Roman, The number of Hamiltonian fixed points on symplectically aspherical manifolds (2017)
+- Dimitroglou Rizell, Georgios, Golovko, Roman, The stable Morse number as a lower bound for the number of Reeb chords (2018)
+- Dimitroglou Rizell, Georgios, Golovko, Roman, The number of Hamiltonian fixed points on symplectically aspherical manifolds (2017)
+- Y. Ruan, _Virtual neighborhoods and pseudo-holomorphic curves_, Turkish Journal of Mathematics **23** (1999), no. 1, 161–232. Publisher record; arXiv:alg-geom/9611021v2.
+- Ruan, Yongbin, Virtual neighborhoods and pseudo-holomorphic curves (1999)
+- Y. Ruan, _Virtual neighborhoods and pseudo-holomorphic curves_, Turkish J. Math. **23** (1999), no. 1, 161–232.
+- Y. Ruan, _Virtual neighborhoods and pseudo-holomorphic curves_, Turkish J. Math. **23** (1999), no. 1, 161–232.
+- H. Hofer and D. A. Salamon, _Floer homology and Novikov rings_, in _The Floer Memorial Volume_, H. Hofer, C. H. Taubes, A. Weinstein, and E. Zehnder (eds.), Progress in Mathematics, vol. 133, Birkhäuser, Basel, 1995, pp. 483–524. doi:10.1007/978-3-0348-9217-9\_20.
+- D. McDuff and D. Salamon, _Introduction to Symplectic Topology_, third edition, Oxford Graduate Texts in Mathematics, vol. 27, Oxford University Press, Oxford, 2017.
+- H. Hofer and D. A. Salamon, _Floer homology and Novikov rings_, in _The Floer Memorial Volume_, H. Hofer, C. H. Taubes, A. Weinstein, and E. Zehnder (eds.), Progress in Mathematics, vol. 133, Birkhäuser, Basel, 1995, pp. 483–524. doi:10.1007/978-3-0348-9217-9\_20.
+- L. Lusternik and L. Schnirelmann, _Méthodes topologiques dans les probl\`emes variationnels. I. Espaces \`a un nombre fini de dimensions_, Actualités scientifiques et industrielles 188, Hermann, Paris, 1934.
+- F. Serrano, _The Picard group of a quasi-bundle_, Manuscripta Math. **73** (1991), no. 1, 63–82.
+- F. Serrano, _The Picard group of a quasi-bundle_, Manuscripta Math. **73** (1991), no. 1, 63–82.
+- S. Smale, _A survey of some recent developments in differential topology_, Bull. Amer. Math. Soc. **69** (1963), 131–145. doi:10.1090/S0002-9904-1963-10901-5.
+- S. Smale, _A survey of some recent developments in differential topology_, Bull. Amer. Math. Soc. **69** (1963), 131–145. doi:10.1090/S0002-9904-1963-10901-5.
+- Smale, Stephen, A survey of some recent developments in differential topology (1963)
+- F. Takens, _The minimal number of critical points of a function on a compact manifold and the Lusternik–Schnirelman category_, Inventiones Mathematicae **6** (1968), no. 3, 197–244. doi:10.1007/BF01404825.
+- G. Liu and G. Tian, _Floer homology and Arnold conjecture_, Journal of Differential Geometry **49** (1998), no. 1, 1–74. doi:10.4310/jdg/1214460936.
+- G. Liu and G. Tian, _Floer homology and Arnold conjecture_, J. Differential Geom. **49** (1998), no. 1, 1–74. doi:10.4310/jdg/1214460936.
+- G. Liu and G. Tian, _Floer homology and Arnold conjecture_, J. Differential Geom. **49** (1998), no. 1, 1–74. doi:10.4310/jdg/1214460936.
+- J. Weber, _Conley pairs in geometry—Lusternik–Schnirelmann theory and more_, Expositiones Mathematicae **37** (2019), no. 1, 25–47. doi:10.1016/j.exmath.2017.10.003.
+- S. Bai and G. Xu, _Arnold conjecture over integers_, preprint (2022), arXiv:2209.08599.
+- S. Bai and G. Xu, _Integral Hamiltonian Floer theory: Foundations_, preprint (2026), arXiv:2606.15847.
+- S. Bai and G. Xu, _Arnold conjecture over integers_, preprint (2022), arXiv:2209.08599.
+- S. Bai and G. Xu, _Integral Hamiltonian Floer theory: Foundations_, preprint (2026), arXiv:2606.15847.
+- J. A. Yorke, _Periods of periodic solutions and the Lipschitz constant_, Proceedings of the American Mathematical Society **22** (1969), no. 2, 509–512. doi:10.1090/S0002-9939-1969-0245916-7.
+- Yorke, James A., Periods of periodic solutions and the Lipschitz constant (1969)
+- J. A. Yorke, _Periods of periodic solutions and the Lipschitz constant_, Proc. Amer. Math. Soc. **22** (1969), no. 2, 509–512. doi:10.1090/S0002-9939-1969-0245916-7.
+- J. A. Yorke, _Periods of periodic solutions and the Lipschitz constant_, Proc. Amer. Math. Soc. **22** (1969), no. 2, 509–512. doi:10.1090/S0002-9939-1969-0245916-7.
+- Yorke, James A., Periods of periodic solutions and the Lipschitz constant (1969)
+- C. C. Conley and E. Zehnder, _The Birkhoff–Lewis fixed point theorem and a conjecture of V. I. Arnold_, Inventiones Mathematicae **73** (1983), 33–49. doi:10.1007/BF01393824.
+- C. C. Conley and E. Zehnder, _The Birkhoff–Lewis fixed point theorem and a conjecture of V. I. Arnold_, Invent. Math. **73** (1983), no. 1, 33–49. doi:10.1007/BF01393824.
+- C. C. Conley and E. Zehnder, _The Birkhoff–Lewis fixed point theorem and a conjecture of V. I. Arnold_, Invent. Math. **73** (1983), no. 1, 33–49. doi:10.1007/BF01393824.

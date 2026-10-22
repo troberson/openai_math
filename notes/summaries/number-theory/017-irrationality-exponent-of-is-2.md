@@ -1,4 +1,4 @@
-Notes / Summaries / Number theory / [Family 017](../../index/number-theory/017-irrationality-exponent-of-is-2.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Number theory](../../index/disciplines/number-theory.md) / [Family 017](../../index/number-theory/017-irrationality-exponent-of-is-2.md)
 
 # 017 — The irrationality exponent of $\pi$ is $2$
 
@@ -223,15 +223,28 @@ results on logarithms at algebraic arguments are in the same list [S10:70–79].
 
 ## Bibliography
 
-**25 entries** from `references.bib`:
-- Salikhov, V. Kh.. *On the irrationality measure of {$\pi$}*. (2008) [salikhov]
-- Zeilberger, Doron, Zudilin, Wadim. *The irrationality measure of {$\pi$} is at most {7.103205334137\ldots}*. (2020) [zeilbergerzudilin]
-- Alekseyev, Max A.. *On convergence of the {Flint Hills} series*. (2011) [alekseyev]
-- Meiburg, Alex. *Bounds on irrationality measures and the {Flint-Hills} series*. (2022) [meiburg]
-- Lazarsfeld, Robert. *Positivity in Algebraic Geometry {I}: Classical Setting: Line Bundles and Linear Series*. (2004) [lazarsfeld]
-- {The Stacks Project Authors}. *The {Stacks Project}*. (2026) [stacks]
-- Mondal, Pinaki. *How many zeroes? Counting the number of solutions of systems of polynomials via geometry at infinity ({Draft III})*. (2021) [mondal2021]
-- Waldschmidt, Michel. *Open {Diophantine} problems*. (2004) [waldschmidt]
-- Mahler, Kurt. *On the approximation of {$\pi$}*. (1953) [mahler1953]
-- Mignotte, Maurice. *Approximations rationnelles de {$\pi$} et quelques autres nombres*. (1974) [mignotte1974]
-- … and 15 more
+- Alekseyev, Max A., On convergence of the Flint Hills series (2011)
+- The Stacks Project Authors, The Stacks Project (2026)
+- Bai, Yufei, The Irrationality Measure of $\pi$ Is at Most $7.101862832357$ (2026)
+- Carella, N. A., Irrationality Measure of Pi (2022)
+- Chudnovsky, G. V., {Hermite–Padé} approximations to exponential functions and elementary estimates of the measure of irrationality of $\pi$ (1982)
+- Dan, Yuya, Critical Convergence and Hausdorff Measures for Generalized Flint Hills Series (2026)
+- Demailly, Jean-Pierre, Singular hermitian metrics on positive line bundles (1992)
+- Farhi, Bakir, Un lemme de Roth sur les groupes alg{é}briques commutatifs (2006)
+- Hata, Masayoshi, Rational approximations to $\pi$ and some other numbers (1993)
+- Laurent, Michel, Sur quelques r{é}sultats r{é}cents de transcendance (1991)
+- Laurent, Michel, Interpolation determinants of exponential polynomials (2000)
+- Lazarsfeld, Robert, Positivity in Algebraic Geometry I: Classical Setting: Line Bundles and Linear Series (2004)
+- Mahler, Kurt, On the approximation of $\pi$ (1953)
+- Mantzakouras, Nikos, L{ó}pez Zapata, Carlos, Diophantine {FLINT-HILLS} Series (2025)
+- Meiburg, Alex, Bounds on irrationality measures and the {Flint-Hills} series (2022)
+- Mignotte, Maurice, Approximations rationnelles de $\pi$ et quelques autres nombres (1974)
+- Mondal, Pinaki, How many zeroes? Counting the number of solutions of systems of polynomials via geometry at infinity (Draft III) (2021)
+- Philippon, Patrice, Lemmes de z{é}ros dans les groupes alg{é}briques commutatifs (1986)
+- Roth, K. F., Rational approximations to algebraic numbers (1960)
+- Salikhov, V. Kh., On the irrationality measure of $\pi$ (2008)
+- Salikhov, V. Kh., On the measure of irrationality of the number $\pi$ (2010)
+- Waldschmidt, Michel, Open Diophantine problems (2004)
+- L{ó}pez Zapata, Carlos H., A Continued-Fraction Criterion for the Flint Hills Series, and the Integer Sequences It Generates (2026)
+- Zeilberger, Doron, Zudilin, Wadim, The irrationality measure of $\pi$ is at most {7.103205334137\ldots} (2020)
+- Zudilin, Wadim, An essay on irrationality measures of $\pi$ and other logarithms (2004)

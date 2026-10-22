@@ -1,4 +1,4 @@
-Notes / Summaries / Algebra / [Family 197](../../index/algebra/197-nonsofic-groups-and-group-ring-counterexamples.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Algebra](../../index/disciplines/algebra.md) / [Family 197](../../index/algebra/197-nonsofic-groups-and-group-ring-counterexamples.md)
 
 # 197 — Nonsofic groups and group-ring counterexamples
 
@@ -28,13 +28,13 @@ The characteristic-two manuscript is the one with the full apparatus, and it sep
 
 The prescription section is what makes the counterexample *specified* rather than merely existent, and the manuscript is explicit about the strength of that claim [S11:30]:
 
-> Start with $h=2$. For a fixed $h$, step~\textup{(4)} tests only finite sets and a finite graph. Stop at the first successful pair; if every pair fails, increase $h$ by one and repeat. This selects the least successful $h$ and then the first successful pair in its prescribed order. Theorem~  guarantees success for every sufficiently large $h$, uniformly in the enumeration of $Q$, so the outer search terminates. The search enumerates the required incidence data directly, not the auxiliary random choices used to prove their existence. The auxiliary extension field in that proof is only a model for a $Q$-vector space; it is not required to embed in $K$.
+> Start with $h=2$. For a fixed $h$, step \textup{(4)} tests only finite sets and a finite graph. Stop at the first successful pair; if every pair fails, increase $h$ by one and repeat. This selects the least successful $h$ and then the first successful pair in its prescribed order. Theorem   guarantees success for every sufficiently large $h$, uniformly in the enumeration of $Q$, so the outer search terminates. The search enumerates the required incidence data directly, not the auxiliary random choices used to prove their existence. The auxiliary extension field in that proof is only a model for a $Q$-vector space; it is not required to embed in $K$.
 
-What the characteristic-two manuscript does *not* claim matters as much. It uses torsion, and it says so: “No assertion about group algebras of torsion-free groups is needed” [S11:64]. Its own summary of the epistemic status is that “its termination is proved, and the two product assertions have algebraic certificates independent of any decision procedure for the group word problem” [S9:18]. Its nonsoficity conclusion is derived, not constructed: “Therefore this same $G$ is nonsofic. In particular, the construction supplies a finitely presented counterexample to the assertion that every group is sofic” [S9:40]. And its Gottschalk counterexample needs nothing beyond the scalar pair: “It gives a negative resolution of Gottschalk's conjecture for the group in Theorem~ ; it requires no further existence theorem or approximation assumption” [S9:51], with the corollary that “$T_{b_{\mathrm{out}}}:K^G\to K^G$ is injective and not surjective” and “In particular, $G$ is not surjunctive” [S12:138–140]. The manuscript also notes that the dynamical conclusion is characteristic-independent: “Characteristic two is used to construct the algebraic witnesses, not in Proposition~” [S12:151–154].
+What the characteristic-two manuscript does *not* claim matters as much. It uses torsion, and it says so: “No assertion about group algebras of torsion-free groups is needed” [S11:64]. Its own summary of the epistemic status is that “its termination is proved, and the two product assertions have algebraic certificates independent of any decision procedure for the group word problem” [S9:18]. Its nonsoficity conclusion is derived, not constructed: “Therefore this same $G$ is nonsofic. In particular, the construction supplies a finitely presented counterexample to the assertion that every group is sofic” [S9:40]. And its Gottschalk counterexample needs nothing beyond the scalar pair: “It gives a negative resolution of Gottschalk's conjecture for the group in Theorem  ; it requires no further existence theorem or approximation assumption” [S9:51], with the corollary that “$T_{b_{\mathrm{out}}}:K^G\to K^G$ is injective and not surjective” and “In particular, $G$ is not surjunctive” [S12:138–140]. The manuscript also notes that the dynamical conclusion is characteristic-independent: “Characteristic two is used to construct the algebraic witnesses, not in Proposition” [S12:151–154].
 
 The determinant manuscript is formally downstream of the characteristic-two one, and it states its dependence as a hypothesis it imports verbatim. It opens “We disprove the unrestricted group-ring Determinant Conjecture” [S15:38], takes the scalar failure of direct finiteness as its input theorem, and is explicit about which companion it needs: “In particular, a result only in odd characteristic would not supply the binary premise used here” [S15:120–121]. Its mechanism converts a binary defect into a real trace gap: from the input it gets matrices with “$XY=I_d$ and a nonzero idempotent $C=I_d-YX$” [S15:158–159], enlarges the group, and produces “a rational orthogonal projection $P$ of size $d+1$ with trace $d+\theta$, for a positive rational number $\theta$” [S15:167–168]; the trace calculation then gives “\log\det(T_A)=(r-\tau_m(P))\log q” [S15:186] and “the exact value $q^{-\theta}$” [S15:188–189]. The conclusion is “0<\det_{\mathcal N(G_D)}(T_A)<1” and “Thus the unrestricted group-ring Determinant Conjecture has a negative resolution” [S15:95–99]. Like the others, it flags its own external consequence rather than claiming it: “The cited sofic theorem implies, as a separate consequence, that its resulting group is not sofic” [S15:132–133].
 
-The odd-characteristic manuscript is deliberately independent of the characteristic-two one: “The characteristic-two theorem is not an input to this odd-prime argument, and the two methods retain distinct coefficient hypotheses” [S19:57–58]. Its theorem fixes the prime explicitly, “m=\binom{1200}{600},\qquad p=\min\{h\in\mathbb Z:h>1,\ h\mid(m!)^2+1\}” [S19:16–17], and the scope of the claim is narrowed in the next paragraph: “It concerns the displayed prime, not every odd prime” [S19:28–29]. Its mechanism compares two quantities, a factorization rank ratio $t/m$ below $1/100$ from a threshold-Kneser construction [S19:61–72] and an idempotent rank ratio $d/w$ above $1/96$ [S19:79–85], exploiting an asymmetry: “There is no assertion about the reverse product. The asymmetry is what allows a triangular calculation to combine the two strict bounds” [S19:88–89]. It closes with the dynamical consequence, “Thus the constructed group also gives a negative answer to Gottschalk's surjunctivity conjecture” [S20:282–283].
+The odd-characteristic manuscript is deliberately independent of the characteristic-two one: “The characteristic-two theorem is not an input to this odd-prime argument, and the two methods retain distinct coefficient hypotheses” [S19:57–58]. Its theorem fixes the prime explicitly, “m=\binom1200600,\qquad p=\min\{h\in\mathbb Z:h>1,\ h\mid(m!)^2+1\}” [S19:16–17], and the scope of the claim is narrowed in the next paragraph: “It concerns the displayed prime, not every odd prime” [S19:28–29]. Its mechanism compares two quantities, a factorization rank ratio $t/m$ below $1/100$ from a threshold-Kneser construction [S19:61–72] and an idempotent rank ratio $d/w$ above $1/96$ [S19:79–85], exploiting an asymmetry: “There is no assertion about the reverse product. The asymmetry is what allows a triangular calculation to combine the two strict bounds” [S19:88–89]. It closes with the dynamical consequence, “Thus the constructed group also gives a negative answer to Gottschalk's surjunctivity conjecture” [S20:282–283].
 
 The two companion abstracts state their results in the same shape and differ only in the structural hypothesis on the group. The characteristic-two abstract gives “We disprove Kaplansky's direct-finiteness conjecture by constructing a finite field $K$ of characteristic two, a finitely presented group $G$, and finite sums $a,b\in K[G]$ with $ab=1$ but $ba\ne1$. The group $G$ is nonsofic” [S8:43]; the odd-characteristic abstract gives “We construct a counterexample to Kaplansky's direct-finiteness conjecture in odd characteristic. For one specified odd prime $p$, we obtain a field $K$ of order $p^4$, a finitely generated group $G$ containing torsion, and finite sums $a,b\in K[G]$ with $ab=1$ but $ba\ne1$” [S18:39]. The headline manuscript's abstract is the one that drops torsion and adds the finiteness property [S3:37–39].
 
@@ -119,45 +119,53 @@ Two caveats for anyone citing this family. The construction is specified, not ex
 
 ## Bibliography
 
-**14 entries** from `references.bib`:
-- Kaplansky, Irving. *Fields and Rings*. (1972) [Kaplansky1972]
-- Montgomery, M. Susan. *Left and right inverses in group algebras*. (1969) [Montgomery1969]
-- Ara, Pere, O'Meara, Kevin C., Perera, Francesc. *Stable finiteness of group rings in arbitrary characteristic*. (2002) [AraOMearaPerera2002]
-- Elek, G{\'a}bor, Szab{\'o}, Endre. *Sofic groups and direct finiteness*. (2004) [ElekSzabo2004]
-- Dykema, Ken, Heister, Timo, Juschenko, Kate. *Finitely presented groups related to {Kaplansky}'s direct finiteness conjecture*. (2015) [DykemaHeisterJuschenko2015]
-- Dykema, Ken, Juschenko, Kate. *On stable finiteness of group rings*. (2015) [DykemaJuschenko2015]
-- Gromov, Mikhail. *Random walk in random groups*. (2003) [Gromov2003]
-- Ollivier, Yann. *On a small cancellation theorem of {Gromov}*. (2006) [Ollivier2006]
-- Lipton, Richard J., Tarjan, Robert Endre. *A separator theorem for planar graphs*. (1979) [LiptonTarjan1979]
-- Hatcher, Allen. *Algebraic Topology*. (2002) [Hatcher2002]
-- … and 4 more
-
-**21 entries** from `references.bib`:
-- Xylouris, Triantafyllos. *On the least prime in an arithmetic progression and estimates
-           for the zeros of {Dirichlet} {$L$}-functions*. (2011) [Xylouris2011]
+- Ara, Pere, O'Meara, Kevin C., Perera, Francesc, Stable finiteness of group rings in arbitrary characteristic (2002)
+- Ara, Pere, O'Meara, Kevin C., Perera, Francesc, Stable finiteness of group rings in arbitrary characteristic (2002)
+- Bereznyuk, Vadim Yu., Asphericity of groups defined by graphs (2019)
+- Brown, Kenneth S., Cohomology of Groups (1982)
 - Ceccherini-Silberstein, Tullio, Coornaert, Michel
-           , Phung, Xuan Kien. *Stable finiteness of monoid algebras and surjunctivity*. (2025) [CSCPhungMonoid2025]
+           , Phung, Xuan Kien, Stable finiteness of monoid algebras and surjunctivity (2025)
 - Ceccherini-Silberstein, Tullio, Coornaert, Michel
-           , Phung, Xuan Kien. *First-order model theory and {Kaplansky}'s stable finiteness
-           conjecture for surjunctive groups*. (2025) [CSCPhungGroup2025]
-- Dykema, Ken, Juschenko, Kate. *On stable finiteness of group rings*. (2015) [DykemaJuschenko2015]
-- Elek, G{\'a}bor, Szab{\'o}, Endre. *Sofic groups and direct finiteness*. (2004) [ElekSzabo2004]
-- Golowich, Louis, Lin, Ting-Chun. *Quantum {LDPC} codes with transversal non-{Clifford} gates
-           via products of algebraic codes*. (2024) [GolowichLin2024]
-- Dinur, Irit, Liu, Siqi, Zhang, Rachel Yun. *New codes on high dimensional expanders*. (2025) [DinurLiuZhang2025]
-- Ara, Pere, O'Meara, Kevin C., Perera, Francesc. *Stable finiteness of group rings in arbitrary characteristic*. (2002) [AraOMearaPerera2002]
-- Montgomery, M. Susan. *Left and right inverses in group algebras*. (1969) [Montgomery1969]
-- Linnik, U. V.. *On the least prime in an arithmetic progression. {I}. {The} basic theorem*. (1944) [Linnik1944]
-- … and 11 more
-
-**9 entries** from `references.bib`:
-- Wolfgang L{\"u}ck. *{$L^2$-Invariants: Theory and Applications to Geometry and $K$-Theory}*. (2002) [Luck2002]
-- G{\'a}bor Elek, Endre Szab{\'o}. *Hyperlinearity, essentially free actions and {$L^2$}-invariants.
-           {The} sofic property*. (2005) [ElekSzabo2005]
-- Bent Fuglede, Richard V. Kadison. *Determinant theory in finite factors*. (1952) [FK1952]
-- {OpenAI}. *{A Counterexample to Kaplansky's Direct-Finiteness Conjecture in Characteristic Two}*. (2026) [CharacteristicTwo]
-- Holger Kammeyer. *A counterexample to the determinant approximation conjecture*. (2026) [Kammeyer2026]
-- Warren Dicks, Thomas Schick. *The spectral measure of certain elements of the complex group ring of a wreath product*. (2002) [DicksSchick2002]
-- Franz Lehner, Markus Neuhauser, Wolfgang Woess. *On the spectrum of lamplighter groups and percolation clusters*. (2008) [LehnerNeuhauserWoess2008]
-- de la Harpe, Pierre, Skandalis, Georges. *D\'eterminant associ\'e \`a une trace sur une alg\`ebre de {Banach}*. (1984) [deLaHarpeSkandalis1984]
-- Thomas Schick. *{$L^2$}-determinant class and approximation of {$L^2$}-{Betti} numbers*. (2001) [Schick2001]
+           , Phung, Xuan Kien, First-order model theory and Kaplansky's stable finiteness
+           conjecture for surjunctive groups (2025)
+- Ceccherini-Silberstein, Tullio, Coornaert, Michel, Linear cellular automata: Garden of Eden Theorem, L-surjunctivity and group rings (2006)
+- Wolfgang L{ü}ck, {$L^2$-Invariants: Theory and Applications to Geometry and $K$-Theory} (2002)
+- Warren Dicks, Thomas Schick, The spectral measure of certain elements of the complex group ring of a wreath product (2002)
+- Dinur, Irit, Liu, Siqi, Zhang, Rachel Yun, New codes on high dimensional expanders (2025)
+- Dykema, Ken, Heister, Timo, Juschenko, Kate, Finitely presented groups related to Kaplansky's direct finiteness conjecture (2015)
+- Dykema, Ken, Juschenko, Kate, On stable finiteness of group rings (2015)
+- Dykema, Ken, Juschenko, Kate, On stable finiteness of group rings (2015)
+- Dyn, Nira, Floater, Michael S., Multivariate polynomial interpolation on lower sets (2014)
+- Elek, G{á}bor, Szab{ó}, Endre, Sofic groups and direct finiteness (2004)
+- Elek, G{á}bor, Szab{ó}, Endre, Sofic groups and direct finiteness (2004)
+- G{á}bor Elek, Endre Szab{ó}, Hyperlinearity, essentially free actions and $L^2$-invariants.
+           The sofic property (2005)
+- Bent Fuglede, Richard V. Kadison, Determinant theory in finite factors (1952)
+- Golowich, Louis, Lin, Ting-Chun, Quantum LDPC codes with transversal non-Clifford gates
+           via products of algebraic codes (2024)
+- Gottschalk, Walter, Some general dynamical notions (1973)
+- Gromov, Mikhail, Random walk in random groups (2003)
+- Gromov, Mikhail, Endomorphisms of symbolic algebraic varieties (1999)
+- de la Harpe, Pierre, Skandalis, Georges, Déterminant associé \`a une trace sur une alg\`ebre de Banach (1984)
+- Hatcher, Allen, Algebraic Topology (2002)
+- Higman, Graham, Neumann, B. H., Neumann, Hanna, Embedding theorems for groups (1949)
+- Holger Kammeyer, A counterexample to the determinant approximation conjecture (2026)
+- Kaplansky, Irving, Fields and Rings (1972)
+- Franz Lehner, Markus Neuhauser, Wolfgang Woess, On the spectrum of lamplighter groups and percolation clusters (2008)
+- Linnik, U. V., On the least prime in an arithmetic progression. I. The basic theorem (1944)
+- Lipton, Richard J., Tarjan, Robert Endre, A separator theorem for planar graphs (1979)
+- Montgomery, M. Susan, Left and right inverses in group algebras (1969)
+- Montgomery, M. Susan, Left and right inverses in group algebras (1969)
+- Moser, Robin A., Tardos, G{á}bor, A constructive proof of the general {Lov{á}sz Local Lemma} (2009)
+- Ollivier, Yann, On a small cancellation theorem of Gromov (2006)
+- OpenAI, {A Torsion-Free Group Algebra with Zero Divisors} (2026)
+- OpenAI, {A Counterexample to Kaplansky's Direct-Finiteness Conjecture in Characteristic Two} (2026)
+- OpenAI, {A Counterexample to the Group-Ring Determinant Conjecture} (2026)
+- OpenAI, {A universal group of type $F_\infty$} (2026)
+- OpenAI, {A Counterexample to Kaplansky's Direct-Finiteness Conjecture in Characteristic Two} (2026)
+- Phung, Xuan Kien, A geometric generalization of Kaplansky's direct finiteness conjecture (2023)
+- Erd{ő}s, Paul, Lov{á}sz, L{á}szl{ó}, Problems and results on 3-chromatic hypergraphs and some related questions (1975)
+- Thomas Schick, $L^2$-determinant class and approximation of $L^2$-Betti numbers (2001)
+- Weiss, Benjamin, Sofic groups and dynamical systems (2000)
+- Xylouris, Triantafyllos, On the least prime in an arithmetic progression and estimates
+           for the zeros of Dirichlet $L$-functions (2011)

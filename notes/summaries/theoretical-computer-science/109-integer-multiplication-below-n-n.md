@@ -1,4 +1,4 @@
-Notes / Summaries / Theoretical computer science / [Family 109](../../index/theoretical-computer-science/109-integer-multiplication-below-n-n.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Theoretical computer science](../../index/disciplines/theoretical-computer-science.md) / [Family 109](../../index/theoretical-computer-science/109-integer-multiplication-below-n-n.md)
 
 # 109 — Integer multiplication below $n\log n$
 
@@ -230,15 +230,30 @@ machine's transition table is finite but astronomically large.
 
 ## Bibliography
 
-**27 entries** from `references.bib`:
-- Karatsuba, A., Ofman, Yu.. *Multiplication of Many-Digital Numbers by Automatic Computers*. (1962) [KaratsubaOfman1962]
-- Toom, A. L.. *The Complexity of a Scheme of Functional Elements Simulating the Multiplication of Integers*. (1963) [Toom1963]
-- Sch{\"o}nhage, Arnold, Strassen, Volker. *Schnelle {Multiplikation} gro{\ss}er {Zahlen}*. (1971) [SchonhageStrassen1971]
-- F{\"u}rer, Martin. *Faster Integer Multiplication*. (2007) [Furer2007]
-- F{\"u}rer, Martin. *Faster Integer Multiplication*. (2009) [Furer2009]
-- Nussbaumer, H. J.. *Fast Polynomial Transform Algorithms for Digital Convolution*. (1980) [Nussbaumer1980]
-- Nussbaumer, H. J., Quandalle, P.. *Computation of Convolutions and Discrete {Fourier} Transforms by Polynomial Transforms*. (1978) [NussbaumerQuandalle1978]
-- Dutt, A., Rokhlin, V.. *Fast {Fourier} Transforms for Nonequispaced Data*. (1993) [DuttRokhlin1993]
-- Rosser, J. Barkley, Schoenfeld, Lowell. *Approximate Formulas for Some Functions of Prime Numbers*. (1962) [RosserSchoenfeld1962]
-- De, Anindya, Kurur, P. P., Saha, Chandan, Saptharishi, Ramprasad. *Fast Integer Multiplication Using Modular Arithmetic*. (2013) [DeKururSahaSaptharishi2013]
-- … and 17 more
+- Agarwal, R. C., Cooley, J. W., New Algorithms for Digital Convolution (1977)
+- Alon, Noga, The Shannon Capacity of a Union (1998)
+- Bar-Yossef, Ziv, Birk, Yitzhak, Jayram, T. S., Kol, Tomer, Index Coding with Side Information (2006)
+- Bluestein, L. I., A Linear Filtering Approach to the Computation of Discrete Fourier Transform (1970)
+- Brent, Richard P., Fast Multiple-Precision Evaluation of Elementary Functions (1976)
+- Buhrman, Harry, Cleve, Richard, Kouck{ý}, Michal, Loff, Bruno, Speelman, Florian, Computing with a Full Memory: Catalytic Space (2014)
+- De, Anindya, Kurur, P. P., Saha, Chandan, Saptharishi, Ramprasad, Fast Integer Multiplication Using Modular Arithmetic (2013)
+- Dutt, A., Rokhlin, V., Fast Fourier Transforms for Nonequispaced Data (1993)
+- Grigor'ev, D. Yu., Additive Complexity in Directed Computations (1982)
+- Frankl, Peter, Wilson, Richard M., Intersection Theorems with Geometric Consequences (1981)
+- Groff, Matt, Faster Integer Multiplication Using Preprocessing (2019)
+- Harvey, David, van der Hoeven, Joris, Integer Multiplication in Time $O(n\log n)$ (2021)
+- Harvey, David, van der Hoeven, Joris, Integer Multiplication Is at Least as Hard as Matrix Transposition (2025)
+- Harvey, David, van der Hoeven, Joris, Lecerf, Gr{é}goire, Even Faster Integer Multiplication (2016)
+- Harvey, David, van der Hoeven, Joris, Faster Integer Multiplication Using Short Lattice Vectors (2019)
+- Harvey, David, Faster Truncated Integer Multiplication (2023)
+- Karatsuba, A., Ofman, Yu., Multiplication of Many-Digital Numbers by Automatic Computers (1962)
+- Lubetzky, Eyal, Stav, Uri, Nonlinear Index Coding Outperforming the Linear Optimum (2009)
+- Sch{ö}nhage, Arnold, Strassen, Volker, Schnelle Multiplikation gro{\ss}er Zahlen (1971)
+- Sch{ö}nhage, Arnold, Storage Modification Machines (1980)
+- Nussbaumer, H. J., Fast Polynomial Transform Algorithms for Digital Convolution (1980)
+- Nussbaumer, H. J., Quandalle, P., Computation of Convolutions and Discrete Fourier Transforms by Polynomial Transforms (1978)
+- OpenAI, An explicit power saving for the exact discrete Fourier transform (2026)
+- F{ü}rer, Martin, Faster Integer Multiplication (2007)
+- F{ü}rer, Martin, Faster Integer Multiplication (2009)
+- Rosser, J. Barkley, Schoenfeld, Lowell, Approximate Formulas for Some Functions of Prime Numbers (1962)
+- Toom, A. L., The Complexity of a Scheme of Functional Elements Simulating the Multiplication of Integers (1963)

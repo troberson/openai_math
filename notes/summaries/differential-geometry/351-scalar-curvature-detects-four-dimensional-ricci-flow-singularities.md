@@ -1,4 +1,4 @@
-Notes / Summaries / Differential geometry / [Family 351](../../index/differential-geometry/351-scalar-curvature-detects-four-dimensional-ricci-flow-singularities.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Differential geometry](../../index/disciplines/differential-geometry.md) / [Family 351](../../index/differential-geometry/351-scalar-curvature-detects-four-dimensional-ricci-flow-singularities.md)
 
 # 351 — Scalar curvature detects four-dimensional Ricci-flow singularities
 
@@ -26,7 +26,7 @@ The proof of the corollary is short [S20:40–45]:
 
 The companion's abstract states its own result [S31:9–15]:
 
-> We prove a sequential elliptic inequality for the renormalized Einstein--Hilbert functional on a fixed finite tree of four-dimensional Ricci-flat spaces. As the joining lengths diverge and the scale-neutral weighted Ricci error $M$ tends to zero, the functional satisfies $E=o(M)$. The root end has decay exponent greater than one, and every joined quotient group is nontrivial. We also prove the multivariable path-selection theorem for asymptotic expansions used to obtain this estimate.
+> We prove a sequential elliptic inequality for the renormalized Einstein–Hilbert functional on a fixed finite tree of four-dimensional Ricci-flat spaces. As the joining lengths diverge and the scale-neutral weighted Ricci error $M$ tends to zero, the functional satisfies $E=o(M)$. The root end has decay exponent greater than one, and every joined quotient group is nontrivial. We also prove the multivariable path-selection theorem for asymptotic expansions used to obtain this estimate.
 
 ## Undergraduate summary
 
@@ -55,11 +55,11 @@ The construction separates two scales. With `δ = T − t`, the parabolic scale 
 
 The cap proposition is what decouples the two curvatures [S10:4–9]:
 
-> For every flow with the choices made above, and \(q\) sufficiently large, there is a constant \(C\), allowed to depend on that flow, such that \begin{equation}  (r^2+\theta^2)|\Rm|\le C \end{equation} on \(M\times[0,T)\).
+> For every flow with the choices made above, and \(q\) sufficiently large, there is a constant \(C\), allowed to depend on that flow, such that \beginequation  (r^2+\theta^2)|\Rm|\le C \endequation on \(M\times[0,T)\).
 
 The reaction proposition bounds the reaction quotient at the pole and at the cap [S11:210–219]:
 
-> At late times on \(0<r\le\frac18\sqrt\delta\), the reaction quotient \[ c(x,t)=\frac{2\langle\Rm(\Ric),\Ric\rangle}{|\Ric|^2} \quadwhere |\Ric|>0 \] satisfies both bounds \begin{equation}  c\le\frac{2(q-1)+C\sqrt q}{r^2},\qquad c\le\frac{C_*}{\theta^2}. \end{equation}
+> At late times on \(0<r\le\frac18\sqrt\delta\), the reaction quotient \[ c(x,t)=\frac{2\langle\Rm(\Ric),\Ric\rangle}{|\Ric|^2} \quadwhere |\Ric|>0 \] satisfies both bounds \beginequation  c\le\frac{2(q-1)+C\sqrt q}{r^2},\qquad c\le\frac{C_*}{\theta^2}. \endequation
 
 The three barrier propositions fix the parameters in order and control the pole, the interior, and the geometric exterior [S12:71–73] [S12:158–159] [S12:225–226].
 
@@ -71,7 +71,7 @@ The four-dimensional paper runs the other way. It models the spatial geometry ne
 
 The companion paper is the static half. It fixes a tree of Ricci-flat ALE model spaces, selects a path through the tree, and proves the tree inequality [S34:136–141]:
 
-> Fix a finite rooted tree with the end identifications and order-$20$ metric bounds of Section~ . Let $(g_j,L^{(j)},M_j)$ satisfy the compact vertex convergence, the same uniform half-end and root-end bounds, and Equation~  through order $10$, with every $L_e^{(j)}\to\infty$ and $M_j\to0$. Then, in physical root units, \begin{equation} E(g_j)=o(M_j).   \end{equation} For an index with $M_j=0$, the assertion means $E(g_j)=0$. The little-oh is taken for this fixed tree; it does not assert a power exponent uniform over different trees.
+> Fix a finite rooted tree with the end identifications and order-$20$ metric bounds of Section  . Let $(g_j,L^{(j)},M_j)$ satisfy the compact vertex convergence, the same uniform half-end and root-end bounds, and Equation   through order $10$, with every $L_e^{(j)}\to\infty$ and $M_j\to0$. Then, in physical root units, \beginequation E(g_j)=o(M_j).   \endequation For an index with $M_j=0$, the assertion means $E(g_j)=0$. The little-oh is taken for this fixed tree; it does not assert a power exponent uniform over different trees.
 
 Its path-selection theorem realizes finite sign conditions and finite prescribed limits along a real analytic path, with every actual coordinate eventually monotone or constant [S35:67–79], and its corollary gives the finite variation the elliptic argument consumes [S35:90–97].
 
@@ -143,41 +143,65 @@ The release records 3 manuscripts for this family and 0 formalized paths, 0 comp
 
 ## Bibliography
 
-**13 entries** from `bibliography.tex`:
-- [AIK2015] S.~Angenent, J.~Isenberg, and D.~Knopf, \emph{Degenerate neckpinches in Ricci flow}, J. Reine Angew. Math. \textbf{709} …
-- [AK2004] S.~Angenent and D.~Knopf, \emph{An example of neckpinching for Ricci flow on \(S^{n+1}\)}, Math. Res. Lett. \textbf{11} …
-- [Bamler2018] R.~H. Bamler, \emph{Convergence of Ricci flows with bounded scalar curvature}, Ann. of Math. (2) \textbf{188} (2018), no…
-- [Bohm1999] C.~B\"ohm, \emph{Non-compact cohomogeneity one Einstein manifolds}, Bull. Soc. Math. France \textbf{127} (1999), no.~1, …
-- [CaoZhu2006] H.-D. Cao and X.-P. Zhu, \emph{A complete proof of the Poincar\'e and geometrization conjectures---application of the Ha…
-- [GuZhu2008] H.-L.~Gu and X.-P. Zhu, \emph{The existence of Type II singularities for the Ricci flow on \(S^{n+1}\)}, Comm. Anal. Geo…
-- [Hamilton1995] R.~S. Hamilton, \emph{The formation of singularities in the Ricci flow}, Surveys in Differential Geometry, Vol.~II (Camb…
-- [Krylov2006] N.~V. Krylov, \emph{Parabolic equations with VMO coefficients in spaces with mixed norms}, \href{https://arxiv.org/abs/m…
-- [LSU1968] O.~A. Ladyzhenskaya, V.~A. Solonnikov, and N.~N. Ural'tseva, \emph{Linear and Quasi-linear Equations of Parabolic Type},…
-- [Sesum2005] N.~\v{S}e\v{s}um, \emph{Curvature tensor under the Ricci flow}, Amer. J. Math. \textbf{127} (2005), no.~6, 1315--1324. \…
-- … and 3 more
-
-**35 entries** from `references.bib`:
-- Bamler, Richard H., Zhang, Qi S.. *Heat kernel and curvature bounds in {Ricci} flows with bounded scalar curvature*. (2017) [BamlerZhangI]
-- Bamler, Richard H., Zhang, Qi S.. *Heat kernel and curvature bounds in {Ricci} flows with bounded scalar curvature---{Part II}*. (2019) [BamlerZhangII]
-- Simon, Miles. *Extending four dimensional {Ricci} flows with bounded scalar curvature*. (2020) [SimonExtension]
-- Bamler, Richard H.. *Convergence of {Ricci} flows with bounded scalar curvature*. (2018) [BamlerConvergence]
-- Speissegger, Patrick. *Quasianalytic {Ilyashenko} algebras*. (2018) [SpeisseggerQA]
-- Galal, Zeinab, Kaiser, Tobias, Speissegger, Patrick. *{Ilyashenko} algebras based on transserial asymptotic expansions*. (2020) [GalalKaiserSpeissegger]
-- Li, Chuanhuan, Li, Yi. *Long-time existence of some geometric flows with bounded scalar curvature*. (2026) [LiLiSurvey]
-- Liu, Jiawei, Simon, Miles. *Volume estimates and convergence results for solutions to {Ricci} flow with {$L^p$} bounded scalar curvature*. (2026) [LiuSimon]
-- Hamilton, Richard S.. *Three-manifolds with positive {Ricci} curvature*. (1982) [Hamilton1982]
-- Shi, Wan-Xiong. *Deforming the metric on complete {Riemannian} manifolds*. (1989) [Shi1989]
-- … and 25 more
-
-**13 entries** from `references.bib`:
-- Bamler, Richard H., Zhang, Qi S.. *Heat kernel and curvature bounds in {Ricci} flows with bounded scalar curvature*. (2017) [BamlerZhangI]
-- Bamler, Richard H., Zhang, Qi S.. *Heat kernel and curvature bounds in {Ricci} flows with bounded scalar curvature---{Part II}*. (2019) [BamlerZhangII]
-- Bamler, Richard H.. *Convergence of {Ricci} flows with bounded scalar curvature*. (2018) [BamlerConvergence]
-- Speissegger, Patrick. *Quasianalytic {Ilyashenko} algebras*. (2018) [SpeisseggerQA]
-- Galal, Zeinab, Kaiser, Tobias, Speissegger, Patrick. *{Ilyashenko} algebras based on transserial asymptotic expansions*. (2020) [GalalKaiserSpeissegger]
-- DeTurck, Dennis M., Kazdan, Jerry L.. *Some regularity theorems in {Riemannian} geometry*. (1981) [DeTurckKazdan1981]
-- Deruelle, Alix, Ozuch, Tristan. *A {{\L}ojasiewicz} inequality for {ALE} metrics*. (2025) [DeruelleOzuch2025]
-- Haslhofer, Robert. *A renormalized {Perelman}-functional and a lower bound for the {ADM}-mass*. (2011) [Haslhofer2011]
-- Lockhart, Robert B., McOwen, Robert C.. *Elliptic differential operators on noncompact manifolds*. (1985) [LockhartMcOwen1985]
-- Biquard, Olivier. *D\'esingularisation de m\'etriques d'{Einstein}. {I}*. (2013) [Biquard2011]
-- … and 3 more
+- Anderson, Michael T., Ricci curvature bounds and Einstein metrics on compact manifolds (1989)
+- S. Angenent, J. Isenberg, and D. Knopf, _Degenerate neckpinches in Ricci flow_, J. Reine Angew. Math. **709** (2015), 81–117. arXiv:1208.4312v1.
+- R. H. Bamler, _Convergence of Ricci flows with bounded scalar curvature_, Ann. of Math. (2) **188** (2018), no. 3, 753–831. doi:10.4007/annals.2018.188.3.2.
+- Bamler, Richard H., Zhang, Qi S., Heat kernel and curvature bounds in Ricci flows with bounded scalar curvature (2017)
+- Bamler, Richard H., Zhang, Qi S., Heat kernel and curvature bounds in Ricci flows with bounded scalar curvature—Part II (2019)
+- Bamler, Richard H., Convergence of Ricci flows with bounded scalar curvature (2018)
+- Bamler, Richard H., Zhang, Qi S., Heat kernel and curvature bounds in Ricci flows with bounded scalar curvature (2017)
+- Bamler, Richard H., Zhang, Qi S., Heat kernel and curvature bounds in Ricci flows with bounded scalar curvature—Part II (2019)
+- Bamler, Richard H., Convergence of Ricci flows with bounded scalar curvature (2018)
+- Bando, Shigetoshi, Bubbling out of Einstein manifolds (1990)
+- Bando, Shigetoshi, Correction and addition: Bubbling out of Einstein manifolds (1990)
+- Bando, Shigetoshi, Kasue, Atsushi, Nakajima, Hiraku, On a construction of coordinates at infinity on manifolds with fast curvature decay and maximal volume growth (1989)
+- Bartnik, Robert, The mass of an asymptotically flat manifold (1986)
+- Biquard, Olivier, Désingularisation de métriques d'Einstein. I (2013)
+- Buzano, Reto, Di Matteo, Gianmichele, A Local Singularity Analysis for the Ricci Flow and its Applications to Ricci Flows with Bounded Scalar Curvature—Part II (2026)
+- C. Böhm, _Non-compact cohomogeneity one Einstein manifolds_, Bull. Soc. Math. France **127** (1999), no. 1, 135–177. doi:10.24033/bsmf.2345.
+- Cheeger, Jeff, Tian, Gang, Curvature and injectivity radius estimates for Einstein 4-manifolds (2006)
+- Cheeger, Jeff, Gromov, Mikhail, Taylor, Michael, Finite propagation speed, kernel estimates for functions of the
+           Laplace operator, and the geometry of complete Riemannian manifolds (1982)
+- Chern, Shiing-Shen, A Simple Intrinsic Proof of the Gauss–Bonnet Formula for Closed Riemannian Manifolds (1944)
+- Chiarenza, Filippo, Frasca, Michele, Longo, Placido, Interior $W^{2,p}$ estimates for non divergence elliptic equations with discontinuous coefficients (1991)
+- Chiarenza, Filippo, Frasca, Michele, Longo, Placido, $W^{2,p}$-solvability of the Dirichlet problem for nondivergence elliptic equations with VMO coefficients (1993)
+- Ciarlet, Philippe G., Ciarlet, Jr., Patrick, Another approach to linearized elasticity and a new proof of Korn's inequality (2005)
+- Deruelle, Alix, Kr{ö}ncke, Klaus, Stability of ALE Ricci-flat manifolds under Ricci flow (2021)
+- Deruelle, Alix, Ozuch, Tristan, A {{\L}ojasiewicz} inequality for ALE metrics (2025)
+- Deruelle, Alix, Ozuch, Tristan, A {{\L}ojasiewicz} inequality for ALE metrics (2025)
+- DeTurck, Dennis M., Kazdan, Jerry L., Some regularity theorems in Riemannian geometry (1981)
+- DeTurck, Dennis M., Kazdan, Jerry L., Some regularity theorems in Riemannian geometry (1981)
+- Enders, Joerg, M{ü}ller, Reto, Topping, Peter M., On type-I singularities in Ricci flow (2011)
+- Galal, Zeinab, Kaiser, Tobias, Speissegger, Patrick, Ilyashenko algebras based on transserial asymptotic expansions (2020)
+- Galal, Zeinab, Kaiser, Tobias, Speissegger, Patrick, Ilyashenko algebras based on transserial asymptotic expansions (2020)
+- Gilbarg, David, Trudinger, Neil S., Elliptic Partial Differential Equations of Second Order (2001)
+- R. S. Hamilton, _The formation of singularities in the Ricci flow_, Surveys in Differential Geometry, Vol. II (Cambridge, MA, 1993), International Press, Cambridge, MA, 1995, 7–136. Full text.
+- Hamilton, Richard S., Three-manifolds with positive Ricci curvature (1982)
+- Hardy, G. H., Littlewood, J. E., A maximal theorem with function-theoretic applications (1930)
+- Haslhofer, Robert, A renormalized Perelman-functional and a lower bound for the ADM-mass (2011)
+- Khavkine, Igor, The Calabi complex and Killing sheaf cohomology (2017)
+- S. Angenent and D. Knopf, _An example of neckpinching for Ricci flow on \(S^{n+1}\)_, Math. Res. Lett. **11** (2004), no. 4, 493–518. Author's text; corrigendum.
+- N. V. Krylov, _Parabolic equations with VMO coefficients in spaces with mixed norms_, arXiv:math/0610955v1, 2006. Theorem numbering refers to this version. Published as _Parabolic equations with VMO coefficients in Sobolev spaces with mixed norms_, J. Funct. Anal. **250** (2007), no. 2, 521–558. doi:10.1016/j.jfa.2007.04.003.
+- O. A. Ladyzhenskaya, V. A. Solonnikov, and N. N. Ural'tseva, _Linear and Quasi-linear Equations of Parabolic Type_, Translations of Mathematical Monographs, vol. 23, American Mathematical Society, Providence, RI, 1968; corrected reprint, 1988. doi:10.1090/mmono/023.
+- Li, Chuanhuan, Li, Yi, Long-time existence of some geometric flows with bounded scalar curvature (2026)
+- Liu, Jiawei, Simon, Miles, Volume estimates and convergence results for solutions to Ricci flow with $L^p$ bounded scalar curvature (2026)
+- Lockhart, Robert B., McOwen, Robert C., Elliptic differential operators on noncompact manifolds (1985)
+- OpenAI, {Path selection and an elliptic inequality on degenerating Ricci-flat trees} (2026)
+- Ozuch, Tristan, Noncollapsed degeneration of Einstein 4-manifolds II (2022)
+- Ozuch, Tristan, Integrability of Einstein deformations and desingularizations (2021)
+- Perelman, Grisha, The entropy formula for the Ricci flow and its geometric applications (2002)
+- Perrucci, Daniel, Roy, Marie-Françoise, Elementary recursive quantifier elimination based on Thom encoding and sign determination (2017)
+- W.-X. Shi, _Deforming the metric on complete Riemannian manifolds_, J. Differential Geom. **30** (1989), no. 1, 223–301. doi:10.4310/jdg/1214443292.
+- Shi, Wan-Xiong, Deforming the metric on complete Riemannian manifolds (1989)
+- Simon, Miles, Extending four dimensional Ricci flows with bounded scalar curvature (2020)
+- Simon, Miles, Some integral curvature estimates for the Ricci flow in four dimensions (2020)
+- Speissegger, Patrick, Quasianalytic Ilyashenko algebras (2018)
+- Speissegger, Patrick, Quasianalytic Ilyashenko algebras (2018)
+- M. Stolarski, _Curvature Blow-up in Doubly-warped Product Metrics Evolving by Ricci Flow_, arXiv:1905.00087v1, 2019. All numbered source references in this paper use this version. Published in Mem. Amer. Math. Soc. **295** (2024), no. 1470. doi:10.1090/memo/1470.
+- {Ť}e{š}um, Nata{š}a, Curvature tensor under the Ricci flow (2005)
+- B. Wang, _On the conditions to extend Ricci flow (II)_, Int. Math. Res. Not. IMRN **2012**, no. 14, 3192–3223. doi:10.1093/imrn/rnr141. arXiv:1107.5107v1; theorem numbering refers to this preprint version.
+- Wang, Bing, On the conditions to extend Ricci flow (2008)
+- Zhang, Zhou, Scalar curvature behavior for finite-time singularity of K{ä}hler–Ricci flow (2010)
+- H.-D. Cao and X.-P. Zhu, _A complete proof of the Poincaré and geometrization conjectures—application of the Hamilton–Perelman theory of the Ricci flow_, Asian J. Math. **10** (2006), no. 2, 165–492. Full text.
+- H.-L. Gu and X.-P. Zhu, _The existence of Type II singularities for the Ricci flow on \(S^{n+1}\)_, Comm. Anal. Geom. **16** (2008), no. 3, 467–494. arXiv:0707.0033v1.
+- N. Ťešum, _Curvature tensor under the Ricci flow_, Amer. J. Math. **127** (2005), no. 6, 1315–1324. doi:10.1353/ajm.2005.0042.

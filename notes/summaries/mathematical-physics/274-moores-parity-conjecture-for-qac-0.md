@@ -1,4 +1,4 @@
-Notes / Summaries / Mathematical physics / [Family 274](../../index/mathematical-physics/274-moores-parity-conjecture-for-qac-0.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Mathematical physics](../../index/disciplines/mathematical-physics.md) / [Family 274](../../index/mathematical-physics/274-moores-parity-conjecture-for-qac-0.md)
 
 # 274 — Moore's parity conjecture for $\mathrm{QAC}^0$
 
@@ -8,7 +8,7 @@ Notes / Summaries / Mathematical physics / [Family 274](../../index/mathematical
 
 [S1:637] carries the family entry:
 
-> Resolves Moore's parity conjecture in the measured-output model: constant-depth quantum circuits with arbitrary one-qubit gates, unbounded-arity Toffoli gates and polynomially many total qubits cannot compute parity with any fixed positive worst-case advantage. Ancillas start in zero, one output qubit is measured, and all other registers may be discarded. Xu--Li's reductions give the same bounded-error obstruction for strict majority.
+> Resolves Moore's parity conjecture in the measured-output model: constant-depth quantum circuits with arbitrary one-qubit gates, unbounded-arity Toffoli gates and polynomially many total qubits cannot compute parity with any fixed positive worst-case advantage. Ancillas start in zero, one output qubit is measured, and all other registers may be discarded. Xu–Li's reductions give the same bounded-error obstruction for strict majority.
 
 The entry links the two manuscripts as "Product-projection localization"
 and "Regular trajectories and pruning" [S1:637].
@@ -268,28 +268,53 @@ elaborates.
 
 ## Bibliography
 
-**26 entries** from `references.tex`:
-- [Ajtai1983] Mikl\'os Ajtai. \newblock $\Sigma^1_1$-formulae on finite structures. \newblock \emph{Annals of Pure and Applied Logic},…
-- [ADOY2025] Anurag Anshu, Yangjing Dong, Fengning Ou, and Penghui Yao. \newblock On the Computational Power of $\mathsf{QAC}^{0}$ wi…
-- [AnshuMetger2023] Anurag Anshu and Tony Metger. \newblock Concentration bounds for quantum states and limitations on the QAOA from polynom…
-- [Bera2011] Debajyoti Bera. \newblock A lower bound method for quantum circuits. \newblock \emph{Information Processing Letters}, 11…
-- [DOY2025LinearSize] Yangjing Dong, Fengning Ou, and Penghui Yao. \newblock \emph{Linear-Size QAC0 Channels: Learning, Testing and Hardness}.…
-- [FangFennerGreenHomerZhang2006] Maosen Fang, Stephen Fenner, Frederic Green, Steven Homer, and Yong Zhang. \newblock Quantum lower bounds for fanout. \n…
-- [FennerGrierPadeThierauf2025] Stephen Fenner, Daniel Grier, Daniel Pad\'e, and Thomas Thierauf. \newblock \emph{Tight Bounds on Depth-2 QAC-Circuits C…
-- [FurstSaxeSipser1984] Merrick Furst, James B. Saxe, and Michael Sipser. \newblock Parity, circuits, and the polynomial-time hierarchy. \newblo…
-- [GreenHomerMoorePollett2002] Frederic Green, Steven Homer, Cristopher Moore, and Christopher Pollett. \newblock Counting, fanout and the complexity o…
-- [GGJ2026] Lucas Gretta, Meghal Gupta, and Malvika Raj Joshi. \newblock \emph{Parity $\notin\mathsf{QAC}^{0}$ $\Longleftrightarrow$…
-- … and 16 more
-
-**24 entries** from `references.bib`:
-- Moore, Cristopher. *Quantum Circuits: Fanout, Parity, and Counting*. (1999) [Moore1999]
-- Green, Frederic, Homer, Steven, Moore, Cristopher, Pollett, Christopher. *Counting, fanout and the complexity of quantum {ACC}*. (2002) [GreenHomerMoorePollett2002]
-- Rosenthal, Gregory. *Bounds on the {$\mathsf{QAC}^{0}$} Complexity of Approximating Parity*. (2021) [Rosenthal2021]
-- Anshu, Anurag, Dong, Yangjing, Ou, Fengning, Yao, Penghui. *On the Computational Power of {$\mathsf{QAC}^{0}$} with Barely Superlinear Ancillae*. (2025) [AnshuDongOuYao2025]
-- Dong, Yangjing, Ou, Fengning, Yao, Penghui. *Linear-Size {$\mathsf{QAC}^{0}$} Channels: Learning, Testing and Hardness*. (2025) [DongOuYao2025]
-- Joshi, Malvika Raj, Tal, Avishay, Vasconcelos, Francisca, Wright, John. *Improved Lower Bounds for {QAC0}*. (2026) [JoshiTalVasconcelosWright2025]
-- Anshu, Anurag, Dong, Yangjing, Ou, Fengning, Yao, Penghui. *On the Computational Power of {$\mathsf{QAC}^{0}$} with Barely Superlinear Ancillae*. (2025) [AnshuDongOuYao2025STOC]
-- Nadimpalli, Shivam, Parham, Natalie, Vasconcelos, Francisca, Yuen, Henry. *On the {Pauli} Spectrum of {$\mathsf{QAC}^{0}$}*. (2024) [NadimpalliParhamVasconcelosYuen2024]
-- Furst, Merrick, Saxe, James B., Sipser, Michael. *Parity, circuits, and the polynomial-time hierarchy*. (1984) [FurstSaxeSipser1984]
-- Ajtai, Mikl{\'o}s. *{$\Sigma^1_1$}-Formulae on Finite Structures*. (1983) [Ajtai1983]
-- … and 14 more
+- Andrew Chi-Chih Yao. \newblock Separating the polynomial-time hierarchy by oracles. \newblock In _Proceedings of the 26th Annual Symposium on Foundations of Computer Science (FOCS 1985)_, pages 1–10, 1985. \newblock doi:10.1109/SFCS.1985.49.
+- Ramamohan Paturi. \newblock On the degree of polynomials that approximate symmetric Boolean functions (preliminary version). \newblock In _Proceedings of the Twenty-Fourth Annual ACM Symposium on Theory of Computing (STOC 1992)_, pages 468–474, 1992. \newblock doi:10.1145/129712.129758.
+- Gregory Rosenthal. \newblock Bounds on the $\mathsf{QAC}^{0}$ Complexity of Approximating Parity. \newblock In _12th Innovations in Theoretical Computer Science Conference (ITCS 2021)_, volume 185 of _Leibniz International Proceedings in Informatics_, pages 32:1–32:20, 2021. \newblock doi:10.4230/LIPIcs.ITCS.2021.32. Full version: arXiv:2008.07470v3, 30 November 2020.
+- Ajtai, Mikl{ó}s, $\Sigma^1_1$-Formulae on Finite Structures (1983)
+- Anurag Anshu, Yangjing Dong, Fengning Ou, and Penghui Yao. \newblock On the Computational Power of $\mathsf{QAC}^{0}$ with Barely Superlinear Ancillae. \newblock In _Proceedings of the 57th Annual ACM Symposium on Theory of Computing (STOC 2025)_, pages 1476–1487, 2025. \newblock doi:10.1145/3717823.3718189. Full version: arXiv:2410.06499v4, 21 December 2025.
+- Anshu, Anurag, Dong, Yangjing, Ou, Fengning, Yao, Penghui, On the Computational Power of $\mathsf{QAC}^{0}$ with Barely Superlinear Ancillae (2025)
+- Anshu, Anurag, Dong, Yangjing, Ou, Fengning, Yao, Penghui, On the Computational Power of $\mathsf{QAC}^{0}$ with Barely Superlinear Ancillae (2025)
+- Anshu, Anurag, Metger, Tony, Concentration bounds for quantum states and limitations on the QAOA from polynomial approximations (2023)
+- Boyan Xu and Lvzhou Li. \newblock _Fanout Complexity of Symmetric Boolean Functions in $\mathsf{QAC}^0$_. \newblock 2026. arXiv:2609.05153v1, 4 September 2026.
+- Bera, Debajyoti, A lower bound method for quantum circuits (2011)
+- Alexander A. Sherstov. \newblock Approximate inclusion-exclusion for arbitrary symmetric functions. \newblock _Computational Complexity_, 18(2):219–247, 2009. \newblock Author manuscript.
+- Johan H\aa stad. \newblock Almost optimal lower bounds for small depth circuits. \newblock In _Proceedings of the Eighteenth Annual ACM Symposium on Theory of Computing_, pages 6–20, 1986. \newblock doi:10.1145/12130.12132.
+- Peter H\o yer and Robert \v Spalek. \newblock Quantum Fan-out is Powerful. \newblock _Theory of Computing_, 1(5):81–103, 2005. \newblock doi:10.4086/toc.2005.v001a005.
+- Yangjing Dong, Fengning Ou, and Penghui Yao. \newblock _Linear-Size QAC0 Channels: Learning, Testing and Hardness_. \newblock 2025. arXiv:2510.00593v2, 8 November 2025.
+- Dong, Yangjing, Ou, Fengning, Yao, Penghui, Linear-Size $\mathsf{QAC}^{0}$ Channels: Learning, Testing and Hardness (2025)
+- Maosen Fang, Stephen Fenner, Frederic Green, Steven Homer, and Yong Zhang. \newblock Quantum lower bounds for fanout. \newblock _Quantum Information and Computation_, 6(1):46–57, 2006. \newblock doi:10.26421/QIC6.1-3.
+- Fang, Maosen, Fenner, Stephen, Green, Frederic, Homer, Steven, Zhang, Yong, Quantum lower bounds for fanout (2006)
+- Cristopher Moore. \newblock _Quantum Circuits: Fanout, Parity, and Counting_. \newblock 1999. arXiv:quant-ph/9903046v3, 17 March 1999.
+- Stephen Fenner, Daniel Grier, Daniel Padé, and Thomas Thierauf. \newblock _Tight Bounds on Depth-2 QAC-Circuits Computing Parity_. \newblock 2025. arXiv:2504.06433v1, 8 April 2025.
+- Fenner, Stephen, Grier, Daniel, Pad{é}, Daniel, Thierauf, Thomas, Tight bounds on depth-2 QAC-circuits computing parity (2025)
+- Merrick Furst, James B. Saxe, and Michael Sipser. \newblock Parity, circuits, and the polynomial-time hierarchy. \newblock _Mathematical Systems Theory_, 17:13–27, 1984. \newblock  .
+- Furst, Merrick, Saxe, James B., Sipser, Michael, Parity, circuits, and the polynomial-time hierarchy (1984)
+- Frederic Green, Steven Homer, Cristopher Moore, and Christopher Pollett. \newblock Counting, fanout and the complexity of quantum ACC. \newblock _Quantum Information and Computation_, 2(1):35–65, 2002. \newblock doi:10.26421/QIC2.1-3.
+- Green, Frederic, Homer, Steven, Moore, Cristopher, Pollett, Christopher, Counting, fanout and the complexity of quantum ACC (2002)
+- Lucas Gretta, Meghal Gupta, and Malvika Raj Joshi. \newblock _Parity $\notin\mathsf{QAC}^{0}$ $\Longleftrightarrow$ $\mathsf{QAC}^{0}$ is Fourier-Concentrated_. \newblock 2026. arXiv:2604.02793v2, 25 August 2026.
+- Lucas Gretta, Meghal Gupta, and Malvika Raj Joshi. \newblock _$\mathsf{QAC}^{0}$ Can Prepare Every Logarithmic-Qubit State_. \newblock 2026. arXiv:2609.17408v1, 15 September 2026.
+- Gretta, Lucas, Gupta, Meghal, Joshi, Malvika Raj, Parity $\notin$ QAC0 $\iff$ QAC0 is Fourier-Concentrated (2026)
+- Grier, Daniel, Morris, Jackson, Wu, Kewen, $\mathsf{QAC}^{0}$ Contains $\mathsf{TC}^{0}$ (with Many Copies of the Input) (2026)
+- Malvika Raj Joshi, Avishay Tal, Francisca Vasconcelos, and John Wright. \newblock Improved Lower Bounds for $\mathsf{QAC}^{0}$. \newblock In _Proceedings of the 58th Annual ACM Symposium on Theory of Computing (STOC 2026)_, pages 2199–2209, 2026. \newblock doi:10.1145/3798129.3800922. Full version: arXiv:2512.14643v4, 25 August 2026.
+- Joshi, Malvika Raj, Tal, Avishay, Vasconcelos, Francisca, Wright, John, Improved Lower Bounds for QAC0 (2026)
+- Kintali, Shiva, Parity in Shallow QAC Circuits: Correlation Decay and Exact Lower Bounds (2026)
+- Tomotaka Kuwahara, Itai Arad, Luigi Amico, and Vlatko Vedral. \newblock Local reversibility and entanglement structure of many-body ground states. \newblock _Quantum Science and Technology_, 2(1):015005, 2017. \newblock doi:10.1088/2058-9565/aa523d. Full version: arXiv:1502.05330v3.
+- Kuwahara, Tomotaka, Arad, Itai, Amico, Luigi, Vedral, Vlatko, Local reversibility and entanglement structure of many-body ground states (2017)
+- Debajyoti Bera. \newblock A lower bound method for quantum circuits. \newblock _Information Processing Letters_, 111(15):723–726, 2011. \newblock doi:10.1016/j.ipl.2011.05.002.
+- Miklós Ajtai. \newblock $\Sigma^1_1$-formulae on finite structures. \newblock _Annals of Pure and Applied Logic_, 24(1):1–48, 1983. \newblock doi:10.1016/0168-0072(83)90038-6.
+- Moore, Cristopher, Quantum Circuits: Fanout, Parity, and Counting (1999)
+- Shivam Nadimpalli, Natalie Parham, Francisca Vasconcelos, and Henry Yuen. \newblock On the Pauli Spectrum of $\mathsf{QAC}^{0}$. \newblock In _Proceedings of the 56th Annual ACM Symposium on Theory of Computing (STOC 2024)_, pages 1498–1506, 2024. \newblock doi:10.1145/3618260.3649662. Full version: arXiv:2311.09631v4, 17 July 2024.
+- Nadimpalli, Shivam, Parham, Natalie, Vasconcelos, Francisca, Yuen, Henry, On the Pauli Spectrum of $\mathsf{QAC}^{0}$ (2024)
+- OpenAI, {Product-projection localization and the $\mathrm{QAC}^0$ parity lower bound} (2026)
+- Daniel Padé, Stephen Fenner, Daniel Grier, and Thomas Thierauf. \newblock _Depth-2 QAC Circuits Cannot Simulate Quantum Parity_. \newblock 2020. arXiv:2005.12169v1, 25 May 2020.
+- Shiva Kintali. \newblock _Parity in Shallow QAC Circuits: Correlation Decay and Exact Lower Bounds_. \newblock Preprint, September 5, 2026. \newblock  .
+- Anurag Anshu and Tony Metger. \newblock Concentration bounds for quantum states and limitations on the QAOA from polynomial approximations. \newblock _Quantum_, 7:999, 2023. \newblock doi:10.22331/q-2023-05-11-999.
+- Rosenthal, Gregory, Bounds on the $\mathsf{QAC}^{0}$ Complexity of Approximating Parity (2021)
+- Sherstov, Alexander A., Approximate Inclusion-Exclusion for Arbitrary Symmetric Functions (2009)
+- H{\aa}stad, Johan, Almost optimal lower bounds for small depth circuits (1986)
+- Ryan O'Donnell. \newblock _Computational Applications of Noise Sensitivity_. \newblock Ph.D. thesis, Massachusetts Institute of Technology, 2003. \newblock  .
+- OpenAI. \newblock _Regular trajectories, pruning and quantum parity_. \newblock OpenAI Math Release preprint OAI:Regular-trajectories-pruning-and-quantum-parity-September-24-2026, 2026.
+- Xu, Boyan, Li, Lvzhou, Fanout Complexity of Symmetric Boolean Functions in $\mathsf{QAC}^0$ (2026)
+- H{\o}yer, Peter, {\v S}palek, Robert, Quantum Fan-out is Powerful (2005)
+- Pad{é}, Daniel, Fenner, Stephen, Grier, Daniel, Thierauf, Thomas, Depth-2 QAC circuits cannot simulate quantum parity (2020)

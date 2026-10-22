@@ -1,4 +1,4 @@
-Notes / Summaries / Real and complex analysis / [Family 072](../../index/real-and-complex-analysis/072-brennans-conjecture-and-a-counterexample-to-kraetzers-prediction.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Real and complex analysis](../../index/disciplines/real-and-complex-analysis.md) / [Family 072](../../index/real-and-complex-analysis/072-brennans-conjecture-and-a-counterexample-to-kraetzers-prediction.md)
 
 # 072 — Brennan's conjecture and a counterexample to Kraetzer's prediction
 
@@ -226,28 +226,43 @@ claims exist and names their declarations; the three comparator configs carry
 
 ## Bibliography
 
-**25 entries** from `references.bib`:
-- Aleman, Alexandru, Kouroupis, Athanasios. *{Brennan}'s conjecture holds for semigroups of holomorphic functions*. (2025) [AlemanKouroupis2025]
-- Beliaev, Dmitri, Smirnov, Stanislav. *Random conformal snowflakes*. (2010) [BeliaevSmirnov2010]
-- Bertilsson, Daniel. *Coefficient estimates for negative powers of the derivative of univalent functions*. (1998) [Bertilsson1998]
-- Bertilsson, Daniel. *On {Brennan}'s conjecture in conformal mapping*. (1999) [Bertilsson1999]
-- Brennan, James E.. *The Integrability of the Derivative in Conformal Mapping*. (1978) [Brennan1978]
-- Brennan, James E.. *2.6. On the integrability of the derivative of conformal mapping*. (1978) [Brennan1978LOMI]
-- Carleson, Lennart, Makarov, Nikolai G.. *Some results connected with {Brennan}'s conjecture*. (1994) [CarlesonMakarov1994]
-- Duren, Peter L.. *Univalent Functions*. (1983) [Duren1983]
-- Folland, Gerald B.. *Real Analysis: Modern Techniques and Their Applications*. (1999) [Folland1999]
-- Gentner, Daniel, Last, G{\"u}nter. *Palm pairs and the general mass-transport principle*. (2011) [GentnerLast2011]
-- … and 15 more
-
-**15 entries** from `references.bib`:
-- Kraetzer, Philipp. *Experimental bounds for the universal integral means spectrum of conformal maps*. (1996) [Kraetzer]
-- Kraetzer, Philipp. *Algorithmische Methoden der konformen Abbildungen auf fraktale Gebiete*. (2000) [KraetzerThesis]
-- Carleson, Lennart, Jones, Peter W.. *On coefficient problems for univalent functions and conformal dimension*. (1992) [CJ]
-- Makarov, Nikolai G.. *Fine structure of harmonic measure*. (1999) [Makarov]
-- Hedenmalm, H{\aa}kan, Shimorin, Serguei. *Weighted {Bergman} spaces and the integral means spectrum of conformal mappings*. (2005) [HedenmalmShimorin]
-- Beliaev, Dmitri, Smirnov, Stanislav. *Random conformal snowflakes*. (2010) [BeliaevSmirnov]
-- Beliaev, Dmitri. *Integral means spectrum of random conformal snowflakes*. (2008) [Beliaev]
-- Sola, Alan. *An Estimate of the Universal Means Spectrum of Conformal Mappings*. (2006) [Sola]
-- Folland, Gerald B.. *Real Analysis: Modern Techniques and Their Applications*. (1999) [Folland]
-- Duren, Peter L.. *Univalent Functions*. (1983) [Duren]
-- … and 5 more
+- Aleman, Alexandru, Kouroupis, Athanasios, Brennan's conjecture holds for semigroups of holomorphic functions (2025)
+- Beliaev, Dmitri, Smirnov, Stanislav, Random conformal snowflakes (2010)
+- Beliaev, Dmitri, Smirnov, Stanislav, Random conformal snowflakes (2010)
+- Beliaev, Dmitri, Integral means spectrum of random conformal snowflakes (2008)
+- Bertilsson, Daniel, Coefficient estimates for negative powers of the derivative of univalent functions (1998)
+- Bertilsson, Daniel, On Brennan's conjecture in conformal mapping (1999)
+- Brennan, James E., The Integrability of the Derivative in Conformal Mapping (1978)
+- Brennan, James E., 2.6. On the integrability of the derivative of conformal mapping (1978)
+- Carleson, Lennart, Makarov, Nikolai G., Some results connected with Brennan's conjecture (1994)
+- Carleson, Lennart, Jones, Peter W., On coefficient problems for univalent functions and conformal dimension (1992)
+- Gol'dshtein, Vladimir, Ukhlov, Alexander, Brennan's conjecture for composition operators on Sobolev spaces (2013)
+- Duren, Peter L., Univalent Functions (1983)
+- Duren, Peter L., Univalent Functions (1983)
+- Folland, Gerald B., Real Analysis: Modern Techniques and Their Applications (1999)
+- Folland, Gerald B., Real Analysis: Modern Techniques and Their Applications (1999)
+- Gentner, Daniel, Last, G{ü}nter, Palm pairs and the general mass-transport principle (2011)
+- Hedenmalm, H{\aa}kan, Shimorin, Serguei, Weighted Bergman spaces and the integral means spectrum of conformal mappings (2005)
+- Hedenmalm, H{\aa}kan, Shimorin, Serguei, Weighted Bergman spaces and the integral means spectrum of conformal mappings (2005)
+- Hopf, Heinz, {{Ü}ber die Drehung der Tangenten und Sehnen ebener Kurven} (1935)
+- Hopf, Heinz, {Ü}ber die Drehung der Tangenten und Sehnen ebener Kurven (1935)
+- Jin, Jianjun, Complex exponential integral means spectra of univalent functions and the Brennan conjecture (2025)
+- Jin, Jianjun, On the norms of the multiplication operators between weighted Bergman spaces (2026)
+- Kraetzer, Philipp, Experimental bounds for the universal integral means spectrum of conformal maps (1996)
+- Kraetzer, Philipp, Algorithmische Methoden der konformen Abbildungen auf fraktale Gebiete (2000)
+- Lee, John M., Introduction to Smooth Manifolds (2013)
+- Makarov, Nikolai G., Fine structure of harmonic measure (1999)
+- Moschovakis, Yiannis N., Descriptive Set Theory (2009)
+- Moschovakis, Yiannis N., Descriptive Set Theory (2009)
+- Munkres, James R., Topology (2014)
+- OpenAI, {A strict inverse-first-power bound for univalent functions} (2026)
+- OpenAI, {Brennan's conjecture and sharp inverse-square integral means} (2026)
+- Pommerenke, Christian, On the Integral Means of the Derivative of a Univalent Function (1985)
+- Pommerenke, Christian, On the Integral Means of the Derivative of a Univalent Function, II (1985)
+- Sard, Arthur, The measure of the critical values of differentiable maps (1942)
+- Sard, Arthur, The measure of the critical values of differentiable maps (1942)
+- Sola, Alan, An Estimate of the Universal Means Spectrum of Conformal Mappings (2006)
+- Sola, Alan, Bergman space methods and integral means spectra of univalent functions (2007)
+- Sola, Alan, An Estimate of the Universal Means Spectrum of Conformal Mappings (2006)
+- Sola, Alan, Bergman space methods and integral means spectra of univalent functions (2007)
+- Zheng, Yigang, Brennan Conjecture for Basin of Attraction at Infinity (2026)

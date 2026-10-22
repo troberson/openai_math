@@ -1,4 +1,4 @@
-Notes / Summaries / Functional analysis / [Family 331](../../index/functional-analysis/331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Functional analysis](../../index/disciplines/functional-analysis.md) / [Family 331](../../index/functional-analysis/331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md)
 
 # 331 — Asymptotic midpoint uniform convexity without asymptotically uniformly convex renorming
 
@@ -36,7 +36,7 @@ The diamond graphs are the classical obstruction in the nonlinear extension prob
 
 **The headline theorem.** For the space $X$ defined by the segment norm, the theorem states five things at once: $X$ is infinite-dimensional, separable, and reflexive; $X$ has no equivalent AUC norm; its given norm satisfies $\widehat\delta_X(t) \ge \sqrt{1+t^2/12}-1$ for every $t>0$; and every embedding of the depth-$k$ diamond $D_k$ into $X$ has distortion at least $\sqrt{1+k/12}$. [S3:99–108]
 
-**The target problem.** The paper names what it answers: "This gives a negative answer to the reflexive diamond question recorded as Problem~39 in" the Baudier--Lancien manuscript, and it adds that the metric obstruction is unchanged by equivalent renorming, although the numerical constants refer to the specified dual norm. [S3:110–111]
+**The target problem.** The paper names what it answers: "This gives a negative answer to the reflexive diamond question recorded as Problem 39 in" the Baudier--Lancien manuscript, and it adds that the metric obstruction is unchanged by equivalent renorming, although the numerical constants refer to the specified dual norm. [S3:110–111]
 
 **The renorming obstruction.** The bounded-tree lemma is the negative half: for a real Banach space $Y$ carrying, for every height $h$, vectors indexed by $\mathbb{N}^{\le h}$ with norms between $m$ and $M$ and child increments at least $c$, and with child increments tending weakly to zero at each nonterminal node, every equivalent norm $N$ with $\alpha\|\cdot\|\le N\le\beta\|\cdot\|$ obeys $\overline\delta_N(\alpha c/(2\beta M)) = 0$. The same conclusion holds for one infinite tree with these properties. [S5:37–54]
 

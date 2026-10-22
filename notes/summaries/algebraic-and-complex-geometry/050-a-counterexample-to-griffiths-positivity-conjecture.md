@@ -1,4 +1,4 @@
-Notes / Summaries / Algebraic and complex geometry / [Family 050](../../index/algebraic-and-complex-geometry/050-a-counterexample-to-griffiths-positivity-conjecture.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Algebraic and complex geometry](../../index/disciplines/algebraic-and-complex-geometry.md) / [Family 050](../../index/algebraic-and-complex-geometry/050-a-counterexample-to-griffiths-positivity-conjecture.md)
 
 # 050 — A counterexample to Griffiths' positivity conjecture
 
@@ -24,7 +24,7 @@ The manuscript's abstract states the answer. [S3:43–47] says: "We give counter
 
 The main theorem names the family. [S5:24–31] gives it: "There is an algebraic vector bundle $G$ of rank two on $S$ such that, for every positive integer $m$, the bundle \[ E_m=f_m^*G\otimes P \] is ample. There is an integer $m_0$ such that $E_m$ admits no smooth Hermitian metric with strictly Griffiths-positive Chern curvature for every $m\ge m_0$."
 
-The bundle is given explicitly and the ampleness has a quantitative certificate. [S5:34–39] states it: "The bundle $G$ is given explicitly in Section~ . The ampleness assertion has a quantitative certificate: Proposition~  proves that $\mathcal O_{\mathbb P(E_m)}(n)$ is very ample for every even $n$ with $n-1\geq3m$. The threshold $m_0$ is obtained by compactness and is ineffective. Thus Griffiths' conjecture fails in rank two on the quadric surface."
+The bundle is given explicitly and the ampleness has a quantitative certificate. [S5:34–39] states it: "The bundle $G$ is given explicitly in Section  . The ampleness assertion has a quantitative certificate: Proposition   proves that $\mathcal O_{\mathbb P(E_m)}(n)$ is very ample for every even $n$ with $n-1\geq3m$. The threshold $m_0$ is obtained by compactness and is ineffective. Thus Griffiths' conjecture fails in rank two on the quadric surface."
 
 ## Graduate summary
 
@@ -42,19 +42,19 @@ On curves ampleness is characterized by quotient degrees. [S5:55–57] records i
 
 Nakano positivity is stronger. [S5:65–68] states it: "Several positive results recover strong curvature after modifying the bundle. Nakano positivity is a stronger curvature condition than Griffiths positivity. Berndtsson proved Nakano positivity of $E\otimes\det E$ for ample $E$ through direct-image curvature"
 
-The symmetric-power results are recorded. [S5:69–72] records them: "Liu--Sun--Yang established Nakano and dual-Nakano positivity for determinant-twisted symmetric powers and for sufficiently large symmetric powers of ample bundles"
+The symmetric-power results are recorded. [S5:69–72] records them: "Liu–Sun–Yang established Nakano and dual-Nakano positivity for determinant-twisted symmetric powers and for sufficiently large symmetric powers of ample bundles"
 
 The twists do not supply the metric. [S5:73–75] states it: "The determinant twists and symmetric powers are part of these conclusions; they do not supply a Griffiths-positive metric on $E$ itself."
 
-Analytic approaches are named. [S5:77–79] names them: "Analytic approaches to that remaining question include Demailly's Hermitian--Yang--Mills system and subsequent curvature functionals"
+Analytic approaches are named. [S5:77–79] names them: "Analytic approaches to that remaining question include Demailly's Hermitian–Yang–Mills system and subsequent curvature functionals"
 
 The Hermitian requirement is essential. [S5:88–90] states it: "The requirement that the metric be Hermitian is essential to the problem. Kobayashi characterized ampleness of $E$ by negatively curved strongly pseudoconvex complex Finsler structures on $E^*$"
 
 Lempert's failure is recorded. [S5:95–98] records it: "More recently, Lempert showed that an equivariant fiberwise rule applied to a prescribed positive tautological metric can fail to produce even a semipositive Hermitian metric"
 
-The closest prior result is recorded. [S5:104–107] records it: "In a preprint posted on September 22, 2026, Du--Xie state the existence of a rank-two ample bundle on the abelian surface $C\times C$, where $C$ is the elliptic curve $y^2=x^3-x$, without a smooth Griffiths-semipositive metric"
+The closest prior result is recorded. [S5:104–107] records it: "In a preprint posted on September 22, 2026, Du–Xie state the existence of a rank-two ample bundle on the abelian surface $C\times C$, where $C$ is the elliptic curve $y^2=x^3-x$, without a smooth Griffiths-semipositive metric"
 
-The relation to that result is stated. [S5:112–116] states it: "The construction here is on the rational quadric and supplies a specified power-map family, an all-$m$ ampleness certificate, and the general limiting statement of Proposition~ . Its metric conclusion is the absence of smooth _strictly_ Griffiths-positive metrics for all sufficiently large $m$."
+The relation to that result is stated. [S5:112–116] states it: "The construction here is on the rational quadric and supplies a specified power-map family, an all-$m$ ampleness certificate, and the general limiting statement of Proposition  . Its metric conclusion is the absence of smooth _strictly_ Griffiths-positive metrics for all sufficiently large $m$."
 
 The construction begins with two projective transformations. [S5:132–138] begins it: "Choose two projective transformations $A,B$ of $\mathbb P^1$ with order three and no common fixed point, such that $AB$ is conjugate to $z\mapsto\lambda z$ with $|\lambda|>1$. Their chosen linear lifts, and the relative lift $A^{-1}B$, have finite order. The two properties serve different purposes: finite relative orders allow line maps to agree at graph intersections, whereas the expanding product will prevent a common invariant measure."
 
@@ -109,15 +109,29 @@ The declaration is `OAI.QuadricCounterexample.main_theorem` [S12:10]. The compar
 
 ## Bibliography
 
-**26 entries** from `references.bib`:
-- Griffiths, Phillip A.. *Hermitian differential geometry, {Chern} classes, and positive vector bundles*. (1969) [Griffiths1969]
-- Demailly, Jean-Pierre. *Hermitian--{Yang--Mills} approach to the conjecture of {Griffiths} on the positivity of ample vector bundles*. (2021) [Demailly2021]
-- Demailly, Jean-Pierre. *Complex Analytic and Differential Geometry*. (2012) [DemaillyCADG]
-- Forstneri{\v c}, Franc, Kusakabe, Yuta. *{Oka} tubes in holomorphic line bundles*. (2025) [ForstnericKusakabe]
-- Umemura, Hiroshi. *Some results in the theory of vector bundles*. (1973) [Umemura1973]
-- Hartshorne, Robin. *Ample vector bundles*. (1966) [Hartshorne1966]
-- Hartshorne, Robin. *Ample vector bundles on curves*. (1971) [Hartshorne1971]
-- Umemura, Hiroshi. *Fibr\'es vectoriels positifs sur une courbe elliptique*. (1972) [Umemura1972]
-- Campana, Fr\'ed\'eric, Flenner, Hubert. *A characterization of ample vector bundles on a curve*. (1990) [CampanaFlenner1990]
-- Kobayashi, Shoshichi. *Negative vector bundles and complex {Finsler} structures*. (1975) [Kobayashi1975]
-- … and 16 more
+- The Stacks Project Authors, The Stacks Project (2026)
+- Berndtsson, Bo, P{\u a}un, Mihai, Bergman kernels and the pseudoeffectivity of relative canonical bundles (2008)
+- Berndtsson, Bo, Curvature of vector bundles associated to holomorphic fibrations (2009)
+- Forstneri{\v c}, Franc, Kusakabe, Yuta, Oka tubes in holomorphic line bundles (2025)
+- Campana, Frédéric, Flenner, Hubert, A characterization of ample vector bundles on a curve (1990)
+- Demailly, Jean-Pierre, Hermitian–Yang–Mills approach to the conjecture of Griffiths on the positivity of ample vector bundles (2021)
+- Demailly, Jean-Pierre, Complex Analytic and Differential Geometry (2012)
+- Demailly, Jean-Pierre, {Monge–Amp\`ere} Functionals for the Curvature Tensor of a Holomorphic Vector Bundle (2022)
+- Du, Yun-Heng, Xie, Song-Yan, Ample vector bundles without Griffiths-semipositive metrics (2026)
+- Du, Yun-Heng, Xie, Song-Yan, A first-jet characterization of Griffiths positivity (2026)
+- Furstenberg, Harry, A note on Borel's density theorem (1976)
+- Griffiths, Phillip A., Hermitian differential geometry, Chern classes, and positive vector bundles (1969)
+- Hartshorne, Robin, Ample vector bundles (1966)
+- Hartshorne, Robin, Ample vector bundles on curves (1971)
+- Kobayashi, Shoshichi, Negative vector bundles and complex Finsler structures (1975)
+- Lempert, L{á}szl{ó}, On a construction of hermitian metrics on holomorphic vector bundles (2026)
+- Liu, Kefeng, Wan, Xueyuan, Stable ample vector bundles without semipositive Kobayashi curvature (2026)
+- Liu, Kefeng, Sun, Xiaofeng, Yang, Xiaokui, Positivity and vanishing theorems for ample vector bundles (2013)
+- Maruyama, Masaki, On a generalization of elementary transformations of algebraic vector bundles (1986)
+- Murakami, Rei, An analytic proof of Griffiths' conjecture on compact Riemann surfaces (2026)
+- Pingali, Vamsi Pritham, A note on Demailly's approach towards a conjecture of Griffiths (2021)
+- Pingali, Vamsi Pritham, The Demailly system for a direct sum of ample line bundles on Riemann surfaces (2023)
+- Raufi, Hossein, Singular hermitian metrics on holomorphic vector bundles (2015)
+- Umemura, Hiroshi, Some results in the theory of vector bundles (1973)
+- Umemura, Hiroshi, Fibrés vectoriels positifs sur une courbe elliptique (1972)
+- P{\u a}un, Mihai, Takayama, Shigeharu, Positivity of twisted relative pluricanonical bundles and their direct images (2018)

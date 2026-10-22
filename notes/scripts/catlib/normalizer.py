@@ -27,7 +27,7 @@ from __future__ import annotations
 
 import re
 
-from catlib.text import fold_accents
+from catlib.text import fold_accents, fold_dashes
 
 # Commands the GitHub parser rejects. `\operatorname` is the one ban with a safe MathJax form, so
 # it is remapped in place (stage 3); the rest fence the whole span (stage 6). The match is on the
@@ -188,13 +188,41 @@ _CITE_REF = re.compile(
     r"\\(?:cite[pt]*|citeauthor|citeyear|ref|eqref|autoref|Cref|cref|label)\{[^{}]*\}")
 
 
+_HREF = re.compile(r"\\href\s*\{([^}]*)\}\s*\{([^}]*)\}")
+_URL = re.compile(r"\\url\s*\{([^}]*)\}")
+
+
+def _strip_plain_braces(s: str) -> str:
+    """Standalone `{GROUP}` braces to their content, leaving command arguments raw.
+
+    A plain letter/digit/space group that is not the argument of an accent command
+    (`\\H{o}`, `\\'{E}`) is a LaTeX grouping for display (`{GL}`, `{CM}`), so its braces
+    drop. An accent-argument group is kept for `fold_accents` to resolve. Math-grouping
+    braces (`{$p$}`) carry a `$` and are not matched, so they pass through untouched.
+    """
+    def rep(m: re.Match[str]) -> str:
+        i = m.start() - 1
+        if i >= 1 and s[i - 1] == "\\" and s[i] in "Hvckudr'\"`":
+            return m.group(0)  # accent-command argument: keep for fold_accents
+        return m.group(1)
+    return re.sub(r"\{([A-Za-z0-9 \u2013\u2014]+)\}", rep, s)
+
+
 def _prose_markup(s: str) -> str:
     """The fixed prose transforms: emphasis to markdown, `\\text` to content, cross-refs dropped."""
     s = _CITE_REF.sub(" ", s)
+    # A `\href{url}{text}` and a bare `\url{url}` are external cross-references: keep the
+    # text label, drop the URL. Rendering them as markdown links would add upstream links,
+    # which the summaries checker rejects (pass_b) — same reason `\cite`/`\ref` are dropped.
+    s = _HREF.sub(r"\2", s)
+    s = _URL.sub(" ", s)
     s = re.sub(r"\\emph\s*\{([^{}]*)\}", r"_\1_", s)
     s = re.sub(r"\\textbf\s*\{([^{}]*)\}", r"**\1**", s)
     s = re.sub(r"\\text\s*\{([^{}]*)\}", r"\1", s)
     s = s.replace("\\%", "%").replace("\\&", "&").replace("\\#", "#")
+    s = s.replace("~", " ")
+    s = fold_dashes(s)
+    s = _strip_plain_braces(s)
     # Fold ASCII quotes to typographic so no bare `"` survives in prose; a bare ASCII double quote
     # reads as markup in the page. Pairs are opened/closed in order of appearance.
     out: list[str] = []
@@ -215,6 +243,43 @@ def normalize_prose(span: str, table: dict[str, tuple[int, str]], depth: int = 0
     s = expand_macros(span, table, depth)
     s = _prose_markup(s)
     return fold_accents(s)
+
+
+def _emphasis_pass(text: str) -> str:
+    """Brace-balanced `\\emph{X}` → `_X_` and `\\textbf{X}` → `**X**`, applied
+    before the region split.
+
+    A `\\emph{A $p$-adic}` straddles a math boundary, so the per-region
+    `_prose_markup` regex (which matches `[^{}]*`) cannot see its closing
+    brace. This pass runs on the raw text, where it sees the whole group.
+    """
+    for cmd, open_md, close_md in (("\\emph", "_", "_"), ("\\textbf", "**", "**")):
+        out: list[str] = []
+        i = 0
+        while i < len(text):
+            if text[i:i + len(cmd)] == cmd:
+                j = i + len(cmd)
+                while j < len(text) and text[j] in " \t":
+                    j += 1
+                if j < len(text) and text[j] == "{":
+                    depth = 0
+                    k = j
+                    while k < len(text):
+                        if text[k] == "{":
+                            depth += 1
+                        elif text[k] == "}":
+                            depth -= 1
+                            if depth == 0:
+                                break
+                        k += 1
+                    if depth == 0:
+                        out.append(open_md + text[j + 1:k] + close_md)
+                        i = k + 1
+                        continue
+            out.append(text[i])
+            i += 1
+        text = "".join(out)
+    return text
 
 
 def split_regions(text: str) -> list[tuple[bool, str, bool]]:
@@ -293,6 +358,16 @@ def normalize_window(window: str, preamble: str = "") -> str:
     table = build_macro_table(preamble)
     lead = statement_lead_in(window)
     body = _drop_first_begin_line(window) if lead else window
+    # Brace-balanced emphasis before the region split: an `\emph{A $p$-adic}`
+    # straddles a math boundary, so the per-region regex cannot see its closing
+    # brace. This pass converts it to `_A $p$-adic_` where the `$...$` survives
+    # as a math span inside the emphasis.
+    body = _emphasis_pass(body)
+    # A math-grouping brace `{$...$}` is a LaTeX display hack (prevent a space
+    # after the math span). It has no role in markdown, so the outer braces
+    # drop. This must run before the region split: the braces and the `$...$`
+    # must be in the same text for the pattern to match.
+    body = re.sub(r"\{(\$[^$]+\$)\}", r"\1", body)
     parts = [normalize_math(chunk, table, display) if is_math
              else normalize_prose(chunk, table)
              for is_math, chunk, display in split_regions(body)]

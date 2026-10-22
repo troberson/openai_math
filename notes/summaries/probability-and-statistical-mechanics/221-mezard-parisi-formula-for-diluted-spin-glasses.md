@@ -1,6 +1,6 @@
-Notes / Summaries / Probability and statistical mechanics / [Family 221](../../index/probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Probability and statistical mechanics](../../index/disciplines/probability-and-statistical-mechanics.md) / [Family 221](../../index/probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md)
 
-# 221 — The Mézard--Parisi formula for diluted spin glasses
+# 221 — The Mézard–Parisi formula for diluted spin glasses
 
 [Index page](../../index/probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md)
 
@@ -37,7 +37,7 @@ The trial functional is defined at [S8:112–117]
 
 Here V_{\rm s} and V_{\rm e} are the site and edge messages built from one cavity insertion [S8:84–89], T_0 is the last of the power-mean operators T_dV=\left(\E[(T_{d+1}V)^{m_{d+1}}\mid\mathscr F_d]\right)^{1/m_{d+1}} running down the hierarchy from T_rV=V [S8:92–96], and at r=0 the operators are omitted so that the messages are independent [S8:118–120]. The main theorem is [S8:131–135]
 
-> Under  -- , the thermodynamic limit exists and \begin{equation}  \lim_{N\to\infty}F_N=\inf_{r\ge0}\Phi_r. \end{equation}
+> Under  – , the thermodynamic limit exists and \beginequation  \lim_{N\to\infty}F_N=\inf_{r\ge0}\Phi_r. \endequation
 
 "The right side is an infimum over finite hierarchies. The theorem does not assume that a trial law attains it or that a limiting infinite-depth Gibbs state has been constructed." [S8:138–140] The hierarchy is an artifact of the proof, not a claim about the physical Gibbs states: "Their branching is part of the construction; no ultrametric organization of the physical Gibbs states is assumed." [S7:75–77]
 
@@ -51,15 +51,15 @@ Boundedness is removed last: "The multiplier $a$ may depend asymmetrically on th
 
 ## History of the conjecture
 
-The model class predates the formula. Viana and Bray's diluted two-spin model is from 1985 [S7:13–14]; Mézard and Parisi derived the explicit one-step replica-symmetry-breaking functional for the diluted Bethe lattice in 2001 [S7:14–17]; Franz and Leone and, independently, Guerra obtained replica-symmetric and one-step bounds for even-arity models in 2003 [S7:17–19]. Panchenko and Talagrand then "proved the arbitrary finite-level hierarchical upper bounds considered here" [S7:20–22] and posed the matching equality as a conjecture. The manuscript states what it resolves: "This resolves the equality conjecture stated immediately after Theorem~4 of Panchenko--Talagrand~ , for their Poisson, even-arity Ising model class with factorized interactions and the specified positivity condition. Only first moments of the interaction and external field are required." [S7:25–29] The reasoning trace records the conjecture in the form it was given: "This is the sharpness conjecture immediately following Theorem 4: the infimum runs over all finite replica-symmetry-breaking levels, all their hierarchical message laws, and all admissible breakpoints. No attainment at a fixed level or by a particular trial law is asserted." [S30:152]
+The model class predates the formula. Viana and Bray's diluted two-spin model is from 1985 [S7:13–14]; Mézard and Parisi derived the explicit one-step replica-symmetry-breaking functional for the diluted Bethe lattice in 2001 [S7:14–17]; Franz and Leone and, independently, Guerra obtained replica-symmetric and one-step bounds for even-arity models in 2003 [S7:17–19]. Panchenko and Talagrand then "proved the arbitrary finite-level hierarchical upper bounds considered here" [S7:20–22] and posed the matching equality as a conjecture. The manuscript states what it resolves: "This resolves the equality conjecture stated immediately after Theorem 4 of Panchenko–Talagrand  , for their Poisson, even-arity Ising model class with factorized interactions and the specified positivity condition. Only first moments of the interaction and external field are required." [S7:25–29] The reasoning trace records the conjecture in the form it was given: "This is the sharpness conjecture immediately following Theorem 4: the infimum runs over all finite replica-symmetry-breaking levels, all their hierarchical message laws, and all admissible breakpoints. No attainment at a fixed level or by a particular trial law is asserted." [S30:152]
 
-Exact variational description and reduction to a prescribed trial class are separate problems, and the manuscript is explicit about its neighbours: the Aizenman–Sims–Starr cavity principle, De Sanctis's formulation over random multioverlap structures, Panchenko's spin-distribution formula, and the Coja-Oghlan–Perkins invariant-kernel formula for random regular factor graphs [S7:36–45]. "These results use different descriptions of the state from the finite hierarchy of message laws optimized here. The additional task is to recover the specific hierarchical cavity functional without losing the pressure." [S7:45–48] The closest recent results stop short of the equality: for the zero-field Ising spin glass with Rademacher couplings on random regular graphs, Concetti's full-replica-symmetry-breaking bound is only a bound, and "equality with that functional is conjectural in that work" [S7:58–61]; "The result here identifies the finite-depth Panchenko--Talagrand infimum at arbitrary density in its stated interaction class." [S7:61–63]
+Exact variational description and reduction to a prescribed trial class are separate problems, and the manuscript is explicit about its neighbours: the Aizenman–Sims–Starr cavity principle, De Sanctis's formulation over random multioverlap structures, Panchenko's spin-distribution formula, and the Coja-Oghlan–Perkins invariant-kernel formula for random regular factor graphs [S7:36–45]. "These results use different descriptions of the state from the finite hierarchy of message laws optimized here. The additional task is to recover the specific hierarchical cavity functional without losing the pressure." [S7:45–48] The closest recent results stop short of the equality: for the zero-field Ising spin glass with Rademacher couplings on random regular graphs, Concetti's full-replica-symmetry-breaking bound is only a bound, and "equality with that functional is conjectural in that work" [S7:58–61]; "The result here identifies the finite-depth Panchenko–Talagrand infimum at arbitrary density in its stated interaction class." [S7:61–63]
 
 The trace shows the order in which the proof was found. The first move is a counterexample hunt: "Initial checks look for a counterexample in the assumptions: a nonintegrable factorization constant, asymmetric fields, interactions close to the positivity boundary, or messages tending to infinity. None yields one." [S30:157] Then the recursive cavity observation, "Aha recursive structure: overfitting shared variable can simulate original model at smaller scale." [S30:162]; then the shift that makes the induction close, "The change is to shift every internal branching depth of the target tree by one level." [S30:173] and "Great! Need carefully prove average error little with shifted depths not rare" [S30:176]; then the order of limits, "The order of limits matters: errors in fixed-depth identities disappear before the hierarchy is refined." [S30:178]. Its working bibliography is Barbier–Panchenko, Mourrat, Mourrat–Panchenko, Panchenko 2016, and Panchenko–Talagrand 2004 [S30:199–210]; the first three appear nowhere in the manuscript's reference list [S5]. This is the release's only reasoning trace shipped as LaTeX source, so its reasoning is quotable text rather than a PDF scan [S29].
 
 ## Consequences
 
-Inside the manuscript the formula is evaluated on the named models immediately. The diluted even-spin corollary covers "this holds for the Viana--Bray model~ , which is the case $p=2$" [S17:19–21], and the satisfiability corollary covers weighted soft clauses: "The choice $W=1$ is the soft random even-$K$ SAT model; $W$ gives an independent nonnegative clause weight." [S17:47–48] A zero-temperature limit follows: the ground-state energy per spin is the temperature limit of the same infimum, the approximation is bracketed in $[g,g+\log(2)/\beta]$, and "For unit-weight SAT, the limiting expected minimum number of violated clauses per variable is $-g$." [S17:93–100] The infimum there is taken "over all finite hierarchies separately at each positive temperature" and "does not require attainment or a limiting hierarchy" [S17:127–129].
+Inside the manuscript the formula is evaluated on the named models immediately. The diluted even-spin corollary covers "this holds for the Viana–Bray model  , which is the case $p=2$" [S17:19–21], and the satisfiability corollary covers weighted soft clauses: "The choice $W=1$ is the soft random even-$K$ SAT model; $W$ gives an independent nonnegative clause weight." [S17:47–48] A zero-temperature limit follows: the ground-state energy per spin is the temperature limit of the same infimum, the approximation is bracketed in $[g,g+\log(2)/\beta]$, and "For unit-weight SAT, the limiting expected minimum number of violated clauses per variable is $-g$." [S17:93–100] The infimum there is taken "over all finite hierarchies separately at each positive temperature" and "does not require attainment or a limiting hierarchy" [S17:127–129].
 
 Random 3-SAT is explicitly out of reach: "The even-arity hypothesis in   excludes random 3-SAT." [S17:131–138] The manuscript points to its companion for that model, whose Theorem 8.4 gives an exact soft-pressure formula over finite rational trials, noting that the companion's "trial functional differs from" [S17:131–138]. That companion is family 235, Random-SAT thresholds, sharp variance and computability [S28:23–26], and in the formalization the dependency runs the same way: 23 files in family 235's `SATComputability` tree import 17 distinct modules of the DilutedSpin tree, `InterpolationUpper.lean` among them [S27:1].
 
@@ -104,22 +104,26 @@ Two gaps are worth recording. The ledger reports `paps_form 0` and `mainres 0` f
 
 ## Bibliography
 
-**18 entries** from `references.bib`:
-- M{\'e}zard, Marc, Parisi, Giorgio. *The {Bethe} lattice spin glass revisited*. (2001) [MP01]
-- Franz, Silvio, Leone, Michele. *Replica bounds for optimization problems and diluted spin systems*. (2003) [FL03]
-- Panchenko, Dmitry, Talagrand, Michel. *Bounds for diluted mean-fields spin glass models*. (2004) [PT04]
-- Panchenko, Dmitry. *Spin glass models from the point of view of spin distributions*. (2013) [Pan13]
-- Panchenko, Dmitry. *Structure of finite-{RSB} asymptotic {Gibbs} measures in the diluted spin glass models*. (2016) [Pan16]
-- Aizenman, Michael, Sims, Robert, Starr, Shannon L.. *Extended variational principle for the {Sherrington--Kirkpatrick} spin-glass model*. (2003) [ASS03]
-- Ruelle, David. *A mathematical reformulation of {Derrida}'s {REM} and {GREM}*. (1987) [Ruelle87]
-- Efron, Bradley, Stein, Charles. *The jackknife estimate of variance*. (1981) [EfronStein]
-- Viana, L., Bray, A. J.. *Phase diagrams for dilute spin glasses*. (1985) [VB85]
-- Guerra, Francesco. *Broken replica symmetry bounds in the mean field spin glass model*. (2003) [Guerra03]
-- … and 8 more
-
-**5 entries** from `mezard-parisi-formula.tex`:
-- [BP] Jean Barbier and Dmitry Panchenko. \emph{Strong replica symmetry in high-dimensional optimal Bayesian inference}. Commun…
-- [M] Jean-Christophe Mourrat. \emph{The Parisi formula is a Hamilton--Jacobi equation in Wasserstein space}. Canadian Journal…
-- [MP] Jean-Christophe Mourrat and Dmitry Panchenko. \emph{Extending the Parisi formula along a Hamilton--Jacobi equation}. Ele…
-- [P] Dmitry Panchenko. \emph{Structure of finite-RSB asymptotic Gibbs measures in the diluted spin glass models}. Journal of …
-- [PT] Dmitry Panchenko and Michel Talagrand. \emph{Bounds for diluted mean-fields spin glass models}. Probability Theory and R…
+- Dmitry Panchenko and Michel Talagrand. _Bounds for diluted mean-fields spin glass models_. Probability Theory and Related Fields **130**(3) (2004), 319–336.  .
+- Dmitry Panchenko. _Structure of finite-RSB asymptotic Gibbs measures in the diluted spin glass models_. Journal of Statistical Physics **162**(1) (2016), 1–42.  .
+- Jean-Christophe Mourrat and Dmitry Panchenko. _Extending the Parisi formula along a Hamilton–Jacobi equation_. Electronic Journal of Probability **25** (2020), paper no. 23, 1–17.  .
+- Jean Barbier and Dmitry Panchenko. _Strong replica symmetry in high-dimensional optimal Bayesian inference_. Communications in Mathematical Physics **393**(3) (2022), 1199–1239.  .
+- Jean-Christophe Mourrat. _The Parisi formula is a Hamilton–Jacobi equation in Wasserstein space_. Canadian Journal of Mathematics **74**(3) (2022), 607–629.  .
+- Aizenman, Michael, Sims, Robert, Starr, Shannon L., Extended variational principle for the Sherrington–Kirkpatrick spin-glass model (2003)
+- Aizenman, Michael, Contucci, Pierluigi, On the stability of the quenched state in mean-field spin-glass models (1998)
+- Barra, Adriano, De Sanctis, Luca, Stability properties and probability distributions of multi-overlaps in dilute spin glasses (2007)
+- Biswas, Ratul, Chen, Wei-Kuo, Sen, Arnab, On the Replica Symmetric Solution in General Diluted Spin Glasses (2025)
+- Coja-Oghlan, Amin, Perkins, Will, Spin Systems on Bethe Lattices (2019)
+- Concetti, Francesco, Properties of the full replica symmetry breaking free energy functional of the Ising spin glass on random regular graph (2025)
+- Efron, Bradley, Stein, Charles, The jackknife estimate of variance (1981)
+- Franz, Silvio, Leone, Michele, Replica bounds for optimization problems and diluted spin systems (2003)
+- Ghirlanda, Stefano, Guerra, Francesco, General properties of overlap probability distributions in disordered spin systems. Towards Parisi ultrametricity (1998)
+- Guerra, Francesco, Broken replica symmetry bounds in the mean field spin glass model (2003)
+- OpenAI, {Computing the Random 3-SAT Threshold} (2026)
+- Panchenko, Dmitry, Talagrand, Michel, Bounds for diluted mean-fields spin glass models (2004)
+- Panchenko, Dmitry, Spin glass models from the point of view of spin distributions (2013)
+- Panchenko, Dmitry, Structure of finite-RSB asymptotic Gibbs measures in the diluted spin glass models (2016)
+- Ruelle, David, A mathematical reformulation of Derrida's REM and GREM (1987)
+- De Sanctis, Luca, Random multi-overlap structures and cavity fields in diluted spin glasses (2004)
+- Viana, L., Bray, A. J., Phase diagrams for dilute spin glasses (1985)
+- M{é}zard, Marc, Parisi, Giorgio, The Bethe lattice spin glass revisited (2001)

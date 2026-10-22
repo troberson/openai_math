@@ -1,4 +1,4 @@
-Notes / Summaries / Algebraic and complex geometry / [Family 042](../../index/algebraic-and-complex-geometry/042-oka-classification-for-k3-surfaces-and-other-compact-complex-surfaces.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Algebraic and complex geometry](../../index/disciplines/algebraic-and-complex-geometry.md) / [Family 042](../../index/algebraic-and-complex-geometry/042-oka-classification-for-k3-surfaces-and-other-compact-complex-surfaces.md)
 
 # 042 — Oka classification for K3 surfaces and other compact complex surfaces
 
@@ -69,15 +69,33 @@ The consequence for the catalog is a citation edge, not a recorded dependency: t
 
 ## Bibliography
 
-**30 entries** from `references.bib`:
-- Forstneri{\v c}, Franc. *Stein Manifolds and Holomorphic Mappings: The Homotopy Principle in Complex Analysis*. (2017) [Forstneric]
-- Forstneri{\v c}, Franc. *Runge approximation on convex sets implies the {Oka} property*. (2006) [ForstnericCAP]
-- Forstneri{\v c}, Franc, L{\'a}russon, Finnur. *Holomorphic flexibility properties of compact complex surfaces*. (2014) [ForstnericLarussonSurfaces]
-- Forstneri{\v c}, Franc, L{\'a}russon, Finnur. *Survey of {Oka} theory*. (2011) [ForstnericLarussonSurvey]
-- Forstneri{\v c}, Franc, L{\'a}russon, Finnur. *Every projective {Oka} manifold is elliptic*. (2026) [ForstnericLarussonElliptic]
-- Gallego, Francisco Javier, Gonz{\'a}lez, Miguel, Purnaprajna, Bangere P.. *{K3} double structures on {Enriques} surfaces and their smoothings*. (2006) [GallegoGonzalezPurnaprajna]
-- {OpenAI}. *{Global Spherical Shells on Minimal Surfaces of Class VII}*. (2026) [OpenAIGSS]
-- H{\"o}rmander, Lars. *An Introduction to Complex Analysis in Several Variables*. (1990) [Hormander]
-- Siu, Yum-Tong. *Every {Stein} subvariety admits a {Stein} neighborhood*. (1976) [Siu]
-- Grauert, Hans. *Ein {Theorem} der analytischen {Garbentheorie} und die {Modulr\"aume} komplexer {Strukturen}*. (1960) [Grauert]
-- … and 20 more
+- Artebani, Michela, Sarti, Alessandra, Non-symplectic automorphisms of order 3 on K3 surfaces (2008)
+- Borel, Armand, Density properties for certain subgroups of semi-simple groups without compact components (1960)
+- Borel, Armand, Harish-Chandra, Arithmetic subgroups of algebraic groups (1962)
+- Buzzard, Gregery T., Lu, Steven S. Y., Algebraic surfaces holomorphically dominable by $\mathbb{C}^2$ (2000)
+- Forstneri{\v c}, Franc, Stein Manifolds and Holomorphic Mappings: The Homotopy Principle in Complex Analysis (2017)
+- Forstneri{\v c}, Franc, Runge approximation on convex sets implies the Oka property (2006)
+- Forstneri{\v c}, Franc, L{á}russon, Finnur, Holomorphic flexibility properties of compact complex surfaces (2014)
+- Forstneri{\v c}, Franc, L{á}russon, Finnur, Survey of Oka theory (2011)
+- Forstneri{\v c}, Franc, L{á}russon, Finnur, Every projective Oka manifold is elliptic (2026)
+- Forstneri{\v c}, Franc, Noncritical holomorphic functions on Stein manifolds (2003)
+- Forstneri{\v c}, Franc, Extending holomorphic mappings from subvarieties in Stein manifolds (2005)
+- Cadorel, Beno{\^\i}t, Campana, Fr{é}d{é}ric, Rousseau, Erwan, Hyperbolicity and specialness of symmetric powers (2022)
+- Campana, Fr{é}d{é}ric, Orbifolds, special varieties and classification theory (2004)
+- Chen, Xi, Gounelas, Frank, Curves of maximal moduli on K3 surfaces (2022)
+- Chen, Xi, Gounelas, Frank, Liedtke, Christian, Curves on K3 surfaces (2022)
+- Chen, Gui-Qiang G., Li, Siran, Global weak rigidity of the Gauss–Codazzi–Ricci equations and isometric immersions of Riemannian manifolds with lower regularity (2017)
+- Gallego, Francisco Javier, Gonz{á}lez, Miguel, Purnaprajna, Bangere P., K3 double structures on Enriques surfaces and their smoothings (2006)
+- Grauert, Hans, Ein Theorem der analytischen Garbentheorie und die {Modulräume} komplexer Strukturen (1960)
+- Gritsenko, Valeri, Hulek, Klaus, Sankaran, Gregory K., Abelianisation of orthogonal groups and the fundamental group of modular varieties (2009)
+- Gromov, Mikhael, Oka's principle for holomorphic sections of elliptic bundles (1989)
+- Huybrechts, Daniel, Lectures on K3 Surfaces (2016)
+- Kamenova, Ljudmila, Lu, Steven, Verbitsky, Misha, Kobayashi pseudometric on hyperk{ä}hler manifolds (2014)
+- Alarc{ó}n, Antonio, Forstneri{\v c}, Franc, Oka-1 manifolds (2025)
+- OpenAI, Global Spherical Shells on Minimal Surfaces of Class VII (2026)
+- Ratner, Marina, Raghunathan's topological conjecture and distributions of unipotent flows (1991)
+- H{ö}rmander, Lars, An Introduction to Complex Analysis in Several Variables (1990)
+- H{ö}rmander, Lars, $L^2$ estimates and existence theorems for the $\bar\partial$ operator (1965)
+- Siu, Yum-Tong, Every Stein subvariety admits a Stein neighborhood (1976)
+- Verbitsky, Misha, Ergodic complex structures on hyperk{ä}hler manifolds: an erratum (2017)
+- Xie, Song-Yan, Zhao, Shengyuan, Periods of Oka K3 surfaces are dense (2026)

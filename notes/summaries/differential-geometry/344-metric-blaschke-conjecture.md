@@ -1,4 +1,4 @@
-Notes / Summaries / Differential geometry / [Family 344](../../index/differential-geometry/344-metric-blaschke-conjecture.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Differential geometry](../../index/disciplines/differential-geometry.md) / [Family 344](../../index/differential-geometry/344-metric-blaschke-conjecture.md)
 
 # 344 — The metric Blaschke conjecture
 
@@ -29,7 +29,7 @@ The conjecture starts from a property the round sphere has, and that the standar
 
 The manuscript turns the property into a metric equality. For a connected closed smooth Riemannian manifold, the global injectivity radius is the infimum over points of the radius on whose open tangent balls the exponential map is a diffeomorphism, and the diameter is the largest distance between two points. A Blaschke manifold is one of positive dimension where the two are equal [S6:18–29]:
 
-> For a connected closed smooth Riemannian manifold $(M,g)$, write \[ \inj(M,g)=\inf_{p\in M}\inj_p(M,g), \qquad \diam(M,g)=\sup_{p,q\in M}d_g(p,q). \] Here $\inj_p(M,g)$ is the supremum of the radii on whose open tangent balls $\exp_p$ is a diffeomorphism onto its image. We call $M$ a _Blaschke manifold_ if it has positive dimension and $\inj(M,g)=\diam(M,g)$. The global equality implies that every unit-speed geodesic minimizes precisely up to the common diameter; we give the short deduction in Lemma~ .
+> For a connected closed smooth Riemannian manifold $(M,g)$, write \[ \inj(M,g)=\inf_{p\in M}\inj_p(M,g), \qquad \diam(M,g)=\sup_{p,q\in M}d_g(p,q). \] Here $\inj_p(M,g)$ is the supremum of the radii on whose open tangent balls $\exp_p$ is a diffeomorphism onto its image. We call $M$ a _Blaschke manifold_ if it has positive dimension and $\inj(M,g)=\diam(M,g)$. The global equality implies that every unit-speed geodesic minimizes precisely up to the common diameter; we give the short deduction in Lemma  .
 
 The main theorem is the classification [S6:31–37]:
 
@@ -247,7 +247,7 @@ The manuscript states the route through the proof [S6:118–130]:
 
 The arithmetic step is where the integral structure matters [S6:160–179]:
 
-> Next consider the space of oriented geodesics, forgetting the marked starting point. The period-normalized contact form expresses volume as a top power of the Euler class of its geodesic-circle bundle. Integral Gysin sequences first determine the lattice of classes and the determinant of a middle pairing. The first negative bundle of the free-loop energy transfers the incidence coefficient to this space. This step uses the fixed-endpoint Morse index theorem of   and the equivariant negative-bundle attachment developed in closed-geodesic Morse theory; we use the formulation of \citet[Section~7]{OttosenBokstedt2007}, following  . The required primitive attaching coefficient is established over every prime field. The attaching map from the sphere bundle of the descended negative bundle to $M$ also pulls back its cohomology generator; the vanishing of the $(r+1)$st power supplies the relations for the final algebraic calculation. Finally, a complete-intersection calculation turns the middle determinant into the sharp upper volume bound. Rational cohomology alone would not retain the arithmetic that normalizes this bound.
+> Next consider the space of oriented geodesics, forgetting the marked starting point. The period-normalized contact form expresses volume as a top power of the Euler class of its geodesic-circle bundle. Integral Gysin sequences first determine the lattice of classes and the determinant of a middle pairing. The first negative bundle of the free-loop energy transfers the incidence coefficient to this space. This step uses the fixed-endpoint Morse index theorem of   and the equivariant negative-bundle attachment developed in closed-geodesic Morse theory; we use the formulation of \citet[Section 7]OttosenBokstedt2007, following  . The required primitive attaching coefficient is established over every prime field. The attaching map from the sphere bundle of the descended negative bundle to $M$ also pulls back its cohomology generator; the vanishing of the $(r+1)$st power supplies the relations for the final algebraic calculation. Finally, a complete-intersection calculation turns the middle determinant into the sharp upper volume bound. Rational cohomology alone would not retain the arithmetic that normalizes this bound.
 
 ## History of the conjecture
 
@@ -257,11 +257,11 @@ The sphere and real-projective metric cases came through Berger, Kazdan, Weinste
 
 The manuscript names the hypotheses it does not use [S6:192–198]:
 
-> There are also rigidity theorems with additional geometric hypotheses. Shankar, Spatzier and Wilking treat an upper sectional-curvature bound \citep[Proposition~2.1]{ShankarSpatzierWilking2005}, and Su, Sun and Wang prove the corresponding normalized lower-curvature result  . Connell, Islam, Nguyen and Spatzier obtain rigidity under curvature bounds and agreement with a model away from a prescribed convex set  .
+> There are also rigidity theorems with additional geometric hypotheses. Shankar, Spatzier and Wilking treat an upper sectional-curvature bound \citep[Proposition 2.1]ShankarSpatzierWilking2005, and Su, Sun and Wang prove the corresponding normalized lower-curvature result  . Connell, Islam, Nguyen and Spatzier obtain rigidity under curvature bounds and agreement with a model away from a prescribed convex set  .
 
 It also names the nearest concurrent result [S6:200–203]:
 
-> Song's September 2026 preprint proves Blaschke metric rigidity assuming an adapted complex structure on the entire tangent bundle \citep[Theorem~1.3]{Song2026}. This entire-extension hypothesis is additional to the Blaschke condition.
+> Song's September 2026 preprint proves Blaschke metric rigidity assuming an adapted complex structure on the entire tangent bundle \citep[Theorem 1.3]Song2026. This entire-extension hypothesis is additional to the Blaschke condition.
 
 The entries are Shankar–Spatzier–Wilking 2005 [S16:309–319], Su–Sun–Wang 2016 [S16:331–341], Connell–Islam–Nguyen–Spatzier 2026 [S16:343–352], and Song 2026 [S16:354–361].
 
@@ -303,15 +303,35 @@ What has not been checked: no Lean, lake, or comparator run was performed, and f
 
 ## Bibliography
 
-**32 entries** from `references.bib`:
-- Besse, Arthur L.. *Manifolds all of whose Geodesics are Closed*. (1978) [Besse1978]
-- McKay, Benjamin. *Summary of progress on the {Blaschke} conjecture*. (2016) [McKay2016]
-- Yang, Chung-Tao. *Any {Blaschke} manifold of the homotopy type of {$\mathbf{C}P^n$} has the right volume*. (1991) [Yang1991]
-- Reznikov, Alexander G.. *The weak {Blaschke} conjecture for {$\mathbf{H}P^n$}*. (1985) [Reznikov1985HP]
-- Reznikov, Alexander G.. *The weak {Blaschke} conjecture for {$\mathbf{C}P^n$}*. (1994) [Reznikov1994CP]
-- Szab{\'o}, Zolt{\'a}n I.. *The {Lichnerowicz} conjecture on harmonic manifolds*. (1990) [Szabo1990]
-- Szab{\'o}, Zolt{\'a}n I.. *Harmonic manifolds; the proof of the {Lichnerowicz} conjecture in the compact case*. (1988) [Szabo1988]
-- {\'A}lvarez Paiva, Juan-Carlos. *Asymmetry in {Hilbert}'s fourth problem*. (2013) [AlvarezPaiva2013]
-- Blaschke, Wilhelm. *Vorlesungen {\"u}ber Differentialgeometrie und geometrische Grundlagen von {Einsteins} Relativit{\"a}tstheorie. {I}: Elementare Differentialgeometrie*. (1921) [Blaschke1921]
-- Berger, Marcel. *Une borne inf{\'e}rieure pour le volume d'une vari{\'e}t{\'e} riemannienne en fonction du rayon d'injectivit{\'e}*. (1980) [Berger1980]
-- … and 22 more
+- Berger, Marcel, Une borne inf{é}rieure pour le volume d'une vari{é}t{é} riemannienne en fonction du rayon d'injectivit{é} (1980)
+- Berger, Marcel, Blaschke's Conjecture for Spheres (1978)
+- Besse, Arthur L., Manifolds all of whose Geodesics are Closed (1978)
+- Blaschke, Wilhelm, Vorlesungen {ü}ber Differentialgeometrie und geometrische Grundlagen von Einsteins Relativit{ä}tstheorie. I: Elementare Differentialgeometrie (1921)
+- Boyd, Stephen, Vandenberghe, Lieven, Convex Optimization (2004)
+- Connell, Chris, Islam, Mitul, Nguyen, Thang, Spatzier, Ralf, Rigidity of compact rank one symmetric spaces (2026)
+- Duistermaat, J. J., On the Morse index in variational calculus (1976)
+- Green, Leon W., Auf Wiedersehensfl{ä}chen (1963)
+- Hatcher, Allen, Algebraic Topology (2002)
+- Huneke, Craig, Hyman Bass and ubiquity: Gorenstein rings (1999)
+- Kazdan, Jerry L., An Inequality Arising in Geometry (1978)
+- Klingenberg, Wilhelm, Lectures on Closed Geodesics (1978)
+- Kramer, Linus, Stolz, Stephan, A diffeomorphism classification of manifolds which are like projective planes (2007)
+- B{ö}kstedt, Marcel, Ottosen, Iver, String cohomology groups of complex projective spaces (2006)
+- McKay, Benjamin, Summary of progress on the Blaschke conjecture (2016)
+- Milnor, John W., Stasheff, James D., Characteristic Classes (1974)
+- Milnor, John, Morse Theory (1963)
+- Moore, John Douglas, Lecture Notes on Seiberg–Witten Invariants (2010)
+- Ottosen, Iver, B{ö}kstedt, Marcel, String cohomology groups of complex projective spaces (2007)
+- {Á}lvarez Paiva, Juan-Carlos, Asymmetry in Hilbert's fourth problem (2013)
+- Reznikov, Alexander G., The weak Blaschke conjecture for $\mathbf{H}P^n$ (1985)
+- Reznikov, Alexander G., The weak Blaschke conjecture for $\mathbf{C}P^n$ (1994)
+- Rovenskii, Vladimir Y., Toponogov, Victor A., Great sphere foliations and manifolds with curvature bounded above (1996)
+- Shankar, Krishnan, Spatzier, Ralf, Wilking, Burkhard, Spherical rank rigidity and Blaschke manifolds (2005)
+- Song, Kyobeom, Blaschke conjecture and complex geometry (2026)
+- Su, Xiaole, Sun, Hongwei, Wang, Yusheng, On Blaschke's conjecture (2016)
+- Weinstein, Alan, On the volume of manifolds all of whose geodesics are closed (1974)
+- Wilking, Burkhard, Index parity of closed geodesics and rigidity of Hopf fibrations (2001)
+- Yang, Chung-Tao, Any Blaschke manifold of the homotopy type of $\mathbf{C}P^n$ has the right volume (1991)
+- Zelditch, Steve, Eigenfunctions of the Laplacian of Riemannian manifolds (2017)
+- Szab{ó}, Zolt{á}n I., The Lichnerowicz conjecture on harmonic manifolds (1990)
+- Szab{ó}, Zolt{á}n I., Harmonic manifolds; the proof of the Lichnerowicz conjecture in the compact case (1988)

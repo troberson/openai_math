@@ -1,4 +1,4 @@
-Notes / Summaries / Algebraic and complex geometry / [Family 032](../../index/algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Algebraic and complex geometry](../../index/disciplines/algebraic-and-complex-geometry.md) / [Family 032](../../index/algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties.md)
 
 # 032 — The rational Hodge conjecture for CM abelian varieties
 
@@ -164,7 +164,7 @@ countable union of proper closed analytic subsets in every full polarized period
 the paper states its own limit: "Constructing a very-general correspondence or surface cover with the
 stated property remains the external existence problem. The hypotheses concern actual algebraic cycles;
 absolute Hodge or motivated classes do not supply this input." [S16:71]. Its dependency table makes the
-contract explicit: "No algebraicity theorem for the Kuga--Satake class is an input." [S17:4–5].
+contract explicit: "No algebraicity theorem for the Kuga–Satake class is an input." [S17:4–5].
 
 **The family's dependency graph (measured from `bibitem` and `\cite` in the main files).** MS1 is the
 root: MS3 cites it as `OpenAICM2026` (bibitem [S13:8212], used at [S13:195] — "This is the precise CM
@@ -305,7 +305,7 @@ coincide on rational cycles [S9:221–222]. The proof is a sentence of dependenc
 Theorem~7.1 and his formulation (0.1)" [S9:226] — citing `Milne1999Tate` [S10:263] "with the
 correction in" the addenda entry [S9:227], whose content is that the cofinal auxiliary Galois CM
 fields are enlarged to contain a real subfield of degree greater than 2 that is inert at the residue
-prime [S9:228–230], and then: "The theorem's hypothesis is supplied by Theorem~ ."
+prime [S9:228–230], and then: "The theorem's hypothesis is supplied by Theorem  ."
 [S9:230–231]
 
 **Hodge standard conjecture for abelian varieties** [S9:274]: for an abelian variety `A/K` of
@@ -372,55 +372,150 @@ states in its own consequences section — Milne's two theorems, as corrected by
 
 ## Bibliography
 
-**37 entries** from `references.bib`:
-- Abdulali, Salman. *Hodge structures of {CM}-type*. (2005) [Abdulali2005CM]
-- Andr{\'e}, Yves. *Une remarque {\`a} propos des cycles de {Hodge} de type {CM}*. (1992) [Andre1992]
-- Bergeron, Nicolas, Millson, John, M{\oe}glin, Colette. *The {Hodge} conjecture and arithmetic quotients of complex balls*. (2016) [BMM2016]
-- Bhatt, Bhargav, Morrow, Matthew, Scholze, Peter. *Integral {$p$}-adic {Hodge} theory*. (2018) [BhattMorrowScholze2018]
+- Abdulali, Salman, Hodge structures of CM-type (2005)
+- Y. André, _Mumford–Tate groups of mixed Hodge structures and the theorem of the fixed part_, Compositio Mathematica **82** (1992), no. 1, 1–24.
+- N. Aoki, _A note on complete intersections of Fermat type_, Commentarii Mathematici Universitatis Sancti Pauli **35** (1986), 231–245. Institutional record.
+- N. Aoki, _Some new algebraic cycles on Fermat varieties_, Journal of the Mathematical Society of Japan **39** (1987), 385–396. doi:10.2969/jmsj/03930385.
+- Arapura, Donu, _Motivation for Hodge cycles_, Advances in Mathematics **207** (2006), no. 2, 762–781. Cited locators follow arXiv:math/0501348v3 (16 December 2005). doi:10.1016/j.aim.2006.01.005;  .
+- Artin, Michael, _Algebraic construction of Brieskorn's resolutions_, Journal of Algebra **29** (1974), no. 2, 330–348. doi:10.1016/0021-8693(74)90102-1.
+- M. Artin, On the solutions of analytic equations, _Inventiones Mathematicae_ **5** (1968), 277–291.
+- The Stacks Project Authors, The Stacks Project (2026)
+- The Stacks Project Authors, _The Stacks project_, \texttt{https://stacks.math.columbia.edu}. The cited tag and theorem locators were consulted on 30 September 2026.
+- P. Baum, W. Fulton, and R. MacPherson, Riemann–Roch for singular varieties, _Publications Mathématiques de l'IHÉS_ **45** (1975), 101–145.
+- Bergeron, Nicolas, Millson, John, M{\oe}glin, Colette, The Hodge conjecture and arithmetic quotients of complex balls (2016)
+- Bhatt, Bhargav, Morrow, Matthew, Scholze, Peter, Integral $p$-adic Hodge theory (2018)
+- Birkenhake, Christina; Lange, Herbert, _Complex Abelian Varieties_, second edition, Grundlehren der mathematischen Wissenschaften **302**, Springer-Verlag, 2004. doi:10.1007/978-3-662-06307-1.
+- Bolognesi, Michele; Laterveer, Robert, _A 9-dimensional family of K3 surfaces with finite-dimensional motive_, Rendiconti del Circolo Matematico di Palermo, Series 2 **73** (2024), 2313–2331. Cited locators follow arXiv:2310.11981v2 (16 April 2024). doi:10.1007/s12215-024-01036-0;  .
 - Borade, Neelima, Franzel, Jonas, Girsch, Johannes and
-            Yao, Wei, Yu, Qiyao, Zelingher, Elad. *On tori periods of {Weil} representations of unitary groups*. (2025) [BoradeEtAl2025ToriPeriods]
-- Borel, Armand, Harish-Chandra. *Arithmetic subgroups of algebraic groups*. (1962) [BorelHarishChandra1962]
-- Bosch, Siegfried. *Lectures on Formal and Rigid Geometry*. (2014) [Bosch2014FormalRigid]
-- Bosch, Siegfried, L{\"u}tkebohmert, Werner, Raynaud, Michel. *N{\'e}ron Models*. (1990) [BoschLutkebohmertRaynaud1990]
-- Brinon, Olivier, Conrad, Brian. *{CMI} Summer School Notes on {$p$}-adic {Hodge} Theory*. (2009) [BrinonConrad2009]
-- Deligne, Pierre. *Hodge cycles on abelian varieties*. (1982) [Deligne1982]
-- … and 27 more
-
-**43 entries** from `paper.tex`:
-- [Andre] Andr{\'e}, Yves, \emph{Pour une th{\'e}orie inconditionnelle des motifs}, Publications Math{\'e}matiques de l'IH{\'E}S \…
-- [ArapuraMotivation] Arapura, Donu, \emph{Motivation for {Hodge} cycles}, Advances in Mathematics \textbf{207} (2006), no.~2, 762--781. Cited…
-- [ArtinResolution] Artin, Michael, \emph{Algebraic construction of {Brieskorn}'s resolutions}, Journal of Algebra \textbf{29} (1974), no.~2…
-- [BirkenhakeLange] Birkenhake, Christina; Lange, Herbert, \emph{Complex Abelian Varieties}, second edition, Grundlehren der mathematischen …
-- [BolognesiLaterveer] Bolognesi, Michele; Laterveer, Robert, \emph{A 9-dimensional family of {K3} surfaces with finite-dimensional motive}, Re…
-- [BDPP] Boucksom, S{\'e}bastien; Demailly, Jean-Pierre; P{\u a}un, Mihai; Peternell, Thomas, \emph{The pseudo-effective cone of …
-- [Brieskorn] Brieskorn, Egbert, \emph{Die Aufl{\"o}sung der rationalen Singularit{\"a}ten holomorpher Abbildungen}, Mathematische Ann…
-- [BullesModuli] B{\"u}lles, Tim-Henrik, \emph{Motives of moduli spaces on {K3} surfaces and of special cubic fourfolds}, Manuscripta Mat…
-- [Buskin] Buskin, Nikolay, \emph{Every rational {Hodge} isometry between two {K3} surfaces is algebraic}, Journal f{\"u}r die rein…
-- [deCataldoMigliorini] de Cataldo, Mark Andrea A.; Migliorini, Luca, \emph{The {Chow} groups and the motive of the {Hilbert} scheme of points o…
-- … and 33 more
-
-**41 entries** from `paper.tex`:
-- [P3SWArtin1968] M.~Artin, On the solutions of analytic equations, \emph{Inventiones Mathematicae} \textbf{5} (1968), 277--291.
-- [P3SWBaumFultonMacPherson1975] P.~Baum, W.~Fulton, and R.~MacPherson, \href{https://www.numdam.org/article/PMIHES_1975__45__101_0.pdf} {Riemann--Roch f…
-- [p3swBorelSerreRR] A.~Borel and J.-P.~Serre, \href{https://doi.org/10.24033/bsmf.1500}{Le th\'eor\`eme de Riemann--Roch}, \emph{Bulletin de…
-- [P3SWBuchweitzFlenner2003] R.-O.~Buchweitz and H.~Flenner, A semiregularity map for modules and applications to deformations, \emph{Compositio Math…
-- [P3HHBF] R.-O.~Buchweitz and H.~Flenner, The global decomposition theorem for Hochschild \mbox{(co-)homology} of singular spaces …
-- [P3HHCRVdB] D.~Calaque, C.~A.~Rossi, and M.~Van den Bergh, \href{https://doi.org/10.4007/annals.2012.176.2.4} {C\u{a}ld\u{a}raru's c…
-- [P3HHCaldararuII] A.~C\u{a}ld\u{a}raru, \href{https://doi.org/10.1016/j.aim.2004.05.012} {The Mukai pairing---II: the Hochschild--Kostant-…
-- [P3HHCW] A.~C\u{a}ld\u{a}raru and S.~Willerton, The Mukai pairing, I: a categorical approach, \emph{New York Journal of Mathemati…
-- [P3SWChai1985] C.-L.~Chai, \href{https://www.cambridge.org/core/books/compactification-of-siegel-moduli-schemes/3372406AEC90801C3DC5EB2…
-- [ChaiOortModuli] C.-L.~Chai and F.~Oort, \href{https://www.claymath.org/wp-content/uploads/2022/03/cmip08c.pdf}{Moduli of abelian varieti…
-- … and 31 more
-
-**22 entries** from `paper.tex`:
-- [Andre1992FixedPart] Y.~Andr\'e, \href{https://www.numdam.org/article/CM_1992__82_1_1_0.pdf}{\emph{Mumford--Tate groups of mixed Hodge struct…
-- [AokiCI] N.~Aoki, \emph{A note on complete intersections of Fermat type}, Commentarii Mathematici Universitatis Sancti Pauli \tex…
-- [AokiFermat] N.~Aoki, \emph{Some new algebraic cycles on Fermat varieties}, Journal of the Mathematical Society of Japan \textbf{39} …
-- [CDK] E.~Cattani, P.~Deligne, and A.~Kaplan, \emph{On the locus of Hodge classes}, preprint arXiv:alg-geom/9402009v1, 10 Febru…
-- [Deligne1974] P.~Deligne, \href{https://doi.org/10.1007/BF02685881}{\emph{Th\'eorie de Hodge, III}}, Publications Math\'ematiques de l…
-- [DeligneMostow1986] P.~Deligne and G.~D.~Mostow, \href{https://doi.org/10.1007/BF02831622}{\emph{Monodromy of hypergeometric functions and n…
-- [DO] I.~Dolgachev and D.~Ortland, \emph{Point sets in projective spaces and theta functions}, Ast\'erisque \textbf{165}, Soci…
-- [EP] D.~Eisenbud and S.~Popescu, \emph{The projective geometry of the Gale transform}, Journal of Algebra \textbf{230} (2000)…
-- [Etingof2024Lie] P.~Etingof, \emph{Lie groups and Lie algebras}, \href{https://arxiv.org/abs/2201.09397v4}{arXiv:2201.09397v4} (2024). Se…
-- [FarbMargalit2012] B.~Farb and D.~Margalit, \href{https://doi.org/10.1515/9781400839049}{\emph{A Primer on Mapping Class Groups}}, Princeto…
-- … and 12 more
+            Yao, Wei, Yu, Qiyao, Zelingher, Elad, On tori periods of Weil representations of unitary groups (2025)
+- Borel, Armand, Harish-Chandra, Arithmetic subgroups of algebraic groups (1962)
+- Bosch, Siegfried, Lectures on Formal and Rigid Geometry (2014)
+- Bosch, Siegfried, L{ü}tkebohmert, Werner, Raynaud, Michel, N{é}ron Models (1990)
+- Boucksom, S{é}bastien; Demailly, Jean-Pierre; P{\u a}un, Mihai; Peternell, Thomas, _The pseudo-effective cone of a compact {K{ä}hler} manifold and varieties of negative Kodaira dimension_, Journal of Algebraic Geometry **22** (2013), no. 2, 201–248. Cited locators follow arXiv:math/0405285v1. doi:10.1090/S1056-3911-2012-00574-8;  .
+- Brieskorn, Egbert, _Die Aufl{ö}sung der rationalen Singularit{ä}ten holomorpher Abbildungen_, Mathematische Annalen **178** (1968), 255–270. doi:10.1007/BF01352140.
+- Brinon, Olivier, Conrad, Brian, CMI Summer School Notes on $p$-adic Hodge Theory (2009)
+- Buskin, Nikolay, _Every rational Hodge isometry between two K3 surfaces is algebraic_, Journal f{ü}r die reine und angewandte Mathematik **755** (2019), 127–150. Cited locators follow arXiv:1510.02852v3. doi:10.1515/crelle-2017-0027;  .
+- D. Calaque, C. A. Rossi, and M. Van den Bergh, C\u{aldăraru's conjecture and Tsygan's formality}, _Annals of Mathematics_ (2) **176** (2012), no. 2, 865–923.
+- de Cataldo, Mark Andrea A.; Migliorini, Luca, _The Chow groups and the motive of the Hilbert scheme of points on a surface_, Journal of Algebra **251** (2002), no. 2, 824–848. doi:10.1006/jabr.2001.9105.
+- E. Cattani, P. Deligne, and A. Kaplan, _On the locus of Hodge classes_, preprint arXiv:alg-geom/9402009v1, 10 February 1994, preprint PDF. Published in Journal of the American Mathematical Society **8** (1995), 483–506. doi:10.1090/S0894-0347-1995-1273413-2.
+- C.-L. Chai, _Compactification of Siegel Moduli Schemes_, London Mathematical Society Lecture Note Series, vol. 107, Cambridge University Press, Cambridge, 1985.
+- A. Căldăraru, The Mukai pairing—II: the Hochschild–Kostant–Rosenberg isomorphism, _Advances in Mathematics_ **194** (2005), 34–66.
+- Deligne, Pierre, Hodge cycles on abelian varieties (1982)
+- Deligne, Pierre, _Th{é}orie de Hodge, II_, Publications Math{é}matiques de l'IH{É}S **40** (1971), 5–57. doi:10.1007/BF02684692.
+- Deligne, Pierre, _La conjecture de Weil pour les surfaces K3_, Inventiones Mathematicae **15** (1972), 206–226. doi:10.1007/BF01404126.
+- Deligne, Pierre, _Th{é}orie de Hodge, III_, Publications Math{é}matiques de l'IH{É}S **44** (1974), 5–77. doi:10.1007/BF02685881.
+- Deligne, Pierre; Milne, James S., _Tannakian Categories_, in _Hodge Cycles, Motives, and Shimura Varieties_, Lecture Notes in Mathematics **900**, Springer, 1982, 101–228. Cited locators follow the corrected author version of 15 August 2012, which retains the original numbering. doi:10.1007/978-3-540-38955-2\_4;  .
+- P. Deligne, Théor\`eme de Lefschetz et crit\`eres de dégénérescence de suites spectrales, _Publications Mathématiques de l'IHÉS_ **35** (1968), 107–126.
+- P. Deligne, Le lemme de Gabber, _Astérisque_ **127** (1985), 131–150.
+- P. Deligne, _Théorie de Hodge, III_, Publications Mathématiques de l'IHÉS **44** (1974), 5–77.
+- Demailly, Jean-Pierre, _Complex Analytic and Differential Geometry_, 2012 version. Chapter II, Section 8.2, Theorem 8.8.  .
+- Donagi, Ron, _The fibers of the Prym map_, arXiv:alg-geom/9206008v2, 23 June 1992.  .
+- Edixhoven, Bas, van der Geer, Gerard, Moonen, Ben, Abelian Varieties: Chapter XI, Polarizations and Weil pairings (2011)
+- P. Etingof, _Lie groups and Lie algebras_, arXiv:2201.09397v4 (2024). Section locators refer to this version.
+- P. Etingof, _Lie groups and Lie algebras_, arXiv:2201.09397v4 (2024). Section locators refer to this version.
+- R.-O. Buchweitz and H. Flenner, A semiregularity map for modules and applications to deformations, _Compositio Mathematica_ **137** (2003), no. 2, 135–210.
+- R.-O. Buchweitz and H. Flenner, The global decomposition theorem for Hochschild \mbox{(co-)homology} of singular spaces via the Atiyah–Chern character, _Advances in Mathematics_ **217** (2008), 243–281. Numbered locators refer to arXiv:math/0606730v1.
+- Floccari, Salvatore; Fu, Lie, _The Hodge conjecture for Weil fourfolds with discriminant 1 via singular OG6-varieties_, Journal de Mathématiques Pures et Appliquées **210** (2026), Article 103876. Cited locators follow the author-hosted version. doi:10.1016/j.matpur.2026.103876;  .
+- S. Floccari, K3 surfaces associated with varieties of generalized Kummer type, _Geometry & Topology_ **30** (2026), no. 3, 1129–1154. Theorem locators refer to arXiv:2501.02315v2.
+- Folland, Gerald B., A Course in Abstract Harmonic Analysis (2015)
+- S. Floccari and L. Fu, The Hodge conjecture for Weil fourfolds with discriminant 1 via singular OG6-varieties, _Journal de Mathématiques Pures et Appliquées_ **210** (2026), article 103876. Theorem locators refer to arXiv:2504.13607v2.
+- Fulton, William, _Intersection Theory_, second edition, Ergebnisse der Mathematik und ihrer Grenzgebiete, 3. Folge **2**, Springer-Verlag, 1998. doi:10.1007/978-1-4612-1700-8.
+- Gao, Ziyang, Ullmo, Emmanuel, Hodge cycles and quadratic relations between holomorphic periods on CM abelian varieties (2026)
+- van Geemen, Bert, _Kuga–Satake varieties and the Hodge conjecture_, in _The Arithmetic and Geometry of Algebraic Cycles_, B. B. Gordon et al. (eds.), Kluwer Academic Publishers, 2000, 51–82. Cited locators follow arXiv:math/9903146v1 (24 March 1999).  .
+- van Geemen, Bert, _Real multiplication on K3 surfaces and Kuga–Satake varieties_, Michigan Mathematical Journal **56** (2008), no. 2, 375–399. Cited locators follow arXiv:math/0609839v1. doi:10.1307/mmj/1224783519;  .
+- van Geemen, Bert; Verra, Alessandro, _Quaternionic Pryms and Hodge classes_, Topology **42** (2003), no. 1, 35–53. Cited locators follow the author-hosted arXiv:math/0103111v1 (17 March 2001). doi:10.1016/S0040-9383(02)00004-6;  .
+- B. van Geemen, An introduction to the Hodge conjecture for abelian varieties, in _Algebraic Cycles and Hodge Theory_ (Torino, 1993), Lecture Notes in Mathematics 1594, Springer, 1994, 233–252. Lemma and section locators refer to the author version.
+- V. Golyshev, V. Lunts, and D. Orlov, Mirror symmetry for abelian varieties, _Journal of Algebraic Geometry_ **10** (2001), no. 3, 433–496; version used: arXiv:math/9812003v2.
+- G. González-Diez, R. A. Hidalgo, and M. Leyton, _Generalized Fermat curves_, Journal of Algebra **321** (2009), 1643–1660. doi:10.1016/j.jalgebra.2009.01.002; author proof.
+- Grauert, Hans, _Ein Theorem der analytischen Garbentheorie und die {Modulr{ä}ume} komplexer Strukturen_, Publications Math{é}matiques de l'IH{É}S **5** (1960), 5–64. doi:10.1007/BF02684746.
+- H. Grauert, Ein Theorem der analytischen Garbentheorie und die Modulräume komplexer Strukturen, _Publications Mathématiques de l'IHÉS_ **5** (1960), 5–64.
+- P. A. Griffiths, _Periods of integrals on algebraic manifolds, II: Local study of the period mapping_, American Journal of Mathematics **90** (1968), no. 3, 805–865.
+- Gross, Benedict H., On the Satake isomorphism (1998)
+- Grothendieck, Alexander, Hodge's general conjecture is false for trivial reasons (1969)
+- Grothendieck, Alexander, _Techniques de construction et th{é}or{\`e}mes d'existence en g{é}om{é}trie alg{é}brique IV: les sch{é}mas de Hilbert_, S{é}minaire Bourbaki, 1960/61, Expos{é} 221, 249–276.  . See also the 1962 erratum, which does not change the statement of Theorem 3.2:  .
+- A. Grothendieck, Techniques de construction et théor\`emes d'existence en géométrie algébrique IV: les schémas de Hilbert, _Séminaire Bourbaki_, 1960/61, exposé 221, vol. 6 (1961), 249–276.
+- Hazama, Fumio, On the General Hodge Conjecture for Abelian Varieties of CM-type (2003)
+- Hellmann, Eugen, On families of weakly admissible filtered $\varphi$-modules and the adjoint quotient of $\mathrm{GL}_d$ (2011)
+- R. A. Hidalgo, A. Kontogeorgis, M. Leyton-Álvarez, and P. Paramantzoglou, _Automorphisms of generalized Fermat curves_, Journal of Pure and Applied Algebra **221** (2017), 2312–2337. doi:10.1016/j.jpaa.2016.12.011; preprint arXiv:1409.3063.
+- F. Hirzebruch, Arithmetic genera and the theorem of Riemann–Roch for algebraic varieties, _Proc. Natl. Acad. Sci. USA_ **40** (1954), 110–114. \texttt{doi:10.1073/pnas.40.2.110}.
+- Hodge, W. V. D., The topological invariants of algebraic varieties (1952)
+- S. Huang, A note on a question of Markman, _Journal of Pure and Applied Algebra_ **225** (2021), no. 9, article 106673. arXiv:2011.10207v3.
+- Huybrechts, Daniel, _Lectures on K3 Surfaces_, Cambridge Studies in Advanced Mathematics **158**, Cambridge University Press, 2016. Cited locators follow the 2015 prepublication copy; the published book incorporates further corrections. doi:10.1017/CBO9781316594193;  .
+- T. Shioda and T. Katsura, _On Fermat varieties_, Tohoku Mathematical Journal, Second Series **31** (1979), 97–115. doi:10.2748/tmj/1178229881.
+- K. Kodaira, On a differential-geometric method in the theory of analytic stacks, _Proc. Natl. Acad. Sci. USA_ **39** (1953), 1268–1273. \texttt{doi:10.1073/pnas.39.12.1268}.
+- Kraft, Hanspeter; Procesi, Claudio, _Classical Invariant Theory: A Primer_, preliminary version, July 1996.  .
+- Kudla, Stephen S., Splitting metaplectic covers of dual reductive pairs (1994)
+- Kudla, Stephen S., Millson, John J., Intersection numbers of cycles on locally symmetric spaces and
+           Fourier coefficients of holomorphic modular forms in several
+           complex variables (1990)
+- Kuga, Michio; Satake, Ichiro, _Abelian varieties attached to polarized K3-surfaces_, Mathematische Annalen **169** (1967), 239–242. doi:10.1007/BF01399540.
+- A. Landesman, D. Litt, and W. Sawin, _Big monodromy for higher Prym representations_, Geometry & Topology **29** (2025), no. 5, 2733–2782. Theorem locators refer to arXiv:2401.13906v2.
+- Lehrer, Gustav I.; Zhang, Ruibin, _Invariants of the special orthogonal group and an enhanced Brauer category_, L'Enseignement Math{é}matique **63** (2017), no. 1–2, 181–200. Cited locators follow arXiv:1612.03998v1 (13 December 2016). doi:10.4171/LEM/63-1/2-6;  .
+- Li, Li, _Chow motive of Fulton–MacPherson configuration spaces and wonderful compactifications_, Michigan Mathematical Journal **58** (2009), no. 2, 565–598. Cited locators follow arXiv:math/0611459v2 (1 January 2009).  .
+- M{ö}ller, Martin, Zagier, Don, Modular embeddings of {Teichm{ü}ller} curves (2016)
+- B{ü}lles, Tim-Henrik, _Motives of moduli spaces on K3 surfaces and of special cubic fourfolds_, Manuscripta Mathematica **161** (2020), no. 1–2, 109–124. Cited locators follow arXiv:1806.08284v1 (21 June 2018). doi:10.1007/s00229-018-1086-0;  .
+- Di Lorenzo, Andrea; Fringuelli, Roberto; Vistoli, Angelo, _Integral Picard group of moduli of polarized K3 surfaces_, Bulletin of the London Mathematical Society **56** (2024), no. 2, 833–846. Cited locators follow arXiv:2305.07574v2 (3 November 2023). doi:10.1112/blms.12968;  .
+- B. Farb and D. Margalit, _A Primer on Mapping Class Groups_, Princeton Mathematical Series 49, Princeton University Press, 2012.
+- Markman, Eyal, Cycles on abelian $2n$-folds of Weil type from secant sheaves
+           on abelian $n$-folds (2025)
+- E. Markman, _Cycles on abelian $2n$-folds of Weil type from secant sheaves on abelian $n$-folds_, arXiv:2502.03415v2 (2025). Theorem locators refer to this version.
+- E. Markman, Secant sheaves and Weil classes on abelian varieties, in _Proceedings of the International Congress of Mathematicians 2026_, vol. 3, S. Friedlander and Y. Tschinkel (eds.), SIAM, 2026, 586–602.
+- Milne, J. S., Lefschetz Motives and the Tate Conjecture (1999)
+- Milne, J. S., Abelian Varieties (1986)
+- Milne, J. S., Polarizations and Grothendieck's standard conjectures (2002)
+- Milne, J. S., Hodge classes on abelian varieties (2022)
+- Milne, J. S., Introduction to Shimura varieties (2005)
+- Milne, J. S., Addenda to Lefschetz motives and the Tate conjecture
+- Milne, J. S., Addendum to Polarizations and Grothendieck's standard conjectures
+- J. S. Milne, _Algebraic Groups: The Theory of Group Schemes of Finite Type over a Field_, Cambridge Studies in Advanced Mathematics 170, Cambridge University Press, 2017. Theorem locators refer to the corrected online version (2022).
+- Milnor, John W.; Stasheff, James D., _Characteristic Classes_, Annals of Mathematics Studies **76**, Princeton University Press, 1974.
+- J. Milnor, _Morse Theory_, Annals of Mathematics Studies 51, Princeton University Press, 1963. Public scan.
+- Moonen, Ben, Zarhin, Yuri G., Hodge classes on abelian varieties of low dimension (1999)
+- B. Moonen, _Special subvarieties arising from families of cyclic covers of the projective line_, Documenta Mathematica **15** (2010), 793–819. doi:10.4171/DM/314. Locators refer to arXiv:1006.3400v2 (2010).
+- P. Deligne and G. D. Mostow, _Monodromy of hypergeometric functions and non-lattice integral monodromy_, Publications Mathématiques de l'IHÉS **63** (1986), 5–89.
+- S. Mukai, Duality between \(D(X)\) and \(D(\widehat X)\) with its application to Picard sheaves, _Nagoya Math. J._ **81** (1981), 153–175. \texttt{doi:10.1017/S002776300001922X}.
+- Mumford, David, Fogarty, John, Geometric Invariant Theory (1982)
+- Mumford, David, _Tata Lectures on Theta I_, Progress in Mathematics **28**, Birkh{ä}user Boston, 1983. doi:10.1007/978-1-4899-2843-6.
+- W{\l}odarczyk, Jaros{\l}aw, _Simple Hironaka resolution in characteristic zero_, Journal of the American Mathematical Society **18** (2005), no. 4, 779–822. doi:10.1090/S0894-0347-05-00493-5.
+- C.-L. Chai and F. Oort, \href{https://www.claymath.org/wp-content/uploads/2022/03/cmip08c.pdf}{Moduli of abelian varieties and $p$-divisible groups}, in _Arithmetic Geometry_, H. Darmon, D. A. Ellwood, B. Hassett, and Y. Tschinkel (eds.), Clay Mathematics Proceedings 8, American Mathematical Society, 2009, 441–536.
+- OpenAI, {Milne's rationality conjecture for abelian varieties} (2026)
+- OpenAI, _The rational Hodge conjecture for CM abelian varieties_, OpenAI Math Release preprint OAI:The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026, 2026.
+- OpenAI, _The rational Hodge conjecture for CM abelian varieties_, OpenAI Math Release preprint OAI:The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026, 2026.
+- OpenAI, _Weil classes and Hodge classes on abelian powers_, OpenAI Math Release preprint OAI:Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026, 2026.
+- I. Dolgachev and D. Ortland, _Point sets in projective spaces and theta functions_, Astérisque **165**, Société mathématique de France, 1988. Numdam record.
+- J. Coelho and M. Pacini, _Abel maps for curves of compact type_, \texttt{arXiv:0904.0039v1} (2009).
+- Paranjape, Kapil, _Abelian varieties associated to certain K3 surfaces_, Compositio Mathematica **68** (1988), no. 1, 11–22.  .
+- Peters, Chris; Sterk, Hans, _Symmetric and Quadratic Forms, with Applications to Coding Theory, Algebraic Geometry and Topology_, author-hosted draft, version label ``JUNE 2024,'' dated 16 September 2024.  .
+- Pohlmann, Henry, Algebraic cycles on abelian varieties of complex multiplication type (1968)
+- Poon, Flora, _Kuga–Satake construction on families of K3 surfaces of Picard rank 14_, Mathematische Nachrichten **299** (2026), no. 8, 1894–1916. doi:10.1002/mana.70173.
+- D. Eisenbud and S. Popescu, _The projective geometry of the Gale transform_, Journal of Algebra **230** (2000), 127–173. doi:10.1006/jabr.1999.7940; preprint arXiv:math/9807127.
+- G. Pourcin, Théor\`eme de Douady au-dessus de \(S\), _Annali della Scuola Normale Superiore di Pisa, Scienze Fisiche e Matematiche_, Serie 3, **23** (1969), no. 3, 451–459.
+- Schn{ü}rer, Olaf M.; Soergel, Wolfgang, _Proper base change for separated locally proper maps_, Rendiconti del Seminario Matematico della Universit{\`a} di Padova **135** (2016), 223–250. Cited locators follow arXiv:1404.7630v2 (5 November 2014). doi:10.4171/RSMUP/135-13;  .
+- J. C. Rohde, _Cyclic coverings, Calabi–Yau manifolds and complex multiplication_, Lecture Notes in Mathematics **1975**, Springer, Berlin, 2009. The preprint locator refers to arXiv:0711.2195v4 (2008).
+- Saito, Morihiko, _Introduction to mixed Hodge modules_, Ast{é}risque **179–180** (1989), 145–162.  .
+- Saito, Morihiko, _Mixed Hodge complexes on algebraic varieties_, Mathematische Annalen **316** (2000), no. 2, 283–331. Cited locators follow arXiv:math/9906088v1 (13 June 1999). doi:10.1007/s002080050014;  .
+- C. Schoen, Hodge classes on self-products of a variety with an automorphism, _Compositio Mathematica_ **65** (1988), no. 1, 3–32.
+- C. Schoen, Addendum to: Hodge classes on self-products of a variety with an automorphism, _Compositio Mathematica_ **114** (1998), no. 3, 329–336.
+- C. Schoen, _Hodge classes on self-products of a variety with an automorphism_, Compositio Mathematica **65** (1988), 3–32. Original article.
+- Scholze, Peter, $p$-adic Hodge theory for rigid-analytic varieties (2013)
+- Scholze, Peter, $p$-adic Hodge theory for rigid-analytic varieties—corrigendum (2016)
+- A. Schrijver, Tensor subalgebras and first fundamental theorems in invariant theory, _Journal of Algebra_ **319** (2008), no. 3, 1305–1319. The section locator refers to the author version.
+- Serre, Jean-Pierre, _G{é}om{é}trie alg{é}brique et g{é}om{é}trie analytique_, Annales de l'Institut Fourier **6** (1956), 1–42. doi:10.5802/aif.59.
+- A. Borel and J.-P. Serre, Le théor\`eme de Riemann–Roch, _Bulletin de la Société Mathématique de France_ **86** (1958), 97–136.
+- J.-P. Serre, Un théor\`eme de dualité, _Commentarii Mathematici Helvetici_ **29** (1955), 9–26.
+- J.-P. Serre, Géométrie algébrique et géométrie analytique, _Annales de l'Institut Fourier_ **6** (1956), 1–42.
+- J.-P. Serre, Groupes algébriques associés aux modules de Hodge–Tate, _Astérisque_ **65** (1979), 155–188.
+- Rie\ss, Ulrike, _On the Chow ring of birational irreducible symplectic varieties_, Manuscripta Mathematica **145** (2014), no. 3–4, 473–501. Cited locators follow arXiv:1304.4404v2 (11 September 2014). doi:10.1007/s00229-014-0698-2;  .
+- C. Peters and H. Sterk, _Symmetric and Quadratic Forms, with Applications to Coding Theory, Algebraic Geometry and Topology_, author monograph draft, version June 2024, dated 16 September 2024. The corollary locator refers to this version.
+- T. Terasoma, _Complete intersections of hypersurfaces—the Fermat case and the quadric case_, Japanese Journal of Mathematics, New Series **14** (1988), 309–384. doi:10.4099/math1924.14.309.
+- Varesco, Mauro, _Hodge similarities, algebraic classes, and Kuga–Satake varieties_, Mathematische Zeitschrift **305** (2023), Article 69. Cited locators follow arXiv:2304.02519v3 (2 November 2023). doi:10.1007/s00209-023-03390-8;  .
+- Varesco, Mauro, _The Hodge conjecture for powers of K3 surfaces of Picard number 16_, Michigan Mathematical Journal **75** (2025), no. 5, 1085–1116. Cited locators follow arXiv:2203.09778v3 (13 May 2024). doi:10.1307/mmj/20236349;  .
+- Weil, Andr{é}, Sur certains groupes d'op{é}rateurs unitaires (1964)
+- A. Weil, Abelian varieties and the Hodge ring, in _Collected Papers_, vol. III, Springer-Verlag, New York, 1979, 421–429 (essay 1977c).
+- A. Căldăraru and S. Willerton, The Mukai pairing, I: a categorical approach, _New York Journal of Mathematics_ **16** (2010), 61–98. arXiv:0707.2052.
+- Zarhin, Yuri G., _Hodge groups of K3 surfaces_, Journal f{ü}r die reine und angewandte Mathematik **341** (1983), 193–220. doi:10.1515/crll.1983.341.193.
+- B. J. J. Moonen and Yu. G. Zarhin, Hodge classes on abelian varieties of low dimension, _Mathematische Annalen_ **315** (1999), no. 4, 711–733. Theorem locators refer to arXiv:math/9901113v2.
+- G. I. Lehrer and R. B. Zhang, The Brauer category and invariant theory, _Journal of the European Mathematical Society_ **17** (2015), no. 9, 2311–2351.
+- G. I. Lehrer and R. B. Zhang, Invariants of the special orthogonal group and an enhanced Brauer category, _L'Enseignement Mathématique_ **63** (2017), nos. 1–2, 181–200.
+- Andr{é}, Yves, Une remarque {\`a} propos des cycles de Hodge de type CM (1992)
+- Andr{é}, Yves, _Pour une th{é}orie inconditionnelle des motifs_, Publications Math{é}matiques de l'IH{É}S **83** (1996), 5–49. doi:10.1007/BF02698643.

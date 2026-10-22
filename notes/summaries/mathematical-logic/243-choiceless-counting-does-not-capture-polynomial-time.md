@@ -1,4 +1,4 @@
-Notes / Summaries / Mathematical logic / [Family 243](../../index/mathematical-logic/243-choiceless-counting-does-not-capture-polynomial-time.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Mathematical logic](../../index/disciplines/mathematical-logic.md) / [Family 243](../../index/mathematical-logic/243-choiceless-counting-does-not-capture-polynomial-time.md)
 
 # 243 — Choiceless counting does not capture polynomial time
 
@@ -51,7 +51,7 @@ occurrence defines a Boolean query on every finite input that is not definable
 in the original counting formalism."
 
 The separation is stated as a strict inclusion. [S13:44] states the half that
-matters: "no \(\mathrm{CPT}\) sentence over \(\tau\) has the same true-model class."
+matters: "no \(\mathrmCPT\) sentence over \(\tau\) has the same true-model class."
 
 The choiceless side keeps its full power. [S13:46–47] says: "The \(\CPT\) sentences in \textup{(ii)} may use counting
 and hereditarily finite sets of unrestricted finite rank."
@@ -181,28 +181,48 @@ claims exist and names their declarations; the two comparator configs carry
 
 ## Bibliography
 
-**25 entries** from `references.bib`:
-- Andreas Blass, Yuri Gurevich, Saharon Shelah. *Choiceless Polynomial Time*. (1999) [bgs1999]
-- Andreas Blass, Yuri Gurevich, Saharon Shelah. *On Polynomial Time Computation Over Unordered Structures*. (2002) [bgs2002]
-- Jin-Yi Cai, Martin F{\"u}rer, Neil Immerman. *An Optimal Lower Bound on the Number of Variables for Graph Identification*. (1992) [cfi1992]
-- Anuj Dawar, David Richerby, Benjamin Rossman. *Choiceless Polynomial Time, Counting and the {Cai--F{\"u}rer--Immerman} Graphs*. (2008) [drr2008]
-- Erich Gr{\"a}del, Wied Pakusa, Svenja Schalth{\"o}fer, {\L}ukasz Kaiser. *Characterising Choiceless Polynomial Time with First-Order Interpretations*. (2015) [gkps2015]
-- Martin Grohe, Pascal Schweitzer, Daniel Wiebking. *Deep {Weisfeiler Leman}*. (2021) [gsw2020]
-- Saharon Shelah. *Choiceless Polynomial Time Logic: Inability to Express*. (2000) [shelah2000]
-- Benjamin Rossman. *Choiceless Computation and Symmetry*. (2010) [rossman2010]
-- Benedikt Pago. *Choiceless Computation and Symmetry: Limitations of Definability*. (2021) [pago2021]
-- Benedikt Pago. *Lower Bounds for Choiceless Polynomial Time via Symmetric {XOR}-Circuits*. (2023) [pago2023]
-- … and 15 more
-
-**20 entries** from `references.bib`:
-- Andreas Blass, Yuri Gurevich, Saharon Shelah. *Choiceless Polynomial Time*. (1999) [bgs1999]
-- Andreas Blass, Yuri Gurevich, Saharon Shelah. *On Polynomial Time Computation over Unordered Structures*. (2002) [bgs2002]
-- Anuj Dawar, David Richerby, Benjamin Rossman. *Choiceless Polynomial Time, Counting and the {Cai--F{\"u}rer--Immerman} Graphs*. (2008) [drr2008]
-- Moritz Lichter, Pascal Schweitzer. *Choiceless Polynomial Time with Witnessed Symmetric Choice*. (2023) [ls2023]
-- {OpenAI}. *{Choiceless polynomial time with counting does not capture polynomial time}*. (2026) [cptCompanion2026]
-- Jin-Yi Cai, Martin F{\"u}rer, Neil Immerman. *An Optimal Lower Bound on the Number of Variables for Graph Identification*. (1992) [cfi1992]
-- Saharon Shelah. *Choiceless Polynomial Time Logic: Inability to Express*. (2000) [shelah2000]
-- Benjamin Rossman. *Choiceless Computation and Symmetry*. (2010) [rossman2010]
-- Benedikt Pago. *Choiceless Computation and Symmetry: Limitations of Definability*. (2021) [pago2021]
-- Benedikt Pago. *Lower Bounds for Choiceless Polynomial Time via Symmetric {XOR}-Circuits*. (2023) [pago2023]
-- … and 10 more
+- Andreas Blass, Yuri Gurevich, Saharon Shelah, Choiceless Polynomial Time (1999)
+- Andreas Blass, Yuri Gurevich, Saharon Shelah, On Polynomial Time Computation Over Unordered Structures (2002)
+- Andreas Blass, Yuri Gurevich, Saharon Shelah, Choiceless Polynomial Time (1999)
+- Andreas Blass, Yuri Gurevich, Saharon Shelah, On Polynomial Time Computation over Unordered Structures (2002)
+- Jin-Yi Cai, Martin F{ü}rer, Neil Immerman, An Optimal Lower Bound on the Number of Variables for Graph Identification (1992)
+- Jin-Yi Cai, Martin F{ü}rer, Neil Immerman, An Optimal Lower Bound on the Number of Variables for Graph Identification (1992)
+- Peter J. Cameron, Notes on Classical Groups (2000)
+- Peter J. Cameron, Notes on Classical Groups (2000)
+- Ashok K. Chandra, David Harel, Structure and Complexity of Relational Queries (1982)
+- Anuj Dawar, David Richerby, Benjamin Rossman, Choiceless Polynomial Time, Counting and the {Cai–F{ü}rer–Immerman} Graphs (2008)
+- Anuj Dawar, Erich Gr{ä}del, Bjarki Holm, Eryk Kopczy{ń}ski, Wied Pakusa, Definability of Linear Equation Systems over Groups and Rings (2013)
+- Anuj Dawar, Erich Gr{ä}del, Leon Kullmann, Benedikt Pago, Symmetric Proofs in the Ideal Proof System (2025)
+- Anuj Dawar, David Richerby, Benjamin Rossman, Choiceless Polynomial Time, Counting and the {Cai–F{ü}rer–Immerman} Graphs (2008)
+- Anuj Dawar, David Richerby, A Fixed-Point Logic with Symmetric Choice (2003)
+- Erich Gr{ä}del, Wied Pakusa, Svenja Schalth{ö}fer, {\L}ukasz Kaiser, Characterising Choiceless Polynomial Time with First-Order Interpretations (2015)
+- Erich Gr{ä}del, Wied Pakusa, Rank Logic is Dead, Long Live Rank Logic! (2019)
+- Fran{\c c}oise Gire, H. Khanh Hoang, An Extension of Fixpoint Logic with a Symmetry-Based Choice Construct (1998)
+- Martin Grohe, Pascal Schweitzer, Daniel Wiebking, Deep Weisfeiler Leman (2021)
+- Shamgar Gurevich, Ronny Hadani, Notes on Canonical Quantization of Symplectic Vector Spaces over Finite Fields (2009)
+- Yuri Gurevich, Logic and the Challenge of Computer Science (1988)
+- Shamgar Gurevich, Ronny Hadani, Notes on Canonical Quantization of Symplectic Vector Spaces over Finite Fields (2009)
+- Neil Immerman, Eric Lander, Describing Graphs: A First-Order Approach to Graph Canonization (1990)
+- Neil Immerman, Relational Queries Computable in Polynomial Time (Extended Abstract) (1982)
+- Neil Immerman, Eric Lander, Describing Graphs: A First-Order Approach to Graph Canonization (1990)
+- Moritz Lichter, Pascal Schweitzer, Canonization for Bounded and Dihedral Color Classes in Choiceless Polynomial Time (2021)
+- Moritz Lichter, Pascal Schweitzer, Choiceless Polynomial Time with Witnessed Symmetric Choice (2023)
+- Moritz Lichter, Pascal Schweitzer, Canonization for Bounded and Dihedral Color Classes in Choiceless Polynomial Time (2021)
+- Moritz Lichter, Witnessed Symmetric Choice and Interpretations in Fixed-Point Logic with Counting (2026)
+- L. H. Loomis, H. Whitney, An Inequality Related to the Isoperimetric Inequality (1949)
+- L. H. Loomis, H. Whitney, An Inequality Related to the Isoperimetric Inequality (1949)
+- OpenAI, Choiceless polynomial time with counting does not capture polynomial time (2026)
+- Benedikt Pago, Choiceless Computation and Symmetry: Limitations of Definability (2021)
+- Benedikt Pago, Lower Bounds for Choiceless Polynomial Time via Symmetric XOR-Circuits (2023)
+- Benedikt Pago, Choiceless Computation and Symmetry: Limitations of Definability (2021)
+- Benedikt Pago, Lower Bounds for Choiceless Polynomial Time via Symmetric XOR-Circuits (2023)
+- Wied Pakusa, Svenja Schalth{ö}fer, Erkal Selman, Definability of {Cai–F{ü}rer–Immerman} Problems in Choiceless Polynomial Time (2016)
+- Wied Pakusa, Svenja Schalth{ö}fer, Erkal Selman, Definability of {Cai–F{ü}rer–Immerman} Problems in Choiceless Polynomial Time (2016)
+- Benjamin Rossman, Choiceless Computation and Symmetry (2010)
+- Benjamin Rossman, Choiceless Computation and Symmetry (2010)
+- Saharon Shelah, Choiceless Polynomial Time Logic: Inability to Express (2000)
+- Saharon Shelah, Choiceless Polynomial Time Logic: Inability to Express (2000)
+- Victor Shoup, A Computational Introduction to Number Theory and Algebra (2009)
+- Moshe Y. Vardi, The Complexity of Relational Query Languages (Extended Abstract) (1982)
+- Faried Abu Zaid, Erich Gr{ä}del, Martin Grohe, Wied Pakusa, Choiceless Polynomial Time on Structures with Small Abelian Colour Classes (2014)
+- Faried Abu Zaid, Erich Gr{ä}del, Martin Grohe, Wied Pakusa, Choiceless Polynomial Time on Structures with Small Abelian Colour Classes (2014)

@@ -1,4 +1,4 @@
-Notes / Summaries / Number theory / [Family 001](../../index/number-theory/001-milnes-rationality-conjecture.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Number theory](../../index/disciplines/number-theory.md) / [Family 001](../../index/number-theory/001-milnes-rationality-conjecture.md)
 
 # 001 — Milne's rationality conjecture
 
@@ -263,15 +263,38 @@ release's claim.
 
 ## Bibliography
 
-**35 entries** from `references.tex`:
-- [Andre1992] Y.~Andr\'e, \emph{Une remarque \`a propos des cycles de Hodge de type CM}, in S.~David (ed.), \emph{S\'eminaire de Th\'e…
-- [Andre1996] Y.~Andr\'e, \emph{Pour une th\'eorie inconditionnelle des motifs}, Publ. Math. Inst. Hautes \'{E}tudes Sci. \textbf{83} …
-- [Blasius1994] D.~Blasius, \emph{A $p$-adic property of Hodge classes on abelian varieties}, in \emph{Motives} (Seattle, WA, 1991), Par…
-- [ColmezFontaine2000] P.~Colmez and J.-M.~Fontaine, \emph{Construction des repr\'esentations $p$-adiques semi-stables}, Invent. Math. \textbf{…
-- [Conrad2003] B.~Conrad, \emph{Minimal models for elliptic curves}, notes, 20 October 2003. \href{https://math.stanford.edu/~conrad/vi…
-- [Deligne1982] P.~Deligne, \emph{Hodge cycles on abelian varieties} (notes by J.~S.~Milne), in P.~Deligne, J.~S.~Milne, A.~Ogus, and K.…
-- [FontaineRapoport2005] J.-M.~Fontaine and M.~Rapoport, \emph{Existence de filtrations admissibles sur des isocristaux}, Bull. Soc. Math. France…
-- [GleasonLimXu2026] I.~Gleason, D.~G.~Lim, and Y.~Xu, \emph{The connected components of affine Deligne--Lusztig varieties}, Invent. Math. \t…
-- [Grothendieck1970] A.~Grothendieck, \emph{Groupes de Barsotti-Tate et cristaux}, in \emph{Actes du Congr\`es International des Math\'ematic…
-- [Hartl2008] U.~Hartl, \emph{On period spaces for $p$-divisible groups}, C. R. Math. Acad. Sci. Paris \textbf{346} (2008), nos.~21--2…
-- … and 25 more
+- Y. André, _Une remarque \`a propos des cycles de Hodge de type CM_, in S. David (ed.), _Séminaire de Théorie des Nombres, Paris, 1989–90_, Progress in Math. **102**, Birkhäuser Boston, Boston, MA, 1992, 1–7.
+- Y. André, _Pour une théorie inconditionnelle des motifs_, Publ. Math. Inst. Hautes Études Sci. **83** (1996), 5–49. doi:10.1007/BF02698643. Original article.
+- The Stacks Project Authors, _The Stacks Project_, Lemma 30.28.3, Tag 0A42, accessed 23 September 2026.
+- D. Blasius, _A $p$-adic property of Hodge classes on abelian varieties_, in _Motives_ (Seattle, WA, 1991), Part 2, U. Jannsen, S. Kleiman, and J.-P. Serre (eds.), Proc. Sympos. Pure Math. **55**, Part 2, American Mathematical Society, Providence, RI, 1994, 293–308. doi:10.1090/pspum/055.2/1265557. Author's preprint.
+- B. Conrad, _Minimal models for elliptic curves_, notes, 20 October 2003. Author's notes.
+- P. Deligne, _Hodge cycles on abelian varieties_ (notes by J. S. Milne), in P. Deligne, J. S. Milne, A. Ogus, and K.-y. Shih, _Hodge Cycles, Motives, and Shimura Varieties_, Lecture Notes in Math. **900**, Springer-Verlag, Berlin–New York, 1982, 9–100. Corrected online version.
+- P. Colmez and J.-M. Fontaine, _Construction des représentations $p$-adiques semi-stables_, Invent. Math. **140** (2000), no. 1, 1–43. doi:10.1007/s002220000042. Author's version.
+- I. Gleason, D. G. Lim, and Y. Xu, _The connected components of affine Deligne–Lusztig varieties_, Invent. Math. **243** (2026), 805–861. doi:10.1007/s00222-025-01386-1. arXiv:2208.07195v3 (10 November 2025); preprint locators refer to this version.
+- A. Grothendieck, _Groupes de Barsotti-Tate et cristaux_, in _Actes du Congr\`es International des Mathématiciens_ (Nice, 1970), Tome 1, Gauthier-Villars, Paris, 1971, 431–436. Original article.
+- U. Hartl, _On period spaces for $p$-divisible groups_, C. R. Math. Acad. Sci. Paris **346** (2008), nos. 21–22, 1123–1128. doi:10.1016/j.crma.2008.07.003. Published version.
+- L. Illusie, _Grothendieck at Pisa: crystals and Barsotti–Tate groups_, in U. Zannier (ed.), _Colloquium De Giorgi 2013 and 2014_, Publications of the Scuola Normale Superiore **5**, Edizioni della Normale, Pisa, 2015, 79–107. doi:10.1007/978-88-7642-515-8\_5. Author's version.
+- W. Kim, _The classification of $p$-divisible groups over $2$-adic discrete valuation rings_, Math. Res. Lett. **19** (2012), no. 1, 121–141. doi:10.4310/MRL.2012.v19.n1.a10. arXiv:1007.1904v3 (30 December 2011); preprint locators refer to this version.
+- M. Kisin, _Crystalline representations and $F$-crystals_, in V. Ginzburg (ed.), _Algebraic Geometry and Number Theory: In Honor of Vladimir Drinfeld's 50th Birthday_, Progress in Math. **253**, Birkhäuser Boston, Boston, MA, 2006, 459–496. doi:10.1007/978-0-8176-4532-8\_7.
+- M. Kisin, _Mod $p$ points on Shimura varieties of abelian type_, J. Amer. Math. Soc. **30** (2017), no. 3, 819–914. Author's version used for all locators.
+- E. Markman, _Secant sheaves and Weil classes on abelian varieties_, preprint, contribution to the ICM 2026, arXiv:2509.23403v2 (11 February 2026). Version used for all locators, dated 13 February 2026.
+- J. S. Milne, _Abelian varieties_, in G. Cornell and J. H. Silverman (eds.), _Arithmetic Geometry_ (Storrs, CT, 1984), Springer-Verlag, New York, 1986, 103–150. doi:10.1007/978-1-4613-8655-1\_5. Corrected author's version, 2 January 2022; original theorem numbering retained.
+- J. S. Milne, _Lefschetz classes on abelian varieties_, Duke Math. J. **96** (1999), no. 3, 639–675. Author's version; author's correction to the proof of Theorem 5.9.
+- J. S. Milne, _Towards a proof of the conjecture of Langlands and Rapoport_, notes for a talk at the Institut Henri Poincaré, 28 April 2000, version dated 30 April 2000. Author's notes.
+- J. S. Milne, _Introduction to Shimura varieties_, in _Harmonic Analysis, the Trace Formula, and Shimura Varieties_, Clay Math. Proc. **4**, American Mathematical Society, Providence, RI, 2005, 265–378. Author's revision, 16 September 2017; locators refer to this revision.
+- J. S. Milne, _The Tate conjecture over finite fields (AIM talk)_, notes for the American Institute of Mathematics workshop, July 2007, version 2.2, 7 May 2008. Version used for all locators.
+- J. S. Milne, _Abelian Varieties_, course notes, version 2.00, 2008, vi+166 pp. Author's course notes.
+- J. S. Milne, _Rational Tate classes_, Mosc. Math. J. **9** (2009), no. 1, 111–141. Author's version; page numbers refer to this version.
+- J. S. Milne, _Lectures on Étale Cohomology_, course notes, version 2.21, 22 March 2013. Author's notes.
+- J. S. Milne, _Algebraic Number Theory_, course notes, version 3.08, 19 July 2020. Author's course notes. Locators refer to this version.
+- J. S. Milne, _Hodge classes on abelian varieties_, preprint, 2020, arXiv:2010.08857v2 (11 November 2020). Version used for all locators.
+- J. S. Milne, _Algebraic Groups: The Theory of Group Schemes of Finite Type over a Field_, Cambridge Studies in Advanced Mathematics **170**, Cambridge University Press, Cambridge, 2017; corrected reprint, 2022. doi:10.1017/9781316711736. Corrected 2022 version used for all locators.
+- J. S. Milne, _Abelian motives and Shimura varieties in nonzero characteristic_, preprint, version 2.2, 2 November 2025. Author's version used for all locators.
+- B. Moonen, _Models of Shimura varieties in mixed characteristics_, in A. J. Scholl and R. L. Taylor (eds.), _Galois Representations in Arithmetic Algebraic Geometry_ (Durham, 1996), London Math. Soc. Lecture Note Ser. **254**, Cambridge University Press, Cambridge, 1998, 267–350. doi:10.1017/CBO9780511662010.008. Author's version.
+- OpenAI, _The rational Hodge conjecture for CM abelian varieties_,\newline OpenAI Math Release preprint OAI:The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026, 2026.
+- J.-M. Fontaine and M. Rapoport, _Existence de filtrations admissibles sur des isocristaux_, Bull. Soc. Math. France **133** (2005), no. 1, 73–86. doi:10.24033/bsmf.2479. Published version.
+- G. Pappas and M. Rapoport, _$p$-adic shtukas and the theory of global and local Shimura varieties_, Camb. J. Math. **12** (2024), no. 1, 1–164. doi:10.4310/CJM.2024.v12.n1.a1. arXiv:2106.08270v6 (26 October 2023); preprint page numbers refer to this version.
+- J. T. Tate, _$p$-Divisible Groups_, in T. A. Springer (ed.), _Proceedings of a Conference on Local Fields_ (Driebergen, 1966), Springer-Verlag, Berlin–Heidelberg, 1967, 158–183. doi:10.1007/978-3-642-87942-5\_12. Original article.
+- J.-P. Wintenberger, _Propriétés du groupe tannakien des structures de Hodge $p$-adiques et torseur entre cohomologies cristalline et étale_, Ann. Inst. Fourier (Grenoble) **47** (1997), no. 5, 1289–1334. doi:10.5802/aif.1600. Original article.
+- M. Kisin and R. Zhou, _Independence of $\ell$ for Frobenius conjugacy classes attached to abelian varieties_, Ann. of Math. (2) **202** (2025), no. 3, 1077–1156. doi:10.4007/annals.2025.202.3.3. arXiv:2103.09945v2 (7 October 2024). All locators refer to arXiv:2103.09945v2.
+- M. Kisin and R. Zhou, _Strongly compatible systems associated to semistable abelian varieties_, preprint, 2025, arXiv:2505.02165v1 (deposited 4 May 2025). PDF version used for all locators, dated 10 June 2025.

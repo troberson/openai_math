@@ -1,4 +1,4 @@
-Notes / Summaries / Functional analysis / [Family 325](../../index/functional-analysis/325-complete-crouzeix-conjecture.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Functional analysis](../../index/disciplines/functional-analysis.md) / [Family 325](../../index/functional-analysis/325-complete-crouzeix-conjecture.md)
 
 # 325 — The complete Crouzeix conjecture
 
@@ -189,28 +189,47 @@ claims exist and names their declarations; the five comparator configs carry
 
 ## Bibliography
 
-**18 entries** from `references.tex`:
-- [AhagCzyzVirtanen2026] P.~\AA hag, R.~Czy{\.{z}}, and J.~Virtanen, \emph{The complete Crouzeix conjecture in dimension three and the Clou\^atre…
-- [Ahlfors1979] L.~V. Ahlfors, \emph{Complex Analysis}, third ed., McGraw--Hill, New York, 1979.
-- [BadeaCrouzeixDelyon2006] C.~Badea, M.~Crouzeix, and B.~Delyon, Convex domains and $K$-spectral sets, \emph{Math. Z.} \textbf{252} (2006), 345--36…
-- [Beckermann2005] B.~Beckermann, Image num{\'e}rique, GMRES et polyn{\^o}mes de Faber, \emph{C. R. Math.} \textbf{340} (2005), 855--860. \…
-- [BeckermannCrouzeix2014] B.~Beckermann and M.~Crouzeix, Faber polynomials of matrices for non-convex sets, \emph{Jaen J. Approx.} \textbf{6} (201…
-- [BeckermannStylianopoulos2018] B. Beckermann and N. Stylianopoulos, \emph{Bergman Orthogonal Polynomials and the Grunsky Matrix}, Constr. Approx. \text…
-- [Crouzeix2004] M.~Crouzeix, Bounds for analytical functions of matrices, \emph{Integral Equations Operator Theory} \textbf{48} (2004), …
-- [Crouzeix2007] M.~Crouzeix, Numerical range and functional calculus in Hilbert space, \emph{J. Funct. Anal.} \textbf{244} (2007), 668--…
-- [CrouzeixGreenbaum2025] M.~Crouzeix and A.~Greenbaum, \emph{A new proof that the numerical range is a complete $2$-spectral set for weighted shi…
-- [CrouzeixPalencia2017] M.~Crouzeix and C.~Palencia, The numerical range is a $(1+\sqrt{2})$-spectral set, \emph{SIAM J. Matrix Anal. Appl.} \te…
-- … and 8 more
-
-**26 entries** from `references.tex`:
-- [AhagCzyzVirtanen2026] P.~\AA hag, R.~Czy{\.{z}}, and J.~Virtanen, \emph{The complete Crouzeix conjecture in dimension three and the Clou\^atre…
-- [Ahlfors1979] L.~V. Ahlfors, \emph{Complex Analysis}, third ed., McGraw--Hill, New York, 1979.
-- [Arveson1972] W. Arveson, Subalgebras of $C^*$-algebras II, \emph{Acta Math.} \textbf{128} (1972), 271--308.
-- [BadeaCrouzeixDelyon2006] C. Badea, M. Crouzeix, and B. Delyon, Convex domains and $K$-spectral sets, \emph{Math. Z.} \textbf{252} (2006), 345--36…
-- [Beckermann2005] B. Beckermann, Image num\'erique, GMRES et polyn\^omes de Faber, \emph{C. R. Math.} \textbf{340} (2005), 855--860.
-- [BeckermannCrouzeix2014] B. Beckermann and M. Crouzeix, Faber polynomials of matrices for non-convex sets, \emph{Jaen J. Approx.} \textbf{6} (201…
-- [BeckermannStylianopoulos2018] B. Beckermann and N. Stylianopoulos, Bergman Orthogonal Polynomials and the Grunsky Matrix, \emph{Constr. Approx.} \text…
-- [Brodskii1978] M. S. Brodski\u\i, Unitary operator colligations and their characteristic functions, \emph{Russian Math. Surveys} \textb…
-- [Crouzeix2004] M.~Crouzeix, Bounds for analytical functions of matrices, \emph{Integral Equations Operator Theory} \textbf{48} (2004), …
-- [Crouzeix2007] M.~Crouzeix, Numerical range and functional calculus in Hilbert space, \emph{J. Funct. Anal.} \textbf{244} (2007), 668--…
-- … and 16 more
+- L. V. Ahlfors, _Complex Analysis_, third ed., McGraw–Hill, New York, 1979.
+- L. V. Ahlfors, _Complex Analysis_, third ed., McGraw–Hill, New York, 1979.
+- W. Arveson, Subalgebras of $C^*$-algebras II, _Acta Math._ **128** (1972), 271–308.
+- C. Badea, M. Crouzeix, and B. Delyon, Convex domains and $K$-spectral sets, _Math. Z._ **252** (2006), 345–365. doi:10.1007/s00209-005-0857-y.
+- C. Badea, M. Crouzeix, and B. Delyon, Convex domains and $K$-spectral sets, _Math. Z._ **252** (2006), 345–365.
+- B. Beckermann, Image num{é}rique, GMRES et polyn{\^o}mes de Faber, _C. R. Math._ **340** (2005), 855–860. doi:10.1016/j.crma.2005.04.027.
+- B. Beckermann, Image numérique, GMRES et polyn\^omes de Faber, _C. R. Math._ **340** (2005), 855–860.
+- B. Beckermann and M. Crouzeix, Faber polynomials of matrices for non-convex sets, _Jaen J. Approx._ **6** (2014), 219–231. arXiv:1310.1356v1.
+- M. Crouzeix, Bounds for analytical functions of matrices, _Integral Equations Operator Theory_ **48** (2004), 461–477. doi:10.1007/s00020-002-1188-6.
+- M. Crouzeix, Numerical range and functional calculus in Hilbert space, _J. Funct. Anal._ **244** (2007), 668–690. doi:10.1016/j.jfa.2006.10.013.
+- B. Beckermann and M. Crouzeix, Faber polynomials of matrices for non-convex sets, _Jaen J. Approx._ **6** (2014), 219–231.
+- M. Crouzeix, Bounds for analytical functions of matrices, _Integral Equations Operator Theory_ **48** (2004), 461–477. doi:10.1007/s00020-002-1188-6.
+- M. Crouzeix, Numerical range and functional calculus in Hilbert space, _J. Funct. Anal._ **244** (2007), 668–690. doi:10.1016/j.jfa.2006.10.013.
+- B. Delyon and F. Delyon, Generalization of von Neumann's spectral sets and integral representation of operators, _Bull. Soc. Math. France_ **127** (1999), 25–41. doi:10.24033/bsmf.2340.
+- B. Delyon and F. Delyon, Generalization of von Neumann's spectral sets and integral representation of operators, _Bull. Soc. Math. France_ **127** (1999), 25–41.
+- M. Crouzeix and A. Greenbaum, _A new proof that the numerical range is a complete $2$-spectral set for weighted shift matrices_, arXiv:2508.12768v1, August 18, 2025.
+- P. \AA hag, R. Czy{\.z}, and J. Virtanen, _The complete Crouzeix conjecture in dimension three and the Clou\^atre–Ostermann–Ransford conjecture_, arXiv:2608.27346v4, September 21, 2026.
+- P. \AA hag, R. Czy{\.z}, and J. Virtanen, _The complete Crouzeix conjecture in dimension three and the Clou\^atre–Ostermann–Ransford conjecture_, arXiv:2608.27346v4, September 21, 2026.
+- F. Hausdorff, Der Wertvorrat einer Bilinearform, _Math. Z._ **3** (1919), 314–316. doi:10.1007/BF01292610.
+- F. Hausdorff, Der Wertvorrat einer Bilinearform, _Math. Z._ **3** (1919), 314–316.
+- M. S. Brodski\u\i, Unitary operator colligations and their characteristic functions, _Russian Math. Surveys_ **33**:4 (1978), 159–191.
+- S. Jin, _The numerical range is a $2$-spectral set_, Preprints.org 202607.1919, version 4, August 7, 2026.
+- S. Jin, _The numerical range is a $2$-spectral set_, Preprints.org 202607.1919, version 4, August 7, 2026.
+- V. E. Katsnelson, A. Ya. Kheifets, and P. M. Yuditskii, An abstract interpolation problem and the extension theory of isometric operators, in _Topics in Interpolation Theory_, OTAA **95**, Birkhäuser, 1997, 283–298. Preprint version: arXiv:0706.1896v1.
+- Q. Luo, _Two boundary-certificate proofs of the Crouzeix theorem: Fiberwise Fourier recurrence and defect-Gram telescoping_, Preprints.org 202608.1661, version 2, August 28, 2026.
+- Q. Luo, _Two boundary-certificate proofs of the Crouzeix theorem: Fiberwise Fourier recurrence and defect-Gram telescoping_, Preprints.org 202608.1661, version 2, August 28, 2026.
+- OpenAI, _The complete Crouzeix theorem: optimal similarity and a common positive boundary representation_, OpenAI Math Release preprint OAI:The-complete-Crouzeix-theorem-September-23-2026, 2026.
+- OpenAI, _A direct proof of the complete Crouzeix inequality_, OpenAI Math Release preprint OAI:A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026, 2026.
+- M. Crouzeix and C. Palencia, The numerical range is a $(1+\sqrt{2})$-spectral set, _SIAM J. Matrix Anal. Appl._ **38** (2017), 649–655. doi:10.1137/17M1116672.
+- M. Crouzeix and C. Palencia, The numerical range is a $(1+\sqrt2)$-spectral set, _SIAM J. Matrix Anal. Appl._ **38** (2017), 649–655.
+- V. I. Paulsen, Completely bounded homomorphisms of operator algebras, _Proc. Amer. Math. Soc._ **92** (1984), 225–228.
+- C. Pommerenke, _Boundary Behaviour of Conformal Maps_, Springer-Verlag, 1992.
+- R. T. Rockafellar, _Convex Analysis_, Princeton University Press, 1970.
+- C. Runge, Zur Theorie der eindeutigen analytischen Functionen, _Acta Math._ **6** (1885), 229–244. doi:10.1007/BF02400416.
+- E. Lorist and F. L. Schwenninger, _A solution to Crouzeix's conjecture_, arXiv:2608.03841v2, August 17, 2026.
+- T. Ransford and F. L. Schwenninger, Remarks on the Crouzeix–Palencia proof that the numerical range is a $(1+\sqrt{2})$-spectral set, _SIAM J. Matrix Anal. Appl._ **39** (2018), 342–345. doi:10.1137/17M1143757.
+- E. Lorist and F. L. Schwenninger, _A solution to Crouzeix's conjecture_, arXiv:2608.03841v2, August 17, 2026.
+- T. Ransford and F. L. Schwenninger, Remarks on the Crouzeix–Palencia proof that the numerical range is a $(1+\sqrt{2})$-spectral set, _SIAM J. Matrix Anal. Appl._ **39** (2018), 342–345. doi:10.1137/17M1143757.
+- P. Stein, Some General Theorems on Iterants, _J. Res. Nat. Bur. Stand._ **48** (1952), 82–83.
+- B. Beckermann and N. Stylianopoulos, _Bergman Orthogonal Polynomials and the Grunsky Matrix_, Constr. Approx. **47** (2018), 211–235. doi:10.1007/s00365-017-9381-7.
+- B. Beckermann and N. Stylianopoulos, Bergman Orthogonal Polynomials and the Grunsky Matrix, _Constr. Approx._ **47** (2018), 211–235.
+- B. Sz.-Nagy, Sur les contractions de l'espace de Hilbert, _Acta Sci. Math. (Szeged)_ **15** (1953), 87–92.
+- O. Toeplitz, Das algebraische Analogon zu einem Satze von Fej{é}r, _Math. Z._ **2** (1918), 187–197. doi:10.1007/BF01212904.
+- O. Toeplitz, Das algebraische Analogon zu einem Satze von Fejér, _Math. Z._ **2** (1918), 187–197.

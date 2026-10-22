@@ -1,4 +1,4 @@
-Notes / Summaries / Differential geometry / [Family 346](../../index/differential-geometry/346-sharp-singular-set-bounds-for-stationary-integral-varifolds.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Differential geometry](../../index/disciplines/differential-geometry.md) / [Family 346](../../index/differential-geometry/346-sharp-singular-set-bounds-for-stationary-integral-varifolds.md)
 
 # 346 — Sharp singular-set bounds for stationary integral varifolds
 
@@ -12,7 +12,7 @@ The release's blurb for family 346 [S1:8372]:
 
 The first manuscript's abstract [S1:8381]:
 
-> Brena, Decio, and De Lellis \cite[Conjectures~1.1 and~1.2]{BDD2025} separate the dimension bound from the weaker assertion $\Hh^m(\Sing V)=0$. The latter Euclidean assertion is proved in _Almost-everywhere regularity of stationary integral varifolds_  , which we henceforth call AE. Our proof uses AE's signed-excess theorem and local estimates from its fitting and frequency arguments.
+> Brena, Decio, and De Lellis \cite[Conjectures 1.1 and 1.2]BDD2025 separate the dimension bound from the weaker assertion $\Hh^m(\Sing V)=0$. The latter Euclidean assertion is proved in _Almost-everywhere regularity of stationary integral varifolds_  , which we henceforth call AE. Our proof uses AE's signed-excess theorem and local estimates from its fitting and frequency arguments.
 
 The second manuscript's abstract [S1:8390]:
 
@@ -69,7 +69,7 @@ The main theorem is the dimension bound [S6:32–38]:
 
 The bound is sharp, and the manuscript names the example that attains it [S6:40–45]:
 
-> Theorem~  proves the Euclidean conjecture recorded as Conjecture~1.1 by Brena, Decio, and De Lellis  . There is no stability, minimizing, orientability, density-upper-bound, or codimension hypothesis. The estimate is sharp: the sum of the varifolds of two distinct $m$-planes meeting along an $(m-1)$-plane is stationary, and its singular set is exactly that intersection.
+> Theorem   proves the Euclidean conjecture recorded as Conjecture 1.1 by Brena, Decio, and De Lellis  . There is no stability, minimizing, orientability, density-upper-bound, or codimension hypothesis. The estimate is sharp: the sum of the varifolds of two distinct $m$-planes meeting along an $(m-1)$-plane is stationary, and its singular set is exactly that intersection.
 
 The second manuscript also settles the spherical case, where the classical theory needs a mass bound [S11:35–47]:
 
@@ -91,7 +91,7 @@ The second manuscript also settles the spherical case, where the classical theor
 
 The two manuscripts name the same conjecture. Brena, Decio, and De Lellis separate the dimension bound from the weaker assertion that the singular set has zero $m$-dimensional measure; the first manuscript proves the dimension bound and cites the second for the measure-zero statement, and the second manuscript proves the measure-zero statement as Conjecture 1.2 [S11:65–70]:
 
-> Simon's 2018 notes already record the question whether the singular set must be $\mathcal H^m$-null even when the generalized mean curvature is zero \cite[Chapter~5, Remark~6.4]{Simon2018}. The measure-zero singular-set assertion is Conjecture~1.2 of Brena, Decio, and De Lellis~ .   proves this conjecture in its full Euclidean scope. They isolate a local criterion in Conjecture~1.3:
+> Simon's 2018 notes already record the question whether the singular set must be $\mathcal H^m$-null even when the generalized mean curvature is zero \cite[Chapter 5, Remark 6.4]Simon2018. The measure-zero singular-set assertion is Conjecture 1.2 of Brena, Decio, and De Lellis  .   proves this conjecture in its full Euclidean scope. They isolate a local criterion in Conjecture 1.3:
 
 The first manuscript separates the two assertions and cites the second manuscript for the measure-zero one [S6:104–109]:
 
@@ -104,29 +104,29 @@ The first manuscript separates the two assertions and cites the second manuscrip
 
 The first manuscript states that the almost-everywhere conclusion is not an input to its proof [S6:110–114]:
 
-> The elliptic correction of the averaged graph in \cite[Sections~6.3--6.4]{BDLF2025} is an antecedent of this fitting construction. The almost-everywhere regularity conclusion itself is not an input: a set can have zero $\Hh^m$ measure and still have Hausdorff dimension greater than $m-1$.
+> The elliptic correction of the averaged graph in \cite[Sections 6.3–6.4]BDLF2025 is an antecedent of this fitting construction. The almost-everywhere regularity conclusion itself is not an input: a set can have zero $\Hh^m$ measure and still have Hausdorff dimension greater than $m-1$.
 
 The prior literature is the Allard–Federer–Simon tradition. Allard's compactness and regularity theory gives a relatively open dense regular set; the dimension-reduction method leads to the classical stratification by translation symmetries of tangent cones, and for stationary integral varifolds the set of points admitting no planar tangent has dimension at most $m-1$. Naber and Valtorta proved rectifiability of these strata for integral varifolds with bounded mean curvature, so the remaining difficulty is the singular set at higher-multiplicity planar tangents, where Allard's multiplicity-one theorem does not apply [S6:47–58]. For area-minimizing integral currents, Almgren gives the $m-2$ bound in arbitrary codimension, and De Lellis–Spadaro's multiple-valued, center-manifold, frequency analysis explains subtracting a well-chosen smooth center before normalizing the height — but their theorems do not apply to arbitrary stationary integral varifolds, and the crossing example prevents the same bound in this setting [S6:59–68]. The manuscript names Hirsch–Spolaor's $m-1$ bound for two-valued stationary Lipschitz graphs and their almost-everywhere regularity for stationary codimension-one integral currents with density at most two, Krummel–Minter–Wickramasekera's bounds at controlled densities under an explicit epsilon-regularity assumption, Brakke's $C^{1,\alpha}$ rectifiability, Menne's second-order rectifiability, Brena–De Lellis–Franceschini's smooth rectifiability and Kolasiński's independent proof, and De Lellis–Hirsch–Lihn–Spolaor's stationary varifolds with planar tangents and infinite local topology in non-Euclidean metrics [S6:72–102].
 
 The first manuscript's proof runs by contradiction on the dimension bound [S6:120–135]:
 
-> Suppose that $\dim_{\Hh}\Sing V>m-1$ and choose an exponent $s$ strictly between these two numbers. A first dimension-reduction argument produces a singular point, placed at the origin, an integer $Q$, and radii $L_i\downarrow0$ for which the rescaled varifolds converge to the multiplicity-$Q$ plane. At these same scales there are nonzero measures $\sigma_i$ carried by density-$Q$ points in a fixed compact ball, with mass bounded above and away from zero and the estimate \[ \sigma_i(\mathbf B_r(x))\le Cr^s. \] Here $\mathbf B_r(x)$ is an ambient Euclidean ball. The limiting measure of centers cannot be carried by an $(m-1)$-plane. This first reduction, proved in Section~ , is the familiar geometric starting point of dimension reduction; the challenge is to retain these centers in a further, height-normalized limit.
+> Suppose that $\dim_{\Hh}\Sing V>m-1$ and choose an exponent $s$ strictly between these two numbers. A first dimension-reduction argument produces a singular point, placed at the origin, an integer $Q$, and radii $L_i\downarrow0$ for which the rescaled varifolds converge to the multiplicity-$Q$ plane. At these same scales there are nonzero measures $\sigma_i$ carried by density-$Q$ points in a fixed compact ball, with mass bounded above and away from zero and the estimate \[ \sigma_i(\mathbf B_r(x))\le Cr^s. \] Here $\mathbf B_r(x)$ is an ambient Euclidean ball. The limiting measure of centers cannot be carried by an $(m-1)$-plane. This first reduction, proved in Section  , is the familiar geometric starting point of dimension reduction; the challenge is to retain these centers in a further, height-normalized limit.
 
 The four further stages are the new parts [S6:137–148] [S6:150–157] [S6:159–171] [S6:173–179]:
 
-> The proof has four further stages. First, we construct smooth reference graphs at the prescribed scales $L_i$. AE's minimal fitting gives intervals of radii on which a centered height admits frequency control. Section~  proves that these intervals cover every sufficiently small prescribed flat scale, including their transition regions. Section~  then normalizes the height by numbers $a_i\downarrow0$. The normalized second moment is nonzero, the first moment tends to zero, and the reference graphs' mean curvature and its first derivative are $o(a_i)$. Both moment conclusions are needed: subtracting a reference graph must neither remove the entire limit nor leave an arbitrary translation in it.
+> The proof has four further stages. First, we construct smooth reference graphs at the prescribed scales $L_i$. AE's minimal fitting gives intervals of radii on which a centered height admits frequency control. Section   proves that these intervals cover every sufficiently small prescribed flat scale, including their transition regions. Section   then normalizes the height by numbers $a_i\downarrow0$. The normalized second moment is nonzero, the first moment tends to zero, and the reference graphs' mean curvature and its first derivative are $o(a_i)$. Both moment conclusions are needed: subtracting a reference graph must neither remove the entire limit nor leave an arbitrary translation in it.
 
 Second, the linearized-measures section passes the first variations and signed excess to measures on the limiting plane [S6:150–157]:
 
-> Second, Section~  passes the first variations and signed excess to measures on the limiting plane. The resulting data consist of a nonnegative height measure, a positive-semidefinite tilt measure, a mixed height--tilt measure, and a signed mass measure. They satisfy linear first-variation identities, a positive-semidefinite block inequality, and a one-sided comparison of mass and tilt. This formulation avoids assuming that the limiting sheets can be globally labeled or represented by a single-valued function.
+> Second, Section   passes the first variations and signed excess to measures on the limiting plane. The resulting data consist of a nonnegative height measure, a positive-semidefinite tilt measure, a mixed height–tilt measure, and a signed mass measure. They satisfy linear first-variation identities, a positive-semidefinite block inequality, and a one-sided comparison of mass and tilt. This formulation avoids assuming that the limiting sheets can be globally labeled or represented by a single-valued function.
 
 Third, the density-centers section supplies the curvature-corrected comparison [S6:159–171]:
 
-> Third, the density of the points carrying $\sigma_i$ must still be visible after division by $a_i^2$. Ordinary uncorrected radial comparison does not provide that precision on curved reference graphs. Section~  uses geodesic radial fields weighted by the inverse reference-volume density. The resulting curvature error can be averaged against $\sigma_i$ at every radius down to zero. For a fixed $l>0$, its decisive integral is \[ \int_0^l t^{s-m}\,\dd t<\infty, \] which holds exactly when $s>m-1$. The centered first-moment estimate then removes the translation terms and yields a density comparison at every limiting center.
+> Third, the density of the points carrying $\sigma_i$ must still be visible after division by $a_i^2$. Ordinary uncorrected radial comparison does not provide that precision on curved reference graphs. Section   uses geodesic radial fields weighted by the inverse reference-volume density. The resulting curvature error can be averaged against $\sigma_i$ at every radius down to zero. For a fixed $l>0$, its decisive integral is \[ \int_0^l t^{s-m}\,\dd t<\infty, \] which holds exactly when $s>m-1$. The centered first-moment estimate then removes the translation terms and yields a density comparison at every limiting center.
 
 Finally, the dimension-reduction section closes the contradiction [S6:173–179]:
 
-> Finally, Section~  isolates an abstract dimension-reduction statement for these measures. Its frequency is monotone at the retained centers. A second blow-up makes that frequency constant at enough independent centers. Equality in the positive-semidefinite inequality then forces the height measure to vanish, contrary to its normalization. This is the contradiction that proves Theorem~ .
+> Finally, Section   isolates an abstract dimension-reduction statement for these measures. Its frequency is monotone at the retained centers. A second blow-up makes that frequency constant at enough independent centers. Equality in the positive-semidefinite inequality then forces the height measure to vanish, contrary to its normalization. This is the contradiction that proves Theorem  .
 
 The manuscript names which parts are new [S6:181–183]:
 
@@ -134,7 +134,7 @@ The manuscript names which parts are new [S6:181–183]:
 
 The second manuscript's engine is a signed-excess estimate. With $\pi$ projection onto the first factor, $Q$ a positive integer, and $P_{vv}$ the vertical block of the tangent projection, it defines the signed mass measure $M$ and the tilt measure $D$ and keeps the sign in the comparison [S11:124–136]:
 
-> Here $|M|$ denotes the total variation of the signed measure $M$, and $\tau=|M|+D$ is the positive excess measure in this flat setting. When $\tau$ has mass at most $d$ on a fixed enlarged ball, we prove an interior bound of the form \begin{equation}  \int w(2M-D) \leq d\exp\!\left[-F_Q\!\left(\log\frac1d\right)\right] \end{equation} for nonnegative Lipschitz weights with fixed bounds. The explicit function $F_Q$ grows faster than every fixed power of $\log T$ as $T\to\infty$.   gives the precise statement, including the curvature error for a reference surface of sufficiently high finite regularity. Retaining the sign permits a substantially smaller error than an absolute-value estimate.
+> Here $|M|$ denotes the total variation of the signed measure $M$, and $\tau=|M|+D$ is the positive excess measure in this flat setting. When $\tau$ has mass at most $d$ on a fixed enlarged ball, we prove an interior bound of the form \beginequation  \int w(2M-D) \leq d\exp\!\left[-F_Q\!\left(\log\frac1d\right)\right] \endequation for nonnegative Lipschitz weights with fixed bounds. The explicit function $F_Q$ grows faster than every fixed power of $\log T$ as $T\to\infty$.   gives the precise statement, including the curvature error for a reference surface of sufficiently high finite regularity. Retaining the sign permits a substantially smaller error than an absolute-value estimate.
 
 The manuscript's own organization paragraph names the section files and what each proves [S11:213–224]:
 
@@ -185,28 +185,46 @@ What has not been checked: no Lean, lake, or comparator run was performed, and f
 
 ## Bibliography
 
-**23 entries** from `references.bib`:
-- {OpenAI}. *{Almost-everywhere regularity of stationary integral varifolds}*. (2026) [AE]
-- Allard, William K.. *On the first variation of a varifold*. (1972) [Allard1972]
-- Allard, William K.. *Notes on the theory of varifolds*. (1987) [Allard1987]
-- Simon, Leon. *Introduction to Geometric Measure Theory*. (2018) [Simon2018]
-- Simon, Leon. *Lectures on Geometric Measure Theory*. (1983) [Simon1983]
-- Federer, Herbert. *Geometric Measure Theory*. (1969) [Federer1969]
-- Federer, Herbert. *The singular sets of area minimizing rectifiable currents with codimension one and of area minimizing flat chains modulo two with arbitrary codimension*. (1970) [Federer1970]
-- Mattila, Pertti. *Geometry of Sets and Measures in {Euclidean} Spaces: Fractals and Rectifiability*. (1995) [Mattila1995]
-- Almgren, Jr., Frederick J.. *Almgren's Big Regularity Paper: {$Q$}-Valued Functions Minimizing {Dirichlet}'s Integral and the Regularity of Area-Minimizing Rectifiable Currents up to Codimension {$2$}*. (2000) [Almgren2000]
-- Brakke, Kenneth A.. *The Motion of a Surface by Its Mean Curvature*. (1978) [Brakke1978]
-- … and 13 more
-
-**20 entries** from `references.bib`:
-- Allard, William K.. *On the first variation of a varifold*. (1972) [Allard1972]
-- Allard, William K.. *Notes on the theory of varifolds*. (1987) [Allard1987]
-- Simon, Leon. *Lectures on Geometric Measure Theory*. (1983) [Simon1983]
-- Brena, Camillo, De Lellis, Camillo, Franceschini, Federico. *{$C^\infty$} rectifiability of stationary varifolds*. (2025) [BDLF2025]
-- Brena, Camillo, Decio, Stefano, De Lellis, Camillo. *Remarks and conjectures on stationary varifolds dedicated to {Enrico Bombieri}*. (2025) [BDD2025]
-- Simon, Leon. *Introduction to Geometric Measure Theory*. (2018) [Simon2018]
-- {OpenAI}. *{The Solomon--Yau least-volume theorem}*. (2026) [OpenAISolomonYau2026]
-- Menne, Ulrich. *Second order rectifiability of integral varifolds of locally bounded first variation*. (2013) [Menne2013]
-- Almgren, Jr., Frederick J.. *Almgren's Big Regularity Paper*. (2000) [Almgren2000]
-- De Lellis, Camillo, Spadaro, Emanuele Nunzio. *{$Q$}-valued functions revisited*. (2011) [DLS2011]
-- … and 10 more
+- Allard, William K., On the first variation of a varifold (1972)
+- Allard, William K., Notes on the theory of varifolds (1987)
+- Allard, William K., On the first variation of a varifold (1972)
+- Allard, William K., Notes on the theory of varifolds (1987)
+- Almgren, Jr., Frederick J., Almgren's Big Regularity Paper: $Q$-Valued Functions Minimizing Dirichlet's Integral and the Regularity of Area-Minimizing Rectifiable Currents up to Codimension $2$ (2000)
+- Almgren, Jr., Frederick J., Almgren's Big Regularity Paper (2000)
+- Brakke, Kenneth A., The Motion of a Surface by Its Mean Curvature (1978)
+- Brena, Camillo, Decio, Stefano, De Lellis, Camillo, Remarks and conjectures on stationary varifolds dedicated to Enrico Bombieri (2025)
+- Brena, Camillo, De Lellis, Camillo, Franceschini, Federico, $C^\infty$ rectifiability of stationary varifolds (2025)
+- Brena, Camillo, De Lellis, Camillo, Franceschini, Federico, $C^\infty$ rectifiability of stationary varifolds (2025)
+- Brena, Camillo, Decio, Stefano, De Lellis, Camillo, Remarks and conjectures on stationary varifolds dedicated to Enrico Bombieri (2025)
+- Caffarelli, Luis, Silvestre, Luis, An extension problem related to the fractional Laplacian (2007)
+- Federer, Herbert, Geometric Measure Theory (1969)
+- Federer, Herbert, The singular sets of area minimizing rectifiable currents with codimension one and of area minimizing flat chains modulo two with arbitrary codimension (1970)
+- Hirsch, Jonas, Spolaor, Luca, Dimension of the singular set for $2$-valued stationary Lipschitz graphs (2023)
+- Hirsch, Jonas, Spolaor, Luca, Measure $0$ of the singular set for $2$-valued stationary hypercurrents (2025)
+- Hirsch, Jonas, Spolaor, Luca, Measure $0$ of the singular set for $2$-valued stationary hypercurrents (2025)
+- Krummel, Brian, Minter, Paul, Wickramasekera, Neshan, A Branch Set Stratification for Stationary Varifolds with Epsilon-Regularity (2026)
+- De Lellis, Camillo, Spadaro, Emanuele Nunzio, $Q$-valued functions revisited (2011)
+- De Lellis, Camillo, Spadaro, Emanuele, Regularity of area minimizing currents II: center manifold (2016)
+- De Lellis, Camillo, Spadaro, Emanuele, Regularity of area minimizing currents III: blow-up (2016)
+- De Lellis, Camillo, Hirsch, Jonas, Lihn, Zachary, Spolaor, Luca, Stationary varifolds with singularities II (2026)
+- De Lellis, Camillo, Hirsch, Jonas, Spolaor, Luca, Stationary and stable varifolds with singularities (2026)
+- De Lellis, Camillo, Spadaro, Emanuele Nunzio, $Q$-valued functions revisited (2011)
+- De Lellis, Camillo, Spadaro, Emanuele, Regularity of area minimizing currents II: center manifold (2016)
+- De Lellis, Camillo, Spadaro, Emanuele, Regularity of area minimizing currents III: blow-up (2016)
+- De Lellis, Camillo, Hirsch, Jonas, Lihn, Zachary, Spolaor, Luca, Stationary varifolds with singularities II (2026)
+- Mattila, Pertti, Geometry of Sets and Measures in Euclidean Spaces: Fractals and Rectifiability (1995)
+- Menne, Ulrich, Second order rectifiability of integral varifolds of locally bounded first variation (2013)
+- Menne, Ulrich, Second order rectifiability of integral varifolds of locally bounded first variation (2013)
+- Milnor, John, Analytic Proofs of the ``Hairy Ball Theorem'' and the Brouwer Fixed Point Theorem (1978)
+- Calder{ó}n, A. P., Zygmund, A., On the existence of certain singular integrals (1952)
+- Naber, Aaron, Valtorta, Daniele, The singular structure and regularity of stationary varifolds (2020)
+- Hyt{ö}nen, Tuomas, Kairema, Anna, Systems of dyadic cubes in a doubling metric space (2012)
+- OpenAI, {Almost-everywhere regularity of stationary integral varifolds} (2026)
+- OpenAI, {The Solomon–Yau least-volume theorem} (2026)
+- Simon, Leon, Introduction to Geometric Measure Theory (2018)
+- Simon, Leon, Lectures on Geometric Measure Theory (1983)
+- Simon, Leon, Lectures on Geometric Measure Theory (1983)
+- Simon, Leon, Introduction to Geometric Measure Theory (2018)
+- Kolasi{ń}ski, S{\l}awomir, Rectifiability of every finite order for stationary integral varifolds (2026)
+- Kolasi{ń}ski, S{\l}awomir, Rectifiability of every finite order for stationary integral varifolds (2026)
+- Whitney, Hassler, Analytic extensions of differentiable functions defined in closed sets (1934)

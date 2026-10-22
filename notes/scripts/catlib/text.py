@@ -97,12 +97,28 @@ def fold_accents(s: str) -> str:
     renders the escape literally, so the page shows markup where a name belongs. The release's
     own files keep the escapes: this is the rule for the text we write, and for comparing a
     page quotation against the line it cites.
+
+    Both the bare form (`\'e`) and the brace form (`\'{E}`) are handled: the latter is
+    the BibTeX/thebibliography convention for capital letters.
     """
     def one(m):
         cmd, letter = m.group(1), m.group(2)
         return ACCENT.get(cmd, {}).get(letter, letter + COMB.get(cmd, ""))
     s = re.sub(r'\\(["\'])([A-Za-z])', one, s)
+    s = re.sub(r"\\([\"'])\{([A-Za-z])\}", one, s)
     return re.sub(r"\\([Hvckudr])\{([A-Za-z])\}", one, s)
+
+
+def fold_dashes(s: str) -> str:
+    """LaTeX dash sequences to Unicode: `---` → em dash, `--` → en dash.
+
+    Order matters: the triple must be tried before the double, otherwise `---`
+    would fold to `–-`. The corpus uses LaTeX convention throughout (overview titles,
+    thebibliography entries, prose), so a markdown page that ships `--` shows two
+    hyphens where one en dash belongs.
+    """
+    s = s.replace("---", "\u2014")
+    return s.replace("--", "\u2013")
 
 
 def fold_apostrophe(s: str) -> str:

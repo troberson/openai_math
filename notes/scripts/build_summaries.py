@@ -27,6 +27,7 @@ sys.path.insert(0, str(ROOT / "notes" / "scripts"))
 import build_catalog as B  # noqa: E402
 from catlib import bib as BIB  # noqa: E402
 from catlib import normalizer  # noqa: E402
+from catlib import text as CTEXT  # noqa: E402
 from catlib.atomic import Staging  # noqa: E402
 from catlib.paths import ROOT as REPO  # noqa: E402
 from catlib.promote import key_for  # noqa: E402
@@ -114,40 +115,51 @@ def _parse_thebibliography(path: str) -> list[dict[str, str]]:
     return out
 
 
-def _render_bibliography(sources: list[tuple[str, str, str]]) -> str:
-    """Build the Bibliography section from the sources that declare bibliography files.
+def _bib_surname(raw: str) -> str:
+    """First-author surname for sorting.
 
-    A .bib source is parsed with _parse_bibtex; a .tex source carrying a
-    \\begin{thebibliography} block is parsed with _parse_thebibliography.
-    Returns the rendered section body, or "" if no bibliography source is declared.
+    The corpus uses two author naming conventions: BibTeX style (`Last, First`) and
+    thebibliography prose style (`F. Last`). Both are handled: for the first form, the
+    surname is the last word before the first comma; for the second, it is the last word
+    (the given name precedes). The accent fold runs before the escape strip so that
+    `Andr{\'e}` becomes `Andre` (not `Andr` + `e`).
     """
-    sections: list[str] = []
-    for _sid, path, role in sources:
+    comma = raw.find(",")
+    head = raw[:comma] if comma > 0 else raw
+    folded = CTEXT.fold_accents(head)
+    words = re.sub(r"[~\\{}'\"\x27]", " ", folded).split()
+    return words[-1].lower() if words else ""
+
+
+def _render_bibliography(sources: list[tuple[str, str, str]]) -> str:
+    """Build the Bibliography section: one sorted list, full entries, normalized.
+
+    All bibliography sources (deduped by path) are parsed, their entries combined
+    into a single list sorted by first-author surname, and each entry routed
+    through the normalizer so LaTeX → markdown/UTF-8 (one code path with quotes).
+    Returns "" if no bibliography source is declared.
+    """
+    seen: set[str] = set()
+    raw: list[str] = []
+    for _sid, path, _role in sources:
+        if path in seen:
+            continue
+        seen.add(path)
         if path.endswith(".bib"):
-            entries = _parse_bibtex(path)
-            if not entries:
-                continue
-            lines = [f"**{len(entries)} entries** from `{path.split('/')[-1]}`:"]
-            for e in entries[:10]:
+            for e in _parse_bibtex(path):
                 author = e["author"].replace(" and ", ", ") if e["author"] else ""
                 title = e["title"] if e["title"] else "(untitled)"
                 year = f" ({e['year']})" if e["year"] else ""
-                lines.append(f"- {author}. *{title}*.{year} [{e['key']}]")
-            if len(entries) > 10:
-                lines.append(f"- … and {len(entries) - 10} more")
-            sections.append("\n".join(lines))
+                raw.append(f"{author}, {title}{year}")
         elif path.endswith(".tex"):
-            entries = _parse_thebibliography(path)
-            if not entries:
-                continue
-            lines = [f"**{len(entries)} entries** from `{path.split('/')[-1]}`:"]
-            for e in entries[:10]:
-                excerpt = e["text"][:120] + ("…" if len(e["text"]) > 120 else "")
-                lines.append(f"- [{e['key']}] {excerpt}")
-            if len(entries) > 10:
-                lines.append(f"- … and {len(entries) - 10} more")
-            sections.append("\n".join(lines))
-    return "\n\n".join(sections)
+            for e in _parse_thebibliography(path):
+                raw.append(e["text"])
+
+    if not raw:
+        return ""
+
+    raw.sort(key=_bib_surname)
+    return "\n".join(f"- {normalizer.normalize_window(t, '')}" for t in raw)
 
 
 PREAMBLES: dict[str, str] = {}
@@ -339,7 +351,11 @@ def render_page(fam: str, info: dict, data_text: str) -> tuple[str, str]:
         "disc_slug": ds,
         "fam": fam,
         "slug": slug,
-        "title": title,
+        # The overview title carries LaTeX dashes (`M\'ezard--Parisi`); the accent is already
+        # folded by parse_overview, so the remaining `--` needs the same dash rule as prose.
+        # The slug is derived from the raw title above (before this fold), so the filename
+        # is unchanged — `--` and `–` slugify to the same `-`.
+        "title": CTEXT.fold_dashes(title),
         "contents": resolved.get("contents", ""),
         "headline": resolved.get("headline", ""),
         "undergraduate": resolved.get("undergraduate", ""),

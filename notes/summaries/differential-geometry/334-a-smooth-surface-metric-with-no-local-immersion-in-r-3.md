@@ -1,4 +1,4 @@
-Notes / Summaries / Differential geometry / [Family 334](../../index/differential-geometry/334-a-smooth-surface-metric-with-no-local-immersion-in-r-3.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Differential geometry](../../index/disciplines/differential-geometry.md) / [Family 334](../../index/differential-geometry/334-a-smooth-surface-metric-with-no-local-immersion-in-r-3.md)
 
 # 334 — A smooth surface metric with no local immersion in $\mathbb R^3$
 
@@ -56,7 +56,7 @@ Two things make the example sharp. First, the metric is not singular at the base
 
 Second, the obstruction is not a curvature sign. The construction uses both signs, and the manuscript states plainly that it leaves the sign-restricted versions open [S5:115–118]:
 
-> In Theorem~A, positive definiteness refers to the metric, not its curvature: the construction uses both signs of curvature. It does not settle the smooth local-realizability problem under either sign restriction \(K\ge0\) or \(K\le0\).
+> In Theorem A, positive definiteness refers to the metric, not its curvature: the construction uses both signs of curvature. It does not settle the smooth local-realizability problem under either sign restriction \(K\ge0\) or \(K\le0\).
 
 The proof runs through a scalar equation. Any smooth isometric immersion into three-space has a height function in a fixed ambient direction, and that height must satisfy one second-order relation. The manuscript sets out the two tasks [S5:134–143]:
 
@@ -218,23 +218,23 @@ The ledger records the family as one manuscript at tier T3, formalized, with one
 
 The manuscript places its result inside a literature that had settled the analytic local problem for nondegenerate curvature [S5:89–101]:
 
-> The analytic local problem is settled by the classical Janet--Cartan theorem~ . For smooth metrics, nonzero Gaussian curvature leads to elliptic or hyperbolic equations and smooth local existence; zeros of curvature introduce degeneracy and changes of type. Lin's foundational work treated nonnegative curvature and a clean change of sign with finite differentiability estimates~ . Here a clean change of sign means \(K(p)=0\) and \(dK(p)\ne0\). Smooth local existence under this condition was established by Nakamura and Maeda~ ; see also the regularity comparison in \cite[p.~320]{NY2008}. More complicated zero sets have been treated under finite-order and geometric restrictions, including transverse curves and cusps~\cite[Theorem~1.1]{HanKhuri2010}\cite[Theorem~1.1]{Lin2015}.
+> The analytic local problem is settled by the classical Janet–Cartan theorem  . For smooth metrics, nonzero Gaussian curvature leads to elliptic or hyperbolic equations and smooth local existence; zeros of curvature introduce degeneracy and changes of type. Lin's foundational work treated nonnegative curvature and a clean change of sign with finite differentiability estimates  . Here a clean change of sign means \(K(p)=0\) and \(dK(p)\ne0\). Smooth local existence under this condition was established by Nakamura and Maeda  ; see also the regularity comparison in \cite[p. 320]NY2008. More complicated zero sets have been treated under finite-order and geometric restrictions, including transverse curves and cusps \cite[Theorem 1.1]HanKhuri2010\cite[Theorem 1.1]Lin2015.
 
 The bibliography carries these entries: Janet 1926 [S10:163–172], Cartan 1927 [S10:174–183], Lin 1985 [S10:1–10], Lin 1986 [S10:12–21], Nakamura–Maeda 1989 [S10:23–32], Han–Khuri 2010 [S10:124–137], and Lin 2015 [S10:139–153]. The two questions the manuscript cites as the source of the problem are Yau's discussion at page 236 [S10:185–195] and Ghomi's survey, Section 1.5, Problem 1.9 [S10:155–161].
 
 The regularity ladder is the part of the history the manuscript is careful about [S5:103–118]:
 
-> The regularity distinction is essential. Existence at every finite differentiability order, on neighborhoods allowed to shrink with that order, does not by itself give one smooth map on a fixed neighborhood. At the other end of the scale, Nash--Kuiper flexibility gives \(C^1\) local isometric realizations in three-space~ . That regularity does not impose the second-order compatibility used for smooth immersions. Pogorelov constructed a \(C^{2,1}\) metric with no local \(C^2\) realization~\cite[paragraph~7]{Pogorelov1971}. The published refinement by Nadirashvili and Yuan achieves \(K\ge0\) with the same input and output regularities~\cite[Theorem~1.1]{NY2008}. In Theorem~A, positive definiteness refers to the metric, not its curvature: the construction uses both signs of curvature. It does not settle the smooth local-realizability problem under either sign restriction \(K\ge0\) or \(K\le0\).
+> The regularity distinction is essential. Existence at every finite differentiability order, on neighborhoods allowed to shrink with that order, does not by itself give one smooth map on a fixed neighborhood. At the other end of the scale, Nash–Kuiper flexibility gives \(C^1\) local isometric realizations in three-space  . That regularity does not impose the second-order compatibility used for smooth immersions. Pogorelov constructed a \(C^{2,1}\) metric with no local \(C^2\) realization \cite[paragraph 7]Pogorelov1971. The published refinement by Nadirashvili and Yuan achieves \(K\ge0\) with the same input and output regularities \cite[Theorem 1.1]NY2008. In Theorem A, positive definiteness refers to the metric, not its curvature: the construction uses both signs of curvature. It does not settle the smooth local-realizability problem under either sign restriction \(K\ge0\) or \(K\le0\).
 
 Pogorelov's example is the nearest predecessor: a $C^{2,1}$ metric with no local $C^2$ realization, cited at paragraph 7 of the 1971 paper [S10:79–89]. The manuscript's result is at the smooth end of that scale.
 
 The manuscript records a disagreement in the literature and declines to adjudicate it [S5:120–131]:
 
-> An earlier preprint of Nadirashvili and Yuan~\cite[Theorem~1.1]{NY2002} states a stronger counterexample: a smooth metric with \(K\le0\) and no \(C^3\) isometric embedding on any neighborhood of the distinguished point. Their later published paper, however, explicitly leaves the arbitrary smooth-metric question open~\cite[p.~320]{NY2008}, as does the subsequent discussion in \cite[p.~650]{HanKhuri2010}. The earlier preprint and these later accounts therefore give different statuses for the unrestricted smooth question. We leave this discrepancy unresolved. We do not use the preprint's nonsolvability assertion; the construction below supplies its own analytic obstruction.
+> An earlier preprint of Nadirashvili and Yuan \cite[Theorem 1.1]NY2002 states a stronger counterexample: a smooth metric with \(K\le0\) and no \(C^3\) isometric embedding on any neighborhood of the distinguished point. Their later published paper, however, explicitly leaves the arbitrary smooth-metric question open \cite[p. 320]NY2008, as does the subsequent discussion in \cite[p. 650]HanKhuri2010. The earlier preprint and these later accounts therefore give different statuses for the unrestricted smooth question. We leave this discrepancy unresolved. We do not use the preprint's nonsolvability assertion; the construction below supplies its own analytic obstruction.
 
 The 2002 preprint is in the bibliography as an arXiv entry [S10:102–111], the 2008 paper as a published article [S10:91–100]. The two analytic debts the manuscript names are the boundary-saddle argument in the 2002 preprint's Section 2, Step 3, and Khuri's high-frequency integral testing for general Monge–Ampère equations, together with Khuri's own open construction of a nonsolvable curvature profile [S5:145–159]:
 
-> Two earlier approaches supply important parts of this strategy. The geometric construction uses the boundary-saddle argument of Nadirashvili and Yuan~\cite[Section~2, Step~3]{NY2002}: a negatively curved disk cannot be a graph whose second fundamental form vanishes along its entire boundary. On the analytic side, Khuri's counterexamples for general Monge--Amp\`ere equations use high-frequency integral testing~ . His work on the Darboux equation develops solution-dependent flow coordinates and a prescribed-curvature construction, while leaving open the construction of the required nonsolvable curvature profile~\cite[Theorem~1 and the following discussion]{Khuri2009}. The distinction matters here: the Darboux coefficients come from one metric, so a nonsolvable general Monge--Amp\`ere equation does not by itself give an isometric-immersion obstruction. We perturb the metric itself and estimate the resulting Darboux forcing.
+> Two earlier approaches supply important parts of this strategy. The geometric construction uses the boundary-saddle argument of Nadirashvili and Yuan \cite[Section 2, Step 3]NY2002: a negatively curved disk cannot be a graph whose second fundamental form vanishes along its entire boundary. On the analytic side, Khuri's counterexamples for general Monge–Amp\`ere equations use high-frequency integral testing  . His work on the Darboux equation develops solution-dependent flow coordinates and a prescribed-curvature construction, while leaving open the construction of the required nonsolvable curvature profile \cite[Theorem 1 and the following discussion]Khuri2009. The distinction matters here: the Darboux coefficients come from one metric, so a nonsolvable general Monge–Amp\`ere equation does not by itself give an isometric-immersion obstruction. We perturb the metric itself and estimate the resulting Darboux forcing.
 
 The Khuri entries are the 2007 counterexamples paper [S10:55–64] and the 2009 Darboux paper [S10:113–122].
 
@@ -275,15 +275,25 @@ What has not been checked: no Lean or comparator run was performed, so nothing h
 
 ## Bibliography
 
-**17 entries** from `references.bib`:
-- Lin, Chang-Shou. *The local isometric embedding in {$\mathbb{R}^3$} of 2-dimensional {Riemannian} manifolds with nonnegative curvature*. (1985) [Lin1985]
-- Lin, Chang-Shou. *The local isometric embedding in {$\mathbb{R}^3$} of two-dimensional {Riemannian} manifolds with {Gaussian} curvature changing sign cleanly*. (1986) [Lin1986]
-- Nakamura, Gen, Maeda, Yoshiaki. *Local smooth isometric embeddings of low-dimensional {Riemannian} manifolds into {Euclidean} spaces*. (1989) [NakamuraMaeda1989]
-- Nash, John. *{$C^1$} isometric imbeddings*. (1954) [Nash1954]
-- Kuiper, Nicolaas H.. *On {$C^1$}-isometric imbeddings. {I}*. (1955) [Kuiper1955]
-- Khuri, Marcus A.. *Counterexamples to the Local Solvability of {Monge--Amp\`ere} Equations in the Plane*. (2007) [Khuri2007Counterexamples]
-- Schoen, Richard, Yau, Shing-Tung. *Lectures on Differential Geometry*. (1994) [Yau]
-- Pogorelov, A. V.. *An example of a two-dimensional {Riemannian} metric admitting no local realization in {$E^3$}*. (1971) [Pogorelov1971]
-- Nadirashvili, Nikolai, Yuan, Yu. *Improving {Pogorelov}'s isometric embedding counterexample*. (2008) [NY2008]
-- Nadirashvili, Nikolai, Yuan, Yu. *Counterexamples for Local Isometric Embedding*. (2002) [NY2002]
-- … and 7 more
+- Cartan, {É}lie, Sur la possibilit{é} de plonger un espace riemannien donn{é}
+             dans un espace euclidien (1927)
+- Ghomi, Mohammad, Open problems in geometry of curves and surfaces (2019)
+- Han, Qing, Khuri, Marcus, On the local isometric embedding in $\mathbb{R}^3$
+                   of surfaces with Gaussian curvature of mixed sign (2010)
+- Janet, Maurice, Sur la possibilit{é} de plonger un espace riemannien donn{é}
+             dans un espace euclidien (1926)
+- Khuri, Marcus A., Counterexamples to the Local Solvability of {Monge–Amp\`ere} Equations in the Plane (2007)
+- Khuri, Marcus A., On the local solvability of Darboux's equation (2009)
+- Kuiper, Nicolaas H., On $C^1$-isometric imbeddings. I (1955)
+- Lin, Chang-Shou, The local isometric embedding in $\mathbb{R}^3$ of 2-dimensional Riemannian manifolds with nonnegative curvature (1985)
+- Lin, Chang-Shou, The local isometric embedding in $\mathbb{R}^3$ of two-dimensional Riemannian manifolds with Gaussian curvature changing sign cleanly (1986)
+- Lin, Tsung-Yin, On the local isometric embedding in $\mathbb{R}^3$
+                   of surfaces with zero sets of Gaussian curvature
+                   forming cusp domains (2016)
+- Nadirashvili, Nikolai, Yuan, Yu, Improving Pogorelov's isometric embedding counterexample (2008)
+- Nadirashvili, Nikolai, Yuan, Yu, Counterexamples for Local Isometric Embedding (2002)
+- Nakamura, Gen, Maeda, Yoshiaki, Local smooth isometric embeddings of low-dimensional Riemannian manifolds into Euclidean spaces (1989)
+- Nash, John, $C^1$ isometric imbeddings (1954)
+- Pogorelov, A. V., An example of a two-dimensional Riemannian metric admitting no local realization in $E^3$ (1971)
+- Schoen, Richard, Yau, Shing-Tung, Lectures on Differential Geometry (1994)
+- Yau, Shing-Tung, Review of geometry and analysis (2000)

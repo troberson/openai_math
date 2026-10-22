@@ -1,4 +1,4 @@
-Notes / Summaries / Probability and statistical mechanics / [Family 226](../../index/probability-and-statistical-mechanics/226-double-dimer-cle-4-conjecture-in-the-half-plane.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Probability and statistical mechanics](../../index/disciplines/probability-and-statistical-mechanics.md) / [Family 226](../../index/probability-and-statistical-mechanics/226-double-dimer-cle-4-conjecture-in-the-half-plane.md)
 
 # 226 — The double-dimer $\mathrm{CLE}_4$ conjecture in the half-plane
 
@@ -187,15 +187,24 @@ certificate ships with it.
 
 ## Bibliography
 
-**21 entries** from `references.tex`:
-- [AB] M.~Aizenman and A.~Burchard, \emph{H\"older regularity and dimension bounds for random curves}, Duke Mathematical Journa…
-- [BW] T.~Bai and Y.~Wan, \emph{On the crossing estimates for simple conformal loop ensembles}, International Mathematics Resea…
-- [BC] M.~Basok and D.~Chelkak, \emph{Tau-functions \`a la Dub\'edat and probabilities of cylindrical events for double-dimers …
-- [BI] M.~Basok and K.~Izyurov, \emph{Nesting of double-dimer loops: local fluctuations and convergence to the nesting field of…
-- [Billingsley] P.~Billingsley, \emph{Weak Convergence of Measures: Applications in Probability}, CBMS-NSF Regional Conference Series in…
-- [Cairns] S.~S.~Cairns, \emph{An elementary proof of the Jordan--Schoenflies theorem}, Proceedings of the American Mathematical So…
-- [Dubedat] J.~Dub\'edat, \emph{Double dimers, conformal loop ensembles and isomonodromic deformations}, Journal of the European Mat…
-- [Durrett] R.~Durrett, \emph{Probability: Theory and Examples}, fifth-edition author manuscript, Version~5, January~11, 2019. \href…
-- [GV] I.~Gessel and G.~Viennot, \emph{Binomial determinants, paths, and hook length formulae}, Advances in Mathematics \textbf…
-- [Kasteleyn] P.~W.~Kasteleyn, \emph{The statistics of dimers on a lattice: I. The number of dimer arrangements on a quadratic lattice…
-- … and 11 more
+- P. Billingsley, _Weak Convergence of Measures: Applications in Probability_, CBMS-NSF Regional Conference Series in Applied Mathematics, vol. 5, SIAM, Philadelphia, 1971. doi:10.1137/1.9781611970623.
+- M. Aizenman and A. Burchard, _Hölder regularity and dimension bounds for random curves_, Duke Mathematical Journal **99** (1999), 419–453. doi:10.1215/S0012-7094-99-09914-3.
+- S. S. Cairns, _An elementary proof of the Jordan–Schoenflies theorem_, Proceedings of the American Mathematical Society **2** (1951), no. 6, 860–867. doi:10.2307/2031698.
+- M. Basok and D. Chelkak, _Tau-functions \`a la Dubédat and probabilities of cylindrical events for double-dimers and CLE(4)_, Journal of the European Mathematical Society **23** (2021), no. 8, 2787–2832. doi:10.4171/JEMS/1072.
+- J. Dubédat, _Double dimers, conformal loop ensembles and isomonodromic deformations_, Journal of the European Mathematical Society **21** (2019), no. 1, 1–54. doi:10.4171/JEMS/830.
+- R. Durrett, _Probability: Theory and Examples_, fifth-edition author manuscript, Version 5, January 11, 2019. Author-hosted text.
+- H. N. V. Temperley and M. E. Fisher, _Dimer problem in statistical mechanics—an exact result_, Philosophical Magazine **6** (1961), 1061–1063. doi:10.1080/14786436108243366.
+- M. Basok and K. Izyurov, _Nesting of double-dimer loops: local fluctuations and convergence to the nesting field of CLE(4)_, preprint (2025), arXiv:2501.01574v1.
+- P. W. Kasteleyn, _The statistics of dimers on a lattice: I. The number of dimer arrangements on a quadratic lattice_, Physica **27** (1961), 1209–1225. doi:10.1016/0031-8914(61)90063-5.
+- R. Kenyon, _Dominos and the Gaussian free field_, Annals of Probability **29** (2001), 1128–1137. arXiv:math-ph/0002027.
+- R. Kenyon, _Conformal invariance of loops in the double-dimer model_, Communications in Mathematical Physics **326** (2014), no. 2, 477–497. doi:10.1007/s00220-013-1881-0.
+- R. W. Kenyon, J. G. Propp and D. B. Wilson, _Trees and matchings_, Electronic Journal of Combinatorics **7** (2000), no. 1, Research Paper R25, 34 pp. doi:10.37236/1503.
+- E. H. Lieb, _Solution of the dimer problem by the transfer matrix method_, Journal of Mathematical Physics **8** (1967), 2339–2341. doi:10.1063/1.1705163.
+- B. Lindström, _On the vector representations of induced matroids_, Bulletin of the London Mathematical Society **5** (1973), 85–90. doi:10.1112/blms/5.1.85.
+- J. Rasmussen and P. Ruelle, _Refined conformal spectra in the dimer model_, Journal of Statistical Mechanics: Theory and Experiment (2012), P10002. doi:10.1088/1742-5468/2012/10/P10002.
+- I. Gessel and G. Viennot, _Binomial determinants, paths, and hook length formulae_, Advances in Mathematics **58** (1985), 300–321. doi:10.1016/0001-8708(85)90121-5.
+- T. Bai and Y. Wan, _On the crossing estimates for simple conformal loop ensembles_, International Mathematics Research Notices **2023** (2023), no. 13, 11645–11683. doi:10.1093/imrn/rnac173. Preprint version: arXiv:2106.11088v3.
+- S. Sheffield and W. Werner, _Conformal loop ensembles: the Markovian characterization and the loop-soup construction_, Annals of Mathematics (2) **176** (2012), no. 3, 1827–1917. doi:10.4007/annals.2012.176.3.8.
+- R. W. Kenyon and D. B. Wilson, _Boundary partitions in trees and dimers_, Transactions of the American Mathematical Society **363** (2011), no. 3, 1325–1364. doi:10.1090/S0002-9947-2010-04964-5. Preprint version: arXiv:math/0608422v4.
+- J. G. Propp and D. B. Wilson, _How to get a perfectly random sample from a generic Markov chain and generate a random spanning tree of a directed graph_, Journal of Algorithms **27** (1998), 170–217. doi:10.1006/jagm.1997.0917.
+- D. B. Wilson, _Generating random spanning trees more quickly than the cover time_, in _Proceedings of the Twenty-Eighth Annual ACM Symposium on Theory of Computing (STOC '96)_, ACM, New York, 1996, pp. 296–303. doi:10.1145/237814.237880.

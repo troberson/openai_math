@@ -1,4 +1,4 @@
-Notes / Summaries / Algebra / [Family 196](../../index/algebra/196-a-counterexample-to-kaplanskys-zero-divisor-conjecture.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Algebra](../../index/disciplines/algebra.md) / [Family 196](../../index/algebra/196-a-counterexample-to-kaplanskys-zero-divisor-conjecture.md)
 
 # 196 — A counterexample to Kaplansky's zero-divisor conjecture
 
@@ -46,25 +46,25 @@ The two safeguards are stated. [S3:84] states them: "This simple cancellation le
 
 The probabilistic step is stated. [S3:88] states it: "The outgoing-label types use lines in a finite projective plane together with three extra letters. Their cross-intersections force parity, while their turn frequencies satisfy an exponentially decaying squared-word estimate. We convert this estimate into an exclusion of bounded systems of almost completely paired paths. Paths may traverse the same edge repeatedly; multiplicity stages keep track of those repeated uses, while nearly aligned blocks control comparisons of arbitrary subpaths. Multiplying numerical expectation bounds selects one stage with a small expected count, without asserting independence between stages."
 
-The planar step is stated. [S3:90] states it: "The remaining obstacle is that a sphere can involve arbitrarily many paths of arbitrarily large total length. Lipton--Tarjan planar separation reduces each such configuration to a bounded system. Long boundaries are first split and closed at a controlled cost, and planar gap counting bounds the number of comparison intervals after localization. The proportion of unpaired positions allowed by the probabilistic estimate is fixed before the bounds on the number and lengths of paths. This order permits the same bounded class to detect every large spherical arrangement, rather than a union bound over all arrangement sizes."
+The planar step is stated. [S3:90] states it: "The remaining obstacle is that a sphere can involve arbitrarily many paths of arbitrarily large total length. Lipton–Tarjan planar separation reduces each such configuration to a bounded system. Long boundaries are first split and closed at a controlled cost, and planar gap counting bounds the number of comparison intervals after localization. The proportion of unpaired positions allowed by the probabilistic estimate is fixed before the bounds on the number and lengths of paths. This order permits the same bounded class to detect every large spherical arrangement, rather than a union bound over all arrangement sizes."
 
 The antecedents are recorded. [S3:92] records them: "Graphical small cancellation provides important antecedents for this strategy."
 
 and by [S3:92]: "Distinguishing genuinely different graph lifts from coincident lifts is central to these arguments and to Bereznyuk's spherical-diagram approach"
 
-and by [S3:92]: "Here the prescribed vertex types and repeated traversals require a separate probability estimate, and the needed topology is proved directly by cone-picture surgery. We do not invoke a small-cancellation or \(\mathrm{CAT}(0)\) criterion for these graphs."
+and by [S3:92]: "Here the prescribed vertex types and repeated traversals require a separate probability estimate, and the needed topology is proved directly by cone-picture surgery. We do not invoke a small-cancellation or \(\mathrmCAT(0)\) criterion for these graphs."
 
 The conventions are recorded. [S3:96] records them: "All graphs are finite unless stated otherwise. A graph may initially have loops or parallel edges; both are counted in its girth. A signed alphabet \(T\) has a fixed-point-free involution \(t\mapsto\bar t\), with \(\bar t\) denoting the inverse letter. The rose \(F\) has one vertex and one unoriented edge for each inverse pair. A labelled graph maps immersively to \(F\) when each outgoing label occurs at most once at each vertex. An _immersed path_ is an edge path with no immediate reversal; a closed path is _cyclically immersed_ if this also holds at its last/first junction. Length always counts edge traversals, including repetitions."
 
 The types section opens with the design. [S4:3–8] opens it: "We construct the two immersed graphs so that their outgoing-label sets have odd cross-intersections, the condition needed for cancellation. The same vertex types also provide a squared-word decay estimate. Conditioning the matchings on large girth will preserve enough control to prove a diameter bound and, in  , exclude the path configurations that could defeat the geometric safeguards."
 
-The entropy section opens. [S5:4–7] opens it: "All probabilities in this section refer to the distribution conditioned on \(\operatorname{girth}(\Gamma)\ge L\).  We retain the predetermined vertices \(x_A\) and \(x_B\). The possible rooted interval will accommodate a null-homotopy of a root-to-vertex path in  ."
+The entropy section opens. [S5:4–7] opens it: "All probabilities in this section refer to the distribution conditioned on \(\operatornamegirth(\Gamma)\ge L\).  We retain the predetermined vertices \(x_A\) and \(x_B\). The possible rooted interval will accommodate a null-homotopy of a root-to-vertex path in  ."
 
 The bounded-pattern estimate is given. [S5:30–34] gives it: "There is a constant \(\varepsilon>0\), depending only on the fixed types and turn weights, with the following property.  For every fixed positive integer \(K\), fixed real \(C\ge1\), and fixed nonnegative integer \(I\), the conditional probability tends to zero that there exists a system as above having at most \(K\) paths, total length \(H\) with"
 
-The planar section opens. [S6:4–8] opens it: "Proposition~  controls systems of bounded size. We now show that any spherical arrangement of the kind needed for the topological argument contains such a system.  The number of disks in the arrangement is unrestricted.  Throughout this section, probability is taken in the distribution conditioned on girth at least $L$."
+The planar section opens. [S6:4–8] opens it: "Proposition   controls systems of bounded size. We now show that any spherical arrangement of the kind needed for the topological argument contains such a system.  The number of disks in the arrangement is unrestricted.  Throughout this section, probability is taken in the distribution conditioned on girth at least $L$."
 
-The arrangement exclusion is given. [S6:254–258] gives it: "With probability $1-o(1)$, $\Gamma$ admits no reduced spherical arrangement.  In particular, for all sufficiently large admissible $n$ there exist graphs of the prescribed types, with girth at least $L$ and the diameter bound of Lemma~ , admitting no such arrangement."
+The arrangement exclusion is given. [S6:254–258] gives it: "With probability $1-o(1)$, $\Gamma$ admits no reduced spherical arrangement.  In particular, for all sufficiently large admissible $n$ there exist graphs of the prescribed types, with girth at least $L$ and the diameter bound of Lemma  , admitting no such arrangement."
 
 The topology section opens. [S7:3] opens it: "Fix graphs supplied by  . Attach to the rose \(F\), for each connected component \(\Lambda\) of \(\Gamma\), its abstract cone \(K_\Lambda\) along the labelled map \(\Lambda\to F\). Denote the resulting finite two-dimensional CW complex by \(X\), and put \(G=\pi_1(X)\), based at the rose vertex. In particular, labels of all closed walks in \(\Gamma\) are trivial in \(G\)."
 
@@ -121,15 +121,25 @@ The declaration is `OAI.TorsionFreeZeroDivisors.main` at `lean/OAI/Algebra/Group
 
 ## Bibliography
 
-**22 entries** from `references.bib`:
-- Bereznyuk, Vadim. *Asphericity of groups defined by graphs*. (2019) [Bereznyuk2019]
-- Brown, Kenneth S.. *Cohomology of Groups*. (1982) [Brown1982]
-- Gardam, Giles. *A counterexample to the unit conjecture for group rings*. (2021) [Gardam2021]
-- Garg, Manisha, Mineyev, Igor. *On zero-divisors and units in group rings of torsion-free {CAT(0)} groups*. (2025) [GargMineyev2025]
-- Igor Mineyev. *The Topology and Geometry of Units and Zero-Divisors: Origami*. (2024) [Mineyev2024]
-- Gromov, M.. *Random walk in random groups*. (2003) [Gromov2003]
-- Gruber, Dominik. *Groups with graphical {$C(6)$} and {$C(7)$} small cancellation presentations*. (2015) [Gruber2015]
-- Hatcher, Allen. *Algebraic Topology*. (2002) [Hatcher2002]
-- Lipton, Richard J., Tarjan, Robert Endre. *A separator theorem for planar graphs*. (1979) [LiptonTarjan1979]
-- Ollivier, Yann. *On a small cancellation theorem of {Gromov}*. (2006) [Ollivier2006]
-- … and 12 more
+- Bereznyuk, Vadim, Asphericity of groups defined by graphs (2019)
+- Brown, Kenneth S., Cohomology of Groups (1982)
+- Sam P. Fisher, Pablo S{á}nchez-Peralta, Division rings for group algebras of virtually compact special groups and $3$-manifold groups (2026)
+- Gardam, Giles, A counterexample to the unit conjecture for group rings (2021)
+- Giles Gardam, Non-trivial units of complex group rings (2024)
+- Garg, Manisha, Mineyev, Igor, On zero-divisors and units in group rings of torsion-free {CAT(0)} groups (2025)
+- Gromov, M., Random walk in random groups (2003)
+- Gruber, Dominik, Groups with graphical $C(6)$ and $C(7)$ small cancellation presentations (2015)
+- Hatcher, Allen, Algebraic Topology (2002)
+- Graham Higman, Units in group rings (1940)
+- Graham Higman, The units of group-rings (1940)
+- Irving Kaplansky, Problems in the theory of rings (1957)
+- P. H. Kropholler, P. A. Linnell, J. A. Moody, Applications of a new $K$-theoretic theorem to soluble group rings (1988)
+- Lipton, Richard J., Tarjan, Robert Endre, A separator theorem for planar graphs (1979)
+- Ibrahim Mian, Shayaan Siddique, A Machine-Checked Proof that Gardam's $\widetilde A_2$ Lattice Does Not Have Unique Products (2026)
+- Igor Mineyev, The Topology and Geometry of Units and Zero-Divisors: Origami (2024)
+- Ollivier, Yann, On a small cancellation theorem of Gromov (2006)
+- Ollivier, Yann, A January 2005 invitation to random groups (2005)
+- Rips, E., Segev, Y. S., Torsion-free group without unique product property (1987)
+- Robert Sandling, Graham Higman's thesis ``Units in group rings'' (1981)
+- Henry Shin, A global girth obstruction for Garg–Mineyev taiko product structures (2026)
+- Markus Steenbock, Rips–Segev torsion-free groups without the unique product property (2015)

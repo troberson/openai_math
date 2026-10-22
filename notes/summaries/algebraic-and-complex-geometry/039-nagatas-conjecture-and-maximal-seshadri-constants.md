@@ -1,4 +1,4 @@
-Notes / Summaries / Algebraic and complex geometry / [Family 039](../../index/algebraic-and-complex-geometry/039-nagatas-conjecture-and-maximal-seshadri-constants.md)
+[Notes](../../README.md) / [Summaries](../README.md) / [Algebraic and complex geometry](../../index/disciplines/algebraic-and-complex-geometry.md) / [Family 039](../../index/algebraic-and-complex-geometry/039-nagatas-conjecture-and-maximal-seshadri-constants.md)
 
 # 039 — Nagata's conjecture and maximal Seshadri constants
 
@@ -20,9 +20,9 @@ Notes / Summaries / Algebraic and complex geometry / [Family 039](../../index/al
 
 The first manuscript proves exactly that, for every nonzero effective plane curve, with arbitrary multiplicities, at $r \ge 10$ very general complex points. "We prove that a nonzero effective plane curve of degree" $d$ has total multiplicity strictly below $d\sqrt r$, and the inequality holds simultaneously for all curves, including reducible and nonreduced ones. [S2:35–41]
 
-The second manuscript recasts the same statement in the language of **Seshadri constants**, which measure how positive a line bundle is near a set of points. For a smooth complex projective surface with an ample line bundle, the multipoint Seshadri constant at $r$ very general points equals the upper bound $\sqrt{L^2/r}$ once $r$ is large enough. "This resolves positively the qualitative Nagata--Biran conjecture for surfaces." [S4:7–13]
+The second manuscript recasts the same statement in the language of **Seshadri constants**, which measure how positive a line bundle is near a set of points. For a smooth complex projective surface with an ample line bundle, the multipoint Seshadri constant at $r$ very general points equals the upper bound $\sqrt{L^2/r}$ once $r$ is large enough. "This resolves positively the qualitative Nagata–Biran conjecture for surfaces." [S4:7–13]
 
-The third manuscript pushes the conclusion to higher dimensions. For a smooth complex projective variety of dimension $n \ge 3$ with an ample line bundle, there is a threshold beyond which the multipoint Seshadri constant at very general points equals the volume bound $(L^n/r)^{1/n}$. "This establishes the qualitative Nagata--Biran--Szemberg assertion in these dimensions." [S6:49–56]
+The third manuscript pushes the conclusion to higher dimensions. For a smooth complex projective variety of dimension $n \ge 3$ with an ample line bundle, there is a threshold beyond which the multipoint Seshadri constant at very general points equals the volume bound $(L^n/r)^{1/n}$. "This establishes the qualitative Nagata–Biran–Szemberg assertion in these dimensions." [S6:49–56]
 
 The fourth manuscript does the same over an algebraically closed field of positive characteristic, at the geometric generic tuple of points, and notes that "The same conclusion holds in dimension two." [S8:8–17]
 
