@@ -56,25 +56,14 @@ The consequence for the catalog is a citation edge, not a recorded dependency: t
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `overview.tex` | 859 | The release's family entry and manuscript entry, line 162 |
-| S2 | `preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/paper.tex` | 68 | Manuscript abstract, lines 47–50 |
-| S3 | `preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/sections/introduction.tex` | 229 | Main theorem 20–29, dense corollary 43–52, CAP 11–18, organization 54–58 |
-| S4 | `preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/sections/dense.tex` | 164 | Surface classification 108–114, Enriques cover and minimality restriction 116–128 |
-| S5 | `preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/sections/gluing.tex` | 549 | CAP from the local operation, lines 24–26 |
-| S6 | `preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/sections/sewing.tex` | 436 | Annular-chain sewing theorem, lines 24–28 |
-| S7 | `preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/references.bib` | 181 | `ForstnericBook` 11–14, `OpenAIGSS` 42–47 |
-| S8 | `preprints/Every-complex-K3-surface-is-Oka-September-23-2026/README.md` | 18 | The manuscript's own build and run note |
-
-## Links
-
-- [S1](../../../overview.tex)
-- [S2](../../../preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/paper.tex)
-- [S3](../../../preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/sections/introduction.tex)
-- [S4](../../../preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/sections/dense.tex)
-- [S5](../../../preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/sections/gluing.tex)
-- [S6](../../../preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/sections/sewing.tex)
-- [S7](../../../preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/references.bib)
-- [S8](../../../preprints/Every-complex-K3-surface-is-Oka-September-23-2026/README.md)
+| S1 | [`overview.tex`](../../../overview.tex) | 859 | The release's family entry and manuscript entry, line 162 |
+| S2 | [`preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/paper.tex`](../../../preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/paper.tex) | 68 | Manuscript abstract, lines 47–50 |
+| S3 | [`preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/sections/introduction.tex`](../../../preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/sections/introduction.tex) | 229 | Main theorem 20–29, dense corollary 43–52, CAP 11–18, organization 54–58 |
+| S4 | [`preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/sections/dense.tex`](../../../preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/sections/dense.tex) | 164 | Surface classification 108–114, Enriques cover and minimality restriction 116–128 |
+| S5 | [`preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/sections/gluing.tex`](../../../preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/sections/gluing.tex) | 549 | CAP from the local operation, lines 24–26 |
+| S6 | [`preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/sections/sewing.tex`](../../../preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/sections/sewing.tex) | 436 | Annular-chain sewing theorem, lines 24–28 |
+| S7 | [`preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/references.bib`](../../../preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/references.bib) | 181 | `ForstnericBook` 11–14, `OpenAIGSS` 42–47 |
+| S8 | [`preprints/Every-complex-K3-surface-is-Oka-September-23-2026/README.md`](../../../preprints/Every-complex-K3-surface-is-Oka-September-23-2026/README.md) | 18 | The manuscript's own build and run note |
 
 ## Bibliography
 

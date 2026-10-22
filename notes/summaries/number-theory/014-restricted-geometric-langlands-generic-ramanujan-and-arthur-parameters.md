@@ -124,97 +124,50 @@ What is left open is stated by the manuscripts themselves. Manuscript 1 does not
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `CONTENTS.md` | 9142 | Family entry at 332; manuscript blurbs at 341, 350, 359, 368, 377, 386, 395, 404 |
-| S2 | `overview.tex` | 859 | Family `\resultentry` at 104 |
-| S3 | `preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/README.md` | 18 | Author at 3, date at 5, citation block at 10–16 |
-| S4 | `preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/build/manuscript.tex` | 5465 | Title at 63, abstract at 69–76, `thm:parent` at 155–156, history section at 224–283, `Parent` bibitem at 5420–5424 |
-| S5 | `preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/manuscript.pdf` | 23046 | Typeset manuscript, 793,468 bytes |
-| S6 | `preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/README.md` | 18 | Author at 3, date at 5, citation block at 10–16 |
-| S7 | `preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/build/paper.tex` | 39 | Title at 14, abstract at 20–25, section inputs at 31–37 |
-| S8 | `preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/build/sections/01-introduction.tex` | 280 | Main theorem at 118–136, cuspidal comparison at 129–130 |
-| S9 | `preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/build/references.tex` | 212 | Release links at 158 and 166 |
-| S10 | `preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/paper.pdf` | 18682 | Typeset manuscript, 654,080 bytes |
-| S11 | `preprints/Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026/README.md` | 18 | Author at 3, date at 5, citation block at 10–16 |
-| S12 | `preprints/Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026/build/main.tex` | 32 | Title at 3–4, abstract at 10–21, bibliography at 30–31 |
-| S13 | `preprints/Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026/build/sections/01-introduction.tex` | 334 | Main theorem at 108–118, arithmetic corollary at 141–155 |
-| S14 | `preprints/Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026/build/references.bib` | 646 | Release link to manuscript 2 at 16 |
-| S15 | `preprints/Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026/paper.pdf` | 21306 | Typeset manuscript, 750,187 bytes |
-| S16 | `preprints/Temperedness-at-ramified-places-for-globally-generic-exceptional-groups-October-5-2026/README.md` | 18 | Author at 3, date at 5, citation block at 10–16 |
-| S17 | `preprints/Temperedness-at-ramified-places-for-globally-generic-exceptional-groups-October-5-2026/build/paper.tex` | 59 | Title at 39, abstract at 45–50, section inputs at 52–57 |
-| S18 | `preprints/Temperedness-at-ramified-places-for-globally-generic-exceptional-groups-October-5-2026/build/sections/introduction.tex` | 172 | Hypotheses at 21, main theorem at 23–35 |
-| S19 | `preprints/Temperedness-at-ramified-places-for-globally-generic-exceptional-groups-October-5-2026/build/references/bibliography.tex` | 179 | Release link to manuscript 3 at 134 |
-| S20 | `preprints/Temperedness-at-ramified-places-for-globally-generic-exceptional-groups-October-5-2026/ramified-ramanujan.pdf` | 11380 | Typeset manuscript, 401,075 bytes |
-| S21 | `preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/README.md` | 18 | Author at 3, date at 5, citation block at 10–16 |
-| S22 | `preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/build/main.tex` | 84 | Title at 54, abstract at 60–68, section inputs at 71–79 |
-| S23 | `preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/build/sections/01-introduction.tex` | 331 | Main theorem at 129–166, scope discussion at 186–212 |
-| S24 | `preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/build/refs.bib` | 270 | Bibliography carrying no release URL |
-| S25 | `preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/paper.pdf` | 16447 | Typeset manuscript, 574,527 bytes |
-| S26 | `preprints/Constructible-tame-Hecke-eigensheaves-in-positive-characteristic-October-5-2026/README.md` | 18 | Author at 3, date at 5, citation block at 10–16 |
-| S27 | `preprints/Constructible-tame-Hecke-eigensheaves-in-positive-characteristic-October-5-2026/build/manuscript/main.tex` | 31 | Title at 3, abstract at 10–17, section inputs at 21–28 |
-| S28 | `preprints/Constructible-tame-Hecke-eigensheaves-in-positive-characteristic-October-5-2026/build/manuscript/introduction.tex` | 318 | Hypotheses at 37–47, main theorem at 105–123, method provenance at 263–271 |
-| S29 | `preprints/Constructible-tame-Hecke-eigensheaves-in-positive-characteristic-October-5-2026/build/manuscript/references.bib` | 365 | Release link to manuscript 5 at 363 |
-| S30 | `preprints/Constructible-tame-Hecke-eigensheaves-in-positive-characteristic-October-5-2026/constructible-tame-hecke-eigensheaves-positive-characteristic.pdf` | 19042 | Typeset manuscript, 669,524 bytes |
-| S31 | `preprints/Tame-Hecke-Eigensheaves-with-Several-Marked-Points-October-5-2026/README.md` | 18 | Author at 3, date at 5, citation block at 10–16 |
-| S32 | `preprints/Tame-Hecke-Eigensheaves-with-Several-Marked-Points-October-5-2026/build/main.tex` | 94 | Title at 67, abstract at 73–80, section inputs at 85–93 |
-| S33 | `preprints/Tame-Hecke-Eigensheaves-with-Several-Marked-Points-October-5-2026/build/sections/introduction.tex` | 78 | Hypotheses at 6–21, main theorem at 40–52, scope sentence at 54 |
-| S34 | `preprints/Tame-Hecke-Eigensheaves-with-Several-Marked-Points-October-5-2026/build/sections/history.tex` | 78 | History subsections at 1–32 |
-| S35 | `preprints/Tame-Hecke-Eigensheaves-with-Several-Marked-Points-October-5-2026/build/references.tex` | 171 | Release link to manuscript 6 at 147 |
-| S36 | `preprints/Tame-Hecke-Eigensheaves-with-Several-Marked-Points-October-5-2026/Tame-Hecke-Eigensheaves-with-Several-Marked-Points.pdf` | 17575 | Typeset manuscript, 614,643 bytes |
-| S37 | `preprints/Frobenius-Structures-on-Tame-Hecke-Eigensheaves-October-5-2026/README.md` | 18 | Author at 3, date at 5, citation block at 10–16 |
-| S38 | `preprints/Frobenius-Structures-on-Tame-Hecke-Eigensheaves-October-5-2026/build/main.tex` | 87 | Title at 61, abstract at 67–73, section inputs at 80–86 |
-| S39 | `preprints/Frobenius-Structures-on-Tame-Hecke-Eigensheaves-October-5-2026/build/sections/introduction.tex` | 177 | Weil-structure definition at 31–34, main theorem at 36–52, scope sentences at 73–76 |
-| S40 | `preprints/Frobenius-Structures-on-Tame-Hecke-Eigensheaves-October-5-2026/build/references.tex` | 112 | Release link to manuscript 6 at 105 |
-| S41 | `preprints/Frobenius-Structures-on-Tame-Hecke-Eigensheaves-October-5-2026/tame-hecke-frobenius.pdf` | 14342 | Typeset manuscript, 503,521 bytes |
-| S42 | `notes/reports/t0-triage.md` | 897 | Family 014 entry at 127–132 |
-| S43 | `notes/tables/catalog.tsv` | 373 | Family row at 15 |
-| S44 | `preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/build/sections/08-consequences.tex` | 267 | Component categories at 20–39, arithmetic formula at 67–95, coherent eigenobjects at 124–223 |
-
-## Links
-
-- [S1](../../../CONTENTS.md)
-- [S2](../../../overview.tex)
-- [S3](../../../preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/README.md)
-- [S4](../../../preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/build/manuscript.tex)
-- [S5](../../../preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/manuscript.pdf)
-- [S6](../../../preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/README.md)
-- [S7](../../../preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/build/paper.tex)
-- [S8](../../../preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/build/sections/01-introduction.tex)
-- [S9](../../../preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/build/references.tex)
-- [S10](../../../preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/paper.pdf)
-- [S11](../../../preprints/Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026/README.md)
-- [S12](../../../preprints/Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026/build/main.tex)
-- [S13](../../../preprints/Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026/build/sections/01-introduction.tex)
-- [S14](../../../preprints/Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026/build/references.bib)
-- [S15](../../../preprints/Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026/paper.pdf)
-- [S16](../../../preprints/Temperedness-at-ramified-places-for-globally-generic-exceptional-groups-October-5-2026/README.md)
-- [S17](../../../preprints/Temperedness-at-ramified-places-for-globally-generic-exceptional-groups-October-5-2026/build/paper.tex)
-- [S18](../../../preprints/Temperedness-at-ramified-places-for-globally-generic-exceptional-groups-October-5-2026/build/sections/introduction.tex)
-- [S19](../../../preprints/Temperedness-at-ramified-places-for-globally-generic-exceptional-groups-October-5-2026/build/references/bibliography.tex)
-- [S20](../../../preprints/Temperedness-at-ramified-places-for-globally-generic-exceptional-groups-October-5-2026/ramified-ramanujan.pdf)
-- [S21](../../../preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/README.md)
-- [S22](../../../preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/build/main.tex)
-- [S23](../../../preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/build/sections/01-introduction.tex)
-- [S24](../../../preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/build/refs.bib)
-- [S25](../../../preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/paper.pdf)
-- [S26](../../../preprints/Constructible-tame-Hecke-eigensheaves-in-positive-characteristic-October-5-2026/README.md)
-- [S27](../../../preprints/Constructible-tame-Hecke-eigensheaves-in-positive-characteristic-October-5-2026/build/manuscript/main.tex)
-- [S28](../../../preprints/Constructible-tame-Hecke-eigensheaves-in-positive-characteristic-October-5-2026/build/manuscript/introduction.tex)
-- [S29](../../../preprints/Constructible-tame-Hecke-eigensheaves-in-positive-characteristic-October-5-2026/build/manuscript/references.bib)
-- [S30](../../../preprints/Constructible-tame-Hecke-eigensheaves-in-positive-characteristic-October-5-2026/constructible-tame-hecke-eigensheaves-positive-characteristic.pdf)
-- [S31](../../../preprints/Tame-Hecke-Eigensheaves-with-Several-Marked-Points-October-5-2026/README.md)
-- [S32](../../../preprints/Tame-Hecke-Eigensheaves-with-Several-Marked-Points-October-5-2026/build/main.tex)
-- [S33](../../../preprints/Tame-Hecke-Eigensheaves-with-Several-Marked-Points-October-5-2026/build/sections/introduction.tex)
-- [S34](../../../preprints/Tame-Hecke-Eigensheaves-with-Several-Marked-Points-October-5-2026/build/sections/history.tex)
-- [S35](../../../preprints/Tame-Hecke-Eigensheaves-with-Several-Marked-Points-October-5-2026/build/references.tex)
-- [S36](../../../preprints/Tame-Hecke-Eigensheaves-with-Several-Marked-Points-October-5-2026/Tame-Hecke-Eigensheaves-with-Several-Marked-Points.pdf)
-- [S37](../../../preprints/Frobenius-Structures-on-Tame-Hecke-Eigensheaves-October-5-2026/README.md)
-- [S38](../../../preprints/Frobenius-Structures-on-Tame-Hecke-Eigensheaves-October-5-2026/build/main.tex)
-- [S39](../../../preprints/Frobenius-Structures-on-Tame-Hecke-Eigensheaves-October-5-2026/build/sections/introduction.tex)
-- [S40](../../../preprints/Frobenius-Structures-on-Tame-Hecke-Eigensheaves-October-5-2026/build/references.tex)
-- [S41](../../../preprints/Frobenius-Structures-on-Tame-Hecke-Eigensheaves-October-5-2026/tame-hecke-frobenius.pdf)
-- [S42](../../../notes/reports/t0-triage.md)
-- [S43](../../../notes/tables/catalog.tsv)
-- [S44](../../../preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/build/sections/08-consequences.tex)
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Family entry at 332; manuscript blurbs at 341, 350, 359, 368, 377, 386, 395, 404 |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family `\resultentry` at 104 |
+| S3 | [`preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/README.md`](../../../preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/README.md) | 18 | Author at 3, date at 5, citation block at 10–16 |
+| S4 | [`preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/build/manuscript.tex`](../../../preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/build/manuscript.tex) | 5465 | Title at 63, abstract at 69–76, `thm:parent` at 155–156, history section at 224–283, `Parent` bibitem at 5420–5424 |
+| S5 | [`preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/manuscript.pdf`](../../../preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/manuscript.pdf) | 23046 | Typeset manuscript, 793,468 bytes |
+| S6 | [`preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/README.md`](../../../preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/README.md) | 18 | Author at 3, date at 5, citation block at 10–16 |
+| S7 | [`preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/build/paper.tex`](../../../preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/build/paper.tex) | 39 | Title at 14, abstract at 20–25, section inputs at 31–37 |
+| S8 | [`preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/build/sections/01-introduction.tex) | 280 | Main theorem at 118–136, cuspidal comparison at 129–130 |
+| S9 | [`preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/build/references.tex`](../../../preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/build/references.tex) | 212 | Release links at 158 and 166 |
+| S10 | [`preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/paper.pdf`](../../../preprints/Rationality-of-the-Canonical-Unramified-Arthur-Filtration-September-24-2026/paper.pdf) | 18682 | Typeset manuscript, 654,080 bytes |
+| S11 | [`preprints/Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026/README.md`](../../../preprints/Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026/README.md) | 18 | Author at 3, date at 5, citation block at 10–16 |
+| S12 | [`preprints/Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026/build/main.tex`](../../../preprints/Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026/build/main.tex) | 32 | Title at 3–4, abstract at 10–21, bibliography at 30–31 |
+| S13 | [`preprints/Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026/build/sections/01-introduction.tex) | 334 | Main theorem at 108–118, arithmetic corollary at 141–155 |
+| S14 | [`preprints/Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026/build/references.bib`](../../../preprints/Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026/build/references.bib) | 646 | Release link to manuscript 2 at 16 |
+| S15 | [`preprints/Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026/paper.pdf`](../../../preprints/Ramanujan-Arthur-Decompositions-of-Cuspidal-Functions-at-Full-Finite-Level-September-24-2026/paper.pdf) | 21306 | Typeset manuscript, 750,187 bytes |
+| S16 | [`preprints/Temperedness-at-ramified-places-for-globally-generic-exceptional-groups-October-5-2026/README.md`](../../../preprints/Temperedness-at-ramified-places-for-globally-generic-exceptional-groups-October-5-2026/README.md) | 18 | Author at 3, date at 5, citation block at 10–16 |
+| S17 | [`preprints/Temperedness-at-ramified-places-for-globally-generic-exceptional-groups-October-5-2026/build/paper.tex`](../../../preprints/Temperedness-at-ramified-places-for-globally-generic-exceptional-groups-October-5-2026/build/paper.tex) | 59 | Title at 39, abstract at 45–50, section inputs at 52–57 |
+| S18 | [`preprints/Temperedness-at-ramified-places-for-globally-generic-exceptional-groups-October-5-2026/build/sections/introduction.tex`](../../../preprints/Temperedness-at-ramified-places-for-globally-generic-exceptional-groups-October-5-2026/build/sections/introduction.tex) | 172 | Hypotheses at 21, main theorem at 23–35 |
+| S19 | [`preprints/Temperedness-at-ramified-places-for-globally-generic-exceptional-groups-October-5-2026/build/references/bibliography.tex`](../../../preprints/Temperedness-at-ramified-places-for-globally-generic-exceptional-groups-October-5-2026/build/references/bibliography.tex) | 179 | Release link to manuscript 3 at 134 |
+| S20 | [`preprints/Temperedness-at-ramified-places-for-globally-generic-exceptional-groups-October-5-2026/ramified-ramanujan.pdf`](../../../preprints/Temperedness-at-ramified-places-for-globally-generic-exceptional-groups-October-5-2026/ramified-ramanujan.pdf) | 11380 | Typeset manuscript, 401,075 bytes |
+| S21 | [`preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/README.md`](../../../preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/README.md) | 18 | Author at 3, date at 5, citation block at 10–16 |
+| S22 | [`preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/build/main.tex`](../../../preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/build/main.tex) | 84 | Title at 54, abstract at 60–68, section inputs at 71–79 |
+| S23 | [`preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/build/sections/01-introduction.tex) | 331 | Main theorem at 129–166, scope discussion at 186–212 |
+| S24 | [`preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/build/refs.bib`](../../../preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/build/refs.bib) | 270 | Bibliography carrying no release URL |
+| S25 | [`preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/paper.pdf`](../../../preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/paper.pdf) | 16447 | Typeset manuscript, 574,527 bytes |
+| S26 | [`preprints/Constructible-tame-Hecke-eigensheaves-in-positive-characteristic-October-5-2026/README.md`](../../../preprints/Constructible-tame-Hecke-eigensheaves-in-positive-characteristic-October-5-2026/README.md) | 18 | Author at 3, date at 5, citation block at 10–16 |
+| S27 | [`preprints/Constructible-tame-Hecke-eigensheaves-in-positive-characteristic-October-5-2026/build/manuscript/main.tex`](../../../preprints/Constructible-tame-Hecke-eigensheaves-in-positive-characteristic-October-5-2026/build/manuscript/main.tex) | 31 | Title at 3, abstract at 10–17, section inputs at 21–28 |
+| S28 | [`preprints/Constructible-tame-Hecke-eigensheaves-in-positive-characteristic-October-5-2026/build/manuscript/introduction.tex`](../../../preprints/Constructible-tame-Hecke-eigensheaves-in-positive-characteristic-October-5-2026/build/manuscript/introduction.tex) | 318 | Hypotheses at 37–47, main theorem at 105–123, method provenance at 263–271 |
+| S29 | [`preprints/Constructible-tame-Hecke-eigensheaves-in-positive-characteristic-October-5-2026/build/manuscript/references.bib`](../../../preprints/Constructible-tame-Hecke-eigensheaves-in-positive-characteristic-October-5-2026/build/manuscript/references.bib) | 365 | Release link to manuscript 5 at 363 |
+| S30 | [`preprints/Constructible-tame-Hecke-eigensheaves-in-positive-characteristic-October-5-2026/constructible-tame-hecke-eigensheaves-positive-characteristic.pdf`](../../../preprints/Constructible-tame-Hecke-eigensheaves-in-positive-characteristic-October-5-2026/constructible-tame-hecke-eigensheaves-positive-characteristic.pdf) | 19042 | Typeset manuscript, 669,524 bytes |
+| S31 | [`preprints/Tame-Hecke-Eigensheaves-with-Several-Marked-Points-October-5-2026/README.md`](../../../preprints/Tame-Hecke-Eigensheaves-with-Several-Marked-Points-October-5-2026/README.md) | 18 | Author at 3, date at 5, citation block at 10–16 |
+| S32 | [`preprints/Tame-Hecke-Eigensheaves-with-Several-Marked-Points-October-5-2026/build/main.tex`](../../../preprints/Tame-Hecke-Eigensheaves-with-Several-Marked-Points-October-5-2026/build/main.tex) | 94 | Title at 67, abstract at 73–80, section inputs at 85–93 |
+| S33 | [`preprints/Tame-Hecke-Eigensheaves-with-Several-Marked-Points-October-5-2026/build/sections/introduction.tex`](../../../preprints/Tame-Hecke-Eigensheaves-with-Several-Marked-Points-October-5-2026/build/sections/introduction.tex) | 78 | Hypotheses at 6–21, main theorem at 40–52, scope sentence at 54 |
+| S34 | [`preprints/Tame-Hecke-Eigensheaves-with-Several-Marked-Points-October-5-2026/build/sections/history.tex`](../../../preprints/Tame-Hecke-Eigensheaves-with-Several-Marked-Points-October-5-2026/build/sections/history.tex) | 78 | History subsections at 1–32 |
+| S35 | [`preprints/Tame-Hecke-Eigensheaves-with-Several-Marked-Points-October-5-2026/build/references.tex`](../../../preprints/Tame-Hecke-Eigensheaves-with-Several-Marked-Points-October-5-2026/build/references.tex) | 171 | Release link to manuscript 6 at 147 |
+| S36 | [`preprints/Tame-Hecke-Eigensheaves-with-Several-Marked-Points-October-5-2026/Tame-Hecke-Eigensheaves-with-Several-Marked-Points.pdf`](../../../preprints/Tame-Hecke-Eigensheaves-with-Several-Marked-Points-October-5-2026/Tame-Hecke-Eigensheaves-with-Several-Marked-Points.pdf) | 17575 | Typeset manuscript, 614,643 bytes |
+| S37 | [`preprints/Frobenius-Structures-on-Tame-Hecke-Eigensheaves-October-5-2026/README.md`](../../../preprints/Frobenius-Structures-on-Tame-Hecke-Eigensheaves-October-5-2026/README.md) | 18 | Author at 3, date at 5, citation block at 10–16 |
+| S38 | [`preprints/Frobenius-Structures-on-Tame-Hecke-Eigensheaves-October-5-2026/build/main.tex`](../../../preprints/Frobenius-Structures-on-Tame-Hecke-Eigensheaves-October-5-2026/build/main.tex) | 87 | Title at 61, abstract at 67–73, section inputs at 80–86 |
+| S39 | [`preprints/Frobenius-Structures-on-Tame-Hecke-Eigensheaves-October-5-2026/build/sections/introduction.tex`](../../../preprints/Frobenius-Structures-on-Tame-Hecke-Eigensheaves-October-5-2026/build/sections/introduction.tex) | 177 | Weil-structure definition at 31–34, main theorem at 36–52, scope sentences at 73–76 |
+| S40 | [`preprints/Frobenius-Structures-on-Tame-Hecke-Eigensheaves-October-5-2026/build/references.tex`](../../../preprints/Frobenius-Structures-on-Tame-Hecke-Eigensheaves-October-5-2026/build/references.tex) | 112 | Release link to manuscript 6 at 105 |
+| S41 | [`preprints/Frobenius-Structures-on-Tame-Hecke-Eigensheaves-October-5-2026/tame-hecke-frobenius.pdf`](../../../preprints/Frobenius-Structures-on-Tame-Hecke-Eigensheaves-October-5-2026/tame-hecke-frobenius.pdf) | 14342 | Typeset manuscript, 503,521 bytes |
+| S42 | [`notes/reports/t0-triage.md`](../../../notes/reports/t0-triage.md) | 897 | Family 014 entry at 127–132 |
+| S43 | [`notes/tables/catalog.tsv`](../../../notes/tables/catalog.tsv) | 373 | Family row at 15 |
+| S44 | [`preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/build/sections/08-consequences.tex`](../../../preprints/The-Restricted-Geometric-Langlands-Equivalence-in-Positive-Characteristic-September-24-2026/build/sections/08-consequences.tex) | 267 | Component categories at 20–39, arithmetic formula at 67–95, coherent eigenobjects at 124–223 |
 
 ## Bibliography
 

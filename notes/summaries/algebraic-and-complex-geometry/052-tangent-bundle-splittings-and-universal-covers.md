@@ -179,73 +179,38 @@ The declaration is `OAI.UniversalCoverSplitting.main` at `lean/OAI/Geometry/Kahl
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `overview.tex` | 859 | Family entry, line 180 |
-| S2 | `preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/README.md` | 18 | Manuscript 1 title, date |
-| S3 | `preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/main.tex` | 69 | Abstract, lines 48–52 |
-| S4 | `preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/intro.tex` | 257 | Introduction: theorem, history, proof strategy |
-| S5 | `preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/prelim.tex` | 77 | Preliminaries |
-| S6 | `preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/canonical.tex` | 190 | Canonical metric |
-| S7 | `preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/boxes.tex` | 167 | Boxes |
-| S8 | `preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/hartogs.tex` | 160 | Hartogs |
-| S9 | `preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/boundary.tex` | 219 | Boundary |
-| S10 | `preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/global.tex` | 273 | Global |
-| S11 | `preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/references.tex` | 208 | Bibliography entries |
-| S12 | `preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/appendices/01-collapsed-metric.tex` | 102 | Collapsed metric |
-| S13 | `preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/appendices/02-rational-boxes.tex` | 264 | Rational boxes |
-| S14 | `preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/appendices/03-neighborhood-crossing.tex` | 266 | Neighborhood crossing |
-| S15 | `preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/appendices/04-metric-globalization.tex` | 268 | Metric globalization |
-| S16 | `preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/figures/boundary-scales.tex` | 38 | Figure source |
-| S17 | `preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/figures/grid.tex` | 56 | Figure source |
-| S18 | `preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/README.md` | 18 | Manuscript 2 title, date |
-| S19 | `preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/main.tex` | 62 | Abstract, lines 45–50 |
-| S20 | `preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/introduction.tex` | 154 | Introduction: theorem, history, proof strategy |
-| S21 | `preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/surface.tex` | 121 | Surface resolution |
-| S22 | `preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/transport.tex` | 95 | Transport |
-| S23 | `preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/vanishing.tex` | 76 | Vanishing |
-| S24 | `preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/variation.tex` | 105 | Variation |
-| S25 | `preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/boxes.tex` | 487 | Boxes |
-| S26 | `preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/consequences.tex` | 61 | Consequences |
-| S27 | `preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/references.tex` | 79 | Bibliography entries |
-| S28 | `preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/figures/tangent-box.tex` | 30 | Figure source |
-| S29 | `lean/docs/052.md` | 21 | Scope |
-| S30 | `lean/OAI/Geometry/KahlerSplitting/Main.lean` | 43 | Declaration |
-| S31 | `lean/ComparatorChallenges/KahlerSplitting.lean` | 139 | Comparator stub |
-| S32 | `lean/ComparatorChallenges/SplitTangentIntegrability.lean` | 142 | Comparator stub |
-
-## Links
-
-- [S1](../../../overview.tex)
-- [S2](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/README.md)
-- [S3](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/main.tex)
-- [S4](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/intro.tex)
-- [S5](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/prelim.tex)
-- [S6](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/canonical.tex)
-- [S7](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/boxes.tex)
-- [S8](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/hartogs.tex)
-- [S9](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/boundary.tex)
-- [S10](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/global.tex)
-- [S11](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/references.tex)
-- [S12](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/appendices/01-collapsed-metric.tex)
-- [S13](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/appendices/02-rational-boxes.tex)
-- [S14](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/appendices/03-neighborhood-crossing.tex)
-- [S15](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/appendices/04-metric-globalization.tex)
-- [S16](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/figures/boundary-scales.tex)
-- [S17](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/figures/grid.tex)
-- [S18](../../../preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/README.md)
-- [S19](../../../preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/main.tex)
-- [S20](../../../preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/introduction.tex)
-- [S21](../../../preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/surface.tex)
-- [S22](../../../preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/transport.tex)
-- [S23](../../../preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/vanishing.tex)
-- [S24](../../../preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/variation.tex)
-- [S25](../../../preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/boxes.tex)
-- [S26](../../../preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/consequences.tex)
-- [S27](../../../preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/references.tex)
-- [S28](../../../preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/figures/tangent-box.tex)
-- [S29](../../../lean/docs/052.md)
-- [S30](../../../lean/OAI/Geometry/KahlerSplitting/Main.lean)
-- [S31](../../../lean/ComparatorChallenges/KahlerSplitting.lean)
-- [S32](../../../lean/ComparatorChallenges/SplitTangentIntegrability.lean)
+| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 180 |
+| S2 | [`preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/README.md`](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/README.md) | 18 | Manuscript 1 title, date |
+| S3 | [`preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/main.tex`](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/main.tex) | 69 | Abstract, lines 48–52 |
+| S4 | [`preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/intro.tex`](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/intro.tex) | 257 | Introduction: theorem, history, proof strategy |
+| S5 | [`preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/prelim.tex`](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/prelim.tex) | 77 | Preliminaries |
+| S6 | [`preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/canonical.tex`](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/canonical.tex) | 190 | Canonical metric |
+| S7 | [`preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/boxes.tex`](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/boxes.tex) | 167 | Boxes |
+| S8 | [`preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/hartogs.tex`](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/hartogs.tex) | 160 | Hartogs |
+| S9 | [`preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/boundary.tex`](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/boundary.tex) | 219 | Boundary |
+| S10 | [`preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/global.tex`](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/global.tex) | 273 | Global |
+| S11 | [`preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/references.tex`](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/references.tex) | 208 | Bibliography entries |
+| S12 | [`preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/appendices/01-collapsed-metric.tex`](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/appendices/01-collapsed-metric.tex) | 102 | Collapsed metric |
+| S13 | [`preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/appendices/02-rational-boxes.tex`](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/appendices/02-rational-boxes.tex) | 264 | Rational boxes |
+| S14 | [`preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/appendices/03-neighborhood-crossing.tex`](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/appendices/03-neighborhood-crossing.tex) | 266 | Neighborhood crossing |
+| S15 | [`preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/appendices/04-metric-globalization.tex`](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/appendices/04-metric-globalization.tex) | 268 | Metric globalization |
+| S16 | [`preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/figures/boundary-scales.tex`](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/figures/boundary-scales.tex) | 38 | Figure source |
+| S17 | [`preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/figures/grid.tex`](../../../preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/build/figures/grid.tex) | 56 | Figure source |
+| S18 | [`preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/README.md`](../../../preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/README.md) | 18 | Manuscript 2 title, date |
+| S19 | [`preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/main.tex`](../../../preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/main.tex) | 62 | Abstract, lines 45–50 |
+| S20 | [`preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/introduction.tex`](../../../preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/introduction.tex) | 154 | Introduction: theorem, history, proof strategy |
+| S21 | [`preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/surface.tex`](../../../preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/surface.tex) | 121 | Surface resolution |
+| S22 | [`preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/transport.tex`](../../../preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/transport.tex) | 95 | Transport |
+| S23 | [`preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/vanishing.tex`](../../../preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/vanishing.tex) | 76 | Vanishing |
+| S24 | [`preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/variation.tex`](../../../preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/variation.tex) | 105 | Variation |
+| S25 | [`preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/boxes.tex`](../../../preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/boxes.tex) | 487 | Boxes |
+| S26 | [`preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/consequences.tex`](../../../preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/sections/consequences.tex) | 61 | Consequences |
+| S27 | [`preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/references.tex`](../../../preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/references.tex) | 79 | Bibliography entries |
+| S28 | [`preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/figures/tangent-box.tex`](../../../preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/build/figures/tangent-box.tex) | 30 | Figure source |
+| S29 | [`lean/docs/052.md`](../../../lean/docs/052.md) | 21 | Scope |
+| S30 | [`lean/OAI/Geometry/KahlerSplitting/Main.lean`](../../../lean/OAI/Geometry/KahlerSplitting/Main.lean) | 43 | Declaration |
+| S31 | [`lean/ComparatorChallenges/KahlerSplitting.lean`](../../../lean/ComparatorChallenges/KahlerSplitting.lean) | 139 | Comparator stub |
+| S32 | [`lean/ComparatorChallenges/SplitTangentIntegrability.lean`](../../../lean/ComparatorChallenges/SplitTangentIntegrability.lean) | 142 | Comparator stub |
 
 ## Bibliography
 

@@ -105,39 +105,21 @@ The declaration is `OAI.ComplexCancellation.main` [S14:32]. The comparator stub 
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `overview.tex` | 859 | Family entry, line 170 |
-| S2 | `preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/README.md` | 18 | Manuscript title, date |
-| S3 | `preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/main.tex` | 27 | Abstract, lines 9–17 |
-| S4 | `preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/preamble.tex` | 43 | Macro definitions |
-| S5 | `preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/references.tex` | 172 | Bibliography entries |
-| S6 | `preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/01-introduction.tex` | 271 | Introduction: theorem, history, proof stages |
-| S7 | `preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/02-construction.tex` | 256 | Construction |
-| S8 | `preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/03-degeneration.tex` | 369 | Degeneration |
-| S9 | `preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/04-bundle.tex` | 412 | Bundle |
-| S10 | `preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/05-reduction.tex` | 239 | Reduction |
-| S11 | `preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/06-rigidity.tex` | 338 | Rigidity |
-| S12 | `preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/07-affine-fibrations.tex` | 154 | Affine fibrations |
-| S13 | `lean/docs/047.md` | 17 | Scope |
-| S14 | `lean/OAI/Algebra/AffineCancellation/Main.lean` | 38 | Declaration |
-| S15 | `lean/ComparatorChallenges/ComplexCancellation.lean` | 32 | Comparator stub |
-
-## Links
-
-- [S1](../../../overview.tex)
-- [S2](../../../preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/README.md)
-- [S3](../../../preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/main.tex)
-- [S4](../../../preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/preamble.tex)
-- [S5](../../../preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/references.tex)
-- [S6](../../../preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/01-introduction.tex)
-- [S7](../../../preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/02-construction.tex)
-- [S8](../../../preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/03-degeneration.tex)
-- [S9](../../../preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/04-bundle.tex)
-- [S10](../../../preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/05-reduction.tex)
-- [S11](../../../preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/06-rigidity.tex)
-- [S12](../../../preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/07-affine-fibrations.tex)
-- [S13](../../../lean/docs/047.md)
-- [S14](../../../lean/OAI/Algebra/AffineCancellation/Main.lean)
-- [S15](../../../lean/ComparatorChallenges/ComplexCancellation.lean)
+| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 170 |
+| S2 | [`preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/README.md`](../../../preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/README.md) | 18 | Manuscript title, date |
+| S3 | [`preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/main.tex`](../../../preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/main.tex) | 27 | Abstract, lines 9–17 |
+| S4 | [`preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/preamble.tex`](../../../preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/preamble.tex) | 43 | Macro definitions |
+| S5 | [`preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/references.tex`](../../../preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/references.tex) | 172 | Bibliography entries |
+| S6 | [`preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/01-introduction.tex`](../../../preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/01-introduction.tex) | 271 | Introduction: theorem, history, proof stages |
+| S7 | [`preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/02-construction.tex`](../../../preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/02-construction.tex) | 256 | Construction |
+| S8 | [`preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/03-degeneration.tex`](../../../preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/03-degeneration.tex) | 369 | Degeneration |
+| S9 | [`preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/04-bundle.tex`](../../../preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/04-bundle.tex) | 412 | Bundle |
+| S10 | [`preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/05-reduction.tex`](../../../preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/05-reduction.tex) | 239 | Reduction |
+| S11 | [`preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/06-rigidity.tex`](../../../preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/06-rigidity.tex) | 338 | Rigidity |
+| S12 | [`preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/07-affine-fibrations.tex`](../../../preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/build/sections/07-affine-fibrations.tex) | 154 | Affine fibrations |
+| S13 | [`lean/docs/047.md`](../../../lean/docs/047.md) | 17 | Scope |
+| S14 | [`lean/OAI/Algebra/AffineCancellation/Main.lean`](../../../lean/OAI/Algebra/AffineCancellation/Main.lean) | 38 | Declaration |
+| S15 | [`lean/ComparatorChallenges/ComplexCancellation.lean`](../../../lean/ComparatorChallenges/ComplexCancellation.lean) | 32 | Comparator stub |
 
 ## Bibliography
 

@@ -132,32 +132,16 @@ claim exists and names its declaration; the two comparator configs carry
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `overview.tex` | 859 | Family entry, line 573 |
-| S2 | `preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/README.md` | 18 | Manuscript title, date, citation |
-| S3 | `preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/main.tex` | 67 | Abstract, lines 49–54 |
-| S4 | `preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/introduction.tex` | 213 | Principle, theorems, framing |
-| S5 | `preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/monoid.tex` | 801 | The monoid construction |
-| S6 | `preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/forcing.tex` | 797 | The forcing construction |
-| S7 | `preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/quotients.tex` | 746 | The quotient structure |
-| S8 | `preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/conclusion.tex` | 303 | The conclusion |
-| S9 | `preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/metatheory.tex` | 439 | The metatheory section |
-| S10 | `lean/docs/244.md` | 18 | Scope note |
-| S11 | `lean/OAI/SetTheory/PartitionPrinciple/Models/Separation.lean` | 51 | The transitive-model declaration |
-| S12 | `lean/ComparatorChallenges/PartitionPrinciple.lean` | 277 | Stub, `sorry` at line 273 |
-| S13 | `lean/ComparatorChallenges/PartitionConsistency.lean` | 324 | Stub, `sorry` at line 320 |
-
-## Links
-
-- [S1](../../../overview.tex)
-- [S2](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/README.md)
-- [S3](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/main.tex)
-- [S4](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/introduction.tex)
-- [S5](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/monoid.tex)
-- [S6](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/forcing.tex)
-- [S7](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/quotients.tex)
-- [S8](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/conclusion.tex)
-- [S9](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/metatheory.tex)
-- [S10](../../../lean/docs/244.md)
-- [S11](../../../lean/OAI/SetTheory/PartitionPrinciple/Models/Separation.lean)
-- [S12](../../../lean/ComparatorChallenges/PartitionPrinciple.lean)
-- [S13](../../../lean/ComparatorChallenges/PartitionConsistency.lean)
+| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 573 |
+| S2 | [`preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/README.md`](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/README.md) | 18 | Manuscript title, date, citation |
+| S3 | [`preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/main.tex`](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/main.tex) | 67 | Abstract, lines 49–54 |
+| S4 | [`preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/introduction.tex`](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/introduction.tex) | 213 | Principle, theorems, framing |
+| S5 | [`preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/monoid.tex`](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/monoid.tex) | 801 | The monoid construction |
+| S6 | [`preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/forcing.tex`](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/forcing.tex) | 797 | The forcing construction |
+| S7 | [`preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/quotients.tex`](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/quotients.tex) | 746 | The quotient structure |
+| S8 | [`preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/conclusion.tex`](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/conclusion.tex) | 303 | The conclusion |
+| S9 | [`preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/metatheory.tex`](../../../preprints/The-Partition-Principle-does-not-imply-Choice-September-24-2026/build/sections/metatheory.tex) | 439 | The metatheory section |
+| S10 | [`lean/docs/244.md`](../../../lean/docs/244.md) | 18 | Scope note |
+| S11 | [`lean/OAI/SetTheory/PartitionPrinciple/Models/Separation.lean`](../../../lean/OAI/SetTheory/PartitionPrinciple/Models/Separation.lean) | 51 | The transitive-model declaration |
+| S12 | [`lean/ComparatorChallenges/PartitionPrinciple.lean`](../../../lean/ComparatorChallenges/PartitionPrinciple.lean) | 277 | Stub, `sorry` at line 273 |
+| S13 | [`lean/ComparatorChallenges/PartitionConsistency.lean`](../../../lean/ComparatorChallenges/PartitionConsistency.lean) | 324 | Stub, `sorry` at line 320 |

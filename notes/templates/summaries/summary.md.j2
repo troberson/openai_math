@@ -11,9 +11,9 @@
    - one prose heading set: the 30 distinct strings the hand-written pages carried
      collapse to the canonical sections below, each rendered only when the family
      has a body for it
-   - the Sources table is four columns with one separator byte form
-   - a Links section on every page, generated from the Sources rows
-   - a Bibliography section after Links (math-cgv.8)
+   - the Sources table is four columns with one separator byte form, and each File
+     cell is a markdown link to its file (the cell is both the path and its link)
+   - a Bibliography section after Sources (math-cgv.8)
 
    Every {{ }} slot is a label the renderer supplies. Rendering uses trim_blocks and
    lstrip_blocks, so the {% if %}/{% endif %} and {% for %}/{% endfor %} lines emit
@@ -81,12 +81,6 @@ Notes / Summaries / {{ p['discipline'] }} / [Family {{ p['fam'] }}](../../index/
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
 {{ p['sources_rows'] }}
-
-## Links
-
-{% for label, path in p['links'] %}
-- [{{ label }}]({{ path }})
-{% endfor %}
 {% if p['bibliography'] %}
 
 ## Bibliography

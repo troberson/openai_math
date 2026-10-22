@@ -167,35 +167,19 @@ What has not been checked: no Lean, lake, or comparator run was performed, and f
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `CONTENTS.md` | 9142 | Release blurb, manuscript links, both manuscript abstracts |
-| S2 | `overview.tex` | 859 | Family 346's `\resultentry`, at line 790 |
-| S3 | `preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/README.md` | 18 | First manuscript README, date, bibtex key |
-| S4 | `preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/varifold-singular-dimension.pdf` | 15834 | First manuscript PDF |
-| S5 | `preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/build/main.tex` | 28 | Preamble, theorem environments, section include list |
-| S6 | `preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/build/sections/01-introduction.tex` | 200 | Main theorem, regularity definition, sharpness, antecedents, proof stages |
-| S7 | `preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/build/references.bib` | 251 | First manuscript bibliography |
-| S8 | `preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/README.md` | 18 | Second manuscript README, date, bibtex key |
-| S9 | `preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/paper.pdf` | 22614 | Second manuscript PDF |
-| S10 | `preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/build/paper.tex` | 71 | Preamble, theorem environments, section include list |
-| S11 | `preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/build/sections/introduction.tex` | 237 | Main theorem, regularity definition, spherical corollary, the named conjecture |
-| S12 | `preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/build/references.bib` | 222 | Second manuscript bibliography |
-| S13 | `notes/tables/catalog.tsv` | 373 | Reading ledger row for family 346 |
-
-## Links
-
-- [S1](../../../CONTENTS.md)
-- [S2](../../../overview.tex)
-- [S3](../../../preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/README.md)
-- [S4](../../../preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/varifold-singular-dimension.pdf)
-- [S5](../../../preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/build/main.tex)
-- [S6](../../../preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/build/sections/01-introduction.tex)
-- [S7](../../../preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/build/references.bib)
-- [S8](../../../preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/README.md)
-- [S9](../../../preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/paper.pdf)
-- [S10](../../../preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/build/paper.tex)
-- [S11](../../../preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/build/sections/introduction.tex)
-- [S12](../../../preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/build/references.bib)
-- [S13](../../../notes/tables/catalog.tsv)
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release blurb, manuscript links, both manuscript abstracts |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 346's `\resultentry`, at line 790 |
+| S3 | [`preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/README.md`](../../../preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/README.md) | 18 | First manuscript README, date, bibtex key |
+| S4 | [`preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/varifold-singular-dimension.pdf`](../../../preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/varifold-singular-dimension.pdf) | 15834 | First manuscript PDF |
+| S5 | [`preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/build/main.tex`](../../../preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/build/main.tex) | 28 | Preamble, theorem environments, section include list |
+| S6 | [`preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/build/sections/01-introduction.tex`](../../../preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/build/sections/01-introduction.tex) | 200 | Main theorem, regularity definition, sharpness, antecedents, proof stages |
+| S7 | [`preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/build/references.bib`](../../../preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/build/references.bib) | 251 | First manuscript bibliography |
+| S8 | [`preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/README.md`](../../../preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/README.md) | 18 | Second manuscript README, date, bibtex key |
+| S9 | [`preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/paper.pdf`](../../../preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/paper.pdf) | 22614 | Second manuscript PDF |
+| S10 | [`preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/build/paper.tex`](../../../preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/build/paper.tex) | 71 | Preamble, theorem environments, section include list |
+| S11 | [`preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/build/sections/introduction.tex`](../../../preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/build/sections/introduction.tex) | 237 | Main theorem, regularity definition, spherical corollary, the named conjecture |
+| S12 | [`preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/build/references.bib`](../../../preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/build/references.bib) | 222 | Second manuscript bibliography |
+| S13 | [`notes/tables/catalog.tsv`](../../../notes/tables/catalog.tsv) | 373 | Reading ledger row for family 346 |
 
 ## Bibliography
 

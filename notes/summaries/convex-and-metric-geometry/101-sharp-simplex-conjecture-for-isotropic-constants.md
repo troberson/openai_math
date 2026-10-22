@@ -227,32 +227,16 @@ geometry arguments, and it is not a Lean check.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `CONTENTS.md` | 9142 | Family 101's block, at line 2486 |
-| S2 | `overview.tex` | 859 | Family 101's `\resultentry`, at line 278 |
-| S3 | `preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/README.md` | 30 | The verification bundle's run command and scope |
-| S4 | `preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/main.tex` | 64 | Title, date, abstract |
-| S5 | `preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/introduction.tex` | 192 | The two theorems, prior work, ideas of the proof |
-| S6 | `preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/transport.tex` | 552 | Transport map, normalization, energy estimate |
-| S7 | `preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/matrix.tex` | 585 | Entropy deficit, matrix estimate, the two scalar propositions |
-| S8 | `preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/scalar.tex` | 486 | The two scalar estimates, exact rational constants |
-| S9 | `preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/approximation.tex` | 206 | Removing smoothness, passage to the limit |
-| S10 | `preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/rigidity.tex` | 254 | Commutation, diagonalization, equality classification |
-| S11 | `preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/geometry.tex` | 169 | Cone construction, simplex equality cases |
-| S12 | `preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/certificate.tex` | 612 | The scalar certificates |
-| S13 | `preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/verification/verify_scalar.py` | 512 | The exact-rational checker |
-
-## Links
-
-- [S1](../../../CONTENTS.md)
-- [S2](../../../overview.tex)
-- [S3](../../../preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/README.md)
-- [S4](../../../preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/main.tex)
-- [S5](../../../preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/introduction.tex)
-- [S6](../../../preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/transport.tex)
-- [S7](../../../preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/matrix.tex)
-- [S8](../../../preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/scalar.tex)
-- [S9](../../../preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/approximation.tex)
-- [S10](../../../preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/rigidity.tex)
-- [S11](../../../preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/geometry.tex)
-- [S12](../../../preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/certificate.tex)
-- [S13](../../../preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/verification/verify_scalar.py)
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Family 101's block, at line 2486 |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 101's `\resultentry`, at line 278 |
+| S3 | [`preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/README.md`](../../../preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/README.md) | 30 | The verification bundle's run command and scope |
+| S4 | [`preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/main.tex`](../../../preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/main.tex) | 64 | Title, date, abstract |
+| S5 | [`preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/introduction.tex`](../../../preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/introduction.tex) | 192 | The two theorems, prior work, ideas of the proof |
+| S6 | [`preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/transport.tex`](../../../preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/transport.tex) | 552 | Transport map, normalization, energy estimate |
+| S7 | [`preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/matrix.tex`](../../../preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/matrix.tex) | 585 | Entropy deficit, matrix estimate, the two scalar propositions |
+| S8 | [`preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/scalar.tex`](../../../preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/scalar.tex) | 486 | The two scalar estimates, exact rational constants |
+| S9 | [`preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/approximation.tex`](../../../preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/approximation.tex) | 206 | Removing smoothness, passage to the limit |
+| S10 | [`preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/rigidity.tex`](../../../preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/rigidity.tex) | 254 | Commutation, diagonalization, equality classification |
+| S11 | [`preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/geometry.tex`](../../../preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/geometry.tex) | 169 | Cone construction, simplex equality cases |
+| S12 | [`preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/certificate.tex`](../../../preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/build/manuscript/certificate.tex) | 612 | The scalar certificates |
+| S13 | [`preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/verification/verify_scalar.py`](../../../preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/verification/verify_scalar.py) | 512 | The exact-rational checker |

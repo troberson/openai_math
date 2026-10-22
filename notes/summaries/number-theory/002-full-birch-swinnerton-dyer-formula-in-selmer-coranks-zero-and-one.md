@@ -92,49 +92,26 @@ What is not a consequence: BSD for a fixed curve; the leading coefficient at Sel
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `CONTENTS.md` | 9142 | Family entry at 32; manuscript blurbs at 41, 50 and 59; family 006's entry at 141, which does not name 002 |
-| S2 | `overview.tex` | 859 | The `\resultentry` at 80: the release's abstract for 002 and its three display titles |
-| S3 | `notes/tables/catalog.tsv` | 373 | Row 3 is family 002: tier, manuscript count, claim-shape tags, companion, and the zero evidence columns |
-| S4 | `notes/reports/t0-triage.md` | 897 | Bucket legend at 17–25; the 002 entry at 114–116; the cross-family chain list at 858–859 |
-| S5 | `preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/README.md` | 21 | Author line at 3, date line at 5, the release's own bibtex entry at 9–17, the version note at 19–21 naming the October-3 directory |
-| S6 | `preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/build/main.tex` | 82 | Title at 56, date at 58, abstract at 62–68; the ten section inputs |
-| S7 | `preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/build/sections/01-introduction.tex` | 281 | Normalizations at 12–44; theorem at 47–62; inputs at 64–71; history at 75–137; discrepancy at 141–167; theta method at 169–267; organization at 269 |
-| S8 | `preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/build/references.tex` | 230 | The intra-corpus entries: Goldfeld at 143–148, C at 150–155, B at 157–162; Smith at 184–188 |
-| S9 | `preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/exact-bsd-low-selmer-corank.pdf` | 25214 | The compiled exact-valuation manuscript, 874,353 bytes |
-| S10 | `preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/README.md` | 21 | Author line at 3, date line at 5, the version note at 19–21 naming the September-24 directory |
-| S11 | `preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/build/main.tex` | 33 | Title at 3, date at 5, abstract at 9–16; the eleven section inputs |
-| S12 | `preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/build/sections/01-introduction.tex` | 269 | Theorem at 25–37; scope at 39–44; cube-sum application at 46–58; converse history at 60–134; proof strategy at 136 |
-| S13 | `preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/build/references.bib` | 1070 | The intra-corpus entry OpenAIGoldfeldDensity2026 at 95–101, title at 97 |
-| S14 | `preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/main.pdf` | 24874 | The compiled converse manuscript, 869,458 bytes |
-| S15 | `preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/README.md` | 21 | Author line at 3, date line at 5, the version note at 19–21 naming the September-24 directory |
-| S16 | `preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/build/paper.tex` | 79 | Title at 55, date at 57, abstract at 60; the fifteen section inputs |
-| S17 | `preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/build/sections/01-introduction.tex` | 329 | Scope at 13–20; theorem at 54–71; any-prime criterion at 73–95; density paragraph at 97–103; history at 105–187; integral difficulty at 189–202; the three comparisons at 204–249 |
-| S18 | `preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/build/sections/15-conclusion.tex` | 129 | Completion of the split-pair anchor at 3–27; proof of the theorem at 29–80; density corollary at 82–118 and its proof at 120–128 |
-| S19 | `preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/build/references.tex` | 395 | The intra-corpus entries: OpenAIGoldfeldDensity2026 at 270–275 and OpenAIAllPrimeSelmer2026 at 277–282 |
-| S20 | `preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/paper.pdf` | 37106 | The compiled two-primary manuscript, 1,279,386 bytes |
-
-## Links
-
-- [S1](../../../CONTENTS.md)
-- [S2](../../../overview.tex)
-- [S3](../../../notes/tables/catalog.tsv)
-- [S4](../../../notes/reports/t0-triage.md)
-- [S5](../../../preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/README.md)
-- [S6](../../../preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/build/main.tex)
-- [S7](../../../preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/build/sections/01-introduction.tex)
-- [S8](../../../preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/build/references.tex)
-- [S9](../../../preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/exact-bsd-low-selmer-corank.pdf)
-- [S10](../../../preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/README.md)
-- [S11](../../../preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/build/main.tex)
-- [S12](../../../preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/build/sections/01-introduction.tex)
-- [S13](../../../preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/build/references.bib)
-- [S14](../../../preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/main.pdf)
-- [S15](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/README.md)
-- [S16](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/build/paper.tex)
-- [S17](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/build/sections/01-introduction.tex)
-- [S18](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/build/sections/15-conclusion.tex)
-- [S19](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/build/references.tex)
-- [S20](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/paper.pdf)
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Family entry at 32; manuscript blurbs at 41, 50 and 59; family 006's entry at 141, which does not name 002 |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The `\resultentry` at 80: the release's abstract for 002 and its three display titles |
+| S3 | [`notes/tables/catalog.tsv`](../../../notes/tables/catalog.tsv) | 373 | Row 3 is family 002: tier, manuscript count, claim-shape tags, companion, and the zero evidence columns |
+| S4 | [`notes/reports/t0-triage.md`](../../../notes/reports/t0-triage.md) | 897 | Bucket legend at 17–25; the 002 entry at 114–116; the cross-family chain list at 858–859 |
+| S5 | [`preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/README.md`](../../../preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/README.md) | 21 | Author line at 3, date line at 5, the release's own bibtex entry at 9–17, the version note at 19–21 naming the October-3 directory |
+| S6 | [`preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/build/main.tex`](../../../preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/build/main.tex) | 82 | Title at 56, date at 58, abstract at 62–68; the ten section inputs |
+| S7 | [`preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/build/sections/01-introduction.tex`](../../../preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/build/sections/01-introduction.tex) | 281 | Normalizations at 12–44; theorem at 47–62; inputs at 64–71; history at 75–137; discrepancy at 141–167; theta method at 169–267; organization at 269 |
+| S8 | [`preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/build/references.tex`](../../../preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/build/references.tex) | 230 | The intra-corpus entries: Goldfeld at 143–148, C at 150–155, B at 157–162; Smith at 184–188 |
+| S9 | [`preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/exact-bsd-low-selmer-corank.pdf`](../../../preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/exact-bsd-low-selmer-corank.pdf) | 25214 | The compiled exact-valuation manuscript, 874,353 bytes |
+| S10 | [`preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/README.md`](../../../preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/README.md) | 21 | Author line at 3, date line at 5, the version note at 19–21 naming the September-24 directory |
+| S11 | [`preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/build/main.tex`](../../../preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/build/main.tex) | 33 | Title at 3, date at 5, abstract at 9–16; the eleven section inputs |
+| S12 | [`preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/build/sections/01-introduction.tex`](../../../preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/build/sections/01-introduction.tex) | 269 | Theorem at 25–37; scope at 39–44; cube-sum application at 46–58; converse history at 60–134; proof strategy at 136 |
+| S13 | [`preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/build/references.bib`](../../../preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/build/references.bib) | 1070 | The intra-corpus entry OpenAIGoldfeldDensity2026 at 95–101, title at 97 |
+| S14 | [`preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/main.pdf`](../../../preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/main.pdf) | 24874 | The compiled converse manuscript, 869,458 bytes |
+| S15 | [`preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/README.md`](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/README.md) | 21 | Author line at 3, date line at 5, the version note at 19–21 naming the September-24 directory |
+| S16 | [`preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/build/paper.tex`](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/build/paper.tex) | 79 | Title at 55, date at 57, abstract at 60; the fifteen section inputs |
+| S17 | [`preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/build/sections/01-introduction.tex`](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/build/sections/01-introduction.tex) | 329 | Scope at 13–20; theorem at 54–71; any-prime criterion at 73–95; density paragraph at 97–103; history at 105–187; integral difficulty at 189–202; the three comparisons at 204–249 |
+| S18 | [`preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/build/sections/15-conclusion.tex`](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/build/sections/15-conclusion.tex) | 129 | Completion of the split-pair anchor at 3–27; proof of the theorem at 29–80; density corollary at 82–118 and its proof at 120–128 |
+| S19 | [`preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/build/references.tex`](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/build/references.tex) | 395 | The intra-corpus entries: OpenAIGoldfeldDensity2026 at 270–275 and OpenAIAllPrimeSelmer2026 at 277–282 |
+| S20 | [`preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/paper.pdf`](../../../preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/paper.pdf) | 37106 | The compiled two-primary manuscript, 1,279,386 bytes |
 
 ## Bibliography
 

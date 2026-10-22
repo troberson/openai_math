@@ -166,45 +166,24 @@ claims exist and names their declarations; the five comparator configs carry
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `overview.tex` | 859 | Family entry, line 746 |
-| S2 | `preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/README.md` | 18 | Manuscript 1 title, date, citation |
-| S3 | `preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/build/main.tex` | 623 | Abstract, theorem, introduction, history |
-| S4 | `preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/build/references.tex` | 105 | Bibliography entries |
-| S5 | `preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/build/figures/normal.tex` | 21 | Numerical-range figure |
-| S6 | `preprints/The-complete-Crouzeix-theorem-September-23-2026/README.md` | 18 | Manuscript 2 title, date, citation |
-| S7 | `preprints/The-complete-Crouzeix-theorem-September-23-2026/build/main.tex` | 1523 | Abstract, structural theorem, representation theorem, corollaries |
-| S8 | `preprints/The-complete-Crouzeix-theorem-September-23-2026/build/references.tex` | 125 | Bibliography entries |
-| S9 | `preprints/The-complete-Crouzeix-theorem-September-23-2026/build/figures/coordinates.tex` | 36 | Conformal-coordinate figure |
-| S10 | `lean/docs/325.md` | 24 | Scope note |
-| S11 | `lean/OAI/Analysis/NumericalRange/Main.lean` | 70 | `CompleteCrouzeix.main` |
-| S12 | `lean/OAI/Analysis/DirectCrouzeix/CompleteBound.lean` | 119 | `DirectCrouzeix.complete_crouzeix` |
-| S13 | `lean/OAI/Analysis/StructuralCrouzeix/Endpoint.lean` | 12 | `StructuralCrouzeixReference.challenge` |
-| S14 | `lean/ComparatorChallenges/DirectCrouzeix.lean` | 44 | Stub, `sorry` at line 35 |
-| S15 | `lean/ComparatorChallenges/CompleteCrouzeix.lean` | 39 | Stub, `sorry` at line 34 |
-| S16 | `lean/ComparatorChallenges/StructuralCrouzeix.lean` | 216 | Stub, `sorry` at line 212 |
-| S17 | `lean/ComparatorChallenges/CrouzeixHilbert.lean` | 158 | Stub, `sorry` at line 152 |
-| S18 | `lean/ComparatorChallenges/HilbertCrouzeix.lean` | 143 | Stub, `sorry` at line 118 |
-
-## Links
-
-- [S1](../../../overview.tex)
-- [S2](../../../preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/README.md)
-- [S3](../../../preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/build/main.tex)
-- [S4](../../../preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/build/references.tex)
-- [S5](../../../preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/build/figures/normal.tex)
-- [S6](../../../preprints/The-complete-Crouzeix-theorem-September-23-2026/README.md)
-- [S7](../../../preprints/The-complete-Crouzeix-theorem-September-23-2026/build/main.tex)
-- [S8](../../../preprints/The-complete-Crouzeix-theorem-September-23-2026/build/references.tex)
-- [S9](../../../preprints/The-complete-Crouzeix-theorem-September-23-2026/build/figures/coordinates.tex)
-- [S10](../../../lean/docs/325.md)
-- [S11](../../../lean/OAI/Analysis/NumericalRange/Main.lean)
-- [S12](../../../lean/OAI/Analysis/DirectCrouzeix/CompleteBound.lean)
-- [S13](../../../lean/OAI/Analysis/StructuralCrouzeix/Endpoint.lean)
-- [S14](../../../lean/ComparatorChallenges/DirectCrouzeix.lean)
-- [S15](../../../lean/ComparatorChallenges/CompleteCrouzeix.lean)
-- [S16](../../../lean/ComparatorChallenges/StructuralCrouzeix.lean)
-- [S17](../../../lean/ComparatorChallenges/CrouzeixHilbert.lean)
-- [S18](../../../lean/ComparatorChallenges/HilbertCrouzeix.lean)
+| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 746 |
+| S2 | [`preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/README.md`](../../../preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/README.md) | 18 | Manuscript 1 title, date, citation |
+| S3 | [`preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/build/main.tex`](../../../preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/build/main.tex) | 623 | Abstract, theorem, introduction, history |
+| S4 | [`preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/build/references.tex`](../../../preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/build/references.tex) | 105 | Bibliography entries |
+| S5 | [`preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/build/figures/normal.tex`](../../../preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/build/figures/normal.tex) | 21 | Numerical-range figure |
+| S6 | [`preprints/The-complete-Crouzeix-theorem-September-23-2026/README.md`](../../../preprints/The-complete-Crouzeix-theorem-September-23-2026/README.md) | 18 | Manuscript 2 title, date, citation |
+| S7 | [`preprints/The-complete-Crouzeix-theorem-September-23-2026/build/main.tex`](../../../preprints/The-complete-Crouzeix-theorem-September-23-2026/build/main.tex) | 1523 | Abstract, structural theorem, representation theorem, corollaries |
+| S8 | [`preprints/The-complete-Crouzeix-theorem-September-23-2026/build/references.tex`](../../../preprints/The-complete-Crouzeix-theorem-September-23-2026/build/references.tex) | 125 | Bibliography entries |
+| S9 | [`preprints/The-complete-Crouzeix-theorem-September-23-2026/build/figures/coordinates.tex`](../../../preprints/The-complete-Crouzeix-theorem-September-23-2026/build/figures/coordinates.tex) | 36 | Conformal-coordinate figure |
+| S10 | [`lean/docs/325.md`](../../../lean/docs/325.md) | 24 | Scope note |
+| S11 | [`lean/OAI/Analysis/NumericalRange/Main.lean`](../../../lean/OAI/Analysis/NumericalRange/Main.lean) | 70 | `CompleteCrouzeix.main` |
+| S12 | [`lean/OAI/Analysis/DirectCrouzeix/CompleteBound.lean`](../../../lean/OAI/Analysis/DirectCrouzeix/CompleteBound.lean) | 119 | `DirectCrouzeix.complete_crouzeix` |
+| S13 | [`lean/OAI/Analysis/StructuralCrouzeix/Endpoint.lean`](../../../lean/OAI/Analysis/StructuralCrouzeix/Endpoint.lean) | 12 | `StructuralCrouzeixReference.challenge` |
+| S14 | [`lean/ComparatorChallenges/DirectCrouzeix.lean`](../../../lean/ComparatorChallenges/DirectCrouzeix.lean) | 44 | Stub, `sorry` at line 35 |
+| S15 | [`lean/ComparatorChallenges/CompleteCrouzeix.lean`](../../../lean/ComparatorChallenges/CompleteCrouzeix.lean) | 39 | Stub, `sorry` at line 34 |
+| S16 | [`lean/ComparatorChallenges/StructuralCrouzeix.lean`](../../../lean/ComparatorChallenges/StructuralCrouzeix.lean) | 216 | Stub, `sorry` at line 212 |
+| S17 | [`lean/ComparatorChallenges/CrouzeixHilbert.lean`](../../../lean/ComparatorChallenges/CrouzeixHilbert.lean) | 158 | Stub, `sorry` at line 152 |
+| S18 | [`lean/ComparatorChallenges/HilbertCrouzeix.lean`](../../../lean/ComparatorChallenges/HilbertCrouzeix.lean) | 143 | Stub, `sorry` at line 118 |
 
 ## Bibliography
 

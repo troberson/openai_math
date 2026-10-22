@@ -132,34 +132,17 @@ The comparator stubs carry `sorry` at `lean/ComparatorChallenges/LittleFinitisti
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `overview.tex` | 859 | Family entry, line 477 |
-| S2 | `preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/README.md` | 18 | Title, date |
-| S3 | `preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/paper.tex` | 21 | Abstract, section inputs |
-| S4 | `preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/sections/01-introduction.tex` | 230 | Conjecture, theorem, corollaries, three stages |
-| S5 | `preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/sections/02-selection-process.tex` | 377 | Selection proposition |
-| S6 | `preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/sections/03-localization-and-lifting.tex` | 452 | Quadratic presentation, Verdier quotient, lifting, rectification |
-| S7 | `preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/sections/04-tensor-realization.tex` | 304 | Realization theorem |
-| S8 | `preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/sections/05-ordinary-simulation.tex` | 149 | Simulation proposition |
-| S9 | `preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/sections/06-square-zero-and-conclusion.tex` | 389 | Bar splitting, fixed algebra, asymmetry |
-| S10 | `lean/docs/198.md` | 18 | Scope |
-| S11 | `lean/OAI/Algebra/Finitistic/Main.lean` | 56 | Declaration |
-| S12 | `lean/OAI/Algebra/FinitisticAsymmetry/Main.lean` | 65 | Declaration |
-| S13 | `lean/ComparatorChallenges/LittleFinitistic.lean` | 37 | Comparator stub |
-| S14 | `lean/ComparatorChallenges/FinitisticAsymmetry.lean` | 41 | Comparator stub |
-
-## Links
-
-- [S1](../../../overview.tex)
-- [S2](../../../preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/README.md)
-- [S3](../../../preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/paper.tex)
-- [S4](../../../preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/sections/01-introduction.tex)
-- [S5](../../../preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/sections/02-selection-process.tex)
-- [S6](../../../preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/sections/03-localization-and-lifting.tex)
-- [S7](../../../preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/sections/04-tensor-realization.tex)
-- [S8](../../../preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/sections/05-ordinary-simulation.tex)
-- [S9](../../../preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/sections/06-square-zero-and-conclusion.tex)
-- [S10](../../../lean/docs/198.md)
-- [S11](../../../lean/OAI/Algebra/Finitistic/Main.lean)
-- [S12](../../../lean/OAI/Algebra/FinitisticAsymmetry/Main.lean)
-- [S13](../../../lean/ComparatorChallenges/LittleFinitistic.lean)
-- [S14](../../../lean/ComparatorChallenges/FinitisticAsymmetry.lean)
+| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 477 |
+| S2 | [`preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/README.md`](../../../preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/README.md) | 18 | Title, date |
+| S3 | [`preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/paper.tex`](../../../preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/paper.tex) | 21 | Abstract, section inputs |
+| S4 | [`preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/sections/01-introduction.tex`](../../../preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/sections/01-introduction.tex) | 230 | Conjecture, theorem, corollaries, three stages |
+| S5 | [`preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/sections/02-selection-process.tex`](../../../preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/sections/02-selection-process.tex) | 377 | Selection proposition |
+| S6 | [`preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/sections/03-localization-and-lifting.tex`](../../../preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/sections/03-localization-and-lifting.tex) | 452 | Quadratic presentation, Verdier quotient, lifting, rectification |
+| S7 | [`preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/sections/04-tensor-realization.tex`](../../../preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/sections/04-tensor-realization.tex) | 304 | Realization theorem |
+| S8 | [`preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/sections/05-ordinary-simulation.tex`](../../../preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/sections/05-ordinary-simulation.tex) | 149 | Simulation proposition |
+| S9 | [`preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/sections/06-square-zero-and-conclusion.tex`](../../../preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/build/sections/06-square-zero-and-conclusion.tex) | 389 | Bar splitting, fixed algebra, asymmetry |
+| S10 | [`lean/docs/198.md`](../../../lean/docs/198.md) | 18 | Scope |
+| S11 | [`lean/OAI/Algebra/Finitistic/Main.lean`](../../../lean/OAI/Algebra/Finitistic/Main.lean) | 56 | Declaration |
+| S12 | [`lean/OAI/Algebra/FinitisticAsymmetry/Main.lean`](../../../lean/OAI/Algebra/FinitisticAsymmetry/Main.lean) | 65 | Declaration |
+| S13 | [`lean/ComparatorChallenges/LittleFinitistic.lean`](../../../lean/ComparatorChallenges/LittleFinitistic.lean) | 37 | Comparator stub |
+| S14 | [`lean/ComparatorChallenges/FinitisticAsymmetry.lean`](../../../lean/ComparatorChallenges/FinitisticAsymmetry.lean) | 41 | Comparator stub |

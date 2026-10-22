@@ -349,45 +349,24 @@ states in its own consequences section — Milne's two theorems, as corrected by
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `CONTENTS.md` | 9142 | the release's catalog — family entry [S1:755]; the five manuscript entries [S1:762], [S1:771], [S1:780], [S1:789], [S1:798] and their abstracts [S1:764], [S1:773], [S1:782], [S1:791], [S1:800]. Quoted word-for-word; the release's inline HTML is rendered as markdown, so its italic P tags became *P* and its PDF links were rewritten to resolve from this page |
-| S2 | `overview.tex` | 859 | the release's `\resultentry` list — 032 at [S2:142] |
-| S4 | `preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/sections/01-introduction.tex` | 227 | MS1 introduction — CM convention [S4:10–14]; `thm:cm` [S4:17–29]; consequences paragraph [S4:31–44]; Hodge's problem [S4:49–55]; Weil classes [S4:67–75]; the reductions [S4:80–112] |
-| S5 | `preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/sections/02-tensors.tex` | 521 | MS1 tensor algebra — the balanced-tensor lemmas at [S5:34], [S5:71], [S5:268], [S5:486]; the four-factor switch [S5:303] |
-| S6 | `preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/sections/03-surface.tex` | 156 | MS1 surface criterion [S6:10] and its corollary [S6:130] |
-| S7 | `preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/sections/05a-moduli.tex` | 534 | MS1 degree-one CM extraction [S7:29] |
-| S8 | `preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/sections/05c-cm-types.tex` | 430 | MS1 finite-family CM extraction [S8:395] |
-| S9 | `preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/sections/07-consequences.tex` | 335 | MS1 consequences — section intro [S9:4–16]; `cc:ghc` [S9:154]; `cc:tate` [S9:213] and its proof [S9:226–233]; `cc:standard` [S9:274] and its proof [S9:292–300]; the specialization remark [S9:311–335] |
-| S10 | `preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/references.bib` | 448 | MS1 bibliography — Deligne [S10:117], André [S10:15], Abdulali [S10:1], Hazama [S10:191], Pohlmann [S10:370], Moonen–Zarhin [S10:344], Markman [S10:251], Hodge [S10:214], Milne 2022 [S10:306], the companion rationality manuscript [S10:407–413], the two Milne addenda [S10:434–448] |
-| S11 | `preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/README.md` | 21 | MS1 README — the version note [S11:21] |
-| S12 | `preprints/Algebraic-Kuga-Satake-correspondences-and-Hodge-conjectures-on-a-K3-quadratic-locus-September-30-2026/build/paper.tex` | 5391 | MS2 — the extended criterion [S12:151–158] and its independence note [S12:160–161]; the quadratic locus [S12:163–175]; `main:theorem` [S12:179] |
-| S13 | `preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/build/paper.tex` | 8285 | MS3 — split Weil sixfolds [S13:79]; quadratic actions in dimension at most five [S13:88]; scope and polarization [S13:96–100]; the dependency on MS1 at [S13:8212] |
-| S14 | `preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026/build/paper.tex` | 3779 | MS4 — powers of abelian-cover Jacobians [S14:104]; powers of diagonal complete intersections [S14:146]; earlier work [S14:162–229]; the determinant corollary [S14:1110]; `thm:gale` [S14:2817]; its MS1 and MS3 citations at [S14:3736] and [S14:3743] |
-| S15 | `preprints/A-Conditional-Reduction-for-Algebraic-Kuga-Satake-Correspondences-September-10-2026/build/paper.tex` | 46 | MS5 root — abstract [S15:31]; section includes |
-| S16 | `preprints/A-Conditional-Reduction-for-Algebraic-Kuga-Satake-Correspondences-September-10-2026/build/sections/introduction.tex` | 75 | MS5 — `main:generic` [S16:36]; `main:specialization` [S16:57]; the equivalence [S16:63]; the external existence problem [S16:71] |
-| S17 | `preprints/A-Conditional-Reduction-for-Algebraic-Kuga-Satake-Correspondences-September-10-2026/build/references/dependency-table.tex` | 163 | MS5 dependency contract [S17:4–5] |
-| S18 | `notes/tables/catalog.tsv` | 373 | the reading ledger — family 032 at [S18:33] (tier, manuscript count, coverage columns) |
-| S19 | `notes/reports/sources.md` | 144 | the source-surface note — the supersession measurement [S19] |
-
-## Links
-
-- [S1](../../../CONTENTS.md)
-- [S2](../../../overview.tex)
-- [S4](../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/sections/01-introduction.tex)
-- [S5](../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/sections/02-tensors.tex)
-- [S6](../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/sections/03-surface.tex)
-- [S7](../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/sections/05a-moduli.tex)
-- [S8](../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/sections/05c-cm-types.tex)
-- [S9](../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/sections/07-consequences.tex)
-- [S10](../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/references.bib)
-- [S11](../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/README.md)
-- [S12](../../../preprints/Algebraic-Kuga-Satake-correspondences-and-Hodge-conjectures-on-a-K3-quadratic-locus-September-30-2026/build/paper.tex)
-- [S13](../../../preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/build/paper.tex)
-- [S14](../../../preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026/build/paper.tex)
-- [S15](../../../preprints/A-Conditional-Reduction-for-Algebraic-Kuga-Satake-Correspondences-September-10-2026/build/paper.tex)
-- [S16](../../../preprints/A-Conditional-Reduction-for-Algebraic-Kuga-Satake-Correspondences-September-10-2026/build/sections/introduction.tex)
-- [S17](../../../preprints/A-Conditional-Reduction-for-Algebraic-Kuga-Satake-Correspondences-September-10-2026/build/references/dependency-table.tex)
-- [S18](../../../notes/tables/catalog.tsv)
-- [S19](../../../notes/reports/sources.md)
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:755]; the five manuscript entries [S1:762], [S1:771], [S1:780], [S1:789], [S1:798] and their abstracts [S1:764], [S1:773], [S1:782], [S1:791], [S1:800]. Quoted word-for-word; the release's inline HTML is rendered as markdown, so its italic P tags became *P* and its PDF links were rewritten to resolve from this page |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 032 at [S2:142] |
+| S4 | [`preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/sections/01-introduction.tex`](../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/sections/01-introduction.tex) | 227 | MS1 introduction — CM convention [S4:10–14]; `thm:cm` [S4:17–29]; consequences paragraph [S4:31–44]; Hodge's problem [S4:49–55]; Weil classes [S4:67–75]; the reductions [S4:80–112] |
+| S5 | [`preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/sections/02-tensors.tex`](../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/sections/02-tensors.tex) | 521 | MS1 tensor algebra — the balanced-tensor lemmas at [S5:34], [S5:71], [S5:268], [S5:486]; the four-factor switch [S5:303] |
+| S6 | [`preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/sections/03-surface.tex`](../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/sections/03-surface.tex) | 156 | MS1 surface criterion [S6:10] and its corollary [S6:130] |
+| S7 | [`preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/sections/05a-moduli.tex`](../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/sections/05a-moduli.tex) | 534 | MS1 degree-one CM extraction [S7:29] |
+| S8 | [`preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/sections/05c-cm-types.tex`](../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/sections/05c-cm-types.tex) | 430 | MS1 finite-family CM extraction [S8:395] |
+| S9 | [`preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/sections/07-consequences.tex`](../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/sections/07-consequences.tex) | 335 | MS1 consequences — section intro [S9:4–16]; `cc:ghc` [S9:154]; `cc:tate` [S9:213] and its proof [S9:226–233]; `cc:standard` [S9:274] and its proof [S9:292–300]; the specialization remark [S9:311–335] |
+| S10 | [`preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/references.bib`](../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/build/references.bib) | 448 | MS1 bibliography — Deligne [S10:117], André [S10:15], Abdulali [S10:1], Hazama [S10:191], Pohlmann [S10:370], Moonen–Zarhin [S10:344], Markman [S10:251], Hodge [S10:214], Milne 2022 [S10:306], the companion rationality manuscript [S10:407–413], the two Milne addenda [S10:434–448] |
+| S11 | [`preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/README.md`](../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/README.md) | 21 | MS1 README — the version note [S11:21] |
+| S12 | [`preprints/Algebraic-Kuga-Satake-correspondences-and-Hodge-conjectures-on-a-K3-quadratic-locus-September-30-2026/build/paper.tex`](../../../preprints/Algebraic-Kuga-Satake-correspondences-and-Hodge-conjectures-on-a-K3-quadratic-locus-September-30-2026/build/paper.tex) | 5391 | MS2 — the extended criterion [S12:151–158] and its independence note [S12:160–161]; the quadratic locus [S12:163–175]; `main:theorem` [S12:179] |
+| S13 | [`preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/build/paper.tex`](../../../preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/build/paper.tex) | 8285 | MS3 — split Weil sixfolds [S13:79]; quadratic actions in dimension at most five [S13:88]; scope and polarization [S13:96–100]; the dependency on MS1 at [S13:8212] |
+| S14 | [`preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026/build/paper.tex`](../../../preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026/build/paper.tex) | 3779 | MS4 — powers of abelian-cover Jacobians [S14:104]; powers of diagonal complete intersections [S14:146]; earlier work [S14:162–229]; the determinant corollary [S14:1110]; `thm:gale` [S14:2817]; its MS1 and MS3 citations at [S14:3736] and [S14:3743] |
+| S15 | [`preprints/A-Conditional-Reduction-for-Algebraic-Kuga-Satake-Correspondences-September-10-2026/build/paper.tex`](../../../preprints/A-Conditional-Reduction-for-Algebraic-Kuga-Satake-Correspondences-September-10-2026/build/paper.tex) | 46 | MS5 root — abstract [S15:31]; section includes |
+| S16 | [`preprints/A-Conditional-Reduction-for-Algebraic-Kuga-Satake-Correspondences-September-10-2026/build/sections/introduction.tex`](../../../preprints/A-Conditional-Reduction-for-Algebraic-Kuga-Satake-Correspondences-September-10-2026/build/sections/introduction.tex) | 75 | MS5 — `main:generic` [S16:36]; `main:specialization` [S16:57]; the equivalence [S16:63]; the external existence problem [S16:71] |
+| S17 | [`preprints/A-Conditional-Reduction-for-Algebraic-Kuga-Satake-Correspondences-September-10-2026/build/references/dependency-table.tex`](../../../preprints/A-Conditional-Reduction-for-Algebraic-Kuga-Satake-Correspondences-September-10-2026/build/references/dependency-table.tex) | 163 | MS5 dependency contract [S17:4–5] |
+| S18 | [`notes/tables/catalog.tsv`](../../../notes/tables/catalog.tsv) | 373 | the reading ledger — family 032 at [S18:33] (tier, manuscript count, coverage columns) |
+| S19 | [`notes/reports/sources.md`](../../../notes/reports/sources.md) | 144 | the source-surface note — the supersession measurement [S19] |
 
 ## Bibliography
 

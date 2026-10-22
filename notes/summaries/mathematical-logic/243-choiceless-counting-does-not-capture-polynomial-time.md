@@ -156,49 +156,26 @@ claims exist and names their declarations; the two comparator configs carry
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `overview.tex` | 859 | Family entry, line 571 |
-| S2 | `preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/README.md` | 17 | Manuscript 1 title, date, citation |
-| S3 | `preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/main.tex` | 55 | Abstract, lines 35–41 |
-| S4 | `preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/references.bib` | 324 | Bibliography entries |
-| S5 | `preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/figures/proof-map.tex` | 30 | Proof-map figure |
-| S6 | `preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/sections/00-introduction.tex` | 233 | Formalism, main theorem |
-| S7 | `preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/sections/01-history.tex` | 112 | History of the capture question |
-| S8 | `preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/sections/07-separation.tex` | 44 | The nondefinability proof |
-| S9 | `preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/README.md` | 17 | Manuscript 2 title, date, citation |
-| S10 | `preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/build/main.tex` | 84 | Abstract, lines 64–69 |
-| S11 | `preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/build/references.bib` | 226 | Bibliography entries |
-| S12 | `preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/build/figures/grid-cycle.tex` | 38 | Grid-cycle figure |
-| S13 | `preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/build/sections/00-introduction.tex` | 215 | Main theorem |
-| S14 | `preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/build/sections/08-cpt-lower-bound.tex` | 501 | The lower-bound proof |
-| S15 | `lean/docs/243.md` | 19 | Scope note |
-| S16 | `lean/OAI/ModelTheory/Choiceless/Separation.lean` | 28 | `CPTSeparation.main` |
-| S17 | `lean/OAI/Computability/WitnessedChoice/Main.lean` | 43 | `WitnessedChoice.main` |
-| S18 | `lean/OAI/Computability/WitnessedChoice/Model.lean` | 604 | `MainStatement` carrier |
-| S19 | `lean/ComparatorChallenges/ChoicelessPolynomialTime.lean` | 560 | Stub, `sorry` at line 554 |
-| S20 | `lean/ComparatorChallenges/WitnessedChoice.lean` | 474 | Stub, `sorry` at line 470 |
-
-## Links
-
-- [S1](../../../overview.tex)
-- [S2](../../../preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/README.md)
-- [S3](../../../preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/main.tex)
-- [S4](../../../preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/references.bib)
-- [S5](../../../preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/figures/proof-map.tex)
-- [S6](../../../preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/sections/00-introduction.tex)
-- [S7](../../../preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/sections/01-history.tex)
-- [S8](../../../preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/sections/07-separation.tex)
-- [S9](../../../preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/README.md)
-- [S10](../../../preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/build/main.tex)
-- [S11](../../../preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/build/references.bib)
-- [S12](../../../preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/build/figures/grid-cycle.tex)
-- [S13](../../../preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/build/sections/00-introduction.tex)
-- [S14](../../../preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/build/sections/08-cpt-lower-bound.tex)
-- [S15](../../../lean/docs/243.md)
-- [S16](../../../lean/OAI/ModelTheory/Choiceless/Separation.lean)
-- [S17](../../../lean/OAI/Computability/WitnessedChoice/Main.lean)
-- [S18](../../../lean/OAI/Computability/WitnessedChoice/Model.lean)
-- [S19](../../../lean/ComparatorChallenges/ChoicelessPolynomialTime.lean)
-- [S20](../../../lean/ComparatorChallenges/WitnessedChoice.lean)
+| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 571 |
+| S2 | [`preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/README.md`](../../../preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/README.md) | 17 | Manuscript 1 title, date, citation |
+| S3 | [`preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/main.tex`](../../../preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/main.tex) | 55 | Abstract, lines 35–41 |
+| S4 | [`preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/references.bib`](../../../preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/references.bib) | 324 | Bibliography entries |
+| S5 | [`preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/figures/proof-map.tex`](../../../preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/figures/proof-map.tex) | 30 | Proof-map figure |
+| S6 | [`preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/sections/00-introduction.tex`](../../../preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/sections/00-introduction.tex) | 233 | Formalism, main theorem |
+| S7 | [`preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/sections/01-history.tex`](../../../preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/sections/01-history.tex) | 112 | History of the capture question |
+| S8 | [`preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/sections/07-separation.tex`](../../../preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/build/sections/07-separation.tex) | 44 | The nondefinability proof |
+| S9 | [`preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/README.md`](../../../preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/README.md) | 17 | Manuscript 2 title, date, citation |
+| S10 | [`preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/build/main.tex`](../../../preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/build/main.tex) | 84 | Abstract, lines 64–69 |
+| S11 | [`preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/build/references.bib`](../../../preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/build/references.bib) | 226 | Bibliography entries |
+| S12 | [`preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/build/figures/grid-cycle.tex`](../../../preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/build/figures/grid-cycle.tex) | 38 | Grid-cycle figure |
+| S13 | [`preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/build/sections/00-introduction.tex`](../../../preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/build/sections/00-introduction.tex) | 215 | Main theorem |
+| S14 | [`preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/build/sections/08-cpt-lower-bound.tex`](../../../preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/build/sections/08-cpt-lower-bound.tex) | 501 | The lower-bound proof |
+| S15 | [`lean/docs/243.md`](../../../lean/docs/243.md) | 19 | Scope note |
+| S16 | [`lean/OAI/ModelTheory/Choiceless/Separation.lean`](../../../lean/OAI/ModelTheory/Choiceless/Separation.lean) | 28 | `CPTSeparation.main` |
+| S17 | [`lean/OAI/Computability/WitnessedChoice/Main.lean`](../../../lean/OAI/Computability/WitnessedChoice/Main.lean) | 43 | `WitnessedChoice.main` |
+| S18 | [`lean/OAI/Computability/WitnessedChoice/Model.lean`](../../../lean/OAI/Computability/WitnessedChoice/Model.lean) | 604 | `MainStatement` carrier |
+| S19 | [`lean/ComparatorChallenges/ChoicelessPolynomialTime.lean`](../../../lean/ComparatorChallenges/ChoicelessPolynomialTime.lean) | 560 | Stub, `sorry` at line 554 |
+| S20 | [`lean/ComparatorChallenges/WitnessedChoice.lean`](../../../lean/ComparatorChallenges/WitnessedChoice.lean) | 474 | Stub, `sorry` at line 470 |
 
 ## Bibliography
 

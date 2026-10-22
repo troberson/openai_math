@@ -235,65 +235,34 @@ elaborates.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `overview.tex` | 859 | Family entry, line 637 |
-| S2 | `preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/README.md` | 17 | Manuscript 1 title, date, citation |
-| S3 | `preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/main.tex` | 25 | Abstract, lines 10–15 |
-| S4 | `preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/preamble.tex` | 48 | Macro definitions |
-| S5 | `preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/references.tex` | 182 | Bibliography entries |
-| S6 | `preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/introduction.tex` | 240 | Model, theorem, corollary, history |
-| S7 | `preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/localization.tex` | 98 | Product projections and localization |
-| S8 | `preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/depth_reduction.tex` | 194 | Depth reduction for small-support projections |
-| S9 | `preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/bootstrap.tex` | 193 | The finite scale induction |
-| S10 | `preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/polynomial.tex` | 139 | A polynomial approximation with controlled coefficients |
-| S11 | `preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/parity.tex` | 79 | From localization to parity |
-| S12 | `preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/consequences.tex` | 381 | Consequences of localization and parity |
-| S13 | `preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/README.md` | 17 | Manuscript 2 title, date, citation |
-| S14 | `preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/paper.tex` | 72 | Abstract, lines 49–55 |
-| S15 | `preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/references.bib` | 255 | Bibliography entries |
-| S16 | `preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/figures/transport.tex` | 37 | Transport figure |
-| S17 | `preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/01-introduction.tex` | 261 | Theorem, history, proof tools |
-| S18 | `preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/02-framework.tex` | 239 | Product tests and regular trajectories |
-| S19 | `preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/03-filters.tex` | 293 | Two polynomial filters |
-| S20 | `preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/04-propagation.tex` | 224 | Propagation of low-degree perturbations |
-| S21 | `preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/05-transport.tex` | 324 | Transporting excitation tails |
-| S22 | `preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/06-pruning.tex` | 279 | Projection insertion and pruning |
-| S23 | `preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/07-parity.tex` | 258 | The parity contradiction |
-| S24 | `lean/docs/274.md` | 21 | Scope note |
-| S25 | `lean/OAI/InformationTheory/QuantumCircuit/Parity.lean` | 82 | `QAC.parity_lower_bound` |
-| S26 | `lean/OAI/InformationTheory/QuantumCircuit/Main.lean` | 45 | `QAC.parity_lower_bound_polynomial_size` |
-| S27 | `lean/ComparatorChallenges/QACParity.lean` | 76 | Stub, `sorry` at line 72 |
-| S28 | `lean/ComparatorChallenges/RegularParity.lean` | 75 | Stub, `sorry` at line 69 |
-
-## Links
-
-- [S1](../../../overview.tex)
-- [S2](../../../preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/README.md)
-- [S3](../../../preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/main.tex)
-- [S4](../../../preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/preamble.tex)
-- [S5](../../../preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/references.tex)
-- [S6](../../../preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/introduction.tex)
-- [S7](../../../preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/localization.tex)
-- [S8](../../../preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/depth_reduction.tex)
-- [S9](../../../preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/bootstrap.tex)
-- [S10](../../../preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/polynomial.tex)
-- [S11](../../../preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/parity.tex)
-- [S12](../../../preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/consequences.tex)
-- [S13](../../../preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/README.md)
-- [S14](../../../preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/paper.tex)
-- [S15](../../../preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/references.bib)
-- [S16](../../../preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/figures/transport.tex)
-- [S17](../../../preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/01-introduction.tex)
-- [S18](../../../preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/02-framework.tex)
-- [S19](../../../preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/03-filters.tex)
-- [S20](../../../preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/04-propagation.tex)
-- [S21](../../../preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/05-transport.tex)
-- [S22](../../../preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/06-pruning.tex)
-- [S23](../../../preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/07-parity.tex)
-- [S24](../../../lean/docs/274.md)
-- [S25](../../../lean/OAI/InformationTheory/QuantumCircuit/Parity.lean)
-- [S26](../../../lean/OAI/InformationTheory/QuantumCircuit/Main.lean)
-- [S27](../../../lean/ComparatorChallenges/QACParity.lean)
-- [S28](../../../lean/ComparatorChallenges/RegularParity.lean)
+| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 637 |
+| S2 | [`preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/README.md`](../../../preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/README.md) | 17 | Manuscript 1 title, date, citation |
+| S3 | [`preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/main.tex`](../../../preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/main.tex) | 25 | Abstract, lines 10–15 |
+| S4 | [`preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/preamble.tex`](../../../preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/preamble.tex) | 48 | Macro definitions |
+| S5 | [`preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/references.tex`](../../../preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/references.tex) | 182 | Bibliography entries |
+| S6 | [`preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/introduction.tex`](../../../preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/introduction.tex) | 240 | Model, theorem, corollary, history |
+| S7 | [`preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/localization.tex`](../../../preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/localization.tex) | 98 | Product projections and localization |
+| S8 | [`preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/depth_reduction.tex`](../../../preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/depth_reduction.tex) | 194 | Depth reduction for small-support projections |
+| S9 | [`preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/bootstrap.tex`](../../../preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/bootstrap.tex) | 193 | The finite scale induction |
+| S10 | [`preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/polynomial.tex`](../../../preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/polynomial.tex) | 139 | A polynomial approximation with controlled coefficients |
+| S11 | [`preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/parity.tex`](../../../preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/parity.tex) | 79 | From localization to parity |
+| S12 | [`preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/consequences.tex`](../../../preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/build/sections/consequences.tex) | 381 | Consequences of localization and parity |
+| S13 | [`preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/README.md`](../../../preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/README.md) | 17 | Manuscript 2 title, date, citation |
+| S14 | [`preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/paper.tex`](../../../preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/paper.tex) | 72 | Abstract, lines 49–55 |
+| S15 | [`preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/references.bib`](../../../preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/references.bib) | 255 | Bibliography entries |
+| S16 | [`preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/figures/transport.tex`](../../../preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/figures/transport.tex) | 37 | Transport figure |
+| S17 | [`preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/01-introduction.tex) | 261 | Theorem, history, proof tools |
+| S18 | [`preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/02-framework.tex`](../../../preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/02-framework.tex) | 239 | Product tests and regular trajectories |
+| S19 | [`preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/03-filters.tex`](../../../preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/03-filters.tex) | 293 | Two polynomial filters |
+| S20 | [`preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/04-propagation.tex`](../../../preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/04-propagation.tex) | 224 | Propagation of low-degree perturbations |
+| S21 | [`preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/05-transport.tex`](../../../preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/05-transport.tex) | 324 | Transporting excitation tails |
+| S22 | [`preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/06-pruning.tex`](../../../preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/06-pruning.tex) | 279 | Projection insertion and pruning |
+| S23 | [`preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/07-parity.tex`](../../../preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/build/sections/07-parity.tex) | 258 | The parity contradiction |
+| S24 | [`lean/docs/274.md`](../../../lean/docs/274.md) | 21 | Scope note |
+| S25 | [`lean/OAI/InformationTheory/QuantumCircuit/Parity.lean`](../../../lean/OAI/InformationTheory/QuantumCircuit/Parity.lean) | 82 | `QAC.parity_lower_bound` |
+| S26 | [`lean/OAI/InformationTheory/QuantumCircuit/Main.lean`](../../../lean/OAI/InformationTheory/QuantumCircuit/Main.lean) | 45 | `QAC.parity_lower_bound_polynomial_size` |
+| S27 | [`lean/ComparatorChallenges/QACParity.lean`](../../../lean/ComparatorChallenges/QACParity.lean) | 76 | Stub, `sorry` at line 72 |
+| S28 | [`lean/ComparatorChallenges/RegularParity.lean`](../../../lean/ComparatorChallenges/RegularParity.lean) | 75 | Stub, `sorry` at line 69 |
 
 ## Bibliography
 

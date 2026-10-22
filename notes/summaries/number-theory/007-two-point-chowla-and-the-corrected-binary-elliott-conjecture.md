@@ -254,57 +254,30 @@ only published derivation artifact for this family.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `CONTENTS.md` | 9142 | Release blurb, family 007 at line 166 |
-| S2 | `overview.tex` | 859 | LaTeX entry `\resultentry{007}`, line 90 |
-| S3 | `README.md` | 51 | Trace attribution, line 28 |
-| S4 | `preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/README.md` | 18 | Manuscript README (title, author, date, bibtex stub) |
-| S5 | `preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/main.tex` | 90 | Title line 40, date line 46, abstract 49–58, three Parts |
-| S6 | `preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/introduction.tex` | 278 | Theorems, prior work, main ideas, organization |
-| S7 | `preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/quantitative/01-setup.tex` | 199 | Progression target, prime supplies, parameters |
-| S8 | `preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/quantitative/02-finite-law.tex` | 239 | Finite residue comparison via bounded independence |
-| S9 | `preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/quantitative/06-forest.tex` | 378 | Forest encoding of surviving repetition patterns |
-| S10 | `preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/quantitative/07-spectral.tex` | 333 | Spectral transfer, bound at every scale |
-| S11 | `preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/quantitative/08-affine.tex` | 51 | Proof of the affine bound |
-| S12 | `preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/qualitative/graph-setup.tex` | 120 | Weighted divisor graph, graph estimate |
-| S13 | `preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/qualitative/analytic-transfer.tex` | 671 | Reduction of a correlation bias to the graph |
-| S14 | `preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/qualitative/localization.tex` | 167 | High traces to long integer intervals |
-| S15 | `preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/qualitative/affine-corollaries.tex` | 363 | Part III: progressions, affine forms, Liouville |
-| S16 | `lean/docs/007.md` | 18 | Scope note: what the formalization proves |
-| S17 | `lean/formalization.yaml` | 1783 | Release index of formalized results; no entry for this manuscript |
-| S18 | `lean/ComparatorChallenges/OrdinaryElliott.json` | 14 | Comparator config, Elliott challenge |
-| S19 | `lean/ComparatorChallenges/OrdinaryTwoPointCorrelations.json` | 16 | Comparator config, three two-point theorems |
-| S20 | `lean/ComparatorChallenges/OrdinaryTwoPointCorrelations.lean` | 71 | Challenge statements, `sorry` on the challenge side |
-| S21 | `lean/OAI/NumberTheory/TwoPointCorrelations/FinalMain.lean` | 36 | Solution side: the three target theorems |
-| S22 | `lean/OAI/NumberTheory/OrdinaryCorrelations/Elliott/BinaryCorrectedElliott.lean` | 56 | Solution side: the Elliott theorem |
-| S23 | `preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/refs.bib` | 219 | Manuscript bibliography: authors, titles, years |
-| S24 | `reasoning_traces/ordinary-two-point-correlations.pdf` | 2305 | Published reasoning trace for this family |
-
-## Links
-
-- [S1](../../../CONTENTS.md)
-- [S2](../../../overview.tex)
-- [S3](../../../README.md)
-- [S4](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/README.md)
-- [S5](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/main.tex)
-- [S6](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/introduction.tex)
-- [S7](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/quantitative/01-setup.tex)
-- [S8](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/quantitative/02-finite-law.tex)
-- [S9](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/quantitative/06-forest.tex)
-- [S10](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/quantitative/07-spectral.tex)
-- [S11](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/quantitative/08-affine.tex)
-- [S12](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/qualitative/graph-setup.tex)
-- [S13](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/qualitative/analytic-transfer.tex)
-- [S14](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/qualitative/localization.tex)
-- [S15](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/qualitative/affine-corollaries.tex)
-- [S16](../../../lean/docs/007.md)
-- [S17](../../../lean/formalization.yaml)
-- [S18](../../../lean/ComparatorChallenges/OrdinaryElliott.json)
-- [S19](../../../lean/ComparatorChallenges/OrdinaryTwoPointCorrelations.json)
-- [S20](../../../lean/ComparatorChallenges/OrdinaryTwoPointCorrelations.lean)
-- [S21](../../../lean/OAI/NumberTheory/TwoPointCorrelations/FinalMain.lean)
-- [S22](../../../lean/OAI/NumberTheory/OrdinaryCorrelations/Elliott/BinaryCorrectedElliott.lean)
-- [S23](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/refs.bib)
-- [S24](../../../reasoning_traces/ordinary-two-point-correlations.pdf)
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release blurb, family 007 at line 166 |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | LaTeX entry `\resultentry{007}`, line 90 |
+| S3 | [`README.md`](../../../README.md) | 51 | Trace attribution, line 28 |
+| S4 | [`preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/README.md`](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/README.md) | 18 | Manuscript README (title, author, date, bibtex stub) |
+| S5 | [`preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/main.tex`](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/main.tex) | 90 | Title line 40, date line 46, abstract 49–58, three Parts |
+| S6 | [`preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/introduction.tex`](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/introduction.tex) | 278 | Theorems, prior work, main ideas, organization |
+| S7 | [`preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/quantitative/01-setup.tex`](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/quantitative/01-setup.tex) | 199 | Progression target, prime supplies, parameters |
+| S8 | [`preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/quantitative/02-finite-law.tex`](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/quantitative/02-finite-law.tex) | 239 | Finite residue comparison via bounded independence |
+| S9 | [`preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/quantitative/06-forest.tex`](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/quantitative/06-forest.tex) | 378 | Forest encoding of surviving repetition patterns |
+| S10 | [`preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/quantitative/07-spectral.tex`](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/quantitative/07-spectral.tex) | 333 | Spectral transfer, bound at every scale |
+| S11 | [`preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/quantitative/08-affine.tex`](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/quantitative/08-affine.tex) | 51 | Proof of the affine bound |
+| S12 | [`preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/qualitative/graph-setup.tex`](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/qualitative/graph-setup.tex) | 120 | Weighted divisor graph, graph estimate |
+| S13 | [`preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/qualitative/analytic-transfer.tex`](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/qualitative/analytic-transfer.tex) | 671 | Reduction of a correlation bias to the graph |
+| S14 | [`preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/qualitative/localization.tex`](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/qualitative/localization.tex) | 167 | High traces to long integer intervals |
+| S15 | [`preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/qualitative/affine-corollaries.tex`](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/qualitative/affine-corollaries.tex) | 363 | Part III: progressions, affine forms, Liouville |
+| S16 | [`lean/docs/007.md`](../../../lean/docs/007.md) | 18 | Scope note: what the formalization proves |
+| S17 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1783 | Release index of formalized results; no entry for this manuscript |
+| S18 | [`lean/ComparatorChallenges/OrdinaryElliott.json`](../../../lean/ComparatorChallenges/OrdinaryElliott.json) | 14 | Comparator config, Elliott challenge |
+| S19 | [`lean/ComparatorChallenges/OrdinaryTwoPointCorrelations.json`](../../../lean/ComparatorChallenges/OrdinaryTwoPointCorrelations.json) | 16 | Comparator config, three two-point theorems |
+| S20 | [`lean/ComparatorChallenges/OrdinaryTwoPointCorrelations.lean`](../../../lean/ComparatorChallenges/OrdinaryTwoPointCorrelations.lean) | 71 | Challenge statements, `sorry` on the challenge side |
+| S21 | [`lean/OAI/NumberTheory/TwoPointCorrelations/FinalMain.lean`](../../../lean/OAI/NumberTheory/TwoPointCorrelations/FinalMain.lean) | 36 | Solution side: the three target theorems |
+| S22 | [`lean/OAI/NumberTheory/OrdinaryCorrelations/Elliott/BinaryCorrectedElliott.lean`](../../../lean/OAI/NumberTheory/OrdinaryCorrelations/Elliott/BinaryCorrectedElliott.lean) | 56 | Solution side: the Elliott theorem |
+| S23 | [`preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/refs.bib`](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/refs.bib) | 219 | Manuscript bibliography: authors, titles, years |
+| S24 | [`reasoning_traces/ordinary-two-point-correlations.pdf`](../../../reasoning_traces/ordinary-two-point-correlations.pdf) | 2305 | Published reasoning trace for this family |
 
 ## Bibliography
 

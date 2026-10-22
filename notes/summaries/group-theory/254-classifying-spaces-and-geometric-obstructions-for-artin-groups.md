@@ -67,38 +67,19 @@ The formalization's record adds what the manuscripts' statements do not: the asp
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `overview.tex` | 859 | Family entry, line 595 |
-| S2 | `preprints/Harmonic-heights-and-the-Artin-K-pi-1-conjecture-September-23-2026/build/main.tex` | 67 | Abstract, lines 46–50 |
-| S3 | `preprints/Harmonic-heights-and-the-Artin-K-pi-1-conjecture-September-23-2026/build/sections/introduction.tex` | 255 | Main theorem, lines 21–30 |
-| S4 | `preprints/An-Artin-group-with-no-geometric-CAT-0-action-September-23-2026/build/main.tex` | 22 | Abstract, lines 8–12 |
-| S5 | `preprints/An-Artin-group-with-no-geometric-CAT-0-action-September-23-2026/build/sections/introduction.tex` | 158 | Main theorem, lines 60–66 |
-| S6 | `preprints/Parabolic-intersections-in-Artin-groups-September-23-2026/build/paper.tex` | 72 | Abstract, lines 51–55 |
-| S7 | `preprints/Parabolic-intersections-in-Artin-groups-September-23-2026/build/sections/01_intro.tex` | 277 | Main theorem, lines 20–28 |
-| S8 | `preprints/Harmonic-heights-and-the-Artin-K-pi-1-conjecture-September-23-2026/README.md` | 18 | The manuscript's citation record, lines 11–12 |
-| S9 | `preprints/An-Artin-group-with-no-geometric-CAT-0-action-September-23-2026/README.md` | 18 | The manuscript's citation record, lines 11–12 |
-| S10 | `preprints/Parabolic-intersections-in-Artin-groups-September-23-2026/README.md` | 18 | The manuscript's citation record, lines 11–12 |
-| S11 | `lean/docs/254.md` | 29 | Scope note: formalized claims and retained hypotheses |
-| S12 | `lean/OAI/Topology/ArtinGroups/Realizations/SalvettiCoverContractible.lean` | 21 | `salvetti_cover_contractible` declaration, line 11 |
-| S13 | `lean/OAI/Topology/ArtinGroups/ParabolicIntersections/UnconditionalMain.lean` | 64 | `unconditional_parabolic_intersections` declaration, line 31 |
-| S14 | `lean/ComparatorChallenges/HarmonicArtin.lean` | 65 | Challenge stub, `sorry` at line 61 |
-| S15 | `lean/ComparatorChallenges/ArtinCAT0.lean` | 77 | Challenge stub, `sorry` at line 73 |
-| S16 | `lean/ComparatorChallenges/ArtinParabolicIntersections.lean` | 129 | Challenge stubs, `sorry` at lines 103 and 111 |
-
-## Links
-
-- [S1](../../../overview.tex)
-- [S2](../../../preprints/Harmonic-heights-and-the-Artin-K-pi-1-conjecture-September-23-2026/build/main.tex)
-- [S3](../../../preprints/Harmonic-heights-and-the-Artin-K-pi-1-conjecture-September-23-2026/build/sections/introduction.tex)
-- [S4](../../../preprints/An-Artin-group-with-no-geometric-CAT-0-action-September-23-2026/build/main.tex)
-- [S5](../../../preprints/An-Artin-group-with-no-geometric-CAT-0-action-September-23-2026/build/sections/introduction.tex)
-- [S6](../../../preprints/Parabolic-intersections-in-Artin-groups-September-23-2026/build/paper.tex)
-- [S7](../../../preprints/Parabolic-intersections-in-Artin-groups-September-23-2026/build/sections/01_intro.tex)
-- [S8](../../../preprints/Harmonic-heights-and-the-Artin-K-pi-1-conjecture-September-23-2026/README.md)
-- [S9](../../../preprints/An-Artin-group-with-no-geometric-CAT-0-action-September-23-2026/README.md)
-- [S10](../../../preprints/Parabolic-intersections-in-Artin-groups-September-23-2026/README.md)
-- [S11](../../../lean/docs/254.md)
-- [S12](../../../lean/OAI/Topology/ArtinGroups/Realizations/SalvettiCoverContractible.lean)
-- [S13](../../../lean/OAI/Topology/ArtinGroups/ParabolicIntersections/UnconditionalMain.lean)
-- [S14](../../../lean/ComparatorChallenges/HarmonicArtin.lean)
-- [S15](../../../lean/ComparatorChallenges/ArtinCAT0.lean)
-- [S16](../../../lean/ComparatorChallenges/ArtinParabolicIntersections.lean)
+| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 595 |
+| S2 | [`preprints/Harmonic-heights-and-the-Artin-K-pi-1-conjecture-September-23-2026/build/main.tex`](../../../preprints/Harmonic-heights-and-the-Artin-K-pi-1-conjecture-September-23-2026/build/main.tex) | 67 | Abstract, lines 46–50 |
+| S3 | [`preprints/Harmonic-heights-and-the-Artin-K-pi-1-conjecture-September-23-2026/build/sections/introduction.tex`](../../../preprints/Harmonic-heights-and-the-Artin-K-pi-1-conjecture-September-23-2026/build/sections/introduction.tex) | 255 | Main theorem, lines 21–30 |
+| S4 | [`preprints/An-Artin-group-with-no-geometric-CAT-0-action-September-23-2026/build/main.tex`](../../../preprints/An-Artin-group-with-no-geometric-CAT-0-action-September-23-2026/build/main.tex) | 22 | Abstract, lines 8–12 |
+| S5 | [`preprints/An-Artin-group-with-no-geometric-CAT-0-action-September-23-2026/build/sections/introduction.tex`](../../../preprints/An-Artin-group-with-no-geometric-CAT-0-action-September-23-2026/build/sections/introduction.tex) | 158 | Main theorem, lines 60–66 |
+| S6 | [`preprints/Parabolic-intersections-in-Artin-groups-September-23-2026/build/paper.tex`](../../../preprints/Parabolic-intersections-in-Artin-groups-September-23-2026/build/paper.tex) | 72 | Abstract, lines 51–55 |
+| S7 | [`preprints/Parabolic-intersections-in-Artin-groups-September-23-2026/build/sections/01_intro.tex`](../../../preprints/Parabolic-intersections-in-Artin-groups-September-23-2026/build/sections/01_intro.tex) | 277 | Main theorem, lines 20–28 |
+| S8 | [`preprints/Harmonic-heights-and-the-Artin-K-pi-1-conjecture-September-23-2026/README.md`](../../../preprints/Harmonic-heights-and-the-Artin-K-pi-1-conjecture-September-23-2026/README.md) | 18 | The manuscript's citation record, lines 11–12 |
+| S9 | [`preprints/An-Artin-group-with-no-geometric-CAT-0-action-September-23-2026/README.md`](../../../preprints/An-Artin-group-with-no-geometric-CAT-0-action-September-23-2026/README.md) | 18 | The manuscript's citation record, lines 11–12 |
+| S10 | [`preprints/Parabolic-intersections-in-Artin-groups-September-23-2026/README.md`](../../../preprints/Parabolic-intersections-in-Artin-groups-September-23-2026/README.md) | 18 | The manuscript's citation record, lines 11–12 |
+| S11 | [`lean/docs/254.md`](../../../lean/docs/254.md) | 29 | Scope note: formalized claims and retained hypotheses |
+| S12 | [`lean/OAI/Topology/ArtinGroups/Realizations/SalvettiCoverContractible.lean`](../../../lean/OAI/Topology/ArtinGroups/Realizations/SalvettiCoverContractible.lean) | 21 | `salvetti_cover_contractible` declaration, line 11 |
+| S13 | [`lean/OAI/Topology/ArtinGroups/ParabolicIntersections/UnconditionalMain.lean`](../../../lean/OAI/Topology/ArtinGroups/ParabolicIntersections/UnconditionalMain.lean) | 64 | `unconditional_parabolic_intersections` declaration, line 31 |
+| S14 | [`lean/ComparatorChallenges/HarmonicArtin.lean`](../../../lean/ComparatorChallenges/HarmonicArtin.lean) | 65 | Challenge stub, `sorry` at line 61 |
+| S15 | [`lean/ComparatorChallenges/ArtinCAT0.lean`](../../../lean/ComparatorChallenges/ArtinCAT0.lean) | 77 | Challenge stub, `sorry` at line 73 |
+| S16 | [`lean/ComparatorChallenges/ArtinParabolicIntersections.lean`](../../../lean/ComparatorChallenges/ArtinParabolicIntersections.lean) | 129 | Challenge stubs, `sorry` at lines 103 and 111 |

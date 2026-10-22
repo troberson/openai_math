@@ -179,55 +179,29 @@ What has not been checked: no Lean, lake, or comparator run was performed, and t
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `CONTENTS.md` | 9142 | Release blurb, three manuscript links, three manuscript abstracts |
-| S2 | `overview.tex` | 859 | Family 348's `\resultentry`, at line 794 |
-| S3 | `preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/README.md` | 33 | Zero-plane README: date, bibtex key, verification command and record |
-| S4 | `preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/einstein-boundary.pdf` | 16656 | Zero-plane manuscript PDF |
-| S5 | `preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/build/paper.tex` | 54 | Zero-plane preamble, theorem environments, abstract |
-| S6 | `preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/build/sections/01-introduction.tex` | 157 | Main theorem, the corollary, the Weyl-block reduction, the three stages, the boundary argument, the organization |
-| S7 | `preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/build/references.tex` | 100 | Zero-plane bibliography |
-| S8 | `preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/verification/README.md` | 24 | Verification entry point and the file list, including the optional scalar check |
-| S9 | `preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/verification/COVERAGE.md` | 8 | Scope of the finite arithmetic checks |
-| S10 | `preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/README.md` | 18 | L2 gap README: date, bibtex key, no verification section |
-| S11 | `preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/einstein-gap.pdf` | 9643 | L2 gap manuscript PDF |
-| S12 | `preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/build/source/main.tex` | 863 | Abstract, classification assumption, gap theorem, the smoothing and defect arguments |
-| S13 | `preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/build/source/references.bib` | 191 | L2 gap bibliography |
-| S14 | `preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/README.md` | 27 | Positively-curved README: date, bibtex key, verification command and record |
-| S15 | `preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/paper.pdf` | 20242 | Positively-curved manuscript PDF |
-| S16 | `preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/build/paper.tex` | 56 | Positively-curved preamble, theorem environments, abstract |
-| S17 | `preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/build/sections/01-introduction.tex` | 180 | Classification theorem, the three models, the proof ingredients |
-| S18 | `preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/build/references.tex` | 142 | Positively-curved bibliography |
-| S19 | `preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/verification/README.md` | 23 | Verification entry point and the file list, without the optional scalar check |
-| S20 | `preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/verification/COVERAGE.md` | 8 | Scope of the finite arithmetic checks, byte-identical to S9 |
-| S21 | `lean/docs/348.md` | 15 | Scope note: what the formalization covers, the comparator, the status |
-| S22 | `lean/ComparatorChallenges/EinsteinFour.lean` | 222 | Comparator stub: the classification targets, with three `sorry` |
-| S23 | `notes/tables/catalog.tsv` | 373 | Reading ledger row for family 348 |
-
-## Links
-
-- [S1](../../../CONTENTS.md)
-- [S2](../../../overview.tex)
-- [S3](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/README.md)
-- [S4](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/einstein-boundary.pdf)
-- [S5](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/build/paper.tex)
-- [S6](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/build/sections/01-introduction.tex)
-- [S7](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/build/references.tex)
-- [S8](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/verification/README.md)
-- [S9](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/verification/COVERAGE.md)
-- [S10](../../../preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/README.md)
-- [S11](../../../preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/einstein-gap.pdf)
-- [S12](../../../preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/build/source/main.tex)
-- [S13](../../../preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/build/source/references.bib)
-- [S14](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/README.md)
-- [S15](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/paper.pdf)
-- [S16](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/build/paper.tex)
-- [S17](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/build/sections/01-introduction.tex)
-- [S18](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/build/references.tex)
-- [S19](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/verification/README.md)
-- [S20](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/verification/COVERAGE.md)
-- [S21](../../../lean/docs/348.md)
-- [S22](../../../lean/ComparatorChallenges/EinsteinFour.lean)
-- [S23](../../../notes/tables/catalog.tsv)
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release blurb, three manuscript links, three manuscript abstracts |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 348's `\resultentry`, at line 794 |
+| S3 | [`preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/README.md`](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/README.md) | 33 | Zero-plane README: date, bibtex key, verification command and record |
+| S4 | [`preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/einstein-boundary.pdf`](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/einstein-boundary.pdf) | 16656 | Zero-plane manuscript PDF |
+| S5 | [`preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/build/paper.tex`](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/build/paper.tex) | 54 | Zero-plane preamble, theorem environments, abstract |
+| S6 | [`preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/build/sections/01-introduction.tex`](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/build/sections/01-introduction.tex) | 157 | Main theorem, the corollary, the Weyl-block reduction, the three stages, the boundary argument, the organization |
+| S7 | [`preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/build/references.tex`](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/build/references.tex) | 100 | Zero-plane bibliography |
+| S8 | [`preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/verification/README.md`](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/verification/README.md) | 24 | Verification entry point and the file list, including the optional scalar check |
+| S9 | [`preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/verification/COVERAGE.md`](../../../preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/verification/COVERAGE.md) | 8 | Scope of the finite arithmetic checks |
+| S10 | [`preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/README.md`](../../../preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/README.md) | 18 | L2 gap README: date, bibtex key, no verification section |
+| S11 | [`preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/einstein-gap.pdf`](../../../preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/einstein-gap.pdf) | 9643 | L2 gap manuscript PDF |
+| S12 | [`preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/build/source/main.tex`](../../../preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/build/source/main.tex) | 863 | Abstract, classification assumption, gap theorem, the smoothing and defect arguments |
+| S13 | [`preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/build/source/references.bib`](../../../preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/build/source/references.bib) | 191 | L2 gap bibliography |
+| S14 | [`preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/README.md`](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/README.md) | 27 | Positively-curved README: date, bibtex key, verification command and record |
+| S15 | [`preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/paper.pdf`](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/paper.pdf) | 20242 | Positively-curved manuscript PDF |
+| S16 | [`preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/build/paper.tex`](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/build/paper.tex) | 56 | Positively-curved preamble, theorem environments, abstract |
+| S17 | [`preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/build/sections/01-introduction.tex`](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/build/sections/01-introduction.tex) | 180 | Classification theorem, the three models, the proof ingredients |
+| S18 | [`preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/build/references.tex`](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/build/references.tex) | 142 | Positively-curved bibliography |
+| S19 | [`preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/verification/README.md`](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/verification/README.md) | 23 | Verification entry point and the file list, without the optional scalar check |
+| S20 | [`preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/verification/COVERAGE.md`](../../../preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/verification/COVERAGE.md) | 8 | Scope of the finite arithmetic checks, byte-identical to S9 |
+| S21 | [`lean/docs/348.md`](../../../lean/docs/348.md) | 15 | Scope note: what the formalization covers, the comparator, the status |
+| S22 | [`lean/ComparatorChallenges/EinsteinFour.lean`](../../../lean/ComparatorChallenges/EinsteinFour.lean) | 222 | Comparator stub: the classification targets, with three `sorry` |
+| S23 | [`notes/tables/catalog.tsv`](../../../notes/tables/catalog.tsv) | 373 | Reading ledger row for family 348 |
 
 ## Bibliography
 

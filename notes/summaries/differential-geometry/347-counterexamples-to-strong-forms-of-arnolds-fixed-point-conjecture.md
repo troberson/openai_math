@@ -256,71 +256,37 @@ What has not been checked: no Lean, lake, or comparator run was performed, and t
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `CONTENTS.md` | 9142 | Release blurb, five manuscript links, five manuscript abstracts |
-| S2 | `overview.tex` | 859 | Family 347's `\resultentry`, at line 792 |
-| S3 | `preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/README.md` | 18 | Degenerate manuscript README, date, bibtex key |
-| S4 | `preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/paper.pdf` | 9626 | Degenerate manuscript PDF |
-| S5 | `preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/build/main.tex` | 46 | Degenerate manuscript preamble, theorem environments, abstract |
-| S6 | `preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/build/sections/00-introduction.tex` | 159 | Main theorem, the involution, the count, the organization |
-| S7 | `preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/build/references.tex` | 124 | Degenerate manuscript bibliography |
-| S8 | `preprints/A-nondegenerate-counterexample-to-the-Morse-number-Arnold-bound-September-23-2026/README.md` | 18 | Nondegenerate manuscript README, date, bibtex key |
-| S9 | `preprints/A-nondegenerate-counterexample-to-the-Morse-number-Arnold-bound-September-23-2026/paper.pdf` | 12033 | Nondegenerate manuscript PDF |
-| S10 | `preprints/A-nondegenerate-counterexample-to-the-Morse-number-Arnold-bound-September-23-2026/build/main.tex` | 57 | Nondegenerate manuscript preamble, theorem environments, abstract |
-| S11 | `preprints/A-nondegenerate-counterexample-to-the-Morse-number-Arnold-bound-September-23-2026/build/sections/01-introduction.tex` | 207 | Main theorem, the algebraic distinction, the cap construction, the two counts |
-| S12 | `preprints/A-nondegenerate-counterexample-to-the-Morse-number-Arnold-bound-September-23-2026/build/refs.bib` | 307 | Nondegenerate manuscript bibliography |
-| S13 | `preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/README.md` | 18 | Base manuscript README, date, bibtex key |
-| S14 | `preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/paper.pdf` | 12131 | Base manuscript PDF |
-| S15 | `preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/build/main.tex` | 49 | Base manuscript preamble, theorem environments, abstract |
-| S16 | `preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/build/sections/introduction.tex` | 55 | Stable Morse definition, the proposed bound, main theorem, the mechanism |
-| S17 | `preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/build/references.tex` | 146 | Base manuscript bibliography |
-| S18 | `preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026/README.md` | 18 | Dimension-22 manuscript README, date, bibtex key |
-| S19 | `preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026/hamiltonian-fixed-points-below-stable-morse-number.pdf` | 12464 | Dimension-22 manuscript PDF |
-| S20 | `preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026/build/main.tex` | 59 | Dimension-22 manuscript preamble, theorem environments, abstract |
-| S21 | `preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026/build/sections/introduction.tex` | 157 | Main theorem, the generator maximum, the blow-up construction, the count |
-| S22 | `preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026/build/references.tex` | 148 | Dimension-22 manuscript bibliography |
-| S23 | `preprints/Sharpness-of-the-Cyclic-Integral-Floer-Bound-Below-the-Stable-Morse-Number-October-5-2026/README.md` | 17 | Companion manuscript README, date, bibtex key |
-| S24 | `preprints/Sharpness-of-the-Cyclic-Integral-Floer-Bound-Below-the-Stable-Morse-Number-October-5-2026/sharp-cyclic-integral-floer-bound-below-stable-morse-number.pdf` | 9750 | Companion manuscript PDF |
-| S25 | `preprints/Sharpness-of-the-Cyclic-Integral-Floer-Bound-Below-the-Stable-Morse-Number-October-5-2026/build/main.tex` | 58 | Companion manuscript preamble, theorem environments, abstract |
-| S26 | `preprints/Sharpness-of-the-Cyclic-Integral-Floer-Bound-Below-the-Stable-Morse-Number-October-5-2026/build/sections/introduction.tex` | 143 | Main theorem, the cyclic bound, the degree-sensitive convolution |
-| S27 | `preprints/Sharpness-of-the-Cyclic-Integral-Floer-Bound-Below-the-Stable-Morse-Number-October-5-2026/build/references.bib` | 190 | Companion manuscript bibliography |
-| S28 | `lean/docs/347.md` | 15 | Scope note: what the formalization covers, the comparator, the status |
-| S29 | `lean/ComparatorChallenges/ArnoldCounterexample.lean` | 120 | Comparator stub: the target the release set, with `sorry` |
-| S30 | `lean/OAI/Geometry/Arnold/Main.lean` | 25 | The proved declaration: the five-fact conjunction |
-| S31 | `notes/tables/catalog.tsv` | 373 | Reading ledger row for family 347 |
-
-## Links
-
-- [S1](../../../CONTENTS.md)
-- [S2](../../../overview.tex)
-- [S3](../../../preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/README.md)
-- [S4](../../../preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/paper.pdf)
-- [S5](../../../preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/build/main.tex)
-- [S6](../../../preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/build/sections/00-introduction.tex)
-- [S7](../../../preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/build/references.tex)
-- [S8](../../../preprints/A-nondegenerate-counterexample-to-the-Morse-number-Arnold-bound-September-23-2026/README.md)
-- [S9](../../../preprints/A-nondegenerate-counterexample-to-the-Morse-number-Arnold-bound-September-23-2026/paper.pdf)
-- [S10](../../../preprints/A-nondegenerate-counterexample-to-the-Morse-number-Arnold-bound-September-23-2026/build/main.tex)
-- [S11](../../../preprints/A-nondegenerate-counterexample-to-the-Morse-number-Arnold-bound-September-23-2026/build/sections/01-introduction.tex)
-- [S12](../../../preprints/A-nondegenerate-counterexample-to-the-Morse-number-Arnold-bound-September-23-2026/build/refs.bib)
-- [S13](../../../preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/README.md)
-- [S14](../../../preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/paper.pdf)
-- [S15](../../../preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/build/main.tex)
-- [S16](../../../preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/build/sections/introduction.tex)
-- [S17](../../../preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/build/references.tex)
-- [S18](../../../preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026/README.md)
-- [S19](../../../preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026/hamiltonian-fixed-points-below-stable-morse-number.pdf)
-- [S20](../../../preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026/build/main.tex)
-- [S21](../../../preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026/build/sections/introduction.tex)
-- [S22](../../../preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026/build/references.tex)
-- [S23](../../../preprints/Sharpness-of-the-Cyclic-Integral-Floer-Bound-Below-the-Stable-Morse-Number-October-5-2026/README.md)
-- [S24](../../../preprints/Sharpness-of-the-Cyclic-Integral-Floer-Bound-Below-the-Stable-Morse-Number-October-5-2026/sharp-cyclic-integral-floer-bound-below-stable-morse-number.pdf)
-- [S25](../../../preprints/Sharpness-of-the-Cyclic-Integral-Floer-Bound-Below-the-Stable-Morse-Number-October-5-2026/build/main.tex)
-- [S26](../../../preprints/Sharpness-of-the-Cyclic-Integral-Floer-Bound-Below-the-Stable-Morse-Number-October-5-2026/build/sections/introduction.tex)
-- [S27](../../../preprints/Sharpness-of-the-Cyclic-Integral-Floer-Bound-Below-the-Stable-Morse-Number-October-5-2026/build/references.bib)
-- [S28](../../../lean/docs/347.md)
-- [S29](../../../lean/ComparatorChallenges/ArnoldCounterexample.lean)
-- [S30](../../../lean/OAI/Geometry/Arnold/Main.lean)
-- [S31](../../../notes/tables/catalog.tsv)
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release blurb, five manuscript links, five manuscript abstracts |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 347's `\resultentry`, at line 792 |
+| S3 | [`preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/README.md`](../../../preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/README.md) | 18 | Degenerate manuscript README, date, bibtex key |
+| S4 | [`preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/paper.pdf`](../../../preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/paper.pdf) | 9626 | Degenerate manuscript PDF |
+| S5 | [`preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/build/main.tex`](../../../preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/build/main.tex) | 46 | Degenerate manuscript preamble, theorem environments, abstract |
+| S6 | [`preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/build/sections/00-introduction.tex`](../../../preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/build/sections/00-introduction.tex) | 159 | Main theorem, the involution, the count, the organization |
+| S7 | [`preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/build/references.tex`](../../../preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/build/references.tex) | 124 | Degenerate manuscript bibliography |
+| S8 | [`preprints/A-nondegenerate-counterexample-to-the-Morse-number-Arnold-bound-September-23-2026/README.md`](../../../preprints/A-nondegenerate-counterexample-to-the-Morse-number-Arnold-bound-September-23-2026/README.md) | 18 | Nondegenerate manuscript README, date, bibtex key |
+| S9 | [`preprints/A-nondegenerate-counterexample-to-the-Morse-number-Arnold-bound-September-23-2026/paper.pdf`](../../../preprints/A-nondegenerate-counterexample-to-the-Morse-number-Arnold-bound-September-23-2026/paper.pdf) | 12033 | Nondegenerate manuscript PDF |
+| S10 | [`preprints/A-nondegenerate-counterexample-to-the-Morse-number-Arnold-bound-September-23-2026/build/main.tex`](../../../preprints/A-nondegenerate-counterexample-to-the-Morse-number-Arnold-bound-September-23-2026/build/main.tex) | 57 | Nondegenerate manuscript preamble, theorem environments, abstract |
+| S11 | [`preprints/A-nondegenerate-counterexample-to-the-Morse-number-Arnold-bound-September-23-2026/build/sections/01-introduction.tex`](../../../preprints/A-nondegenerate-counterexample-to-the-Morse-number-Arnold-bound-September-23-2026/build/sections/01-introduction.tex) | 207 | Main theorem, the algebraic distinction, the cap construction, the two counts |
+| S12 | [`preprints/A-nondegenerate-counterexample-to-the-Morse-number-Arnold-bound-September-23-2026/build/refs.bib`](../../../preprints/A-nondegenerate-counterexample-to-the-Morse-number-Arnold-bound-September-23-2026/build/refs.bib) | 307 | Nondegenerate manuscript bibliography |
+| S13 | [`preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/README.md`](../../../preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/README.md) | 18 | Base manuscript README, date, bibtex key |
+| S14 | [`preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/paper.pdf`](../../../preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/paper.pdf) | 12131 | Base manuscript PDF |
+| S15 | [`preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/build/main.tex`](../../../preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/build/main.tex) | 49 | Base manuscript preamble, theorem environments, abstract |
+| S16 | [`preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/build/sections/introduction.tex`](../../../preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/build/sections/introduction.tex) | 55 | Stable Morse definition, the proposed bound, main theorem, the mechanism |
+| S17 | [`preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/build/references.tex`](../../../preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/build/references.tex) | 146 | Base manuscript bibliography |
+| S18 | [`preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026/README.md`](../../../preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026/README.md) | 18 | Dimension-22 manuscript README, date, bibtex key |
+| S19 | [`preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026/hamiltonian-fixed-points-below-stable-morse-number.pdf`](../../../preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026/hamiltonian-fixed-points-below-stable-morse-number.pdf) | 12464 | Dimension-22 manuscript PDF |
+| S20 | [`preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026/build/main.tex`](../../../preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026/build/main.tex) | 59 | Dimension-22 manuscript preamble, theorem environments, abstract |
+| S21 | [`preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026/build/sections/introduction.tex`](../../../preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026/build/sections/introduction.tex) | 157 | Main theorem, the generator maximum, the blow-up construction, the count |
+| S22 | [`preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026/build/references.tex`](../../../preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026/build/references.tex) | 148 | Dimension-22 manuscript bibliography |
+| S23 | [`preprints/Sharpness-of-the-Cyclic-Integral-Floer-Bound-Below-the-Stable-Morse-Number-October-5-2026/README.md`](../../../preprints/Sharpness-of-the-Cyclic-Integral-Floer-Bound-Below-the-Stable-Morse-Number-October-5-2026/README.md) | 17 | Companion manuscript README, date, bibtex key |
+| S24 | [`preprints/Sharpness-of-the-Cyclic-Integral-Floer-Bound-Below-the-Stable-Morse-Number-October-5-2026/sharp-cyclic-integral-floer-bound-below-stable-morse-number.pdf`](../../../preprints/Sharpness-of-the-Cyclic-Integral-Floer-Bound-Below-the-Stable-Morse-Number-October-5-2026/sharp-cyclic-integral-floer-bound-below-stable-morse-number.pdf) | 9750 | Companion manuscript PDF |
+| S25 | [`preprints/Sharpness-of-the-Cyclic-Integral-Floer-Bound-Below-the-Stable-Morse-Number-October-5-2026/build/main.tex`](../../../preprints/Sharpness-of-the-Cyclic-Integral-Floer-Bound-Below-the-Stable-Morse-Number-October-5-2026/build/main.tex) | 58 | Companion manuscript preamble, theorem environments, abstract |
+| S26 | [`preprints/Sharpness-of-the-Cyclic-Integral-Floer-Bound-Below-the-Stable-Morse-Number-October-5-2026/build/sections/introduction.tex`](../../../preprints/Sharpness-of-the-Cyclic-Integral-Floer-Bound-Below-the-Stable-Morse-Number-October-5-2026/build/sections/introduction.tex) | 143 | Main theorem, the cyclic bound, the degree-sensitive convolution |
+| S27 | [`preprints/Sharpness-of-the-Cyclic-Integral-Floer-Bound-Below-the-Stable-Morse-Number-October-5-2026/build/references.bib`](../../../preprints/Sharpness-of-the-Cyclic-Integral-Floer-Bound-Below-the-Stable-Morse-Number-October-5-2026/build/references.bib) | 190 | Companion manuscript bibliography |
+| S28 | [`lean/docs/347.md`](../../../lean/docs/347.md) | 15 | Scope note: what the formalization covers, the comparator, the status |
+| S29 | [`lean/ComparatorChallenges/ArnoldCounterexample.lean`](../../../lean/ComparatorChallenges/ArnoldCounterexample.lean) | 120 | Comparator stub: the target the release set, with `sorry` |
+| S30 | [`lean/OAI/Geometry/Arnold/Main.lean`](../../../lean/OAI/Geometry/Arnold/Main.lean) | 25 | The proved declaration: the five-fact conjunction |
+| S31 | [`notes/tables/catalog.tsv`](../../../notes/tables/catalog.tsv) | 373 | Reading ledger row for family 347 |
 
 ## Bibliography
 

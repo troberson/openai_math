@@ -110,6 +110,10 @@ def pass_b(page):
     for n, line in enumerate(page.lines, 1):
         for m in LINK.finditer(line):
             href = m.group(1)
+            if href.startswith("<") and href.endswith(">"):
+                # A paren-bearing path is angle-bracket-wrapped so the href is not
+                # misread at its first ')'; the brackets are syntax, not part of the path.
+                href = href[1:-1]
             links += 1
             if href.startswith(("http://", "https://", "mailto:")):
                 problems += 1

@@ -102,37 +102,20 @@ What has not been checked: no Lean, lake, or comparator run was performed, and t
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `CONTENTS.md` | 9142 | Release blurb, manuscript link, manuscript abstract |
-| S2 | `overview.tex` | 859 | Family 349's `\resultentry`, at line 796 |
-| S3 | `preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/README.md` | 18 | Manuscript README: date, bibtex key |
-| S4 | `preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/paper.pdf` | 13143 | Manuscript PDF |
-| S5 | `preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/paper.tex` | 83 | Preamble, theorem environments, abstract |
-| S6 | `preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/introduction.tex` | 179 | Main theorem, the Clifford threshold, the immersion reduction, the curvature and index steps, the Lorentz family, the induction, the organization |
-| S7 | `preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/preliminaries.tex` | 177 | Volume normalization and immersion reduction |
-| S8 | `preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/index.tex` | 585 | Curvature and index rigidity |
-| S9 | `preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/minmax.tex` | 401 | Detection and the min–max interface |
-| S10 | `preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/family.tex` | 757 | The Lorentz-distance family and its deformation |
-| S11 | `preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/cones.tex` | 442 | The cone induction and exact attainment |
-| S12 | `preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/conclusion.tex` | 44 | The completed proof |
-| S13 | `preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/references.bib` | 414 | Manuscript bibliography |
-| S14 | `notes/tables/catalog.tsv` | 373 | Reading ledger row for family 349 |
-
-## Links
-
-- [S1](../../../CONTENTS.md)
-- [S2](../../../overview.tex)
-- [S3](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/README.md)
-- [S4](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/paper.pdf)
-- [S5](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/paper.tex)
-- [S6](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/introduction.tex)
-- [S7](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/preliminaries.tex)
-- [S8](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/index.tex)
-- [S9](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/minmax.tex)
-- [S10](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/family.tex)
-- [S11](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/cones.tex)
-- [S12](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/conclusion.tex)
-- [S13](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/references.bib)
-- [S14](../../../notes/tables/catalog.tsv)
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release blurb, manuscript link, manuscript abstract |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 349's `\resultentry`, at line 796 |
+| S3 | [`preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/README.md`](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/README.md) | 18 | Manuscript README: date, bibtex key |
+| S4 | [`preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/paper.pdf`](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/paper.pdf) | 13143 | Manuscript PDF |
+| S5 | [`preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/paper.tex`](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/paper.tex) | 83 | Preamble, theorem environments, abstract |
+| S6 | [`preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/introduction.tex`](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/introduction.tex) | 179 | Main theorem, the Clifford threshold, the immersion reduction, the curvature and index steps, the Lorentz family, the induction, the organization |
+| S7 | [`preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/preliminaries.tex`](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/preliminaries.tex) | 177 | Volume normalization and immersion reduction |
+| S8 | [`preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/index.tex`](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/index.tex) | 585 | Curvature and index rigidity |
+| S9 | [`preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/minmax.tex`](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/minmax.tex) | 401 | Detection and the min–max interface |
+| S10 | [`preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/family.tex`](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/family.tex) | 757 | The Lorentz-distance family and its deformation |
+| S11 | [`preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/cones.tex`](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/cones.tex) | 442 | The cone induction and exact attainment |
+| S12 | [`preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/conclusion.tex`](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/conclusion.tex) | 44 | The completed proof |
+| S13 | [`preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/references.bib`](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/references.bib) | 414 | Manuscript bibliography |
+| S14 | [`notes/tables/catalog.tsv`](../../../notes/tables/catalog.tsv) | 373 | Reading ledger row for family 349 |
 
 ## Bibliography
 

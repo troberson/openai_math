@@ -314,17 +314,19 @@ def render_page(fam: str, info: dict, data_text: str) -> tuple[str, str]:
             return resolve_token(m.group(1), quotes)
         resolved[key] = re.sub(r"\{\{(\d+)\}\}", _replace, body)
 
-    # Build the Sources table rows.
+    # Build the Sources table rows. The File cell is a markdown link whose label is the
+    # backticked repo-relative path: the checker reads the first backticked text in the cell
+    # as the path (catlib.summaries.CELL), so the label keeps the backticks and the href is
+    # the page-relative target. A paren-bearing path is angle-bracket-wrapped so the href is
+    # not misread at its first ')'. This merges what was a separate Links section into the
+    # Sources table, so the cell is both the path and its link.
     src_rows: list[str] = []
     for sid, path, role in sources:
         lc = lines_of(path)
-        src_rows.append(f"| {sid} | `{path}` | {lc} | {role} |")
-
-    # Build the Links section.
-    links: list[tuple[str, str]] = []
-    up = "../../../"
-    for sid, path, _ in sources:
-        links.append((sid, f"{up}{path}"))
+        href = f"../../../{path}"
+        if "(" in path or ")" in path:
+            href = f"<{href}>"
+        src_rows.append(f"| {sid} | [`{path}`]({href}) | {lc} | {role} |")
 
     # Build the Bibliography section from the sources that declare a .bib or a
     # thebibliography block. Empty when no bibliography source is declared.
@@ -348,7 +350,6 @@ def render_page(fam: str, info: dict, data_text: str) -> tuple[str, str]:
         "formalized": resolved.get("formalized", ""),
         "coverage": resolved.get("coverage", ""),
         "sources_rows": "\n".join(src_rows),
-        "links": links,
         "bibliography": bibliography,
     })
     return page_text, slug

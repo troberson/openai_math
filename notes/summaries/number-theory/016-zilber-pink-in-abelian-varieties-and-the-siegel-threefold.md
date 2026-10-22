@@ -114,55 +114,29 @@ What it does not buy: effectivity, uniformity, or a bound. Manuscript A gives no
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `CONTENTS.md` | 9142 | Family 016 entry at 445; manuscript blurbs at 454, 463, 472 and 481 |
-| S2 | `overview.tex` | 859 | Family 016 `\resultentry` at 108 |
-| S3 | `preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/README.md` | 18 | Author at 3, date at 5, citation block at 10–16 |
-| S4 | `preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/build/paper.tex` | 31 | Title at 3, date at 5, abstract at 9–12, section inputs at 19–28 |
-| S5 | `preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/build/sections/01-introduction.tex` | 254 | `thm:main` at 43–50, scope at 52–57, `thm:nondensity` at 67–71, Barroero–Dill passage at 73–77, `cor:finite-rank-translates` at 84–98, Pink Conjecture 5.2 at 100–101, history at 113–137, comparison at 165–167, proof strategy at 202–243 |
-| S6 | `preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/build/references.bib` | 357 | No release-to-release `href`; all keys external |
-| S7 | `preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/paper.pdf` | 17471 | Typeset manuscript, 623,169 bytes |
-| S8 | `preprints/The-E-times-CM-Component-of-Zilber-Pink-for-Curves-in-A2-September-24-2026/README.md` | 18 | Author at 3, date at 5, citation block at 10–16 |
-| S9 | `preprints/The-E-times-CM-Component-of-Zilber-Pink-for-Curves-in-A2-September-24-2026/build/paper.tex` | 1245 | Title at 44–45, date at 47, abstract at 53–56, `thm:main` at 81–92, scope at 94–101, `thm:orbits` at 174–183, effectivity caveat at 185–189, `rem:effective-cm` at 359–374, inline `thebibliography` entry `OpenAIQuasiRH2026` at 1147–1155 |
-| S10 | `preprints/The-E-times-CM-Component-of-Zilber-Pink-for-Curves-in-A2-September-24-2026/paper.pdf` | 11872 | Typeset manuscript, 413,183 bytes |
-| S11 | `preprints/Quaternionic-Division-Points-on-Curves-in-the-Siegel-Threefold-September-24-2026/README.md` | 18 | Author at 3, date at 5, citation block at 10–16 |
-| S12 | `preprints/Quaternionic-Division-Points-on-Curves-in-the-Siegel-Threefold-September-24-2026/build/paper.tex` | 39 | Title at 3, date at 5, abstract at 20–24, section inputs at 31–36, bibliography at 38 |
-| S13 | `preprints/Quaternionic-Division-Points-on-Curves-in-the-Siegel-Threefold-September-24-2026/build/sections/00-introduction.tex` | 148 | `thm:main` at 11–20, resolution and scope at 22, earlier results at 39–41, `eq:intro-height` at 56–60, interpolation at 92–116, counting contradiction at 118–128 |
-| S14 | `preprints/Quaternionic-Division-Points-on-Curves-in-the-Siegel-Threefold-September-24-2026/build/references/references.bib` | 477 | No release-to-release `href`; all keys external |
-| S15 | `preprints/Quaternionic-Division-Points-on-Curves-in-the-Siegel-Threefold-September-24-2026/paper.pdf` | 16443 | Typeset manuscript, 571,090 bytes |
-| S16 | `preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/README.md` | 18 | Author at 3, date at 5, citation block at 10–16 |
-| S17 | `preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/build/main.tex` | 33 | Title at 3, date at 5, abstract at 9–15, section inputs at 18–27, bibliography at 31–32 |
-| S18 | `preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/build/sections/01-introduction.tex` | 330 | Setup at 3–12, `thm[intro:squares]` at 24–28, scope at 30–33, `thm[intro:branches]` at 41–55, companion citations at 62–63, `thm[intro:zp]` at 66–76, independence at 82–83, special closure at 88–92, prior results at 118–149, arithmetic estimates at 151–172, mechanism at 206–279 |
-| S19 | `preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/build/sections/08-finiteness.tex` | 390 | Companion scope at 6–7, `fin:orbit` at 26–35, `fin:classification` at 270, proof of `intro:zp` at 331–365, `cor:fin:special-closure` at 370–381 |
-| S20 | `preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/build/references.bib` | 360 | Release entries `CompanionECM` at 162–168 and `CompanionQuaternion` at 169–175 |
-| S21 | `preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/paper.pdf` | 20306 | Typeset manuscript, 719,203 bytes |
-| S22 | `notes/reports/t0-triage.md` | 897 | Family 016 entry at 129–130 |
-| S23 | `notes/tables/catalog.tsv` | 373 | Ledger row for family 016 at 17 |
-
-## Links
-
-- [S1](../../../CONTENTS.md)
-- [S2](../../../overview.tex)
-- [S3](../../../preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/README.md)
-- [S4](../../../preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/build/paper.tex)
-- [S5](../../../preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/build/sections/01-introduction.tex)
-- [S6](../../../preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/build/references.bib)
-- [S7](../../../preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/paper.pdf)
-- [S8](../../../preprints/The-E-times-CM-Component-of-Zilber-Pink-for-Curves-in-A2-September-24-2026/README.md)
-- [S9](../../../preprints/The-E-times-CM-Component-of-Zilber-Pink-for-Curves-in-A2-September-24-2026/build/paper.tex)
-- [S10](../../../preprints/The-E-times-CM-Component-of-Zilber-Pink-for-Curves-in-A2-September-24-2026/paper.pdf)
-- [S11](../../../preprints/Quaternionic-Division-Points-on-Curves-in-the-Siegel-Threefold-September-24-2026/README.md)
-- [S12](../../../preprints/Quaternionic-Division-Points-on-Curves-in-the-Siegel-Threefold-September-24-2026/build/paper.tex)
-- [S13](../../../preprints/Quaternionic-Division-Points-on-Curves-in-the-Siegel-Threefold-September-24-2026/build/sections/00-introduction.tex)
-- [S14](../../../preprints/Quaternionic-Division-Points-on-Curves-in-the-Siegel-Threefold-September-24-2026/build/references/references.bib)
-- [S15](../../../preprints/Quaternionic-Division-Points-on-Curves-in-the-Siegel-Threefold-September-24-2026/paper.pdf)
-- [S16](../../../preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/README.md)
-- [S17](../../../preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/build/main.tex)
-- [S18](../../../preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/build/sections/01-introduction.tex)
-- [S19](../../../preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/build/sections/08-finiteness.tex)
-- [S20](../../../preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/build/references.bib)
-- [S21](../../../preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/paper.pdf)
-- [S22](../../../notes/reports/t0-triage.md)
-- [S23](../../../notes/tables/catalog.tsv)
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Family 016 entry at 445; manuscript blurbs at 454, 463, 472 and 481 |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 016 `\resultentry` at 108 |
+| S3 | [`preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/README.md`](../../../preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/README.md) | 18 | Author at 3, date at 5, citation block at 10–16 |
+| S4 | [`preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/build/paper.tex`](../../../preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/build/paper.tex) | 31 | Title at 3, date at 5, abstract at 9–12, section inputs at 19–28 |
+| S5 | [`preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/build/sections/01-introduction.tex) | 254 | `thm:main` at 43–50, scope at 52–57, `thm:nondensity` at 67–71, Barroero–Dill passage at 73–77, `cor:finite-rank-translates` at 84–98, Pink Conjecture 5.2 at 100–101, history at 113–137, comparison at 165–167, proof strategy at 202–243 |
+| S6 | [`preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/build/references.bib`](../../../preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/build/references.bib) | 357 | No release-to-release `href`; all keys external |
+| S7 | [`preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/paper.pdf`](../../../preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/paper.pdf) | 17471 | Typeset manuscript, 623,169 bytes |
+| S8 | [`preprints/The-E-times-CM-Component-of-Zilber-Pink-for-Curves-in-A2-September-24-2026/README.md`](../../../preprints/The-E-times-CM-Component-of-Zilber-Pink-for-Curves-in-A2-September-24-2026/README.md) | 18 | Author at 3, date at 5, citation block at 10–16 |
+| S9 | [`preprints/The-E-times-CM-Component-of-Zilber-Pink-for-Curves-in-A2-September-24-2026/build/paper.tex`](../../../preprints/The-E-times-CM-Component-of-Zilber-Pink-for-Curves-in-A2-September-24-2026/build/paper.tex) | 1245 | Title at 44–45, date at 47, abstract at 53–56, `thm:main` at 81–92, scope at 94–101, `thm:orbits` at 174–183, effectivity caveat at 185–189, `rem:effective-cm` at 359–374, inline `thebibliography` entry `OpenAIQuasiRH2026` at 1147–1155 |
+| S10 | [`preprints/The-E-times-CM-Component-of-Zilber-Pink-for-Curves-in-A2-September-24-2026/paper.pdf`](../../../preprints/The-E-times-CM-Component-of-Zilber-Pink-for-Curves-in-A2-September-24-2026/paper.pdf) | 11872 | Typeset manuscript, 413,183 bytes |
+| S11 | [`preprints/Quaternionic-Division-Points-on-Curves-in-the-Siegel-Threefold-September-24-2026/README.md`](../../../preprints/Quaternionic-Division-Points-on-Curves-in-the-Siegel-Threefold-September-24-2026/README.md) | 18 | Author at 3, date at 5, citation block at 10–16 |
+| S12 | [`preprints/Quaternionic-Division-Points-on-Curves-in-the-Siegel-Threefold-September-24-2026/build/paper.tex`](../../../preprints/Quaternionic-Division-Points-on-Curves-in-the-Siegel-Threefold-September-24-2026/build/paper.tex) | 39 | Title at 3, date at 5, abstract at 20–24, section inputs at 31–36, bibliography at 38 |
+| S13 | [`preprints/Quaternionic-Division-Points-on-Curves-in-the-Siegel-Threefold-September-24-2026/build/sections/00-introduction.tex`](../../../preprints/Quaternionic-Division-Points-on-Curves-in-the-Siegel-Threefold-September-24-2026/build/sections/00-introduction.tex) | 148 | `thm:main` at 11–20, resolution and scope at 22, earlier results at 39–41, `eq:intro-height` at 56–60, interpolation at 92–116, counting contradiction at 118–128 |
+| S14 | [`preprints/Quaternionic-Division-Points-on-Curves-in-the-Siegel-Threefold-September-24-2026/build/references/references.bib`](../../../preprints/Quaternionic-Division-Points-on-Curves-in-the-Siegel-Threefold-September-24-2026/build/references/references.bib) | 477 | No release-to-release `href`; all keys external |
+| S15 | [`preprints/Quaternionic-Division-Points-on-Curves-in-the-Siegel-Threefold-September-24-2026/paper.pdf`](../../../preprints/Quaternionic-Division-Points-on-Curves-in-the-Siegel-Threefold-September-24-2026/paper.pdf) | 16443 | Typeset manuscript, 571,090 bytes |
+| S16 | [`preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/README.md`](../../../preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/README.md) | 18 | Author at 3, date at 5, citation block at 10–16 |
+| S17 | [`preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/build/main.tex`](../../../preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/build/main.tex) | 33 | Title at 3, date at 5, abstract at 9–15, section inputs at 18–27, bibliography at 31–32 |
+| S18 | [`preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/build/sections/01-introduction.tex) | 330 | Setup at 3–12, `thm[intro:squares]` at 24–28, scope at 30–33, `thm[intro:branches]` at 41–55, companion citations at 62–63, `thm[intro:zp]` at 66–76, independence at 82–83, special closure at 88–92, prior results at 118–149, arithmetic estimates at 151–172, mechanism at 206–279 |
+| S19 | [`preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/build/sections/08-finiteness.tex`](../../../preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/build/sections/08-finiteness.tex) | 390 | Companion scope at 6–7, `fin:orbit` at 26–35, `fin:classification` at 270, proof of `intro:zp` at 331–365, `cor:fin:special-closure` at 370–381 |
+| S20 | [`preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/build/references.bib`](../../../preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/build/references.bib) | 360 | Release entries `CompanionECM` at 162–168 and `CompanionQuaternion` at 169–175 |
+| S21 | [`preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/paper.pdf`](../../../preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/paper.pdf) | 20306 | Typeset manuscript, 719,203 bytes |
+| S22 | [`notes/reports/t0-triage.md`](../../../notes/reports/t0-triage.md) | 897 | Family 016 entry at 129–130 |
+| S23 | [`notes/tables/catalog.tsv`](../../../notes/tables/catalog.tsv) | 373 | Ledger row for family 016 at 17 |
 
 ## Bibliography
 

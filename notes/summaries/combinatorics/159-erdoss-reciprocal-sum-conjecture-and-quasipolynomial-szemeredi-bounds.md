@@ -205,59 +205,31 @@ Its README gives the release date [S3:5]: "Date: September 23, 2026".
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `CONTENTS.md` | 9142 | Release blurb and manuscript sub-entry |
-| S2 | `preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/main.tex` | 37 | Manuscript source: title, abstract, section order |
-| S3 | `preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/README.md` | 18 | Manuscript build notes and release date |
-| S4 | `preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/00-introduction.tex` | 343 | Theorem statement, prior work, proof outline |
-| S5 | `preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/01-setup.tex` | 377 | Triangular cells, budget rule, patch rank |
-| S6 | `preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/04-scalar.tex` | 299 | Forward mass and rank-stop budget |
-| S7 | `preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/07-extraction.tex` | 535 | Extraction: weights preserved at passive layers |
-| S8 | `preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/08-iteration.tex` | 440 | Iteration closure and proof of the main theorem |
-| S9 | `preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/09-consequences.tex` | 192 | Weighted sums, polylog bound, Green–Tao recovery |
-| S10 | `preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/references.tex` | 257 | Bibliography, including the companion paper |
-| S11 | `preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/figures/proof-route.tex` | 35 | Proof-route diagram |
-| S12 | `preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/foundations/00-preface.tex` | 80 | Appendix preface and interface table |
-| S13 | `preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/paper.pdf` | 43640 | Compiled manuscript |
-| S14 | `lean/docs/159.md` | 17 | Scope note: comparator target and exclusion |
-| S15 | `lean/ComparatorChallenges/ErdosReciprocal.lean` | 36 | Challenge statement |
-| S16 | `lean/ComparatorChallenges/ErdosReciprocal.json` | 14 | Challenge metadata: module, theorem names |
-| S17 | `lean/OAI/Combinatorics/Progressions/Main.lean` | 98 | Tree entry point (imports only) |
-| S18 | `lean/OAI/Combinatorics/Progressions/Results/Basic.lean` | 128 | Coloring consequence of the density bound |
-| S19 | `lean/OAI/Combinatorics/Progressions/Results/Statements.lean` | 13 | Empty namespace stub |
-| S20 | `lean/OAI/Combinatorics/Progressions/Model.lean` | 45 | Formalized density bound (log log form) |
-| S21 | `lean/OAI/Combinatorics/Progressions/Results/Conclusions.lean` | 45 | Conjunction of both theorems |
-| S22 | `lean/OAI/Combinatorics/Progressions/Results/Reciprocal.lean` | 96 | Reciprocal-sum conclusion |
-| S23 | `lean/OAI/Combinatorics/Progressions/Estimates/UniformRelativePatchSource.lean` | 561 | Log log → polylog → dyadic bridge |
-| S24 | `overview.tex` | 859 | Release entry list (family 159 at line 399) |
-| S25 | `reasoning_traces/quasipolynomial-arithmetic-progressions.pdf` | 7552 | Published reasoning trace |
-
-## Links
-
-- [S1](../../../CONTENTS.md)
-- [S2](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/main.tex)
-- [S3](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/README.md)
-- [S4](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/00-introduction.tex)
-- [S5](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/01-setup.tex)
-- [S6](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/04-scalar.tex)
-- [S7](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/07-extraction.tex)
-- [S8](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/08-iteration.tex)
-- [S9](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/09-consequences.tex)
-- [S10](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/references.tex)
-- [S11](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/figures/proof-route.tex)
-- [S12](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/foundations/00-preface.tex)
-- [S13](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/paper.pdf)
-- [S14](../../../lean/docs/159.md)
-- [S15](../../../lean/ComparatorChallenges/ErdosReciprocal.lean)
-- [S16](../../../lean/ComparatorChallenges/ErdosReciprocal.json)
-- [S17](../../../lean/OAI/Combinatorics/Progressions/Main.lean)
-- [S18](../../../lean/OAI/Combinatorics/Progressions/Results/Basic.lean)
-- [S19](../../../lean/OAI/Combinatorics/Progressions/Results/Statements.lean)
-- [S20](../../../lean/OAI/Combinatorics/Progressions/Model.lean)
-- [S21](../../../lean/OAI/Combinatorics/Progressions/Results/Conclusions.lean)
-- [S22](../../../lean/OAI/Combinatorics/Progressions/Results/Reciprocal.lean)
-- [S23](../../../lean/OAI/Combinatorics/Progressions/Estimates/UniformRelativePatchSource.lean)
-- [S24](../../../overview.tex)
-- [S25](../../../reasoning_traces/quasipolynomial-arithmetic-progressions.pdf)
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release blurb and manuscript sub-entry |
+| S2 | [`preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/main.tex`](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/main.tex) | 37 | Manuscript source: title, abstract, section order |
+| S3 | [`preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/README.md`](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/README.md) | 18 | Manuscript build notes and release date |
+| S4 | [`preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/00-introduction.tex`](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/00-introduction.tex) | 343 | Theorem statement, prior work, proof outline |
+| S5 | [`preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/01-setup.tex`](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/01-setup.tex) | 377 | Triangular cells, budget rule, patch rank |
+| S6 | [`preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/04-scalar.tex`](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/04-scalar.tex) | 299 | Forward mass and rank-stop budget |
+| S7 | [`preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/07-extraction.tex`](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/07-extraction.tex) | 535 | Extraction: weights preserved at passive layers |
+| S8 | [`preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/08-iteration.tex`](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/08-iteration.tex) | 440 | Iteration closure and proof of the main theorem |
+| S9 | [`preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/09-consequences.tex`](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/09-consequences.tex) | 192 | Weighted sums, polylog bound, Green–Tao recovery |
+| S10 | [`preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/references.tex`](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/references.tex) | 257 | Bibliography, including the companion paper |
+| S11 | [`preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/figures/proof-route.tex`](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/figures/proof-route.tex) | 35 | Proof-route diagram |
+| S12 | [`preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/foundations/00-preface.tex`](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/foundations/00-preface.tex) | 80 | Appendix preface and interface table |
+| S13 | [`preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/paper.pdf`](../../../preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/paper.pdf) | 43640 | Compiled manuscript |
+| S14 | [`lean/docs/159.md`](../../../lean/docs/159.md) | 17 | Scope note: comparator target and exclusion |
+| S15 | [`lean/ComparatorChallenges/ErdosReciprocal.lean`](../../../lean/ComparatorChallenges/ErdosReciprocal.lean) | 36 | Challenge statement |
+| S16 | [`lean/ComparatorChallenges/ErdosReciprocal.json`](../../../lean/ComparatorChallenges/ErdosReciprocal.json) | 14 | Challenge metadata: module, theorem names |
+| S17 | [`lean/OAI/Combinatorics/Progressions/Main.lean`](../../../lean/OAI/Combinatorics/Progressions/Main.lean) | 98 | Tree entry point (imports only) |
+| S18 | [`lean/OAI/Combinatorics/Progressions/Results/Basic.lean`](../../../lean/OAI/Combinatorics/Progressions/Results/Basic.lean) | 128 | Coloring consequence of the density bound |
+| S19 | [`lean/OAI/Combinatorics/Progressions/Results/Statements.lean`](../../../lean/OAI/Combinatorics/Progressions/Results/Statements.lean) | 13 | Empty namespace stub |
+| S20 | [`lean/OAI/Combinatorics/Progressions/Model.lean`](../../../lean/OAI/Combinatorics/Progressions/Model.lean) | 45 | Formalized density bound (log log form) |
+| S21 | [`lean/OAI/Combinatorics/Progressions/Results/Conclusions.lean`](../../../lean/OAI/Combinatorics/Progressions/Results/Conclusions.lean) | 45 | Conjunction of both theorems |
+| S22 | [`lean/OAI/Combinatorics/Progressions/Results/Reciprocal.lean`](../../../lean/OAI/Combinatorics/Progressions/Results/Reciprocal.lean) | 96 | Reciprocal-sum conclusion |
+| S23 | [`lean/OAI/Combinatorics/Progressions/Estimates/UniformRelativePatchSource.lean`](../../../lean/OAI/Combinatorics/Progressions/Estimates/UniformRelativePatchSource.lean) | 561 | Log log → polylog → dyadic bridge |
+| S24 | [`overview.tex`](../../../overview.tex) | 859 | Release entry list (family 159 at line 399) |
+| S25 | [`reasoning_traces/quasipolynomial-arithmetic-progressions.pdf`](../../../reasoning_traces/quasipolynomial-arithmetic-progressions.pdf) | 7552 | Published reasoning trace |
 
 ## Bibliography
 

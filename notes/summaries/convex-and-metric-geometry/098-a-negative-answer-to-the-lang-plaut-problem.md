@@ -143,25 +143,14 @@ The comparator stubs carry `sorry` at `lean/ComparatorChallenges/DoublingHilbert
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `overview.tex` | 859 | Family entry, line 272 |
-| S2 | `preprints/A-doubling-Hilbert-subset-with-no-finite-dimensional-bi-Lipschitz-embedding-September-25-2026/README.md` | 20 | Title, date |
-| S3 | `preprints/A-doubling-Hilbert-subset-with-no-finite-dimensional-bi-Lipschitz-embedding-September-25-2026/build/main.tex` | 560 | Abstract, theorem, construction, proof, consequences |
-| S4 | `lean/docs/098.md` | 16 | Scope |
-| S5 | `lean/OAI/Geometry/DoublingHilbert/Main.lean` | 69 | Declaration |
-| S6 | `lean/OAI/Geometry/DoublingHilbert/CompactBanach.lean` | 94 | Declaration |
-| S7 | `lean/ComparatorChallenges/DoublingHilbert.lean` | 30 | Comparator stub |
-| S8 | `lean/ComparatorChallenges/CompactBanach.lean` | 34 | Comparator stub |
-
-## Links
-
-- [S1](../../../overview.tex)
-- [S2](../../../preprints/A-doubling-Hilbert-subset-with-no-finite-dimensional-bi-Lipschitz-embedding-September-25-2026/README.md)
-- [S3](../../../preprints/A-doubling-Hilbert-subset-with-no-finite-dimensional-bi-Lipschitz-embedding-September-25-2026/build/main.tex)
-- [S4](../../../lean/docs/098.md)
-- [S5](../../../lean/OAI/Geometry/DoublingHilbert/Main.lean)
-- [S6](../../../lean/OAI/Geometry/DoublingHilbert/CompactBanach.lean)
-- [S7](../../../lean/ComparatorChallenges/DoublingHilbert.lean)
-- [S8](../../../lean/ComparatorChallenges/CompactBanach.lean)
+| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 272 |
+| S2 | [`preprints/A-doubling-Hilbert-subset-with-no-finite-dimensional-bi-Lipschitz-embedding-September-25-2026/README.md`](../../../preprints/A-doubling-Hilbert-subset-with-no-finite-dimensional-bi-Lipschitz-embedding-September-25-2026/README.md) | 20 | Title, date |
+| S3 | [`preprints/A-doubling-Hilbert-subset-with-no-finite-dimensional-bi-Lipschitz-embedding-September-25-2026/build/main.tex`](../../../preprints/A-doubling-Hilbert-subset-with-no-finite-dimensional-bi-Lipschitz-embedding-September-25-2026/build/main.tex) | 560 | Abstract, theorem, construction, proof, consequences |
+| S4 | [`lean/docs/098.md`](../../../lean/docs/098.md) | 16 | Scope |
+| S5 | [`lean/OAI/Geometry/DoublingHilbert/Main.lean`](../../../lean/OAI/Geometry/DoublingHilbert/Main.lean) | 69 | Declaration |
+| S6 | [`lean/OAI/Geometry/DoublingHilbert/CompactBanach.lean`](../../../lean/OAI/Geometry/DoublingHilbert/CompactBanach.lean) | 94 | Declaration |
+| S7 | [`lean/ComparatorChallenges/DoublingHilbert.lean`](../../../lean/ComparatorChallenges/DoublingHilbert.lean) | 30 | Comparator stub |
+| S8 | [`lean/ComparatorChallenges/CompactBanach.lean`](../../../lean/ComparatorChallenges/CompactBanach.lean) | 34 | Comparator stub |
 
 ## Bibliography
 

@@ -181,51 +181,27 @@ claims exist and names their declarations; the three comparator configs carry
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `overview.tex` | 859 | Family entry, line 252 |
-| S2 | `preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/README.md` | 18 | Manuscript 1 title, date, citation |
-| S3 | `preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/main.tex` | 60 | Abstract, lines 48–50 |
-| S4 | `preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/01_introduction.tex` | 183 | Definition, conjecture, theorem, proof outline |
-| S5 | `preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/bibliography.tex` | 132 | Bibliography entries |
-| S6 | `preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/02_gauges.tex` | 281 | Gauges and projection measures |
-| S7 | `preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/03_spherical.tex` | 359 | The spherical sign estimate |
-| S8 | `preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/04_norm.tex` | 498 | The strict inequality for norms |
-| S9 | `preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/05_position.tex` | 409 | Variational representation and affine position |
-| S10 | `preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/06_conclusion.tex` | 160 | The bilinear inequality and equality cases |
-| S11 | `preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/07_consequences.tex` | 240 | Consequences |
-| S12 | `preprints/A-product-counterexample-to-the-simplex-maximum-for-projection-body-volume-September-24-2026/README.md` | 18 | Manuscript 2 title, date, citation |
-| S13 | `preprints/A-product-counterexample-to-the-simplex-maximum-for-projection-body-volume-September-24-2026/build/main.tex` | 487 | Abstract, theorem, history, product identity |
-| S14 | `preprints/A-product-counterexample-to-the-simplex-maximum-for-projection-body-volume-September-24-2026/build/references.tex` | 48 | Bibliography entries |
-| S15 | `lean/docs/088.md` | 30 | Scope note |
-| S16 | `lean/OAI/Geometry/ProjectionBodies/Main.lean` | 25 | `PettyProjectionVolume.main` |
-| S17 | `lean/OAI/Geometry/ProjectionBody/Counterexample.lean` | 105 | `ProjectionBodyCounterexample.main` |
-| S18 | `lean/OAI/Geometry/ProjectionVolume/ProductCounterexample.lean` | 62 | `Paper092.product_counterexample` |
-| S19 | `lean/ComparatorChallenges/PettyProjectionVolume.lean` | 54 | Stub, `sorry` at line 49 |
-| S20 | `lean/ComparatorChallenges/ProjectionCounterexample.lean` | 45 | Stub, `sorry` at line 39 |
-| S21 | `lean/ComparatorChallenges/ProjectionVolume.lean` | 61 | Stub, `sorry` at line 55 |
-
-## Links
-
-- [S1](../../../overview.tex)
-- [S2](../../../preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/README.md)
-- [S3](../../../preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/main.tex)
-- [S4](../../../preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/01_introduction.tex)
-- [S5](../../../preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/bibliography.tex)
-- [S6](../../../preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/02_gauges.tex)
-- [S7](../../../preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/03_spherical.tex)
-- [S8](../../../preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/04_norm.tex)
-- [S9](../../../preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/05_position.tex)
-- [S10](../../../preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/06_conclusion.tex)
-- [S11](../../../preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/07_consequences.tex)
-- [S12](../../../preprints/A-product-counterexample-to-the-simplex-maximum-for-projection-body-volume-September-24-2026/README.md)
-- [S13](../../../preprints/A-product-counterexample-to-the-simplex-maximum-for-projection-body-volume-September-24-2026/build/main.tex)
-- [S14](../../../preprints/A-product-counterexample-to-the-simplex-maximum-for-projection-body-volume-September-24-2026/build/references.tex)
-- [S15](../../../lean/docs/088.md)
-- [S16](../../../lean/OAI/Geometry/ProjectionBodies/Main.lean)
-- [S17](../../../lean/OAI/Geometry/ProjectionBody/Counterexample.lean)
-- [S18](../../../lean/OAI/Geometry/ProjectionVolume/ProductCounterexample.lean)
-- [S19](../../../lean/ComparatorChallenges/PettyProjectionVolume.lean)
-- [S20](../../../lean/ComparatorChallenges/ProjectionCounterexample.lean)
-- [S21](../../../lean/ComparatorChallenges/ProjectionVolume.lean)
+| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 252 |
+| S2 | [`preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/README.md`](../../../preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/README.md) | 18 | Manuscript 1 title, date, citation |
+| S3 | [`preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/main.tex`](../../../preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/main.tex) | 60 | Abstract, lines 48–50 |
+| S4 | [`preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/01_introduction.tex`](../../../preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/01_introduction.tex) | 183 | Definition, conjecture, theorem, proof outline |
+| S5 | [`preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/bibliography.tex`](../../../preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/bibliography.tex) | 132 | Bibliography entries |
+| S6 | [`preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/02_gauges.tex`](../../../preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/02_gauges.tex) | 281 | Gauges and projection measures |
+| S7 | [`preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/03_spherical.tex`](../../../preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/03_spherical.tex) | 359 | The spherical sign estimate |
+| S8 | [`preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/04_norm.tex`](../../../preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/04_norm.tex) | 498 | The strict inequality for norms |
+| S9 | [`preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/05_position.tex`](../../../preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/05_position.tex) | 409 | Variational representation and affine position |
+| S10 | [`preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/06_conclusion.tex`](../../../preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/06_conclusion.tex) | 160 | The bilinear inequality and equality cases |
+| S11 | [`preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/07_consequences.tex`](../../../preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/build/latex/sections/07_consequences.tex) | 240 | Consequences |
+| S12 | [`preprints/A-product-counterexample-to-the-simplex-maximum-for-projection-body-volume-September-24-2026/README.md`](../../../preprints/A-product-counterexample-to-the-simplex-maximum-for-projection-body-volume-September-24-2026/README.md) | 18 | Manuscript 2 title, date, citation |
+| S13 | [`preprints/A-product-counterexample-to-the-simplex-maximum-for-projection-body-volume-September-24-2026/build/main.tex`](../../../preprints/A-product-counterexample-to-the-simplex-maximum-for-projection-body-volume-September-24-2026/build/main.tex) | 487 | Abstract, theorem, history, product identity |
+| S14 | [`preprints/A-product-counterexample-to-the-simplex-maximum-for-projection-body-volume-September-24-2026/build/references.tex`](../../../preprints/A-product-counterexample-to-the-simplex-maximum-for-projection-body-volume-September-24-2026/build/references.tex) | 48 | Bibliography entries |
+| S15 | [`lean/docs/088.md`](../../../lean/docs/088.md) | 30 | Scope note |
+| S16 | [`lean/OAI/Geometry/ProjectionBodies/Main.lean`](../../../lean/OAI/Geometry/ProjectionBodies/Main.lean) | 25 | `PettyProjectionVolume.main` |
+| S17 | [`lean/OAI/Geometry/ProjectionBody/Counterexample.lean`](../../../lean/OAI/Geometry/ProjectionBody/Counterexample.lean) | 105 | `ProjectionBodyCounterexample.main` |
+| S18 | [`lean/OAI/Geometry/ProjectionVolume/ProductCounterexample.lean`](../../../lean/OAI/Geometry/ProjectionVolume/ProductCounterexample.lean) | 62 | `Paper092.product_counterexample` |
+| S19 | [`lean/ComparatorChallenges/PettyProjectionVolume.lean`](../../../lean/ComparatorChallenges/PettyProjectionVolume.lean) | 54 | Stub, `sorry` at line 49 |
+| S20 | [`lean/ComparatorChallenges/ProjectionCounterexample.lean`](../../../lean/ComparatorChallenges/ProjectionCounterexample.lean) | 45 | Stub, `sorry` at line 39 |
+| S21 | [`lean/ComparatorChallenges/ProjectionVolume.lean`](../../../lean/ComparatorChallenges/ProjectionVolume.lean) | 61 | Stub, `sorry` at line 55 |
 
 ## Bibliography
 

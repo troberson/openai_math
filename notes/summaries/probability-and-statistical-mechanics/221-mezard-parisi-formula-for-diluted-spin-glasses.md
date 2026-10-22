@@ -69,69 +69,36 @@ Two gaps are worth recording. The ledger reports `paps_form 0` and `mainres 0` f
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `CONTENTS.md` | 9142 | Release contents listing: blurb and abstract |
-| S2 | `preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/README.md` | 18 | Manuscript README: date and citation key |
-| S3 | `preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/main.tex` | 75 | Manuscript main file: abstract and section order |
-| S4 | `preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/glyph-mappings.tex` | 40 | Build support: PDF glyph mappings |
-| S5 | `preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/references.bib` | 233 | Manuscript bibliography |
-| S6 | `preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/paper.pdf` | 14733 | Published manuscript PDF |
-| S7 | `preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/introduction.tex` | 86 | Model history, prior results, stated contribution |
-| S8 | `preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/model.tex` | 140 | Model, trial functional, main theorem |
-| S9 | `preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/overview.tex` | 51 | Proof strategy overview |
-| S10 | `preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/trees.tex` | 525 | Calculus on finite trees |
-| S11 | `preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/upper.tex` | 128 | Interpolation upper bound |
-| S12 | `preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/cavity.tex` | 121 | Perturbed cavity reservoir |
-| S13 | `preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/perturbations.tex` | 547 | Perturbation family and prescribed-tree identity |
-| S14 | `preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/decorrelation.tex` | 623 | Multioverlap concentration |
-| S15 | `preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/comparison.tex` | 246 | Cavity comparison and lower bound |
-| S16 | `preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/reduction.tex` | 87 | Normalization and completion of the proof |
-| S17 | `preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/consequences.tex` | 138 | Named models, zero-temperature limit, 3-SAT remark |
-| S18 | `lean/docs/221.md` | 15 | Scope note |
-| S19 | `lean/ComparatorChallenges/DilutedSpin.lean` | 154 | Comparator statement |
-| S20 | `lean/ComparatorChallenges/DilutedSpin.json` | 14 | Comparator config |
-| S21 | `lean/OAI/Probability/DilutedSpin/Main.lean` | 24 | Formal main theorem |
-| S22 | `lean/OAI/Probability/DilutedSpin/Model.lean` | 148 | Formal model and admissibility |
-| S23 | `lean/OAI/Probability/DilutedSpin/ExactVariationalLower.lean` | 37 | Lower-bound interface |
-| S24 | `lean/OAI/Probability/DilutedSpin/ProxyRateIncrement.lean` | 76 | Upper-bound interface |
-| S25 | `lean/OAI/Probability/DilutedSpin/HistoryGeometry.lean` | 1125 | Largest module in the formalized tree |
-| S26 | `lean/formalization.yaml` | 1783 | Release formalization index |
-| S27 | `lean/OAI/Probability/SATComputability/InterpolationUpper.lean` | 1211 | Family 235 module importing DilutedSpin |
-| S28 | `lean/docs/235.md` | 26 | Companion scope note |
-| S29 | `reasoning_traces/mezard-parisi-formula.pdf` | 1629 | Published reasoning trace |
-| S30 | `reasoning_traces/mezard-parisi-formula.tex` | 211 | Reasoning trace source |
-
-## Links
-
-- [S1](../../../CONTENTS.md)
-- [S2](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/README.md)
-- [S3](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/main.tex)
-- [S4](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/glyph-mappings.tex)
-- [S5](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/references.bib)
-- [S6](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/paper.pdf)
-- [S7](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/introduction.tex)
-- [S8](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/model.tex)
-- [S9](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/overview.tex)
-- [S10](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/trees.tex)
-- [S11](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/upper.tex)
-- [S12](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/cavity.tex)
-- [S13](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/perturbations.tex)
-- [S14](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/decorrelation.tex)
-- [S15](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/comparison.tex)
-- [S16](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/reduction.tex)
-- [S17](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/consequences.tex)
-- [S18](../../../lean/docs/221.md)
-- [S19](../../../lean/ComparatorChallenges/DilutedSpin.lean)
-- [S20](../../../lean/ComparatorChallenges/DilutedSpin.json)
-- [S21](../../../lean/OAI/Probability/DilutedSpin/Main.lean)
-- [S22](../../../lean/OAI/Probability/DilutedSpin/Model.lean)
-- [S23](../../../lean/OAI/Probability/DilutedSpin/ExactVariationalLower.lean)
-- [S24](../../../lean/OAI/Probability/DilutedSpin/ProxyRateIncrement.lean)
-- [S25](../../../lean/OAI/Probability/DilutedSpin/HistoryGeometry.lean)
-- [S26](../../../lean/formalization.yaml)
-- [S27](../../../lean/OAI/Probability/SATComputability/InterpolationUpper.lean)
-- [S28](../../../lean/docs/235.md)
-- [S29](../../../reasoning_traces/mezard-parisi-formula.pdf)
-- [S30](../../../reasoning_traces/mezard-parisi-formula.tex)
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release contents listing: blurb and abstract |
+| S2 | [`preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/README.md`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/README.md) | 18 | Manuscript README: date and citation key |
+| S3 | [`preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/main.tex`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/main.tex) | 75 | Manuscript main file: abstract and section order |
+| S4 | [`preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/glyph-mappings.tex`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/glyph-mappings.tex) | 40 | Build support: PDF glyph mappings |
+| S5 | [`preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/references.bib`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/references.bib) | 233 | Manuscript bibliography |
+| S6 | [`preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/paper.pdf`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/paper.pdf) | 14733 | Published manuscript PDF |
+| S7 | [`preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/introduction.tex`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/introduction.tex) | 86 | Model history, prior results, stated contribution |
+| S8 | [`preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/model.tex`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/model.tex) | 140 | Model, trial functional, main theorem |
+| S9 | [`preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/overview.tex`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/overview.tex) | 51 | Proof strategy overview |
+| S10 | [`preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/trees.tex`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/trees.tex) | 525 | Calculus on finite trees |
+| S11 | [`preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/upper.tex`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/upper.tex) | 128 | Interpolation upper bound |
+| S12 | [`preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/cavity.tex`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/cavity.tex) | 121 | Perturbed cavity reservoir |
+| S13 | [`preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/perturbations.tex`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/perturbations.tex) | 547 | Perturbation family and prescribed-tree identity |
+| S14 | [`preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/decorrelation.tex`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/decorrelation.tex) | 623 | Multioverlap concentration |
+| S15 | [`preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/comparison.tex`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/comparison.tex) | 246 | Cavity comparison and lower bound |
+| S16 | [`preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/reduction.tex`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/reduction.tex) | 87 | Normalization and completion of the proof |
+| S17 | [`preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/consequences.tex`](../../../preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/build/sections/consequences.tex) | 138 | Named models, zero-temperature limit, 3-SAT remark |
+| S18 | [`lean/docs/221.md`](../../../lean/docs/221.md) | 15 | Scope note |
+| S19 | [`lean/ComparatorChallenges/DilutedSpin.lean`](../../../lean/ComparatorChallenges/DilutedSpin.lean) | 154 | Comparator statement |
+| S20 | [`lean/ComparatorChallenges/DilutedSpin.json`](../../../lean/ComparatorChallenges/DilutedSpin.json) | 14 | Comparator config |
+| S21 | [`lean/OAI/Probability/DilutedSpin/Main.lean`](../../../lean/OAI/Probability/DilutedSpin/Main.lean) | 24 | Formal main theorem |
+| S22 | [`lean/OAI/Probability/DilutedSpin/Model.lean`](../../../lean/OAI/Probability/DilutedSpin/Model.lean) | 148 | Formal model and admissibility |
+| S23 | [`lean/OAI/Probability/DilutedSpin/ExactVariationalLower.lean`](../../../lean/OAI/Probability/DilutedSpin/ExactVariationalLower.lean) | 37 | Lower-bound interface |
+| S24 | [`lean/OAI/Probability/DilutedSpin/ProxyRateIncrement.lean`](../../../lean/OAI/Probability/DilutedSpin/ProxyRateIncrement.lean) | 76 | Upper-bound interface |
+| S25 | [`lean/OAI/Probability/DilutedSpin/HistoryGeometry.lean`](../../../lean/OAI/Probability/DilutedSpin/HistoryGeometry.lean) | 1125 | Largest module in the formalized tree |
+| S26 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1783 | Release formalization index |
+| S27 | [`lean/OAI/Probability/SATComputability/InterpolationUpper.lean`](../../../lean/OAI/Probability/SATComputability/InterpolationUpper.lean) | 1211 | Family 235 module importing DilutedSpin |
+| S28 | [`lean/docs/235.md`](../../../lean/docs/235.md) | 26 | Companion scope note |
+| S29 | [`reasoning_traces/mezard-parisi-formula.pdf`](../../../reasoning_traces/mezard-parisi-formula.pdf) | 1629 | Published reasoning trace |
+| S30 | [`reasoning_traces/mezard-parisi-formula.tex`](../../../reasoning_traces/mezard-parisi-formula.tex) | 211 | Reasoning trace source |
 
 ## Bibliography
 

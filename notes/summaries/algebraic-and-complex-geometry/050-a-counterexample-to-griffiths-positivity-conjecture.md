@@ -91,35 +91,19 @@ The declaration is `OAI.QuadricCounterexample.main_theorem` [S12:10]. The compar
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `overview.tex` | 859 | Family entry, line 176 |
-| S2 | `preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/README.md` | 17 | Manuscript title, date |
-| S3 | `preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/paper.tex` | 62 | Abstract, lines 43–47 |
-| S4 | `preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/references.bib` | 239 | Bibliography entries |
-| S5 | `preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/sections/01-introduction.tex` | 233 | Introduction: theorem, history, proof stages |
-| S6 | `preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/sections/02-construction.tex` | 202 | Construction |
-| S7 | `preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/sections/03-ampleness.tex` | 166 | Ampleness |
-| S8 | `preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/sections/04-limit.tex` | 314 | Limit |
-| S9 | `preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/sections/05-obstruction.tex` | 308 | Obstruction |
-| S10 | `preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/sections/06-conclusion.tex` | 25 | Conclusion |
-| S11 | `lean/docs/050.md` | 17 | Scope |
-| S12 | `lean/OAI/Geometry/QuadricBundles/Main.lean` | 35 | Declaration |
-| S13 | `lean/ComparatorChallenges/QuadricBundles.lean` | 181 | Comparator stub |
-
-## Links
-
-- [S1](../../../overview.tex)
-- [S2](../../../preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/README.md)
-- [S3](../../../preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/paper.tex)
-- [S4](../../../preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/references.bib)
-- [S5](../../../preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/sections/01-introduction.tex)
-- [S6](../../../preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/sections/02-construction.tex)
-- [S7](../../../preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/sections/03-ampleness.tex)
-- [S8](../../../preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/sections/04-limit.tex)
-- [S9](../../../preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/sections/05-obstruction.tex)
-- [S10](../../../preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/sections/06-conclusion.tex)
-- [S11](../../../lean/docs/050.md)
-- [S12](../../../lean/OAI/Geometry/QuadricBundles/Main.lean)
-- [S13](../../../lean/ComparatorChallenges/QuadricBundles.lean)
+| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 176 |
+| S2 | [`preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/README.md`](../../../preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/README.md) | 17 | Manuscript title, date |
+| S3 | [`preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/paper.tex`](../../../preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/paper.tex) | 62 | Abstract, lines 43–47 |
+| S4 | [`preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/references.bib`](../../../preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/references.bib) | 239 | Bibliography entries |
+| S5 | [`preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/sections/01-introduction.tex) | 233 | Introduction: theorem, history, proof stages |
+| S6 | [`preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/sections/02-construction.tex`](../../../preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/sections/02-construction.tex) | 202 | Construction |
+| S7 | [`preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/sections/03-ampleness.tex`](../../../preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/sections/03-ampleness.tex) | 166 | Ampleness |
+| S8 | [`preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/sections/04-limit.tex`](../../../preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/sections/04-limit.tex) | 314 | Limit |
+| S9 | [`preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/sections/05-obstruction.tex`](../../../preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/sections/05-obstruction.tex) | 308 | Obstruction |
+| S10 | [`preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/sections/06-conclusion.tex`](../../../preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/build/sections/06-conclusion.tex) | 25 | Conclusion |
+| S11 | [`lean/docs/050.md`](../../../lean/docs/050.md) | 17 | Scope |
+| S12 | [`lean/OAI/Geometry/QuadricBundles/Main.lean`](../../../lean/OAI/Geometry/QuadricBundles/Main.lean) | 35 | Declaration |
+| S13 | [`lean/ComparatorChallenges/QuadricBundles.lean`](../../../lean/ComparatorChallenges/QuadricBundles.lean) | 181 | Comparator stub |
 
 ## Bibliography
 

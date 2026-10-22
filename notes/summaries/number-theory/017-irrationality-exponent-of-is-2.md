@@ -199,47 +199,25 @@ results on logarithms at algebraic arguments are in the same list [S10:70–79].
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `CONTENTS.md` | 9142 | Release blurb, at line 488 |
-| S2 | `overview.tex` | 859 | Catalog entry, at line 110 |
-| S3 | `README.md` | 51 | Trace attribution, at line 28 |
-| S4 | `preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/README.md` | 18 | Manuscript metadata; date at line 5 |
-| S5 | `preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/main.tex` | 264 | Abstract, theorem statements, history, proof outline |
-| S6 | `preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/sections/interpolation.tex` | 584 | Uniform interpolation theorem |
-| S7 | `preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/sections/determinant.tex` | 432 | Determinant: arithmetic lower bound, analytic upper bound, comparison |
-| S8 | `preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/sections/conclusion.tex` | 156 | Parameter choices and the proof of the main theorem |
-| S9 | `preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/sections/series.tex` | 155 | Flint–Hills convergence and the generalized criterion |
-| S10 | `preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/references.bib` | 269 | Cited prior work behind the history |
-| S11 | `lean/docs/017.md` | 17 | Scope note: selected statement and exclusion |
-| S12 | `lean/formalization.yaml` | 1783 | No entry naming this manuscript |
-| S13 | `lean/ComparatorChallenges/PiExponent.lean` | 19 | Comparator challenge, `sorry` at line 15 |
-| S14 | `lean/ComparatorChallenges/PiExponent.json` | 14 | Challenge config: target module, axioms, `enable_nanoda` |
-| S15 | `lean/OAI/NumberTheory/PiExponent/Main.lean` | 36 | Formalized main theorem and Flint–Hills summability |
-| S16 | `lean/OAI/NumberTheory/PiExponent/Statement.lean` | 27 | Formalized statement of the exponent claim |
-| S17 | `lean/OAI/NumberTheory/PiExponent/Analysis/DyadicSpacing.lean` | 161 | Dyadic spacing lemma behind the series corollary |
-| S18 | `lean/OAI/NumberTheory/PiExponent/Analysis/FlintSine.lean` | 160 | Reduction of the series to a distance sum |
-| S19 | `reasoning_traces/irrationality-exponent-of-pi.pdf` | 7424 | Published reasoning trace |
-
-## Links
-
-- [S1](../../../CONTENTS.md)
-- [S2](../../../overview.tex)
-- [S3](../../../README.md)
-- [S4](../../../preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/README.md)
-- [S5](../../../preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/main.tex)
-- [S6](../../../preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/sections/interpolation.tex)
-- [S7](../../../preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/sections/determinant.tex)
-- [S8](../../../preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/sections/conclusion.tex)
-- [S9](../../../preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/sections/series.tex)
-- [S10](../../../preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/references.bib)
-- [S11](../../../lean/docs/017.md)
-- [S12](../../../lean/formalization.yaml)
-- [S13](../../../lean/ComparatorChallenges/PiExponent.lean)
-- [S14](../../../lean/ComparatorChallenges/PiExponent.json)
-- [S15](../../../lean/OAI/NumberTheory/PiExponent/Main.lean)
-- [S16](../../../lean/OAI/NumberTheory/PiExponent/Statement.lean)
-- [S17](../../../lean/OAI/NumberTheory/PiExponent/Analysis/DyadicSpacing.lean)
-- [S18](../../../lean/OAI/NumberTheory/PiExponent/Analysis/FlintSine.lean)
-- [S19](../../../reasoning_traces/irrationality-exponent-of-pi.pdf)
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release blurb, at line 488 |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | Catalog entry, at line 110 |
+| S3 | [`README.md`](../../../README.md) | 51 | Trace attribution, at line 28 |
+| S4 | [`preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/README.md`](../../../preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/README.md) | 18 | Manuscript metadata; date at line 5 |
+| S5 | [`preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/main.tex`](../../../preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/main.tex) | 264 | Abstract, theorem statements, history, proof outline |
+| S6 | [`preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/sections/interpolation.tex`](../../../preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/sections/interpolation.tex) | 584 | Uniform interpolation theorem |
+| S7 | [`preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/sections/determinant.tex`](../../../preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/sections/determinant.tex) | 432 | Determinant: arithmetic lower bound, analytic upper bound, comparison |
+| S8 | [`preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/sections/conclusion.tex`](../../../preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/sections/conclusion.tex) | 156 | Parameter choices and the proof of the main theorem |
+| S9 | [`preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/sections/series.tex`](../../../preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/sections/series.tex) | 155 | Flint–Hills convergence and the generalized criterion |
+| S10 | [`preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/references.bib`](../../../preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/build/references.bib) | 269 | Cited prior work behind the history |
+| S11 | [`lean/docs/017.md`](../../../lean/docs/017.md) | 17 | Scope note: selected statement and exclusion |
+| S12 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1783 | No entry naming this manuscript |
+| S13 | [`lean/ComparatorChallenges/PiExponent.lean`](../../../lean/ComparatorChallenges/PiExponent.lean) | 19 | Comparator challenge, `sorry` at line 15 |
+| S14 | [`lean/ComparatorChallenges/PiExponent.json`](../../../lean/ComparatorChallenges/PiExponent.json) | 14 | Challenge config: target module, axioms, `enable_nanoda` |
+| S15 | [`lean/OAI/NumberTheory/PiExponent/Main.lean`](../../../lean/OAI/NumberTheory/PiExponent/Main.lean) | 36 | Formalized main theorem and Flint–Hills summability |
+| S16 | [`lean/OAI/NumberTheory/PiExponent/Statement.lean`](../../../lean/OAI/NumberTheory/PiExponent/Statement.lean) | 27 | Formalized statement of the exponent claim |
+| S17 | [`lean/OAI/NumberTheory/PiExponent/Analysis/DyadicSpacing.lean`](../../../lean/OAI/NumberTheory/PiExponent/Analysis/DyadicSpacing.lean) | 161 | Dyadic spacing lemma behind the series corollary |
+| S18 | [`lean/OAI/NumberTheory/PiExponent/Analysis/FlintSine.lean`](../../../lean/OAI/NumberTheory/PiExponent/Analysis/FlintSine.lean) | 160 | Reduction of the series to a distance sum |
+| S19 | [`reasoning_traces/irrationality-exponent-of-pi.pdf`](../../../reasoning_traces/irrationality-exponent-of-pi.pdf) | 7424 | Published reasoning trace |
 
 ## Bibliography
 

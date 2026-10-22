@@ -206,75 +206,39 @@ claims exist and names their declarations; the two comparator configs carry
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `overview.tex` | 859 | Family entry, line 254 |
-| S2 | `preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/README.md` | 20 | Manuscript 1 title, date, citation |
-| S3 | `preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/main.tex` | 51 | Abstract, lines 33–35 |
-| S4 | `preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/introduction.tex` | 239 | Conjecture, theorem, history, proof outline |
-| S5 | `preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/references.bib` | 223 | Bibliography entries |
-| S6 | `preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/figures/column-realization.tex` | 49 | Column realization figure |
-| S7 | `preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/figures/surviving-seeds.tex` | 67 | Surviving seeds figure |
-| S8 | `preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/figures/two-portals.tex` | 39 | Two portals figure |
-| S9 | `preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/sets.tex` | 240 | Threshold sets and local coordinates |
-| S10 | `preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/scale-setup.tex` | 138 | Scales and the local experiment |
-| S11 | `preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/ordered.tex` | 406 | Ordered fields and separation on the two arcs |
-| S12 | `preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/main-packing.tex` | 510 | The main update and a packing bound for secondary seeds |
-| S13 | `preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/secondary.tex` | 266 | The secondary update |
-| S14 | `preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/geometry.tex` | 452 | Columns and thin bands |
-| S15 | `preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/interpolation.tex` | 454 | Interpolation by single-source distance functions |
-| S16 | `preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/assembly.tex` | 274 | Preserving charts and assembling the embedding |
-| S17 | `preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/consequences.tex` | 75 | A consequence for almost-embeddable families |
-| S18 | `preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/README.md` | 20 | Manuscript 2 title, date, citation |
-| S19 | `preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/main.tex` | 63 | Document structure |
-| S20 | `preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/01-introduction.tex` | 265 | Abstract, theorem, history, proof outline |
-| S21 | `preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/02-cut-laws.tex` | 468 | Cut measures and transport along a decomposition |
-| S22 | `preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/03-particles.tex` | 279 | Particles and reservations |
-| S23 | `preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/04-perturbations.tex` | 219 | Separating pairs in a common bag |
-| S24 | `preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/05-anchors.tex` | 326 | The anchor construction |
-| S25 | `preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/06-lower-comparison.tex` | 420 | Uniform lower comparison |
-| S26 | `preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/07-conclusion.tex` | 36 | Completing the embedding |
-| S27 | `preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/bibliography.tex` | 128 | Bibliography entries |
-| S28 | `preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/figures/anchor-reservations.tex` | 45 | Anchor reservations figure |
-| S29 | `lean/docs/089.md` | 19 | Scope note |
-| S30 | `lean/OAI/Combinatorics/PlanarL1/Embedding.lean` | 124 | `PlanarL1.planar_graph_metrics_embed_L1` |
-| S31 | `lean/OAI/Combinatorics/TreewidthL1/Main.lean` | 188 | `BoundedTreewidthL1.main_theorem` |
-| S32 | `lean/ComparatorChallenges/PlanarL1.lean` | 51 | Stub, `sorry` at line 47 |
-| S33 | `lean/ComparatorChallenges/BoundedTreewidthL1.lean` | 50 | Stub, `sorry` at line 44 |
-
-## Links
-
-- [S1](../../../overview.tex)
-- [S2](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/README.md)
-- [S3](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/main.tex)
-- [S4](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/introduction.tex)
-- [S5](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/references.bib)
-- [S6](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/figures/column-realization.tex)
-- [S7](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/figures/surviving-seeds.tex)
-- [S8](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/figures/two-portals.tex)
-- [S9](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/sets.tex)
-- [S10](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/scale-setup.tex)
-- [S11](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/ordered.tex)
-- [S12](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/main-packing.tex)
-- [S13](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/secondary.tex)
-- [S14](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/geometry.tex)
-- [S15](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/interpolation.tex)
-- [S16](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/assembly.tex)
-- [S17](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/consequences.tex)
-- [S18](../../../preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/README.md)
-- [S19](../../../preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/main.tex)
-- [S20](../../../preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/01-introduction.tex)
-- [S21](../../../preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/02-cut-laws.tex)
-- [S22](../../../preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/03-particles.tex)
-- [S23](../../../preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/04-perturbations.tex)
-- [S24](../../../preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/05-anchors.tex)
-- [S25](../../../preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/06-lower-comparison.tex)
-- [S26](../../../preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/07-conclusion.tex)
-- [S27](../../../preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/bibliography.tex)
-- [S28](../../../preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/figures/anchor-reservations.tex)
-- [S29](../../../lean/docs/089.md)
-- [S30](../../../lean/OAI/Combinatorics/PlanarL1/Embedding.lean)
-- [S31](../../../lean/OAI/Combinatorics/TreewidthL1/Main.lean)
-- [S32](../../../lean/ComparatorChallenges/PlanarL1.lean)
-- [S33](../../../lean/ComparatorChallenges/BoundedTreewidthL1.lean)
+| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 254 |
+| S2 | [`preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/README.md`](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/README.md) | 20 | Manuscript 1 title, date, citation |
+| S3 | [`preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/main.tex`](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/main.tex) | 51 | Abstract, lines 33–35 |
+| S4 | [`preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/introduction.tex`](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/introduction.tex) | 239 | Conjecture, theorem, history, proof outline |
+| S5 | [`preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/references.bib`](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/references.bib) | 223 | Bibliography entries |
+| S6 | [`preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/figures/column-realization.tex`](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/figures/column-realization.tex) | 49 | Column realization figure |
+| S7 | [`preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/figures/surviving-seeds.tex`](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/figures/surviving-seeds.tex) | 67 | Surviving seeds figure |
+| S8 | [`preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/figures/two-portals.tex`](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/figures/two-portals.tex) | 39 | Two portals figure |
+| S9 | [`preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/sets.tex`](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/sets.tex) | 240 | Threshold sets and local coordinates |
+| S10 | [`preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/scale-setup.tex`](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/scale-setup.tex) | 138 | Scales and the local experiment |
+| S11 | [`preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/ordered.tex`](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/ordered.tex) | 406 | Ordered fields and separation on the two arcs |
+| S12 | [`preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/main-packing.tex`](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/main-packing.tex) | 510 | The main update and a packing bound for secondary seeds |
+| S13 | [`preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/secondary.tex`](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/secondary.tex) | 266 | The secondary update |
+| S14 | [`preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/geometry.tex`](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/geometry.tex) | 452 | Columns and thin bands |
+| S15 | [`preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/interpolation.tex`](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/interpolation.tex) | 454 | Interpolation by single-source distance functions |
+| S16 | [`preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/assembly.tex`](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/assembly.tex) | 274 | Preserving charts and assembling the embedding |
+| S17 | [`preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/consequences.tex`](../../../preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/build/sections/consequences.tex) | 75 | A consequence for almost-embeddable families |
+| S18 | [`preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/README.md`](../../../preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/README.md) | 20 | Manuscript 2 title, date, citation |
+| S19 | [`preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/main.tex`](../../../preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/main.tex) | 63 | Document structure |
+| S20 | [`preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/01-introduction.tex`](../../../preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/01-introduction.tex) | 265 | Abstract, theorem, history, proof outline |
+| S21 | [`preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/02-cut-laws.tex`](../../../preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/02-cut-laws.tex) | 468 | Cut measures and transport along a decomposition |
+| S22 | [`preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/03-particles.tex`](../../../preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/03-particles.tex) | 279 | Particles and reservations |
+| S23 | [`preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/04-perturbations.tex`](../../../preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/04-perturbations.tex) | 219 | Separating pairs in a common bag |
+| S24 | [`preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/05-anchors.tex`](../../../preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/05-anchors.tex) | 326 | The anchor construction |
+| S25 | [`preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/06-lower-comparison.tex`](../../../preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/06-lower-comparison.tex) | 420 | Uniform lower comparison |
+| S26 | [`preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/07-conclusion.tex`](../../../preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/07-conclusion.tex) | 36 | Completing the embedding |
+| S27 | [`preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/bibliography.tex`](../../../preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/bibliography.tex) | 128 | Bibliography entries |
+| S28 | [`preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/figures/anchor-reservations.tex`](../../../preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/build/figures/anchor-reservations.tex) | 45 | Anchor reservations figure |
+| S29 | [`lean/docs/089.md`](../../../lean/docs/089.md) | 19 | Scope note |
+| S30 | [`lean/OAI/Combinatorics/PlanarL1/Embedding.lean`](../../../lean/OAI/Combinatorics/PlanarL1/Embedding.lean) | 124 | `PlanarL1.planar_graph_metrics_embed_L1` |
+| S31 | [`lean/OAI/Combinatorics/TreewidthL1/Main.lean`](../../../lean/OAI/Combinatorics/TreewidthL1/Main.lean) | 188 | `BoundedTreewidthL1.main_theorem` |
+| S32 | [`lean/ComparatorChallenges/PlanarL1.lean`](../../../lean/ComparatorChallenges/PlanarL1.lean) | 51 | Stub, `sorry` at line 47 |
+| S33 | [`lean/ComparatorChallenges/BoundedTreewidthL1.lean`](../../../lean/ComparatorChallenges/BoundedTreewidthL1.lean) | 50 | Stub, `sorry` at line 44 |
 
 ## Bibliography
 

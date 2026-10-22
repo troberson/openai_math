@@ -194,46 +194,23 @@ semidefinite threshold" ([S3:31], [S20]).
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `CONTENTS.md` | 9142 | Release blurb, family 102 at line 2502 |
-| S2 | `overview.tex` | 859 | LaTeX entry `\resultentry{102}`, line 282 |
-| S3 | `README.md` | 51 | Trace attribution, line 31 |
-| S4 | `preprints/The-Unique-Games-Theorem-September-23-2026/README.md` | 18 | Manuscript README (title, date, bibtex stub) |
-| S5 | `preprints/The-Unique-Games-Theorem-September-23-2026/build/main.tex` | 89 | Main paper: title line 56, abstract 63–66 |
-| S6 | `preprints/The-Unique-Games-Theorem-September-23-2026/build/sections/00-introduction.tex` | 323 | Theorem statement, prior work, proof strategy |
-| S7 | `preprints/The-Unique-Games-Theorem-September-23-2026/build/sections/07-consequences.tex` | 331 | Consequences of the proved conjecture |
-| S8 | `lean/docs/102.md` | 31 | Scope note: what is formalized, per result |
-| S9 | `lean/formalization.yaml` | 1783 | `main_results`, bibliography, automation and review |
-| S10 | `lean/ComparatorChallenges/UniqueGamesTheorem.json` | 14 | Comparator config, main theorem |
-| S11 | `lean/ComparatorChallenges/OptimalMaxCut.json` | 14 | Comparator config, Max-Cut |
-| S12 | `lean/ComparatorChallenges/VertexCover.json` | 15 | Comparator config, Vertex Cover |
-| S13 | `lean/ComparatorChallenges/MinUncut.json` | 14 | Comparator config, Min-UnCut |
-| S14 | `lean/ComparatorChallenges/DirectedFeedback.json` | 14 | Comparator config, directed FVS |
-| S15 | `preprints/A-Direct-Proof-of-Optimal-Max-Cut-Hardness-September-23-2026/build/sections/introduction.tex` | 207 | Max-Cut companion |
-| S16 | `preprints/The-Factor-Two-Hardness-Threshold-for-Vertex-Cover-September-23-2026/build/sections/introduction.tex` | 159 | Vertex Cover companion |
-| S17 | `preprints/The-Factor-Two-Hardness-Threshold-for-Vertex-Cover-September-23-2026/build/sections/history.tex` | 67 | Vertex Cover companion, history section |
-| S18 | `preprints/Constant-factor-hardness-of-Min-UnCut-September-23-2026/build/sections/introduction.tex` | 220 | Min-UnCut companion |
-| S19 | `preprints/Constant-factor-hardness-of-directed-feedback-vertex-set-September-23-2026/build/sections/introduction.tex` | 215 | Directed FVS companion |
-| S20 | `reasoning_traces/basic-semidefinite-threshold-np-hardness.pdf` | 3952 | Published reasoning trace for this family |
-
-## Links
-
-- [S1](../../../CONTENTS.md)
-- [S2](../../../overview.tex)
-- [S3](../../../README.md)
-- [S4](../../../preprints/The-Unique-Games-Theorem-September-23-2026/README.md)
-- [S5](../../../preprints/The-Unique-Games-Theorem-September-23-2026/build/main.tex)
-- [S6](../../../preprints/The-Unique-Games-Theorem-September-23-2026/build/sections/00-introduction.tex)
-- [S7](../../../preprints/The-Unique-Games-Theorem-September-23-2026/build/sections/07-consequences.tex)
-- [S8](../../../lean/docs/102.md)
-- [S9](../../../lean/formalization.yaml)
-- [S10](../../../lean/ComparatorChallenges/UniqueGamesTheorem.json)
-- [S11](../../../lean/ComparatorChallenges/OptimalMaxCut.json)
-- [S12](../../../lean/ComparatorChallenges/VertexCover.json)
-- [S13](../../../lean/ComparatorChallenges/MinUncut.json)
-- [S14](../../../lean/ComparatorChallenges/DirectedFeedback.json)
-- [S15](../../../preprints/A-Direct-Proof-of-Optimal-Max-Cut-Hardness-September-23-2026/build/sections/introduction.tex)
-- [S16](../../../preprints/The-Factor-Two-Hardness-Threshold-for-Vertex-Cover-September-23-2026/build/sections/introduction.tex)
-- [S17](../../../preprints/The-Factor-Two-Hardness-Threshold-for-Vertex-Cover-September-23-2026/build/sections/history.tex)
-- [S18](../../../preprints/Constant-factor-hardness-of-Min-UnCut-September-23-2026/build/sections/introduction.tex)
-- [S19](../../../preprints/Constant-factor-hardness-of-directed-feedback-vertex-set-September-23-2026/build/sections/introduction.tex)
-- [S20](../../../reasoning_traces/basic-semidefinite-threshold-np-hardness.pdf)
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release blurb, family 102 at line 2502 |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | LaTeX entry `\resultentry{102}`, line 282 |
+| S3 | [`README.md`](../../../README.md) | 51 | Trace attribution, line 31 |
+| S4 | [`preprints/The-Unique-Games-Theorem-September-23-2026/README.md`](../../../preprints/The-Unique-Games-Theorem-September-23-2026/README.md) | 18 | Manuscript README (title, date, bibtex stub) |
+| S5 | [`preprints/The-Unique-Games-Theorem-September-23-2026/build/main.tex`](../../../preprints/The-Unique-Games-Theorem-September-23-2026/build/main.tex) | 89 | Main paper: title line 56, abstract 63–66 |
+| S6 | [`preprints/The-Unique-Games-Theorem-September-23-2026/build/sections/00-introduction.tex`](../../../preprints/The-Unique-Games-Theorem-September-23-2026/build/sections/00-introduction.tex) | 323 | Theorem statement, prior work, proof strategy |
+| S7 | [`preprints/The-Unique-Games-Theorem-September-23-2026/build/sections/07-consequences.tex`](../../../preprints/The-Unique-Games-Theorem-September-23-2026/build/sections/07-consequences.tex) | 331 | Consequences of the proved conjecture |
+| S8 | [`lean/docs/102.md`](../../../lean/docs/102.md) | 31 | Scope note: what is formalized, per result |
+| S9 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1783 | `main_results`, bibliography, automation and review |
+| S10 | [`lean/ComparatorChallenges/UniqueGamesTheorem.json`](../../../lean/ComparatorChallenges/UniqueGamesTheorem.json) | 14 | Comparator config, main theorem |
+| S11 | [`lean/ComparatorChallenges/OptimalMaxCut.json`](../../../lean/ComparatorChallenges/OptimalMaxCut.json) | 14 | Comparator config, Max-Cut |
+| S12 | [`lean/ComparatorChallenges/VertexCover.json`](../../../lean/ComparatorChallenges/VertexCover.json) | 15 | Comparator config, Vertex Cover |
+| S13 | [`lean/ComparatorChallenges/MinUncut.json`](../../../lean/ComparatorChallenges/MinUncut.json) | 14 | Comparator config, Min-UnCut |
+| S14 | [`lean/ComparatorChallenges/DirectedFeedback.json`](../../../lean/ComparatorChallenges/DirectedFeedback.json) | 14 | Comparator config, directed FVS |
+| S15 | [`preprints/A-Direct-Proof-of-Optimal-Max-Cut-Hardness-September-23-2026/build/sections/introduction.tex`](../../../preprints/A-Direct-Proof-of-Optimal-Max-Cut-Hardness-September-23-2026/build/sections/introduction.tex) | 207 | Max-Cut companion |
+| S16 | [`preprints/The-Factor-Two-Hardness-Threshold-for-Vertex-Cover-September-23-2026/build/sections/introduction.tex`](../../../preprints/The-Factor-Two-Hardness-Threshold-for-Vertex-Cover-September-23-2026/build/sections/introduction.tex) | 159 | Vertex Cover companion |
+| S17 | [`preprints/The-Factor-Two-Hardness-Threshold-for-Vertex-Cover-September-23-2026/build/sections/history.tex`](../../../preprints/The-Factor-Two-Hardness-Threshold-for-Vertex-Cover-September-23-2026/build/sections/history.tex) | 67 | Vertex Cover companion, history section |
+| S18 | [`preprints/Constant-factor-hardness-of-Min-UnCut-September-23-2026/build/sections/introduction.tex`](../../../preprints/Constant-factor-hardness-of-Min-UnCut-September-23-2026/build/sections/introduction.tex) | 220 | Min-UnCut companion |
+| S19 | [`preprints/Constant-factor-hardness-of-directed-feedback-vertex-set-September-23-2026/build/sections/introduction.tex`](../../../preprints/Constant-factor-hardness-of-directed-feedback-vertex-set-September-23-2026/build/sections/introduction.tex) | 215 | Directed FVS companion |
+| S20 | [`reasoning_traces/basic-semidefinite-threshold-np-hardness.pdf`](../../../reasoning_traces/basic-semidefinite-threshold-np-hardness.pdf) | 3952 | Published reasoning trace for this family |

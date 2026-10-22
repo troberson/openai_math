@@ -122,49 +122,26 @@ What the family gives the rest of the release is a smooth-shifted-prime count wi
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `CONTENTS.md` | 9142 | Family 011 entry at 266; manuscript blurbs at 275, 284 and 293 |
-| S2 | `overview.tex` | 859 | Family 011 `\resultentry` at 98 |
-| S3 | `preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/README.md` | 18 | Author at 3, date at 5, citation block at 10–16 |
-| S4 | `preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/build/paper.tex` | 27 | Title at 3, date at 5, abstract at 9, section inputs at 11–19 |
-| S5 | `preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/build/sections/00-introduction.tex` | 245 | `thm:totient` at 10–16, attribution at 18–25, `thm:smooth` at 38–46, literature at 55–94, companion link at 96–99 |
-| S6 | `preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/build/sections/07-totient-conclusion.tex` | 90 | Transfer to totient fibers at 3–6, `lem:finite-totient-fibers` at 10–12, infiniteness close at 84–89 |
-| S7 | `preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/build/references.bib` | 245 | Release entry `PrimePredecessors` at 228–234 |
-| S8 | `preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf` | 22511 | Typeset manuscript, 802,390 bytes |
-| S9 | `preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/README.md` | 18 | Author at 3, date at 5, citation block at 10–16 |
-| S10 | `preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/build/paper.tex` | 30 | Title at 3, date at 5, abstract at 9, section inputs at 12–21 |
-| S11 | `preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/build/sections/01-introduction.tex` | 214 | Stick fragments at 19–28, `thm:main` at 30–41, named resolution at 43–48, fixed-$u$ form at 84–100, history at 118–140, method at 142–213 |
-| S12 | `preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/build/sections/08-poisson-dirichlet.tex` | 254 | Passage from interior statistics at 4–7, probability inputs at 8–12, labelled-ball setup at 16–17 |
-| S13 | `preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/build/references.bib` | 291 | Release entry `SmoothShifted` at 264–270 |
-| S14 | `preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/paper.pdf` | 22437 | Typeset manuscript, 795,971 bytes |
-| S15 | `preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/README.md` | 18 | Author at 3, date at 5, citation block at 10–16 |
-| S16 | `preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/build/main.tex` | 141 | Title at 33, date at 35, abstract at 41–43, `thm:main` at 53–57, scope at 59–64, relation to earlier work at 66–76, companion link at 78–90, extensions at 92–108 |
-| S17 | `preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/build/references.tex` | 39 | Inline `thebibliography`; release entry `SmoothShifted` at 25–30 |
-| S18 | `preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf` | 16893 | Typeset manuscript, 599,500 bytes |
-| S19 | `notes/reports/t0-triage.md` | 897 | Family 011 entry at 125–126 |
-| S20 | `notes/tables/catalog.tsv` | 373 | Ledger row for family 011 at 12 |
-
-## Links
-
-- [S1](../../../CONTENTS.md)
-- [S2](../../../overview.tex)
-- [S3](../../../preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/README.md)
-- [S4](../../../preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/build/paper.tex)
-- [S5](../../../preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/build/sections/00-introduction.tex)
-- [S6](../../../preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/build/sections/07-totient-conclusion.tex)
-- [S7](../../../preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/build/references.bib)
-- [S8](../../../preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf)
-- [S9](../../../preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/README.md)
-- [S10](../../../preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/build/paper.tex)
-- [S11](../../../preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/build/sections/01-introduction.tex)
-- [S12](../../../preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/build/sections/08-poisson-dirichlet.tex)
-- [S13](../../../preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/build/references.bib)
-- [S14](../../../preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/paper.pdf)
-- [S15](../../../preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/README.md)
-- [S16](../../../preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/build/main.tex)
-- [S17](../../../preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/build/references.tex)
-- [S18](../../../preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf)
-- [S19](../../../notes/reports/t0-triage.md)
-- [S20](../../../notes/tables/catalog.tsv)
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Family 011 entry at 266; manuscript blurbs at 275, 284 and 293 |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 011 `\resultentry` at 98 |
+| S3 | [`preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/README.md`](../../../preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/README.md) | 18 | Author at 3, date at 5, citation block at 10–16 |
+| S4 | [`preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/build/paper.tex`](../../../preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/build/paper.tex) | 27 | Title at 3, date at 5, abstract at 9, section inputs at 11–19 |
+| S5 | [`preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/build/sections/00-introduction.tex`](../../../preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/build/sections/00-introduction.tex) | 245 | `thm:totient` at 10–16, attribution at 18–25, `thm:smooth` at 38–46, literature at 55–94, companion link at 96–99 |
+| S6 | [`preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/build/sections/07-totient-conclusion.tex`](../../../preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/build/sections/07-totient-conclusion.tex) | 90 | Transfer to totient fibers at 3–6, `lem:finite-totient-fibers` at 10–12, infiniteness close at 84–89 |
+| S7 | [`preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/build/references.bib`](../../../preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/build/references.bib) | 245 | Release entry `PrimePredecessors` at 228–234 |
+| S8 | [`preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf`](../../../preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf) | 22511 | Typeset manuscript, 802,390 bytes |
+| S9 | [`preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/README.md`](../../../preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/README.md) | 18 | Author at 3, date at 5, citation block at 10–16 |
+| S10 | [`preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/build/paper.tex`](../../../preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/build/paper.tex) | 30 | Title at 3, date at 5, abstract at 9, section inputs at 12–21 |
+| S11 | [`preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/build/sections/01-introduction.tex) | 214 | Stick fragments at 19–28, `thm:main` at 30–41, named resolution at 43–48, fixed-$u$ form at 84–100, history at 118–140, method at 142–213 |
+| S12 | [`preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/build/sections/08-poisson-dirichlet.tex`](../../../preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/build/sections/08-poisson-dirichlet.tex) | 254 | Passage from interior statistics at 4–7, probability inputs at 8–12, labelled-ball setup at 16–17 |
+| S13 | [`preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/build/references.bib`](../../../preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/build/references.bib) | 291 | Release entry `SmoothShifted` at 264–270 |
+| S14 | [`preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/paper.pdf`](../../../preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/paper.pdf) | 22437 | Typeset manuscript, 795,971 bytes |
+| S15 | [`preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/README.md`](../../../preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/README.md) | 18 | Author at 3, date at 5, citation block at 10–16 |
+| S16 | [`preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/build/main.tex`](../../../preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/build/main.tex) | 141 | Title at 33, date at 35, abstract at 41–43, `thm:main` at 53–57, scope at 59–64, relation to earlier work at 66–76, companion link at 78–90, extensions at 92–108 |
+| S17 | [`preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/build/references.tex`](../../../preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/build/references.tex) | 39 | Inline `thebibliography`; release entry `SmoothShifted` at 25–30 |
+| S18 | [`preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf`](../../../preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf) | 16893 | Typeset manuscript, 599,500 bytes |
+| S19 | [`notes/reports/t0-triage.md`](../../../notes/reports/t0-triage.md) | 897 | Family 011 entry at 125–126 |
+| S20 | [`notes/tables/catalog.tsv`](../../../notes/tables/catalog.tsv) | 373 | Ledger row for family 011 at 12 |
 
 ## Bibliography
 

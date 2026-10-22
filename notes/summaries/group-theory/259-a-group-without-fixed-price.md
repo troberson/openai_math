@@ -62,39 +62,21 @@ Nothing. The ledger records tier T0 for this family, with no scope note, no comp
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `CONTENTS.md` | 9142 | The release's blurb for family 259 at line 6383, and the PDF link at line 6381. |
-| S2 | `overview.tex` | 859 | The catalog abstract at line 605. |
-| S3 | `README.md` | 51 | The repo readme, which attributes no reasoning trace to this family. |
-| S4 | `preprints/A-group-without-fixed-price-October-5-2026/README.md` | 18 | Citation-only manuscript readme: the title, the author, the date, the BibTeX block, no provenance. |
-| S5 | `preprints/A-group-without-fixed-price-October-5-2026/INPUTS.md` | 10 | The scope note: the problem addressed, the distinction from property (T), and the provenance caveat. |
-| S6 | `preprints/A-group-without-fixed-price-October-5-2026/build/paper.tex` | 44 | The main file: the abstract and the section order. |
-| S7 | `preprints/A-group-without-fixed-price-October-5-2026/build/introduction.tex` | 152 | Cost and fixed price defined, the group, the two actions, the main theorem, the three-step proof outline, and the three isolated estimates. |
-| S8 | `preprints/A-group-without-fixed-price-October-5-2026/build/group-actions.tex` | 254 | The amalgam, the free basis of $J$, the two probability spaces, the height extension, the small-cost graphing, and the low-cost proposition. |
-| S9 | `preprints/A-group-without-fixed-price-October-5-2026/build/compression.tex` | 296 | Compression relative to a supplied relation, Borel selections, small complete sets, and the cost-at-least-one corollary. |
-| S10 | `preprints/A-group-without-fixed-price-October-5-2026/build/deployment.tex` | 257 | Gaboriau's deployment specialized to finitely many sheets, and the relative cost lower bound. |
-| S11 | `preprints/A-group-without-fixed-price-October-5-2026/build/finite-models.tex` | 327 | Bernoulli graphings, finite permutation models, the transfer inequality, and the expanding sequence. |
-| S12 | `preprints/A-group-without-fixed-price-October-5-2026/build/planar.tex` | 257 | The planar word lemma over an arbitrary coefficient group. |
-| S13 | `preprints/A-group-without-fixed-price-October-5-2026/build/rank-surgery.tex` | 288 | The rank theorem, the minimal labelled graph, saturation, and the shortening. |
-| S14 | `preprints/A-group-without-fixed-price-October-5-2026/build/conclusion.tex` | 50 | The cost comparison and the arithmetic that makes the two costs strictly different. |
-| S15 | `preprints/A-group-without-fixed-price-October-5-2026/build/references.bib` | 88 | The bibliography: Levitt, Gaboriau, Arzhantseva–Ol'shanskii, Kapovich–Schupp, Khezeli, Slutsky, Bevilacqua–Bowen, Greendlinger. |
-
-## Links
-
-- [S1](../../../CONTENTS.md)
-- [S2](../../../overview.tex)
-- [S3](../../../README.md)
-- [S4](../../../preprints/A-group-without-fixed-price-October-5-2026/README.md)
-- [S5](../../../preprints/A-group-without-fixed-price-October-5-2026/INPUTS.md)
-- [S6](../../../preprints/A-group-without-fixed-price-October-5-2026/build/paper.tex)
-- [S7](../../../preprints/A-group-without-fixed-price-October-5-2026/build/introduction.tex)
-- [S8](../../../preprints/A-group-without-fixed-price-October-5-2026/build/group-actions.tex)
-- [S9](../../../preprints/A-group-without-fixed-price-October-5-2026/build/compression.tex)
-- [S10](../../../preprints/A-group-without-fixed-price-October-5-2026/build/deployment.tex)
-- [S11](../../../preprints/A-group-without-fixed-price-October-5-2026/build/finite-models.tex)
-- [S12](../../../preprints/A-group-without-fixed-price-October-5-2026/build/planar.tex)
-- [S13](../../../preprints/A-group-without-fixed-price-October-5-2026/build/rank-surgery.tex)
-- [S14](../../../preprints/A-group-without-fixed-price-October-5-2026/build/conclusion.tex)
-- [S15](../../../preprints/A-group-without-fixed-price-October-5-2026/build/references.bib)
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 259 at line 6383, and the PDF link at line 6381. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 605. |
+| S3 | [`README.md`](../../../README.md) | 51 | The repo readme, which attributes no reasoning trace to this family. |
+| S4 | [`preprints/A-group-without-fixed-price-October-5-2026/README.md`](../../../preprints/A-group-without-fixed-price-October-5-2026/README.md) | 18 | Citation-only manuscript readme: the title, the author, the date, the BibTeX block, no provenance. |
+| S5 | [`preprints/A-group-without-fixed-price-October-5-2026/INPUTS.md`](../../../preprints/A-group-without-fixed-price-October-5-2026/INPUTS.md) | 10 | The scope note: the problem addressed, the distinction from property (T), and the provenance caveat. |
+| S6 | [`preprints/A-group-without-fixed-price-October-5-2026/build/paper.tex`](../../../preprints/A-group-without-fixed-price-October-5-2026/build/paper.tex) | 44 | The main file: the abstract and the section order. |
+| S7 | [`preprints/A-group-without-fixed-price-October-5-2026/build/introduction.tex`](../../../preprints/A-group-without-fixed-price-October-5-2026/build/introduction.tex) | 152 | Cost and fixed price defined, the group, the two actions, the main theorem, the three-step proof outline, and the three isolated estimates. |
+| S8 | [`preprints/A-group-without-fixed-price-October-5-2026/build/group-actions.tex`](../../../preprints/A-group-without-fixed-price-October-5-2026/build/group-actions.tex) | 254 | The amalgam, the free basis of $J$, the two probability spaces, the height extension, the small-cost graphing, and the low-cost proposition. |
+| S9 | [`preprints/A-group-without-fixed-price-October-5-2026/build/compression.tex`](../../../preprints/A-group-without-fixed-price-October-5-2026/build/compression.tex) | 296 | Compression relative to a supplied relation, Borel selections, small complete sets, and the cost-at-least-one corollary. |
+| S10 | [`preprints/A-group-without-fixed-price-October-5-2026/build/deployment.tex`](../../../preprints/A-group-without-fixed-price-October-5-2026/build/deployment.tex) | 257 | Gaboriau's deployment specialized to finitely many sheets, and the relative cost lower bound. |
+| S11 | [`preprints/A-group-without-fixed-price-October-5-2026/build/finite-models.tex`](../../../preprints/A-group-without-fixed-price-October-5-2026/build/finite-models.tex) | 327 | Bernoulli graphings, finite permutation models, the transfer inequality, and the expanding sequence. |
+| S12 | [`preprints/A-group-without-fixed-price-October-5-2026/build/planar.tex`](../../../preprints/A-group-without-fixed-price-October-5-2026/build/planar.tex) | 257 | The planar word lemma over an arbitrary coefficient group. |
+| S13 | [`preprints/A-group-without-fixed-price-October-5-2026/build/rank-surgery.tex`](../../../preprints/A-group-without-fixed-price-October-5-2026/build/rank-surgery.tex) | 288 | The rank theorem, the minimal labelled graph, saturation, and the shortening. |
+| S14 | [`preprints/A-group-without-fixed-price-October-5-2026/build/conclusion.tex`](../../../preprints/A-group-without-fixed-price-October-5-2026/build/conclusion.tex) | 50 | The cost comparison and the arithmetic that makes the two costs strictly different. |
+| S15 | [`preprints/A-group-without-fixed-price-October-5-2026/build/references.bib`](../../../preprints/A-group-without-fixed-price-October-5-2026/build/references.bib) | 88 | The bibliography: Levitt, Gaboriau, Arzhantseva–Ol'shanskii, Kapovich–Schupp, Khezeli, Slutsky, Bevilacqua–Bowen, Greendlinger. |
 
 ## Bibliography
 

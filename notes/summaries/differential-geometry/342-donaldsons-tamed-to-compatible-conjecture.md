@@ -182,53 +182,28 @@ The formalization consequence is a gap, not a coverage. The declaration proves t
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `CONTENTS.md` | 9142 | Release blurb, manuscript link, abstract |
-| S2 | `overview.tex` | 859 | Family entry in the release's entry list |
-| S3 | `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/README.md` | 21 | Title, date, bibtex key, version note |
-| S4 | `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/main.tex` | 28 | Abstract and include list |
-| S5 | `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/preamble.tex` | 54 | Macro preamble |
-| S6 | `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/01-introduction.tex` | 215 | Conjecture, definitions, theorems, mechanism, companion |
-| S7 | `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/02-currents.tex` | 164 | Separation proposition |
-| S8 | `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/03-mass.tex` | 150 | Quadratic mass growth proposition |
-| S9 | `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/04-energy.tex` | 270 | Energy proposition |
-| S10 | `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/05-density.tex` | 278 | Density-splitting theorem |
-| S11 | `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/06-splitting.tex` | 271 | Proof of the density-splitting theorem |
-| S12 | `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/07-conclusion.tex` | 71 | Proof of the main theorem |
-| S13 | `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/08-cones.tex` | 418 | Cone theory, class estimates, strict-inclusion example |
-| S14 | `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/references.bib` | 295 | Bibliography, Donaldson 2006, intra-corpus entry |
-| S15 | `preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/paper.pdf` | 7145 | Shipped manuscript PDF |
-| S16 | `lean/docs/342.md` | 15 | Scope note |
-| S17 | `lean/formalization.yaml` | 1783 | Source, status, main_results, automation, review |
-| S18 | `lean/ComparatorChallenges/TamingCompatibility.json` | 14 | Challenge record |
-| S19 | `lean/ComparatorChallenges/TamingCompatibility.lean` | 68 | Comparator stub, definitions, target, `sorry` |
-| S20 | `lean/OAI/Geometry/TamingCompatibility/Main.lean` | 56 | Formalized declaration |
-| S21 | `history.md` | 31 | Release update log |
-| S22 | `notes/tables/catalog.tsv` | 373 | Ledger row for family 342 |
-
-## Links
-
-- [S1](../../../CONTENTS.md)
-- [S2](../../../overview.tex)
-- [S3](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/README.md)
-- [S4](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/main.tex)
-- [S5](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/preamble.tex)
-- [S6](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/01-introduction.tex)
-- [S7](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/02-currents.tex)
-- [S8](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/03-mass.tex)
-- [S9](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/04-energy.tex)
-- [S10](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/05-density.tex)
-- [S11](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/06-splitting.tex)
-- [S12](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/07-conclusion.tex)
-- [S13](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/08-cones.tex)
-- [S14](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/references.bib)
-- [S15](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/paper.pdf)
-- [S16](../../../lean/docs/342.md)
-- [S17](../../../lean/formalization.yaml)
-- [S18](../../../lean/ComparatorChallenges/TamingCompatibility.json)
-- [S19](../../../lean/ComparatorChallenges/TamingCompatibility.lean)
-- [S20](../../../lean/OAI/Geometry/TamingCompatibility/Main.lean)
-- [S21](../../../history.md)
-- [S22](../../../notes/tables/catalog.tsv)
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release blurb, manuscript link, abstract |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family entry in the release's entry list |
+| S3 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/README.md`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/README.md) | 21 | Title, date, bibtex key, version note |
+| S4 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/main.tex`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/main.tex) | 28 | Abstract and include list |
+| S5 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/preamble.tex`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/preamble.tex) | 54 | Macro preamble |
+| S6 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/01-introduction.tex`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/01-introduction.tex) | 215 | Conjecture, definitions, theorems, mechanism, companion |
+| S7 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/02-currents.tex`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/02-currents.tex) | 164 | Separation proposition |
+| S8 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/03-mass.tex`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/03-mass.tex) | 150 | Quadratic mass growth proposition |
+| S9 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/04-energy.tex`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/04-energy.tex) | 270 | Energy proposition |
+| S10 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/05-density.tex`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/05-density.tex) | 278 | Density-splitting theorem |
+| S11 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/06-splitting.tex`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/06-splitting.tex) | 271 | Proof of the density-splitting theorem |
+| S12 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/07-conclusion.tex`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/07-conclusion.tex) | 71 | Proof of the main theorem |
+| S13 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/08-cones.tex`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/sections/08-cones.tex) | 418 | Cone theory, class estimates, strict-inclusion example |
+| S14 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/references.bib`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/build/references.bib) | 295 | Bibliography, Donaldson 2006, intra-corpus entry |
+| S15 | [`preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/paper.pdf`](../../../preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/paper.pdf) | 7145 | Shipped manuscript PDF |
+| S16 | [`lean/docs/342.md`](../../../lean/docs/342.md) | 15 | Scope note |
+| S17 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1783 | Source, status, main_results, automation, review |
+| S18 | [`lean/ComparatorChallenges/TamingCompatibility.json`](../../../lean/ComparatorChallenges/TamingCompatibility.json) | 14 | Challenge record |
+| S19 | [`lean/ComparatorChallenges/TamingCompatibility.lean`](../../../lean/ComparatorChallenges/TamingCompatibility.lean) | 68 | Comparator stub, definitions, target, `sorry` |
+| S20 | [`lean/OAI/Geometry/TamingCompatibility/Main.lean`](../../../lean/OAI/Geometry/TamingCompatibility/Main.lean) | 56 | Formalized declaration |
+| S21 | [`history.md`](../../../history.md) | 31 | Release update log |
+| S22 | [`notes/tables/catalog.tsv`](../../../notes/tables/catalog.tsv) | 373 | Ledger row for family 342 |
 
 ## Bibliography
 

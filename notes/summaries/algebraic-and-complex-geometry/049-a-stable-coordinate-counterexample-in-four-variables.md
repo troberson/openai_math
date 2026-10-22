@@ -202,45 +202,24 @@ claims exist and names their declarations; the comparator configs carry
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | `overview.tex` | 859 | Family entry, line 174 |
-| S2 | `preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/README.md` | 18 | Manuscript 1 title, date, citation |
-| S3 | `preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/main.tex` | 51 | Abstract, lines 36–43 |
-| S4 | `preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/01-introduction.tex` | 50 | Theorem 1, corollary, method, history |
-| S5 | `preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/refs.bib` | 129 | Bibliography, 12 entries, one release citation |
-| S6 | `preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/02-construction.tex` | 200 | Explicit changes of coordinates |
-| S7 | `preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/03-filtration.tex` | 276 | Filtration and the derivation implication |
-| S8 | `preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/04-bundle.tex` | 233 | Line bundle and the principal ideal |
-| S9 | `preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/05-rigidity.tex` | 125 | The rigidity argument |
-| S10 | `preprints/An-explicit-noncoordinate-polynomial-with-affine-three-space-zero-fibre-September-24-2026/README.md` | 18 | Manuscript 2 title, date, citation |
-| S11 | `preprints/An-explicit-noncoordinate-polynomial-with-affine-three-space-zero-fibre-September-24-2026/build/paper.tex` | 465 | Abstract, lifting lemma, theorem, corollary |
-| S12 | `lean/docs/049.md` | 22 | Scope note |
-| S13 | `lean/OAI/AlgebraicGeometry/AbhyankarSathaye/Counterexample.lean` | 45 | `exists_noncoordinate_polynomial` |
-| S14 | `lean/OAI/AlgebraicGeometry/StableCoordinate/Principal.lean` | 80 | `principal_package` |
-| S15 | `lean/OAI/AlgebraicGeometry/CommutingDerivations/OrdinaryExtraMain.lean` | 91 | `commuting_derivations_with_ordinary_extras` |
-| S16 | `lean/ComparatorChallenges/AbhyankarSathaye.lean` | 21 | Stub, `sorry` at line 17 |
-| S17 | `lean/ComparatorChallenges/CommutingDerivations.lean` | 75 | Stub, `sorry` at line 67 |
-| S18 | `lean/ComparatorChallenges/StableCoordinateFour.lean` | 54 | Stub, `sorry` at line 50 |
-
-## Links
-
-- [S1](../../../overview.tex)
-- [S2](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/README.md)
-- [S3](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/main.tex)
-- [S4](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/01-introduction.tex)
-- [S5](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/refs.bib)
-- [S6](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/02-construction.tex)
-- [S7](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/03-filtration.tex)
-- [S8](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/04-bundle.tex)
-- [S9](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/05-rigidity.tex)
-- [S10](../../../preprints/An-explicit-noncoordinate-polynomial-with-affine-three-space-zero-fibre-September-24-2026/README.md)
-- [S11](../../../preprints/An-explicit-noncoordinate-polynomial-with-affine-three-space-zero-fibre-September-24-2026/build/paper.tex)
-- [S12](../../../lean/docs/049.md)
-- [S13](../../../lean/OAI/AlgebraicGeometry/AbhyankarSathaye/Counterexample.lean)
-- [S14](../../../lean/OAI/AlgebraicGeometry/StableCoordinate/Principal.lean)
-- [S15](../../../lean/OAI/AlgebraicGeometry/CommutingDerivations/OrdinaryExtraMain.lean)
-- [S16](../../../lean/ComparatorChallenges/AbhyankarSathaye.lean)
-- [S17](../../../lean/ComparatorChallenges/CommutingDerivations.lean)
-- [S18](../../../lean/ComparatorChallenges/StableCoordinateFour.lean)
+| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 174 |
+| S2 | [`preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/README.md`](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/README.md) | 18 | Manuscript 1 title, date, citation |
+| S3 | [`preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/main.tex`](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/main.tex) | 51 | Abstract, lines 36–43 |
+| S4 | [`preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/01-introduction.tex`](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/01-introduction.tex) | 50 | Theorem 1, corollary, method, history |
+| S5 | [`preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/refs.bib`](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/refs.bib) | 129 | Bibliography, 12 entries, one release citation |
+| S6 | [`preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/02-construction.tex`](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/02-construction.tex) | 200 | Explicit changes of coordinates |
+| S7 | [`preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/03-filtration.tex`](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/03-filtration.tex) | 276 | Filtration and the derivation implication |
+| S8 | [`preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/04-bundle.tex`](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/04-bundle.tex) | 233 | Line bundle and the principal ideal |
+| S9 | [`preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/05-rigidity.tex`](../../../preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/build/source/sections/05-rigidity.tex) | 125 | The rigidity argument |
+| S10 | [`preprints/An-explicit-noncoordinate-polynomial-with-affine-three-space-zero-fibre-September-24-2026/README.md`](../../../preprints/An-explicit-noncoordinate-polynomial-with-affine-three-space-zero-fibre-September-24-2026/README.md) | 18 | Manuscript 2 title, date, citation |
+| S11 | [`preprints/An-explicit-noncoordinate-polynomial-with-affine-three-space-zero-fibre-September-24-2026/build/paper.tex`](../../../preprints/An-explicit-noncoordinate-polynomial-with-affine-three-space-zero-fibre-September-24-2026/build/paper.tex) | 465 | Abstract, lifting lemma, theorem, corollary |
+| S12 | [`lean/docs/049.md`](../../../lean/docs/049.md) | 22 | Scope note |
+| S13 | [`lean/OAI/AlgebraicGeometry/AbhyankarSathaye/Counterexample.lean`](../../../lean/OAI/AlgebraicGeometry/AbhyankarSathaye/Counterexample.lean) | 45 | `exists_noncoordinate_polynomial` |
+| S14 | [`lean/OAI/AlgebraicGeometry/StableCoordinate/Principal.lean`](../../../lean/OAI/AlgebraicGeometry/StableCoordinate/Principal.lean) | 80 | `principal_package` |
+| S15 | [`lean/OAI/AlgebraicGeometry/CommutingDerivations/OrdinaryExtraMain.lean`](../../../lean/OAI/AlgebraicGeometry/CommutingDerivations/OrdinaryExtraMain.lean) | 91 | `commuting_derivations_with_ordinary_extras` |
+| S16 | [`lean/ComparatorChallenges/AbhyankarSathaye.lean`](../../../lean/ComparatorChallenges/AbhyankarSathaye.lean) | 21 | Stub, `sorry` at line 17 |
+| S17 | [`lean/ComparatorChallenges/CommutingDerivations.lean`](../../../lean/ComparatorChallenges/CommutingDerivations.lean) | 75 | Stub, `sorry` at line 67 |
+| S18 | [`lean/ComparatorChallenges/StableCoordinateFour.lean`](../../../lean/ComparatorChallenges/StableCoordinateFour.lean) | 54 | Stub, `sorry` at line 50 |
 
 ## Bibliography
 
