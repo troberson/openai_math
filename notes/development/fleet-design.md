@@ -72,7 +72,7 @@ blind.
 ## The size argument
 
 Rule: `du -sk` per surface, divided by 1024. `preprints/` is **631M**, `lean/OAI/` is **1740M**
-(122,458 files), `notes/index/` is **12M**. `cat notes/tables/*.tsv | wc -c` = **2,902,943** bytes over the
+(122,458 files), `notes/index/` is **12M**. `cat notes/tables/*.tsv | wc -c` = **2,760,819** bytes over the
 **27** `notes/tables/*.tsv` present on disk. `free -h` reported **7.2 GiB available of 60 GiB** on 2026-10-10, with the
 model server resident — a dated observation, not a re-derivable count.
 
@@ -91,7 +91,7 @@ Rule: `grep -cE 'os\.replace|os\.rename|shutil\.move|NamedTemporaryFile'` over `
 and `notes/scripts/catlib/*.py`, **excluding `verify_fleet_design.py` and `render_reports.py`** — the
 checker carries the pattern in its count pass and the writer carries it as its `FLEET_ATOMIC` constant,
 so counting either would read a needle as a site and the rule would be about the censuses, not the
-fleet. Over **72** scripts and **21** catlib modules the count is **2 matches**, both in
+fleet. Over **73** scripts and **21** catlib modules the count is **2 matches**, both in
 `catlib/atomic.py`: the `os.replace` at `catlib/atomic.py:51`, which promotes the sibling temp onto
 the target, and the one at `catlib/atomic.py:96`, which promotes a staged slot onto its tracked path.
 Before `math-o3a.2.1` the count was **0 matches** over **49** scripts and **14** modules: every writer
@@ -259,7 +259,7 @@ walk `measure()` used to run is gone: it is `@cache`d and reads the record store
 the process is a cache hit, and `build_sources.py`'s row fell from 39,083 opens to **71** for the same
 reason. What remains is the extractors the renderer imports, each walking the corpus once per process.
 `catlib/paths.read_text` is the uncached reader behind those opens (**230** `read_text(` call sites over
-the **72** scripts and **21** catlib modules, counted as occurrences over both globs on 2026-10-11; the
+the **73** scripts and **21** catlib modules, counted as occurrences over both globs on 2026-10-11; the
 page read **217** over **55** scripts before the two `math-faz` probes landed); the caches in catlib are `render.rendered`, keyed by page
 name, `records.manuscript_store`, keyed by the store digest, and `promote.cached_text`, keyed by the
 builder's key.

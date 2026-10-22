@@ -22,7 +22,7 @@ gains from it, so it is a report, not development.
 
 `notes/index/` is the generated index — **1,033** pages, no tables; the **16** generated tables the index
 renders land in `notes/tables/`. {{ p['summary_pages'] }}
-`notes/scripts/` is the **67**-script fleet, `notes/templates/` the **24** page skeletons the renderers
+`notes/scripts/` is the **74**-script fleet, `notes/templates/` the **27** page skeletons the renderers
 read, and `notes/scripts/README.md` the ownership manifest that says whose bytes every file under `notes/`
 is. This file is the single entry point: no `README.md` sits inside `reports/` or `development/`.
 
@@ -35,7 +35,8 @@ python3 notes/scripts/verify_summaries.py   # checks every citation in notes/sum
 python3 notes/scripts/run_tests.py notes/scripts/tests/test_summaries.py -q  # the extracted self-tests: 6 injected page corruptions, each asserted against the pass that owns it
 python3 notes/scripts/check_summary_manuscripts.py  # which manuscripts each summaries page reads, and whether the release still names them; report-only
 python3 notes/scripts/locate_summary_quotes.py <page.md> [page.md ...]  # where a quotation's text actually sits, when verify_summaries.py reports a miss; report-only
-python3 notes/scripts/refresh_summary_line_counts.py  # rewrites the Lines column of the Sources table in every summaries page
+python3 notes/scripts/extract_summary_data.py  # one-time bootstrap: reads the 60 family pages and writes the notes/data/summaries/ data files the summary renderer renders from; not a gate row — re-running would clobber the hand-edited prose
+python3 notes/scripts/build_summaries.py  # renders notes/summaries/ from the notes/data/summaries/ data files and the skeleton; a gate row, before seed_quotes.py so the render chain stays acyclic
 python3 notes/scripts/read_manuscript.py <preprints-dir>  # prints a manuscript's abstract, section skeleton and titled statement environments with file:line anchors (--limit N, --all, --sections-only)
 python3 notes/scripts/verify_conjecture_standing.py  # checks notes/tables/conjecture-standing.tsv against the ledger and overview.tex
 python3 notes/scripts/run_tests.py notes/scripts/tests/test_conjecture_standing.py -q  # the extracted self-tests: 6 injected defects in table text, each asserted against the pass that owns it
