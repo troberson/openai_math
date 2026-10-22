@@ -18,7 +18,7 @@ notes/development/index-design.md	added TSV byte figures	`notes/tables/family-le
 notes/development/index-design.md	added TSV byte figures	`notes/tables/family-name.tsv` (**136769** B over **9819** rows), `notes/tables/family-topic.tsv` (**23741** B over **980** rows),
 notes/development/index-design.md	added TSV byte figures	`notes/tables/family-trace.tsv` (**855** B over **10** rows), `notes/tables/gate-rows.tsv` (**3558** B over **83** rows),
 notes/development/index-design.md	added TSV byte figures	`notes/tables/lean-dirs.tsv` (**41937** B over **559** rows), `notes/tables/manuscripts.tsv` (**277825** B over **719** rows),
-notes/development/index-design.md	added TSV byte figures	`notes/tables/names.tsv` (**304513** B over **5842** rows), `notes/tables/quotes.tsv` (**985428** B over **2848** rows),
+notes/development/index-design.md	added TSV byte figures	`notes/tables/names.tsv` (**304513** B over **5842** rows), `notes/tables/quotes.tsv` (**843304** B over **2834** rows),
 notes/development/index-design.md	added TSV byte figures	`notes/tables/scope-notes.tsv` (**26694** B over **242** rows), `notes/tables/sources.tsv` (**221463** B over **719** rows), `notes/tables/splits.tsv` (**18253** B over **174** rows), `notes/tables/topics-rendered.tsv` (**19127** B over **92** rows), `notes/tables/topics.tsv` (**22650** B over **92** rows) and
 notes/development/index-design.md	all-TSV byte total	every
 notes/development/index-design.md	manuscripts-per-family distribution	a family carries a maximum of **14**
