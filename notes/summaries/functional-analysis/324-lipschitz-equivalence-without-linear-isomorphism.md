@@ -187,3 +187,31 @@ The comparator stubs carry `sorry`. `OAI.LipschitzEquivalence.main` is at `Lipsc
 - [S26](../../../lean/OAI/Analysis/C0Absorption/Main.lean)
 - [S27](../../../lean/ComparatorChallenges/LipschitzEquivalence.lean)
 - [S28](../../../lean/ComparatorChallenges/C0Absorption.lean)
+
+## Bibliography
+
+**15 entries** from `references.bib`:
+- Aharoni, Israel, Lindenstrauss, Joram. *Uniform equivalence between {Banach} spaces*. (1978) [AL78]
+- Ribe, Martin. *On uniformly homeomorphic normed spaces*. (1976) [Ribe76]
+- Ribe, Martin. *Existence of separable uniformly homeomorphic nonisomorphic {Banach} spaces*. (1984) [Ribe84]
+- Aharoni, Israel, Lindenstrauss, Joram. *An extension of a result of {Ribe}*. (1985) [AL85]
+- Johnson, William B., Lindenstrauss, Joram, Schechtman, Gideon. *{Banach} spaces determined by their uniform structures*. (1996) [JLS96]
+- Arens, Richard F., Eells, Jr., James. *On embedding uniform and topological spaces*. (1956) [AE56]
+- Kalton, Nigel J.. *Spaces of {Lipschitz} and {H\"older} functions and their applications*. (2004) [Kalton04]
+- Kalton, Nigel J.. *The nonlinear geometry of {Banach} spaces*. (2008) [Kalton08]
+- Albiac, Fernando, Kalton, Nigel J.. *{Lipschitz} structure of quasi-{Banach} spaces*. (2009) [AK09]
+- Albiac, Fernando, Ansorena, Jos{\'e} L., B{\'i}ma, Jan, C{\'u}th, Marek. *{Lipschitz} free {$p$}-spaces for {$0<p<1$} in the light of the {Schur} {$p$}-property and the compact reduction*. (2026) [AABC26]
+- … and 5 more
+
+**14 entries** from `references.bib`:
+- Ribe, Martin. *On uniformly homeomorphic normed spaces*. (1976) [Ribe76]
+- Aharoni, Israel. *Every separable metric space is {Lipschitz} equivalent to a subset of {$c_0^+$}*. (1974) [Aharoni74]
+- Aharoni, Israel, Lindenstrauss, Joram. *Uniform equivalence between {Banach} spaces*. (1978) [AL78]
+- Ribe, Martin. *Existence of separable uniformly homeomorphic nonisomorphic {Banach} spaces*. (1984) [Ribe84]
+- Aharoni, Israel, Lindenstrauss, Joram. *An extension of a result of {Ribe}*. (1985) [AL85]
+- Johnson, William B., Lindenstrauss, Joram, Schechtman, Gideon. *{Banach} spaces determined by their uniform structures*. (1996) [JLS96]
+- Godefroy, Gilles, Kalton, Nigel J., Lancien, Gilles. *Subspaces of {$c_0(\mathbb{N})$} and {Lipschitz} isomorphisms*. (2000) [GKL00]
+- Arens, Richard F., Eells, Jr., James. *On embedding uniform and topological spaces*. (1956) [AE56]
+- Godefroy, Gilles, Kalton, Nigel J.. *{Lipschitz}-free {Banach} spaces*. (2003) [GK03]
+- Kalton, Nigel J.. *Spaces of {Lipschitz} and {H{\"o}lder} functions and their applications*. (2004) [Kalton04]
+- … and 4 more

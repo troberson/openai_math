@@ -163,3 +163,57 @@ What it does not buy: effectivity, uniformity, or a bound. Manuscript A gives no
 - [S21](../../../preprints/Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2-September-24-2026/paper.pdf)
 - [S22](../../../notes/reports/t0-triage.md)
 - [S23](../../../notes/tables/catalog.tsv)
+
+## Bibliography
+
+**32 entries** from `references.bib`:
+- Habegger, Philipp, Pila, Jonathan. *O-minimality and certain atypical intersections*. (2016) [HabeggerPila2016]
+- Dogra, Netan, Pandit, Sudip. *A {Buium--Coleman} bound for the {Zilber--Pink} conjecture for curves inside abelian varieties*. (2026) [DograPandit2026]
+- R\'{e}mond, Ga\"{e}l. *Intersection de sous-groupes et de sous-vari\'{e}t\'{e}s {III}*. (2009) [Remond2009]
+- Habegger, Philipp. *Intersecting subvarieties of abelian varieties with algebraic subgroups of complementary dimension*. (2009) [Habegger2009]
+- Viada, Evelina. *Nondense Subsets of Varieties in a Power of an Elliptic Curve*. (2009) [Viada2009]
+- Ax, James. *Some topics in differential algebraic geometry. {I}. {Analytic} subgroups of algebraic groups*. (1972) [Ax1972]
+- Evertse, Jan-Hendrik. *An explicit version of {Faltings}' {Product Theorem} and an improvement of {Roth}'s lemma*. (1995) [Evertse1995Product]
+- Dill, Gabriel A.. *Generalized {Vojta--R\'emond} inequality*. (2020) [Dill2020]
+- Basu, Saugata. *Algorithms in Real Algebraic Geometry: A Survey*. (2017) [Basu2017]
+- Zhang, Shouwu. *Small points and adelic metrics*. (1995) [Zhang1995]
+- … and 22 more
+
+**24 entries** from `paper.tex`:
+- [Chen2007] Y.-G. Chen, \emph{On the Siegel--Tatuzawa--Hoffstein theorem}, Acta Arith. \textbf{130} (2007), 361--367. \href{https://…
+- [Cox] D. A. Cox, \emph{Primes of the Form \(x^2+ny^2\): Fermat, Class Field Theory, and Complex Multiplication}, second ed., J…
+- [DO] C. Daw and M. Orr, \emph{Unlikely intersections with \(E\times\CM\) curves in \(\A_2\)}, Ann. Sc. Norm. Super. Pisa Cl. …
+- [DOMultiplicative] C. Daw and M. Orr, \emph{The large Galois orbits conjecture under multiplicative degeneration}, \href{https://arxiv.org/…
+- [FC] G. Faltings and C.-L. Chai, \emph{Degeneration of Abelian Varieties}, Ergebnisse der Mathematik und ihrer Grenzgebiete (…
+- [GR] \'E. Gaudron and G. R\'emond, \emph{Th\'eor\`eme des p\'eriodes et degr\'es minimaux d'isog\'enies}, Comment. Math. Helv…
+- [SGA7] A. Grothendieck, \emph{Mod\`eles de N\'eron et monodromie}, with an appendix by M. Raynaud, Expos\'e IX in \emph{Groupes…
+- [Lan] K.-W. Lan, \emph{Arithmetic Compactifications of PEL-Type Shimura Varieties}, London Mathematical Society Monographs Ser…
+- [Lobrich] S. L\"obrich, \emph{A gap in the spectrum of the Faltings height}, J. Th\'eor. Nombres Bordeaux \textbf{29} (2017), 289-…
+- [MW] D. W. Masser and G. W\"ustholz, \emph{Periods and minimal abelian subvarieties}, Ann. of Math. (2) \textbf{137} (1993), …
+- … and 14 more
+
+**42 entries** from `references.bib`:
+- Andr{\'e}, Yves. *{Mumford--Tate} groups of mixed {Hodge} structures and the theorem of the fixed part*. (1992) [Andre1992]
+- Katz, Nicholas M.. *Nilpotent connections and the monodromy theorem: applications of a result of {Turrittin}*. (1970) [Katz1970]
+- Masser, David W., W{\"u}stholz, Gisbert. *Endomorphism estimates for abelian varieties*. (1994) [MW1994]
+- Matthews, C. R., Vaserstein, L. N., Weisfeiler, B.. *Congruence properties of {Zariski}-dense subgroups {I}*. (1984) [MVW1984]
+- Berthelot, Pierre, Ogus, Arthur. *{$F$}-isocrystals and de {Rham} cohomology. {I}*. (1983) [BO1983]
+- Ogus, Arthur. *{$F$}-isocrystals and de {Rham} cohomology {II}---Convergent isocrystals*. (1984) [Ogus1984]
+- Papas, Georgios. *On the {$v$}-adic values of {$G$}-functions {I}: Splittings in {$\mathcal A_2$}*. (2025) [PapasI2025]
+- Papas, Georgios. *On the {$v$}-adic values of {$G$}-functions {III}: {QM} points in {$\mathcal A_2$}*. (2025) [PapasIII2025]
+- Daw, Christopher, Orr, Martin. *Quantitative reduction theory and unlikely intersections*. (2022) [DawOrr2022]
+- Daw, Christopher, Orr, Martin. *The large {Galois} orbits conjecture under multiplicative degeneration*. (2025) [DawOrrMultiplicative2025]
+- … and 32 more
+
+**45 entries** from `references.bib`:
+- Pink, Richard. *A Common Generalization of the Conjectures of {Andr\'e--Oort}, {Manin--Mumford}, and {Mordell--Lang}*. (2005) [Pink2005]
+- Daw, Christopher, Orr, Martin. *Quantitative Reduction Theory and Unlikely Intersections*. (2022) [DawOrr2022]
+- Daw, Christopher, Orr, Martin. *Unlikely intersections with {$E\times\mathrm{CM}$} curves in {$\mathcal A_2$}*. (2021) [DawOrrECM2021]
+- Pila, Jonathan, Tsimerman, Jacob. *The {Andr\'e--Oort} conjecture for the moduli space of abelian surfaces*. (2013) [PilaTsimerman2013]
+- Masser, David W., W{\"u}stholz, Gisbert. *Endomorphism estimates for abelian varieties*. (1994) [MasserWustholz1994]
+- Pazuki, Fabien. *Theta height and {Faltings} height*. (2012) [Pazuki2012]
+- Andr\'e, Yves. *{Mumford--Tate} groups of mixed {Hodge} structures and the theorem of the fixed part*. (1992) [Andre1992]
+- Matthews, Colin R., Vaserstein, Leonid N., Weisfeiler, Boris. *Congruence Properties of {Zariski}-Dense Subgroups {I}*. (1984) [MVW1984]
+- Schmid, Wilfried. *Variation of {Hodge} Structure: The Singularities of the Period Mapping*. (1973) [Schmid1973]
+- Deligne, Pierre. *\'Equations diff\'erentielles \`a points singuliers r\'eguliers*. (1970) [Deligne1970]
+- … and 35 more

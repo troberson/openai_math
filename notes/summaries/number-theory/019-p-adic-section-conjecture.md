@@ -122,3 +122,29 @@ The release presents the two as one family, and in the first edition both were d
 - [S22](../../../preprints/The-p-adic-section-conjecture-October-6-2026/main.pdf)
 - [S23](../../../notes/reports/t0-triage.md)
 - [S24](../../../notes/tables/catalog.tsv)
+
+## Bibliography
+
+**9 entries** from `references.bib`:
+- Mochizuki, Shinichi, Tsujimura, Shota. *Resolution of Nonsingularities, Point-theoreticity, and Metric-admissibility for {$p$}-adic Hyperbolic Curves*. (2024) [MochizukiTsujimura]
+- Tamagawa, Akio. *Resolution of Nonsingularities of Families of Curves*. (2004) [TamagawaRNS]
+- Lepage, Emmanuel. *Resolution of Nonsingularities for {Mumford} Curves*. (2013) [LepageRNS]
+- . *Rev{\^e}tements {\'e}tales et groupe fondamental ({SGA}~1)*. (2003) [SGA1]
+- Poineau, J{\'e}r{\^o}me. *Raccord sur les espaces de {Berkovich}*. (2010) [GAGA]
+- Temkin, Michael. *Introduction to {Berkovich} analytic spaces*. (2010) [TemkinAnalytic]
+- Milne, James S.. *Abelian Varieties*. (2022) [MilneAV]
+- de Jong, A. J.. *\'{E}tale fundamental groups of non-{Archimedean} analytic spaces*. (1995) [DeJongCoverings]
+- Baker, Matthew, Payne, Sam, Rabinoff, Joseph. *On the structure of nonarchimedean analytic curves*. (2013) [BakerPayneRabinoff]
+
+**32 entries** from `references.bib`:
+- Pop, Florian, Stix, Jakob. *Arithmetic in the fundamental group of a {$p$}-adic curve: On the {$p$}-adic section conjecture for curves*. (2017) [PopStix]
+- Mochizuki, Shinichi, Tsujimura, Shota. *Resolution of Nonsingularities, Point-theoreticity, and Metric-admissibility for {$p$}-adic Hyperbolic Curves*. (2024) [MochizukiTsujimura]
+- Amini, Omid, Baker, Matthew, Brugall{\'e}, Erwan, Rabinoff, Joseph. *Lifting harmonic morphisms {I}: metrized complexes and {Berkovich} skeleta*. (2015) [ABBR]
+- Tamagawa, Akio. *Resolution of Nonsingularities of Families of Curves*. (2004) [TamagawaRNS]
+- Lepage, Emmanuel. *Resolution of Nonsingularities for {Mumford} Curves*. (2013) [LepageRNS]
+- Baker, Matthew, Rabinoff, Joseph. *The skeleton of the {Jacobian}, the {Jacobian} of the skeleton, and lifting meromorphic functions from tropical to algebraic curves*. (2015) [BakerRabinoff]
+- Koenigsmann, Jochen. *On the `section conjecture' in anabelian geometry*. (2005) [Koenigsmann]
+- . *Rev{\^e}tements {\'e}tales et groupe fondamental ({SGA}~1)*. (2003) [SGA1]
+- Poineau, J{\'e}r{\^o}me. *Raccord sur les espaces de {Berkovich}*. (2010) [GAGA]
+- Temkin, Michael. *Introduction to {Berkovich} analytic spaces*. (2010) [TemkinAnalytic]
+- … and 22 more

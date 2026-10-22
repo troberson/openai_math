@@ -305,3 +305,33 @@ elaborates.
 - [S28](../../../lean/OAI/RingTheory/Tachikawa/Counterexample.lean)
 - [S29](../../../lean/ComparatorChallenges/AuslanderReiten.lean)
 - [S30](../../../lean/ComparatorChallenges/Tachikawa.lean)
+
+## Bibliography
+
+**25 entries** from `refs.bib`:
+- Luo, Rong, Huang, Zhaoyong. *When are torsionless modules projective?*. (2008) [LuoHuang2008]
+- Enomoto, Haruhisa. *{Tachikawa}'s second conjecture implies the {Auslander--Reiten} conjecture*. (2026) [Enomoto2026]
+- Zhang, Xiaojin, Zhou, Panyue. *{Igusa--Todorov} algebras and the {Auslander--Reiten} conjecture*. (2026) [ZhangZhouIgusaTodorov2026]
+- Xia, Weiheng. *The {Auslander--Reiten} conjecture for quantum complete intersections*. (2026) [Xia2026]
+- Diveris, Kosmas, Purin, Marju. *Vanishing of self-extensions over symmetric algebras*. (2014) [DiverisPurin2014]
+- Erdmann, Karin. *{Ext}-finite modules for weakly symmetric algebras with radical cube zero*. (2017) [Erdmann2017]
+- {OpenAI}. *{A counterexample to Tachikawa's second conjecture}*. (2026) [OpenAITachikawa2026]
+- Erdmann, Karin, Holloway, Miles, Snashall, Nicole and
+            Solberg, {\O}yvind, Taillefer, Rachel. *Support varieties for selfinjective algebras*. (2004) [ErdmannEtAl2003]
+- Auslander, Maurice, Reiten, Idun. *On a generalized version of the {Nakayama} conjecture*. (1975) [AuslanderReiten1975]
+- Huneke, Craig, Leuschke, Graham J.. *On a conjecture of {Auslander} and {Reiten}*. (2004) [HunekeLeuschke2004]
+- … and 15 more
+
+**32 entries** from `refs.bib`:
+- Mueller, Bruno J.. *The classification of algebras by dominant dimension*. (1968) [Mueller1968]
+- Zhang, Yingying. *Excellent extensions and homological conjectures*. (2018) [Zhang2018HomologicalConjectures]
+- Divaani-Aazar, Kamran, Mahin Fallah, Ali, Tousi, Massoud. *On the {Wakamatsu} tilting conjecture*. (2025) [DivaaniAazarMahinFallahTousi2025]
+- Huang, Zhaoyong. *{Wakamatsu} tilting modules, {$U$}-dominant dimension,
+           and {$k$}-{Gorenstein} modules*. (2006) [Huang2006]
+- Chen, Hongxing, Fang, Ming, Xi, Changchang. *{Tachikawa}'s second conjecture, derived recollements, and gendo-symmetric algebras*. (2024) [ChenFangXi2024]
+- Auslander, Maurice, Reiten, Idun. *On a generalized version of the {Nakayama} conjecture*. (1975) [AuslanderReiten1975]
+- Schulz, Rainer. *A non-projective module without self-extensions*. (1994) [Schulz1994]
+- Schulz, Rainer. *Finite generation of the extension algebra {$\operatorname{Ext}^{*}_{R}(M,M)$}*. (1995) [Schulz1995]
+- Enomoto, Haruhisa, Marczinzik, Ren{\'e}. *On the homological conjectures for {Artin} algebras*. (2026) [Enomoto2026]
+- Zhang, Xiaojin, Zhou, Panyue. *{Igusa--Todorov} algebras and the {Auslander--Reiten} conjecture*. (2026) [ZhangZhouIgusaTodorov2026]
+- … and 22 more

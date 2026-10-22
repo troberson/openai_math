@@ -133,3 +133,18 @@ The declaration is `OAI.TorsionFreeZeroDivisors.main` at `lean/OAI/Algebra/Group
 - [S12](../../../lean/docs/196.md)
 - [S13](../../../lean/OAI/Algebra/GroupRing/Main.lean)
 - [S14](../../../lean/ComparatorChallenges/TorsionFreeZeroDivisors.lean)
+
+## Bibliography
+
+**22 entries** from `references.bib`:
+- Bereznyuk, Vadim. *Asphericity of groups defined by graphs*. (2019) [Bereznyuk2019]
+- Brown, Kenneth S.. *Cohomology of Groups*. (1982) [Brown1982]
+- Gardam, Giles. *A counterexample to the unit conjecture for group rings*. (2021) [Gardam2021]
+- Garg, Manisha, Mineyev, Igor. *On zero-divisors and units in group rings of torsion-free {CAT(0)} groups*. (2025) [GargMineyev2025]
+- Igor Mineyev. *The Topology and Geometry of Units and Zero-Divisors: Origami*. (2024) [Mineyev2024]
+- Gromov, M.. *Random walk in random groups*. (2003) [Gromov2003]
+- Gruber, Dominik. *Groups with graphical {$C(6)$} and {$C(7)$} small cancellation presentations*. (2015) [Gruber2015]
+- Hatcher, Allen. *Algebraic Topology*. (2002) [Hatcher2002]
+- Lipton, Richard J., Tarjan, Robert Endre. *A separator theorem for planar graphs*. (1979) [LiptonTarjan1979]
+- Ollivier, Yann. *On a small cancellation theorem of {Gromov}*. (2006) [Ollivier2006]
+- … and 12 more

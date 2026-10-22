@@ -133,3 +133,18 @@ What has not been checked: no Lean, lake, or comparator run was performed, and t
 - [S12](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/sections/conclusion.tex)
 - [S13](../../../preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/build/references.bib)
 - [S14](../../../notes/tables/catalog.tsv)
+
+## Bibliography
+
+**38 entries** from `references.bib`:
+- Allard, William K.. *On the first variation of a varifold*. (1972) [Allard1972]
+- Andrews, Ben, Han, Xiaoli, Li, Haizhong, Wei, Yong. *Non-collapsing for hypersurface flows in the sphere and hyperbolic space*. (2012) [AHLW2012]
+- Bernstein, Jacob, Wang, Lu. *Lower bounds on density for topologically nontrivial minimal cones up to dimension six*. (2025) [BernsteinWang2025]
+- Blatt, Simon. *On the analyticity of solutions to non-linear elliptic partial differential equations*. (2024) [Blatt2024]
+- B{\"o}gelein, Verena, Duzaar, Frank, Fusco, Nicola. *A quantitative isoperimetric inequality on the sphere*. (2017) [BDFSphere]
+- Cheng, Siu Yuen, Li, Peter, Yau, Shing-Tung. *Heat equations on minimal submanifolds and their applications*. (1984) [ChengLiYau1984]
+- Cheng, Qing-Ming, Wei, Guoxin, Zeng, Yuting. *Area of minimal hypersurfaces*. (2019) [ChengWeiZeng2019]
+- Federer, Herbert. *Geometric Measure Theory*. (1969) [Federer1969]
+- Ge, Jianquan, Li, Fagui. *A lower bound for {$L^2$} length of second fundamental form on minimal hypersurfaces*. (2021) [GeLi2021]
+- Hatcher, Allen. *Algebraic Topology*. (2002) [Hatcher2002]
+- … and 28 more

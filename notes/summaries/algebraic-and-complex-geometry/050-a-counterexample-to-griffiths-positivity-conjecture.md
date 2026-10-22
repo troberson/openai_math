@@ -120,3 +120,18 @@ The declaration is `OAI.QuadricCounterexample.main_theorem` [S12:10]. The compar
 - [S11](../../../lean/docs/050.md)
 - [S12](../../../lean/OAI/Geometry/QuadricBundles/Main.lean)
 - [S13](../../../lean/ComparatorChallenges/QuadricBundles.lean)
+
+## Bibliography
+
+**26 entries** from `references.bib`:
+- Griffiths, Phillip A.. *Hermitian differential geometry, {Chern} classes, and positive vector bundles*. (1969) [Griffiths1969]
+- Demailly, Jean-Pierre. *Hermitian--{Yang--Mills} approach to the conjecture of {Griffiths} on the positivity of ample vector bundles*. (2021) [Demailly2021]
+- Demailly, Jean-Pierre. *Complex Analytic and Differential Geometry*. (2012) [DemaillyCADG]
+- Forstneri{\v c}, Franc, Kusakabe, Yuta. *{Oka} tubes in holomorphic line bundles*. (2025) [ForstnericKusakabe]
+- Umemura, Hiroshi. *Some results in the theory of vector bundles*. (1973) [Umemura1973]
+- Hartshorne, Robin. *Ample vector bundles*. (1966) [Hartshorne1966]
+- Hartshorne, Robin. *Ample vector bundles on curves*. (1971) [Hartshorne1971]
+- Umemura, Hiroshi. *Fibr\'es vectoriels positifs sur une courbe elliptique*. (1972) [Umemura1972]
+- Campana, Fr\'ed\'eric, Flenner, Hubert. *A characterization of ample vector bundles on a curve*. (1990) [CampanaFlenner1990]
+- Kobayashi, Shoshichi. *Negative vector bundles and complex {Finsler} structures*. (1975) [Kobayashi1975]
+- … and 16 more

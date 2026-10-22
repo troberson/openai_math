@@ -193,3 +193,12 @@ and no certificate ships with it.
 - [S4](../../../preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/README.md)
 - [S5](../../../preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/build/main.tex)
 - [S6](../../../preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/build/references.bib)
+
+## Bibliography
+
+**5 entries** from `references.bib`:
+- Ball, Keith. *{Markov} chains, {Riesz} transforms and {Lipschitz} maps*. (1992) [Ball92]
+- Mendel, Manor, Naor, Assaf. *Spectral calculus and {Lipschitz} extension for barycentric metric spaces*. (2013) [MendelNaor13]
+- Deza, Michel Marie, Laurent, Monique. *Geometry of Cuts and Metrics*. (1997) [DezaLaurent97]
+- Naor, Assaf, Young, Robert. *Foliated corona decompositions*. (2022) [NaorYoung22]
+- Cheng, Qingjin, Wang, Yue, Xiang, Bo. *Sharp metric cotype inequalities for {$L_1$} via nonlinear cut smoothing*. (2026) [ChengWangXiang26]

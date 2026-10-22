@@ -99,3 +99,32 @@ What is not a consequence: BSD for a fixed curve, BSD for a positive proportion 
 - [S13](../../../preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/paper.pdf)
 - [S14](../../../notes/reports/t0-triage.md)
 - [S15](../../../notes/tables/catalog.tsv)
+
+## Bibliography
+
+**96 entries** from `references.bib`:
+- Goldfeld, Dorian. *Conjectures on elliptic curves over quadratic fields*. (1979) [Goldfeld1979]
+- Smith, Alexander. *The {Birch} and {Swinnerton-Dyer} conjecture implies {Goldfeld}'s conjecture*. (2025) [Smith2025]
+- Cai, Li, Shu, Jie, Tian, Ye. *Explicit {Gross--Zagier} and {Waldspurger} formulae*. (2014) [CaiShuTian2014]
+- Kato, Kazuya. *{$p$}-adic {Hodge} theory and values of zeta functions of modular forms*. (2004) [Kato2004]
+- Burungale, Ashay A., Tian, Ye. *A rank zero {$p$}-converse to a theorem of {Gross--Zagier}, {Kolyvagin} and {Rubin}*. (2026) [BurungaleTian2026]
+- Cassels, J. W. S.. *Arithmetic on curves of genus 1. {VIII}. {On} conjectures of {Birch} and {Swinnerton-Dyer}*. (1965) [Cassels1965]
+- Neukirch, J\"urgen. *Algebraic Number Theory*. (1999) [Neukirch1999]
+- Radziwi{\l}{\l}, Maksym, Soundararajan, K.. *Moments and distribution of central {$L$}-values of quadratic twists of elliptic curves*. (2015) [RadziwillSoundararajan2015]
+- Iwaniec, Henryk. *On the order of vanishing of modular {$L$}-functions at the critical point*. (1990) [Iwaniec1990]
+- Heath-Brown, D. R.. *A mean value estimate for real character sums*. (1995) [HeathBrown1995]
+- … and 86 more
+
+**21 entries** from `references.bib`:
+- Goldfeld, Dorian. *Conjectures on elliptic curves over quadratic fields*. (1979) [Goldfeld1979]
+- Hanners, Michael. *Resolution of the {Birch and Swinnerton-Dyer} Conjecture*. (2026) [Hanners2026]
+- Koymans, Peter, Smith, Alexander. *{Tamagawa} Ratios and Unbounded {Selmer} Moments*. (2026) [KoymansSmith2026]
+- Smith, Alexander. *The {Birch} and {Swinnerton-Dyer} conjecture implies {Goldfeld}'s conjecture*. (2025) [Smith2025]
+- {OpenAI}. *{Goldfeld's analytic density conjecture and the $2$-converse for elliptic curves}*. (2026) [OpenAIAnalyticDensityV2]
+- Breuil, Christophe, Conrad, Brian, Diamond, Fred, Taylor, Richard. *On the modularity of elliptic curves over {$\mathbb{Q}$}:
+             Wild {$3$}-adic exercises*. (2001) [BreuilConradDiamondTaylor2001]
+- Li, Xiannan. *Moments of quadratic twists of modular {$L$}-functions*. (2024) [Li2022]
+- Heath-Brown, D. R.. *A mean value estimate for real character sums*. (1995) [HeathBrown1995]
+- Heath-Brown, D. R.. *The average analytic rank of elliptic curves*. (2004) [HeathBrown2003]
+- Soundararajan, Kannan. *Nonvanishing of quadratic {Dirichlet} {$L$}-functions at {$s=\frac{1}{2}$}*. (2000) [Soundararajan2000]
+- … and 11 more

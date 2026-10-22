@@ -153,3 +153,48 @@ Two caveats for anyone citing this family. The construction is specified, not ex
 - [S34](../../../lean/OAI/Algebra/OddKaplansky/Main.lean)
 - [S35](../../../lean/formalization.yaml)
 - [S36](../../../reasoning_traces/kaplansky-direct-finiteness-characteristic-two.pdf)
+
+## Bibliography
+
+**14 entries** from `references.bib`:
+- Kaplansky, Irving. *Fields and Rings*. (1972) [Kaplansky1972]
+- Montgomery, M. Susan. *Left and right inverses in group algebras*. (1969) [Montgomery1969]
+- Ara, Pere, O'Meara, Kevin C., Perera, Francesc. *Stable finiteness of group rings in arbitrary characteristic*. (2002) [AraOMearaPerera2002]
+- Elek, G{\'a}bor, Szab{\'o}, Endre. *Sofic groups and direct finiteness*. (2004) [ElekSzabo2004]
+- Dykema, Ken, Heister, Timo, Juschenko, Kate. *Finitely presented groups related to {Kaplansky}'s direct finiteness conjecture*. (2015) [DykemaHeisterJuschenko2015]
+- Dykema, Ken, Juschenko, Kate. *On stable finiteness of group rings*. (2015) [DykemaJuschenko2015]
+- Gromov, Mikhail. *Random walk in random groups*. (2003) [Gromov2003]
+- Ollivier, Yann. *On a small cancellation theorem of {Gromov}*. (2006) [Ollivier2006]
+- Lipton, Richard J., Tarjan, Robert Endre. *A separator theorem for planar graphs*. (1979) [LiptonTarjan1979]
+- Hatcher, Allen. *Algebraic Topology*. (2002) [Hatcher2002]
+- … and 4 more
+
+**21 entries** from `references.bib`:
+- Xylouris, Triantafyllos. *On the least prime in an arithmetic progression and estimates
+           for the zeros of {Dirichlet} {$L$}-functions*. (2011) [Xylouris2011]
+- Ceccherini-Silberstein, Tullio, Coornaert, Michel
+           , Phung, Xuan Kien. *Stable finiteness of monoid algebras and surjunctivity*. (2025) [CSCPhungMonoid2025]
+- Ceccherini-Silberstein, Tullio, Coornaert, Michel
+           , Phung, Xuan Kien. *First-order model theory and {Kaplansky}'s stable finiteness
+           conjecture for surjunctive groups*. (2025) [CSCPhungGroup2025]
+- Dykema, Ken, Juschenko, Kate. *On stable finiteness of group rings*. (2015) [DykemaJuschenko2015]
+- Elek, G{\'a}bor, Szab{\'o}, Endre. *Sofic groups and direct finiteness*. (2004) [ElekSzabo2004]
+- Golowich, Louis, Lin, Ting-Chun. *Quantum {LDPC} codes with transversal non-{Clifford} gates
+           via products of algebraic codes*. (2024) [GolowichLin2024]
+- Dinur, Irit, Liu, Siqi, Zhang, Rachel Yun. *New codes on high dimensional expanders*. (2025) [DinurLiuZhang2025]
+- Ara, Pere, O'Meara, Kevin C., Perera, Francesc. *Stable finiteness of group rings in arbitrary characteristic*. (2002) [AraOMearaPerera2002]
+- Montgomery, M. Susan. *Left and right inverses in group algebras*. (1969) [Montgomery1969]
+- Linnik, U. V.. *On the least prime in an arithmetic progression. {I}. {The} basic theorem*. (1944) [Linnik1944]
+- … and 11 more
+
+**9 entries** from `references.bib`:
+- Wolfgang L{\"u}ck. *{$L^2$-Invariants: Theory and Applications to Geometry and $K$-Theory}*. (2002) [Luck2002]
+- G{\'a}bor Elek, Endre Szab{\'o}. *Hyperlinearity, essentially free actions and {$L^2$}-invariants.
+           {The} sofic property*. (2005) [ElekSzabo2005]
+- Bent Fuglede, Richard V. Kadison. *Determinant theory in finite factors*. (1952) [FK1952]
+- {OpenAI}. *{A Counterexample to Kaplansky's Direct-Finiteness Conjecture in Characteristic Two}*. (2026) [CharacteristicTwo]
+- Holger Kammeyer. *A counterexample to the determinant approximation conjecture*. (2026) [Kammeyer2026]
+- Warren Dicks, Thomas Schick. *The spectral measure of certain elements of the complex group ring of a wreath product*. (2002) [DicksSchick2002]
+- Franz Lehner, Markus Neuhauser, Wolfgang Woess. *On the spectrum of lamplighter groups and percolation clusters*. (2008) [LehnerNeuhauserWoess2008]
+- de la Harpe, Pierre, Skandalis, Georges. *D\'eterminant associ\'e \`a une trace sur une alg\`ebre de {Banach}*. (1984) [deLaHarpeSkandalis1984]
+- Thomas Schick. *{$L^2$}-determinant class and approximation of {$L^2$}-{Betti} numbers*. (2001) [Schick2001]

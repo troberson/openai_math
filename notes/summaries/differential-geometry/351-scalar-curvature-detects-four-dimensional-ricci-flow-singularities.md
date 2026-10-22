@@ -182,3 +182,44 @@ The release records 3 manuscripts for this family and 0 formalized paths, 0 comp
 - [S39](../../../preprints/Path-selection-and-an-elliptic-inequality-on-degenerating-Ricci-flat-trees-September-24-2026/build/sections/07-observables.tex)
 - [S40](../../../preprints/Path-selection-and-an-elliptic-inequality-on-degenerating-Ricci-flat-trees-September-24-2026/build/figures/tree-scales.tex)
 - [S41](../../../preprints/Path-selection-and-an-elliptic-inequality-on-degenerating-Ricci-flat-trees-September-24-2026/build/references.bib)
+
+## Bibliography
+
+**13 entries** from `bibliography.tex`:
+- [AIK2015] S.~Angenent, J.~Isenberg, and D.~Knopf, \emph{Degenerate neckpinches in Ricci flow}, J. Reine Angew. Math. \textbf{709} …
+- [AK2004] S.~Angenent and D.~Knopf, \emph{An example of neckpinching for Ricci flow on \(S^{n+1}\)}, Math. Res. Lett. \textbf{11} …
+- [Bamler2018] R.~H. Bamler, \emph{Convergence of Ricci flows with bounded scalar curvature}, Ann. of Math. (2) \textbf{188} (2018), no…
+- [Bohm1999] C.~B\"ohm, \emph{Non-compact cohomogeneity one Einstein manifolds}, Bull. Soc. Math. France \textbf{127} (1999), no.~1, …
+- [CaoZhu2006] H.-D. Cao and X.-P. Zhu, \emph{A complete proof of the Poincar\'e and geometrization conjectures---application of the Ha…
+- [GuZhu2008] H.-L.~Gu and X.-P. Zhu, \emph{The existence of Type II singularities for the Ricci flow on \(S^{n+1}\)}, Comm. Anal. Geo…
+- [Hamilton1995] R.~S. Hamilton, \emph{The formation of singularities in the Ricci flow}, Surveys in Differential Geometry, Vol.~II (Camb…
+- [Krylov2006] N.~V. Krylov, \emph{Parabolic equations with VMO coefficients in spaces with mixed norms}, \href{https://arxiv.org/abs/m…
+- [LSU1968] O.~A. Ladyzhenskaya, V.~A. Solonnikov, and N.~N. Ural'tseva, \emph{Linear and Quasi-linear Equations of Parabolic Type},…
+- [Sesum2005] N.~\v{S}e\v{s}um, \emph{Curvature tensor under the Ricci flow}, Amer. J. Math. \textbf{127} (2005), no.~6, 1315--1324. \…
+- … and 3 more
+
+**35 entries** from `references.bib`:
+- Bamler, Richard H., Zhang, Qi S.. *Heat kernel and curvature bounds in {Ricci} flows with bounded scalar curvature*. (2017) [BamlerZhangI]
+- Bamler, Richard H., Zhang, Qi S.. *Heat kernel and curvature bounds in {Ricci} flows with bounded scalar curvature---{Part II}*. (2019) [BamlerZhangII]
+- Simon, Miles. *Extending four dimensional {Ricci} flows with bounded scalar curvature*. (2020) [SimonExtension]
+- Bamler, Richard H.. *Convergence of {Ricci} flows with bounded scalar curvature*. (2018) [BamlerConvergence]
+- Speissegger, Patrick. *Quasianalytic {Ilyashenko} algebras*. (2018) [SpeisseggerQA]
+- Galal, Zeinab, Kaiser, Tobias, Speissegger, Patrick. *{Ilyashenko} algebras based on transserial asymptotic expansions*. (2020) [GalalKaiserSpeissegger]
+- Li, Chuanhuan, Li, Yi. *Long-time existence of some geometric flows with bounded scalar curvature*. (2026) [LiLiSurvey]
+- Liu, Jiawei, Simon, Miles. *Volume estimates and convergence results for solutions to {Ricci} flow with {$L^p$} bounded scalar curvature*. (2026) [LiuSimon]
+- Hamilton, Richard S.. *Three-manifolds with positive {Ricci} curvature*. (1982) [Hamilton1982]
+- Shi, Wan-Xiong. *Deforming the metric on complete {Riemannian} manifolds*. (1989) [Shi1989]
+- … and 25 more
+
+**13 entries** from `references.bib`:
+- Bamler, Richard H., Zhang, Qi S.. *Heat kernel and curvature bounds in {Ricci} flows with bounded scalar curvature*. (2017) [BamlerZhangI]
+- Bamler, Richard H., Zhang, Qi S.. *Heat kernel and curvature bounds in {Ricci} flows with bounded scalar curvature---{Part II}*. (2019) [BamlerZhangII]
+- Bamler, Richard H.. *Convergence of {Ricci} flows with bounded scalar curvature*. (2018) [BamlerConvergence]
+- Speissegger, Patrick. *Quasianalytic {Ilyashenko} algebras*. (2018) [SpeisseggerQA]
+- Galal, Zeinab, Kaiser, Tobias, Speissegger, Patrick. *{Ilyashenko} algebras based on transserial asymptotic expansions*. (2020) [GalalKaiserSpeissegger]
+- DeTurck, Dennis M., Kazdan, Jerry L.. *Some regularity theorems in {Riemannian} geometry*. (1981) [DeTurckKazdan1981]
+- Deruelle, Alix, Ozuch, Tristan. *A {{\L}ojasiewicz} inequality for {ALE} metrics*. (2025) [DeruelleOzuch2025]
+- Haslhofer, Robert. *A renormalized {Perelman}-functional and a lower bound for the {ADM}-mass*. (2011) [Haslhofer2011]
+- Lockhart, Robert B., McOwen, Robert C.. *Elliptic differential operators on noncompact manifolds*. (1985) [LockhartMcOwen1985]
+- Biquard, Olivier. *D\'esingularisation de m\'etriques d'{Einstein}. {I}*. (2013) [Biquard2011]
+- … and 3 more

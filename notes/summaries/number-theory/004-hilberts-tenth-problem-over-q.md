@@ -153,3 +153,31 @@ On the elliptic-curve side, the 2-converse has its own history, and the companio
 - [S14](../../../notes/reports/t0-triage.md)
 - [S15](../../../notes/tables/catalog.tsv)
 - [S16](../../../notes/reports/counterexample-tag.md)
+
+## Bibliography
+
+**86 entries** from `references.bib`:
+- Silverberg, Alice, Zarhin, Yuri G.. *Semistable reduction and torsion subgroups of abelian varieties*. (1995) [SilverbergZarhin1995]
+- {OpenAI}. *{A pointwise $2$-converse for elliptic curves with rational two-torsion}*. (2026) [PointwiseTwoConverse]
+- {OpenAI}. *{Goldfeld's analytic density conjecture and the $2$-converse for elliptic curves}*. (2026) [UnrestrictedTwoConverse]
+- {OpenAI}. *{Fontaine--Mazur modularity at the prime 2}*. (2026) [OddRegularFontaineMazurAtTwo]
+- Silverman, Joseph H.. *The Arithmetic of Elliptic Curves*. (2009) [Silverman2009]
+- Cassels, J. W. S.. *Arithmetic on curves of genus 1. {IV}. {Proof} of the {Hauptvermutung}*. (1962) [Cassels1962]
+- Poonen, Bjorn, Stoll, Michael. *The {Cassels--Tate} pairing on polarized abelian varieties*. (1999) [PoonenStoll1999]
+- Bosch, Siegfried, L{\"u}tkebohmert, Werner, Raynaud, Michel. *N{\'e}ron Models*. (1990) [BoschLutkebohmertRaynaud1990]
+- Davenport, Harold. *Multiplicative Number Theory*. (2000) [Davenport2000]
+- Neukirch, J{\"u}rgen. *Algebraic Number Theory*. (1999) [Neukirch1999]
+- … and 76 more
+
+**51 entries** from `references.bib`:
+- Breuil, Christophe, Conrad, Brian, Diamond, Fred, Taylor, Richard. *On the modularity of elliptic curves over {$\mathbf Q$}: wild 3-adic exercises*. (2001) [BCDT2001]
+- Birch, Bryan J., Swinnerton-Dyer, H. P. F.. *Notes on elliptic curves. {II}*. (1965) [BirchSwinnertonDyer1965]
+- Tate, John. *On the conjectures of {Birch} and {Swinnerton-Dyer} and a geometric analog*. (1966) [Tate1966]
+- Gross, Benedict H., Zagier, Don B.. *Heegner points and derivatives of {$L$}-series*. (1986) [GrossZagier1986]
+- Kolyvagin, Viktor A.. *Euler systems*. (1990) [Kolyvagin1990]
+- Skinner, Christopher. *A converse to a theorem of {Gross}, {Zagier}, and {Kolyvagin}*. (2020) [Skinner2020]
+- Kim, Chan-Ho. *On the soft {$p$}-converse to a theorem of {Gross--Zagier} and {Kolyvagin}*. (2023) [Kim2023SoftConverse]
+- Zhang, Wei. *Selmer groups and the indivisibility of {Heegner} points*. (2014) [Zhang2014Heegner]
+- Castella, Francesc, Grossi, Giada, Lee, Jaehoon, Skinner, Christopher. *On the anticyclotomic {Iwasawa} theory of rational elliptic curves at {Eisenstein} primes*. (2022) [CGLS2022]
+- Burungale, Ashay A., Tian, Ye. *A rank zero {$p$}-converse to a theorem of {Gross--Zagier}, {Kolyvagin} and {Rubin}*. (2026) [BurungaleTian2026]
+- … and 41 more

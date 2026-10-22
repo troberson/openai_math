@@ -190,3 +190,44 @@ What the family gives the rest of the release is a dyadic modularity theorem wit
 - [S28](../../../preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/paper.pdf)
 - [S29](../../../notes/reports/t0-triage.md)
 - [S30](../../../notes/tables/catalog.tsv)
+
+## Bibliography
+
+**28 entries** from `refs.bib`:
+- Fontaine, Jean-Marc, Mazur, Barry. *Geometric {Galois} representations*. (1995) [FM1995]
+- Pan, Lue. *The {Fontaine--Mazur} conjecture in the residually reducible case*. (2022) [Pan2022]
+- Zhang, Xinyao. *On the {Fontaine--Mazur} conjecture for {$p=3$}*. (2025) [Zhang2025]
+- Pa{\v s}k{\=u}nas, Vytautas, Tung, Shen-Ning. *Finiteness properties of the category of mod {$p$} representations of {$\mathrm{GL}_2(\mathbf Q_p)$}*. (2021) [PaskunasTung2021]
+- Chenevier, Ga{\"e}tan. *The {$p$}-adic analytic space of pseudocharacters of a profinite group and pseudorepresentations over arbitrary rings*. (2014) [Chenevier2014]
+- Colmez, Pierre, Dospinescu, Gabriel, Pa{\v s}k{\=u}nas, Vytautas. *The {$p$}-adic local {Langlands} correspondence for {$\mathrm{GL}_2(\mathbf Q_p)$}*. (2014) [CDP2014]
+- Colmez, Pierre. *Repr{\'e}sentations de {$\mathrm{GL}_2(\mathbf Q_p)$} et {$(\varphi,\Gamma)$}-modules*. (2010) [Colmez2010]
+- Katz, Nicholas M.. *{$p$}-adic properties of modular schemes and modular forms*. (1973) [Katz1973]
+- Katz, Nicholas M., Mazur, Barry. *Arithmetic Moduli of Elliptic Curves*. (1985) [KatzMazur1985]
+- Bloch, Spencer, Kato, Kazuya. *{$L$}-functions and {Tamagawa} numbers of motives*. (1990) [BlochKato1990]
+- … and 18 more
+
+**19 entries** from `references.bib`:
+- Emerton, Matthew. *{$p$-adic families of modular forms [after Hida, Coleman, and Mazur]}*. (2011) [Emerton11]
+- Chenevier, Ga{\"e}tan. *The {$p$}-adic analytic space of pseudocharacters of a profinite group and pseudorepresentations over arbitrary rings*. (2014) [Chenevier14]
+- Newton, James, Thorne, Jack A.. *Adjoint {Selmer} groups of automorphic {Galois} representations of unitary type*. (2023) [NewtonThorne23]
+- Allen, Patrick B.. *Deformations of polarized automorphic {Galois} representations and adjoint {Selmer} groups*. (2016) [Allen16]
+- Kisin, Mark. *Geometric deformations of modular {Galois} representations*. (2004) [Kisin04]
+- Barnet-Lamb, Thomas, Gee, Toby, Geraghty, David, Taylor, Richard. *Potential automorphy and change of weight*. (2014) [BLGGT14]
+- Bloch, Spencer, Kato, Kazuya. *{$L$}-functions and {Tamagawa} numbers of motives*. (1990) [BlochKato90]
+- Carayol, Henri. *Sur les repr{\'e}sentations {$l$}-adiques associ{\'e}es aux formes modulaires de {Hilbert}*. (1986) [Carayol86]
+- Deligne, Pierre. *Formes modulaires et repr{\'e}sentations {$\ell$}-adiques*. (1971) [Deligne71]
+- Deligne, Pierre, Serre, Jean-Pierre. *Formes modulaires de poids 1*. (1974) [DeligneSerre74]
+- … and 9 more
+
+**64 entries** from `references.bib`:
+- Fontaine, Jean-Marc, Mazur, Barry. *Geometric {Galois} representations*. (1995) [FM1995]
+- Pan, Lue. *The {Fontaine--Mazur} conjecture in the residually reducible case*. (2022) [Pan2022]
+- Zhang, Xinyao. *On the {Fontaine--Mazur} conjecture for {$p=3$}*. (2025) [Zhang2025]
+- Thorne, Jack A.. *Towards the {Fontaine--Mazur} conjecture for {$\mathrm{GL}_2$}*. (2026) [Thorne2026]
+- B{\"o}ckle, Gebhard, Iyengar, Ashwin, Pa{\v s}k{\=u}nas, Vytautas. *On local {Galois} deformation rings*. (2023) [BIP]
+- Chenevier, Ga{\"e}tan. *The {$p$}-adic analytic space of pseudocharacters of a profinite group and pseudorepresentations over arbitrary rings*. (2014) [Chenevier2014]
+- Wang-Erickson, Carl. *Algebraic families of {Galois} representations and potentially semi-stable pseudodeformation rings*. (2018) [WangErickson2018]
+- Labute, John P.. *Classification of {Demushkin} Groups*. (1967) [Demushkin]
+- Grothendieck, Alexander. *Cohomologie locale des faisceaux coh{\'e}rents et th{\'e}or{\`e}mes de {Lefschetz} locaux et globaux ({SGA} 2)*. (2005) [SGA2]
+- Milne, J. S.. *Arithmetic Duality Theorems*. (2006) [Milne2006]
+- … and 54 more

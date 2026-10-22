@@ -75,3 +75,18 @@ The consequence for the catalog is a citation edge, not a recorded dependency: t
 - [S6](../../../preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/sections/sewing.tex)
 - [S7](../../../preprints/Every-complex-K3-surface-is-Oka-September-23-2026/build/references.bib)
 - [S8](../../../preprints/Every-complex-K3-surface-is-Oka-September-23-2026/README.md)
+
+## Bibliography
+
+**30 entries** from `references.bib`:
+- Forstneri{\v c}, Franc. *Stein Manifolds and Holomorphic Mappings: The Homotopy Principle in Complex Analysis*. (2017) [Forstneric]
+- Forstneri{\v c}, Franc. *Runge approximation on convex sets implies the {Oka} property*. (2006) [ForstnericCAP]
+- Forstneri{\v c}, Franc, L{\'a}russon, Finnur. *Holomorphic flexibility properties of compact complex surfaces*. (2014) [ForstnericLarussonSurfaces]
+- Forstneri{\v c}, Franc, L{\'a}russon, Finnur. *Survey of {Oka} theory*. (2011) [ForstnericLarussonSurvey]
+- Forstneri{\v c}, Franc, L{\'a}russon, Finnur. *Every projective {Oka} manifold is elliptic*. (2026) [ForstnericLarussonElliptic]
+- Gallego, Francisco Javier, Gonz{\'a}lez, Miguel, Purnaprajna, Bangere P.. *{K3} double structures on {Enriques} surfaces and their smoothings*. (2006) [GallegoGonzalezPurnaprajna]
+- {OpenAI}. *{Global Spherical Shells on Minimal Surfaces of Class VII}*. (2026) [OpenAIGSS]
+- H{\"o}rmander, Lars. *An Introduction to Complex Analysis in Several Variables*. (1990) [Hormander]
+- Siu, Yum-Tong. *Every {Stein} subvariety admits a {Stein} neighborhood*. (1976) [Siu]
+- Grauert, Hans. *Ein {Theorem} der analytischen {Garbentheorie} und die {Modulr\"aume} komplexer {Strukturen}*. (1960) [Grauert]
+- … and 20 more

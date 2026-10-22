@@ -250,3 +250,18 @@ fixed-port composition." [S3:363-364]
 - [S5](../../../preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/references.bib)
 - [S6](../../../overview.tex)
 - [S7](../../../CONTENTS.md)
+
+## Bibliography
+
+**35 entries** from `references.bib`:
+- Babichenko, Yakov, Papadimitriou, Christos H., Rubinstein, Aviad. *Can Almost Everybody be Almost Happy?*. (2016) [BPR2016]
+- Argyrios Deligkas, John Fearnley, Alexandros Hollender, Themistoklis Melissourgos. *Fisher Markets with Approximately Optimal Bundles and the Need for a {PCP} Theorem for {PPAD}*. (2026) [Fisher2026]
+- Deligkas, Argyrios, Fearnley, John, Hollender, Alexandros, Melissourgos, Themistoklis. *{Pure-Circuit}: Tight Inapproximability for {PPAD}*. (2024) [DFHM2024]
+- Dinur, Irit, Evra, Shai, Livne, Ron, Lubotzky, Alexander, Mozes, Shahar. *Locally Testable Codes with Constant Rate, Distance, and Locality*. (2022) [DEL+2022]
+- Friedl, Katalin, Sudan, Madhu. *Some Improvements to Total Degree Tests*. (2013) [FS1995]
+- Ershov, Mikhail, Jaikin-Zapirain, Andrei. *Property {(T)} for Noncommutative Universal Lattices*. (2010) [EJZ2010]
+- Shalom, Yehuda. *Bounded Generation and {Kazhdan}'s Property {(T)}*. (1999) [Shalom1999]
+- Helfgott, H. A.. *The Ternary {Goldbach} Conjecture Is True*. (2013) [Helfgott2013]
+- Xylouris, Triantafyllos. *On {Linnik}'s Constant*. (2009) [Xylouris2011]
+- Bourgain, Jean, Gamburd, Alex. *Uniform Expansion Bounds for {Cayley} Graphs of {$\mathrm{SL}_2(\mathbb{F}_p)$}*. (2008) [BG2008]
+- … and 25 more

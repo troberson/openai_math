@@ -196,3 +196,31 @@ What has not been checked: no Lean, lake, or comparator run was performed, and f
 - [S11](../../../preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/build/sections/introduction.tex)
 - [S12](../../../preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/build/references.bib)
 - [S13](../../../notes/tables/catalog.tsv)
+
+## Bibliography
+
+**23 entries** from `references.bib`:
+- {OpenAI}. *{Almost-everywhere regularity of stationary integral varifolds}*. (2026) [AE]
+- Allard, William K.. *On the first variation of a varifold*. (1972) [Allard1972]
+- Allard, William K.. *Notes on the theory of varifolds*. (1987) [Allard1987]
+- Simon, Leon. *Introduction to Geometric Measure Theory*. (2018) [Simon2018]
+- Simon, Leon. *Lectures on Geometric Measure Theory*. (1983) [Simon1983]
+- Federer, Herbert. *Geometric Measure Theory*. (1969) [Federer1969]
+- Federer, Herbert. *The singular sets of area minimizing rectifiable currents with codimension one and of area minimizing flat chains modulo two with arbitrary codimension*. (1970) [Federer1970]
+- Mattila, Pertti. *Geometry of Sets and Measures in {Euclidean} Spaces: Fractals and Rectifiability*. (1995) [Mattila1995]
+- Almgren, Jr., Frederick J.. *Almgren's Big Regularity Paper: {$Q$}-Valued Functions Minimizing {Dirichlet}'s Integral and the Regularity of Area-Minimizing Rectifiable Currents up to Codimension {$2$}*. (2000) [Almgren2000]
+- Brakke, Kenneth A.. *The Motion of a Surface by Its Mean Curvature*. (1978) [Brakke1978]
+- … and 13 more
+
+**20 entries** from `references.bib`:
+- Allard, William K.. *On the first variation of a varifold*. (1972) [Allard1972]
+- Allard, William K.. *Notes on the theory of varifolds*. (1987) [Allard1987]
+- Simon, Leon. *Lectures on Geometric Measure Theory*. (1983) [Simon1983]
+- Brena, Camillo, De Lellis, Camillo, Franceschini, Federico. *{$C^\infty$} rectifiability of stationary varifolds*. (2025) [BDLF2025]
+- Brena, Camillo, Decio, Stefano, De Lellis, Camillo. *Remarks and conjectures on stationary varifolds dedicated to {Enrico Bombieri}*. (2025) [BDD2025]
+- Simon, Leon. *Introduction to Geometric Measure Theory*. (2018) [Simon2018]
+- {OpenAI}. *{The Solomon--Yau least-volume theorem}*. (2026) [OpenAISolomonYau2026]
+- Menne, Ulrich. *Second order rectifiability of integral varifolds of locally bounded first variation*. (2013) [Menne2013]
+- Almgren, Jr., Frederick J.. *Almgren's Big Regularity Paper*. (2000) [Almgren2000]
+- De Lellis, Camillo, Spadaro, Emanuele Nunzio. *{$Q$}-valued functions revisited*. (2011) [DLS2011]
+- … and 10 more

@@ -256,3 +256,18 @@ What has not been checked: no Lean, lake, or comparator run was performed, and f
 - [S16](../../../preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/build/sections/equivariant.tex)
 - [S17](../../../preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/build/references.bib)
 - [S18](../../../notes/tables/catalog.tsv)
+
+## Bibliography
+
+**28 entries** from `references.bib`:
+- Hingston, Nancy, Rademacher, Hans-Bert. *Resonance for loop homology of spheres*. (2013) [HingstonRademacher2013]
+- Hingston, Nancy, Wahl, Nathalie. *Product and coproduct in string topology*. (2023) [HingstonWahl2023]
+- Bangert, Victor. *On the existence of closed geodesics on two-spheres*. (1993) [Bangert1993]
+- Franks, John. *Geodesics on {$S^2$} and periodic points of annulus homeomorphisms*. (1992) [Franks1992]
+- Hingston, Nancy. *On the growth of the number of closed geodesics on the two-sphere*. (1993) [Hingston1993]
+- De Philippis, Guido, Marini, Michele, Mazzucchelli, Marco, Suhr, Stefan. *Closed geodesics on reversible {Finsler} 2-spheres*. (2022) [DePhilippisMariniMazzucchelliSuhr2022]
+- Contreras, Gonzalo, Mazzucchelli, Marco. *Closed geodesics and the first {Betti} number*. (2025) [ContrerasMazzucchelli2025]
+- Hatcher, Allen. *Vector Bundles \& {K}-Theory*. (2017) [HatcherVBKT2017]
+- Bott, Raoul. *On the iteration of closed geodesics and the {Sturm} intersection theory*. (1956) [Bott1956Iteration]
+- Gromoll, Detlef, Meyer, Wolfgang. *Periodic geodesics on compact {Riemannian} manifolds*. (1969) [GromollMeyer1969]
+- … and 18 more

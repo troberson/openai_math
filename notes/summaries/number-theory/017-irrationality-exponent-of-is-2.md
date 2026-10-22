@@ -240,3 +240,18 @@ results on logarithms at algebraic arguments are in the same list [S10:70–79].
 - [S17](../../../lean/OAI/NumberTheory/PiExponent/Analysis/DyadicSpacing.lean)
 - [S18](../../../lean/OAI/NumberTheory/PiExponent/Analysis/FlintSine.lean)
 - [S19](../../../reasoning_traces/irrationality-exponent-of-pi.pdf)
+
+## Bibliography
+
+**25 entries** from `references.bib`:
+- Salikhov, V. Kh.. *On the irrationality measure of {$\pi$}*. (2008) [salikhov]
+- Zeilberger, Doron, Zudilin, Wadim. *The irrationality measure of {$\pi$} is at most {7.103205334137\ldots}*. (2020) [zeilbergerzudilin]
+- Alekseyev, Max A.. *On convergence of the {Flint Hills} series*. (2011) [alekseyev]
+- Meiburg, Alex. *Bounds on irrationality measures and the {Flint-Hills} series*. (2022) [meiburg]
+- Lazarsfeld, Robert. *Positivity in Algebraic Geometry {I}: Classical Setting: Line Bundles and Linear Series*. (2004) [lazarsfeld]
+- {The Stacks Project Authors}. *The {Stacks Project}*. (2026) [stacks]
+- Mondal, Pinaki. *How many zeroes? Counting the number of solutions of systems of polynomials via geometry at infinity ({Draft III})*. (2021) [mondal2021]
+- Waldschmidt, Michel. *Open {Diophantine} problems*. (2004) [waldschmidt]
+- Mahler, Kurt. *On the approximation of {$\pi$}*. (1953) [mahler1953]
+- Mignotte, Maurice. *Approximations rationnelles de {$\pi$} et quelques autres nombres*. (1974) [mignotte1974]
+- … and 15 more

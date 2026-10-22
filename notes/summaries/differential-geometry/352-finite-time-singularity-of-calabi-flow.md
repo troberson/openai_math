@@ -135,3 +135,18 @@ The release records 1 manuscript for this family and 0 formalized paths, 0 compa
 - [S17](../../../preprints/A-finite-time-singularity-of-Calabi-flow-on-projective-space-September-24-2026/verification/certificate.py)
 - [S18](../../../preprints/A-finite-time-singularity-of-Calabi-flow-on-projective-space-September-24-2026/verification/arithmetic_allowances.py)
 - [S19](../../../preprints/A-finite-time-singularity-of-Calabi-flow-on-projective-space-September-24-2026/verification/tail-check.py)
+
+## Bibliography
+
+**21 entries** from `references.bib`:
+- Calabi, Eugenio. *Extremal {K}\"ahler metrics*. (1982) [Calabi1982]
+- Chen, Xiuxiong. *{Calabi} flow in {Riemann} surfaces revisited: a new point of view*. (2001) [Chen2001]
+- Chen, Xiuxiong, He, Weiyong. *On the {Calabi} flow*. (2008) [ChenHe2008]
+- He, Weiyong, Zeng, Yu. *The {Calabi} flow with rough initial data*. (2021) [HeZeng2021]
+- Dong, Hongjie, Zhang, Hong. *Schauder estimates for higher-order parabolic systems with time irregular coefficients*. (2015) [DongZhang2015]
+- Guan, Daniel. *Extremal solitons and exponential {$C^\infty$} convergence of the modified {Calabi} flow on certain {$\mathbb{CP}^1$} bundles*. (2007) [Guan2007]
+- Berman, Robert J., Darvas, Tam{\'a}s, Lu, Chinh H.. *Convexity of the extended {$K$}-energy and the large time behavior of the weak {Calabi} flow*. (2017) [BermanDarvasLu2017]
+- Li, Haozhao, Zhang, Linwei, Zheng, Kai. *{Calabi} flow with bounded {$L^p$} scalar curvature*. (2024) [LiZhangZheng2024]
+- Li, Haozhao, Zhang, Linwei. *{Calabi} flow with bounded {$L^p$} scalar curvature ({II})*. (2025) [LiZhang2025]
+- Kato, Tosio. *Perturbation Theory for Linear Operators*. (1995) [Kato1995]
+- … and 11 more

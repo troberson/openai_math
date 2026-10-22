@@ -165,3 +165,38 @@ What the family gives the rest of the release is a smooth-shifted-prime count wi
 - [S18](../../../preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf)
 - [S19](../../../notes/reports/t0-triage.md)
 - [S20](../../../notes/tables/catalog.tsv)
+
+## Bibliography
+
+**23 entries** from `references.bib`:
+- Erd{\H{o}}s, Paul. *On the normal number of prime factors of {$p-1$} and some related problems concerning {Euler}'s {$\varphi$}-function*. (1935) [Erdos1935]
+- Erd{\H{o}}s, Paul. *On pseudoprimes and {Carmichael} numbers*. (1956) [Erdos1956]
+- Pomerance, Carl. *Popular values of {Euler}'s function*. (1980) [Pomerance1980]
+- Baker, R. C., Harman, Glyn. *Shifted primes without large prime factors*. (1998) [BakerHarman1998]
+- Lichtman, Jared Duker. *Primes in arithmetic progressions to large moduli, and shifted primes without large prime factors*. (2022) [Lichtman2022]
+- Bharadwaj, Abhishek, Rodgers, Brad. *Large prime factors of well-distributed sequences*. (2026) [BharadwajRodgers2026]
+- Tao, Terence. *{254A}, Notes 2: Complex-analytic multiplicative number theory*. (2014) [TaoSW]
+- Tao, Terence. *{254A}, Notes 1: Elementary multiplicative number theory*. (2014) [TaoMertens]
+- Montgomery, Hugh L., Vaughan, Robert C.. *Multiplicative Number Theory {II}: Primes and Sieves*. [MontgomeryVaughanII]
+- Alford, W. R., Granville, Andrew, Pomerance, Carl. *There are infinitely many {Carmichael} numbers*. (1994) [AlfordGranvillePomerance1994]
+- … and 13 more
+
+**28 entries** from `references.bib`:
+- Billingsley, Patrick. *On the distribution of large prime divisors*. (1972) [Billingsley]
+- Donnelly, Peter, Grimmett, Geoffrey. *On the asymptotic distribution of large prime factors*. (1993) [DonnellyGrimmett]
+- Granville, Andrew. *Smooth numbers: computational number theory and beyond*. (2008) [Granville]
+- Dickman, K.. *On the frequency of numbers containing prime factors of a certain relative magnitude*. (1930) [Dickman]
+- Erd{\H{o}}s, Paul. *On the normal number of prime factors of {$p-1$} and some related problems concerning {Euler}'s {$\varphi$}-function*. (1935) [Erdos1935]
+- Erd{\H{o}}s, Paul. *On pseudoprimes and {Carmichael} numbers*. (1956) [Erdos1956]
+- Pomerance, Carl. *Popular values of {Euler}'s function*. (1980) [Pomerance1980]
+- Baker, R. C., Harman, Glyn. *Shifted primes without large prime factors*. (1998) [BakerHarman1998]
+- Lichtman, Jared Duker. *Primes in arithmetic progressions to large moduli, and shifted primes without large prime factors*. (2022) [Lichtman2022]
+- Bharadwaj, Abhishek, Rodgers, Brad. *Large prime factors of well-distributed sequences*. (2026) [BharadwajRodgers2026]
+- … and 18 more
+
+**5 entries** from `references.tex`:
+- [BakerHarman] R.~C. Baker and G.~Harman, \emph{Shifted primes without large prime factors}, Acta Arith. \textbf{83} (1998), no.~4, 331…
+- [FriedlanderIwaniec] J.~Friedlander and H.~Iwaniec, \emph{Asymptotic sieve for primes}, Ann. of Math. (2) \textbf{148} (1998), no.~3, 1041--1…
+- [Lichtman] J.~D. Lichtman, \emph{Primes in arithmetic progressions to large moduli, and shifted primes without large prime factors}…
+- [SmoothShifted] OpenAI, \emph{Weighted dilation graphs, smooth shifted primes and totient fibers}, OpenAI Math Release preprint \href{ht…
+- [Wooley2012] T.~D. Wooley, \emph{Vinogradov's mean value theorem via efficient congruencing}, Ann. of Math. (2) \textbf{175} (2012), …

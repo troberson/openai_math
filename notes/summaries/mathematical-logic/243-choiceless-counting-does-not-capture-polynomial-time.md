@@ -199,3 +199,31 @@ claims exist and names their declarations; the two comparator configs carry
 - [S18](../../../lean/OAI/Computability/WitnessedChoice/Model.lean)
 - [S19](../../../lean/ComparatorChallenges/ChoicelessPolynomialTime.lean)
 - [S20](../../../lean/ComparatorChallenges/WitnessedChoice.lean)
+
+## Bibliography
+
+**25 entries** from `references.bib`:
+- Andreas Blass, Yuri Gurevich, Saharon Shelah. *Choiceless Polynomial Time*. (1999) [bgs1999]
+- Andreas Blass, Yuri Gurevich, Saharon Shelah. *On Polynomial Time Computation Over Unordered Structures*. (2002) [bgs2002]
+- Jin-Yi Cai, Martin F{\"u}rer, Neil Immerman. *An Optimal Lower Bound on the Number of Variables for Graph Identification*. (1992) [cfi1992]
+- Anuj Dawar, David Richerby, Benjamin Rossman. *Choiceless Polynomial Time, Counting and the {Cai--F{\"u}rer--Immerman} Graphs*. (2008) [drr2008]
+- Erich Gr{\"a}del, Wied Pakusa, Svenja Schalth{\"o}fer, {\L}ukasz Kaiser. *Characterising Choiceless Polynomial Time with First-Order Interpretations*. (2015) [gkps2015]
+- Martin Grohe, Pascal Schweitzer, Daniel Wiebking. *Deep {Weisfeiler Leman}*. (2021) [gsw2020]
+- Saharon Shelah. *Choiceless Polynomial Time Logic: Inability to Express*. (2000) [shelah2000]
+- Benjamin Rossman. *Choiceless Computation and Symmetry*. (2010) [rossman2010]
+- Benedikt Pago. *Choiceless Computation and Symmetry: Limitations of Definability*. (2021) [pago2021]
+- Benedikt Pago. *Lower Bounds for Choiceless Polynomial Time via Symmetric {XOR}-Circuits*. (2023) [pago2023]
+- … and 15 more
+
+**20 entries** from `references.bib`:
+- Andreas Blass, Yuri Gurevich, Saharon Shelah. *Choiceless Polynomial Time*. (1999) [bgs1999]
+- Andreas Blass, Yuri Gurevich, Saharon Shelah. *On Polynomial Time Computation over Unordered Structures*. (2002) [bgs2002]
+- Anuj Dawar, David Richerby, Benjamin Rossman. *Choiceless Polynomial Time, Counting and the {Cai--F{\"u}rer--Immerman} Graphs*. (2008) [drr2008]
+- Moritz Lichter, Pascal Schweitzer. *Choiceless Polynomial Time with Witnessed Symmetric Choice*. (2023) [ls2023]
+- {OpenAI}. *{Choiceless polynomial time with counting does not capture polynomial time}*. (2026) [cptCompanion2026]
+- Jin-Yi Cai, Martin F{\"u}rer, Neil Immerman. *An Optimal Lower Bound on the Number of Variables for Graph Identification*. (1992) [cfi1992]
+- Saharon Shelah. *Choiceless Polynomial Time Logic: Inability to Express*. (2000) [shelah2000]
+- Benjamin Rossman. *Choiceless Computation and Symmetry*. (2010) [rossman2010]
+- Benedikt Pago. *Choiceless Computation and Symmetry: Limitations of Definability*. (2021) [pago2021]
+- Benedikt Pago. *Lower Bounds for Choiceless Polynomial Time via Symmetric {XOR}-Circuits*. (2023) [pago2023]
+- … and 10 more

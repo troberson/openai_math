@@ -217,3 +217,31 @@ in the Lean library reaches it, and no certificate ships with it.
 - [S9](../../../preprints/Rigidity-of-Smooth-Billiards-with-a-Continuous-Caustic-Collar-September-24-2026/build/main.tex)
 - [S10](../../../preprints/Rigidity-of-Smooth-Billiards-with-a-Continuous-Caustic-Collar-September-24-2026/build/sections/01-introduction.tex)
 - [S11](../../../preprints/Rigidity-of-Smooth-Billiards-with-a-Continuous-Caustic-Collar-September-24-2026/build/references/references.bib)
+
+## Bibliography
+
+**16 entries** from `references.bib`:
+- {OpenAI}. *{Rigidity of Smooth Billiards with a Continuous Caustic Collar}*. (2026) [NB]
+- Birkhoff, George D.. *On the periodic motions of dynamical systems*. (1927) [Birkhoff1927]
+- Marvizi, Shahla, Melrose, Richard B.. *Spectral invariants of convex planar regions*. (1982) [MarviziMelrose1982]
+- Mather, John N.. *Glancing billiards*. (1982) [Mather1982]
+- Arnaud, Marie-Claude. *Three results on the regularity of the curves that are invariant by an exact symplectic twist map*. (2009) [Arnaud2009]
+- Bialy, Misha. *Convex billiards and a theorem by {E. Hopf}*. (1993) [Bialy1993]
+- Bialy, Misha, Mironov, Andrey E.. *Angular billiard and algebraic {Birkhoff} conjecture*. (2017) [BialyMironov2017]
+- Bialy, Misha, Mironov, Andrey E.. *The {Birkhoff}--{Poritsky} conjecture for centrally-symmetric billiard tables*. (2022) [BialyMironov2022]
+- Glutsyuk, Alexey. *On infinitely many foliations by caustics in strictly convex open billiards*. (2024) [Glutsyuk2024]
+- Fierobe, Corentin, Sorrentino, Alfonso. *On the existence of periodic invariant curves for analytic families of twist maps and billiards*. (2026) [FierobeSorrentino2026]
+- … and 6 more
+
+**24 entries** from `references.bib`:
+- Pollard, David. *A User's Guide to Measure Theoretic Probability*. (2002) [Pollard2002]
+- Durrett, Rick. *Probability: Theory and Examples*. (2019) [Durrett2019]
+- Birkhoff, George D.. *On the periodic motions of dynamical systems*. (1927) [Birkhoff1927]
+- Poritsky, Hillel. *The billard ball problem on a table with a convex boundary---an illustrative dynamical problem*. (1950) [Poritsky1950]
+- Lazutkin, V. F.. *The existence of caustics for a billiard problem in a convex domain*. (1973) [Lazutkin1973]
+- Marvizi, Shahla, Melrose, Richard. *Spectral invariants of convex planar regions*. (1982) [MM1982]
+- Mather, John N.. *Glancing billiards*. (1982) [Mather1982]
+- Bialy, Misha. *Convex billiards and a theorem by {E. Hopf}*. (1993) [Bialy1993]
+- Innami, Nobuhiro. *Geometry of geodesics for convex billiards and circular billiards*. (2002) [Innami2002]
+- Arnold, Maxim, Bialy, Misha. *Nonsmooth convex caustics for {Birkhoff} billiards*. (2018) [AB2018]
+- … and 14 more

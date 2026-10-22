@@ -244,3 +244,18 @@ The published reasoning trace for this family is `reasoning_traces/free-group-fa
 - [S40](../../../lean/OAI/Analysis/InterpolatedFactors/GroupBridge.lean)
 - [S41](../../../lean/OAI/Analysis/InterpolatedFactors/Fock.lean)
 - [S42](../../../lean/OAI/Analysis/InterpolatedFactors/Rerouting.lean)
+
+## Bibliography
+
+**17 entries** from `references.bib`:
+- Dykema, Ken. *Interpolated free group factors*. (1994) [dykema1994]
+- R{\u a}dulescu, Florin. *Random matrices, amalgamated free products and subfactors of the von {Neumann} algebra of a free group, of noninteger index*. (1994) [radulescu1994]
+- Murray, F. J., von Neumann, J.. *On rings of operators. {IV}*. (1943) [murray_vonneumann1943]
+- Fox, Ralph H.. *Free differential calculus. {I}. Derivation in the free group ring*. (1953) [fox1953]
+- Voiculescu, Dan. *Symmetries of some reduced free product {$C^*$}-algebras*. (1985) [voiculescu1985]
+- Voiculescu, Dan. *Circular and semicircular systems and free product factors*. (1990) [voiculescu1990]
+- R{\u a}dulescu, Florin. *The fundamental group of the von {Neumann} algebra of a free group with infinitely many generators is {$\mathbb R_+\setminus\{0\}$}*. (1992) [radulescu1992]
+- Voiculescu, Dan. *Cyclomorphy*. (2002) [voiculescu2002cyclomorphy]
+- Ricard, {\'E}ric, Xu, Quanhua. *Khintchine type inequalities for reduced free products and applications*. (2006) [ricard_xu2006]
+- Guionnet, Alice, Shlyakhtenko, Dimitri. *Free monotone transport*. (2014) [guionnet_shlyakhtenko2014]
+- … and 7 more

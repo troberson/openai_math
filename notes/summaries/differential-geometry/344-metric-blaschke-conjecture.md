@@ -318,3 +318,18 @@ What has not been checked: no Lean, lake, or comparator run was performed, and f
 - [S15](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/09-classification.tex)
 - [S16](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/references.bib)
 - [S17](../../../notes/tables/catalog.tsv)
+
+## Bibliography
+
+**32 entries** from `references.bib`:
+- Besse, Arthur L.. *Manifolds all of whose Geodesics are Closed*. (1978) [Besse1978]
+- McKay, Benjamin. *Summary of progress on the {Blaschke} conjecture*. (2016) [McKay2016]
+- Yang, Chung-Tao. *Any {Blaschke} manifold of the homotopy type of {$\mathbf{C}P^n$} has the right volume*. (1991) [Yang1991]
+- Reznikov, Alexander G.. *The weak {Blaschke} conjecture for {$\mathbf{H}P^n$}*. (1985) [Reznikov1985HP]
+- Reznikov, Alexander G.. *The weak {Blaschke} conjecture for {$\mathbf{C}P^n$}*. (1994) [Reznikov1994CP]
+- Szab{\'o}, Zolt{\'a}n I.. *The {Lichnerowicz} conjecture on harmonic manifolds*. (1990) [Szabo1990]
+- Szab{\'o}, Zolt{\'a}n I.. *Harmonic manifolds; the proof of the {Lichnerowicz} conjecture in the compact case*. (1988) [Szabo1988]
+- {\'A}lvarez Paiva, Juan-Carlos. *Asymmetry in {Hilbert}'s fourth problem*. (2013) [AlvarezPaiva2013]
+- Blaschke, Wilhelm. *Vorlesungen {\"u}ber Differentialgeometrie und geometrische Grundlagen von {Einsteins} Relativit{\"a}tstheorie. {I}: Elementare Differentialgeometrie*. (1921) [Blaschke1921]
+- Berger, Marcel. *Une borne inf{\'e}rieure pour le volume d'une vari{\'e}t{\'e} riemannienne en fonction du rayon d'injectivit{\'e}*. (1980) [Berger1980]
+- … and 22 more

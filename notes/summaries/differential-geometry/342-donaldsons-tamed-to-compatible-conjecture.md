@@ -229,3 +229,21 @@ The formalization consequence is a gap, not a coverage. The declaration proves t
 - [S20](../../../lean/OAI/Geometry/TamingCompatibility/Main.lean)
 - [S21](../../../history.md)
 - [S22](../../../notes/tables/catalog.tsv)
+
+## Bibliography
+
+**25 entries** from `references.bib`:
+- Donaldson, S. K.. *Two-forms on four-manifolds and elliptic equations*. (2006) [Donaldson2006]
+- Li, Tian-Jun, Zhang, Weiyi. *Comparing tamed and compatible symplectic cones and
+             cohomological properties of almost complex manifolds*. (2009) [LiZhang2009]
+- Taubes, Clifford Henry. *Tamed to compatible: Symplectic forms via moduli space integration*. (2011) [Taubes2011]
+- Tan, Qiang, Wang, Hongyu, Zhou, Jiuru, Zhu, Peng. *On tamed almost complex four-manifolds*. (2022) [TWZZ2022]
+- Lin, Dexie, Zhou, Hengyu. *A note on {$\widetilde{\mathcal{D}}^{+}_{J}$}-operator*. (2025) [LinZhou2025]
+- Lejmi, Mehdi. *Strictly nearly {K}{\"a}hler 6-manifolds are not compatible
+             with symplectic forms*. (2006) [Lejmi2006]
+- Draghici, Tedi, Zhang, Weiyi. *A note on exact forms on almost complex manifolds*. (2012) [DraghiciZhang2012]
+- Taylor, Michael E.. *Pseudodifferential Operators and Nonlinear {PDE}*. (1991) [Taylor1991]
+- Melrose, Richard. *Introduction to Microlocal Analysis*. (2007) [MelroseIML]
+- Ludewig, Matthias. *Strong short-time asymptotics and convolution approximation
+             of the heat kernel*. (2019) [Ludewig2019]
+- … and 15 more

@@ -175,3 +175,19 @@ The declaration is `OAI.SmallCM.candidate_ring_properties` at `lean/OAI/Algebrai
 - [S6](../../../lean/docs/195.md)
 - [S7](../../../lean/OAI/AlgebraicGeometry/SurfaceCones/CandidateRing.lean)
 - [S8](../../../lean/ComparatorChallenges/SurfaceConeCandidateSupport.lean)
+
+## Bibliography
+
+**19 entries** from `references.bib`:
+- Hochster, Melvin. *Homological conjectures and lim {Cohen--Macaulay} sequences*. (2017) [Hochster2017]
+- Bhatt, Bhargav, Hochster, Mel, Ma, Linquan. *Lim {Cohen--Macaulay} sequences of modules*. (2026) [BhattHochsterMa]
+- Bhatt, Bhargav. *On the non-existence of small {Cohen--Macaulay} algebras*. (2014) [Bhatt2014]
+- Hochster, Melvin, Huneke, Craig. *Infinite integral extensions and big {Cohen--Macaulay} algebras*. (1992) [HochsterHuneke1992]
+- Andr\'e, Yves. *La conjecture du facteur direct*. (2018) [Andre2018]
+- Hochster, Melvin, Yao, Yongwei. *{Frobenius} splitting, strong {$F$}-regularity, and small
+           {Cohen--Macaulay} modules*. (2023) [HochsterYao2023]
+- Huybrechts, Daniel, Lehn, Manfred. *The Geometry of Moduli Spaces of Sheaves*. (1997) [HuybrechtsLehn]
+- Hartshorne, Robin. *Algebraic Geometry*. (1977) [Hartshorne]
+- Hirzebruch, Friedrich. *Arrangements of lines and algebraic surfaces*. (1983) [Hirzebruch1983]
+- Anghel, Cristian. *Smooth Counterexamples to the {Eisenbud--Schreyer--Weyman} {Ulrich} Existence Problem*. (2026) [Anghel2026]
+- … and 9 more

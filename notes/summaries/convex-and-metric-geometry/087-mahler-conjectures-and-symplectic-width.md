@@ -163,3 +163,49 @@ Two gaps follow from the formalization record rather than from the mathematics. 
 - [S41](../../../lean/OAI/Geometry/Convex/GeneralMahler/Theorem.lean)
 - [S42](../../../lean/OAI/Geometry/PolarProducts/Main.lean)
 - [S43](../../../reasoning_traces/symmetric-and-general-mahler-conjectures.pdf)
+
+## Bibliography
+
+**31 entries** from `references.bib`:
+- Mahler, Kurt. *{Ein {\"U}bertragungsprinzip f{\"u}r konvexe K{\"o}rper}*. (1939) [Mahler1939]
+- Mahler, Kurt. *{Ein Minimalproblem f{\"u}r konvexe Polygone}*. (1938) [MahlerPlanar1939]
+- Saint-Raymond, Jean. *{Sur le volume des corps convexes sym{\'e}triques}*. (1981) [SaintRaymond1981]
+- Meyer, Mathieu. *{Une caract{\'e}risation volumique de certains espaces
+            norm{\'e}s de dimension finie}*. (1986) [Meyer1986]
+- Reisner, Shlomo. *Minimal volume-product in {Banach} spaces with
+           a 1-unconditional basis*. (1987) [Reisner1987]
+- Kim, Jaegil. *Minimal volume product near {Hanner} polytopes*. (2014) [Kim2014]
+- Kim, Jaegil, Zvavitch, Artem. *Stability of the reverse {Blaschke--Santal{\'o}} inequality
+           for unconditional convex bodies*. (2015) [KimZvavitch2015]
+- Iriyeh, Hiroshi, Shibata, Masataka. *Symmetric {Mahler}'s conjecture for the volume product
+           in the 3-dimensional case*. (2020) [IriyehShibata]
+- Chen, Shibing, Li, Yuanyuan, Xi, Dongmeng
+           , Xu, Zhe-Feng. *The {Mahler} Conjecture in Three Dimensions*. (2026) [ChenLiXiXu2026]
+- Bourgain, Jean, Milman, Vitali D.. *{New volume ratio properties for convex symmetric bodies in $\mathbb{R}^n$}*. (1987) [BourgainMilman]
+- … and 21 more
+
+**27 entries** from `references.bib`:
+- Mahler, Kurt. *Ein {\"U}bertragungsprinzip f{\"u}r konvexe K{\"o}rper*. (1939) [Mahler1939]
+- Meyer, Mathieu. *Convex bodies with minimal volume product in {$\mathbb R^2$}*. (1991) [Meyer1991]
+- Bourgain, Jean, Milman, Vitali D.. *New volume ratio properties for convex symmetric bodies in {$\mathbb R^n$}*. (1987) [BourgainMilman1987]
+- Iriyeh, Hiroshi, Shibata, Masataka. *Symmetric {Mahler}'s conjecture for the volume product in the 3-dimensional case*. (2020) [IriyehShibata2020]
+- Chen, Shibing, Li, Yuanyuan, Xi, Dongmeng, Xu, Zhe-Feng. *The {Mahler} Conjecture in Three Dimensions*. (2026) [ChenLiXiXu2026]
+- Moreau, Jean-Jacques. *D{\'e}composition orthogonale d'un espace hilbertien selon deux c{\^o}nes mutuellement polaires*. (1962) [Moreau1962]
+- Soltan, Valeriu. *Moreau-type characterizations of polar cones*. (2019) [Soltan2019]
+- Chansangiam, Pattrawut. *Operator Monotone Functions: Characterizations and Integral Representations*. (2013) [Chansangiam2013]
+- Boyd, Stephen, Vandenberghe, Lieven. *Convex Optimization*. (2004) [BoydVandenberghe2004]
+- Brouwer, Luitzen Egbertus Jan. *{\"U}ber Abbildung von Mannigfaltigkeiten*. (1911) [Brouwer1911]
+- … and 17 more
+
+**23 entries** from `references.bib`:
+- Artstein-Avidan, Shiri, Karasev, Roman, Ostrover, Yaron. *From symplectic measurements to the {Mahler} conjecture*. (2014) [AAKO2014]
+- Vicente, Alejandro. *The strong {Viterbo} conjecture and various flavours of duality in {Lagrangian} products*. (2025) [Vicente2025]
+- Haim-Kislev, Pazit, Ostrover, Yaron. *A counterexample to {Viterbo}'s conjecture*. (2026) [HKO2025]
+- Gross, Renan. *A conformal {Skorokhod} embedding*. (2019) [Gross2019]
+- Vicente, Alejandro. *Questions related to the {Mahler} and the {Viterbo} Conjecture*. (2026) [VicenteQuestion2026]
+- {OpenAI}. *{The symmetric Mahler conjecture and its equality cases}*. (2026) [SymmetricCompanion2026]
+- Gromov, Mikhael. *Pseudo holomorphic curves in symplectic manifolds*. (1985) [Gromov1985]
+- Viterbo, Claude. *Metric and isoperimetric problems in symplectic geometry*. (2000) [Viterbo2000]
+- Hofer, Helmut, Zehnder, Eduard. *Symplectic Invariants and {Hamiltonian} Dynamics*. (1994) [HoferZehnder1994]
+- Moser, J\"urgen. *On the volume elements on a manifold*. (1965) [Moser1965]
+- … and 13 more

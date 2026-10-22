@@ -25,6 +25,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "notes" / "scripts"))
 
 import build_catalog as B  # noqa: E402
+from catlib import bib as BIB  # noqa: E402
 from catlib import normalizer  # noqa: E402
 from catlib.atomic import Staging  # noqa: E402
 from catlib.paths import ROOT as REPO  # noqa: E402
@@ -66,6 +67,87 @@ def slugify(title: str) -> str:
 
 def disc_slug(discipline: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", discipline.lower()).strip("-")
+
+
+def _parse_bibtex(path: str) -> list[dict[str, str]]:
+    """Parse a .bib file into a list of {key, type, author, title, year} dicts."""
+    p = REPO / path
+    if not p.is_file():
+        return []
+    text = BIB.read(p)
+    out = []
+    for etype, key, body, _line in BIB.entries(text):
+        out.append({
+            "key": key,
+            "type": etype,
+            "author": BIB.field(body, "author") or "",
+            "title": BIB.field(body, "title") or "",
+            "year": BIB.field(body, "year") or "",
+        })
+    return out
+
+
+def _parse_thebibliography(path: str) -> list[dict[str, str]]:
+    """Parse a \\begin{thebibliography} block into a list of {key, text} dicts.
+
+    The entries are \\bibitem{key} followed by free text until the next \\bibitem
+    or \\end{thebibliography}. No BibTeX field structure exists in this form.
+    """
+    p = REPO / path
+    if not p.is_file():
+        return []
+    text = p.read_text(encoding="utf-8", errors="replace")
+    m = re.search(r"\\begin\{thebibliography\}[^}]*\}", text)
+    if not m:
+        return []
+    block_end = re.search(r"\\end\{thebibliography\}", text[m.end():])
+    block = text[m.end(): m.end() + block_end.start()] if block_end else text[m.end():]
+    # \bibitem comes in two forms: \bibitem{key} and \bibitem[optlabel]{key}.
+    # The key is always in the final brace group, so the optional label is skipped.
+    items = re.split(r"\\bibitem\s*(?:\[[^\]]*\])?\s*\{([^}]+)\}", block)
+    # items[0] is the preamble before the first \bibitem; then alternating key, text
+    out = []
+    for i in range(1, len(items) - 1, 2):
+        key = items[i].strip()
+        entry_text = re.sub(r"\s+", " ", items[i + 1].strip()).strip()
+        out.append({"key": key, "text": entry_text})
+    return out
+
+
+def _render_bibliography(sources: list[tuple[str, str, str]]) -> str:
+    """Build the Bibliography section from the sources that declare bibliography files.
+
+    A .bib source is parsed with _parse_bibtex; a .tex source carrying a
+    \\begin{thebibliography} block is parsed with _parse_thebibliography.
+    Returns the rendered section body, or "" if no bibliography source is declared.
+    """
+    sections: list[str] = []
+    for _sid, path, role in sources:
+        if path.endswith(".bib"):
+            entries = _parse_bibtex(path)
+            if not entries:
+                continue
+            lines = [f"**{len(entries)} entries** from `{path.split('/')[-1]}`:"]
+            for e in entries[:10]:
+                author = e["author"].replace(" and ", ", ") if e["author"] else ""
+                title = e["title"] if e["title"] else "(untitled)"
+                year = f" ({e['year']})" if e["year"] else ""
+                lines.append(f"- {author}. *{title}*.{year} [{e['key']}]")
+            if len(entries) > 10:
+                lines.append(f"- … and {len(entries) - 10} more")
+            sections.append("\n".join(lines))
+        elif path.endswith(".tex"):
+            entries = _parse_thebibliography(path)
+            if not entries:
+                continue
+            lines = [f"**{len(entries)} entries** from `{path.split('/')[-1]}`:"]
+            for e in entries[:10]:
+                excerpt = e["text"][:120] + ("…" if len(e["text"]) > 120 else "")
+                lines.append(f"- [{e['key']}] {excerpt}")
+            if len(entries) > 10:
+                lines.append(f"- … and {len(entries) - 10} more")
+            sections.append("\n".join(lines))
+    return "\n\n".join(sections)
 
 
 PREAMBLES: dict[str, str] = {}
@@ -244,6 +326,10 @@ def render_page(fam: str, info: dict, data_text: str) -> tuple[str, str]:
     for sid, path, _ in sources:
         links.append((sid, f"{up}{path}"))
 
+    # Build the Bibliography section from the sources that declare a .bib or a
+    # thebibliography block. Empty when no bibliography source is declared.
+    bibliography = _render_bibliography(sources)
+
     # Render through the skeleton.
     template = ENV.get_template("summary.md.j2")
     page_text = template.render(p={
@@ -263,7 +349,7 @@ def render_page(fam: str, info: dict, data_text: str) -> tuple[str, str]:
         "coverage": resolved.get("coverage", ""),
         "sources_rows": "\n".join(src_rows),
         "links": links,
-        "bibliography": "",
+        "bibliography": bibliography,
     })
     return page_text, slug
 

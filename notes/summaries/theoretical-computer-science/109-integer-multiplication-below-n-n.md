@@ -240,3 +240,18 @@ machine's transition table is finite but astronomically large.
 - [S10](../../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/references.bib)
 - [S11](../../../overview.tex)
 - [S12](../../../CONTENTS.md)
+
+## Bibliography
+
+**27 entries** from `references.bib`:
+- Karatsuba, A., Ofman, Yu.. *Multiplication of Many-Digital Numbers by Automatic Computers*. (1962) [KaratsubaOfman1962]
+- Toom, A. L.. *The Complexity of a Scheme of Functional Elements Simulating the Multiplication of Integers*. (1963) [Toom1963]
+- Sch{\"o}nhage, Arnold, Strassen, Volker. *Schnelle {Multiplikation} gro{\ss}er {Zahlen}*. (1971) [SchonhageStrassen1971]
+- F{\"u}rer, Martin. *Faster Integer Multiplication*. (2007) [Furer2007]
+- F{\"u}rer, Martin. *Faster Integer Multiplication*. (2009) [Furer2009]
+- Nussbaumer, H. J.. *Fast Polynomial Transform Algorithms for Digital Convolution*. (1980) [Nussbaumer1980]
+- Nussbaumer, H. J., Quandalle, P.. *Computation of Convolutions and Discrete {Fourier} Transforms by Polynomial Transforms*. (1978) [NussbaumerQuandalle1978]
+- Dutt, A., Rokhlin, V.. *Fast {Fourier} Transforms for Nonequispaced Data*. (1993) [DuttRokhlin1993]
+- Rosser, J. Barkley, Schoenfeld, Lowell. *Approximate Formulas for Some Functions of Prime Numbers*. (1962) [RosserSchoenfeld1962]
+- De, Anindya, Kurur, P. P., Saha, Chandan, Saptharishi, Ramprasad. *Fast Integer Multiplication Using Modular Arithmetic*. (2013) [DeKururSahaSaptharishi2013]
+- … and 17 more

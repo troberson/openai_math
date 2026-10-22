@@ -263,7 +263,7 @@ What has not been checked: no Lean or comparator run was performed, so nothing h
 | S7 | `build/sections/caps.tex` | — | Cap regularity estimate |
 | S8 | `build/sections/pulse.tex` | — | Oscillatory pulse and the Baire argument |
 | S9 | `build/sections/assembly.tex` | — | Disk accumulation, boundary-saddle lemma, Taylor-jet corollary |
-| S10 | `build/references.bib` | — | Bibliography |
+| S10 | `preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/build/references.bib` | 195 | Bibliography |
 | S11 | `lean/docs/334.md` | 15 | Scope note |
 | S12 | `lean/formalization.yaml` | 1783 | Release index of papers and results |
 | S13 | `lean/ComparatorChallenges/IsometricImmersion.json` | 14 | Comparator configuration |
@@ -282,10 +282,25 @@ What has not been checked: no Lean or comparator run was performed, so nothing h
 - [S7](../../../build/sections/caps.tex)
 - [S8](../../../build/sections/pulse.tex)
 - [S9](../../../build/sections/assembly.tex)
-- [S10](../../../build/references.bib)
+- [S10](../../../preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/build/references.bib)
 - [S11](../../../lean/docs/334.md)
 - [S12](../../../lean/formalization.yaml)
 - [S13](../../../lean/ComparatorChallenges/IsometricImmersion.json)
 - [S14](../../../lean/ComparatorChallenges/IsometricImmersion.lean)
 - [S15](../../../lean/OAI/Geometry/IsometricImmersion/Main.lean)
 - [S16](../../../notes/tables/catalog.tsv)
+
+## Bibliography
+
+**17 entries** from `references.bib`:
+- Lin, Chang-Shou. *The local isometric embedding in {$\mathbb{R}^3$} of 2-dimensional {Riemannian} manifolds with nonnegative curvature*. (1985) [Lin1985]
+- Lin, Chang-Shou. *The local isometric embedding in {$\mathbb{R}^3$} of two-dimensional {Riemannian} manifolds with {Gaussian} curvature changing sign cleanly*. (1986) [Lin1986]
+- Nakamura, Gen, Maeda, Yoshiaki. *Local smooth isometric embeddings of low-dimensional {Riemannian} manifolds into {Euclidean} spaces*. (1989) [NakamuraMaeda1989]
+- Nash, John. *{$C^1$} isometric imbeddings*. (1954) [Nash1954]
+- Kuiper, Nicolaas H.. *On {$C^1$}-isometric imbeddings. {I}*. (1955) [Kuiper1955]
+- Khuri, Marcus A.. *Counterexamples to the Local Solvability of {Monge--Amp\`ere} Equations in the Plane*. (2007) [Khuri2007Counterexamples]
+- Schoen, Richard, Yau, Shing-Tung. *Lectures on Differential Geometry*. (1994) [Yau]
+- Pogorelov, A. V.. *An example of a two-dimensional {Riemannian} metric admitting no local realization in {$E^3$}*. (1971) [Pogorelov1971]
+- Nadirashvili, Nikolai, Yuan, Yu. *Improving {Pogorelov}'s isometric embedding counterexample*. (2008) [NY2008]
+- Nadirashvili, Nikolai, Yuan, Yu. *Counterexamples for Local Isometric Embedding*. (2002) [NY2002]
+- … and 7 more

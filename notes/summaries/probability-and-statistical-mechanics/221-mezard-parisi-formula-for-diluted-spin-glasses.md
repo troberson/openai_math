@@ -132,3 +132,25 @@ Two gaps are worth recording. The ledger reports `paps_form 0` and `mainres 0` f
 - [S28](../../../lean/docs/235.md)
 - [S29](../../../reasoning_traces/mezard-parisi-formula.pdf)
 - [S30](../../../reasoning_traces/mezard-parisi-formula.tex)
+
+## Bibliography
+
+**18 entries** from `references.bib`:
+- M{\'e}zard, Marc, Parisi, Giorgio. *The {Bethe} lattice spin glass revisited*. (2001) [MP01]
+- Franz, Silvio, Leone, Michele. *Replica bounds for optimization problems and diluted spin systems*. (2003) [FL03]
+- Panchenko, Dmitry, Talagrand, Michel. *Bounds for diluted mean-fields spin glass models*. (2004) [PT04]
+- Panchenko, Dmitry. *Spin glass models from the point of view of spin distributions*. (2013) [Pan13]
+- Panchenko, Dmitry. *Structure of finite-{RSB} asymptotic {Gibbs} measures in the diluted spin glass models*. (2016) [Pan16]
+- Aizenman, Michael, Sims, Robert, Starr, Shannon L.. *Extended variational principle for the {Sherrington--Kirkpatrick} spin-glass model*. (2003) [ASS03]
+- Ruelle, David. *A mathematical reformulation of {Derrida}'s {REM} and {GREM}*. (1987) [Ruelle87]
+- Efron, Bradley, Stein, Charles. *The jackknife estimate of variance*. (1981) [EfronStein]
+- Viana, L., Bray, A. J.. *Phase diagrams for dilute spin glasses*. (1985) [VB85]
+- Guerra, Francesco. *Broken replica symmetry bounds in the mean field spin glass model*. (2003) [Guerra03]
+- … and 8 more
+
+**5 entries** from `mezard-parisi-formula.tex`:
+- [BP] Jean Barbier and Dmitry Panchenko. \emph{Strong replica symmetry in high-dimensional optimal Bayesian inference}. Commun…
+- [M] Jean-Christophe Mourrat. \emph{The Parisi formula is a Hamilton--Jacobi equation in Wasserstein space}. Canadian Journal…
+- [MP] Jean-Christophe Mourrat and Dmitry Panchenko. \emph{Extending the Parisi formula along a Hamilton--Jacobi equation}. Ele…
+- [P] Dmitry Panchenko. \emph{Structure of finite-RSB asymptotic Gibbs measures in the diluted spin glass models}. Journal of …
+- [PT] Dmitry Panchenko and Michel Talagrand. \emph{Bounds for diluted mean-fields spin glass models}. Probability Theory and R…

@@ -305,3 +305,18 @@ only published derivation artifact for this family.
 - [S22](../../../lean/OAI/NumberTheory/OrdinaryCorrelations/Elliott/BinaryCorrectedElliott.lean)
 - [S23](../../../preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/refs.bib)
 - [S24](../../../reasoning_traces/ordinary-two-point-correlations.pdf)
+
+## Bibliography
+
+**21 entries** from `refs.bib`:
+- Matom{\"a}ki, Kaisa, Radziwi{\l}{\l}, Maksym, Tao, Terence. *An averaged form of {Chowla}'s conjecture*. (2015) [MRT15]
+- Matom{\"a}ki, Kaisa, Radziwi{\l}{\l}, Maksym. *Multiplicative functions in short intervals*. (2016) [MR16]
+- Tao, Terence. *The logarithmically averaged {Chowla} and {Elliott} conjectures for two-point correlations*. (2016) [Tao16]
+- Tao, Terence, Ter{\"a}v{\"a}inen, Joni. *The structure of correlations of multiplicative functions at almost all scales, with applications to the {Chowla} and {Elliott} conjectures*. (2019) [TT19]
+- Tao, Terence, Ter{\"a}v{\"a}inen, Joni. *Quantitative correlations and some problems on prime factors of consecutive integers*. (2026) [TT26]
+- Helfgott, Harald Andr{\'e}s, Radziwi{\l}{\l}, Maksym. *Expansion, divisibility and parity*. (2021) [HR21]
+- Pilatte, C{\'e}dric. *Improved bounds for the two-point logarithmic {Chowla} conjecture*. (2026) [Pilatte26]
+- Braverman, Mark. *Polylogarithmic independence fools {$AC^0$} circuits*. (2010) [Braverman10]
+- Koukoulopoulos, Dimitris. *The Distribution of Prime Numbers*. (2019) [Koukoulopoulos19]
+- Chowla, Sarvadaman. *The {Riemann} Hypothesis and {Hilbert}'s Tenth Problem*. (1965) [Chowla65]
+- … and 11 more

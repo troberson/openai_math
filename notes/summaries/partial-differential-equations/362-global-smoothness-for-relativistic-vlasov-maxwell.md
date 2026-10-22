@@ -368,7 +368,7 @@ What has not been checked: nothing here is a machine-checked verification of the
 | S11 | `build/sections/selection.tex` | — | Selection and weighted estimate |
 | S12 | `build/sections/closure.tex` | — | Bootstrap closure |
 | S13 | `build/sections/continuation.tex` | — | Local theory, continuation criterion |
-| S14 | `build/references.bib` | — | Bibliography |
+| S14 | `preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/references.bib` | 372 | Bibliography |
 | S15 | `lean/docs/362.md` | 15 | Scope note |
 | S16 | `lean/ComparatorChallenges/VlasovMaxwell.lean` | 112 | Comparator challenge |
 | S17 | `lean/ComparatorChallenges/VlasovMaxwell.json` | 14 | Comparator configuration |
@@ -394,7 +394,7 @@ What has not been checked: nothing here is a machine-checked verification of the
 - [S11](../../../build/sections/selection.tex)
 - [S12](../../../build/sections/closure.tex)
 - [S13](../../../build/sections/continuation.tex)
-- [S14](../../../build/references.bib)
+- [S14](../../../preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/build/references.bib)
 - [S15](../../../lean/docs/362.md)
 - [S16](../../../lean/ComparatorChallenges/VlasovMaxwell.lean)
 - [S17](../../../lean/ComparatorChallenges/VlasovMaxwell.json)
@@ -404,3 +404,26 @@ What has not been checked: nothing here is a machine-checked verification of the
 - [S21](../../../notes/tables/catalog.tsv)
 - [S22](../../../reasoning_traces/relativistic-vlasov-maxwell.pdf)
 - [S23](../../../paper.pdf)
+
+## Bibliography
+
+**29 entries** from `references.bib`:
+- Pfaffelmoser, K.. *Global classical solutions of the {Vlasov--Poisson} system in three
+           dimensions for general initial data*. (1992) [Pfaffelmoser1992]
+- Luk, Jonathan, Strain, Robert M.. *A new continuation criterion for the relativistic
+                   {Vlasov--Maxwell} system*. (2014) [LukStrain2014Continuation]
+- Glassey, Robert T., Strauss, Walter A.. *Singularity formation in a collisionless plasma could
+             occur only at high velocities*. (1986) [GlasseyStrauss1986]
+- Glassey, Robert T., Strauss, Walter A.. *Absence of Shocks in an Initially Dilute Collisionless Plasma*. (1987) [GlasseyStrauss1987]
+- Wei, Dongyi, Yang, Shiwu. *On the {3D} Relativistic {Vlasov--Maxwell} System
+           with Large {Maxwell} Field*. (2021) [WeiYang2021]
+- Bigorgne, L{\'e}o. *Sharp Asymptotic Behavior of Solutions of the {3d}
+           {Vlasov--Maxwell} System with Small Data*. (2020) [Bigorgne2020]
+- Wang, Xuecheng. *Large Data Global Solution of the {3D RVM} System with
+           Cylindrical Symmetry {I}: Iterative Smoothing Scheme*. (2026) [Wang2026I]
+- Wang, Xuecheng. *Large Data Global Solution of the {3D RVM} System with
+           Cylindrical Symmetry {II}: Pointwise Estimates*. (2026) [Wang2026II]
+- Pallard, Christophe. *On the boundedness of the momentum support of solutions to the
+             relativistic {Vlasov--Maxwell} system*. (2005) [Pallard2005]
+- Wollman, Stephen. *An existence and uniqueness theorem for the {Vlasov--Maxwell} system*. (1984) [Wollman1984]
+- … and 19 more
