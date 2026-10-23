@@ -1,0 +1,144 @@
+[Notes](../../README.md) / [Summaries](../README.md) / [Algebraic and complex geometry](../../index/disciplines/algebraic-and-complex-geometry.md) / [Family 038](../../index/algebraic-and-complex-geometry/038-fujitas-freeness-conjecture.md)
+
+# 038 — Fujita's freeness conjecture
+
+[Index page](../../index/algebraic-and-complex-geometry/038-fujitas-freeness-conjecture.md)
+
+## Original CONTENTS.md summary
+
+The release's blurb [S1:1085]: "**038. Fujita's freeness conjecture.** Proves Fujita's freeness conjecture at its sharp bound in every dimension: for a smooth projective complex variety $X$ of dimension $n$ and an ample line bundle $L$, the adjoint $K_X+mL$ is globally generated for every integer $m\ge n+1$." The manuscript
+title is "Fujita's freeness conjecture" [S3:1], and its abstract [S4:56–60] reads: "We prove Fujita's freeness conjecture. If $X$ is a smooth complex"
+
+## Undergraduate summary
+
+Fujita's freeness conjecture asks: for a smooth projective variety
+$X$ of dimension $n$ and an ample line bundle $L$, must
+$K_X+(n+1)L$ be globally generated? The bound $n+1$ is sharp —
+on $\mathbb{P}^n$ with $L=\mathcal{O}(1)$, the adjoint
+$K_X+nL$ has no nonzero sections [S4:83–90]. "The exponent is sharp: for $X=\mathbb P^n$ and $L=\mathcal O_{\mathbb P^n}(1)$," The
+theorem [S4:70–77]:
+
+> **theorem**
+
+
+## Graduate summary
+
+**The method.** The proof uses the standard vanishing strategy:
+construct controlled singularities at the prescribed point, reduce
+a suitable center to a point, and lift a nonzero fiber value via
+Kawamata–Viehweg vanishing [S4:113–128]. "The common vanishing strategy constructs controlled singularities at" The new
+ingredient is control of the minimizing center: the argument
+compares growth of restriction-map images with a tangential first
+variation, uniformly over all integral subvarieties of a fixed
+dimension, including singular subvarieties of unbounded degree.
+
+**The reduction to a point center.** The key proposition [S8:8–13]
+shows that if $P$ is not generated at $x$, then for arbitrarily
+large $m$ the infimum is attained by a minimizing pair whose center
+is exactly $\{x\}$:
+
+> **proposition**
+
+
+This eliminates positive-dimensional centers, which are the
+obstruction in all prior approaches [S4:113–128].
+
+**The lift.** With a point center, the isolation argument [S7:4–9]
+constructs an effective rational SNC divisor with the right
+discrepancy configuration for Kawamata–Viehweg vanishing:
+
+> We now use a point-centered minimizing pair to construct an effective
+
+The minimization section [S6:1–7] converts failure of generation
+into a strict asymptotic inequality for ordinary orders, showing
+that the lattice-counting equality case already permits a nonzero
+fiber value to be lifted.
+
+## History of the conjecture
+
+The conjecture was proved in low dimensions: curves by
+Riemann–Roch, surfaces by Reider, threefolds by Ein–Lazarsfeld
+and Kawamata, fourfolds by Kawamata, fivefolds by Ye–Zhu.
+In arbitrary dimension, Angehrn–Siu gave $m\ge(n^2+n+2)/2$;
+Heier improved to $n^{4/3}$; Ghidelli–Lacini to
+$n(\log\log n+2.34)$; Han to $1.776n$. Chan announced a proof
+that was withdrawn [S4:92–111]. "For curves,"
+
+The vanishing strategy dates to Ein–Lazarsfeld and Kawamata.
+The center-reduction problem — a positive-dimensional center can
+be singular, and cutting it down costs positivity — is what all
+prior approaches addressed by different means: Angehrn–Siu used
+movement and semicontinuity, Fujita estimated restriction-map
+ranks, Helmke bounded multiplicities [S4:113–128].
+
+## Consequences
+
+**The sharp bound in all dimensions.** Fujita's freeness
+conjecture holds at its optimal exponent $n+1$ for every smooth
+projective variety of every dimension [S4:70–77]. The bound is
+sharp on projective space [S4:83–90].
+
+**Uniform center control.** The minimizing-center argument is
+uniform over all integral subvarieties, including singular ones
+of unbounded degree, and does not require the center to be
+smooth or of bounded degree [S4:113–128].
+
+## Section skeleton
+
+**Main file** [S4], 4 sections under `build/sections/`:
+
+1. Orders, thresholds, and vanishing [S5]
+2. The ordinary-order alternative [S6]
+3. Isolation and adjoint lifting [S7]
+4. Eliminating positive-dimensional centers [S8]
+
+Bibliography: `references.tex` [S9].
+
+## Coverage
+
+T0: no Lean, no scope note, no comparator challenge, no reasoning trace.
+Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
+`mainres 0`, `scope_note 0`, `chal 0`, `trace` empty. The manuscript ships
+5 `.tex` files under `build/`.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 038 at line 1085. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 154. |
+| S3 | [`preprints/Fujitas-freeness-conjecture-September-23-2026/README.md`](../../../preprints/Fujitas-freeness-conjecture-September-23-2026/README.md) | 18 | Manuscript readme: title, author, date. |
+| S4 | [`preprints/Fujitas-freeness-conjecture-September-23-2026/build/main.tex`](../../../preprints/Fujitas-freeness-conjecture-September-23-2026/build/main.tex) | 216 | The main file: abstract, theorem, history, and method summary. |
+| S5 | [`preprints/Fujitas-freeness-conjecture-September-23-2026/build/sections/preliminaries.tex`](../../../preprints/Fujitas-freeness-conjecture-September-23-2026/build/sections/preliminaries.tex) | 211 | Orders, thresholds, and vanishing. |
+| S6 | [`preprints/Fujitas-freeness-conjecture-September-23-2026/build/sections/minimization.tex`](../../../preprints/Fujitas-freeness-conjecture-September-23-2026/build/sections/minimization.tex) | 586 | The ordinary-order alternative. |
+| S7 | [`preprints/Fujitas-freeness-conjecture-September-23-2026/build/sections/isolation.tex`](../../../preprints/Fujitas-freeness-conjecture-September-23-2026/build/sections/isolation.tex) | 380 | Isolation and adjoint lifting. |
+| S8 | [`preprints/Fujitas-freeness-conjecture-September-23-2026/build/sections/centers.tex`](../../../preprints/Fujitas-freeness-conjecture-September-23-2026/build/sections/centers.tex) | 477 | Eliminating positive-dimensional centers. |
+| S9 | [`preprints/Fujitas-freeness-conjecture-September-23-2026/build/references.tex`](../../../preprints/Fujitas-freeness-conjecture-September-23-2026/build/references.tex) | 170 | The bibliography. |
+
+## Bibliography
+
+- Igor Reider. \newblock Vector bundles of rank $2$ and linear systems on algebraic surfaces. \newblock _Annals of Mathematics (2)_, 127\penalty0 (2):\penalty0 309–316, 1988. \newblock \doi{10.2307/2007055}. \newblock URL  .
+- Luca Ghidelli and Justin Lacini. \newblock Logarithmic bounds on Fujita's conjecture. \newblock _Proceedings of the London Mathematical Society (3)_, 128\penalty0 (3):\penalty0 e12591, 2024. \newblock \doi{10.1112/plms.12591}. \newblock URL  . \newblock 28 pp.
+- Jean-Pierre Demailly and J{á}nos Koll{á}r. \newblock Semi-continuity of complex singularity exponents and {K{ä}hler–Einstein} metrics on Fano orbifolds. \newblock _Annales scientifiques de l'École Normale Supérieure (4)_, 34\penalty0 (4):\penalty0 525–556, 2001. \newblock \doi{10.1016/S0012-9593(01)01069-2}. \newblock URL  .
+- Robert Lazarsfeld and Mircea Musta{\c t}{\u a}. \newblock Convex bodies associated to linear series. \newblock _Annales scientifiques de l'{É}cole Normale Sup{é}rieure (4)_, 42\penalty0 (5):\penalty0 783–835, 2009. \newblock \doi{10.24033/asens.2109}.
+- Richard J. Gardner. \newblock The Brunn–Minkowski inequality. \newblock _Bulletin of the American Mathematical Society (N.S.)_, 39\penalty0 (3):\penalty0 355–405, 2002. \newblock \doi{10.1090/S0273-0979-02-00941-2}.
+- Stefan Helmke. \newblock On global generation of adjoint linear systems. \newblock _Mathematische Annalen_, 313\penalty0 (4):\penalty0 635–652, 1999. \newblock \doi{10.1007/s002080050276}.
+- Yujiro Kawamata. \newblock A generalization of Kodaira–Ramanujam's vanishing theorem. \newblock _Mathematische Annalen_, 261:\penalty0 43–46, 1982. \newblock \doi{10.1007/BF01456407}.
+- Yujiro Kawamata. \newblock On Fujita's freeness conjecture for $3$-folds and $4$-folds. \newblock _Mathematische Annalen_, 308\penalty0 (3):\penalty0 491–505, 1997. \newblock \doi{10.1007/s002080050085}. \newblock URL  .
+- Kiumars Kaveh and Askold G. Khovanskii. \newblock Newton–Okounkov bodies, semigroups of integral points, graded algebras and intersection theory. \newblock _Annals of Mathematics (2)_, 176\penalty0 (2):\penalty0 925–978, 2012. \newblock \doi{10.4007/annals.2012.176.2.5}.
+- Jingjun Han. \newblock A linear bound for Fujita's freeness conjecture, 2026. \newblock URL  . \newblock Preprint, arXiv:2609.01574v2, 11 September 2026.
+- Andrei Okounkov. \newblock Why would multiplicities be log-concave? \newblock In Christian Duval, Valentin Ovsienko, and Laurent Guieu, editors, _The Orbit Method in Geometry and Physics_, volume 213 of _Progress in Mathematics_, pages 329–347. Birkh{ä}user, Boston, MA, 2003. \newblock \doi{10.1007/978-1-4612-0029-1_14}. \newblock URL  .
+- Stefan Helmke. \newblock On Fujita's conjecture. \newblock _Duke Mathematical Journal_, 88\penalty0 (2):\penalty0 201–216, 1997. \newblock \doi{10.1215/S0012-7094-97-08807-4}.
+- S{é}bastien Boucksom and Huayi Chen. \newblock Okounkov bodies of filtered linear series. \newblock _Compositio Mathematica_, 147\penalty0 (4):\penalty0 1205–1229, 2011. \newblock \doi{10.1112/S0010437X11005355}.
+- Gordon Heier. \newblock Effective freeness of adjoint line bundles. \newblock _Documenta Mathematica_, 7:\penalty0 31–42, 2002. \newblock \doi{10.4171/DM/116}.
+- Urban Angehrn and Yum-Tong Siu. \newblock Effective freeness and point separation for adjoint bundles. \newblock _Inventiones Mathematicae_, 122\penalty0 (2):\penalty0 291–308, 1995. \newblock \doi{10.1007/BF01231446}. \newblock URL  .
+- Fei Ye and Zhixian Zhu. \newblock On Fujita's freeness conjecture in dimension $5$. \newblock _Advances in Mathematics_, 371:\penalty0 107210, 2020. \newblock \doi{10.1016/j.aim.2020.107210}. \newblock URL  .
+- Eckart Viehweg. \newblock Vanishing theorems. \newblock _Journal f{ü}r die reine und angewandte Mathematik_, 335:\penalty0 1–8, 1982. \newblock \doi{10.1515/crll.1982.335.1}.
+- Osamu Fujino. \newblock Kawamata–Viehweg vanishing theorem. \newblock Author's lecture note, 2009. \newblock URL  . \newblock Version 1.04, 22 July 2009.
+- Takao Fujita. \newblock On polarized manifolds whose adjoint bundles are not semipositive. \newblock In Tadao Oda, editor, _Algebraic Geometry, Sendai, 1985_, volume 10 of _Advanced Studies in Pure Mathematics_, pages 167–178. North-Holland, Amsterdam, 1987. \newblock \doi{10.2969/aspm/01010167}.
+- Tsz On Mario Chan. \newblock A solution to Fujita's freeness conjecture via an extension theorem with analytic adjoint ideal sheaves, 2024. \newblock URL  . \newblock Preprint, arXiv:2411.07129v1; withdrawn in v2, 24 November 2024.
+- Lawrence Ein and Robert Lazarsfeld. \newblock Global generation of pluricanonical and adjoint linear series on smooth projective threefolds. \newblock _Journal of the American Mathematical Society_, 6\penalty0 (4):\penalty0 875–903, 1993. \newblock \doi{10.1090/S0894-0347-1993-1207013-5}. \newblock URL  .
+- Jason A. Howald. \newblock Multiplier ideals of monomial ideals. \newblock _Transactions of the American Mathematical Society_, 353\penalty0 (7):\penalty0 2665–2671, 2001. \newblock \doi{10.1090/S0002-9947-01-02720-9}. \newblock URL  .
+- Jaros{\l}aw W{\l}odarczyk. \newblock Simple Hironaka resolution in characteristic zero. \newblock _Journal of the American Mathematical Society_, 18\penalty0 (4):\penalty0 779–822, 2005. \newblock \doi{10.1090/S0894-0347-05-00493-5}.
+- Takao Fujita. \newblock Remarks on Ein–Lazarsfeld criterion of spannedness of adjoint bundles of polarized threefolds, 1993. \newblock URL  .
+- Harold Blum and Mattias Jonsson. \newblock Thresholds, valuations, and $K$-stability. \newblock _Advances in Mathematics_, 365:\penalty0 107062, 2020. \newblock \doi{10.1016/j.aim.2020.107062}.
