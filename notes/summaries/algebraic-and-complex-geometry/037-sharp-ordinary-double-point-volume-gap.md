@@ -126,8 +126,8 @@ ships 9 `.tex` files under `build/`; the companion ships 1.
 | S10 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/04-jet-interiority.tex`](../../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/04-jet-interiority.tex) | 798 | Jet interiority. |
 | S11 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/05-adjoint-semigroup.tex`](../../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/05-adjoint-semigroup.tex) | 557 | Adjoint semigroup construction. |
 | S12 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/06-filtrations.tex`](../../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/06-filtrations.tex) | 578 | Filtrations. |
-| S13 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/07-bootstrap.pdf`](../../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/07-bootstrap.pdf) | — | Bootstrap argument. |
-| S14 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/08-conclusion.pdf`](../../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/08-conclusion.pdf) | — | Conclusion. |
+| S13 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/07-bootstrap.tex`](../../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/07-bootstrap.tex) | 678 | Bootstrap argument. |
+| S14 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/08-conclusion.tex`](../../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/08-conclusion.tex) | 203 | Conclusion. |
 
 ## Bibliography
 
