@@ -84,6 +84,7 @@ from catlib.paths import (
     owner,
 )
 from catlib.promote import CHECKER_L1, key_for
+from catlib.quotes import resolve
 from jinja2 import Environment, FileSystemLoader
 
 TPL = ROOT / "notes" / "templates" / "report"
@@ -3311,12 +3312,13 @@ def sp_pair_lines() -> list[tuple[str, str]]:
 
     `notes/tables/quotes.tsv` is seeded in page order, so a clause row is followed by its title row. The
     table also carries the summaries rows, which this page does not render, so the pair rows are selected
-    by `page` — a writer that read the whole table would build 1,161 lines for a 127-line page. The
-    resolver returns raw source bytes, which is what this page quotes verbatim, so the line the writer
-    builds is the page's line byte for byte. A clause with no `seq` is a clause the page records as
-    unmatched — it has no title row after it, and the page writes `-> unmatched` where the target would
-    be. A spec that does not resolve raises: a page whose quote moved must fail the writer, not render a
-    quote the source does not carry.
+    by `page` — a writer that read the whole table would build 1,161 lines for a 127-line page. The table
+    carries a locator (head/tail in a line window), not the span: the writer re-resolves it against the
+    source it names, and the resolver returns raw source bytes, which is what this page quotes verbatim,
+    so the line the writer builds is the page's line byte for byte. A clause with no `seq` is a clause the
+    page records as unmatched — it has no title row after it, and the page writes `-> unmatched` where the
+    target would be. A spec whose locator does not resolve raises: a page whose quote moved must fail the
+    writer, not render a quote the source does not carry.
     """
     out: list[tuple[str, str]] = []
     # A clause row is always followed by its title row, so the pending clause is never missing when a
@@ -3324,13 +3326,23 @@ def sp_pair_lines() -> list[tuple[str, str]]:
     # tuple — pylint reports E0633 on unpacking an Optional.
     pending = ("", 0, "")
     unmatched: dict[str, int] = {}
+    # The pair rows all cite overview.tex (anchor group 1), so read its lines once and resolve each
+    # locator against them. overview.tex is already this writer's read surface (parse_overview).
+    src_cache: dict[str, list[str]] = {}
+
+    def _src(path: str) -> list[str]:
+        if path not in src_cache:
+            src_cache[path] = (ROOT / path).read_text(encoding="utf-8").splitlines()
+        return src_cache[path]
+
     for r in tsv.read_rows(QUOTES_TSV):
         if r["page"] != str(SP_MD.relative_to(ROOT)):
             continue
         fam, seq, which = r["fam"], r["seq"], r["which"]
         start = int(r["start"])
-        span = r["span"]
-        if span == "":
+        end = int(r["end"])
+        span = resolve(_src(r["path"]), start, end, r["head"], r["tail"] or None)
+        if span is None:
             raise ValueError(f"quote spec {fam}:{seq} {which} does not resolve")
         if which == "title":
             head, cstart, cwhich = pending

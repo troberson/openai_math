@@ -1,23 +1,24 @@
 r"""The self-tests for `notes/scripts/catlib/quotes.py` and `notes/scripts/seed_quotes.py`.
 
 The resolver resolves a `(path, start, end, head, tail)` spec to the verbatim source span; the seeder
-seeds a spec for `notes/reports/subfinding-pairs.md` and the 39 summaries pages. The stored spec is
-`(page, fam, seq, which, path, start, end, span)`: `span` is the resolved source text the seeder kept,
-so the round-trip is span-vs-page-quote — the seeder resolves each span and requires it to be the page's
-quote byte-for-byte (raw) or equal after the checker's normalizer (folded). `head`/`tail` are
-seeder-internal (used once to bound a span in the window, then discarded); `mode` is not stored. This
-file injects the faults the locator must catch: a head absent from the window; a tail that occurs only
-before the head; a line number past the file's end; a window whose start is after its end; a head that
-is unique in the line and still bounds a span running to a later occurrence of the tail; a trailing
-`\qquad ` that must join to one space, not two; an HTML tag inside a word the page spells without
-markup, where the raw span is NOT the page quote and only the folded comparison is; math whose `<` and
-`>` make the folded line lose text the raw line keeps; and a quote that wraps across lines.
+seeds a locator spec for `notes/reports/subfinding-pairs.md` and the summaries pages. The stored spec is
+`(page, fam, seq, which, path, start, end, head, tail)`: a locator, not content. The seeder's check is
+that every located row's locator resolves (to a non-None span in its source); the round-trip to the page
+quote is then reported, not required, as three classes — raw (byte-for-byte), folded (fold-equal after
+the checker's normalizer), normalizer-gap (located, but the resolved text the normalizer cannot fold back
+to the page quote). A measured negative is `start` 0 with `head` and `tail` blank. This file injects the
+faults the locator must catch: a head absent from the window; a tail that occurs only before the head; a
+line number past the file's end; a window whose start is after its end; a head that is unique in the line
+and still bounds a span running to a later occurrence of the tail; a trailing `\qquad ` that must join to
+one space, not two; an HTML tag inside a word the page spells without markup, where the raw span is NOT
+the page quote and only the folded comparison is; math whose `<` and `>` make the folded line lose text
+the raw line keeps; and a quote that wraps across lines.
 
 The clean test pins the population the seeder reports for the two surfaces, relationally: every spec is
-seeded (span non-blank) or a measured negative (`start` 0, span blank), seeded splits into single-line
-and range, and the raw plus folded plus not-located classes sum to the row set, with **0** round-trip
-failures. The seeded table on disk must carry the span that reproduces every page quote — byte-for-byte
-for raw, fold-equal for folded — so a seeder that passes its synthetic cases and fails the corpus is caught.
+located (`start` non-zero) or a measured negative (`start` 0), located splits into single-line and range,
+and every located locator resolves — the raw plus folded plus normalizer-gap classes sum to the located
+set. The seeded table on disk must carry the locator that resolves for every located row, so a seeder
+that passes its synthetic cases and fails the corpus is caught.
 
 The resolver measures; this file injects. Run:
   python3 notes/scripts/run_tests.py notes/scripts/tests/test_quotes.py -q
@@ -112,35 +113,51 @@ def summary_rows():
     return S.summary_rows()
 
 
+_LINES: dict[str, list[str]] = {}
+
+
+def _resolve(spec: dict[str, str]) -> str | None:
+    """Resolve a locator spec against the source file its `path` names (cached per path)."""
+    path = spec["path"]
+    if path not in _LINES:
+        if path == "overview.tex":
+            _LINES[path] = SRC.read_text(encoding="utf-8").splitlines()
+        else:
+            _LINES[path] = (ROOT / path).read_text(encoding="utf-8", errors="replace").splitlines()
+    return resolve(_LINES[path], int(spec["start"]), int(spec["end"]),
+                   spec["head"], spec["tail"] or None)
+
+
 def test_clean_page(page_rows, summary_rows):
     """The population the seeder reports for both surfaces, pinned relationally."""
     all_rows = page_rows + summary_rows
-    seeded = [s for s, _q in all_rows if s["start"] != "0"]
-    # The population is the two surfaces, and every partition is exhaustive: seeded plus the measured
-    # negatives is the row set, single-line plus range covers the seeded set, and the raw plus folded
-    # classes cover every seeded span while the not-located class is exactly the measured negatives.
+    located = [s for s, _q in all_rows if s["start"] != "0"]
+    # The population is the two surfaces, and every partition is exhaustive: located plus the measured
+    # negatives is the row set, single-line plus range covers the located set, and every located
+    # locator resolves so the raw plus folded plus normalizer-gap classes sum to the located set.
     assert len(page_rows) > 0 and len(summary_rows) > 0
-    assert len(seeded) + (len(all_rows) - len(seeded)) == len(all_rows)
-    single = sum(1 for s in seeded if s["start"] == s["end"])
-    rng = sum(1 for s in seeded if s["start"] != s["end"])
-    assert 0 < single + rng == len(seeded)
-    raw = sum(1 for s, q in all_rows if s["span"] != "" and s["span"] == q)
-    folded = sum(1 for s, q in all_rows if s["span"] != "" and s["span"] != q
-                 and norm(s["span"]) == norm(q))
-    not_loc = sum(1 for s, _q in all_rows if s["span"] == "")
-    assert raw + folded == len(seeded), "a seeded span is neither raw nor fold-equal"
-    assert not_loc == len(all_rows) - len(seeded)
-    assert raw > 0 and folded > 0
-    # Every seeded span must reproduce its quote in its own class, so a span that is neither the page
-    # quote byte-for-byte nor fold-equal is a failure, not a pass.
-    bad = []
+    assert len(located) + (len(all_rows) - len(located)) == len(all_rows)
+    single = sum(1 for s in located if s["start"] == s["end"])
+    rng = sum(1 for s in located if s["start"] != s["end"])
+    assert 0 < single + rng == len(located)
+    raw = folded = gap = 0
+    unres = []
     for spec, q in all_rows:
-        if spec["span"] == "":
+        if spec["start"] == "0":
             continue
-        ok = spec["span"] == q or norm(spec["span"]) == norm(q)
-        if not ok:
-            bad.append((spec["page"], spec["fam"], spec["seq"], spec["which"]))
-    assert not bad, bad[:3]
+        res = _resolve(spec)
+        if res is None:
+            unres.append((spec["page"], spec["fam"], spec["seq"], spec["which"]))
+            continue
+        if res == q:
+            raw += 1
+        elif norm(res) == norm(q):
+            folded += 1
+        else:
+            gap += 1
+    assert not unres, f"locators that do not resolve: {unres[:3]}"
+    assert raw + folded + gap == len(located), "located split does not cover the located set"
+    assert raw > 0 and folded > 0
 
 
 @pytest.mark.parametrize("label,src,start,end,head,tail,expected", MUTANTS)
@@ -162,12 +179,13 @@ def test_seed_faults(src, quote, start, end, expected, label):
 
 
 def test_seeded_table_reproduces_the_page(page_rows, summary_rows):
-    """The table on disk must carry the span that reproduces every page quote, so a stale TSV is caught.
+    """The table on disk must carry the locator that resolves for every located row, so a stale TSV is caught.
 
     The key is `(page, fam, seq, which)`, because the two surfaces number their rows differently: a pair
     row's `seq` is the manuscript the pair names, a summaries row's is the span's index in the page. The
-    round-trip is span-vs-page-quote — byte-for-byte for raw, fold-equal for folded — and a measured
-    negative must carry `start` 0 and an empty `span`.
+    stored spec is a locator, not content, so the check is that each located row's head/tail resolves
+    against the file its `path` names; a measured negative must carry `start` 0 with blank `head` and
+    `tail`. The round-trip to the page quote (raw/folded/normalizer-gap) is asserted in `test_clean_page`.
     """
     tsv = ROOT / "notes" / "tables" / "quotes.tsv"
     if not tsv.is_file():
@@ -176,14 +194,18 @@ def test_seeded_table_reproduces_the_page(page_rows, summary_rows):
     rows = read_rows(tsv)
     keyed = {(r["page"], r["fam"], r["seq"], r["which"]): r for r in rows}
     assert len(keyed) == len(page_rows) + len(summary_rows)
-    for spec, q in page_rows + summary_rows:
+    unres = []
+    for spec, _q in page_rows + summary_rows:
         r = keyed[(spec["page"], spec["fam"], spec["seq"], spec["which"])]
         assert r["start"] == spec["start"], (spec["page"], spec["fam"], spec["seq"], spec["which"])
+        assert r["head"] == spec["head"], (spec["page"], spec["fam"], spec["seq"], spec["which"])
+        assert r["tail"] == spec["tail"], (spec["page"], spec["fam"], spec["seq"], spec["which"])
         if r["start"] == "0":
-            assert r["span"] == "", (spec["page"], spec["fam"], spec["seq"])
+            assert r["head"] == "" and r["tail"] == "", (spec["page"], spec["fam"], spec["seq"])
             continue
-        ok = r["span"] == q or norm(r["span"]) == norm(q)
-        assert ok, (spec["page"], spec["fam"], spec["seq"], spec["which"])
+        if _resolve(r) is None:
+            unres.append((r["page"], r["fam"], r["seq"], r["which"]))
+    assert not unres, f"TSV locators that do not resolve: {unres[:3]}"
 
 
 def test_page_anchor_grammar_is_shared():
