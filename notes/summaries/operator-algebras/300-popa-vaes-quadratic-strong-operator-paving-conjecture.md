@@ -31,7 +31,11 @@ The definition fixes the number of projections before the test vectors and the n
 
 The main theorem gives a quadratic bound: "For every masa $A\subseteq M\subseteq\mathcal B(H)$ and every $x=x^*\in M$, the element $x$ is $(\varepsilon,r_\varepsilon)$ so-pavable over $A$. In particular, the number of projections is fixed before the inclusion, operator, and strong neighborhood. No separability or conditional-expectation assumption is imposed on the inclusion." [S15:25] The partition count $r_\eps$ is at most $5\times10^8\eps^{-2}$ [S15:19–24]. "Theorem   proves the quadratic so-paving conjecture of Popa and Vaes \cite[Conjecture 2.8(2)]PV15. Their definition of so-paving uses arbitrary strong neighborhoods of zero; Definition   gives the equivalent finite-vector formulation \cite[Definition 2.2]PV15. For self-adjoint $x$, allowing a general diagonal element in their definition gives the same condition, since taking its real part preserves the norm bound and the compression estimate." [S15:28]
 
-The companion manuscript proves a different paving property for the same class of masas. It norm-paves a nearby bounded operator $y$ with $\|y\|\le3\|x\|$, with error relative to $\|y\|$'s norm [S6:38–57]. "There is a universal constant \(C_{\mathrmap}>0\) such that for every" [S6:39] The partition count is $C\varepsilon^{-6}$, a universal sixth power. "Thus the norm-control constant is universal, and the number of" [S6:60–61] "The relative error in the theorem is measured against the actual" the approximant's norm; a clipping argument ensures the normalization [S6:62–66]. The two results are independent, and the companion claims no quadratic rate: "The separate companion \cite[Theorem 1.1]OAQuadratic26 proves a direct" quadratic strong-operator paving bound for the original operator. Theorem   instead norm-paves a nearby bounded operator, [S6:88–93]
+The companion manuscript proves a different paving property for the same class of masas. It norm-paves a nearby bounded operator $y$ with $\|y\|\le3\|x\|$, with error relative to $\|y\|$'s norm [S6:38–57]. "There is a universal constant \(C_{\mathrmap}>0\) such that for every" [S6:39] The partition count is $C\varepsilon^{-6}$, a universal sixth power. "Thus the norm-control constant is universal, and the number of
+projections is independent of the algebra, its representation, the" [S6:60–61] "The relative error in the theorem is measured against the actual" the approximant's norm; a clipping argument ensures the normalization [S6:62–66]. The two results are independent, and the companion claims no quadratic rate: "The separate companion \cite[Theorem 1.1]OAQuadratic26 proves a direct" quadratic strong-operator paving bound for the original operator. Theorem   instead norm-paves a nearby bounded operator,
+with error relative to that approximant's norm. The two main proofs are
+independent; the conversion in Corollary   retains its normal-expectation
+hypothesis. We claim no quadratic bound for \(R(\varepsilon)\). [S6:88–93]
 
 ## Graduate summary
 
@@ -49,15 +53,26 @@ Popa and Vaes introduced the strong-operator and approximation versions and conj
 
 The exponent two is necessary: "The exponent two is forced already by the $L^2$ obstruction in a $\mathrm{II}_1$ factor from \cite[Proposition 5.4]PV15. Fix an integer $1\leq n<\varepsilon^{-2}$, choose $\varepsilon<\eta<n^{-1/2}$, and use the centered self-adjoint unitary $x$ from that proposition at threshold $\eta$. Write $\tau$ for the normalized trace and $\|b\|_2=\tau(b^*b)^{1/2}$. For every partition $P$ with $n$ pieces and every $a\in A$, trace orthogonality gives" [S15:54] The argument uses a centered self-adjoint unitary from Popa–Vaes's $L^2$ obstruction proposition and shows that the obstruction persists with the varying diagonals and compressions allowed by strong-operator paving. "The exponent in Theorem   is optimal, although its numerical constant is not optimized." [S15:63]
 
-Manuscript A's positioning is the same conjecture from the approximation side: "Kadison and Singer posed the pure-state extension problem for the atomic" diagonal masa of $\mathcal B(\ell^2)$ [S6:15–16]. Anderson formulated its diagonal paving counterpart, and Marcus–Spielman–Srivastava resolved it [S6:17–19]. For general masas, norm paving is too restrictive and characterizes type I algebras [S6:20–21]. Popa and Vaes "introduced strong-operator and approximation versions of paving and conjectured that every MASA has both properties" [S6:22–24]. "approximation versions of paving and conjectured that every MASA has both properties \cite[Definitions 2.2–2.3 and Conjecture 2.8(1)]PV15." [S6:23–25] The restricted cases (type I, Cartan in amenable algebras, singular ultraproducts) do not provide the expectation-free theorem [S6:27–35].
+Manuscript A's positioning is the same conjecture from the approximation side: "Kadison and Singer posed the pure-state extension problem for the atomic" diagonal masa of $\mathcal B(\ell^2)$ [S6:15–16]. Anderson formulated its diagonal paving counterpart, and Marcus–Spielman–Srivastava resolved it [S6:17–19]. For general masas, norm paving is too restrictive and characterizes type I algebras [S6:20–21]. Popa and Vaes "introduced strong-operator and approximation versions of paving and conjectured that every MASA has both properties" [S6:22–24]. "approximation versions of paving and conjectured that every MASA has both properties \cite[Definitions 2.2–2.3 and Conjecture 2.8(1)]PV15.
+We resolve the approximation-paving assertion of that conjecture positively." [S6:23–25] The restricted cases (type I, Cartan in amenable algebras, singular ultraproducts) do not provide the expectation-free theorem [S6:27–35].
 
 ## Consequences
 
 **Quadratic norm paving in ultrapowers.** The strong-operator result implies norm paving in the Ocneanu ultrapower for countably decomposable expected masas: "**corollary**
-" [S15:32–39] The forward transfer of Popa–Vaes converts the so-paving to norm paving in the ultrapower with the same error and partition count [S15:40–43].
+Let $A\subseteq M$ be a masa. Suppose that $A$ is countably decomposable and is the range of a normal conditional expectation from $M$. Let $\omega$ be a free ultrafilter on $\mathbb N$, and let $A^\omega\subseteq M^\omega$ be the associated inclusion in the Ocneanu von Neumann ultrapower. For every $0<\varepsilon<1$ and every $x=x^*\in M^\omega$, there are a partition $p_1,\ldots,p_{r_\varepsilon}\in A^\omega$ and an element $a=a^*\in A^\omega$ such that
+\[
+ \|a\|\le\|x\|,
+ \qquad
+ \left\|\sum_{i=1}^{r_\varepsilon}p_i x p_i-a\right\|\le\varepsilon\|x\|.
+\]
+Here $r_\varepsilon$ is the same integer as in Theorem  ." [S15:32–39] The forward transfer of Popa–Vaes converts the so-paving to norm paving in the ultrapower with the same error and partition count [S15:40–43].
 
 **Quadratic approximation paving for expected MASAs.** When the masa is the range of a normal conditional expectation, the approximation-paving partition count improves from $\varepsilon^{-6}$ to $\varepsilon^{-2}$: "**corollary**
-" [S6:95–101] in place of $R(\varepsilon)$ [S6:102].
+There is a universal constant \(C>0\) such that for every
+\(0<\varepsilon<1\) one can choose an integer
+\(N(\varepsilon)\leq C\varepsilon^{-2}\) with the following property.
+If the MASA \(A\subseteq M\) is the range of a normal conditional expectation,
+then the conclusion of Theorem   holds with" [S6:95–101] in place of $R(\varepsilon)$ [S6:102].
 
 ## Section skeleton
 

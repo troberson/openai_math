@@ -10,7 +10,11 @@ The release's blurb [S1:1629]: "**065. Virasoro constraints for complete interse
 manuscripts, one proving the constraints for complete
 intersections [S3:93–97] and one proving they pass through
 projectivization [S11:9–15]. The complete-intersections abstract
-[S3:93–97] reads: "We prove the Virasoro conjecture for the ordinary descendant"
+[S3:93–97] reads: "We prove the Virasoro conjecture for the ordinary descendant
+Gromov–Witten theory of smooth complete intersections in projective space,
+in every genus and curve class and with arbitrary cohomology insertions.
+This includes primitive and odd cohomology classes, with no semisimplicity
+assumption."
 
 ## Undergraduate summary
 
@@ -22,7 +26,8 @@ the complete-intersections manuscript proves it in full. The
 theorem [S4:15–17]:
 
 > **theorem**
-
+Let \(X\subset\mathbb P^N_\mathbb C\) be a smooth complete intersection. Its ordinary, unreduced total descendant potential satisfies the Virasoro constraints in every genus and curve class, with arbitrary insertions from \(H^*(X;\mathbb C)\).
+\endtheorem
 
 That resolves the Virasoro conjecture positively for
 projective-space complete intersections, including primitive and
@@ -34,11 +39,24 @@ constraints pass from a base to the projectivization of any
 algebraic vector bundle of rank at least two [S12:36–45]:
 
 > **theorem**
-
+Let $B$ be a smooth connected projective variety over $\C$, and
+let $E$ be an algebraic vector bundle of rank $r\geq2$ on $B$.
+Let $X=\mathbb P_B(E)$ parametrize one-dimensional subspaces of
+the fibers of $E$. Then
+\[
+                           \V(B)\ \Longrightarrow\ \V(X).
+\]
+\endtheorem
 
 The bundle need not split and satisfies no positivity condition;
 the base may have nonsemisimple quantum cohomology [S12:47–53].
-"The bundle is arbitrary: it need not split or admit a filtration"
+"The bundle is arbitrary: it need not split or admit a filtration
+by line bundles, and it is subject to no positivity condition.
+The base is allowed to have nonsemisimple quantum cohomology
+and arbitrary Hodge types. In particular the assertion applies
+successively to towers of projective bundles once the constraints
+hold on the initial base. The conclusion concerns the ordinary
+theory of each total space."
 
 ## Graduate summary
 
@@ -46,7 +64,14 @@ the base may have nonsemisimple quantum cohomology [S12:47–53].
 factors one defining equation and resolves the resulting family,
 giving a degeneration $X\rightsquigarrow U\cup_D\widetilde M$
 where $U$ and $M$ have smaller defining degree and the seam $D$
-and blowup center $S$ have smaller dimension [S4:32–38]. "The reduction has two stages. Factoring one defining equation and resolving"
+and blowup center $S$ have smaller dimension [S4:32–38]. "The reduction has two stages. Factoring one defining equation and resolving
+the resulting family gives a degeneration
+\[
+ X\rightsquigarrow U\cup_D\widetilde M,
+ \qquad \widetilde M=\Bl_S M.
+\]
+Here $U$ and $M$ are complete intersections of smaller defining degree,
+while the seam $D$ and blowup center $S$ have smaller dimension. We first prove the constraints for $\widetilde M$ from those for $M$ and projective-bundle towers over $S$."
 The constraints are then proved for $\widetilde M$ from those
 for $M$ and the projective-bundle towers over $S$, and for $X$
 from those for $U$, $\widetilde M$, and a ruled bundle over $D$.

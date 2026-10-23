@@ -7,7 +7,15 @@
 ## Original CONTENTS.md summary
 
 The release's blurb [S1:1679]: "**067. The Campana–Peternell conjecture in dimension six.** Proves the Campana–Peternell conjecture in complex dimension six: every smooth connected complex projective Fano sixfold with nef tangent bundle is rational homogeneous." The manuscript abstract
-[S3:36–44] reads: "We prove that every smooth connected complex projective Fano sixfold with nef"
+[S3:36–44] reads: "We prove that every smooth connected complex projective Fano sixfold with nef
+tangent bundle is rational homogeneous, resolving the Campana–Peternell
+conjecture in complex dimension six.
+As a consequence, a connected compact Kähler manifold $X$ with nef
+holomorphic tangent bundle and
+$\dim_{\mathbb C}X-\widetilde q(X)\leq6$ has ordinary universal cover
+$F\times\mathbb C^{\widetilde q(X)}$, where $F$ is a rational homogeneous
+manifold and $\widetilde q(X)$ is the maximal irregularity of a connected
+finite étale cover."
 
 ## Undergraduate summary
 
@@ -21,12 +29,22 @@ bundle force the variety to be rational homogeneous? The theorem
 [S4:23–26]:
 
 > **theorem**
-
+Every smooth connected complex projective Fano variety of dimension six
+with nef tangent bundle is rational homogeneous.
+\endtheorem
 
 For a sixfold, the prior work covers every Picard number
 $\rho(X)\ge2$ via Kanemitsu; only Picard number one remains, and
 characterization results reduce that to pseudoindices four and
-five [S4:42–50]. "Kanemitsu also proved that a smooth complex Fano $n$-fold with nef"
+five [S4:42–50]. "Kanemitsu also proved that a smooth complex Fano $n$-fold with nef
+tangent bundle is rational homogeneous whenever $\rho(X)>n-5$
+\cite[Theorem 0.2]Kanemitsu2016. For a sixfold, this covers every
+$\rho(X)\geq2$, leaving only Picard number one. In that range,
+standard characterization results reduce the problem to pseudoindices
+four and five. Watanabe treated the pseudoindex-four sixfold case
+\cite[Theorem 2.4]Watanabe2021. We include an independent intersection
+argument for it; the principal new step is pseudoindex five, where a
+characteristic-number constraint leads to the Grassmannian."
 
 ## Graduate summary
 
@@ -44,7 +62,12 @@ tangent directions. The proof uses the universal family in two
 ways — as a family of curves over its parameter space and as a
 family of threefolds over $X$ — and the compatibility of these two
 maps gives a characteristic-number identity that determines the
-projective variety of tangent directions [S4:53–60]. "We extract additional information by"
+projective variety of tangent directions [S4:53–60]. "We extract additional information by
+using the universal family in two ways: as a family of rational curves
+over their parameter space, and as a family of threefolds over $X$.
+The compatibility of these two maps yields a characteristic-number
+identity strong enough to determine the projective variety of tangent
+directions."
 
 **The VMRT and the Grassmannian.** The variety of minimal
 rational tangents (VMRT) is then constrained by characteristic
@@ -52,7 +75,10 @@ classes and the geometry of minimal curves. The sectional-genus
 formula and a Grothendieck–Riemann–Roch characteristic-number
 calculation force the tangent directions to be the Segre threefold
 $\mathbb P^1\times\mathbb P^2\subset\mathbb P^5$, which is the
-VMRT of the Grassmannian $G(2,5)$ [S4:129–131] and [S6]. "The sectional-genus"
+VMRT of the Grassmannian $G(2,5)$ [S4:129–131] and [S6]. "The sectional-genus
+formula excludes $u=4$ and forces $L^3=3$ when $u=8/3$.
+The variety of minimal rational tangents is consequently the Segre
+threefold $\mathbb P^1\times\mathbb P^2\subset\mathbb P^5$."
 
 ## History of the conjecture
 

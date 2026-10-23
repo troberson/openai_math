@@ -9,7 +9,29 @@
 The release's blurb [S1:1581]: "**062. Projective contact classification and the LeBrun–Salamon conjecture.** Proves the LeBrun–Salamon conjecture: every closed connected positive quaternionic-Kähler manifold of real dimension at least eight is homothetic to a compact symmetric Wolf space. It also proves contact-Fano homogeneity and classifies smooth connected complex projective contact manifolds of complex dimension at least three: those with $`b_2=1`$ are adjoint varieties with their canonical contact structures, while those with $`b_2\ge2`$ have underlying manifold $`\mathbb P(T^*Z)`$ for a smooth projective variety *Z*."
 
 The manuscript, *Contact Fano manifolds and the LeBrun--Salamon
-conjecture* [S2:60–66], has the abstract [S2:60–66]: "We resolve the contact-Fano homogeneity conjecture and the Riemannian"
+conjecture* [S2:60–66], has the abstract [S2:60–66]: "We resolve the contact-Fano homogeneity conjecture and the Riemannian
+LeBrun–Salamon conjecture positively. Every smooth connected complex
+projective contact Fano manifold of complex dimension at least three,
+with its given contact distribution, is contact-isomorphic to the
+adjoint variety of a simple complex Lie algebra. Consequently, every
+closed connected smooth positive quaternionic-Kähler manifold of real
+dimension $4m\geq8$ is homothetic to a compact symmetric Wolf space.
+3.inline	S3	3	18	Let $X$ be a smooth connected complex projective variety of dimension
+$2n+1$, where $n\geq1$. A _contact structure_ on $X$ is an exact
+sequence of algebraic vector bundles
+\beginequation 
+ 0\longrightarrow F\longrightarrow T_X
+ \xrightarrow{\ \theta\ }L\longrightarrow0,
+\endequation
+with $L$ a line bundle, such that the Levi pairing
+\[
+ F\otimes F\longrightarrow L,
+ \qquad (v,w)\longmapsto\theta([v,w])
+\]
+is everywhere nondegenerate. In a local frame of $L$, write $\alpha$
+for the scalar one-form representing $\theta$. The condition is
+equivalent to $\alpha\wedge(d\alpha)^n$ being nowhere zero. We call
+$(X,F)$ a _contact Fano manifold_ if $-K_X$ is ample."
 
 ## Undergraduate summary
 
@@ -21,7 +43,19 @@ When $-K_X$ is ample, the pair $(X,F)$ is a contact Fano manifold.
 The main theorem classifies them all [S3:30–43]:
 
 > **theorem**
-
+Let $(X,F)$ be a smooth connected complex projective contact Fano
+manifold of dimension $2n+1$, with $n\geq1$, and let $L=T_X/F$.
+There exist a finite-dimensional simple complex Lie algebra
+$\mathfrak g$ and an algebraic isomorphism
+\[
+ \varphi:X\xrightarrow{\ \sim\ }Y_{\mathfrak g}
+\]
+whose differential carries the given distribution $F$ to the canonical
+contact distribution on $Y_{\mathfrak g}$. Moreover,
+\[
+ L\simeq\varphi^*\bigl(\mathcal O_{\mathbb P(\mathfrak g)}(1)|_{Y_{\mathfrak g}}\bigr).
+\]
+\endtheorem
 
 Every contact Fano manifold is the adjoint variety of a simple
 complex Lie algebra, with its canonical contact structure.
@@ -32,7 +66,27 @@ complex Lie algebra, with its canonical contact structure.
 Fano, the second Betti number determines the model [S3:75–96]:
 
 > **corollary**
-
+Let $(X,F)$ be a smooth connected complex projective contact manifold
+of dimension $2n+1$, where $n\geq1$. Its second Betti number determines
+the following alternatives.
+\beginenumerate
+\item If $b_2(X)=1$, then $(X,F)$ is contact-isomorphic to the adjoint
+variety $Y_{\mathfrak g}$, with its canonical contact distribution, for
+a simple complex Lie algebra $\mathfrak g$.
+\item If $b_2(X)\geq2$, then there is a smooth connected complex
+projective manifold $Z$ of dimension $n+1$ and a biholomorphism
+\[
+ X\simeq\mathbb P(T^*Z).
+\]
+Here $\mathbb P(T^*Z)$ parametrizes lines in cotangent spaces, equivalently
+hyperplanes in tangent spaces. This assertion identifies the underlying
+manifolds, without imposing compatibility with the given distribution $F$.
+\endenumerate
+Conversely, every adjoint variety of complex dimension $2n+1$ and every
+projectivized cotangent bundle in the second alternative admits a contact
+structure. Thus these are precisely the underlying manifolds of smooth
+connected complex projective contact manifolds in these dimensions.
+\endcorollary
 
 The $b_2=1$ case is the adjoint variety; the $b_2\ge 2$ case is a
 projectivized cotangent bundle. The reduction from general projective
@@ -44,7 +98,15 @@ Sommese--Wiśniewski classification [S3:71–73, S3:142–150].
 follows from the twistor construction [S3:105–114]:
 
 > **corollary**
-
+Let $(M^{4m},g)$ be a closed connected smooth Riemannian manifold,
+where $m\geq2$, with holonomy contained in $\Sp(m)\Sp(1)$ in the
+standard representation and with positive scalar curvature. Then
+\[
+ \nabla\Rm_g=0.
+\]
+Moreover, $(M,g)$ is homothetic to a compact symmetric positive
+quaternionic-Kähler Wolf space.
+\endcorollary
 
 A positive quaternionic-Kähler manifold has a twistor space that
 is contact Fano. The algebraic classification identifies the twistor
@@ -78,6 +140,29 @@ LeBrun--Salamon finiteness and rigidity program set the stage for the
 homogeneity conjecture [S3:128–140]:
 
 > Wolf's work
+relates compact quaternionic symmetric spaces to homogeneous complex contact
+spaces  ; the adjoint-variety description of their twistor
+fibration is recalled in \cite[Section 3.9, pp. 105–106]LandsbergManivel2004.
+The twistor construction of Salamon, independently due to Bérard-Bergery,
+associates a contact Fano manifold to a closed connected positive
+quaternionic-Kähler manifold  .  LeBrun's converse characterizes the
+contact Fano manifolds arising in this way by the existence of a
+Kähler–Einstein metric \cite[Theorem A]LeBrun1995.  The finiteness and
+rigidity program of LeBrun and Salamon  
+provides the historical setting for the homogeneity conjecture.  The general
+algebraic formulation, stated for example in
+\cite[Conjecture 1.1]Buczynski2010, concerns every contact Fano manifold.
+8.inline	S11	4	12	To prove Corollary  , we apply
+Theorem   to the twistor space of a positive quaternionic
+Kähler manifold. The complex classification then determines
+the Riemannian metric after its scale has been fixed.
+
+\subsectionThe normalized metric and its twistor space
+
+For $m\geq2$, the holonomy containment in the corollary makes $g$
+Einstein  ; see also \cite[Definition 1.1 and the
+following discussion]LeBrun1995. Thus, writing $s>0$ for its constant
+scalar curvature, we have $\mathrm{Ric}_g=(s/4m)g$.
 
 Poon and Salamon classified the dimension-eight case; Ye and Druel
 handled complex dimensions three and five. Buczyński and Wiśniewski

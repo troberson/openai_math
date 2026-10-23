@@ -8,10 +8,21 @@
 
 The release's blurb [S1:1404]: "**055. Gepner symmetry and large-volume stability on threefolds.** Proves Toda's Gepner conjecture for every smooth complex quintic threefold, constructing a numerical Bridgeland stability condition with the prescribed phase shift 2/5. Also constructs numerical Bridgeland stability conditions at every sufficiently large volume on all smooth projective complex threefolds with trivial canonical bundle, with the exact ordinary and square-root-Todd central charges." The first manuscript,
 *A Gepner stability condition on every smooth quintic threefold* [S2],
-has the abstract [S3:48–51]: "We prove Toda's normalized quintic Gepner conjecture. On every smooth complex"
+has the abstract [S3:48–51]: "We prove Toda's normalized quintic Gepner conjecture. On every smooth complex
+quintic threefold, we construct a numerical Bridgeland stability condition for
+which tensoring by the hyperplane bundle, followed by the spherical twist at
+the structure sheaf, increases phase by $2/5$."
 The second manuscript, *Prescribed large-volume charges on threefolds
 with trivial canonical bundle* [S8], has the abstract [S9:78–86]:
-"Let $X$ be a smooth projective complex threefold with trivial canonical"
+"Let $X$ be a smooth projective complex threefold with trivial canonical
+bundle. We construct numerical Bridgeland stability conditions with the exact
+ordinary and square-root-Todd central charges at every sufficiently large
+volume. One volume threshold works on an open set of real twists and ample
+directions. The resulting stability conditions have the support property on
+the full numerical Grothendieck group and stable point sheaves. Separately, on
+every smooth projective complex threefold we prove a strong tilt inequality
+above a volume threshold uniform in the object and twist along a fixed
+polarization."
 
 ## Undergraduate summary
 
@@ -20,12 +31,28 @@ complex central charge and a real phase, with finite filtrations into
 semistable objects. At a Gepner point, one seeks a stability condition
 compatible with a distinguished autoequivalence: the functor should
 rotate the central charge and translate every semistable phase by a fixed
-amount [S4:3–10]. "Stability conditions organize the objects of a derived category by a complex"
+amount [S4:3–10]. "Stability conditions organize the objects of a derived category by a complex
+central charge and a real phase, with finite filtrations into semistable
+objects. Their physical antecedent is Douglas's proposal of $\Pi$-stability
+for D-branes  ; Bridgeland gave the mathematical framework
+used here  . At a Gepner point, one seeks a stability
+condition compatible with a distinguished autoequivalence: the functor should
+rotate the central charge and translate every semistable phase by a fixed
+amount. We construct such a condition for every smooth quintic threefold."
 
 The theorem [S4:52–62]:
 
 > **theorem**
-
+Every smooth complex quintic threefold admits a numerical Bridgeland stability
+condition $\sigma=(Z,\mathcal P)$ with the support property on $K_{\mathrm{num}}(X)_{\mathbb R}$
+such that, for every $E\in\mathcal D$ and $\varphi\in\mathbb R$,
+\[
+ Z(\Phi E)=e^{2\pi i/5}Z(E),\qquad
+ \Phi\bigl(\mathcal P(\varphi)\bigr)=\mathcal P(\varphi+2/5),\qquad
+ Z(\mathcal O_x)=-1
+\]
+for every closed point $x\in X$.
+\endtheorem
 
 The autoequivalence $\Phi$ is the composition of tensoring by the
 hyperplane bundle with the spherical twist at the structure sheaf. The
@@ -42,6 +69,11 @@ controls the other two numerical coordinates. The support estimate is
 obtained before defining semistable objects [S4:95–100]:
 
 > The central step is to retain two independent perturbations of Toda's second
+cut. They give inequalities controlling rank and first Chern character; the
+complex charge then controls the other two numerical coordinates. We obtain
+this support estimate before defining semistable objects. It makes finite
+refinement possible even though the image of the numerical lattice under the
+charge need not be discrete.
 
 **The uniform aisle family.** The construction tilts $\Coh(X)$ twice,
 beginning at slope $-1/2$, and varies the rank and first-Chern
@@ -49,6 +81,15 @@ coefficients of the second cut over a fixed open square. Xu's stronger
 Bogomolov–Gieseker inequality supplies strict margins [S6:4–13]:
 
 > Our goal is to construct bounded aisles $U_\eta$ for which
+$\Phi U_\eta\subset U_\theta$ holds uniformly with independent parameters.
+We begin with Toda's proposed two tilts for the quintic Gepner charge
+\cite[Sections 3.4–3.6]TodaQuintic2013, and vary the second cut in two
+numerical directions. The slope estimate below supplies the strict margins
+that make the comparison survive these variations.
+The two first-tilt slopes $-1/2$ and $1/2$ reflect the order of the factors
+in $\Phi$: tensoring by $\mathcal O_X(1)$ moves the first cut from $-1/2$ to
+$1/2$, and the spherical twist will take the resulting aisle into one
+constructed at $-1/2$.
 
 The crucial conclusion is $\Phi U_\eta\subset U_\theta$ with both
 parameters varying independently throughout the same square.
@@ -59,6 +100,9 @@ positivity in every perturbed preceding heart bounds the full numerical
 class of each grid block by its charge [S7:27–30]:
 
 > The decisive use of the perturbations is twofold. Simultaneous positivity
+in fixed middle hearts improves the coarse nesting to a grid with spacing
+$1/5$. Positivity in every perturbed preceding heart then bounds the full
+numerical class of each grid block by its charge.
 
 Each block is refined into semistable factors; support and a positive
 projection of the charge bound the numerical classes of subobjects and
@@ -67,10 +111,35 @@ stops.
 
 **The prescribed-charge companion.** The second manuscript addresses
 the prescribed-charge problem on threefolds with trivial canonical
-bundle [S10:3–11]: "A central charge assigns a complex number to each object of a derived" The theorem [S10:103–122]:
+bundle [S10:3–11]: "A central charge assigns a complex number to each object of a derived
+category. A stability condition organizes the objects by its argument and
+requires every object to have a finite filtration by semistable factors.
+Bridgeland introduced this structure and its deformation theory
+ . On a projective threefold, the expected large-volume
+charges are exponential expressions in the Chern character. The
+prescribed-charge problem asks whether these particular expressions admit
+a compatible heart, finite semistable filtrations, and a support bound
+controlling the numerical classes of all semistable objects." The theorem [S10:103–122]:
 
 > **theorem**
-
+Let $X$ be a smooth projective complex threefold with
+$K_X\simeq\mathcal O_X$. For any $B_*\in N^1(X)_{\mathbb R}$ and
+$H_*\in\mathrm{Amp}(X)$ there are open neighborhoods $V$ of
+$B_*$ and $W$ of $H_*$ and one $T>0$ such that, for all
+$B\in V$, $H\in W$ and $t\geq T$, the following hold.
+\beginenumerate[label=\textup{(\roman*)}]
+\item $(Z_{B,tH},\mathcal A_{B,tH})$ is a geometric numerical
+stability condition with support on $K_{\mathrm{num}}(X)_{\mathbb R}$.
+\item There is a geometric numerical stability condition, with support
+on the same full numerical space, whose charge is exactly
+\[
+ Z^{\mathrmLV}_{B,tH}(E)
+ =-\int_Xe^{-B-itH}\ch(E)\sqrt{\td(X)},
+ \qquad \sqrt{\td(X)}=1+\frac{c_2(X)}24.
+\]
+Its heart is the one constructed in Section  .
+\endenumerate
+\endtheorem
 
 Only triviality of $K_X$ is assumed; the additional vanishings in the
 strict Calabi–Yau convention are unnecessary. The Todd-corrected charge
@@ -81,7 +150,23 @@ complex threefold (no canonical-bundle hypothesis), a strong tilt
 inequality holds [S10:167–184]:
 
 > **theorem**
-
+Let $X$ be a smooth projective complex threefold, $H$ an ample integral
+divisor, and $B_0\in N^1(X)_{\mathbb Q}$.
+There are constants $k\in\mathbb Q_{\geq0}$ and $R_*>0$, depending only on
+$(X,H,B_0)$, such that every finite-slope $\nu_{a,b}$-semistable
+$E\in\mathcal B_{H,B_0+bH}$ with $\nu_{a,b}(E)=0$ satisfies
+\beginequation 
+ \ch_3^{B_0+bH}(E)
+ \leq \left(\frac{a^2}6+k\right)H^2\ch_1^{B_0+bH}(E)
+ \qquad(a>0,\ b\in\mathbb R).
+\endequation
+For the same fixed data, the stronger bound
+\beginequation 
+ \ch_3^{B_0+bH}(E)
+ \leq \frac{a^2}6H^2\ch_1^{B_0+bH}(E)
+\endequation
+holds whenever $a>R_*$, for every $b\in\mathbb R$.
+\endtheorem
 
 Both constants are independent of the rank and Chern character of $E$.
 The curve class $\Gamma=kH^2$ gives the correction and satisfies

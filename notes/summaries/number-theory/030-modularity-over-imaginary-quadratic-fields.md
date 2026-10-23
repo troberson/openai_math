@@ -8,7 +8,9 @@
 
 The release's blurb [S1:723]: "**030. Modularity of elliptic curves over imaginary quadratic fields.** Proves the modularity conjecture for elliptic curves over imaginary quadratic fields: every elliptic curve over every imaginary quadratic field is modular, with matching local parameters at every place." The catalog abstract [S2:136]
 restates it: "Proves the modularity conjecture for elliptic curves over imaginary quadratic fields: every elliptic curve over every imaginary quadratic field is modular, with matching local parameters at every place." The manuscript's title is "Modularity of elliptic curves over imaginary quadratic fields" [S3:1], and
-its abstract [S4:74–76] reads: "We prove the modularity conjecture for elliptic curves over imaginary"
+its abstract [S4:74–76] reads: "We prove the modularity conjecture for elliptic curves over imaginary
+quadratic fields: every such curve is modular, with matching local
+parameters at every place."
 
 ## Undergraduate summary
 
@@ -18,7 +20,32 @@ $\pi_E$ of $\GL_2(\A_K)$ whose local parameters match the $\ell$-adic
 cohomology of $E$ at every place, and $L(E/K,s)=L(\pi_E,s-1/2)$.
 
 > **theorem**
-
+Let $K$ be an imaginary quadratic number field and $E/K$ an elliptic
+curve. There is an isobaric automorphic representation $\pi_E$ of
+$\GL_2(\mathbb A_K)$ with trivial central character and weight zero such that,
+for every prime $l$ and every isomorphism
+$\iota:\overline\mathbb Q_l\xrightarrow{\sim}\mathbb C$,
+\[
+ r_\iota(\pi_E)\simeq
+ H^1_{\mathrm{\acute et}}(E_{\overline K},\overline\mathbb Q_l).
+\]
+At every finite place $v\nmid l$ one has
+\[
+ \iota\WD\bigl(H^1_{\mathrm{\acute et}}(E_{\overline K},\overline\mathbb Q_l)
+                     |_{G_{K_v}}\bigr)^{\mathrm{F-ss}}
+ \simeq
+ \rec_{K_v}\bigl(\pi_{E,v}\otimes|\det|_v^{-1/2}\bigr).
+\]
+The unitary parameter at the complex place is
+$z\mapsto\diag(z/|z|,\overline z/|z|)$.
+In particular every local factor agrees, and
+\[
+ L(E/K,s)=L(\pi_E,s-1/2).
+\]
+If $E$ has no complex multiplication, $\pi_E$ is cuspidal. In the CM
+case it is given by automorphic induction of a Hecke character, or by
+an isobaric sum when the CM field is already $K$.
+\endtheorem
 
 If $E$ has no complex multiplication, $\pi_E$ is cuspidal. In the CM
 case it is given by automorphic induction of a Hecke character.
@@ -27,12 +54,26 @@ case it is given by automorphic induction of a Hecke character.
 
 **The method: a geometric prime switch.** Over $\Q$, modularity was
 proved by lifting automorphy from a residual Galois representation,
-using Wiles's $3$--$5$ switch [S5:60–64]. "Over $\mathbb Q$, Wiles and Taylor–Wiles proved modularity of semistable" Over imaginary
+using Wiles's $3$--$5$ switch [S5:60–64]. "Over $\mathbb Q$, Wiles and Taylor–Wiles proved modularity of semistable
+elliptic curves  , and
+Breuil–Conrad–Diamond–Taylor proved modularity of every elliptic
+curve  . A central method is to lift automorphy from a residual
+Galois representation." Over imaginary
 quadratic fields, the potential automorphy theorem of ACC gives
 potential modularity (after extending the ground field) [S5:82–86].
-"The potential automorphy theorem of" Caraiani–Newton's lifting theorem removes most restrictions
+"The potential automorphy theorem of
+Allen–Calegari–Caraiani–Gee–Helm–Le Hung–Newton–Scholze–Taylor–Thorne
+implies potential modularity of every elliptic curve over a CM
+field \cite[Theorem 1.0.1]ACC. Boxer–Calegari–Gee–Pilloni also proved
+potential modularity for genus-one curves over quadratic extensions of
+totally real fields \cite[Theorem 1.1.4]BCGP." Caraiani–Newton's lifting theorem removes most restrictions
 but leaves the rank-zero condition on $X_0(15)(K)$ [S5:94–98].
-"Their results give modularity under suitable residual-image hypotheses" The theorem removes that last restriction.
+"Their results give modularity under suitable residual-image hypotheses
+in characteristic $3$ or $5$, modularity for $100\%$ of Weierstrass
+equations, ordered by height, over each Galois CM field not containing $\zeta_5$, and
+modularity of every elliptic curve over an imaginary quadratic field
+$K$ for which $X_0(15)(K)$ has rank zero
+\cite[Theorem 6.1 and Corollaries 6.1.2 and 7.1.2]CN." The theorem removes that last restriction.
 
 **The construction.** For a non-CM curve $E/K$, the proof builds a
 family of genus-$n$ cyclic covers $C_n(t)$ of quadratic twists of $E$,
@@ -41,6 +82,15 @@ rank-two character pieces $V_\theta$ that form a congruence chain
 [S5:116–126]:
 
 > Choose characters $\eta$ and $\psi$ of orders $3$ and $p$, respectively,
+and set $\chi=\eta\psi$. The order-three system $V_\eta$ comes from an
+elliptic curve $A/F$, while $V_1=H^1(B_t)$. An integral description of the
+cohomology gives the chain
+\beginequation 
+ \underbrace{V_\eta}_{H^1(A)}
+ \ \equiv\!\!\pmod p\ \ V_\chi
+ \ \equiv\!\!\pmod 3\ \ V_\psi
+ \ \equiv\!\!\pmod p\ \ \underbrace{V_1}_{H^1(B_t)}.
+\endequation
 
 Automorphy propagates from left to right along the chain: the
 order-three piece $V_\eta$ comes from an elliptic curve (so it is
@@ -66,14 +116,28 @@ Whitley developed substantial computations relating elliptic curves
 and automorphic forms over these fields [S5:53–55].
 
 Over $\Q$, the modularity theorem was proved by Wiles,
-Taylor–Wiles, and Breuil–Conrad–Diamond–Taylor [S5:60–64]. "Over $\mathbb Q$, Wiles and Taylor–Wiles proved modularity of semistable"
+Taylor–Wiles, and Breuil–Conrad–Diamond–Taylor [S5:60–64]. "Over $\mathbb Q$, Wiles and Taylor–Wiles proved modularity of semistable
+elliptic curves  , and
+Breuil–Conrad–Diamond–Taylor proved modularity of every elliptic
+curve  . A central method is to lift automorphy from a residual
+Galois representation."
 The central method is lifting from a residual representation, with
 Wiles's $3$--$5$ switch providing the geometric mechanism.
 
 Over CM fields, the potential automorphy theorem (ACC) and
 Calegari–Geraghty patching give potential modularity [S5:82–86].
-"The potential automorphy theorem of" Caraiani–Newton's lifting theorem handles most cases
-but leaves the rank-zero condition [S5:94–98]. "Their results give modularity under suitable residual-image hypotheses"
+"The potential automorphy theorem of
+Allen–Calegari–Caraiani–Gee–Helm–Le Hung–Newton–Scholze–Taylor–Thorne
+implies potential modularity of every elliptic curve over a CM
+field \cite[Theorem 1.0.1]ACC. Boxer–Calegari–Gee–Pilloni also proved
+potential modularity for genus-one curves over quadratic extensions of
+totally real fields \cite[Theorem 1.1.4]BCGP." Caraiani–Newton's lifting theorem handles most cases
+but leaves the rank-zero condition [S5:94–98]. "Their results give modularity under suitable residual-image hypotheses
+in characteristic $3$ or $5$, modularity for $100\%$ of Weierstrass
+equations, ordered by height, over each Galois CM field not containing $\zeta_5$, and
+modularity of every elliptic curve over an imaginary quadratic field
+$K$ for which $X_0(15)(K)$ has rank zero
+\cite[Theorem 6.1 and Corollaries 6.1.2 and 7.1.2]CN."
 Theorem~\ref{thm:main} removes that restriction.
 
 ## Consequences
@@ -87,7 +151,14 @@ CM case it is automorphic induction of a Hecke character [S5:15–38].
 **Reusable geometric machinery.** The local constancy argument and the
 two-conjugate specialization argument are formulated separately from
 the automorphy application, so they can be used independently
-[S5:183–189]. "The feature developed here is the combination for a _prescribed_"
+[S5:183–189]. "The feature developed here is the combination for a _prescribed_
+elliptic curve: the character orders $1,p,3p,3$ occur in one integral
+cohomology lattice, an elliptic curve occurs at each end of the chain,
+and the compact-type degeneration and simultaneous residual specialization
+make every step applicable to the CM-field lifting theorem. The local
+constancy argument and the two-conjugate specialization argument are
+formulated separately, so they can be used independently of the final
+automorphy application."
 
 ## Section skeleton
 

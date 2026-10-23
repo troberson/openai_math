@@ -9,18 +9,43 @@
 The release's blurb [S1:1597]: "**063. The generalized Mukai conjecture.** Proves the generalized Mukai conjecture: every positive-dimensional smooth complex projective Fano manifold of dimension *n*, Picard number *ρ* and pseudoindex *ι* satisfies $`\rho(\iota-1)\le n`$, with equality exactly for $`(\mathbb P^{\iota-1})^\rho`$. Here the pseudoindex is the least anticanonical degree of a rational curve."
 
 The manuscript, *The generalized Mukai conjecture* [S2:33–36], has the
-abstract [S2:33–36]: "We prove the generalized Mukai conjecture: every positive-dimensional"
+abstract [S2:33–36]: "We prove the generalized Mukai conjecture: every positive-dimensional
+smooth complex Fano manifold of dimension $n$, Picard number $\rho$, and
+pseudoindex $\iota$ satisfies $\rho(\iota-1)\le n$. Equality holds
+precisely for the product of $\rho$ copies of $\mathbb P^{\iota-1}$."
 
 ## Undergraduate summary
 
 A Fano manifold is a smooth complex projective variety with ample
 anticanonical divisor. Its pseudoindex is the smallest anticanonical
-degree of an irreducible rational curve [S3:3–15]: "A Fano manifold is a smooth connected complex projective variety $X$"
+degree of an irreducible rational curve [S3:3–15]: "A Fano manifold is a smooth connected complex projective variety $X$
+whose anticanonical divisor $-K_X$ is ample. Its Picard number
+$\rho_X$ is the rank of its Néron–Severi group, or equivalently the
+dimension of the space of numerical divisor classes. If $X$ has positive
+dimension, its _pseudoindex_ is
+\[
+ \iota_X=\min\{-K_X\cdot C:C\subset X
+                    is an irreducible rational curve\}.
+\]
+The existence of rational curves on a Fano manifold makes this minimum
+well defined. The pseudoindex records the smallest anticanonical curve
+degree; it need not equal the largest integer dividing $-K_X$ in
+$\mathrm{Pic}(X)$, which is the Fano index."
 
 The theorem [S3:22–33]:
 
 > **theorem**
-
+Let $X$ be a smooth connected complex projective Fano manifold of
+positive dimension $n$, Picard number $\rho_X$ and pseudoindex $\iota_X$.
+Then
+\[
+ \rho_X(\iota_X-1)\le n.
+\]
+Equality holds if and only if
+\[
+ X\cong(\mathbb P^{\iota_X-1})^{\rho_X}.
+\]
+\endtheorem
 
 The bound says the Picard number times the pseudoindex minus one
 cannot exceed the dimension. Equality forces the manifold to be a
@@ -34,6 +59,21 @@ basis of divisor classes gives commuting matrices whose entries
 encode two-point Gromov--Witten invariants [S3:76–91]:
 
 > Write $r=\rho_X$ and $\iota=\iota_X$. If $\iota=1$, the inequality
+is strict because $n>0$, so assume $\iota\ge2$.
+Choose divisor classes $D_1,\ldots,D_r$ forming a numerical basis.
+Small quantum multiplication by these divisors gives commuting
+matrices $A_1(q),\ldots,A_r(q)$ on the even cohomology of $X$,
+with coefficients depending on $r$ nonzero formal variables $q_j$.
+Each matrix consists of classical cup product and a finite sum of
+two-point curve correspondences. A correspondence of anticanonical
+degree $d$ lowers cohomological codimension by $d-1$.
+Consequently, a nonzero product in $r$ independent curve degrees would
+give
+\[
+ r(\iota-1)\le\sum_{j=1}^r(d_j-1)\le n.
+\]
+The main task is to produce that product without assuming that quantum
+cohomology is semisimple.
 
 The key difficulty is producing $r$ independent curve degrees
 without assuming quantum cohomology is semisimple. The argument
@@ -50,6 +90,35 @@ lower bound. Thus one tuple has $r$ algebraically independent
 coordinates [S3:110–127]:
 
 > Here the divisor and recursion identities give a finite-shift
+recurrence for descendant vectors on an arbitrary smooth Fano manifold.
+After factorial normalization it yields an
+exponential upper bound. If every joint eigenvalue tuple of the quantum
+divisors satisfied a polynomial relation, the same recurrence would
+force decay of order $\exp(-c d\log d)$ along a suitable free curve
+degree. After the same factorial normalization, the descendant lower
+bound permits only exponential decay and rules this out. Thus one joint
+tuple has $r$ algebraically independent coordinates
+(Section  ).
+
+Section   converts this algebraic independence into the
+required curve correspondences. An alternating trace of matrix-valued
+differentials is invariant even under changes of basis depending on
+$q$. Computing it in a common triangular basis detects the independent
+eigenvalues; computing it in the fixed cohomology basis detects a
+nonzero product in independent curve degrees. This argument also
+applies to nonsemisimple commuting matrices.
+7.inline	S8	25	36	\begintheorem[The ordered-chain bound]
+ 
+Let $Y$ be a smooth complex projective variety.  Let
+$V^1,\ldots,V^k$ be proper irreducible components of
+$\mathrm{RatCurves}^{\mathrm n}(Y)$ whose numerical classes are
+linearly independent.  For every $y\in Y$, the ordered endpoint locus
+is either empty or satisfies
+\[
+ \dim\operatornameLocus(V^1,\ldots,V^k)_y
+ \ge\sum_{j=1}^k(-K_Y\cdot V^j-1).
+\]
+\endtheorem
 
 The alternating trace of matrix-valued differentials, computed in
 a common triangular basis versus the fixed cohomology basis,
@@ -67,7 +136,12 @@ And Occhetta's product characterization identifies the manifold
 [S8:43–50]:
 
 > **theorem**
-
+Let $Y$ be a smooth complex projective variety of dimension $n$.
+Suppose $Y$ has numerically independent unsplit covering families
+$V^1,\ldots,V^k$ with anticanonical degrees $n_1+1,\ldots,n_k+1$,
+where each $n_j$ is positive and $\sum_jn_j=n$.  Then
+$Y\cong\mathbb P^{n_1}\times\cdots\times\mathbb P^{n_k}$.
+\endtheorem
 
 The numerically independent unsplit covering families with
 anticanonical degrees summing to $n$ force the product of

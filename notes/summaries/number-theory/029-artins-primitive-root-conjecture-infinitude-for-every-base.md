@@ -18,11 +18,21 @@ integer (not $-1$, not a square) is a primitive root modulo infinitely
 many primes. The theorem [S6:17–24]:
 
 > **theorem**
-
+For every admissible integer $a$, there are constants $c_a>0$ and
+$x_a\ge2$ such that, for every real $x\ge x_a$,
+\[
+ #\{p prime:x<p<2x,\ p\nmid a,\ \ord_p(a)=p-1\}
+       \ge c_a\fracx{(\log x)^2}.
+\]
+\endtheorem
 
 The predicted scale is $x/\log x$; the theorem gives $x/(\log x)^2$ in
 every dyadic interval — a square-root loss in the log, but unconditional
-and base-specific [S6:26–30]. "The predicted counting scale is $x/\log x$; the theorem gives"
+and base-specific [S6:26–30]. "The predicted counting scale is $x/\log x$; the theorem gives
+$x/(\log x)^2$ in every sufficiently large dyadic interval. In
+particular, it proves the infinitude assertion for each fixed
+admissible integer, including the prescribed base $2$. The constants
+and the threshold may depend on the base."
 
 ## Graduate summary
 
@@ -30,7 +40,13 @@ and base-specific [S6:26–30]. "The predicted counting scale is $x/\log x$; the
 for Hecke $L$-functions [S6:38–45]:
 
 > **theorem**
-
+Let $F$ be a cyclotomic number field containing $\mu_{12}$.
+For every finite-order Hecke character $\eta$ of $F$, the meromorphic
+continuation of $L_F(s,\eta)$ has no zeros in
+\[
+ \operatornameRe s>1-10^{-6}.
+\]
+\endtheorem
 
 The width $10^{-6}$ is common to all cyclotomic fields containing
 $\mu_{12}$ and all finite-order Hecke characters, with no conductor
@@ -47,10 +63,31 @@ control the remaining bilinear sums [S15].
 **The companion manuscript.** The second paper [S21] extends the
 construction to simultaneous primitive roots for a fixed finite set of
 prime bases. It is an implication from four inputs taken from the first
-manuscript [S21:23–30]: "Our result is an implication from four statements taken from the companion" The conditional theorem [S21:32–47]:
+manuscript [S21:23–30]: "Our result is an implication from four statements taken from the companion
+manuscript  : a uniform Hecke zero-free assertion
+(Input  ), a marked Type II estimate
+(Input  ), a block sieve (Input  ), and a
+rough-number density estimate (Input  ).  We reproduce
+these statements in the precise forms used here.  They are hypotheses of
+the following theorem; their proofs in   and its cited
+companion manuscripts are outside the scope of this paper." The conditional theorem [S21:32–47]:
 
 > **theorem**
-
+Assume Inputs  ,  ,
+ , and  .  Let \(k\ge1\) and let
+\(q_1,\ldots,q_k\) be distinct positive primes.  There are constants
+\(c_{\mathbf q}>0\) and \(x_{\mathbf q}>1\) such that, for every real
+\(x\ge x_{\mathbf q}\), at least
+\[
+        c_{\mathbf q}\fracx{(\log x)^2}
+\]
+primes \(p\in(x,2x)\) satisfy
+\[
+        p\nmid q_1\cdots q_k,
+        \qquad
+        \ord_p(q_i)=p-1\quad(1\le i\le k).
+\]
+\endtheorem
 
 The reduction [S22] shows the four inputs suffice; the marked family
 construction [S24] and the prime-reservoir extraction [S25] complete
@@ -60,12 +97,29 @@ the argument.
 
 Hooley proved Artin's asymptotic under the Riemann hypothesis for the
 Dedekind zeta functions of the Kummer fields
-$\Q(\mu_n,a^{1/n})$ [S6:57–69]. "Hooley proved Artin's predicted asymptotic under the Riemann hypothesis" The Kummer fields encode
+$\Q(\mu_n,a^{1/n})$ [S6:57–69]. "Hooley proved Artin's predicted asymptotic under the Riemann hypothesis
+for the Dedekind zeta functions of the Kummer fields
+$\mathbb{Q}(\mu_n,a^{1/n})$, with $n$ squarefree  .
+These fields encode the obstructions to maximal order. For a prime
+$q$ and $p\nmid aq$, the conditions
+\[
+ p\equiv1\pmod q,\qquad a^{(p-1)/q}\equiv1\pmod p
+\]
+say that $p$ splits completely in $\mathbb{Q}(\mu_q,a^{1/q})$.
+They hold precisely when $q$ divides the index
+$(p-1)/\ord_p(a)$. Hooley's method counts and sums such splitting
+conditions. Here a restricted factorization of $p-1$ confines the
+possible index divisors to ranges where they can all be removed." The Kummer fields encode
 the obstructions: for $q|(p-1)/\ord_p(a)$, the prime $p$ splits
 completely in $\Q(\mu_q,a^{1/q})$.
 
 Unconditional results allow only a finite choice of bases [S6:71–76].
-"Classical unconditional results allow a finite choice of bases." Averaging over the base gives asymptotics for almost all
+"Classical unconditional results allow a finite choice of bases.
+Gupta and Murty constructed a set of thirteen integers from three
+distinct primes, at least one of which is a primitive root modulo
+infinitely many primes  . Heath-Brown proved that
+at most two prime bases fail the infinitude assertion, so at least
+one of $2,3,5$ satisfies it  ." Averaging over the base gives asymptotics for almost all
 integers in a short range, but the exceptional set may depend on $x$
 [S6:77–82].
 

@@ -8,7 +8,9 @@
 
 The release's blurb [S1:1160]: "**041. Hyperkähler SYZ and projective-space bases.** Proves the strong hyperkähler SYZ conjecture: every holomorphic line bundle with nonzero nef isotropic first Chern class on a compact irreducible holomorphic symplectic Kähler manifold is semiample. It also proves that every projective Lagrangian fibration with normal projective base has projective space as its base, in every dimension and deformation type." The two manuscripts
 are "The strong hyperkähler SYZ conjecture" [S3:1] and the projective-space bases companion [S11:1].
-The SYZ abstract [S4:7–11] reads: "We prove the strong hyperkähler SYZ conjecture: every holomorphic line"
+The SYZ abstract [S4:7–11] reads: "We prove the strong hyperkähler SYZ conjecture: every holomorphic line
+bundle with nonzero nef isotropic first Chern class on a compact
+irreducible holomorphic symplectic Kähler manifold is semiample."
 
 ## Undergraduate summary
 
@@ -18,11 +20,37 @@ and even complex dimension $2n$. A line bundle $L$ is nef isotropic
 when $c_1(L)$ lies on the boundary of the Kähler cone and satisfies
 $q(c_1(L))=0$ for the Beauville–Bogomolov–Fujiki form. Such a class
 has numerical dimension exactly $n$, by Fujiki's relation [S5:15–23].
-"A nonzero nef isotropic class has numerical dimension $n$, by" The strong SYZ conjecture (Verbitsky) asks whether every
+"A nonzero nef isotropic class has numerical dimension $n$, by
+Fujiki's relation: its powers have positive intersection with a
+Kähler class through degree $n$, and zero intersection in higher
+degrees. The strong hyperkähler SYZ conjecture asks whether every
+line bundle with such a class is semiample
+\cite[Conjecture 1.7]VerbitskySYZ. This would turn a class on the
+boundary of the Kähler cone into a holomorphic map with
+half-dimensional fibers. The numerical condition by itself supplies
+neither sections nor control of their base locus." The strong SYZ conjecture (Verbitsky) asks whether every
 such line bundle is semiample. The theorem [S5:25–44]:
 
 > **theorem**
+Let $X$ be a compact irreducible holomorphic symplectic Kähler
+manifold of complex dimension $2n$, where $n\ge1$. If a holomorphic
+line bundle $L$ satisfies
+\[
+ c_1(L)\ne0,\qquad c_1(L)\in\overline{\mathcal K_X},
+                  \qquad q_X(c_1(L))=0,
+\]
+then $L$ is semiample.
 
+More precisely, there exist a positive integer $m$, a normal
+projective variety $B$, an ample line bundle $A$ on $B$, and a
+surjective holomorphic map with connected fibers
+\[
+                 f:X\longrightarrow B,\qquad L^m\simeq f^*A,
+\]
+such that $\dim_{\C}B=n$. Every irreducible component of every
+fiber has complex dimension $n$, and $\sigma$ vanishes on its
+smooth locus.
+\endtheorem
 
 The conclusion is that a positive power of $L$ defines a Lagrangian
 fibration $f:X\to B$ with $\dim B=n$ and every component of every
@@ -37,23 +65,51 @@ with the boundedness of Lagrangian-fibered symplectic varieties
 deformation types in dimension $2n$ with $b_2\ge5$ [S5:57–65]:
 
 > **corollary**
+For each integer $n\ge1$, there are only finitely many smooth
+deformation types of compact irreducible holomorphic symplectic
+Kähler manifolds of complex dimension $2n$ with $b_2\ge5$.
+\endcorollary
 
+This follows by combining Theorem   with the boundedness
+of Lagrangian-fibered symplectic varieties proved by
+Engel–Filipazzi–Greer–Mauri–Svaldi  .
 
 **The projective corollary.** When $X$ is projective, the base must
 be projective space, with no codimension-one multiple
 fibers [S5:69–74]:
 
 > **corollary**
-
+In Theorem  , assume additionally that $X$ is projective,
+and let $f:X\to B$ be the associated connected-fiber map furnished there.
+Then $B\simeq\mathbb P^n_{\C}$. Moreover, there do not exist a prime
+divisor $D\subset B$, an effective divisor $E$ on $X$, and an integer
+$r>1$ such that $f^*D=rE$.
+\endcorollary
 
 This is a consequence of the companion's projective-space base
 theorem [S13:59–70]:
 
 > **theorem**
-
+Let \(n\geq1\), and let \(X\) be a compact irreducible holomorphic symplectic
+Kähler manifold of dimension \(2n\), with symplectic form \(\sigma\).
+Suppose that
+\[
+                       f:X\longrightarrow B
+\]
+is a projective surjective holomorphic morphism with connected fibers,
+where \(B\) is a normal projective variety of dimension \(n\).
+Assume that every irreducible component of every fiber has dimension
+\(n\) and that the restriction of \(\sigma\) to its smooth locus is zero.
+Then \(B\) is isomorphic to \(\mathbb P^n_{\mathbb C}\).
+\endtheorem
 
 The companion's proof first establishes smoothness of the base and
-then applies Hwang's smooth-base theorem [S13:52–57]. "For projective IHS total spaces, the cohomological constraint is already"
+then applies Hwang's smooth-base theorem [S13:52–57]. "For projective IHS total spaces, the cohomological constraint is already
+that of projective space: Shen–Yin compute the rational intersection
+cohomology of \(B\) as one-dimensional in degrees \(0,2,\ldots,2n\) and
+zero in odd degrees \cite[Theorem 0.4(a)]ShenYin2022. This does not itself establish
+smoothness. Our proof first establishes smoothness and then applies Hwang's
+theorem."
 Its inputs include the SYZ semiampleness theorem, a polarized
 family for a prescribed class, and a torsion-free finite-index
 isometry group [S13:81–90].
@@ -70,7 +126,17 @@ Greb–Lehn extended to compact Kähler IHS total spaces [S5:96–103].
 Analytic positivity results: Verbitsky proved semiampleness
 with a smooth semipositive metric; Höring–Lazić–Lehn obtained
 nonvanishing or coisotropic-locus alternatives [S5:105–115].
-"Analytic positivity gives another source of progress. Verbitsky proves"
+"Analytic positivity gives another source of progress. Verbitsky proves
+that a nontrivial nef isotropic bundle with a smooth semipositive
+Hermitian metric has a nonzero section in some positive power
+\cite[Theorem 1.9]VerbitskySYZ.
+Höring–Lazić–Lehn obtain nonvanishing or coisotropic-locus
+alternatives for nef isotropic classes. In complex dimension four,
+they prove semiampleness if the class contains a closed positive
+current whose Lelong numbers all vanish
+\cite[Theorem D and Corollary E]HoringLazicLehn.
+These results show how additional analytic positivity or geometric
+information can turn the numerical condition into sections."
 
 The deformation approach (Soldatenkov–Verbitsky, Bayer–Macrì,
 Markman, Yoshioka, Mongardi–Rapagnetta, Mongardi–Onorati)
@@ -79,7 +145,11 @@ established the conjecture for each known deformation type
 
 The projective-space base problem: Hwang proved it for smooth
 bases, Greb–Lehn for compact Kähler total spaces, leaving the
-singular-base case [S13:16–20]. "Hwang proved the projective-space conclusion when \(X\) is projective and" Ou reduced the
+singular-base case [S13:16–20]. "Hwang proved the projective-space conclusion when \(X\) is projective and
+\(B\) is smooth \cite[Theorem 1.2]Hwang2008. Greb and Lehn extended the
+smooth-base theorem to compact Kähler IHS total spaces
+\cite[Theorem 1.1]GrebLehn2014. These results reduce the base problem to
+the possible singularities of \(B\)." Ou reduced the
 dimension-four surface base to $\PP^2$ or a specific Fano
 surface; Huybrechts–Xu excluded the second case; Müller–Zheng Xu
 proved a local smoothness theorem [S13:37–50].

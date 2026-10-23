@@ -7,7 +7,11 @@
 ## Original CONTENTS.md summary
 
 The release's blurb [S1:1201]: "**043. P = W for fixed-determinant SL n moduli spaces.** Proves $P_k=W_{2k}=W_{2k+1}$ on the full rational cohomology of smooth coprime fixed-determinant, trace-free Higgs moduli spaces and their character varieties for composite ranks over smooth projective complex curves of genus at least two." The manuscript title is
-"P=W in composite rank for fixed determinant" [S3:1], and its abstract [S4:11–17] reads: "We prove the $P=W$ conjecture on the full rational cohomology of"
+"P=W in composite rank for fixed determinant" [S3:1], and its abstract [S4:11–17] reads: "We prove the $P=W$ conjecture on the full rational cohomology of
+fixed-determinant, trace-free Higgs moduli spaces in composite rank and
+coprime degree, for smooth projective complex curves of genus at least two.
+Together with the established prime-rank cases, this gives the equality in
+every coprime rank."
 
 ## Undergraduate summary
 
@@ -19,7 +23,13 @@ $P=W$ conjecture asserts $P_k = W_{2k} = W_{2k+1}$ [S5:3]. "Nonabelian Hodge the
 The theorem [S5:39–46]:
 
 > **theorem**
-
+For every smooth projective complex curve $C$ of genus $g\ge2$, every composite integer $n\ge4$, every integer $d$ with $\gcd(n,d)=1$, and every $L\in\Pic^d(C)$, one has
+\[
+P_kH^m(X^B,\Q)=W_2kH^m(X^B,\Q)
+=W_{2k+1}H^m(X^B,\Q)
+\]
+for all $m,k\ge0$.
+\endtheorem
 
 The assertion covers the full rational cohomology, including the
 variant part not captured by quotienting by the torsion-line-bundle
@@ -34,6 +44,11 @@ lowers $W$ by 4, and satisfies the double commutator
 $[[f,e],e]=-2e$ [S5:79–84]:
 
 > It remains to construct one degree-$-2$ operator $f$ such that
+\beginequation 
+fP_k\subset P_{k-2},\qquad
+fW_j\subset W_{j-4},\qquad [[f,e],e]=-2e.
+\endequation
+An elementary Lefschetz-module argument then identifies both filtrations as sums of eigenspaces of the same operator $[e,f]$. It also handles extensions between filtration grades.
 
 An elementary Lefschetz-module argument then identifies both
 filtrations as eigenspace sums of $[e,f]$.
@@ -44,6 +59,12 @@ logarithmic $\lambda$-connection parameter interpolates between
 Higgs bundles and connections [S5:86–92]:
 
 > To construct $f$, allow one logarithmic pole, move it over a finite cover $S\to C$, and choose a full flag at the pole. The logarithmic $\lambda$-connection parameter interpolates between Higgs bundles at $\lambda=0$ and connections at $\lambda=1$. The underlying moduli constructions and semistable reduction come from  ; the restriction argument uses the semiprojective geometry of  . We verify the fixed determinant, residue, and flag conditions, as well as compatibility with the full nonabelian-Hodge identification. Write $X_\lambda$ for the fixed-pole scalar-residue moduli space, with $X_0=X$. At scalar residue, the flag space fits into a correspondence
+\[
+X_\lambda\xleftarrow{\ \pr\ }S\times X_\lambda
+\xleftarrow{\ \pi\ }Z_\lambda
+\xrightarrow{\ \iota\ }Y_{\lambda,0}.
+\]
+Here $Y_{\lambda,0}$ permits a flag-preserving residue with prescribed scalar diagonal, while $Z_\lambda$ requires the residue itself to be scalar. We first deform the ordered residues to distinct values and shift two residue eigenline lattices in opposite directions. Restriction isomorphisms from the total logarithmic Hodge family transport the resulting translation to a degree-zero operator $T$ on $H^*(Y_{\lambda,0})$. On the connection side, $T$ is eigenvalue monodromy. A power has unipotent action, and its logarithm $N$ lowers the diagram weights by two.
 
 On the connection side, the translation operator is eigenvalue
 monodromy; its logarithm $N$ lowers diagram weights by two. The

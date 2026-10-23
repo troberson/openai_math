@@ -272,19 +272,26 @@ def parse_data_file(text: str) -> tuple[list[tuple[str, str, str]], dict[str, st
     while i < len(lines) and lines[i].strip() == "":
         i += 1
     # Parse the quotes block, which follows the sources block: one row per quote token,
-    # `seq  which  sid  start  end  span`. The `sid` resolves to a source path below.
+    # `seq  which  sid  start  end  span`. The `sid` resolves to a source path below. A
+    # quote's span may run across several physical lines (the source window is wrapped), and
+    # the data file stores it that way; every line after a row's first line, up to the next
+    # row, is a continuation of the most recent quote's span and is appended newline-joined.
+    # A continuation line is one whose first tab-field is not a positive integer — including
+    # an interior blank line in the window, so the check is on row-ness, not field count.
     if i < len(lines) and lines[i].strip() == "<!-- quotes":
         i += 1
+        cur_seq: int | None = None
         while i < len(lines) and lines[i].strip() != "-->":
-            parts = lines[i].split("\t")
-            if len(parts) >= 6:
-                try:
-                    seq = int(parts[0])
-                except ValueError:
-                    i += 1
-                    continue
-                quotes[seq] = {"which": parts[1], "sid": parts[2],
-                               "start": parts[3], "end": parts[4], "span": "\t".join(parts[5:])}
+            line = lines[i]
+            parts = line.split("\t")
+            seq_field = parts[0].strip() if parts else ""
+            if len(parts) >= 6 and re.fullmatch(r"\d+", seq_field) is not None:
+                cur_seq = int(seq_field)
+                quotes[cur_seq] = {"which": parts[1], "sid": parts[2],
+                                   "start": parts[3], "end": parts[4],
+                                   "span": "\t".join(parts[5:])}
+            elif cur_seq is not None:
+                quotes[cur_seq]["span"] += "\n" + line
             i += 1
         i += 1  # skip -->
     # Parse the slug line, which sits between the family line and the sections.

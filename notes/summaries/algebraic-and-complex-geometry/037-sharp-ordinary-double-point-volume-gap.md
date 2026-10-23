@@ -14,13 +14,46 @@ are "The ordinary-double-point gap in every dimension" [S3:1] and the fourfold c
 Normalized volume measures the size of a klt singularity: for an
 $n$-dimensional klt germ $(X,x)$ with zero boundary,
 $\nvol(x,X)=\inf_v A_X(v)^n \vol(v)$, where the infimum runs over
-centered valuations [S5:3–24]. "Normalized volume, introduced by Chi Li  , measures the" The largest value is $n^n$,
+centered valuations [S5:3–24]. "Normalized volume, introduced by Chi Li  , measures the
+size of a klt singularity by balancing
+the discrepancy of a valuation against the asymptotic colength of its
+valuation ideals. For a closed point \(x\) of an \(n\)-dimensional
+normal complex variety that is klt near \(x\), with zero boundary,
+it is
+\[
+ \nvol(x,X)=\inf_v centered at x A_X(v)^n\vol(v).
+\]
+Here \(A_X(v)\) is log discrepancy, and \(\vol(v)\) is the
+leading colength of the ideals \(\{f:v(f)\ge t\}\), multiplied by
+\(n!\). Section   gives the precise conventions for
+real valuations, including infinite discrepancy. In dimension \(n\),
+the largest normalized volume is \(n^n\),
+attained exactly at smooth points \cite[Theorem 1.6]LX19.
+The ordinary double point gap conjecture predicts the next largest
+value: every singular klt germ should have normalized volume at most
+\(2(n-1)^n\), and this value should characterize the ordinary double
+point. Besides distinguishing a basic singularity by a numerical
+invariant, such a gap gives global restrictions on K-semistable Fano
+varieties through the local-to-global volume inequality
+\cite[Theorem 21]Liu18." The largest value is $n^n$,
 attained exactly at smooth points. The ordinary double point gap
 conjecture predicts the next largest: $2(n-1)^n$, characterizing the
 ordinary double point. The theorem [S5:33–46]:
 
 > **theorem**
-
+Let \(n\ge2\), and let \(x\) be a
+singular closed point of a normal complex algebraic \(n\)-fold \(X\).
+Suppose that \(K_X\) is \(\QQ\)-Cartier and that \(X\) is klt near \(x\),
+with zero boundary. Then
+\[
+                    \nvol(x,X)\le2(n-1)^n.
+\]
+Equality holds if and only if
+\[
+ (X,x)_{\mathrman}\cong
+ \left(\{z_0^2+\cdots+z_n^2=0\}\subset\CC^{n+1},0\right).
+\]
+\endtheorem
 
 The point need not be isolated in the singular locus, and no
 structural assumption is implicit [S5:48–53].
@@ -32,7 +65,15 @@ companion as its sole external input [S5:55–62]. The companion
 proves $\nvol\le162$ in dimension four [S7:74–83]:
 
 > **theorem**
-
+Let \(x\in X\) be a singular closed point of a normal complex algebraic variety of dimension four. Suppose that \(K_X\) is \(\mathbb Q\)-Cartier and that \(X\) is klt near \(x\), with boundary zero. Then
+\[
+\widehat{\operatornamevol}(x,X)\le 162.
+\]
+Equality holds if and only if the analytic germ \((X,x)\) is isomorphic to
+\[
+\left(\left\{z_0^2+z_1^2+z_2^2+z_3^2+z_4^2=0\right\}\subset\mathbb C^5,0\right).
+\]
+\endtheorem
 
 The induction from $n=4$ to all $n\ge5$ proceeds by cone
 reduction, small-stabilizer analysis, jet interiority, adjoint
@@ -47,7 +88,17 @@ Li–Miao's smooth classification gives global volume bounds for
 K-semistable $\mathbb{Q}$-Fano varieties [S5:64–75]:
 
 > **corollary**
-
+Let \(V\) be an \(n\)-dimensional
+K-semistable \(\QQ\)-Fano variety, where \(n\ge2\).
+If \(V\) is singular, then
+\[
+       (-K_V)^n\le
+       2\left(\frac{n^2-1}n\right)^n<2n^n.
+\]
+If \(V\not\cong\PP^n\), then \((-K_V)^n\le2n^n\), with equality
+precisely when \(V\) is a smooth quadric \(Q^n\subset\PP^{n+1}\) or
+\(\PP^1\times\PP^{n-1}\). These two descriptions coincide for \(n=2\).
+\endcorollary
 
 The singular bound $2((n^2-1)/n)^n$ is strictly below $2n^n$,
 improving the smooth classification for singular Fano varieties.
@@ -59,18 +110,63 @@ where volume density measures the size of a metric tangent cone.
 Donaldson–Sun established algebraicity and uniqueness of these
 cones; Spotti–Sun formulated the conjecture and observed that
 density above $1/2$ forces Gorenstein canonical structure [S5:84–98].
-"The gap conjecture arose from the study of singular noncollapsed"
+"The gap conjecture arose from the study of singular noncollapsed
+polarized Kähler–Einstein limits, where the volume density measures the
+size of a metric tangent cone. The algebraicity and uniqueness of
+these tangent cones were established by Donaldson–Sun
+ . Spotti–Sun proposed that the ordinary double
+point has the largest density among singular Ricci-flat Kähler
+cones with isolated vertex, and formulated the corresponding
+normalized-volume conjecture for arbitrary singular klt germs
+\cite[Conjectures 1.2 and 5.5]SpottiSun17. Their observation that
+density above \(1/2\) forces Gorenstein canonical structure in the
+metric-limit setting \cite[Proposition 3.7]SpottiSun17 already
+illustrates a central feature of the problem: a sufficiently large
+volume can force algebraic structure that is absent from the
+hypotheses. Here that principle is applied after stable degeneration,
+starting from an arbitrary klt germ."
 
 The low-dimensional cases precede the present work: Li–Liu for
 surfaces, Liu–Xu for threefolds, Liu for local complete
 intersections in all dimensions, and Moragá–Süss for toric
-germs [S5:100–116]. "The unrestricted low-dimensional cases precede the present induction." The fourfold companion supplies the
+germs [S5:100–116]. "The unrestricted low-dimensional cases precede the present induction.
+For surfaces, Li–Liu's calculation
+\(\nvol(0,\CC^2/G)=4/|G|\) for finite groups acting freely in
+codimension one, together with the quotient classification, gives
+the bound and its equality case
+\cite[Proposition 4.10]LL19. Liu–Xu proved the threefold theorem
+for arbitrary klt germs \cite[Theorem 1.3]LX19.
+In higher dimensions, Liu proved the conjecture for local complete
+intersections \cite[Theorem 1.3]Liu22. For singular \(\QQ\)-Gorenstein toric germs,
+Moraga–Sü\ss\ proved the different sharp bound
+\(\nvol\le(16/27)n^n\) for \(n\ge3\), with equality precisely
+for the product of a three-dimensional ordinary double point and
+\(\CC^{n-3}\); in dimension two the bound is \(2\), with equality
+at the surface ordinary double point
+\cite[Theorem 2]MoragaSuess24. The fourfold companion supplies
+the remaining base case used here; the higher-dimensional argument
+does not assume either a complete-intersection or a toric structure." The fourfold companion supplies the
 remaining base case.
 
 The cone reduction to K-semistable cones uses the variational
 theory of normalized volume: Martelli–Sparks–Yau, Li–Liu,
 Li–Xu, Blum, Xu, Xu–Zhuang, and Li–Wang–Xu [S5:136–151].
-"The passage from metric cones to arbitrary klt singularities rests"
+"The passage from metric cones to arbitrary klt singularities rests
+on the variational theory of normalized volume. Martelli–Sparks–Yau
+proved volume minimization among Reeb fields with fixed canonical
+weight  ; Li–Liu and Li–Xu related cone metrics and
+K-stability to minimization over all centered valuations
+\cite[Theorem 1.9]LL19\cite[Theorem 1.3]LiXu18.
+For general klt germs, existence of a minimizer, its
+quasi-monomiality, uniqueness up to scaling, and finite generation
+were established by Blum, Xu, and Xu–Zhuang
+ .
+These results produce a K-semistable cone whose Reeb valuation
+computes the original normalized volume. The further degeneration
+of Li–Wang–Xu gives a K-polystable cone with the same value
+\cite[Theorem 1.2]LWX21.
+Thus the cone reduction preserves the infimum over all valuations,
+which is essential for a gap theorem about arbitrary germs."
 
 ## Consequences
 

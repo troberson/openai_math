@@ -9,7 +9,11 @@
 The release's blurb [S1:1565]: "**060. The Global Spherical Shell conjecture.** Every connected minimal compact complex surface of class VII with $`b_2\gt 0`$ contains a global spherical shell, proving the positive-$b_2$ Global Spherical Shell conjecture. Such a shell is a holomorphically embedded neighborhood of the standard three-sphere in $`\mathbb C^2\setminus\{0\}`$ whose complement is connected."
 
 The manuscript, *Global Spherical Shells on Minimal Surfaces of
-Class VII* [S2], has the abstract [S2:75–80]: "We prove the Global Spherical Shell conjecture: every connected minimal"
+Class VII* [S2], has the abstract [S2:75–80]: "We prove the Global Spherical Shell conjecture: every connected minimal
+compact complex surface of class VII with positive second Betti number
+contains a global spherical shell. This is a holomorphically embedded
+neighborhood of the standard three-sphere in $\mathbb C^2\setminus\{0\}$
+whose complement is connected."
 
 ## Undergraduate summary
 
@@ -17,24 +21,72 @@ A compact complex surface is of class VII if its first Betti number is
 one and its Kodaira dimension is $-\infty$. In the minimal case with
 $b_2=0$, the surfaces are Hopf and Inoue surfaces. The positive-$b_2$
 case is the setting of the Global Spherical Shell conjecture [S2:84–100]:
-"A compact complex surface is of _class VII_ if its first Betti"
+"A compact complex surface is of _class VII_ if its first Betti
+number is one and its Kodaira dimension is $-\infty$. The classification
+of these non-Kähler surfaces divides according to the second Betti
+number. In the minimal case with $b_2=0$, work of Bogomolov,
+Li–Yau–Zheng, and Teleman leads to the classification by Hopf and
+Inoue surfaces  .
+The positive-$b_2$ case is the setting of the Global Spherical Shell
+conjecture.
+
+A _global spherical shell_ in a complex surface is a holomorphically
+embedded neighborhood of the unit three-sphere in $\mathbb C^2\setminus\{0\}$
+whose complement is connected. Kato introduced this structure
+ . Nakamura's classification program includes the
+conjecture that every minimal class VII surface with positive second
+Betti number contains such a shell
+\cite[Working Hypothesis 5.5]Nakamura1984; see also
+ . We prove this assertion."
 
 The theorem [S2:102–115]:
 
 > **theorem**
-
+Let $X$ be a connected compact complex surface with
+\[
+ b_1(X)=1,\qquad b_2(X)>0,\qquad \kappa(X)=-\infty.
+\]
+Assume that $X$ is minimal: it contains no smooth rational curve of
+self-intersection $-1$. Then there are an open neighborhood $U$ of
+\[
+ S^3=\{z\in\mathbb C^2:|z|=1\}
+ \quadin \mathbb C^2\setminus\{0\},
+\]
+an open subset $\Sigma\subset X$, and a biholomorphism
+$\phi:U\longrightarrow\Sigma$ such that $X\setminus\Sigma$ is connected.
+\endtheorem
 
 ## Graduate summary
 
 **Kodaira identities and the two reductions.** The compact-surface
 identities of Kodaira give $h^{0,1}=1$, $h^{1,0}=h^{2,0}=0$,
 $b_2^+=0$, $\chi(\OO_X)=0$, and $K_X^2=-b_2(X)$, so the intersection
-form is negative definite [S3:11–21]: "The compact-surface identities of Kodaira give, under the hypotheses of"
+form is negative definite [S3:11–21]: "The compact-surface identities of Kodaira give, under the hypotheses of
+Theorem  ,
+\beginequation 
+ h^{0,1}(X)=1,\qquad h^{1,0}(X)=h^{2,0}(X)=0,\qquad
+ b_2^+(X)=0,\qquad \chi(\mathcal O_X)=0,
+ \qquad K_X^2=-b_2(X).
+\endequation
+These are the numerical identities for class VII surfaces
+\cite[Theorem 3]Kodaira1964; see also  .
+In particular the intersection form on $H^2(X;\mathbb R)$ is negative definite.
+Our two surface-theoretic reductions are the following established results."
 
 Two established reductions apply [S3:23–34]:
 
 > **proposition**
-
+Let $V$ be a minimal compact complex surface with $b_1(V)=1$,
+$\kappa(V)=-\infty$, and $b_2(V)>0$.
+\beginenumerate[label=\textup{(\roman*)}]
+\item If $V$ has a nonzero effective divisor $C$ with $C^2=0$, then $V$
+has a global spherical shell.
+\item If $V$ has exactly $b_2(V)$ rational curves, then $V$ has a global
+spherical shell.
+\endenumerate
+Here the conclusion supplies an embedded open neighborhood of
+$S^3\subset\mathbb C^2\setminus\{0\}$ with connected complement in $V$.
+\endproposition
 
 The first is Enoki's theorem (square-zero divisor); the second is the
 Dloussky–Oeljeklaus–Toma main theorem ($b_2$ rational curves). The
@@ -48,6 +100,20 @@ bound with a common exponent constrains the normalizations of the
 resulting divisor components [S4:3–17]:
 
 > Proposition   constructs a section with end limits
+$(1,0)$ for any prescribed finite decay rate of the holomorphic
+structure. Before choosing that rate, we prove an area bound with an
+exponent $A$ depending only on the lifted geometry. We then choose the
+holomorphic structures to decay faster than this common exponent.
+
+Our goal is to constrain the normalizations of the resulting divisor
+components. A holomorphic differential on a normalization defines a
+closed current on $Y$. We place currents with exponential mass bounds
+in fixed weighted cohomology spaces and prove that currents carried by
+distinct curves have independent classes. The scalar degree-one group vanishes,
+so scalar differentials satisfying the mass bound cannot occur. This
+will force genus zero here; Section   will exclude the
+remaining noncompact normalizations, using the same scalar obstruction
+and the finite-dimensional cohomology for a fixed bundle $E$.
 
 Residue current arguments in weighted cohomology force the
 normalizations to be rational, yielding the required $b_2$ curves
@@ -57,7 +123,19 @@ and applying the Dloussky–Oeljeklaus–Toma criterion.
 identifies every such surface [S2:122–135]:
 
 > **corollary**
-
+Let $X$ satisfy the hypotheses of Theorem  , and put
+$b=b_2(X)$. There is a small one-parameter deformation
+$\mathcal X\to\Delta$ over a disk about $0$, with $\mathcal X_0\simeq X$,
+such that every nonzero fiber is obtained from a primary Hopf surface by
+exactly $b$ successive point blowups. The centers may be infinitely near.
+Moreover,
+\[
+ \pi_1(X)\cong\mathbb Z,\qquad
+ X\cong_{\mathrmor}(S^1\times S^3)#\,b\,\overline{\mathbbCP}^{\,2},
+\]
+where the second is an orientation-preserving diffeomorphism for the
+complex orientation of $X$.
+\endcorollary
 
 ## History of the conjecture
 

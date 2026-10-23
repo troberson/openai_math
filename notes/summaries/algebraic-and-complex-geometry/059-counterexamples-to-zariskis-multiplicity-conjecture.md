@@ -6,7 +6,80 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb [S1:1540]: "**059. Counterexamples to Zariski's multiplicity conjecture.** Disproves Zariski's multiplicity conjecture by constructing reduced holomorphic hypersurface germs that are ambiently homeomorphic but have different multiplicities. The examples include hypersurfaces in ℂ⁴ with isolated critical points and multiplicities four and five."
+The release's blurb [S1:1540]: "**059. Counterexamples to Zariski's multiplicity conjecture.** Disproves Zariski's multiplicity conjecture by constructing reduced holomorphic hypersurface germs that are ambiently homeomorphic but have different multiplicities. The examples include hypersurfaces in ℂ⁴ with isolated critical points and multiplicities four and five.
+2.inline	S2	9	15	We give a negative answer to the embedded Zariski multiplicity conjecture.
+We construct two reduced hypersurface germs that are ambiently homeomorphic
+but have multiplicities two and three. Both have isolated singularities and
+lie in a common complex affine space of dimension divisible by eight. Their
+defining function germs are also topologically right equivalent, and the same
+examples answer Arnold's corank problem negatively for ambient topological equivalence.
+3.inline	S3	4	14	For a nonzero convergent power series
+$f\in\C\{z_1,\ldots,z_N\}$ with $f(0)=0$, the order $\ord_0f$ is
+the least total degree of a monomial with nonzero coefficient. When $f$
+is reduced, this integer is the multiplicity of the hypersurface germ
+$V(f)=\{f=0\}$. Two such germs are _ambiently homeomorphic_ if a
+homeomorphism between neighborhoods of the origin in $\C^N$ fixes the
+origin and carries one hypersurface to the other. Zariski's multiplicity
+question asks whether this embedded topological equivalence determines
+multiplicity  . It asks, in particular, whether topology
+can distinguish a hypersurface with a nonzero quadratic term from one
+whose first nonzero terms are cubic.
+4.inline	S3	39	51	\begintheorem 
+There is a finite integer $N>3$, divisible by eight, and there are reduced
+polynomials $f_1,f_2\in\R[z_1,\ldots,z_N]$, weighted homogeneous for
+positive rational weights, such that:
+\beginenumerate[label=\textup{(\roman*)}]
+\item each $f_j$ has an isolated critical point at the origin;
+\item $\ord_0f_1=2$ and $\ord_0f_2=3$;
+\item there is a homeomorphism germ of ambient pairs
+\[
+ (\C^N,V(f_1),0)\ \cong\ (\C^N,V(f_2),0).
+\]
+\endenumerate
+\endtheorem
+5.inline	S3	152	167	The main difficulty is to preserve different ordinary orders while
+making the _integral Seifert forms_ coincide. We compare the
+spectra, finite multisets of rational exponents whose exponentials give
+the monodromy eigenvalues. Equality of spectra alone does not accomplish
+the desired integral identification. For the isolated weighted homogeneous
+singularities considered here, in a fixed ambient dimension, the spectrum
+determines the real Seifert form, through the work of Steenbrink and
+Némethi
+ .
+For sums of chain singularities, the integral-monodromy results of
+Hertling and Mase, building on Orlik and Randell, separately determine
+the integral module with its monodromy operator
+ .
+The two resulting identifications need not be compatible. The arithmetic
+part of the proof produces a single integral map preserving the whole
+Seifert form.
+6.inline	S8	9	13	We give a negative answer to Zariski's multiplicity question in four
+complex variables. We construct two reduced convergent holomorphic
+function germs with isolated critical points and multiplicities four and
+five whose zero-set germs are ambiently homeomorphic.
+7.inline	S9	31	45	\begintheorem 
+There are reduced convergent holomorphic function germs
+\(f_4,f_5\colon(\mathbb C^4,0)\to(\mathbb C,0)\), each with an isolated
+critical point at the origin, such that
+\[
+    \operatornameord_0f_4=4,\qquad
+    \operatornameord_0f_5=5,
+\]
+and a homeomorphism germ of ambient pairs
+\[
+    (\mathbb C^4,V(f_4),0)
+       \;\cong\;
+    (\mathbb C^4,V(f_5),0).
+\]
+\endtheorem
+8.inline	S9	47	54	The Milnor open book has a compact page whose middle-dimensional
+cycles carry an integral Seifert form: it records the linking of a
+cycle on a reference page with a cycle transported to a positive
+neighboring page. For the open books on \(S^7\) used here, a
+classification theorem turns a congruence of these integral forms
+into an equivalence of the embedded links. The proof is therefore
+organized around obtaining that integral congruence while retaining
+the different orders of the equations."
 
 Two manuscripts carry this family. The first,
 *Ambiently homeomorphic isolated hypersurfaces of multiplicities

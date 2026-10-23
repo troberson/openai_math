@@ -21,7 +21,12 @@ does every continuous open homomorphism between such Galois groups come
 from a field embedding? The theorem [S5:11–17]:
 
 > **theorem**
-
+Let $F_1,F_2$ be number fields, and let $E_i/F_i$ be possibly infinite solvably closed Galois extensions. Every continuous open homomorphism
+\[
+ \alpha:\Gal(E_1/F_1)\longrightarrow\Gal(E_2/F_2)
+\]
+is induced by a unique field embedding $j:E_2\hookrightarrow E_1$.
+\endtheorem
 
 The setup [S5:5–9] makes the contravariance explicit: a field embedding
 $E_2 \hookrightarrow E_1$ induces a group homomorphism
@@ -29,6 +34,10 @@ $\Gal(E_1/F_1) \to \Gal(E_2/F_2)$ by conjugation, and the theorem says
 every open homomorphism arises this way, uniquely.
 
 > Let $E_i/F_i$ be Galois extensions of number fields, with each $E_i$ solvably closed, and write $G_i=\Gal(E_i/F_i)$. A field embedding $j:E_2\hookrightarrow E_1$ _induces_ a homomorphism $\alpha:G_1\to G_2$ if
+\[
+ g\circ j=j\circ\alpha(g)\qquad(g\in G_1).
+\]
+In particular, such an embedding sends $F_2$ into $F_1$. Uchida conjectured that every continuous homomorphism with open image arises in this way \cite[p. 595]uchida1981. We prove the conjecture in its full form.
 
 The kernel is unrestricted [S5:19]. No cyclotomic-compatibility
 assumption is needed; the proof derives it from openness itself.
