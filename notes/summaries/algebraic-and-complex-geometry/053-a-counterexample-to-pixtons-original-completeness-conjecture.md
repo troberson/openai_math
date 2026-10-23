@@ -18,7 +18,7 @@ relations among these natural classes is a central problem in
 intersection theory [S5:3–10]. "The tautological ring of the moduli space of stable curves is generated" Pixton proposed a uniform
 system of stable-graph relations and conjectured it is complete. The
 Chow completeness question is whether $\ker q_{g,n}=\mathcal P_{g,n}$
-for every stable pair [S5:24–30]:
+for every stable pair [S5:25–30]:
 
 > Writing \(R^*(\overline{\mathcal M}_{g,n})=\im q_{g,n}\), the Chow completeness question is
 
@@ -34,7 +34,7 @@ it strict. The theorem [S5:76–89]:
 super-Frobenius algebra of cubic coefficients — which annihilates
 the original Pixton span — with the actual Chow correspondences,
 which satisfy an additional nilpotence identity from a surface Quot
-scheme [S5:165–172]:
+scheme [S5:166–172]:
 
 > The proof compares two algebras of cubic coefficients. A formal
 
@@ -87,7 +87,7 @@ Completeness is distinct from the Gorenstein property: Pixton proved
 $R^*(\mathcal M_{25})$ is not Gorenstein while establishing
 Faber–Zagier completeness there; Canning–Larson–Schmitt proved
 completeness together with non-Gorenstein behavior on the
-compact-type spaces [S5:141–152].
+compact-type spaces [S5:142–152].
 
 ## Consequences
 

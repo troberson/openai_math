@@ -45,7 +45,7 @@ QUOTE = re.compile(r"“([^”]{6,})”|(?<!\\)\"([^\"]{6,})\"")
 # consumer strips the brackets in the angle form.
 LINK = re.compile(r"\]\((<[^>]*>|[^)\s<>]+)\)")
 ENTITY = re.compile(r"&(#[0-9]+|[a-zA-Z][a-zA-Z0-9]*);")
-TAG = re.compile(r"<[a-zA-Z/][^>]*>")
+TAG = re.compile(r"<[a-zA-Z/][^<>\\]*>")
 PAPDIR = re.compile(r"preprints/([^/`\s]+)/")
 
 FAM = re.compile(r"(\d{1,3})-")

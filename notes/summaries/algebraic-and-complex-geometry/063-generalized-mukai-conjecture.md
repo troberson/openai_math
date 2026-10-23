@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb [S1:1597]: "**063. The generalized Mukai conjecture.** Proves the generalized Mukai conjecture: every positive-dimensional smooth complex projective Fano manifold of dimension <i>n</i>, Picard number <i>ρ</i> and pseudoindex <i>ι</i> satisfies $`\rho(\iota-1)\le n`$, with equality exactly for $`(\mathbb P^{\iota-1})^\rho`$. Here the pseudoindex is the least anticanonical degree of a rational curve."
+The release's blurb [S1:1597]: "**063. The generalized Mukai conjecture.** Proves the generalized Mukai conjecture: every positive-dimensional smooth complex projective Fano manifold of dimension *n*, Picard number *ρ* and pseudoindex *ι* satisfies $`\rho(\iota-1)\le n`$, with equality exactly for $`(\mathbb P^{\iota-1})^\rho`$. Here the pseudoindex is the least anticanonical degree of a rational curve."
 
 The manuscript, *The generalized Mukai conjecture* [S2], has the
 abstract [S2:33–36]: "We prove the generalized Mukai conjecture: every positive-dimensional"

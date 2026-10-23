@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb [S1:1565]: "**060. The Global Spherical Shell conjecture.** Every connected minimal compact complex surface of class VII with $`b_2\gt 0`$ contains a global spherical shell, proving the positive-<i>b</i><sub>2</sub> Global Spherical Shell conjecture. Such a shell is a holomorphically embedded neighborhood of the standard three-sphere in $`\mathbb C^2\setminus\{0\}`$ whose complement is connected."
+The release's blurb [S1:1565]: "**060. The Global Spherical Shell conjecture.** Every connected minimal compact complex surface of class VII with $`b_2\gt 0`$ contains a global spherical shell, proving the positive-$b_2$ Global Spherical Shell conjecture. Such a shell is a holomorphically embedded neighborhood of the standard three-sphere in $`\mathbb C^2\setminus\{0\}`$ whose complement is connected."
 
 The manuscript, *Global Spherical Shells on Minimal Surfaces of
 Class VII* [S2], has the abstract [S2:75–80]: "We prove the Global Spherical Shell conjecture: every connected minimal"
@@ -16,7 +16,7 @@ Class VII* [S2], has the abstract [S2:75–80]: "We prove the Global Spherical S
 A compact complex surface is of class VII if its first Betti number is
 one and its Kodaira dimension is $-\infty$. In the minimal case with
 $b_2=0$, the surfaces are Hopf and Inoue surfaces. The positive-$b_2$
-case is the setting of the Global Spherical Shell conjecture [S2:84–101]:
+case is the setting of the Global Spherical Shell conjecture [S2:84–100]:
 "A compact complex surface is of _class VII_ if its first Betti"
 
 The theorem [S2:102–115]:

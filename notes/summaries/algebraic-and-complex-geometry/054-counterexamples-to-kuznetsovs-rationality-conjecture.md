@@ -32,7 +32,7 @@ entirely of rational cubics [S5:87–92].
 **The two-evaluations argument.** The proof uses a fixed collection
 $\mathcal S$ of Picard-number-one K3 surfaces whose integral
 transcendental Hodge lattice, after shifting Hodge types by $(1,1)$
-and reversing the pairing, is isometric to $T_X$ [S5:100–117].
+and reversing the pairing, is isometric to $T_X$ [S5:100–118].
 An invariant $c_u(f)$ counts prime divisors acquired and lost by a
 birational map, each weighted by the MRC-quotient test [S5:121–127]:
 
