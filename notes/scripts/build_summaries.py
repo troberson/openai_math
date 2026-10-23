@@ -39,9 +39,6 @@ TPL_DIR = ROOT / "notes" / "templates" / "summaries"
 DATA_DIR = ROOT / "notes" / "data" / "summaries"
 SUMM_DIR = ROOT / "notes" / "summaries"
 
-KEY = key_for("build_summaries.py", tuple(sys.argv[1:]))
-ST = Staging("build_summaries", KEY)
-
 ENV = Environment(loader=FileSystemLoader(str(TPL_DIR)),
                   keep_trailing_newline=True,
                   trim_blocks=True, lstrip_blocks=True, autoescape=False)
@@ -407,6 +404,9 @@ def render_page(fam: str, info: dict, data_text: str) -> tuple[str, str]:
 def main() -> int:
     check_only = "--check-only" in sys.argv
 
+    key = key_for("build_summaries.py", tuple(sys.argv[1:]))
+    st = Staging("build_summaries", key)
+
     _order, fams = B.parse_overview()
 
     # Find all family pages that have a data file.
@@ -433,7 +433,7 @@ def main() -> int:
         page_text, slug = render_page(fam, info, data_text)
         out = SUMM_DIR / disc_slug(info["discipline"]) / f"{fam}-{slug}.md"
         if not check_only:
-            ST.stage(out, page_text)
+            st.stage(out, page_text)
         written.add(out)
         pages_written += 1
         # Quick sanity: count unresolved tokens.
@@ -448,11 +448,11 @@ def main() -> int:
     readme = SUMM_DIR / "README.md"
     if readme.is_file():
         if not check_only:
-            ST.stage(readme, readme.read_text(encoding="utf-8"))
+            st.stage(readme, readme.read_text(encoding="utf-8"))
         written.add(readme)
 
     if not check_only:
-        ST.promote()
+        st.promote()
         # A page whose title changed is written under a new slug, so the old page survives on
         # disk and its breadcrumb link is dead. The tree is generated, so anything this build
         # did not write is stale and is removed (the same sweep build_index.py runs over its tree).
