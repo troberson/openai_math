@@ -129,24 +129,24 @@ Bernardara–Macrì–Schmidt–Zhao and Martinez–Schmidt.
 
 ## Section skeleton
 
-**Manuscript 1** [S3], 4 sections under `build/sections/` plus an appendix:
+**Manuscript 1** [S3:48–51], 4 sections under `build/sections/` plus an appendix:
 
 1. Introduction [S4]
-2. Periodicity and the numerical central charge [S5]
-3. A uniform family of double-tilt aisles [S6]
-4. From uniform aisle inclusions to a slicing [S7]
-5. Appendix: periodicity [S3]
+2. Periodicity and the numerical central charge [S5:28–35]
+3. A uniform family of double-tilt aisles [S6:4–13]
+4. From uniform aisle inclusions to a slicing [S7:27–30]
+5. Appendix: periodicity [S3:48–51]
 
-**Manuscript 2** [S9], 8 sections under `build/`:
+**Manuscript 2** [S9:78–86], 8 sections under `build/`:
 
 1. Introduction [S10]
 2. Tilt stability [S11]
-3. Analysis [S9]
-4. Apex [S9]
-5. Wall [S9]
+3. Analysis [S9:78–86]
+4. Apex [S9:78–86]
+5. Wall [S9:78–86]
 6. Ambient construction [S12]
-7. Heart [S9]
-8. Counterexamples [S9]
+7. Heart [S9:78–86]
+8. Counterexamples [S9:78–86]
 
 ## Coverage
 

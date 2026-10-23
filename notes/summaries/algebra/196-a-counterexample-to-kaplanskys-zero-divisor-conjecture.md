@@ -83,7 +83,7 @@ The cancellation step is stated. [S8:26] states it: "The reverse step has label 
 ## Section skeleton
 
 - `build/paper.tex` [S3]
-- `build/sections/types.tex` [S4]
+- `build/sections/types.tex` [S4:3–8]
 - `build/sections/entropy.tex` [S5]
 - `build/sections/planar.tex` [S6]
 - `build/sections/topology.tex` [S7]

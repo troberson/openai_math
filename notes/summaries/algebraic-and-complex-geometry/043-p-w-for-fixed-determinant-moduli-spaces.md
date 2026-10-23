@@ -98,7 +98,7 @@ Maulik–Shen's endoscopy paper [S5:64].
 
 ## Section skeleton
 
-**Main file** [S4], 9 sections under `build/sections/`:
+**Main file** [S4:11–17], 9 sections under `build/sections/`:
 
 1. Introduction [S5]
 2. The Lefschetz comparison criterion [S6]

@@ -89,7 +89,7 @@ The asymmetry is transported by Morita equivalence. [S9:347–355] transports it
   - The left-right asymmetry corollary (line 78)
   - The construction and its principal mechanisms (line 114)
   - Conventions (line 212)
-- `build/sections/02-selection-process.tex` [S5]
+- `build/sections/02-selection-process.tex` [S5:21–30]
   - The selection process (line 1)
   - The group and its finite presentation (line 11)
   - Finite quotients and characters (line 101)
@@ -101,14 +101,14 @@ The asymmetry is transported by Morita equivalence. [S9:347–355] transports it
   - The Verdier quotient and evaluation functors (line 101)
   - A lifted diagram (line 211)
   - Rectification (line 341)
-- `build/sections/04-tensor-realization.tex` [S7]
+- `build/sections/04-tensor-realization.tex` [S7:9–21]
   - Tensor realization of the selection process (line 1)
   - The realization theorem (line 7)
   - The localized module category (line 41)
   - The lifted tensor diagram (line 121)
   - The natural isomorphism (line 211)
   - The splitting (line 261)
-- `build/sections/05-ordinary-simulation.tex` [S8]
+- `build/sections/05-ordinary-simulation.tex` [S8:79–86]
   - Ordinary simulation of the tensor process (line 1)
   - The product algebra and bimodule (line 11)
   - The compression (line 77)

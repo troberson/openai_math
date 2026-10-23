@@ -103,7 +103,7 @@ the quantized statement nor extend to arbitrary reductive gauge groups
 
 ## Section skeleton
 
-**Main file** [S4], 8 sections under `build/sections/`:
+**Main file** [S4:49–56], 8 sections under `build/sections/`:
 
 1. Introduction [S5]
 2. Preliminaries [S6]

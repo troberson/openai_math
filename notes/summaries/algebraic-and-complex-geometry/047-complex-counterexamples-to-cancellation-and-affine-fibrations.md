@@ -84,7 +84,7 @@ The organization of the proof is recorded. [S6:263–271] records it: "records t
 
 ## Section skeleton
 
-- `build/main.tex` [S3]
+- `build/main.tex` [S3:9–17]
 - `build/preamble.tex` [S4]
 - `build/sections/01-introduction.tex` [S6]
 - `build/sections/02-construction.tex` [S7]

@@ -111,7 +111,7 @@ are not proposed as minimal [S5:135–138].
 
 ## Section skeleton
 
-**Main file** [S4], 8 sections under `build/sections/`:
+**Main file** [S4:62–66], 8 sections under `build/sections/`:
 
 1. Introduction [S5]
 2. The strata algebra [S6]

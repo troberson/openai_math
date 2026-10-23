@@ -8,7 +8,7 @@
 
 The release's blurb [S1:1597]: "**063. The generalized Mukai conjecture.** Proves the generalized Mukai conjecture: every positive-dimensional smooth complex projective Fano manifold of dimension *n*, Picard number *ρ* and pseudoindex *ι* satisfies $`\rho(\iota-1)\le n`$, with equality exactly for $`(\mathbb P^{\iota-1})^\rho`$. Here the pseudoindex is the least anticanonical degree of a rational curve."
 
-The manuscript, *The generalized Mukai conjecture* [S2], has the
+The manuscript, *The generalized Mukai conjecture* [S2:33–36], has the
 abstract [S2:33–36]: "We prove the generalized Mukai conjecture: every positive-dimensional"
 
 ## Undergraduate summary
@@ -102,14 +102,14 @@ semisimple, so it covers nonsemisimple Fano manifolds [S3:110–127].
 
 ## Section skeleton
 
-**Main file** [S2], 6 sections under `build/sections/`:
+**Main file** [S2:33–36], 6 sections under `build/sections/`:
 
 1. Introduction [S3]
 2. Setup (quantum cohomology) [S4]
 3. Descendants (point-descendant lower bound) [S5]
 4. Spectral (eigenvalue independence) [S6]
 5. Trace (alternating trace and curve correspondences) [S7]
-6. Equality (ordered-chain bound and product characterization) [S8]
+6. Equality (ordered-chain bound and product characterization) [S8:43–50]
 
 ## Coverage
 

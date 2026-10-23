@@ -8,8 +8,8 @@
 
 The release's blurb [S1:1629]: "**065. Virasoro constraints for complete intersections and projective-bundle towers.** Proves the full ordinary unreduced descendant Virasoro conjecture for smooth complete intersections in complex projective space, in every genus and curve class with arbitrary cohomology insertions. The constraints also pass from any smooth projective complex base satisfying them to the projectivization of every algebraic vector bundle of rank at least two, and hence to projective-bundle towers." The family ships two
 manuscripts, one proving the constraints for complete
-intersections [S3] and one proving they pass through
-projectivization [S11]. The complete-intersections abstract
+intersections [S3:93–97] and one proving they pass through
+projectivization [S11:9–15]. The complete-intersections abstract
 [S3:93–97] reads: "We prove the Virasoro conjecture for the ordinary descendant"
 
 ## Undergraduate summary

@@ -104,7 +104,7 @@ Iitaka-fibration machinery [S15]–[S20].
 `references.tex`.
 
 **Uniform index manuscript** (10 `.tex` files under `build/`):
-`main.tex` [S7], `sections/introduction.tex` [S8], `sections/preliminaries.tex`,
+`main.tex` [S7:62–71], `sections/introduction.tex` [S8], `sections/preliminaries.tex`,
 `sections/hodge.tex`, `sections/diagonal.tex`, `sections/rank.tex`,
 `sections/characters.tex`, `sections/rank-calibration.tex`,
 `sections/rank-count.tex`, `sections/residues.tex`, `research/history.tex`.

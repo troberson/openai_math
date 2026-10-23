@@ -104,7 +104,7 @@ independently of $\ell$.
 
 ## Section skeleton
 
-**Main file** [S4], 5 sections under `build/sections/`:
+**Main file** [S4:41], 5 sections under `build/sections/`:
 
 1. Introduction [S5]
 2. Anabelian inputs and the local norm identity [S6]

@@ -88,12 +88,12 @@ as Conjecture 2 of Beresnevich, Hauke and Velani [S5:89–95].
 **Hausdorff-measure divergence.** The mass transference principle
 gives a full Hausdorff-$f$-measure conclusion for each fixed shift,
 with unrestricted numerators and no monotonicity of $\psi$
-[S15]. The proof applies the theorem to the transformed radii
+[S15:1–15]. The proof applies the theorem to the transformed radii
 $f(\psi(q)/q)$ and transfers via the closed-ball limsup [S15:1–15].
 
 ## Section skeleton
 
-**Main file** [S4], 11 sections under `build/sections/`:
+**Main file** [S4:38–45], 11 sections under `build/sections/`:
 
 1. Introduction [S5]
 2. Finite blocks and elementary conventions [S6]
@@ -105,7 +105,7 @@ $f(\psi(q)/q)$ and transfers via the closed-ball limsup [S15:1–15].
 8. Alignments in sparse prime steps [S12]
 9. Construction of the operational partitions [S13]
 10. First joins of previously constructed tables [S14]
-11. The Hausdorff-measure consequence [S15]
+11. The Hausdorff-measure consequence [S15:1–15]
 
 Bibliography: `references/main.bib` [S16].
 

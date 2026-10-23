@@ -88,9 +88,9 @@ smooth or of bounded degree [S4:113–128].
 **Main file** [S4], 4 sections under `build/sections/`:
 
 1. Orders, thresholds, and vanishing [S5]
-2. The ordinary-order alternative [S6]
-3. Isolation and adjoint lifting [S7]
-4. Eliminating positive-dimensional centers [S8]
+2. The ordinary-order alternative [S6:1–7]
+3. Isolation and adjoint lifting [S7:4–9]
+4. Eliminating positive-dimensional centers [S8:8–13]
 
 Bibliography: `references.tex` [S9].
 

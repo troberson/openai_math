@@ -91,7 +91,7 @@ the automorphy application, so they can be used independently
 
 ## Section skeleton
 
-**Main file** [S4], 8 sections under `build/sections/`:
+**Main file** [S4:74–76], 8 sections under `build/sections/`:
 
 1. Introduction [S5]
 2. Galois and automorphic conventions [S6]

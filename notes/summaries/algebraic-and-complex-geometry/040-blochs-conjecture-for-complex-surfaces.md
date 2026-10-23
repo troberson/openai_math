@@ -84,7 +84,7 @@ is determined by its cohomology class [S5:47–51].
 
 ## Section skeleton
 
-**Main file** [S4], 7 sections under `build/sections/`:
+**Main file** [S4:73–77], 7 sections under `build/sections/`:
 
 1. Introduction [S5]
 2. Classical and birational reductions [S6]

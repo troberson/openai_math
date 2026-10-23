@@ -89,7 +89,7 @@ covers [S12].
 
 ## Section skeleton
 
-**Main file** [S4], 8 sections plus appendix:
+**Main file** [S4:46–49], 8 sections plus appendix:
 
 1. Introduction [S5]
 2. Preliminaries [S6]

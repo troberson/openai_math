@@ -107,7 +107,7 @@ disk [S4:47–50].
 
 ## Section skeleton
 
-**Main file** [S3], 15 sections under `build/sections/` plus 2
+**Main file** [S3:33–37], 15 sections under `build/sections/` plus 2
 appendix sections:
 
 1. Introduction [S4]

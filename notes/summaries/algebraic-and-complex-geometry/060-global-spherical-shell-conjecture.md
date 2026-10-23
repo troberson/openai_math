@@ -95,7 +95,7 @@ $\chi_{\text{top}}(S)\geq \frac{9}{5}|\sigma(S)|$ follows
 **Main file** [S2], 6 sections under `build/sections/`:
 
 1. Surface invariants and the cyclic cover [S3]
-2. Divisor growth and residue currents [S4]
+2. Divisor growth and residue currents [S4:3–17]
 3. Cylinder [S5]
 4. Weighted [S6]
 5. Compact data [S7]

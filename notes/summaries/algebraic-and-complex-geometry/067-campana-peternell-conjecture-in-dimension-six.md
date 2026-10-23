@@ -83,7 +83,7 @@ homogeneous [S3:36–44].
 
 ## Section skeleton
 
-**Main file** [S3], 7 sections under `build/sections/`:
+**Main file** [S3:36–44], 7 sections under `build/sections/`:
 introduction [S4], $p_1$-cohomology, minimal curves,
 pseudoindex-four [S5], characteristic classes, grassmannian
 [S6], conclusion [S7].

@@ -72,7 +72,7 @@ The dual sign is recorded. [S5:227–229] records it: "The dual has the opposite
 
 ## Section skeleton
 
-- `build/paper.tex` [S3]
+- `build/paper.tex` [S3:43–47]
 - `build/sections/01-introduction.tex` [S5]
 - `build/sections/02-construction.tex` [S6]
 - `build/sections/03-ampleness.tex` [S7]

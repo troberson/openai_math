@@ -110,7 +110,7 @@ and no codimension-one multiple fibers exist [S13:59–70].
 5. The polarized family [S9]
 6. The finiteness deduction [S10]
 
-Main file: `main.tex` [S4].
+Main file: `main.tex` [S4:7–11].
 
 **Companion manuscript** (12 sections under `build/source/sections/`):
 

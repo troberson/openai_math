@@ -9,7 +9,7 @@
 The release's blurb [S1:1581]: "**062. Projective contact classification and the LeBrun–Salamon conjecture.** Proves the LeBrun–Salamon conjecture: every closed connected positive quaternionic-Kähler manifold of real dimension at least eight is homothetic to a compact symmetric Wolf space. It also proves contact-Fano homogeneity and classifies smooth connected complex projective contact manifolds of complex dimension at least three: those with $`b_2=1`$ are adjoint varieties with their canonical contact structures, while those with $`b_2\ge2`$ have underlying manifold $`\mathbb P(T^*Z)`$ for a smooth projective variety *Z*."
 
 The manuscript, *Contact Fano manifolds and the LeBrun--Salamon
-conjecture* [S2], has the abstract [S2:60–66]: "We resolve the contact-Fano homogeneity conjecture and the Riemannian"
+conjecture* [S2:60–66], has the abstract [S2:60–66]: "We resolve the contact-Fano homogeneity conjecture and the Riemannian"
 
 ## Undergraduate summary
 
@@ -107,7 +107,7 @@ admits a Kähler--Einstein metric of positive scalar curvature
 
 ## Section skeleton
 
-**Main file** [S2], 9 sections under `build/sections/`:
+**Main file** [S2:60–66], 9 sections under `build/sections/`:
 
 1. Introduction [S3]
 2. Reduction (Picard alternatives) [S4]

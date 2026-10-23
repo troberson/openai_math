@@ -27,6 +27,7 @@ sys.path.insert(0, str(ROOT / "notes" / "scripts"))
 import build_catalog as B  # noqa: E402
 from catlib import bib as BIB  # noqa: E402
 from catlib import normalizer  # noqa: E402
+from catlib import summaries as CSUM  # noqa: E402
 from catlib import text as CTEXT  # noqa: E402
 from catlib.atomic import Staging  # noqa: E402
 from catlib.paths import ROOT as REPO  # noqa: E402
@@ -213,6 +214,35 @@ def resolve_token(token: str, quotes: dict[int, dict]) -> str:
     return normalizer.normalize_window(span, preamble)
 
 
+def expand_bare_markers(body: str, quotes: dict[int, dict]) -> str:
+    """Expand bare [S#] markers to [S#:start–end] when unambiguous.
+
+    A bare marker carries no line number (e.g. ``[S5]`` not ``[S5:23–26]``).
+    When exactly one quote exists for that source ID in the quotes block, the
+    renderer expands it using that quote's start and end lines. Zero or
+    multiple quotes leave the marker as-is (ambiguous).
+    """
+    sid_quotes: dict[str, list[tuple[str, str]]] = {}
+    for row in quotes.values():
+        if row["start"] == "0":
+            continue  # Unlocated quote (measured negative) — no line window to expand to.
+        sid_quotes.setdefault(row["sid"], []).append((row["start"], row["end"]))
+
+    def _replace(m: re.Match[str]) -> str:
+        if m.group(2) is not None:
+            return m.group(0)  # Already has a line number.
+        sid = f"S{m.group(1)}"
+        entries = sid_quotes.get(sid, [])
+        if len(entries) == 1:
+            start, end = entries[0]
+            if start == end:
+                return f"[{sid}:{start}]"
+            return f"[{sid}:{start}\u2013{end}]"
+        return m.group(0)
+
+    return CSUM.MARKER.sub(_replace, body)
+
+
 def parse_data_file(text: str) -> tuple[list[tuple[str, str, str]], dict[str, str], str, dict[int, dict]]:
     """Parse a data file into (sources, sections, slug, quotes).
 
@@ -319,12 +349,15 @@ def render_page(fam: str, info: dict, data_text: str) -> tuple[str, str]:
     # slugify carries the same order, so a summary page's filename is its index page's.
     slug = slugify(title)
 
-    # Resolve quote tokens in each section body.
+    # Resolve quote tokens in each section body, then expand bare [S#] markers
+    # to [S#:start–end] when the quotes block gives exactly one window for that
+    # source ID.
     resolved: dict[str, str] = {}
     for key, body in sections.items():
         def _replace(m: re.Match[str]) -> str:
             return resolve_token(m.group(1), quotes)
-        resolved[key] = re.sub(r"\{\{(\d+)\}\}", _replace, body)
+        text = re.sub(r"\{\{(\d+)\}\}", _replace, body)
+        resolved[key] = expand_bare_markers(text, quotes)
 
     # Build the Sources table rows. The File cell is a markdown link whose label is the
     # backticked repo-relative path: the checker reads the first backticked text in the cell
@@ -391,6 +424,12 @@ def main() -> int:
             continue
         info = fams[fam]
         data_text = df.read_text(encoding="utf-8")
+        # Flag declared source paths that do not exist on disk.
+        sources, _s, _sl, _q = parse_data_file(data_text)
+        for sid, path, _role in sources:
+            if not (REPO / path).is_file():
+                print(f"  {fam}: {sid} MISSING SOURCE {path}")
+                problems += 1
         page_text, slug = render_page(fam, info, data_text)
         out = SUMM_DIR / disc_slug(info["discipline"]) / f"{fam}-{slug}.md"
         if not check_only:

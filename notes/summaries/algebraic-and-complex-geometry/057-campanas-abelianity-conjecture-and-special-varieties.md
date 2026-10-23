@@ -10,13 +10,13 @@ The release's blurb [S1:1481]: "**057. Fundamental groups of special complex var
 
 Three manuscripts carry this family. The first,
 *The abelianity conjecture for special compact Kähler manifolds*
-[S2], has the abstract [S2:36–40]: "We prove that the fundamental group of every special compact Kähler"
+[S2:36–40], has the abstract [S2:36–40]: "We prove that the fundamental group of every special compact Kähler"
 
 The second, *Two-step monodromy of special quasi-projective
-varieties* [S9], has the abstract [S9:60–66]: "We give an independent proof that every complex linear representation"
+varieties* [S9:60–66], has the abstract [S9:60–66]: "We give an independent proof that every complex linear representation"
 
 The third, *A conditional abelianity theorem for special fourfold
-pairs with a half-weight divisor* [S13], has the abstract
+pairs with a half-weight divisor* [S13:10], has the abstract
 [S13:10]: "Using the abelianity theorem for special compact Kähler manifolds in every dimension, we prove virtual abelianity of the entire orbifold fundamental group of the special order-two root orbifold associated with a pair $(X,\tfrac12D)$, where $X$ is a smooth projective fourfold and $D$ is a nonempty smooth connected divisor. We construct a special smooth projective eightfold whose fundamental group surjects onto the required group."
 
 ## Undergraduate summary
@@ -129,7 +129,7 @@ fundamental group is virtually abelian [S14:39–45].
 
 ## Section skeleton
 
-**Manuscript 1** [S2], 6 sections under `build/sections/`:
+**Manuscript 1** [S2:36–40], 6 sections under `build/sections/`:
 
 1. Introduction [S3]
 2. Preliminaries [S4]
@@ -138,24 +138,24 @@ fundamental group is virtually abelian [S14:39–45].
 5. Descent [S7]
 6. Completion [S8]
 
-**Manuscript 2** [S9], 8 sections under `build/sections/`:
+**Manuscript 2** [S9:60–66], 8 sections under `build/sections/`:
 
 1. Introduction [S10]
 2. Mixed Hodge structures [S11]
 3. Linear monodromy [S12]
-4. Definitions [S9]
-5. Specialness [S9]
-6. Albanese topology [S9]
-7. Composition [S9]
-8. Ordinary fundamental group [S9]
+4. Definitions [S9:60–66]
+5. Specialness [S9:60–66]
+6. Albanese topology [S9:60–66]
+7. Composition [S9:60–66]
+8. Ordinary fundamental group [S9:60–66]
 
-**Manuscript 3** [S13], 3 sections plus appendix under `build/source/sections/`:
+**Manuscript 3** [S13:10], 3 sections plus appendix under `build/source/sections/`:
 
 1. Introduction [S14]
 2. Differentials [S15]
-3. Transfer [S13]
+3. Transfer [S13:10]
 4. Quadrics [S16]
-5. Appendix: branched covers [S13]
+5. Appendix: branched covers [S13:10]
 
 ## Coverage
 

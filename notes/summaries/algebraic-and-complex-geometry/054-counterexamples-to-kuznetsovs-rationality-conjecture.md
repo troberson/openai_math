@@ -89,7 +89,7 @@ independent of the test subcollection and the number of links
 
 ## Section skeleton
 
-**Main file** [S4], 6 sections under `build/sections/`:
+**Main file** [S4:51–58], 6 sections under `build/sections/`:
 
 1. Introduction [S5]
 2. Preliminaries [S6]

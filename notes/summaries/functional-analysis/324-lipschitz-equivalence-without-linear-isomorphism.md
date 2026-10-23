@@ -92,7 +92,7 @@ The relation between the two constructions is stated. [S16:86–89] states it: "
 
 Manuscript A:
 
-- `build/main.tex` [S3]
+- `build/main.tex` [S3:46–48]
 - `build/sections/01-introduction.tex` [S6]
 - `build/sections/02-free-graph.tex` [S7]
 - `build/sections/03-triangular.tex` [S8]
@@ -104,7 +104,7 @@ Manuscript A:
 
 Manuscript B:
 
-- `build/main.tex` [S13]
+- `build/main.tex` [S13:37–40]
 - `build/sections/01-introduction.tex` [S16]
 - `build/sections/02-absorption.tex` [S17]
 - `build/sections/03-weights.tex` [S18]
