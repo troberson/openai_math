@@ -91,13 +91,13 @@ manuscript resolves [S4:36–80].
 **Kurosh's problem, division rings, negative.** The theorem gives a
 negative answer to Kurosh's division-ring problem: algebraicity over the
 center does not imply local finiteness, and a two-element generating set
-is enough to witness the failure [S4:4–17, S4:19–33].
+is enough to witness the failure [S4:4–17, S4:19–32].
 
 **A two-generated infinite-dimensional algebraic division ring.** The
 example is simultaneously countable, characteristic-zero, two-generated
 as an algebra over its center, and infinite-dimensional over it — all
 four properties at once — which is the sharp form of the negative answer
-[S4:19–33].
+[S4:19–32].
 
 **Relation to the nil-algebra finiteness questions.** The construction
 is a division-ring analogue of the Golod-type negative finiteness
