@@ -125,8 +125,8 @@ ROWS = [
     # gate time by construction. The driver runs it after the render that sweeps the page to the
     # TSV this run produced. The probe stays a row: it lands the keyed check() record the
     # post-gate checker reads, and the render writes inside the tree the probe's key hashes.
-    ("measure_check_calls.py", ("pages",), ()),
-    ("run_tests.py notes/scripts/tests/test_script_ownership.py -q", ("pages",), ()),
+    ("measure_check_calls.py", ("pages",), ("check_calls",)),
+    ("run_tests.py notes/scripts/tests/test_script_ownership.py -q", ("pages", "check_calls"), ()),
     ("verify_findings.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_findings.py -q", ("pages",), ()),
     ("verify_citations.py", ("pages",), ()),
@@ -144,10 +144,10 @@ ROWS = [
     # that reads a cache entry a concurrent writer has not landed yet reports a missing entry.
     ("verify_cache_promotion.py",
      ("catalog", "sources", "links", "subfindings", "abstracts", "deps", "index", "pages",
-      "quotes", "summaries"), ()),
+      "quotes", "summaries", "checker_reads"), ()),
     ("run_tests.py notes/scripts/tests/test_cache_promotion.py -q",
      ("catalog", "sources", "links", "subfindings", "abstracts", "deps", "index", "pages",
-      "quotes", "summaries"), ()),
+      "quotes", "summaries", "checker_reads"), ()),
     ("verify_conjecture_standing.py", ("catalog",), ()),
     ("run_tests.py notes/scripts/tests/test_conjecture_standing.py -q", ("catalog",), ()),
     ("verify_tsv_quoting.py",
@@ -162,7 +162,7 @@ ROWS = [
     # record carries no wall time, so a re-run lands the same bytes and the tree stays clean -- the
     # reason it can be a row at all when measure_open_probe.py cannot. It needs the render because its
     # children read the pages.
-    ("measure_checker_reads.py", ("pages",), ()),
+    ("measure_checker_reads.py", ("pages",), ("checker_reads",)),
 ]
 
 
