@@ -343,7 +343,7 @@ server loaded; a floor from one measurement, not a benchmark.
 extracted its self-tests put `run()` under `functools.cache` (`:134`) — every script in `REPORTS` is
 report-only, so a second call in the same process cannot see a different stdout — and that is why the
 `run_tests.py` row measures **15.6 s** where the `--mutant` row took **34.7 s** before that row was
-replaced:  (the clean page, each of the six faults, and the padded-table test's two) pay the
+replaced: the 9 `check()` calls the row makes (the clean page, each of the six faults, and the padded-table test's two) pay the
 five subprocesses once.
 `verify_faithfulness.py` is the same case with a corpus walk instead of subprocesses: `population()`
 is under `functools.cache` (`:187`) — the checker writes nothing and the tests mutate page text in
@@ -361,7 +361,7 @@ row measures **5.5 s** where the `--mutant` row took **20.3 s** before that row 
 17 `check()` calls the row makes pay the `notes/index/` walk once.
 `verify_fleet_design.py` is the same case with the `git`/`du`/script-tree walk: `population()` is under
 `functools.cache` (`:151`), so its `run_tests.py` row measures **0.7 s** where the `--mutant` row took
-**0.8 s** before that row was replaced:  pay the five
+**0.8 s** before that row was replaced: the 23 `check()` calls the row makes pay the five
 `git rev-parse` calls, the `--ignored=matching` check, the three `du -sk` calls and the 68-script scan
 once.
 `verify_verification_dirs.py` is the same case with two walks: `population()` (`:138`) and

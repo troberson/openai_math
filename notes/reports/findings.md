@@ -78,8 +78,7 @@ claim-to-evidence gap in the ledger: 46 families claiming named-target resolutio
 artefact behind them.
 Absence of formalization is not a weakness signal — 547 of 719 manuscripts are unformalized [S11].
 Within T0, **35** families ship exactly two manuscripts; **27** of them are the second-pass reading
-population, carrying **54** manuscripts, and "no coverage signal" holds for **23** of the 27 and fails
-for 147, 258, 268 and 346 — four of these now carry summary pages, and 268 carries `verification = 2` [S12].
+population, carrying **54** manuscripts, and "no coverage signal" holds for **10** of the 27 and 268 carries `verification = 2` [S12].
 
 ## What the evidence layers show
 
