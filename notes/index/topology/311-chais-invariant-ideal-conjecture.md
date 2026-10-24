@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [geometric-topology](../topics/geometric-topology.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [311-chais-invariant-ideal-conjecture.md](../../../notes/summaries/topology/311-chais-invariant-ideal-conjecture.md) |
 
 ## Manuscripts
 

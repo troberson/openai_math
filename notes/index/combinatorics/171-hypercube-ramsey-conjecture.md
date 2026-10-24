@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [graph-theory](../topics/graph-theory.md) · [graph-coloring](../topics/graph-coloring.md) · [ramsey-theory](../topics/ramsey-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [171-hypercube-ramsey-conjecture.md](../../../notes/summaries/combinatorics/171-hypercube-ramsey-conjecture.md) |
 
 ## Manuscripts
 

@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [representation-theory](../topics/representation-theory.md) · [lie-theory](../topics/lie-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [204-tensor-saturation-for-even-spin-groups.md](../../../notes/summaries/algebra/204-tensor-saturation-for-even-spin-groups.md) |
 
 ## Manuscripts
 

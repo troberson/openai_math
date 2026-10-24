@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, uniform |
 | Topics | [discrete-geometry](../topics/discrete-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [166-higher-dimensional-erdos-distinct-distances-conjecture.md](../../../notes/summaries/combinatorics/166-higher-dimensional-erdos-distinct-distances-conjecture.md) |
 
 ## Manuscripts
 

@@ -13,7 +13,7 @@
 | Claim shapes | classification |
 | Topics | [manifolds](../topics/manifolds.md) · [riemannian-geometry](../topics/riemannian-geometry.md) · [differential-geometry](../topics/differential-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [339-katoks-entropy-rigidity-conjecture.md](../../../notes/summaries/differential-geometry/339-katoks-entropy-rigidity-conjecture.md) |
 
 ## Manuscripts
 

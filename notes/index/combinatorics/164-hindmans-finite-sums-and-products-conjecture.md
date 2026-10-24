@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [complexity-theory](../topics/complexity-theory.md) · [graph-coloring](../topics/graph-coloring.md) · [additive-combinatorics](../topics/additive-combinatorics.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [164-hindmans-finite-sums-and-products-conjecture.md](../../../notes/summaries/combinatorics/164-hindmans-finite-sums-and-products-conjecture.md) |
 
 ## Manuscripts
 

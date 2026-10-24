@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, uniform |
 | Topics | [harmonic-analysis](../topics/harmonic-analysis.md) · [surfaces](../topics/surfaces.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [077-fourier-restriction-for-positively-curved-surfaces.md](../../../notes/summaries/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md) |
 
 ## Manuscripts
 

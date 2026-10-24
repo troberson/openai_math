@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [313-finite-generation-for-the-k-n-local-sphere.md](../../../notes/summaries/topology/313-finite-generation-for-the-k-n-local-sphere.md) |
 
 ## Manuscripts
 

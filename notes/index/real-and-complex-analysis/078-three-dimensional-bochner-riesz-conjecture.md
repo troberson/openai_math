@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, uniform |
 | Topics | [harmonic-analysis](../topics/harmonic-analysis.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [078-three-dimensional-bochner-riesz-conjecture.md](../../../notes/summaries/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md) |
 
 ## Manuscripts
 

@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [manifolds](../topics/manifolds.md) · [riemannian-geometry](../topics/riemannian-geometry.md) · [complex-geometry](../topics/complex-geometry.md) · [symplectic-geometry](../topics/symplectic-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [341-donaldsons-hypersymplectic-deformation-conjecture.md](../../../notes/summaries/differential-geometry/341-donaldsons-hypersymplectic-deformation-conjecture.md) |
 
 ## Manuscripts
 

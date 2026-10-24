@@ -13,7 +13,7 @@
 | Claim shapes | bound |
 | Topics | [partial-differential-equations](../topics/partial-differential-equations.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [375-de-giorgis-conjecture-in-dimension-eight.md](../../../notes/summaries/partial-differential-equations/375-de-giorgis-conjecture-in-dimension-eight.md) |
 
 ## Manuscripts
 

@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [manifolds](../topics/manifolds.md) · [geometric-topology](../topics/geometric-topology.md) · [knot-theory](../topics/knot-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [306-purely-cosmetic-surgery-conjecture-for-knots-in-s-3.md](../../../notes/summaries/topology/306-purely-cosmetic-surgery-conjecture-for-knots-in-s-3.md) |
 
 ## Manuscripts
 

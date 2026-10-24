@@ -13,7 +13,7 @@
 | Claim shapes | bound, classification, uniform |
 | Topics | [group-theory](../topics/group-theory.md) · [number-fields](../topics/number-fields.md) · [modular-representation](../topics/modular-representation.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [203-donovans-conjecture-over-fields-and-discrete-valuation-rings.md](../../../notes/summaries/algebra/203-donovans-conjecture-over-fields-and-discrete-valuation-rings.md) |
 
 ## Manuscripts
 

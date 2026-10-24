@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound |
 | Topics | [harmonic-analysis](../topics/harmonic-analysis.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [086-an-l-3-bound-for-the-trilinear-hilbert-transform.md](../../../notes/summaries/real-and-complex-analysis/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md) |
 
 ## Manuscripts
 

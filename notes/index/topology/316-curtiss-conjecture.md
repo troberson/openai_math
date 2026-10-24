@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [stable-homotopy](../topics/stable-homotopy.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [316-curtiss-conjecture.md](../../../notes/summaries/topology/316-curtiss-conjecture.md) |
 
 ## Manuscripts
 

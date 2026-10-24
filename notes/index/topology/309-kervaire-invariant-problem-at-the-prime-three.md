@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [stable-homotopy](../topics/stable-homotopy.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [309-kervaire-invariant-problem-at-the-prime-three.md](../../../notes/summaries/topology/309-kervaire-invariant-problem-at-the-prime-three.md) |
 
 ## Manuscripts
 

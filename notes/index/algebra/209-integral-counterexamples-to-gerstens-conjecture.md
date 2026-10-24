@@ -13,7 +13,7 @@
 | Claim shapes | counterexample, classification |
 | Topics | [noncommutative-algebra](../topics/noncommutative-algebra.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [209-integral-counterexamples-to-gerstens-conjecture.md](../../../notes/summaries/algebra/209-integral-counterexamples-to-gerstens-conjecture.md) |
 
 ## Manuscripts
 

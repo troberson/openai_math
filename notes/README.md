@@ -17,7 +17,7 @@ gain anything from this file? `notes/reports/formalization-deps.md` is about a t
 gains from it, so it is a report, not development.
 
 `notes/index/` is the generated index — **1,033** pages, no tables; the **16** generated tables the index
-renders land in `notes/tables/`. `notes/summaries/` is **85** hand-written per-family pages.
+renders land in `notes/tables/`. `notes/summaries/` is **126** hand-written per-family pages.
 `notes/scripts/` is the **74**-script fleet, `notes/templates/` the **27** page skeletons the renderers
 read, and `notes/scripts/README.md` the ownership manifest that says whose bytes every file under `notes/`
 is. This file is the single entry point: no `README.md` sits inside `reports/` or `development/`.
@@ -496,17 +496,17 @@ and `main_results:` (config/declaration/file triples) as two flat lists with not
 the family→Lean reach the index shows is *derived* — family → config (the scope note's comparator
 links) → declaration → file — 200 declarations over 189 configs reaching **136 of 372** families, and
 formalization stays a per-manuscript flag. The 106 T2 families, whose scope notes link configs that no
-`main_results` entry names, render as *absent*, never as unformalized. Fresh report: **48080** relative
+`main_results` entry names, render as *absent*, never as unformalized. Fresh report: **48121** relative
 links with **0** broken — that is the render-time registry, and `notes/scripts/check_index_links.py`
-re-derives the check from disk over every rendered page: **66,175** links, **0** broken, **17,700** of
-them resolving to a directory and **48,475** to a file, the 18,095-link difference being registry
+re-derives the check from disk over every rendered page: **66,216** links, **0** broken, **17,700** of
+them resolving to a directory and **48,516** to a file, the 18,095-link difference being registry
 under-coverage rather than a disagreement about existence (`notes/development/index-links.md`); canonical ==
 rendered on **six of the seven** coverage counts (372 / 719 / 242 / 416 / 10 / 30) and **not** on
 `formalized`, where canonical reads **173** and the rendered pages **172** — the one-path difference is
 the yaml `sources:` entry whose manuscript is not in the ledger; `vs ledger` diffs of 0 on tier,
 `mainres`, `chal`, `paps`, `paps_form`; ledger and overview family sets equal with **372 pages and 0
 absent on disk**; 11 trace files over 10 attributed stems; **0** configs linked by more than one family;
-**0** page collisions (max slug length 93); 85 of 372 summary pairings; manuscript links resolving 719 of
+**0** page collisions (max slug length 93); 126 of 372 summary pairings; manuscript links resolving 719 of
 719 for main file, `build/` and `README.md`; **drift vs `notes/tables/topics.tsv` 0**; names 5,842 measured /
 551 subject pages / 5,291 citation-only / 9,819 edges over 372 families / **0** names with no family /
 **10 of 10** trace families covered by a subject name.
@@ -564,7 +564,7 @@ no name-to-name edge is built.
 | `companions` | `result NNN` cross-refs in the abstract | |
 | `companion_word` | abstract says "companion" | 9 families |
 | `versions` | manuscripts sharing a date-stripped dir slug | 2 families, 4 dated re-issues (003, 056) |
-| `summary` | a page exists at `notes/summaries/<discipline>/<NNN>-*.md` | Filesystem fact, not a derived claim; 85 of 372 families, 175 manuscripts behind them |
+| `summary` | a page exists at `notes/summaries/<discipline>/<NNN>-*.md` | Filesystem fact, not a derived claim; 126 of 372 families, 230 manuscripts behind them |
 
 ## Coverage tracks exposure, not importance
 

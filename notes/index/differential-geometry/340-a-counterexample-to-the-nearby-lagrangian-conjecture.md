@@ -13,7 +13,7 @@
 | Claim shapes | resolution, counterexample |
 | Topics | [graph-theory](../topics/graph-theory.md) · [symplectic-geometry](../topics/symplectic-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [340-a-counterexample-to-the-nearby-lagrangian-conjecture.md](../../../notes/summaries/differential-geometry/340-a-counterexample-to-the-nearby-lagrangian-conjecture.md) |
 
 ## Manuscripts
 

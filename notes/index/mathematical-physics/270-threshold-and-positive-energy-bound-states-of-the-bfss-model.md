@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, uniform |
 | Topics | [mathematical-physics](../topics/mathematical-physics.md) · [condensed-matter](../topics/condensed-matter.md) · [general-relativity](../topics/general-relativity.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [270-threshold-and-positive-energy-bound-states-of-the-bfss-model.md](../../../notes/summaries/mathematical-physics/270-threshold-and-positive-energy-bound-states-of-the-bfss-model.md) |
 
 ## Manuscripts
 

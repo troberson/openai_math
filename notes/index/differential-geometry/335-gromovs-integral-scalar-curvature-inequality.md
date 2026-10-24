@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [manifolds](../topics/manifolds.md) · [riemannian-geometry](../topics/riemannian-geometry.md) · [metric-geometry](../topics/metric-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [335-gromovs-integral-scalar-curvature-inequality.md](../../../notes/summaries/differential-geometry/335-gromovs-integral-scalar-curvature-inequality.md) |
 
 ## Manuscripts
 

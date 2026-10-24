@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [group-theory](../topics/group-theory.md) · [stable-homotopy](../topics/stable-homotopy.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [310-quillens-conjecture-in-rational-homology.md](../../../notes/summaries/topology/310-quillens-conjecture-in-rational-homology.md) |
 
 ## Manuscripts
 

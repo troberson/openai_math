@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [group-theory](../topics/group-theory.md) · [modular-representation](../topics/modular-representation.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [202-blockwise-alperin-weight-conjecture.md](../../../notes/summaries/algebra/202-blockwise-alperin-weight-conjecture.md) |
 
 ## Manuscripts
 

@@ -13,7 +13,7 @@
 | Claim shapes | classification |
 | Topics | [noncommutative-algebra](../topics/noncommutative-algebra.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [201-a-counterexample-to-kuroshs-division-ring-problem.md](../../../notes/summaries/algebra/201-a-counterexample-to-kuroshs-division-ring-problem.md) |
 
 ## Manuscripts
 

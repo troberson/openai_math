@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, uniform |
 | Topics | [partial-differential-equations](../topics/partial-differential-equations.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [368-three-dimensional-ball-evans-approximation-problem.md](../../../notes/summaries/partial-differential-equations/368-three-dimensional-ball-evans-approximation-problem.md) |
 
 ## Manuscripts
 

@@ -13,7 +13,7 @@
 | Claim shapes | resolution, classification |
 | Topics | [category-theory](../topics/category-theory.md) · [modular-representation](../topics/modular-representation.md) · [formal-languages](../topics/formal-languages.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [208-finite-benson-etingof-ostrik-conjecture.md](../../../notes/summaries/algebra/208-finite-benson-etingof-ostrik-conjecture.md) |
 
 ## Manuscripts
 

@@ -13,7 +13,7 @@
 | Claim shapes | uniform |
 | Topics | [manifolds](../topics/manifolds.md) · [riemannian-geometry](../topics/riemannian-geometry.md) · [geometric-topology](../topics/geometric-topology.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [315-four-dimensional-singer-conjecture.md](../../../notes/summaries/topology/315-four-dimensional-singer-conjecture.md) |
 
 ## Manuscripts
 

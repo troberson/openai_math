@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [manifolds](../topics/manifolds.md) · [riemannian-geometry](../topics/riemannian-geometry.md) · [complex-geometry](../topics/complex-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [338-yaus-uniformization-conjecture.md](../../../notes/summaries/differential-geometry/338-yaus-uniformization-conjecture.md) |
 
 ## Manuscripts
 

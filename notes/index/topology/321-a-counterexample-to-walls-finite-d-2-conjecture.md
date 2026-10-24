@@ -13,7 +13,7 @@
 | Claim shapes | counterexample, uniform |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [321-a-counterexample-to-walls-finite-d-2-conjecture.md](../../../notes/summaries/topology/321-a-counterexample-to-walls-finite-d-2-conjecture.md) |
 
 ## Manuscripts
 

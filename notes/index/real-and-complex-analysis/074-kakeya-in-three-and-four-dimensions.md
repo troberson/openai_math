@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [harmonic-analysis](../topics/harmonic-analysis.md) · [fractal-geometry](../topics/fractal-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [074-kakeya-in-three-and-four-dimensions.md](../../../notes/summaries/real-and-complex-analysis/074-kakeya-in-three-and-four-dimensions.md) |
 
 ## Manuscripts
 

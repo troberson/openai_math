@@ -13,7 +13,7 @@
 | Claim shapes | resolution, classification, uniform |
 | Topics | [commutative-algebra](../topics/commutative-algebra.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [200-eisenbud-green-harris-and-lex-plus-powers-in-characteristic-zero.md](../../../notes/summaries/algebra/200-eisenbud-green-harris-and-lex-plus-powers-in-characteristic-zero.md) |
 
 ## Manuscripts
 

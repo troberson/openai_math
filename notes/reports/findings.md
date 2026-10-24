@@ -79,7 +79,7 @@ artefact behind them.
 Absence of formalization is not a weakness signal — 547 of 719 manuscripts are unformalized [S11].
 Within T0, **35** families ship exactly two manuscripts; **27** of them are the second-pass reading
 population, carrying **54** manuscripts, and "no coverage signal" holds for **23** of the 27 and fails
-for 147, 258, 268 and 346 — three of these now carry summary pages, and 268 carries `verification = 2` [S12].
+for 147, 258, 268 and 346 — four of these now carry summary pages, and 268 carries `verification = 2` [S12].
 
 ## What the evidence layers show
 
@@ -111,7 +111,7 @@ README naming the command and its success criteria; **18** ship no README [S14].
 
 **The remaining layers are small.** **10** reasoning traces, all attributed to families by `README.md`
 [S15], 0 unattributed, shipping in 11 files (the Mézard–Parisi trace ships as both `.pdf` and `.tex`).
-**85** of 372 families have a summary page, covering **175** manuscripts [S2].
+**126** of 372 families have a summary page, covering **230** manuscripts [S2].
 
 **The counterexample families are the best-evidenced and the thinnest-evidenced at once.** The
 reading population is the counterexample tag intersected with tier ≠ T0: **28** families (19 T3,
@@ -174,7 +174,7 @@ directory** [S26]. Proof environments total **20,341**; statement environments t
 declared rule and **21,203** by the six-name list, the 85 gap being `assumption`, `foundation`,
 `auxproposition`, `hypothesis`, `auxlemma` and 10 names at ≤5 [S26].
 
-**The rendered index is link-clean.** **1,033** pages carry **66,175** links with **0** broken [S27].
+**The rendered index is link-clean.** **1,033** pages carry **66,216** links with **0** broken [S27].
 
 ## The dependency record
 

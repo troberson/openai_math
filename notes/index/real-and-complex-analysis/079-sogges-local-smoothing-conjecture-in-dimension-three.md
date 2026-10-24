@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [harmonic-analysis](../topics/harmonic-analysis.md) · [partial-differential-equations](../topics/partial-differential-equations.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [079-sogges-local-smoothing-conjecture-in-dimension-three.md](../../../notes/summaries/real-and-complex-analysis/079-sogges-local-smoothing-conjecture-in-dimension-three.md) |
 
 ## Manuscripts
 

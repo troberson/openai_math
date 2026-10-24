@@ -13,7 +13,7 @@
 | Claim shapes | resolution, counterexample |
 | Topics | [group-theory](../topics/group-theory.md) · [operator-algebras](../topics/operator-algebras.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [285-counterexamples-to-baum-connes-and-kadison-kaplansky.md](../../../notes/summaries/operator-algebras/285-counterexamples-to-baum-connes-and-kadison-kaplansky.md) |
 
 ## Manuscripts
 

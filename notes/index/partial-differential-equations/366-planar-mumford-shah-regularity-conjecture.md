@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound |
 | Topics | [partial-differential-equations](../topics/partial-differential-equations.md) · [calculus-of-variations](../topics/calculus-of-variations.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [366-planar-mumford-shah-regularity-conjecture.md](../../../notes/summaries/partial-differential-equations/366-planar-mumford-shah-regularity-conjecture.md) |
 
 ## Manuscripts
 

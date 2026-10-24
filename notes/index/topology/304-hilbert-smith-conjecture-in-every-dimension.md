@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound |
 | Topics | [manifolds](../topics/manifolds.md) · [fractal-geometry](../topics/fractal-geometry.md) · [geometric-topology](../topics/geometric-topology.md) · [lie-theory](../topics/lie-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [304-hilbert-smith-conjecture-in-every-dimension.md](../../../notes/summaries/topology/304-hilbert-smith-conjecture-in-every-dimension.md) |
 
 ## Manuscripts
 

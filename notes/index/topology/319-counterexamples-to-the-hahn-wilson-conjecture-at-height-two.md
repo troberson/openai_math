@@ -13,7 +13,7 @@
 | Claim shapes | counterexample, uniform |
 | Topics | [disordered-systems](../topics/disordered-systems.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md](../../../notes/summaries/topology/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md) |
 
 ## Manuscripts
 

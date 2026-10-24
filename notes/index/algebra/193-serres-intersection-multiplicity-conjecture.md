@@ -13,7 +13,7 @@
 | Claim shapes | resolution, classification |
 | Topics | [commutative-algebra](../topics/commutative-algebra.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [193-serres-intersection-multiplicity-conjecture.md](../../../notes/summaries/algebra/193-serres-intersection-multiplicity-conjecture.md) |
 
 ## Manuscripts
 

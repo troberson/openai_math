@@ -13,7 +13,7 @@
 | Claim shapes | bound, partial |
 | Topics | [quantum-theory](../topics/quantum-theory.md) · [quantum-computing](../topics/quantum-computing.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [284-optimal-randomized-quantum-query-exponent.md](../../../notes/summaries/mathematical-physics/284-optimal-randomized-quantum-query-exponent.md) |
 
 ## Manuscripts
 

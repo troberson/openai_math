@@ -13,7 +13,7 @@
 | Claim shapes | counterexample |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [manifolds](../topics/manifolds.md) · [riemannian-geometry](../topics/riemannian-geometry.md) · [group-theory](../topics/group-theory.md) · [geometric-topology](../topics/geometric-topology.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [305-counterexamples-to-disk-embedding-and-walls-manifold-conjecture.md](../../../notes/summaries/topology/305-counterexamples-to-disk-embedding-and-walls-manifold-conjecture.md) |
 
 ## Manuscripts
 
