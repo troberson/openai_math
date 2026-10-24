@@ -65,14 +65,15 @@ printf '%s\n' "Land the measured figures the gate run produced" "" \
   "table are the writer's bytes for this run, not the previous run's." > "$R/msg_pages.txt"
 step "commit the swept pages" git commit -F "$R/msg_pages.txt" notes/scripts/README.md \
   notes/development/fleet-design.md notes/development/index-design.md notes/tables/gate-rows.tsv
+step "re-land the check() probe (the render moved the tree key)" python3 notes/scripts/measure_check_calls.py
 step "rebuild the templates from the committed pages" python3 notes/scripts/build_report_templates.py
 printf '%s\n' "Rebuild the templates from the committed swept pages" "" \
   "The builder reads git show HEAD:<page>, so the templates carry the Cost cells the render swept" \
   "for this run, and the templates page is the builder's own measurement of the new files." > "$R/msg_templates.txt"
 step "commit the templates" git commit -F "$R/msg_templates.txt" notes/templates/report \
   notes/development/templates.md
+step "re-land the check() probe (the builder moved the tree key)" python3 notes/scripts/measure_check_calls.py
 step "verify script ownership (post-render, so the page is swept)" python3 notes/scripts/verify_script_ownership.py
-step "probe the check() calls (post-render, so the key matches)" python3 notes/scripts/measure_check_calls.py
 step "build the templates again (the template commit moved templates.md, which is in the builder L1)" python3 notes/scripts/build_report_templates.py
 step "verify cache promotion (expect problems 0)" python3 notes/scripts/verify_cache_promotion.py
 step "assert the gate ran inside the budget" python3 notes/scripts/check_gate_budget.py
