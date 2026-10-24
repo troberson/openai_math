@@ -2088,6 +2088,13 @@ def prune_stale() -> int:
     removed = 0
     for d in sorted(RECORDS_ROOT.iterdir()):
         if d.is_dir() and d.name not in current:
-            shutil.rmtree(d)
-            removed += 1
+            try:
+                shutil.rmtree(d)
+                removed += 1
+            except OSError:
+                # A concurrent row is removing the same key dir (the gate runs 12
+                # rows in parallel, and several call prune_stale). The store is
+                # untracked (.qwen/*), so a stale directory is harmless — the
+                # next call removes it.
+                pass
     return removed
