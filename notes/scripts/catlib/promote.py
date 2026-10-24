@@ -107,18 +107,26 @@ L1: dict[str, tuple[str, ...]] = {
                           "notes/tables/topics.tsv",
                           "notes/tables/traces.tsv",
                           "notes/summaries/",
-                          "notes/reports/formalization-deps.md", "notes/reports/t0-triage.md",
+                          # The summary renderer's data files: the templates page's data_files count
+                          # rglobs `notes/data/`, opening every file it counts.
+                          "notes/data/",
+                          "notes/development/lean-fidelity.md", "notes/development/summaries-workflow.md",
+                          "notes/development/upstream_history/",
+                          "notes/reports/citations.md", "notes/reports/conditional.md",
+                          "notes/reports/conjecture-standing.md", "notes/reports/counterexample-tag.md",
+                          "notes/reports/formalization-deps.md", "notes/reports/named-conjectures.md",
+                          "notes/reports/resolution-tag.md", "notes/reports/t0-triage.md",
+                          # `splits.tsv` is the templates page's split table: the writer opens it to
+                          # read the slot boundaries, so it is in the read surface (previously excluded
+                          # because the writer only counted it; the templates page now reads it).
+                          "notes/tables/splits.tsv",
                           "notes/templates/", "notes/index/",
                           # The fleet page's population scans the fleet's own sources and the two
                           # tracked probe records, so the key must hash them: a key that did not could
                           # serve a page whose site list was measured against a script tree that has
                           # since moved. The top-level `notes/*.md` pages are NOT here — the fleet
                           # population globs their names, it does not open them, and the audit-hook
-                          # record names only opens. The `notes/tables/` entries are the 26 files the
-                          # audit-hook record names, not a tree: `splits.tsv` is tracked and would
-                          # expand a tree entry to 27, but the writer counts it (OWN_LEDGER_TSV), it
-                          # does not open it — it is `build_report_templates.py`'s output, not this
-                          # writer's read surface, so a tree entry over-names the set the probe names.
+                          # record names only opens.
                           "notes/scripts/", "notes/development/probe/2026-10-11_writers.txt",
                           "notes/development/probe/2026-10-11_checkers.txt"),
     "build_report_templates.py": REPORT_PAGES,
@@ -141,10 +149,16 @@ L1: dict[str, tuple[str, ...]] = {
     # not could serve a population whose subject vocabulary came from a measurement that has moved.
     # The probe scope excludes `notes/scripts/`, so the source entry is hashed, not compared.
     "extract_named_results.py": ("notes/tables/catalog.tsv", "notes/scripts/measure_names.py"),
-    # The template census reads both template trees, the index tree it counts renders into, and the
-    # registry module it reads the page set from. The registry entry is hashed, not compared: the
-    # probe's printed scope excludes `notes/scripts/`.
-    "measure_templates.py": ("notes/templates/", "notes/index/", "notes/scripts/catlib/templates.py"),
+    # The template census reads the top-level index skeletons and the report templates, the index tree
+    # it counts renders into, and the registry module it reads the page set from. Its two `glob("*.j2")`
+    # walks are `notes/templates/*.j2` (the five index skeletons) and `notes/templates/report/*.j2`
+    # (the twenty-one report templates) — `glob` does not recurse, so the `summaries/` subdirectory's
+    # skeleton is NOT in its read surface and a `notes/templates/` tree entry over-names it by one.
+    # The registry entry is hashed, not compared: the probe's printed scope excludes `notes/scripts/`.
+    "measure_templates.py": ("notes/templates/discipline.md.j2", "notes/templates/family.md.j2",
+                             "notes/templates/index-readme.md.j2", "notes/templates/name.md.j2",
+                             "notes/templates/topic.md.j2", "notes/templates/report/",
+                             "notes/index/", "notes/scripts/catlib/templates.py"),
     # The FTS builder reads only the corpus: every `.tex` under `preprints/` and `overview.tex`, both
     # inside the hashed trees. It opens no `notes/` file, so its L1 is empty and the probe scope
     # (which excludes `notes/scripts/`) has nothing to compare.
@@ -242,9 +256,17 @@ ARGS: dict[str, tuple[str, ...]] = {
     "build_summaries.py": (),
 }
 
-# The writers table names one writer the protocol deliberately excludes: `measure_open_probe.py`'s
+# The writers table names three writers the protocol deliberately excludes. `measure_open_probe.py`'s
 # record carries a wall time per target, so it is a measurement of a run, not a function of a digest.
-NON_CACHED = frozenset({"measure_open_probe.py", "measure_checker_reads.py"})
+# `measure_checker_reads.py` is its checker-side twin. `extract_summary_data.py` is a one-time
+# bootstrap: it reads the family pages and writes the `notes/data/summaries/` files the renderer reads,
+# which are then tracked in git and edited as prose, so re-running it would re-derive them from the
+# pages and clobber the hand edits. It is not a gate row and its output is not a pure function of a
+# digest that gets re-landed, so there is no cache to keep exact — the same reason the two probes are
+# excluded, and the entry is non-cached rather than an `ARTIFACTS` row (which would demand a cache
+# entry for every data file the bootstrap landed).
+NON_CACHED = frozenset({"measure_open_probe.py", "measure_checker_reads.py",
+                        "extract_summary_data.py"})
 
 # The registry names no writer the page lists as a checker: the one that used to —
 # `refresh_summary_line_counts.py`, which rewrote the `Lines` cell of the summaries pages and ran
@@ -1565,6 +1587,12 @@ CHECKER_L1: dict[str, tuple[str, ...]] = {
             "notes/data/summaries/065.md",
             "notes/data/summaries/067.md",
             "notes/data/summaries/072.md",
+            "notes/data/summaries/074.md",
+            "notes/data/summaries/077.md",
+            "notes/data/summaries/078.md",
+            "notes/data/summaries/079.md",
+            "notes/data/summaries/080.md",
+            "notes/data/summaries/086.md",
             "notes/data/summaries/087.md",
             "notes/data/summaries/088.md",
             "notes/data/summaries/089.md",
@@ -1575,11 +1603,22 @@ CHECKER_L1: dict[str, tuple[str, ...]] = {
             "notes/data/summaries/136.md",
             "notes/data/summaries/147.md",
             "notes/data/summaries/159.md",
+            "notes/data/summaries/164.md",
+            "notes/data/summaries/166.md",
+            "notes/data/summaries/171.md",
+            "notes/data/summaries/193.md",
             "notes/data/summaries/195.md",
             "notes/data/summaries/196.md",
             "notes/data/summaries/197.md",
             "notes/data/summaries/198.md",
             "notes/data/summaries/199.md",
+            "notes/data/summaries/200.md",
+            "notes/data/summaries/201.md",
+            "notes/data/summaries/202.md",
+            "notes/data/summaries/203.md",
+            "notes/data/summaries/204.md",
+            "notes/data/summaries/208.md",
+            "notes/data/summaries/209.md",
             "notes/data/summaries/221.md",
             "notes/data/summaries/226.md",
             "notes/data/summaries/243.md",
@@ -1587,15 +1626,36 @@ CHECKER_L1: dict[str, tuple[str, ...]] = {
             "notes/data/summaries/254.md",
             "notes/data/summaries/258.md",
             "notes/data/summaries/259.md",
+            "notes/data/summaries/268.md",
+            "notes/data/summaries/270.md",
             "notes/data/summaries/271.md",
             "notes/data/summaries/274.md",
+            "notes/data/summaries/284.md",
+            "notes/data/summaries/285.md",
             "notes/data/summaries/287.md",
             "notes/data/summaries/300.md",
+            "notes/data/summaries/304.md",
+            "notes/data/summaries/305.md",
+            "notes/data/summaries/306.md",
+            "notes/data/summaries/309.md",
+            "notes/data/summaries/310.md",
+            "notes/data/summaries/311.md",
+            "notes/data/summaries/313.md",
+            "notes/data/summaries/315.md",
+            "notes/data/summaries/316.md",
+            "notes/data/summaries/319.md",
+            "notes/data/summaries/320.md",
+            "notes/data/summaries/321.md",
             "notes/data/summaries/324.md",
             "notes/data/summaries/325.md",
             "notes/data/summaries/331.md",
             "notes/data/summaries/332.md",
             "notes/data/summaries/334.md",
+            "notes/data/summaries/335.md",
+            "notes/data/summaries/338.md",
+            "notes/data/summaries/339.md",
+            "notes/data/summaries/340.md",
+            "notes/data/summaries/341.md",
             "notes/data/summaries/342.md",
             "notes/data/summaries/344.md",
             "notes/data/summaries/345.md",
@@ -1606,6 +1666,9 @@ CHECKER_L1: dict[str, tuple[str, ...]] = {
             "notes/data/summaries/351.md",
             "notes/data/summaries/352.md",
             "notes/data/summaries/362.md",
+            "notes/data/summaries/366.md",
+            "notes/data/summaries/368.md",
+            "notes/data/summaries/375.md",
             "notes/reports/counterexample-tag.md",
             "notes/reports/sources.md",
             "notes/reports/t0-triage.md",
@@ -1613,11 +1676,19 @@ CHECKER_L1: dict[str, tuple[str, ...]] = {
             "notes/scripts/catlib/records.py",
             "notes/scripts/verify_summaries.py",
             "notes/summaries/README.md",
+            "notes/summaries/algebra/193-serres-intersection-multiplicity-conjecture.md",
             "notes/summaries/algebra/195-a-counterexample-to-the-small-cohen-macaulay-module-conjecture.md",
             "notes/summaries/algebra/196-a-counterexample-to-kaplanskys-zero-divisor-conjecture.md",
             "notes/summaries/algebra/197-nonsofic-groups-and-group-ring-counterexamples.md",
             "notes/summaries/algebra/198-a-counterexample-to-the-little-finitistic-dimension-conjecture.md",
             "notes/summaries/algebra/199-counterexamples-to-conjectures-of-auslander-reiten-tachikawa-and-nakayama.md",
+            "notes/summaries/algebra/200-eisenbud-green-harris-and-lex-plus-powers-in-characteristic-zero.md",
+            "notes/summaries/algebra/201-a-counterexample-to-kuroshs-division-ring-problem.md",
+            "notes/summaries/algebra/202-blockwise-alperin-weight-conjecture.md",
+            "notes/summaries/algebra/203-donovans-conjecture-over-fields-and-discrete-valuation-rings.md",
+            "notes/summaries/algebra/204-tensor-saturation-for-even-spin-groups.md",
+            "notes/summaries/algebra/208-finite-benson-etingof-ostrik-conjecture.md",
+            "notes/summaries/algebra/209-integral-counterexamples-to-gerstens-conjecture.md",
             "notes/summaries/algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties.md",
             "notes/summaries/algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md",
             "notes/summaries/algebraic-and-complex-geometry/037-sharp-ordinary-double-point-volume-gap.md",
@@ -1646,12 +1717,20 @@ CHECKER_L1: dict[str, tuple[str, ...]] = {
             "notes/summaries/algebraic-and-complex-geometry/065-virasoro-constraints-for-complete-intersections-and-projective-bundles.md",
             "notes/summaries/algebraic-and-complex-geometry/067-campana-peternell-conjecture-in-dimension-six.md",
             "notes/summaries/combinatorics/159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemeredi-bounds.md",
+            "notes/summaries/combinatorics/164-hindmans-finite-sums-and-products-conjecture.md",
+            "notes/summaries/combinatorics/166-higher-dimensional-erdos-distinct-distances-conjecture.md",
+            "notes/summaries/combinatorics/171-hypercube-ramsey-conjecture.md",
             "notes/summaries/convex-and-metric-geometry/087-mahler-conjectures-and-symplectic-width.md",
             "notes/summaries/convex-and-metric-geometry/088-pettys-projection-volume-conjecture-and-simplex-counterexamples.md",
             "notes/summaries/convex-and-metric-geometry/089-bounded-distortion-l-1-embeddings-of-planar-and-bounded-treewidth-graphs.md",
             "notes/summaries/convex-and-metric-geometry/098-a-negative-answer-to-the-lang-plaut-problem.md",
             "notes/summaries/convex-and-metric-geometry/101-sharp-simplex-conjecture-for-isotropic-constants.md",
             "notes/summaries/differential-geometry/334-a-smooth-surface-metric-with-no-local-immersion-in-r-3.md",
+            "notes/summaries/differential-geometry/335-gromovs-integral-scalar-curvature-inequality.md",
+            "notes/summaries/differential-geometry/338-yaus-uniformization-conjecture.md",
+            "notes/summaries/differential-geometry/339-katoks-entropy-rigidity-conjecture.md",
+            "notes/summaries/differential-geometry/340-a-counterexample-to-the-nearby-lagrangian-conjecture.md",
+            "notes/summaries/differential-geometry/341-donaldsons-hypersymplectic-deformation-conjecture.md",
             "notes/summaries/differential-geometry/342-donaldsons-tamed-to-compatible-conjecture.md",
             "notes/summaries/differential-geometry/344-metric-blaschke-conjecture.md",
             "notes/summaries/differential-geometry/345-infinitely-many-closed-geodesics-on-spheres-and-three-manifolds.md",
@@ -1671,8 +1750,11 @@ CHECKER_L1: dict[str, tuple[str, ...]] = {
             "notes/summaries/group-theory/259-a-group-without-fixed-price.md",
             "notes/summaries/mathematical-logic/243-choiceless-counting-does-not-capture-polynomial-time.md",
             "notes/summaries/mathematical-logic/244-partition-principle-does-not-imply-choice.md",
+            "notes/summaries/mathematical-physics/268-spin-one-haldane-gap.md",
+            "notes/summaries/mathematical-physics/270-threshold-and-positive-energy-bound-states-of-the-bfss-model.md",
             "notes/summaries/mathematical-physics/271-blochs-law-and-spontaneous-ferromagnetic-order.md",
             "notes/summaries/mathematical-physics/274-moores-parity-conjecture-for-qac-0.md",
+            "notes/summaries/mathematical-physics/284-optimal-randomized-quantum-query-exponent.md",
             "notes/summaries/number-theory/001-milnes-rationality-conjecture.md",
             "notes/summaries/number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md",
             "notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md",
@@ -1689,15 +1771,37 @@ CHECKER_L1: dict[str, tuple[str, ...]] = {
             "notes/summaries/number-theory/029-artins-primitive-root-conjecture-infinitude-for-every-base.md",
             "notes/summaries/number-theory/030-modularity-over-imaginary-quadratic-fields.md",
             "notes/summaries/number-theory/031-uchidas-conjecture-for-open-galois-homomorphisms.md",
+            "notes/summaries/operator-algebras/285-counterexamples-to-baum-connes-and-kadison-kaplansky.md",
             "notes/summaries/operator-algebras/287-all-nonabelian-free-group-factors-are-isomorphic.md",
             "notes/summaries/operator-algebras/300-popa-vaes-quadratic-strong-operator-paving-conjecture.md",
             "notes/summaries/partial-differential-equations/362-global-smoothness-for-relativistic-vlasov-maxwell.md",
+            "notes/summaries/partial-differential-equations/366-planar-mumford-shah-regularity-conjecture.md",
+            "notes/summaries/partial-differential-equations/368-three-dimensional-ball-evans-approximation-problem.md",
+            "notes/summaries/partial-differential-equations/375-de-giorgis-conjecture-in-dimension-eight.md",
             "notes/summaries/probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md",
             "notes/summaries/probability-and-statistical-mechanics/226-double-dimer-cle-4-conjecture-in-the-half-plane.md",
             "notes/summaries/real-and-complex-analysis/072-brennans-conjecture-and-a-counterexample-to-kraetzers-prediction.md",
+            "notes/summaries/real-and-complex-analysis/074-kakeya-in-three-and-four-dimensions.md",
+            "notes/summaries/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md",
+            "notes/summaries/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md",
+            "notes/summaries/real-and-complex-analysis/079-sogges-local-smoothing-conjecture-in-dimension-three.md",
+            "notes/summaries/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md",
+            "notes/summaries/real-and-complex-analysis/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md",
             "notes/summaries/theoretical-computer-science/102-unique-games-conjecture-and-optimal-approximation-thresholds.md",
             "notes/summaries/theoretical-computer-science/109-integer-multiplication-below-n-n.md",
             "notes/summaries/theoretical-computer-science/136-quasilinear-pcp-for-ppad-conjecture.md",
+            "notes/summaries/topology/304-hilbert-smith-conjecture-in-every-dimension.md",
+            "notes/summaries/topology/305-counterexamples-to-disk-embedding-and-walls-manifold-conjecture.md",
+            "notes/summaries/topology/306-purely-cosmetic-surgery-conjecture-for-knots-in-s-3.md",
+            "notes/summaries/topology/309-kervaire-invariant-problem-at-the-prime-three.md",
+            "notes/summaries/topology/310-quillens-conjecture-in-rational-homology.md",
+            "notes/summaries/topology/311-chais-invariant-ideal-conjecture.md",
+            "notes/summaries/topology/313-finite-generation-for-the-k-n-local-sphere.md",
+            "notes/summaries/topology/315-four-dimensional-singer-conjecture.md",
+            "notes/summaries/topology/316-curtiss-conjecture.md",
+            "notes/summaries/topology/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md",
+            "notes/summaries/topology/320-a-four-dimensional-counterexample-to-borel-rigidity.md",
+            "notes/summaries/topology/321-a-counterexample-to-walls-finite-d-2-conjecture.md",
             "notes/tables/catalog.tsv",
             "notes/templates/summaries/summary.md.j2",
         ),
@@ -1785,6 +1889,7 @@ def l1_paths(name: str) -> list[Path]:
 
 PROBES = (
           ROOT / "notes" / "development" / "probe" / "2026-10-16_rr_fleet.txt",
+          ROOT / "notes" / "development" / "probe" / "2026-10-16_seed_quotes.txt",
           ROOT / "notes" / "development" / "probe" / "2026-10-15_rr_sweep.txt",
           ROOT / "notes" / "development" / "probe" / "2026-10-15_seed_quotes_sweep.txt",
           ROOT / "notes" / "development" / "probe" / "2026-10-15_mt_sweep.txt",

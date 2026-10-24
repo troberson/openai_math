@@ -5,7 +5,7 @@ notes/README.md	tier_flag	86 of the 130 are flagged, including 11 of the 19 fami
 notes/README.md	cc_decl	The 28
 notes/README.md	cc_gaps	Of the **52** configs their scope notes link, **24** have no entry: **12** in **8** T3
 notes/README.md	cw_fire	fires on
-notes/README.md	scan_links	**66,150** links, **0** broken, **17,700** of
+notes/README.md	scan_links	**66,216** links, **0** broken, **17,700** of
 notes/README.md	trace_fams	(007, 017, 087, 102,
 notes/development/fleet-design.md	gate_rows	carries
 notes/development/fleet-design.md	gate_writers_class	Non-determinism sources in the **11** writers,
@@ -16,9 +16,9 @@ notes/development/index-design.md	added TSV byte figures	`notes/tables/config-de
 notes/development/index-design.md	added TSV byte figures	`notes/tables/families.tsv` (**108554** B over **372** rows), `notes/tables/family-config.tsv` (**8893** B over **416** rows),
 notes/development/index-design.md	added TSV byte figures	`notes/tables/family-lean.tsv` (**21287** B over **200** rows), `notes/tables/family-manuscript.tsv` (**135963** B over **719** rows),
 notes/development/index-design.md	added TSV byte figures	`notes/tables/family-name.tsv` (**136769** B over **9819** rows), `notes/tables/family-topic.tsv` (**23741** B over **980** rows),
-notes/development/index-design.md	added TSV byte figures	`notes/tables/family-trace.tsv` (**855** B over **10** rows), `notes/tables/gate-rows.tsv` (**3558** B over **83** rows),
+notes/development/index-design.md	added TSV byte figures	`notes/tables/family-trace.tsv` (**855** B over **10** rows), `notes/tables/gate-rows.tsv` (**3552** B over **82** rows),
 notes/development/index-design.md	added TSV byte figures	`notes/tables/lean-dirs.tsv` (**41937** B over **559** rows), `notes/tables/manuscripts.tsv` (**277825** B over **719** rows),
-notes/development/index-design.md	added TSV byte figures	`notes/tables/names.tsv` (**304513** B over **5842** rows), `notes/tables/quotes.tsv` (**843304** B over **2834** rows),
+notes/development/index-design.md	added TSV byte figures	`notes/tables/names.tsv` (**304513** B over **5842** rows), `notes/tables/quotes.tsv` (**603411** B over **3210** rows),
 notes/development/index-design.md	added TSV byte figures	`notes/tables/scope-notes.tsv` (**26694** B over **242** rows), `notes/tables/sources.tsv` (**221463** B over **719** rows), `notes/tables/splits.tsv` (**18253** B over **174** rows), `notes/tables/topics-rendered.tsv` (**19127** B over **92** rows), `notes/tables/topics.tsv` (**22650** B over **92** rows) and
 notes/development/index-design.md	all-TSV byte total	every
 notes/development/index-design.md	manuscripts-per-family distribution	a family carries a maximum of **14**
@@ -33,7 +33,7 @@ notes/development/index-design.md	substring vs line-start counts	373. The brace-
 notes/development/index-design.md	substring vs line-start counts	so a substring count of the command name reads 18 and
 notes/development/index-design.md	link occurrence gap	**426** scope-note link occurrences against **416** distinct configs: 7 scope notes link one config
 notes/development/index-design.md	index tree bytes	the index tree
-notes/development/index-design.md	disk link check	covers **66,150** links over the same 1,033 pages, also with
+notes/development/index-design.md	disk link check	covers **66,216** links over the same 1,033 pages, also with
 notes/development/index-design.md	superseded estimate	superseded by the measured **2,560**
 notes/development/index-links.md	hl_canon	719
 notes/development/index-links.md	hl_canon	configs (JSON and Lean side by side), 192 Lean files named by `formalization.yaml` over 183
@@ -46,13 +46,13 @@ notes/development/index-links.md	prose_superseded	every one exists on disk, none
 notes/development/index-links.md	prose_indexpage	`index-page` 521 targets = 372 family pages + 92 topic
 notes/development/index-links.md	prose_indexpage	pages + 17 discipline pages + 40 name pages, and the 40 name pages are linked only from the entry
 notes/development/index-links.md	prose_latexsource	`latex-source` 719 = the `main_tex` of each of the 719 manuscripts, all 719 present in
-notes/development/index-links.md	prose_notesdoc	551 name pages and one from the entry point), the 60 `notes/summaries/` pages family pages link,
-notes/development/index-links.md	prose_notesdoc	`notes-doc` 64 targets = `notes/reports/names.md` (552 links: one from each of the
+notes/development/index-links.md	prose_notesdoc	551 name pages and one from the entry point), the 126 `notes/summaries/` pages family pages link,
+notes/development/index-links.md	prose_notesdoc	`notes-doc` 130 targets = `notes/reports/names.md` (552 links: one from each of the
 notes/development/index-links.md	prose_notesdoc	and the 4 notes docs the entry point links (`index-design.md`, `names.md`, `topics.md`,
 notes/development/index-links.md	prose_tablestsv	`tables-tsv` 2 targets = `notes/tables/names.tsv` (553 links: one from each of the 551 name
 notes/development/index-links.md	prose_tablestsv	pages and 2 from the entry point) and `notes/tables/topics.tsv`
 notes/development/index-links.md	prose_tracefiles	`reasoning_traces/` ships **11 files
-notes/development/index-links.md	prose_regchecked	**48,055 links checked, 0
+notes/development/index-links.md	prose_regchecked	**48,121 links checked, 0
 notes/development/index-links.md	prose_surplus	The 18,095 surplus links are
 notes/development/index-links.md	prose_basenames	The index tree carries 1,027 distinct file basenames over 1,033 pages and `notes/tables/` carries
 notes/reports/abstracts.md	family relation counts	Over the 372 family best matches: **0 identical,
