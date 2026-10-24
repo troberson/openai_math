@@ -57,6 +57,7 @@ if [ -s "$R/gate_failures.txt" ]; then
   exit 1
 fi
 step "land the row times this run printed" python3 notes/scripts/measure_gate_rows.py
+step "re-land the check() probe (gate-rows.tsv moved the tree key)" python3 notes/scripts/measure_check_calls.py
 step "render the pages from the fresh row times" python3 notes/scripts/render_reports.py
 printf '%s\n' "Land the measured figures the gate run produced" "" \
   "The driver lands gate-rows.tsv from the report this run printed and the render sweeps the Cost" \
