@@ -20,50 +20,50 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 019	Number theory	The $p$-adic section conjecture	2	0	T0	0	0	0	0	0	0	0			0	1	0		0	0	1
 020	Number theory	Squarefree quartics and power-free polynomial values	1	1	T3	1	1	1	489	0	0	0		resolution|density	0	1	0		0	0	0
 021	Number theory	A quadratic bound for Jacobsthal's function	1	1	T3	2	1	1	451	0	0	0		resolution|bound|partial|uniform	0	1	0		0	0	0
-022	Number theory	The weak inhomogeneous Duffin--Schaeffer conjecture	1	0	T0	0	0	0	0	0	0	0		uniform	0	1	0		0	0	0
+022	Number theory	The weak inhomogeneous Duffin--Schaeffer conjecture	1	0	T0	0	0	0	0	0	0	0		uniform	0	1	0		0	0	1
 023	Number theory	Patterson’s first moment for cubic Gauss sums	1	0	T2	1	0	1	496	0	0	0		partial	0	0	0		0	0	0
 024	Number theory	An asymptotic formula for the number of totients	1	0	T2	2	0	1	700	0	0	0		bound|uniform	0	1	0		0	0	0
 025	Number theory	Erdős’s short Egyptian-fraction conjecture	1	1	T3	2	1	1	805	0	0	0		resolution	0	1	0		0	0	0
 026	Number theory	Positive lower density of large prime gaps	1	0	T2	1	0	1	352	0	0	0		density|uniform	0	0	0		0	0	0
 027	Number theory	Integral density on curve character varieties	1	1	T3	1	1	1	740	0	0	0		resolution|bound|density|uniform	0	1	0		0	0	0
 028	Number theory	The Gaussian moat conjecture	1	1	T3	1	1	1	460	0	0	0		resolution|bound|partial|uniform	0	1	0		0	0	0
-029	Number theory	Artin's primitive root conjecture: infinitude for every base	2	0	T0	0	0	0	0	0	0	0		resolution|uniform	0	1	0		0	0	0
-030	Number theory	Modularity over imaginary quadratic fields	1	0	T0	0	0	0	0	0	0	0		resolution	0	1	0		0	0	0
-031	Number theory	Uchida's conjecture for open Galois homomorphisms	1	0	T0	0	0	0	0	0	0	0			0	1	0		0	0	0
+029	Number theory	Artin's primitive root conjecture: infinitude for every base	2	0	T0	0	0	0	0	0	0	0		resolution|uniform	0	1	0		0	0	1
+030	Number theory	Modularity over imaginary quadratic fields	1	0	T0	0	0	0	0	0	0	0		resolution	0	1	0		0	0	1
+031	Number theory	Uchida's conjecture for open Galois homomorphisms	1	0	T0	0	0	0	0	0	0	0			0	1	0		0	0	1
 032	Algebraic and complex geometry	The rational Hodge conjecture for CM abelian varieties	5	0	T0	0	0	0	0	0	0	0		resolution|classification|uniform	0	1	0		0	0	1
 033	Algebraic and complex geometry	Campana's orbifold Iitaka conjecture and logarithmic subadditivity	5	0	T2	1	0	1	675	0	0	0		bound	0	1	0		0	0	0
-034	Algebraic and complex geometry	Log abundance and effective Iitaka fibrations	14	0	T0	0	0	0	0	0	0	0		resolution|bound|classification|uniform	0	1	0		0	0	0
+034	Algebraic and complex geometry	Log abundance and effective Iitaka fibrations	14	0	T0	0	0	0	0	0	0	0		resolution|bound|classification|uniform	0	1	0		0	0	1
 035	Algebraic and complex geometry	Threefold log abundance in numerical dimension one in characteristic $p>3$	2	0	T0	0	0	0	0	0	0	0		bound|classification	0	0	0		0	0	0
 036	Algebraic and complex geometry	Numerical semiampleness and generalized minimal models	4	0	T0	0	0	0	0	0	0	0		classification	0	0	0		0	0	0
-037	Algebraic and complex geometry	The sharp ordinary-double-point volume gap	2	0	T0	0	0	0	0	0	0	0		resolution|bound|partial	0	1	0		0	0	0
-038	Algebraic and complex geometry	Fujita's freeness conjecture	1	0	T0	0	0	0	0	0	0	0		bound|uniform	0	1	0		0	0	0
+037	Algebraic and complex geometry	The sharp ordinary-double-point volume gap	2	0	T0	0	0	0	0	0	0	0		resolution|bound|partial	0	1	0		0	0	1
+038	Algebraic and complex geometry	Fujita's freeness conjecture	1	0	T0	0	0	0	0	0	0	0		bound|uniform	0	1	0		0	0	1
 039	Algebraic and complex geometry	Nagata's conjecture and maximal Seshadri constants	4	2	T3	2	2	1	1231	0	0	0		bound|classification|uniform	0	1	0		0	0	1
-040	Algebraic and complex geometry	Bloch's conjecture for complex surfaces	1	0	T0	0	0	0	0	0	0	0		uniform	0	1	0		0	0	0
-041	Algebraic and complex geometry	Hyperkähler SYZ and projective-space bases	2	0	T0	0	0	0	0	0	0	0		resolution	0	1	0		0	0	0
+040	Algebraic and complex geometry	Bloch's conjecture for complex surfaces	1	0	T0	0	0	0	0	0	0	0		uniform	0	1	0		0	0	1
+041	Algebraic and complex geometry	Hyperkähler SYZ and projective-space bases	2	0	T0	0	0	0	0	0	0	0		resolution	0	1	0		0	0	1
 042	Algebraic and complex geometry	Oka classification for K3 surfaces and other compact complex surfaces	1	0	T0	0	0	0	0	0	0	0			0	0	0		0	0	1
-043	Algebraic and complex geometry	$P=W$ for fixed-determinant moduli spaces	1	0	T0	0	0	0	0	0	0	0			0	1	0		0	0	0
-044	Algebraic and complex geometry	The equivariant cohomological Hikita conjecture for quivers	1	0	T0	0	0	0	0	0	0	0		uniform	0	1	0		0	0	0
+043	Algebraic and complex geometry	$P=W$ for fixed-determinant moduli spaces	1	0	T0	0	0	0	0	0	0	0			0	1	0		0	0	1
+044	Algebraic and complex geometry	The equivariant cohomological Hikita conjecture for quivers	1	0	T0	0	0	0	0	0	0	0		uniform	0	1	0		0	0	1
 046	Algebraic and complex geometry	Counterexamples to Shafarevich holomorphic convexity	2	0	T0	0	0	0	0	0	0	0		counterexample	0	0	1		0	0	0
 047	Algebraic and complex geometry	Complex counterexamples to cancellation and affine fibrations	1	1	T3	1	1	1	450	0	0	0		resolution|counterexample	0	1	1		0	0	1
-048	Algebraic and complex geometry	A characteristic-zero counterexample to Lipman--Zariski	1	0	T0	0	0	0	0	0	0	0		classification	0	1	1		0	0	0
+048	Algebraic and complex geometry	A characteristic-zero counterexample to Lipman--Zariski	1	0	T0	0	0	0	0	0	0	0		classification	0	1	1		0	0	1
 049	Algebraic and complex geometry	A stable-coordinate counterexample in four variables	2	2	T3	3	3	1	1141	0	0	0			0	1	1		0	0	1
 050	Algebraic and complex geometry	A counterexample to Griffiths' positivity conjecture	1	1	T3	1	1	1	560	0	0	0			0	1	1		0	0	1
-051	Algebraic and complex geometry	Kobayashi's canonical-ampleness conjecture	1	0	T0	0	0	0	0	0	0	0			0	1	0		0	0	0
+051	Algebraic and complex geometry	Kobayashi's canonical-ampleness conjecture	1	0	T0	0	0	0	0	0	0	0			0	1	0		0	0	1
 052	Algebraic and complex geometry	Tangent-bundle splittings and universal covers	2	1	T3	2	1	1	1131	0	0	0			0	1	0		0	0	1
-053	Algebraic and complex geometry	A counterexample to Pixton's original completeness conjecture	1	0	T0	0	0	0	0	0	0	0		counterexample	0	1	1		0	0	0
-054	Algebraic and complex geometry	Counterexamples to Kuznetsov's rationality conjecture	1	0	T0	0	0	0	0	0	0	0		counterexample|uniform	0	1	1		0	0	0
-055	Algebraic and complex geometry	Toda's Gepner conjecture and large-volume stability	2	0	T0	0	0	0	0	0	0	0		uniform	0	1	0		0	0	0
+053	Algebraic and complex geometry	A counterexample to Pixton's original completeness conjecture	1	0	T0	0	0	0	0	0	0	0		counterexample	0	1	1		0	0	1
+054	Algebraic and complex geometry	Counterexamples to Kuznetsov's rationality conjecture	1	0	T0	0	0	0	0	0	0	0		counterexample|uniform	0	1	1		0	0	1
+055	Algebraic and complex geometry	Toda's Gepner conjecture and large-volume stability	2	0	T0	0	0	0	0	0	0	0		uniform	0	1	0		0	0	1
 056	Algebraic and complex geometry	Termination of fourfold minimal model programs	5	0	T0	0	0	0	0	0	0	0		bound|classification|uniform	0	0	0		0	2	0
-057	Algebraic and complex geometry	Campana's abelianity conjecture and special varieties	3	0	T0	0	0	0	0	0	1	0		partial	0	1	0		0	0	0
+057	Algebraic and complex geometry	Campana's abelianity conjecture and special varieties	3	0	T0	0	0	0	0	0	1	0		partial	0	1	0		0	0	1
 058	Algebraic and complex geometry	The Kollár--Pardon universal-cover conjecture	2	1	T3	1	1	1	394	0	0	0		resolution|bound	0	1	0		0	0	0
-059	Algebraic and complex geometry	Counterexamples to Zariski's multiplicity conjecture	2	0	T0	0	0	0	0	1	0	0		counterexample	0	1	1		0	0	0
-060	Algebraic and complex geometry	The Global Spherical Shell conjecture	1	0	T0	0	0	0	0	0	0	0			0	1	0		0	0	0
-062	Algebraic and complex geometry	The LeBrun--Salamon conjecture and projective contact classification	1	0	T0	0	0	0	0	0	0	0		resolution	0	1	0		0	0	0
-063	Algebraic and complex geometry	The generalized Mukai conjecture	1	0	T0	0	0	0	0	0	0	0		resolution	0	1	0		0	0	0
-064	Algebraic and complex geometry	The $\mu$-constant problem for surface singularities	1	0	T0	0	0	0	0	0	0	0		resolution|uniform	0	1	0		0	0	0
-065	Algebraic and complex geometry	Virasoro constraints for complete intersections and projective bundles	2	0	T0	0	0	0	0	0	0	0		resolution|uniform	0	1	0		0	0	0
+059	Algebraic and complex geometry	Counterexamples to Zariski's multiplicity conjecture	2	0	T0	0	0	0	0	1	0	0		counterexample	0	1	1		0	0	1
+060	Algebraic and complex geometry	The Global Spherical Shell conjecture	1	0	T0	0	0	0	0	0	0	0			0	1	0		0	0	1
+062	Algebraic and complex geometry	The LeBrun--Salamon conjecture and projective contact classification	1	0	T0	0	0	0	0	0	0	0		resolution	0	1	0		0	0	1
+063	Algebraic and complex geometry	The generalized Mukai conjecture	1	0	T0	0	0	0	0	0	0	0		resolution	0	1	0		0	0	1
+064	Algebraic and complex geometry	The $\mu$-constant problem for surface singularities	1	0	T0	0	0	0	0	0	0	0		resolution|uniform	0	1	0		0	0	1
+065	Algebraic and complex geometry	Virasoro constraints for complete intersections and projective bundles	2	0	T0	0	0	0	0	0	0	0		resolution|uniform	0	1	0		0	0	1
 066	Algebraic and complex geometry	Bounded klt complements for Fano contractions	2	1	T3	1	1	1	767	0	0	0		bound|classification	0	1	0		0	0	0
-067	Algebraic and complex geometry	The Campana--Peternell conjecture in dimension six	1	0	T0	0	0	0	0	1	0	0		resolution	0	1	0		0	0	0
+067	Algebraic and complex geometry	The Campana--Peternell conjecture in dimension six	1	0	T0	0	0	0	0	1	0	0		resolution	0	1	0		0	0	1
 068	Algebraic and complex geometry	Anticanonical nonvanishing under smooth semipositivity	7	0	T0	0	0	0	0	0	0	0			0	0	0		0	0	0
 069	Algebraic and complex geometry	Quantum geometric Langlands at irrational level	1	0	T0	0	0	0	0	0	0	0		uniform	0	0	0		0	0	0
 071	Real and complex analysis	Koebe's circle-domain conjecture and circle-domain rigidity	2	0	T2	1	0	1	890	0	0	0		resolution|bound	0	1	0		0	0	0
@@ -293,7 +293,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 297	Operator algebras	A ZFC counterexample to Naimark's problem	1	0	T2	1	0	1	474	0	0	0		counterexample|classification	0	1	1		0	0	0
 298	Operator algebras	A counterexample to Voiculescu’s free-entropy equality conjecture	1	0	T2	1	0	1	516	0	0	0		bound	0	1	1		0	0	0
 299	Operator algebras	The Kirchberg--R\o rdam character criterion	1	1	T3	1	1	1	423	0	0	0		uniform	0	1	0		0	0	0
-300	Operator algebras	The Popa--Vaes quadratic strong-operator paving conjecture	2	0	T0	0	0	0	0	0	0	0		resolution|bound	0	1	0		0	0	0
+300	Operator algebras	The Popa--Vaes quadratic strong-operator paving conjecture	2	0	T0	0	0	0	0	0	0	0		resolution|bound	0	1	0		0	0	1
 301	Operator algebras	Classification by trace cones after Razak--Jacelon stabilization	1	1	T3	1	1	1	817	0	0	0		resolution|uniform	0	1	0		0	0	0
 302	Operator algebras	The Phillips--Toms formula for minimal integer actions	2	0	T0	0	0	0	0	0	0	0		bound|partial|uniform	0	0	0		0	0	0
 303	Operator algebras	From ordinary to strong pure infiniteness	1	0	T2	2	0	1	464	0	0	0		resolution	0	1	0		0	0	0

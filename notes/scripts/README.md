@@ -223,7 +223,7 @@ had to wait for the serial chain to finish.
 | `measure_index_sizes.py` | `notes/development/index-design.md` | plain |
 | `measure_import_layout.py` | `extract_links.py`'s import header rule — the Lean files whose first command is a doc-comment opener (`/-`), a bare `module` line, or a `public import` line, which is the evidence the widened `HEADER_SKIP` rule was written from | **not gated** — walks 122,458 files; run by hand when the header rule changes |
 | `measure_links_phases.py` | `extract_links.py`'s phases — the wall each read and scan takes, attributed by wrapping the script's own reads, because cProfile totals attribute cost to functions, not phases | **not gated** — a phase wall is a function of a run |
-| `measure_move_surface.py` | `math-faz` — the moved/stable path-mention split over the 29 pages the reorg moved, by context; the bead re-runs it after each pass | **not gated** |
+| `measure_move_surface.py` | `math-faz` — the moved/stable path-mention split over the 30 pages the reorg moved, by context; the bead re-runs it after each pass | **not gated** |
 | `measure_needles.py` | `notes/scripts/tests/` — the needle fleet: faults per file, needles recorded as a string versus derived as a callable, recorded needles split numeric versus structural, needle digits, synthetic rule inputs, the numeric literals in each clean test's asserted tuples, and the recorded needles whose digits their own mutation never writes | plain |
 | `measure_proof_density.py` | `notes/reports/proof-density.md` | the self-tests are in `notes/scripts/tests/test_proof_density.py`, run by the `run_tests.py` row; the plain run is not gated, because `render_reports.py` imports the module and calls `build_families()` rather than running the script |
 | `measure_render_phases.py` | `render_reports.py`'s phase wall with concurrent children — cumulative, in `main()` call order | **not gated** — a phase wall is a function of a run |
@@ -327,7 +327,7 @@ self-tests rows are report-only rows, not checker invocations:
 | `verify_sources.py` | `notes/reports/sources.md` | plain; the self-tests are in `notes/scripts/tests/test_sources.py`, run by the `run_tests.py` row | 13 | 1.2 | 1.2 |
 | `verify_subfinding_pairs.py` | `notes/reports/subfinding-pairs.md` | plain; the self-tests are in `notes/scripts/tests/test_subfinding_pairs.py`, run by the `run_tests.py` row | 13 | 1.2 | 1.2 |
 | `verify_subfindings.py` | `notes/tables/subfindings.tsv` | plain; the self-tests are in `notes/scripts/tests/test_subfindings.py`, run by the `run_tests.py` row | 6 | 0.1 | 0.1 |
-| `verify_summaries.py` | `notes/summaries/` | plain; the self-tests are in `notes/scripts/tests/test_summaries.py`, run by the `run_tests.py` row | 68 | 2.2 | 2.2 |
+| `verify_summaries.py` | `notes/summaries/` | plain; the self-tests are in `notes/scripts/tests/test_summaries.py`, run by the `run_tests.py` row | 181 | 2.2 | 2.2 |
 | `verify_t0_chains.py` | `notes/reports/t0-chains.md` | plain; the self-tests are in `notes/scripts/tests/test_t0_chains.py`, run by the `run_tests.py` row | 13 | 1.6 | 1.6 |
 | `verify_tsv_quoting.py` | `notes/tables/*.tsv` — the RFC 4180 rule: a field that does not start with a quote carries no quote at all, and a field that opens a quoted field must close inside the field with every interior quote doubled | plain; the self-tests are in `notes/scripts/tests/test_tsv_quoting.py`, run by the `run_tests.py` row | 28 | 0 | 0 |
 | `verify_upstream_history.py` | `notes/development/upstream_history/` — the three pages | plain; the self-tests are in `notes/scripts/tests/test_upstream_history.py`, run by the `run_tests.py` row | — | 0.8 | 0.8 |
@@ -343,7 +343,7 @@ server loaded; a floor from one measurement, not a benchmark.
 extracted its self-tests put `run()` under `functools.cache` (`:134`) — every script in `REPORTS` is
 report-only, so a second call in the same process cannot see a different stdout — and that is why the
 `run_tests.py` row measures **15.6 s** where the `--mutant` row took **34.7 s** before that row was
-replaced: the 9 `check()` calls the row makes (the clean page, each of the six faults, and the padded-table test's two) pay the
+replaced:  (the clean page, each of the six faults, and the padded-table test's two) pay the
 five subprocesses once.
 `verify_faithfulness.py` is the same case with a corpus walk instead of subprocesses: `population()`
 is under `functools.cache` (`:187`) — the checker writes nothing and the tests mutate page text in
@@ -525,16 +525,16 @@ excludes them with the script tree, so they are not scripts.
 | Population | Files | Owner |
 |---|---|---|
 | `notes/index/` | **1,033** | generated — `build_index.py`; the 16 tables it renders land in `notes/tables/` |
-| `notes/summaries/` | **61** | hand-written — the reading record: 60 family pages and the link-only index page `README.md` |
-| `notes/data/` | **60** | the summary renderer's input: one data file per family page — the sources, quote spans and sections `build_summaries.py` renders `notes/summaries/` from |
+| `notes/summaries/` | **86** | hand-written — the reading record: 85 family pages and the link-only index page `README.md` |
+| `notes/data/` | **85** | the summary renderer's input: one data file per family page — the sources, quote spans and sections `build_summaries.py` renders `notes/summaries/` from |
 | `notes/templates/` | **27** | **6** hand-written index skeletons + **21** report templates built by `build_report_templates.py` |
-| `notes/development/*.md` | **5** | hand-written in part: `summaries-workflow.md` is the resume protocol; `fleet-design.md`, `index-design.md` and `index-links.md` are report-fed pages `render_reports.py` renders and `templates.md` is generated by `build_report_templates.py`. `math-faz.3` moved them here from the top level. |
+| `notes/development/*.md` | **6** | hand-written in part: `summaries-workflow.md` is the resume protocol; `fleet-design.md`, `index-design.md` and `index-links.md` are report-fed pages `render_reports.py` renders and `templates.md` is generated by `build_report_templates.py`. `math-faz.3` moved them here from the top level. |
 | `notes/development/upstream_history/` | **3** | hand-written — the record of each upstream merge, checked by `verify_upstream_history.py` |
 | `notes/development/probe/` | **78** | the audit-hook probe records: the 2026-10-10 pair that proves the fleet's write modes, the 2026-10-11 writers/checkers pair that measures the purity population, the 2026-10-11 `render_reports.py` after-record that proves the render writes nothing, the 2026-10-12 `render_reports.py` record that captures the fleet census, the 2026-10-12 `render_reports.py` record that proves the writer's L1 names `notes/tables/` as a tree after `math-faz.6` moved the tables out, the 2026-10-12 `extract_named_results.py` record that proves its L1 names the ledger at its `tables/` path, the 2026-10-12 `measure_templates.py` record that proves the census L1 names the index tree at its pre-move 1,049-file size, the 2026-10-12 `measure_templates.py` record that proves the census L1 names the 1,033-page index tree after the move, and the 2026-10-13 `build_index_db.py` record that proves the FTS builder's L1 is empty, the 2026-10-12 `seed_quotes.py` records that name `notes/reports/counterexample-tag.md`, `notes/reports/subfinding-pairs.md`, `notes/reports/t0-triage.md`, `notes/tables/catalog.tsv` and the family 001, 002, 004, 006, 007, 010, 011, 014, 016, 017, 018, 019, 032, 087, 102, 159, 197, 221, 271, 287, 362 pages, the 2026-10-13 `seed_quotes.py` records that name the family 101, 109, 136, 147, 226, 258, 259, 332 pages, the 2026-10-14 `seed_quotes.py` records that name the family 334, 342, 344, 345, 346, 347, 348, 349, 351, 352 pages, and the 2026-10-15 `seed_quotes.py` records that name the family 039, 042, 047, 049, 050, 052, 072, 088, 089, 098, 195, 196, 198, 199, 243, 244, 254, 274, 324, 325, 331 pages, the 2026-10-15 `render_reports.py` and `measure_templates.py` records that name the accent-folded index tree, the 2026-10-15 `render_reports.py` and `measure_templates.py` records that name the census template the scripts page added, and the 2026-10-15 `render_reports.py` and `measure_templates.py` records that name the findings template |
 | `notes/tables/*.tsv` | **27** | **25** generated, **2** hand-authored — 9 written by the ledger scripts and 16 rendered by `build_index.py` since `math-faz.6` |
 | `notes/reports/*.md` | **23** | **15** generated — the report-fed pages `render_reports.py` renders; **8** hand-written. **11** with a checker, **12** without. `math-faz.4` moved them here from the top level. |
 | `notes/*.md` | **1** | `notes/README.md`, the entry point — hand-written, no checker |
-| `notes/` total, scripts excluded | **1,318** | — |
+| `notes/` total, scripts excluded | **1,369** | — |
 
 The generated TSVs are the **25** the writer set writes: the 9 named writer targets and the 16 tables
 `build_index.py` stages into `notes/tables/`. The two hand-authored tables are:
@@ -577,7 +577,7 @@ and a `notes/**/topics.tsv` glob read both. The rendered table is now
 `notes/tables/` on 2026-10-11, so the two names cannot collide again. `measure_topics.py` and
 `AGENTS.md` both name the vocabulary; `build_index.py` reads it and writes the rendered table.
 
-The index tree and the summaries tree share **61** page slugs — the families that carry both a rendered
+The index tree and the summaries tree share **86** page slugs — the families that carry both a rendered
 page and a reading summary, which is the pairing the index reports, plus `README.md`, which each tree
 carries as its own entry point.
 
