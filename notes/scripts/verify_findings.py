@@ -36,6 +36,7 @@ from functools import cache
 from pathlib import Path
 
 import extract_subfinding_pairs as ep
+import extract_t0_chains as t0c
 import verify_subfinding_pairs as SP
 from catlib import yaml as Y
 from catlib.ledger import (
@@ -75,6 +76,19 @@ PRE_GAP, POST_GAP = 2, 12  # adjacency windows around a marker
 
 
 @cache
+def s12_figures():
+    """The coverage-signal figure the findings page quotes from the t0-chains record, measured from
+    the t0-chains population. The checker does not carry it: a carried figure goes stale the day a
+    summary page lands for one of the 27 second-pass families, which is exactly what happened when
+    the batch of 70 landed pages for 5 of them.
+    """
+    v = t0c.population()
+    return [f"**{len(v['zero_signal'])}** of the {len(v['pop'])}", "`verification = 2`",
+            f"**{len(v['pop'])}** families carrying "
+            f"**{sum(int(r['paps']) for r in v['rows'].values() if r['fam'] in v['pop'])}** manuscripts"]
+
+
+@cache
 def s25_figures():
     """The figures the findings page quotes from the pairing page, measured from the pairing rule and
     the page's own blocks. The checker does not carry them: a carried figure goes stale the day the
@@ -105,7 +119,7 @@ RECORD = {
             "86 of these 130", "21 of these 130", "547 of 719", "44 families",
             "134 manuscripts", "93 families, 121 manuscripts", "21 families",
             "34 manuscripts", "the whole body of evidence"],
-    "S12": ["**10** of the 27", "`verification = 2`", "**27** families carrying **54** manuscripts"],
+    "S12": s12_figures(),
     "S13": ["393", "391", "156", "104", "417", "500", "14", "426", "416", "not** typed"],
     "S14": ["**30 dirs over 22 families**", "**12 of 30**", "**18 ship no README**",
             "finite-arithmetic certificate", "counts 4 `INPUTS.md`",
