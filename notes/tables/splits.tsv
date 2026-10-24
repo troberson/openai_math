@@ -8,7 +8,7 @@ notes/README.md	cw_fire	fires on
 notes/README.md	scan_links	**66,216** links, **0** broken, **17,700** of
 notes/README.md	trace_fams	(007, 017, 087, 102,
 notes/development/fleet-design.md	gate_rows	carries
-notes/development/fleet-design.md	gate_writers_class	Non-determinism sources in the **11** writers,
+notes/development/fleet-design.md	gate_writers_class	Non-determinism sources in the **14** writers,
 notes/development/index-design.md	population totals	Totals: **2,560** index nodes (excluding the **122,458** `.lean` files) and **3,415** edges, or
 notes/development/index-design.md	builds-on declaration count	(**30** `builds-on` declarations at
 notes/development/index-design.md	added TSV byte figures	`notes/tables/abstracts.tsv` (**89476** B over **372** rows), `notes/tables/citation.tsv` (**64092** B over **391** rows),
@@ -19,7 +19,7 @@ notes/development/index-design.md	added TSV byte figures	`notes/tables/family-na
 notes/development/index-design.md	added TSV byte figures	`notes/tables/family-trace.tsv` (**855** B over **10** rows), `notes/tables/gate-rows.tsv` (**3552** B over **82** rows),
 notes/development/index-design.md	added TSV byte figures	`notes/tables/lean-dirs.tsv` (**41937** B over **559** rows), `notes/tables/manuscripts.tsv` (**277825** B over **719** rows),
 notes/development/index-design.md	added TSV byte figures	`notes/tables/names.tsv` (**304513** B over **5842** rows), `notes/tables/quotes.tsv` (**603411** B over **3210** rows),
-notes/development/index-design.md	added TSV byte figures	`notes/tables/scope-notes.tsv` (**26694** B over **242** rows), `notes/tables/sources.tsv` (**221463** B over **719** rows), `notes/tables/splits.tsv` (**18253** B over **174** rows), `notes/tables/topics-rendered.tsv` (**19127** B over **92** rows), `notes/tables/topics.tsv` (**22650** B over **92** rows) and
+notes/development/index-design.md	added TSV byte figures	`notes/tables/scope-notes.tsv` (**26694** B over **242** rows), `notes/tables/sources.tsv` (**221463** B over **719** rows), `notes/tables/splits.tsv` (**18255** B over **174** rows), `notes/tables/topics-rendered.tsv` (**19127** B over **92** rows), `notes/tables/topics.tsv` (**22650** B over **92** rows) and
 notes/development/index-design.md	all-TSV byte total	every
 notes/development/index-design.md	manuscripts-per-family distribution	a family carries a maximum of **14**
 notes/development/index-design.md	subfindings key counts	keyed by
