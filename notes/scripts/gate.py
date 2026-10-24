@@ -65,9 +65,16 @@ ROWS = [
     ("extract_scope_notes.py", (), ()),
     ("extract_citations.py", (), ()),
     # The render reads the keyed check() record, so the probe has to land it before the render.
-    # The render writes notes/scripts/README.md, which is inside the tree the probe's key hashes,
-    # so the probe runs a second time after the render, before the census checker.
-    ("measure_check_calls.py", (), ()),
+    # measure_check_calls is not in L1_HEAD, so its key hashes the working-tree notes/ tree; it must
+    # run after the writers (which write notes/tables/*.tsv and notes/index/) so it lands the record
+    # under the same post-writer key the render's cost_population resolves. The render writes
+    # notes/scripts/README.md, which is inside that tree, so the probe runs a second time after the
+    # render, before the census checker — a distinct tag, so a consumer needing the post-render key
+    # is not satisfied by this pre-render row.
+    ("measure_check_calls.py",
+     ("catalog", "sources", "links", "subfindings", "abstracts", "deps", "index",
+      "summaries", "quotes"),
+     ("check_calls_pre",)),
     # The summary renderer is a root: it reads only the hand-maintained data files and the skeleton,
     # so it reads no artifact any other row writes. seed_quotes reads the rendered pages (to re-seed
     # the quote provenance record), so it needs `summaries`; render_reports reads both the pages and
@@ -75,7 +82,8 @@ ROWS = [
     # (seed -> pages -> quotes -> pages) broken by moving the quote span into the data file.
     ("build_summaries.py", (), ("summaries",)),
     ("render_reports.py",
-     ("catalog", "sources", "links", "subfindings", "abstracts", "deps", "index"), ("pages",)),
+     ("catalog", "sources", "links", "subfindings", "abstracts", "deps", "index",
+      "check_calls_pre"), ("pages",)),
     ("seed_quotes.py", ("summaries",), ("quotes",)),
     ("triage_t0.py", ("catalog",), ()),
     ("measure_topics.py --check", ("pages",), ()),
