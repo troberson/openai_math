@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [curves](../topics/curves.md) · [modularity](../topics/modularity.md) · [elliptic-curves](../topics/elliptic-curves.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [030-modularity-over-imaginary-quadratic-fields.md](../../../notes/summaries/number-theory/030-modularity-over-imaginary-quadratic-fields.md) |
 
 ## Manuscripts
 

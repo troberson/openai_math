@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [number-fields](../topics/number-fields.md) · [galois-theory](../topics/galois-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [031-uchidas-conjecture-for-open-galois-homomorphisms.md](../../../notes/summaries/number-theory/031-uchidas-conjecture-for-open-galois-homomorphisms.md) |
 
 ## Manuscripts
 

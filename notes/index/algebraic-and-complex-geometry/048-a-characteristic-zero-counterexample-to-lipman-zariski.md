@@ -13,7 +13,7 @@
 | Claim shapes | classification |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [complex-geometry](../topics/complex-geometry.md) · [surfaces](../topics/surfaces.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [048-a-characteristic-zero-counterexample-to-lipman-zariski.md](../../../notes/summaries/algebraic-and-complex-geometry/048-a-characteristic-zero-counterexample-to-lipman-zariski.md) |
 
 ## Manuscripts
 

@@ -13,7 +13,7 @@
 | Claim shapes | partial |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [algebraic-geometry](../topics/algebraic-geometry.md) · [manifolds](../topics/manifolds.md) · [complex-geometry](../topics/complex-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [057-campanas-abelianity-conjecture-and-special-varieties.md](../../../notes/summaries/algebraic-and-complex-geometry/057-campanas-abelianity-conjecture-and-special-varieties.md) |
 
 ## Manuscripts
 

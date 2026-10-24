@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound |
 | Topics | [operator-algebras](../topics/operator-algebras.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [300-popa-vaes-quadratic-strong-operator-paving-conjecture.md](../../../notes/summaries/operator-algebras/300-popa-vaes-quadratic-strong-operator-paving-conjecture.md) |
 
 ## Manuscripts
 

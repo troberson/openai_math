@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, partial |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [037-sharp-ordinary-double-point-volume-gap.md](../../../notes/summaries/algebraic-and-complex-geometry/037-sharp-ordinary-double-point-volume-gap.md) |
 
 ## Manuscripts
 

@@ -13,7 +13,7 @@
 | Claim shapes | uniform |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [complex-geometry](../topics/complex-geometry.md) · [surfaces](../topics/surfaces.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [040-blochs-conjecture-for-complex-surfaces.md](../../../notes/summaries/algebraic-and-complex-geometry/040-blochs-conjecture-for-complex-surfaces.md) |
 
 ## Manuscripts
 

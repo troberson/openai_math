@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [algebraic-geometry](../topics/algebraic-geometry.md) · [mathematical-physics](../topics/mathematical-physics.md) · [curves](../topics/curves.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [065-virasoro-constraints-for-complete-intersections-and-projective-bundles.md](../../../notes/summaries/algebraic-and-complex-geometry/065-virasoro-constraints-for-complete-intersections-and-projective-bundles.md) |
 
 ## Manuscripts
 

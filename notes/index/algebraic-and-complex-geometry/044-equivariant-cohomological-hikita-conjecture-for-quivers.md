@@ -13,7 +13,7 @@
 | Claim shapes | uniform |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [algebraic-geometry](../topics/algebraic-geometry.md) · [mathematical-physics](../topics/mathematical-physics.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [044-equivariant-cohomological-hikita-conjecture-for-quivers.md](../../../notes/summaries/algebraic-and-complex-geometry/044-equivariant-cohomological-hikita-conjecture-for-quivers.md) |
 
 ## Manuscripts
 

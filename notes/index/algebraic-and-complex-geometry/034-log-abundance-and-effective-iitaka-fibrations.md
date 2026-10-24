@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, classification, uniform |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [complex-geometry](../topics/complex-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [034-log-abundance-and-effective-iitaka-fibrations.md](../../../notes/summaries/algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md) |
 
 ## Manuscripts
 

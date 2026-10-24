@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [067-campana-peternell-conjecture-in-dimension-six.md](../../../notes/summaries/algebraic-and-complex-geometry/067-campana-peternell-conjecture-in-dimension-six.md) |
 
 ## Manuscripts
 

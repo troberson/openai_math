@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [complex-geometry](../topics/complex-geometry.md) · [surfaces](../topics/surfaces.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [060-global-spherical-shell-conjecture.md](../../../notes/summaries/algebraic-and-complex-geometry/060-global-spherical-shell-conjecture.md) |
 
 ## Manuscripts
 

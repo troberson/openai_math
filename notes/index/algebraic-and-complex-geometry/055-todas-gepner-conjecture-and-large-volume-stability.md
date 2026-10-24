@@ -13,7 +13,7 @@
 | Claim shapes | uniform |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [055-todas-gepner-conjecture-and-large-volume-stability.md](../../../notes/summaries/algebraic-and-complex-geometry/055-todas-gepner-conjecture-and-large-volume-stability.md) |
 
 ## Manuscripts
 

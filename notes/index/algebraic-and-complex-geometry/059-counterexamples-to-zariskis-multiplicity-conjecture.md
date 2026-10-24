@@ -13,7 +13,7 @@
 | Claim shapes | counterexample |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [commutative-algebra](../topics/commutative-algebra.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [059-counterexamples-to-zariskis-multiplicity-conjecture.md](../../../notes/summaries/algebraic-and-complex-geometry/059-counterexamples-to-zariskis-multiplicity-conjecture.md) |
 
 ## Manuscripts
 

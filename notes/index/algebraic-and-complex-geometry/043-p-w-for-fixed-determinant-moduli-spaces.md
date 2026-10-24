@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [algebraic-geometry](../topics/algebraic-geometry.md) · [curves](../topics/curves.md) · [arithmetic-geometry](../topics/arithmetic-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [043-p-w-for-fixed-determinant-moduli-spaces.md](../../../notes/summaries/algebraic-and-complex-geometry/043-p-w-for-fixed-determinant-moduli-spaces.md) |
 
 ## Manuscripts
 

@@ -13,7 +13,7 @@
 | Claim shapes | counterexample, uniform |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [abelian-varieties](../topics/abelian-varieties.md) · [category-theory](../topics/category-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [054-counterexamples-to-kuznetsovs-rationality-conjecture.md](../../../notes/summaries/algebraic-and-complex-geometry/054-counterexamples-to-kuznetsovs-rationality-conjecture.md) |
 
 ## Manuscripts
 

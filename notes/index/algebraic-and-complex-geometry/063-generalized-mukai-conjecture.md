@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [manifolds](../topics/manifolds.md) · [curves](../topics/curves.md) · [abelian-varieties](../topics/abelian-varieties.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [063-generalized-mukai-conjecture.md](../../../notes/summaries/algebraic-and-complex-geometry/063-generalized-mukai-conjecture.md) |
 
 ## Manuscripts
 

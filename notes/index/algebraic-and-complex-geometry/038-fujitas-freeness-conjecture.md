@@ -13,7 +13,7 @@
 | Claim shapes | bound, uniform |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [038-fujitas-freeness-conjecture.md](../../../notes/summaries/algebraic-and-complex-geometry/038-fujitas-freeness-conjecture.md) |
 
 ## Manuscripts
 

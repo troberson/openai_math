@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [surfaces](../topics/surfaces.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [064-constant-problem-for-surface-singularities.md](../../../notes/summaries/algebraic-and-complex-geometry/064-constant-problem-for-surface-singularities.md) |
 
 ## Manuscripts
 

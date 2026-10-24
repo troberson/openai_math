@@ -13,7 +13,7 @@
 | Claim shapes | uniform |
 | Topics | [diophantine-equations](../topics/diophantine-equations.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [022-weak-inhomogeneous-duffin-schaeffer-conjecture.md](../../../notes/summaries/number-theory/022-weak-inhomogeneous-duffin-schaeffer-conjecture.md) |
 
 ## Manuscripts
 

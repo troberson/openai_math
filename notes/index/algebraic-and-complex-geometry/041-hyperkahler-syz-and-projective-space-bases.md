@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [manifolds](../topics/manifolds.md) · [complex-geometry](../topics/complex-geometry.md) · [convex-geometry](../topics/convex-geometry.md) · [symplectic-geometry](../topics/symplectic-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [041-hyperkahler-syz-and-projective-space-bases.md](../../../notes/summaries/algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md) |
 
 ## Manuscripts
 

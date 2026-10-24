@@ -13,7 +13,7 @@
 | Claim shapes | resolution |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [manifolds](../topics/manifolds.md) · [complex-geometry](../topics/complex-geometry.md) · [symplectic-geometry](../topics/symplectic-geometry.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [062-lebrun-salamon-conjecture-and-projective-contact-classification.md](../../../notes/summaries/algebraic-and-complex-geometry/062-lebrun-salamon-conjecture-and-projective-contact-classification.md) |
 
 ## Manuscripts
 

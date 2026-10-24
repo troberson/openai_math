@@ -13,7 +13,7 @@
 | Claim shapes | resolution, uniform |
 | Topics | [primes](../topics/primes.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [029-artins-primitive-root-conjecture-infinitude-for-every-base.md](../../../notes/summaries/number-theory/029-artins-primitive-root-conjecture-infinitude-for-every-base.md) |
 
 ## Manuscripts
 

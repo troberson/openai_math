@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [algebraic-geometry](../topics/algebraic-geometry.md) · [manifolds](../topics/manifolds.md) · [complex-geometry](../topics/complex-geometry.md) · [curves](../topics/curves.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [051-kobayashis-canonical-ampleness-conjecture.md](../../../notes/summaries/algebraic-and-complex-geometry/051-kobayashis-canonical-ampleness-conjecture.md) |
 
 ## Manuscripts
 

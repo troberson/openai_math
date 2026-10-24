@@ -13,7 +13,7 @@
 | Claim shapes | counterexample |
 | Topics | [algebraic-topology](../topics/algebraic-topology.md) · [algebraic-geometry](../topics/algebraic-geometry.md) · [curves](../topics/curves.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [053-a-counterexample-to-pixtons-original-completeness-conjecture.md](../../../notes/summaries/algebraic-and-complex-geometry/053-a-counterexample-to-pixtons-original-completeness-conjecture.md) |
 
 ## Manuscripts
 
