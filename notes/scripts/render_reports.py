@@ -2816,16 +2816,20 @@ FINDINGS_FOUR = ("147", "258", "268", "346")
 
 def findings_population() -> dict[str, Any]:
     """The counts notes/reports/findings.md quotes that move when a summary page is added: the families
-    with a page and the manuscripts behind them, the index page/link/broken census, and how many of the
-    four families the page names by hand have a page. The index scan is the cached index-links
-    population, so the walk is paid once per render, not once per page."""
+    with a page and the manuscripts behind them, the index page/link/broken census, how many of the
+    four families the page names by hand have a page, and the t0-chains coverage-signal split. The
+    index scan is the cached index-links population and the t0-chains population is cached, so both
+    walks are paid once per render, not once per page."""
     fams = {q.name.split("-")[0] for q in SUM_DIR.rglob("*.md") if q.name != "README.md"}
     rows = ledger.read_ledger()
     s = population_of("index-links")["scan"]
+    tc_pop = tc.population()
     return {"sum_fams": len(fams), "families": len(rows),
             "sum_paps": sum(int(r["paps"]) for r in rows if r["fam"] in fams),
             "sum_four": sum(1 for f in FINDINGS_FOUR if f in fams),
-            "idx_pages": len(s["pages"]), "idx_links": len(s["links"]), "idx_broken": len(s["broken"])}
+            "idx_pages": len(s["pages"]), "idx_links": len(s["links"]), "idx_broken": len(s["broken"]),
+            "tc_pop_size": len(tc_pop["pop"]),
+            "tc_zero": len(tc_pop["zero_signal"])}
 
 
 def findings_phrases(p: dict[str, Any]) -> dict[str, str]:
@@ -2837,6 +2841,8 @@ def findings_phrases(p: dict[str, Any]) -> dict[str, str]:
                        f"**{p['idx_broken']}** broken [S27].",
         "summary_four": f"{['zero', 'one', 'two', 'three', 'four'][p['sum_four']]} of "
                         "these now carry summary pages",
+        "tc_coverage": (f'"no coverage signal" holds for **{p["tc_zero"]}** of the '
+                        f'{p["tc_pop_size"]} and 268 carries `verification = 2`'),
     }
 
 
