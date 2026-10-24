@@ -123,17 +123,25 @@ def test_provenance_missing_path(mod, family_pages):
         spec = first_real_spec(dt)
         if not spec:
             continue
-        # Retarget the spec's source to a path that does not exist.
+        # Retarget the source the spec's SID points to, to a path that does not exist.
+        spec_parts = spec.split("\t")
+        sid = spec_parts[2].strip()
         m = re.search(r"<!-- sources\n(.*?)-->", dt, re.DOTALL)
         assert m, "no sources block in the data file"
         src_lines = m.group(1).strip().split("\n")
         assert src_lines, "the sources block is empty"
-        first_src = src_lines[0]
-        parts = first_src.split("\t")
+        target = None
+        for line in src_lines:
+            p = line.split("\t")
+            if p[0].strip() == sid:
+                target = line
+                break
+        assert target is not None, f"SID {sid} not found in sources block"
+        parts = target.split("\t")
         bad_path = parts[1] + "-nonexistent"
         parts[1] = bad_path
         bad_src = "\t".join(parts)
-        bad_dt = dt.replace(first_src, bad_src)
+        bad_dt = dt.replace(target, bad_src)
         assert bad_dt != dt, "the injection did not change the data file"
         _out, (_specs, problems) = run_pass(mod.provenance_pass, page, bad_dt)
         assert problems > 0, \
