@@ -98,9 +98,9 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 100	Convex and metric geometry	A counterexample to Bang's cylinder-covering bound	4	0	T2	3	0	1	2568	0	0	0		counterexample|bound	0	1	1		0	0	0
 101	Convex and metric geometry	The sharp simplex conjecture for isotropic constants	1	0	T0	0	0	0	0	1	0	0		resolution|bound	0	1	0		0	0	1
 102	Theoretical computer science	The Unique Games Conjecture and optimal approximation thresholds	5	3	T3	5	3	1	2465	0	0	0	basic-semidefinite-threshold-np-hardness		0	1	0		0	0	1
-103	Theoretical computer science	Derandomization of logarithmic space: $\mathsf L=\mathsf{RL}=\mathsf{BPL}$	1	1	T3	1	1	1	682	0	0	0		resolution|bound	0	0	0		0	0	0
-104	Theoretical computer science	Quasipolynomial algorithms for mean-payoff, stochastic and parity games	4	1	T3	2	1	1	602	0	0	0			0	0	0		0	0	0
-105	Theoretical computer science	The 2-to-1 Games Conjecture with perfect completeness	1	1	T3	1	1	1	481	0	0	0		partial|uniform	0	1	0		0	0	0
+103	Theoretical computer science	Derandomization of logarithmic space: $\mathsf L=\mathsf{RL}=\mathsf{BPL}$	1	1	T3	1	1	1	682	0	0	0		resolution|bound	0	0	0		0	0	1
+104	Theoretical computer science	Quasipolynomial algorithms for mean-payoff, stochastic and parity games	4	1	T3	2	1	1	602	0	0	0			0	0	0		0	0	1
+105	Theoretical computer science	The 2-to-1 Games Conjecture with perfect completeness	1	1	T3	1	1	1	481	0	0	0		partial|uniform	0	1	0		0	0	1
 106	Theoretical computer science	Hardness of coloring three-colorable graphs	1	1	T3	1	1	1	491	0	0	0		uniform	0	0	0		0	0	0
 107	Theoretical computer science	Matrix multiplication with exponent at most $9/4$	3	3	T3	2	2	1	1004	2	0	0		bound|classification	0	0	0		0	0	0
 108	Theoretical computer science	A cubic permanent--determinant lower bound	1	0	T2	2	0	1	605	0	0	0		bound	0	0	0		0	0	0
@@ -292,7 +292,7 @@ fam	discipline	title	paps	paps_form	tier	chal	mainres	scope_note	scope_chars	ver
 296	Operator algebras	The generator problem for finite factors	1	1	T3	2	1	1	685	0	0	0		resolution|uniform	0	1	0		0	0	0
 297	Operator algebras	A ZFC counterexample to Naimark's problem	1	0	T2	1	0	1	474	0	0	0		counterexample|classification	0	1	1		0	0	0
 298	Operator algebras	A counterexample to Voiculescu’s free-entropy equality conjecture	1	0	T2	1	0	1	516	0	0	0		bound	0	1	1		0	0	0
-299	Operator algebras	The Kirchberg--R\o rdam character criterion	1	1	T3	1	1	1	423	0	0	0		uniform	0	1	0		0	0	0
+299	Operator algebras	The Kirchberg--Rø rdam character criterion	1	1	T3	1	1	1	423	0	0	0		uniform	0	1	0		0	0	0
 300	Operator algebras	The Popa--Vaes quadratic strong-operator paving conjecture	2	0	T0	0	0	0	0	0	0	0		resolution|bound	0	1	0		0	0	1
 301	Operator algebras	Classification by trace cones after Razak--Jacelon stabilization	1	1	T3	1	1	1	817	0	0	0		resolution|uniform	0	1	0		0	0	0
 302	Operator algebras	The Phillips--Toms formula for minimal integer actions	2	0	T0	0	0	0	0	0	0	0		bound|partial|uniform	0	0	0		0	0	0
