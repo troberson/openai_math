@@ -6,14 +6,14 @@
 
 ## Original CONTENTS.md summary
 
-[S1:573] carries the family entry:
+ carries the family entry:
 
-> Assuming ZF is consistent, constructs a model in which every surjective image of a set injects into that set, yet the axiom of choice fails. Choice for ordinal-indexed families still holds. From any countable transitive model of ZFC, a separate construction gives a transitive symmetric extension with these properties and no new countable sequences of ground-model elements.
+> Assuming ZF is consistent, constructs a model in which every surjective image of a set injects into that set, yet the axiom of choice fails. Choice for ordinal-indexed families still holds. From any countable transitive model of ZFC, a separate construction gives a transitive symmetric extension with these properties and no new countable sequences of ground-model elements. [S1:573]
 
 The entry links the manuscript as "The Partition Principle does not imply
 Choice" [S1:573].
 
-The manuscript's title is "The Partition Principle does not imply Choice" [S2:1] and its date is [S2:5].
+The manuscript's title is "The Partition Principle does not imply Choice [S2:1]" and its date is [S2:5].
 
 ## Undergraduate summary
 
@@ -21,7 +21,7 @@ The Partition Principle says that a surjection from one set to another gives
 an injection back. It is weaker than the Axiom of Choice, which picks one
 element from each member of a family. The principle is about comparing
 cardinals, not about picking elements. [S4:11] gives the equivalent form:
-"Equivalently, every partition of a set admits an injection into that set."
+"Equivalently, every partition of a set admits an injection into that set. [S4:11]"
 
 The question is whether that cardinal comparison is enough. [S4:15–16] states
 it: "The problem is whether this cardinal comparison alone can recover choice

@@ -6,9 +6,9 @@
 
 ## Original CONTENTS.md summary
 
-[S1:174] carries the family entry:
+ carries the family entry:
 
-> Constructs a polynomial in four complex variables that is not a coordinate but becomes one after adjoining a single variable, disproving the Stable Coordinate conjecture in four variables.
+> Constructs a polynomial in four complex variables that is not a coordinate but becomes one after adjoining a single variable, disproving the Stable Coordinate conjecture in four variables. [S1:174]
 
 [S1:174] names the family's two manuscripts: "A stable coordinate that is not
 a coordinate in four variables" and "An explicit noncoordinate polynomial with
@@ -47,7 +47,7 @@ counterexamples in every ambient dimension at least four."
 
 Its engine is an elementary lifting lemma. [S11:164–175] states it: for a ring
 $B$ with $x^2+y^3=hs$ and $(h,y)=B$, the algebra $B[U,V,W]$ modulo three
-relations "is isomorphic to $B[T]$, where $T$ is an indeterminate." The
+relations "is isomorphic to $B[T]$, where $T$ is an indeterminate. [S11:174]" The
 unit-ideal hypothesis is what lets the construction solve two linear equations
 without dividing by either coefficient.
 
@@ -71,7 +71,7 @@ $R$. The exponential of a locally nilpotent derivation then gives the
 automorphism of $A[w]$ that sends the distinguished element to a coordinate.
 
 The negative half is a derivation obstruction. [S4:44] names the last two
-sections: "The last two sections exclude that invariant." An integer-indexed
+sections: "The last two sections exclude that invariant. [S4:44]" An integer-indexed
 filtration on $A$ has associated graded ring $G=B[\tau,I/\tau]$ over
 $B=k[x,y,z,u]/(xy-z(z+1))$; if the polynomial were a coordinate, a nonzero
 locally nilpotent derivation on $B$ with a nonzero element of $I$ in its
@@ -135,7 +135,7 @@ independent commuting locally nilpotent derivations with the stated kernel.
 ## History of the conjecture
 
 The stable-coordinate formulation is Shpilrain and Yu's. [S4:6] records the
-low-dimensional baseline: "The case of one original variable is elementary."
+low-dimensional baseline: "The case of one original variable is elementary. [S4:6]"
 The manuscript cites the affirmative answer in two and three variables at the
 same line, which is why four variables is the first open dimension.
 

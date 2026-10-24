@@ -6,27 +6,27 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb [S1:1481]: "**057. Fundamental groups of special complex varieties and root orbifolds.** Proves Campana's abelianity conjecture: special compact Kähler manifolds have virtually abelian fundamental groups. Using this theorem, establishes the same conclusion for order-two root orbifolds of smooth projective complex fourfolds along one nonempty smooth connected divisor, when special in the stated differential-line sense. For smooth special complex quasi-projective varieties, proves that every finite-dimensional complex linear representation of the fundamental group has virtually nilpotent image of class at most two."
+The release's blurb "**057. Fundamental groups of special complex varieties and root orbifolds.** Proves Campana's abelianity conjecture: special compact Kähler manifolds have virtually abelian fundamental groups. Using this theorem, establishes the same conclusion for order-two root orbifolds of smooth projective complex fourfolds along one nonempty smooth connected divisor, when special in the stated differential-line sense. For smooth special complex quasi-projective varieties, proves that every finite-dimensional complex linear representation of the fundamental group has virtually nilpotent image of class at most two. [S1:1481]"
 
 Three manuscripts carry this family. The first,
 *The abelianity conjecture for special compact Kähler manifolds*
-[S2:36–40], has the abstract [S2:36–40]: "We prove that the fundamental group of every special compact Kähler
+[S2:36–40], has the abstract "We prove that the fundamental group of every special compact Kähler
 manifold is virtually abelian, resolving Campana's abelianity conjecture
 in all dimensions. In particular, every smooth compact connected
 Kähler manifold of Kodaira dimension zero has virtually abelian
-ordinary fundamental group."
+ordinary fundamental group. [S2:36–40]"
 
 The second, *Two-step monodromy of special quasi-projective
-varieties* [S9:60–66], has the abstract [S9:60–66]: "We give an independent proof that every complex linear representation
+varieties* [S9:60–66], has the abstract "We give an independent proof that every complex linear representation
 of the ordinary fundamental group of a connected smooth special complex
 quasi-projective variety has virtually nilpotent image of class at most
 two. This conclusion was previously announced by
 Cao–Deng–Hacon–P\u aun. We also construct special open surfaces whose
-general quasi-Albanese fibres are not special."
+general quasi-Albanese fibres are not special. [S9:60–66]"
 
 The third, *A conditional abelianity theorem for special fourfold
 pairs with a half-weight divisor* [S13:10], has the abstract
-[S13:10]: "Using the abelianity theorem for special compact Kähler manifolds in every dimension, we prove virtual abelianity of the entire orbifold fundamental group of the special order-two root orbifold associated with a pair $(X,\tfrac12D)$, where $X$ is a smooth projective fourfold and $D$ is a nonempty smooth connected divisor. We construct a special smooth projective eightfold whose fundamental group surjects onto the required group."
+ "Using the abelianity theorem for special compact Kähler manifolds in every dimension, we prove virtual abelianity of the entire orbifold fundamental group of the special order-two root orbifold associated with a pair $(X,\tfrac12D)$, where $X$ is a smooth projective fourfold and $D$ is a nonempty smooth connected divisor. We construct a special smooth projective eightfold whose fundamental group surjects onto the required group. [S13:10]"
 
 ## Undergraduate summary
 
@@ -35,22 +35,20 @@ into special varieties and bases of general type. Specialness records
 the absence of differential forms that would detect such a base. One
 of the program's central predictions is topological: the fundamental
 group of a special compact Kähler manifold should become abelian
-after passage to a finite unramified cover [S3:3–9]. "Campana's classification program separates compact Kähler geometry
+after passage to a finite unramified cover . "Campana's classification program separates compact Kähler geometry
 into special varieties and bases of general type. Specialness records
 the absence of differential forms that would detect such a base. One
 of the program's central predictions is topological: the fundamental
 group of a special compact Kähler manifold should become abelian
 after passage to a finite unramified cover
-\cite[Conjecture A.1]ClaudonHoring2013."
+\cite[Conjecture A.1]ClaudonHoring2013. [S3:3–9]"
 
-The theorem [S3:26–31]:
+The theorem 
 
-> **theorem**
-Let \(X\) be a connected smooth compact Kähler manifold of arbitrary
+> Let \(X\) be a connected smooth compact Kähler manifold of arbitrary
 complex dimension. If \(X\) is special, then \(\pi_1(X)\) has an abelian
 subgroup of finite index. Equivalently, \(X\) has a connected finite
-unramified holomorphic cover with abelian fundamental group.
-\endtheorem
+unramified holomorphic cover with abelian fundamental group. [S3:26–31]
 
 This is a positive resolution of the conjecture in the compact
 Kähler setting. The conclusion concerns the entire discrete
@@ -60,25 +58,24 @@ finiteness, projectivity, or prescribed Kodaira dimension [S3:33–37].
 Kähler setting. The conclusion concerns the entire discrete
 topological fundamental group. It requires no linearity, residual
 finiteness, projectivity, or prescribed Kodaira dimension. The finite
-index may depend on \(X\), and torsion in \(\pi_1(X)\) is allowed."
+index may depend on \(X\), and torsion in \(\pi_1(X)\) is allowed. [S3:33–37]"
 
 ## Graduate summary
 
 **The two-step linear monodromy.** The open setting admits
 nonabelian nilpotent groups. The second manuscript proves the sharp
-class-two bound [S10:40–45]:
+class-two bound 
 
-> **theorem**
+> **Theorem 1.1**
 Let $V$ be a connected smooth special complex quasi-projective variety.
 For every positive integer $d$ and every representation
 $\rho:\pi_1(V)\to\GL_d(\mathbf C)$, the image $\rho(\pi_1(V))$ has a subgroup
-of finite index and nilpotency class at most two.
-\endtheorem
+of finite index and nilpotency class at most two. [S10:40–45]
 
 Priority for the conclusion belongs to Cao–Deng–Hacon–Paun, who
 announced it first. The proof here is independent, using the
 Cadorel–Deng–Yamanoi inputs and a structural theorem about unipotent
-completion [S10:47–55]:
+completion 
 
 > Cadorel–Deng–Yamanoi established virtual nilpotence of these linear
 images: the identity component of their Zariski closure is a direct
@@ -88,7 +85,7 @@ announced the sharp class-two conclusion of Theorem
 \cite[Theorem A, equivalently Theorem 6.2]CDHP2026. Priority for that
 conclusion belongs to their work. We give a different proof from the
 independent CDY inputs and a structural theorem about unipotent
-completion.
+completion. [S10:47–55]
 
 The bound is optimal: Cadorel–Deng–Yamanoi construct a smooth special
 quasi-projective surface with a linearly two-step nilpotent
@@ -96,23 +93,20 @@ fundamental group that is not virtually abelian [S10:57–60].
 
 **The root orbifold extension.** The third manuscript extends the
 manifold abelianity theorem to order-two root orbifolds of fourfolds
-[S14:39–45]:
 
-> **theorem**
-Assume Assumption  . Let $X$ be a connected smooth projective complex fourfold and let $D\subset X$ be a nonempty smooth connected reduced divisor. If $\sqrt[2]{(X,D)}$ is special, then
-\beginequation 
- G=\pi_1(X\setminus D,x)\big/\langle\!\langle\gamma^2\rangle\!\rangle
-\endequation
-contains an abelian subgroup of finite index. Here $\gamma$ is a positively oriented meridian about $D$, transported to $x\in X\setminus D$.
-\endtheorem
+
+> Assume Assumption  . Let $X$ be a connected smooth projective complex fourfold and let $D\subset X$ be a nonempty smooth connected reduced divisor. If $\sqrt[2]{(X,D)}$ is special, then
+$$\label{eq:target-group}
+ G=\pi_1(X\setminus D,x)\big/\langle\!\langle\gamma^2\rangle\!\rangle$$
+contains an abelian subgroup of finite index. Here $\gamma$ is a positively oriented meridian about $D$, transported to $x\in X\setminus D$. [S14:39–45]
 
 The proof constructs a smooth projective eightfold $Y$ over the root
 orbifold, with general fibre a product of four genus-one curves.
 Specialness of the base orbifold forces specialness of $Y$, while
 pullback multiplicities give the epimorphism
-$\pi_1(Y)\twoheadrightarrow G$ [S14:49–51]:
+$\pi_1(Y)\twoheadrightarrow G$ 
 
-> The main construction is independent of specialness. It produces a smooth projective eightfold $Y$ over $\cX$ with general fibre a product of four genus-one curves. It also supplies a submersive lift at some point over the general point of _every_ base divisor. These points detect all poles in the descent of differential tensors. A direct argument then proves that specialness of $\cX$ forces specialness of $Y$, while even pullback multiplicities give an epimorphism $\pi_1(Y)\twoheadrightarrow G$. These two conclusions permit the application of Assumption  .
+> The main construction is independent of specialness. It produces a smooth projective eightfold $Y$ over $\cX$ with general fibre a product of four genus-one curves. It also supplies a submersive lift at some point over the general point of _every_ base divisor. These points detect all poles in the descent of differential tensors. A direct argument then proves that specialness of $\cX$ forces specialness of $Y$, while even pullback multiplicities give an epimorphism $\pi_1(Y)\twoheadrightarrow G$. These two conclusions permit the application of Assumption  . [S14:49–51]
 
 The four independent genus-one factors eliminate stabilizers over the
 three-dimensional divisor. An alternative construction using branched

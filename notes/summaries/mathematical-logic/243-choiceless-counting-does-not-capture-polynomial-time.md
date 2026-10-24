@@ -6,16 +6,16 @@
 
 ## Original CONTENTS.md summary
 
-[S1:571] carries the family entry:
+ carries the family entry:
 
-> consistency of a linear system over $\mathbb F_3$ defines a polynomial-time query on unordered finite structures that choiceless polynomial time with counting cannot express. A separate result shows that adding witnessed symmetric choice strictly increases expressive power. Both separations hold for the full counting formalism, allowing hereditarily finite sets of arbitrary finite rank.
+> consistency of a linear system over $\mathbb F_3$ defines a polynomial-time query on unordered finite structures that choiceless polynomial time with counting cannot express. A separate result shows that adding witnessed symmetric choice strictly increases expressive power. Both separations hold for the full counting formalism, allowing hereditarily finite sets of arbitrary finite rank. [S1:571]
 
-The entry links the two manuscripts as "Failure to capture polynomial time"
-and "Witnessed symmetric choice" [S1:571].
+The entry links the two manuscripts as "Failure to capture polynomial time [S1:571]"
+and "Witnessed symmetric choice [S1:571]" .
 
-The first manuscript's title is "Choiceless polynomial time with counting does not capture polynomial time" [S2:1].
+The first manuscript's title is "Choiceless polynomial time with counting does not capture polynomial time [S2:1]" .
 
-The second manuscript's title is "Witnessed symmetric choice is strictly stronger than choiceless polynomial time with counting" [S9:1].
+The second manuscript's title is "Witnessed symmetric choice is strictly stronger than choiceless polynomial time with counting [S9:1]" .
 
 ## Undergraduate summary
 
@@ -51,7 +51,7 @@ occurrence defines a Boolean query on every finite input that is not definable
 in the original counting formalism."
 
 The separation is stated as a strict inclusion. [S13:44] states the half that
-matters: "no \(\mathrmCPT\) sentence over \(\tau\) has the same true-model class."
+matters: "no \(\mathrmCPT\) sentence over \(\tau\) has the same true-model class. [S13:44]"
 
 The choiceless side keeps its full power. [S13:46–47] says: "The \(\CPT\) sentences in \textup{(ii)} may use counting
 and hereditarily finite sets of unrestricted finite rank."

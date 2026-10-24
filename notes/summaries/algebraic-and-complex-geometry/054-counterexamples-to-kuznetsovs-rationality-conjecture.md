@@ -6,15 +6,15 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb [S1:1388]: "**054. Irrational cubic fourfolds with Hodge-theoretic and categorical K3 associations.** For every sufficiently large admissible Hassett discriminant, a very general smooth complex cubic fourfold is irrational despite having both an untwisted geometric K3 category and an integral Hodge-theoretic K3 association. This disproves Kuznetsov's rationality conjecture and the sufficiency of the associated-K3 criterion for rationality; the discriminant threshold is ineffective." The manuscript title is
-"Irrational cubic fourfolds with geometric K3 categories" [S3:1], and its abstract [S4:51–58] reads: "For every sufficiently large admissible Hassett discriminant, we prove that
+The release's blurb "**054. Irrational cubic fourfolds with Hodge-theoretic and categorical K3 associations.** For every sufficiently large admissible Hassett discriminant, a very general smooth complex cubic fourfold is irrational despite having both an untwisted geometric K3 category and an integral Hodge-theoretic K3 association. This disproves Kuznetsov's rationality conjecture and the sufficiency of the associated-K3 criterion for rationality; the discriminant threshold is ineffective. [S1:1388]" The manuscript title is
+"Irrational cubic fourfolds with geometric K3 categories [S3:1]" , and its abstract reads: "For every sufficiently large admissible Hassett discriminant, we prove that
 a very general cubic fourfold of that discriminant is irrational, although
 its Kuznetsov component is equivalent to the ordinary derived category of a
 projective K3 surface. The discriminant threshold is ineffective.
 This disproves Kuznetsov's rationality conjecture.
 The same cubics have associated untwisted polarized K3 surfaces in the
 Hodge-theoretic sense, so they also disprove the sufficiency direction of
-the associated-K3 rationality prediction."
+the associated-K3 rationality prediction. [S4:51–58]"
 
 ## Undergraduate summary
 
@@ -22,14 +22,14 @@ A smooth cubic fourfold $X\subset\mathbf P^5$ is rational if its function
 field is a purely transcendental extension of $\C$ of transcendence
 degree four. The connection between this birational question and K3
 surfaces appears both in the middle cohomology and in the derived
-category [S5:3–7]. "A smooth cubic fourfold \(X\subset\mathbf P^5_{\mathbb C}\) is rational if its field of rational functions is
+category . "A smooth cubic fourfold \(X\subset\mathbf P^5_{\mathbb C}\) is rational if its field of rational functions is
 a purely transcendental extension of \(\mathbb C\) of transcendence degree four. The connection
 between this birational question and K3 surfaces appears both in the
 middle cohomology and in the derived category. We prove that both
-connections can hold for the same irrational cubic." Kuznetsov's rationality conjecture asserts
+connections can hold for the same irrational cubic. [S5:3–7]" Kuznetsov's rationality conjecture asserts
 that $X$ is rational if and only if its Kuznetsov component
 $\Ku(X)$ is equivalent to the derived category of a projective K3
-surface. The theorem [S5:77–85]:
+surface. The theorem 
 
 > **theorem**
 There is an integer \(d_0\) such that, for every admissible \(d>d_0\), a very
@@ -38,8 +38,7 @@ and admits an exact \(\mathbb C\)-linear equivalence
 \[
  \Ku(X)\simeq D^b(\operatornameCohS)
 \]
-for a smooth projective K3 surface \(S\).
-\endtheorem
+for a smooth projective K3 surface \(S\). [S5:77–85]
 
 The threshold $d_0$ is ineffective. Some Hassett divisors
 ($\mathcal C_{26}$, $\mathcal C_{38}$, $\mathcal C_{42}$) consist
@@ -52,7 +51,7 @@ $\mathcal S$ of Picard-number-one K3 surfaces whose integral
 transcendental Hodge lattice, after shifting Hodge types by $(1,1)$
 and reversing the pairing, is isometric to $T_X$ [S5:100–118].
 An invariant $c_u(f)$ counts prime divisors acquired and lost by a
-birational map, each weighted by the MRC-quotient test [S5:121–127]:
+birational map, each weighted by the MRC-quotient test 
 
 > For an integral variety \(E\), let \(u(E)\) be one if the MRC quotient
 of a smooth projective model of its function field is birational to a
@@ -60,14 +59,14 @@ member of \(\mathcal S\), and zero otherwise. Section   defines \(c_u(f)\) by co
 prime divisors acquired by the target with positive sign and those
 lost from the source with negative sign, each weighted by \(u\).
 The count is finite and additive under composition. We evaluate this
-same invariant in two ways.
+same invariant in two ways. [S5:121–127]
 
 **Evaluation via smooth factorization.** Weak factorization expresses
 $f$ as blowups and blowdowns along smooth centers. Genus-zero
 Gromov–Witten pairings determine operators on the transcendental
 lattice whose projectors force a blowdown to remove a whole integral
 block. Rank $21$ and $h^{3,1}(X)=1$ leave exactly one block, giving
-$c_u(f)=1$ [S5:129–150]:
+$c_u(f)=1$ 
 
 > Smooth weak factorization expresses \(f\) as blowups and blowdowns
 along smooth centers. Only surface centers can have nonzero test.
@@ -90,7 +89,7 @@ class. Every nonzero block has a nonzero \((3,1)\) part, so
 Rank \(21\) makes its surface center birational to a
 Picard-number-one K3 surface, and its discriminant fixes the degree
 \(d\). Thus one more member of the class \(\mathcal S\) is added than
-removed, and Proposition   gives \(c_u(f)=1\).
+removed, and Proposition   gives \(c_u(f)=1\). [S5:129–150]
 
 **Evaluation via Sarkisov factorization.** The Mori-factorization
 pass through conic-bundle nodes gives integer-valued functions $v,s$
@@ -98,7 +97,7 @@ on the nodes. The surface calculation at a conic-bundle node uses
 finite residue fields and Brauer ramification covers. A second
 Sarkisov factorization on the threefold bases gives genus bounds
 incompatible with pencils on large-degree K3 surfaces, so the
-corrections telescope to $c_u(f)=0$ [S5:152–181]:
+corrections telescope to $c_u(f)=0$ 
 
 > The Sarkisov factorization passes through Mori fibre spaces: contractions
 \(V\to B\) with terminal \(\mathbb Q\)-factorial projective fourfold \(V\),
@@ -129,7 +128,7 @@ give genus bounds incompatible with pencils on Picard-number-one K3
 surfaces of sufficiently large degree. This proves independence with
 one bound for all test subcollections and factorizations. At nodes over
 a point both corrections vanish; the displayed differences therefore
-telescope to \(c_u(f)=0\) by Theorem  .
+telescope to \(c_u(f)=0\) by Theorem  . [S5:152–181]
 
 The contradiction $c_u(f)=1$ and $c_u(f)=0$ proves irrationality.
 

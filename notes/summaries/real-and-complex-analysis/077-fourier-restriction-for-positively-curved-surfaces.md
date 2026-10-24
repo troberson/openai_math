@@ -17,10 +17,10 @@ dependence. The Diagonal paper proves the general-surface estimate
 from two theorem inputs — the elliptic-capacity packet propagation
 theorem and the Kakeya maximal theorem — while the Elliptic paper
 proves both of those inputs together with the bounded-data sphere
-estimate. Their abstract [S6:2–5]: "We prove the bounded-data Fourier restriction conjecture for the sphere in
+estimate. Their abstract "We prove the bounded-data Fourier restriction conjecture for the sphere in
 three dimensions: the Fourier extension operator maps $L^\infty(S^2)$
 boundedly into $L^p(\R^3)$ for every $p>3$. This is the full conjectured
-open range, and the threshold $p=3$ is sharp."
+open range, and the threshold $p=3$ is sharp. [S6:2–5]"
 
 ## Undergraduate summary
 
@@ -36,26 +36,22 @@ $p>3$:
 Let \(\Sigma\subset\mathbb R^3\) be a compact smooth positively curved
 surface, possibly with smooth boundary. For every \(3<p<\infty\),
 there is a finite constant \(C_{\Sigma,p}\) such that
-\beginequation 
+$$\label{eq:main}
  \|E_\Sigma f\|_{L^p(\mathbb R^3)}
- \le C_{\Sigma,p}\|f\|_{L^p(\Sigma)}
-\endequation
-for every complex-valued \(f\in L^p(\Sigma)\).
-\endtheorem
+ \le C_{\Sigma,p}\|f\|_{L^p(\Sigma)}$$
+for every complex-valued \(f\in L^p(\Sigma)\). [S4:18–27]
 
 The companion paper states the bounded-data version for the sphere,
 where the input is only required to be essentially bounded, and this
-is the full conjectured open range [S6:21–29]:
+is the full conjectured open range 
 
-> **theorem**
-For every real \(p>3\), there is a finite constant \(C_p\), depending
+> For every real \(p>3\), there is a finite constant \(C_p\), depending
 only on \(p\), such that
 \[
   \|Eg\|_{L^p(\R^3)}
   \le C_p\|g\|_{L^\infty(S^2,\sigma)}
 \]
-for every bounded measurable complex-valued function \(g\) on \(S^2\).
-\endtheorem
+for every bounded measurable complex-valued function \(g\) on \(S^2\). [S6:21–29]
 
 ## Graduate summary
 
@@ -123,11 +119,9 @@ transfer with both exponents equal to $p$ [S7:70–108]:
 For every \(3<p<\infty\) and \(s>2-6/p\), the free Schrödinger
 propagator, initially defined on Schwartz functions, extends boundedly
 from \(W^{s,p}(\mathbb R^2)\) to \(L^p(\mathbb R^2\times[0,1])\):
-\beginequation 
+$$\label{eq:schrodinger-smoothing}
  \|e^{it\Delta}f\|_{L^p(\mathbb R^2\times[0,1])}
- \le C_{p,s}\|f\|_{W^{s,p}(\mathbb R^2)}.
-\endequation
-\endcorollary
+ \le C_{p,s}\|f\|_{W^{s,p}(\mathbb R^2)}.$$ [S4:73–81]
 
 Rogers's necessary condition shows the Sobolev threshold
 $s>2-6/p$ cannot be lowered. A second consequence treats
@@ -141,14 +135,12 @@ consequence of the sphere estimate is, verbatim, the three-
 dimensional Kakeya maximal theorem proved in family 074
 [S8:9–101]:
 
-> **corollary**
-For every \(\varepsilon>0\) there is a finite \(C_\varepsilon\) such that,
+> For every \(\varepsilon>0\) there is a finite \(C_\varepsilon\) such that,
 for every \(0<\delta<1\) and \(f\in L^3(\R^3)\),
 \[
  \|K_\delta f\|_{L^3(S^2,\sigma)}
  \le C_\varepsilon\delta^{-\varepsilon}\|f\|_{L^3(\R^3)}.
-\]
-\endcorollary
+\] [S6:337–344]
 
 Its proof uses sphere-specific factorization and does not invoke the
 general-surface diagonal companion or the independent maximal

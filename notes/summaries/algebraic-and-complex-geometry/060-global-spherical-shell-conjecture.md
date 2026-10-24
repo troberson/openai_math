@@ -6,14 +6,14 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb [S1:1565]: "**060. The Global Spherical Shell conjecture.** Every connected minimal compact complex surface of class VII with $`b_2\gt 0`$ contains a global spherical shell, proving the positive-$b_2$ Global Spherical Shell conjecture. Such a shell is a holomorphically embedded neighborhood of the standard three-sphere in $`\mathbb C^2\setminus\{0\}`$ whose complement is connected."
+The release's blurb "**060. The Global Spherical Shell conjecture.** Every connected minimal compact complex surface of class VII with $`b_2\gt 0`$ contains a global spherical shell, proving the positive-$b_2$ Global Spherical Shell conjecture. Such a shell is a holomorphically embedded neighborhood of the standard three-sphere in $`\mathbb C^2\setminus\{0\}`$ whose complement is connected. [S1:1565]"
 
 The manuscript, *Global Spherical Shells on Minimal Surfaces of
-Class VII* [S2], has the abstract [S2:75–80]: "We prove the Global Spherical Shell conjecture: every connected minimal
+Class VII* [S2], has the abstract "We prove the Global Spherical Shell conjecture: every connected minimal
 compact complex surface of class VII with positive second Betti number
 contains a global spherical shell. This is a holomorphically embedded
 neighborhood of the standard three-sphere in $\mathbb C^2\setminus\{0\}$
-whose complement is connected."
+whose complement is connected. [S2:75–80]"
 
 ## Undergraduate summary
 
@@ -37,9 +37,9 @@ whose complement is connected. Kato introduced this structure
 conjecture that every minimal class VII surface with positive second
 Betti number contains such a shell
 \cite[Working Hypothesis 5.5]Nakamura1984; see also
- . We prove this assertion."
+ . We prove this assertion. [S2:84–100]"
 
-The theorem [S2:102–115]:
+The theorem 
 
 > **theorem**
 Let $X$ be a connected compact complex surface with
@@ -53,27 +53,25 @@ self-intersection $-1$. Then there are an open neighborhood $U$ of
  \quadin \mathbb C^2\setminus\{0\},
 \]
 an open subset $\Sigma\subset X$, and a biholomorphism
-$\phi:U\longrightarrow\Sigma$ such that $X\setminus\Sigma$ is connected.
-\endtheorem
+$\phi:U\longrightarrow\Sigma$ such that $X\setminus\Sigma$ is connected. [S2:102–115]
 
 ## Graduate summary
 
 **Kodaira identities and the two reductions.** The compact-surface
 identities of Kodaira give $h^{0,1}=1$, $h^{1,0}=h^{2,0}=0$,
 $b_2^+=0$, $\chi(\OO_X)=0$, and $K_X^2=-b_2(X)$, so the intersection
-form is negative definite [S3:11–21]: "The compact-surface identities of Kodaira give, under the hypotheses of
+form is negative definite "The compact-surface identities of Kodaira give, under the hypotheses of
 Theorem  ,
-\beginequation 
+$$\label{surface:invariants}
  h^{0,1}(X)=1,\qquad h^{1,0}(X)=h^{2,0}(X)=0,\qquad
  b_2^+(X)=0,\qquad \chi(\mathcal O_X)=0,
- \qquad K_X^2=-b_2(X).
-\endequation
+ \qquad K_X^2=-b_2(X).$$
 These are the numerical identities for class VII surfaces
 \cite[Theorem 3]Kodaira1964; see also  .
 In particular the intersection form on $H^2(X;\mathbb R)$ is negative definite.
-Our two surface-theoretic reductions are the following established results."
+Our two surface-theoretic reductions are the following established results. [S3:11–21]"
 
-Two established reductions apply [S3:23–34]:
+Two established reductions apply 
 
 > **proposition**
 Let $V$ be a minimal compact complex surface with $b_1(V)=1$,
@@ -85,8 +83,7 @@ has a global spherical shell.
 spherical shell.
 \endenumerate
 Here the conclusion supplies an embedded open neighborhood of
-$S^3\subset\mathbb C^2\setminus\{0\}$ with connected complement in $V$.
-\endproposition
+$S^3\subset\mathbb C^2\setminus\{0\}$ with connected complement in $V$. [S3:23–34]
 
 The first is Enoki's theorem (square-zero divisor); the second is the
 Dloussky–Oeljeklaus–Toma main theorem ($b_2$ rational curves). The
@@ -97,7 +94,7 @@ surface.
 **The curve production strategy.** The proof lifts to a cyclic cover
 and constructs holomorphic sections with controlled decay. An area
 bound with a common exponent constrains the normalizations of the
-resulting divisor components [S4:3–17]:
+resulting divisor components 
 
 > Proposition   constructs a section with end limits
 $(1,0)$ for any prescribed finite decay rate of the holomorphic
@@ -113,14 +110,14 @@ distinct curves have independent classes. The scalar degree-one group vanishes,
 so scalar differentials satisfying the mass bound cannot occur. This
 will force genus zero here; Section   will exclude the
 remaining noncompact normalizations, using the same scalar obstruction
-and the finite-dimensional cohomology for a fixed bundle $E$.
+and the finite-dimensional cohomology for a fixed bundle $E$. [S4:3–17]
 
 Residue current arguments in weighted cohomology force the
 normalizations to be rational, yielding the required $b_2$ curves
 and applying the Dloussky–Oeljeklaus–Toma criterion.
 
 **Deformation and topology.** Kato's deformation theorem then
-identifies every such surface [S2:122–135]:
+identifies every such surface 
 
 > **corollary**
 Let $X$ satisfy the hypotheses of Theorem  , and put
@@ -134,8 +131,7 @@ Moreover,
  X\cong_{\mathrmor}(S^1\times S^3)#\,b\,\overline{\mathbbCP}^{\,2},
 \]
 where the second is an orientation-preserving diffeomorphism for the
-complex orientation of $X$.
-\endcorollary
+complex orientation of $X$. [S2:122–135]
 
 ## History of the conjecture
 

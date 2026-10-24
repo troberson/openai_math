@@ -6,13 +6,13 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb for family 344 [S1:8340]:
+The release's blurb for family 344 
 
-> **344. The metric Blaschke conjecture.** Proves the metric Blaschke conjecture: every closed connected Riemannian manifold of positive dimension whose injectivity radius equals its diameter is, up to scaling, a standard compact rank-one symmetric space.
+> **344. The metric Blaschke conjecture.** Proves the metric Blaschke conjecture: every closed connected Riemannian manifold of positive dimension whose injectivity radius equals its diameter is, up to scaling, a standard compact rank-one symmetric space. [S1:8340]
 
-The catalog abstract in `overview.tex` [S2:786] is the same sentence. The manuscript's own abstract [S6:2–5]:
+The catalog abstract in `overview.tex` [S2:786] is the same sentence. The manuscript's own abstract 
 
-> We prove the metric Blaschke conjecture: every connected closed smooth Riemannian manifold of positive dimension whose global injectivity radius equals its diameter is, up to scale, a standard compact rank-one symmetric space.
+> We prove the metric Blaschke conjecture: every connected closed smooth Riemannian manifold of positive dimension whose global injectivity radius equals its diameter is, up to scale, a standard compact rank-one symmetric space. [S6:2–5]
 
 The bibtex key the release ships [S3:9–12]:
 
@@ -23,18 +23,18 @@ The bibtex key the release ships [S3:9–12]:
 
 ## Undergraduate summary
 
-The conjecture starts from a property the round sphere has, and that the standard projective spaces and the Cayley plane also have [S6:11–16]:
+The conjecture starts from a property the round sphere has, and that the standard projective spaces and the Cayley plane also have 
 
-> On a round sphere, every geodesic minimizes from its starting point to the antipode, at a distance equal to the diameter. The standard real, complex and quaternionic projective spaces and the Cayley plane have the same common minimizing-distance property. The metric Blaschke conjecture asks whether this property characterizes these compact rank-one symmetric spaces.
+> On a round sphere, every geodesic minimizes from its starting point to the antipode, at a distance equal to the diameter. The standard real, complex and quaternionic projective spaces and the Cayley plane have the same common minimizing-distance property. The metric Blaschke conjecture asks whether this property characterizes these compact rank-one symmetric spaces. [S6:11–16]
 
-The manuscript turns the property into a metric equality. For a connected closed smooth Riemannian manifold, the global injectivity radius is the infimum over points of the radius on whose open tangent balls the exponential map is a diffeomorphism, and the diameter is the largest distance between two points. A Blaschke manifold is one of positive dimension where the two are equal [S6:18–29]:
+The manuscript turns the property into a metric equality. For a connected closed smooth Riemannian manifold, the global injectivity radius is the infimum over points of the radius on whose open tangent balls the exponential map is a diffeomorphism, and the diameter is the largest distance between two points. A Blaschke manifold is one of positive dimension where the two are equal 
 
-> For a connected closed smooth Riemannian manifold $(M,g)$, write \[ \inj(M,g)=\inf_{p\in M}\inj_p(M,g), \qquad \diam(M,g)=\sup_{p,q\in M}d_g(p,q). \] Here $\inj_p(M,g)$ is the supremum of the radii on whose open tangent balls $\exp_p$ is a diffeomorphism onto its image. We call $M$ a _Blaschke manifold_ if it has positive dimension and $\inj(M,g)=\diam(M,g)$. The global equality implies that every unit-speed geodesic minimizes precisely up to the common diameter; we give the short deduction in Lemma  .
+> For a connected closed smooth Riemannian manifold $(M,g)$, write \[ \inj(M,g)=\inf_{p\in M}\inj_p(M,g), \qquad \diam(M,g)=\sup_{p,q\in M}d_g(p,q). \] Here $\inj_p(M,g)$ is the supremum of the radii on whose open tangent balls $\exp_p$ is a diffeomorphism onto its image. We call $M$ a _Blaschke manifold_ if it has positive dimension and $\inj(M,g)=\diam(M,g)$. The global equality implies that every unit-speed geodesic minimizes precisely up to the common diameter; we give the short deduction in Lemma  . [S6:18–29]
 
-The main theorem is the classification [S6:31–37]:
+The main theorem is the classification 
 
 > **theorem**
-
+ [S6:31–37]
 
 The proof is a volume argument in two directions. Every Blaschke manifold has volume at least its model's, and the quaternionic cases have volume at most their model's; the two bounds meet at the model, so equality forces isometry [S6:104–116]:
 
@@ -52,9 +52,9 @@ The proof is a volume argument in two directions. Every Blaschke manifold has vo
 > same diameter, then it is isometric to that model.
 > \end{corollary}
 
-The classification covers every quaternionic dimension, and the hypothesis is the global equality, not a curvature bound [S6:39–46]:
+The classification covers every quaternionic dimension, and the hypothesis is the global equality, not a curvature bound 
 
-> The classification includes every quaternionic dimension. Its hypothesis is the global equality just defined. Classical Blaschke structure associates to $M$ a compact rank-one symmetric _model_ $M_0$ by its cut-locus and integral cohomology type. Throughout the volume comparisons, the standard metric $g_0$ on $M_0$ is scaled to have the same diameter as $(M,g)$. Prime geodesics have length twice the diameter, so fixing the diameter is equivalent to fixing their prime period.
+> The classification includes every quaternionic dimension. Its hypothesis is the global equality just defined. Classical Blaschke structure associates to $M$ a compact rank-one symmetric _model_ $M_0$ by its cut-locus and integral cohomology type. Throughout the volume comparisons, the standard metric $g_0$ on $M_0$ is scaled to have the same diameter as $(M,g)$. Prime geodesics have length twice the diameter, so fixing the diameter is equivalent to fixing their prime period. [S6:39–46]
 
 ## Graduate summary
 
@@ -158,15 +158,15 @@ The scalar estimate is a weighted integral inequality against the model density.
 > \end{align}
 > \end{lemma}
 
-The comparison on each geodesic is the integral inequality over the square of two times along the geodesic [S9:126–143]:
+The comparison on each geodesic is the integral inequality over the square of two times along the geodesic 
 
 > **theorem**
+ [S9:126–143]
 
-
-Integrating the radial density over the unit tangent bundle at each point gives the volume [S10:20–28]:
+Integrating the radial density over the unit tangent bundle at each point gives the volume 
 
 > **lemma**
-
+ [S10:20–28]
 
 The quaternionic upper bound comes from characteristic classes. Pairs of points at the cut distance form a smooth incidence manifold, and the rank of the complement of two direction planes forces the total Pontryagin class [S11:175–183]:
 
@@ -203,10 +203,10 @@ The geodesic space carries the arithmetic. The period-normalized contact form ex
 > \end{equation}
 > \end{proposition}
 
-The first negative bundle of the free-loop energy transfers the incidence coefficient to the geodesic space [S13:265–300]:
+The first negative bundle of the free-loop energy transfers the incidence coefficient to the geodesic space 
 
 > **proposition**
-
+ [S13:265–300]
 
 The complete-intersection calculation turns the characteristic number into the sharp upper bound [S14:351–361]:
 
@@ -229,10 +229,10 @@ Complex-projective type closes through Yang's volume theorem [S15:11–14]:
 > to its equally scaled standard complex projective model.
 > \end{corollary}
 
-The projective planes close through the classification of smooth topological projective planes and the weak Blaschke volume theorem [S15:37–40]:
+The projective planes close through the classification of smooth topological projective planes and the weak Blaschke volume theorem 
 
 > **corollary**
-
+ [S15:37–40]
 
 Quaternionic type closes through the sharp bound and the contact formula [S15:59–62]:
 
@@ -241,13 +241,13 @@ Quaternionic type closes through the sharp bound and the contact formula [S15:59
 > standard quaternionic model at the same diameter.
 > \end{corollary}
 
-The manuscript states the route through the proof [S6:118–130]:
+The manuscript states the route through the proof 
 
-> After the circle, sphere and real-projective cases are separated, the analytic comparison in each remaining type starts along one closed geodesic. Normal Jacobi fields that vanish at a specified time form a Lagrangian plane in the symplectic space of Jacobi fields. A fixed graph chart separates the determinant of their endpoint pairing into a regular factor and a Schur-complement factor. The size of the Schur block is the dimension of the space of normal Jacobi fields vanishing at both the starting point and its cut point; the regular block has the complementary normal dimension. Both determinant factors can be bounded by scalar interval integrals, including when the actual endpoint order is reversed. This construction uses the cut-time intersection pattern; it does not require parallel eigenspaces of the curvature operator.
+> After the circle, sphere and real-projective cases are separated, the analytic comparison in each remaining type starts along one closed geodesic. Normal Jacobi fields that vanish at a specified time form a Lagrangian plane in the symplectic space of Jacobi fields. A fixed graph chart separates the determinant of their endpoint pairing into a regular factor and a Schur-complement factor. The size of the Schur block is the dimension of the space of normal Jacobi fields vanishing at both the starting point and its cut point; the regular block has the complementary normal dimension. Both determinant factors can be bounded by scalar interval integrals, including when the actual endpoint order is reversed. This construction uses the cut-time intersection pattern; it does not require parallel eigenspaces of the curvature operator. [S6:118–130]
 
-The arithmetic step is where the integral structure matters [S6:160–179]:
+The arithmetic step is where the integral structure matters 
 
-> Next consider the space of oriented geodesics, forgetting the marked starting point. The period-normalized contact form expresses volume as a top power of the Euler class of its geodesic-circle bundle. Integral Gysin sequences first determine the lattice of classes and the determinant of a middle pairing. The first negative bundle of the free-loop energy transfers the incidence coefficient to this space. This step uses the fixed-endpoint Morse index theorem of   and the equivariant negative-bundle attachment developed in closed-geodesic Morse theory; we use the formulation of \citet[Section 7]OttosenBokstedt2007, following  . The required primitive attaching coefficient is established over every prime field. The attaching map from the sphere bundle of the descended negative bundle to $M$ also pulls back its cohomology generator; the vanishing of the $(r+1)$st power supplies the relations for the final algebraic calculation. Finally, a complete-intersection calculation turns the middle determinant into the sharp upper volume bound. Rational cohomology alone would not retain the arithmetic that normalizes this bound.
+> Next consider the space of oriented geodesics, forgetting the marked starting point. The period-normalized contact form expresses volume as a top power of the Euler class of its geodesic-circle bundle. Integral Gysin sequences first determine the lattice of classes and the determinant of a middle pairing. The first negative bundle of the free-loop energy transfers the incidence coefficient to this space. This step uses the fixed-endpoint Morse index theorem of   and the equivariant negative-bundle attachment developed in closed-geodesic Morse theory; we use the formulation of \citet[Section 7]OttosenBokstedt2007, following  . The required primitive attaching coefficient is established over every prime field. The attaching map from the sphere bundle of the descended negative bundle to $M$ also pulls back its cohomology generator; the vanishing of the $(r+1)$st power supplies the relations for the final algebraic calculation. Finally, a complete-intersection calculation turns the middle determinant into the sharp upper volume bound. Rational cohomology alone would not retain the arithmetic that normalizes this bound. [S6:160–179]
 
 ## History of the conjecture
 
@@ -255,13 +255,13 @@ Blaschke posed the question for surfaces in 1921 [S16:92–102], and Green settl
 
 The sphere and real-projective metric cases came through Berger, Kazdan, Weinstein and Yang. Berger's sphere argument combines the geometric volume problem with Kazdan's scalar integral inequality, and Berger's sharp isoembolic inequality uses a weighted comparison of Jacobi determinants and Jensen's inequality [S6:61–70] [S16:104–114] [S16:190–202]. Yang proved that a Blaschke manifold of complex projective homotopy type has the model volume at the same prime geodesic period [S6:82–84] [S16:24–33]. For the projective planes, smooth incidence geometry and the classification of Kramer–Stolz identify the point manifold diffeomorphically [S6:85–87] [S16:116–126]. Wilking records the equal-volume theorem for a manifold homeomorphic to a compact rank-one symmetric space whose unit geodesics all have the same least period, attributing it to Reznikov [S6:87–90] [S16:128–138]; Reznikov's earlier work on the quaternionic weak Blaschke conjecture is another predecessor [S6:90–93] [S16:35–45]. Szabo's classification of compact simply connected harmonic manifolds supplies the equality case [S6:145–147] [S16:59–69] [S16:71–80].
 
-The manuscript names the hypotheses it does not use [S6:192–198]:
+The manuscript names the hypotheses it does not use 
 
-> There are also rigidity theorems with additional geometric hypotheses. Shankar, Spatzier and Wilking treat an upper sectional-curvature bound \citep[Proposition 2.1]ShankarSpatzierWilking2005, and Su, Sun and Wang prove the corresponding normalized lower-curvature result  . Connell, Islam, Nguyen and Spatzier obtain rigidity under curvature bounds and agreement with a model away from a prescribed convex set  .
+> There are also rigidity theorems with additional geometric hypotheses. Shankar, Spatzier and Wilking treat an upper sectional-curvature bound \citep[Proposition 2.1]ShankarSpatzierWilking2005, and Su, Sun and Wang prove the corresponding normalized lower-curvature result  . Connell, Islam, Nguyen and Spatzier obtain rigidity under curvature bounds and agreement with a model away from a prescribed convex set  . [S6:192–198]
 
-It also names the nearest concurrent result [S6:200–203]:
+It also names the nearest concurrent result 
 
-> Song's September 2026 preprint proves Blaschke metric rigidity assuming an adapted complex structure on the entire tangent bundle \citep[Theorem 1.3]Song2026. This entire-extension hypothesis is additional to the Blaschke condition.
+> Song's September 2026 preprint proves Blaschke metric rigidity assuming an adapted complex structure on the entire tangent bundle \citep[Theorem 1.3]Song2026. This entire-extension hypothesis is additional to the Blaschke condition. [S6:200–203]
 
 The entries are Shankar–Spatzier–Wilking 2005 [S16:309–319], Su–Sun–Wang 2016 [S16:331–341], Connell–Islam–Nguyen–Spatzier 2026 [S16:343–352], and Song 2026 [S16:354–361].
 

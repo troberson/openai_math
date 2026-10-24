@@ -8,19 +8,19 @@
 
 The manuscript's main theorem is the counterexample itself [S8:20–28]:
 
-> There is a smooth \(U(10)\)-invariant Kähler form \(\omega_0\) on \(\CP^10\), in the class \([\omega_{\mathrmFS}]\), whose maximal smooth Calabi flow has existence interval \([0,T_*)\) with \(0<T_*<\infty\). There are a point \(p\in\CP^10\) and a constant \(a>0\) such that \[ S(\omega(t))(p)\sim a(T_*-t)^{-1/2}\qquadas t\uparrow T_*. \]
+> There is a smooth \(U(10)\)-invariant Kähler form \(\omega_0\) on \(\CP^10\), in the class \([\omega_{\mathrmFS}]\), whose maximal smooth Calabi flow has existence interval \([0,T_*)\) with \(0<T_*<\infty\). There are a point \(p\in\CP^10\) and a constant \(a>0\) such that \[ S(\omega(t))(p)\sim a(T_*-t)^{-1/2}\qquadas t\uparrow T_*. \] [S8:21–27]
 
 The corollary is the dimension statement [S8:40–57]:
 
-> Let \(\omega(t)\), \(T_*\), \(p\), and \(a\) be as in Theorem  , and let \((Y,\eta)\) be a compact connected Kähler manifold with \(\eta\) of constant scalar curvature.  With \(\pi_X\) and \(\pi_Y\) the projections from \(\CP^10\times Y\), the maximal smooth Calabi flow from \(\Omega_0=\pi_X^*\omega_0+\pi_Y^*\eta\) is \[ \Omega(t)=\pi_X^*\omega(t)+\pi_Y^*\eta, \qquad 0\leq t<T_*. \] For every \(y\in Y\), \(S(\Omega(t))(p,y)\sim a(T_*-t)^{-1/2}\). In particular, finite-time smooth Calabi-flow singularities occur in every complex dimension \(n\geq10\), on \(\CP^10\times\CP^{n-10}\), in a class containing a Kähler–Einstein metric.
+> Let \(\omega(t)\), \(T_*\), \(p\), and \(a\) be as in Theorem  , and let \((Y,\eta)\) be a compact connected Kähler manifold with \(\eta\) of constant scalar curvature.  With \(\pi_X\) and \(\pi_Y\) the projections from \(\CP^10\times Y\), the maximal smooth Calabi flow from \(\Omega_0=\pi_X^*\omega_0+\pi_Y^*\eta\) is \[ \Omega(t)=\pi_X^*\omega(t)+\pi_Y^*\eta, \qquad 0\leq t<T_*. \] For every \(y\in Y\), \(S(\Omega(t))(p,y)\sim a(T_*-t)^{-1/2}\). In particular, finite-time smooth Calabi-flow singularities occur in every complex dimension \(n\geq10\), on \(\CP^10\times\CP^{n-10}\), in a class containing a Kähler–Einstein metric. [S8:41–56]
 
 The manuscript states what the construction does not presuppose: the spectral split that selects finitely many components from future forcing is available because the initial metric is still free, and it requires no stability or nondegeneracy theorem for the profile [S8:168–171].
 
 ## Undergraduate summary
 
-The Calabi flow evolves a Kähler metric inside one fixed Kähler class. It is driven by “scalar curvature” — a single number at each point — measured against the average scalar curvature that the class itself determines [S8:5–11]:
+The Calabi flow evolves a Kähler metric inside one fixed Kähler class. It is driven by “scalar curvature [S8:11]” — a single number at each point — measured against the average scalar curvature that the class itself determines 
 
-> The Calabi flow is \beginequation  \omega(t)=\omega_0+i\partial\bar\partial\phi(t)>0, \qquad \phi(0)=0,\qquad \partial_t\phi=S(\omega(t))-\bar S, \endequation where \(\bar S\) is the average scalar curvature, determined by the Kähler class.
+> The Calabi flow is $$\label{eq:calabi-flow} \omega(t)=\omega_0+i\partial\bar\partial\phi(t)>0, \qquad \phi(0)=0,\qquad \partial_t\phi=S(\omega(t))-\bar S,$$ where \(\bar S\) is the average scalar curvature, determined by the Kähler class. [S8:5–11]
 
 Chen's smooth long-time existence conjecture asserts that this flow exists for all positive times from arbitrary smooth Kähler initial data; the manuscript cites it as Conjecture 1.1 of He and Zeng [S8:13–15].
 
@@ -32,47 +32,47 @@ The mechanism is one scalar function. Under a radial ansatz, the momentum coordi
 
 ## Graduate summary
 
-The geometric reduction is the momentum formulation of Hwang and Singer, with Abreu's toric scalar-curvature formula inside Guillemin's symplectic-potential framework [S8:109–112]. The reduction proposition turns the Calabi flow into a scalar equation for `H` [S9:34–45]:
+The geometric reduction is the momentum formulation of Hwang and Singer, with Abreu's toric scalar-curvature formula inside Guillemin's symplectic-potential framework [S8:109–112]. The reduction proposition turns the Calabi flow into a scalar equation for `H` 
 
-> Let \(I\) be an open time interval, and let \(H\in C^\infty(I\times[0,1])\) satisfy \beginequation  b(t,x):=1+v_*(x)H(t,x)>0. \endequation Define \beginequation  v=v_*+v_*^2H=v_*b,\qquad K(H)=w^{-1}(wv_*^2H)'',\qquad \A H=\big[w^{-1}(wv_*^2H)''\big]''. \endequation At each time these data, together with an affine choice in the Legendre
+> Let \(I\) be an open time interval, and let \(H\in C^\infty(I\times[0,1])\) satisfy $$\label{geo:positivity} b(t,x):=1+v_*(x)H(t,x)>0.$$ Define $$\label{geo:momentum} v=v_*+v_*^2H=v_*b,\qquad K(H)=w^{-1}(wv_*^2H)'',\qquad \A H=\big[w^{-1}(wv_*^2H)''\big]''.$$ At each time these data, together with an affine choice in the Legendre [S9:34–45]
 
 The operators lemma is the analytic input: the spatial operator is a bijection between smooth invariant functions on an auxiliary sphere and smooth functions on `[0,1]`, so the endpoint conditions become ordinary smooth invariance, and the flat model is the constant-coefficient operator `P0 = (D^2+9D+10)^2` acting on `L^2(R)` [S9:215–232].
 
-The finite-time obstruction lemma is the geometric conclusion [S9:406–424]:
+The finite-time obstruction lemma is the geometric conclusion 
 
-> Let \(G\in C^\infty[0,\infty)\) satisfy \(G(0)=1\) and \(G'(0)\ne0\), and define \(F\) by  .  Suppose that for some \(T>0\) and \(\delta>0\) there is a smooth invariant solution \(H=F+V\) of   on \((-T,0)\times\Sigma\) such that \(1+v_*H>0\) and \beginequation  V(t,0)=O(\rho^{-1+\delta})\qquad(t\uparrow0). \endequation Then a smooth \(U(10)\)-invariant metric \(\omega_0\in[\omega_*]\) has maximal smooth Calabi-flow existence interval \([0,T_*)\), where \(T_*=T/2<\infty\).  At the fixed affine origin \(p\), the scalar curvature of this flow satisfies \beginequation  S(\tau,p)=a(T_*-\tau)^{-1/2} +O\big(1+(T_*-\tau)^{(-1+\delta)/2}\big),\qquad a=-110G'(0)\ne0. \endequation In particular \(S(\tau,p)\sim a(T_*-\tau)^{-1/2}\), and \(a>0\) when \(G'(0)<0\).
+> Let \(G\in C^\infty[0,\infty)\) satisfy \(G(0)=1\) and \(G'(0)\ne0\), and define \(F\) by  .  Suppose that for some \(T>0\) and \(\delta>0\) there is a smooth invariant solution \(H=F+V\) of   on \((-T,0)\times\Sigma\) such that \(1+v_*H>0\) and $$\label{geo:correction-bound} V(t,0)=O(\rho^{-1+\delta})\qquad(t\uparrow0).$$ Then a smooth \(U(10)\)-invariant metric \(\omega_0\in[\omega_*]\) has maximal smooth Calabi-flow existence interval \([0,T_*)\), where \(T_*=T/2<\infty\).  At the fixed affine origin \(p\), the scalar curvature of this flow satisfies $$\label{geo:curvature-rate} S(\tau,p)=a(T_*-\tau)^{-1/2} +O\big(1+(T_*-\tau)^{(-1+\delta)/2}\big),\qquad a=-110G'(0)\ne0.$$ In particular \(S(\tau,p)\sim a(T_*-\tau)^{-1/2}\), and \(a>0\) when \(G'(0)<0\). [S9:406–424]
 
 The profile theorem builds `G` [S10:15–30]:
 
-> There exist a constant $c>0$ and a function $G\in C^\infty([0,\infty))$ such that \beginequation  Q(y\partial_y)(G-1)=\frac{y^2}2\left(\frac1G-\frac1c\right), \qquad Q(D)=(D-1)(D+9)(D+10). \endequation The function $G$ is bounded above and bounded away from zero, satisfies $G(0)=1$ and $G'(0)<0$, and is analytic near zero.  There are real coefficients $g_j$, $j\ge1$, such that, for every $J,\ell\ge0$, \beginequation  \frac{\dd^\ell}{\dd y^\ell} \left(G(y)-c-\sum_{j=1}^Jg_jy^{-2j}\right) =O\bigl(y^{-2(J+1)-\ell}\bigr)\qquad(y\longrightarrow\infty). \endequation
+> There exist a constant $c>0$ and a function $G\in C^\infty([0,\infty))$ such that $$\label{prof:profile-equation} Q(y\partial_y)(G-1)=\frac{y^2}{2}\left(\frac1G-\frac1c\right), \qquad Q(D)=(D-1)(D+9)(D+10).$$ The function $G$ is bounded above and bounded away from zero, satisfies $G(0)=1$ and $G'(0)<0$, and is analytic near zero.  There are real coefficients $g_j$, $j\ge1$, such that, for every $J,\ell\ge0$, $$\label{prof:expansion} \frac{\dd^\ell}{\dd y^\ell} \left(G(y)-c-\sum_{j=1}^{J}g_jy^{-2j}\right) =O\bigl(y^{-2(J+1)-\ell}\bigr)\qquad(y\longrightarrow\infty).$$ [S10:15–28]
 
-The profile also yields the flat solution directly [S10:32–41]:
+The profile also yields the flat solution directly 
 
-> Set $h(y)=(G(y)-1)/y$, with its smooth value at zero.  For $t<0$, the function \beginequation  F(t,x)=\rho^{-1}h(x/\rho),\qquad \rho=\sqrt{-t}, \endequation solves \[ F_t+(1+xF)^2\widehat{\A}F=0, \qquad \widehat{\A}=(x\partial_x^2+12\partial_x)^2. \]
+> Set $h(y)=(G(y)-1)/y$, with its smooth value at zero.  For $t<0$, the function $$\label{prof:flat-shrinker} F(t,x)=\rho^{-1}h(x/\rho),\qquad \rho=\sqrt{-t},$$ solves \[ F_t+(1+xF)^2\widehat{\A}F=0, \qquad \widehat{\A}=(x\partial_x^2+12\partial_x)^2. \] [S10:32–41]
 
 The profile is fixed by three numbers: `k_0 = 1/2`, `c_0 = 110/109`, `z_0 = (k_0, c_0)`, and the origin lemma gives a unique analytic germ `p(s)` with `p(0) = 0`, `p'(0) = k_0`, `c(0) = c_0`, and `p''(0) = c_0/2` [S10:92–122]. The certificate certifies that this germ extends to `s ≤ 56` and lands close to the target parameters.
 
 The parabolic layer supplies the norms. Weighted Hölder spaces `X` and `Y` are built from a weight `p`, a parabolic exponent `α`, and the four spatial derivatives, with `|∂_t u| ≤ C [u]_{α;Q}` giving the full parabolic seminorm [S11:54–70]. The Schauder lemma upgrades a supremum bound to the full spatially weighted parabolic Hölder bound using a scale-invariant `L^2` bound integrable up to the singular time [S11:176–190], the `L^2` lemma is that integrable bound [S11:350–364], and the short-time lemma solves the linearized equation forward from a smooth source with the weight `p = −2 + 2δ` [S11:411–425].
 
-The ancient flat right inverse is the core analytic object [S12:24–35]:
+The ancient flat right inverse is the core analytic object 
 
-> There is a number $\delta\in(0,1)$ such that, for every fixed $\alpha\in(0,1)$, the operator   has a bounded real linear right inverse \[ \widehat D:Y\longrightarrow X,\qquad \widehat{\Pcal}\widehat D f=f,\qquad \|\widehat D f\|_X\le C\|f\|_Y, \qquad p_0=-2+2\delta. \] Here $Y$ has weight $p_0-4$ and parabolic exponent $\alpha$, and $X$ has weight $p_0$ and includes the parabolic $\alpha$ norms of all spatial derivatives through order four and of the first time
+> There is a number $\delta\in(0,1)$ such that, for every fixed $\alpha\in(0,1)$, the operator   has a bounded real linear right inverse \[ \widehat D:Y\longrightarrow X,\qquad \widehat{\Pcal}\widehat D f=f,\qquad \|\widehat D f\|_X\le C\|f\|_Y, \qquad p_0=-2+2\delta. \] Here $Y$ has weight $p_0-4$ and parabolic exponent $\alpha$, and $X$ has weight $p_0$ and includes the parabolic $\alpha$ norms of all spatial derivatives through order four and of the first time [S12:24–35]
 
-The compact realization theorem glues the ancient inverse to a short-time forward solution [S13:22–43]:
+The compact realization theorem glues the ancient inverse to a short-time forward solution 
 
-> Let $G$ be the profile of Theorem  , put \[ h(y)=\frac{G(y)-1}y,\qquad F(t,x)=\rho^{-1}h(x/\rho), \] and fix $0<\alpha<\alpha'<1$.  Choose $\delta\in(0,1)$ and the ancient right inverse supplied by Theorem  .  For every sufficiently small $\eps>0$, there are $T>0$ and a real invariant function $V\in X_\alpha$ on $\Sigma\times[-T,0)$ such that $\norm{V}_{X'_\alpha}\le\eps$ and $H=F+V$ satisfies \beginequation  H_t+(1+v_*H)^2\A H=0,\qquad v_*=x(1-x). \endequation The function $H$ is smooth on $\Sigma\times(-T,0)$, and there are constants $0<c_1<c_2<\infty$, independent of $t$, such that \beginequation  c_1\le 1+v_*H\le c_2. \endequation In particular, $H(t,\cdot)$ is smooth as a function of $x\in[0,1]$, and \beginequation  V(t,0)=O(\rho^{-1+\delta})\qquad(t\uparrow0). \endequation
+> Let $G$ be the profile of Theorem  , put \[ h(y)=\frac{G(y)-1}y,\qquad F(t,x)=\rho^{-1}h(x/\rho), \] and fix $0<\alpha<\alpha'<1$.  Choose $\delta\in(0,1)$ and the ancient right inverse supplied by Theorem  .  For every sufficiently small $\eps>0$, there are $T>0$ and a real invariant function $V\in X_\alpha$ on $\Sigma\times[-T,0)$ such that $\norm{V}_{X'_\alpha}\le\eps$ and $H=F+V$ satisfies $$\label{glue:equation} H_t+(1+v_*H)^2\A H=0,\qquad v_*=x(1-x).$$ The function $H$ is smooth on $\Sigma\times(-T,0)$, and there are constants $0<c_1<c_2<\infty$, independent of $t$, such that $$\label{glue:positive} c_1\le 1+v_*H\le c_2.$$ In particular, $H(t,\cdot)$ is smooth as a function of $x\in[0,1]$, and $$\label{glue:center} V(t,0)=O(\rho^{-1+\delta})\qquad(t\uparrow0).$$ [S13:22–43]
 
 The nonlinear step is where the norm choice matters: the linearized operator is `P = P0 + E`, `E` is lower order with `E u = O(ρ^{-2} u)`, and the residual becomes small after applying the inverse in a norm controlling all four spatial derivatives and their temporal Hölder seminorms, with the time derivative omitted [S13:523–545]. The product corollary is proved by the identity `S(Ω(t)) = S(ω(t)) ∘ π_X + S(η)` and the fact that the product metric is a solution exactly when each factor is [S13:641–660].
 
 The appendix is the finite-arithmetic certificate. The shooting proposition bounds the profile parameters [S14:12–25]:
 
-> For every parameter \(z_*\in[-R,R]^2\), where \(R=5\cdot10^{-10}\), let \((k,d)\) be given by  , and let \(p\) be the origin solution of   supplied by Lemma  . This solution extends to \(0\le s\le S_0=56\) and satisfies \[ 1+p(s)>0. \] For the coordinates of its jet relative to \(p_{\rm a}\), defined in  , one has \beginequation  |q|\le .25R,\qquad \big\|(\Re\xi,\Im\xi)-z_*\big\|_\infty\le .13R. \endequation
+> For every parameter \(z_*\in[-R,R]^2\), where \(R=5\cdot10^{-10}\), let \((k,d)\) be given by  , and let \(p\) be the origin solution of   supplied by Lemma  . This solution extends to \(0\le s\le S_0=56\) and satisfies \[ 1+p(s)>0. \] For the coordinates of its jet relative to \(p_{\rm a}\), defined in  , one has $$\label{cert:conclusion} |q|\le .25R,\qquad \big\|(\Re\xi,\Im\xi)-z_*\big\|_\infty\le .13R.$$ [S14:12–24]
 
 The method is interval arithmetic: the vector field is decomposed into a linear part `L` and a polynomial part `N`; `L` is applied by exact rational arithmetic, `N` by integer interval arithmetic, and the enclosure uses the scalar majorant `exp(Lt)`. The certificate is a finite computation over integer intervals, and the analytic interpretation is proved in the appendix [S14:27–55].
 
-The provenance statement is explicit [S14:671–684]:
+The provenance statement is explicit 
 
-> The complete source printed in Appendix   is \texttt{verification/certificate.py}, comprising \(6594\) UTF-8 bytes. Its SHA-256 digest is \begincenter\small\ttfamily 263389fd7217d84d0e5b66869797fc9f7998\\ 309d524a95f7ad7d3d0f538ea742 \endcenter where the line break is for typesetting only. It uses no imported libraries, floating-point operations, external data, or platform-dependent numerical routines.  From the paper directory, the verification command is \beginquote\ttfamily python3 verification/certificate.py \endquote
+> The complete source printed in Appendix   is \texttt{verification/certificate.py}, comprising \(6594\) UTF-8 bytes. Its SHA-256 digest is \begincenter\small\ttfamily 263389fd7217d84d0e5b66869797fc9f7998\\ 309d524a95f7ad7d3d0f538ea742 \endcenter where the line break is for typesetting only. It uses no imported libraries, floating-point operations, external data, or platform-dependent numerical routines.  From the paper directory, the verification command is \beginquote\ttfamily python3 verification/certificate.py \endquote [S14:671–684]
 
 ## History of the conjecture
 

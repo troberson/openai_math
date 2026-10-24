@@ -6,16 +6,16 @@
 
 ## Original CONTENTS.md summary
 
-[S1:252] carries the family entry:
+ carries the family entry:
 
-> Proves Petty's projection-volume conjecture in the remaining dimensions $n\ge4$: ellipsoids uniquely minimize projection-body volume at fixed body volume. Also establishes the full Lutwak–Petty projection inequalities. In contrast, products of simplices exceed Brannen's proposed simplex maximum for normalized projection-body volume by an exponential factor in every sufficiently large dimension.
+> Proves Petty's projection-volume conjecture in the remaining dimensions $n\ge4$: ellipsoids uniquely minimize projection-body volume at fixed body volume. Also establishes the full Lutwak–Petty projection inequalities. In contrast, products of simplices exceed Brannen's proposed simplex maximum for normalized projection-body volume by an exponential factor in every sufficiently large dimension. [S1:252]
 
-The entry links the two manuscripts as "Petty’s projection-volume conjecture"
-and "Product counterexample to simplex maximum" [S1:252].
+The entry links the two manuscripts as "Petty’s projection-volume conjecture [S1:252]"
+and "Product counterexample to simplex maximum [S1:252]" .
 
-The first manuscript's title is "Petty’s projection-volume conjecture in dimensions at least four" [S2:1], dated [S2:5].
+The first manuscript's title is "Petty’s projection-volume conjecture in dimensions at least four [S2:1]" , dated [S2:5].
 
-The second manuscript's title is "A product counterexample to the simplex maximum for projection-body volume" [S12:1], dated [S12:5].
+The second manuscript's title is "A product counterexample to the simplex maximum for projection-body volume [S12:1]" , dated [S12:5].
 
 ## Undergraduate summary
 
@@ -80,7 +80,7 @@ ellipsoidal norm ball and a body homothetic to it."
 The consequences section is [S11:1].
 
 The second manuscript's mechanism is a product identity. [S13:107–107] names
-it: "The useful mechanism is a product test: for full-dimensional polytopes"
+it: "The useful mechanism is a product test: for full-dimensional polytopes [S13:107]"
 — the display gives the projection-body volume of a product as a product of
 lower-dimensional volumes. [S13:121–123] states the reach of the identity:
 "Iterating our product identity gives an exponential excess over the simplex

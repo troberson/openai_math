@@ -6,38 +6,37 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb [S1:1331]: "**051. Kobayashi's canonical-ampleness conjecture.** Every compact connected Kähler manifold of positive complex dimension with no nonconstant entire curve has ample canonical bundle and is therefore projective. This proves Kobayashi's canonical-ampleness conjecture in the smooth compact Kähler setting." The manuscript title is
-"Canonical ampleness of compact hyperbolic Kähler manifolds" [S3:1], and its abstract [S4:46–49] reads: "We prove that every compact connected Kähler manifold of positive
+The release's blurb "**051. Kobayashi's canonical-ampleness conjecture.** Every compact connected Kähler manifold of positive complex dimension with no nonconstant entire curve has ample canonical bundle and is therefore projective. This proves Kobayashi's canonical-ampleness conjecture in the smooth compact Kähler setting. [S1:1331]" The manuscript title is
+"Canonical ampleness of compact hyperbolic Kähler manifolds [S3:1]" , and its abstract reads: "We prove that every compact connected Kähler manifold of positive
 complex dimension containing no nonconstant entire curve has ample
 canonical bundle and is projective. This resolves positively Kobayashi's
-canonical-ampleness conjecture in the smooth compact Kähler category."
+canonical-ampleness conjecture in the smooth compact Kähler category. [S4:46–49]"
 
 ## Undergraduate summary
 
 A complex manifold is Brody hyperbolic if every holomorphic map
 $\C\to X$ is constant; on a compact manifold this is equivalent to
-Kobayashi hyperbolicity [S5:3–8]. "A complex manifold is _Brody hyperbolic_ if every holomorphic map
+Kobayashi hyperbolicity . "A complex manifold is _Brody hyperbolic_ if every holomorphic map
 $\mathbb C\to X$ is constant. On a compact complex manifold, Brody's theorem
 identifies this condition with Kobayashi hyperbolicity, the
 nondegeneracy of the intrinsic pseudodistance defined by holomorphic
 disc chains  . We use ``hyperbolic'' in
-this sense throughout." The canonical bundle
+this sense throughout. [S5:3–8]" The canonical bundle
 $K_X$ is the line bundle of holomorphic $n$-forms. Kobayashi's
 conjecture predicts that the absence of nonconstant entire curves
-forces $K_X$ to be ample [S5:10–19]. The theorem [S5:21–26]:
+forces $K_X$ to be ample [S5:10–19]. The theorem 
 
-> **theorem**
+> **Theorem 1.1**
 Let $X$ be a compact connected Kähler manifold of positive complex
 dimension. If every holomorphic map $\mathbb C\to X$ is constant, then $K_X$ is
 ample. In particular, a positive tensor power of $K_X$ defines a
-holomorphic embedding of $X$ into a complex projective space.
-\endtheorem
+holomorphic embedding of $X$ into a complex projective space. [S5:21–26]
 
 ## Graduate summary
 
 **The analytic core.** The proof begins with compact hyperbolicity,
 which bounds the squared $k$-norm of the central derivative of every
-holomorphic disc by a constant $D$ [S5:92–112]:
+holomorphic disc by a constant $D$ 
 
 > Put $n=\dim_{\mathbb C}X$, let $\mathbb D=\{|z|<1\}$, and fix a Kähler metric $k$.
 A disc $f:\mathbb D\to X$ has finite area if the integral of
@@ -59,13 +58,13 @@ over finite-area discs with a fixed center, where $h$ is a Kähler
 metric and $\delta>0$. The negative area term gives compactness. Comparing
 a maximizing disc with its dilations then gives a linear boundary-area
 tail bound. This improves its regularity to continuity on the closed
-disc and $W^{1,p}$ for some $p>2$.
+disc and $W^{1,p}$ for some $p>2$. [S5:92–112]
 
 A maximizing disc is obtained by a penalized variational problem.
 Boundary Sobolev regularity follows from maximality; a weighted
 Hardy-space construction gives a boundary-unitary holomorphic frame
 and center-fixed variations. The trace of the complex Hessian of the
-area functional satisfies the identity [S5:121–128]:
+area functional satisfies the identity 
 
 > the complex second derivatives in these $n$ parameter directions,
 evaluated at $t=0$. The trace of the
@@ -74,25 +73,24 @@ complex Hessian of the area functional is then
  \mathcal L A_h(F_t)=n-A_{R_h}(f),
  \qquad R_h=-i\partial\bar\partial\log\det h,
  \qquad dd^c=i\partial\bar\partial.
-\]
+\] [S5:121–128]
 
 **Two parameter choices.** $h=k$, $q=R_k$, $\delta\to 0$ gives a
 uniform upper bound for the Poisson integral $P_{R_k}$, yielding
 bounded canonical plurisubharmonic weights and nefness. The choice
 $q=-h$, $\delta=1$ with $R_h\ge-h$ gives the pointwise volume
-estimate [S5:147–157]:
+estimate 
 
-> **equation**
-h^n\ge e^{-D}\left(\fracn{2n+D}\right)^n k^n
- \quadwhenever R_h\ge-h.
-\endequation
+> $$\label{eq:intro-volume}
+ h^n\ge e^{-D}\left(\frac{n}{2n+D}\right)^n k^n
+ \quad\text{whenever }R_h\ge-h.$$
 This estimate is uniform over the indicated metrics, even though the
-auxiliary maximizing discs and their regularity constants need not be.
+auxiliary maximizing discs and their regularity constants need not be. [S5:147–157]
 
 **From volume to ampleness.** The negative-sign Aubin–Yau equation
 produces metrics $h_t$ in the classes $2\pi c_1(K_X)+t[k]$; the
 uniform volume estimate gives a positive lower bound for their
-volumes, so $\int_X c_1(K_X)^n>0$ [S5:159–177]:
+volumes, so $\int_X c_1(K_X)^n>0$ 
 
 > Following the Monge–Amp\`ere and volume strategy used by Wu and Yau
  , the negative-sign Aubin–Yau equation produces Kähler metrics $h_t$, for $t>0$,
@@ -112,7 +110,7 @@ upgrade bigness to ampleness. The final implication is recorded in
 \cite[Lemma 2.1]DiverioTrapani2019; see also
 \cite[Lemma 5.1]Diverio2020. All the new estimates are proved
 below; the standard existence, envelope, and positivity theorems are
-stated at the points where they are used.
+stated at the points where they are used. [S5:159–177]
 
 Holomorphic Morse inequalities make the nef canonical bundle big;
 the sections make $X$ Moishezon; a compact Kähler Moishezon manifold
@@ -125,7 +123,7 @@ The metric-curvature line: Wu–Yau proved canonical ampleness from
 negative holomorphic sectional curvature on projective manifolds;
 Tosatti–Yang extended to compact Kähler; Diverio–Trapani to
 quasi-negative curvature; Broder–Stanfield allow Hermitian
-pluriclosed metrics [S5:33–51]. "Theorem   gives a positive resolution in the smooth
+pluriclosed metrics . "Theorem   gives a positive resolution in the smooth
 compact Kähler category. A major preceding advance is the theorem
 of Wu and Yau: negative holomorphic sectional curvature of a Kähler metric forces
 canonical ampleness on a smooth projective manifold
@@ -143,7 +141,7 @@ Kähler hypothesis \cite[Theorem 1.1]BroderStanfield2026.
 These metric hypotheses give curvature
 inequalities unavailable from the absence of entire curves alone.
 The present proof begins instead with the derivative bounds supplied
-by compact hyperbolicity."
+by compact hyperbolicity. [S5:33–51]"
 
 Gromov's Kähler hyperbolicity gives a different sufficient
 hypothesis; Chen–Yang proved canonical ampleness under it, distinct

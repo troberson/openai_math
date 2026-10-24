@@ -11,10 +11,10 @@ the family's claim: it proves Hindman's finite sums and products
 conjecture, that every finite coloring of the positive integers
 contains, for any prescribed finite size, a set whose nonempty subset
 sums and nonempty subset products all share one color. The
-manuscript's abstract [S3:67–70]: "We prove Hindman's finite sums and products conjecture: for every finite
+manuscript's abstract "We prove Hindman's finite sums and products conjecture: for every finite
 coloring of the positive integers and every positive integer $k$, there is a
 $k$-element set whose nonempty subset sums and nonempty subset products all
-have the same color."
+have the same color. [S3:67–70]"
 
 ## Undergraduate summary
 
@@ -24,9 +24,9 @@ nonempty subset products [S4:3–11]. The conjecture asks for a set whose
 combined family $\FS(A)\cup\FP(A)$ is monochromatic. The manuscript
 proves this with a separation: the elements can be chosen so that no
 prefix sum is divisible by a later element, which eliminates collisions
-between expressions except the shared singletons [S4:13–31]:
+between expressions except the shared singletons 
 
-> **theorem**
+> **Theorem 1.1**
 Let $r,m\ge1$ be integers, and fix real numbers $R\ge2$ and $D\ge1$.
 For every coloring $\chi:\mathbb N\to[r]$,
 there are distinct positive integers $a_1<\cdots<a_m$ and a color
@@ -39,26 +39,23 @@ $c\in[r]$ such that
 Equivalently, $\FS(A)\cup\FP(A)$ is monochromatic for a set
 $A\subset\mathbb N$ of cardinality $m$.
 The elements can additionally be chosen to satisfy
-\beginequation 
+$$\label{eq:separated-elements}
  a_1>R,\qquad
  a_d>R\left(\sum_{k<d}a_k+\prod_{k<d}a_k\right)^D
- \quad(2\le d\le m).
-\endequation
-\endtheorem
+ \quad(2\le d\le m).$$ [S4:13–31]
 
 The corollary adds that the $2^m-1$ sums and the $2^m-1$ products are
 all distinct apart from the $m$ elements, so the union has
-$2(2^m-1)-m$ distinct values [S4:39–47]:
+$2(2^m-1)-m$ distinct values 
 
-> **corollary**
+> **Theorem 1.2**
 For every finite coloring of $\mathbb N$ and every $m\ge1$, there is an
 $m$-element set $A\subset\mathbb N$ for which $\FS(A)\cup\FP(A)$ is
 monochromatic and
 \[
  |\FS(A)|=|\FP(A)|=2^m-1,\qquad \FS(A)\cap\FP(A)=A.
 \]
-In particular, the union has $2(2^m-1)-m$ distinct elements.
-\endcorollary
+In particular, the union has $2(2^m-1)-m$ distinct elements. [S4:39–47]
 
 ## Graduate summary
 

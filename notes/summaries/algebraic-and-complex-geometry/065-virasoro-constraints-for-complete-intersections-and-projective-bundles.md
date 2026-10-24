@@ -6,15 +6,15 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb [S1:1629]: "**065. Virasoro constraints for complete intersections and projective-bundle towers.** Proves the full ordinary unreduced descendant Virasoro conjecture for smooth complete intersections in complex projective space, in every genus and curve class with arbitrary cohomology insertions. The constraints also pass from any smooth projective complex base satisfying them to the projectivization of every algebraic vector bundle of rank at least two, and hence to projective-bundle towers." The family ships two
+The release's blurb "**065. Virasoro constraints for complete intersections and projective-bundle towers.** Proves the full ordinary unreduced descendant Virasoro conjecture for smooth complete intersections in complex projective space, in every genus and curve class with arbitrary cohomology insertions. The constraints also pass from any smooth projective complex base satisfying them to the projectivization of every algebraic vector bundle of rank at least two, and hence to projective-bundle towers. [S1:1629]" The family ships two
 manuscripts, one proving the constraints for complete
 intersections [S3:93–97] and one proving they pass through
 projectivization [S11:9–15]. The complete-intersections abstract
-[S3:93–97] reads: "We prove the Virasoro conjecture for the ordinary descendant
+ reads: "We prove the Virasoro conjecture for the ordinary descendant
 Gromov–Witten theory of smooth complete intersections in projective space,
 in every genus and curve class and with arbitrary cohomology insertions.
 This includes primitive and odd cohomology classes, with no semisimplicity
-assumption."
+assumption. [S3:93–97]"
 
 ## Undergraduate summary
 
@@ -23,30 +23,27 @@ invariants of a smooth projective variety into a system of
 differential equations for a single generating function. For a
 Fano target the conjecture is expected to hold in every genus;
 the complete-intersections manuscript proves it in full. The
-theorem [S4:15–17]:
+theorem 
 
-> **theorem**
-Let \(X\subset\mathbb P^N_\mathbb C\) be a smooth complete intersection. Its ordinary, unreduced total descendant potential satisfies the Virasoro constraints in every genus and curve class, with arbitrary insertions from \(H^*(X;\mathbb C)\).
-\endtheorem
+> **Theorem 1.1**
+Let \(X\subset\mathbb P^N_\mathbb C\) be a smooth complete intersection. Its ordinary, unreduced total descendant potential satisfies the Virasoro constraints in every genus and curve class, with arbitrary insertions from \(H^*(X;\mathbb C)\). [S4:15–17]
 
 That resolves the Virasoro conjecture positively for
 projective-space complete intersections, including primitive and
 odd insertions, with no semisimplicity hypothesis [S4:19].
-"Thus   resolves the Virasoro conjecture positively for projective-space complete intersections. Primitive and odd insertions are included, with no semisimplicity hypothesis."
+"Thus   resolves the Virasoro conjecture positively for projective-space complete intersections. Primitive and odd insertions are included, with no semisimplicity hypothesis. [S4:19]"
 
 The second manuscript proves a structural transfer: the
 constraints pass from a base to the projectivization of any
-algebraic vector bundle of rank at least two [S12:36–45]:
+algebraic vector bundle of rank at least two 
 
-> **theorem**
-Let $B$ be a smooth connected projective variety over $\C$, and
+> Let $B$ be a smooth connected projective variety over $\C$, and
 let $E$ be an algebraic vector bundle of rank $r\geq2$ on $B$.
 Let $X=\mathbb P_B(E)$ parametrize one-dimensional subspaces of
 the fibers of $E$. Then
 \[
                            \V(B)\ \Longrightarrow\ \V(X).
-\]
-\endtheorem
+\] [S12:36–45]
 
 The bundle need not split and satisfies no positivity condition;
 the base may have nonsemisimple quantum cohomology [S12:47–53].
@@ -56,7 +53,7 @@ The base is allowed to have nonsemisimple quantum cohomology
 and arbitrary Hodge types. In particular the assertion applies
 successively to towers of projective bundles once the constraints
 hold on the initial base. The conclusion concerns the ordinary
-theory of each total space."
+theory of each total space. [S12:47–53]"
 
 ## Graduate summary
 
@@ -64,14 +61,14 @@ theory of each total space."
 factors one defining equation and resolves the resulting family,
 giving a degeneration $X\rightsquigarrow U\cup_D\widetilde M$
 where $U$ and $M$ have smaller defining degree and the seam $D$
-and blowup center $S$ have smaller dimension [S4:32–38]. "The reduction has two stages. Factoring one defining equation and resolving
+and blowup center $S$ have smaller dimension . "The reduction has two stages. Factoring one defining equation and resolving
 the resulting family gives a degeneration
 \[
  X\rightsquigarrow U\cup_D\widetilde M,
  \qquad \widetilde M=\Bl_S M.
 \]
 Here $U$ and $M$ are complete intersections of smaller defining degree,
-while the seam $D$ and blowup center $S$ have smaller dimension. We first prove the constraints for $\widetilde M$ from those for $M$ and projective-bundle towers over $S$."
+while the seam $D$ and blowup center $S$ have smaller dimension. We first prove the constraints for $\widetilde M$ from those for $M$ and projective-bundle towers over $S$. [S4:32–38]"
 The constraints are then proved for $\widetilde M$ from those
 for $M$ and the projective-bundle towers over $S$, and for $X$
 from those for $U$, $\widetilde M$, and a ruled bundle over $D$.

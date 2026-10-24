@@ -6,16 +6,16 @@
 
 ## Original CONTENTS.md summary
 
-[S1:746] carries the family entry:
+ carries the family entry:
 
-> Resolves the complete Crouzeix conjecture: for every bounded operator $A$ on a complex Hilbert space and every finite matrix-valued polynomial $P$, one has $\lVert P[A]\rVert\le2\sup_{z\in W(A)}\lVert P(z)\rVert$, where $W(A)$ is the numerical range. The constant $2$ is sharp, independent of the matrix size, and valid in infinite dimensions.
+> Resolves the complete Crouzeix conjecture: for every bounded operator $A$ on a complex Hilbert space and every finite matrix-valued polynomial $P$, one has $\lVert P[A]\rVert\le2\sup_{z\in W(A)}\lVert P(z)\rVert$, where $W(A)$ is the numerical range. The constant $2$ is sharp, independent of the matrix size, and valid in infinite dimensions. [S1:746]
 
-The entry links the two manuscripts as "Direct proof" and "Structural proof" [S1:746].
+The entry links the two manuscripts as "Direct proof [S1:746]" and "Structural proof [S1:746]" .
 
 The first manuscript's title is "A direct proof of the complete Crouzeix
 inequality" [S2:1].
 
-The second manuscript's title is "The complete Crouzeix theorem" [S6:1].
+The second manuscript's title is "The complete Crouzeix theorem [S6:1]" .
 
 ## Undergraduate summary
 
@@ -58,12 +58,12 @@ depend on the matrix and the enclosing domain, not on the coefficient size or
 the function being evaluated.
 
 The metric problem has an attained optimum. [S7:120] states that the
-minimization "and has an attained minimum $1\le\kappa^2\le4$." The
+minimization "and has an attained minimum $1\le\kappa^2\le4$. [S7:120]" The
 minimizing inner product gives a similarity with condition number at most two
 that makes the conformal disk image of the matrix a contraction.
 
 The representation half supplies one density for every test. [S7:146] states
-it: "The same $S$, $\Lambda$, and $\kappa$ work for all $m$ and $v$." The
+it: "The same $S$, $\Lambda$, and $\kappa$ work for all $m$ and $v$. [S7:146]" The
 density is a continuous positive semidefinite function on the unit circle
 integrating to the identity.
 

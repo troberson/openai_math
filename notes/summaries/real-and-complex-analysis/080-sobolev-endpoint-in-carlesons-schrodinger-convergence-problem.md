@@ -14,12 +14,12 @@ $e^{it\Delta}f$ to $f$ as $t\downarrow0$ for every
 $f\in H^{n/[2(n+1)]}(\mathbb R^n)$, including the planar endpoint
 $H^{1/3}$. The family ships two manuscripts, a planar companion and a
 higher-dimensional one, which share the Gaussian-limit-first
-representative. The planar manuscript's abstract [S3:39–44]: "We resolve the planar Sobolev endpoint of Carleson's convergence problem:
+representative. The planar manuscript's abstract "We resolve the planar Sobolev endpoint of Carleson's convergence problem:
 for initial data in $H^{1/3}(\mathbb R^2)$, the Schrödinger evolution converges
 almost everywhere to the initial data as $t\downarrow0$. The evolution is
 defined by taking the Gaussian regularization limit first; on one full-measure
 spatial set, this limit exists for every $0<t<1$, and the resulting evolution
-is continuous at $t=0$."
+is continuous at $t=0$. [S3:39–44]"
 
 ## Undergraduate summary
 
@@ -37,7 +37,7 @@ $U_af$ for $a>0$, passes to the limit $a\downarrow0$ first on a
 full-measure set $E_f$, and shows the resulting evolution is
 continuous at $t=0$:
 
-> **theorem**
+> **Theorem 1.1**
 For every $f\in H^{1/3}(\mathbb R^2)$ there is a set $E_f\subset\mathbb R^2$ of full
 Lebesgue measure such that, for each $x\in E_f$, the finite limit
 \[
@@ -48,28 +48,24 @@ exists for every real $0<t<1$, and
  \lim_{t\downarrow0}u_f(x,t)=f^*(x).
 \]
 In fact $u_f(x,\cdot)$ extends continuously to $[0,1)$ with value $f^*(x)$
-at zero, and the Gaussian limit is uniform over $0<t<1$.
-\endtheorem
+at zero, and the Gaussian limit is uniform over $0<t<1$. [S4:23–35]
 
 The higher-dimensional companion [S6:34–49] makes the same
 Gaussian-limit-first assertion for each fixed $n\ge3$:
 
-> **theorem**
-For every fixed integer $n\geq3$ and every complex-valued
+> For every fixed integer $n\geq3$ and every complex-valued
 $f\in H^{s_n}(\R^n)$, there is a full-measure set $E_f$ of Lebesgue
 points of $f$ and a function $v(x,t)$, $x\in E_f$, $0\leq t<1$, such
 that $v(x,\cdot)$ is continuous, $v(x,0)=f^*(x)$, and
-\beginequation 
+$$\label{m:eq-uniform-Gaussian}
  \lim_{a\downarrow0}\sup_{0<t<1}|U_af(x,t)-v(x,t)|=0
- \qquad(x\in E_f).
-\endequation
+ \qquad(x\in E_f).$$
 In particular the finite Gaussian limit
 \[
  u_f(x,t)=\lim_{a\downarrow0}U_af(x,t)
 \]
 exists for every real $0<t<1$ on this one set, and
-$\lim_{t\downarrow0}u_f(x,t)=f^*(x)$.
-\endtheorem
+$\lim_{t\downarrow0}u_f(x,t)=f^*(x)$. [S6:34–49]
 
 Both emphasize that the exceptional set is spatial, fixed once for all
 times $0<t<1$ — the representative is not built by intersecting

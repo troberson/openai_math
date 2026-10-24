@@ -6,11 +6,11 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb [S1:5403]:
+The release's blurb 
 
-> We prove that the complete double-dimer loop ensemble for the Temperleyan square lattice in the upper half-plane converges to nested CLE4. The convergence holds along the full mesh limit and matches every macroscopic loop as an unparametrized curve. This resolves the half-plane Temperleyan form of the double-dimer CLE4 scaling-limit conjecture.
+> We prove that the complete double-dimer loop ensemble for the Temperleyan square lattice in the upper half-plane converges to nested CLE4. The convergence holds along the full mesh limit and matches every macroscopic loop as an unparametrized curve. This resolves the half-plane Temperleyan form of the double-dimer CLE4 scaling-limit conjecture. [S1:5403]
 
-The manuscript's own abstract [S5:42–45] states the same result in two sentences: "We prove that the complete double-dimer loop ensemble for the Temperleyan square lattice in the upper half-plane converges to nested" [S5:42–43], and "The convergence holds along the full mesh limit and matches every macroscopic loop as an unparametrized curve." [S5:44–45] The overview's paraphrase [S2:535] says the ensemble is "the complete loop ensemble formed by two independent dimer coverings of the Temperleyan square lattice converges to nested" and that "Convergence matches every macroscopic loop as an unparametrized curve, upgrading convergence of loop observables to convergence of the loops themselves."
+The manuscript's own abstract [S5:42–45] states the same result in two sentences: "We prove that the complete double-dimer loop ensemble for the Temperleyan square lattice in the upper half-plane converges to nested [S5:42–43]" , and "The convergence holds along the full mesh limit and matches every macroscopic loop as an unparametrized curve. [S5:44–45]" The overview's paraphrase says the ensemble is "the complete loop ensemble formed by two independent dimer coverings of the Temperleyan square lattice converges to nested [S2:535]" and that "Convergence matches every macroscopic loop as an unparametrized curve, upgrading convergence of loop observables to convergence of the loops themselves. [S2:535]"
 
 ## Undergraduate summary
 
@@ -31,7 +31,7 @@ copies inside every loop." [S6:35–36] "This is the target space for the
 theorem." [S6:80]
 
 Convergence here is not convergence of one number. It is convergence of a
-random collection of curves. "Convergence means that such matchings exist"
+random collection of curves. "Convergence means that such matchings exist [S6:59]"
 [S6:58–59] with every loop above a positive diameter cutoff matched by a loop
 in the limit, and the matching must work for every such cutoff at once. The
 manuscript proves this for the full mesh limit: "The convergence holds along
@@ -49,7 +49,7 @@ planar picture, and it says so in a topology that compares collections.
 
 The model. The upper half-plane is tiled by a square lattice whose boundary is
 covered by half-edge dimers; the manuscript calls this the Temperleyan
-boundary. "Take two independent matchings with this law." [S6:29] The overlay
+boundary. "Take two independent matchings with this law. [S6:29]" The overlay
 of the two matchings is the double-dimer loop ensemble, and the law is the
 uniform measure over pairs of matchings.
 
@@ -63,12 +63,12 @@ then an exterior power of a one-particle matrix. "Changing particle number by a
 large amount gives a quadratic spectral penalty and hence traversal
 tightness." [S6:168–169]
 
-Two estimates carry the geometric content. The transfer section opens by naming the first: "Our first geometric estimate bounds the number of times the double-dimer loops can cross a slab of fixed positive width." [S7:4–5] "The first bounds the total number
+Two estimates carry the geometric content. The transfer section opens by naming the first: "Our first geometric estimate bounds the number of times the double-dimer loops can cross a slab of fixed positive width. [S7:4–5]" "The first bounds the total number
 of disjoint traversals of a fixed-width slab, including multiple traversals by
 a single loop." [S6:146–148] "The second controls the signed crossing counts
 of arcs whose endpoints reach prescribed opposite sides of the slab"
 [S6:148–150] "Both estimates come from a transfer matrix counting dimer
-configurations column by column." [S6:157–158] The short-segment section defines the object the estimate counts: "A tested arc is a cycle subarc, in its cycle direction, with one endpoint in each deep region." [S8:38–40] The first is a spectral
+configurations column by column." The short-segment section defines the object the estimate counts: "A tested arc is a cycle subarc, in its cycle direction, with one endpoint in each deep region. [S8:38–40]" The first is a spectral
 estimate; the second is a positivity identity. "This separation of a local
 operator estimate from a planar positivity argument is the main technical
 mechanism." [S6:176–178]
@@ -86,14 +86,14 @@ agree on a fixed compact set with probability arbitrarily close to one.
 Lemma 5.1 identifies the visible puncture signatures with the loops of a
 standard nested CLE4 collection, and Lemma 5.2 shows that no limiting path has
 an empty signature, so each limiting path has exactly the trace of its
-corresponding loop and traverses it with absolute degree one. Every nonconstant limiting entry is one canonical CLE4 loop as a curve, and "loop as a curve, and every canonical loop occurs once." [S10:174] Lemma 5.3 separates the
+corresponding loop and traverses it with absolute degree one. Every nonconstant limiting entry is one canonical CLE4 loop as a curve, and "loop as a curve, and every canonical loop occurs once. [S10:174]" Lemma 5.3 separates the
 topological step from the identification: it restricts convergence from the
 closed-disk collection space to the interior collection space.
 
 The collection topology. Convergence is defined by matching all loops above a
 positive diameter cutoff, so the target space is a space of collections of
 curves, and the metric is chosen so that this matching is what convergence
-means. "It is convenient to use a compatible metric" [S6:63] on collections, so that convergence is defined by matching all loops above a positive diameter cutoff. The interior restriction lemma is what makes compact
+means. "It is convenient to use a compatible metric [S6:63]" on collections, so that convergence is defined by matching all loops above a positive diameter cutoff. The interior restriction lemma is what makes compact
 containment in that space work.
 
 Backtracking. A limiting path can trace a loop more than once. The manuscript
@@ -103,7 +103,7 @@ excludes backtracking along that trace." [S6:193–194]
 ## History of the conjecture
 
 Exact dimer enumeration on the square lattice is the classical starting point.
-"Exact dimer enumeration on the square lattice was developed by Kasteleyn"
+"Exact dimer enumeration on the square lattice was developed by Kasteleyn [S6:102–103]"
 [S6:102–103] and Temperley and Fisher, and the signed transfer-matrix structure
 the manuscript uses was clarified by Gessel and Viennot. Lieb worked the
 transfer-matrix method out for the dimer problem directly.

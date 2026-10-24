@@ -12,12 +12,10 @@ whose universal cover has no integral homology above degree two and
 whose third cohomology vanishes for every local coefficient module, yet
 which has no finite two-dimensional homotopy model — disproving Wall's
 finite $D(2)$ conjecture with an infinite fundamental group. The
-manuscript's abstract [S3:8–13]: "**abstract**
-We give a negative answer to Wall's finite $D(2)$ problem. We construct
+manuscript's abstract "We give a negative answer to Wall's finite $D(2)$ problem. We construct
 a finite connected three-dimensional CW complex satisfying the $D(2)$
 finiteness condition but not homotopy equivalent to any finite CW complex
-of dimension at most two. The example has infinite fundamental group.
-\endabstract"
+of dimension at most two. The example has infinite fundamental group. [S3:8–13]"
 
 ## Undergraduate summary
 
@@ -31,15 +29,13 @@ finite $D(2)$ problem asks whether every such complex is homotopy
 equivalent to a finite two-dimensional complex, with no asphericity
 hypothesis imposed [S4:3–17]:
 
-> **theorem**
-There is a finite connected three-dimensional CW complex $X$ such that
+> There is a finite connected three-dimensional CW complex $X$ such that
 \[
  H_i(\widetilde X;\Z)=0\quad(i>2),\qquad
  H^3(X;M)=0\quadfor every \Z[\pi_1(X)]-module M,
 \]
 but $X$ is not homotopy equivalent to any finite CW complex of
-dimension at most two.
-\endtheorem
+dimension at most two. [S4:19–27]
 
 The answer is negative: the constructed complex satisfies both
 algebraic finiteness conditions and has an infinite fundamental group,

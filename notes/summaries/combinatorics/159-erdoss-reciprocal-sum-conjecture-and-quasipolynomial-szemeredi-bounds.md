@@ -10,13 +10,13 @@ The release's blurb [S1:3784]:
 
 > **159. Erdős's reciprocal-sum conjecture and quasipolynomial Szemerédi bounds.** Proves Erdős's conjecture that every set of positive integers with divergent reciprocal sum contains arithmetic progressions of every finite length. Quantitatively, for each fixed *k* ≥ 3, every subset of $`\{1,\ldots,N\}`$ with no nonconstant *k*-term progression has size at most $`C_kN\exp[-c_k(\log N)^{\varepsilon_k}]`$, with positive constants depending only on *k*. ([Lean](../../../lean/docs/159.md))
 
-The manuscript's own abstract entry in the same table [S1:3793–3797]:
+The manuscript's own abstract entry in the same table 
 
-> We prove Erdős's conjecture that every set of positive integers with divergent reciprocal sum contains arithmetic progressions of every finite length. More quantitatively, for every fixed *k* ≥ 3, we show $`\displaystyle r_k(N)\le C_kN\exp\bigl(-c_k(\log N)^{\varepsilon_k}\bigr)`$ with $`C_k,c_k,\varepsilon_k\gt 0`$, where $`r_k(N)`$ is the largest size of a subset of $`\{1,\ldots,N\}`$ with no nonconstant *k*-term arithmetic progression.
+> We prove Erdős's conjecture that every set of positive integers with divergent reciprocal sum contains arithmetic progressions of every finite length. More quantitatively, for every fixed *k* ≥ 3, we show $`\displaystyle r_k(N)\le C_kN\exp\bigl(-c_k(\log N)^{\varepsilon_k}\bigr)`$ with $`C_k,c_k,\varepsilon_k\gt 0`$, where $`r_k(N)`$ is the largest size of a subset of $`\{1,\ldots,N\}`$ with no nonconstant *k*-term arithmetic progression. [S1:3793–3797]
 
-The same abstract as typeset in the manuscript source [S2:9–11]:
+The same abstract as typeset in the manuscript source 
 
-> We prove Erdős's conjecture that every set of positive integers with divergent reciprocal sum contains arithmetic progressions of every finite length. More quantitatively, for every fixed $k\ge3$, we show
+> We prove Erdős's conjecture that every set of positive integers with divergent reciprocal sum contains arithmetic progressions of every finite length. More quantitatively, for every fixed $k\ge3$, we show [S2:9–11]
 
 ## Undergraduate summary
 
@@ -32,39 +32,39 @@ The saving is the interesting part. It beats every fixed power of log *N*, which
 
 The main theorem (label `ap:main`) is [S4:13–18]:
 
-> For each fixed integer $k\ge3$ there are constants $C_k,c_k,\varepsilon_k>0$ such that, for every $N\ge2$, \beginequation  r_k(N)\le C_kN\exp\bigl(-c_k(\log N)^{\varepsilon_k}\bigr). \endequation
+> For each fixed integer $k\ge3$ there are constants $C_k,c_k,\varepsilon_k>0$ such that, for every $N\ge2$, $$\label{ap:density-bound} r_k(N)\le C_kN\exp\bigl(-c_k(\log N)^{\varepsilon_k}\bigr).$$ [S4:14–18]
 
-The introduction states the sharp edges [S4:28–29]:
+The introduction states the sharp edges 
 
-> The constants may depend on the fixed length $k$; the exponent is not optimized.
+> The constants may depend on the fixed length $k$; the exponent is not optimized. [S4:28–29]
 
-The scheme is a triangular density increment, and the constraint that makes it hard is the budget rule [S5:265–269]:
+The scheme is a triangular density increment, and the constraint that makes it hard is the budget rule 
 
-> At layer $j$, the _warm data_ consist of $p$, forecasts for all dimensions and structural variable counts, gap parameters depending only on these data, and the widths and numerical budgets already chosen at layers strictly above $j$. A warm logarithmic bound is polynomial in these data and does not use any $Q_i$ with $i\le j$.
+> At layer $j$, the _warm data_ consist of $p$, forecasts for all dimensions and structural variable counts, gap parameters depending only on these data, and the widths and numerical budgets already chosen at layers strictly above $j$. A warm logarithmic bound is polynomial in these data and does not use any $Q_i$ with $i\le j$. [S5:265–269]
 
-The dependency figure says the same thing geometrically [S5:305–307]:
+The dependency figure says the same thing geometrically 
 
-> The allowed dependence is triangular. There is no arrow from the current width or its cold outputs back to its relative width loss. The full dependency schedule is proved in Section  .}
+> The allowed dependence is triangular. There is no arrow from the current width or its cold outputs back to its relative width loss. The full dependency schedule is proved in Section  .} [S5:305–307]
 
-The setup section is explicit about why the natural constructions fail [S5:152–155]:
+The setup section is explicit about why the natural constructions fail 
 
-> It remains to construct the increment with these particular dependencies. A bound polynomial in all current width logs would not suffice: repeated substitution could raise the polynomial degree at every round.
+> It remains to construct the increment with these particular dependencies. A bound polynomial in all current width logs would not suffice: repeated substitution could raise the polynomial degree at every round. [S5:152–155]
 
-What replaces them is a patch-existence statement. A patch's rank is its slot count [S5:170]:
+What replaces them is a patch-existence statement. A patch's rank is its slot count 
 
-> Its _rank_ is the number $d$ of integer slots.
+> Its _rank_ is the number $d$ of integer slots. [S5:170]
 
-and the absolute starting rule bounds that count by data that excludes the ambient dimension [S5:198–200]:
+and the absolute starting rule bounds that count by data that excludes the ambient dimension 
 
-> unless the hypotheses are impossible, $f$ admits a degree-$s$ polynomial patch on a slice with positive score at target $(1+\xi)a$. The number of slots is at most $d_0=(2+p)^C$, independent of $n$.
+> unless the hypotheses are impossible, $f$ admits a degree-$s$ polynomial patch on a slice with positive score at target $(1+\xi)a$. The number of slots is at most $d_0=(2+p)^C$, independent of $n$. [S5:198–200]
 
-The absolute rule then feeds a constant old region into the lifting theorem [S4:263–270]:
+The absolute rule then feeds a constant old region into the lifting theorem 
 
-> The comparison and counting arguments first give the absolute rule in a fixed dimension. A relative lifting theorem extends it with only an additive number of new determining coordinates. Applied with the constant old region, this yields the dimension-independent fresh-coordinate bound in Lemma  . This foundational lifting argument supplies the absolute rule; preservation of the old width budgets requires the separate return argument.
+> The comparison and counting arguments first give the absolute rule in a fixed dimension. A relative lifting theorem extends it with only an additive number of new determining coordinates. Applied with the constant old region, this yields the dimension-independent fresh-coordinate bound in Lemma  . This foundational lifting argument supplies the absolute rule; preservation of the old width budgets requires the separate return argument. [S4:263–270]
 
 The forward-mass step advances the density target [S6:169–175]:
 
-> For any sufficiently small fixed $\eta>0$, a prepared certificate at threshold $a$ gives a surviving set of terminal injective paths whose expected terminal input mean, with stopped paths counted as zero, is at least $(1-\eta)a$.
+> For any sufficiently small fixed $\eta>0$, a prepared certificate at threshold $a$ gives a surviving set of terminal injective paths whose expected terminal input mean, with stopped paths counted as zero, is at least $(1-\eta)a$. [S6:169–172]
 
 and it is deliberately stated so that it cannot import a higher-layer budget downwards [S6:180–182]:
 
@@ -72,33 +72,33 @@ and it is deliberately stated so that it cannot import a higher-layer budget dow
 > proposition does not require a lower-layer width in a higher-layer
 > rank budget.
 
-The iteration closes because the targets grow geometrically and a certificate at target 1 is impossible [S8:391–397]:
+The iteration closes because the targets grow geometrically and a certificate at target 1 is impossible 
 
-> If no impossibility occurs, the targets satisfy $a_t\ge(\alpha/2)(1+\eta_k)^t$, and hence $a_T\ge1$. But a certificate at any target $a\ge1$ is impossible, since \[ fB^-\le B^+ \] pointwise.
+> If no impossibility occurs, the targets satisfy $a_t\ge(\alpha/2)(1+\eta_k)^t$, and hence $a_T\ge1$. But a certificate at any target $a\ge1$ is impossible, since \[ fB^-\le B^+ \] pointwise. [S8:391–397]
 
-The appendices carry the analytic interface with degree parameters fixed and dimensions inside the stated budgets [S12:33–37]:
+The appendices carry the analytic interface with degree parameters fixed and dimensions inside the stated budgets 
 
-> Throughout the appendices, degree parameters are fixed, while dimensions are included in the stated logarithmic budgets. The polynomial notation of Section   is repeated where needed. The refined width estimates required for the triangular increment are proved in the main text; they are not hypotheses of these analytic results.
+> Throughout the appendices, degree parameters are fixed, while dimensions are included in the stated logarithmic budgets. The polynomial notation of Section   is repeated where needed. The refined width estimates required for the triangular increment are proved in the main text; they are not hypotheses of these analytic results. [S12:33–37]
 
-What the paper does not say. Its saving is not, by itself, what the earlier five-term argument needed [S4:152–153]:
+What the paper does not say. Its saving is not, by itself, what the earlier five-term argument needed 
 
-> The resulting saving in $\log\log N$ does not give the dyadic summability above.
+> The resulting saving in $\log\log N$ does not give the dyadic summability above. [S4:152–153]
 
-and its contribution is the all-length summable bound, not a sharper exponent [S4:155–158]:
+and its contribution is the all-length summable bound, not a sharper exponent 
 
-> Theorem   gives a stretched-exponential saving in $\log N$ for every fixed length. Its contribution to Erdős's conjecture is this all-length, summable bound; no improvement of the three-term exponent is claimed.
+> Theorem   gives a stretched-exponential saving in $\log N$ for every fixed length. Its contribution to Erdős's conjecture is this all-length, summable bound; no improvement of the three-term exponent is claimed. [S4:155–158]
 
-Formalization status. The scope note states what the formalization proves [S14:9]:
+Formalization status. The scope note states what the formalization proves 
 
-> The formalization proves this statement: for every requested length, such a set contains a progression with positive common difference.
+> The formalization proves this statement: for every requested length, such a set contains a progression with positive common difference. [S14:9]
 
-and what it excludes [S14:11]:
+and what it excludes 
 
-> The selected theorem is the reciprocal-sum consequence. The paper's quantitative upper bound for the largest progression-free subset of $\{1,\ldots,N\}$ is outside this statement.
+> The selected theorem is the reciprocal-sum consequence. The paper's quantitative upper bound for the largest progression-free subset of $\{1,\ldots,N\}$ is outside this statement. [S14:11]
 
-That exclusion is about the selected statement, not about the tree. The challenge is 36 lines asking for one term [S15:31–32]:
+That exclusion is about the selected statement, not about the tree. The challenge is 36 lines asking for one term 
 
-> theorem manuscriptReciprocalProgressionTheorem : ReciprocalProgressionTheorem := by sorry
+> theorem manuscriptReciprocalProgressionTheorem : ReciprocalProgressionTheorem := by sorry [S15:31–32]
 
 with metadata naming the solution module [S16:3]:
 
@@ -119,21 +119,21 @@ It is the largest formalization measured here: 4,774 files and 1,122,983 Lean li
 > namespace Erdos3
 > end Erdos3
 
-The content is in `Results/Basic.lean`, whose coloring consequence is [S18:84–86]:
+The content is in `Results/Basic.lean`, whose coloring consequence is 
 
-> theorem monochromatic_hasAP_of_extremalNumber {k N r : ℕ} (hbound : r * extremalNumber k N < N) (color : ℕ → Fin r) : ∃ c : Fin r, HasAP {n : ℕ | n ∈ Finset.Icc 1 N ∧ color n = c} k := by
+> theorem monochromatic_hasAP_of_extremalNumber {k N r : ℕ} (hbound : r * extremalNumber k N < N) (color : ℕ → Fin r) : ∃ c : Fin r, HasAP {n : ℕ | n ∈ Finset.Icc 1 N ∧ color n = c} k := by [S18:84–86]
 
-The quantitative side is formalized, in a weaker form than the manuscript's. `Model.lean` defines the density bound as [S20:31–35]:
+The quantitative side is formalized, in a weaker form than the manuscript's. `Model.lean` defines the density bound as 
 
-> def QuantitativeDensityBound (k : ℕ) : Prop := ∃ C c η : ℝ, 0 < C ∧ 0 < c ∧ 0 < η ∧ ∀ N : ℕ, 3 ≤ N → (extremalNumber k N : ℝ) ≤ C * N * Real.exp (-c * (Real.log (Real.log N)) ^ (1 + η))
+> def QuantitativeDensityBound (k : ℕ) : Prop := ∃ C c η : ℝ, 0 < C ∧ 0 < c ∧ 0 < η ∧ ∀ N : ℕ, 3 ≤ N → (extremalNumber k N : ℝ) ≤ C * N * Real.exp (-c * (Real.log (Real.log N)) ^ (1 + η)) [S20:31–35]
 
-That is a saving in log log *N*; the manuscript's Theorem `ap:main` is a saving in (log *N*)^*ε_k*. The bridge from the weaker form to the reciprocal conclusion is proved in `Estimates/UniformRelativePatchSource.lean` [S23:42–43]:
+That is a saving in log log *N*; the manuscript's Theorem `ap:main` is a saving in (log *N*)^*ε_k*. The bridge from the weaker form to the reciprocal conclusion is proved in `Estimates/UniformRelativePatchSource.lean` 
 
-> ∃ C : ℝ, 0 < C ∧ ∀ᶠ N : ℕ in atTop, (extremalNumber k N : ℝ) ≤ C * N / (Real.log N) ^ B := by
+> ∃ C : ℝ, 0 < C ∧ ∀ᶠ N : ℕ in atTop, (extremalNumber k N : ℝ) ≤ C * N / (Real.log N) ^ B := by [S23:42–43]
 
-for every fixed *B*, which is summable on dyadic scales once *B* > 1; `Results/Reciprocal.lean` then converts dyadic summability into the progression conclusion [S22:86–88]:
+for every fixed *B*, which is summable on dyadic scales once *B* > 1; `Results/Reciprocal.lean` then converts dyadic summability into the progression conclusion 
 
-> theorem hasAP_of_not_summable_reciprocal {k : ℕ} (hseries : Summable fun m : ℕ ↦ (extremalNumber k (2 ^ m) : ℝ) / 2 ^ m) {A : Set ℕ} (hA : ¬ Summable (reciprocalTerm A)) : HasAP A k := by
+> theorem hasAP_of_not_summable_reciprocal {k : ℕ} (hseries : Summable fun m : ℕ ↦ (extremalNumber k (2 ^ m) : ℝ) / 2 ^ m) {A : Set ℕ} (hA : ¬ Summable (reciprocalTerm A)) : HasAP A k := by [S22:86–88]
 
 and `Results/Conclusions.lean` proves the pair as a conjunction [S21:26–27]:
 
@@ -153,55 +153,55 @@ The manuscript's own account is the citation trail. The dyadic threshold is the 
 > crossed the dyadic summability threshold and established the
 > three-term reciprocal-sum conjecture~\cite{BloomSisask2020}.
 
-Kelley and Meka obtained the stronger bound [S4:118–121]:
+Kelley and Meka obtained the stronger bound 
 
-> Kelley and Meka obtained the stronger bound \[ r_3(N)\ll N\exp\bigl(-c(\log N)^{1/12}\bigr) \]
+> Kelley and Meka obtained the stronger bound \[ r_3(N)\ll N\exp\bigl(-c(\log N)^{1/12}\bigr) \] [S4:118–121]
 
-Bloom and Sisask then simplified it and Raghavan extended it [S4:124–126] [S4:128]: "Bloom and Sisask simplified the argument and then improved the exponent to $1/9$." and "$r_3(N)\le N\exp\bigl(-(\log N)^{1/6-o(1)}\bigr)$". The ceiling on what any such bound can be is Behrend's construction [S4:130–132]: "Behrend's construction already gives $r_3(N)\ge N\exp(-C\sqrt{\log N})$, so a fixed power saving in $N$ is impossible even in this case".
+Bloom and Sisask then simplified it and Raghavan extended it "Bloom and Sisask simplified the argument and then improved the exponent to $1/9$. [S4:124–126]" and "$r_3(N)\le N\exp\bigl(-(\log N)^{1/6-o(1)}\bigr)$ [S4:128]". The ceiling on what any such bound can be is Behrend's construction "Behrend's construction already gives $r_3(N)\ge N\exp(-C\sqrt{\log N})$, so a fixed power saving in $N$ is impossible even in this case [S4:130–132]".
 
-The polylogarithmic line reached five terms and stopped [S4:141–142]:
+The polylogarithmic line reached five terms and stopped 
 
-> Leng, Sah and Sawhney first treated five terms and then proved, for every fixed $k\ge5$,
+> Leng, Sah and Sawhney first treated five terms and then proved, for every fixed $k\ge5$, [S4:141–142]
 
-and its method is [S4:148–151]:
+and its method is 
 
-> Their general argument combines a quasipolynomial inverse theorem with density increments. The inverse theorem controls the structured correlation obtained from a large uniformity norm; the cost of localizing and iterating that correlation remains a separate issue.
+> Their general argument combines a quasipolynomial inverse theorem with density increments. The inverse theorem controls the structured correlation obtained from a large uniformity norm; the cost of localizing and iterating that correlation remains a separate issue. [S4:148–151]
 
 The published trace is the release's record of the search behind this result [S25]: it is in two parts, a first part on the reciprocal-sum problem whose stated target was a power-of-log saving, and a second part that asks for quasipolynomial bounds for all *k* ≥ 3 and proposes the triangular increment that became this paper.
 
-The manuscript's bibliography names the companion paper [S10:197]:
+The manuscript's bibliography names the companion paper 
 
-> OpenAI, _Quantitative Superexponential Bounds for van der Waerden Numbers_,
+> OpenAI, _Quantitative Superexponential Bounds for van der Waerden Numbers_, [S10:197]
 
-which is family 160 in the same release [S24:401]: "Superexponential van der Waerden numbers". The ledger records no companion link for either family, because the companion column is computed from the CONTENTS.md blurb and that blurb does not name the companion.
+which is family 160 in the same release "Superexponential van der Waerden numbers [S24:401]". The ledger records no companion link for either family, because the companion column is computed from the CONTENTS.md blurb and that blurb does not name the companion.
 
 ## Consequences
 
-The headline consequence is the uniform harmonic bound [S9:44–47]:
+The headline consequence is the uniform harmonic bound 
 
-> There is $H_k<\infty$ such that every $k$-term-progression-free $A\subseteq\mathbb N$ satisfies \[ \sum_{a\in A}\frac1a\le H_k.
+> There is $H_k<\infty$ such that every $k$-term-progression-free $A\subseteq\mathbb N$ satisfies \[ \sum_{a\in A}\frac1a\le H_k. [S9:44–47]
 
-So divergence of the reciprocal sum forces progressions of every length [S9:32–33]: "Consequently, whenever $S_k(w)<\infty$, divergence of the weighted sum forces a nonconstant $k$-term progression." The bound is stable under arbitrary logarithmic losses [S9:131–135]:
+So divergence of the reciprocal sum forces progressions of every length "Consequently, whenever $S_k(w)<\infty$, divergence of the weighted sum forces a nonconstant $k$-term progression. [S9:32–33]" The bound is stable under arbitrary logarithmic losses 
 
-> The same comparison shows that, for each fixed $B>0$, there is a constant $C_{k,B}$ with \[ r_k(N)\le C_{k,B}N(\log N)^{-B}\qquad(N\ge3). \]
+> The same comparison shows that, for each fixed $B>0$, there is a constant $C_{k,B}$ with \[ r_k(N)\le C_{k,B}N(\log N)^{-B}\qquad(N\ge3). \] [S9:131–135]
 
-The paper recovers a known theorem rather than replacing it [S9:138–139]: "Theorem also recovers the established dense-primes theorem of Green and Tao" and the tail estimate that makes the weighted sums converge is [S9:163–164]: "In particular, for every $0<a<c_k$, this tail is at most $C_{k,a}e^{-a(\log x)^{\varepsilon_k}}$."
+The paper recovers a known theorem rather than replacing it "Theorem also recovers the established dense-primes theorem of Green and Tao [S9:138–139]" and the tail estimate that makes the weighted sums converge is "In particular, for every $0<a<c_k$, this tail is at most $C_{k,a}e^{-a(\log x)^{\varepsilon_k}}$. [S9:163–164]"
 
-Two structural pieces are reusable beyond this theorem. The extraction step preserves the determining weights exactly [S7:64–66]:
+Two structural pieces are reusable beyond this theorem. The extraction step preserves the determining weights exactly 
 
-> At passive layers the absolute weights are unchanged. At active layers a fixed multiplicative increase of those weights suffices; determining weights remain exactly their original weights.
+> At passive layers the absolute weights are unchanged. At active layers a fixed multiplicative increase of those weights suffices; determining weights remain exactly their original weights. [S7:64–66]
 
-and the route diagram records the shape of the argument [S11:31–33]:
+and the route diagram records the shape of the argument 
 
-> The main proof route.  Preparation and extraction preserve the triangular dependence of the width losses; the absolute increment controls the number of fresh determining coordinates.
+> The main proof route.  Preparation and extraction preserve the triangular dependence of the width losses; the absolute increment controls the number of fresh determining coordinates. [S11:31–33]
 
-The same iteration yields the van der Waerden lower bound [S4:308–310]:
+The same iteration yields the van der Waerden lower bound 
 
-> gives the complementary lower bound $W_r(k)>\exp((\log r)^2/(64\log2))$ for all integers $r\ge256$ and $k\ge3$.
+> gives the complementary lower bound $W_r(k)>\exp((\log r)^2/(64\log2))$ for all integers $r\ge256$ and $k\ge3$. [S4:308–310]
 
 The manuscript ships as a 37-line `main.tex` with ten sections and a seven-file foundations appendix — 15,569 lines of source across 29 files — plus a compiled [S13] `paper.pdf`.
 
-Its README gives the release date [S3:5]: "Date: September 23, 2026".
+Its README gives the release date "Date: September 23, 2026 [S3:5]".
 
 ## Sources
 

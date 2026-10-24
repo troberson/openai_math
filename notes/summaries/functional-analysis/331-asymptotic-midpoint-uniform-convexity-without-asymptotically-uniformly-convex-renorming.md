@@ -6,13 +6,13 @@
 
 ## Original CONTENTS.md summary
 
-[S1:758] carries the family entry:
+ carries the family entry:
 
-> Constructs a real reflexive Banach space with an asymptotically midpoint uniformly convex norm but no equivalent asymptotically uniformly convex norm, extending Baudier's separation to reflexive spaces.
+> Constructs a real reflexive Banach space with an asymptotically midpoint uniformly convex norm but no equivalent asymptotically uniformly convex norm, extending Baudier's separation to reflexive spaces. [S1:758]
 
-[S1:758] carries the first manuscript entry as link text:
+ carries the first manuscript entry as link text:
 
-> Reflexive tree-space example
+> Reflexive tree-space example [S1:758]
 
 ## Undergraduate summary
 
@@ -36,7 +36,7 @@ The diamond graphs are the classical obstruction in the nonlinear extension prob
 
 **The headline theorem.** For the space $X$ defined by the segment norm, the theorem states five things at once: $X$ is infinite-dimensional, separable, and reflexive; $X$ has no equivalent AUC norm; its given norm satisfies $\widehat\delta_X(t) \ge \sqrt{1+t^2/12}-1$ for every $t>0$; and every embedding of the depth-$k$ diamond $D_k$ into $X$ has distortion at least $\sqrt{1+k/12}$. [S3:99–108]
 
-**The target problem.** The paper names what it answers: "This gives a negative answer to the reflexive diamond question recorded as Problem 39 in" the Baudier--Lancien manuscript, and it adds that the metric obstruction is unchanged by equivalent renorming, although the numerical constants refer to the specified dual norm. [S3:110–111]
+**The target problem.** The paper names what it answers: "This gives a negative answer to the reflexive diamond question recorded as Problem 39 in [S3:110–111]" the Baudier--Lancien manuscript, and it adds that the metric obstruction is unchanged by equivalent renorming, although the numerical constants refer to the specified dual norm. 
 
 **The renorming obstruction.** The bounded-tree lemma is the negative half: for a real Banach space $Y$ carrying, for every height $h$, vectors indexed by $\mathbb{N}^{\le h}$ with norms between $m$ and $M$ and child increments at least $c$, and with child increments tending weakly to zero at each nonterminal node, every equivalent norm $N$ with $\alpha\|\cdot\|\le N\le\beta\|\cdot\|$ obeys $\overline\delta_N(\alpha c/(2\beta M)) = 0$. The same conclusion holds for one infinite tree with these properties. [S5:37–54]
 
@@ -49,13 +49,13 @@ The diamond graphs are the classical obstruction in the nonlinear extension prob
 - **Independent products in real $L_1$.** For a positive, nonconstant multiplier with mean one and finite second moment, the closed span of the path products is infinite-dimensional and has no equivalent AUC norm, and the averaged midpoint modulus is at least $\frac{7t}{480}\mathbb{E}[(|G|-20/t)_+]$ for a standard real Gaussian $G$. [S15:57–71]
 - **Midpoint convexity from two recursive potentials.** The root-sum, zero-root, and joined spaces are infinite-dimensional and have no equivalent AUC norm; the root-sum and joined spaces have averaged midpoint modulus at least $t^3/128$ for $0 \lt t \lt 1$, the root-sum modulus is positive for every $t>0$, and the zero-root and joined spaces are reflexive. [S17:65–77]
 
-**What the formalization says.** The scope note is precise about what the Lean formalization proves. "The formalization proves that the full dual of the specified segment-norm completion is infinite-dimensional, separable, and reflexive", with the $\sqrt{1+t^2/12}-1$ averaged midpoint bound, the failure of AUC for every equivalent norm, and the $\sqrt{1+k/12}$ diamond bound. [S18:15]
+**What the formalization says.** The scope note is precise about what the Lean formalization proves. "The formalization proves that the full dual of the specified segment-norm completion is infinite-dimensional, separable, and reflexive [S18:15]", with the $\sqrt{1+t^2/12}-1$ averaged midpoint bound, the failure of AUC for every equivalent norm, and the $\sqrt{1+k/12}$ diamond bound. 
 
-The forest results are narrower than the manuscript's span: the general-forest and word-forest conclusions retain the finite-ancestor and equivalent-norm hypotheses, including the scale $\alpha/(2\beta)$, and "they do not identify that span with the full dual or assert reflexivity for every forest." [S18:17]
+The forest results are narrower than the manuscript's span: the general-forest and word-forest conclusions retain the finite-ancestor and equivalent-norm hypotheses, including the scale $\alpha/(2\beta)$, and "they do not identify that span with the full dual or assert reflexivity for every forest. [S18:17]" 
 
-The scope note also records an assumption count: "Twenty-two of those companion inputs are assumed in these deductions; the diamond distortion bound above does not require them." [S18:25]
+The scope note also records an assumption count: "Twenty-two of those companion inputs are assumed in these deductions; the diamond distortion bound above does not require them. [S18:25]" 
 
-The last scope paragraph is explicit that assumptions are part of the statements: "The separation, sequence, support, and head assumptions in these results are essential parts of their statements." [S18:41]
+The last scope paragraph is explicit that assumptions are part of the statements: "The separation, sequence, support, and head assumptions in these results are essential parts of their statements. [S18:41]" 
 
 **Formalization status.** The ledger records family 331 at tier T3: 7 manuscripts, 7 formalized, 1 scope note, 7 comparator challenges, 7 `main_results` entries, 0 reasoning traces, 0 verification bundles. The seven comparator configs the scope note links are `ForestSpace`, `MidpointLenses`, `DiamondDistortion`, `DaugavetModuli`, `BoundedTreePotentials`, `IndependentProducts`, `RecursivePotentials`. A comparator file is a challenge stub stating the target the release set itself; the proved version, where it exists, lives under `lean/OAI/`. Nothing here proves the formalization elaborates --- no Lean or comparator run was performed, which is the standing rule for this catalog.
 

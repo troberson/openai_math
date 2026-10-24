@@ -13,13 +13,11 @@ aspherical topological four-manifold vanish outside degree two. More
 generally the same vanishing holds for every finite connected
 aspherical integral Poincaré complex of formal dimension four,
 including nonorientable ones. The manuscript's abstract
-[S3:32–38]: "**abstract**
-We prove the four-dimensional Singer conjecture: the $L^2$-Betti numbers
+ "We prove the four-dimensional Singer conjecture: the $L^2$-Betti numbers
 of the universal cover of a closed connected aspherical topological
 four-manifold vanish outside degree two. More generally, the same
 vanishing holds for finite connected aspherical integral Poincaré
-complexes of formal dimension four, including nonorientable ones.
-\endabstract"
+complexes of formal dimension four, including nonorientable ones. [S3:32–38]"
 
 ## Undergraduate summary
 
@@ -42,8 +40,7 @@ Let $Q$ be a finite connected aspherical integral Poincaré complex of
 formal dimension four, with arbitrary orientation character. Then
 \[
  b_p^{(2)}(\widetilde Q)=0\qquad(p\ge0,\ p\ne2).
-\]
-\endtheorem
+\] [S4:36–42]
 
 The corollary recovers the manifold statement from this wider
 complex-theoretic one: a finite aspherical integral Poincaré-complex

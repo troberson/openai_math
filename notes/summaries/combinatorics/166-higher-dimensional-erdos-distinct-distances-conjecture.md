@@ -12,10 +12,10 @@ points in $\mathbb R^d$ determine at least $c_d n^{2/d}$ distinct
 distances, with $c_d>0$ depending only on the dimension — the
 integer-grid order, resolving the higher-dimensional Erdős
 distinct-distances conjecture with a constant-factor bound. The
-manuscript's abstract [S3:9–12]: "For every fixed integer $d\ge3$, we prove that every set of $n\ge2$ distinct
+manuscript's abstract "For every fixed integer $d\ge3$, we prove that every set of $n\ge2$ distinct
 points in $\mathbb R^d$ determines at least $c_d n^{2/d}$ distinct
 distances, where $c_d>0$ depends only on $d$. This resolves the
-higher-dimensional Erdős distinct-distances conjecture positively."
+higher-dimensional Erdős distinct-distances conjecture positively. [S3:9–12]"
 
 ## Undergraduate summary
 
@@ -24,16 +24,14 @@ of distances between its distinct points, and ask how small
 $|\Delta(P)|$ can be for a prescribed cardinality [S4:3–17]. The
 higher-dimensional Erdős conjecture predicts a constant multiple of
 $n^{2/d}$ distances among any $n$ points, for every fixed $d\ge3$. The
-manuscript proves this [S4:19–26]:
+manuscript proves this 
 
-> **theorem**
-For every integer \(d\ge3\), there is a constant \(c_d>0\) such that
+> For every integer \(d\ge3\), there is a constant \(c_d>0\) such that
 every finite set \(P\subset\mathbb R^d\) of \(n\ge2\) distinct points
 satisfies
 \[
  |\Delta(P)|\ge c_d n^{2/d}.
-\]
-\endtheorem
+\] [S4:19–26]
 
 The power of $n$ is optimal: the integer grid $\{1,\ldots,t\}^d$ has
 $t^d$ points and its squared distances are integers between $1$ and

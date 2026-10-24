@@ -15,7 +15,7 @@ holds with every positive Sobolev loss; the lossless $\eps=0$
 estimate is not addressed. The manuscript's abstract [S4:2–4]:
 "We prove the critical $L^3$ local smoothing estimate for the wave equation
 in three spatial dimensions, with every positive Sobolev loss. This resolves
-Sogge's Euclidean local smoothing conjecture in dimension three."
+Sogge's Euclidean local smoothing conjecture in dimension three. [S4:2–4]"
 
 ## Undergraduate summary
 
@@ -26,24 +26,21 @@ norm. The sharp fixed-time estimate loses $2(1/2-1/p)$ derivatives;
 time integration recovers part of that loss. Sogge's conjecture
 predicts the full strict range, and the critical exponent is
 $p=3$ [S4:9–23]. The manuscript proves that critical case for every
-positive loss [S4:25–32]:
+positive loss 
 
-> **theorem**
+> **Theorem 1.1**
 For every $\varepsilon>0$ there exists $C_\varepsilon<\infty$ such that
-\beginequation 
+$$\label{eq:intro-main}
  \lVert Uf\rVert_{L^3(\mathbb R^3\times[1,2])}
  \le C_\varepsilon\lVert J^\varepsilon f\rVert_{L^3(\mathbb R^3)}
- \qquad (f\in\mathcal S(\mathbb R^3)).
-\endequation
-\endtheorem
+ \qquad (f\in\mathcal S(\mathbb R^3)).$$ [S4:25–32]
 
 Interpolating with the $L^2$ energy estimate and an $L^\infty$
-kernel bound gives the complete range [S4:34–46]: "**equation**
-\lVert Uf\rVert_{L^p(\mathbb R^3\times[1,2])}
+kernel bound gives the complete range [S4:34–46]: "$$\label{eq:intro-full}
+ \lVert Uf\rVert_{L^p(\mathbb R^3\times[1,2])}
  \le C_{p,\alpha}\lVert J^\alpha f\rVert_{L^p(\mathbb R^3)},
  \qquad
- 2<p<\infty,\quad \alpha>\max\{0,1-3/p\}.
-\endequation"
+ 2<p<\infty,\quad \alpha>\max\{0,1-3/p\}.$$ [S4:38–43]"
 
 ## Graduate summary
 
@@ -99,12 +96,12 @@ bounds the Bochner–Riesz maximal operator strongly on $L^p$ and
 gives almost-everywhere convergence for $3\le p<\infty$ and
 $\delta>1-3/p$, while the nonmaximal result gives uniform bounds for
 the individual means throughout the strict range
-$\delta>\max\{3|1/p-1/2|-1/2,0\}$ [S5:3–8]: "We apply the established local-smoothing implications of
+$\delta>\max\{3|1/p-1/2|-1/2,0\}$ "We apply the established local-smoothing implications of
 Beltran–Hickman–Sogge to Corollary  . The maximal
 result concerns the family in  ; the subsequent
 nonmaximal result concerns the individual linear means.
 These means recover a function by gradually admitting higher
-frequencies, with order $\delta$ smoothing the boundary of the Fourier"
+frequencies, with order $\delta$ smoothing the boundary of the Fourier [S5:3–8]"
 
 **The spherical restriction and Kakeya link.** The final subsection
 connects the local-smoothing estimate to the three-dimensional

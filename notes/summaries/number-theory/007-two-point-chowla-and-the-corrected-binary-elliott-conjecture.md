@@ -6,14 +6,14 @@
 
 ## Original CONTENTS.md summary
 
-[S1:166] (the family entry, first half):
+ (the family entry, first half):
 
-> **007. Ordinary two-point correlations and the corrected Elliott conjecture.** Proves the ordinary two-point Chowla conjecture, with a bound $`O(X/(\log X)^c)`$ for Liouville correlation sums along fixed nonproportional affine forms,
+> **007. Ordinary two-point correlations and the corrected Elliott conjecture.** Proves the ordinary two-point Chowla conjecture, with a bound $`O(X/(\log X)^c)`$ for Liouville correlation sums along fixed nonproportional affine forms, [S1:166]
 
 The release marks the exponent's positivity with inline HTML, so the entry is quoted here in two
 halves around it.
 
-[S1:166] (the same entry, second half):
+ (the same entry, second half):
 
 > More generally, proves the binary corrected Elliott conjecture for complex multiplicative functions bounded by one when one factor is uniformly nonpretentious against each fixed Dirichlet character times $`n^{it}`$ for $`|t|\le X`$. ([Lean](../../../lean/docs/007.md))
 
@@ -38,7 +38,7 @@ itself." ([S6:15–16]) Every previous two-point result for this problem kept th
 The theorem is stated for every fixed pair of nonproportional affine forms *a*₁*n*+*b*₁, *a*₂*n*+*b*₂, and
 it gives a saving of a power of log at *every* cutoff: the sum is at most *C**X*/(log *X*)^*c* with *c* > 0
 absolute, so the exponent does not depend on the forms ([S6:20–34]). Taking *a*₁ = *a*₂ = 1, *b*₁ = 0,
-*b*₂ = *h*, "this resolves the ordinary two-point Chowla conjecture, with a logarithmic saving."
+*b*₂ = *h*, "this resolves the ordinary two-point Chowla conjecture, with a logarithmic saving. [S6:36–37]"
 ([S6:36–37])
 
 The second theorem is about general multiplicative functions, and it is qualitative. Elliott asked
@@ -89,7 +89,7 @@ The shape of the proof, sketched at [S6:188–252], [S7:7–18], [S8:24–40], [
 
 ## Graduate summary
 
-The quantitative theorem is stated as "A logarithmic saving for affine Liouville correlations"
+The quantitative theorem is stated as "A logarithmic saving for affine Liouville correlations [S6:20]"
 ([S6:20–34]): there is an absolute *c* > 0 such that for every fixed *a*₁,*a*₂ ≥ 1 and *b*₁,*b*₂ ≥ 0 with
 *a*₁*b*₂ − *a*₂*b*₁ ≠ 0 there is *C*_{*a*₁,*a*₂,*b*₁,*b*₂} with
 
@@ -98,7 +98,7 @@ The quantitative theorem is stated as "A logarithmic saving for affine Liouville
 Two boundary conditions are part of the statement: "The cutoff \(X\) may be any real number. No
 coprimality condition is imposed on the coefficients." ([S6:32–33]) The route is stated in the
 introduction — the saving is first obtained for *λ*(*n*)*λ*(*n*+*h*) in each fixed residue class modulo
-each fixed modulus, "including nonunit and zero classes", and "Complete multiplicativity then gives
+each fixed modulus, "including nonunit and zero classes [S6:42]", and "Complete multiplicativity then gives
 the affine conclusion." ([S6:41–43]) The intermediate target is the progression estimate [S7:7–18],
 whose proof opens: "Our first task is to find many divisors in short multiplicative intervals,
 retaining a fixed positive fraction of their total reciprocal weight." ([S7:24–25])
@@ -107,10 +107,10 @@ The qualitative theorem [S6:64–72] is the binary corrected Elliott conjecture 
 with the corrected hypothesis [S6:58–61] imposed on one original factor. Its scope is stated as
 plainly as its content: "This proves the binary corrected Elliott conjecture for ordinary averages.
 The functions may be complex, need not have modulus one, and need not be completely
-multiplicative." ([S6:74–76]) and "We make no quantitative rate claim for this class of functions."
+multiplicative." () and "We make no quantitative rate claim for this class of functions. [S6:78–79]"
 ([S6:78–79]) The affine and progression consequences are collected in Part III, where "We now deduce
 correlations on arbitrary fixed progressions and affine forms" from the shifted theorem
-([S15:4–5]); the progression form holds "through all real $X$, including nonunit residue classes"
+(); the progression form holds "through all real $X$, including nonunit residue classes [S15:193]"
 ([S15:193]), and Liouville is verified to satisfy the hypothesis outright, with an explicit rate
 ([S15:268–278]).
 
@@ -129,15 +129,15 @@ band, whose signed factor is not mean zero under uniform residues, supplies the 
 corrected to *exact* bounded independence before Braverman's theorem applies ([S6:213–218],
 [S8:8–9]), and the surviving repetition patterns are counted by a forest whose bound is uniform over
 padding values ([S6:218–224], [S9:3–9]). The spectral step is explicit that it is proved for
-self-adjoint edge operators directly, because "distinct edge operators need not commute"
+self-adjoint edge operators directly, because "distinct edge operators need not commute [S10:22–23]"
 ([S10:19–23]).
 
 What the result does **not** say is delimited in the statement paragraphs. The implied constants
-"need not be effective", and "no uniformity for coefficients growing with \(X\) is asserted"
+"need not be effective [S6:38–39]", and "no uniformity for coefficients growing with \(X\) is asserted [S6:39–40]"
 ([S6:38–40]); the exponent is independent of the forms, and only the implied constant depends on
 them ([S11:48–49]). The qualitative theorem carries no rate ([S6:78–79]). The comparison with prior
 work is framed the same way: the logarithmically weighted bounds of Helfgott–Radziwiłł and Pilatte
-"retain the logarithmic weight" ([S6:138–149]), the earlier ordinary results of Tao–Teräviäinen and
+"retain the logarithmic weight [S6:146]" ([S6:138–149]), the earlier ordinary results of Tao–Teräviäinen and
 of Klurman–Mangerel–Teräviäinen hold on sets of scales of logarithmic density zero and of full
 upper logarithmic density respectively ([S6:160–168]), and the recent quantitative progression
 estimates of Tao–Teräviäinen allow coefficients to grow slowly outside a controlled exceptional set
@@ -168,12 +168,12 @@ correlations at every fixed collection of distinct shifts" ([S6:102–103]), cit
 Riemann Hypothesis and Hilbert's Tenth Problem* ([S23:101–109]). Its binary case "asks whether the
 parities of the numbers of prime factors of \(n\) and \(n+h\) become uncorrelated for each fixed
 \(h\ge1\)." ([S6:103–105]) Elliott's generalization to bounded multiplicative functions is cited to a
-1992 note, "On the correlation of multiplicative functions" ([S23:111–119]), and the manuscript
-records that "Elliott extended the correlation problem to bounded multiplicative functions"
+1992 note, "On the correlation of multiplicative functions [S23:113]" ([S23:111–119]), and the manuscript
+records that "Elliott extended the correlation problem to bounded multiplicative functions [S6:110–111]"
 ([S6:110–111]).
 
 The obstruction and the distance both predate the conjectures' correlation form. The twist
-obstruction "is already central to Halász's theory of one-point mean values" ([S6:111–113]), cited
+obstruction "is already central to Halász's theory of one-point mean values [S6:112–113]" ([S6:111–113]), cited
 to Halász 1971 ([S23:121–128]) with the modern treatment of Granville, Harper and Soundararajan
 ([S23:142–148]); the distance used in the hypothesis "belongs to the pretentious approach developed
 by Granville and Soundararajan" ([S6:114–116]), cited to *Large character sums: pretentious
@@ -222,7 +222,7 @@ costs nothing in the exponent: "The progression estimate for Liouville gives the
 exponent for every fixed affine pair. The finite initial interval affects only the constant."
 ([S11:3–5]) Complete multiplicativity gives the identity *λ*(*a*₁*n*+*b*₁)*λ*(*a*₂*n*+*b*₂) =
 *λ*(*l*)*λ*(*ln*+*c*₀)*λ*(*ln*+*c*₀+*h*) with *l* = *a*₁*a*₂ and *h* = |*a*₁*b*₂ − *a*₂*b*₁| ([S11:10–19]), and the
-endpoints match exactly, an identity that "includes both determinant signs and noninteger cutoffs"
+endpoints match exactly, an identity that "includes both determinant signs and noninteger cutoffs [S11:39]"
 ([S11:39]). The conclusion is stated as: "The exponent has not changed and is independent of the
 affine coefficients; only the implied constant depends on them." ([S11:48–49])
 

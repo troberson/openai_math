@@ -12,12 +12,10 @@ $n\ge2$ — for three dominant integral weights whose sum lies in the root
 lattice, an invariant at any common positive integral dilation already
 gives an invariant at the original weights, resolving the type-$D$ part
 of the simply-laced saturation conjecture. The manuscript's abstract
-[S3:48–53]: "**abstract**
-We prove the saturation conjecture for $\Spin(2n)$, $n\ge2$.
+ "We prove the saturation conjecture for $\Spin(2n)$, $n\ge2$.
 If three dominant integral weights sum to an element of the root lattice,
 then the existence of a nonzero tensor invariant after a positive integral
-dilation implies the existence of one at the original weights.
-\endabstract"
+dilation implies the existence of one at the original weights. [S3:48–53]"
 
 ## Undergraduate summary
 
@@ -32,9 +30,9 @@ nontrivially on the product). The saturation conjecture asserts that this
 congruence, together with the existence of a dilated invariant, is also
 sufficient [S4:3–14]. Kapovich and Millson formulated the root-lattice
 assertion for all simply-laced groups [S4:29–31]; the manuscript proves
-its type-$D$ case [S4:33–42]:
+its type-$D$ case 
 
-> **theorem**
+> **Theorem 1.1**
 Let $G=\Spin(2n)$, $n\ge2$, and let $\lambda,\mu,\nu$ be dominant
 integral weights such that $\lambda+\mu+\nu\in Q(D_n)$. Then, for every
 positive integer $N$,
@@ -42,8 +40,7 @@ positive integer $N$,
  \bigl(V(\lambda)\otimes V(\mu)\otimes V(\nu)\bigr)^G\ne0
  \quad\Longleftrightarrow\quad
  \bigl(V(N\lambda)\otimes V(N\mu)\otimes V(N\nu)\bigr)^G\ne0.
-\]
-\endtheorem
+\] [S4:33–42]
 
 The theorem covers all three classical even-spin ranks $n\ge2$ and
 includes the half-integral spin weights.

@@ -33,7 +33,7 @@ Turing machine. The saving comes from two tape procedures: "The first
 procedure interchanges two disjoint contiguous address fields" of $u$ bits
 in a fixed cost $O(V u^\tau)$ with $\tau < 1$ [S3:59-61], and the second
 applies a butterfly operation simultaneously on selected coordinate bits.
-"Each record is a polynomial with complex fixed-point coefficients, and"
+"Each record is a polynomial with complex fixed-point coefficients, and [S3:71]"
 the operation acts coefficientwise. [S3:70-72]
 
 ## Graduate summary
@@ -91,7 +91,7 @@ faster than every fixed power of $p$, so a scan of a record pays for
 polynomial work on its address, and $K/\log p \to \infty$, which makes the
 exceptional set in a packed change of address bits small enough to repair by
 sorting. The target cost is $O(V d^{\lambda'})$ with $\lambda' < 1$,
-"whereas separate butterfly factors would require $D$ whole-array passes."
+"whereas separate butterfly factors would require $D$ whole-array passes. [S6:31–32]"
 [S6:31-32] "We implement those changes by moving whole address chunks.
 Splitting complete rows among the network's wire roles then reduces the
 volume of each recursive call." [S6:37-40] Grouped packed rectangles
@@ -142,14 +142,14 @@ Karatsuba's recursive construction, published jointly with Ofman in 1962,
 gave a binary multiplication circuit of size $O(n^{\log_2 3})$
 [S4:4-6]; "Toom's subsequent use of polynomial evaluation and
 interpolation gave circuit size" $n \exp(O(\sqrt{\log n}))$ [S4:6-8], and
-"Cook adapted Toom's method to the Turing-machine setting"
+"Cook adapted Toom's method to the Turing-machine setting [S4:10–11]"
 [S4:10-11]. In the multitape model, the 1971 Schönhage–Strassen paper
 established $O(n \log n \log\log n)$; it is *Schnelle Berechnung von
 Kettenkatastrophen*, Acta Informatica 1(2), 185–193. [S10:131-138]
 
 Fürer improved the bound to $n \log n \, 2^{O(\log^* n)}$ in 2007; "De,
 Kurur, Saha and Saptharishi developed a modular-arithmetic route to the
-same scale" [S4:21-22]; "Later improvements made the exponential factor"
+same scale" [S4:21-22]; "Later improvements made the exponential factor [S4:23]"
 $8^{\log^* n}$ and then $4^{\log^* n}$ [S4:23-24]; and "Harvey and van der
 Hoeven proved the unconditional" $O(n \log n)$ bound [S4:25-26], in *Integer
 multiplication in time $O(n \log n)$*, Annals of Mathematics 190(2),
@@ -178,7 +178,7 @@ multiplications* (Mathematical Machines and Perception 1(3), 15–24)
 [S10:122-130] are the two ancestors the construction leans on for the
 fixed-tape side.
 
-The release dates the manuscript September 23, 2026 and lists OpenAI as author [S1:5], typesetting the title as "Integer multiplication below" with the logarithm in math [S1:12]. Its own entry states the result as a disproof: the machine
+The release dates the manuscript September 23, 2026 and lists OpenAI as author [S1:5], typesetting the title as "Integer multiplication below [S1:12]" with the logarithm in math . Its own entry states the result as a disproof: the machine
 multiplies "on one fixed finite-alphabet Turing machine with finitely many
 one-dimensional tapes" [S11:296], and its index line repeats the same
 phrasing [S12:2695]. The release does not mention the matrix-transposition

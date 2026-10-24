@@ -140,7 +140,7 @@ fixed-generator prime-quotient expansion, and an effective least-prime
 bound" [S3:366-368]; its simultaneous systematic encoders, matrix twists
 and joint correction guarantees are proved in the manuscript, because "a
 general locally testable code theorem" such as the Dinur–Evra–Livne–Lubotzky–Mozes
-result "does not by itself supply this combination." [S3:369-371] "The
+result "does not by itself supply this combination. [S3:371]" [S3:369-371] "The
 inner binary construction uses the corrected scalar line test and two
 group-theoretic inputs" [S3:371-373], and "The all-modulus
 Margulis--Gabber--Galil bound supplies the local and replica walks"
@@ -186,7 +186,7 @@ assignments always exist, giving robust local verification with only
 quasilinear size overhead." [S7:3277] The manuscript's own abstract states
 the same: "We prove the quasilinear-size PCP-for-PPAD conjecture of
 Babichenko, Papadimitriou, and Rubinstein." [S2:49-51] The README names the
-manuscript "The PCP-for-PPAD conjecture: a quasilinear reduction"
+manuscript "The PCP-for-PPAD conjecture: a quasilinear reduction [S6:349]"
 [S1:12], dated September 25, 2026 [S1:5].
 
 ## Consequences

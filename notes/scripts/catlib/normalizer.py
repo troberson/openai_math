@@ -324,6 +324,7 @@ def split_regions(text: str) -> list[tuple[bool, str, bool]]:
 
 
 _BEGIN = re.compile(r"\\begin\{([A-Za-z]+)\}")
+_END = re.compile(r"\\end\{([A-Za-z]+)\}")
 
 
 def statement_lead_in(window: str) -> str | None:
@@ -348,16 +349,77 @@ def _drop_first_begin_line(window: str) -> str:
     return window
 
 
-def normalize_window(window: str, preamble: str = "") -> str:
+def _strip_trailing_end_line(window: str, env: str) -> str:
+    """The window with its trailing `\\end{env}` line removed, if present."""
+    lines = window.split("\n")
+    for i in range(len(lines) - 1, -1, -1):
+        s = lines[i].strip()
+        if not s:
+            continue
+        m = _END.match(s)
+        if m and m.group(1) == env:
+            del lines[i]
+            return "\n".join(lines)
+        break
+    return window
+
+
+_DISPLAY_ENV = re.compile(
+    r"\\begin\{(equation\*?|align\*?|gather\*?|multline\*?|eqnarray\*?)\}"
+    r"(.*?)"
+    r"\\end\{\1\}",
+    re.DOTALL,
+)
+
+
+def _convert_display_envs(text: str) -> str:
+    """`\\begin{equation}X\\end{equation}` → `$$X$$` so the region splitter sees it as math.
+
+    Runs before env detection so a window that *is* an equation doesn't trigger a lead-in.
+    """
+    return _DISPLAY_ENV.sub(r"$$\2$$", text)
+
+
+def is_counter_env(preamble: str, env: str) -> bool:
+    """True when the preamble defines `env` as a theorem-like counter environment.
+
+    `\\newtheorem{theorem}{Theorem}[section]` and `\\newtheorem{lemma}[theorem]` both
+    make their env a counter env. `abstract`, `equation` etc. are not.
+    """
+    pat = re.compile(
+        r"\\newtheorem\s*(?:\[([^\]]*)\])?\{\s*" + re.escape(env) + r"\s*\}"
+        r"(?:\{([^}]*)\})?(?:\[([^\]]*)\])?"
+    )
+    return bool(pat.search(preamble))
+
+
+def normalize_window(window: str, preamble: str = "", number: str = "") -> str:
     """A quote window to MathJax-safe markdown with no banned macro and no bare quote mark.
 
     The preamble is the manuscript's own, so the macro table is per-manuscript. The result carries
-    a bold statement lead-in when the window opened with `\\begin{X}`, math spans wrapped and
-    expanded, prose markup folded, and any un-mappable banned span fenced.
+    a bold statement lead-in when the window opened with a theorem-like `\\begin{X}`, math spans
+    wrapped and expanded, prose markup folded, and any un-mappable banned span fenced. `number`
+    is the rendered LaTeX label (e.g. "Theorem 1.1"); when present it replaces the bare
+    environment name in the lead-in.
+
+    Display-math environments (`\\begin{equation}` etc.) are converted to `$$...$$` before env
+    detection, so a window that *is* an equation is treated as math, not as a statement.
+    Non-counter envs (`abstract`, `definition`, `assumption`) get their `\\begin/\\end` delimiters
+    stripped without a lead-in.
     """
     table = build_macro_table(preamble)
+    # Convert display-math envs to $$...$$ so the region splitter sees them as math.
+    window = _convert_display_envs(window)
     lead = statement_lead_in(window)
-    body = _drop_first_begin_line(window) if lead else window
+    if lead and not is_counter_env(preamble, lead):
+        # Non-counter env (abstract, definition, assumption): strip delimiters, no lead-in.
+        body = _drop_first_begin_line(window)
+        body = _strip_trailing_end_line(body, lead)
+        lead = None
+    else:
+        body = _drop_first_begin_line(window) if lead else window
+        if lead:
+            body = _strip_trailing_end_line(body, lead)
     # Brace-balanced emphasis before the region split: an `\emph{A $p$-adic}`
     # straddles a math boundary, so the per-region regex cannot see its closing
     # brace. This pass converts it to `_A $p$-adic_` where the `$...$` survives
@@ -373,5 +435,6 @@ def normalize_window(window: str, preamble: str = "") -> str:
              for is_math, chunk, display in split_regions(body)]
     text = "".join(parts).strip()
     if lead:
-        text = f"**{lead}**\n{text}"
+        label = number if number else lead
+        text = f"**{label}**\n{text}"
     return text

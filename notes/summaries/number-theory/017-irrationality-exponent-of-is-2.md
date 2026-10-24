@@ -11,7 +11,7 @@ to this family [S3:28]. Its blurb is titled "017. The
 irrationality exponent of π is 2" [S1:488]. The release marks the emphasis in that blurb with inline
 HTML and its inequality with an entity, so the blurb is quoted here from its tag-free tail.
 
-[S1:488] (the family entry, tag-free tail):
+ (the family entry, tag-free tail):
 
 > every rational $`p/q`$ satisfies $`|\pi-p/q|\ge q^{-2-\varepsilon}`$. This also proves convergence of the Flint–Hills series $`\sum_{n\ge1}1/(n^3\sin^2 n)`$, with angles in radians. ([Lean](../../../lean/docs/017.md))
 
@@ -68,11 +68,11 @@ The consequence is a series that many people checked numerically and nobody coul
 **The theorem restated.** For every ν > 2 there is a threshold *Q*(ν) such that every integer
 numerator *p* and every positive integer denominator *q* ≥ *Q*(ν) satisfy |π − *p*/*q*| ≥ *q*^−ν^
 [S5:64–71]. The inequality is stated for unreduced fractions, and the proof exploits that: the
-contradiction "allowed unreduced fractions and zero error" [S8:137–142]. The exact supremum
+contradiction "allowed unreduced fractions and zero error [S8:139–140]" [S8:137–142]. The exact supremum
 characterization — μ(π) = 2, not merely an eventual lower bound — is recovered by a pigeonhole
 argument on 0, π, …, *N*π modulo one, which produces approximations at error 1/*q*² and forces the
 reduced denominators to be unbounded [S8:144–155]. No prior irrationality measure for π enters the
-argument: "no prior irrationality bound for \(\pi\) is assumed." [S5:253–254]
+argument: "no prior irrationality bound for \(\pi\) is assumed. [S5:254]" [S5:253–254]
 
 **The moves.** Three of them carry the weight.
 
@@ -135,7 +135,7 @@ pass, and the library is not built here.
 
 The manuscript's own account, with the entries it cites.
 
-**The exponent ladder.** Mahler "established a finite irrationality exponent for \(\pi\)" [S5:113–116]
+**The exponent ladder.** Mahler "established a finite irrationality exponent for \(\pi\) [S5:113–114]" [S5:113–116]
 with 42, and proved an eventual bound with exponent 30 [S10:81–90]. Mignotte brought the published
 exponent to 21 and the eventual bound to 20 [S5:117–119], [S10:92–103]. Chudnovsky's 1982 thesis
 attached an exponent to π for the first time [S5:119–121], [S10:105–118]. Hata reached 8.01604533…
@@ -150,7 +150,7 @@ criteria, Roth's theorem, Farhi's and Demailly's constructions — is in the sam
 **The Flint–Hills series.** The manuscript dates the question to a Pickover column, with
 Alekseyev's 2011 necessary condition and Meiburg's 2022 sufficient condition bracketing the answer
 at 5/2 [S5:80–100], [S10:25–31], [S10:33–39]. It is candid that the gap is unresolved by the cited
-criteria: "Neither cited criterion settles its equality boundary at \(5/2\)." [S5:99–100]
+criteria: "Neither cited criterion settles its equality boundary at \(5/2\). [S5:99–100]" 
 
 **The trigonometric side.** Dan and López Zapata's 2026 preprint is cited for the
 ∑ *n*^−*a^ |sin *n*|^−*b^ family [S5:139–142], [S10:231–239], [S10:241–249]. The manuscript records

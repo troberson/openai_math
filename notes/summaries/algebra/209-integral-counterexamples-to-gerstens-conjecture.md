@@ -11,18 +11,14 @@ the family's claim: unrestricted integral Gersten injectivity fails in
 degrees 3 and 5. Two explicit two-dimensional ramified regular local
 rings of mixed characteristic $(0,5)$ have nonzero integral
 $K$-theory classes that vanish over their fraction fields. The
-degree-five manuscript's abstract [S3:44–49]: "**abstract**
-We construct a two-dimensional ramified regular local ring $A$ of mixed
+degree-five manuscript's abstract "We construct a two-dimensional ramified regular local ring $A$ of mixed
 characteristic $(0,5)$ for which $K_5(A)\to K_5(\Frac A)$ has a nonzero
 kernel. This disproves Gersten's conjecture in its unrestricted integral
-form.
-\endabstract" The degree-three
-manuscript's abstract [S5:30–35]: "**abstract**
-We construct a two-dimensional ramified regular local ring $A$ in mixed
+form. [S3:44–49]" The degree-three
+manuscript's abstract "We construct a two-dimensional ramified regular local ring $A$ in mixed
 characteristic $(0,5)$ for which the integral map
 $K_3(A)\to K_3(\Frac A)$ has nonzero kernel. This gives a negative
-answer to the unrestricted integral Gersten conjecture.
-\endabstract"
+answer to the unrestricted integral Gersten conjecture. [S5:30–35]"
 
 ## Undergraduate summary
 
@@ -35,7 +31,7 @@ already be zero. The conjecture is known in equicharacteristic
 setting (Panin) and in smooth-over-DVR cases with finite coefficients
 (Geisser–Levine, Skalit), but the unrestricted integral mixed-characteristic
 case was open [S4:5–16]. The degree-five manuscript constructs an
-explicit counterexample [S4:18–30]:
+explicit counterexample 
 
 > **theorem**
 Let $V$ be the ring of integers in the unramified extension of $\mathbb Q_5$ of
@@ -48,17 +44,16 @@ Then $A$ is a Noetherian regular local domain of dimension two and
  \ker\bigl(K_5(A)\longrightarrow K_5(\Frac A)\bigr)\ne0.
 \]
 Consequently the unrestricted integral Gersten conjecture has a negative
-answer.
-\endtheorem
+answer. [S4:18–30]
 
 The ring is $A = (V[x,y]/(5+x^4+y^4))_{(5,x,y)}$ where $V$ is the
 ring of integers in the unramified degree-eight extension of $\mathbb{Q}_5$.
 The degree-three companion constructs a different ring—the local ring
 at a point of a projective hypersurface over the cyclotomic
 $\mathbb{Q}_5(\zeta_5)$—with a nonzero class in $K_3(A)$ that vanishes
-in $K_3(\operatorname{Frac} A)$ [S6:29–40]:
+in $K_3(\operatorname{Frac} A)$ 
 
-> **theorem**
+> **Theorem 1.1**
 The ring $A$ is a two-dimensional Noetherian regular local domain
 of mixed characteristic $(0,5)$, with $\pi\in\mathfrak m_A^2$.
 There is an integral class $c\in K_3(A)$ such that
@@ -68,8 +63,7 @@ There is an integral class $c\in K_3(A)$ such that
  c|_{A[1/\pi]}\bmod5\ne0
  \quadin G_3(A[1/\pi];\mathbb Z/5).
 \]
-In particular, $K_3(A)\to K_3(\Frac A)$ is not injective.
-\endtheorem
+In particular, $K_3(A)\to K_3(\Frac A)$ is not injective. [S6:29–40]
 
 ## Graduate summary
 

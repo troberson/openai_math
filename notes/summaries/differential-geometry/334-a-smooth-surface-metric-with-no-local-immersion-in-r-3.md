@@ -10,9 +10,9 @@ The release's blurb for family 334 [S1:8136]:
 
 > **334. A smooth surface metric with no local isometric immersion in ℝ3.** Constructs a smooth positive-definite metric on $(-1,1)^2$ for which no neighborhood of the origin admits a smooth isometric immersion into ℝ3. This answers the unrestricted smooth local isometric realization problem for surfaces negatively, even after shrinking the neighborhood. ([Lean](../../../lean/docs/334.md))
 
-The catalog abstract in `overview.tex` [S2:766] is the same sentence, and the manuscript's own abstract says the same in the first person [S5:45–50]:
+The catalog abstract in `overview.tex` [S2:766] is the same sentence, and the manuscript's own abstract says the same in the first person 
 
-> We construct a smooth positive-definite Riemannian metric on \((-1,1)^2\) that agrees with the Euclidean metric to every order at the origin, yet no neighborhood of the origin admits a smooth isometric immersion into Euclidean three-space. This gives a negative answer to the unrestricted smooth local isometric realization problem for surfaces.
+> We construct a smooth positive-definite Riemannian metric on \((-1,1)^2\) that agrees with the Euclidean metric to every order at the origin, yet no neighborhood of the origin admits a smooth isometric immersion into Euclidean three-space. This gives a negative answer to the unrestricted smooth local isometric realization problem for surfaces. [S5:45–50]
 
 The bibtex key the release ships [S3:9–12]:
 
@@ -23,9 +23,9 @@ The bibtex key the release ships [S3:9–12]:
 
 ## Undergraduate summary
 
-The question is local. Near one point, can a surface carrying a given smooth metric be realized as a smooth surface in ordinary three-dimensional space? The manuscript states the question in coordinates [S5:56–59]:
+The question is local. Near one point, can a surface carrying a given smooth metric be realized as a smooth surface in ordinary three-dimensional space? The manuscript states the question in coordinates 
 
-> The local isometric realization problem asks whether a Riemannian surface \((\Sigma,g)\) can, near each point, be realized as a smooth surface in Euclidean three-space. In local coordinates this means finding a smooth map \(F\) with
+> The local isometric realization problem asks whether a Riemannian surface \((\Sigma,g)\) can, near each point, be realized as a smooth surface in Euclidean three-space. In local coordinates this means finding a smooth map \(F\) with [S5:56–59]
 
 The answer given is no. The main result is Theorem A [S5:70–78]:
 
@@ -54,13 +54,13 @@ Two things make the example sharp. First, the metric is not singular at the base
 > the full Taylor jet of the metric at the base point.
 > \end{corollary}
 
-Second, the obstruction is not a curvature sign. The construction uses both signs, and the manuscript states plainly that it leaves the sign-restricted versions open [S5:115–118]:
+Second, the obstruction is not a curvature sign. The construction uses both signs, and the manuscript states plainly that it leaves the sign-restricted versions open 
 
-> In Theorem A, positive definiteness refers to the metric, not its curvature: the construction uses both signs of curvature. It does not settle the smooth local-realizability problem under either sign restriction \(K\ge0\) or \(K\le0\).
+> In Theorem A, positive definiteness refers to the metric, not its curvature: the construction uses both signs of curvature. It does not settle the smooth local-realizability problem under either sign restriction \(K\ge0\) or \(K\le0\). [S5:115–118]
 
-The proof runs through a scalar equation. Any smooth isometric immersion into three-space has a height function in a fixed ambient direction, and that height must satisfy one second-order relation. The manuscript sets out the two tasks [S5:134–143]:
+The proof runs through a scalar equation. Any smooth isometric immersion into three-space has a height function in a fixed ambient direction, and that height must satisfy one second-order relation. The manuscript sets out the two tasks 
 
-> The proof has two tasks: obstruct a scalar height on an entire fixed square, and construct a metric for which any local immersion would produce such a height on one of those squares. The scalar equation is the Darboux equation. It follows from the Gauss equation because the component of an immersion in a fixed ambient direction has covariant Hessian equal to a scalar multiple of the second fundamental form. We use only this necessary condition for an immersion. The patch argument excludes heights with gradient norm below one, a nonzero diagonal entry of the covariant Hessian, and a mixed entry small relative to that diagonal entry.
+> The proof has two tasks: obstruct a scalar height on an entire fixed square, and construct a metric for which any local immersion would produce such a height on one of those squares. The scalar equation is the Darboux equation. It follows from the Gauss equation because the component of an immersion in a fixed ambient direction has covariant Hessian equal to a scalar multiple of the second fundamental form. We use only this necessary condition for an immersion. The patch argument excludes heights with gradient norm below one, a nonzero diagonal entry of the covariant Hessian, and a mixed entry small relative to that diagonal entry. [S5:134–143]
 
 So the argument is: find a metric for which the height equation has no solution on a whole square, then build a metric whose every local immersion would produce such a height.
 
@@ -91,9 +91,9 @@ The link from an immersion to that equation is one lemma [S6:62–72]:
 > normal equal to \(e\) at \(b\).
 > \end{lemma}
 
-The manuscript is explicit that it uses only the necessary direction [S6:83–84]:
+The manuscript is explicit that it uses only the necessary direction 
 
-> Only this necessary equation for a height is used. We do not need the converse reconstruction of an immersion from a Darboux solution.
+> Only this necessary equation for a height is used. We do not need the converse reconstruction of an immersion from a Darboux solution. [S6:83–84]
 
 The analytic obstruction is a category statement [S6:86–91]:
 
@@ -104,15 +104,15 @@ The analytic obstruction is a category statement [S6:86–91]:
 > a metric in that neighborhood with no admissible height.
 > \end{proposition}
 
-The square-wide quantification is what makes this an obstruction rather than a local existence failure [S6:93–94]:
+The square-wide quantification is what makes this an obstruction rather than a local existence failure 
 
-> The whole-square requirement is essential. Every curvature zero in \(S\) of a metric in \(\mathcal U\) is a clean change of sign. Indeed,
+> The whole-square requirement is essential. Every curvature zero in \(S\) of a metric in \(\mathcal U\) is a clean change of sign. Indeed, [S6:93–94]
 
 Every curvature zero in the square is a clean change of sign, so the pointwise local-existence theorems recalled in the introduction remain compatible with the proposition: they give heights locally, not one height on all of $S$ [S6:93–100].
 
-The cap estimate is the analytic core. A cap is a region with three edges in positive curvature and one artificial edge that may cut through negative curvature [S5:161–172]:
+The cap estimate is the analytic core. A cap is a region with three edges in positive curvature and one artificial edge that may cut through negative curvature 
 
-> For the model curvature used here, the main analytic ingredient is a uniform regularity estimate for Darboux heights on a _cap_: a region with three edges in positive curvature and a fourth, artificial edge that may cut through negative curvature. Starting from fixed low-order bounds, the estimate gives all-orders bounds on compact subsets whenever the metric has such bounds there. No high-order data are imposed on the artificial edge. Differentiating the equation produces a transverse drift proportional to the curvature derivative. A directed multiplier uses this drift together with a small tangential term, needed where the transverse curvature derivative vanishes. A weighted elliptic estimate controls the remaining positive-curvature region. This is  .
+> For the model curvature used here, the main analytic ingredient is a uniform regularity estimate for Darboux heights on a _cap_: a region with three edges in positive curvature and a fourth, artificial edge that may cut through negative curvature. Starting from fixed low-order bounds, the estimate gives all-orders bounds on compact subsets whenever the metric has such bounds there. No high-order data are imposed on the artificial edge. Differentiating the equation produces a transverse drift proportional to the curvature derivative. A directed multiplier uses this drift together with a small tangential term, needed where the transverse curvature derivative vanishes. A weighted elliptic estimate controls the remaining positive-curvature region. This is  . [S5:161–172]
 
 The proposition itself [S7:41–53]:
 
@@ -130,34 +130,34 @@ The proposition itself [S7:41–53]:
 > \((-2,2)\times(-b_*,2)\).
 > \end{proposition}
 
-Two caps supply smooth data on opposite sides of a thin negative-curvature slab; hyperbolic propagation carries that data to the edges of an oscillating perturbation. The strip width is a small parameter times the inverse oscillation frequency, so the forced oscillatory moment is linear in the parameter while the competing spatial terms are quadratic. The manuscript's own summary of the count [S5:174–187]:
+Two caps supply smooth data on opposite sides of a thin negative-curvature slab; hyperbolic propagation carries that data to the edges of an oscillating perturbation. The strip width is a small parameter times the inverse oscillation frequency, so the forced oscillatory moment is linear in the parameter while the competing spatial terms are quadratic. The manuscript's own summary of the count 
 
-> Two caps supply uniformly smooth data on opposite sides of a small negative-curvature slab. Hyperbolic propagation carries these data to the two edges of a thin, oscillating metric perturbation. A finite Taylor comparison for the unperturbed metric isolates the change in the height's transverse derivative caused by the perturbation. Choose the strip width to be a small parameter times the inverse oscillation frequency. The forced oscillatory moment is linear in that parameter, while the leading competing spatial terms are quadratic and the smooth endpoint data contribute a negligible high-frequency moment. Fixing that parameter sufficiently small and then increasing the frequency excludes density, in any nonempty open set, of metrics admitting a height in a fixed bounded class. Baire category then removes those bounds and gives  , the obstruction on a whole square.
+> Two caps supply uniformly smooth data on opposite sides of a small negative-curvature slab. Hyperbolic propagation carries these data to the two edges of a thin, oscillating metric perturbation. A finite Taylor comparison for the unperturbed metric isolates the change in the height's transverse derivative caused by the perturbation. Choose the strip width to be a small parameter times the inverse oscillation frequency. The forced oscillatory moment is linear in that parameter, while the leading competing spatial terms are quadratic and the smooth endpoint data contribute a negligible high-frequency moment. Fixing that parameter sufficiently small and then increasing the frequency excludes density, in any nonempty open set, of metrics admitting a height in a fixed bounded class. Baire category then removes those bounds and gives  , the obstruction on a whole square. [S5:174–187]
 
-The closing lines of the pulse section state the category step [S8:404–406]:
+The closing lines of the pulse section state the category step 
 
-> We have proved that every \(\mathcal A_{M,q_0}\) is nowhere dense. Their countable union contains every metric admitting an admissible height. Baire's theorem now proves  .
+> We have proved that every \(\mathcal A_{M,q_0}\) is nowhere dense. Their countable union contains every metric admitting an admissible height. Baire's theorem now proves  . [S8:404–406]
 
-The geometric step explains why a squarewide obstruction is enough. The boundary-saddle lemma is the load-bearing piece [S9:166–172]:
+The geometric step explains why a squarewide obstruction is enough. The boundary-saddle lemma is the load-bearing piece 
 
-> **lemma**
+> **Theorem 4.2**
+ [S9:166–172]
 
+The manuscript describes the accumulation 
 
-The manuscript describes the accumulation [S5:189–203]:
+> The geometric step explains why that squarewise obstruction suffices. For each orientation in a fixed finite net, place shrinking obstructed patches approaching every boundary point of a disk with negative curvature inside and zero curvature on its boundary. The boundary-saddle argument finds a point where any hypothetical graph immersion has a nonzero rank-one second fundamental form. A height in the fixed ambient normal direction at that point has zero differential there. In a frame aligned with the Hessian's kernel, its mixed entry vanishes and its transverse diagonal entry is nonzero. A nearby orientation from the net preserves the required strict inequalities on a sufficiently small full patch. Finally, let such disks and their surrounding patches accumulate at the origin, with amplitudes small enough to preserve smoothness and the Euclidean Taylor jet there. [S5:189–203]
 
-> The geometric step explains why that squarewise obstruction suffices. For each orientation in a fixed finite net, place shrinking obstructed patches approaching every boundary point of a disk with negative curvature inside and zero curvature on its boundary. The boundary-saddle argument finds a point where any hypothetical graph immersion has a nonzero rank-one second fundamental form. A height in the fixed ambient normal direction at that point has zero differential there. In a frame aligned with the Hessian's kernel, its mixed entry vanishes and its transverse diagonal entry is nonzero. A nearby orientation from the net preserves the required strict inequalities on a sufficiently small full patch. Finally, let such disks and their surrounding patches accumulate at the origin, with amplitudes small enough to preserve smoothness and the Euclidean Taylor jet there.
+The assembly is two levels of accumulation, with summable bounds in each derivative order at both levels 
 
-The assembly is two levels of accumulation, with summable bounds in each derivative order at both levels [S9:3–7]:
+> We now turn the whole-patch obstruction into one metric germ. There are two levels of accumulation: obstructed patches approach every boundary point of each negative disk, and the disks approach the origin. Summable bounds in each derivative order will preserve smoothness at both levels. [S9:3–7]
 
-> We now turn the whole-patch obstruction into one metric germ. There are two levels of accumulation: obstructed patches approach every boundary point of each negative disk, and the disks approach the origin. Summable bounds in each derivative order will preserve smoothness at both levels.
+The final comparison is with the flat metric 
 
-The final comparison is with the flat metric [S9:286–288]:
+> The Euclidean metric itself admits an isometric immersion into \(\mathbb R^3\), whereas the constructed metric does not on any neighborhood of the origin. [S9:286–288]
 
-> The Euclidean metric itself admits an isometric immersion into \(\mathbb R^3\), whereas the constructed metric does not on any neighborhood of the origin.
+The formalization is one declaration. The scope note states what it covers 
 
-The formalization is one declaration. The scope note states what it covers [S11:9]:
-
-> The local isometric-immersion problem asks whether every smooth surface metric can be realized locally in Euclidean three-space. The formalized counterexample is a smooth positive-definite metric on $(-1,1)^2$ for which no neighborhood of the origin admits a smooth isometric immersion into $\mathbb R^3$. The obstruction applies to every smooth candidate map on every such neighborhood.
+> The local isometric-immersion problem asks whether every smooth surface metric can be realized locally in Euclidean three-space. The formalized counterexample is a smooth positive-definite metric on $(-1,1)^2$ for which no neighborhood of the origin admits a smooth isometric immersion into $\mathbb R^3$. The obstruction applies to every smooth candidate map on every such neighborhood. [S11:9]
 
 The release's index names the paper and the one result [S12:172–175] [S12:1325–1327]:
 
@@ -216,25 +216,25 @@ The ledger records the family as one manuscript at tier T3, formalized, with one
 
 ## History of the conjecture
 
-The manuscript places its result inside a literature that had settled the analytic local problem for nondegenerate curvature [S5:89–101]:
+The manuscript places its result inside a literature that had settled the analytic local problem for nondegenerate curvature 
 
-> The analytic local problem is settled by the classical Janet–Cartan theorem  . For smooth metrics, nonzero Gaussian curvature leads to elliptic or hyperbolic equations and smooth local existence; zeros of curvature introduce degeneracy and changes of type. Lin's foundational work treated nonnegative curvature and a clean change of sign with finite differentiability estimates  . Here a clean change of sign means \(K(p)=0\) and \(dK(p)\ne0\). Smooth local existence under this condition was established by Nakamura and Maeda  ; see also the regularity comparison in \cite[p. 320]NY2008. More complicated zero sets have been treated under finite-order and geometric restrictions, including transverse curves and cusps \cite[Theorem 1.1]HanKhuri2010\cite[Theorem 1.1]Lin2015.
+> The analytic local problem is settled by the classical Janet–Cartan theorem  . For smooth metrics, nonzero Gaussian curvature leads to elliptic or hyperbolic equations and smooth local existence; zeros of curvature introduce degeneracy and changes of type. Lin's foundational work treated nonnegative curvature and a clean change of sign with finite differentiability estimates  . Here a clean change of sign means \(K(p)=0\) and \(dK(p)\ne0\). Smooth local existence under this condition was established by Nakamura and Maeda  ; see also the regularity comparison in \cite[p. 320]NY2008. More complicated zero sets have been treated under finite-order and geometric restrictions, including transverse curves and cusps \cite[Theorem 1.1]HanKhuri2010\cite[Theorem 1.1]Lin2015. [S5:89–101]
 
 The bibliography carries these entries: Janet 1926 [S10:163–172], Cartan 1927 [S10:174–183], Lin 1985 [S10:1–10], Lin 1986 [S10:12–21], Nakamura–Maeda 1989 [S10:23–32], Han–Khuri 2010 [S10:124–137], and Lin 2015 [S10:139–153]. The two questions the manuscript cites as the source of the problem are Yau's discussion at page 236 [S10:185–195] and Ghomi's survey, Section 1.5, Problem 1.9 [S10:155–161].
 
-The regularity ladder is the part of the history the manuscript is careful about [S5:103–118]:
+The regularity ladder is the part of the history the manuscript is careful about 
 
-> The regularity distinction is essential. Existence at every finite differentiability order, on neighborhoods allowed to shrink with that order, does not by itself give one smooth map on a fixed neighborhood. At the other end of the scale, Nash–Kuiper flexibility gives \(C^1\) local isometric realizations in three-space  . That regularity does not impose the second-order compatibility used for smooth immersions. Pogorelov constructed a \(C^{2,1}\) metric with no local \(C^2\) realization \cite[paragraph 7]Pogorelov1971. The published refinement by Nadirashvili and Yuan achieves \(K\ge0\) with the same input and output regularities \cite[Theorem 1.1]NY2008. In Theorem A, positive definiteness refers to the metric, not its curvature: the construction uses both signs of curvature. It does not settle the smooth local-realizability problem under either sign restriction \(K\ge0\) or \(K\le0\).
+> The regularity distinction is essential. Existence at every finite differentiability order, on neighborhoods allowed to shrink with that order, does not by itself give one smooth map on a fixed neighborhood. At the other end of the scale, Nash–Kuiper flexibility gives \(C^1\) local isometric realizations in three-space  . That regularity does not impose the second-order compatibility used for smooth immersions. Pogorelov constructed a \(C^{2,1}\) metric with no local \(C^2\) realization \cite[paragraph 7]Pogorelov1971. The published refinement by Nadirashvili and Yuan achieves \(K\ge0\) with the same input and output regularities \cite[Theorem 1.1]NY2008. In Theorem A, positive definiteness refers to the metric, not its curvature: the construction uses both signs of curvature. It does not settle the smooth local-realizability problem under either sign restriction \(K\ge0\) or \(K\le0\). [S5:103–118]
 
 Pogorelov's example is the nearest predecessor: a $C^{2,1}$ metric with no local $C^2$ realization, cited at paragraph 7 of the 1971 paper [S10:79–89]. The manuscript's result is at the smooth end of that scale.
 
-The manuscript records a disagreement in the literature and declines to adjudicate it [S5:120–131]:
+The manuscript records a disagreement in the literature and declines to adjudicate it 
 
-> An earlier preprint of Nadirashvili and Yuan \cite[Theorem 1.1]NY2002 states a stronger counterexample: a smooth metric with \(K\le0\) and no \(C^3\) isometric embedding on any neighborhood of the distinguished point. Their later published paper, however, explicitly leaves the arbitrary smooth-metric question open \cite[p. 320]NY2008, as does the subsequent discussion in \cite[p. 650]HanKhuri2010. The earlier preprint and these later accounts therefore give different statuses for the unrestricted smooth question. We leave this discrepancy unresolved. We do not use the preprint's nonsolvability assertion; the construction below supplies its own analytic obstruction.
+> An earlier preprint of Nadirashvili and Yuan \cite[Theorem 1.1]NY2002 states a stronger counterexample: a smooth metric with \(K\le0\) and no \(C^3\) isometric embedding on any neighborhood of the distinguished point. Their later published paper, however, explicitly leaves the arbitrary smooth-metric question open \cite[p. 320]NY2008, as does the subsequent discussion in \cite[p. 650]HanKhuri2010. The earlier preprint and these later accounts therefore give different statuses for the unrestricted smooth question. We leave this discrepancy unresolved. We do not use the preprint's nonsolvability assertion; the construction below supplies its own analytic obstruction. [S5:120–131]
 
-The 2002 preprint is in the bibliography as an arXiv entry [S10:102–111], the 2008 paper as a published article [S10:91–100]. The two analytic debts the manuscript names are the boundary-saddle argument in the 2002 preprint's Section 2, Step 3, and Khuri's high-frequency integral testing for general Monge–Ampère equations, together with Khuri's own open construction of a nonsolvable curvature profile [S5:145–159]:
+The 2002 preprint is in the bibliography as an arXiv entry [S10:102–111], the 2008 paper as a published article [S10:91–100]. The two analytic debts the manuscript names are the boundary-saddle argument in the 2002 preprint's Section 2, Step 3, and Khuri's high-frequency integral testing for general Monge–Ampère equations, together with Khuri's own open construction of a nonsolvable curvature profile 
 
-> Two earlier approaches supply important parts of this strategy. The geometric construction uses the boundary-saddle argument of Nadirashvili and Yuan \cite[Section 2, Step 3]NY2002: a negatively curved disk cannot be a graph whose second fundamental form vanishes along its entire boundary. On the analytic side, Khuri's counterexamples for general Monge–Amp\`ere equations use high-frequency integral testing  . His work on the Darboux equation develops solution-dependent flow coordinates and a prescribed-curvature construction, while leaving open the construction of the required nonsolvable curvature profile \cite[Theorem 1 and the following discussion]Khuri2009. The distinction matters here: the Darboux coefficients come from one metric, so a nonsolvable general Monge–Amp\`ere equation does not by itself give an isometric-immersion obstruction. We perturb the metric itself and estimate the resulting Darboux forcing.
+> Two earlier approaches supply important parts of this strategy. The geometric construction uses the boundary-saddle argument of Nadirashvili and Yuan \cite[Section 2, Step 3]NY2002: a negatively curved disk cannot be a graph whose second fundamental form vanishes along its entire boundary. On the analytic side, Khuri's counterexamples for general Monge–Amp\`ere equations use high-frequency integral testing  . His work on the Darboux equation develops solution-dependent flow coordinates and a prescribed-curvature construction, while leaving open the construction of the required nonsolvable curvature profile \cite[Theorem 1 and the following discussion]Khuri2009. The distinction matters here: the Darboux coefficients come from one metric, so a nonsolvable general Monge–Amp\`ere equation does not by itself give an isometric-immersion obstruction. We perturb the metric itself and estimate the resulting Darboux forcing. [S5:145–159]
 
 The Khuri entries are the 2007 counterexamples paper [S10:55–64] and the 2009 Darboux paper [S10:113–122].
 

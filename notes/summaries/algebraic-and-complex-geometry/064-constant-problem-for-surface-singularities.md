@@ -6,12 +6,12 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb [S1:1613]: "**064. Topological triviality of *μ*-constant surface singularities.** Proves topological right-triviality for every holomorphic one-parameter family of isolated hypersurface singularities in $\mathbb C^3$ with constant Milnor number, resolving the surface case of the *μ*-constant problem. After shrinking the parameter disk and representatives, ambient homeomorphisms vary jointly continuously, fix the origin section and preserve the defining functions." The manuscript abstract
-[S3:33–37] reads: "We prove that every holomorphic one-parameter family of isolated hypersurface
+The release's blurb "**064. Topological triviality of *μ*-constant surface singularities.** Proves topological right-triviality for every holomorphic one-parameter family of isolated hypersurface singularities in $\mathbb C^3$ with constant Milnor number, resolving the surface case of the *μ*-constant problem. After shrinking the parameter disk and representatives, ambient homeomorphisms vary jointly continuously, fix the origin section and preserve the defining functions. [S1:1613]" The manuscript abstract
+ reads: "We prove that every holomorphic one-parameter family of isolated hypersurface
 singularities in $\mathbb C^3$ with constant Milnor number is topologically
 right-trivial. This gives a positive answer to the surface case of the
 $\mu$-constant problem. The trivialization fixes the parameter and the
-origin section, and preserves the defining functions."
+origin section, and preserves the defining functions. [S3:33–37]"
 
 ## Undergraduate summary
 
@@ -21,9 +21,9 @@ $f_t$ is "$\mu$-constant" when $\mu(f_t,0)=\mu(f_0,0)$ for all $t$.
 The $\mu$-constant problem asks whether this numerical constancy
 forces the family to be *topologically* trivial — each fiber
 homeomorphic to the central fiber by ambient maps that vary
-continuously. The theorem [S4:32–45]:
+continuously. The theorem 
 
-> **theorem**
+> **Theorem 1.1**
 Let $F:(\mathbb C^3\times\Delta,\{0\}\times\Delta)\to(\mathbb C,0)$
 be holomorphic.  Suppose that, for every $t\in\Delta$, $f_t(0)=0$,
 $f_t$ has an isolated critical point at $0$, and
@@ -35,8 +35,7 @@ representatives, there is a homeomorphism germ
  f_t\bigl(\phi_t(x)\bigr)=f_0(x).
 \]
 Both $\Phi$ and $\Phi^{-1}$ are jointly continuous on neighborhoods
-of the origin section over the original disk.
-\endtheorem
+of the origin section over the original disk. [S4:32–45]
 
 The trivialization is *right-trivial*: the homeomorphism acts on the
 source variables and preserves the defining functions
@@ -61,7 +60,7 @@ unresolved.  Outside complex dimension two, Timourian and King established local
 triviality of families of function germs
  .  This additional passage matters here:
 constancy of the individual topological types and a jointly continuous
-choice of ambient coordinate changes are different conclusions." In complex dimension two the cobordism argument
+choice of ambient coordinate changes are different conclusions. [S4:57–69]" In complex dimension two the cobordism argument
 leaves the product structure unresolved: the Milnor fiber of a
 surface singularity is a handlebody, and a homologically trivial
 cobordism of handlebodies is not automatically a product.
@@ -71,7 +70,7 @@ cobordism with a projective model. A semistable log minimal model
 introduces extra vertical surfaces $S_a$ with reduced boundaries
 $B_S$, and the nearby Euler comparison gives
 $\sum_a \chi_c(S_a^\circ)+\delta=0$ [S4:155–163] and
-[S4:166–172]: "The proof rests on a cancellation of Euler characteristics.  To explain
+ "The proof rests on a cancellation of Euler characteristics.  To explain
 it, first consider a projective family with just the prescribed surface
 singularity in each fiber.  A semistable log minimal model replaces its
 special fiber by a component $S_0$ dominating $X_0$ and additional
@@ -80,7 +79,7 @@ has a reduced boundary $B_S$, consisting of its intersections with the
 other vertical components and the horizontal exceptional divisors.
 Write $S^\circ=S\setminus B_S$.  The construction gives
 $S_0^\circ\simeq X_0\setminus\{0\}$ and makes every
-$K_{S_a}+B_{S_a}$ nef." "Constancy of $\mu$ keeps the Euler characteristic of the punctured
+$K_{S_a}+B_{S_a}$ nef. [S4:155–163]" "Constancy of $\mu$ keeps the Euler characteristic of the punctured
 projective fibers constant.  Their nearby Euler comparison, after the
 contribution of $S_0^\circ$ cancels, is
 \[
@@ -90,21 +89,21 @@ Here $\chi_c$ denotes Euler characteristic with compact supports, and
 $\delta$ is the sum of the excess Euler characteristics of the local
 smoothings at interior singular points of the extra surfaces.
 Greuel–Steenbrink's first-Betti-number theorem makes these excesses
-nonnegative  ."
+nonnegative  . [S4:166–172]"
 
 Two sign arguments force every extra surface to be
 topologically trivial. Greuel–Steenbrink's first-Betti-number
 theorem makes the smoothing excess $\delta$ nonnegative; Langer's
 orbifold Bogomolov–Miyaoka–Yau inequality gives
 $0\le(K_{S_a}+B_{S_a})^2\le 3\chi_c(S_a^\circ)$, so every extra
-logarithmic square vanishes [S4:173–178]. "Langer's orbifold Bogomolov–Miyaoka–Yau inequality supplies the other
+logarithmic square vanishes . "Langer's orbifold Bogomolov–Miyaoka–Yau inequality supplies the other
 sign  :
 \[
  0\le (K_{S_a}+B_{S_a})^2\le3\chi_c(S_a^\circ)
  \qquadfor every a.
 \]
 Thus every extra logarithmic square vanishes.  Specialization of
-projective intersections then gives constancy of $\beta$."
+projective intersections then gives constancy of $\beta$. [S4:173–178]"
 
 **From invariants to homeomorphisms.** Constancy of the logarithmic
 square $\beta$ (Wahl's surface invariant) implies simultaneous

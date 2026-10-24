@@ -12,13 +12,11 @@ Hovey--Strickland is answered — every homotopy group of the
 $K(n)$-local sphere is a finitely generated $\Zp$-module, for every
 prime, positive height, and integer degree; and the same conclusion
 holds after $K(n)$-localizing any finite $p$-local spectrum. The
-manuscript's abstract [S3:8–14]: "**abstract**
-We prove that the homotopy groups of the $K(n)$-local sphere are finitely
+manuscript's abstract "We prove that the homotopy groups of the $K(n)$-local sphere are finitely
 generated $\mathbb Z_p$-modules in every integer degree, for every prime $p$
 and positive height $n$. Equivalently, the same conclusion holds after
 $K(n)$-localizing any finite $p$-local spectrum. This answers the degreewise
-finiteness question of Hovey and Hovey–Strickland.
-\endabstract"
+finiteness question of Hovey and Hovey–Strickland. [S3:8–14]"
 
 ## Undergraduate summary
 
@@ -33,16 +31,14 @@ finiteness statement must control *every* integer degree at once, with
 no assumption that the negative groups vanish. The manuscript proves
 the degreewise version for the sphere [S4:3–11]:
 
-> **theorem**
-For every prime $p$, every integer $n\geq 1$, and every integer $t$,
+> For every prime $p$, every integer $n\geq 1$, and every integer $t$,
 the $\Zp$-module
 \[
                  \pi_t L_{K(n)}S_p^\wedge
 \]
 is finitely generated. Equivalently, for every finite $p$-local
 spectrum $F$, the module $\pi_t L_{K(n)}F$ is finitely generated
-over $\Zp$ in every integer degree $t$.
-\endtheorem
+over $\Zp$ in every integer degree $t$. [S4:13–22]
 
 The equivalent form — applying $L_{K(n)}$ to *any* finite $p$-local
 spectrum $F$ — follows because finite generation over the Noetherian

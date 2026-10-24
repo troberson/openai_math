@@ -13,14 +13,12 @@ exact faithful strong symmetric monoidal fiber functor to a higher
 Verlinde category $\mathrm{Ver}_{p^n}$, with the level $n$ allowed to
 depend on the category, including characteristic two — resolving the
 finite case of the Benson–Etingof–Ostrik conjecture. The manuscript's
-abstract [S3:11–18]: "**abstract**
-We prove the finite case of the Benson–Etingof–Ostrik conjecture:
+abstract "We prove the finite case of the Benson–Etingof–Ostrik conjecture:
 every finite symmetric tensor category over an algebraically closed field
 $k$ of characteristic $p>0$ admits a $k$-linear exact faithful strong symmetric
 monoidal functor to a finite higher Verlinde category
 $\mathrm{Ver}_{p^n}(k)$. The result includes characteristic two,
-and the level $n$ may depend on the category.
-\endabstract"
+and the level $n$ may depend on the category. [S3:11–18]"
 
 ## Undergraduate summary
 
@@ -34,16 +32,14 @@ characteristic the target must be larger: the higher Verlinde categories
 $\operatorname{Ver}_{p^n}(k)$ form a tower of finite symmetric tensor
 categories, each a finite abelian envelope of a quotient of tilting
 $SL_2$-modules [S4:4–33]. The manuscript proves that every finite
-symmetric tensor category lands in some level of this tower [S4:35–42]:
+symmetric tensor category lands in some level of this tower 
 
-> **theorem**
-For every prime $p$, every algebraically closed field $k$ of
+> For every prime $p$, every algebraically closed field $k$ of
 characteristic $p$, and every finite symmetric tensor category
 $\mathcal C$ over $k$, there are an integer $n\geq1$ and a fiber functor
 \[
  \mathcal C\longrightarrow\operatornameVer_{p^n}(k).
-\]
-\endtheorem
+\] [S4:35–42]
 
 The level $n$ may depend on the category; the theorem makes no assertion
 about the growth of $n$ or about nonfinite categories of moderate growth.

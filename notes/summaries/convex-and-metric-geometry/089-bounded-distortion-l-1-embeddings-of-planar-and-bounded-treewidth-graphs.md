@@ -6,12 +6,12 @@
 
 ## Original CONTENTS.md summary
 
-[S1:254] carries the family entry:
+ carries the family entry:
 
-> Resolves the planar and bounded-treewidth cases of the Gupta–Newman–Rabinovich–Sinclair conjecture. Shortest-path metrics of finite connected graphs with arbitrary positive edge lengths embed into real $L_1$ with universal distortion for planar graphs, and distortion depending only on treewidth for bounded-treewidth graphs. The corresponding multicommodity flow–cut gaps are uniformly bounded.
+> Resolves the planar and bounded-treewidth cases of the Gupta–Newman–Rabinovich–Sinclair conjecture. Shortest-path metrics of finite connected graphs with arbitrary positive edge lengths embed into real $L_1$ with universal distortion for planar graphs, and distortion depending only on treewidth for bounded-treewidth graphs. The corresponding multicommodity flow–cut gaps are uniformly bounded. [S1:254]
 
-The entry links the two manuscripts as "Planar graph embeddings" and
-"Bounded-treewidth embeddings" [S1:254].
+The entry links the two manuscripts as "Planar graph embeddings [S1:254]" and
+"Bounded-treewidth embeddings [S1:254]" .
 
 The first manuscript's title is `Planar Graph Metrics Embed into $L_1$ with Constant Distortion` [S2:1].
 
@@ -168,7 +168,7 @@ manuscript's bibliography carries the entry [S5:1] and the second carries it
 at [S27:1].
 
 The treewidth-two case was settled before this result. [S20:85] records it:
-"Gupta et al. proved the treewidth-two case."
+"Gupta et al. proved the treewidth-two case. [S20:85]"
 
 The exact value for treewidth two is known. [S20:86–88] gives it: "The
 optimal distortion is $2$, by the upper bound of Chakrabarti, Jaffe, Lee, and

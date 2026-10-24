@@ -11,14 +11,12 @@ the family's claim: closed connected aspherical topological
 four-manifolds that are homotopy equivalent but not homeomorphic, with a
 common word-hyperbolic fundamental group, so the homeomorphism-existence
 formulation of the Borel conjecture fails in dimension four. The
-manuscript's abstract [S3:44–51]: "**abstract**
-We construct closed connected aspherical topological four-manifolds
+manuscript's abstract "We construct closed connected aspherical topological four-manifolds
 that are homotopy equivalent but not homeomorphic, disproving the
 homeomorphism-existence formulation of the Borel conjecture in dimension
 four.  Their common
 fundamental group is word-hyperbolic.  One of the manifolds also has a
-self-homotopy equivalence not homotopic to a homeomorphism.
-\endabstract"
+self-homotopy equivalence not homotopic to a homeomorphism. [S3:44–51]"
 
 ## Undergraduate summary
 
@@ -37,8 +35,7 @@ manuscript shows the weakest form already fails in dimension four
 > **theorem**
 There exist closed connected aspherical topological four-manifolds
 $M$ and $N$ that are homotopy equivalent but not homeomorphic.
-Their common fundamental group is word-hyperbolic.
-\endtheorem
+Their common fundamental group is word-hyperbolic. [S4:12–16]
 
 In addition, one of the two manifolds carries a self-homotopy
 equivalence that no homeomorphism of the manifold is homotopic to, a

@@ -13,19 +13,15 @@ $N\ge2$, resolving the threshold-bound-state conjecture; and for
 $\mathrm{SU}(2)$ a companion proves infinitely many normalizable
 positive-energy eigenstates with unbounded energies, contradicting the
 original BFSS paper's exclusion of additional bound states at
-$N=2$. The threshold manuscript's abstract [S3:66–71]: "**abstract**
-For every finite \(N\ge2\), we prove that undeformed \(\SU(N)\) BFSS matrix
+$N=2$. The threshold manuscript's abstract "For every finite \(N\ge2\), we prove that undeformed \(\SU(N)\) BFSS matrix
 quantum mechanics has exactly one normalizable zero-energy state after
 removing the center of mass. This establishes the threshold-bound-state
-conjecture.
-\endabstract" The
-positive-eigenvalue manuscript's abstract [S5:44–50]: "**abstract**
-We prove that the relative $\mathrm{SU}(2)$ BFSS Hamiltonian has infinitely many
+conjecture. [S3:66–71]" The
+positive-eigenvalue manuscript's abstract "We prove that the relative $\mathrm{SU}(2)$ BFSS Hamiltonian has infinitely many
 positive eigenvalues tending to infinity, with square-integrable
 eigenvectors. The operator is defined by closing the gauge-invariant
 supercharge form. This refutes, at $N=2$, the exclusion of normalizable
-positive-energy states stated in the original BFSS paper.
-\endabstract"
+positive-energy states stated in the original BFSS paper. [S5:44–50]"
 
 ## Undergraduate summary
 
@@ -47,8 +43,7 @@ For every integer \(N\ge2\),
 \dim\Ker H_N=1.
 \]
 The kernel consists of \(\Spin(9)\)-invariant states and is even in the
-fermion grading just specified.
-\endtheorem
+fermion grading just specified. [S4:74–81]
 
 That single state is the unique ground state of the relative model.
 The positive-eigenvalue companion then asks what happens to the
@@ -62,8 +57,7 @@ $\Psi_j\in\mathrm{Dom}(H)$ and real numbers $E_j>0$ tending to infinity such tha
 \[
  H\Psi_j=E_j\Psi_j.
 \]
-In particular, $\sigma_{\mathrm p}(H)\cap(0,\infty)$ is infinite.
-\endtheorem
+In particular, $\sigma_{\mathrm p}(H)\cap(0,\infty)$ is infinite. [S5:135–143]
 
 ## Graduate summary
 

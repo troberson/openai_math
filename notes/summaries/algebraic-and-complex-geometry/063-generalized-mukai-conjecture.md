@@ -6,19 +6,19 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb [S1:1597]: "**063. The generalized Mukai conjecture.** Proves the generalized Mukai conjecture: every positive-dimensional smooth complex projective Fano manifold of dimension *n*, Picard number *ρ* and pseudoindex *ι* satisfies $`\rho(\iota-1)\le n`$, with equality exactly for $`(\mathbb P^{\iota-1})^\rho`$. Here the pseudoindex is the least anticanonical degree of a rational curve."
+The release's blurb "**063. The generalized Mukai conjecture.** Proves the generalized Mukai conjecture: every positive-dimensional smooth complex projective Fano manifold of dimension *n*, Picard number *ρ* and pseudoindex *ι* satisfies $`\rho(\iota-1)\le n`$, with equality exactly for $`(\mathbb P^{\iota-1})^\rho`$. Here the pseudoindex is the least anticanonical degree of a rational curve. [S1:1597]"
 
 The manuscript, *The generalized Mukai conjecture* [S2:33–36], has the
-abstract [S2:33–36]: "We prove the generalized Mukai conjecture: every positive-dimensional
+abstract "We prove the generalized Mukai conjecture: every positive-dimensional
 smooth complex Fano manifold of dimension $n$, Picard number $\rho$, and
 pseudoindex $\iota$ satisfies $\rho(\iota-1)\le n$. Equality holds
-precisely for the product of $\rho$ copies of $\mathbb P^{\iota-1}$."
+precisely for the product of $\rho$ copies of $\mathbb P^{\iota-1}$. [S2:33–36]"
 
 ## Undergraduate summary
 
 A Fano manifold is a smooth complex projective variety with ample
 anticanonical divisor. Its pseudoindex is the smallest anticanonical
-degree of an irreducible rational curve [S3:3–15]: "A Fano manifold is a smooth connected complex projective variety $X$
+degree of an irreducible rational curve "A Fano manifold is a smooth connected complex projective variety $X$
 whose anticanonical divisor $-K_X$ is ample. Its Picard number
 $\rho_X$ is the rank of its Néron–Severi group, or equivalently the
 dimension of the space of numerical divisor classes. If $X$ has positive
@@ -30,11 +30,11 @@ dimension, its _pseudoindex_ is
 The existence of rational curves on a Fano manifold makes this minimum
 well defined. The pseudoindex records the smallest anticanonical curve
 degree; it need not equal the largest integer dividing $-K_X$ in
-$\mathrm{Pic}(X)$, which is the Fano index."
+$\mathrm{Pic}(X)$, which is the Fano index. [S3:3–15]"
 
-The theorem [S3:22–33]:
+The theorem 
 
-> **theorem**
+> **Theorem 1.1**
 Let $X$ be a smooth connected complex projective Fano manifold of
 positive dimension $n$, Picard number $\rho_X$ and pseudoindex $\iota_X$.
 Then
@@ -44,8 +44,7 @@ Then
 Equality holds if and only if
 \[
  X\cong(\mathbb P^{\iota_X-1})^{\rho_X}.
-\]
-\endtheorem
+\] [S3:22–33]
 
 The bound says the Picard number times the pseudoindex minus one
 cannot exceed the dimension. Equality forces the manifold to be a
@@ -56,7 +55,7 @@ product of projective spaces.
 **The quantum-correspondence strategy.** The proof works in
 quantum cohomology. Small quantum multiplication by a numerical
 basis of divisor classes gives commuting matrices whose entries
-encode two-point Gromov--Witten invariants [S3:76–91]:
+encode two-point Gromov--Witten invariants 
 
 > Write $r=\rho_X$ and $\iota=\iota_X$. If $\iota=1$, the inequality
 is strict because $n>0$, so assume $\iota\ge2$.
@@ -73,7 +72,7 @@ give
  r(\iota-1)\le\sum_{j=1}^r(d_j-1)\le n.
 \]
 The main task is to produce that product without assuming that quantum
-cohomology is semisimple.
+cohomology is semisimple. [S3:76–91]
 
 The key difficulty is producing $r$ independent curve degrees
 without assuming quantum cohomology is semisimple. The argument
@@ -87,7 +86,7 @@ descendant vectors gives an exponential upper bound. If all joint
 eigenvalue tuples satisfied polynomial relations, the recurrence
 would force subexponential decay, contradicting the descendant
 lower bound. Thus one tuple has $r$ algebraically independent
-coordinates [S3:110–127]:
+coordinates 
 
 > Here the divisor and recursion identities give a finite-shift
 recurrence for descendant vectors on an arbitrary smooth Fano manifold.
@@ -118,7 +117,7 @@ is either empty or satisfies
  \dim\operatornameLocus(V^1,\ldots,V^k)_y
  \ge\sum_{j=1}^k(-K_Y\cdot V^j-1).
 \]
-\endtheorem
+\endtheorem [S3:110–127]
 
 The alternating trace of matrix-valued differentials, computed in
 a common triangular basis versus the fixed cohomology basis,
@@ -133,15 +132,14 @@ estimate [S8:25–36]:
 > 7
 
 And Occhetta's product characterization identifies the manifold
-[S8:43–50]:
 
-> **theorem**
+
+> **Theorem 6.2**
 Let $Y$ be a smooth complex projective variety of dimension $n$.
 Suppose $Y$ has numerically independent unsplit covering families
 $V^1,\ldots,V^k$ with anticanonical degrees $n_1+1,\ldots,n_k+1$,
 where each $n_j$ is positive and $\sum_jn_j=n$.  Then
-$Y\cong\mathbb P^{n_1}\times\cdots\times\mathbb P^{n_k}$.
-\endtheorem
+$Y\cong\mathbb P^{n_1}\times\cdots\times\mathbb P^{n_k}$. [S8:43–50]
 
 The numerically independent unsplit covering families with
 anticanonical degrees summing to $n$ force the product of

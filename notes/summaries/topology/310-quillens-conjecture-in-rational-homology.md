@@ -12,13 +12,11 @@ group and every prime in its stronger rational-homology form. If the
 largest normal $p$-subgroup $O_p(G)$ is trivial, the poset of
 nontrivial elementary abelian $p$-subgroups has nonzero augmented
 reduced rational homology, and is therefore not contractible. The
-manuscript's abstract [S3:69–75]: "**abstract**
-We prove Quillen's conjecture for all finite groups and all primes.
+manuscript's abstract "We prove Quillen's conjecture for all finite groups and all primes.
 More precisely, if a finite group $G$ has trivial largest normal
 $p$-subgroup $O_p(G)$, then the poset of nontrivial elementary abelian
 $p$-subgroups of $G$ has nonzero augmented reduced rational homology.
-This establishes the stronger rational-homology form of the conjecture.
-\endabstract"
+This establishes the stronger rational-homology form of the conjecture. [S3:69–75]"
 
 ## Undergraduate summary
 
@@ -39,8 +37,7 @@ For every finite group $G$ and every prime $p$, if $O_p(G)=1$, then
 \widetilde H_*(\mathcal A_p(G);\mathbb Q)\ne0.
 \]
 Here reduced homology is augmented, so that the empty poset has
-$\widetilde H_{-1}(\varnothing;\mathbb Q)=\mathbb Q$.
-\endtheorem
+$\widetilde H_{-1}(\varnothing;\mathbb Q)=\mathbb Q$. [S4:15–22]
 
 The contrapositive is the content: a trivial $p$-core forces nonzero
 reduced rational homology somewhere in the order complex, so the

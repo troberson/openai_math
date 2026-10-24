@@ -6,41 +6,40 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb [S1:1217]: "**044. The equivariant cohomological Hikita conjecture.** Proves the equivariant cohomological Hikita correspondence for every finite quiver, including loops and multiple arrows, with arbitrary dimension and framing vectors and commuting flavor torus. When every semistable point is stable and the gauge action is free, the equivariant cohomology of the Nakajima variety is canonically the coordinate ring of the scheme-theoretic cocharacter-fixed locus of its flavor-deformed Coulomb branch." The manuscript title is
-"The equivariant cohomological Hikita conjecture for arbitrary quivers" [S3:1], and its abstract [S4:49–56] reads: "We prove the equivariant cohomological Hikita conjecture for arbitrary finite
+The release's blurb "**044. The equivariant cohomological Hikita conjecture.** Proves the equivariant cohomological Hikita correspondence for every finite quiver, including loops and multiple arrows, with arbitrary dimension and framing vectors and commuting flavor torus. When every semistable point is stable and the gauge action is free, the equivariant cohomology of the Nakajima variety is canonically the coordinate ring of the scheme-theoretic cocharacter-fixed locus of its flavor-deformed Coulomb branch. [S1:1217]" The manuscript title is
+"The equivariant cohomological Hikita conjecture for arbitrary quivers [S3:1]" , and its abstract reads: "We prove the equivariant cohomological Hikita conjecture for arbitrary finite
 quivers, including loops and multiple arrows. For any dimension and framing
 vectors, any commuting flavor torus, and a stability character whose
 semistable locus is stable and has free gauge action, the equivariant
 cohomology of the Nakajima variety is canonically isomorphic to the coordinate
 ring of the scheme-theoretic fixed locus of the stability cocharacter on the
 flavor-deformed Coulomb branch. This is an isomorphism of graded algebras over
-the common coefficient ring, retaining nilpotents and including the empty case."
+the common coefficient ring, retaining nilpotents and including the empty case. [S4:49–56]"
 
 ## Undergraduate summary
 
 Hikita's conjecture relates the cohomology of a symplectic resolution
 to the functions on a fixed subscheme of a Coulomb branch. The scheme
 structure is essential: nilpotent functions on the fixed locus encode
-positive-degree cohomology [S5:4–11]. "Hikita's conjecture relates two different kinds of algebra: the cohomology
+positive-degree cohomology . "Hikita's conjecture relates two different kinds of algebra: the cohomology
 of a symplectic resolution and the functions on a fixed subscheme of a
 corresponding Coulomb branch.  The scheme structure is essential.  Even
 when the underlying fixed-point set is small, its nilpotent functions can
 encode positive-degree cohomology.  For quiver gauge theories, the
 tautological classes on the Higgs side and the equivariant parameters on
 the Coulomb side give a common coefficient ring.  The question is whether
-the relations among those coefficients agree." For a finite quiver $Q$
+the relations among those coefficients agree. [S5:4–11]" For a finite quiver $Q$
 with vector spaces $V_i, W_i$, the gauge group is
 $G=\prod\GL(V_i)$ and the representation includes both arrow maps and
-framing maps [S5:24–29]. "allowed.  Fix complex vector spaces $V_i,W_i$ of dimensions $v_i,w_i$, and put
-\beginequation 
+framing maps . "allowed.  Fix complex vector spaces $V_i,W_i$ of dimensions $v_i,w_i$, and put
+$$\label{eq:gauge-data}
  G=\prod_{i\in Q_0}\GL(V_i),\qquad
  N=\bigoplus_{a:i\to j}\Hom(V_i,V_j)
-       \oplus\bigoplus_{i\in Q_0}\Hom(V_i,W_i).
-\endequation" A regular stability character $\nu$
+       \oplus\bigoplus_{i\in Q_0}\Hom(V_i,W_i).$$ [S5:24–29]" A regular stability character $\nu$
 makes the semistable locus stable with free gauge action, producing a
-smooth Nakajima variety $X$. The theorem [S5:78–89]:
+smooth Nakajima variety $X$. The theorem 
 
-> **theorem**
+> **Theorem 1.1**
 For every datum  , every commuting flavor torus $F$, and
 every regular stability character $\nu$, both coefficient maps are
 surjective and have the same kernel.  They therefore induce a canonical
@@ -50,8 +49,7 @@ $R$-algebras
  H_F^*(X;\mathbb C)\ \cong\ \mathbb C[Y_{\mathfrak f}^{\nu}].
 \]
 The gradings are ordinary cohomological degree and BFN homological degree,
-respectively.  The assertion includes the empty case, whose ring is zero.
-\endtheorem
+respectively.  The assertion includes the empty case, whose ring is zero. [S5:78–89]
 
 The gradings are cohomological degree on the Higgs side and BFN
 homological degree on the Coulomb side. No finite-type, Dynkin,
@@ -61,18 +59,17 @@ conical, or good/ugly hypothesis is imposed [S5:91–94].
 
 **The two-ideal comparison.** The proof splits into two tasks:
 equalize the full-torus ideals $I_{\mathrm{top}}=I_H$, and equalize
-the cocharacter and full-torus defining ideals inside $A_F$ [S5:188–205]:
+the cocharacter and full-torus defining ideals inside $A_F$ 
 
 > Define the intermediate coefficient algebra and the two ideals to be
 compared by
-\beginequation 
- \beginsplit
- B_F&=\mathbb C[Y_{\mathfrak f}^{T_{\mathrmtop}}]
+$$\label{eq:intro-two-ideals}
+ \begin{split}
+ B_F&=\mathbb C[Y_{\mathfrak f}^{T_{\mathrm{top}}}]
       =A_F/\langle A_F^{(d)}:d\ne0\rangle,\\
- I_{\mathrmtop}&=\ker(R\longrightarrow B_F),\qquad
+ I_{\mathrm{top}}&=\ker(R\longrightarrow B_F),\qquad
  I_H=\ker(R\xrightarrow{\phi_H}H_F^*(X)),
- \endsplit
-\endequation
+ \end{split}$$
 where $A_F^{(d)}$ is the subspace of topological charge
 $d\in\pi_1(G)$; its cocharacter weight is $\nu\cdot d$.  Neither of
 these is the cohomological degree used in Hilbert series.
@@ -80,13 +77,13 @@ Section   explains why the
 coefficient maps to $B_F$ and to $H_F^*(X)$ are surjective.
 Thus the first task is precisely the equality
 $I_{\mathrm{top}}=I_H$.  The second task is the equality of the
-cocharacter and full-torus defining ideals inside $A_F$.
+cocharacter and full-torus defining ideals inside $A_F$. [S5:188–205]
 
 **Stable pairs give a quotient map.** Minuscule convolution words of
 total topological charge zero are realized by finite-dimensional
 lattice correspondences. The stable-pair test evaluates them: after
 reordering, the first modification has nonpositive character-line
-degree, which stability excludes [S5:210–230]:
+degree, which stability excludes 
 
 > \paragraph{1. Stable pairs give a quotient map.}
 Sections   and   prove
@@ -108,7 +105,7 @@ correspondence, the same test gives a split restriction onto $H_F^*(X)$,
 which detects the coefficient class itself.  The tested relation therefore vanishes
 in cohomology, yielding the graded coefficient-compatible surjection
 $B_F\twoheadrightarrow H_F^*(X)$ of
-Proposition  .
+Proposition  . [S5:210–230]
 
 This yields the graded surjection $B_F\twoheadrightarrow H_F^*(X)$.
 
@@ -122,7 +119,7 @@ polynomial, forcing equality in every degree.
 looped quiver $Q^+$ is lifted to an auxiliary flavor
 $H=\C^\times$ with parameter $z$. Subgroup localization at
 $z=1$ gives the Higgs-side comparison; homogeneity descends the
-equality to the original ideals [S5:249–266]:
+equality to the original ideals 
 
 > \paragraph{3. Deformation returns to the original data.}
 For an arbitrary quiver $Q$, let $Q^+$ be obtained by adding one loop at
@@ -141,14 +138,14 @@ isomorphism, is the content of Proposition  .
 Local constancy of regular stability, quaternionic rotation, and generic
 constancy of compactly supported Betti numbers then compare all regular
 characters.  A final flavor lift proves
-$B_F\simeq H_F^*(X)$ in Theorem  .
+$B_F\simeq H_F^*(X)$ in Theorem  . [S5:249–266]
 
 **Complementary monopoles.** The cocharacter-fixed quotient is
 identified with the full-torus quotient independently. Adjoining a
 rank-one framing vertex, any surviving monopole has a complementary
 monopole; Hall generation decomposes both into indecomposable charges,
 and the resulting semistable direct sum has positive-dimensional
-stabilizer, contradicting freeness [S5:268–288]:
+stabilizer, contradicting freeness 
 
 > \paragraph{4. Complementary monopoles identify the cocharacter quotient.}
 Section   proves, independently of the preceding
@@ -170,7 +167,7 @@ positive-dimensional even after removing the ineffective diagonal
 scalar.  This contradicts the freeness in regularity, including when
 the semistable locus is empty.  Proposition  
 therefore identifies the two defining ideals, completing the
-scheme-theoretic comparison.
+scheme-theoretic comparison. [S5:268–288]
 
 ## History of the conjecture
 
@@ -178,7 +175,7 @@ The classical model is type-$A$ Springer-fiber cohomology through
 scheme-theoretic intersections, developed by de Concini–Procesi and
 Tanisaki. In symplectic duality, Hikita formulated the fixed-scheme
 realization and proved it for the Hilbert scheme of points in the
-plane [S5:98–107]. "A classical model is the description of type-$A$ Springer-fiber
+plane . "A classical model is the description of type-$A$ Springer-fiber
 cohomology through scheme-theoretic intersections of nilpotent orbit
 closures with a Cartan subalgebra, developed by de Concini–Procesi and
 Tanisaki  .  In the setting of
@@ -187,7 +184,7 @@ realization of cohomology and established it for the Hilbert scheme of
 points in the plane, with related type-$A$ Spaltenstein and smooth
 hypertoric examples  .  These examples explain why the
 infinitesimal structure of the fixed locus, rather than its set of
-points, is central to the question."
+points, is central to the question. [S5:98–107]"
 
 The Coulomb-branch construction comes from Nakajima and
 Braverman–Finkelberg–Nakajima. The coefficient-compatible formulation

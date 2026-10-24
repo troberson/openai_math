@@ -11,12 +11,10 @@ the family's claim: the Hilbert--Smith conjecture holds in every finite
 dimension — a locally compact second-countable Hausdorff group acting
 faithfully and jointly continuously on a connected finite-dimensional
 topological manifold is a Lie group. The manuscript's abstract
-[S3:89–94]: "**abstract**
-We prove the Hilbert–Smith conjecture in every finite dimension: every
+ "We prove the Hilbert–Smith conjecture in every finite dimension: every
 locally compact second-countable Hausdorff group acting faithfully and
 jointly continuously on a connected Hausdorff second-countable
-finite-dimensional topological manifold without boundary is a Lie group.
-\endabstract"
+finite-dimensional topological manifold without boundary is a Lie group. [S3:89–94]"
 
 ## Undergraduate summary
 
@@ -32,14 +30,13 @@ $\R^n$), but also the profinite groups such as the $p$-adic integers
 $\Z_p$, which are uncountable, totally disconnected, and far from
 being manifolds [S4:3–7]. Positive dimension is the only hypothesis:
 the manifold may be noncompact, nonorientable, or nontriangulable, and
-actions may have arbitrary stabilizers [S4:9–14]:
+actions may have arbitrary stabilizers 
 
-> **theorem**
+> **Theorem 1.1**
 Let \(n\geq1\). A locally compact second-countable Hausdorff group
 acting faithfully and jointly continuously on a connected Hausdorff
 second-countable topological \(n\)-manifold without boundary is a Lie
-group.
-\endtheorem
+group. [S4:9–14]
 
 In dimension zero a connected manifold is a point, so a faithful
 acting group is trivial and the conclusion holds as well [S4:16–20].

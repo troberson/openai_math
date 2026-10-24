@@ -6,11 +6,11 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb [S1:2486]:
+The release's blurb 
 
-> **101. The sharp simplex conjecture for isotropic constants.** Proves that simplices uniquely maximize the isotropic constant among convex bodies in every dimension, resolving the strong isotropic constant conjecture. Also establishes the sharp entropy lower bound for log-concave probability densities, with equality precisely for invertible affine images of products of one-sided exponential laws.
+> **101. The sharp simplex conjecture for isotropic constants.** Proves that simplices uniquely maximize the isotropic constant among convex bodies in every dimension, resolving the strong isotropic constant conjecture. Also establishes the sharp entropy lower bound for log-concave probability densities, with equality precisely for invertible affine images of products of one-sided exponential laws. [S1:2486]
 
-The manuscript's own abstract [S1:2495] states the two results: "We prove the strong isotropic constant conjecture: in each dimension, simplices are the unique maximizers of the isotropic constant among convex bodies" [S4:45–47], and, for the entropy bound, "with equality precisely for invertible affine images of products of one-sided exponential laws" [S4:49–50].
+The manuscript's own abstract states the two results: "We prove the strong isotropic constant conjecture: in each dimension, simplices are the unique maximizers of the isotropic constant among convex bodies [S1:2495]" [S4:45–47], and, for the entropy bound, "with equality precisely for invertible affine images of products of one-sided exponential laws [S1:2495]" [S4:49–50].
 
 ## Undergraduate summary
 
@@ -34,7 +34,7 @@ probability density `f` on `m`-dimensional space, its differential entropy is at
 least `m` plus one half the log of the determinant of its covariance. [S4:49–50]
 A product of `m` independent exponential variables of mean one has entropy `m`
 and identity covariance, so the bound cannot be improved. [S5:87–88] The theorem
-"asserts that a log-concave density with identity covariance has entropy" at
+"asserts that a log-concave density with identity covariance has entropy [S5:91]" at
 least `m`. [S5:91]
 
 The proof is analytic, not geometric. It transports Gaussian measure to the
@@ -66,7 +66,7 @@ Hessian bounded above and below by positive multiples of the identity. A gradien
 map transports standard Gaussian measure to `f`, and `J = D²φ` is the
 reparametrized Jacobian: "Brenier's theorem and Caffarelli's regularity and
 contraction theory supply this positive definite matrix field and its uniform
-bounds." [S5:113–116] "There are two objectives." [S6:13] "We choose affine
+bounds." [S5:113–116] "There are two objectives. [S6:13]" "We choose affine
 coordinates in which a reparametrization of the transport Jacobian has mean
 zero." [S6:13–14] "The resulting estimate contains an additional nonnegative
 term measuring separation between eigenvalues; retaining this term is essential
@@ -81,7 +81,7 @@ needed for matrix functions whose derivatives do not commute." [S5:133–134]
 
 **The matrix estimate.** The transport estimate controls the Gaussian energy of
 the reparametrized Jacobian, but its degree-one part has no Poincaré surplus.
-"We use that part to choose a matrix supporting plane for the log determinant."
+"We use that part to choose a matrix supporting plane for the log determinant. [S7:6–7]"
 [S7:6–7] The higher chaoses "supply the coercivity needed to prove the entropy
 bound." [S7:8] "We retain a strict remainder that will also identify the equality
 cases." [S7:9] The estimate "has both noncommuting matrix terms and scalar
@@ -99,7 +99,7 @@ first Gaussian chaos using a second moment; the second controls the remaining
 quadratic form, one pair of eigenvalues at a time. [S8:3] "All finite decimals
 below denote exact rational numbers." [S8:10–11] "in particular, none of the
 bounds in this section is inferred from numerical sampling." [S8:14–15] The
-rigidity weight is "continuous and nonnegative, vanishes only at" the value
+rigidity weight is "continuous and nonnegative, vanishes only at [S7:21]" the value
 `1`. [S7:21–22]
 
 **Rigidity.** Equality is studied by applying the strict remainder to smooth
@@ -112,14 +112,14 @@ studied solely within the smooth, uniformly convex class." [S5:164–166] "We
 approximate an arbitrary equality density while preserving entropy and
 covariance." [S5:166–167]
 
-"The local compatibility of this limiting Jacobian is decisive." [S5:174] "The
+"The local compatibility of this limiting Jacobian is decisive. [S5:174]" "The
 constant and linear terms of its mixed-derivative identities force the symmetric
 matrices" `X_r` to commute. [S5:175–176] "Commuting real symmetric matrices
-admit a common orthonormal eigenbasis." [S10:68] "The structural step is local:"
+admit a common orthonormal eigenbasis." "The structural step is local: [S10:6–7]"
 the first two nonconstant terms of `q(A(x))` "force the coefficients of a linear
 symmetric matrix field" to commute whenever `q(A)` is a Jacobian. [S10:6–8]
 The commutation argument uses only the nonvanishing of the two endpoint
-`q`-derivatives, "isolating a potentially reusable algebraic step." [S5:179–180] "No
+`q`-derivatives, "isolating a potentially reusable algebraic step. [S5:179–180]" "No
 uniform Hessian bounds on the smooth approximants are required." [S5:180–181]
 "Their affine normalizations are controlled only after the limiting law and its
 covariance have been identified." [S5:181–182]
@@ -143,7 +143,7 @@ and this interior is dense in the cone." [S11:74–75] "The orthant also has the
 origin as its unique extreme point." Invertible affine maps preserve extreme
 points, so the cone is an affine image of the positive orthant. [S11:84–85]
 Normalizing the generating rays to height one gives points that are
-"consequently affinely independent in the height-one hyperplane." The limit is
+"consequently affinely independent in the height-one hyperplane. [S11:100–101]" The limit is
 therefore a simplex. [S11:100–101] The figure "illustrates the normalization of the generating
 rays in this step." [S11:101–102] "For the determinant identity, subtract the
 first column from the" others. [S11:110–111] In dimension one, "every convex
@@ -153,7 +153,7 @@ body is an interval, hence a simplex, and the constant is" `1/√12`.
 **The certificate.** The appendix proves the scalar bounds by exact rational
 arithmetic. "The finite certificates below concern entire intervals: their
 validity follows from coefficient bounds and polynomial positivity, with no
-sampling assumption." [S12:5–7] "it uses rational arithmetic only." [S12:36–37] The
+sampling assumption." "it uses rational arithmetic only. [S12:37]" [S12:36–37] The
 shipped script reproduces the certificate "using only Python's standard
 library." [S13:2] "All input decimals, polynomial operations, enclosures, and
 comparisons are exact fractions." [S13:6–7] "Printed decimals are rounded
@@ -213,7 +213,7 @@ Family 101 is at tier T0: no Lean formalization, no scope note, no comparator
 challenge, no reasoning trace. The release's blurb: "Proves that simplices
 uniquely maximize the isotropic constant among convex bodies in every dimension,
 resolving the strong isotropic constant conjecture." [S1:2486] The overview entry
-names the family "The sharp simplex conjecture for isotropic constants".
+names the family "The sharp simplex conjecture for isotropic constants [S1:2486]".
 [S2:278]
 
 The one evidence artifact is the verification bundle. Its README states that "The

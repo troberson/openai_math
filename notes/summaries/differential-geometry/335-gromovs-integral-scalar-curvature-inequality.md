@@ -11,8 +11,7 @@ the family's claim: the integral scalar-curvature inequality for real
 simplicial volume, plus the rational-inessentiality obstruction to
 positive scalar curvature and its consequences. The family ships two
 companion manuscripts. The first proves the integral bound
-[S3:49–61]: "**abstract**
-We prove the integral scalar-curvature inequality proposed by Gromov.
+ "We prove the integral scalar-curvature inequality proposed by Gromov.
 For every dimension \(n\ge3\), there is a constant \(a_n>0\), depending
 only on \(n\), such that
 \[
@@ -22,8 +21,7 @@ for every closed connected oriented smooth \(n\)-manifold \(M\) and every
 smooth Riemannian metric \(g\). Here
 \(\Scal_g^-:=\max\{0,-\Scal_g\}\), and \(\|M\|\) is real simplicial volume.
 The proof uses the nonnegative-scalar-curvature vanishing theorem of the
-companion paper on rational inessentiality.
-\endabstract"
+companion paper on rational inessentiality. [S3:49–61]"
 The second proves the rational-inessentiality theorem on which the
 first's proof depends [S5:113–123].
 
@@ -37,16 +35,13 @@ directional information. In 1986 Gromov proposed that the integral of
 the $n/2$-power of the negative part of scalar curvature still controls
 simplicial volume, with a dimension-dependent constant [S4:4–65]:
 
-> **theorem**
+> **Theorem 1.1**
 For every integer \(n\ge3\), there is a constant \(a_n>0\), depending
 only on \(n\), such that every closed connected oriented smooth
 \(n\)-manifold \(M\) and every smooth Riemannian metric \(g\) on \(M\)
 satisfy
-\beginequation
-  \int_M(\Scal_g^-)^{n/2}\,dV_g\ge a_n\|M\|.
-   
-\endequation
-\endtheorem
+$$\int_M(\Scal_g^-)^{n/2}\,dV_g\ge a_n\|M\|.
+  \label{eq:main}$$ [S4:67–77]
 
 The constant $a_n$ is uniform over the topology of $M$ and over all its
 metrics, so the negative scalar curvature is permitted to be

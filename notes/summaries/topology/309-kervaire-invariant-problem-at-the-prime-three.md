@@ -12,9 +12,7 @@ prime three for the standard Kervaire classes in the mod-three Adams
 spectral sequence. The classes survive precisely at indices $0$, $2$,
 and $3$, each surviving detection coset carries an element of additive
 order three, and there is an order-three Kervaire element in stem
-$322$. The manuscript's abstract [S4:1–3]: "**abstract**
-We solve the Kervaire invariant problem at the prime three for the standard Kervaire classes in the mod-three Adams spectral sequence. These classes survive precisely at indices $0$, $2$, and $3$, and each surviving detection coset contains an element of additive order three. In particular, there is an order-three Kervaire element in stem $322$.
-\endabstract"
+$322$. The manuscript's abstract "We solve the Kervaire invariant problem at the prime three for the standard Kervaire classes in the mod-three Adams spectral sequence. These classes survive precisely at indices $0$, $2$, and $3$, and each surviving detection coset contains an element of additive order three. In particular, there is an order-three Kervaire element in stem $322$. [S4:1–3]"
 
 ## Undergraduate summary
 
@@ -35,8 +33,7 @@ At the prime three,
 \[
                        K=K_3=\{0,2,3\}.
 \]
-Thus the surviving classes occur in stems $10$, $106$, and $322$, and each admits an additive-order-three representative. The class $b_1$ and every $b_j$ with $j\geq4$ fail to survive.
-\endtheorem
+Thus the surviving classes occur in stems $10$, $106$, and $322$, and each admits an additive-order-three representative. The class $b_1$ and every $b_j$ with $j\geq4$ fail to survive. [S4:24–30]
 
 The answer is that at the prime three the surviving indices are
 exactly $\{0,2,3\}$, so the classes land in stems $10$, $106$, and

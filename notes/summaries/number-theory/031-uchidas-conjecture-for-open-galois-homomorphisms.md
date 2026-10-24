@@ -6,9 +6,9 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb [S1:739]: "**031. Uchida's conjecture for open homomorphisms of Galois groups.** Proves Uchida's conjecture: every continuous open homomorphism between Galois groups of possibly infinite solvably closed Galois extensions of number fields comes from a unique equivariant field embedding in the opposite direction. No restriction on the kernel or separate cyclotomic-compatibility assumption is needed." The catalog abstract [S2:138]
-restates it: "Proves Uchida's conjecture: every continuous open homomorphism between Galois groups of possibly infinite solvably closed Galois extensions of number fields comes from a unique equivariant field embedding in the opposite direction. No restriction on the kernel or separate cyclotomic-compatibility assumption is needed." The manuscript's title is "Open Homomorphisms of Global Solvably Closed Galois Groups" [S3:1], and
-its abstract [S4:41] reads: "We prove Uchida's conjecture on open homomorphisms of Galois groups. Every continuous open homomorphism between Galois groups of solvably closed Galois extensions of number fields is induced by a unique equivariant field embedding in the opposite direction. No restriction on the kernel or additional compatibility hypothesis is required."
+The release's blurb "**031. Uchida's conjecture for open homomorphisms of Galois groups.** Proves Uchida's conjecture: every continuous open homomorphism between Galois groups of possibly infinite solvably closed Galois extensions of number fields comes from a unique equivariant field embedding in the opposite direction. No restriction on the kernel or separate cyclotomic-compatibility assumption is needed. [S1:739]" The catalog abstract 
+restates it: "Proves Uchida's conjecture: every continuous open homomorphism between Galois groups of possibly infinite solvably closed Galois extensions of number fields comes from a unique equivariant field embedding in the opposite direction. No restriction on the kernel or separate cyclotomic-compatibility assumption is needed. [S2:138]" The manuscript's title is "Open Homomorphisms of Global Solvably Closed Galois Groups [S3:1]" , and
+its abstract reads: "We prove Uchida's conjecture on open homomorphisms of Galois groups. Every continuous open homomorphism between Galois groups of solvably closed Galois extensions of number fields is induced by a unique equivariant field embedding in the opposite direction. No restriction on the kernel or additional compatibility hypothesis is required. [S4:41]"
 
 ## Undergraduate summary
 
@@ -18,15 +18,14 @@ extensions are examples. The isomorphism theorems of Neukirch and Uchida
 show that the Galois group of such a field determines the field up to
 isomorphism. Uchida asked the corresponding question for homomorphisms:
 does every continuous open homomorphism between such Galois groups come
-from a field embedding? The theorem [S5:11–17]:
+from a field embedding? The theorem 
 
-> **theorem**
+> **Theorem 1.1**
 Let $F_1,F_2$ be number fields, and let $E_i/F_i$ be possibly infinite solvably closed Galois extensions. Every continuous open homomorphism
 \[
  \alpha:\Gal(E_1/F_1)\longrightarrow\Gal(E_2/F_2)
 \]
-is induced by a unique field embedding $j:E_2\hookrightarrow E_1$.
-\endtheorem
+is induced by a unique field embedding $j:E_2\hookrightarrow E_1$. [S5:11–17]
 
 The setup [S5:5–9] makes the contravariance explicit: a field embedding
 $E_2 \hookrightarrow E_1$ induces a group homomorphism
@@ -37,7 +36,7 @@ every open homomorphism arises this way, uniquely.
 \[
  g\circ j=j\circ\alpha(g)\qquad(g\in G_1).
 \]
-In particular, such an embedding sends $F_2$ into $F_1$. Uchida conjectured that every continuous homomorphism with open image arises in this way \cite[p. 595]uchida1981. We prove the conjecture in its full form.
+In particular, such an embedding sends $F_2$ into $F_1$. Uchida conjectured that every continuous homomorphism with open image arises in this way \cite[p. 595]uchida1981. We prove the conjecture in its full form. [S5:5–9]
 
 The kernel is unrestricted [S5:19]. No cyclotomic-compatibility
 assumption is needed; the proof derives it from openness itself.
@@ -45,13 +44,13 @@ assumption is needed; the proof derives it from openness itself.
 ## Graduate summary
 
 **Two main ingredients.** The proof uses two arguments that are stated
-as useful beyond the final reduction [S5:29]:
+as useful beyond the final reduction 
 
-> Two arguments used below are useful beyond the final reduction. First, an additive $\ell$-adic character of the absolute Galois group of a number field is determined by its values on any infinite set of primes of absolute residue degree one. More precisely, a character vanishing at all those primes is zero. The logarithmic-rank input is a special case of the $\ell$-adic Waldschmidt–Masser theorem  . We give a complete proof using Laurent's interpolation-determinant method   and a translate-and-degree zero estimate on a torus. Its variants for Frobenius averages and corestriction permit us to treat primes of arbitrary residue degree as well. These statements concern the actual unit-logarithm image and require no hypothesis on its rank.
+> Two arguments used below are useful beyond the final reduction. First, an additive $\ell$-adic character of the absolute Galois group of a number field is determined by its values on any infinite set of primes of absolute residue degree one. More precisely, a character vanishing at all those primes is zero. The logarithmic-rank input is a special case of the $\ell$-adic Waldschmidt–Masser theorem  . We give a complete proof using Laurent's interpolation-determinant method   and a translate-and-degree zero estimate on a torus. Its variants for Frobenius averages and corestriction permit us to treat primes of arbitrary residue degree as well. These statements concern the actual unit-logarithm image and require no hypothesis on its rank. [S5:29]
 
-The second refines Uchida's own Kummer argument [S5:31]:
+The second refines Uchida's own Kummer argument 
 
-> Second, we refine the Kummer argument in Uchida's proof of cofinite target coverage \cite[Proposition 1]uchida1981. After logarithmic cyclotomic compatibility has been established, the number of target primes missed by the partial correspondence can be bounded independently of $\ell$. A missed prime supplies a Kummer class. On killing a finite cyclotomic twist, these classes lie in one character component of an $S$-unit representation. The full extension degree may grow with $\ell$, but the multiplicity of that character is bounded by the number of orbits of $S$, hence by the degree of the fixed source field. This uniformity allows us to choose $\ell$ by simultaneous Kummer conditions and force enough corresponding primes to have the same rational residue characteristic.
+> Second, we refine the Kummer argument in Uchida's proof of cofinite target coverage \cite[Proposition 1]uchida1981. After logarithmic cyclotomic compatibility has been established, the number of target primes missed by the partial correspondence can be bounded independently of $\ell$. A missed prime supplies a Kummer class. On killing a finite cyclotomic twist, these classes lie in one character component of an $S$-unit representation. The full extension degree may grow with $\ell$, but the multiplicity of that character is bounded by the number of orbits of $S$, hence by the degree of the fixed source field. This uniformity allows us to choose $\ell$ by simultaneous Kummer conditions and force enough corresponding primes to have the same rational residue characteristic. [S5:31]
 
 **The route.** The reduction goes through $P = \Gal(\Q^s/\Q)$, the
 maximal prosolvable extension of $\Q$: it suffices to identify every
@@ -77,19 +76,19 @@ prime $\ell$.
 
 The reconstruction of number fields from their Galois groups begins with
 Neukirch's work on normal number fields and decomposition groups,
-continued by Uchida, Iwasawa, and Ikeda [S5:22]. "The reconstruction of number fields from their Galois groups begins with Neukirch's work on normal number fields and decomposition groups  . The passage to arbitrary number fields and prescribed group isomorphisms involved Uchida, Iwasawa, and Ikeda; their contributions are recorded in the contemporary accounts  . Uchida subsequently established the isomorphism theorem for arbitrary solvably closed Galois extensions of number fields  ." Uchida
+continued by Uchida, Iwasawa, and Ikeda . "The reconstruction of number fields from their Galois groups begins with Neukirch's work on normal number fields and decomposition groups  . The passage to arbitrary number fields and prescribed group isomorphisms involved Uchida, Iwasawa, and Ikeda; their contributions are recorded in the contemporary accounts  . Uchida subsequently established the isomorphism theorem for arbitrary solvably closed Galois extensions of number fields  . [S5:22]" Uchida
 established the isomorphism theorem for arbitrary solvably closed
 extensions [S5:22].
 
 In the 1981 paper formulating the homomorphism conjecture, Uchida proved
 it for source field $\Q$, proved uniqueness in general, and established
 existence under a local condition on decomposition groups [S5:24].
-"In the paper formulating the homomorphism conjecture, Uchida proved it when the source number field is $\mathbb Q$, proved uniqueness in general, and established existence under a suitable local condition on decomposition groups \cite[Theorem 1, Proposition 2, and Theorem 2]uchida1981. His local analysis also associates primes to one another whenever a chosen pro-$\ell$ inertia group survives under the homomorphism, for an odd auxiliary prime $\ell$. For each fixed auxiliary prime $\ell$, this partial correspondence reaches all but finitely many target primes \cite[Proposition 1]uchida1981." His partial correspondence reaches all but finitely many target
+"In the paper formulating the homomorphism conjecture, Uchida proved it when the source number field is $\mathbb Q$, proved uniqueness in general, and established existence under a suitable local condition on decomposition groups \cite[Theorem 1, Proposition 2, and Theorem 2]uchida1981. His local analysis also associates primes to one another whenever a chosen pro-$\ell$ inertia group survives under the homomorphism, for an odd auxiliary prime $\ell$. For each fixed auxiliary prime $\ell$, this partial correspondence reaches all but finitely many target primes \cite[Proposition 1]uchida1981. [S5:24]" His partial correspondence reaches all but finitely many target
 primes for each fixed auxiliary prime $\ell$, but the exceptional set
 depends on $\ell$.
 
 Hoshi's 2025 reduction identifies the exact arithmetic condition:
-cyclotomic-character preservation [S5:26]. "A later reduction of Hoshi identifies an exact arithmetic condition for existence: an open homomorphism is induced by a field embedding if and only if it preserves the full cyclotomic character \cite[Theorem 3.4]hoshi2025. Hoshi's subsequent work reformulates the unrestricted conjecture in terms of radicals and normality of the field fixed by a kernel \cite[Theorem B]hoshi2026. Related work on finite solvable quotients includes the isomorphism theorem of Saïdi and Tamagawa   and the cyclotomic-compatible homomorphism theorem of Mao and Saïdi  . Our proof uses the cyclotomic criterion at its endpoint. The main task is to derive that criterion from the partial local correspondences, even though their domains and exceptional sets initially depend on $\ell$." The present proof
+cyclotomic-character preservation . "A later reduction of Hoshi identifies an exact arithmetic condition for existence: an open homomorphism is induced by a field embedding if and only if it preserves the full cyclotomic character \cite[Theorem 3.4]hoshi2025. Hoshi's subsequent work reformulates the unrestricted conjecture in terms of radicals and normality of the field fixed by a kernel \cite[Theorem B]hoshi2026. Related work on finite solvable quotients includes the isomorphism theorem of Saïdi and Tamagawa   and the cyclotomic-compatible homomorphism theorem of Mao and Saïdi  . Our proof uses the cyclotomic criterion at its endpoint. The main task is to derive that criterion from the partial local correspondences, even though their domains and exceptional sets initially depend on $\ell$. [S5:26]" The present proof
 derives that criterion from the partial correspondences without assuming
 it.
 

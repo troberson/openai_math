@@ -10,10 +10,10 @@ The release's blurb [S1:4616] and the catalog abstract [S2:485] state
 the family's claim: the numerical blockwise Alperin weight conjecture
 for every prime and every finite group — the number of irreducible Brauer
 characters in a block equals the number of conjugacy classes of its
-weights. The manuscript's abstract [S3:82–85]: "We prove the numerical blockwise Alperin weight conjecture for every
+weights. The manuscript's abstract "We prove the numerical blockwise Alperin weight conjecture for every
 finite group and every prime $p$. For each $p$-block $B$, the number of
 irreducible Brauer characters in $B$ equals the number of conjugacy
-classes of $B$-weights."
+classes of $B$-weights. [S3:82–85]"
 
 ## Undergraduate summary
 
@@ -24,14 +24,13 @@ exact numerical form, block by block: the number of simple modules in a
 $p$-block $B$ equals the number of conjugacy classes of $B$-weights,
 where a weight is a pair $(Q,\phi)$ of a $p$-subgroup and a defect-zero
 ordinary character of its normalizer quotient [S4:4–39]. The manuscript
-proves the conjecture [S4:42–47]:
+proves the conjecture 
 
 > **theorem**
 For every prime $p$, every finite group $G$, and every $p$-block $B$ of $G$,
 \[
                   l(B)=|W_p(B)|.
-\]
-\endtheorem
+\] [S4:42–47]
 
 The equality is a count of cardinalities; no canonical correspondence
 between the two sets is required. The case $Q=1$ is part of the assertion.
@@ -91,7 +90,7 @@ the weight-conjecture hypotheses for the established consequences: the
 local block bounds $l(B)\ge l(b)$ with equality when the defect group is
 abelian (Alperin's Consequences 1–2), the block-free inequality
 $|\IBr_p(G)|\ge|\IBr_p(N_G(P))|$, and the principal-block bounds of
-Hung–Sambale–Tiep [S4:61–81]:
+Hung–Sambale–Tiep 
 
 > **corollary**
 Let $p$ be a prime, $G$ a finite group, $B$ a $p$-block with defect group
@@ -112,8 +111,7 @@ Then
  k_p(G)=3&\Longrightarrow l(B_0)\geq (p-1)/2,\\
  p\mid |G|&\Longrightarrow l(B_0)\geq 2\sqrt{p-1}+1-k_p(G).
  \endaligned
-\]
-\endcorollary
+\] [S4:61–81]
 
 The block-free inequality for $p=2$ was previously proved by
 Malle–Navarro–Tiep, and the local inequality for maximal-defect

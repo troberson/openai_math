@@ -6,12 +6,12 @@
 
 ## Original CONTENTS.md summary
 
-[S1:479] carries the family entry:
+ carries the family entry:
 
-> Constructs finite-dimensional algebras over a characteristic-two rational-function field that disprove the Auslander–Reiten and Gorenstein-projective conjectures, and Tachikawa's second conjecture. An associated endomorphism algebra also disproves the classical, generalized and strong Nakayama conjectures, the Auslander–Gorenstein conjecture, and the Wakamatsu tilting conjecture. The counterexamples persist under every extension of the base field.
+> Constructs finite-dimensional algebras over a characteristic-two rational-function field that disprove the Auslander–Reiten and Gorenstein-projective conjectures, and Tachikawa's second conjecture. An associated endomorphism algebra also disproves the classical, generalized and strong Nakayama conjectures, the Auslander–Gorenstein conjecture, and the Wakamatsu tilting conjecture. The counterexamples persist under every extension of the base field. [S1:479]
 
-The entry links the two manuscripts as "Auslander–Reiten counterexample"
-and "Tachikawa’s second conjecture" [S1:479].
+The entry links the two manuscripts as "Auslander–Reiten counterexample [S1:479]"
+and "Tachikawa’s second conjecture [S1:479]" .
 
 The first manuscript's title is `An explicit counterexample to the Auslander-Reiten conjecture` [S2:1].
 

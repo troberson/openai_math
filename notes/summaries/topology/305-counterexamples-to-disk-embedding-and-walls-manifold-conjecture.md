@@ -15,29 +15,23 @@ finitely presented integral Poincaré duality group of dimension four
 has a finite classifying space but no realization as the fundamental
 group of a closed aspherical topological four-manifold, disproving
 Wall's conjecture. The boundary-only obstruction manuscript
-[S3:47–55]: "**abstract**
-We disprove the four-dimensional disc embedding conjecture without a
+ "We disprove the four-dimensional disc embedding conjecture without a
 fundamental-group hypothesis, even when no homotopy classes or output framings
 are prescribed. We construct a compact oriented smooth four-manifold containing
 finitely many disc maps with framed algebraic dual spheres whose boundary
 circles bound no disjoint locally flat discs. Consequently, the free group on
 two generators is not good in the sense of Freedman–Quinn, and neither is any
-group containing it as a subgroup.
-\endabstract" The marked tensor manuscript [S5:1–9]: "**abstract**
-We disprove the unrestricted four-dimensional disk-embedding conjecture.
+group containing it as a subgroup. [S3:47–55]" The marked tensor manuscript "We disprove the unrestricted four-dimensional disk-embedding conjecture.
 We construct immersed disks in a compact oriented smooth four-manifold with
 framed algebraic dual spheres satisfying the usual equivariant intersection
 and reduced self-intersection conditions, but with no pairwise disjoint locally
 flat replacements that preserve the boundary maps and induced normal framings.
 The obstruction holds even when the replacement disks' relative homotopy classes
-are not prescribed.
-\endabstract"
-The PD4 manuscript [S6:43–48]: "**abstract**
-We construct a finitely presented integral Poincaré duality group of
+are not prescribed. [S5:1–9]"
+The PD4 manuscript "We construct a finitely presented integral Poincaré duality group of
 dimension four that has a finite classifying space but is not the fundamental
 group of any closed aspherical topological four-manifold. This gives a negative
-answer to Wall's manifold-realization question in dimension four.
-\endabstract"
+answer to Wall's manifold-realization question in dimension four. [S6:43–48]"
 
 ## Undergraduate summary
 
@@ -54,7 +48,7 @@ should always be possible under the algebraic conditions. The
 manuscripts of this family show it is not: the first two construct
 four-manifolds in which the algebraic data — the intersection and
 self-intersection numbers — are satisfied, yet no such disjoint locally
-flat disks exist [S4:40–53]:
+flat disks exist 
 
 > **theorem**
 There exist a compact connected oriented smooth four-manifold $M$ with nonempty boundary, an integer $k\geq1$, proper generically immersed discs
@@ -62,14 +56,12 @@ There exist a compact connected oriented smooth four-manifold $M$ with nonempty 
  f_i\colon(D^2,S^1)\longrightarrow(M,\partial M),\qquad 1\leq i\leq k,
 \]
 whose boundary restrictions form an embedding of $\coprod_iS^1$, and framed sphere maps $g_i\colon S^2\to M$ such that
-\beginequation 
- \lambda(f_i,g_j)=\delta_ij\,1,\qquad
+$$\label{eq:input-invariants}
+ \lambda(f_i,g_j)=\delta_{ij}\,1,\qquad
  \lambda(g_i,g_j)=0,\qquad
  \widetilde\mu(g_i)=0
- \quad(1\leq i,j\leq k),
-\endequation
-but the given boundary circles do not bound pairwise disjoint proper locally flat embedded discs in $M$. Each $g_i$ can be chosen to be a smooth embedded sphere; different $g_i$ are allowed to intersect.
-\endtheorem
+ \quad(1\leq i,j\leq k),$$
+but the given boundary circles do not bound pairwise disjoint proper locally flat embedded discs in $M$. Each $g_i$ can be chosen to be a smooth embedded sphere; different $g_i$ are allowed to intersect. [S4:40–53]
 
 The third manuscript attacks a related long-standing question in
 dimension four, Wall's conjecture, which asked whether every
@@ -81,7 +73,7 @@ space is one whose higher homotopy groups vanish, so its fundamental
 group captures all of its topology. The group the third manuscript
 builds has the right algebraic shape — a finite four-dimensional
 aspherical Poincaré complex with the correct cohomology — but cannot be
-the fundamental group of any such manifold [S6:94–104]:
+the fundamental group of any such manifold 
 
 > **theorem**
 There is a finitely presented group $G$ with a finite, oriented,
@@ -92,8 +84,7 @@ four-dimensional aspherical Poincaré complex $Q$ such that
 with trivial right $G$-action on the last group, but no closed aspherical
 topological four-manifold has fundamental group $G$.
 In particular the trivial left $\mathbb Z G$-module $\mathbb Z$ has a finite resolution
-by finitely generated free modules.
-\endtheorem
+by finitely generated free modules. [S6:94–104]
 
 ## Graduate summary
 

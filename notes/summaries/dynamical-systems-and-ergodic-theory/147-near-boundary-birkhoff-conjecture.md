@@ -6,11 +6,11 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb [S1:3516]:
+The release's blurb 
 
-> Resolves the near-boundary Birkhoff conjecture for smooth strictly convex planar billiards of positive curvature. Such a billiard is an ellipse whenever a full grazing annulus is continuously foliated by individually invariant essential curves. A continuous physical collar of smooth closed convex caustics also suffices.
+> Resolves the near-boundary Birkhoff conjecture for smooth strictly convex planar billiards of positive curvature. Such a billiard is an ellipse whenever a full grazing annulus is continuously foliated by individually invariant essential curves. A continuous physical collar of smooth closed convex caustics also suffices. [S1:3516]
 
-The overview's paraphrase [S2:373] says the same: "Resolves the near-boundary Birkhoff conjecture for smooth strictly convex planar billiards of positive curvature. Such a billiard is an ellipse whenever a full grazing annulus is continuously foliated by individually invariant essential curves. A continuous physical collar of smooth closed convex caustics also suffices." The result is split across two manuscripts: the first [S6:42–50] supplies the dynamical and geometric steps that turn a merely continuous phase foliation into a smooth physical collar, and the companion [S10:4–8] supplies the analytic inputs and the final rigidity theorem.
+The overview's paraphrase says the same: "Resolves the near-boundary Birkhoff conjecture for smooth strictly convex planar billiards of positive curvature. Such a billiard is an ellipse whenever a full grazing annulus is continuously foliated by individually invariant essential curves. A continuous physical collar of smooth closed convex caustics also suffices. [S2:373]" The result is split across two manuscripts: the first [S6:42–50] supplies the dynamical and geometric steps that turn a merely continuous phase foliation into a smooth physical collar, and the companion supplies the analytic inputs and the final rigidity theorem.
 
 ## Undergraduate summary
 

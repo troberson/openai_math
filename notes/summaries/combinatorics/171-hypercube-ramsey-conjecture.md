@@ -10,9 +10,9 @@ The release's blurb [S1:4008] and the catalog abstract [S2:421] state
 the family's claim: the two-color Ramsey number of the $n$-dimensional
 binary cube is at most $C2^n$ for an absolute constant $C$, resolving
 positively the hypercube Ramsey conjecture of Burr and Erdős. The
-manuscript's abstract [S3:37–39]: "We prove that the two-color Ramsey number of the $n$-dimensional binary cube
+manuscript's abstract "We prove that the two-color Ramsey number of the $n$-dimensional binary cube
 is at most $C2^n$, where $C$ is an absolute constant. This resolves positively
-the hypercube Ramsey conjecture of Burr and Erdős."
+the hypercube Ramsey conjecture of Burr and Erdős. [S3:37–39]"
 
 ## Undergraduate summary
 
@@ -23,15 +23,14 @@ differing in one coordinate, so $|V(Q_n)|=2^n$ and its maximum degree
 is $n$ [S4:4–8]. The hypercube Ramsey conjecture, raised by Burr and
 Erdős in 1975 as the cube case of their $L$-set question, asks whether
 a single constant bounds $R(Q_n)/2^n$ for all $n$ [S4:20–30]. The
-manuscript answers yes [S4:10–16]:
+manuscript answers yes 
 
 > **theorem**
 There is an absolute constant $C>0$ such that
 \[
 R(Q_n)\le C2^n
 \qquadfor every integer n\ge0.
-\]
-\endtheorem
+\] [S4:10–16]
 
 The lower bound is the standard two-block construction: color the edges
 of two large sets red and the crossing edges blue, forcing

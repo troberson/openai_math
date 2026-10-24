@@ -6,19 +6,19 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb [S1:8104]:
+The release's blurb 
 
-> Proves that real ℓ1 has metric Markov cotype two, answering Mendel and Naor's question. Consequently, every Lipschitz map from an arbitrary subset of a real Hilbert space into ℓ1 extends to the whole space with a universal multiplicative loss in its Lipschitz constant, resolving Ball's extension problem for this target.
+> Proves that real ℓ1 has metric Markov cotype two, answering Mendel and Naor's question. Consequently, every Lipschitz map from an arbitrary subset of a real Hilbert space into ℓ1 extends to the whole space with a universal multiplicative loss in its Lipschitz constant, resolving Ball's extension problem for this target. [S1:8104]
 
 The manuscript's own abstract [S5:42–46] states the same result in one
-sentence: "We prove that the real Banach space" ℓ1 "has metric Markov
+sentence: "We prove that the real Banach space [S5:42]" ℓ1 "has metric Markov
 cotype two, answering a question of Mendel and Naor. As a consequence,
 every Lipschitz" map "from an arbitrary subset of a real Hilbert space
 into" ℓ1 "extends to the whole Hilbert space with a universal
 multiplicative loss in its Lipschitz constant, resolving Ball's extension
 problem for this target." The manuscript names the target of the extension
 as the whole Hilbert space. The release's blurb and the overview's
-paraphrase [S2:760] both say the extension reaches "the whole space",
+paraphrase both say the extension reaches "the whole space [S2:760]",
 dropping the word "Hilbert" from the target the manuscript names.
 
 ## Undergraduate summary
@@ -30,7 +30,7 @@ point to a new point so that the one-step movement the chain expects under
 the new positions is small, while the total cost of moving the points is
 paid by the original pairwise distances averaged over a longer time window.
 The definition is due to Mendel and Naor, and the manuscript names the
-constant it asks for: "The infimum of all such constants is denoted" by a
+constant it asks for: "The infimum of all such constants is denoted [S5:82]" by a
 symbol the manuscript reserves for it. [S5:82]
 
 The space in question is the real space of absolutely summable sequences,
@@ -57,7 +57,7 @@ and the manuscript resolves it.
 The definition. A stochastic matrix is reversible with respect to a
 probability vector when the detailed-balance identity holds for every pair
 of indices; reversibility implies stationarity, and the manuscript notes
-that "Zero coordinates of" the stationary vector "are allowed." [S5:69] The
+that "Zero coordinates of [S5:69]" the stationary vector "are allowed. [S5:69]" The
 cotype inequality compares two sums on the left — the movement cost and the
 one-step variation weighted by a time parameter — against the Cesàro average
 of the original pairwise distances over that time window.
@@ -79,7 +79,7 @@ the Cesàro average the definition asks for.
 The martingale is built by stopping a walk after an independent geometric
 number of steps and attaching the expected binary vector to the current
 index while the walk is alive, and the binary vector itself when it stops.
-"These values form a martingale." [S5:171] Because the smoothing cubic's
+"These values form a martingale. [S5:171]" Because the smoothing cubic's
 derivative vanishes at the binary values, a fourth-power Hilbert potential
 controls the total squared weighted ℓ1 variation after the smoothing is
 applied. [S5:172–173] Centering at the starting point makes the terminal
@@ -104,7 +104,7 @@ any stationary Markov chain, not only to reversible ones. [S5:399–401]
 
 Ball introduced Markov type and cotype in his study of Lipschitz extension,
 and his Banach-space cotype condition prescribes linear averages; the space
-fails that stronger condition. "Ball also proposed a metric definition."
+fails that stronger condition. "Ball also proposed a metric definition. [S5:104]"
 [S5:104] Mendel and Naor developed the Cesàro formulation the manuscript
 uses, proved its equivalence to Ball's metric definition, and asked
 explicitly whether the cotype constant of this space is finite. The
@@ -116,13 +116,13 @@ that deteriorate as the exponent decreases to one, so they do not settle the
 endpoint. There is a second distinction the manuscript makes: using a
 construction of Kalton, Mendel and Naor found a closed linear subspace of
 the space that fails metric Markov cotype at every finite exponent. That
-does not contradict the main theorem, "because the points" the definition
+does not contradict the main theorem, "because the points [S5:121]" the definition
 produces "need not belong to a given subspace containing the original data.
 Our construction uses this freedom." [S5:121–124]
 
 The nonlinear cut smoothing with the same cubic also appears in the work of
 Cheng, Wang, and Xiang on sharp metric cotype; the manuscript notes that
-"metric cotype and metric Markov cotype are different invariants."
+"metric cotype and metric Markov cotype are different invariants. [S5:147–148]"
 [S5:147–148] The cut representation is the geometry-of-cuts book of Deza
 and Laurent. The bibliography carries five entries: Ball's 1992 paper,
 Mendel and Naor's 2013 paper, the Deza–Laurent book, Naor and Young's

@@ -12,10 +12,10 @@ multiplicity $\chi^R(M,N)$ for nonzero finitely generated modules over
 any regular local ring, provided $M\otimes_R N$ has finite length and
 $\dim M+\dim N=\dim R$, resolving the positivity conjecture including
 ramified mixed characteristic. The manuscript's abstract
-[S3:41–44]: "We prove Serre's positivity conjecture, including ramified mixed
+ "We prove Serre's positivity conjecture, including ramified mixed
 characteristic. If two nonzero finitely generated modules over a regular local
 ring have tensor product of finite length and complementary dimensions, then
-their intersection multiplicity is strictly positive."
+their intersection multiplicity is strictly positive. [S3:41–44]"
 
 ## Undergraduate summary
 
@@ -29,7 +29,7 @@ accounting for the higher Tor terms, which enter with alternating signs
 Serre's positivity conjecture asks that, when the two modules are
 nonzero, have complementary dimensions, and their tensor product has
 finite length, this number is strictly positive. The manuscript proves
-the full conjecture [S4:16–24]:
+the full conjecture 
 
 > **theorem**
 Let $(R,\mathfrak{m})$ be a commutative Noetherian regular local ring of dimension
@@ -38,8 +38,7 @@ $\mathrm{length}_R(M\otimes_R N)<\infty$ and
 $\dim_R M+\dim_R N=d$, then
 \[
   \chi^R(M,N)>0.
-\]
-\endtheorem
+\] [S4:16–24]
 
 Complementary dimensions means $\dim M+\dim N=d$, so the two supports
 meet in dimension zero — the closed point — and the finite-length
@@ -114,7 +113,7 @@ input gives, for prime ideals of complementary dimension with
 $\dim T\le1$ where $T$ is the tensor product of the associated graded
 rings,
 $\chi^A(A/P,A/Q)\ge e_\m(A/P)e_\m(A/Q)$, with equality exactly when
-$\dim T=0$ [S4:200–214]:
+$\dim T=0$ 
 
 > **corollary**
 Let $(A,\mathfrak{m})$ be a commutative Noetherian regular local ring with residue
@@ -129,8 +128,7 @@ If $\dim T\leq1$, then
 \[
  \chi^A(A/P,A/Q)\geq e_\mathfrakm(A/P)e_\mathfrakm(A/Q),
 \]
-with equality if and only if $\dim T=0$.
-\endcorollary
+with equality if and only if $\dim T=0$. [S4:200–214]
 
 ## Section skeleton
 

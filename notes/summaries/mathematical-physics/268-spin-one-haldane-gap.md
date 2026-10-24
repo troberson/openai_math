@@ -13,18 +13,14 @@ spectral gap stays uniformly positive as the chain grows — together
 with a companion gap for odd open chains with endpoint field
 $h=3/5$ and boundary-selected infinite-volume states carrying
 topological index $-1$. The periodic manuscript's abstract
-[S3:90–94]: "**abstract**
-We prove a uniform positive spectral gap for the pure antiferromagnetic
+ "We prove a uniform positive spectral gap for the pure antiferromagnetic
 spin-one Heisenberg chain on even periodic rings, establishing the
-positive even-periodic formulation of the spin-one Haldane conjecture.
-\endabstract" The boundary-field manuscript's abstract
-[S5:41–47]: "**abstract**
-We prove a uniform spectral gap for odd open spin-one antiferromagnetic
+positive even-periodic formulation of the spin-one Haldane conjecture. [S3:90–94]" The boundary-field manuscript's abstract
+ "We prove a uniform spectral gap for odd open spin-one antiferromagnetic
 Heisenberg chains with the same fixed magnetic field at both endpoints.
 The field $h=3/5$ gives a gap greater than $\log(10)/392$ on every chain
 of $2L+1$ sites with $L\ge960$. Tasaki's index theorem then gives index $-1$
-for every subsequential local limit of these boundary-selected ground states.
-\endabstract"
+for every subsequential local limit of these boundary-selected ground states. [S5:41–47]"
 
 ## Undergraduate summary
 
@@ -36,38 +32,34 @@ that the ground state of the antiferromagnetic chain on a ring has a
 finite energy gap to the first excited state, uniformly as the number
 of sites grows. This gap is the thermodynamic signature of a gapped
 phase of matter. The periodic manuscript proves the conjecture for
-even-periodic rings [S4:37–53]:
+even-periodic rings 
 
-> **theorem**
+> **Theorem 1.1**
 For the Hamiltonians  , the ground state is unique for
 every even $L\ge60$, and
-\beginalign
- \gamma_L&>\frac4105\log\frac8079
-     &&for every even L\ge60, \\
- \gamma_L&>\frac{\log20}784
-     &&for every even L\ge2304. 
-\endalign
+$$\gamma_L&>\frac4{105}\log\frac{80}{79}
+     &&\text{for every even }L\ge60,\label{eq:gap60}\\
+ \gamma_L&>\frac{\log20}{784}
+     &&\text{for every even }L\ge2304.\label{eq:gap2304}$$
 Consequently
 \[
  \Delta_1\ge\frac{\log20}784>0.
 \]
 The spectral conclusions also hold for any simultaneously similar
 spin-one realization satisfying the same commutator and Casimir
-normalizations.
-\endtheorem
+normalizations. [S4:37–53]
 
 The boundary-field companion proves a matched statement for odd open
 chains: with a fixed magnetic field $h = 3/5$ at both endpoints, the
 gap is bounded below by a positive constant for all chains of
-$2L+1$ sites with $L \ge 960$ [S5:77–83]:
+$2L+1$ sites with $L \ge 960$ 
 
 > **theorem**
 For the Hamiltonian  , with the spin normalization above,
 \[
  E_1(L,3/5)-E_0(L,3/5)>\frac{\log 10}392
  \qquadfor every integer L\ge960.
-\]
-\endtheorem
+\] [S5:77–83]
 
 ## Graduate summary
 

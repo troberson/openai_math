@@ -6,21 +6,21 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb for family 348 [S1:8449]:
+The release's blurb for family 348 
 
-> 348. Nonnegative-curvature Einstein classification and an L2 topological gap. Classifies closed connected Einstein four-manifolds with positive Einstein constant and nonnegative sectional curvature: up to scaling, their universal Riemannian covers are the round S4, Fubini–Study $\mathbb{CP}^2$, or a product of equal round two-spheres. A closed simply connected nonnegatively curved four-manifold is diffeomorphic to one of these whenever the scale-invariant L2 norm of its trace-free Ricci curvature lies below a universal positive constant.
+> 348. Nonnegative-curvature Einstein classification and an L2 topological gap. Classifies closed connected Einstein four-manifolds with positive Einstein constant and nonnegative sectional curvature: up to scaling, their universal Riemannian covers are the round S4, Fubini–Study $\mathbb{CP}^2$, or a product of equal round two-spheres. A closed simply connected nonnegatively curved four-manifold is diffeomorphic to one of these whenever the scale-invariant L2 norm of its trace-free Ricci curvature lies below a universal positive constant. [S1:8449]
 
-The zero-plane manuscript's abstract [S1:8458]:
+The zero-plane manuscript's abstract 
 
-> We prove that a closed Einstein four-manifold with positive Einstein constant, nonnegative sectional curvature, and a zero-curvature plane has universal Riemannian cover isometric to a product of two round two-spheres. Under the normalization $\mathop{\mathrm{Ric}}\nolimits =3g$, both spheres have radius $1/\sqrt3$. The proof extends coupled estimates for the two Weyl curvature blocks to the boundary of the sectional-curvature cone and determines their equality case.
+> We prove that a closed Einstein four-manifold with positive Einstein constant, nonnegative sectional curvature, and a zero-curvature plane has universal Riemannian cover isometric to a product of two round two-spheres. Under the normalization $\mathop{\mathrm{Ric}}\nolimits =3g$, both spheres have radius $1/\sqrt3$. The proof extends coupled estimates for the two Weyl curvature blocks to the boundary of the sectional-curvature cone and determines their equality case. [S1:8458]
 
-The L2 gap manuscript's abstract [S1:8467]:
+The L2 gap manuscript's abstract 
 
-> We prove a universal, scale-invariant L2 gap for the trace-free Ricci tensor on simply connected closed four-manifolds with nonnegative sectional curvature. If the trace-free Ricci energy is sufficiently small, the manifold is diffeomorphic to S4, $\mathbb{CP}^2$, or $S^2\times S^2$. The proof uses the classification of positive-Einstein, nonnegatively curved four-manifolds supplied by the companion zero-plane rigidity theorem, stated explicitly as the classification premise of our result. No auxiliary curvature, volume, diameter, injectivity-radius, or Sobolev bound is required. The conclusion concerns the smooth manifold, not an isometry of the original metric.
+> We prove a universal, scale-invariant L2 gap for the trace-free Ricci tensor on simply connected closed four-manifolds with nonnegative sectional curvature. If the trace-free Ricci energy is sufficiently small, the manifold is diffeomorphic to S4, $\mathbb{CP}^2$, or $S^2\times S^2$. The proof uses the classification of positive-Einstein, nonnegatively curved four-manifolds supplied by the companion zero-plane rigidity theorem, stated explicitly as the classification premise of our result. No auxiliary curvature, volume, diameter, injectivity-radius, or Sobolev bound is required. The conclusion concerns the smooth manifold, not an isometry of the original metric. [S1:8467]
 
-The positively-curved manuscript's abstract [S1:8476]:
+The positively-curved manuscript's abstract 
 
-> We prove the classification conjecture for connected smooth closed Einstein four-manifolds with strictly positive sectional curvature. Up to positive scaling and isometry, every such manifold is the round four-sphere, the complex projective plane with its Fubini–Study metric, or real projective four-space with its round metric. No orientability assumption is needed.
+> We prove the classification conjecture for connected smooth closed Einstein four-manifolds with strictly positive sectional curvature. Up to positive scaling and isometry, every such manifold is the round four-sphere, the complex projective plane with its Fubini–Study metric, or real projective four-space with its round metric. No orientability assumption is needed. [S1:8476]
 
 The three abstracts state three different results: a product-of-spheres rigidity under one zero-curvature plane, a diffeomorphism classification under a small L2 energy, and the classification conjecture under strict positivity. The catalog abstract in `overview.tex` is the blurb quoted above [S2:794]. The bibtex key the zero-plane manuscript ships [S3:10–13]:
 
@@ -45,9 +45,9 @@ and the positively-curved manuscript's [S14:8–11]:
 
 ## Undergraduate summary
 
-The zero-plane manuscript's hypothesis is one plane, at one point. Its introduction states the result [S6:10–12]:
+The zero-plane manuscript's hypothesis is one plane, at one point. Its introduction states the result 
 
-> factor have zero curvature. We prove that, for a closed Einstein four-manifold with positive Einstein constant, a single zero-curvature plane already forces this product geometry on the universal cover.
+> factor have zero curvature. We prove that, for a closed Einstein four-manifold with positive Einstein constant, a single zero-curvature plane already forces this product geometry on the universal cover. [S6:10–12]
 
 Its theorem is the rigidity [S6:14–26]:
 
@@ -65,13 +65,13 @@ Its theorem is the rigidity [S6:14–26]:
 > universal cover is the orthogonal sum of two parallel rank-two subbundles.
 > \end{theorem}
 
-The normalization fixes only the scale [S6:28–32]:
+The normalization fixes only the scale 
 
-> Here $S^2(r)$ denotes the round sphere of radius $r$, and closed means compact without boundary. No orientation, symmetry, or topological condition is assumed on $M$. The Einstein normalization only fixes the scale: for $\mathrm{Ric}=\lambda g$ with $\lambda>0$, the two radii are $1/\sqrt\lambda$.
+> Here $S^2(r)$ denotes the round sphere of radius $r$, and closed means compact without boundary. No orientation, symmetry, or topological condition is assumed on $M$. The Einstein normalization only fixes the scale: for $\mathrm{Ric}=\lambda g$ with $\lambda>0$, the two radii are $1/\sqrt\lambda$. [S6:28–32]
 
-The same paper also gives the full classification under nonnegative sectional curvature, as a corollary [S6:76–77]:
+The same paper also gives the full classification under nonnegative sectional curvature, as a corollary 
 
-> The argument also gives the full classification under nonnegative sectional curvature.
+> The argument also gives the full classification under nonnegative sectional curvature. [S6:76–77]
 
 The corollary is the three-model statement [S6:79–85]:
 
@@ -121,51 +121,51 @@ The premise it assumes is the zero-plane manuscript's corollary [S12:74–83]:
 > $S^2(1/\sqrt3)\times S^2(1/\sqrt3)$ with its product metric.
 > \end{assumption}
 
-The L2 gap manuscript states the premise is used only for an exactly Einstein metric, and that no auxiliary bound is needed [S12:101–105]:
+The L2 gap manuscript states the premise is used only for an exactly Einstein metric, and that no auxiliary bound is needed 
 
-> There are no auxiliary bounds on curvature, volume, diameter, injectivity radius, Sobolev constants, or curvature derivatives. The conclusion is about the underlying smooth manifold, rather than the original metric. This distinction matters because small $L^2$ error does not itself give pointwise curvature control.
+> There are no auxiliary bounds on curvature, volume, diameter, injectivity radius, Sobolev constants, or curvature derivatives. The conclusion is about the underlying smooth manifold, rather than the original metric. This distinction matters because small $L^2$ error does not itself give pointwise curvature control. [S12:101–105]
 
 ## Graduate summary
 
-The zero-plane manuscript's reduction is to the two Weyl blocks. Its introduction sets up the variables [S6:95–109]:
+The zero-plane manuscript's reduction is to the two Weyl blocks. Its introduction sets up the variables 
 
-> Choose an orientation and let $\Lambda^+$ and $\Lambda^-$ be the rank-three eigenspaces of the Hodge star on two-forms. The Einstein curvature operator has blocks $\mathrm{Id}+T$ and $\mathrm{Id}+U$, where $T,U$ are symmetric and trace-free. They are the self-dual and anti-self-dual Weyl blocks. Set \[ v=\frac{|T|}{\sqrt6},\qquad b=\frac{|U|}{\sqrt6},\qquad x=-\lambda_{\min}(T),\qquad y=-\lambda_{\min}(U). \] All matrix norms are Hilbert–Schmidt norms. As proved in Lemma  , the smallest sectional curvature is $1-(x+y)/2$, and \[ v\le x\le2v,\qquad b\le y\le2b,\qquad x+y\le2. \]
+> Choose an orientation and let $\Lambda^+$ and $\Lambda^-$ be the rank-three eigenspaces of the Hodge star on two-forms. The Einstein curvature operator has blocks $\mathrm{Id}+T$ and $\mathrm{Id}+U$, where $T,U$ are symmetric and trace-free. They are the self-dual and anti-self-dual Weyl blocks. Set \[ v=\frac{|T|}{\sqrt6},\qquad b=\frac{|U|}{\sqrt6},\qquad x=-\lambda_{\min}(T),\qquad y=-\lambda_{\min}(U). \] All matrix norms are Hilbert–Schmidt norms. As proved in Lemma  , the smallest sectional curvature is $1-(x+y)/2$, and \[ v\le x\le2v,\qquad b\le y\le2b,\qquad x+y\le2. \] [S6:95–109]
 
-The zero-plane hypothesis is used only in the reduction, not in the estimates [S6:113–123]:
+The zero-plane hypothesis is used only in the reduction, not in the estimates 
 
-> If one Weyl block vanished identically, the metric would be half-conformally flat. The classical compact positive-scalar Einstein classification of Hitchin  , with conformal Einstein rigidity  , would identify our simply connected cover with the standard $S^4$ or $\mathbb{CP}^2$ up to scale; see also \cite[Remark 7]Derdzinski1983. Both have strictly positive sectional curvature. We may therefore assume throughout the remaining proof that neither block vanishes identically. The zero-plane hypothesis is used only in this reduction: the remaining estimates assume only nonnegative sectional curvature and that neither block vanishes identically. Individual blocks may still vanish at some points.
+> If one Weyl block vanished identically, the metric would be half-conformally flat. The classical compact positive-scalar Einstein classification of Hitchin  , with conformal Einstein rigidity  , would identify our simply connected cover with the standard $S^4$ or $\mathbb{CP}^2$ up to scale; see also \cite[Remark 7]Derdzinski1983. Both have strictly positive sectional curvature. We may therefore assume throughout the remaining proof that neither block vanishes identically. The zero-plane hypothesis is used only in this reduction: the remaining estimates assume only nonnegative sectional curvature and that neither block vanishes identically. Individual blocks may still vanish at some points. [S6:113–123]
 
-The proof has three stages [S6:125–137]:
+The proof has three stages 
 
-> Write $\mathbf E f$ for the integral of $f$ divided by the volume of $M$. The proof now has three stages. First, the separate gaps $\mathbf E v^2,\mathbf E b^2\ge1$, a weighted variance inequality, and an upper volume deficit force \[ \mathbf E v^2=\mathbf E b^2. \] Second, a weighted Hessian identity and explicit polynomial inequalities couple the two blocks and force $dv=db=0$ almost everywhere. Third, the gaps and $v+b\le2$ give $v=b=1$. The weak norm equations then imply that both Weyl blocks are parallel, each with spectrum $(2,-1,-1)$. Their simple eigenlines produce the parallel tangent splitting.
+> Write $\mathbf E f$ for the integral of $f$ divided by the volume of $M$. The proof now has three stages. First, the separate gaps $\mathbf E v^2,\mathbf E b^2\ge1$, a weighted variance inequality, and an upper volume deficit force \[ \mathbf E v^2=\mathbf E b^2. \] Second, a weighted Hessian identity and explicit polynomial inequalities couple the two blocks and force $dv=db=0$ almost everywhere. Third, the gaps and $v+b\le2$ give $v=b=1$. The weak norm equations then imply that both Weyl blocks are parallel, each with spectrum $(2,-1,-1)$. Their simple eigenlines produce the parallel tangent splitting. [S6:125–137]
 
-The boundary case is the point. Three features let the estimates reach it [S6:139–148]:
+The boundary case is the point. Three features let the estimates reach it 
 
-> Three features allow these estimates to reach the boundary. The upper volume estimate integrates over the domain before the first conjugate point and needs no lower bound on the injectivity radius. The weighted Hessian identity needs a nonnegative quadratic form, so it remains valid when that form has a kernel. At a zero of one Weyl block, the pointwise algebraic estimates are obtained by introducing a small nonzero block and shrinking the opposite block while keeping its derivative data fixed. The decisive strictness then comes from the fact that the gradient of a Lipschitz function vanishes almost everywhere on a level set. This forces constant Weyl norms without requiring strict sectional positivity.
+> Three features allow these estimates to reach the boundary. The upper volume estimate integrates over the domain before the first conjugate point and needs no lower bound on the injectivity radius. The weighted Hessian identity needs a nonnegative quadratic form, so it remains valid when that form has a kernel. At a zero of one Weyl block, the pointwise algebraic estimates are obtained by introducing a small nonzero block and shrinking the opposite block while keeping its derivative data fixed. The decisive strictness then comes from the fact that the gradient of a Lipschitz function vanishes almost everywhere on a level set. This forces constant Weyl norms without requiring strict sectional positivity. [S6:139–148]
 
-The organization names five sections and an appendix of exact polynomial certificates [S6:150–157]:
+The organization names five sections and an appendix of exact polynomial certificates 
 
-> Section   develops the curvature identities, including the weak norm equations at zeros. Sections   and   establish the scalar estimates and moment balance. Sections   and   give the Hessian and coupling inequalities. Section   resolves their equality case and proves Theorem  . Appendix   supplies the exact polynomial certificates, including all boundary faces.
+> Section   develops the curvature identities, including the weak norm equations at zeros. Sections   and   establish the scalar estimates and moment balance. Sections   and   give the Hessian and coupling inequalities. Section   resolves their equality case and proves Theorem  . Appendix   supplies the exact polynomial certificates, including all boundary faces. [S6:150–157]
 
-The L2 gap manuscript's energy is the trace-free Ricci energy, scale-invariant in dimension four [S12:59–69]:
+The L2 gap manuscript's energy is the trace-free Ricci energy, scale-invariant in dimension four 
 
-> For a Riemannian four-manifold $(M,g)$, let \[ E_g=\Ric_g-\frac{\Scal_g}4g, \qquad \mathcal D(g)=\int_M |E_g|_g^2\,d\mu_g. \] The tensor $E_g$ vanishes precisely when $g$ is Einstein, provided that $M$ is connected. The energy $\mathcal D$ is unchanged by constant rescaling in dimension four. It is therefore natural to ask whether a classification of Einstein metrics remains valid at the level of smooth manifolds when $\mathcal D$ is small. We address this question under nonnegative sectional curvature.
+> For a Riemannian four-manifold $(M,g)$, let \[ E_g=\Ric_g-\frac{\Scal_g}4g, \qquad \mathcal D(g)=\int_M |E_g|_g^2\,d\mu_g. \] The tensor $E_g$ vanishes precisely when $g$ is Einstein, provided that $M$ is connected. The energy $\mathcal D$ is unchanged by constant rescaling in dimension four. It is therefore natural to ask whether a classification of Einstein metrics remains valid at the level of smooth manifolds when $\mathcal D$ is small. We address this question under nonnegative sectional curvature. [S12:59–69]
 
-Its method is a smoothing argument that does not assume sectional curvature survives the flow [S12:164–171]:
+Its method is a smoothing argument that does not assume sectional curvature survives the flow 
 
-> A second point concerns sectional curvature. Its nonnegativity is not assumed to persist under the flow. Instead, we bound the integral of its negative part by $Ct$. The limit is an exactly Einstein shrinking flow, and its explicit scaling converts this weak defect estimate into nonnegative sectional curvature of the fixed Einstein metric. This gives the classification-independent compactness statement of Proposition  ; classification then identifies the limiting manifold.
+> A second point concerns sectional curvature. Its nonnegativity is not assumed to persist under the flow. Instead, we bound the integral of its negative part by $Ct$. The limit is an exactly Einstein shrinking flow, and its explicit scaling converts this weak defect estimate into nonnegative sectional curvature of the fixed Einstein metric. This gives the classification-independent compactness statement of Proposition  ; classification then identifies the limiting manifold. [S12:164–171]
 
-Its smoothing step isolates a globally small high part of the curvature [S12:148–162]:
+Its smoothing step isolates a globally small high part of the curvature 
 
-> Smoothing from small critical curvature concentration was developed, in particular, by Chan, Chen, and Lee  . The formulation used here isolates a globally small _high part_ of the curvature. Consider a sequence $(M_j,g_j)$ satisfying the geometric hypotheses of Theorem   with $\mathcal D(g_j)\to0$. After normalization, nonnegative sectional curvature gives, for a fixed threshold $K_0$, \[ \left\lVert (|\Rm_{g_j}|-K_0)_+\right\rVert_{L^2(g_j)}\longrightarrow0. \] A moving threshold propagates this estimate. It yields both a uniform Sobolev inequality and noncollapse along each existing flow; a curvature-concentration contradiction then establishes a common lifespan. The same tail bound controls the evolving Einstein error. Thus the high-part formulation supplies both the regularization and the defect estimate needed for the gap argument.
+> Smoothing from small critical curvature concentration was developed, in particular, by Chan, Chen, and Lee  . The formulation used here isolates a globally small _high part_ of the curvature. Consider a sequence $(M_j,g_j)$ satisfying the geometric hypotheses of Theorem   with $\mathcal D(g_j)\to0$. After normalization, nonnegative sectional curvature gives, for a fixed threshold $K_0$, \[ \left\lVert (|\Rm_{g_j}|-K_0)_+\right\rVert_{L^2(g_j)}\longrightarrow0. \] A moving threshold propagates this estimate. It yields both a uniform Sobolev inequality and noncollapse along each existing flow; a curvature-concentration contradiction then establishes a common lifespan. The same tail bound controls the evolving Einstein error. Thus the high-part formulation supplies both the regularization and the defect estimate needed for the gap argument. [S12:148–162]
 
-The L2 gap manuscript names the prior work it does not use, and names the companion as its premise [S12:109–118]:
+The L2 gap manuscript names the prior work it does not use, and names the companion as its premise 
 
-> The exact Einstein problem has been studied under several additional hypotheses. Gursky and LeBrun obtained the Fubini–Study conclusion for nonnegative sectional curvature and a nonzero positive-definite intersection form  . Cao and Tran established sectional-pinching criteria  , and Liu classified the $T^2$-invariant case on closed simply connected four-manifolds  . Here the classification premise is supplied by _Zero-Plane Rigidity for Einstein Four-Manifolds_ \cite[Corollary 1.2]ZeroPlane. Our problem is instead to transfer that exact classification to metrics with small critical Ricci error.
+> The exact Einstein problem has been studied under several additional hypotheses. Gursky and LeBrun obtained the Fubini–Study conclusion for nonnegative sectional curvature and a nonzero positive-definite intersection form  . Cao and Tran established sectional-pinching criteria  , and Liu classified the $T^2$-invariant case on closed simply connected four-manifolds  . Here the classification premise is supplied by _Zero-Plane Rigidity for Einstein Four-Manifolds_ \cite[Corollary 1.2]ZeroPlane. Our problem is instead to transfer that exact classification to metrics with small critical Ricci error. [S12:109–118]
 
-The zero-plane manuscript's context paragraph names the antecedents it builds on [S6:36–51]:
+The zero-plane manuscript's context paragraph names the antecedents it builds on 
 
-> The classification of positively curved Einstein four-manifolds has a long history. Berger's rigidity under strict quarter pinching   was followed by quantitative curvature conditions of Yang, Costa, and Cao–Tran  . Gursky–LeBrun obtained the Fubini–Study conclusion under nonnegative sectional curvature and a nonzero positive-definite intersection form \cite[Theorem A]GurskyLeBrun1999. Their separate Weyl-norm gaps and analysis of the two Weyl blocks are important antecedents of the argument here. Scalar combinations of the two Weyl norms also appear in Yang's coupling argument \cite[Section 6]Yang2000 and in Cao–Tran \cite[Proposition 2.2]CaoTran2018. Under nonnegative isotropic curvature, which is a different curvature condition, the Einstein local-symmetry theorem in dimension four is due to Micallef–Wang \cite[Theorem 4.4]MicallefWang1993; Brendle established the analogous rigidity in higher dimensions \cite[Theorem 1]Brendle2010.
+> The classification of positively curved Einstein four-manifolds has a long history. Berger's rigidity under strict quarter pinching   was followed by quantitative curvature conditions of Yang, Costa, and Cao–Tran  . Gursky–LeBrun obtained the Fubini–Study conclusion under nonnegative sectional curvature and a nonzero positive-definite intersection form \cite[Theorem A]GurskyLeBrun1999. Their separate Weyl-norm gaps and analysis of the two Weyl blocks are important antecedents of the argument here. Scalar combinations of the two Weyl norms also appear in Yang's coupling argument \cite[Section 6]Yang2000 and in Cao–Tran \cite[Proposition 2.2]CaoTran2018. Under nonnegative isotropic curvature, which is a different curvature condition, the Einstein local-symmetry theorem in dimension four is due to Micallef–Wang \cite[Theorem 4.4]MicallefWang1993; Brendle established the analogous rigidity in higher dimensions \cite[Theorem 1]Brendle2010. [S6:36–51]
 
 **Prior (my training data, not this repo).** As of my early-2025 cutoff, the classification of closed Einstein four-manifolds with positive sectional curvature is not a theorem I recall; the Hitchin-Thorpe inequality is classical, and the signs of the Euler characteristic and signature constrain Einstein four-manifolds. I recall LeBrun's 11/8 theorem for the Fubini-Study case under a positive intersection form, and the Micallef–Wang local-symmetry theorem under nonnegative isotropic curvature. I do not recall a rigidity theorem that uses a single zero-curvature plane at a single point to force a product-of-spheres universal cover, nor a scale-invariant L2 gap for the trace-free Ricci tensor that transfers a classification to the level of diffeomorphism type. The prior is a training-data recollection, self-rated, and the repo supplies only the manuscripts' citations.
 

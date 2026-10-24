@@ -6,16 +6,16 @@
 
 ## Original CONTENTS.md summary
 
-[S1:218] carries the family entry:
+ carries the family entry:
 
-> Proves Brennan's conjecture: for every conformal bijection $\phi$ from a simply connected plane domain onto the disk, $|\phi'|^s$ is area-integrable for $4/3<s<4$. The sharp universal integral-means identity is $B_{\mathcal S}(t)=|t|-1$ for $t\le-2$. A strict bound $B_b(-1)<1/4$ for bounded univalent functions disproves Kraetzer's prediction at that parameter.
+> Proves Brennan's conjecture: for every conformal bijection $\phi$ from a simply connected plane domain onto the disk, $|\phi'|^s$ is area-integrable for $4/3<s<4$. The sharp universal integral-means identity is $B_{\mathcal S}(t)=|t|-1$ for $t\le-2$. A strict bound $B_b(-1)<1/4$ for bounded univalent functions disproves Kraetzer's prediction at that parameter. [S1:218]
 
-The entry links the two manuscripts as "Brennan’s conjecture" and "Strict
+The entry links the two manuscripts as "Brennan’s conjecture [S1:218]" and "Strict
 inverse-first-power bound" [S1:218].
 
-The first manuscript's title is "Brennan's conjecture and sharp inverse-square integral means" [S2:1], dated [S2:4].
+The first manuscript's title is "Brennan's conjecture and sharp inverse-square integral means [S2:1]" , dated [S2:4].
 
-The second manuscript's title is "A strict inverse-first-power bound for univalent functions" [S13:1], dated [S13:4].
+The second manuscript's title is "A strict inverse-first-power bound for univalent functions [S13:1]" , dated [S13:4].
 
 ## Undergraduate summary
 

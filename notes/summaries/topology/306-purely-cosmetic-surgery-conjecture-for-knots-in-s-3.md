@@ -10,11 +10,9 @@ The release's blurb [S1:7562] and the catalog abstract [S2:706] state
 the family's claim: the purely cosmetic surgery conjecture — distinct
 Dehn surgery slopes on a nontrivial smooth knot in $S^3$ never produce
 orientation-preservingly homeomorphic manifolds. The statement includes
-the meridional slope. The manuscript's abstract [S3:8–12]: "**abstract**
-We prove the purely cosmetic surgery conjecture for knots in the three-sphere.
+the meridional slope. The manuscript's abstract "We prove the purely cosmetic surgery conjecture for knots in the three-sphere.
 Distinct Dehn surgery slopes on a nontrivial smooth knot never give
-orientation-preservingly homeomorphic manifolds.
-\endabstract"
+orientation-preservingly homeomorphic manifolds. [S3:8–12]"
 
 ## Undergraduate summary
 
@@ -29,14 +27,12 @@ determined by the resulting closed manifold, up to orientation. In
 other words, the knot's exterior encodes its filling slope in the
 oriented manifold it produces [S4:3–11]:
 
-> **theorem**
-Let $K\subset S^3$ be a smooth nontrivial knot. For any
+> Let $K\subset S^3$ be a smooth nontrivial knot. For any
 $r,s\in\Q\cup\{\infty\}$, an orientation-preserving homeomorphism
 \[
  S^3_r(K)\cong S^3_s(K)
 \]
-implies $r=s$.
-\endtheorem
+implies $r=s$. [S4:13–20]
 
 The orientation hypothesis is essential: orientation-reversing, or
 *chirally* cosmetic, coincidences are a different phenomenon and the

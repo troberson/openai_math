@@ -12,10 +12,10 @@ conjecture in its strict range, in which the multipliers of order
 $\delta$ are bounded on $L^p(\mathbb R^3)$ for every $1\le p\le\infty$
 whenever $\delta>\max\{3|1/p-1/2|-1/2,0\}$. The manuscript proves the
 estimate at $L^3$ for every positive order and reaches the full range
-by interpolation and duality. Its abstract [S3:46–49]: "We prove the three-dimensional Bochner–Riesz conjecture in its
+by interpolation and duality. Its abstract "We prove the three-dimensional Bochner–Riesz conjecture in its
 strict-order formulation. The main result is boundedness of the
 Bochner–Riesz multipliers on $L^3(\RR^3)$ for every positive order.
-Interpolation and duality then give the full conjectured strict range."
+Interpolation and duality then give the full conjectured strict range. [S3:46–49]"
 
 ## Undergraduate summary
 
@@ -23,29 +23,24 @@ The Bochner–Riesz multiplier $T_\delta$ has multiplier
 $(1-|\xi|^2)_+^\delta$, which softens the boundary of the frequency
 ball. The question is how much smoothing — an order $\delta$ — is
 needed to keep an $L^p$ norm. The manuscript's central estimate is
-boundedness at $L^3$ for every positive order [S4:21–31]:
+boundedness at $L^3$ for every positive order 
 
 > **theorem**
 For every $\delta>0$, there is a finite constant $C_\delta$ such that
-\beginequation
- \norm{T_\delta f}_{L^3(\RR^3)}
+$$\norm{T_\delta f}_{L^3(\RR^3)}
  \le C_\delta\norm f_{L^3(\RR^3)}
  \qquad(f\in\mathcal S(\RR^3)).
-  
-\endequation
-Consequently $T_\delta$ has a unique bounded extension to $L^3(\RR^3)$.
-\endtheorem
+ \label{eq:main-bound}$$
+Consequently $T_\delta$ has a unique bounded extension to $L^3(\RR^3)$. [S4:21–31]
 
 Interpolating this with the $L^2$ bound and applying duality gives
 the full conjugate range, the conjectured strict order [S4:33–40]:
 "Theorem   gives
-\beginequation
- \norm{T_\delta f}_{L^p(\RR^3)}
+$$\norm{T_\delta f}_{L^p(\RR^3)}
  \lesssim_{p,\delta}\norm f_{L^p(\RR^3)},\qquad
  \delta>\max\left\{3\left|\frac1p-\frac12\right|-\frac12,0\right\},
  \quad 1\le p\le\infty .
-  
-\endequation"
+ \label{eq:intro-full-range}$$ [S4:33–40]"
 
 ## Graduate summary
 
@@ -113,18 +108,16 @@ proposed a proof in all dimensions.
 ## Consequences
 
 **The full strict range.** The $L^3$ estimate yields the complete
-strict-order range for $1\le p\le\infty$ [S5:437–447]:
+strict-order range for $1\le p\le\infty$ 
 
 > **corollary**
 Let $1\le p\le\infty$ and
-\beginequation 
- \delta>\max\left\{0,\,3\left|\frac1p-\frac12\right|-\frac12\right\}.
-\endequation
+$$\label{eq:full-br-range}
+ \delta>\max\left\{0,\,3\left|\frac1p-\frac12\right|-\frac12\right\}.$$
 Then the multiplier $(1-|\xi|^2)_+^\delta$ is bounded on
 $L^p(\RR^3)$.  The same bounds hold uniformly for every positive
 radius after dilation.  This assertion concerns the strict
-inequality  .
-\endcorollary
+inequality  . [S5:437–447]
 
 Its proof applies the positive-order theorem at arbitrarily small,
 fixed orders, combines it with the beta-integral complex-order lemma,

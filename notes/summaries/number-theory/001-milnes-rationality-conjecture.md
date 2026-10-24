@@ -6,17 +6,17 @@
 
 ## Original CONTENTS.md summary
 
-[S1:16] (family entry):
+ (family entry):
 
-> **001. Milne’s rationality conjecture and algebraic specialization.** Proves Milne's rationality conjecture for abelian varieties over $`\overline{\mathbb Q}`$ with good reduction: specialized Hodge classes pair rationally with complementary divisor products, independently of cohomology theory. Together with result 032, every specialized Hodge class is represented by a single rational algebraic cycle simultaneously in all prime-to-*p* and crystalline realizations, for every residue characteristic *p*.
+> **001. Milne’s rationality conjecture and algebraic specialization.** Proves Milne's rationality conjecture for abelian varieties over $`\overline{\mathbb Q}`$ with good reduction: specialized Hodge classes pair rationally with complementary divisor products, independently of cohomology theory. Together with result 032, every specialized Hodge class is represented by a single rational algebraic cycle simultaneously in all prime-to-*p* and crystalline realizations, for every residue characteristic *p*. [S1:16]
 
 [S1:23] (the manuscript entry under that family):
 
 > [Milne's rationality conjecture for abelian varieties](../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/paper.pdf)
 
-[S1:25] (its abstract):
+ (its abstract):
 
-> We prove Milne's rationality conjecture for abelian varieties, including residue characteristic 2. After good reduction, the pairing of a rational Hodge class with any complementary product of divisor classes on the reduction is the same rational number in every prime-to-*p* realization and in crystalline cohomology. Using the Hodge theorem for CM abelian varieties, we also show that every such specialized Hodge class is represented by a single rational algebraic cycle in all these realizations.
+> We prove Milne's rationality conjecture for abelian varieties, including residue characteristic 2. After good reduction, the pairing of a rational Hodge class with any complementary product of divisor classes on the reduction is the same rational number in every prime-to-*p* realization and in crystalline cohomology. Using the Hodge theorem for CM abelian varieties, we also show that every such specialized Hodge class is represented by a single rational algebraic cycle in all these realizations. [S1:25]
 
 The manuscript's own abstract ([S3:58–64]) is identical to [S1:25], and
 [S2:78] carries the [S1:16] text, so both blurbs are the release's words, not the
@@ -64,9 +64,9 @@ The shape of the proof, sketched at [S4:186–265]:
    whose structure forces a single rational identity, then pulling that identity back.
 
 The two varieties built in steps 1 and 4 are different varieties doing different jobs. The caption
-says so: "The CM and prescribed-filtration auxiliaries need not coincide" ([S4:277–278]),
+says so: "The CM and prescribed-filtration auxiliaries need not coincide [S4:277–278]" (),
 and the figure source [S11] draws them as two panels labelled
-"CM transport" ([S11:8]) and "Prescribed-filtration transport" ([S11:17]).
+"CM transport [S11:8]" () and "Prescribed-filtration transport [S11:17]" ().
 
 ## Graduate summary
 
@@ -77,7 +77,7 @@ Hodge class. Then for every list of Cartier divisors `D₁, …, D_{d-r}` on `A�
 with `Tr_ℓ(γ_{0,ℓ} c_{1,ℓ}(D₁)⋯c_{1,ℓ}(D_{d-r})) = q` in `Q_ℓ` for every `ℓ ≠ p`, and
 `Tr_p(γ_{0,p} c_{1,cris}(D₁)⋯c_{1,cris}(D_{d-r})) = q` in `C_w`, where `γ_{0,ℓ}` is smooth proper
 specialization and `γ_{0,p}` is the de Rham–crystalline specialization. The introduction states the
-scope in one line: "We prove it for every residue characteristic" ([S4:8–9]). By linearity
+scope in one line: "We prove it for every residue characteristic [S4:8–9]" (). By linearity
 the same holds against every rational Lefschetz class of complementary codimension
 ([S4:58–60]).
 

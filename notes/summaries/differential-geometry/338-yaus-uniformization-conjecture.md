@@ -11,12 +11,10 @@ the family's claim: every complete connected noncompact Kähler
 manifold with strictly positive holomorphic bisectional curvature is
 biholomorphic to complex Euclidean space, resolving Yau's
 uniformization conjecture in every complex dimension. The manuscript's
-abstract [S3:84–89]: "**abstract**
-We prove that every complete connected noncompact Kähler manifold with
+abstract "We prove that every complete connected noncompact Kähler manifold with
 strictly positive holomorphic bisectional curvature is biholomorphic to
 complex Euclidean space. This resolves Yau's uniformization conjecture
-positively in every complex dimension.
-\endabstract"
+positively in every complex dimension. [S3:84–89]"
 
 ## Undergraduate summary
 
@@ -33,12 +31,11 @@ conditions. The manuscript proves the conjecture under pointwise
 positivity alone, with no upper curvature bound, no volume-growth
 condition, and no topological hypothesis [S4:1–23]:
 
-> **theorem**
+> **Theorem 1.1**
 Let $M$ be a connected noncompact complex manifold of complex dimension
 $n\geq1$. If $M$ admits a smooth complete Kähler metric with strictly
 positive holomorphic bisectional curvature, then $M$ is biholomorphic
-to $\mathbb C^n$.
-\endtheorem
+to $\mathbb C^n$. [S4:8–13]
 
 The conclusion identifies the entire complex manifold with $\C^n$; it
 does not assert that the given metric is Euclidean.

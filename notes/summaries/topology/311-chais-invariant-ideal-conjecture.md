@@ -13,15 +13,13 @@ prime and positive height, and through the Barthel--Heard--Naumann
 implication this proves the Hovey--Strickland conjecture — the
 dualizable $K(n)$-local category has exactly $n+2$ thick tensor ideals,
 and its Balmer spectrum is a chain of $n+1$ points. The manuscript's
-abstract [S3:53–61]: "**abstract**
-We classify the prime and radical ideals of the Lubin–Tate deformation
+abstract "We classify the prime and radical ideals of the Lubin–Tate deformation
 ring invariant under an open Morava stabilizer subgroup, at every prime
 and positive height.  This proves Chai's invariant-ideal conjecture in
 the standard finite-residue-field formulation.  It also proves the
 Hovey–Strickland conjecture: the dualizable \(K(n)\)-local category has
 exactly \(n+2\) thick tensor ideals, and its Balmer spectrum is a chain
-of \(n+1\) points.
-\endabstract"
+of \(n+1\) points. [S3:53–61]"
 
 ## Undergraduate summary
 
@@ -46,8 +44,7 @@ For every prime \(p\) and every \(n\geq 1\), the thick tensor ideals of
  \supsetneq\mathcal D_n\supsetneq\mathcal D_{n+1}=0.
 \]
 In particular, there are \(n+2\) such ideals, and each \(\mathcal D_k\)
-is independent of the chosen finite type-\(k\) spectrum.
-\endtheorem
+is independent of the chosen finite type-\(k\) spectrum. [S4:74–84]
 
 In plain terms: the spectral classification reduces to the arithmetic
 one, and once you know exactly which height-ideals are

@@ -6,9 +6,9 @@
 
 ## Original CONTENTS.md summary
 
-[S1:755] (family entry):
+ (family entry):
 
-> **Proves the rational Hodge conjecture for every complex CM abelian variety, in every dimension and codimension.** Through Milne's theorems, this also gives the Tate conjecture for all abelian varieties over finite fields and the Hodge standard conjecture for abelian varieties in every characteristic.
+> **Proves the rational Hodge conjecture for every complex CM abelian variety, in every dimension and codimension.** Through Milne's theorems, this also gives the Tate conjecture for all abelian varieties over finite fields and the Hodge standard conjecture for abelian varieties in every characteristic. [S1:755]
 
 [S2:142] carries the same text as the release's family abstract, and the five manuscript entries under
 the family block are [S1:762], [S1:771], [S1:780], [S1:789] and [S1:798], with the abstracts quoted
@@ -16,33 +16,33 @@ below.
 
 [The rational Hodge conjecture for CM abelian varieties](../../../preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/paper.pdf)
 
-[S1:764] (its abstract):
+ (its abstract):
 
-> We prove the rational Hodge conjecture on every self-power of the Jacobian at each tensor Hodge-generic point of the full marked variation of a connected abelian cover of curves. This holds in every base genus and for every compatible branching pattern. For any CM abelian variety, the conclusion also holds for every self-power of its product with the Jacobian, on the same Hodge-generic locus. We also prove the conjecture on every self-power of a very general member of the full smooth labelled family of diagonal complete intersections cut out by at most two equations of a common degree, in every dimension and every degree at least two.
+> We prove the rational Hodge conjecture on every self-power of the Jacobian at each tensor Hodge-generic point of the full marked variation of a connected abelian cover of curves. This holds in every base genus and for every compatible branching pattern. For any CM abelian variety, the conclusion also holds for every self-power of its product with the Jacobian, on the same Hodge-generic locus. We also prove the conjecture on every self-power of a very general member of the full smooth labelled family of diagonal complete intersections cut out by at most two equations of a common degree, in every dimension and every degree at least two. [S1:791]
 
 [Algebraic Kuga-Satake correspondences and Hodge conjectures on a K3 quadratic locus](../../../preprints/Algebraic-Kuga-Satake-correspondences-and-Hodge-conjectures-on-a-K3-quadratic-locus-September-30-2026/paper.pdf)
 
-[S1:773] (its abstract):
+ (its abstract):
 
-> We prove the rational Hodge conjecture in every codimension on every self-power of a complex abelian sixfold with an imaginary-quadratic action and a compatible polarization whose rational homological Hermitian form is hyperbolic of signature $`(3,3)`$. We also prove it in every codimension on every self-power of a complex abelian variety of dimension at most five admitting an imaginary-quadratic action. Both results include nonsimple varieties and special periods with additional endomorphisms. The proof uses the companion theorem on the rational Hodge conjecture for CM abelian varieties.
+> We prove the rational Hodge conjecture in every codimension on every self-power of a complex abelian sixfold with an imaginary-quadratic action and a compatible polarization whose rational homological Hermitian form is hyperbolic of signature $`(3,3)`$. We also prove it in every codimension on every self-power of a complex abelian variety of dimension at most five admitting an imaginary-quadratic action. Both results include nonsimple varieties and special periods with additional endomorphisms. The proof uses the companion theorem on the rational Hodge conjecture for CM abelian varieties. [S1:782]
 
 [Weil classes and Hodge classes on abelian powers](../../../preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/paper.pdf)
 
-[S1:782] (its abstract):
+ (its abstract):
 
-> We prove the rational Hodge and generalized Hodge conjectures in every cohomological degree of every self-power of a projective complex K3 surface whose transcendental quadratic space, with its cup-product form, admits a rational isometric embedding in $`\mathbb U_{\mathbb Q}^{\oplus2}\perp\langle-1\rangle^4`$. This includes every ample *P*-polarized K3 surface, including all Picard jumps, for $`P=\mathbb U\oplus D_8(-1)\oplus D_4(-1)`$. On this locus we construct algebraic correspondences inducing every prescribed standard even-Clifford Kuga–Satake tensor. More generally, for any projective complex K3 surface, algebraicity of one exact standard even-Clifford Kuga–Satake tensor implies both conjectures for every self-power.
+> We prove the rational Hodge and generalized Hodge conjectures in every cohomological degree of every self-power of a projective complex K3 surface whose transcendental quadratic space, with its cup-product form, admits a rational isometric embedding in $`\mathbb U_{\mathbb Q}^{\oplus2}\perp\langle-1\rangle^4`$. This includes every ample *P*-polarized K3 surface, including all Picard jumps, for $`P=\mathbb U\oplus D_8(-1)\oplus D_4(-1)`$. On this locus we construct algebraic correspondences inducing every prescribed standard even-Clifford Kuga–Satake tensor. More generally, for any projective complex K3 surface, algebraicity of one exact standard even-Clifford Kuga–Satake tensor implies both conjectures for every self-power. [S1:773]
 
 [Abelian covers, Gale correspondences, and the Hodge conjecture for powers](../../../preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026/paper.pdf)
 
-[S1:791] (its abstract):
+ (its abstract):
 
-> We prove the rational Hodge conjecture for complex abelian varieties with complex multiplication: every rational Hodge class on such a variety is a rational linear combination of algebraic cycle classes. As consequences, we obtain the generalized Hodge conjecture for CM abelian varieties, the Tate conjecture for abelian varieties over finite fields, and the Hodge standard conjecture for abelian varieties in arbitrary characteristic.
+> We prove the rational Hodge conjecture for complex abelian varieties with complex multiplication: every rational Hodge class on such a variety is a rational linear combination of algebraic cycle classes. As consequences, we obtain the generalized Hodge conjecture for CM abelian varieties, the Tate conjecture for abelian varieties over finite fields, and the Hodge standard conjecture for abelian varieties in arbitrary characteristic. [S1:764]
 
 [A Conditional Reduction for Algebraic Kuga-Satake Correspondences](../../../preprints/A-Conditional-Reduction-for-Algebraic-Kuga-Satake-Correspondences-September-10-2026/paper.pdf)
 
-[S1:800] (its abstract):
+ (its abstract):
 
-> For a polarized K3 surface whose primitive cohomology has full orthogonal Hodge group, one algebraic correspondence inducing a nonzero map from that cohomology to the second cohomology of an abelian variety suffices to recover the prescribed full Kuga–Satake correspondence. We give an equivalent condition using holomorphic one-forms on a generically finite surface cover. If this input holds very generally in a polarized component, the prescribed correspondence is algebraic throughout that component, for every choice of standard data on the transcendental part. The existence of the initial correspondence remains a hypothesis.
+> For a polarized K3 surface whose primitive cohomology has full orthogonal Hodge group, one algebraic correspondence inducing a nonzero map from that cohomology to the second cohomology of an abelian variety suffices to recover the prescribed full Kuga–Satake correspondence. We give an equivalent condition using holomorphic one-forms on a generically finite surface cover. If this input holds very generally in a polarized component, the prescribed correspondence is algebraic throughout that component, for every choice of standard data on the transcendental part. The existence of the initial correspondence remains a hypothesis. [S1:800]
 
 ## Undergraduate summary
 
@@ -115,7 +115,7 @@ following Abdulali's effective-realization argument and Hazama's codimension-two
 **MS3 — imaginary-quadratic actions.** Two headline theorems. *Split Weil sixfolds* [S13:79]: an
 imaginary quadratic field acting on a complex abelian **sixfold** with a compatible polarization whose
 rational Hermitian form is hyperbolic of signature `(3,3)` ⇒ rational HC in every codimension on every
-`A^m`. *Quadratic actions in dimension at most five* [S13:88]: `dim A ≤ 5` with an imaginary-quadratic
+`A^m`. *Quadratic actions in dimension at most five [S13:88]* `dim A ≤ 5` with an imaginary-quadratic
 action ⇒ the same conclusion, and the paper notes that this second theorem
 "requires no separately chosen compatible polarization: one is obtained by averaging any rational
 Riemann form" [S13:99–100]. Both statements include nonsimple varieties and periods with additional
@@ -157,14 +157,14 @@ later" [S12:160–161].
 is a reduction, not a case of the conjecture. *Specialization in a polarized component* [S16:57]: if
 condition (i) or (ii) holds very generally in a component of primitively amply polarized K3 surfaces of
 degree `2d`, then every `(S,h)` in that component satisfies the cycle target, and
-"The witness cycles, abelian varieties, or surface covers need not vary in a family" [S16:60]; a
+"The witness cycles, abelian varieties, or surface covers need not vary in a family [S16:60]" ; a
 corollary lifts this to every projective K3 surface provided the hypothesis holds in the required
 component in every degree [S16:63]. The genericity hypothesis is not vacuous — it holds outside a
 countable union of proper closed analytic subsets in every full polarized period chart [S16:55] — and
 the paper states its own limit: "Constructing a very-general correspondence or surface cover with the
 stated property remains the external existence problem. The hypotheses concern actual algebraic cycles;
 absolute Hodge or motivated classes do not supply this input." [S16:71]. Its dependency table makes the
-contract explicit: "No algebraicity theorem for the Kuga–Satake class is an input." [S17:4–5].
+contract explicit: "No algebraicity theorem for the Kuga–Satake class is an input. [S17:4–5]" .
 
 **The family's dependency graph (measured from `bibitem` and `\cite` in the main files).** MS1 is the
 root: MS3 cites it as `OpenAICM2026` (bibitem [S13:8212], used at [S13:195] — "This is the precise CM
@@ -229,7 +229,7 @@ that buys: "This establishes an arithmetic compatibility shared by algebraic cyc
 by itself produce algebraic cycles." [S4:80–82]. The CM case is where the criterion becomes
 computable — Hodge groups are tori, `H^1` splits into embedding lines after extending coefficients, and
 a line tensor is a rational Hodge class exactly when every scalar conjugate has equally many
-holomorphic and antiholomorphic factors, "Pohlmann's balance criterion" [S4:83–90], citing
+holomorphic and antiholomorphic factors, "Pohlmann's balance criterion [S4:88]" [S4:83–90], citing
 `Pohlmann1968` [S10:370], `Milne2022` §1.2(c) [S10:306] and `GaoUllmo2026`, Theorem 3.1 [S10:151].
 
 **Two reductions the literature had already supplied, and what they leave open.** The Deligne–André
@@ -248,7 +248,7 @@ and to compose those representatives as correspondences." [S4:110–112].
 
 **The arithmetic consequences have a documented dependency, including a correction.** MS1's Tate
 corollary is derived from Milne's `Milne1999Tate` (Compositio Math. 117 (1999) 45–76) Theorem 7.1 and
-formulation (0.1) [S9:226–227], "with the correction in" Milne's own online *Addenda to Lefschetz
+formulation (0.1) [S9:226–227], "with the correction in [S9:227]" Milne's own online *Addenda to Lefschetz
 motives and the Tate conjecture* [S9:227–228], which MS1 states concretely: the cofinal auxiliary
 Galois CM fields are enlarged to contain a real subfield of degree greater than 2 that is inert at the
 residue prime [S9:228–230]. The addenda entries are cited as author's corrections on Milne's site,
@@ -257,7 +257,7 @@ consulted September 30, 2026 [S10:434–448]; the Hodge standard part cites the 
 Tate and Hodge-standard conclusions are not a self-contained derivation from the 1999 and 2002 papers
 as published — they are derived from those papers as corrected by their author.
 
-**Antecedents of the K3 and cover lines.** MS4's "Earlier work" section [S14:162–229] names the
+**Antecedents of the K3 and cover lines.** MS4's "Earlier work [S14:162]" section [S14:162–229] names the
 literature its theorem sits in: Schoen's phase-kernel/permutation-quotient correspondence
 (`Theorem~2.0`), Shioda–Katsura's Fermat domination, Deligne–Mostow (1986) on monodromy of
 hypergeometric families, Rohde (2009, `Theorem~5.1.1`) on cyclic covers with full special-unitary
@@ -305,7 +305,7 @@ coincide on rational cycles [S9:221–222]. The proof is a sentence of dependenc
 Theorem~7.1 and his formulation (0.1)" [S9:226] — citing `Milne1999Tate` [S10:263] "with the
 correction in" the addenda entry [S9:227], whose content is that the cofinal auxiliary Galois CM
 fields are enlarged to contain a real subfield of degree greater than 2 that is inert at the residue
-prime [S9:228–230], and then: "The theorem's hypothesis is supplied by Theorem  ."
+prime [S9:228–230], and then: "The theorem's hypothesis is supplied by Theorem  . [S9:230–231]"
 [S9:230–231]
 
 **Hodge standard conjecture for abelian varieties** [S9:274]: for an abelian variety `A/K` of
@@ -342,7 +342,7 @@ specialization corollary [S16:57] — with the existence problem left open on it
 Tate conjecture for all abelian varieties over finite fields and the Hodge standard conjecture for
 abelian varieties in every characteristic" [S1:755]. MS1's statements match that scope: its Tate
 corollary is quantified over every abelian variety over a finite field [S9:215], and its Hodge
-standard conclusion is stated "in arbitrary characteristic" [S9:288]. The blurb's phrasing is
+standard conclusion is stated "in arbitrary characteristic [S9:288]" . The blurb's phrasing is
 therefore a faithful summary of the corollaries, and the load-bearing dependency is the one MS1
 states in its own consequences section — Milne's two theorems, as corrected by their author, with
 `thm:cm` supplying the hypothesis.

@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb [S1:1540]: "**059. Counterexamples to Zariski's multiplicity conjecture.** Disproves Zariski's multiplicity conjecture by constructing reduced holomorphic hypersurface germs that are ambiently homeomorphic but have different multiplicities. The examples include hypersurfaces in ℂ⁴ with isolated critical points and multiplicities four and five.
+The release's blurb "**059. Counterexamples to Zariski's multiplicity conjecture.** Disproves Zariski's multiplicity conjecture by constructing reduced holomorphic hypersurface germs that are ambiently homeomorphic but have different multiplicities. The examples include hypersurfaces in ℂ⁴ with isolated critical points and multiplicities four and five.
 2.inline	S2	9	15	We give a negative answer to the embedded Zariski multiplicity conjecture.
 We construct two reduced hypersurface germs that are ambiently homeomorphic
 but have multiplicities two and three. Both have isolated singularities and
@@ -79,7 +79,7 @@ neighboring page. For the open books on \(S^7\) used here, a
 classification theorem turns a congruence of these integral forms
 into an equivalence of the embedded links. The proof is therefore
 organized around obtaining that integral congruence while retaining
-the different orders of the equations."
+the different orders of the equations. [S1:1540]"
 
 Two manuscripts carry this family. The first,
 *Ambiently homeomorphic isolated hypersurfaces of multiplicities

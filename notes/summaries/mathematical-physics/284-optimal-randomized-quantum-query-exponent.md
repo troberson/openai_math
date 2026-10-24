@@ -10,15 +10,13 @@ The release's blurb [S1:7084] and the catalog abstract [S2:658] state
 the family's claim: the universal quartic bound relating bounded-error
 randomized and quantum query complexity for total Boolean functions is
 sharp in its exponent, and the bound is optimal — the conjectured cubic
-relation is false. The manuscript's abstract [S3:9–17]: "**abstract**
-We construct total Boolean functions with a nearly quartic separation
+relation is false. The manuscript's abstract "We construct total Boolean functions with a nearly quartic separation
 between bounded-error randomized and quantum query complexity.
 Writing these complexities as $\R(f)$ and $\Q(f)$, the examples rule
 out every universal bound $\R(f)=O((1+\Q(f))^\alpha)$ with
 $\alpha<4$. Thus the known quartic upper bound has the optimal
 exponent, disproving the conjectured cubic bound. Both complexities
-count worst-case bit queries with error at most $1/3$ on every input.
-\endabstract"
+count worst-case bit queries with error at most $1/3$ on every input. [S3:9–17]"
 
 ## Undergraduate summary
 
@@ -38,18 +36,15 @@ exponent for which a uniform constant makes $\R(f)\le
 C(1+\Q(f))^\alpha$ hold for every total $f$ [S4:3–27]. The
 manuscript proves it is exactly four:
 
-> **theorem**
-The optimal power is $\alpha_{\mathrm{tot}}=4$.
+> The optimal power is $\alpha_{\mathrm{tot}}=4$.
 More precisely, $\R(f)=O((1+\Q(f))^4)$ for every total Boolean function.
 For each fixed integer $k\ge2$, there are positive constants $c_k,C_k,b_k$
 and total Boolean functions $F_{k,m}$, for all sufficiently large powers
 of four $m$, such that
-\beginequation 
+$$\label{eq:main-family}
  \Q(F_{k,m})\le C_k\sqrt m\,(\log m)^{b_k},
  \qquad
- \R(F_{k,m})\ge c_k\frac{m^{2-1/k}}{(\log m)^2}.
-\endequation
-\endtheorem
+ \R(F_{k,m})\ge c_k\frac{m^{2-1/k}}{(\log m)^2}.$$ [S4:29–40]
 
 The upper bound half — the universal quartic relation — was already
 known; the new contribution is the family $F_{k,m}$, which rules out

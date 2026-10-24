@@ -6,15 +6,15 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb [S1:1060]: "**037. The ordinary-double-point volume gap.** Proves the ordinary-double-point volume-gap conjecture: every singular complex algebraic klt germ of dimension $n$ ≥ 2, with zero boundary, has normalized volume at most $2(n-1)^n$. Equality holds precisely for an analytic ordinary double point." The two manuscripts
-are "The ordinary-double-point gap in every dimension" [S3:1] and the fourfold companion [S6:1].
+The release's blurb "**037. The ordinary-double-point volume gap.** Proves the ordinary-double-point volume-gap conjecture: every singular complex algebraic klt germ of dimension $n$ ≥ 2, with zero boundary, has normalized volume at most $2(n-1)^n$. Equality holds precisely for an analytic ordinary double point. [S1:1060]" The two manuscripts
+are "The ordinary-double-point gap in every dimension [S3:1]" and the fourfold companion [S6:1].
 
 ## Undergraduate summary
 
 Normalized volume measures the size of a klt singularity: for an
 $n$-dimensional klt germ $(X,x)$ with zero boundary,
 $\nvol(x,X)=\inf_v A_X(v)^n \vol(v)$, where the infimum runs over
-centered valuations [S5:3–24]. "Normalized volume, introduced by Chi Li  , measures the
+centered valuations . "Normalized volume, introduced by Chi Li  , measures the
 size of a klt singularity by balancing
 the discrepancy of a valuation against the asymptotic colength of its
 valuation ideals. For a closed point \(x\) of an \(n\)-dimensional
@@ -35,13 +35,12 @@ value: every singular klt germ should have normalized volume at most
 point. Besides distinguishing a basic singularity by a numerical
 invariant, such a gap gives global restrictions on K-semistable Fano
 varieties through the local-to-global volume inequality
-\cite[Theorem 21]Liu18." The largest value is $n^n$,
+\cite[Theorem 21]Liu18. [S5:3–24]" The largest value is $n^n$,
 attained exactly at smooth points. The ordinary double point gap
 conjecture predicts the next largest: $2(n-1)^n$, characterizing the
-ordinary double point. The theorem [S5:33–46]:
+ordinary double point. The theorem 
 
-> **theorem**
-Let \(n\ge2\), and let \(x\) be a
+> Let \(n\ge2\), and let \(x\) be a
 singular closed point of a normal complex algebraic \(n\)-fold \(X\).
 Suppose that \(K_X\) is \(\QQ\)-Cartier and that \(X\) is klt near \(x\),
 with zero boundary. Then
@@ -52,8 +51,7 @@ Equality holds if and only if
 \[
  (X,x)_{\mathrman}\cong
  \left(\{z_0^2+\cdots+z_n^2=0\}\subset\CC^{n+1},0\right).
-\]
-\endtheorem
+\] [S5:33–46]
 
 The point need not be isolated in the singular locus, and no
 structural assumption is implicit [S5:48–53].
@@ -62,7 +60,7 @@ structural assumption is implicit [S5:48–53].
 
 **The induction.** The proof uses the fourfold theorem of the
 companion as its sole external input [S5:55–62]. The companion
-proves $\nvol\le162$ in dimension four [S7:74–83]:
+proves $\nvol\le162$ in dimension four 
 
 > **theorem**
 Let \(x\in X\) be a singular closed point of a normal complex algebraic variety of dimension four. Suppose that \(K_X\) is \(\mathbb Q\)-Cartier and that \(X\) is klt near \(x\), with boundary zero. Then
@@ -72,8 +70,7 @@ Let \(x\in X\) be a singular closed point of a normal complex algebraic variety 
 Equality holds if and only if the analytic germ \((X,x)\) is isomorphic to
 \[
 \left(\left\{z_0^2+z_1^2+z_2^2+z_3^2+z_4^2=0\right\}\subset\mathbb C^5,0\right).
-\]
-\endtheorem
+\] [S7:74–83]
 
 The induction from $n=4$ to all $n\ge5$ proceeds by cone
 reduction, small-stabilizer analysis, jet interiority, adjoint
@@ -85,10 +82,9 @@ the hypotheses [S5:84–98].
 
 **The global application.** Combining the local gap with
 Li–Miao's smooth classification gives global volume bounds for
-K-semistable $\mathbb{Q}$-Fano varieties [S5:64–75]:
+K-semistable $\mathbb{Q}$-Fano varieties 
 
-> **corollary**
-Let \(V\) be an \(n\)-dimensional
+> Let \(V\) be an \(n\)-dimensional
 K-semistable \(\QQ\)-Fano variety, where \(n\ge2\).
 If \(V\) is singular, then
 \[
@@ -97,8 +93,7 @@ If \(V\) is singular, then
 \]
 If \(V\not\cong\PP^n\), then \((-K_V)^n\le2n^n\), with equality
 precisely when \(V\) is a smooth quadric \(Q^n\subset\PP^{n+1}\) or
-\(\PP^1\times\PP^{n-1}\). These two descriptions coincide for \(n=2\).
-\endcorollary
+\(\PP^1\times\PP^{n-1}\). These two descriptions coincide for \(n=2\). [S5:64–75]
 
 The singular bound $2((n^2-1)/n)^n$ is strictly below $2n^n$,
 improving the smooth classification for singular Fano varieties.
@@ -124,12 +119,12 @@ metric-limit setting \cite[Proposition 3.7]SpottiSun17 already
 illustrates a central feature of the problem: a sufficiently large
 volume can force algebraic structure that is absent from the
 hypotheses. Here that principle is applied after stable degeneration,
-starting from an arbitrary klt germ."
+starting from an arbitrary klt germ. [S5:84–98]"
 
 The low-dimensional cases precede the present work: Li–Liu for
 surfaces, Liu–Xu for threefolds, Liu for local complete
 intersections in all dimensions, and Moragá–Süss for toric
-germs [S5:100–116]. "The unrestricted low-dimensional cases precede the present induction.
+germs . "The unrestricted low-dimensional cases precede the present induction.
 For surfaces, Li–Liu's calculation
 \(\nvol(0,\CC^2/G)=4/|G|\) for finite groups acting freely in
 codimension one, together with the quotient classification, gives
@@ -145,7 +140,7 @@ for the product of a three-dimensional ordinary double point and
 at the surface ordinary double point
 \cite[Theorem 2]MoragaSuess24. The fourfold companion supplies
 the remaining base case used here; the higher-dimensional argument
-does not assume either a complete-intersection or a toric structure." The fourfold companion supplies the
+does not assume either a complete-intersection or a toric structure. [S5:100–116]" The fourfold companion supplies the
 remaining base case.
 
 The cone reduction to K-semistable cones uses the variational
@@ -166,7 +161,7 @@ computes the original normalized volume. The further degeneration
 of Li–Wang–Xu gives a K-polystable cone with the same value
 \cite[Theorem 1.2]LWX21.
 Thus the cone reduction preserves the infimum over all valuations,
-which is essential for a gap theorem about arbitrary germs."
+which is essential for a gap theorem about arbitrary germs. [S5:136–151]"
 
 ## Consequences
 

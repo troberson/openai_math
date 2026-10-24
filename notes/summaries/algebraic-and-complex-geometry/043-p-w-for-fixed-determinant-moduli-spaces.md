@@ -6,12 +6,12 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb [S1:1201]: "**043. P = W for fixed-determinant SL n moduli spaces.** Proves $P_k=W_{2k}=W_{2k+1}$ on the full rational cohomology of smooth coprime fixed-determinant, trace-free Higgs moduli spaces and their character varieties for composite ranks over smooth projective complex curves of genus at least two." The manuscript title is
-"P=W in composite rank for fixed determinant" [S3:1], and its abstract [S4:11–17] reads: "We prove the $P=W$ conjecture on the full rational cohomology of
+The release's blurb "**043. P = W for fixed-determinant SL n moduli spaces.** Proves $P_k=W_{2k}=W_{2k+1}$ on the full rational cohomology of smooth coprime fixed-determinant, trace-free Higgs moduli spaces and their character varieties for composite ranks over smooth projective complex curves of genus at least two. [S1:1201]" The manuscript title is
+"P=W in composite rank for fixed determinant [S3:1]" , and its abstract reads: "We prove the $P=W$ conjecture on the full rational cohomology of
 fixed-determinant, trace-free Higgs moduli spaces in composite rank and
 coprime degree, for smooth projective complex curves of genus at least two.
 Together with the established prime-rank cases, this gives the equality in
-every coprime rank."
+every coprime rank. [S4:11–17]"
 
 ## Undergraduate summary
 
@@ -19,17 +19,15 @@ Nonabelian Hodge theory identifies the Higgs moduli space $X$ with
 the character variety $X^B$. Each carries a natural filtration:
 the Hitchin map's perverse Leray filtration $P$ on the Higgs side,
 and the mixed Hodge weight filtration $W$ on the Betti side. The
-$P=W$ conjecture asserts $P_k = W_{2k} = W_{2k+1}$ [S5:3]. "Nonabelian Hodge theory identifies two moduli spaces whose cohomology carries very different geometric filtrations. On the Higgs-bundle side, the Hitchin map defines the perverse Leray filtration. On the character-variety side, the mixed Hodge structure defines the weight filtration. The $P=W$ conjecture asserts that these filtrations coincide after doubling the indices of the first."
-The theorem [S5:39–46]:
+$P=W$ conjecture asserts $P_k = W_{2k} = W_{2k+1}$ . "Nonabelian Hodge theory identifies two moduli spaces whose cohomology carries very different geometric filtrations. On the Higgs-bundle side, the Hitchin map defines the perverse Leray filtration. On the character-variety side, the mixed Hodge structure defines the weight filtration. The $P=W$ conjecture asserts that these filtrations coincide after doubling the indices of the first. [S5:3]"
+The theorem 
 
-> **theorem**
-For every smooth projective complex curve $C$ of genus $g\ge2$, every composite integer $n\ge4$, every integer $d$ with $\gcd(n,d)=1$, and every $L\in\Pic^d(C)$, one has
+> For every smooth projective complex curve $C$ of genus $g\ge2$, every composite integer $n\ge4$, every integer $d$ with $\gcd(n,d)=1$, and every $L\in\Pic^d(C)$, one has
 \[
 P_kH^m(X^B,\Q)=W_2kH^m(X^B,\Q)
 =W_{2k+1}H^m(X^B,\Q)
 \]
-for all $m,k\ge0$.
-\endtheorem
+for all $m,k\ge0$. [S5:39–46]
 
 The assertion covers the full rational cohomology, including the
 variant part not captured by quotienting by the torsion-line-bundle
@@ -41,14 +39,13 @@ resolves $P=W$ in every coprime rank.
 **The Lefschetz criterion.** The proof constructs a degree-$-2$
 operator $f$ satisfying three conditions: $f$ lowers $P$ by 2,
 lowers $W$ by 4, and satisfies the double commutator
-$[[f,e],e]=-2e$ [S5:79–84]:
+$[[f,e],e]=-2e$ 
 
 > It remains to construct one degree-$-2$ operator $f$ such that
-\beginequation 
+$$\label{intro:operator-goal}
 fP_k\subset P_{k-2},\qquad
-fW_j\subset W_{j-4},\qquad [[f,e],e]=-2e.
-\endequation
-An elementary Lefschetz-module argument then identifies both filtrations as sums of eigenspaces of the same operator $[e,f]$. It also handles extensions between filtration grades.
+fW_j\subset W_{j-4},\qquad [[f,e],e]=-2e.$$
+An elementary Lefschetz-module argument then identifies both filtrations as sums of eigenspaces of the same operator $[e,f]$. It also handles extensions between filtration grades. [S5:79–84]
 
 An elementary Lefschetz-module argument then identifies both
 filtrations as eigenspace sums of $[e,f]$.
@@ -56,7 +53,7 @@ filtrations as eigenspace sums of $[e,f]$.
 **Constructing $f$.** The operator is built from a logarithmic
 pole moved over a finite cover, with a flag at the pole. The
 logarithmic $\lambda$-connection parameter interpolates between
-Higgs bundles and connections [S5:86–92]:
+Higgs bundles and connections 
 
 > To construct $f$, allow one logarithmic pole, move it over a finite cover $S\to C$, and choose a full flag at the pole. The logarithmic $\lambda$-connection parameter interpolates between Higgs bundles at $\lambda=0$ and connections at $\lambda=1$. The underlying moduli constructions and semistable reduction come from  ; the restriction argument uses the semiprojective geometry of  . We verify the fixed determinant, residue, and flag conditions, as well as compatibility with the full nonabelian-Hodge identification. Write $X_\lambda$ for the fixed-pole scalar-residue moduli space, with $X_0=X$. At scalar residue, the flag space fits into a correspondence
 \[
@@ -64,7 +61,7 @@ X_\lambda\xleftarrow{\ \pr\ }S\times X_\lambda
 \xleftarrow{\ \pi\ }Z_\lambda
 \xrightarrow{\ \iota\ }Y_{\lambda,0}.
 \]
-Here $Y_{\lambda,0}$ permits a flag-preserving residue with prescribed scalar diagonal, while $Z_\lambda$ requires the residue itself to be scalar. We first deform the ordered residues to distinct values and shift two residue eigenline lattices in opposite directions. Restriction isomorphisms from the total logarithmic Hodge family transport the resulting translation to a degree-zero operator $T$ on $H^*(Y_{\lambda,0})$. On the connection side, $T$ is eigenvalue monodromy. A power has unipotent action, and its logarithm $N$ lowers the diagram weights by two.
+Here $Y_{\lambda,0}$ permits a flag-preserving residue with prescribed scalar diagonal, while $Z_\lambda$ requires the residue itself to be scalar. We first deform the ordered residues to distinct values and shift two residue eigenline lattices in opposite directions. Restriction isomorphisms from the total logarithmic Hodge family transport the resulting translation to a degree-zero operator $T$ on $H^*(Y_{\lambda,0})$. On the connection side, $T$ is eigenvalue monodromy. A power has unipotent action, and its logarithm $N$ lowers the diagram weights by two. [S5:86–92]
 
 On the connection side, the translation operator is eigenvalue
 monodromy; its logarithm $N$ lowers diagram weights by two. The
@@ -77,7 +74,7 @@ $\mathfrak{sl}_2$ pattern, the construction requires pulling
 Mellit's toric stratifications through a determinant-root cover
 and proving integral local constancy, plus a finite diagram of
 algebraic fibers giving weight zero to the cochains [S5:66–68].
-"Our argument constructs an operator on the full cohomology, before taking $\Gamma$-invariants. Its algebraic pattern follows the common $\mathfrak{sl}_2$ structure and flag-correspondence methods of Hausel, Mellit, Minets, and Schiffmann \cite[Proposition 7.9 and Section 8]HMMS2025. The fixed-determinant construction requires two further geometric steps. First, we pull Mellit's toric stratifications through a determinant-root cover and prove integral local constancy and ordinary base change. The inputs include the relative product stratification over ordered eigenvalues, including collisions \cite[Section 7.4, Theorem 7.5, and proof of Proposition 8.7]Mellit2025. This yields curious hard Lefschetz on the full fixed-determinant cohomology, rather than only its invariant part."
+"Our argument constructs an operator on the full cohomology, before taking $\Gamma$-invariants. Its algebraic pattern follows the common $\mathfrak{sl}_2$ structure and flag-correspondence methods of Hausel, Mellit, Minets, and Schiffmann \cite[Proposition 7.9 and Section 8]HMMS2025. The fixed-determinant construction requires two further geometric steps. First, we pull Mellit's toric stratifications through a determinant-root cover and prove integral local constancy and ordinary base change. The inputs include the relative product stratification over ordered eigenvalues, including collisions \cite[Section 7.4, Theorem 7.5, and proof of Proposition 8.7]Mellit2025. This yields curious hard Lefschetz on the full fixed-determinant cohomology, rather than only its invariant part. [S5:66–68]"
 
 ## History of the conjecture
 
@@ -85,15 +82,15 @@ The $P=W$ conjecture arose from Hausel–Rodriguez-Villegas's
 arithmetic study of character varieties, extended to generic
 puncture data. De Cataldo–Hausel–Migliorini formulated the
 filtration comparison and proved it in rank two [S5:58–64].
-"The weight symmetries behind $P=W$ arose from the arithmetic study of character varieties by Hausel and Rodriguez-Villegas  , extended to generic puncture data by Hausel, Letellier, and Rodriguez-Villegas  . De Cataldo, Hausel, and Migliorini formulated the filtration comparison and established it in rank two  . Their theorem relates the topology of an algebraic integrable system to the mixed Hodge theory of an affine character variety: relative hard Lefschetz on the Higgs side explains curious hard Lefschetz on the Betti side."
+"The weight symmetries behind $P=W$ arose from the arithmetic study of character varieties by Hausel and Rodriguez-Villegas  , extended to generic puncture data by Hausel, Letellier, and Rodriguez-Villegas  . De Cataldo, Hausel, and Migliorini formulated the filtration comparison and established it in rank two  . Their theorem relates the topology of an algebraic integrable system to the mixed Hodge theory of an affine character variety: relative hard Lefschetz on the Higgs side explains curious hard Lefschetz on the Betti side. [S5:58–64]"
 
 For $\GL_n$, tautological class generation was established by
 Hausel–Thaddeus (rank 2) and Markman (all ranks); Shende
 determined their weights. De Cataldo–Maulik–Shen proved
 $P=W$ in genus two. Maulik–Shen proved the coprime $\GL_n$
-conjecture in all ranks [S5:60–62]. "Tautological classes have been central to the higher-rank problem. For $\GL_n$, generation by these classes was established in rank two by Hausel and Thaddeus   and in arbitrary rank by Markman \cite[Theorem 7]Markman2002; Shende determined their Betti weights  . De Cataldo, Maulik, and Shen proved $P=W$ for $\GL_n$ in genus two and obtained the required perversity bounds for tautological classes in arbitrary genus \cite[Theorems 0.2 and 0.4–0.6]dCMSJAMS2022." Additional proofs
+conjecture in all ranks . "Tautological classes have been central to the higher-rank problem. For $\GL_n$, generation by these classes was established in rank two by Hausel and Thaddeus   and in arbitrary rank by Markman \cite[Theorem 7]Markman2002; Shende determined their Betti weights  . De Cataldo, Maulik, and Shen proved $P=W$ for $\GL_n$ in genus two and obtained the required perversity bounds for tautological classes in arbitrary genus \cite[Theorems 0.2 and 0.4–0.6]dCMSJAMS2022. [S5:60–62]" Additional proofs
 use the Hecke-algebra action and the Fourier-transform method
-[S5:62]. "Maulik and Shen proved the coprime $\GL_n$ conjecture in arbitrary rank and genus  . Further proofs use the Hecke-algebra action of Hausel, Mellit, Minets, and Schiffmann   and the Fourier-transform method of Maulik, Shen, and Yin \cite[Theorem 0.4]MSY2025."
+. "Maulik and Shen proved the coprime $\GL_n$ conjecture in arbitrary rank and genus  . Further proofs use the Hecke-algebra action of Hausel, Mellit, Minets, and Schiffmann   and the Fourier-transform method of Maulik, Shen, and Yin \cite[Theorem 0.4]MSY2025. [S5:62]"
 
 For fixed determinant, the quotient by $\Gamma$ detects only
 invariant cohomology; the variant part was handled in prime rank

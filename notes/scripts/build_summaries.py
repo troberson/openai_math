@@ -194,21 +194,168 @@ def get_preamble(rel_path: str) -> str:
     return PREAMBLES[rel_path]
 
 
-def resolve_token(token: str, quotes: dict[int, dict]) -> str:
-    """Resolve a {{seq}} token to its normalized quote text.
+_NUMBER_CACHE: dict[tuple[str, str, int], str] = {}
 
-    The span comes from the data file's quotes block, not from quotes.tsv: the data file is the
-    quote source, so the renderer reads no artifact any other writer produces. That is what breaks
-    the seed->render cycle (the renderer is a root, depending only on hand-maintained data).
+
+def _main_tex_for(quote_path: str) -> str:
+    """The manuscript's main.tex path, derived from a quote's file path."""
+    parts = quote_path.split("/")
+    if len(parts) >= 4:
+        candidate = f"{parts[0]}/{parts[1]}/build/main.tex"
+        if (REPO / candidate).is_file():
+            return candidate
+    return ""
+
+
+def compute_number(main_path: str, quote_path: str, quote_line: int) -> str:
+    """The rendered LaTeX label (e.g. "Theorem 1.1") for a statement at quote_path:quote_line.
+
+    Walks the manuscript in \\input order, counting \\section commands and theorem-like
+    \\begin{X} environments up to the target line. Returns "" when the counter setup is
+    unresolvable (no \\newtheorem in the preamble, the file is not in the \\input chain, etc.).
+    """
+    key = (main_path, quote_path, quote_line)
+    if key in _NUMBER_CACHE:
+        return _NUMBER_CACHE[key]
+    result = _compute_number_uncached(main_path, quote_path, quote_line)
+    _NUMBER_CACHE[key] = result
+    return result
+
+
+def _compute_number_uncached(main_path: str, quote_path: str, quote_line: int) -> str:
+    mp = REPO / main_path
+    if not mp.is_file():
+        return ""
+    text = mp.read_text(encoding="utf-8")
+    m = re.search(r"\\begin\{document\}", text)
+    if not m:
+        return ""
+    preamble = text[:m.start()]
+
+    # Find the base theorem env: \newtheorem{X}{Label}[counter]
+    base_env = base_label = base_counter = None
+    pat = re.compile(
+        r"\\newtheorem\s*(?:\[([^\]]*)\])?\{(\w+)\}"
+        r"(\{([^}]*)\})?(?:\[([^\]]*)\])?"
+    )
+    for pm in pat.finditer(preamble):
+        if pm.group(4) is not None and base_env is None:
+            base_env, base_label, base_counter = pm.group(2), pm.group(4), pm.group(5)
+    if not base_env:
+        return ""
+
+    # All env names sharing the base counter
+    envs = {base_env}
+    for pm in pat.finditer(preamble):
+        if pm.group(4) is None and pm.group(5) == base_env:
+            envs.add(pm.group(2))
+
+    # Walk the \input chain
+    body = text[m.start():]
+    inputs = re.findall(r"\\(?:input|include|subfile)\{([^}]+)\}", body)
+    build_dir = main_path.rsplit("/", 1)[0]
+    quote_resolved = (REPO / quote_path).resolve()
+    section_no = theorem_no = 0
+
+    for inp in inputs:
+        fp = f"{build_dir}/{inp}.tex"
+        if not (REPO / fp).is_file():
+            base = inp.rsplit("/", 1)[-1]
+            cands = list((REPO / build_dir).rglob(f"*{base}*.tex"))
+            fp = str(cands[0]) if len(cands) == 1 else None
+            if fp is None:
+                continue
+        is_target = (REPO / fp).resolve() == quote_resolved
+        for ln, line in enumerate((REPO / fp).read_text(encoding="utf-8").splitlines(), 1):
+            s = line.strip()
+            if re.match(r"\\(?:section|chapter)\{", s):
+                section_no += 1
+                if base_counter == "section":
+                    theorem_no = 0
+            m2 = re.match(r"\\begin\{(\w+)\}", s)
+            if m2 and m2.group(1) in envs:
+                theorem_no += 1
+                if is_target and ln == quote_line:
+                    if base_counter == "section":
+                        return f"{base_label} {section_no}.{theorem_no}"
+                    return f"{base_label} {theorem_no}"
+    return ""
+
+
+_MARK = re.compile(r"\[S(\d+):(\d+)(?:\u2013(\d+))?\]")
+
+
+def _label(sid: str, a: int, b: int) -> str:
+    """The citation marker string: [S4:67–77] or [S4:67]."""
+    return f"[{sid}:{a}\u2013{b}]" if a != b else f"[{sid}:{a}]"
+
+
+def strip_own_markers(body: str, quotes: dict[int, dict]) -> str:
+    """Remove hand-written markers that duplicate a token's own window.
+
+    A marker is "own" when its string equals label(sid, start, end) for some quote row.
+    It is stripped only from lines that carry a {{N}} token (inline) or a > {{N}} block
+    intro, so broader references in other sentences are preserved.
+    """
+    own: set[str] = set()
+    for row in quotes.values():
+        if row["start"] == "0":
+            continue
+        a, b = int(row["start"]), int(row["end"])
+        own.add(_label(row["sid"], a, b))
+
+    lines = body.split("\n")
+    targets: set[int] = set()
+    for i, line in enumerate(lines):
+        if re.search(r"\{\{\d+\}\}", line):
+            targets.add(i)
+        if re.match(r">\s*\{\{\d+\}\}", line.strip()):
+            for j in range(i - 1, max(-1, i - 4), -1):
+                if lines[j].strip():
+                    targets.add(j)
+                    break
+
+    for i in sorted(targets):
+        spans = []
+        for m in _MARK.finditer(lines[i]):
+            if m.group(0) not in own:
+                continue
+            e = m.end()
+            if e < len(lines[i]) and lines[i][e] == ":":
+                e += 1
+            spans.append((m.start(), e))
+        for s, e in reversed(spans):
+            lines[i] = lines[i][:s] + lines[i][e:]
+        lines[i] = re.sub(r"\s{2,}", " ", lines[i])
+        lines[i] = re.sub(r"\s+:", ":", lines[i])
+        lines[i] = re.sub(r"^:\s?", "", lines[i])
+    return "\n".join(lines)
+
+
+def resolve_token(token: str, quotes: dict[int, dict], main_tex_map: dict[str, str] | None = None) -> str:
+    """Resolve a {{seq}} token to its normalized quote text plus the citation marker.
+
+    The span comes from the data file's quotes block. The marker `label(sid, start, end)`
+    is emitted from the same data row, by construction. The theorem number is computed from
+    the manuscript's \\input chain when the quote opens a counter env.
     """
     row = quotes.get(int(token))
     if row is None:
-        return token  # Unresolvable: leave the token as-is
+        return token
     span = row["span"]
     if not span:
         return ""
     preamble = get_preamble(row["path"])
-    return normalizer.normalize_window(span, preamble)
+    number = ""
+    if row["start"] != "0" and main_tex_map:
+        mt = main_tex_map.get(row["path"], "")
+        if mt:
+            number = compute_number(mt, row["path"], int(row["start"]))
+    text = normalizer.normalize_window(span, preamble, number)
+    if row["start"] != "0":
+        a, b = int(row["start"]), int(row["end"])
+        text += " " + _label(row["sid"], a, b)
+    return text
 
 
 def expand_bare_markers(body: str, quotes: dict[int, dict]) -> str:
@@ -353,14 +500,26 @@ def render_page(fam: str, info: dict, data_text: str) -> tuple[str, str]:
     # slugify carries the same order, so a summary page's filename is its index page's.
     slug = slugify(title)
 
-    # Resolve quote tokens in each section body, then expand bare [S#] markers
-    # to [S#:start–end] when the quotes block gives exactly one window for that
-    # source ID.
+    # The main.tex for each source path, so resolve_token can compute the
+    # rendered statement number (Theorem 1.1) by walking the \input chain.
+    main_tex_map: dict[str, str] = {}
+    for _sid, path, _role in sources:
+        mt = _main_tex_for(path)
+        if mt:
+            main_tex_map[path] = mt
+
+    # Resolve quote tokens in each section body. The hand-written markers that
+    # duplicate a token's own window are stripped first (while the {{N}} token is
+    # still visible for line location), then the token is resolved to the span text
+    # plus its own-window marker, emitted from the same data row, then bare [S#]
+    # markers are expanded to [S#:start–end] when unambiguous.
     resolved: dict[str, str] = {}
     for key, body in sections.items():
+        stripped = strip_own_markers(body, quotes)
+
         def _replace(m: re.Match[str]) -> str:
-            return resolve_token(m.group(1), quotes)
-        text = re.sub(r"\{\{(\d+)\}\}", _replace, body)
+            return resolve_token(m.group(1), quotes, main_tex_map)
+        text = re.sub(r"\{\{(\d+)\}\}", _replace, stripped)
         resolved[key] = expand_bare_markers(text, quotes)
 
     # Build the Sources table rows. The File cell is a markdown link whose label is the

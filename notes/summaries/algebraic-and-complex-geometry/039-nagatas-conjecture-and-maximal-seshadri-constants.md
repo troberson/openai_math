@@ -6,25 +6,25 @@
 
 ## Original CONTENTS.md summary
 
-[S1:156] carries the family entry:
+ carries the family entry:
 
-> Proves Nagata's strict inequality
+> Proves Nagata's strict inequality [S1:156]
 
-[S1:156] carries the first manuscript entry as link text:
+ carries the first manuscript entry as link text:
 
-> Plane-curve Nagata conjecture
+> Plane-curve Nagata conjecture [S1:156]
 
 ## Undergraduate summary
 
 **Nagata's conjecture** is about plane curves forced through points. Take $r$ points in the complex plane, and a polynomial curve of degree $d$ that passes through them with multiplicities $m_1, \ldots, m_r$ — meaning the curve touches each point to order $m_i$. The conjecture says the total multiplicity cannot be too large: the sum of the $m_i$ is strictly less than $d$ times $\sqrt r$, once $r$ is at least 10. [S14:10]
 
-The first manuscript proves exactly that, for every nonzero effective plane curve, with arbitrary multiplicities, at $r \ge 10$ very general complex points. "We prove that a nonzero effective plane curve of degree" $d$ has total multiplicity strictly below $d\sqrt r$, and the inequality holds simultaneously for all curves, including reducible and nonreduced ones. [S2:35–41]
+The first manuscript proves exactly that, for every nonzero effective plane curve, with arbitrary multiplicities, at $r \ge 10$ very general complex points. "We prove that a nonzero effective plane curve of degree [S2:36]" $d$ has total multiplicity strictly below $d\sqrt r$, and the inequality holds simultaneously for all curves, including reducible and nonreduced ones. [S2:35–41]
 
-The second manuscript recasts the same statement in the language of **Seshadri constants**, which measure how positive a line bundle is near a set of points. For a smooth complex projective surface with an ample line bundle, the multipoint Seshadri constant at $r$ very general points equals the upper bound $\sqrt{L^2/r}$ once $r$ is large enough. "This resolves positively the qualitative Nagata–Biran conjecture for surfaces." [S4:7–13]
+The second manuscript recasts the same statement in the language of **Seshadri constants**, which measure how positive a line bundle is near a set of points. For a smooth complex projective surface with an ample line bundle, the multipoint Seshadri constant at $r$ very general points equals the upper bound $\sqrt{L^2/r}$ once $r$ is large enough. "This resolves positively the qualitative Nagata–Biran conjecture for surfaces. [S4:11–12]" [S4:7–13]
 
-The third manuscript pushes the conclusion to higher dimensions. For a smooth complex projective variety of dimension $n \ge 3$ with an ample line bundle, there is a threshold beyond which the multipoint Seshadri constant at very general points equals the volume bound $(L^n/r)^{1/n}$. "This establishes the qualitative Nagata–Biran–Szemberg assertion in these dimensions." [S6:49–56]
+The third manuscript pushes the conclusion to higher dimensions. For a smooth complex projective variety of dimension $n \ge 3$ with an ample line bundle, there is a threshold beyond which the multipoint Seshadri constant at very general points equals the volume bound $(L^n/r)^{1/n}$. "This establishes the qualitative Nagata–Biran–Szemberg assertion in these dimensions. [S6:54–55]" [S6:49–56]
 
-The fourth manuscript does the same over an algebraically closed field of positive characteristic, at the geometric generic tuple of points, and notes that "The same conclusion holds in dimension two." [S8:8–17]
+The fourth manuscript does the same over an algebraically closed field of positive characteristic, at the geometric generic tuple of points, and notes that "The same conclusion holds in dimension two. [S8:14]" [S8:8–17]
 
 **Proof sketch.** [S3:31–40]
 
@@ -43,9 +43,9 @@ The fourth manuscript does the same over an algebraically closed field of positi
 
 **What the formalization says.** The scope note covers only the two September manuscripts; the two October manuscripts have no scope note. It states the conjecture as the inequality $\sum_i m_i < d\sqrt r$ for a nonzero effective plane curve of degree $d$ with multiplicities at least $m_i$ at $r \ge 10$ very general points. [S14:10]
 
-The formalized result is stated with an exceptional-set structure: "Reducible curves, repeated components, and unequal multiplicities are included, in both effective-curve and homogeneous-polynomial formulations", and the formalization includes the passage from homogeneous effective cycles to equations. [S14:12]
+The formalized result is stated with an exceptional-set structure: "Reducible curves, repeated components, and unequal multiplicities are included, in both effective-curve and homogeneous-polynomial formulations [S14:12]", and the formalization includes the passage from homogeneous effective cycles to equations. 
 
-For the maximality question, the formalized result gives, for every $r$ above a threshold depending on $(S,L)$, a countable union of proper closed exceptional sets with nonempty complement, outside which the constant is $\sqrt{L^2/r}$ and the boundary class defining it on the point blowup is nef. The scope note is explicit about the threshold: "The threshold is not explicit or uniform over all surfaces." [S14:16]
+For the maximality question, the formalized result gives, for every $r$ above a threshold depending on $(S,L)$, a countable union of proper closed exceptional sets with nonempty complement, outside which the constant is $\sqrt{L^2/r}$ and the boundary class defining it on the point blowup is nef. The scope note is explicit about the threshold: "The threshold is not explicit or uniform over all surfaces. [S14:16]" 
 
 **The declarations.** The two formalized declarations are `OAI.Nagata.nagata_conjecture` at `lean/OAI/AlgebraicGeometry/PlaneCurves/Nagata.lean:148` and `OAI.MaximalSeshadri.Geometry.maximalSeshadriConstants` at `lean/OAI/AlgebraicGeometry/Seshadri/Main.lean:25`. The Nagata declaration is typed by a carrier, `FullNagata`, and `nagata_conjecture_coordinates` is discharged by `W13.nagata_full`. Both comparator JSONs declare `status: "proved"` and permit `propext`, `Quot.sound`, and `Classical.choice`. [S15:148]
 

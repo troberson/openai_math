@@ -6,13 +6,13 @@
 
 ## Original CONTENTS.md summary
 
-[S1:162] carries the family entry and the manuscript entry:
+ carries the family entry and the manuscript entry:
 
-> Proves that every complex K3 surface is Oka, including nonprojective surfaces. More generally, every connected minimal compact complex surface of Kodaira dimension zero is Oka; a connected minimal compact complex surface of class VII is Oka exactly when it is a Hopf or Enoki surface.
+> Proves that every complex K3 surface is Oka, including nonprojective surfaces. More generally, every connected minimal compact complex surface of Kodaira dimension zero is Oka; a connected minimal compact complex surface of class VII is Oka exactly when it is a Hopf or Enoki surface. [S1:162]
 
-[S1:162] carries the manuscript entry as link text:
+ carries the manuscript entry as link text:
 
-> Every complex K3 surface is Oka
+> Every complex K3 surface is Oka [S1:162]
 
 ## Undergraduate summary
 
@@ -38,7 +38,7 @@ The release's blurb is broader than the manuscript's title. The paper proves the
 
 **What the paper does not say.** The manuscript's own classification corollary states the class-VII case as a biconditional: "A connected minimal compact complex surface of class VII is Oka if and only if it is a Hopf surface or an Enoki surface." [S4:108–114]
 
-The paragraph after the corollary is explicit about its own scope: "The classification assertion is restricted to minimal surfaces; no claim is made here for arbitrary blowups or for properly elliptic surfaces." [S4:138–140]
+The paragraph after the corollary is explicit about its own scope: "The classification assertion is restricted to minimal surfaces; no claim is made here for arbitrary blowups or for properly elliptic surfaces. [S4:138–140]" 
 
 The class-VII half leans on the global spherical shell theorem, cited to a manuscript in this same release: the paper cites `OpenAIGSS`, which is the preprint `Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026`, family 060, titled The Global Spherical Shell conjecture, tier T0 and unformalized. The release records no cross-family edge between 042 and 060 — the ledger's `companions` column is empty for both — so the dependency is a citation choice the release records, not a consequence it states. [S7:42–47]
 

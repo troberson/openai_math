@@ -13,24 +13,18 @@ witnessed by a finitely generated torsion-free group, and separately
 through the existence of a torsion-free group whose reduced group
 $C^*$-algebra carries a nontrivial projection, which also disproves the
 Kadison--Kaplansky projection conjecture. The three manuscripts make
-three related claims. The injectivity manuscript [S3:57–62]: "**abstract**
-We disprove rational injectivity of the coefficient-free reduced
+three related claims. The injectivity manuscript "We disprove rational injectivity of the coefficient-free reduced
 Baum–Connes assembly map for torsion-free groups. Specifically, we construct
 a finitely generated torsion-free discrete group whose degree-zero assembly
-map has a kernel class of infinite order.
-\endabstract"
-The projection manuscript [S5:9–13]: "**abstract**
-We construct a finitely generated torsion-free discrete group whose reduced
+map has a kernel class of infinite order. [S3:57–62]"
+The projection manuscript "We construct a finitely generated torsion-free discrete group whose reduced
 group \(C^*\)-algebra contains a projection other than zero and the identity.
-This disproves the Kadison–Kaplansky projection conjecture.
-\endabstract" The irrational-trace
-manuscript [S7:8–14]: "**abstract**
-We construct a finitely generated discrete group whose reduced group
+This disproves the Kadison–Kaplansky projection conjecture. [S5:9–13]" The irrational-trace
+manuscript "We construct a finitely generated discrete group whose reduced group
 \(C^*\)-algebra contains a projection of irrational canonical trace. Its
 \(K_0\)-class lies outside the image of the coefficient-free reduced
 Baum–Connes assembly map. This disproves the coefficient-free reduced
-Baum–Connes conjecture for countable discrete groups.
-\endabstract"
+Baum–Connes conjecture for countable discrete groups. [S7:8–14]"
 
 ## Undergraduate summary
 
@@ -51,31 +45,27 @@ The first manuscript disproves injectivity of the assembly map by
 constructing a torsion-free group whose degree-zero assembly map has a
 kernel class of infinite order. The other two construct torsion-free
 groups whose reduced $C^*$-algebras carry a projection: the second
-wants any projection $e$ with $0<\tau(e)<1$ [S6:13–21]:
+wants any projection $e$ with $0<\tau(e)<1$ 
 
-> **theorem**
-There exist a finitely generated torsion-free discrete group \(\Gproj\)
+> There exist a finitely generated torsion-free discrete group \(\Gproj\)
 and a projection \(e\in C_r^*(\Gproj)\) such that
 \[
  0<\tau_{\Gproj}(e)<\frac12.
 \]
-In particular, \(e\) is neither zero nor the identity.
-\endtheorem
+In particular, \(e\) is neither zero nor the identity. [S6:13–21]
 
 The third wants a projection whose trace is *irrational*, a stronger
 property that places its $K_0$-class outside the assembly image and so
 disproves the coefficient-free Baum--Connes conjecture directly
-[S8:57–65]:
 
-> **theorem**
-There exist a finitely generated discrete group \(\Gsur\) and a projection
+
+> There exist a finitely generated discrete group \(\Gsur\) and a projection
 \(b_0\in C_r^*(\Gsur)\) with irrational canonical trace. Moreover,
 \[
 [b_0]\notin\mu_0^{\Gsur}\bigl(K_0^{\Gsur}(\underline E\Gsur)\bigr).
 \]
 In particular, the coefficient-free reduced Baum–Connes conjecture for
-countable discrete groups is false.
-\endtheorem
+countable discrete groups is false. [S8:57–65]
 
 ## Graduate summary
 

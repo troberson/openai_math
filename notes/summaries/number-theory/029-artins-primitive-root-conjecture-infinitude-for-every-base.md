@@ -6,47 +6,45 @@
 
 ## Original CONTENTS.md summary
 
-The release's blurb [S1:698]: "**029. Primitive roots for every admissible integer base.** Proves the infinitude assertion in Artin's primitive root conjecture" The catalog abstract [S2:134]
-expands on it: "Proves the infinitude assertion in Artin's primitive root conjecture for every integer $a$ that is neither $-1$ nor a square. For each such base, at least $c_a x/(\log x)^2$ primes in every sufficiently large interval $(x,2x)$ have primitive root $a$, with $c_a>0$." The two manuscripts are
-"Primitive roots for every admissible integer base" [S3:1] and "Simultaneous primitive roots: a conditional lower bound for prime bases" [S4:1].
+The release's blurb "**029. Primitive roots for every admissible integer base.** Proves the infinitude assertion in Artin's primitive root conjecture [S1:698]" The catalog abstract 
+expands on it: "Proves the infinitude assertion in Artin's primitive root conjecture for every integer $a$ that is neither $-1$ nor a square. For each such base, at least $c_a x/(\log x)^2$ primes in every sufficiently large interval $(x,2x)$ have primitive root $a$, with $c_a>0$. [S2:134]" The two manuscripts are
+"Primitive roots for every admissible integer base [S3:1]" and "Simultaneous primitive roots: a conditional lower bound for prime bases [S4:1]" .
 
 ## Undergraduate summary
 
 A prime $p$ has $a$ as a primitive root when the multiplicative order
 $\ord_p(a)=p-1$. Artin's 1927 conjecture asserts that every "admissible"
 integer (not $-1$, not a square) is a primitive root modulo infinitely
-many primes. The theorem [S6:17–24]:
+many primes. The theorem 
 
-> **theorem**
+> **Theorem 1.1**
 For every admissible integer $a$, there are constants $c_a>0$ and
 $x_a\ge2$ such that, for every real $x\ge x_a$,
 \[
  #\{p prime:x<p<2x,\ p\nmid a,\ \ord_p(a)=p-1\}
        \ge c_a\fracx{(\log x)^2}.
-\]
-\endtheorem
+\] [S6:17–24]
 
 The predicted scale is $x/\log x$; the theorem gives $x/(\log x)^2$ in
 every dyadic interval — a square-root loss in the log, but unconditional
-and base-specific [S6:26–30]. "The predicted counting scale is $x/\log x$; the theorem gives
+and base-specific . "The predicted counting scale is $x/\log x$; the theorem gives
 $x/(\log x)^2$ in every sufficiently large dyadic interval. In
 particular, it proves the infinitude assertion for each fixed
 admissible integer, including the prescribed base $2$. The constants
-and the threshold may depend on the base."
+and the threshold may depend on the base. [S6:26–30]"
 
 ## Graduate summary
 
 **The analytic engine.** The proof establishes a uniform zero-free region
-for Hecke $L$-functions [S6:38–45]:
+for Hecke $L$-functions 
 
-> **theorem**
+> **Theorem 1.2**
 Let $F$ be a cyclotomic number field containing $\mu_{12}$.
 For every finite-order Hecke character $\eta$ of $F$, the meromorphic
 continuation of $L_F(s,\eta)$ has no zeros in
 \[
  \operatornameRe s>1-10^{-6}.
-\]
-\endtheorem
+\] [S6:38–45]
 
 The width $10^{-6}$ is common to all cyclotomic fields containing
 $\mu_{12}$ and all finite-order Hecke characters, with no conductor
@@ -63,14 +61,14 @@ control the remaining bilinear sums [S15].
 **The companion manuscript.** The second paper [S21] extends the
 construction to simultaneous primitive roots for a fixed finite set of
 prime bases. It is an implication from four inputs taken from the first
-manuscript [S21:23–30]: "Our result is an implication from four statements taken from the companion
+manuscript "Our result is an implication from four statements taken from the companion
 manuscript  : a uniform Hecke zero-free assertion
 (Input  ), a marked Type II estimate
 (Input  ), a block sieve (Input  ), and a
 rough-number density estimate (Input  ).  We reproduce
 these statements in the precise forms used here.  They are hypotheses of
 the following theorem; their proofs in   and its cited
-companion manuscripts are outside the scope of this paper." The conditional theorem [S21:32–47]:
+companion manuscripts are outside the scope of this paper. [S21:23–30]" The conditional theorem 
 
 > **theorem**
 Assume Inputs  ,  ,
@@ -86,8 +84,7 @@ primes \(p\in(x,2x)\) satisfy
         p\nmid q_1\cdots q_k,
         \qquad
         \ord_p(q_i)=p-1\quad(1\le i\le k).
-\]
-\endtheorem
+\] [S21:32–47]
 
 The reduction [S22] shows the four inputs suffice; the marked family
 construction [S24] and the prime-reservoir extraction [S25] complete
@@ -97,7 +94,7 @@ the argument.
 
 Hooley proved Artin's asymptotic under the Riemann hypothesis for the
 Dedekind zeta functions of the Kummer fields
-$\Q(\mu_n,a^{1/n})$ [S6:57–69]. "Hooley proved Artin's predicted asymptotic under the Riemann hypothesis
+$\Q(\mu_n,a^{1/n})$ . "Hooley proved Artin's predicted asymptotic under the Riemann hypothesis
 for the Dedekind zeta functions of the Kummer fields
 $\mathbb{Q}(\mu_n,a^{1/n})$, with $n$ squarefree  .
 These fields encode the obstructions to maximal order. For a prime
@@ -109,7 +106,7 @@ say that $p$ splits completely in $\mathbb{Q}(\mu_q,a^{1/q})$.
 They hold precisely when $q$ divides the index
 $(p-1)/\ord_p(a)$. Hooley's method counts and sums such splitting
 conditions. Here a restricted factorization of $p-1$ confines the
-possible index divisors to ranges where they can all be removed." The Kummer fields encode
+possible index divisors to ranges where they can all be removed. [S6:57–69]" The Kummer fields encode
 the obstructions: for $q|(p-1)/\ord_p(a)$, the prime $p$ splits
 completely in $\Q(\mu_q,a^{1/q})$.
 
@@ -119,7 +116,7 @@ Gupta and Murty constructed a set of thirteen integers from three
 distinct primes, at least one of which is a primitive root modulo
 infinitely many primes  . Heath-Brown proved that
 at most two prime bases fail the infinitude assertion, so at least
-one of $2,3,5$ satisfies it  ." Averaging over the base gives asymptotics for almost all
+one of $2,3,5$ satisfies it  . [S6:71–76]" Averaging over the base gives asymptotics for almost all
 integers in a short range, but the exceptional set may depend on $x$
 [S6:77–82].
 
