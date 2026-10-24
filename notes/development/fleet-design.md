@@ -316,10 +316,10 @@ and the key is computed from the current `git rev-parse HEAD:<path>` tree digest
 longer matches HEAD makes its records missing and the row fails. The driver keeps the md5 and
 `git status` snapshots raw and prints the assertion row. `notes/scripts/gate.py` carries
 **82** invocations as `ROWS` entries, each a (spec, needs, writes) triple over the generated
-artifacts: the **11** writers declare what they write, every checker needs `pages`,
+artifacts: the **13** writers declare what they write, every checker needs `pages`,
 `check_index_links.py` and `measure_index_sizes.py` need `index`, and the two summary readers need
 `summaries`. A row starts as soon as every row that writes its `needs` has finished, so counting the
-tuples in the `ROWS` block is the row count. Non-determinism sources in the **11** writers,
+tuples in the `ROWS` block is the row count. Non-determinism sources in the **13** writers,
 by class:
 
 - **Time / random / env:** **1 hit** — `render_reports.py:1220` sets
