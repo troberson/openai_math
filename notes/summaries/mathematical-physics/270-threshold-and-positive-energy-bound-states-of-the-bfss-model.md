@@ -150,7 +150,7 @@ non-LaTeX evidence.
 - Tom Banks, Willy Fischler, Stephen H. Shenker, and Leonard Susskind, _M theory as a matrix model: A conjecture_, Physical Review D **55** (1997), 5112–5128.  .
 - Banks, T., Fischler, W., Shenker, S. H., Susskind, L., M theory as a matrix model: A conjecture (1997)
 - Berenstein, David, Maldacena, Juan, Nastase, Horatiu, Strings in flat space and pp waves from $\mathcal{N}=4$ Super Yang Mills (2002)
-- Boulton, Lyonell, {Garc{í}a del Moral}, Mar{í}a Pilar, Restuccia, Alvaro, Existence of a supersymmetric massless ground state of the $SU(N)$ matrix model globally on its valleys (2021)
+- Boulton, Lyonell, {García del Moral}, María Pilar, Restuccia, Alvaro, Existence of a supersymmetric massless ground state of the $SU(N)$ matrix model globally on its valleys (2021)
 - Chang, Chi-Ming, Witten index of BMN matrix quantum mechanics (2025)
 - Ulf H. Danielsson, Gabriele Ferretti, and Bo Sundborg, _D-particle dynamics and bound states_, International Journal of Modern Physics A **11** (1996), 5463–5478.  .
 - Dasgupta, Keshav, Sheikh-Jabbari, Mohammad M., Van Raamsdonk, Mark, Matrix Perturbation Theory for M-theory on a PP-Wave (2002)
@@ -161,8 +161,8 @@ non-LaTeX evidence.
 - Halpern, M. B., Schwartz, C., Asymptotic Search for Ground States of $SU(2)$ Matrix Theory (1998)
 - Hasler, David, Hoppe, Jens, Zero Energy States of Reduced Super Yang–Mills Theories in $d+1=4,6$ and 10 dimensions are necessarily $\mathrm{Spin}(d)$ invariant (2002)
 - Hasler, David, Hoppe, Jens, Asymptotic Factorisation of the Ground-State for $SU(N)$-invariant Supersymmetric Matrix-Models (2002)
-- Hitchin, Nigel, $L^2$-cohomology of hyperk{ä}hler quotients (2000)
-- Fr{ö}hlich, J{ü}rg, Graf, Gian Michele, Hasler, David, Hoppe, Jens, Yau, Shing-Tung, Asymptotic Form of Zero Energy Wave Functions in Supersymmetric Matrix Models (2000)
+- Hitchin, Nigel, $L^2$-cohomology of hyperkähler quotients (2000)
+- Fröhlich, Jürg, Graf, Gian Michele, Hasler, David, Hoppe, Jens, Yau, Shing-Tung, Asymptotic Form of Zero Energy Wave Functions in Supersymmetric Matrix Models (2000)
 - Kac, Victor G., Smilga, Andrei V., Normalized Vacuum States in $N=4$ Supersymmetric Yang–Mills Quantum Mechanics with Any Gauge Group (2000)
 - Kato, Tosio, Perturbation Theory for Linear Operators (1995)
 - Konechny, Anatoly, On asymptotic Hamiltonian for $SU(N)$ matrix theory (1998)
@@ -181,7 +181,7 @@ non-LaTeX evidence.
 - A. V. Smilga, _Comments on thermodynamics of supersymmetric matrix models_, Nuclear Physics B **818** (2009), 101–114.  .
 - Savdeep Sethi and Mark Stern, _Invariance theorems for supersymmetric Yang–Mills theories_, Advances in Theoretical and Mathematical Physics **4** (2000), 487–501.  .
 - B. de Wit, M. Lüscher, and H. Nicolai, _The supermembrane is unstable_, Nuclear Physics B **320** (1989), 135–159.  .
-- de Wit, Bernard, L{ü}scher, Martin, Nicolai, Hermann, The supermembrane is unstable (1989)
+- de Wit, Bernard, Lüscher, Martin, Nicolai, Hermann, The supermembrane is unstable (1989)
 - de Wit, Bernard, Hoppe, Jens, Nicolai, Hermann, On the quantum mechanics of supermembranes (1988)
 - Witten, Edward, Constraints on supersymmetry breaking (1982)
 - Witten, Edward, Bound States of Strings and $p$-Branes (1996)

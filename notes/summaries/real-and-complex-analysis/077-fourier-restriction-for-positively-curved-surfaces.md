@@ -118,7 +118,7 @@ transfer with both exponents equal to $p$ [S7:70–108]:
 > **corollary**
 For every \(3<p<\infty\) and \(s>2-6/p\), the free Schrödinger
 propagator, initially defined on Schwartz functions, extends boundedly
-from \(W^{s,p}(\mathbb R^2)\) to \(L^p(\mathbb R^2\times[0,1])\):
+from \(W^s,p(\mathbb R^2)\) to \(L^p(\mathbb R^2\times[0,1])\):
 $$\label{eq:schrodinger-smoothing}
  \|e^{it\Delta}f\|_{L^p(\mathbb R^2\times[0,1])}
  \le C_{p,s}\|f\|_{W^{s,p}(\mathbb R^2)}.$$ [S4:73–81]
@@ -194,18 +194,18 @@ do not record as consequence.
 - Bourgain, Jean, Besicovitch type maximal operators and applications to Fourier analysis (1991)
 - Bourgain, Jean, Guth, Larry, Bounds on oscillatory integral operators based on multilinear estimates (2011)
 - Bourgain, Jean, Besicovitch type maximal operators and applications to Fourier analysis (1991)
-- Bourgain, Jean, {The Discretized Sum-Product and Projection Theorems} (2010)
+- Bourgain, Jean, The Discretized Sum-Product and Projection Theorems (2010)
 - Bourgain, Jean, Demeter, Ciprian, The proof of the $l^2$ Decoupling Conjecture (2015)
 - Bourgain, Jean, Guth, Larry, Bounds on oscillatory integral operators based on multilinear estimates (2011)
 - Buschenhenke, Stefan, Factorization in Fourier restriction theory and near extremizers (2024)
 - Buschenhenke, Stefan, Factorization in Fourier restriction theory and near extremizers (2024)
-- Carleson, Lennart, Sj{ö}lin, Per, Oscillatory integrals and multiplier problem for the disc (1972)
+- Carleson, Lennart, Sjölin, Per, Oscillatory integrals and multiplier problem for the disc (1972)
 - Fefferman, Charles, The multiplier problem for the ball (1971)
 - Gao, Chuanwei, Liu, Diankun, Xi, Yakun, Curved Kakeya sets and Nikodym problems on manifolds (2025)
 - Guo, Shaoming, Oh, Changkeun, Wang, Hong, Wu, Shukun, Zhang, Ruixiang, The Bochner–Riesz problem: an old approach revisited (2025)
 - Guo, Shaoming, Oh, Changkeun, Wang, Hong, Wu, Shukun, Zhang, Ruixiang, The Bochner–Riesz problem: an old approach revisited (2025)
 - Guth, Larry, A restriction estimate using polynomial partitioning (2016)
-- Guth, Larry, Iosevich, Alex, Ou, Yumeng, Wang, Hong, On {Falconer's} distance set problem in the plane (2020)
+- Guth, Larry, Iosevich, Alex, Ou, Yumeng, Wang, Hong, On Falconer's distance set problem in the plane (2020)
 - Guth, Larry, A restriction estimate using polynomial partitioning (2016)
 - Guth, Larry, Wang, Hong, Zahl, Joshua, A streamlined proof of the Kakeya set conjecture in $\mathbb{R}^{3}$ (2026)
 - Heinonen, Juha, Lectures on Lipschitz Analysis (2005)
@@ -215,7 +215,7 @@ do not record as consequence.
 - Kim, Jongchon, Some remarks on Fourier restriction estimates (2017)
 - Kim, Jongchon, Some remarks on Fourier restriction estimates (2017)
 - Lee, John M., Introduction to Smooth Manifolds (2013)
-- Lee, Sanghyuk, Rogers, Keith M., Seeger, Andreas, On space–time estimates for the {Schr{ö}dinger} operator (2013)
+- Lee, Sanghyuk, Rogers, Keith M., Seeger, Andreas, On space–time estimates for the {Schrödinger} operator (2013)
 - Marstrand, J. M., Some Fundamental Geometrical Properties of Plane Sets of Fractional Dimensions (1954)
 - Mattila, Pertti, Lecture notes on the Fourier transform and Hausdorff dimension
 - Oberlin, Daniel M., Restricted Radon Transforms and Projections of Planar Sets (2012)
@@ -228,11 +228,11 @@ do not record as consequence.
 - Orponen, Tuomas, Shmerkin, Pablo, On the Hausdorff dimension of Furstenberg sets and orthogonal projections in the plane (2023)
 - Orponen, Tuomas, Shmerkin, Pablo, Projections, Furstenberg sets, and the ABC sum-product problem (2026)
 - Orponen, Tuomas, Shmerkin, Pablo, Wang, Hong, Kaufman and Falconer estimates for radial projections and a continuum version of Beck's theorem (2024)
-- C{ó}rdoba, Antonio, A radial multiplier and a related Kakeya maximal function (1975)
+- Córdoba, Antonio, A radial multiplier and a related Kakeya maximal function (1975)
 - Ren, Kevin, Wang, Hong, Furstenberg sets estimate in the plane (2023)
 - Rios, Cristian, Sawyer, Eric T., A smooth Alpert testing characterization of convolution type for the Fourier extension conjecture on paraboloids (2026)
-- H{ö}rmander, Lars, Oscillatory integrals and multipliers on $FL^p$ (1973)
-- Rogers, Keith M., A local smoothing estimate for the {Schr{ö}dinger} equation (2008)
+- Hörmander, Lars, Oscillatory integrals and multipliers on $FL^p$ (1973)
+- Rogers, Keith M., A local smoothing estimate for the {Schrödinger} equation (2008)
 - Sawyer, Eric T., A comparison of trilinear testing conditions for the paraboloid Fourier extension and Kakeya conjectures in three dimensions (2026)
 - Shannon, Claude E., A Mathematical Theory of Communication (1948)
 - Shayya, Bassam, Weighted restriction estimates using polynomial partitioning (2017)

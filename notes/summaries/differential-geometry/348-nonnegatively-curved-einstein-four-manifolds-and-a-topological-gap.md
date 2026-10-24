@@ -129,7 +129,7 @@ The L2 gap manuscript states the premise is used only for an exactly Einstein me
 
 The zero-plane manuscript's reduction is to the two Weyl blocks. Its introduction sets up the variables 
 
-> Choose an orientation and let $\Lambda^+$ and $\Lambda^-$ be the rank-three eigenspaces of the Hodge star on two-forms. The Einstein curvature operator has blocks $\mathrm{Id}+T$ and $\mathrm{Id}+U$, where $T,U$ are symmetric and trace-free. They are the self-dual and anti-self-dual Weyl blocks. Set \[ v=\frac{|T|}{\sqrt6},\qquad b=\frac{|U|}{\sqrt6},\qquad x=-\lambda_{\min}(T),\qquad y=-\lambda_{\min}(U). \] All matrix norms are Hilbert–Schmidt norms. As proved in Lemma  , the smallest sectional curvature is $1-(x+y)/2$, and \[ v\le x\le2v,\qquad b\le y\le2b,\qquad x+y\le2. \] [S6:95–109]
+> Choose an orientation and let $\Lambda^+$ and $\Lambda^-$ be the rank-three eigenspaces of the Hodge star on two-forms. The Einstein curvature operator has blocks $\mathrm{Id}+T$ and $\mathrm{Id}+U$, where $T,U$ are symmetric and trace-free. They are the self-dual and anti-self-dual Weyl blocks. Set \[ v=\frac|T|{\sqrt6},\qquad b=\frac|U|{\sqrt6},\qquad x=-\lambda_{\min}(T),\qquad y=-\lambda_{\min}(U). \] All matrix norms are Hilbert–Schmidt norms. As proved in Lemma  , the smallest sectional curvature is $1-(x+y)/2$, and \[ v\le x\le2v,\qquad b\le y\le2b,\qquad x+y\le2. \] [S6:95–109]
 
 The zero-plane hypothesis is used only in the reduction, not in the estimates 
 
@@ -157,7 +157,7 @@ Its method is a smoothing argument that does not assume sectional curvature surv
 
 Its smoothing step isolates a globally small high part of the curvature 
 
-> Smoothing from small critical curvature concentration was developed, in particular, by Chan, Chen, and Lee  . The formulation used here isolates a globally small _high part_ of the curvature. Consider a sequence $(M_j,g_j)$ satisfying the geometric hypotheses of Theorem   with $\mathcal D(g_j)\to0$. After normalization, nonnegative sectional curvature gives, for a fixed threshold $K_0$, \[ \left\lVert (|\Rm_{g_j}|-K_0)_+\right\rVert_{L^2(g_j)}\longrightarrow0. \] A moving threshold propagates this estimate. It yields both a uniform Sobolev inequality and noncollapse along each existing flow; a curvature-concentration contradiction then establishes a common lifespan. The same tail bound controls the evolving Einstein error. Thus the high-part formulation supplies both the regularization and the defect estimate needed for the gap argument. [S12:148–162]
+> Smoothing from small critical curvature concentration was developed, in particular, by Chan, Chen, and Lee  . The formulation used here isolates a globally small _high part_ of the curvature. Consider a sequence $(M_j,g_j)$ satisfying the geometric hypotheses of Theorem   with $\mathcal D(g_j)\to0$. After normalization, nonnegative sectional curvature gives, for a fixed threshold $K_0$, \[ \left\lVert (|\Rm_g_j|-K_0)_+\right\rVert_L^2(g_j)\longrightarrow0. \] A moving threshold propagates this estimate. It yields both a uniform Sobolev inequality and noncollapse along each existing flow; a curvature-concentration contradiction then establishes a common lifespan. The same tail bound controls the evolving Einstein error. Thus the high-part formulation supplies both the regularization and the defect estimate needed for the gap argument. [S12:148–162]
 
 The L2 gap manuscript names the prior work it does not use, and names the companion as its premise 
 
@@ -252,14 +252,14 @@ What has not been checked: no Lean, lake, or comparator run was performed, and t
 - M. J. Gursky and A. Malchiodi, _Einstein four-manifolds of positive sectional curvature and ADM mass_, arXiv:2609.30803v1 [math.DG], submitted September 25, 2026.
 - H. P. McKean, Jr., and I. M. Singer, _Curvature and the eigenvalues of the Laplacian_, J. Differential Geom. **1** (1967), 43–69. doi:10.4310/jdg/1214427880.
 - U. Abresch and W. T. Meyer, _Injectivity Radius Estimates and Sphere Theorems_, in _Comparison Geometry_, MSRI Publications **30**, Cambridge University Press, 1997, 1–47. Publisher-hosted text.
-- Morgan, John, Tian, Gang, Ricci Flow and the {Poincaré} Conjecture (2007)
+- Morgan, John, Tian, Gang, Ricci Flow and the Poincaré Conjecture (2007)
 - S. B. Myers, _Riemannian manifolds with positive mean curvature_, Duke Math. J. **8** (1941), no. 2, 401–404. doi:10.1215/S0012-7094-41-00832-3.
 - S. B. Myers, _Riemannian manifolds with positive mean curvature_, Duke Math. J. **8** (1941), no. 2, 401–404. doi:10.1215/S0012-7094-41-00832-3.
 - B. O'Neill, _The fundamental equations of a submersion_, Michigan Math. J. **13** (1966), no. 4, 459–469. doi:10.1307/mmj/1028999604.
 - M. Obata, _Certain conditions for a Riemannian manifold to be isometric with a sphere_, J. Math. Soc. Japan **14** (1962), no. 3, 333–340. doi:10.2969/jmsj/01430333.
 - M. Obata, _Certain conditions for a Riemannian manifold to be isometric with a sphere_, J. Math. Soc. Japan **14** (1962), no. 3, 333–340. doi:10.2969/jmsj/01430333.
 - OpenAI, _Positively curved Einstein four-manifolds_, OpenAI Math Release preprint OAI:Positively-curved-Einstein-four-manifolds-September-23-2026, 2026.
-- OpenAI, {Zero-Plane Rigidity for Einstein Four-Manifolds} (2026)
+- OpenAI, Zero-Plane Rigidity for Einstein Four-Manifolds (2026)
 - Perelman, Grisha, The entropy formula for the Ricci flow and its geometric applications (2002)
 - Petersen, Peter, Sprouse, Chadwick, Integral curvature bounds, distance estimates and applications (1998)
 - G. de Rham, _Sur la réductibilité d'un espace de Riemann_, Comment. Math. Helv. **26** (1952), 328–344. doi:10.1007/BF02564308.
@@ -268,7 +268,7 @@ What has not been checked: no Lean, lake, or comparator run was performed, and t
 - Shi, Wan-Xiong, Deforming the metric on complete Riemannian manifolds (1989)
 - Sprouse, Chadwick, Integral curvature bounds and bounded diameter (2000)
 - J. L. Synge, _On the Connectivity of Spaces of Positive Curvature_, Quart. J. Math. Oxford Ser. **7** (1936), 316–320. doi:10.1093/qmath/os-7.1.316.
-- Topping, Peter M., Remarks on {Hamilton's} compactness theorem for Ricci flow (2014)
+- Topping, Peter M., Remarks on Hamilton's compactness theorem for Ricci flow (2014)
 - X. Cao and H. Tran, _Einstein four-manifolds of pinched sectional curvature_, Adv. Math. **335** (2018), 322–342. doi:10.1016/j.aim.2018.07.003. Author version: arXiv:1612.06023v2.
 - X. Cao and H. Tran, _Einstein four-manifolds of pinched sectional curvature_, Adv. Math. **335** (2018), 322–342. doi:10.1016/j.aim.2018.07.003. Author version: arXiv:1612.06023v2.
 - D. Gilbarg and N. S. Trudinger, _Elliptic Partial Differential Equations of Second Order_, Classics in Mathematics, Springer, Berlin, 2001, reprint of the 1998 edition. doi:10.1007/978-3-642-61798-0.

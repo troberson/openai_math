@@ -136,7 +136,7 @@ Two caps supply smooth data on opposite sides of a thin negative-curvature slab;
 
 The closing lines of the pulse section state the category step 
 
-> We have proved that every \(\mathcal A_{M,q_0}\) is nowhere dense. Their countable union contains every metric admitting an admissible height. Baire's theorem now proves  . [S8:404–406]
+> We have proved that every \(\mathcal A_M,q_0\) is nowhere dense. Their countable union contains every metric admitting an admissible height. Baire's theorem now proves  . [S8:404–406]
 
 The geometric step explains why a squarewide obstruction is enough. The boundary-saddle lemma is the load-bearing piece 
 
@@ -224,7 +224,7 @@ The bibliography carries these entries: Janet 1926 [S10:163–172], Cartan 1927 
 
 The regularity ladder is the part of the history the manuscript is careful about 
 
-> The regularity distinction is essential. Existence at every finite differentiability order, on neighborhoods allowed to shrink with that order, does not by itself give one smooth map on a fixed neighborhood. At the other end of the scale, Nash–Kuiper flexibility gives \(C^1\) local isometric realizations in three-space  . That regularity does not impose the second-order compatibility used for smooth immersions. Pogorelov constructed a \(C^{2,1}\) metric with no local \(C^2\) realization \cite[paragraph 7]Pogorelov1971. The published refinement by Nadirashvili and Yuan achieves \(K\ge0\) with the same input and output regularities \cite[Theorem 1.1]NY2008. In Theorem A, positive definiteness refers to the metric, not its curvature: the construction uses both signs of curvature. It does not settle the smooth local-realizability problem under either sign restriction \(K\ge0\) or \(K\le0\). [S5:103–118]
+> The regularity distinction is essential. Existence at every finite differentiability order, on neighborhoods allowed to shrink with that order, does not by itself give one smooth map on a fixed neighborhood. At the other end of the scale, Nash–Kuiper flexibility gives \(C^1\) local isometric realizations in three-space  . That regularity does not impose the second-order compatibility used for smooth immersions. Pogorelov constructed a \(C^2,1\) metric with no local \(C^2\) realization \cite[paragraph 7]Pogorelov1971. The published refinement by Nadirashvili and Yuan achieves \(K\ge0\) with the same input and output regularities \cite[Theorem 1.1]NY2008. In Theorem A, positive definiteness refers to the metric, not its curvature: the construction uses both signs of curvature. It does not settle the smooth local-realizability problem under either sign restriction \(K\ge0\) or \(K\le0\). [S5:103–118]
 
 Pogorelov's example is the nearest predecessor: a $C^{2,1}$ metric with no local $C^2$ realization, cited at paragraph 7 of the 1971 paper [S10:79–89]. The manuscript's result is at the smooth end of that scale.
 
@@ -275,21 +275,16 @@ What has not been checked: no Lean or comparator run was performed, so nothing h
 
 ## Bibliography
 
-- Cartan, {É}lie, Sur la possibilit{é} de plonger un espace riemannien donn{é}
-             dans un espace euclidien (1927)
+- Cartan, Élie, Sur la possibilité de plonger un espace riemannien donné dans un espace euclidien (1927)
 - Ghomi, Mohammad, Open problems in geometry of curves and surfaces (2019)
-- Han, Qing, Khuri, Marcus, On the local isometric embedding in $\mathbb{R}^3$
-                   of surfaces with Gaussian curvature of mixed sign (2010)
-- Janet, Maurice, Sur la possibilit{é} de plonger un espace riemannien donn{é}
-             dans un espace euclidien (1926)
+- Han, Qing, Khuri, Marcus, On the local isometric embedding in $\mathbb{R}^3$ of surfaces with Gaussian curvature of mixed sign (2010)
+- Janet, Maurice, Sur la possibilité de plonger un espace riemannien donné dans un espace euclidien (1926)
 - Khuri, Marcus A., Counterexamples to the Local Solvability of {Monge–Amp\`ere} Equations in the Plane (2007)
 - Khuri, Marcus A., On the local solvability of Darboux's equation (2009)
 - Kuiper, Nicolaas H., On $C^1$-isometric imbeddings. I (1955)
 - Lin, Chang-Shou, The local isometric embedding in $\mathbb{R}^3$ of 2-dimensional Riemannian manifolds with nonnegative curvature (1985)
 - Lin, Chang-Shou, The local isometric embedding in $\mathbb{R}^3$ of two-dimensional Riemannian manifolds with Gaussian curvature changing sign cleanly (1986)
-- Lin, Tsung-Yin, On the local isometric embedding in $\mathbb{R}^3$
-                   of surfaces with zero sets of Gaussian curvature
-                   forming cusp domains (2016)
+- Lin, Tsung-Yin, On the local isometric embedding in $\mathbb{R}^3$ of surfaces with zero sets of Gaussian curvature forming cusp domains (2016)
 - Nadirashvili, Nikolai, Yuan, Yu, Improving Pogorelov's isometric embedding counterexample (2008)
 - Nadirashvili, Nikolai, Yuan, Yu, Counterexamples for Local Isometric Embedding (2002)
 - Nakamura, Gen, Maeda, Yoshiaki, Local smooth isometric embeddings of low-dimensional Riemannian manifolds into Euclidean spaces (1989)

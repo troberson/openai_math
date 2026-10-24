@@ -32,11 +32,11 @@ manifolds, and a class carries it when the corresponding framed manifold
 has Arf invariant one. The theorem pins down the entire positive image
 [S4:3–22]:
 
-> The image of \(\bigoplus_{d>0}h_d\) is spanned over \(\F_2\) by
+> The image of \(\bigoplus_d>0h_d\) is spanned over \(\F_2\) by
 the Hurewicz images of the Hopf-invariant-one classes
 \(\eta,\nu,\sigma\), in degrees \(1,3,7\), and the
 Kervaire-invariant-one classes \(\theta_j\), in degrees
-\(2^{j+1}-2\), \(j\ge1\), whenever they exist.
+\(2^j+1-2\), \(j\ge1\), whenever they exist.
 In particular, Curtis's conjecture is true in all positive degrees. [S4:24–31]
 
 The two corollaries give the concrete payoffs. Eccles's conjecture
@@ -155,8 +155,8 @@ bibliography — and no non-LaTeX evidence.
 - Behrens, Mark, Hill, Michael A., Hopkins, Michael J., Mahowald, Mark, Detecting exotic spheres in low dimensions using coker J (2020)
 - Browder, William, The Kervaire invariant of framed manifolds and its generalization (1969)
 - Bruner, Robert R., May, J. Peter, McClure, James E., Steinberger, Mark, $H_\infty$ Ring Spectra and Their Applications (1986)
-- Cartier, P., Une nouvelle op{é}ration sur les formes diff{é}rentielles (1957)
-- Cartier, Pierre, Questions de rationalit{é} des diviseurs en g{é}om{é}trie alg{é}brique (1958)
+- Cartier, P., Une nouvelle opération sur les formes différentielles (1957)
+- Cartier, Pierre, Questions de rationalité des diviseurs en géométrie algébrique (1958)
 - Cohen, Frederick R., Lada, Thomas J., May, J. Peter, The Homology of Iterated Loop Spaces (1976)
 - Curtis, Edward B., The Dyer–Lashof algebra and the $\Lambda$-algebra (1975)
 - Dickson, Leonard Eugene, A fundamental system of invariants of the general modular linear group with a solution of the form problem (1911)
@@ -169,9 +169,9 @@ bibliography — and no non-LaTeX evidence.
 - Hung, Nguyen H. V., Peterson, Franklin P., Spherical classes and the Dickson algebra (1998)
 - Hunter, Dana, The Curtis–Wellington spectral sequence through cohomology (2025)
 - Kameko, M., Products of projective spaces as Steenrod modules (1990)
-- Kuhn, Nicholas J., Localization of {André–Quillen–Goodwillie} towers, and the periodic homology of infinite loopspaces (2006)
+- Kuhn, Nicholas J., Localization of André–Quillen–Goodwillie towers, and the periodic homology of infinite loopspaces (2006)
 - Kuhn, Nicholas J., Adams filtration and generalized Hurewicz maps for infinite loopspaces (2018)
-- Kuhn, Nicholas J., Pereira, Lu{í}s Alexandre, Operad bimodules and composition products on {André–Quillen} filtrations of algebras (2017)
+- Kuhn, Nicholas J., Pereira, Luís Alexandre, Operad bimodules and composition products on André–Quillen filtrations of algebras (2017)
 - Lin, Weinan, Wang, Guozhen, Xu, Zhouli, On the Last Kervaire Invariant Problem (2025)
 - Madsen, Ib, On the action of the Dyer–Lashof algebra in $H_*(G)$ (1975)
 - May, J. Peter, Infinite loop space theory (1977)

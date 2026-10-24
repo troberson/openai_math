@@ -37,11 +37,11 @@ toward the spectral one [S4:3–24]:
 
 > **theorem**
 For every prime \(p\) and every \(n\geq 1\), the thick tensor ideals of
-\(\mathcal D_{(n,p)}\) are exactly
+\(\mathcal D_(n,p)\) are exactly
 \[
- \mathcal D_{(n,p)}=\mathcal D_0
+ \mathcal D_(n,p)=\mathcal D_0
  \supsetneq\mathcal D_1\supsetneq\cdots
- \supsetneq\mathcal D_n\supsetneq\mathcal D_{n+1}=0.
+ \supsetneq\mathcal D_n\supsetneq\mathcal D_n+1=0.
 \]
 In particular, there are \(n+2\) such ideals, and each \(\mathcal D_k\)
 is independent of the chosen finite type-\(k\) spectrum. [S4:74–84]
@@ -171,20 +171,20 @@ bibliography — and no non-LaTeX evidence.
 - Balmer, Paul, On the surjectivity of the map of spectra associated to a tensor-triangulated functor (2018)
 - Balmer, Paul, The spectrum of prime ideals in tensor triangulated categories (2005)
 - Barthel, Tobias, Heard, Drew, Naumann, Niko, On conjectures of Hovey–Strickland and Chai (2022)
-- Le Bras, Arthur-C{é}sar, Espaces de Banach–Colmez et faisceaux coh{é}rents sur la courbe de Fargues–Fontaine (2018)
+- Le Bras, Arthur-César, Espaces de Banach–Colmez et faisceaux cohérents sur la courbe de Fargues–Fontaine (2018)
 - Chai, Ching-Li, The group action on the closed fiber of the Lubin–Tate moduli space (1996)
 - Chai, Ching-Li, A rigidity result for $p$-divisible formal groups (2008)
 - Demazure, Michel, Lectures on $p$-Divisible Groups (1972)
 - Fargues, Laurent, Scholze, Peter, Geometrization of the local Langlands correspondence (2021)
-- Fargues, Laurent, Fontaine, Jean-Marc, Courbes et fibr{é}s vectoriels en th{é}orie de Hodge $p$-adique (2018)
+- Fargues, Laurent, Fontaine, Jean-Marc, Courbes et fibrés vectoriels en théorie de Hodge $p$-adique (2018)
 - Hazewinkel, Michiel, Formal Groups and Applications (1978)
-- Hopkins, Michael J., Gross, Benedict H., The rigid analytic period mapping, {{\mboxLubin–Tate}} space, and stable homotopy theory (1994)
+- Hopkins, Michael J., Gross, Benedict H., The rigid analytic period mapping, Lubin–Tate space, and stable homotopy theory (1994)
 - Hopkins, Michael J., Smith, Jeffrey H., Nilpotence and stable homotopy theory II (1998)
 - Hopkins, Michael J., Gross, Benedict H., Equivariant vector bundles on the Lubin–Tate moduli space (1994)
 - Hovey, Mark, Strickland, Neil P., Morava $K$-theories and localisation (1999)
-- Illusie, Luc, D{é}formations de groupes de Barsotti–Tate (1985)
+- Illusie, Luc, Déformations de groupes de Barsotti–Tate (1985)
 - Lau, Eike, Tate modules of universal $p$-divisible groups (2010)
-- Lee, David Jongwon, Pstr{\k a}gowski, Piotr, The monochromatic Hahn–Wilson conjecture (2026)
+- Lee, David Jongwon, Pstrągowski, Piotr, The monochromatic Hahn–Wilson conjecture (2026)
 - Lubin, Jonathan, Tate, John, Formal moduli for one-parameter formal Lie groups (1966)
 - Lubin, Jonathan, Tate, John, Formal complex multiplication in local fields (1965)
 - Mathew, Akhil, The Galois group of a stable homotopy theory (2016)

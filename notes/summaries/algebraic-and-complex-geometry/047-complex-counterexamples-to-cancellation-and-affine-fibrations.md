@@ -130,10 +130,10 @@ The declaration is `OAI.ComplexCancellation.main` [S14:32]. The comparator stub 
 - The Stacks Project Authors, _The Stacks Project_, accessed September 23, 2026.  .
 - H. Bass, E. H. Connell, and D. L. Wright, _Locally polynomial algebras are symmetric_, Bull. Amer. Math. Soc. **82** (1976), no. 5, 719–720.  .
 - M. Brion, _On linearization of line bundles_, J. Math. Sci. Univ. Tokyo **22** (2015), no. 1, 113–147.  .
-- \begingroup\raggedright B. Yu. Weisfeiler and I. V. Dolgachev, _Unipotent group schemes over integral rings_, Math. USSR-Izv. **8** (1974), no. 4, 761–800.  . \par\endgroup
+- B. Yu. Weisfeiler and I. V. Dolgachev, _Unipotent group schemes over integral rings_, Math. USSR-Izv. **8** (1974), no. 4, 761–800.  .
 - T. Fujita, _On Zariski problem_, Proc. Japan Acad. Ser. A Math. Sci. **55** (1979), no. 3, 106–110.  .
 - N. Gupta, _On the cancellation problem for the affine space $\mathbb A^3$ in characteristic $p$_, Invent. Math. **195** (2014), no. 1, 279–288.  .
-- \begingroup\raggedright N. Gupta, _On Zariski's cancellation problem in positive characteristic_, Adv. Math. **264** (2014), 296–307.  . Preprint: arXiv:1309.1368v1. \par\endgroup
+- N. Gupta, _On Zariski's cancellation problem in positive characteristic_, Adv. Math. **264** (2014), 296–307.  . Preprint: arXiv:1309.1368v1.
 - N. Gupta, _The Zariski cancellation problem and related problems in affine algebraic geometry_, in _Proceedings of the International Congress of Mathematicians 2022_, vol. 3, EMS Press, Berlin, 2023, 1578–1598.  .
 - A. K. Dutta and A. Lahiri, _On residual and stable coordinates_, J. Pure Appl. Algebra **225** (2021), no. 10, article 106707.  . Preprint: arXiv:1908.03549v1.
 - Sh. Kaliman and L. Makar-Limanov, _AK-invariant of affine domains_, in _Affine Algebraic Geometry_, Osaka University Press, Osaka, 2007, 231–255.  .

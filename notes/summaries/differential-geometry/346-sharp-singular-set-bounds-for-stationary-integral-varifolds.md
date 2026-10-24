@@ -122,7 +122,7 @@ Second, the linearized-measures section passes the first variations and signed e
 
 Third, the density-centers section supplies the curvature-corrected comparison 
 
-> Third, the density of the points carrying $\sigma_i$ must still be visible after division by $a_i^2$. Ordinary uncorrected radial comparison does not provide that precision on curved reference graphs. Section   uses geodesic radial fields weighted by the inverse reference-volume density. The resulting curvature error can be averaged against $\sigma_i$ at every radius down to zero. For a fixed $l>0$, its decisive integral is \[ \int_0^l t^{s-m}\,\dd t<\infty, \] which holds exactly when $s>m-1$. The centered first-moment estimate then removes the translation terms and yields a density comparison at every limiting center. [S6:159–171]
+> Third, the density of the points carrying $\sigma_i$ must still be visible after division by $a_i^2$. Ordinary uncorrected radial comparison does not provide that precision on curved reference graphs. Section   uses geodesic radial fields weighted by the inverse reference-volume density. The resulting curvature error can be averaged against $\sigma_i$ at every radius down to zero. For a fixed $l>0$, its decisive integral is \[ \int_0^l t^s-m\,\dd t<\infty, \] which holds exactly when $s>m-1$. The centered first-moment estimate then removes the translation terms and yields a density comparison at every limiting center. [S6:159–171]
 
 Finally, the dimension-reduction section closes the contradiction 
 
@@ -216,15 +216,15 @@ What has not been checked: no Lean, lake, or comparator run was performed, and f
 - Menne, Ulrich, Second order rectifiability of integral varifolds of locally bounded first variation (2013)
 - Menne, Ulrich, Second order rectifiability of integral varifolds of locally bounded first variation (2013)
 - Milnor, John, Analytic Proofs of the ``Hairy Ball Theorem'' and the Brouwer Fixed Point Theorem (1978)
-- Calder{ó}n, A. P., Zygmund, A., On the existence of certain singular integrals (1952)
+- Calderón, A. P., Zygmund, A., On the existence of certain singular integrals (1952)
 - Naber, Aaron, Valtorta, Daniele, The singular structure and regularity of stationary varifolds (2020)
-- Hyt{ö}nen, Tuomas, Kairema, Anna, Systems of dyadic cubes in a doubling metric space (2012)
-- OpenAI, {Almost-everywhere regularity of stationary integral varifolds} (2026)
-- OpenAI, {The Solomon–Yau least-volume theorem} (2026)
+- Hytönen, Tuomas, Kairema, Anna, Systems of dyadic cubes in a doubling metric space (2012)
+- OpenAI, Almost-everywhere regularity of stationary integral varifolds (2026)
+- OpenAI, The Solomon–Yau least-volume theorem (2026)
 - Simon, Leon, Introduction to Geometric Measure Theory (2018)
 - Simon, Leon, Lectures on Geometric Measure Theory (1983)
 - Simon, Leon, Lectures on Geometric Measure Theory (1983)
 - Simon, Leon, Introduction to Geometric Measure Theory (2018)
-- Kolasi{ń}ski, S{\l}awomir, Rectifiability of every finite order for stationary integral varifolds (2026)
-- Kolasi{ń}ski, S{\l}awomir, Rectifiability of every finite order for stationary integral varifolds (2026)
+- Kolasiński, Sławomir, Rectifiability of every finite order for stationary integral varifolds (2026)
+- Kolasiński, Sławomir, Rectifiability of every finite order for stationary integral varifolds (2026)
 - Whitney, Hassler, Analytic extensions of differentiable functions defined in closed sets (1934)

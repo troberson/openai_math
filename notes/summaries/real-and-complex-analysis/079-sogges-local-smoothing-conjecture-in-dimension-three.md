@@ -148,7 +148,6 @@ evidence.
 
 ## Bibliography
 
-- {\L}aba, Izabella, Wolff, Thomas, A local smoothing estimate in higher dimensions (2002)
 - Bateman, Harry, The conformal transformations of a space of four dimensions and their applications to geometrical optics (1909)
 - Beltran, David, Hickman, Jonathan, Sogge, Christopher D., Variable coefficient Wolff-type inequalities and sharp local smoothing estimates for wave equations on manifolds (2020)
 - Beltran, David, Hickman, Jonathan, Sogge, Christopher D., Sharp local smoothing estimates for Fourier integral operators (2019)
@@ -161,7 +160,7 @@ evidence.
 - Guth, Larry, Wang, Hong, Zhang, Ruixiang, A sharp square function estimate for the cone in $\mathbb R^3$ (2020)
 - Guth, Larry, Restriction estimates using polynomial partitioning II (2018)
 - Hochman, Michael, Shmerkin, Pablo, Local entropy averages and projections of fractal measures (2012)
-- Katz, Nets Hawk, Tao, Terence, Some connections between {Falconer's} distance set conjecture and sets of Furstenburg type (2001)
+- Katz, Nets Hawk, Tao, Terence, Some connections between Falconer's distance set conjecture and sets of Furstenburg type (2001)
 - Minicozzi, II, William P., Sogge, Christopher D., Negative results for Nikodym maximal functions and related oscillatory integrals in curved space (1997)
 - Miyachi, Akihiko, On some estimates for the wave equation in $L^p$ and $H^p$ (1980)
 - Mockenhaupt, Gerd, Seeger, Andreas, Sogge, Christopher D., Wave front sets, local smoothing and Bourgain's circular maximal theorem (1992)
@@ -173,10 +172,11 @@ evidence.
 - Ramsey, F. P., On a Problem of Formal Logic (1930)
 - Ren, Kevin, Wang, Hong, Furstenberg sets estimate in the plane (2025)
 - Rozendaal, Jan, Schippa, Robert, Local smoothing for rough wave equations (2026)
-- Garrig{ó}s, Gustavo, Seeger, Andreas, On plate decompositions of cone multipliers (2009)
-- Shmerkin, Pablo, Wang, Hong, Dimensions of Furstenberg sets and an extension of {Bourgain's} projection theorem (2025)
+- Garrigós, Gustavo, Seeger, Andreas, On plate decompositions of cone multipliers (2009)
+- Shmerkin, Pablo, Wang, Hong, Dimensions of Furstenberg sets and an extension of Bourgain's projection theorem (2025)
 - Sogge, Christopher D., Propagation of singularities and maximal functions in the plane (1991)
 - Tao, Terence, The Bochner–Riesz conjecture implies the restriction conjecture (1999)
 - Wang, Hong, Zahl, Joshua, Volume estimates for unions of convex sets, and the Kakeya set conjecture in three dimensions (2025)
 - Wolff, Thomas, Local smoothing type estimates on $L^p$ for large $p$ (2000)
 - Wolff, Thomas, Recent work connected with the Kakeya problem (1999)
+- Łaba, Izabella, Wolff, Thomas, A local smoothing estimate in higher dimensions (2002)

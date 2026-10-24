@@ -32,8 +32,8 @@ output in $L^1(\mathbb R)$ [S4:1–9]:
 
 > There is a finite constant $C$ such that
 \[
- \norm{T(f_1,f_2,f_3)}_{L^1(\R)}
- \le C\prod_{j=1}^3\norm{f_j}_{L^3(\R)}
+ \normT(f_1,f_2,f_3)_{L^1(\R)}
+ \le C\prod_j=1^3\normf_j_{L^3(\R)}
  \qquad(f_1,f_2,f_3\in\mathcal S(\R)).
 \]
 Consequently $T$ has a unique bounded trilinear extension from
@@ -143,15 +143,15 @@ evidence.
 
 ## Bibliography
 
-- David V. Cruz-Uribe, Jos{é} Mar{í}a Martell, Carlos P{é}rez, Weights, Extrapolation and the Theory of Rubio de Francia (2011)
+- David V. Cruz-Uribe, José María Martell, Carlos Pérez, Weights, Extrapolation and the Theory of Rubio de Francia (2011)
 - W. T. Gowers, Julia Wolf, Linear forms and quadratic uniformity for functions on $\mathbb{Z}_N$ (2010)
 - Ben Green, Terence Tao, The quantitative behaviour of polynomial orbits on nilmanifolds (2012)
 - Martin Henk, Successive Minima and Lattice Points (2002)
 - Bingyang Hu, Victor Lie, On the curved trilinear Hilbert transform (2023)
 - Bingyang Hu, Victor Lie, On the boundedness of the curved trilinear Hilbert transform and the curved $n$-linear maximal operator in the quasi-Banach regime (2025)
 - Michael Lacey, Christoph Thiele, $L^p$ estimates on the bilinear Hilbert transform for $2<p<\infty$ (1997)
-- Michael Lacey, Christoph Thiele, On {Calderón}'s conjecture (1999)
+- Michael Lacey, Christoph Thiele, On Calderón's conjecture (1999)
 - James Leng, Ashwin Sah, Mehtaab Sawhney, Quasipolynomial bounds on the inverse theorem for the Gowers $U^{s+1}[N]$-norm (2024)
 - Vladimir A. Mikhailets, Aleksandr A. Murach, General forms of the Menshov–Rademacher, Orlicz, and Tandori theorems on orthogonal series (2011)
-- Giorgis Petridis, New proofs of {Plünnecke}-type estimates for product sets in groups (2012)
+- Giorgis Petridis, New proofs of Plünnecke-type estimates for product sets in groups (2012)
 - Terence Tao, Cancellation for the multilinear Hilbert transform (2015)

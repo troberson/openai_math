@@ -132,9 +132,9 @@ stability condition with support on $K_{\mathrm{num}}(X)_{\mathbb R}$.
 \item There is a geometric numerical stability condition, with support
 on the same full numerical space, whose charge is exactly
 \[
- Z^{\mathrmLV}_{B,tH}(E)
- =-\int_Xe^{-B-itH}\ch(E)\sqrt{\td(X)},
- \qquad \sqrt{\td(X)}=1+\frac{c_2(X)}24.
+ Z^{\mathrmLV}_B,tH(E)
+ =-\int_Xe^-B-itH\ch(E)\sqrt{\td(X)},
+ \qquad \sqrt{\td(X)}=1+\fracc_2(X)24.
 \]
 Its heart is the one constructed in Section  .
 \endenumerate [S10:103–122]

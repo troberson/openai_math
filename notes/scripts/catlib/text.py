@@ -75,7 +75,7 @@ ACCENT = {
     "H": {"o": "\u0151", "u": "\u0171", "O": "\u0150", "U": "\u0170"},
     "v": {"c": "\u010d", "r": "\u0159", "s": "\u0161", "z": "\u017e",
            "a": "\u0103", "e": "\u011b", "i": "\u01d0", "o": "\u01d2",
-           "u": "\u01d4", "C": "\u010c", "R": "\u0158", "S": "\u0164",
+           "u": "\u01d4", "C": "\u010c", "R": "\u0158", "S": "\u0160",
            "Z": "\u017d"},
     "c": {"c": "\u00e7", "C": "\u00c7"},
     "k": {"a": "\u0105", "e": "\u0119", "u": "\u0173", "A": "\u0104",
@@ -89,6 +89,18 @@ COMB = {'"': "\u0308", "'": "\u0301", "H": "\u030b", "v": "\u030c",
         "c": "\u0327", "k": "\u0328", "u": "\u0306", "d": "\u0307",
         "r": "\u030a"}
 
+# Standalone letter macros: a whole letter, not an accent applied to a letter.
+# The corpus uses these in thebibliography entries for names no accent+letter form covers.
+LETTER_MACROS = {
+    "L": "\u0141", "l": "\u0142",     # Ł ł  (ogonek)
+    "aa": "\u00e5", "AA": "\u00c5",   # å Å  (a-ring)
+    "ae": "\u00e6", "AE": "\u00c6",   # æ Æ  (ligature)
+    "oe": "\u0153", "OE": "\u0152",   # œ Œ  (ligature)
+    "o": "\u00f8", "O": "\u00d8",     # ø Ø  (o-slash)
+    "ss": "\u00df",                   # ß    (eszett)
+    "i": "\u0131", "j": "\u0237",     # dotless i / dotless j
+}
+
 
 def fold_accents(s: str) -> str:
     r"""LaTeX accent escapes folded to Unicode, precomposed where a code point exists.
@@ -99,14 +111,27 @@ def fold_accents(s: str) -> str:
     page quotation against the line it cites.
 
     Both the bare form (`\'e`) and the brace form (`\'{E}`) are handled: the latter is
-    the BibTeX/thebibliography convention for capital letters.
+    the BibTeX/thebibliography convention for capital letters. The bibliography adds two
+    shapes the source-text form never carries: an accent across a space (`{\v c}` → `č`)
+    and a standalone letter macro (`{\L}` → `Ł`, `{\aa}` → `å`).
     """
     def one(m):
         cmd, letter = m.group(1), m.group(2)
         return ACCENT.get(cmd, {}).get(letter, letter + COMB.get(cmd, ""))
+    def letter(m):
+        return LETTER_MACROS.get(m.group(1), m.group(0))
     s = re.sub(r'\\(["\'])([A-Za-z])', one, s)
     s = re.sub(r"\\([\"'])\{([A-Za-z])\}", one, s)
-    return re.sub(r"\\([Hvckudr])\{([A-Za-z])\}", one, s)
+    s = re.sub(r"\\([Hvckudr])\{([A-Za-z])\}", one, s)
+    # accent + space + letter in outer braces: {\v c} → č
+    s = re.sub(r"\{\\([Hvckudrb\"']) +([A-Za-z])\}", one, s)
+    # accent + space + letter bare: \v S → Š. The space is the disambiguator
+    # (a command like \vec has no space), so no lookahead after the letter.
+    s = re.sub(r"\\([Hvckudrb\"']) +([A-Za-z])", one, s)
+    # standalone letter macro, braced: {\L} → Ł
+    s = re.sub(r"\{\\([A-Za-z]+)\}", letter, s)
+    # standalone letter macro, bare: \L → Ł (guarded by the macro set)
+    return re.sub(r"\\(ss|SS|aa|AA|ae|AE|oe|OE|L|l|o|O|i|j)(?![A-Za-z])", letter, s)
 
 
 def fold_dashes(s: str) -> str:

@@ -159,16 +159,12 @@ bundles, and no other non-LaTeX evidence.
 
 ## Bibliography
 
-- P{é}rez-Garc{í}a, David, Verstraete, Frank
-                  , Wolf, Michael M., Cirac, J. Ignacio, Matrix product state representations (2007)
-- P{é}rez-Garc{í}a, David, Verstraete, Frank
-                  , Wolf, Michael M., Cirac, J. Ignacio, Matrix product state representations (2007)
-- Affleck, Ian, Kennedy, Tom, Lieb, Elliott H.
-            , Tasaki, Hal, Valence bond ground states in isotropic quantum antiferromagnets (1988)
+- Pérez-García, David, Verstraete, Frank , Wolf, Michael M., Cirac, J. Ignacio, Matrix product state representations (2007)
+- Pérez-García, David, Verstraete, Frank , Wolf, Michael M., Cirac, J. Ignacio, Matrix product state representations (2007)
+- Affleck, Ian, Kennedy, Tom, Lieb, Elliott H. , Tasaki, Hal, Valence bond ground states in isotropic quantum antiferromagnets (1988)
 - Affleck, Ian, Lieb, Elliott H., A proof of part of Haldane's conjecture on spin chains (1986)
 - Affleck, Ian, Kennedy, Tom, Lieb, Elliott H., Tasaki, Hal, Rigorous results on valence-bond ground states in antiferromagnets (1987)
-- Affleck, Ian, Kennedy, Tom, Lieb, Elliott H.
-            , Tasaki, Hal, Valence bond ground states in isotropic quantum antiferromagnets (1988)
+- Affleck, Ian, Kennedy, Tom, Lieb, Elliott H. , Tasaki, Hal, Valence bond ground states in isotropic quantum antiferromagnets (1988)
 - Affleck, Ian, Kennedy, Tom, Lieb, Elliott H., Tasaki, Hal, Rigorous results on valence-bond ground states in antiferromagnets (1987)
 - Aizenman, Michael, Nachtergaele, Bruno, Geometric aspects of quantum spin states (1994)
 - Aizenman, Michael, Nachtergaele, Bruno, Geometric aspects of quantum spin states (1994)
@@ -183,39 +179,28 @@ bundles, and no other non-LaTeX evidence.
 - Fuji, Yohei, Pollmann, Frank, Oshikawa, Masaki, Distinct Trivial Phases Protected by a Point-Group Symmetry in Quantum Spin Chains (2015)
 - Goldsztejn, Alexandre, Neumaier, Arnold, On the Exponentiation of Interval Matrices (2014)
 - Gosset, David, Mozgunov, Evgeny, Local gap threshold for frustration-free spin systems (2016)
-- Haldane, F. D. M., Continuum dynamics of the {1-D} Heisenberg antiferromagnet:
-             Identification with the {O(3)} nonlinear sigma model (1983)
-- Haldane, F. D. M., Nonlinear field theory of large-spin Heisenberg
-             antiferromagnets: Semiclassically quantized solitons of
-             the one-dimensional easy-axis {N{é}el} state (1983)
-- Haldane, F. D. M., Ground State Properties of Antiferromagnetic Chains with Unrestricted Spin: Integer Spin Chains as Realisations of the {O(3)} Non-Linear Sigma Model (1981)
-- Haldane, F. D. M., Continuum dynamics of the {1-D} Heisenberg antiferromagnet:
-             Identification with the {O(3)} nonlinear sigma model (1983)
-- Haldane, F. D. M., Nonlinear field theory of large-spin Heisenberg
-             antiferromagnets: Semiclassically quantized solitons of
-             the one-dimensional easy-axis {N{é}el} state (1983)
-- Haldane, F. D. M., Ground State Properties of Antiferromagnetic Chains with Unrestricted Spin: Integer Spin Chains as Realisations of the {O(3)} Non-Linear Sigma Model (1981)
+- Haldane, F. D. M., Continuum dynamics of the 1-D Heisenberg antiferromagnet: Identification with the O(3) nonlinear sigma model (1983)
+- Haldane, F. D. M., Nonlinear field theory of large-spin Heisenberg antiferromagnets: Semiclassically quantized solitons of the one-dimensional easy-axis {Néel} state (1983)
+- Haldane, F. D. M., Ground State Properties of Antiferromagnetic Chains with Unrestricted Spin: Integer Spin Chains as Realisations of the O(3) Non-Linear Sigma Model (1981)
+- Haldane, F. D. M., Continuum dynamics of the 1-D Heisenberg antiferromagnet: Identification with the O(3) nonlinear sigma model (1983)
+- Haldane, F. D. M., Nonlinear field theory of large-spin Heisenberg antiferromagnets: Semiclassically quantized solitons of the one-dimensional easy-axis {Néel} state (1983)
+- Haldane, F. D. M., Ground State Properties of Antiferromagnetic Chains with Unrestricted Spin: Integer Spin Chains as Realisations of the O(3) Non-Linear Sigma Model (1981)
 - Kennedy, Tom, Tasaki, Hal, Hidden $\mathbb{Z}_2\times\mathbb{Z}_2$ symmetry breaking in Haldane-gap antiferromagnets (1992)
-- Knabe, Stefan, Energy gaps and elementary excitations for certain
-             VBS-quantum antiferromagnets (1988)
+- Knabe, Stefan, Energy gaps and elementary excitations for certain VBS-quantum antiferromagnets (1988)
 - Lemm, Marius, Mozgunov, Evgeny, Spectral gaps of frustration-free spin systems with boundary (2019)
 - Lieb, Elliott, Schultz, Theodore, Mattis, Daniel, Two Soluble Models of an Antiferromagnetic Chain (1961)
 - Lieb, Elliott, Schultz, Theodore, Mattis, Daniel, Two soluble models of an antiferromagnetic chain (1961)
-- Nachtergaele, Bruno, The spectral gap for some spin chains with
-                   discrete symmetry breaking (1996)
+- Nachtergaele, Bruno, The spectral gap for some spin chains with discrete symmetry breaking (1996)
 - Nakamura, Masaaki, Todo, Synge, Order Parameter to Characterize Valence-Bond-Solid States in Quantum Spin Chains (2002)
 - den Nijs, Marcel, Rommelse, Koos, Preroughening transitions in crystal surfaces and valence-bond phases in quantum spin chains (1989)
 - Ogata, Yoshiko, A $\mathbb{Z}_2$-index of Symmetry Protected Topological Phases with Reflection Symmetry for Quantum Spin Chains (2021)
-- OpenAI, {A boundary-field gap for the spin-one Heisenberg chain} (2026)
-- OpenAI, {The periodic spin-one Haldane gap} (2026)
+- OpenAI, A boundary-field gap for the spin-one Heisenberg chain (2026)
+- OpenAI, The periodic spin-one Haldane gap (2026)
 - Pollmann, Frank, Turner, Ari M., Berg, Erez, Oshikawa, Masaki, Entanglement spectrum of a topological phase in one dimension (2010)
 - Suzuki, Masuo, Transfer-matrix method and Monte Carlo simulation in quantum spin systems (1985)
-- Tasaki, Hal, Ground state of the $S=1$ antiferromagnetic
-                   Heisenberg chain is topologically nontrivial if gapped (2025)
-- Tasaki, Hal, Ground state of the $S=1$ antiferromagnetic
-                   Heisenberg chain is topologically nontrivial if gapped (2025)
+- Tasaki, Hal, Ground state of the $S=1$ antiferromagnetic Heisenberg chain is topologically nontrivial if gapped (2025)
+- Tasaki, Hal, Ground state of the $S=1$ antiferromagnetic Heisenberg chain is topologically nontrivial if gapped (2025)
 - Tasaki, Hal, Topological Phase Transition and $\mathbb{Z}_2$ Index for $S=1$ Quantum Spin Chains (2018)
 - White, Steven R., Huse, David A., Numerical renormalization-group study of low-lying eigenstates of the antiferromagnetic $S=1$ Heisenberg chain (1993)
 - White, Steven R., Huse, David A., Numerical renormalization-group study of low-lying eigenstates of the antiferromagnetic $S=1$ Heisenberg chain (1993)
-- Yarotsky, D. A., Ground states in relatively bounded quantum
-                   perturbations of classical lattice systems (2006)
+- Yarotsky, D. A., Ground states in relatively bounded quantum perturbations of classical lattice systems (2006)

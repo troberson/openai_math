@@ -168,8 +168,8 @@ and no non-LaTeX evidence.
 - J. L. Alperin, _Local representation theory_, in _The Santa Cruz Conference on Finite Groups_ (Santa Cruz, California, 1979), Proc. Sympos. Pure Math. **37**, American Mathematical Society, Providence, RI, 1980, 369–375.
 - Alperin, J. L., Local representation theory (1980)
 - An, Jianbei, Eaton, Charles W., Morita equivalence classes of blocks with extraspecial defect groups $p_+^{1+2}$ (2025)
-- Teruaki Asai, _Unipotent characters of \(\mathrmSO_2n^{\pm}\), \(\mathrmSp_2n\) and \(\mathrmSO_{2n+1}\) over \(\mathbb F_q\) with small \(q\)_, Osaka J. Math. **20** (1983), 631–643. doi:10.18910/7124.
-- Teruaki Asai, _Unipotent class functions of split special orthogonal groups \(\mathrmSO_2n^{+}\) over finite fields_, Comm. Algebra **12** (1984), 517–615; _The unipotent class functions on the symplectic groups and the odd orthogonal groups over finite fields_, Comm. Algebra **12** (1984), 617–645; _The unipotent class functions of non-split finite special orthogonal groups_, Comm. Algebra **13** (1985), 845–924.
+- Teruaki Asai, _Unipotent characters of $\mathrm{SO}_{2n}^{\pm}$, $\mathrm{Sp}_{2n}$ and $\mathrm{SO}_{2n+1}$ over $\mathbb F_q$ with small $q$_, Osaka J. Math. **20** (1983), 631–643. doi:10.18910/7124.
+- Teruaki Asai, _Unipotent class functions of split special orthogonal groups $\mathrm{SO}_{2n}^{+}$ over finite fields_, Comm. Algebra **12** (1984), 517–615; _The unipotent class functions on the symplectic groups and the odd orthogonal groups over finite fields_, Comm. Algebra **12** (1984), 617–645; _The unipotent class functions of non-split finite special orthogonal groups_, Comm. Algebra **13** (1985), 845–924.
 - Michael Aschbacher, _Finite Group Theory_, second edition, Cambridge Studies in Advanced Mathematics **10**, Cambridge University Press, Cambridge, 2000. doi:10.1017/CBO9781139175319.
 - The Stacks Project Authors, The Stacks Project (2026)
 - The Stacks Project Authors, The Cohen structure theorem (2026)
@@ -177,20 +177,19 @@ and no non-LaTeX evidence.
 - Cédric Bonnafé, _Quasi-isolated elements in reductive groups_, preprint, 2004. arXiv:math/0402276v1.
 - Cédric Bonnafé, Jean-François Dat, and Raphaël Rouquier, _Derived categories and Deligne–Lusztig varieties II_, Ann. of Math. (2) **185** (2017), no. 2, 609–670. doi:10.4007/annals.2017.185.2.5.
 - Patrick Brosnan, Jaehyun Hong, and Donggun Lee, _Geometry of regular semisimple Lusztig varieties_, preprint, 2025, revised July 15, 2026; to appear in J. Eur. Math. Soc. arXiv:2504.15868v3.
-- Carles Broto, Jesper M. M\o ller, and Bob Oliver, _Automorphisms of fusion systems of finite simple groups of Lie type_, Mem. Amer. Math. Soc. **262** (2019), no. 1267. doi:10.1090/memo/1267.
+- Carles Broto, Jesper M. Mø ller, and Bob Oliver, _Automorphisms of fusion systems of finite simple groups of Lie type_, Mem. Amer. Math. Soc. **262** (2019), no. 1267. doi:10.1090/memo/1267.
 - Michel Broué, Gunter Malle, and Jean Michel, _Generic blocks of finite reductive groups_, Astérisque **212** (1993), 7–92. NUMDAM.
-- Jonathan Brundan, Richard Dipper, and Alexander Kleshchev, _Quantum linear groups and representations of \(\GL_n(\F_q)\)_, Mem. Amer. Math. Soc. **149** (2001), no. 706. Author manuscript.
+- Jonathan Brundan, Richard Dipper, and Alexander Kleshchev, _Quantum linear groups and representations of $\GL_n(\F_q)$_, Mem. Amer. Math. Soc. **149** (2001), no. 706. Author manuscript.
 - Richard Dipper and Jie Du, _Harish-Chandra vertices_, J. Reine Angew. Math. **437** (1993), 101–130. doi:10.1515/crll.1993.437.101.
-- Jianbei An and Charles W. Eaton, _Morita equivalence classes of blocks with extraspecial defect groups \(p_+^{1+2}\)_, Math. Z. **311** (2025), article no. 12. doi:10.1007/s00209-025-03791-x.
-- Charles W. Eaton, _Blocks whose defect groups are Suzuki \(2\)-groups_, J. Algebra **664** (2025), 498–513. doi:10.1016/j.jalgebra.2024.10.011.
-- Charles Eaton, Florian Eisele, Radha Kessar, Markus Linckelmann, and A. A. Schaeffer Fry, _On \(2\)-blocks with quaternion defect groups_, preprint, 2026. arXiv:2608.12052v1.
+- Jianbei An and Charles W. Eaton, _Morita equivalence classes of blocks with extraspecial defect groups $p_+^{1+2}$_, Math. Z. **311** (2025), article no. 12. doi:10.1007/s00209-025-03791-x.
+- Charles W. Eaton, _Blocks whose defect groups are Suzuki $2$-groups_, J. Algebra **664** (2025), 498–513. doi:10.1016/j.jalgebra.2024.10.011.
+- Charles Eaton, Florian Eisele, Radha Kessar, Markus Linckelmann, and A. A. Schaeffer Fry, _On $2$-blocks with quaternion defect groups_, preprint, 2026. arXiv:2608.12052v1.
 - Charles W. Eaton, Florian Eisele, and Michael Livesey, _Donovan's conjecture, blocks with abelian defect groups and discrete valuation rings_, Math. Z. **295** (2020), 249–264. doi:10.1007/s00209-019-02354-1.
-- Eaton, Charles W., Eisele, Florian, Kessar, Radha and
-            Linckelmann, Markus, Schaeffer Fry, A. A., On $2$-blocks with quaternion defect groups (2026)
+- Eaton, Charles W., Eisele, Florian, Kessar, Radha and Linckelmann, Markus, Schaeffer Fry, A. A., On $2$-blocks with quaternion defect groups (2026)
 - Eaton, Charles W., Eisele, Florian, Livesey, Michael, Donovan's conjecture, blocks with abelian defect groups and discrete valuation rings (2020)
 - Florian Eisele, _The Picard group of an order and Külshammer reduction_, Algebr. Represent. Theory **24** (2021), 505–518. doi:10.1007/s10468-020-09957-x.
 - Florian Eisele, _On the geometry of lattices and finiteness of Picard groups_, J. Reine Angew. Math. **782** (2022), 219–233. doi:10.1515/crelle-2021-0064.
-- Eisele, Florian, The Picard group of an order and {K{ü}lshammer} reduction (2021)
+- Eisele, Florian, The Picard group of an order and {Külshammer} reduction (2021)
 - Eisele, Florian, On the geometry of lattices and finiteness of Picard groups (2022)
 - Eisele, Florian, Livesey, Michael, Arbitrarily large Morita Frobenius numbers (2022)
 - Marc Cabanes and Michel Enguehard, _On blocks of finite reductive groups and twisted induction_, Adv. Math. **145** (1999), no. 2, 189–229. doi:10.1006/aima.1998.1814.
@@ -221,26 +220,26 @@ and no non-LaTeX evidence.
 - Robert B. Howlett and Gustav I. Lehrer, _Induced cuspidal representations and generalised Hecke rings_, Invent. Math. **58** (1980), 37–64. doi:10.1007/BF01402273.
 - Markus Linckelmann, _The Block Theory of Finite Group Algebras_, Vols. I and II, London Mathematical Society Student Texts **91** and **92**, Cambridge University Press, Cambridge, 2018. Vol. I: doi:10.1017/9781108349321; Vol. II: doi:10.1017/9781108349307.
 - Charles W. Eaton and Michael Livesey, _Donovan's conjecture and blocks with abelian defect groups_, Proc. Amer. Math. Soc. **147** (2019), 963–970. doi:10.1090/proc/14316.
-- K{ü}lshammer, Burkhard, Morita equivalent blocks in Clifford theory of finite groups (1990)
-- K{ü}lshammer, Burkhard, Donovan's conjecture, crossed products and algebraic group actions (1995)
+- Külshammer, Burkhard, Morita equivalent blocks in Clifford theory of finite groups (1990)
+- Külshammer, Burkhard, Donovan's conjecture, crossed products and algebraic group actions (1995)
 - Pierre Deligne and George Lusztig, _Representations of reductive groups over finite fields_, Ann. of Math. (2) **103** (1976), no. 1, 103–161. doi:10.2307/1971021.
 - George Lusztig, _Characters of Reductive Groups over a Finite Field_, Annals of Mathematics Studies **107**, Princeton University Press, Princeton, NJ, 1984.
-- Radha Kessar and Gunter Malle, _Lusztig induction and \(\ell\)-blocks of finite reductive groups_, Pacific J. Math. **279** (2015), nos. 1–2, 269–298. doi:10.2140/pjm.2015.279.269.
+- Radha Kessar and Gunter Malle, _Lusztig induction and $\ell$-blocks of finite reductive groups_, Pacific J. Math. **279** (2015), nos. 1–2, 269–298. doi:10.2140/pjm.2015.279.269.
 - Frank Lübeck and Gunter Malle, _A Murnaghan–Nakayama rule for values of unipotent characters in classical groups_, Represent. Theory **20** (2016), 139–161. arXiv:1508.01627v4.
 - Marcus, Andrei, On equivalences between blocks of group algebras: reduction to the simple components (1996)
 - Richard Dipper and Andrew Mathas, _Morita equivalences of Ariki–Koike algebras_, Math. Z. **240** (2002), no. 3, 579–610. doi:10.1007/s002090100371.
-- Cédric Bonnafé and Jean Michel, _Computational proof of the Mackey formula for \(q>2\)_, J. Algebra **327** (2011), 506–526. doi:10.1016/j.jalgebra.2010.10.030.
+- Cédric Bonnafé and Jean Michel, _Computational proof of the Mackey formula for $q>2$_, J. Algebra **327** (2011), 506–526. doi:10.1016/j.jalgebra.2010.10.030.
 - Michel Broué and Jean Michel, _Blocs et séries de Lusztig dans un groupe réductif fini_, J. Reine Angew. Math. **395** (1989), 56–67.
 - François Digne and Jean Michel, _On Lusztig's parametrization of characters of finite groups of Lie type_, Astérisque **181–182** (1990), 113–156. NUMDAM.
 - Yves Laszlo and Martin Olsson, _The six operations for sheaves on Artin stacks I: Finite coefficients_, Publ. Math. Inst. Hautes Études Sci. **107** (2008), 109–168. doi:10.1007/s10240-008-0011-6.
 - Yves Laszlo and Martin Olsson, _The six operations for sheaves on Artin stacks II: Adic coefficients_, Publ. Math. Inst. Hautes Études Sci. **107** (2008), 169–210. doi:10.1007/s10240-008-0012-5.
 - OpenAI, _Integral Donovan Finiteness over Witt Vectors_, OpenAI Math Release preprint OAI:Integral-Donovan-Finiteness-over-Witt-Vectors-September-25-2026, 2026.
 - OpenAI, _The Blockwise Alperin Weight Conjecture_, OpenAI Math Release preprint OAI:The-Blockwise-Alperin-Weight-Conjecture-September-23-2026, 2026.
-- OpenAI, {Donovan's Conjecture over Algebraically Closed Fields} (2026)
+- OpenAI, Donovan's Conjecture over Algebraically Closed Fields (2026)
 - OpenAI, The Blockwise Alperin Weight Conjecture (2026)
 - Jeremy Rickard, _Finite group actions and étale cohomology_, Publ. Math. Inst. Hautes Études Sci. **80** (1994), 81–94. doi:10.1007/BF02698896.
 - Cédric Bonnafé and Raphaël Rouquier, _Catégories dérivées et variétés de Deligne–Lusztig_, Publ. Math. Inst. Hautes Études Sci. **97** (2003), 1–59. doi:10.1007/s10240-003-0013-3.
-- Rouquier, Rapha{ë}l, The derived category of blocks with cyclic defect groups (1998)
+- Rouquier, Raphaël, The derived category of blocks with cyclic defect groups (1998)
 - Jie Du and Hebing Rui, _Ariki–Koike algebras with semisimple bottoms_, Math. Z. **234** (2000), 807–830. doi:10.1007/s002090050009.
 - Joanna Scopes, _Cartan matrices and Morita equivalence for blocks of the symmetric groups_, J. Algebra **142** (1991), no. 2, 441–455. doi:10.1016/0021-8693(91)90319-4.
 - Britta Späth, _Extensions of characters in type D and the inductive McKay condition, II_, Invent. Math. **242** (2025), 45–122. doi:10.1007/s00222-025-01354-9.
@@ -249,5 +248,5 @@ and no non-LaTeX evidence.
 - Gunter Malle and Donna Testerman, _Linear Algebraic Groups and Finite Groups of Lie Type_, Cambridge Studies in Advanced Mathematics **133**, Cambridge University Press, Cambridge, 2011. doi:10.1017/CBO9780511994777.
 - Robert A. Wilson, _The Finite Simple Groups_, Graduate Texts in Mathematics **251**, Springer, London, 2009. doi:10.1007/978-1-84800-988-2.
 - Xinwen Zhu, _Tame categorical local Langlands correspondence_, preprint, 2025. arXiv:2504.07482v1.
-- Bonnaf{é}, C{é}dric, Rouquier, Rapha{ë}l, Cat{é}gories d{é}riv{é}es et vari{é}t{é}s de Deligne–Lusztig (2003)
-- Bonnaf{é}, C{é}dric, Dat, Jean-Fran{\c c}ois, Rouquier, Rapha{ë}l, Derived categories and Deligne–Lusztig varieties II (2017)
+- Bonnafé, Cédric, Rouquier, Raphaël, Catégories dérivées et variétés de Deligne–Lusztig (2003)
+- Bonnafé, Cédric, Dat, Jean-François, Rouquier, Raphaël, Derived categories and Deligne–Lusztig varieties II (2017)

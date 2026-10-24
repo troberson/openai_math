@@ -200,7 +200,7 @@ The weighted signed estimate, with no `sqrt(w)` [S11:447–454]:
 
 The coefficient bound that pays for the loss 
 
-> For the receiver terms, Lemmas   and   give, at every receiver time, \[ \sum_{\mathrmselected}CU\le Cw^{-1/2}. \] [S11:478–482]
+> For the receiver terms, Lemmas   and   give, at every receiver time, \[ \sum_{\mathrmselected}CU\le Cw^-1/2. \] [S11:478–482]
 
 The strategy section says exactly what that factor buys 
 
@@ -224,7 +224,7 @@ With the bootstrap in hand, the conclusion is a divergent series. Doubling momen
 
 The momentum-doubling step, verbatim 
 
-> At least one term on the right is at least $2^{n-2}$. Consequently \[ t_n-t_{n-1}\ge\Delta_n \ge \fracc{\log(2+1024\cdot2^n)} \] for a fixed $c>0$. The sum of these lower bounds diverges, contradicting $t_n<T_{\max}$. Thus $T_{\max}=\infty$. [S5:95–102]
+> At least one term on the right is at least $2^{n-2}$. Consequently \[ t_n-t_n-1\ge\Delta_n \ge \fracc{\log(2+1024\cdot2^n)} \] for a fixed $c>0$. The sum of these lower bounds diverges, contradicting $t_n<T_{\max}$. Thus $T_{\max}=\infty$. [S5:95–102]
 
 Smoothness is then propagated by restarting a Sobolev construction near an alleged first loss and identifying the restart with the classical solution by uniqueness; persistence at every Sobolev order follows on the same lifespan, and the equations give all time derivatives.
 
@@ -383,49 +383,32 @@ What has not been checked: nothing here is a machine-checked verification of the
 
 ## Bibliography
 
-- Bigorgne, L{é}o, Sharp Asymptotic Behavior of Solutions of the 3d
-           Vlasov–Maxwell System with Small Data (2020)
-- Bigorgne, L{é}o, Global existence and modified scattering for the solutions to the
-           Vlasov–Maxwell system with a small distribution function (2025)
-- Bigorgne, L{é}o, Scattering map for the Vlasov–Maxwell system around
-           source-free electromagnetic fields (2023)
-- Bouchut, Fran{\c c}ois, Golse, Fran{\c c}ois, Pallard, Christophe, Classical solutions and the Glassey–Strauss theorem for the 3D Vlasov–Maxwell system (2003)
+- Bigorgne, Léo, Sharp Asymptotic Behavior of Solutions of the 3d Vlasov–Maxwell System with Small Data (2020)
+- Bigorgne, Léo, Global existence and modified scattering for the solutions to the Vlasov–Maxwell system with a small distribution function (2025)
+- Bigorgne, Léo, Scattering map for the Vlasov–Maxwell system around source-free electromagnetic fields (2023)
+- Bouchut, François, Golse, François, Pallard, Christophe, Classical solutions and the Glassey–Strauss theorem for the 3D Vlasov–Maxwell system (2003)
 - DiPerna, Ronald J., Lions, Pierre-Louis, Global weak solutions of Vlasov–Maxwell systems (1989)
-- Glassey, Robert T., Strauss, Walter A., Singularity formation in a collisionless plasma could
-             occur only at high velocities (1986)
+- Glassey, Robert T., Strauss, Walter A., Singularity formation in a collisionless plasma could occur only at high velocities (1986)
 - Glassey, Robert T., Strauss, Walter A., Absence of Shocks in an Initially Dilute Collisionless Plasma (1987)
 - Glassey, Robert, Schaeffer, Jack, On the ``one and one-half dimensional'' relativistic Vlasov–Maxwell system (1990)
 - Glassey, R., Schaeffer, J., The ``Two and One-Half Dimensional'' Relativistic Vlasov Maxwell System (1997)
-- Glassey, Robert T., Schaeffer, Jack, The Relativistic {Vlasov-Maxwell} System in Two Space Dimensions: Part I (1998)
-- Glassey, Robert T., Schaeffer, Jack, The Relativistic {Vlasov-Maxwell} System in Two Space Dimensions: Part II (1998)
+- Glassey, Robert T., Schaeffer, Jack, The Relativistic Vlasov-Maxwell System in Two Space Dimensions: Part I (1998)
+- Glassey, Robert T., Schaeffer, Jack, The Relativistic Vlasov-Maxwell System in Two Space Dimensions: Part II (1998)
 - Glassey, Robert T., Schaeffer, Jack, On symmetric solutions of the relativistic Vlasov–Poisson system (1985)
 - Klainerman, Sergiu, Staffilani, Gigliola, A new approach to study the Vlasov–Maxwell system (2002)
-- Lazarovici, Dustin, A particle approximation for the relativistic
-           Vlasov–Maxwell dynamics (2016)
-- Luk, Jonathan, Strain, Robert M., A new continuation criterion for the relativistic
-                   Vlasov–Maxwell system (2014)
-- Luk, Jonathan, Strain, Robert M., Strichartz estimates and moment bounds for the relativistic
-           Vlasov–Maxwell system (2016)
+- Lazarovici, Dustin, A particle approximation for the relativistic Vlasov–Maxwell dynamics (2016)
+- Luk, Jonathan, Strain, Robert M., A new continuation criterion for the relativistic Vlasov–Maxwell system (2014)
+- Luk, Jonathan, Strain, Robert M., Strichartz estimates and moment bounds for the relativistic Vlasov–Maxwell system (2016)
 - Nirenberg, Louis, On elliptic partial differential equations (1959)
-- Pallard, Christophe, On the boundedness of the momentum support of solutions to the
-             relativistic Vlasov–Maxwell system (2005)
-- Pallard, Christophe, A refined existence criterion for the relativistic
-           Vlasov–Maxwell system (2015)
-- Pfaffelmoser, K., Global classical solutions of the Vlasov–Poisson system in three
-           dimensions for general initial data (1992)
+- Pallard, Christophe, On the boundedness of the momentum support of solutions to the relativistic Vlasov–Maxwell system (2005)
+- Pallard, Christophe, A refined existence criterion for the relativistic Vlasov–Maxwell system (2015)
+- Pfaffelmoser, K., Global classical solutions of the Vlasov–Poisson system in three dimensions for general initial data (1992)
 - Rein, Gerhard, Global weak solutions to the relativistic Vlasov–Maxwell system revisited (2004)
-- Rein, Gerhard, Generic global solutions of the relativistic {Vlasov-Maxwell} system of plasma physics (1990)
-- Schaeffer, Jack, A small data theorem for collisionless plasma that includes
-             high velocity particles (2004)
-- Sospedra-Alfonso, Reinel, Illner, Reinhard, Classical solvability of the relativistic Vlasov–Maxwell
-           system with bounded spatial density (2010)
-- Wang, Xuecheng, Large Data Global Solution of the 3D RVM System with
-           Cylindrical Symmetry I: Iterative Smoothing Scheme (2026)
-- Wang, Xuecheng, Large Data Global Solution of the 3D RVM System with
-           Cylindrical Symmetry II: Pointwise Estimates (2026)
-- Wang, Xuecheng, Propagation of regularity and long time behavior of the
-           3D massive relativistic transport equation II:
-           Vlasov–Maxwell system (2022)
-- Wei, Dongyi, Yang, Shiwu, On the 3D Relativistic Vlasov–Maxwell System
-           with Large Maxwell Field (2021)
+- Rein, Gerhard, Generic global solutions of the relativistic Vlasov-Maxwell system of plasma physics (1990)
+- Schaeffer, Jack, A small data theorem for collisionless plasma that includes high velocity particles (2004)
+- Sospedra-Alfonso, Reinel, Illner, Reinhard, Classical solvability of the relativistic Vlasov–Maxwell system with bounded spatial density (2010)
+- Wang, Xuecheng, Large Data Global Solution of the 3D RVM System with Cylindrical Symmetry I: Iterative Smoothing Scheme (2026)
+- Wang, Xuecheng, Large Data Global Solution of the 3D RVM System with Cylindrical Symmetry II: Pointwise Estimates (2026)
+- Wang, Xuecheng, Propagation of regularity and long time behavior of the 3D massive relativistic transport equation II: Vlasov–Maxwell system (2022)
+- Wei, Dongyi, Yang, Shiwu, On the 3D Relativistic Vlasov–Maxwell System with Large Maxwell Field (2021)
 - Wollman, Stephen, An existence and uniqueness theorem for the Vlasov–Maxwell system (1984)

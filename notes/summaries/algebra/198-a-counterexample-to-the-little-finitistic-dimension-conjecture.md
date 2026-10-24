@@ -74,7 +74,7 @@ The bar splitting is the transfer. states it: "For a \(D\)-module \(N\) inflated
 
 The bar splitting proposition is stated over the square-zero algebra. states it: "Let \(D\) be a finite-dimensional \(k\)-algebra, let \(X\) be a finite-dimensional \(D\)-bimodule, and let \(A=D\ltimes X\) be the algebra with multiplication \[ (d,x)(d',x')=(dd',dx'+xd'). \] Let \(N\) be a left \(D\)-module, inflated to \(A\) through the projection \(A\to D\), and put \(F=X\otL_D-\). In the derived category of left \(D\)-modules there is an [S9:21–29]"
 
-The transfer gives the bounds. gives them: "Eventual vanishing of \(F^rN\) yields finite projective dimension, while a nonzero \(r\)th iterate forces projective dimension at least \(r\). For \(N_m=M(Y_m)\), the two-step simulation of selection gives \(F^2mN_m\simeq0\) and \(F^{2m-2}N_m\not\simeq0\). These yield the finiteness and lower bound in  , respectively. [S4:193–197]"
+The transfer gives the bounds. gives them: "Eventual vanishing of \(F^rN\) yields finite projective dimension, while a nonzero \(r\)th iterate forces projective dimension at least \(r\). For \(N_m=M(Y_m)\), the two-step simulation of selection gives \(F^2mN_m\simeq0\) and \(F^2m-2N_m\not\simeq0\). These yield the finiteness and lower bound in  , respectively. [S4:193–197]"
 
 The fixed data are assembled once. assembles them: "Work over \(k=\C\). Fix the algebra \(R\), its central idempotent \(e\), the automorphism \(\alpha\), and the selection functor \(H\) supplied by  . Apply   to these fixed data, obtaining \(B\) and \(P\) satisfying  . Choose the support interval \([a_*,b_*]\) once, and construct \(C,W,O,D,X\) as in  . [S9:254–263]"
 

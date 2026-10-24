@@ -194,7 +194,7 @@ claims exist and names their declarations; the five comparator configs carry
 - W. Arveson, Subalgebras of $C^*$-algebras II, _Acta Math._ **128** (1972), 271–308.
 - C. Badea, M. Crouzeix, and B. Delyon, Convex domains and $K$-spectral sets, _Math. Z._ **252** (2006), 345–365. doi:10.1007/s00209-005-0857-y.
 - C. Badea, M. Crouzeix, and B. Delyon, Convex domains and $K$-spectral sets, _Math. Z._ **252** (2006), 345–365.
-- B. Beckermann, Image num{é}rique, GMRES et polyn{\^o}mes de Faber, _C. R. Math._ **340** (2005), 855–860. doi:10.1016/j.crma.2005.04.027.
+- B. Beckermann, Image numérique, GMRES et polyn{\^o}mes de Faber, _C. R. Math._ **340** (2005), 855–860. doi:10.1016/j.crma.2005.04.027.
 - B. Beckermann, Image numérique, GMRES et polyn\^omes de Faber, _C. R. Math._ **340** (2005), 855–860.
 - B. Beckermann and M. Crouzeix, Faber polynomials of matrices for non-convex sets, _Jaen J. Approx._ **6** (2014), 219–231. arXiv:1310.1356v1.
 - M. Crouzeix, Bounds for analytical functions of matrices, _Integral Equations Operator Theory_ **48** (2004), 461–477. doi:10.1007/s00020-002-1188-6.
@@ -205,11 +205,10 @@ claims exist and names their declarations; the five comparator configs carry
 - B. Delyon and F. Delyon, Generalization of von Neumann's spectral sets and integral representation of operators, _Bull. Soc. Math. France_ **127** (1999), 25–41. doi:10.24033/bsmf.2340.
 - B. Delyon and F. Delyon, Generalization of von Neumann's spectral sets and integral representation of operators, _Bull. Soc. Math. France_ **127** (1999), 25–41.
 - M. Crouzeix and A. Greenbaum, _A new proof that the numerical range is a complete $2$-spectral set for weighted shift matrices_, arXiv:2508.12768v1, August 18, 2025.
-- P. \AA hag, R. Czy{\.z}, and J. Virtanen, _The complete Crouzeix conjecture in dimension three and the Clou\^atre–Ostermann–Ransford conjecture_, arXiv:2608.27346v4, September 21, 2026.
-- P. \AA hag, R. Czy{\.z}, and J. Virtanen, _The complete Crouzeix conjecture in dimension three and the Clou\^atre–Ostermann–Ransford conjecture_, arXiv:2608.27346v4, September 21, 2026.
+- P. Å hag, R. Czy{\.z}, and J. Virtanen, _The complete Crouzeix conjecture in dimension three and the Clou\^atre–Ostermann–Ransford conjecture_, arXiv:2608.27346v4, September 21, 2026.
+- P. Å hag, R. Czy{\.z}, and J. Virtanen, _The complete Crouzeix conjecture in dimension three and the Clou\^atre–Ostermann–Ransford conjecture_, arXiv:2608.27346v4, September 21, 2026.
 - F. Hausdorff, Der Wertvorrat einer Bilinearform, _Math. Z._ **3** (1919), 314–316. doi:10.1007/BF01292610.
 - F. Hausdorff, Der Wertvorrat einer Bilinearform, _Math. Z._ **3** (1919), 314–316.
-- M. S. Brodski\u\i, Unitary operator colligations and their characteristic functions, _Russian Math. Surveys_ **33**:4 (1978), 159–191.
 - S. Jin, _The numerical range is a $2$-spectral set_, Preprints.org 202607.1919, version 4, August 7, 2026.
 - S. Jin, _The numerical range is a $2$-spectral set_, Preprints.org 202607.1919, version 4, August 7, 2026.
 - V. E. Katsnelson, A. Ya. Kheifets, and P. M. Yuditskii, An abstract interpolation problem and the extension theory of isometric operators, in _Topics in Interpolation Theory_, OTAA **95**, Birkhäuser, 1997, 283–298. Preprint version: arXiv:0706.1896v1.
@@ -231,5 +230,6 @@ claims exist and names their declarations; the five comparator configs carry
 - B. Beckermann and N. Stylianopoulos, _Bergman Orthogonal Polynomials and the Grunsky Matrix_, Constr. Approx. **47** (2018), 211–235. doi:10.1007/s00365-017-9381-7.
 - B. Beckermann and N. Stylianopoulos, Bergman Orthogonal Polynomials and the Grunsky Matrix, _Constr. Approx._ **47** (2018), 211–235.
 - B. Sz.-Nagy, Sur les contractions de l'espace de Hilbert, _Acta Sci. Math. (Szeged)_ **15** (1953), 87–92.
-- O. Toeplitz, Das algebraische Analogon zu einem Satze von Fej{é}r, _Math. Z._ **2** (1918), 187–197. doi:10.1007/BF01212904.
+- O. Toeplitz, Das algebraische Analogon zu einem Satze von Fejér, _Math. Z._ **2** (1918), 187–197. doi:10.1007/BF01212904.
 - O. Toeplitz, Das algebraische Analogon zu einem Satze von Fejér, _Math. Z._ **2** (1918), 187–197.
+- M. S. Brodski\uı, Unitary operator colligations and their characteristic functions, _Russian Math. Surveys_ **33**:4 (1978), 159–191.

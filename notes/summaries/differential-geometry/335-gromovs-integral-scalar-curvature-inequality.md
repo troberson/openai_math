@@ -15,7 +15,7 @@ companion manuscripts. The first proves the integral bound
 For every dimension \(n\ge3\), there is a constant \(a_n>0\), depending
 only on \(n\), such that
 \[
-  \int_M(\Scal_g^-)^{n/2}\,dV_g\ge a_n\|M\|
+  \int_M(\Scal_g^-)^n/2\,dV_g\ge a_n\|M\|
 \]
 for every closed connected oriented smooth \(n\)-manifold \(M\) and every
 smooth Riemannian metric \(g\). Here
@@ -215,7 +215,7 @@ bibliography. No non-LaTeX evidence.
 - Hatcher, Allen, Algebraic Topology (2002)
 - N. V. Ivanov, _Notes on the bounded cohomology theory_, preprint, 2017, revised December 2020. arXiv:1708.05150v3.
 - A. S. Kechris, _Classical Descriptive Set Theory_, Graduate Texts in Mathematics **156**, Springer, New York, 1995. doi:10.1007/978-1-4612-4190-4.
-- O. Chodosh and C. Li, _Generalized soap bubbles and the topology of manifolds with positive scalar curvature_, Annals of Mathematics (2) **199** (2024), no. 2, 707–740. doi:10.4007/\allowbreak annals.2024.199.2.3.
+- O. Chodosh and C. Li, _Generalized soap bubbles and the topology of manifolds with positive scalar curvature_, Annals of Mathematics (2) **199** (2024), no. 2, 707–740. doi:10.4007/ annals.2024.199.2.3.
 - Q. Ma, J. Wang, Z. Xie, G. Yu, and B. Zhu, _Gromov's simplicial volume vanishing conjecture for positive scalar curvature_, preprint, 2026. arXiv:2606.29135v4.
 - Ma, Qiaochu, Wang, Jinmin, Xie, Zhizhang, Yu, Guoliang, Zhu, Bo, Gromov's simplicial volume vanishing conjecture for positive scalar curvature (2026)
 - F. Maggi, _Sets of Finite Perimeter and Geometric Variational Problems: An Introduction to Geometric Measure Theory_, Cambridge Studies in Advanced Mathematics **135**, Cambridge University Press, Cambridge, 2012. doi:10.1017/CBO9781139108133.
@@ -234,7 +234,7 @@ bibliography. No non-LaTeX evidence.
 - Schoen, Richard, Yau, Shing-Tung, On the structure of manifolds with positive scalar curvature (1979)
 - Schoen, Richard, Yau, Shing-Tung, Existence of incompressible minimal surfaces and the topology of three dimensional manifolds with non-negative scalar curvature (1979)
 - Schoen, Richard, Yau, Shing-Tung, Proof of the positive mass theorem. II (1981)
-- Thom, Ren{é}, Quelques propri{é}t{é}s globales des vari{é}t{é}s diff{é}rentiables (1954)
+- Thom, René, Quelques propriétés globales des variétés différentiables (1954)
 - Topping, Peter, Lectures on the Ricci Flow (2006)
 - D. Gilbarg and N. S. Trudinger, _Elliptic Partial Differential Equations of Second Order_, second edition, Classics in Mathematics, Springer, Berlin, 2001. doi:10.1007/978-3-642-61798-0.
 - N. S. Trudinger, _Remarks concerning the conformal deformation of Riemannian structures on compact manifolds_, Annali della Scuola Normale Superiore di Pisa, Classe di Scienze (3) **22** (1968), no. 2, 265–274. Numdam: ASNSP\_1968\_3\_22\_2\_265\_0.

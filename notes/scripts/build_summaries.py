@@ -129,13 +129,47 @@ def _bib_surname(raw: str) -> str:
     return words[-1].lower() if words else ""
 
 
+def _bib_pre_clean(t: str) -> str:
+    """Bibliography-only LaTeX cruft, stripped before the normalizer runs.
+
+    The normalizer is the quote path and must see quote windows untouched, so the
+    bibliography's own formatting commands are peeled off here, before
+    `normalize_window`. Two shapes need pre-normalization because
+    `split_regions` would break them apart: a `\\href{url}{text}` whose title
+    carries a `$` (the `$` splits the group, `_href` cannot match across the
+    region break), and `\\(X\\)` inline math the region splitter does not read.
+    Diacritic accents are NOT handled here — they run in `fold_accents`, the
+    shared rule, so a name folds identically in a quote and in a bibliography.
+    """
+    # \href{url}{text} -> text (before the normalizer: a $ in the title would split the group)
+    t = re.sub(r"\\href\s*\{[^}]*\}\s*\{([^}]*)\}", r"\1", t)
+    # inline math \( ... \) -> $ ... $ so the region splitter sees it as a math span
+    t = re.sub(r"\\\(", "$", t)
+    t = re.sub(r"\\\)", "$", t)
+    # \doi{10.x} -> doi:10.x
+    t = re.sub(r"\\doi\s*\{([^}]*)\}", r"doi:\1", t)
+    # \newblock (the entry separator) -> space
+    t = re.sub(r"\\newblock\s*", " ", t)
+    # \penalty<n> / \allowbreak / page-layout commands -> drop
+    t = re.sub(r"\\penalty\s*-?\d*", " ", t)
+    t = re.sub(r"\\allowbreak", " ", t)
+    t = re.sub(r"\\(?:begingroup|endgroup|par|raggedright|newline|baselineskip|ldots)\b", " ", t)
+    t = re.sub(r"\\enlargethispage\s*\{[^}]*\}", " ", t)
+    # \texttt{X} / \mbox{X} -> X
+    t = re.sub(r"\\(?:texttt|mbox)\s*\{([^}]*)\}", r"\1", t)
+    # \em / \emph emphasis toggle -> strip (journal names render as plain prose)
+    t = re.sub(r"\\em(?![a-zA-Z])", " ", t)
+    return re.sub(r"\s+", " ", t).strip()
+
+
 def _render_bibliography(sources: list[tuple[str, str, str]]) -> str:
     """Build the Bibliography section: one sorted list, full entries, normalized.
 
     All bibliography sources (deduped by path) are parsed, their entries combined
-    into a single list sorted by first-author surname, and each entry routed
-    through the normalizer so LaTeX → markdown/UTF-8 (one code path with quotes).
-    Returns "" if no bibliography source is declared.
+    into a single list sorted by first-author surname, each entry's bib-specific
+    cruft stripped by `_bib_pre_clean`, and the result routed through the normalizer
+    so LaTeX → markdown/UTF-8 (one code path with quotes). Returns "" if no
+    bibliography source is declared.
     """
     seen: set[str] = set()
     raw: list[str] = []
@@ -157,7 +191,7 @@ def _render_bibliography(sources: list[tuple[str, str, str]]) -> str:
         return ""
 
     raw.sort(key=_bib_surname)
-    return "\n".join(f"- {normalizer.normalize_window(t, '')}" for t in raw)
+    return "\n".join(f"- {normalizer.normalize_window(_bib_pre_clean(t), '')}" for t in raw)
 
 
 PREAMBLES: dict[str, str] = {}

@@ -242,7 +242,11 @@ def normalize_prose(span: str, table: dict[str, tuple[int, str]], depth: int = 0
     """One prose span: manuscript macros expanded, then the fixed markup transforms, accents folded."""
     s = expand_macros(span, table, depth)
     s = _prose_markup(s)
-    return fold_accents(s)
+    s = fold_accents(s)
+    # Post-fold: grouping braces that wrap now-plaintext ({{\L}ojasiewicz} → {Łojasiewicz}).
+    # The pre-fold _strip_plain_braces sees the backslash and leaves the group; after the
+    # fold the content is plain Unicode and the braces are inert.
+    return re.sub(r"\{([^\{}\\$]+)\}", r"\1", s)
 
 
 def _emphasis_pass(text: str) -> str:

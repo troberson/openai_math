@@ -38,7 +38,7 @@ conjecture for all $n\ge3$
 Suppose $n\ge3$ and every sectional curvature of $g$ is strictly
 negative. Then
 \[
- h_{m_L}(\phi_1)=h_{\mathrmtop}(\phi_1)
+ h_m_L(\phi_1)=h_{\mathrmtop}(\phi_1)
  \quad\Longleftrightarrow\quad
  \nabla^gR_g=0.
 \]

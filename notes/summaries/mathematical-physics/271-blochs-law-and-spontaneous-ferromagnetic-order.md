@@ -137,7 +137,7 @@ The formalized statement is the manuscript's statement in the slot parameter: th
 
 ## History of the conjecture
 
-The magnetization side begins with "Bloch derived the $T^{3/2}$ reduction from long-wavelength spin waves [S4:87]" in 1930, followed by the Holstein–Primakoff bosonic representation and Dyson's interaction expansion [S4:87–90]. Dyson's own numbers are the historical benchmark that manuscript B is calibrated against: in his expansion "the terms of orders \(T^{5/2}\) and \(T^{7/2}\) in the magnetization already arise from the lattice dispersion of independent magnons [S15:73–74]" and "the leading interaction contribution is of order \(T^4\) [S15:75–76]" [S15:73–76], and manuscript A records the limit of what Dyson claimed: "his estimates of the remaining higher-order terms were not a rigorous fixed-spin proof of the asymptotic law [S4:92–93]" . Effective-field-theory calculations retain the same distinction [S15:78–79].
+The magnetization side begins with "Bloch derived the $T^{3/2}$ reduction from long-wavelength spin waves [S4:87]" in 1930, followed by the Holstein–Primakoff bosonic representation and Dyson's interaction expansion [S4:87–90]. Dyson's own numbers are the historical benchmark that manuscript B is calibrated against: in his expansion "the terms of orders \(T^5/2\) and \(T^7/2\) in the magnetization already arise from the lattice dispersion of independent magnons [S15:73–74]" and "the leading interaction contribution is of order \(T^4\) [S15:75–76]" [S15:73–76], and manuscript A records the limit of what Dyson claimed: "his estimates of the remaining higher-order terms were not a rigorous fixed-spin proof of the asymptotic law [S4:92–93]" . Effective-field-theory calculations retain the same distinction [S15:78–79].
 
 The rigorous thermodynamic line is a separate sequence: "The free energy has a different rigorous history. [S4:116]" Conlon and Solovej, then Tóth via a random-stirring representation, gave free-energy bounds, and Correggi, Giuliani, and Seiringer proved the leading spin-wave free-energy asymptotic on ℤ^3 at every fixed spin [S4:116–120] [S15:85–91]. Benedikter's interaction correction sits in a different regime, "Benedikter obtained an interaction correction as a free-energy upper bound in the different regime \(S\to\infty\) with \(\beta S\) fixed [S15:92–94]" , and Klippel's 2026 result is the two-dimensional free-energy analogue: "the present result constructs an ordered state at a fixed positive temperature in $d\ge3$ [S44:144–145]" .
 
@@ -247,24 +247,24 @@ The reasoning trace is the September-24 paper's trace and ships as a PDF only, w
 - J. Nash. Continuity of solutions of parabolic and elliptic equations. _American Journal of Mathematics_ **80** (1958), 931–954. doi:10.2307/2372841.
 - J. Nash. Continuity of solutions of parabolic and elliptic equations. _American Journal of Mathematics_ **80** (1958), 931–954. doi:10.2307/2372841.
 - N. D. Mermin and H. Wagner. Absence of ferromagnetism or antiferromagnetism in one- or two-dimensional isotropic Heisenberg models. _Physical Review Letters_ **17** (1966), 1133–1136; erratum, **17** (1966), 1307. doi:10.1103/PhysRevLett.17.1133.
-- J. G. Conlon and J. P. Solovej. Upper bound on the free energy of the spin \(1/2\) Heisenberg ferromagnet. _Letters in Mathematical Physics_ **23** (1991), 223–231. doi:10.1007/BF01885500.
-- J. G. Conlon and J. P. Solovej. Upper bound on the free energy of the spin \(1/2\) Heisenberg ferromagnet. _Letters in Mathematical Physics_ **23** (1991), 223–231. doi:10.1007/BF01885500.
-- B. Tóth. Improved lower bound on the thermodynamic pressure of the spin \(1/2\) Heisenberg ferromagnet. _Letters in Mathematical Physics_ **28** (1993), 75–84. doi:10.1007/BF00739568.
-- B. Tóth. Improved lower bound on the thermodynamic pressure of the spin \(1/2\) Heisenberg ferromagnet. _Letters in Mathematical Physics_ **28** (1993), 75–84. doi:10.1007/BF00739568.
+- J. G. Conlon and J. P. Solovej. Upper bound on the free energy of the spin $1/2$ Heisenberg ferromagnet. _Letters in Mathematical Physics_ **23** (1991), 223–231. doi:10.1007/BF01885500.
+- J. G. Conlon and J. P. Solovej. Upper bound on the free energy of the spin $1/2$ Heisenberg ferromagnet. _Letters in Mathematical Physics_ **23** (1991), 223–231. doi:10.1007/BF01885500.
+- B. Tóth. Improved lower bound on the thermodynamic pressure of the spin $1/2$ Heisenberg ferromagnet. _Letters in Mathematical Physics_ **28** (1993), 75–84. doi:10.1007/BF00739568.
+- B. Tóth. Improved lower bound on the thermodynamic pressure of the spin $1/2$ Heisenberg ferromagnet. _Letters in Mathematical Physics_ **28** (1993), 75–84. doi:10.1007/BF00739568.
 - A. Gaudilli\`ere and C. Landim. A Dirichlet principle for non reversible Markov chains and some recurrence theorems. _Probability Theory and Related Fields_ **158** (2014), 55–89. doi:10.1007/s00440-012-0477-5. Author preprint: arXiv:1111.2445v1.
 - C. P. Hofmann. Cubic ideal ferromagnets at low temperature and weak magnetic field. _Physica B: Condensed Matter_ **510** (2017), 117–126. doi:10.1016/j.physb.2017.01.019.
-- J. E. Björnberg and K. Ryan. Exponential decay in \(\mathcal O(n)\)-invariant quantum spin systems. _Annales Henri Poincaré_ (2026), published online March 25, 2026. doi:10.1007/s00023-026-01690-3.
+- J. E. Björnberg and K. Ryan. Exponential decay in $\mathcal O(n)$-invariant quantum spin systems. _Annales Henri Poincaré_ (2026), published online March 25, 2026. doi:10.1007/s00023-026-01690-3.
 - B. Nachtergaele. Quasi-state decompositions for quantum spin systems. In B. Grigelionis et al. (eds.), _Probability Theory and Mathematical Statistics_, Proceedings of the Sixth Vilnius Conference, VSP/TEV, Utrecht–Tokyo–Vilnius, 1994, pp. 565–590. arXiv:cond-mat/9312012.
 - B. Nachtergaele. Quasi-state decompositions for quantum spin systems. In B. Grigelionis et al. (eds.), _Probability Theory and Mathematical Statistics_, Proceedings of the Sixth Vilnius Conference, VSP/TEV, Utrecht–Tokyo–Vilnius, 1994, pp. 565–590. arXiv:cond-mat/9312012v2.
 - Alon, Gil, Kozma, Gady, The Probability of Long Cycles in Interchange Processes (2013)
 - Asano, Taro, Theorems on the Partition Functions of the Heisenberg Ferromagnets (1970)
 - Bloch, Felix, Zur Theorie des Ferromagnetismus (1930)
 - J. Borcea, P. Brändén, and T. M. Liggett. Negative dependence and the geometry of polynomials. _Journal of the American Mathematical Society_ **22** (2009), 521–567. doi:10.1090/S0894-0347-08-00618-8.
-- Borcea, Julius, Br{ä}nd{é}n, Petter, Liggett, Thomas M., Negative Dependence and the Geometry of Polynomials (2009)
-- Borcea, Julius, Br{ä}nd{é}n, Petter, Liggett, Thomas M., Negative Dependence and the Geometry of Polynomials (2009)
+- Borcea, Julius, Brändén, Petter, Liggett, Thomas M., Negative Dependence and the Geometry of Polynomials (2009)
+- Borcea, Julius, Brändén, Petter, Liggett, Thomas M., Negative Dependence and the Geometry of Polynomials (2009)
 - Conlon, Joseph G., Solovej, Jan Philip, Random walk representations of the Heisenberg model (1991)
 - Conlon, Joseph G., Solovej, Jan Philip, Random walk representations of the Heisenberg model (1991)
-- Conlon, Joseph G., Solovej, Jan Philip, Upper bound on the free energy of the spin {1/2} Heisenberg ferromagnet (1991)
+- Conlon, Joseph G., Solovej, Jan Philip, Upper bound on the free energy of the spin 1/2 Heisenberg ferromagnet (1991)
 - M. Correggi, A. Giuliani, and R. Seiringer. Validity of the spin-wave approximation for the free energy of the Heisenberg ferromagnet. _Communications in Mathematical Physics_ **339** (2015), 279–307. doi:10.1007/s00220-015-2402-0.
 - M. Correggi, A. Giuliani, and R. Seiringer. Validity of the spin-wave approximation for the free energy of the Heisenberg ferromagnet. _Communications in Mathematical Physics_ **339** (2015), 279–307. doi:10.1007/s00220-015-2402-0.
 - Correggi, Michele, Giuliani, Alessandro, Seiringer, Robert, Validity of the Spin-Wave Approximation for the Free Energy of the Heisenberg Ferromagnet (2015)
@@ -284,19 +284,19 @@ The reasoning trace is the September-24 paper's trace and ships as a PDF only, w
 - Griffiths, Robert B., Spontaneous Magnetization in Idealized Ferromagnets (1966)
 - Haag, Rudolf, Hugenholtz, N. M., Winnink, Marinus, On the equilibrium states in quantum statistical mechanics (1967)
 - Heisenberg, Werner, Zur Theorie des Ferromagnetismus (1928)
-- Fr{ö}hlich, J{ü}rg, Simon, Barry, Spencer, Thomas, Infrared Bounds, Phase Transitions and Continuous Symmetry Breaking (1976)
-- Fr{ö}hlich, J{ü}rg, Simon, Barry, Spencer, Thomas, Infrared Bounds, Phase Transitions and Continuous Symmetry Breaking (1976)
+- Fröhlich, Jürg, Simon, Barry, Spencer, Thomas, Infrared Bounds, Phase Transitions and Continuous Symmetry Breaking (1976)
+- Fröhlich, Jürg, Simon, Barry, Spencer, Thomas, Infrared Bounds, Phase Transitions and Continuous Symmetry Breaking (1976)
 - Kastler, Daniel, Robinson, Derek W., Invariant States in Statistical Mechanics (1966)
-- Kennedy, Tom, Lieb, Elliott H., Shastry, B. Sriram, Existence of {N{é}el} Order in Some Spin-$1/2$ Heisenberg Antiferromagnets (1988)
+- Kennedy, Tom, Lieb, Elliott H., Shastry, B. Sriram, Existence of {Néel} Order in Some Spin-$1/2$ Heisenberg Antiferromagnets (1988)
 - Klippel, Andreas, Free-Energy Asymptotics of the Two-Dimensional Quantum Heisenberg Ferromagnet (2026)
 - Lanford, III, Oscar E., Robinson, Derek W., Mean Entropy of States in Quantum-Statistical Mechanics (1968)
 - Lanford, III, Oscar E., Robinson, Derek W., Statistical Mechanics of Quantum Spin Systems. III (1968)
-- Last, G{ü}nter, Penrose, Mathew, Lectures on the Poisson Process (2017)
+- Last, Günter, Penrose, Mathew, Lectures on the Poisson Process (2017)
 - Lieb, Elliott H., Long Range Order for the Quantum Heisenberg Model (1999)
 - Lieb, Elliott H., Robinson, Derek W., The Finite Group Velocity of Quantum Spin Systems (1972)
 - Liggett, Thomas M., Distributional Limits for the Symmetric Exclusion Process (2009)
 - Matsubara, Takeo, Matsuda, Hirotsugu, A Lattice Model of Liquid Helium, I (1956)
-- Mecke, Josef, Station{ä}re zuf{ä}llige Ma{\ss}e auf lokalkompakten Abelschen Gruppen (1967)
+- Mecke, Josef, Stationäre zufällige Maße auf lokalkompakten Abelschen Gruppen (1967)
 - Mermin, N. D., Wagner, H., Absence of Ferromagnetism or Antiferromagnetism in One- or Two-Dimensional Isotropic Heisenberg Models (1966)
 - Mermin, N. D., Wagner, H., Absence of Ferromagnetism or Antiferromagnetism in One- or Two-Dimensional Isotropic Heisenberg Models (1966)
 - Nachtergaele, Bruno, Quasi-state decompositions for quantum spin systems (1994)
@@ -308,26 +308,26 @@ The reasoning trace is the September-24 paper's trace and ships as a PDF only, w
 - OpenAI. _Bloch's Law for Finite-Range Heisenberg Ferromagnets in Three Dimensions_. OpenAI Math Release preprint OAI:Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026, 2026.
 - OpenAI. _Spontaneous magnetization in the quantum Heisenberg ferromagnet_. OpenAI Math Release preprint OAI:Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026, 2026.
 - OpenAI. _Spontaneous magnetization in the quantum Heisenberg ferromagnet_. OpenAI Math Release preprint OAI:Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026, 2026.
-- OpenAI, {Bloch's Law for Finite-Range Heisenberg Ferromagnets in Three Dimensions} (2026)
+- OpenAI, Bloch's Law for Finite-Range Heisenberg Ferromagnets in Three Dimensions (2026)
 - OpenAI, Spontaneous magnetization in the quantum Heisenberg ferromagnet (2026)
 - Paley, R. E. A. C., Zygmund, Antoni, On Some Series of Functions, (3) (1932)
 - E. H. Lieb. Long range order for the quantum Heisenberg model. _Open Problems in Mathematical Physics_, contribution dated January 27, 1999, Problem A. Author's problem statement.
-- N. Benedikter. Interaction corrections to spin-wave theory in the large-\(S\) limit of the quantum Heisenberg ferromagnet. _Mathematical Physics, Analysis and Geometry_ **20** (2017), article 5. doi:10.1007/s11040-016-9237-6.
+- N. Benedikter. Interaction corrections to spin-wave theory in the large-$S$ limit of the quantum Heisenberg ferromagnet. _Mathematical Physics, Analysis and Geometry_ **20** (2017), article 5. doi:10.1007/s11040-016-9237-6.
 - Powers, Robert T., Heisenberg Model and a Random Walk on the Permutation Group (1976)
 - Powers, Robert T., Heisenberg Model and a Random Walk on the Permutation Group (1976)
-- Tim{á}r, {Á}d{á}m, Boundary-connectivity via graph theory (2013)
-- Tim{á}r, {Á}d{á}m, Boundary-connectivity via graph theory (2013)
-- Bj{ö}rnberg, Jakob E., Fr{ö}hlich, J{ü}rg, Ueltschi, Daniel, Quantum Spins and Random Loops on the Complete Graph (2020)
-- Bj{ö}rnberg, Jakob E., Fr{ö}hlich, J{ü}rg, Ueltschi, Daniel, Quantum Spins and Random Loops on the Complete Graph (2020)
+- Timár, Ádám, Boundary-connectivity via graph theory (2013)
+- Timár, Ádám, Boundary-connectivity via graph theory (2013)
+- Björnberg, Jakob E., Fröhlich, Jürg, Ueltschi, Daniel, Quantum Spins and Random Loops on the Complete Graph (2020)
+- Björnberg, Jakob E., Fröhlich, Jürg, Ueltschi, Daniel, Quantum Spins and Random Loops on the Complete Graph (2020)
 - Ruelle, David, Extension of the Lee–Yang Circle Theorem (1971)
 - Ruelle, David, Some Remarks on the Location of Zeroes of the Partition Function for Lattice Systems (1973)
 - Seiringer, Robert, The Heisenberg Ferromagnet: A Dilute Bose Gas in Disguise (2025)
-- Derezi{ń}ski, Micha{\l}, Liang, Feynman, Mahoney, Michael W., Exact Expressions for Double Descent and Implicit Regularization via Surrogate Random Design (2020)
+- Dereziński, Michał, Liang, Feynman, Mahoney, Michael W., Exact Expressions for Double Descent and Implicit Regularization via Surrogate Random Design (2020)
 - Suzuki, Masuo, Fisher, Michael E., Zeros of the Partition Function for the Heisenberg, Ferroelectric, and General Ising Models (1971)
 - R. Seiringer. The Heisenberg ferromagnet: a dilute Bose gas in disguise. In _Mini-Workshop: New Directions in Correlated Quantum Systems_, _Oberwolfach Reports_ **22** (2025), 357–358. doi:10.4171/OWR/2025/7.
 - Sznitman, Alain-Sol, Decoupling Inequalities and Interlacement Percolation on $G\times\mathbb Z$ (2012)
-- T{ó}th, B{á}lint, Improved Lower Bound on the Thermodynamic Pressure of the Spin $1/2$ Heisenberg Ferromagnet (1993)
-- T{ó}th, B{á}lint, Improved Lower Bound on the Thermodynamic Pressure of the Spin $1/2$ Heisenberg Ferromagnet (1993)
+- Tóth, Bálint, Improved Lower Bound on the Thermodynamic Pressure of the Spin $1/2$ Heisenberg Ferromagnet (1993)
+- Tóth, Bálint, Improved Lower Bound on the Thermodynamic Pressure of the Spin $1/2$ Heisenberg Ferromagnet (1993)
 - Thompson, Colin J., Inequality with Applications in Statistical Mechanics (1965)
 - Trotter, Hale F., On the Product of Semi-Groups of Operators (1959)
 - Ueltschi, Daniel, Universal behaviour of 3D loop soup models (2017)

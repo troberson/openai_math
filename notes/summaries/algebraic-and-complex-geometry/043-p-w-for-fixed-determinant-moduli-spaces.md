@@ -25,7 +25,7 @@ The theorem
 > For every smooth projective complex curve $C$ of genus $g\ge2$, every composite integer $n\ge4$, every integer $d$ with $\gcd(n,d)=1$, and every $L\in\Pic^d(C)$, one has
 \[
 P_kH^m(X^B,\Q)=W_2kH^m(X^B,\Q)
-=W_{2k+1}H^m(X^B,\Q)
+=W_2k+1H^m(X^B,\Q)
 \]
 for all $m,k\ge0$. [S5:39–46]
 

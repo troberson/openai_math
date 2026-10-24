@@ -86,7 +86,7 @@ The slope normalization is defined. defines it: "For a nonzero torsion-free shea
 
 The two analytic steps are stated. states them: "First, elementary modifications of $\mathcal E$ along $X$ arrange that the slopes of the Harder–Narasimhan factors of $P$ lie in an interval of length at most one. These modifications preserve the bundle away from $X$. Second, that bundle comes from an $A$-free module. Comparing the pushforward of $\mathcal E$ with a trivial sheaf on the blowup of $\Spec A$ gives, for $F=f_*P$ of rank $N$, the inequality $2N\ch_2(F)\geq c_1(F)^2$, with Chern characters evaluated on $\mathbb P^2$. [S3:185–191]"
 
-The surface-theory comparison is stated. states it: "Bogomolov's inequality for the semistable factors bounds the same normalized Chern expression above. More precisely, if $r=\rk P$, then $N=rh$ and the two comparisons give \[ 0\leq \frac{2\ch_2(f_*P)}N -\left(\frac{c_1(f_*P)}N\right)^2 \leq\frac12-\frac{K_X^2-2c_2(X)}{12H^2}. \] This yields  . Neither $P$ nor $f_*P$ is assumed semistable or Ulrich. [S3:192–201]"
+The surface-theory comparison is stated. states it: "Bogomolov's inequality for the semistable factors bounds the same normalized Chern expression above. More precisely, if $r=\rk P$, then $N=rh$ and the two comparisons give \[ 0\leq \frac{2\ch_2(f_*P)}N -\left(\fracc_1(f_*P)N\right)^2 \leq\frac12-\fracK_X^2-2c_2(X)12H^2. \] This yields  . Neither $P$ nor $f_*P$ is assumed semistable or Ulrich. [S3:192–201]"
 
 The organization is recorded. records it: "Section   constructs the resolution and extends an arbitrary module. Section   proves the slope modification lemma. Section   establishes the Chern-character inequality, and Section   combines it with surface theory. Finally, Section   constructs a surface with $K_X^2-2c_2(X)>6H^2$. [S3:203–208]"
 
@@ -130,7 +130,7 @@ The counterexample is instantiated. instantiates it: "Take the surface and polar
 
 The deduction is stated. states it: "The ring $R(X,H)$ is a complete Noetherian normal local domain of dimension three, with residue field $\mathbb C$, by Section  . If it had a nonzero finite module of depth three, Theorem   would give the opposite numerical inequality. Thus it has no such module. [S3:639–643]"
 
-The affine-local corollary is given. gives it: "Let $X$ and $H$ be the surface and polarization constructed in Proposition   for $n=7$, and put \[ T=T(X,H),\qquad \mathfrak n=T_{>0}. \] Then $T$ is a finitely generated graded three-dimensional $\mathbb C$-domain, $\mathfrak n$ is maximal with $T/\mathfrak n=\mathbb C$, and the three-dimensional local domain $T_{\mathfrak n}$ has no nonzero finitely generated maximal Cohen–Macaulay module. [S3:647–655]"
+The affine-local corollary is given. gives it: "Let $X$ and $H$ be the surface and polarization constructed in Proposition   for $n=7$, and put \[ T=T(X,H),\qquad \mathfrak n=T_>0. \] Then $T$ is a finitely generated graded three-dimensional $\mathbb C$-domain, $\mathfrak n$ is maximal with $T/\mathfrak n=\mathbb C$, and the three-dimensional local domain $T_{\mathfrak n}$ has no nonzero finitely generated maximal Cohen–Macaulay module. [S3:647–655]"
 
 The corollary proof is stated. [S3:670–674] states it: "Suppose that $M$ is a nonzero finite $R_0$-module of depth three, and choose an $M$-regular sequence $z_1,z_2,z_3$ in the maximal ideal of $R_0$. The completion map $R_0\to R$ is faithfully flat, and, since $M$ is finite, its completion satisfies $\widehat M\cong M\otimes_{R_0}R$ [S3:670–673]"
 
@@ -184,8 +184,7 @@ The declaration is `OAI.SmallCM.candidate_ring_properties` at `lean/OAI/Algebrai
 - Hirzebruch, Friedrich, Arrangements of lines and algebraic surfaces (1983)
 - Hochster, Melvin, Homological conjectures and lim Cohen–Macaulay sequences (2017)
 - Hochster, Melvin, Huneke, Craig, Infinite integral extensions and big Cohen–Macaulay algebras (1992)
-- Hochster, Melvin, Yao, Yongwei, Frobenius splitting, strong $F$-regularity, and small
-           Cohen–Macaulay modules (2023)
+- Hochster, Melvin, Yao, Yongwei, Frobenius splitting, strong $F$-regularity, and small Cohen–Macaulay modules (2023)
 - Hochster, Melvin, Topics in the Homological Theory of Modules over Commutative Rings (1975)
 - Hochster, Melvin, Cohen–Macaulay modules (1973)
 - Huybrechts, Daniel, Lehn, Manfred, The Geometry of Moduli Spaces of Sheaves (1997)

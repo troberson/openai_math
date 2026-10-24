@@ -85,7 +85,7 @@ projectors force a later blowdown to remove a whole block. Intersecting
 that rational block with the ambient integral lattice recovers its
 entire integral lattice, so cancellation preserves the exact test
 class. Every nonzero block has a nonzero \((3,1)\) part, so
-\(h^{3,1}(X)=1\) leaves one block in the final transcendental lattice.
+\(h^3,1(X)=1\) leaves one block in the final transcendental lattice.
 Rank \(21\) makes its surface center birational to a
 Picard-number-one K3 surface, and its discriminant fixes the degree
 \(d\). Thus one more member of the class \(\mathcal S\) is added than

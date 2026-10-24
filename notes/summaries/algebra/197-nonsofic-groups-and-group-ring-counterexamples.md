@@ -28,7 +28,7 @@ The characteristic-two manuscript is the one with the full apparatus, and it sep
 
 The prescription section is what makes the counterexample *specified* rather than merely existent, and the manuscript is explicit about the strength of that claim 
 
-> Start with $h=2$. For a fixed $h$, step \textup{(4)} tests only finite sets and a finite graph. Stop at the first successful pair; if every pair fails, increase $h$ by one and repeat. This selects the least successful $h$ and then the first successful pair in its prescribed order. Theorem   guarantees success for every sufficiently large $h$, uniformly in the enumeration of $Q$, so the outer search terminates. The search enumerates the required incidence data directly, not the auxiliary random choices used to prove their existence. The auxiliary extension field in that proof is only a model for a $Q$-vector space; it is not required to embed in $K$. [S11:30]
+> Start with $h=2$. For a fixed $h$, step \textup(4) tests only finite sets and a finite graph. Stop at the first successful pair; if every pair fails, increase $h$ by one and repeat. This selects the least successful $h$ and then the first successful pair in its prescribed order. Theorem   guarantees success for every sufficiently large $h$, uniformly in the enumeration of $Q$, so the outer search terminates. The search enumerates the required incidence data directly, not the auxiliary random choices used to prove their existence. The auxiliary extension field in that proof is only a model for a $Q$-vector space; it is not required to embed in $K$. [S11:30]
 
 What the characteristic-two manuscript does *not* claim matters as much. It uses torsion, and it says so: “No assertion about group algebras of torsion-free groups is needed [S11:64]” . Its own summary of the epistemic status is that “its termination is proved, and the two product assertions have algebraic certificates independent of any decision procedure for the group word problem [S9:18]” . Its nonsoficity conclusion is derived, not constructed: “Therefore this same $G$ is nonsofic. In particular, the construction supplies a finitely presented counterexample to the assertion that every group is sofic [S9:40]” . And its Gottschalk counterexample needs nothing beyond the scalar pair: “It gives a negative resolution of Gottschalk's conjecture for the group in Theorem  ; it requires no further existence theorem or approximation assumption [S9:51]” , with the corollary that “$T_{b_{\mathrm{out}}}:K^G\to K^G$ is injective and not surjective [S12:138]” and “In particular, $G$ is not surjunctive [S12:140]” [S12:138–140]. The manuscript also notes that the dynamical conclusion is characteristic-independent: “Characteristic two is used to construct the algebraic witnesses, not in Proposition [S12:151–152]” [S12:151–154].
 
@@ -123,26 +123,21 @@ Two caveats for anyone citing this family. The construction is specified, not ex
 - Ara, Pere, O'Meara, Kevin C., Perera, Francesc, Stable finiteness of group rings in arbitrary characteristic (2002)
 - Bereznyuk, Vadim Yu., Asphericity of groups defined by graphs (2019)
 - Brown, Kenneth S., Cohomology of Groups (1982)
-- Ceccherini-Silberstein, Tullio, Coornaert, Michel
-           , Phung, Xuan Kien, Stable finiteness of monoid algebras and surjunctivity (2025)
-- Ceccherini-Silberstein, Tullio, Coornaert, Michel
-           , Phung, Xuan Kien, First-order model theory and Kaplansky's stable finiteness
-           conjecture for surjunctive groups (2025)
+- Ceccherini-Silberstein, Tullio, Coornaert, Michel , Phung, Xuan Kien, Stable finiteness of monoid algebras and surjunctivity (2025)
+- Ceccherini-Silberstein, Tullio, Coornaert, Michel , Phung, Xuan Kien, First-order model theory and Kaplansky's stable finiteness conjecture for surjunctive groups (2025)
 - Ceccherini-Silberstein, Tullio, Coornaert, Michel, Linear cellular automata: Garden of Eden Theorem, L-surjunctivity and group rings (2006)
-- Wolfgang L{ü}ck, {$L^2$-Invariants: Theory and Applications to Geometry and $K$-Theory} (2002)
+- Wolfgang Lück, {$L^2$-Invariants: Theory and Applications to Geometry and $K$-Theory} (2002)
 - Warren Dicks, Thomas Schick, The spectral measure of certain elements of the complex group ring of a wreath product (2002)
 - Dinur, Irit, Liu, Siqi, Zhang, Rachel Yun, New codes on high dimensional expanders (2025)
 - Dykema, Ken, Heister, Timo, Juschenko, Kate, Finitely presented groups related to Kaplansky's direct finiteness conjecture (2015)
 - Dykema, Ken, Juschenko, Kate, On stable finiteness of group rings (2015)
 - Dykema, Ken, Juschenko, Kate, On stable finiteness of group rings (2015)
 - Dyn, Nira, Floater, Michael S., Multivariate polynomial interpolation on lower sets (2014)
-- Elek, G{á}bor, Szab{ó}, Endre, Sofic groups and direct finiteness (2004)
-- Elek, G{á}bor, Szab{ó}, Endre, Sofic groups and direct finiteness (2004)
-- G{á}bor Elek, Endre Szab{ó}, Hyperlinearity, essentially free actions and $L^2$-invariants.
-           The sofic property (2005)
+- Elek, Gábor, Szabó, Endre, Sofic groups and direct finiteness (2004)
+- Elek, Gábor, Szabó, Endre, Sofic groups and direct finiteness (2004)
+- Gábor Elek, Endre Szabó, Hyperlinearity, essentially free actions and $L^2$-invariants. The sofic property (2005)
 - Bent Fuglede, Richard V. Kadison, Determinant theory in finite factors (1952)
-- Golowich, Louis, Lin, Ting-Chun, Quantum LDPC codes with transversal non-Clifford gates
-           via products of algebraic codes (2024)
+- Golowich, Louis, Lin, Ting-Chun, Quantum LDPC codes with transversal non-Clifford gates via products of algebraic codes (2024)
 - Gottschalk, Walter, Some general dynamical notions (1973)
 - Gromov, Mikhail, Random walk in random groups (2003)
 - Gromov, Mikhail, Endomorphisms of symbolic algebraic varieties (1999)
@@ -156,16 +151,15 @@ Two caveats for anyone citing this family. The construction is specified, not ex
 - Lipton, Richard J., Tarjan, Robert Endre, A separator theorem for planar graphs (1979)
 - Montgomery, M. Susan, Left and right inverses in group algebras (1969)
 - Montgomery, M. Susan, Left and right inverses in group algebras (1969)
-- Moser, Robin A., Tardos, G{á}bor, A constructive proof of the general {Lov{á}sz Local Lemma} (2009)
+- Moser, Robin A., Tardos, Gábor, A constructive proof of the general {Lovász Local Lemma} (2009)
 - Ollivier, Yann, On a small cancellation theorem of Gromov (2006)
-- OpenAI, {A Torsion-Free Group Algebra with Zero Divisors} (2026)
-- OpenAI, {A Counterexample to Kaplansky's Direct-Finiteness Conjecture in Characteristic Two} (2026)
-- OpenAI, {A Counterexample to the Group-Ring Determinant Conjecture} (2026)
+- OpenAI, A Torsion-Free Group Algebra with Zero Divisors (2026)
+- OpenAI, A Counterexample to Kaplansky's Direct-Finiteness Conjecture in Characteristic Two (2026)
+- OpenAI, A Counterexample to the Group-Ring Determinant Conjecture (2026)
 - OpenAI, {A universal group of type $F_\infty$} (2026)
-- OpenAI, {A Counterexample to Kaplansky's Direct-Finiteness Conjecture in Characteristic Two} (2026)
+- OpenAI, A Counterexample to Kaplansky's Direct-Finiteness Conjecture in Characteristic Two (2026)
 - Phung, Xuan Kien, A geometric generalization of Kaplansky's direct finiteness conjecture (2023)
-- Erd{ő}s, Paul, Lov{á}sz, L{á}szl{ó}, Problems and results on 3-chromatic hypergraphs and some related questions (1975)
+- Erdős, Paul, Lovász, László, Problems and results on 3-chromatic hypergraphs and some related questions (1975)
 - Thomas Schick, $L^2$-determinant class and approximation of $L^2$-Betti numbers (2001)
 - Weiss, Benjamin, Sofic groups and dynamical systems (2000)
-- Xylouris, Triantafyllos, On the least prime in an arithmetic progression and estimates
-           for the zeros of Dirichlet $L$-functions (2011)
+- Xylouris, Triantafyllos, On the least prime in an arithmetic progression and estimates for the zeros of Dirichlet $L$-functions (2011)

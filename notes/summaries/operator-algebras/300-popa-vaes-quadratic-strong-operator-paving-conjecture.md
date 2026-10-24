@@ -63,14 +63,14 @@ Let $A\subseteq M$ be a masa. Suppose that $A$ is countably decomposable and is 
 \[
  \|a\|\le\|x\|,
  \qquad
- \left\|\sum_{i=1}^{r_\varepsilon}p_i x p_i-a\right\|\le\varepsilon\|x\|.
+ \left\|\sum_i=1^{r_\varepsilon}p_i x p_i-a\right\|\le\varepsilon\|x\|.
 \]
 Here $r_\varepsilon$ is the same integer as in Theorem  . [S15:32–39]" The forward transfer of Popa–Vaes converts the so-paving to norm paving in the ultrapower with the same error and partition count [S15:40–43].
 
 **Quadratic approximation paving for expected MASAs.** When the masa is the range of a normal conditional expectation, the approximation-paving partition count improves from $\varepsilon^{-6}$ to $\varepsilon^{-2}$: "**corollary**
 There is a universal constant \(C>0\) such that for every
 \(0<\varepsilon<1\) one can choose an integer
-\(N(\varepsilon)\leq C\varepsilon^{-2}\) with the following property.
+\(N(\varepsilon)\leq C\varepsilon^-2\) with the following property.
 If the MASA \(A\subseteq M\) is the range of a normal conditional expectation,
 then the conclusion of Theorem   holds with [S6:95–101]" in place of $R(\varepsilon)$ [S6:102].
 
@@ -131,7 +131,7 @@ T0: no Lean, no scope note, no comparator challenge, no reasoning trace. Nothing
 
 ## Bibliography
 
-- J. Anderson, _Extensions, restrictions, and representations of states on \(C^*\)-algebras_, Trans. Amer. Math. Soc. **249** (1979), no. 2, 303–329. doi:10.2307/1998793.
+- J. Anderson, _Extensions, restrictions, and representations of states on $C^*$-algebras_, Trans. Amer. Math. Soc. **249** (1979), no. 2, 303–329. doi:10.2307/1998793.
 - H. Araki, _Some properties of modular conjugation operator of von Neumann algebras and a non-commutative Radon–Nikodym theorem with a chain rule_, Pacific J. Math. **50** (1974), no. 2, 309–354. Journal PDF.
 - Huzihiro Araki, _Some properties of modular conjugation operator of von Neumann algebras and a non-commutative Radon–Nikodym theorem with a chain rule_, Pacific Journal of Mathematics **50** (1974), no. 2, 309–354. Published article.
 - G. Boole, _On the comparison of transcendents, with certain applications to the theory of definite integrals_, Philosophical Transactions of the Royal Society of London **147** (1857), 745–803. doi:10.1098/rstl.1857.0037.
@@ -150,10 +150,9 @@ T0: no Lean, no scope note, no comparator challenge, no reasoning trace. Nothing
 - OpenAI, _Quadratic Strong-Operator Paving over Arbitrary Maximal Abelian Subalgebras_, OpenAI Math Release preprint OAI:Quadratic-Strong-Operator-Paving-over-Arbitrary-Maximal-Abelian-Subalgebras-September-25-2026, 2026.
 - OpenAI, _Approximation Paving over Arbitrary Maximal Abelian Subalgebras_, OpenAI Math Release preprint OAI:Approximation-Paving-over-Arbitrary-Maximal-Abelian-Subalgebras-September-25-2026, 2026, Theorem 1.1.
 - A. Poltoratski, B. Simon and M. Zinchenko, _The Hilbert transform of a measure_, 2009, arXiv:0811.0791v2.
-- S. Popa, _A \(\mathrmII_1\) factor approach to the Kadison–Singer problem_, Comm. Math. Phys. **332** (2014), 379–414. doi:10.1007/s00220-014-2055-4; arXiv:1303.1424v3.
+- S. Popa, _A $\mathrm{II}_1$ factor approach to the Kadison–Singer problem_, Comm. Math. Phys. **332** (2014), 379–414. doi:10.1007/s00220-014-2055-4; arXiv:1303.1424v3.
 - Sorin Popa, _A $\mathrm{II}_1$ factor approach to the Kadison–Singer problem_, Communications in Mathematical Physics **332** (2014), 379–414. doi:10.1007/s00220-014-2055-4.
 - Richard V. Kadison and John R. Ringrose, _Fundamentals of the Theory of Operator Algebras_, Vol. II: _Advanced Theory_, Pure and Applied Mathematics **100**, Academic Press, Orlando, FL, 1986. Publisher information.
-- Robert T. Powers and Erling St{\o}rmer, _Free states of the canonical anticommutation relations_, Communications in Mathematical Physics **16** (1970), 1–33. doi:10.1007/BF01645492.
 - P. Roy and G. Samorodnitsky, _Maharam extension for nonsingular group actions_, 2006, arXiv:math/0611891v1.
 - Parthanil Roy and Gennady Samorodnitsky, _Maharam extension for nonsingular group actions_, 2006, arXiv:math/0611891v1.
 - C. A. Akemann and D. Sherman, _Conditional expectations onto maximal abelian $*$-subalgebras_, J. Operator Theory **68** (2012), no. 2, 597–607. Journal PDF.
@@ -161,6 +160,7 @@ T0: no Lean, no scope note, no comparator challenge, no reasoning trace. Nothing
 - R. V. Kadison and I. M. Singer, _Extensions of pure states_, Amer. J. Math. **81** (1959), no. 2, 383–400. doi:10.2307/2372748.
 - M. Ravichandran and N. Srivastava, _Asymptotically optimal multi-paving_, Int. Math. Res. Not. IMRN **2021**, no. 14, 10908–10940. doi:10.1093/imrn/rnz111; arXiv:1706.03737v2 (cited theorem numbering).
 - Mohan Ravichandran and Nikhil Srivastava, _Asymptotically optimal multi-paving_, International Mathematics Research Notices **2021** (2021), no. 14, 10908–10940. doi:10.1093/imrn/rnz111; numbered theorem locators refer to arXiv:1706.03737v2.
+- Robert T. Powers and Erling Størmer, _Free states of the canonical anticommutation relations_, Communications in Mathematical Physics **16** (1970), 1–33. doi:10.1007/BF01645492.
 - M. Takesaki, _Conditional expectations in von Neumann algebras_, J. Funct. Anal. **9** (1972), no. 3, 306–321. doi:10.1016/0022-1236(72)90004-3.
 - Masamichi Takesaki, _Conditional expectations in von Neumann algebras_, Journal of Functional Analysis **9** (1972), no. 3, 306–321. doi:10.1016/0022-1236(72)90004-3.
 - C. Houdayer and Y. Ueda, _Asymptotic structure of free product von Neumann algebras_, Math. Proc. Cambridge Philos. Soc. **161** (2016), no. 3, 489–516. doi:10.1017/S0305004116000396; arXiv:1503.02460v3.

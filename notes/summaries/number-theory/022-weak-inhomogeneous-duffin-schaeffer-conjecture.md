@@ -86,7 +86,7 @@ mass transference principle of Beresnevich–Velani to give a
 Hausdorff-$f$-measure divergence theorem: if
 $\sum_q \phi(q)\,f(\psi(q)/q)$ diverges with $f(r)/r$ monotone,
 then the limsup set has full $\mathcal H^f$-measure in every bounded
-interval . "\section{The Hausdorff-measure consequence}
+interval . "\sectionThe Hausdorff-measure consequence
  
 
 We now apply the proved Lebesgue-measure theorem to the transformed
@@ -196,19 +196,19 @@ section `.tex` alone.
 - Beresnevich, Victor, Velani, Sanju, A Mass Transference Principle and the Duffin–Schaeffer conjecture for Hausdorff measures (2006)
 - Beresnevich, Victor, Hauke, Manuel, Velani, Sanju, Borel–Cantelli, zero-one laws and inhomogeneous Duffin–Schaeffer (2024)
 - Chow, Sam, Technau, Niclas, Littlewood and Duffin–Schaeffer-type problems in Diophantine approximation (2024)
-- Chow, Sam, Hauke, Manuel, Pollington, Andrew, Ram{í}rez, Felipe A., General Duffin–Schaeffer-type counterexamples in Diophantine approximation (2025)
+- Chow, Sam, Hauke, Manuel, Pollington, Andrew, Ramírez, Felipe A., General Duffin–Schaeffer-type counterexamples in Diophantine approximation (2025)
 - Duffin, R. J., Schaeffer, A. C., Khintchine's problem in metric Diophantine approximation (1941)
 - Gou, Haozhe, Extremal Problems for GCDs and LCMs in Higher Dimensions (2026)
 - Green, Ben, Walker, Aled, Extremal problems for GCDs (2021)
 - Hauke-Treuer, Manuel, Vazquez, Santiago, Walker, Aled, Proving the Duffin–Schaeffer conjecture without GCD graphs (2026)
 - Hauke-Treuer, Manuel, Maynard, James, Pollington, Andrew, Counterexamples to the inhomogeneous Duffin–Schaeffer Conjecture (2026)
 - He, Yubin, Liao, Lingmin, Counterexamples to the inhomogeneous Duffin–Schaeffer conjecture for a residual set of shifts (2026)
-- Khintchine, A., Einige S{ä}tze {ü}ber Kettenbr{ü}che, mit Anwendungen auf die Theorie der Diophantischen Approximationen (1924)
+- Khintchine, A., Einige Sätze über Kettenbrüche, mit Anwendungen auf die Theorie der Diophantischen Approximationen (1924)
 - Koukoulopoulos, Dimitris, Maynard, James, On the Duffin–Schaeffer conjecture (2020)
 - Pollington, A. D., Vaughan, R. C., The $k$-dimensional Duffin and Schaeffer conjecture (1990)
-- Ram{í}rez, Felipe A., Counterexamples, covering systems, and zero-one laws for inhomogeneous approximation (2017)
+- Ramírez, Felipe A., Counterexamples, covering systems, and zero-one laws for inhomogeneous approximation (2017)
 - Selberg, Atle, On an elementary method in the theory of primes (1947)
-- Sz{ü}sz, P., {Ü}ber die metrische Theorie der diophantischen Approximation (1958)
-- Uchiyama, Sabur{\^o}, A note on the sieve method of {A. Selberg} (1962)
+- Szüsz, P., Über die metrische Theorie der diophantischen Approximation (1958)
+- Uchiyama, Sabur{\^o}, A note on the sieve method of A. Selberg (1962)
 - Yu, Han, A Fourier-analytic approach to inhomogeneous Diophantine approximation (2019)
-- Yu, Han, On the metric theory of inhomogeneous Diophantine approximation: An {Erdős–Vaaler} type result (2021)
+- Yu, Han, On the metric theory of inhomogeneous Diophantine approximation: An Erdős–Vaaler type result (2021)

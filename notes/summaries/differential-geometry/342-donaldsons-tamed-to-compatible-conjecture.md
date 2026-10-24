@@ -209,32 +209,28 @@ The formalization consequence is a gap, not a coverage. The declaration proves t
 
 ## Bibliography
 
-- Buchdahl, Nicholas, On compact {Kähler} surfaces (1999)
+- Buchdahl, Nicholas, On compact Kähler surfaces (1999)
 - Donaldson, S. K., Two-forms on four-manifolds and elliptic equations (2006)
 - Draghici, Tedi, Zhang, Weiyi, A note on exact forms on almost complex manifolds (2012)
 - Elkhadhra, Fredj, Poincaré–Lelong formula, $J$-analytic subsets and Lelong numbers of currents on almost complex manifolds (2014)
 - Elkhadhra, Fredj, Mimouni, Souad Khemiri, Sur l'existence du nombre de Lelong d'un courant positif psh défini sur une variété presque complexe (2007)
 - Gromov, Mikhail, Pseudo holomorphic curves in symplectic manifolds (1985)
-- Harvey, Reese, Lawson, Jr., H. Blaine, An intrinsic characterization of {Kähler} manifolds (1983)
+- Harvey, Reese, Lawson, Jr., H. Blaine, An intrinsic characterization of Kähler manifolds (1983)
 - Kinnunen, Juha, Real Analysis (2026)
 - Lamari, Ahc\`ene, Courants kählériens et surfaces compactes (1999)
-- Lejmi, Mehdi, Strictly nearly K{ä}hler 6-manifolds are not compatible
-             with symplectic forms (2006)
-- Li, Tian-Jun, Zhang, Weiyi, Comparing tamed and compatible symplectic cones and
-             cohomological properties of almost complex manifolds (2009)
-- Li, Tian-Jun, Zhang, Weiyi, Almost K{ä}hler forms on rational 4-manifolds (2015)
-- Tian-Jun Li, Shengzhen Ning, The spaces of {Kähler} and holomorphically tamed symplectic forms on closed 4-manifolds (2026)
+- Lejmi, Mehdi, Strictly nearly Kähler 6-manifolds are not compatible with symplectic forms (2006)
+- Li, Tian-Jun, Zhang, Weiyi, Comparing tamed and compatible symplectic cones and cohomological properties of almost complex manifolds (2009)
+- Li, Tian-Jun, Zhang, Weiyi, Almost Kähler forms on rational 4-manifolds (2015)
+- Tian-Jun Li, Shengzhen Ning, The spaces of Kähler and holomorphically tamed symplectic forms on closed 4-manifolds (2026)
 - Lin, Dexie, Zhou, Hengyu, A note on $\widetilde{\mathcal{D}}^{+}_{J}$-operator (2025)
-- Ludewig, Matthias, Strong short-time asymptotics and convolution approximation
-             of the heat kernel (2019)
-- Ludewig, Matthias, Heat kernel asymptotics, path integrals and
-             infinite-dimensional determinants (2018)
+- Ludewig, Matthias, Strong short-time asymptotics and convolution approximation of the heat kernel (2019)
+- Ludewig, Matthias, Heat kernel asymptotics, path integrals and infinite-dimensional determinants (2018)
 - Melrose, Richard, Introduction to Microlocal Analysis (2007)
-- OpenAI, {Deforming hypersymplectic four-manifolds to hyperk{ä}hler triples} (2026)
+- OpenAI, {Deforming hypersymplectic four-manifolds to hyperkähler triples} (2026)
 - Sullivan, Dennis, Cycles for the dynamical study of foliated manifolds and complex manifolds (1976)
 - Tan, Qiang, Wang, Hongyu, Zhou, Jiuru, Zhu, Peng, On tamed almost complex four-manifolds (2022)
 - Taubes, Clifford Henry, Tamed to compatible: Symplectic forms via moduli space integration (2011)
 - Taubes, Clifford Henry, Tamed to compatible when $b^{2+}=1$ and $b^1=2$ (2017)
 - Taylor, Michael E., Pseudodifferential Operators and Nonlinear PDE (1991)
-- Ken Wang, Zuyi Zhang, Tao Zheng, Peng Zhu, On a generalized {Monge–Amp\`ere} equation on closed almost {Kähler} surfaces (2025)
+- Ken Wang, Zuyi Zhang, Tao Zheng, Peng Zhu, On a generalized {Monge–Amp\`ere} equation on closed almost Kähler surfaces (2025)
 - Hongyu Wang, Ken Wang, Peng Zhu, On closed almost complex four manifolds (2023)

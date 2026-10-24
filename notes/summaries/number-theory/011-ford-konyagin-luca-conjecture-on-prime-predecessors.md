@@ -116,7 +116,7 @@ Prior (my training data, not this repo). The Poisson–Dirichlet law PD(1) is th
 
 ## Consequences
 
-The family's strongest structure is a mutual citation between two of its own manuscripts. Manuscript A declares its output as an input to manuscript B: "These graph and ideal-kernel estimates also serve as inputs to the companion paper \cite[Theorem 1.1]PrimePredecessors, where a separate determinant-graph estimate and prime-extraction argument yield the full Poisson–Dirichlet law for prime predecessors [S5:96–99]" , and its bibliography carries the release copy of that companion under the key `PrimePredecessors` with the title line "title = {The Poisson–Dirichlet law for prime predecessors}, [S7:230]" . Manuscript B cites back, naming manuscript A as S and using its operator theorems: "The companion article _Weighted dilation graphs, smooth shifted primes and totient fibers_ \cite[Theorem 1.2]SmoothShifted, denoted S, proves that, for every fixed positive smoothness exponent, there are $x^{1-o(1)}$ primes in its stated interval with smooth predecessors [S11:130–133]" , with the release copy under the key `SmoothShifted` and the title line "title = {{Weighted dilation graphs, smooth shifted primes and totient fibers}}, [S13:266]" . Manuscript C cites manuscript A one-directionally, in an inline bibliography rather than a `.bib` file: the entry is "_Weighted dilation graphs, smooth shifted primes and totient fibers_, [S17:27]" and it is cited as S in the passage quoted above . So the chain is A ↔ B and C → A, and every link is inside the family: the family's headline result rests on machinery its own first manuscript supplies, and its third manuscript rests on the same machinery.
+The family's strongest structure is a mutual citation between two of its own manuscripts. Manuscript A declares its output as an input to manuscript B: "These graph and ideal-kernel estimates also serve as inputs to the companion paper \cite[Theorem 1.1]PrimePredecessors, where a separate determinant-graph estimate and prime-extraction argument yield the full Poisson–Dirichlet law for prime predecessors [S5:96–99]" , and its bibliography carries the release copy of that companion under the key `PrimePredecessors` with the title line "title = The Poisson–Dirichlet law for prime predecessors, [S7:230]" . Manuscript B cites back, naming manuscript A as S and using its operator theorems: "The companion article _Weighted dilation graphs, smooth shifted primes and totient fibers_ \cite[Theorem 1.2]SmoothShifted, denoted S, proves that, for every fixed positive smoothness exponent, there are $x^{1-o(1)}$ primes in its stated interval with smooth predecessors [S11:130–133]" , with the release copy under the key `SmoothShifted` and the title line "title = {Weighted dilation graphs, smooth shifted primes and totient fibers}, [S13:266]" . Manuscript C cites manuscript A one-directionally, in an inline bibliography rather than a `.bib` file: the entry is "_Weighted dilation graphs, smooth shifted primes and totient fibers_, [S17:27]" and it is cited as S in the passage quoted above . So the chain is A ↔ B and C → A, and every link is inside the family: the family's headline result rests on machinery its own first manuscript supplies, and its third manuscript rests on the same machinery.
 
 What the family gives the rest of the release is a smooth-shifted-prime count with the full power exponent, an optimal totient-fiber exponent, the complete joint factorization law for prime predecessors, and a parity-existence theorem that extends the shared graph reduction to a parity-sensitive weight. The corpus contains no formalization in which any of these is used, so the downstream consequences are the ones the manuscripts themselves record. The triage record lists this family in the T0 opening [S19:125]. Related T0 number-theory pages: [002 — The full Birch–Swinnerton-Dyer formula in Selmer coranks zero and one](002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md), [004 — Hilbert's tenth problem over ℚ](004-hilberts-tenth-problem-over-q.md), [006 — Goldfeld's conjecture](006-goldfelds-conjecture.md), [010 — Fontaine–Mazur modularity at the prime 2](010-fontaine-mazur-modularity-at-the-prime-2-and-2-adic-pro-modularity.md), [018 — The Margulis–Platonov conjecture over global fields](018-margulis-platonov-conjecture-over-global-fields.md) and [019 — The $p$-adic section conjecture](019-p-adic-section-conjecture.md).
 
@@ -149,14 +149,14 @@ What the family gives the rest of the release is a smooth-shifted-prime count wi
 
 - Alford, W. R., Granville, Andrew, Pomerance, Carl, There are infinitely many Carmichael numbers (1994)
 - Alford, W. R., Granville, Andrew, Pomerance, Carl, There are infinitely many Carmichael numbers (1994)
-- Arratia, Richard, Kochman, Fred, Miller, Victor S., Extensions of {Billingsley's} theorem via multi-intensities (2014)
+- Arratia, Richard, Kochman, Fred, Miller, Victor S., Extensions of Billingsley's theorem via multi-intensities (2014)
 - Baker, R. C., Harman, Glyn, Shifted primes without large prime factors (1998)
 - Baker, R. C., Harman, Glyn, Shifted primes without large prime factors (1998)
 - Bharadwaj, Abhishek, Rodgers, Brad, Large prime factors of well-distributed sequences (2026)
 - Bharadwaj, Abhishek, Rodgers, Brad, Large prime factors of well-distributed sequences (2026)
 - Billingsley, Patrick, On the distribution of large prime divisors (1972)
 - de Bruijn, N. G., On the number of positive integers $\le x$ and free of prime factors $>y$ (1951)
-- Buchstab, A., Asymptotische Absch{ä}tzung einer allgemeinen zahlentheoretischen Funktion (1937)
+- Buchstab, A., Asymptotische Abschätzung einer allgemeinen zahlentheoretischen Funktion (1937)
 - Dickman, K., On the frequency of numbers containing prime factors of a certain relative magnitude (1930)
 - Donnelly, Peter, Grimmett, Geoffrey, On the asymptotic distribution of large prime factors (1993)
 - Efron, Bradley, Stein, Charles, The jackknife estimate of variance (1981)
@@ -169,13 +169,13 @@ What the family gives the rest of the release is a smooth-shifted-prime count wi
 - Granville, Andrew, Smooth numbers: computational number theory and beyond (2008)
 - Granville, Andrew, Smooth numbers: computational number theory and beyond (2008)
 - R. C. Baker and G. Harman, _Shifted primes without large prime factors_, Acta Arith. **83** (1998), no. 4, 331–361. doi:10.4064/aa-83-4-331-361.
-- Helfgott, Harald Andr{é}s, Radziwi{\l}{\l}, Maksym, Expansion, divisibility and parity (2021)
-- Helfgott, Harald Andr{é}s, Radziwi{\l}{\l}, Maksym, Expansion, divisibility and parity (2021)
+- Helfgott, Harald Andrés, Radziwiłł, Maksym, Expansion, divisibility and parity (2021)
+- Helfgott, Harald Andrés, Radziwiłł, Maksym, Expansion, divisibility and parity (2021)
 - J. Friedlander and H. Iwaniec, _Asymptotic sieve for primes_, Ann. of Math. (2) **148** (1998), no. 3, 1041–1065. doi:10.2307/121035; arXiv:math/9811186v1.
 - Khale, Tanmay, An explicit Vinogradov–Korobov zero-free region for Dirichlet $L$-functions (2024)
-- Matom{ä}ki, Kaisa, Radziwi{\l}{\l}, Maksym, Multiplicative functions in short intervals (2016)
-- Matom{ä}ki, Kaisa, Radziwi{\l}{\l}, Maksym, Tao, Terence, Sign patterns of the Liouville and {M{ö}bius} functions (2016)
-- Matom{ä}ki, Kaisa, Radziwi{\l}{\l}, Maksym, Multiplicative functions in short intervals (2017)
+- Matomäki, Kaisa, Radziwiłł, Maksym, Multiplicative functions in short intervals (2016)
+- Matomäki, Kaisa, Radziwiłł, Maksym, Tao, Terence, Sign patterns of the Liouville and {Möbius} functions (2016)
+- Matomäki, Kaisa, Radziwiłł, Maksym, Multiplicative functions in short intervals (2017)
 - Lichtman, Jared Duker, Primes in arithmetic progressions to large moduli, and shifted primes without large prime factors (2022)
 - Lichtman, Jared Duker, Primes in arithmetic progressions to large moduli, and shifted primes without large prime factors (2022)
 - J. D. Lichtman, _Primes in arithmetic progressions to large moduli, and shifted primes without large prime factors_, arXiv:2211.09641v1, 14 November 2022.
@@ -183,16 +183,16 @@ What the family gives the rest of the release is a smooth-shifted-prime count wi
 - Montgomery, Hugh L., Vaughan, Robert C., Hilbert's inequality (1974)
 - Montgomery, Hugh L., Vaughan, Robert C., Hilbert's inequality (1974)
 - OpenAI, The Poisson–Dirichlet law for prime predecessors (2026)
-- OpenAI, {Weighted dilation graphs, smooth shifted primes and totient fibers} (2026)
+- OpenAI, Weighted dilation graphs, smooth shifted primes and totient fibers (2026)
 - OpenAI, _Weighted dilation graphs, smooth shifted primes and totient fibers_, OpenAI Math Release preprint OAI:Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026, 2026.
-- Pilatte, C{é}dric, Improved bounds for the two-point logarithmic Chowla conjecture (2026)
-- Pilatte, C{é}dric, Improved bounds for the two-point logarithmic Chowla conjecture (2026)
+- Pilatte, Cédric, Improved bounds for the two-point logarithmic Chowla conjecture (2026)
+- Pilatte, Cédric, Improved bounds for the two-point logarithmic Chowla conjecture (2026)
 - Pomerance, Carl, Popular values of Euler's function (1980)
 - Pomerance, Carl, Popular values of Euler's function (1980)
-- Erd{ő}s, Paul, On the normal number of prime factors of $p-1$ and some related problems concerning Euler's $\varphi$-function (1935)
-- Erd{ő}s, Paul, On pseudoprimes and Carmichael numbers (1956)
-- Erd{ő}s, Paul, On the normal number of prime factors of $p-1$ and some related problems concerning Euler's $\varphi$-function (1935)
-- Erd{ő}s, Paul, On pseudoprimes and Carmichael numbers (1956)
+- Erdős, Paul, On the normal number of prime factors of $p-1$ and some related problems concerning Euler's $\varphi$-function (1935)
+- Erdős, Paul, On pseudoprimes and Carmichael numbers (1956)
+- Erdős, Paul, On the normal number of prime factors of $p-1$ and some related problems concerning Euler's $\varphi$-function (1935)
+- Erdős, Paul, On pseudoprimes and Carmichael numbers (1956)
 - Soundararajan, Kannan, Moments of the Riemann zeta function (2009)
 - Soundararajan, Kannan, Moments of the Riemann zeta function (2009)
 - Stechkin, S. B., Mean values of the modulus of a trigonometric sum (1975)

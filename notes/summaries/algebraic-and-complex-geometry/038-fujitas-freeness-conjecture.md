@@ -172,28 +172,28 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 
 ## Bibliography
 
-- Igor Reider. \newblock Vector bundles of rank $2$ and linear systems on algebraic surfaces. \newblock _Annals of Mathematics (2)_, 127\penalty0 (2):\penalty0 309–316, 1988. \newblock \doi{10.2307/2007055}. \newblock URL  .
-- Luca Ghidelli and Justin Lacini. \newblock Logarithmic bounds on Fujita's conjecture. \newblock _Proceedings of the London Mathematical Society (3)_, 128\penalty0 (3):\penalty0 e12591, 2024. \newblock \doi{10.1112/plms.12591}. \newblock URL  . \newblock 28 pp.
-- Jean-Pierre Demailly and J{á}nos Koll{á}r. \newblock Semi-continuity of complex singularity exponents and {K{ä}hler–Einstein} metrics on Fano orbifolds. \newblock _Annales scientifiques de l'École Normale Supérieure (4)_, 34\penalty0 (4):\penalty0 525–556, 2001. \newblock \doi{10.1016/S0012-9593(01)01069-2}. \newblock URL  .
-- Robert Lazarsfeld and Mircea Musta{\c t}{\u a}. \newblock Convex bodies associated to linear series. \newblock _Annales scientifiques de l'{É}cole Normale Sup{é}rieure (4)_, 42\penalty0 (5):\penalty0 783–835, 2009. \newblock \doi{10.24033/asens.2109}.
-- Richard J. Gardner. \newblock The Brunn–Minkowski inequality. \newblock _Bulletin of the American Mathematical Society (N.S.)_, 39\penalty0 (3):\penalty0 355–405, 2002. \newblock \doi{10.1090/S0273-0979-02-00941-2}.
-- Stefan Helmke. \newblock On global generation of adjoint linear systems. \newblock _Mathematische Annalen_, 313\penalty0 (4):\penalty0 635–652, 1999. \newblock \doi{10.1007/s002080050276}.
-- Yujiro Kawamata. \newblock A generalization of Kodaira–Ramanujam's vanishing theorem. \newblock _Mathematische Annalen_, 261:\penalty0 43–46, 1982. \newblock \doi{10.1007/BF01456407}.
-- Yujiro Kawamata. \newblock On Fujita's freeness conjecture for $3$-folds and $4$-folds. \newblock _Mathematische Annalen_, 308\penalty0 (3):\penalty0 491–505, 1997. \newblock \doi{10.1007/s002080050085}. \newblock URL  .
-- Kiumars Kaveh and Askold G. Khovanskii. \newblock Newton–Okounkov bodies, semigroups of integral points, graded algebras and intersection theory. \newblock _Annals of Mathematics (2)_, 176\penalty0 (2):\penalty0 925–978, 2012. \newblock \doi{10.4007/annals.2012.176.2.5}.
-- Jingjun Han. \newblock A linear bound for Fujita's freeness conjecture, 2026. \newblock URL  . \newblock Preprint, arXiv:2609.01574v2, 11 September 2026.
-- Andrei Okounkov. \newblock Why would multiplicities be log-concave? \newblock In Christian Duval, Valentin Ovsienko, and Laurent Guieu, editors, _The Orbit Method in Geometry and Physics_, volume 213 of _Progress in Mathematics_, pages 329–347. Birkh{ä}user, Boston, MA, 2003. \newblock \doi{10.1007/978-1-4612-0029-1_14}. \newblock URL  .
-- Stefan Helmke. \newblock On Fujita's conjecture. \newblock _Duke Mathematical Journal_, 88\penalty0 (2):\penalty0 201–216, 1997. \newblock \doi{10.1215/S0012-7094-97-08807-4}.
-- S{é}bastien Boucksom and Huayi Chen. \newblock Okounkov bodies of filtered linear series. \newblock _Compositio Mathematica_, 147\penalty0 (4):\penalty0 1205–1229, 2011. \newblock \doi{10.1112/S0010437X11005355}.
-- Gordon Heier. \newblock Effective freeness of adjoint line bundles. \newblock _Documenta Mathematica_, 7:\penalty0 31–42, 2002. \newblock \doi{10.4171/DM/116}.
-- Urban Angehrn and Yum-Tong Siu. \newblock Effective freeness and point separation for adjoint bundles. \newblock _Inventiones Mathematicae_, 122\penalty0 (2):\penalty0 291–308, 1995. \newblock \doi{10.1007/BF01231446}. \newblock URL  .
-- Fei Ye and Zhixian Zhu. \newblock On Fujita's freeness conjecture in dimension $5$. \newblock _Advances in Mathematics_, 371:\penalty0 107210, 2020. \newblock \doi{10.1016/j.aim.2020.107210}. \newblock URL  .
-- Eckart Viehweg. \newblock Vanishing theorems. \newblock _Journal f{ü}r die reine und angewandte Mathematik_, 335:\penalty0 1–8, 1982. \newblock \doi{10.1515/crll.1982.335.1}.
-- Osamu Fujino. \newblock Kawamata–Viehweg vanishing theorem. \newblock Author's lecture note, 2009. \newblock URL  . \newblock Version 1.04, 22 July 2009.
-- Takao Fujita. \newblock On polarized manifolds whose adjoint bundles are not semipositive. \newblock In Tadao Oda, editor, _Algebraic Geometry, Sendai, 1985_, volume 10 of _Advanced Studies in Pure Mathematics_, pages 167–178. North-Holland, Amsterdam, 1987. \newblock \doi{10.2969/aspm/01010167}.
-- Tsz On Mario Chan. \newblock A solution to Fujita's freeness conjecture via an extension theorem with analytic adjoint ideal sheaves, 2024. \newblock URL  . \newblock Preprint, arXiv:2411.07129v1; withdrawn in v2, 24 November 2024.
-- Lawrence Ein and Robert Lazarsfeld. \newblock Global generation of pluricanonical and adjoint linear series on smooth projective threefolds. \newblock _Journal of the American Mathematical Society_, 6\penalty0 (4):\penalty0 875–903, 1993. \newblock \doi{10.1090/S0894-0347-1993-1207013-5}. \newblock URL  .
-- Jason A. Howald. \newblock Multiplier ideals of monomial ideals. \newblock _Transactions of the American Mathematical Society_, 353\penalty0 (7):\penalty0 2665–2671, 2001. \newblock \doi{10.1090/S0002-9947-01-02720-9}. \newblock URL  .
-- Jaros{\l}aw W{\l}odarczyk. \newblock Simple Hironaka resolution in characteristic zero. \newblock _Journal of the American Mathematical Society_, 18\penalty0 (4):\penalty0 779–822, 2005. \newblock \doi{10.1090/S0894-0347-05-00493-5}.
-- Takao Fujita. \newblock Remarks on Ein–Lazarsfeld criterion of spannedness of adjoint bundles of polarized threefolds, 1993. \newblock URL  .
-- Harold Blum and Mattias Jonsson. \newblock Thresholds, valuations, and $K$-stability. \newblock _Advances in Mathematics_, 365:\penalty0 107062, 2020. \newblock \doi{10.1016/j.aim.2020.107062}.
+- Igor Reider. Vector bundles of rank $2$ and linear systems on algebraic surfaces. _Annals of Mathematics (2)_, 127 (2): 309–316, 1988. doi:10.2307/2007055. URL  .
+- Luca Ghidelli and Justin Lacini. Logarithmic bounds on Fujita's conjecture. _Proceedings of the London Mathematical Society (3)_, 128 (3): e12591, 2024. doi:10.1112/plms.12591. URL  . 28 pp.
+- Jean-Pierre Demailly and János Kollár. Semi-continuity of complex singularity exponents and {Kähler–Einstein} metrics on Fano orbifolds. _Annales scientifiques de l'École Normale Supérieure (4)_, 34 (4): 525–556, 2001. doi:10.1016/S0012-9593(01)01069-2. URL  .
+- Robert Lazarsfeld and Mircea Mustaţă. Convex bodies associated to linear series. _Annales scientifiques de l'École Normale Supérieure (4)_, 42 (5): 783–835, 2009. doi:10.24033/asens.2109.
+- Richard J. Gardner. The Brunn–Minkowski inequality. _Bulletin of the American Mathematical Society (N.S.)_, 39 (3): 355–405, 2002. doi:10.1090/S0273-0979-02-00941-2.
+- Stefan Helmke. On global generation of adjoint linear systems. _Mathematische Annalen_, 313 (4): 635–652, 1999. doi:10.1007/s002080050276.
+- Yujiro Kawamata. A generalization of Kodaira–Ramanujam's vanishing theorem. _Mathematische Annalen_, 261: 43–46, 1982. doi:10.1007/BF01456407.
+- Yujiro Kawamata. On Fujita's freeness conjecture for $3$-folds and $4$-folds. _Mathematische Annalen_, 308 (3): 491–505, 1997. doi:10.1007/s002080050085. URL  .
+- Kiumars Kaveh and Askold G. Khovanskii. Newton–Okounkov bodies, semigroups of integral points, graded algebras and intersection theory. _Annals of Mathematics (2)_, 176 (2): 925–978, 2012. doi:10.4007/annals.2012.176.2.5.
+- Jingjun Han. A linear bound for Fujita's freeness conjecture, 2026. URL  . Preprint, arXiv:2609.01574v2, 11 September 2026.
+- Andrei Okounkov. Why would multiplicities be log-concave? In Christian Duval, Valentin Ovsienko, and Laurent Guieu, editors, _The Orbit Method in Geometry and Physics_, volume 213 of _Progress in Mathematics_, pages 329–347. Birkhäuser, Boston, MA, 2003. doi:10.1007/978-1-4612-0029-1_14. URL  .
+- Stefan Helmke. On Fujita's conjecture. _Duke Mathematical Journal_, 88 (2): 201–216, 1997. doi:10.1215/S0012-7094-97-08807-4.
+- Sébastien Boucksom and Huayi Chen. Okounkov bodies of filtered linear series. _Compositio Mathematica_, 147 (4): 1205–1229, 2011. doi:10.1112/S0010437X11005355.
+- Gordon Heier. Effective freeness of adjoint line bundles. _Documenta Mathematica_, 7: 31–42, 2002. doi:10.4171/DM/116.
+- Urban Angehrn and Yum-Tong Siu. Effective freeness and point separation for adjoint bundles. _Inventiones Mathematicae_, 122 (2): 291–308, 1995. doi:10.1007/BF01231446. URL  .
+- Fei Ye and Zhixian Zhu. On Fujita's freeness conjecture in dimension $5$. _Advances in Mathematics_, 371: 107210, 2020. doi:10.1016/j.aim.2020.107210. URL  .
+- Eckart Viehweg. Vanishing theorems. _Journal für die reine und angewandte Mathematik_, 335: 1–8, 1982. doi:10.1515/crll.1982.335.1.
+- Osamu Fujino. Kawamata–Viehweg vanishing theorem. Author's lecture note, 2009. URL  . Version 1.04, 22 July 2009.
+- Takao Fujita. On polarized manifolds whose adjoint bundles are not semipositive. In Tadao Oda, editor, _Algebraic Geometry, Sendai, 1985_, volume 10 of _Advanced Studies in Pure Mathematics_, pages 167–178. North-Holland, Amsterdam, 1987. doi:10.2969/aspm/01010167.
+- Tsz On Mario Chan. A solution to Fujita's freeness conjecture via an extension theorem with analytic adjoint ideal sheaves, 2024. URL  . Preprint, arXiv:2411.07129v1; withdrawn in v2, 24 November 2024.
+- Lawrence Ein and Robert Lazarsfeld. Global generation of pluricanonical and adjoint linear series on smooth projective threefolds. _Journal of the American Mathematical Society_, 6 (4): 875–903, 1993. doi:10.1090/S0894-0347-1993-1207013-5. URL  .
+- Jason A. Howald. Multiplier ideals of monomial ideals. _Transactions of the American Mathematical Society_, 353 (7): 2665–2671, 2001. doi:10.1090/S0002-9947-01-02720-9. URL  .
+- Jarosław Włodarczyk. Simple Hironaka resolution in characteristic zero. _Journal of the American Mathematical Society_, 18 (4): 779–822, 2005. doi:10.1090/S0894-0347-05-00493-5.
+- Takao Fujita. Remarks on Ein–Lazarsfeld criterion of spannedness of adjoint bundles of polarized threefolds, 1993. URL  .
+- Harold Blum and Mattias Jonsson. Thresholds, valuations, and $K$-stability. _Advances in Mathematics_, 365: 107062, 2020. doi:10.1016/j.aim.2020.107062.

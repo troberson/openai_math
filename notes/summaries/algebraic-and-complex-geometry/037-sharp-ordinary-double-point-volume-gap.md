@@ -50,7 +50,7 @@ with zero boundary. Then
 Equality holds if and only if
 \[
  (X,x)_{\mathrman}\cong
- \left(\{z_0^2+\cdots+z_n^2=0\}\subset\CC^{n+1},0\right).
+ \left(\{z_0^2+\cdots+z_n^2=0\}\subset\CC^n+1,0\right).
 \] [S5:33–46]
 
 The point need not be isolated in the singular locus, and no
@@ -89,11 +89,11 @@ K-semistable \(\QQ\)-Fano variety, where \(n\ge2\).
 If \(V\) is singular, then
 \[
        (-K_V)^n\le
-       2\left(\frac{n^2-1}n\right)^n<2n^n.
+       2\left(\fracn^2-1n\right)^n<2n^n.
 \]
 If \(V\not\cong\PP^n\), then \((-K_V)^n\le2n^n\), with equality
-precisely when \(V\) is a smooth quadric \(Q^n\subset\PP^{n+1}\) or
-\(\PP^1\times\PP^{n-1}\). These two descriptions coincide for \(n=2\). [S5:64–75]
+precisely when \(V\) is a smooth quadric \(Q^n\subset\PP^n+1\) or
+\(\PP^1\times\PP^n-1\). These two descriptions coincide for \(n=2\). [S5:64–75]
 
 The singular bound $2((n^2-1)/n)^n$ is strictly below $2n^n$,
 improving the smooth classification for singular Fano varieties.
@@ -133,10 +133,10 @@ the bound and its equality case
 for arbitrary klt germs \cite[Theorem 1.3]LX19.
 In higher dimensions, Liu proved the conjecture for local complete
 intersections \cite[Theorem 1.3]Liu22. For singular \(\QQ\)-Gorenstein toric germs,
-Moraga–Sü\ss\ proved the different sharp bound
+Moraga–Süß\ proved the different sharp bound
 \(\nvol\le(16/27)n^n\) for \(n\ge3\), with equality precisely
 for the product of a three-dimensional ordinary double point and
-\(\CC^{n-3}\); in dimension two the bound is \(2\), with equality
+\(\CC^n-3\); in dimension two the bound is \(2\), with equality
 at the surface ordinary double point
 \cite[Theorem 2]MoragaSuess24. The fourfold companion supplies
 the remaining base case used here; the higher-dimensional argument
@@ -237,9 +237,9 @@ ships 9 `.tex` files under `build/`; the companion ships 1.
 - Dario Martelli, James Sparks, and Shing-Tung Yau, _Sasaki–Einstein manifolds and volume minimisation_, Communications in Mathematical Physics **280** (2008), 611–673. doi:10.1007/s00220-008-0479-4. arXiv:hep-th/0603021v5.
 - Chi Li and Minghao Miao, _On the volume of K-semistable Fano manifolds_, Preprint (2025; revised 2026). arXiv:2506.17420v3.
 - Miles Reid, _Minimal models of canonical 3-folds_, in _Algebraic Varieties and Analytic Varieties (Tokyo, 1981)_, Shigeru Iitaka (ed.), Advanced Studies in Pure Mathematics 1, Kinokuniya, Tokyo, and North-Holland, Amsterdam, 1983, 131–180. Original paper scan.
-- Joaquín Moraga and Hendrik Sü\ss{}, _Bounding toric singularities with normalized volume_, Bulletin of the London Mathematical Society **56** (2024), no. 6, 2212–2229. doi:10.1112/blms.13052.
 - Richard P. Stanley, _Hilbert functions of graded algebras_, Advances in Mathematics **28** (1978), no. 1, 57–83. doi:10.1016/0001-8708(78)90045-2. Author copy.
 - Cristiano Spotti and Song Sun, _Explicit Gromov–Hausdorff compactifications of moduli spaces of Kähler–Einstein Fano manifolds_, Pure and Applied Mathematics Quarterly **13** (2017), no. 3, 477–515. doi:10.4310/PAMQ.2017.v13.n3.a5. arXiv:1705.00377v1.
+- Joaquín Moraga and Hendrik Süß{}, _Bounding toric singularities with normalized volume_, Bulletin of the London Mathematical Society **56** (2024), no. 6, 2212–2229. doi:10.1112/blms.13052.
 - Chi Li and Chenyang Xu, _Stability of valuations: higher rational rank_, Peking Mathematical Journal **1** (2018), no. 1, 1–79. doi:10.1007/s42543-018-0001-7. arXiv:1707.05561v2.
 - Yuchen Liu and Chenyang Xu, _K-stability of cubic threefolds_, Duke Mathematical Journal **168** (2019), no. 11, 2029–2073. doi:10.1215/00127094-2019-0006. arXiv:1706.01933v3.
 - Chenyang Xu, _A minimizing valuation is quasi-monomial_, Annals of Mathematics **191** (2020), no. 3, 1003–1030. doi:10.4007/annals.2020.191.3.6. arXiv:1907.01114.

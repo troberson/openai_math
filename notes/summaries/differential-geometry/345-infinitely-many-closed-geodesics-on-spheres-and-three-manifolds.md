@@ -240,7 +240,7 @@ What has not been checked: no Lean, lake, or comparator run was performed, and f
 
 ## Bibliography
 
-- Vigu{é}-Poirrier, Micheline, Sullivan, Dennis, The homology theory of the closed geodesic problem (1976)
+- Vigué-Poirrier, Micheline, Sullivan, Dennis, The homology theory of the closed geodesic problem (1976)
 - Albach, Bernhard, Quadratic growth of geodesics on the two-sphere (2026)
 - Asselle, Luca, Mazzucchelli, Marco, Closed geodesics with local homology in maximal degree on non-compact manifolds (2018)
 - Bangert, Victor, On the existence of closed geodesics on two-spheres (1993)
@@ -263,7 +263,7 @@ What has not been checked: no Lean, lake, or comparator run was performed, and f
 - Klingenberg, Wilhelm, Lectures on closed geodesics (1978)
 - Long, Yiming, Duan, Huagui, Multiple closed geodesics on 3-spheres (2009)
 - Lyusternik, Lazar A., Fet, Abram I., Variational problems on closed manifolds (1951)
-- Morgan, John W., Tian, Gang, Ricci Flow and the Poincar{é} Conjecture (2007)
+- Morgan, John W., Tian, Gang, Ricci Flow and the Poincaré Conjecture (2007)
 - Nabutovsky, Alexander, Rotman, Regina, Length of geodesics and quantitative Morse theory on loop spaces (2013)
 - De Philippis, Guido, Marini, Michele, Mazzucchelli, Marco, Suhr, Stefan, Closed geodesics on reversible Finsler 2-spheres (2022)
 - Rademacher, Hans-Bert, On a generic property of geodesic flows (1994)

@@ -85,7 +85,7 @@ lattice correspondences. The stable-pair test evaluates them: after
 reordering, the first modification has nonpositive character-line
 degree, which stability excludes 
 
-> \paragraph{1. Stable pairs give a quotient map.}
+> \paragraph1. Stable pairs give a quotient map.
 Sections   and   prove
 $I_{\mathrm{top}}\subseteq I_H$ for all the data of the theorem.
 The nontrivial minuscule generators used here are dressed lattice
@@ -121,7 +121,7 @@ $H=\C^\times$ with parameter $z$. Subgroup localization at
 $z=1$ gives the Higgs-side comparison; homogeneity descends the
 equality to the original ideals 
 
-> \paragraph{3. Deformation returns to the original data.}
+> \paragraph3. Deformation returns to the original data.
 For an arbitrary quiver $Q$, let $Q^+$ be obtained by adding one loop at
 each vertex of positive gauge dimension.  Give the new loops the common
 weight one of an auxiliary flavor torus $H=\mathbb C^\times$, with parameter
@@ -147,7 +147,7 @@ monopole; Hall generation decomposes both into indecomposable charges,
 and the resulting semistable direct sum has positive-dimensional
 stabilizer, contradicting freeness 
 
-> \paragraph{4. Complementary monopoles identify the cocharacter quotient.}
+> \paragraph4. Complementary monopoles identify the cocharacter quotient.
 Section   proves, independently of the preceding
 cohomology comparison, that the natural map
 $\mathbb C[Y_{\mathfrak f}^{\nu}]\to B_F$ is an isomorphism.

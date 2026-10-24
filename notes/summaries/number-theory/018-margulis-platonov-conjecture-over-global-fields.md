@@ -106,8 +106,8 @@ What is not a consequence: the congruence subgroup problem in general, Serre's f
 - Aschbacher, Michael, The status of the classification of the finite simple groups (2004)
 - M. Aschbacher, The status of the classification of the finite simple groups, Notices Amer. Math. Soc. **51** (2004), no. 7, 736–740.
 - M. Borovoi, The Brauer–Manin obstructions for homogeneous spaces with connected or abelian stabilizer, J. Reine Angew. Math. **473** (1996), 181–194.
-- Bruhat, Fran{\c c}ois, Tits, Jacques, Groupes alg{é}briques sur un corps local. Chapitre III. {Compl{é}ments} et applications {\`a} la cohomologie galoisienne (1987)
-- Bruhat, Fran{\c c}ois, Tits, Jacques, Groupes r{é}ductifs sur un corps local. II. {Sch{é}mas} en groupes. Existence d'une donn{é}e radicielle valu{é}e (1984)
+- Bruhat, François, Tits, Jacques, Groupes algébriques sur un corps local. Chapitre III. {Compléments} et applications {\`a} la cohomologie galoisienne (1987)
+- Bruhat, François, Tits, Jacques, Groupes réductifs sur un corps local. II. {Schémas} en groupes. Existence d'une donnée radicielle valuée (1984)
 - V. I. Chernousov, On projective simplicity of certain groups of rational points over algebraic number fields, Math. USSR-Izv. **34** (1990), no. 2, 409–423; Russian original, Izv. Akad. Nauk SSSR Ser. Mat. **53** (1989), no. 2, 398–410. doi:10.1070/IM1990v034n02ABEH000657.
 - Ciobotaru, Corina, A unified proof of the Howe–Moore property (2015)
 - C. Ciobotaru, A unified proof of the Howe–Moore property, J. Lie Theory **25** (2015), no. 1, 65–89.
@@ -119,14 +119,14 @@ What is not a consequence: the congruence subgroup problem in general, Serre's f
 - Elomary, M. A., Tignol, Jean-Pierre, Classification of quadratic forms over skew fields of characteristic 2 (2001)
 - Feit, Walter, Seitz, Gary M., On finite rational groups and related topics (1989)
 - Fulman, Jason, Guralnick, Robert, Bounds on the number and sizes of conjugacy classes in finite Chevalley groups with applications to derangements (2012)
-- Furstenberg, Hillel, Katznelson, Yitzhak, An ergodic {Szemer{é}di} theorem for commuting transformations (1978)
+- Furstenberg, Hillel, Katznelson, Yitzhak, An ergodic {Szemerédi} theorem for commuting transformations (1978)
 - Garion, Shelly, Larsen, Michael, Lubotzky, Alexander, Beauville surfaces and finite simple groups (2012)
 - S. Garion, M. Larsen, and A. Lubotzky, Beauville surfaces and finite simple groups, J. Reine Angew. Math. **666** (2012), 225–243.
 - Gille, Philippe, Le probl{\`e}me de Kneser–Tits (2009)
 - P. Gille, Le probl\`eme de Kneser–Tits, Séminaire Bourbaki, 2007/2008, Exp. 983, Astérisque **326** (2009), 39–81.
 - J. Fulman and R. Guralnick, Bounds on the number and sizes of conjugacy classes in finite Chevalley groups with applications to derangements, Trans. Amer. Math. Soc. **364** (2012), no. 6, 3023–3070.
-- Harder, G{ü}nter, {Ü}ber die Galoiskohomologie halbeinfacher algebraischer Gruppen. III (1975)
-- Harder, G{ü}nter, Minkowskische Reduktionstheorie {ü}ber {Funktionenk{ö}rpern} (1969)
+- Harder, Günter, Über die Galoiskohomologie halbeinfacher algebraischer Gruppen. III (1975)
+- Harder, Günter, Minkowskische Reduktionstheorie über {Funktionenkörpern} (1969)
 - Howe, Roger E., Moore, Calvin C., Asymptotic properties of unitary representations (1979)
 - H. Furstenberg and Y. Katznelson, An ergodic Szemerédi theorem for commuting transformations, J. Analyse Math. **34** (1978), 275–291.
 - Knus, Max-Albert, Merkurjev, Alexander, Rost, Markus, Tignol, Jean-Pierre, The Book of Involutions (1998)
@@ -164,13 +164,13 @@ What is not a consequence: the congruence subgroup problem in general, Serre's f
 - G. Prasad and A. S. Rapinchuk, Computation of the metaplectic kernel, Publ. Math. Inst. Hautes Études Sci. **84** (1996), 91–187.
 - G. Prasad and A. S. Rapinchuk, Developments on the congruence subgroup problem after the work of Bass, Milnor and Serre, in _Collected Papers of John Milnor_, vol. V, _Algebra_, American Mathematical Society, Providence, RI, 2010, pp. 307–325.
 - A. S. Rapinchuk, The Margulis–Platonov conjecture for $\mathrm{SL}_{1,D}$ and $2$-generation of finite simple groups, Math. Z. **252** (2006), 295–313. doi:10.1007/s00209-005-0854-1.
-- A. S. Rapinchuk, \href{https://arxiv.org/abs/2603.27472v1}{The congruence subgroup property for $S$-arithmetic subgroups of simple algebraic groups when $S$ has positive Dirichlet density}, preprint, arXiv:2603.27472v1, 2026.
+- A. S. Rapinchuk, The congruence subgroup property for $S$-arithmetic subgroups of simple algebraic groups when $S$ has positive Dirichlet density, preprint, arXiv:2603.27472v1, 2026.
 - A. S. Rapinchuk, Y. Segev, and G. M. Seitz, Finite quotients of the multiplicative group of a finite dimensional division algebra are solvable, J. Amer. Math. Soc. **15** (2002), no. 4, 929–978. doi:10.1090/S0894-0347-02-00393-4.
 - Reiner, Irving, Maximal Orders (2003)
 - I. Reiner, _Maximal Orders_, corrected reprint of the 1975 original, London Mathematical Society Monographs, New Series, vol. 28, Clarendon Press, Oxford, 2003.
 - Riehm, Carl, The norm 1 group of $p$-adic division algebra (1970)
 - Rosen, Michael, Number Theory in Function Fields (2002)
-- Sansuc, Jean-Jacques, Groupe de Brauer et arithm{é}tique des groupes alg{é}briques lin{é}aires sur un corps de nombres (1981)
+- Sansuc, Jean-Jacques, Groupe de Brauer et arithmétique des groupes algébriques linéaires sur un corps de nombres (1981)
 - J.-J. Sansuc, Groupe de Brauer et arithmétique des groupes algébriques linéaires sur un corps de nombres, J. Reine Angew. Math. **327** (1981), 12–80.
 - Segev, Yoav, On finite homomorphic images of the multiplicative group of a division algebra (1999)
 - Segev, Yoav, Seitz, Gary M., Anisotropic groups of type $A_n$ and the commuting graph of finite simple groups (2002)
@@ -195,8 +195,6 @@ What is not a consequence: the congruence subgroup problem in general, Serre's f
 - Wall, G. E., On the conjugacy classes in the unitary, symplectic and orthogonal groups (1963)
 - D. Wei, Strong approximation for a toric variety, Acta Math. Sin. (Engl. Ser.) **37** (2021), no. 1, 95–103. Preprint version: arXiv:1403.1035v3, 2019.
 - H. Weyl, Über die Gleichverteilung von Zahlen mod. Eins, Math. Ann. **77** (1916), no. 3, 313–352.
-- Wilson, Robert, Walsh, Peter, Tripp, Jonathan
-   , Suleiman, Ibrahim, Parker, Richard, Norton, Simon
-   , Nickerson, Simon, Linton, Steve, Bray, John, Abbott, Rachel, ATLAS of Finite Group Representations
+- Wilson, Robert, Walsh, Peter, Tripp, Jonathan , Suleiman, Ibrahim, Parker, Richard, Norton, Simon , Nickerson, Simon, Linton, Steve, Bray, John, Abbott, Rachel, ATLAS of Finite Group Representations
 - R. Wilson, P. Walsh, J. Tripp, I. Suleiman, R. Parker, S. Norton, S. Nickerson, S. Linton, J. Bray, and R. Abbott, _ATLAS of Finite Group Representations_, version 3.004, online database, accessed September 23, 2026.
 - Y. Cao and F. Xu, Strong approximation with Brauer–Manin obstruction for toric varieties, Ann. Inst. Fourier (Grenoble) **68** (2018), no. 5, 1879–1908. doi:10.5802/aif.3199.

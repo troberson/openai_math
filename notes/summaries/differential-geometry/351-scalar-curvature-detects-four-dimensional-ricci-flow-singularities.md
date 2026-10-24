@@ -8,7 +8,7 @@
 
 The counterexample manuscript's main theorem is the flow itself [S7:69–78]:
 
-> There are an integer \(q\ge10\), a time \(T>0\), and a smooth Ricci flow \(g(t)\), \(0\le t<T\), on the closed connected manifold \(M=\mathbb S^2\times\mathbb S^{q+1}\), with smooth initial metric, such that \[ \sup_{M\times[0,T)}|R_{g(t)}|<\infty, \qquad \lim_{t\uparrow T}\max_M|\Rm_{g(t)}|=\infty. \] In particular, \(T\) is the finite maximal existence time of this flow. [S7:69–77]
+> There are an integer \(q\ge10\), a time \(T>0\), and a smooth Ricci flow \(g(t)\), \(0\le t<T\), on the closed connected manifold \(M=\mathbb S^2\times\mathbb S^q+1\), with smooth initial metric, such that \[ \sup_{M\times[0,T)}|R_g(t)|<\infty, \qquad \lim_{t\uparrow T}\max_M|\Rm_g(t)|=\infty. \] In particular, \(T\) is the finite maximal existence time of this flow. [S7:69–77]
 
 The manuscript states what the theorem does not say: it refutes the unrestricted all-dimensions formulation, and it draws no dimension-four conclusion [S7:80–84].
 
@@ -65,7 +65,7 @@ The three barrier propositions fix the parameters in order and control the pole,
 
 The rate corollary is the quantitative form, with `d_q = (q + 1 − √((q + 1)(q − 7)))/2` 
 
-> For every sufficiently large integer \(q\), set \[ d_q=\frac{q+1-\sqrt{(q+1)(q-7)}}2. \] For every sufficiently large even integer \(k\), with the threshold allowed to depend on \(q\), there is a smooth Ricci flow on \(\mathbb S^2\times\mathbb S^{q+1}\) with finite maximal time \(T\), uniformly bounded scalar curvature, and constants \(0<c\le C<\infty\) such that \[ c(T-t)^{-2k/d_q}\le\max_M|\Rm|(\cdot,t) \le C(T-t)^{-2k/d_q} \] for all sufficiently late times. In particular, one fixed dimension admits such flows with an unbounded discrete set of power-law Type-II curvature exponents. The flow, \(T\), and the constants may depend on \(q\) and \(k\). [S12:284–299]
+> For every sufficiently large integer \(q\), set \[ d_q=\frac{q+1-\sqrt(q+1)(q-7)}2. \] For every sufficiently large even integer \(k\), with the threshold allowed to depend on \(q\), there is a smooth Ricci flow on \(\mathbb S^2\times\mathbb S^q+1\) with finite maximal time \(T\), uniformly bounded scalar curvature, and constants \(0<c\le C<\infty\) such that \[ c(T-t)^-2k/d_q\le\max_M|\Rm|(\cdot,t) \le C(T-t)^-2k/d_q \] for all sufficiently late times. In particular, one fixed dimension admits such flows with an unbounded discrete set of power-law Type-II curvature exponents. The flow, \(T\), and the constants may depend on \(q\) and \(k\). [S12:284–299]
 
 The four-dimensional paper runs the other way. It models the spatial geometry near `T` as a tree of Ricci-flat ALE pieces with an outermost scale `a(t)` [S20:100–105], and studies a renormalized Einstein–Hilbert functional whose differential is the integral pairing with the Einstein tensor `½ R g − Ric` [S20:109–123]. The degeneration-tree theorem makes the tree precise [S22:31–60], the buffered-interval proposition selects time intervals on which the outermost scale changes by a fixed factor [S22:1270–1282], the exterior Ricci proposition is the parabolic input [S23:334–336], the collar extension theorem extends the flow across the collar [S24:82–108], and the final contradiction shows the energy must vanish [S25:476].
 
@@ -160,18 +160,17 @@ The release records 3 manuscripts for this family and 0 formalized paths, 0 comp
 - Buzano, Reto, Di Matteo, Gianmichele, A Local Singularity Analysis for the Ricci Flow and its Applications to Ricci Flows with Bounded Scalar Curvature—Part II (2026)
 - C. Böhm, _Non-compact cohomogeneity one Einstein manifolds_, Bull. Soc. Math. France **127** (1999), no. 1, 135–177. doi:10.24033/bsmf.2345.
 - Cheeger, Jeff, Tian, Gang, Curvature and injectivity radius estimates for Einstein 4-manifolds (2006)
-- Cheeger, Jeff, Gromov, Mikhail, Taylor, Michael, Finite propagation speed, kernel estimates for functions of the
-           Laplace operator, and the geometry of complete Riemannian manifolds (1982)
+- Cheeger, Jeff, Gromov, Mikhail, Taylor, Michael, Finite propagation speed, kernel estimates for functions of the Laplace operator, and the geometry of complete Riemannian manifolds (1982)
 - Chern, Shiing-Shen, A Simple Intrinsic Proof of the Gauss–Bonnet Formula for Closed Riemannian Manifolds (1944)
 - Chiarenza, Filippo, Frasca, Michele, Longo, Placido, Interior $W^{2,p}$ estimates for non divergence elliptic equations with discontinuous coefficients (1991)
 - Chiarenza, Filippo, Frasca, Michele, Longo, Placido, $W^{2,p}$-solvability of the Dirichlet problem for nondivergence elliptic equations with VMO coefficients (1993)
 - Ciarlet, Philippe G., Ciarlet, Jr., Patrick, Another approach to linearized elasticity and a new proof of Korn's inequality (2005)
-- Deruelle, Alix, Kr{ö}ncke, Klaus, Stability of ALE Ricci-flat manifolds under Ricci flow (2021)
-- Deruelle, Alix, Ozuch, Tristan, A {{\L}ojasiewicz} inequality for ALE metrics (2025)
-- Deruelle, Alix, Ozuch, Tristan, A {{\L}ojasiewicz} inequality for ALE metrics (2025)
+- Deruelle, Alix, Kröncke, Klaus, Stability of ALE Ricci-flat manifolds under Ricci flow (2021)
+- Deruelle, Alix, Ozuch, Tristan, A Łojasiewicz inequality for ALE metrics (2025)
+- Deruelle, Alix, Ozuch, Tristan, A Łojasiewicz inequality for ALE metrics (2025)
 - DeTurck, Dennis M., Kazdan, Jerry L., Some regularity theorems in Riemannian geometry (1981)
 - DeTurck, Dennis M., Kazdan, Jerry L., Some regularity theorems in Riemannian geometry (1981)
-- Enders, Joerg, M{ü}ller, Reto, Topping, Peter M., On type-I singularities in Ricci flow (2011)
+- Enders, Joerg, Müller, Reto, Topping, Peter M., On type-I singularities in Ricci flow (2011)
 - Galal, Zeinab, Kaiser, Tobias, Speissegger, Patrick, Ilyashenko algebras based on transserial asymptotic expansions (2020)
 - Galal, Zeinab, Kaiser, Tobias, Speissegger, Patrick, Ilyashenko algebras based on transserial asymptotic expansions (2020)
 - Gilbarg, David, Trudinger, Neil S., Elliptic Partial Differential Equations of Second Order (2001)
@@ -180,13 +179,13 @@ The release records 3 manuscripts for this family and 0 formalized paths, 0 comp
 - Hardy, G. H., Littlewood, J. E., A maximal theorem with function-theoretic applications (1930)
 - Haslhofer, Robert, A renormalized Perelman-functional and a lower bound for the ADM-mass (2011)
 - Khavkine, Igor, The Calabi complex and Killing sheaf cohomology (2017)
-- S. Angenent and D. Knopf, _An example of neckpinching for Ricci flow on \(S^{n+1}\)_, Math. Res. Lett. **11** (2004), no. 4, 493–518. Author's text; corrigendum.
+- S. Angenent and D. Knopf, _An example of neckpinching for Ricci flow on $S^{n+1}$_, Math. Res. Lett. **11** (2004), no. 4, 493–518. Author's text; corrigendum.
 - N. V. Krylov, _Parabolic equations with VMO coefficients in spaces with mixed norms_, arXiv:math/0610955v1, 2006. Theorem numbering refers to this version. Published as _Parabolic equations with VMO coefficients in Sobolev spaces with mixed norms_, J. Funct. Anal. **250** (2007), no. 2, 521–558. doi:10.1016/j.jfa.2007.04.003.
 - O. A. Ladyzhenskaya, V. A. Solonnikov, and N. N. Ural'tseva, _Linear and Quasi-linear Equations of Parabolic Type_, Translations of Mathematical Monographs, vol. 23, American Mathematical Society, Providence, RI, 1968; corrected reprint, 1988. doi:10.1090/mmono/023.
 - Li, Chuanhuan, Li, Yi, Long-time existence of some geometric flows with bounded scalar curvature (2026)
 - Liu, Jiawei, Simon, Miles, Volume estimates and convergence results for solutions to Ricci flow with $L^p$ bounded scalar curvature (2026)
 - Lockhart, Robert B., McOwen, Robert C., Elliptic differential operators on noncompact manifolds (1985)
-- OpenAI, {Path selection and an elliptic inequality on degenerating Ricci-flat trees} (2026)
+- OpenAI, Path selection and an elliptic inequality on degenerating Ricci-flat trees (2026)
 - Ozuch, Tristan, Noncollapsed degeneration of Einstein 4-manifolds II (2022)
 - Ozuch, Tristan, Integrability of Einstein deformations and desingularizations (2021)
 - Perelman, Grisha, The entropy formula for the Ricci flow and its geometric applications (2002)
@@ -198,10 +197,10 @@ The release records 3 manuscripts for this family and 0 formalized paths, 0 comp
 - Speissegger, Patrick, Quasianalytic Ilyashenko algebras (2018)
 - Speissegger, Patrick, Quasianalytic Ilyashenko algebras (2018)
 - M. Stolarski, _Curvature Blow-up in Doubly-warped Product Metrics Evolving by Ricci Flow_, arXiv:1905.00087v1, 2019. All numbered source references in this paper use this version. Published in Mem. Amer. Math. Soc. **295** (2024), no. 1470. doi:10.1090/memo/1470.
-- {Ť}e{š}um, Nata{š}a, Curvature tensor under the Ricci flow (2005)
+- Šešum, Nataša, Curvature tensor under the Ricci flow (2005)
 - B. Wang, _On the conditions to extend Ricci flow (II)_, Int. Math. Res. Not. IMRN **2012**, no. 14, 3192–3223. doi:10.1093/imrn/rnr141. arXiv:1107.5107v1; theorem numbering refers to this preprint version.
 - Wang, Bing, On the conditions to extend Ricci flow (2008)
-- Zhang, Zhou, Scalar curvature behavior for finite-time singularity of K{ä}hler–Ricci flow (2010)
+- Zhang, Zhou, Scalar curvature behavior for finite-time singularity of Kähler–Ricci flow (2010)
 - H.-D. Cao and X.-P. Zhu, _A complete proof of the Poincaré and geometrization conjectures—application of the Hamilton–Perelman theory of the Ricci flow_, Asian J. Math. **10** (2006), no. 2, 165–492. Full text.
-- H.-L. Gu and X.-P. Zhu, _The existence of Type II singularities for the Ricci flow on \(S^{n+1}\)_, Comm. Anal. Geom. **16** (2008), no. 3, 467–494. arXiv:0707.0033v1.
-- N. Ťešum, _Curvature tensor under the Ricci flow_, Amer. J. Math. **127** (2005), no. 6, 1315–1324. doi:10.1353/ajm.2005.0042.
+- H.-L. Gu and X.-P. Zhu, _The existence of Type II singularities for the Ricci flow on $S^{n+1}$_, Comm. Anal. Geom. **16** (2008), no. 3, 467–494. arXiv:0707.0033v1.
+- N. Šešum, _Curvature tensor under the Ricci flow_, Amer. J. Math. **127** (2005), no. 6, 1315–1324. doi:10.1353/ajm.2005.0042.

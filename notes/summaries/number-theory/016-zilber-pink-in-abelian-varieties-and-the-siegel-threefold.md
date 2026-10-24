@@ -163,15 +163,15 @@ What it does not buy: effectivity, uniformity, or a bound. Manuscript A gives no
 - Bertrand, Daniel, Beukers, Frits, Équations différentielles linéaires et majorations de multiplicités (1985)
 - Bombieri, Enrico, On G-functions (1981)
 - Bombieri, Enrico, On G-functions (1981)
-- Bosch, Siegfried, L{ü}tkebohmert, Werner, Raynaud, Michel, {N{é}ron} Models (1990)
-- Bosch, Siegfried, L{ü}tkebohmert, Werner, Raynaud, Michel, Néron Models (1990)
+- Bosch, Siegfried, Lütkebohmert, Werner, Raynaud, Michel, {Néron} Models (1990)
+- Bosch, Siegfried, Lütkebohmert, Werner, Raynaud, Michel, Néron Models (1990)
 - Bost, Jean-Beno\^it, Gillet, Henri, Soulé, Christophe, Heights of projective varieties and positive Green forms (1994)
-- Cais, Bryden, Canonical extensions of {Néron} models of Jacobians (2010)
+- Cais, Bryden, Canonical extensions of Néron models of Jacobians (2010)
 - G. Faltings and C.-L. Chai, _Degeneration of Abelian Varieties_, Ergebnisse der Mathematik und ihrer Grenzgebiete (3), vol. 22, Springer-Verlag, Berlin, 1990.
 - Chai, Ching-Li, Compactification of Siegel Moduli Schemes (1985)
 - Checcoli, Sara, Veneziano, Francesco, Viada, Evelina, On torsion anomalous intersections (2014)
 - Y.-G. Chen, _On the Siegel–Tatuzawa–Hoffstein theorem_, Acta Arith. **130** (2007), 361–367. Publisher's PDF.
-- D. A. Cox, _Primes of the Form \(x^2+ny^2\): Fermat, Class Field Theory, and Complex Multiplication_, second ed., John Wiley & Sons, Hoboken, NJ, 2013. doi:10.1002/9781118400722.
+- D. A. Cox, _Primes of the Form $x^2+ny^2$: Fermat, Class Field Theory, and Complex Multiplication_, second ed., John Wiley & Sons, Hoboken, NJ, 2013. doi:10.1002/9781118400722.
 - Daw, Christopher, Orr, Martin, Quantitative reduction theory and unlikely intersections (2022)
 - Daw, Christopher, Orr, Martin, The large Galois orbits conjecture under multiplicative degeneration (2025)
 - Daw, Christopher, Orr, Martin, Quantitative Reduction Theory and Unlikely Intersections (2022)
@@ -180,10 +180,10 @@ What it does not buy: effectivity, uniformity, or a bound. Manuscript A gives no
 - Daw, Christopher, Orr, Martin, Zilber–Pink in a product of modular curves assuming multiplicative degeneration (2025)
 - Daw, Christopher, Orr, Martin, Papas, Georgios, Some new cases of Zilber–Pink in $Y(1)^3$ (2026)
 - Deligne, Pierre, Équations différentielles \`a points singuliers réguliers (1970)
-- Dill, Gabriel A., Generalized {Vojta–Rémond} inequality (2020)
+- Dill, Gabriel A., Generalized Vojta–Rémond inequality (2020)
 - Dogra, Netan, Pandit, Sudip, A Buium–Coleman bound for the Zilber–Pink conjecture for curves inside abelian varieties (2026)
 - van den Dries, Lou, Macintyre, Angus, Marker, David, The elementary theory of restricted analytic fields with exponentiation (1994)
-- Dubé, Thomas W., The Structure of Polynomial Ideals and {Gr{ö}bner} Bases (1990)
+- Dubé, Thomas W., The Structure of Polynomial Ideals and {Gröbner} Bases (1990)
 - Edixhoven, Bas, Lido, Guido, Geometric quadratic Chabauty (2023)
 - Elman, Richard, Karpenko, Nikita, Merkurjev, Alexander, The Algebraic and Geometric Theory of Quadratic Forms (2008)
 - Evertse, Jan-Hendrik, An explicit version of Faltings' Product Theorem and an improvement of Roth's lemma (1995)
@@ -202,18 +202,18 @@ What it does not buy: effectivity, uniformity, or a bound. Manuscript A gives no
 - Katz, Nicholas M., Nilpotent connections and the monodromy theorem: applications of a result of Turrittin (1970)
 - Katz, Nicholas M., Oda, Tadao, On the differentiation of De Rham cohomology classes with respect to parameters (1968)
 - Katz, Nicholas M., Nilpotent connections and the monodromy theorem: Applications of a result of Turrittin (1970)
-- Krick, Teresa, Pardo, Luis Miguel, Sombra, Mart{í}n, Sharp estimates for the arithmetic Nullstellensatz (2001)
+- Krick, Teresa, Pardo, Luis Miguel, Sombra, Martín, Sharp estimates for the arithmetic Nullstellensatz (2001)
 - Krick, Teresa, Pardo, Luis Miguel, Sombra, Martín, Sharp estimates for the arithmetic Nullstellensatz (2001)
 - Kubrak, Dmitry, Prikhodko, Artem, Rational $p$-adic Hodge theory for $d$-de Rham-proper stacks (2022)
 - K.-W. Lan, _Arithmetic Compactifications of PEL-Type Shimura Varieties_, London Mathematical Society Monographs Series, vol. 36, Princeton University Press, Princeton, 2013. Numbered references use the revised dissertation version (14 March 2021).
 - Lan, Kai-Wen, Arithmetic Compactifications of PEL-Type Shimura Varieties (2013)
 - Lawrence, Brian, Venkatesh, Akshay, Diophantine problems and $p$-adic period mappings (2020)
 - S. Löbrich, _A gap in the spectrum of the Faltings height_, J. Théor. Nombres Bordeaux **29** (2017), 289–305. doi:10.5802/jtnb.980.
-- Masser, David W., W{ü}stholz, Gisbert, Endomorphism estimates for abelian varieties (1994)
-- Masser, David W., W{ü}stholz, Gisbert, Endomorphism estimates for abelian varieties (1994)
+- Masser, David W., Wüstholz, Gisbert, Endomorphism estimates for abelian varieties (1994)
+- Masser, David W., Wüstholz, Gisbert, Endomorphism estimates for abelian varieties (1994)
 - Matthews, C. R., Vaserstein, L. N., Weisfeiler, B., Congruence properties of Zariski-dense subgroups I (1984)
 - Matthews, Colin R., Vaserstein, Leonid N., Weisfeiler, Boris, Congruence Properties of Zariski-Dense Subgroups I (1984)
-- Maulik, Davesh, Poonen, Bjorn, {N{é}ron–Severi} groups under specialization (2012)
+- Maulik, Davesh, Poonen, Bjorn, {Néron–Severi} groups under specialization (2012)
 - Mazur, Barry, Messing, William, Universal Extensions and One Dimensional Crystalline Cohomology (1974)
 - Milne, James S., Abelian Varieties (2008)
 - Milne, James S., Abelian varieties (1986)
@@ -224,16 +224,14 @@ What it does not buy: effectivity, uniformity, or a bound. Manuscript A gives no
 - Milne, James S., Shimura Varieties: The Geometric Side of the Zeta Function (1995)
 - Milne, James S., Shimura varieties and moduli (2013)
 - Moonen, Ben, Zarhin, Yuri G., Hodge classes on abelian varieties of low dimension (1999)
-- W{\l}odarczyk, Jaros{\l}aw, Simple Hironaka resolution in characteristic zero (2005)
 - Ogus, Arthur, $F$-isocrystals and de Rham cohomology II—Convergent isocrystals (1984)
-- \begingroup\raggedright OpenAI, _The Quasi-Riemann Hypothesis: A Zero-Free Half-Plane \(\mathrmRe(s)>7/8\)_, OpenAI Math Release preprint OAI:The-Quasi-Riemann-Hypothesis-September-30-2026, 2026. \par\endgroup
+- OpenAI, _The Quasi-Riemann Hypothesis: A Zero-Free Half-Plane $\mathrm{Re}(s)>7/8$_, OpenAI Math Release preprint OAI:The-Quasi-Riemann-Hypothesis-September-30-2026, 2026.
 - OpenAI, {The $E\times\mathrm{CM}$ component of Zilber–Pink for curves in $\mathcal A_2$} (2026)
 - OpenAI, Quaternionic division points on curves in the Siegel threefold (2026)
-- C. Daw and M. Orr, _Unlikely intersections with \(E\times\CM\) curves in \(\A_2\)_, Ann. Sc. Norm. Super. Pisa Cl. Sci. (5) **22** (2021), 1705–1745. doi:10.2422/2036-2145.202006\_014. We use the corrected preprint, arXiv:1902.10483v4 (28 May 2021).
+- C. Daw and M. Orr, _Unlikely intersections with $E\times\CM$ curves in $\A_2$_, Ann. Sc. Norm. Super. Pisa Cl. Sci. (5) **22** (2021), 1705–1745. doi:10.2422/2036-2145.202006\_014. We use the corrected preprint, arXiv:1902.10483v4 (28 May 2021).
 - C. Daw and M. Orr, _The large Galois orbits conjecture under multiplicative degeneration_, arXiv:2306.13463v2, revised 15 May 2025.
-- Orr, Martin, Galois conjugates of special points and special subvarieties
-           in Shimura varieties (2021)
-- G. Papas, _On the \(v\)-adic values of \(G\)-functions I: Splittings in \(\A_2\)_, arXiv:2510.11806v1, 13 October 2025.
+- Orr, Martin, Galois conjugates of special points and special subvarieties in Shimura varieties (2021)
+- G. Papas, _On the $v$-adic values of $G$-functions I: Splittings in $\A_2$_, arXiv:2510.11806v1, 13 October 2025.
 - Papas, Georgios, On the $v$-adic values of $G$-functions I: Splittings in $\mathcal A_2$ (2025)
 - Papas, Georgios, On the $v$-adic values of $G$-functions III: QM points in $\mathcal A_2$ (2025)
 - Papas, Georgios, Some cases of the Zilber–Pink conjecture for curves in $\mathcal A_g$ (2024)
@@ -243,17 +241,15 @@ What it does not buy: effectivity, uniformity, or a bound. Manuscript A gives no
 - Pazuki, Fabien, Theta height and Faltings height (2012)
 - Petrequin, Denis, Classes de Chern et classes de cycles en cohomologie rigide (2003)
 - Pila, Jonathan, Wilkie, Alex J., The rational points of a definable set (2006)
-- Pila, Jonathan, O-minimality and the {André–Oort} conjecture for $\mathbb C^n$ (2011)
+- Pila, Jonathan, O-minimality and the André–Oort conjecture for $\mathbb C^n$ (2011)
 - Pila, Jonathan, Zannier, Umberto, Rational points in periodic analytic sets and the Manin–Mumford conjecture (2008)
-- Pila, Jonathan, Tsimerman, Jacob, The {André–Oort} conjecture for the moduli space of abelian surfaces (2013)
+- Pila, Jonathan, Tsimerman, Jacob, The André–Oort conjecture for the moduli space of abelian surfaces (2013)
 - Pila, Jonathan, Wilkie, Alex J., The rational points of a definable set (2006)
 - Pila, Jonathan, Zannier, Umberto, Rational points in periodic analytic sets and the Manin–Mumford conjecture (2008)
-- Pink, Richard, A common generalization of the conjectures of
-    {André–Oort}, Manin–Mumford, and Mordell–Lang (2005)
+- Pink, Richard, A common generalization of the conjectures of André–Oort, Manin–Mumford, and Mordell–Lang (2005)
 - R. Pink, _A common generalization of the conjectures of André–Oort, Manin–Mumford, and Mordell–Lang_, preprint, April 17, 2005. Author's manuscript.
-- Pink, Richard, A common generalization of the conjectures of
-    {André–Oort}, Manin–Mumford, and Mordell–Lang (2005)
-- Pink, Richard, A Common Generalization of the Conjectures of {André–Oort}, Manin–Mumford, and Mordell–Lang (2005)
+- Pink, Richard, A common generalization of the conjectures of André–Oort, Manin–Mumford, and Mordell–Lang (2005)
+- Pink, Richard, A Common Generalization of the Conjectures of André–Oort, Manin–Mumford, and Mordell–Lang (2005)
 - Raynaud, Michel, Sous-variétés d'une variété abélienne et points de torsion (1983)
 - Rémond, Gaël, Intersection de sous-groupes et de sous-variétés III (2009)
 - Rémond, Gaël, Inégalité de Vojta généralisée (2005)
@@ -269,13 +265,14 @@ What it does not buy: effectivity, uniformity, or a bound. Manuscript A gives no
 - J.-P. Serre and J. Tate, _Good reduction of abelian varieties_, Ann. of Math. (2) **88** (1968), 492–517. doi:10.2307/1970722.
 - J. Tate, _A review of non-Archimedean elliptic functions_, in _Elliptic Curves, Modular Forms, & Fermat's Last Theorem_ (Hong Kong, 1993), Series in Number Theory, vol. I, International Press, Cambridge, MA, 1995, 162–184. Author's reprint.
 - J. Pila and J. Tsimerman, _The André–Oort conjecture for the moduli space of abelian surfaces_, Compos. Math. **149** (2013), 204–216. doi:10.1112/S0010437X12000589.
-- J. Tsimerman, _The André–Oort conjecture for \(\A_g\)_, Ann. of Math. (2) **187** (2018), 379–390. doi:10.4007/annals.2018.187.2.2.
+- J. Tsimerman, _The André–Oort conjecture for $\A_g$_, Ann. of Math. (2) **187** (2018), 379–390. doi:10.4007/annals.2018.187.2.2.
 - Ullmo, Emmanuel, Positivité et discrétion des points algébriques des courbes (1998)
 - Viada, Evelina, Nondense Subsets of Varieties in a Power of an Elliptic Curve (2009)
 - Viada, Evelina, The intersection of a curve with algebraic subgroups in a product of elliptic curves (2003)
 - Vojta, Paul, Siegel's theorem in the compact case (1991)
 - J. Pila and A. J. Wilkie, _The rational points of a definable set_, Duke Math. J. **133** (2006), 591–616. doi:10.1215/S0012-7094-06-13336-7.
 - D. W. Masser and G. Wüstholz, _Periods and minimal abelian subvarieties_, Ann. of Math. (2) **137** (1993), 407–458. doi:10.2307/2946542.
+- Włodarczyk, Jarosław, Simple Hironaka resolution in characteristic zero (2005)
 - Yuan, Xinyi, Zhang, Shou-Wu, Adelic Line Bundles on Quasi-projective Varieties (2025)
 - Yuan, Xinyi, Big line bundles over arithmetic varieties (2008)
 - J. Pila and U. Zannier, _Rational points in periodic analytic sets and the Manin–Mumford conjecture_, Rend. Lincei Mat. Appl. (9) **19** (2008), 149–162. doi:10.4171/RLM/514.
@@ -286,5 +283,5 @@ What it does not buy: effectivity, uniformity, or a bound. Manuscript A gives no
 - B. Zilber, _Exponential sums equations and the Schanuel conjecture_, J. London Math. Soc. (2) **65** (2002), 27–44. doi:10.1112/S0024610701002861.
 - Zilber, Boris, Exponential sums equations and the Schanuel conjecture (2002)
 - Zilber, Boris, Exponential sums equations and the Schanuel conjecture (2002)
-- Andr{é}, Yves, Mumford–Tate groups of mixed Hodge structures and the theorem of the fixed part (1992)
-- Dub{é}, Thomas W., The structure of polynomial ideals and {Gr{ö}bner} bases (1990)
+- André, Yves, Mumford–Tate groups of mixed Hodge structures and the theorem of the fixed part (1992)
+- Dubé, Thomas W., The structure of polynomial ideals and {Gröbner} bases (1990)

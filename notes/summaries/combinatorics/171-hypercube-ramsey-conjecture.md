@@ -178,7 +178,7 @@ evidence.
 - W. Hoeffding, Probability inequalities for sums of bounded random variables, _Journal of the American Statistical Association_ **58** (1963), no. 301, 13–30.  .
 - S. Kakutani, A generalization of Brouwer's fixed point theorem, _Duke Mathematical Journal_ **8** (1941), no. 3, 457–459.  .
 - C. Lee, Ramsey numbers of degenerate graphs, _Annals of Mathematics_ (2) **185** (2017), no. 3, 791–829.  .
-- P. Erdős and L. Lovász, Problems and results on \(3\)-chromatic hypergraphs and some related questions, in _Infinite and Finite Sets_ (Keszthely, 1973), Colloquia Mathematica Societatis János Bolyai **10** (1975), 609–627.  .
+- P. Erdős and L. Lovász, Problems and results on $3$-chromatic hypergraphs and some related questions, in _Infinite and Finite Sets_ (Keszthely, 1973), Colloquia Mathematica Societatis János Bolyai **10** (1975), 609–627.  .
 - G. O. Mota, G. N. Sárközy, M. Schacht and A. Taraz, Ramsey numbers for bipartite graphs with small bandwidth, _European Journal of Combinatorics_ **48** (2015), 165–176.  .
 - G. Fiz Pontiveros, S. Griffiths, R. Morris, D. Saxton and J. Skokan, The Ramsey number of the clique and the hypercube, _Journal of the London Mathematical Society_ **89** (2014), no. 3, 680–702.  .
 - G. Fiz Pontiveros, S. Griffiths, R. Morris, D. Saxton and J. Skokan, On the Ramsey number of the triangle and the cube, _Combinatorica_ **36** (2016), 71–89.  .

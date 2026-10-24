@@ -62,9 +62,9 @@ manuscript 2 [S6:58–72]:
 > **corollary**
 Let $n\ge1$ and $2\le a_1\le\cdots\le a_n$. Suppose that a homogeneous ideal $I\subseteq\mathbb C[x_1,\ldots,x_n]$ contains a regular sequence $f_1,\ldots,f_n$ with $\deg f_i=a_i$. There is a monomial ideal $J\subseteq\mathbb C[x_1,\ldots,x_n]$ such that
 \[
- x_i^{a_i}\in J\quad(1\le i\le n),
+ x_i^a_i\in J\quad(1\le i\le n),
  \qquad
- H_{S/J}(d)=H_{S/I}(d)\quadfor every d\ge0.
+ H_S/J(d)=H_S/I(d)\quadfor every d\ge0.
 \] [S6:65–72]
 
 Manuscript 1 sharpens the conclusion to Betti numbers. Its main
@@ -81,7 +81,7 @@ For every \(n\ge1\), every ordered degree sequence
 degrees, the spaces in   exist and
 \(J=\bigoplus_{d\ge0}J_d\) is a homogeneous ideal. For this single ideal,
 \[
- \beta^S_{p,j}(S/I)\le\beta^S_{p,j}(S/J)
+ \beta^S_p,j(S/I)\le\beta^S_p,j(S/J)
  \qquadfor every \(p\ge0\) and \(j\in\mathbb Z\).
 \]
 There is no restriction on the degrees or number of the additional
@@ -239,13 +239,13 @@ no non-LaTeX evidence.
 - F. F. Knudsen and D. Mumford, _The projectivity of the moduli space of stable curves. I. Preliminaries on ``det'' and ``Div''_, Math. Scand. **39** (1976), 19–55. doi:10.7146/math.scand.a-11642.
 - J. Mermin and S. Murai, _The Lex-Plus-Powers Conjecture holds for pure powers_, Adv.\ Math.\ **226** (2011), no. 4, 3511–3539. doi:10.1016/j.aim.2010.08.022. Author version:  .
 - S. Murai, _Borel-plus-powers monomial ideals_, J. Pure Appl. Algebra **212** (2008), no. 6, 1321–1336. doi:10.1016/j.jpaa.2007.09.010. Author version:  .
-- OpenAI, _Commuting Division-Coefficient Forms and the Artinian Eisenbud–Green–Harris Conjecture_, OpenAI Math Release preprint OAI:Commuting-Division-Coefficient-Forms-and-the-Artinian-Eisenbud-Green-Harris-Conjecture-September-23-2026, 2026. \enlargethispage{2\baselineskip}
+- OpenAI, _Commuting Division-Coefficient Forms and the Artinian Eisenbud–Green–Harris Conjecture_, OpenAI Math Release preprint OAI:Commuting-Division-Coefficient-Forms-and-the-Artinian-Eisenbud-Green-Harris-Conjecture-September-23-2026, 2026.
 - OpenAI, _The Artinian Lex-Plus-Powers Betti Theorem_, OpenAI Math Release preprint OAI:The-Artinian-Lex-Plus-Powers-Betti-Theorem-September-23-2026, 2026.
 - K. Pardue, _Deformation classes of graded modules and maximal Betti numbers_, Illinois J. Math.\ **40** (1996), no. 4, 564–585. doi:10.1215/ijm/1255985937.
 - C. A. Francisco and B. P. Richert, _Lex-plus-powers ideals_, in I. Peeva (ed.), _Syzygies and Hilbert Functions_, Lecture Notes in Pure and Applied Mathematics **254**, Chapman & Hall/CRC, Boca Raton, FL, 2007, 113–144. Author version:  .
 - B. P. Richert, _A study of the lex plus powers conjecture_, J. Pure Appl. Algebra **186** (2004), no. 2, 169–183. doi:10.1016/S0022-4049(03)00130-0.
 - G. Caviglia and A. Sammartano, _On the Lex-plus-powers Conjecture_, Adv.\ Math.\ **340** (2018), 284–299. doi:10.1016/j.aim.2018.10.005. Numbered statements refer to arXiv:1802.03035v2.
-- G. Caviglia and E. Sbarra, _The lex-plus-powers inequality for local cohomology modules_, Math. Ann. **364** (2016), 225–241. doi:10.1007/s00208-015-1180-5. Numbered statements refer to the manuscript entitled _The lex-plus-power inequality for local cohomology modules_, \mbox{arXiv:1208.2187v2}, 11 March 2013.
+- G. Caviglia and E. Sbarra, _The lex-plus-powers inequality for local cohomology modules_, Math. Ann. **364** (2016), 225–241. doi:10.1007/s00208-015-1180-5. Numbered statements refer to the manuscript entitled _The lex-plus-power inequality for local cohomology modules_, arXiv:1208.2187v2, 11 March 2013.
 - P. Schapira, _An Introduction to Sheaves on Grothendieck Topologies_, author notes, version dated 01/08/2026.  .
 - A. Borel and J.-P. Serre, _Le théor\`eme de Riemann–Roch_, Bull. Soc. Math. France **86** (1958), 97–136. doi:10.24033/bsmf.1500.
 - O. M. Schnürer and W. Soergel, _Proper base change for separated locally proper maps_, Rend. Sem. Mat. Univ. Padova **135** (2016), 223–250. doi:10.4171/RSMUP/135-13.

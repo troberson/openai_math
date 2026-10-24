@@ -69,7 +69,7 @@ degree $d$ lowers cohomological codimension by $d-1$.
 Consequently, a nonzero product in $r$ independent curve degrees would
 give
 \[
- r(\iota-1)\le\sum_{j=1}^r(d_j-1)\le n.
+ r(\iota-1)\le\sum_j=1^r(d_j-1)\le n.
 \]
 The main task is to produce that product without assuming that quantum
 cohomology is semisimple. [S3:76–91]
@@ -115,7 +115,7 @@ linearly independent.  For every $y\in Y$, the ordered endpoint locus
 is either empty or satisfies
 \[
  \dim\operatornameLocus(V^1,\ldots,V^k)_y
- \ge\sum_{j=1}^k(-K_Y\cdot V^j-1).
+ \ge\sum_j=1^k(-K_Y\cdot V^j-1).
 \]
 \endtheorem [S3:110–127]
 

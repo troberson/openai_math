@@ -99,7 +99,7 @@ $0\le(K_{S_a}+B_{S_a})^2\le 3\chi_c(S_a^\circ)$, so every extra
 logarithmic square vanishes . "Langer's orbifold Bogomolov–Miyaoka–Yau inequality supplies the other
 sign  :
 \[
- 0\le (K_{S_a}+B_{S_a})^2\le3\chi_c(S_a^\circ)
+ 0\le (K_S_a+B_S_a)^2\le3\chi_c(S_a^\circ)
  \qquadfor every a.
 \]
 Thus every extra logarithmic square vanishes.  Specialization of

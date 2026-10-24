@@ -30,7 +30,7 @@ The construction pairs two graphs whose vertex label sets intersect in odd size,
 
 The conjecture is stated. [S3:50–50] states it: "Kaplansky's zero-divisor conjecture asserts that \(K[G]\) has no nonzero zero divisors whenever \(K\) is a field and \(G\) is torsion-free. Here \(K[G]\) is the algebra of finite formal sums of elements of \(G\), with multiplication extended bilinearly from the group law. We prove the following negative resolution. [S3:50]"
 
-The elementary obstruction is recorded. records it: "Finite-order elements give elementary zero divisors: if \(g\) has order \(m>1\), then \((1-g)(1+g+\cdots+g^{m-1})=0\). The conjecture asks whether removing this obstruction suffices. [S3:60]"
+The elementary obstruction is recorded. records it: "Finite-order elements give elementary zero divisors: if \(g\) has order \(m>1\), then \((1-g)(1+g+\cdots+g^m-1)=0\). The conjecture asks whether removing this obstruction suffices. [S3:60]"
 
 The unique-product property is defined. defines it: "A group has the _unique-product property_ if, for every pair of finite nonempty subsets \(P,Q\), some element of \(PQ\) has exactly one expression \(pq\) with \(p\in P\), \(q\in Q\). Applying this property to the supports of two nonzero group-algebra elements gives a nonzero product coefficient. [S3:64]"
 
@@ -123,10 +123,10 @@ The declaration is `OAI.TorsionFreeZeroDivisors.main` at `lean/OAI/Algebra/Group
 
 - Bereznyuk, Vadim, Asphericity of groups defined by graphs (2019)
 - Brown, Kenneth S., Cohomology of Groups (1982)
-- Sam P. Fisher, Pablo S{á}nchez-Peralta, Division rings for group algebras of virtually compact special groups and $3$-manifold groups (2026)
+- Sam P. Fisher, Pablo Sánchez-Peralta, Division rings for group algebras of virtually compact special groups and $3$-manifold groups (2026)
 - Gardam, Giles, A counterexample to the unit conjecture for group rings (2021)
 - Giles Gardam, Non-trivial units of complex group rings (2024)
-- Garg, Manisha, Mineyev, Igor, On zero-divisors and units in group rings of torsion-free {CAT(0)} groups (2025)
+- Garg, Manisha, Mineyev, Igor, On zero-divisors and units in group rings of torsion-free CAT(0) groups (2025)
 - Gromov, M., Random walk in random groups (2003)
 - Gruber, Dominik, Groups with graphical $C(6)$ and $C(7)$ small cancellation presentations (2015)
 - Hatcher, Allen, Algebraic Topology (2002)

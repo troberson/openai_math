@@ -48,7 +48,7 @@ tensor, use the area and Poisson integrals
 \[
  A_q(f)=\frac1\pi\int_\mathbb D q(f',f')\,\mathrm d S,
  \qquad
- P_q(f)=\frac2\pi\int_\mathbb D\log\frac1{|z|}\,q(f',f')\,\mathrm d S,
+ P_q(f)=\frac2\pi\int_\mathbb D\log\frac1|z|\,q(f',f')\,\mathrm d S,
 \]
 where $\mathrm d S$ is Euclidean area. We maximize
 \[
@@ -70,7 +70,7 @@ area functional satisfies the identity
 evaluated at $t=0$. The trace of the
 complex Hessian of the area functional is then
 \[
- \mathcal L A_h(F_t)=n-A_{R_h}(f),
+ \mathcal L A_h(F_t)=n-A_R_h(f),
  \qquad R_h=-i\partial\bar\partial\log\det h,
  \qquad dd^c=i\partial\bar\partial.
 \] [S5:121–128]

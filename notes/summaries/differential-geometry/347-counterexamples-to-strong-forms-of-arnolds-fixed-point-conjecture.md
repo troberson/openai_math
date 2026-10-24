@@ -208,7 +208,7 @@ The positive results the manuscripts cite are conditional. Dimitroglou Rizell an
 
 The dimension-22 manuscript names the conjecture, the positive results, and why its examples escape the hypothesis 
 
-> The stable Morse formulation is stated explicitly in \cite[Conjecture 1.2]Golovko2020. Damian showed that ordinary and stable Morse numbers need not agree  . Positive results for the stable bound include the theorem of Dimitroglou Rizell and Golovko for generic Hamiltonians when both the symplectic area class and the first Chern class vanish on $\pi_2(M)$ \cite[Corollary 1.4]DRG2017; Pöder Balkest\aa hl obtained an independent proof using the simple homotopy type of the Hamiltonian Floer complex \cite[Corollary 1.2]PoderBalkestahl2021. These hypotheses do not hold for the projective blow-ups used here. [S21:75–84]
+> The stable Morse formulation is stated explicitly in \cite[Conjecture 1.2]Golovko2020. Damian showed that ordinary and stable Morse numbers need not agree  . Positive results for the stable bound include the theorem of Dimitroglou Rizell and Golovko for generic Hamiltonians when both the symplectic area class and the first Chern class vanish on $\pi_2(M)$ \cite[Corollary 1.4]DRG2017; Pöder Balkestå hl obtained an independent proof using the simple homotopy type of the Hamiltonian Floer complex \cite[Corollary 1.2]PoderBalkestahl2021. These hypotheses do not hold for the projective blow-ups used here. [S21:75–84]
 
 The dimension-22 manuscript contrasts the two bounds directly 
 
@@ -297,7 +297,8 @@ What has not been checked: no Lean, lake, or comparator run was performed, and t
 - Bai, Shaoyun, Xu, Guangbo, Integral Hamiltonian Floer theory: Foundations (2026)
 - Bai, Shaoyun, Xu, Guangbo, Arnold conjecture over integers (2022)
 - Bai, Shaoyun, Xu, Guangbo, Integral Hamiltonian Floer theory: Foundations (2026)
-- Barraud, Jean-Fran{\c c}ois, A Floer fundamental group (2018)
+- {Pöder Balkeståhl}, Sebastian, Simple homotopy type of the Hamiltonian Floer complex (2021)
+- Barraud, Jean-François, A Floer fundamental group (2018)
 - Bass, Hyman, $K$-theory and stable algebra (1964)
 - T. Blomme, _Gromov–Witten invariants of bielliptic surfaces_, J. London Math. Soc. (2) **111** (2025), no. 2, e70081. doi:10.1112/jlms.70081.
 - T. Blomme, _Gromov–Witten invariants of bielliptic surfaces_, J. London Math. Soc. (2) **111** (2025), no. 2, e70081. doi:10.1112/jlms.70081.
@@ -305,10 +306,10 @@ What has not been checked: no Lean, lake, or comparator run was performed, and t
 - M. Abouzaid and A. J. Blumberg, _Arnold conjecture and Morava $K$-theory_, preprint (2021), arXiv:2103.01507.
 - M. Abouzaid and A. J. Blumberg, _Arnold conjecture and Morava $K$-theory_, preprint (2021), arXiv:2103.01507.
 - L. Buhovsky, V. Humili\`ere, and S. Seyfaddini, _A $C^0$ counterexample to the Arnold conjecture_, Inventiones Mathematicae **213** (2018), no. 2, 759–809. doi:10.1007/s00222-018-0797-x.
-- Cerf, Jean, Travaux de Smale sur la structure des vari{é}t{é}s (1962)
-- Conley, Charles C., Zehnder, Eduard, The Birkhoff–Lewis fixed point theorem and a conjecture of {V. I. Arnold} (1983)
-- Conley, Charles C., Zehnder, Eduard, The Birkhoff–Lewis fixed point theorem and a conjecture of {V. I. Arnold} (1983)
-- Cossey, John, Gruenberg, Karl W., Kov{á}cs, L. G., The presentation rank of a direct product of finite groups (1974)
+- Cerf, Jean, Travaux de Smale sur la structure des variétés (1962)
+- Conley, Charles C., Zehnder, Eduard, The Birkhoff–Lewis fixed point theorem and a conjecture of V. I. Arnold (1983)
+- Conley, Charles C., Zehnder, Eduard, The Birkhoff–Lewis fixed point theorem and a conjecture of V. I. Arnold (1983)
+- Cossey, John, Gruenberg, Karl W., Kovács, L. G., The presentation rank of a direct product of finite groups (1974)
 - V. I. Arnol'd, _First steps in symplectic topology_, Russian Mathematical Surveys **41** (1986), no. 6, 1–21. doi:10.1070/RM1986v041n06ABEH004221.
 - Arnol'd, Vladimir I., First steps in symplectic topology (1986)
 - V. I. Arnol'd, _First steps in symplectic topology_, Russian Math. Surveys **41** (1986), no. 6, 1–21. doi:10.1070/RM1986v041n06ABEH004221.
@@ -339,9 +340,8 @@ What has not been checked: no Lean, lake, or comparator run was performed, and t
 - W. Gong, _Degenerate symplectic fixed points and Gromov–Witten invariants_, arXiv:2507.04191v5, December 21, 2025.
 - Gruenberg, Karl W., Linnell, Peter A., Generation gaps and abelianized defects of free products (2008)
 - R. Hartshorne, _Algebraic Geometry_, Graduate Texts in Mathematics, vol. 52, Springer-Verlag, New York–Heidelberg, 1977. doi:10.1007/978-1-4757-3849-0.
-- S. Pöder Balkest\aa hl, _Simple homotopy type of the Hamiltonian Floer complex_, preprint (2021), arXiv:2110.10592.
-- S. Pöder Balkest\aa hl, _Simple homotopy type of the Hamiltonian Floer complex_, preprint (2021), arXiv:2110.10592.
-- {P{ö}der Balkest{\aa}hl}, Sebastian, Simple homotopy type of the Hamiltonian Floer complex (2021)
+- S. Pöder Balkestå hl, _Simple homotopy type of the Hamiltonian Floer complex_, preprint (2021), arXiv:2110.10592.
+- S. Pöder Balkestå hl, _Simple homotopy type of the Hamiltonian Floer complex_, preprint (2021), arXiv:2110.10592.
 - H. Hofer, _Lusternik–Schnirelman-theory for Lagrangian intersections_, Annales de l'Institut Henri Poincaré C, Analyse non linéaire **5** (1988), no. 5, 465–499. doi:10.1016/S0294-1449(16)30339-0.
 - H. Jiao, _A smooth Hamiltonian diffeomorphism with two fixed points on $S^2\times S^2$_, arXiv:2609.33626v1, September 27, 2026.
 - Laudenbach, François, A proof of Morse's theorem about the cancellation of critical points (2013)

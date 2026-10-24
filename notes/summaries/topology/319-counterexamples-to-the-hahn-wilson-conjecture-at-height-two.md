@@ -45,7 +45,7 @@ standard form of $\mathrm{BP}\langle2\rangle_p^\wedge$,
 The same spectrum satisfies
 \[
  L_2^fX\simeq L_2X,
- \qquad L_{T(2)}X\simeq L_{K(2)}X.
+ \qquad L_T(2)X\simeq L_K(2)X.
 \] [S3:114–126]
 
 The counterexample shows the prediction is false: the spectrum is of

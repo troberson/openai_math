@@ -30,7 +30,7 @@ manuscript proves this
 every finite set \(P\subset\mathbb R^d\) of \(n\ge2\) distinct points
 satisfies
 \[
- |\Delta(P)|\ge c_d n^{2/d}.
+ |\Delta(P)|\ge c_d n^2/d.
 \] [S4:19–26]
 
 The power of $n$ is optimal: the integer grid $\{1,\ldots,t\}^d$ has
@@ -141,32 +141,32 @@ evidence.
 
 ## Bibliography
 
-- Ajtai, Mikl{ó}s, Chv{á}tal, Va{š}ek, Newborn, Monroe M., Szemer{é}di, Endre, Crossing-Free Subgraphs (1982)
-- Aronov, Boris, Pach, J{á}nos, Sharir, Micha, Tardos, G{á}bor, Distinct distances in three and higher dimensions (2004)
+- Ajtai, Miklós, Chvátal, Vašek, Newborn, Monroe M., Szemerédi, Endre, Crossing-Free Subgraphs (1982)
+- Aronov, Boris, Pach, János, Sharir, Micha, Tardos, Gábor, Distinct distances in three and higher dimensions (2004)
 - The Stacks Project Authors, The Stacks Project (2026)
 - Bardwell-Evans, Sam, Sheffer, Adam, A reduction for the distinct distances problem in $\mathbb{R}^d$ (2019)
-- Beck, J{ó}zsef, On the lattice property of the plane and some problems of Dirac, Motzkin and {Erdős} in combinatorial geometry (1983)
+- Beck, József, On the lattice property of the plane and some problems of Dirac, Motzkin and Erdős in combinatorial geometry (1983)
 - Chardin, Marc, Une majoration de la fonction de Hilbert et ses conséquences pour l'interpolation algébrique (1989)
 - Chardin, Marc, Philippon, Patrice, Régularité et interpolation (1999)
 - Chardin, Marc, Philippon, Patrice, Erratum to ``Régularité et interpolation'' (2002)
 - Clarkson, Kenneth L., Edelsbrunner, Herbert, Guibas, Leonidas J., Sharir, Micha, Welzl, Emo, Combinatorial complexity bounds for arrangements of curves and spheres (1990)
-- Szemer{é}di, Endre, Trotter, Jr., William T., Extremal problems in discrete geometry (1983)
-- Elekes, Gy{ö}rgy, Kaplan, Haim, Sharir, Micha, On lines, joints, and incidences in three dimensions (2011)
-- Elekes, Gy{ö}rgy, Sharir, Micha, Incidences in Three Dimensions and Distinct Distances in the Plane (2011)
-- Elekes, Gy{ö}rgy, T{ó}th, Csaba D., Incidences of not-too-degenerate hyperplanes (2005)
+- Szemerédi, Endre, Trotter, Jr., William T., Extremal problems in discrete geometry (1983)
+- Elekes, György, Kaplan, Haim, Sharir, Micha, On lines, joints, and incidences in three dimensions (2011)
+- Elekes, György, Sharir, Micha, Incidences in Three Dimensions and Distinct Distances in the Plane (2011)
+- Elekes, György, Tóth, Csaba D., Incidences of not-too-degenerate hyperplanes (2005)
 - Fulton, William, Intersection Theory (1998)
-- Guth, Larry, Katz, Nets Hawk, On the {Erd{ő}s} distinct distances problem in the plane (2015)
+- Guth, Larry, Katz, Nets Hawk, On the {Erdős} distinct distances problem in the plane (2015)
 - Guth, Larry, Katz, Nets Hawk, Algebraic methods in discrete analogs of the Kakeya problem (2010)
 - Hartshorne, Robin, Algebraic Geometry (1977)
 - Hatcher, Allen, Algebraic Topology (2002)
 - Kaminski, J. Y., Kanel-Belov, A., Teicher, M., Trisecant lemma for nonequidimensional varieties (2008)
-- Sz{é}kely, L{á}szl{ó} A., Crossing Numbers and Hard {Erdős} Problems in Discrete Geometry (1997)
+- Székely, László A., Crossing Numbers and Hard Erdős Problems in Discrete Geometry (1997)
 - Leighton, Frank Thomson, Complexity Issues in VLSI: Optimal Layouts for the Shuffle-Exchange Graph and Other Networks (1983)
 - Ran, Ziv, The (dimension + 2)-secant lemma (1991)
-- Erd{ő}s, P., On sets of distances of $n$ points (1946)
-- Solymosi, J{ó}zsef, Vu, Van H., Near optimal bounds for the {Erd{ő}s} distinct distances problem in high dimensions (2008)
+- Erdős, P., On sets of distances of $n$ points (1946)
+- Solymosi, József, Vu, Van H., Near optimal bounds for the {Erdős} distinct distances problem in high dimensions (2008)
 - Stone, A. H., Tukey, John W., Generalized ``sandwich'' theorems (1942)
-- Tidor, Jonathan, Yu, Hung-Hsun Hans, Zakharov, Dmitrii, The {Erd{ő}s} distinct distances problem in $\mathbb{R}^3$ (2026)
+- Tidor, Jonathan, Yu, Hung-Hsun Hans, Zakharov, Dmitrii, The {Erdős} distinct distances problem in $\mathbb{R}^3$ (2026)
 - Walsh, Miguel N., The polynomial method over varieties (2020)
 - Walsh, Miguel N., Concentration estimates for algebraic intersections (2023)
-- Aksoy Yazici, Esen, {Erd{ő}s} distance problem in $\mathbb{R}^d$ (2020)
+- Aksoy Yazici, Esen, {Erdős} distance problem in $\mathbb{R}^d$ (2020)

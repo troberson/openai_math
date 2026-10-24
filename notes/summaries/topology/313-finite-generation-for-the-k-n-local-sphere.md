@@ -34,7 +34,7 @@ the degreewise version for the sphere [S4:3–11]:
 > For every prime $p$, every integer $n\geq 1$, and every integer $t$,
 the $\Zp$-module
 \[
-                 \pi_t L_{K(n)}S_p^\wedge
+                 \pi_t L_K(n)S_p^\wedge
 \]
 is finitely generated. Equivalently, for every finite $p$-local
 spectrum $F$, the module $\pi_t L_{K(n)}F$ is finitely generated
@@ -160,15 +160,15 @@ non-LaTeX evidence.
 
 ## Bibliography
 
-- Achinger, Piotr, Gilles, Sally, Nizio{\l}, Wies{\l}awa, Compactly supported $p$-adic pro-{é}tale cohomology of analytic varieties (2025)
+- Achinger, Piotr, Gilles, Sally, Nizioł, Wiesława, Compactly supported $p$-adic pro-étale cohomology of analytic varieties (2025)
 - The Stacks Project Authors, The Stacks Project (2026)
 - Barthel, Tobias, Schlank, Tomer M., Stapleton, Nathaniel, Weinstein, Jared, On the rationalization of the $K(n)$-local sphere (2025)
 - Beaudry, Agn{\`e}s, Goerss, Paul G., Hopkins, Michael J., Stojanoska, Vesna, Dualizing spheres for compact $p$-adic analytic groups and duality in chromatic homotopy (2022)
 - Benson, Dave, Iyengar, Srikanth B., Krause, Henning, Module categories for group algebras over commutative rings (2013)
-- Blickle, Manuel, B{ö}ckle, Gebhard, Cartier modules: finiteness results (2011)
+- Blickle, Manuel, Böckle, Gebhard, Cartier modules: finiteness results (2011)
 - Boggi, Marco, Corob Cook, Ged, Continuous cohomology and homology of profinite groups (2016)
-- Le Bras, Arthur-C{é}sar, Espaces de Banach–Colmez et faisceaux coh{é}rents sur la courbe de Fargues–Fontaine (2018)
-- Cartier, Pierre, Une nouvelle op{é}ration sur les formes diff{é}rentielles (1957)
+- Le Bras, Arthur-César, Espaces de Banach–Colmez et faisceaux cohérents sur la courbe de Fargues–Fontaine (2018)
+- Cartier, Pierre, Une nouvelle opération sur les formes différentielles (1957)
 - Clausen, Dustin, Scholze, Peter, Condensed Mathematics and Complex Geometry (2026)
 - Colmez, Pierre, Espaces de Banach de dimension finie (2002)
 - Coulembier, Kevin, Some homological properties of ind-completions and highest weight categories (2020)
@@ -177,7 +177,7 @@ non-LaTeX evidence.
 - Devinatz, Ethan S., Towards the finiteness of $\pi_*L_{K(n)}S^0$ (2008)
 - Devinatz, Ethan S., Homotopy groups of homotopy fixed point spectra associated to $E_n$ (2007)
 - Fargues, Laurent, Scholze, Peter, Geometrization of the local Langlands correspondence (2026)
-- Fargues, Laurent, Fontaine, Jean-Marc, Courbes et fibr{é}s vectoriels en th{é}orie de Hodge $p$-adique (2018)
+- Fargues, Laurent, Fontaine, Jean-Marc, Courbes et fibrés vectoriels en théorie de Hodge $p$-adique (2018)
 - Heard, Drew, The $\mathrm{Sp}_{k,n}$-local stable homotopy category (2023)
 - Hopkins, Michael J., $K(1)$-local $E_\infty$-ring spectra (2014)
 - Hovey, Mark, Morava $K$- and $E$-theory (n.d.)
@@ -192,7 +192,7 @@ non-LaTeX evidence.
 - Milne, J. S., Class Field Theory (2020)
 - Milne, J. S., Algebraic Groups: The Theory of Group Schemes of Finite Type over a Field (2017)
 - Ravenel, Douglas C., Complex Cobordism and Stable Homotopy Groups of Spheres (1986)
-- Scholze, Peter, {É}tale cohomology of diamonds (2026)
+- Scholze, Peter, Étale cohomology of diamonds (2026)
 - Scholze, Peter, $p$-adic Hodge theory for rigid-analytic varieties (2013)
 - Scholze, Peter, $p$-adic Hodge theory for rigid-analytic varieties—corrigendum (2016)
 - Scholze, Peter, Weinstein, Jared, Moduli of $p$-divisible groups (2013)
@@ -200,4 +200,4 @@ non-LaTeX evidence.
 - Strauch, Matthias, Galois actions on torsion points of universal one-dimensional formal modules (2007)
 - Symonds, Peter, Permutation complexes for profinite groups (2007)
 - Tate, John T., $p$-Divisible Groups (1967)
-- Ansch{ü}tz, Johannes, Le Bras, Arthur-C{é}sar, A Fourier transform for Banach–Colmez spaces (2025)
+- Anschütz, Johannes, Le Bras, Arthur-César, A Fourier transform for Banach–Colmez spaces (2025)

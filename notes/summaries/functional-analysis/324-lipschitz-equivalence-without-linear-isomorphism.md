@@ -48,11 +48,11 @@ The first manuscript's free space is stated. gives it: "To turn this geometry in
 
 The first manuscript's complete continuity is stated. gives it: "Section   proves that local orthogonality makes \(q\) _completely continuous_: a weakly null sequence in \(E\) has norm-null image. This is the one place where the local coordinate geometry enters the Banach-space obstruction. [S6:124–127]"
 
-The first manuscript's triangular norm is stated. gives it: "The linearization is also what makes the metric change of variables possible. Give \(E\oplus V\) its sum norm and put [S6:129–130]" and states the triangular identity: "The identity \(qB=hQ_1\) is triangular: applying \(q\) to the new variable records \(h\) of the old output. Given \(z\in E\), one first recovers \(x=h^{-1}(qz)\) and then subtracts \(\delta(x)\); this yields [S6:135–137]"
+The first manuscript's triangular norm is stated. gives it: "The linearization is also what makes the metric change of variables possible. Give \(E\oplus V\) its sum norm and put [S6:129–130]" and states the triangular identity: "The identity \(qB=hQ_1\) is triangular: applying \(q\) to the new variable records \(h\) of the old output. Given \(z\in E\), one first recovers \(x=h^-1(qz)\) and then subtracts \(\delta(x)\); this yields [S6:135–137]"
 
-The first manuscript's graph space is defined. defines it: "For a bounded linear \(Q:A\to H\), the graph space used in the final step consists of sequences \(s=(s_i)\) for which \(\sum_i2^{-i}\|s_i\|<\infty\) and \((Qs_i)\in c_0(H)\), with norm [S6:141–143]"
+The first manuscript's graph space is defined. defines it: "For a bounded linear \(Q:A\to H\), the graph space used in the final step consists of sequences \(s=(s_i)\) for which \(\sum_i2^-i\|s_i\|<\infty\) and \((Qs_i)\in c_0(H)\), with norm [S6:141–143]"
 
-The first manuscript's bijection is stated. states it: "Set \(X=Z_{Q_1}\) and \(Y=Z_q\). Applying \(B\) in each coordinate gives the desired bijection: \(qB=hQ_1\) controls the second part of the graph norm, and the Lipschitz bounds for \(B\) control the weighted sum. The \(V\) coordinates embed \(c_0(V)\) isometrically in \(X\). [S6:148–151]"
+The first manuscript's bijection is stated. states it: "Set \(X=Z_Q_1\) and \(Y=Z_q\). Applying \(B\) in each coordinate gives the desired bijection: \(qB=hQ_1\) controls the second part of the graph norm, and the Lipschitz bounds for \(B\) control the weighted sum. The \(V\) coordinates embed \(c_0(V)\) isometrically in \(X\). [S6:148–151]"
 
 The first manuscript's exclusion is argued. argues it: "By contrast, complete continuity of \(q\) makes each fixed output coordinate tend to zero along an orthonormal sequence in any Hilbert block of a proposed \(c_0(\ell_2)\) copy in \(Y\). A disjoint-support argument then finds a unit vector in each block with arbitrarily small full \(c_0(U)\) output. A surviving copy would embed ordinary \(c_0\) into \(\ell_1(E)\). Section   excludes this because \(E=\mathcal F(M)\) is weakly sequentially complete. [S6:152–158]"
 
@@ -64,7 +64,7 @@ The space $c_0$ and the Godefroy–Kalton–Lancien theorem are stated together.
 
 Kalton's Schur space is the related construction with weaker control. gives it: "There are related separable constructions with weaker control of small distances. Kalton constructed a separable Schur space, in which weakly convergent sequences converge in norm, uniformly homeomorphic to a space containing complemented \(c_0\) [S16:68–71]"
 
-Sarı's coarse-Lipschitz embedding is the other related construction. gives it: "Sar{\i} constructed a coarse-Lipschitz embedding of \(c_0\) into a separable dual Banach space, which contains no linear copy of \(c_0\) [S16:76–77]"
+Sarı's coarse-Lipschitz embedding is the other related construction. gives it: "Sarı constructed a coarse-Lipschitz embedding of \(c_0\) into a separable dual Banach space, which contains no linear copy of \(c_0\) [S16:76–77]"
 
 The proof begins with an algebraic absorption criterion. gives the setup: "The first step is algebraic. Suppose \(E,U\) are Banach spaces and \(P:E\oplus_\infty U\to U\) is the projection. We seek an onto bi-Lipschitz map \(g:E\oplus_\infty U\to U\), a bounded linear map \(Q:Z\to U\), and a Lipschitz map \(K:E\oplus_\infty U\to Z\) such that [S16:93–96]"
 
@@ -167,26 +167,26 @@ The comparator stubs carry `sorry`. `OAI.LipschitzEquivalence.main` is at `Lipsc
 - Aharoni, Israel, Lindenstrauss, Joram, Uniform equivalence between Banach spaces (1978)
 - Aharoni, Israel, Lindenstrauss, Joram, An extension of a result of Ribe (1985)
 - Albiac, Fernando, Kalton, Nigel J., Lipschitz structure of quasi-Banach spaces (2009)
-- Albiac, Fernando, Ansorena, Jos{é} L., B{í}ma, Jan, C{ú}th, Marek, Lipschitz free $p$-spaces for $0<p<1$ in the light of the Schur $p$-property and the compact reduction (2026)
-- Aliaga, Ram{ó}n J., No{\^u}s, Camille, Petitjean, Colin, Proch{á}zka, Anton{í}n, Compact reduction in Lipschitz-free spaces (2021)
+- Albiac, Fernando, Ansorena, José L., Bíma, Jan, Cúth, Marek, Lipschitz free $p$-spaces for $0<p<1$ in the light of the Schur $p$-property and the compact reduction (2026)
+- Aliaga, Ramón J., No{\^u}s, Camille, Petitjean, Colin, Procházka, Antonín, Compact reduction in Lipschitz-free spaces (2021)
 - Arens, Richard F., Eells, Jr., James, On embedding uniform and topological spaces (1956)
 - Arens, Richard F., Eells, Jr., James, On embedding uniform and topological spaces (1956)
 - Godefroy, Gilles, Kalton, Nigel J., Lipschitz-free Banach spaces (2003)
 - Godefroy, Gilles, Kalton, Nigel J., Lancien, Gilles, Subspaces of $c_0(\mathbb{N})$ and Lipschitz isomorphisms (2000)
 - Godefroy, Gilles, Kalton, Nigel J., Lancien, Gilles, Subspaces of $c_0(\mathbb{N})$ and Lipschitz isomorphisms (2000)
 - Godefroy, Gilles, Kalton, Nigel J., Lipschitz-free Banach spaces (2003)
-- Sar{\i}, B{ü}nyamin, A coarse-Lipschitz embedding of $c_0$ into a separable dual Banach space (2026)
-- H{á}jek, Petr, Johanis, Michal, Schlumprecht, Thomas, Remarks on the point character of Banach spaces and non-linear embeddings into $c_0(\Gamma)$ (2025)
+- Hájek, Petr, Johanis, Michal, Schlumprecht, Thomas, Remarks on the point character of Banach spaces and non-linear embeddings into $c_0(\Gamma)$ (2025)
 - Johnson, William B., Lindenstrauss, Joram, Schechtman, Gideon, Banach spaces determined by their uniform structures (1996)
 - Johnson, William B., Lindenstrauss, Joram, Schechtman, Gideon, Banach spaces determined by their uniform structures (1996)
+- Kalton, Nigel J., Spaces of Lipschitz and Hölder functions and their applications (2004)
+- Kalton, Nigel J., The nonlinear geometry of Banach spaces (2008)
 - Kalton, Nigel J., Spaces of Lipschitz and {Hölder} functions and their applications (2004)
 - Kalton, Nigel J., The nonlinear geometry of Banach spaces (2008)
-- Kalton, Nigel J., Spaces of Lipschitz and {H{ö}lder} functions and their applications (2004)
-- Kalton, Nigel J., The nonlinear geometry of Banach spaces (2008)
-- Kochanek, Tomasz, Perneck{á}, Eva, Lipschitz-free spaces over compact subsets of superreflexive spaces are weakly sequentially complete (2018)
-- OpenAI, {A positive solution to Tingley's problem} (2026)
+- Kochanek, Tomasz, Pernecká, Eva, Lipschitz-free spaces over compact subsets of superreflexive spaces are weakly sequentially complete (2018)
+- OpenAI, A positive solution to Tingley's problem (2026)
 - OpenAI, Lipschitz Equivalent Separable Banach Spaces Need Not Be Linearly Isomorphic (2026)
 - Ribe, Martin, On uniformly homeomorphic normed spaces (1976)
 - Ribe, Martin, Existence of separable uniformly homeomorphic nonisomorphic Banach spaces (1984)
 - Ribe, Martin, On uniformly homeomorphic normed spaces (1976)
 - Ribe, Martin, Existence of separable uniformly homeomorphic nonisomorphic Banach spaces (1984)
+- Sarı, Bünyamin, A coarse-Lipschitz embedding of $c_0$ into a separable dual Banach space (2026)

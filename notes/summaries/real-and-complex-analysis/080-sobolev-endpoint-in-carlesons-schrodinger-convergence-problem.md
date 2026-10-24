@@ -198,32 +198,32 @@ the higher-dimensional `build/` — and no non-LaTeX evidence.
 - J. Bourgain, _Some new estimates on oscillatory integrals_, in _Essays on Fourier Analysis in Honor of Elias M. Stein_ (C. Fefferman, R. Fefferman, and S. Wainger, eds.), Princeton Math. Ser., vol. 42, Princeton Univ. Press, 1995, pp. 83–112. Author preprint.
 - J. Bourgain, _On the Schrödinger maximal function in higher dimension_, Proc. Steklov Inst. Math. **280** (2013), 46–60. doi:10.1134/S0081543813010045. arXiv:1201.3342.
 - J. Bourgain, _A note on the Schrödinger maximal function_, J. Anal. Math. **130** (2016), 393–396. doi:10.1007/s11854-016-0042-8. arXiv:1609.05744.
-- Bourgain, Jean, A note on the {Schr{ö}dinger} maximal function (2016)
+- Bourgain, Jean, A note on the {Schrödinger} maximal function (2016)
 - Bourgain, Jean, Demeter, Ciprian, The proof of the $l^2$ Decoupling Conjecture (2015)
 - Bourgain, Jean, The discretized sum-product and projection theorems (2010)
 - Bourgain, Jean, Guth, Larry, Bounds on oscillatory integral operators based on multilinear estimates (2011)
 - Bourgain, Jean, Some new estimates on oscillatory integrals (1995)
-- Bourgain, Jean, On the {Schr{ö}dinger} maximal function in higher dimension (2013)
+- Bourgain, Jean, On the {Schrödinger} maximal function in higher dimension (2013)
 - L. Carleson, _Some analytic problems related to statistical mechanics_, in _Euclidean Harmonic Analysis_ (J. J. Benedetto, ed.), Lecture Notes in Math., vol. 779, Springer, Berlin, 1980, pp. 5–45. doi:10.1007/BFb0087666.
 - Carleson, Lennart, Some analytic problems related to statistical mechanics (1980)
-- Chu, Rena, Counterexamples for generalizations of the non-elliptic {Schr{ö}dinger} maximal operator (2026)
-- Dahlberg, Bj{ö}rn E. J., Kenig, Carlos E., A note on the almost everywhere behavior of solutions to the {Schr{ö}dinger} equation (1982)
+- Chu, Rena, Counterexamples for generalizations of the non-elliptic {Schrödinger} maximal operator (2026)
+- Dahlberg, Björn E. J., Kenig, Carlos E., A note on the almost everywhere behavior of solutions to the {Schrödinger} equation (1982)
 - J. Bourgain and C. Demeter, _The proof of the $l^2$ Decoupling Conjecture_, Ann. of Math. (2) **182** (2015), no. 1, 351–389. doi:10.4007/annals.2015.182.1.9. arXiv:1403.5335v3.
 - Y. Deng, C. Fan, S. Guo, Z. Guo, and Y. Luo, _Sharp Strichartz estimates on the one-dimensional torus_, arXiv:2609.18670v1 (2026). arXiv:2609.18670v1.
 - X. Du, L. Guth, and X. Li, _A sharp Schrödinger maximal estimate in $\mathbb R^2$_, Ann. of Math. (2) **186** (2017), no. 2, 607–640. doi:10.4007/annals.2017.186.2.5.
 - X. Du, L. Guth, X. Li, and R. Zhang, _Pointwise convergence of Schrödinger solutions and multilinear refined Strichartz estimates_, Forum Math. Sigma **6** (2018), e14, 18 pp. doi:10.1017/fms.2018.11. arXiv:1803.01720v2.
-- Du, Xiumin, Guth, Larry, Li, Xiaochun, A sharp {Schr{ö}dinger} maximal estimate in $\mathbb{R}^2$ (2017)
-- Du, Xiumin, Zhang, Ruixiang, Sharp $L^2$ estimates of the {Schr{ö}dinger} maximal function in higher dimensions (2019)
-- Du, Xiumin, Iosevich, Alex, Ou, Yumeng, Wang, Hong, Zhang, Ruixiang, An improved result for {Falconer's} distance set problem in even dimensions (2021)
-- Du, Xiumin, Guth, Larry, Li, Xiaochun, Zhang, Ruixiang, Pointwise convergence of {Schr{ö}dinger} solutions and multilinear refined Strichartz estimates (2018)
-- Du, Xiumin, Li, Jianhui, $L^p$ estimates of the maximal {Schr{ö}dinger} operator in $\mathbb R^n$ (2025)
-- Sj{ö}gren, Peter, Sj{ö}lin, Per, Convergence properties for the time-dependent {Schr{ö}dinger} equation (1989)
+- Du, Xiumin, Guth, Larry, Li, Xiaochun, A sharp {Schrödinger} maximal estimate in $\mathbb{R}^2$ (2017)
+- Du, Xiumin, Zhang, Ruixiang, Sharp $L^2$ estimates of the {Schrödinger} maximal function in higher dimensions (2019)
+- Du, Xiumin, Iosevich, Alex, Ou, Yumeng, Wang, Hong, Zhang, Ruixiang, An improved result for Falconer's distance set problem in even dimensions (2021)
+- Du, Xiumin, Guth, Larry, Li, Xiaochun, Zhang, Ruixiang, Pointwise convergence of {Schrödinger} solutions and multilinear refined Strichartz estimates (2018)
+- Du, Xiumin, Li, Jianhui, $L^p$ estimates of the maximal {Schrödinger} operator in $\mathbb R^n$ (2025)
+- Sjögren, Peter, Sjölin, Per, Convergence properties for the time-dependent {Schrödinger} equation (1989)
 - S. Guo, Z. K. Li, and P.-L. Yung, _Improved discrete restriction for the parabola_, Math. Res. Lett. **30** (2023), no. 5, 1375–1409. arXiv:2103.09795v2.
 - J. Bourgain and L. Guth, _Bounds on oscillatory integral operators based on multilinear estimates_, Geom. Funct. Anal. **21** (2011), no. 6, 1239–1295. doi:10.1007/s00039-011-0140-9. arXiv:1012.3760.
 - L. Guth, D. Maldague, and H. Wang, _Improved decoupling for the parabola_, J. Eur. Math. Soc. (JEMS) **26** (2024), no. 3, 875–917. doi:10.4171/JEMS/1295. arXiv:2009.07953.
-- Guth, Larry, Iosevich, Alex, Ou, Yumeng, Wang, Hong, On {Falconer's} distance set problem in the plane (2020)
+- Guth, Larry, Iosevich, Alex, Ou, Yumeng, Wang, Hong, On Falconer's distance set problem in the plane (2020)
 - Guth, Larry, The endpoint case of the Bennett–Carbery–Tao multilinear Kakeya conjecture (2010)
-- Guth, Larry, Katz, Nets Hawk, On the {Erd{ő}s} distinct distances problem in the plane (2015)
+- Guth, Larry, Katz, Nets Hawk, On the {Erdős} distinct distances problem in the plane (2015)
 - Guth, Larry, A restriction estimate using polynomial partitioning (2016)
 - Guth, Larry, Katz, Nets Hawk, Algebraic methods in discrete analogs of the Kakeya problem (2010)
 - W. He, _Orthogonal projections of discretized sets_, J. Fractal Geom. **7** (2020), no. 3, 271–317. doi:10.4171/JFG/92. arXiv:1710.00795v2.
@@ -232,14 +232,14 @@ the higher-dimensional `build/` — and no non-LaTeX evidence.
 - B. E. J. Dahlberg and C. E. Kenig, _A note on the almost everywhere behavior of solutions to the Schrödinger equation_, in _Harmonic Analysis_ (F. Ricci and G. Weiss, eds.), Lecture Notes in Math., vol. 908, Springer, Berlin, 1982, pp. 205–209. doi:10.1007/BFb0093289.
 - M. Christ and A. Kiselev, _Maximal functions associated to filtrations_, J. Funct. Anal. **179** (2001), no. 2, 409–425. doi:10.1006/jfan.2000.3687.
 - S. Lee, _On pointwise convergence of the solutions to Schrödinger equations in $\mathbb R^2$_, Int. Math. Res. Not. (2006), Art. ID 32597, 21 pp. doi:10.1155/IMRN/2006/32597.
-- Lee, Sanghyuk, On pointwise convergence of the solutions to {Schr{ö}dinger} equations in $\mathbb R^2$ (2006)
-- Sj{ö}lin, Per, Regularity of solutions to the {Schr{ö}dinger} equation (1987)
+- Lee, Sanghyuk, On pointwise convergence of the solutions to {Schrödinger} equations in $\mathbb R^2$ (2006)
+- Sjölin, Per, Regularity of solutions to the {Schrödinger} equation (1987)
 - A. Moyua, A. Vargas, and L. Vega, _Schrödinger maximal function and restriction properties of the Fourier transform_, Int. Math. Res. Not. **1996** (1996), no. 16, 793–815. doi:10.1155/S1073792896000499.
-- Moyua, A., Vargas, Ana, Vega, Luis, {Schr{ö}dinger} maximal function and restriction properties of the Fourier transform (1996)
-- OpenAI, {Endpoint convergence for the planar Schrödinger equation} (2026)
+- Moyua, A., Vargas, Ana, Vega, Luis, {Schrödinger} maximal function and restriction properties of the Fourier transform (1996)
+- OpenAI, Endpoint convergence for the planar Schrödinger equation (2026)
 - Y. Pan, W. Sun, and J. Tan, _Pointwise convergence of Schrödinger operators in Bessel potential spaces_, arXiv:2605.25833v2 (2026). arXiv:2605.25833v2.
-- Pan, Yucheng, Sun, Wenchang, Tan, Jiheng, Pointwise convergence of {Schr{ö}dinger} operators in Bessel potential spaces (2026)
-- Singh, Shalender, Singh Parmar, Vishnu Priya, Repairing the refined-decoupling proof of the {5/4} planar pinned Falconer theorem (2026)
+- Pan, Yucheng, Sun, Wenchang, Tan, Jiheng, Pointwise convergence of {Schrödinger} operators in Bessel potential spaces (2026)
+- Singh, Shalender, Singh Parmar, Vishnu Priya, Repairing the refined-decoupling proof of the 5/4 planar pinned Falconer theorem (2026)
 - P. Sjögren and P. Sjölin, _Convergence properties for the time-dependent Schrödinger equation_, Ann. Acad. Sci. Fenn. Ser. A I Math. **14** (1989), 13–25. Journal PDF.
 - P. Sjölin, _Regularity of solutions to the Schrödinger equation_, Duke Math. J. **55** (1987), no. 3, 699–715. doi:10.1215/S0012-7094-87-05535-9.
 - T. Tao, _A sharp bilinear restriction estimate for paraboloids_, Geom. Funct. Anal. **13** (2003), no. 6, 1359–1384. doi:10.1007/s00039-003-0449-0. arXiv:math/0210084.
@@ -248,8 +248,8 @@ the higher-dimensional `build/` — and no non-LaTeX evidence.
 - Tao, Terence, A sharp bilinear restriction estimate for paraboloids (2003)
 - T. Tao and A. Vargas, _A bilinear approach to cone multipliers. II. Applications_, Geom. Funct. Anal. **10** (2000), no. 1, 216–258. doi:10.1007/s000390050007.
 - L. Vega, _Schrödinger equations: pointwise convergence to the initial data_, Proc. Amer. Math. Soc. **102** (1988), no. 4, 874–878. doi:10.1090/S0002-9939-1988-0934859-0.
-- Vega, Luis, {Schr{ö}dinger} equations: pointwise convergence to the initial data (1988)
+- Vega, Luis, {Schrödinger} equations: pointwise convergence to the initial data (1988)
 - R. Wongkew, _Volumes of tubular neighbourhoods of real algebraic varieties_, Pacific J. Math. **159** (1993), no. 1, 177–184. doi:10.2140/pjm.1993.159.177.
 - Wongkew, Richard Alexander, Volumes of tubular neighbourhoods of real algebraic varieties (1993)
-- Z. K. Li and P.-L. Yung, _An improved high-low method for the parabola_,\newline arXiv:2609.33949v1 (2026).
+- Z. K. Li and P.-L. Yung, _An improved high-low method for the parabola_, arXiv:2609.33949v1 (2026).
 - X. Du and R. Zhang, _Sharp $L^2$ estimates of the Schrödinger maximal function in higher dimensions_, Ann. of Math. (2) **189** (2019), no. 3, 837–861. doi:10.4007/annals.2019.189.3.4. arXiv:1805.02775v3.

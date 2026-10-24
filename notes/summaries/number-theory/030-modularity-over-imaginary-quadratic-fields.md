@@ -32,9 +32,9 @@ $\iota:\overline\mathbb Q_l\xrightarrow{\sim}\mathbb C$,
 At every finite place $v\nmid l$ one has
 \[
  \iota\WD\bigl(H^1_{\mathrm{\acute et}}(E_{\overline K},\overline\mathbb Q_l)
-                     |_{G_{K_v}}\bigr)^{\mathrm{F-ss}}
+                     |_{G_K_v}\bigr)^{\mathrmF-ss}
  \simeq
- \rec_{K_v}\bigl(\pi_{E,v}\otimes|\det|_v^{-1/2}\bigr).
+ \rec_K_v\bigl(\pi_E,v\otimes|\det|_v^-1/2\bigr).
 \]
 The unitary parameter at the complex place is
 $z\mapsto\diag(z/|z|,\overline z/|z|)$.
@@ -202,14 +202,14 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 
 ## Bibliography
 
-- , Groupes de monodromie en g{é}om{é}trie alg{é}brique. II (SGA 7 II) (1973)
+- , Groupes de monodromie en géométrie algébrique. II (SGA 7 II) (1973)
 - Allen, Patrick B., Calegari, Frank, Caraiani, Ana, Gee, Toby, Helm, David, Le Hung, Bao V., Newton, James, Scholze, Peter, Taylor, Richard, Thorne, Jack A., Potential automorphy over CM fields (2023)
 - Allen, Patrick B., Khare, Chandrashekhar, Thorne, Jack A., Modularity of $\mathrm{GL}_2(\mathbb{F}_p)$-representations over CM fields (2023)
 - Arthur, James, Clozel, Laurent, Simple Algebras, Base Change, and the Advanced Theory of the Trace Formula (1989)
 - Berger, Tobias, Harcos, Gergely, $l$-adic representations associated to modular forms over imaginary quadratic fields (2007)
-- Bianchi, Luigi, Sui gruppi di sostituzioni lineari con coefficienti appartenenti a corpi quadratici immaginar{\^\i} (1892)
+- Bianchi, Luigi, Sui gruppi di sostituzioni lineari con coefficienti appartenenti a corpi quadratici immaginar{\^ı} (1892)
 - Bloch, Spencer, Kato, Kazuya, $L$-functions and Tamagawa numbers of motives (1990)
-- Bosch, Siegfried, L{ü}tkebohmert, Werner, Raynaud, Michel, N{é}ron Models (1990)
+- Bosch, Siegfried, Lütkebohmert, Werner, Raynaud, Michel, Néron Models (1990)
 - Boxer, George, Calegari, Frank, Gee, Toby, Pilloni, Vincent, Abelian surfaces over totally real fields are potentially modular (2021)
 - Breuil, Christophe, Conrad, Brian, Diamond, Fred, Taylor, Richard, On the modularity of elliptic curves over $\mathbb{Q}$: wild 3-adic exercises (2001)
 - Calegari, Frank, Geraghty, David, Modularity lifting beyond the Taylor–Wiles method (2018)
@@ -219,20 +219,20 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 - Cremona, John E., Whitley, E., Periods of cusp forms and elliptic curves over imaginary quadratic fields (1994)
 - Darmon, Henri, Modularity of fibres in rigid local systems (1999)
 - Darmon, Henri, Rigid local systems, Hilbert modular forms, and Fermat's Last Theorem (2000)
-- Darmon, Henri, Mestre, Jean-Fran{\c c}ois, Courbes hyperelliptiques {\`a} multiplications r{é}elles et une construction de Shih (2000)
+- Darmon, Henri, Mestre, Jean-François, Courbes hyperelliptiques {\`a} multiplications réelles et une construction de Shih (2000)
 - Ellenberg, Jordan S., Endomorphism algebras of Jacobians (2001)
-- Faltings, Gerd, Endlichkeitss{ä}tze f{ü}r abelsche Variet{ä}ten {ü}ber Zahlk{ö}rpern (1983)
+- Faltings, Gerd, Endlichkeitssätze für abelsche Varietäten über Zahlkörpern (1983)
 - Geraghty, David, Modularity lifting theorems for ordinary Galois representations (2019)
-- Grothendieck, Alexandre, Raynaud, Michel, Rim, Dock Sang, Groupes de monodromie en g{é}om{é}trie alg{é}brique. I (SGA 7 I) (1972)
+- Grothendieck, Alexandre, Raynaud, Michel, Rim, Dock Sang, Groupes de monodromie en géométrie algébrique. I (SGA 7 I) (1972)
 - Grunewald, Fritz, Helling, Hermann, Mennicke, Jens, $\mathrm{SL}_2$ over complex quadratic number fields. I (1978)
-- Harder, G{ü}nter, Eisenstein cohomology of arithmetic groups. The case $\mathrm{GL}_2$ (1987)
+- Harder, Günter, Eisenstein cohomology of arithmetic groups. The case $\mathrm{GL}_2$ (1987)
 - Harris, Michael, Lan, Kai-Wen, Taylor, Richard, Thorne, Jack, On the rigid cohomology of certain Shimura varieties (2016)
 - Harris, Michael, Soudry, David, Taylor, Richard, $l$-adic representations associated to modular forms over imaginary quadratic fields. I. Lifting to $\mathrm{GSp}_4(\mathbb{Q})$ (1993)
 - Langlands, Robert P., Problems in the theory of automorphic forms (1970)
 - Langlands, Robert P., Base Change for $\mathrm{GL}(2)$ (1980)
-- Mestre, Jean-Fran{\c c}ois, Familles de courbes hyperelliptiques {\`a} multiplications r{é}elles (1991)
+- Mestre, Jean-François, Familles de courbes hyperelliptiques {\`a} multiplications réelles (1991)
 - Scholze, Peter, On torsion in the cohomology of locally symmetric varieties (2015)
-- Serre, Jean-Pierre, Propri{é}t{é}s galoisiennes des points d'ordre fini des courbes elliptiques (1972)
+- Serre, Jean-Pierre, Propriétés galoisiennes des points d'ordre fini des courbes elliptiques (1972)
 - Serre, Jean-Pierre, Topics in Galois Theory (2008)
 - Shimura, Goro, Taniyama, Yutaka, Complex Multiplication of Abelian Varieties and Its Applications to Number Theory (1961)
 - Swan, Richard G., Generators and relations for certain special linear groups (1971)
@@ -240,6 +240,6 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 - Taylor, Richard, Wiles, Andrew, Ring-theoretic properties of certain Hecke algebras (1995)
 - Taylor, Richard, $l$-adic representations associated to modular forms over imaginary quadratic fields. II (1994)
 - Taylor, Richard, Remarks on a conjecture of Fontaine and Mazur (2002)
-- Tsuji, Takeshi, $p$-adic {é}tale cohomology and crystalline cohomology in the semi-stable reduction case (1999)
+- Tsuji, Takeshi, $p$-adic étale cohomology and crystalline cohomology in the semi-stable reduction case (1999)
 - Varma, Ila, Local-global compatibility for regular algebraic cuspidal automorphic representations when $\ell\ne p$ (2024)
 - Wiles, Andrew, Modular elliptic curves and Fermat's Last Theorem (1995)

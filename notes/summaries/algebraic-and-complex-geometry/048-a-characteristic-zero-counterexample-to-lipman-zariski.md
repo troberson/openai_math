@@ -66,7 +66,7 @@ $L^{\otimes4}\simeq K_C$. Its dual bundle $L^{-1}$ provides the initial
 neighborhood of $C$. In compatible base and fiber coordinates $(z,t)$,
 that neighborhood carries the meromorphic two-form
 \[
-\sigma=t^{-5}\,dt\wedge dz.
+\sigma=t^-5\,dt\wedge dz.
 \]
 We seek two vector fields of the form
 \[
@@ -81,7 +81,7 @@ zeros, whose corrections must satisfy global residue constraints.
 $\PP^1\times\PP^1$ with fourth-order contact at the marked divisor $Z$
 with an auxiliary elliptic curve $\Gamma$; a two-torsion relation
 controls the section dimensions and supplies six vectors, giving
-genus $21$ and $\deg L=10$ . "\paragraph{A curve and normalized residues.}
+genus $21$ and $\deg L=10$ . "\paragraphA curve and normalized residues.
 Section   constructs $C$ on $\mathbb P^1\times\mathbb P^1$, with
 fourth-order contact at $Z$ with an auxiliary elliptic curve $\Gamma$.
 A two-torsion relation on $\Gamma$ controls the section dimensions on $C$ and supplies
@@ -95,7 +95,7 @@ determinant condition and cancel the gluing obstructions.
 Hausdorff neighborhood $Y$ of $C$; Grauert's criterion contracts $C$
 to a point $x$ of a normal surface $X$ 
 
-> \paragraph{Holomorphic lifting and contraction.}
+> \paragraphHolomorphic lifting and contraction.
 Section   realizes the finite transition maps as
 a Hausdorff surface neighborhood $Y$ of $C$. Set
 $\mathcal I=\mathcal O_Y(-C)$ and $\mathcal F=\mathcal T_Y(-\log C)$, the sheaf of vector fields
@@ -118,7 +118,7 @@ adjunction proves $x$ is singular.
 relation matrix produces an algebraic local ring with the same
 completion as $\OO_{X,x}$ 
 
-> \paragraph{The affine algebraic endpoint.}
+> \paragraphThe affine algebraic endpoint.
 Section   combines approximation with the finite
 determinacy of equations together with their relations. The latter
 method appears in Hironaka's equivalence theorem

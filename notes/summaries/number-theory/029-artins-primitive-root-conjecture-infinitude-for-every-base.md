@@ -43,7 +43,7 @@ Let $F$ be a cyclotomic number field containing $\mu_{12}$.
 For every finite-order Hecke character $\eta$ of $F$, the meromorphic
 continuation of $L_F(s,\eta)$ has no zeros in
 \[
- \operatornameRe s>1-10^{-6}.
+ \operatornameRe s>1-10^-6.
 \] [S6:38–45]
 
 The width $10^{-6}$ is common to all cyclotomic fields containing
@@ -100,7 +100,7 @@ $\mathbb{Q}(\mu_n,a^{1/n})$, with $n$ squarefree  .
 These fields encode the obstructions to maximal order. For a prime
 $q$ and $p\nmid aq$, the conditions
 \[
- p\equiv1\pmod q,\qquad a^{(p-1)/q}\equiv1\pmod p
+ p\equiv1\pmod q,\qquad a^(p-1)/q\equiv1\pmod p
 \]
 say that $p$ splits completely in $\mathbb{Q}(\mu_q,a^{1/q})$.
 They hold precisely when $q$ divides the index
@@ -215,8 +215,7 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 - C. Hooley, On Artin's conjecture, _J. Reine Angew. Math._ **225** (1967), 209–220. doi:10.1515/crll.1967.225.209.
 - A. Hoshi and K. Kanai, Davenport and Hasse's theorems and lifts of multiplication matrices of Gaussian periods, _Finite Fields Appl._ **84** (2022), article 102101. doi:10.1016/j.ffa.2022.102101.
 - O. Klurman, I. E. Shparlinski, and J. Teräväinen, On Artin's conjecture on average and short character sums, _Bull. Lond. Math. Soc._ **57** (2025), no. 8, 2429–2443. doi:10.1112/blms.70103.
-- T. Kubota, Topological covering of \(\mathrmSL(2)\) over a local field, _J. Math. Soc. Japan_ **19** (1967), no. 1, 114–121. doi:10.2969/jmsj/01910114.
-- A. Dunn and M. Radziwi\l{}\l{}, Bias in cubic Gauss sums: Patterson's conjecture, _Ann. of Math._ (2) **200** (2024), no. 3, 967–1057. doi:10.4007/annals.2024.200.3.3. Author version: arXiv:2109.07463v3.
+- T. Kubota, Topological covering of $\mathrm{SL}(2)$ over a local field, _J. Math. Soc. Japan_ **19** (1967), no. 1, 114–121. doi:10.2969/jmsj/01910114.
 - L. Goldmakher and B. Louvel, A quadratic large sieve inequality over number fields, _Math. Proc. Cambridge Philos. Soc._ **154** (2013), no. 2, 193–212. doi:10.1017/S0305004112000370.
 - K. Matthews, A generalisation of Artin's conjecture for primitive roots, _Acta Arith._ **29** (1976), no. 2, 113–146. doi:10.4064/aa-29-2-113-146.
 - R. Gupta and M. R. Murty, A remark on Artin's conjecture, _Invent. Math._ **78** (1984), no. 1, 127–130. doi:10.1007/BF01388719.
@@ -236,8 +235,9 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 - P. J. Stephens, An average result for Artin's conjecture, _Mathematika_ **16** (1969), no. 2, 178–188. doi:10.1112/S0025579300008159.
 - J. T. Tate, Fourier analysis in number fields and Hecke's zeta-functions, in _Algebraic Number Theory_, edited by J. W. S. Cassels and A. Fröhlich, Academic Press, London, 1967, 305–347. Scan of the volume.
 - J. T. Tate, Fourier analysis in number fields and Hecke's zeta-functions, in _Algebraic Number Theory_, edited by J. W. S. Cassels and A. Fröhlich, Academic Press, London, 1967, 305–347. Scan of the volume.
-- A. I. Vinogradov, On the density hypothesis for Dirichlet \(L\)-series, _Izv. Akad. Nauk SSSR Ser. Mat._ **29** (1965), no. 4, 903–934 (Russian). MathNet record and original text. Correction, _ibid._ **30** (1966), no. 3, 719–720; MathNet record and correction.
-- A. I. Vinogradov, On the density hypothesis for Dirichlet \(L\)-series, _Izv. Akad. Nauk SSSR Ser. Mat._ **29** (1965), no. 4, 903–934 (Russian). MathNet record and original text. Correction, _ibid._ **30** (1966), no. 3, 719–720; MathNet record and correction.
+- A. I. Vinogradov, On the density hypothesis for Dirichlet $L$-series, _Izv. Akad. Nauk SSSR Ser. Mat._ **29** (1965), no. 4, 903–934 (Russian). MathNet record and original text. Correction, _ibid._ **30** (1966), no. 3, 719–720; MathNet record and correction.
+- A. I. Vinogradov, On the density hypothesis for Dirichlet $L$-series, _Izv. Akad. Nauk SSSR Ser. Mat._ **29** (1965), no. 4, 903–934 (Russian). MathNet record and original text. Correction, _ibid._ **30** (1966), no. 3, 719–720; MathNet record and correction.
 - A. Weil, Sur certains groupes d'opérateurs unitaires, _Acta Math._ **111** (1964), 143–211. doi:10.1007/BF02391012.
 - S. Baier and M. P. Young, Mean values with cubic characters, _J. Number Theory_ **130** (2010), no. 4, 879–903. doi:10.1016/j.jnt.2009.11.007. The cited equation numbering is that of arXiv:0804.2233v4.
 - J. Thorner and A. Zaman, A unified and improved Chebotarev density theorem, _Algebra Number Theory_ **13** (2019), no. 5, 1039–1068. doi:10.2140/ant.2019.13.1039.
+- A. Dunn and M. Radziwił{}ł{}, Bias in cubic Gauss sums: Patterson's conjecture, _Ann. of Math._ (2) **200** (2024), no. 3, 967–1057. doi:10.4007/annals.2024.200.3.3. Author version: arXiv:2109.07463v3.

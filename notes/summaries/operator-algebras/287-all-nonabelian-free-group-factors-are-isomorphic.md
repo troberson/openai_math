@@ -26,7 +26,7 @@ The paper states a constructive rank comparison and a headline isomorphism, the 
 
 The rank comparison of Theorem 1.1 
 
-> For every integer $n\geq3$ there is a unital trace-preserving normal $*$-isomorphism \[ L(\mathbb F_n)\cong L(\mathbb F_{n+1}). \] [S3:66–70]
+> For every integer $n\geq3$ there is a unital trace-preserving normal $*$-isomorphism \[ L(\mathbb F_n)\cong L(\mathbb F_n+1). \] [S3:66–70]
 
 The headline conclusion of Theorem 1.2 
 
@@ -45,7 +45,7 @@ The interpolation input is one unconditional formula, and the paper is explicit 
 
 The derivation of Theorem 1.2 is short enough to quote in full 
 
-> Apply Theorem   with $n=3$ and $n=4$ to obtain \[ N_3\cong N_4\cong N_5. \] Let $\Theta:N_3\to N_5$ be the composition of these normal trace-preserving isomorphisms. Amplifying by $\sqrt2$ gives a unital normal trace-preserving isomorphism \[ \Theta^{\sqrt2}:N_3^{\sqrt2}\longrightarrow N_5^{\sqrt2}. \] Formula   identifies its domain and range as follows: \[ N_3^{\sqrt2}\cong N_{1+(3-1)/2}=N_2, \qquad N_5^{\sqrt2}\cong N_{1+(5-1)/2}=N_3. \] These identifications and the amplified map compose to give $\Phi:L(\mathbb F_2)\to L(\mathbb F_3)$. Every map in the composition is a unital normal trace-preserving $*$-isomorphism. Thus $\Phi$ is bijective and has all the asserted properties. [S8:39–59]
+> Apply Theorem   with $n=3$ and $n=4$ to obtain \[ N_3\cong N_4\cong N_5. \] Let $\Theta:N_3\to N_5$ be the composition of these normal trace-preserving isomorphisms. Amplifying by $\sqrt2$ gives a unital normal trace-preserving isomorphism \[ \Theta^{\sqrt2}:N_3^{\sqrt2}\longrightarrow N_5^{\sqrt2}. \] Formula   identifies its domain and range as follows: \[ N_3^{\sqrt2}\cong N_1+(3-1)/2=N_2, \qquad N_5^{\sqrt2}\cong N_1+(5-1)/2=N_3. \] These identifications and the amplified map compose to give $\Phi:L(\mathbb F_2)\to L(\mathbb F_3)$. Every map in the composition is a unital normal trace-preserving $*$-isomorphism. Thus $\Phi$ is bijective and has all the asserted properties. [S8:39–59]
 
 The construction itself is a polynomial flow on the generators, driven by the conjugates of $S$ and controlled by two displacement bounds 
 
@@ -87,7 +87,7 @@ The iteration is deliberately adaptive, and generation is proved separately from
 
 The paper locates its method against four predecessors and disclaims the most recent one 
 
-> The analytic and algebraic ingredients have established predecessors. Voiculescu's cyclomorphy theorem exponentiates trace-preserving polynomial vector fields on algebraically free self-adjoint generators \cite[Theorem 3.8]voiculescu2002cyclomorphy. Our flow uses Haar unitaries and a fixed bounded logarithm, so the descent through their relations is proved directly from moments. Guionnet and Shlyakhtenko's free monotone transport constructs isomorphisms by analytic changes of variables for suitable perturbations of semicircular systems  ; the present argument uses small automorphisms and an iteration that changes the size of a generating tuple. The cocycle product rule is the coefficient form of Fox's free differential calculus \cite[\S1, equation $(1.2)'$]fox1953. The support-independent norm estimate for free sums uses the creation, annihilation, and diagonal decomposition underlying reduced-free-product Khintchine inequalities \cite[\S2]{ricard_xu2006}. We give the estimates and moment arguments needed here in full. [S3:103]
+> The analytic and algebraic ingredients have established predecessors. Voiculescu's cyclomorphy theorem exponentiates trace-preserving polynomial vector fields on algebraically free self-adjoint generators \cite[Theorem 3.8]voiculescu2002cyclomorphy. Our flow uses Haar unitaries and a fixed bounded logarithm, so the descent through their relations is proved directly from moments. Guionnet and Shlyakhtenko's free monotone transport constructs isomorphisms by analytic changes of variables for suitable perturbations of semicircular systems  ; the present argument uses small automorphisms and an iteration that changes the size of a generating tuple. The cocycle product rule is the coefficient form of Fox's free differential calculus \cite[\S1, equation $(1.2)'$]fox1953. The support-independent norm estimate for free sums uses the creation, annihilation, and diagonal decomposition underlying reduced-free-product Khintchine inequalities \cite[\S2]ricard_xu2006. We give the estimates and moment arguments needed here in full. [S3:103]
 
 The disclaimer of the concurrent preprint, the paragraph immediately after 
 
@@ -99,7 +99,7 @@ The second corollary is the one with independent content: it answers a question 
 
 The corollary is stated for the single factor $L(\F_2)$, with the four dimensions defined in the standard conventions 
 
-> Let $M=L(\mathbb F_2)$ with its canonical trace. For every integer $n\geq2$ there are a self-adjoint $n$-tuple $X^{(n)}$ and a self-adjoint $2n$-tuple $Y^{(n)}$ such that \[ W^*(X^{(n)})=W^*(Y^{(n)})=M \] and \[ \delta(X^{(n)})=\delta_0(X^{(n)})=n, \qquad \delta^*(Y^{(n)})=\delta^\star(Y^{(n)})=n. \] Consequently, none of $\delta,\delta_0,\delta^*,\delta^\star$ is invariant under changing a finite self-adjoint $W^*$-generating tuple of a tracial von Neumann algebra. Each takes unbounded values on such generating tuples of the single factor $L(\mathbb F_2)$. [S9:23–38]
+> Let $M=L(\mathbb F_2)$ with its canonical trace. For every integer $n\geq2$ there are a self-adjoint $n$-tuple $X^{(n)}$ and a self-adjoint $2n$-tuple $Y^{(n)}$ such that \[ W^*(X^(n))=W^*(Y^(n))=M \] and \[ \delta(X^(n))=\delta_0(X^(n))=n, \qquad \delta^*(Y^(n))=\delta^\star(Y^(n))=n. \] Consequently, none of $\delta,\delta_0,\delta^*,\delta^\star$ is invariant under changing a finite self-adjoint $W^*$-generating tuple of a tracial von Neumann algebra. Each takes unbounded values on such generating tuples of the single factor $L(\mathbb F_2)$. [S9:23–38]
 
 ## History of the conjecture
 
@@ -109,7 +109,7 @@ The manuscript's own account of the problem's origin, including the attribution 
 
 The free-probability route and the dichotomy that the paper then resolves 
 
-> Free probability supplied a way to study these factors through their generating distributions. Voiculescu developed the reduced-free-product framework   and its semicircular and circular models  . His compression results showed that the fundamental group of $L(\mathbb F_\infty)$ contains every positive rational, and R\u adulescu extended this to every positive real number  . Dykema and R\u adulescu independently constructed the interpolated factors $L(\mathbb F_r)$ for real $r>1$ and established their amplification calculus  . These results relate changes of rank to normalized corners. They also give a dichotomy: the interpolated free group factors are either all isomorphic or pairwise nonisomorphic. The version including the infinite parameter is due to R\u adulescu \cite[Corollary 4.7]radulescu1994; see also the precise restatement in \cite[Theorem 1.1]{goldbring_pi2025}. [S3:61]
+> Free probability supplied a way to study these factors through their generating distributions. Voiculescu developed the reduced-free-product framework   and its semicircular and circular models  . His compression results showed that the fundamental group of $L(\mathbb F_\infty)$ contains every positive rational, and Rădulescu extended this to every positive real number  . Dykema and Rădulescu independently constructed the interpolated factors $L(\mathbb F_r)$ for real $r>1$ and established their amplification calculus  . These results relate changes of rank to normalized corners. They also give a dichotomy: the interpolated free group factors are either all isomorphic or pairwise nonisomorphic. The version including the infinite parameter is due to Rădulescu \cite[Corollary 4.7]radulescu1994; see also the precise restatement in \cite[Theorem 1.1]goldbring_pi2025. [S3:61]
 
 The cited entries are in the manuscript's own bibliography: Murray–von Neumann, *On rings of operators. IV* (Annals of Mathematics 44, 1943) [S10:25–35]; Fox, *Free differential calculus. I* (Annals of Mathematics 57, 1953) [S10:36–46]; Voiculescu's reduced free product (LNM 1132, 1985) and circular and semicircular systems (Progress in Mathematics 92, 1990) [S10:47–71]; Rădulescu, *The fundamental group of the von Neumann algebra of a free group with infinitely many generators is* $\mathbb R_+\setminus\{0\}$ (JAMS 5, 1992) [S10:72–82]; Dykema, *Interpolated free group factors* (Pacific Journal of Mathematics 163, 1994) [S10:1–12]; Rădulescu, *Random matrices, amalgamated free products and subfactors* (Inventiones Mathematicae 115, 1994) [S10:13–24]. The dichotomy's modern restatement is Goldbring–Pi, *On the first-order free group factor elementary equivalence* (Journal of Operator Theory 94, 2025) [S10:134–146], and the disclaimed concurrent work is Shlyakhtenko, *On the II₁ factors of Fuchsian groups*, arXiv:2609.11074v1, 10 September 2026 [S10:147–155]. The free-entropy question is Voiculescu's survey *Free entropy* (Bulletin of the London Mathematical Society 34, 2002) [S10:156–166], with the nonmicrostates dimensions from Connes–Shlyakhtenko (Journal für die reine und angewandte Mathematik 586, 2005) and Mineyev–Shlyakhtenko (Geometric and Functional Analysis 15, 2005) [S10:178–198].
 
@@ -119,7 +119,7 @@ The manuscript is dated September 23, 2026 [S2:5] and cites no entry from this r
 
 The stated consequences are the collapse of the interpolated family and the computation of the fundamental group, and the paper proves them from the dichotomy rather than from the construction 
 
-> For all $1<r,s\leq\infty$ there is a unital normal trace-preserving $*$-isomorphism $L(\mathbb F_r)\cong L(\mathbb F_s)$. Moreover, \[ \mathcal F\bigl(L(\mathbb F_r)\bigr)=\mathbb R_{>0} \qquad(1<r\leq\infty). \] \endcorollary \beginproof Theorem   rules out the pairwise-nonisomorphic alternative, so all parameters, including $\infty$, give the same isomorphism class. For finite $r>1$ and every $t>0$, formula   then gives \[ N_r^t\cong N_{1+(r-1)t^{-2}}\cong N_r. \] Thus $\mathcal F(N_r)=\mathbb R_{>0}$. Finally, $N_\infty\cong N_2$ and functoriality of amplification give $N_\infty^t\cong N_2^t\cong N_2\cong N_\infty$ for every $t>0$. [S8:79–96]
+> For all $1<r,s\leq\infty$ there is a unital normal trace-preserving $*$-isomorphism $L(\mathbb F_r)\cong L(\mathbb F_s)$. Moreover, \[ \mathcal F\bigl(L(\mathbb F_r)\bigr)=\mathbb R_>0 \qquad(1<r\leq\infty). \] \endcorollary \beginproof Theorem   rules out the pairwise-nonisomorphic alternative, so all parameters, including $\infty$, give the same isomorphism class. For finite $r>1$ and every $t>0$, formula   then gives \[ N_r^t\cong N_{1+(r-1)t^-2}\cong N_r. \] Thus $\mathcal F(N_r)=\mathbb R_{>0}$. Finally, $N_\infty\cong N_2$ and functoriality of amplification give $N_\infty^t\cong N_2^t\cong N_2\cong N_\infty$ for every $t>0$. [S8:79–96]
 
 The free-entropy consequence is the sharper one for the field: invariance of $\delta$ under a change of generating tuple would have separated the ranks, and the isomorphism destroys that program for all four dimensions at once 
 
@@ -206,8 +206,6 @@ The published reasoning trace for this family is `reasoning_traces/free-group-fa
 
 - Brannan, Michael, Elzinga, Floris, Harris, Samuel J., Yamashita, Makoto, Crossed product equivalence of quantum automorphism groups of finite dimensional $C^*$-algebras (2023)
 - Connes, Alain, Shlyakhtenko, Dimitri, $L^2$-homology for von Neumann algebras (2005)
-- R{\u a}dulescu, Florin, Random matrices, amalgamated free products and subfactors of the von Neumann algebra of a free group, of noninteger index (1994)
-- R{\u a}dulescu, Florin, The fundamental group of the von Neumann algebra of a free group with infinitely many generators is $\mathbb R_+\setminus\{0\}$ (1992)
 - Dykema, Ken, Interpolated free group factors (1994)
 - Fox, Ralph H., Free differential calculus. I. Derivation in the free group ring (1953)
 - Goldbring, Isaac, Pi, Jennifer, On the first-order free group factor elementary equivalence (2025)
@@ -215,7 +213,9 @@ The published reasoning trace for this family is `reasoning_traces/free-group-fa
 - Haase, Markus, The functional calculus approach to the spectral theorem (2020)
 - Mineyev, Igor, Shlyakhtenko, Dimitri, Non-microstates free entropy dimension for groups (2005)
 - Murray, F. J., von Neumann, J., On rings of operators. IV (1943)
-- Ricard, {É}ric, Xu, Quanhua, Khintchine type inequalities for reduced free products and applications (2006)
+- Ricard, Éric, Xu, Quanhua, Khintchine type inequalities for reduced free products and applications (2006)
+- Rădulescu, Florin, Random matrices, amalgamated free products and subfactors of the von Neumann algebra of a free group, of noninteger index (1994)
+- Rădulescu, Florin, The fundamental group of the von Neumann algebra of a free group with infinitely many generators is $\mathbb R_+\setminus\{0\}$ (1992)
 - Shlyakhtenko, Dima, On the II$_1$ factors of Fuchsian groups (2026)
 - Voiculescu, Dan, Symmetries of some reduced free product $C^*$-algebras (1985)
 - Voiculescu, Dan, Circular and semicircular systems and free product factors (1990)

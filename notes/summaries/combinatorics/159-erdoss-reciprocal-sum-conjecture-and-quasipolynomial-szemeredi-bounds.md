@@ -121,7 +121,7 @@ It is the largest formalization measured here: 4,774 files and 1,122,983 Lean li
 
 The content is in `Results/Basic.lean`, whose coloring consequence is 
 
-> theorem monochromatic_hasAP_of_extremalNumber {k N r : ℕ} (hbound : r * extremalNumber k N < N) (color : ℕ → Fin r) : ∃ c : Fin r, HasAP {n : ℕ | n ∈ Finset.Icc 1 N ∧ color n = c} k := by [S18:84–86]
+> theorem monochromatic_hasAP_of_extremalNumber k N r : ℕ (hbound : r * extremalNumber k N < N) (color : ℕ → Fin r) : ∃ c : Fin r, HasAP n : ℕ | n ∈ Finset.Icc 1 N ∧ color n = c k := by [S18:84–86]
 
 The quantitative side is formalized, in a weaker form than the manuscript's. `Model.lean` defines the density bound as 
 
@@ -133,7 +133,7 @@ That is a saving in log log *N*; the manuscript's Theorem `ap:main` is a saving 
 
 for every fixed *B*, which is summable on dyadic scales once *B* > 1; `Results/Reciprocal.lean` then converts dyadic summability into the progression conclusion 
 
-> theorem hasAP_of_not_summable_reciprocal {k : ℕ} (hseries : Summable fun m : ℕ ↦ (extremalNumber k (2 ^ m) : ℝ) / 2 ^ m) {A : Set ℕ} (hA : ¬ Summable (reciprocalTerm A)) : HasAP A k := by [S22:86–88]
+> theorem hasAP_of_not_summable_reciprocal k : ℕ (hseries : Summable fun m : ℕ ↦ (extremalNumber k (2 ^ m) : ℝ) / 2 ^ m) A : Set ℕ (hA : ¬ Summable (reciprocalTerm A)) : HasAP A k := by [S22:86–88]
 
 and `Results/Conclusions.lean` proves the pair as a conjunction [S21:26–27]:
 
@@ -155,7 +155,7 @@ The manuscript's own account is the citation trail. The dyadic threshold is the 
 
 Kelley and Meka obtained the stronger bound 
 
-> Kelley and Meka obtained the stronger bound \[ r_3(N)\ll N\exp\bigl(-c(\log N)^{1/12}\bigr) \] [S4:118–121]
+> Kelley and Meka obtained the stronger bound \[ r_3(N)\ll N\exp\bigl(-c(\log N)^1/12\bigr) \] [S4:118–121]
 
 Bloom and Sisask then simplified it and Raghavan extended it "Bloom and Sisask simplified the argument and then improved the exponent to $1/9$. [S4:124–126]" and "$r_3(N)\le N\exp\bigl(-(\log N)^{1/6-o(1)}\bigr)$ [S4:128]". The ceiling on what any such bound can be is Behrend's construction "Behrend's construction already gives $r_3(N)\ge N\exp(-C\sqrt{\log N})$, so a fixed power saving in $N$ is impossible even in this case [S4:130–132]".
 
@@ -183,7 +183,7 @@ The headline consequence is the uniform harmonic bound
 
 So divergence of the reciprocal sum forces progressions of every length "Consequently, whenever $S_k(w)<\infty$, divergence of the weighted sum forces a nonconstant $k$-term progression. [S9:32–33]" The bound is stable under arbitrary logarithmic losses 
 
-> The same comparison shows that, for each fixed $B>0$, there is a constant $C_{k,B}$ with \[ r_k(N)\le C_{k,B}N(\log N)^{-B}\qquad(N\ge3). \] [S9:131–135]
+> The same comparison shows that, for each fixed $B>0$, there is a constant $C_{k,B}$ with \[ r_k(N)\le C_k,BN(\log N)^-B\qquad(N\ge3). \] [S9:131–135]
 
 The paper recovers a known theorem rather than replacing it "Theorem also recovers the established dense-primes theorem of Green and Tao [S9:138–139]" and the tail estimate that makes the weighted sums converge is "In particular, for every $0<a<c_k$, this tail is at most $C_{k,a}e^{-a(\log x)^{\varepsilon_k}}$. [S9:163–164]"
 

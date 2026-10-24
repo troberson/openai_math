@@ -29,7 +29,7 @@ The comparison objects are the minimal Clifford products. The introduction names
 
 The Clifford products are minimal, and the threshold is the minimum over their volumes 
 
-> The two factors have opposite principal curvatures, whose weighted sum vanishes; these products are therefore minimal. For each integer \(m\ge2\), set \[ a_m=\min_{1\le k<m}\Vol_m(\mathcal C_{k,m-k}). \] The assertion that \(a_m\) is the first volume level above the equator is the least-volume question in Yau's collection \cite[Problem 31]Yau1994. The modern formulation in \cite[Conjecture 1.12(ii)]GeLi2021 calls it the Solomon–Yau conjecture. We prove this formulation with its full immersion scope. [S6:15–25]
+> The two factors have opposite principal curvatures, whose weighted sum vanishes; these products are therefore minimal. For each integer \(m\ge2\), set \[ a_m=\min_{1\le k<m}\Vol_m(\mathcal C_k,m-k). \] The assertion that \(a_m\) is the first volume level above the equator is the least-volume question in Yau's collection \cite[Problem 31]Yau1994. The modern formulation in \cite[Conjecture 1.12(ii)]GeLi2021 calls it the Solomon–Yau conjecture. We prove this formulation with its full immersion scope. [S6:15–25]
 
 The theorem is the volume bound [S6:27–34]:
 
@@ -72,7 +72,7 @@ The second construction is Lorentzian. Form the Euclidean cone over the hypersur
 
 The boost and level parameters give a family on projective space whose cohomology detects the topology 
 
-> The boost parameters and the level parameter give a family on \(\mathbbRP^{m+3}\). Its boundary cycles have area at most \(|\Sigma|\), and its fillings change to their complements around the projective generator. The associated degree-one cohomology class has nonzero \((m+3)\)-rd power. This is the topological detection used in Section  ; it replaces a topology assumption on \(\Sigma\) itself. The original hypersurface is the unique area maximum, with a uniform gap away from its central parameter. Its extra index direction removes that maximum while preserving the detection and the absence of mass concentration (Proposition  ). [S6:133–143]
+> The boost parameters and the level parameter give a family on \(\mathbbRP^m+3\). Its boundary cycles have area at most \(|\Sigma|\), and its fillings change to their complements around the projective generator. The associated degree-one cohomology class has nonzero \((m+3)\)-rd power. This is the topological detection used in Section  ; it replaces a topology assumption on \(\Sigma\) itself. The original hypersurface is the unique area maximum, with a uniform gap away from its central parameter. Its extra index direction removes that maximum while preserving the detection and the absence of mass concentration (Proposition  ). [S6:133–143]
 
 Detection forces a uniform area gap above the equator, so the min–max theorem produces varifolds above the equator even after the strict deformation 
 
@@ -134,16 +134,16 @@ What has not been checked: no Lean, lake, or comparator run was performed, and t
 - Ge, Jianquan, Li, Fagui, A lower bound for $L^2$ length of second fundamental form on minimal hypersurfaces (2021)
 - Ge, Jianquan, Li, Fagui, Volume gap for minimal submanifolds in spheres (2022)
 - Ge, Jianquan, Li, Fagui, Volume gap for minimal submanifolds in spheres, II (2026)
-- B{ö}gelein, Verena, Duzaar, Frank, Fusco, Nicola, A quantitative isoperimetric inequality on the sphere (2017)
+- Bögelein, Verena, Duzaar, Frank, Fusco, Nicola, A quantitative isoperimetric inequality on the sphere (2017)
 - Hatcher, Allen, Algebraic Topology (2002)
 - Li, Peter, Yau, Shing-Tung, A new conformal invariant and its applications to the Willmore conjecture and the first eigenvalue of compact surfaces (1982)
-- Marques, Fernando C., Neves, Andr{é}, Min-max theory and the Willmore conjecture (2014)
-- Marques, Fernando C., Neves, Andr{é}, Existence of infinitely many minimal hypersurfaces in positive Ricci curvature (2017)
-- Marques, Fernando C., Neves, Andr{é}, Morse index of multiplicity one min-max minimal hypersurfaces (2021)
+- Marques, Fernando C., Neves, André, Min-max theory and the Willmore conjecture (2014)
+- Marques, Fernando C., Neves, André, Existence of infinitely many minimal hypersurfaces in positive Ricci curvature (2017)
+- Marques, Fernando C., Neves, André, Morse index of multiplicity one min-max minimal hypersurfaces (2021)
 - Mityagin, Boris S., The Zero Set of a Real Analytic Function (2015)
 - Morrey, Jr., Charles B., On the analyticity of the solutions of analytic non-linear elliptic systems of partial differential equations. Part I. Analyticity in the interior (1958)
 - Nguyen, Manh Tien, Weighted monotonicity theorems and applications to minimal surfaces of $\mathbb H^n$ and $S^n$ (2023)
-- Nifa, Anass, Sharp {Schrödinger} inequalities for embedded hypersurfaces (2026)
+- Nifa, Anass, Sharp Schrödinger inequalities for embedded hypersurfaces (2026)
 - Obata, Morio, Certain conditions for a Riemannian manifold to be isometric with a sphere (1962)
 - Perdomo, Oscar, On the average of the scalar curvature of minimal hypersurfaces of spheres with low stability index (2004)
 - Perdomo, Oscar M., On the index of minimal hypersurfaces of spheres (2019)

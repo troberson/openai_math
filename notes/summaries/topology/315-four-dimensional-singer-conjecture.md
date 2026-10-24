@@ -39,7 +39,7 @@ Poincaré complexes of formal dimension four [S4:3–34]:
 Let $Q$ be a finite connected aspherical integral Poincaré complex of
 formal dimension four, with arbitrary orientation character. Then
 \[
- b_p^{(2)}(\widetilde Q)=0\qquad(p\ge0,\ p\ne2).
+ b_p^(2)(\widetilde Q)=0\qquad(p\ge0,\ p\ne2).
 \] [S4:36–42]
 
 The corollary recovers the manifold statement from this wider
@@ -154,7 +154,7 @@ bibliography; no figures — and no non-LaTeX evidence.
 
 ## Bibliography
 
-- Albanese, Michael, Di Cerbo, Luca F., Lombardi, Luigi, Aspherical complex surfaces, the Singer conjecture, and {Gromov–L{ü}ck} inequality $\chi\geq|\sigma|$ (2025)
+- Albanese, Michael, Di Cerbo, Luca F., Lombardi, Luigi, Aspherical complex surfaces, the Singer conjecture, and {Gromov–Lück} inequality $\chi\geq|\sigma|$ (2025)
 - Atiyah, Michael F., Elliptic operators, discrete groups and von Neumann algebras (1976)
 - Avramidi, Grigori, Okun, Boris, Schreve, Kevin, $L^2$-Betti numbers of branched covers of hyperbolic manifolds (2025)
 - Bowditch, Brian H., A topological characterisation of hyperbolic groups (1998)
@@ -162,10 +162,10 @@ bibliography; no figures — and no non-LaTeX evidence.
 - Bowditch, Brian H., Connectedness properties of limit sets (1999)
 - Bowditch, Brian H., Peripheral splittings of groups (2001)
 - Brown, Kenneth S., Cohomology of Groups (1982)
-- L{ü}ck, Wolfgang, $L^2$-Invariants: Theory and Applications to Geometry and $K$-Theory (2002)
-- L{ü}ck, Wolfgang, Approximating $L^2$-invariants by their classical counterparts (2016)
-- L{ü}ck, Wolfgang, Approximating $L^2$-invariants by their finite-dimensional analogues (1994)
-- L{ü}ck, Wolfgang, Schick, Thomas, Various $L^2$-signatures and a topological $L^2$-signature theorem (2003)
+- Lück, Wolfgang, $L^2$-Invariants: Theory and Applications to Geometry and $K$-Theory (2002)
+- Lück, Wolfgang, Approximating $L^2$-invariants by their classical counterparts (2016)
+- Lück, Wolfgang, Approximating $L^2$-invariants by their finite-dimensional analogues (1994)
+- Lück, Wolfgang, Schick, Thomas, Various $L^2$-signatures and a topological $L^2$-signature theorem (2003)
 - Davis, Michael W., Okun, Boris, Vanishing theorems and conjectures for the $\ell^2$-homology of right-angled Coxeter groups (2001)
 - Dodziuk, Jozef, $L^2$ harmonic forms on rotationally symmetric Riemannian manifolds (1979)
 - Dodziuk, Jozef, De Rham–Hodge theory for $L^2$-cohomology of infinite coverings (1977)
@@ -173,15 +173,15 @@ bibliography; no figures — and no non-LaTeX evidence.
 - Friedl, Stefan, Nagel, Matthias, Orson, Patrick, Powell, Mark, The foundations of four-manifold theory in the topological category (2025)
 - Hanner, Olof, Some theorems on absolute neighborhood retracts (1951)
 - Hruska, G. Christopher, Ruane, Kim, Hyperbolic groups and local connectivity (2024)
-- Kamiya, Hitosi, An Elementary Proof of a Theorem of {L. Moore}'s on Continuous Curves (1930)
-- Keller, Matthias, Lenz, Daniel, Schmidt, Marcel, Wojciechowski, Rados{\l}aw K., Note on uniformly transient graphs (2017)
-- Kirstein, Dominik, Kremer, Christian, L{ü}ck, Wolfgang, Some problems and conjectures about $L^2$-invariants (2025)
-- Lott, John, L{ü}ck, Wolfgang, $L^2$-topological invariants of $3$-manifolds (1995)
+- Kamiya, Hitosi, An Elementary Proof of a Theorem of L. Moore's on Continuous Curves (1930)
+- Keller, Matthias, Lenz, Daniel, Schmidt, Marcel, Wojciechowski, Radosław K., Note on uniformly transient graphs (2017)
+- Kirstein, Dominik, Kremer, Christian, Lück, Wolfgang, Some problems and conjectures about $L^2$-invariants (2025)
+- Lott, John, Lück, Wolfgang, $L^2$-topological invariants of $3$-manifolds (1995)
 - Okun, Boris, Schreve, Kevin, The $L^2$-(co)homology of groups with hierarchies (2016)
 - OpenAI, A PD4 group without an aspherical manifold model (2026)
 - OpenAI, Global Spherical Shells on Minimal Surfaces of Class VII (2026)
 - Spanier, Edwin, Singular homology and cohomology with local coefficients and duality for manifolds (1993)
 - Stark, Christopher W., Resolutions modeled on ternary trees (1996)
-- Sun, Fang, An elementary proof for {Poincaré} duality with local coefficients (2017)
-- Wall, C. T. C., {Poincar{é}} complexes. I (1967)
+- Sun, Fang, An elementary proof for Poincaré duality with local coefficients (2017)
+- Wall, C. T. C., {Poincaré} complexes. I (1967)
 - West, James E., Mapping Hilbert cube manifolds to ANR's: A solution of a conjecture of Borsuk (1977)

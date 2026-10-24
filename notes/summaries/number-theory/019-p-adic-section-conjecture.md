@@ -65,7 +65,7 @@ Prior (my training data, not this repo). Grothendieck's letter to Faltings of 27
 
 The local theorem is what makes the global criterion usable, and the manuscript's corollaries are arithmetic in kind. For an abelian target the criterion applies under Stoll's hypotheses [S20:167–170] “there is a nonconstant $K$-morphism $C\to A$ to an abelian variety with $A(K)$ finite and $\mathrm{Sha}(A/K)_{\mathrm{div}}=0$; the Jacobian $J$ of $C$ has $J(K)$ finite and $\mathrm{Sha}(J/K)_{\mathrm{div}}=0$.” For an elliptic target it applies through the release's own companion result “Suppose that there is a nonconstant $\mathbb Q$-morphism $C\to E$ to an elliptic curve and that $s_p(E)=0$ for at least one prime $p$. Then $\kappa_C$ is bijective. [S20:196–198]”, whose proof cites the companion article directly “The corank-zero case of the companion Selmer converse \cite[Theorem 1.1]OpenAISelmerConverse2026 gives $\mathrm{rank}_{\mathbb Z}E(\mathbb Q)=0$ and finiteness of the entire group $\mathrm{Sha}(E/\mathbb Q)$. The Mordell–Weil [S20:203–206]”. The modular-curve case is the headline global claim “For every positive integer $N$ such that the smooth projective geometrically connected curve $X_0(N)/\mathbb Q$ has genus at least two, the map $\kappa_{X_0(N)}$ is bijective. The same assertion holds for the smooth projective geometrically connected curve $X_1(N)/\mathbb Q$ whenever its genus is at least two. [S20:213–217]”, and it comes from Stoll's descent result rather than from the elliptic specialization [S20:229–233].
 
-The citation is a real edge inside the release, and it runs one way. The bibliography entry is [S21:337–343], whose title line reads “title = {The Selmer converse for elliptic curves at every prime}, [S21:339]”, pointing at the family 002 manuscript `The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/`; that manuscript in turn cites family 006, so the chain is 019 → 002 → 006, and all three families are T0. The introduction states the same dependency “The Selmer converse in the companion article \cite[Theorem 1.1]OpenAISelmerConverse2026 gives a further arithmetic test for an elliptic target over $\mathbb Q$: vanishing of its full $p$-power Selmer corank at one prime. [S13:255–258]” The first manuscript cites nothing in the corpus: its nine-entry bibliography has no release key [S9], so the chain leaves 019 through the second manuscript only. A chain of unformalized links is only as strong as its weakest, and here every link is unformalized, so the chain is a reading dependency, not a machine-checked one. See [002 — The full Birch–Swinnerton-Dyer formula in Selmer coranks zero and one](002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md) and [006 — Goldfeld's conjecture](006-goldfelds-conjecture.md), the two pages this chain runs through.
+The citation is a real edge inside the release, and it runs one way. The bibliography entry is [S21:337–343], whose title line reads “title = The Selmer converse for elliptic curves at every prime, [S21:339]”, pointing at the family 002 manuscript `The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/`; that manuscript in turn cites family 006, so the chain is 019 → 002 → 006, and all three families are T0. The introduction states the same dependency “The Selmer converse in the companion article \cite[Theorem 1.1]OpenAISelmerConverse2026 gives a further arithmetic test for an elliptic target over $\mathbb Q$: vanishing of its full $p$-power Selmer corank at one prime. [S13:255–258]” The first manuscript cites nothing in the corpus: its nine-entry bibliography has no release key [S9], so the chain leaves 019 through the second manuscript only. A chain of unformalized links is only as strong as its weakest, and here every link is unformalized, so the chain is a reading dependency, not a machine-checked one. See [002 — The full Birch–Swinnerton-Dyer formula in Selmer coranks zero and one](002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md) and [006 — Goldfeld's conjecture](006-goldfelds-conjecture.md), the two pages this chain runs through.
 
 The release presents the two as one family, and in the first edition both were dated the same day; the section-conjecture manuscript now ships as a re-issue, so the construction README carries “**Date:** September 24, 2026 [S3:5]” while the theorem's README carries “**Date:** October 6, 2026 [S11:5]”, with the theorem's abstract stating the two halves “We prove the local $p$-adic section conjecture for smooth proper geometrically connected curves of genus at least two, over every finite extension of $\mathbb Q_p$. [S12:32–34]” and “Combined with established finite-descent theorems, this also yields the global section conjecture for smooth proper geometrically connected curves of genus at least two over number fields when their finite-cover descent locus equals their rational points; this includes $X_0(N)$ and $X_1(N)$ of genus at least two over $\mathbb Q$. [S12:35–39]” The release blurb in `overview.tex` says the same in one sentence “Proves that rational points on every smooth proper geometrically connected curve of genus at least two over a finite extension of $\mathbb Q_p$ correspond bijectively to conjugacy classes of sections of its full arithmetic étale fundamental group. [S2:114]”
 
@@ -100,19 +100,19 @@ The release presents the two as one family, and in the first edition both were d
 
 ## Bibliography
 
-- , Rev{\^e}tements {é}tales et groupe fondamental (SGA 1) (2003)
-- , Rev{\^e}tements {é}tales et groupe fondamental (SGA 1) (2003)
-- Amini, Omid, Baker, Matthew, Brugall{é}, Erwan, Rabinoff, Joseph, Lifting harmonic morphisms I: metrized complexes and Berkovich skeleta (2015)
+- , Rev{\^e}tements étales et groupe fondamental (SGA 1) (2003)
+- , Rev{\^e}tements étales et groupe fondamental (SGA 1) (2003)
+- Amini, Omid, Baker, Matthew, Brugallé, Erwan, Rabinoff, Joseph, Lifting harmonic morphisms I: metrized complexes and Berkovich skeleta (2015)
 - The Stacks Project Authors, The Stacks Project
 - Baker, Matthew, Payne, Sam, Rabinoff, Joseph, On the structure of nonarchimedean analytic curves (2013)
 - Baker, Matthew, Rabinoff, Joseph, The skeleton of the Jacobian, the Jacobian of the skeleton, and lifting meromorphic functions from tropical to algebraic curves (2015)
 - Baker, Matthew, Payne, Sam, Rabinoff, Joseph, On the structure of nonarchimedean analytic curves (2013)
 - Betts, L. Alexander, Stix, Jakob, Galois sections and $p$-adic period mappings (2025)
-- Bosch, Siegfried, L{ü}tkebohmert, Werner, Stable reduction and uniformization of abelian varieties. II (1984)
+- Bosch, Siegfried, Lütkebohmert, Werner, Stable reduction and uniformization of abelian varieties. II (1984)
 - Bosch, Siegfried, Stable reduction and rigid analytic uniformization of abelian varieties (1983–1984)
 - Bresciani, Giulio, The section conjecture for the toric fundamental group over $p$-adic fields (2026)
 - Bresciani, Giulio, Vistoli, Angelo, An elementary approach to Stix's proof of the real section conjecture (2020)
-- Grothendieck, Alexander, Letter to {G. Faltings} (translation into English) (1997)
+- Grothendieck, Alexander, Letter to G. Faltings (translation into English) (1997)
 - Harari, David, Stix, Jakob, Descent obstruction and fundamental exact sequence (2012)
 - Harbater, David, Galois coverings of the arithmetic line (1987)
 - de Jong, A. J., Étale fundamental groups of non-Archimedean analytic spaces (1995)
@@ -127,13 +127,13 @@ The release presents the two as one family, and in the first edition both were d
 - Mochizuki, Shinichi, Tsujimura, Shota, Resolution of Nonsingularities, Point-theoreticity, and Metric-admissibility for $p$-adic Hyperbolic Curves (2024)
 - Mochizuki, Shinichi, Tsujimura, Shota, Resolution of Nonsingularities, Point-theoreticity, and Metric-admissibility for $p$-adic Hyperbolic Curves (2024)
 - OpenAI, The Selmer converse for elliptic curves at every prime (2026)
-- Pajwani, Jesse, The valuative section conjecture, {é}tale homotopy, and Berkovich spaces (2025)
-- Poineau, J{é}r{\^o}me, Raccord sur les espaces de Berkovich (2010)
-- Poineau, J{é}r{\^o}me, Raccord sur les espaces de Berkovich (2010)
+- Pajwani, Jesse, The valuative section conjecture, étale homotopy, and Berkovich spaces (2025)
+- Poineau, Jér{\^o}me, Raccord sur les espaces de Berkovich (2010)
+- Poineau, Jér{\^o}me, Raccord sur les espaces de Berkovich (2010)
 - Pop, Florian, Stix, Jakob, Arithmetic in the fundamental group of a $p$-adic curve: On the $p$-adic section conjecture for curves (2017)
 - Pop, Florian, On the birational $p$-adic section conjecture (2010)
 - Raynaud, Michel, Variétés abéliennes et géométrie rigide (1971)
-- Schmidt, Friedrich Karl, Mehrfach perfekte K{ö}rper (1933)
+- Schmidt, Friedrich Karl, Mehrfach perfekte Körper (1933)
 - Stix, Jakob, On the birational section conjecture with local conditions (2015)
 - Stoll, Michael, Finite descent obstructions and rational points on curves (2007)
 - Stoll, Michael, Errata: Finite descent obstructions and rational points on curves (2017)

@@ -37,7 +37,7 @@ explicit counterexample
 Let $V$ be the ring of integers in the unramified extension of $\mathbb Q_5$ of
 degree eight, and put
 \[
- A=\bigl(V[x,y]/(5+x^4+y^4)\bigr)_{(5,x,y)}.
+ A=\bigl(V[x,y]/(5+x^4+y^4)\bigr)_(5,x,y).
 \]
 Then $A$ is a Noetherian regular local domain of dimension two and
 \[
@@ -181,8 +181,8 @@ manuscripts — 8 `.tex` files in the degree-five `build/source/` and
 - Milne, J. S., Algebraic Number Theory (2020)
 - Milne, J. S., Class Field Theory (2020)
 - Mochizuki, Satoshi, Local Gersten's conjecture for regular system of parameters (2020)
-- OpenAI, {An integral degree-three Gersten counterexample} (2026)
-- OpenAI, {An integral counterexample to Gersten's conjecture} (2026)
+- OpenAI, An integral degree-three Gersten counterexample (2026)
+- OpenAI, An integral counterexample to Gersten's conjecture (2026)
 - Panin, I. A., The equicharacteristic case of the Gersten conjecture (2003)
 - Panin, I. A., The equicharacteristic case of the Gersten conjecture (2003)
 - Quillen, Daniel, On the cohomology and $K$-theory of the general linear groups over a finite field (1972)

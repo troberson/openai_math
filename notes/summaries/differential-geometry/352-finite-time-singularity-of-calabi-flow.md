@@ -8,11 +8,11 @@
 
 The manuscript's main theorem is the counterexample itself [S8:20–28]:
 
-> There is a smooth \(U(10)\)-invariant Kähler form \(\omega_0\) on \(\CP^10\), in the class \([\omega_{\mathrmFS}]\), whose maximal smooth Calabi flow has existence interval \([0,T_*)\) with \(0<T_*<\infty\). There are a point \(p\in\CP^10\) and a constant \(a>0\) such that \[ S(\omega(t))(p)\sim a(T_*-t)^{-1/2}\qquadas t\uparrow T_*. \] [S8:21–27]
+> There is a smooth \(U(10)\)-invariant Kähler form \(\omega_0\) on \(\CP^10\), in the class \([\omega_{\mathrmFS}]\), whose maximal smooth Calabi flow has existence interval \([0,T_*)\) with \(0<T_*<\infty\). There are a point \(p\in\CP^10\) and a constant \(a>0\) such that \[ S(\omega(t))(p)\sim a(T_*-t)^-1/2\qquadas t\uparrow T_*. \] [S8:21–27]
 
 The corollary is the dimension statement [S8:40–57]:
 
-> Let \(\omega(t)\), \(T_*\), \(p\), and \(a\) be as in Theorem  , and let \((Y,\eta)\) be a compact connected Kähler manifold with \(\eta\) of constant scalar curvature.  With \(\pi_X\) and \(\pi_Y\) the projections from \(\CP^10\times Y\), the maximal smooth Calabi flow from \(\Omega_0=\pi_X^*\omega_0+\pi_Y^*\eta\) is \[ \Omega(t)=\pi_X^*\omega(t)+\pi_Y^*\eta, \qquad 0\leq t<T_*. \] For every \(y\in Y\), \(S(\Omega(t))(p,y)\sim a(T_*-t)^{-1/2}\). In particular, finite-time smooth Calabi-flow singularities occur in every complex dimension \(n\geq10\), on \(\CP^10\times\CP^{n-10}\), in a class containing a Kähler–Einstein metric. [S8:41–56]
+> Let \(\omega(t)\), \(T_*\), \(p\), and \(a\) be as in Theorem  , and let \((Y,\eta)\) be a compact connected Kähler manifold with \(\eta\) of constant scalar curvature.  With \(\pi_X\) and \(\pi_Y\) the projections from \(\CP^10\times Y\), the maximal smooth Calabi flow from \(\Omega_0=\pi_X^*\omega_0+\pi_Y^*\eta\) is \[ \Omega(t)=\pi_X^*\omega(t)+\pi_Y^*\eta, \qquad 0\leq t<T_*. \] For every \(y\in Y\), \(S(\Omega(t))(p,y)\sim a(T_*-t)^-1/2\). In particular, finite-time smooth Calabi-flow singularities occur in every complex dimension \(n\geq10\), on \(\CP^10\times\CP^n-10\), in a class containing a Kähler–Einstein metric. [S8:41–56]
 
 The manuscript states what the construction does not presuppose: the spectral split that selects finitely many components from future forcing is available because the initial metric is still free, and it requires no stability or nondegeneracy theorem for the profile [S8:168–171].
 
@@ -40,7 +40,7 @@ The operators lemma is the analytic input: the spatial operator is a bijection b
 
 The finite-time obstruction lemma is the geometric conclusion 
 
-> Let \(G\in C^\infty[0,\infty)\) satisfy \(G(0)=1\) and \(G'(0)\ne0\), and define \(F\) by  .  Suppose that for some \(T>0\) and \(\delta>0\) there is a smooth invariant solution \(H=F+V\) of   on \((-T,0)\times\Sigma\) such that \(1+v_*H>0\) and $$\label{geo:correction-bound} V(t,0)=O(\rho^{-1+\delta})\qquad(t\uparrow0).$$ Then a smooth \(U(10)\)-invariant metric \(\omega_0\in[\omega_*]\) has maximal smooth Calabi-flow existence interval \([0,T_*)\), where \(T_*=T/2<\infty\).  At the fixed affine origin \(p\), the scalar curvature of this flow satisfies $$\label{geo:curvature-rate} S(\tau,p)=a(T_*-\tau)^{-1/2} +O\big(1+(T_*-\tau)^{(-1+\delta)/2}\big),\qquad a=-110G'(0)\ne0.$$ In particular \(S(\tau,p)\sim a(T_*-\tau)^{-1/2}\), and \(a>0\) when \(G'(0)<0\). [S9:406–424]
+> Let \(G\in C^\infty[0,\infty)\) satisfy \(G(0)=1\) and \(G'(0)\ne0\), and define \(F\) by  .  Suppose that for some \(T>0\) and \(\delta>0\) there is a smooth invariant solution \(H=F+V\) of   on \((-T,0)\times\Sigma\) such that \(1+v_*H>0\) and $$\label{geo:correction-bound} V(t,0)=O(\rho^{-1+\delta})\qquad(t\uparrow0).$$ Then a smooth \(U(10)\)-invariant metric \(\omega_0\in[\omega_*]\) has maximal smooth Calabi-flow existence interval \([0,T_*)\), where \(T_*=T/2<\infty\).  At the fixed affine origin \(p\), the scalar curvature of this flow satisfies $$\label{geo:curvature-rate} S(\tau,p)=a(T_*-\tau)^{-1/2} +O\big(1+(T_*-\tau)^{(-1+\delta)/2}\big),\qquad a=-110G'(0)\ne0.$$ In particular \(S(\tau,p)\sim a(T_*-\tau)^-1/2\), and \(a>0\) when \(G'(0)<0\). [S9:406–424]
 
 The profile theorem builds `G` [S10:15–30]:
 
@@ -60,19 +60,19 @@ The ancient flat right inverse is the core analytic object
 
 The compact realization theorem glues the ancient inverse to a short-time forward solution 
 
-> Let $G$ be the profile of Theorem  , put \[ h(y)=\frac{G(y)-1}y,\qquad F(t,x)=\rho^{-1}h(x/\rho), \] and fix $0<\alpha<\alpha'<1$.  Choose $\delta\in(0,1)$ and the ancient right inverse supplied by Theorem  .  For every sufficiently small $\eps>0$, there are $T>0$ and a real invariant function $V\in X_\alpha$ on $\Sigma\times[-T,0)$ such that $\norm{V}_{X'_\alpha}\le\eps$ and $H=F+V$ satisfies $$\label{glue:equation} H_t+(1+v_*H)^2\A H=0,\qquad v_*=x(1-x).$$ The function $H$ is smooth on $\Sigma\times(-T,0)$, and there are constants $0<c_1<c_2<\infty$, independent of $t$, such that $$\label{glue:positive} c_1\le 1+v_*H\le c_2.$$ In particular, $H(t,\cdot)$ is smooth as a function of $x\in[0,1]$, and $$\label{glue:center} V(t,0)=O(\rho^{-1+\delta})\qquad(t\uparrow0).$$ [S13:22–43]
+> Let $G$ be the profile of Theorem  , put \[ h(y)=\fracG(y)-1y,\qquad F(t,x)=\rho^-1h(x/\rho), \] and fix $0<\alpha<\alpha'<1$.  Choose $\delta\in(0,1)$ and the ancient right inverse supplied by Theorem  .  For every sufficiently small $\eps>0$, there are $T>0$ and a real invariant function $V\in X_\alpha$ on $\Sigma\times[-T,0)$ such that $\norm{V}_{X'_\alpha}\le\eps$ and $H=F+V$ satisfies $$\label{glue:equation} H_t+(1+v_*H)^2\A H=0,\qquad v_*=x(1-x).$$ The function $H$ is smooth on $\Sigma\times(-T,0)$, and there are constants $0<c_1<c_2<\infty$, independent of $t$, such that $$\label{glue:positive} c_1\le 1+v_*H\le c_2.$$ In particular, $H(t,\cdot)$ is smooth as a function of $x\in[0,1]$, and $$\label{glue:center} V(t,0)=O(\rho^{-1+\delta})\qquad(t\uparrow0).$$ [S13:22–43]
 
 The nonlinear step is where the norm choice matters: the linearized operator is `P = P0 + E`, `E` is lower order with `E u = O(ρ^{-2} u)`, and the residual becomes small after applying the inverse in a norm controlling all four spatial derivatives and their temporal Hölder seminorms, with the time derivative omitted [S13:523–545]. The product corollary is proved by the identity `S(Ω(t)) = S(ω(t)) ∘ π_X + S(η)` and the fact that the product metric is a solution exactly when each factor is [S13:641–660].
 
 The appendix is the finite-arithmetic certificate. The shooting proposition bounds the profile parameters [S14:12–25]:
 
-> For every parameter \(z_*\in[-R,R]^2\), where \(R=5\cdot10^{-10}\), let \((k,d)\) be given by  , and let \(p\) be the origin solution of   supplied by Lemma  . This solution extends to \(0\le s\le S_0=56\) and satisfies \[ 1+p(s)>0. \] For the coordinates of its jet relative to \(p_{\rm a}\), defined in  , one has $$\label{cert:conclusion} |q|\le .25R,\qquad \big\|(\Re\xi,\Im\xi)-z_*\big\|_\infty\le .13R.$$ [S14:12–24]
+> For every parameter \(z_*\in[-R,R]^2\), where \(R=5\cdot10^-10\), let \((k,d)\) be given by  , and let \(p\) be the origin solution of   supplied by Lemma  . This solution extends to \(0\le s\le S_0=56\) and satisfies \[ 1+p(s)>0. \] For the coordinates of its jet relative to \(p_{\rm a}\), defined in  , one has $$\label{cert:conclusion} |q|\le .25R,\qquad \big\|(\Re\xi,\Im\xi)-z_*\big\|_\infty\le .13R.$$ [S14:12–24]
 
 The method is interval arithmetic: the vector field is decomposed into a linear part `L` and a polynomial part `N`; `L` is applied by exact rational arithmetic, `N` by integer interval arithmetic, and the enclosure uses the scalar majorant `exp(Lt)`. The certificate is a finite computation over integer intervals, and the analytic interpretation is proved in the appendix [S14:27–55].
 
 The provenance statement is explicit 
 
-> The complete source printed in Appendix   is \texttt{verification/certificate.py}, comprising \(6594\) UTF-8 bytes. Its SHA-256 digest is \begincenter\small\ttfamily 263389fd7217d84d0e5b66869797fc9f7998\\ 309d524a95f7ad7d3d0f538ea742 \endcenter where the line break is for typesetting only. It uses no imported libraries, floating-point operations, external data, or platform-dependent numerical routines.  From the paper directory, the verification command is \beginquote\ttfamily python3 verification/certificate.py \endquote [S14:671–684]
+> The complete source printed in Appendix   is \textttverification/certificate.py, comprising \(6594\) UTF-8 bytes. Its SHA-256 digest is \begincenter\small\ttfamily 263389fd7217d84d0e5b66869797fc9f7998\\ 309d524a95f7ad7d3d0f538ea742 \endcenter where the line break is for typesetting only. It uses no imported libraries, floating-point operations, external data, or platform-dependent numerical routines.  From the paper directory, the verification command is \beginquote\ttfamily python3 verification/certificate.py \endquote [S14:671–684]
 
 ## History of the conjecture
 
@@ -119,14 +119,13 @@ The release records 1 manuscript for this family and 0 formalized paths, 0 compa
 ## Bibliography
 
 - Abreu, Miguel, Kähler geometry of toric varieties and extremal metrics (1998)
-- Berman, Robert J., Darvas, Tam{á}s, Lu, Chinh H., Convexity of the extended $K$-energy and the large time behavior of the weak Calabi flow (2017)
+- Berman, Robert J., Darvas, Tamás, Lu, Chinh H., Convexity of the extended $K$-energy and the large time behavior of the weak Calabi flow (2017)
 - Calabi, Eugenio, Extremal Kähler metrics (1982)
 - Calabi, Eugenio, Métriques kählériennes et fibrés holomorphes (1979)
 - Chen, Xiuxiong, Calabi flow in Riemann surfaces revisited: a new point of view (2001)
 - Chen, Xiuxiong, He, Weiyong, On the Calabi flow (2008)
 - Chen, Xiuxiong, Cheng, Jingrui, On the constant scalar curvature Kähler metrics (I)—A priori estimates (2021)
-- Chru{ś}ciel, Piotr T., Semi-global existence and convergence of solutions of the
-           Robinson–Trautman (2-dimensional Calabi) equation (1991)
+- Chruściel, Piotr T., Semi-global existence and convergence of solutions of the Robinson–Trautman (2-dimensional Calabi) equation (1991)
 - Dong, Hongjie, Zhang, Hong, Schauder estimates for higher-order parabolic systems with time irregular coefficients (2015)
 - Guan, Daniel, Extremal solitons and exponential $C^\infty$ convergence of the modified Calabi flow on certain $\mathbb{CP}^1$ bundles (2007)
 - Guillemin, Victor, Kaehler structures on toric varieties (1994)
@@ -137,6 +136,6 @@ The release records 1 manuscript for this family and 0 formalized paths, 0 compa
 - Li, Haozhao, Zhang, Linwei, Zheng, Kai, Calabi flow with bounded $L^p$ scalar curvature (2024)
 - Li, Haozhao, Zhang, Linwei, Calabi flow with bounded $L^p$ scalar curvature (II) (2025)
 - Nedialkov, N. S., Jackson, K. R., Corliss, G. F., Validated solutions of initial value problems for ordinary differential equations (1999)
-- H{ö}rmander, Lars, Hypoelliptic differential operators (1961)
+- Hörmander, Lars, Hypoelliptic differential operators (1961)
 - Streets, Jeffrey, Long time existence of minimizing movement solutions of Calabi flow (2014)
 - Struwe, Michael, Curvature flows on surfaces (2002)

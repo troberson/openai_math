@@ -233,8 +233,8 @@ a bibliography in the PD4 `build/` — and no non-LaTeX evidence.
 - Freedman, Michael H., The topology of four-dimensional manifolds (1982)
 - Freedman, Michael H., Teichner, Peter, 4-manifold topology. I. Subexponential groups (1995)
 - Getzler, Ezra, Lie theory for nilpotent $L_\infty$-algebras (2009)
-- Goldman, William M., Millson, John J., The deformation theory of representations of fundamental groups of compact {Kähler} manifolds (1988)
-- Goldman, William M., Millson, John J., The deformation theory of representations of fundamental groups of compact {Kähler} manifolds (1988)
+- Goldman, William M., Millson, John J., The deformation theory of representations of fundamental groups of compact Kähler manifolds (1988)
+- Goldman, William M., Millson, John J., The deformation theory of representations of fundamental groups of compact Kähler manifolds (1988)
 - Martin R. Bridson and André Haefliger, _Metric Spaces of Non-Positive Curvature_, Grundlehren der mathematischen Wissenschaften, vol. 319, Springer, Berlin, 1999.
 - Hatcher, Allen, Algebraic Topology (2002)
 - Allen Hatcher, _Algebraic Topology_, Cambridge University Press, 2002. Author's online edition.
@@ -246,7 +246,7 @@ a bibliography in the PD4 `build/` — and no non-LaTeX evidence.
 - Kim, Min Hoon, Powell, Mark, Teichner, Peter, Round handle problem (2021)
 - Koszul, Jean-Louis, Homologie et cohomologie des alg\`ebres de Lie (1950)
 - Krushkal, Vyacheslav S., Quinn, Frank, Subexponential groups in 4-manifold topology (2000)
-- Krushkal, Vyacheslav S., A counterexample to the strong version of {Freedman's} conjecture (2008)
+- Krushkal, Vyacheslav S., A counterexample to the strong version of Freedman's conjecture (2008)
 - Krushkal, Vyacheslav S., Lee, Ronnie, Surgery on closed $4$-manifolds with free fundamental group (2002)
 - Krushkal, Vyacheslav S., Quinn, Frank, Subexponential groups in 4-manifold topology (2000)
 - Daniel Kasprowski and Markus Land, _Topological 4-manifolds with 4-dimensional fundamental group_, Glasgow Mathematical Journal **64** (2022), no. 2, 454–461. doi:10.1017/S0017089521000215. Cited theorem and lemma locators refer to arXiv:2007.03399v3.
@@ -255,7 +255,7 @@ a bibliography in the PD4 `build/` — and no non-LaTeX evidence.
 - Milnor, John W., Topology from the Differentiable Viewpoint (1965)
 - John Milnor, _On spaces having the homotopy type of a CW-complex_, Transactions of the American Mathematical Society **90** (1959), no. 2, 272–280. Original article.
 - OpenAI, _A marked tensor obstruction to four-dimensional disk embedding_, OpenAI Math Release preprint OAI:A-marked-tensor-obstruction-to-four-dimensional-disk-embedding-September-24-2026, 2026.
-- Pantev, Tony, To{ë}n, Bertrand, Vaqui{é}, Michel, Vezzosi, Gabriele, Shifted symplectic structures (2013)
+- Pantev, Tony, Toën, Bertrand, Vaquié, Michel, Vezzosi, Gabriele, Shifted symplectic structures (2013)
 - Powell, Mark, Ray, Arunima, Teichner, Peter, The 4-dimensional disc embedding theorem and dual spheres (2025)
 - Powell, Mark, Ray, Arunima, Teichner, Peter, The 4-dimensional disc embedding theorem and dual spheres (2025)
 - Mark Powell, Arunima Ray, and Peter Teichner, _The 4-dimensional disc embedding theorem and dual spheres_, Selecta Mathematica (N.S.) **31** (2025), article 80. doi:10.1007/s00029-025-01069-y.
@@ -263,6 +263,6 @@ a bibliography in the PD4 `build/` — and no non-LaTeX evidence.
 - Frank Quinn, _Ends of maps. III: Dimensions 4 and 5_, Journal of Differential Geometry **17** (1982), no. 3, 503–521. doi:10.4310/jdg/1214437139.
 - Frank Quinn, _The stable topology of 4-manifolds_, Topology and its Applications **15** (1983), no. 1, 71–77. doi:10.1016/0166-8641(83)90049-4.
 - De Stefani, Alessandro, Grifo, Eloísa, Jeffries, Jack, A Zariski–Nagata theorem for smooth $\mathbb{Z}$-algebras (2020)
-- Jacek Świ{\k a}tkowski, _Hyperbolic Coxeter groups with Sierpiński carpet boundary_, Bulletin of the London Mathematical Society **48** (2016), 708–716. The cited Appendix Proposition A.2 is in arXiv:1502.02044v1.
+- Jacek Świątkowski, _Hyperbolic Coxeter groups with Sierpiński carpet boundary_, Bulletin of the London Mathematical Society **48** (2016), 708–716. The cited Appendix Proposition A.2 is in arXiv:1502.02044v1.
 - C. T. C. Wall, _List of problems_, in _Homological Group Theory_, C. T. C. Wall, ed., London Mathematical Society Lecture Note Series, vol. 36, Cambridge University Press, 1979, 369–394.
 - Christian Wegner, _The $K$-theoretic Farrell-Jones conjecture for CAT(0)-groups_, Proceedings of the American Mathematical Society **140** (2012), no. 3, 779–793. doi:10.1090/S0002-9939-2011-11150-X. Cited theorem locators refer to arXiv:1012.3349v2.

@@ -123,7 +123,7 @@ What is not a consequence: BSD for a fixed curve; the leading coefficient at Sel
 - Andreatta, Fabrizio, Goren, Eyal Z., Hilbert modular forms: mod $p$ and $p$-adic aspects (2005)
 - Arthur, James, Clozel, Laurent, Simple Algebras, Base Change, and the Advanced Theory of the Trace Formula (1989)
 - Arthur, James, A stable trace formula. I. General expansions (2002)
-- Atobe, Hiraku, Gan, Wee Teck, Ichino, Atsushi, Kaletha, Tasho, M{í}nguez, Alberto, Shin, Sug Woo, Local Intertwining Relations and Co-tempered $A$-packets of Classical Groups (2026)
+- Atobe, Hiraku, Gan, Wee Teck, Ichino, Atsushi, Kaletha, Tasho, Mínguez, Alberto, Shin, Sug Woo, Local Intertwining Relations and Co-tempered $A$-packets of Classical Groups (2026)
 - Barnet-Lamb, Thomas, Gee, Toby, Geraghty, David, Taylor, Richard, Local-global compatibility for $l=p$, II (2014)
 - Barnet-Lamb, Tom, Geraghty, David, Harris, Michael, Taylor, Richard, A Family of Calabi–Yau Varieties and Potential Automorphy II (2011)
 - Bernstein, I. N., Zelevinsky, A. V., Induced representations of reductive $p$-adic groups. I (1977)
@@ -136,7 +136,7 @@ What is not a consequence: BSD for a fixed curve; the leading coefficient at Sel
 - F. A. Bogomolov, _Points of finite order on an abelian variety_, Izv. Akad. Nauk SSSR Ser. Mat. **44** (1980), no. 4, 782–804; English translation, Math. USSR-Izv. **17** (1981), no. 1, 55–72. English edition.
 - F. A. Bogomolov, _Points of finite order on an abelian variety_, Izv. Akad. Nauk SSSR Ser. Mat. **44** (1980), 782–804; English translation, Math. USSR-Izv. **17** (1981), 55–72. English edition.
 - Borade, Neelima, Franzel, Jonas, Girsch, Johannes, Yao, Wei, Yu, Qiyao, Zelingher, Elad, On tori periods of Weil representations of unitary groups (2025)
-- Borel, Armand, Jacquet, Herv{é}, Automorphic forms and automorphic representations (1979)
+- Borel, Armand, Jacquet, Hervé, Automorphic forms and automorphic representations (1979)
 - C. Breuil, B. Conrad, F. Diamond, and R. Taylor, _On the modularity of elliptic curves over $\mathbb Q$: wild $3$-adic exercises_, J. Amer. Math. Soc. **14** (2001), no. 4, 843–939. doi:10.1090/S0894-0347-01-00370-8.
 - Breuil, Christophe, Conrad, Brian, Diamond, Fred, Taylor, Richard, On the modularity of elliptic curves over $\mathbf Q$: wild $3$-adic exercises (2001)
 - C. Breuil, B. Conrad, F. Diamond, and R. Taylor, _On the modularity of elliptic curves over $\mathbb Q$: wild $3$-adic exercises_, J. Amer. Math. Soc. **14** (2001), no. 4, 843–939. doi:10.1090/S0894-0347-01-00370-8.
@@ -158,24 +158,24 @@ What is not a consequence: BSD for a fixed curve; the leading coefficient at Sel
 - J. W. S. Cassels, _Arithmetic on curves of genus $1$. VIII. On conjectures of Birch and Swinnerton-Dyer_, J. Reine Angew. Math. **217** (1965), 180–199. doi:10.1515/crll.1965.217.180.
 - J. W. S. Cassels, _Arithmetic on curves of genus $1$. VIII. On conjectures of Birch and Swinnerton-Dyer_, J. Reine Angew. Math. **217** (1965), 180–199. doi:10.1515/crll.1965.217.180.
 - Castella, Francesc, Exceptional zeros for Heegner points and $p$-converse to the theorem of Gross–Zagier and Kolyvagin (2024)
-- Castella, Francesc, Wan, Xin, {Perrin-Riou}'s main conjecture for elliptic curves at supersingular primes (2024)
+- Castella, Francesc, Wan, Xin, Perrin-Riou's main conjecture for elliptic curves at supersingular primes (2024)
 - Castella, Francesc, Grossi, Giada, Lee, Jaehoon, Skinner, Christopher, On the anticyclotomic Iwasawa theory of rational elliptic curves at Eisenstein primes (2022)
 - Castella, Francesc, Liu, Zheng, Wan, Xin, Iwasawa–Greenberg main conjecture for nonordinary modular forms and Eisenstein congruences on $\mathrm{GU}(3,1)$ (2022)
 - Castella, Francesc, Liu, Zheng, Wan, Xin, Addendum to: Iwasawa–Greenberg main conjecture for nonordinary modular forms and Eisenstein congruences on $\mathrm{GU}(3,1)$
 - C.-L. Chai, _Families of ordinary abelian varieties: canonical coordinates, $p$-adic monodromy, Tate-linear subvarieties and Hecke orbits_, preprint, 30 July 2003. Author's manuscript.
-- Chaudouard, Pierre-Henri, Laumon, G{é}rard, Le lemme fondamental pond{é}r{é}. II. {É}nonc{é}s cohomologiques (2012)
-- Bella{ï}che, Jo{ë}l, Chenevier, Ga{ë}tan, Families of Galois Representations and Selmer Groups (2009)
-- Chenevier, Ga{ë}tan, Harris, Michael, Construction of automorphic Galois representations, II (2013)
-- Clozel, Laurent, Delorme, Patrick, Le th{é}or{\`e}me de Paley–Wiener invariant pour les groupes de Lie r{é}ductifs. II (1990)
-- Cluckers, Raf, Hales, Thomas, Loeser, Fran{ç}ois, Transfer principle for the fundamental lemma (2011)
-- Coates, John, Wiles, Andrew, On the conjecture of Birch and {Swinnerton-Dyer} (1977)
+- Chaudouard, Pierre-Henri, Laumon, Gérard, Le lemme fondamental pondéré. II. Énoncés cohomologiques (2012)
+- Bellaïche, Joël, Chenevier, Gaëtan, Families of Galois Representations and Selmer Groups (2009)
+- Chenevier, Gaëtan, Harris, Michael, Construction of automorphic Galois representations, II (2013)
+- Clozel, Laurent, Delorme, Patrick, Le théor{\`e}me de Paley–Wiener invariant pour les groupes de Lie réductifs. II (1990)
+- Cluckers, Raf, Hales, Thomas, Loeser, François, Transfer principle for the fundamental lemma (2011)
+- Coates, John, Wiles, Andrew, On the conjecture of Birch and Swinnerton-Dyer (1977)
 - J. Coates, Y. Li, Y. Tian, and S. Zhai, _Quadratic twists of elliptic curves_, Proc. Lond. Math. Soc. **110** (2015), 357–394. doi:10.1112/plms/pdu059.
-- Colmez, Pierre, Fontaine, Jean-Marc, Construction des repr{é}sentations $p$-adiques semi-stables (2000)
+- Colmez, Pierre, Fontaine, Jean-Marc, Construction des représentations $p$-adiques semi-stables (2000)
 - B. Conrad, _Gross–Zagier revisited_, with an appendix by W. R. Mann, in _Heegner Points and Rankin $L$-Series_, H. Darmon and S.-W. Zhang (eds.), Math. Sci. Res. Inst. Publ. **49**, Cambridge University Press, 2004, 67–163. Author manuscript dated February 11, 2003.
-- Tadi{ć}, Marko, Classification of unitary representations in irreducible representations of general linear group (non-Archimedean case) (1986)
+- Tadić, Marko, Classification of unitary representations in irreducible representations of general linear group (non-Archimedean case) (1986)
 - Drinfel'd, V. G., Two theorems on modular curves (1973)
 - Dasgupta, Samit, Voight, John, Sylvester's problem and mock Heegner points (2018)
-- Dokchitser, Tim, Dokchitser, Vladimir, On the {Birch–Swinnerton-Dyer} quotients modulo squares (2010)
+- Dokchitser, Tim, Dokchitser, Vladimir, On the Birch–Swinnerton-Dyer quotients modulo squares (2010)
 - T. Dokchitser and V. Dokchitser, _On the Birch–Swinnerton-Dyer quotients modulo squares_, Ann. of Math. (2) **172** (2010), no. 1, 567–596. doi:10.4007/annals.2010.172.567.
 - T. Dokchitser and V. Dokchitser, _Root numbers and parity of ranks of elliptic curves_, J. Reine Angew. Math. **658** (2011), 39–64. doi:10.1515/crelle.2011.060.
 - V. G. Drinfeld, _Two theorems on modular curves_, Funct. Anal. Appl. **7** (1973), no. 2, 155–156. doi:10.1007/BF01078890.
@@ -187,7 +187,6 @@ What is not a consequence: BSD for a fixed curve; the leading coefficient at Sel
 - Gan, Wee Teck, Takeda, Shuichiro, A proof of the Howe duality conjecture (2016)
 - Gan, Wee Teck, Qiu, Yannan, Takeda, Shuichiro, The regularized Siegel–Weil formula (the second term identity) and the Rallis inner product formula (2014)
 - Geisser, Thomas H., Suzuki, Takashi, Special values of $L$-functions of one-motives over function fields (2022)
-- M{\oe}glin, Colette, Waldspurger, Jean-Loup, Le spectre r{é}siduel de $\mathrm{GL}(n)$ (1989)
 - Gross, Benedict H., Zagier, Don B., Heegner points and derivatives of $L$-series (1986)
 - Harris, Michael, Taylor, Richard, The Geometry and Cohomology of Some Simple Shimura Varieties (2001)
 - Hartshorne, Robin, Algebraic Geometry (1977)
@@ -197,10 +196,10 @@ What is not a consequence: BSD for a fixed curve; the leading coefficient at Sel
 - Hsieh, Ming-Lun, On the non-vanishing of Hecke $L$-values modulo $p$ (2012)
 - K. Česnavičius and N. Imai, _The remaining cases of the Kramer–Tunnell conjecture_, Compos. Math. **152** (2016), no. 11, 2255–2268. doi:10.1112/S0010437X16007624.
 - R. Godement and H. Jacquet, _Zeta Functions of Simple Algebras_, Lecture Notes in Math. **260**, Springer-Verlag, Berlin–Heidelberg, 1972. doi:10.1007/BFb0070263.
-- Jacquet, Herv{é}, Langlands, Robert P., Automorphic Forms on $\mathrm{GL}(2)$ (1970)
+- Jacquet, Hervé, Langlands, Robert P., Automorphic Forms on $\mathrm{GL}(2)$ (1970)
 - D. Jetchev, C. Skinner, and X. Wan, _The Birch and Swinnerton-Dyer formula for elliptic curves of analytic rank one_, Cambridge J. Math. **5** (2017), no. 3, 369–434. Published article.
 - D. Jetchev, C. Skinner, and X. Wan, _The Birch and Swinnerton-Dyer formula for elliptic curves of analytic rank one_, Cambridge J. Math. **5** (2017), no. 3, 369–434. Article.
-- Kaletha, Tasho, M{í}nguez, Alberto, Shin, Sug Woo, White, Paul-James, Endoscopic Classification of Representations: Inner Forms of Unitary Groups (2014)
+- Kaletha, Tasho, Mínguez, Alberto, Shin, Sug Woo, White, Paul-James, Endoscopic Classification of Representations: Inner Forms of Unitary Groups (2014)
 - S. Bloch and K. Kato, _$L$-functions and Tamagawa numbers of motives_, in _The Grothendieck Festschrift_, Vol. I, Progr. Math. **86**, Birkhäuser, Boston, 1990, 333–400. Publisher's reprint.
 - K. Kato, _$p$-adic Hodge theory and values of zeta functions of modular forms_, Astérisque **295** (2004), 117–290. Article and bibliographic record.
 - Kato, Kazuya, $p$-adic Hodge theory and values of zeta functions of modular forms (2004)
@@ -219,7 +218,7 @@ What is not a consequence: BSD for a fixed curve; the leading coefficient at Sel
 - K. Kramer, _Arithmetic of elliptic curves upon quadratic extension_, Trans. Amer. Math. Soc. **264** (1981), no. 1, 121–135. doi:10.1090/S0002-9947-1981-0597871-8.
 - Kriz, Daniel, Supersingular main conjectures, Sylvester's conjecture and Goldfeld's conjecture (2022)
 - Kudla, Stephen S., Splitting metaplectic covers of dual reductive pairs (1994)
-- Labesse, Jean-Pierre, Changement de base CM et s{é}ries discr{\`e}tes (2011)
+- Labesse, Jean-Pierre, Changement de base CM et séries discr{\`e}tes (2011)
 - Lan, Kai-Wen, Arithmetic Compactifications of PEL-Type Shimura Varieties (2013)
 - Lan, Kai-Wen, Compactifications of PEL-Type Shimura Varieties and Kuga Families with Ordinary Loci (2018)
 - D. Kriz and C. Li, _Goldfeld's conjecture and congruences between Heegner points_, Forum Math. Sigma **7** (2019), e15, 80 pp. doi:10.1017/fms.2019.9.
@@ -235,6 +234,7 @@ What is not a consequence: BSD for a fixed curve; the leading coefficient at Sel
 - Mok, Chung Pang, Endoscopic Classification of Representations of Quasi-Split Unitary Groups (2015)
 - F. Knudsen and D. Mumford, _The projectivity of the moduli space of stable curves. I: Preliminaries on ``det'' and ``Div''_, Math. Scand. **39** (1976), 19–55. doi:10.7146/math.scand.a-11642.
 - M. R. Murty and V. K. Murty, _Mean values of derivatives of modular $L$-series_, Ann. of Math. (2) **133** (1991), no. 3, 447–475. doi:10.2307/2944316.
+- Mœglin, Colette, Waldspurger, Jean-Loup, Le spectre résiduel de $\mathrm{GL}(n)$ (1989)
 - J. Nekovář, _Selmer complexes_, Astérisque **310** (2006), viii+559 pp. Book.
 - J. Nekovář, _Selmer complexes_, Astérisque **310** (2006), viii+559 pp. Book.
 - Neukirch, Jürgen, Schmidt, Alexander, Wingberg, Kay, Cohomology of Number Fields (2008)
@@ -251,7 +251,6 @@ What is not a consequence: BSD for a fixed curve; the leading coefficient at Sel
 - C. Fuchs and D. H. Pham, _The $p$-adic analytic subgroup theorem revisited_, $p$-Adic Numbers Ultrametric Anal. Appl. **7** (2015), no. 2, 143–156. doi:10.1134/S2070046615020065; arXiv:1502.00768v1.
 - U. K. Anandavardhanan and D. Prasad, _A local-global question in automorphic forms_, Compos. Math. **149** (2013), 959–995. Author manuscript.
 - Procesi, Claudio, A formal inverse to the Cayley–Hamilton theorem (1987)
-- Nekov{á}{\v r}, Jan, Selmer complexes (2006)
 - Rallis, Stephen, Injectivity properties of liftings associated to Weil representations (1984)
 - E. Lapid and S. Rallis, _On the nonnegativity of $L(\tfrac12,\pi)$ for $\mathrm{SO}_{2n+1}$_, Ann. of Math. (2) **157** (2003), no. 3, 891–917. doi:10.4007/annals.2003.157.891.
 - P. Deligne and M. Rapoport, _Les schémas de modules de courbes elliptiques_, in _Modular Functions of One Variable II_, Lecture Notes in Math. **349**, Springer, Berlin, 1973, 143–316. Publisher record.
@@ -277,7 +276,7 @@ What is not a consequence: BSD for a fixed curve; the leading coefficient at Sel
 - J. H. Silverman, _The Arithmetic of Elliptic Curves_, second edition, Graduate Texts in Mathematics **106**, Springer, 2009. doi:10.1007/978-0-387-09494-6.
 - Skinner, Christopher, A converse to a theorem of Gross, Zagier, and Kolyvagin (2020)
 - Skinner, Christopher, Urban, Eric, The Iwasawa Main Conjectures for $\mathrm{GL}_2$ (2014)
-- A. Smith, _The Birch and Swinnerton-Dyer conjecture implies Goldfeld's conjecture_, arXiv:2503.\allowbreak17619v1, 2025.
+- A. Smith, _The Birch and Swinnerton-Dyer conjecture implies Goldfeld's conjecture_, arXiv:2503. 17619v1, 2025.
 - B. Poonen and M. Stoll, _The Cassels–Tate pairing on polarized abelian varieties_, Ann. of Math. (2) **150** (1999), no. 3, 1109–1149. doi:10.2307/121064; corrected author version, August 23, 2014.
 - B. J. Birch and H. P. F. Swinnerton-Dyer, _Notes on elliptic curves. II_, J. Reine Angew. Math. **218** (1965), 79–108. doi:10.1515/crll.1965.218.79.
 - B. J. Birch and H. P. F. Swinnerton-Dyer, _Notes on elliptic curves. II_, J. Reine Angew. Math. **218** (1965), 79–108. doi:10.1515/crll.1965.218.79.
@@ -288,10 +287,10 @@ What is not a consequence: BSD for a fixed curve; the leading coefficient at Sel
 - C. Skinner and E. Urban, _The Iwasawa main conjectures for $\mathrm{GL}_2$_, Invent. Math. **195** (2014), no. 1, 1–277. doi:10.1007/s00222-013-0448-1.
 - C. Skinner and E. Urban, _The Iwasawa main conjectures for $\mathrm{GL}_2$_, Invent. Math. **195** (2014), 1–277. doi:10.1007/s00222-013-0448-1.
 - J.-L. Waldspurger, _Sur les valeurs de certaines fonctions $L$ automorphes en leur centre de symétrie_, Compos. Math. **54** (1985), no. 2, 173–242. Article and bibliographic record.
-- Waldspurger, Jean-Loup, Sur les valeurs de certaines fonctions L automorphes en leur centre de sym{é}trie (1985)
-- Waldspurger, Jean-Loup, A propos du lemme fondamental pond{é}r{é} tordu (2009)
+- Waldspurger, Jean-Loup, Sur les valeurs de certaines fonctions L automorphes en leur centre de symétrie (1985)
+- Waldspurger, Jean-Loup, A propos du lemme fondamental pondéré tordu (2009)
 - S. Wang, _Le syst\`eme d'Euler de Kato_, arXiv:1211.3767v1 (2012).
-- Weil, Andr{é}, Sur certains groupes d'op{é}rateurs unitaires (1964)
+- Weil, André, Sur certains groupes d'opérateurs unitaires (1964)
 - R. Taylor and A. Wiles, _Ring-theoretic properties of certain Hecke algebras_, Ann. of Math. (2) **141** (1995), no. 3, 553–572. doi:10.2307/2118560.
 - A. Wiles, _Modular elliptic curves and Fermat's Last Theorem_, Ann. of Math. (2) **141** (1995), no. 3, 443–551. doi:10.2307/2118559.
 - Wiles, Andrew, The Iwasawa conjecture for totally real fields (1990)
@@ -309,4 +308,5 @@ What is not a consequence: BSD for a fixed curve; the leading coefficient at Sel
 - Zhang, Wei, Selmer groups and the indivisibility of Heegner points (2014)
 - W. Zhang, _Selmer groups and the indivisibility of Heegner points_, Cambridge J. Math. **2** (2014), no. 2, 191–253. doi:10.4310/CJM.2014.v2.n2.a2.
 - C. Zhao, _A criterion for elliptic curves with lowest $2$-power in $L(1)$_, Math. Proc. Cambridge Philos. Soc. **121** (1997), 385–400. doi:10.1017/S0305004196001247.
-- Halleck-Dub{é}, Connor, The Weighted Fundamental Lemma for Non-Split Groups (n.d.)
+- Halleck-Dubé, Connor, The Weighted Fundamental Lemma for Non-Split Groups (n.d.)
+- Nekovář, Jan, Selmer complexes (2006)

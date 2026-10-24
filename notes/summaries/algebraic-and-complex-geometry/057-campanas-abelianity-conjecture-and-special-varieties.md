@@ -21,7 +21,7 @@ varieties* [S9:60–66], has the abstract "We give an independent proof that eve
 of the ordinary fundamental group of a connected smooth special complex
 quasi-projective variety has virtually nilpotent image of class at most
 two. This conclusion was previously announced by
-Cao–Deng–Hacon–P\u aun. We also construct special open surfaces whose
+Cao–Deng–Hacon–Păun. We also construct special open surfaces whose
 general quasi-Albanese fibres are not special. [S9:60–66]"
 
 The third, *A conditional abelianity theorem for special fourfold
@@ -80,7 +80,7 @@ completion
 > Cadorel–Deng–Yamanoi established virtual nilpotence of these linear
 images: the identity component of their Zariski closure is a direct
 product of a unipotent group and a torus
-\cite[Theorem A/4.1]CDY2025. Cao–Deng–Hacon–P\u aun subsequently
+\cite[Theorem A/4.1]CDY2025. Cao–Deng–Hacon–Păun subsequently
 announced the sharp class-two conclusion of Theorem  
 \cite[Theorem A, equivalently Theorem 6.2]CDHP2026. Priority for that
 conclusion belongs to their work. We give a different proof from the

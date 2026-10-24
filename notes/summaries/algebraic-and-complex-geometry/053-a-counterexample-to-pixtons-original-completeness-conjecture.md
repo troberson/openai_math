@@ -11,7 +11,7 @@ The release's blurb "**053. A counterexample to Pixton completeness in Chow.** C
 conjecture for his original relation system. We construct a formal tautological
 class outside the original Pixton relation span whose image is zero in the Chow
 ring and in rational cohomology. The example has genus \(10^60\) and
-\(3\binom{10^60}3\) markings. [S4:62–66]"
+\(3\binom10^603\) markings. [S4:62–66]"
 
 ## Undergraduate summary
 
@@ -31,13 +31,13 @@ system of stable-graph relations and conjectured it is complete. The
 Chow completeness question is whether $\ker q_{g,n}=\mathcal P_{g,n}$
 for every stable pair 
 
-> Writing \(R^*(\overline{\mathcal M}_{g,n})=\im q_{g,n}\), the Chow completeness question is
+> Writing \(R^*(\overline{\mathcal M}_g,n)=\im q_g,n\), the Chow completeness question is
 whether
 \[
-\ker q_{g,n}=\mathcal P_{g,n}
+\ker q_g,n=\mathcal P_g,n
 \]
 for every stable pair. The known validity theorem gives the inclusion
-\(\mathcal P_{g,n}\subseteq\ker q_{g,n}\). Our example makes it strict. [S5:25–30]
+\(\mathcal P_g,n\subseteq\ker q_g,n\). Our example makes it strict. [S5:25–30]
 
 The known validity theorem gives the inclusion; this example makes
 it strict. The theorem 
@@ -47,14 +47,14 @@ Set
 \[
 g=10^60,\qquad D_*=\binom g3,\qquad n=3D_*.
 \]
-The explicitly defined class \(Y\in S_{g,n}^{2D_*}\) of
+The explicitly defined class \(Y\in S_g,n^2D_*\) of
 Definition   satisfies
 \[
-q_{g,n}(Y)=0,\qquad Y\notin\mathcal P_{g,n}.
+q_g,n(Y)=0,\qquad Y\notin\mathcal P_g,n.
 \]
 Consequently Pixton's original relation span does not exhaust the
 tautological Chow relations: the equality
-\(\ker q_{g,n}=\mathcal P_{g,n}\) fails for this stable pair. [S5:76–89]
+\(\ker q_g,n=\mathcal P_g,n\) fails for this stable pair. [S5:76–89]
 
 ## Graduate summary
 
@@ -79,9 +79,9 @@ graphs outside the rational-tails locus and evaluates rational
 branches by Frobenius multiplication and coproduct. Every element of
 $\mathcal P_{g,n}$ has zero test, while the test of $Y$ has a
 nonzero coefficient proportional to
-$\prod_{i<j<k}\theta_{ijk}$ . "Every element of \(\mathcal P_{g,n}\) has zero test,
+$\prod_{i<j<k}\theta_{ijk}$ . "Every element of \(\mathcal P_g,n\) has zero test,
 while the test of \(Y\) has a nonzero coefficient proportional to
-\(\prod_{i<j<k}\theta_ijk\). [S5:181–186]"
+\(\prod_i<j<k\theta_ijk\). [S5:181–186]"
 
 **The smooth-family identity.** The correspondence object of a
 smooth curve splits into two even summands and an odd symplectic
@@ -198,7 +198,7 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 ## Bibliography
 
 - L. Abrams, _Two-dimensional topological quantum field theories and Frobenius algebras_, J. Knot Theory Ramifications **5** (1996), no. 5, 569–587. doi:10.1142/S0218216596000333.
-- A. Asok, A. Dubouloz, and P. A. {\O}stv{\ae}r, _Geometric models for algebraic suspensions_, Int.\ Math.\ Res.\ Not.\ **2023** (2023), no. 20, 17788–17821. doi:10.1093/imrn/rnad094. arXiv:2112.08241v2.
+- A. Asok, A. Dubouloz, and P. A. Østvær, _Geometric models for algebraic suspensions_, Int.\ Math.\ Res.\ Not.\ **2023** (2023), no. 20, 17788–17821. doi:10.1093/imrn/rnad094. arXiv:2112.08241v2.
 - The Stacks Project Authors, _The Stacks Project_, 2026.  . Specific results are cited by their stable tags.
 - A. Beauville, _Quelques remarques sur la transformation de Fourier dans l'anneau de Chow d'une variété abélienne_, in _Algebraic Geometry (Tokyo/Kyoto, 1982)_, Lecture Notes in Math. **1016**, Springer, 1983, 238–260. doi:10.1007/BFb0099965.
 - S. Bosch, W. Lütkebohmert, and M. Raynaud, _Néron Models_, Ergebnisse der Mathematik und ihrer Grenzgebiete (3), vol. 21, Springer-Verlag, Berlin, 1990.
@@ -230,7 +230,6 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 - P. Deligne and D. Mumford, _The irreducibility of the space of curves of given genus_, Publ.\ Math.\ IHÉS **36** (1969), 75–109. Original article.
 - D. Mumford, _Towards an enumerative geometry of the moduli space of curves_, in _Arithmetic and Geometry, Vol. II_, Progress in Mathematics **36**, Birkhäuser, 1983, 271–328. doi:10.1007/978-1-4757-9286-7\_12.
 - N. Nitsure, _Construction of Hilbert and Quot schemes_, arXiv:math/0504590v1, 2005.
-- J. W{\l}odarczyk, _Simple Hironaka resolution in characteristic zero_, arXiv:math/0401401v1, 2004.
 - T. Graber and R. Pandharipande, _Localization of virtual classes_, Invent.\ Math.\ **135** (1999), 487–518. doi:10.1007/s002220050293. Preprint version: arXiv:alg-geom/9708001v2.
 - T. Graber and R. Pandharipande, _Constructions of nontautological classes on moduli spaces of curves_, Michigan Math.\ J.\ **51** (2003), no. 1, 93–109. arXiv:math/0104057v2.
 - D. Oprea and R. Pandharipande, _Quot schemes of curves and surfaces: virtual classes, integrals, Euler characteristics_, Geom.\ Topol.\ **25** (2021), 3425–3505. doi:10.2140/gt.2021.25.3425. arXiv:1903.08787v2.
@@ -250,5 +249,6 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 - T. Graber and R. Vakil, _Relative virtual localization and vanishing of tautological classes on moduli spaces of curves_, Duke Math.\ J.\ **130** (2005), no. 1, 1–37. arXiv:math/0309227v3.
 - B. Toën and M. Vaquié, _Moduli of objects in dg-categories_, Ann.\ Sci.\ École Norm.\ Sup.\ (4) **40** (2007), no. 3, 387–444. doi:10.1016/j.ansens.2007.05.001. Numbered statements follow the April 2007 author manuscript.
 - M. Rubey and B. W. Westbury, _Combinatorics of symplectic invariant tensors_, Discrete Math.\ Theor.\ Comput.\ Sci.\ Proc., FPSAC 2015 (2015), 285–296. doi:10.46298/dmtcs.2508.
+- J. Włodarczyk, _Simple Hironaka resolution in characteristic zero_, arXiv:math/0401401v1, 2004.
 - G. I. Lehrer and R. B. Zhang, _The Brauer category and invariant theory_, J.\ Eur.\ Math.\ Soc.\ **17** (2015), 2311–2351. doi:10.4171/JEMS/558.
 - R. Pandharipande and D. Zvonkine, with an appendix by D. Petersen, _Cohomological field theories with non-tautological classes_, Ark. Mat. **57** (2019), no. 1, 191–213. doi:10.4310/ARKIV.2019.v57.n1.a10.
