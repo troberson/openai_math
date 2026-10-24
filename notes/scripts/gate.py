@@ -138,7 +138,7 @@ ROWS = [
     ("verify_faithfulness.py", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_faithfulness.py -q", ("pages",), ()),
     ("run_tests.py notes/scripts/tests/test_prune_stale.py -q", (), ()),
-    ("verify_page_sync.py --both", ("pages",), ()),
+    ("verify_page_sync.py --both", ("pages", "check_calls"), ()),
     # The checker compares the cache bytes with the disk bytes for every writer, so it must start
     # after every writer that lands a tracked artifact — `quotes` and `summaries` included. A row
     # that reads a cache entry a concurrent writer has not landed yet reports a missing entry.
