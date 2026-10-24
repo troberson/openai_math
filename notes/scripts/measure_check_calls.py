@@ -64,8 +64,11 @@ def count_calls(targets: list[str]) -> dict[str, int]:
     """Run one pytest row per checker, counting the calls its module's check() receives.
 
     A checker whose module exposes no `check` is recorded as -1, so a missing pass is a row the report
-    prints, not a zero that reads like a low count. A pytest row that exits non-zero is recorded the
-    same way: the count is meaningless when the tests fail.
+    prints, not a zero that reads like a low count. A non-zero pytest exit does not discard a count the
+    wrapper already accumulated: pytest runs every test even when one assertion fails, so the
+    structural count is valid, and the suite's pass/fail is the job of the run_tests.py gate rows.
+    A -1 here means only that the module has no `check` at all (the count stays 0 when the wrapper is
+    installed).
     """
     orig = iu.spec_from_file_location
     counts: dict[str, int] = {}
@@ -102,7 +105,10 @@ def count_calls(targets: list[str]) -> dict[str, int]:
         for t in targets:
             counts[t] = 0
             code = pytest.main(["-q", str(SCRIPTS / "tests" / f"test_{t.removeprefix('verify_')}.py")])
-            if code != 0:
+            # A non-zero exit does not discard a count the wrapper already accumulated: pytest runs
+            # every test even when one assertion fails, so a valid structural count stays. -1 means
+            # only that the module installed no wrapper (no `check`), which leaves the count at 0.
+            if code != 0 and counts[t] == 0:
                 counts[t] = -1
     finally:
         iu.spec_from_file_location = orig
