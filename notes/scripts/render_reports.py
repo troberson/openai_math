@@ -2707,7 +2707,7 @@ CALLS_PHRASES = {
     # row makes" is shared by six rows, so when two carried the same value the builder
     # slotted one into the other's paragraph, leaving this count a stale literal.
     "verify_index_design": "the {} `check()` calls the row makes pay the `notes/index/` walk once",
-    "verify_fleet_design": "the {} `check()` calls the row makes",
+    "verify_fleet_design": "the {} `check()` calls the row makes pay the five",
     "verify_verification_dirs": "the {} `check()` calls",
     "verify_named_results": "the {} `check()` calls pay the 7,240-file walk once",
     "verify_citations": "the {} `check()` calls the row makes pay the two",
