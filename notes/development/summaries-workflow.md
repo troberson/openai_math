@@ -6,33 +6,34 @@ traps, the batch workflow — lives in
 `.qwen/skills/auto-skill-family-summary-citation-verified/`. Nothing here is a task list;
 `bd ready` is the only tracker.
 
-## Current state (rewritten at every batch boundary, 2026-10-23)
+## Current state (rewritten at every batch boundary, 2026-10-25)
 
-- **Live pages: 85** family pages in `notes/summaries/` plus the index `README.md`
-  (86 files). The most recent addition is family 067; the highest-numbered family
-  with a page is 362; the ledger's `summary` column is 1 for all 85. Both summaries
-  checkers pass clean (verify_summaries 0 problems over 2341 quote specs;
-  check_summary_manuscripts 0 off-family).
-- **Data files: 85** in `notes/data/summaries/` (one per family page). The renderer
+- **Live pages: 133** family pages in `notes/summaries/` plus the index `README.md`
+  (134 files). The ledger's `summary` column is 1 for all 133. Both summaries
+  checkers pass clean (verify_summaries 0 problems; check_summary_manuscripts
+  0 off-family). Most recent additions this segment: TCS families 105, 106, 107,
+  112 (reviewed, one typo fixed in 106), and the in-progress 114.
+- **Data files: 133** in `notes/data/summaries/` (one per family page). The renderer
   is `build_summaries.py`; the skeleton is
   `notes/templates/summaries/summary.md.j2`.
-- **Queue:** epic `math-cgv` (P2) and `math-vtj` (P3) closed. Epic `math-ckd` (P4)
-  open with three children in progress — `math-ckd.3` (the remaining T0
-  named-conjecture resolutions), `math-ckd.4` (Tier C group 1), `math-ckd.5`
-  (Tier C group 2).
-- **Git:** the batch is pushed; `origin/notes` is current (n5v closed 2026-10-23).
-- **Loop:** `math-d73` closed and `math-n5v` closed as design-confirmed
-  (2026-10-23). Continuation is human-driven; do not re-arm without a fresh
-  instruction.
+- **Queue:** epics `math-cgv` (P2), `math-vtj` (P3) closed. `math-ckd` (P4) pages
+  are in flight; the TCS sub-queue has **30** families with `summary` 0
+  (measured 2026-10-25): 108 110 111 114 115 116 117 118 119 120 121 122 124 125
+  126 127 128 129 130 131 132 133 134 135 137 138 139 140 141 142. Family 114 is
+  the current write.
+- **Git:** the bead-store commit `e4bebd5a7` (gen-folder epic `math-v5s`) is
+  pushed; `origin/notes` is current.
+- **Loop:** standing `/loop` — work on the beads, commit and push between them.
+  The `math-v5s` gen-folder reorganization (8 sub-beads) is tracked and deferred
+  behind the TCS summary queue.
 
 ## Next batch
 
-The P2 `math-cgv` epic and the P3 `math-vtj` are closed, so the next batch is the
-P4 summary pages under `math-ckd`. Measured from the ledger 2026-10-23: **287**
-families have `summary` 0 — 79 T0, 99 T2, 109 T3. Re-measure the per-group
-populations from the skill's cost model before starting each of
-`math-ckd.3` / `.4` / `.5`; the group boundaries come from that model, not from
-this file.
+The next batch is the TCS summary sub-queue under `math-ckd`. Measured from the
+ledger 2026-10-25: **30** TCS families carry `summary` 0 (listed above). The
+gen-folder reorganization (`math-v5s`) is deferred behind it. Re-measure the
+per-family tier and shape from the ledger row before writing each page; the
+cost model in the skill bounds the source-row count per page.
 
 ## Gates (run at every batch boundary, quote numbers only from this run)
 
