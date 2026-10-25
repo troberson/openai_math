@@ -217,7 +217,7 @@ had to wait for the serial chain to finish.
 | `extract_scope_notes.py` | `notes/reports/scope-exclusions.md` | plain |
 | `extract_subfinding_pairs.py` | `notes/reports/subfinding-pairs.md` | plain |
 | `extract_t0_chains.py` | `notes/reports/t0-chains.md` | plain |
-| `extract_verification_348.py` | `notes/reports/verification-dirs.md` | plain |
+| `extract_verification_{{ p['named_before'] }}8.py` | `notes/reports/verification-dirs.md` | plain |
 | `extract_verification_dirs.py` | `notes/reports/verification-dirs.md` | plain |
 | `gate.py` | none — the gate list itself: 81 rows as a dependency graph, printing one line per row in list order | **the list** — run by `gate_driver.sh` |
 | `locate_summary_quotes.py` | `notes/summaries/` — the lines a page should cite when a quotation stops matching | **not gated** — a renderer debug tool, run by hand against a page whose quotation stops matching |
@@ -344,9 +344,9 @@ the two name different rules, not one number for both. Measured 2026-10-16 with 
 server loaded; a floor from one measurement, not a benchmark.
 `verify_findings.py` is the subprocess case: its Pass E runs the fast extractors as subprocesses inside
 `check()` (`:459`, the subprocess call at `:140`), so a plain run pays five of them. The pass that
-extracted its self-tests put `run()` under `functools.cache` (`:134`) — every script in `REPORTS` is
+extracted its self-tests put `run()` under `functools.cache` (`:1{{ p['named_before'] }}`) — every script in `REPORTS` is
 report-only, so a second call in the same process cannot see a different stdout — and that is why the
-`run_tests.py` row measures **15.6 s** where the `--mutant` row took **34.7 s** before that row was
+`run_tests.py` row measures **15.6 s** where the `--mutant` row took **{{ p['named_before'] }}.7 s** before that row was
 replaced: {{ p['calls_findings'] }} (the clean page, each of the six faults, and the padded-table test's two) pay the
 five subprocesses once.
 `verify_faithfulness.py` is the same case with a corpus walk instead of subprocesses: `population()`
@@ -628,11 +628,11 @@ git, so nothing in the scratch tree is tracked and no checker here reads it. A p
 question stays where it is and is deleted; a probe that a later bead re-runs is promoted, gets a row
 in the tables above, and only then gets a gate command.
 
-Measured 2026-10-09 over `.qwen/tmp/` **after** the `math-8ou` cleanup: **345** top-level files,
+Measured 2026-10-09 over `.qwen/tmp/` **after** the `math-8ou` cleanup: **{{ p['named_before'] }}5** top-level files,
 **7,121** files including subdirectories, **14** subdirectories. By top-level suffix: **222** `.txt`,
 **43** `.md`, **19** `.tsv`, **1** `.py`, and **0** in every other suffix — the tree is now reports,
 drafts, baselines and index snapshots, with one script left in it. The largest trees are gate and
-render snapshots — `reports/` **341**, `idx_pre_sweep/`, `idx_run1/` and `idx_run2/` at **1,052** each,
+render snapshots — `reports/` **{{ p['named_before'] }}1**, `idx_pre_sweep/`, `idx_run1/` and `idx_run2/` at **1,052** each,
 `index-run1/` **1,049**, `index_run1/` and `index_run2/` at **1,050** each, `lon2/` **85**, `msgs/`
 **65**, `lon1/` **63**.
 
@@ -651,7 +651,7 @@ conditional-anchor checker `check_conditional_anchors.py`, and the single-purpos
 `find_core_only.py`, `cand_closure.py`, `gen_axioms.py`, `lint_anchors.py`, `port_nc.py`,
 `drop_syspath.py`, `build_scope_page.py`, `fix_topics.py`, `fix_topics_md.py`), together with
 `elab.sh` and the **12** probe outputs it left behind (`axioms.lean`, `axioms.log`, `axioms.olean`,
-`check.lean`, `check.olean`, `elab.log`, `hqd5_quotes.json`, `names.json`, `leanout.tmp.1683434`,
+`check.lean`, `check.olean`, `elab.log`, `hqd5_quotes.json`, `names.json`, `leanout.tmp.168{{ p['named_before'] }}{{ p['named_before'] }}`,
 `0h2_skel.err`, `cit1.err`, `cx2a.err`). The four `/tmp` trees `stage5/`, `portcheck/`,
 `portcheck2/`, `pprobe/` and the six `/tmp` one-offs `e402_probe.py`, `e402_probe2.py`,
 `lint_anchors_scratch.py`, `lint_stage4.txt`, `lint_stage4b.txt`, `port_check2.sh` are deleted too —
@@ -659,7 +659,7 @@ conditional-anchor checker `check_conditional_anchors.py`, and the single-purpos
 whose outputs cannot be re-measured.
 
 Measured 2026-10-10 over `.qwen/tmp/` **after** the `math-3la` cleanup: **403** top-level files,
-**136,180** files including subdirectories, **5** subdirectories. By top-level suffix: **344** `.txt`,
+**136,180** files including subdirectories, **5** subdirectories. By top-level suffix: **{{ p['named_before'] }}4** `.txt`,
 **52** `.md`, **20** `.out`, **19** `.tsv`, **3** `.md5`, **2** `.log` and **1** each `.patch`,
 `.pat`, `.diff` — **0** `.sh` and **0** `.py`, which is the rule's own endpoint: a driver a later pass
 re-runs lives under `notes/scripts/`, and the scratch tree keeps outputs. The file total is one
@@ -697,11 +697,11 @@ tracked files under `notes/` before the bead that produced them closes.
 - `build_index.py` sweeps its own tree: it tracks every path its `write()` helper emits and, at the end
   of `main()`, unlinks any `notes/index/**.md` or `**.tsv` it did not write, then removes empty
   directories and prints `stale swept N files [...]`. The realized case is the 2026-10-07 merge: family
-  034's title changed, so its old-slug page survived as an orphan whose manuscript table pointed at the
+  0{{ p['named_before'] }}'s title changed, so its old-slug page survived as an orphan whose manuscript table pointed at the
   three withdrawn directories — 6 broken links, found only by `check_index_links.py`. Two name pages
   (`cech`, `kunneth`) went the same way; the sweep removed 3 files. Renaming the rendered topic table is
   the older case — `notes/index/topics.tsv` survived the rename and was deleted by hand. Page counts are
-  measured consistent: **1,034** `.md` on disk against the **1,034** the render report claims.
+  measured consistent: **1,0{{ p['named_before'] }}** `.md` on disk against the **1,0{{ p['named_before'] }}** the render report claims.
 - The sweep is probe-verified on both branches (2026-10-09, `math-a0r.1`): a planted
   `notes/index/names/zzz-sweep-probe.md` prints `stale swept 1 files ['names/zzz-sweep-probe.md']` and
   is gone after the run; a planted page inside a new directory prints `empty dirs removed 1` and the
@@ -720,7 +720,7 @@ tracked files under `notes/` before the bead that produced them closes.
 - **A needle can match nothing and the run stays green.** `verify_upstream_history.py`'s `SLUG`
   pattern required a trailing `/` inside the backticks **and** a 3-letter month, while the corpus
   writes full month names only (`September` 576, `October` 172 over the **749** `preprints/` dirs), so
-  it matched **0** tokens on the three pages it checks — `notes/development/upstream_history/2026-10-07_3414888.md`
+  it matched **0** tokens on the three pages it checks — `notes/development/upstream_history/2026-10-07_{{ p['named_before'] }}14888.md`
   carries **14** backticked manuscript-slug tokens of that shape, written without the slash. The run
   exited 0 because nothing was asserted, and a slug renamed to one the release does not name was not
   caught. `math-lon.2.5` ported the file and left the pattern as it is, because its acceptance is
