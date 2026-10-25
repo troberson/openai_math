@@ -130,9 +130,9 @@ Attributed two ways, each summing to 18,094:
 
 | Category | Scanned | Registered | Gap | Why |
 |---|---|---|---|---|
-| `index-page` | 28,557 | 12,521 | 16,036 | name pages link a family page in four tables (Families 9,819, the Manuscripts table's Family column 14,901, declaration and environment-title rows 986); the registry appends only the Families-table links, which are the 9,819 `family-name` edges. Family pages' 1,352 discipline/topic/companion links are all registered; the entry point's 149 are not registered at all. |
+| `index-page` | 28,561 | 12,525 | 16,036 | name pages link a family page in four tables (Families 9,819, the Manuscripts table's Family column 14,901, declaration and environment-title rows 986); the registry appends only the Families-table links, which are the 9,819 `family-name` edges. Family pages' 1,352 discipline/topic/companion links are all registered; the entry point's 149 are not registered at all. |
 | `manuscript-dir` | 16,720 | 16,001 | 719 | the Manuscripts table on each family page links the manuscript directory; the registry registers the PDF, `build/`, `README.md`, and `main_tex` for that manuscript, not the directory row. |
-| `notes-doc` | 580 | 25 | 555 | each of the 551 name pages links `notes/reports/names.md`; the entry point links 4 notes docs. |
+| `notes-doc` | 688 | 133 | 555 | each of the 551 name pages links `notes/reports/names.md`; the entry point links 4 notes docs. |
 | `tables-tsv` | 554 | 0 | 554 | each of the 551 name pages links `notes/tables/names.tsv`; the entry point links 2 tables. |
 | `config-json` | 705 | 505 | 200 | family pages link a config in the Configs table (416) and again in the `main_results` table (200 declarations); the registry appends the 416. Name pages' 89 are registered. |
 | `verification-dir` | 60 | 30 | 30 | each bundle is linked twice in the bodies, registered once. |

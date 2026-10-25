@@ -21,9 +21,11 @@ tables, `measure_checker_needles.py` and `measure_templates.py` read one rule. W
 the writer path: the locate, the split at the page's own line breaks, the raw-block wrapping, and
 the `git show HEAD:<page>` read - a revision, which the package does not own.
 
-Each phrase is located with a whitespace-flexible regex over the WHOLE page (the page wraps phrases
-across lines), all matches collected, sorted, and rejected on overlap, then replaced from the end so
-offsets stay valid. A phrase the page wraps is split at the page's OWN line breaks, keeping each
+Each phrase is located with a whitespace-flexible, number-exact regex over the WHOLE page (the page
+wraps phrases across lines, but a digit must match the measured value). All matches are collected,
+sorted, and rejected on overlap, then replaced from the end so offsets stay valid. A stale number is
+NOT FOUND and fails the build - it cannot silently stay literal or be relaxed onto a neighbouring
+span. A phrase the page wraps is split at the page's OWN line breaks, keeping each
 break's exact whitespace run as the separator so the rendered page wraps identically; split labels
 get " a", " b", ... suffixes. render_reports.py keeps the matching prefix table and raises if a
 prefix stops matching the measured phrase, so a drifted number fails the render instead of reflowing
@@ -155,6 +157,17 @@ def raw_wrap(text: str) -> str:
     return "\n".join(out)
 
 
+def exact_phrase(phrase: str) -> re.Pattern[str]:
+    """Whitespace-flexible, number-exact matcher: the page may wrap a phrase across lines, but
+    every digit must match the measured value.
+
+    A stale number is NOT FOUND, never relaxed and re-slotted: the flex rule that let a HEAD
+    literal disagree with the measurement is gone. A page whose literal disagrees with the
+    writer's value is a build failure, so the figure cannot silently stay literal.
+    """
+    return re.compile(r"\s+".join(re.escape(tok) for tok in phrase.split()))
+
+
 def build(page_rel: str, checker_name: str) -> tuple[int, list[str], pathlib.Path, str, list[dict[str, str]]]:
     """One page's template, built without writing: (rc, report lines, template path, template text, rows).
 
@@ -177,31 +190,15 @@ def build(page_rel: str, checker_name: str) -> tuple[int, list[str], pathlib.Pat
 
     text = committed_page(page_rel)
     hits: list[tuple[int, int, str, list[tuple[str, str]]]] = []
-    ambiguous: list[str] = []
     for base, parts in groups.items():
         needle = " ".join(v for _, v in parts)
-        found = list(TX.flex(needle).finditer(text))
+        found = list(exact_phrase(needle).finditer(text))
         if not found:
-            lines.append(f"NOT FOUND ({base}): {needle!r}")
+            # Fail hard: the page's literal disagrees with the measured value. A stale figure must
+            # not stay literal, and a number must not be relaxed onto a neighbouring span.
+            lines.append(f"NOT FOUND ({base}): {needle!r} - stale figure; "
+                         f"the page's literal disagrees with the measurement")
             return 1, lines, pathlib.Path(""), "", []
-        exact = [m for m in found if " ".join(text[m.start():m.end()].split()) == needle]
-        if exact:
-            # The needle names its own words, so it lands in exactly one place: `flex` relaxes digits
-            # only when the phrase carries literal characters, so an exact span is the label's own
-            # place in the page. Locate it first and slot it; the ambiguity test below is the fallback
-            # for a needle that has no exact span at all.
-            hits.extend((m.start(), m.end(), base, parts) for m in exact)
-            continue
-        spans = {" ".join(text[m.start():m.end()].split()) for m in found}
-        if len(spans) > 1:
-            # A slot is one place in the page. A needle that fires on more than one *different* span is
-            # ambiguous, so it is left literal and reported: the "631M" needle for the preprints size
-            # also matched "**1740M**" and "**14M**", which rendered all three du surfaces as 631M.
-            # Repeated identical spans are fine — the README states the family-342 coverage gap twice,
-            # once wrapped — so the test is span identity, not match count. A weak needle is the
-            # writer's work list: widen the label value until it names its own words.
-            ambiguous.append(base)
-            continue
         hits.extend((m.start(), m.end(), base, parts) for m in found)
     # Sort widest-first at each start: a label whose phrase nests inside a wider phrase is
     # slotted by the wider span, and the "covered by" branch only fires for a span that ends
@@ -228,9 +225,6 @@ def build(page_rel: str, checker_name: str) -> tuple[int, list[str], pathlib.Pat
     # (start, base, part): the replacement loop runs `reversed(hits)` to keep offsets valid, which would
     # otherwise record a page's parts backwards, so the start is kept and the rows sorted at the end.
     rows: list[tuple[int, str, str]] = []
-    # `ambiguous` is initialized before the needle loop; re-initializing here would discard
-    # the weak needles collected there, and the report line would print 0 for a page that has
-    # weak needles.
     for start, end, base, parts in reversed(hits):
         matched = text[start:end]
         if len(parts) == 1:
@@ -280,12 +274,6 @@ def build(page_rel: str, checker_name: str) -> tuple[int, list[str], pathlib.Pat
     lines.append(f"template written: {out.relative_to(ROOT)}")
     lines.append(f"labels {len(labels)} groups {len(groups)} hits {len(hits)} slots {nslots} exprs {total}")
     lines.append(f"template lines {len(full.splitlines())} bytes {len(full.encode())}")
-    if ambiguous:
-        # A needle that matches more than one distinct span on HEAD's bytes is not landed: the page
-        # keeps HEAD's literal and the writer's measured value is not written. This is the work list
-        # for widening the label value, the same shape as the split work list below.
-        lines.append(f"weak needles {len(ambiguous)} (needle matches >1 distinct span, left literal): "
-                     + " ".join(sorted(ambiguous)))
     if wrapped:
         # A phrase the page breaks across lines stays literal unless the writer supplies it as split
         # labels. This list is the work list for the writer's split table (INDEX_SPLIT / NR_SPLIT).
