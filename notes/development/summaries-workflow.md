@@ -8,21 +8,22 @@ traps, the batch workflow — lives in
 
 ## Current state (rewritten at every batch boundary, 2026-10-25)
 
-- **Live pages: 133** family pages in `notes/summaries/` plus the index `README.md`
-  (134 files). The ledger's `summary` column is 1 for all 133. Both summaries
-  checkers pass clean (verify_summaries 0 problems; check_summary_manuscripts
-  0 off-family). Most recent additions this segment: TCS families 105, 106, 107,
-  112 (reviewed, one typo fixed in 106), and the in-progress 114.
-- **Data files: 133** in `notes/data/summaries/` (one per family page). The renderer
-  is `build_summaries.py`; the skeleton is
+- **Live pages: 135** family pages in `notes/summaries/` (flat, no discipline
+  subdirectory — bead `math-720` closed) plus the index `README.md` (136
+  files). The ledger's `summary` column is 1 for all 135. Both summaries
+  checkers pass clean (verify_summaries 0 problems over 136 pages;
+  check_summary_manuscripts 0 off-family). Most recent additions: TCS families
+  114 and 115.
+- **Data files: 135** in `notes/data/summaries/` (one per family page, flat).
+  The renderer is `build_summaries.py`; the skeleton is
   `notes/templates/summaries/summary.md.j2`.
-- **Queue:** epics `math-cgv` (P2), `math-vtj` (P3) closed. `math-ckd` (P4) pages
-  are in flight; the TCS sub-queue has **30** families with `summary` 0
-  (measured 2026-10-25): 108 110 111 114 115 116 117 118 119 120 121 122 124 125
-  126 127 128 129 130 131 132 133 134 135 137 138 139 140 141 142. Family 114 is
-  the current write.
-- **Git:** the bead-store commit `e4bebd5a7` (gen-folder epic `math-v5s`) is
-  pushed; `origin/notes` is current.
+- **Queue:** epics `math-cgv` (P2), `math-vtj` (P3) closed. `math-720`
+  (flatten) closed. `math-ckd` (P4) pages are in flight; the TCS sub-queue has
+  **28** families with `summary` 0 (measured 2026-10-25): 108 110 111 116 117
+  118 119 120 121 122 124 125 126 127 128 129 130 131 132 133 134 135 137 138
+  139 140 141 142. Family 116 is next.
+- **Git:** `741e8655a` (family 115 summary) is pushed; `origin/notes` is
+  current.
 - **Loop:** standing `/loop` — work on the beads, commit and push between them.
   The `math-v5s` gen-folder reorganization (8 sub-beads) is tracked and deferred
   behind the TCS summary queue.
