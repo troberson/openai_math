@@ -42,7 +42,7 @@ Prose counts: 64 capitalized occurrences, 32 of them mid-sentence, 0 lowercase. 
 | [285](../operator-algebras/285-counterexamples-to-baum-connes-and-kadison-kaplansky.md) | Counterexamples to Baum--Connes and Kadison--Kaplansky | — | — | — | — | yes | yes |
 | [291](../operator-algebras/291-toms-winter-and-equivariant-jiang-su-stability.md) | Toms--Winter and equivariant Jiang--Su stability | — | — | yes | — | yes | yes |
 | [294](../operator-algebras/294-a-counterexample-to-kaplanskys-quasitrace-conjecture.md) | A counterexample to Kaplansky's quasitrace conjecture | — | — | — | — | yes | — |
-| [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | The Kirchberg--R\o rdam character criterion | — | — | — | — | yes | — |
+| [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | The Kirchberg--Rø rdam character criterion | — | — | — | — | yes | — |
 | [300](../operator-algebras/300-popa-vaes-quadratic-strong-operator-paving-conjecture.md) | The Popa--Vaes quadratic strong-operator paving conjecture | — | — | — | — | yes | — |
 | [301](../operator-algebras/301-classification-by-trace-cones-after-razak-jacelon-stabilization.md) | Classification by trace cones after Razak--Jacelon stabilization | — | — | — | — | yes | yes |
 | [319](../topology/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md) | Counterexamples to the Hahn--Wilson conjecture at height two | — | — | — | — | yes | — |

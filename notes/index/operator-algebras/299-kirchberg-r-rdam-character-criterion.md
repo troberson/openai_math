@@ -1,4 +1,4 @@
-# 299 — The Kirchberg--R\o rdam character criterion
+# 299 — The Kirchberg--Rø rdam character criterion
 
 |  |  |
 |---|---|

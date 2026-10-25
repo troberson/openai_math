@@ -23,7 +23,7 @@ Prose counts: 20 capitalized occurrences, 5 of them mid-sentence, 1 lowercase. T
 |---|---|---|---|---|---|---|---|
 | [291](../operator-algebras/291-toms-winter-and-equivariant-jiang-su-stability.md) | Toms--Winter and equivariant Jiang--Su stability | — | — | — | — | yes | — |
 | [294](../operator-algebras/294-a-counterexample-to-kaplanskys-quasitrace-conjecture.md) | A counterexample to Kaplansky's quasitrace conjecture | — | — | — | — | yes | — |
-| [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | The Kirchberg--R\o rdam character criterion | — | yes | — | yes | — | — |
+| [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | The Kirchberg--Rø rdam character criterion | — | yes | — | yes | — | — |
 | [302](../operator-algebras/302-phillips-toms-formula-for-minimal-integer-actions.md) | The Phillips--Toms formula for minimal integer actions | — | — | — | — | yes | — |
 | [303](../operator-algebras/303-from-ordinary-to-strong-pure-infiniteness.md) | From ordinary to strong pure infiniteness | — | — | — | — | yes | — |
 

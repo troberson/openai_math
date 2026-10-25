@@ -24,7 +24,7 @@ Prose counts: 178 capitalized occurrences, 156 of them mid-sentence, 2 lowercase
 | [291](../operator-algebras/291-toms-winter-and-equivariant-jiang-su-stability.md) | Toms--Winter and equivariant Jiang--Su stability | — | yes | yes | — | yes | — |
 | [292](../operator-algebras/292-a-counterexample-to-kirchbergs-norm-ultrapower-embedding-problem.md) | A counterexample to Kirchberg's norm-ultrapower embedding problem | — | — | — | — | yes | yes |
 | [294](../operator-algebras/294-a-counterexample-to-kaplanskys-quasitrace-conjecture.md) | A counterexample to Kaplansky's quasitrace conjecture | — | — | — | — | yes | — |
-| [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | The Kirchberg--R\o rdam character criterion | — | — | — | — | yes | — |
+| [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | The Kirchberg--Rø rdam character criterion | — | — | — | — | yes | — |
 | [301](../operator-algebras/301-classification-by-trace-cones-after-razak-jacelon-stabilization.md) | Classification by trace cones after Razak--Jacelon stabilization | — | — | — | — | yes | — |
 | [302](../operator-algebras/302-phillips-toms-formula-for-minimal-integer-actions.md) | The Phillips--Toms formula for minimal integer actions | — | — | — | — | yes | — |
 | [303](../operator-algebras/303-from-ordinary-to-strong-pure-infiniteness.md) | From ordinary to strong pure infiniteness | — | — | — | — | yes | yes |

@@ -13,7 +13,7 @@
 | Claim shapes | bound, classification |
 | Topics | [complexity-theory](../topics/complexity-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [107-matrix-multiplication-with-exponent-at-most-9-4.md](../../../notes/summaries/theoretical-computer-science/107-matrix-multiplication-with-exponent-at-most-9-4.md) |
 
 ## Manuscripts
 

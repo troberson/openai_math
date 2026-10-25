@@ -13,7 +13,7 @@
 | Claim shapes | uniform |
 | Topics | [graph-theory](../topics/graph-theory.md) · [computability](../topics/computability.md) · [graph-coloring](../topics/graph-coloring.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [106-hardness-of-coloring-three-colorable-graphs.md](../../../notes/summaries/theoretical-computer-science/106-hardness-of-coloring-three-colorable-graphs.md) |
 
 ## Manuscripts
 

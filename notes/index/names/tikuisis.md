@@ -22,7 +22,7 @@ Prose counts: 45 capitalized occurrences, 33 of them mid-sentence, 0 lowercase. 
 | Family | Title | F | M | E | D | b | B |
 |---|---|---|---|---|---|---|---|
 | [291](../operator-algebras/291-toms-winter-and-equivariant-jiang-su-stability.md) | Toms--Winter and equivariant Jiang--Su stability | — | — | yes | — | yes | yes |
-| [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | The Kirchberg--R\o rdam character criterion | — | — | — | — | yes | — |
+| [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | The Kirchberg--Rø rdam character criterion | — | — | — | — | yes | — |
 | [301](../operator-algebras/301-classification-by-trace-cones-after-razak-jacelon-stabilization.md) | Classification by trace cones after Razak--Jacelon stabilization | — | — | — | — | yes | yes |
 | [302](../operator-algebras/302-phillips-toms-formula-for-minimal-integer-actions.md) | The Phillips--Toms formula for minimal integer actions | — | — | — | — | yes | yes |
 | [303](../operator-algebras/303-from-ordinary-to-strong-pure-infiniteness.md) | From ordinary to strong pure infiniteness | — | — | — | — | — | yes |

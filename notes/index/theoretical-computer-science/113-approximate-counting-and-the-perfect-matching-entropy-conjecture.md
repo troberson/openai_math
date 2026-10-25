@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound, uniform |
 | Topics | [graph-theory](../topics/graph-theory.md) · [algorithms](../topics/algorithms.md) · [computability](../topics/computability.md) · [convex-geometry](../topics/convex-geometry.md) · [dynamical-systems](../topics/dynamical-systems.md) · [information-theory](../topics/information-theory.md) · [sampling-and-counting](../topics/sampling-and-counting.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [113-approximate-counting-and-the-perfect-matching-entropy-conjecture.md](../../../notes/summaries/theoretical-computer-science/113-approximate-counting-and-the-perfect-matching-entropy-conjecture.md) |
 
 ## Manuscripts
 

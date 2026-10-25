@@ -126,7 +126,7 @@ Prose counts: 6116 capitalized occurrences, 5223 of them mid-sentence, 743 lower
 | [283](../mathematical-physics/283-polynomial-time-constant-error-unitary-synthesis-from-a-boolean-oracle.md) | Polynomial-time, constant-error unitary synthesis from a Boolean oracle | — | — | — | — | yes | — |
 | [291](../operator-algebras/291-toms-winter-and-equivariant-jiang-su-stability.md) | Toms--Winter and equivariant Jiang--Su stability | — | — | yes | — | yes | — |
 | [298](../operator-algebras/298-a-counterexample-to-voiculescus-free-entropy-equality-conjecture.md) | A counterexample to Voiculescu’s free-entropy equality conjecture | — | — | — | — | yes | — |
-| [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | The Kirchberg--R\o rdam character criterion | — | — | — | — | yes | — |
+| [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | The Kirchberg--Rø rdam character criterion | — | — | — | — | yes | — |
 | [325](../functional-analysis/325-complete-crouzeix-conjecture.md) | The complete Crouzeix conjecture | — | — | yes | — | yes | — |
 | [331](../functional-analysis/331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md) | Asymptotic midpoint uniform convexity without asymptotically uniformly convex renorming | — | — | yes | — | yes | — |
 | [333](../differential-geometry/333-smooth-isometric-immersions-of-surfaces-into-r-4.md) | Smooth isometric immersions of surfaces into $\mathbb R^4$ | — | — | — | — | yes | — |

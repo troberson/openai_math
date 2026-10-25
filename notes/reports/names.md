@@ -113,13 +113,13 @@ The gate is `mid >= 3 and low <= max(1, mid // 2)`. `the` and `all` fail by a fa
 
 ## The rejection ladder
 
-Candidate keys are the union of the four title/declaration layers: 3,407 keys. They are
-screened in this order, and 2,850 are rejected, leaving 557; the plural merge below removes 6,
+Candidate keys are the union of the four title/declaration layers: 3,408 keys. They are
+screened in this order, and 2,851 are rejected, leaving 557; the plural merge below removes 6,
 so 551 subject names remain.
 
 | Rejected as | Count | Rule |
 |---|---|---|
-| `not-a-word-key` | 76 | Key shorter than 3 letters, or not `^[a-z][a-z]*(-[a-z][a-z]*)*$`. |
+| `not-a-word-key` | 77 | Key shorter than 3 letters, or not `^[a-z][a-z]*(-[a-z][a-z]*)*$`. |
 | `label-word` | 25 | In `LABEL_WORDS`: statement-environment words, months (every manuscript directory ends in one), publishers, `lean`, `openai`. |
 | `maths-word` | 6 | In `JUNK_WORDS` — see below. |
 | `contains-digit` | 0 | Any digit in the key. |

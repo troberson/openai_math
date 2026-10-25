@@ -110,7 +110,7 @@ Prose counts: 1132 capitalized occurrences, 1003 of them mid-sentence, 221 lower
 | [290](../operator-algebras/290-connes-bicentralizer-conjecture-and-relative-bicentralizers.md) | Connes' bicentralizer conjecture and relative bicentralizers | — | — | — | — | yes | — |
 | [291](../operator-algebras/291-toms-winter-and-equivariant-jiang-su-stability.md) | Toms--Winter and equivariant Jiang--Su stability | — | — | — | — | yes | — |
 | [294](../operator-algebras/294-a-counterexample-to-kaplanskys-quasitrace-conjecture.md) | A counterexample to Kaplansky's quasitrace conjecture | — | — | — | — | yes | — |
-| [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | The Kirchberg--R\o rdam character criterion | — | — | — | — | yes | — |
+| [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | The Kirchberg--Rø rdam character criterion | — | — | — | — | yes | — |
 | [302](../operator-algebras/302-phillips-toms-formula-for-minimal-integer-actions.md) | The Phillips--Toms formula for minimal integer actions | — | — | — | — | yes | — |
 | [310](../topology/310-quillens-conjecture-in-rational-homology.md) | Quillen's conjecture in rational homology | — | — | — | — | yes | — |
 | [325](../functional-analysis/325-complete-crouzeix-conjecture.md) | The complete Crouzeix conjecture | — | — | — | — | yes | — |

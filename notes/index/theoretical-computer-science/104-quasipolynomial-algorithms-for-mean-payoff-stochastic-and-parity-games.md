@@ -13,7 +13,7 @@
 | Claim shapes | — |
 | Topics | [complexity-theory](../topics/complexity-theory.md) · [algorithms](../topics/algorithms.md) · [computability](../topics/computability.md) · [game-theory](../topics/game-theory.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [104-quasipolynomial-algorithms-for-mean-payoff-stochastic-and-parity-games.md](../../../notes/summaries/theoretical-computer-science/104-quasipolynomial-algorithms-for-mean-payoff-stochastic-and-parity-games.md) |
 
 ## Manuscripts
 

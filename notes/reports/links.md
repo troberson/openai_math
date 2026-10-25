@@ -34,12 +34,12 @@ whole-tree counts are printed in the report and are not written to the TSV.
 | family→reasoning trace | **10** | Release attribution, not evidence the trace is the proof |
 | named-in-title | **153** of 372 | A property of catalog prose, not of the literature |
 | cited-in-bib | **11** of 372 | A title-phrase proxy; a miss is not evidence of no impact |
-| mentioned-in-body | **11** of 372 | A shared phrase can be not-a-reference |
+| mentioned-in-body | **10** of 372 | A shared phrase can be not-a-reference |
 | family→MSC code | **0** | Negative: no classification vocabulary exists to read |
 | bibliography entry→keywords field | **0** | Negative: bibliographies carry no topic vocabulary |
 | manuscript→`\keywords` macro | **12** of 719 | 98% of manuscripts define no keyword list |
 | manuscript→verification bundle | **30** | A certificate bundle, not a theorem check |
-| family→notes summary page | **126** | Our artifact, not part of the release |
+| family→notes summary page | **133** | Our artifact, not part of the release |
 
 ## 426 vs 416: link occurrences, not missing files
 
@@ -116,16 +116,16 @@ All three normalize the family title the same way — lowercase alphanumerics, s
 |---|---|---|---|
 | named-in-title | `overview.tex` `\resultentry` arg 2 | **153** of 372 | — |
 | cited-in-bib | `preprints/**/*.bib` | **11** of 372 | 21 |
-| mentioned-in-body | `preprints/**/*.tex` | **11** of 372 | 108 |
+| mentioned-in-body | `preprints/**/*.tex` | **10** of 372 | 107 |
 
 `cited-in-bib`: **001, 003, 006, 038, 066, 086, 109, 145, 202, 231, 312**. Each was read and
 validated as a genuine citation — the entry reads e.g. `{Milne's rationality conjecture for abelian
 varieties}}, howpublished = {OpenAI Math Release preprint \href{https://github.com/openai/…`. The
 merge changed no member of this list.
 
-`mentioned-in-body`: **003, 006, 032, 086, 094, 109, 145, 176, 194, 202, 299**. **6** of these 11
+`mentioned-in-body`: **003, 006, 032, 086, 094, 109, 145, 176, 194, 202**. **6** of these 10
 (003, 006, 086, 109, 145, 202) also appear in `cited-in-bib`, which is the signature of a real
-reference; the **5** that do not — **032, 094, 176, 194, 299** — are the ones to read before
+reference; the **4** that do not — **032, 094, 176, 194** — are the ones to read before
 believing, and 5 of the 11 `cited-in-bib` families (001, 038, 066, 231, 312) are cited in a
 bibliography without the title phrase appearing in any body text. **032** is new to this list after
 the 2026-10-07 merge: its title was rewritten when three of its manuscripts were withdrawn, and the
@@ -199,7 +199,7 @@ rule and its 417-file scope, and quote 11 with the normalized rule and the 500-f
   contrasts-with, refutes, acknowledges — is not recorded anywhere in the release, and this inventory
   does not infer it.
 - `mentioned-in-body` is a phrase match over normalized text with no boundary test for abbreviations
-  or translations, so a hit can be a shared term. The 11 cross-family hits were not individually read;
+  or translations, so a hit can be a shared term. The 10 cross-family hits were not individually read;
   **032** is new to the list and unread.
 - The 211 body hrefs were counted as occurrences, not deduped to edges; a manuscript linking the same
   target twice counts twice here, unlike the bib layer.

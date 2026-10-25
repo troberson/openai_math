@@ -25,7 +25,7 @@ A family is listed when the pattern hits its title, its abstract, its scope note
 | [296](../operator-algebras/296-generator-problem-for-finite-factors.md) | The generator problem for finite factors | yes | yes | yes | — |
 | [297](../operator-algebras/297-a-zfc-counterexample-to-naimarks-problem.md) | A ZFC counterexample to Naimark's problem | yes | yes | yes | — |
 | [298](../operator-algebras/298-a-counterexample-to-voiculescus-free-entropy-equality-conjecture.md) | A counterexample to Voiculescu’s free-entropy equality conjecture | yes | yes | yes | — |
-| [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | The Kirchberg--R\o rdam character criterion | yes | yes | yes | — |
+| [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | The Kirchberg--Rø rdam character criterion | yes | yes | yes | — |
 | [300](../operator-algebras/300-popa-vaes-quadratic-strong-operator-paving-conjecture.md) | The Popa--Vaes quadratic strong-operator paving conjecture | yes | yes | — | — |
 | [301](../operator-algebras/301-classification-by-trace-cones-after-razak-jacelon-stabilization.md) | Classification by trace cones after Razak--Jacelon stabilization | yes | yes | yes | — |
 | [302](../operator-algebras/302-phillips-toms-formula-for-minimal-integer-actions.md) | The Phillips--Toms formula for minimal integer actions | yes | yes | — | — |

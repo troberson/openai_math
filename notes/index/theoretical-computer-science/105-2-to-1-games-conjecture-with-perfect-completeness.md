@@ -13,7 +13,7 @@
 | Claim shapes | partial, uniform |
 | Topics | [complexity-theory](../topics/complexity-theory.md) · [computability](../topics/computability.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [105-2-to-1-games-conjecture-with-perfect-completeness.md](../../../notes/summaries/theoretical-computer-science/105-2-to-1-games-conjecture-with-perfect-completeness.md) |
 
 ## Manuscripts
 

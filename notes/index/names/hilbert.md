@@ -159,7 +159,7 @@ Prose counts: 2709 capitalized occurrences, 2445 of them mid-sentence, 165 lower
 | [296](../operator-algebras/296-generator-problem-for-finite-factors.md) | The generator problem for finite factors | — | — | — | — | yes | — |
 | [297](../operator-algebras/297-a-zfc-counterexample-to-naimarks-problem.md) | A ZFC counterexample to Naimark's problem | — | — | — | — | yes | — |
 | [298](../operator-algebras/298-a-counterexample-to-voiculescus-free-entropy-equality-conjecture.md) | A counterexample to Voiculescu’s free-entropy equality conjecture | — | — | — | — | yes | — |
-| [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | The Kirchberg--R\o rdam character criterion | — | — | — | — | yes | — |
+| [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | The Kirchberg--Rø rdam character criterion | — | — | — | — | yes | — |
 | [301](../operator-algebras/301-classification-by-trace-cones-after-razak-jacelon-stabilization.md) | Classification by trace cones after Razak--Jacelon stabilization | — | — | — | — | yes | — |
 | [303](../operator-algebras/303-from-ordinary-to-strong-pure-infiniteness.md) | From ordinary to strong pure infiniteness | — | — | — | — | yes | — |
 | [304](../topology/304-hilbert-smith-conjecture-in-every-dimension.md) | The Hilbert--Smith conjecture in every dimension | yes | yes | yes | — | yes | yes |

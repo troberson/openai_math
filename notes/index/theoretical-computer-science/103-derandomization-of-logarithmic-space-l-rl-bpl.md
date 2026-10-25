@@ -13,7 +13,7 @@
 | Claim shapes | resolution, bound |
 | Topics | [complexity-theory](../topics/complexity-theory.md) · [computability](../topics/computability.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [103-derandomization-of-logarithmic-space-l-rl-bpl.md](../../../notes/summaries/theoretical-computer-science/103-derandomization-of-logarithmic-space-l-rl-bpl.md) |
 
 ## Manuscripts
 

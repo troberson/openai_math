@@ -13,7 +13,7 @@
 | Claim shapes | bound |
 | Topics | [complexity-theory](../topics/complexity-theory.md) · [algorithms](../topics/algorithms.md) · [computability](../topics/computability.md) |
 | Companion families | — |
-| Summary page | — |
+| Summary page | [112-beyond-the-square-root-exponent-for-depth-three-circuits.md](../../../notes/summaries/theoretical-computer-science/112-beyond-the-square-root-exponent-for-depth-three-circuits.md) |
 
 ## Manuscripts
 

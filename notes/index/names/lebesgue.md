@@ -119,7 +119,7 @@ Prose counts: 697 capitalized occurrences, 651 of them mid-sentence, 6 lowercase
 | [286](../operator-algebras/286-arithmetic-rigidity-of-lattice-von-neumann-algebras.md) | Arithmetic rigidity of lattice von Neumann algebras | — | — | — | — | yes | — |
 | [293](../operator-algebras/293-a-counterexample-to-the-hyperinvariant-subspace-problem.md) | A counterexample to the hyperinvariant-subspace problem | — | — | — | — | yes | — |
 | [294](../operator-algebras/294-a-counterexample-to-kaplanskys-quasitrace-conjecture.md) | A counterexample to Kaplansky's quasitrace conjecture | — | — | — | — | yes | — |
-| [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | The Kirchberg--R\o rdam character criterion | — | — | — | — | yes | — |
+| [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | The Kirchberg--Rø rdam character criterion | — | — | — | — | yes | — |
 | [301](../operator-algebras/301-classification-by-trace-cones-after-razak-jacelon-stabilization.md) | Classification by trace cones after Razak--Jacelon stabilization | — | — | — | — | yes | — |
 | [315](../topology/315-four-dimensional-singer-conjecture.md) | The four-dimensional Singer conjecture | — | — | — | — | yes | — |
 | [324](../functional-analysis/324-lipschitz-equivalence-without-linear-isomorphism.md) | Lipschitz equivalence without linear isomorphism | — | — | — | — | yes | — |

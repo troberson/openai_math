@@ -28,7 +28,7 @@ Prose counts: 83 capitalized occurrences, 51 of them mid-sentence, 0 lowercase. 
 | [273](../mathematical-physics/273-entropy-photon-number-inequality.md) | The entropy photon-number inequality | — | — | — | — | yes | — |
 | [289](../operator-algebras/289-strong-kadison-kastler-conjecture.md) | The strong Kadison--Kastler conjecture | — | — | — | — | yes | yes |
 | [291](../operator-algebras/291-toms-winter-and-equivariant-jiang-su-stability.md) | Toms--Winter and equivariant Jiang--Su stability | yes | — | yes | — | yes | yes |
-| [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | The Kirchberg--R\o rdam character criterion | — | — | yes | — | yes | — |
+| [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | The Kirchberg--Rø rdam character criterion | — | — | yes | — | yes | — |
 | [301](../operator-algebras/301-classification-by-trace-cones-after-razak-jacelon-stabilization.md) | Classification by trace cones after Razak--Jacelon stabilization | — | — | — | — | yes | — |
 | [302](../operator-algebras/302-phillips-toms-formula-for-minimal-integer-actions.md) | The Phillips--Toms formula for minimal integer actions | — | — | — | — | yes | yes |
 

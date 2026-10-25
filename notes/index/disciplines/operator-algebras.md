@@ -20,7 +20,7 @@ Tier: T3 7 · T2 8 · T1 0 · T0 4
 | [296](../operator-algebras/296-generator-problem-for-finite-factors.md) | The generator problem for finite factors | T3 | 1 | 1 | yes | 2 | — |
 | [297](../operator-algebras/297-a-zfc-counterexample-to-naimarks-problem.md) | A ZFC counterexample to Naimark's problem | T2 | 1 | 0 | yes | 1 | — |
 | [298](../operator-algebras/298-a-counterexample-to-voiculescus-free-entropy-equality-conjecture.md) | A counterexample to Voiculescu’s free-entropy equality conjecture | T2 | 1 | 0 | yes | 1 | — |
-| [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | The Kirchberg--R\o rdam character criterion | T3 | 1 | 1 | yes | 1 | — |
+| [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | The Kirchberg--Rø rdam character criterion | T3 | 1 | 1 | yes | 1 | — |
 | [300](../operator-algebras/300-popa-vaes-quadratic-strong-operator-paving-conjecture.md) | The Popa--Vaes quadratic strong-operator paving conjecture | T0 | 2 | 0 | — | 0 | — |
 | [301](../operator-algebras/301-classification-by-trace-cones-after-razak-jacelon-stabilization.md) | Classification by trace cones after Razak--Jacelon stabilization | T3 | 1 | 1 | yes | 1 | — |
 | [302](../operator-algebras/302-phillips-toms-formula-for-minimal-integer-actions.md) | The Phillips--Toms formula for minimal integer actions | T0 | 2 | 0 | — | 0 | — |

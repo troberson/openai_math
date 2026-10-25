@@ -33,7 +33,7 @@ Prose counts: 109 capitalized occurrences, 77 of them mid-sentence, 1 lowercase.
 | [225](../probability-and-statistical-mechanics/225-gaussian-free-field-limits-for-the-balanced-six-vertex-model.md) | Gaussian free field limits for the balanced six-vertex model | — | — | — | — | — | yes |
 | [260](../mathematical-physics/260-spacetime-penrose-inequalities-and-rigidity.md) | Spacetime Penrose inequalities and rigidity | — | — | — | — | — | yes |
 | [291](../operator-algebras/291-toms-winter-and-equivariant-jiang-su-stability.md) | Toms--Winter and equivariant Jiang--Su stability | yes | yes | yes | — | yes | yes |
-| [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | The Kirchberg--R\o rdam character criterion | — | — | — | — | yes | — |
+| [299](../operator-algebras/299-kirchberg-r-rdam-character-criterion.md) | The Kirchberg--Rø rdam character criterion | — | — | — | — | yes | — |
 | [302](../operator-algebras/302-phillips-toms-formula-for-minimal-integer-actions.md) | The Phillips--Toms formula for minimal integer actions | — | — | — | — | yes | — |
 | [303](../operator-algebras/303-from-ordinary-to-strong-pure-infiniteness.md) | From ordinary to strong pure infiniteness | — | — | — | — | yes | — |
 | [356](../differential-geometry/356-giglis-characterization-of-alexandrov-curvature.md) | Gigli's characterization of Alexandrov curvature | — | — | — | — | — | yes |
