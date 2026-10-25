@@ -216,6 +216,9 @@ def _prose_markup(s: str) -> str:
     # which the summaries checker rejects (pass_b) — same reason `\cite`/`\ref` are dropped.
     s = _HREF.sub(r"\2", s)
     s = _URL.sub(" ", s)
+    # The release's catalog (CONTENTS.md) uses HTML emphasis and subscript tags in its
+    # abstracts (`<i>`, `<sub>`). Strip the tags, keep the content.
+    s = re.sub(r"</?(?:i|b|sub|sup|em|strong)>", "", s)
     s = re.sub(r"\\emph\s*\{([^{}]*)\}", r"_\1_", s)
     s = re.sub(r"\\textbf\s*\{([^{}]*)\}", r"**\1**", s)
     s = re.sub(r"\\text\s*\{([^{}]*)\}", r"\1", s)
