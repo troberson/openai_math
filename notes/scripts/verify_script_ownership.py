@@ -38,6 +38,7 @@ from catlib import render as RD
 from catlib.atomic import RECORDS_ROOT
 from catlib.paths import GATE_ROWS_TSV, NOTES, ROOT, SCRIPTS, read_text
 from catlib.promote import CHECKER_L1, key_for
+from catlib.records import require_record
 
 PAGE = SCRIPTS / "README.md"
 SELF = "verify_script_ownership.py"
@@ -820,6 +821,9 @@ def cost_problems(text: str) -> list[str]:
 
 
 def main():
+    # The Cost pass reads measure_check_calls.py's check_calls.json; a commit moves HEAD and
+    # orphans the key, so check it before the tree walk the pass starts.
+    require_record("measure_check_calls.py", "check_calls.json")
     text = read_text(PAGE)
     print("=== notes/scripts/README.md ownership check ===")
     wr = writers()

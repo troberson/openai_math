@@ -4065,6 +4065,10 @@ def render_page(page: pathlib.Path) -> str:
 
 
 def main() -> None:
+    # A cross-produced record the render reads (measure_check_calls.py's check_calls.json) is
+    # checked here, before the children launch and the populations run: a commit moves HEAD and
+    # orphans the key, so the old failure was a bare FileNotFoundError after the full 20 s+ walk.
+    records.require_record("measure_check_calls.py", "check_calls.json")
     # Launch both children before any measurement runs. The `extract_links` walk is 18.8 s and the
     # `build_index` walk is 6.0 s; launched up front they run while the in-process populations run, so
     # the wall is the longest of the three, not their sum. A child writes nothing, so this is safe.

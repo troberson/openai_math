@@ -102,6 +102,28 @@ def cached(k: str, name: str, builder) -> str:
     return text
 
 
+def require_record(script: str, name: str, args: tuple[str, ...] = ()) -> Path:
+    """The path of a record another script landed — checked BEFORE the consumer's walk.
+
+    A consumer that reads a cross-produced record (render_reports.py and
+    verify_script_ownership.py read measure_check_calls.py's check_calls.json) used to discover a
+    missing record at the open() it happens to make, after paying its full corpus walk: a commit
+    moved HEAD, orphaned the key, and the run died with a bare FileNotFoundError. Called at the
+    entry point, a missing record is a fast, named exit with the produce command, in a few
+    seconds — the key is a handful of file reads plus one git rev-parse, not the walk. Self-produced
+    records (the build-on-miss paths: cached and manuscript_store) are not its concern.
+    """
+    # Function-local: promote imports records.key at module top, so a top-level import would cycle.
+    from catlib.promote import key_for
+
+    path = RECORDS_ROOT / key_for(script, args) / name
+    if not path.is_file():
+        raise SystemExit(
+            f"record not landed: {path} - run `python3 notes/scripts/{script}` first "
+            f"(a commit moves HEAD and orphans the key)")
+    return path
+
+
 def record_for(d: Path) -> dict[str, Any]:
     """The per-manuscript record: every derived count a consumer re-derives today, read once.
 

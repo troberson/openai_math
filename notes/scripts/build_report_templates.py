@@ -67,6 +67,7 @@ from catlib import tsv as TSV
 from catlib.atomic import Staging
 from catlib.paths import SPLIT_TSV
 from catlib.promote import key_for
+from catlib.records import require_record
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 TPL_DIR = ROOT / "notes" / "templates" / "report"
@@ -310,6 +311,11 @@ def worker(page_checker: tuple[str, str]) -> tuple[int, list[str], pathlib.Path,
 def main(argv: list[str]) -> int:
     check_only = "--check-only" in argv
     argv = [a for a in argv if a != "--check-only"]
+    # The scripts-README census reads measure_check_calls.py's check_calls.json inside a pool
+    # worker (in both --check-only and write modes); a commit moves HEAD and orphans the key, so
+    # the old failure was a bare FileNotFoundError through pool.map after the pool was up.
+    # Check it here, before the pool.
+    require_record("measure_check_calls.py", "check_calls.json")
     if not argv:
         pages = sorted(T.ALL_PAGES.items())
         R.prewarm()
