@@ -1,0 +1,166 @@
+quotes in the pages: 3313
+  pair-line specs (notes/reports/subfinding-pairs.md): 754
+  summaries specs (133 pages): 2559
+  specs seeded: 1314   measured negatives (start 0): 1999
+  single-line spec: 899   range spec: 415
+  class: raw 1271  folded 39  normalizer-gap 4
+  locators resolve: 1314 of 1314
+  unresolved locators: 0
+[probe] target exit code: 0
+[probe2] target notes/scripts/seed_quotes.py 
+[probe2] wall 26.64  opens 1409  distinct 861  repeats 548
+[probe2] rchar MB 107.8  read_bytes MB 0.0
+[probe2] buckets:
+          preprints/                 780
+          notes/summaries/           268
+          other                      195
+          lean/docs/                 46
+          lean/ComparatorChallenges/ 29
+          lean/OAI/                  26
+          notes/                     23
+          abs/other                  15
+          notes/scripts/             13
+          top-level                  11
+          reasoning_traces/          3
+[probe2] notes/ paths (count  modes  path):
+              2  r        notes/reports/counterexample-tag.md
+              2  r        notes/reports/subfinding-pairs.md
+              8  r        notes/reports/t0-triage.md
+              2  r        notes/summaries/README.md
+              2  r        notes/summaries/algebra/193-serres-intersection-multiplicity-conjecture.md
+              2  r        notes/summaries/algebra/195-a-counterexample-to-the-small-cohen-macaulay-module-conjecture.md
+              2  r        notes/summaries/algebra/196-a-counterexample-to-kaplanskys-zero-divisor-conjecture.md
+              2  r        notes/summaries/algebra/197-nonsofic-groups-and-group-ring-counterexamples.md
+              2  r        notes/summaries/algebra/198-a-counterexample-to-the-little-finitistic-dimension-conjecture.md
+              2  r        notes/summaries/algebra/199-counterexamples-to-conjectures-of-auslander-reiten-tachikawa-and-nakayama.md
+              2  r        notes/summaries/algebra/200-eisenbud-green-harris-and-lex-plus-powers-in-characteristic-zero.md
+              2  r        notes/summaries/algebra/201-a-counterexample-to-kuroshs-division-ring-problem.md
+              2  r        notes/summaries/algebra/202-blockwise-alperin-weight-conjecture.md
+              2  r        notes/summaries/algebra/203-donovans-conjecture-over-fields-and-discrete-valuation-rings.md
+              2  r        notes/summaries/algebra/204-tensor-saturation-for-even-spin-groups.md
+              2  r        notes/summaries/algebra/208-finite-benson-etingof-ostrik-conjecture.md
+              2  r        notes/summaries/algebra/209-integral-counterexamples-to-gerstens-conjecture.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/032-rational-hodge-conjecture-for-cm-abelian-varieties.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/034-log-abundance-and-effective-iitaka-fibrations.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/037-sharp-ordinary-double-point-volume-gap.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/038-fujitas-freeness-conjecture.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/039-nagatas-conjecture-and-maximal-seshadri-constants.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/040-blochs-conjecture-for-complex-surfaces.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/041-hyperkahler-syz-and-projective-space-bases.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/042-oka-classification-for-k3-surfaces-and-other-compact-complex-surfaces.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/043-p-w-for-fixed-determinant-moduli-spaces.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/044-equivariant-cohomological-hikita-conjecture-for-quivers.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/047-complex-counterexamples-to-cancellation-and-affine-fibrations.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/048-a-characteristic-zero-counterexample-to-lipman-zariski.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/049-a-stable-coordinate-counterexample-in-four-variables.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/050-a-counterexample-to-griffiths-positivity-conjecture.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/051-kobayashis-canonical-ampleness-conjecture.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/052-tangent-bundle-splittings-and-universal-covers.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/053-a-counterexample-to-pixtons-original-completeness-conjecture.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/054-counterexamples-to-kuznetsovs-rationality-conjecture.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/055-todas-gepner-conjecture-and-large-volume-stability.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/057-campanas-abelianity-conjecture-and-special-varieties.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/059-counterexamples-to-zariskis-multiplicity-conjecture.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/060-global-spherical-shell-conjecture.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/062-lebrun-salamon-conjecture-and-projective-contact-classification.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/063-generalized-mukai-conjecture.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/064-constant-problem-for-surface-singularities.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/065-virasoro-constraints-for-complete-intersections-and-projective-bundles.md
+              2  r        notes/summaries/algebraic-and-complex-geometry/067-campana-peternell-conjecture-in-dimension-six.md
+              2  r        notes/summaries/combinatorics/159-erdoss-reciprocal-sum-conjecture-and-quasipolynomial-szemeredi-bounds.md
+              2  r        notes/summaries/combinatorics/164-hindmans-finite-sums-and-products-conjecture.md
+              2  r        notes/summaries/combinatorics/166-higher-dimensional-erdos-distinct-distances-conjecture.md
+              2  r        notes/summaries/combinatorics/171-hypercube-ramsey-conjecture.md
+              2  r        notes/summaries/convex-and-metric-geometry/087-mahler-conjectures-and-symplectic-width.md
+              2  r        notes/summaries/convex-and-metric-geometry/088-pettys-projection-volume-conjecture-and-simplex-counterexamples.md
+              2  r        notes/summaries/convex-and-metric-geometry/089-bounded-distortion-l-1-embeddings-of-planar-and-bounded-treewidth-graphs.md
+              2  r        notes/summaries/convex-and-metric-geometry/098-a-negative-answer-to-the-lang-plaut-problem.md
+              2  r        notes/summaries/convex-and-metric-geometry/101-sharp-simplex-conjecture-for-isotropic-constants.md
+              2  r        notes/summaries/differential-geometry/334-a-smooth-surface-metric-with-no-local-immersion-in-r-3.md
+              2  r        notes/summaries/differential-geometry/335-gromovs-integral-scalar-curvature-inequality.md
+              2  r        notes/summaries/differential-geometry/338-yaus-uniformization-conjecture.md
+              2  r        notes/summaries/differential-geometry/339-katoks-entropy-rigidity-conjecture.md
+              2  r        notes/summaries/differential-geometry/340-a-counterexample-to-the-nearby-lagrangian-conjecture.md
+              2  r        notes/summaries/differential-geometry/341-donaldsons-hypersymplectic-deformation-conjecture.md
+              2  r        notes/summaries/differential-geometry/342-donaldsons-tamed-to-compatible-conjecture.md
+              2  r        notes/summaries/differential-geometry/344-metric-blaschke-conjecture.md
+              2  r        notes/summaries/differential-geometry/345-infinitely-many-closed-geodesics-on-spheres-and-three-manifolds.md
+              2  r        notes/summaries/differential-geometry/346-sharp-singular-set-bounds-for-stationary-integral-varifolds.md
+              2  r        notes/summaries/differential-geometry/347-counterexamples-to-strong-forms-of-arnolds-fixed-point-conjecture.md
+              2  r        notes/summaries/differential-geometry/348-nonnegatively-curved-einstein-four-manifolds-and-a-topological-gap.md
+              2  r        notes/summaries/differential-geometry/349-solomon-yau-least-volume-conjecture.md
+              2  r        notes/summaries/differential-geometry/351-scalar-curvature-detects-four-dimensional-ricci-flow-singularities.md
+              2  r        notes/summaries/differential-geometry/352-finite-time-singularity-of-calabi-flow.md
+              2  r        notes/summaries/dynamical-systems-and-ergodic-theory/147-near-boundary-birkhoff-conjecture.md
+              2  r        notes/summaries/functional-analysis/324-lipschitz-equivalence-without-linear-isomorphism.md
+              2  r        notes/summaries/functional-analysis/325-complete-crouzeix-conjecture.md
+              2  r        notes/summaries/functional-analysis/331-asymptotic-midpoint-uniform-convexity-without-asymptotically-uniformly-convex-renorming.md
+              2  r        notes/summaries/functional-analysis/332-metric-markov-cotype-two-for-1.md
+              2  r        notes/summaries/group-theory/254-classifying-spaces-and-geometric-obstructions-for-artin-groups.md
+              2  r        notes/summaries/group-theory/258-gerstens-conjecture-for-one-relator-groups.md
+              2  r        notes/summaries/group-theory/259-a-group-without-fixed-price.md
+              2  r        notes/summaries/mathematical-logic/243-choiceless-counting-does-not-capture-polynomial-time.md
+              2  r        notes/summaries/mathematical-logic/244-partition-principle-does-not-imply-choice.md
+              2  r        notes/summaries/mathematical-physics/268-spin-one-haldane-gap.md
+              2  r        notes/summaries/mathematical-physics/270-threshold-and-positive-energy-bound-states-of-the-bfss-model.md
+              2  r        notes/summaries/mathematical-physics/271-blochs-law-and-spontaneous-ferromagnetic-order.md
+              2  r        notes/summaries/mathematical-physics/274-moores-parity-conjecture-for-qac-0.md
+              2  r        notes/summaries/mathematical-physics/284-optimal-randomized-quantum-query-exponent.md
+              2  r        notes/summaries/number-theory/001-milnes-rationality-conjecture.md
+              2  r        notes/summaries/number-theory/002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md
+              2  r        notes/summaries/number-theory/004-hilberts-tenth-problem-over-q.md
+              2  r        notes/summaries/number-theory/006-goldfelds-conjecture.md
+              2  r        notes/summaries/number-theory/007-two-point-chowla-and-the-corrected-binary-elliott-conjecture.md
+              2  r        notes/summaries/number-theory/010-fontaine-mazur-modularity-at-the-prime-2-and-2-adic-pro-modularity.md
+              2  r        notes/summaries/number-theory/011-ford-konyagin-luca-conjecture-on-prime-predecessors.md
+              2  r        notes/summaries/number-theory/014-restricted-geometric-langlands-generic-ramanujan-and-arthur-parameters.md
+              2  r        notes/summaries/number-theory/016-zilber-pink-in-abelian-varieties-and-the-siegel-threefold.md
+              2  r        notes/summaries/number-theory/017-irrationality-exponent-of-is-2.md
+              2  r        notes/summaries/number-theory/018-margulis-platonov-conjecture-over-global-fields.md
+              2  r        notes/summaries/number-theory/019-p-adic-section-conjecture.md
+              2  r        notes/summaries/number-theory/022-weak-inhomogeneous-duffin-schaeffer-conjecture.md
+              2  r        notes/summaries/number-theory/029-artins-primitive-root-conjecture-infinitude-for-every-base.md
+              2  r        notes/summaries/number-theory/030-modularity-over-imaginary-quadratic-fields.md
+              2  r        notes/summaries/number-theory/031-uchidas-conjecture-for-open-galois-homomorphisms.md
+              2  r        notes/summaries/operator-algebras/285-counterexamples-to-baum-connes-and-kadison-kaplansky.md
+              2  r        notes/summaries/operator-algebras/287-all-nonabelian-free-group-factors-are-isomorphic.md
+              2  r        notes/summaries/operator-algebras/300-popa-vaes-quadratic-strong-operator-paving-conjecture.md
+              2  r        notes/summaries/partial-differential-equations/362-global-smoothness-for-relativistic-vlasov-maxwell.md
+              2  r        notes/summaries/partial-differential-equations/366-planar-mumford-shah-regularity-conjecture.md
+              2  r        notes/summaries/partial-differential-equations/368-three-dimensional-ball-evans-approximation-problem.md
+              2  r        notes/summaries/partial-differential-equations/375-de-giorgis-conjecture-in-dimension-eight.md
+              2  r        notes/summaries/probability-and-statistical-mechanics/221-mezard-parisi-formula-for-diluted-spin-glasses.md
+              2  r        notes/summaries/probability-and-statistical-mechanics/226-double-dimer-cle-4-conjecture-in-the-half-plane.md
+              2  r        notes/summaries/real-and-complex-analysis/072-brennans-conjecture-and-a-counterexample-to-kraetzers-prediction.md
+              2  r        notes/summaries/real-and-complex-analysis/074-kakeya-in-three-and-four-dimensions.md
+              2  r        notes/summaries/real-and-complex-analysis/077-fourier-restriction-for-positively-curved-surfaces.md
+              2  r        notes/summaries/real-and-complex-analysis/078-three-dimensional-bochner-riesz-conjecture.md
+              2  r        notes/summaries/real-and-complex-analysis/079-sogges-local-smoothing-conjecture-in-dimension-three.md
+              2  r        notes/summaries/real-and-complex-analysis/080-sobolev-endpoint-in-carlesons-schrodinger-convergence-problem.md
+              2  r        notes/summaries/real-and-complex-analysis/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md
+              2  r        notes/summaries/theoretical-computer-science/102-unique-games-conjecture-and-optimal-approximation-thresholds.md
+              2  r        notes/summaries/theoretical-computer-science/103-derandomization-of-logarithmic-space-l-rl-bpl.md
+              2  r        notes/summaries/theoretical-computer-science/104-quasipolynomial-algorithms-for-mean-payoff-stochastic-and-parity-games.md
+              2  r        notes/summaries/theoretical-computer-science/105-2-to-1-games-conjecture-with-perfect-completeness.md
+              2  r        notes/summaries/theoretical-computer-science/106-hardness-of-coloring-three-colorable-graphs.md
+              2  r        notes/summaries/theoretical-computer-science/107-matrix-multiplication-with-exponent-at-most-9-4.md
+              2  r        notes/summaries/theoretical-computer-science/109-integer-multiplication-below-n-n.md
+              2  r        notes/summaries/theoretical-computer-science/112-beyond-the-square-root-exponent-for-depth-three-circuits.md
+              2  r        notes/summaries/theoretical-computer-science/113-approximate-counting-and-the-perfect-matching-entropy-conjecture.md
+              2  r        notes/summaries/theoretical-computer-science/136-quasilinear-pcp-for-ppad-conjecture.md
+              2  r        notes/summaries/topology/304-hilbert-smith-conjecture-in-every-dimension.md
+              2  r        notes/summaries/topology/305-counterexamples-to-disk-embedding-and-walls-manifold-conjecture.md
+              2  r        notes/summaries/topology/306-purely-cosmetic-surgery-conjecture-for-knots-in-s-3.md
+              2  r        notes/summaries/topology/309-kervaire-invariant-problem-at-the-prime-three.md
+              2  r        notes/summaries/topology/310-quillens-conjecture-in-rational-homology.md
+              2  r        notes/summaries/topology/311-chais-invariant-ideal-conjecture.md
+              2  r        notes/summaries/topology/313-finite-generation-for-the-k-n-local-sphere.md
+              2  r        notes/summaries/topology/315-four-dimensional-singer-conjecture.md
+              2  r        notes/summaries/topology/316-curtiss-conjecture.md
+              2  r        notes/summaries/topology/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md
+              2  r        notes/summaries/topology/320-a-four-dimensional-counterexample-to-borel-rigidity.md
+              2  r        notes/summaries/topology/321-a-counterexample-to-walls-finite-d-2-conjecture.md
+              1  ?        notes/tables/.quotes.tsv.l9ki2z0x
+             10  r        notes/tables/catalog.tsv
+[probe2] write-mode paths outside notes/:
+              4  r,w 3
