@@ -49,7 +49,7 @@ set, and the reduction does not ship it [S4:28–29].
 ## Graduate summary
 
 **Main theorem** ([S4:12–30], `thm:main`). "For every fixed real
-$\delta\in(0,1)/3$" — in the manuscript's exact form: "for every fixed real
+$\delta\in(0,\,1/3)$" — in the manuscript's exact form: "for every fixed real
 $0<\delta<1/3$, there is a deterministic polynomial-time algorithm $R_\delta$
 that maps each explicitly encoded Boolean $3$-CNF formula $\phi$ to a nonempty
 finite simple undirected unweighted graph $G_\phi$" [S4:13–16], such that a
