@@ -3637,7 +3637,7 @@ def readme_full(p: dict[str, Any]) -> dict[str, str]:
                            f"{len(ver)} families, {sum(int(r['versions']) for r in ver)} dated "
                            f"re-issues ({', '.join(r['fam'] for r in ver)}) |")
     out["col_summary"] = (f"| `summary` | a page exists at "
-                          "`notes/summaries/<discipline>/<NNN>-*.md` | Filesystem fact, not a derived "
+                          "`notes/summaries/<NNN>-*.md` | Filesystem fact, not a derived "
                           f"claim; {sum(1 for r in rows if int(r['summary']))} of {fams} families, "
                           f"{sum(int(r['paps']) for r in rows if int(r['summary']))} manuscripts "
                           "behind them |")

@@ -1,0 +1,205 @@
+[Notes](../README.md) / [Summaries](README.md) / [Algebraic and complex geometry](../index/disciplines/algebraic-and-complex-geometry.md) / [Family 064](../index/algebraic-and-complex-geometry/064-constant-problem-for-surface-singularities.md)
+
+# 064 — The $\mu$-constant problem for surface singularities
+
+[Index page](../index/algebraic-and-complex-geometry/064-constant-problem-for-surface-singularities.md)
+
+## Original CONTENTS.md summary
+
+The release's blurb "**064. Topological triviality of *μ*-constant surface singularities.** Proves topological right-triviality for every holomorphic one-parameter family of isolated hypersurface singularities in $\mathbb C^3$ with constant Milnor number, resolving the surface case of the *μ*-constant problem. After shrinking the parameter disk and representatives, ambient homeomorphisms vary jointly continuously, fix the origin section and preserve the defining functions. [S1:1613]" The manuscript abstract
+ reads: "We prove that every holomorphic one-parameter family of isolated hypersurface
+singularities in $\mathbb C^3$ with constant Milnor number is topologically
+right-trivial. This gives a positive answer to the surface case of the
+$\mu$-constant problem. The trivialization fixes the parameter and the
+origin section, and preserves the defining functions. [S3:33–37]"
+
+## Undergraduate summary
+
+The Milnor number $\mu(f,0)$ counts the spheres in the Milnor fiber
+of an isolated hypersurface singularity. A one-parameter family
+$f_t$ is "$\mu$-constant" when $\mu(f_t,0)=\mu(f_0,0)$ for all $t$.
+The $\mu$-constant problem asks whether this numerical constancy
+forces the family to be *topologically* trivial — each fiber
+homeomorphic to the central fiber by ambient maps that vary
+continuously. The theorem 
+
+> **Theorem 1.1**
+Let $F:(\mathbb C^3\times\Delta,\{0\}\times\Delta)\to(\mathbb C,0)$
+be holomorphic.  Suppose that, for every $t\in\Delta$, $f_t(0)=0$,
+$f_t$ has an isolated critical point at $0$, and
+$\mu(f_t,0)=\mu(f_0,0)$.  After shrinking the disk and the germ
+representatives, there is a homeomorphism germ
+\[
+ \Phi(x,t)=(\phi_t(x),t),\qquad
+ \phi_t(0)=0,\quad \phi_0=\mathrmid,\qquad
+ f_t\bigl(\phi_t(x)\bigr)=f_0(x).
+\]
+Both $\Phi$ and $\Phi^{-1}$ are jointly continuous on neighborhoods
+of the origin section over the original disk. [S4:32–45]
+
+The trivialization is *right-trivial*: the homeomorphism acts on the
+source variables and preserves the defining functions
+($f_t(\phi_t(x))=f_0(x)$), fixes the parameter and the origin
+section, and is jointly continuous in $(x,t)$.
+
+## Graduate summary
+
+**Why complex dimension two is the gap.** L\u00e9–Ramanujam proved
+topological constancy when the hypersurface dimension is not two,
+via a homologically trivial cobordism whose product structure the
+$h$-cobordism theorem gives in higher dimensions [S4:57–69].
+"L\^e and Ramanujam proved that a $\mu$-constant family of isolated
+hypersurface singularities has constant embedded topological type when
+the hypersurface dimension is different from two
+\cite[Theorem 2.1]LeRamanujam1976.  Their argument compares Milnor
+fibers through a homologically trivial cobordism.  In higher dimensions
+the $h$-cobordism theorem turns this comparison into a product; the
+curve case follows from surface topology.  Complex dimension two is
+the dimension in which this argument leaves the product structure
+unresolved.  Outside complex dimension two, Timourian and King established local
+triviality of families of function germs
+ .  This additional passage matters here:
+constancy of the individual topological types and a jointly continuous
+choice of ambient coordinate changes are different conclusions. [S4:57–69]" In complex dimension two the cobordism argument
+leaves the product structure unresolved: the Milnor fiber of a
+surface singularity is a handlebody, and a homologically trivial
+cobordism of handlebodies is not automatically a product.
+
+**The Euler characteristic cancellation.** The proof replaces the
+cobordism with a projective model. A semistable log minimal model
+introduces extra vertical surfaces $S_a$ with reduced boundaries
+$B_S$, and the nearby Euler comparison gives
+$\sum_a \chi_c(S_a^\circ)+\delta=0$ [S4:155–163] and
+ "The proof rests on a cancellation of Euler characteristics.  To explain
+it, first consider a projective family with just the prescribed surface
+singularity in each fiber.  A semistable log minimal model replaces its
+special fiber by a component $S_0$ dominating $X_0$ and additional
+projective surfaces $S_a$ over the singular point.  Each component $S$
+has a reduced boundary $B_S$, consisting of its intersections with the
+other vertical components and the horizontal exceptional divisors.
+Write $S^\circ=S\setminus B_S$.  The construction gives
+$S_0^\circ\simeq X_0\setminus\{0\}$ and makes every
+$K_{S_a}+B_{S_a}$ nef. [S4:155–163]" "Constancy of $\mu$ keeps the Euler characteristic of the punctured
+projective fibers constant.  Their nearby Euler comparison, after the
+contribution of $S_0^\circ$ cancels, is
+\[
+ 0=\sum_a\chi_c(S_a^\circ)+\delta,\qquad \delta\ge0.
+\]
+Here $\chi_c$ denotes Euler characteristic with compact supports, and
+$\delta$ is the sum of the excess Euler characteristics of the local
+smoothings at interior singular points of the extra surfaces.
+Greuel–Steenbrink's first-Betti-number theorem makes these excesses
+nonnegative  . [S4:166–172]"
+
+Two sign arguments force every extra surface to be
+topologically trivial. Greuel–Steenbrink's first-Betti-number
+theorem makes the smoothing excess $\delta$ nonnegative; Langer's
+orbifold Bogomolov–Miyaoka–Yau inequality gives
+$0\le(K_{S_a}+B_{S_a})^2\le 3\chi_c(S_a^\circ)$, so every extra
+logarithmic square vanishes . "Langer's orbifold Bogomolov–Miyaoka–Yau inequality supplies the other
+sign  :
+\[
+ 0\le (K_S_a+B_S_a)^2\le3\chi_c(S_a^\circ)
+ \qquadfor every a.
+\]
+Thus every extra logarithmic square vanishes.  Specialization of
+projective intersections then gives constancy of $\beta$. [S4:173–178]"
+
+**From invariants to homeomorphisms.** Constancy of the logarithmic
+square $\beta$ (Wahl's surface invariant) implies simultaneous
+resolution [S10]; the zero-family transport is then extended to
+ambient function levels [S11]. The finite parameter covers used in
+the numerical comparison are removed before constructing the
+homeomorphism, so the final maps work over the original disk
+[S4:47–50].
+
+## History of the conjecture
+
+L\u00e9 and Ramanujam (1976) proved the $\mu$-constant problem
+outside complex dimension two using a cobordism argument. Timourian
+(1977) and King (1980) established local triviality of function
+germs in the same dimensions [S4:57–69]. "Whitney regularity"
+supplies a stronger geometric form: Teissier (1973) proved that
+constancy of the full Milnor-number sequence $\mu^{(j)}$ implies
+Whitney regularity, and Briançon–Speder (1976) proved the
+converse [S4:71–82].
+
+The equimultiplicity theorem of Fern\'andez de Bobadilla and
+Pe\l ka (2024) settles constancy of the multiplicity $\mu^{(1)}$
+from $\mu$ alone, in every dimension [S4:85–92]. The
+L\u00e9–Saito–Teissier criterion relates $\mu$-constancy to a
+gradient estimate [S4:94–101]. Parusi\'nski (1999) constructed
+trivializing vector fields for linear
+$\mu$-constant families, without a dimension restriction
+[S4:102–107].
+
+For the surface case, Okuma (2004) showed that constancy of Wahl's
+logarithmic invariant produces simultaneous resolutions for
+non-log-canonical Gorenstein surface singularities [S4:109–116].
+Aldasoro Rosales (2025) and Peters (2026) studied semistable
+models and symplectic equivalence of Milnor fibers under the
+$\mu$-constant hypothesis [S4:118–130].
+
+## Consequences
+
+**The surface $\mu$-constant problem is resolved.** Every
+holomorphic one-parameter family of isolated hypersurface
+singularities in $\mathbb C^3$ with constant Milnor number is
+topologically right-trivial [S4:32–45]. The parameter dependence
+may be arbitrary and holomorphic.
+
+**Joint continuity of the trivialization.** Both the homeomorphism
+and its inverse are jointly continuous on neighborhoods of the
+origin section over the original disk — a stronger conclusion than
+constancy of individual topological types [S4:32–45].
+
+**Zero sets and nearby levels are simultaneously identified.** The
+ambient maps identify the zero sets and the nonzero levels,
+keeping the value of the function fixed throughout the parameter
+disk [S4:47–50].
+
+## Section skeleton
+
+**Main file** [S3:33–37], 15 sections under `build/sections/` plus 2
+appendix sections:
+
+1. Introduction [S4]
+2. Local families
+3. The resolution invariant [S5]
+4. Reduction to polynomial families [S6]
+5. The high-degree compactification [S7]
+6. The semistable log minimal model [S8]
+7. The full boundary
+8. Nearby estimates
+9. Surface estimates [S9]
+10. The local square
+11. Numerical assembly
+12. Simultaneous resolution [S10]
+13. Lifting to ambient levels [S11]
+14. Low cases
+15. Local numerical (appendix)
+16. Continuous gradient (appendix) [S12]
+
+## Coverage
+
+T0: no Lean, no scope note, no comparator challenge, no reasoning
+trace. Nothing about this family is machine-checked. The ledger
+reads `paps_form 0`, `mainres 0`, `scope_note 0`, `chal 0`, `trace`
+empty. The manuscript ships 17 `.tex` files under `build/`.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 064 at line 1613 (inline HTML normalized to markdown). |
+| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 202. |
+| S3 | [`preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/build/main.tex`](../../preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/build/main.tex) | 57 | Main file: title, abstract, and section inputs. |
+| S4 | [`preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/build/sections/01-introduction.tex`](../../preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/build/sections/01-introduction.tex) | 260 | The theorem, the problem history, the resolution invariant, and the proof strategy. |
+| S5 | [`preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/build/sections/03-invariant.tex`](../../preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/build/sections/03-invariant.tex) | 106 | Wahl's logarithmic surface invariant and its resolution independence. |
+| S6 | [`preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/build/sections/04-reduction.tex`](../../preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/build/sections/04-reduction.tex) | 152 | Reduction to polynomial families over algebraic curves. |
+| S7 | [`preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/build/sections/05-compactification.tex`](../../preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/build/sections/05-compactification.tex) | 103 | The high-degree projective compactification. |
+| S8 | [`preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/build/sections/06-model.tex`](../../preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/build/sections/06-model.tex) | 133 | The semistable log minimal model. |
+| S9 | [`preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/build/sections/09-surface-estimates.tex`](../../preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/build/sections/09-surface-estimates.tex) | 119 | Greuel–Steenbrink and Langer sign arguments for the extra surfaces. |
+| S10 | [`preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/build/sections/12-resolution.tex`](../../preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/build/sections/12-resolution.tex) | 121 | Simultaneous resolution and the transport construction. |
+| S11 | [`preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/build/sections/13-lifting.tex`](../../preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/build/sections/13-lifting.tex) | 226 | Extension from the zero family to ambient function levels. |
+| S12 | [`preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/build/sections/16-continuous-gradient.tex`](../../preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/build/sections/16-continuous-gradient.tex) | 238 | Appendix: the gradient estimate and trajectory control. |

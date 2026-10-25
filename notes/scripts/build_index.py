@@ -313,7 +313,7 @@ def main():
     inputs_dirs = {p.parent.name for p in PRE.glob("*/INPUTS.md")}
     covmd_dirs = {p.parent.parent.name for p in PRE.glob("*/verification/COVERAGE.md")}
     summary_by_fam: dict[str, pathlib.Path] = {}
-    for sp in sorted((ROOT / "notes" / "summaries").glob("*/*.md")):
+    for sp in sorted((ROOT / "notes" / "summaries").glob("*.md")):
         if re.match(r"^\d{3}-", sp.name):
             summary_by_fam.setdefault(sp.name[:3], sp)
 

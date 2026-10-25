@@ -195,7 +195,7 @@ def ledger():
     ver_dirs = {p.parent.name for p in PREPRINTS.glob("*/verification")}
     inputs_dirs = {p.parent.name for p in PREPRINTS.glob("*/INPUTS.md")}
     covmd_dirs = {p.parent.parent.name for p in PREPRINTS.glob("*/verification/COVERAGE.md")}
-    summary_fams = {p.name[:3] for p in SUMMARIES_DIR.glob("*/*.md")
+    summary_fams = {p.name[:3] for p in SUMMARIES_DIR.glob("*.md")
                     if re.match(r"^\d{3}-", p.name)}
     rows = {}
     for fam in sorted(fams):

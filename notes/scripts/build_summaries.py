@@ -7,7 +7,7 @@ Reads:
 - preprints/<dir>/build/<main>.tex preamble (for macro expansion)
 - overview.tex (family discipline, title)
 
-Writes: notes/summaries/<discipline>/<NNN>-<slug>.md (60 pages)
+Writes: notes/summaries/<NNN>-<slug>.md (flat, no discipline subdirectory)
 
 The renderer is pure over its digest key: it reads the working-tree templates and data
 files, resolves each quote through the normalizer, and stages the rendered pages. A second
@@ -578,7 +578,7 @@ def render_page(fam: str, info: dict, data_text: str) -> tuple[str, str]:
     src_rows: list[str] = []
     for sid, path, role in sources:
         lc = lines_of(path)
-        href = f"../../../{path}"
+        href = f"../../{path}"
         if "(" in path or ")" in path:
             href = f"<{href}>"
         src_rows.append(f"| {sid} | [`{path}`]({href}) | {lc} | {role} |")
@@ -644,7 +644,7 @@ def main() -> int:
                 print(f"  {fam}: {sid} MISSING SOURCE {path}")
                 problems += 1
         page_text, slug = render_page(fam, info, data_text)
-        out = SUMM_DIR / disc_slug(info["discipline"]) / f"{fam}-{slug}.md"
+        out = SUMM_DIR / f"{fam}-{slug}.md"
         if not check_only:
             st.stage(out, page_text)
         written.add(out)

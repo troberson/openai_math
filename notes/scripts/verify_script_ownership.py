@@ -225,7 +225,7 @@ def writer_targets(src: str) -> list[str]:
         """Resolve `var = BASE / ...` to BASE's notes-const.
 
         The receiver may build the path by a single join (`out = TPL_DIR / (name)`) or by a run of
-        joins (`out = SUMM_DIR / disc_slug(...) / f"{fam}-{slug}.md"`). The base is the first
+        joins (`out = SUMM_DIR / f"{fam}-{slug}.md"`). The base is the first
         component; a further `/` in the tail means the writer stages a TREE under the base, so the
         target is the directory form. Requiring a `(` immediately after the first `/` (the old rule)
         reads the two-join case as a write of nothing — the gap the summary renderer exposed.

@@ -644,7 +644,7 @@ def main():
     summary_rows = [r for r in rows if r["summary"].strip() == "1"]
     row(
         "family->notes summary page",
-        "notes/summaries/<discipline>/<NNN>-*.md",
+        "notes/summaries/<NNN>-*.md",
         "file exists",
         len(summary_rows),
         f"of {n_families} families; {sum(int(r['paps']) for r in summary_rows)} manuscripts behind them",

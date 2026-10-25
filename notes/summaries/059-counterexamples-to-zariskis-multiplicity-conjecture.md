@@ -1,0 +1,229 @@
+[Notes](../README.md) / [Summaries](README.md) / [Algebraic and complex geometry](../index/disciplines/algebraic-and-complex-geometry.md) / [Family 059](../index/algebraic-and-complex-geometry/059-counterexamples-to-zariskis-multiplicity-conjecture.md)
+
+# 059 — Counterexamples to Zariski's multiplicity conjecture
+
+[Index page](../index/algebraic-and-complex-geometry/059-counterexamples-to-zariskis-multiplicity-conjecture.md)
+
+## Original CONTENTS.md summary
+
+The release's blurb "**059. Counterexamples to Zariski's multiplicity conjecture.** Disproves Zariski's multiplicity conjecture by constructing reduced holomorphic hypersurface germs that are ambiently homeomorphic but have different multiplicities. The examples include hypersurfaces in ℂ⁴ with isolated critical points and multiplicities four and five.
+2.inline	S2	9	15	We give a negative answer to the embedded Zariski multiplicity conjecture.
+We construct two reduced hypersurface germs that are ambiently homeomorphic
+but have multiplicities two and three. Both have isolated singularities and
+lie in a common complex affine space of dimension divisible by eight. Their
+defining function germs are also topologically right equivalent, and the same
+examples answer Arnold's corank problem negatively for ambient topological equivalence.
+3.inline	S3	4	14	For a nonzero convergent power series
+$f\in\C\{z_1,\ldots,z_N\}$ with $f(0)=0$, the order $\ord_0f$ is
+the least total degree of a monomial with nonzero coefficient. When $f$
+is reduced, this integer is the multiplicity of the hypersurface germ
+$V(f)=\{f=0\}$. Two such germs are _ambiently homeomorphic_ if a
+homeomorphism between neighborhoods of the origin in $\C^N$ fixes the
+origin and carries one hypersurface to the other. Zariski's multiplicity
+question asks whether this embedded topological equivalence determines
+multiplicity  . It asks, in particular, whether topology
+can distinguish a hypersurface with a nonzero quadratic term from one
+whose first nonzero terms are cubic.
+4.inline	S3	39	51	\begintheorem 
+There is a finite integer $N>3$, divisible by eight, and there are reduced
+polynomials $f_1,f_2\in\R[z_1,\ldots,z_N]$, weighted homogeneous for
+positive rational weights, such that:
+\beginenumerate[label=\textup{(\roman*)}]
+\item each $f_j$ has an isolated critical point at the origin;
+\item $\ord_0f_1=2$ and $\ord_0f_2=3$;
+\item there is a homeomorphism germ of ambient pairs
+\[
+ (\C^N,V(f_1),0)\ \cong\ (\C^N,V(f_2),0).
+\]
+\endenumerate
+\endtheorem
+5.inline	S3	152	167	The main difficulty is to preserve different ordinary orders while
+making the _integral Seifert forms_ coincide. We compare the
+spectra, finite multisets of rational exponents whose exponentials give
+the monodromy eigenvalues. Equality of spectra alone does not accomplish
+the desired integral identification. For the isolated weighted homogeneous
+singularities considered here, in a fixed ambient dimension, the spectrum
+determines the real Seifert form, through the work of Steenbrink and
+Némethi
+ .
+For sums of chain singularities, the integral-monodromy results of
+Hertling and Mase, building on Orlik and Randell, separately determine
+the integral module with its monodromy operator
+ .
+The two resulting identifications need not be compatible. The arithmetic
+part of the proof produces a single integral map preserving the whole
+Seifert form.
+6.inline	S8	9	13	We give a negative answer to Zariski's multiplicity question in four
+complex variables. We construct two reduced convergent holomorphic
+function germs with isolated critical points and multiplicities four and
+five whose zero-set germs are ambiently homeomorphic.
+7.inline	S9	31	45	\begintheorem 
+There are reduced convergent holomorphic function germs
+\(f_4,f_5\colon(\mathbb C^4,0)\to(\mathbb C,0)\), each with an isolated
+critical point at the origin, such that
+\[
+    \operatornameord_0f_4=4,\qquad
+    \operatornameord_0f_5=5,
+\]
+and a homeomorphism germ of ambient pairs
+\[
+    (\mathbb C^4,V(f_4),0)
+       \;\cong\;
+    (\mathbb C^4,V(f_5),0).
+\]
+\endtheorem
+8.inline	S9	47	54	The Milnor open book has a compact page whose middle-dimensional
+cycles carry an integral Seifert form: it records the linking of a
+cycle on a reference page with a cycle transported to a positive
+neighboring page. For the open books on \(S^7\) used here, a
+classification theorem turns a congruence of these integral forms
+into an equivalence of the embedded links. The proof is therefore
+organized around obtaining that integral congruence while retaining
+the different orders of the equations. [S1:1540]"
+
+Two manuscripts carry this family. The first,
+*Ambiently homeomorphic isolated hypersurfaces of multiplicities
+two and three* [S2], has the abstract [S2:9–15]: "2"
+
+The second, *Ambiently homeomorphic isolated hypersurface germs in
+$\C^4$ with multiplicities four and five* [S8], has the abstract
+[S8:9–13]: "6"
+
+## Undergraduate summary
+
+Zariski's multiplicity question asks whether the embedded topological
+germ of a hypersurface determines its multiplicity, the least total
+degree of a nonzero term in its defining equation [S3:4–14]:
+"3"
+
+The first theorem [S3:39–51]:
+
+> 4
+
+A single finite ambient dimension suffices. The dimension is
+determined by exact integer arithmetic; it is not intended to be
+minimal. The same examples answer Arnold's corank problem
+negatively and the right-topological multiplicity conjecture
+negatively [S3:53–82].
+
+The second theorem settles the question in four complex variables
+[S9:31–45]:
+
+> 7
+
+## Graduate summary
+
+**The Seifert form strategy.** The main difficulty is to preserve
+different ordinary orders while making the integral Seifert forms
+coincide [S3:152–167]:
+
+> 5
+
+The spectrum determines the real Seifert form for weighted
+homogeneous singularities via Steenbrink and Némethi. The
+integral-monodromy results of Hertling and Mase, building on Orlik
+and Randell, determine the integral module with its monodromy
+operator for sums of chain singularities. The arithmetic part of
+the proof produces a single integral map preserving the whole
+Seifert form.
+
+**The C4 construction.** For the open books on $S^7$, a
+classification theorem turns a congruence of integral Seifert forms
+into an equivalence of embedded links [S9:47–54]:
+
+> 8
+
+The proof is organized around obtaining that integral congruence
+while retaining the different orders of the equations. The
+construction uses plane curve inputs [S10], a tube construction
+[S11], and a lattice filling calculation [S12].
+
+**Positive cases and the family distinction.** The A'Campo–Lê
+theorem shows that a reduced hypersurface germ ambiently
+homeomorphic to a smooth one is itself smooth, so multiplicity one
+cannot occur in an unequal-multiplicity pair [S3:19–24]. Within a
+$\mu$-constant family, equimultiplicity holds by the work of
+Greuel–O'Shea and Fernández de Bobadilla–Pełka [S3:106–130].
+The two different multiplicities in the theorems therefore
+preclude a connecting $\mu$-constant family.
+
+## History of the conjecture
+
+Zariski posed the question in 1971, following his work on the
+topology and equisingularity of plane curves, where the embedded
+topology determines the characteristic data of the branches and
+hence the multiplicity [S3:16–24, S9:13–22]. The A'Campo–Lê theorem
+handles the smooth case. Yau established multiplicity invariance
+for pairs of isolated quasihomogeneous surface singularities in
+$\C^3$. Fernandes, Jelonek, and Sampaio proved that multiplicity
+two is preserved by ambient bi-Lipschitz equivalence [S3:132–148].
+
+For the C4 case, Koike and Parusiński proposed high-power
+suspension of plane curves with isometric Seifert forms as a route
+to topologically equivalent four-variable germs [S9:90–97]. The
+smooth sum and tensor calculation belongs to the product theory of
+Sakamoto and Kauffman–Neumann.
+
+## Consequences
+
+**The embedded Zariski multiplicity conjecture is false.** There
+exist reduced hypersurface germs that are ambiently homeomorphic
+but have different multiplicities [S3:39–51, S9:31–45].
+
+**The right-topological version is also false.** The defining
+function germs are topologically right equivalent and have
+unequal multiplicities [S3:58–68].
+
+**Arnold's corank problem has a negative answer for ambient
+topological equivalence** [S3:70–82].
+
+**The C4 case is settled.** In four complex variables, multiplicities
+four and five coexist on ambiently homeomorphic germs [S9:31–45].
+
+## Section skeleton
+
+**Manuscript 1** [S2], 6 sections under `build/sections/` plus appendix:
+
+1. The multiplicity problem [S3]
+2. Background [S4]
+3. Seeds [S5]
+4. Local [S6]
+5. Global [S7]
+6. Conclusion [S2]
+7. Appendix: certificate [S2]
+
+**Manuscript 2** [S8], 9 sections under `build/sections/`:
+
+1. Introduction [S9]
+2. Plane [S10]
+3. Ambient [S8]
+4. Tube [S11]
+5. Boundary [S8]
+6. Collapse [S8]
+7. Lattice [S12]
+8. Fillings [S8]
+9. Arithmetic [S8]
+
+## Coverage
+
+T0: no Lean, no scope note, no comparator challenge, no reasoning trace.
+Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
+`mainres 0`, `scope_note 0`, `chal 0`, `trace` empty. The two manuscripts ship
+7 and 9 `.tex` files respectively.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 059 at line 1540. |
+| S2 | [`preprints/Ambiently-homeomorphic-isolated-hypersurfaces-of-multiplicities-two-and-three-September-24-2026/build/paper.tex`](../../preprints/Ambiently-homeomorphic-isolated-hypersurfaces-of-multiplicities-two-and-three-September-24-2026/build/paper.tex) | 27 | Manuscript 1 main file: abstract and section inputs. |
+| S3 | [`preprints/Ambiently-homeomorphic-isolated-hypersurfaces-of-multiplicities-two-and-three-September-24-2026/build/sections/introduction.tex`](../../preprints/Ambiently-homeomorphic-isolated-hypersurfaces-of-multiplicities-two-and-three-September-24-2026/build/sections/introduction.tex) | 246 | The multiplicity problem, the theorem, prior work, and the proof strategy. |
+| S4 | [`preprints/Ambiently-homeomorphic-isolated-hypersurfaces-of-multiplicities-two-and-three-September-24-2026/build/sections/background.tex`](../../preprints/Ambiently-homeomorphic-isolated-hypersurfaces-of-multiplicities-two-and-three-September-24-2026/build/sections/background.tex) | 226 | Milnor fibration, Seifert form, and weighted homogeneous background. |
+| S5 | [`preprints/Ambiently-homeomorphic-isolated-hypersurfaces-of-multiplicities-two-and-three-September-24-2026/build/sections/seeds.tex`](../../preprints/Ambiently-homeomorphic-isolated-hypersurfaces-of-multiplicities-two-and-three-September-24-2026/build/sections/seeds.tex) | 307 | The seed construction from finite relations. |
+| S6 | [`preprints/Ambiently-homeomorphic-isolated-hypersurfaces-of-multiplicities-two-and-three-September-24-2026/build/sections/local.tex`](../../preprints/Ambiently-homeomorphic-isolated-hypersurfaces-of-multiplicities-two-and-three-September-24-2026/build/sections/local.tex) | 438 | The local Seifert form identification. |
+| S7 | [`preprints/Ambiently-homeomorphic-isolated-hypersurfaces-of-multiplicities-two-and-three-September-24-2026/build/sections/global.tex`](../../preprints/Ambiently-homeomorphic-isolated-hypersurfaces-of-multiplicities-two-and-three-September-24-2026/build/sections/global.tex) | 406 | The global homeomorphism construction. |
+| S8 | [`preprints/Ambiently-homeomorphic-isolated-hypersurface-germs-in-C4-with-multiplicities-four-and-five-September-27-2026/build/paper.tex`](../../preprints/Ambiently-homeomorphic-isolated-hypersurface-germs-in-C4-with-multiplicities-four-and-five-September-27-2026/build/paper.tex) | 25 | Manuscript 2 main file: abstract and section inputs. |
+| S9 | [`preprints/Ambiently-homeomorphic-isolated-hypersurface-germs-in-C4-with-multiplicities-four-and-five-September-27-2026/build/sections/01-introduction.tex`](../../preprints/Ambiently-homeomorphic-isolated-hypersurface-germs-in-C4-with-multiplicities-four-and-five-September-27-2026/build/sections/01-introduction.tex) | 170 | The theorem, context, and proof strategy for the C4 case. |
+| S10 | [`preprints/Ambiently-homeomorphic-isolated-hypersurface-germs-in-C4-with-multiplicities-four-and-five-September-27-2026/build/sections/02-plane.tex`](../../preprints/Ambiently-homeomorphic-isolated-hypersurface-germs-in-C4-with-multiplicities-four-and-five-September-27-2026/build/sections/02-plane.tex) | 284 | Plane curve inputs. |
+| S11 | [`preprints/Ambiently-homeomorphic-isolated-hypersurface-germs-in-C4-with-multiplicities-four-and-five-September-27-2026/build/sections/04-tube.tex`](../../preprints/Ambiently-homeomorphic-isolated-hypersurface-germs-in-C4-with-multiplicities-four-and-five-September-27-2026/build/sections/04-tube.tex) | 100 | The tube construction. |
+| S12 | [`preprints/Ambiently-homeomorphic-isolated-hypersurface-germs-in-C4-with-multiplicities-four-and-five-September-27-2026/build/sections/07-lattice.tex`](../../preprints/Ambiently-homeomorphic-isolated-hypersurface-germs-in-C4-with-multiplicities-four-and-five-September-27-2026/build/sections/07-lattice.tex) | 348 | The lattice and filling calculation. |
