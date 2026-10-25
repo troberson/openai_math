@@ -43,13 +43,13 @@ Read together: the representation lives in the completed Hecke algebra (manuscri
 [S5:33–49]
 
 > \begin{theorem}\label{thm:main}
-> Let $E/\Q_2$ be finite, with ring of integers $\OO_E$, and let
-> $r:G_{\Q}\longrightarrow\GL_2(E)$
+> Let $E/\mathbb Q_2$ be finite, with ring of integers $\mathcal O_E$, and let
+> $r:G_{\mathbb Q}\longrightarrow\GL_2(E)$
 > be continuous and absolutely irreducible. Suppose that $r$ is
 > unramified outside finitely many finite primes and is odd:
 > $\det r(c)=-1$ for complex conjugation $c$.
 > Then there exist an odd positive integer $N$, divisible by every odd
-> prime where $r$ ramifies, and a continuous $\Z_2$-algebra homomorphism
+> prime where $r$ ramifies, and a continuous $\mathbb Z_2$-algebra homomorphism
 > \[
 >  \lambda:\mathbb T_2(N)\longrightarrow\OO_E
 > \]

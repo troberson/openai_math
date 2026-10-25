@@ -7,7 +7,7 @@
 ## Original CONTENTS.md summary
 
 The release's blurb [S1:4657] and the catalog abstract [S2:489] state
-the family's claim: saturation factor one for $\operatorname{Spin}(2n)$,
+the family's claim: saturation factor one for $\mathrm{Spin}(2n)$,
 $n\ge2$ — for three dominant integral weights whose sum lies in the root
 lattice, an invariant at any common positive integral dilation already
 gives an invariant at the original weights, resolving the type-$D$ part
@@ -80,8 +80,8 @@ conclusions: Kapovich–Millson give factor four in type $D$, Belkale–Kumar
 give factor two for symplectic and odd orthogonal groups, Sam gives
 factor two uniformly for classical groups, and Hong–Shen obtain factor
 two for odd spin groups under the root-lattice congruence [S4:49–72].
-Kapovich–Kumar–Millson proved saturation for $\operatorname{Spin}(8)$,
-and Kiers for $\operatorname{Spin}(10)$ and $\operatorname{Spin}(12)$;
+Kapovich–Kumar–Millson proved saturation for $\mathrm{Spin}(8)$,
+and Kiers for $\mathrm{Spin}(10)$ and $\mathrm{Spin}(12)$;
 the present result extends these to all $n\ge2$ [S4:49–72].
 
 ## Consequences

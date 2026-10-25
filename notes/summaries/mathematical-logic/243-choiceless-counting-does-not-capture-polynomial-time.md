@@ -30,7 +30,7 @@ The formalism's defining constraint is that it cannot pick an order.
 [S6:19–20] states it: "Its operations commute with input automorphisms and do
 not provide an arbitrary choice of an ordering." The manuscript adds that the
 counting operation is included and the set rank is unbounded: [S6:23–24] says
-"In particular, $\CPT$ here always includes counting and has no imposed bound
+"In particular, $\mathrm{CPT}$ here always includes counting and has no imposed bound
 on the rank of its sets."
 
 The first manuscript's theorem names the separating query. [S6:81–86] states

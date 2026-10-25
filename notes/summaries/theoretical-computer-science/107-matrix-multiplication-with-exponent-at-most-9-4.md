@@ -33,12 +33,12 @@ characteristic zero, and 2.371054886006746 over every fixed field.
 
 The **exponent of matrix multiplication** ω is the infimum of the real
 numbers τ such that, for every ε>0, two $n\times n$ matrices can be
-multiplied in $O_\eps(n^{\tau+\eps})$ scalar arithmetic operations —
-"the algorithm and its constants may depend on $\eps$" [S3:42–43]. The
+multiplied in $O_\varepsilon(n^{\tau+\varepsilon})$ scalar arithmetic operations —
+"the algorithm and its constants may depend on $\varepsilon$" [S3:42–43]. The
 classical algorithm gives ω=3; Strassen's seven-product recursion first
 beat 3 [S3:51–53]. The family's headline: the exponent over ℂ is at most
 **9/4**, so every ε>0 has a complex matrix-multiplication algorithm with
-$O_\eps(n^{9/4+\eps})$ arithmetic operations [S3:45–49].
+$O_\varepsilon(n^{9/4+\varepsilon})$ arithmetic operations [S3:45–49].
 
 Two derived exponents ride along. The **dual exponent** α is the supremum of
 rectangular aspect ratios attainable with exponent 2 [S11:10]; the manuscript
@@ -56,8 +56,8 @@ estimates" [S7:65–69].
 ## Graduate summary
 
 **Manuscript 1** (root [S3], `thm:main` at [S3:45–49]): over ℂ,
-"For every $\eps>0$, two $n\times n$ complex matrices can be multiplied using
-$O_\eps(n^{9/4+\eps})$ arithmetic operations. In particular,
+"For every $\varepsilon>0$, two $n\times n$ complex matrices can be multiplied using
+$O_\varepsilon(n^{9/4+\varepsilon})$ arithmetic operations. In particular,
 $\omega\leq9/4$" [S3:46–49]. The paper is a single LaTeX file [S3] with six
 sections: tensors and their characters, separating a shared tensor leg, two
 polynomial-multiplication inequalities, discrete growth and the arithmetic
@@ -77,7 +77,7 @@ asymptotic sum inequality and elementary completion bound in the algebra
 section [S4:74]) drives the numerical bounds.
 
 **Manuscript 3** (root [S6], `thm:main` at [S7:57–63]): over every fixed
-field $\F$, $\omega_\F<2.371054886006746<2.371054887$ [S7:58–62], with
+field $\mathbb F$, $\omega_\mathbb F<2.371054886006746<2.371054887$ [S7:58–62], with
 "exact arithmetic algorithms, including in positive characteristic" and
 finite choices independent of the input matrices [S7:65–66]. The staggered
 joint-extraction theorem (`thm:joint-step` [S6:49]) supplies the
@@ -117,7 +117,7 @@ formalizes the four named bounds (see the comparison below).
 ## Consequences
 
 - **The headline square bound.** ω(ℂ) ≤ 9/4, i.e.
-  $O_\eps(n^{9/4+\eps})$ arithmetic operations [S3:46–49].
+  $O_\varepsilon(n^{9/4+\varepsilon})$ arithmetic operations [S3:46–49].
 - **The record-line bounds.** ω < 2.258 in characteristic zero,
   ω(1, 0.709, 1) < 2.092, α > 0.465, and ω(F) < 2.371054886006746 over every
   fixed field including positive characteristic [S5:73–77, S7:58–62].

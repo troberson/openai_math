@@ -45,7 +45,7 @@ A point is regular when a neighborhood of it contains a smooth embedded minimal 
 The second manuscript proves the measure-zero statement [S11:26–33]:
 
 > \begin{theorem}\label{thm:main}
-> Every stationary integral $m$-varifold in an open subset of $\R^{m+n}$ satisfies
+> Every stationary integral $m$-varifold in an open subset of $\mathbb R^{m+n}$ satisfies
 > \[
 >  \HH^m(\operatorname{Sing}V)=0.
 > \]
@@ -61,7 +61,7 @@ The main theorem is the dimension bound [S6:32–38]:
 
 > \begin{theorem}\label{thm:main}
 > For every stationary integral $m$-varifold $V$ in an open set
-> $U\subset\R^{m+n}$, where $m,n\ge1$,
+> $U\subset\mathbb R^{m+n}$, where $m,n\ge1$,
 > \[
 >  \dim_{\Hh}\Sing V\le m-1.
 > \]
@@ -78,7 +78,7 @@ The second manuscript also settles the spherical case, where the classical theor
 > sphere $S^{m+n}$, stationary for variations tangent to the sphere. A support
 > point is regular if on a spherical neighborhood $V=q|\Sigma|$ for an integer
 > $q\geq1$ and a smooth embedded minimal $m$-submanifold $\Sigma$ of the sphere.
-> If $\operatorname{Sing}_S V$ denotes the remaining support points, then
+> If $\mathrm{Sing}_S V$ denotes the remaining support points, then
 > \[
 >  \HH^m_{g_{\mathrm{round}}}(\operatorname{Sing}_S V)=0.
 > \]

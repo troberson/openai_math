@@ -21,7 +21,7 @@ three-manifold from a knot: remove a tubular neighborhood of the knot
 and glue it back so that the meridian is filled by a slope $r$ on the
 boundary torus. Two fillings are called *purely cosmetic* if they are
 homeomorphic by an orientation-preserving map, even though the slopes
-$ r $ and $ s $ are distinct. The purely cosmetic surgery conjecture
+$r$ and $s$ are distinct. The purely cosmetic surgery conjecture
 predicts that this cannot happen for a nontrivial knot: the slope is
 determined by the resulting closed manifold, up to orientation. In
 other words, the knot's exterior encodes its filling slope in the

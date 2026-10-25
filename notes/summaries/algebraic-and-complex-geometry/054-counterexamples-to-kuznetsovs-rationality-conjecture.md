@@ -19,7 +19,7 @@ the associated-K3 rationality prediction. [S4:51–58]"
 ## Undergraduate summary
 
 A smooth cubic fourfold $X\subset\mathbf P^5$ is rational if its function
-field is a purely transcendental extension of $\C$ of transcendence
+field is a purely transcendental extension of $\mathbb C$ of transcendence
 degree four. The connection between this birational question and K3
 surfaces appears both in the middle cohomology and in the derived
 category . "A smooth cubic fourfold \(X\subset\mathbf P^5_{\mathbb C}\) is rational if its field of rational functions is

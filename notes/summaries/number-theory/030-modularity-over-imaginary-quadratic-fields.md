@@ -16,7 +16,7 @@ parameters at every place. [S4:74–76]"
 
 The theorem [S5:15–38] says: for every imaginary quadratic field $K$
 and every elliptic curve $E/K$, there is an automorphic representation
-$\pi_E$ of $\GL_2(\A_K)$ whose local parameters match the $\ell$-adic
+$\pi_E$ of $\GL_2(\mathbb A_K)$ whose local parameters match the $\ell$-adic
 cohomology of $E$ at every place, and $L(E/K,s)=L(\pi_E,s-1/2)$.
 
 > **theorem**
@@ -51,7 +51,7 @@ case it is given by automorphic induction of a Hecke character.
 
 ## Graduate summary
 
-**The method: a geometric prime switch.** Over $\Q$, modularity was
+**The method: a geometric prime switch.** Over $\mathbb Q$, modularity was
 proved by lifting automorphy from a residual Galois representation,
 using Wiles's $3$--$5$ switch . "Over $\mathbb Q$, Wiles and Taylor–Wiles proved modularity of semistable
 elliptic curves  , and
@@ -113,7 +113,7 @@ representations attached to elliptic curves [S5:48–52]. Cremona and
 Whitley developed substantial computations relating elliptic curves
 and automorphic forms over these fields [S5:53–55].
 
-Over $\Q$, the modularity theorem was proved by Wiles,
+Over $\mathbb Q$, the modularity theorem was proved by Wiles,
 Taylor–Wiles, and Breuil–Conrad–Diamond–Taylor . "Over $\mathbb Q$, Wiles and Taylor–Wiles proved modularity of semistable
 elliptic curves  , and
 Breuil–Conrad–Diamond–Taylor proved modularity of every elliptic

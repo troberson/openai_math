@@ -36,7 +36,7 @@ constant numerical error, does not provide it." [S3:26-27]
 
 This paper proves the conjecture. "We give a positive resolution of the
 quasilinear PCP-for-PPAD conjecture." [S3:48] The main theorem produces
-fixed constants $\eps, \delta$, a fixed polynomial, and two deterministic
+fixed constants $\varepsilon, \delta$, a fixed polynomial, and two deterministic
 algorithms $R$ and $D$ such that an End-of-Line instance of length $N$
 becomes a generalized circuit of encoding length at most
 $A N \lceil \log_2(N+2) \rceil^b$, and any assignment that fails a
@@ -52,12 +52,12 @@ $v \ne 0^n$ with $P(S(v)) \ne v$ or $S(P(v)) \ne v$. [S3:71-87] A
 generalized circuit has one output and at most two inputs per gate, cycles
 allowed, parameters binary-encoded rationals in $[0,1]$, and five arithmetic
 gate types (Constant, Scale, Copy, Add, Subtract) plus Less, Or, And, Not,
-each $\eps$-satisfied by an implication. [S3:89-126] An acceptable
+each $\varepsilon$-satisfied by an implication. [S3:89-126] An acceptable
 assignment is rational, of encoding length at most $p(M)$, and
-$\eps$-satisfies at least $(1-\delta)|T|$ gates; "Failed gates may violate
+$\varepsilon$-satisfies at least $(1-\delta)|T|$ gates; "Failed gates may violate
 their relations arbitrarily, but all their nodes still have one globally
 consistent value in $[0,1]$." [S3:132-134] The Boolean predicates make the
-error parameter nonmonotone: "increasing $\eps$ can activate an antecedent
+error parameter nonmonotone: "increasing $\varepsilon$ can activate an antecedent
 that was previously vacuous." [S3:137-138] The authors use one actual
 tolerance throughout, and their later upper bounds "do not reclassify a
 satisfied Boolean gate at a larger tolerance." [S3:141-142]
@@ -109,7 +109,7 @@ vertex." [S3:256-258]
 directly to an $N$-bit vertex would not give the required size. Instead we
 apply it only to the $L$-bit outer symbols." [S3:262-264] The inner
 construction supplies one injective encoding of $L$ bits into
-$\operatorname{poly}(L)$ bits, with encoding and correction radius chosen
+$\mathrm{poly}(L)$ bits, with encoding and correction radius chosen
 before the number of symbols a local function inspects. "All polynomial
 factors in $L$ remain fixed powers of $\log N$." [S3:278-279] The inner
 graph is one computation path with blank work at its source and output
@@ -214,10 +214,10 @@ Nash search, where a fixed fraction of players may have deviation gain
 larger than a fixed positive error" [S4:147-150]; "An $n$-player two-action
 polymatrix game is specified by an undirected interaction graph and, for
 each edge, a pair of rational $2$-by-$2$ payoff matrices." [S4:155-157] The
-corollary fixes constants $\eps_{\rm w}, \delta_{\rm w}$ and a polynomial
+corollary fixes constants $\varepsilon_{\rm w}, \delta_{\rm w}$ and a polynomial
 $p_{\rm w}$ such that finding a rational product profile of encoding length
 at most $p_{\rm w}(L)$ with at most $\lfloor \delta_{\rm w} n \rfloor$
-players exceeding regret $\eps_{\rm w}$ is PPAD-hard. "No further regret
+players exceeding regret $\varepsilon_{\rm w}$ is PPAD-hard. "No further regret
 bound is imposed on the players counted on the left." [S4:184] The game
 side is normalized: matrices with entries in $[0,1/3]$ and graphs of
 maximum degree at most three, and "The encoding explicitly lists all

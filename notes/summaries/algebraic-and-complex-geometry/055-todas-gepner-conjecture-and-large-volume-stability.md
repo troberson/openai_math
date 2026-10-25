@@ -194,7 +194,7 @@ version allowing a fixed rational transverse twist [S10:191–196].
 **Toda's normalized quintic Gepner conjecture is resolved.** Every
 smooth complex quintic threefold admits a numerical Bridgeland
 stability condition with the prescribed phase shift $2/5$ and
-$Z(\OO_x)=-1$ [S4:52–62].
+$Z(\mathcal O_x)=-1$ [S4:52–62].
 
 **The square-root-Todd charge is realized.** For every smooth projective
 complex threefold with trivial canonical bundle, there is a stability

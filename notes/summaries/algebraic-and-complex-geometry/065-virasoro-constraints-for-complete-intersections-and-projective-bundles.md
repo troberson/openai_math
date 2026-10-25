@@ -37,7 +37,7 @@ The second manuscript proves a structural transfer: the
 constraints pass from a base to the projectivization of any
 algebraic vector bundle of rank at least two 
 
-> Let $B$ be a smooth connected projective variety over $\C$, and
+> Let $B$ be a smooth connected projective variety over $\mathbb C$, and
 let $E$ be an algebraic vector bundle of rank $r\geq2$ on $B$.
 Let $X=\mathbb P_B(E)$ parametrize one-dimensional subspaces of
 the fibers of $E$. Then

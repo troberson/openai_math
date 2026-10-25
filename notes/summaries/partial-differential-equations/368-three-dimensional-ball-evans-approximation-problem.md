@@ -8,7 +8,7 @@
 
 The release's blurb [S1:8904] and the catalog abstract [S2:837] state
 the family's claim: every $W^{1,p}$ homeomorphism between arbitrary
-bounded domains in $\R^3$, for $1\le p<\infty$, is a strong
+bounded domains in $\mathbb R^3$, for $1\le p<\infty$, is a strong
 $W^{1,p}$ limit of smooth diffeomorphisms onto the same target.
 The family ships two manuscripts, one per exponent range. The
 $1\le p\le 2$ abstract "We resolve the three-dimensional Ball–Evans approximation problem for
@@ -88,7 +88,7 @@ Campbell–D'Onofrio–Vitek [S4:71–77].
 ## Consequences
 
 **The full three-dimensional range is resolved.** Every
-$W^{1,p}$ homeomorphism between bounded domains in $\R^3$
+$W^{1,p}$ homeomorphism between bounded domains in $\mathbb R^3$
 for $1\le p<\infty$ is a strong $W^{1,p}$ limit of smooth
 diffeomorphisms onto the same target [S4:29–34], [S6:25–34].
 

@@ -145,7 +145,7 @@ pair.
 
 **The rational-cohomological form is also false.** The same class
 gives $q^H_{g,n}(Y)=0$ in
-$H^{4D_*}(\overline{\mathcal M}_{g,n}(\C);\Q)$ with
+$H^{4D_*}(\overline{\mathcal M}_{g,n}(\mathbb C);\mathbb Q)$ with
 $Y\notin\mathcal P_{g,n}$, so
 $\mathcal P_{g,n}\subsetneq\ker q^H_{g,n}$ [S5:105–118]. Passing
 from Chow vanishing to cohomological vanishing uses no injectivity

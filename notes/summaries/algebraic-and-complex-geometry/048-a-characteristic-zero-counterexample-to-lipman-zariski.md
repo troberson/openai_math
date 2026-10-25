@@ -13,8 +13,8 @@ in characteristic zero. [S5:2–4]"
 
 ## Undergraduate summary
 
-For a finitely generated integral $\CC$-algebra $A$, the derivation
-module $\Der_{\CC}(A)=\Hom_A(\Omega^1_{A/\CC},A)$ is the module of
+For a finitely generated integral $\mathbb C$-algebra $A$, the derivation
+module $\Der_{\mathbb C}(A)=\Hom_A(\Omega^1_{A/\mathbb C},A)$ is the module of
 algebraic vector fields on $\Spec A$. On a smooth variety of dimension
 $d$ it is locally free of rank $d$. The Lipman–Zariski conjecture asks
 for the converse: a complex algebraic variety with locally free tangent
@@ -78,7 +78,7 @@ coefficients are a pair of sections of $L$ with six simple common
 zeros, whose corrections must satisfy global residue constraints.
 
 **The curve and residue data.** $C$ is constructed on
-$\PP^1\times\PP^1$ with fourth-order contact at the marked divisor $Z$
+$\mathbb P^1\times\mathbb P^1$ with fourth-order contact at the marked divisor $Z$
 with an auxiliary elliptic curve $\Gamma$; a two-torsion relation
 controls the section dimensions and supplies six vectors, giving
 genus $21$ and $\deg L=10$ . "\paragraphA curve and normalized residues.
@@ -87,7 +87,7 @@ fourth-order contact at $Z$ with an auxiliary elliptic curve $\Gamma$.
 A two-torsion relation on $\Gamma$ controls the section dimensions on $C$ and supplies
 six vectors in a two-dimensional quadratic space. The resulting curve
 has genus $21$, and $\deg L=10$. [S5:151–156]" A trace pairing for
-a degree-four map $C\to\PP^1$ transports the vectors, and residue
+a degree-four map $C\to\mathbb P^1$ transports the vectors, and residue
 duality fixes a meromorphic pair $P$ whose local expansions enforce the
 determinant condition and cancel the gluing obstructions.
 
@@ -116,7 +116,7 @@ adjunction proves $x$ is singular.
 
 **The algebraic endpoint.** A finite-determinacy argument with a
 relation matrix produces an algebraic local ring with the same
-completion as $\OO_{X,x}$ 
+completion as $\mathcal O_{X,x}$ 
 
 > \paragraphThe affine algebraic endpoint.
 Section   combines approximation with the finite

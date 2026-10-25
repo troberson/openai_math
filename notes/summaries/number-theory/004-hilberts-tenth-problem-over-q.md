@@ -44,7 +44,7 @@ The arithmetic that makes the height bound uniform is a 2-converse statement abo
 
 ## Graduate summary
 
-**The headline theorem.** — no algorithm decides, for a polynomial in $\Z[X_1,\ldots,X_n]$ with $n$ part of the input, whether it has a zero in $\Q^n$. The abstract of the manuscript states the same claim in prose 
+**The headline theorem.** — no algorithm decides, for a polynomial in $\mathbb Z[X_1,\ldots,X_n]$ with $n$ part of the input, whether it has a zero in $\mathbb Q^n$. The abstract of the manuscript states the same claim in prose 
 
 > We give a negative answer to Hilbert's tenth problem over the rational numbers: no algorithm decides whether a polynomial with integer coefficients has a rational zero. The number of variables is part of the input. [S1:109]
 
@@ -62,7 +62,7 @@ The arithmetic that makes the height bound uniform is a 2-converse statement abo
 
 > With the usual effective coding, let \(\mathrmH10(\mathbb Q)\) be the set of integral polynomials having a rational zero, with the number of variables part of the input. Then \(\mathrmH10(\mathbb Q)\) has Turing degree \(0'\), the degree of the halting problem. [S6:9–12]
 
-The proof of that corollary runs in both directions: $\mathrm{H10}(\Z)\le_T\mathrm{H10}(\Q)$ from the reduction, and the converse from enumerability — "Rational solvability is also computably enumerable [S6:49]" — and it ends by normalising the presentation to degree four, "The expanded polynomial has integral coefficients and total degree at most four [S6:95–96]" .
+The proof of that corollary runs in both directions: $\mathrm{H10}(\mathbb Z)\le_T\mathrm{H10}(\mathbb Q)$ from the reduction, and the converse from enumerability — "Rational solvability is also computably enumerable [S6:49]" — and it ends by normalising the presentation to degree four, "The expanded polynomial has integral coefficients and total degree at most four [S6:95–96]" .
 
 **The companion theorem.** The second manuscript's headline is a pointwise 2-converse 
 
@@ -108,7 +108,7 @@ On the elliptic-curve side, the 2-converse has its own history, and the companio
 
 ## Consequences
 
-**The complexity is pinned, not just the undecidability.** The corollary fixes the exact degree — $\mathrm{H10}(\Q)$ has Turing degree $0'$ — and the same corollary recasts the problem in a bounded-degree form, with the caveat attached "No bound is imposed on the number of variables, the number of summands in (ii), or the coefficient heights. [S6:21–22]" The caveats paragraph is the honest boundary of the whole construction , quoted above: no many-one completeness, no single existential definition of ℤ in ℚ.
+**The complexity is pinned, not just the undecidability.** The corollary fixes the exact degree — $\mathrm{H10}(\mathbb Q)$ has Turing degree $0'$ — and the same corollary recasts the problem in a bounded-degree form, with the caveat attached "No bound is imposed on the number of variables, the number of summands in (ii), or the coefficient heights. [S6:21–22]" The caveats paragraph is the honest boundary of the whole construction , quoted above: no many-one completeness, no single existential definition of ℤ in ℚ.
 
 **The chain inside the release.** Family 004 sits downstream of two other families, and the citations are in the manuscript's own bibliography. The undecidability manuscript cites family 006's Goldfeld-form 2-converse as `UnrestrictedTwoConverse` — "Goldfeld's analytic density conjecture and the $2$-converse for elliptic curves [S7:26]" — and family 010's Fontaine–Mazur theorem as `OddRegularFontaineMazurAtTwo` — "Fontaine–Mazur modularity at the prime 2 [S7:34]" — using both in the parity and height steps , . Its own second manuscript cites the same family-006 paper as `OpenAIGoldfeldTwoConverse2026` [S11:349–355], under the same title [S11:351], and says that companion is not an input to its proof . The pair pages are cross-linked the way 001 and 032 are: [006 — Goldfeld's conjecture](006-goldfelds-conjecture.md) is the upstream link, and [002 — the full Birch–Swinnerton-Dyer formula from low Selmer corank](002-full-birch-swinnerton-dyer-formula-in-selmer-coranks-zero-and-one.md) is the BSD-side neighbour of the same Selmer machinery. A chain is only as strong as its weakest link, and every link in this one is unformalized.
 

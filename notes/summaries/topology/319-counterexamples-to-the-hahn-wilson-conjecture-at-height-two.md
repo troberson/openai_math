@@ -10,7 +10,7 @@ The release's blurb [S1:7831] and the catalog abstract [S2:732] state
 the family's claim: the Hahn--Wilson conjecture is refuted at chromatic
 height two. For every sufficiently large prime $p$, there is a
 connective $p$-complete spectrum of exact fp-type two that cannot be
-built from the standard form of $\BP\langle2\rangle_p^\wedge$ by
+built from the standard form of $\mathrm{BP}\langle2\rangle_p^\wedge$ by
 finitely many sums, shifts, cones, and retracts, yet it satisfies both
 localization comparisons. The manuscript's abstract
  "We disprove the Hahn–Wilson conjecture at height two. For every sufficiently
@@ -33,7 +33,7 @@ height it is detected at; "fp-type two" means its cohomology is
 finitely presented over the Steenrod algebra and it is detected at
 height two but not below. The conjecture predicted that the type-two
 spectra are precisely the finite constructions from
-$\BP\langle2\rangle$ [S3:67–102]:
+$\mathrm{BP}\langle2\rangle$ [S3:67–102]:
 
 > **theorem**
 For every sufficiently large prime $p$, there is a connective
@@ -51,7 +51,7 @@ The same spectrum satisfies
 The counterexample shows the prediction is false: the spectrum is of
 the right type and has the right cohomological finiteness, so the
 conjecture's condition is met, and yet it cannot be assembled from
-$\BP\langle2\rangle$ by any finite number of the allowed operations.
+$\mathrm{BP}\langle2\rangle$ by any finite number of the allowed operations.
 What is remarkable is that its chromatic localizations behave as if it
 had been constructed — both the finite and telescopic localizations
 agree with the expected targets — so the obstruction lives not in any
@@ -62,7 +62,7 @@ local piece but in how the local pieces are joined.
 **The statement and its prime range.** The theorem is a counterexample
 to the universally quantified conjecture, valid for every sufficiently
 large prime $p$, and the underlying spectrum is independent of the
-standard quotient generators of the regular $\BP$-module used
+standard quotient generators of the regular $\mathrm{BP}$-module used
 throughout, by a uniqueness result of Angeltveit--Lind with the
 corrected argument and the additional $p$-local input of Lee
 [S3:114–134]. The two localization comparisons
@@ -117,8 +117,8 @@ local pieces is complex enough to escape finite construction
 **The Hahn--Wilson conjecture is false at height two.** For every
 sufficiently large prime $p$, there is a connective $p$-complete
 spectrum $X$ of exact fp-type two with
-$X\notin\Thick(\BP\langle2\rangle_p^\wedge)$ for the standard form of
-$\BP\langle2\rangle_p^\wedge$, refuting the universally quantified
+$X\notin\Thick(\mathrm{BP}\langle2\rangle_p^\wedge)$ for the standard form of
+$\mathrm{BP}\langle2\rangle_p^\wedge$, refuting the universally quantified
 conjecture [S3:114–126].
 
 **The localizations still agree.** The same spectrum satisfies

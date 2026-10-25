@@ -37,7 +37,7 @@ $n\geq1$. If $M$ admits a smooth complete Kähler metric with strictly
 positive holomorphic bisectional curvature, then $M$ is biholomorphic
 to $\mathbb C^n$. [S4:8–13]
 
-The conclusion identifies the entire complex manifold with $\C^n$; it
+The conclusion identifies the entire complex manifold with $\mathbb C^n$; it
 does not assert that the given metric is Euclidean.
 
 ## Graduate summary
@@ -72,7 +72,7 @@ inverse charts to continue coherently, and a plurisubharmonic Liouville
 argument gives a contraction exponent valid on every fixed compact
 set. Polynomial automorphisms with constant Jacobian normalize the
 volume jets; inverse iteration makes the corrected inverse charts
-converge to an injective holomorphic map $M\to\C^n$, and a forward
+converge to an injective holomorphic map $M\to\mathbb C^n$, and a forward
 degree bound rules out a finite maximal radius in the image, proving
 the map is onto [S4:146–224].
 
@@ -107,13 +107,13 @@ under additional hypotheses [S4:27–142].
 
 **Yau's uniformization conjecture is resolved.** Every complete
 connected noncompact Kähler manifold with strictly positive holomorphic
-bisectional curvature is biholomorphic to $\C^n$, in every complex
+bisectional curvature is biholomorphic to $\mathbb C^n$, in every complex
 dimension, under no upper curvature bound, volume-growth condition, or
 topological hypothesis [S4:8–13].
 
 **The manifold is Stein and contractible.** The pointwise positivity
 hypothesis implies both properties as a consequence of the
-biholomorphism to $\C^n$ [S4:15–23].
+biholomorphism to $\mathbb C^n$ [S4:15–23].
 
 **A complete Kähler–Ricci flow with scalar comparison is constructed
 without global curvature control.** The flow exists on all positive

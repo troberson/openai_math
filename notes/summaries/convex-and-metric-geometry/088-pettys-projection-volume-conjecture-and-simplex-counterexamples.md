@@ -20,7 +20,7 @@ The second manuscript's title is "A product counterexample to the simplex maximu
 ## Undergraduate summary
 
 The **projection body** $\Pi K$ of a convex body $K$ records the areas of its
-shadows. [S4:4–6] defines it: "For a convex body $K\subset\R^n$, its
+shadows. [S4:4–6] defines it: "For a convex body $K\subset\mathbb R^n$, its
 projection body $\Pi K$ is the origin-symmetric convex body whose support
 function is" — the display gives the support function as the volume of the
 shadow in each direction.
@@ -34,9 +34,9 @@ by the body's volume to the power $n-1$, so the comparison is scale-free.
 The first manuscript settles the conjecture from dimension four up.
 [S4:34–34] states the result: "We prove the unpolarized conjecture in every
 dimension at least four." The theorem is at [S4:37–37]: "For every integer
-$n\ge4$ and every convex body $K\subset\R^n$," — the display gives the
+$n\ge4$ and every convex body $K\subset\mathbb R^n$," — the display gives the
 inequality, and [S4:42–43] gives the equality case: "Equality holds if and
-only if $K=a+TB_2^n$ for some $a\in\R^n$ and some invertible linear map $T$."
+only if $K=a+TB_2^n$ for some $a\in\mathbb R^n$ and some invertible linear map $T$."
 The abstract says the same: [S3:48–50] gives "We prove that ellipsoids
 uniquely minimize the volume of the projection body among convex bodies of
 fixed volume in every dimension at least four. This proves Petty's

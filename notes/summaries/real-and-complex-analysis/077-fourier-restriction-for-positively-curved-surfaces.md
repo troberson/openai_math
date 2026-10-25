@@ -19,7 +19,7 @@ theorem and the Kakeya maximal theorem — while the Elliptic paper
 proves both of those inputs together with the bounded-data sphere
 estimate. Their abstract "We prove the bounded-data Fourier restriction conjecture for the sphere in
 three dimensions: the Fourier extension operator maps $L^\infty(S^2)$
-boundedly into $L^p(\R^3)$ for every $p>3$. This is the full conjectured
+boundedly into $L^p(\mathbb R^3)$ for every $p>3$. This is the full conjectured
 open range, and the threshold $p=3$ is sharp. [S6:2–5]"
 
 ## Undergraduate summary

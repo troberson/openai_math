@@ -51,7 +51,7 @@ ring of integers in the unramified degree-eight extension of $\mathbb{Q}_5$.
 The degree-three companion constructs a different ring—the local ring
 at a point of a projective hypersurface over the cyclotomic
 $\mathbb{Q}_5(\zeta_5)$—with a nonzero class in $K_3(A)$ that vanishes
-in $K_3(\operatorname{Frac} A)$ 
+in $K_3(\mathrm{Frac} A)$ 
 
 > **Theorem 1.1**
 The ring $A$ is a two-dimensional Noetherian regular local domain
@@ -107,7 +107,7 @@ companion manuscripts close the unrestricted integral case in degrees
 
 **The unrestricted integral Gersten conjecture is false in degrees 3
 and 5.** The two counterexamples show that the injectivity of
-$K_n(A) \to K_n(\operatorname{Frac} A)$ fails for $n = 3$ and $n = 5$
+$K_n(A) \to K_n(\mathrm{Frac} A)$ fails for $n = 3$ and $n = 5$
 at ramified regular local rings of mixed characteristic $(0,5)$.
 The positive results in the unramified and smooth-over-DVR cases
 remain valid; the counterexamples sit precisely outside those

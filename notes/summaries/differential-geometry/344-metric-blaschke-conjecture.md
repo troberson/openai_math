@@ -89,7 +89,7 @@ The analytic comparison begins on one closed geodesic. The Lagrangian planes $L_
 >  \mathcal I=(0,D)\cup(D,T)
 > \]
 > there is a smooth symmetric matrix $A(t)$ such that
-> $L_t=\{(q,A(t)q):q\in\R^d\}$, and $A'(t)>0$.  For $x,y\in\mathcal I$,
+> $L_t=\{(q,A(t)q):q\in\mathbb R^d\}$, and $A'(t)>0$.  For $x,y\in\mathcal I$,
 > \begin{equation}
 >  f(x,y)=
 >  \frac{|\det(A(y)-A(x))|}

@@ -22,7 +22,7 @@ The second manuscript's title is "A strict inverse-first-power bound for univale
 A **univalent map** is an injective holomorphic map. Brennan's conjecture asks
 how large the derivative of a conformal map can get near a boundary.
 [S4:6–8] states the question: "Brennan's conjecture asks whether, for every
-conformal bijection $\varphi:W\to\DD$ from a simply connected plane domain,
+conformal bijection $\varphi:W\to\mathbb D$ from a simply connected plane domain,
 the derivative satisfies" — the display that follows asks that the integral of
 $|\varphi'(z)|^s$ over the domain be finite for $4/3<s<4$.
 
@@ -32,19 +32,19 @@ assumption on $W$." The problem measures how strongly a conformal map can
 compress area near an arbitrary boundary.
 
 The first manuscript's theorem fixes the domain class. [S4:61–63] states the
-hypothesis: "Let $W\subset\CC$ be any simply connected domain whose boundary
+hypothesis: "Let $W\subset\mathbb C$ be any simply connected domain whose boundary
 in the Riemann sphere contains at least two points. Every conformal bijection
-$\varphi:W\to\DD$ satisfies" — the display gives the integral for
+$\varphi:W\to\mathbb D$ satisfies" — the display gives the integral for
 $4/3<s<4$. The abstract gives the same result with the sharp endpoint added:
 [S3:46–50] says "We prove Brennan's conjecture: if a simply connected plane
 domain admits a conformal bijection $\varphi$ onto the unit disk, then
 $|\varphi'|^s$ is area-integrable for every $4/3<s<4$. We also prove the sharp
-inverse-square integral-means exponent $B_{\SSS}(-2)=1$ for the normalized
-schlicht class $\SSS$."
+inverse-square integral-means exponent $B_{\mathcal S}(-2)=1$ for the normalized
+schlicht class $\mathcal S$."
 
 The open interval is sharp, and the Koebe function is the example that shows
 it. [S4:83–83] names the example: "The Koebe function $f(z)=z/(1-z)^2$
-belongs to $\SSS$ and satisfies" — the display gives its inverse-square means
+belongs to $\mathcal S$ and satisfies" — the display gives its inverse-square means
 growing like $(1-r)^{-1}$. [S4:89–89] gives the consequence: "Its inverse
 therefore fails area integrability at both $s=4$ and $s=4/3$." So neither
 endpoint can be included.
@@ -66,7 +66,7 @@ integral means of normalized univalent disk maps with exponent strictly below
 
 The first manuscript's theorem is a package, not a single inequality. The
 block at [S4:52–73] carries the uniform inverse-square radial-mean estimate
-with exponent $-1-\varepsilon$, the spectrum value $B_{\SSS}(-2)=1$, the
+with exponent $-1-\varepsilon$, the spectrum value $B_{\mathcal S}(-2)=1$, the
 domain integrability for $4/3<s<4$, and the disk integrability for $-2<t<2/3$.
 The proof runs through the weighted affine law [S8:1], compact superlevels for
 almost every target [S9:1], critical points and an equivariant pairing
@@ -75,7 +75,7 @@ conclusion [S12:1], over the preliminaries and the dyadic transfer operator at
 [S7:1] and the rank-pairing figure [S6:1].
 
 The manuscript states what the sharp form does not give. [S4:75–80] says:
-"That section also derives $B_{\SSS}(t)=|t|-1$ for every $t\le-2$; the
+"That section also derives $B_{\mathcal S}(t)=|t|-1$ for every $t\le-2$; the
 corresponding uniform radial bounds retain an arbitrary positive loss. The
 radial exponent $1$ is compatible with divergence of the area integral at
 $t=-2$. The other area endpoint also fails for the same classical example."

@@ -70,7 +70,7 @@ countable discrete groups is false. [S8:57–65]
 ## Graduate summary
 
 **The injectivity failure.** The Baum--Connes manuscript embeds the
-torus $\Z^2$ into a finitely generated torsion-free group and tracks
+torus $\mathbb Z^2$ into a finitely generated torsion-free group and tracks
 the torus's rank-zero Bott class through the assembly map. A
 cohomology class that pairs to one with the embedded torus's Dirac
 class detects a class $h$ of infinite order in $K_0(B\G)$; a

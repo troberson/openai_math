@@ -29,7 +29,7 @@ analogue of a representation of the group a category classifies. Tannaka's
 theorem says that, in characteristic zero, such a functor realizes
 $\mathcal C$ as the representations of an affine group scheme. In positive
 characteristic the target must be larger: the higher Verlinde categories
-$\operatorname{Ver}_{p^n}(k)$ form a tower of finite symmetric tensor
+$\mathrm{Ver}_{p^n}(k)$ form a tower of finite symmetric tensor
 categories, each a finite abelian envelope of a quotient of tilting
 $SL_2$-modules [S4:4–33]. The manuscript proves that every finite
 symmetric tensor category lands in some level of this tower 
@@ -79,11 +79,11 @@ no reasoning trace; the LaTeX under `build/` is the only source.
 In characteristic zero, Deligne's theorem makes supervector spaces a
 common target for fiber functors from symmetric tensor categories of
 moderate growth. In positive characteristic, Ostrik proved that symmetric
-fusion categories admit fiber functors to $\operatorname{Ver}_p$.
+fusion categories admit fiber functors to $\mathrm{Ver}_p$.
 Etingof–Ostrik constructed the ordinary Frobenius functor for
 nonsemisimple categories and characterized the finite categories on which
 it is exact by the existence of a fiber functor to
-$\operatorname{Ver}_p$; Coulembier–Etingof–Ostrik extended that
+$\mathrm{Ver}_p$; Coulembier–Etingof–Ostrik extended that
 characterization to categories of moderate growth [S4:71–100]. The
 characteristic-two examples of Benson–Etingof led to the all-prime tower
 of Benson–Etingof–Ostrik, constructed independently through abelian

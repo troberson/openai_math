@@ -80,7 +80,7 @@ configuration-reduction lemma
 space, a polynomial-size vertex set $V_0$, a strictly forward substochastic
 matrix $S$, an accepting-configuration vector $e \in \{0,1\}^{V_0}$, and a
 start $x_0$, such that
-"$\item The coordinate $p_0(x_0)$ is the acceptance probability of [S5:31–32]$"
+"$\item The coordinate$p_0(x_0)$is the acceptance probability of [S5:31–32]$"
 ([S5:31–32]) — the matrix model that the rest of the construction feeds on.
 The hierarchy of [S4:197–250] replaces $S$ by a sequence of
 correction-and-copy steps on enlarged vertex sets $V_l$, with a reward
@@ -151,7 +151,7 @@ $O(\log^2 n)$ seed length in the
 logarithmic-space case [S4:94–96]; his 1994 simultaneous simulation
 achieves polynomial time and $O(\log^2 n)$ space with two-sided error
 [S4:98–101]. **Nisan and Zuckerman** showed a space-$S$ computation
-using $\operatorname{poly}(S)$ random bits can be simulated with
+using $\mathrm{poly}(S)$ random bits can be simulated with
 $O(S)$ random bits and $O(S)$ space [S4:102–104].
 
 The space-containment line: **Saks and Zhou** reduced the deterministic

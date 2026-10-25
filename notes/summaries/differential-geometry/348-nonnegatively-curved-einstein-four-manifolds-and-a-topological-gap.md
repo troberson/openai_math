@@ -77,10 +77,10 @@ The corollary is the three-model statement [S6:79–85]:
 
 > \begin{corollary}\label{cor:nonnegative-classification}
 > Let $(M^4,g)$ be connected, smooth, and closed, with
-> $\operatorname{Ric}=3g$ and nonnegative sectional curvature. Its universal
+> $\mathrm{Ric}=3g$ and nonnegative sectional curvature. Its universal
 > Riemannian cover is one of the round $S^4$ of curvature $1$, the complex
 > projective plane with its Fubini--Study metric normalized by
-> $\operatorname{Ric}=3g$, or $S^2(1/\sqrt3)\times S^2(1/\sqrt3)$.
+> $\mathrm{Ric}=3g$, or $S^2(1/\sqrt3)\times S^2(1/\sqrt3)$.
 > \end{corollary}
 
 The positively-curved manuscript states the classification conjecture for strict positivity, with no orientability assumption [S17:13–19]:
@@ -105,7 +105,7 @@ The L2 gap manuscript does not classify metrics; it classifies smooth manifolds 
 >  <\varepsilon_0,
 > \]
 > then $M$ is diffeomorphic, without a prescribed orientation, to the
-> standard smooth $S^4$, $\CP^2$, or $S^2\times S^2$.
+> standard smooth $S^4$, $\mathbb{CP}^2$, or $S^2\times S^2$.
 > \end{theorem}
 
 The premise it assumes is the zero-plane manuscript's corollary [S12:74–83]:
@@ -116,7 +116,7 @@ The premise it assumes is the zero-plane manuscript's corollary [S12:74–83]:
 >  \Ric_h=3h,\qquad \sec_h\ge0
 > \]
 > has universal Riemannian cover isometric to one of the following:
-> the round $S^4$ of sectional curvature $1$; Fubini--Study $\CP^2$ normalized
+> the round $S^4$ of sectional curvature $1$; Fubini--Study $\mathbb{CP}^2$ normalized
 > by $\Ric=3g$; or
 > $S^2(1/\sqrt3)\times S^2(1/\sqrt3)$ with its product metric.
 > \end{assumption}

@@ -26,8 +26,8 @@ finite-dimensional, then a locally compact group that acts faithfully
 and continuously on it must be a Lie group — a smooth $n$-dimensional
 manifold that is also a group, with smooth multiplication. Locally
 compact groups include familiar Lie groups (compact matrix groups,
-$\R^n$), but also the profinite groups such as the $p$-adic integers
-$\Z_p$, which are uncountable, totally disconnected, and far from
+$\mathbb R^n$), but also the profinite groups such as the $p$-adic integers
+$\mathbb Z_p$, which are uncountable, totally disconnected, and far from
 being manifolds [S4:3–7]. Positive dimension is the only hypothesis:
 the manifold may be noncompact, nonorientable, or nontriangulable, and
 actions may have arbitrary stabilizers 
@@ -46,8 +46,8 @@ acting group is trivial and the conclusion holds as well [S4:16–20].
 **The reduction to $p$-adic exclusion.** The full group theorem follows
 from the classical structure theory of Gleason, Montgomery--Zippin, and
 Yamabe once faithful actions of the additive group of $p$-adic
-integers $\Z_p$ are excluded. The precise statement is that every
-jointly continuous action of $\Z_p$ on a connected Hausdorff
+integers $\mathbb Z_p$ are excluded. The precise statement is that every
+jointly continuous action of $\mathbb Z_p$ on a connected Hausdorff
 second-countable $n$-manifold without boundary has nonzero kernel, so
 the action factors through a finite quotient [S4:22–35].
 
@@ -56,7 +56,7 @@ produces an integral cohomological obstruction. For an odd integer
 $d>n$ it constructs an abelian group $E_d(S^d)$, an orientation class
 $u_d$, and a positive integer $L_d$ such that rationaly the group is
 one-dimensional over the orientation class, with integral elements
-constrained to a lattice of index $L_d$. A faithful $\Z_p$-action
+constrained to a lattice of index $L_d$. A faithful $\mathbb Z_p$-action
 would supply, for every $k\ge1$, $p^k$ integral classes with equal
 rational images summing to $4u_d$; each image is then $(4/p^k)u_d$,
 which lies outside the fixed lattice once $p^k>4L_d$ — the
@@ -66,9 +66,9 @@ contradiction [S4:165–231].
 theorem for periodic transformations is the local input: a
 finite-order homeomorphism fixing a nonempty open set pointwise is the
 identity. The action is localized to a coordinate chart, thickened to
-a product $W=O\times\R^{d-n}$, one-point compactified and passed
-through the orbit space of a small open $\Z_p$-subgroup, so the
-characters of $\Z_p$ — the roots of unity of $p$-power order — decompose
+a product $W=O\times\mathbb R^{d-n}$, one-point compactified and passed
+through the orbit space of a small open $\mathbb Z_p$-subgroup, so the
+characters of $\mathbb Z_p$ — the roots of unity of $p$-power order — decompose
 the sheaf complex into orthogonal character parts whose signature data
 carry the $p^k$ equal rational parts the lattice forbids
 [S4:235–314].
@@ -92,7 +92,7 @@ Lipschitz actions, Maleshich for Hölder actions, and Martin for
 quasiconformal actions. Their dimension-raising obstructions connect
 to the integral cohomological dimension theory of Yang and
 Bredon--Raymond--Williams, and Shelukhin used Floer-theoretic methods
-to exclude nontrivial continuous $\Z_p$-actions on a class of closed
+to exclude nontrivial continuous $\mathbb Z_p$-actions on a class of closed
 symplectic manifolds [S4:59–127].
 
 ## Consequences

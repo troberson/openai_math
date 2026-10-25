@@ -29,7 +29,7 @@ The Eisenbud–Green–Harris conjecture predicts that a regular sequence
 can be replaced by the corresponding pure powers without changing the
 Hilbert function of a containing ideal; the lex-plus-powers conjecture
 is the same prediction strengthened to graded Betti numbers
-[S4:4–38]. Over $\C$, manuscript 2 constructs commuting linear forms
+[S4:4–38]. Over $\mathbb C$, manuscript 2 constructs commuting linear forms
 with division-algebra coefficients that realize a monomial ideal with
 the same Hilbert function [S6:5–31]:
 
@@ -68,7 +68,7 @@ Let $n\ge1$ and $2\le a_1\le\cdots\le a_n$. Suppose that a homogeneous ideal $I\
 \] [S6:65–72]
 
 Manuscript 1 sharpens the conclusion to Betti numbers. Its main
-theorem, for a homogeneous ideal $I\subseteq\C[x_1,\ldots,x_n]$
+theorem, for a homogeneous ideal $I\subseteq\mathbb C[x_1,\ldots,x_n]$
 containing a regular sequence of degrees $2\le a_1\le\cdots\le a_n$,
 produces a single lex-plus-powers ideal $J$ with
 $\beta^S_{p,j}(S/I)\le\beta^S_{p,j}(S/J)$ for every homological and
@@ -105,8 +105,8 @@ exponent box, and an endpoint decomposition on the $z=x_n$ slices then
 compare the Betti numbers against the prescribed lex-plus-powers ideal
 [S4:164–227].
 
-**From $\C$ to characteristic zero.** Both manuscripts state the
-Artinian result over $\C$ first and then remove the two restrictions by
+**From $\mathbb C$ to characteristic zero.** Both manuscripts state the
+Artinian result over $\mathbb C$ first and then remove the two restrictions by
 reduction: Caviglia–Maclagan's Artinian reduction for EGH and
 Caviglia–Kummini's for lex-plus-powers Betti numbers, together with a
 finite coefficient-field descent, give the stated characteristic-zero

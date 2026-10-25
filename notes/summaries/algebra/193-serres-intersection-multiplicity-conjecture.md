@@ -20,9 +20,9 @@ their intersection multiplicity is strictly positive. [S3:41–44]"
 ## Undergraduate summary
 
 For a finite $R$-module over a $d$-dimensional regular local ring
-$(R,\m)$, the intersection multiplicity of two modules $M,N$ with
+$(R,\mathfrak{m})$, the intersection multiplicity of two modules $M,N$ with
 finite-length tensor product is the alternating sum of the Tor lengths,
-$\chi^R(M,N)=\sum_{i=0}^d(-1)^i\length_R\Tor_i^R(M,N)$
+$\chi^R(M,N)=\sum_{i=0}^d(-1)^i\mathrm{length}_R\mathrm{Tor}_i^R(M,N)$
 [S4:4–14]. It measures the local intersection of the two supports,
 accounting for the higher Tor terms, which enter with alternating signs
 — so positivity is not a formal consequence of the degree-zero term.
@@ -54,7 +54,7 @@ the dimension sum is below $d$, and Gabber proved *nonnegativity* in the
 remaining mixed-characteristic case using alterations. Positive
 characteristic or unramified hypotheses are what the diagonal argument
 needs, so ramified mixed characteristic — where the residue
-characteristic $p$ lies in $\m^2$ — is the genuinely open case: the
+characteristic $p$ lies in $\mathfrak{m}^2$ — is the genuinely open case: the
 existing routes give $\ge0$ there, and the theorem must additionally
 rule out zero [S4:39–88]. Skalit's and KC–Soto Levins' partial
 positivity results impose smoothness or a Serre-liftability condition
@@ -104,15 +104,15 @@ the Land–Tamme descent theorem for truncating invariants
 **Symbolic powers in the ramified case.** The Kurano–Roberts
 positivity-to-symbolic-power theorem now applies in ramified mixed
 characteristic: for primes $P,Q$ with
-$\sqrt{P+Q}=\m$ and $\ht P+\ht Q=\dim R$,
-$P\cap Q^{(r)}\subseteq\m^{r+1}$ for $r\ge1$ [S4:181–198].
+$\sqrt{P+Q}=\mathfrak{m}$ and $\ht P+\ht Q=\dim R$,
+$P\cap Q^{(r)}\subseteq\mathfrak{m}^{r+1}$ for $r\ge1$ [S4:181–198].
 
 **A finite strict-transform intersection inequality.** Applying
 Skalit's finite-support blowup argument with the theorem as positivity
 input gives, for prime ideals of complementary dimension with
 $\dim T\le1$ where $T$ is the tensor product of the associated graded
 rings,
-$\chi^A(A/P,A/Q)\ge e_\m(A/P)e_\m(A/Q)$, with equality exactly when
+$\chi^A(A/P,A/Q)\ge e_\mathfrak{m}(A/P)e_\mathfrak{m}(A/Q)$, with equality exactly when
 $\dim T=0$ 
 
 > **corollary**

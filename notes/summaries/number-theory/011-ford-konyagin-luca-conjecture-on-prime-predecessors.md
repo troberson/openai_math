@@ -26,7 +26,7 @@ The third manuscript is not named in the family blurb. Its theorem is a separate
 
 ## Undergraduate summary
 
-Euler's totient function $\varphi(m)$ counts the integers at most $m$ that are coprime to $m$, and asking how often a given value $n$ is hit is a question with a long history. Manuscript A settles its extreme end. Write $g(n)$ for the number of solutions of $\varphi(m)=n$; the theorem says that for every $\eps>0$ there are infinitely many $n$ with $g(n)>n^{1-\eps}$, and no larger exponent of $n$ is possible. The companion statement is about primes $p$ whose predecessor $p-1$ has only small prime factors, and the two are joined by a classical construction that turns many smooth predecessors into many products with the same totient.
+Euler's totient function $\varphi(m)$ counts the integers at most $m$ that are coprime to $m$, and asking how often a given value $n$ is hit is a question with a long history. Manuscript A settles its extreme end. Write $g(n)$ for the number of solutions of $\varphi(m)=n$; the theorem says that for every $\varepsilon>0$ there are infinitely many $n$ with $g(n)>n^{1-\varepsilon}$, and no larger exponent of $n$ is possible. The companion statement is about primes $p$ whose predecessor $p-1$ has only small prime factors, and the two are joined by a classical construction that turns many smooth predecessors into many products with the same totient.
 
 Manuscript B asks a statistical question about the same predecessor. Break $p-1$ into primes, take the logarithms of those primes, and divide by $\log(p-1)$, so the pieces add up to one. The theorem says that as $p$ ranges uniformly over the primes, these normalized pieces behave exactly like the fragments of a stick broken by the Poisson–Dirichlet rule with parameter one. That is the conjecture Ford, Konyagin and Luca posed, and it is the family's headline.
 
@@ -39,7 +39,7 @@ Manuscript C asks which parity the number of prime factors of $p-1$ takes. It pr
 Manuscript A proves two theorems, and the family's totient claim is the first of them [S5:10–16]:
 
 > \begin{theorem}\label{thm:totient}
-> For every real $\eps>0$, there are infinitely many positive integers
+> For every real $\varepsilon>0$, there are infinitely many positive integers
 > $n$ such that
 > \[
 >  g(n)>n^{1-\eps}.
@@ -58,13 +58,13 @@ The theorem it is derived from is the smooth-predecessor count [S5:38–46]:
 > The quantity $o(1)$ may depend on $\delta$.
 > \end{theorem}
 
-The named resolution is stated by the manuscript itself: the conjecture is Pomerance's formulation with $C=1$, attributed to Erdős, and the upper bound makes the exponent sharp — "Thus the power exponent of $n$ in the theorem is optimal [S5:24–25]" . The smooth-predecessor corollary is claimed as a second resolution, "In particular, for every $\eps>0$ there are infinitely many primes $p$ with $P^+(p-1)\le p^\eps$. This resolves the smooth-predecessor conjecture positively as well [S5:48–50]" . The strength of the count is quoted against the fixed-exponent literature: "Our unconditional bound $x^{1-o(1)}$ gives the full power exponent of the count for every fixed positive smoothness exponent. A positive limiting proportion is a stronger conclusion [S5:78–80]" .
+The named resolution is stated by the manuscript itself: the conjecture is Pomerance's formulation with $C=1$, attributed to Erdős, and the upper bound makes the exponent sharp — "Thus the power exponent of $n$ in the theorem is optimal [S5:24–25]" . The smooth-predecessor corollary is claimed as a second resolution, "In particular, for every $\varepsilon>0$ there are infinitely many primes $p$ with $P^+(p-1)\le p^\varepsilon$. This resolves the smooth-predecessor conjecture positively as well [S5:48–50]" . The strength of the count is quoted against the fixed-exponent literature: "Our unconditional bound $x^{1-o(1)}$ gives the full power exponent of the count for every fixed positive smoothness exponent. A positive limiting proportion is a stronger conclusion [S5:78–80]" .
 
 The moves in manuscript A are:
 
 1. Transfer the weighted-sieve problem onto a dilation graph and prove the operator theorems, so that a lower bound for smooth predecessors comes out of a signed correlation estimate.
 2. Prove the marked Type II estimate on the graph side, with the long factor slot occupied by a rough integer.
-3. Extract primes from the resulting correlation, giving "In particular, for every $\eps>0$ there are infinitely many primes $p$ with $P^+(p-1)\le p^\eps$ [S5:48–49]" as a corollary of the dyadic count .
+3. Extract primes from the resulting correlation, giving "In particular, for every $\varepsilon>0$ there are infinitely many primes $p$ with $P^+(p-1)\le p^\varepsilon$ [S5:48–49]" as a corollary of the dyadic count .
 4. Pass from smooth predecessors to totient fibers by the classical product-and-pigeonhole argument: "We finish by deriving   from  . This product-and-pigeonhole passage is the classical connection between smooth shifted primes and large totient fibers; see \cite[Theorem B and its proof]Pomerance1980 [S6:3–6]" .
 5. Close the infiniteness argument: "These lower bounds for $g(n)$ tend to infinity with $X$. By  , the resulting values $n$ cannot belong to a fixed finite set. They are therefore unbounded, which proves the required assertion for infinitely many $n$ [S6:84–87]" .
 
@@ -72,7 +72,7 @@ Manuscript B's headline is the joint limiting law [S11:30–41]:
 
 > \begin{theorem}\label{thm:main}
 > For every fixed $k\ge1$ and every bounded continuous function
-> $F:[0,1]^k\to\R$,
+> $F:[0,1]^k\to\mathbb{R}$,
 > \begin{equation}\label{eq:main-law}
 >  \lim_{x\to\infty}\frac1{\pi(x)-1}
 >      \sum_{\substack{3\le p\le x\\p\text{ prime}}}
@@ -110,7 +110,7 @@ Formalization status. The ledger records 3 manuscripts, 0 formalized, no scope n
 
 The two named conjectures are recorded by the manuscripts that resolve them. For the totient-fiber side, manuscript A gives the attribution and the form: "The final passage from plentiful smooth shifted primes to large totient fibers belongs to the method of Erdős and Pomerance; Pomerance states the relevant transfer explicitly in \cite[Theorem B]Pomerance1980. We give the needed product-and-pigeonhole proof in full [S5:81–85]" , after stating that Pomerance formulates the conjecture as $C=1$ and attributes it to Erdős [S5:18–22]. For the Poisson–Dirichlet side, manuscript B gives the setting the conjecture was posed in: "Ford, Konyagin and Luca formulated their conjecture in studying prime chains and Pratt trees. Theorem   supplies the factorization law at the root of their probabilistic model; the recursive independence assumptions used for later generations are additional hypotheses. Smooth predecessors also underlie the Carmichael-number construction of Alford, Granville and Pomerance  , together with a separate progression-distribution input [S11:121–128]" . Manuscript A records the same Carmichael connection from its own side: "Smooth predecessors also enter the construction of Carmichael numbers by Alford, Granville and Pomerance  , where their supply is combined with a separate distribution theorem for primes in arithmetic progressions. This is one reason that estimates for shifted smoothness have applications beyond the factorization problem itself. The contribution here includes the general graph and kernel theorems that produce the arithmetic lower bound, as well as the optimal exponent for totient fibers [S5:87–94]" .
 
-The fixed-exponent history is the measure of what was known before. Manuscript A's introduction records Baker and Harman's exponent $0.2961$ for shifted primes with the corresponding totient multiplicity exponent $0.7039$, Friedlander's threshold $1/(2\sqrt e)+\eps$, and the Elliott–Halberstam prediction with distribution level one half obtained unconditionally [S5:55–80]. Manuscript B records the Dickman-function form of the fixed-$u$ conjecture and the Granville threshold, together with the closest general distribution theorem, Bharadwaj and Rodgers' [S11:84–97]. The parity question is older than any of these: manuscript C calls it "a classical obstruction in sieve theory [S16:67]" and points to the Friedlander–Iwaniec asymptotic sieve as the illustration of what bilinear information buys .
+The fixed-exponent history is the measure of what was known before. Manuscript A's introduction records Baker and Harman's exponent $0.2961$ for shifted primes with the corresponding totient multiplicity exponent $0.7039$, Friedlander's threshold $1/(2\sqrt e)+\varepsilon$, and the Elliott–Halberstam prediction with distribution level one half obtained unconditionally [S5:55–80]. Manuscript B records the Dickman-function form of the fixed-$u$ conjecture and the Granville threshold, together with the closest general distribution theorem, Bharadwaj and Rodgers' [S11:84–97]. The parity question is older than any of these: manuscript C calls it "a classical obstruction in sieve theory [S16:67]" and points to the Friedlander–Iwaniec asymptotic sieve as the illustration of what bilinear information buys .
 
 Prior (my training data, not this repo). The Poisson–Dirichlet law PD(1) is the Kingman stick-breaking distribution, and the size-biased and factorial-measure tools manuscript B uses are the standard machinery for proving that a sequence of integer factorizations converges to it — the Donnelly–Grimmett and Arratia–Kochman–Miller results the manuscript cites are the two it needs. The Ford–Konyagin–Luca conjecture sat in their 2010 paper on prime chains, and the totient-fiber conjecture with $C=1$ is Pomerance's 1980 formulation of an Erdős problem; both were open in my training data, and the smooth-shifted-prime exponents manuscript A lists are the pre-existing record. Nothing in this paragraph comes from the repository.
 

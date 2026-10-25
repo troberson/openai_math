@@ -84,7 +84,7 @@ D3 in his 1979 list. A stable form has a positive answer: Cohen showed
 that adjoining sufficiently many two-spheres suffices, and Hambleton
 gave a proof with the number bounded by the number of three-dimensional
 cells. Positive results for particular fundamental groups exist for
-finite subgroups of $\operatorname{SO}(3)$ and for the generalized
+finite subgroups of $\mathrm{SO}(3)$ and for the generalized
 quaternion groups of orders 24 and 32, established by Hambleton and by
 Hofmann and Nicholson. Candidate counterexamples have come from
 relation modules: Bridson and Tweedale constructed finite $D(2)$

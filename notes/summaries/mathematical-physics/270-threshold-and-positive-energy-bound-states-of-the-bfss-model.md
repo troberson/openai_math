@@ -68,12 +68,12 @@ local rescaling, any sequence with bounded energy concentrates on a
 finite number of scales, and local profiles satisfy a linearized
 equation. The massive count bounds how many profiles can pack into
 each scale, and a capture argument shows no concentration scale is
-missed, leaving only the $\Spin(9)$-invariant zero mode [S4:173–274].
+missed, leaving only the $\mathrm{Spin}(9)$-invariant zero mode [S4:173–274].
 
 **The positive-eigenvalue construction.** The $\mathrm{SU}(2)$
 manuscript defines the Hamiltonian by closing the gauge-invariant
 supercharge form on the $\mathrm{SU}(2)$-invariant part of
-$L^2(\mathbb{R}^{27};\mathcal{F})$. It then selects $\Spin(9)$
+$L^2(\mathbb{R}^{27};\mathcal{F})$. It then selects $\mathrm{Spin}(9)$
 sectors in which symmetry excludes the low transverse oscillator
 levels, so the remaining oscillator energy confines those sectors and
 produces an unbounded sequence of discrete positive eigenvalues with
@@ -99,7 +99,7 @@ eigenvectors directly [S5:55–133].
 
 **The threshold-bound-state conjecture is resolved.** The relative
 $\mathrm{SU}(N)$ BFSS model has a unique normalizable ground state,
-$\Spin(9)$-invariant and even in the fermion grading, for every
+$\mathrm{Spin}(9)$-invariant and even in the fermion grading, for every
 $N\ge2$ [S4:74–81].
 
 **The original BFSS $N=2$ exclusion is refuted.** The relative

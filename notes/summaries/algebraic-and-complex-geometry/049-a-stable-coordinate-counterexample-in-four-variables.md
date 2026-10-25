@@ -24,20 +24,20 @@ an element that becomes a coordinate after adjoining finitely many variables
 was already a coordinate."
 
 The first manuscript writes down the polynomial. [S4:8–16] states its result:
-"There is a $\C$-algebra automorphism of $R[w]$ sending $f$ to $x_1$, but
+"There is a $\mathbf C$-algebra automorphism of $R[w]$ sending $f$ to $x_1$, but
 there is no such automorphism of $R$."
 
 The polynomial is $Q=x_2^2-x_4^2+x_1x_3$ and
 $f=x_1-2Q\bigl(Q(x_2+x_4)+x_1x_4\bigr)$, read from the display at [S4:10–14].
 The abstract names its degree: [S3:36–43] says "We construct an explicit
-degree-five polynomial over $\C$ that is not a coordinate in four variables
+degree-five polynomial over $\mathbf C$ that is not a coordinate in four variables
 but becomes one after adjoining a single variable." The manuscript is dated
 [S2:5].
 
 The same polynomial settles an older question about embeddings. [S4:20–22]
-states the corollary: "For every $\lambda\in\C$, the hypersurface
-$f^{-1}(\lambda)\subset\A^4$ is isomorphic to $\A^3$ and its embedding in
-$\A^4$ is not rectifiable." Every fiber is affine three-space, yet no ambient
+states the corollary: "For every $\lambda\in\mathbf C$, the hypersurface
+$f^{-1}(\lambda)\subset\mathbb A^4$ is isomorphic to $\mathbb A^3$ and its embedding in
+$\mathbb A^4$ is not rectifiable." Every fiber is affine three-space, yet no ambient
 automorphism can straighten any of them.
 
 The second manuscript reaches the same conclusion by a different route.
@@ -51,14 +51,14 @@ relations "is isomorphic to $B[T]$, where $T$ is an indeterminate. [S11:174]" Th
 unit-ideal hypothesis is what lets the construction solve two linear equations
 without dividing by either coefficient.
 
-The obstruction is a critical point. [S11:103–111] proves $R/(F)\cong\CC^{[3]}$
+The obstruction is a critical point. [S11:103–111] proves $R/(F)\cong\mathbb C^{[3]}$
 and $\grad F(2,0,-1/2,1/2)=0$, and concludes "Consequently $F$ is not a
 coordinate of $R$." A coordinate polynomial cannot have a critical point: the
 Jacobian matrix of a polynomial automorphism is invertible at every point.
 
 [S11:116–120] extends the example to every ambient dimension: "For every
-integer $n\ge4$, there is a polynomial $f\in\CC[z_1,\ldots,z_n]$ such that
-$\CC[z_1,\ldots,z_n]/(f)\cong\CC^{[n-1]}$ and $f$ is not a coordinate."
+integer $n\ge4$, there is a polynomial $f\in\mathbb C[z_1,\ldots,z_n]$ such that
+$\mathbb C[z_1,\ldots,z_n]/(f)\cong\mathbb C^{[n-1]}$ and $f$ is not a coordinate."
 
 ## Graduate summary
 
@@ -143,11 +143,11 @@ The conjecture is tied to cancellation. [S4:28] states the connection:
 "Cancellation asks instead whether an affine variety whose product with an
 affine line is an affine space must itself be an affine space." The
 manuscript notes that its own example sits in the coordinate direction, since
-the ambient variety is already $\A^4$.
+the ambient variety is already $\mathbb A^4$.
 
 The embedding conjecture is older. [S11:34–40] states it: "must be a
 coordinate, that is, the first component of a polynomial automorphism of
-$\Aff^n_{\CC}$." Sathaye separated the two questions early. [S11:52–53]
+$\mathbb A^n_{\mathbb C}$." Sathaye separated the two questions early. [S11:52–53]
 records the separation: "whether an affine-space zero fibre forces all fibres
 to be affine space."
 
@@ -173,8 +173,8 @@ release's own reading. The claim in the entry is the record.
 
 The counterexample is not confined to four variables. [S11:116–120] states the
 extension: "For every integer $n\ge4$, there is a polynomial
-$f\in\CC[z_1,\ldots,z_n]$ such that
-$\CC[z_1,\ldots,z_n]/(f)\cong\CC^{[n-1]}$ and $f$ is not a coordinate." The
+$f\in\mathbb C[z_1,\ldots,z_n]$ such that
+$\mathbb C[z_1,\ldots,z_n]/(f)\cong\mathbb C^{[n-1]}$ and $f$ is not a coordinate." The
 critical point survives the adjunction, which is what keeps the obstruction
 alive in higher dimension.
 

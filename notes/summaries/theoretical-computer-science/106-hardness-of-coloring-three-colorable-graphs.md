@@ -73,7 +73,7 @@ Label Cover, fed by the PCP theorem and parallel repetition [S4:141–146].
 The construction replaces one left question at a time by a right question,
 building chains of question tuples in the style of the multilayered PCP
 [Dinur–Guruswami–Khot–Regev, S4:148–151]. Each tuple carries points that
-assign a phase in the circle $\T=\R/\mathbb Z$ to every product answer, and a
+assign a phase in the circle $\mathbb T=\mathbb R/\mathbb Z$ to every product answer, and a
 projection $\pi$ pulls a phase vector back along the chain
 [S4:152–154]. Zero-length links between a point and its pullback, and
 circle-distance links within each phase space, define a pseudometric; edges
@@ -100,9 +100,9 @@ unweighted vertices and the reduction is deterministic [S4:199–201].
 
 The final section fixes the constants in dependency order: the list bound
 $d$ first, so it cannot depend on the Label Cover alphabets
-[S5:6–8]; then $\eps=\delta/8$, $L=64$, the influence constants,
+[S5:6–8]; then $\varepsilon=\delta/8$, $L=64$, the influence constants,
 the repetition power [S5:10–17]. The density bound closes at
-$6\eps+2\eps=8\eps<\delta$ for every independent set [S5:78–82].
+$6\varepsilon+2\varepsilon=8\varepsilon<\delta$ for every independent set [S5:78–82].
 
 ## History of the conjecture
 

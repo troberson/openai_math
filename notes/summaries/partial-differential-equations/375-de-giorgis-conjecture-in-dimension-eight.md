@@ -9,9 +9,9 @@
 The release's blurb [S1:9025] and the catalog abstract [S2:852] state
 the family's claim: De Giorgi's conjecture is proved at its sharp
 dimension-eight endpoint. Every entire $C^2$ solution of
-$\Delta u=u^3-u$ in $\R^8$ that is strictly increasing in one
+$\Delta u=u^3-u$ in $\mathbb R^8$ that is strictly increasing in one
 direction depends on only one linear coordinate. A stronger companion
-theorem classifies all stable entire solutions in $\R^7$ as constant
+theorem classifies all stable entire solutions in $\mathbb R^7$ as constant
 wells or planar transitions, without an energy-growth assumption.
 The manuscript's abstract "We resolve De Giorgi's conjecture positively in dimension eight:
 every entire $C^2$ solution $u:\mathbb R^8\to(-1,1)$ of
@@ -48,7 +48,7 @@ No energy growth, minimization, or well-limit assumption is required
 
 **The stable classification in dimension seven.** The analytic core
 is the stable rigidity theorem: every stable solution
-$v:\R^7\to[-1,1]$ of $\Delta v=v^3-v$ is a constant well or a
+$v:\mathbb R^7\to[-1,1]$ of $\Delta v=v^3-v$ is a constant well or a
 planar heteroclinic, with no energy-growth hypothesis [S4:103–112].
 This endpoint is sharp — Pacard and Wei constructed stable
 nonplanar solutions in dimension eight [S4:114–115].
@@ -86,11 +86,11 @@ the corresponding Allen–Cahn solutions are nonplanar.
 ## Consequences
 
 **De Giorgi's conjecture is resolved at dimension eight.** Every
-entire $C^2$ solution of $\Delta u=u^3-u$ in $\R^8$ with
+entire $C^2$ solution of $\Delta u=u^3-u$ in $\mathbb R^8$ with
 $\partial_8 u>0$ is a planar heteroclinic [S4:59–70].
 
 **Stable rigidity in dimension seven without density bound.**
-Every stable solution in $\R^7$ is a constant well or a planar
+Every stable solution in $\mathbb R^7$ is a constant well or a planar
 transition [S4:103–112].
 
 **The dimension is sharp.** Nonplanar monotone solutions exist

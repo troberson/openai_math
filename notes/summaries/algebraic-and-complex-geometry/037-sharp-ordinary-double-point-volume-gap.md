@@ -13,7 +13,7 @@ are "The ordinary-double-point gap in every dimension [S3:1]" and the fourfold c
 
 Normalized volume measures the size of a klt singularity: for an
 $n$-dimensional klt germ $(X,x)$ with zero boundary,
-$\nvol(x,X)=\inf_v A_X(v)^n \vol(v)$, where the infimum runs over
+$\widehat{\mathrm{vol}}(x,X)=\inf_v A_X(v)^n \mathrm{vol}(v)$, where the infimum runs over
 centered valuations . "Normalized volume, introduced by Chi Li  , measures the
 size of a klt singularity by balancing
 the discrepancy of a valuation against the asymptotic colength of its
@@ -60,7 +60,7 @@ structural assumption is implicit [S5:48–53].
 
 **The induction.** The proof uses the fourfold theorem of the
 companion as its sole external input [S5:55–62]. The companion
-proves $\nvol\le162$ in dimension four 
+proves $\widehat{\mathrm{vol}}\le162$ in dimension four 
 
 > **theorem**
 Let \(x\in X\) be a singular closed point of a normal complex algebraic variety of dimension four. Suppose that \(K_X\) is \(\mathbb Q\)-Cartier and that \(X\) is klt near \(x\), with boundary zero. Then

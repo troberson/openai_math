@@ -73,7 +73,7 @@ leafwise inequality [S4:90–203].
 
 **The degree estimate and the transfer.** A degree bound for maps from
 a measured family of $d$-manifolds to a $d$-cube contains
-$-\wscal/2$ and a penalty for the derivative of each coordinate, using
+$-\mathcal S/2$ and a penalty for the derivative of each coordinate, using
 the $\mu$-bubble functional. In high dimensions the minimizing
 boundaries can be singular; the residual map is moved away from the
 target near the singular region. The final transfer construction

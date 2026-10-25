@@ -117,7 +117,7 @@ polynomial, forcing equality in every degree.
 
 **Deformation removes the loops.** The no-flavor isomorphism for the
 looped quiver $Q^+$ is lifted to an auxiliary flavor
-$H=\C^\times$ with parameter $z$. Subgroup localization at
+$H=\mathbb C^\times$ with parameter $z$. Subgroup localization at
 $z=1$ gives the Higgs-side comparison; homogeneity descends the
 equality to the original ideals 
 

@@ -49,7 +49,7 @@ composition factors of $G$.
 
 ## Graduate summary
 
-**Why rational.** The nonvanishing is over $\Q$, which is the form
+**Why rational.** The nonvanishing is over $\mathbb Q$, which is the form
 that propagates. The order complex is finite, so a nonzero rational
 homology group arises from an integral homology group of positive free
 rank; the universal coefficient theorem then lifts it to nonzero
@@ -57,7 +57,7 @@ reduced homology over every field in the same degree. Conversely, a
 nontrivial $p$-core makes $\mathcal A_p(G)$ contractible, so acyclicity
 over any fixed field characterizes the existence of a normal $p$-
 subgroup. The rational reduction to the component cases is what lets
-the earlier reduction theorems, developed over $\Q$, feed the present
+the earlier reduction theorems, developed over $\mathbb Q$, feed the present
 proof [S4:40–99].
 
 **The cycle construction.** The proof builds nonzero cycles on full
@@ -108,7 +108,7 @@ last cases by its cycle and propagation constructions [S4:40–99].
 ## Consequences
 
 **Quillen's conjecture is resolved for every finite group and every
-prime.** If $O_p(G)=1$ then $\widetilde H_*(\mathcal A_p(G);\Q)\ne0$;
+prime.** If $O_p(G)=1$ then $\widetilde H_*(\mathcal A_p(G);\mathbb Q)\ne0$;
 in particular the order complex is not contractible. The statement
 imposes no restriction on the prime or on the composition factors of
 $G$ [S4:15–22].

@@ -117,7 +117,7 @@ connected Kähler manifold of Kodaira dimension zero has virtually
 abelian fundamental group [S3:39–55]. Campana's Conjecture S and the
 bimeromorphic Iitaka uniformization follow: a special manifold with
 maximal $\Gamma$-dimension, or a manifold whose universal cover is
-biholomorphic to $\C^n$, has a finite cover bimeromorphic to a
+biholomorphic to $\mathbf C^n$, has a finite cover bimeromorphic to a
 torus [S3:65–121].
 
 ## History of the conjecture

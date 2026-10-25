@@ -15,7 +15,7 @@ canonical-ampleness conjecture in the smooth compact Kähler category. [S4:46–
 ## Undergraduate summary
 
 A complex manifold is Brody hyperbolic if every holomorphic map
-$\C\to X$ is constant; on a compact manifold this is equivalent to
+$\mathbb C\to X$ is constant; on a compact manifold this is equivalent to
 Kobayashi hyperbolicity . "A complex manifold is _Brody hyperbolic_ if every holomorphic map
 $\mathbb C\to X$ is constant. On a compact complex manifold, Brody's theorem
 identifies this condition with Kobayashi hyperbolicity, the

@@ -54,7 +54,7 @@ The higher-dimensional companion [S6:34–49] makes the same
 Gaussian-limit-first assertion for each fixed $n\ge3$:
 
 > For every fixed integer $n\geq3$ and every complex-valued
-$f\in H^{s_n}(\R^n)$, there is a full-measure set $E_f$ of Lebesgue
+$f\in H^{s_n}(\mathbb R^n)$, there is a full-measure set $E_f$ of Lebesgue
 points of $f$ and a function $v(x,t)$, $x\in E_f$, $0\leq t<1$, such
 that $v(x,\cdot)$ is continuous, $v(x,0)=f^*(x)$, and
 $$\label{m:eq-uniform-Gaussian}

@@ -94,7 +94,7 @@ the argument.
 
 Hooley proved Artin's asymptotic under the Riemann hypothesis for the
 Dedekind zeta functions of the Kummer fields
-$\Q(\mu_n,a^{1/n})$ . "Hooley proved Artin's predicted asymptotic under the Riemann hypothesis
+$\mathbb{Q}(\mu_n,a^{1/n})$ . "Hooley proved Artin's predicted asymptotic under the Riemann hypothesis
 for the Dedekind zeta functions of the Kummer fields
 $\mathbb{Q}(\mu_n,a^{1/n})$, with $n$ squarefree  .
 These fields encode the obstructions to maximal order. For a prime
@@ -108,7 +108,7 @@ $(p-1)/\ord_p(a)$. Hooley's method counts and sums such splitting
 conditions. Here a restricted factorization of $p-1$ confines the
 possible index divisors to ranges where they can all be removed. [S6:57–69]" The Kummer fields encode
 the obstructions: for $q|(p-1)/\ord_p(a)$, the prime $p$ splits
-completely in $\Q(\mu_q,a^{1/q})$.
+completely in $\mathbb{Q}(\mu_q,a^{1/q})$.
 
 Unconditional results allow only a finite choice of bases [S6:71–76].
 "Classical unconditional results allow a finite choice of bases.

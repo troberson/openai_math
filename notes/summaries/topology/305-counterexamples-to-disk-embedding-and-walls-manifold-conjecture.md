@@ -114,8 +114,8 @@ not good, and neither is any group containing it as a subgroup
 presented group $G$ from chamber, reflection, and stable pieces, with a
 control argument that forces the vanishing Wall self-intersection
 obstructions. The group admits a finite, oriented, four-dimensional
-aspherical Poincaré complex $Q$ with $H^i(G;\Z G)=0$ for $i\ne4$ and
-$H^4(G;\Z G)\cong\Z$, so the trivial $\Z$-module has a finite free
+aspherical Poincaré complex $Q$ with $H^i(G;\mathbb Z G)=0$ for $i\ne4$ and
+$H^4(G;\mathbb Z G)\cong\mathbb Z$, so the trivial $\mathbb Z$-module has a finite free
 resolution — the algebraic signature of a closed aspherical
 four-manifold — yet no closed aspherical topological four-manifold has
 fundamental group $G$ [S6:114–217].

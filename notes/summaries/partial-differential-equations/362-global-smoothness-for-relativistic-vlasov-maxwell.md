@@ -155,7 +155,7 @@ The weighted signed formula, as stated [S9:278–284]:
 > extended by zero outside $J$. Let $\chi$ be a selected sum as in
 > Lemma~\ref{can:cutoff-cancellation}. One may integrate
 > \eqref{can:label-identity} labelwise against $\psi\chi$ and a bounded
-> $C^1$ matrix $\Pi(t)$, including $\Pi=\Id$. More precisely,
+> $C^1$ matrix $\Pi(t)$, including $\Pi=\mathrm{Id}$. More precisely,
 
 The identity is used twice. The first use controls direction: under the bootstrap, a particle's direction of motion cannot change by a prescribed angular amount too many times, and that monotone crossing behaviour improves occupation at intermediate relative angles.
 

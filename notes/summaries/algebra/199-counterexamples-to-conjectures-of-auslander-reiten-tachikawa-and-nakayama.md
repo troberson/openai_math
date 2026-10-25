@@ -45,16 +45,16 @@ disproves the Gorenstein-projective conjecture. Both counterexamples persist
 after every extension of $k$."
 
 The main theorem names the algebra and the module. [S4:26–29] gives the
-setup: "Let $\kk=\mathbb F_2(q,H_1,H_2)$, where $q,H_1,H_2$ are
-algebraically independent. There exist a finite-dimensional $\kk$-algebra
+setup: "Let $k=\mathbb F_2(q,H_1,H_2)$, where $q,H_1,H_2$ are
+algebraically independent. There exist a finite-dimensional $k$-algebra
 $\Lambda$ and a finite-dimensional nonprojective left $\Lambda$-module $Z$
 such that" — the display gives the vanishing.
 
 The theorem's structural assertions follow. [S4:34–37] states them: "The
 module $Z$ is Gorenstein-projective. The semisimple quotient is
-$\Lambda/\rad\Lambda\simeq\kk^8$, so the algebra is split with eight
+$\Lambda/\rad\Lambda\simeqk^8$, so the algebra is split with eight
 isomorphism classes of simple modules; also $\rad(\Lambda)^4\ne0$. These
-conclusions persist after every field extension of $\kk$."
+conclusions persist after every field extension of $k$."
 
 The second manuscript attacks Tachikawa's second conjecture. [S16:54–61]
 states the result: "We disprove Tachikawa's second conjecture by
@@ -116,13 +116,13 @@ suitable stable map $v:X\to F\otimes_A X$ over a symmetric algebra $A$
 produces a module over" — the display gives the triangular algebra.
 
 The construction itself is named in the introduction. [S4:149–156] gives
-it: "We then build the required $A,F,X,v$. Write $D$ for the $\kk$-linear
+it: "We then build the required $A,F,X,v$. Write $D$ for the $k$-linear
 dual. A ten-dimensional algebra $C$ has a simple module $s$ whose Ext
 groups are especially sparse. Passing to its symmetric trivial extension
-$T=C\ltimes DC$ produces $\Ext_T^*(s,s)=\kk[\tau]$ with $|\tau|=3$. An
+$T=C\ltimes DC$ produces $\Ext_T^*(s,s)=k[\tau]$ with $|\tau|=3$. An
 explicit Hochschild cocycle realizes $\tau$ and supplies a homotopy
 compatible with twists of $T$. For $A=T\otimes T$ and $X=s\otimes s$, the
-nonnegative self-extension algebra is $\kk[\tau_1,\tau_2]$."
+nonnegative self-extension algebra is $k[\tau_1,\tau_2]$."
 
 The reduction between the two conjectures is the reason one construction
 refutes both. [S4:126–130] records it: "Tachikawa's second conjecture is
@@ -218,7 +218,7 @@ reading. The claim in the entry is the record.
 Both conjectures fail for Artin algebras. [S4:40–42] states the reach:
 "Thus both conjectures fail for Artin algebras, including finite-dimensional
 algebras over an algebraically closed field of characteristic two: one can
-extend scalars to an algebraic closure of $\kk$."
+extend scalars to an algebraic closure of $k$."
 
 The second manuscript's symmetric algebra gives the self-injective case as
 well [S17:38–41], and its endomorphism-algebra consequence turns the module

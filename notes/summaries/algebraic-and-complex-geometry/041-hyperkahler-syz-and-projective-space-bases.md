@@ -15,7 +15,7 @@ irreducible holomorphic symplectic Kähler manifold is semiample. [S4:7–11]"
 ## Undergraduate summary
 
 A compact irreducible holomorphic symplectic (IHS) Kähler manifold
-has a symplectic form $\sigma$ with $H^0(X,\Omega_X^2)=\C\sigma$
+has a symplectic form $\sigma$ with $H^0(X,\Omega_X^2)=\mathbb C\sigma$
 and even complex dimension $2n$. A line bundle $L$ is nef isotropic
 when $c_1(L)$ lies on the boundary of the Kähler cone and satisfies
 $q(c_1(L))=0$ for the Beauville–Bogomolov–Fujiki form. Such a class
@@ -46,7 +46,7 @@ surjective holomorphic map with connected fibers
 \[
                  f:X\longrightarrow B,\qquad L^m\simeq f^*A,
 \]
-such that $\dim_{\C}B=n$. Every irreducible component of every
+such that $\dim_{\mathbb C}B=n$. Every irreducible component of every
 fiber has complex dimension $n$, and $\sigma$ vanishes on its
 smooth locus. [S5:25–44]
 
@@ -77,7 +77,7 @@ fibers
 
 > In Theorem  , assume additionally that $X$ is projective,
 and let $f:X\to B$ be the associated connected-fiber map furnished there.
-Then $B\simeq\mathbb P^n_{\C}$. Moreover, there do not exist a prime
+Then $B\simeq\mathbb P^n_{\mathbb C}$. Moreover, there do not exist a prime
 divisor $D\subset B$, an effective divisor $E$ on $X$, and an integer
 $r>1$ such that $f^*D=rE$. [S5:69–74]
 
@@ -144,7 +144,7 @@ singular-base case . "Hwang proved the projective-space conclusion when \(X\) is
 smooth-base theorem to compact Kähler IHS total spaces
 \cite[Theorem 1.1]GrebLehn2014. These results reduce the base problem to
 the possible singularities of \(B\). [S13:16–20]" Ou reduced the
-dimension-four surface base to $\PP^2$ or a specific Fano
+dimension-four surface base to $\mathbb P^2$ or a specific Fano
 surface; Huybrechts–Xu excluded the second case; Müller–Zheng Xu
 proved a local smoothness theorem [S13:37–50].
 
@@ -160,7 +160,7 @@ finitely many smooth deformation types in each even complex
 dimension [S5:57–65].
 
 **Projective-space bases.** Every projective Lagrangian
-fibration with normal projective base has $\PP^n$ as its base,
+fibration with normal projective base has $\mathbb P^n$ as its base,
 and no codimension-one multiple fibers exist [S13:59–70].
 
 ## Section skeleton

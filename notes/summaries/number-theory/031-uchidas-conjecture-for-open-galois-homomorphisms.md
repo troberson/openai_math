@@ -52,8 +52,8 @@ The second refines Uchida's own Kummer argument
 
 > Second, we refine the Kummer argument in Uchida's proof of cofinite target coverage \cite[Proposition 1]uchida1981. After logarithmic cyclotomic compatibility has been established, the number of target primes missed by the partial correspondence can be bounded independently of $\ell$. A missed prime supplies a Kummer class. On killing a finite cyclotomic twist, these classes lie in one character component of an $S$-unit representation. The full extension degree may grow with $\ell$, but the multiplicity of that character is bounded by the number of orbits of $S$, hence by the degree of the fixed source field. This uniformity allows us to choose $\ell$ by simultaneous Kummer conditions and force enough corresponding primes to have the same rational residue characteristic. [S5:31]
 
-**The route.** The reduction goes through $P = \Gal(\Q^s/\Q)$, the
-maximal prosolvable extension of $\Q$: it suffices to identify every
+**The route.** The reduction goes through $P = \Gal(\mathbb Q^s/\mathbb Q)$, the
+maximal prosolvable extension of $\mathbb Q$: it suffices to identify every
 continuous open homomorphism $G_F \to P$ with ordinary restriction up to
 conjugation [S5:33]. The regular-module construction enlarges finite
 quotients of $P$ by elementary abelian kernels of regular
@@ -81,7 +81,7 @@ established the isomorphism theorem for arbitrary solvably closed
 extensions [S5:22].
 
 In the 1981 paper formulating the homomorphism conjecture, Uchida proved
-it for source field $\Q$, proved uniqueness in general, and established
+it for source field $\mathbb Q$, proved uniqueness in general, and established
 existence under a local condition on decomposition groups [S5:24].
 "In the paper formulating the homomorphism conjecture, Uchida proved it when the source number field is $\mathbb Q$, proved uniqueness in general, and established existence under a suitable local condition on decomposition groups \cite[Theorem 1, Proposition 2, and Theorem 2]uchida1981. His local analysis also associates primes to one another whenever a chosen pro-$\ell$ inertia group survives under the homomorphism, for an odd auxiliary prime $\ell$. For each fixed auxiliary prime $\ell$, this partial correspondence reaches all but finitely many target primes \cite[Proposition 1]uchida1981. [S5:24]" His partial correspondence reaches all but finitely many target
 primes for each fixed auxiliary prime $\ell$, but the exceptional set

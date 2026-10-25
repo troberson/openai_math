@@ -11,7 +11,7 @@ state the family's claim: it resolves Sogge's Euclidean local
 smoothing conjecture for the wave equation in three spatial
 dimensions, with the full strict range $2<p<\infty$ and Sobolev
 regularity above $\max\{0,1-3/p\}$. The critical $L^3$ estimate
-holds with every positive Sobolev loss; the lossless $\eps=0$
+holds with every positive Sobolev loss; the lossless $\varepsilon=0$
 estimate is not addressed. The manuscript's abstract [S4:2–4]:
 "We prove the critical $L^3$ local smoothing estimate for the wave equation
 in three spatial dimensions, with every positive Sobolev loss. This resolves

@@ -59,7 +59,7 @@ $\phi:U\longrightarrow\Sigma$ such that $X\setminus\Sigma$ is connected. [S2:102
 
 **Kodaira identities and the two reductions.** The compact-surface
 identities of Kodaira give $h^{0,1}=1$, $h^{1,0}=h^{2,0}=0$,
-$b_2^+=0$, $\chi(\OO_X)=0$, and $K_X^2=-b_2(X)$, so the intersection
+$b_2^+=0$, $\chi(\mathcal O_X)=0$, and $K_X^2=-b_2(X)$, so the intersection
 form is negative definite "The compact-surface identities of Kodaira give, under the hypotheses of
 Theorem  ,
 $$\label{surface:invariants}

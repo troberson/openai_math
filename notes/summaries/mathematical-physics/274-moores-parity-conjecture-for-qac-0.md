@@ -57,7 +57,7 @@ preserved."
 The advantage threshold and the class are defined together. [S6:16–20]
 states them: "For $0<\varepsilon\le1/2$, computing parity with worst-case
 advantage $\varepsilon$ means giving the correct answer with probability
-at least $1/2+\varepsilon$ for every $x$. The class $\QAC$ uses constant
+at least $1/2+\varepsilon$ for every $x$. The class $\mathsf{QAC}^{0}$ uses constant
 depth and polynomially many total qubits. This also bounds the gate
 count: a disjoint layer on $N$ qubits has at most $N$ nonempty gates."
 
@@ -75,7 +75,7 @@ it: "Fix positive integers $d,k,C$ and a real $0<\varepsilon\le1/2$.
 There is an integer $n_0=n_0(d,k,C,\varepsilon)$ such that, for every
 $n\ge n_0$, every allowed circuit of depth at most $d$ on at most
 $C(n+1)^k$ total qubits has an input $x\in\{0,1\}^{n}$ on which its
-answer equals $\Parity_n(x)$ with probability strictly less than
+answer equals $\mathrm{PARITY}_n(x)$ with probability strictly less than
 $1/2+\varepsilon$."
 
 The two manuscripts prove the same theorem by independent routes.

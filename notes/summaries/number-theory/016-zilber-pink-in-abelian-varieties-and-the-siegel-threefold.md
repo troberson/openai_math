@@ -42,7 +42,7 @@ Manuscript A states the abelian conjecture as a finiteness statement about maxim
 
 Its non-density input is a theorem with universal quantifiers on the ambient variety [S5:67–71]:
 
-> Let $A$ be an abelian variety over $\Qbar$, and let $X\subseteq A$ be an irreducible subvariety contained in no proper torsion coset. Then $X\cap A^{[\dim X+1]}$ is not Zariski dense in $X$. [S5:68–70]
+> Let $A$ be an abelian variety over $\overline{\mathbb Q}$, and let $X\subseteq A$ be an irreducible subvariety contained in no proper torsion coset. Then $X\cap A^{[\dim X+1]}$ is not Zariski dense in $X$. [S5:68–70]
 
 The passage from non-density to the finiteness theorem is made through the optimal-subvariety reduction of Barroero and Dill, and the manuscript states that the proof does not stop at non-density for one fixed subvariety [S5:73–77]. A corollary covers translation by finite-rank subgroups, which the manuscript identifies as the abelian algebraic-point case of Pink's Conjecture 5.2 [S5:100–101].
 
@@ -56,11 +56,11 @@ Manuscript C states the quaternionic component with the endomorphism condition s
 
 Manuscript D proves the remaining branch [S18:24–28]:
 
-> Let $C\subset\A_2$ be a nonempty reduced irreducible closed algebraic curve over $\Qbar$. If $C$ is Hodge generic, then $\Sigma_{E^2}(C)$ is finite. [S18:25–27]
+> Let $C\subset\mathcal A_2$ be a nonempty reduced irreducible closed algebraic curve over $\overline{\mathbb Q}$. If $C$ is Hodge generic, then $\Sigma_{E^2}(C)$ is finite. [S18:25–27]
 
 and then combines the three branches into the full curve case [S18:66–76]:
 
-> For every nonempty reduced irreducible closed Hodge-generic curve $C\subset\A_2$ over $\Qbar$, the set \[ \Sigma(C)=C(\Qbar)\cap \bigcup_{\substack{Z\subset\A_2\ \mathrmspecial\mathstrut\\ \dim Z\le 1}} Z(\Qbar) \] is finite. [S18:68–75]
+> For every nonempty reduced irreducible closed Hodge-generic curve $C\subset\mathcal A_2$ over $\overline{\mathbb Q}$, the set \[ \Sigma(C)=C(\Qbar)\cap \bigcup_{\substack{Z\subset\A_2\ \mathrmspecial\mathstrut\\ \dim Z\le 1}} Z(\Qbar) \] is finite. [S18:68–75]
 
 The numbered moves, as the manuscripts describe them:
 
@@ -75,7 +75,7 @@ The numbered moves, as the manuscripts describe them:
 
 What the hypotheses exclude is part of the claim. Manuscript A imposes nothing on the ambient variety: "No bound on the degrees or heights of the intersection points is assumed, and no simplicity, endomorphism, or complex multiplication hypothesis is imposed on $A$. [S5:52–54]" It also states its limits: "it gives no effective or uniform bound for the number of maximal atypical subvarieties. [S5:55–57]" Manuscript B states that "There is no assumption on the boundary of \(C\), on an integral base point, or on reduction at any finite prime. [S9:98–99]" [S9:94–99] Manuscript C states that "No condition is imposed on the boundary of \(C\), and the points are counted across all quaternionic special curves at once. [S13:22]" Manuscript D states that "No condition is imposed on the closure of $C$ at the boundary of a compactification. In particular, the theorem includes complete curves. [S18:30–31]" 
 
-The named resolutions the manuscripts assert are explicit. Manuscript B: "Theorem   resolves positively the \(E\times\mathrmCM\) component of Zilber–Pink for Hodge-generic curves in \(\mathcal A_2\). [S9:100–101]" Manuscript C: "Thus   resolves affirmatively the quaternionic-division component of the Zilber–Pink conjecture for curves in \(\Acal_2\). [S13:22]" Manuscript D: "resolves positively the Hodge-generic-curve case of the Zilber–Pink conjecture in $\A_2$ over $\Qbar$. [S18:78–79]" Manuscript A's title is the abelian conjecture itself, and its abstract states the proof of it [S4:9–12].
+The named resolutions the manuscripts assert are explicit. Manuscript B: "Theorem   resolves positively the \(E\times\mathrmCM\) component of Zilber–Pink for Hodge-generic curves in \(\mathcal A_2\). [S9:100–101]" Manuscript C: "Thus   resolves affirmatively the quaternionic-division component of the Zilber–Pink conjecture for curves in \(\Acal_2\). [S13:22]" Manuscript D: "resolves positively the Hodge-generic-curve case of the Zilber–Pink conjecture in $\mathcal A_2$ over $\overline{\mathbb Q}$. [S18:78–79]" Manuscript A's title is the abelian conjecture itself, and its abstract states the proof of it [S4:9–12].
 
 The four manuscripts' own abstracts are the release's summary of each paper [S4:9–12] [S9:53–56] [S12:20–24] [S17:9–15]; the four citation blocks are the release's citation entries [S3] [S8] [S11] [S16], and the bibliographies are external to the release except where noted below [S6] [S14].
 

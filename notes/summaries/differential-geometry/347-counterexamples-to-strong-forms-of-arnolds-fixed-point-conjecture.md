@@ -70,16 +70,16 @@ and [S23:10–13]:
 The Arnold fixed-point problem asks how many fixed points a Hamiltonian diffeomorphism must have. A proposed integral answer is the **stable Morse number**: the fewest critical points a Morse function on the manifold can have once you are allowed to add auxiliary quadratic variables [S16:6–12]:
 
 > \begin{definition}
-> Let $W$ be a connected closed smooth manifold. Its \emph{stable Morse number} $\SM(W)$ is the minimum of $\#\Crit(F)$ over all integers $k\geq0$ and smooth Morse functions
+> Let $W$ be a connected closed smooth manifold. Its \emph{stable Morse number} $\mathrm{SM}(W)$ is the minimum of $\#\Crit(F)$ over all integers $k\geq0$ and smooth Morse functions
 > \[
 >  F:W\times\R^k\longrightarrow\R
 > \]
-> such that, when $k>0$, there are a nondegenerate quadratic form $Q$ on $\R^k$ and $R>0$ with $F(x,z)=Q(z)$ for every $x\in W$ and $|z|\geq R$. The signature of $Q$ is unrestricted. For $k=0$, there is no condition at infinity. The ordinary Morse number $\Morse(W)$ is the same minimum restricted to $k=0$.
+> such that, when $k>0$, there are a nondegenerate quadratic form $Q$ on $\mathbb R^k$ and $R>0$ with $F(x,z)=Q(z)$ for every $x\in W$ and $|z|\geq R$. The signature of $Q$ is unrestricted. For $k=0$, there is no condition at infinity. The ordinary Morse number $\mathrm{Morse}(W)$ is the same minimum restricted to $k=0$.
 > \end{definition}
 
 The proposed bound is that a Hamiltonian whose fixed points are all nondegenerate must have at least that many fixed points 
 
-> This counts distinct initial points, with no multiplicity from choices of capping disks. The stable Morse version of the fixed-point bound asks whether $$\label{eq:proposed-bound} \#\Fix_0(\phi_H^1;H)\geq\SM(M)$$ holds whenever every fixed point is nondegenerate. The following theorem disproves this unrestricted assertion. [S16:20–24]
+> This counts distinct initial points, with no multiplicity from choices of capping disks. The stable Morse version of the fixed-point bound asks whether $$\label{eq:proposed-bound} \#\Fix_0(\phi_H^1;H)\geq\mathrm{SM}(M)$$ holds whenever every fixed point is nondegenerate. The following theorem disproves this unrestricted assertion. [S16:20–24]
 
 The base manuscript disproves it in real dimension 1412 [S16:26–32]:
 
@@ -88,7 +88,7 @@ The base manuscript disproves it in real dimension 1412 [S16:26–32]:
 > \[
 >  \#\Fix_0(\phi_H^1;H)=\#\Fix(\phi_H^1)=\SM(M)-16.
 > \]
-> One may take $\dim_{\R}M=1412$, with $\SM(M)=318968$ and $\#\Fix(\phi_H^1)=318952$.
+> One may take $\dim_{\mathbb R}M=1412$, with $\mathrm{SM}(M)=318968$ and $\#\Fix(\phi_H^1)=318952$.
 > \end{theorem}
 
 The dimension-twenty-two manuscript makes the deficit a fixed proportion in a fixed dimension [S21:37–53]:
@@ -156,13 +156,13 @@ The count of three is sharp: Gong proved that a Hamiltonian involution on a clos
 
 The stable Morse number is a minimum over actual smooth functions, and the base manuscript states the algebraic caveat 
 
-> These functions have finitely many critical points, and $\SM(W)\leq\Morse(W)$. The definition is a minimum over actual smooth functions; an algebraic complex of small rank alone does not provide an upper bound. [S16:14]
+> These functions have finitely many critical points, and $\mathrm{SM}(W)\leq\mathrm{Morse}(W)$. The definition is a minimum over actual smooth functions; an algebraic complex of small rank alone does not provide an upper bound. [S16:14]
 
 The geometric lower bound is $\lambda(W)=b(W)+2\sum_i t_i(W)$, where $b$ is the total integral homology rank and $t_i$ is the minimum number of generators of the torsion in degree $i$ 
 
-> For a closed manifold $W$, let $b(W)$ be its total integral homology rank, and let $t_i(W)$ be the minimum number of generators of $\Tor H_i(W;\mathbb Z)$. The quantity \[ \lambda(W)=b(W)+2\sum_i t_i(W) \] is a lower bound for $\SM(W)$. For simply connected manifolds of the dimensions used here, Smale's theorem gives an ordinary Morse function attaining this bound. We prove the geometric lower bound in Section   and recall a handle proof of attainment in Appendix  . [S16:37–41]
+> For a closed manifold $W$, let $b(W)$ be its total integral homology rank, and let $t_i(W)$ be the minimum number of generators of $\Tor H_i(W;\mathbb Z)$. The quantity \[ \lambda(W)=b(W)+2\sum_i t_i(W) \] is a lower bound for $\mathrm{SM}(W)$. For simply connected manifolds of the dimensions used here, Smale's theorem gives an ordinary Morse function attaining this bound. We prove the geometric lower bound in Section   and recall a handle proof of attainment in Appendix  . [S16:37–41]
 
-The dynamical ingredient is the same in the three October 5 manuscripts: a Kähler surface $Y$ obtained by blowing up the four points $\{0,\infty\}\times\{0,\infty\}$ of $\CP^1\times\CP^1$, whose half-turn diagonal circle action lifts to a Hamiltonian involution with four exceptional projective lines as its fixed set 
+The dynamical ingredient is the same in the three October 5 manuscripts: a Kähler surface $Y$ obtained by blowing up the four points $\{0,\infty\}\times\{0,\infty\}$ of $\mathbb {CP}^1\times\mathbb {CP}^1$, whose half-turn diagonal circle action lifts to a Hamiltonian involution with four exceptional projective lines as its fixed set 
 
 > The dynamical ingredient is a Kähler surface $Y$, obtained by blowing up the four points $\{0,\infty\}\times\{0,\infty\}$ of $\mathbb{CP}^1\times\mathbb{CP}^1$. A half-turn of the diagonal circle action lifts to a Hamiltonian involution whose fixed set consists of four exceptional projective lines. For the high-dimensional simply connected Kähler manifold $X$ constructed below, the product involution $g$ on $M=X\times Y$ has four fixed components, each diffeomorphic to $C=X\times\mathbb{CP}^1$. Smale's theorem supplies a Morse function on $C$ with $\lambda(C)$ critical points. [S16:43]
 
@@ -174,15 +174,15 @@ The dimension-twenty-two manuscript's generator count combines primes by a maxim
 
 > The generator count combines different primes by a maximum rather than a sum. For example, \[ d\bigl((\mathbf Z/2)^a\oplus(\mathbf Z/3)^q\bigr)=\max(a,q). \] We will arrange that the prime contributing the larger multiplicity changes with the homological degree. Redistributing those degrees by taking products can then change the generator count in a way that the free ranks do not detect. [S21:118–126]
 
-It embeds $m$ copies of two projective surfaces, with torsion $(\Z/2)^2$ and $\Z/3$ in degrees 1 and 2, disjointly into $\CP^9$ and blows them up 
+It embeds $m$ copies of two projective surfaces, with torsion $(\mathbb Z/2)^2$ and $\mathbb Z/3$ in degrees 1 and 2, disjointly into $\mathbb {CP}^9$ and blows them up 
 
 > To arrange the needed homology, take two projective surfaces whose torsion groups are respectively $(\mathbf Z/2)^2$ and $\mathbf Z/3$ in degrees $1$ and $2$. The blow-up centers are the first surface and the product of the second with $\mathbf{CP}^1\times\mathbf{CP}^1$, of complex dimensions $2$ and $4$. Section   embeds $m$ copies of each disjointly into $\mathbf{CP}^9$ and blows them up to obtain a simply connected Kähler manifold $X_m$. The projection argument applies more generally to every finite collection of smooth projective varieties of dimension at most $d$, using one ambient $\mathbf{CP}^{2d+1}$. [S21:128–136]
 
-The count that separates the two numbers is $\lambda(X_m\times Y)-4\lambda(X_m\times\CP^1)=16m$ 
+The count that separates the two numbers is $\lambda(X_m\times Y)-4\lambda(X_m\times\mathbb {CP}^1)=16m$ 
 
 > Products with $\mathbf{CP}^1$ and $Y$ combine the torsion in nearby degrees with different multiplicities. Taking the maximum of the two primary multiplicities in each degree then gives different savings in the number of generators. Section   computes \[ \lambda(X_m\times Y)-4\lambda(X_m\times\mathbfCP^1)=16m \] and completes the proof. This separates the stable Morse count from the Hamiltonian count without any distinction between ordinary and stable Morse theory on the simply connected manifolds in the construction. [S21:148–157]
 
-The companion manuscript's mechanism is degree-sensitive: the 3-primary multiplicities dominate the 2-primary after convolution with the free ranks of $\CP^1$ (1,1), but not after convolution with those of $Y$ (1,6,1) 
+The companion manuscript's mechanism is degree-sensitive: the 3-primary multiplicities dominate the 2-primary after convolution with the free ranks of $\mathbb {CP}^1$ (1,1), but not after convolution with those of $Y$ (1,6,1) 
 
 > It remains to arrange \[ 4\lambda(C)=\beta_{\mathbb Z}^{\mathrmcyc}(M) <\lambda(M). \] The free even homology of $\mathbb {CP}^1$ and $Y$ has ranks $(1,1)$ and $(1,6,1)$, respectively. Multiplication by these spaces convolves the torsion multiplicities of $X$ with these two sequences. We choose $X$ so that the $3$-primary multiplicities dominate the $2$-primary multiplicities after convolution with $(1,1)$, but not after convolution with $(1,6,1)$. Blow-ups along seven disjoint products of elliptic-curve quotients and projective spaces realize the required multiplicities. This degree-sensitive choice is the mechanism that makes the cyclic count sharp while preserving a positive degreewise gap. It is expressed entirely in finite sequences and can be separated from the geometric realization. [S26:121–136]
 
@@ -196,7 +196,7 @@ The construction places the same small-time return map in sixteen caps of a prod
 
 On the other side of the inequality, the fundamental group bounds every Morse function 
 
-> On the other hand, the fundamental group forces every Morse function on $M$ to have at least $d(G)$ critical points in each of indices one and eleven. Euler's identity gives $$\label{eq:overview-morse-bound} \Morse(M)\ge\chi(M)+4d(G).$$ Since $d(A_5^k)$ is unbounded while $b$ is fixed, these two estimates give the strict inequality and the arbitrary deficits. Figure   separates the two roles of the fundamental group. [S11:161–169]
+> On the other hand, the fundamental group forces every Morse function on $M$ to have at least $d(G)$ critical points in each of indices one and eleven. Euler's identity gives $$\label{eq:overview-morse-bound} \mathrm{Morse}(M)\ge\chi(M)+4d(G).$$ Since $d(A_5^k)$ is unbounded while $b$ is fixed, these two estimates give the strict inequality and the arbitrary deficits. Figure   separates the two roles of the fundamental group. [S11:161–169]
 
 The manuscript names the claim it contradicts: Ma's preprint asserts that the minimum number of fixed points of a nondegenerate Hamiltonian diffeomorphism always equals the ordinary Morse number 
 
@@ -222,7 +222,7 @@ The degenerate manuscript's argument is a finite-order transfer that turns a cri
 > finite-order Hamiltonian map with fixed submanifold $F$, whose fixed
 > tangent vectors are exactly those tangent to $F$. Extend a function
 > $f$ on $F$ to an $A$-invariant function $K$ on the ambient manifold,
-> and let $B_s$ be its Hamiltonian flow. If $A^m=\id$, invariance gives
+> and let $B_s$ be its Hamiltonian flow. If $A^m=\mathrm{id}$, invariance gives
 > \[
 >  (A\circ B_\varepsilon)^m=B_{m\varepsilon}.
 > \]
