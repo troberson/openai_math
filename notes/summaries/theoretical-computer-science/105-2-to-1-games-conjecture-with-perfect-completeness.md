@@ -17,9 +17,7 @@
 > We prove the 2-to-1 Games Conjecture with perfect completeness. For every fixed rational $`δ∈(0,1)`$, it is NP-hard to distinguish satisfiable 2-to-1 games from games of value at most δ, with a fixed alphabet and an explicitly listed unweighted multiset of constraints.
 
 [S2:288] carries the `\resultentry`, so the release blurb and the overview agree
-on the statement — the family title names the conjecture, and the two texts
-differ only in the spelling of $\delta$ (the overview typesets `$\delta$`, the
-catalog page uses the release's italic).
+on the statement.
 
 ## Undergraduate summary
 
@@ -38,8 +36,9 @@ for NP-hardness of distinguishing satisfiable games from games of arbitrarily
 small fixed value [S4:18–22]. "Satisfiable" means the *perfect-completeness*
 endpoint: "the satisfiable case is the perfect-completeness requirement: one
 labeling must satisfy every constraint" [S4:23–24]. A reduction that reaches
-completeness $1-\eps$ for each fixed $\eps>0$ does not give that endpoint,
-because its outputs need not be finite satisfiable games [S4:25–26].
+completeness $1-\varepsilon$ for each fixed $\varepsilon>0$ does not give
+that endpoint, because its outputs need not be finite satisfiable games
+[S4:25–26].
 
 The obstacle is the fiber count. "There is also an obstruction to amplifying a
 constant gap by ordinary repetition: repeating an exact-two projection $k$
@@ -86,7 +85,8 @@ The final section fixes the constants in a strict order: row counts from the
 root downwards, the source repetition power, then branching numbers from the
 leaves upwards, so the upper agreement guarantee is fixed before the lower row
 counts test rank [S6:4–12]. The soundness closes at
-$\eps+\delta/3+\delta/3=\delta$ [S6:255–259], completeness stays one because
+$\varepsilon+\delta/3+\delta/3=\delta$ [S6:255–259], completeness stays one
+because
 only accepting support edges are retained [S6:257], and degenerate cases are
 handled by fixed games — a single exact-two edge is satisfiable, and a fixed
 unsatisfiable output is enumerated as parallel exact-two maps whose accepting
@@ -97,13 +97,14 @@ fraction is $1/q\le\delta$ [S6:262–268].
 and an integer $k_0\ge3$ such that, for every fixed integer $k\ge k_0$, it is
 NP-hard to distinguish" a $k$-colorable graph from one where every coloring
 satisfies at most $1-1/k+C\log k/k^2$ of the edges [S4:190–198]. The Not-Two
-corollary ([S4:222–232], `cor:not-two-pcp`): for every fixed $0<\eps<3/8$,
-distinguishing a satisfiable Not-Two instance from one of value at most
-$5/8+\eps$ is NP-hard, and every language in NP gets a three-query
-nonadaptive PCP with $O(\log n)$ random bits, perfect completeness, and
-soundness at most $5/8+\eps$ [S4:223–231]. Both are applied through
-O'Donnell and Wu's reduction, whose premise needs only at-most-$d$-to-1
-projections; taking $d=2$ is exactly the theorem's premise [S4:234–240].
+corollary ([S4:222–232], `cor:not-two-pcp`): for every fixed
+$0<\varepsilon<3/8$, distinguishing a satisfiable Not-Two instance from one
+of value at most $5/8+\varepsilon$ is NP-hard, and every language in NP gets
+a three-query nonadaptive PCP with $O(\log n)$ random bits, perfect
+completeness, and soundness at most $5/8+\varepsilon$ [S4:223–231]. Both
+are applied through O'Donnell and Wu's reduction, whose premise needs only
+projections that are $d$-to-1 at most; taking $d=2$ is exactly the
+theorem's premise [S4:234–240].
 
 ## History of the conjecture
 
@@ -111,7 +112,7 @@ The manuscript situates itself on a named line. **Khot** introduced the games
 conjectures in hardness of approximation, with fibers of size at most two; the
 exact-two convention is this paper's [S4:18–20]. **Austrin, O'Donnell, Tan and
 Wright** established perfect-completeness 2-to-1 Label Cover hardness with
-alphabets of sizes 6 and 3 and soundness $23/24+\eps$ [S4:54–56]; the
+alphabets of sizes 6 and 3 and soundness $23/24+\varepsilon$ [S4:54–56]; the
 remaining issue was to drive soundness to zero while retaining perfect
 completeness and two-element fibers [S4:57–58]. The Grassmann program runs
 through **Khot, Minzer and Safra**'s candidate reduction [S4:61–62],
@@ -131,7 +132,7 @@ covering framework [S4:89–90].
 the strong form of Khot's conjecture (2002); Khot–Minzer–Safra's 2022 result
 disproved the conjecture in its quasi-polynomial games form, which makes a
 perfect-completeness, 2-to-1-hardness result for *plain* 2-to-1 games the
-remaining positive direction; the $5/8+\eps$ three-query PCP is the classical
+remaining positive direction; the $5/8+\varepsilon$ three-query PCP is the classical
 Hastad-level constant. I cannot confirm these results independently; the
 release ships the manuscript as a proof, and the Lean layer formalizes the
 reduction statement itself (see the comparison below).
@@ -145,9 +146,9 @@ reduction statement itself (see the comparison below).
   graphs from graphs whose every coloring satisfies at most
   $1-1/k+C\log k/k^2$ of the edges is NP-hard [S4:189–200].
 - **Not-Two hardness and a three-query PCP.** Distinguishing satisfiable
-  Not-Two instances from value at most $5/8+\eps$ is NP-hard, and every NP
+  Not-Two instances from value at most $5/8+\varepsilon$ is NP-hard, and every NP
   language gets a three-query verifier with perfect completeness and soundness
-  $5/8+\eps$ [S4:222–232].
+  $5/8+\varepsilon$ [S4:222–232].
 - **A hypothesis for other reductions.** `thm:main` "supplies the hypothesis
   of several perfect-completeness reductions" [S4:47–48] — its output is the
   premise the O'Donnell–Wu reduction consumes [S4:234–240].

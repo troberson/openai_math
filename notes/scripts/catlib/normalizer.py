@@ -327,6 +327,32 @@ def split_regions(text: str) -> list[tuple[bool, str, bool]]:
     return regions
 
 
+def normalize_body_math(body: str, preamble: str) -> str:
+    """A summary page's hand-written body: manuscript macros expanded in its math regions.
+
+    The body is authored markdown, and a ``$...$`` region in it carries the same
+    manuscript macros a quote span does (``\\eps``, ``\\F``, ...). The quote path
+    expands them through ``normalize_window``; the body path had no equivalent, so
+    a macro the manuscript defines and the author reached for rendered raw. This
+    pass reuses the quote path's ``split_regions`` and ``expand_macros``: each math
+    region is macro-expanded and re-wrapped in its own delimiter, and every
+    non-math byte — markdown, citations, code spans, ``[S#]`` markers — is left
+    untouched. Display regions (``$$...$$``) expand the same way.
+
+    A macro the manuscript did not define (``\\varepsilon``, ``\\log``) is never
+    in the table, so ``expand_macros`` passes it through, which is why the table
+    is built from this manuscript's preamble only.
+    """
+    table = build_macro_table(preamble)
+    if not table:
+        return body
+    return "".join(
+        ("$$" if display else "$") + expand_macros(chunk, table) + ("$$" if display else "$")
+        if is_math else chunk
+        for is_math, chunk, display in split_regions(body)
+    )
+
+
 _BEGIN = re.compile(r"\\begin\{([A-Za-z]+)\}")
 _END = re.compile(r"\\end\{([A-Za-z]+)\}")
 

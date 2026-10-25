@@ -556,6 +556,19 @@ def render_page(fam: str, info: dict, data_text: str) -> tuple[str, str]:
         text = re.sub(r"\{\{(\d+)\}\}", _replace, stripped)
         resolved[key] = expand_bare_markers(text, quotes)
 
+    # Expand manuscript macros in the body's own math regions. The quote path
+    # does this through normalize_window; the body path had no equivalent, so
+    # a macro the manuscript defines (\eps, \F, ...) rendered raw in prose.
+    # The union preamble is the concatenation of every manuscript source's
+    # preamble, so a multi-manuscript family sees all its macros.
+    body_preamble = "\n".join(
+        get_preamble(path) for _sid, path, _role in sources
+        if path.startswith("preprints/")
+    )
+    if body_preamble:
+        resolved = {k: normalizer.normalize_body_math(v, body_preamble)
+                    for k, v in resolved.items()}
+
     # Build the Sources table rows. The File cell is a markdown link whose label is the
     # backticked repo-relative path: the checker reads the first backticked text in the cell
     # as the path (catlib.summaries.CELL), so the label keeps the backticks and the href is
