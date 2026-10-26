@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 142](../index/theoretical-computer-science/142-deterministic-polynomial-factorization-over-prime-fields.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 142](../index/theoretical-computer-science/142-deterministic-polynomial-factorization-over-prime-fields.md)
 
 # 142 — Deterministic polynomial factorization over prime fields
 
@@ -149,9 +149,9 @@ such a result in my training data; the release ships the manuscript
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3427], manuscript link [S1:3434] |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 142 at [S2:361] |
-| S3 | [`preprints/Deterministic-Polynomial-Factorization-over-Prime-Fields-October-4-2026/build/main.tex`](../../preprints/Deterministic-Polynomial-Factorization-over-Prime-Fields-October-4-2026/build/main.tex) | 72 | document root; 73 lines |
-| S4 | [`preprints/Deterministic-Polynomial-Factorization-over-Prime-Fields-October-4-2026/build/sections/00-introduction.tex`](../../preprints/Deterministic-Polynomial-Factorization-over-Prime-Fields-October-4-2026/build/sections/00-introduction.tex) | 278 | `thm:factorization` [S4:28–38], `thm:reduction` [S4:54–69]; 278 lines |
-| S5 | [`preprints/Deterministic-Polynomial-Factorization-over-Prime-Fields-October-4-2026/Deterministic-Polynomial-Factorization-over-Prime-Fields.pdf`](../../preprints/Deterministic-Polynomial-Factorization-over-Prime-Fields-October-4-2026/Deterministic-Polynomial-Factorization-over-Prime-Fields.pdf) | 18911 | the manuscript as shipped |
-| S6 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=142`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3427], manuscript link [S1:3434] |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 142 at [S2:361] |
+| S3 | [`preprints/Deterministic-Polynomial-Factorization-over-Prime-Fields-October-4-2026/build/main.tex`](../../../preprints/Deterministic-Polynomial-Factorization-over-Prime-Fields-October-4-2026/build/main.tex) | 72 | document root; 73 lines |
+| S4 | [`preprints/Deterministic-Polynomial-Factorization-over-Prime-Fields-October-4-2026/build/sections/00-introduction.tex`](../../../preprints/Deterministic-Polynomial-Factorization-over-Prime-Fields-October-4-2026/build/sections/00-introduction.tex) | 278 | `thm:factorization` [S4:28–38], `thm:reduction` [S4:54–69]; 278 lines |
+| S5 | [`preprints/Deterministic-Polynomial-Factorization-over-Prime-Fields-October-4-2026/Deterministic-Polynomial-Factorization-over-Prime-Fields.pdf`](../../../preprints/Deterministic-Polynomial-Factorization-over-Prime-Fields-October-4-2026/Deterministic-Polynomial-Factorization-over-Prime-Fields.pdf) | 18911 | the manuscript as shipped |
+| S6 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=142`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

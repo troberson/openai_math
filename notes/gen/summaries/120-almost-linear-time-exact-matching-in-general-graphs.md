@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 120](../index/theoretical-computer-science/120-almost-linear-time-exact-matching-in-general-graphs.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 120](../index/theoretical-computer-science/120-almost-linear-time-exact-matching-in-general-graphs.md)
 
 # 120 — Almost-linear-time exact matching in general graphs
 
@@ -174,10 +174,10 @@ of the manuscript's own LaTeX and the shipped PDF [S6] only.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2947], manuscript link [S1:2947] |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 120 at [S2:318] |
-| S3 | [`preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/build/main.tex`](../../preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/build/main.tex) | 35 | document root; abstract [S3:8–17]; ten `\input` directives [S3:20–29]; 35 lines |
-| S4 | [`preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/build/sections/01-introduction.tex`](../../preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/build/sections/01-introduction.tex) | 289 | `thm:main` [S4:34–46]; prior work [S4:73–126]; main ideas [S4:179–215]; 289 lines |
-| S5 | [`preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/build/sections/10-f-factors.tex`](../../preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/build/sections/10-f-factors.tex) | 155 | `cor:f-factor` [S5:17–36]; 155 lines |
-| S6 | [`preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/main.pdf`](../../preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/main.pdf) | 22808 | the manuscript as shipped |
-| S7 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=120`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2947], manuscript link [S1:2947] |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 120 at [S2:318] |
+| S3 | [`preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/build/main.tex`](../../../preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/build/main.tex) | 35 | document root; abstract [S3:8–17]; ten `\input` directives [S3:20–29]; 35 lines |
+| S4 | [`preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/build/sections/01-introduction.tex) | 289 | `thm:main` [S4:34–46]; prior work [S4:73–126]; main ideas [S4:179–215]; 289 lines |
+| S5 | [`preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/build/sections/10-f-factors.tex`](../../../preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/build/sections/10-f-factors.tex) | 155 | `cor:f-factor` [S5:17–36]; 155 lines |
+| S6 | [`preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/main.pdf`](../../../preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/main.pdf) | 22808 | the manuscript as shipped |
+| S7 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=120`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

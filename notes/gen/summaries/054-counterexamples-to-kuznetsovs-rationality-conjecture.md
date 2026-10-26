@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Algebraic and complex geometry](../index/disciplines/algebraic-and-complex-geometry.md) / [Family 054](../index/algebraic-and-complex-geometry/054-counterexamples-to-kuznetsovs-rationality-conjecture.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Algebraic and complex geometry](../index/disciplines/algebraic-and-complex-geometry.md) / [Family 054](../index/algebraic-and-complex-geometry/054-counterexamples-to-kuznetsovs-rationality-conjecture.md)
 
 # 054 — Counterexamples to Kuznetsov's rationality conjecture
 
@@ -182,13 +182,13 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 054 at line 1388. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 184. |
-| S3 | [`preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/README.md`](../../preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/README.md) | 17 | Manuscript readme: title, date. |
-| S4 | [`preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/paper.tex`](../../preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/paper.tex) | 74 | The main file: abstract and section inputs. |
-| S5 | [`preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/sections/introduction.tex`](../../preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/sections/introduction.tex) | 388 | The Kuznetsov component, the admissible definition, the theorem, and the two-evaluations argument. |
-| S6 | [`preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/sections/preliminaries.tex`](../../preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/sections/preliminaries.tex) | 237 | The lattice invariant and the MRC-quotient test. |
-| S7 | [`preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/sections/gw.tex`](../../preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/sections/gw.tex) | 847 | Genus-zero Gromov–Witten pairings and the net-center proposition. |
-| S8 | [`preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/sections/bounds.tex`](../../preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/sections/bounds.tex) | 1215 | The bound on surface centers. |
-| S9 | [`preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/sections/surface-links.tex`](../../preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/sections/surface-links.tex) | 884 | The subfield and surface-link calculation. |
-| S10 | [`preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/sections/cubics.tex`](../../preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/sections/cubics.tex) | 306 | Period and categorical results for admissible divisors. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 054 at line 1388. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 184. |
+| S3 | [`preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/README.md`](../../../preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/README.md) | 17 | Manuscript readme: title, date. |
+| S4 | [`preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/paper.tex`](../../../preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/paper.tex) | 74 | The main file: abstract and section inputs. |
+| S5 | [`preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/sections/introduction.tex`](../../../preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/sections/introduction.tex) | 388 | The Kuznetsov component, the admissible definition, the theorem, and the two-evaluations argument. |
+| S6 | [`preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/sections/preliminaries.tex`](../../../preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/sections/preliminaries.tex) | 237 | The lattice invariant and the MRC-quotient test. |
+| S7 | [`preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/sections/gw.tex`](../../../preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/sections/gw.tex) | 847 | Genus-zero Gromov–Witten pairings and the net-center proposition. |
+| S8 | [`preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/sections/bounds.tex`](../../../preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/sections/bounds.tex) | 1215 | The bound on surface centers. |
+| S9 | [`preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/sections/surface-links.tex`](../../../preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/sections/surface-links.tex) | 884 | The subfield and surface-link calculation. |
+| S10 | [`preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/sections/cubics.tex`](../../../preprints/Irrational-cubic-fourfolds-with-geometric-K3-categories-September-24-2026/build/sections/cubics.tex) | 306 | Period and categorical results for admissible divisors. |

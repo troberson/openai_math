@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Algebraic and complex geometry](../index/disciplines/algebraic-and-complex-geometry.md) / [Family 048](../index/algebraic-and-complex-geometry/048-a-characteristic-zero-counterexample-to-lipman-zariski.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Algebraic and complex geometry](../index/disciplines/algebraic-and-complex-geometry.md) / [Family 048](../index/algebraic-and-complex-geometry/048-a-characteristic-zero-counterexample-to-lipman-zariski.md)
 
 # 048 — A characteristic-zero counterexample to Lipman–Zariski
 
@@ -200,17 +200,17 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 048 at line 1274. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 172. |
-| S3 | [`preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/README.md`](../../preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/README.md) | 18 | Manuscript readme: title, author, date. |
-| S4 | [`preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/paper.tex`](../../preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/paper.tex) | 80 | The main file: inputs and bibliography. |
-| S5 | [`preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/01-introduction.tex`](../../preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/01-introduction.tex) | 238 | The abstract, the theorem, the context, and the proof structure. |
-| S6 | [`preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/02-curve.tex`](../../preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/02-curve.tex) | 440 | The genus-21 curve and the auxiliary elliptic curve. |
-| S7 | [`preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/03-trace.tex`](../../preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/03-trace.tex) | 545 | The trace pairing and normalized residue data. |
-| S8 | [`preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/04-jets.tex`](../../preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/04-jets.tex) | 606 | The finite vector-field jets. |
-| S9 | [`preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/05-analytic.tex`](../../preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/05-analytic.tex) | 425 | Holomorphic lifting and Grauert contraction. |
-| S10 | [`preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/06-algebraization.tex`](../../preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/06-algebraization.tex) | 508 | The affine algebraic endpoint. |
-| S11 | [`preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/bibliography.tex`](../../preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/bibliography.tex) | 221 | The bibliography. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 048 at line 1274. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 172. |
+| S3 | [`preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/README.md`](../../../preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/README.md) | 18 | Manuscript readme: title, author, date. |
+| S4 | [`preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/paper.tex`](../../../preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/paper.tex) | 80 | The main file: inputs and bibliography. |
+| S5 | [`preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/01-introduction.tex`](../../../preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/01-introduction.tex) | 238 | The abstract, the theorem, the context, and the proof structure. |
+| S6 | [`preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/02-curve.tex`](../../../preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/02-curve.tex) | 440 | The genus-21 curve and the auxiliary elliptic curve. |
+| S7 | [`preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/03-trace.tex`](../../../preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/03-trace.tex) | 545 | The trace pairing and normalized residue data. |
+| S8 | [`preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/04-jets.tex`](../../../preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/04-jets.tex) | 606 | The finite vector-field jets. |
+| S9 | [`preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/05-analytic.tex`](../../../preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/05-analytic.tex) | 425 | Holomorphic lifting and Grauert contraction. |
+| S10 | [`preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/06-algebraization.tex`](../../../preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/06-algebraization.tex) | 508 | The affine algebraic endpoint. |
+| S11 | [`preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/bibliography.tex`](../../../preprints/A-singular-normal-affine-surface-with-free-tangent-sheaf-September-23-2026/build/bibliography.tex) | 221 | The bibliography. |
 
 ## Bibliography
 

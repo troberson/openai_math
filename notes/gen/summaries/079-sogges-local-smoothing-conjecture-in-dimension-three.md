@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Real and complex analysis](../index/disciplines/real-and-complex-analysis.md) / [Family 079](../index/real-and-complex-analysis/079-sogges-local-smoothing-conjecture-in-dimension-three.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Real and complex analysis](../index/disciplines/real-and-complex-analysis.md) / [Family 079](../index/real-and-complex-analysis/079-sogges-local-smoothing-conjecture-in-dimension-three.md)
 
 # 079 — Sogge's local smoothing conjecture in dimension three
 
@@ -139,12 +139,12 @@ evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 079 at line 1963. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 232. |
-| S3 | [`preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/build/main.tex`](../../preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/build/main.tex) | 59 | Main file: title and section inputs. |
-| S4 | [`preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/build/sections/00-introduction.tex`](../../preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/build/sections/00-introduction.tex) | 352 | The abstract, the critical L3 theorem, the full range, the history, and the two-stage argument. |
-| S5 | [`preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/build/sections/10-bochner-riesz.tex`](../../preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/build/sections/10-bochner-riesz.tex) | 193 | The Bochner--Riesz consequences and the spherical restriction and Kakeya maximal estimates. |
-| S6 | [`preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/build/references.bib`](../../preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/build/references.bib) | 302 | The manuscript's bibliography. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 079 at line 1963. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 232. |
+| S3 | [`preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/build/main.tex`](../../../preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/build/main.tex) | 59 | Main file: title and section inputs. |
+| S4 | [`preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/build/sections/00-introduction.tex`](../../../preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/build/sections/00-introduction.tex) | 352 | The abstract, the critical L3 theorem, the full range, the history, and the two-stage argument. |
+| S5 | [`preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/build/sections/10-bochner-riesz.tex`](../../../preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/build/sections/10-bochner-riesz.tex) | 193 | The Bochner--Riesz consequences and the spherical restriction and Kakeya maximal estimates. |
+| S6 | [`preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/build/references.bib`](../../../preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/build/references.bib) | 302 | The manuscript's bibliography. |
 
 ## Bibliography
 

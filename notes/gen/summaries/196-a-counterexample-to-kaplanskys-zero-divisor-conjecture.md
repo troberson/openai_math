@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Algebra](../index/disciplines/algebra.md) / [Family 196](../index/algebra/196-a-counterexample-to-kaplanskys-zero-divisor-conjecture.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Algebra](../index/disciplines/algebra.md) / [Family 196](../index/algebra/196-a-counterexample-to-kaplanskys-zero-divisor-conjecture.md)
 
 # 196 — A counterexample to Kaplansky's zero-divisor conjecture
 
@@ -104,20 +104,20 @@ The declaration is `OAI.TorsionFreeZeroDivisors.main` at `lean/OAI/Algebra/Group
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`overview.tex`](../../overview.tex) | 859 | Family entry, line 473 |
-| S2 | [`preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/README.md`](../../preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/README.md) | 18 | Title, date |
-| S3 | [`preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/paper.tex`](../../preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/paper.tex) | 108 | Abstract, theorem, introduction, proof structure |
-| S4 | [`preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/sections/types.tex`](../../preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/sections/types.tex) | 170 | Vertex types |
-| S5 | [`preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/sections/entropy.tex`](../../preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/sections/entropy.tex) | 548 | Entropy and bounded patterns |
-| S6 | [`preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/sections/planar.tex`](../../preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/sections/planar.tex) | 423 | Planar separation |
-| S7 | [`preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/sections/topology.tex`](../../preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/sections/topology.tex) | 113 | Topology |
-| S8 | [`preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/sections/factors.tex`](../../preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/sections/factors.tex) | 34 | Factors |
-| S9 | [`preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/figures/band-surgery.tex`](../../preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/figures/band-surgery.tex) | 31 | Figure source |
-| S10 | [`preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/figures/block-alignment.tex`](../../preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/figures/block-alignment.tex) | 26 | Figure source |
-| S11 | [`preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/references/references.bib`](../../preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/references/references.bib) | 261 | Bibliography entries |
-| S12 | [`lean/docs/196.md`](../../lean/docs/196.md) | 17 | Scope |
-| S13 | [`lean/OAI/Algebra/GroupRing/Main.lean`](../../lean/OAI/Algebra/GroupRing/Main.lean) | 24 | Declaration |
-| S14 | [`lean/ComparatorChallenges/TorsionFreeZeroDivisors.lean`](../../lean/ComparatorChallenges/TorsionFreeZeroDivisors.lean) | 40 | Comparator stub |
+| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 473 |
+| S2 | [`preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/README.md`](../../../preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/README.md) | 18 | Title, date |
+| S3 | [`preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/paper.tex`](../../../preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/paper.tex) | 108 | Abstract, theorem, introduction, proof structure |
+| S4 | [`preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/sections/types.tex`](../../../preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/sections/types.tex) | 170 | Vertex types |
+| S5 | [`preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/sections/entropy.tex`](../../../preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/sections/entropy.tex) | 548 | Entropy and bounded patterns |
+| S6 | [`preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/sections/planar.tex`](../../../preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/sections/planar.tex) | 423 | Planar separation |
+| S7 | [`preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/sections/topology.tex`](../../../preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/sections/topology.tex) | 113 | Topology |
+| S8 | [`preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/sections/factors.tex`](../../../preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/sections/factors.tex) | 34 | Factors |
+| S9 | [`preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/figures/band-surgery.tex`](../../../preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/figures/band-surgery.tex) | 31 | Figure source |
+| S10 | [`preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/figures/block-alignment.tex`](../../../preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/figures/block-alignment.tex) | 26 | Figure source |
+| S11 | [`preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/references/references.bib`](../../../preprints/A-Torsion-Free-Group-Algebra-with-Zero-Divisors-September-23-2026/build/references/references.bib) | 261 | Bibliography entries |
+| S12 | [`lean/docs/196.md`](../../../lean/docs/196.md) | 17 | Scope |
+| S13 | [`lean/OAI/Algebra/GroupRing/Main.lean`](../../../lean/OAI/Algebra/GroupRing/Main.lean) | 24 | Declaration |
+| S14 | [`lean/ComparatorChallenges/TorsionFreeZeroDivisors.lean`](../../../lean/ComparatorChallenges/TorsionFreeZeroDivisors.lean) | 40 | Comparator stub |
 
 ## Bibliography
 

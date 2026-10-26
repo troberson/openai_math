@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Topology](../index/disciplines/topology.md) / [Family 305](../index/topology/305-counterexamples-to-disk-embedding-and-walls-manifold-conjecture.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Topology](../index/disciplines/topology.md) / [Family 305](../index/topology/305-counterexamples-to-disk-embedding-and-walls-manifold-conjecture.md)
 
 # 305 — Counterexamples to disk embedding and Wall's manifold conjecture
 
@@ -197,15 +197,15 @@ a bibliography in the PD4 `build/` — and no non-LaTeX evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 305 at line 7528. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 704. |
-| S3 | [`preprints/A-boundary-only-obstruction-to-four-dimensional-disk-embedding-September-24-2026/build/paper.tex`](../../preprints/A-boundary-only-obstruction-to-four-dimensional-disk-embedding-September-24-2026/build/paper.tex) | 69 | Boundary-only obstruction manuscript: title and abstract. |
-| S4 | [`preprints/A-boundary-only-obstruction-to-four-dimensional-disk-embedding-September-24-2026/build/sections/introduction.tex`](../../preprints/A-boundary-only-obstruction-to-four-dimensional-disk-embedding-September-24-2026/build/sections/introduction.tex) | 303 | Boundary-only obstruction introduction: the main theorem, the free-group problem, the surgery antecedents, and the obstruction. |
-| S5 | [`preprints/A-marked-tensor-obstruction-to-four-dimensional-disk-embedding-September-24-2026/build/sections/00-introduction.tex`](../../preprints/A-marked-tensor-obstruction-to-four-dimensional-disk-embedding-September-24-2026/build/sections/00-introduction.tex) | 275 | Marked tensor obstruction manuscript: abstract, the main theorem, the idea of the proof, and the geometric and algebraic antecedents. |
-| S6 | [`preprints/A-PD4-group-without-an-aspherical-manifold-model-September-24-2026/build/paper.tex`](../../preprints/A-PD4-group-without-an-aspherical-manifold-model-September-24-2026/build/paper.tex) | 242 | PD4-without-aspherical-manifold manuscript: abstract, the main theorem, the source of the obstruction, and the proof architecture. |
-| S7 | [`preprints/A-boundary-only-obstruction-to-four-dimensional-disk-embedding-September-24-2026/build/references.bib`](../../preprints/A-boundary-only-obstruction-to-four-dimensional-disk-embedding-September-24-2026/build/references.bib) | 244 | Boundary-only obstruction bibliography. |
-| S8 | [`preprints/A-marked-tensor-obstruction-to-four-dimensional-disk-embedding-September-24-2026/build/references.bib`](../../preprints/A-marked-tensor-obstruction-to-four-dimensional-disk-embedding-September-24-2026/build/references.bib) | 190 | Marked tensor obstruction bibliography. |
-| S9 | [`preprints/A-PD4-group-without-an-aspherical-manifold-model-September-24-2026/build/references.tex`](../../preprints/A-PD4-group-without-an-aspherical-manifold-model-September-24-2026/build/references.tex) | 161 | PD4-without-aspherical-manifold bibliography. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 305 at line 7528. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 704. |
+| S3 | [`preprints/A-boundary-only-obstruction-to-four-dimensional-disk-embedding-September-24-2026/build/paper.tex`](../../../preprints/A-boundary-only-obstruction-to-four-dimensional-disk-embedding-September-24-2026/build/paper.tex) | 69 | Boundary-only obstruction manuscript: title and abstract. |
+| S4 | [`preprints/A-boundary-only-obstruction-to-four-dimensional-disk-embedding-September-24-2026/build/sections/introduction.tex`](../../../preprints/A-boundary-only-obstruction-to-four-dimensional-disk-embedding-September-24-2026/build/sections/introduction.tex) | 303 | Boundary-only obstruction introduction: the main theorem, the free-group problem, the surgery antecedents, and the obstruction. |
+| S5 | [`preprints/A-marked-tensor-obstruction-to-four-dimensional-disk-embedding-September-24-2026/build/sections/00-introduction.tex`](../../../preprints/A-marked-tensor-obstruction-to-four-dimensional-disk-embedding-September-24-2026/build/sections/00-introduction.tex) | 275 | Marked tensor obstruction manuscript: abstract, the main theorem, the idea of the proof, and the geometric and algebraic antecedents. |
+| S6 | [`preprints/A-PD4-group-without-an-aspherical-manifold-model-September-24-2026/build/paper.tex`](../../../preprints/A-PD4-group-without-an-aspherical-manifold-model-September-24-2026/build/paper.tex) | 242 | PD4-without-aspherical-manifold manuscript: abstract, the main theorem, the source of the obstruction, and the proof architecture. |
+| S7 | [`preprints/A-boundary-only-obstruction-to-four-dimensional-disk-embedding-September-24-2026/build/references.bib`](../../../preprints/A-boundary-only-obstruction-to-four-dimensional-disk-embedding-September-24-2026/build/references.bib) | 244 | Boundary-only obstruction bibliography. |
+| S8 | [`preprints/A-marked-tensor-obstruction-to-four-dimensional-disk-embedding-September-24-2026/build/references.bib`](../../../preprints/A-marked-tensor-obstruction-to-four-dimensional-disk-embedding-September-24-2026/build/references.bib) | 190 | Marked tensor obstruction bibliography. |
+| S9 | [`preprints/A-PD4-group-without-an-aspherical-manifold-model-September-24-2026/build/references.tex`](../../../preprints/A-PD4-group-without-an-aspherical-manifold-model-September-24-2026/build/references.tex) | 161 | PD4-without-aspherical-manifold bibliography. |
 
 ## Bibliography
 

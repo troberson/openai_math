@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Algebra](../index/disciplines/algebra.md) / [Family 204](../index/algebra/204-tensor-saturation-for-even-spin-groups.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Algebra](../index/disciplines/algebra.md) / [Family 204](../index/algebra/204-tensor-saturation-for-even-spin-groups.md)
 
 # 204 — Tensor saturation for even spin groups
 
@@ -124,11 +124,11 @@ evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 204 at line 4657. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 489. |
-| S3 | [`preprints/Tensor-Saturation-for-Even-Spin-Groups-September-24-2026/build/main.tex`](../../preprints/Tensor-Saturation-for-Even-Spin-Groups-September-24-2026/build/main.tex) | 62 | Main file: title and abstract. |
-| S4 | [`preprints/Tensor-Saturation-for-Even-Spin-Groups-September-24-2026/build/sections/01-introduction.tex`](../../preprints/Tensor-Saturation-for-Even-Spin-Groups-September-24-2026/build/sections/01-introduction.tex) | 142 | The main theorem, the saturation setup, prior work, and the proof's constructions. |
-| S5 | [`preprints/Tensor-Saturation-for-Even-Spin-Groups-September-24-2026/build/references.bib`](../../preprints/Tensor-Saturation-for-Even-Spin-Groups-September-24-2026/build/references.bib) | 414 | The manuscript's bibliography. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 204 at line 4657. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 489. |
+| S3 | [`preprints/Tensor-Saturation-for-Even-Spin-Groups-September-24-2026/build/main.tex`](../../../preprints/Tensor-Saturation-for-Even-Spin-Groups-September-24-2026/build/main.tex) | 62 | Main file: title and abstract. |
+| S4 | [`preprints/Tensor-Saturation-for-Even-Spin-Groups-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/Tensor-Saturation-for-Even-Spin-Groups-September-24-2026/build/sections/01-introduction.tex) | 142 | The main theorem, the saturation setup, prior work, and the proof's constructions. |
+| S5 | [`preprints/Tensor-Saturation-for-Even-Spin-Groups-September-24-2026/build/references.bib`](../../../preprints/Tensor-Saturation-for-Even-Spin-Groups-September-24-2026/build/references.bib) | 414 | The manuscript's bibliography. |
 
 ## Bibliography
 

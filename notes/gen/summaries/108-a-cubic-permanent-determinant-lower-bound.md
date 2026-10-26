@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 108](../index/theoretical-computer-science/108-a-cubic-permanent-determinant-lower-bound.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 108](../index/theoretical-computer-science/108-a-cubic-permanent-determinant-lower-bound.md)
 
 # 108 — A cubic permanent–determinant lower bound
 
@@ -8,11 +8,11 @@
 
 [S1:2679] (family entry):
 
-> **108. A cubic permanent–determinant lower bound.** Proves an $\Omega(n^3)$ lower bound for the border determinantal complexity of the $n\times n$ permanent over ℂ. Even coefficientwise limits of determinants of affine-linear matrices require matrix size at least $cn^3$, for an absolute c > 0 and all sufficiently large n; the same bound therefore holds for exact representations. ([Lean](../../lean/docs/108.md))
+> **108. A cubic permanent–determinant lower bound.** Proves an $\Omega(n^3)$ lower bound for the border determinantal complexity of the $n\times n$ permanent over ℂ. Even coefficientwise limits of determinants of affine-linear matrices require matrix size at least $cn^3$, for an absolute c > 0 and all sufficiently large n; the same bound therefore holds for exact representations. ([Lean](../../../lean/docs/108.md))
 
 [S1:2686] (the manuscript entry, with its abstract at [S1:2688]):
 
-> [A cubic lower bound for border determinantal complexity of the permanent](../../preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026.pdf)
+> [A cubic lower bound for border determinantal complexity of the permanent](../../../preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026.pdf)
 
 > We prove that the complex border determinantal complexity of the $m\times m$ permanent is $\Omega(m^3)$, allowing arbitrary affine-linear determinant representations and coefficientwise limits. It also gives cubic lower bounds for exact determinantal complexity and for the numbers of vertices and edges in affine-linear algebraic branching programs, including coefficientwise limits with a fixed vertex or edge budget.
 
@@ -194,12 +194,12 @@ resolve verb.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2679], manuscript link [S1:2686] and abstract [S1:2688] |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 108 at [S2:294] |
-| S3 | [`preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/build/source/main.tex`](../../preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/build/source/main.tex) | 98 | root (`\documentclass`); abstract [S3:78–85]; `\tableofcontents` [S3:86]; nine `\input` directives [S3:87–95]; 98 lines |
-| S4 | [`preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/build/source/sections/introduction.tex`](../../preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/build/source/sections/introduction.tex) | 257 | `thm:main` [S4:41–49]; context [S4:66–152]; proof strategy [S4:154–257]; 257 lines |
-| S5 | [`preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026.pdf`](../../preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026.pdf) | 15687 | the manuscript as shipped |
-| S6 | [`lean/docs/108.md`](../../lean/docs/108.md) | 18 | scope note — the Scope at [S6:9], supporting theorem at [S6:11], two comparator links at [S6:17–18] |
-| S7 | [`lean/ComparatorChallenges/PermanentCubic.lean`](../../lean/ComparatorChallenges/PermanentCubic.lean) | 42 | the comparator stub — `permanent_cubic_lower_bounds` at [S7:33–38] |
-| S8 | [`lean/ComparatorChallenges/SmoothInitialForm.lean`](../../lean/ComparatorChallenges/SmoothInitialForm.lean) | 56 | the comparator stub — `smooth_initial_form_lower_bound` at [S8:35–52] |
-| S9 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=108`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2679], manuscript link [S1:2686] and abstract [S1:2688] |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 108 at [S2:294] |
+| S3 | [`preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/build/source/main.tex`](../../../preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/build/source/main.tex) | 98 | root (`\documentclass`); abstract [S3:78–85]; `\tableofcontents` [S3:86]; nine `\input` directives [S3:87–95]; 98 lines |
+| S4 | [`preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/build/source/sections/introduction.tex`](../../../preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/build/source/sections/introduction.tex) | 257 | `thm:main` [S4:41–49]; context [S4:66–152]; proof strategy [S4:154–257]; 257 lines |
+| S5 | [`preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026.pdf`](../../../preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026.pdf) | 15687 | the manuscript as shipped |
+| S6 | [`lean/docs/108.md`](../../../lean/docs/108.md) | 18 | scope note — the Scope at [S6:9], supporting theorem at [S6:11], two comparator links at [S6:17–18] |
+| S7 | [`lean/ComparatorChallenges/PermanentCubic.lean`](../../../lean/ComparatorChallenges/PermanentCubic.lean) | 42 | the comparator stub — `permanent_cubic_lower_bounds` at [S7:33–38] |
+| S8 | [`lean/ComparatorChallenges/SmoothInitialForm.lean`](../../../lean/ComparatorChallenges/SmoothInitialForm.lean) | 56 | the comparator stub — `smooth_initial_form_lower_bound` at [S8:35–52] |
+| S9 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=108`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

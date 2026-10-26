@@ -17,7 +17,7 @@ Run: python3 notes/scripts/run_tests.py notes/scripts/tests/test_tsv_quoting.py 
 import csv
 
 import pytest
-from catlib.paths import TABLES
+from catlib.paths import DATA, TABLES
 
 pytestmark = pytest.mark.mutant
 
@@ -57,7 +57,7 @@ def mod(load):
 @pytest.fixture(scope="module")
 def targets():
     """The row each injection targets: a legal quoted field, and a quote-free field."""
-    topics = (TABLES / "topics.tsv").read_text(encoding="utf-8")
+    topics = (DATA / "topics.tsv").read_text(encoding="utf-8")
     q = None
     for i, row in enumerate(_rows(topics)):
         fields = row.split("\t")
@@ -67,7 +67,7 @@ def targets():
                 break
         if q:
             break
-    conj = (TABLES / "conjecture-standing.tsv").read_text(encoding="utf-8")
+    conj = (DATA / "conjecture-standing.tsv").read_text(encoding="utf-8")
     gap = None
     for i, row in enumerate(_rows(conj)):
         fields = row.split("\t")

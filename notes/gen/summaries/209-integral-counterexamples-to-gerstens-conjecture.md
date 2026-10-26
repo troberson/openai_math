@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Algebra](../index/disciplines/algebra.md) / [Family 209](../index/algebra/209-integral-counterexamples-to-gerstens-conjecture.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Algebra](../index/disciplines/algebra.md) / [Family 209](../index/algebra/209-integral-counterexamples-to-gerstens-conjecture.md)
 
 # 209 — Integral counterexamples to Gersten’s conjecture
 
@@ -146,14 +146,14 @@ manuscripts — 8 `.tex` files in the degree-five `build/source/` and
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 209 at line 4764. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 499. |
-| S3 | [`preprints/An-Integral-Counterexample-to-Gerstens-Conjecture-September-25-2026/build/source/main.tex`](../../preprints/An-Integral-Counterexample-to-Gerstens-Conjecture-September-25-2026/build/source/main.tex) | 63 | Degree-five manuscript main file: title and abstract. |
-| S4 | [`preprints/An-Integral-Counterexample-to-Gerstens-Conjecture-September-25-2026/build/source/sections/introduction.tex`](../../preprints/An-Integral-Counterexample-to-Gerstens-Conjecture-September-25-2026/build/source/sections/introduction.tex) | 157 | Degree-five manuscript introduction: main theorem, history, and the construction guide. |
-| S5 | [`preprints/An-Integral-Degree-Three-Gersten-Counterexample-September-26-2026/build/main.tex`](../../preprints/An-Integral-Degree-Three-Gersten-Counterexample-September-26-2026/build/main.tex) | 43 | Degree-three manuscript main file: title and abstract. |
-| S6 | [`preprints/An-Integral-Degree-Three-Gersten-Counterexample-September-26-2026/build/sections/introduction.tex`](../../preprints/An-Integral-Degree-Three-Gersten-Counterexample-September-26-2026/build/sections/introduction.tex) | 166 | Degree-three manuscript introduction: main theorem, context, and the proof route. |
-| S7 | [`preprints/An-Integral-Counterexample-to-Gerstens-Conjecture-September-25-2026/build/source/references.bib`](../../preprints/An-Integral-Counterexample-to-Gerstens-Conjecture-September-25-2026/build/source/references.bib) | 375 | Degree-five manuscript bibliography. |
-| S8 | [`preprints/An-Integral-Degree-Three-Gersten-Counterexample-September-26-2026/build/refs/sources.bib`](../../preprints/An-Integral-Degree-Three-Gersten-Counterexample-September-26-2026/build/refs/sources.bib) | 141 | Degree-three manuscript bibliography. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 209 at line 4764. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 499. |
+| S3 | [`preprints/An-Integral-Counterexample-to-Gerstens-Conjecture-September-25-2026/build/source/main.tex`](../../../preprints/An-Integral-Counterexample-to-Gerstens-Conjecture-September-25-2026/build/source/main.tex) | 63 | Degree-five manuscript main file: title and abstract. |
+| S4 | [`preprints/An-Integral-Counterexample-to-Gerstens-Conjecture-September-25-2026/build/source/sections/introduction.tex`](../../../preprints/An-Integral-Counterexample-to-Gerstens-Conjecture-September-25-2026/build/source/sections/introduction.tex) | 157 | Degree-five manuscript introduction: main theorem, history, and the construction guide. |
+| S5 | [`preprints/An-Integral-Degree-Three-Gersten-Counterexample-September-26-2026/build/main.tex`](../../../preprints/An-Integral-Degree-Three-Gersten-Counterexample-September-26-2026/build/main.tex) | 43 | Degree-three manuscript main file: title and abstract. |
+| S6 | [`preprints/An-Integral-Degree-Three-Gersten-Counterexample-September-26-2026/build/sections/introduction.tex`](../../../preprints/An-Integral-Degree-Three-Gersten-Counterexample-September-26-2026/build/sections/introduction.tex) | 166 | Degree-three manuscript introduction: main theorem, context, and the proof route. |
+| S7 | [`preprints/An-Integral-Counterexample-to-Gerstens-Conjecture-September-25-2026/build/source/references.bib`](../../../preprints/An-Integral-Counterexample-to-Gerstens-Conjecture-September-25-2026/build/source/references.bib) | 375 | Degree-five manuscript bibliography. |
+| S8 | [`preprints/An-Integral-Degree-Three-Gersten-Counterexample-September-26-2026/build/refs/sources.bib`](../../../preprints/An-Integral-Degree-Three-Gersten-Counterexample-September-26-2026/build/refs/sources.bib) | 141 | Degree-three manuscript bibliography. |
 
 ## Bibliography
 

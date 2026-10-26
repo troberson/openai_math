@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Algebra](../index/disciplines/algebra.md) / [Family 200](../index/algebra/200-eisenbud-green-harris-and-lex-plus-powers-in-characteristic-zero.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Algebra](../index/disciplines/algebra.md) / [Family 200](../index/algebra/200-eisenbud-green-harris-and-lex-plus-powers-in-characteristic-zero.md)
 
 # 200 — Eisenbud–Green–Harris and lex-plus-powers in characteristic zero
 
@@ -191,14 +191,14 @@ no non-LaTeX evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 200 at line 4575. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 481. |
-| S3 | [`preprints/The-Artinian-Lex-Plus-Powers-Betti-Theorem-September-23-2026/build/main.tex`](../../preprints/The-Artinian-Lex-Plus-Powers-Betti-Theorem-September-23-2026/build/main.tex) | 64 | Manuscript 1 root: title and abstract. |
-| S4 | [`preprints/The-Artinian-Lex-Plus-Powers-Betti-Theorem-September-23-2026/build/sections/01-introduction.tex`](../../preprints/The-Artinian-Lex-Plus-Powers-Betti-Theorem-September-23-2026/build/sections/01-introduction.tex) | 227 | Manuscript 1: the Betti theorem over $\C$, the characteristic-zero corollary, the context, and the division-coefficient reduction that carries the Betti numbers. |
-| S5 | [`preprints/Commuting-Division-Coefficient-Forms-and-the-Artinian-Eisenbud-Green-Harris-Conjecture-September-23-2026/build/paper.tex`](../../preprints/Commuting-Division-Coefficient-Forms-and-the-Artinian-Eisenbud-Green-Harris-Conjecture-September-23-2026/build/paper.tex) | 84 | Manuscript 2 root: title and abstract. |
-| S6 | [`preprints/Commuting-Division-Coefficient-Forms-and-the-Artinian-Eisenbud-Green-Harris-Conjecture-September-23-2026/build/sections/01-introduction.tex`](../../preprints/Commuting-Division-Coefficient-Forms-and-the-Artinian-Eisenbud-Green-Harris-Conjecture-September-23-2026/build/sections/01-introduction.tex) | 299 | Manuscript 2: the commuting-form construction, the Artinian and characteristic-zero EGH corollaries, the earlier results, the proof strategy, and the conventions. |
-| S7 | [`preprints/The-Artinian-Lex-Plus-Powers-Betti-Theorem-September-23-2026/build/bibliography.tex`](../../preprints/The-Artinian-Lex-Plus-Powers-Betti-Theorem-September-23-2026/build/bibliography.tex) | 130 | Manuscript 1's bibliography. |
-| S8 | [`preprints/Commuting-Division-Coefficient-Forms-and-the-Artinian-Eisenbud-Green-Harris-Conjecture-September-23-2026/build/bibliography.tex`](../../preprints/Commuting-Division-Coefficient-Forms-and-the-Artinian-Eisenbud-Green-Harris-Conjecture-September-23-2026/build/bibliography.tex) | 252 | Manuscript 2's bibliography. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 200 at line 4575. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 481. |
+| S3 | [`preprints/The-Artinian-Lex-Plus-Powers-Betti-Theorem-September-23-2026/build/main.tex`](../../../preprints/The-Artinian-Lex-Plus-Powers-Betti-Theorem-September-23-2026/build/main.tex) | 64 | Manuscript 1 root: title and abstract. |
+| S4 | [`preprints/The-Artinian-Lex-Plus-Powers-Betti-Theorem-September-23-2026/build/sections/01-introduction.tex`](../../../preprints/The-Artinian-Lex-Plus-Powers-Betti-Theorem-September-23-2026/build/sections/01-introduction.tex) | 227 | Manuscript 1: the Betti theorem over $\C$, the characteristic-zero corollary, the context, and the division-coefficient reduction that carries the Betti numbers. |
+| S5 | [`preprints/Commuting-Division-Coefficient-Forms-and-the-Artinian-Eisenbud-Green-Harris-Conjecture-September-23-2026/build/paper.tex`](../../../preprints/Commuting-Division-Coefficient-Forms-and-the-Artinian-Eisenbud-Green-Harris-Conjecture-September-23-2026/build/paper.tex) | 84 | Manuscript 2 root: title and abstract. |
+| S6 | [`preprints/Commuting-Division-Coefficient-Forms-and-the-Artinian-Eisenbud-Green-Harris-Conjecture-September-23-2026/build/sections/01-introduction.tex`](../../../preprints/Commuting-Division-Coefficient-Forms-and-the-Artinian-Eisenbud-Green-Harris-Conjecture-September-23-2026/build/sections/01-introduction.tex) | 299 | Manuscript 2: the commuting-form construction, the Artinian and characteristic-zero EGH corollaries, the earlier results, the proof strategy, and the conventions. |
+| S7 | [`preprints/The-Artinian-Lex-Plus-Powers-Betti-Theorem-September-23-2026/build/bibliography.tex`](../../../preprints/The-Artinian-Lex-Plus-Powers-Betti-Theorem-September-23-2026/build/bibliography.tex) | 130 | Manuscript 1's bibliography. |
+| S8 | [`preprints/Commuting-Division-Coefficient-Forms-and-the-Artinian-Eisenbud-Green-Harris-Conjecture-September-23-2026/build/bibliography.tex`](../../../preprints/Commuting-Division-Coefficient-Forms-and-the-Artinian-Eisenbud-Green-Harris-Conjecture-September-23-2026/build/bibliography.tex) | 252 | Manuscript 2's bibliography. |
 
 ## Bibliography
 

@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 106](../index/theoretical-computer-science/106-hardness-of-coloring-three-colorable-graphs.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 106](../index/theoretical-computer-science/106-hardness-of-coloring-three-colorable-graphs.md)
 
 # 106 — Hardness of coloring three-colorable graphs
 
@@ -8,11 +8,11 @@
 
 [S1:2629] (family entry):
 
-> **106. Hardness of coloring three-colorable graphs.** It is NP-hard to color a three-colorable graph using any fixed number c ≥ 3 of colors. More strongly, for every fixed $`0\lt \delta\lt 1/3`$, a deterministic polynomial-time reduction from 3SAT produces simple unweighted graphs that are three-colorable in the satisfiable case and have no independent set of size $`\delta n`$ otherwise, where n is the number of vertices. ([Lean](../../lean/docs/106.md))
+> **106. Hardness of coloring three-colorable graphs.** It is NP-hard to color a three-colorable graph using any fixed number c ≥ 3 of colors. More strongly, for every fixed $`0\lt \delta\lt 1/3`$, a deterministic polynomial-time reduction from 3SAT produces simple unweighted graphs that are three-colorable in the satisfiable case and have no independent set of size $`\delta n`$ otherwise, where n is the number of vertices. ([Lean](../../../lean/docs/106.md))
 
 [S1:2636] (the manuscript entry, with its abstract at [S1:2638]):
 
-> [Hardness of finding large independent sets in three-colorable graphs](../../preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026.pdf)
+> [Hardness of finding large independent sets in three-colorable graphs](../../../preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026.pdf)
 
 > We prove that, for every fixed $`0\lt \delta\lt 1/3`$, it is NP-hard to distinguish three-colorable graphs from graphs in which every independent set has fewer than δ times the number of vertices. Consequently, for every fixed integer c ≥ 3, finding a proper c-coloring of a three-colorable graph is NP-hard.
 
@@ -224,14 +224,14 @@ two evidence surfaces.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2629], the manuscript link [S1:2636], and the manuscript abstract [S1:2638]. The release's inline code spans stay as backticked markdown, and the release's italic markup is folded to the plain word |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 106 at [S2:290] |
-| S3 | [`preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/build/source/main.tex`](../../preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/build/source/main.tex) | 57 | root (`\documentclass`); abstract [S3:40–46]; the eight-section include order [S3:47–54] |
-| S4 | [`preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/build/source/sections/introduction.tex`](../../preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/build/source/sections/introduction.tex) | 212 | the coloring and independent-set definitions [S4:3–10]; the main theorem [S4:12–30]; the coloring corollary [S4:48–58]; the history [S4:62–137]; the proof overview [S4:141–212] |
-| S5 | [`preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/build/source/sections/parameters.tex`](../../preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/build/source/sections/parameters.tex) | 87 | the parameter choice order [S5:4–8]; the fixed constants [S5:10–17]; the closing density bound [S5:70–87] |
-| S6 | [`preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026.pdf`](../../preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026.pdf) | 14770 | the manuscript as shipped |
-| S7 | [`lean/docs/106.md`](../../lean/docs/106.md) | 15 | scope note — the formalization's Scope at [S7:9] and its comparator link |
-| S8 | [`lean/ComparatorChallenges/IndependentSets.lean`](../../lean/ComparatorChallenges/IndependentSets.lean) | 84 | the comparator stub — `RealGraphReduction` at [S8:64–73] and `mainTheoremReal` at [S8:76–78] with its `sorry` |
-| S9 | [`lean/OAI/Combinatorics/IndependentSets/Main.lean`](../../lean/OAI/Combinatorics/IndependentSets/Main.lean) | 152 | the formalized file — `mainTheoremReal` proved at [S9:124–135] |
-| S10 | [`lean/formalization.yaml`](../../lean/formalization.yaml) | 1783 | the `main_results` entry naming the declaration, at [S10:1317–1319] |
-| S11 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=106`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2629], the manuscript link [S1:2636], and the manuscript abstract [S1:2638]. The release's inline code spans stay as backticked markdown, and the release's italic markup is folded to the plain word |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 106 at [S2:290] |
+| S3 | [`preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/build/source/main.tex`](../../../preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/build/source/main.tex) | 57 | root (`\documentclass`); abstract [S3:40–46]; the eight-section include order [S3:47–54] |
+| S4 | [`preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/build/source/sections/introduction.tex`](../../../preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/build/source/sections/introduction.tex) | 212 | the coloring and independent-set definitions [S4:3–10]; the main theorem [S4:12–30]; the coloring corollary [S4:48–58]; the history [S4:62–137]; the proof overview [S4:141–212] |
+| S5 | [`preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/build/source/sections/parameters.tex`](../../../preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/build/source/sections/parameters.tex) | 87 | the parameter choice order [S5:4–8]; the fixed constants [S5:10–17]; the closing density bound [S5:70–87] |
+| S6 | [`preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026.pdf`](../../../preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026.pdf) | 14770 | the manuscript as shipped |
+| S7 | [`lean/docs/106.md`](../../../lean/docs/106.md) | 15 | scope note — the formalization's Scope at [S7:9] and its comparator link |
+| S8 | [`lean/ComparatorChallenges/IndependentSets.lean`](../../../lean/ComparatorChallenges/IndependentSets.lean) | 84 | the comparator stub — `RealGraphReduction` at [S8:64–73] and `mainTheoremReal` at [S8:76–78] with its `sorry` |
+| S9 | [`lean/OAI/Combinatorics/IndependentSets/Main.lean`](../../../lean/OAI/Combinatorics/IndependentSets/Main.lean) | 152 | the formalized file — `mainTheoremReal` proved at [S9:124–135] |
+| S10 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1783 | the `main_results` entry naming the declaration, at [S10:1317–1319] |
+| S11 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=106`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 140](../index/theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 140](../index/theoretical-computer-science/140-memory-sample-lower-bounds-for-noiseless-gaussian-regression.md)
 
 # 140 — Memory–sample lower bounds for noiseless Gaussian regression
 
@@ -8,7 +8,7 @@
 
 [S1:3350] (family entry):
 
-> **140. Memory–sample lower bounds for noiseless Gaussian regression.** For fixed A > 0, a one-pass learner with $`Ad^2`$ persistent bits needs $`\Omega_A(d\log(1/\epsilon))`$ noiseless Gaussian samples to recover a unit vector to angular error $`0\lt \epsilon\le1/10`$ with probability 2/3, uniformly in accuracy for large d. Computation and randomized updates are unrestricted, but output uses only the terminal state, stopping index and fresh randomness. ([Lean](lean/docs/140.md))
+> **140. Memory–sample lower bounds for noiseless Gaussian regression.** For fixed A > 0, a one-pass learner with $`Ad^2`$ persistent bits needs $`\Omega_A(d\log(1/\epsilon))`$ noiseless Gaussian samples to recover a unit vector to angular error $`0\lt \epsilon\le1/10`$ with probability 2/3, uniformly in accuracy for large d. Computation and randomized updates are unrestricted, but output uses only the terminal state, stopping index and fresh randomness. ([Lean](../../../lean/docs/140.md))
 
 [S2:357] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement. The `\resultentry` lists six manuscripts:
@@ -207,15 +207,15 @@ formalized (`paps_form=5`). The shape flags are `partial|uniform`;
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3350], manuscript links [S1:3350] |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 140 at [S2:357] |
-| S3 | [`preprints/Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026/build/main.tex`](../../preprints/Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026/build/main.tex) | 32 | document root; abstract [S3:9–14]; 12 section `\input` directives [S3:15–26]; 32 lines |
-| S4 | [`preprints/Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026/build/sections/introduction.tex`](../../preprints/Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026/build/sections/introduction.tex) | 294 | `h:main` [S4:59–73], `h:subquadratic` [S4:81–91], `h:worst-signal` [S4:93–102]; 294 lines |
-| S5 | [`preprints/Posterior-replicas-and-conditional-information-in-Gaussian-regression-September-27-2026/paper.pdf`](../../preprints/Posterior-replicas-and-conditional-information-in-Gaussian-regression-September-27-2026/paper.pdf) | 21225 | the second manuscript as shipped |
-| S6 | [`preprints/Localization-costs-and-information-growth-for-exact-Gaussian-observations-September-27-2026/paper.pdf`](../../preprints/Localization-costs-and-information-growth-for-exact-Gaussian-observations-September-27-2026/paper.pdf) | 26140 | the third manuscript as shipped |
-| S7 | [`preprints/Projection-moments-positive-cap-domination-and-Riesz-estimates-on-the-sphere-September-27-2026/paper.pdf`](../../preprints/Projection-moments-positive-cap-domination-and-Riesz-estimates-on-the-sphere-September-27-2026/paper.pdf) | 14140 | the fourth manuscript as shipped |
-| S8 | [`preprints/Replacing-Gaussian-observations-in-memory-constrained-inference-September-27-2026/paper.pdf`](../../preprints/Replacing-Gaussian-observations-in-memory-constrained-inference-September-27-2026/paper.pdf) | 17889 | the fifth manuscript as shipped |
-| S9 | [`preprints/Subsphere-methods-for-memory-sample-lower-bounds-in-noiseless-Gaussian-regression-September-27-2026/paper.pdf`](../../preprints/Subsphere-methods-for-memory-sample-lower-bounds-in-noiseless-Gaussian-regression-September-27-2026/paper.pdf) | 13645 | the sixth manuscript as shipped |
-| S10 | [`lean/docs/140.md`](../../lean/docs/140.md) | 49 | scope note — Scope at [S10:9], comparator links at [S10:42–49] |
-| S11 | [`lean/ComparatorChallenges/MemoryPrecision.lean`](../../lean/ComparatorChallenges/MemoryPrecision.lean) | 812 | comparator — 812 lines |
-| S12 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=140`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3350], manuscript links [S1:3350] |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 140 at [S2:357] |
+| S3 | [`preprints/Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026/build/main.tex`](../../../preprints/Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026/build/main.tex) | 32 | document root; abstract [S3:9–14]; 12 section `\input` directives [S3:15–26]; 32 lines |
+| S4 | [`preprints/Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026/build/sections/introduction.tex`](../../../preprints/Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026/build/sections/introduction.tex) | 294 | `h:main` [S4:59–73], `h:subquadratic` [S4:81–91], `h:worst-signal` [S4:93–102]; 294 lines |
+| S5 | [`preprints/Posterior-replicas-and-conditional-information-in-Gaussian-regression-September-27-2026/paper.pdf`](../../../preprints/Posterior-replicas-and-conditional-information-in-Gaussian-regression-September-27-2026/paper.pdf) | 21225 | the second manuscript as shipped |
+| S6 | [`preprints/Localization-costs-and-information-growth-for-exact-Gaussian-observations-September-27-2026/paper.pdf`](../../../preprints/Localization-costs-and-information-growth-for-exact-Gaussian-observations-September-27-2026/paper.pdf) | 26140 | the third manuscript as shipped |
+| S7 | [`preprints/Projection-moments-positive-cap-domination-and-Riesz-estimates-on-the-sphere-September-27-2026/paper.pdf`](../../../preprints/Projection-moments-positive-cap-domination-and-Riesz-estimates-on-the-sphere-September-27-2026/paper.pdf) | 14140 | the fourth manuscript as shipped |
+| S8 | [`preprints/Replacing-Gaussian-observations-in-memory-constrained-inference-September-27-2026/paper.pdf`](../../../preprints/Replacing-Gaussian-observations-in-memory-constrained-inference-September-27-2026/paper.pdf) | 17889 | the fifth manuscript as shipped |
+| S9 | [`preprints/Subsphere-methods-for-memory-sample-lower-bounds-in-noiseless-Gaussian-regression-September-27-2026/paper.pdf`](../../../preprints/Subsphere-methods-for-memory-sample-lower-bounds-in-noiseless-Gaussian-regression-September-27-2026/paper.pdf) | 13645 | the sixth manuscript as shipped |
+| S10 | [`lean/docs/140.md`](../../../lean/docs/140.md) | 49 | scope note — Scope at [S10:9], comparator links at [S10:42–49] |
+| S11 | [`lean/ComparatorChallenges/MemoryPrecision.lean`](../../../lean/ComparatorChallenges/MemoryPrecision.lean) | 812 | comparator — 812 lines |
+| S12 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=140`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

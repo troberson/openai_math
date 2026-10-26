@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 121](../index/theoretical-computer-science/121-almost-linear-expected-time-approximation-of-edit-distance.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 121](../index/theoretical-computer-science/121-almost-linear-expected-time-approximation-of-edit-distance.md)
 
 # 121 — Almost-linear expected-time approximation of edit distance
 
@@ -8,7 +8,7 @@
 
 [S1:2963] (family entry):
 
-> **121. Almost-linear approximation of edit distance.** For every fixed rational $`\varepsilon\in(0,1)`$, gives a randomized $`(1+\varepsilon)`$ approximation to unit-cost edit distance in worst-case expected time $`N^{1+o(1)}`$, with success probability at least 2/3. The strings have total length N and polynomially bounded integer symbols. This is an asymptotic guarantee at fixed accuracy. ([Lean](lean/docs/121.md))
+> **121. Almost-linear approximation of edit distance.** For every fixed rational $`\varepsilon\in(0,1)`$, gives a randomized $`(1+\varepsilon)`$ approximation to unit-cost edit distance in worst-case expected time $`N^{1+o(1)}`$, with success probability at least 2/3. The strings have total length N and polynomially bounded integer symbols. This is an asymptotic guarantee at fixed accuracy. ([Lean](../../../lean/docs/121.md))
 
 [S2:320] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.
@@ -158,11 +158,11 @@ named conjecture; `counterex_broad=0`.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2963], manuscript link [S1:2963] |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 121 at [S2:320] |
-| S3 | [`preprints/An-Almost-Linear-Approximation-Scheme-for-Edit-Distance-September-24-2026/build/paper.tex`](../../preprints/An-Almost-Linear-Approximation-Scheme-for-Edit-Distance-September-24-2026/build/paper.tex) | 31 | document root; abstract [S3:8–16]; eleven `\input` directives [S3:2–28]; 31 lines |
-| S4 | [`preprints/An-Almost-Linear-Approximation-Scheme-for-Edit-Distance-September-24-2026/build/sections/01-introduction.tex`](../../preprints/An-Almost-Linear-Approximation-Scheme-for-Edit-Distance-September-24-2026/build/sections/01-introduction.tex) | 203 | `thm:main` [S4:13–26]; context [S4:40–55]; 203 lines |
-| S5 | [`lean/docs/121.md`](../../lean/docs/121.md) | 17 | scope note — Scope at [S5:7], comparator link at [S5:17] |
-| S6 | [`lean/ComparatorChallenges/EditApproximation.lean`](../../lean/ComparatorChallenges/EditApproximation.lean) | 19169 | the comparator — `theorem almostLinearEditDistanceRawBand` [S6:19146], `sorry` at [S6:19166]; 19,169 lines |
-| S7 | [`preprints/An-Almost-Linear-Approximation-Scheme-for-Edit-Distance-September-24-2026/paper.pdf`](../../preprints/An-Almost-Linear-Approximation-Scheme-for-Edit-Distance-September-24-2026/paper.pdf) | 16524 | the manuscript as shipped |
-| S8 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=121`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2963], manuscript link [S1:2963] |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 121 at [S2:320] |
+| S3 | [`preprints/An-Almost-Linear-Approximation-Scheme-for-Edit-Distance-September-24-2026/build/paper.tex`](../../../preprints/An-Almost-Linear-Approximation-Scheme-for-Edit-Distance-September-24-2026/build/paper.tex) | 31 | document root; abstract [S3:8–16]; eleven `\input` directives [S3:2–28]; 31 lines |
+| S4 | [`preprints/An-Almost-Linear-Approximation-Scheme-for-Edit-Distance-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/An-Almost-Linear-Approximation-Scheme-for-Edit-Distance-September-24-2026/build/sections/01-introduction.tex) | 203 | `thm:main` [S4:13–26]; context [S4:40–55]; 203 lines |
+| S5 | [`lean/docs/121.md`](../../../lean/docs/121.md) | 17 | scope note — Scope at [S5:7], comparator link at [S5:17] |
+| S6 | [`lean/ComparatorChallenges/EditApproximation.lean`](../../../lean/ComparatorChallenges/EditApproximation.lean) | 19169 | the comparator — `theorem almostLinearEditDistanceRawBand` [S6:19146], `sorry` at [S6:19166]; 19,169 lines |
+| S7 | [`preprints/An-Almost-Linear-Approximation-Scheme-for-Edit-Distance-September-24-2026/paper.pdf`](../../../preprints/An-Almost-Linear-Approximation-Scheme-for-Edit-Distance-September-24-2026/paper.pdf) | 16524 | the manuscript as shipped |
+| S8 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=121`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

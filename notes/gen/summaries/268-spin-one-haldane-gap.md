@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Mathematical physics](../index/disciplines/mathematical-physics.md) / [Family 268](../index/mathematical-physics/268-spin-one-haldane-gap.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Mathematical physics](../index/disciplines/mathematical-physics.md) / [Family 268](../index/mathematical-physics/268-spin-one-haldane-gap.md)
 
 # 268 — The spin-one Haldane gap
 
@@ -149,13 +149,13 @@ bundles, and no other non-LaTeX evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 268 at line 6747. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 625. |
-| S3 | [`preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/build/main.tex`](../../preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/build/main.tex) | 114 | Periodic manuscript main file: title and abstract. |
-| S4 | [`preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/build/introduction.tex`](../../preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/build/introduction.tex) | 190 | Periodic manuscript introduction: main theorem, historical context, and the proof structure. |
-| S5 | [`preprints/A-boundary-field-gap-for-the-spin-one-Heisenberg-chain-September-24-2026/build/main.tex`](../../preprints/A-boundary-field-gap-for-the-spin-one-Heisenberg-chain-September-24-2026/build/main.tex) | 135 | Boundary-field manuscript main file: title, abstract, Hamiltonian setup, main theorem, and proof strategy (all inline). |
-| S6 | [`preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/build/references.bib`](../../preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/build/references.bib) | 275 | Periodic manuscript bibliography. |
-| S7 | [`preprints/A-boundary-field-gap-for-the-spin-one-Heisenberg-chain-September-24-2026/build/references.bib`](../../preprints/A-boundary-field-gap-for-the-spin-one-Heisenberg-chain-September-24-2026/build/references.bib) | 219 | Boundary-field manuscript bibliography. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 268 at line 6747. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 625. |
+| S3 | [`preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/build/main.tex`](../../../preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/build/main.tex) | 114 | Periodic manuscript main file: title and abstract. |
+| S4 | [`preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/build/introduction.tex`](../../../preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/build/introduction.tex) | 190 | Periodic manuscript introduction: main theorem, historical context, and the proof structure. |
+| S5 | [`preprints/A-boundary-field-gap-for-the-spin-one-Heisenberg-chain-September-24-2026/build/main.tex`](../../../preprints/A-boundary-field-gap-for-the-spin-one-Heisenberg-chain-September-24-2026/build/main.tex) | 135 | Boundary-field manuscript main file: title, abstract, Hamiltonian setup, main theorem, and proof strategy (all inline). |
+| S6 | [`preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/build/references.bib`](../../../preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/build/references.bib) | 275 | Periodic manuscript bibliography. |
+| S7 | [`preprints/A-boundary-field-gap-for-the-spin-one-Heisenberg-chain-September-24-2026/build/references.bib`](../../../preprints/A-boundary-field-gap-for-the-spin-one-Heisenberg-chain-September-24-2026/build/references.bib) | 219 | Boundary-field manuscript bibliography. |
 
 ## Bibliography
 

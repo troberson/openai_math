@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Combinatorics](../index/disciplines/combinatorics.md) / [Family 171](../index/combinatorics/171-hypercube-ramsey-conjecture.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Combinatorics](../index/disciplines/combinatorics.md) / [Family 171](../index/combinatorics/171-hypercube-ramsey-conjecture.md)
 
 # 171 — The hypercube Ramsey conjecture
 
@@ -151,11 +151,11 @@ evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 171 at line 4008. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 421. |
-| S3 | [`preprints/The-hypercube-Ramsey-number-has-linear-order-September-23-2026/build/main.tex`](../../preprints/The-hypercube-Ramsey-number-has-linear-order-September-23-2026/build/main.tex) | 53 | Main file: title and abstract. |
-| S4 | [`preprints/The-hypercube-Ramsey-number-has-linear-order-September-23-2026/build/sections/01-introduction.tex`](../../preprints/The-hypercube-Ramsey-number-has-linear-order-September-23-2026/build/sections/01-introduction.tex) | 217 | The main theorem, the Burr--Erd\H{o}s L-set question, the density boundary, the lower bound, the progression of upper bounds, the consequences for related families, the background on embedding and sampling, and the terminology table. |
-| S5 | [`preprints/The-hypercube-Ramsey-number-has-linear-order-September-23-2026/build/references.tex`](../../preprints/The-hypercube-Ramsey-number-has-linear-order-September-23-2026/build/references.tex) | 227 | The manuscript's bibliography. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 171 at line 4008. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 421. |
+| S3 | [`preprints/The-hypercube-Ramsey-number-has-linear-order-September-23-2026/build/main.tex`](../../../preprints/The-hypercube-Ramsey-number-has-linear-order-September-23-2026/build/main.tex) | 53 | Main file: title and abstract. |
+| S4 | [`preprints/The-hypercube-Ramsey-number-has-linear-order-September-23-2026/build/sections/01-introduction.tex`](../../../preprints/The-hypercube-Ramsey-number-has-linear-order-September-23-2026/build/sections/01-introduction.tex) | 217 | The main theorem, the Burr--Erd\H{o}s L-set question, the density boundary, the lower bound, the progression of upper bounds, the consequences for related families, the background on embedding and sampling, and the terminology table. |
+| S5 | [`preprints/The-hypercube-Ramsey-number-has-linear-order-September-23-2026/build/references.tex`](../../../preprints/The-hypercube-Ramsey-number-has-linear-order-September-23-2026/build/references.tex) | 227 | The manuscript's bibliography. |
 
 ## Bibliography
 

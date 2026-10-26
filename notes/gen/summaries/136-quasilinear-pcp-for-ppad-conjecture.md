@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 136](../index/theoretical-computer-science/136-quasilinear-pcp-for-ppad-conjecture.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 136](../index/theoretical-computer-science/136-quasilinear-pcp-for-ppad-conjecture.md)
 
 # 136 — The quasilinear PCP-for-PPAD conjecture
 
@@ -235,13 +235,13 @@ fixed-port composition." [S3:363-364]
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/README.md`](../../preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/README.md) | 18 | release title, author, date, citation |
-| S2 | [`preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/main.tex`](../../preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/main.tex) | 78 | abstract |
-| S3 | [`preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/sections/01-introduction.tex`](../../preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/sections/01-introduction.tex) | 393 | definitions, main theorem, proof strategy, consequences |
-| S4 | [`preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/sections/11-weak-nash.tex`](../../preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/sections/11-weak-nash.tex) | 785 | circuit preparation and the equilibrium corollaries |
-| S5 | [`preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/references.bib`](../../preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/references.bib) | 466 | the prior literature cited |
-| S6 | [`overview.tex`](../../overview.tex) | 859 | the release's own entry |
-| S7 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's own index line |
+| S1 | [`preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/README.md`](../../../preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/README.md) | 18 | release title, author, date, citation |
+| S2 | [`preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/main.tex`](../../../preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/main.tex) | 78 | abstract |
+| S3 | [`preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/sections/01-introduction.tex`](../../../preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/sections/01-introduction.tex) | 393 | definitions, main theorem, proof strategy, consequences |
+| S4 | [`preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/sections/11-weak-nash.tex`](../../../preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/sections/11-weak-nash.tex) | 785 | circuit preparation and the equilibrium corollaries |
+| S5 | [`preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/references.bib`](../../../preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/build/references.bib) | 466 | the prior literature cited |
+| S6 | [`overview.tex`](../../../overview.tex) | 859 | the release's own entry |
+| S7 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's own index line |
 
 ## Bibliography
 

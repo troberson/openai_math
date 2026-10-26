@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 115](../index/theoretical-computer-science/115-sampling-and-counting-contingency-tables-with-arbitrary-margins.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 115](../index/theoretical-computer-science/115-sampling-and-counting-contingency-tables-with-arbitrary-margins.md)
 
 # 115 — Sampling and counting contingency tables with arbitrary margins
 
@@ -8,17 +8,17 @@
 
 [S1:2822] (family entry):
 
-> **115. Sampling and counting contingency tables with arbitrary margins.** For nonnegative integer matrices with prescribed row and column sums, gives exact uniform sampling in expected polynomial bit time and almost-uniform sampling in worst-case polynomial bit time. The dimensions and binary-encoded margins are unrestricted. Also gives a fully polynomial randomized approximation scheme for counting such tables with arbitrary individual cell bounds, including structural zeros, with polynomial cost on every execution. ([Lean](../../lean/docs/115.md))
+> **115. Sampling and counting contingency tables with arbitrary margins.** For nonnegative integer matrices with prescribed row and column sums, gives exact uniform sampling in expected polynomial bit time and almost-uniform sampling in worst-case polynomial bit time. The dimensions and binary-encoded margins are unrestricted. Also gives a fully polynomial randomized approximation scheme for counting such tables with arbitrary individual cell bounds, including structural zeros, with polynomial cost on every execution. ([Lean](../../../lean/docs/115.md))
 
 [S1:2829] (the exact-uniform manuscript entry, with its abstract at [S1:2831]):
 
-> [Exact Uniform Sampling of Contingency Tables with Arbitrary Margins](../../preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/main.pdf)
+> [Exact Uniform Sampling of Contingency Tables with Arbitrary Margins](../../../preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/main.pdf)
 
 > We give an exact uniform sampler for nonnegative integer contingency tables with arbitrary prescribed margins. It terminates almost surely and has expected bit complexity polynomial in both dimensions and the binary length of the margins. No positivity, balance, sparsity, or fixed-dimension assumption is required.
 
 [S1:2838] (the cell-bounded manuscript entry, with its abstract at [S1:2840]):
 
-> [An FPRAS for Cell-Bounded Contingency Tables](../../preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/main.pdf)
+> [An FPRAS for Cell-Bounded Contingency Tables](../../../preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/main.pdf)
 
 > We give a fully polynomial randomized approximation scheme for counting nonnegative integer matrices with prescribed row sums, column sums, and individual entry bounds. Both dimensions vary, all numerical data are encoded in binary, and zero bounds are allowed. The algorithm uses only unbiased random bits and has a polynomial bound on its bit operations on every execution.
 
@@ -228,14 +228,14 @@ resolve verb.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2822], exact-uniform link [S1:2829] and abstract [S1:2831], cell-bounded link [S1:2838] and abstract [S1:2840] |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 115 at [S2:308] |
-| S3 | [`preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/build/main.tex`](../../preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/build/main.tex) | 39 | root (`\documentclass`); abstract [S3:22–27]; six `\input` directives [S3:29–34]; 39 lines |
-| S4 | [`preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/build/sections/introduction.tex`](../../preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/build/sections/introduction.tex) | 158 | `thm:main` [S4:18–32]; history [S4:44–97]; proof strategy [S4:119–158] |
-| S5 | [`preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/build/main.tex`](../../preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/build/main.tex) | 58 | root (`\documentclass`); abstract [S5:38–43]; eight `\input` directives [S5:45–52]; 59 lines |
-| S6 | [`preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/build/sections/introduction.tex`](../../preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/build/sections/introduction.tex) | 173 | `thm:main` [S6:21–35]; proof overview [S6:57–145] |
-| S7 | [`preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/main.pdf`](../../preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/main.pdf) | 14964 | the exact-uniform manuscript as shipped |
-| S8 | [`preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/main.pdf`](../../preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/main.pdf) | 18570 | the cell-bounded manuscript as shipped |
-| S9 | [`lean/docs/115.md`](../../lean/docs/115.md) | 23 | scope note — the Scope at [S9:10–16] and two comparator links at [S9:22–23] |
-| S10 | [`lean/ComparatorChallenges/ContingencyTables.lean`](../../lean/ComparatorChallenges/ContingencyTables.lean) | 221 | the comparator stub — `BoundedSamplingStatement` at [S10:148]; `ExactSamplingStatement` at [S10:170]; `CountingStatement` at [S10:199]; three `sorry` theorems at [S10:211] [S10:214] [S10:217] |
-| S11 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=115`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2822], exact-uniform link [S1:2829] and abstract [S1:2831], cell-bounded link [S1:2838] and abstract [S1:2840] |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 115 at [S2:308] |
+| S3 | [`preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/build/main.tex`](../../../preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/build/main.tex) | 39 | root (`\documentclass`); abstract [S3:22–27]; six `\input` directives [S3:29–34]; 39 lines |
+| S4 | [`preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/build/sections/introduction.tex`](../../../preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/build/sections/introduction.tex) | 158 | `thm:main` [S4:18–32]; history [S4:44–97]; proof strategy [S4:119–158] |
+| S5 | [`preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/build/main.tex`](../../../preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/build/main.tex) | 58 | root (`\documentclass`); abstract [S5:38–43]; eight `\input` directives [S5:45–52]; 59 lines |
+| S6 | [`preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/build/sections/introduction.tex`](../../../preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/build/sections/introduction.tex) | 173 | `thm:main` [S6:21–35]; proof overview [S6:57–145] |
+| S7 | [`preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/main.pdf`](../../../preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/main.pdf) | 14964 | the exact-uniform manuscript as shipped |
+| S8 | [`preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/main.pdf`](../../../preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/main.pdf) | 18570 | the cell-bounded manuscript as shipped |
+| S9 | [`lean/docs/115.md`](../../../lean/docs/115.md) | 23 | scope note — the Scope at [S9:10–16] and two comparator links at [S9:22–23] |
+| S10 | [`lean/ComparatorChallenges/ContingencyTables.lean`](../../../lean/ComparatorChallenges/ContingencyTables.lean) | 221 | the comparator stub — `BoundedSamplingStatement` at [S10:148]; `ExactSamplingStatement` at [S10:170]; `CountingStatement` at [S10:199]; three `sorry` theorems at [S10:211] [S10:214] [S10:217] |
+| S11 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=115`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

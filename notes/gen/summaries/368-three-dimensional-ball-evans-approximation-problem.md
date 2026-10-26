@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Partial differential equations](../index/disciplines/partial-differential-equations.md) / [Family 368](../index/partial-differential-equations/368-three-dimensional-ball-evans-approximation-problem.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Partial differential equations](../index/disciplines/partial-differential-equations.md) / [Family 368](../index/partial-differential-equations/368-three-dimensional-ball-evans-approximation-problem.md)
 
 # 368 — The three-dimensional Ball–Evans approximation problem
 
@@ -128,9 +128,9 @@ manuscripts, each a root `build/main.tex`, sections under
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 368 at line 8904. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 837. |
-| S3 | [`preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/build/main.tex`](../../preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/build/main.tex) | 70 | Manuscript 1 main file ($1\le p\le2$): title and abstract. |
-| S4 | [`preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/build/sections/01-introduction.tex`](../../preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/build/sections/01-introduction.tex) | 252 | Manuscript 1 introduction: the theorem, prior work, and proof strategy. |
-| S5 | [`preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/build/main.tex`](../../preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/build/main.tex) | 73 | Manuscript 2 main file ($p>2$): title and abstract. |
-| S6 | [`preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/build/sections/01-introduction.tex`](../../preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/build/sections/01-introduction.tex) | 251 | Manuscript 2 introduction: the theorem, prior work, and proof strategy. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 368 at line 8904. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 837. |
+| S3 | [`preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/build/main.tex`](../../../preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/build/main.tex) | 70 | Manuscript 1 main file ($1\le p\le2$): title and abstract. |
+| S4 | [`preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/build/sections/01-introduction.tex) | 252 | Manuscript 1 introduction: the theorem, prior work, and proof strategy. |
+| S5 | [`preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/build/main.tex`](../../../preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/build/main.tex) | 73 | Manuscript 2 main file ($p>2$): title and abstract. |
+| S6 | [`preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/build/sections/01-introduction.tex) | 251 | Manuscript 2 introduction: the theorem, prior work, and proof strategy. |

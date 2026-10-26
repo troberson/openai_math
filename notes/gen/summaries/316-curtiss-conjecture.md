@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Topology](../index/disciplines/topology.md) / [Family 316](../index/topology/316-curtiss-conjecture.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Topology](../index/disciplines/topology.md) / [Family 316](../index/topology/316-curtiss-conjecture.md)
 
 # 316 — Curtis’s conjecture
 
@@ -142,11 +142,11 @@ bibliography — and no non-LaTeX evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 316 at line 7747. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 726. |
-| S3 | [`preprints/The-Stable-Hurewicz-Image-of-the-Sphere-at-Two-September-25-2026/build/paper.tex`](../../preprints/The-Stable-Hurewicz-Image-of-the-Sphere-at-Two-September-25-2026/build/paper.tex) | 30 | Manuscript main file: title and abstract. |
-| S4 | [`preprints/The-Stable-Hurewicz-Image-of-the-Sphere-at-Two-September-25-2026/build/introduction.tex`](../../preprints/The-Stable-Hurewicz-Image-of-the-Sphere-at-Two-September-25-2026/build/introduction.tex) | 216 | Introduction: the setup, the Curtis theorem, the two corollaries, the proof outline, and the conventions. |
-| S5 | [`preprints/The-Stable-Hurewicz-Image-of-the-Sphere-at-Two-September-25-2026/build/references.bib`](../../preprints/The-Stable-Hurewicz-Image-of-the-Sphere-at-Two-September-25-2026/build/references.bib) | 383 | Manuscript bibliography. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 316 at line 7747. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 726. |
+| S3 | [`preprints/The-Stable-Hurewicz-Image-of-the-Sphere-at-Two-September-25-2026/build/paper.tex`](../../../preprints/The-Stable-Hurewicz-Image-of-the-Sphere-at-Two-September-25-2026/build/paper.tex) | 30 | Manuscript main file: title and abstract. |
+| S4 | [`preprints/The-Stable-Hurewicz-Image-of-the-Sphere-at-Two-September-25-2026/build/introduction.tex`](../../../preprints/The-Stable-Hurewicz-Image-of-the-Sphere-at-Two-September-25-2026/build/introduction.tex) | 216 | Introduction: the setup, the Curtis theorem, the two corollaries, the proof outline, and the conventions. |
+| S5 | [`preprints/The-Stable-Hurewicz-Image-of-the-Sphere-at-Two-September-25-2026/build/references.bib`](../../../preprints/The-Stable-Hurewicz-Image-of-the-Sphere-at-Two-September-25-2026/build/references.bib) | 383 | Manuscript bibliography. |
 
 ## Bibliography
 

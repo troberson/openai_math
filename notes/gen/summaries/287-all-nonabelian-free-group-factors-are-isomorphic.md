@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Operator algebras](../index/disciplines/operator-algebras.md) / [Family 287](../index/operator-algebras/287-all-nonabelian-free-group-factors-are-isomorphic.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Operator algebras](../index/disciplines/operator-algebras.md) / [Family 287](../index/operator-algebras/287-all-nonabelian-free-group-factors-are-isomorphic.md)
 
 # 287 — All nonabelian free group factors are isomorphic
 
@@ -6,7 +6,7 @@
 
 ## Original CONTENTS.md summary
 
-**287. Isomorphism of the free group factors.** Resolves the free group factor isomorphism problem: $`L(\mathbb F_2)\cong L(\mathbb F_3)`$, and hence all interpolated free group factors, including $`L(\mathbb F_\infty)`$, are isomorphic. Their common factor has fundamental group $`\mathbb R_{\gt 0}`$. ([Lean](../../lean/docs/287.md))
+**287. Isomorphism of the free group factors.** Resolves the free group factor isomorphism problem: $`L(\mathbb F_2)\cong L(\mathbb F_3)`$, and hence all interpolated free group factors, including $`L(\mathbb F_\infty)`$, are isomorphic. Their common factor has fundamental group $`\mathbb R_{\gt 0}`$. ([Lean](../../../lean/docs/287.md))
 
 The blurb above is reproduced from [S1:7159] and its Lean link is rewritten repo-relative. CONTENTS.md sets the entry's math in `$`…`$` delimiters with the math itself inside backticks, so the blurb renders as inline math. The manuscript link is a separate indented line below the blurb [S1:7166] and the abstract follows on the next indented line [S1:7168].
 
@@ -159,48 +159,48 @@ The published reasoning trace for this family is `reasoning_traces/free-group-fa
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | Catalog entry: blurb, manuscript link, abstract |
-| S2 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/README.md`](../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/README.md) | 18 | Manuscript README: date and bibtex key |
-| S3 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/main.tex`](../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/main.tex) | 118 | Manuscript: abstract, introduction, theorems |
-| S4 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/preliminaries.tex`](../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/preliminaries.tex) | 115 | Free-sum estimate, constant K = 3π |
-| S5 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/flow.tex`](../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/flow.tex) | 434 | Polynomial flow and displacement bounds |
-| S6 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/cocycle.tex`](../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/cocycle.tex) | 453 | Small cocycle, prefix words, spectral limit |
-| S7 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/generation.tex`](../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/generation.tex) | 293 | One-step perturbation and generating limit |
-| S8 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/amplification.tex`](../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/amplification.tex) | 97 | Amplification formula, main theorem, dichotomy |
-| S9 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/entropy-dimensions.tex`](../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/entropy-dimensions.tex) | 102 | Free entropy dimensions corollary |
-| S10 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/references.bib`](../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/references.bib) | 198 | 17 entries, no self-citations |
-| S11 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/figures/iteration.tex`](../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/figures/iteration.tex) | 27 | TikZ figure of the adaptive iteration |
-| S12 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/An-isomorphism-of-the-free-group-factors-September-23-2026.pdf`](../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/An-isomorphism-of-the-free-group-factors-September-23-2026.pdf) | 12819 | Typeset manuscript |
-| S13 | [`lean/docs/287.md`](../../lean/docs/287.md) | 15 | Scope note and comparator links |
-| S14 | [`lean/ComparatorChallenges/InterpolatedFactors.lean`](../../lean/ComparatorChallenges/InterpolatedFactors.lean) | 225 | Challenge model and statement |
-| S15 | [`lean/ComparatorChallenges/InterpolatedFactors.json`](../../lean/ComparatorChallenges/InterpolatedFactors.json) | 14 | Challenge metadata: solution module, axioms |
-| S16 | [`lean/formalization.yaml`](../../lean/formalization.yaml) | 1783 | No entry naming this manuscript |
-| S17 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | Ledger row for family 287 |
-| S18 | [`reasoning_traces/free-group-factor-isomorphism.pdf`](../../reasoning_traces/free-group-factor-isomorphism.pdf) | 3337 | Published reasoning trace, 11 pages |
-| S19 | [`lean/OAI/Analysis/FreeGroupFactor/Main.lean`](../../lean/OAI/Analysis/FreeGroupFactor/Main.lean) | 64 | Rank three to the countable free group |
-| S20 | [`lean/OAI/Analysis/FreeGroupFactor/FiniteRank.lean`](../../lean/OAI/Analysis/FreeGroupFactor/FiniteRank.lean) | 157 | Rank step at n ≥ 2, rankTwo, rankStep |
-| S21 | [`lean/OAI/Analysis/FreeGroupFactor/Generation.lean`](../../lean/OAI/Analysis/FreeGroupFactor/Generation.lean) | 356 | Generation and rank step at n ≥ 3 |
-| S22 | [`lean/OAI/Analysis/FreeGroupFactor/InfiniteGeneration.lean`](../../lean/OAI/Analysis/FreeGroupFactor/InfiniteGeneration.lean) | 449 | Infinite-rank generation limit |
-| S23 | [`lean/OAI/Analysis/FreeGroupFactor/FiniteActive.lean`](../../lean/OAI/Analysis/FreeGroupFactor/FiniteActive.lean) | 404 | Finite active-step perturbation |
-| S24 | [`lean/OAI/Analysis/FreeGroupFactor/SmallCocycle.lean`](../../lean/OAI/Analysis/FreeGroupFactor/SmallCocycle.lean) | 237 | Small cocycle with prescribed word value |
-| S25 | [`lean/OAI/Analysis/FreeGroupFactor/Cocycles.lean`](../../lean/OAI/Analysis/FreeGroupFactor/Cocycles.lean) | 507 | Cocycle calculus on group words |
-| S26 | [`lean/OAI/Analysis/FreeGroupFactor/TraceCocycle.lean`](../../lean/OAI/Analysis/FreeGroupFactor/TraceCocycle.lean) | 390 | Trace preservation for the flow |
-| S27 | [`lean/OAI/Analysis/FreeGroupFactor/PolynomialFlow.lean`](../../lean/OAI/Analysis/FreeGroupFactor/PolynomialFlow.lean) | 310 | Polynomial flow construction |
-| S28 | [`lean/OAI/Analysis/FreeGroupFactor/MomentFlow.lean`](../../lean/OAI/Analysis/FreeGroupFactor/MomentFlow.lean) | 293 | Moment preservation along the flow |
-| S29 | [`lean/OAI/Analysis/FreeGroupFactor/FreeSum.lean`](../../lean/OAI/Analysis/FreeGroupFactor/FreeSum.lean) | 475 | Free-sum norm estimate |
-| S30 | [`lean/OAI/Analysis/FreeGroupFactor/RankTwoCounting.lean`](../../lean/OAI/Analysis/FreeGroupFactor/RankTwoCounting.lean) | 742 | Word counting for the cocycle lemma |
-| S31 | [`lean/OAI/Analysis/FreeGroupFactor/RankTwoCoefficients.lean`](../../lean/OAI/Analysis/FreeGroupFactor/RankTwoCoefficients.lean) | 577 | Coefficient construction at rank two |
-| S32 | [`lean/OAI/Analysis/FreeGroupFactor/RankTwoWords.lean`](../../lean/OAI/Analysis/FreeGroupFactor/RankTwoWords.lean) | 489 | Prefix word machinery |
-| S33 | [`lean/OAI/Analysis/FreeGroupFactor/Model.lean`](../../lean/OAI/Analysis/FreeGroupFactor/Model.lean) | 231 | Tuple and Haar-distribution model |
-| S34 | [`lean/OAI/Analysis/InterpolatedFactors/Interpolation.lean`](../../lean/OAI/Analysis/InterpolatedFactors/Interpolation.lean) | 255 | Selected statement and fundamental group |
-| S35 | [`lean/OAI/Analysis/InterpolatedFactors/NormalTransport.lean`](../../lean/OAI/Analysis/InterpolatedFactors/NormalTransport.lean) | 54 | Finite-rank collapse to rank two |
-| S36 | [`lean/OAI/Analysis/InterpolatedFactors/Basic.lean`](../../lean/OAI/Analysis/InterpolatedFactors/Basic.lean) | 460 | Factor, trace, and fundamental-group definitions |
-| S37 | [`lean/OAI/Analysis/InterpolatedFactors/Haar.lean`](../../lean/OAI/Analysis/InterpolatedFactors/Haar.lean) | 880 | Haar tuple machinery |
-| S38 | [`lean/OAI/Analysis/InterpolatedFactors/Stabilization.lean`](../../lean/OAI/Analysis/InterpolatedFactors/Stabilization.lean) | 644 | Stabilization and corner projections |
-| S39 | [`lean/OAI/Analysis/InterpolatedFactors/Scaling.lean`](../../lean/OAI/Analysis/InterpolatedFactors/Scaling.lean) | 202 | Amplification scaling |
-| S40 | [`lean/OAI/Analysis/InterpolatedFactors/GroupBridge.lean`](../../lean/OAI/Analysis/InterpolatedFactors/GroupBridge.lean) | 979 | Group-factor to corner bridge |
-| S41 | [`lean/OAI/Analysis/InterpolatedFactors/Fock.lean`](../../lean/OAI/Analysis/InterpolatedFactors/Fock.lean) | 1015 | Fock-space representation |
-| S42 | [`lean/OAI/Analysis/InterpolatedFactors/Rerouting.lean`](../../lean/OAI/Analysis/InterpolatedFactors/Rerouting.lean) | 907 | Corner rerouting for interpolation |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Catalog entry: blurb, manuscript link, abstract |
+| S2 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/README.md`](../../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/README.md) | 18 | Manuscript README: date and bibtex key |
+| S3 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/main.tex`](../../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/main.tex) | 118 | Manuscript: abstract, introduction, theorems |
+| S4 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/preliminaries.tex`](../../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/preliminaries.tex) | 115 | Free-sum estimate, constant K = 3π |
+| S5 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/flow.tex`](../../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/flow.tex) | 434 | Polynomial flow and displacement bounds |
+| S6 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/cocycle.tex`](../../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/cocycle.tex) | 453 | Small cocycle, prefix words, spectral limit |
+| S7 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/generation.tex`](../../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/generation.tex) | 293 | One-step perturbation and generating limit |
+| S8 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/amplification.tex`](../../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/amplification.tex) | 97 | Amplification formula, main theorem, dichotomy |
+| S9 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/entropy-dimensions.tex`](../../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/sections/entropy-dimensions.tex) | 102 | Free entropy dimensions corollary |
+| S10 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/references.bib`](../../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/references.bib) | 198 | 17 entries, no self-citations |
+| S11 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/figures/iteration.tex`](../../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/build/figures/iteration.tex) | 27 | TikZ figure of the adaptive iteration |
+| S12 | [`preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/An-isomorphism-of-the-free-group-factors-September-23-2026.pdf`](../../../preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/An-isomorphism-of-the-free-group-factors-September-23-2026.pdf) | 12819 | Typeset manuscript |
+| S13 | [`lean/docs/287.md`](../../../lean/docs/287.md) | 15 | Scope note and comparator links |
+| S14 | [`lean/ComparatorChallenges/InterpolatedFactors.lean`](../../../lean/ComparatorChallenges/InterpolatedFactors.lean) | 225 | Challenge model and statement |
+| S15 | [`lean/ComparatorChallenges/InterpolatedFactors.json`](../../../lean/ComparatorChallenges/InterpolatedFactors.json) | 14 | Challenge metadata: solution module, axioms |
+| S16 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1783 | No entry naming this manuscript |
+| S17 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | Ledger row for family 287 |
+| S18 | [`reasoning_traces/free-group-factor-isomorphism.pdf`](../../../reasoning_traces/free-group-factor-isomorphism.pdf) | 3337 | Published reasoning trace, 11 pages |
+| S19 | [`lean/OAI/Analysis/FreeGroupFactor/Main.lean`](../../../lean/OAI/Analysis/FreeGroupFactor/Main.lean) | 64 | Rank three to the countable free group |
+| S20 | [`lean/OAI/Analysis/FreeGroupFactor/FiniteRank.lean`](../../../lean/OAI/Analysis/FreeGroupFactor/FiniteRank.lean) | 157 | Rank step at n ≥ 2, rankTwo, rankStep |
+| S21 | [`lean/OAI/Analysis/FreeGroupFactor/Generation.lean`](../../../lean/OAI/Analysis/FreeGroupFactor/Generation.lean) | 356 | Generation and rank step at n ≥ 3 |
+| S22 | [`lean/OAI/Analysis/FreeGroupFactor/InfiniteGeneration.lean`](../../../lean/OAI/Analysis/FreeGroupFactor/InfiniteGeneration.lean) | 449 | Infinite-rank generation limit |
+| S23 | [`lean/OAI/Analysis/FreeGroupFactor/FiniteActive.lean`](../../../lean/OAI/Analysis/FreeGroupFactor/FiniteActive.lean) | 404 | Finite active-step perturbation |
+| S24 | [`lean/OAI/Analysis/FreeGroupFactor/SmallCocycle.lean`](../../../lean/OAI/Analysis/FreeGroupFactor/SmallCocycle.lean) | 237 | Small cocycle with prescribed word value |
+| S25 | [`lean/OAI/Analysis/FreeGroupFactor/Cocycles.lean`](../../../lean/OAI/Analysis/FreeGroupFactor/Cocycles.lean) | 507 | Cocycle calculus on group words |
+| S26 | [`lean/OAI/Analysis/FreeGroupFactor/TraceCocycle.lean`](../../../lean/OAI/Analysis/FreeGroupFactor/TraceCocycle.lean) | 390 | Trace preservation for the flow |
+| S27 | [`lean/OAI/Analysis/FreeGroupFactor/PolynomialFlow.lean`](../../../lean/OAI/Analysis/FreeGroupFactor/PolynomialFlow.lean) | 310 | Polynomial flow construction |
+| S28 | [`lean/OAI/Analysis/FreeGroupFactor/MomentFlow.lean`](../../../lean/OAI/Analysis/FreeGroupFactor/MomentFlow.lean) | 293 | Moment preservation along the flow |
+| S29 | [`lean/OAI/Analysis/FreeGroupFactor/FreeSum.lean`](../../../lean/OAI/Analysis/FreeGroupFactor/FreeSum.lean) | 475 | Free-sum norm estimate |
+| S30 | [`lean/OAI/Analysis/FreeGroupFactor/RankTwoCounting.lean`](../../../lean/OAI/Analysis/FreeGroupFactor/RankTwoCounting.lean) | 742 | Word counting for the cocycle lemma |
+| S31 | [`lean/OAI/Analysis/FreeGroupFactor/RankTwoCoefficients.lean`](../../../lean/OAI/Analysis/FreeGroupFactor/RankTwoCoefficients.lean) | 577 | Coefficient construction at rank two |
+| S32 | [`lean/OAI/Analysis/FreeGroupFactor/RankTwoWords.lean`](../../../lean/OAI/Analysis/FreeGroupFactor/RankTwoWords.lean) | 489 | Prefix word machinery |
+| S33 | [`lean/OAI/Analysis/FreeGroupFactor/Model.lean`](../../../lean/OAI/Analysis/FreeGroupFactor/Model.lean) | 231 | Tuple and Haar-distribution model |
+| S34 | [`lean/OAI/Analysis/InterpolatedFactors/Interpolation.lean`](../../../lean/OAI/Analysis/InterpolatedFactors/Interpolation.lean) | 255 | Selected statement and fundamental group |
+| S35 | [`lean/OAI/Analysis/InterpolatedFactors/NormalTransport.lean`](../../../lean/OAI/Analysis/InterpolatedFactors/NormalTransport.lean) | 54 | Finite-rank collapse to rank two |
+| S36 | [`lean/OAI/Analysis/InterpolatedFactors/Basic.lean`](../../../lean/OAI/Analysis/InterpolatedFactors/Basic.lean) | 460 | Factor, trace, and fundamental-group definitions |
+| S37 | [`lean/OAI/Analysis/InterpolatedFactors/Haar.lean`](../../../lean/OAI/Analysis/InterpolatedFactors/Haar.lean) | 880 | Haar tuple machinery |
+| S38 | [`lean/OAI/Analysis/InterpolatedFactors/Stabilization.lean`](../../../lean/OAI/Analysis/InterpolatedFactors/Stabilization.lean) | 644 | Stabilization and corner projections |
+| S39 | [`lean/OAI/Analysis/InterpolatedFactors/Scaling.lean`](../../../lean/OAI/Analysis/InterpolatedFactors/Scaling.lean) | 202 | Amplification scaling |
+| S40 | [`lean/OAI/Analysis/InterpolatedFactors/GroupBridge.lean`](../../../lean/OAI/Analysis/InterpolatedFactors/GroupBridge.lean) | 979 | Group-factor to corner bridge |
+| S41 | [`lean/OAI/Analysis/InterpolatedFactors/Fock.lean`](../../../lean/OAI/Analysis/InterpolatedFactors/Fock.lean) | 1015 | Fock-space representation |
+| S42 | [`lean/OAI/Analysis/InterpolatedFactors/Rerouting.lean`](../../../lean/OAI/Analysis/InterpolatedFactors/Rerouting.lean) | 907 | Corner rerouting for interpolation |
 
 ## Bibliography
 

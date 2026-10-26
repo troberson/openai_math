@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 119](../index/theoretical-computer-science/119-courtade-kumar-and-hellinger-conjectures.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 119](../index/theoretical-computer-science/119-courtade-kumar-and-hellinger-conjectures.md)
 
 # 119 — The Courtade–Kumar and Hellinger conjectures
 
@@ -8,7 +8,7 @@
 
 [S1:2922] (family entry):
 
-> **119. The Courtade–Kumar and Hellinger conjectures.** Proves the Courtade–Kumar conjecture: among Boolean functions of independent uniform bits, a single coordinate retains the most mutual information after independent bit-flip noise. A stronger theorem treats randomized binary summaries at fixed initial information. The Hellinger conjecture is also proved for every Boolean output bias and noise correlation. ([Lean](lean/docs/119.md))
+> **119. The Courtade–Kumar and Hellinger conjectures.** Proves the Courtade–Kumar conjecture: among Boolean functions of independent uniform bits, a single coordinate retains the most mutual information after independent bit-flip noise. A stronger theorem treats randomized binary summaries at fixed initial information. The Hellinger conjecture is also proved for every Boolean output bias and noise correlation. ([Lean](../../../lean/docs/119.md))
 
 [S2:316] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.
@@ -247,14 +247,14 @@ inequalities, not a theorem check.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2922], manuscript link [S1:2922] |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 119 at [S2:316] |
-| S3 | [`preprints/Sharp-binary-information-contraction-on-the-discrete-cube-September-24-2026/build/main.tex`](../../preprints/Sharp-binary-information-contraction-on-the-discrete-cube-September-24-2026/build/main.tex) | 334 | document body; abstract [S3:29–39]; `main:soft` [S3:72–84]; `main:ck` [S3:92–104]; `upgrade:production` [S3:307–317]; seven `\input` directives [S3:325–331]; 334 lines |
-| S4 | [`preprints/Hellinger-contraction-with-arbitrary-Boolean-output-bias-September-24-2026/build/main.tex`](../../preprints/Hellinger-contraction-with-arbitrary-Boolean-output-bias-September-24-2026/build/main.tex) | 195 | document body; abstract [S4:35–41]; `thm:main` [S4:54–61]; ten section `\input` directives [S4:184–194]; 195 lines |
-| S5 | [`preprints/Sharp-binary-information-contraction-on-the-discrete-cube-September-24-2026/main.pdf`](../../preprints/Sharp-binary-information-contraction-on-the-discrete-cube-September-24-2026/main.pdf) | 12104 | the manuscript as shipped |
-| S6 | [`preprints/Hellinger-contraction-with-arbitrary-Boolean-output-bias-September-24-2026/main.pdf`](../../preprints/Hellinger-contraction-with-arbitrary-Boolean-output-bias-September-24-2026/main.pdf) | 17182 | the manuscript as shipped |
-| S7 | [`lean/docs/119.md`](../../lean/docs/119.md) | 18 | scope note — Scope at [S7:9], comparator links at [S7:17–18] |
-| S8 | [`lean/ComparatorChallenges/CourtadeKumar.lean`](../../lean/ComparatorChallenges/CourtadeKumar.lean) | 76 | the comparator — `CourtadeKumarStatement` [S8:55], `FullStatement` [S8:67], `theorem courtadeKumarAndAttainment` and `sorry` at [S8:69–70]; 76 lines |
-| S9 | [`lean/ComparatorChallenges/SoftChannel204.lean`](../../lean/ComparatorChallenges/SoftChannel204.lean) | 121 | the comparator — `SoftContraction` [S9:77], `SharpProduction` [S9:108], `FullMain` [S9:111–112], `theorem fullMain` and `sorry` at [S9:114–115]; 121 lines |
-| S10 | [`lean/OAI/InformationTheory/BooleanNoise/Main.lean`](../../lean/OAI/InformationTheory/BooleanNoise/Main.lean) | 67 | the formalized declaration — `theorem courtadeKumarAndAttainment : FullStatement` at [S10:60–61], fully proved; 67 lines |
-| S11 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=119`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2922], manuscript link [S1:2922] |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 119 at [S2:316] |
+| S3 | [`preprints/Sharp-binary-information-contraction-on-the-discrete-cube-September-24-2026/build/main.tex`](../../../preprints/Sharp-binary-information-contraction-on-the-discrete-cube-September-24-2026/build/main.tex) | 334 | document body; abstract [S3:29–39]; `main:soft` [S3:72–84]; `main:ck` [S3:92–104]; `upgrade:production` [S3:307–317]; seven `\input` directives [S3:325–331]; 334 lines |
+| S4 | [`preprints/Hellinger-contraction-with-arbitrary-Boolean-output-bias-September-24-2026/build/main.tex`](../../../preprints/Hellinger-contraction-with-arbitrary-Boolean-output-bias-September-24-2026/build/main.tex) | 195 | document body; abstract [S4:35–41]; `thm:main` [S4:54–61]; ten section `\input` directives [S4:184–194]; 195 lines |
+| S5 | [`preprints/Sharp-binary-information-contraction-on-the-discrete-cube-September-24-2026/main.pdf`](../../../preprints/Sharp-binary-information-contraction-on-the-discrete-cube-September-24-2026/main.pdf) | 12104 | the manuscript as shipped |
+| S6 | [`preprints/Hellinger-contraction-with-arbitrary-Boolean-output-bias-September-24-2026/main.pdf`](../../../preprints/Hellinger-contraction-with-arbitrary-Boolean-output-bias-September-24-2026/main.pdf) | 17182 | the manuscript as shipped |
+| S7 | [`lean/docs/119.md`](../../../lean/docs/119.md) | 18 | scope note — Scope at [S7:9], comparator links at [S7:17–18] |
+| S8 | [`lean/ComparatorChallenges/CourtadeKumar.lean`](../../../lean/ComparatorChallenges/CourtadeKumar.lean) | 76 | the comparator — `CourtadeKumarStatement` [S8:55], `FullStatement` [S8:67], `theorem courtadeKumarAndAttainment` and `sorry` at [S8:69–70]; 76 lines |
+| S9 | [`lean/ComparatorChallenges/SoftChannel204.lean`](../../../lean/ComparatorChallenges/SoftChannel204.lean) | 121 | the comparator — `SoftContraction` [S9:77], `SharpProduction` [S9:108], `FullMain` [S9:111–112], `theorem fullMain` and `sorry` at [S9:114–115]; 121 lines |
+| S10 | [`lean/OAI/InformationTheory/BooleanNoise/Main.lean`](../../../lean/OAI/InformationTheory/BooleanNoise/Main.lean) | 67 | the formalized declaration — `theorem courtadeKumarAndAttainment : FullStatement` at [S10:60–61], fully proved; 67 lines |
+| S11 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=119`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

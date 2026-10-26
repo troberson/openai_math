@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 109](../index/theoretical-computer-science/109-integer-multiplication-below-n-n.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 109](../index/theoretical-computer-science/109-integer-multiplication-below-n-n.md)
 
 # 109 — Integer multiplication below $n\log n$
 
@@ -215,18 +215,18 @@ machine's transition table is finite but astronomically large.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`preprints/Integer-multiplication-below-n-log-n-September-23-2026/README.md`](../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/README.md) | 17 | release title, author, date, citation |
-| S2 | [`preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/main.tex`](../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/main.tex) | 51 | abstract |
-| S3 | [`preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/00-introduction.tex`](../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/00-introduction.tex) | 216 | main theorem, corollary, proof outline |
-| S4 | [`preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/01-history.tex`](../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/01-history.tex) | 164 | prior bounds and inherited methods |
-| S5 | [`preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/02-streams.tex`](../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/02-streams.tex) | 208 | machine model and elementary scans |
-| S6 | [`preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/05-layers.tex`](../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/05-layers.tex) | 996 | simultaneous butterfly layers |
-| S7 | [`preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/08-assembly.tex`](../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/08-assembly.tex) | 1007 | the assembled cost bound |
-| S8 | [`preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/10-transposition.tex`](../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/10-transposition.tex) | 48 | the matrix-transposition consequence |
-| S9 | [`preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/11-grouped-rectangles.tex`](../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/11-grouped-rectangles.tex) | 160 | grouped packed rectangles |
-| S10 | [`preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/references.bib`](../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/references.bib) | 301 | the prior literature cited |
-| S11 | [`overview.tex`](../../overview.tex) | 859 | the release's own entry |
-| S12 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's own index line |
+| S1 | [`preprints/Integer-multiplication-below-n-log-n-September-23-2026/README.md`](../../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/README.md) | 17 | release title, author, date, citation |
+| S2 | [`preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/main.tex`](../../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/main.tex) | 51 | abstract |
+| S3 | [`preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/00-introduction.tex`](../../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/00-introduction.tex) | 216 | main theorem, corollary, proof outline |
+| S4 | [`preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/01-history.tex`](../../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/01-history.tex) | 164 | prior bounds and inherited methods |
+| S5 | [`preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/02-streams.tex`](../../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/02-streams.tex) | 208 | machine model and elementary scans |
+| S6 | [`preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/05-layers.tex`](../../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/05-layers.tex) | 996 | simultaneous butterfly layers |
+| S7 | [`preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/08-assembly.tex`](../../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/08-assembly.tex) | 1007 | the assembled cost bound |
+| S8 | [`preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/10-transposition.tex`](../../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/10-transposition.tex) | 48 | the matrix-transposition consequence |
+| S9 | [`preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/11-grouped-rectangles.tex`](../../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/sections/11-grouped-rectangles.tex) | 160 | grouped packed rectangles |
+| S10 | [`preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/references.bib`](../../../preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/references.bib) | 301 | the prior literature cited |
+| S11 | [`overview.tex`](../../../overview.tex) | 859 | the release's own entry |
+| S12 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's own index line |
 
 ## Bibliography
 

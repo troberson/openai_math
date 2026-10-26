@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 139](../index/theoretical-computer-science/139-subpolynomial-queries-for-log-concave-sampling.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 139](../index/theoretical-computer-science/139-subpolynomial-queries-for-log-concave-sampling.md)
 
 # 139 — Subpolynomial queries for log-concave sampling
 
@@ -8,7 +8,7 @@
 
 [S1:3334] (family entry):
 
-> **139. Subpolynomial query complexity for log-concave sampling.** For C2 potentials with a supplied minimizer and $`I\preceq\nabla^2V\preceq2I`$, proves that sampling within total variation 1/10 requires only $`C_\varepsilon d^\varepsilon`$ exact value-and-gradient queries for every fixed ε > 0. The bound holds on every run, with unrestricted computation between queries. A logarithmic lower bound also holds, so the optimal power-law exponent in this oracle model is zero. ([Lean](lean/docs/139.md))
+> **139. Subpolynomial query complexity for log-concave sampling.** For C2 potentials with a supplied minimizer and $`I\preceq\nabla^2V\preceq2I`$, proves that sampling within total variation 1/10 requires only $`C_\varepsilon d^\varepsilon`$ exact value-and-gradient queries for every fixed ε > 0. The bound holds on every run, with unrestricted computation between queries. A logarithmic lower bound also holds, so the optimal power-law exponent in this oracle model is zero. ([Lean](../../../lean/docs/139.md))
 
 [S2:355] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.
@@ -192,11 +192,11 @@ formalized (`paps_form=1`). The shape flags are `bound|uniform`;
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3334], manuscript link [S1:3341] |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 139 at [S2:355] |
-| S3 | [`preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/build/main.tex`](../../preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/build/main.tex) | 74 | document root; abstract [S3:47–56]; nine section `\input` directives [S3:57–65]; 74 lines |
-| S4 | [`preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/build/sections/introduction.tex`](../../preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/build/sections/introduction.tex) | 269 | `thm:main` [S4:51–65]; 269 lines |
-| S5 | [`preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/article.pdf`](../../preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/article.pdf) | 20166 | the manuscript as shipped |
-| S6 | [`lean/docs/139.md`](../../lean/docs/139.md) | 15 | scope note — Scope at [S6:9], comparator link at [S6:15] |
-| S7 | [`lean/ComparatorChallenges/LogConcaveQuery.lean`](../../lean/ComparatorChallenges/LogConcaveQuery.lean) | 93 | comparator — `exact_source_main` [S7:81–87] `sorry` [S7:87]; 93 lines |
-| S8 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=139`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3334], manuscript link [S1:3341] |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 139 at [S2:355] |
+| S3 | [`preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/build/main.tex`](../../../preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/build/main.tex) | 74 | document root; abstract [S3:47–56]; nine section `\input` directives [S3:57–65]; 74 lines |
+| S4 | [`preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/build/sections/introduction.tex`](../../../preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/build/sections/introduction.tex) | 269 | `thm:main` [S4:51–65]; 269 lines |
+| S5 | [`preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/article.pdf`](../../../preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/article.pdf) | 20166 | the manuscript as shipped |
+| S6 | [`lean/docs/139.md`](../../../lean/docs/139.md) | 15 | scope note — Scope at [S6:9], comparator link at [S6:15] |
+| S7 | [`lean/ComparatorChallenges/LogConcaveQuery.lean`](../../../lean/ComparatorChallenges/LogConcaveQuery.lean) | 93 | comparator — `exact_source_main` [S7:81–87] `sorry` [S7:87]; 93 lines |
+| S8 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=139`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

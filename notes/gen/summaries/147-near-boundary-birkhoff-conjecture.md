@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Dynamical systems and ergodic theory](../index/disciplines/dynamical-systems-and-ergodic-theory.md) / [Family 147](../index/dynamical-systems-and-ergodic-theory/147-near-boundary-birkhoff-conjecture.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Dynamical systems and ergodic theory](../index/disciplines/dynamical-systems-and-ergodic-theory.md) / [Family 147](../index/dynamical-systems-and-ergodic-theory/147-near-boundary-birkhoff-conjecture.md)
 
 # 147 — The near-boundary Birkhoff conjecture
 
@@ -194,17 +194,17 @@ in the Lean library reaches it, and no certificate ships with it.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 147 at line 3516. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 373. |
-| S3 | [`README.md`](../../README.md) | 51 | The repo readme, which attributes no reasoning trace to this family. |
-| S4 | [`preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/README.md`](../../preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/README.md) | 18 | Citation-only manuscript readme: the title, the date, the BibTeX block, no provenance. |
-| S5 | [`preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/build/main.tex`](../../preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/build/main.tex) | 63 | The main file: the abstract and the section order. |
-| S6 | [`preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/build/sections/introduction.tex`](../../preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/build/sections/introduction.tex) | 205 | The phase-foliation theorem, the regularity reduction, the context, the prior results, and the graphness step. |
-| S7 | [`preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/build/references.bib`](../../preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/build/references.bib) | 184 | The bibliography: Birkhoff, Poritsky, Lazutkin, Marvizi–Melrose, Mather, Bialy, ADK, Kaloshin–Sorrentino, Bialy–Mironov, Koval. |
-| S8 | [`preprints/Rigidity-of-Smooth-Billiards-with-a-Continuous-Caustic-Collar-September-24-2026/README.md`](../../preprints/Rigidity-of-Smooth-Billiards-with-a-Continuous-Caustic-Collar-September-24-2026/README.md) | 18 | Citation-only companion readme: the title, the date, the BibTeX block, no provenance. |
-| S9 | [`preprints/Rigidity-of-Smooth-Billiards-with-a-Continuous-Caustic-Collar-September-24-2026/build/main.tex`](../../preprints/Rigidity-of-Smooth-Billiards-with-a-Continuous-Caustic-Collar-September-24-2026/build/main.tex) | 92 | The companion main file: the abstract and the section order. |
-| S10 | [`preprints/Rigidity-of-Smooth-Billiards-with-a-Continuous-Caustic-Collar-September-24-2026/build/sections/01-introduction.tex`](../../preprints/Rigidity-of-Smooth-Billiards-with-a-Continuous-Caustic-Collar-September-24-2026/build/sections/01-introduction.tex) | 193 | The collar definition, the rigidity theorem, the three-part mechanism, the regularity gap, and the separable aspects. |
-| S11 | [`preprints/Rigidity-of-Smooth-Billiards-with-a-Continuous-Caustic-Collar-September-24-2026/build/references/references.bib`](../../preprints/Rigidity-of-Smooth-Billiards-with-a-Continuous-Caustic-Collar-September-24-2026/build/references/references.bib) | 287 | The companion bibliography. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 147 at line 3516. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 373. |
+| S3 | [`README.md`](../../../README.md) | 51 | The repo readme, which attributes no reasoning trace to this family. |
+| S4 | [`preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/README.md`](../../../preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/README.md) | 18 | Citation-only manuscript readme: the title, the date, the BibTeX block, no provenance. |
+| S5 | [`preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/build/main.tex`](../../../preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/build/main.tex) | 63 | The main file: the abstract and the section order. |
+| S6 | [`preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/build/sections/introduction.tex`](../../../preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/build/sections/introduction.tex) | 205 | The phase-foliation theorem, the regularity reduction, the context, the prior results, and the graphness step. |
+| S7 | [`preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/build/references.bib`](../../../preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/build/references.bib) | 184 | The bibliography: Birkhoff, Poritsky, Lazutkin, Marvizi–Melrose, Mather, Bialy, ADK, Kaloshin–Sorrentino, Bialy–Mironov, Koval. |
+| S8 | [`preprints/Rigidity-of-Smooth-Billiards-with-a-Continuous-Caustic-Collar-September-24-2026/README.md`](../../../preprints/Rigidity-of-Smooth-Billiards-with-a-Continuous-Caustic-Collar-September-24-2026/README.md) | 18 | Citation-only companion readme: the title, the date, the BibTeX block, no provenance. |
+| S9 | [`preprints/Rigidity-of-Smooth-Billiards-with-a-Continuous-Caustic-Collar-September-24-2026/build/main.tex`](../../../preprints/Rigidity-of-Smooth-Billiards-with-a-Continuous-Caustic-Collar-September-24-2026/build/main.tex) | 92 | The companion main file: the abstract and the section order. |
+| S10 | [`preprints/Rigidity-of-Smooth-Billiards-with-a-Continuous-Caustic-Collar-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/Rigidity-of-Smooth-Billiards-with-a-Continuous-Caustic-Collar-September-24-2026/build/sections/01-introduction.tex) | 193 | The collar definition, the rigidity theorem, the three-part mechanism, the regularity gap, and the separable aspects. |
+| S11 | [`preprints/Rigidity-of-Smooth-Billiards-with-a-Continuous-Caustic-Collar-September-24-2026/build/references/references.bib`](../../../preprints/Rigidity-of-Smooth-Billiards-with-a-Continuous-Caustic-Collar-September-24-2026/build/references/references.bib) | 287 | The companion bibliography. |
 
 ## Bibliography
 

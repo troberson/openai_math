@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Topology](../index/disciplines/topology.md) / [Family 315](../index/topology/315-four-dimensional-singer-conjecture.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Topology](../index/disciplines/topology.md) / [Family 315](../index/topology/315-four-dimensional-singer-conjecture.md)
 
 # 315 — The four-dimensional Singer conjecture
 
@@ -146,11 +146,11 @@ bibliography; no figures — and no non-LaTeX evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 315 at line 7731. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 724. |
-| S3 | [`preprints/The-Singer-conjecture-in-dimension-four-September-25-2026/build/paper.tex`](../../preprints/The-Singer-conjecture-in-dimension-four-September-25-2026/build/paper.tex) | 56 | Manuscript main file: title and abstract. |
-| S4 | [`preprints/The-Singer-conjecture-in-dimension-four-September-25-2026/build/introduction.tex`](../../preprints/The-Singer-conjecture-in-dimension-four-September-25-2026/build/introduction.tex) | 268 | Introduction: the setup, the main theorem and corollary, the history and significance, and the proof in outline. |
-| S5 | [`preprints/The-Singer-conjecture-in-dimension-four-September-25-2026/build/references.bib`](../../preprints/The-Singer-conjecture-in-dimension-four-September-25-2026/build/references.bib) | 333 | Manuscript bibliography. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 315 at line 7731. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 724. |
+| S3 | [`preprints/The-Singer-conjecture-in-dimension-four-September-25-2026/build/paper.tex`](../../../preprints/The-Singer-conjecture-in-dimension-four-September-25-2026/build/paper.tex) | 56 | Manuscript main file: title and abstract. |
+| S4 | [`preprints/The-Singer-conjecture-in-dimension-four-September-25-2026/build/introduction.tex`](../../../preprints/The-Singer-conjecture-in-dimension-four-September-25-2026/build/introduction.tex) | 268 | Introduction: the setup, the main theorem and corollary, the history and significance, and the proof in outline. |
+| S5 | [`preprints/The-Singer-conjecture-in-dimension-four-September-25-2026/build/references.bib`](../../../preprints/The-Singer-conjecture-in-dimension-four-September-25-2026/build/references.bib) | 333 | Manuscript bibliography. |
 
 ## Bibliography
 

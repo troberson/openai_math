@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 129](../index/theoretical-computer-science/129-exponential-state-costs-for-two-way-automata.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 129](../index/theoretical-computer-science/129-exponential-state-costs-for-two-way-automata.md)
 
 # 129 — Exponential state costs for two-way automata
 
@@ -8,7 +8,7 @@
 
 [S1:3102] (family entry):
 
-> **129. Exponential state costs for two-way automata.** Proves exponential lower bounds both for complementing two-way nondeterministic finite automata and for simulating one-way nondeterministic automata by two-way deterministic ones. The latter resolves the Sakoda–Sipser state-succinctness conjecture over growing finite alphabets; both results rule out polynomial state bounds independent of alphabet size. ([Lean](lean/docs/129.md))
+> **129. Exponential state costs for two-way automata.** Proves exponential lower bounds both for complementing two-way nondeterministic finite automata and for simulating one-way nondeterministic automata by two-way deterministic ones. The latter resolves the Sakoda–Sipser state-succinctness conjecture over growing finite alphabets; both results rule out polynomial state bounds independent of alphabet size. ([Lean](../../../lean/docs/129.md))
 
 [S2:335] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.
@@ -189,16 +189,16 @@ conjecture over growing finite alphabets; `counterex_broad=0`.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3102], manuscript link [S1:3102] |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 129 at [S2:335] |
-| S3 | [`preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/build/paper.tex`](../../preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/build/paper.tex) | 46 | MS1 document root; abstract [S3:30–36]; five section `\input` directives [S3:37–41]; 46 lines |
-| S4 | [`preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/build/sections/introduction.tex`](../../preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/build/sections/introduction.tex) | 151 | MS1 `main:theorem` [S4:38–48]; 151 lines |
-| S5 | [`preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/paper.pdf`](../../preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/paper.pdf) | 11050 | MS1 as shipped |
-| S6 | [`lean/docs/129.md`](../../lean/docs/129.md) | 22 | scope note — Scope at [S6:10–14], comparator links at [S6:20–22] |
-| S7 | [`preprints/An-exponential-two-way-deterministic-state-lower-bound-for-one-way-liveness-September-25-2026/build/main.tex`](../../preprints/An-exponential-two-way-deterministic-state-lower-bound-for-one-way-liveness-September-25-2026/build/main.tex) | 29 | MS2 document root; abstract [S7:8–18]; five section `\input` directives [S7:19–23]; 29 lines |
-| S8 | [`preprints/An-exponential-two-way-deterministic-state-lower-bound-for-one-way-liveness-September-25-2026/build/sections/introduction.tex`](../../preprints/An-exponential-two-way-deterministic-state-lower-bound-for-one-way-liveness-September-25-2026/build/sections/introduction.tex) | 193 | MS2 `thm:main` [S8:99–110]; 193 lines |
-| S9 | [`preprints/An-exponential-two-way-deterministic-state-lower-bound-for-one-way-liveness-September-25-2026/main.pdf`](../../preprints/An-exponential-two-way-deterministic-state-lower-bound-for-one-way-liveness-September-25-2026/main.pdf) | 11621 | MS2 as shipped |
-| S10 | [`lean/ComparatorChallenges/TwoWayComplementation.lean`](../../lean/ComparatorChallenges/TwoWayComplementation.lean) | 45 | comparator — `complementation_lower_bound_finite` [S10:36–40], `sorry` at [S10:41]; 45 lines |
-| S11 | [`lean/ComparatorChallenges/TwoWayDeterminization.lean`](../../lean/ComparatorChallenges/TwoWayDeterminization.lean) | 73 | comparator — `explicit_family_main` [S11:58–68], `sorry` at [S11:69]; 73 lines |
-| S12 | [`lean/ComparatorChallenges/OneWayLiveness.lean`](../../lean/ComparatorChallenges/OneWayLiveness.lean) | 105 | comparator — `main_theorem` [S12:95–100], `sorry` at [S12:101]; 105 lines |
-| S13 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=129`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3102], manuscript link [S1:3102] |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 129 at [S2:335] |
+| S3 | [`preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/build/paper.tex`](../../../preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/build/paper.tex) | 46 | MS1 document root; abstract [S3:30–36]; five section `\input` directives [S3:37–41]; 46 lines |
+| S4 | [`preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/build/sections/introduction.tex`](../../../preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/build/sections/introduction.tex) | 151 | MS1 `main:theorem` [S4:38–48]; 151 lines |
+| S5 | [`preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/paper.pdf`](../../../preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/paper.pdf) | 11050 | MS1 as shipped |
+| S6 | [`lean/docs/129.md`](../../../lean/docs/129.md) | 22 | scope note — Scope at [S6:10–14], comparator links at [S6:20–22] |
+| S7 | [`preprints/An-exponential-two-way-deterministic-state-lower-bound-for-one-way-liveness-September-25-2026/build/main.tex`](../../../preprints/An-exponential-two-way-deterministic-state-lower-bound-for-one-way-liveness-September-25-2026/build/main.tex) | 29 | MS2 document root; abstract [S7:8–18]; five section `\input` directives [S7:19–23]; 29 lines |
+| S8 | [`preprints/An-exponential-two-way-deterministic-state-lower-bound-for-one-way-liveness-September-25-2026/build/sections/introduction.tex`](../../../preprints/An-exponential-two-way-deterministic-state-lower-bound-for-one-way-liveness-September-25-2026/build/sections/introduction.tex) | 193 | MS2 `thm:main` [S8:99–110]; 193 lines |
+| S9 | [`preprints/An-exponential-two-way-deterministic-state-lower-bound-for-one-way-liveness-September-25-2026/main.pdf`](../../../preprints/An-exponential-two-way-deterministic-state-lower-bound-for-one-way-liveness-September-25-2026/main.pdf) | 11621 | MS2 as shipped |
+| S10 | [`lean/ComparatorChallenges/TwoWayComplementation.lean`](../../../lean/ComparatorChallenges/TwoWayComplementation.lean) | 45 | comparator — `complementation_lower_bound_finite` [S10:36–40], `sorry` at [S10:41]; 45 lines |
+| S11 | [`lean/ComparatorChallenges/TwoWayDeterminization.lean`](../../../lean/ComparatorChallenges/TwoWayDeterminization.lean) | 73 | comparator — `explicit_family_main` [S11:58–68], `sorry` at [S11:69]; 73 lines |
+| S12 | [`lean/ComparatorChallenges/OneWayLiveness.lean`](../../../lean/ComparatorChallenges/OneWayLiveness.lean) | 105 | comparator — `main_theorem` [S12:95–100], `sorry` at [S12:101]; 105 lines |
+| S13 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=129`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

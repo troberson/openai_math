@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 117](../index/theoretical-computer-science/117-uniform-sparsest-cut-hardness-and-semidefinite-gaps.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 117](../index/theoretical-computer-science/117-uniform-sparsest-cut-hardness-and-semidefinite-gaps.md)
 
 # 117 — Uniform sparsest cut: hardness and semidefinite gaps
 
@@ -8,17 +8,17 @@
 
 [S1:2881] (family entry):
 
-> **117. Uniform sparsest cut: hardness and semidefinite gaps.** Proves that approximating Uniform Sparsest Cut within any fixed constant factor is NP-hard, even with nonnegative rational capacities and unit demands. The Goemans–Linial semidefinite relaxation also has integrality gaps of order at least $`\sqrt{\log n}/(\log\log n)^3`$, approaching the square-root-logarithmic upper bound. ([Lean](../../lean/docs/117.md))
+> **117. Uniform sparsest cut: hardness and semidefinite gaps.** Proves that approximating Uniform Sparsest Cut within any fixed constant factor is NP-hard, even with nonnegative rational capacities and unit demands. The Goemans–Linial semidefinite relaxation also has integrality gaps of order at least $`\sqrt{\log n}/(\log\log n)^3`$, approaching the square-root-logarithmic upper bound. ([Lean](../../../lean/docs/117.md))
 
 [S1:2888] (the hardness manuscript entry, with its abstract at [S1:2890]):
 
-> [Constant-factor hardness of uniform sparsest cut](../../preprints/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026.pdf)
+> [Constant-factor hardness of uniform sparsest cut](../../../preprints/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026.pdf)
 
 > We prove that, for every fixed C > 1, approximating Uniform Sparsest Cut within factor C is NP-hard. The output graphs have nonnegative rational capacities and unit demand between every pair of distinct vertices.
 
 [S1:2897] (the gaps manuscript entry, with its abstract at [S1:2899]):
 
-> [Near-square-root logarithmic integrality gaps for uniform sparsest cut](../../preprints/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026.pdf)
+> [Near-square-root logarithmic integrality gaps for uniform sparsest cut](../../../preprints/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026.pdf)
 
 > We construct uniform sparsest-cut instances whose Goemans–Linial semidefinite integrality gap is at least $`c\sqrt{\log n}/(\log\log n)^3`$ along a sequence $`n\to\infty`$. The demand is one between every pair of distinct vertices, and the capacities are nonnegative real numbers. This matches the Arora–Rao–Vazirani upper bound up to a power of $`\log\log n`$.
 
@@ -257,13 +257,13 @@ conjecture with a resolve verb.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2881], hardness link [S1:2888] and abstract [S1:2890], gaps link [S1:2897] and abstract [S1:2899] |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 117 at [S2:312] |
-| S3 | [`preprints/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026/build/source/main.tex`](../../preprints/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026/build/source/main.tex) | 83 | root (`\documentclass`); abstract [S3:69–71]; `\tableofcontents` [S3:72]; eight `\input` directives [S3:73–80]; 83 lines |
-| S4 | [`preprints/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026/build/source/sections/00-introduction.tex`](../../preprints/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026/build/source/sections/00-introduction.tex) | 217 | `thm:main` [S4:14–31]; context [S4:34–112]; proof structure [S4:128–205] |
-| S5 | [`preprints/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026/build/source/main.tex`](../../preprints/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026/build/source/main.tex) | 339 | root (`\documentclass`); abstract [S5:46–52]; `thm:main` [S5:152–161]; context [S5:163–195]; proof strategy [S5:198–283]; six section inputs [S5:327–332]; appendix [S5:334–335]; 340 lines |
-| S6 | [`preprints/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026.pdf`](../../preprints/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026.pdf) | 22059 | the hardness manuscript as shipped |
-| S7 | [`preprints/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026.pdf`](../../preprints/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026.pdf) | 14288 | the gaps manuscript as shipped |
-| S8 | [`lean/docs/117.md`](../../lean/docs/117.md) | 15 | scope note — the Scope at [S8:9] and one comparator link at [S8:15] |
-| S9 | [`lean/ComparatorChallenges/UniformSparsestCut.lean`](../../lean/ComparatorChallenges/UniformSparsestCut.lean) | 55 | the comparator stub — `mainGap` at [S9:40–49] |
-| S10 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=117`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2881], hardness link [S1:2888] and abstract [S1:2890], gaps link [S1:2897] and abstract [S1:2899] |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 117 at [S2:312] |
+| S3 | [`preprints/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026/build/source/main.tex`](../../../preprints/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026/build/source/main.tex) | 83 | root (`\documentclass`); abstract [S3:69–71]; `\tableofcontents` [S3:72]; eight `\input` directives [S3:73–80]; 83 lines |
+| S4 | [`preprints/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026/build/source/sections/00-introduction.tex`](../../../preprints/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026/build/source/sections/00-introduction.tex) | 217 | `thm:main` [S4:14–31]; context [S4:34–112]; proof structure [S4:128–205] |
+| S5 | [`preprints/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026/build/source/main.tex`](../../../preprints/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026/build/source/main.tex) | 339 | root (`\documentclass`); abstract [S5:46–52]; `thm:main` [S5:152–161]; context [S5:163–195]; proof strategy [S5:198–283]; six section inputs [S5:327–332]; appendix [S5:334–335]; 340 lines |
+| S6 | [`preprints/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026.pdf`](../../../preprints/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026/Constant-factor-hardness-of-uniform-sparsest-cut-September-24-2026.pdf) | 22059 | the hardness manuscript as shipped |
+| S7 | [`preprints/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026.pdf`](../../../preprints/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026/Near-square-root-logarithmic-integrality-gaps-for-uniform-sparsest-cut-September-24-2026.pdf) | 14288 | the gaps manuscript as shipped |
+| S8 | [`lean/docs/117.md`](../../../lean/docs/117.md) | 15 | scope note — the Scope at [S8:9] and one comparator link at [S8:15] |
+| S9 | [`lean/ComparatorChallenges/UniformSparsestCut.lean`](../../../lean/ComparatorChallenges/UniformSparsestCut.lean) | 55 | the comparator stub — `mainGap` at [S9:40–49] |
+| S10 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=117`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

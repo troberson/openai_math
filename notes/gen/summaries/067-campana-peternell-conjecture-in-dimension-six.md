@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Algebraic and complex geometry](../index/disciplines/algebraic-and-complex-geometry.md) / [Family 067](../index/algebraic-and-complex-geometry/067-campana-peternell-conjecture-in-dimension-six.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Algebraic and complex geometry](../index/disciplines/algebraic-and-complex-geometry.md) / [Family 067](../index/algebraic-and-complex-geometry/067-campana-peternell-conjecture-in-dimension-six.md)
 
 # 067 — The Campana–Peternell conjecture in dimension six
 
@@ -129,11 +129,11 @@ certificate.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 067 at line 1679. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 208. |
-| S3 | [`preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/build/main.tex`](../../preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/build/main.tex) | 63 | Main file: title, abstract, and section inputs. |
-| S4 | [`preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/build/sections/01-introduction.tex`](../../preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/build/sections/01-introduction.tex) | 221 | The theorem, the prior cases, the pseudoindex split, the VMRT method, and the Grassmannian conclusion. |
-| S5 | [`preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/build/sections/03-pseudoindex-four.tex`](../../preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/build/sections/03-pseudoindex-four.tex) | 202 | The independent pseudoindex-four intersection argument. |
-| S6 | [`preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/build/sections/06-grassmannian.tex`](../../preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/build/sections/06-grassmannian.tex) | 167 | The pseudoindex-five characteristic-number constraint and the Grassmannian. |
-| S7 | [`preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/build/sections/07-conclusion.tex`](../../preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/build/sections/07-conclusion.tex) | 138 | The conclusion. |
-| S8 | [`preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/verification/verify.py`](../../preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/verification/verify.py) | 167 | The finite-arithmetic certificate. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 067 at line 1679. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 208. |
+| S3 | [`preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/build/main.tex`](../../../preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/build/main.tex) | 63 | Main file: title, abstract, and section inputs. |
+| S4 | [`preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/build/sections/01-introduction.tex`](../../../preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/build/sections/01-introduction.tex) | 221 | The theorem, the prior cases, the pseudoindex split, the VMRT method, and the Grassmannian conclusion. |
+| S5 | [`preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/build/sections/03-pseudoindex-four.tex`](../../../preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/build/sections/03-pseudoindex-four.tex) | 202 | The independent pseudoindex-four intersection argument. |
+| S6 | [`preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/build/sections/06-grassmannian.tex`](../../../preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/build/sections/06-grassmannian.tex) | 167 | The pseudoindex-five characteristic-number constraint and the Grassmannian. |
+| S7 | [`preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/build/sections/07-conclusion.tex`](../../../preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/build/sections/07-conclusion.tex) | 138 | The conclusion. |
+| S8 | [`preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/verification/verify.py`](../../../preprints/The-Campana-Peternell-conjecture-in-dimension-six-September-25-2026/verification/verify.py) | 167 | The finite-arithmetic certificate. |

@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Algebraic and complex geometry](../index/disciplines/algebraic-and-complex-geometry.md) / [Family 039](../index/algebraic-and-complex-geometry/039-nagatas-conjecture-and-maximal-seshadri-constants.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Algebraic and complex geometry](../index/disciplines/algebraic-and-complex-geometry.md) / [Family 039](../index/algebraic-and-complex-geometry/039-nagatas-conjecture-and-maximal-seshadri-constants.md)
 
 # 039 — Nagata's conjecture and maximal Seshadri constants
 
@@ -69,19 +69,19 @@ The two October manuscripts are the part of the family with no formalization and
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`overview.tex`](../../overview.tex) | 859 | Family entry, line 156 |
-| S2 | [`preprints/Nagatas-Conjecture-for-Plane-Curves-September-23-2026/build/main.tex`](../../preprints/Nagatas-Conjecture-for-Plane-Curves-September-23-2026/build/main.tex) | 50 | Abstract, lines 35–41 |
-| S3 | [`preprints/Nagatas-Conjecture-for-Plane-Curves-September-23-2026/build/sections/introduction.tex`](../../preprints/Nagatas-Conjecture-for-Plane-Curves-September-23-2026/build/sections/introduction.tex) | 143 | Main theorem, lines 31–40 |
-| S4 | [`preprints/Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026/build/main.tex`](../../preprints/Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026/build/main.tex) | 26 | Abstract, lines 7–13 |
-| S5 | [`preprints/Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026/build/sections/introduction.tex`](../../preprints/Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026/build/sections/introduction.tex) | 167 | Main theorem, lines 31–44 |
-| S6 | [`preprints/Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-5-2026/build/main.tex`](../../preprints/Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-5-2026/build/main.tex) | 65 | Abstract, lines 49–56 |
-| S7 | [`preprints/Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-5-2026/build/sections/introduction.tex`](../../preprints/Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-5-2026/build/sections/introduction.tex) | 180 | Main theorem, lines 29–39 |
-| S8 | [`preprints/Maximal-multipoint-Seshadri-constants-in-positive-characteristic-October-5-2026/build/build/main.tex`](../../preprints/Maximal-multipoint-Seshadri-constants-in-positive-characteristic-October-5-2026/build/build/main.tex) | 28 | Abstract, lines 8–17 |
-| S9 | [`preprints/Maximal-multipoint-Seshadri-constants-in-positive-characteristic-October-5-2026/build/build/sections/01-introduction.tex`](../../preprints/Maximal-multipoint-Seshadri-constants-in-positive-characteristic-October-5-2026/build/build/sections/01-introduction.tex) | 171 | Main theorem, lines 28–36 |
-| S10 | [`preprints/Nagatas-Conjecture-for-Plane-Curves-September-23-2026/README.md`](../../preprints/Nagatas-Conjecture-for-Plane-Curves-September-23-2026/README.md) | 18 | The manuscript's citation record, lines 11–12 |
-| S11 | [`preprints/Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026/README.md`](../../preprints/Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026/README.md) | 18 | The manuscript's citation record, lines 11–12 |
-| S12 | [`preprints/Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-5-2026/README.md`](../../preprints/Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-5-2026/README.md) | 16 | The manuscript's citation record, lines 11–12 |
-| S13 | [`preprints/Maximal-multipoint-Seshadri-constants-in-positive-characteristic-October-5-2026/README.md`](../../preprints/Maximal-multipoint-Seshadri-constants-in-positive-characteristic-October-5-2026/README.md) | 16 | The manuscript's citation record, lines 11–12 |
-| S14 | [`lean/docs/039.md`](../../lean/docs/039.md) | 23 | Scope note: formalized claims, exceptional sets, retained hypotheses |
-| S15 | [`lean/OAI/AlgebraicGeometry/PlaneCurves/Nagata.lean`](../../lean/OAI/AlgebraicGeometry/PlaneCurves/Nagata.lean) | 169 | `nagata_conjecture` declaration, line 148 |
-| S16 | [`lean/OAI/AlgebraicGeometry/Seshadri/Main.lean`](../../lean/OAI/AlgebraicGeometry/Seshadri/Main.lean) | 42 | `maximalSeshadriConstants` declaration, line 25 |
+| S1 | [`overview.tex`](../../../overview.tex) | 859 | Family entry, line 156 |
+| S2 | [`preprints/Nagatas-Conjecture-for-Plane-Curves-September-23-2026/build/main.tex`](../../../preprints/Nagatas-Conjecture-for-Plane-Curves-September-23-2026/build/main.tex) | 50 | Abstract, lines 35–41 |
+| S3 | [`preprints/Nagatas-Conjecture-for-Plane-Curves-September-23-2026/build/sections/introduction.tex`](../../../preprints/Nagatas-Conjecture-for-Plane-Curves-September-23-2026/build/sections/introduction.tex) | 143 | Main theorem, lines 31–40 |
+| S4 | [`preprints/Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026/build/main.tex`](../../../preprints/Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026/build/main.tex) | 26 | Abstract, lines 7–13 |
+| S5 | [`preprints/Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026/build/sections/introduction.tex`](../../../preprints/Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026/build/sections/introduction.tex) | 167 | Main theorem, lines 31–44 |
+| S6 | [`preprints/Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-5-2026/build/main.tex`](../../../preprints/Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-5-2026/build/main.tex) | 65 | Abstract, lines 49–56 |
+| S7 | [`preprints/Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-5-2026/build/sections/introduction.tex`](../../../preprints/Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-5-2026/build/sections/introduction.tex) | 180 | Main theorem, lines 29–39 |
+| S8 | [`preprints/Maximal-multipoint-Seshadri-constants-in-positive-characteristic-October-5-2026/build/build/main.tex`](../../../preprints/Maximal-multipoint-Seshadri-constants-in-positive-characteristic-October-5-2026/build/build/main.tex) | 28 | Abstract, lines 8–17 |
+| S9 | [`preprints/Maximal-multipoint-Seshadri-constants-in-positive-characteristic-October-5-2026/build/build/sections/01-introduction.tex`](../../../preprints/Maximal-multipoint-Seshadri-constants-in-positive-characteristic-October-5-2026/build/build/sections/01-introduction.tex) | 171 | Main theorem, lines 28–36 |
+| S10 | [`preprints/Nagatas-Conjecture-for-Plane-Curves-September-23-2026/README.md`](../../../preprints/Nagatas-Conjecture-for-Plane-Curves-September-23-2026/README.md) | 18 | The manuscript's citation record, lines 11–12 |
+| S11 | [`preprints/Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026/README.md`](../../../preprints/Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026/README.md) | 18 | The manuscript's citation record, lines 11–12 |
+| S12 | [`preprints/Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-5-2026/README.md`](../../../preprints/Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-5-2026/README.md) | 16 | The manuscript's citation record, lines 11–12 |
+| S13 | [`preprints/Maximal-multipoint-Seshadri-constants-in-positive-characteristic-October-5-2026/README.md`](../../../preprints/Maximal-multipoint-Seshadri-constants-in-positive-characteristic-October-5-2026/README.md) | 16 | The manuscript's citation record, lines 11–12 |
+| S14 | [`lean/docs/039.md`](../../../lean/docs/039.md) | 23 | Scope note: formalized claims, exceptional sets, retained hypotheses |
+| S15 | [`lean/OAI/AlgebraicGeometry/PlaneCurves/Nagata.lean`](../../../lean/OAI/AlgebraicGeometry/PlaneCurves/Nagata.lean) | 169 | `nagata_conjecture` declaration, line 148 |
+| S16 | [`lean/OAI/AlgebraicGeometry/Seshadri/Main.lean`](../../../lean/OAI/AlgebraicGeometry/Seshadri/Main.lean) | 42 | `maximalSeshadriConstants` declaration, line 25 |

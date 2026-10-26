@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Algebra](../index/disciplines/algebra.md) / [Family 201](../index/algebra/201-a-counterexample-to-kuroshs-division-ring-problem.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Algebra](../index/disciplines/algebra.md) / [Family 201](../index/algebra/201-a-counterexample-to-kuroshs-division-ring-problem.md)
 
 # 201 — A counterexample to Kurosh's division-ring problem
 
@@ -127,11 +127,11 @@ evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 201 at line 4600. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 483. |
-| S3 | [`preprints/A-Counterexample-to-Kuroshs-Division-Ring-Problem-September-23-2026/build/main.tex`](../../preprints/A-Counterexample-to-Kuroshs-Division-Ring-Problem-September-23-2026/build/main.tex) | 34 | Main file: title and abstract. |
-| S4 | [`preprints/A-Counterexample-to-Kuroshs-Division-Ring-Problem-September-23-2026/build/sections/introduction.tex`](../../preprints/A-Counterexample-to-Kuroshs-Division-Ring-Problem-September-23-2026/build/sections/introduction.tex) | 139 | The main theorem, the historical context, and the construction strategy. |
-| S5 | [`preprints/A-Counterexample-to-Kuroshs-Division-Ring-Problem-September-23-2026/build/references.bib`](../../preprints/A-Counterexample-to-Kuroshs-Division-Ring-Problem-September-23-2026/build/references.bib) | 182 | The manuscript's bibliography. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 201 at line 4600. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 483. |
+| S3 | [`preprints/A-Counterexample-to-Kuroshs-Division-Ring-Problem-September-23-2026/build/main.tex`](../../../preprints/A-Counterexample-to-Kuroshs-Division-Ring-Problem-September-23-2026/build/main.tex) | 34 | Main file: title and abstract. |
+| S4 | [`preprints/A-Counterexample-to-Kuroshs-Division-Ring-Problem-September-23-2026/build/sections/introduction.tex`](../../../preprints/A-Counterexample-to-Kuroshs-Division-Ring-Problem-September-23-2026/build/sections/introduction.tex) | 139 | The main theorem, the historical context, and the construction strategy. |
+| S5 | [`preprints/A-Counterexample-to-Kuroshs-Division-Ring-Problem-September-23-2026/build/references.bib`](../../../preprints/A-Counterexample-to-Kuroshs-Division-Ring-Problem-September-23-2026/build/references.bib) | 182 | The manuscript's bibliography. |
 
 ## Bibliography
 

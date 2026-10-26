@@ -195,7 +195,7 @@ def trap():
     stays demonstrated rather than recorded: the naive pattern truncates at `(0)`, the truncated target
     does not exist, and a checker built on `[^)]*` reports a broken link that is not there.
     """
-    line = f"[paper](../../../{CAT_DIR}/paper.pdf)"
+    line = f"[paper](../../../../{CAT_DIR}/paper.pdf)"
     naive = re.findall(r"\]\(([^)]*)\)", line)[0]
     balanced = md_links(line)[0]
     return [(label, target, (ROOT / resolve(CAT_PAGE, target)).exists())

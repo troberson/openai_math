@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Algebraic and complex geometry](../index/disciplines/algebraic-and-complex-geometry.md) / [Family 040](../index/algebraic-and-complex-geometry/040-blochs-conjecture-for-complex-surfaces.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Algebraic and complex geometry](../index/disciplines/algebraic-and-complex-geometry.md) / [Family 040](../index/algebraic-and-complex-geometry/040-blochs-conjecture-for-complex-surfaces.md)
 
 # 040 — Bloch's conjecture for complex surfaces
 
@@ -152,19 +152,19 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 040 at line 1144. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 158. |
-| S3 | [`preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/README.md`](../../preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/README.md) | 18 | Manuscript readme: title, author, date. |
-| S4 | [`preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/paper.tex`](../../preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/paper.tex) | 87 | The main file: abstract and section inputs. |
-| S5 | [`preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/introduction.tex`](../../preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/introduction.tex) | 298 | The main theorem, the corollary, the historical context, and the proof mechanism. |
-| S6 | [`preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/reductions.tex`](../../preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/reductions.tex) | 67 | Classical and birational reductions. |
-| S7 | [`preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/derived.tex`](../../preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/derived.tex) | 606 | Derived determinant fiber. |
-| S8 | [`preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/fixed.tex`](../../preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/fixed.tex) | 789 | The fixed-quotient contribution. |
-| S9 | [`preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/relation.tex`](../../preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/relation.tex) | 657 | The Chow relation. |
-| S10 | [`preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/nonrank.tex`](../../preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/nonrank.tex) | 409 | The non-rank-one coefficient. |
-| S11 | [`preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/rankone.tex`](../../preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/rankone.tex) | 416 | The rank-one case. |
-| S12 | [`preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/conclusion.tex`](../../preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/conclusion.tex) | 119 | The conclusion. |
-| S13 | [`preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/bibliography.tex`](../../preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/bibliography.tex) | 236 | The bibliography. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 040 at line 1144. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 158. |
+| S3 | [`preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/README.md`](../../../preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/README.md) | 18 | Manuscript readme: title, author, date. |
+| S4 | [`preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/paper.tex`](../../../preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/paper.tex) | 87 | The main file: abstract and section inputs. |
+| S5 | [`preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/introduction.tex`](../../../preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/introduction.tex) | 298 | The main theorem, the corollary, the historical context, and the proof mechanism. |
+| S6 | [`preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/reductions.tex`](../../../preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/reductions.tex) | 67 | Classical and birational reductions. |
+| S7 | [`preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/derived.tex`](../../../preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/derived.tex) | 606 | Derived determinant fiber. |
+| S8 | [`preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/fixed.tex`](../../../preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/fixed.tex) | 789 | The fixed-quotient contribution. |
+| S9 | [`preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/relation.tex`](../../../preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/relation.tex) | 657 | The Chow relation. |
+| S10 | [`preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/nonrank.tex`](../../../preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/nonrank.tex) | 409 | The non-rank-one coefficient. |
+| S11 | [`preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/rankone.tex`](../../../preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/rankone.tex) | 416 | The rank-one case. |
+| S12 | [`preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/conclusion.tex`](../../../preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/sections/conclusion.tex) | 119 | The conclusion. |
+| S13 | [`preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/bibliography.tex`](../../../preprints/Blochs-Conjecture-for-Surfaces-with-pg-equals-q-equals-0-September-24-2026/build/bibliography.tex) | 236 | The bibliography. |
 
 ## Bibliography
 

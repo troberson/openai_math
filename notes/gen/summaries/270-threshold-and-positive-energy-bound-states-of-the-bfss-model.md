@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Mathematical physics](../index/disciplines/mathematical-physics.md) / [Family 270](../index/mathematical-physics/270-threshold-and-positive-energy-bound-states-of-the-bfss-model.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Mathematical physics](../index/disciplines/mathematical-physics.md) / [Family 270](../index/mathematical-physics/270-threshold-and-positive-energy-bound-states-of-the-bfss-model.md)
 
 # 270 — Threshold and positive-energy bound states of the BFSS model
 
@@ -138,12 +138,12 @@ non-LaTeX evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 270 at line 6797. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 629. |
-| S3 | [`preprints/The-unique-threshold-bound-state-of-the-SU-N-BFSS-model-September-24-2026/build/manuscript/main.tex`](../../preprints/The-unique-threshold-bound-state-of-the-SU-N-BFSS-model-September-24-2026/build/manuscript/main.tex) | 86 | Threshold manuscript main file: title and abstract. |
-| S4 | [`preprints/The-unique-threshold-bound-state-of-the-SU-N-BFSS-model-September-24-2026/build/manuscript/sections/01-introduction.tex`](../../preprints/The-unique-threshold-bound-state-of-the-SU-N-BFSS-model-September-24-2026/build/manuscript/sections/01-introduction.tex) | 274 | Threshold manuscript introduction: the operator, the main theorem, the history, and the proof's compactness mechanism. |
-| S5 | [`preprints/Positive-eigenvalues-of-the-relative-SU-2-BFSS-Hamiltonian-October-5-2026/build/positive-eigenvalues-relative-su2-bfss.tex`](../../preprints/Positive-eigenvalues-of-the-relative-SU-2-BFSS-Hamiltonian-October-5-2026/build/positive-eigenvalues-relative-su2-bfss.tex) | 888 | Positive-eigenvalue (single-file) manuscript: title, abstract, the operator setup, the main theorem, and the quadratic-form analysis. |
-| S6 | [`preprints/The-unique-threshold-bound-state-of-the-SU-N-BFSS-model-September-24-2026/build/manuscript/references.bib`](../../preprints/The-unique-threshold-bound-state-of-the-SU-N-BFSS-model-September-24-2026/build/manuscript/references.bib) | 290 | Threshold manuscript bibliography. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 270 at line 6797. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 629. |
+| S3 | [`preprints/The-unique-threshold-bound-state-of-the-SU-N-BFSS-model-September-24-2026/build/manuscript/main.tex`](../../../preprints/The-unique-threshold-bound-state-of-the-SU-N-BFSS-model-September-24-2026/build/manuscript/main.tex) | 86 | Threshold manuscript main file: title and abstract. |
+| S4 | [`preprints/The-unique-threshold-bound-state-of-the-SU-N-BFSS-model-September-24-2026/build/manuscript/sections/01-introduction.tex`](../../../preprints/The-unique-threshold-bound-state-of-the-SU-N-BFSS-model-September-24-2026/build/manuscript/sections/01-introduction.tex) | 274 | Threshold manuscript introduction: the operator, the main theorem, the history, and the proof's compactness mechanism. |
+| S5 | [`preprints/Positive-eigenvalues-of-the-relative-SU-2-BFSS-Hamiltonian-October-5-2026/build/positive-eigenvalues-relative-su2-bfss.tex`](../../../preprints/Positive-eigenvalues-of-the-relative-SU-2-BFSS-Hamiltonian-October-5-2026/build/positive-eigenvalues-relative-su2-bfss.tex) | 888 | Positive-eigenvalue (single-file) manuscript: title, abstract, the operator setup, the main theorem, and the quadratic-form analysis. |
+| S6 | [`preprints/The-unique-threshold-bound-state-of-the-SU-N-BFSS-model-September-24-2026/build/manuscript/references.bib`](../../../preprints/The-unique-threshold-bound-state-of-the-SU-N-BFSS-model-September-24-2026/build/manuscript/references.bib) | 290 | Threshold manuscript bibliography. |
 
 ## Bibliography
 

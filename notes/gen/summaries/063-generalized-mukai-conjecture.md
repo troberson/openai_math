@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Algebraic and complex geometry](../index/disciplines/algebraic-and-complex-geometry.md) / [Family 063](../index/algebraic-and-complex-geometry/063-generalized-mukai-conjecture.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Algebraic and complex geometry](../index/disciplines/algebraic-and-complex-geometry.md) / [Family 063](../index/algebraic-and-complex-geometry/063-generalized-mukai-conjecture.md)
 
 # 063 — The generalized Mukai conjecture
 
@@ -194,11 +194,11 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 063 at line 1597. |
-| S2 | [`preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/main.tex`](../../preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/main.tex) | 48 | Main file: title, abstract, and section inputs. |
-| S3 | [`preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/introduction.tex`](../../preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/introduction.tex) | 137 | The Fano setup, the theorem, prior work, and the quantum-correspondence proof strategy. |
-| S4 | [`preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/setup.tex`](../../preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/setup.tex) | 136 | Quantum cohomology setup and the divisor matrices. |
-| S5 | [`preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/descendants.tex`](../../preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/descendants.tex) | 424 | The point-descendant lower bound. |
-| S6 | [`preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/spectral.tex`](../../preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/spectral.tex) | 168 | The spectral independence of the joint eigenvalue tuples. |
-| S7 | [`preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/trace.tex`](../../preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/trace.tex) | 204 | The alternating trace and the independent curve correspondences. |
-| S8 | [`preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/equality.tex`](../../preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/equality.tex) | 157 | The equality case: ordered-chain bound and Occhetta's product characterization. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 063 at line 1597. |
+| S2 | [`preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/main.tex`](../../../preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/main.tex) | 48 | Main file: title, abstract, and section inputs. |
+| S3 | [`preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/introduction.tex`](../../../preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/introduction.tex) | 137 | The Fano setup, the theorem, prior work, and the quantum-correspondence proof strategy. |
+| S4 | [`preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/setup.tex`](../../../preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/setup.tex) | 136 | Quantum cohomology setup and the divisor matrices. |
+| S5 | [`preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/descendants.tex`](../../../preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/descendants.tex) | 424 | The point-descendant lower bound. |
+| S6 | [`preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/spectral.tex`](../../../preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/spectral.tex) | 168 | The spectral independence of the joint eigenvalue tuples. |
+| S7 | [`preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/trace.tex`](../../../preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/trace.tex) | 204 | The alternating trace and the independent curve correspondences. |
+| S8 | [`preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/equality.tex`](../../../preprints/The-Generalized-Mukai-Conjecture-September-24-2026/build/sections/equality.tex) | 157 | The equality case: ordered-chain bound and Occhetta's product characterization. |

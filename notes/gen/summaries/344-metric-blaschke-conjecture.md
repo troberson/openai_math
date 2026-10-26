@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Differential geometry](../index/disciplines/differential-geometry.md) / [Family 344](../index/differential-geometry/344-metric-blaschke-conjecture.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Differential geometry](../index/disciplines/differential-geometry.md) / [Family 344](../index/differential-geometry/344-metric-blaschke-conjecture.md)
 
 # 344 — The metric Blaschke conjecture
 
@@ -283,23 +283,23 @@ What has not been checked: no Lean, lake, or comparator run was performed, and f
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | Release blurb, manuscript link, manuscript abstract |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | Family 344's `\resultentry`, at line 786 |
-| S3 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/README.md`](../../preprints/The-metric-Blaschke-theorem-September-23-2026/README.md) | 16 | Manuscript README and bibtex key |
-| S4 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/paper.pdf`](../../preprints/The-metric-Blaschke-theorem-September-23-2026/paper.pdf) | 16839 | Manuscript PDF |
-| S5 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/paper.tex`](../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/paper.tex) | 68 | Preamble, theorem environments, section include list |
-| S6 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/00-introduction.tex`](../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/00-introduction.tex) | 203 | Abstract, Blaschke definition, main theorem, predecessors, proof route |
-| S7 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/01-geometric-inputs.tex`](../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/01-geometric-inputs.tex) | 114 | Cut-time lemma, classical Blaschke structure |
-| S8 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/02-lagrangian.tex`](../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/02-lagrangian.tex) | 657 | Lagrangian setup, determinant normalization, Schur-complement bounds |
-| S9 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/03-weighted-comparison.tex`](../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/03-weighted-comparison.tex) | 334 | Weighted scalar identity, geodesic comparison |
-| S10 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/04-global-comparison.tex`](../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/04-global-comparison.tex) | 112 | Polar integration over a full period |
-| S11 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/05-incidence.tex`](../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/05-incidence.tex) | 273 | Incidence manifold, total Pontryagin class |
-| S12 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/06-signature.tex`](../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/06-signature.tex) | 200 | The signature coefficient and the sign of $s$ |
-| S13 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/07-geodesic-space.tex`](../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/07-geodesic-space.tex) | 768 | Contact volume, Gysin sequences, negative-bundle attachment |
-| S14 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/08-volume-algebra.tex`](../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/08-volume-algebra.tex) | 442 | Complete-intersection calculation, sharp upper bound |
-| S15 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/09-classification.tex`](../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/09-classification.tex) | 94 | The three rigidity corollaries |
-| S16 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/references.bib`](../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/references.bib) | 369 | Bibliography |
-| S17 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | Reading ledger row for family 344 |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release blurb, manuscript link, manuscript abstract |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 344's `\resultentry`, at line 786 |
+| S3 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/README.md`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/README.md) | 16 | Manuscript README and bibtex key |
+| S4 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/paper.pdf`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/paper.pdf) | 16839 | Manuscript PDF |
+| S5 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/paper.tex`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/paper.tex) | 68 | Preamble, theorem environments, section include list |
+| S6 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/00-introduction.tex`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/00-introduction.tex) | 203 | Abstract, Blaschke definition, main theorem, predecessors, proof route |
+| S7 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/01-geometric-inputs.tex`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/01-geometric-inputs.tex) | 114 | Cut-time lemma, classical Blaschke structure |
+| S8 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/02-lagrangian.tex`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/02-lagrangian.tex) | 657 | Lagrangian setup, determinant normalization, Schur-complement bounds |
+| S9 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/03-weighted-comparison.tex`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/03-weighted-comparison.tex) | 334 | Weighted scalar identity, geodesic comparison |
+| S10 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/04-global-comparison.tex`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/04-global-comparison.tex) | 112 | Polar integration over a full period |
+| S11 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/05-incidence.tex`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/05-incidence.tex) | 273 | Incidence manifold, total Pontryagin class |
+| S12 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/06-signature.tex`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/06-signature.tex) | 200 | The signature coefficient and the sign of $s$ |
+| S13 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/07-geodesic-space.tex`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/07-geodesic-space.tex) | 768 | Contact volume, Gysin sequences, negative-bundle attachment |
+| S14 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/08-volume-algebra.tex`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/08-volume-algebra.tex) | 442 | Complete-intersection calculation, sharp upper bound |
+| S15 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/09-classification.tex`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/sections/09-classification.tex) | 94 | The three rigidity corollaries |
+| S16 | [`preprints/The-metric-Blaschke-theorem-September-23-2026/build/references.bib`](../../../preprints/The-metric-Blaschke-theorem-September-23-2026/build/references.bib) | 369 | Bibliography |
+| S17 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | Reading ledger row for family 344 |
 
 ## Bibliography
 

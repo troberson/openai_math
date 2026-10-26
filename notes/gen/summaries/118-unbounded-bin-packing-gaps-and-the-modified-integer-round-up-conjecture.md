@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 118](../index/theoretical-computer-science/118-unbounded-bin-packing-gaps-and-the-modified-integer-round-up-conjecture.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 118](../index/theoretical-computer-science/118-unbounded-bin-packing-gaps-and-the-modified-integer-round-up-conjecture.md)
 
 # 118 — Unbounded bin-packing gaps and the modified integer round-up conjecture
 
@@ -8,7 +8,7 @@
 
 [S1:2906] (family entry):
 
-> **118. Bin packing and unbounded configuration-LP gaps.** Disproves the modified integer round-up conjecture of Scheithauer and Terno: the integral bin-packing optimum can exceed its configuration linear-programming value by an arbitrarily large additive constant. Approximating the optimum within any fixed additive constant is also NP-hard, even when every item exceeds 1/6 and each bin holds at most five items. ([Lean](lean/docs/118.md))
+> **118. Bin packing and unbounded configuration-LP gaps.** Disproves the modified integer round-up conjecture of Scheithauer and Terno: the integral bin-packing optimum can exceed its configuration linear-programming value by an arbitrarily large additive constant. Approximating the optimum within any fixed additive constant is also NP-hard, even when every item exceeds 1/6 and each bin holds at most five items. ([Lean](../../../lean/docs/118.md))
 
 [S2:314] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.
@@ -191,14 +191,14 @@ Conjecture with a resolve verb; `counterex_broad=1`.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2906], manuscript link [S1:2906] |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 118 at [S2:314] |
-| S3 | [`preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/build/source/main.tex`](../../preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/build/source/main.tex) | 27 | document body; abstract [S3:9–16]; eight `\input` directives [S3:17–24]; 27 lines |
-| S4 | [`preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/build/source/introduction.tex`](../../preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/build/source/introduction.tex) | 276 | `thm:unbounded-gap` [S4:87–95]; `thm:additive-hardness` [S4:106–112]; `cor:complexity-equiv` [S4:114–117]; history [S4:3–85]; construction overview [S4:181–276]; 277 lines |
-| S5 | [`preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/build/source/instance.tex`](../../preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/build/source/instance.tex) | 547 | `thm:reduction` [S5:4–15]; 547 lines |
-| S6 | [`preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/build/source/consequences.tex`](../../preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/build/source/consequences.tex) | 114 | `thm:unbounded-gap` proof [S6:11–23]; `thm:additive-hardness` proof [S6:58–68]; `cor:complexity-equiv` proof [S6:70–87]; 114 lines |
-| S7 | [`preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026.pdf`](../../preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026.pdf) | 13408 | the manuscript as shipped |
-| S8 | [`lean/docs/118.md`](../../lean/docs/118.md) | 15 | scope note — Scope at [S8:9], comparator link at [S8:14] |
-| S9 | [`lean/ComparatorChallenges/BinPackingGap.lean`](../../lean/ComparatorChallenges/BinPackingGap.lean) | 378 | the comparator — `Instance` [S9:66], `opt` [S9:82], `main_results` statement and `sorry` at [S9:370–378]; 379 lines |
-| S10 | [`lean/OAI/Computability/BinPacking/Main.lean`](../../lean/OAI/Computability/BinPacking/Main.lean) | 34 | the formalized declaration — `main_results` theorem, fully proved, at [S10:7–28]; 28 lines |
-| S11 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=118`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2906], manuscript link [S1:2906] |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 118 at [S2:314] |
+| S3 | [`preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/build/source/main.tex`](../../../preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/build/source/main.tex) | 27 | document body; abstract [S3:9–16]; eight `\input` directives [S3:17–24]; 27 lines |
+| S4 | [`preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/build/source/introduction.tex`](../../../preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/build/source/introduction.tex) | 276 | `thm:unbounded-gap` [S4:87–95]; `thm:additive-hardness` [S4:106–112]; `cor:complexity-equiv` [S4:114–117]; history [S4:3–85]; construction overview [S4:181–276]; 277 lines |
+| S5 | [`preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/build/source/instance.tex`](../../../preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/build/source/instance.tex) | 547 | `thm:reduction` [S5:4–15]; 547 lines |
+| S6 | [`preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/build/source/consequences.tex`](../../../preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/build/source/consequences.tex) | 114 | `thm:unbounded-gap` proof [S6:11–23]; `thm:additive-hardness` proof [S6:58–68]; `cor:complexity-equiv` proof [S6:70–87]; 114 lines |
+| S7 | [`preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026.pdf`](../../../preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026.pdf) | 13408 | the manuscript as shipped |
+| S8 | [`lean/docs/118.md`](../../../lean/docs/118.md) | 15 | scope note — Scope at [S8:9], comparator link at [S8:14] |
+| S9 | [`lean/ComparatorChallenges/BinPackingGap.lean`](../../../lean/ComparatorChallenges/BinPackingGap.lean) | 378 | the comparator — `Instance` [S9:66], `opt` [S9:82], `main_results` statement and `sorry` at [S9:370–378]; 379 lines |
+| S10 | [`lean/OAI/Computability/BinPacking/Main.lean`](../../../lean/OAI/Computability/BinPacking/Main.lean) | 34 | the formalized declaration — `main_results` theorem, fully proved, at [S10:7–28]; 28 lines |
+| S11 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=118`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

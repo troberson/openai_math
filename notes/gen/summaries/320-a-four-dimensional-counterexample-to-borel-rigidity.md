@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Topology](../index/disciplines/topology.md) / [Family 320](../index/topology/320-a-four-dimensional-counterexample-to-borel-rigidity.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Topology](../index/disciplines/topology.md) / [Family 320](../index/topology/320-a-four-dimensional-counterexample-to-borel-rigidity.md)
 
 # 320 — A four-dimensional counterexample to Borel rigidity
 
@@ -160,11 +160,11 @@ evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 320 at line 7847. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 734. |
-| S3 | [`preprints/Nonhomeomorphic-closed-aspherical-four-manifolds-with-the-same-homotopy-type-October-4-2026/build/paper.tex`](../../preprints/Nonhomeomorphic-closed-aspherical-four-manifolds-with-the-same-homotopy-type-October-4-2026/build/paper.tex) | 63 | Manuscript main file: title and abstract. |
-| S4 | [`preprints/Nonhomeomorphic-closed-aspherical-four-manifolds-with-the-same-homotopy-type-October-4-2026/build/sections/introduction.tex`](../../preprints/Nonhomeomorphic-closed-aspherical-four-manifolds-with-the-same-homotopy-type-October-4-2026/build/sections/introduction.tex) | 171 | Introduction: the setup, the two main theorems, the history and significance, and the construction. |
-| S5 | [`preprints/Nonhomeomorphic-closed-aspherical-four-manifolds-with-the-same-homotopy-type-October-4-2026/build/references.tex`](../../preprints/Nonhomeomorphic-closed-aspherical-four-manifolds-with-the-same-homotopy-type-October-4-2026/build/references.tex) | 178 | Manuscript bibliography. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 320 at line 7847. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 734. |
+| S3 | [`preprints/Nonhomeomorphic-closed-aspherical-four-manifolds-with-the-same-homotopy-type-October-4-2026/build/paper.tex`](../../../preprints/Nonhomeomorphic-closed-aspherical-four-manifolds-with-the-same-homotopy-type-October-4-2026/build/paper.tex) | 63 | Manuscript main file: title and abstract. |
+| S4 | [`preprints/Nonhomeomorphic-closed-aspherical-four-manifolds-with-the-same-homotopy-type-October-4-2026/build/sections/introduction.tex`](../../../preprints/Nonhomeomorphic-closed-aspherical-four-manifolds-with-the-same-homotopy-type-October-4-2026/build/sections/introduction.tex) | 171 | Introduction: the setup, the two main theorems, the history and significance, and the construction. |
+| S5 | [`preprints/Nonhomeomorphic-closed-aspherical-four-manifolds-with-the-same-homotopy-type-October-4-2026/build/references.tex`](../../../preprints/Nonhomeomorphic-closed-aspherical-four-manifolds-with-the-same-homotopy-type-October-4-2026/build/references.tex) | 178 | Manuscript bibliography. |
 
 ## Bibliography
 

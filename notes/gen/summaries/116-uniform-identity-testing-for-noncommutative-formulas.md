@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 116](../index/theoretical-computer-science/116-uniform-identity-testing-for-noncommutative-formulas.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 116](../index/theoretical-computer-science/116-uniform-identity-testing-for-noncommutative-formulas.md)
 
 # 116 — Uniform identity testing for noncommutative formulas
 
@@ -8,23 +8,23 @@
 
 [S1:2847] (family entry):
 
-> **116. Uniform black-box noncommutative identity testing across characteristics.** For each characteristic, constructs in deterministic polynomial bit time a polynomial-dimensional matrix tuple detecting every nonzero division-free noncommutative formula of bounded size over any field of that characteristic. Rational formulas over ℚ also admit polynomial-size hitting lists whenever they have a defined rational-matrix evaluation. ([Lean](../../lean/docs/116.md))
+> **116. Uniform black-box noncommutative identity testing across characteristics.** For each characteristic, constructs in deterministic polynomial bit time a polynomial-dimensional matrix tuple detecting every nonzero division-free noncommutative formula of bounded size over any field of that characteristic. Rational formulas over ℚ also admit polynomial-size hitting lists whenever they have a defined rational-matrix evaluation. ([Lean](../../../lean/docs/116.md))
 
 [S1:2854] (the positive-characteristic manuscript entry, with its abstract at [S1:2856]):
 
-> [Uniform Matrix Hitting Points in Every Positive Characteristic](../../preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/uniform-matrix-hitting-points-positive-characteristic.pdf)
+> [Uniform Matrix Hitting Points in Every Positive Characteristic](../../../preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/uniform-matrix-hitting-points-positive-characteristic.pdf)
 
 > We construct a single matrix substitution that detects every nonzero size-s division-free noncommutative formula in n variables over every field of a given positive characteristic. One deterministic machine, given a promised prime p in binary and n, s in unary, outputs matrices over 𝔽p of dimension $`O(n^3s^6)`$ in polynomial bit time. The same tuple works with arbitrary extension-field coefficients, including in characteristic two. The construction also applies to the stated acyclic algebraic path programs.
 
 [S1:2863] (the one-rational manuscript entry, with its abstract at [S1:2865]):
 
-> [One Rational Matrix Hitting Point for Noncommutative Formulas](../../preprints/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026.pdf)
+> [One Rational Matrix Hitting Point for Noncommutative Formulas](../../../preprints/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026.pdf)
 
 > We construct, in deterministic polynomial bit time, one tuple of rational matrices that detects every nonzero polynomial computed by a noncommutative division-free formula of a prescribed size. The matrices have dimension $`O(ns^2)`$ for n variables and formula size s, and the same tuple works over every field of characteristic zero.
 
 [S1:2872] (the hitting-lists manuscript entry, with its abstract at [S1:2874]):
 
-> [Polynomial Hitting Lists for Noncommutative Rational Formulas](../../preprints/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026.pdf)
+> [Polynomial Hitting Lists for Noncommutative Rational Formulas](../../../preprints/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026.pdf)
 
 > We construct, in deterministic polynomial bit time, a polynomial-size list of rational matrix tuples for noncommutative rational formulas over ℚ of bounded tree size. Every nonzero admissible formula has a defined, invertible value at one tuple, with no separate bounds on inverse nesting or rational constant heights. Matrix dimensions, entry bit lengths, and total output length are polynomially bounded.
 
@@ -292,18 +292,18 @@ yaml. The shape flags are `bound` and `classification`;
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2847], uniform link [S1:2854] and abstract [S1:2856], one-rational link [S1:2863] and abstract [S1:2865], hitting-lists link [S1:2872] and abstract [S1:2874] |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 116 at [S2:310] |
-| S3 | [`preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/build/main.tex`](../../preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/build/main.tex) | 54 | root (`\documentclass`); abstract [S3:38–45]; five `\input` directives [S3:47–51]; 54 lines |
-| S4 | [`preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/build/sections/introduction.tex`](../../preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/build/sections/introduction.tex) | 153 | `thm:main` [S4:17–35]; context [S4:63–114]; proof strategy [S4:117–153] |
-| S5 | [`preprints/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026/build/paper.tex`](../../preprints/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026/build/paper.tex) | 47 | root (`\documentclass`); abstract [S5:31–35]; five `\input` directives [S5:38–42]; 47 lines |
-| S6 | [`preprints/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026/build/introduction.tex`](../../preprints/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026/build/introduction.tex) | 193 | `thm:main` [S6:14–32]; context [S6:38–114]; proof idea [S6:117–193] |
-| S7 | [`preprints/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026/build/main.tex`](../../preprints/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026/build/main.tex) | 55 | root (`\documentclass`); abstract [S7:44]; six `\input` directives [S7:46–51]; 55 lines |
-| S8 | [`preprints/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026/build/sections/introduction.tex`](../../preprints/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026/build/sections/introduction.tex) | 181 | `thm:main` [S8:20–24]; context [S8:28–112]; construction logic [S8:113–181] |
-| S9 | [`preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/uniform-matrix-hitting-points-positive-characteristic.pdf`](../../preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/uniform-matrix-hitting-points-positive-characteristic.pdf) | 10312 | the positive-characteristic manuscript as shipped |
-| S10 | [`preprints/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026.pdf`](../../preprints/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026.pdf) | 12010 | the one-rational manuscript as shipped |
-| S11 | [`preprints/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026.pdf`](../../preprints/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026.pdf) | 14494 | the hitting-lists manuscript as shipped |
-| S12 | [`lean/docs/116.md`](../../lean/docs/116.md) | 21 | scope note — the Scope at [S12:10] [S12:12] [S12:14] and two comparator links at [S12:20–21] |
-| S13 | [`lean/ComparatorChallenges/FormulaHitting.lean`](../../lean/ComparatorChallenges/FormulaHitting.lean) | 66 | the comparator stub — `universal_hitting` at [S13:53–59] |
-| S14 | [`lean/ComparatorChallenges/RationalHitting.lean`](../../lean/ComparatorChallenges/RationalHitting.lean) | 113 | the comparator stub — `MainStatement` at [S14:97–103]; `main` at [S14:105–106] |
-| S15 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=116`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2847], uniform link [S1:2854] and abstract [S1:2856], one-rational link [S1:2863] and abstract [S1:2865], hitting-lists link [S1:2872] and abstract [S1:2874] |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 116 at [S2:310] |
+| S3 | [`preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/build/main.tex`](../../../preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/build/main.tex) | 54 | root (`\documentclass`); abstract [S3:38–45]; five `\input` directives [S3:47–51]; 54 lines |
+| S4 | [`preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/build/sections/introduction.tex`](../../../preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/build/sections/introduction.tex) | 153 | `thm:main` [S4:17–35]; context [S4:63–114]; proof strategy [S4:117–153] |
+| S5 | [`preprints/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026/build/paper.tex`](../../../preprints/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026/build/paper.tex) | 47 | root (`\documentclass`); abstract [S5:31–35]; five `\input` directives [S5:38–42]; 47 lines |
+| S6 | [`preprints/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026/build/introduction.tex`](../../../preprints/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026/build/introduction.tex) | 193 | `thm:main` [S6:14–32]; context [S6:38–114]; proof idea [S6:117–193] |
+| S7 | [`preprints/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026/build/main.tex`](../../../preprints/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026/build/main.tex) | 55 | root (`\documentclass`); abstract [S7:44]; six `\input` directives [S7:46–51]; 55 lines |
+| S8 | [`preprints/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026/build/sections/introduction.tex`](../../../preprints/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026/build/sections/introduction.tex) | 181 | `thm:main` [S8:20–24]; context [S8:28–112]; construction logic [S8:113–181] |
+| S9 | [`preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/uniform-matrix-hitting-points-positive-characteristic.pdf`](../../../preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/uniform-matrix-hitting-points-positive-characteristic.pdf) | 10312 | the positive-characteristic manuscript as shipped |
+| S10 | [`preprints/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026.pdf`](../../../preprints/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026.pdf) | 12010 | the one-rational manuscript as shipped |
+| S11 | [`preprints/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026.pdf`](../../../preprints/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026.pdf) | 14494 | the hitting-lists manuscript as shipped |
+| S12 | [`lean/docs/116.md`](../../../lean/docs/116.md) | 21 | scope note — the Scope at [S12:10] [S12:12] [S12:14] and two comparator links at [S12:20–21] |
+| S13 | [`lean/ComparatorChallenges/FormulaHitting.lean`](../../../lean/ComparatorChallenges/FormulaHitting.lean) | 66 | the comparator stub — `universal_hitting` at [S13:53–59] |
+| S14 | [`lean/ComparatorChallenges/RationalHitting.lean`](../../../lean/ComparatorChallenges/RationalHitting.lean) | 113 | the comparator stub — `MainStatement` at [S14:97–103]; `main` at [S14:105–106] |
+| S15 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=116`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

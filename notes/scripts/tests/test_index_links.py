@@ -43,39 +43,39 @@ INPUTS = [
     ("names/cauchy.md", "../number-theory/999-no-such-family.md", "index-page"),
     ("names/cauchy.md", "../topics/no-such-topic.md", "index-page"),
     ("names/cauchy.md",
-     ("../../../preprints/Sharp-integral-fillings-in-CAT(0)-spaces-"
+     ("../../../../preprints/Sharp-integral-fillings-in-CAT(0)-spaces-"
       "September-23-2026/no-such-file.tex"), "latex-source"),
-    ("names/cauchy.md", "../../../preprints/No-Such-Manuscript/paper.pdf", "manuscript-pdf"),
-    ("names/cauchy.md", "../../../preprints/No-Such-Manuscript/", "manuscript-dir"),
-    ("names/cauchy.md", "../../../lean/ComparatorChallenges/no_such_config.json", "config-json"),
-    ("names/cauchy.md", "../../../lean/ComparatorChallenges/NoSuch.lean", "config-lean"),
-    ("names/cauchy.md", "../../../lean/OAI/No/Such/Module.lean", "lean-file"),
-    ("names/cauchy.md", "../../../lean/OAI/No/Such/", "lean-dir"),
-    ("names/cauchy.md", "../../../lean/docs/999.md", "scope-note"),
-    ("names/cauchy.md", "../../../reasoning_traces/no-such-trace.pdf", "trace"),
-    ("names/cauchy.md", "../../../nope/thing.lean", "release-surface"),
+    ("names/cauchy.md", "../../../../preprints/No-Such-Manuscript/paper.pdf", "manuscript-pdf"),
+    ("names/cauchy.md", "../../../../preprints/No-Such-Manuscript/", "manuscript-dir"),
+    ("names/cauchy.md", "../../../../lean/ComparatorChallenges/no_such_config.json", "config-json"),
+    ("names/cauchy.md", "../../../../lean/ComparatorChallenges/NoSuch.lean", "config-lean"),
+    ("names/cauchy.md", "../../../../lean/OAI/No/Such/Module.lean", "lean-file"),
+    ("names/cauchy.md", "../../../../lean/OAI/No/Such/", "lean-dir"),
+    ("names/cauchy.md", "../../../../lean/docs/999.md", "scope-note"),
+    ("names/cauchy.md", "../../../../reasoning_traces/no-such-trace.pdf", "trace"),
+    ("names/cauchy.md", "../../../../nope/thing.lean", "release-surface"),
     ("differential-geometry/337-cartan-hadamard-isoperimetry-and-cat-0-fillings.md",
-     "../../../preprints/No-Such-Manuscript/build/", "latex-build-tree"),
+     "../../../../preprints/No-Such-Manuscript/build/", "latex-build-tree"),
     ("differential-geometry/337-cartan-hadamard-isoperimetry-and-cat-0-fillings.md",
-     "../../../preprints/No-Such-Manuscript/verification/", "verification-dir"),
+     "../../../../preprints/No-Such-Manuscript/verification/", "verification-dir"),
     ("differential-geometry/337-cartan-hadamard-isoperimetry-and-cat-0-fillings.md",
-     "../../../preprints/No-Such-Manuscript/README.md", "manuscript-readme"),
+     "../../../../preprints/No-Such-Manuscript/README.md", "manuscript-readme"),
     ("differential-geometry/337-cartan-hadamard-isoperimetry-and-cat-0-fillings.md",
-     "../../../preprints/No-Such-Manuscript/nothing.bib", "latex-bib"),
+     "../../../../preprints/No-Such-Manuscript/nothing.bib", "latex-bib"),
 ]
 
 # Real hrefs taken from the rendered pages: a checker that flags everything is useless.
 CONTROLS = [
-    ("README.md", "../development/index-design.md"),
-    ("README.md", "../tables/topics.tsv"),
+    ("README.md", "../../development/index-design.md"),
+    ("README.md", "../../data/topics.tsv"),
     ("README.md", "../tables/names.tsv"),
     ("README.md", "names/"),
     ("names/cauchy.md", "../../tables/names.tsv"),
-    ("names/cauchy.md", "../../../lean/docs/003.md"),
+    ("names/cauchy.md", "../../../../lean/docs/003.md"),
     ("differential-geometry/337-cartan-hadamard-isoperimetry-and-cat-0-fillings.md",
-     "../../../preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/paper.pdf"),
+     "../../../../preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/paper.pdf"),
     ("differential-geometry/337-cartan-hadamard-isoperimetry-and-cat-0-fillings.md",
-     "../../../preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/build/"),
+     "../../../../preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/build/"),
 ]
 
 # The summaries tree is a second page set with its own links. A summary page sits three levels
@@ -84,14 +84,14 @@ CONTROLS = [
 # `resolve_in(SUMM, …)`. One broken href per direction the summaries tree links (a manuscript PDF,
 # and a breadcrumb into the index) and one real href that must resolve.
 SUMM_INPUTS = [
-    ("number-theory/001-milnes-rationality-conjecture.md",
+    ("001-milnes-rationality-conjecture.md",
      "../../../preprints/No-Such-Summary-Manuscript/paper.pdf", "manuscript-pdf"),
-    ("number-theory/001-milnes-rationality-conjecture.md",
-     "../../index/number-theory/999-no-such-family.md", "index-page"),
+    ("001-milnes-rationality-conjecture.md",
+     "../index/number-theory/999-no-such-family.md", "index-page"),
 ]
 
 SUMM_CONTROLS = [
-    ("number-theory/001-milnes-rationality-conjecture.md",
+    ("001-milnes-rationality-conjecture.md",
      "../../../preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/paper.pdf"),
 ]
 
@@ -154,7 +154,7 @@ def test_paren_balanced_scanner_keeps_the_cat0_path_whole(mod):
     naive, balanced = mod.trap()
     assert naive[1].endswith("CAT(0"), f"naive scan did not truncate: {naive[1]}"
     assert naive[2] is False, f"the truncated target {naive[1]!r} exists, so the trap is inert"
-    assert balanced[1] == f"../../../{mod.CAT_DIR}/paper.pdf", \
+    assert balanced[1] == f"../../../../{mod.CAT_DIR}/paper.pdf", \
         f"the balanced scan returned {balanced[1]!r}"
     assert balanced[2] is True, f"the whole path {balanced[1]!r} does not resolve"
 

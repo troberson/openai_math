@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 125](../index/theoretical-computer-science/125-approximation-threshold-for-metric-k-median.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 125](../index/theoretical-computer-science/125-approximation-threshold-for-metric-k-median.md)
 
 # 125 — The approximation threshold for metric $k$-median
 
@@ -8,7 +8,7 @@
 
 [S1:3029] (family entry):
 
-> **125. The metric k-median approximation threshold and recovery.** Gives a deterministic polynomial-time $`(1+2/e+\varepsilon)`$-approximation for finite rational metric k-median with specified candidate facilities, for every fixed ε > 0. Assuming $`P\ne NP`$, the optimal infimum approximation factor is $`1+2/e`$. ([Lean](lean/docs/125.md))
+> **125. The metric k-median approximation threshold and recovery.** Gives a deterministic polynomial-time $`(1+2/e+\varepsilon)`$-approximation for finite rational metric k-median with specified candidate facilities, for every fixed ε > 0. Assuming $`P\ne NP`$, the optimal infimum approximation factor is $`1+2/e`$. ([Lean](../../../lean/docs/125.md))
 
 [S2:327] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.
@@ -200,17 +200,17 @@ named $1+2/e$ threshold; `counterex_broad=0`.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3029], manuscript link [S1:3029] |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 125 at [S2:327] |
-| S3 | [`preprints/Single-Exponential-Recovery-and-Bounded-Price-Strictness-for-Metric-k-Median-September-24-2026/build/paper.tex`](../../preprints/Single-Exponential-Recovery-and-Bounded-Price-Strictness-for-Metric-k-Median-September-24-2026/build/paper.tex) | 39 | document root; abstract [S3:9–20]; ten `\input` directives [S3:24–33]; 39 lines |
-| S4 | [`preprints/Single-Exponential-Recovery-and-Bounded-Price-Strictness-for-Metric-k-Median-September-24-2026/build/sections/introduction.tex`](../../preprints/Single-Exponential-Recovery-and-Bounded-Price-Strictness-for-Metric-k-Median-September-24-2026/build/sections/introduction.tex) | 276 | `ref:recovery` [S4:47–75]; `main:theorem` [S4:142–155]; 276 lines |
-| S5 | [`preprints/Single-Exponential-Recovery-and-Bounded-Price-Strictness-for-Metric-k-Median-September-24-2026/paper.pdf`](../../preprints/Single-Exponential-Recovery-and-Bounded-Price-Strictness-for-Metric-k-Median-September-24-2026/paper.pdf) | 14138 | the manuscript as shipped |
-| S6 | [`preprints/The-Approximation-Threshold-for-Metric-k-Median-September-24-2026/build/main.tex`](../../preprints/The-Approximation-Threshold-for-Metric-k-Median-September-24-2026/build/main.tex) | 109 | document root; abstract [S6:91–95]; seven `\input` directives [S6:98–108]; 109 lines |
-| S7 | [`preprints/The-Approximation-Threshold-for-Metric-k-Median-September-24-2026/build/sections/introduction.tex`](../../preprints/The-Approximation-Threshold-for-Metric-k-Median-September-24-2026/build/sections/introduction.tex) | 196 | `thm:main` [S7:25–35]; `cor:threshold` [S7:56–59]; 196 lines |
-| S8 | [`preprints/The-Approximation-Threshold-for-Metric-k-Median-September-24-2026/main.pdf`](../../preprints/The-Approximation-Threshold-for-Metric-k-Median-September-24-2026/main.pdf) | 15977 | the manuscript as shipped |
-| S9 | [`lean/docs/125.md`](../../lean/docs/125.md) | 25 | scope note — Scope at [S9:10–16], comparator links at [S9:22–25] |
-| S10 | [`lean/ComparatorChallenges/KMedianRecovery.lean`](../../lean/ComparatorChallenges/KMedianRecovery.lean) | 107 | comparator — `global_application` [S10:102–103]; 107 lines |
-| S11 | [`lean/ComparatorChallenges/KMedianRefinedRecovery.lean`](../../lean/ComparatorChallenges/KMedianRefinedRecovery.lean) | 167 | comparator — `refined_recovery` [S11:153–163]; 167 lines |
-| S12 | [`lean/ComparatorChallenges/KMedianThreshold.lean`](../../lean/ComparatorChallenges/KMedianThreshold.lean) | 107 | comparator — `threshold` [S12:102–104]; 107 lines |
-| S13 | [`lean/ComparatorChallenges/MetricKMedian.lean`](../../lean/ComparatorChallenges/MetricKMedian.lean) | 68 | comparator — `main_finite_work` [S13:59–62]; 68 lines |
-| S14 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=125`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3029], manuscript link [S1:3029] |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 125 at [S2:327] |
+| S3 | [`preprints/Single-Exponential-Recovery-and-Bounded-Price-Strictness-for-Metric-k-Median-September-24-2026/build/paper.tex`](../../../preprints/Single-Exponential-Recovery-and-Bounded-Price-Strictness-for-Metric-k-Median-September-24-2026/build/paper.tex) | 39 | document root; abstract [S3:9–20]; ten `\input` directives [S3:24–33]; 39 lines |
+| S4 | [`preprints/Single-Exponential-Recovery-and-Bounded-Price-Strictness-for-Metric-k-Median-September-24-2026/build/sections/introduction.tex`](../../../preprints/Single-Exponential-Recovery-and-Bounded-Price-Strictness-for-Metric-k-Median-September-24-2026/build/sections/introduction.tex) | 276 | `ref:recovery` [S4:47–75]; `main:theorem` [S4:142–155]; 276 lines |
+| S5 | [`preprints/Single-Exponential-Recovery-and-Bounded-Price-Strictness-for-Metric-k-Median-September-24-2026/paper.pdf`](../../../preprints/Single-Exponential-Recovery-and-Bounded-Price-Strictness-for-Metric-k-Median-September-24-2026/paper.pdf) | 14138 | the manuscript as shipped |
+| S6 | [`preprints/The-Approximation-Threshold-for-Metric-k-Median-September-24-2026/build/main.tex`](../../../preprints/The-Approximation-Threshold-for-Metric-k-Median-September-24-2026/build/main.tex) | 109 | document root; abstract [S6:91–95]; seven `\input` directives [S6:98–108]; 109 lines |
+| S7 | [`preprints/The-Approximation-Threshold-for-Metric-k-Median-September-24-2026/build/sections/introduction.tex`](../../../preprints/The-Approximation-Threshold-for-Metric-k-Median-September-24-2026/build/sections/introduction.tex) | 196 | `thm:main` [S7:25–35]; `cor:threshold` [S7:56–59]; 196 lines |
+| S8 | [`preprints/The-Approximation-Threshold-for-Metric-k-Median-September-24-2026/main.pdf`](../../../preprints/The-Approximation-Threshold-for-Metric-k-Median-September-24-2026/main.pdf) | 15977 | the manuscript as shipped |
+| S9 | [`lean/docs/125.md`](../../../lean/docs/125.md) | 25 | scope note — Scope at [S9:10–16], comparator links at [S9:22–25] |
+| S10 | [`lean/ComparatorChallenges/KMedianRecovery.lean`](../../../lean/ComparatorChallenges/KMedianRecovery.lean) | 107 | comparator — `global_application` [S10:102–103]; 107 lines |
+| S11 | [`lean/ComparatorChallenges/KMedianRefinedRecovery.lean`](../../../lean/ComparatorChallenges/KMedianRefinedRecovery.lean) | 167 | comparator — `refined_recovery` [S11:153–163]; 167 lines |
+| S12 | [`lean/ComparatorChallenges/KMedianThreshold.lean`](../../../lean/ComparatorChallenges/KMedianThreshold.lean) | 107 | comparator — `threshold` [S12:102–104]; 107 lines |
+| S13 | [`lean/ComparatorChallenges/MetricKMedian.lean`](../../../lean/ComparatorChallenges/MetricKMedian.lean) | 68 | comparator — `main_finite_work` [S13:59–62]; 68 lines |
+| S14 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=125`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

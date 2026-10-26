@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 133](../index/theoretical-computer-science/133-complexity-of-weisfeiler-leman-refinement.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 133](../index/theoretical-computer-science/133-complexity-of-weisfeiler-leman-refinement.md)
 
 # 133 — The complexity of Weisfeiler–Leman refinement
 
@@ -8,7 +8,7 @@
 
 [S1:3184] (family entry):
 
-> **133. The computational complexity of Weisfeiler–Leman refinement.** Proves unconditional $`n^{\Omega(k)}`$ deterministic time lower bounds for joint and separate k-dimensional Weisfeiler–Leman equivalence, for sufficiently large fixed k in the specified sequential adjacency-matrix models. With dimension as input, joint equivalence is EXPTIME-complete even on subcubic graphs; deciding whether refinement identifies a graph is also EXPTIME-complete. ([Lean](lean/docs/133.md))
+> **133. The computational complexity of Weisfeiler–Leman refinement.** Proves unconditional $`n^{\Omega(k)}`$ deterministic time lower bounds for joint and separate k-dimensional Weisfeiler–Leman equivalence, for sufficiently large fixed k in the specified sequential adjacency-matrix models. With dimension as input, joint equivalence is EXPTIME-complete even on subcubic graphs; deciding whether refinement identifies a graph is also EXPTIME-complete. ([Lean](../../../lean/docs/133.md))
 
 [S2:343] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.
@@ -265,19 +265,19 @@ is `bound`; `resolves_named=0`; `counterex_broad=0`.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3184], manuscript links [S1:3184] |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 133 at [S2:343] |
-| S3 | [`preprints/Parity-lifts-and-bounded-treewidth-witnesses-for-Weisfeiler-Leman-equivalence-September-25-2026/build/main.tex`](../../preprints/Parity-lifts-and-bounded-treewidth-witnesses-for-Weisfeiler-Leman-equivalence-September-25-2026/build/main.tex) | 54 | document root; abstract [S3:34–44]; five section `\input` directives [S3:46–50]; 54 lines |
-| S4 | [`preprints/Parity-lifts-and-bounded-treewidth-witnesses-for-Weisfeiler-Leman-equivalence-September-25-2026/build/sections/01-introduction.tex`](../../preprints/Parity-lifts-and-bounded-treewidth-witnesses-for-Weisfeiler-Leman-equivalence-September-25-2026/build/sections/01-introduction.tex) | 255 | `thm:choice-reduction` [S4:76–96]; 255 lines |
-| S5 | [`preprints/The-complexity-of-identifying-a-graph-by-Weisfeiler-Leman-refinement-September-25-2026/build/paper.tex`](../../preprints/The-complexity-of-identifying-a-graph-by-Weisfeiler-Leman-refinement-September-25-2026/build/paper.tex) | 55 | document root; abstract [S5:34–40]; seven section `\input` directives [S5:44–50], bibliography [S5:53]; 55 lines |
-| S6 | [`preprints/The-complexity-of-identifying-a-graph-by-Weisfeiler-Leman-refinement-September-25-2026/build/sections/01-introduction.tex`](../../preprints/The-complexity-of-identifying-a-graph-by-Weisfeiler-Leman-refinement-September-25-2026/build/sections/01-introduction.tex) | 160 | `thm:main` [S6:36–44]; 160 lines |
-| S7 | [`preprints/Unconditional-time-lower-bounds-for-Weisfeiler-Leman-equivalence-September-25-2026/build/main.tex`](../../preprints/Unconditional-time-lower-bounds-for-Weisfeiler-Leman-equivalence-September-25-2026/build/main.tex) | 267 | document root; abstract [S7:40–50]; five section `\input` directives [S7:260–264], references [S7:265]; 267 lines |
-| S8 | [`preprints/Unconditional-time-lower-bounds-for-Weisfeiler-Leman-equivalence-September-25-2026/build/sections/05-transfer.tex`](../../preprints/Unconditional-time-lower-bounds-for-Weisfeiler-Leman-equivalence-September-25-2026/build/sections/05-transfer.tex) | 292 | lower-bound proof concludes [S8:258–266]; 292 lines |
-| S9 | [`preprints/Variable-dimension-Weisfeiler-Leman-equivalence-on-general-and-subcubic-graphs-September-25-2026/build/main.tex`](../../preprints/Variable-dimension-Weisfeiler-Leman-equivalence-on-general-and-subcubic-graphs-September-25-2026/build/main.tex) | 67 | document root; abstract [S9:49–55]; eight section `\input` directives [S9:57–64]; 67 lines |
-| S10 | [`preprints/Variable-dimension-Weisfeiler-Leman-equivalence-on-general-and-subcubic-graphs-September-25-2026/build/sections/01-introduction.tex`](../../preprints/Variable-dimension-Weisfeiler-Leman-equivalence-on-general-and-subcubic-graphs-September-25-2026/build/sections/01-introduction.tex) | 229 | `thm:main` [S10:28–31]; 229 lines |
-| S11 | [`lean/docs/133.md`](../../lean/docs/133.md) | 31 | scope note — Scope at [S11:10], four comparator links [S11:28–31] |
-| S12 | [`lean/ComparatorChallenges/ParityLifts.lean`](../../lean/ComparatorChallenges/ParityLifts.lean) | 209 | comparator — `parity_reduction` [S12:204], `sorry` at [S12:205]; 209 lines |
-| S13 | [`lean/ComparatorChallenges/WLIdentification.lean`](../../lean/ComparatorChallenges/WLIdentification.lean) | 146 | comparator — `main` [S13:140], `sorry` at [S13:142]; 146 lines |
-| S14 | [`lean/ComparatorChallenges/WeisfeilerLeman.lean`](../../lean/ComparatorChallenges/WeisfeilerLeman.lean) | 270 | comparator — `MainClaim` [S14:259], `unconditional_time_lower_bound` [S14:267], `sorry` at [S14:268]; 270 lines |
-| S15 | [`lean/ComparatorChallenges/VariableWL.lean`](../../lean/ComparatorChallenges/VariableWL.lean) | 130 | comparator — `main` [S15:125], `sorry` at [S15:126]; 130 lines |
-| S16 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=133`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3184], manuscript links [S1:3184] |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 133 at [S2:343] |
+| S3 | [`preprints/Parity-lifts-and-bounded-treewidth-witnesses-for-Weisfeiler-Leman-equivalence-September-25-2026/build/main.tex`](../../../preprints/Parity-lifts-and-bounded-treewidth-witnesses-for-Weisfeiler-Leman-equivalence-September-25-2026/build/main.tex) | 54 | document root; abstract [S3:34–44]; five section `\input` directives [S3:46–50]; 54 lines |
+| S4 | [`preprints/Parity-lifts-and-bounded-treewidth-witnesses-for-Weisfeiler-Leman-equivalence-September-25-2026/build/sections/01-introduction.tex`](../../../preprints/Parity-lifts-and-bounded-treewidth-witnesses-for-Weisfeiler-Leman-equivalence-September-25-2026/build/sections/01-introduction.tex) | 255 | `thm:choice-reduction` [S4:76–96]; 255 lines |
+| S5 | [`preprints/The-complexity-of-identifying-a-graph-by-Weisfeiler-Leman-refinement-September-25-2026/build/paper.tex`](../../../preprints/The-complexity-of-identifying-a-graph-by-Weisfeiler-Leman-refinement-September-25-2026/build/paper.tex) | 55 | document root; abstract [S5:34–40]; seven section `\input` directives [S5:44–50], bibliography [S5:53]; 55 lines |
+| S6 | [`preprints/The-complexity-of-identifying-a-graph-by-Weisfeiler-Leman-refinement-September-25-2026/build/sections/01-introduction.tex`](../../../preprints/The-complexity-of-identifying-a-graph-by-Weisfeiler-Leman-refinement-September-25-2026/build/sections/01-introduction.tex) | 160 | `thm:main` [S6:36–44]; 160 lines |
+| S7 | [`preprints/Unconditional-time-lower-bounds-for-Weisfeiler-Leman-equivalence-September-25-2026/build/main.tex`](../../../preprints/Unconditional-time-lower-bounds-for-Weisfeiler-Leman-equivalence-September-25-2026/build/main.tex) | 267 | document root; abstract [S7:40–50]; five section `\input` directives [S7:260–264], references [S7:265]; 267 lines |
+| S8 | [`preprints/Unconditional-time-lower-bounds-for-Weisfeiler-Leman-equivalence-September-25-2026/build/sections/05-transfer.tex`](../../../preprints/Unconditional-time-lower-bounds-for-Weisfeiler-Leman-equivalence-September-25-2026/build/sections/05-transfer.tex) | 292 | lower-bound proof concludes [S8:258–266]; 292 lines |
+| S9 | [`preprints/Variable-dimension-Weisfeiler-Leman-equivalence-on-general-and-subcubic-graphs-September-25-2026/build/main.tex`](../../../preprints/Variable-dimension-Weisfeiler-Leman-equivalence-on-general-and-subcubic-graphs-September-25-2026/build/main.tex) | 67 | document root; abstract [S9:49–55]; eight section `\input` directives [S9:57–64]; 67 lines |
+| S10 | [`preprints/Variable-dimension-Weisfeiler-Leman-equivalence-on-general-and-subcubic-graphs-September-25-2026/build/sections/01-introduction.tex`](../../../preprints/Variable-dimension-Weisfeiler-Leman-equivalence-on-general-and-subcubic-graphs-September-25-2026/build/sections/01-introduction.tex) | 229 | `thm:main` [S10:28–31]; 229 lines |
+| S11 | [`lean/docs/133.md`](../../../lean/docs/133.md) | 31 | scope note — Scope at [S11:10], four comparator links [S11:28–31] |
+| S12 | [`lean/ComparatorChallenges/ParityLifts.lean`](../../../lean/ComparatorChallenges/ParityLifts.lean) | 209 | comparator — `parity_reduction` [S12:204], `sorry` at [S12:205]; 209 lines |
+| S13 | [`lean/ComparatorChallenges/WLIdentification.lean`](../../../lean/ComparatorChallenges/WLIdentification.lean) | 146 | comparator — `main` [S13:140], `sorry` at [S13:142]; 146 lines |
+| S14 | [`lean/ComparatorChallenges/WeisfeilerLeman.lean`](../../../lean/ComparatorChallenges/WeisfeilerLeman.lean) | 270 | comparator — `MainClaim` [S14:259], `unconditional_time_lower_bound` [S14:267], `sorry` at [S14:268]; 270 lines |
+| S15 | [`lean/ComparatorChallenges/VariableWL.lean`](../../../lean/ComparatorChallenges/VariableWL.lean) | 130 | comparator — `main` [S15:125], `sorry` at [S15:126]; 130 lines |
+| S16 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=133`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

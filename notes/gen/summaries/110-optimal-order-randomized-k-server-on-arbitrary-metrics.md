@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 110](../index/theoretical-computer-science/110-optimal-order-randomized-k-server-on-arbitrary-metrics.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 110](../index/theoretical-computer-science/110-optimal-order-randomized-k-server-on-arbitrary-metrics.md)
 
 # 110 — Optimal-order randomized $k$-server on arbitrary metrics
 
@@ -8,17 +8,17 @@
 
 [S1:2711] (family entry):
 
-> **110. Optimal-order randomized k-server on arbitrary metrics.** Establishes a randomized competitive ratio $`O(\log^2(k+1))`$ for k-server on every metric space, matching the worst-case lower-bound order. One policy serves every finite oblivious request sequence, including on infinite unbounded metrics. On finite rational metrics, a uniform implementation has polynomial preprocessing and per-request bit cost in the input length and $`\log(t+1)`$ at request t, with a finite instance-dependent additive movement constant. ([Lean](../../lean/docs/110.md))
+> **110. Optimal-order randomized k-server on arbitrary metrics.** Establishes a randomized competitive ratio $`O(\log^2(k+1))`$ for k-server on every metric space, matching the worst-case lower-bound order. One policy serves every finite oblivious request sequence, including on infinite unbounded metrics. On finite rational metrics, a uniform implementation has polynomial preprocessing and per-request bit cost in the input length and $`\log(t+1)`$ at request t, with a finite instance-dependent additive movement constant. ([Lean](../../../lean/docs/110.md))
 
 [S1:2718] (the existence manuscript entry, with its abstract at [S1:2720]):
 
-> [Squared-logarithmic randomized k-server on arbitrary metrics](../../preprints/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026.pdf)
+> [Squared-logarithmic randomized k-server on arbitrary metrics](../../../preprints/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026.pdf)
 
 > We prove that randomized k-server has competitive ratio $`O((\log(k+1))^2)`$ on every metric space against oblivious request sequences, matching the known worst-case lower bound. For each metric and initial configuration, one policy works for all finite request sequences, including on infinite and unbounded spaces. When the initial server positions are distinct, no additive term is needed.
 
 [S1:2727] (the uniform-algorithm manuscript entry, with its abstract at [S1:2729]):
 
-> [Uniform computation of the squared-logarithmic k-server bound](../../preprints/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026.pdf)
+> [Uniform computation of the squared-logarithmic k-server bound](../../../preprints/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026.pdf)
 
 > We construct a uniform randomized k-server algorithm on finite rational metrics with competitive ratio $`O(\log^2(k+1))`$ against oblivious request sequences. Preprocessing is polynomial in the input length, and per-request bit complexity is polynomial in that length and the binary request-counter length. The additive movement constant is finite and instance-dependent, but may be enormous. The construction uses the companion squared-logarithmic existence theorem.
 
@@ -225,15 +225,15 @@ a resolve verb.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2711], ms1 link [S1:2718] and abstract [S1:2720], ms2 link [S1:2727] and abstract [S1:2729] |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 110 at [S2:298] |
-| S3 | [`preprints/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026/build/source/main.tex`](../../preprints/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026/build/source/main.tex) | 29 | document body; abstract [S3:9–16]; `\tableofcontents` [S3:17]; ten `\input` directives [S3:18–27]; 29 lines |
-| S4 | [`preprints/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026/build/source/latex/sections/01_introduction.tex`](../../preprints/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026/build/source/latex/sections/01_introduction.tex) | 211 | `thm:main` [S4:21–35]; context [S4:41–123]; main ingredients [S4:126–195]; 211 lines |
-| S5 | [`preprints/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026/build/source/main.tex`](../../preprints/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026/build/source/main.tex) | 51 | document body; abstract [S5:35–43]; five `\input` directives [S5:44–48]; 51 lines |
-| S6 | [`preprints/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026/build/source/sections/01-introduction.tex`](../../preprints/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026/build/source/sections/01-introduction.tex) | 161 | `thm:main` [S6:21–41]; annotations [S6:43–55]; history [S6:57–116]; proof ideas [S6:118–161]; 161 lines |
-| S7 | [`preprints/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026.pdf`](../../preprints/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026.pdf) | 15751 | the existence manuscript as shipped |
-| S8 | [`preprints/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026.pdf`](../../preprints/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026.pdf) | 11590 | the uniform-algorithm manuscript as shipped |
-| S9 | [`lean/docs/110.md`](../../lean/docs/110.md) | 23 | scope note — Scope [S9:10], additive constant [S9:12], uniform algorithm [S9:14], preprocessing [S9:16], comparator links [S9:22–23] |
-| S10 | [`lean/ComparatorChallenges/KServer.lean`](../../lean/ComparatorChallenges/KServer.lean) | 69 | the existence comparator — `MainStatement` at [S10:51–62], theorem and `sorry` at [S10:62–63] |
-| S11 | [`lean/ComparatorChallenges/UniformKServer.lean`](../../lean/ComparatorChallenges/UniformKServer.lean) | 205 | the uniform comparator — `UniformAlgorithmClaim` at [S11:184–196], theorem and `sorry` at [S11:200–201] |
-| S12 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=110`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2711], ms1 link [S1:2718] and abstract [S1:2720], ms2 link [S1:2727] and abstract [S1:2729] |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 110 at [S2:298] |
+| S3 | [`preprints/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026/build/source/main.tex`](../../../preprints/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026/build/source/main.tex) | 29 | document body; abstract [S3:9–16]; `\tableofcontents` [S3:17]; ten `\input` directives [S3:18–27]; 29 lines |
+| S4 | [`preprints/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026/build/source/latex/sections/01_introduction.tex`](../../../preprints/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026/build/source/latex/sections/01_introduction.tex) | 211 | `thm:main` [S4:21–35]; context [S4:41–123]; main ingredients [S4:126–195]; 211 lines |
+| S5 | [`preprints/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026/build/source/main.tex`](../../../preprints/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026/build/source/main.tex) | 51 | document body; abstract [S5:35–43]; five `\input` directives [S5:44–48]; 51 lines |
+| S6 | [`preprints/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026/build/source/sections/01-introduction.tex`](../../../preprints/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026/build/source/sections/01-introduction.tex) | 161 | `thm:main` [S6:21–41]; annotations [S6:43–55]; history [S6:57–116]; proof ideas [S6:118–161]; 161 lines |
+| S7 | [`preprints/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026.pdf`](../../../preprints/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026.pdf) | 15751 | the existence manuscript as shipped |
+| S8 | [`preprints/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026.pdf`](../../../preprints/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026.pdf) | 11590 | the uniform-algorithm manuscript as shipped |
+| S9 | [`lean/docs/110.md`](../../../lean/docs/110.md) | 23 | scope note — Scope [S9:10], additive constant [S9:12], uniform algorithm [S9:14], preprocessing [S9:16], comparator links [S9:22–23] |
+| S10 | [`lean/ComparatorChallenges/KServer.lean`](../../../lean/ComparatorChallenges/KServer.lean) | 69 | the existence comparator — `MainStatement` at [S10:51–62], theorem and `sorry` at [S10:62–63] |
+| S11 | [`lean/ComparatorChallenges/UniformKServer.lean`](../../../lean/ComparatorChallenges/UniformKServer.lean) | 205 | the uniform comparator — `UniformAlgorithmClaim` at [S11:184–196], theorem and `sorry` at [S11:200–201] |
+| S12 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=110`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

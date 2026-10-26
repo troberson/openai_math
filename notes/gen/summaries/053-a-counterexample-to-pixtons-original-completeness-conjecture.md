@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Algebraic and complex geometry](../index/disciplines/algebraic-and-complex-geometry.md) / [Family 053](../index/algebraic-and-complex-geometry/053-a-counterexample-to-pixtons-original-completeness-conjecture.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Algebraic and complex geometry](../index/disciplines/algebraic-and-complex-geometry.md) / [Family 053](../index/algebraic-and-complex-geometry/053-a-counterexample-to-pixtons-original-completeness-conjecture.md)
 
 # 053 — A counterexample to Pixton's original completeness conjecture
 
@@ -181,19 +181,19 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 053 at line 1372. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 182. |
-| S3 | [`preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/README.md`](../../preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/README.md) | 17 | Manuscript readme: title, date. |
-| S4 | [`preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/main.tex`](../../preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/main.tex) | 78 | The main file: abstract and section inputs. |
-| S5 | [`preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/01-introduction.tex`](../../preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/01-introduction.tex) | 313 | The relation problem, the theorem, the corollary, and the proof method. |
-| S6 | [`preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/02-strata.tex`](../../preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/02-strata.tex) | 245 | The strata algebra and the original Pixton span. |
-| S7 | [`preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/03-detector.tex`](../../preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/03-detector.tex) | 763 | The formal detector and nonmembership. |
-| S8 | [`preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/04-tensors.tex`](../../preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/04-tensors.tex) | 548 | The tensor decomposition and the projected cubic. |
-| S9 | [`preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/05-quot.tex`](../../preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/05-quot.tex) | 956 | The surface Quot scheme and the nilpotence identity. |
-| S10 | [`preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/06-coefficient.tex`](../../preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/06-coefficient.tex) | 643 | The localization scalar. |
-| S11 | [`preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/07-compactification.tex`](../../preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/07-compactification.tex) | 511 | The passage to the compactification. |
-| S12 | [`preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/08-support.tex`](../../preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/08-support.tex) | 563 | The support induction. |
-| S13 | [`preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/references.tex`](../../preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/references.tex) | 367 | The bibliography. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 053 at line 1372. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 182. |
+| S3 | [`preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/README.md`](../../../preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/README.md) | 17 | Manuscript readme: title, date. |
+| S4 | [`preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/main.tex`](../../../preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/main.tex) | 78 | The main file: abstract and section inputs. |
+| S5 | [`preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/01-introduction.tex) | 313 | The relation problem, the theorem, the corollary, and the proof method. |
+| S6 | [`preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/02-strata.tex`](../../../preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/02-strata.tex) | 245 | The strata algebra and the original Pixton span. |
+| S7 | [`preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/03-detector.tex`](../../../preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/03-detector.tex) | 763 | The formal detector and nonmembership. |
+| S8 | [`preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/04-tensors.tex`](../../../preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/04-tensors.tex) | 548 | The tensor decomposition and the projected cubic. |
+| S9 | [`preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/05-quot.tex`](../../../preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/05-quot.tex) | 956 | The surface Quot scheme and the nilpotence identity. |
+| S10 | [`preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/06-coefficient.tex`](../../../preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/06-coefficient.tex) | 643 | The localization scalar. |
+| S11 | [`preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/07-compactification.tex`](../../../preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/07-compactification.tex) | 511 | The passage to the compactification. |
+| S12 | [`preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/08-support.tex`](../../../preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/sections/08-support.tex) | 563 | The support induction. |
+| S13 | [`preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/references.tex`](../../../preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/build/references.tex) | 367 | The bibliography. |
 
 ## Bibliography
 

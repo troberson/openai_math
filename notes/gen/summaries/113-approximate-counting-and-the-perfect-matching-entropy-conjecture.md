@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 113](../index/theoretical-computer-science/113-approximate-counting-and-the-perfect-matching-entropy-conjecture.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 113](../index/theoretical-computer-science/113-approximate-counting-and-the-perfect-matching-entropy-conjecture.md)
 
 # 113 — Approximate counting and the perfect-matching entropy conjecture
 
@@ -8,17 +8,17 @@
 
 [S1:2768] (family entry):
 
-> **113. Approximate counting and entropy of perfect matchings.** Gives a fully polynomial randomized approximation scheme for counting perfect matchings in arbitrary finite simple graphs, with exact detection of zero counts. Also proves the perfect-matching entropy conjecture of Anari, Oveis Gharan, and Vinzant, bounding the maximum entropy of a matching law at every feasible edge-marginal vector in a loopless labelled multigraph, including boundary points. ([Lean](../../lean/docs/113.md))
+> **113. Approximate counting and entropy of perfect matchings.** Gives a fully polynomial randomized approximation scheme for counting perfect matchings in arbitrary finite simple graphs, with exact detection of zero counts. Also proves the perfect-matching entropy conjecture of Anari, Oveis Gharan, and Vinzant, bounding the maximum entropy of a matching law at every feasible edge-marginal vector in a loopless labelled multigraph, including boundary points. ([Lean](../../../lean/docs/113.md))
 
 [S1:2775] (the FPRAS manuscript entry, with its abstract at [S1:2777]):
 
-> [A Fully Polynomial Randomized Approximation Scheme for Perfect Matchings in General Graphs](../../preprints/A-Fully-Polynomial-Randomized-Approximation-Scheme-for-Perfect-Matchings-in-General-Graphs-September-23-2026/main.pdf)
+> [A Fully Polynomial Randomized Approximation Scheme for Perfect Matchings in General Graphs](../../../preprints/A-Fully-Polynomial-Randomized-Approximation-Scheme-for-Perfect-Matchings-in-General-Graphs-September-23-2026/main.pdf)
 
 > We give a fully polynomial randomized approximation scheme (FPRAS) for counting perfect matchings in arbitrary finite simple undirected graphs, resolving the general-graph perfect-matching approximation problem. The algorithm returns zero with certainty when no perfect matching exists. Otherwise, it achieves relative error ε with failure probability at most δ in worst-case bit time polynomial in the input length, $`\varepsilon ^{-1}`$, and $`\log\delta^{-1}`$.
 
 [S1:2784] (the Entropy manuscript entry, with its abstract at [S1:2786–2790]):
 
-> [Entropy and Face Dimension of the Perfect-Matching Polytope](../../preprints/Entropy-and-Face-Dimension-of-the-Perfect-Matching-Polytope-September-23-2026/main.pdf)
+> [Entropy and Face Dimension of the Perfect-Matching Polytope](../../../preprints/Entropy-and-Face-Dimension-of-the-Perfect-Matching-Polytope-September-23-2026/main.pdf)
 
 > We prove the perfect-matching entropy conjecture of Anari, Oveis Gharan, and Vinzant. For every feasible vector x of perfect-matching edge marginals in a loopless labelled multigraph on $`2m\ge2`$ vertices, the maximum entropy $`H(x)`$ of a matching law with marginals x satisfies
 
@@ -224,25 +224,25 @@ no verification bundle and no reasoning trace; the two shipped PDFs
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2768], the FPRAS manuscript link [S1:2775] and abstract [S1:2777], the Entropy manuscript link [S1:2784] and abstract [S1:2786–2790]. The release's inline code spans stay as backticked markdown, and the release's italic markup is folded to the plain word |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 113 at [S2:304] |
-| S3 | [`preprints/A-Fully-Polynomial-Randomized-Approximation-Scheme-for-Perfect-Matchings-in-General-Graphs-September-23-2026/build/main.tex`](../../preprints/A-Fully-Polynomial-Randomized-Approximation-Scheme-for-Perfect-Matchings-in-General-Graphs-September-23-2026/build/main.tex) | 3471 | root (`\documentclass`); `\newcommand{\eps}{\varepsilon}` at [S3:91]; abstract [S3:109–115]; `thm:main` [S3:132–143]; history [S3:151–241]; proof architecture [S3:243+] |
-| S4 | [`preprints/Entropy-and-Face-Dimension-of-the-Perfect-Matching-Polytope-September-23-2026/build/main.tex`](../../preprints/Entropy-and-Face-Dimension-of-the-Perfect-Matching-Polytope-September-23-2026/build/main.tex) | 77 | root (`\documentclass`); `\DeclareMathOperator{\supp}{supp}` at [S4:23]; abstract [S4:48–59]; include order [S4:61–70] |
-| S5 | [`preprints/Entropy-and-Face-Dimension-of-the-Perfect-Matching-Polytope-September-23-2026/build/sections/01-introduction.tex`](../../preprints/Entropy-and-Face-Dimension-of-the-Perfect-Matching-Polytope-September-23-2026/build/sections/01-introduction.tex) | 287 | `ent:main` [S5:33–40]; the Shearer's-inequality paragraph [S5:48–54]; the Anari–Oveis Gharan–Vinzant conjecture [S5:70–79]; the $k$-disjoint consequence [S5:84–87]; the deterministic counting theorem [S5:201–212] |
-| S6 | [`preprints/A-Fully-Polynomial-Randomized-Approximation-Scheme-for-Perfect-Matchings-in-General-Graphs-September-23-2026/main.pdf`](../../preprints/A-Fully-Polynomial-Randomized-Approximation-Scheme-for-Perfect-Matchings-in-General-Graphs-September-23-2026/main.pdf) | 17626 | the FPRAS manuscript as shipped |
-| S7 | [`preprints/Entropy-and-Face-Dimension-of-the-Perfect-Matching-Polytope-September-23-2026/main.pdf`](../../preprints/Entropy-and-Face-Dimension-of-the-Perfect-Matching-Polytope-September-23-2026/main.pdf) | 18190 | the Entropy manuscript as shipped |
-| S8 | [`lean/docs/113.md`](../../lean/docs/113.md) | 27 | scope note — the four Scope paragraphs at [S8:10–16] and the six comparator links at [S8:22–27] |
-| S9 | [`lean/ComparatorChallenges/MatchingFPRAS.lean`](../../lean/ComparatorChallenges/MatchingFPRAS.lean) | 110 | the FPRAS comparator stub — `thm_main` at [S9:105–106] with its `sorry` |
-| S10 | [`lean/ComparatorChallenges/MatchingEntropy.lean`](../../lean/ComparatorChallenges/MatchingEntropy.lean) | 69 | the entropy comparator stub — `entropy_main` at [S10:58–63] with its `sorry` |
-| S11 | [`lean/ComparatorChallenges/BinaryMatching.lean`](../../lean/ComparatorChallenges/BinaryMatching.lean) | 76 | the deterministic-counting comparator stub — `deterministic_approximate_counting` at [S11:66–72] with its `sorry` |
-| S12 | [`lean/ComparatorChallenges/SingletonLoopMatching.lean`](../../lean/ComparatorChallenges/SingletonLoopMatching.lean) | 132 | the singleton-loop comparator stub — `fullEndpoint` at [S12:127–128] with its `sorry` |
-| S13 | [`lean/ComparatorChallenges/MatchingEntropyBounds.lean`](../../lean/ComparatorChallenges/MatchingEntropyBounds.lean) | 84 | the refined-entropy comparator stub — `Refined.pointwise_entropy` at [S13:73–78] with its `sorry` |
-| S14 | [`lean/ComparatorChallenges/TriangleFace.lean`](../../lean/ComparatorChallenges/TriangleFace.lean) | 190 | the triangle-face comparator stub — `triangle_expansion_face` at [S14:169–182] with its `sorry` |
-| S15 | [`lean/OAI/Combinatorics/PerfectMatching/Main.lean`](../../lean/OAI/Combinatorics/PerfectMatching/Main.lean) | 213 | the formalized entropy file — `entropy_main` proved at [S15:85–89] |
-| S16 | [`lean/OAI/Computability/MatchingCount/BinarySolve.lean`](../../lean/OAI/Computability/MatchingCount/BinarySolve.lean) | 153 | the formalized deterministic-counting file — `deterministic_approximate_counting` proved at [S16:143–149] |
-| S17 | [`lean/OAI/Computability/LoopMatching/Main.lean`](../../lean/OAI/Computability/LoopMatching/Main.lean) | 30 | the formalized singleton-loop file — `fullEndpoint` proved at [S17:24–26] |
-| S18 | [`lean/formalization.yaml`](../../lean/formalization.yaml) | 1783 | the `sources:` entry naming the Entropy manuscript at [S18:394]; the three `main_results` entries at [S18:1013–1015], [S18:1385–1387], [S18:1605–1607] |
-| S19 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=113`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2768], the FPRAS manuscript link [S1:2775] and abstract [S1:2777], the Entropy manuscript link [S1:2784] and abstract [S1:2786–2790]. The release's inline code spans stay as backticked markdown, and the release's italic markup is folded to the plain word |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 113 at [S2:304] |
+| S3 | [`preprints/A-Fully-Polynomial-Randomized-Approximation-Scheme-for-Perfect-Matchings-in-General-Graphs-September-23-2026/build/main.tex`](../../../preprints/A-Fully-Polynomial-Randomized-Approximation-Scheme-for-Perfect-Matchings-in-General-Graphs-September-23-2026/build/main.tex) | 3471 | root (`\documentclass`); `\newcommand{\eps}{\varepsilon}` at [S3:91]; abstract [S3:109–115]; `thm:main` [S3:132–143]; history [S3:151–241]; proof architecture [S3:243+] |
+| S4 | [`preprints/Entropy-and-Face-Dimension-of-the-Perfect-Matching-Polytope-September-23-2026/build/main.tex`](../../../preprints/Entropy-and-Face-Dimension-of-the-Perfect-Matching-Polytope-September-23-2026/build/main.tex) | 77 | root (`\documentclass`); `\DeclareMathOperator{\supp}{supp}` at [S4:23]; abstract [S4:48–59]; include order [S4:61–70] |
+| S5 | [`preprints/Entropy-and-Face-Dimension-of-the-Perfect-Matching-Polytope-September-23-2026/build/sections/01-introduction.tex`](../../../preprints/Entropy-and-Face-Dimension-of-the-Perfect-Matching-Polytope-September-23-2026/build/sections/01-introduction.tex) | 287 | `ent:main` [S5:33–40]; the Shearer's-inequality paragraph [S5:48–54]; the Anari–Oveis Gharan–Vinzant conjecture [S5:70–79]; the $k$-disjoint consequence [S5:84–87]; the deterministic counting theorem [S5:201–212] |
+| S6 | [`preprints/A-Fully-Polynomial-Randomized-Approximation-Scheme-for-Perfect-Matchings-in-General-Graphs-September-23-2026/main.pdf`](../../../preprints/A-Fully-Polynomial-Randomized-Approximation-Scheme-for-Perfect-Matchings-in-General-Graphs-September-23-2026/main.pdf) | 17626 | the FPRAS manuscript as shipped |
+| S7 | [`preprints/Entropy-and-Face-Dimension-of-the-Perfect-Matching-Polytope-September-23-2026/main.pdf`](../../../preprints/Entropy-and-Face-Dimension-of-the-Perfect-Matching-Polytope-September-23-2026/main.pdf) | 18190 | the Entropy manuscript as shipped |
+| S8 | [`lean/docs/113.md`](../../../lean/docs/113.md) | 27 | scope note — the four Scope paragraphs at [S8:10–16] and the six comparator links at [S8:22–27] |
+| S9 | [`lean/ComparatorChallenges/MatchingFPRAS.lean`](../../../lean/ComparatorChallenges/MatchingFPRAS.lean) | 110 | the FPRAS comparator stub — `thm_main` at [S9:105–106] with its `sorry` |
+| S10 | [`lean/ComparatorChallenges/MatchingEntropy.lean`](../../../lean/ComparatorChallenges/MatchingEntropy.lean) | 69 | the entropy comparator stub — `entropy_main` at [S10:58–63] with its `sorry` |
+| S11 | [`lean/ComparatorChallenges/BinaryMatching.lean`](../../../lean/ComparatorChallenges/BinaryMatching.lean) | 76 | the deterministic-counting comparator stub — `deterministic_approximate_counting` at [S11:66–72] with its `sorry` |
+| S12 | [`lean/ComparatorChallenges/SingletonLoopMatching.lean`](../../../lean/ComparatorChallenges/SingletonLoopMatching.lean) | 132 | the singleton-loop comparator stub — `fullEndpoint` at [S12:127–128] with its `sorry` |
+| S13 | [`lean/ComparatorChallenges/MatchingEntropyBounds.lean`](../../../lean/ComparatorChallenges/MatchingEntropyBounds.lean) | 84 | the refined-entropy comparator stub — `Refined.pointwise_entropy` at [S13:73–78] with its `sorry` |
+| S14 | [`lean/ComparatorChallenges/TriangleFace.lean`](../../../lean/ComparatorChallenges/TriangleFace.lean) | 190 | the triangle-face comparator stub — `triangle_expansion_face` at [S14:169–182] with its `sorry` |
+| S15 | [`lean/OAI/Combinatorics/PerfectMatching/Main.lean`](../../../lean/OAI/Combinatorics/PerfectMatching/Main.lean) | 213 | the formalized entropy file — `entropy_main` proved at [S15:85–89] |
+| S16 | [`lean/OAI/Computability/MatchingCount/BinarySolve.lean`](../../../lean/OAI/Computability/MatchingCount/BinarySolve.lean) | 153 | the formalized deterministic-counting file — `deterministic_approximate_counting` proved at [S16:143–149] |
+| S17 | [`lean/OAI/Computability/LoopMatching/Main.lean`](../../../lean/OAI/Computability/LoopMatching/Main.lean) | 30 | the formalized singleton-loop file — `fullEndpoint` proved at [S17:24–26] |
+| S18 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1783 | the `sources:` entry naming the Entropy manuscript at [S18:394]; the three `main_results` entries at [S18:1013–1015], [S18:1385–1387], [S18:1605–1607] |
+| S19 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=113`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
 
 ## Bibliography
 

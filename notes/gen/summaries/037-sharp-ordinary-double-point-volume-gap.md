@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Algebraic and complex geometry](../index/disciplines/algebraic-and-complex-geometry.md) / [Family 037](../index/algebraic-and-complex-geometry/037-sharp-ordinary-double-point-volume-gap.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Algebraic and complex geometry](../index/disciplines/algebraic-and-complex-geometry.md) / [Family 037](../index/algebraic-and-complex-geometry/037-sharp-ordinary-double-point-volume-gap.md)
 
 # 037 — The sharp ordinary-double-point volume gap
 
@@ -207,20 +207,20 @@ ships 9 `.tex` files under `build/`; the companion ships 1.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 037 at line 1060. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 152. |
-| S3 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/README.md`](../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/README.md) | 18 | Main manuscript readme: title, author, date. |
-| S4 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/paper.tex`](../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/paper.tex) | 32 | Main manuscript main file. |
-| S5 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/01-introduction.tex`](../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/01-introduction.tex) | 291 | The main theorem, the global corollary, the historical context, and the proof strategy. |
-| S6 | [`preprints/The-normalized-volume-gap-in-dimension-four-September-24-2026/README.md`](../../preprints/The-normalized-volume-gap-in-dimension-four-September-24-2026/README.md) | 17 | Companion manuscript readme: title, author, date. |
-| S7 | [`preprints/The-normalized-volume-gap-in-dimension-four-September-24-2026/build/paper.tex`](../../preprints/The-normalized-volume-gap-in-dimension-four-September-24-2026/build/paper.tex) | 963 | Companion manuscript: the fourfold theorem and its proof. |
-| S8 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/02-cone-reduction.tex`](../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/02-cone-reduction.tex) | 501 | Cone reduction and the base case. |
-| S9 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/03-small-stabilizers.tex`](../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/03-small-stabilizers.tex) | 515 | Small-stabilizer structure. |
-| S10 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/04-jet-interiority.tex`](../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/04-jet-interiority.tex) | 798 | Jet interiority. |
-| S11 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/05-adjoint-semigroup.tex`](../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/05-adjoint-semigroup.tex) | 557 | Adjoint semigroup construction. |
-| S12 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/06-filtrations.tex`](../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/06-filtrations.tex) | 578 | Filtrations. |
-| S13 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/07-bootstrap.tex`](../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/07-bootstrap.tex) | 678 | Bootstrap argument. |
-| S14 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/08-conclusion.tex`](../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/08-conclusion.tex) | 203 | Conclusion. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 037 at line 1060. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 152. |
+| S3 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/README.md`](../../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/README.md) | 18 | Main manuscript readme: title, author, date. |
+| S4 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/paper.tex`](../../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/paper.tex) | 32 | Main manuscript main file. |
+| S5 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/01-introduction.tex) | 291 | The main theorem, the global corollary, the historical context, and the proof strategy. |
+| S6 | [`preprints/The-normalized-volume-gap-in-dimension-four-September-24-2026/README.md`](../../../preprints/The-normalized-volume-gap-in-dimension-four-September-24-2026/README.md) | 17 | Companion manuscript readme: title, author, date. |
+| S7 | [`preprints/The-normalized-volume-gap-in-dimension-four-September-24-2026/build/paper.tex`](../../../preprints/The-normalized-volume-gap-in-dimension-four-September-24-2026/build/paper.tex) | 963 | Companion manuscript: the fourfold theorem and its proof. |
+| S8 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/02-cone-reduction.tex`](../../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/02-cone-reduction.tex) | 501 | Cone reduction and the base case. |
+| S9 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/03-small-stabilizers.tex`](../../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/03-small-stabilizers.tex) | 515 | Small-stabilizer structure. |
+| S10 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/04-jet-interiority.tex`](../../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/04-jet-interiority.tex) | 798 | Jet interiority. |
+| S11 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/05-adjoint-semigroup.tex`](../../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/05-adjoint-semigroup.tex) | 557 | Adjoint semigroup construction. |
+| S12 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/06-filtrations.tex`](../../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/06-filtrations.tex) | 578 | Filtrations. |
+| S13 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/07-bootstrap.tex`](../../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/07-bootstrap.tex) | 678 | Bootstrap argument. |
+| S14 | [`preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/08-conclusion.tex`](../../../preprints/The-ordinary-double-point-gap-in-every-dimension-September-24-2026/build/sections/08-conclusion.tex) | 203 | Conclusion. |
 
 ## Bibliography
 

@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Topology](../index/disciplines/topology.md) / [Family 319](../index/topology/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Topology](../index/disciplines/topology.md) / [Family 319](../index/topology/319-counterexamples-to-the-hahn-wilson-conjecture-at-height-two.md)
 
 # 319 — Counterexamples to the Hahn–Wilson conjecture at height two
 
@@ -157,10 +157,10 @@ bibliography; no figures — and no non-LaTeX evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 319 at line 7831. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 732. |
-| S3 | [`preprints/Counterexamples-to-the-Hahn-Wilson-conjecture-at-height-two-September-26-2026/build/main.tex`](../../preprints/Counterexamples-to-the-Hahn-Wilson-conjecture-at-height-two-September-26-2026/build/main.tex) | 332 | Manuscript main file: title, abstract, and the full introduction (setup, the main theorem, and the proof outline) before the proof sections. |
-| S4 | [`preprints/Counterexamples-to-the-Hahn-Wilson-conjecture-at-height-two-September-26-2026/build/references.tex`](../../preprints/Counterexamples-to-the-Hahn-Wilson-conjecture-at-height-two-September-26-2026/build/references.tex) | 261 | Manuscript bibliography. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 319 at line 7831. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 732. |
+| S3 | [`preprints/Counterexamples-to-the-Hahn-Wilson-conjecture-at-height-two-September-26-2026/build/main.tex`](../../../preprints/Counterexamples-to-the-Hahn-Wilson-conjecture-at-height-two-September-26-2026/build/main.tex) | 332 | Manuscript main file: title, abstract, and the full introduction (setup, the main theorem, and the proof outline) before the proof sections. |
+| S4 | [`preprints/Counterexamples-to-the-Hahn-Wilson-conjecture-at-height-two-September-26-2026/build/references.tex`](../../../preprints/Counterexamples-to-the-Hahn-Wilson-conjecture-at-height-two-September-26-2026/build/references.tex) | 261 | Manuscript bibliography. |
 
 ## Bibliography
 

@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 122](../index/theoretical-computer-science/122-superpolynomial-lower-bounds-and-quasipolynomial-reconstruction-from-deletion-traces.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 122](../index/theoretical-computer-science/122-superpolynomial-lower-bounds-and-quasipolynomial-reconstruction-from-deletion-traces.md)
 
 # 122 — Superpolynomial lower bounds and quasipolynomial reconstruction from deletion traces
 
@@ -8,7 +8,7 @@
 
 [S1:2979] (family entry):
 
-> **122. Quantitative trace-reconstruction bounds with a uniform decoder.** At every fixed deletion probability in $`(0,1)`$, reconstructing an arbitrary length-n binary string requires $`n^{\Omega(\log\log n)}`$ independent traces, ruling out polynomial-sample reconstruction. A uniform decoder achieves quasipolynomial sample and running-time bounds for known fixed rational retention probabilities. When the deletion probability is at most $`n^{-\varepsilon}`$ for fixed ε > 0, both bounds become polynomial in the input and parameter encoding. ([Lean](lean/docs/122.md))
+> **122. Quantitative trace-reconstruction bounds with a uniform decoder.** At every fixed deletion probability in $`(0,1)`$, reconstructing an arbitrary length-n binary string requires $`n^{\Omega(\log\log n)}`$ independent traces, ruling out polynomial-sample reconstruction. A uniform decoder achieves quasipolynomial sample and running-time bounds for known fixed rational retention probabilities. When the deletion probability is at most $`n^{-\varepsilon}`$ for fixed ε > 0, both bounds become polynomial in the input and parameter encoding. ([Lean](../../../lean/docs/122.md))
 
 [S2:322] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.
@@ -242,21 +242,21 @@ question, not a resolution of a named conjecture; `counterex_broad=0`.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2979], manuscript link [S1:2979] |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 122 at [S2:322] |
-| S3 | [`preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/build/main.tex`](../../preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/build/main.tex) | 25 | document root; abstract [S3:8–10]; eight `\input` directives [S3:11–18]; 25 lines |
-| S4 | [`preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/build/sections/introduction.tex`](../../preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/build/sections/introduction.tex) | 76 | `thm:main` [S4:7–13]; `thm:tv` [S4:20–29]; history [S4:35]; 76 lines |
-| S5 | [`preprints/Uniform-quasipolynomial-time-trace-reconstruction-October-5-2026/build/manuscript/main.tex`](../../preprints/Uniform-quasipolynomial-time-trace-reconstruction-October-5-2026/build/manuscript/main.tex) | 184 | document root; abstract [S5:33–44]; `thm:main` [S5:78–99]; six `\input` directives [S5:178–183]; 184 lines |
-| S6 | [`preprints/Uniform-quasipolynomial-time-trace-reconstruction-October-5-2026/build/manuscript/history.tex`](../../preprints/Uniform-quasipolynomial-time-trace-reconstruction-October-5-2026/build/manuscript/history.tex) | 64 | prior work [S6:11–31]; 64 lines |
-| S7 | [`preprints/A-latest-anchor-induction-with-spectrally-compact-masks-for-worst-case-trace-reconstruction-October-5-2026/build/summary.tex`](../../preprints/A-latest-anchor-induction-with-spectrally-compact-masks-for-worst-case-trace-reconstruction-October-5-2026/build/summary.tex) | 117 | stated result [S7:110]; scope [S7:115]; 117 lines |
-| S8 | [`preprints/A-latest-anchor-induction-with-spectrally-compact-masks-for-worst-case-trace-reconstruction-October-5-2026/build/part-1.tex`](../../preprints/A-latest-anchor-induction-with-spectrally-compact-masks-for-worst-case-trace-reconstruction-October-5-2026/build/part-1.tex) | 488 | abstract [S8:16–26]; 488 lines |
-| S9 | [`preprints/A-latest-anchor-induction-with-spectrally-compact-masks-for-worst-case-trace-reconstruction-October-5-2026/build/main.tex`](../../preprints/A-latest-anchor-induction-with-spectrally-compact-masks-for-worst-case-trace-reconstruction-October-5-2026/build/main.tex) | 9 | pdfpages assembler — `\includepdf{summary.pdf}` [S9:7], `\includepdf{part-1.pdf}` [S9:8]; 9 lines |
-| S10 | [`lean/docs/122.md`](../../lean/docs/122.md) | 17 | scope note — Scope at [S10:7], comparator link at [S10:17] |
-| S11 | [`lean/ComparatorChallenges/TraceReconstruction.lean`](../../lean/ComparatorChallenges/TraceReconstruction.lean) | 91 | the comparator — `quantitative_sample_lower_bound` [S11:62], `superpolynomial_one_trace` [S11:74], `superpolynomial_sample_complexity` [S11:79]; 91 lines |
-| S12 | [`preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/paper.pdf`](../../preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/paper.pdf) | 10796 | the manuscript as shipped |
-| S13 | [`preprints/Uniform-quasipolynomial-time-trace-reconstruction-October-5-2026/uniform-trace-reconstruction.pdf`](../../preprints/Uniform-quasipolynomial-time-trace-reconstruction-October-5-2026/uniform-trace-reconstruction.pdf) | 13622 | the manuscript as shipped |
-| S14 | [`preprints/A-latest-anchor-induction-with-spectrally-compact-masks-for-worst-case-trace-reconstruction-October-5-2026/paper.pdf`](../../preprints/A-latest-anchor-induction-with-spectrally-compact-masks-for-worst-case-trace-reconstruction-October-5-2026/paper.pdf) | 10882 | the manuscript as shipped |
-| S15 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=122`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2979], manuscript link [S1:2979] |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 122 at [S2:322] |
+| S3 | [`preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/build/main.tex`](../../../preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/build/main.tex) | 25 | document root; abstract [S3:8–10]; eight `\input` directives [S3:11–18]; 25 lines |
+| S4 | [`preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/build/sections/introduction.tex`](../../../preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/build/sections/introduction.tex) | 76 | `thm:main` [S4:7–13]; `thm:tv` [S4:20–29]; history [S4:35]; 76 lines |
+| S5 | [`preprints/Uniform-quasipolynomial-time-trace-reconstruction-October-5-2026/build/manuscript/main.tex`](../../../preprints/Uniform-quasipolynomial-time-trace-reconstruction-October-5-2026/build/manuscript/main.tex) | 184 | document root; abstract [S5:33–44]; `thm:main` [S5:78–99]; six `\input` directives [S5:178–183]; 184 lines |
+| S6 | [`preprints/Uniform-quasipolynomial-time-trace-reconstruction-October-5-2026/build/manuscript/history.tex`](../../../preprints/Uniform-quasipolynomial-time-trace-reconstruction-October-5-2026/build/manuscript/history.tex) | 64 | prior work [S6:11–31]; 64 lines |
+| S7 | [`preprints/A-latest-anchor-induction-with-spectrally-compact-masks-for-worst-case-trace-reconstruction-October-5-2026/build/summary.tex`](../../../preprints/A-latest-anchor-induction-with-spectrally-compact-masks-for-worst-case-trace-reconstruction-October-5-2026/build/summary.tex) | 117 | stated result [S7:110]; scope [S7:115]; 117 lines |
+| S8 | [`preprints/A-latest-anchor-induction-with-spectrally-compact-masks-for-worst-case-trace-reconstruction-October-5-2026/build/part-1.tex`](../../../preprints/A-latest-anchor-induction-with-spectrally-compact-masks-for-worst-case-trace-reconstruction-October-5-2026/build/part-1.tex) | 488 | abstract [S8:16–26]; 488 lines |
+| S9 | [`preprints/A-latest-anchor-induction-with-spectrally-compact-masks-for-worst-case-trace-reconstruction-October-5-2026/build/main.tex`](../../../preprints/A-latest-anchor-induction-with-spectrally-compact-masks-for-worst-case-trace-reconstruction-October-5-2026/build/main.tex) | 9 | pdfpages assembler — `\includepdf{summary.pdf}` [S9:7], `\includepdf{part-1.pdf}` [S9:8]; 9 lines |
+| S10 | [`lean/docs/122.md`](../../../lean/docs/122.md) | 17 | scope note — Scope at [S10:7], comparator link at [S10:17] |
+| S11 | [`lean/ComparatorChallenges/TraceReconstruction.lean`](../../../lean/ComparatorChallenges/TraceReconstruction.lean) | 91 | the comparator — `quantitative_sample_lower_bound` [S11:62], `superpolynomial_one_trace` [S11:74], `superpolynomial_sample_complexity` [S11:79]; 91 lines |
+| S12 | [`preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/paper.pdf`](../../../preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/paper.pdf) | 10796 | the manuscript as shipped |
+| S13 | [`preprints/Uniform-quasipolynomial-time-trace-reconstruction-October-5-2026/uniform-trace-reconstruction.pdf`](../../../preprints/Uniform-quasipolynomial-time-trace-reconstruction-October-5-2026/uniform-trace-reconstruction.pdf) | 13622 | the manuscript as shipped |
+| S14 | [`preprints/A-latest-anchor-induction-with-spectrally-compact-masks-for-worst-case-trace-reconstruction-October-5-2026/paper.pdf`](../../../preprints/A-latest-anchor-induction-with-spectrally-compact-masks-for-worst-case-trace-reconstruction-October-5-2026/paper.pdf) | 10882 | the manuscript as shipped |
+| S15 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=122`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
 
 ## Bibliography
 

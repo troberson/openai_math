@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Real and complex analysis](../index/disciplines/real-and-complex-analysis.md) / [Family 086](../index/real-and-complex-analysis/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Real and complex analysis](../index/disciplines/real-and-complex-analysis.md) / [Family 086](../index/real-and-complex-analysis/086-an-l-3-bound-for-the-trilinear-hilbert-transform.md)
 
 # 086 — An $L^3$ bound for the trilinear Hilbert transform
 
@@ -136,12 +136,12 @@ evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 086 at line 2111. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 246. |
-| S3 | [`preprints/An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026/build/paper.tex`](../../preprints/An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026/build/paper.tex) | 28 | Main file: title and abstract. |
-| S4 | [`preprints/An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026/build/sections/introduction.tex`](../../preprints/An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026/build/sections/introduction.tex) | 103 | The operator, the main L3 theorem, the conjecture's standing, and the three features of the proof. |
-| S5 | [`preprints/An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026/build/sections/outer.tex`](../../preprints/An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026/build/sections/outer.tex) | 182 | The uniform local estimate the operator bound reduces to. |
-| S6 | [`preprints/An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026/build/references.bib`](../../preprints/An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026/build/references.bib) | 65 | The manuscript's bibliography. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 086 at line 2111. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 246. |
+| S3 | [`preprints/An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026/build/paper.tex`](../../../preprints/An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026/build/paper.tex) | 28 | Main file: title and abstract. |
+| S4 | [`preprints/An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026/build/sections/introduction.tex`](../../../preprints/An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026/build/sections/introduction.tex) | 103 | The operator, the main L3 theorem, the conjecture's standing, and the three features of the proof. |
+| S5 | [`preprints/An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026/build/sections/outer.tex`](../../../preprints/An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026/build/sections/outer.tex) | 182 | The uniform local estimate the operator bound reduces to. |
+| S6 | [`preprints/An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026/build/references.bib`](../../../preprints/An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026/build/references.bib) | 65 | The manuscript's bibliography. |
 
 ## Bibliography
 

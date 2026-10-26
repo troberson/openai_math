@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 112](../index/theoretical-computer-science/112-beyond-the-square-root-exponent-for-depth-three-circuits.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 112](../index/theoretical-computer-science/112-beyond-the-square-root-exponent-for-depth-three-circuits.md)
 
 # 112 — Beyond the square-root exponent for depth-three circuits
 
@@ -8,7 +8,7 @@
 
 [S1:2752] (family entry):
 
-> **112. Beyond the square-root exponent for depth-three circuits.** Constructs a single language in deterministic polynomial time whose n-bit membership function requires $`2^{\omega(\sqrt n)}`$ total gates in unbounded-fan-in OR–AND–OR circuits, at every sufficiently large input length. This crosses the square-root-exponent threshold for explicit depth-three Boolean circuit lower bounds. ([Lean](../../lean/docs/112.md))
+> **112. Beyond the square-root exponent for depth-three circuits.** Constructs a single language in deterministic polynomial time whose n-bit membership function requires $`2^{\omega(\sqrt n)}`$ total gates in unbounded-fan-in OR–AND–OR circuits, at every sufficiently large input length. This crosses the square-root-exponent threshold for explicit depth-three Boolean circuit lower bounds. ([Lean](../../../lean/docs/112.md))
 
 [S1:2759] (the manuscript entry, with its abstract at [S1:2761]):
 
@@ -203,17 +203,17 @@ Lean layer [S10] [S11:133–140] [S12:8–14] [S13] are the two evidence surface
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2752], the manuscript link [S1:2759], and the manuscript abstract [S1:2761]. The release's inline code spans stay as backticked markdown, and the release's italic markup is folded to the plain word |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 112 at [S2:302] |
-| S3 | [`preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/main.tex`](../../preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/main.tex) | 32 | root (`\documentclass`); abstract [S3:15–21]; the include order [S3:23–31] |
-| S4 | [`preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/sections/00_introduction.tex`](../../preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/sections/00_introduction.tex) | 144 | the gate-count definition [S4:13–19]; the main theorem [S4:21–35]; the square-root-exponent paragraph [S4:37–52]; the open-problem positioning [S4:54–61] |
-| S5 | [`preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/sections/02_restriction.tex`](../../preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/sections/02_restriction.tex) | 342 | the restriction lemma [S5:14–21] |
-| S6 | [`preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/sections/03_sparse_partition.tex`](../../preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/sections/03_sparse_partition.tex) | 264 | the sparse-partition lemma [S6:14–21]; the sunflower bound [S6:33–36] |
-| S7 | [`preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/sections/04_construction.tex`](../../preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/sections/04_construction.tex) | 305 | the language definition [S7:15–30]; the polynomial-time proposition [S7:72–76]; the good-slices proposition [S7:118–127] |
-| S8 | [`preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/sections/05_lower_bound.tex`](../../preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/sections/05_lower_bound.tex) | 141 | the lower-bound section opening and parameter order [S8:1–16] |
-| S9 | [`preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/main.pdf`](../../preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/main.pdf) | 7076 | the manuscript as shipped |
-| S10 | [`lean/docs/112.md`](../../lean/docs/112.md) | 15 | scope note — the Scope paragraph at [S10:9] and the comparator link at [S10:15] |
-| S11 | [`lean/ComparatorChallenges/DepthThree.lean`](../../lean/ComparatorChallenges/DepthThree.lean) | 144 | the comparator stub — the target theorem at [S11:133–140] with its `sorry` |
-| S12 | [`lean/OAI/Computability/DepthThree/Main.lean`](../../lean/OAI/Computability/DepthThree/Main.lean) | 20 | the formalized file — the proved theorem at [S12:8–16] |
-| S13 | [`lean/formalization.yaml`](../../lean/formalization.yaml) | 1783 | the `main_results` entry naming the declaration, at [S13:1165–1167] |
-| S14 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=112`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2752], the manuscript link [S1:2759], and the manuscript abstract [S1:2761]. The release's inline code spans stay as backticked markdown, and the release's italic markup is folded to the plain word |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 112 at [S2:302] |
+| S3 | [`preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/main.tex`](../../../preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/main.tex) | 32 | root (`\documentclass`); abstract [S3:15–21]; the include order [S3:23–31] |
+| S4 | [`preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/sections/00_introduction.tex`](../../../preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/sections/00_introduction.tex) | 144 | the gate-count definition [S4:13–19]; the main theorem [S4:21–35]; the square-root-exponent paragraph [S4:37–52]; the open-problem positioning [S4:54–61] |
+| S5 | [`preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/sections/02_restriction.tex`](../../../preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/sections/02_restriction.tex) | 342 | the restriction lemma [S5:14–21] |
+| S6 | [`preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/sections/03_sparse_partition.tex`](../../../preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/sections/03_sparse_partition.tex) | 264 | the sparse-partition lemma [S6:14–21]; the sunflower bound [S6:33–36] |
+| S7 | [`preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/sections/04_construction.tex`](../../../preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/sections/04_construction.tex) | 305 | the language definition [S7:15–30]; the polynomial-time proposition [S7:72–76]; the good-slices proposition [S7:118–127] |
+| S8 | [`preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/sections/05_lower_bound.tex`](../../../preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/build/latex/sections/05_lower_bound.tex) | 141 | the lower-bound section opening and parameter order [S8:1–16] |
+| S9 | [`preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/main.pdf`](../../../preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/main.pdf) | 7076 | the manuscript as shipped |
+| S10 | [`lean/docs/112.md`](../../../lean/docs/112.md) | 15 | scope note — the Scope paragraph at [S10:9] and the comparator link at [S10:15] |
+| S11 | [`lean/ComparatorChallenges/DepthThree.lean`](../../../lean/ComparatorChallenges/DepthThree.lean) | 144 | the comparator stub — the target theorem at [S11:133–140] with its `sorry` |
+| S12 | [`lean/OAI/Computability/DepthThree/Main.lean`](../../../lean/OAI/Computability/DepthThree/Main.lean) | 20 | the formalized file — the proved theorem at [S12:8–16] |
+| S13 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1783 | the `main_results` entry naming the declaration, at [S13:1165–1167] |
+| S14 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=112`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

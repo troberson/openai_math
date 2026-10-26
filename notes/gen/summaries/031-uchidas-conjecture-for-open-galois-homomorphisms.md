@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Number theory](../index/disciplines/number-theory.md) / [Family 031](../index/number-theory/031-uchidas-conjecture-for-open-galois-homomorphisms.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Number theory](../index/disciplines/number-theory.md) / [Family 031](../index/number-theory/031-uchidas-conjecture-for-open-galois-homomorphisms.md)
 
 # 031 — Uchida's conjecture for open Galois homomorphisms
 
@@ -134,17 +134,17 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 031 at line 739. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 138. |
-| S3 | [`preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/README.md`](../../preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/README.md) | 18 | Citation-only manuscript readme: title, author, date, BibTeX block. |
-| S4 | [`preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/main.tex`](../../preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/main.tex) | 50 | The main file: the abstract, packages, and section inputs. |
-| S5 | [`preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/sections/introduction.tex`](../../preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/sections/introduction.tex) | 39 | The main theorem, the historical context, the two main ideas, and the proof route. |
-| S6 | [`preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/sections/preliminaries.tex`](../../preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/sections/preliminaries.tex) | 92 | Anabelian inputs and the local norm identity. |
-| S7 | [`preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/sections/characters.tex`](../../preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/sections/characters.tex) | 420 | The character tests and the Waldschmidt-Masser input. |
-| S8 | [`preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/sections/generation.tex`](../../preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/sections/generation.tex) | 425 | Surjectivity and logarithmic cyclotomic compatibility. |
-| S9 | [`preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/sections/matching.tex`](../../preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/sections/matching.tex) | 180 | The uniform Kummer bound and residue-characteristic matching. |
-| S10 | [`preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/sections/identification.tex`](../../preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/sections/identification.tex) | 102 | Identification of the map to P and the proof of the theorem. |
-| S11 | [`preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/references.tex`](../../preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/references.tex) | 101 | The bibliography. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 031 at line 739. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 138. |
+| S3 | [`preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/README.md`](../../../preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/README.md) | 18 | Citation-only manuscript readme: title, author, date, BibTeX block. |
+| S4 | [`preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/main.tex`](../../../preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/main.tex) | 50 | The main file: the abstract, packages, and section inputs. |
+| S5 | [`preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/sections/introduction.tex`](../../../preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/sections/introduction.tex) | 39 | The main theorem, the historical context, the two main ideas, and the proof route. |
+| S6 | [`preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/sections/preliminaries.tex`](../../../preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/sections/preliminaries.tex) | 92 | Anabelian inputs and the local norm identity. |
+| S7 | [`preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/sections/characters.tex`](../../../preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/sections/characters.tex) | 420 | The character tests and the Waldschmidt-Masser input. |
+| S8 | [`preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/sections/generation.tex`](../../../preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/sections/generation.tex) | 425 | Surjectivity and logarithmic cyclotomic compatibility. |
+| S9 | [`preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/sections/matching.tex`](../../../preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/sections/matching.tex) | 180 | The uniform Kummer bound and residue-characteristic matching. |
+| S10 | [`preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/sections/identification.tex`](../../../preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/sections/identification.tex) | 102 | Identification of the map to P and the proof of the theorem. |
+| S11 | [`preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/references.tex`](../../../preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/build/references.tex) | 101 | The bibliography. |
 
 ## Bibliography
 

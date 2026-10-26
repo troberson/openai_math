@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Topology](../index/disciplines/topology.md) / [Family 304](../index/topology/304-hilbert-smith-conjecture-in-every-dimension.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Topology](../index/disciplines/topology.md) / [Family 304](../index/topology/304-hilbert-smith-conjecture-in-every-dimension.md)
 
 # 304 — The Hilbert–Smith conjecture in every dimension
 
@@ -135,11 +135,11 @@ evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 304 at line 7512. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 702. |
-| S3 | [`preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/build/main.tex`](../../preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/build/main.tex) | 111 | Manuscript main file: title and abstract. |
-| S4 | [`preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/build/sections/01-introduction.tex`](../../preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/build/sections/01-introduction.tex) | 314 | Introduction: the statement, the predecessors, the duality mechanism, the lattice obstruction, and how the action supplies the equal parts. |
-| S5 | [`preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/build/references.bib`](../../preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/build/references.bib) | 452 | Manuscript bibliography. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 304 at line 7512. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 702. |
+| S3 | [`preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/build/main.tex`](../../../preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/build/main.tex) | 111 | Manuscript main file: title and abstract. |
+| S4 | [`preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/build/sections/01-introduction.tex`](../../../preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/build/sections/01-introduction.tex) | 314 | Introduction: the statement, the predecessors, the duality mechanism, the lattice obstruction, and how the action supplies the equal parts. |
+| S5 | [`preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/build/references.bib`](../../../preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/build/references.bib) | 452 | Manuscript bibliography. |
 
 ## Bibliography
 

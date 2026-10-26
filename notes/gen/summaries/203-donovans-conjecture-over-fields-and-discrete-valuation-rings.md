@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Algebra](../index/disciplines/algebra.md) / [Family 203](../index/algebra/203-donovans-conjecture-over-fields-and-discrete-valuation-rings.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Algebra](../index/disciplines/algebra.md) / [Family 203](../index/algebra/203-donovans-conjecture-over-fields-and-discrete-valuation-rings.md)
 
 # 203 — Donovan's conjecture over fields and discrete valuation rings
 
@@ -156,14 +156,14 @@ and no non-LaTeX evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 203 at line 4632. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 487. |
-| S3 | [`preprints/Donovans-Conjecture-over-Algebraic-Closures-of-Prime-Fields-September-24-2026/build/main.tex`](../../preprints/Donovans-Conjecture-over-Algebraic-Closures-of-Prime-Fields-September-24-2026/build/main.tex) | 29 | Field manuscript main file: title and structure. |
-| S4 | [`preprints/Donovans-Conjecture-over-Algebraic-Closures-of-Prime-Fields-September-24-2026/build/sections/00_introduction.tex`](../../preprints/Donovans-Conjecture-over-Algebraic-Closures-of-Prime-Fields-September-24-2026/build/sections/00_introduction.tex) | 242 | Field manuscript introduction: abstract, main theorem, prior work, the two uniformity problems, and the proof's new ingredients. |
-| S5 | [`preprints/Integral-Donovan-Finiteness-over-Witt-Vectors-September-25-2026/build/main.tex`](../../preprints/Integral-Donovan-Finiteness-over-Witt-Vectors-September-25-2026/build/main.tex) | 31 | Integral manuscript main file: title and abstract. |
-| S6 | [`preprints/Integral-Donovan-Finiteness-over-Witt-Vectors-September-25-2026/build/sections/01_introduction.tex`](../../preprints/Integral-Donovan-Finiteness-over-Witt-Vectors-September-25-2026/build/sections/01_introduction.tex) | 190 | Integral manuscript introduction: main theorem, the fixed-coefficient-ring corollary, the companion relationship, and what must be retained over the Witt ring. |
-| S7 | [`preprints/Donovans-Conjecture-over-Algebraic-Closures-of-Prime-Fields-September-24-2026/build/references.tex`](../../preprints/Donovans-Conjecture-over-Algebraic-Closures-of-Prime-Fields-September-24-2026/build/references.tex) | 418 | Field manuscript bibliography. |
-| S8 | [`preprints/Integral-Donovan-Finiteness-over-Witt-Vectors-September-25-2026/build/references.bib`](../../preprints/Integral-Donovan-Finiteness-over-Witt-Vectors-September-25-2026/build/references.bib) | 158 | Integral manuscript bibliography. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 203 at line 4632. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 487. |
+| S3 | [`preprints/Donovans-Conjecture-over-Algebraic-Closures-of-Prime-Fields-September-24-2026/build/main.tex`](../../../preprints/Donovans-Conjecture-over-Algebraic-Closures-of-Prime-Fields-September-24-2026/build/main.tex) | 29 | Field manuscript main file: title and structure. |
+| S4 | [`preprints/Donovans-Conjecture-over-Algebraic-Closures-of-Prime-Fields-September-24-2026/build/sections/00_introduction.tex`](../../../preprints/Donovans-Conjecture-over-Algebraic-Closures-of-Prime-Fields-September-24-2026/build/sections/00_introduction.tex) | 242 | Field manuscript introduction: abstract, main theorem, prior work, the two uniformity problems, and the proof's new ingredients. |
+| S5 | [`preprints/Integral-Donovan-Finiteness-over-Witt-Vectors-September-25-2026/build/main.tex`](../../../preprints/Integral-Donovan-Finiteness-over-Witt-Vectors-September-25-2026/build/main.tex) | 31 | Integral manuscript main file: title and abstract. |
+| S6 | [`preprints/Integral-Donovan-Finiteness-over-Witt-Vectors-September-25-2026/build/sections/01_introduction.tex`](../../../preprints/Integral-Donovan-Finiteness-over-Witt-Vectors-September-25-2026/build/sections/01_introduction.tex) | 190 | Integral manuscript introduction: main theorem, the fixed-coefficient-ring corollary, the companion relationship, and what must be retained over the Witt ring. |
+| S7 | [`preprints/Donovans-Conjecture-over-Algebraic-Closures-of-Prime-Fields-September-24-2026/build/references.tex`](../../../preprints/Donovans-Conjecture-over-Algebraic-Closures-of-Prime-Fields-September-24-2026/build/references.tex) | 418 | Field manuscript bibliography. |
+| S8 | [`preprints/Integral-Donovan-Finiteness-over-Witt-Vectors-September-25-2026/build/references.bib`](../../../preprints/Integral-Donovan-Finiteness-over-Witt-Vectors-September-25-2026/build/references.bib) | 158 | Integral manuscript bibliography. |
 
 ## Bibliography
 

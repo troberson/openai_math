@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 137](../index/theoretical-computer-science/137-one-tape-time-simulation-in-two-fifths-power-space.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 137](../index/theoretical-computer-science/137-one-tape-time-simulation-in-two-fifths-power-space.md)
 
 # 137 — One-tape time simulation in two-fifths-power space
 
@@ -8,7 +8,7 @@
 
 [S1:3293] (family entry):
 
-> **137. One-tape time simulation in two-fifths-power space.** Determines the halting and finite-control outcome of a fixed deterministic one-writable-tape machine up to time T using $`O(T^{2/5}\log^C(T+2))`$ space, improving the square-root exponent. Heads move at most one cell per step; finitely many read-only input heads are allowed. Initial contents are independent of $`T`$, and contents and input symbols have polylogarithmic-space access. Simulation time is unrestricted. ([Lean](lean/docs/137.md))
+> **137. One-tape time simulation in two-fifths-power space.** Determines the halting and finite-control outcome of a fixed deterministic one-writable-tape machine up to time T using $`O(T^{2/5}\log^C(T+2))`$ space, improving the square-root exponent. Heads move at most one cell per step; finitely many read-only input heads are allowed. Initial contents are independent of $`T`$, and contents and input symbols have polylogarithmic-space access. Simulation time is unrestricted. ([Lean](../../../lean/docs/137.md))
 
 [S2:351] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.
@@ -211,11 +211,11 @@ two `main_results` declarations, `OAI.Fifths.Single.capped` and
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3293], manuscript link [S1:3293] |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 137 at [S2:351] |
-| S3 | [`preprints/Simulating-One-Tape-Time-in-Two-Fifths-Power-Space-September-25-2026/build/source/main.tex`](../../preprints/Simulating-One-Tape-Time-in-Two-Fifths-Power-Space-September-25-2026/build/source/main.tex) | 51 | document root; abstract [S3:34–43]; five section `\input` directives [S3:44–48]; 51 lines |
-| S4 | [`preprints/Simulating-One-Tape-Time-in-Two-Fifths-Power-Space-September-25-2026/build/source/sections/introduction.tex`](../../preprints/Simulating-One-Tape-Time-in-Two-Fifths-Power-Space-September-25-2026/build/source/sections/introduction.tex) | 136 | `thm:main` [S4:64–79]; 136 lines |
-| S5 | [`preprints/Simulating-One-Tape-Time-in-Two-Fifths-Power-Space-September-25-2026/article.pdf`](../../preprints/Simulating-One-Tape-Time-in-Two-Fifths-Power-Space-September-25-2026/article.pdf) | 11933 | the manuscript as shipped |
-| S6 | [`lean/docs/137.md`](../../lean/docs/137.md) | 17 | scope note — Scope at [S6:7], capped simulator [S6:9], unknown-time simulator [S6:11], comparator link at [S6:16] |
-| S7 | [`lean/ComparatorChallenges/OneTapeSpace.lean`](../../lean/ComparatorChallenges/OneTapeSpace.lean) | 275 | comparator — `capped` [S7:258–263] `sorry` [S7:263], `unknown` [S7:265–271] `sorry` [S7:271]; 275 lines |
-| S8 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=137`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3293], manuscript link [S1:3293] |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 137 at [S2:351] |
+| S3 | [`preprints/Simulating-One-Tape-Time-in-Two-Fifths-Power-Space-September-25-2026/build/source/main.tex`](../../../preprints/Simulating-One-Tape-Time-in-Two-Fifths-Power-Space-September-25-2026/build/source/main.tex) | 51 | document root; abstract [S3:34–43]; five section `\input` directives [S3:44–48]; 51 lines |
+| S4 | [`preprints/Simulating-One-Tape-Time-in-Two-Fifths-Power-Space-September-25-2026/build/source/sections/introduction.tex`](../../../preprints/Simulating-One-Tape-Time-in-Two-Fifths-Power-Space-September-25-2026/build/source/sections/introduction.tex) | 136 | `thm:main` [S4:64–79]; 136 lines |
+| S5 | [`preprints/Simulating-One-Tape-Time-in-Two-Fifths-Power-Space-September-25-2026/article.pdf`](../../../preprints/Simulating-One-Tape-Time-in-Two-Fifths-Power-Space-September-25-2026/article.pdf) | 11933 | the manuscript as shipped |
+| S6 | [`lean/docs/137.md`](../../../lean/docs/137.md) | 17 | scope note — Scope at [S6:7], capped simulator [S6:9], unknown-time simulator [S6:11], comparator link at [S6:16] |
+| S7 | [`lean/ComparatorChallenges/OneTapeSpace.lean`](../../../lean/ComparatorChallenges/OneTapeSpace.lean) | 275 | comparator — `capped` [S7:258–263] `sorry` [S7:263], `unknown` [S7:265–271] `sorry` [S7:271]; 275 lines |
+| S8 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=137`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

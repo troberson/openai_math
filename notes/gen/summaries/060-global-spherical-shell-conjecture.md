@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Algebraic and complex geometry](../index/disciplines/algebraic-and-complex-geometry.md) / [Family 060](../index/algebraic-and-complex-geometry/060-global-spherical-shell-conjecture.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Algebraic and complex geometry](../index/disciplines/algebraic-and-complex-geometry.md) / [Family 060](../index/algebraic-and-complex-geometry/060-global-spherical-shell-conjecture.md)
 
 # 060 — The Global Spherical Shell conjecture
 
@@ -186,11 +186,11 @@ Nothing about this family is machine-checked. The ledger reads `paps_form 0`,
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 060 at line 1565. |
-| S2 | [`preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/paper.tex`](../../preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/paper.tex) | 349 | Main file: title, abstract, theorem, corollaries, and section inputs. |
-| S3 | [`preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/sections/surfaces.tex`](../../preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/sections/surfaces.tex) | 287 | Surface invariants, the cyclic cover, and the two reductions. |
-| S4 | [`preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/sections/curves.tex`](../../preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/sections/curves.tex) | 446 | Divisor growth, residue currents, and the area exponent. |
-| S5 | [`preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/sections/cylinder.tex`](../../preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/sections/cylinder.tex) | 583 | The cylinder exclusion of noncompact normalizations. |
-| S6 | [`preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/sections/weighted.tex`](../../preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/sections/weighted.tex) | 846 | The weighted cohomology and current independence. |
-| S7 | [`preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/sections/compact-data.tex`](../../preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/sections/compact-data.tex) | 125 | The compact datum construction. |
-| S8 | [`preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/sections/conclusion.tex`](../../preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/sections/conclusion.tex) | 282 | Conclusion and consequences. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 060 at line 1565. |
+| S2 | [`preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/paper.tex`](../../../preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/paper.tex) | 349 | Main file: title, abstract, theorem, corollaries, and section inputs. |
+| S3 | [`preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/sections/surfaces.tex`](../../../preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/sections/surfaces.tex) | 287 | Surface invariants, the cyclic cover, and the two reductions. |
+| S4 | [`preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/sections/curves.tex`](../../../preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/sections/curves.tex) | 446 | Divisor growth, residue currents, and the area exponent. |
+| S5 | [`preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/sections/cylinder.tex`](../../../preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/sections/cylinder.tex) | 583 | The cylinder exclusion of noncompact normalizations. |
+| S6 | [`preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/sections/weighted.tex`](../../../preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/sections/weighted.tex) | 846 | The weighted cohomology and current independence. |
+| S7 | [`preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/sections/compact-data.tex`](../../../preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/sections/compact-data.tex) | 125 | The compact datum construction. |
+| S8 | [`preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/sections/conclusion.tex`](../../../preprints/Global-Spherical-Shells-on-Minimal-Surfaces-of-Class-VII-September-24-2026/build/sections/conclusion.tex) | 282 | Conclusion and consequences. |

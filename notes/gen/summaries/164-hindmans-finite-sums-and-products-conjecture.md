@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Combinatorics](../index/disciplines/combinatorics.md) / [Family 164](../index/combinatorics/164-hindmans-finite-sums-and-products-conjecture.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Combinatorics](../index/disciplines/combinatorics.md) / [Family 164](../index/combinatorics/164-hindmans-finite-sums-and-products-conjecture.md)
 
 # 164 — Hindman's finite sums and products conjecture
 
@@ -141,11 +141,11 @@ evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 164 at line 3861. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 407. |
-| S3 | [`preprints/Monochromatic-finite-sums-and-products-in-the-positive-integers-September-23-2026/build/main.tex`](../../preprints/Monochromatic-finite-sums-and-products-in-the-positive-integers-September-23-2026/build/main.tex) | 82 | Main file: title and abstract. |
-| S4 | [`preprints/Monochromatic-finite-sums-and-products-in-the-positive-integers-September-23-2026/build/sections/01_introduction.tex`](../../preprints/Monochromatic-finite-sums-and-products-in-the-positive-integers-September-23-2026/build/sections/01_introduction.tex) | 220 | The main theorem, the distinct-expressions corollary, the history, and the proof strategy. |
-| S5 | [`preprints/Monochromatic-finite-sums-and-products-in-the-positive-integers-September-23-2026/build/references.tex`](../../preprints/Monochromatic-finite-sums-and-products-in-the-positive-integers-September-23-2026/build/references.tex) | 237 | The manuscript's bibliography (a thebibliography block). |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 164 at line 3861. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 407. |
+| S3 | [`preprints/Monochromatic-finite-sums-and-products-in-the-positive-integers-September-23-2026/build/main.tex`](../../../preprints/Monochromatic-finite-sums-and-products-in-the-positive-integers-September-23-2026/build/main.tex) | 82 | Main file: title and abstract. |
+| S4 | [`preprints/Monochromatic-finite-sums-and-products-in-the-positive-integers-September-23-2026/build/sections/01_introduction.tex`](../../../preprints/Monochromatic-finite-sums-and-products-in-the-positive-integers-September-23-2026/build/sections/01_introduction.tex) | 220 | The main theorem, the distinct-expressions corollary, the history, and the proof strategy. |
+| S5 | [`preprints/Monochromatic-finite-sums-and-products-in-the-positive-integers-September-23-2026/build/references.tex`](../../../preprints/Monochromatic-finite-sums-and-products-in-the-positive-integers-September-23-2026/build/references.tex) | 237 | The manuscript's bibliography (a thebibliography block). |
 
 ## Bibliography
 

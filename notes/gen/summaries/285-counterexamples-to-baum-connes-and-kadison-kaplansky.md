@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Operator algebras](../index/disciplines/operator-algebras.md) / [Family 285](../index/operator-algebras/285-counterexamples-to-baum-connes-and-kadison-kaplansky.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Operator algebras](../index/disciplines/operator-algebras.md) / [Family 285](../index/operator-algebras/285-counterexamples-to-baum-connes-and-kadison-kaplansky.md)
 
 # 285 — Counterexamples to Baum–Connes and Kadison–Kaplansky
 
@@ -171,11 +171,11 @@ non-LaTeX evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 285 at line 7100. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 662. |
-| S3 | [`preprints/A-Torsion-Free-Counterexample-to-Reduced-Baum-Connes-Injectivity-September-23-2026/build/main.tex`](../../preprints/A-Torsion-Free-Counterexample-to-Reduced-Baum-Connes-Injectivity-September-23-2026/build/main.tex) | 77 | Baum--Connes injectivity manuscript: title and abstract. |
-| S4 | [`preprints/A-Torsion-Free-Counterexample-to-Reduced-Baum-Connes-Injectivity-September-23-2026/build/sections/00_introduction.tex`](../../preprints/A-Torsion-Free-Counterexample-to-Reduced-Baum-Connes-Injectivity-September-23-2026/build/sections/00_introduction.tex) | 248 | Baum--Connes injectivity introduction: the setup, the main theorem, the distinction from earlier counterexamples, and the construction. |
-| S5 | [`preprints/A-Torsion-Free-Counterexample-to-the-Kadison-Kaplansky-Projection-Conjecture-September-23-2026/build/paper.tex`](../../preprints/A-Torsion-Free-Counterexample-to-the-Kadison-Kaplansky-Projection-Conjecture-September-23-2026/build/paper.tex) | 30 | Kadison--Kaplansky manuscript: title and abstract. |
-| S6 | [`preprints/A-Torsion-Free-Counterexample-to-the-Kadison-Kaplansky-Projection-Conjecture-September-23-2026/build/sections/introduction.tex`](../../preprints/A-Torsion-Free-Counterexample-to-the-Kadison-Kaplansky-Projection-Conjecture-September-23-2026/build/sections/introduction.tex) | 176 | Kadison--Kaplansky introduction: the setup, the main theorem, and the context. |
-| S7 | [`preprints/An-Irrational-Trace-Counterexample-to-Reduced-Baum-Connes-September-23-2026/build/paper.tex`](../../preprints/An-Irrational-Trace-Counterexample-to-Reduced-Baum-Connes-September-23-2026/build/paper.tex) | 29 | Irrational-trace manuscript: title and abstract. |
-| S8 | [`preprints/An-Irrational-Trace-Counterexample-to-Reduced-Baum-Connes-September-23-2026/build/introduction.tex`](../../preprints/An-Irrational-Trace-Counterexample-to-Reduced-Baum-Connes-September-23-2026/build/introduction.tex) | 195 | Irrational-trace introduction: the main theorem on the projection outside the assembly image. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 285 at line 7100. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 662. |
+| S3 | [`preprints/A-Torsion-Free-Counterexample-to-Reduced-Baum-Connes-Injectivity-September-23-2026/build/main.tex`](../../../preprints/A-Torsion-Free-Counterexample-to-Reduced-Baum-Connes-Injectivity-September-23-2026/build/main.tex) | 77 | Baum--Connes injectivity manuscript: title and abstract. |
+| S4 | [`preprints/A-Torsion-Free-Counterexample-to-Reduced-Baum-Connes-Injectivity-September-23-2026/build/sections/00_introduction.tex`](../../../preprints/A-Torsion-Free-Counterexample-to-Reduced-Baum-Connes-Injectivity-September-23-2026/build/sections/00_introduction.tex) | 248 | Baum--Connes injectivity introduction: the setup, the main theorem, the distinction from earlier counterexamples, and the construction. |
+| S5 | [`preprints/A-Torsion-Free-Counterexample-to-the-Kadison-Kaplansky-Projection-Conjecture-September-23-2026/build/paper.tex`](../../../preprints/A-Torsion-Free-Counterexample-to-the-Kadison-Kaplansky-Projection-Conjecture-September-23-2026/build/paper.tex) | 30 | Kadison--Kaplansky manuscript: title and abstract. |
+| S6 | [`preprints/A-Torsion-Free-Counterexample-to-the-Kadison-Kaplansky-Projection-Conjecture-September-23-2026/build/sections/introduction.tex`](../../../preprints/A-Torsion-Free-Counterexample-to-the-Kadison-Kaplansky-Projection-Conjecture-September-23-2026/build/sections/introduction.tex) | 176 | Kadison--Kaplansky introduction: the setup, the main theorem, and the context. |
+| S7 | [`preprints/An-Irrational-Trace-Counterexample-to-Reduced-Baum-Connes-September-23-2026/build/paper.tex`](../../../preprints/An-Irrational-Trace-Counterexample-to-Reduced-Baum-Connes-September-23-2026/build/paper.tex) | 29 | Irrational-trace manuscript: title and abstract. |
+| S8 | [`preprints/An-Irrational-Trace-Counterexample-to-Reduced-Baum-Connes-September-23-2026/build/introduction.tex`](../../../preprints/An-Irrational-Trace-Counterexample-to-Reduced-Baum-Connes-September-23-2026/build/introduction.tex) | 195 | Irrational-trace introduction: the main theorem on the projection outside the assembly image. |

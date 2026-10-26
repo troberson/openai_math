@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 135](../index/theoretical-computer-science/135-sharp-homogeneous-depth-five-complexity-of-matrix-products.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 135](../index/theoretical-computer-science/135-sharp-homogeneous-depth-five-complexity-of-matrix-products.md)
 
 # 135 — Sharp homogeneous depth-five complexity of matrix products
 
@@ -8,7 +8,7 @@
 
 [S1:3261] (family entry):
 
-> **135. Homogeneous depth-five lower bounds for iterated matrix multiplication.** Over every characteristic-zero field, the $`(1,1)`$ entry of a product of n independent $`n\times n`$ variable matrices requires $`n^{\Theta(\sqrt n)}`$ gates in homogeneous depth-five sum–product circuits. This sharp bound allows shared gates and bottom linear forms involving all variables. ([Lean](lean/docs/135.md))
+> **135. Homogeneous depth-five lower bounds for iterated matrix multiplication.** Over every characteristic-zero field, the $`(1,1)`$ entry of a product of n independent $`n\times n`$ variable matrices requires $`n^{\Theta(\sqrt n)}`$ gates in homogeneous depth-five sum–product circuits. This sharp bound allows shared gates and bottom linear forms involving all variables. ([Lean](../../../lean/docs/135.md))
 
 [S2:347] carries the `\resultentry`, so the release blurb and the overview
 agree on the statement.
@@ -223,11 +223,11 @@ flags are `bound|classification`; `resolves_named=0`;
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3261], manuscript link [S1:3261] |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 135 at [S2:347] |
-| S3 | [`preprints/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026/build/paper.tex`](../../preprints/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026/build/paper.tex) | 42 | document root; `macros` import [S3:14], abstract [S3:21–32]; six section `\input` directives [S3:34–39]; 42 lines |
-| S4 | [`preprints/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026/build/sections/01-introduction.tex`](../../preprints/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026/build/sections/01-introduction.tex) | 243 | `thm:main` [S4:53–63], circuit model [S4:20–51]; 243 lines |
-| S5 | [`preprints/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026.pdf`](../../preprints/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026.pdf) | 13466 | the manuscript as shipped |
-| S6 | [`lean/docs/135.md`](../../lean/docs/135.md) | 17 | scope note — Scope at [S6:7], lower bound [S6:9], upper bound [S6:11], comparator link at [S6:17] |
-| S7 | [`lean/ComparatorChallenges/DepthFive.lean`](../../lean/ComparatorChallenges/DepthFive.lean) | 136 | comparator — `main` [S7:118–130], `sorry` at [S7:130]; 136 lines |
-| S8 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=135`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3261], manuscript link [S1:3261] |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 135 at [S2:347] |
+| S3 | [`preprints/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026/build/paper.tex`](../../../preprints/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026/build/paper.tex) | 42 | document root; `macros` import [S3:14], abstract [S3:21–32]; six section `\input` directives [S3:34–39]; 42 lines |
+| S4 | [`preprints/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026/build/sections/01-introduction.tex`](../../../preprints/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026/build/sections/01-introduction.tex) | 243 | `thm:main` [S4:53–63], circuit model [S4:20–51]; 243 lines |
+| S5 | [`preprints/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026.pdf`](../../../preprints/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026.pdf) | 13466 | the manuscript as shipped |
+| S6 | [`lean/docs/135.md`](../../../lean/docs/135.md) | 17 | scope note — Scope at [S6:7], lower bound [S6:9], upper bound [S6:11], comparator link at [S6:17] |
+| S7 | [`lean/ComparatorChallenges/DepthFive.lean`](../../../lean/ComparatorChallenges/DepthFive.lean) | 136 | comparator — `main` [S7:118–130], `sorry` at [S7:130]; 136 lines |
+| S8 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=135`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

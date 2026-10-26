@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Real and complex analysis](../index/disciplines/real-and-complex-analysis.md) / [Family 074](../index/real-and-complex-analysis/074-kakeya-in-three-and-four-dimensions.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Real and complex analysis](../index/disciplines/real-and-complex-analysis.md) / [Family 074](../index/real-and-complex-analysis/074-kakeya-in-three-and-four-dimensions.md)
 
 # 074 — Kakeya in three and four dimensions
 
@@ -181,16 +181,16 @@ trees — and no non-LaTeX evidence.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 074 at line 1847. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 222. |
-| S3 | [`preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/build/paper.tex`](../../preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/build/paper.tex) | 28 | Main file: title, abstract, and section inputs (three dimensions). |
-| S4 | [`preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/build/sections/introduction.tex`](../../preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/build/sections/introduction.tex) | 247 | The three-dimensional maximal theorem, the density feature, the set-vs-maximal distinction, and the proof geometry. |
-| S5 | [`preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/build/paper.tex`](../../preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/build/paper.tex) | 78 | Main file: title, abstract, and section inputs (four dimensions). |
-| S6 | [`preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/build/sections/01-introduction.tex`](../../preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/build/sections/01-introduction.tex) | 328 | The four-dimensional Hausdorff theorem, the no-regularity hypothesis, the input estimates, and the proof mechanisms. |
-| S7 | [`preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/build/sections/80-consequences.tex`](../../preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/build/sections/80-consequences.tex) | 166 | The three-dimensional Nikodym and curved Kakeya consequences via the Gao--Liu--Xi transfer. |
-| S8 | [`preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/build/sections/10-consequences.tex`](../../preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/build/sections/10-consequences.tex) | 347 | The four-dimensional packing, projection, direction-set, Nikodym, and curved consequences. |
-| S9 | [`preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/build/references.bib`](../../preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/build/references.bib) | 269 | The three-dimensional manuscript's bibliography. |
-| S10 | [`preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/build/references.bib`](../../preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/build/references.bib) | 440 | The four-dimensional manuscript's bibliography. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 074 at line 1847. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 222. |
+| S3 | [`preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/build/paper.tex`](../../../preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/build/paper.tex) | 28 | Main file: title, abstract, and section inputs (three dimensions). |
+| S4 | [`preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/build/sections/introduction.tex`](../../../preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/build/sections/introduction.tex) | 247 | The three-dimensional maximal theorem, the density feature, the set-vs-maximal distinction, and the proof geometry. |
+| S5 | [`preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/build/paper.tex`](../../../preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/build/paper.tex) | 78 | Main file: title, abstract, and section inputs (four dimensions). |
+| S6 | [`preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/build/sections/01-introduction.tex`](../../../preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/build/sections/01-introduction.tex) | 328 | The four-dimensional Hausdorff theorem, the no-regularity hypothesis, the input estimates, and the proof mechanisms. |
+| S7 | [`preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/build/sections/80-consequences.tex`](../../../preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/build/sections/80-consequences.tex) | 166 | The three-dimensional Nikodym and curved Kakeya consequences via the Gao--Liu--Xi transfer. |
+| S8 | [`preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/build/sections/10-consequences.tex`](../../../preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/build/sections/10-consequences.tex) | 347 | The four-dimensional packing, projection, direction-set, Nikodym, and curved consequences. |
+| S9 | [`preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/build/references.bib`](../../../preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/build/references.bib) | 269 | The three-dimensional manuscript's bibliography. |
+| S10 | [`preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/build/references.bib`](../../../preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/build/references.bib) | 440 | The four-dimensional manuscript's bibliography. |
 
 ## Bibliography
 

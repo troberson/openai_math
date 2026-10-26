@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 104](../index/theoretical-computer-science/104-quasipolynomial-algorithms-for-mean-payoff-stochastic-and-parity-games.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 104](../index/theoretical-computer-science/104-quasipolynomial-algorithms-for-mean-payoff-stochastic-and-parity-games.md)
 
 # 104 — Quasipolynomial algorithms for mean-payoff, stochastic and parity games
 
@@ -8,25 +8,25 @@
 
 [S1:2570] (family entry):
 
-> **104. Quasipolynomial algorithms for mean-payoff, stochastic and parity games.** Gives deterministic algorithms using $`2^{O((\log(L+2))^2)}`$ bit operations, for complete binary input length $L$, for ordinary mean-payoff games and two separate extensions. They compute exact values and optimal positional strategies in ordinary games, the nonnegative expectation-of-liminf value set in turn-based stochastic games, and the winning set for nonnegative liminf mean payoff conjoined with parity. Signed rewards, rational chance probabilities, and parity priorities are unrestricted and binary-encoded. ([Lean](../../lean/docs/104.md))
+> **104. Quasipolynomial algorithms for mean-payoff, stochastic and parity games.** Gives deterministic algorithms using $`2^{O((\log(L+2))^2)}`$ bit operations, for complete binary input length $L$, for ordinary mean-payoff games and two separate extensions. They compute exact values and optimal positional strategies in ordinary games, the nonnegative expectation-of-liminf value set in turn-based stochastic games, and the winning set for nonnegative liminf mean payoff conjoined with parity. Signed rewards, rational chance probabilities, and parity priorities are unrestricted and binary-encoded. ([Lean](../../../lean/docs/104.md))
 
 The four manuscripts under that family:
 
 [S1:2577] (turn-based stochastic):
 
-> [Turn-Based Stochastic Mean-Payoff Games in Deterministic Quasipolynomial Time](../../preprints/Turn-Based-Stochastic-Mean-Payoff-Games-in-Deterministic-Quasipolynomial-Time-October-5-2026/stochastic-mean-payoff-games.pdf)
+> [Turn-Based Stochastic Mean-Payoff Games in Deterministic Quasipolynomial Time](../../../preprints/Turn-Based-Stochastic-Mean-Payoff-Games-in-Deterministic-Quasipolynomial-Time-October-5-2026/stochastic-mean-payoff-games.pdf)
 
 [S1:2586] (mean-payoff parity):
 
-> [Mean-payoff parity games in quasipolynomial time](../../preprints/Mean-payoff-parity-games-in-quasipolynomial-time-October-5-2026/mean-payoff-parity.pdf)
+> [Mean-payoff parity games in quasipolynomial time](../../../preprints/Mean-payoff-parity-games-in-quasipolynomial-time-October-5-2026/mean-payoff-parity.pdf)
 
 [S1:2595] (deterministic):
 
-> [Deterministic quasipolynomial-time mean-payoff games](../../preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/paper.pdf)
+> [Deterministic quasipolynomial-time mean-payoff games](../../../preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/paper.pdf)
 
 [S1:2604] (randomized):
 
-> [Randomized quasipolynomial-time mean-payoff games](../../preprints/Randomized-quasipolynomial-time-mean-payoff-games-September-25-2026/paper.pdf)
+> [Randomized quasipolynomial-time mean-payoff games](../../../preprints/Randomized-quasipolynomial-time-mean-payoff-games-September-25-2026/paper.pdf)
 
 [S2:286] carries the `\resultentry`, so the release blurb and the overview agree to
 the word on the $2^{O((\log(L+2))^2)}$ bound.
@@ -204,21 +204,21 @@ formalized targets.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2570] and the four manuscript entries [S1:2577], [S1:2586], [S1:2595], [S1:2604]. The release's inline code spans stay as backticked markdown, and the release's italic L is rendered as $L$ |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 104 at [S2:286] |
-| S3 | [`preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/build/source/main.tex`](../../preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/build/source/main.tex) | 31 | root (`\documentclass`); abstract [S3:8–15]; the nine-section include order [S3:20–28] |
-| S4 | [`preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/build/source/sections/01-introduction.tex`](../../preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/build/source/sections/01-introduction.tex) | 251 | the deterministic main theorem [S4:34–50]; the mean-payoff definition [S4:24–26] |
-| S5 | [`preprints/Randomized-quasipolynomial-time-mean-payoff-games-September-25-2026/build/source/main.tex`](../../preprints/Randomized-quasipolynomial-time-mean-payoff-games-September-25-2026/build/source/main.tex) | 35 | root (`\documentclass`); abstract [S5:8–17]; the section include order [S5:22–32] |
-| S6 | [`preprints/Randomized-quasipolynomial-time-mean-payoff-games-September-25-2026/build/source/sections/01-introduction.tex`](../../preprints/Randomized-quasipolynomial-time-mean-payoff-games-September-25-2026/build/source/sections/01-introduction.tex) | 261 | the randomized main theorem [S6:36–53]; the $7/8$ certificate line [S6:64] |
-| S7 | [`preprints/Mean-payoff-parity-games-in-quasipolynomial-time-October-5-2026/build/main.tex`](../../preprints/Mean-payoff-parity-games-in-quasipolynomial-time-October-5-2026/build/main.tex) | 23 | root (`\documentclass`); abstract [S7:8–15]; the five-section include order [S7:16–20] |
-| S8 | [`preprints/Mean-payoff-parity-games-in-quasipolynomial-time-October-5-2026/build/sections/01-introduction.tex`](../../preprints/Mean-payoff-parity-games-in-quasipolynomial-time-October-5-2026/build/sections/01-introduction.tex) | 88 | the parity conjunction objective [S8:20–26]; the parity main theorem [S8:33–42] |
-| S9 | [`preprints/Turn-Based-Stochastic-Mean-Payoff-Games-in-Deterministic-Quasipolynomial-Time-October-5-2026/build/build/main.tex`](../../preprints/Turn-Based-Stochastic-Mean-Payoff-Games-in-Deterministic-Quasipolynomial-Time-October-5-2026/build/build/main.tex) | 69 | root (`\documentclass`); abstract [S9:50–58]; the four-section include order [S9:59–62] |
-| S10 | [`preprints/Turn-Based-Stochastic-Mean-Payoff-Games-in-Deterministic-Quasipolynomial-Time-October-5-2026/build/build/sections/introduction.tex`](../../preprints/Turn-Based-Stochastic-Mean-Payoff-Games-in-Deterministic-Quasipolynomial-Time-October-5-2026/build/build/sections/introduction.tex) | 197 | the stochastic main theorem [S10:49–59]; the value set $U$ [S10:51] |
-| S11 | [`preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/paper.pdf`](../../preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/paper.pdf) | 14377 | the deterministic manuscript as shipped |
-| S12 | [`preprints/Randomized-quasipolynomial-time-mean-payoff-games-September-25-2026/paper.pdf`](../../preprints/Randomized-quasipolynomial-time-mean-payoff-games-September-25-2026/paper.pdf) | 16269 | the randomized manuscript as shipped |
-| S13 | [`preprints/Mean-payoff-parity-games-in-quasipolynomial-time-October-5-2026/mean-payoff-parity.pdf`](../../preprints/Mean-payoff-parity-games-in-quasipolynomial-time-October-5-2026/mean-payoff-parity.pdf) | 12081 | the parity manuscript as shipped |
-| S14 | [`preprints/Turn-Based-Stochastic-Mean-Payoff-Games-in-Deterministic-Quasipolynomial-Time-October-5-2026/stochastic-mean-payoff-games.pdf`](../../preprints/Turn-Based-Stochastic-Mean-Payoff-Games-in-Deterministic-Quasipolynomial-Time-October-5-2026/stochastic-mean-payoff-games.pdf) | 12856 | the stochastic manuscript as shipped |
-| S15 | [`lean/docs/104.md`](../../lean/docs/104.md) | 19 | scope note — the formalization's Scope (the Truffet counterexample and the randomized winning-set algorithm) and its two comparator links |
-| S16 | [`lean/ComparatorChallenges/TruffetCounterexample.lean`](../../lean/ComparatorChallenges/TruffetCounterexample.lean) | 134 | the comparator stub — the two-step Truffet execution with its `sorry` |
-| S17 | [`lean/ComparatorChallenges/RandomizedMeanPayoff.lean`](../../lean/ComparatorChallenges/RandomizedMeanPayoff.lean) | 126 | the comparator stub — the randomized quasipolynomial claim with its `sorry` |
-| S18 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=104`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2570] and the four manuscript entries [S1:2577], [S1:2586], [S1:2595], [S1:2604]. The release's inline code spans stay as backticked markdown, and the release's italic L is rendered as $L$ |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 104 at [S2:286] |
+| S3 | [`preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/build/source/main.tex`](../../../preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/build/source/main.tex) | 31 | root (`\documentclass`); abstract [S3:8–15]; the nine-section include order [S3:20–28] |
+| S4 | [`preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/build/source/sections/01-introduction.tex`](../../../preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/build/source/sections/01-introduction.tex) | 251 | the deterministic main theorem [S4:34–50]; the mean-payoff definition [S4:24–26] |
+| S5 | [`preprints/Randomized-quasipolynomial-time-mean-payoff-games-September-25-2026/build/source/main.tex`](../../../preprints/Randomized-quasipolynomial-time-mean-payoff-games-September-25-2026/build/source/main.tex) | 35 | root (`\documentclass`); abstract [S5:8–17]; the section include order [S5:22–32] |
+| S6 | [`preprints/Randomized-quasipolynomial-time-mean-payoff-games-September-25-2026/build/source/sections/01-introduction.tex`](../../../preprints/Randomized-quasipolynomial-time-mean-payoff-games-September-25-2026/build/source/sections/01-introduction.tex) | 261 | the randomized main theorem [S6:36–53]; the $7/8$ certificate line [S6:64] |
+| S7 | [`preprints/Mean-payoff-parity-games-in-quasipolynomial-time-October-5-2026/build/main.tex`](../../../preprints/Mean-payoff-parity-games-in-quasipolynomial-time-October-5-2026/build/main.tex) | 23 | root (`\documentclass`); abstract [S7:8–15]; the five-section include order [S7:16–20] |
+| S8 | [`preprints/Mean-payoff-parity-games-in-quasipolynomial-time-October-5-2026/build/sections/01-introduction.tex`](../../../preprints/Mean-payoff-parity-games-in-quasipolynomial-time-October-5-2026/build/sections/01-introduction.tex) | 88 | the parity conjunction objective [S8:20–26]; the parity main theorem [S8:33–42] |
+| S9 | [`preprints/Turn-Based-Stochastic-Mean-Payoff-Games-in-Deterministic-Quasipolynomial-Time-October-5-2026/build/build/main.tex`](../../../preprints/Turn-Based-Stochastic-Mean-Payoff-Games-in-Deterministic-Quasipolynomial-Time-October-5-2026/build/build/main.tex) | 69 | root (`\documentclass`); abstract [S9:50–58]; the four-section include order [S9:59–62] |
+| S10 | [`preprints/Turn-Based-Stochastic-Mean-Payoff-Games-in-Deterministic-Quasipolynomial-Time-October-5-2026/build/build/sections/introduction.tex`](../../../preprints/Turn-Based-Stochastic-Mean-Payoff-Games-in-Deterministic-Quasipolynomial-Time-October-5-2026/build/build/sections/introduction.tex) | 197 | the stochastic main theorem [S10:49–59]; the value set $U$ [S10:51] |
+| S11 | [`preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/paper.pdf`](../../../preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/paper.pdf) | 14377 | the deterministic manuscript as shipped |
+| S12 | [`preprints/Randomized-quasipolynomial-time-mean-payoff-games-September-25-2026/paper.pdf`](../../../preprints/Randomized-quasipolynomial-time-mean-payoff-games-September-25-2026/paper.pdf) | 16269 | the randomized manuscript as shipped |
+| S13 | [`preprints/Mean-payoff-parity-games-in-quasipolynomial-time-October-5-2026/mean-payoff-parity.pdf`](../../../preprints/Mean-payoff-parity-games-in-quasipolynomial-time-October-5-2026/mean-payoff-parity.pdf) | 12081 | the parity manuscript as shipped |
+| S14 | [`preprints/Turn-Based-Stochastic-Mean-Payoff-Games-in-Deterministic-Quasipolynomial-Time-October-5-2026/stochastic-mean-payoff-games.pdf`](../../../preprints/Turn-Based-Stochastic-Mean-Payoff-Games-in-Deterministic-Quasipolynomial-Time-October-5-2026/stochastic-mean-payoff-games.pdf) | 12856 | the stochastic manuscript as shipped |
+| S15 | [`lean/docs/104.md`](../../../lean/docs/104.md) | 19 | scope note — the formalization's Scope (the Truffet counterexample and the randomized winning-set algorithm) and its two comparator links |
+| S16 | [`lean/ComparatorChallenges/TruffetCounterexample.lean`](../../../lean/ComparatorChallenges/TruffetCounterexample.lean) | 134 | the comparator stub — the two-step Truffet execution with its `sorry` |
+| S17 | [`lean/ComparatorChallenges/RandomizedMeanPayoff.lean`](../../../lean/ComparatorChallenges/RandomizedMeanPayoff.lean) | 126 | the comparator stub — the randomized quasipolynomial claim with its `sorry` |
+| S18 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=104`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |

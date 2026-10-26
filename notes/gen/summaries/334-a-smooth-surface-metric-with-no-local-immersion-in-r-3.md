@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Differential geometry](../index/disciplines/differential-geometry.md) / [Family 334](../index/differential-geometry/334-a-smooth-surface-metric-with-no-local-immersion-in-r-3.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Differential geometry](../index/disciplines/differential-geometry.md) / [Family 334](../index/differential-geometry/334-a-smooth-surface-metric-with-no-local-immersion-in-r-3.md)
 
 # 334 — A smooth surface metric with no local immersion in $\mathbb R^3$
 
@@ -8,7 +8,7 @@
 
 The release's blurb for family 334 [S1:8136]:
 
-> **334. A smooth surface metric with no local isometric immersion in ℝ3.** Constructs a smooth positive-definite metric on $(-1,1)^2$ for which no neighborhood of the origin admits a smooth isometric immersion into ℝ3. This answers the unrestricted smooth local isometric realization problem for surfaces negatively, even after shrinking the neighborhood. ([Lean](../../lean/docs/334.md))
+> **334. A smooth surface metric with no local isometric immersion in ℝ3.** Constructs a smooth positive-definite metric on $(-1,1)^2$ for which no neighborhood of the origin admits a smooth isometric immersion into ℝ3. This answers the unrestricted smooth local isometric realization problem for surfaces negatively, even after shrinking the neighborhood. ([Lean](../../../lean/docs/334.md))
 
 The catalog abstract in `overview.tex` [S2:766] is the same sentence, and the manuscript's own abstract says the same in the first person 
 
@@ -256,22 +256,22 @@ What has not been checked: no Lean or comparator run was performed, so nothing h
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | Release blurb, manuscript link, manuscript abstract |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | Family 334's `\resultentry`, at line 766 |
-| S3 | [`preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/README.md`](../../preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/README.md) | 17 | Manuscript README and bibtex key |
-| S4 | [`preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/paper.pdf`](../../preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/paper.pdf) | 12181 | Manuscript PDF |
-| S5 | [`preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/build/main.tex`](../../preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/build/main.tex) | 228 | Abstract, Theorem A, introduction, conventions, include list |
-| S6 | [`preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/build/sections/model.tex`](../../preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/build/sections/model.tex) | 105 | Model patch, admissible height, height lemma, patch obstruction |
-| S7 | [`preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/build/sections/caps.tex`](../../preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/build/sections/caps.tex) | 484 | Cap regularity estimate |
-| S8 | [`preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/build/sections/pulse.tex`](../../preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/build/sections/pulse.tex) | 406 | Oscillatory pulse and the Baire argument |
-| S9 | [`preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/build/sections/assembly.tex`](../../preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/build/sections/assembly.tex) | 289 | Disk accumulation, boundary-saddle lemma, Taylor-jet corollary |
-| S10 | [`preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/build/references.bib`](../../preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/build/references.bib) | 195 | Bibliography |
-| S11 | [`lean/docs/334.md`](../../lean/docs/334.md) | 15 | Scope note |
-| S12 | [`lean/formalization.yaml`](../../lean/formalization.yaml) | 1783 | Release index of papers and results |
-| S13 | [`lean/ComparatorChallenges/IsometricImmersion.json`](../../lean/ComparatorChallenges/IsometricImmersion.json) | 14 | Comparator configuration |
-| S14 | [`lean/ComparatorChallenges/IsometricImmersion.lean`](../../lean/ComparatorChallenges/IsometricImmersion.lean) | 62 | Comparator challenge stub |
-| S15 | [`lean/OAI/Geometry/IsometricImmersion/Main.lean`](../../lean/OAI/Geometry/IsometricImmersion/Main.lean) | 67 | Formalized declaration |
-| S16 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | Reading ledger row for family 334 |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | Release blurb, manuscript link, manuscript abstract |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | Family 334's `\resultentry`, at line 766 |
+| S3 | [`preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/README.md`](../../../preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/README.md) | 17 | Manuscript README and bibtex key |
+| S4 | [`preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/paper.pdf`](../../../preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/paper.pdf) | 12181 | Manuscript PDF |
+| S5 | [`preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/build/main.tex`](../../../preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/build/main.tex) | 228 | Abstract, Theorem A, introduction, conventions, include list |
+| S6 | [`preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/build/sections/model.tex`](../../../preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/build/sections/model.tex) | 105 | Model patch, admissible height, height lemma, patch obstruction |
+| S7 | [`preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/build/sections/caps.tex`](../../../preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/build/sections/caps.tex) | 484 | Cap regularity estimate |
+| S8 | [`preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/build/sections/pulse.tex`](../../../preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/build/sections/pulse.tex) | 406 | Oscillatory pulse and the Baire argument |
+| S9 | [`preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/build/sections/assembly.tex`](../../../preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/build/sections/assembly.tex) | 289 | Disk accumulation, boundary-saddle lemma, Taylor-jet corollary |
+| S10 | [`preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/build/references.bib`](../../../preprints/A-Smooth-Metric-with-No-Local-Isometric-Immersion-into-Three-Space-September-24-2026/build/references.bib) | 195 | Bibliography |
+| S11 | [`lean/docs/334.md`](../../../lean/docs/334.md) | 15 | Scope note |
+| S12 | [`lean/formalization.yaml`](../../../lean/formalization.yaml) | 1783 | Release index of papers and results |
+| S13 | [`lean/ComparatorChallenges/IsometricImmersion.json`](../../../lean/ComparatorChallenges/IsometricImmersion.json) | 14 | Comparator configuration |
+| S14 | [`lean/ComparatorChallenges/IsometricImmersion.lean`](../../../lean/ComparatorChallenges/IsometricImmersion.lean) | 62 | Comparator challenge stub |
+| S15 | [`lean/OAI/Geometry/IsometricImmersion/Main.lean`](../../../lean/OAI/Geometry/IsometricImmersion/Main.lean) | 67 | Formalized declaration |
+| S16 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | Reading ledger row for family 334 |
 
 ## Bibliography
 

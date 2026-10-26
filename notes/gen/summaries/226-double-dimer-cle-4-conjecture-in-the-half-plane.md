@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Probability and statistical mechanics](../index/disciplines/probability-and-statistical-mechanics.md) / [Family 226](../index/probability-and-statistical-mechanics/226-double-dimer-cle-4-conjecture-in-the-half-plane.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Probability and statistical mechanics](../index/disciplines/probability-and-statistical-mechanics.md) / [Family 226](../index/probability-and-statistical-mechanics/226-double-dimer-cle-4-conjecture-in-the-half-plane.md)
 
 # 226 — The double-dimer $\mathrm{CLE}_4$ conjecture in the half-plane
 
@@ -173,17 +173,17 @@ certificate ships with it.
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 226 at line 5403. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 535. |
-| S3 | [`README.md`](../../README.md) | 51 | The repo readme, which attributes no reasoning trace to this family. |
-| S4 | [`preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/README.md`](../../preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/README.md) | 17 | Citation-only manuscript readme: the model, the result, the method, no provenance. |
-| S5 | [`preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/main.tex`](../../preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/main.tex) | 55 | The abstract at lines 42–45. |
-| S6 | [`preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/sections/10-introduction.tex`](../../preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/sections/10-introduction.tex) | 259 | The theorem statement, the collection topology, the prior work, the mechanism. |
-| S7 | [`preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/sections/20-transfer.tex`](../../preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/sections/20-transfer.tex) | 518 | The transfer matrix, the particle representation, the slab traversal bound. |
-| S8 | [`preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/sections/30-short-segment.tex`](../../preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/sections/30-short-segment.tex) | 546 | Proposition 3.1, the short-segment crossing estimate. |
-| S9 | [`preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/sections/40-localization.tex`](../../preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/sections/40-localization.tex) | 494 | Proposition 4.1, the local opposite-sign estimate, and Proposition 4.2. |
-| S10 | [`preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/sections/50-identification.tex`](../../preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/sections/50-identification.tex) | 218 | Lemma 5.1, Lemma 5.2, Lemma 5.3, and the full-limit argument. |
-| S11 | [`preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/references.tex`](../../preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/references.tex) | 147 | The bibliography: Kasteleyn, Temperley-Fisher, Gessel-Viennot, Kenyon, Kenyon-Wilson, Sheffield-Werner, Dubédat, Basok-Chelkak, Basok-Izyurov, Bai-Wan. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 226 at line 5403. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 535. |
+| S3 | [`README.md`](../../../README.md) | 51 | The repo readme, which attributes no reasoning trace to this family. |
+| S4 | [`preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/README.md`](../../../preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/README.md) | 17 | Citation-only manuscript readme: the model, the result, the method, no provenance. |
+| S5 | [`preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/main.tex`](../../../preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/main.tex) | 55 | The abstract at lines 42–45. |
+| S6 | [`preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/sections/10-introduction.tex`](../../../preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/sections/10-introduction.tex) | 259 | The theorem statement, the collection topology, the prior work, the mechanism. |
+| S7 | [`preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/sections/20-transfer.tex`](../../../preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/sections/20-transfer.tex) | 518 | The transfer matrix, the particle representation, the slab traversal bound. |
+| S8 | [`preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/sections/30-short-segment.tex`](../../../preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/sections/30-short-segment.tex) | 546 | Proposition 3.1, the short-segment crossing estimate. |
+| S9 | [`preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/sections/40-localization.tex`](../../../preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/sections/40-localization.tex) | 494 | Proposition 4.1, the local opposite-sign estimate, and Proposition 4.2. |
+| S10 | [`preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/sections/50-identification.tex`](../../../preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/sections/50-identification.tex) | 218 | Lemma 5.1, Lemma 5.2, Lemma 5.3, and the full-limit argument. |
+| S11 | [`preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/references.tex`](../../../preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/build/references.tex) | 147 | The bibliography: Kasteleyn, Temperley-Fisher, Gessel-Viennot, Kenyon, Kenyon-Wilson, Sheffield-Werner, Dubédat, Basok-Chelkak, Basok-Izyurov, Bai-Wan. |
 
 ## Bibliography
 

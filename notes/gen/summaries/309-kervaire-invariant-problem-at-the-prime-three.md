@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Topology](../index/disciplines/topology.md) / [Family 309](../index/topology/309-kervaire-invariant-problem-at-the-prime-three.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Topology](../index/disciplines/topology.md) / [Family 309](../index/topology/309-kervaire-invariant-problem-at-the-prime-three.md)
 
 # 309 — The Kervaire invariant problem at the prime three
 
@@ -122,11 +122,11 @@ one `pdf-glyphs.tex`, one figure under `build/figures/`, and a
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | The release's blurb for family 309 at line 7628. |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | The catalog abstract at line 712. |
-| S3 | [`preprints/The-Kervaire-Invariant-Problem-at-the-Prime-Three-September-24-2026/build/paper.tex`](../../preprints/The-Kervaire-Invariant-Problem-at-the-Prime-Three-September-24-2026/build/paper.tex) | 76 | Manuscript main file: title and documentclass. |
-| S4 | [`preprints/The-Kervaire-Invariant-Problem-at-the-Prime-Three-September-24-2026/build/sections/introduction.tex`](../../preprints/The-Kervaire-Invariant-Problem-at-the-Prime-Three-September-24-2026/build/sections/introduction.tex) | 131 | Introduction: the abstract, the setup, the main classification theorem, the unstable consequences, the prior work and prime-three obstruction, the proof structure, and the conventions. |
-| S5 | [`preprints/The-Kervaire-Invariant-Problem-at-the-Prime-Three-September-24-2026/build/references.tex`](../../preprints/The-Kervaire-Invariant-Problem-at-the-Prime-Three-September-24-2026/build/references.tex) | 256 | Manuscript bibliography. |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | The release's blurb for family 309 at line 7628. |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | The catalog abstract at line 712. |
+| S3 | [`preprints/The-Kervaire-Invariant-Problem-at-the-Prime-Three-September-24-2026/build/paper.tex`](../../../preprints/The-Kervaire-Invariant-Problem-at-the-Prime-Three-September-24-2026/build/paper.tex) | 76 | Manuscript main file: title and documentclass. |
+| S4 | [`preprints/The-Kervaire-Invariant-Problem-at-the-Prime-Three-September-24-2026/build/sections/introduction.tex`](../../../preprints/The-Kervaire-Invariant-Problem-at-the-Prime-Three-September-24-2026/build/sections/introduction.tex) | 131 | Introduction: the abstract, the setup, the main classification theorem, the unstable consequences, the prior work and prime-three obstruction, the proof structure, and the conventions. |
+| S5 | [`preprints/The-Kervaire-Invariant-Problem-at-the-Prime-Three-September-24-2026/build/references.tex`](../../../preprints/The-Kervaire-Invariant-Problem-at-the-Prime-Three-September-24-2026/build/references.tex) | 256 | Manuscript bibliography. |
 
 ## Bibliography
 

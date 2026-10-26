@@ -1,4 +1,4 @@
-[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 103](../index/theoretical-computer-science/103-derandomization-of-logarithmic-space-l-rl-bpl.md)
+[Notes](../../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 103](../index/theoretical-computer-science/103-derandomization-of-logarithmic-space-l-rl-bpl.md)
 
 # 103 — Derandomization of logarithmic space: $\mathsf L=\mathsf{RL}=\mathsf{BPL}$
 
@@ -8,11 +8,11 @@
 
 [S1:2554] (family entry):
 
-> **103. Exact derandomization of logarithmic space: $`\mathsf L=\mathsf{RL}=\mathsf{BPL}`$.** Proves $`\mathsf L=\mathsf{RL}=\mathsf{BPL}`$, resolving derandomization for bounded-error logarithmic-space computation. An effective compiler converts each randomized polynomial-time logarithmic-space machine deciding a language with one-sided or two-sided error into a deterministic logarithmic-space decider with explicit polynomial running-time bounds. ([Lean](../../lean/docs/103.md))
+> **103. Exact derandomization of logarithmic space: $`\mathsf L=\mathsf{RL}=\mathsf{BPL}`$.** Proves $`\mathsf L=\mathsf{RL}=\mathsf{BPL}`$, resolving derandomization for bounded-error logarithmic-space computation. An effective compiler converts each randomized polynomial-time logarithmic-space machine deciding a language with one-sided or two-sided error into a deterministic logarithmic-space decider with explicit polynomial running-time bounds. ([Lean](../../../lean/docs/103.md))
 
 [S1:2561] (the manuscript entry under that family):
 
-> [Exact derandomization of logarithmic space: L = RL = BPL](../../preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/paper.pdf)
+> [Exact derandomization of logarithmic space: L = RL = BPL](../../../preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/paper.pdf)
 
 [S3:11–14] carries the manuscript's own abstract, and [S2:284] carries the
 [S1:2554] text, so the release blurb and the `\resultentry` agree to the word.
@@ -280,18 +280,18 @@ scope note, and no verification bundle or reasoning trace [S12].
 
 | # | File | Lines | Role |
 | --- | --- | --- | --- |
-| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2554] and its manuscript entry [S1:2561]. Quoted word-for-word; the release's inline code spans stay as backticked markdown |
-| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 103 at [S2:284] |
-| S3 | [`preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/main.tex`](../../preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/main.tex) | 34 | root (`\documentclass`); abstract at [S3:11–14]; the section include order [S3:16–28] |
-| S4 | [`preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/sections/introduction.tex`](../../preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/sections/introduction.tex) | 366 | class definitions [S4:19–26]; the two theorems [S4:28–32], [S4:40–49]; proof strategy [S4:197–250]; historical context [S4:66–189] |
-| S5 | [`preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/sections/model.tex`](../../preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/sections/model.tex) | 148 | configuration-reduction lemma [S5:18–33]; the matrix model [S5:11–16] |
-| S6 | [`preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/sections/conclusion.tex`](../../preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/sections/conclusion.tex) | 463 | fixed-precision theorem [S6:18–27]; the class-equality proof [S6:279–290]; the promise corollary [S6:307–311]; the variable-precision proof [S6:325–360]; the certified-search corollary [S6:396–404] |
-| S7 | [`preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/references.bib`](../../preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/references.bib) | 425 | 39 `\bibitem`s; Nisan 1992 [S7:1], Saks–Zhou [S7:~110], Reingold [S7:~210], Pyne–Raz–Zhan [S7:~290] |
-| S8 | [`preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/README.md`](../../preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/README.md) | 19 | title, author, date, bibtex citation stub |
-| S9 | [`preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/paper.pdf`](../../preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/paper.pdf) | 28682 | the manuscript as shipped |
-| S10 | [`lean/docs/103.md`](../../lean/docs/103.md) | 17 | scope note — the formalization's Scope and the comparator link |
-| S11 | [`lean/ComparatorChallenges/LogspaceEquality.lean`](../../lean/ComparatorChallenges/LogspaceEquality.lean) | 142 | the comparator stub — the selected equality statement with its `sorry` |
-| S12 | [`notes/gen/tables/catalog.tsv`](../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=103`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
+| S1 | [`CONTENTS.md`](../../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:2554] and its manuscript entry [S1:2561]. Quoted word-for-word; the release's inline code spans stay as backticked markdown |
+| S2 | [`overview.tex`](../../../overview.tex) | 859 | the release's `\resultentry` list — 103 at [S2:284] |
+| S3 | [`preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/main.tex`](../../../preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/main.tex) | 34 | root (`\documentclass`); abstract at [S3:11–14]; the section include order [S3:16–28] |
+| S4 | [`preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/sections/introduction.tex`](../../../preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/sections/introduction.tex) | 366 | class definitions [S4:19–26]; the two theorems [S4:28–32], [S4:40–49]; proof strategy [S4:197–250]; historical context [S4:66–189] |
+| S5 | [`preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/sections/model.tex`](../../../preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/sections/model.tex) | 148 | configuration-reduction lemma [S5:18–33]; the matrix model [S5:11–16] |
+| S6 | [`preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/sections/conclusion.tex`](../../../preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/sections/conclusion.tex) | 463 | fixed-precision theorem [S6:18–27]; the class-equality proof [S6:279–290]; the promise corollary [S6:307–311]; the variable-precision proof [S6:325–360]; the certified-search corollary [S6:396–404] |
+| S7 | [`preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/references.bib`](../../../preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/references.bib) | 425 | 39 `\bibitem`s; Nisan 1992 [S7:1], Saks–Zhou [S7:~110], Reingold [S7:~210], Pyne–Raz–Zhan [S7:~290] |
+| S8 | [`preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/README.md`](../../../preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/README.md) | 19 | title, author, date, bibtex citation stub |
+| S9 | [`preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/paper.pdf`](../../../preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/paper.pdf) | 28682 | the manuscript as shipped |
+| S10 | [`lean/docs/103.md`](../../../lean/docs/103.md) | 17 | scope note — the formalization's Scope and the comparator link |
+| S11 | [`lean/ComparatorChallenges/LogspaceEquality.lean`](../../../lean/ComparatorChallenges/LogspaceEquality.lean) | 142 | the comparator stub — the selected equality statement with its `sorry` |
+| S12 | [`notes/gen/tables/catalog.tsv`](../../../notes/gen/tables/catalog.tsv) | 373 | the ledger row `fam=103`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
 
 ## Bibliography
 
