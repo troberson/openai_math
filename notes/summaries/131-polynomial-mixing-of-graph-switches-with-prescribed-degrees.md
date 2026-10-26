@@ -1,0 +1,196 @@
+[Notes](../README.md) / [Summaries](README.md) / [Theoretical computer science](../index/disciplines/theoretical-computer-science.md) / [Family 131](../index/theoretical-computer-science/131-polynomial-mixing-of-graph-switches-with-prescribed-degrees.md)
+
+# 131 — Polynomial mixing of graph switches with prescribed degrees
+
+[Index page](../index/theoretical-computer-science/131-polynomial-mixing-of-graph-switches-with-prescribed-degrees.md)
+
+## Original CONTENTS.md summary
+
+[S1:3152] (family entry):
+
+> **131. Rapid mixing of graph switches for every degree sequence.** Resolves the simple-undirected Kannan–Tetali–Vempala conjecture: the lazy edge-switch chain mixes in $`O(n^8)`$ time for every graphical labeled degree sequence. The same degree-constrained graphs can also be sampled exactly uniformly by an almost-surely terminating algorithm with expected polynomial bit running time. ([Lean](lean/docs/131.md))
+
+[S2:339] carries the `\resultentry`, so the release blurb and the overview
+agree on the statement.
+
+## Undergraduate summary
+
+A **degree sequence** is a list of numbers specifying how many edges each
+vertex of a graph should have. A **graphical** degree sequence is one that
+some simple graph actually realizes.
+
+A **Markov chain** is a random process that moves between states. The
+**switch chain** is a chain over all graphs with a fixed degree sequence:
+at each step it picks four vertices and, if it produces a different
+valid graph, it "switches" the edges.
+
+**Mixing time** is how many steps the chain needs before it forgets where
+it started and is close to uniform over all valid graphs. This family
+proves the switch chain mixes in **$O(n^8)$** steps [S4:32–39] —
+polynomial in the number of vertices — for *every* graphical degree
+sequence. This resolves the simple-undirected form of a long-standing
+conjecture [S4:86–90].
+
+As a bonus, the same structure gives an algorithm to **sample a
+uniformly random** graph with a given degree sequence
+[S4:42–44].
+
+## Graduate summary
+
+**Main theorem** ([S4:32–39], `thm:main`). "For every $n\ge4$ and every
+graphical degree vector $d$, $t_{\mathrm{mix}}(d)\le 2n^8$. If
+$|\Omega_d|>1$, the spectral gap of $P_d$ is at least
+$[24n^2\binom n4]^{-1}$" [S4:32–39]. The mixing time is measured at
+total-variation distance $1/4$, the standard convention
+[S4:25–30].
+
+**Exact uniform sampling corollary** ([S4:42–44], `cor:exact-sampling`).
+"There is a uniform randomized algorithm that, given any finite graphical
+labeled degree vector $d$, uses unbiased random bits, [...] and samples
+$a$ graph from the uniform distribution over $\Omega_d$" [S4:42–44]. The
+algorithm is almost-surely terminating with expected polynomial bit
+running time.
+
+**The two results are paired.** The polynomial mixing bound implies that
+running the chain for polynomially many steps produces a near-uniform
+sample; the exact-sampling corollary refines this to a perfectly uniform
+draw via rejection/absorption, at expected polynomial cost.
+
+## History of the conjecture
+
+**Kannan, Tetali, and Vempala** initiated the switch-chain program in
+1999, treating regular bipartite sequences and raising the possibility of
+broad applicability. For simple undirected graphs, **Cooper, Dyer, and
+Greenhill** established rapid mixing for regular sequences; their
+corrigendum preserves the polynomial bound with a corrected exponent.
+**Feder, Guetz, Mihail, and Saberi** studied early irregular families, and
+**Greenhill and Sfragara** proved rapid mixing under quantitative
+restrictions on the degrees. **Amanatidis and Kleer** developed a route
+through strong stability [S4:61–71].
+
+Stability conditions for degree-constrained sampling were developed by
+**Jerrum and Sinclair** and by **Jerrum, McKay, and Sinclair**. **Erdős,
+Greenhill, Mezei, Miklós, Soltész, and Soukup** subsequently proved rapid
+mixing for every P-stable family. P-stability requires a polynomial bound
+uniform over the family on the ratio between the number of realizations of
+nearby perturbed sequences and that of the original sequence. Recent work
+of **Erdős, Miklós, and Soukup** and of **Erdős, Lippner, Nevo, and
+Soukup** gives further P-stable families from regions in which every
+admissible degree vector is graphical. These results explain substantial
+classes of degrees; the theorem here requires only that the individual
+degree vector be graphical [S4:73–85].
+
+The modern **Kannan–Tetali–Vempala conjecture** predicts rapid mixing for
+every realizable degree specification in each of the bipartite, directed,
+and simple-undirected models [S4:86–88]. Theorem here resolves its
+simple-undirected formulation affirmatively. **Fu, Qin, and Wang** proved
+the bipartite formulation, equivalently the fixed-margin binary-matrix
+problem [S4:94–95].
+
+**Prior (my training data, not this repo).** The Kannan–Tetali–Vempala
+conjecture, in this form, was a central open problem in Markov-chain
+Monte Carlo sampling of degree-constrained graphs. The regular and
+P-stable cases were known, but the general-graphical case resisted all
+earlier approaches. A polynomial bound uniform over *all* graphical
+sequences is a major advance. I cannot confirm the specific prior results
+independently; the release ships the manuscript as proof.
+
+## Consequences
+
+- **The switch chain mixes in polynomial time for every graphical degree
+  sequence.** The total-variation mixing time is at most $2n^8$
+  [S4:32–39].
+- **The spectral gap is explicit.** When more than one graph realizes the
+  degree sequence, the spectral gap is at least
+  $[24n^2\binom n4]^{-1}$ [S4:32–39].
+- **Exact uniform sampling is possible.** The same degree-constrained
+  graphs can be sampled exactly uniformly by an almost-surely
+  terminating expected-polynomial algorithm [S4:42–44].
+- **The simple-undirected KTV conjecture is resolved.** The theorem
+  requires only that the individual degree vector be graphical, not
+  that the family be P-stable [S4:86–90].
+- **The bipartite case is separate.** Fu, Qin, and Wang proved the
+  bipartite formulation; this family resolves the simple-undirected one
+  [S4:94–95].
+
+## Section skeleton
+
+The manuscript [S3] is a 44-line root: a 24-line preamble with package
+declarations, title block, abstract [S3:25–34], eight section files
+[S3:35–42], and a `sources/references` import [S3:43]. The sections, in
+order and line count: `introduction` (180), `setup` (42), `rows` (211),
+`triples` (101), `disjoint` (271), `slice` (231), `mixing` (259),
+`exact-sampling` (171) — 1,466 section lines. The proof develops the
+row/triple/disjoint-slice machinery, assembles the spectral gap and
+mixing time, and then extracts the exact-sampling corollary. The shipped
+PDF [S5] is the manuscript in the form the release distributes.
+
+## Comparison with the formalized statement
+
+The release formalizes this family at tier T2 with one scope note [S6:9]
+and **one** comparator stub, but **no** `main_results` declaration. This
+is a structural absence: the scope note links a comparator config, and
+that config has no proved declaration in `lean/OAI/`.
+
+The scope note [S6:9] states precisely what is formalized: "The
+Kannan–Tetali–Vempala conjecture asks for polynomial mixing of the switch
+chain for every graphical degree sequence. The formalization proves the
+simple undirected case: for $n\ge4$, the lazy chain that proposes switches
+on four vertices has total-variation mixing time at distance $1/4$ at
+most $2n^8$. It also proves switch connectivity, the stated exponential
+total-variation bound, and a spectral gap of at least
+$1/(24n^2\binom n4)$ when more than one graph realizes the degree
+sequence. The paper's exactly uniform sampling algorithm is outside these
+selected chain estimates" [S6:9].
+
+The scope note links a single comparator config [`SwitchChain.lean`]
+[S6:15]. That config has **no** `main_results` entry, so the formalization
+stops at the challenge stub.
+
+The `SwitchChain.lean` comparator stub [S7:155–156] (171 lines) defines the full
+Markov-chain apparatus — `graphDegree`, `Realizes`, `Graphical`, the
+switch-proposal machinery, `switchKernel`, `kernelPow`, `uniformAverage`,
+`dirichletEnergy`, `hasSpectralGapAtLeast`, `tvDistanceFrom`, `MixedAt`,
+`mixingTime`, `SwitchStep` — and three statements, each with a `sorry`:
+
+- `switch_chain_main` [S7:155–156], `sorry` at [S7:157] — for every
+  $n\ge4$ and graphical $d$: mixing time at distance $1/4$ is
+  $\le 2n^8$; if exactly one graph realizes $d$ the chain is already
+  mixed at time 0; if more than one graph realizes $d$ the spectral gap is
+  at least $[24n^2\binom n4]^{-1}$.
+- `switch_chain_tv_bound` [S7:159–160], `sorry` at [S7:161] — the
+  exponential total-variation decay
+  $\le \tfrac12\sqrt{|\Omega_d|}\,e^{-t/(24n^2\binom n4)}$.
+- `switch_connectivity` [S7:163–164], `sorry` at [S7:165] — the switch
+  step is connected: any two realizations are joined by a reflexive-
+  transitive closure of valid switches.
+
+There is no `OAI/**` declaration that proves any of the three, so the
+formalization stops at the challenge stubs. The reading is of source text
+only — no `lake` or `lean` run elaborates the library, so the claim here
+is that the statements and their `sorry` exist in the source, not that
+anything is proved.
+
+## Coverage
+
+The ledger row `fam=131` [S8] records: `tier=T2`, `paps=1`,
+`paps_form=0`, `chal=1`, `mainres=0`, `scope_note=1`, `verification=0`,
+`trace=`. The formalization chain is **incomplete**: the single scope note
+links one comparator config, but that config has no `main_results` entry
+and no proved declaration under `lean/OAI/` — a T2 structural absence.
+The manuscript is unformalized (`paps_form=0`). The shape flags are
+`resolution|uniform`; `resolves_named=1` — the result resolves the
+simple-undirected Kannan–Tetali–Vempala conjecture; `counterex_broad=0`.
+
+## Sources
+
+| # | File | Lines | Role |
+| --- | --- | --- | --- |
+| S1 | [`CONTENTS.md`](../../CONTENTS.md) | 9142 | the release's catalog — family entry [S1:3152], manuscript link [S1:3152] |
+| S2 | [`overview.tex`](../../overview.tex) | 859 | the release's `\resultentry` list — 131 at [S2:339] |
+| S3 | [`preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/build/main.tex`](../../preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/build/main.tex) | 44 | document root; abstract [S3:25–34]; eight section `\input` directives [S3:35–42]; 44 lines |
+| S4 | [`preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/build/sections/introduction.tex`](../../preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/build/sections/introduction.tex) | 180 | `thm:main` [S4:32–39], `cor:exact-sampling` [S4:42–44]; 180 lines |
+| S5 | [`preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/main.pdf`](../../preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/main.pdf) | 11725 | the manuscript as shipped |
+| S6 | [`lean/docs/131.md`](../../lean/docs/131.md) | 17 | scope note — Scope at [S6:9], comparator link at [S6:15] |
+| S7 | [`lean/ComparatorChallenges/SwitchChain.lean`](../../lean/ComparatorChallenges/SwitchChain.lean) | 171 | comparator — `switch_chain_main` [S7:155–156], `switch_chain_tv_bound` [S7:159–160], `switch_connectivity` [S7:163–164]; 171 lines |
+| S8 | [`notes/tables/catalog.tsv`](../../notes/tables/catalog.tsv) | 373 | the ledger row `fam=131`; regenerate with `python3 notes/scripts/build_catalog.py`. Ours, not in the release |
