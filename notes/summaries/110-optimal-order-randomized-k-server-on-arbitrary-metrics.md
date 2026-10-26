@@ -60,7 +60,7 @@ and the binary length of the request counter.
 absolute constant $C<\infty$ such that, for every integer $k\ge2$, every
 metric space $(X,d)$ with at least $k+1$ points, and every $s\in X^k$,
 there exist a randomized online policy $A$ and a finite $B\ge0$ satisfying
-$\mathbb E\,\cost_{A,s}(\sigma)\le C(\log(k+1))^2\OPT_{X,d,k,s}(\sigma)+B$ for
+$\mathbb E\,\mathrm{cost}_{A,s}(\sigma)\le C(\log(k+1))^2\mathrm{OPT}_{X,d,k,s}(\sigma)+B$ for
 every finite request sequence $\sigma$" [S4:22–34]. The constant $C$ is
 independent of every property of the metric. The additive term $B$ may
 depend on $(X,d)$, $k$, and $s$, but not on the sequence or its length.

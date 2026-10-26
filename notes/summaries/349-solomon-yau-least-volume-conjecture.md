@@ -29,7 +29,7 @@ The comparison objects are the minimal Clifford products. The introduction names
 
 The Clifford products are minimal, and the threshold is the minimum over their volumes 
 
-> The two factors have opposite principal curvatures, whose weighted sum vanishes; these products are therefore minimal. For each integer \(m\ge2\), set \[ a_m=\min_{1\le k<m}\Vol_m(\mathcal C_k,m-k). \] The assertion that \(a_m\) is the first volume level above the equator is the least-volume question in Yau's collection \cite[Problem 31]Yau1994. The modern formulation in \cite[Conjecture 1.12(ii)]GeLi2021 calls it the Solomon–Yau conjecture. We prove this formulation with its full immersion scope. [S6:15–25]
+> The two factors have opposite principal curvatures, whose weighted sum vanishes; these products are therefore minimal. For each integer \(m\ge2\), set \[ a_m=\min_{1\le k<m}\mathrmVol_m(\mathcal C_k,m-k). \] The assertion that \(a_m\) is the first volume level above the equator is the least-volume question in Yau's collection \cite[Problem 31]Yau1994. The modern formulation in \cite[Conjecture 1.12(ii)]GeLi2021 calls it the Solomon–Yau conjecture. We prove this formulation with its full immersion scope. [S6:15–25]
 
 The theorem is the volume bound [S6:27–34]:
 

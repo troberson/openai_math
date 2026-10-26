@@ -16,13 +16,13 @@ parameters at every place. [S4:74–76]"
 
 The theorem [S5:15–38] says: for every imaginary quadratic field $K$
 and every elliptic curve $E/K$, there is an automorphic representation
-$\pi_E$ of $\GL_2(\mathbb A_K)$ whose local parameters match the $\ell$-adic
+$\pi_E$ of $\mathrm{GL}_2(\mathbb A_K)$ whose local parameters match the $\ell$-adic
 cohomology of $E$ at every place, and $L(E/K,s)=L(\pi_E,s-1/2)$.
 
 > **theorem**
 Let $K$ be an imaginary quadratic number field and $E/K$ an elliptic
 curve. There is an isobaric automorphic representation $\pi_E$ of
-$\GL_2(\mathbb A_K)$ with trivial central character and weight zero such that,
+$\mathrm{GL}_2(\mathbb A_K)$ with trivial central character and weight zero such that,
 for every prime $l$ and every isomorphism
 $\iota:\overline\mathbb Q_l\xrightarrow{\sim}\mathbb C$,
 \[
@@ -31,13 +31,13 @@ $\iota:\overline\mathbb Q_l\xrightarrow{\sim}\mathbb C$,
 \]
 At every finite place $v\nmid l$ one has
 \[
- \iota\WD\bigl(H^1_{\mathrm{\acute et}}(E_{\overline K},\overline\mathbb Q_l)
+ \iota\mathrmWD\bigl(H^1_{\mathrm{\acute et}}(E_{\overline K},\overline\mathbb Q_l)
                      |_{G_K_v}\bigr)^{\mathrmF-ss}
  \simeq
- \rec_K_v\bigl(\pi_E,v\otimes|\det|_v^-1/2\bigr).
+ \mathrmrec_K_v\bigl(\pi_E,v\otimes|\det|_v^-1/2\bigr).
 \]
 The unitary parameter at the complex place is
-$z\mapsto\diag(z/|z|,\overline z/|z|)$.
+$z\mapsto\mathrm{diag}(z/|z|,\overline z/|z|)$.
 In particular every local factor agrees, and
 \[
  L(E/K,s)=L(\pi_E,s-1/2).

@@ -117,7 +117,7 @@ The premise it assumes is the zero-plane manuscript's corollary [S12:74–83]:
 > \]
 > has universal Riemannian cover isometric to one of the following:
 > the round $S^4$ of sectional curvature $1$; Fubini--Study $\mathbb{CP}^2$ normalized
-> by $\Ric=3g$; or
+> by $\mathrm{Ric}=3g$; or
 > $S^2(1/\sqrt3)\times S^2(1/\sqrt3)$ with its product metric.
 > \end{assumption}
 
@@ -149,7 +149,7 @@ The organization names five sections and an appendix of exact polynomial certifi
 
 The L2 gap manuscript's energy is the trace-free Ricci energy, scale-invariant in dimension four 
 
-> For a Riemannian four-manifold $(M,g)$, let \[ E_g=\Ric_g-\frac{\Scal_g}4g, \qquad \mathcal D(g)=\int_M |E_g|_g^2\,d\mu_g. \] The tensor $E_g$ vanishes precisely when $g$ is Einstein, provided that $M$ is connected. The energy $\mathcal D$ is unchanged by constant rescaling in dimension four. It is therefore natural to ask whether a classification of Einstein metrics remains valid at the level of smooth manifolds when $\mathcal D$ is small. We address this question under nonnegative sectional curvature. [S12:59–69]
+> For a Riemannian four-manifold $(M,g)$, let \[ E_g=\mathrmRic_g-\frac{\mathrmScal_g}4g, \qquad \mathcal D(g)=\int_M |E_g|_g^2\,d\mu_g. \] The tensor $E_g$ vanishes precisely when $g$ is Einstein, provided that $M$ is connected. The energy $\mathcal D$ is unchanged by constant rescaling in dimension four. It is therefore natural to ask whether a classification of Einstein metrics remains valid at the level of smooth manifolds when $\mathcal D$ is small. We address this question under nonnegative sectional curvature. [S12:59–69]
 
 Its method is a smoothing argument that does not assume sectional curvature survives the flow 
 
@@ -157,7 +157,7 @@ Its method is a smoothing argument that does not assume sectional curvature surv
 
 Its smoothing step isolates a globally small high part of the curvature 
 
-> Smoothing from small critical curvature concentration was developed, in particular, by Chan, Chen, and Lee  . The formulation used here isolates a globally small _high part_ of the curvature. Consider a sequence $(M_j,g_j)$ satisfying the geometric hypotheses of Theorem   with $\mathcal D(g_j)\to0$. After normalization, nonnegative sectional curvature gives, for a fixed threshold $K_0$, \[ \left\lVert (|\Rm_g_j|-K_0)_+\right\rVert_L^2(g_j)\longrightarrow0. \] A moving threshold propagates this estimate. It yields both a uniform Sobolev inequality and noncollapse along each existing flow; a curvature-concentration contradiction then establishes a common lifespan. The same tail bound controls the evolving Einstein error. Thus the high-part formulation supplies both the regularization and the defect estimate needed for the gap argument. [S12:148–162]
+> Smoothing from small critical curvature concentration was developed, in particular, by Chan, Chen, and Lee  . The formulation used here isolates a globally small _high part_ of the curvature. Consider a sequence $(M_j,g_j)$ satisfying the geometric hypotheses of Theorem   with $\mathcal D(g_j)\to0$. After normalization, nonnegative sectional curvature gives, for a fixed threshold $K_0$, \[ \left\lVert (|\mathrmRm_g_j|-K_0)_+\right\rVert_L^2(g_j)\longrightarrow0. \] A moving threshold propagates this estimate. It yields both a uniform Sobolev inequality and noncollapse along each existing flow; a curvature-concentration contradiction then establishes a common lifespan. The same tail bound controls the evolving Einstein error. Thus the high-part formulation supplies both the regularization and the defect estimate needed for the gap argument. [S12:148–162]
 
 The L2 gap manuscript names the prior work it does not use, and names the companion as its premise 
 

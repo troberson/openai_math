@@ -13,7 +13,7 @@ $N\ge2$, resolving the threshold-bound-state conjecture; and for
 $\mathrm{SU}(2)$ a companion proves infinitely many normalizable
 positive-energy eigenstates with unbounded energies, contradicting the
 original BFSS paper's exclusion of additional bound states at
-$N=2$. The threshold manuscript's abstract "For every finite \(N\ge2\), we prove that undeformed \(\SU(N)\) BFSS matrix
+$N=2$. The threshold manuscript's abstract "For every finite \(N\ge2\), we prove that undeformed \(\mathrmSU(N)\) BFSS matrix
 quantum mechanics has exactly one normalizable zero-energy state after
 removing the center of mass. This establishes the threshold-bound-state
 conjecture. [S3:66–71]" The
@@ -40,9 +40,9 @@ threshold manuscript answers: exactly one, for every $N\ge2$
 > **theorem**
 For every integer \(N\ge2\),
 \[
-\dim\Ker H_N=1.
+\dim\mathrmker H_N=1.
 \]
-The kernel consists of \(\Spin(9)\)-invariant states and is even in the
+The kernel consists of \(\mathrmSpin(9)\)-invariant states and is even in the
 fermion grading just specified. [S4:74–81]
 
 That single state is the unique ground state of the relative model.
@@ -62,7 +62,7 @@ In particular, $\sigma_{\mathrm p}(H)\cap(0,\infty)$ is infinite. [S5:135–143]
 ## Graduate summary
 
 **The threshold proof's compactness mechanism.** The threshold
-manuscript reduces $\dim\Ker H_N = 1$ to a counting problem for the
+manuscript reduces $\dim\mathrm{ker} H_N = 1$ to a counting problem for the
 massive spectrum. The analytic core is a compactness argument: after
 local rescaling, any sequence with bounded energy concentrates on a
 finite number of scales, and local profiles satisfy a linearized

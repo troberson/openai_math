@@ -37,12 +37,13 @@ The second manuscript proves a structural transfer: the
 constraints pass from a base to the projectivization of any
 algebraic vector bundle of rank at least two 
 
-> Let $B$ be a smooth connected projective variety over $\mathbb C$, and
+> **theorem**
+Let $B$ be a smooth connected projective variety over $\mathbb C$, and
 let $E$ be an algebraic vector bundle of rank $r\geq2$ on $B$.
 Let $X=\mathbb P_B(E)$ parametrize one-dimensional subspaces of
 the fibers of $E$. Then
 \[
-                           \V(B)\ \Longrightarrow\ \V(X).
+                           \mathsf V(B)\ \Longrightarrow\ \mathsf V(X).
 \] [S12:36–45]
 
 The bundle need not split and satisfies no positivity condition;
@@ -65,7 +66,7 @@ and blowup center $S$ have smaller dimension . "The reduction has two stages. Fa
 the resulting family gives a degeneration
 \[
  X\rightsquigarrow U\cup_D\widetilde M,
- \qquad \widetilde M=\Bl_S M.
+ \qquad \widetilde M=\mathrmBl_S M.
 \]
 Here $U$ and $M$ are complete intersections of smaller defining degree,
 while the seam $D$ and blowup center $S$ have smaller dimension. We first prove the constraints for $\widetilde M$ from those for $M$ and projective-bundle towers over $S$. [S4:32–38]"
@@ -83,7 +84,7 @@ Hodge–Riemann positivity forces it to vanish [S4:40–52],
 [S6], [S7], [S9].
 
 **Projectivization transfer.** The transfer theorem
-$\V(B)\Rightarrow\V(X)$ for $X=\mathbb P_B(E)$ is stated over an
+$\mathsf V(B)\Rightarrow\mathsf V(X)$ for $X=\mathbb P_B(E)$ is stated over an
 arbitrary base and bundle [S12:36–45]. The proof builds a master
 space over the projective bundle [S13] and continues the
 constraints from each level [S14], so the result applies

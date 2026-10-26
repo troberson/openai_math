@@ -12,7 +12,7 @@ $n\ge2$ — for three dominant integral weights whose sum lies in the root
 lattice, an invariant at any common positive integral dilation already
 gives an invariant at the original weights, resolving the type-$D$ part
 of the simply-laced saturation conjecture. The manuscript's abstract
- "We prove the saturation conjecture for $\Spin(2n)$, $n\ge2$.
+ "We prove the saturation conjecture for $\mathrm{Spin}(2n)$, $n\ge2$.
 If three dominant integral weights sum to an element of the root lattice,
 then the existence of a nonzero tensor invariant after a positive integral
 dilation implies the existence of one at the original weights. [S3:48–53]"
@@ -33,7 +33,7 @@ assertion for all simply-laced groups [S4:29–31]; the manuscript proves
 its type-$D$ case 
 
 > **Theorem 1.1**
-Let $G=\Spin(2n)$, $n\ge2$, and let $\lambda,\mu,\nu$ be dominant
+Let $G=\mathrm{Spin}(2n)$, $n\ge2$, and let $\lambda,\mu,\nu$ be dominant
 integral weights such that $\lambda+\mu+\nu\in Q(D_n)$. Then, for every
 positive integer $N$,
 \[

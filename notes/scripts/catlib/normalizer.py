@@ -43,6 +43,10 @@ _OP_PATTERN = re.compile(r"\\operatorname(?![A-Za-z])")
 # nested braces (the common case: `\\newcommand{\\kk}[2]{\\text{#1 + #2}}`) is read whole.
 _NEWCOMMAND = re.compile(r"\\(?:re)?newcommand\s*")
 
+# A `\\DeclareMathOperator` / `\\DeclareMathOperator*` defines a math-mode operator. Its body
+# is the display text; the rendered form is `\\mathrm{body}`, which MathJax handles natively.
+_DECMATHOP = re.compile(r"\\DeclareMathOperator\*?\s*")
+
 
 def read_brace(text: str, pos: int) -> tuple[str, int] | None:
     """The balanced brace group whose `{` is at `pos`, as (inner, index-after-`}`).
@@ -70,8 +74,9 @@ def build_macro_table(preamble: str) -> dict[str, tuple[int, str]]:
     """Per-manuscript macro table: name -> (parameter count, body), from `\\newcommand`.
 
     The parameter count is 0 for the plain `\\newcommand{\\X}{body}` form and n for
-    `\\newcommand{\\X}[n]{body}`. Only the preamble is read, so a macro is never taken from the
-    body of a quoted statement where it is used, not defined.
+    `\\newcommand{\\X}[n]{body}`. `\\DeclareMathOperator` definitions are also collected:
+    their body is rendered as `\\mathrm{body}`. Only the preamble is read, so a macro is
+    never taken from the body of a quoted statement where it is used, not defined.
     """
     table: dict[str, tuple[int, str]] = {}
     for m in _NEWCOMMAND.finditer(preamble):
@@ -114,6 +119,22 @@ def build_macro_table(preamble: str) -> dict[str, tuple[int, str]]:
             if candidate is not None and inner[candidate[1]:].strip() == "":
                 inner = candidate[0]
         table[name] = (params, inner)
+    # `\\DeclareMathOperator{\\X}{body}` / `\\DeclareMathOperator*{\\X}{body}`: the operator's
+    # rendered form is `\\mathrm{body}`, which MathJax handles natively in math mode. No
+    # parameter count — `\DeclareMathOperator` defines a fixed operator, not a parameterized
+    # macro.
+    for m in _DECMATHOP.finditer(preamble):
+        i = m.end()
+        if i < len(preamble) and preamble[i] == "{":
+            group = read_brace(preamble, i)
+            if group is None:
+                continue
+            name, i = group
+            name = name.lstrip("\\")
+            body = read_brace(preamble, i)
+            if body is None:
+                continue
+            table[name] = (0, "\\mathrm{" + body[0] + "}")
     return table
 
 

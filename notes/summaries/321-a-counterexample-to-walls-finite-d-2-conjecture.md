@@ -29,10 +29,11 @@ finite $D(2)$ problem asks whether every such complex is homotopy
 equivalent to a finite two-dimensional complex, with no asphericity
 hypothesis imposed [S4:3–17]:
 
-> There is a finite connected three-dimensional CW complex $X$ such that
+> **theorem**
+There is a finite connected three-dimensional CW complex $X$ such that
 \[
- H_i(\widetilde X;\Z)=0\quad(i>2),\qquad
- H^3(X;M)=0\quadfor every \Z[\pi_1(X)]-module M,
+ H_i(\widetilde X;\mathbb Z)=0\quad(i>2),\qquad
+ H^3(X;M)=0\quadfor every \mathbb Z[\pi_1(X)]-module M,
 \]
 but $X$ is not homotopy equivalent to any finite CW complex of
 dimension at most two. [S4:19–27]
@@ -46,7 +47,7 @@ yet no finite two-dimensional complex is homotopy equivalent to it.
 **The obstruction.** The proof combines two independent ingredients.
 The geometric obstruction is a character-based criterion: for a
 connected finite two-dimensional complex $Y$, a character
-$\rho\colon\pi_1(Y)\to\C^\times$ determines a one-dimensional complex
+$\rho\colon\pi_1(Y)\to\mathbb C^\times$ determines a one-dimensional complex
 local system $L_\rho$, and if $H_2(Y;L_\rho)=0$ then
 $\rho(g)=1$ for every finite-order element $g\in\pi_1(Y)$. The proof
 lifts the argument to an infinite cyclic tower following the
@@ -97,7 +98,7 @@ models is conditional on a relation-gap assertion [S4:34–100].
 **Wall's finite $D(2)$ problem is answered negatively.** There exists
 a finite connected three-dimensional CW complex $X$ satisfying the
 $D(2)$ condition — no integral homology above degree two on the
-universal cover, and $H^3(X;M)=0$ for every $\Z[\pi_1(X)]$-module $M$
+universal cover, and $H^3(X;M)=0$ for every $\mathbb Z[\pi_1(X)]$-module $M$
 — that is not homotopy equivalent to any finite CW complex of
 dimension at most two [S4:19–27].
 

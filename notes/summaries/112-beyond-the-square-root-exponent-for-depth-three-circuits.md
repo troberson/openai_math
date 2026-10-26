@@ -39,7 +39,7 @@ polynomial-time language require more than $2^{A\sqrt n}$ gates for
 and its membership algorithm must be fixed before $A$ is chosen"
 [S4:10–11] — a family of languages, one per $A$, would be a weaker claim.
 
-The answer is yes: "there is a language $L\subseteq\bits^*$, a
+The answer is yes: "there is a language $L\subseteq\{0,1\}^*$, a
 deterministic Turing machine deciding $L$, and fixed positive integers
 $C,a$ such that the machine runs in time at most $C(n+1)^a$ on every input
 of length $n$", and the ratio $\log_2 S_3(f_n)/\sqrt n$ tends to infinity
@@ -55,11 +55,11 @@ sharing, unrestricted finite fan-in, free negations, and constants
 [S10:9].
 
 **The language** ([S7:15–46], `def:language`). For input length $n$, put
-$d=\floor{n/5}$; set $r=\ceil{d^{2/3}}$ and the largest even $t$ with
+$d=\left\lfloorn/5\right\rfloor$; set $r=\left\lceild^{2/3}\right\rceil$ and the largest even $t$ with
 $j^6\le d$ [S7:16–20]. The input parses into consecutive blocks: $d$ data
 bits, $d+r-1$ hash bits, $r$ polynomial coefficients, and $t$ blocks of
 $r$ bits encoding elements $\beta_0,\ldots,\beta_{t-1}$ of the quotient
-ring $R_P=\F_2[Z]/(P)$ [S7:24–33]. The hash is the linear Toeplitz map
+ring $R_P=\mathbb F_2[Z]/(P)$ [S7:24–33]. The hash is the linear Toeplitz map
 $h(x)=\sum_i h_i(x)Z^{i-1}$ built from the hash bits [S7:36–39], and $L$
 accepts exactly when $\lambda(\sum_{j=0}^{t-1}\beta_jh(x)^j)=0$, where
 $\lambda$ reads the degree-zero coefficient of the representative of
@@ -153,7 +153,7 @@ restrictions), `02_restriction` (A restriction bound independent of clause
 count), `03_sparse_partition` (A disjoint sparse partition of bounded-width
 CNFs), `04_construction` (One explicit language and its hard slices),
 `05_lower_bound` (The depth-three circuit lower bound), then the appendix
-`appendices/finite_fields` (Irreducible polynomials over $\F_2$) and
+`appendices/finite_fields` (Irreducible polynomials over $\mathbb F_2$) and
 `references` [S3:29–31]. The LaTeX sits under `build/latex/`, and the
 shipped PDF [S9] is `main.pdf` at the manuscript's top level.
 

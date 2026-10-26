@@ -67,7 +67,7 @@ For the Hamiltonian  , with the spin normalization above,
 gap to estimates on a transfer operator acting on a Hilbert space of
 boundary data. The periodic manuscript works with a compact
 self-adjoint spatial operator $X_b$ at inverse temperature $b$: the
-partition function is $\Tr(X_b^{2L})$, and the gap follows from
+partition function is $\mathrm{Tr}(X_b^{2L})$, and the gap follows from
 dominance of the top eigenvalue at high even moments [S4:144–190].
 The boundary-field manuscript works with a boundary pairing
 $\langle v_b, X_b^{2L} v_b \rangle$ for the opposite-field chain, then

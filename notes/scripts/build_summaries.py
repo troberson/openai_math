@@ -196,9 +196,40 @@ def _render_bibliography(sources: list[tuple[str, str, str]]) -> str:
 
 PREAMBLES: dict[str, str] = {}
 
+_INPUT_RE = re.compile(r"\\(?:input|include)\{([^}]+)\}")
+
+
+def _collect_preamble(base_path: pathlib.Path, text: str,
+                      seen: set[pathlib.Path], depth: int = 0) -> str:
+    """Collect the preamble text, following \\input/\\include directives.
+
+    Resolves input files relative to `base_path`'s directory. Each input file
+    contributes its text before `\\begin{document}` (or its full text if it has
+    none). A `seen` set prevents circular includes; `depth` caps recursion at 8.
+    """
+    if depth > 8:
+        return text
+    m = re.search(r"\\begin\{document\}", text)
+    pre = text[:m.start()] if m else text
+    parts = [pre]
+    for im in _INPUT_RE.finditer(pre):
+        name = im.group(1)
+        if not name.endswith(".tex"):
+            name += ".tex"
+        ipath = (base_path.parent / name).resolve()
+        if ipath in seen or not ipath.is_file():
+            continue
+        seen.add(ipath)
+        itext = ipath.read_text(encoding="utf-8", errors="replace")
+        parts.append(_collect_preamble(ipath, itext, seen, depth + 1))
+    return "\n".join(parts)
+
 
 def get_preamble(rel_path: str) -> str:
     """The manuscript preamble (text before \\begin{document}) for macro expansion.
+
+    Follows `\\input`/`\\include` directives so that macros defined in a separate
+    preamble file (e.g. `latex/common.tex`) are visible to the macro table.
 
     For non-LaTeX sources (README, .md, .lean, .bib, overview.tex), the preamble is
     empty — no macros to expand.
@@ -219,12 +250,12 @@ def get_preamble(rel_path: str) -> str:
             main_path = REPO / rec["main"]
             if main_path.is_file():
                 text = main_path.read_text(encoding="utf-8", errors="replace")
-                m = re.search(r"\\begin\{document\}", text)
-                PREAMBLES[rel_path] = text[:m.start()] if m else ""
+                seen = {main_path.resolve()}
+                PREAMBLES[rel_path] = _collect_preamble(main_path, text, seen)
                 return PREAMBLES[rel_path]
     text = p.read_text(encoding="utf-8", errors="replace")
-    m = re.search(r"\\begin\{document\}", text)
-    PREAMBLES[rel_path] = text[:m.start()] if m else ""
+    seen = {p.resolve()}
+    PREAMBLES[rel_path] = _collect_preamble(p, text, seen)
     return PREAMBLES[rel_path]
 
 

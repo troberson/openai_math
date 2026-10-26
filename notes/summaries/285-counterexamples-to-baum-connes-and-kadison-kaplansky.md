@@ -47,10 +47,11 @@ kernel class of infinite order. The other two construct torsion-free
 groups whose reduced $C^*$-algebras carry a projection: the second
 wants any projection $e$ with $0<\tau(e)<1$ 
 
-> There exist a finitely generated torsion-free discrete group \(\Gproj\)
-and a projection \(e\in C_r^*(\Gproj)\) such that
+> **theorem**
+There exist a finitely generated torsion-free discrete group \(G_{\mathrmproj}\)
+and a projection \(e\in C_r^*(G_{\mathrmproj})\) such that
 \[
- 0<\tau_{\Gproj}(e)<\frac12.
+ 0<\tau_{G_{\mathrmproj}}(e)<\frac12.
 \]
 In particular, \(e\) is neither zero nor the identity. [S6:13–21]
 
@@ -59,10 +60,11 @@ property that places its $K_0$-class outside the assembly image and so
 disproves the coefficient-free Baum--Connes conjecture directly
 
 
-> There exist a finitely generated discrete group \(\Gsur\) and a projection
-\(b_0\in C_r^*(\Gsur)\) with irrational canonical trace. Moreover,
+> **theorem**
+There exist a finitely generated discrete group \(G_{\mathrmsur}\) and a projection
+\(b_0\in C_r^*(G_{\mathrmsur})\) with irrational canonical trace. Moreover,
 \[
-[b_0]\notin\mu_0^{\Gsur}\bigl(K_0^{\Gsur}(\underline E\Gsur)\bigr).
+[b_0]\notin\mu_0^{G_{\mathrmsur}}\bigl(K_0^{G_{\mathrmsur}}(\underline EG_{\mathrmsur})\bigr).
 \]
 In particular, the coefficient-free reduced Baum–Connes conjecture for
 countable discrete groups is false. [S8:57–65]

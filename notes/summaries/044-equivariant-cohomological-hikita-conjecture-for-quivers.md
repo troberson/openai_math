@@ -30,12 +30,12 @@ tautological classes on the Higgs side and the equivariant parameters on
 the Coulomb side give a common coefficient ring.  The question is whether
 the relations among those coefficients agree. [S5:4–11]" For a finite quiver $Q$
 with vector spaces $V_i, W_i$, the gauge group is
-$G=\prod\GL(V_i)$ and the representation includes both arrow maps and
+$G=\prod\mathrm{GL}(V_i)$ and the representation includes both arrow maps and
 framing maps . "allowed.  Fix complex vector spaces $V_i,W_i$ of dimensions $v_i,w_i$, and put
 $$\label{eq:gauge-data}
- G=\prod_{i\in Q_0}\GL(V_i),\qquad
- N=\bigoplus_{a:i\to j}\Hom(V_i,V_j)
-       \oplus\bigoplus_{i\in Q_0}\Hom(V_i,W_i).$$ [S5:24–29]" A regular stability character $\nu$
+ G=\prod_{i\in Q_0}\mathrm{GL}(V_i),\qquad
+ N=\bigoplus_{a:i\to j}\mathrm{Hom}(V_i,V_j)
+       \oplus\bigoplus_{i\in Q_0}\mathrm{Hom}(V_i,W_i).$$ [S5:24–29]" A regular stability character $\nu$
 makes the semistable locus stable with free gauge action, producing a
 smooth Nakajima variety $X$. The theorem 
 

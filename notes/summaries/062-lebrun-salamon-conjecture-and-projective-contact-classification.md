@@ -96,10 +96,10 @@ follows from the twistor construction
 
 > **Theorem 1.4**
 Let $(M^{4m},g)$ be a closed connected smooth Riemannian manifold,
-where $m\geq2$, with holonomy contained in $\Sp(m)\Sp(1)$ in the
+where $m\geq2$, with holonomy contained in $\mathrm{Sp}(m)\mathrm{Sp}(1)$ in the
 standard representation and with positive scalar curvature. Then
 \[
- \nabla\Rm_g=0.
+ \nabla\mathrmRm_g=0.
 \]
 Moreover, $(M,g)$ is homothetic to a compact symmetric positive
 quaternionic-Kähler Wolf space. [S3:105–114]

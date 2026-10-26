@@ -9,7 +9,7 @@
 The release's blurb [S1:7699] and the catalog abstract [S2:720] state
 the family's claim: the degreewise finiteness question of Hovey and
 Hovey--Strickland is answered — every homotopy group of the
-$K(n)$-local sphere is a finitely generated $\Zp$-module, for every
+$K(n)$-local sphere is a finitely generated $\mathbb Z_p$-module, for every
 prime, positive height, and integer degree; and the same conclusion
 holds after $K(n)$-localizing any finite $p$-local spectrum. The
 manuscript's abstract "We prove that the homotopy groups of the $K(n)$-local sphere are finitely
@@ -25,24 +25,25 @@ homotopy theory, and $L_{K(n)}S$ is the $K(n)$-local sphere. The basic
 finiteness questions in this setting ask whether the homotopy groups
 of such a localized spectrum are "small" — in particular, whether each
 individual group, in each individual integer degree, is a finitely
-generated module over the $p$-adic integers $\Zp$. The difficulty is
+generated module over the $p$-adic integers $\mathbb Z_p$. The difficulty is
 that $K(n)$-local spectra are not connective, so a degree-by-degree
 finiteness statement must control *every* integer degree at once, with
 no assumption that the negative groups vanish. The manuscript proves
 the degreewise version for the sphere [S4:3–11]:
 
-> For every prime $p$, every integer $n\geq 1$, and every integer $t$,
-the $\Zp$-module
+> **theorem**
+For every prime $p$, every integer $n\geq 1$, and every integer $t$,
+the $\mathbb Z_p$-module
 \[
                  \pi_t L_K(n)S_p^\wedge
 \]
 is finitely generated. Equivalently, for every finite $p$-local
 spectrum $F$, the module $\pi_t L_{K(n)}F$ is finitely generated
-over $\Zp$ in every integer degree $t$. [S4:13–22]
+over $\mathbb Z_p$ in every integer degree $t$. [S4:13–22]
 
 The equivalent form — applying $L_{K(n)}$ to *any* finite $p$-local
 spectrum $F$ — follows because finite generation over the Noetherian
-ring $\Zp$ is preserved by kernels, cokernels, and extensions, so the
+ring $\mathbb Z_p$ is preserved by kernels, cokernels, and extensions, so the
 sphere case extends to all finite spectra through finite cofiber
 sequences, suspensions, and retracts.
 
@@ -53,8 +54,8 @@ finiteness theorem for the continuous cohomology of the ordinary
 stabilizer group $P_n$ of a height-$n$ formal group over a finite
 field. The coefficients carry their compact deformation-parameter
 topology, and the assertion is
-$H^a_{\cts}(P_n;(E_n)_{2t}/p)$ is finite for every $a\ge0$ and
-$t\in\Z$; the proof retains a precise larger allowed class — integer
+$H^a_{\mathrm{cts}}(P_n;(E_n)_{2t}/p)$ is finite for every $a\ge0$ and
+$t\in\mathbb Z$; the proof retains a precise larger allowed class — integer
 powers of the periodicity line tensored with functions on whole finite
 tuples of division points, with Frobenius-powered coordinates, under
 finite sums, tensor products, equivariant summands, and finite
@@ -63,7 +64,7 @@ Galois quotient from $P_n$ to the extended stabilizer preserves
 degreewise finiteness, Morava descent for the Moore spectrum $S/p$ has
 finite second-page entries, a horizontal vanishing line on a finite
 page leaves finitely many entries in each limiting stem, and compact
-Nakayama then promotes finiteness modulo $p$ to $\Zp$-finite
+Nakayama then promotes finiteness modulo $p$ to $\mathbb Z_p$-finite
 generation [S4:35–69].
 
 **The open-stratum argument.** Coefficient finiteness is proved by
@@ -75,7 +76,7 @@ kernel and cokernel; it remains to prove the open-stratum cohomology is
 countable, so that the original is compact Hausdorff and countable,
 hence finite. The geometric input is the completed marking tower,
 whose quotient by $G$ is the space of independent $r$-tuples in
-$H^1(\cO(-1/m))$ on the relative Fargues--Fontaine curve. Uniform
+$H^1(\mathcal O(-1/m))$ on the relative Fargues--Fontaine curve. Uniform
 Kummer calculations and deletion of dependent tuples make the
 equivariant compact-support cohomology finite, and invariant algebraic
 functions on the tower are constants, which fixes a single Cartier
@@ -110,12 +111,12 @@ finiteness needed at each height [S4:35–188].
 
 **The $K(n)$-local sphere is degreewise finitely generated.** For every
 prime $p$, every $n\ge1$, and every integer $t$,
-$\pi_t L_{K(n)}S_p^\wedge$ is a finitely generated $\Zp$-module
+$\pi_t L_{K(n)}S_p^\wedge$ is a finitely generated $\mathbb Z_p$-module
 [S4:13–22].
 
 **The conclusion extends to all finite $p$-local spectra.** For every
 finite $p$-local spectrum $F$ and every integer $t$,
-$\pi_t L_{K(n)}F$ is finitely generated over $\Zp$; the equivalence is
+$\pi_t L_{K(n)}F$ is finitely generated over $\mathbb Z_p$; the equivalence is
 a consequence of the Noetherian preservation of finite generation under
 kernels, cokernels, and extensions [S3:8–14].
 

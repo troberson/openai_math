@@ -27,8 +27,9 @@ determined by the resulting closed manifold, up to orientation. In
 other words, the knot's exterior encodes its filling slope in the
 oriented manifold it produces [S4:3–11]:
 
-> Let $K\subset S^3$ be a smooth nontrivial knot. For any
-$r,s\in\Q\cup\{\infty\}$, an orientation-preserving homeomorphism
+> **theorem**
+Let $K\subset S^3$ be a smooth nontrivial knot. For any
+$r,s\in\mathbb Q\cup\{\infty\}$, an orientation-preserving homeomorphism
 \[
  S^3_r(K)\cong S^3_s(K)
 \]
@@ -98,7 +99,7 @@ crossings and for the one-cusped SnapPy census [S4:31–103].
 
 **The purely cosmetic surgery conjecture is true for knots in
 $S^3$.** For any smooth nontrivial knot $K\subset S^3$ and any two
-slopes $r,s\in\Q\cup\{\infty\}$, an orientation-preserving
+slopes $r,s\in\mathbb Q\cup\{\infty\}$, an orientation-preserving
 homeomorphism $S^3_r(K)\cong S^3_s(K)$ implies $r=s$. The statement
 includes the meridional slope and does not require the homeomorphism
 to preserve a surgery core or the knot exterior [S4:13–20].

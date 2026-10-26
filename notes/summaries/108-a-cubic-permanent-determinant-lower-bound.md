@@ -53,9 +53,9 @@ permanent over $\mathbb C$ requires $\Omega(m^3)$ vertices and edges.
 
 **Main theorem** ([S4:41–49], `thm:main`). "There exist absolute
 constants $c>0$ and $m_0$ such that, for every integer $m\ge m_0$,
-$\bar{dc}(\per_m)\ge c m^3$. One may take $c=1/(5\,529\,600e)$ and
+$\bar{dc}(\mathrm{per}_m)\ge c m^3$. One may take $c=1/(5\,529\,600e)$ and
 $m_0=1408$" [S4:43–49]. The same numerical lower bound holds for exact
-determinantal complexity [S4:52]. Over $\mathbb C$, computing $\per_m$
+determinantal complexity [S4:52]. Over $\mathbb C$, computing $\mathrm{per}_m$
 requires $\Omega(m^3)$ vertices and $\Omega(m^3)$ edges in an
 affine-linear algebraic branching program, including coefficientwise
 limits [S4:55–60].
@@ -63,9 +63,9 @@ limits [S4:55–60].
 **Proof strategy** ([S4:154–257]). The construction seeks an affine
 restriction of a permanent of size proportional to $k$ that has degree
 proportional to $k$ in quadratically many variables and has a smooth
-projective zero set [S4:156–158]. With $D=\diag(\theta_1,\ldots,\theta_k)$
+projective zero set [S4:156–158]. With $D=\mathrm{diag}(\theta_1,\ldots,\theta_k)$
 and $q=\lfloor(k-1)/3\rfloor$, the coefficient polynomial
-$G_D(X)=[s^qt^q]\per_k(X+sI+tD)$ is homogeneous of degree
+$G_D(X)=[s^qt^q]\mathrm{per}_k(X+sI+tD)$ is homogeneous of degree
 $r=k-2q$ in the $k^2$ entries of $X$, with $T=\binom{q+2}{2}$ quadratic
 in $k$ [S4:160–168]. A linear subspace of dimension quadratic in the
 auxiliary matrix size is identified on which the zero hypersurface is
@@ -83,7 +83,7 @@ characteristic [S4:79]. **Grenet** gave the upper bound
 $2^m-1$ via a subset-indexed branching program [S4:82–84].
 
 For the border model, **Landsberg, Manivel, and Ressayre** proved
-$\bar{dc}(\per_m)\ge m^2/2$ by studying hypersurfaces with degenerate
+$\bar{dc}(\mathrm{per}_m)\ge m^2/2$ by studying hypersurfaces with degenerate
 duals [S4:96–98]. **This paper raises the exponent from two to three**
 in that same model [S4:99].
 
@@ -119,7 +119,7 @@ a proof.
 - **Cubic exact determinantal complexity.** The same numerical lower
   bound holds for exact determinantal complexity [S4:52].
 - **Cubic algebraic branching program complexity.** Computing
-  $\per_m$ over $\mathbb C$ requires $\Omega(m^3)$ vertices and
+  $\mathrm{per}_m$ over $\mathbb C$ requires $\Omega(m^3)$ vertices and
   $\Omega(m^3)$ edges in affine-linear algebraic branching programs,
   including coefficientwise limits with fixed budget
   [S4:55–60].

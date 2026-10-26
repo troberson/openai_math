@@ -12,7 +12,7 @@ The release's blurb for family 346
 
 The first manuscript's abstract 
 
-> Brena, Decio, and De Lellis \cite[Conjectures 1.1 and 1.2]BDD2025 separate the dimension bound from the weaker assertion $\Hh^m(\Sing V)=0$. The latter Euclidean assertion is proved in _Almost-everywhere regularity of stationary integral varifolds_  , which we henceforth call AE. Our proof uses AE's signed-excess theorem and local estimates from its fitting and frequency arguments. [S6:104–109]
+> Brena, Decio, and De Lellis \cite[Conjectures 1.1 and 1.2]BDD2025 separate the dimension bound from the weaker assertion $\mathcal H^m(\mathrm{Sing} V)=0$. The latter Euclidean assertion is proved in _Almost-everywhere regularity of stationary integral varifolds_  , which we henceforth call AE. Our proof uses AE's signed-excess theorem and local estimates from its fitting and frequency arguments. [S6:104–109]
 
 The second manuscript's abstract 
 
@@ -40,7 +40,7 @@ A stationary integral varifold is a measure-theoretic minimal surface with integ
 
 A point is regular when a neighborhood of it contains a smooth embedded minimal submanifold whose support equals the varifold's support there and whose weight is a constant integer multiple; the remaining support points are the singular set 
 
-> A point $p\in\spt\mu\cap U$ is _regular_ if some neighborhood $W$ of $p$ contains a smooth embedded minimal $m$-submanifold $\Sigma$, without boundary in $W$, such that $\spt\mu\cap W=\Sigma$ and $V\llcorner W=q|\Sigma|$ for a positive integer $q$. We denote the remaining support points by $\Sing V$. Thus regularity includes equality of the local support with one embedded submanifold, not merely a smooth parametrization on a set of full measure. [S6:21–28]
+> A point $p\in\mathrm{spt}\mu\cap U$ is _regular_ if some neighborhood $W$ of $p$ contains a smooth embedded minimal $m$-submanifold $\Sigma$, without boundary in $W$, such that $\mathrm{spt}\mu\cap W=\Sigma$ and $V\llcorner W=q|\Sigma|$ for a positive integer $q$. We denote the remaining support points by $\mathrm{Sing} V$. Thus regularity includes equality of the local support with one embedded submanifold, not merely a smooth parametrization on a set of full measure. [S6:21–28]
 
 The second manuscript proves the measure-zero statement [S11:26–33]:
 
@@ -55,7 +55,7 @@ The second manuscript proves the measure-zero statement [S11:26–33]:
 
 The first manuscript proves the sharp dimension bound, and its regularity definition is stronger: regularity requires equality of the local support with one embedded submanifold, not merely a smooth parametrization on a set of full measure 
 
-> A point $p\in\spt\mu\cap U$ is _regular_ if there are a neighborhood $W$ of $p$, a smooth embedded minimal $m$-submanifold $\Sigma\subset W$, and an integer $q\geq1$ such that the restriction of the varifold to $W$ is $q|\Sigma|$. The remaining support points form $\mathrm{Sing}V$. [S11:21–24]
+> A point $p\in\mathrm{spt}\mu\cap U$ is _regular_ if there are a neighborhood $W$ of $p$, a smooth embedded minimal $m$-submanifold $\Sigma\subset W$, and an integer $q\geq1$ such that the restriction of the varifold to $W$ is $q|\Sigma|$. The remaining support points form $\mathrm{Sing}V$. [S11:21–24]
 
 The main theorem is the dimension bound [S6:32–38]:
 
@@ -97,20 +97,20 @@ The first manuscript separates the two assertions and cites the second manuscrip
 
 > Brena, Decio, and De Lellis \cite[Conjectures~1.1 and~1.2]{BDD2025}
 > separate the dimension bound from the weaker assertion
-> $\Hh^m(\Sing V)=0$. The latter Euclidean assertion is proved in
+> $\mathcal H^m(\mathrm{Sing} V)=0$. The latter Euclidean assertion is proved in
 > \emph{Almost-everywhere regularity of stationary integral varifolds}
 > \cite{AE}, which we henceforth call AE. Our proof uses AE's signed-excess
 > theorem and local estimates from its fitting and frequency arguments.
 
 The first manuscript states that the almost-everywhere conclusion is not an input to its proof 
 
-> The elliptic correction of the averaged graph in \cite[Sections 6.3–6.4]BDLF2025 is an antecedent of this fitting construction. The almost-everywhere regularity conclusion itself is not an input: a set can have zero $\Hh^m$ measure and still have Hausdorff dimension greater than $m-1$. [S6:110–114]
+> The elliptic correction of the averaged graph in \cite[Sections 6.3–6.4]BDLF2025 is an antecedent of this fitting construction. The almost-everywhere regularity conclusion itself is not an input: a set can have zero $\mathcal H^m$ measure and still have Hausdorff dimension greater than $m-1$. [S6:110–114]
 
 The prior literature is the Allard–Federer–Simon tradition. Allard's compactness and regularity theory gives a relatively open dense regular set; the dimension-reduction method leads to the classical stratification by translation symmetries of tangent cones, and for stationary integral varifolds the set of points admitting no planar tangent has dimension at most $m-1$. Naber and Valtorta proved rectifiability of these strata for integral varifolds with bounded mean curvature, so the remaining difficulty is the singular set at higher-multiplicity planar tangents, where Allard's multiplicity-one theorem does not apply [S6:47–58]. For area-minimizing integral currents, Almgren gives the $m-2$ bound in arbitrary codimension, and De Lellis–Spadaro's multiple-valued, center-manifold, frequency analysis explains subtracting a well-chosen smooth center before normalizing the height — but their theorems do not apply to arbitrary stationary integral varifolds, and the crossing example prevents the same bound in this setting [S6:59–68]. The manuscript names Hirsch–Spolaor's $m-1$ bound for two-valued stationary Lipschitz graphs and their almost-everywhere regularity for stationary codimension-one integral currents with density at most two, Krummel–Minter–Wickramasekera's bounds at controlled densities under an explicit epsilon-regularity assumption, Brakke's $C^{1,\alpha}$ rectifiability, Menne's second-order rectifiability, Brena–De Lellis–Franceschini's smooth rectifiability and Kolasiński's independent proof, and De Lellis–Hirsch–Lihn–Spolaor's stationary varifolds with planar tangents and infinite local topology in non-Euclidean metrics [S6:72–102].
 
 The first manuscript's proof runs by contradiction on the dimension bound [S6:120–135]:
 
-> Suppose that $\dim_{\Hh}\Sing V>m-1$ and choose an exponent $s$ strictly between these two numbers. A first dimension-reduction argument produces a singular point, placed at the origin, an integer $Q$, and radii $L_i\downarrow0$ for which the rescaled varifolds converge to the multiplicity-$Q$ plane. At these same scales there are nonzero measures $\sigma_i$ carried by density-$Q$ points in a fixed compact ball, with mass bounded above and away from zero and the estimate \[ \sigma_i(\mathbf B_r(x))\le Cr^s. \] Here $\mathbf B_r(x)$ is an ambient Euclidean ball. The limiting measure of centers cannot be carried by an $(m-1)$-plane. This first reduction, proved in Section  , is the familiar geometric starting point of dimension reduction; the challenge is to retain these centers in a further, height-normalized limit. [S6:121–135]
+> Suppose that $\dim_{\mathcal H}\mathrm{Sing} V>m-1$ and choose an exponent $s$ strictly between these two numbers. A first dimension-reduction argument produces a singular point, placed at the origin, an integer $Q$, and radii $L_i\downarrow0$ for which the rescaled varifolds converge to the multiplicity-$Q$ plane. At these same scales there are nonzero measures $\sigma_i$ carried by density-$Q$ points in a fixed compact ball, with mass bounded above and away from zero and the estimate \[ \sigma_i(\mathbf B_r(x))\le Cr^s. \] Here $\mathbf B_r(x)$ is an ambient Euclidean ball. The limiting measure of centers cannot be carried by an $(m-1)$-plane. This first reduction, proved in Section  , is the familiar geometric starting point of dimension reduction; the challenge is to retain these centers in a further, height-normalized limit. [S6:121–135]
 
 The four further stages are the new parts 
 
@@ -122,7 +122,7 @@ Second, the linearized-measures section passes the first variations and signed e
 
 Third, the density-centers section supplies the curvature-corrected comparison 
 
-> Third, the density of the points carrying $\sigma_i$ must still be visible after division by $a_i^2$. Ordinary uncorrected radial comparison does not provide that precision on curved reference graphs. Section   uses geodesic radial fields weighted by the inverse reference-volume density. The resulting curvature error can be averaged against $\sigma_i$ at every radius down to zero. For a fixed $l>0$, its decisive integral is \[ \int_0^l t^s-m\,\dd t<\infty, \] which holds exactly when $s>m-1$. The centered first-moment estimate then removes the translation terms and yields a density comparison at every limiting center. [S6:159–171]
+> Third, the density of the points carrying $\sigma_i$ must still be visible after division by $a_i^2$. Ordinary uncorrected radial comparison does not provide that precision on curved reference graphs. Section   uses geodesic radial fields weighted by the inverse reference-volume density. The resulting curvature error can be averaged against $\sigma_i$ at every radius down to zero. For a fixed $l>0$, its decisive integral is \[ \int_0^l t^s-m\,\mathrm d t<\infty, \] which holds exactly when $s>m-1$. The centered first-moment estimate then removes the translation terms and yields a density comparison at every limiting center. [S6:159–171]
 
 Finally, the dimension-reduction section closes the contradiction 
 

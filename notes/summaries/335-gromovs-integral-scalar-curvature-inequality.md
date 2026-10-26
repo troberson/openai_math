@@ -15,11 +15,11 @@ companion manuscripts. The first proves the integral bound
 For every dimension \(n\ge3\), there is a constant \(a_n>0\), depending
 only on \(n\), such that
 \[
-  \int_M(\Scal_g^-)^n/2\,dV_g\ge a_n\|M\|
+  \int_M(\mathrmScal_g^-)^n/2\,dV_g\ge a_n\|M\|
 \]
 for every closed connected oriented smooth \(n\)-manifold \(M\) and every
 smooth Riemannian metric \(g\). Here
-\(\Scal_g^-:=\max\{0,-\Scal_g\}\), and \(\|M\|\) is real simplicial volume.
+\(\mathrmScal_g^-:=\max\{0,-\mathrmScal_g\}\), and \(\|M\|\) is real simplicial volume.
 The proof uses the nonnegative-scalar-curvature vanishing theorem of the
 companion paper on rational inessentiality. [S3:49–61]"
 The second proves the rational-inessentiality theorem on which the
@@ -40,7 +40,7 @@ For every integer \(n\ge3\), there is a constant \(a_n>0\), depending
 only on \(n\), such that every closed connected oriented smooth
 \(n\)-manifold \(M\) and every smooth Riemannian metric \(g\) on \(M\)
 satisfy
-$$\int_M(\Scal_g^-)^{n/2}\,dV_g\ge a_n\|M\|.
+$$\int_M(\mathrm{Scal}_g^-)^{n/2}\,dV_g\ge a_n\|M\|.
   \label{eq:main}$$ [S4:67–77]
 
 The constant $a_n$ is uniform over the topology of $M$ and over all its
@@ -58,7 +58,7 @@ Yamabe minimizer in every conformal class to have negative scalar
 curvature. Normalizing it to scalar curvature $-1$, Hölder's inequality
 bounds the volume of this normalized metric by the integral for the
 original metric, reducing the problem to proving
-$\|M\|\le C_n\Vol_g(M)$ when $\Scal_g=-1$ [S4:90–203].
+$\|M\|\le C_n\mathrm{Vol}_g(M)$ when $\mathrm{Scal}_g=-1$ [S4:90–203].
 
 **The detector and the graph construction.** Bounded cohomology
 supplies a cocycle of supremum norm at most one whose value on the
@@ -79,7 +79,7 @@ boundaries can be singular; the residual map is moved away from the
 target near the singular region. The final transfer construction
 connects the cocycle integral to these degrees through Gaifullin's
 reflected permutohedral realization, producing the bound
-$I\le C_n\int\rho\le C_n\Vol_g(M)$ [S4:90–203].
+$I\le C_n\int\rho\le C_n\mathrm{Vol}_g(M)$ [S4:90–203].
 
 **The rational-inessentiality proof.** The companion manuscript
 converts a cohomology pairing into a local degree by adding a parameter
@@ -120,7 +120,7 @@ minimal-surface method and the Gromov–Lawson Dirac-operator method [S6:258–3
 
 **Gromov's integral scalar-curvature inequality is proved.** For every
 $n\ge3$ there is a constant $a_n>0$ such that
-$\int_M(\Scal_g^-)^{n/2}\,dV_g\ge a_n\|M\|$ for every closed connected
+$\int_M(\mathrm{Scal}_g^-)^{n/2}\,dV_g\ge a_n\|M\|$ for every closed connected
 oriented smooth $n$-manifold and every smooth metric [S4:67–77].
 
 **The Gromov–Lawson aspherical conjecture is resolved.** No closed

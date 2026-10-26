@@ -75,15 +75,15 @@ of $Q_2$ are replaced by the filling of $S_2$ in two ways: in one every
 boundary identification is the same, and in the other the gluing is
 twisted by the double-cover deck involution according to a nonzero
 linear functional on the label group. Both give closed manifold models
-of $Q_2$ realizing two subgroups of $\Out(\Pi)$ — the horizontal
+of $Q_2$ realizing two subgroups of $\mathrm{Out}(\Pi)$ — the horizontal
 subgroup $\mathsf A$ on $M$ and the graph subgroup $\mathsf B_\ell$ on
-$N$ — and the subgroups are not conjugate in $\Out(\Pi)$ because they
+$N$ — and the subgroups are not conjugate in $\mathrm{Out}(\Pi)$ because they
 contain different numbers of elements admitting finite-order lifts to
-$\Aut(\Pi)$. The final step proves $\Out(\Pi)$ is finite (a uniform bound
+$\mathrm{Aut}(\Pi)$. The final step proves $\mathrm{Out}(\Pi)$ is finite (a uniform bound
 on square grids makes the support cubulation hyperbolic, and Poincaré
 duality with the homological Shapiro lemma excludes the virtually cyclic
 splittings an infinite outer group would force) and gives the normalizer
-equality $N_{\Out(\Pi)}(\mathsf A)=\mathsf A\times\langle\delta\rangle$;
+equality $N_{\mathrm{Out}(\Pi)}(\mathsf A)=\mathsf A\times\langle\delta\rangle$;
 together with the absence of $\delta$ on $M$ this makes $\mathsf A$ a
 Sylow $2$-subgroup of the realized outer automorphisms, so any
 homeomorphism $M\to N$ would force the forbidden conjugacy

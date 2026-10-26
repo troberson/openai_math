@@ -31,7 +31,8 @@ half-dimensional fibers. The numerical condition by itself supplies
 neither sections nor control of their base locus. [S5:15–23]" The strong SYZ conjecture (Verbitsky) asks whether every
 such line bundle is semiample. The theorem 
 
-> Let $X$ be a compact irreducible holomorphic symplectic Kähler
+> **theorem**
+Let $X$ be a compact irreducible holomorphic symplectic Kähler
 manifold of complex dimension $2n$, where $n\ge1$. If a holomorphic
 line bundle $L$ satisfies
 \[
@@ -62,7 +63,8 @@ with the boundedness of Lagrangian-fibered symplectic varieties
 (Engel–Filipazzi–Greer–Mauri–Svaldi) gives finiteness of smooth
 deformation types in dimension $2n$ with $b_2\ge5$ 
 
-> For each integer $n\ge1$, there are only finitely many smooth
+> **corollary**
+For each integer $n\ge1$, there are only finitely many smooth
 deformation types of compact irreducible holomorphic symplectic
 Kähler manifolds of complex dimension $2n$ with $b_2\ge5$.
 \endcorollary
@@ -75,7 +77,8 @@ Engel–Filipazzi–Greer–Mauri–Svaldi  . [S5:57–65]
 be projective space, with no codimension-one multiple
 fibers 
 
-> In Theorem  , assume additionally that $X$ is projective,
+> **corollary**
+In Theorem  , assume additionally that $X$ is projective,
 and let $f:X\to B$ be the associated connected-fiber map furnished there.
 Then $B\simeq\mathbb P^n_{\mathbb C}$. Moreover, there do not exist a prime
 divisor $D\subset B$, an effective divisor $E$ on $X$, and an integer

@@ -21,9 +21,9 @@ valuation ideals. For a closed point \(x\) of an \(n\)-dimensional
 normal complex variety that is klt near \(x\), with zero boundary,
 it is
 \[
- \nvol(x,X)=\inf_v centered at x A_X(v)^n\vol(v).
+ \widehat{\operatornamevol}(x,X)=\inf_v centered at x A_X(v)^n\mathrmvol(v).
 \]
-Here \(A_X(v)\) is log discrepancy, and \(\vol(v)\) is the
+Here \(A_X(v)\) is log discrepancy, and \(\mathrmvol(v)\) is the
 leading colength of the ideals \(\{f:v(f)\ge t\}\), multiplied by
 \(n!\). Section   gives the precise conventions for
 real valuations, including infinite discrepancy. In dimension \(n\),
@@ -40,17 +40,18 @@ attained exactly at smooth points. The ordinary double point gap
 conjecture predicts the next largest: $2(n-1)^n$, characterizing the
 ordinary double point. The theorem 
 
-> Let \(n\ge2\), and let \(x\) be a
+> **theorem**
+Let \(n\ge2\), and let \(x\) be a
 singular closed point of a normal complex algebraic \(n\)-fold \(X\).
-Suppose that \(K_X\) is \(\QQ\)-Cartier and that \(X\) is klt near \(x\),
+Suppose that \(K_X\) is \(\mathbb Q\)-Cartier and that \(X\) is klt near \(x\),
 with zero boundary. Then
 \[
-                    \nvol(x,X)\le2(n-1)^n.
+                    \widehat{\operatornamevol}(x,X)\le2(n-1)^n.
 \]
 Equality holds if and only if
 \[
  (X,x)_{\mathrman}\cong
- \left(\{z_0^2+\cdots+z_n^2=0\}\subset\CC^n+1,0\right).
+ \left(\{z_0^2+\cdots+z_n^2=0\}\subset\mathbb C^n+1,0\right).
 \] [S5:33–46]
 
 The point need not be isolated in the singular locus, and no
@@ -84,16 +85,17 @@ the hypotheses [S5:84–98].
 Li–Miao's smooth classification gives global volume bounds for
 K-semistable $\mathbb{Q}$-Fano varieties 
 
-> Let \(V\) be an \(n\)-dimensional
-K-semistable \(\QQ\)-Fano variety, where \(n\ge2\).
+> **corollary**
+Let \(V\) be an \(n\)-dimensional
+K-semistable \(\mathbb Q\)-Fano variety, where \(n\ge2\).
 If \(V\) is singular, then
 \[
        (-K_V)^n\le
        2\left(\fracn^2-1n\right)^n<2n^n.
 \]
-If \(V\not\cong\PP^n\), then \((-K_V)^n\le2n^n\), with equality
-precisely when \(V\) is a smooth quadric \(Q^n\subset\PP^n+1\) or
-\(\PP^1\times\PP^n-1\). These two descriptions coincide for \(n=2\). [S5:64–75]
+If \(V\not\cong\mathbb P^n\), then \((-K_V)^n\le2n^n\), with equality
+precisely when \(V\) is a smooth quadric \(Q^n\subset\mathbb P^n+1\) or
+\(\mathbb P^1\times\mathbb P^n-1\). These two descriptions coincide for \(n=2\). [S5:64–75]
 
 The singular bound $2((n^2-1)/n)^n$ is strictly below $2n^n$,
 improving the smooth classification for singular Fano varieties.
@@ -126,17 +128,17 @@ surfaces, Liu–Xu for threefolds, Liu for local complete
 intersections in all dimensions, and Moragá–Süss for toric
 germs . "The unrestricted low-dimensional cases precede the present induction.
 For surfaces, Li–Liu's calculation
-\(\nvol(0,\CC^2/G)=4/|G|\) for finite groups acting freely in
+\(\widehat{\operatornamevol}(0,\mathbb C^2/G)=4/|G|\) for finite groups acting freely in
 codimension one, together with the quotient classification, gives
 the bound and its equality case
 \cite[Proposition 4.10]LL19. Liu–Xu proved the threefold theorem
 for arbitrary klt germs \cite[Theorem 1.3]LX19.
 In higher dimensions, Liu proved the conjecture for local complete
-intersections \cite[Theorem 1.3]Liu22. For singular \(\QQ\)-Gorenstein toric germs,
+intersections \cite[Theorem 1.3]Liu22. For singular \(\mathbb Q\)-Gorenstein toric germs,
 Moraga–Süß\ proved the different sharp bound
-\(\nvol\le(16/27)n^n\) for \(n\ge3\), with equality precisely
+\(\widehat{\operatornamevol}\le(16/27)n^n\) for \(n\ge3\), with equality precisely
 for the product of a three-dimensional ordinary double point and
-\(\CC^n-3\); in dimension two the bound is \(2\), with equality
+\(\mathbb C^n-3\); in dimension two the bound is \(2\), with equality
 at the surface ordinary double point
 \cite[Theorem 2]MoragaSuess24. The fourfold companion supplies
 the remaining base case used here; the higher-dimensional argument

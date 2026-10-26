@@ -40,7 +40,7 @@ For every sufficiently large prime $p$, there is a connective
 $p$-complete spectrum $X$ of exact fp-type two such that, for a
 standard form of $\mathrm{BP}\langle2\rangle_p^\wedge$,
 \[
- X\notin\Thick(\mathrmBP\langle2\rangle_p^\wedge).
+ X\notin\mathrmThick(\mathrmBP\langle2\rangle_p^\wedge).
 \]
 The same spectrum satisfies
 \[
@@ -117,7 +117,7 @@ local pieces is complex enough to escape finite construction
 **The Hahn--Wilson conjecture is false at height two.** For every
 sufficiently large prime $p$, there is a connective $p$-complete
 spectrum $X$ of exact fp-type two with
-$X\notin\Thick(\mathrm{BP}\langle2\rangle_p^\wedge)$ for the standard form of
+$X\notin\mathrm{Thick}(\mathrm{BP}\langle2\rangle_p^\wedge)$ for the standard form of
 $\mathrm{BP}\langle2\rangle_p^\wedge$, refuting the universally quantified
 conjecture [S3:114–126].
 

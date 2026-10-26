@@ -31,7 +31,8 @@ negatively: the projection can be a diffeomorphism while the
 Lagrangian sits in a nontrivial Hamiltonian isotopy class
 
 
-> For some sufficiently large even integer $N$, the manifold
+> **theorem**
+For some sufficiently large even integer $N$, the manifold
 $Q=S^9\times S^{N-1}$ admits a closed exact smoothly embedded Lagrangian
 $L\subset T^*Q$ such that $L$ is diffeomorphic to $Q$ and no compactly
 supported Hamiltonian isotopy carries the zero section to $L$. [S4:25–30]
@@ -53,7 +54,7 @@ $a\in\pi_9\mathbf{T}$ with $\gamma_*a=0$: the tube family is nontrivial
 while its fibration is trivial [S5:1–8].
 
 **The one-critical-point obstruction.** The key obstruction proposition
-states that a smooth family $f_b:\R^{2p}\to\R$, $b\in S^9$, homogeneous
+states that a smooth family $f_b:\mathbb R^{2p}\to\mathbb R$, $b\in S^9$, homogeneous
 at infinity with smooth data in $T_{p,p}$, with exactly one nondegenerate
 critical point per fiber and zero stable spherical class, has zero
 stable tube class. The proof proceeds in two stages: Morse theory gives

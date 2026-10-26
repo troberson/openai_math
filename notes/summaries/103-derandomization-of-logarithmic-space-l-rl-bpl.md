@@ -26,18 +26,19 @@ positions, not a working copy of the input. Add a coin: the machine may flip
 fair random bits, and on some inputs it is allowed to get the occasional one
 wrong, so long as the answer is right with probability at least $2/3$ when the
 right answer is "yes" and at most $1/3$ when it is "no". The
-classes $\Lclass$, $\RL$ and $\BPL$ are the languages such machines decide,
+classes $\mathsf L$, $\mathsf{RL}$ and $\mathsf{BPL}$ are the languages such machines decide,
 for the deterministic, one-sided-error, and two-sided-error cases
 respectively. The three classes sit in the order
-$\Lclass \subseteq \RL \subseteq \BPL$ for free: a deterministic machine
-ignores its coins, and running an $\RL$ machine twice and accepting if
+$\mathsf L \subseteq \mathsf{RL} \subseteq \mathsf{BPL}$ for free: a deterministic machine
+ignores its coins, and running an $\mathsf{RL}$ machine twice and accepting if
 either run accepts turns one-sided error into two-sided error without using
 more space [S6:279–290].
 
 The open question for decades was whether the inclusions are equalities.
-The paper answers yes, and it answers the strong form: "The class $\Lclass$ consists of languages decidable by deterministic [S4:19–21]"
-([S4:19–21]) defines $\Lclass$, and the main theorem is the
-equality " [S4:28–30]" () — in this machine model, fresh random
+The paper answers yes, and it answers the strong form: "The class $\mathsf L$ consists of languages decidable by deterministic [S4:19–21]"
+([S4:19–21]) defines $\mathsf L$, and the main theorem is the
+equality "**theorem**
+ [S4:28–30]" () — in this machine model, fresh random
 bits do not let a logarithmic-space machine decide anything a
 deterministic logarithmic-space machine cannot.
 
@@ -58,8 +59,8 @@ polynomial time, with an explicit error bound. That is the
 machines with an endmarked read-only input, finitely many work tapes, and
 fresh fair bits, with space counting every simultaneously live counter and
 register in bits and the randomized classes using polynomial time,
-$\Lclass=\RL=\BPL$. Here $\RL$ accepts a no-instance with probability zero
-and a yes-instance with probability at least $1/2$; $\BPL$ uses $2/3$ and
+$\mathsf L=\mathsf{RL}=\mathsf{BPL}$. Here $\mathsf{RL}$ accepts a no-instance with probability zero
+and a yes-instance with probability at least $1/2$; $\mathsf{BPL}$ uses $2/3$ and
 $1/3$ [S4:19–26].
 
 The proof has two stages. The first stage builds an estimator
@@ -191,9 +192,9 @@ this paper and supplies explicit source-specific resource bounds —
 its construction sits in this context of universal simulation, with
 the source bounds supplied as part of the compiler input.
 
-**Prior (my training data, not this repo).** $\Lclass = \RL = \BPL$
+**Prior (my training data, not this repo).** $\mathsf L = \mathsf{RL} = \mathsf{BPL}$
 is a central derandomization target in complexity theory. The one-sided
-case $\Lclass = \RL$ has been known since the AKSZ line and the bounded
+case $\mathsf L = \mathsf{RL}$ has been known since the AKSZ line and the bounded
 randomness of **Chang** (for one-sided); the two-sided case is the harder
 direction and is what this paper addresses. The pseudorandom-generator
 route gives a small-space containment with a polynomially-iterated
@@ -208,9 +209,9 @@ formalization records the class equality only.
 
 ## Consequences
 
-- **The class equality.** $\Lclass = \RL = \BPL$ in the
+- **The class equality.** $\mathsf L = \mathsf{RL} = \mathsf{BPL}$ in the
   explicit Turing-machine model with the stated space convention.
-  The containment $\BPL \subseteq \Lclass$ is proved directly from the
+  The containment $\mathsf{BPL} \subseteq \mathsf L$ is proved directly from the
   $d = 3$ fixed-precision approximation and the threshold $1/2$
   [S6:279–290]. The reverse direction is the two free inclusions.
 - **The promise version.** $\mathsf{PromiseBPL} = \mathsf{PromiseL}$
@@ -238,7 +239,7 @@ formalization records the class equality only.
 
 **Prior (my training data, not this repo).** The consequence that matters
 in the wider derandomization program is the first: the equality
-$\Lclass = \BPL$ closes a thirty-year gap in the space complexity
+$\mathsf L = \mathsf{BPL}$ closes a thirty-year gap in the space complexity
 hierarchy. The certified-search corollary is the mechanism by which
 the estimation produces a witness; the compiler is the effectivity
 result that makes the simulation constructive. Both are
@@ -264,7 +265,7 @@ explicit resource bounds for each source machine [S4:248–250].
 
 The scope note [S10] states the formalization's scope and its one
 explicit exclusion. It proves the class equality
-$\Lclass=\RL=\BPL$ for binary languages in the explicit
+$\mathsf L=\mathsf{RL}=\mathsf{BPL}$ for binary languages in the explicit
 Turing-machine model with logarithmic workspace, and it does not
 separately state the paper's explicit compiler or its numerical
 running-time bounds. The comparator stub [S11] carries the

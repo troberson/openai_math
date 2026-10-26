@@ -66,8 +66,8 @@ $\varphi$ to a nonempty $3$-CNF formula $\Psi$ such that every clause of
 $\Psi$ uses three distinct variables" [S5:49–52], preserving satisfiability
 and forcing a $\gamma_0$ fraction of violated clauses on unsatisfiable inputs
 [S5:53–54]. **Weighted projection-game repetition**: for any finite projection
-game $G$ and $0<g<1$, $\val(G)\le 1-g$ implies
-$\val(G^{\otimes k})\le (1-g^2/16)^k$ [S5:127–132]. The **Grassmann
+game $G$ and $0<g<1$, $\mathrm{val}(G)\le 1-g$ implies
+$\mathrm{val}(G^{\otimes k})\le (1-g^2/16)^k$ [S5:127–132]. The **Grassmann
 expansion consequence** [S5:235–241] and the **inverse theorem for a
 finite-range partial table** [S5:406–412] supply the agreement-to-rank
 estimates the tree construction needs.

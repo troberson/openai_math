@@ -45,10 +45,11 @@ The companion paper states the bounded-data version for the sphere,
 where the input is only required to be essentially bounded, and this
 is the full conjectured open range 
 
-> For every real \(p>3\), there is a finite constant \(C_p\), depending
+> **theorem**
+For every real \(p>3\), there is a finite constant \(C_p\), depending
 only on \(p\), such that
 \[
-  \|Eg\|_{L^p(\R^3)}
+  \|Eg\|_{L^p(\mathbb R^3)}
   \le C_p\|g\|_{L^\infty(S^2,\sigma)}
 \]
 for every bounded measurable complex-valued function \(g\) on \(S^2\). [S6:21–29]
@@ -135,11 +136,12 @@ consequence of the sphere estimate is, verbatim, the three-
 dimensional Kakeya maximal theorem proved in family 074
 [S8:9–101]:
 
-> For every \(\varepsilon>0\) there is a finite \(C_\varepsilon\) such that,
-for every \(0<\delta<1\) and \(f\in L^3(\R^3)\),
+> **corollary**
+For every \(\varepsilon>0\) there is a finite \(C_\varepsilon\) such that,
+for every \(0<\delta<1\) and \(f\in L^3(\mathbb R^3)\),
 \[
  \|K_\delta f\|_{L^3(S^2,\sigma)}
- \le C_\varepsilon\delta^{-\varepsilon}\|f\|_{L^3(\R^3)}.
+ \le C_\varepsilon\delta^{-\varepsilon}\|f\|_{L^3(\mathbb R^3)}.
 \] [S6:337–344]
 
 Its proof uses sphere-specific factorization and does not invoke the

@@ -41,7 +41,7 @@ The restriction in the corollary is not decoration. The manuscript records that 
 
 The result is used by a second manuscript in the release. The introduction defines the hypersymplectic triple and names the companion's theorem 
 
-> A triple of closed two-forms on an oriented four-manifold is _hypersymplectic_ if every nonzero real linear combination is symplectic and induces the given orientation. The companion \cite[Theorem 1.1]OpenAIHypersymplectic2026 combines the current estimates above with additional prescribed-class and deformation arguments to deform hypersymplectic triples normalized by \(\int_X\omega_i\wedge\omega_j=\delta_ij\) on closed connected oriented smooth four-manifolds to hyperkähler triples, while fixing each class \([\omega_i]\in H^2(X;\R)\). [S6:207–215]
+> A triple of closed two-forms on an oriented four-manifold is _hypersymplectic_ if every nonzero real linear combination is symplectic and induces the given orientation. The companion \cite[Theorem 1.1]OpenAIHypersymplectic2026 combines the current estimates above with additional prescribed-class and deformation arguments to deform hypersymplectic triples normalized by \(\int_X\omega_i\wedge\omega_j=\delta_ij\) on closed connected oriented smooth four-manifolds to hyperkähler triples, while fixing each class \([\omega_i]\in H^2(X;\mathbb R)\). [S6:207–215]
 
 ## Graduate summary
 
@@ -53,7 +53,7 @@ The proof runs through positive currents, not through forms. The introduction se
 
 The quadratic mass bound `μ(B_r(x)) ≤ C r²` is the estimate the paragraph names, and the angular estimate is `O(r⁴)` for pairs of complex lines whose base points are less than `r` apart [S6:143–147]. The principal step is the density-splitting theorem, and the manuscript is explicit that it does not need the annihilation property 
 
-> Existence of the limit is part of the argument. The principal step, Theorem  , proves that the restriction \(P_E=\ind_E P\) is closed. It applies to any closed current \(P+Q\) with an anti-invariant \(L^2\) correction and the stated mass and angular bounds; annihilation of all closed forms is not needed for this step. [S6:157–162]
+> Existence of the limit is part of the argument. The principal step, Theorem  , proves that the restriction \(P_E=\mathbf 1_E P\) is closed. It applies to any closed current \(P+Q\) with an anti-invariant \(L^2\) correction and the stated mass and angular bounds; annihilation of all closed forms is not needed for this step. [S6:157–162]
 
 The closing estimate is a balance between two errors, and the manuscript writes the balance out 
 

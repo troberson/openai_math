@@ -23,16 +23,16 @@ from a field embedding? The theorem
 > **Theorem 1.1**
 Let $F_1,F_2$ be number fields, and let $E_i/F_i$ be possibly infinite solvably closed Galois extensions. Every continuous open homomorphism
 \[
- \alpha:\Gal(E_1/F_1)\longrightarrow\Gal(E_2/F_2)
+ \alpha:\mathrmGal(E_1/F_1)\longrightarrow\mathrmGal(E_2/F_2)
 \]
 is induced by a unique field embedding $j:E_2\hookrightarrow E_1$. [S5:11–17]
 
 The setup [S5:5–9] makes the contravariance explicit: a field embedding
 $E_2 \hookrightarrow E_1$ induces a group homomorphism
-$\Gal(E_1/F_1) \to \Gal(E_2/F_2)$ by conjugation, and the theorem says
+$\mathrm{Gal}(E_1/F_1) \to \mathrm{Gal}(E_2/F_2)$ by conjugation, and the theorem says
 every open homomorphism arises this way, uniquely.
 
-> Let $E_i/F_i$ be Galois extensions of number fields, with each $E_i$ solvably closed, and write $G_i=\Gal(E_i/F_i)$. A field embedding $j:E_2\hookrightarrow E_1$ _induces_ a homomorphism $\alpha:G_1\to G_2$ if
+> Let $E_i/F_i$ be Galois extensions of number fields, with each $E_i$ solvably closed, and write $G_i=\mathrm{Gal}(E_i/F_i)$. A field embedding $j:E_2\hookrightarrow E_1$ _induces_ a homomorphism $\alpha:G_1\to G_2$ if
 \[
  g\circ j=j\circ\alpha(g)\qquad(g\in G_1).
 \]
@@ -52,7 +52,7 @@ The second refines Uchida's own Kummer argument
 
 > Second, we refine the Kummer argument in Uchida's proof of cofinite target coverage \cite[Proposition 1]uchida1981. After logarithmic cyclotomic compatibility has been established, the number of target primes missed by the partial correspondence can be bounded independently of $\ell$. A missed prime supplies a Kummer class. On killing a finite cyclotomic twist, these classes lie in one character component of an $S$-unit representation. The full extension degree may grow with $\ell$, but the multiplicity of that character is bounded by the number of orbits of $S$, hence by the degree of the fixed source field. This uniformity allows us to choose $\ell$ by simultaneous Kummer conditions and force enough corresponding primes to have the same rational residue characteristic. [S5:31]
 
-**The route.** The reduction goes through $P = \Gal(\mathbb Q^s/\mathbb Q)$, the
+**The route.** The reduction goes through $P = \mathrm{Gal}(\mathbb Q^s/\mathbb Q)$, the
 maximal prosolvable extension of $\mathbb Q$: it suffices to identify every
 continuous open homomorphism $G_F \to P$ with ordinary restriction up to
 conjugation [S5:33]. The regular-module construction enlarges finite

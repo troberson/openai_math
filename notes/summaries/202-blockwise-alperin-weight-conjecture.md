@@ -89,7 +89,7 @@ block-algebra calculation to covers of curves [S4:102–167].
 the weight-conjecture hypotheses for the established consequences: the
 local block bounds $l(B)\ge l(b)$ with equality when the defect group is
 abelian (Alperin's Consequences 1–2), the block-free inequality
-$|\IBr_p(G)|\ge|\IBr_p(N_G(P))|$, and the principal-block bounds of
+$|\mathrm{IBr}_p(G)|\ge|\mathrm{IBr}_p(N_G(P))|$, and the principal-block bounds of
 Hung–Sambale–Tiep 
 
 > **corollary**
@@ -101,7 +101,7 @@ $D$, and $b$ its Brauer correspondent in $N_G(D)$. Then
 \]
 For $P\in\mathrm{Syl}_p(G)$, one also has
 \[
- |\IBr_p(G)|\geq|\IBr_p(N_G(P))|.
+ |\mathrmIBr_p(G)|\geq|\mathrmIBr_p(N_G(P))|.
 \]
 Let $B_0$ be the principal $p$-block of $G$, and let $k_p(G)$ count the
 conjugacy classes of $p$-power-order elements, including the identity.

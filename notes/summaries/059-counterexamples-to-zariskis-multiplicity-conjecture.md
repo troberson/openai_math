@@ -14,11 +14,11 @@ lie in a common complex affine space of dimension divisible by eight. Their
 defining function germs are also topologically right equivalent, and the same
 examples answer Arnold's corank problem negatively for ambient topological equivalence.
 3.inline	S3	4	14	For a nonzero convergent power series
-$f\in\C\{z_1,\ldots,z_N\}$ with $f(0)=0$, the order $\ord_0f$ is
+$f\in\mathbb C\{z_1,\ldots,z_N\}$ with $f(0)=0$, the order $\mathrm{ord}_0f$ is
 the least total degree of a monomial with nonzero coefficient. When $f$
 is reduced, this integer is the multiplicity of the hypersurface germ
 $V(f)=\{f=0\}$. Two such germs are _ambiently homeomorphic_ if a
-homeomorphism between neighborhoods of the origin in $\C^N$ fixes the
+homeomorphism between neighborhoods of the origin in $\mathbb C^N$ fixes the
 origin and carries one hypersurface to the other. Zariski's multiplicity
 question asks whether this embedded topological equivalence determines
 multiplicity  . It asks, in particular, whether topology
@@ -26,11 +26,11 @@ can distinguish a hypersurface with a nonzero quadratic term from one
 whose first nonzero terms are cubic.
 4.inline	S3	39	51	\begintheorem 
 There is a finite integer $N>3$, divisible by eight, and there are reduced
-polynomials $f_1,f_2\in\R[z_1,\ldots,z_N]$, weighted homogeneous for
+polynomials $f_1,f_2\in\mathbb R[z_1,\ldots,z_N]$, weighted homogeneous for
 positive rational weights, such that:
 \beginenumerate[label=\textup{(\roman*)}]
 \item each $f_j$ has an isolated critical point at the origin;
-\item $\ord_0f_1=2$ and $\ord_0f_2=3$;
+\item $\mathrm{ord}_0f_1=2$ and $\mathrm{ord}_0f_2=3$;
 \item there is a homeomorphism germ of ambient pairs
 \[
  (\C^N,V(f_1),0)\ \cong\ (\C^N,V(f_2),0).
@@ -86,7 +86,7 @@ Two manuscripts carry this family. The first,
 two and three* [S2], has the abstract [S2:9–15]: "2"
 
 The second, *Ambiently homeomorphic isolated hypersurface germs in
-$\C^4$ with multiplicities four and five* [S8], has the abstract
+$\mathbb C^4$ with multiplicities four and five* [S8], has the abstract
 [S8:9–13]: "6"
 
 ## Undergraduate summary
@@ -155,7 +155,7 @@ topology determines the characteristic data of the branches and
 hence the multiplicity [S3:16–24, S9:13–22]. The A'Campo–Lê theorem
 handles the smooth case. Yau established multiplicity invariance
 for pairs of isolated quasihomogeneous surface singularities in
-$\C^3$. Fernandes, Jelonek, and Sampaio proved that multiplicity
+$\mathbb C^3$. Fernandes, Jelonek, and Sampaio proved that multiplicity
 two is preserved by ambient bi-Lipschitz equivalence [S3:132–148].
 
 For the C4 case, Koike and Parusiński proposed high-power

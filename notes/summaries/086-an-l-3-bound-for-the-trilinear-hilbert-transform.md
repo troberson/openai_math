@@ -12,7 +12,7 @@ transform with shifts $x-t$, $x-2t$, $x-3t$ is bounded from
 $L^3(\mathbb R)^3$ to $L^1(\mathbb R)$, the $L^3$ exponent case of the
 standard trilinear Hilbert transform conjecture for the fixed slopes
 $1,2,3$. The manuscript's abstract "We prove that the trilinear Hilbert transform with fixed slopes $1,2,3$ maps
-$L^3(\R)\times L^3(\R)\times L^3(\R)$ to $L^1(\R)$, resolving this case of
+$L^3(\mathbb R)\times L^3(\mathbb R)\times L^3(\mathbb R)$ to $L^1(\mathbb R)$, resolving this case of
 the trilinear Hilbert transform conjecture. [S3:10–12]"
 
 ## Undergraduate summary
@@ -30,14 +30,15 @@ The question is which input exponents make $T$ bounded. The family
 proves the symmetric $L^3$ case — each input in $L^3(\mathbb R)$,
 output in $L^1(\mathbb R)$ [S4:1–9]:
 
-> There is a finite constant $C$ such that
+> **theorem**
+There is a finite constant $C$ such that
 \[
- \normT(f_1,f_2,f_3)_{L^1(\R)}
- \le C\prod_j=1^3\normf_j_{L^3(\R)}
- \qquad(f_1,f_2,f_3\in\mathcal S(\R)).
+ \lVert T(f_1,f_2,f_3)\rVert_{L^1(\mathbb R)}
+ \le C\prod_j=1^3\lVert f_j\rVert_{L^3(\mathbb R)}
+ \qquad(f_1,f_2,f_3\in\mathcal S(\mathbb R)).
 \]
 Consequently $T$ has a unique bounded trilinear extension from
-$L^3(\R)\times L^3(\R)\times L^3(\R)$ to $L^1(\R)$. [S4:11–20]
+$L^3(\mathbb R)\times L^3(\mathbb R)\times L^3(\mathbb R)$ to $L^1(\mathbb R)$. [S4:11–20]
 
 The principal value removes a symmetric interval about the origin; the
 estimate extends $T$ uniquely as a bounded trilinear operator from
@@ -76,7 +77,8 @@ reduces the operator estimate to a uniform maximal-function bound for
 local forms; the uniform local estimate bounds the constants
 independently of the depth parameter $N$ [S5:1–56]:
 
-> For some $q\in(2,3)$, the constants $C_N(q)$ are bounded independently
+> **theorem**
+For some $q\in(2,3)$, the constants $C_N(q)$ are bounded independently
 of $N$. [S5:58–61]
 
 **Formalization status.** Nothing about this family is machine-checked.

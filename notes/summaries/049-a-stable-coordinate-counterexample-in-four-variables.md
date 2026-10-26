@@ -52,7 +52,7 @@ unit-ideal hypothesis is what lets the construction solve two linear equations
 without dividing by either coefficient.
 
 The obstruction is a critical point. [S11:103–111] proves $R/(F)\cong\mathbb C^{[3]}$
-and $\grad F(2,0,-1/2,1/2)=0$, and concludes "Consequently $F$ is not a
+and $\mathrm{\nabla} F(2,0,-1/2,1/2)=0$, and concludes "Consequently $F$ is not a
 coordinate of $R$." A coordinate polynomial cannot have a critical point: the
 Jacobian matrix of a polynomial automorphism is invertible at every point.
 

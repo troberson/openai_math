@@ -25,7 +25,7 @@ The README dates it September 23, 2026 [S15:5].
 
 An **Artin algebra** is a finite-dimensional algebra over a field. A
 **module** is a vector space on which the algebra acts, and
-**$\Ext^i(M,N)$** measures how far a pair of modules is from being
+**$\mathrm{Ext}^i(M,N)$** measures how far a pair of modules is from being
 projective in degree $i$. A module is **projective** when it behaves like a
 free module.
 
@@ -39,7 +39,7 @@ The first manuscript's abstract states the counterexample. [S3:48–54] says:
 "We disprove the Auslander--Reiten conjecture for Artin algebras. We
 construct a finite-dimensional algebra $\Lambda$ over
 $k=\mathbb F_2(q,H_1,H_2)$ and a finite-dimensional nonprojective left
-module $Z$ such that $\Ext^i_\Lambda(Z,Z)=\Ext^i_\Lambda(Z,\Lambda)=0$ for
+module $Z$ such that $\mathrm{Ext}^i_\Lambda(Z,Z)=\mathrm{Ext}^i_\Lambda(Z,\Lambda)=0$ for
 every $i>0$. The module is Gorenstein-projective, so the same example also
 disproves the Gorenstein-projective conjecture. Both counterexamples persist
 after every extension of $k$."
@@ -52,8 +52,8 @@ such that" — the display gives the vanishing.
 
 The theorem's structural assertions follow. [S4:34–37] states them: "The
 module $Z$ is Gorenstein-projective. The semisimple quotient is
-$\Lambda/\rad\Lambda\simeqk^8$, so the algebra is split with eight
-isomorphism classes of simple modules; also $\rad(\Lambda)^4\ne0$. These
+$\Lambda/\mathrm{rad}\Lambda\simeqk^8$, so the algebra is split with eight
+isomorphism classes of simple modules; also $\mathrm{rad}(\Lambda)^4\ne0$. These
 conclusions persist after every field extension of $k$."
 
 The second manuscript attacks Tachikawa's second conjecture. [S16:54–61]
@@ -68,7 +68,7 @@ after every extension of $k$."
 
 A **symmetric** algebra is one isomorphic to its own dual as a bimodule,
 and such an algebra is self-injective. [S17:19–21] gives the definition:
-"Write $D=\Hom_k(-,k)$. An algebra $A$ is \emph{symmetric} if $A\simeq DA$
+"Write $D=\mathrm{Hom}_k(-,k)$. An algebra $A$ is \emph{symmetric} if $A\simeq DA$
 as $A$-bimodules; in particular, a symmetric algebra is self-injective. We
 prove the following result in this class."
 
@@ -80,7 +80,7 @@ that $M$ is nonprojective and" — the display gives the vanishing.
 Because a symmetric algebra is self-injective, the second manuscript's
 module settles the Auslander--Reiten conjecture in that class too.
 [S17:38–41] says: "Since $A$ is self-injective, the same module satisfies
-$\Ext_A^i(M,M\oplus A)=0$ for every $i>0$. Thus Theorem~\ref{thm:main} also
+$\mathrm{Ext}_A^i(M,M\oplus A)=0$ for every $i>0$. Thus Theorem~\ref{thm:main} also
 gives a symmetric counterexample to the Auslander--Reiten conjecture."
 
 ## Graduate summary
@@ -88,11 +88,11 @@ gives a symmetric counterexample to the Auslander--Reiten conjecture."
 The first manuscript also states the Gorenstein-projective form of the
 conjecture. [S4:18–20] gives it: "The \emph{Gorenstein-projective
 conjecture} asks whether a finite Gorenstein-projective module $M$ with
-$\Ext_R^i(M,M)=0$ for every $i>0$ must be projective" — the sentence
+$\mathrm{Ext}_R^i(M,M)=0$ for every $i>0$ must be projective" — the sentence
 continues into a citation.
 
 The ambient algebra is not assumed to be Gorenstein, and total acyclicity
-gives $\Ext_R^i(M,R)=0$ for $i>0$, so the Gorenstein-projective conjecture
+gives $\mathrm{Ext}_R^i(M,R)=0$ for $i>0$, so the Gorenstein-projective conjecture
 is precisely the restriction of the Auslander--Reiten conjecture to
 Gorenstein-projective modules [S4:21–24].
 
@@ -119,7 +119,7 @@ The construction itself is named in the introduction. [S4:149–156] gives
 it: "We then build the required $A,F,X,v$. Write $D$ for the $k$-linear
 dual. A ten-dimensional algebra $C$ has a simple module $s$ whose Ext
 groups are especially sparse. Passing to its symmetric trivial extension
-$T=C\ltimes DC$ produces $\Ext_T^*(s,s)=k[\tau]$ with $|\tau|=3$. An
+$T=C\ltimes DC$ produces $\mathrm{Ext}_T^*(s,s)=k[\tau]$ with $|\tau|=3$. An
 explicit Hochschild cocycle realizes $\tau$ and supplies a homotopy
 compatible with twists of $T$. For $A=T\otimes T$ and $X=s\otimes s$, the
 nonnegative self-extension algebra is $k[\tau_1,\tau_2]$."
@@ -136,7 +136,7 @@ states it: "Two steps organize the proof. First,
 Proposition~\ref{tr:transfer} gives a general transfer principle. For a
 finite-dimensional algebra $\Lambda$, a doubly infinite exact complex $P_Z$
 of finite projective $\Lambda$-modules is \emph{totally acyclic} if
-$\Hom_\Lambda(P_Z,\Lambda)$ is also exact."
+$\mathrm{Hom}_\Lambda(P_Z,\Lambda)$ is also exact."
 
 The transfer machinery is the transfer section [S19:1], built on the
 homological criterion [S18:1], the algebra [S20:1], the stable category

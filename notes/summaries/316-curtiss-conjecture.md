@@ -32,7 +32,8 @@ manifolds, and a class carries it when the corresponding framed manifold
 has Arf invariant one. The theorem pins down the entire positive image
 [S4:3–22]:
 
-> The image of \(\bigoplus_d>0h_d\) is spanned over \(\F_2\) by
+> **theorem**
+The image of \(\bigoplus_d>0h_d\) is spanned over \(\mathbb F_2\) by
 the Hurewicz images of the Hopf-invariant-one classes
 \(\eta,\nu,\sigma\), in degrees \(1,3,7\), and the
 Kervaire-invariant-one classes \(\theta_j\), in degrees
@@ -41,7 +42,7 @@ In particular, Curtis's conjecture is true in all positive degrees. [S4:24–31]
 
 The two corollaries give the concrete payoffs. Eccles's conjecture
 holds for every positive-dimensional sphere: each nonzero mod-2
-spherical class in $H_*(QS^n;\F_2)$ is either the bottom class $e_n$ or
+spherical class in $H_*(QS^n;\mathbb F_2)$ is either the bottom class $e_n$ or
 a nonzero suspension of one of the Hopf images. And the positive stable
 Hurewicz image is finite, concentrating on the Hopf degrees $1,3,7$
 and the Kervaire degrees $2,6,14,30,62,126$; in particular it vanishes
@@ -66,7 +67,7 @@ then converts the square into a nonzero Steenrod-module extension
 counts the inputs of an extended power. The weight-$2^k$ primitives are
 dual to $M_k(n)=\Sigma^n d_0^n D_k$, where $D_k$ is a binary Dickson
 algebra with generator $d_0$ of degree $2^k-1$, and the bottom summand
-is $M_0(n)=\Sigma^n\F_2$. The cone extension on a nonbottom weight, when
+is $M_0(n)=\Sigma^n\mathbb F_2$. The cone extension on a nonbottom weight, when
 its detecting functional lifts from the preceding suspension level, is
 possible only for $n=k=1$ in a power-of-two degree; Cartier halving and
 an injection on even-degree Tor cycles retain the exponent-floor
@@ -101,13 +102,13 @@ proof closes the general case [S4:75–138].
 ## Consequences
 
 **Curtis's conjecture is resolved.** In every positive degree the
-mod-2 stable Hurewicz image is spanned over $\F_2$ by the Hopf
+mod-2 stable Hurewicz image is spanned over $\mathbb F_2$ by the Hopf
 $\eta,\nu,\sigma$ images in degrees $1,3,7$ and the
 Kervaire-invariant-one $\theta_j$ images in degrees $2^{j+1}-2$ whenever
 they exist [S4:24–31].
 
 **Eccles's conjecture holds for spheres.** For every $n>0$ each nonzero
-mod-2 spherical class in $H_*(QS^n;\F_2)$ is the bottom class $e_n$ or a
+mod-2 spherical class in $H_*(QS^n;\mathbb F_2)$ is the bottom class $e_n$ or a
 nonzero suspension of a Hopf image; the alternatives are the bottom
 stably spherical class and the Hopf-invariant-one classes
 [S4:51–61].

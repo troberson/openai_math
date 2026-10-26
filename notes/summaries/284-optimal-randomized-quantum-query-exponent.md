@@ -12,8 +12,8 @@ randomized and quantum query complexity for total Boolean functions is
 sharp in its exponent, and the bound is optimal — the conjectured cubic
 relation is false. The manuscript's abstract "We construct total Boolean functions with a nearly quartic separation
 between bounded-error randomized and quantum query complexity.
-Writing these complexities as $\R(f)$ and $\Q(f)$, the examples rule
-out every universal bound $\R(f)=O((1+\Q(f))^\alpha)$ with
+Writing these complexities as $\mathrm R(f)$ and $\mathrm Q(f)$, the examples rule
+out every universal bound $\mathrm R(f)=O((1+\mathrm Q(f))^\alpha)$ with
 $\alpha<4$. Thus the known quartic upper bound has the optimal
 exponent, disproving the conjectured cubic bound. Both complexities
 count worst-case bit queries with error at most $1/3$ on every input. [S3:9–17]"
@@ -23,28 +23,29 @@ count worst-case bit queries with error at most $1/3$ on every input. [S3:9–17
 Query complexity measures how many input bits an algorithm must read to
 evaluate a function. A total Boolean function is defined on every input,
 as opposed to a partial one that is only promised to be defined on a
-subset. Bounded-error randomized query complexity $\R(f)$ counts the
+subset. Bounded-error randomized query complexity $\mathrm R(f)$ counts the
 worst-case number of bit queries of a classical algorithm that succeeds
 with probability at least $2/3$; bounded-error quantum query complexity
-$\Q(f)$ is the analogous count for a quantum algorithm, whose queries
+$\mathrm Q(f)$ is the analogous count for a quantum algorithm, whose queries
 are oracle calls that put the input bit into a quantum superposition.
 For total functions the two measures are always polynomially related,
 because totality rules out the exponential gaps that partial functions
 admit. The question is the sharp power of that polynomial relation.
 Define the optimal power $\alpha_{\mathrm{tot}}$ as the smallest
-exponent for which a uniform constant makes $\R(f)\le
-C(1+\Q(f))^\alpha$ hold for every total $f$ [S4:3–27]. The
+exponent for which a uniform constant makes $\mathrm R(f)\le
+C(1+\mathrm Q(f))^\alpha$ hold for every total $f$ [S4:3–27]. The
 manuscript proves it is exactly four:
 
-> The optimal power is $\alpha_{\mathrm{tot}}=4$.
-More precisely, $\R(f)=O((1+\Q(f))^4)$ for every total Boolean function.
+> **theorem**
+The optimal power is $\alpha_{\mathrm{tot}}=4$.
+More precisely, $\mathrm R(f)=O((1+\mathrm Q(f))^4)$ for every total Boolean function.
 For each fixed integer $k\ge2$, there are positive constants $c_k,C_k,b_k$
 and total Boolean functions $F_{k,m}$, for all sufficiently large powers
 of four $m$, such that
 $$\label{eq:main-family}
- \Q(F_{k,m})\le C_k\sqrt m\,(\log m)^{b_k},
+ \mathrm Q(F_{k,m})\le C_k\sqrt m\,(\log m)^{b_k},
  \qquad
- \R(F_{k,m})\ge c_k\frac{m^{2-1/k}}{(\log m)^2}.$$ [S4:29–40]
+ \mathrm R(F_{k,m})\ge c_k\frac{m^{2-1/k}}{(\log m)^2}.$$ [S4:29–40]
 
 The upper bound half — the universal quartic relation — was already
 known; the new contribution is the family $F_{k,m}$, which rules out
@@ -101,15 +102,15 @@ conjecture.
 ## Consequences
 
 **The quartic exponent is optimal.** For every total Boolean function
-$\R(f)=O((1+\Q(f))^4)$, and the family $F_{k,m}$ rules out every
+$\mathrm R(f)=O((1+\mathrm Q(f))^4)$, and the family $F_{k,m}$ rules out every
 smaller universal power, so $\alpha_{\mathrm{tot}}=4$
 [S4:29–40].
 
 **The conjectured cubic bound is false.** The randomized complexity of
 the family satisfies
-$\R(F_{k,m})\ge c_k m^{2-1/k}/(\log m)^2$ while the quantum complexity
-satisfies $\Q(F_{k,m})\le C_k\sqrt m\,(\log m)^{b_k}$, which for any
-$k\ge2$ grows faster than $(1+\Q(F_{k,m}))^3$ up to logarithmic
+$\mathrm R(F_{k,m})\ge c_k m^{2-1/k}/(\log m)^2$ while the quantum complexity
+satisfies $\mathrm Q(F_{k,m})\le C_k\sqrt m\,(\log m)^{b_k}$, which for any
+$k\ge2$ grows faster than $(1+\mathrm Q(F_{k,m}))^3$ up to logarithmic
 factors, contradicting the cubic relation
 [S4:29–40].
 

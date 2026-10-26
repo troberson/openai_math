@@ -76,7 +76,7 @@ advice — only the size parameters.
 deterministic Turing machine and absolute positive integers $C,k$ with
 the following property. Given a prime $p$ in binary and positive integers
 $n,s$ in unary, the machine outputs a positive integer $d=O(n^3s^6)$ and a
-tuple $(T_1,\ldots,T_n)\in\Mat_d(\mathbb F_p)^n$" [S4:19–23]. "For every field
+tuple $(T_1,\ldots,T_n)\in\mathrm{Mat}_d(\mathbb F_p)^n$" [S4:19–23]. "For every field
 $F$ of characteristic $p$ and every nonzero $f\in F\langle
 x_1,\ldots,x_n\rangle$ computed by a formula of size at most $s$, the same
 tuple, viewed over $F$, satisfies $f(T_1,\ldots,T_n)\ne0$" [S4:26–28].
@@ -86,7 +86,7 @@ receives no formula or coefficients [S4:34].
 
 **Characteristic zero** ([S6:14–32], `thm:main`). "There is a
 deterministic algorithm which, given integers $n,s\ge1$, constructs a
-tuple $\mathbf T_{n,s}\in\Mat_d(\mathbb Q)^n$, $d\le 2ns^2$, in time polynomial in
+tuple $\mathbf T_{n,s}\in\mathrm{Mat}_d(\mathbb Q)^n$, $d\le 2ns^2$, in time polynomial in
 $n,s$, measured in bit operations" [S6:17–19]. "The numerators and
 denominators of its entries have bit length
 $O(\log(ns+1)+ns^2\log(n+1))$" [S6:20–22]. "For every field $F$ of
@@ -117,7 +117,7 @@ The series $h_w$ are proved linearly independent by a pole-obstruction
 argument: a difference $\sigma(R)-R$ cannot have just one pole in an
 infinite shift orbit [S4:130–136]. A formula-to-matrix-system reduction
 (Nisan's construction, $m\le 2s$ states) gives the order bound
-$\ord_z(uHv)\le n\binom m2$ via a determinant/Vandermonde argument
+$\mathrm{ord}_z(uHv)\le n\binom m2$ via a determinant/Vandermonde argument
 [S4:138–144]. Truncation and reduction modulo $t^E$ give matrices over
 $\mathbb F_p$ [S4:146–153].
 

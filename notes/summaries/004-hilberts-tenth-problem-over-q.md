@@ -66,7 +66,7 @@ The proof of that corollary runs in both directions: $\mathrm{H10}(\mathbb Z)\le
 
 **The companion theorem.** The second manuscript's headline is a pointwise 2-converse 
 
-> Let $E/\mathbb Q$ be an elliptic curve with $E(\mathbb Q)[2]\ne0$ and $s_2(E)\in\{0,1\}$. Then \[ \ord_s=1L(E,s)=\rank_{\mathbb Z}E(\mathbb Q)=s_2(E), \qquad \operatornameSha(E/\mathbb Q) is finite. \] [S10:23–29]
+> Let $E/\mathbb Q$ be an elliptic curve with $E(\mathbb Q)[2]\ne0$ and $s_2(E)\in\{0,1\}$. Then \[ \mathrmord_s=1L(E,s)=\mathrmrank_{\mathbb Z}E(\mathbb Q)=s_2(E), \qquad \operatornameSha(E/\mathbb Q) is finite. \] [S10:23–29]
 
 Its abstract states the same claim in prose 
 
@@ -86,7 +86,7 @@ So the dependency inside family 004 runs one way: the undecidability manuscript 
 
 > The many-one reduction to the restricted problems starts from \(\mathrmH10(\mathbb Q)\); the reduction from \(\mathrmH10(\mathbb Z)\) remains a Turing reduction. This argument does not establish many-one completeness of \(\mathrmH10(\mathbb Q)\). The list in (ii) is supplied as part of the input, so no recognition of sum-of-squares presentations is needed. The construction supplies no bound on the number of variables or coefficient heights, and it gives no single existential definition of \(\mathbb Z\) in \(\mathbb Q\). [S6:100–107]
 
-That last clause is the one to hold onto: this proof does not produce an existential definition of ℤ in ℚ, which is the route the number-field results take [S5:129–134], and the manuscript says plainly that ℚ is outside the class of rings those results cover — "The field \(\mathbb Q\) is not a finitely generated \(\mathbb Z\)-algebra [S5:141–142]" . On the elliptic-curve side, the companion theorem bounds its own claim "It is a $2$-converse in this residual range. It does not assert the full Birch–Swinnerton-Dyer leading-coefficient formula, nor does a bound $\rank E(\mathbb Q)\le1$ alone imply its Selmer hypothesis. [S10:34–37]"
+That last clause is the one to hold onto: this proof does not produce an existential definition of ℤ in ℚ, which is the route the number-field results take [S5:129–134], and the manuscript says plainly that ℚ is outside the class of rings those results cover — "The field \(\mathbb Q\) is not a finitely generated \(\mathbb Z\)-algebra [S5:141–142]" . On the elliptic-curve side, the companion theorem bounds its own claim "It is a $2$-converse in this residual range. It does not assert the full Birch–Swinnerton-Dyer leading-coefficient formula, nor does a bound $\mathrm{rank} E(\mathbb Q)\le1$ alone imply its Selmer hypothesis. [S10:34–37]"
 
 **Formalization status.** The ledger row for 004 records 2 manuscripts, 0 formalized, no scope note, no comparator challenge, no `main_results` config, no verification directory, no reasoning trace, tier T0 [S15:5]. Nothing about this family is machine-checked. It is the only T0 family carrying the `undecidability` claim-shape tag [S14:117–118], and it is one of the six T0 families that the narrow counterexample tag misses and the wider phrase rule catches [S16:145–146]. The rule matches the release's own wording — "resolving Hilbert's tenth problem over $\mathbb Q$ negatively [S2:84]" — and the reading verdict recorded for the family is "a negative resolution, not an exhibited object [S16:65]" [S16:65–67].
 

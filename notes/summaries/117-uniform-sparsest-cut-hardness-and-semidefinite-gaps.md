@@ -70,8 +70,8 @@ hypothesis [S4:34].
 
 **Integrality gaps** ([S5:152–161], `thm:main`). "There are an absolute
 constant $c>0$ and capacity instances $C^{(j)}$ on $n_j\to\infty$
-vertices, with $\GL(C^{(j)})>0$, such that"
-$\OPT(C^{(j)})/\GL(C^{(j)})\ge c\sqrt{\log n_j}/(\log\log n_j)^3$ "for
+vertices, with $\mathrm{GL}(C^{(j)})>0$, such that"
+$\mathrm{OPT}(C^{(j)})/\mathrm{GL}(C^{(j)})\ge c\sqrt{\log n_j}/(\log\log n_j)^3$ "for
 all sufficiently large $j$. The demand is one between every pair of
 distinct vertices" [S5:153–161]. The capacities are nonnegative real
 numbers; no regularity is assumed [S5:70–72].

@@ -97,7 +97,7 @@ The Partition Principle is a long-standing weak form of choice, and the
 manuscript's introduction opens by naming the direction that is easy:
 [S4:12–13] says "The Axiom of Choice implies this principle by choosing one
 element of each fiber. The converse is less direct: the injection supplied by
-$\mathsf{PP}$ need" — the injection need not satisfy $f\circ j=\id_Y$, which is the
+$\mathsf{PP}$ need" — the injection need not satisfy $f\circ j=\mathrm{id}_Y$, which is the
 section property choice would give.
 
 The scope note's own first sentence gives the principle in the form the

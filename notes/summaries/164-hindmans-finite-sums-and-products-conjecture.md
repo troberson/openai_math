@@ -18,10 +18,10 @@ have the same color. [S3:67–70]"
 
 ## Undergraduate summary
 
-For a finite set $A\subset\mathbb N$, write $\FS(A)$ for the set of
-all nonempty subset sums of $A$ and $\FP(A)$ for the set of all
+For a finite set $A\subset\mathbb N$, write $\mathrm{FS}(A)$ for the set of
+all nonempty subset sums of $A$ and $\mathrm{FP}(A)$ for the set of all
 nonempty subset products [S4:3–11]. The conjecture asks for a set whose
-combined family $\FS(A)\cup\FP(A)$ is monochromatic. The manuscript
+combined family $\mathrm{FS}(A)\cup\mathrm{FP}(A)$ is monochromatic. The manuscript
 proves this with a separation: the elements can be chosen so that no
 prefix sum is divisible by a later element, which eliminates collisions
 between expressions except the shared singletons 
@@ -36,7 +36,7 @@ $c\in[r]$ such that
  =\chi\left(\prod_{j\in J}a_j\right)=c
  \quadfor every \varnothing\ne J\subseteq[m].
 \]
-Equivalently, $\FS(A)\cup\FP(A)$ is monochromatic for a set
+Equivalently, $\mathrm{FS}(A)\cup\mathrm{FP}(A)$ is monochromatic for a set
 $A\subset\mathbb N$ of cardinality $m$.
 The elements can additionally be chosen to satisfy
 $$\label{eq:separated-elements}
@@ -50,10 +50,10 @@ $2(2^m-1)-m$ distinct values
 
 > **Theorem 1.2**
 For every finite coloring of $\mathbb N$ and every $m\ge1$, there is an
-$m$-element set $A\subset\mathbb N$ for which $\FS(A)\cup\FP(A)$ is
+$m$-element set $A\subset\mathbb N$ for which $\mathrm{FS}(A)\cup\mathrm{FP}(A)$ is
 monochromatic and
 \[
- |\FS(A)|=|\FP(A)|=2^m-1,\qquad \FS(A)\cap\FP(A)=A.
+ |\mathrmFS(A)|=|\mathrmFP(A)|=2^m-1,\qquad \mathrmFS(A)\cap\mathrmFP(A)=A.
 \]
 In particular, the union has $2(2^m-1)-m$ distinct elements. [S4:39–47]
 

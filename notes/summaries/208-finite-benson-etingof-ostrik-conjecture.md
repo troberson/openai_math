@@ -34,7 +34,8 @@ categories, each a finite abelian envelope of a quotient of tilting
 $SL_2$-modules [S4:4–33]. The manuscript proves that every finite
 symmetric tensor category lands in some level of this tower 
 
-> For every prime $p$, every algebraically closed field $k$ of
+> **theorem**
+For every prime $p$, every algebraically closed field $k$ of
 characteristic $p$, and every finite symmetric tensor category
 $\mathcal C$ over $k$, there are an integer $n\geq1$ and a fiber functor
 \[

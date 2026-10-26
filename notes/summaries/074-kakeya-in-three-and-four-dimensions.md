@@ -30,13 +30,14 @@ tube maximal operator. Given a unit $\delta$-tube, $K_\delta f$
 records the largest average of $|f|$ over all such tubes in a fixed
 direction. The theorem bounds this operator on $L^3$:
 
-> For every \(\varepsilon>0\) there exists a finite constant
+> **theorem**
+For every \(\varepsilon>0\) there exists a finite constant
 \(C_\varepsilon\) such that, for every \(0<\delta<1\) and every
-\(f\in L^3(\R^3)\),
+\(f\in L^3(\mathbb R^3)\),
 \[
 \|K_\delta f\|_L^3(S^2)
 \le C_\varepsilon\delta^{-\varepsilon}
-     \|f\|_{L^3(\R^3)}.
+     \|f\|_{L^3(\mathbb R^3)}.
 \] [S4:17–26]
 
 In four dimensions the paper states the dimension conjecture
@@ -59,7 +60,7 @@ three-dimensional paper proves a maximal-operator estimate; the
 four-dimensional paper states the Hausdorff-dimension conclusion
 directly. The first abstract "We prove the Kakeya maximal conjecture in three dimensions. For every
 \(\varepsilon>0\), the maximal average over unit tubes of radius \(\delta\)
-maps \(L^3(\R^3)\) to \(L^3(S^2)\) with norm at most
+maps \(L^3(\mathbb R^3)\) to \(L^3(S^2)\) with norm at most
 \(C_\varepsilon\delta^{-\varepsilon}\). [S3:9–12]" The second 
 "We prove the four-dimensional Hausdorff-dimension Kakeya conjecture:
 every subset of \(\mathbb R^4\) containing a unit line segment in every

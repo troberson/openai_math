@@ -131,7 +131,7 @@ finite type-$k$ generator, and the Balmer spectrum is a chain of $n+1$
 points [S4:74–84].
 
 **The support map is identified.** Each height stratum of
-$\Spec(E_0)$ maps to a single Balmer point, so the arithmetic
+$\mathrm{Spec}(E_0)$ maps to a single Balmer point, so the arithmetic
 classification pins down the support map itself [S3:53–61].
 
 ## Section skeleton

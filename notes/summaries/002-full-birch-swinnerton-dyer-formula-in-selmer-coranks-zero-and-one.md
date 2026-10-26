@@ -52,7 +52,7 @@ The mechanism is a pair comparison. The two outputs for a fixed odd prime p are 
 
 **Manuscript 3 — the two-primary formula.** The scope paragraph at [S17:13–20] states the claim and its limits: "We establish the two-primary formula for every elliptic curve over \(\mathbb Q\) whose usual two-power Selmer group has corank zero or one. [S17:13–14]" and "it makes no assertion about higher Selmer corank or the remaining prime parts. [S17:19–20]" The theorem at [S17:54–71] produces a positive rational Q_E with v_2(Q_E) = v_2(#Sha), and "There is no restriction on \(E[2]\) or on the reduction of \(E\) at two. [S17:70]" Its corollary at [S17:73–82] imports the any-prime converse, and the proof at [S17:84–95] is three lines:
 
-> By \cite[Theorem 1.1]OpenAIAllPrimeSelmer2026, \(\operatornamerankE(\mathbb Q)=r:=s_p(E)\) and the whole group \(\Sha(E/\mathbb Q)\) is finite. [S17:85–87]
+> By \cite[Theorem 1.1]OpenAIAllPrimeSelmer2026, \(\operatornamerankE(\mathbb Q)=r:=s_p(E)\) and the whole group \(\mathrmSha(E/\mathbb Q)\) is finite. [S17:85–87]
 
 That citation key resolves to manuscript 2 in the same bibliography [S19:277–282], and the density input to family 006 [S19:270–275]. Three comparisons carry the proof — a positive comparison, a split-pair anchor, and a CM comparison [S17:219–241] — and the completion sits in the final section, where "The residual classification and the dyadic local comparisons cover every residual representation and every reduction type at two. [S18:76–78]" 
 

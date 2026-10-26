@@ -14,25 +14,25 @@ in characteristic zero. [S5:2–4]"
 ## Undergraduate summary
 
 For a finitely generated integral $\mathbb C$-algebra $A$, the derivation
-module $\Der_{\mathbb C}(A)=\Hom_A(\Omega^1_{A/\mathbb C},A)$ is the module of
-algebraic vector fields on $\Spec A$. On a smooth variety of dimension
+module $\mathrm{Der}_{\mathbb C}(A)=\mathrm{Hom}_A(\Omega^1_{A/\mathbb C},A)$ is the module of
+algebraic vector fields on $\mathrm{Spec} A$. On a smooth variety of dimension
 $d$ it is locally free of rank $d$. The Lipman–Zariski conjecture asks
 for the converse: a complex algebraic variety with locally free tangent
 sheaf should be nonsingular . "For a finitely generated integral $\mathbb C$-algebra $A$, write
 \[
-\Der_{\mathbb C}(A)=\Hom_A(\Omega^1_{A/\mathbb C},A).
+\mathrmDer_{\mathbb C}(A)=\mathrmHom_A(\Omega^1_{A/\mathbb C},A).
 \]
-The module $\Der_{\mathbb C}(A)$ consists of the algebraic vector fields on
-$\Spec A$. On a smooth variety of dimension $d$, the tangent sheaf is
+The module $\mathrm{Der}_{\mathbb C}(A)$ consists of the algebraic vector fields on
+$\mathrm{Spec} A$. On a smooth variety of dimension $d$, the tangent sheaf is
 locally free of rank $d$. The Lipman–Zariski conjecture asks for the
 converse: a complex algebraic variety with locally free tangent sheaf
 should be nonsingular. In affine terms, it asserts that local freeness
-of $\Der_{\mathbb C}(A)$ forces $A$ to be regular. We prove the following. [S5:9–18]" The theorem 
+of $\mathrm{Der}_{\mathbb C}(A)$ forces $A$ to be regular. We prove the following. [S5:9–18]" The theorem 
 
 > **theorem**
 There exist a finitely generated normal integral $\mathbb C$-algebra $A$ of Krull dimension two and a maximal ideal $\mathfrak m\subset A$ such that
 \[
-\Der_{\mathbb C}(A)\simeq A^{\oplus2},
+\mathrmDer_{\mathbb C}(A)\simeq A^{\oplus2},
 \qquad A_{\mathfrak m} is not regular.
 \] [S5:20–26]
 

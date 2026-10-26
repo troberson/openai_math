@@ -31,7 +31,7 @@ system of stable-graph relations and conjectured it is complete. The
 Chow completeness question is whether $\ker q_{g,n}=\mathcal P_{g,n}$
 for every stable pair 
 
-> Writing \(R^*(\overline{\mathcal M}_g,n)=\im q_g,n\), the Chow completeness question is
+> Writing \(R^*(\overline{\mathcal M}_g,n)=\mathrmim q_g,n\), the Chow completeness question is
 whether
 \[
 \ker q_g,n=\mathcal P_g,n

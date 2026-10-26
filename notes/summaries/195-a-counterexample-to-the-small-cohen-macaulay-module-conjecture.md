@@ -28,7 +28,7 @@ The proof starts from a smooth projective surface and its section ring, complete
 
 ## Graduate summary
 
-The conjecture is stated. states it: "A _small Cohen–Macaulay module_ over a Noetherian local ring $(R,\mathfrak m)$ is a nonzero finitely generated $R$-module $M$ such that $\depth_R M=\dim R$. Such a module is also called a maximal Cohen–Macaulay module. The domain form of the small Cohen–Macaulay module conjecture asks whether every complete Noetherian local domain has one. [S3:47–51]"
+The conjecture is stated. states it: "A _small Cohen–Macaulay module_ over a Noetherian local ring $(R,\mathfrak m)$ is a nonzero finitely generated $R$-module $M$ such that $\mathrm{depth}_R M=\dim R$. Such a module is also called a maximal Cohen–Macaulay module. The domain form of the small Cohen–Macaulay module conjecture asks whether every complete Noetherian local domain has one. [S3:47–51]"
 
 The module-versus-algebra distinction is stated. states it: "The distinction between modules and algebras matters here. A module-finite extension domain $R\subseteq B$ that is Cohen–Macaulay supplies such a module, but the converse need not hold. Our obstruction applies to every finite module; it requires neither a grading nor an algebra structure. [S3:60–62]"
 
@@ -80,13 +80,13 @@ Chen's bound is recorded. [S3:155–159] records it: "quantitative local-cohomol
 
 The overlap and the difference are stated. states them: "Thus the existential completed-module claim overlaps with that work. Our obstruction applies without the proportionality hypothesis on $K_X$ and $H$; the exponent-seven polarization used below has $K_X\equiv5H$. [S3:160–163]"
 
-The first proof step is stated. states it: "Choose a finite morphism $f:X\to\mathbb P^2$ with $f^*\mathcal O_{\mathbb P^2}(1)=\mathcal O_X(H)$, and put $h=H^2=\deg f$. The completed cone is finite over the regular local ring $A=\mathbb C[[x_0,x_1,x_2]]$. A small Cohen–Macaulay module is free over $A$. Its restriction to the punctured cone is a vector bundle, which extends to a coherent sheaf $\mathcal E$ on a regular model $W\to\Spec R(X,H)$ that is an isomorphism away from the exceptional surface $X$. [S3:169–175]"
+The first proof step is stated. states it: "Choose a finite morphism $f:X\to\mathbb P^2$ with $f^*\mathcal O_{\mathbb P^2}(1)=\mathcal O_X(H)$, and put $h=H^2=\deg f$. The completed cone is finite over the regular local ring $A=\mathbb C[[x_0,x_1,x_2]]$. A small Cohen–Macaulay module is free over $A$. Its restriction to the punctured cone is a vector bundle, which extends to a coherent sheaf $\mathcal E$ on a regular model $W\to\mathrm{Spec} R(X,H)$ that is an isomorphism away from the exceptional surface $X$. [S3:169–175]"
 
-The slope normalization is defined. defines it: "For a nonzero torsion-free sheaf $B$ on $X$, its normalized slope is \[ \mu(B)=\frac{c_1(B)\cdot H}{\rk(B)H^2}. \] It is slope-semistable if no nonzero subsheaf of smaller rank has larger slope. Its Harder–Narasimhan filtration has torsion-free semistable factors with decreasing slopes. We choose $\mathcal E$ with torsion-free restriction $P=\mathcal E|_X$. [S3:177–184]"
+The slope normalization is defined. defines it: "For a nonzero torsion-free sheaf $B$ on $X$, its normalized slope is \[ \mu(B)=\frac{c_1(B)\cdot H}{\mathrmrk(B)H^2}. \] It is slope-semistable if no nonzero subsheaf of smaller rank has larger slope. Its Harder–Narasimhan filtration has torsion-free semistable factors with decreasing slopes. We choose $\mathcal E$ with torsion-free restriction $P=\mathcal E|_X$. [S3:177–184]"
 
-The two analytic steps are stated. states them: "First, elementary modifications of $\mathcal E$ along $X$ arrange that the slopes of the Harder–Narasimhan factors of $P$ lie in an interval of length at most one. These modifications preserve the bundle away from $X$. Second, that bundle comes from an $A$-free module. Comparing the pushforward of $\mathcal E$ with a trivial sheaf on the blowup of $\Spec A$ gives, for $F=f_*P$ of rank $N$, the inequality $2N\ch_2(F)\geq c_1(F)^2$, with Chern characters evaluated on $\mathbb P^2$. [S3:185–191]"
+The two analytic steps are stated. states them: "First, elementary modifications of $\mathcal E$ along $X$ arrange that the slopes of the Harder–Narasimhan factors of $P$ lie in an interval of length at most one. These modifications preserve the bundle away from $X$. Second, that bundle comes from an $A$-free module. Comparing the pushforward of $\mathcal E$ with a trivial sheaf on the blowup of $\mathrm{Spec} A$ gives, for $F=f_*P$ of rank $N$, the inequality $2N\mathrm{ch}_2(F)\geq c_1(F)^2$, with Chern characters evaluated on $\mathbb P^2$. [S3:185–191]"
 
-The surface-theory comparison is stated. states it: "Bogomolov's inequality for the semistable factors bounds the same normalized Chern expression above. More precisely, if $r=\rk P$, then $N=rh$ and the two comparisons give \[ 0\leq \frac{2\ch_2(f_*P)}N -\left(\fracc_1(f_*P)N\right)^2 \leq\frac12-\fracK_X^2-2c_2(X)12H^2. \] This yields  . Neither $P$ nor $f_*P$ is assumed semistable or Ulrich. [S3:192–201]"
+The surface-theory comparison is stated. states it: "Bogomolov's inequality for the semistable factors bounds the same normalized Chern expression above. More precisely, if $r=\mathrm{rk} P$, then $N=rh$ and the two comparisons give \[ 0\leq \frac{2\mathrmch_2(f_*P)}N -\left(\fracc_1(f_*P)N\right)^2 \leq\frac12-\fracK_X^2-2c_2(X)12H^2. \] This yields  . Neither $P$ nor $f_*P$ is assumed semistable or Ulrich. [S3:192–201]"
 
 The organization is recorded. records it: "Section   constructs the resolution and extends an arbitrary module. Section   proves the slope modification lemma. Section   establishes the Chern-character inequality, and Section   combines it with surface theory. Finally, Section   constructs a surface with $K_X^2-2c_2(X)>6H^2$. [S3:203–208]"
 
@@ -94,15 +94,15 @@ The cone section opens with the model. opens it: "Throughout this section, $X$ a
 
 The finite map is constructed. constructs it: "Global generation supplies sections $s_0,s_1,s_2$ of $\mathcal O_X(H)$ with no common zero. Indeed, choose $s_0\ne0$, then $s_1$ avoiding the components of its zero divisor, and then $s_2$ nonvanishing at their finitely many common zeros. The resulting morphism \[ f:X\longrightarrow D:=\mathbb P^2,\qquad f^*\mathcal O_D(1)=\mathcal O_X(H), \] is finite and surjective. A positive-dimensional fiber would contain a curve on which $H$ is both ample and trivial, which is impossible. Properness then gives finiteness, and the intersection formula gives $\deg f=h:=H^2$. [S3:217–227]"
 
-The regular model is defined. defines it: "Let $V_0=\Tot(\mathcal O_D(-1))$, the blowup of $\Spec S$ at the origin, and let \[ W_0=X\times_D V_0=\Tot(\mathcal O_X(-H)). \] The map $W_0\to V_0$ is finite. Evaluation of homogeneous sections gives $W_0\to\Spec T$. It is an isomorphism off the zero section. [S3:267–273]"
+The regular model is defined. defines it: "Let $V_0=\mathrm{Tot}(\mathcal O_D(-1))$, the blowup of $\mathrm{Spec} S$ at the origin, and let \[ W_0=X\times_D V_0=\mathrmTot(\mathcal O_X(-H)). \] The map $W_0\to V_0$ is finite. Evaluation of homogeneous sections gives $W_0\to\mathrm{Spec} T$. It is an isomorphism off the zero section. [S3:267–273]"
 
 The module is made free. states it: "Suppose that $M$ is a small Cohen–Macaulay $R$-module. The parameters $x_0,x_1,x_2$ form an $M$-regular sequence, so $M$ has depth three over $A$. [S3:332–334]"
 
 The Auslander--Buchsbaum conclusion is stated. states it: "shows that $$\label{eq:A-free} M\simeq A^N\quad\text{as an $A$-module},\qquad N>0.$$ [S3:336–339]"
 
-The support is stated. states it: "The localization $R\otimes_A\Frac(A)$ is a finite-dimensional domain over a field, hence a field. Thus $M$ has positive generic rank over $R$ and full support. [S3:340–342]"
+The support is stated. states it: "The localization $R\otimes_A\mathrm{Frac}(A)$ is a finite-dimensional domain over a field, hence a field. Thus $M$ has positive generic rank over $R$ and full support. [S3:340–342]"
 
-The balancing step is stated. states it: "We now modify the extension along $X$ so that its restriction has Harder–Narasimhan slopes in an interval of length at most one. Recall the normalization $\mu(B)=c_1(B)\cdot H/(\rk(B)h)$, where $h=H^2$. Tensoring with $\mathcal O_X(H)$ increases slope by one. [S3:378–381]"
+The balancing step is stated. states it: "We now modify the extension along $X$ so that its restriction has Harder–Narasimhan slopes in an interval of length at most one. Recall the normalization $\mu(B)=c_1(B)\cdot H/(\mathrm{rk}(B)h)$, where $h=H^2$. Tensoring with $\mathcal O_X(H)$ increases slope by one. [S3:378–381]"
 
 The antecedent is recorded. records it: "Elementary modification to constrain the slopes of exceptional-divisor restrictions has an antecedent in Chen–Sun's optimal extensions of [S3:383–384]"
 
@@ -136,7 +136,7 @@ The corollary proof is stated. [S3:670–674] states it: "Suppose that $M$ is a 
 
 and by "This is a finite nonzero $R$-module. Put $M_0=M$ and $M_i=M/(z_1,\ldots,z_i)M$ for $1\leq i\leq3$. Nakayama's lemma gives $M_i\ne0$ successively. [S3:674–676]"
 
-and by "The images of the $z_i$ lie in the maximal ideal of $R$, so they form an $\widehat M$-regular sequence of length three. Hence $\depth_R\widehat M\geq3$. For a nonzero finite module over a Noetherian local ring, depth is at most the dimension of its support [S3:688–691]"
+and by "The images of the $z_i$ lie in the maximal ideal of $R$, so they form an $\widehat M$-regular sequence of length three. Hence $\mathrm{depth}_R\widehat M\geq3$. For a nonzero finite module over a Noetherian local ring, depth is at most the dimension of its support [S3:688–691]"
 
 and by "which here is at most $\dim R=3$. Thus $\widehat M$ has depth three, contradicting the completed-ring conclusion just proved for $R=R(X,H)$. [S3:691–693]"
 

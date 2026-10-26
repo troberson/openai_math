@@ -26,7 +26,8 @@ algebraicity over the center forces local finiteness [S4:4–17,
 S4:36–66]. The manuscript answers no, with a concrete two-generated
 example 
 
-> There is a countable division ring $D$ of characteristic zero, with
+> **theorem**
+There is a countable division ring $D$ of characteristic zero, with
 center $F=Z(D)$, and elements $x,y\in D$ such that
 \[
  D=F[x,y]=F(x,y),\qquad [D:F]=\infty,

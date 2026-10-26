@@ -28,7 +28,7 @@ between this birational question and K3 surfaces appears both in the
 middle cohomology and in the derived category. We prove that both
 connections can hold for the same irrational cubic. [S5:3–7]" Kuznetsov's rationality conjecture asserts
 that $X$ is rational if and only if its Kuznetsov component
-$\Ku(X)$ is equivalent to the derived category of a projective K3
+$\mathrm{Ku}(X)$ is equivalent to the derived category of a projective K3
 surface. The theorem 
 
 > **theorem**
@@ -36,7 +36,7 @@ There is an integer \(d_0\) such that, for every admissible \(d>d_0\), a very
 general cubic fourfold \(X\) in \(\mathcal C_d\) is irrational
 and admits an exact \(\mathbb C\)-linear equivalence
 \[
- \Ku(X)\simeq D^b(\operatornameCohS)
+ \mathrmKu(X)\simeq D^b(\operatornameCohS)
 \]
 for a smooth projective K3 surface \(S\). [S5:77–85]
 
@@ -147,7 +147,7 @@ cubic with an associated K3 surface [S5:9–71].
 
 **Kuznetsov's rationality conjecture is false.** For every
 sufficiently large admissible discriminant, a very general cubic
-fourfold is irrational despite having $\Ku(X)\simeq D^b(\Coh S)$
+fourfold is irrational despite having $\mathrm{Ku}(X)\simeq D^b(\Coh S)$
 for a smooth projective K3 surface [S5:77–85].
 
 **The associated-K3 rationality prediction is also false.** The same

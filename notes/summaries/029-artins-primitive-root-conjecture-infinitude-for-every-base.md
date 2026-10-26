@@ -13,7 +13,7 @@ expands on it: "Proves the infinitude assertion in Artin's primitive root conjec
 ## Undergraduate summary
 
 A prime $p$ has $a$ as a primitive root when the multiplicative order
-$\ord_p(a)=p-1$. Artin's 1927 conjecture asserts that every "admissible"
+$\mathrm{ord}_p(a)=p-1$. Artin's 1927 conjecture asserts that every "admissible"
 integer (not $-1$, not a square) is a primitive root modulo infinitely
 many primes. The theorem 
 
@@ -21,7 +21,7 @@ many primes. The theorem
 For every admissible integer $a$, there are constants $c_a>0$ and
 $x_a\ge2$ such that, for every real $x\ge x_a$,
 \[
- #\{p prime:x<p<2x,\ p\nmid a,\ \ord_p(a)=p-1\}
+ #\{p prime:x<p<2x,\ p\nmid a,\ \mathrmord_p(a)=p-1\}
        \ge c_a\fracx{(\log x)^2}.
 \] [S6:17–24]
 
@@ -83,7 +83,7 @@ primes \(p\in(x,2x)\) satisfy
 \[
         p\nmid q_1\cdots q_k,
         \qquad
-        \ord_p(q_i)=p-1\quad(1\le i\le k).
+        \mathrmord_p(q_i)=p-1\quad(1\le i\le k).
 \] [S21:32–47]
 
 The reduction [S22] shows the four inputs suffice; the marked family
@@ -104,10 +104,10 @@ $q$ and $p\nmid aq$, the conditions
 \]
 say that $p$ splits completely in $\mathbb{Q}(\mu_q,a^{1/q})$.
 They hold precisely when $q$ divides the index
-$(p-1)/\ord_p(a)$. Hooley's method counts and sums such splitting
+$(p-1)/\mathrm{ord}_p(a)$. Hooley's method counts and sums such splitting
 conditions. Here a restricted factorization of $p-1$ confines the
 possible index divisors to ranges where they can all be removed. [S6:57–69]" The Kummer fields encode
-the obstructions: for $q|(p-1)/\ord_p(a)$, the prime $p$ splits
+the obstructions: for $q|(p-1)/\mathrm{ord}_p(a)$, the prime $p$ splits
 completely in $\mathbb{Q}(\mu_q,a^{1/q})$.
 
 Unconditional results allow only a finite choice of bases [S6:71–76].

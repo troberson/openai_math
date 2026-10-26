@@ -31,7 +31,8 @@ whether fixing a defect group leaves only finitely many Morita classes of
 blocks with that defect [S4:12–25]. The field manuscript states the
 conjecture in a bounded-order form and proves it 
 
-> Fix a prime \(p\), an algebraically closed field \(K\) of
+> **theorem**
+Fix a prime \(p\), an algebraically closed field \(K\) of
 characteristic \(p\), and a positive integer \(M\).
 As \(G\) ranges over finite groups and \(b\) over block idempotents of
 \(KG\) with defect groups of order at most \(M\), only finitely many
@@ -75,11 +76,12 @@ proves the integral assertion over the Witt ring $W(\overline{\mathbb F}_p)$,
 which is stronger than the field assertion because it concerns integral
 module categories including their lattice structure [S6:9–17]:
 
-> Let $p$ be a prime, let $\cO=W(\overline{\F}_p)$, and let
+> **theorem**
+Let $p$ be a prime, let $\mathcal O=W(\overline{\mathbb F}_p)$, and let
 $M\geq1$ be an integer.  As $G$ ranges over all
-finite groups and $b$ ranges over all blocks of $\cO G$ whose defect
-groups have order at most $M$, the algebras $\cO G b$ belong to only
-finitely many $\cO$-linear Morita equivalence classes. [S6:19–25]
+finite groups and $b$ ranges over all blocks of $\mathcal O G$ whose defect
+groups have order at most $M$, the algebras $\mathcal O G b$ belong to only
+finitely many $\mathcal O$-linear Morita equivalence classes. [S6:19–25]
 
 The corollary extends the conclusion to each fixed complete
 mixed-characteristic discrete valuation ring with algebraically closed

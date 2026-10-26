@@ -52,7 +52,7 @@ Manuscript B states its component as a theorem about curves in $\mathcal A_2$ [S
 
 Manuscript C states the quaternionic component with the endomorphism condition stated as equality of the full algebra [S13:11–20]:
 
-> Let \(C\subset\Acal_{2,\Qbar}\) be a reduced irreducible closed Hodge-generic algebraic curve. Then \[ \Sigma_{\mathrmQM}(C)= \bigl\{s\in C(\Qbar): \End^0(A_s) is an indefinite quaternion division algebra over \Q \bigr\} \] is finite. [S13:12–19]
+> Let \(C\subset\mathcal A_{2,\overline{\mathbb Q}}\) be a reduced irreducible closed Hodge-generic algebraic curve. Then \[ \Sigma_{\mathrmQM}(C)= \bigl\{s\in C(\overline{\mathbb Q}): \mathrmEnd^0(A_s) is an indefinite quaternion division algebra over \mathbb Q \bigr\} \] is finite. [S13:12–19]
 
 Manuscript D proves the remaining branch [S18:24–28]:
 
@@ -60,7 +60,7 @@ Manuscript D proves the remaining branch [S18:24–28]:
 
 and then combines the three branches into the full curve case [S18:66–76]:
 
-> For every nonempty reduced irreducible closed Hodge-generic curve $C\subset\mathcal A_2$ over $\overline{\mathbb Q}$, the set \[ \Sigma(C)=C(\Qbar)\cap \bigcup_{\substack{Z\subset\A_2\ \mathrmspecial\mathstrut\\ \dim Z\le 1}} Z(\Qbar) \] is finite. [S18:68–75]
+> For every nonempty reduced irreducible closed Hodge-generic curve $C\subset\mathcal A_2$ over $\overline{\mathbb Q}$, the set \[ \Sigma(C)=C(\overline{\mathbb Q})\cap \bigcup_{\substack{Z\subset\mathcal A_2\ \mathrmspecial\mathstrut\\ \dim Z\le 1}} Z(\overline{\mathbb Q}) \] is finite. [S18:68–75]
 
 The numbered moves, as the manuscripts describe them:
 
@@ -75,7 +75,7 @@ The numbered moves, as the manuscripts describe them:
 
 What the hypotheses exclude is part of the claim. Manuscript A imposes nothing on the ambient variety: "No bound on the degrees or heights of the intersection points is assumed, and no simplicity, endomorphism, or complex multiplication hypothesis is imposed on $A$. [S5:52–54]" It also states its limits: "it gives no effective or uniform bound for the number of maximal atypical subvarieties. [S5:55–57]" Manuscript B states that "There is no assumption on the boundary of \(C\), on an integral base point, or on reduction at any finite prime. [S9:98–99]" [S9:94–99] Manuscript C states that "No condition is imposed on the boundary of \(C\), and the points are counted across all quaternionic special curves at once. [S13:22]" Manuscript D states that "No condition is imposed on the closure of $C$ at the boundary of a compactification. In particular, the theorem includes complete curves. [S18:30–31]" 
 
-The named resolutions the manuscripts assert are explicit. Manuscript B: "Theorem   resolves positively the \(E\times\mathrmCM\) component of Zilber–Pink for Hodge-generic curves in \(\mathcal A_2\). [S9:100–101]" Manuscript C: "Thus   resolves affirmatively the quaternionic-division component of the Zilber–Pink conjecture for curves in \(\Acal_2\). [S13:22]" Manuscript D: "resolves positively the Hodge-generic-curve case of the Zilber–Pink conjecture in $\mathcal A_2$ over $\overline{\mathbb Q}$. [S18:78–79]" Manuscript A's title is the abelian conjecture itself, and its abstract states the proof of it [S4:9–12].
+The named resolutions the manuscripts assert are explicit. Manuscript B: "Theorem   resolves positively the \(E\times\mathrmCM\) component of Zilber–Pink for Hodge-generic curves in \(\mathcal A_2\). [S9:100–101]" Manuscript C: "Thus   resolves affirmatively the quaternionic-division component of the Zilber–Pink conjecture for curves in \(\mathcal A_2\). [S13:22]" Manuscript D: "resolves positively the Hodge-generic-curve case of the Zilber–Pink conjecture in $\mathcal A_2$ over $\overline{\mathbb Q}$. [S18:78–79]" Manuscript A's title is the abelian conjecture itself, and its abstract states the proof of it [S4:9–12].
 
 The four manuscripts' own abstracts are the release's summary of each paper [S4:9–12] [S9:53–56] [S12:20–24] [S17:9–15]; the four citation blocks are the release's citation entries [S3] [S8] [S11] [S16], and the bibliographies are external to the release except where noted below [S6] [S14].
 

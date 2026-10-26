@@ -114,7 +114,7 @@ The exact-uniform manuscript positions itself against a named line of
 contingency-table sampling. **Diaconis and Gangolli** treat enumeration and
 generation as a basic problem [S4:46–47]. For two rows, **Dyer and
 Greenhill** give polynomial-time approximate counting and sampling via a
-heat-bath chain with mixing time at most $n(n-1)\log(N/\eps)/2$
+heat-bath chain with mixing time at most $n(n-1)\log(N/\varepsilon)/2$
 [S4:49–50], and **Kijima and Matsui** give exact uniform sampling by
 monotone coupling from the past [S4:52–54]. The fixed-row case extends
 through **Cryan and Dyer** (dynamic programming + volume estimation),

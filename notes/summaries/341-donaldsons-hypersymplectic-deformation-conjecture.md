@@ -27,7 +27,8 @@ triple admits a hyperkähler structure. Fine and Yao formulated the
 normalized deformation problem as their Conjecture 1.1 (2017). The
 manuscript resolves this deformation conjecture 
 
-> Let $X$ be a closed connected oriented smooth four-manifold, and let
+> **theorem**
+Let $X$ be a closed connected oriented smooth four-manifold, and let
 $\omega=(\omega_1,\omega_2,\omega_3)$ be a smooth hypersymplectic structure
 normalized by
 $$\label{eq:intro-normalization}
@@ -110,7 +111,7 @@ four-manifold admitting a positive closed triple is diffeomorphic to
 the standard K3 manifold or to $T^4$ [S4:77–90].
 
 **Every linear combination is Kähler for some hyperkähler metric.**
-For every fixed nonzero $c\in\R^3$, the form $\alpha_c=\sum c_i\omega_i$
+For every fixed nonzero $c\in\mathbb R^3$, the form $\alpha_c=\sum c_i\omega_i$
 is a Kähler form for a parallel integrable complex structure of some
 hyperkähler metric [S4:55–76].
 

@@ -48,13 +48,13 @@ selection rule, independent of the value distributions, with the
 following property. Let $M=(E,\mathcal I)$ be any finite known labeled
 matroid, and let $(S_e,V_e:e\in E)$ be mutually independent nonnegative
 real random variables, with $S_e$ and $V_e$ having the same arbitrary law
-$D_e$. Assume $\mathbb E[\OPT_M(V)]<\infty$" [S4:25–31]. For every measurable
+$D_e$. Assume $\mathbb E[\mathrm{OPT}_M(V)]<\infty$" [S4:25–31]. For every measurable
 permutation rule $\pi$ depending on $M$, the laws $(D_e)$, $S$, $V$, and
 the seed $R$ — i.e. against an almighty adversary — the rule accepts an
 independent set $A$ and
-$\mathbb E\left[\sum_{e\in A}V_e\right]\ge 2^{-310}\mathbb E[\OPT_M(V)]$ [S4:36–38].
+$\mathbb E\left[\sum_{e\in A}V_e\right]\ge 2^{-310}\mathbb E[\mathrm{OPT}_M(V)]$ [S4:36–38].
 
-**The constant is loose.** "$2^{-310}$" is the stated bound, but the
+**The constant is loose.** The stated bound is $2^{-310}$, but the
 accounting section "proves the stronger constant $2^{-293}$, leaving slack
 in the stated bound" [S4:45–46]. The constant is independent of the
 matroid, its size, its rank, and the distributions [S4:42–44].
@@ -67,9 +67,9 @@ no running-time or polynomial independence-oracle guarantee is claimed"
 weights are fixed before randomness, the rule observes and rejects a
 random initial prefix of a uniformly random permutation, and after the
 prefix an adversary that sees all weights, the ordered prefix, and the
-complete seed may rearrange the remaining labels arbitrarily.
-Corollary~\ref{cor:secretary} gives a constant guarantee even with this
-suffix order [S4:49–55]. Both results descend from the same fixed-weight
+complete seed may rearrange the remaining labels arbitrarily. The
+secretary corollary gives a constant guarantee even with this suffix
+order [S4:49–55]. Both results descend from the same fixed-weight
 guarantee.
 
 ## History of the conjecture

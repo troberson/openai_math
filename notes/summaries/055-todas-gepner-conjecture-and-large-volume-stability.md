@@ -74,7 +74,7 @@ this support estimate before defining semistable objects. It makes finite
 refinement possible even though the image of the numerical lattice under the
 charge need not be discrete. [S4:95–100]
 
-**The uniform aisle family.** The construction tilts $\Coh(X)$ twice,
+**The uniform aisle family.** The construction tilts $\mathrm{Coh}(X)$ twice,
 beginning at slope $-1/2$, and varies the rank and first-Chern
 coefficients of the second cut over a fixed open square. Xu's stronger
 Bogomolov–Gieseker inequality supplies strict margins 
@@ -133,8 +133,8 @@ stability condition with support on $K_{\mathrm{num}}(X)_{\mathbb R}$.
 on the same full numerical space, whose charge is exactly
 \[
  Z^{\mathrmLV}_B,tH(E)
- =-\int_Xe^-B-itH\ch(E)\sqrt{\td(X)},
- \qquad \sqrt{\td(X)}=1+\fracc_2(X)24.
+ =-\int_Xe^-B-itH\mathrmch(E)\sqrt{\mathrmtd(X)},
+ \qquad \sqrt{\mathrmtd(X)}=1+\fracc_2(X)24.
 \]
 Its heart is the one constructed in Section  .
 \endenumerate [S10:103–122]
@@ -154,13 +154,13 @@ There are constants $k\in\mathbb Q_{\geq0}$ and $R_*>0$, depending only on
 $(X,H,B_0)$, such that every finite-slope $\nu_{a,b}$-semistable
 $E\in\mathcal B_{H,B_0+bH}$ with $\nu_{a,b}(E)=0$ satisfies
 $$\label{eq:intro-corrected}
- \ch_3^{B_0+bH}(E)
- \leq \left(\frac{a^2}{6}+k\right)H^2\ch_1^{B_0+bH}(E)
+ \mathrm{ch}_3^{B_0+bH}(E)
+ \leq \left(\frac{a^2}{6}+k\right)H^2\mathrm{ch}_1^{B_0+bH}(E)
  \qquad(a>0,\ b\in\mathbb R).$$
 For the same fixed data, the stronger bound
 $$\label{eq:intro-tail}
- \ch_3^{B_0+bH}(E)
- \leq \frac{a^2}{6}H^2\ch_1^{B_0+bH}(E)$$
+ \mathrm{ch}_3^{B_0+bH}(E)
+ \leq \frac{a^2}{6}H^2\mathrm{ch}_1^{B_0+bH}(E)$$
 holds whenever $a>R_*$, for every $b\in\mathbb R$. [S10:167–184]
 
 Both constants are independent of the rank and Chern character of $E$.
@@ -199,7 +199,7 @@ $Z(\mathcal O_x)=-1$ [S4:52–62].
 **The square-root-Todd charge is realized.** For every smooth projective
 complex threefold with trivial canonical bundle, there is a stability
 condition whose charge is exactly
-$-\int_X e^{-B-itH}\ch(E)\sqrt{\td(X)}$ on an open sector [S10:103–122].
+$-\int_X e^{-B-itH}\mathrm{ch}(E)\sqrt{\mathrm{td}(X)}$ on an open sector [S10:103–122].
 
 **The corrected-inequality questions are answered affirmatively.** The
 uniform strong inequality gives a curve-class correction on every

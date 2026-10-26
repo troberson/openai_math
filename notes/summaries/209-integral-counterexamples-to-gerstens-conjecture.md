@@ -12,12 +12,12 @@ degrees 3 and 5. Two explicit two-dimensional ramified regular local
 rings of mixed characteristic $(0,5)$ have nonzero integral
 $K$-theory classes that vanish over their fraction fields. The
 degree-five manuscript's abstract "We construct a two-dimensional ramified regular local ring $A$ of mixed
-characteristic $(0,5)$ for which $K_5(A)\to K_5(\Frac A)$ has a nonzero
+characteristic $(0,5)$ for which $K_5(A)\to K_5(\mathrm{Frac} A)$ has a nonzero
 kernel. This disproves Gersten's conjecture in its unrestricted integral
 form. [S3:44–49]" The degree-three
 manuscript's abstract "We construct a two-dimensional ramified regular local ring $A$ in mixed
 characteristic $(0,5)$ for which the integral map
-$K_3(A)\to K_3(\Frac A)$ has nonzero kernel. This gives a negative
+$K_3(A)\to K_3(\mathrm{Frac} A)$ has nonzero kernel. This gives a negative
 answer to the unrestricted integral Gersten conjecture. [S5:30–35]"
 
 ## Undergraduate summary
@@ -41,7 +41,7 @@ degree eight, and put
 \]
 Then $A$ is a Noetherian regular local domain of dimension two and
 \[
- \ker\bigl(K_5(A)\longrightarrow K_5(\Frac A)\bigr)\ne0.
+ \ker\bigl(K_5(A)\longrightarrow K_5(\mathrmFrac A)\bigr)\ne0.
 \]
 Consequently the unrestricted integral Gersten conjecture has a negative
 answer. [S4:18–30]
@@ -58,12 +58,12 @@ The ring $A$ is a two-dimensional Noetherian regular local domain
 of mixed characteristic $(0,5)$, with $\pi\in\mathfrak m_A^2$.
 There is an integral class $c\in K_3(A)$ such that
 \[
- c|_{\Frac A}=0,
+ c|_{\mathrmFrac A}=0,
  \qquad
  c|_{A[1/\pi]}\bmod5\ne0
  \quadin G_3(A[1/\pi];\mathbb Z/5).
 \]
-In particular, $K_3(A)\to K_3(\Frac A)$ is not injective. [S6:29–40]
+In particular, $K_3(A)\to K_3(\mathrm{Frac} A)$ is not injective. [S6:29–40]
 
 ## Graduate summary
 

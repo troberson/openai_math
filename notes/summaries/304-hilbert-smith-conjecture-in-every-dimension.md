@@ -105,7 +105,7 @@ second-countable $n$-manifold without boundary is a Lie group
 
 **A dynamical corollary (Pardon's Conjecture 1.4).** For such a
 manifold, an almost periodic homeomorphism — one whose cyclic subgroup
-has compact closure in $\Homeo(M)$ — has a positive iterate that is the
+has compact closure in $\mathrm{Homeo}(M)$ — has a positive iterate that is the
 time-one map of a continuous real flow: the compact closure is a
 compact abelian Lie group whose identity component is a torus of finite
 index [S4:42–55].

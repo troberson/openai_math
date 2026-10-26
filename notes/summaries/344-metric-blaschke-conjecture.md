@@ -29,7 +29,7 @@ The conjecture starts from a property the round sphere has, and that the standar
 
 The manuscript turns the property into a metric equality. For a connected closed smooth Riemannian manifold, the global injectivity radius is the infimum over points of the radius on whose open tangent balls the exponential map is a diffeomorphism, and the diameter is the largest distance between two points. A Blaschke manifold is one of positive dimension where the two are equal 
 
-> For a connected closed smooth Riemannian manifold $(M,g)$, write \[ \inj(M,g)=\inf_{p\in M}\inj_p(M,g), \qquad \diam(M,g)=\sup_{p,q\in M}d_g(p,q). \] Here $\inj_p(M,g)$ is the supremum of the radii on whose open tangent balls $\exp_p$ is a diffeomorphism onto its image. We call $M$ a _Blaschke manifold_ if it has positive dimension and $\inj(M,g)=\diam(M,g)$. The global equality implies that every unit-speed geodesic minimizes precisely up to the common diameter; we give the short deduction in Lemma  . [S6:18–29]
+> For a connected closed smooth Riemannian manifold $(M,g)$, write \[ \mathrminj(M,g)=\inf_{p\in M}\mathrminj_p(M,g), \qquad \mathrmdiam(M,g)=\sup_{p,q\in M}d_g(p,q). \] Here $\mathrm{inj}_p(M,g)$ is the supremum of the radii on whose open tangent balls $\exp_p$ is a diffeomorphism onto its image. We call $M$ a _Blaschke manifold_ if it has positive dimension and $\mathrm{inj}(M,g)=\mathrm{diam}(M,g)$. The global equality implies that every unit-speed geodesic minimizes precisely up to the common diameter; we give the short deduction in Lemma  . [S6:18–29]
 
 The main theorem is the classification 
 

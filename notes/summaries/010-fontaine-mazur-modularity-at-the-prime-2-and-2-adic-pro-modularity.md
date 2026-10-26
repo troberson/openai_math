@@ -44,7 +44,7 @@ Read together: the representation lives in the completed Hecke algebra (manuscri
 
 > \begin{theorem}\label{thm:main}
 > Let $E/\mathbb Q_2$ be finite, with ring of integers $\mathcal O_E$, and let
-> $r:G_{\mathbb Q}\longrightarrow\GL_2(E)$
+> $r:G_{\mathbb Q}\longrightarrow\mathrm{GL}_2(E)$
 > be continuous and absolutely irreducible. Suppose that $r$ is
 > unramified outside finitely many finite primes and is odd:
 > $\det r(c)=-1$ for complex conjugation $c$.
@@ -68,7 +68,7 @@ The conclusion gets its name in the next paragraph [S5:51–54] “We call this 
 
 > \begin{theorem}\label{thm:main}
 > For every odd positive integer $N$, every irreducible component of
-> $\Spec T_2(N)$ has dimension exactly $4$.
+> $\mathrm{Spec} T_2(N)$ has dimension exactly $4$.
 > \end{theorem}
 
 The algebra is the inverse limit over all weights, Eisenstein series included “This is the $p=2$ case of Emerton's Conjecture 2.9  . The algebra in   retains all weights, all Eisenstein systems, and all residual systems of eigenvalues. [S14:93–95]”
@@ -97,7 +97,7 @@ The manuscript states the scope of that statement itself “Thus Theorem   resol
 2. **Diagonal block equivalence.** [S5:103–106] “We choose the base-change field to split completely at $2$, so that all dyadic restrictions of the family have the same local Galois parameter. [S5:103–105]” The block-equivalence comparison is `sections/diagonal.tex` [S7], and the manuscript notes “This comparison includes scalar residual blocks. [S5:112]”
 3. **A regular de Rham point.** “Section   then uses a chain of prime specializations in $D$ to force maximal growth, and hence positive Iwasawa rank, for the one-factor object. Polynomial approximation detects a locally algebraic depth-zero supercuspidal type, yielding a regular de Rham point $x$. [S5:113–117]” The construction is `sections/regular-point.tex` [S8].
 4. **Classicality of the auxiliary point.** “The regular Fontaine–Mazur theorem \cite[Theorem 1.1]FM2 makes $x$ classical up to Tate twist, and Section   puts its classical packet and continuous cyclotomic twists in the precise algebra  . [S5:117–120]” The Hecke-algebra bookkeeping is `sections/hecke.tex` [S9].
-5. **Tangent bound at the classical point.** The closing section proves the adjoint Selmer bound and its deformation-ring consequence, and states what the bound tolerates “Both assertions permit scalar or reducible semisimplified residual data and finite extension of the coefficient ring. [S10:31–32]” The global input is the Selmer vanishing theorem quoted where it is used [S10:55–58] “Newton–Thorne's theorem \cite[Theorem 5.4]NewtonThorne2023, specialized to $\GL_2/\mathbb Q$, states that for a regular algebraic cuspidal automorphic representation $\pi$ and any prime $p$, [S10:55–57]”.
+5. **Tangent bound at the classical point.** The closing section proves the adjoint Selmer bound and its deformation-ring consequence, and states what the bound tolerates “Both assertions permit scalar or reducible semisimplified residual data and finite extension of the coefficient ring. [S10:31–32]” The global input is the Selmer vanishing theorem quoted where it is used [S10:55–58] “Newton–Thorne's theorem \cite[Theorem 5.4]NewtonThorne2023, specialized to $\mathrm{GL}_2/\mathbb Q$, states that for a regular algebraic cuspidal automorphic representation $\pi$ and any prime $p$, [S10:55–57]”.
 6. **Kernel vanishing on the whole domain.** “At $x$, the global deformation problem with varying determinant has tangent dimension at most three, while a dimension-four integral Hecke component has local dimension three. Equality makes the ambient local ring regular and forces its Hecke kernel to vanish there. Since $D$ is a domain through $x$, the same kernel vanishes on all of $D$. [S5:125–130]”
 7. **How the dimension theorem is proved.** Manuscript B works at characteristic-zero points “The proof works at characteristic-zero points, even on components whose residual systems are reducible or scalar. [S14:131–132]” Its tangent step is “the tangent space at such a point has dimension at most $3$: the Newton–Thorne theorem annihilates the global finite Selmer group, and the only nonzero local quotient has dimension $3$ at $2$. [S14:139–142]” Two passages are advertised as reusable, and the manuscript is explicit that [S14:151–152] “Neither passage assumes residual irreducibility. [S14:152]”
 8. **The dyadic local input.** Manuscript C's local ingredient is “The local input is the \(p\)-adic Langlands correspondence of Colmez  , in the all-prime form of Colmez, Dospinescu and Pašk\=unas  . [S19:113–115]” The obstacle it leaves is stated plainly “a trace does not record a residual extension class, and globally reducible families can be too large for a direct connectedness argument. [S19:119–120]”
