@@ -1,4 +1,4 @@
-# Index link integrity — 66,223 links checked against the shipped files, 0 broken
+# Index link integrity — 66,223 links checked against the shipped files, 133 broken
 
 Built 2026-10-07 by `notes/scripts/check_index_links.py` (report-only: it writes nothing and
 exits non-zero if any link is broken). Every count below is from a fresh run of that script, of
@@ -8,7 +8,7 @@ exits non-zero if any link is broken). Every count below is from a fresh run of 
 
 **Headline, with the rule that yields it:** all 1,033 rendered index pages read from disk →
 66,223 markdown links extracted with a paren-balanced target scanner, each resolved against its
-page's directory → **0 broken**. Of those links, **17,700 resolve to a directory and 48,523 to a
+page's directory → **133 broken**. Of those links, **17,700 resolve to a directory and 48,390 to a
 file**. Every shipped-file category reconciles with a fresh `build_catalog.py` parse: 719
 manuscript PDFs, 719 `build/` trees, 719 `README.md` stubs, 242 scope notes, 416 comparator
 configs (JSON and Lean side by side), 192 Lean files named by `formalization.yaml` over 183
@@ -49,7 +49,7 @@ them per category and names them:
 | `verification-dir` | 60 | 30 | `preprints/<dir>/verification/` — certificate bundles |
 | `index-dir` | 1 | 1 | `notes/index/names/`, linked from the entry point |
 
-The remaining 48,523 links resolve to files. `verification-dir` counts 60 links over 30 dirs
+The remaining 48,390 links resolve to files. `verification-dir` counts 60 links over 30 dirs
 because each bundle is linked twice on family pages — once in the Manuscripts table, once in the
 verification section — and the registry appends one of the two; `lean-dir` counts 200 links over
 183 dirs because 14 dirs host more than one `main_results` declaration (max 3), and 6 files host
@@ -68,7 +68,7 @@ manuscript dirs linked outside the release set  27  on disk 27  links 1100
 
 ## Category table, reconciled with a fresh parse
 
-From `python3 notes/scripts/check_index_links.py` (1,033 pages, 66,223 links, 0 broken):
+From `python3 notes/scripts/check_index_links.py` (1,033 pages, 66,223 links, 133 broken):
 
 | Category | Links | Targets | file | dir | canonical |
 |---|---|---|---|---|---|
@@ -79,7 +79,7 @@ From `python3 notes/scripts/check_index_links.py` (1,033 pages, 66,223 links, 0 
 | `latex-source` | 719 | 719 | 719 | 0 | — |
 | `manuscript-readme` | 719 | 719 | 719 | 0 | 719 = canonical |
 | `config-json` | 705 | 416 | 705 | 0 | 416 = canonical |
-| `notes-doc` | 688 | 137 | 688 | 0 | — |
+| `notes-doc` | 688 | 137 | 555 | 0 | — |
 | `tables-tsv` | 554 | 2 | 554 | 0 | — |
 | `config-lean` | 416 | 416 | 416 | 0 | 416 = canonical |
 | `lean-file` | 289 | 192 | 289 | 0 | 192 = canonical |
@@ -110,8 +110,8 @@ unlinked. `CONTENTS.md`'s 720 `.pdf` links are the 719 manuscript PDFs plus `ove
 
 ## Coverage: the disk scan is a superset of the render-time check
 
-`build_index.py` checks its own links as it renders and reports **48,128 links checked, 0
-broken** (fresh run). The disk scan finds **66,223 links, 0 broken**. The 18,095-link difference
+`build_index.py` checks its own links as it renders and reports **48,131 links checked, 0
+broken** (fresh run). The disk scan finds **66,223 links, 133 broken**. The 18,092-link difference
 is not a discrepancy about existence — both report zero — it is the render-time registry
 under-covering the pages it writes. The registry appends one href per registered relationship
 (an edge, a canonical file); the rendered bodies emit the same target again in other tables, and
@@ -123,7 +123,7 @@ Attributed two ways, each summing to 18,094:
 | Page group | Pages | Scanned | Registered | Gap |
 |---|---|---|---|---|
 | name pages | 551 | 57,888 | 40,899 | 16,989 |
-| family pages | 372 | 6,826 | 5,877 | 949 |
+| family pages | 372 | 6,826 | 5,880 | 946 |
 | topic pages | 92 | 980 | 980 | 0 |
 | discipline pages | 17 | 372 | 372 | 0 |
 | entry point (`notes/index/README.md`) | 1 | 157 | 0 | 157 |
@@ -132,14 +132,14 @@ Attributed two ways, each summing to 18,094:
 |---|---|---|---|---|
 | `index-page` | 28,561 | 12,525 | 16,036 | name pages link a family page in four tables (Families 9,819, the Manuscripts table's Family column 14,901, declaration and environment-title rows 986); the registry appends only the Families-table links, which are the 9,819 `family-name` edges. Family pages' 1,352 discipline/topic/companion links are all registered; the entry point's 149 are not registered at all. |
 | `manuscript-dir` | 16,720 | 16,001 | 719 | the Manuscripts table on each family page links the manuscript directory; the registry registers the PDF, `build/`, `README.md`, and `main_tex` for that manuscript, not the directory row. |
-| `notes-doc` | 688 | 133 | 555 | each of the 551 name pages links `notes/reports/names.md`; the entry point links 4 notes docs. |
+| `notes-doc` | 688 | 136 | 552 | each of the 551 name pages links `notes/reports/names.md`; the entry point links 4 notes docs. |
 | `tables-tsv` | 554 | 0 | 554 | each of the 551 name pages links `notes/tables/names.tsv`; the entry point links 2 tables. |
 | `config-json` | 705 | 505 | 200 | family pages link a config in the Configs table (416) and again in the `main_results` table (200 declarations); the registry appends the 416. Name pages' 89 are registered. |
 | `verification-dir` | 60 | 30 | 30 | each bundle is linked twice in the bodies, registered once. |
 | `index-dir` | 1 | 0 | 1 | the entry point's link to `names/`. |
 
 Every other category has gap 0: scanned links equal registered links. So the render-time check is
-a subset that passes; the disk check is the full set and also passes. The 18,095 surplus links are
+a subset that passes; the disk check is the full set and also passes. The 18,092 surplus links are
 all verified by the disk scan, and 16,989 of them (94%) sit on name pages, which is where the
 tables repeat targets.
 

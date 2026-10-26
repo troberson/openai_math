@@ -219,7 +219,7 @@ manuscript-level flag.
   carries **11548194** B over the **1,033** pages, and the 16 tables are counted in the
   `notes/tables/*.tsv` sum. The render-time figure is the registry's own subset: the disk check
   (`notes/scripts/check_index_links.py`) covers **66,223** links over the same 1,033 pages, also with
-  **0** broken, and **17,700** of them resolve to a directory. `notes/development/index-links.md` carries
+  **133** broken, and **17,700** of them resolve to a directory. `notes/development/index-links.md` carries
   that measurement; the prose-quality exclusion above is unchanged by it.
 - The **13,802** bib entries are counted by `^\s*@\w+\s*{`; commented-out entries are included and
   none was checked to parse as a BibTeX entry.
