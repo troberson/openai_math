@@ -565,7 +565,7 @@ no name-to-name edge is built.
 | `companions` | `result NNN` cross-refs in the abstract | |
 | `companion_word` | abstract says "companion" | 9 families |
 | `versions` | manuscripts sharing a date-stripped dir slug | 2 families, 4 dated re-issues (003, 056) |
-| `summary` | a page exists at `notes/summaries/<discipline>/<NNN>-*.md` | Filesystem fact, not a derived claim; 133 of 372 families, 243 manuscripts behind them |
+| `summary` | a page exists at `notes/summaries/<NNN>-*.md` | Filesystem fact, not a derived claim; 133 of 372 families, 243 manuscripts behind them |
 
 ## Coverage tracks exposure, not importance
 
