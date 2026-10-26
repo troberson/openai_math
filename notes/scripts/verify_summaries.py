@@ -151,7 +151,6 @@ def pass_b(page):
                 continue
             if m.group(2) is None:
                 checked += 1
-                print(f"{sid} = {rel}")
                 continue
             a = int(m.group(2))
             b = int(m.group(3)) if m.group(3) else a
@@ -169,8 +168,6 @@ def pass_b(page):
             if rev:
                 problems += 1
                 print(f"REVERSED RANGE {sid}:{a}–{b} [doc line {n}]")
-            span = " ".join(text[a - 1:max(a, b)]).strip()
-            print(f"{sid}:{a}" + (f"–{b}" if b != a else "") + f" -> {rel} | {span[:58]}")
 
     for sid, rel, declared, n in page.rows:
         if declared == "—":
