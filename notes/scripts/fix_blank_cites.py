@@ -84,6 +84,10 @@ def fix_window(
         if candidate is None:
             return None
         a_fixed = candidate
+        if a == b:
+            # Single-line cite: the end follows the start, so the window
+            # doesn't invert when the start moves forward.
+            b = a_fixed
 
     # End: shrink backward
     b_fixed: int = b
