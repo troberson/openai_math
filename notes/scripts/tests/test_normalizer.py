@@ -163,6 +163,39 @@ class TestProseMarkup:
         assert_clean(out)
 
 
+class TestHtmlEntities:
+    """Catalog blurbs and pandoc reports write entities inline; the reader strips the
+    emphasis tags but must also decode the entities, so no `&...;` survives in prose."""
+
+    def test_gt(self):
+        out = normalize_prose("for fixed $\\varepsilon$ &gt; 0", build_macro_table(""))
+        assert "&gt;" not in out
+        assert "\\varepsilon$ > 0" in out
+        assert_clean(out)
+
+    def test_le(self):
+        out = normalize_prose("the bound is &le; 1", build_macro_table(""))
+        assert "&le;" not in out
+        assert "\u2264" in out  # ≤
+        assert_clean(out)
+
+    def test_amp(self):
+        out = normalize_prose("A &amp; B &amp;&amp; C", build_macro_table(""))
+        assert "&" not in out.replace("A & B && C", "")
+        assert "A & B && C" in out
+        assert_clean(out)
+
+    def test_full_blurb(self):
+        # The family-122 blurb form: an emphasis tag and an inline entity together.
+        out = normalize_prose("at most $n^{-\\varepsilon}$ for fixed <i>&varepsilon;</i> &gt; 0",
+                              build_macro_table(""))
+        assert not re.search(r"&[a-zA-Z][a-zA-Z0-9]*;", out)
+        assert "<i>" not in out and "</i>" not in out
+        assert "\u03f5" in out  # ϵ from &varepsilon; (U+03F5)
+        assert " > 0" in out
+        assert_clean(out)
+
+
 class TestMathRegions:
     """Region splitting: inline and display math."""
     def test_inline_math(self):

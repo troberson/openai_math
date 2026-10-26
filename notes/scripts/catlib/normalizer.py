@@ -25,6 +25,7 @@ The pipeline, in `normalize_window`'s order:
 
 from __future__ import annotations
 
+import html
 import re
 
 from catlib.text import fold_accents, fold_dashes
@@ -240,6 +241,10 @@ def _prose_markup(s: str) -> str:
     # The release's catalog (CONTENTS.md) uses HTML emphasis and subscript tags in its
     # abstracts (`<i>`, `<sub>`). Strip the tags, keep the content.
     s = re.sub(r"</?(?:i|b|sub|sup|em|strong)>", "", s)
+    # The catalog also writes entities inline in its abstracts (`&gt;`, `&le;`, `&emsp;`).
+    # Decode them to their characters so no `&...;` survives in the finished page — the
+    # tag strip above keeps `<i>` content, and this keeps `&gt;` as `>`.
+    s = html.unescape(s)
     s = re.sub(r"\\emph\s*\{([^{}]*)\}", r"_\1_", s)
     s = re.sub(r"\\textbf\s*\{([^{}]*)\}", r"**\1**", s)
     s = re.sub(r"\\text\s*\{([^{}]*)\}", r"\1", s)
